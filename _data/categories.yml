@@ -18,3 +18,9 @@
   group: writing
   accent: ochre
   description: "Notes from things I'm learning — courses, books, papers, and the odd rabbit hole."
+
+- slug: quantumcomputing
+  name: "Quantum-Computing"
+  group: writing
+  accent: rust
+  description: ""
