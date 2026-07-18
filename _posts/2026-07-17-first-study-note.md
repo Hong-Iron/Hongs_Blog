@@ -1,7 +1,7 @@
 ---
 title: "How This Site Is Built"
 subtitle: "Jekyll, GitHub Pages, and a small CLI to manage it all."
-date: 2026-07-18 09:30:00 +0900
+date: 2026-07-17 20:00:00 +0900
 categories: [studies]
 tags: [jekyll, github-pages]
 excerpt: "A quick note on the stack behind this site: Jekyll for templating, native GitHub Pages for hosting, and a stdlib-only Python script for day-to-day content management."
@@ -17,5 +17,5 @@ templating layer for the editorial layout, and `scripts/blog.py` as the only
 categories, manages the notification banner, and switches the background
 theme and effects, all by editing files that Jekyll already understands.
 
-Pushing to `main` is the entire deploy step: GitHub Pages rebuilds the site
+Pushing to `master` is the entire deploy step: GitHub Pages rebuilds the site
 automatically, no CI configuration required.

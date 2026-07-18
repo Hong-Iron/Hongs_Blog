@@ -2,8 +2,12 @@
 layout: default
 ---
 {% assign cat = site.data.categories | where: "slug", page.category | first %}
+{% assign posts = site.categories[page.category] %}
+{% unless posts %}{% assign posts = "" | split: "," %}{% endunless %}
+{% assign posts = posts | sort: "date" | reverse %}
+
 <div class="page-intro container reveal">
-  <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{{ site.categories[page.category] | size }} {{ cat.name | default: page.category }}</span>
+  <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{{ posts.size }} {{ cat.name | default: page.category }}</span>
   <h1 class="page-intro__title">{{ cat.name | default: page.category }}</h1>
   {% if cat.description %}<p class="page-intro__desc">{{ cat.description }}</p>{% endif %}
 </div>
@@ -14,7 +18,6 @@ layout: default
     <div class="article-body" style="max-width:none;padding-top:2rem;">{{ content }}</div>
   {% endif %}
 
-  {% assign posts = site.categories[page.category] | sort: "date" | reverse %}
   {% if posts.size > 0 %}
     <div class="index-list">
       {% for post in posts %}
