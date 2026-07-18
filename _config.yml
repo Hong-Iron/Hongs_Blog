@@ -52,6 +52,7 @@ exclude:
   - "Templates and references"
   - scripts
   - README.md
+  - MANAGING.md
   - Gemfile
   - Gemfile.lock
   - vendor
