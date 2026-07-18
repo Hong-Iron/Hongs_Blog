@@ -58,8 +58,8 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   padding: 0;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
@@ -377,6 +377,7 @@ main {
   font-family: var(--font-serif);
   font-size: 1.15rem;
   line-height: 1.75;
+  overflow-wrap: break-word;
 }
 
 .article-body > * + * {
@@ -400,6 +401,12 @@ main {
   line-height: 0.85;
   padding: 0.05em 0.08em 0 0;
   color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .article-body > p:first-of-type::first-letter {
+    font-size: 2.6em;
+  }
 }
 
 .article-body img {
