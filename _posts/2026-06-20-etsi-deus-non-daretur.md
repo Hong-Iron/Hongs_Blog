@@ -8,9 +8,6 @@ excerpt: "결국 하고픈 말은 우리가 아무리 하나님을 앞세워 우
 cover: "/assets/img/uploads/washing-of-feet-koder.png"
 cover_alt: "The Washing of Feet by Sieger Köder"
 ---
-
-*The Washing of Feet by Sieger Köder*
-
 > etsi deus non daretur
 > (마치 하나님이 안 계신 것처럼)
 >
