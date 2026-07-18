@@ -150,6 +150,10 @@
   font-size: 0.85rem;
 }
 
+.notice-banner__inner > span {
+  min-width: 0;
+}
+
 .notice-banner a {
   color: var(--bg);
   text-decoration: underline;

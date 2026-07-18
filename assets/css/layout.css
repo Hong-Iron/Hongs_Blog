@@ -50,6 +50,78 @@
   border-color: var(--accent);
 }
 
+/* -- mobile nav ------------------------------------------------------- */
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 1.1rem;
+  height: 2px;
+  background: var(--ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .site-nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .site-nav.is-open ul {
+    display: flex;
+  }
+
+  .site-nav li {
+    width: 100%;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
 .site-footer {
   border-top: 1px solid var(--rule);
   margin-top: 5rem;
@@ -345,6 +417,32 @@ main {
   text-align: center;
 }
 
+/* tables scroll horizontally within their own box on narrow screens
+   instead of forcing the whole page wider */
+.article-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+}
+
+.article-body th,
+.article-body td {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-body th {
+  background: var(--bg-alt);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .article-footer {
   max-width: var(--measure-wide);
   margin: 0 auto;
@@ -364,6 +462,20 @@ main {
   max-width: 45%;
   text-decoration: none;
   font-family: var(--font-display);
+}
+
+@media (max-width: 560px) {
+  .article-nav {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .article-nav a,
+  .article-nav__next {
+    max-width: none;
+    text-align: left;
+    margin-left: 0;
+  }
 }
 
 .article-nav a:hover {
