@@ -15,6 +15,12 @@ baseurl: "/Hongs_Blog"
 
 github_username: Hong-Iron
 
+# Without this, Jekyll renders dates/permalinks using the build server's
+# local timezone (UTC on GitHub's runners), not the "+0900" offset already
+# in each post's front matter — a post timestamped 03:26 KST would get
+# built as if it were the previous UTC day (02:26 -> Nov 8 instead of Nov 9).
+timezone: Asia/Seoul
+
 # ---------------------------------------------------------------------------
 # Build
 # ---------------------------------------------------------------------------
