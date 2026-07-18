@@ -1,83 +1,43 @@
-# DocSim: Automated File Organization & Knowledge Mapping
-
-This document summarizes the enhancements made to the **DocSim** project, transforming it from a simple similarity engine into a full-scale automated knowledge management system with real-time tracking, automated cluster naming, and a React-based GUI.
-
-## 🚀 Key Features Implemented
-
-### 1. Multi-Format Document Ingestion
-The system can now parse and process a variety of file formats into a unified JSON structure for analysis:
-- **PDF**: Extracts text using `PyPDF2`.
-- **Word (.docx)**: Extracts text using `python-docx`.
-- **PowerPoint (.pptx)**: Extracts text from slides using `python-pptx`.
-- **Markdown (.md)**: Native support for structured text.
-
-### 2. Automated Correlation-Based Organization & Scalability
-- **Clustering**: Uses `AgglomerativeClustering` (scikit-learn) to group files based on semantic similarity.
-- **Scalability Upgrade**: Now computes a highly efficient $O(N^2)$ document-level similarity matrix using pre-computed mean-pooled vectors.
-- **Folder Management**: Automatically moves/copies files into cluster-based folders.
-- **Deduplication**: Automatically identifies files with >99% similarity and moves them to a `data/duplicates/` folder.
-
-### 3. Real-Time Automation & Scope Selection
-- **Background Watcher**: Run `src/watcher.py` to continuously monitor directories for new or modified files. When a file is detected, it is automatically ingested and organized.
-- **Scope Ignorer**: Add a `.docsimignore` file to exclude specific folders (like `node_modules` or `.git`) from being processed.
-
-### 4. Intelligent Cluster Naming & GUI
-- **Automated Naming**: Generates concise cluster names from each cluster's content using local TF-IDF keyword extraction (no external LLM call). Names can be manually overridden per cluster.
-- **Interactive React GUI**: A modern Next.js + TailwindCSS dashboard lets you visually explore your knowledge web, manage clusters, and manually override cluster names.
-
+---
+title: "DocSim"
+subtitle: "Local-first document intelligence & knowledge mapping"
+date: 2026-04-18
+role: "Full-Stack Developer"
+stack: ["Python", "FastAPI", "Sentence-Transformers", "scikit-learn", "Next.js", "React", "TypeScript", "Tailwind CSS", "Electron"]
+status: "Alpha"
+repo: "https://github.com/Hong-Iron/DocSim"
+demo: null
+summary: "A local-first desktop app that turns a folder of PDFs, Office docs, and images into semantically clustered, explorable knowledge maps without sending anything to the cloud."
+cover: null
+gallery: [/assets/img/uploads/DOCSIM.png]
+tags: ["nlp", "machine-learning", "desktop-app", "electron", "fastapi", "developer-tools"]
 ---
 
-## 📂 Project Structure
+## What it is
 
-```text
-DocSim/
-├── organize_files.py       # Main entry for Org, Dedup, and Mapping
-├── api.py                  # NEW: FastAPI backend for the React GUI
-├── src/
-│   ├── watcher.py          # NEW: Real-time directory watcher (watchdog)
-│   ├── ingest.py           # Recursive file scanner with .docsimignore support
-│   ├── organizer.py        # Clustering and Deduplication logic (Optimized)
-│   ├── mapper.py           # Knowledge map and TF-IDF cluster naming
-│   ├── storage.py          # Embedding cache management (.npz)
-│   ├── similarity.py       # Core vector math
-│   └── embedder.py         # Sentence-transformer integration
-├── gui/                    # NEW: Next.js React Application
-└── data/
-    ├── organized/          # Final organized folders, Maps, & Metadata
-```
+DocSim Desktop takes an unstructured folder of documents — PDFs, Word files, PowerPoint decks, spreadsheets, Markdown, even scanned images — and organizes them into "Intelligence Clusters": groups of semantically related files, automatically named and linked by topic. Everything runs on-device: text extraction, embedding, and clustering all happen locally, so no document content ever leaves the machine.
 
----
+## Architecture
 
-## 🛠 Usage Instructions
+The app is a three-layer local stack:
 
-For normal use, `python launch.py` starts the API, frontend, and Electron shell together (see `README.md`). The steps below start each piece manually, which is useful for development or when running the background watcher.
+- **Core intelligence engine (Python)** — a parsing layer (PyPDF2, python-docx, python-pptx, pandas, Tesseract OCR) feeds a `sentence-transformers` embedding model (`paraphrase-multilingual-MiniLM-L12-v2`), which in turn feeds `scikit-learn` Agglomerative Clustering over a pre-computed cosine-similarity matrix, plus a TF-IDF pass for automatic cluster naming.
+- **API orchestrator (FastAPI)** — exposes ingestion, clustering, and file-management endpoints, and coordinates background re-indexing so the UI never blocks.
+- **Interactive shell (Electron + Next.js/React)** — a force-directed knowledge graph, a stats dashboard, and an Obsidian-style Markdown editor with live preview.
 
-### 1. Start the Background Watcher
-To automatically ingest and organize files as you work:
-```bash
-. venv/bin/activate
-python src/watcher.py /path/to/your/documents
-```
+## Engineering work: performance & reliability pass
 
-### 2. Start the API Backend
-To power the React GUI, start the FastAPI server:
-```bash
-. venv/bin/activate
-python api.py
-```
+The initial implementation worked but was slow and occasionally lost user work on re-index. The core problems, and the fixes:
 
-### 3. Launch the React GUI
-In a separate terminal, start the Next.js frontend:
-```bash
-cd gui
-npm run dev
-```
-Then open `http://localhost:3000` in your browser.
+- **Cold-start tax on every re-index.** Re-indexing shelled out to three separate Python subprocesses, each re-importing `torch`/`sentence-transformers` and reloading the embedding model from disk — up to three model loads per run. Replaced with in-process calls to a single shared, lazily-loaded embedder singleton, cutting repeated multi-second cold starts to zero after the first load.
+- **Fake incrementality.** The pipeline claimed incremental sync but re-parsed every file (including OCR and Excel extraction) on every run regardless of whether it had changed. Added mtime-based skip logic to the parser and content-hash-based staleness detection to the embedding cache, so only genuinely new or edited files are reprocessed.
+- **Destructive re-indexing.** The old flow deleted existing results *before* rebuilding them, so a failure partway through a re-index (or even a normal run) silently destroyed the user's prior organization and any manually renamed clusters. Rewrote the pipeline to build into a staging directory and atomically swap it into place only on success, preserving prior results on failure and manual cluster metadata across runs.
+- **Silent failure everywhere.** Broad `except: pass` blocks (backend) and empty `catch` blocks (frontend) swallowed errors with no user-visible signal — including a bug where a single failed progress-poll would permanently freeze the UI's progress bar. Added structured logging, a surfaced error state end-to-end, and retry-with-backoff on the frontend poller.
+- **A real data-loss bug.** Synced source files were keyed by filename only, so two files with the same name in different subfolders would silently overwrite each other. Switched to a collision-free, relative-path-based key.
+- **A slow, unhealthy launcher.** The one-click launcher always ran the Next.js dev server and waited a blind, fixed `sleep(10)` before opening the desktop shell — flaky on first run and needlessly slow on every run after. Switched to a production build with an HTTP health-check loop.
 
-### 4. Manual CLI Run
-You can still run the main organization script manually to clean your workspace and generate the knowledge map:
-```bash
-. venv/bin/activate
-python organize_files.py --deduplicate
-```
+## Stack notes
 
+Backend: Python, FastAPI, NumPy, scikit-learn, Sentence-Transformers, PyPDF2/python-docx/python-pptx/openpyxl, Tesseract OCR.
+Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion, D3/Recharts, react-force-graph.
+Desktop: Electron.
