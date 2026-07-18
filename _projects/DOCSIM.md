@@ -1,16 +1,31 @@
 ---
-title: "DocSim"
-subtitle: "Local-first document intelligence & knowledge mapping"
+title: DocSim
+subtitle: Local-first document intelligence & knowledge mapping
 date: 2026-04-18
-role: "Full-Stack Developer"
-stack: ["Python", "FastAPI", "Sentence-Transformers", "scikit-learn", "Next.js", "React", "TypeScript", "Tailwind CSS", "Electron"]
-status: "Alpha"
-repo: "https://github.com/Hong-Iron/DocSim"
-demo: null
-summary: "A local-first desktop app that turns a folder of PDFs, Office docs, and images into semantically clustered, explorable knowledge maps without sending anything to the cloud."
-cover: null
-gallery: [/assets/img/uploads/DOCSIM.png]
-tags: ["nlp", "machine-learning", "desktop-app", "electron", "fastapi", "developer-tools"]
+role: Full-Stack Developer
+stack:
+  - Python
+  - FastAPI
+  - Sentence-Transformers
+  - scikit-learn
+  - Next.js
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Electron
+status: Alpha
+repo: https://github.com/Hong-Iron/DocSim
+demo:
+summary: A local-first desktop app that turns a folder of PDFs, Office docs, and images into semantically clustered, explorable knowledge maps without sending anything to the cloud.
+cover: /assets/img/uploads/DOCSIM.png
+gallery:
+tags:
+  - nlp
+  - machine-learning
+  - desktop-app
+  - electron
+  - fastapi
+  - developer-tools
 ---
 
 ## What it is
