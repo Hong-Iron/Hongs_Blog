@@ -291,6 +291,12 @@ main {
   margin: 2.5rem 0;
   border-radius: var(--radius);
   overflow: hidden;
+  text-align: center;
+}
+
+.article-cover img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article-body {
@@ -327,6 +333,8 @@ main {
 
 .article-body img {
   border-radius: var(--radius);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article-body figcaption {

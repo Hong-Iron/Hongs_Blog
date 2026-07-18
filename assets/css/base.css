@@ -6,10 +6,13 @@
    ========================================================================== */
 
 :root {
-  /* type */
-  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
-  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* type
+     Fraunces/Newsreader/Inter have no Hangul glyphs, so Korean text falls
+     through to the next font in each stack — Nanum Myeongjo everywhere,
+     so Korean renders consistently regardless of which stack it's in. */
+  --font-display: "Fraunces", "Nanum Myeongjo", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-serif: "Newsreader", "Nanum Myeongjo", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter", "Nanum Myeongjo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* spacing / shape */
   --measure: 34rem;
