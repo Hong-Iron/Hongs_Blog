@@ -8,3 +8,4 @@ vendor/
 *.gem
 __pycache__/
 *.pyc
+.obsidian/

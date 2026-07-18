@@ -1,4 +1,23 @@
-# NL-Miner
+---
+title: NL-MINER
+subtitle: A rule-based (no-LM) note-linking pipeline for Markdown vaults.
+date: 2026-07-18
+role: Developer
+stack:
+  - Python
+  - TypeScript
+  - SQLite
+status: Active
+repo: https://github.com/Hong-Iron/NL-Miner
+demo:
+summary: Markdown/plain text → block tree → canonical concepts → links between notes, shipped as an Obsidian plugin and a Claude Code skill on one Python core.
+cover: "[[NL-Miner_useCase.png]]"
+gallery:
+tags:
+  - nlp
+  - obsidian
+  - cli
+---
 
 A rule-based (no-LM) pipeline: Markdown / plain text → **block tree → canonical
 concepts → links between notes**, with an optional English phrase/dependency
