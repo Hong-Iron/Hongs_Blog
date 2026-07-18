@@ -27,32 +27,88 @@ tags:
   - fastapi
   - developer-tools
 ---
+# DocSim Desktop (Alpha)
 
-## What it is
+**Automated Document Intelligence & Knowledge Mapping Suite**
 
-DocSim Desktop takes an unstructured folder of documents — PDFs, Word files, PowerPoint decks, spreadsheets, Markdown, even scanned images — and organizes them into "Intelligence Clusters": groups of semantically related files, automatically named and linked by topic. Everything runs on-device: text extraction, embedding, and clustering all happen locally, so no document content ever leaves the machine.
+DocSim Desktop is a high-performance, local-first application that transforms unstructured document collections into structured, semantically grouped "Intelligence Clusters". It uses modern machine learning and vector embeddings to provide automated organization, interactive relationship mapping, and sophisticated Markdown editing—all without your data ever leaving your machine.
 
-## Architecture
+## ✨ Key Features
 
-The app is a three-layer local stack:
+*   **Multi-Format Ingestion**: Supports PDF, Word (`.docx`, `.doc`), PowerPoint (`.pptx`, `.ppt`), Excel (`.xlsx`, `.xls`), Markdown, JSON, Text, and CSV.
+*   **AI Image Recognition (OCR)**: Automatically extracts text from images (`.png`, `.jpg`, `.jpeg`, `.webp`) using Tesseract OCR.
+*   **Semantic Organization**: Groups similar files into clusters using Agglomerative Hierarchical Clustering.
+*   **Incremental Sync**: Intelligently updates your library, processing only new or modified files.
+*   **Pinned Clusters**: "Anchor" files to specific clusters to make them permanent.
+*   **Interactive Visualization**: 
+    *   **Neural Graph**: Explore document relationships in a dynamic force-directed graph.
+    *   **Stats Dashboard**: View distribution bar charts and library metrics.
+*   **Sophisticated Markdown Editor**: An Obsidian-like editing experience with live preview, full-screen mode, and syntax highlighting.
+*   **Custom Knowledge Hubs**: Manually define clusters with names and descriptions; the AI will suggest matching files from your library.
 
-- **Core intelligence engine (Python)** — a parsing layer (PyPDF2, python-docx, python-pptx, pandas, Tesseract OCR) feeds a `sentence-transformers` embedding model (`paraphrase-multilingual-MiniLM-L12-v2`), which in turn feeds `scikit-learn` Agglomerative Clustering over a pre-computed cosine-similarity matrix, plus a TF-IDF pass for automatic cluster naming.
-- **API orchestrator (FastAPI)** — exposes ingestion, clustering, and file-management endpoints, and coordinates background re-indexing so the UI never blocks.
-- **Interactive shell (Electron + Next.js/React)** — a force-directed knowledge graph, a stats dashboard, and an Obsidian-style Markdown editor with live preview.
+## 🛠 Tech Stack
 
-## Engineering work: performance & reliability pass
+*   **Backend**: Python 3.10+, FastAPI, NumPy, Scikit-learn, PyPDF2, Pandas, Openpyxl.
+*   **ML Models**: Sentence-Transformers (`paraphrase-multilingual-MiniLM-L12-v2`) - runs locally.
+*   **Frontend**: Next.js 15, React 19, Tailwind CSS 4.
+*   **Desktop**: Electron 41.
+*   **OCR**: Tesseract-OCR.
 
-The initial implementation worked but was slow and occasionally lost user work on re-index. The core problems, and the fixes:
+## 🚀 Getting Started
 
-- **Cold-start tax on every re-index.** Re-indexing shelled out to three separate Python subprocesses, each re-importing `torch`/`sentence-transformers` and reloading the embedding model from disk — up to three model loads per run. Replaced with in-process calls to a single shared, lazily-loaded embedder singleton, cutting repeated multi-second cold starts to zero after the first load.
-- **Fake incrementality.** The pipeline claimed incremental sync but re-parsed every file (including OCR and Excel extraction) on every run regardless of whether it had changed. Added mtime-based skip logic to the parser and content-hash-based staleness detection to the embedding cache, so only genuinely new or edited files are reprocessed.
-- **Destructive re-indexing.** The old flow deleted existing results *before* rebuilding them, so a failure partway through a re-index (or even a normal run) silently destroyed the user's prior organization and any manually renamed clusters. Rewrote the pipeline to build into a staging directory and atomically swap it into place only on success, preserving prior results on failure and manual cluster metadata across runs.
-- **Silent failure everywhere.** Broad `except: pass` blocks (backend) and empty `catch` blocks (frontend) swallowed errors with no user-visible signal — including a bug where a single failed progress-poll would permanently freeze the UI's progress bar. Added structured logging, a surfaced error state end-to-end, and retry-with-backoff on the frontend poller.
-- **A real data-loss bug.** Synced source files were keyed by filename only, so two files with the same name in different subfolders would silently overwrite each other. Switched to a collision-free, relative-path-based key.
-- **A slow, unhealthy launcher.** The one-click launcher always ran the Next.js dev server and waited a blind, fixed `sleep(10)` before opening the desktop shell — flaky on first run and needlessly slow on every run after. Switched to a production build with an HTTP health-check loop.
+### 1. Prerequisites
 
-## Stack notes
+*   **Python 3.10+**
+*   **Node.js 20+**
+*   **Tesseract OCR**:
+    *   **Arch Linux**: `sudo pacman -S tesseract tesseract-data-eng tesseract-data-kor`
+    *   **Ubuntu/Debian**: `sudo apt install tesseract-ocr tesseract-ocr-eng tesseract-ocr-kor`
+    *   **macOS**: `brew install tesseract`
 
-Backend: Python, FastAPI, NumPy, scikit-learn, Sentence-Transformers, PyPDF2/python-docx/python-pptx/openpyxl, Tesseract OCR.
-Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion, D3/Recharts, react-force-graph.
-Desktop: Electron.
+### 2. Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Hong-Iron/DocSim.git
+cd DocSim
+
+# Set up Python virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+# Install Frontend dependencies
+cd gui
+npm install
+cd ..
+```
+
+### 3. Launching the App
+
+DocSim comes with a one-click launch suite. It builds and serves a production frontend by default (the first launch takes a bit longer while it builds once):
+
+```bash
+python launch.py
+```
+
+Pass `--dev` to run the Next.js dev server (hot-reload) instead, when actively working on the frontend:
+
+```bash
+python launch.py --dev
+```
+
+## 📂 Project Structure
+
+*   `api.py`: FastAPI backend orchestrator.
+*   `launch.py`: Unified launcher for Backend, Frontend, and Electron.
+*   `src/`: Core intelligence engine (Ingestion, Embedding, Clustering).
+*   `gui/`: Next.js React application.
+*   `data/`: Local storage for internal index and vector cache.
+
+## 🛡 Security & Privacy
+
+DocSim is designed with a **Zero-Cloud Dependency** philosophy.
+*   No data is uploaded to any server.
+*   Embedding models are downloaded once and run entirely on your local CPU/GPU.
+*   Internal storage (`data/`) is kept within the project folder.
+*   The local API only binds to `127.0.0.1` and only accepts requests from the app's own frontend origin.
