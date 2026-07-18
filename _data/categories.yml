@@ -7,12 +7,6 @@
 # NOTE: each field must stay on a single line (no ">-" block scalars) — the
 # CLI parses/rewrites this file with a simple line-based parser.
 
-- slug: writings
-  name: Writings
-  group: writing
-  accent: rust
-  description: "Essays and notes on hobbies, side quests, and whatever else is worth writing down."
-
 - slug: studies
   name: Studies
   group: writing
