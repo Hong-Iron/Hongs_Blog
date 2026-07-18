@@ -360,7 +360,7 @@ main {
 }
 
 .article-cover {
-  margin: 2.5rem 0;
+  margin: 2.5rem auto;
   border-radius: var(--radius);
   overflow: hidden;
   text-align: center;
