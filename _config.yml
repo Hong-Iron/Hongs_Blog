@@ -1,0 +1,59 @@
+# ---------------------------------------------------------------------------
+# Site configuration
+# ---------------------------------------------------------------------------
+title: "Hong-Iron"
+tagline: "Projects, writings, and studies."
+description: >-
+  A personal site collecting portfolio projects, hobby writing, and study notes.
+author: "Hong-Iron"
+email: "hongcheolmin004@gmail.com"
+
+# GitHub Pages project-site URL. Repo is "Hongs_Blog" (not "<user>.github.io"),
+# so the site is served under a /Hongs_Blog path — baseurl must match.
+url: "https://hong-iron.github.io"
+baseurl: "/Hongs_Blog"
+
+github_username: Hong-Iron
+
+# ---------------------------------------------------------------------------
+# Build
+# ---------------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Files/dirs Jekyll should not copy into the published _site.
+# Keep design references and the management tooling out of the live site.
+exclude:
+  - "Templates and references"
+  - scripts
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - CLAUDE.md

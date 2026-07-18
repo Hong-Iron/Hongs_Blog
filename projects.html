@@ -1,0 +1,23 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<div class="page-intro container reveal">
+  <span class="eyebrow tag" style="--tag-color: var(--accent-rust)">{{ site.projects.size }} projects</span>
+  <h1 class="page-intro__title">Projects</h1>
+  <p class="page-intro__desc">A running collection of things I've built — portfolio pieces and case studies, roughly newest first.</p>
+</div>
+
+<div class="container section">
+  {% assign all_projects = site.projects | sort: "date" | reverse %}
+  {% if all_projects.size > 0 %}
+    <div class="grid grid--projects">
+      {% for project in all_projects %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="lede" style="padding: 3rem 0;">Nothing here yet — run <code>python3 scripts/blog.py project new "Title"</code> to add the first one.</p>
+  {% endif %}
+</div>

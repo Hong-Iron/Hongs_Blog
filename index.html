@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<section class="hero container reveal">
+  <h1 class="hero__title">Projects, writings,<br><em>and studies.</em></h1>
+  <p class="lede hero__lede">{{ site.description }}</p>
+  <div class="hero__actions">
+    <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">View projects</a>
+    <a class="btn btn--ghost" href="{{ '/writings/' | relative_url }}">Read writings</a>
+  </div>
+</section>
+
+{% assign featured_projects = site.projects | sort: "date" | reverse | limit: 3 %}
+{% if featured_projects.size > 0 %}
+<section class="section container">
+  <div class="section__header">
+    <h2 class="section__title reveal">Featured projects</h2>
+    <a class="section__link" href="{{ '/projects/' | relative_url }}">All projects &rarr;</a>
+  </div>
+  <div class="grid grid--projects">
+    {% for project in featured_projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% assign recent_posts = site.posts | limit: 4 %}
+{% if recent_posts.size > 0 %}
+<section class="section container">
+  <div class="section__header">
+    <h2 class="section__title reveal">Recent writings &amp; studies</h2>
+  </div>
+  <div class="grid grid--projects">
+    {% for post in recent_posts %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

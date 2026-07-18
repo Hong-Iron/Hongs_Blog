@@ -1,0 +1,9 @@
+# Live theme state — managed via: python3 scripts/blog.py theme ...
+# background must be one of: paper-cream, linen-gray, midnight (assets/css/base.css)
+background: paper-cream
+
+effects:
+  grain: true                 # subtle paper-grain overlay
+  scroll_reveal: true         # cards/sections fade+rise into view on scroll
+  link_underline_draw: true   # animated underline on article links
+  dismissible_banner: true    # allow closing the notification banner

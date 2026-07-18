@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{% assign page_cat_slug = page.categories | first %}
+{% assign cat = site.data.categories | where: "slug", page_cat_slug | first %}
+<article>
+  <header class="article-header container">
+    <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">
+      {{ cat.name | default: page_cat_slug }}
+    </span>
+    <h1 class="article-header__title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="article-header__subtitle">{{ page.subtitle }}</p>{% endif %}
+
+    <dl class="article-meta">
+      <div><dt>Published</dt><dd>{{ page.date | date: "%B %-d, %Y" }}</dd></div>
+      {% if page.reading_time %}<div><dt>Reading time</dt><dd>{{ page.reading_time }}</dd></div>{% endif %}
+    </dl>
+  </header>
+
+  {% if page.cover %}
+    <figure class="article-cover container">
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title }}">
+    </figure>
+  {% endif %}
+
+  <div class="article-body container">
+    {{ content }}
+  </div>
+
+  <footer class="article-footer container">
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="tag-list">
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </footer>
+</article>
+
+{% assign siblings = site.categories[page_cat_slug] | sort: "date" %}
+{% assign current_index = -1 %}
+{% for s in siblings %}
+  {% if s.url == page.url %}{% assign current_index = forloop.index0 %}{% endif %}
+{% endfor %}
+{% if current_index > -1 %}
+  {% assign prev_index = current_index | minus: 1 %}
+  {% assign next_index = current_index | plus: 1 %}
+  <nav class="article-nav container" aria-label="Post navigation">
+    {% if prev_index >= 0 %}
+      {% assign prev = siblings[prev_index] %}
+      <a href="{{ prev.url | relative_url }}">
+        <span class="article-nav__label">Previous</span>{{ prev.title }}
+      </a>
+    {% else %}<span></span>{% endif %}
+    {% if next_index < siblings.size %}
+      {% assign next = siblings[next_index] %}
+      <a class="article-nav__next" href="{{ next.url | relative_url }}">
+        <span class="article-nav__label">Next</span>{{ next.title }}
+      </a>
+    {% endif %}
+  </nav>
+{% endif %}

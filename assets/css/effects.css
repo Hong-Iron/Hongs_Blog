@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Optional visual effects — all toggled from _data/theme.yml, rendered as
+   data-fx-* attributes on <body> in _layouts/default.html. Disabling a flag
+   fully no-ops the corresponding CSS/JS, no page-specific changes needed.
+   ========================================================================== */
+
+/* -- paper grain ---------------------------------------------------------- */
+
+.grain-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+body[data-fx-grain="true"] .grain-overlay {
+  display: block;
+}
+
+body[data-bg="midnight"] .grain-overlay {
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+/* -- scroll reveal ---------------------------------------------------------- */
+
+body[data-fx-reveal="true"] .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body[data-fx-reveal="true"] .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-fx-reveal="true"] .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -- underline draw on hover ------------------------------------------------ */
+
+body[data-fx-underline="true"] .article-body a,
+body[data-fx-underline="true"] .index-list__excerpt a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 0.25s ease;
+}
+
+body[data-fx-underline="true"] .article-body a:hover,
+body[data-fx-underline="true"] .index-list__excerpt a:hover {
+  background-size: 100% 1px;
+}

@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<article>
+  <header class="article-header container">
+    <span class="eyebrow tag" style="--tag-color: var(--accent-rust)">{{ page.status | default: "Project" }}</span>
+    <h1 class="article-header__title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="article-header__subtitle">{{ page.subtitle }}</p>{% endif %}
+
+    <dl class="article-meta">
+      {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+      {% if page.date %}<div><dt>Date</dt><dd>{{ page.date | date: "%B %Y" }}</dd></div>{% endif %}
+      {% if page.stack %}<div><dt>Stack</dt><dd>{{ page.stack | join: ", " }}</dd></div>{% endif %}
+    </dl>
+
+    {% if page.repo or page.demo %}
+      <div class="hero__actions">
+        {% if page.demo %}<a class="btn btn--primary" href="{{ page.demo }}">View live</a>{% endif %}
+        {% if page.repo %}<a class="btn btn--ghost" href="{{ page.repo }}">Source</a>{% endif %}
+      </div>
+    {% endif %}
+  </header>
+
+  {% if page.cover %}
+    <figure class="article-cover container">
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title }}">
+    </figure>
+  {% endif %}
+
+  <div class="article-body container">
+    {{ content }}
+  </div>
+
+  {% if page.gallery and page.gallery.size > 0 %}
+    <div class="container">
+      <div class="grid grid--gallery">
+        {% for img in page.gallery %}
+          <div class="card__media"><img src="{{ img | relative_url }}" alt="" loading="lazy"></div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.tags and page.tags.size > 0 %}
+    <footer class="article-footer container">
+      <div class="tag-list">
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+    </footer>
+  {% endif %}
+</article>

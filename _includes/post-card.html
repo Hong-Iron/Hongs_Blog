@@ -1,0 +1,15 @@
+{% assign post = include.post %}
+{% assign post_cat_slug = post.categories | first %}
+{% assign cat = site.data.categories | where: "slug", post_cat_slug | first %}
+<a class="card reveal" href="{{ post.url | relative_url }}">
+  <div class="card__media{% unless post.cover %} card__media--empty{% endunless %}">
+    {% if post.cover %}
+      <img src="{{ post.cover | relative_url }}" alt="" loading="lazy">
+    {% else %}
+      <span>{{ post.title | slice: 0, 1 }}</span>
+    {% endif %}
+  </div>
+  <span class="card__eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{{ cat.name | default: post_cat_slug }}</span>
+  <h3 class="card__title">{{ post.title }}</h3>
+  <p class="card__desc">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+</a>

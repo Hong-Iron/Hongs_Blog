@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn--primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Tags / category pills
+   ========================================================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--tag-color, var(--accent));
+}
+
+.tag::before {
+  content: "";
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  background: var(--tag-color, var(--accent));
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__media {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card__media img {
+  transform: scale(1.035);
+}
+
+.card__media--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-muted);
+  font-size: 1.1rem;
+}
+
+.card__eyebrow {
+  margin-top: 1rem;
+}
+
+.card__title {
+  margin-top: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.card:hover .card__title {
+  color: var(--accent);
+}
+
+.card__desc {
+  margin-top: 0.4rem;
+  font-family: var(--font-serif);
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+}
+
+.grid--projects > .card:nth-child(3n + 1) .card__media {
+  aspect-ratio: 16 / 10;
+}
+
+/* ==========================================================================
+   Notification banner
+   ========================================================================== */
+
+.notice-banner {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.notice-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem var(--gutter);
+  max-width: 72rem;
+  margin: 0 auto;
+  font-size: 0.85rem;
+}
+
+.notice-banner a {
+  color: var(--bg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.notice-banner__type {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  margin-right: 0.6em;
+  background: var(--accent);
+}
+
+.notice-banner[data-type="warning"] .notice-banner__type {
+  background: #d99a2b;
+}
+
+.notice-banner[data-type="success"] .notice-banner__type {
+  background: #6a9c5c;
+}
+
+.notice-banner__close {
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.notice-banner__close:hover {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   About page
+   ========================================================================== */
+
+.colophon {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--rule);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  max-width: var(--measure);
+}

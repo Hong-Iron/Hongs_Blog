@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{% assign cat = site.data.categories | where: "slug", page.category | first %}
+<div class="page-intro container reveal">
+  <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{{ site.categories[page.category] | size }} {{ cat.name | default: page.category }}</span>
+  <h1 class="page-intro__title">{{ cat.name | default: page.category }}</h1>
+  {% if cat.description %}<p class="page-intro__desc">{{ cat.description }}</p>{% endif %}
+</div>
+
+<div class="container">
+  {% assign trimmed_content = content | strip %}
+  {% if trimmed_content.size > 0 %}
+    <div class="article-body" style="max-width:none;padding-top:2rem;">{{ content }}</div>
+  {% endif %}
+
+  {% assign posts = site.categories[page.category] | sort: "date" | reverse %}
+  {% if posts.size > 0 %}
+    <div class="index-list">
+      {% for post in posts %}
+        <a class="index-list__item reveal" href="{{ post.url | relative_url }}">
+          <span class="index-list__date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <div>
+            <span class="index-list__title">{{ post.title }}</span>
+            <p class="index-list__excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="lede" style="padding: 3rem 0;">Nothing posted here yet — run <code>python3 scripts/blog.py post new "Title" --category {{ page.category }}</code> to add the first one.</p>
+  {% endif %}
+</div>

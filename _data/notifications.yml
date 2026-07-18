@@ -1,0 +1,7 @@
+# Site-wide announcement banner entries.
+# Managed via: python3 scripts/blog.py notify add|list|remove
+#
+# A notice shows when active: true AND today falls within
+# [start_date, end_date] (both YYYY-MM-DD, inclusive). Evaluated at build
+# time, so it updates on the next push/rebuild — not live in the browser.
+

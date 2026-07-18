@@ -1,0 +1,14 @@
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% for note in site.data.notifications %}
+  {% if note.active and note.start_date <= today and note.end_date >= today %}
+    <div class="notice-banner" data-type="{{ note.type | default: 'info' }}" data-notice-id="{{ note.id }}">
+      <div class="notice-banner__inner">
+        <span>
+          <span class="notice-banner__type" aria-hidden="true"></span>
+          {% if note.url %}<a href="{{ note.url }}">{{ note.message }}</a>{% else %}{{ note.message }}{% endif %}
+        </span>
+        <button type="button" class="notice-banner__close" data-dismiss-notice="{{ note.id }}" aria-label="Dismiss notification">&times;</button>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
