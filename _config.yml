@@ -53,6 +53,7 @@ exclude:
   - scripts
   - README.md
   - MANAGING.md
+  - pensees.pdf
   - Gemfile
   - Gemfile.lock
   - vendor

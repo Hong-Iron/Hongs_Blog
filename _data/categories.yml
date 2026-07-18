@@ -24,3 +24,9 @@
   group: writing
   accent: rust
   description: ""
+
+- slug: pensees
+  name: "Pensées"
+  group: writing
+  accent: plum
+  description: "짧은 신앙적 사색과 묵상 — 팡세."
