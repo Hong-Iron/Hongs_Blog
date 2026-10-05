@@ -36,4 +36,6 @@
 
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 
-{% seo %}
+{% if site.naver_site_verification %}<meta name="naver-site-verification" content="{{ site.naver_site_verification }}">{% endif %}
+{%- comment -%} the <title> is written above, so jekyll-seo-tag must not add a second one {%- endcomment %}
+{% seo title=false %}

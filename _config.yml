@@ -16,6 +16,16 @@ baseurl: "/Hongs_Blog"
 
 github_username: Hong-Iron
 
+# Search engines. Paste the code each console gives for the "HTML tag"
+# verification method (only the content="…" value).
+#   Google: search.google.com/search-console → URL-prefix property
+#           https://hong-iron.github.io/Hongs_Blog/
+#   Naver:  searchadvisor.naver.com → 웹마스터 도구 → 사이트 등록
+# Then submit https://hong-iron.github.io/Hongs_Blog/sitemap.xml in both.
+webmaster_verifications:
+  google:
+naver_site_verification:
+
 # Without this, Jekyll renders dates/permalinks using the build server's
 # local timezone (UTC on GitHub's runners), not the "+0900" offset already
 # in each post's front matter — a post timestamped 03:26 KST would get
