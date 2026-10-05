@@ -58,6 +58,24 @@ Commit straight to `master`. To add a cover image via GUI: upload it into
 
 ---
 
+### Importing Pensées from the Naver blog
+
+Posts written on blog.naver.com/red_iron04 can be pulled in as-is:
+
+```
+python3 scripts/naver_import.py 224431571808=i-am-israel-too 224426652152=tenacity \
+  --meta meta.json          # optional: {"<slug>": {"tags": [...], "excerpt": "..."}}
+python3 scripts/naver_import.py --dry-run 224431571808=i-am-israel-too   # preview only
+```
+
+The number is the post's `logNo` (the last part of its URL). The script
+keeps the post's paragraphs, bold text, headings, quotes (with "— cite")
+and dividers, downloads its images to `assets/img/uploads/<slug>-N.jpg`,
+uses an opening image as the cover, and records the source URL in an
+`original:` field. Without `--meta`, fill in `tags:` and `excerpt:` by hand.
+
+---
+
 ## Projects (portfolio)
 
 **CLI:**
@@ -312,4 +330,5 @@ assets/js/geo.js          background shapes, scenes, course motifs
 assets/css/geo.css        course colours, home/About components, hub sections
 _data/robot.yml           the robot's questions and lines
 scripts/robot_face.py     pixel face -> _includes/robot-face.svg
+scripts/naver_import.py   Naver blog post -> _posts/ (Pensées)
 ```
