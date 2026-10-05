@@ -1,0 +1,126 @@
+---
+layout: "note"
+title: "트라이"
+display_title: "트라이 (Trie)"
+kind: "concept"
+kind_label: "자료구조"
+num: "14"
+course: "알고리즘"
+course_slug: "algorithms"
+course_url: "/studies/algorithms/"
+track: "알고리즘"
+updated: "2026-10-02"
+status: "verified"
+aliases: ["Trie", "Prefix Tree", "접두사 트리", "트라이 자료구조", "자동완성"]
+description: "두꺼운 사전 옆면의 ㄱ, ㄴ, ㄷ 색인 탭을 글자마다 계속 나눈 것과 같다. 단어를 첫 글자, 둘째 글자, … 순서로 갈래를 타며 저장해서, 앞부분이 같은 단어들은 같은 길을 함께 쓴다. 그래서 \"이 글자들로 시작하는 단어가 몇 개인가\"를 단어 수와 상관없이 글자 수만큼만 보고 답…"
+prev_url: "/studies/algorithms/linked-list/"
+prev_title: "연결 리스트"
+next_url: "/studies/algorithms/union-find/"
+next_title: "유니온 파인드"
+math: true
+mermaid: false
+code_count: 1
+permalink: "/studies/algorithms/trie/"
+---
+{% raw %}
+<div class="callout callout-summary" markdown="1">
+<div class="callout-title callout-title--default" markdown="span">요약</div>
+
+두꺼운 사전 옆면의 ㄱ, ㄴ, ㄷ 색인 탭을 글자마다 계속 나눈 것과 같다. 단어를 첫 글자, 둘째 글자, … 순서로 갈래를 타며 저장해서, 앞부분이 같은 단어들은 같은 길을 함께 쓴다. 그래서 "이 글자들로 시작하는 단어가 몇 개인가"를 단어 수와 상관없이 글자 수만큼만 보고 답한다. 대신 글자마다 칸을 따로 만들어 메모리를 많이 쓴다.
+
+</div>
+
+
+## 예시로 보기
+
+단어 go, gone, guild를 넣는다. 칸마다 "이 칸을 지나는 단어 수"를 적고, 단어가 끝나는 칸에 표시(★)를 한다.
+
+```
+(뿌리) 3
+  └ g 3
+     ├ o 2 ★        go
+     │  └ n 1
+     │     └ e 1 ★  gone
+     └ u 1
+        └ i 1 ─ l 1 ─ d 1 ★   guild
+```
+
+- "go로 시작하는 단어는 몇 개?" → g, o를 따라가 적힌 수 2를 읽는다.
+- "gon이 있나?" → g, o, n까지 가지만 n에 ★이 없다. gon은 없다(gone의 앞부분일 뿐).
+- 칸은 뿌리를 빼고 8개다. 단어 글자 수 합(2 + 4 + 5 = 11)보다 적은 것은 g와 o를 함께 쓰기 때문이다.
+
+```python
+def insert(root, word):
+    node = root
+    node["cnt"] += 1
+    for ch in word:
+        if ch not in node["kids"]:
+            node["kids"][ch] = {"cnt": 0, "end": False, "kids": {}}
+        node = node["kids"][ch]
+        node["cnt"] += 1          # 이 칸을 지나는 단어 수
+    node["end"] = True            # 여기서 끝나는 단어가 있다
+
+root = {"cnt": 0, "end": False, "kids": {}}
+```
+
+칸 하나를 딕셔너리로 둔다. `kids`는 글자 → 다음 칸, `cnt`는 지나는 단어 수, `end`는 단어가 여기서 끝나는지다.
+
+## 규칙과 비용
+
+**규칙:** 뿌리에서 어떤 칸까지 따라온 글자들이 그 칸의 "앞부분"이다. 각 칸의 cnt는 그 앞부분으로 시작하는 단어 수와 같다. end는 그 앞부분 자체가 단어일 때만 참이다[^1].
+
+| 일 | 비용 | 비고 |
+|---|---|---|
+| 단어 넣기 | $$O(L)$$ | L은 단어 길이 |
+| 단어가 있나 | $$O(L)$$ | 단어 수와 상관없다 |
+| 이 앞부분으로 시작하는 단어 수 | $$O(L)$$ | cnt를 적어 둔 덕분 |
+| 메모리 | 칸 수 ≤ 글자 수 합 | 파이썬 딕셔너리 칸은 무겁다 |
+
+<div class="callout callout-check" markdown="1">
+<div class="callout-title" markdown="span">검증: 예시의 cnt 값, gon이 없다는 판정, 칸 수(뿌리 포함 9개), 확인 문제 C1의 값을 코드로 확인했다. 무작위 단어 묶음 1,500개에서 "있나"와 "앞부분으로 시작하는 단어 수"가 집합과 직접 센 값과 같았다 — [14_trie_impl.py](/Hongs_Blog/studies/algorithms/code/14_trie_impl/)</div>
+
+</div>
+
+
+## 활용
+
+- **쓰는 곳:** 검색창 자동완성, 맞춤법 검사의 단어 사전, 라우터의 IP 주소 앞부분 맞추기(가장 긴 앞부분 일치)가 트라이 계열 구조를 쓴다[확인필요].
+- **고르는 기준:** "이 단어가 있나"만 물으면 [집합](/Hongs_Blog/studies/algorithms/hash-dict-set/)이 더 간단하다. "이 앞부분으로 시작하는 단어 수", "모든 단어 중 가장 긴 공통 앞부분"처럼 앞부분을 다루면 트라이다. 단어가 고정되어 있으면 정렬 + [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)으로도 앞부분 범위를 찾을 수 있다.
+- **흔한 실수:** 단어 끝 표시(end)를 두지 않아 "gon이 있다"고 답한다. 칸을 지나갈 때 cnt를 늘리는 것을 빼먹는다. 단어가 많고 길면 파이썬 딕셔너리 칸이 메모리를 많이 쓴다(글자 수 합 100만이면 칸도 최대 100만 개).
+
+## 연결
+
+- 선수: [딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/)
+- 트라이는 글자로 갈래를 치는 나무다. 값의 크기로 갈래를 치는 [이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/)와 비교해 보면, 트라이는 비교 없이 글자로 바로 내려간다.
+- 연습: [자동완성](/Hongs_Blog/studies/algorithms/pg17685/)
+- 0과 1 두 갈래만 쓰는 트라이에서 끝 표시(★)가 모두 잎에만 있으면, 어떤 단어도 다른 단어의 앞부분이 아니다. 이런 단어 묶음이 [엔트로피](/Hongs_Blog/studies/probability-statistics/entropy/)에서 말하는 접두어 부호이고, 단어 길이는 그 잎의 깊이다. 이어 붙인 비트열은 뿌리부터 내려가다 ★을 만나면 끊고 뿌리로 돌아가는 식으로 풀린다. go와 gone처럼 ★이 안쪽 칸에도 있으면, 그 ★에서 끊을지 더 내려갈지 그 자리에서 정할 수 없다.
+- 칸마다 앞부분이 하나로 정해지는 것은 트라이가 [트리](/Hongs_Blog/studies/discrete-math/trees/)라서 뿌리에서 칸까지 가는 길이 하나뿐이기 때문이다. 거꾸로 앞부분 하나에 칸도 하나뿐인 것은 한 칸의 자식들 글자가 서로 달라서다.
+
+## 확인 문제
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C1** 빈 트라이에 car, cat, cart, dog를 넣었다. "ca"로 시작하는 단어 수, "car"로 시작하는 단어 수, 그리고 뿌리를 포함한 칸 수는?</summary>
+
+**답:** ca → 3(car, cat, cart), car → 2(car, cart), 칸은 9개다. 뿌리, c-a-r, cat의 t, cart의 t(r 아래), d-o-g다. car와 cart는 c-a-r을 함께 쓴다.
+
+</details>
+
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C2** 단어가 100만 개 들어 있어도 "abc로 시작하는 단어 수"를 세 칸만 보고 답할 수 있는 까닭은?</summary>
+
+**답:** 트라이에서 abc로 시작하는 단어는 모두 뿌리 → a → b → c 길을 지난다. 넣을 때 그 길의 칸마다 cnt를 1씩 늘렸으니, c 칸의 cnt가 곧 답이다. 단어를 하나씩 볼 필요가 없다.
+
+</details>
+
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C3** 다음 두 일에 집합과 트라이 중 무엇이 알맞은가? (가) 금지어 목록에 이 단어가 있는지 확인한다. (나) 사용자가 글자를 칠 때마다 "지금까지 친 글자로 시작하는 단어 수"를 보여 준다.</summary>
+
+**답:** (가)는 집합이다. 있나 없나만 물으니 평균 $$O(L)$$ 해시로 충분하고 코드도 짧다. (나)는 트라이다. 앞부분으로 시작하는 단어 수를 집합으로 세려면 모든 단어를 훑어야 한다. 트라이는 친 글자만큼 내려가 cnt를 읽는다.
+
+</details>
+
+
+[^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 26.2 "Trie structure": 공통 앞부분을 공유하는 뿌리 있는 나무이고, 끝 표시(*)가 필요하며(THE와 THERE), 길이 n인 문자열의 확인·추가가 O(n)이고, 칸에 추가 정보를 적어 둘 수 있다.
+{% endraw %}

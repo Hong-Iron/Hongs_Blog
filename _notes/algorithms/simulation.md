@@ -1,0 +1,146 @@
+---
+layout: "note"
+title: "구현과 시뮬레이션"
+display_title: "구현과 시뮬레이션 (Implementation and Simulation)"
+kind: "concept"
+kind_label: "기법"
+num: "08"
+course: "알고리즘"
+course_slug: "algorithms"
+course_url: "/studies/algorithms/"
+track: "알고리즘"
+updated: "2026-10-02"
+status: "verified"
+aliases: ["Implementation", "Simulation", "구현", "시뮬레이션", "격자", "방향 배열", "맨해튼 거리", "행렬 회전"]
+description: "보드게임 규칙서를 한 줄씩 읽으며 말을 옮기는 것처럼, 시뮬레이션은 문제에 적힌 규칙을 그대로 한 단계씩 코드로 옮긴다. 기발한 아이디어는 거의 필요 없고, 규칙을 하나도 빠뜨리지 않는 꼼꼼함이 전부다. 대신 규칙이 많아서 한 줄만 잘못 옮겨도 틀리고, 단계 수가 너무 많으면 시간…"
+prev_url: "/studies/algorithms/time-conversion/"
+prev_title: "시간·날짜 계산"
+next_url: "/studies/algorithms/bit-operations/"
+next_title: "비트 연산과 비트마스크"
+math: true
+mermaid: false
+code_count: 1
+permalink: "/studies/algorithms/simulation/"
+---
+{% raw %}
+<div class="callout callout-summary" markdown="1">
+<div class="callout-title callout-title--default" markdown="span">요약</div>
+
+보드게임 규칙서를 한 줄씩 읽으며 말을 옮기는 것처럼, 시뮬레이션은 문제에 적힌 규칙을 그대로 한 단계씩 코드로 옮긴다. 기발한 아이디어는 거의 필요 없고, 규칙을 하나도 빠뜨리지 않는 꼼꼼함이 전부다. 대신 규칙이 많아서 한 줄만 잘못 옮겨도 틀리고, 단계 수가 너무 많으면 시간 안에 끝나지 않는다.
+
+</div>
+
+
+## 예시로 보기
+
+3 × 3 격자의 가운데 (1, 1)에 말이 있다. "위, 위, 오른쪽"으로 움직이되 격자 밖으로 나가는 명령은 무시한다.
+
+| 명령 | 가려는 칸 | 격자 안? | 말의 위치 |
+|---|---|---|---|
+| (시작) | | | (1, 1) |
+| 위 | (0, 1) | 예 | (0, 1) |
+| 위 | (−1, 1) | 아니오, 무시 | (0, 1) |
+| 오른쪽 | (0, 2) | 예 | (0, 2) |
+
+격자 칸은 (행, 열)로 적는다. 행은 위에서 아래로, 열은 왼쪽에서 오른쪽으로 0부터 센다. 그래서 "위"는 행 번호가 1 줄고, "오른쪽"은 열 번호가 1 는다.
+
+## 방향 배열
+
+네 방향을 `if` 네 개로 쓰는 대신, 방향마다 "행이 얼마나, 열이 얼마나 바뀌는가"를 리스트에 적는다.
+
+```python
+dr = [-1, 1, 0, 0]      # 위, 아래, 왼쪽, 오른쪽의 행 변화
+dc = [0, 0, -1, 1]      # 같은 순서의 열 변화
+n = 3
+r, c = 1, 1
+for d in range(4):
+    nr, nc = r + dr[d], c + dc[d]
+    if 0 <= nr < n and 0 <= nc < n:     # 격자 안인지 먼저 본다
+        print(nr, nc)                   # (0,1) (2,1) (1,0) (1,2)
+```
+
+격자 안인지는 반드시 칸을 꺼내기 **전에** 본다. 파이썬에서 `grid[-1]`은 오류 없이 맨 끝 줄을 꺼내 버린다. 그래서 검사를 빼먹어도 오류가 나지 않고 조용히 틀린 답이 나온다.
+
+두 칸 사이의 **맨해튼 거리**는 상하좌우로만 움직일 때의 칸 수다. 식으로는 $$\vert r_1 - r_2\vert  + \vert c_1 - c_2\vert $$다. 키패드, 좌석 거리처럼 "상하좌우 이동" 문제에 자주 나온다.
+
+## 격자를 돌리고 뒤집기
+
+- 위아래 뒤집기: `a[::-1]`
+- 행과 열 바꾸기(전치): `[list(row) for row in zip(*a)]`. `zip(*a)`는 각 줄의 같은 번호 칸끼리 묶는다[^1].
+- 시계 방향 90도 회전: 위아래를 뒤집은 뒤 전치한다. `[list(row) for row in zip(*a[::-1])]`
+
+```
+원래        시계 방향 90도
+1 2 3       7 4 1
+4 5 6  →    8 5 2
+7 8 9       9 6 3
+```
+
+원래 (r, c)에 있던 값은 돌린 뒤 (c, n − 1 − r)로 간다. 1은 (0, 0)에서 (0, 2)로, 7은 (2, 0)에서 (0, 0)으로 간다.
+
+## 실수를 줄이는 순서
+
+1. 문제의 규칙을 번호를 매겨 따로 적는다. 예외("밖이면 무시", "같으면 먼저 것") 하나하나가 번호가 된다.
+2. 지금 상태를 담을 변수(위치, 남은 체력, 바구니 등)를 정한다.
+3. 한 단계에 하는 일을 함수나 짧은 코드 덩어리로 만든다.
+4. 문제의 예시를 표로 한 단계씩 따라가며 코드의 중간값과 비교한다.
+5. 단계 수 × 한 단계의 비용이 천만 번을 넘지 않는지 센다.
+
+<div class="callout callout-check" markdown="1">
+<div class="callout-title" markdown="span">검증: 예시 표의 이동, 방향 배열로 찾은 이웃 네 칸, 맨해튼 거리, 회전 공식 (r, c) → (c, n − 1 − r)을 1 × 1부터 6 × 6까지의 무작위 격자 500개에서 `zip(*a[::-1])` 결과와 비교해 확인했다. `grid[-1]`이 오류 없이 끝 줄을 돌려주는 것도 확인했다 — [08_simulation_verify.py](/Hongs_Blog/studies/algorithms/code/08_simulation_verify/)</div>
+
+</div>
+
+
+## 활용
+
+- 게임 규칙, 기계 동작, 키패드, 인형뽑기, 체력 회복처럼 "이렇게 하면 이렇게 된다"가 길게 적힌 문제다.
+- 카카오 코딩테스트의 앞쪽 문제에 많다. 알고리즘보다 꼼꼼함과 속도를 본다.
+- 자주 하는 실수: 격자 밖 검사를 빼먹는다. 행과 열(`r`, `c`)을 뒤바꾼다. 한 단계 안에서 바뀐 값을 같은 단계에서 다시 읽는다. 여러 칸이 "동시에" 바뀌는 규칙이면 새 격자에 쓰고 마지막에 바꿔 끼운다.
+
+## 연결
+
+- 선수: [리스트와 문자열](/Hongs_Blog/studies/algorithms/list-string/)의 2차원 리스트
+- 같이 쓰는 개념: [시간·날짜 계산](/Hongs_Blog/studies/algorithms/time-conversion/), [스택](/Hongs_Blog/studies/algorithms/stack/)
+- 범위 검사를 `and`의 앞에 두면 안전한 까닭은 단락 평가다. "거짓 그리고 무엇이든"은 늘 거짓이라($$F \wedge b = F$$), 앞이 거짓이면 뒤 조건은 결과를 바꾸지 못한다. 그래서 파이썬은 뒤 조건을 아예 계산하지 않는다([명제와 논리 연산](/Hongs_Blog/studies/discrete-math/propositional-logic/)).
+- `zip(*a)`로 만드는 전치는 [행렬 곱셈과 전치](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/)의 $$A^\top$$이다. $$(A^\top)_{ij} = a_{ji}$$라서 직사각형 격자는 행 수와 열 수가 맞바뀐다.
+- 위아래 뒤집기와 전치는 둘 다 반사(뒤집기)이고, 반사 두 번을 이으면 회전이 된다. 순서를 바꿔 전치부터 하면(`list(zip(*a))[::-1]`) 반시계 방향으로 돈다. 회전식 (c, n − 1 − r)은 회전 행렬이 주는 (c, −r)을 열 쪽으로 n − 1칸 옮긴 것이다. 이 평행이동은 선형변환이 아니라서 행렬 곱만으로는 나오지 않는다([선형변환](/Hongs_Blog/studies/linear-algebra/linear-transformations/)).
+- 맨해튼 거리는 두 칸의 차이 $$(r_1 - r_2, c_1 - c_2)$$의 1-노름이다. 벽이 없는 격자에서 대각선 이동도 한 걸음으로 치면, 최소 걸음 수는 $$\max(\vert r_1 - r_2\vert , \vert c_1 - c_2\vert )$$로 $$\infty$$-노름이 된다([노름과 조건수](/Hongs_Blog/studies/linear-algebra/conditioning/)).
+- 같은 격자 연산을 다른 수학으로도 읽는다. 방향 배열의 `(dr[d], dc[d])`는 지금 칸의 위치에 더하는 이동 벡터다([벡터](/Hongs_Blog/studies/linear-algebra/vectors/)). `zip(*a[::-1])`에서 괄호 안쪽의 뒤집기를 먼저 하는 것은 합성 $$g \circ f$$에서 오른쪽의 $$f$$를 먼저 하는 것과 같다([함수의 변환과 합성](/Hongs_Blog/studies/college-math/function-transformation/)). 칸 $$(r, c)$$를 복소수 $$r + ci$$로 보면, 위의 (c, −r)은 $$-i$$를 곱한 결과다([복소수의 극형식과 오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/)).
+- 브리지: [격자 회전 ↔ 선형변환](/Hongs_Blog/studies/algorithms/grid-rotation-linear/)
+- 연습: [키패드 누르기](/Hongs_Blog/studies/algorithms/pg67256/), [붕대 감기](/Hongs_Blog/studies/algorithms/pg250137/), [크레인 인형뽑기 게임](/Hongs_Blog/studies/algorithms/pg64061/), [셔틀버스](/Hongs_Blog/studies/algorithms/pg17678/), [기둥과 보 설치](/Hongs_Blog/studies/algorithms/pg60061/), [블록 게임](/Hongs_Blog/studies/algorithms/pg42894/)
+
+## 확인 문제
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C1** 4 × 4 격자에서 (0, 3)의 이웃 중 격자 안에 있는 칸을 방향 배열 순서(위, 아래, 왼쪽, 오른쪽)대로 적어라.</summary>
+
+**답:** (1, 3), (0, 2). 위(−1, 3)와 오른쪽(0, 4)은 격자 밖이다.
+
+</details>
+
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C2** `if grid[nr][nc] == 1 and 0 <= nr < n:`처럼 칸을 먼저 꺼내고 범위를 나중에 보면 어떤 문제가 생기는가?</summary>
+
+**답:** nr이 n이면 `IndexError`로 멈추고, nr이 −1이면 오류 없이 맨 끝 줄을 읽어 조용히 틀린다. `and`는 앞이 거짓이면 뒤를 보지 않으므로, 범위 검사를 앞에 두어야 안전하다.
+
+</details>
+
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C3** 2 × 3 격자 `[[1, 2, 3], [4, 5, 6]]`을 시계 방향으로 90도 돌린 결과를 그림으로 그리고, `zip(*a[::-1])`로 확인하라.</summary>
+
+**답:**
+```
+4 1
+5 2
+6 3
+```
+`a[::-1]`은 `[[4, 5, 6], [1, 2, 3]]`이고, 같은 번호 칸끼리 묶으면 (4, 1), (5, 2), (6, 3)이다. 3 × 2 격자가 된다.
+
+</details>
+
+
+[^1]: Python 3 공식 튜토리얼 5.1.4 "Nested List Comprehensions": 행렬의 행과 열을 바꾸는 예로 `list(zip(*matrix))`를 보인다.
+{% endraw %}

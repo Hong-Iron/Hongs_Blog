@@ -7,7 +7,7 @@ layout: default
 {% assign posts = posts | sort: "date" | reverse %}
 
 <div class="page-intro container reveal">
-  <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{{ posts.size }} {{ cat.name | default: page.category }}</span>
+  <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{% if page.eyebrow %}{{ page.eyebrow }}{% else %}{{ posts.size }} {{ cat.name | default: page.category }}{% endif %}</span>
   <h1 class="page-intro__title">{{ cat.name | default: page.category }}</h1>
   {% if cat.description %}<p class="page-intro__desc">{{ cat.description }}</p>{% endif %}
 </div>
@@ -30,7 +30,7 @@ layout: default
         </a>
       {% endfor %}
     </div>
-  {% else %}
+  {% elsif trimmed_content.size == 0 %}
     <p class="lede" style="padding: 3rem 0;">Nothing posted here yet — run <code>python3 scripts/blog.py post new "Title" --category {{ page.category }}</code> to add the first one.</p>
   {% endif %}
 </div>

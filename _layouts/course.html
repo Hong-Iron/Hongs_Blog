@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="note note--course">
+  <header class="article-header container note-header">
+    <nav class="note-crumbs" aria-label="Breadcrumb">
+      <a href="{{ '/studies/' | relative_url }}">Studies</a>
+      <span aria-hidden="true">/</span>
+      <span>{{ page.track }}</span>
+    </nav>
+    <span class="eyebrow tag" style="--tag-color: var(--accent-ochre)">로드맵</span>
+    <h1 class="article-header__title note-title">{{ page.display_title | default: page.title }}</h1>
+    <dl class="article-meta">
+      <div><dt>개념</dt><dd>{{ page.concepts }}</dd></div>
+      <div><dt>연습</dt><dd>{{ page.practices }}</dd></div>
+      <div><dt>코드</dt><dd>{{ page.codes }}</dd></div>
+    </dl>
+  </header>
+
+  <div class="article-body note-body container">
+    {{ content }}
+  </div>
+</article>

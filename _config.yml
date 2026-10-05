@@ -34,6 +34,10 @@ collections:
   projects:
     output: true
     permalink: /projects/:slug/
+  # Study notes exported from the Obsidian vault by scripts/vault_export.py.
+  # Each file sets its own permalink under /studies/.
+  notes:
+    output: true
 
 defaults:
   - scope:
@@ -46,6 +50,12 @@ defaults:
       type: projects
     values:
       layout: project
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+      excerpt_separator: ""   # notes are wrapped in {% raw %}; excerpts would split it
 
 plugins:
   - jekyll-feed

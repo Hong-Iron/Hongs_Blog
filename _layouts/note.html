@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="note">
+  <header class="article-header container note-header">
+    <nav class="note-crumbs" aria-label="Breadcrumb">
+      <a href="{{ '/studies/' | relative_url }}">Studies</a>
+      <span aria-hidden="true">/</span>
+      <a href="{{ page.course_url | relative_url }}">{{ page.course }}</a>
+    </nav>
+    <span class="eyebrow tag" style="--tag-color: var(--accent-ochre)">{{ page.kind_label }}</span>
+    <h1 class="article-header__title note-title">{{ page.display_title | default: page.title }}</h1>
+    {% if page.aliases and page.aliases.size > 0 %}
+      <p class="note-aliases">{{ page.aliases | slice: 0, 4 | join: " · " }}{% if page.aliases.size > 4 %} …{% endif %}</p>
+    {% endif %}
+    <dl class="article-meta">
+      {% if page.parent_url %}<div><dt>문서</dt><dd><a href="{{ page.parent_url | relative_url }}">{{ page.parent_title }}</a></dd></div>{% endif %}
+      {% if page.updated %}<div><dt>Updated</dt><dd>{{ page.updated | date: "%Y-%m-%d" }}</dd></div>{% endif %}
+    </dl>
+  </header>
+
+  <div class="article-body note-body container">
+    {{ content }}
+  </div>
+</article>
+
+{% if page.prev_url or page.next_url %}
+  <nav class="article-nav container note-nav" aria-label="Note navigation">
+    {% if page.prev_url %}
+      <a href="{{ page.prev_url | relative_url }}">
+        <span class="article-nav__label">Previous</span>{{ page.prev_title }}
+      </a>
+    {% else %}<span></span>{% endif %}
+    {% if page.next_url %}
+      <a class="article-nav__next" href="{{ page.next_url | relative_url }}">
+        <span class="article-nav__label">Next</span>{{ page.next_title }}
+      </a>
+    {% endif %}
+  </nav>
+{% endif %}
