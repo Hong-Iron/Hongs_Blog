@@ -187,35 +187,226 @@
 
   var MOTIFS = {};
 
-  // Home, About, Studies hub: drifting primitives that dodge the pointer.
-  // In the "night" scene they shrink into a starfield.
+  /* -- the morphing shape field (Home, About, Studies hub) --------------- */
+
+  // Every shape is an outline of NP points spaced evenly along its edge,
+  // centred, scaled to radius 1, clockwise and starting at the top, so any
+  // two shapes can be blended point by point while you scroll.
+  var NP = 40;
+
+  function resample(raw) {
+    var n = raw.length, segs = [], total = 0, i;
+    for (i = 0; i < n; i++) {
+      var a = raw[i], b = raw[(i + 1) % n];
+      var d = Math.sqrt((b[0] - a[0]) * (b[0] - a[0]) + (b[1] - a[1]) * (b[1] - a[1]));
+      segs.push(d);
+      total += d;
+    }
+    var pts = [], acc = 0, k = 0;
+    for (i = 0; i < NP; i++) {
+      var target = i * total / NP;
+      while (k < n - 1 && acc + segs[k] < target) { acc += segs[k]; k++; }
+      var f = segs[k] ? (target - acc) / segs[k] : 0, p = raw[k], q = raw[(k + 1) % n];
+      pts.push([lerp(p[0], q[0], f), lerp(p[1], q[1], f)]);
+    }
+    var x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    pts.forEach(function (p) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); });
+    var cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, r = 0, area = 0;
+    pts = pts.map(function (p) { return [p[0] - cx, p[1] - cy]; });
+    pts.forEach(function (p, j) {
+      r = Math.max(r, Math.sqrt(p[0] * p[0] + p[1] * p[1]));
+      var q2 = pts[(j + 1) % NP];
+      area += p[0] * q2[1] - q2[0] * p[1];
+    });
+    if (area < 0) pts.reverse();
+    var start = 0, best = Infinity;
+    pts.forEach(function (p, j) {
+      var off = Math.abs(Math.atan2(p[1], p[0]) + Math.PI / 2);
+      if (off < best) { best = off; start = j; }
+    });
+    var out = new Float64Array(NP * 2);
+    for (i = 0; i < NP; i++) {
+      var s = pts[(start + i) % NP];
+      out[2 * i] = s[0] / r;
+      out[2 * i + 1] = s[1] / r;
+    }
+    return out;
+  }
+
+  function ngon(n, r0, r1) {
+    var pts = [], m = r1 ? n * 2 : n;
+    for (var i = 0; i < m; i++) {
+      var a = -Math.PI / 2 + i * TAU / m, r = r1 && i % 2 ? r1 : r0;
+      pts.push([Math.cos(a) * r, Math.sin(a) * r]);
+    }
+    return pts;
+  }
+
+  function polar(fn, n) {
+    var pts = [];
+    for (var i = 0; i < (n || 64); i++) {
+      var a = -Math.PI / 2 + i * TAU / (n || 64), r = fn(a);
+      pts.push([Math.cos(a) * r, Math.sin(a) * r]);
+    }
+    return pts;
+  }
+
+  // a closed band between two curves: along `top` left to right, back along `bottom`
+  function band(top, bottom, x0, x1) {
+    var pts = [], i, x;
+    for (i = 0; i <= 40; i++) { x = lerp(x0, x1, i / 40); pts.push([x, top(x)]); }
+    for (i = 40; i >= 0; i--) { x = lerp(x0, x1, i / 40); pts.push([x, bottom(x)]); }
+    return pts;
+  }
+
+  function arcPts(cx, cy, r, a0, a1, n) {
+    var pts = [];
+    for (var i = 0; i <= n; i++) {
+      var a = lerp(a0, a1, i / n);
+      pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]);
+    }
+    return pts;
+  }
+
+  var RECT = function (w, h) { return [[0, -h], [w, -h], [w, h], [-w, h], [-w, -h]]; };
+  var A53 = Math.atan2(0.8, 0.6), A77 = Math.atan2(0.8, 0.18);
+
+  // [outline, filled (1) or drawn as a line (0), size factor]
+  var SHAPE_DEFS = {
+    circle: [polar(function () { return 1; }), 1, 1],
+    ring: [polar(function () { return 1; }), 0, 0.95],
+    dot: [polar(function () { return 1; }), 1, 0.42],
+    tri: [ngon(3, 1), 1, 1],
+    square: [RECT(1, 1), 1, 0.85],
+    tile: [RECT(1, 1), 1, 0.7],
+    squareOutline: [RECT(1, 1), 0, 0.9],
+    diamond: [ngon(4, 1), 1, 0.9],
+    hexagon: [ngon(6, 1), 1, 0.85],
+    star5: [ngon(5, 1, 0.45), 1, 0.8],
+    sparkle: [ngon(4, 1, 0.3), 1, 0.85],
+    plus: [[[-0.3, -1], [0.3, -1], [0.3, -0.3], [1, -0.3], [1, 0.3], [0.3, 0.3], [0.3, 1], [-0.3, 1], [-0.3, 0.3], [-1, 0.3], [-1, -0.3], [-0.3, -0.3]], 1, 0.9],
+    semi: [arcPts(0, 0, 1, Math.PI, TAU, 32), 1, 1],
+    wedge: [[[0, 0]].concat(arcPts(0, 0, 1, -Math.PI / 2, 0, 24)), 1, 0.95],
+    bar: [RECT(0.28, 1), 1, 1.05],
+    tallbar: [RECT(0.17, 1.3), 1, 1.15],
+    packet: [RECT(1, 0.55), 1, 0.85],
+    wave: [band(function (x) { return -0.18 + 0.3 * Math.sin(x * Math.PI * 1.5); }, function (x) { return 0.18 + 0.3 * Math.sin(x * Math.PI * 1.5); }, -1, 1), 1, 1.1],
+    arch: [band(function (x) { return 0.45 - 1.1 * Math.cos(x * Math.PI / 2); }, function () { return 0.45; }, -1, 1), 1, 0.95],
+    bell: [band(function (x) { return 0.5 - 1.3 * Math.exp(-x * x / 0.2); }, function () { return 0.5; }, -1.2, 1.2), 1, 1.05],
+    dice: [polar(function (a) { return Math.pow(Math.pow(Math.abs(Math.cos(a)), 4) + Math.pow(Math.abs(Math.sin(a)), 4), -0.25); }), 1, 0.85],
+    drop: [(function () { var p = []; for (var i = 0; i < 64; i++) { var t = i / 64 * TAU; p.push([0.85 * Math.sin(t) * Math.sin(t / 2), -Math.cos(t)]); } return p; })(), 1, 0.95],
+    crescent: [arcPts(0, 0, 1, -A53, -TAU + A53, 40).concat(arcPts(0.42, 0, 0.82, -TAU + A77, -A77, 30)), 1, 0.95],
+    blob: [polar(function (a) { return 1 + 0.16 * Math.sin(3 * a + 0.7) + 0.09 * Math.sin(5 * a + 2.1); }), 1, 1],
+    butterfly: [polar(function (a) { var b = a + Math.PI / 2; return 0.55 + 0.4 * Math.pow(Math.abs(Math.sin(b)), 0.7) + 0.1 * Math.cos(4 * b); }), 1, 1.05],
+    eye: [band(function (x) { return -0.55 * Math.pow(1 - x * x, 0.8); }, function (x) { return 0.55 * Math.pow(1 - x * x, 0.8); }, -1, 1), 1, 1.05],
+    arrow: [[[-1, -0.16], [0.2, -0.16], [0.2, -0.6], [1, 0], [0.2, 0.6], [0.2, 0.16], [-1, 0.16]], 1, 1.05],
+    parallelogram: [[[-0.55, -0.6], [1, -0.6], [0.55, 0.6], [-1, 0.6]], 1, 0.95],
+    capsule: [arcPts(0.6, 0, 0.4, -Math.PI / 2, Math.PI / 2, 16).concat(arcPts(-0.6, 0, 0.4, Math.PI / 2, Math.PI * 1.5, 16)), 1, 1],
+    chevron: [[[0.35, -1], [0.8, -0.65], [0.12, 0], [0.8, 0.65], [0.35, 1], [-0.6, 0]], 1, 0.9],
+    stairs: [[[-1, 1], [-1, 0.33], [-0.33, 0.33], [-0.33, -0.33], [0.33, -0.33], [0.33, -1], [1, -1], [1, 1]], 1, 0.9]
+  };
+
+  var SHAPES = {};
+  Object.keys(SHAPE_DEFS).forEach(function (k) {
+    var d = SHAPE_DEFS[k];
+    SHAPES[k] = { pts: resample(d[0]), fill: d[1], size: d[2] };
+  });
+
+  // Page scenes. Course scenes are added at start-up from the course colours
+  // in geo.css, so each course keeps its own shapes everywhere.
+  var PAPER = { bg: "#f5efe4", bgAlt: "#ece2cd", card: "#faf6ee", ink: "#221f1a", inkMuted: "#6b6255", rule: "#d9cdb4", accent: "#b0432c", accentInk: "#fbf3ea" };
+
+  function sceneColors(over) {
+    var out = {};
+    Object.keys(PAPER).forEach(function (k) { out[k] = parseColor((over && over[k]) || PAPER[k]); });
+    return out;
+  }
+
+  var SCENES = {
+    paper: { colors: sceneColors(), palette: ["#b0432c", "#c9952e", "#2f4858", "#6f8a4d"], vocab: ["circle", "tri", "square", "semi", "plus"], size: 1 },
+    linen: {
+      colors: sceneColors({ bg: "#e8e7df", bgAlt: "#d9d8cc", card: "#f3f2ec", rule: "#cbc8b8" }),
+      palette: ["#2f4858", "#5d86a3", "#b0432c", "#c9952e"], vocab: ["squareOutline", "plus", "ring", "diamond"], size: 0.95
+    },
+    sage: {
+      colors: sceneColors({ bg: "#e6eadc", bgAlt: "#d6dcc6", card: "#f1f3e9", rule: "#c3cbaf" }),
+      palette: ["#59713f", "#8fae6a", "#1f6874", "#c9952e"],
+      vocab: ["wave", "hexagon", "arrow", "bell", "bar", "chevron", "blob", "packet", "sparkle"], size: 0.95
+    },
+    night: {
+      dark: true, stars: 1, size: 0.5,
+      colors: sceneColors({ bg: "#17161d", bgAlt: "#221f2b", card: "#1f1c27", ink: "#ece6d8", inkMuted: "#aaa3b5", rule: "#34303f", accent: "#e8925c", accentInk: "#17161d" }),
+      palette: ["#f1e7d0", "#e8925c", "#b892ba", "#8fb3c7"], vocab: ["star5", "sparkle", "dot", "crescent"]
+    }
+  };
+
+  var COURSE_SHAPES = {
+    "abnormal-psychology": ["blob", "drop", "butterfly", "crescent"],
+    "computer-communication": ["packet", "diamond", "ring", "dot"],
+    "human-interface-media": ["circle", "eye", "sparkle"],
+    "college-math": ["wave", "wedge", "semi"],
+    "discrete-math": ["hexagon", "tri", "capsule"],
+    "calculus": ["bar", "arch", "tallbar"],
+    "linear-algebra": ["arrow", "parallelogram", "squareOutline"],
+    "probability-statistics": ["bell", "dice", "dot"],
+    "algorithms": ["chevron", "tile", "stairs"]
+  };
+
+  function mixHex(a, b, f) {
+    var x = parseColor(a), y = parseColor(b);
+    return "rgb(" + [0, 1, 2].map(function (i) { return Math.round(lerp(y[i], x[i], f)); }).join(",") + ")";
+  }
+
+  function addCourseScenes() {
+    var probe = document.createElement("span");
+    probe.hidden = true;
+    body.appendChild(probe);
+    Object.keys(COURSE_SHAPES).forEach(function (slug) {
+      probe.setAttribute("data-course", slug);
+      var cs = getComputedStyle(probe);
+      var c = cs.getPropertyValue("--course").trim() || PAPER.accent;
+      var c2 = cs.getPropertyValue("--course-2").trim() || "#c9952e";
+      SCENES[slug] = {
+        colors: sceneColors({ bg: mixHex(c, PAPER.bg, 0.08), bgAlt: mixHex(c, PAPER.bgAlt, 0.1), card: mixHex(c, PAPER.card, 0.04), rule: mixHex(c, PAPER.rule, 0.18), accent: c }),
+        palette: slug === "human-interface-media" ? ["#00a9cc", "#d6398b", "#e9b81f", c] : [c, c2, "#2f4858", "#c9952e"],
+        vocab: COURSE_SHAPES[slug], size: 1
+      };
+    });
+    body.removeChild(probe);
+    Object.keys(SCENES).forEach(function (k) { SCENES[k].rgb = SCENES[k].palette.map(parseColor); });
+  }
+
   MOTIFS.confetti = {
     ambient: true,
     pointer: true,
     setup: function (L, rand) {
-      var kinds = ["circle", "ring", "tri", "square", "semi", "plus", "zig", "dots"];
       var n = clamp(Math.round(L.W * L.H / 26000), 14, 58), list = [], stars = [];
       for (var i = 0; i < n; i++) {
         list.push({
           x: rand() * L.W, y: rand() * (L.H + 240) - 120, z: 0.35 + rand() * 0.65,
-          s: 14 + rand() * 42, k: kinds[(rand() * kinds.length) | 0], r: rand() * TAU,
+          s: 14 + rand() * 42, slot: (rand() * 9973) | 0, r: rand() * TAU,
           spin: rand() - 0.5, c: (rand() * 4) | 0, ph: rand() * TAU, ox: 0, oy: 0
         });
       }
       for (var j = 0; j < 110; j++) {
         stars.push({ x: rand() * L.W, y: rand() * L.H, r: 0.5 + rand() * 1.5, ph: rand() * TAU, sp: 0.5 + rand() * 2 });
       }
-      return { list: list, stars: stars };
+      return { list: list, stars: stars, buf: new Float64Array(NP * 2) };
     },
     draw: function (ctx, L, S, F) {
-      var cols = [F.pal.a, F.pal.b, F.pal.c, F.pal.d], span = L.H + 240, night = F.night;
-      if (night > 0.02) {
+      var mix = F.mix || [{ s: SCENES.paper, w: 1 }], span = L.H + 240, buf = S.buf, i, m;
+      var starW = 0, sceneSize = 0;
+      mix.forEach(function (e) { starW += e.w * (e.s.stars || 0); sceneSize += e.w * (e.s.size || 1); });
+      if (starW > 0.02) {
+        var sc = [0, 0, 0];
+        mix.forEach(function (e) { for (var q = 0; q < 3; q++) sc[q] += e.w * e.s.rgb[0][q]; });
         S.stars.forEach(function (st) {
-          ctx.fillStyle = rgba(F.pal.a, night * (0.2 + 0.6 * (0.5 + 0.5 * Math.sin(F.t * st.sp + st.ph))));
+          ctx.fillStyle = rgba(sc, starW * (0.2 + 0.6 * (0.5 + 0.5 * Math.sin(F.t * st.sp + st.ph))));
           circle(ctx, st.x, st.y, st.r);
           ctx.fill();
         });
       }
+      ctx.lineJoin = "round";
       S.list.forEach(function (o) {
         var y = ((o.y - F.scroll * 0.35 * o.z) % span + span) % span - 120;
         var x = o.x + Math.sin(F.t * 0.25 * o.z + o.ph) * 10 * o.z;
@@ -230,14 +421,34 @@
         }
         o.ox += (tx - o.ox) * 0.1;
         o.oy += (ty - o.oy) * 0.1;
-        var size = o.s * (0.55 + 0.45 * o.z) * (1 - 0.6 * night);
+
+        // blend this particle's shape, colour, size and fill across the scenes in view
+        var col = [0, 0, 0], fill = 0, kSize = 0;
+        for (i = 0; i < NP * 2; i++) buf[i] = 0;
+        for (m = 0; m < mix.length; m++) {
+          var e = mix[m], sh = SHAPES[e.s.vocab[o.slot % e.s.vocab.length]], rgb = e.s.rgb[o.c];
+          for (i = 0; i < NP * 2; i++) buf[i] += e.w * sh.pts[i];
+          col[0] += e.w * rgb[0]; col[1] += e.w * rgb[1]; col[2] += e.w * rgb[2];
+          fill += e.w * sh.fill;
+          kSize += e.w * sh.size;
+        }
+        var size = o.s * (0.55 + 0.45 * o.z) * sceneSize * kSize, r = size / 2;
         ctx.save();
         ctx.translate(x + o.ox, y + o.oy);
         ctx.rotate(o.r + F.scroll * 0.004 * o.spin + F.t * 0.15 * o.spin);
-        ctx.fillStyle = rgba(cols[o.c], 0.32 + 0.4 * o.z);
-        ctx.strokeStyle = rgba(cols[o.c], 0.45 + 0.4 * o.z);
-        ctx.lineWidth = Math.max(1.5, size * 0.13);
-        shape(ctx, o.k, size);
+        ctx.beginPath();
+        ctx.moveTo(buf[0] * r, buf[1] * r);
+        for (i = 1; i < NP; i++) ctx.lineTo(buf[2 * i] * r, buf[2 * i + 1] * r);
+        ctx.closePath();
+        if (fill > 0.02) {
+          ctx.fillStyle = rgba(col, (0.32 + 0.4 * o.z) * fill);
+          ctx.fill();
+        }
+        if (fill < 0.98) {
+          ctx.strokeStyle = rgba(col, (0.5 + 0.4 * o.z) * (1 - fill));
+          ctx.lineWidth = Math.max(1.6, size * 0.12);
+          ctx.stroke();
+        }
         ctx.restore();
       });
     }
@@ -789,7 +1000,20 @@
   /* page background                                                     */
   /* ------------------------------------------------------------------ */
 
-  var sceneHook = null;
+  function luminance(c) {
+    var v = c.map(function (x) { x /= 255; return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4); });
+    return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2];
+  }
+
+  function contrast(a, b) {
+    var x = luminance(a), y = luminance(b);
+    return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
+  }
+
+  function smooth(f) {
+    f = clamp(f, 0, 1);
+    return f * f * (3 - 2 * f);
+  }
 
   function startBackground(canvas, theme) {
     var ctx = canvas.getContext("2d");
@@ -797,7 +1021,86 @@
     var masked = canvas.classList.contains("geo-canvas--masked");
     var bandEl = document.querySelector("[data-geo-band]");
     var dpr = 1, W = 0, H = 0, L = null, S = null, raf = 0, ptr = null, t0 = performance.now();
-    var pal = readPalette(body), palFrom = pal, palTo = pal, palStart = 0, night = 0, nightTo = 0;
+    var pal = readPalette(body);
+
+    // Scenes: sections marked data-scene="…" blend into each other in
+    // proportion to how far you've scrolled, so colours and shapes morph
+    // continuously instead of switching at a threshold.
+    var sceneEls = [].slice.call(document.querySelectorAll("[data-scene]"));
+    var segs = [], hoverName = null, hoverScene = null, hoverW = 0;
+
+    function measure() {
+      segs = sceneEls.map(function (el) {
+        var r = el.getBoundingClientRect();
+        return { top: r.top + window.scrollY, bottom: r.bottom + window.scrollY, s: SCENES[el.getAttribute("data-scene")] };
+      }).filter(function (g) { return g.s; }).sort(function (a, b) { return a.top - b.top; });
+      if (segs.length && segs[0].top > H * 0.5) segs.unshift({ top: 0, bottom: segs[0].top, s: SCENES.paper });
+    }
+
+    function scrollMix() {
+      if (!segs.length) return [{ s: SCENES.paper, w: 1 }];
+      var y = window.scrollY + H * 0.5;
+      for (var k = 0; k < segs.length - 1; k++) {
+        var A = segs[k], B = segs[k + 1], b = (A.bottom + B.top) / 2;
+        var T = clamp(Math.min(A.bottom - A.top, B.bottom - B.top) / 2, 60, H * 0.4);
+        if (y < b - T) return [{ s: A.s, w: 1 }];
+        if (y <= b + T) {
+          var w = smooth((y - (b - T)) / (2 * T));
+          return [{ s: A.s, w: 1 - w }, { s: B.s, w: w }];
+        }
+      }
+      return [{ s: segs[segs.length - 1].s, w: 1 }];
+    }
+
+    function currentMix() {
+      var mix = scrollMix();
+      if (hoverScene && hoverW > 0.001) {
+        mix = mix.map(function (e) { return { s: e.s, w: e.w * (1 - hoverW) }; });
+        mix.push({ s: hoverScene, w: hoverW });
+      }
+      return mix;
+    }
+
+    var KEYS = [["bg", "--bg"], ["bgAlt", "--bg-alt"], ["card", "--card"], ["rule", "--rule"]];
+    var TEXT = [["ink", "--ink"], ["inkMuted", "--ink-muted"], ["accent", "--accent"], ["accentInk", "--accent-ink"]];
+
+    // Page colours follow the scenes too. Where a light and a dark scene
+    // meet, the ground flips over a shorter stretch than the shapes do, and
+    // the text jumps to whichever set has more contrast (a crossfade would
+    // put mid-grey text on a mid-grey ground).
+    function paint(mix) {
+      var dark = 0;
+      mix.forEach(function (e) { if (e.s.dark) dark += e.w; });
+      var mixed = dark > 0 && dark < 1;
+      var dGround = mixed ? smooth((dark - 0.35) / 0.3) : dark;
+      function avg(key, darkSide) {
+        var c = [0, 0, 0], tw = 0;
+        mix.forEach(function (e) {
+          if (!!e.s.dark !== darkSide) return;
+          var v = e.s.colors[key];
+          c[0] += e.w * v[0]; c[1] += e.w * v[1]; c[2] += e.w * v[2];
+          tw += e.w;
+        });
+        return tw ? [c[0] / tw, c[1] / tw, c[2] / tw] : null;
+      }
+      function blend(key, d) {
+        var l = avg(key, false), k = avg(key, true);
+        if (!k) return l;
+        if (!l) return k;
+        return [lerp(l[0], k[0], d), lerp(l[1], k[1], d), lerp(l[2], k[2], d)];
+      }
+      function css(c) { return "rgb(" + Math.round(c[0]) + "," + Math.round(c[1]) + "," + Math.round(c[2]) + ")"; }
+      KEYS.forEach(function (k) { body.style.setProperty(k[1], css(blend(k[0], dGround))); });
+      // text takes whichever set reads better on the current ground
+      var dText = dark;
+      if (mixed) {
+        var ground = blend("bg", dGround), inkL = avg("ink", false), inkD = avg("ink", true);
+        dText = contrast(ground, inkD) > contrast(ground, inkL) ? 1 : 0;
+      }
+      TEXT.forEach(function (k) { body.style.setProperty(k[1], css(blend(k[0], dText))); });
+      var tone = dGround > 0.5 ? "dark" : "light";
+      if (body.getAttribute("data-tone") !== tone) body.setAttribute("data-tone", tone);
+    }
 
     function clearPx() {
       var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
@@ -828,6 +1131,7 @@
         L = layout();
         S = motif.setup ? motif.setup(L, seeded(theme + ":" + L.mode)) : {};
       }
+      measure();
       schedule();
     }
 
@@ -839,10 +1143,12 @@
     function draw() {
       raf = 0;
       var now = performance.now();
-      var f = clamp((now - palStart) / 700, 0, 1);
-      pal = f < 1 ? mixPalette(palFrom, palTo, ease(f)) : palTo;
-      night += (nightTo - night) * (reduceMotion ? 1 : 0.07);
       var scroll = window.scrollY, p = reduceMotion ? 0.5 : progress();
+      var hoverTo = hoverName ? 1 : 0;
+      hoverW += (hoverTo - hoverW) * (reduceMotion ? 1 : 0.1);
+      if (!hoverName && hoverW < 0.002) { hoverW = 0; hoverScene = null; }
+      var mix = currentMix();
+      if (sceneEls.length) paint(mix);
       body.style.setProperty("--geo-p", p.toFixed(3));
       if (masked && bandEl) canvas.style.setProperty("--geo-band", Math.round(bandEl.getBoundingClientRect().bottom) + "px");
 
@@ -853,10 +1159,10 @@
         if (L.mode === "band") ctx.translate(0, -scroll);
         motif.draw(ctx, L, S, {
           p: p, t: reduceMotion ? 0 : (now - t0) / 1000, scroll: reduceMotion ? 0 : scroll,
-          pal: pal, ptr: ptr, night: night
+          pal: pal, ptr: ptr, mix: mix
         });
       }
-      var settling = f < 1 || Math.abs(nightTo - night) > 0.005;
+      var settling = Math.abs(hoverTo - hoverW) > 0.002;
       if (settling || (visible && motif.ambient && !reduceMotion && !document.hidden)) schedule();
     }
 
@@ -864,13 +1170,16 @@
       if (!raf) raf = requestAnimationFrame(draw);
     }
 
-    sceneHook = function (scene) {
-      palFrom = pal;
-      palTo = readPalette(body);
-      palStart = performance.now();
-      nightTo = scene === "night" ? 1 : 0;
-      schedule();
-    };
+    // on the home page, pointing at a course tile turns the field into that course
+    [].forEach.call(document.querySelectorAll(".course-tile[data-course]"), function (tile) {
+      var slug = tile.getAttribute("data-course");
+      function enter() { if (SCENES[slug]) { hoverName = slug; hoverScene = SCENES[slug]; schedule(); } }
+      function leave() { if (hoverName === slug) { hoverName = null; schedule(); } }
+      tile.addEventListener("pointerenter", enter);
+      tile.addEventListener("pointerleave", leave);
+      tile.addEventListener("focus", enter);
+      tile.addEventListener("blur", leave);
+    });
 
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", function () { resize(false); });
@@ -881,31 +1190,10 @@
       }, { passive: true });
       document.addEventListener("pointerleave", function () { ptr = null; });
     }
-    // fonts and images can move the header band after first paint
+    // fonts and images move things after first paint
     window.addEventListener("load", function () { resize(true); });
+    if ("ResizeObserver" in window) new ResizeObserver(function () { measure(); schedule(); }).observe(document.body);
     resize(true);
-  }
-
-  /* ------------------------------------------------------------------ */
-  /* scenes: sections recolour the page as they cross the middle         */
-  /* ------------------------------------------------------------------ */
-
-  function initScenes() {
-    var sections = [].slice.call(document.querySelectorAll("[data-scene]"));
-    if (!sections.length) return;
-    var current = null;
-    function set(scene) {
-      if (scene === current) return;
-      current = scene;
-      body.setAttribute("data-scene", scene);
-      if (sceneHook) sceneHook(scene);
-    }
-    set(sections[0].getAttribute("data-scene"));
-    if (!("IntersectionObserver" in window)) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) set(e.target.getAttribute("data-scene")); });
-    }, { rootMargin: "-49% 0px -49% 0px" });
-    sections.forEach(function (s) { io.observe(s); });
   }
 
   /* ------------------------------------------------------------------ */
@@ -974,7 +1262,7 @@
 
   var bg = document.querySelector("canvas.geo-canvas");
   var theme = body.getAttribute("data-geo");
+  addCourseScenes();
   if (bg && theme && bg.getContext) startBackground(bg, theme);
-  initScenes();
   [].forEach.call(document.querySelectorAll("canvas[data-motif]"), initThumb);
 })();

@@ -174,14 +174,33 @@ Every page has a canvas of shapes behind it, drawn by `assets/js/geo.js`
   is half the width of the text column; the shapes only show in the margins
   and the header. `geo_clear: none` gives the full canvas (home, About,
   Studies hub).
-- **Scenes:** a section with `data-scene="paper|linen|sage|blush|wheat|night"`
-  recolours the page when it reaches the middle of the screen (see the home
-  page). Colours per scene are at the top of `geo.css`.
+- **Scenes:** a section with `data-scene="paper|linen|sage|night|<course slug>"`
+  blends into its neighbours in proportion to scroll position: colours and
+  the floating shapes morph continuously (every shape is a 40-point outline,
+  so a circle can melt into a star). Scene colours and shape sets are
+  `SCENES` / `COURSE_SHAPES` in `geo.js`. On the home page, pointing at a
+  course tile morphs the field into that course's shapes.
 - **Course themes:** colours are the `[data-course="…"]` rules in `geo.css`;
   each course's scroll-driven drawing is the matching entry in `MOTIFS` in
   `geo.js`. A new course needs both, plus a `TRACKS` entry in
   `scripts/vault_export.py`.
 - Visitors with "reduce motion" turned on get a still picture.
+
+## 로봇 철민 (the corner robot)
+
+The pixel face in the bottom-right corner opens a speech bubble with two
+buttons: 질문하기 (preset questions) and 대화하기 (a random line, no repeats
+until the pool runs out).
+
+- **What it says:** `_data/robot.yml`, one block per course slug plus
+  `default` for other pages. `{concepts}`, `{heavy}` etc. are filled from the
+  course numbers, so they stay right after a re-export.
+- **The face:** a 20 × 22 pixel grid in `scripts/robot_face.py`; edit the
+  grid and run `python3 scripts/robot_face.py` to rewrite
+  `_includes/robot-face.svg`. Blink and talk frames are swapped in
+  `assets/css/robot.css`.
+- The bubble text uses the Galmuri pixel font from jsDelivr (OFL), which
+  downloads only when the bubble first opens.
 
 ---
 
@@ -290,5 +309,7 @@ assets/img/uploads/       cover/gallery images
 scripts/blog.py           the CLI described throughout this file
 scripts/vault_export.py   Obsidian vault -> /studies/ exporter
 assets/js/geo.js          background shapes, scenes, course motifs
-assets/css/geo.css        scene colours, course colours, home/About components
+assets/css/geo.css        course colours, home/About components, hub sections
+_data/robot.yml           the robot's questions and lines
+scripts/robot_face.py     pixel face -> _includes/robot-face.svg
 ```

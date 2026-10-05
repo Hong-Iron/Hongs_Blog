@@ -1,0 +1,355 @@
+/* ==========================================================================
+   로봇 철민, the corner robot (_includes/robot.html, assets/js/robot.js).
+   Pixel art throughout: the face is a 20 x 22 grid, the bubble has stepped
+   pixel corners drawn with box-shadows, text is set in the Galmuri pixel
+   font. Colours stay on the site's paper / ink / accent scheme.
+   ========================================================================== */
+
+.robot {
+  --robot-accent: var(--course, var(--accent));
+  --px: 3px;
+  --pixel-font: "Galmuri14", "Galmuri11", var(--font-sans);
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 950;
+}
+
+/* keep the footer links out from under the robot */
+.site-footer {
+  padding-bottom: 7rem;
+}
+
+/* a pixel frame: four 1-pixel offsets leave the corners notched */
+.robot__dialog,
+.robot__name,
+.robot__choice,
+.robot__hint {
+  --frame: var(--ink);
+  --fw: var(--px);
+  box-shadow:
+    0 calc(var(--fw) * -1) 0 0 var(--frame),
+    0 var(--fw) 0 0 var(--frame),
+    calc(var(--fw) * -1) 0 0 0 var(--frame),
+    var(--fw) 0 0 0 var(--frame);
+}
+
+/* -- the face ------------------------------------------------------------- */
+
+.robot__button {
+  display: block;
+  width: 60px;
+  height: 66px;
+  padding: 0;
+  background: none;
+  filter: drop-shadow(3px 3px 0 color-mix(in srgb, var(--ink) 22%, transparent));
+}
+
+.robot__button:focus-visible {
+  outline: var(--px) solid var(--robot-accent);
+  outline-offset: 4px;
+}
+
+.robot__face {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: rf-bob 2.4s steps(1) infinite;
+}
+
+.rf-led {
+  fill: var(--robot-accent);
+  animation: rf-led 1.8s steps(1) infinite;
+}
+
+/* eye and mouth frames; the CSS swaps them like sprite frames */
+.rf-eyes--open { animation: rf-open 4.6s steps(1) infinite; }
+.rf-eyes--blink { opacity: 0; animation: rf-shut 4.6s steps(1) infinite; }
+.rf-eyes--happy,
+.rf-mouth--talk { opacity: 0; }
+
+.robot__button:hover .rf-eyes--open,
+.robot__button:hover .rf-eyes--blink,
+.robot.is-open .rf-eyes--open,
+.robot.is-open .rf-eyes--blink {
+  opacity: 0;
+  animation: none;
+}
+
+.robot__button:hover .rf-eyes--happy,
+.robot.is-open .rf-eyes--happy {
+  opacity: 1;
+}
+
+.robot.is-talking .rf-mouth--smile { animation: rf-frame-a 0.26s steps(1) infinite; }
+.robot.is-talking .rf-mouth--talk { animation: rf-frame-b 0.26s steps(1) infinite; }
+
+.robot__button:hover .robot__face { animation: rf-hop 0.5s steps(2) infinite; }
+
+@keyframes rf-bob { 0% { transform: translateY(0); } 50% { transform: translateY(calc(var(--px) * -1)); } }
+@keyframes rf-hop { 0% { transform: translateY(0); } 50% { transform: translateY(calc(var(--px) * -2)); } }
+@keyframes rf-led { 0% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes rf-open { 0% { opacity: 1; } 92% { opacity: 0; } 96% { opacity: 1; } }
+@keyframes rf-shut { 0% { opacity: 0; } 92% { opacity: 1; } 96% { opacity: 0; } }
+@keyframes rf-frame-a { 0% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes rf-frame-b { 0% { opacity: 0; } 50% { opacity: 1; } }
+
+/* "!" bubble that invites the first click */
+.robot__hint {
+  --fw: 2px;
+  position: absolute;
+  right: 50px;
+  bottom: 64px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  background: var(--robot-accent);
+  color: #fff;
+  font-family: var(--pixel-font);
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.robot.has-hint .robot__hint {
+  opacity: 1;
+  animation: rf-hop 1s steps(2) infinite;
+}
+
+/* -- the speech bubble --------------------------------------------------------- */
+
+.robot__dialog {
+  position: absolute;
+  right: 6px;
+  bottom: calc(100% + 26px);
+  width: min(22rem, calc(100vw - 44px));
+  padding: 22px 16px 14px;
+  background: var(--card);
+  color: var(--ink);
+  font-family: var(--pixel-font);
+  font-size: 14px;
+  line-height: 1.75;
+  box-shadow:
+    0 calc(var(--px) * -1) 0 0 var(--ink),
+    0 var(--px) 0 0 var(--ink),
+    calc(var(--px) * -1) 0 0 0 var(--ink),
+    var(--px) 0 0 0 var(--ink),
+    inset 0 calc(var(--px) * -1) 0 0 color-mix(in srgb, var(--ink) 8%, transparent),
+    calc(var(--px) * 3) calc(var(--px) * 3) 0 0 color-mix(in srgb, var(--ink) 15%, transparent);
+  animation: robot-pop 0.24s steps(3);
+}
+
+.robot__dialog[hidden] {
+  display: none;
+}
+
+.robot__dialog:focus {
+  outline: none;
+}
+
+@keyframes robot-pop {
+  0% { opacity: 0; transform: translateY(calc(var(--px) * 3)); }
+  100% { opacity: 1; transform: none; }
+}
+
+.robot__tail {
+  position: absolute;
+  top: 100%;
+  right: 22px;
+  width: calc(var(--px) * 6);
+  height: calc(var(--px) * 5);
+  overflow: visible;
+}
+
+.robot__tail-ink { fill: var(--ink); }
+.robot__tail-fill { fill: var(--card); }
+
+.robot__name {
+  --fw: 2px;
+  position: absolute;
+  top: -14px;
+  left: 12px;
+  padding: 1px 8px 0;
+  background: var(--robot-accent);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.robot__name small {
+  font-size: inherit;
+  opacity: 0.85;
+}
+
+.robot__close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  font-family: var(--pixel-font);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--ink-muted);
+}
+
+.robot__close:hover,
+.robot__close:focus-visible {
+  color: #fff;
+  background: var(--robot-accent);
+  outline: none;
+}
+
+.robot__text {
+  min-height: 3.5em;
+  margin: 0;
+  padding-right: 14px;
+  word-break: keep-all;
+  cursor: pointer;
+}
+
+.robot__text::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  margin-left: 3px;
+  vertical-align: -2px;
+  background: var(--robot-accent);
+  animation: rf-frame-a 0.7s steps(1) infinite;
+}
+
+.robot__dialog:not(.is-typing) .robot__text::after {
+  display: none;
+}
+
+.robot__more {
+  display: block;
+  height: 14px;
+  text-align: right;
+  line-height: 1;
+}
+
+.robot__dialog.is-done .robot__more::after {
+  content: "\25BC";
+  display: inline-block;
+  color: var(--robot-accent);
+  animation: rf-hop 0.8s steps(2) infinite;
+}
+
+/* -- choices: a game menu ---------------------------------------------------- */
+
+.robot__choices {
+  display: grid;
+  gap: 9px;
+  margin-top: 8px;
+  padding: 2px;
+  max-height: 46vh;
+  overflow-y: auto;
+  visibility: hidden;
+}
+
+.robot__dialog.is-done .robot__choices {
+  visibility: visible;
+}
+
+.robot__choices--row {
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+}
+
+.robot__choice {
+  --frame: var(--rule);
+  --fw: 2px;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 6px 10px 5px 26px;
+  border: 0;
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--pixel-font);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+}
+
+.robot__choice::before {
+  content: "\25B6";
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  color: var(--robot-accent);
+  visibility: hidden;
+}
+
+.robot__choice:hover,
+.robot__choice:focus-visible {
+  --frame: var(--ink);
+  background: color-mix(in srgb, var(--robot-accent) 14%, var(--bg));
+  outline: none;
+}
+
+.robot__choice:hover::before,
+.robot__choice:focus-visible::before {
+  visibility: visible;
+  animation: rf-frame-a 0.6s steps(1) infinite;
+}
+
+.robot__choice:active {
+  transform: translate(1px, 1px);
+}
+
+.robot__choice--primary {
+  --frame: var(--ink);
+  background: var(--robot-accent);
+  color: #fff;
+}
+
+.robot__choice--primary::before {
+  color: #fff;
+}
+
+.robot__choice--primary:hover,
+.robot__choice--primary:focus-visible {
+  background: color-mix(in srgb, var(--robot-accent) 82%, #000);
+}
+
+.robot__choice--quiet {
+  background: transparent;
+  color: var(--ink-muted);
+}
+
+/* -- small screens and motion ------------------------------------------------------ */
+
+@media (max-width: 560px) {
+  .robot__button {
+    width: 50px;
+    height: 55px;
+  }
+
+  .robot__hint {
+    right: 40px;
+    bottom: 54px;
+  }
+
+  .robot__dialog {
+    right: -2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .robot *,
+  .robot__dialog {
+    animation: none !important;
+  }
+}
+
+@media print {
+  .robot { display: none; }
+}

@@ -1,0 +1,521 @@
+# 로봇 철민 (the corner robot) — scripted lines, shown by assets/js/robot.js.
+#
+# One block per course slug (same slugs as _data/study_courses.yml) plus
+# "default" for every other page. Each block has:
+#   greeting   first line when the bubble opens
+#   questions  the 질문하기 menu: q (button), a (answer), optional link/link_label
+#   talk       the 대화하기 pool; one line is drawn at random, no repeats
+#              until the pool runs out
+# Links are site paths without the baseurl. In text, {concepts} {practices}
+# {codes} {heavy} are filled from the course's numbers, and {courses} {notes}
+# from the whole site, so they stay right after a re-export.
+
+default:
+  greeting: "삐빅! 나는 로봇 철민이야. 이 블로그 주인 HongCheolMin을 본떠 만든 픽셀 로봇이지. 뭐 도와줄까?"
+  questions:
+    - q: 여긴 어떤 곳이야?
+      a: "HongCheolMin의 작업실이야. 만든 프로젝트, 공부한 지식 DB, 묵상한 글인 나의 팡세를 한곳에 모아 뒀어."
+    - q: 어디부터 보면 좋아?
+      a: "공부 노트가 궁금하면 지식 DB부터 봐. 과목이 {courses}개, 노트가 {notes}편 있어. 과목 페이지에 가면 내가 그 과목 이야기를 해 줄게."
+      link: /studies/
+      link_label: 지식 DB 가기
+    - q: 로고는 무슨 뜻이야?
+      a: "기둥 두 개 사이에 빨간 점이 있지? H와 I 사이의 하이픈이야. Hong-Iron! 마우스를 올리면 점이 통 튀어 올라."
+    - q: 배경 도형은 뭐야?
+      a: "과목마다 도형이 달라. 알고리즘 노트에선 스크롤할수록 막대가 정렬되고, 선형대수학에선 격자가 비틀리고, 확률과 통계에선 공이 떨어져 종 모양을 만들어."
+      link: /studies/
+      link_label: 과목 둘러보기
+    - q: 너는 누구야?
+      a: "HongCheolMin의 얼굴을 한 칸 한 칸 찍어 만든 픽셀 로봇이야. 정해진 대본만 말해서 아무 질문에나 답하지는 못해. 대신 과목마다 질문 다섯 개, 수다 열 개를 외워 뒀어!"
+  talk:
+    - text: "홈 화면을 끝까지 내려 봐. 나의 팡세에 닿으면 밤이 와."
+    - text: "과목 타일에 마우스를 올려 봐. 그림이 움직이기 시작해."
+    - text: "확인 문제는 답을 가리고 먼저 써 본 다음 펼쳐 봐. 틀려도 괜찮아."
+    - text: "읽기 전에 질문의 답을 잠깐 추측해 봐. 틀린 추측도 기억에 도움이 돼."
+    - text: "스스로 설명해 보기: 각 줄이 앞의 어느 줄에서 나오는지 말해 봐. 바꿔 말하기는 설명이 아니야."
+    - text: "노트는 전부 Obsidian에서 정리한 걸 옮겨 왔어. 원본 교재와 강의 자료는 올리지 않았고."
+    - text: "기기에서 '동작 줄이기'를 켜 두면 배경 도형도 나도 얌전히 멈춰 있을게."
+    - text: "로고 위에 마우스를 올려 봐. 빨간 점이 점프해!"
+    - text: "나의 팡세에는 신앙에 관한 짧은 묵상 글이 모여 있어."
+      link: /pensees/
+      link_label: 나의 팡세 가기
+    - text: "프로젝트 페이지 배경은 제도용 모눈종이야. 스크롤하면 도면이 그려져."
+      link: /projects/
+      link_label: 프로젝트 보기
+
+abnormal-psychology:
+  greeting: "삐빅! 이상 심리학 노트야. 12회 강의, 개념 {concepts}개를 정리했어. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "강의 순서 그대로 가면 돼. 1회에서 이상행동의 기준, DSM, 여러 이론적 입장을 먼저 잡고, 2회 조현병부터 12회 성격장애까지 장애별로 나아가. 장애 문서 대부분이 '정신장애와 DSM'을 딛고 서 있어서 1회를 건너뛰면 흔들려."
+      link: /studies/abnormal-psychology/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "수식은 거의 없어. 대신 비슷한 장애를 가르는 기준(지속 기간, 증상 개수, 배제 조건)이 많아서 헷갈리기 쉬워. 그래서 '○○와 ○○ 비교' 문서가 따로 있어. 무거운 개념은 {heavy}개야."
+    - q: 어디에 쓸모 있어?
+      a: "주변 사람을 이해하고 도울 때 바로 써. 예를 들어 자살 생각을 직접 물어보는 건 생각을 심는 게 아니라 털어놓을 기회를 주는 거야. 낙인도 줄일 수 있어. 조현병 환자 대부분은 폭력적이지 않아."
+      link: /studies/abnormal-psychology/suicide/
+      link_label: 자살 문서
+    - q: 꼭 잡아야 할 개념은?
+      a: "'정신장애와 DSM'. 문서 17개가 이걸 선수로 삼아. 치료 쪽은 인지행동치료가 문서 20여 개, 노출치료가 10여 개에 반복해서 나와."
+      link: /studies/abnormal-psychology/mental-disorder-dsm/
+      link_label: 정신장애와 DSM
+    - q: 다른 과목이랑 이어져?
+      a: "확률과 통계랑 이어져. 이상행동의 통계적 기준에서 절단점은 정규분포의 꼬리 확률이야. 평균 − 2 표준편차면 약 2.3%. 도박 문제의 '도박사의 오류'는 독립 시행에 기억이 있다고 믿는 착각이고."
+      link: /studies/abnormal-psychology/statistical-deviation--normal-distribution/
+      link_label: 통계적 일탈 ↔ 정규분포
+  talk:
+    - text: "흔한 오해: '드물면 이상이다.' 아니야! IQ 145도 드물지만 장애가 아니잖아. 드물다는 건 이상의 필요조건도 충분조건도 아니야."
+      link: /studies/abnormal-psychology/abnormality-criteria/
+      link_label: 이상행동의 기준
+    - text: "흔한 오해: '부적 강화는 처벌이다.' '부적'은 무언가를 없앤다, '강화'는 행동이 는다는 뜻이야. 두통약 먹는 행동이 느는 건 두통이 사라지기 때문이지."
+      link: /studies/abnormal-psychology/behavioral-perspective/
+      link_label: 행동주의적 입장
+    - text: "흔한 오해: '조현병은 인격이 여러 개로 쪼개지는 병.' 그건 해리성 정체감 장애야. 조현병의 핵심은 망상과 환각으로 현실검증이 무너지는 거고."
+      link: /studies/abnormal-psychology/psychotic-symptoms/
+      link_label: 정신병적 증상
+    - text: "흔한 오해: '우울증은 마음먹기에 달렸다.' 의욕 저하와 피로 자체가 증상이라서 '마음먹어'라는 말은 죄책감만 키워."
+      link: /studies/abnormal-psychology/major-depressive-disorder/
+      link_label: 주요우울장애
+    - text: "흔한 오해: '인지치료는 긍정적으로 생각하라는 것.' 목표는 긍정이 아니라 현실적인 생각이야. 증거를 따져서 잘한 점과 고칠 점을 둘 다 보는 거지."
+      link: /studies/abnormal-psychology/beck-cognitive-theory/
+      link_label: 우울증의 인지이론
+    - text: "흔한 오해: '공황발작은 심장에 위험하다.' 위험에 대비하는 경보가 신호 없이 울린 거라 몇 분 만에 가라앉아. 다만 처음이면 신체 질환부터 확인하는 게 맞아."
+      link: /studies/abnormal-psychology/panic-disorder/
+      link_label: 공황장애
+    - text: "흔한 오해: '깔끔한 성격이면 강박장애.' 즐기면서 하는 정리는 강박행동이 아니야. 강박행동은 원치 않는 불안을 줄이려고 억지로 되풀이하는 거야."
+      link: /studies/abnormal-psychology/ocd/
+      link_label: 강박장애
+    - text: "흔한 오해: '끔찍한 일을 겪으면 대부분 PTSD가 된다.' 참전 군인도 15.2%, 9.11 근처 주민도 약 20%만 증상을 보였어. 다수는 회복해."
+      link: /studies/abnormal-psychology/ptsd/
+      link_label: 외상 후 스트레스 장애
+    - text: "흔한 오해: 'ADHD 아이에게 각성제를 주면 더 날뛴다.' 행동을 억제하는 전두엽 기능을 도와서 오히려 주의가 유지되고 충동이 줄어."
+      link: /studies/abnormal-psychology/adhd/
+      link_label: ADHD
+    - text: "흔한 오해: '제2형 양극성장애는 제1형의 가벼운 버전.' 더 만성적이고 우울 삽화가 길어. '가벼운 조증'이 '가벼운 병'은 아니야."
+      link: /studies/abnormal-psychology/bipolar-disorder/
+      link_label: 양극성장애
+
+computer-communication:
+  greeting: "삐빅! 컴퓨터 통신 노트야. 링크 한 가닥에서 시작해 인터넷까지 쌓아 올려. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "1회 '점대점 링크'에서 출발해. 링크 → 스위칭 네트워크 → 인터네트워크 → 계층과 프로토콜 → 데이터 링크 순서로 한 층씩 올라가. 가장 긴 선수 사슬은 점대점 링크에서 가입자 선로까지 11단계야."
+      link: /studies/computer-communication/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "개념은 직관적인데 계산에서 많이 막혀. 데이터를 선에 싣는 시간(L/R)과 신호가 건너가는 시간(거리/속도)을 섞지 않는 게 관건이야. 무거운 개념은 패킷 스위칭, 통계적 다중화, 소요시간 분석 세 개."
+      link: /studies/computer-communication/timing-analysis/
+      link_label: 소요시간 분석
+    - q: 어디에 쓸모 있어?
+      a: "인터넷이 바로 패킷 스위칭이야. 파일을 패킷으로 나누면 왜 더 빨리 도착하는지, 전송률을 올려도 전파 지연은 왜 그대로인지 계산으로 설명할 수 있어."
+      link: /studies/computer-communication/packet-switching/
+      link_label: 패킷 스위칭
+    - q: 꼭 잡아야 할 개념은?
+      a: "'전송 속도와 대역폭'. 문서 10개가 이걸 딛고 서 있어. 그다음이 '스위칭 네트워크'와 '패킷 스위칭'이야."
+      link: /studies/computer-communication/rate-and-bandwidth/
+      link_label: 전송 속도와 대역폭
+    - q: 다른 과목이랑 이어져?
+      a: "통계적 다중화에서 동시 사용자 수는 이항분포야. 주파수 분할 다중화는 삼각함수 곱셈으로 신호를 다른 주파수로 옮기는 거고, 모두 직접 이을 때 링크 수 n(n−1)/2는 조합 C(n, 2)야."
+  talk:
+    - text: "흔한 오해: '직접 링크는 곧 점대점 링크.' '직접'은 중계 노드가 없다는 뜻이고 '점대점'은 끝점이 둘뿐이라는 뜻이야. 다중 접근도 직접 링크야."
+      link: /studies/computer-communication/point-to-point-link/
+      link_label: 점대점 링크
+    - text: "흔한 오해: '전송률이 높으면 신호가 더 빨리 달린다.' 빨라지는 건 선에 싣는 속도야. 1 Gbps로 올려도 400 km를 건너는 2 ms는 그대로야."
+      link: /studies/computer-communication/rate-and-bandwidth/
+      link_label: 전송 속도와 대역폭
+    - text: "흔한 오해: '회선을 잡으면 전선 한 가닥을 통째로 차지한다.' 잡는 건 링크 용량의 일부야. 1.536 Mbps 링크 하나에 64 kbps 회선 24개가 함께 지나가."
+      link: /studies/computer-communication/circuit-switching/
+      link_label: 회선 스위칭
+    - text: "흔한 오해: '스위치는 패킷 앞부분이 들어오자마자 내보낸다.' 저장 후 전달 방식에선 패킷 전체를 받은 다음에 내보내. 그래서 링크마다 L/R이 더해져."
+      link: /studies/computer-communication/packet-switching/
+      link_label: 패킷 스위칭
+    - text: "흔한 오해: '시분할 다중화도 칸마다 주소를 붙인다.' 칸 순서가 고정이라 시간이 곧 주인 표시야. 주소를 붙이는 건 통계적 다중화야."
+      link: /studies/computer-communication/time-division-multiplexing/
+      link_label: 시분할 다중화
+    - text: "흔한 오해: '통계적 다중화는 항상 더 효율적이다.' 트래픽이 들쭉날쭉할 때만 이득이야. 모두가 꽉 채워 보내면 이득은 0이고 주소만큼 손해야."
+      link: /studies/computer-communication/statistical-multiplexing/
+      link_label: 통계적 다중화
+    - text: "흔한 오해: '모양이 같은 프로토콜은 동작도 같다.' TCP 헤더엔 순서 번호와 확인 번호가 있어서 잃은 데이터를 다시 보내. UDP엔 그런 칸이 없어."
+      link: /studies/computer-communication/encapsulation/
+      link_label: 캡슐화
+    - text: "흔한 오해: '파일을 패킷으로 나눠도 스위치는 파일을 다 받고 보낸다.' 단위는 패킷 하나야. 계산해 보면 파일 단위 10,704 ms가 패킷 단위로는 5,105.12 ms, 약 절반이야."
+      link: /studies/computer-communication/timing-analysis/
+      link_label: 소요시간 분석
+    - text: "흔한 오해: '여러 기기가 한 줄에 붙으면 간접 연결.' 기기들이 붙어 있는 건 매체일 뿐이고 중계 노드가 없으니 직접 링크야."
+      link: /studies/computer-communication/multiple-access-link/
+      link_label: 다중 접근 링크
+    - text: "흔한 오해: '다중화하면 조각마다 이름표가 필요하다.' 시분할은 칸 순서, 주파수 분할은 주파수 대역이 곧 이름표라 따로 안 적어."
+      link: /studies/computer-communication/multiplexing/
+      link_label: 다중화
+
+human-interface-media:
+  greeting: "삐빅! 휴먼 인터페이스 미디어 노트야. 눈과 뇌가 빛을 어떻게 신호로 바꾸는지 다뤄. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "지각 → 뉴런과 신호 전달 → 뉴런의 연산 모형 → 빛과 눈 → 색(삼색 이론, 반대색 과정) 순서야. 가장 긴 선수 사슬은 첫 문서에서 '삼색 이론과 반대색 과정 비교'까지 11단계."
+      link: /studies/human-interface-media/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "강의 소개가 초월 함수의 미분·적분, 기초 확률통계, 푸리에 급수·변환, C/C++를 사전 지식으로 밝혔고, 수업에서 따로 가르치지 않는대. 뉴런 모형과 색 이론엔 행렬 곱과 영공간도 나와."
+    - q: 어디에 쓸모 있어?
+      a: "모니터와 카메라가 R·G·B 세 채널뿐인 이유가 삼색 이론이야. 세 값이면 사람 눈엔 충분하거든. 측면 억제는 시각이 절대 밝기보다 대비와 윤곽을 전하는 이유를 설명해."
+      link: /studies/human-interface-media/trichromatic-theory/
+      link_label: 삼색 이론
+    - q: 꼭 잡아야 할 개념은?
+      a: "'흥분성과 억제성 시냅스'와 '뉴런과 신호 전달'이 뒤의 문서를 가장 많이 받쳐. 무거운 개념은 '삼색 이론'과 '측면 억제' 두 개야."
+      link: /studies/human-interface-media/excitatory-inhibitory/
+      link_label: 흥분성과 억제성 시냅스
+    - q: 다른 과목이랑 이어져?
+      a: "선형대수학이랑 많이 이어져. 뉴런 층은 o = Ax + b, 퍼셉트론은 wᵀx + b, 조건등색은 영공간 문제야. 컴퓨터 통신과는 같은 전자기파 스펙트럼의 다른 구간을 써."
+  talk:
+    - text: "흔한 오해: '눈은 카메라처럼 본 걸 그대로 기록한다.' 망막에서부터 신호를 고르고 가공해. 헤르만 격자엔 그림에 없는 회색 점이 보이잖아."
+      link: /studies/human-interface-media/perception/
+      link_label: 지각
+    - text: "흔한 오해: '신경 신호는 전선 속 전기처럼 순식간.' 초속 약 1~120 m야. 눈에서 손가락 근육까지 180~260 ms나 걸려."
+      link: /studies/human-interface-media/neuron-signaling/
+      link_label: 뉴런과 신호 전달
+    - text: "흔한 오해: '센 자극은 더 큰 스파이크를 만든다.' 스파이크 크기는 늘 같아. 세기는 스파이크가 얼마나 촘촘한지로 전해져."
+      link: /studies/human-interface-media/rate-coding/
+      link_label: 발화율 부호화
+    - text: "흔한 오해: 'XOR은 오래 학습하면 언젠가 맞힌다.' 퍼셉트론 하나로는 XOR을 맞히는 가중치가 아예 없어. 아무리 돌려도 안 끝나."
+      link: /studies/human-interface-media/perceptron/
+      link_label: 퍼셉트론
+    - text: "흔한 오해: '모니터의 노란색은 노란 빛을 낸다.' 빨강과 초록 부화소를 함께 켠 거야. 돋보기로 보면 빨강, 초록 점만 보여."
+      link: /studies/human-interface-media/trichromatic-theory/
+      link_label: 삼색 이론
+    - text: "흔한 오해: '똑같은 색으로 보이면 똑같은 빛.' 580 nm 단색광과 530 + 620 nm 혼합광은 둘 다 노랑이지만 스펙트럼이 달라. 이게 조건등색이야."
+      link: /studies/human-interface-media/metamerism/
+      link_label: 조건등색
+    - text: "흔한 오해: '마하 띠는 그림에 그려진 띠다.' 측면 억제가 경계에서 차이를 부풀려 만든 거야. 이웃 줄을 가리면 사라져."
+      link: /studies/human-interface-media/lateral-inhibition/
+      link_label: 측면 억제
+    - text: "흔한 오해: '맹점이 있으니 시야에 구멍이 보여야 한다.' 두 눈의 맹점 위치가 달라서 서로 채워 주고, 뇌도 주변 무늬로 빈 곳을 메워."
+      link: /studies/human-interface-media/eye-anatomy/
+      link_label: 눈의 구조
+    - text: "흔한 오해: '빛의 색은 파장 하나로 정해진다.' 마젠타에 해당하는 단일 파장은 스펙트럼 어디에도 없어. 빨강과 파랑을 섞어야만 보여."
+      link: /studies/human-interface-media/wave-and-light/
+      link_label: 파동과 빛
+    - text: "흔한 오해: '한 눈을 감으면 깊이를 전혀 모른다.' 가림, 익숙한 크기, 원근, 운동 시차처럼 한 눈으로 쓰는 단서도 많아. 바늘귀 꿰기는 훨씬 어려워지지만."
+      link: /studies/human-interface-media/binocular-disparity/
+      link_label: 양안 시차
+
+college-math:
+  greeting: "삐빅! 대학수학 노트야. 공학수학 다섯 과목의 출발점이지. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "함수 → 지수와 로그 → 삼각함수 → 평면과 복소수 → 수열과 합, 다섯 단원 순서야. 선수 과목이 없는 시작점이라 여기서부터 시작하면 돼."
+      link: /studies/college-math/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "공학수학에서 선수 사슬이 가장 짧은 과목이야. 길어야 6단계(함수 → … → 거듭제곱함수와 지수함수 비교). 대신 지수함수, 로그, 삼각함수, 항등식, 오일러 공식은 무거운 개념이라 확실히 다져 둬."
+    - q: 어디에 쓸모 있어?
+      a: "알고리즘 시간을 어림할 때 바로 써. 2ⁿ가지를 초당 10⁹개씩 검사해도 n = 50이면 약 13일이고, 이진 탐색은 n이 10⁹이어도 약 30번이면 끝나. 삼각함수는 게임과 로봇의 방향 이동에, 오일러 공식은 FFT에 쓰여."
+      link: /studies/college-math/logarithm/
+      link_label: 로그
+    - q: 꼭 잡아야 할 개념은?
+      a: "'함수'와 '삼각함수'. 둘 다 문서 다섯 개가 딛고 서 있어. 로그는 미분, 엔트로피, 알고리즘 분석까지 두루 불려 나가."
+      link: /studies/college-math/function/
+      link_label: 함수
+    - q: 다른 과목이랑 이어져?
+      a: "덧셈정리, 복소수 곱, 회전 행렬은 '각을 더하면 회전이 합성된다'를 세 언어로 쓴 거야. 로그 스케일은 휴먼 인터페이스 미디어의 웨버 대비와, 사인파는 빛의 파동과 이어져."
+      link: /studies/linear-algebra/rotation-bridge/
+      link_label: 덧셈정리 ↔ 회전 행렬
+  talk:
+    - text: "흔한 오해: 'f(x − 3)은 그래프를 왼쪽으로 3 옮긴다.' 오른쪽이야! x = 3을 넣으면 원래의 f(0) 값이 나오거든."
+      link: /studies/college-math/function-transformation/
+      link_label: 함수의 변환과 합성
+    - text: "흔한 오해: 'f⁻¹(x)는 1/f(x).' 되돌리는 함수라는 이름표일 뿐 역수와는 상관없어. f(x) = x + 1이면 f⁻¹(x) = x − 1이야."
+      link: /studies/college-math/inverse-function/
+      link_label: 역함수
+    - text: "흔한 오해: 'log(x + y) = log x + log y.' 로그가 바꿔 주는 건 곱이야. log(xy) = log x + log y. 합의 로그엔 간단한 공식이 없어."
+      link: /studies/college-math/logarithm/
+      link_label: 로그
+    - text: "흔한 오해: 'math.sin(30)은 0.5.' 30라디안이라 약 −0.988이야. math.radians(30)을 넣어야 0.5. 오류가 안 나서 늦게 발견되는 버그야."
+      link: /studies/college-math/radian/
+      link_label: 각과 라디안
+    - text: "흔한 오해: '지수적 성장은 처음부터 빠르다.' 1.01ˣ는 x = 100에서 2.70으로 10x의 1000보다 훨씬 작아. 그런데 x = 917에서 역전하고 그 뒤론 끝없이 벌어져."
+      link: /studies/college-math/exponential-function/
+      link_label: 지수함수
+    - text: "흔한 오해: 'n을 2진수로 쓰려면 lg n비트.' 하나 모자라. 8 = 1000₂는 4비트야. 정확히는 ⌊lg n⌋ + 1."
+      link: /studies/college-math/positional-notation/
+      link_label: 진법과 자릿수
+    - text: "흔한 오해: '√(−4) · √(−9) = 6.' 2i × 3i = −6이야. √a√b = √(ab)는 a, b ≥ 0일 때만 성립해."
+      link: /studies/college-math/complex-numbers/
+      link_label: 복소수
+    - text: "흔한 오해: '로그 눈금 그래프에서 직선이면 선형 관계.' 로그-로그 직선은 거듭제곱, 반로그 직선은 지수 관계야."
+      link: /studies/college-math/log-scale/
+      link_label: 로그 스케일
+    - text: "흔한 오해: '근의 공식을 그대로 코드로 옮기면 정확하다.' x² + 10⁸x + 1 = 0의 작은 근이 25%나 틀려. 비슷한 수끼리 빼면 유효숫자가 사라지거든."
+      link: /studies/college-math/polynomial/
+      link_label: 다항식과 방정식
+    - text: "흔한 오해: 'sin(α + β) = sin α + sin β.' sin은 함수라 분배되지 않아. α = β = π/2면 왼쪽은 0, 오른쪽은 2야."
+      link: /studies/college-math/trig-identities/
+      link_label: 삼각함수 항등식
+
+discrete-math:
+  greeting: "삐빅! 이산수학 노트야. 논리에서 그래프까지, 알고리즘의 바닥을 다져. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "논리와 증명 → 집합·함수·관계 → 귀납과 재귀 → 셈 → 점화식과 점근 → 정수론 → 그래프, 일곱 단원이야. 대학수학의 역함수, 로그, 수열과 합을 먼저 알면 편해."
+      link: /studies/discrete-math/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "증명을 처음 써 본다면 1단원이 고비야. 무거운 개념이 {heavy}개로 많은 편이고, 가장 긴 선수 사슬은 명제와 논리 연산에서 RSA 암호까지 9단계야."
+      link: /studies/discrete-math/proof-methods/
+      link_label: 추론 규칙과 증명 방법
+    - q: 어디에 쓸모 있어?
+      a: "코드에 바로 써. 드모르간으로 꼬인 조건문을 풀고, 경우의 수로 브루트포스가 가능한지 판단하고, 반복문이 맞는지는 귀납법으로 보여. 정수론은 RSA 암호의 바탕이야."
+    - q: 꼭 잡아야 할 개념은?
+      a: "'수학적 귀납법'. 문서 여섯 개가 딛고 서 있고, 알고리즘의 루프 불변식으로도 이어져."
+      link: /studies/discrete-math/induction/
+      link_label: 수학적 귀납법
+    - q: 다른 과목이랑 이어져?
+      a: "알고리즘이랑 제일 많이 이어져. 귀납법 ↔ 루프 불변식, 추이 폐포 ↔ 플로이드–워셜, 위상 정렬 ↔ 동적 계획법의 계산 순서. 선형 점화식의 특성근은 선형대수학의 고윳값이고."
+      link: /studies/algorithms/induction-loop-invariant/
+      link_label: 귀납법 ↔ 루프 불변식
+  talk:
+    - text: "흔한 오해: 'p가 거짓이면 p이면 q도 거짓.' 늘 참이야. '1 = 2이면 달은 치즈다'도 논리적으로는 참이지."
+      link: /studies/discrete-math/propositional-logic/
+      link_label: 명제와 논리 연산
+    - text: "흔한 오해: 'p이면 q가 참이면 q이면 p도 참.' 늘 같은 건 역이 아니라 대우야. 땅이 젖었다고 비가 온 건 아니잖아. 스프링클러가 있으니까."
+      link: /studies/discrete-math/logical-equivalence/
+      link_label: 논리적 동치
+    - text: "흔한 오해: '예를 많이 확인하면 증명이 된다.' n² + n + 41은 n = 0부터 39까지 40개가 다 소수인데 n = 40에서 깨져."
+      link: /studies/discrete-math/proof-methods/
+      link_label: 증명 방법
+    - text: "흔한 오해: '∅와 {∅}는 같다.' 빈 상자와 '빈 상자가 하나 든 상자'의 차이야. 크기가 0과 1이지."
+      link: /studies/discrete-math/sets/
+      link_label: 집합
+    - text: "흔한 오해: '귀납 가정은 순환 논증이다.' 귀납 단계가 보이는 건 'P(n)이면 P(n+1)'이라는 조건문이야. 기저가 있어야 비로소 도미노가 넘어가."
+      link: /studies/discrete-math/induction/
+      link_label: 수학적 귀납법
+    - text: "흔한 오해: '5명 중 2명 뽑기는 5 × 4 = 20가지.' 그건 순서를 센 순열이야. 짝을 직접 늘어놓으면 10가지야."
+      link: /studies/discrete-math/permutations-combinations/
+      link_label: 순열과 조합
+    - text: "흔한 오해: 'O가 작은 알고리즘이 늘 빠르다.' n < 100이면 n²이 100n보다 작아. 그래서 정렬 라이브러리는 작은 배열에서 삽입 정렬을 쓰기도 해."
+      link: /studies/discrete-math/asymptotic-notation/
+      link_label: 점근 표기
+    - text: "흔한 오해: '−7 mod 3은 −1.' 수학에선 2야. 파이썬의 -7 % 3도 2지만, C와 Java는 -1을 줘."
+      link: /studies/discrete-math/modular-arithmetic/
+      link_label: 나눗셈과 합동
+    - text: "흔한 오해: '수식대로 구현한 RSA면 안전하다.' 교과서 RSA는 같은 평문이 늘 같은 암호문이 돼. 실제로는 무작위 패딩(OAEP)을 붙여."
+      link: /studies/discrete-math/rsa/
+      link_label: RSA 암호
+    - text: "흔한 오해: '정점 n개에 간선 n − 1개면 트리.' 연결이거나 사이클이 없어야 해. 삼각형 하나와 떨어진 점 하나는 트리가 아니야."
+      link: /studies/discrete-math/trees/
+      link_label: 트리
+
+calculus:
+  greeting: "삐빅! 미분적분학 노트야. 극한에서 출발해 경사 하강법과 푸리에까지 가. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "극한과 연속 → 미분 → 적분 → 급수 → 다변수 미분 → 최적화 → 미분방정식과 푸리에, 일곱 단원이야. 다변수 단원 전에는 선형대수학의 벡터와 내적을 알아 둬."
+      link: /studies/calculus/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "선수 사슬이 길어. 극한에서 테일러 급수까지 11단계라서 앞 단원이 약하면 뒤가 무너져. 무거운 개념은 {heavy}개야."
+    - q: 어디에 쓸모 있어?
+      a: "머신러닝의 엔진이야. 도함수로 손실을 줄여 가는 게 경사 하강법이고, 연쇄 법칙을 거꾸로 훑는 게 역전파야. 원시함수를 모르는 적분은 리만 합으로 수치 계산해."
+      link: /studies/calculus/backprop-bridge/
+      link_label: 연쇄 법칙 ↔ 역전파
+    - q: 꼭 잡아야 할 개념은?
+      a: "'극한'과 '미적분의 기본정리'가 각각 문서 네 개를 받쳐. 응용으로 가려면 '연쇄 법칙'이 필수야."
+      link: /studies/calculus/chain-rule/
+      link_label: 연쇄 법칙
+    - q: 다른 과목이랑 이어져?
+      a: "합 ↔ 적분으로 이산수학과, 사잇값 정리 ↔ 매개변수 탐색으로 알고리즘과 이어져. 휴먼 인터페이스 미디어의 추상체 반응도 적분이야. r = ∫ i(λ)σ(λ) dλ."
+      link: /studies/algorithms/parametric-search-ivt/
+      link_label: 매개변수 탐색 ↔ 사잇값 정리
+  talk:
+    - text: "흔한 오해: '극한값은 그 점의 함숫값.' 극한은 x = a 자체를 보지 않아. 둘이 같은 경우를 '연속'이라고 따로 부르는 거야."
+      link: /studies/calculus/limits/
+      link_label: 극한
+    - text: "흔한 오해: '연속이면 미분 가능.' |x|는 0에서 연속이지만 꺾여 있어서 미분할 수 없어. 신경망의 ReLU도 그래."
+      link: /studies/calculus/derivative/
+      link_label: 도함수
+    - text: "흔한 오해: '(fg)′ = f′g′.' 직사각형의 가로와 세로가 각각 늘어난 두 띠를 더해야 해. 그래서 f′g + fg′야."
+      link: /studies/calculus/differentiation-rules/
+      link_label: 미분 법칙
+    - text: "흔한 오해: '(f(g(x)))′ = f′(g′(x)).' 바깥 도함수는 안쪽 값에서 계산하고, 안쪽 도함수를 곱해야 해."
+      link: /studies/calculus/chain-rule/
+      link_label: 연쇄 법칙
+    - text: "흔한 오해: 'f′(x) = 0이면 극값.' x³은 0에서 도함수가 0인데 계속 올라가기만 해. 도함수가 0인 점은 후보일 뿐이야."
+      link: /studies/calculus/curve-analysis/
+      link_label: 도함수의 활용과 최적화
+    - text: "흔한 오해: '정적분은 곡선 아래 넓이.' 부호가 있는 누적량이야. sin x를 0부터 2π까지 적분하면 0이지만 넓이는 4야."
+      link: /studies/calculus/riemann-integral/
+      link_label: 정적분과 리만 합
+    - text: "흔한 오해: '테일러 급수는 항을 늘리면 어디서든 정확해진다.' ln(1 + x)는 x = 2에서 부분합이 점점 크게 흔들려. 수렴 반지름 안에서만 도움이 돼."
+      link: /studies/calculus/taylor-series/
+      link_label: 테일러 급수
+    - text: "흔한 오해: '학습률을 키우면 늘 더 빨리 수렴한다.' x²에서 학습률 0.5는 한 걸음에 끝나지만 1.1은 발산해."
+      link: /studies/calculus/gradient-descent/
+      link_label: 경사 하강법
+    - text: "흔한 오해: '기울기가 0이 되어 멈췄으니 최솟값.' 안장점일 수도 있어. x² − y²의 원점이 그래."
+      link: /studies/calculus/gradient-descent/
+      link_label: 경사 하강법
+    - text: "흔한 오해: '이웃 항의 차가 0으로 가면 수렴한다.' 조화수 1 + 1/2 + … + 1/n은 차가 0으로 가는데도 한없이 커져."
+      link: /studies/calculus/sequence-limits/
+      link_label: 수열의 극한과 e
+
+linear-algebra:
+  greeting: "삐빅! 선형대수학 노트야. 벡터에서 특잇값 분해까지 가. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "벡터 → 행렬과 연립방정식 → 벡터공간과 선형변환 → 직교성 → 고윳값과 분해 → 응용과 확장, 여섯 단원이야. 가장 긴 선수 사슬이 벡터에서 '노름과 조건수'까지 13단계라 순서를 지키는 게 중요해."
+      link: /studies/linear-algebra/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "계산은 기계적인데 '공간'으로 생각하는 게 어려워. 무거운 개념이 {heavy}개로 많은 편이야. 열공간, 영공간, 랭크를 한 묶음으로 보면 덜 헷갈려."
+      link: /studies/linear-algebra/four-subspaces/
+      link_label: 랭크와 네 부분공간
+    - q: 어디에 쓸모 있어?
+      a: "추천과 검색의 코사인 유사도, 신경망 층의 Wx + b, 데이터를 적은 좌표로 줄이는 부분공간이 다 선형대수야. NumPy의 solve도 가우스 소거를 기록한 LU 분해를 써."
+      link: /studies/linear-algebra/dot-product/
+      link_label: 내적과 노름
+    - q: 꼭 잡아야 할 개념은?
+      a: "'역행렬'과 '가우스 소거법'이 뒤를 가장 많이 받쳐. 그리고 '고윳값과 고유벡터'는 대각화, 스펙트럼 정리, 특잇값 분해로 가는 관문이야."
+      link: /studies/linear-algebra/eigenvalues/
+      link_label: 고윳값과 고유벡터
+    - q: 다른 과목이랑 이어져?
+      a: "휴먼 인터페이스 미디어와 많이 이어져. 뉴런 층 o = Ax + b, 퍼셉트론 wᵀx + b, 조건등색은 영공간 문제야. 이산수학의 선형 점화식은 행렬 거듭제곱으로 풀려."
+      link: /studies/linear-algebra/recurrence-matrix-bridge/
+      link_label: 선형 점화식 ↔ 행렬 거듭제곱
+  talk:
+    - text: "흔한 오해: '내적이 클수록 두 벡터가 더 비슷하다.' 내적은 길이에도 비례해. 방향만 비교하려면 코사인 유사도를 써."
+      link: /studies/linear-algebra/dot-product/
+      link_label: 내적과 노름
+    - text: "흔한 오해: 'x ↦ Ax + b도 선형변환.' 0을 0으로 보내지 않으니까 선형이 아니라 아핀 함수야."
+      link: /studies/linear-algebra/matrix-vector/
+      link_label: 행렬과 행렬-벡터 곱
+    - text: "흔한 오해: '식 개수와 미지수 개수가 같으면 해가 하나.' x + y = 1, 2x + 2y = 3은 해가 없어. 판정은 개수가 아니라 피벗 수로 해."
+      link: /studies/linear-algebra/gaussian-elimination/
+      link_label: 가우스 소거법
+    - text: "흔한 오해: '어느 두 벡터도 평행하지 않으면 선형독립.' (1, 0), (0, 1), (1, 1)은 종속이야. 평면 위 벡터 세 개는 늘 종속이지."
+      link: /studies/linear-algebra/linear-independence/
+      link_label: 선형독립
+    - text: "흔한 오해: '공간마다 기저는 하나로 정해져 있다.' 기저는 무수히 많아. 정해진 건 개수, 곧 차원뿐이야."
+      link: /studies/linear-algebra/basis-dimension/
+      link_label: 기저와 차원
+    - text: "흔한 오해: 'det(2A) = 2 det A.' n × n이면 2ⁿ det A야. 가로와 세로를 모두 2배 하면 넓이는 4배잖아."
+      link: /studies/linear-algebra/determinant/
+      link_label: 행렬식
+    - text: "흔한 오해: '선형변환은 모양과 크기를 유지한다.' 원을 타원으로, 정사각형을 평행사변형으로 바꿀 수 있어. 길이와 각을 지키는 건 직교 변환뿐이야."
+      link: /studies/linear-algebra/linear-transformations/
+      link_label: 선형변환
+    - text: "흔한 오해: '최소제곱은 점에서 직선까지의 수직 거리를 줄인다.' 세로(y 방향) 차이만 줄여. 수직 거리를 줄이면 다른 직선이 나와."
+      link: /studies/linear-algebra/least-squares/
+      link_label: 최소제곱법
+    - text: "흔한 오해: '고윳값이 겹치면 대각화할 수 없다.' 단위행렬은 고윳값 1이 n번 겹쳐도 이미 대각이야. 고유벡터가 모자랄 때만 실패해."
+      link: /studies/linear-algebra/diagonalization/
+      link_label: 대각화
+    - text: "흔한 오해: '특잇값은 고윳값의 절댓값.' 대칭일 때만 그래. [[1, 1], [0, 1]]은 고윳값이 1, 1인데 특잇값은 약 1.618과 0.618이야."
+      link: /studies/linear-algebra/svd/
+      link_label: 특잇값 분해
+
+probability-statistics:
+  greeting: "삐빅! 확률과 통계 노트야. 주사위에서 시작해 머신러닝과 정보이론까지 가. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "확률의 기초 → 이산 → 연속 → 여러 확률변수 → 극한 정리 → 확률 과정 → 통계적 추론 → 데이터 모델 → 정보이론, 아홉 단원이야. 가장 긴 선수 사슬은 표본공간에서 '과적합과 교차검증'까지 13단계."
+      link: /studies/probability-statistics/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "공학수학의 다른 네 과목을 모두 불러오는 과목이야. 이산수학의 셈, 미분적분학의 적분, 선형대수학의 행렬까지 써. 무거운 개념은 {heavy}개야."
+    - q: 어디에 쓸모 있어?
+      a: "스팸 필터(나이브 베이즈), A/B 테스트, 오차 막대와 신뢰구간, 무작위 알고리즘의 성능 보장이 다 여기서 나와. 회귀 모델은 조건부 기댓값을 어림하는 거야."
+      link: /studies/probability-statistics/bayes-theorem/
+      link_label: 베이즈 정리
+    - q: 꼭 잡아야 할 개념은?
+      a: "'분산과 표준편차'와 '기댓값과 선형성'이 뒤를 가장 많이 받쳐. '조건부 확률'은 베이즈 정리로 가는 문이고."
+      link: /studies/probability-statistics/expectation/
+      link_label: 기댓값과 선형성
+    - q: 다른 과목이랑 이어져?
+      a: "이상 심리학의 통계적 이상 기준은 정규분포의 꼬리 확률이고, 컴퓨터 통신의 동시 사용자 수는 이항분포야. 인접행렬 거듭제곱은 마르코프 전이와 같은 구조고."
+      link: /studies/probability-statistics/walks-markov-bridge/
+      link_label: 인접행렬 ↔ 마르코프 전이
+  talk:
+    - text: "흔한 오해: '정확도 99% 검사에서 양성이면 99% 병이다.' 유병률 0.1%, 위양성률 1%라면 양성일 때 병일 확률은 약 9%야. 위양성이 섞이거든."
+      link: /studies/probability-statistics/bayes-theorem/
+      link_label: 베이즈 정리
+    - text: "흔한 오해: 'P(A|B)와 P(B|A)는 비슷하다.' 프로 농구 선수가 키 190 cm 이상일 확률은 높지만, 키 190 cm 이상인 사람이 프로 선수일 확률은 아주 낮아."
+      link: /studies/probability-statistics/conditional-probability/
+      link_label: 조건부 확률
+    - text: "흔한 오해: '합의 기댓값을 쪼개려면 독립이어야 한다.' 선형성은 독립이 필요 없어. 모자 문제도 기댓값이 정확히 1이야."
+      link: /studies/probability-statistics/expectation/
+      link_label: 기댓값과 선형성
+    - text: "흔한 오해: '여러 번 실패했으니 이번엔 성공할 확률이 높다.' 도박사의 오류야. 독립이면 주사위는 지난 결과를 기억하지 않아."
+      link: /studies/probability-statistics/geometric-distribution/
+      link_label: 기하분포
+    - text: "흔한 오해: '상관계수가 크면 한쪽이 원인이다.' 여름에 아이스크림 판매와 물놀이 사고가 함께 느는 건 둘 다 더위 때문이야."
+      link: /studies/probability-statistics/covariance/
+      link_label: 공분산과 상관계수
+    - text: "흔한 오해: '자료를 많이 모으면 자료의 분포가 정규분포가 된다.' 정규에 가까워지는 건 평균들의 분포야. 자료 자체는 그대로 치우쳐 있어."
+      link: /studies/probability-statistics/clt/
+      link_label: 중심극한정리
+    - text: "흔한 오해: '95% 신뢰구간에 참 평균이 있을 확률이 95%.' 95%는 구간을 만드는 방법의 성질이야. 되풀이하면 구간의 95%가 참값을 담는다는 뜻이지."
+      link: /studies/probability-statistics/confidence-intervals/
+      link_label: 신뢰구간
+    - text: "흔한 오해: 'p = 0.03이면 귀무가설이 참일 확률이 3%.' p값은 귀무가설이 참일 때 이만큼 극단적인 자료가 나올 확률이야. 방향이 반대야."
+      link: /studies/probability-statistics/hypothesis-testing/
+      link_label: 가설검정과 p값
+    - text: "흔한 오해: '엔트로피가 높을수록 유익한 정보가 많다.' 무작위 잡음이 엔트로피가 가장 높아. 엔트로피는 예측하기 어려운 정도일 뿐이야."
+      link: /studies/probability-statistics/entropy/
+      link_label: 엔트로피
+    - text: "흔한 오해: '평균에서 3σ 넘게 떨어진 값은 0.3%만 나온다.' 정규분포에서만 맞아. 꼬리가 두꺼운 t분포(자유도 3)는 약 1.3%야."
+      link: /studies/probability-statistics/normal-distribution/
+      link_label: 정규분포
+
+algorithms:
+  greeting: "삐빅! 알고리즘 노트야. 파이썬으로 프로그래머스 문제를 레벨별로 풀어 뒀어. 뭐가 궁금해?"
+  questions:
+    - q: 어떤 순서로 공부해?
+      a: "파이썬 기본기 → 구현 → 자료구조 → 탐색 → 그래프와 트리 → 동적 계획법 → 고급 기법 → 수학과 잇기, 여덟 단원이야. 가장 긴 선수 사슬이 파이썬 기본 문법에서 다익스트라까지 6단계라 문제를 풀면서 빨리 올라갈 수 있어."
+      link: /studies/algorithms/
+      link_label: 로드맵 보기
+    - q: 얼마나 어려워?
+      a: "개념 사슬은 짧은데, 문제를 보고 어떤 기법인지 알아보는 게 어려워. 그래서 기법 문서에 '이런 말이 보이면 이 기법'이라는 신호를 적어 뒀어. 무거운 개념은 {heavy}개야."
+    - q: 어디에 쓸모 있어?
+      a: "코딩 테스트에 바로 써. 그리고 입력 크기 제한만 보고 쓸 수 있는 방법을 미리 고르는 '시간 복잡도 어림'은 모든 풀이 문서의 2단계야."
+      link: /studies/algorithms/complexity-budget/
+      link_label: 시간 복잡도로 방법 고르기
+    - q: 꼭 잡아야 할 개념은?
+      a: "'리스트와 문자열'이 문서 11개를 받쳐. 그다음이 '시간 복잡도로 방법 고르기'고. 무거운 개념 중 BFS, 다익스트라, 동적 계획법은 그래프와 DP로 가는 관문이야."
+      link: /studies/algorithms/list-string/
+      link_label: 리스트와 문자열
+    - q: 다른 과목이랑 이어져?
+      a: "공학수학과 브리지 문서 일곱 개로 이어져. 귀납법 ↔ 루프 불변식, 누적 합 ↔ 아래삼각행렬, 매개변수 탐색 ↔ 사잇값 정리, 격자 회전 ↔ 선형변환 같은 거야."
+      link: /studies/algorithms/prefix-sum-triangular/
+      link_label: 누적 합 ↔ 아래삼각행렬
+  talk:
+    - text: "흔한 오해: '코드 줄이 짧으면 빠르다.' 리스트에 쓴 in은 한 줄이어도 끝까지 훑어. 재 보니 집합의 in보다 약 1,000배 느렸어."
+      link: /studies/algorithms/complexity-budget/
+      link_label: 시간 복잡도로 방법 고르기
+    - text: "흔한 오해: '딕셔너리는 순서가 없다.' 파이썬 3.7부터는 넣은 순서대로 돌아. 집합은 여전히 순서를 약속하지 않고."
+      link: /studies/algorithms/hash-dict-set/
+      link_label: 딕셔너리와 집합
+    - text: "흔한 오해: '재귀 호출마다 리스트가 새로 복사된다.' 모두 같은 리스트를 가리켜. append한 건 pop으로 되돌려야 다른 가지에 안 남아."
+      link: /studies/algorithms/recursion-backtracking/
+      link_label: 재귀와 백트래킹
+    - text: "흔한 오해: 'lo = mid로 옮겨도 결국 좁혀진다.' hi = lo + 1이면 mid = lo라서 영원히 돌아."
+      link: /studies/algorithms/binary-search/
+      link_label: 이분 탐색
+    - text: "흔한 오해: '이분 탐색은 정렬된 배열이 있어야 쓴다.' 판정 결과가 거짓…거짓 참…참 모양이기만 하면 돼. 그게 매개변수 탐색이야."
+      link: /studies/algorithms/parametric-search/
+      link_label: 매개변수 탐색
+    - text: "흔한 오해: '예시 몇 개에서 맞으면 그리디가 맞다.' 회의실 배정에서 늘 맞는 기준은 '먼저 끝나는 것'뿐이야. 그럴듯한 다른 기준엔 다 반례가 있어."
+      link: /studies/algorithms/greedy/
+      link_label: 그리디
+    - text: "흔한 오해: 'BFS 방문 표시는 큐에서 꺼낼 때 해도 같다.' 같은 점이 큐에 여러 번 들어가고 거리가 덮어써질 수 있어. 넣을 때 표시해."
+      link: /studies/algorithms/bfs/
+      link_label: 너비 우선 탐색
+    - text: "흔한 오해: '다익스트라도 처음 발견할 때 거리를 확정해도 된다.' 비용이 다르면 먼저 발견한 길이 더 비쌀 수 있어. 힙에서 꺼낼 때 확정해."
+      link: /studies/algorithms/dijkstra/
+      link_label: 다익스트라
+    - text: "흔한 오해: '기억하기만 붙이면 어떤 재귀든 빨라진다.' 같은 부분 문제가 다시 나올 때만 이득이야. 겹침이 없으면 표만 커져."
+      link: /studies/algorithms/dynamic-programming/
+      link_label: 동적 계획법
+    - text: "흔한 오해: '기울기를 나눗셈으로 비교하면 된다.' 세로선에서 0으로 나누게 되고 큰 좌표에선 부동소수 오차가 나. 외적을 써."
+      link: /studies/algorithms/geometry-ccw/
+      link_label: 계산 기하 기초
