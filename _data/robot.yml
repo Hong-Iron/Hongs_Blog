@@ -1,6 +1,6 @@
-# 로봇 철민 (the corner robot) — what it says, shown by assets/js/robot.js.
+# 홍철 (the corner robot) — what it says, shown by assets/js/robot.js.
 #
-# It talks like 철민 in a casual chat (해요체, short sentences), in the first
+# 홍철 is 철민's pixel double and talks like him in a casual chat (해요체, short sentences), in the first
 # person. Personal small talk only uses things already written in the
 # Pensées posts; course facts come from the study notes.
 #
@@ -14,7 +14,7 @@
 # {heavy} are filled from the course's numbers, {courses} {notes} from the site.
 
 default:
-  greeting: "안녕하세요, 철민이에요. 정확히는 로봇 철민이요. 편하게 눌러 보세요."
+  greeting: "안녕하세요, 홍철이에요. 편하게 눌러 보세요."
   questions:
     - q: 여긴 뭐 하는 곳이에요?
       a: "제가 만든 것, 공부한 것, 묵상한 글을 모아 둔 곳이에요. 위 메뉴에서 골라서 보시면 돼요."
@@ -29,7 +29,7 @@ default:
       link: /studies/
       link_label: 과목 둘러보기
     - q: 진짜 철민이에요?
-      a: "반만요. 제 얼굴을 한 칸씩 찍어서 만든 로봇이라, 정해진 말만 할 줄 알아요. 아무 질문에나 대답은 못 해도, 과목마다 할 얘기는 좀 외워 놨어요."
+      a: "반만요. 저는 철민이 얼굴을 한 칸씩 찍어서 만든 로봇 홍철이에요. 정해진 말만 할 줄 알아요. 아무 질문에나 대답은 못 해도, 과목마다 할 얘기는 좀 외워 놨어요."
   talk:
     - text: "말투가 좀 딱딱하면 이해해 주세요. 한국에 온 지 4년 가까이 됐는데, 아직 문어체가 입에 붙어 있어요."
       link: /pensees/2026/09/18/loosening-my-grip/

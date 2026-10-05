@@ -1,6 +1,6 @@
 /* ==========================================================================
-   로봇 철민, the corner robot (_includes/robot.html, assets/js/robot.js).
-   Pixel art throughout: the face is a 20 x 22 grid, the bubble has stepped
+   홍철, the corner robot (_includes/robot.html, assets/js/robot.js).
+   Pixel art throughout: the face is a 24 x 23 grid, the bubble has stepped
    pixel corners drawn with box-shadows, text is set in the Galmuri pixel
    font. Colours stay on the site's paper / ink / accent scheme.
    ========================================================================== */
@@ -38,8 +38,8 @@
 
 .robot__button {
   display: block;
-  width: 60px;
-  height: 66px;
+  width: 72px;
+  height: 69px;
   padding: 0;
   background: none;
   filter: drop-shadow(3px 3px 0 color-mix(in srgb, var(--ink) 22%, transparent));
@@ -99,8 +99,8 @@
 .robot__hint {
   --fw: 2px;
   position: absolute;
-  right: 50px;
-  bottom: 64px;
+  right: 60px;
+  bottom: 66px;
   display: grid;
   place-items: center;
   width: 22px;
@@ -329,13 +329,13 @@
 
 @media (max-width: 560px) {
   .robot__button {
-    width: 50px;
-    height: 55px;
+    width: 48px;
+    height: 46px;
   }
 
   .robot__hint {
-    right: 40px;
-    bottom: 54px;
+    right: 38px;
+    bottom: 44px;
   }
 
   .robot__dialog {

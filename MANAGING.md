@@ -204,7 +204,7 @@ Every page has a canvas of shapes behind it, drawn by `assets/js/geo.js`
   `scripts/vault_export.py`.
 - Visitors with "reduce motion" turned on get a still picture.
 
-## 로봇 철민 (the corner robot)
+## 홍철 (the corner robot)
 
 The pixel face in the bottom-right corner opens a speech bubble with two
 buttons: 질문하기 (preset questions) and 대화하기 (a random line, no repeats
@@ -213,7 +213,7 @@ until the pool runs out).
 - **What it says:** `_data/robot.yml`, one block per course slug plus
   `default` for other pages. `{concepts}`, `{heavy}` etc. are filled from the
   course numbers, so they stay right after a re-export.
-- **The face:** a 20 × 22 pixel grid in `scripts/robot_face.py`; edit the
+- **The face:** a 24 × 23 pixel grid in `scripts/robot_face.py`; edit the
   grid and run `python3 scripts/robot_face.py` to rewrite
   `_includes/robot-face.svg`. Blink and talk frames are swapped in
   `assets/css/robot.css`.

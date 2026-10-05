@@ -1,4 +1,4 @@
-/* 로봇 철민, the corner robot. Opens a game-style speech bubble with two modes:
+/* 홍철, the corner robot. Opens a game-style speech bubble with two modes:
  * 질문하기 (pick one of the course's preset questions) and 대화하기 (a random
  * line from the course's pool, no repeats until the pool runs out).
  * Lines come from _data/robot.yml via the JSON in _includes/robot.html.
