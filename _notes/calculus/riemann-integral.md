@@ -53,7 +53,7 @@ $$f$$가 $$[a, b]$$에서 정의된 함수라 하자. 구간을 $$a = x_0 < x_1 
 
 $$S = \sum_{i=1}^{n} f(x_i^*)\,\Delta x_i \qquad (\Delta x_i = x_i - x_{i-1})$$
 
-를 **리만 합**이라 한다. 가장 넓은 칸의 폭 $$\max_i \Delta x_i$$가 0으로 갈 때, 점을 어떻게 고르든 $$S$$가 같은 수 $$I$$로 다가가면 $$f$$는 **적분 가능**하고 $$\int_a^b f(x)\,dx = I$$라 쓴다[^1].  
+를 **리만 합**이라 한다. 가장 넓은 칸의 폭 $$\max_i \Delta x_i$$가 0으로 갈 때, 점을 어떻게 고르든 $$S$$가 같은 수 $$I$$로 다가가면 $$f$$는 **적분 가능**하고 $$\int_a^b f(x)\,dx = I$$라 쓴다[^1].<br>
 엄밀히는: $$\forall \varepsilon > 0\ \exists \delta > 0$$, 폭이 모두 $$\delta$$ 미만인 모든 분할과 점 선택에서 $$\vert S - I\vert  < \varepsilon$$.
 
 </div>

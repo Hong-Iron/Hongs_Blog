@@ -40,7 +40,7 @@ permalink: "/studies/abnormal-psychology/frotteuristic-disorder/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">마찰도착장애의 진단기준[^1]</div>
 
-A. 동의하지 않은 사람에게 몸을 대거나 문지르는 행위를 통해 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 이상 이어진다.  
+A. 동의하지 않은 사람에게 몸을 대거나 문지르는 행위를 통해 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 이상 이어진다.<br>
 B. 임상적으로 현저한 고통이나 손상을 낳는다. DSM-5-TR은 동의하지 않은 사람에게 이 충동을 행동으로 옮긴 경우도 B에 넣는다[^s2].
 
 </div>

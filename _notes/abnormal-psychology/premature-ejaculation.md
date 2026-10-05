@@ -43,8 +43,8 @@ permalink: "/studies/abnormal-psychology/premature-ejaculation/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">조기사정의 진단기준[^1]</div>
 
-A. 성적 행위 중 질 내 삽입 후, 원하기 전인 대략 1분 안에 사정하는 일이 지속되거나 반복된다.  
-B. 최소 6개월 동안, 거의 모든 경우 또는 모든 경우(약 75~100%)에 겪는다.  
+A. 성적 행위 중 질 내 삽입 후, 원하기 전인 대략 1분 안에 사정하는 일이 지속되거나 반복된다.<br>
+B. 최소 6개월 동안, 거의 모든 경우 또는 모든 경우(약 75~100%)에 겪는다.<br>
 C. 본인에게 임상적으로 현저한 고통이 생긴다.
 
 </div>

@@ -88,7 +88,7 @@ RRP는 응용의 Data를 바디(body)로 삼아 앞에 RRP 헤더를 붙인다. 
 <details markdown="1"><summary markdown="span"><b>C1</b> 슬라이드의 RRP·HHP 구조에서 (a) 망을 지나는 메시지 (b) Host 2의 HHP가 처리를 마치고 RRP에게 넘기는 것 (c) RRP가 응용에게 넘기는 것을 각각 쓰라.</summary>
 
 
-**답:** (a) <code>[HHP&#124;RRP&#124;Data]</code> (b) <code>[RRP&#124;Data]</code> (c) `[Data]`  
+**답:** (a) <code>[HHP&#124;RRP&#124;Data]</code> (b) <code>[RRP&#124;Data]</code> (c) `[Data]`<br>
 **흔한 오답:** (b)를 `[Data]`라고 하는 것. HHP는 자기 헤더만 뗀다. RRP 헤더는 HHP에게 바디의 일부일 뿐이다.
 
 </details>
@@ -96,7 +96,7 @@ RRP는 응용의 Data를 바디(body)로 삼아 앞에 RRP 헤더를 붙인다. 
 <details markdown="1"><summary markdown="span"><b>C2</b> 세 층이 각각 20바이트 헤더를 붙인다. 응용 데이터가 (a) 40바이트일 때와 (b) 1,460바이트일 때, 선에 실리는 메시지에서 헤더가 차지하는 비율은?</summary>
 
 
-**답:** 헤더 합 60바이트. (a) $$60 / (40 + 60) = 60\%$$. (b) $$60 / (1{,}460 + 60) \approx 3.9\%$$.  
+**답:** 헤더 합 60바이트. (a) $$60 / (40 + 60) = 60\%$$. (b) $$60 / (1{,}460 + 60) \approx 3.9\%$$.<br>
 **이유:** 헤더 크기는 메시지 크기와 무관하게 고정이다. 그래서 작은 메시지일수록 오버헤드 비율이 크다.
 
 </details>

@@ -52,7 +52,7 @@ permalink: "/studies/human-interface-media/rate-coding/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**발화율**(firing rate) $$r$$은 단위 시간당 스파이크 수(회/초)다. 뉴런은 자극의 세기를 스파이크의 크기가 아니라 발화율로 나타낸다(전부 아니면 전무, all-or-none)[^s2].  
+**발화율**(firing rate) $$r$$은 단위 시간당 스파이크 수(회/초)다. 뉴런은 자극의 세기를 스파이크의 크기가 아니라 발화율로 나타낸다(전부 아니면 전무, all-or-none)[^s2].<br>
 **불응기**(refractory period) $$t_{\text{ref}}$$는 한 번 발화한 뒤 다시 발화하지 못하는 시간이다. 슬라이드 값은 1 ms, 최대 발화율은 초당 500~800회다[^1].
 
 </div>
@@ -128,7 +128,7 @@ $$s$$가 커지면 $$r$$도 커진다. 하지만 $$\theta/s \to 0$$이므로 $$r
 <details markdown="1"><summary markdown="span"><b>C3</b> 자극이 아주 셀 때, 세기가 조금 다른 두 자극을 발화율만으로 구별하기 어려워지는 이유는?</summary>
 
 
-**답:** 불응기 때문에 발화율에 상한(1,000회/초)이 있어서, 세기가 커질수록 발화율이 상한 근처에서 포화한다. 곡선이 평평한 곳에서는 세기가 달라도 발화율 차이가 거의 없다.  
+**답:** 불응기 때문에 발화율에 상한(1,000회/초)이 있어서, 세기가 커질수록 발화율이 상한 근처에서 포화한다. 곡선이 평평한 곳에서는 세기가 달라도 발화율 차이가 거의 없다.<br>
 **흔한 오답:** "뉴런이 지쳐서"라고만 쓴다. 핵심은 간격이 불응기보다 짧아질 수 없다는 구조적 한계다.
 
 </details>

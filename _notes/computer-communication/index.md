@@ -50,8 +50,8 @@ permalink: "/studies/computer-communication/"
 | 15 | [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/) | 보낼 것이 있는 입력에만 링크를 줌. 주소 오버헤드 (강조)[^6] | [검증](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_verify/) | — |
 | 16 | [시분할 다중화와 통계적 다중화 비교](/Hongs_Blog/studies/computer-communication/contrast--tdm--statistical-multiplexing/) | 가르는 질문: 칸을 미리 정해 두는가 | — | — |
 
-자료: 직접 링크 · 간접 연결 · 인터네트워킹 · 스위칭 정책 · 스위칭 정책(같은 파일) · 패킷 스위칭 · 자원 공유 · 다중화 · 시분할 다중화 · TDM 그림 · 주파수 분할 스펙트럼 · FDM 그림 · 통계적 다중화 · 다채널 분할  
-필기: 1주차 필기  
+자료: 직접 링크 · 간접 연결 · 인터네트워킹 · 스위칭 정책 · 스위칭 정책(같은 파일) · 패킷 스위칭 · 자원 공유 · 다중화 · 시분할 다중화 · TDM 그림 · 주파수 분할 스펙트럼 · FDM 그림 · 통계적 다중화 · 다채널 분할
+필기: 1주차 필기
 떠올려 보기: 노트를 닫고 연결 방식, 스위칭 정책, 다중화 방식 세 가지와, 버스티 트래픽이 스위칭과 다중화에서 각각 어떤 선택을 이끌었는지 써 본다.
 
 ## 2회 · 패킷 스위칭과 네트워크 구조
@@ -76,8 +76,8 @@ permalink: "/studies/computer-communication/"
 | 22 | [캡슐화](/Hongs_Blog/studies/computer-communication/encapsulation/) | 층마다 헤더를 붙여 내려보내고 떼어 올려보냄 | [검증](/Hongs_Blog/studies/computer-communication/code/22_encapsulation_verify/) | — |
 | 23 | [OSI 참조 모델](/Hongs_Blog/studies/computer-communication/osi-reference-model/) | 통신의 일을 나눈 7층 지도. 중간 노드는 아래 3층만 (강조)[^10] | — | — |
 
-자료: 통계적 다중화와 패킷스위칭 · 통신 서비스 제공 · 통신 장애 극복 · 1장 기본 개념 · 계층화 · 4층 그림 · 4층 그림(같은 캡처) · 프로토콜 계층/개체 · 프로토콜 그래프 · RRP·HHP · RRP·HHP 논리 통신 · 캡슐화 · 동작 원칙 · logical communication · physical communication · OSI 표준 구조 · OSI 손글씨 · OSI 손글씨(같은 캡처)  
-필기: 2주차 필기  
+자료: 통계적 다중화와 패킷스위칭 · 통신 서비스 제공 · 통신 장애 극복 · 1장 기본 개념 · 계층화 · 4층 그림 · 4층 그림(같은 캡처) · 프로토콜 계층/개체 · 프로토콜 그래프 · RRP·HHP · RRP·HHP 논리 통신 · 캡슐화 · 동작 원칙 · logical communication · physical communication · OSI 표준 구조 · OSI 손글씨 · OSI 손글씨(같은 캡처)
+필기: 2주차 필기
 떠올려 보기: 노트를 닫고 계층화, 프로토콜의 두 인터페이스, 프로토콜 그래프, 캡슐화가 서로 어떻게 이어지는지 한 장의 그림으로 그려 본다.
 
 ## 3회 · 인터넷 구조와 성능
@@ -101,8 +101,8 @@ permalink: "/studies/computer-communication/"
 | 27 | [처리량](/Hongs_Blog/studies/computer-communication/throughput/) | 실제로 낸 속도 = 크기 ÷ 전송 완료 시간. 작은 메시지는 소요시간이 지배 | [검증](/Hongs_Blog/studies/computer-communication/code/27_throughput_verify/) | — |
 | 28 | [대역폭-지연 곱](/Hongs_Blog/studies/computer-communication/bandwidth-delay-product/) | 파이프의 부피 = 대역폭 × 지연. 빠른 링크일수록 채우기 어려움 | [검증](/Hongs_Blog/studies/computer-communication/code/28_bandwidth-delay-product_verify/) | — |
 
-자료: 인터넷 구조 · 대역폭 · 소요시간 · Timing in Circuit Switching · Timing in Circuit Switching(표시 없음) · Timing of Packet Switching · Timing of Packet Switching(다른 캡처) · Pipelining · 성능 (3) · Frames 전송 · Frames 전송(같은 캡처) · 성능 기타  
-필기: 3주차 필기 · 과제 2 풀이 (사진 1쪽 · 2쪽 · 3쪽 · 4쪽)  
+자료: 인터넷 구조 · 대역폭 · 소요시간 · Timing in Circuit Switching · Timing in Circuit Switching(표시 없음) · Timing of Packet Switching · Timing of Packet Switching(다른 캡처) · Pipelining · 성능 (3) · Frames 전송 · Frames 전송(같은 캡처) · 성능 기타
+필기: 3주차 필기 · 과제 2 풀이 (사진 1쪽 · 2쪽 · 3쪽 · 4쪽)
 떠올려 보기: 노트를 닫고 소요시간의 네 항을 쓰고, 회선과 패킷의 시간 흐름 그림을 그린 뒤, 처리량과 대역폭-지연 곱이 소요시간과 어떻게 이어지는지 써 본다.
 
 ## 4회 · 데이터 링크 네트워크: 링크의 실체
@@ -128,8 +128,8 @@ permalink: "/studies/computer-communication/"
 | 35 | [이동통신](/Hongs_Blog/studies/computer-communication/cellular-networks/) | 셀과 기지국. 핸드오프, 공간 분할로 주파수 재사용 | — | — |
 | 36 | [위성통신](/Hongs_Blog/studies/computer-communication/satellite-systems/) | 높이 띄울수록 넓게, 늦게. 휴대 기기의 양방향 통신은 저궤도 | [검증](/Hongs_Blog/studies/computer-communication/code/36_satellite-systems_verify/) | — |
 
-자료: 데이터 링크 계층 · 노드 · 링크 · 모듈레이션 · 전자기 스펙트럼 · 유선 링크의 종류 · 광케이블 · 가입자 선로 · DSL(1) · DSL(2) · 가입자 선로 발전 추세 · 무선 링크 일반 · 이동통신 · 고정 무선통신 · 위성통신 · 단거리 무선통신  
-필기: 4주차 필기  
+자료: 데이터 링크 계층 · 노드 · 링크 · 모듈레이션 · 전자기 스펙트럼 · 유선 링크의 종류 · 광케이블 · 가입자 선로 · DSL(1) · DSL(2) · 가입자 선로 발전 추세 · 무선 링크 일반 · 이동통신 · 고정 무선통신 · 위성통신 · 단거리 무선통신
+필기: 4주차 필기
 떠올려 보기: 노트를 닫고 점대점 링크 위에서 할 일 세 가지와, 유선·가입자 선로·무선·이동통신·위성을 거리와 속도 기준으로 비교하는 표를 만들어 본다.
 
 ## 5회

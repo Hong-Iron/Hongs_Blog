@@ -7,7 +7,7 @@ layout: default
 {% assign posts = posts | sort: "date" | reverse %}
 
 <div class="page-intro container reveal">
-  <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{% if page.eyebrow %}{{ page.eyebrow }}{% else %}{{ posts.size }} {{ cat.name | default: page.category }}{% endif %}</span>
+  <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{% if page.eyebrow %}{{ page.eyebrow }}{% else %}{{ cat.name | default: page.category }} · {{ posts.size }}편{% endif %}</span>
   <h1 class="page-intro__title">{{ cat.name | default: page.category }}</h1>
   {% if cat.description %}<p class="page-intro__desc">{{ cat.description }}</p>{% endif %}
 </div>
@@ -22,7 +22,7 @@ layout: default
     <div class="index-list">
       {% for post in posts %}
         <a class="index-list__item reveal" href="{{ post.url | relative_url }}">
-          <span class="index-list__date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <span class="index-list__date">{{ post.date | date: "%Y.%m.%d" }}</span>
           <div>
             <span class="index-list__title">{{ post.title }}</span>
             <p class="index-list__excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
@@ -31,6 +31,6 @@ layout: default
       {% endfor %}
     </div>
   {% elsif trimmed_content.size == 0 %}
-    <p class="lede" style="padding: 3rem 0;">Nothing posted here yet — run <code>python3 scripts/blog.py post new "Title" --category {{ page.category }}</code> to add the first one.</p>
+    <p class="lede" style="padding: 3rem 0;">아직 올린 글이 없습니다.</p>
   {% endif %}
 </div>

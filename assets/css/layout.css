@@ -281,6 +281,8 @@ main {
 }
 
 .index-list__item {
+  text-decoration: none;
+  color: inherit;
   display: grid;
   grid-template-columns: 7rem 1fr;
   gap: 1.5rem;
@@ -332,6 +334,12 @@ main {
 .article-header__title {
   font-size: clamp(2.1rem, 5vw, 3.4rem);
   max-width: 22ch;
+}
+
+/* Hangul is about twice as wide as a Latin "ch" */
+.article-header__title:lang(ko) {
+  max-width: 16em;
+  line-height: 1.25;
 }
 
 .article-header__subtitle {

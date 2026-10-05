@@ -128,7 +128,7 @@ DSM-5-TR은 5판의 본문개정판(Text Revision)이다. 2022년에 나왔고, 
 <details markdown="1"><summary markdown="span"><b>C1</b> "이상행동"과 "정신장애"는 어떻게 다른가? 불면을 예로 들어 설명하라.</summary>
 
 
-**답:** 이상행동은 관찰·측정할 수 있는 부적응적 특성 하나, 곧 증상 하나다. 정신장애는 이상행동들이 함께 묶여 나타나는 증후군이다. 불면은 이상행동이고, 불면이 우울한 기분·흥미 상실·무가치감과 함께 일정 기간 나타나 기능을 떨어뜨리면 주요우울장애 같은 정신장애가 된다.  
+**답:** 이상행동은 관찰·측정할 수 있는 부적응적 특성 하나, 곧 증상 하나다. 정신장애는 이상행동들이 함께 묶여 나타나는 증후군이다. 불면은 이상행동이고, 불면이 우울한 기분·흥미 상실·무가치감과 함께 일정 기간 나타나 기능을 떨어뜨리면 주요우울장애 같은 정신장애가 된다.<br>
 **흔한 오답:** "정신장애가 더 심한 이상행동"이라고 쓰는 경우. 차이는 심한 정도가 아니라 증상 하나냐 묶음이냐다.
 
 </details>
@@ -143,7 +143,7 @@ DSM-5-TR은 5판의 본문개정판(Text Revision)이다. 2022년에 나왔고, 
 <details markdown="1"><summary markdown="span"><b>C3</b> DSM의 원래 이름, 펴내는 기관, 최신판의 이름과 발간 연도, 범주 수를 쓰라.</summary>
 
 
-**답:** Diagnostic and Statistical Manual of Mental Disorders(정신장애 진단 및 통계 편람). 미국정신의학회(American Psychiatric Association). 최신판은 DSM-5-TR(2022). 22개 범주, 350개가 넘는 하위 장애.  
+**답:** Diagnostic and Statistical Manual of Mental Disorders(정신장애 진단 및 통계 편람). 미국정신의학회(American Psychiatric Association). 최신판은 DSM-5-TR(2022). 22개 범주, 350개가 넘는 하위 장애.<br>
 **흔한 오답:** 펴내는 기관을 미국심리학회(American Psychological Association)로 쓰는 경우. 약자가 같아 헷갈린다.
 
 </details>

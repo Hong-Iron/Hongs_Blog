@@ -102,7 +102,7 @@ physical  ─────→    physical  ─────→    physical
 <details markdown="1"><summary markdown="span"><b>C2</b> 호스트 A — 라우터 R — 호스트 B로 이어진 망에서 A의 transport 층이 B의 transport 층에 데이터를 보낸다. (a) 논리적 통신과 (b) 물리적 통신의 경로를 층 이름으로 쓰라.</summary>
 
 
-**답:** (a) A의 transport ↔ B의 transport. 둘이 곧장 주고받는 것처럼 본다. (b) A: transport → network → link → physical → (선) → R: physical → link → network → link → physical → (선) → B: physical → link → network → transport.  
+**답:** (a) A의 transport ↔ B의 transport. 둘이 곧장 주고받는 것처럼 본다. (b) A: transport → network → link → physical → (선) → R: physical → link → network → link → physical → (선) → B: physical → link → network → transport.<br>
 **흔한 오답:** 라우터에서 transport까지 올라간다고 쓰는 것. 라우터는 network 층까지만 있다.
 
 </details>

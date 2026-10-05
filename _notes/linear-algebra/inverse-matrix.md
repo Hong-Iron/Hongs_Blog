@@ -64,9 +64,9 @@ $$n \times n$$ 행렬 $$A$$에 대해 다음은 동치다.
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명</summary>
 
-*(1 ⇒ 2)* $$\mathbf{x} = A^{-1}\mathbf{b}$$가 해다. 해 $$\mathbf{x}$$가 있으면 양변에 $$A^{-1}$$을 곱해 $$\mathbf{x} = A^{-1}\mathbf{b}$$이므로 하나뿐이다.  
-*(2 ⇒ 3)* $$\mathbf{b} = \mathbf{0}$$인 경우이고, $$\mathbf{0}$$은 늘 해다.  
-*(3 ⇒ 4)* 피벗이 $$n$$개보다 적으면 피벗 없는 열이 있다. 그 자유변수를 1로 두면 $$A\mathbf{x} = \mathbf{0}$$의 0이 아닌 해가 생겨 3에 어긋난다.  
+*(1 ⇒ 2)* $$\mathbf{x} = A^{-1}\mathbf{b}$$가 해다. 해 $$\mathbf{x}$$가 있으면 양변에 $$A^{-1}$$을 곱해 $$\mathbf{x} = A^{-1}\mathbf{b}$$이므로 하나뿐이다.<br>
+*(2 ⇒ 3)* $$\mathbf{b} = \mathbf{0}$$인 경우이고, $$\mathbf{0}$$은 늘 해다.<br>
+*(3 ⇒ 4)* 피벗이 $$n$$개보다 적으면 피벗 없는 열이 있다. 그 자유변수를 1로 두면 $$A\mathbf{x} = \mathbf{0}$$의 0이 아닌 해가 생겨 3에 어긋난다.<br>
 *(4 ⇒ 1)* 기본 행 연산 하나는 기본 행렬 $$E$$를 왼쪽에 곱하는 것이고, 각 $$E$$는 가역이다(연산을 되돌리는 행렬이 있다). 피벗이 $$n$$개면 계속 줄여 $$E_k \cdots E_1 A = I$$로 만들 수 있다(가우스–조르당). $$B = E_k \cdots E_1$$로 두면 $$BA = I$$이고, $$A = E_1^{-1}\cdots E_k^{-1}$$이라 $$AB = E_1^{-1}\cdots E_k^{-1}E_k\cdots E_1 = I$$다. ∎
 
 </details>

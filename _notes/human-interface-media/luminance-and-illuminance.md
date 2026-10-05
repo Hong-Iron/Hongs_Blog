@@ -102,7 +102,7 @@ permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 <details markdown="1"><summary markdown="span"><b>C1</b> 다음은 광도, 조도, 휘도 중 무엇인가? (a) 책상 위에 놓고 재는 조명 기준 500 lx (b) 모니터 사양의 최대 밝기 400 cd/m² (c) 전구 포장에 적힌 한 방향의 세기 100 cd</summary>
 
 
-**답:** (a) 조도: 면에 떨어지는 빛. (b) 휘도: 화면(면)이 내보내는 단위 넓이당 세기. (c) 광도: 광원이 한 방향으로 내는 세기.  
+**답:** (a) 조도: 면에 떨어지는 빛. (b) 휘도: 화면(면)이 내보내는 단위 넓이당 세기. (c) 광도: 광원이 한 방향으로 내는 세기.<br>
 **흔한 오답:** (b)를 광도라 쓴다. 단위에 m²가 있으면 면의 양인 휘도다.
 
 </details>

@@ -180,7 +180,7 @@ permalink: "/studies/computer-communication/packet-switching/"
 <details markdown="1"><summary markdown="span"><b>C3</b> 패킷 길이 8,000비트, 링크 전송률 2 Mbps, 링크 3개일 때 패킷 1개와 패킷 5개가 도착하는 데 걸리는 시간은? (전파·처리·대기 지연 무시)</summary>
 
 
-**답:** $$L/R = 4$$ ms. 패킷 1개: $$3 \times 4 = 12$$ ms. 패킷 5개: $$(3 + 5 - 1) \times 4 = 28$$ ms.  
+**답:** $$L/R = 4$$ ms. 패킷 1개: $$3 \times 4 = 12$$ ms. 패킷 5개: $$(3 + 5 - 1) \times 4 = 28$$ ms.<br>
 **흔한 오답:** 패킷 1개를 4 ms라고 하는 것(링크마다 더하지 않음).
 
 </details>
@@ -195,7 +195,7 @@ permalink: "/studies/computer-communication/packet-switching/"
 <details markdown="1"><summary markdown="span"><b>C5</b> 버퍼가 넘쳐 패킷이 버려지면, 혼잡이 저절로 풀리지 않고 오히려 쌓이기 쉬운 이유는 무엇인가?</summary>
 
 
-**답:** 버려진 패킷은 보낸 쪽이 다시 보낸다. 다시 보낸 패킷이 원래 트래픽에 더해져 같은 버퍼로 몰리므로, 버퍼는 더 자주 넘치고 버려지는 패킷도 더 늘어난다.  
+**답:** 버려진 패킷은 보낸 쪽이 다시 보낸다. 다시 보낸 패킷이 원래 트래픽에 더해져 같은 버퍼로 몰리므로, 버퍼는 더 자주 넘치고 버려지는 패킷도 더 늘어난다.<br>
 **흔한 오답:** "버린 만큼 부하가 줄어 곧 풀린다". 버린 패킷은 사라지지 않고 재전송으로 돌아온다.
 
 </details>

@@ -11,7 +11,8 @@
       <ul id="site-nav-list">
         <li><a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>Projects</a></li>
         {% for cat in site.data.categories %}
-          {% if cat.group == "writing" %}
+          {% assign cat_page = site.pages | where: "category", cat.slug | first %}
+          {% if cat.group == "writing" and site.categories[cat.slug].size > 0 or cat.group == "writing" and cat_page.nav_always %}
             <li><a href="{{ '/' | append: cat.slug | append: '/' | relative_url }}"{% if page.category == cat.slug %} aria-current="page"{% endif %}>{{ cat.name }}</a></li>
           {% endif %}
         {% endfor %}

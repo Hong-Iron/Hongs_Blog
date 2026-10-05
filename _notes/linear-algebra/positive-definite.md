@@ -65,9 +65,9 @@ $$\mathbf{x}^\top S\mathbf{x} = 2x^2 - 2xy + 2y^2 = x^2 + y^2 + (x - y)^2.$$
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 (1 ⇔ 2, 5 ⇒ 1)</summary>
 
-*(2 ⇒ 1)* [스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)로 $$S = Q\Lambda Q^\top$$. $$\mathbf{y} = Q^\top\mathbf{x}$$로 두면 $$\mathbf{x}^\top S\mathbf{x} = \mathbf{y}^\top\Lambda\mathbf{y} = \sum\lambda_iy_i^2$$. $$\mathbf{x} \ne \mathbf{0}$$이면 $$\mathbf{y} \ne \mathbf{0}$$이고($$Q$$ 가역) 모든 $$\lambda_i > 0$$이라 양수다.  
-*(1 ⇒ 2)* 고유벡터 $$\mathbf{q}$$를 넣으면 $$\mathbf{q}^\top S\mathbf{q} = \lambda\Vert \mathbf{q}\Vert ^2 > 0$$이라 $$\lambda > 0$$.  
-*(5 ⇒ 1)* $$\mathbf{x}^\top A^\top A\mathbf{x} = \Vert A\mathbf{x}\Vert ^2 \ge 0$$이고, 열이 독립이라 $$\mathbf{x} \ne \mathbf{0}$$이면 $$A\mathbf{x} \ne \mathbf{0}$$이어서 양수다.  
+*(2 ⇒ 1)* [스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)로 $$S = Q\Lambda Q^\top$$. $$\mathbf{y} = Q^\top\mathbf{x}$$로 두면 $$\mathbf{x}^\top S\mathbf{x} = \mathbf{y}^\top\Lambda\mathbf{y} = \sum\lambda_iy_i^2$$. $$\mathbf{x} \ne \mathbf{0}$$이면 $$\mathbf{y} \ne \mathbf{0}$$이고($$Q$$ 가역) 모든 $$\lambda_i > 0$$이라 양수다.<br>
+*(1 ⇒ 2)* 고유벡터 $$\mathbf{q}$$를 넣으면 $$\mathbf{q}^\top S\mathbf{q} = \lambda\Vert \mathbf{q}\Vert ^2 > 0$$이라 $$\lambda > 0$$.<br>
+*(5 ⇒ 1)* $$\mathbf{x}^\top A^\top A\mathbf{x} = \Vert A\mathbf{x}\Vert ^2 \ge 0$$이고, 열이 독립이라 $$\mathbf{x} \ne \mathbf{0}$$이면 $$A\mathbf{x} \ne \mathbf{0}$$이어서 양수다.<br>
 3, 4와의 동치는 [증명 생략: Strang 5판 6.5절]. ∎
 
 </details>

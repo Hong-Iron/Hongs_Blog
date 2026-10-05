@@ -112,7 +112,7 @@ $$\Omega$$가 유한하고 모든 결과가 똑같이 그럴듯하면 $$P(A) = \
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C2** 주사위를 네 번 던져 6이 적어도 한 번 나올 확률은?</summary>
 
-**답:** 여사건 "한 번도 안 나옴"은 $$\left(\frac56\right)^4$$. $$1 - \frac{625}{1296} \approx 0.518$$.  
+**답:** 여사건 "한 번도 안 나옴"은 $$\left(\frac56\right)^4$$. $$1 - \frac{625}{1296} \approx 0.518$$.<br>
 **흔한 오답:** $$4 \times \frac16 = \frac23$$. 한 번 이상 나오는 경우를 겹쳐 센 것이다(합집합 한계는 위쪽 한계일 뿐이다).
 
 </details>

@@ -73,7 +73,7 @@ permalink: "/studies/calculus/series-convergence/"
 1. 수렴하면 $$a_n = S_n - S_{n-1} \to S - S = 0$$. 이것의 대우다.
 2. [합 ↔ 적분](/Hongs_Blog/studies/calculus/sum-integral-bounds/)의 끼우기 $$\int_1^{n+1}f \le S_n \le f(1) + \int_1^n f$$에서, 적분이 유한하면 늘어나기만 하는 $$S_n$$이 위로 막혀 수렴하고, 적분이 무한대면 $$S_n$$도 무한대로 간다. p-급수는 [p-적분](/Hongs_Blog/studies/calculus/improper-integrals/)에 대응한다.
 3. $$\sum a_k$$의 부분합은 늘어나기만 하고 $$\sum b_k$$ 이하라 위로 막혀 있다(단조 수렴).
-4. $$L < r < 1$$인 $$r$$을 잡으면 충분히 큰 $$k$$부터 $$\vert a_{k+1}\vert  \le r\vert a_k\vert $$라, 그 뒤의 항은 공비 $$r$$인 [등비급수](/Hongs_Blog/studies/college-math/geometric-series/)로 위가 막힌다. 3을 쓴다. $$L > 1$$이면 항이 커져 1을 쓴다.  
+4. $$L < r < 1$$인 $$r$$을 잡으면 충분히 큰 $$k$$부터 $$\vert a_{k+1}\vert  \le r\vert a_k\vert $$라, 그 뒤의 항은 공비 $$r$$인 [등비급수](/Hongs_Blog/studies/college-math/geometric-series/)로 위가 막힌다. 3을 쓴다. $$L > 1$$이면 항이 커져 1을 쓴다.<br>
 5·6. [증명 생략: OpenStax *Calculus Volume 2* 5.5절(교대급수, 재배열)]. ∎
 
 </details>

@@ -45,7 +45,7 @@ permalink: "/studies/abnormal-psychology/transvestic-disorder/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">복장도착장애의 진단기준[^1]</div>
 
-A. 옷 바꿔 입기로부터 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 동안 이어진다.  
+A. 옷 바꿔 입기로부터 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 동안 이어진다.<br>
 B. 임상적으로 현저한 고통이나 손상을 낳는다.
 
 명시자:

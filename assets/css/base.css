@@ -8,11 +8,11 @@
 :root {
   /* type
      Fraunces/Newsreader/Inter have no Hangul glyphs, so Korean text falls
-     through to the next font in each stack — Nanum Myeongjo everywhere,
-     so Korean renders consistently regardless of which stack it's in. */
+     through to the next font in each stack: Nanum Myeongjo for the serif
+     stacks, Pretendard for the sans (UI) stack. */
   --font-display: "Fraunces", "Nanum Myeongjo", "Iowan Old Style", "Palatino Linotype", serif;
   --font-serif: "Newsreader", "Nanum Myeongjo", "Iowan Old Style", Georgia, serif;
-  --font-sans: "Inter", "Nanum Myeongjo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Inter", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* spacing / shape */
   --measure: 34rem;
@@ -22,7 +22,7 @@
 
   /* accent palette — used to color-code categories independent of theme */
   --accent-rust: #b0432c;
-  --accent-ochre: #a6791f;
+  --accent-ochre: #866016;   /* 4.96:1 on paper-cream (was #a6791f, 3.4:1) */
   --accent-moss: #59713f;
   --accent-plum: #6c4a6e;
   --accent-inkblue: #2f4858;
@@ -92,6 +92,11 @@ body {
   line-height: 1.5;
   overflow-wrap: break-word;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Korean breaks between words, not between syllables */
+:lang(ko) {
+  word-break: keep-all;
 }
 
 img,

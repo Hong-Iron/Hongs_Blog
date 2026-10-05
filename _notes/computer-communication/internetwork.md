@@ -78,7 +78,7 @@ permalink: "/studies/computer-communication/internetwork/"
 <details markdown="1"><summary markdown="span"><b>C3</b> 스위칭 네트워크와 인터네트워크는 각각 무엇과 무엇을 잇는가?</summary>
 
 
-**답:** 스위칭 네트워크는 스위치로 호스트들을 잇는다. 인터네트워크는 라우터로 네트워크들을 잇는다.  
+**답:** 스위칭 네트워크는 스위치로 호스트들을 잇는다. 인터네트워크는 라우터로 네트워크들을 잇는다.<br>
 **흔한 오답:** "인터네트워크는 더 큰 스위칭 네트워크다". 크기가 아니라 잇는 대상이 네트워크라는 점이 다르다.
 
 </details>

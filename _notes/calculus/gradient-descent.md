@@ -198,7 +198,7 @@ $$f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot\mathbf{d} + \frac{
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C1** $$f(x) = (x - 3)^2$$에 $$x_0 = 0$$, 학습률 $$0.25$$로 경사 하강법을 세 걸음 돌려 $$x_1, x_2, x_3$$을 구하라.</summary>
 
-**답:** $$f'(x) = 2(x - 3)$$이라 $$x \leftarrow x - 0.5(x - 3)$$, 곧 3까지의 거리가 매번 절반이 된다. $$x_1 = 1.5$$, $$x_2 = 2.25$$, $$x_3 = 2.625$$.  
+**답:** $$f'(x) = 2(x - 3)$$이라 $$x \leftarrow x - 0.5(x - 3)$$, 곧 3까지의 거리가 매번 절반이 된다. $$x_1 = 1.5$$, $$x_2 = 2.25$$, $$x_3 = 2.625$$.<br>
 **흔한 오답:** 기울기의 부호를 반대로 써서 $$x_1 = -1.5$$로 가는 것. 내리막은 기울기의 **반대** 방향이다.
 
 </details>

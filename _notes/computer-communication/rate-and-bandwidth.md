@@ -106,7 +106,7 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 <details markdown="1"><summary markdown="span"><b>C1</b> 전송 지연과 전파 지연을 각각 정의하고, 무엇으로 정해지는지 식으로 쓰라.</summary>
 
 
-**답:** 전송 지연은 패킷의 모든 비트를 링크에 싣는 시간으로 $$L/R$$(패킷 길이 ÷ 전송률)이다. 전파 지연은 신호가 링크 끝까지 가는 시간으로 링크 길이 ÷ 매체에서의 신호 속도다.  
+**답:** 전송 지연은 패킷의 모든 비트를 링크에 싣는 시간으로 $$L/R$$(패킷 길이 ÷ 전송률)이다. 전파 지연은 신호가 링크 끝까지 가는 시간으로 링크 길이 ÷ 매체에서의 신호 속도다.<br>
 **흔한 오답:** 두 지연을 모두 전송률로 정해진다고 쓰는 것. 전파 지연은 전송률과 무관하다.
 
 </details>
@@ -114,7 +114,7 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 <details markdown="1"><summary markdown="span"><b>C2</b> 1,250바이트 패킷을 10 Mbps, 길이 3,000 km 링크로 보낸다. 신호 속도는 $$2 \times 10^8$$ m/s다. 전송 지연과 전파 지연은? 전송률을 100 Mbps로 올리면 각각 어떻게 되는가?</summary>
 
 
-**답:** $$L = 10{,}000$$비트. 전송 지연 $$10{,}000 / 10^7 = 1$$ ms. 전파 지연 $$3 \times 10^6 / (2 \times 10^8) = 15$$ ms. 100 Mbps에서는 전송 지연 0.1 ms, 전파 지연은 15 ms 그대로다.  
+**답:** $$L = 10{,}000$$비트. 전송 지연 $$10{,}000 / 10^7 = 1$$ ms. 전파 지연 $$3 \times 10^6 / (2 \times 10^8) = 15$$ ms. 100 Mbps에서는 전송 지연 0.1 ms, 전파 지연은 15 ms 그대로다.<br>
 **흔한 오답:** 1,250을 그대로 나눠 전송 지연을 0.125 ms라고 하는 것. 바이트를 비트로 바꾸지 않았다.
 
 </details>
@@ -122,7 +122,7 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 <details markdown="1"><summary markdown="span"><b>C3</b> (a) 주파수 분할 다중화 슬라이드의 "채널 폭 4 kHz" (b) 통계적 다중화 슬라이드의 "Extra Bandwidth Available"에서 대역폭은 각각 무엇을 뜻하고, 단위는 무엇인가?</summary>
 
 
-**답:** (a) 신호가 차지하는 주파수 범위의 폭. 단위 Hz. (b) 링크가 실어 나르는 전송 속도 중 남는 몫. 단위 bps.  
+**답:** (a) 신호가 차지하는 주파수 범위의 폭. 단위 Hz. (b) 링크가 실어 나르는 전송 속도 중 남는 몫. 단위 bps.<br>
 **흔한 오답:** 둘 다 같은 양으로 보고 단위를 섞는 것. 둘은 관련이 있지만 서로 다른 양이다.
 
 </details>
@@ -130,7 +130,7 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 <details markdown="1"><summary markdown="span"><b>C4</b> 1 KB 파일을 1 kbps 링크로 싣는 데 걸리는 시간은? 흔한 오답 8초와 왜 다른가?</summary>
 
 
-**답:** 1 KB $$= 2^{10} = 1{,}024$$바이트 $$= 8{,}192$$비트. 1 kbps $$= 1{,}000$$ bps. $$8{,}192 / 1{,}000 = 8.192$$초.  
+**답:** 1 KB $$= 2^{10} = 1{,}024$$바이트 $$= 8{,}192$$비트. 1 kbps $$= 1{,}000$$ bps. $$8{,}192 / 1{,}000 = 8.192$$초.<br>
 **이유:** 크기의 K는 $$2^{10}$$, 속도의 k는 $$10^3$$이다. 둘을 같은 1,000으로 보면 8초가 나온다.
 
 </details>

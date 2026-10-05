@@ -44,7 +44,7 @@ permalink: "/studies/abnormal-psychology/narcolepsy/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">기면증의 진단기준[^1]</div>
 
-A. 저항할 수 없는 졸음으로 갑자기 잠에 빠지는 수면발작(sleep attack)을 반복해서 겪는다.  
+A. 저항할 수 없는 졸음으로 갑자기 잠에 빠지는 수면발작(sleep attack)을 반복해서 겪는다.<br>
 B. 다음 가운데 하나 이상:
 1. 탈력발작(cataplexy): 웃거나 감정이 격해질 때 갑자기 근육 긴장이 사라진다.
 2. 뇌척수액의 히포크레틴 결핍.

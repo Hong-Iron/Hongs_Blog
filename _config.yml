@@ -4,8 +4,9 @@
 title: "Hong-Iron"
 tagline: "Projects, writings, and studies."
 description: >-
-  A personal site collecting portfolio projects, hobby writing, and study notes.
+  만든 것, 공부한 것, 묵상한 것을 한곳에 모읍니다.
 author: "Hong-Iron"
+lang: ko
 email: "hongcheolmin004@gmail.com"
 
 # GitHub Pages project-site URL. Repo is "Hongs_Blog" (not "<user>.github.io"),
@@ -27,6 +28,8 @@ timezone: Asia/Seoul
 markdown: kramdown
 kramdown:
   input: GFM
+  # Posts are written in Obsidian, where a single newline is a line break.
+  hard_wrap: true
   syntax_highlighter: rouge
 permalink: /:categories/:year/:month/:day/:title/
 
@@ -50,6 +53,7 @@ defaults:
       type: projects
     values:
       layout: project
+      lang: en   # project write-ups are in English
   - scope:
       path: ""
       type: notes

@@ -142,7 +142,7 @@ $$f(t\mathbf{x} + (1 - t)\mathbf{y}) \le t f(\mathbf{x}) + (1 - t)f(\mathbf{y})$
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C3** 실수 전체에서 다음 중 볼록 함수를 모두 고르라: $$e^x$$, $$\ln x$$ ($$x > 0$$), $$x^3$$, $$\lvert x\rvert$$, $$\max(x, 0)$$.</summary>
 
-**답:** $$e^x$$, $$\lvert x\rvert$$, $$\max(x, 0)$$. $$\ln x$$는 오목이고, $$x^3$$은 $$x < 0$$에서 오목이다.  
+**답:** $$e^x$$, $$\lvert x\rvert$$, $$\max(x, 0)$$. $$\ln x$$는 오목이고, $$x^3$$은 $$x < 0$$에서 오목이다.<br>
 **흔한 오답:** 꺾인 점에서 미분이 안 되니 $$\lvert x\rvert$$와 ReLU $$\max(x, 0)$$는 볼록이 아니라고 보는 것. 볼록의 정의는 미분을 요구하지 않는다.
 
 </details>

@@ -9,7 +9,7 @@ layout: default
   </div>
 </section>
 
-{% assign featured_projects = site.projects | sort: "date" | reverse | limit: 3 %}
+{% assign featured_projects = site.projects | sort: "date" | reverse | slice: 0, 3 %}
 {% if featured_projects.size > 0 %}
 <section class="section container">
   <div class="section__header">
@@ -24,7 +24,7 @@ layout: default
 </section>
 {% endif %}
 
-{% assign recent_posts = site.posts | limit: 4 %}
+{% assign recent_posts = site.posts | slice: 0, 4 %}
 {% if recent_posts.size > 0 %}
 <section class="section container">
   <div class="section__header">

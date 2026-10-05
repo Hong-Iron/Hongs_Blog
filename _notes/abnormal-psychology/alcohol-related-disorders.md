@@ -69,8 +69,8 @@ permalink: "/studies/abnormal-psychology/alcohol-related-disorders/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">알코올 중독(intoxication)[^3]</div>
 
-A. 최근의 알코올 섭취.  
-B. 섭취 중이나 직후의 임상적으로 심각한 문제적 행동 변화와 심리적 변화(예: 부적절한 성적 또는 공격적 행동, 기분 변동, 판단력 손상).  
+A. 최근의 알코올 섭취.<br>
+B. 섭취 중이나 직후의 임상적으로 심각한 문제적 행동 변화와 심리적 변화(예: 부적절한 성적 또는 공격적 행동, 기분 변동, 판단력 손상).<br>
 C. 섭취 중이나 직후에 다음 가운데 1가지 이상: 불분명한 말, 운동 조정 장해, 불안정한 걸음, 안구진탕, 집중력·기억력 손상, 혼미 또는 혼수.
 
 </div>

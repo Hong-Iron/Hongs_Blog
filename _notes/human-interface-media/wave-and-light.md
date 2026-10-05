@@ -126,7 +126,7 @@ $$ c = f\lambda, \qquad \lambda = \frac{c}{f} $$
 <details markdown="1"><summary markdown="span"><b>C2</b> 파장 500 nm인 빛의 주파수를 구하라($$c = 3 \times 10^8$$ m/s). 파장이 700 nm로 길어지면 주파수는 커지는가, 작아지는가?</summary>
 
 
-**답:** $$f = c/\lambda = 3 \times 10^8 / (500 \times 10^{-9}) = 6.0 \times 10^{14}$$ Hz. 파장이 길어지면 주파수는 작아진다(700 nm는 약 $$4.3 \times 10^{14}$$ Hz).  
+**답:** $$f = c/\lambda = 3 \times 10^8 / (500 \times 10^{-9}) = 6.0 \times 10^{14}$$ Hz. 파장이 길어지면 주파수는 작아진다(700 nm는 약 $$4.3 \times 10^{14}$$ Hz).<br>
 **흔한 오답:** nm를 $$10^{-9}$$ m로 바꾸지 않아 자릿수가 틀린다.
 
 </details>

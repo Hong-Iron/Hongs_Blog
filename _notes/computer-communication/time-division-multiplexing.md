@@ -112,7 +112,7 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 <details markdown="1"><summary markdown="span"><b>C2</b> 입력 5개인 시분할 다중화에서 칸 번호를 0부터 센다. 칸 23의 주인은? 입력 2가 쓰는 처음 세 칸의 번호는?</summary>
 
 
-**답:** $$23 \bmod 5 = 3$$이므로 입력 4. 입력 2는 $$j \bmod 5 = 1$$인 칸이다. 1, 6, 11.  
+**답:** $$23 \bmod 5 = 3$$이므로 입력 4. 입력 2는 $$j \bmod 5 = 1$$인 칸이다. 1, 6, 11.<br>
 **흔한 오답:** 입력 3(나머지 3을 그대로 입력 번호로 씀). 칸 번호를 0부터 세면 주인은 나머지 + 1이다.
 
 </details>

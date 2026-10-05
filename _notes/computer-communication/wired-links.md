@@ -60,9 +60,9 @@ permalink: "/studies/computer-communication/wired-links/"
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: "광케이블 내부에서 난반사를 통한 데이터 전달이다." (4주차 필기 32행)  
-문제점: 난반사는 거친 면에 닿은 빛이 여러 방향으로 흩어지는 반사다. 흩어진 빛은 코어 밖으로 새어 나간다. 광케이블은 코어의 굴절률이 클래딩보다 커서, 경계에서 빛이 하나도 새지 않고 되돌아오는 전반사로 빛을 가둔다.  
-수정안: "광케이블 내부에서 전반사를 통한 데이터 전달이다."  
+원문: "광케이블 내부에서 난반사를 통한 데이터 전달이다." (4주차 필기 32행)<br>
+문제점: 난반사는 거친 면에 닿은 빛이 여러 방향으로 흩어지는 반사다. 흩어진 빛은 코어 밖으로 새어 나간다. 광케이블은 코어의 굴절률이 클래딩보다 커서, 경계에서 빛이 하나도 새지 않고 되돌아오는 전반사로 빛을 가둔다.<br>
+수정안: "광케이블 내부에서 전반사를 통한 데이터 전달이다."<br>
 근거: 굴절률이 $$n_{\text{core}} > n_{\text{clad}}$$이면 임계각 $$\theta_c = \arcsin(n_{\text{clad}} / n_{\text{core}})$$이 존재하고, 이보다 비스듬히 닿은 빛은 전부 반사된다. 예: $$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$이면 $$\theta_c \approx 80.6°$$. 검증 코드의 계산.
 
 </div>
@@ -84,9 +84,9 @@ permalink: "/studies/computer-communication/wired-links/"
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: "STS-3 155.250 Mbps" (슬라이드 "사용 가능한 유선 링크의 종류")  
-문제점: STS-$$n$$의 속도는 STS-1의 정확히 $$n$$배다. 표의 STS-12, 24, 48은 모두 $$51.840 \times n$$과 맞는데, STS-3만 $$51.840 \times 3 = 155.520$$과 다르다. 숫자 5와 2의 자리가 바뀐 오기로 보인다.  
-수정안: STS-3 155.520 Mbps.  
+원문: "STS-3 155.250 Mbps" (슬라이드 "사용 가능한 유선 링크의 종류")<br>
+문제점: STS-$$n$$의 속도는 STS-1의 정확히 $$n$$배다. 표의 STS-12, 24, 48은 모두 $$51.840 \times n$$과 맞는데, STS-3만 $$51.840 \times 3 = 155.520$$과 다르다. 숫자 5와 2의 자리가 바뀐 오기로 보인다.<br>
+수정안: STS-3 155.520 Mbps.<br>
 근거: $$51.84 \times 3 = 155.52$$. 검증 코드가 표의 나머지 네 값을 같은 규칙으로 확인한다[^s2].
 
 </div>

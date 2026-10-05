@@ -46,7 +46,7 @@ $$t = \frac12$$이면 계수가 $$\frac14, \frac12, \frac14$$라 $$\mathbf{P}(\f
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-집합 $$V$$에 덧셈과 실수배가 정의되어 있고, 모든 $$\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$$와 $$c, d \in \mathbb{R}$$에 대해 다음 여덟 법칙을 만족하면 $$V$$를 **벡터공간**이라 한다.  
+집합 $$V$$에 덧셈과 실수배가 정의되어 있고, 모든 $$\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$$와 $$c, d \in \mathbb{R}$$에 대해 다음 여덟 법칙을 만족하면 $$V$$를 **벡터공간**이라 한다.<br>
 교환 $$\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$$, 결합 $$(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$$, 영벡터 $$\mathbf{v} + \mathbf{0} = \mathbf{v}$$, 역 $$\mathbf{v} + (-\mathbf{v}) = \mathbf{0}$$, $$c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$$, $$(c + d)\mathbf{v} = c\mathbf{v} + d\mathbf{v}$$, $$c(d\mathbf{v}) = (cd)\mathbf{v}$$, $$1\mathbf{v} = \mathbf{v}$$[^1].
 
 </div>

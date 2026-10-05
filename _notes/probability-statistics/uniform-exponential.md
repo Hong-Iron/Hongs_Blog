@@ -42,7 +42,7 @@ permalink: "/studies/probability-statistics/uniform-exponential/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**균등분포** $$\mathrm{Unif}(a, b)$$는 $$a < x < b$$에서 밀도 $$\frac{1}{b - a}$$, 밖에서 0이다. 평균 $$\frac{a + b}{2}$$, 분산 $$\frac{(b - a)^2}{12}$$.  
+**균등분포** $$\mathrm{Unif}(a, b)$$는 $$a < x < b$$에서 밀도 $$\frac{1}{b - a}$$, 밖에서 0이다. 평균 $$\frac{a + b}{2}$$, 분산 $$\frac{(b - a)^2}{12}$$.<br>
 **지수분포** $$\mathrm{Exp}(\lambda)$$($$\lambda > 0$$)는 $$x \ge 0$$에서 밀도 $$\lambda e^{-\lambda x}$$이다. CDF $$1 - e^{-\lambda x}$$, 평균 $$\frac1\lambda$$, 분산 $$\frac{1}{\lambda^2}$$, 중앙값 $$\frac{\ln 2}{\lambda}$$[^1].
 
 </div>

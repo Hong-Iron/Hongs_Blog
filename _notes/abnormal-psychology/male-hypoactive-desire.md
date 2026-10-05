@@ -44,8 +44,8 @@ permalink: "/studies/abnormal-psychology/male-hypoactive-desire/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">남성 성욕감퇴장애의 진단기준[^1]</div>
 
-A. 6개월 이상 성적·성애적 사고나 환상, 성적 행위에 대한 욕망이 지속적으로 결여되어 있다.  
-B. 성적 공상이나 성행위 욕구의 결여는 그 사람의 나이와 사회문화적 맥락을 고려해 판단한다.  
+A. 6개월 이상 성적·성애적 사고나 환상, 성적 행위에 대한 욕망이 지속적으로 결여되어 있다.<br>
+B. 성적 공상이나 성행위 욕구의 결여는 그 사람의 나이와 사회문화적 맥락을 고려해 판단한다.<br>
 C. 이 문제로 본인에게 심각한 고통이나 대인관계의 어려움이 생긴다.
 
 </div>

@@ -67,7 +67,7 @@ $$f(x) \approx L(x) = f(a) + f'(a)(x - a)$$
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">뉴턴 방법</div>
 
-**입력:** 미분 가능한 $$f$$, 그 도함수 $$f'$$, 출발점 $$x_0$$, 허용 오차 $$\text{tol}$$, 최대 반복 횟수.  
+**입력:** 미분 가능한 $$f$$, 그 도함수 $$f'$$, 출발점 $$x_0$$, 허용 오차 $$\text{tol}$$, 최대 반복 횟수.<br>
 **출력:** $$f(x) = 0$$의 근의 어림.
 ```
 x ← x₀

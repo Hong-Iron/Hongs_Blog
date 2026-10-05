@@ -150,7 +150,7 @@ $$k$$층이면 같은 논리를 $$k - 1$$번 되풀이한다(수학적 귀납법
 <details markdown="1"><summary markdown="span"><b>C1</b> 입력 $$D$$개, 출력 $$R$$개인 뉴런 층의 연산 모형을 식으로 쓰고, $$A$$, $$\mathbf{x}$$, $$\mathbf{b}$$, $$\mathbf{o}'$$의 크기를 쓰라. 흥분성·억제성 시냅스는 식의 어디에 나타나는가?</summary>
 
 
-**답:** $$\mathbf{o}' = a(A\mathbf{x} + \mathbf{b})$$. $$A$$는 $$R \times D$$, $$\mathbf{x}$$는 $$D \times 1$$, $$\mathbf{b}$$와 $$\mathbf{o}'$$는 $$R \times 1$$. 흥분성은 $$A$$의 양수 성분, 억제성은 음수 성분이다.  
+**답:** $$\mathbf{o}' = a(A\mathbf{x} + \mathbf{b})$$. $$A$$는 $$R \times D$$, $$\mathbf{x}$$는 $$D \times 1$$, $$\mathbf{b}$$와 $$\mathbf{o}'$$는 $$R \times 1$$. 흥분성은 $$A$$의 양수 성분, 억제성은 음수 성분이다.<br>
 **흔한 오답:** 슬라이드를 따라 $$\mathbf{b}$$를 $$D \times 1$$로 쓴다.
 
 </details>

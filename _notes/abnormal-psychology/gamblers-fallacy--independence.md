@@ -92,7 +92,7 @@ permalink: "/studies/abnormal-psychology/gamblers-fallacy--independence/"
 <details markdown="1"><summary markdown="span"><b>C1</b> 유럽식 룰렛(37칸: 빨강 18, 검정 18, 초록 0 하나)에서 빨강에 5만 원씩 40판을 걸면 기대 손익은 얼마인가?</summary>
 
 
-**답:** 한 판의 기댓값은 $$-\frac{1}{37}$$ 단위이므로 $$40 \times 50{,}000 \times (-\frac{1}{37}) \approx -54{,}054$$원, 약 5만 4천 원 손실이다.  
+**답:** 한 판의 기댓값은 $$-\frac{1}{37}$$ 단위이므로 $$40 \times 50{,}000 \times (-\frac{1}{37}) \approx -54{,}054$$원, 약 5만 4천 원 손실이다.<br>
 **이유:** 기댓값의 선형성으로 판마다의 기댓값을 더하면 된다. 판돈 전체(200만 원)의 약 2.7%가 평균적으로 사라진다.
 
 </details>

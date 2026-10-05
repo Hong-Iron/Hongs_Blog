@@ -52,7 +52,7 @@ A. 낯선 성인에게 지나치게 접근하고 소통한다(2가지 이상)[^1
 3. 낯선 환경에서 보호자와 멀어져 돌아다닐 때도 보호자를 확인하는 정도가 떨어지거나 없다.
 4. 낯선 성인을 따라가는 데 주저함이 적거나 없다.
 
-B. 극단적으로 불충분한 양육을 경험했다. [반응성 애착장애](/Hongs_Blog/studies/abnormal-psychology/reactive-attachment-disorder/)의 기준 C와 같다.  
+B. 극단적으로 불충분한 양육을 경험했다. [반응성 애착장애](/Hongs_Blog/studies/abnormal-psychology/reactive-attachment-disorder/)의 기준 C와 같다.<br>
 C. 발달 연령이 최소 9개월 이상이다.
 
 </div>

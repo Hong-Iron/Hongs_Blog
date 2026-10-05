@@ -106,7 +106,7 @@ $$\operatorname{Var}[X] = \mathbb{E}\big[(X - \mu)^2\big] = \mathbb{E}[X^2] - \m
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C2** $$\operatorname{Var}[X] = 2$$일 때 $$\operatorname{Var}[3X + 5]$$는?</summary>
 
-**답:** $$3^2 \times 2 = 18$$. 더한 5는 분산에 영향이 없다.  
+**답:** $$3^2 \times 2 = 18$$. 더한 5는 분산에 영향이 없다.<br>
 **흔한 오답:** $$3 \times 2 + 5 = 11$$. 분산은 제곱 단위라 배율이 제곱으로 들어간다.
 
 </details>

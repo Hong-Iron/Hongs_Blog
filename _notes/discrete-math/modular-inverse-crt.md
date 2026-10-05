@@ -48,8 +48,8 @@ $$a x \equiv 1 \pmod m$$인 $$x$$를 $$a$$의 법 $$m$$에 대한 **역원** $$a
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명</summary>
 
-($$\Leftarrow$$) [베주 항등식](/Hongs_Blog/studies/discrete-math/gcd-euclid/)으로 $$as + mt = 1$$이라 $$as \equiv 1 \pmod m$$. $$s$$가 역원이다.  
-($$\Rightarrow$$) $$ax \equiv 1$$이면 $$ax - 1 = mk$$, 즉 $$ax - mk = 1$$. $$\gcd(a, m)$$이 좌변을 나누므로 1을 나눠 1이다.  
+($$\Leftarrow$$) [베주 항등식](/Hongs_Blog/studies/discrete-math/gcd-euclid/)으로 $$as + mt = 1$$이라 $$as \equiv 1 \pmod m$$. $$s$$가 역원이다.<br>
+($$\Rightarrow$$) $$ax \equiv 1$$이면 $$ax - 1 = mk$$, 즉 $$ax - mk = 1$$. $$\gcd(a, m)$$이 좌변을 나누므로 1을 나눠 1이다.<br>
 유일성: $$ax \equiv ay \equiv 1$$이면 $$x \equiv x(ay) = (xa)y \equiv y$$. ∎
 
 </details>
@@ -68,7 +68,7 @@ $$m_1, \dots, m_k$$가 **쌍마다 서로소**이고 $$M = m_1 \cdots m_k$$이�
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명</summary>
 
-*존재:* $$M_i = M/m_i$$로 두면 $$\gcd(M_i, m_i) = 1$$이라 역원 $$y_i = M_i^{-1} \bmod m_i$$가 있다. $$x = \sum_i a_i M_i y_i$$로 두자. $$j \ne i$$이면 $$m_i \mid M_j$$라 법 $$m_i$$에서 $$i$$번째 항만 남고, $$a_i M_i y_i \equiv a_i$$이다.  
+*존재:* $$M_i = M/m_i$$로 두면 $$\gcd(M_i, m_i) = 1$$이라 역원 $$y_i = M_i^{-1} \bmod m_i$$가 있다. $$x = \sum_i a_i M_i y_i$$로 두자. $$j \ne i$$이면 $$m_i \mid M_j$$라 법 $$m_i$$에서 $$i$$번째 항만 남고, $$a_i M_i y_i \equiv a_i$$이다.<br>
 *유일성:* 두 해 $$x, x'$$는 모든 $$m_i$$에 대해 $$m_i \mid (x - x')$$이다. $$m_i$$들이 쌍마다 서로소라 곱 $$M$$도 $$x - x'$$을 나눈다(산술의 기본정리). ∎
 
 </details>

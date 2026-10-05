@@ -104,7 +104,7 @@ $$\nabla f(\mathbf{x}^*) = \lambda\,\nabla g(\mathbf{x}^*)$$
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C1** 직선 $$x + 2y = 5$$ 위에서 원점에 가장 가까운 점을 라그랑주 승수법으로 구하라.</summary>
 
-**답:** $$f = x^2 + y^2$$, $$g = x + 2y$$. $$(2x, 2y) = \lambda(1, 2)$$에서 $$x = \frac\lambda2$$, $$y = \lambda$$. 제약에 넣으면 $$\frac\lambda2 + 2\lambda = 5$$, $$\lambda = 2$$. 점 $$(1, 2)$$, 거리의 제곱 5.  
+**답:** $$f = x^2 + y^2$$, $$g = x + 2y$$. $$(2x, 2y) = \lambda(1, 2)$$에서 $$x = \frac\lambda2$$, $$y = \lambda$$. 제약에 넣으면 $$\frac\lambda2 + 2\lambda = 5$$, $$\lambda = 2$$. 점 $$(1, 2)$$, 거리의 제곱 5.<br>
 **검산:** $$(1, 2)$$는 직선의 법선 방향 $$(1, 2)$$ 위에 있다. 원점에서 직선으로 내린 수선의 발과 같다.
 
 </details>

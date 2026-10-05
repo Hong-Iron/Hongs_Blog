@@ -70,9 +70,9 @@ graph TD
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: "4 <-> 3,2,1 계층 사이에 있는 것이 IP... IP는 계층에 속하지 않는다." (3주차 필기 11~13행)  
-문제점: 슬라이드 오른쪽 그림은 IP를 TCP·UDP와 Network 사이의 한 층으로 그린다. OSI로 옮기면 네트워크 계층(3층)의 일, 즉 여러 링크를 건너 호스트 사이에 패킷을 보내는 일을 한다.  
-수정안: "IP는 개별 네트워크(NET)의 계층이 아니라, 그 위에서 모든 네트워크를 하나로 묶는 층이다."  
+원문: "4 <-> 3,2,1 계층 사이에 있는 것이 IP... IP는 계층에 속하지 않는다." (3주차 필기 11~13행)<br>
+문제점: 슬라이드 오른쪽 그림은 IP를 TCP·UDP와 Network 사이의 한 층으로 그린다. OSI로 옮기면 네트워크 계층(3층)의 일, 즉 여러 링크를 건너 호스트 사이에 패킷을 보내는 일을 한다.<br>
+수정안: "IP는 개별 네트워크(NET)의 계층이 아니라, 그 위에서 모든 네트워크를 하나로 묶는 층이다."<br>
 근거: 슬라이드의 계층 그림(Application / TCP·UDP / IP / Network)[^1]. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절도 IP를 인터넷 구조의 한 층으로 둔다. 강의에서 "어느 한 네트워크 기술에도 속하지 않는다"는 뜻으로 말했다면 필기의 뜻은 수정안과 같다.
 
 </div>

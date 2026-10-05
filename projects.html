@@ -4,9 +4,9 @@ title: Projects
 permalink: /projects/
 ---
 <div class="page-intro container reveal">
-  <span class="eyebrow tag" style="--tag-color: var(--accent-rust)">{{ site.projects.size }} projects</span>
+  <span class="eyebrow tag" style="--tag-color: var(--accent-rust)">프로젝트 · {{ site.projects.size }}개</span>
   <h1 class="page-intro__title">Projects</h1>
-  <p class="page-intro__desc">A running collection of things I've built — portfolio pieces and case studies, roughly newest first.</p>
+  <p class="page-intro__desc">직접 만든 것들. 최근 것부터 놓았습니다.</p>
 </div>
 
 <div class="container section">
@@ -18,6 +18,6 @@ permalink: /projects/
       {% endfor %}
     </div>
   {% else %}
-    <p class="lede" style="padding: 3rem 0;">Nothing here yet — run <code>python3 scripts/blog.py project new "Title"</code> to add the first one.</p>
+    <p class="lede" style="padding: 3rem 0;">아직 올린 프로젝트가 없습니다.</p>
   {% endif %}
 </div>

@@ -106,7 +106,7 @@ permalink: "/studies/computer-communication/multiple-access-link/"
 <details markdown="1"><summary markdown="span"><b>C2</b> 기기가 여럿 붙어 있는데도 다중 접근 링크를 "직접" 링크라고 부르는 이유는?</summary>
 
 
-**답:** 기기들 사이에 데이터를 받아 다시 보내 주는 중계 노드(스위치)가 없고, 모두 매체에 직접 붙어 있기 때문이다.  
+**답:** 기기들 사이에 데이터를 받아 다시 보내 주는 중계 노드(스위치)가 없고, 모두 매체에 직접 붙어 있기 때문이다.<br>
 **흔한 오답:** "선 하나로 연결되어 있어서". 선의 개수가 아니라 중계 노드가 있는지가 기준이다.
 
 </details>

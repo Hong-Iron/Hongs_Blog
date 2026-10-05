@@ -45,8 +45,8 @@ permalink: "/studies/abnormal-psychology/anorexia-nervosa/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">신경성 식욕부진증의 진단기준[^1]</div>
 
-A. 음식 섭취를 제한해 뚜렷한 저체중 상태다(정상 체중의 최저 수준보다 낮다).  
-B. 저체중인데도 체중 증가와 비만을 극도로 두려워하거나, 체중 증가를 막는 행동을 계속한다.  
+A. 음식 섭취를 제한해 뚜렷한 저체중 상태다(정상 체중의 최저 수준보다 낮다).<br>
+B. 저체중인데도 체중 증가와 비만을 극도로 두려워하거나, 체중 증가를 막는 행동을 계속한다.<br>
 C. 다음 가운데 하나 이상:
 - 체중과 체형을 경험하는 방식이 왜곡되어 있다.
 - 체중과 체형이 자기 평가에 지나친 영향을 준다.

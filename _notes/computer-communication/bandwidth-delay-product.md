@@ -84,7 +84,7 @@ $$\text{BDP} = R \times d_{\text{prop}} \quad (\text{비트})$$
 <details markdown="1"><summary markdown="span"><b>C1</b> 대역폭 1 Gbps, 한쪽 전파 지연 50 ms인 링크의 BDP를 비트와 바이트로 구하라.</summary>
 
 
-**답:** $$10^9 \times 0.05 = 5 \times 10^7$$비트 $$= 6{,}250{,}000$$바이트.  
+**답:** $$10^9 \times 0.05 = 5 \times 10^7$$비트 $$= 6{,}250{,}000$$바이트.<br>
 **흔한 오답:** 50을 그대로 곱해 $$5 \times 10^{10}$$으로 쓰는 것. ms를 초로 바꾸지 않았다.
 
 </details>
