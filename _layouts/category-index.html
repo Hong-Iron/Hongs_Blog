@@ -1,12 +1,13 @@
 ---
 layout: default
+geo_clear: 37rem
 ---
 {% assign cat = site.data.categories | where: "slug", page.category | first %}
 {% assign posts = site.categories[page.category] %}
 {% unless posts %}{% assign posts = "" | split: "," %}{% endunless %}
 {% assign posts = posts | sort: "date" | reverse %}
 
-<div class="page-intro container reveal">
+<div class="page-intro container reveal" data-geo-band>
   <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">{% if page.eyebrow %}{{ page.eyebrow }}{% else %}{{ cat.name | default: page.category }} · {{ posts.size }}편{% endif %}</span>
   <h1 class="page-intro__title">{{ cat.name | default: page.category }}</h1>
   {% if cat.description %}<p class="page-intro__desc">{{ cat.description }}</p>{% endif %}

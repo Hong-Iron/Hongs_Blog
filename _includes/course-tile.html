@@ -1,0 +1,9 @@
+{%- assign c = include.course -%}
+<a class="course-tile reveal" href="{{ c.url | relative_url }}" data-course="{{ c.slug }}">
+  <span class="course-tile__art"><canvas data-motif="{{ c.slug }}" aria-hidden="true"></canvas></span>
+  <span class="course-tile__body">
+    <span class="course-tile__name">{{ c.name }}</span>
+    <span class="course-tile__meta">개념 {{ c.concepts }} · 연습 {{ c.practices }} · 코드 {{ c.codes }}</span>
+    {% if include.units and c.units != "" %}<span class="course-tile__units">{{ c.units }}</span>{% endif %}
+  </span>
+</a>

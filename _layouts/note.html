@@ -1,14 +1,15 @@
 ---
 layout: default
+geo_clear: 26rem
 ---
 <article class="note">
-  <header class="article-header container note-header">
+  <header class="article-header container note-header" data-geo-band>
     <nav class="note-crumbs" aria-label="위치">
       <a href="{{ '/studies/' | relative_url }}">Studies</a>
       <span aria-hidden="true">/</span>
       <a href="{{ page.course_url | relative_url }}">{{ page.course }}</a>
     </nav>
-    <span class="eyebrow tag" style="--tag-color: var(--accent-ochre)">{{ page.kind_label }}</span>
+    <span class="eyebrow tag" style="--tag-color: var(--course)">{{ page.kind_label }}</span>
     <h1 class="article-header__title note-title">{{ page.display_title | default: page.title }}</h1>
     {% if page.aliases and page.aliases.size > 0 %}
       <p class="note-aliases">{{ page.aliases | slice: 0, 4 | join: " · " }}{% if page.aliases.size > 4 %} …{% endif %}</p>

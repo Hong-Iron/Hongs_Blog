@@ -161,6 +161,30 @@ blocks are drawn by Mermaid. It prints any link it couldn't resolve.
 
 ---
 
+## Geometry backgrounds, scenes and course themes
+
+Every page has a canvas of shapes behind it, drawn by `assets/js/geo.js`
+(styles in `assets/css/geo.css`).
+
+- **Which drawing a page gets:** the body's `data-geo`. Defaults: study
+  notes use their course's motif, Pensées get rose windows, projects get
+  drafting paper, everything else gets floating shapes. Override with
+  `geo: <name>` in a page's front matter.
+- **Reading pages keep the text clear:** `geo_clear` (set in the layouts)
+  is half the width of the text column; the shapes only show in the margins
+  and the header. `geo_clear: none` gives the full canvas (home, About,
+  Studies hub).
+- **Scenes:** a section with `data-scene="paper|linen|sage|blush|wheat|night"`
+  recolours the page when it reaches the middle of the screen (see the home
+  page). Colours per scene are at the top of `geo.css`.
+- **Course themes:** colours are the `[data-course="…"]` rules in `geo.css`;
+  each course's scroll-driven drawing is the matching entry in `MOTIFS` in
+  `geo.js`. A new course needs both, plus a `TRACKS` entry in
+  `scripts/vault_export.py`.
+- Visitors with "reduce motion" turned on get a still picture.
+
+---
+
 ## Notifications (site-wide banner)
 
 **CLI:**
@@ -265,4 +289,6 @@ _projects/                portfolio case studies
 assets/img/uploads/       cover/gallery images
 scripts/blog.py           the CLI described throughout this file
 scripts/vault_export.py   Obsidian vault -> /studies/ exporter
+assets/js/geo.js          background shapes, scenes, course motifs
+assets/css/geo.css        scene colours, course colours, home/About components
 ```

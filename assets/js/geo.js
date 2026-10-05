@@ -1,0 +1,980 @@
+/* Geometry behind every page.
+ *
+ * <body data-geo="NAME"> picks a motif: confetti (home, About), rose
+ * (Pensées), blueprint (projects) or a course slug (study notes). On course
+ * pages the motif is driven by how far you have scrolled: the bars get
+ * sorted, the Riemann sum gets finer, the lattice shears. Sections with
+ * data-scene="…" recolour the whole page as they reach the middle of the
+ * screen. Canvases with data-motif="…" (course tiles) draw a small version
+ * that plays on hover.
+ *
+ * The canvas sits behind the content; on reading pages CSS masks it to the
+ * margins and the header band (see .geo-canvas--masked in geo.css).
+ */
+(function () {
+  "use strict";
+
+  var body = document.body;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var TAU = Math.PI * 2;
+
+  /* ------------------------------------------------------------------ */
+  /* helpers                                                             */
+  /* ------------------------------------------------------------------ */
+
+  function seeded(str) {
+    var h = 2166136261;
+    for (var i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    var a = h >>> 0;
+    return function () {
+      a = (a + 0x6d2b79f5) >>> 0;
+      var t = Math.imul(a ^ (a >>> 15), a | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+  function lerp(a, b, f) { return a + (b - a) * f; }
+  function frac(v) { return v - Math.floor(v); }
+  function ease(f) { return f < 0.5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2; }
+
+  function parseColor(str) {
+    var m;
+    str = (str || "").trim();
+    if ((m = str.match(/^#([0-9a-f]{3})$/i))) {
+      return m[1].split("").map(function (h) { return parseInt(h + h, 16); });
+    }
+    if ((m = str.match(/^#([0-9a-f]{6})/i))) {
+      return [0, 2, 4].map(function (i) { return parseInt(m[1].substr(i, 2), 16); });
+    }
+    if ((m = str.match(/rgba?\(([^)]+)\)/))) {
+      return m[1].split(/[\s,\/]+/).slice(0, 3).map(Number);
+    }
+    return [128, 118, 104];
+  }
+
+  function rgba(c, a) {
+    return "rgba(" + Math.round(c[0]) + "," + Math.round(c[1]) + "," + Math.round(c[2]) + "," + a + ")";
+  }
+
+  var PAL_KEYS = ["a", "b", "c", "d", "ink", "bg"];
+
+  function readPalette(el) {
+    var cs = getComputedStyle(el);
+    function v(name) { return parseColor(cs.getPropertyValue(name)); }
+    return { a: v("--geo-1"), b: v("--geo-2"), c: v("--geo-3"), d: v("--geo-4"), ink: v("--ink"), bg: v("--bg") };
+  }
+
+  function mixPalette(from, to, f) {
+    var out = {};
+    PAL_KEYS.forEach(function (k) {
+      out[k] = [lerp(from[k][0], to[k][0], f), lerp(from[k][1], to[k][1], f), lerp(from[k][2], to[k][2], f)];
+    });
+    return out;
+  }
+
+  function smoothClosed(ctx, pts) {
+    var n = pts.length;
+    ctx.beginPath();
+    ctx.moveTo((pts[n - 1][0] + pts[0][0]) / 2, (pts[n - 1][1] + pts[0][1]) / 2);
+    for (var i = 0; i < n; i++) {
+      var p = pts[i], q = pts[(i + 1) % n];
+      ctx.quadraticCurveTo(p[0], p[1], (p[0] + q[0]) / 2, (p[1] + q[1]) / 2);
+    }
+    ctx.closePath();
+  }
+
+  function circle(ctx, x, y, r) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, TAU);
+  }
+
+  function line(ctx, x0, y0, x1, y1) {
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.lineTo(x1, y1);
+    ctx.stroke();
+  }
+
+  function arrow(ctx, x0, y0, x1, y1, head) {
+    var a = Math.atan2(y1 - y0, x1 - x0);
+    line(ctx, x0, y0, x1, y1);
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x1 - head * Math.cos(a - 0.45), y1 - head * Math.sin(a - 0.45));
+    ctx.lineTo(x1 - head * Math.cos(a + 0.45), y1 - head * Math.sin(a + 0.45));
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function label(ctx, text, x, y, color, size) {
+    ctx.font = (size || 11) + 'px "SFMono-Regular", Consolas, monospace';
+    ctx.fillStyle = color;
+    ctx.fillText(text, x, y);
+  }
+
+  // one Bauhaus-ish primitive centred on the origin
+  function shape(ctx, kind, s) {
+    var h = s / 2;
+    switch (kind) {
+      case "circle": circle(ctx, 0, 0, h); ctx.fill(); break;
+      case "ring": circle(ctx, 0, 0, h * 0.85); ctx.stroke(); break;
+      case "square": ctx.fillRect(-h * 0.85, -h * 0.85, h * 1.7, h * 1.7); break;
+      case "semi": ctx.beginPath(); ctx.arc(0, 0, h, 0, Math.PI); ctx.closePath(); ctx.fill(); break;
+      case "tri":
+        ctx.beginPath();
+        ctx.moveTo(0, -h);
+        ctx.lineTo(h * 0.95, h * 0.7);
+        ctx.lineTo(-h * 0.95, h * 0.7);
+        ctx.closePath();
+        ctx.fill();
+        break;
+      case "plus":
+        ctx.fillRect(-h, -h * 0.16, s, h * 0.32);
+        ctx.fillRect(-h * 0.16, -h, h * 0.32, s);
+        break;
+      case "zig":
+        ctx.beginPath();
+        ctx.moveTo(-h, h * 0.3);
+        for (var i = 1; i <= 4; i++) ctx.lineTo(-h + i * h / 2, i % 2 ? -h * 0.3 : h * 0.3);
+        ctx.stroke();
+        break;
+      default: // dots
+        for (var x = -1; x <= 1; x++) {
+          for (var y = -1; y <= 1; y++) { circle(ctx, x * h * 0.62, y * h * 0.62, s * 0.07); ctx.fill(); }
+        }
+    }
+  }
+
+  // where a motif can put a feature: in the side margins, in the header
+  // band (narrow screens), or anywhere (home page, thumbnails)
+  function region(L) {
+    if (L.mode === "band") return { y0: 0, y1: L.band };
+    return { y0: 0, y1: L.H };
+  }
+
+  function spot(L, rand, i) {
+    if (L.mode === "margins") {
+      var side = i % 2 ? L.right : L.left;
+      return [lerp(side[0], side[1], 0.18 + rand() * 0.64), L.H * (0.1 + rand() * 0.8)];
+    }
+    if (L.mode === "band") return [L.W * (0.06 + rand() * 0.88), L.band * (0.12 + rand() * 0.76)];
+    return [L.W * (0.06 + rand() * 0.88), L.H * (0.08 + rand() * 0.84)];
+  }
+
+  // centres for one or two "hero" features
+  function anchors(L, ys) {
+    if (L.mode === "margins") {
+      return [[(L.left[0] + L.left[1]) / 2, L.H * ys[0]], [(L.right[0] + L.right[1]) / 2, L.H * ys[1]]];
+    }
+    if (L.mode === "band") return [[L.W * 0.84, L.band * 0.5]];
+    return [[L.W / 2, L.H / 2]];
+  }
+
+  function featureSize(L, f, min, max) {
+    if (L.mode === "margins") return clamp((L.left[1] - L.left[0]) * f, min, max);
+    if (L.mode === "band") return clamp(L.band * f, min, max);
+    return clamp(Math.min(L.W, L.H) * f, min, max * 1.6);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* motifs                                                              */
+  /* ------------------------------------------------------------------ */
+
+  var MOTIFS = {};
+
+  // Home, About, Studies hub: drifting primitives that dodge the pointer.
+  // In the "night" scene they shrink into a starfield.
+  MOTIFS.confetti = {
+    ambient: true,
+    pointer: true,
+    setup: function (L, rand) {
+      var kinds = ["circle", "ring", "tri", "square", "semi", "plus", "zig", "dots"];
+      var n = clamp(Math.round(L.W * L.H / 26000), 14, 58), list = [], stars = [];
+      for (var i = 0; i < n; i++) {
+        list.push({
+          x: rand() * L.W, y: rand() * (L.H + 240) - 120, z: 0.35 + rand() * 0.65,
+          s: 14 + rand() * 42, k: kinds[(rand() * kinds.length) | 0], r: rand() * TAU,
+          spin: rand() - 0.5, c: (rand() * 4) | 0, ph: rand() * TAU, ox: 0, oy: 0
+        });
+      }
+      for (var j = 0; j < 110; j++) {
+        stars.push({ x: rand() * L.W, y: rand() * L.H, r: 0.5 + rand() * 1.5, ph: rand() * TAU, sp: 0.5 + rand() * 2 });
+      }
+      return { list: list, stars: stars };
+    },
+    draw: function (ctx, L, S, F) {
+      var cols = [F.pal.a, F.pal.b, F.pal.c, F.pal.d], span = L.H + 240, night = F.night;
+      if (night > 0.02) {
+        S.stars.forEach(function (st) {
+          ctx.fillStyle = rgba(F.pal.a, night * (0.2 + 0.6 * (0.5 + 0.5 * Math.sin(F.t * st.sp + st.ph))));
+          circle(ctx, st.x, st.y, st.r);
+          ctx.fill();
+        });
+      }
+      S.list.forEach(function (o) {
+        var y = ((o.y - F.scroll * 0.35 * o.z) % span + span) % span - 120;
+        var x = o.x + Math.sin(F.t * 0.25 * o.z + o.ph) * 10 * o.z;
+        var tx = 0, ty = 0;
+        if (F.ptr) {
+          var dx = x - F.ptr[0], dy = y - F.ptr[1], d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 180 && d > 0.1) {
+            var push = (180 - d) / 180 * 52 * o.z;
+            tx = dx / d * push;
+            ty = dy / d * push;
+          }
+        }
+        o.ox += (tx - o.ox) * 0.1;
+        o.oy += (ty - o.oy) * 0.1;
+        var size = o.s * (0.55 + 0.45 * o.z) * (1 - 0.6 * night);
+        ctx.save();
+        ctx.translate(x + o.ox, y + o.oy);
+        ctx.rotate(o.r + F.scroll * 0.004 * o.spin + F.t * 0.15 * o.spin);
+        ctx.fillStyle = rgba(cols[o.c], 0.32 + 0.4 * o.z);
+        ctx.strokeStyle = rgba(cols[o.c], 0.45 + 0.4 * o.z);
+        ctx.lineWidth = Math.max(1.5, size * 0.13);
+        shape(ctx, o.k, size);
+        ctx.restore();
+      });
+    }
+  };
+
+  // Pensées: rose windows that turn as you read.
+  MOTIFS.rose = {
+    setup: function (L) {
+      return { c: anchors(L, [0.38, 0.72]), R: featureSize(L, 0.62, 60, 230) };
+    },
+    draw: function (ctx, L, S, F) {
+      S.c.forEach(function (c, k) {
+        var R = S.R, i;
+        ctx.save();
+        ctx.translate(c[0], c[1]);
+        ctx.rotate((k ? -1 : 1) * F.p * Math.PI * 0.8);
+        ctx.lineWidth = 1.2;
+        ctx.strokeStyle = rgba(F.pal.a, 0.55);
+        circle(ctx, 0, 0, R); ctx.stroke();
+        circle(ctx, 0, 0, R * 0.93); ctx.stroke();
+        ctx.strokeStyle = rgba(F.pal.a, 0.4);
+        for (i = 0; i < 12; i++) {
+          var a = i / 12 * TAU;
+          circle(ctx, Math.cos(a) * R * 0.46, Math.sin(a) * R * 0.46, R * 0.46);
+          ctx.stroke();
+        }
+        ctx.strokeStyle = rgba(F.pal.b, 0.6);
+        for (i = 0; i < 6; i++) {
+          var b = i / 6 * TAU + Math.PI / 6;
+          circle(ctx, Math.cos(b) * R * 0.23, Math.sin(b) * R * 0.23, R * 0.23);
+          ctx.stroke();
+        }
+        ctx.strokeStyle = rgba(F.pal.c, 0.25);
+        for (i = 0; i < 24; i++) {
+          var s = i / 24 * TAU;
+          line(ctx, Math.cos(s) * R * 0.93, Math.sin(s) * R * 0.93, Math.cos(s) * R, Math.sin(s) * R);
+        }
+        ctx.fillStyle = rgba(F.pal.b, 0.75);
+        for (i = 0; i < 24; i++) {
+          var d = (i + 0.5) / 24 * TAU;
+          circle(ctx, Math.cos(d) * R * 0.965, Math.sin(d) * R * 0.965, Math.max(1.5, R * 0.016));
+          ctx.fill();
+        }
+        ctx.fillStyle = rgba(F.pal.c, 0.45);
+        circle(ctx, 0, 0, R * 0.07);
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+  };
+
+  // Projects: drafting paper; the figures get drawn in as you scroll.
+  MOTIFS.blueprint = {
+    setup: function (L, rand) {
+      var figs = [];
+      for (var i = 0; i < 8; i++) {
+        var p = spot(L, rand, i);
+        figs.push({ x: p[0], y: p[1], w: 50 + rand() * 90, h: 34 + rand() * 70, kind: rand() < 0.5 ? "rect" : "circ", at: i / 8 });
+      }
+      return { figs: figs };
+    },
+    draw: function (ctx, L, S, F) {
+      var R = region(L), off = (F.scroll * 0.25) % 120, x, y;
+      ctx.lineWidth = 1;
+      for (x = 0; x < L.W; x += 24) {
+        ctx.strokeStyle = rgba(F.pal.c, x % 120 === 0 ? 0.16 : 0.07);
+        line(ctx, x, R.y0, x, R.y1);
+      }
+      for (y = R.y0 - off; y < R.y1; y += 24) {
+        ctx.strokeStyle = rgba(F.pal.c, Math.round(y + off) % 120 === 0 ? 0.16 : 0.07);
+        line(ctx, 0, y, L.W, y);
+      }
+      S.figs.forEach(function (g) {
+        var prog = clamp((F.p * 1.3 - g.at * 0.9) / 0.35, 0, 1);
+        if (prog <= 0) return;
+        ctx.strokeStyle = rgba(F.pal.c, 0.6);
+        ctx.lineWidth = 1.4;
+        var per = g.kind === "rect" ? 2 * (g.w + g.h) : TAU * g.h / 2;
+        ctx.setLineDash([per, per]);
+        ctx.lineDashOffset = per * (1 - prog);
+        if (g.kind === "rect") {
+          ctx.strokeRect(g.x - g.w / 2, g.y - g.h / 2, g.w, g.h);
+        } else {
+          circle(ctx, g.x, g.y, g.h / 2);
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        if (prog === 1) {
+          ctx.strokeStyle = rgba(F.pal.a, 0.55);
+          ctx.fillStyle = rgba(F.pal.a, 0.55);
+          if (g.kind === "rect") {
+            var yb = g.y + g.h / 2 + 12;
+            line(ctx, g.x - g.w / 2, yb - 4, g.x - g.w / 2, yb + 4);
+            line(ctx, g.x + g.w / 2, yb - 4, g.x + g.w / 2, yb + 4);
+            line(ctx, g.x - g.w / 2, yb, g.x + g.w / 2, yb);
+            label(ctx, String(Math.round(g.w)), g.x - 8, yb + 15, rgba(F.pal.a, 0.75), 10);
+          } else {
+            line(ctx, g.x - g.h / 2 - 6, g.y, g.x + g.h / 2 + 6, g.y);
+            line(ctx, g.x, g.y - g.h / 2 - 6, g.x, g.y + g.h / 2 + 6);
+            label(ctx, "Ø" + Math.round(g.h), g.x + g.h / 2 + 6, g.y - g.h / 2, rgba(F.pal.a, 0.75), 10);
+          }
+        }
+      });
+    }
+  };
+
+  /* -- course motifs -------------------------------------------------- */
+
+  // 이상 심리학: a Rorschach card; the text column is the fold.
+  MOTIFS["abnormal-psychology"] = {
+    ambient: true,
+    setup: function (L, rand) {
+      var blobs = [], drops = [], half = L.W / 2, n = L.mode === "band" ? 4 : 6;
+      var h = L.mode === "band" ? L.band : L.H;
+      for (var i = 0; i < n; i++) {
+        var cx;
+        if (L.mode === "margins") cx = lerp(L.left[0], L.left[1], 0.2 + rand() * 0.75);
+        else cx = half * (0.42 + rand() * 0.5);
+        var harm = [];
+        for (var k = 2; k <= 6; k++) harm.push({ k: k, a: rand() * 0.2 / Math.sqrt(k - 1), ph: rand() * TAU, w: (rand() - 0.5) * 8 });
+        blobs.push({ cx: cx, cy: h * (0.1 + rand() * 0.8), r: Math.min(h * 0.11, 140) * (0.6 + rand() * 0.9), harm: harm });
+      }
+      for (var j = 0; j < 14; j++) {
+        var b = blobs[j % n];
+        drops.push({ x: b.cx + (rand() - 0.5) * b.r * 3, y: b.cy + (rand() - 0.5) * b.r * 3, r: 2 + rand() * 6 });
+      }
+      return { blobs: blobs, drops: drops };
+    },
+    draw: function (ctx, L, S, F) {
+      function side() {
+        S.blobs.forEach(function (b) {
+          var pts = [];
+          for (var j = 0; j < 56; j++) {
+            var th = j / 56 * TAU, rr = 1;
+            b.harm.forEach(function (h) { rr += h.a * Math.sin(h.k * th + h.ph + F.p * h.w + F.t * 0.04 * h.w); });
+            pts.push([b.cx + b.r * rr * Math.cos(th), b.cy + b.r * rr * Math.sin(th) * 1.2]);
+          }
+          smoothClosed(ctx, pts);
+          ctx.fillStyle = rgba(F.pal.a, 0.24);
+          ctx.fill();
+          ctx.strokeStyle = rgba(F.pal.a, 0.4);
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+        });
+        ctx.fillStyle = rgba(F.pal.b, 0.35);
+        S.drops.forEach(function (d) { circle(ctx, d.x, d.y, d.r * (0.6 + 0.6 * F.p)); ctx.fill(); });
+      }
+      side();
+      ctx.save();
+      ctx.translate(L.W, 0);
+      ctx.scale(-1, 1);
+      side();
+      ctx.restore();
+    }
+  };
+
+  // 컴퓨터 통신: routers, links and packets in flight.
+  MOTIFS["computer-communication"] = {
+    ambient: true,
+    setup: function (L, rand) {
+      var area = L.W * (L.mode === "band" ? L.band : L.H);
+      var n = clamp(Math.round(area / 24000), 10, 44), nodes = [], edges = [], seen = {};
+      for (var i = 0; i < n; i++) {
+        var p = spot(L, rand, i);
+        nodes.push({ x: p[0], y: p[1], router: rand() < 0.4, ph: rand() * 40 });
+      }
+      nodes.forEach(function (a, i) {
+        var near = nodes.map(function (b, j) { return [j, (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)]; })
+          .sort(function (x, y) { return x[1] - y[1]; }).slice(1, 3);
+        near.forEach(function (nb) {
+          var key = Math.min(i, nb[0]) + "-" + Math.max(i, nb[0]);
+          if (!seen[key]) { seen[key] = 1; edges.push({ a: i, b: nb[0], sp: 0.06 + rand() * 0.12, off: rand() }); }
+        });
+      });
+      return { nodes: nodes, edges: edges };
+    },
+    draw: function (ctx, L, S, F) {
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = rgba(F.pal.a, 0.3);
+      S.edges.forEach(function (e) {
+        var a = S.nodes[e.a], b = S.nodes[e.b];
+        line(ctx, a.x, a.y, b.x, b.y);
+      });
+      S.nodes.forEach(function (nd) {
+        if (!nd.router) return;
+        var r = (F.t * 18 + nd.ph) % 40;
+        ctx.strokeStyle = rgba(F.pal.a, 0.35 * (1 - r / 40));
+        circle(ctx, nd.x, nd.y, 6 + r);
+        ctx.stroke();
+      });
+      ctx.fillStyle = rgba(F.pal.b, 0.85);
+      S.edges.forEach(function (e, i) {
+        var a = S.nodes[e.a], b = S.nodes[e.b], f = frac(F.t * e.sp + F.p * 2 + e.off);
+        if (i % 2) f = 1 - f;
+        ctx.fillRect(lerp(a.x, b.x, f) - 2.5, lerp(a.y, b.y, f) - 2.5, 5, 5);
+      });
+      S.nodes.forEach(function (nd) {
+        if (nd.router) {
+          ctx.fillStyle = rgba(F.pal.a, 0.75);
+          ctx.fillRect(nd.x - 4.5, nd.y - 4.5, 9, 9);
+        } else {
+          ctx.fillStyle = rgba(F.pal.ink, 0.45);
+          circle(ctx, nd.x, nd.y, 3.2);
+          ctx.fill();
+        }
+      });
+    }
+  };
+
+  // 휴먼 인터페이스 미디어: three colour discs converge as you scroll
+  // (subtractive mixing), plus centre-surround receptive fields.
+  MOTIFS["human-interface-media"] = {
+    setup: function (L, rand) {
+      var fields = [];
+      for (var i = 0; i < 9; i++) fields.push(spot(L, rand, i));
+      return { c: anchors(L, [0.32, 0.68]), R: featureSize(L, 0.3, 34, 110), fields: fields };
+    },
+    draw: function (ctx, L, S, F) {
+      ctx.lineWidth = 1.2;
+      S.fields.forEach(function (f) {
+        ctx.fillStyle = rgba(F.pal.a, 0.35);
+        circle(ctx, f[0], f[1], 5);
+        ctx.fill();
+        ctx.setLineDash([3, 4]);
+        ctx.strokeStyle = rgba(F.pal.b, 0.5);
+        circle(ctx, f[0], f[1], 15);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.strokeStyle = rgba(F.pal.a, 0.2);
+        circle(ctx, f[0], f[1], 25);
+        ctx.stroke();
+      });
+      var inks = [[0, 172, 205], [215, 60, 142], [244, 204, 46]];
+      ctx.globalCompositeOperation = "multiply";
+      S.c.forEach(function (c) {
+        var d = S.R * (1.15 - 0.95 * F.p);
+        inks.forEach(function (ink, i) {
+          var a = -Math.PI / 2 + i * TAU / 3;
+          ctx.fillStyle = rgba(ink, 0.62);
+          circle(ctx, c[0] + Math.cos(a) * d, c[1] + Math.sin(a) * d, S.R);
+          ctx.fill();
+        });
+      });
+      ctx.globalCompositeOperation = "source-over";
+    }
+  };
+
+  // 대학수학: the unit circle unrolls into a sine wave.
+  MOTIFS["college-math"] = {
+    setup: function (L) {
+      var c = anchors(L, [0.5, 0.5])[0];
+      return { O: c, R: featureSize(L, 0.3, 30, 105), dir: L.mode === "band" ? -1 : 1 };
+    },
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), O = S.O, R = S.R, x, y;
+      ctx.lineWidth = 1;
+      for (x = O[0] % 40; x < L.W; x += 40) { ctx.strokeStyle = rgba(F.pal.ink, 0.05); line(ctx, x, Rg.y0, x, Rg.y1); }
+      for (y = O[1] % 40; y < Rg.y1; y += 40) { ctx.strokeStyle = rgba(F.pal.ink, 0.05); line(ctx, 0, y, L.W, y); }
+      ctx.strokeStyle = rgba(F.pal.ink, 0.22);
+      line(ctx, 0, O[1], L.W, O[1]);
+      line(ctx, O[0], Rg.y0, O[0], Rg.y1);
+      var th = F.p * TAU * 1.25 + 0.7;
+      var P = [O[0] + R * Math.cos(th), O[1] - R * Math.sin(th)];
+      ctx.strokeStyle = rgba(F.pal.a, 0.7);
+      ctx.lineWidth = 1.6;
+      circle(ctx, O[0], O[1], R);
+      ctx.stroke();
+      // the wave starts where the circle ends and runs away from it
+      var x0 = O[0] + S.dir * (R + 26);
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = rgba(F.pal.b, 0.55);
+      line(ctx, P[0], P[1], x0, P[1]);
+      line(ctx, P[0], P[1], P[0], O[1]);
+      ctx.setLineDash([]);
+      ctx.beginPath();
+      for (var i = 0; i < 2000; i += 3) {
+        x = x0 + S.dir * i;
+        if (x < -10 || x > L.W + 10) break;
+        y = O[1] - R * Math.sin(th - i / R);
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = rgba(F.pal.a, 0.6);
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.strokeStyle = rgba(F.pal.b, 0.9);
+      line(ctx, O[0], O[1], P[0], P[1]);
+      ctx.fillStyle = rgba(F.pal.b, 0.95);
+      circle(ctx, P[0], P[1], 4);
+      ctx.fill();
+      label(ctx, "θ = " + (th % TAU).toFixed(2), O[0] - R, O[1] + R + 18, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 이산수학: a spanning tree connects the dots (Kruskal order).
+  MOTIFS["discrete-math"] = {
+    setup: function (L, rand) {
+      var g = L.mode === "thumb" ? 40 : 54, Rg = region(L);
+      var cols = Math.ceil(L.W / g) + 1, rows = Math.ceil((Rg.y1 - Rg.y0) / g) + 1;
+      var pts = [], edges = [], parent = [], tree = [];
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          pts.push([c * g + (rand() - 0.5) * 14 + g / 3, Rg.y0 + r * g + (rand() - 0.5) * 14 + g / 3]);
+          parent.push(pts.length - 1);
+          var id = r * cols + c;
+          if (c > 0) edges.push([id - 1, id, rand()]);
+          if (r > 0) edges.push([id - cols, id, rand()]);
+          if (r > 0 && c > 0 && rand() < 0.3) edges.push([id - cols - 1, id, rand() + 0.2]);
+        }
+      }
+      function find(x) { while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; } return x; }
+      edges.sort(function (a, b) { return a[2] - b[2]; }).forEach(function (e) {
+        var a = find(e[0]), b = find(e[1]);
+        if (a !== b) { parent[a] = b; tree.push(e); }
+      });
+      return { pts: pts, tree: tree };
+    },
+    draw: function (ctx, L, S, F) {
+      var k = Math.round(lerp(4, S.tree.length, F.p));
+      ctx.lineWidth = 1.6;
+      ctx.strokeStyle = rgba(F.pal.a, 0.5);
+      for (var i = 0; i < k - 6; i++) {
+        var e = S.tree[i];
+        line(ctx, S.pts[e[0]][0], S.pts[e[0]][1], S.pts[e[1]][0], S.pts[e[1]][1]);
+      }
+      ctx.lineWidth = 2.6;
+      ctx.strokeStyle = rgba(F.pal.b, 0.9);
+      for (var j = Math.max(0, k - 6); j < k; j++) {
+        var f = S.tree[j];
+        line(ctx, S.pts[f[0]][0], S.pts[f[0]][1], S.pts[f[1]][0], S.pts[f[1]][1]);
+      }
+      ctx.fillStyle = rgba(F.pal.ink, 0.3);
+      S.pts.forEach(function (p) { circle(ctx, p[0], p[1], 2.2); ctx.fill(); });
+      if (k > 0) {
+        var last = S.tree[k - 1];
+        ctx.fillStyle = rgba(F.pal.b, 1);
+        circle(ctx, S.pts[last[1]][0], S.pts[last[1]][1], 4.5);
+        ctx.fill();
+      }
+    }
+  };
+
+  // 미분적분학: a Riemann sum gets finer as you scroll; a tangent slides along.
+  MOTIFS.calculus = {
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), h = Rg.y1 - Rg.y0, yb = Rg.y0 + h * 0.92;
+      function f(x) {
+        return Rg.y0 + h * (0.5 - 0.17 * Math.sin(x / L.W * TAU * 1.1 + 0.6) - 0.07 * Math.sin(x / L.W * TAU * 3.2 + 1.3));
+      }
+      var n = Math.round(lerp(5, 72, F.p)), w = L.W / n;
+      ctx.lineWidth = 1;
+      for (var i = 0; i < n; i++) {
+        var y = f((i + 0.5) * w);
+        ctx.fillStyle = rgba(F.pal.a, 0.11);
+        ctx.fillRect(i * w, y, w, yb - y);
+        ctx.strokeStyle = rgba(F.pal.a, 0.3);
+        ctx.strokeRect(i * w, y, w, yb - y);
+      }
+      ctx.beginPath();
+      for (var x = 0; x <= L.W; x += 5) { if (x === 0) ctx.moveTo(x, f(x)); else ctx.lineTo(x, f(x)); }
+      ctx.strokeStyle = rgba(F.pal.ink, 0.55);
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      var xt = L.W * (0.05 + 0.9 * F.p), slope = (f(xt + 1) - f(xt - 1)) / 2, len = Math.min(160, L.W * 0.12);
+      ctx.strokeStyle = rgba(F.pal.b, 0.95);
+      line(ctx, xt - len, f(xt) - slope * len, xt + len, f(xt) + slope * len);
+      ctx.fillStyle = rgba(F.pal.b, 1);
+      circle(ctx, xt, f(xt), 4.5);
+      ctx.fill();
+      label(ctx, "n = " + n, 14, yb + 16, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 선형대수학: the plane shears and turns as you scroll.
+  MOTIFS["linear-algebra"] = {
+    setup: function (L) {
+      var O = L.mode === "margins" ? [(L.left[0] + L.left[1]) * 0.45, L.H * 0.62] :
+        L.mode === "band" ? [L.W * 0.82, L.band * 0.62] : [L.W * 0.42, L.H * 0.62];
+      return { O: O, s: L.mode === "thumb" ? 34 : 46 };
+    },
+    draw: function (ctx, L, S, F) {
+      var O = S.O, s = S.s, ph = F.p * 0.55, sh = F.p * 0.9, sc = 1 + 0.3 * F.p;
+      var c = Math.cos(ph), sn = Math.sin(ph);
+      // A = R(ph) [[1, sh], [0, sc]]; screen y points down
+      var u = [c, -sn], v = [c * sh - sn * sc, -(sn * sh + c * sc)];
+      var Rg = region(L), N = Math.ceil(Math.max(L.W, Rg.y1) / s) + 4, far = N * s * 2, i;
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = rgba(F.pal.ink, 0.07);
+      for (i = -N; i <= N; i++) {
+        line(ctx, O[0] + i * s, Rg.y0, O[0] + i * s, Rg.y1);
+        line(ctx, 0, O[1] + i * s, L.W, O[1] + i * s);
+      }
+      ctx.strokeStyle = rgba(F.pal.a, 0.34);
+      ctx.lineWidth = 1.2;
+      for (i = -N; i <= N; i++) {
+        line(ctx, O[0] + i * s * v[0] - far * u[0], O[1] + i * s * v[1] - far * u[1], O[0] + i * s * v[0] + far * u[0], O[1] + i * s * v[1] + far * u[1]);
+        line(ctx, O[0] + i * s * u[0] - far * v[0], O[1] + i * s * u[1] - far * v[1], O[0] + i * s * u[0] + far * v[0], O[1] + i * s * u[1] + far * v[1]);
+      }
+      ctx.beginPath();
+      ctx.moveTo(O[0], O[1]);
+      ctx.lineTo(O[0] + s * u[0], O[1] + s * u[1]);
+      ctx.lineTo(O[0] + s * (u[0] + v[0]), O[1] + s * (u[1] + v[1]));
+      ctx.lineTo(O[0] + s * v[0], O[1] + s * v[1]);
+      ctx.closePath();
+      ctx.fillStyle = rgba(F.pal.d, 0.22);
+      ctx.fill();
+      ctx.lineWidth = 2.6;
+      ctx.strokeStyle = ctx.fillStyle = rgba(F.pal.b, 0.95);
+      arrow(ctx, O[0], O[1], O[0] + 2 * s * u[0], O[1] + 2 * s * u[1], 9);
+      ctx.strokeStyle = ctx.fillStyle = rgba(F.pal.a, 0.95);
+      arrow(ctx, O[0], O[1], O[0] + 2 * s * v[0], O[1] + 2 * s * v[1], 9);
+      label(ctx, "det = " + sc.toFixed(2), O[0] + 10, O[1] + 20, rgba(F.pal.ink, 0.55));
+    }
+  };
+
+  // 확률과 통계: a Galton board fills up into a bell curve as you scroll.
+  MOTIFS["probability-statistics"] = {
+    ambient: true,
+    setup: function (L, rand) {
+      var rows = 9, boards = [], N = 280, paths = [];
+      var bw = L.mode === "margins" ? clamp((L.left[1] - L.left[0]) * 0.78, 120, 300) :
+        L.mode === "band" ? Math.min(260, L.W * 0.36) : L.W * 0.62;
+      var Rg = region(L), top = Rg.y0 + (Rg.y1 - Rg.y0) * (L.mode === "margins" ? 0.12 : 0.08);
+      var bottom = Rg.y0 + (Rg.y1 - Rg.y0) * (L.mode === "margins" ? 0.88 : 0.94);
+      anchors(L, [0.5, 0.5]).forEach(function (c) { boards.push({ cx: c[0], top: top, bottom: bottom, bw: bw }); });
+      for (var i = 0; i < N; i++) {
+        var bits = [];
+        for (var r = 0; r < rows; r++) bits.push(rand() < 0.5 ? 1 : 0);
+        paths.push(bits);
+      }
+      return { rows: rows, boards: boards, paths: paths };
+    },
+    draw: function (ctx, L, S, F) {
+      var rows = S.rows, N = S.paths.length, k = Math.floor(F.p * N);
+      S.boards.forEach(function (b, bi) {
+        var dx = b.bw / (rows + 1), pegH = (b.bottom - b.top) * 0.45, dy = pegH / rows;
+        var binTop = b.top + pegH + dy, avail = b.bottom - binTop, unit = avail / (N * 0.27);
+        var counts = [], i, r, j;
+        for (i = 0; i <= rows; i++) counts.push(0);
+        for (i = 0; i < k; i++) {
+          var path = S.paths[(i + bi * 97) % N], sum = 0;
+          for (r = 0; r < rows; r++) sum += path[r];
+          counts[sum]++;
+        }
+        ctx.fillStyle = rgba(F.pal.ink, 0.35);
+        for (r = 0; r < rows; r++) {
+          for (j = 0; j <= r; j++) { circle(ctx, b.cx + (j - r / 2) * dx, b.top + (r + 1) * dy, 1.8); ctx.fill(); }
+        }
+        ctx.strokeStyle = rgba(F.pal.ink, 0.15);
+        ctx.lineWidth = 1;
+        for (j = 0; j <= rows + 1; j++) line(ctx, b.cx + (j - (rows + 1) / 2) * dx, binTop, b.cx + (j - (rows + 1) / 2) * dx, b.bottom);
+        line(ctx, b.cx - (rows + 1) / 2 * dx, b.bottom, b.cx + (rows + 1) / 2 * dx, b.bottom);
+        ctx.fillStyle = rgba(F.pal.a, 0.55);
+        counts.forEach(function (n, j2) {
+          var hgt = Math.min(avail, n * unit);
+          ctx.fillRect(b.cx + (j2 - rows / 2) * dx - dx * 0.36, b.bottom - hgt, dx * 0.72, hgt);
+        });
+        if (k > 8) {
+          var sd = Math.sqrt(rows) / 2;
+          ctx.beginPath();
+          for (var x = -rows / 2 - 0.5; x <= rows / 2 + 0.5; x += 0.1) {
+            var z = x / sd, pdf = Math.exp(-z * z / 2) / (sd * Math.sqrt(TAU));
+            var px = b.cx + x * dx, py = b.bottom - Math.min(avail, k * pdf * unit);
+            if (x === -rows / 2 - 0.5) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+          }
+          ctx.strokeStyle = rgba(F.pal.b, 0.85);
+          ctx.lineWidth = 1.8;
+          ctx.stroke();
+        }
+        // three balls in flight
+        ctx.fillStyle = rgba(F.pal.b, 0.95);
+        for (var m = 0; m < 3; m++) {
+          var ph = frac(F.t * 0.3 + m / 3 + bi * 0.17), pos = ph * (rows + 1), row = Math.floor(pos);
+          var bitsF = S.paths[(k + m * 13 + bi * 7) % N], right = 0;
+          for (r = 0; r < Math.min(row, rows); r++) right += bitsF[r];
+          var nextRight = right + (row < rows ? bitsF[row] : 0);
+          var xr = lerp(right - row / 2, nextRight - (row + 1) / 2, frac(pos));
+          circle(ctx, b.cx + xr * dx, b.top + pos * dy, 3.2);
+          ctx.fill();
+        }
+      });
+    }
+  };
+
+  // 알고리즘: insertion sort (and selection sort on the right) run as you scroll.
+  MOTIFS.algorithms = {
+    setup: function (L, rand) {
+      var n = 22, vals = [], i, j;
+      for (i = 1; i <= n; i++) vals.push(i);
+      for (i = n - 1; i > 0; i--) { j = (rand() * (i + 1)) | 0; var t = vals[i]; vals[i] = vals[j]; vals[j] = t; }
+      function insertion(a) {
+        a = a.slice();
+        var steps = [{ arr: a.slice(), hi: [] }];
+        for (var x = 1; x < a.length; x++) {
+          for (var y = x; y > 0 && a[y - 1] > a[y]; y--) {
+            var tmp = a[y]; a[y] = a[y - 1]; a[y - 1] = tmp;
+            steps.push({ arr: a.slice(), hi: [y - 1, y] });
+          }
+        }
+        steps.push({ arr: a.slice(), hi: [] });
+        return steps;
+      }
+      function selection(a) {
+        a = a.slice();
+        var steps = [{ arr: a.slice(), hi: [] }];
+        for (var x = 0; x < a.length - 1; x++) {
+          var min = x;
+          for (var y = x + 1; y < a.length; y++) if (a[y] < a[min]) min = y;
+          var tmp = a[x]; a[x] = a[min]; a[min] = tmp;
+          steps.push({ arr: a.slice(), hi: [x, min] });
+        }
+        steps.push({ arr: a.slice(), hi: [] });
+        return steps;
+      }
+      return { n: n, ins: insertion(vals), sel: selection(vals) };
+    },
+    draw: function (ctx, L, S, F) {
+      function state(steps) { return steps[Math.round(F.p * (steps.length - 1))]; }
+      function horizontal(st, x0, x1, alignRight) {
+        var th = L.H * 0.78 / S.n, y0 = L.H * 0.11, len = x1 - x0 - 24;
+        st.arr.forEach(function (v, i) {
+          var w = v / S.n * len, hot = st.hi.indexOf(i) >= 0;
+          ctx.fillStyle = hot ? rgba(F.pal.b, 0.95) : rgba(F.pal.a, 0.45);
+          ctx.fillRect(alignRight ? x1 - 12 - w : x0 + 12, y0 + i * th, w, th * 0.62);
+        });
+      }
+      function vertical(st, top, bottom) {
+        var w = L.W / S.n;
+        st.arr.forEach(function (v, i) {
+          var h = v / S.n * (bottom - top), hot = st.hi.indexOf(i) >= 0;
+          ctx.fillStyle = hot ? rgba(F.pal.b, 0.95) : rgba(F.pal.a, 0.42);
+          ctx.fillRect(i * w + w * 0.18, bottom - h, w * 0.64, h);
+        });
+      }
+      var ins = state(S.ins);
+      if (L.mode === "margins") {
+        horizontal(ins, L.left[0], L.left[1], false);
+        horizontal(state(S.sel), L.right[0], L.right[1], true);
+        label(ctx, "insertion sort", L.left[0] + 12, L.H * 0.11 - 10, rgba(F.pal.ink, 0.5));
+        label(ctx, "selection sort", L.right[1] - 110, L.H * 0.11 - 10, rgba(F.pal.ink, 0.5));
+      } else if (L.mode === "band") {
+        vertical(ins, L.band * 0.55, L.band * 0.96);
+      } else {
+        vertical(ins, L.H * 0.12, L.H * 0.94);
+      }
+    }
+  };
+
+  /* ------------------------------------------------------------------ */
+  /* page background                                                     */
+  /* ------------------------------------------------------------------ */
+
+  var sceneHook = null;
+
+  function startBackground(canvas, theme) {
+    var ctx = canvas.getContext("2d");
+    var motif = MOTIFS[theme] || MOTIFS.confetti;
+    var masked = canvas.classList.contains("geo-canvas--masked");
+    var bandEl = document.querySelector("[data-geo-band]");
+    var dpr = 1, W = 0, H = 0, L = null, S = null, raf = 0, ptr = null, t0 = performance.now();
+    var pal = readPalette(body), palFrom = pal, palTo = pal, palStart = 0, night = 0, nightTo = 0;
+
+    function clearPx() {
+      var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      return (parseFloat(getComputedStyle(canvas).getPropertyValue("--geo-clear")) || 0) * rem;
+    }
+
+    function layout() {
+      var bandDoc = bandEl ? bandEl.getBoundingClientRect().bottom + window.scrollY : 0;
+      var L2 = { W: W, H: H, band: Math.max(bandDoc, 240), clear: 0, mode: "full" };
+      if (masked) {
+        L2.clear = clearPx();
+        var mw = W / 2 - L2.clear - 16;
+        if (mw >= 150) { L2.mode = "margins"; L2.left = [0, mw]; L2.right = [W - mw, W]; }
+        else L2.mode = "band";
+      }
+      return L2;
+    }
+
+    function resize(force) {
+      var w = window.innerWidth, h = window.innerHeight;
+      var rebuild = force || w !== W || Math.abs(h - H) > 140;
+      W = w;
+      H = h;
+      dpr = Math.min(window.devicePixelRatio || 1, W < 700 ? 1.5 : 2);
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      if (rebuild || !L) {
+        L = layout();
+        S = motif.setup ? motif.setup(L, seeded(theme + ":" + L.mode)) : {};
+      }
+      schedule();
+    }
+
+    function progress() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      return max > 0 ? clamp(window.scrollY / max, 0, 1) : 0;
+    }
+
+    function draw() {
+      raf = 0;
+      var now = performance.now();
+      var f = clamp((now - palStart) / 700, 0, 1);
+      pal = f < 1 ? mixPalette(palFrom, palTo, ease(f)) : palTo;
+      night += (nightTo - night) * (reduceMotion ? 1 : 0.07);
+      var scroll = window.scrollY, p = reduceMotion ? 0.5 : progress();
+      body.style.setProperty("--geo-p", p.toFixed(3));
+      if (masked && bandEl) canvas.style.setProperty("--geo-band", Math.round(bandEl.getBoundingClientRect().bottom) + "px");
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      var visible = !(L.mode === "band" && scroll > L.band);
+      if (visible) {
+        if (L.mode === "band") ctx.translate(0, -scroll);
+        motif.draw(ctx, L, S, {
+          p: p, t: reduceMotion ? 0 : (now - t0) / 1000, scroll: reduceMotion ? 0 : scroll,
+          pal: pal, ptr: ptr, night: night
+        });
+      }
+      var settling = f < 1 || Math.abs(nightTo - night) > 0.005;
+      if (settling || (visible && motif.ambient && !reduceMotion && !document.hidden)) schedule();
+    }
+
+    function schedule() {
+      if (!raf) raf = requestAnimationFrame(draw);
+    }
+
+    sceneHook = function (scene) {
+      palFrom = pal;
+      palTo = readPalette(body);
+      palStart = performance.now();
+      nightTo = scene === "night" ? 1 : 0;
+      schedule();
+    };
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", function () { resize(false); });
+    document.addEventListener("visibilitychange", schedule);
+    if (motif.pointer && !reduceMotion) {
+      window.addEventListener("pointermove", function (e) {
+        if (e.pointerType === "mouse") { ptr = [e.clientX, e.clientY + (L && L.mode === "band" ? window.scrollY : 0)]; schedule(); }
+      }, { passive: true });
+      document.addEventListener("pointerleave", function () { ptr = null; });
+    }
+    // fonts and images can move the header band after first paint
+    window.addEventListener("load", function () { resize(true); });
+    resize(true);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* scenes: sections recolour the page as they cross the middle         */
+  /* ------------------------------------------------------------------ */
+
+  function initScenes() {
+    var sections = [].slice.call(document.querySelectorAll("[data-scene]"));
+    if (!sections.length) return;
+    var current = null;
+    function set(scene) {
+      if (scene === current) return;
+      current = scene;
+      body.setAttribute("data-scene", scene);
+      if (sceneHook) sceneHook(scene);
+    }
+    set(sections[0].getAttribute("data-scene"));
+    if (!("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) set(e.target.getAttribute("data-scene")); });
+    }, { rootMargin: "-49% 0px -49% 0px" });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* thumbnails: canvas[data-motif]                                      */
+  /* ------------------------------------------------------------------ */
+
+  function initThumb(c) {
+    var motif = MOTIFS[c.getAttribute("data-motif")];
+    if (!motif || !c.getContext) return;
+    var ctx = c.getContext("2d"), VW = 560, VH = 350, S = null, pal = null;
+    var p = 0.55, from = 0.55, to = 0.55, start = 0, raf = 0, t0 = performance.now();
+    var host = c.closest("[data-course]") || c.parentElement;
+    var hover = c.closest("a") || c;
+
+    function L() { return { W: VW, H: VH, mode: "thumb", band: VH, clear: 0 }; }
+
+    function size() {
+      var r = c.getBoundingClientRect();
+      if (!r.width) return;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      c.width = Math.round(r.width * dpr);
+      c.height = Math.round(r.height * dpr);
+      VH = VW * r.height / r.width;
+      S = motif.setup ? motif.setup(L(), seeded(c.getAttribute("data-motif") + ":thumb")) : {};
+      pal = readPalette(host);
+      render();
+    }
+
+    function render() {
+      raf = 0;
+      if (!S) return;
+      var now = performance.now(), f = clamp((now - start) / 1400, 0, 1);
+      p = lerp(from, to, ease(f));
+      var k = c.width / VW;
+      ctx.setTransform(k, 0, 0, k, 0, 0);
+      ctx.clearRect(0, 0, VW, VH);
+      motif.draw(ctx, L(), S, { p: p, t: (now - t0) / 1000, scroll: 0, pal: pal, ptr: null, night: 0 });
+      if (f < 1 || (motif.ambient && hover.matches(":hover"))) raf = requestAnimationFrame(render);
+    }
+
+    function go(target) {
+      if (reduceMotion) return;
+      from = p;
+      to = target;
+      start = performance.now();
+      if (!raf) raf = requestAnimationFrame(render);
+    }
+
+    hover.addEventListener("pointerenter", function () { go(1); });
+    hover.addEventListener("pointerleave", function () { go(0.55); });
+    hover.addEventListener("focus", function () { go(1); });
+    hover.addEventListener("blur", function () { go(0.55); });
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting) { io.disconnect(); size(); }
+      }, { rootMargin: "200px" });
+      io.observe(c);
+    } else {
+      size();
+    }
+    window.addEventListener("resize", function () { if (S) size(); });
+  }
+
+  /* ------------------------------------------------------------------ */
+
+  var bg = document.querySelector("canvas.geo-canvas");
+  var theme = body.getAttribute("data-geo");
+  if (bg && theme && bg.getContext) startBackground(bg, theme);
+  initScenes();
+  [].forEach.call(document.querySelectorAll("canvas[data-motif]"), initThumb);
+})();

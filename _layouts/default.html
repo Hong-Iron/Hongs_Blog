@@ -3,12 +3,24 @@
 <head>
 {% include head.html %}
 </head>
+{%- comment -%} Which geometry the page gets (assets/js/geo.js) and how wide a
+     column it keeps clear for reading (half-width; "none" = full canvas). {%- endcomment -%}
+{%- assign geo = page.geo | default: layout.geo -%}
+{%- if geo == nil and page.course_slug -%}{%- assign geo = page.course_slug -%}{%- endif -%}
+{%- if geo == nil and page.collection == "posts" -%}{%- assign geo = "rose" -%}{%- endif -%}
+{%- if geo == nil and page.category == "pensees" -%}{%- assign geo = "rose" -%}{%- endif -%}
+{%- if geo == nil and page.collection == "projects" -%}{%- assign geo = "blueprint" -%}{%- endif -%}
+{%- if geo == nil -%}{%- assign geo = "confetti" -%}{%- endif -%}
+{%- assign geo_clear = page.geo_clear | default: layout.geo_clear -%}
+{%- if geo_clear == "none" -%}{%- assign geo_clear = nil -%}{%- endif -%}
 <body
+  data-geo="{{ geo }}"{% if page.course_slug %} data-course="{{ page.course_slug }}"{% endif %}
   data-bg="{{ site.data.theme.background | default: 'paper-cream' }}"
   data-fx-grain="{{ site.data.theme.effects.grain }}"
   data-fx-reveal="{{ site.data.theme.effects.scroll_reveal }}"
   data-fx-underline="{{ site.data.theme.effects.link_underline_draw }}"
 >
+  <canvas class="geo-canvas{% if geo_clear %} geo-canvas--masked{% endif %}"{% if geo_clear %} style="--geo-clear: {{ geo_clear }}"{% endif %} aria-hidden="true"></canvas>
   <div class="grain-overlay" aria-hidden="true"></div>
 
   {% if site.data.theme.effects.dismissible_banner != false %}
@@ -26,5 +38,6 @@
   <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/effects.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/notifications.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/geo.js' | relative_url }}" defer></script>
 </body>
 </html>

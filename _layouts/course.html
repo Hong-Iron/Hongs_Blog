@@ -1,14 +1,15 @@
 ---
 layout: default
+geo_clear: 31rem
 ---
 <article class="note note--course">
-  <header class="article-header container note-header">
+  <header class="article-header container note-header course-header" data-geo-band>
     <nav class="note-crumbs" aria-label="위치">
       <a href="{{ '/studies/' | relative_url }}">Studies</a>
       <span aria-hidden="true">/</span>
       <span>{{ page.track }}</span>
     </nav>
-    <span class="eyebrow tag" style="--tag-color: var(--accent-ochre)">로드맵</span>
+    <span class="eyebrow tag" style="--tag-color: var(--course)">로드맵</span>
     <h1 class="article-header__title note-title">{{ page.display_title | default: page.title }}</h1>
     <dl class="article-meta">
       <div><dt>개념</dt><dd>{{ page.concepts }}</dd></div>

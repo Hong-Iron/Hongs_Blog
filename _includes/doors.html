@@ -1,0 +1,21 @@
+{%- assign course_total = 0 -%}{%- assign note_total = 0 -%}
+{%- for track in site.data.study_courses -%}{%- for c in track.courses -%}
+  {%- assign course_total = course_total | plus: 1 -%}{%- assign note_total = note_total | plus: c.concepts | plus: c.practices -%}
+{%- endfor -%}{%- endfor -%}
+<nav class="doors" aria-label="둘러보기">
+  <a class="door door--projects" href="{{ '/projects/' | relative_url }}">
+    {% include glyph.html shape="projects" class="door__glyph" %}
+    <span class="door__label">Projects</span>
+    <span class="door__meta">프로젝트 · {{ site.projects.size }}개</span>
+  </a>
+  <a class="door door--studies" href="{{ '/studies/' | relative_url }}">
+    {% include glyph.html shape="studies" class="door__glyph" %}
+    <span class="door__label">Studies</span>
+    <span class="door__meta">지식 DB · {{ course_total }}과목 {{ note_total }}편</span>
+  </a>
+  <a class="door door--pensees" href="{{ '/pensees/' | relative_url }}">
+    {% include glyph.html shape="pensees" class="door__glyph" %}
+    <span class="door__label">Pensées</span>
+    <span class="door__meta">나의 팡세 · {{ site.categories.pensees.size }}편</span>
+  </a>
+</nav>

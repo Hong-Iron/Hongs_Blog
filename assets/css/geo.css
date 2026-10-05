@@ -1,0 +1,572 @@
+/* ==========================================================================
+   Geometry layer, scenes, course themes and the home/About components.
+   The canvas is drawn by assets/js/geo.js.
+   ========================================================================== */
+
+/* -- palettes the canvas reads (--geo-1 … --geo-4) ----------------------- */
+
+body {
+  --geo-1: #b0432c;
+  --geo-2: #c9952e;
+  --geo-3: #2f4858;
+  --geo-4: #6f8a4d;
+}
+
+/* -- canvas ----------------------------------------------------------------- */
+
+.geo-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+body[data-geo="confetti"] .geo-canvas {
+  opacity: 0.62;
+}
+
+/* Reading pages: the canvas shows in the header band and in the margins
+   beside the text column (--geo-clear is half that column's width). On
+   narrow screens the margin columns collapse and only the band remains. */
+.geo-canvas--masked {
+  opacity: 0.55;
+  --fade: 4rem;
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 calc(var(--geo-band, 0px) - 90px), transparent var(--geo-band, 0px)),
+    linear-gradient(to right,
+      #000 calc(50% - var(--geo-clear) - var(--fade)),
+      transparent calc(50% - var(--geo-clear)),
+      transparent calc(50% + var(--geo-clear)),
+      #000 calc(50% + var(--geo-clear) + var(--fade)));
+  mask-image:
+    linear-gradient(to bottom, #000 calc(var(--geo-band, 0px) - 90px), transparent var(--geo-band, 0px)),
+    linear-gradient(to right,
+      #000 calc(50% - var(--geo-clear) - var(--fade)),
+      transparent calc(50% - var(--geo-clear)),
+      transparent calc(50% + var(--geo-clear)),
+      #000 calc(50% + var(--geo-clear) + var(--fade)));
+  -webkit-mask-composite: source-over;
+  mask-composite: add;
+}
+
+@media print {
+  .geo-canvas { display: none; }
+}
+
+/* -- scenes: set on <body> by geo.js from the section in view ------------- */
+
+body[data-scene] {
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body[data-scene="linen"] {
+  --bg: #e8e7df;
+  --bg-alt: #d9d8cc;
+  --card: #f3f2ec;
+  --rule: #cbc8b8;
+  --geo-1: #2f4858;
+  --geo-2: #5d86a3;
+  --geo-3: #b0432c;
+  --geo-4: #c9952e;
+}
+
+body[data-scene="sage"] {
+  --bg: #e6eadc;
+  --bg-alt: #d6dcc6;
+  --card: #f1f3e9;
+  --rule: #c3cbaf;
+  --geo-1: #59713f;
+  --geo-2: #8fae6a;
+  --geo-3: #1f6874;
+  --geo-4: #c9952e;
+}
+
+body[data-scene="blush"] {
+  --bg: #f3e9e6;
+  --bg-alt: #e9d8d3;
+  --card: #f9f2ef;
+  --rule: #dcc5be;
+  --geo-1: #6c4a6e;
+  --geo-2: #9b3567;
+  --geo-3: #1f6874;
+  --geo-4: #c9952e;
+}
+
+body[data-scene="wheat"] {
+  --bg: #f4ecd9;
+  --bg-alt: #eadcbc;
+  --card: #faf4e6;
+  --rule: #dccba3;
+  --geo-1: #866016;
+  --geo-2: #b0432c;
+  --geo-3: #2f4858;
+  --geo-4: #59713f;
+}
+
+body[data-scene="night"] {
+  --bg: #17161d;
+  --bg-alt: #221f2b;
+  --card: #1f1c27;
+  --ink: #ece6d8;
+  --ink-muted: #aaa3b5;
+  --rule: #34303f;
+  --accent: #e8925c;
+  --accent-ink: #17161d;
+  --geo-1: #f1e7d0;
+  --geo-2: #e8925c;
+  --geo-3: #b892ba;
+  --geo-4: #8fb3c7;
+}
+
+/* category accents, lightened so tags stay readable on the dark ground */
+body[data-scene="night"] {
+  --accent-rust: #e8925c;
+  --accent-ochre: #d8aa52;
+  --accent-moss: #9db57f;
+  --accent-plum: #c9a3cb;
+  --accent-inkblue: #8fb3c7;
+}
+
+body[data-scene="night"] .grain-overlay {
+  mix-blend-mode: overlay;
+  opacity: 0.08;
+}
+
+body[data-scene="night"] .btn--primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* -- course themes ----------------------------------------------------------- */
+
+[data-course="abnormal-psychology"]    { --course: #6c4a6e; --course-2: #b0432c; }
+[data-course="computer-communication"] { --course: #1f6874; --course-2: #b0432c; }
+[data-course="human-interface-media"]  { --course: #9b3567; --course-2: #1f6874; }
+[data-course="college-math"]           { --course: #866016; --course-2: #b0432c; }
+[data-course="discrete-math"]          { --course: #59713f; --course-2: #b0432c; }
+[data-course="calculus"]               { --course: #b0432c; --course-2: #2f4858; }
+[data-course="linear-algebra"]         { --course: #2f4858; --course-2: #b0432c; }
+[data-course="probability-statistics"] { --course: #3f4f9a; --course-2: #b0432c; }
+[data-course="algorithms"]             { --course: #1d6b57; --course-2: #b0432c; }
+
+[data-course] {
+  --geo-1: var(--course);
+  --geo-2: var(--course-2);
+  --geo-3: #2f4858;
+  --geo-4: #c9952e;
+}
+
+/* the page warms toward the course colour as you read */
+body[data-course] {
+  background-color: color-mix(in srgb, var(--course) calc(var(--geo-p, 0) * 9%), var(--bg));
+  transition: none;
+}
+
+body[data-course] ::selection {
+  background: var(--course);
+  color: #fff;
+}
+
+/* -- logo ------------------------------------------------------------------- */
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.logo-mark {
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.logo-mark__stem { fill: var(--ink); transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1); transform-origin: 50% 100%; transform-box: fill-box; }
+.logo-mark__dot { fill: var(--accent); transition: transform 0.45s cubic-bezier(0.3, 1.8, 0.5, 1); transform-origin: center; transform-box: fill-box; }
+.logo-mark__wedge { fill: var(--accent-ochre); transition: transform 0.35s ease; transform-origin: 100% 0; transform-box: fill-box; }
+
+.site-logo:hover .logo-mark__dot,
+.site-logo:focus-visible .logo-mark__dot { transform: translateY(-9px) scale(0.85); }
+.site-logo:hover .logo-mark__stem { transform: rotate(-4deg); }
+.site-logo:hover .logo-mark__stem--right { transform: rotate(4deg); }
+.site-logo:hover .logo-mark__wedge { transform: rotate(90deg); }
+
+body[data-scene="night"] .logo-mark__wedge { fill: #d8aa52; }
+
+/* -- home hero ------------------------------------------------------------- */
+
+.home-hero {
+  padding-top: clamp(2.5rem, 7vw, 5.5rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.home-hero__id {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.home-hero__name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.home-hero__role {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
+}
+
+/* -- the three doors ----------------------------------------------------------- */
+
+.doors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+  max-width: 54rem;
+}
+
+.door {
+  --door: var(--accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1.15rem 1.25rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.door--projects { --door: #2f4858; }
+.door--studies { --door: #59713f; }
+.door--pensees { --door: #6c4a6e; }
+
+body[data-scene="night"] .door--projects { --door: #8fb3c7; }
+body[data-scene="night"] .door--studies { --door: #9db57f; }
+body[data-scene="night"] .door--pensees { --door: #c9a3cb; }
+
+.door::after {
+  content: "";
+  position: absolute;
+  right: -2.2rem;
+  bottom: -2.2rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: var(--door);
+  opacity: 0.08;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.door:hover {
+  transform: translateY(-4px);
+  border-color: var(--door);
+  box-shadow: 0 14px 30px -18px var(--door);
+}
+
+.door:hover::after {
+  transform: scale(2.6);
+}
+
+.door__glyph {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.65rem;
+  color: var(--door);
+  transition: transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.door:hover .door__glyph {
+  transform: rotate(-14deg) scale(1.1);
+}
+
+.door__label {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.door__meta {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 640px) {
+  .doors {
+    grid-template-columns: 1fr;
+  }
+
+  .door {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  .door__glyph {
+    grid-row: span 2;
+    margin: 0;
+  }
+}
+
+/* -- section headings with a small English eyebrow --------------------------- */
+
+.section__kicker {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* -- text cards (posts without a cover image) --------------------------------- */
+
+.card--text {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.5rem 1.4rem 1.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card--text:hover {
+  transform: translateY(-3px);
+  border-color: var(--tag-color, var(--accent));
+}
+
+.card__glyph {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 1.4rem;
+  color: var(--tag-color, var(--accent));
+  transition: transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.card--text:hover .card__glyph {
+  transform: rotate(18deg) scale(1.08);
+}
+
+.card--text .card__eyebrow {
+  margin-top: 0;
+}
+
+.card--text .card__desc {
+  margin-top: 0.6rem;
+}
+
+@media (min-width: 640px) {
+  .grid--projects > .card--text:nth-child(3n + 1) .card__title {
+    font-size: 1.7rem;
+  }
+}
+
+/* -- course tiles ---------------------------------------------------------------- */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: 1.1rem;
+}
+
+.course-tile {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-tile:hover,
+.course-tile:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--course);
+  box-shadow: 0 16px 32px -20px var(--course);
+}
+
+.course-tile__art {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: color-mix(in srgb, var(--course) 7%, var(--card));
+}
+
+.course-tile__art canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.course-tile__body {
+  flex: 1;
+  padding: 0.95rem 1.05rem 1.15rem;
+  border-top: 3px solid var(--course);
+}
+
+.course-tile__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.course-tile:hover .course-tile__name {
+  color: var(--course);
+}
+
+body[data-scene="night"] .course-tile:hover .course-tile__name {
+  color: var(--ink);
+}
+
+.course-tile__meta {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.course-tile__units {
+  margin-top: 0.55rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 640px) {
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .course-tile__body {
+    padding: 0.7rem 0.75rem 0.85rem;
+  }
+
+  .course-tile__name {
+    font-size: 1.05rem;
+  }
+
+  .course-tile__units {
+    display: none;
+  }
+}
+
+/* -- About ------------------------------------------------------------------- */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  align-items: center;
+  padding-top: clamp(2.5rem, 7vw, 5rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.portrait {
+  position: relative;
+  width: 168px;
+  height: 168px;
+}
+
+.portrait img {
+  position: relative;
+  z-index: 1;
+  width: 128px;
+  height: 128px;
+  margin: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.portrait__ring,
+.portrait__quarter,
+.portrait__bar {
+  position: absolute;
+  transition: transform 0.6s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+.portrait__ring {
+  inset: 6px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  transform: translate(10px, -6px);
+}
+
+.portrait__quarter {
+  left: 0;
+  bottom: 0;
+  width: 72px;
+  height: 72px;
+  background: var(--accent-ochre);
+  border-radius: 0 0 0 72px;
+  opacity: 0.85;
+}
+
+.portrait__bar {
+  right: 2px;
+  top: 8px;
+  width: 14px;
+  height: 64px;
+  background: var(--ink);
+}
+
+.portrait:hover .portrait__ring { transform: translate(-6px, 6px) rotate(40deg); }
+.portrait:hover .portrait__quarter { transform: rotate(-90deg) translate(-6px, -6px); }
+.portrait:hover .portrait__bar { transform: translateY(70px); }
+
+.about-facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.about-facts dt {
+  font-weight: 600;
+}
+
+.about-facts dd {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 560px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark *,
+  .door,
+  .door__glyph,
+  .course-tile,
+  .card--text,
+  .portrait * {
+    transition: none !important;
+  }
+}

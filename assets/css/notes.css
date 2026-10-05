@@ -22,7 +22,13 @@
 }
 
 .note-crumbs a:hover {
-  color: var(--accent);
+  color: var(--course, var(--accent));
+}
+
+.note-crumbs a + span + a,
+.note-crumbs a:last-child {
+  color: var(--course, inherit);
+  font-weight: 600;
 }
 
 .note-title {
@@ -67,6 +73,19 @@
   border-bottom: 1px solid var(--rule);
 }
 
+.note-body h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-right: 0.5em;
+  vertical-align: 0.12em;
+  background: var(--course, var(--accent));
+}
+
+.note-body h2:nth-of-type(3n + 2)::before { border-radius: 50%; }
+.note-body h2:nth-of-type(3n)::before { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
 .note-body h3 {
   font-size: 1.2rem;
   margin-top: 1.8em;
@@ -109,7 +128,7 @@
 }
 
 .note-body a {
-  color: var(--accent);
+  color: var(--course, var(--accent));
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 }
@@ -189,7 +208,7 @@ summary.callout-title:not(.callout-title--default) {
   color: var(--callout);
 }
 
-.callout-summary,
+.callout-summary { --callout: var(--course, var(--accent-inkblue)); }
 .callout-info,
 .callout-note { --callout: var(--accent-inkblue); }
 .callout-definition,
@@ -370,6 +389,24 @@ body[data-bg="midnight"] .highlight {
 
 .note--course .note-body {
   max-width: 60rem;
+}
+
+.course-header {
+  padding-top: clamp(3rem, 8vw, 6rem);
+  padding-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.course-header .note-title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+}
+
+.course-header .note-title::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 6px;
+  margin-top: 1rem;
+  background: var(--course);
 }
 
 .note--course .note-body table td:first-child {

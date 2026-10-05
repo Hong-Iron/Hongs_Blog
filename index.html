@@ -1,20 +1,34 @@
 ---
 layout: default
+geo: confetti
+geo_clear: none
 ---
-<section class="hero container reveal">
-  <h1 class="hero__title">Projects, writings,<br><em>and studies.</em></h1>
-  <p class="lede hero__lede">{{ site.description }}</p>
-  <div class="hero__actions">
-    <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">View projects</a>
+{%- comment -%}
+  Each section names a scene; assets/js/geo.js recolours the page (and the
+  shapes behind it) as a section reaches the middle of the screen.
+{%- endcomment -%}
+<section class="home-hero container" data-scene="paper">
+  <div class="home-hero__id reveal">
+    <img class="avatar" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="HongCheolMin" width="56" height="56">
+    <div>
+      <span class="home-hero__name">HongCheolMin</span>
+      <span class="home-hero__role">Chung-Ang Univ. · Software</span>
+    </div>
   </div>
+  <h1 class="hero__title reveal">Projects, writings,<br><em>and studies.</em></h1>
+  <p class="lede hero__lede reveal">{{ site.description }}</p>
+  {% include doors.html %}
 </section>
 
 {% assign featured_projects = site.projects | sort: "date" | reverse | slice: 0, 3 %}
 {% if featured_projects.size > 0 %}
-<section class="section container">
+<section class="section container" data-scene="linen">
   <div class="section__header">
-    <h2 class="section__title reveal">Featured projects</h2>
-    <a class="section__link" href="{{ '/projects/' | relative_url }}">All projects &rarr;</a>
+    <div>
+      <span class="eyebrow section__kicker">Projects</span>
+      <h2 class="section__title reveal">프로젝트</h2>
+    </div>
+    <a class="section__link" href="{{ '/projects/' | relative_url }}">전체 보기 &rarr;</a>
   </div>
   <div class="grid grid--projects">
     {% for project in featured_projects %}
@@ -24,11 +38,32 @@ layout: default
 </section>
 {% endif %}
 
-{% assign recent_posts = site.posts | slice: 0, 4 %}
-{% if recent_posts.size > 0 %}
-<section class="section container">
+{% if site.data.study_courses %}
+<section class="section container" data-scene="sage">
   <div class="section__header">
-    <h2 class="section__title reveal">Recent writings &amp; studies</h2>
+    <div>
+      <span class="eyebrow section__kicker">Studies</span>
+      <h2 class="section__title reveal">지식 DB</h2>
+    </div>
+    <a class="section__link" href="{{ '/studies/' | relative_url }}">과목 전체 &rarr;</a>
+  </div>
+  <div class="course-grid">
+    {% for track in site.data.study_courses %}{% for c in track.courses %}
+      {% include course-tile.html course=c %}
+    {% endfor %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% assign recent_posts = site.categories.pensees | sort: "date" | reverse | slice: 0, 4 %}
+{% if recent_posts.size > 0 %}
+<section class="section container" data-scene="night">
+  <div class="section__header">
+    <div>
+      <span class="eyebrow section__kicker">Pensées</span>
+      <h2 class="section__title reveal">나의 팡세</h2>
+    </div>
+    <a class="section__link" href="{{ '/pensees/' | relative_url }}">글 전체 &rarr;</a>
   </div>
   <div class="grid grid--projects">
     {% for post in recent_posts %}

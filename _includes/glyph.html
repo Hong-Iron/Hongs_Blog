@@ -1,0 +1,24 @@
+{%- comment -%} Geometric glyph: include glyph.html shape="projects|studies|pensees|circle|tri|square|semi" class="…" {%- endcomment -%}
+{%- assign g = include.shape -%}
+<svg class="{{ include.class }}" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+{%- if g == "projects" -%}
+  <rect x="5" y="5" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3"/>
+  <path d="M5 35L35 5" stroke="currentColor" stroke-width="2"/>
+  <circle cx="27" cy="27" r="5" fill="currentColor"/>
+{%- elsif g == "studies" -%}
+  <path d="M20 4L37 34H3z" fill="currentColor" opacity="0.9"/>
+  <circle cx="20" cy="24" r="6.5" fill="var(--card)"/>
+{%- elsif g == "pensees" -%}
+  <path d="M7 36V19a13 13 0 0 1 26 0v17z" fill="none" stroke="currentColor" stroke-width="3"/>
+  <circle cx="20" cy="19" r="4" fill="currentColor"/>
+  <path d="M20 23v13" stroke="currentColor" stroke-width="2"/>
+{%- elsif g == "tri" -%}
+  <path d="M20 5L36 33H4z" fill="currentColor"/>
+{%- elsif g == "square" -%}
+  <rect x="7" y="7" width="26" height="26" fill="currentColor"/>
+{%- elsif g == "semi" -%}
+  <path d="M4 24a16 16 0 0 1 32 0z" fill="currentColor"/>
+{%- else -%}
+  <circle cx="20" cy="20" r="15" fill="currentColor"/>
+{%- endif -%}
+</svg>

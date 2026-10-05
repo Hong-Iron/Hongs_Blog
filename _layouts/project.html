@@ -1,8 +1,9 @@
 ---
 layout: default
+geo_clear: 24rem
 ---
 <article>
-  <header class="article-header container">
+  <header class="article-header container" data-geo-band>
     <span class="eyebrow tag" style="--tag-color: var(--accent-rust)">{{ page.status | default: "Project" }}</span>
     <h1 class="article-header__title">{{ page.title }}</h1>
     {% if page.subtitle %}<p class="article-header__subtitle">{{ page.subtitle }}</p>{% endif %}

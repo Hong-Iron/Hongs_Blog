@@ -1,10 +1,11 @@
 ---
 layout: default
+geo_clear: 24rem
 ---
 {% assign page_cat_slug = page.categories | first %}
 {% assign cat = site.data.categories | where: "slug", page_cat_slug | first %}
 <article>
-  <header class="article-header container">
+  <header class="article-header container" data-geo-band>
     <span class="eyebrow tag" style="--tag-color: var(--accent-{{ cat.accent | default: 'rust' }})">
       {{ cat.name | default: page_cat_slug }}
     </span>

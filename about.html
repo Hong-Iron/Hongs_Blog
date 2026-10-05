@@ -2,21 +2,33 @@
 layout: default
 title: About
 permalink: /about/
+geo: confetti
+geo_clear: none
 ---
-<div class="page-intro container reveal">
-  <span class="eyebrow">About</span>
-  <h1 class="page-intro__title">Hi, I'm HongCheolMin.</h1>
-  <p class="page-intro__desc">
-    This is where I keep the things I build, the things I'm learning, and the
-    things I write about for fun.</p>
-</div>
-
-<div class="container article-body" style="max-width: var(--measure-wide); padding-bottom: 4rem;">
-  <p>
-	Thank you for visiting my website. Have fun!
-  </p>
-
-  <div class="colophon">
-	  <strong>Education</strong> : Chung-Ang Univ. Department of Software (2023~)
+<section class="about-hero container reveal">
+  <div class="portrait">
+    <span class="portrait__quarter" aria-hidden="true"></span>
+    <span class="portrait__bar" aria-hidden="true"></span>
+    <span class="portrait__ring" aria-hidden="true"></span>
+    <img src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="HongCheolMin" width="128" height="128">
   </div>
-</div>
+  <div>
+    <span class="eyebrow">About</span>
+    <h1 class="page-intro__title">Hi, I'm HongCheolMin.</h1>
+    <p class="page-intro__desc">
+      This is where I keep the things I build, the things I'm learning, and the
+      things I write about for fun.</p>
+  </div>
+</section>
+
+<div class="container" style="padding-bottom: 4rem;"><div style="max-width: 54rem;">
+  <p class="lede">Thank you for visiting my website. Have fun!</p>
+
+  <dl class="about-facts colophon">
+    <dt>Education</dt><dd>Chung-Ang Univ. Department of Software (2023~)</dd>
+    <dt>GitHub</dt><dd><a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></dd>
+    <dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+  </dl>
+
+  {% include doors.html %}
+</div></div>
