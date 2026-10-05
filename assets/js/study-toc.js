@@ -16,6 +16,14 @@
   }).filter(function (it) { return it.row; });
   if (!items.length) return;
 
+  // the hub spans the full window width; tell the CSS how wide the
+  // scrollbar is so 100vw doesn't spill past it
+  function measureScrollbar() {
+    var w = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty("--sbw", (w > 0 ? w : 0) + "px");
+  }
+  measureScrollbar();
+
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   var strip = window.matchMedia("(max-width: 960px)");
   var current = null;
@@ -94,6 +102,6 @@
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("scrollend", function () { if (pinned) unpin(); });
-  window.addEventListener("resize", onScroll);
+  window.addEventListener("resize", function () { measureScrollbar(); onScroll(); });
   update();
 })();

@@ -22,12 +22,22 @@ geo_clear: 37rem
   {% if posts.size > 0 %}
     <div class="index-list">
       {% for post in posts %}
-        <a class="index-list__item reveal" href="{{ post.url | relative_url }}">
+        {%- comment -%} thumbnail: the cover, else the first uploaded image in the post {%- endcomment -%}
+        {% assign thumb = post.cover | strip %}
+        {% if thumb == "" %}
+          {% assign img_parts = post.content | split: "/assets/img/uploads/" %}
+          {% if img_parts.size > 1 %}
+            {% assign img_file = img_parts[1] | split: '"' | first | split: "'" | first | split: ")" | first | split: " " | first %}
+            {% assign thumb = "/assets/img/uploads/" | append: img_file %}
+          {% endif %}
+        {% endif %}
+        <a class="index-list__item reveal{% if thumb != "" %} index-list__item--thumb{% endif %}" href="{{ post.url | relative_url }}">
           <span class="index-list__date">{{ post.date | date: "%Y.%m.%d" }}</span>
-          <div>
+          <div class="index-list__body">
             <span class="index-list__title">{{ post.title }}</span>
             <p class="index-list__excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
           </div>
+          {% if thumb != "" %}<span class="index-list__thumb"><img src="{{ thumb | relative_url }}" alt="" loading="lazy"></span>{% endif %}
         </a>
       {% endfor %}
     </div>

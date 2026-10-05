@@ -533,28 +533,56 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 
 /* -- Studies: a book-style table of contents (assets/js/study-toc.js) --------- */
 
+/* On wide screens the hub breaks out of the page column: the contents sit
+   flush against the left edge of the screen, the courses fill the rest.
+   --sbw (scrollbar width) is set by study-toc.js so 100vw never overflows. */
 .study-layout {
+  --toc-w: clamp(17.5rem, 22vw, 23rem);
   display: grid;
-  grid-template-columns: 16rem minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: var(--toc-w) minmax(0, 1fr);
   align-items: start;
+  width: calc(100vw - var(--sbw, 0px));
+  margin-left: calc(50% - 50vw + var(--sbw, 0px) / 2);
+}
+
+.study-hub {
+  width: 100%;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 3vw, 3rem);
 }
 
 .study-toc {
   position: sticky;
-  top: 1.25rem;
+  top: 0;
   z-index: 20;
-  max-height: calc(100vh - 2.5rem);
-  margin-top: 3rem;
-  padding: 1.1rem 1.1rem 1rem;
+  height: 100vh;
+  padding: 3rem 1rem 2rem clamp(1.25rem, 2.4vw, 2.5rem);
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: color-mix(in srgb, var(--card) 90%, transparent);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  isolation: isolate;
+}
+
+/* no box: a wash of the page colour, fading out to the right and at the top
+   and bottom, keeps the text readable over the moving shapes without any
+   visible edge */
+.study-toc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--bg) 85%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 72%, transparent) 60%,
+    transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 4rem, #000 calc(100% - 4rem), transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 4rem, #000 calc(100% - 4rem), transparent 100%);
+  pointer-events: none;
+}
+
+.study-toc::-webkit-scrollbar {
+  display: none;
 }
 
 .study-toc ol,
@@ -565,33 +593,42 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 }
 
 .study-toc__head {
-  margin: 0 0 0.85rem;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid var(--rule);
+  margin: 0 0 1.4rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.75rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
+}
+
+.study-toc__head::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: 0.7rem;
+  background: var(--ink);
+  opacity: 0.6;
 }
 
 .study-toc__part + .study-toc__part {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .study-toc__part-name {
   display: flex;
   align-items: baseline;
-  gap: 0.45rem;
-  font-size: 0.8rem;
+  gap: 0.55rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--ink-muted);
   transition: color 0.25s ease;
 }
 
 .study-toc__numeral {
-  min-width: 1.5rem;
+  min-width: 1.8rem;
   font-family: var(--font-display);
+  font-size: 1.15rem;
   font-style: italic;
   font-weight: 500;
   letter-spacing: 0;
@@ -603,9 +640,9 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 
 /* chapters sit one indent in, on a thin rail */
 .study-toc .study-toc__chapters {
-  margin: 0.3rem 0 0 0.6rem;
-  padding-left: 0.85rem;
-  border-left: 1px solid var(--rule);
+  margin: 0.45rem 0 0 0.85rem;
+  padding-left: 1rem;
+  border-left: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
 }
 
 .study-toc__link {
@@ -613,8 +650,8 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   display: flex;
   align-items: baseline;
   align-items: last baseline;
-  gap: 0.4rem;
-  padding: 0.3rem 0;
+  gap: 0.5rem;
+  padding: 0.38rem 0;
   color: var(--ink-muted);
   line-height: 1.3;
   text-decoration: none;
@@ -629,9 +666,9 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 .study-toc__link::before {
   content: "";
   position: absolute;
-  top: 0.3rem;
-  bottom: 0.3rem;
-  left: calc(-0.85rem - 2px);
+  top: 0.35rem;
+  bottom: 0.35rem;
+  left: calc(-1rem - 2px);
   width: 3px;
   border-radius: 2px;
   background: var(--course);
@@ -642,8 +679,8 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 .study-toc__no {
   flex: none;
   align-self: baseline;   /* first line, when a long name wraps */
-  min-width: 1.25rem;
-  font-size: 0.72rem;
+  min-width: 1.5rem;
+  font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
   color: var(--course);
 }
@@ -651,7 +688,7 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 .study-toc__name {
   flex: 0 1 auto;
   min-width: 0;
-  font-size: 0.94rem;
+  font-size: 1.08rem;
   word-break: keep-all;
   transition: font-size 0.25s ease;
 }
@@ -666,7 +703,7 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 
 .study-toc__count {
   flex: none;
-  font-size: 0.74rem;
+  font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
 }
 
@@ -684,7 +721,7 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 }
 
 .study-toc__link.is-active .study-toc__name {
-  font-size: 1.18rem;
+  font-size: 1.42rem;
   font-weight: 700;
 }
 
@@ -692,6 +729,13 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 @media (max-width: 960px) {
   .study-layout {
     display: block;
+    width: auto;
+    margin-left: 0;
+  }
+
+  .study-hub {
+    max-width: none;
+    padding: 0;
   }
 
   .course-row {
@@ -700,20 +744,18 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 
   .study-toc {
     top: 0;
-    max-height: none;
+    height: auto;
     margin: 1.5rem calc(var(--gutter) * -1) 0;
     padding: 0.5rem var(--gutter);
     overflow-x: auto;
     overflow-y: hidden;
-    border-width: 1px 0;
-    border-radius: 0;
-    scrollbar-width: none;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
   }
 
-  .study-toc::-webkit-scrollbar {
-    display: none;
-  }
-
+  .study-toc::before,
   .study-toc__head,
   .study-toc__no,
   .study-toc__leader,
@@ -742,11 +784,13 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 
   .study-toc__part-name {
     margin-right: 0.35rem;
+    font-size: 0.8rem;
     white-space: nowrap;
   }
 
   .study-toc__numeral {
     min-width: 0;
+    font-size: 0.95rem;
   }
 
   .study-toc .study-toc__chapters {
@@ -761,6 +805,10 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
     padding: 0.3rem 0.65rem;
     border-radius: 999px;
     white-space: nowrap;
+  }
+
+  .study-toc__name {
+    font-size: 0.95rem;
   }
 
   .study-toc__link.is-active {
