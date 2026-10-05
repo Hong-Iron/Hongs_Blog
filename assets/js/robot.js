@@ -118,13 +118,13 @@
   }
 
   function linkChoice(item) {
-    return item && item.link ? [{ label: (item.link_label || "자세히 보기") + " →", href: item.link, kind: "primary" }] : [];
+    return item && item.link ? [{ label: (item.link_label || "글 보러 가기") + " →", href: item.link, kind: "primary" }] : [];
   }
 
   /* -- screens ------------------------------------------------------------- */
 
   function home() {
-    say(script.greeting || "안녕!", function () {
+    say(script.greeting || "안녕하세요!", function () {
       choices([
         { label: "질문하기", run: questions, kind: "primary" },
         { label: "대화하기", run: talk }
@@ -134,18 +134,18 @@
 
   function questions() {
     var qs = script.questions || [];
-    say("뭐가 궁금해? 하나 골라 봐.", function () {
+    say(script.ask || "뭐가 궁금해요?", function () {
       choices(qs.map(function (q) {
         return { label: q.q, run: function () { answer(q); } };
-      }).concat([{ label: "돌아가기", run: home, kind: "quiet" }]));
+      }).concat([{ label: "처음으로", run: home, kind: "quiet" }]));
     });
   }
 
   function answer(q) {
     say(q.a, function () {
       choices(linkChoice(q).concat([
-        { label: "다른 질문", run: questions },
-        { label: "대화하기", run: talk, kind: "quiet" }
+        { label: "다른 것도 물어볼래요", run: questions },
+        { label: "그냥 얘기해요", run: talk, kind: "quiet" }
       ]));
     });
   }
@@ -169,8 +169,8 @@
     if (!line) return home();
     say(line.text, function () {
       choices(linkChoice(line).concat([
-        { label: "한 마디 더", run: talk },
-        { label: "질문하기", run: questions, kind: "quiet" }
+        { label: "더 얘기해 줘요", run: talk },
+        { label: "물어볼 게 있어요", run: questions, kind: "quiet" }
       ]));
     });
   }
