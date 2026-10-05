@@ -43,6 +43,49 @@ collections:
     output: true
 
 defaults:
+  # Link previews (og:image, via jekyll-seo-tag). The site card is the
+  # fallback; each course's notes use that course's card; posts and projects
+  # with a picture set their own `image:`. Cards: scripts/og_cards.py.
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og/site.png
+  - scope:
+      path: "_notes/abnormal-psychology"
+    values:
+      image: /assets/img/og/abnormal-psychology.png
+  - scope:
+      path: "_notes/algorithms"
+    values:
+      image: /assets/img/og/algorithms.png
+  - scope:
+      path: "_notes/calculus"
+    values:
+      image: /assets/img/og/calculus.png
+  - scope:
+      path: "_notes/college-math"
+    values:
+      image: /assets/img/og/college-math.png
+  - scope:
+      path: "_notes/computer-communication"
+    values:
+      image: /assets/img/og/computer-communication.png
+  - scope:
+      path: "_notes/discrete-math"
+    values:
+      image: /assets/img/og/discrete-math.png
+  - scope:
+      path: "_notes/human-interface-media"
+    values:
+      image: /assets/img/og/human-interface-media.png
+  - scope:
+      path: "_notes/linear-algebra"
+    values:
+      image: /assets/img/og/linear-algebra.png
+  - scope:
+      path: "_notes/probability-statistics"
+    values:
+      image: /assets/img/og/probability-statistics.png
   - scope:
       path: ""
       type: posts

@@ -6,6 +6,7 @@ categories: [pensees]
 tags: [위로, 일상]
 excerpt: "내가 받을 위로는 멀리 있지 않았고, 이제는 조금, 위로를 줄 수 있게 되었습니다."
 cover: /assets/img/uploads/no-time-to-think-1.jpg
+image: /assets/img/uploads/no-time-to-think-1.jpg
 original: http://blog.naver.com/red_iron04/224364378700
 ---
 이게 추가근무 할 때인가? 억울해서 추가 근무할 때를 찍었는데, 그렇게까지 기분이 나쁘지는 않았던 것 같네요.

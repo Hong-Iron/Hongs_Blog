@@ -6,6 +6,7 @@ categories: [pensees]
 tags: [성화, 율법]
 excerpt: "따라서 진정한 '그리스도인'은 결코 복음 앞에서 행동 강령을 기대하는 '관객'으로 있을 수 없다."
 cover: 
+image: /assets/img/uploads/more-than-spectators-1.jpg
 original: http://blog.naver.com/red_iron04/224379102646
 ---
 '관객'은 보고 듣는 사람을 뜻한다. 그리고 관객은 관객이 청취하는 것이 글, 음악, 영화, 드라마 등 무엇이 되던 상관없이 작품에게서 영향을 받을 것을 염두에 두고 소비한다. 유희나 정서적 충족을 목적으로 작품을 소비했을 것이기 때문이다.

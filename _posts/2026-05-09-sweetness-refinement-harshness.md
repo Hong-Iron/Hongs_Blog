@@ -6,6 +6,7 @@ categories: [pensees]
 tags: [시험, 연단]
 excerpt: "하나님은 우리를 시험(유혹)하지 않으신다. 다만 그는 분명 시험(검증)하신다."
 cover: "/assets/img/uploads/jacob-wrestling-rembrandt.png"
+image: /assets/img/uploads/jacob-wrestling-rembrandt.png
 cover_alt: "천사와 씨름하는 야곱 (1660) - 렘브란트"
 ---
 글의 흐름 : 시험의 분별 → 하나님의 목적 → 우리의 연약함과 성령의 도우심 → 우리가 취해야 할 태도

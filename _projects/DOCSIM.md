@@ -18,6 +18,7 @@ repo: https://github.com/Hong-Iron/DocSim
 demo:
 summary: A local-first desktop app that turns a folder of PDFs, Office docs, and images into semantically clustered, explorable knowledge maps without sending anything to the cloud.
 cover: /assets/img/uploads/DOCSIM.png
+image: /assets/img/uploads/DOCSIM.png
 gallery:
 tags:
   - nlp

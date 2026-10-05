@@ -14,6 +14,7 @@ repo: https://github.com/Hong-Iron/sharpCouncil
 demo:
 summary: Write a few people into a note and give them an agenda. Local models argue it out in rounds, question each other, vote, and leave live meeting minutes in your vault.
 cover: /assets/img/uploads/sharpcouncil-cover.png
+image: /assets/img/uploads/sharpcouncil-cover.png
 cover_alt: "Diagram: four people from a note, each assigned a local model, move through opening statements, rebuttal rounds, a consensus check, a vote, and a final resolution."
 tags:
   - obsidian

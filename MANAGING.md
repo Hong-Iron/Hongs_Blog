@@ -204,6 +204,23 @@ Every page has a canvas of shapes behind it, drawn by `assets/js/geo.js`
   `scripts/vault_export.py`.
 - Visitors with "reduce motion" turned on get a still picture.
 
+## Link previews (og:image)
+
+What shows when someone pastes a link into KakaoTalk, iMessage, Slack, etc.
+`jekyll-seo-tag` writes it from each page's `image:`.
+
+- **Site card** `assets/img/og/site.png`: the fallback for every page
+  (set in `_config.yml` → `defaults`).
+- **Course cards** `assets/img/og/<course-slug>.png`: every note in that
+  course, via a `_notes/<slug>` default in `_config.yml`.
+- **Posts and projects** with a picture set `image:` in their front matter
+  (the cover, or the first image). `scripts/naver_import.py` adds it.
+- Regenerate the cards with `python3 scripts/og_cards.py` (needs headless
+  Chrome or Chromium; set `CHROME=` if it isn't found). A new course needs
+  its card and a `_notes/<slug>` default.
+- Messengers cache previews. KakaoTalk keeps an old one until you clear it
+  at developers.kakao.com → Tools → Debugger (공유 디버거).
+
 ## 홍철 (the corner robot)
 
 The pixel face in the bottom-right corner opens a speech bubble with two

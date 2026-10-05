@@ -12,6 +12,7 @@ repo: https://github.com/Hong-Iron/NL-Miner
 demo:
 summary: Markdown/plain text → block tree → canonical concepts → links between notes, shipped as an Obsidian plugin and a Claude Code skill on one Python core.
 cover: /assets/img/uploads/NL-Miner_useCase.png
+image: /assets/img/uploads/NL-Miner_useCase.png
 gallery:
 tags:
   - nlp

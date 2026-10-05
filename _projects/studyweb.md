@@ -15,6 +15,7 @@ repo: https://github.com/Hong-Iron/studyWeb
 demo:
 summary: Lets a local LLM search the live web, read pages, compare prices, and build RAG-ready chunks, with no per-search fees. Ships as a backend plus LM Studio and Obsidian plugins.
 cover: /assets/img/uploads/studyweb-cover.png
+image: /assets/img/uploads/studyweb-cover.png
 cover_alt: "Diagram: the LM Studio and Obsidian plugins call the studyweb backend over HTTP, and the backend searches, reads and ranks the web."
 tags:
   - rag

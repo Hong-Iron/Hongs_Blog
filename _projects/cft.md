@@ -13,6 +13,7 @@ repo: https://github.com/Hong-Iron/Cheaper-Foreign-Tok/tree/feat/cft-mvp
 demo:
 summary: Non-English text costs several times the tokens of English. cft translates locally with LM Studio, keeps code byte-for-byte, and never blocks a prompt when the local model fails.
 cover: /assets/img/uploads/cft-cover.png
+image: /assets/img/uploads/cft-cover.png
 cover_alt: "Diagram: a Korean prompt with a code path is masked, translated by a local model, and sent to Claude Code in English; the English reply is translated back to Korean in a side pane."
 tags:
   - claude-code

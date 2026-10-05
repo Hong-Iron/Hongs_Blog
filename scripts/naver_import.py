@@ -344,6 +344,9 @@ def main():
             warnings.append("body contains Liquid-like braces; check the output")
         m = meta.get(slug, {})
         tags = ", ".join(m.get("tags", []))
+        # link-preview image: the cover, else the first picture in the post
+        first = re.search(r"'(/assets/img/uploads/[^']+)'", body)
+        preview = cover or (first.group(1) if first else "")
         fm = [
             "---",
             f"title: {json.dumps(title, ensure_ascii=False)}",
@@ -353,6 +356,7 @@ def main():
             f"tags: [{tags}]",
             f"excerpt: {json.dumps(m.get('excerpt', ''), ensure_ascii=False)}",
             f"cover: {cover}",
+            *([f"image: {preview}"] if preview else []),
             f"original: http://blog.naver.com/{args.blog}/{log_no}",
             "---",
             "",

@@ -6,6 +6,7 @@ categories: [pensees]
 tags: [순종, 리더십]
 excerpt: "나비는 성체가 되기 위해 번데기 속에서 온전히 액체가 된다고 합니다. 지난 1년, 대표 순장의 자리가, 나의 매일이 번데기였습니다."
 cover: "/assets/img/uploads/chrysalis-photo.png"
+image: /assets/img/uploads/chrysalis-photo.png
 cover_alt: "여행 중 묵었던 호텔 방 창가 풍경"
 ---
 

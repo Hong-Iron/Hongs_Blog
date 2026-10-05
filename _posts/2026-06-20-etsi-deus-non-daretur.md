@@ -6,6 +6,7 @@ categories: [pensees]
 tags: [책임, 자유]
 excerpt: "결국 하고픈 말은 우리가 아무리 하나님을 앞세워 우리의 생각과 행동을 합리화한다고 하더라도, 결국 우리가 정말 살아내야 하는 모습과 태도는 마치 하나님이 없는 것처럼 살아내는 모습이라는 것이다."
 cover: "/assets/img/uploads/washing-of-feet-koder.png"
+image: /assets/img/uploads/washing-of-feet-koder.png
 cover_alt: "The Washing of Feet by Sieger Köder"
 ---
 > etsi deus non daretur

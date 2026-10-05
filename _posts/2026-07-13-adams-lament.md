@@ -6,6 +6,7 @@ categories: [pensees]
 tags: [번역, 애가]
 excerpt: "성 실루안의 애가, 아담의 탄식을 영문 번역에서 다시 한국어로 옮겨 적으며 든 묵상."
 cover: "/assets/img/uploads/adams-lament-icon.png"
+image: /assets/img/uploads/adams-lament-icon.png
 cover_alt: "부활을 그린 비잔틴 프레스코화"
 ---
 
