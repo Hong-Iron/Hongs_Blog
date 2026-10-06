@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 최대가능도 추정, 도함수의 활용과 최적화."
 prev_url: "/studies/probability-statistics/expectation-ladder/"
@@ -36,7 +36,7 @@ MLE 문제는 모델만 바뀌고 절차는 같다. 핵심은 **모수와 상관
 분마다 들어온 요청 수 $$2, 3, 1, 4, 0$$을 포아송 분포로 모델링할 때 $$\lambda$$의 MLE는?
 
 1. *모델과 가능도:* $$L(\lambda) = \prod_i\frac{e^{-\lambda}\lambda^{x_i}}{x_i!}$$.
-2. *로그 가능도:* $$\ell(\lambda) = (\sum x_i)\ln\lambda - 5\lambda + \text{상수} = 10\ln\lambda - 5\lambda + \text{상수}$$.
+2. *로그 가능도:* $$\ell(\lambda) = (\sum x_i)\ln\lambda - 5\lambda + \text{상수} = 10\ln\lambda - 5\lambda + \text{상수}$$($$\sum$$은 차례로 모두 더한다는 기호).
 3. *미분해서 0:* $$\frac{10}{\lambda} - 5 = 0$$, $$\hat\lambda = 2$$.
 4. *확인:* $$\ell'' = -\frac{10}{\lambda^2} < 0$$이라 최대. 표본평균과 같다.
 

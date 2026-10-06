@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Tree", "트리", "나무", "루트 트리", "rooted tree", "이진 트리", "binary tree", "잎", "leaf", "높이", "height", "깊이", "depth", "신장 트리", "spanning tree", "포리스트", "forest", "케일리 공식", "Cayley's formula"]
 description: "트리는 모두 이어져 있으면서 빙 돌아오는 고리(사이클)가 하나도 없는 그래프다. 이어져 있기에 딱 필요한 만큼의 간선만 있어, 간선은 늘 정점보다 하나 적고 두 정점 사이의 길은 하나뿐이다. 그래서 폴더 구조, 조직도, 탐색 트리처럼 \"어디서 어디로 가는 길이 하나\"인 구조를 모두…"
@@ -73,7 +73,7 @@ alice  bob   bin
 
 **해당하는 예:** 폴더 구조, 경로 그래프 1–2–3–4, 별 모양(한 정점에 나머지가 모두 붙은 그래프). **해당하지 않는 예:** 삼각형(사이클이 있다), 삼각형과 떨어진 점 하나(정점 4개, 간선 3개지만 연결되지 않고 사이클도 있다).
 
-**루트 트리.** 한 정점을 루트로 정하면 방향이 생긴다. 루트에서 멀어지는 쪽이 자식, 가까워지는 쪽이 부모다. 깊이는 루트에서의 거리(간선 수), **높이**는 루트에서 가장 먼 잎까지의 간선 수다. 노드 하나짜리 트리의 높이는 0이다(이 문서 모음의 표기 규칙). 자식이 많아야 둘인 루트 트리가 **이진 트리**다. 높이 $$h$$인 이진 트리의 노드는 많아야 $$2^{h+1} - 1$$개라, 노드가 $$n$$개이면 높이가 적어도 $$\lceil\lg(n + 1)\rceil - 1$$이다.
+**루트 트리.** 한 정점을 루트로 정하면 방향이 생긴다. 루트에서 멀어지는 쪽이 자식, 가까워지는 쪽이 부모다. 깊이는 루트에서의 거리(간선 수), **높이**는 루트에서 가장 먼 잎까지의 간선 수다. 노드 하나짜리 트리의 높이는 0이다(이 문서 모음의 표기 규칙). 자식이 많아야 둘인 루트 트리가 **이진 트리**다. 높이 $$h$$인 이진 트리의 노드는 많아야 $$2^{h+1} - 1$$개라, 노드가 $$n$$개이면 높이가 적어도 $$\lceil\lg(n + 1)\rceil - 1$$($$\lceil\ \rceil$$는 소수점 아래를 올린 정수)이다.
 
 ## 증명
 
@@ -148,7 +148,7 @@ alice  bob   bin
 - **자료구조.** 파일 시스템, HTML 문서(DOM), 이진 탐색 트리, 힙, 트라이. 높이가 연산 비용을 정하므로 균형(높이 $$O(\log n)$$)을 유지하는 것이 핵심이다.
 - **네트워크.** 이더넷 스위치는 신장 트리 프로토콜(STP)로 고리를 막아 패킷이 끝없이 도는 것을 막는다[^s1]. 도로·전선을 가장 싸게 잇는 문제는 최소 신장 트리다(알고리즘 과목).
 - **흔한 실수.** 트리의 높이를 노드 수로 세는 교재와 간선 수로 세는 교재가 있다. 이 문서 모음은 간선 수(노드 하나 = 높이 0)를 쓴다. 공식을 가져올 때 $$\pm 1$$ 차이를 확인한다.
-- 알고리즘에서: [최소 신장 트리](/Hongs_Blog/studies/algorithms/mst/)가 옳다는 증명은 동치 조건 4(없던 간선을 더하면 사이클이 생긴다)와 5(간선이 $$n - 1$$개인 연결 그래프는 트리다)를 쓴다. [힙](/Hongs_Blog/studies/algorithms/heap/)은 위층부터 빈틈없이 채워 높이를 가장 낮은 $$\lfloor \lg n \rfloor$$로 지키고, [이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/)는 값을 정렬된 순서로 넣으면 한 줄로 늘어져 높이가 $$n - 1$$이 된다. 선이 모두 이어진 평면 그림에서 엇갈리는 곳마다 점을 두면, 신장 트리 밖의 간선 수 $$m - n + 1$$이 막힌 방의 수다([방의 개수](/Hongs_Blog/studies/algorithms/pg49190/)). 그 밖에 [시험장 나누기](/Hongs_Blog/studies/algorithms/pg81305/), [동굴 탐험](/Hongs_Blog/studies/algorithms/pg67260/), [트리 DP](/Hongs_Blog/studies/algorithms/tree-dp/), [트라이](/Hongs_Blog/studies/algorithms/trie/)에서도 쓴다.
+- 알고리즘에서: [최소 신장 트리](/Hongs_Blog/studies/algorithms/mst/)가 옳다는 증명은 동치 조건 4(없던 간선을 더하면 사이클이 생긴다)와 5(간선이 $$n - 1$$개인 연결 그래프는 트리다)를 쓴다. [힙](/Hongs_Blog/studies/algorithms/heap/)은 위층부터 빈틈없이 채워 높이를 가장 낮은 $$\lfloor \lg n \rfloor$$($$\lfloor\ \rfloor$$는 소수점 아래를 버린 정수)로 지키고, [이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/)는 값을 정렬된 순서로 넣으면 한 줄로 늘어져 높이가 $$n - 1$$이 된다. 선이 모두 이어진 평면 그림에서 엇갈리는 곳마다 점을 두면, 신장 트리 밖의 간선 수 $$m - n + 1$$이 막힌 방의 수다([방의 개수](/Hongs_Blog/studies/algorithms/pg49190/)). 그 밖에 [시험장 나누기](/Hongs_Blog/studies/algorithms/pg81305/), [동굴 탐험](/Hongs_Blog/studies/algorithms/pg67260/), [트리 DP](/Hongs_Blog/studies/algorithms/tree-dp/), [트라이](/Hongs_Blog/studies/algorithms/trie/)에서도 쓴다.
 
 ## 연결
 

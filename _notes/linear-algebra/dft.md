@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Discrete Fourier Transform", "DFT", "이산 푸리에 변환", "Fast Fourier Transform", "FFT", "고속 푸리에 변환", "쿨리-튜키", "Cooley–Tukey", "푸리에 행렬", "Fourier matrix", "단위근", "roots of unity", "합성곱 정리", "convolution theorem", "회전 인자", "twiddle factor"]
 description: "소리 한 조각을 \"어떤 높이의 음이 얼마나 섞였는가\"로 바꾸는 것이 이산 푸리에 변환이다. 선형대수로 보면 신호 벡터를 서로 수직인 회전 파동(단위근) 기저로 바꾸는 기저 변환이라, 되돌리기도 쉽다. 정의대로 하면 곱셈 횟수가 신호 길이의 제곱으로 늘지만, 짝수 번째와 홀수 번째로…"
@@ -33,7 +33,7 @@ permalink: "/studies/linear-algebra/dft/"
 
 ## 예시로 보기
 
-신호 $$\mathbf{x} = (1, 2, 3, 4)$$를 $$n = 4$$개의 기저 파동으로 나눈다. $$\omega = e^{2\pi i/4} = i$$이고, $$k$$번째 파동은 $$(1, \omega^k, \omega^{2k}, \omega^{3k})$$이다. 계수는 $$X_k = \sum_j x_j\omega^{-jk}$$다.
+신호 $$\mathbf{x} = (1, 2, 3, 4)$$를 $$n = 4$$개의 기저 파동으로 나눈다. $$\omega = e^{2\pi i/4} = i$$이고, $$k$$번째 파동은 $$(1, \omega^k, \omega^{2k}, \omega^{3k})$$이다. 계수는 $$X_k = \sum_j x_j\omega^{-jk}$$($$\sum$$은 차례로 모두 더한다는 기호)다.
 
 | $$k$$ | 파동 $$\omega^{jk}$$ ($$j = 0..3$$) | $$X_k$$ |
 |---|---|---|

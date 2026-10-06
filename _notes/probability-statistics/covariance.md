@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Covariance", "공분산", "상관계수", "correlation coefficient", "피어슨 상관계수", "Pearson correlation", "무상관", "uncorrelated", "상관과 인과", "correlation vs causation"]
 description: "두 값이 함께 움직이는 정도를 하나의 수로 요약한다. 한쪽이 평균보다 클 때 다른 쪽도 평균보다 큰 경향이면 양수, 반대면 음수다. 상관계수는 단위를 없애 −1에서 1 사이로 맞춘 것으로, 두 자료를 벡터로 봤을 때 사이 각의 코사인과 같다. 하지만 직선 관계만 잡아내서 0이어도 …"
@@ -63,7 +63,7 @@ $$\operatorname{Cov}(X, Y) = \mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big] = \mathb
 - $$\operatorname{Cov}(X, X) = \operatorname{Var}[X]$$, 대칭, 각 자리에 대해 선형.
 - $$\operatorname{Var}[X + Y] = \operatorname{Var}[X] + \operatorname{Var}[Y] + 2\operatorname{Cov}(X, Y)$$. [분산](/Hongs_Blog/studies/probability-statistics/variance/)의 덧셈에 필요했던 "독립"은 사실 "공분산 0"이면 충분하다.
 - $$-1 \le \rho \le 1$$이고, $$\vert \rho\vert  = 1$$ ⇔ $$Y = aX + b$$($$a \ne 0$$)가 확률 1로 성립.
-- 독립이면 $$\operatorname{Cov} = 0$$. 역은 성립하지 않는다.
+- 독립이면 $$\operatorname{Cov} = 0$$. 역은 맞지 않는다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">$$\vert \rho\vert  \le 1$$의 증명</summary>

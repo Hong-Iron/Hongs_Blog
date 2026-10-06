@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Least Squares", "최소제곱법", "최소자승법", "선형 회귀", "linear regression", "회귀 직선", "regression line", "곡선 맞추기", "curve fitting", "잔차", "residual", "오차 제곱합", "sum of squared errors", "정규방정식", "normal equations"]
 description: "측정값이 조금씩 흔들리면 모든 점을 정확히 지나는 직선은 없다. 최소제곱법은 각 점에서 직선까지의 세로 차이(잔차)를 제곱해 더한 값이 가장 작은 직선을 고른다. 식이 미지수보다 많아 풀 수 없는 연립방정식 대신, 우변을 풀 수 있는 곳(열공간)으로 사영한 방정식을 푸는 것과 같다…"
@@ -37,14 +37,14 @@ permalink: "/studies/linear-algebra/least-squares/"
 
 $$\begin{pmatrix}1 & 1\\ 1 & 2\\ 1 & 3\\ 1 & 4\end{pmatrix}\begin{pmatrix}C\\ D\end{pmatrix} = \begin{pmatrix}2\\ 3\\ 5\\ 6\end{pmatrix}$$
 
-이어야 하는데, 식 4개에 미지수 2개라 해가 없다. 정규방정식 $$A^\top A\hat{\mathbf{x}} = A^\top\mathbf{b}$$는 $$\begin{pmatrix}4 & 10\\ 10 & 30\end{pmatrix}\begin{pmatrix}C\\ D\end{pmatrix} = \begin{pmatrix}16\\ 47\end{pmatrix}$$이고, 풀면 $$C = 0.5$$, $$D = 1.4$$다. 잔차는 $$0.1, -0.3, 0.3, -0.1$$이고 제곱합 0.2가 어떤 직선보다도 작다. 데이터 행렬이 아래의 $$A$$, 점수가 $$\mathbf{b}$$, 기울기와 절편이 $$\hat{\mathbf{x}}$$다.
+이어야 하는데, 식 4개에 미지수 2개라 해가 없다. 정규방정식 $$A^\top A\hat{\mathbf{x}} = A^\top\mathbf{b}$$($$^\top$$는 행과 열을 바꾸는 전치)는 $$\begin{pmatrix}4 & 10\\ 10 & 30\end{pmatrix}\begin{pmatrix}C\\ D\end{pmatrix} = \begin{pmatrix}16\\ 47\end{pmatrix}$$이고, 풀면 $$C = 0.5$$, $$D = 1.4$$다. 잔차는 $$0.1, -0.3, 0.3, -0.1$$이고 제곱합 0.2가 어떤 직선보다도 작다. 데이터 행렬이 아래의 $$A$$, 점수가 $$\mathbf{b}$$, 기울기와 절편이 $$\hat{\mathbf{x}}$$다.
 
 ## 정의
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">최소제곱 해</div>
 
-$$A$$($$m \times n$$, $$m > n$$)의 열이 독립일 때, 오차 제곱합 $$\Vert A\mathbf{x} - \mathbf{b}\Vert ^2$$을 가장 작게 하는 $$\mathbf{x}$$는 하나뿐이고, **정규방정식**
+$$A$$($$m \times n$$, $$m > n$$)의 열이 독립일 때, 오차 제곱합 $$\Vert A\mathbf{x} - \mathbf{b}\Vert ^2$$($$\lVert\cdot\rVert$$는 벡터의 길이)을 가장 작게 하는 $$\mathbf{x}$$는 하나뿐이고, **정규방정식**
 
 $$A^\top A\hat{\mathbf{x}} = A^\top\mathbf{b}$$
 

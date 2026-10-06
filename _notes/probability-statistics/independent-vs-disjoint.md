@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["독립 vs 배반", "independent vs mutually exclusive", "배반과 독립의 차이"]
 description: "둘 다 \"서로 상관없다\"는 느낌이라 자주 섞어 쓰지만, 뜻은 거의 반대다. 가르는 질문은 이렇다. 두 사건이 함께 일어날 수 있는가(배반은 불가능), 한쪽 소식이 다른 쪽 확률을 바꾸는가(독립은 바꾸지 않음). 배반이면 확률을 더하고, 독립이면 곱한다."
@@ -83,7 +83,7 @@ permalink: "/studies/probability-statistics/independent-vs-disjoint/"
 ## 둘 다 아닐 때
 
 - 대부분의 사건 쌍은 배반도 독립도 아니다. 그때는 $$P(A \cap B)$$를 따로 구해 [포함-배제](/Hongs_Blog/studies/probability-statistics/probability-axioms/)로 합집합을 구하거나, [곱셈 법칙](/Hongs_Blog/studies/probability-statistics/conditional-probability/) $$P(A \cap B) = P(A)P(B \mid A)$$로 교집합을 구한다.
-- 확률을 모르고 위쪽 한계만 필요하면 합집합 한계 $$P(A \cup B) \le P(A) + P(B)$$를 쓴다. 배반이 아니어도 성립한다.
+- 확률을 모르고 위쪽 한계만 필요하면 합집합 한계 $$P(A \cup B) \le P(A) + P(B)$$를 쓴다. 배반이 아니어도 맞는다.
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 1.6절(배반 사건의 덧셈 공리), 2.5절 "Independence of events"(독립과 배반을 혼동하지 말라는 주의).
 {% endraw %}

@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["연산 모형", "뉴런 모델링", "인공 뉴런", "artificial neuron", "활성 함수", "activation function", "바이어스", "bias", "변환 행렬", "transform matrix", "선형-비선형 모형", "LN model"]
 description: "뉴런을 계산기로 보면, 여러 입력에 각각 무게를 곱해 더하고 그 결과를 정해진 범위 안으로 눌러 담는 장치다. 무게가 양수면 흥분, 음수면 억제다. 이 단순한 식 하나로 수렴·억제 같은 신경 회로를 계산할 수 있고, 인공 신경망의 기본 단위가 된다. 대신 시간에 따른 스파이크 하나…"
@@ -56,7 +56,7 @@ permalink: "/studies/human-interface-media/neuron-computational-model/"
 슬라이드는 뉴런을 연산 가능한 식으로 만드는 과정을 단계로 보여 준다[^1].
 
 1. 입력과 출력이 있다 → 함수로 본다.
-2. 입력은 여럿이다: $$\mathbf{x} = [x_1, \dots, x_D]^\top$$. 출력도 여럿일 수 있다: $$\mathbf{o} = [o_1, \dots, o_R]^\top$$.
+2. 입력은 여럿이다: $$\mathbf{x} = [x_1, \dots, x_D]^\top$$($$^\top$$는 행과 열을 바꾸는 전치). 출력도 여럿일 수 있다: $$\mathbf{o} = [o_1, \dots, o_R]^\top$$.
 3. 전달 함수 $$\mathbf{o} = f(\mathbf{x})$$.
 4. 뉴런의 기능이 선형이라면 $$f$$는 선형 함수다.
 5. 출력값에 최대·최소가 있다면(출력이 한정되면) 활성 함수 $$a$$를 씌운다.
@@ -68,7 +68,7 @@ $$
 \mathbf{o}' = a\bigl(f(\mathbf{x})\bigr) = a(A\mathbf{x} + \mathbf{b}), \qquad A \in \mathbb{R}^{R \times D},\ \mathbf{x} \in \mathbb{R}^{D},\ \mathbf{b} \in \mathbb{R}^{R}
 $$
 
-$$A$$는 변환 행렬, $$\mathbf{b}$$는 바이어스, $$a$$는 활성 함수로 성분마다 따로 적용한다. 성분으로 쓰면 $$o'_r = a\bigl(\sum_{d=1}^{D} A_{rd}\, x_d + b_r\bigr)$$, $$r = 1, \dots, R$$이다.
+입력 $$\mathbf{x}$$는 수 $$D$$개짜리 목록, $$A$$는 $$R$$행 $$D$$열의 변환 행렬, $$\mathbf{b}$$는 수 $$R$$개짜리 바이어스, $$a$$는 활성 함수로 성분마다 따로 적용한다. 즉 출력 $$R$$개 하나하나가 "입력에 무게를 곱해 더하고, 바이어스를 더하고, 범위 안으로 눌러 담은 값"이다. 성분으로 쓰면 $$o'_r = a\bigl(\sum_{d=1}^{D} A_{rd}\, x_d + b_r\bigr)$$($$\sum$$은 차례로 모두 더한다는 기호), $$r = 1, \dots, R$$이다.
 
 </div>
 
@@ -118,7 +118,7 @@ $$k$$층이면 같은 논리를 $$k - 1$$번 되풀이한다(수학적 귀납법
 
 교수님은 이 모형을 퍼셉트론 같은 모델과 함께 설명했다[^2]. 같은 식을 세 분야가 다르게 읽는다.
 
-**신호.** $$A\mathbf{x} + \mathbf{b}$$는 선형(엄밀히는 아핀) 시스템이다. 입력 둘을 더해 넣으면 출력도 더해진다(중첩의 원리). $$A$$의 한 행 $$\mathbf{w}$$와 입력의 곱 $$\mathbf{w} \cdot \mathbf{x} = \lVert\mathbf{w}\rVert\,\lVert\mathbf{x}\rVert \cos\theta$$는 입력이 $$\mathbf{w}$$와 같은 방향일 때 가장 크다(코시-슈바르츠 부등식). 그래서 $$\mathbf{w}$$는 "찾고 싶은 무늬(템플릿)"이고, 곱은 입력이 그 무늬와 얼마나 닮았는지 재는 상관(correlation)이다. 같은 $$\mathbf{w}$$를 이미지 위치마다 옮겨 가며 곱하면 합성곱이 된다. 강의 계획표 7주차 "Convolution & Pattern Detection"의 계산이 이것이다[^3]. 선형 단계 뒤에 비선형 함수 하나를 붙인 구조는 계산 신경과학에서 선형-비선형(LN) 모형이라 부르는 표준 모형과 같다[^s3].
+**신호.** $$A\mathbf{x} + \mathbf{b}$$는 선형(엄밀히는 아핀) 시스템이다. 입력 둘을 더해 넣으면 출력도 더해진다(중첩의 원리). $$A$$의 한 행 $$\mathbf{w}$$와 입력의 곱 $$\mathbf{w} \cdot \mathbf{x} = \lVert\mathbf{w}\rVert\,\lVert\mathbf{x}\rVert \cos\theta$$($$\lVert\cdot\rVert$$는 벡터의 길이)는 입력이 $$\mathbf{w}$$와 같은 방향일 때 가장 크다(코시-슈바르츠 부등식). 그래서 $$\mathbf{w}$$는 "찾고 싶은 무늬(템플릿)"이고, 곱은 입력이 그 무늬와 얼마나 닮았는지 재는 상관(correlation)이다. 같은 $$\mathbf{w}$$를 이미지 위치마다 옮겨 가며 곱하면 합성곱이 된다. 강의 계획표 7주차 "Convolution & Pattern Detection"의 계산이 이것이다[^3]. 선형 단계 뒤에 비선형 함수 하나를 붙인 구조는 계산 신경과학에서 선형-비선형(LN) 모형이라 부르는 표준 모형과 같다[^s3].
 
 **머신러닝.** $$a(W\mathbf{x} + \mathbf{b})$$는 인공 신경망의 완전 연결층(fully connected layer) 하나다. 머신러닝 교재는 보통 변환 행렬을 $$W$$(weight)로 쓴다. 차이는 $$W$$와 $$\mathbf{b}$$를 사람이 정하지 않고 데이터로 학습한다는 점이다. 층을 쌓아 깊은 신경망을 만들 때 활성 함수가 꼭 있어야 하는 이유가 위의 증명이다. 비선형 함수가 없으면 100층을 쌓아도 1층짜리 선형 모델과 표현력이 같다[^s2]. 출력이 하나이고 활성 함수가 계단 함수인 경우가 [퍼셉트론](/Hongs_Blog/studies/human-interface-media/perceptron/)이다.
 

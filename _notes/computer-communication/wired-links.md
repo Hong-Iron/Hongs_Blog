@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Wired Links", "유선 링크의 종류", "트위스티드 페어", "twisted pair", "UTP", "Cat 5", "동축 케이블", "coax", "coaxial cable", "광케이블", "optical fiber", "멀티모드", "multimode", "싱글모드", "single-mode", "굴절률", "index of refraction", "코어", "core", "클래딩", "cladding", "전반사", "전용선", "leased line", "T1", "T3", "STS", "SONET", "ISDN"]
 description: "선을 직접 깔 때는 거리와 속도를 보고 구리선이나 광케이블을 고른다. 꼬인 구리선은 싸고 흔하지만 100 m 정도가 한계이고, 광케이블은 빛을 유리 속에 가두어 수십 km를 빠르게 간다. 광케이블도 가운데 심이 굵은 멀티모드는 빛이 여러 길로 퍼져서 짧은 거리용이고, 심이 가는 싱…"
@@ -48,7 +48,7 @@ permalink: "/studies/computer-communication/wired-links/"
 
 ## 정의
 
-**광케이블.** 빛을 가두는 가운데 심을 코어(core), 그 둘레를 클래딩(cladding)이라 한다[^3]. 굴절률(index of refraction)은 진공에서의 속도를 매체에서의 속도로 나눈 값이다[^3]. 신호 속도가 $$2.0 \times 10^8$$ m/s인 광케이블의 굴절률은 $$3.0 / 2.0 = 1.5$$다. 코어의 굴절률이 클래딩보다 커서, 경계에 비스듬히 닿은 빛은 빠져나가지 못하고 모두 되돌아온다(전반사). 빛은 이렇게 코어 안에서 튕기며 나아간다[^s1].
+**광케이블.** 빛을 가두는 가운데 심을 코어, 그 둘레를 감싼 층을 클래딩이라 한다[^3]. 굴절률은 진공에서의 빛의 속도를 매체에서의 속도로 나눈 값이다. 값이 클수록 그 안에서 빛이 느리다[^3]. 신호 속도가 $$2.0 \times 10^8$$ m/s인 광케이블의 굴절률은 $$3.0 / 2.0 = 1.5$$다. 코어의 굴절률이 클래딩보다 커서, 경계에 비스듬히 닿은 빛은 빠져나가지 못하고 모두 되돌아온다(전반사). 빛은 이렇게 코어 안에서 튕기며 나아간다[^s1].
 
 | | 멀티모드 (Multimode) | 싱글모드 (Single Mode) |
 |---|---|---|
@@ -63,7 +63,7 @@ permalink: "/studies/computer-communication/wired-links/"
 원문: "광케이블 내부에서 난반사를 통한 데이터 전달이다." (4주차 필기 32행)<br>
 문제점: 난반사는 거친 면에 닿은 빛이 여러 방향으로 흩어지는 반사다. 흩어진 빛은 코어 밖으로 새어 나간다. 광케이블은 코어의 굴절률이 클래딩보다 커서, 경계에서 빛이 하나도 새지 않고 되돌아오는 전반사로 빛을 가둔다.<br>
 수정안: "광케이블 내부에서 전반사를 통한 데이터 전달이다."<br>
-근거: 굴절률이 $$n_{\text{core}} > n_{\text{clad}}$$이면 임계각 $$\theta_c = \arcsin(n_{\text{clad}} / n_{\text{core}})$$이 존재하고, 이보다 비스듬히 닿은 빛은 전부 반사된다. 예: $$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$이면 $$\theta_c \approx 80.6°$$. 검증 코드의 계산.
+근거: 굴절률이 $$n_{\text{core}} > n_{\text{clad}}$$이면 임계각 $$\theta_c = \arcsin(n_{\text{clad}} / n_{\text{core}})$$($$\arcsin$$은 사인값에서 각도를 구하는 함수)이 존재하고, 이보다 비스듬히 닿은 빛은 전부 반사된다. 예: $$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$이면 $$\theta_c \approx 80.6°$$. 검증 코드의 계산.
 
 </div>
 

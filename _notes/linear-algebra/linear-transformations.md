@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Linear Transformation", "선형변환", "일차변환", "linear map", "선형사상", "회전 행렬", "rotation matrix", "반사", "reflection", "사영", "projection", "전단", "shear", "늘이기", "scaling", "핵", "kernel", "상", "image"]
 description: "모눈종이를 돌리거나, 뒤집거나, 한쪽으로 기울이거나, 늘여도 모눈의 선들은 여전히 곧고, 평행하고, 같은 간격이다. 그리고 원점은 제자리에 있다. 이런 변환이 선형변환이고, 모두 행렬 하나로 쓸 수 있다. 그래서 이미지 회전, 3D 그래픽스의 좌표 변환, 데이터의 차원 축소가 모두…"
@@ -49,7 +49,7 @@ permalink: "/studies/linear-algebra/linear-transformations/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-함수 $$T: \mathbb{R}^n \to \mathbb{R}^m$$이 모든 벡터 $$\mathbf{u}, \mathbf{v}$$와 스칼라 $$c$$에 대해
+함수 $$T: \mathbb{R}^n \to \mathbb{R}^m$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체)이 모든 벡터 $$\mathbf{u}, \mathbf{v}$$와 스칼라 $$c$$에 대해
 
 $$T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}), \qquad T(c\mathbf{v}) = cT(\mathbf{v})$$
 
@@ -112,7 +112,7 @@ $$\mathbf{e}_2$$는 각 90°의 단위벡터라 $$\theta$$만큼 돌리면 각 $
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">같은 아이디어가 쓰이는 다른 상황은?</summary>
 
-미분과 적분이 선형이라 [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/)의 "합의 미분 = 미분의 합"이 성립한다. 신호 처리의 선형 필터도 입력의 합에 대한 출력이 출력의 합이라는 성질로 설계한다.
+미분과 적분이 선형이라 [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/)의 "합의 미분 = 미분의 합"이 맞는다. 신호 처리의 선형 필터도 입력의 합에 대한 출력이 출력의 합이라는 성질로 설계한다.
 
 </details>
 

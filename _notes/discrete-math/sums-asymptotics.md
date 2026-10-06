@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Sums and Approximations", "합의 계산", "거듭제곱의 합", "조화수", "harmonic number", "교란법", "perturbation method", "스털링 근사", "Stirling's approximation", "계승의 크기", "정렬의 하한"]
 description: "반복문 비용을 더한 합을 닫힌 꼴로 구하거나, 닫힌 꼴이 없으면 위아래에서 끼워 크기를 어림한다. 거듭제곱의 합은 차수가 하나 높은 다항식, 등비급수는 가장 큰 항의 상수배, 조화수는 로그만큼 자란다. 알고리즘 분석은 정확한 값보다 이런 \"크기의 모양\"을 원한다. 다만 끼울 때는 …"
@@ -37,7 +37,7 @@ permalink: "/studies/discrete-math/sums-asymptotics/"
 
 $$\underbrace{1}_{1} + \underbrace{\tfrac12 + \tfrac13}_{\le 1} + \underbrace{\tfrac14 + \cdots + \tfrac17}_{\le 1} + \cdots$$
 
-묶음마다 첫 항이 가장 크고, 묶음 안의 항 수가 첫 항의 역수라 묶음의 합은 1 이하다. 묶음은 $$\lfloor \lg n \rfloor + 1$$개라 $$H_n \le 1 + \lg n$$이다. 거꾸로 각 묶음을 마지막 항으로 줄이면 묶음마다 $$\frac12$$ 이상이다. 그래서 $$H_n$$은 로그만큼 자란다. 묶음이 아래 정리의 끼우기, $$\lg n$$이 크기의 모양이다.
+묶음마다 첫 항이 가장 크고, 묶음 안의 항 수가 첫 항의 역수라 묶음의 합은 1 이하다. 묶음은 $$\lfloor \lg n \rfloor + 1$$($$\lfloor\ \rfloor$$는 소수점 아래를 버린 정수)개라 $$H_n \le 1 + \lg n$$이다. 거꾸로 각 묶음을 마지막 항으로 줄이면 묶음마다 $$\frac12$$ 이상이다. 그래서 $$H_n$$은 로그만큼 자란다. 묶음이 아래 정리의 끼우기, $$\lg n$$이 크기의 모양이다.
 
 ## 정의
 

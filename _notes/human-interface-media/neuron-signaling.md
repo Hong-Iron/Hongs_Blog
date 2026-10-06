@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Neuron", "뉴런", "신경 세포", "수용기", "receptor", "활동 전위", "action potential", "휴지 전위", "resting potential", "시냅스", "synapse", "신경 전달 물질", "Transfer of Signal"]
 description: "신경계는 전선망과 비슷하다. 감각 수용기가 빛·압력 같은 자극을 전기 신호로 바꾸고, 뉴런이 그 신호를 긴 줄기(축삭)를 따라 보낸 뒤, 접점(시냅스)에서 화학 물질로 다음 뉴런에 넘긴다. 전선과 달리 신호가 가는 도중 약해지지 않고 같은 크기로 다시 만들어지며 퍼진다. 대신 전선…"
@@ -59,10 +59,10 @@ graph LR
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **수용기**(receptor): 환경의 자극(빛, 압력, 소리, 화학 물질)을 전기 신호로 바꾸는 세포.
-- **뉴런**(neuron): 세포체(cell body), 수상돌기(dendrite), 축삭(axon, 신경 섬유)으로 이루어진 신경 세포[^1]. 수상돌기로 신호를 받고 축삭으로 내보낸다.
-- **시냅스**(synapse): 뉴런과 뉴런 사이의 접점. 보내는 뉴런의 축삭 끝 시냅스 소포(synaptic vesicle)가 신경 전달 물질(neurotransmitter)을 내보내고, 이 분자가 받는 뉴런의 수용 부위(receptor site)에 붙어 신호를 넘긴다[^2].
-- **휴지 전위**(resting potential): 신호가 없을 때 섬유 안쪽이 바깥보다 약 70 mV 낮은 상태[^2].
+- **수용기**: 환경의 자극(빛, 압력, 소리, 화학 물질)을 전기 신호로 바꾸는 세포.
+- **뉴런**: 세포체, 수상돌기, 축삭(신경 섬유)으로 이루어진 신경 세포[^1]. 수상돌기로 신호를 받고 축삭으로 내보낸다.
+- **시냅스**: 뉴런과 뉴런이 맞닿는 곳. 보내는 뉴런의 축삭 끝에 있는 작은 주머니(시냅스 소포)가 신경 전달 물질을 내보낸다. 이 분자가 받는 뉴런의 수용 부위에 붙으면서 신호가 넘어간다[^2].
+- **휴지 전위**: 신호가 없을 때 섬유 안쪽이 바깥보다 약 70 mV 낮은 상태[^2].
 
 </div>
 

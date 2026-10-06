@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Perception", "감각과 지각", "감각", "Sensation", "사람의 정보 처리 수준", "지각 과정"]
 description: "감각이 카메라 센서가 빛을 받는 일이라면, 지각은 그 신호를 \"저기 나무가 있다\"처럼 쓸 수 있는 그림으로 조립하는 일이다. 지각은 들어온 신호를 그대로 기록하지 않는다. 골라내고, 정리하고, 해석한다. 그래서 빠르고 쓸모 있지만, 같은 자극을 다르게 보거나 없는 것을 보는 착시도…"
@@ -79,7 +79,7 @@ graph LR
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**감각**(sensation)은 자극 신호의 수용이다. **지각**(perception)은 자극 정보의 처리다[^3]. 더 자세히, 지각은 감각 입력을 수동적으로 받아 적는 것이 아니다. 환경을 이해하고 그 안에서 행동하려고 정보를 능동적으로 선택하고(select), 정리하고(order), 해석하는(interpret) 과정이다[^4].
+**감각**은 자극 신호를 받아들이는 일(수용)이다. **지각**은 받아들인 자극 정보를 처리하는 일이다[^3]. 지각은 들어온 것을 그대로 받아 적지 않는다. 주변을 이해하고 그 안에서 움직이려고, 정보를 스스로 고르고(선택), 정리하고, 해석한다[^4].
 
 </div>
 

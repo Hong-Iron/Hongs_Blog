@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Packet Switching", "패킷 교환", "저장 후 전달", "store-and-forward", "패킷", "packet", "혼잡", "congestion", "버퍼링", "buffering", "FIFO", "버퍼 오버플로우", "buffer overflow"]
 description: "편지마다 주소를 적어 우체국에 맡기면 우체국들이 받아서 분류한 뒤 다음 우체국으로 넘기는 것처럼, 데이터를 작은 묶음으로 나눠 길을 미리 잡지 않고 보내는 방식이다. 보낼 것이 있을 때만 링크를 쓰므로 쉬는 사용자 몫의 낭비가 없다. 대신 묶음이 한꺼번에 몰리면 줄을 서서 기다리거…"
@@ -46,16 +46,16 @@ permalink: "/studies/computer-communication/packet-switching/"
 
 패킷 1은 시각 1에 스위치에 **완전히** 도착한 뒤에야 링크 2로 나간다. 이것이 저장 후 전달(store-and-forward)이다. 세 패킷은 파이프라인처럼 겹쳐 흘러 모두 시각 4에 도착한다.
 
-우체국을 스위치로, 편지를 패킷으로, 편지 한 통을 싣는 시간을 $$L/R$$로 옮긴다. 표의 시간이 아래 정리의 $$F(k, i)$$가 된다. 편지 내용이나 우체국의 분류 시간은 버린다(처리 지연 0). 우체국은 편지를 오래 쌓아 둘 수 있지만, 스위치의 저장 공간(버퍼)은 작아서 넘치면 패킷을 버린다[^3].
+우체국이 스위치, 편지 한 통이 패킷이다. 편지 한 통을 트럭에 싣는 데 걸리는 시간이 $$L/R$$이다($$L$$은 패킷 크기(비트), $$R$$은 링크의 전송률). 우체국에서 분류하는 시간은 0으로 친다(처리 지연 0). 비유가 다른 곳도 있다. 우체국은 편지를 오래 쌓아 둘 수 있지만, 스위치의 저장 공간(버퍼)은 작아서 넘치면 패킷을 버린다[^3].
 
 ## 정의
 
-패킷 스위칭은 링크를 미리 할당하지 않고, 데이터를 묶음(패킷, packet) 단위로 보내며, 스위치가 패킷마다 저장 후 전달하는 스위칭 방식이다[^1][^2].
+패킷 스위칭은 링크를 미리 할당하지 않고, 데이터를 묶음(패킷) 단위로 보내며, 스위치가 패킷마다 저장 후 전달하는 스위칭 방식이다[^1][^2].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">저장 후 전달 지연</div>
 
-전송률 $$R$$(bps)인 링크 $$H \in \mathbb{Z}^+$$개를 지나는 경로로, 길이 $$L$$비트인 패킷 $$P \in \mathbb{Z}^+$$개를 연달아 보낸다. 그러면 패킷 $$k$$($$1 \le k \le P$$)는 시각 $$(H + k - 1)\,L/R$$에 목적지에 도착한다. 특히 패킷 하나의 지연은 $$H \cdot L/R$$이고, 모두 도착하는 시각은 $$(H + P - 1)\,L/R$$이다[^s2].
+전송률 $$R$$(bps)인 링크 $$H \in \mathbb{Z}^+$$개($$\mathbb{Z}^+$$는 1 이상의 정수)를 지나는 경로로, 길이 $$L$$비트인 패킷 $$P \in \mathbb{Z}^+$$개를 연달아 보낸다. 그러면 패킷 $$k$$($$1 \le k \le P$$)는 시각 $$(H + k - 1)\,L/R$$에 목적지에 도착한다. 특히 패킷 하나의 지연은 $$H \cdot L/R$$이고, 모두 도착하는 시각은 $$(H + P - 1)\,L/R$$이다[^s2].
 - 전파·처리 지연과 다른 트래픽으로 인한 대기 지연은 0이다.
 - 패킷 $$P$$개는 시각 0에 출발지에 모두 있다.
 - 링크는 한 번에 패킷 하나만, 먼저 온 순서대로 싣는다.
@@ -64,16 +64,18 @@ permalink: "/studies/computer-communication/packet-switching/"
 </div>
 
 
+숫자로 보면, 링크 3개로 패킷 5개를 보낼 때 $$(3 + 5 - 1) = 7$$단위 시간이 걸린다. 패킷을 하나씩 끝까지 보낸 뒤 다음 것을 보내면 $$3 \times 5 = 15$$단위가 걸린다. 앞 패킷이 다음 링크로 넘어가는 동안 뒤 패킷이 바로 따라 들어와 겹쳐 흐르기 때문에 7로 줄어든다[^s2].
+
 | 보장한다 | 보장하지 않는다[^s1] |
 |---|---|
 | 보낼 것이 있는 패킷만 링크를 차지한다. 쉬는 사용자의 몫이 묶여 있지 않다[^1] | 전송률, 지연의 상한, 손실 없음 |
 | 연결 설정 없이 바로 보낼 수 있다 | 보낸 순서대로의 도착 (패킷마다 다른 경로로 갈 수 있다) |
 
-서로 다른 출발지(source)의 패킷들이 링크에서 섞인다. 링크로 나가려고 경쟁하는 패킷들은 저장해 둔다(버퍼링, buffering). 저장된 패킷은 먼저 온 순서(FIFO)로, 또는 다른 방식으로 처리한다. 버퍼가 넘치는 것(overflow)을 혼잡(congestion)이라 부른다[^3]. 넘친 패킷은 버려진다. 버려진 패킷을 다시 보내면 망의 트래픽이 더 늘어서 혼잡이 누적된다[^4].
+여러 곳에서 온 패킷이 한 링크로 몰려 섞인다. 한꺼번에 나갈 수 없으니 스위치는 아직 못 나간 패킷을 잠깐 쌓아 둔다(버퍼링). 쌓인 패킷은 먼저 온 순서(FIFO)로, 또는 다른 규칙으로 내보낸다. 쌓아 둘 자리(버퍼)가 넘치는 상태를 혼잡이라 부른다[^3]. 넘친 패킷은 버린다. 버린 패킷을 다시 보내면 망에 트래픽이 더 늘어 혼잡이 쌓인다[^4].
 
 ## 증명
 
-전략: 패킷 $$k$$가 링크 $$i$$를 다 건너는 시각 $$F(k, i)$$의 점화식을 세우고, $$k + i$$에 대한 강한 귀납법으로 닫힌 식을 보인다. 시간 단위는 $$L/R = 1$$이다.
+전략: 패킷 $$k$$가 링크 $$i$$를 다 건너는 시각을 $$F(k, i)$$라 하고, 이 값이 앞 값들로 어떻게 정해지는지(점화식)를 세운다. 그다음 $$k + i$$에 대한 강한 귀납법으로 바로 계산하는 식(닫힌 식)을 보인다. 시간 단위는 $$L/R = 1$$이다.
 
 <details markdown="1"><summary markdown="span">증명 펼치기</summary>
 
@@ -85,14 +87,14 @@ permalink: "/studies/computer-communication/packet-switching/"
    경계: $$F(k, 0) = 0$$ (시각 0에 출발지에 있음), $$F(0, i) = 0$$ (앞 패킷 없음).
 2. **주장.** $$k, i \ge 1$$이면 $$F(k, i) = k + i - 1$$.
 3. **경계 줄.** $$k = 1$$이면 $$F(1, i) = \max(F(1, i-1), 0) + 1 = F(1, i-1) + 1$$이고 $$F(1, 0) = 0$$이므로 $$F(1, i) = i$$다. $$i = 1$$이면 $$F(k, 1) = \max(0, F(k-1, 1)) + 1 = F(k-1, 1) + 1$$이고 $$F(0, 1) = 0$$이므로 $$F(k, 1) = k$$다. 둘 다 주장과 같다. — 점화식과 경계값
-4. **귀납 단계 ($$k, i \ge 2$$).** 합이 $$k + i$$보다 작은 모든 경우에 주장이 성립한다고 하자. 그러면 $$F(k, i-1) = k + i - 2$$이고 $$F(k-1, i) = k + i - 2$$다. — 귀납 가정
+4. **귀납 단계 ($$k, i \ge 2$$).** 합이 $$k + i$$보다 작은 모든 경우에 주장이 맞는다고 하자. 그러면 $$F(k, i-1) = k + i - 2$$이고 $$F(k-1, i) = k + i - 2$$다. — 귀납 가정
 5. 두 항이 같으므로 $$\max$$는 $$k + i - 2$$이고, $$F(k, i) = k + i - 1$$이다. — 점화식
 6. 목적지 도착 시각은 $$F(k, H) = H + k - 1$$이다. 단위를 되돌리면 $$(H + k - 1)\,L/R$$이다. ∎
 
 </details>
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 점화식을 쓰지 않는 틱 단위 시뮬레이션, 점화식, 닫힌 식이 $$H, P = 1, \dots, 10$$의 모든 경우에 일치 (실험으로 확인됨. 일반적 성립은 위 증명) — [08_packet-switching_verify.py](/Hongs_Blog/studies/computer-communication/code/08_packet-switching_verify/)</div>
+<div class="callout-title" markdown="span">검증: 점화식을 쓰지 않는 틱 단위 시뮬레이션, 점화식, 닫힌 식이 $$H, P = 1, \dots, 10$$의 모든 경우에 같음 (실험으로 확인. 모든 경우에 맞는 이유는 위 증명) — [08_packet-switching_verify.py](/Hongs_Blog/studies/computer-communication/code/08_packet-switching_verify/)</div>
 
 </div>
 
@@ -126,7 +128,7 @@ permalink: "/studies/computer-communication/packet-switching/"
 
 - $$H = 1$$(스위치 없음): $$P \cdot L/R$$. 직접 링크로 $$P$$개를 차례로 보내는 시간과 같다.
 - $$P = 1$$: $$H \cdot L/R$$. 링크마다 전송 시간이 한 번씩 더해진다.
-- "링크는 한 번에 하나" 가정을 빼면(링크가 여러 패킷을 동시에 실을 수 있다면) 둘째 항이 사라져 모든 패킷이 $$H \cdot L/R$$에 도착한다. 실제 링크에서는 성립하지 않는다.
+- "링크는 한 번에 하나" 가정을 빼면(링크가 여러 패킷을 동시에 실을 수 있다면) 둘째 항이 사라져 모든 패킷이 $$H \cdot L/R$$에 도착한다. 하지만 실제 링크는 한 번에 패킷 하나씩만 싣기 때문에 이런 일은 없다.
 - "대기 지연 0" 가정을 빼면 다른 사용자의 패킷이 같은 출력 링크에 몰려 있을 때 정리의 값보다 늦어진다(혼잡).
 
 ## 활용
@@ -139,7 +141,7 @@ permalink: "/studies/computer-communication/packet-switching/"
 
 - 선수: [스위칭 네트워크](/Hongs_Blog/studies/computer-communication/switched-network/), [전송 속도와 대역폭](/Hongs_Blog/studies/computer-communication/rate-and-bandwidth/), [버스티 트래픽](/Hongs_Blog/studies/computer-communication/bursty-traffic/)
 - 짝이 되는 개념: [회선 스위칭](/Hongs_Blog/studies/computer-communication/circuit-switching/) → [회선 스위칭과 패킷 스위칭 비교](/Hongs_Blog/studies/computer-communication/contrast--circuit-switching--packet-switching/)
-- 스위치의 출력 링크를 [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)로 나눠 쓰는 것과 같은 구조다. 패킷마다 붙는 목적지 정보가 통계적 다중화의 주소에 해당한다. 둘이 어떻게 다른지는 [패킷 스위칭과 통계적 다중화 비교](/Hongs_Blog/studies/computer-communication/contrast--packet-switching--statistical-multiplexing/)에 있다.
+- 스위치의 출력 링크를 [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)로 나눠 쓰는 것과 같은 구조다. 패킷마다 붙는 목적지 정보가 통계적 다중화에서 조각마다 붙는 주소와 같은 역할을 한다. 둘이 어떻게 다른지는 [패킷 스위칭과 통계적 다중화 비교](/Hongs_Blog/studies/computer-communication/contrast--packet-switching--statistical-multiplexing/)에 있다.
 - 버퍼에서 기다리는 시간(큐잉 지연)과 전파·처리 지연까지 넣은 계산: [소요시간](/Hongs_Blog/studies/computer-communication/latency/), [소요시간 분석](/Hongs_Blog/studies/computer-communication/timing-analysis/)
 
 ## 자주 하는 오해
@@ -205,5 +207,5 @@ permalink: "/studies/computer-communication/packet-switching/"
 [^3]: 4-1학기/pasted_images/Pasted image 20260925012109.png — 슬라이드 "통계적 다중화와 패킷스위칭". 오른쪽: store-and-forward, store ; forward
 [^4]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 12~16행
 [^s1]: 에이전트 보충. 보장하지 않는 것의 목록과 cut-through 방식은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3~1.4절의 내용이다.
-[^s2]: 에이전트 보충. 원본은 저장 후 전달의 동작만 쓰고 지연 공식은 없다. 공식은 Kurose & Ross, 1.3절의 저장 후 전달 전송과 같다. 교재의 링크 수 기호 $$N$$은 다중화의 입력 수 $$N$$과 겹쳐서 여기서는 $$H$$로 쓴다.
+[^s2]: 에이전트 보충. 원본은 저장 후 전달의 동작만 쓰고 지연 공식은 없다. 공식은 Kurose & Ross, 1.3절의 저장 후 전달 전송과 같다. 교재의 링크 수 기호 $$N$$은 다중화의 입력 수 $$N$$과 겹쳐서 여기서는 $$H$$로 쓴다. 본문의 7과 15는 이 공식과 패킷을 하나씩 보내는 경우($$H \cdot P$$)에 $$H = 3$$, $$P = 5$$를 넣은 값이다.
 {% endraw %}

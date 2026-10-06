@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Prefix Sums as Matrices", "합 행렬", "sum matrix", "차분 행렬", "difference matrix", "누적 합의 행렬 표현", "2차원 차분과 바깥곱"]
 description: "배열의 누적 합은 대각선과 그 아래가 모두 1인 삼각 모양 행렬을 곱한 결과이고, 차분은 그 행렬의 역행렬을 곱한 결과다. 이렇게 보면 2차원 차분의 네 모서리 부호, 가로·세로 누적 순서를 바꿔도 되는 이유, 누적이 한 번 훑기로 끝나는 이유가 행렬의 기본 규칙 몇 개로 풀린다.…"
@@ -35,7 +35,7 @@ permalink: "/studies/algorithms/prefix-sum-triangular/"
 
 표를 펼치기 전에 두 사례의 공통 구조와 대응 관계를 먼저 적어 본다. 왼쪽은 [누적 합과 차분 배열](/Hongs_Blog/studies/algorithms/prefix-sum/)의 계산이다[^1].
 
-칸 번호는 코드처럼 0부터 센다. $$\mathbf{a} = (a[0], \dots, a[n-1])$$이고, P[0]을 뗀 누적 합을 $$\mathbf{p} = (P[1], \dots, P[n])$$로 쓴다. 곧 $$p_i = P[i + 1]$$이다. $$L$$은 대각선과 그 아래가 모두 1인 $$n \times n$$ 행렬이고, 크기를 밝혀야 할 때는 $$L_k$$($$k \times k$$)로 쓴다. $$\mathbf{e}_i$$는 $$i$$번 칸만 1인 벡터다. 열벡터 $$\mathbf{u}$$와 행벡터 $$\mathbf{w}^\top$$의 곱 $$\mathbf{u}\mathbf{w}^\top$$(바깥곱, outer product)는 $$(i, j)$$ 칸이 $$u_iw_j$$인 행렬이다.
+칸 번호는 코드처럼 0부터 센다. $$\mathbf{a} = (a[0], \dots, a[n-1])$$이고, P[0]을 뗀 누적 합을 $$\mathbf{p} = (P[1], \dots, P[n])$$로 쓴다. 곧 $$p_i = P[i + 1]$$이다. $$L$$은 대각선과 그 아래가 모두 1인 $$n \times n$$ 행렬이고, 크기를 밝혀야 할 때는 $$L_k$$($$k \times k$$)로 쓴다. $$\mathbf{e}_i$$는 $$i$$번 칸만 1인 벡터다. 열벡터 $$\mathbf{u}$$와 행벡터 $$\mathbf{w}^\top$$($$^\top$$는 행과 열을 바꾸는 전치)의 곱 $$\mathbf{u}\mathbf{w}^\top$$(바깥곱, outer product)는 $$(i, j)$$ 칸이 $$u_iw_j$$인 행렬이다.
 
 | 알고리즘: 누적 합과 차분 배열 | 선형대수학: 아래삼각행렬과 역행렬 |
 |---|---|
@@ -86,7 +86,7 @@ $$L_{\text{행}}$$과 $$L_{\text{열}}$$은 2차원 표시판의 행 수, 열 �
 
 ## 전이 문제
 
-두 확률변수 X, Y가 각각 1, 2, 3의 값을 갖는다. 결합 누적분포 $$F(i, j) = \Pr[X \le i, Y \le j]$$가 아래 표와 같다. 한 변수의 누적분포를 다룬 [확률변수와 분포](/Hongs_Blog/studies/probability-statistics/random-variables/)의 2차원 판이다[^s4].
+두 확률변수 X, Y가 각각 1, 2, 3의 값을 갖는다. 결합 누적분포 $$F(i, j) = \Pr[X \le i, Y \le j]$$($$\Pr[\cdot]$$은 확률)가 아래 표와 같다. 한 변수의 누적분포를 다룬 [확률변수와 분포](/Hongs_Blog/studies/probability-statistics/random-variables/)의 2차원 판이다[^s4].
 
 | | j = 1 | j = 2 | j = 3 |
 |---|---|---|---|

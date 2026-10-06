@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Norm", "노름", "벡터 노름", "vector norm", "행렬 노름", "matrix norm", "연산자 노름", "operator norm", "Condition Number", "조건수", "불량 조건", "ill-conditioned", "기계 엡실론", "machine epsilon", "힐베르트 행렬", "Hilbert matrix", "수치 안정성", "numerical stability"]
 description: "조건수는 \"입력의 작은 오차가 답에서 몇 배로 커질 수 있는가\"를 재는 수다. 측정값이나 컴퓨터의 반올림 오차는 피할 수 없으므로, 조건수가 백만인 문제는 답에서 유효숫자 여섯 자리 정도를 잃는다고 각오해야 한다(조건수의 자릿수만큼). 조건수는 문제(행렬) 자체의 성질이라, 좋은 …"
@@ -42,7 +42,7 @@ $$\begin{pmatrix}1 & 1\\ 1 & 1.0001\end{pmatrix}\mathbf{x} = \begin{pmatrix}2\\ 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **벡터 노름**(길이의 여러 재는 법): $$\Vert \mathbf{x}\Vert _1 = \sum\vert x_i\vert $$, $$\Vert \mathbf{x}\Vert _2 = \sqrt{\sum x_i^2}$$, $$\Vert \mathbf{x}\Vert _\infty = \max\vert x_i\vert $$. 모두 양수성, $$\Vert c\mathbf{x}\Vert  = \vert c\vert \Vert \mathbf{x}\Vert $$, 삼각부등식을 만족한다.
+- **벡터 노름**(길이의 여러 재는 법): $$\Vert \mathbf{x}\Vert _1 = \sum\vert x_i\vert $$($$\sum$$은 차례로 모두 더한다는 기호), $$\Vert \mathbf{x}\Vert _2 = \sqrt{\sum x_i^2}$$, $$\Vert \mathbf{x}\Vert _\infty = \max\vert x_i\vert $$. 모두 양수성, $$\Vert c\mathbf{x}\Vert  = \vert c\vert \Vert \mathbf{x}\Vert $$, 삼각부등식을 만족한다.
 - **행렬 노름**: $$\Vert A\Vert  = \max_{\mathbf{x} \ne \mathbf{0}}\frac{\Vert A\mathbf{x}\Vert }{\Vert \mathbf{x}\Vert }$$(가장 많이 늘이는 배율). 2-노름에서는 $$\Vert A\Vert _2 = \sigma_1$$(가장 큰 [특잇값](/Hongs_Blog/studies/linear-algebra/svd/))이다.
 - **조건수**: 가역 행렬 $$A$$에 대해 $$\kappa(A) = \Vert A\Vert \,\Vert A^{-1}\Vert $$. 2-노름에서는 $$\kappa(A) = \frac{\sigma_{\max}}{\sigma_{\min}}$$[^1].
 
@@ -91,7 +91,7 @@ $$\frac{\Vert \delta\mathbf{x}\Vert }{\Vert \mathbf{x}\Vert } \le \kappa(A)\,\fr
 
 - **결과를 믿을 수 있는가.** 과학 계산 라이브러리는 조건수 추정값(예: `numpy.linalg.cond`)을 제공한다. $$\kappa\varepsilon$$이 원하는 정확도보다 크면 문제를 다시 세운다.
 - **특징 스케일링.** 입력 특징의 단위가 크게 다르면(미터와 밀리미터) 데이터 행렬의 조건수가 커져 학습이 불안정해진다. 표준화로 조건을 개선한다. 경사 하강법의 수렴 속도도 헤세 행렬의 조건수에 달려 있다([경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/)).
-- **정규화.** 릿지 회귀의 $$A^\top A + \lambda I$$는 조건수가 $$\frac{\sigma_1^2 + \lambda}{\sigma_n^2 + \lambda}$$로 줄어 해가 안정해진다. [정규방정식](/Hongs_Blog/studies/linear-algebra/least-squares/)이 $$A$$의 조건수를 제곱하는 것도 같은 식에서 보인다.
+- **정규화.** 릿지 회귀의 $$A^\top A + \lambda I$$($$^\top$$는 행과 열을 바꾸는 전치)는 조건수가 $$\frac{\sigma_1^2 + \lambda}{\sigma_n^2 + \lambda}$$로 줄어 해가 안정해진다. [정규방정식](/Hongs_Blog/studies/linear-algebra/least-squares/)이 $$A$$의 조건수를 제곱하는 것도 같은 식에서 보인다.
 
 ## 연결
 

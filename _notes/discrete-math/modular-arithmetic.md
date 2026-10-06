@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Modular Arithmetic", "모듈러 산술", "합동", "congruence", "나머지 연산", "modulo", "mod", "나눗셈 정리", "division theorem", "약수", "divisor", "배수", "시계 산술", "clock arithmetic"]
 description: "시계는 12시 다음에 다시 1시로 돌아온다. 이처럼 어떤 수로 나눈 나머지만 보고 계산하는 것이 모듈러 산술이다. 더하기·빼기·곱하기는 중간에 몇 번이든 나머지를 취해도 결과가 같아서, 큰 수의 계산을 작은 수로 끝낼 수 있다. 하지만 나눗셈(양변을 같은 수로 나누기)은 늘 되지는…"
@@ -51,7 +51,7 @@ permalink: "/studies/discrete-math/modular-arithmetic/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 - $$a = dk$$인 정수 $$k$$가 있으면 "$$d$$가 $$a$$를 나눈다"고 하고 $$d \mid a$$로 쓴다.
-- $$m \in \mathbb{Z}^{+}$$에 대해 $$m \mid (a - b)$$이면 "$$a$$와 $$b$$는 법 $$m$$에 대해 **합동**"이라 하고 $$a \equiv b \pmod m$$로 쓴다.
+- $$m \in \mathbb{Z}^{+}$$($$\in$$은 "~에 속한다")에 대해 $$m \mid (a - b)$$이면 "$$a$$와 $$b$$는 법 $$m$$에 대해 **합동**"이라 하고 $$a \equiv b \pmod m$$로 쓴다.
 
 </div>
 
@@ -144,7 +144,7 @@ $$r - d$$도 $$a - d(\text{정수})$$ 꼴이고 0 이상이라 $$S$$에 들어�
 - **정수 오버플로.** 32비트 부호 없는 정수의 덧셈·곱셈은 $$\bmod 2^{32}$$ 산술이다. 그래서 오버플로가 나도 결과는 참값과 $$2^{32}$$을 법으로 합동이다. $$a \bmod 2^k$$는 비트 연산 `a & (2**k - 1)`과 같다.
 - **검사 숫자.** ISBN(법 11), 신용카드 번호의 룬 알고리즘(법 10)처럼 한 자리 입력 실수를 잡는다.
 - **흔한 실수.** 음수의 나머지. 아래 오해를 본다.
-- 알고리즘에서: 답을 $$10^9 + 7$$로 나눈 나머지로 내는 경우의 수 문제는 더하고 빼고 곱할 때마다 나머지를 취해 수를 작게 유지한다([네오의 귀걸이](/Hongs_Blog/studies/algorithms/pg1842/)). 시각을 0시부터 몇 분째로 바꾸면 하루보다 짧은 시간 차는 자정을 넘어도 (끝 − 시작) mod 1440이고, '시:분'은 60으로 나눈 몫과 나머지다([시간·날짜 계산](/Hongs_Blog/studies/algorithms/time-conversion/)). 정수 $$a$$를 양의 정수 $$d$$로 나눈 값의 올림 $$\lceil a/d \rceil$$은, 나머지가 1 이상일 때만 몫이 하나 넘어가므로 정수만으로 `(a + d - 1) // d`다([주차 요금 계산](/Hongs_Blog/studies/algorithms/pg92341/)). 그 밖에 [파이썬 기본 문법](/Hongs_Blog/studies/algorithms/python-basics/), [딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/), [비트 연산과 비트마스크](/Hongs_Blog/studies/algorithms/bit-operations/), [두 큐 합 같게 만들기](/Hongs_Blog/studies/algorithms/pg118667/), [키패드 누르기](/Hongs_Blog/studies/algorithms/pg67256/), [무지의 먹방 라이브](/Hongs_Blog/studies/algorithms/pg42891/)에서도 쓴다.
+- 알고리즘에서: 답을 $$10^9 + 7$$로 나눈 나머지로 내는 경우의 수 문제는 더하고 빼고 곱할 때마다 나머지를 취해 수를 작게 유지한다([네오의 귀걸이](/Hongs_Blog/studies/algorithms/pg1842/)). 시각을 0시부터 몇 분째로 바꾸면 하루보다 짧은 시간 차는 자정을 넘어도 (끝 − 시작) mod 1440이고, '시:분'은 60으로 나눈 몫과 나머지다([시간·날짜 계산](/Hongs_Blog/studies/algorithms/time-conversion/)). 정수 $$a$$를 양의 정수 $$d$$로 나눈 값의 올림 $$\lceil a/d \rceil$$($$\lceil\ \rceil$$는 소수점 아래를 올린 정수)은, 나머지가 1 이상일 때만 몫이 하나 넘어가므로 정수만으로 `(a + d - 1) // d`다([주차 요금 계산](/Hongs_Blog/studies/algorithms/pg92341/)). 그 밖에 [파이썬 기본 문법](/Hongs_Blog/studies/algorithms/python-basics/), [딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/), [비트 연산과 비트마스크](/Hongs_Blog/studies/algorithms/bit-operations/), [두 큐 합 같게 만들기](/Hongs_Blog/studies/algorithms/pg118667/), [키패드 누르기](/Hongs_Blog/studies/algorithms/pg67256/), [무지의 먹방 라이브](/Hongs_Blog/studies/algorithms/pg42891/)에서도 쓴다.
 
 ## 연결
 

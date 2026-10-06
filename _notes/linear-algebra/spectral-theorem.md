@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Spectral Theorem", "스펙트럼 정리", "대칭행렬", "symmetric matrix", "직교 대각화", "orthogonal diagonalization", "스펙트럼 분해", "spectral decomposition", "주축 정리", "principal axis theorem", "그래프 라플라시안", "graph Laplacian"]
 description: "대각선을 기준으로 접으면 겹치는 행렬(대칭행렬)은 가장 다루기 좋은 행렬이다. 고윳값이 모두 실수이고, 서로 수직인 고유벡터들로 공간 전체를 덮을 수 있다. 그래서 대칭행렬이 하는 일은 늘 \"서로 수직인 몇 개의 축을 따라 늘이거나 줄이기\"다. 데이터의 공분산 행렬, 곡면의 휘어짐…"
@@ -74,7 +74,7 @@ $$S = 3\,\mathbf{q}_1\mathbf{q}_1^\top + 1\,\mathbf{q}_2\mathbf{q}_2^\top = \fra
 - $$\lambda_1\mathbf{x}_1^\top\mathbf{x}_2 = (S\mathbf{x}_1)^\top\mathbf{x}_2 = \mathbf{x}_1^\top S^\top\mathbf{x}_2 = \mathbf{x}_1^\top S\mathbf{x}_2 = \lambda_2\mathbf{x}_1^\top\mathbf{x}_2$$.
 - 빼면 $$(\lambda_1 - \lambda_2)\mathbf{x}_1^\top\mathbf{x}_2 = 0$$이고, $$\lambda_1 \ne \lambda_2$$라 $$\mathbf{x}_1^\top\mathbf{x}_2 = 0$$.
 
-**3. 대각화 [증명 스케치].** 모든 정사각 행렬은 직교 행렬 $$Q$$로 $$S = QTQ^\top$$($$T$$ 위삼각, 슈어 분해)로 쓸 수 있다. $$S$$가 대칭이면 $$T = Q^\top SQ$$도 대칭인데, 대칭인 위삼각행렬은 대각행렬뿐이다. 그래서 $$T = \Lambda$$. 겹치는 고윳값이 있어도 성립한다[^1]. ∎
+**3. 대각화 [증명 스케치].** 모든 정사각 행렬은 직교 행렬 $$Q$$로 $$S = QTQ^\top$$($$T$$ 위삼각, 슈어 분해)로 쓸 수 있다. $$S$$가 대칭이면 $$T = Q^\top SQ$$도 대칭인데, 대칭인 위삼각행렬은 대각행렬뿐이다. 그래서 $$T = \Lambda$$. 겹치는 고윳값이 있어도 맞는다[^1]. ∎
 
 </details>
 
@@ -126,7 +126,7 @@ $$(S\mathbf{x}_1)^\top = \mathbf{x}_1^\top S^\top$$이고, 여기서 $$S^\top = 
 **그래프 라플라시안.** 그래프에서 $$L = D - A$$($$D$$는 차수의 대각행렬, $$A$$는 [인접 행렬](/Hongs_Blog/studies/discrete-math/graph-basics/))는 대칭이다.
 
 1. *대칭:* $$A$$가 대칭이고 $$D$$는 대각이라 $$L$$도 대칭이다. 스펙트럼 정리로 실수 고윳값과 직교 고유벡터를 가진다.
-2. *이차형식:* $$\mathbf{x}^\top L\mathbf{x} = \sum_{\{i, j\} \in E}(x_i - x_j)^2 \ge 0$$이라 고윳값이 모두 0 이상이다.
+2. *이차형식:* $$\mathbf{x}^\top L\mathbf{x} = \sum_{\{i, j\} \in E}(x_i - x_j)^2 \ge 0$$($$\in$$은 "~에 속한다")이라 고윳값이 모두 0 이상이다.
 3. *고윳값 0:* $$\mathbf{x}^\top L\mathbf{x} = 0$$이려면 모든 간선의 양 끝 값이 같아야 한다. 곧 [연결 성분](/Hongs_Blog/studies/discrete-math/connectivity/)마다 상수인 벡터다. 그래서 고윳값 0의 개수(고유공간의 차원)가 연결 성분의 수다.
 
 <div class="callout callout-check" markdown="1">
@@ -153,7 +153,7 @@ $$(S\mathbf{x}_1)^\top = \mathbf{x}_1^\top S^\top$$이고, 여기서 $$S^\top = 
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"서로 다른 고윳값의 고유벡터는 늘 수직이다"</div>
 
-틀렸다. 대칭행렬에서 배운 성질이라 모든 행렬에 성립한다고 기억하기 쉽다. 서로 다른 고윳값의 고유벡터는 늘 **독립**이지만, **수직**은 대칭일 때만 보장된다. $$\begin{pmatrix}1 & 1\\ 0 & 2\end{pmatrix}$$의 고유벡터 $$(1, 0)$$(고윳값 1)과 $$(1, 1)$$(고윳값 2)은 45°를 이룬다. 증명에서 $$S^\top = S$$를 쓰는 단계가 빠지면 결론도 무너진다.
+틀렸다. 대칭행렬에서 배운 성질이라 모든 행렬에 맞는다고 기억하기 쉽다. 서로 다른 고윳값의 고유벡터는 늘 **독립**이지만, **수직**은 대칭일 때만 보장된다. $$\begin{pmatrix}1 & 1\\ 0 & 2\end{pmatrix}$$의 고유벡터 $$(1, 0)$$(고윳값 1)과 $$(1, 1)$$(고윳값 2)은 45°를 이룬다. 증명에서 $$S^\top = S$$를 쓰는 단계가 빠지면 결론도 무너진다.
 
 </div>
 

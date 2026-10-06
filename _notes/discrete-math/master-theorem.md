@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Master Theorem", "마스터 정리", "마스터 방법", "master method", "분할 정복 점화식", "divide-and-conquer recurrence", "재귀 트리", "recursion tree", "임계 지수", "critical exponent"]
 description: "문제를 같은 크기의 조각 여러 개로 나눠 풀고 합치는 알고리즘의 비용을, 층마다 드는 일의 합으로 본다. 아래층으로 갈수록 일이 줄면 맨 위(나누고 합치는 일)가, 늘면 맨 아래(조각의 개수)가 전체를 정하고, 같으면 층 수만큼 곱해진다. 이 세 갈래를 공식으로 만든 것이 마스터 …"
@@ -68,7 +68,7 @@ $$n = 16$$에서 세 점화식을 층별로 펼친다. $$T(1) = 1$$이다. 0층�
 | $$a = b^d$$ ($$d = p$$) | 층마다 일이 같다 | $$\Theta(n^d \lg n)$$ |
 | $$a > b^d$$ ($$d < p$$) | 층마다 일이 늘어난다 | $$\Theta(n^{\log_b a})$$ |
 
-$$f$$가 다항식이면 정칙 조건은 저절로 성립한다. $$a f(n/b) = \frac{a}{b^d} n^d$$이고 $$\frac{a}{b^d} < 1$$이 곧 $$c$$가 되기 때문이다.
+$$f$$가 다항식이면 정칙 조건은 저절로 맞는다. $$a f(n/b) = \frac{a}{b^d} n^d$$이고 $$\frac{a}{b^d} < 1$$이 곧 $$c$$가 되기 때문이다.
 
 ## 증명
 
@@ -132,7 +132,7 @@ $$f$$가 다항식이면 정칙 조건은 저절로 성립한다. $$a f(n/b) = \
 | 경우 1·3의 $$\varepsilon$$ (다항식만큼 차이) | 경우 사이의 틈에 빠진다 | $$2T(n/2) + n/\lg n = \Theta(n \lg\lg n)$$ (카드 C4) |
 | 경우 3의 정칙 조건 | 결론이 틀릴 수 있다 | $$T(n/2) + f(n)$$, $$f(n)$$은 $$\lg n$$이 짝수면 $$n^2$$, 홀수면 $$n$$: $$\lg n$$이 홀수인 $$n$$에서 $$T(n) \ge f(n/2) = n^2/4$$인데 $$f(n) = n$$이라 $$\Theta(f)$$가 아니다[^s1] |
 
-**역은 성립하지 않는다.** $$T(n) = \Theta(n^p)$$라고 경우 1인 것은 아니다. $$2T(n/2) + n/\lg^2 n$$은 층 비용 $$\frac{n}{(\lg n - j)^2}$$의 합이 $$n\sum \frac{1}{i^2} = O(n)$$이라 $$\Theta(n)$$이지만, $$f = n/\lg^2 n$$은 어떤 $$\varepsilon$$으로도 $$O(n^{1 - \varepsilon})$$이 아니다[^s1].
+**역은 맞지 않는다.** $$T(n) = \Theta(n^p)$$라고 경우 1인 것은 아니다. $$2T(n/2) + n/\lg^2 n$$은 층 비용 $$\frac{n}{(\lg n - j)^2}$$의 합이 $$n\sum \frac{1}{i^2} = O(n)$$이라 $$\Theta(n)$$이지만, $$f = n/\lg^2 n$$은 어떤 $$\varepsilon$$으로도 $$O(n^{1 - \varepsilon})$$이 아니다[^s1].
 
 ## 예제
 

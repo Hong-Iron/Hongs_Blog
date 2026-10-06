@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Inverse Trigonometric Functions", "아크사인", "arcsin", "asin", "아크코사인", "arccos", "acos", "아크탄젠트", "arctan", "atan", "atan2", "주치", "principal value"]
 description: "역삼각함수는 삼각함수의 값을 보고 각을 되찾는 함수다. 사인은 한 바퀴 안에서도 같은 값을 두 번 내므로 그대로는 되돌릴 수 없고, 입력 범위를 반 바퀴로 잘라야 되돌릴 수 있다. 그래서 역삼각함수가 돌려주는 각은 가능한 답 가운데 하나뿐이다. 방향각을 구할 때는 어느 사분면인지 …"
@@ -59,9 +59,9 @@ $$\arcsin$$을 $$\sin^{-1}$$로도 쓴다. $$1/\sin$$과 헷갈리지 않도록 
 
 **일반해.** $$\sin\theta = s$$ ($$\vert s\vert  \le 1$$)의 모든 해는 $$\theta = \arcsin s + 2\pi k$$ 또는 $$\theta = \pi - \arcsin s + 2\pi k$$ ($$k$$는 정수)다. 두 번째 꼴은 $$\sin(\pi - \theta) = \sin\theta$$에서 온다[^1].
 
-두 가지 관계가 자주 쓰인다. 모두 $$\vert x\vert  \le 1$$에서 성립한다.
+두 가지 관계가 자주 쓰인다. 모두 $$\vert x\vert  \le 1$$에서 맞는다.
 - $$\arcsin x + \arccos x = \dfrac{\pi}{2}$$. 각 $$\theta = \arcsin x$$에 대해 $$\cos\left(\frac{\pi}{2} - \theta\right) = \sin\theta = x$$이고, $$\frac{\pi}{2} - \theta$$가 $$[0, \pi]$$에 들기 때문이다.
-- $$\sin(\arccos x) = \sqrt{1 - x^2}$$. $$\theta = \arccos x \in [0, \pi]$$에서 $$\sin\theta \ge 0$$이고 $$\sin^2\theta = 1 - \cos^2\theta = 1 - x^2$$이기 때문이다.
+- $$\sin(\arccos x) = \sqrt{1 - x^2}$$. $$\theta = \arccos x \in [0, \pi]$$($$\in$$은 "~에 속한다")에서 $$\sin\theta \ge 0$$이고 $$\sin^2\theta = 1 - \cos^2\theta = 1 - x^2$$이기 때문이다.
 
 ## 예제
 
@@ -80,7 +80,7 @@ $$[0, 2\pi)$$에서 $$\sin\theta = \frac12$$을 푼다.
 ## 활용
 
 - **방향 구하기.** 게임에서 적이 플레이어를 바라보게 하려면 `angle = atan2(py - ey, px - ex)`를 쓴다. 로봇의 진행 방향, 마우스 방향, [극좌표](/Hongs_Blog/studies/college-math/polar-parametric/) 변환도 모두 atan2다.
-- **두 벡터 사이의 각.** $$\theta = \arccos\dfrac{\mathbf{u}\cdot\mathbf{v}}{\Vert \mathbf{u}\Vert \,\Vert \mathbf{v}\Vert }$$로 구한다(선형대수학의 [내적](/Hongs_Blog/studies/linear-algebra/dot-product/)). 부동소수점 오차 때문에 같은 벡터끼리도 분수 값이 $$1.0000000000000002$$처럼 1을 넘을 수 있고, 그러면 `math.acos`가 `ValueError`를 낸다. 값을 $$[-1, 1]$$로 잘라서 넣는다[^s1].
+- **두 벡터 사이의 각.** $$\theta = \arccos\dfrac{\mathbf{u}\cdot\mathbf{v}}{\Vert \mathbf{u}\Vert \,\Vert \mathbf{v}\Vert }$$($$\lVert\cdot\rVert$$는 벡터의 길이)로 구한다(선형대수학의 [내적](/Hongs_Blog/studies/linear-algebra/dot-product/)). 부동소수점 오차 때문에 같은 벡터끼리도 분수 값이 $$1.0000000000000002$$처럼 1을 넘을 수 있고, 그러면 `math.acos`가 `ValueError`를 낸다. 값을 $$[-1, 1]$$로 잘라서 넣는다[^s1].
 - 삼각형의 세 변에서 각을 구할 때 [코사인 법칙](/Hongs_Blog/studies/college-math/triangle-laws/)과 $$\arccos$$을 함께 쓴다.
 - 알고리즘에서: 원점에서 본 두 점 $$p = (p_x, p_y)$$, $$q = (q_x, q_y)$$의 각도 순서만 필요하면 atan2 대신 외적 $$p_x q_y - p_y q_x$$의 부호를 본다. 정수 좌표면 곱셈과 뺄셈뿐이라 오차가 없다. 다만 점들이 모두 180도 미만의 범위 안에 있어야 이 비교로 순서가 맞는다([계산 기하 기초](/Hongs_Blog/studies/algorithms/geometry-ccw/)).
 
@@ -94,7 +94,7 @@ $$[0, 2\pi)$$에서 $$\sin\theta = \frac12$$을 푼다.
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"arcsin(sin x) = x다"</div>
 
-틀렸다. 역함수라서 되돌리면 제자리일 것 같다. 하지만 $$\arcsin$$은 $$[-\pi/2, \pi/2]$$ 안의 각만 돌려준다. $$x = \frac{2\pi}{3}$$이면 $$\sin x = \frac{\sqrt3}{2}$$이고 $$\arcsin\frac{\sqrt3}{2} = \frac{\pi}{3}$$이라 원래 각이 아니다. $$\arcsin(\sin x) = x$$는 $$x$$가 그 구간 안에 있을 때만 성립한다. 반대 방향인 $$\sin(\arcsin y) = y$$는 $$\vert y\vert  \le 1$$에서 늘 성립한다.
+틀렸다. 역함수라서 되돌리면 제자리일 것 같다. 하지만 $$\arcsin$$은 $$[-\pi/2, \pi/2]$$ 안의 각만 돌려준다. $$x = \frac{2\pi}{3}$$이면 $$\sin x = \frac{\sqrt3}{2}$$이고 $$\arcsin\frac{\sqrt3}{2} = \frac{\pi}{3}$$이라 원래 각이 아니다. $$\arcsin(\sin x) = x$$는 $$x$$가 그 구간 안에 있을 때만 맞는다. 반대 방향인 $$\sin(\arcsin y) = y$$는 $$\vert y\vert  \le 1$$에서 늘 맞는다.
 
 </div>
 

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Tail Bounds", "확률 부등식", "꼬리 확률", "tail probability", "마르코프 부등식", "Markov's inequality", "체비쇼프 부등식", "Chebyshev's inequality", "체르노프 한계", "Chernoff bound", "집중 부등식", "concentration inequality"]
 description: "분포를 정확히 몰라도 평균이나 분산만 알면 \"평균에서 크게 벗어날 확률\"이 얼마 이하인지 보장할 수 있다. 평균만 쓰는 마르코프, 분산까지 쓰는 체비쇼프, 독립인 것들의 합에 쓰는 체르노프 순으로 가정이 늘고 한계가 급격히 좁아진다. 무작위 알고리즘이 \"높은 확률로\" 잘 동작한다는…"
@@ -49,7 +49,7 @@ permalink: "/studies/probability-statistics/tail-bounds/"
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">세 부등식</div>
 
-1. **마르코프:** $$X \ge 0$$이고 $$a > 0$$이면 $$P(X \ge a) \le \frac{\mathbb{E}[X]}{a}$$.
+1. **마르코프:** $$X \ge 0$$이고 $$a > 0$$이면 $$P(X \ge a) \le \frac{\mathbb{E}[X]}{a}$$($$\mathbb{E}[\cdot]$$은 평균(기댓값)).
 2. **체비쇼프:** 평균 $$\mu$$, 분산 $$\sigma^2$$이 유한하고 $$k > 0$$이면 $$P(\vert X - \mu\vert  \ge k\sigma) \le \frac{1}{k^2}$$.
 3. **체르노프(곱셈형):** $$X$$가 서로 독립인 0/1 확률변수들의 합이고 $$\mu = \mathbb{E}[X]$$, $$0 < \delta \le 1$$이면
 
@@ -141,7 +141,7 @@ $$\mathbb{E}[e^{tX}] = \mathbb{E}\left[\prod_i e^{tX_i}\right]$$를 $$\prod_i\ma
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"부등식이 준 한계가 실제 확률과 비슷하다"</div>
 
-틀렸다. 한계를 계산하면 구체적인 수가 나와서 그 값이 실제 확률처럼 느껴진다. 하지만 이 부등식들은 평균과 분산이 같은 **모든** 분포에 대해 성립해야 해서, 가장 나쁜 분포에 맞춰져 있다. 예시에서 체비쇼프 0.04는 참값 $$2.8 \times 10^{-7}$$보다 10만 배 이상 크다. 한계는 "이보다 나쁠 수는 없다"는 보장으로 쓰고, 실제 확률이 필요하면 분포를 써서 계산한다.
+틀렸다. 한계를 계산하면 구체적인 수가 나와서 그 값이 실제 확률처럼 느껴진다. 하지만 이 부등식들은 평균과 분산이 같은 **모든** 분포에 대해 맞아야 해서, 가장 나쁜 분포에 맞춰져 있다. 예시에서 체비쇼프 0.04는 참값 $$2.8 \times 10^{-7}$$보다 10만 배 이상 크다. 한계는 "이보다 나쁠 수는 없다"는 보장으로 쓰고, 실제 확률이 필요하면 분포를 써서 계산한다.
 
 </div>
 

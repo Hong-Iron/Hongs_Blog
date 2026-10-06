@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Inverse Function", "일대일 함수", "one-to-one", "injective", "수평선 판정", "horizontal line test"]
 description: "역함수는 암호를 푸는 열쇠처럼 출력에서 입력을 되찾는 함수다. 서로 다른 두 입력이 같은 출력을 내면 원래 어느 쪽이었는지 알 수 없으므로, 그런 함수에는 역함수가 없다. 그럴 때는 입력 범위를 잘라서 역함수를 만든다. 이 자르기가 제곱근, 로그, 아크사인에서 계속 나온다."
@@ -120,7 +120,7 @@ $$f(x) = \dfrac{2x + 1}{x - 3}$$의 역함수를 구한다.
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C1** 함수가 역함수를 가질 조건은 무엇이고, 그 조건이 왜 필요한가?</summary>
 
-**답:** 일대일이어야 한다(치역 위에서). 서로 다른 두 입력 $$x_1 \ne x_2$$가 같은 출력 $$y$$를 내면, $$f^{-1}(y)$$를 $$x_1$$과 $$x_2$$ 중 하나로 정할 수 없다. 함수는 입력마다 출력이 하나여야 하므로 역함수가 성립하지 않는다.
+**답:** 일대일이어야 한다(치역 위에서). 서로 다른 두 입력 $$x_1 \ne x_2$$가 같은 출력 $$y$$를 내면, $$f^{-1}(y)$$를 $$x_1$$과 $$x_2$$ 중 하나로 정할 수 없다. 함수는 입력마다 출력이 하나여야 하므로 역함수가 맞지 않는다.
 
 </details>
 

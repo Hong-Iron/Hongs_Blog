@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Abstract Vector Space", "추상 벡터공간", "벡터공간의 공리", "vector space axioms", "함수 공간", "function space", "다항식 공간", "polynomial space", "베른슈타인 다항식", "Bernstein polynomial", "베지어 곡선", "Bézier curve", "드 카스텔조 알고리즘", "de Casteljau's algorithm"]
 description: "더하고 수를 곱하는 규칙만 맞으면 다항식, 함수, 행렬도 \"벡터\"로 다룰 수 있다. 그러면 기저·차원·선형변환 같은 도구를 화살표가 아닌 대상에도 그대로 쓴다. 미분은 다항식 공간의 선형변환이고, 글꼴과 벡터 그래픽의 곡선(베지어 곡선)은 조절점을 특별한 다항식 기저(베른슈타인 기…"
@@ -46,13 +46,13 @@ $$t = \frac12$$이면 계수가 $$\frac14, \frac12, \frac14$$라 $$\mathbf{P}(\f
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-집합 $$V$$에 덧셈과 실수배가 정의되어 있고, 모든 $$\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$$와 $$c, d \in \mathbb{R}$$에 대해 다음 여덟 법칙을 만족하면 $$V$$를 **벡터공간**이라 한다.<br>
+집합 $$V$$에 덧셈과 실수배가 정의되어 있고, 모든 $$\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$$($$\in$$은 "~에 속한다")와 $$c, d \in \mathbb{R}$$에 대해 다음 여덟 법칙을 만족하면 $$V$$를 **벡터공간**이라 한다.<br>
 교환 $$\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$$, 결합 $$(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$$, 영벡터 $$\mathbf{v} + \mathbf{0} = \mathbf{v}$$, 역 $$\mathbf{v} + (-\mathbf{v}) = \mathbf{0}$$, $$c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$$, $$(c + d)\mathbf{v} = c\mathbf{v} + d\mathbf{v}$$, $$c(d\mathbf{v}) = (cd)\mathbf{v}$$, $$1\mathbf{v} = \mathbf{v}$$[^1].
 
 </div>
 
 
-$$\mathbb{R}^n$$의 [벡터](/Hongs_Blog/studies/linear-algebra/vectors/)에서 성립하던 바로 그 법칙들이다. 이것만 쓰는 정리(선형독립, 기저, 차원, 선형변환의 행렬)는 모두 새 공간에서도 성립한다.
+$$\mathbb{R}^n$$의 [벡터](/Hongs_Blog/studies/linear-algebra/vectors/)에서 맞던 바로 그 법칙들이다. 이것만 쓰는 정리(선형독립, 기저, 차원, 선형변환의 행렬)는 모두 새 공간에서도 맞는다.
 
 | 공간 | 벡터 | 기저 | 차원 |
 |---|---|---|---|
@@ -63,7 +63,7 @@ $$\mathbb{R}^n$$의 [벡터](/Hongs_Blog/studies/linear-algebra/vectors/)에서 
 
 **해당하지 않는 예.** 차수가 **정확히** 2인 다항식 모임은 $$t^2 + (-t^2 + t) = t$$처럼 더하면 차수가 떨어져 밖으로 나간다(덧셈에 닫혀 있지 않고 영다항식도 없다). 양수 값만 갖는 함수 모임은 $$-1$$배하면 밖으로 나간다.
 
-**베른슈타인 기저.** $$n$$차 **베른슈타인 다항식** $$B_{i,n}(t) = \binom{n}{i}t^i(1 - t)^{n-i}$$($$i = 0, \dots, n$$)은 $$\mathcal{P}_n$$의 기저다. [이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/)로 $$\sum_i B_{i,n}(t) = (t + (1 - t))^n = 1$$이고, $$0 \le t \le 1$$에서 모두 0 이상이다. **베지어 곡선**은 $$\mathbf{P}(t) = \sum_{i=0}^{n} B_{i,n}(t)P_i$$다.
+**베른슈타인 기저.** $$n$$차 **베른슈타인 다항식** $$B_{i,n}(t) = \binom{n}{i}t^i(1 - t)^{n-i}$$($$i = 0, \dots, n$$)은 $$\mathcal{P}_n$$의 기저다. [이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/)로 $$\sum_i B_{i,n}(t) = (t + (1 - t))^n = 1$$($$\sum$$은 차례로 모두 더한다는 기호)이고, $$0 \le t \le 1$$에서 모두 0 이상이다. **베지어 곡선**은 $$\mathbf{P}(t) = \sum_{i=0}^{n} B_{i,n}(t)P_i$$다.
 
 ## 예제
 

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Monte Carlo Method", "몬테카를로 방법", "몬테카를로 시뮬레이션", "Monte Carlo simulation", "몬테카를로 적분", "Monte Carlo integration", "중요도 샘플링", "importance sampling", "드문 사건", "rare event"]
 description: "정확히 계산하기 어려운 값을, 무작위로 뽑은 표본으로 실험해 평균을 내서 어림하는 방법이다. 정사각형에 모래를 뿌려 원 안에 떨어진 비율로 원의 넓이를 재는 식이다. 오차는 표본 수의 제곱근에 반비례하고 차원 수와 상관없어서, 변수가 수십 개인 적분이나 복잡한 시스템의 확률처럼 다…"
@@ -43,13 +43,13 @@ permalink: "/studies/probability-statistics/monte-carlo/"
 
 ## 정의
 
-구하려는 값을 어떤 확률변수의 기댓값 $$\theta = \mathbb{E}[Y]$$로 쓴다. 독립인 표본 $$Y_1, \dots, Y_n$$을 만들어
+구하려는 값을 어떤 확률변수의 기댓값 $$\theta = \mathbb{E}[Y]$$($$\mathbb{E}[\cdot]$$은 평균(기댓값))로 쓴다. 독립인 표본 $$Y_1, \dots, Y_n$$을 만들어
 
 $$\hat\theta_n = \frac1n\sum_{i=1}^{n}Y_i$$
 
 로 어림한다. [큰 수의 법칙](/Hongs_Blog/studies/probability-statistics/lln/)으로 $$\hat\theta_n \to \theta$$이고, [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)로 오차는 대략 $$\mathcal{N}\left(0, \frac{\sigma^2}{n}\right)$$을 따른다($$\sigma^2 = \operatorname{Var}[Y]$$). 그래서 95% 오차 막대는 $$\hat\theta_n \pm 1.96\frac{\hat\sigma}{\sqrt n}$$이다($$\hat\sigma$$는 표본 표준편차)[^1].
 
-**적분으로 쓰기.** $$\int_D g(\mathbf{x})\,d\mathbf{x}$$는 $$D$$ 위 균등분포의 $$\mathbf{X}$$에 대해 $$\vert D\vert  \cdot \mathbb{E}[g(\mathbf{X})]$$다. 확률 $$P(A)$$는 지시 확률변수의 기댓값 $$\mathbb{E}[I_A]$$다.
+**적분으로 쓰기.** $$\int_D g(\mathbf{x})\,d\mathbf{x}$$($$\int$$는 넓이를 구하는 적분 기호)는 $$D$$ 위 균등분포의 $$\mathbf{X}$$에 대해 $$\vert D\vert  \cdot \mathbb{E}[g(\mathbf{X})]$$다. 확률 $$P(A)$$는 지시 확률변수의 기댓값 $$\mathbb{E}[I_A]$$다.
 
 **알아보는 신호.** 적분 차원이 높다, 식으로 풀기 어려운 시스템의 확률이나 기댓값이다, 난수로 시스템을 흉내 낼 수는 있다.
 

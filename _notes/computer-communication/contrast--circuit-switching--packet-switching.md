@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["회선 스위칭 vs 패킷 스위칭", "circuit vs packet switching"]
 description: "둘은 스위칭 네트워크에서 데이터를 넘기는 두 방식이다. 가르는 질문은 \"자원을 미리 잡아 두는가\"다. 어느 쪽이 나은지는 사용자의 입장과 네트워크의 입장에 따라 다르다."
@@ -65,7 +65,7 @@ permalink: "/studies/computer-communication/contrast--circuit-switching--packet-
 
 ## 둘 다 아닐 때
 
-경로는 미리 정하되 용량은 예약하지 않는 가상 회선(virtual circuit)이 있다. 패킷 스위칭처럼 링크를 나눠 쓰면서, 회선 스위칭처럼 연결 설정 때 경로를 정한다. 그래서 순서가 지켜지고 패킷마다 경로를 찾지 않아도 된다[^s1].
+경로는 미리 정하되 용량은 예약하지 않는 가상 회선이 있다. 패킷 스위칭처럼 링크를 나눠 쓰면서, 회선 스위칭처럼 연결 설정 때 경로를 정한다. 그래서 순서가 지켜지고 패킷마다 경로를 찾지 않아도 된다[^s1].
 
 [^1]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 30~40행
 [^2]: 4-1학기/pasted_images/Pasted image 20260924200141.png — 슬라이드 "간접 연결 방법: 스위칭 정책", 회선 스위칭

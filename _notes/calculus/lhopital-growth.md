@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["L'Hôpital's Rule", "로피탈 정리", "부정형", "indeterminate form", "증가 속도", "rate of growth", "함수의 증가 속도 비교", "expm1"]
 description: "분자와 분모가 함께 0으로 가거나 함께 한없이 커지는 극한은 모양만 보고는 값을 알 수 없다. 로피탈 정리는 이때 분자와 분모를 각각 미분한 비의 극한을 보면 된다고 알려 준다. 이것으로 \"로그는 어떤 거듭제곱보다도 느리고, 지수는 어떤 거듭제곱보다도 빠르다\"는 알고리즘 분석의 기…"
@@ -61,7 +61,7 @@ $$\frac00$$ 꼴이고 $$f(a) = g(a) = 0$$으로 이어 붙였다고 하자. 평�
 
 $$\frac{\ln x}{x^\varepsilon} \to 0, \qquad \frac{x^k}{b^x} \to 0$$
 
-이다. 둘째는 분자를 $$\lceil k \rceil$$번 미분하면 분자가 상수나 0으로 줄지만 분모는 $$b^x(\ln b)^{\lceil k \rceil}$$로 여전히 한없이 크기 때문이다. [거듭제곱함수와 지수함수 비교](/Hongs_Blog/studies/college-math/power-vs-exponential/)의 서열 $$\lg n \ll n^\varepsilon \ll n^k \ll b^n$$을 이것이 증명한다.
+이다. 둘째는 분자를 $$\lceil k \rceil$$($$\lceil\ \rceil$$는 소수점 아래를 올린 정수)번 미분하면 분자가 상수나 0으로 줄지만 분모는 $$b^x(\ln b)^{\lceil k \rceil}$$로 여전히 한없이 크기 때문이다. [거듭제곱함수와 지수함수 비교](/Hongs_Blog/studies/college-math/power-vs-exponential/)의 서열 $$\lg n \ll n^\varepsilon \ll n^k \ll b^n$$을 이것이 증명한다.
 
 ## 예제
 
@@ -96,7 +96,7 @@ $$0 \cdot \infty$$나 $$1^\infty$$ 꼴도 바꿔서 쓴다. $$x \ln x = \frac{\l
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"분수의 극한은 늘 분자와 분모를 미분해서 구하면 된다"</div>
 
-틀렸다. 로피탈 정리가 강력해서 모든 분수에 쓰고 싶어진다. 이 정리는 $$\frac00$$이나 $$\frac{\infty}{\infty}$$ 꼴에서만 성립한다. $$\lim_{x \to 0}\frac{x + 1}{x + 2}$$는 그냥 대입해 $$\frac12$$인데, 미분하면 $$\frac11 = 1$$로 틀린 값이 나온다. 쓰기 전에 꼴부터 확인한다.
+틀렸다. 로피탈 정리가 강력해서 모든 분수에 쓰고 싶어진다. 이 정리는 $$\frac00$$이나 $$\frac{\infty}{\infty}$$ 꼴에서만 맞는다. $$\lim_{x \to 0}\frac{x + 1}{x + 2}$$는 그냥 대입해 $$\frac12$$인데, 미분하면 $$\frac11 = 1$$로 틀린 값이 나온다. 쓰기 전에 꼴부터 확인한다.
 
 </div>
 

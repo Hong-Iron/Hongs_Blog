@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Logarithm", "log", "로그 법칙", "logarithm rules", "밑변환 공식", "change of base", "진수", "상용로그", "common logarithm", "자연로그", "natural logarithm", "ln", "이진로그", "binary logarithm", "lg"]
 description: "로그는 \"몇 번 곱해야 이 수가 되나\"에 답하는 수다. 1000을 만들려면 10을 세 번 곱해야 하니 답은 3이다. 로그를 쓰면 곱셈이 덧셈으로, 거듭제곱이 곱셈으로 바뀌어 아주 크거나 작은 수를 다루기 쉬워진다. 다만 곱하는 수는 양수이고 1이 아니어야 하며, 0이나 음수의 로그…"
@@ -50,7 +50,7 @@ $$b > 0$$, $$b \ne 1$$, $$x > 0$$일 때
 
 $$\log_b x = y \iff b^y = x$$
 
-로 정한다. $$b$$를 밑, $$x$$를 진수라 한다[^1]. $$\log_b: (0, \infty) \to \mathbb{R}$$은 지수함수 $$b^x: \mathbb{R} \to (0, \infty)$$의 역함수다. 따라서
+로 정한다. $$b$$를 밑, $$x$$를 진수라 한다[^1]. $$\log_b: (0, \infty) \to \mathbb{R}$$($$\mathbb{R}$$은 실수 전체)은 지수함수 $$b^x: \mathbb{R} \to (0, \infty)$$의 역함수다. 따라서
 
 $$b^{\log_b x} = x \quad (x > 0), \qquad \log_b(b^y) = y \quad (y \in \mathbb{R})$$
 
@@ -165,10 +165,10 @@ $$u = \log_b x$$, $$v = \log_b y$$로 두면 로그의 정의로 $$x = b^u$$, $$
 ## 활용
 
 - **반씩 줄이는 알고리즘.** 이진 탐색, 균형 이진 트리의 높이, 병합 정렬의 단계 수가 모두 $$\lg n$$에 비례한다. $$n$$이 $$10^9$$이어도 $$\lg n \approx 30$$이다[^3].
-- **비트 수.** 양의 정수 $$n$$을 2진수로 쓰는 데 드는 자릿수는 $$\lfloor \lg n \rfloor + 1$$이다. [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/)에서 증명한다.
+- **비트 수.** 양의 정수 $$n$$을 2진수로 쓰는 데 드는 자릿수는 $$\lfloor \lg n \rfloor + 1$$($$\lfloor\ \rfloor$$는 소수점 아래를 버린 정수)이다. [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/)에서 증명한다.
 - **로그 확률.** 작은 확률을 수천 번 곱하면 컴퓨터에서 0이 된다(카드 C4). 음성 인식, 언어 모델, 나이브 베이즈는 확률 대신 로그 확률을 더한다[^s1].
 - **파이썬 주의점.** `math.log(x)`는 자연로그다. `math.log(1000, 10)`은 밑변환을 부동소수점으로 계산해 `3.0`이 아니라 `2.9999999999999996`을 낸다. 10과 2가 밑이면 `math.log10`, `math.log2`를 쓴다.
-- 알고리즘에서: [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)은 정렬된 자료 $$n$$개에서 많아야 $$\lceil \lg(n + 1) \rceil$$번 돈다. [매개변수 탐색](/Hongs_Blog/studies/algorithms/parametric-search/)은 답이 될 수 있는 값 $$m$$개를 반씩 줄여, 많아야 $$\lceil \lg m \rceil$$번만 판정한다. [힙과 우선순위 큐](/Hongs_Blog/studies/algorithms/heap/)의 힙은 원소 $$n$$개를 $$\lfloor \lg n \rfloor + 1$$층에 담아, 넣기·꺼내기 한 번에 자리를 많아야 층수만큼 바꾼다. 그 밖에 [정렬과 정렬 기준](/Hongs_Blog/studies/algorithms/sorting/), [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/)에서도 쓴다.
+- 알고리즘에서: [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)은 정렬된 자료 $$n$$개에서 많아야 $$\lceil \lg(n + 1) \rceil$$($$\lceil\ \rceil$$는 소수점 아래를 올린 정수)번 돈다. [매개변수 탐색](/Hongs_Blog/studies/algorithms/parametric-search/)은 답이 될 수 있는 값 $$m$$개를 반씩 줄여, 많아야 $$\lceil \lg m \rceil$$번만 판정한다. [힙과 우선순위 큐](/Hongs_Blog/studies/algorithms/heap/)의 힙은 원소 $$n$$개를 $$\lfloor \lg n \rfloor + 1$$층에 담아, 넣기·꺼내기 한 번에 자리를 많아야 층수만큼 바꾼다. 그 밖에 [정렬과 정렬 기준](/Hongs_Blog/studies/algorithms/sorting/), [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/)에서도 쓴다.
 
 ## 연결
 

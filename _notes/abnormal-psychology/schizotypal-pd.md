@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-28"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Schizotypal Personality Disorder", "조현형", "분열형 성격장애", "마술적 사고", "magical thinking", "관계사고"]
 description: "조현병의 증상이 아주 옅게, 성격처럼 굳어 있는 상태다. 우연한 일을 자신과 관련된 신호로 읽고, 텔레파시나 육감을 믿으며, 말과 옷차림이 독특하다. 사람과 가까워지는 것이 불안해 친구가 거의 없다. 현실 판단은 대체로 유지되어 망상과 환각 수준에는 이르지 않는다는 점이 조현병과 …"
@@ -50,7 +50,7 @@ permalink: "/studies/abnormal-psychology/schizotypal-pd/"
 3. 신체적 착각을 포함한 유별난 지각 경험
 4. 기이한 사고와 언어(가벼운 사고장애를 암시)
 5. 의심이나 편집증적 사고
-6. 부적절하고 메마른 정동
+6. 부적절하고 메마른 정동 — 상황에 맞지 않거나 거의 드러나지 않는 감정 표현
 7. 괴이하고 엉뚱하거나 특이한 행동이나 외모
 8. 직계가족 외에는 가까운 친구가 없음
 9. 과도한 사회적 불안

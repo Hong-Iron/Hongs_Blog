@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["OSI Reference Model", "OSI 7계층", "OSI 7 layers", "Open Systems Interconnection", "참조 모델", "reference model", "표준 구조", "standard architecture", "물리 계층", "physical layer", "네트워크 계층", "network layer", "트랜스포트 계층", "transport layer", "세션 계층", "session layer", "프레젠테이션 계층", "presentation layer", "응용 계층", "application layer", "ISO", "ITU"]
 description: "OSI 참조 모델은 통신에 필요한 일을 7개 층으로 나눠 \"이 일은 몇 층 담당\"이라고 부를 수 있게 한 공용 지도다. 국제 표준 기구가 만든 개방형 표준이라, 어느 회사 장비든 이 틀로 설명할 수 있다. 중간 노드는 아래 3층만 가지고, 위 4층은 양 끝 호스트끼리만 주고받는다.…"
@@ -50,7 +50,7 @@ End host A           망 속 노드           End host B
 
 ## 정의
 
-OSI(Open Systems Interconnection) 구조는 국제 표준화 기구(ISO)와 국제 전기통신 연합(ITU, 옛 CCITT)이 만든 표준 구조다. X.25, X.400, X.500 같은 "X 시리즈" 표준이 여기에 속한다. OSI는 통신 문제를 나눠 생각하는 틀인 **참조 모델**(reference model)이다[^1].
+OSI(Open Systems Interconnection) 구조는 국제 표준화 기구(ISO)와 국제 전기통신 연합(ITU, 옛 CCITT)이 만든 표준 구조다. X.25, X.400, X.500 같은 "X 시리즈" 표준이 여기에 속한다. OSI는 통신 문제를 나눠 생각하는 틀인 **참조 모델**이다. 실제 제품의 설계도가 아니라, "이 일은 몇 층 담당"이라고 말할 때 기준으로 삼는 지도라는 뜻이다[^1][^s2].
 
 | 층 | 이름 | 담당하는 일 | 주고받는 단위 |
 |---|---|---|---|
@@ -106,4 +106,5 @@ OSI(Open Systems Interconnection) 구조는 국제 표준화 기구(ISO)와 국�
 [^3]: 4-1학기/pasted_images/Pasted image 20260925033034.png — 같은 슬라이드의 손글씨 판. 같은 화면을 한 번 더 캡처한 파일이 4-1학기/pasted_images/Pasted image 20260925033028.png다
 [^4]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 5~6행, 17~24행
 [^s1]: 에이전트 보충. 스위치·라우터를 층 번호로 부르는 관례와 계층 수의 장단점은 원본에 없다. 원본은 질문만 던진다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다.
+[^s2]: 에이전트 보충. '참조 모델'의 뜻풀이(설계도가 아니라 기준이 되는 틀)는 원본에 없다. 슬라이드가 OSI를 "참조 모델"이라 부르고 실제 인터넷은 다른 구조를 쓴다는 점에 근거한 설명이다.
 {% endraw %}

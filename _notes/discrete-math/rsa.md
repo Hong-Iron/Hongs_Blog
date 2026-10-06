@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["RSA", "RSA 암호", "RSA cryptosystem", "공개키 암호", "public-key cryptography", "비대칭 암호", "asymmetric cryptography", "공개키", "public key", "개인키", "private key", "전자서명", "digital signature", "밀러–라빈", "Miller–Rabin"]
 description: "누구나 채울 수 있지만 열쇠를 가진 사람만 열 수 있는 자물쇠를 수학으로 만든 것이다. 두 큰 소수를 곱해 공개하고, 그 곱을 쪼개야만 알 수 있는 열쇠는 혼자 갖는다. 곱하기는 쉽고 소인수분해는 어렵다는 비대칭 덕분에, 미리 비밀을 나누지 않은 사람끼리도 암호문을 주고받고 전자서…"
@@ -37,7 +37,7 @@ permalink: "/studies/discrete-math/rsa/"
 
 1. $$n = 55$$, $$\varphi(n) = 4 \times 10 = 40$$.
 2. $$\varphi(n)$$과 서로소인 $$e = 3$$을 공개 지수로 고른다.
-3. $$3d \equiv 1 \pmod{40}$$에서 $$d = 27$$($$81 = 2 \times 40 + 1$$).
+3. $$3d \equiv 1 \pmod{40}$$($$a \equiv b \pmod m$$은 "$$a$$와 $$b$$를 $$m$$으로 나눈 나머지가 같다")에서 $$d = 27$$($$81 = 2 \times 40 + 1$$).
 4. 공개키 $$(n, e) = (55, 3)$$, 개인키 $$d = 27$$.
 5. 평문 $$m = 2$$를 암호화하면 $$2^3 \bmod 55 = 8$$. 복호하면 $$8^{27} \bmod 55 = 2$$.
 

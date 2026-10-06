@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Wireless Links", "무선", "wireless", "다중 경로", "multipath", "다중 경로 문제", "multipath problem", "라이선스", "전파 규제", "고정 무선통신", "wireless fixed links", "무선 가입자망", "단거리 무선통신", "short range", "무선 LAN", "Wi-Fi", "IEEE 802.11", "블루투스", "Bluetooth", "지그비", "ZigBee", "IEEE 802.15.4", "적외선 통신", "WAN", "LAN", "PAN"]
 description: "무선 링크는 선 대신 공기를 쓴다. 선을 깔 필요가 없어서 들고 다니며 쓸 수 있고, 설치 없이 바로 쓸 수 있다. 대신 신호가 사방으로 퍼져서 가까운 링크끼리 간섭하고, 벽에 튕긴 신호가 여러 길로 조금씩 늦게 도착해 섞인다. 그래서 전파 사용을 허가제로 관리하고, 신호는 주로 …"
@@ -41,7 +41,7 @@ permalink: "/studies/computer-communication/wireless-links/"
 | 1 Mbps | 1 μs | 다음 비트 하나 전체 |
 | 10 Mbps | 0.1 μs | 뒤 비트 10개 |
 
-같은 반사라도 전송률이 높을수록 여러 비트에 겹친다. 속도가 올라 비트 폭이 줄면 신호가 겹쳐 간섭이 심해진다는 필기의 설명이 이것이다[^1]. 이것이 다중 경로 문제(multipath problem)다. 노트북을 수신기로, 벽을 반사면으로 옮기고, 벽의 재질은 버린다.
+같은 반사라도 전송률이 높을수록 여러 비트에 겹친다. 속도가 올라 비트 폭이 줄면 신호가 겹쳐 간섭이 심해진다는 필기의 설명이 이것이다[^1]. 이것을 다중 경로 문제라 부른다. 신호가 여러 길로 와서 생기는 문제라는 뜻이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 1 μs, 표의 겹침, 고정 무선 가입자망의 150 Mbit/s와 약 201 km² — [34_wireless-links_verify.py](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_verify/)</div>
@@ -64,7 +64,7 @@ permalink: "/studies/computer-communication/wireless-links/"
 - 무선 고속 전용 링크: 본사와 지점 사이에 국경이 있어 선을 깔기 어려우면, 두 건물 사이에 무선 링크를 연다.
 - 무선 가입자망: 가입자의 링크를 무선으로 만든다. 슬라이드의 기지국은 반경 8 km를 72° 부채꼴(섹터)로 나누고, 섹터마다 30 Mbit/s를 준다. 안테나의 방향성으로 공간을 나눠 같은 주파수를 섹터마다 다시 쓴다. 섹터가 5개이므로 기지국 하나가 모두 150 Mbit/s, 약 201 km²를 맡는다[^s1].
 
-**단거리 무선통신.** 누구나 쓸 수 있는 공용(license-free) 대역을 쓴다[^4]. 라이선스가 없어서 누구든 쓸 수 있고 소비자층이 크지만, 간섭이 생길 수 있다[^1].
+**단거리 무선통신.** 누구나 허가 없이 쓸 수 있는 공용 대역을 쓴다[^4]. 라이선스가 없어서 누구든 쓸 수 있고 소비자층이 크지만, 간섭이 생길 수 있다[^1].
 
 | 기술 | 범위 | 속도 (슬라이드 그림) |
 |---|---|---|

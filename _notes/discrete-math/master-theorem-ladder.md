@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 분할 정복 점화식과 마스터 정리, 점근 표기."
 prev_url: "/studies/discrete-math/recurrence-ladder/"
@@ -70,7 +70,7 @@ $$T(n) = 3T(n/4) + n\lg n$$.
 <summary class="callout-title" markdown="span">답</summary>
 
 {: start="3"}
-3. $$n \ge 2$$이면 $$n\lg n \ge n = n^{p + \varepsilon}$$이다($$\varepsilon = 1 - \log_4 3 \approx 0.2$$). 그래서 $$f(n) = \Omega(n^{p + \varepsilon})$$(경우 3 후보). 정칙 조건: $$3 f(n/4) = \frac34 n \lg\frac n4 \le \frac34 n\lg n$$이라 $$c = \frac34 < 1$$로 성립한다.
+3. $$n \ge 2$$이면 $$n\lg n \ge n = n^{p + \varepsilon}$$이다($$\varepsilon = 1 - \log_4 3 \approx 0.2$$). 그래서 $$f(n) = \Omega(n^{p + \varepsilon})$$(경우 3 후보). 정칙 조건: $$3 f(n/4) = \frac34 n \lg\frac n4 \le \frac34 n\lg n$$이라 $$c = \frac34 < 1$$로 맞는다.
 4. $$T(n) = \Theta(n \lg n)$$. 맨 위의 일이 전체를 정한다.
 
 </details>

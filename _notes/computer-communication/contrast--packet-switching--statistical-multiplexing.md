@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["패킷 스위칭 vs 통계적 다중화", "packet switching vs statistical multiplexing"]
 description: "둘은 거의 늘 함께 나온다. 슬라이드도 한 장에 묶어 다룬다. 그래서 같은 것으로 착각하기 쉽다. 가르는 질문은 \"무엇에 대한 답인가\"다. 통계적 다중화는 링크 하나를 어떻게 나눠 쓰는지에 대한 답이다. 패킷 스위칭은 노드가 데이터를 목적지 쪽으로 어떻게 넘기는지에 대한 답이다."
@@ -53,7 +53,7 @@ permalink: "/studies/computer-communication/contrast--packet-switching--statisti
 | 핵심 동작 | 패킷 단위로 링크 사용을 그때그때 다시 정한다(재스케줄링). 저장 후 전달[^1] | 보낼 것이 있는 입력에만 링크를 준다. 조각마다 주소 |
 | 반대편 짝 | [회선 스위칭](/Hongs_Blog/studies/computer-communication/circuit-switching/) | [동기식 시분할 다중화](/Hongs_Blog/studies/computer-communication/time-division-multiplexing/) |
 
-둘의 관계는 한 방향씩 따로 성립한다. 노드가 패킷 스위칭을 하면 그 결과로 링크는 (거의) 통계적으로 다중화된다. 반대로 스위칭 네트워크의 링크에서 통계적 다중화를 하려면 노드는 패킷 스위칭을 해야 한다[^1]. 회선 스위칭은 링크 용량을 연결마다 미리 떼어 주므로 링크가 통계적으로 나뉠 수 없다.
+둘의 관계는 방향마다 따로 따져야 한다. 노드가 패킷 스위칭을 하면 그 결과로 링크는 (거의) 통계적으로 다중화된다. 반대로 스위칭 네트워크의 링크에서 통계적 다중화를 하려면 노드는 패킷 스위칭을 해야 한다[^1]. 회선 스위칭은 링크 용량을 연결마다 미리 떼어 주므로 링크가 통계적으로 나뉠 수 없다.
 
 노드의 방식과 링크의 방식을 두 축으로 놓으면 네 조합이 나온다[^s1].
 

@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Wave", "파동", "진폭", "amplitude", "주파수", "frequency", "위상", "phase", "파장", "wavelength", "가시광", "visible light", "공간 주파수", "spatial frequency"]
 description: "빛과 소리는 모두 물결(파동)이다. 물결은 높이(진폭), 빠르기(주파수), 출발 시점(위상) 세 가지로 적는다. 같은 물결이지만 귀는 진폭을 소리 크기로, 주파수를 음높이로 읽고, 눈은 진폭을 밝기로, 주파수를 색으로 읽는다. 귀는 시간에 따른 1차원 변화를, 눈은 평면 위 2차원…"
@@ -59,6 +59,8 @@ permalink: "/studies/human-interface-media/wave-and-light/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
+1초에 $$f$$번 오르내리는 물결 모양 신호를 식으로 쓴다. 물결의 높이가 진폭 $$A$$, 출발점이 얼마나 밀려 있는지가 위상 $$\phi$$(파이)다.
+
 단일 주파수의 파동은
 
 $$ s(t) = A \sin(2\pi f t + \phi) $$
@@ -67,7 +69,7 @@ $$ s(t) = A \sin(2\pi f t + \phi) $$
 
 $$ c = f\lambda, \qquad \lambda = \frac{c}{f} $$
 
-빛은 진공에서 $$c \approx 3.00 \times 10^8$$ m/s다.
+말로 읽으면 "속도 = 1초에 오르내리는 횟수 × 물결 하나의 길이"다. 빛은 진공에서 $$c \approx 3.00 \times 10^8$$ m/s다. 예를 들어 2.4 GHz 와이파이 전파의 파장은 $$3 \times 10^8 / (2.4 \times 10^9) = 0.125$$ m, 즉 12.5 cm다[^s6].
 
 </div>
 
@@ -147,4 +149,5 @@ $$ c = f\lambda, \qquad \lambda = \frac{c}{f} $$
 [^s3]: 에이전트 보충. 세기가 진폭의 제곱에 비례한다는 것은 파동 에너지의 표준 결과다. 느끼는 밝기가 세기보다 천천히 는다는 것은 정신물리학의 표준 결과(예: Stevens의 거듭제곱 법칙)다.
 [^s4]: 에이전트 보충. 푸리에 분해와의 연결은 강의 계획표 11~14주차 주제에 비춘 해석이다.
 [^s5]: 에이전트 보충. 자홍색이 스펙트럼에 없는 색(비스펙트럼색)이라는 것은 색채학의 표준 사실이다.
+[^s6]: 에이전트 보충. 와이파이 예는 원본에 없다. 컴퓨터 통신의 [신호와 변조](/Hongs_Blog/studies/computer-communication/signal-and-modulation/) 표와 같은 계산이다.
 {% endraw %}

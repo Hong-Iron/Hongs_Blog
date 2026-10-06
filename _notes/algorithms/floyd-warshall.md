@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Floyd-Warshall", "Floyd–Warshall", "플로이드 워셜", "플로이드", "모든 쌍 최단 경로", "All-Pairs Shortest Paths"]
 description: "모든 도시 쌍 사이의 최단 거리표를 한 번에 채운다. 처음에는 바로 이어진 길만 적고, \"1번 도시를 거쳐도 되면?\", \"1·2번까지 거쳐도 되면?\"처럼 거쳐 갈 도시를 하나씩 늘리며 표를 고친다. 코드는 반복문 세 겹으로 아주 짧지만, 도시 수의 세제곱만큼 걸려 도시가 수백 개일…"
@@ -94,7 +94,7 @@ for k in range(1, n + 1):          # 거쳐 가도 되는 점을 하나씩 늘�
 - 점화식으로 표를 채우는 모양이 [동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/)이다. "거쳐도 되는 점의 범위"가 상태다.
 - 연습: [합승 택시 요금](/Hongs_Blog/studies/algorithms/pg72413/)
 - 활용의 참·거짓 판은 [관계와 그 성질](/Hongs_Blog/studies/discrete-math/relations/)의 와셜 알고리즘이고, 결과는 추이 폐포(이행적 폐포)다. min은 "또는", +는 "그리고"로 바뀌고, 거쳐도 되는 점을 하나씩 늘리는 반복은 그대로다. 처음 표에서 D[i][i]까지 참으로 두면 한 걸음도 안 가는 짝 (i, i)가 모두 들어간다. 그래서 추이 폐포만 얻으려면 간선이 있는 칸만 참으로 둔다.
-- [행렬 곱](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/) $$(AB)_{ij} = \sum_k a_{ik}b_{kj}$$에서 더하기를 min으로, 곱하기를 +로 바꾸면 $$\min_k(D[i][k] + D[k][j])$$, 곧 가운데 점 하나를 거치는 가장 싼 길이 된다. 처음 표 $$D_0$$을 이 곱으로 $$t$$제곱하면 간선 $$t$$개 이하로 가는 최단 거리가 나온다. $$D_0$$의 대각선이 0이라 제자리에 머무는 걸음이 공짜여서, "정확히 $$t$$개"가 아니라 "$$t$$개 이하"다. 인접행렬의 거듭제곱이 길이 $$t$$인 보행의 수를 세는 것([인접행렬 거듭제곱 ↔ 마르코프 전이](/Hongs_Blog/studies/probability-statistics/walks-markov-bridge/))을 비용으로 바꾼 셈이다. 플로이드–워셜은 이 곱을 되풀이하지 않고, 거쳐도 되는 점을 하나씩 늘려 $$O(n^3)$$에 끝낸다.
+- [행렬 곱](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/) $$(AB)_{ij} = \sum_k a_{ik}b_{kj}$$($$\sum$$은 차례로 모두 더한다는 기호)에서 더하기를 min으로, 곱하기를 +로 바꾸면 $$\min_k(D[i][k] + D[k][j])$$, 곧 가운데 점 하나를 거치는 가장 싼 길이 된다. 처음 표 $$D_0$$을 이 곱으로 $$t$$제곱하면 간선 $$t$$개 이하로 가는 최단 거리가 나온다. $$D_0$$의 대각선이 0이라 제자리에 머무는 걸음이 공짜여서, "정확히 $$t$$개"가 아니라 "$$t$$개 이하"다. 인접행렬의 거듭제곱이 길이 $$t$$인 보행의 수를 세는 것([인접행렬 거듭제곱 ↔ 마르코프 전이](/Hongs_Blog/studies/probability-statistics/walks-markov-bridge/))을 비용으로 바꾼 셈이다. 플로이드–워셜은 이 곱을 되풀이하지 않고, 거쳐도 되는 점을 하나씩 늘려 $$O(n^3)$$에 끝낸다.
 - 함께 보면 좋은 수학: [가우스 소거법](/Hongs_Blog/studies/linear-algebra/gaussian-elimination/)(피벗 k를 바깥에 두고 행렬 칸 M[i][j]를 M[i][k], M[k][j]로 고치는 세 겹 반복이 같은 모양이다)
 - 브리지: [추이 폐포 ↔ 플로이드–워셜](/Hongs_Blog/studies/algorithms/warshall-floyd/)
 

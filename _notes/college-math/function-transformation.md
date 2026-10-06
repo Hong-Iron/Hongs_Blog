@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Transformation of Functions", "평행이동", "대칭이동", "확대", "축소", "합성함수", "Composition of Functions", "composite function"]
 description: "그래프를 통째로 옮기고, 늘이고, 뒤집는 조작과, 한 함수의 출력을 다른 함수의 입력으로 넣는 합성이다. 출력 쪽을 바꾸면 그래프가 바꾼 대로 움직이지만, 입력 쪽을 바꾸면 거꾸로 움직이는 것처럼 보인다. 합성은 양말과 신발처럼 순서를 바꾸면 결과가 달라진다."
@@ -64,7 +64,7 @@ $$\left(\frac{x_0}{b} + h,\ \ a\,y_0 + k\right)$$
 
 로 간다[^1]. 가로로는 $$1/\vert b\vert $$배 후 오른쪽으로 $$h$$, 세로로는 $$\vert a\vert $$배 후 위로 $$k$$다. $$b < 0$$이면 $$y$$축 대칭이, $$a < 0$$이면 $$x$$축 대칭이 더해진다.
 
-**합성.** $$f: X \to Y$$, $$g: Y' \to Z$$일 때 $$(g \circ f)(x) = g(f(x))$$다. 정의역은 $$f(x)$$가 $$g$$의 정의역에 드는 $$x$$들, 즉 $$\{x \in X : f(x) \in Y'\}$$이다[^2].
+**합성.** $$f: X \to Y$$, $$g: Y' \to Z$$일 때 $$(g \circ f)(x) = g(f(x))$$다. 정의역은 $$f(x)$$가 $$g$$의 정의역에 드는 $$x$$들, 즉 $$\{x \in X : f(x) \in Y'\}$$($$\in$$은 "~에 속한다")이다[^2].
 
 </div>
 
@@ -74,7 +74,7 @@ $$\left(\frac{x_0}{b} + h,\ \ a\,y_0 + k\right)$$
 $$g\!\left(\frac{x_0}{b} + h\right) = a\,f\!\left(b \cdot \frac{x_0}{b}\right) + k = a\,f(x_0) + k = a\,y_0 + k$$
 
 
-합성은 결합법칙 $$h \circ (g \circ f) = (h \circ g) \circ f$$가 늘 성립한다. 교환법칙 $$g \circ f = f \circ g$$는 위의 예처럼 일반적으로 성립하지 않는다.
+합성은 결합법칙 $$h \circ (g \circ f) = (h \circ g) \circ f$$가 늘 맞는다. 교환법칙 $$g \circ f = f \circ g$$는 위의 예처럼 일반적으로 맞지 않는다.
 
 ## 예제
 
@@ -140,7 +140,7 @@ $$y = -2(x - 1)^2 + 3$$의 그래프를 $$y = x^2$$에서 얻는다.
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C3** f(x) = x + 1, g(x) = x²일 때 f∘g와 g∘f를 각각 식으로 쓰고 x = 2에서의 값을 구하라. 두 값이 다른 이유는?</summary>
 
-**답:** $$(f \circ g)(x) = x^2 + 1$$이고 값은 $$5$$. $$(g \circ f)(x) = (x + 1)^2$$이고 값은 $$9$$. 먼저 제곱하느냐, 먼저 1을 더하느냐가 달라서다. 합성은 교환법칙이 성립하지 않는다.
+**답:** $$(f \circ g)(x) = x^2 + 1$$이고 값은 $$5$$. $$(g \circ f)(x) = (x + 1)^2$$이고 값은 $$9$$. 먼저 제곱하느냐, 먼저 1을 더하느냐가 달라서다. 합성은 교환법칙이 맞지 않는다.
 
 **흔한 오답:** $$f \circ g$$를 "$$f$$를 먼저"로 읽는 것. 오른쪽의 $$g$$가 먼저다.
 

@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Matrix", "행렬", "Matrix-Vector Product", "행렬-벡터 곱", "열 관점", "column picture", "행 관점", "row picture", "연립일차방정식", "system of linear equations", "선형 함수", "linear map", "단위행렬", "identity matrix", "표준 기저", "standard basis"]
 description: "행렬은 숫자를 직사각형으로 늘어놓은 표이자, 벡터를 받아 벡터를 내놓는 기계다. 행렬에 벡터를 곱하면 행렬의 열들을 벡터의 성분만큼씩 섞은 것이 나온다. 같은 계산을 각 행과의 내적으로 볼 수도 있다. 이 한 가지 연산으로 연립방정식, 신경망의 한 층, 그래픽스의 좌표 변환을 모두…"
@@ -52,9 +52,9 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- $$m \times n$$ **행렬** $$A$$는 $$m$$개의 행과 $$n$$개의 열로 늘어놓은 실수 $$a_{ij}$$($$i$$행 $$j$$열)의 표다. $$A \in \mathbb{R}^{m \times n}$$으로 쓰고, $$j$$번째 열을 $$\mathbf{a}_j \in \mathbb{R}^m$$으로 쓴다.
+- $$m \times n$$ **행렬** $$A$$는 $$m$$개의 행과 $$n$$개의 열로 늘어놓은 실수 $$a_{ij}$$($$i$$행 $$j$$열)의 표다. $$A \in \mathbb{R}^{m \times n}$$($$\in$$은 "~에 속한다")으로 쓰고, $$j$$번째 열을 $$\mathbf{a}_j \in \mathbb{R}^m$$으로 쓴다.
 - $$\mathbf{x} \in \mathbb{R}^n$$에 대해 **행렬-벡터 곱**은 $$A\mathbf{x} = x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n \in \mathbb{R}^m$$이다(열들의 선형결합).
-- 성분으로는 $$(A\mathbf{x})_i = \sum_{j=1}^{n} a_{ij}x_j$$, 즉 $$A$$의 $$i$$번째 행과 $$\mathbf{x}$$의 내적이다[^1].
+- 성분으로는 $$(A\mathbf{x})_i = \sum_{j=1}^{n} a_{ij}x_j$$($$\sum$$은 차례로 모두 더한다는 기호), 즉 $$A$$의 $$i$$번째 행과 $$\mathbf{x}$$의 내적이다[^1].
 
 </div>
 
@@ -66,7 +66,7 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">선형 함수는 행렬이다</div>
 
-함수 $$T: \mathbb{R}^n \to \mathbb{R}^m$$이 $$T(c\mathbf{x} + d\mathbf{y}) = cT(\mathbf{x}) + dT(\mathbf{y})$$를 만족하면, $$j$$번째 열이 $$T(\mathbf{e}_j)$$인 행렬 $$A$$에 대해 모든 $$\mathbf{x}$$에서 $$T(\mathbf{x}) = A\mathbf{x}$$이다. 여기서 $$\mathbf{e}_j$$는 $$j$$번째 성분만 1인 표준 기저 벡터다.
+함수 $$T: \mathbb{R}^n \to \mathbb{R}^m$$($$f: A \to B$$는 "$$A$$의 원소를 받아 $$B$$의 원소를 내놓는 함수 $$f$$")이 $$T(c\mathbf{x} + d\mathbf{y}) = cT(\mathbf{x}) + dT(\mathbf{y})$$를 만족하면, $$j$$번째 열이 $$T(\mathbf{e}_j)$$인 행렬 $$A$$에 대해 모든 $$\mathbf{x}$$에서 $$T(\mathbf{x}) = A\mathbf{x}$$이다. 여기서 $$\mathbf{e}_j$$는 $$j$$번째 성분만 1인 표준 기저 벡터다.
 
 </div>
 

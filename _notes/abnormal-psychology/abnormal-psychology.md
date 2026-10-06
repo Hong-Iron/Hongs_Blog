@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Abnormal Psychology", "異常心理學", "유병률", "prevalence", "발병률", "incidence", "위험요인", "risk factor", "역학", "epidemiology", "임상심리학", "정신의학"]
 description: "사람이 겪는 괴로움 가운데 보통과 다른 행동과 마음의 병을 과학의 방법으로 연구하는 심리학 분야다. 이상한 행동을 찾아 기술하고, 왜 생기는지 밝히고, 어떻게 고치고 막을지 연구한다. 다만 정상과 이상 사이에 뚜렷한 선이 없어서, 무엇을 연구 대상으로 삼을지부터가 이 분야의 첫 문제다."
@@ -53,7 +53,7 @@ permalink: "/studies/abnormal-psychology/abnormal-psychology/"
 2. **원인 규명:** 이상행동을 일으키는 심리적·신체적 원인과 그 과정
 3. **치료와 예방:** 치료·예방 방법의 개발과 효과 검증
 
-역학(epidemiology)의 두 비율은 헷갈리기 쉽다[^s2].
+역학(어떤 병이 얼마나, 누구에게 생기는지 세는 연구)의 두 비율은 헷갈리기 쉽다[^s2].
 
 - **유병률**(prevalence): 어느 시점이나 기간에 그 장애를 **가지고 있는** 사람의 비율. 오래 앓는 장애일수록 커진다.
 - **발병률**(incidence): 일정 기간에 **새로 생긴** 사례의 비율. 분모는 기간이 시작될 때 그 장애가 없던 사람이다.

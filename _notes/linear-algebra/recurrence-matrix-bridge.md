@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Recurrence–Matrix Bridge", "동반 행렬", "companion matrix", "피보나치 행렬", "Fibonacci matrix", "전이 행렬 방법", "transfer matrix method", "빠른 피보나치"]
 description: "이산수학에서 피보나치 같은 선형 점화식을 풀 때 쓴 특성방정식은, 점화식을 \"벡터에 행렬을 한 번 곱하는 것\"으로 다시 쓰면 그 행렬의 고윳값 방정식과 똑같다. 그래서 점화식의 일반해는 행렬을 대각화한 결과이고, 수열이 자라는 속도는 가장 큰 고윳값이다. 이 대응 덕분에 아주 먼 …"
@@ -54,7 +54,7 @@ permalink: "/studies/linear-algebra/recurrence-matrix-bridge/"
 | 초기값으로 $$\alpha, \beta$$ 정하기 | $$\mathbf{c} = X^{-1}\mathbf{u}_1$$ | 좌표 바꾸기 |
 | 겹근 $$(\alpha + \beta n)r^n$$ | 대각화되지 않는 행렬(조르당 블록 $$J^n$$에 $$n$$이 나옴) | $$n$$이 곱해지는 이유 |
 
-$$k$$계 점화식도 $$k \times k$$ 동반 행렬로 같은 대응이 성립한다[^1].
+$$k$$계 점화식도 $$k \times k$$ 동반 행렬로 같은 대응이 맞는다[^1].
 
 </details>
 

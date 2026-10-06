@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Logical Equivalence", "논리적 동치", "드모르간 법칙", "De Morgan's laws", "대우", "contrapositive", "역", "converse", "이", "inverse", "분배법칙", "흡수법칙", "정규형", "normal form", "논리합 표준형", "DNF", "논리곱 표준형", "CNF", "충족 가능성", "SAT"]
 description: "모양은 달라도 모든 경우에 참·거짓이 같은 두 식은 사실상 같은 조건이다. 드모르간 법칙, \"이면\"을 \"아니거나\"로 바꾸기, 대우 같은 규칙으로 조건문을 단순하게 바꾸거나 부정을 정확히 쓸 수 있다. 모든 식은 \"그리고들의 또는\"이나 \"또는들의 그리고\"라는 표준 모양으로 바꿀 수 …"
@@ -47,7 +47,7 @@ $$a$$ = 회원, $$b$$ = 정지로 두면 첫째는 $$\neg(a \wedge \neg b)$$, �
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-두 식 $$P$$, $$Q$$가 변수의 **모든** 참·거짓 조합에서 같은 값을 가지면 논리적으로 동치라 하고 $$P \equiv Q$$로 쓴다. $$P \leftrightarrow Q$$가 항진식인 것과 같다[^1].
+두 식 $$P$$, $$Q$$가 변수의 **모든** 참·거짓 조합에서 같은 값을 가지면 논리적으로 동치라 하고 $$P \equiv Q$$(여기서 $$\equiv$$는 "논리적으로 동치")로 쓴다. $$P \leftrightarrow Q$$가 항진식인 것과 같다[^1].
 
 </div>
 
@@ -66,7 +66,7 @@ $$a$$ = 회원, $$b$$ = 정지로 두면 첫째는 $$\neg(a \wedge \neg b)$$, �
 | 대우 | $$p \to q \equiv \neg q \to \neg p$$ |
 | 쌍조건문 | $$p \leftrightarrow q \equiv (p \to q) \wedge (q \to p)$$ |
 
-교환·결합 법칙도 $$\wedge$$, $$\vee$$ 각각에서 성립한다.
+교환·결합 법칙도 $$\wedge$$, $$\vee$$ 각각에서 맞는다.
 
 </div>
 

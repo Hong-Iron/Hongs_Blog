@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Fourier Transform", "푸리에 변환", "역푸리에 변환", "inverse Fourier transform", "스펙트럼", "spectrum", "합성곱", "convolution", "합성곱 정리", "convolution theorem", "변조", "modulation", "sinc 함수", "불확정성 원리", "uncertainty principle", "저역 통과 필터", "low-pass filter"]
 description: "되풀이되지 않는 신호도 모든 주파수의 사인파로 나눌 수 있고, 주파수마다의 세기를 모은 것이 스펙트럼이다. 프리즘이 빛을 색깔별로 펼치는 것과 같다. 가장 큰 장점은, 두 신호를 겹쳐 미끄러뜨리며 곱해 더하는 번거로운 연산(합성곱)이 주파수 쪽에서는 그냥 곱셈이 된다는 것이다. 그…"
@@ -44,7 +44,7 @@ $$\hat f(\xi) = \frac{\sin\pi\xi}{\pi\xi}\quad(\xi = 0\text{에서는 }1)$$
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-실수 전체에서 $$\int\vert f\vert  < \infty$$인 함수 $$f$$의 **푸리에 변환**은
+실수 전체에서 $$\int\vert f\vert  < \infty$$($$\int$$는 넓이를 구하는 적분 기호)인 함수 $$f$$의 **푸리에 변환**은
 
 $$\hat f(\xi) = \int_{-\infty}^{\infty}f(x)\,e^{-2\pi i x\xi}\,dx,$$
 
@@ -105,7 +105,7 @@ $$(f * g)(x) = \int_{-\infty}^{\infty}f(y)\,g(x - y)\,dy$$
 - **이미지 흐림.** 가우스 흐림은 이미지와 가우스 함수의 합성곱이다. 가우스의 변환도 가우스라 높은 주파수(세밀한 무늬)가 부드럽게 줄어든다.
 - **빠른 합성곱.** 길이 $$n$$ 수열의 합성곱을 직접 계산하면 $$O(n^2)$$이지만, [FFT](/Hongs_Blog/studies/linear-algebra/dft/)로 변환해 곱하고 되돌리면 $$O(n\log n)$$이다.
 - **CNN.** 합성곱 신경망의 합성곱 층은 필터를 뒤집지 않고 밀며 곱해 더한다(상호상관). 이름은 합성곱이지만, 필터를 학습하므로 뒤집었는지는 결과에 영향이 없다[^2].
-- **불확정성.** 신호의 퍼진 정도 $$\Delta x$$와 스펙트럼의 퍼진 정도 $$\Delta\xi$$(각각 $$\vert f\vert ^2$$, $$\vert \hat f\vert ^2$$의 표준편차) 사이에 $$\Delta x\,\Delta\xi \ge \frac{1}{4\pi}$$가 성립하고, 가우스 함수에서 등호다[^1]. 짧은 펄스로 빠르게 보내려면 넓은 대역이 필요하다는 통신의 기본 제약이다.
+- **불확정성.** 신호의 퍼진 정도 $$\Delta x$$와 스펙트럼의 퍼진 정도 $$\Delta\xi$$(각각 $$\vert f\vert ^2$$, $$\vert \hat f\vert ^2$$의 표준편차) 사이에 $$\Delta x\,\Delta\xi \ge \frac{1}{4\pi}$$가 맞고, 가우스 함수에서 등호다[^1]. 짧은 펄스로 빠르게 보내려면 넓은 대역이 필요하다는 통신의 기본 제약이다.
 
 ## 연결
 

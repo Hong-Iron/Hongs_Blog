@@ -9,10 +9,10 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Graph", "그래프", "정점", "vertex", "꼭짓점", "간선", "edge", "차수", "degree", "악수 정리", "handshake lemma", "인접행렬", "adjacency matrix", "인접 리스트", "adjacency list", "방향 그래프", "directed graph", "단순 그래프", "simple graph", "완전 그래프", "complete graph"]
-description: "지하철 노선도는 실제 거리와 모양을 버리고 \"어느 역이 어느 역과 이어져 있나\"만 남긴다. 그래프는 이렇게 대상을 점(정점)으로, 관계를 선(간선)으로 추상화한 것이다. 친구 관계, 웹 링크, 도로망, 회로, 의존성처럼 모양이 전혀 다른 문제를 같은 언어와 같은 알고리즘으로 다룬다…"
+description: "지하철 노선도는 실제 거리와 모양을 버리고 \"어느 역이 어느 역과 이어져 있나\"만 남긴다. 그래프도 이렇게 대상은 점(정점)으로, 관계는 선(간선)으로만 그린 그림이다. 친구 관계, 웹 링크, 도로망, 회로, 의존성처럼 모양이 전혀 다른 문제를 같은 언어와 같은 알고리즘으로 다룬다…"
 prev_url: "/studies/discrete-math/rsa/"
 prev_title: "RSA 암호"
 next_url: "/studies/discrete-math/connectivity/"
@@ -26,7 +26,7 @@ permalink: "/studies/discrete-math/graph-basics/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-지하철 노선도는 실제 거리와 모양을 버리고 "어느 역이 어느 역과 이어져 있나"만 남긴다. 그래프는 이렇게 대상을 점(정점)으로, 관계를 선(간선)으로 추상화한 것이다. 친구 관계, 웹 링크, 도로망, 회로, 의존성처럼 모양이 전혀 다른 문제를 같은 언어와 같은 알고리즘으로 다룬다. 대신 방향, 무게, 같은 쌍 사이의 여러 선처럼 무엇을 버리고 남길지는 모델을 만드는 사람이 정해야 하고, 그 선택이 답을 바꾼다.
+지하철 노선도는 실제 거리와 모양을 버리고 "어느 역이 어느 역과 이어져 있나"만 남긴다. 그래프도 이렇게 대상은 점(정점)으로, 관계는 선(간선)으로만 그린 그림이다. 친구 관계, 웹 링크, 도로망, 회로, 의존성처럼 모양이 전혀 다른 문제를 같은 언어와 같은 알고리즘으로 다룬다. 대신 방향, 무게, 같은 쌍 사이의 여러 선처럼 무엇을 버리고 남길지는 모델을 만드는 사람이 정해야 하고, 그 선택이 답을 바꾼다.
 
 </div>
 
@@ -49,7 +49,7 @@ A ─── B
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **(단순) 그래프** $$G = (V, E)$$: 정점의 유한 집합 $$V$$와, 서로 다른 두 정점으로 이루어진 쌍 $$\{u, v\}$$들의 집합 $$E$$. $$\{u, v\} \in E$$이면 $$u$$와 $$v$$가 **인접**한다고 한다.
+- **(단순) 그래프** $$G = (V, E)$$: 정점의 유한 집합 $$V$$와, 서로 다른 두 정점으로 이루어진 쌍 $$\{u, v\}$$들의 집합 $$E$$. $$\{u, v\} \in E$$($$\in$$은 "~에 속한다")이면 $$u$$와 $$v$$가 **인접**한다고 한다.
 - **방향 그래프**: $$E \subseteq V \times V$$로, 간선이 순서쌍 $$(u, v)$$(화살표 $$u \to v$$)다.
 - **차수** $$\deg(v)$$: $$v$$에 닿은 간선의 수. 방향 그래프에서는 들어오는 간선 수(진입 차수)와 나가는 간선 수(진출 차수)를 따로 센다.
 - 정점 수 $$n = \vert V\vert $$, 간선 수 $$m = \vert E\vert $$로 쓴다[^1].
@@ -68,7 +68,7 @@ A ─── B
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">악수 정리</div>
 
-모든 그래프에서 $$\sum_{v \in V}\deg(v) = 2m$$. 그래서 차수가 홀수인 정점의 수는 짝수다. 방향 그래프에서는 진입 차수의 합 = 진출 차수의 합 = $$m$$.
+모든 그래프에서 $$\sum_{v \in V}\deg(v) = 2m$$($$\sum$$은 차례로 모두 더한다는 기호). 그래서 차수가 홀수인 정점의 수는 짝수다. 방향 그래프에서는 진입 차수의 합 = 진출 차수의 합 = $$m$$.
 
 </div>
 
@@ -91,7 +91,7 @@ A ─── B
 ### 스스로 설명해 보기
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">1. 3단계에서 "끝점이 정확히 둘"이 성립하려면 정의의 어느 부분이 필요한가?</summary>
+<summary class="callout-title" markdown="span">1. 3단계에서 "끝점이 정확히 둘"이 맞으려면 정의의 어느 부분이 필요한가?</summary>
 
 간선이 서로 다른 두 정점의 집합이라는 부분이다. 고리(자기 자신과 이어진 간선)를 허용하면 그 간선은 차수를 2 올리는 것으로 약속해야 정리가 유지된다.
 

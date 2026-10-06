@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 선형 점화식의 특성방정식."
 prev_url: "/studies/discrete-math/counting-ladder/"
@@ -28,7 +28,7 @@ permalink: "/studies/discrete-math/recurrence-ladder/"
 
 1. *점화식 정리:* 계수, 차수, 동차인지, 초기값을 적는다.
 2. *특성방정식과 근:* $$x^k = c_1 x^{k-1} + \cdots$$을 풀고, 겹근인지 본다.
-3. *일반해:* 서로 다른 근이면 $$\sum \alpha_i r_i^n$$, 겹근이면 $$(\alpha + \beta n)r^n$$.
+3. *일반해:* 서로 다른 근이면 $$\sum \alpha_i r_i^n$$($$\sum$$은 차례로 모두 더한다는 기호), 겹근이면 $$(\alpha + \beta n)r^n$$.
 4. *상수 결정:* 초기값을 넣어 연립방정식을 푼다.
 5. *검산:* 점화식으로 한두 항을 더 계산해 닫힌 꼴과 비교한다.
 

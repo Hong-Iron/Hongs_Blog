@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Tree DP", "트리 동적 계획법", "트리에서의 DP", "최대 독립 집합", "후위 순서 계산"]
 description: "회사 조직도에서 팀장이 팀원들의 보고를 다 받은 뒤 자기 보고서를 쓰듯, 자식들의 답이 다 나오면 그것으로 부모의 답을 만든다. 잎에서 시작해 뿌리까지 올라가며 칸마다 한 번씩만 계산한다. 보통 \"이 칸을 골랐을 때\"와 \"안 골랐을 때\"처럼 칸마다 답을 두세 개 들고 다닌다. 나무…"
@@ -63,6 +63,7 @@ permalink: "/studies/algorithms/tree-dp/"
 
 $$\text{안}(v) = \sum_{c \in C(v)} \max(\text{안}(c), \text{고}(c)), \qquad \text{고}(v) = w(v) + \sum_{c \in C(v)} \text{안}(c).$$
 
+안(v)는 v를 고르지 않을 때, 고(v)는 v를 고를 때 v 아래 나무에서 얻는 가장 큰 합이다. v를 고르면 이웃인 자식은 고를 수 없어서 고(v)에는 자식의 안(c)만 더한다. v를 고르지 않으면 자식마다 더 큰 쪽을 고른다.<br>
 잎이면 안(v) = 0, 고(v) = w(v)다. 답은 max(안(뿌리), 고(뿌리))다.
 
 </div>

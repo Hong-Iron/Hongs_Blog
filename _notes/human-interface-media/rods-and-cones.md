@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Rods", "Cones", "간상세포", "추상세포", "간상체", "추상체", "시세포", "photoreceptor", "야간 시각", "색 시각", "L 추상체", "M 추상체", "S 추상체", "시세포의 분포"]
 description: "망막의 시세포는 두 팀이다. 간상체는 어두운 곳에서 일하는 고감도 흑백 카메라, 추상체는 밝은 곳에서 일하는 컬러 카메라다. 간상체가 훨씬 많고 약한 빛에 민감하지만 색을 구별하지 못한다. 추상체는 색을 보지만 빛이 충분해야 일한다. 추상체는 시선의 중심(중심와)에 몰려 있고 간상…"
@@ -49,8 +49,8 @@ permalink: "/studies/human-interface-media/rods-and-cones/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **간상체**(rods, 간상세포): 망막에 약 1억 2천만 개. 약한 빛에 추상체보다 약 1,000배 민감하다. 야간 시각(night vision)을 맡는다[^2].
-- **추상체**(cones, 추상세포): 망막에 약 600만~700만 개. 빛의 파장에 따라 다르게 반응한다. 색 시각(color vision)을 맡는다[^2].
+- **간상체**(rods): 망막에 약 1억 2천만 개. 약한 빛에 추상체보다 약 1,000배 민감하다. 어두울 때 보는 일(야간 시각)을 맡는다[^2].
+- **추상체**(cones): 망막에 약 600만~700만 개. 빛의 파장에 따라 다르게 반응한다. 색을 구별하는 일(색 시각)을 맡는다[^2].
 
 </div>
 

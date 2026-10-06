@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 기댓값과 선형성(근본 다리), 지시 확률변수."
 prev_url: "/studies/probability-statistics/bayes-ladder/"
@@ -28,7 +28,7 @@ permalink: "/studies/probability-statistics/expectation-ladder/"
 
 1. *지시 확률변수로 쪼개기:* 세는 양 $$X$$를 $$I_1 + \cdots + I_m$$으로 쓴다. 각 $$I_j$$는 "$$j$$번째 후보가 조건을 만족하면 1".
 2. *조각 하나의 확률:* $$\mathbb{E}[I_j] = P(\text{후보 } j\text{가 조건을 만족})$$을 구한다. 대칭이면 모든 $$j$$에서 같다.
-3. *선형성으로 더하기:* $$\mathbb{E}[X] = \sum_j P(\cdots)$$.
+3. *선형성으로 더하기:* $$\mathbb{E}[X] = \sum_j P(\cdots)$$($$\sum$$은 차례로 모두 더한다는 기호).
 4. *검산:* 가장 작은 경우를 전부 세어 보거나, 값이 상식적인 범위인지 본다.
 
 ## 문제 1 · 완전한 풀이
@@ -52,7 +52,7 @@ $$n$$명이 모자를 맡겼다가 무작위로 돌려받는다. 자기 모자�
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-가능한 결과 $$2^{10} = 1024$$개의 HH 자리 수를 모두 더하면 2,304이고, $$\frac{2304}{1024} = 2.25$$로 맞는다. 자리가 9개이고 각각 $$\frac14$$의 확률이니 2~3개라는 값도 상식적이다. 이웃한 조각이 얽혀 있어도 선형성이 성립한다는 확인이다.
+가능한 결과 $$2^{10} = 1024$$개의 HH 자리 수를 모두 더하면 2,304이고, $$\frac{2304}{1024} = 2.25$$로 맞는다. 자리가 9개이고 각각 $$\frac14$$의 확률이니 2~3개라는 값도 상식적이다. 이웃한 조각이 얽혀 있어도 선형성이 맞는다는 확인이다.
 
 </details>
 
@@ -63,7 +63,7 @@ $$n$$명이 모자를 맡겼다가 무작위로 돌려받는다. 자기 모자�
 
 1. *쪼개기:* ______
 2. *하나의 확률:* ______
-3. *더하기:* $$\binom{23}{2} \cdot \frac{1}{365} = \frac{253}{365} \approx 0.693$$.
+3. *더하기:* $$\binom{23}{2} \cdot \frac{1}{365} = \frac{253}{365} \approx 0.693$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수).
 4. *검산:* 기댓값이 1보다 작은데도 "적어도 한 쌍"의 확률은 0.507이다. 쌍이 생기면 여럿이 함께 생기는 경우가 있어 둘이 모순되지 않는다.
 
 <details class="callout callout-answer" markdown="1">

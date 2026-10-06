@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Heap", "Priority Queue", "Binary Heap", "힙", "우선순위 큐", "최소 힙", "최대 힙", "heapq", "heappush", "heappop", "heapify"]
 description: "응급실은 온 순서가 아니라 가장 급한 환자부터 부른다. 이렇게 \"가장 작은(급한) 것부터 꺼내는 줄\"이 우선순위 큐이고, 힙은 그것을 빠르게 만드는 방법이다. 넣기와 가장 작은 것 꺼내기가 모두 빠르다. 원소가 100만 개여도 스무 번이 안 되게 자리를 바꾸면 끝난다. 대신 가장 …"
@@ -92,7 +92,7 @@ permalink: "/studies/algorithms/heap/"
 
 - 선수: [리스트와 문자열](/Hongs_Blog/studies/algorithms/list-string/), [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/)
 - 대조: [큐](/Hongs_Blog/studies/algorithms/queue-deque/)는 먼저 넣은 것을, 힙은 가장 작은 것을 먼저 꺼낸다.
-- 층수 $$\lfloor \log_2 n \rfloor + 1$$은 [등비급수](/Hongs_Blog/studies/college-math/geometric-series/)에서 나온다. k층을 꽉 채우면 $$1 + 2 + \cdots + 2^{k-1} = 2^k - 1$$칸이라, 층이 L개인 힙의 칸 수 n은 $$2^{L-1} \le n < 2^L$$이다. 거꾸로 칸 n개인 이진 트리는 어떻게 만들어도 높이(간선 수)가 $$\lfloor \log_2 n \rfloor$$ 이상, 곧 층이 $$\lfloor \log_2 n \rfloor + 1$$개 이상이다([트리](/Hongs_Blog/studies/discrete-math/trees/)). 힙은 위층부터 빈틈없이 채워 이 가장 적은 층수를 지킨다.
+- 층수 $$\lfloor \log_2 n \rfloor + 1$$($$\lfloor\ \rfloor$$는 소수점 아래를 버린 정수)은 [등비급수](/Hongs_Blog/studies/college-math/geometric-series/)에서 나온다. k층을 꽉 채우면 $$1 + 2 + \cdots + 2^{k-1} = 2^k - 1$$칸이라, 층이 L개인 힙의 칸 수 n은 $$2^{L-1} \le n < 2^L$$이다. 거꾸로 칸 n개인 이진 트리는 어떻게 만들어도 높이(간선 수)가 $$\lfloor \log_2 n \rfloor$$ 이상, 곧 층이 $$\lfloor \log_2 n \rfloor + 1$$개 이상이다([트리](/Hongs_Blog/studies/discrete-math/trees/)). 힙은 위층부터 빈틈없이 채워 이 가장 적은 층수를 지킨다.
 - 모든 칸 번호에 1을 더해 2진수로 보면, 왼쪽 자식은 끝에 0을, 오른쪽 자식은 끝에 1을 붙인 수이고 부모는 끝자리를 뗀 수다. 그래서 n칸 힙의 층수는 n의 2진 자릿수와 같다([진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/)).
 - `heapify`는 맨 아래 부모 칸부터 맨 위 칸까지 거꾸로 돌며 칸마다 내리기를 한다. 높이 $$h$$(잎은 0)인 칸은 대략 $$n/2^{h+1}$$개이고 각자 많아야 $$h$$층 내려가므로, 총비용은 대략 $$n\left(\frac14 + \frac28 + \frac{3}{16} + \cdots\right)$$이다. 이 급수는 [급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/)의 비 판정으로 수렴하니 비용은 n의 상수배다. 급수의 합은 정확히 1이고, 이 합 계산은 [합의 계산과 어림](/Hongs_Blog/studies/discrete-math/sums-asymptotics/)의 힙 만들기 항목에 있다.
 - 함께 보면 좋은 수학: [로그](/Hongs_Blog/studies/college-math/logarithm/)(100만 개가 20층인 것은 $$\log_2 10^6 \approx 19.93$$이기 때문이다), [엔트로피](/Hongs_Blog/studies/probability-statistics/entropy/)(허프만 부호는 확률이 가장 작은 두 묶음을 힙에서 꺼내 합친 뒤 다시 넣기를 되풀이해 만든다)

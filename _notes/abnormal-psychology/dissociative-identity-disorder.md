@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Dissociative Identity Disorder", "DID", "다중인격장애", "다중성격장애", "multiple personality disorder", "주 인격", "host personality", "대체 인격", "alternate personalities", "외상 모델", "trauma model", "4요인 모델", "four factor model", "신해리이론", "neo-dissociation theory", "집행적 자아", "executive ego"]
 description: "한 사람 안에 서로 다른 둘 이상의 인격이 번갈아 나타나고, 한 인격일 때의 일을 다른 인격은 기억하지 못하는 장애다. 예전에는 다중인격장애라고 불렀다. 어린 시절 견딜 수 없는 학대를 \"그건 내가 아니라 다른 아이에게 일어난 일\"로 떼어 내던 생존 방식이 굳어진 것으로 본다. 만…"
@@ -60,7 +60,7 @@ D가 있는 이유는 종교 의식이나 문화적 관습 속 빙의 체험을 
 ### 임상적 특징[^2][^3]
 
 - 2~10개 이상의 인격이 발달한다. 이를 하위 성격(subpersonalities) 또는 대체 성격(alternate personalities)이라 한다.
-    - 주 인격(primary personality, host personality)이 다른 인격보다 자주 나타난다.
+    - 주 인격(host personality)이 다른 인격보다 자주 나타난다.
     - 다른 인격으로 바뀔 때 갑작스럽고 극적이다.
     - 자신의 말과 행동을 관찰자처럼 바라보는 것 같다고 보고한다.
     - 평소와 다른 느낌: 아이가 된 것 같은, 반대 성이 된 것 같은, 거대하고 근육질의 몸이 된 것 같은 느낌.
@@ -99,7 +99,7 @@ flowchart LR
 
 ### 3. 신해리이론(neo-dissociation theory)[^6]
 
-마음은 여러 개의 인지체계로 나뉘어 있고, 각 체계는 자기 입력과 출력을 가진다. 그 위에서 **집행적 자아**(executive ego, 중앙통제장치)가 이 체계들을 통합하고 통제한다. 해리는 집행적 자아와 인지체계 사이가 세로로 갈라지는 수직분할이다. 한 인지체계가 집행적 자아의 통제에서 떨어져 나가 따로 작동하면, 그 체계의 경험은 의식에 통합되지 않는다[^s4].
+마음은 여러 개의 인지체계로 나뉘어 있고, 각 체계는 자기 입력과 출력을 가진다. 그 위에서 **집행적 자아**(중앙통제장치)가 이 체계들을 통합하고 통제한다. 해리는 집행적 자아와 인지체계 사이가 세로로 갈라지는 수직분할이다. 한 인지체계가 집행적 자아의 통제에서 떨어져 나가 따로 작동하면, 그 체계의 경험은 의식에 통합되지 않는다[^s4].
 
 ```
             ┌─────────────────┐

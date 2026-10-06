@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Euler's Formula", "Polar Form of Complex Numbers", "오일러 공식", "극형식", "편각", "argument", "arg", "드무아브르 공식", "De Moivre's theorem", "1의 거듭제곱근", "roots of unity", "오일러 항등식", "Euler's identity"]
 description: "복소수를 (원점까지의 거리, 방향각)으로 적으면, 곱셈이 \"거리끼리 곱하고 각끼리 더하기\"가 된다. 즉 복소수를 곱하는 것은 평면에서 늘리고 돌리는 것이다. 오일러 공식은 이 회전을 지수함수 모양으로 적어, 삼각함수의 덧셈정리를 지수법칙 하나로 대신하게 한다. 다만 허수 지수는 \"…"
@@ -60,14 +60,14 @@ $$z = r(\cos\theta + i\sin\theta)$$
 
 1. **곱과 몫:** $$z_1 = r_1 e^{i\theta_1}$$, $$z_2 = r_2 e^{i\theta_2}$$이면 $$z_1 z_2 = r_1 r_2\, e^{i(\theta_1 + \theta_2)}$$, $$\ \dfrac{z_1}{z_2} = \dfrac{r_1}{r_2}\,e^{i(\theta_1 - \theta_2)}$$ ($$z_2 \ne 0$$)
 2. **드무아브르:** 정수 $$n$$에 대해 $$(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta$$
-3. **1의 $$n$$제곱근:** $$z^n = 1$$의 해는 $$\omega_k = e^{2\pi i k/n}$$ ($$k = 0, 1, \dots, n - 1$$) $$n$$개이고, $$n \ge 2$$이면 $$\sum_{k=0}^{n-1}\omega_k = 0$$
+3. **1의 $$n$$제곱근:** $$z^n = 1$$의 해는 $$\omega_k = e^{2\pi i k/n}$$ ($$k = 0, 1, \dots, n - 1$$) $$n$$개이고, $$n \ge 2$$이면 $$\sum_{k=0}^{n-1}\omega_k = 0$$($$\sum$$은 차례로 모두 더한다는 기호)
 4. $$\cos\theta = \dfrac{e^{i\theta} + e^{-i\theta}}{2}$$, $$\ \sin\theta = \dfrac{e^{i\theta} - e^{-i\theta}}{2i}$$. 특히 $$e^{i\pi} + 1 = 0$$.
 
 </div>
 
 
 **가정과 그 필요성.**
-- 드무아브르는 **정수** $$n$$에서만 성립한다. $$1 = e^{i \cdot 0} = e^{i \cdot 2\pi}$$인데 둘 다 $$\frac12$$제곱하면 $$e^{0} = 1$$과 $$e^{i\pi} = -1$$로 갈린다. 분수 지수에서는 편각을 어떻게 적느냐에 따라 답이 달라진다.
+- 드무아브르는 **정수** $$n$$에서만 맞는다. $$1 = e^{i \cdot 0} = e^{i \cdot 2\pi}$$인데 둘 다 $$\frac12$$제곱하면 $$e^{0} = 1$$과 $$e^{i\pi} = -1$$로 갈린다. 분수 지수에서는 편각을 어떻게 적느냐에 따라 답이 달라진다.
 - "편각은 더해진다"는 **$$2\pi$$의 배수를 무시할 때만** 맞다. 주값끼리 더하면 범위를 벗어날 수 있다. $$\arg(-1) = \pi$$인데 $$(-1)(-1) = 1$$의 주값은 $$0$$이지 $$2\pi$$가 아니다.
 - 1의 제곱근의 합이 0이려면 $$n \ge 2$$여야 한다. $$n = 1$$이면 근은 1 하나라 합이 1이다.
 

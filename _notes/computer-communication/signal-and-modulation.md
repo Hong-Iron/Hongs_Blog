@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Modulation", "변조", "모듈레이션", "복조", "demodulation", "모뎀", "modem", "신호", "signal", "신호화", "인코딩", "encoding", "전자기 스펙트럼", "electromagnetic spectrum", "아날로그 신호", "analog signal", "디지털 신호", "digital signal"]
 description: "링크 위를 지나가는 것은 0과 1이 아니라 전기, 빛, 전파 같은 물리 신호다. 그래서 보내는 쪽은 데이터를 신호로 바꾸고(변조), 받는 쪽은 신호를 데이터로 되돌린다(복조). 이 둘을 하는 장치가 모뎀이다. 낮은 주파수는 장애물을 잘 지나가지만 빠른 전송에는 한계가 있어서, 통신…"
@@ -35,7 +35,7 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 
 데이터는 링크를 통해 논리적으로는 0과 1이지만, 물리적으로는 신호다[^1]. 라디오 방송국이 목소리를 전파의 흔들림에 실어 보내고, 라디오가 그 흔들림에서 목소리를 되살리는 것과 같다.
 
-신호는 전자기파의 파동이다. 슬라이드 그림의 파동에서 위아래로 흔들리는 높이가 진폭(amplitude)이고, 한 번 흔들리는 거리가 파장(wavelength)이다. 1초에 몇 번 흔들리는지가 주파수(Hz)다[^2]. 주파수와 파장은 반비례해서, 공기 중에서 주파수 × 파장 $$= 3.0 \times 10^8$$ m/s다[^s1].
+신호는 전자기파의 파동이다. 슬라이드 그림의 파동에서 위아래로 흔들리는 높이가 진폭이고, 한 번 흔들리는 거리가 파장이다. 1초에 몇 번 흔들리는지가 주파수(Hz)다[^2]. 주파수와 파장은 반비례해서, 공기 중에서 주파수 × 파장 $$= 3.0 \times 10^8$$ m/s다[^s1].
 
 | 쓰임 (슬라이드 스펙트럼) | 주파수 | 파장 |
 |---|---|---|
@@ -44,7 +44,7 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 | 와이파이 (2.4 GHz) | $$2.4 \times 10^9$$ Hz | 12.5 cm |
 | 광케이블 | $$10^{14} \sim 10^{15}$$ Hz | 약 1 μm 안팎 |
 
-라디오의 목소리를 데이터로, 전파를 신호로 옮긴다. 라디오와 달리 데이터 통신의 모뎀은 보내기와 받기를 모두 한다.
+라디오 비유에서 목소리가 데이터, 전파가 신호다. 라디오와 달리 데이터 통신의 모뎀은 보내기와 받기를 모두 한다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표의 파장, 카드 C3 — [31_signal-and-modulation_verify.py](/Hongs_Blog/studies/computer-communication/code/31_signal-and-modulation_verify/)</div>
@@ -58,9 +58,9 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 데이터를 링크, 즉 물리적 매체를 통해 전달하려면 신호로 바꿔야 한다[^2].
-- **변조**(인코딩, modulation): 데이터 → 신호
-- **복조**(demodulation): 신호 → 데이터. 받는 쪽이 하는 반대 작업이다.
-- **모뎀**(modem): **mo**dulation과 **dem**odulation을 하는 장치.
+- **변조**(인코딩): 데이터 → 신호
+- **복조**: 신호 → 데이터. 받는 쪽이 하는 반대 작업이다.
+- **모뎀**: 변조(**mo**dulation)와 복조(**dem**odulation)를 하는 장치. 이름도 두 영어 낱말의 앞부분을 붙인 것이다.
 
 </div>
 
@@ -69,9 +69,9 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 
 | 주파수 대역 (Hz) | 이름 | 쓰는 매체와 용도 |
 |---|---|---|
-| $$10^4 \sim 10^8$$ | 라디오파 (Radio) | 동축 케이블(coax), AM, FM, TV |
-| $$10^8 \sim 10^{11}$$ | 마이크로파 (Microwave) | TV, 위성(satellite), 지상 마이크로파(terrestrial microwave) |
-| $$10^{11} \sim 10^{15}$$ | 적외선 (Infrared) | 광케이블(fiber optics, $$10^{14} \sim 10^{15}$$ 부근) |
+| $$10^4 \sim 10^8$$ | 라디오파 (Radio) | 동축 케이블, AM, FM, TV |
+| $$10^8 \sim 10^{11}$$ | 마이크로파 (Microwave) | TV, 위성, 지상 마이크로파 |
+| $$10^{11} \sim 10^{15}$$ | 적외선 (Infrared) | 광케이블($$10^{14} \sim 10^{15}$$ 부근) |
 | $$10^{15}$$ 이상 | 자외선, X선, 감마선 | 통신에 쓰지 않음 |
 
 대역의 경계는 대략값이다[^3].

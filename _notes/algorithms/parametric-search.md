@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Parametric Search", "Binary Search on Answer", "결정 문제", "답 이분 탐색", "이분 탐색으로 답 찾기"]
 description: "\"가장 길게 자르면 몇 cm?\"처럼 가장 좋은 값을 바로 구하기 어려우면, \"7cm로 자르면 되나?\"라는 예·아니오 질문으로 바꿔 묻는다. 길이를 늘리면 대답이 \"된다, 된다, …, 안 된다, 안 된다\"처럼 딱 한 번만 바뀌니, 바뀌는 경계를 이분 탐색으로 찾는다. 답이 1부터 1…"
@@ -111,7 +111,7 @@ def max_true(lo, hi, ok):          # 참…참 거짓…거짓, ok(lo)는 참
 </details>
 
 
-판정 횟수는 범위 크기가 $$m = hi - lo + 1$$일 때 많아야 $$\lceil \log_2 m \rceil$$번이다. 한 바퀴마다 범위가 절반 이하로 줄기 때문이다. 판정 한 번에 $$O(T)$$가 들면 전체는 $$O(T \log m)$$이다.
+판정 횟수는 범위 크기가 $$m = hi - lo + 1$$일 때 많아야 $$\lceil \log_2 m \rceil$$($$\lceil\ \rceil$$는 소수점 아래를 올린 정수)번이다. 한 바퀴마다 범위가 절반 이하로 줄기 때문이다. 판정 한 번에 $$O(T)$$가 들면 전체는 $$O(T \log m)$$이다.
 
 ### 스스로 설명해 보기
 

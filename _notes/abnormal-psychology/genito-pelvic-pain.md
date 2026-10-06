@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Genito-Pelvic Pain/Penetration Disorder", "GPPPD", "성기-골반 통증/삽입장애", "성교통", "dyspareunia", "질경련", "vaginismus"]
 description: "삽입할 때 아프거나, 아플까 봐 몹시 두렵거나, 삽입하려 하면 골반 근육이 저절로 조여서 삽입이 어려운 상태가 반년 넘게 이어지는 장애다. 통증, 통증에 대한 두려움, 근육의 긴장이 서로를 키우는 공포 반응과 비슷하다. 성적 관심이 있어도 상황을 피하고, 부인과 검진까지 피하기도 …"
@@ -51,7 +51,8 @@ A. 다음 가운데 하나 이상의 어려움이 지속되거나 재발한다.
 4. 질 내 삽입 시도 동안 골반기저근의 현저한 긴장이나 수축
 
 B. 최소 약 6개월 이상.<br>
-C. 본인에게 임상적으로 현저한 고통이 생긴다.
+C. 본인에게 임상적으로 현저한 고통이 생긴다.<br>
+   — 치료가 필요할 만큼 뚜렷하게 괴롭다.
 
 </div>
 

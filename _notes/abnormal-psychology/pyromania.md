@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Pyromania", "방화광", "방화벽", "방화 행동", "fire-setting"]
 description: "불 자체에 매혹되어, 불을 지르기 전의 긴장을 풀고 불을 볼 때의 기쁨을 얻으려고 일부러 여러 번 불을 지르는 장애다. 보험금, 복수, 범죄 은폐, 정치적 주장 같은 다른 목적이 있는 방화는 여기에 들지 않는다. 망상이나 판단력 저하로 설명되는 경우도 제외한다. 방화 행동 자체는 …"
@@ -106,6 +106,6 @@ permalink: "/studies/abnormal-psychology/pyromania/"
 [^4]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.35
 [^5]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.36
 [^s1]: 에이전트 보충. JB의 사례는 진단기준을 보이려고 만든 가상 사례다.
-[^s2]: 에이전트 보충. DSM-5-TR 병적 방화 기준 A의 원문 "on more than one occasion"을 근거로 했다. 국내 번역에서 "1회 이상"으로 옮긴 경우가 있어 생긴 차이로 보인다[확인필요].
+[^s2]: 에이전트 보충. DSM-5 병적 방화 기준 A의 원문은 "Deliberate and purposeful fire setting on more than one occasion"이다(*American Journal of Psychiatry Residents' Journal*, 2016, "Fire Setting and the Impulse-Control Disorder of Pyromania" 등에서 인용). "more than one"은 "2회 이상"이다. 슬라이드의 "1회 이상"이 어디서 왔는지는 확인하지 못했다.
 [^s3]: 에이전트 보충. DSM-5-TR 병적 방화 기준 F(품행장애, 조증 삽화, 반사회성 성격장애로 더 잘 설명되지 않음)를 보탰다.
 {% endraw %}

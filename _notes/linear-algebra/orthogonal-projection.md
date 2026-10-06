@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Orthogonal Projection", "직교 사영", "정사영", "사영", "projection", "사영 행렬", "projection matrix", "직교 여공간", "orthogonal complement", "정규방정식", "normal equations", "오차 벡터", "error vector"]
 description: "점에서 평면까지 가장 가까운 곳은 평면에 수직으로 내린 발이다. 벡터를 어떤 부분공간에 직교 사영한다는 것은 이 \"수직으로 내린 발\"을 찾는 것이고, 남는 오차는 부분공간 전체와 수직이다. 이 수직 조건 하나에서 계산 공식(정규방정식)이 나오며, 풀 수 없는 방정식에 대한 최선의 …"
@@ -45,12 +45,12 @@ $$\mathbf{a}\cdot(\mathbf{b} - \hat{x}\mathbf{a}) = 0 \implies \hat{x} = \frac{\
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 - 두 부분공간 $$V, W$$의 모든 벡터가 서로 수직이면 $$V$$와 $$W$$는 **직교**한다. $$V$$와 수직인 모든 벡터의 집합을 **직교 여공간** $$V^\perp$$라 한다.
-- $$\mathbf{b}$$를 부분공간 $$V$$에 **직교 사영**한 $$\mathbf{p}$$는 $$\mathbf{p} \in V$$이고 $$\mathbf{b} - \mathbf{p} \perp V$$인 벡터다[^1].
+- $$\mathbf{b}$$를 부분공간 $$V$$에 **직교 사영**한 $$\mathbf{p}$$는 $$\mathbf{p} \in V$$($$\in$$은 "~에 속한다")이고 $$\mathbf{b} - \mathbf{p} \perp V$$인 벡터다[^1].
 
 </div>
 
 
-[네 부분공간](/Hongs_Blog/studies/linear-algebra/four-subspaces/)은 서로 직교 여공간이다. $$N(A) = C(A^\top)^\perp$$, $$N(A^\top) = C(A)^\perp$$이고, 차원이 $$r + (n - r) = n$$으로 맞아 $$\mathbb{R}^n$$을 빠짐없이 나눈다.
+[네 부분공간](/Hongs_Blog/studies/linear-algebra/four-subspaces/)은 서로 직교 여공간이다. $$N(A) = C(A^\top)^\perp$$, $$N(A^\top) = C(A)^\perp$$이고, 차원이 $$r + (n - r) = n$$으로 맞아 $$\mathbb{R}^n$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체)을 빠짐없이 나눈다.
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">부분공간으로의 사영</div>
@@ -59,7 +59,7 @@ $$A$$($$m \times n$$)의 열이 독립이면 $$A^\top A$$는 가역이고, $$\ma
 
 $$\hat{\mathbf{x}} = (A^\top A)^{-1}A^\top\mathbf{b}, \qquad \mathbf{p} = A\hat{\mathbf{x}} = P\mathbf{b}, \qquad P = A(A^\top A)^{-1}A^\top.$$
 
-사영 행렬 $$P$$는 $$P^2 = P$$, $$P^\top = P$$를 만족한다. 그리고 $$\mathbf{p}$$는 $$C(A)$$에서 $$\mathbf{b}$$에 가장 가까운 유일한 점이다. 모든 $$\mathbf{v} \in C(A)$$에 대해 $$\Vert \mathbf{b} - \mathbf{p}\Vert  \le \Vert \mathbf{b} - \mathbf{v}\Vert $$이고 등호는 $$\mathbf{v} = \mathbf{p}$$일 때뿐이다.
+사영 행렬 $$P$$는 $$P^2 = P$$, $$P^\top = P$$를 만족한다. 그리고 $$\mathbf{p}$$는 $$C(A)$$에서 $$\mathbf{b}$$에 가장 가까운 유일한 점이다. 모든 $$\mathbf{v} \in C(A)$$에 대해 $$\Vert \mathbf{b} - \mathbf{p}\Vert  \le \Vert \mathbf{b} - \mathbf{v}\Vert $$($$\lVert\cdot\rVert$$는 벡터의 길이)이고 등호는 $$\mathbf{v} = \mathbf{p}$$일 때뿐이다.
 
 </div>
 

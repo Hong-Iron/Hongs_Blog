@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["PageRank", "페이지랭크", "구글 행렬", "Google matrix", "감쇠 계수", "damping factor", "순간이동", "teleportation", "거듭제곱법", "power iteration", "댕글링 노드", "dangling node", "무작위 서퍼", "random surfer"]
 description: "웹 페이지의 중요도를, 링크를 무작위로 따라 끝없이 돌아다니는 사람이 각 페이지에 머무는 시간의 비율로 정한다. \"중요한 페이지가 많이 가리키는 페이지가 중요하다\"는 돌고 도는 정의가 마르코프 연쇄의 정상분포 하나로 깔끔하게 풀리고, 링크 표를 수십 번 곱하는 것만으로 계산된다. …"
@@ -62,7 +62,7 @@ PAGERANK(out, n, d, ε)
   return r
 ```
 
-이것은 **구글 행렬** $$G = dP + \frac{1 - d}{n}\mathbf{1}\mathbf{1}^\top$$에 대해 $$\mathbf{r} \leftarrow \mathbf{r}G$$를 되풀이하는 [거듭제곱법](/Hongs_Blog/studies/linear-algebra/eigenvalues/)이다. $$P$$는 링크를 따라가는 [전이행렬](/Hongs_Blog/studies/probability-statistics/markov-chains/)이고, 나가는 링크가 없는 행은 모든 페이지로 고르게 바꾼다. PageRank는 $$G$$의 정상분포 $$\mathbf{r} = \mathbf{r}G$$다[^1].
+이것은 **구글 행렬** $$G = dP + \frac{1 - d}{n}\mathbf{1}\mathbf{1}^\top$$($$^\top$$는 행과 열을 바꾸는 전치)에 대해 $$\mathbf{r} \leftarrow \mathbf{r}G$$를 되풀이하는 [거듭제곱법](/Hongs_Blog/studies/linear-algebra/eigenvalues/)이다. $$P$$는 링크를 따라가는 [전이행렬](/Hongs_Blog/studies/probability-statistics/markov-chains/)이고, 나가는 링크가 없는 행은 모든 페이지로 고르게 바꾼다. PageRank는 $$G$$의 정상분포 $$\mathbf{r} = \mathbf{r}G$$다[^1].
 
 **루프 불변식.** 매 반복이 끝날 때 $$\mathbf{r}$$은 음이 아니고 합이 1이다. $$G$$의 각 행이 확률분포라서, 확률분포에 곱하면 확률분포가 나온다.
 

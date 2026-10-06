@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Determinant", "행렬식", "det", "부호 있는 넓이", "signed area", "부호 있는 부피", "여인수 전개", "cofactor expansion", "라이프니츠 공식", "Leibniz formula", "방향 판정", "orientation test", "신발끈 공식", "shoelace formula"]
 description: "행렬식은 선형변환이 넓이(3차원에서는 부피)를 몇 배로 바꾸는지를 나타내는 수 하나다. 넓이 1인 정사각형이 넓이 5인 평행사변형이 되면 행렬식은 5이고, 뒤집어지면(시계 방향과 반시계 방향이 바뀌면) 음수가 된다. 행렬식이 0이면 공간이 더 낮은 차원으로 눌려 되돌릴 수 없으므로…"
@@ -61,7 +61,7 @@ $$2 \times 2$$에서는 $$\det\begin{pmatrix}a & b\\ c & d\end{pmatrix} = ad - b
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">행렬식의 핵심 성질</div>
 
-$$\det(AB) = \det A \cdot \det B$$, $$\det A^\top = \det A$$, $$A$$가 가역 $$\iff \det A \ne 0$$이고 그때 $$\det A^{-1} = \frac{1}{\det A}$$.
+$$\det(AB) = \det A \cdot \det B$$, $$\det A^\top = \det A$$($$^\top$$는 행과 열을 바꾸는 전치), $$A$$가 가역 $$\iff \det A \ne 0$$이고 그때 $$\det A^{-1} = \frac{1}{\det A}$$.
 
 </div>
 

@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Law of Sines", "Law of Cosines", "사인 법칙", "코사인 법칙", "삼각형의 넓이", "삼각측량", "triangulation", "두 점 사이의 거리", "distance formula", "모호한 경우", "ambiguous case"]
 description: "직각이 아닌 삼각형에서도 변과 각 사이의 관계를 알려 주는 두 공식이다. 코사인 법칙은 피타고라스 정리에 \"직각에서 벗어난 만큼\" 보정하는 항을 붙인 것이라, 세 변을 알면 각을, 두 변과 끼인각을 알면 나머지 변을 구한다. 사인 법칙은 각과 마주 보는 변의 비가 모두 같다는 것이…"
@@ -95,7 +95,7 @@ $$C = 90°$$이면 $$\cos C = 0$$이라 코사인 법칙이 피타고라스 정�
 
 - **위치 추정.** 측량, GPS 이전의 항법, 스테레오 카메라의 깊이 추정이 삼각측량이다.
 - **그래픽.** 삼각형 메시의 넓이 $$\frac12 ab\sin C$$, 두 변 사이 각을 세 변에서 구하는 계산($$\arccos$$과 함께)이 흔하다.
-- **내적으로 가는 다리.** 코사인 법칙을 벡터로 쓰면 $$\Vert \mathbf{u} - \mathbf{v}\Vert ^2 = \Vert \mathbf{u}\Vert ^2 + \Vert \mathbf{v}\Vert ^2 - 2\Vert \mathbf{u}\Vert \Vert \mathbf{v}\Vert \cos\theta$$다. 여기서 $$\Vert \mathbf{u}\Vert \Vert \mathbf{v}\Vert \cos\theta$$가 선형대수학의 [내적](/Hongs_Blog/studies/linear-algebra/dot-product/)이다.
+- **내적으로 가는 다리.** 코사인 법칙을 벡터로 쓰면 $$\Vert \mathbf{u} - \mathbf{v}\Vert ^2 = \Vert \mathbf{u}\Vert ^2 + \Vert \mathbf{v}\Vert ^2 - 2\Vert \mathbf{u}\Vert \Vert \mathbf{v}\Vert \cos\theta$$($$\lVert\cdot\rVert$$는 벡터의 길이)다. 여기서 $$\Vert \mathbf{u}\Vert \Vert \mathbf{v}\Vert \cos\theta$$가 선형대수학의 [내적](/Hongs_Blog/studies/linear-algebra/dot-product/)이다.
 - 알고리즘에서: 증명에서처럼 각 $$C$$를 변 CB에서 CA까지 반시계 방향으로 재서 부호를 살리면 $$ab\sin C$$는 [계산 기하 기초](/Hongs_Blog/studies/algorithms/geometry-ccw/)의 외적이 된다. 크기는 삼각형 넓이의 두 배이고, 부호는 C → B → A가 왼쪽으로 꺾는지 오른쪽으로 꺾는지를 알려 준다.
 
 ## 연결

@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Diagonalization", "대각화", "고유분해", "eigendecomposition", "행렬 거듭제곱", "matrix power", "대각화 가능", "diagonalizable", "결함 행렬", "defective matrix", "조르당 블록", "Jordan block", "정상 상태", "steady state", "선형 동역학계", "linear dynamical system"]
 description: "고유벡터들을 새 좌표축(기저)으로 삼으면, 복잡해 보이던 변환이 \"축마다 따로 늘이기\"로 바뀐다. 그러면 행렬을 100번 곱하는 일도 고윳값을 100제곱하는 일로 줄고, 시스템의 장기 행동(무엇이 남고, 무엇이 사라지고, 무엇이 폭발하는지)이 한눈에 보인다. 다만 고유벡터가 차원 …"
@@ -48,7 +48,7 @@ $$n \times n$$ 행렬 $$A$$가 선형독립인 고유벡터 $$\mathbf{x}_1, \dot
 
 $$A = X\Lambda X^{-1}, \qquad A^k = X\Lambda^k X^{-1}.$$
 
-역도 성립한다. $$A = X\Lambda X^{-1}$$이면 $$X$$의 열은 $$A$$의 독립인 고유벡터다. 고윳값이 모두 다르면 고유벡터는 자동으로 독립이라 대각화된다[^1].
+역도 맞는다. $$A = X\Lambda X^{-1}$$이면 $$X$$의 열은 $$A$$의 독립인 고유벡터다. 고윳값이 모두 다르면 고유벡터는 자동으로 독립이라 대각화된다[^1].
 
 </div>
 
@@ -158,7 +158,7 @@ $$A = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$의 $$A^k$$.
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C1** 대각화 $$A = X\Lambda X^{-1}$$에서 $$X$$와 $$\Lambda$$는 무엇이고, 성립할 조건은?</summary>
+<summary class="callout-title" markdown="span">**C1** 대각화 $$A = X\Lambda X^{-1}$$에서 $$X$$와 $$\Lambda$$는 무엇이고, 맞을 조건은?</summary>
 
 **답:** $$X$$의 열은 고유벡터, $$\Lambda$$는 대응하는 고윳값을 대각에 놓은 행렬. 독립인 고유벡터가 $$n$$개 있어야 한다($$X$$가 가역).
 
@@ -182,7 +182,7 @@ $$A = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$의 $$A^k$$.
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C4** $$A^k = X\Lambda^kX^{-1}$$이 성립하는 이유는?</summary>
+<summary class="callout-title" markdown="span">**C4** $$A^k = X\Lambda^kX^{-1}$$이 맞는 이유는?</summary>
 
 **답:** $$A^k = (X\Lambda X^{-1})(X\Lambda X^{-1})\cdots$$에서 이웃한 $$X^{-1}X$$가 모두 $$I$$로 지워져 $$X\Lambda\Lambda\cdots\Lambda X^{-1}$$만 남는다.
 

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 경사 하강법, 헤세 행렬, 그래디언트."
 prev_url: "/studies/calculus/integration-ladder/"
@@ -24,7 +24,7 @@ permalink: "/studies/calculus/gradient-descent-ladder/"
 
 경사 하강법 문제는 "몇 걸음 돌려 보라"처럼 보여도 핵심은 **학습률이 안전한지 먼저 판정하는 것**이다. 곡률이 가장 큰 방향이 허용 학습률을 정한다. 풀이는 늘 같은 네 하위목표로 나뉜다[^1].
 
-1. *기울기 식:* $$\nabla f$$를 구한다.
+1. *기울기 식:* $$\nabla f$$($$\nabla f$$는 편미분을 모은 벡터(그래디언트))를 구한다.
 2. *곡률과 학습률 범위:* 헤세 행렬의 가장 큰 고윳값 $$L$$을 구하고 $$\eta < \frac2L$$인지 본다.
 3. *갱신 실행:* $$\mathbf{x} \leftarrow \mathbf{x} - \eta\nabla f(\mathbf{x})$$를 필요한 만큼 돌린다. 이차함수면 방향마다 곱해지는 인수 $$1 - \eta\lambda$$로 한꺼번에 쓴다.
 4. *수렴 판단:* 인수의 절댓값으로 수렴·진동·발산을 가리고, 도착점이 최솟점과 맞는지 확인한다.

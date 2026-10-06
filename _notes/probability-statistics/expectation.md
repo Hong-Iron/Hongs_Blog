@@ -9,10 +9,10 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Expectation", "기댓값", "기대값", "expected value", "평균", "mean", "기댓값의 선형성", "linearity of expectation", "LOTUS", "무의식적 통계학자의 법칙", "law of the unconscious statistician", "근본 다리", "fundamental bridge", "모자 돌려받기 문제", "상트페테르부르크 역설", "St. Petersburg paradox"]
-description: "기댓값은 같은 실험을 끝없이 되풀이했을 때 나오는 값들의 평균이고, 값마다 확률을 곱해 더해서 구한다. 가장 강력한 성질은 선형성이다. 합의 기댓값은 기댓값의 합이고, 변수들이 서로 얽혀 있어도 그대로 성립한다. 그래서 복잡한 \"개수\"를 하나하나의 \"있다/없다\"로 쪼개면 각자의 확…"
+description: "기댓값은 같은 실험을 끝없이 되풀이했을 때 나오는 값들의 평균이고, 값마다 확률을 곱해 더해서 구한다. 가장 강력한 성질은 선형성이다. 합의 기댓값은 기댓값의 합이고, 변수들이 서로 얽혀 있어도 그대로 맞는다. 그래서 복잡한 \"개수\"를 하나하나의 \"있다/없다\"로 쪼개면 각자의 확률…"
 prev_url: "/studies/probability-statistics/random-variables/"
 prev_title: "확률변수와 분포"
 next_url: "/studies/probability-statistics/variance/"
@@ -26,7 +26,7 @@ permalink: "/studies/probability-statistics/expectation/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-기댓값은 같은 실험을 끝없이 되풀이했을 때 나오는 값들의 평균이고, 값마다 확률을 곱해 더해서 구한다. 가장 강력한 성질은 선형성이다. 합의 기댓값은 기댓값의 합이고, 변수들이 서로 얽혀 있어도 그대로 성립한다. 그래서 복잡한 "개수"를 하나하나의 "있다/없다"로 쪼개면 각자의 확률만 더해 답이 나온다. 다만 곱의 기댓값은 독립일 때만 곱으로 나뉘고, 기댓값이 가장 흔히 나오는 값이라는 보장도 없다.
+기댓값은 같은 실험을 끝없이 되풀이했을 때 나오는 값들의 평균이고, 값마다 확률을 곱해 더해서 구한다. 가장 강력한 성질은 선형성이다. 합의 기댓값은 기댓값의 합이고, 변수들이 서로 얽혀 있어도 그대로 맞는다. 그래서 복잡한 "개수"를 하나하나의 "있다/없다"로 쪼개면 각자의 확률만 더해 답이 나온다. 다만 곱의 기댓값은 독립일 때만 곱으로 나뉘고, 기댓값이 가장 흔히 나오는 값이라는 보장도 없다.
 
 </div>
 
@@ -42,7 +42,7 @@ permalink: "/studies/probability-statistics/expectation/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-이산 확률변수 $$X$$의 **기댓값**은 $$\sum_x \vert x\vert \,P(X = x) < \infty$$일 때
+이산 확률변수 $$X$$의 **기댓값**은 $$\sum_x \vert x\vert \,P(X = x) < \infty$$($$\sum$$은 차례로 모두 더한다는 기호)일 때
 
 $$\mathbb{E}[X] = \sum_x x\,P(X = x)$$
 
@@ -55,7 +55,7 @@ $$\mathbb{E}[X] = \sum_x x\,P(X = x)$$
 <div class="callout-title" markdown="span">기댓값의 성질</div>
 
 기댓값이 유한한 확률변수 $$X, Y$$와 상수 $$a, b$$에 대해
-1. **선형성:** $$\mathbb{E}[aX + bY] = a\,\mathbb{E}[X] + b\,\mathbb{E}[Y]$$. $$X$$와 $$Y$$가 독립이 아니어도 성립한다.
+1. **선형성:** $$\mathbb{E}[aX + bY] = a\,\mathbb{E}[X] + b\,\mathbb{E}[Y]$$. $$X$$와 $$Y$$가 독립이 아니어도 맞는다.
 2. **근본 다리:** 사건 $$A$$의 지시 확률변수 $$I_A$$에 대해 $$\mathbb{E}[I_A] = P(A)$$.
 3. **LOTUS:** 함수 $$g$$에 대해 $$\mathbb{E}[g(X)] = \sum_x g(x)\,P(X = x)$$. $$g(X)$$의 분포를 따로 구하지 않아도 된다.
 4. **독립인 곱:** $$X$$, $$Y$$가 독립이면 $$\mathbb{E}[XY] = \mathbb{E}[X]\,\mathbb{E}[Y]$$.
@@ -127,7 +127,7 @@ $$P(X = x, Y = y)$$를 $$P(X = x)P(Y = y)$$로 바꾸는 둘째 등호다. 이�
 1. *지시 확률변수로 쪼개기:* $$I_j$$ = "$$j$$번 사람이 자기 모자를 받음"이면, 받는 사람 수는 $$X = I_1 + \cdots + I_n$$.
 2. *하나의 확률:* 무작위 배분에서 $$j$$번이 자기 모자를 받을 확률은 $$\frac1n$$. 그래서 $$\mathbb{E}[I_j] = \frac1n$$.
 3. *선형성:* $$\mathbb{E}[X] = n \cdot \frac1n = 1$$.
-4. *검산:* $$I_j$$들은 독립이 아니다(앞의 $$n - 1$$명이 모두 자기 모자를 받으면 마지막 사람도 받는다). 그래도 선형성은 성립한다. $$n = 1, \dots, 8$$의 모든 배분을 세어도 평균이 정확히 1이다. $$X$$의 분포는 $$n$$에 따라 복잡하게 바뀌는데 기댓값은 늘 1이다.
+4. *검산:* $$I_j$$들은 독립이 아니다(앞의 $$n - 1$$명이 모두 자기 모자를 받으면 마지막 사람도 받는다). 그래도 선형성은 맞는다. $$n = 1, \dots, 8$$의 모든 배분을 세어도 평균이 정확히 1이다. $$X$$의 분포는 $$n$$에 따라 복잡하게 바뀌는데 기댓값은 늘 1이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 주사위의 3.5와 합의 7, 무작위 결합분포 300개에서 선형성, 독립인 곱 $$\frac{49}{4}$$와 독립이 아닐 때의 반례, LOTUS $$\frac{91}{6}$$, 모자 문제($$n \le 8$$ 전수), 생일 쌍 기댓값과 모의실험, 상트페테르부르크의 잘린 기댓값, 예제 사다리의 값 — [08_expectation_verify.py](/Hongs_Blog/studies/probability-statistics/code/08_expectation_verify/)</div>
@@ -138,7 +138,7 @@ $$P(X = x, Y = y)$$를 $$P(X = x)P(Y = y)$$로 바꾸는 둘째 등호다. 이�
 ## 활용
 
 - **평균 경우 분석.** 배열을 한 번 훑으며 최댓값을 갱신할 때, 무작위 순서의 입력이면 갱신 횟수의 기댓값은 $$1 + \frac12 + \cdots + \frac1n \approx \ln n$$이다. $$i$$번째 원소가 앞의 원소들보다 클 확률이 $$\frac1i$$이기 때문이다. CLRS의 고용 문제가 이 계산이다[^2].
-- **해시 충돌.** 키 $$k$$개를 $$n$$칸에 고르게 넣으면 같은 칸에 들어간 키 쌍의 수의 기댓값은 $$\binom{k}{2}\frac1n$$이다. 23명의 생일로는 $$\frac{253}{365} \approx 0.69$$쌍이다.
+- **해시 충돌.** 키 $$k$$개를 $$n$$칸에 고르게 넣으면 같은 칸에 들어간 키 쌍의 수의 기댓값은 $$\binom{k}{2}\frac1n$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수)이다. 23명의 생일로는 $$\frac{253}{365} \approx 0.69$$쌍이다.
 - **흔한 실수.** $$\mathbb{E}[g(X)]$$를 $$g(\mathbb{E}[X])$$로 계산하는 것. 예: 주사위에서 $$\mathbb{E}[X^2] = \frac{91}{6} \approx 15.2$$이지만 $$(\mathbb{E}[X])^2 = 12.25$$다. 둘은 일차함수일 때만 같다.
 - 연습: [기댓값 선형성 예제 사다리](/Hongs_Blog/studies/probability-statistics/expectation-ladder/)
 
@@ -184,7 +184,7 @@ $$P(X = x, Y = y)$$를 $$P(X = x)P(Y = y)$$로 바꾸는 둘째 등호다. 이�
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C4** 선형성이 독립 없이도 성립하는 이유를 한두 문장으로 설명하라.</summary>
+<summary class="callout-title" markdown="span">**C4** 선형성이 독립 없이도 맞는 이유를 한두 문장으로 설명하라.</summary>
 
 **답:** 기댓값은 결과마다의 값에 확률을 곱해 더한 것이고, 결과 하나에서 $$X + Y$$의 값은 그냥 두 수의 합이다. 합을 나누는 데 두 변수의 관계를 쓸 일이 없다.
 

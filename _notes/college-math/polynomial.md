@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Polynomial", "다항함수", "차수", "degree", "근", "root", "zero", "나머지 정리", "Remainder Theorem", "인수정리", "Factor Theorem", "근의 공식", "Quadratic Formula", "판별식", "discriminant", "조립제법", "synthetic division", "호너 방법", "Horner's method", "다항식 보간"]
 description: "다항식은 변수를 몇 번 곱한 항들에 수를 곱해 더한, 가장 단순한 함수다. 값이 0이 되는 곳(근)과 인수는 짝을 이룬다. 어떤 수가 근이면 식이 그 수에 대한 일차식으로 나누어떨어진다. 그래서 근은 차수보다 많을 수 없고, 점 몇 개만 알면 다항식이 하나로 정해진다. 다만 교과서…"
@@ -49,7 +49,7 @@ $$p(x) = x^3 - 6x^2 + 11x - 6$$에 $$x = 1$$을 넣으면 $$1 - 6 + 11 - 6 = 0$$
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-계수 $$a_0, \dots, a_n \in \mathbb{R}$$, $$a_n \ne 0$$인 $$p(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0$$을 **$$n$$차 다항식**이라 하고 $$\deg p = n$$으로 쓴다. $$p(r) = 0$$인 수 $$r$$을 $$p$$의 **근**(root, zero)이라 한다[^1].
+계수 $$a_0, \dots, a_n \in \mathbb{R}$$($$\in$$은 "~에 속한다"), $$a_n \ne 0$$인 $$p(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0$$을 **$$n$$차 다항식**이라 하고 $$\deg p = n$$으로 쓴다. $$p(r) = 0$$인 수 $$r$$을 $$p$$의 **근**(root, zero)이라 한다[^1].
 
 </div>
 
@@ -58,7 +58,7 @@ $$p(x) = x^3 - 6x^2 + 11x - 6$$에 $$x = 1$$을 넣으면 $$1 - 6 + 11 - 6 = 0$$
 <div class="callout-title callout-title--default" markdown="span">정리</div>
 
 1. **나머지 정리.** $$p(x)$$를 $$(x - a)$$로 나눈 나머지는 $$p(a)$$다.
-2. **인수정리.** $$p(a) = 0$$이면 $$(x - a)$$는 $$p(x)$$의 인수이고, 그 역도 성립한다.
+2. **인수정리.** $$p(a) = 0$$이면 $$(x - a)$$는 $$p(x)$$의 인수이고, 그 역도 맞는다.
 3. **근의 개수.** $$n \ge 1$$차 다항식의 서로 다른 실근은 많아야 $$n$$개다.
 4. **근의 공식.** $$ax^2 + bx + c = 0$$ ($$a \ne 0$$)의 근은 $$x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$다. 판별식 $$D = b^2 - 4ac$$가 양수면 서로 다른 실근이 둘, $$0$$이면 중근 하나, 음수면 실근이 없다[^1].
 

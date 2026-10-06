@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Pedophilic Disorder", "소아기호증", "소아성애", "pedophilia", "음경 혈량측정법", "penile plethysmography", "시각반응시간", "viewing time"]
 description: "사춘기 이전의 아동에게서 반복적이고 강렬한 성적 흥분을 느끼는 상태가 반년 넘게 이어지고, 그 때문에 괴롭거나 실제 행동으로 옮긴 장애다. 또래에 대한 청소년의 성적 관심을 장애로 만들지 않도록, 16세 이상이면서 대상 아동보다 5세 이상 많아야 진단한다. 본인이 부인하는 경우가 …"
@@ -49,6 +49,7 @@ permalink: "/studies/abnormal-psychology/pedophilic-disorder/"
 
 A. 사춘기 이전의 아동(일반적으로 13세 이하)을 상대로 한 성적 활동을 통해 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 이상 이어진다.<br>
 B. 임상적으로 현저한 고통이나 손상을 낳는다. DSM-5-TR은 이 충동을 행동으로 옮긴 경우도 B에 넣는다[^s2].<br>
+   — 치료가 필요할 만큼 괴롭거나, 생활에 뚜렷한 지장이 생긴다.<br>
 C. 16세 이상이어야 하고, 기준 A의 아동보다 적어도 5세 많아야 한다.
 - 주의: 12세나 13세의 아동과 지속적인 관계를 맺고 있는 청소년기 후기의 개인은 포함하지 않는다.
 

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Probabilistic Analysis of Algorithms", "확률적 분석", "무작위 알고리즘", "randomized algorithm", "해시 충돌", "hash collision", "체이닝", "chaining", "적재율", "load factor", "무작위 퀵정렬", "randomized quicksort", "공과 통", "balls into bins", "두 선택의 힘", "power of two choices", "블룸 필터", "Bloom filter"]
 description: "해시 테이블, 무작위 퀵정렬, 부하 분산처럼 무작위성을 쓰는 알고리즘의 성능을 확률로 따지는 기법 묶음이다. 도구는 셋이다. 세고 싶은 것을 \"있다/없다\" 조각으로 쪼개 기댓값을 더하기, 생일 문제식 충돌 계산, 나쁜 일의 확률을 부등식으로 위에서 막기. 이렇게 하면 입력이 아무리…"
@@ -36,7 +36,7 @@ permalink: "/studies/probability-statistics/randomized-analysis/"
 키 2,000개를 칸 500개짜리 해시 테이블에 넣는다. 해시값이 고르게 무작위로 퍼진다고 가정하면
 
 - 한 칸에 들어가는 키 수의 평균은 $$\frac{2000}{500} = 4$$다(적재율 $$\alpha$$). 키마다 "이 칸에 들어감"의 확률이 $$\frac{1}{500}$$이고 [선형성](/Hongs_Blog/studies/probability-statistics/expectation/)으로 2,000번 더한 것이다.
-- 같은 칸에 들어간 키 쌍의 수는 평균 $$\binom{2000}{2}\frac{1}{500} \approx 3{,}998$$쌍이다. 쌍마다 충돌 확률이 $$\frac{1}{500}$$이다.
+- 같은 칸에 들어간 키 쌍의 수는 평균 $$\binom{2000}{2}\frac{1}{500} \approx 3{,}998$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수)쌍이다. 쌍마다 충돌 확률이 $$\frac{1}{500}$$이다.
 
 첫 계산이 아래의 "지시 확률변수로 기댓값 세기", 둘째가 "생일 문제식 쌍 세기"다. 어느 쪽도 키들의 관계나 분포 전체를 몰라도 된다.
 

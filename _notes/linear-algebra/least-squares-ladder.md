@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 최소제곱법, 직교성과 직교 사영."
 prev_url: "/studies/linear-algebra/elimination-ladder/"
@@ -27,7 +27,7 @@ permalink: "/studies/linear-algebra/least-squares-ladder/"
 이 방법을 떠올리는 신호는 **데이터 점이 미지수보다 많고, "가장 잘 맞는" 직선·곡선을 찾으라**는 요구다. 모형이 미지수에 대해 일차이기만 하면 곡선도 같은 절차로 맞춘다. 풀이는 늘 같은 네 하위목표로 나뉜다[^1].
 
 1. *모형을 $$A\mathbf{x} \approx \mathbf{b}$$로:* 미지수를 $$\mathbf{x}$$로, 데이터 한 점을 한 행으로 적는다. $$A$$의 열은 모형의 각 항($$1$$, $$t$$, $$t^2$$, …)의 값이다.
-2. *정규방정식 만들기:* $$A^\top A$$와 $$A^\top\mathbf{b}$$를 계산한다.
+2. *정규방정식 만들기:* $$A^\top A$$($$^\top$$는 행과 열을 바꾸는 전치)와 $$A^\top\mathbf{b}$$를 계산한다.
 3. *풀기:* $$A^\top A\hat{\mathbf{x}} = A^\top\mathbf{b}$$를 푼다(작으면 소거, 크면 QR).
 4. *잔차 검산:* $$\mathbf{e} = \mathbf{b} - A\hat{\mathbf{x}}$$가 $$A^\top\mathbf{e} = \mathbf{0}$$을 만족하는지 보고, 제곱합으로 맞음의 정도를 적는다.
 

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Defense Mechanisms", "방어 기제", "억압", "repression", "부인", "denial", "투사", "projection", "고립", "isolation", "주지화", "intellectualization", "취소", "undoing", "반동형성", "reaction formation", "합리화", "rationalization", "대치", "전치", "displacement", "퇴행", "regression", "승화", "sublimation"]
 description: "마음속 갈등으로 불안해질 때, 자아가 본인도 모르게 쓰는 불안 줄이기 기술이다. 불편한 욕구를 잊거나, 남 탓으로 돌리거나, 그럴듯한 이유를 붙이는 식이다. 누구나 쓰고 잠깐은 도움이 되지만, 현실을 크게 비틀거나 한 가지만 고집하면 증상이 된다. 가장 건강한 방어는 욕구를 사회가…"
@@ -70,7 +70,7 @@ permalink: "/studies/abnormal-psychology/defense-mechanisms/"
 
 방어기제를 성숙도에 따라 나누는 분류도 있다(Vaillant)[^s3]. 투사나 현실 부인은 미숙한 방어로, 억압·반동형성·대치·주지화는 신경증적 방어로, 승화는 성숙한 방어로 본다. 정신분석의 원인론이 말하는 "미숙한 방어기제"가 이 분류의 아래쪽이다[^3].
 
-### 해당하지 않는 예
+### 방어기제가 아닌 것
 
 - **의식적인 대처(coping):** 시험이 불안해서 공부 계획표를 짜는 것은 방어기제가 아니다. 방어기제는 대부분 무의식적으로, 자동으로 일어나고 현실을 어느 정도 비튼다. 대처는 의식적으로 고르고 문제 자체를 다룬다[^s4].
 - **실제로 사실인 판단:** 상사가 실제로 나를 싫어한다는 증거가 분명한데 "상사가 나를 싫어한다"고 말하는 것은 투사가 아니다. 투사는 내 감정을 남에게 돌리는 것이다.

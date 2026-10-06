@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Mean Value Theorem", "MVT", "평균값 정리", "롤의 정리", "Rolle's theorem", "립시츠 조건", "Lipschitz condition", "구간단속"]
 description: "10 km 구간을 5분에 지났다면 평균 시속이 120 km이고, 그렇다면 어느 한 순간 속도계는 정확히 120을 가리켰다. 매끄러운 함수에서는 평균 변화율과 똑같은 순간 변화율을 갖는 점이 반드시 있다는 정리다. \"도함수가 양수면 증가한다\", \"도함수가 0이면 상수다\" 같은 당연해…"
@@ -26,7 +26,7 @@ permalink: "/studies/calculus/mean-value-theorem/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-10 km 구간을 5분에 지났다면 평균 시속이 120 km이고, 그렇다면 어느 한 순간 속도계는 정확히 120을 가리켰다. 매끄러운 함수에서는 평균 변화율과 똑같은 순간 변화율을 갖는 점이 반드시 있다는 정리다. "도함수가 양수면 증가한다", "도함수가 0이면 상수다" 같은 당연해 보이는 사실이 모두 이 정리로 증명된다. 구간 안에 꺾이거나 끊긴 점이 있으면 성립하지 않는다.
+10 km 구간을 5분에 지났다면 평균 시속이 120 km이고, 그렇다면 어느 한 순간 속도계는 정확히 120을 가리켰다. 매끄러운 함수에서는 평균 변화율과 똑같은 순간 변화율을 갖는 점이 반드시 있다는 정리다. "도함수가 양수면 증가한다", "도함수가 0이면 상수다" 같은 당연해 보이는 사실이 모두 이 정리로 증명된다. 구간 안에 꺾이거나 끊긴 점이 있으면 맞지 않는다.
 
 </div>
 
@@ -46,7 +46,7 @@ $$f$$가 닫힌 구간 $$[a, b]$$에서 연속이고 열린 구간 $$(a, b)$$에
 
 $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
 
-인 $$c \in (a, b)$$가 있다. 특히 $$f(a) = f(b)$$이면 $$f'(c) = 0$$인 $$c$$가 있다(롤의 정리)[^1].
+인 $$c \in (a, b)$$($$\in$$은 "~에 속한다")가 있다. 특히 $$f(a) = f(b)$$이면 $$f'(c) = 0$$인 $$c$$가 있다(롤의 정리)[^1].
 
 </div>
 
@@ -121,7 +121,7 @@ $$f(x) = x^2$$을 $$[0, 2]$$에서 볼 때 정리의 $$c$$를 구한다.
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C3** 평균값 정리의 결론이 성립하지 않는 함수와 구간을 들고, 어느 가정이 깨졌는지 쓰라.</summary>
+<summary class="callout-title" markdown="span">**C3** 평균값 정리의 결론이 맞지 않는 함수와 구간을 들고, 어느 가정이 깨졌는지 쓰라.</summary>
 
 **답:** $$\vert x\vert $$를 $$[-1, 1]$$에서 보면 평균 변화율이 0인데 도함수가 0인 점이 없다. $$x = 0$$에서 미분 가능하지 않아 "$$(a, b)$$에서 미분 가능"이 깨졌다.
 

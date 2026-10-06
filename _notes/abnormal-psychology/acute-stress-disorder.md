@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Acute Stress Disorder", "ASD", "급성 스트레스 반응", "해리 증상", "dissociative symptoms"]
 description: "외상 사건 직후 PTSD와 거의 같은 증상이 3일에서 한 달 사이에 나타나는 장애다. 멍하고 현실감이 없고 기억이 끊기는 해리 증상이 두드러진다. 해리는 너무 강한 충격에서 잠시 자신을 지키는 방패 역할을 한다. 한 달이 지나도 증상이 이어지면 약 절반이 PTSD로 넘어가므로, 이…"
@@ -93,5 +93,5 @@ DSM-5-TR은 다섯 묶음(침투, 부정적 기분, 해리, 회피, 각성)의 1
 [^4]: 4-1학기/이상 심리학/1.수업자료/06.외상 후 스트레스 장애 및 해리장애.pdf, p.30
 [^s1]: 에이전트 보충. DW의 사례는 진단 조건을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 급성 스트레스 장애 진단기준 B(14개 중 9개 이상)를 보탰다.
-[^s3]: 에이전트 보충. DSM-5-TR의 급성 스트레스 장애 유병률 설명을 요약했다. 정확한 수치는 조사에 따라 다르다[확인필요].
+[^s3]: 에이전트 보충. DSM-5의 유병률 설명(Psychology Today "Acute Stress Disorder" 항목이 DSM-5를 인용): 대인관계 폭행이 아닌 외상(교통사고, 가벼운 외상성 뇌손상, 화상) 뒤에는 20% 미만, 폭행·강간·총기 난사 목격 같은 대인관계 외상 뒤에는 20~50%다.
 {% endraw %}

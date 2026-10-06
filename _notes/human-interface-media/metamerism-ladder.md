@@ -9,9 +9,9 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
-description: "사용 개념: 삼색 이론의 반응 rk = \\sum\\lambda i(\\lambda)\\,\\sigmak(\\lambda), 조건등색의 판정 \"세 반응이 모두 같다\"."
+description: "사용 개념: 삼색 이론의 반응 rk = \\sum\\lambda i(\\lambda)\\,\\sigmak(\\lambda)(\\sum은 차례로 모두 더한다는 기호), 조건등색의 판정 \"세 반응이 모두 같다\"."
 prev_url: "/studies/human-interface-media/neuron-convergence-modeling/"
 prev_title: "뉴런 수렴 모델링 연습"
 next_url: "/studies/human-interface-media/lateral-inhibition-ladder/"
@@ -22,7 +22,7 @@ code_count: 0
 permalink: "/studies/human-interface-media/metamerism-ladder/"
 ---
 {% raw %}
-사용 개념: [삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/)의 반응 $$r_k = \sum_\lambda i(\lambda)\,\sigma_k(\lambda)$$, [조건등색](/Hongs_Blog/studies/human-interface-media/metamerism/)의 판정 "세 반응이 모두 같다".
+사용 개념: [삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/)의 반응 $$r_k = \sum_\lambda i(\lambda)\,\sigma_k(\lambda)$$($$\sum$$은 차례로 모두 더한다는 기호), [조건등색](/Hongs_Blog/studies/human-interface-media/metamerism/)의 판정 "세 반응이 모두 같다".
 
 빛을 파장 칸 네 개의 세기로 나타낸 장난감 세계다. 추상체 민감도 표는 모든 문제에 같다[^s1].
 

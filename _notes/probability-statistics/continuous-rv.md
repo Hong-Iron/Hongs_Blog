@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Continuous Random Variable", "연속 확률변수", "확률밀도함수", "PDF", "probability density function", "확률밀도", "density", "밀도의 변수변환", "change of variables for densities"]
 description: "대기 시간이나 측정값처럼 값이 끊김 없이 이어지면, 딱 한 값이 나올 확률은 0이고 구간에 들어갈 확률만 의미가 있다. 그 확률을 곡선 아래 넓이로 주는 함수가 확률밀도다. 확률을 모래로 비유하면, 밀도는 각 지점에 쌓인 모래의 높이이고 구간의 확률은 그 구간 위 모래의 양이다. …"
@@ -57,7 +57,7 @@ $$P(a \le X \le b) = \int_a^b f(x)\,dx$$
 
 - **CDF와의 관계:** $$F(x) = P(X \le x) = \int_{-\infty}^{x}f(t)\,dt$$. [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/)로 $$f$$가 연속인 점에서 $$F'(x) = f(x)$$다. 예시에서 $$F(x) = x^2$$, $$F' = 2x$$.
 - **한 점의 확률:** $$P(X = a) = \int_a^a f = 0$$. 그래서 $$P(a < X < b)$$와 $$P(a \le X \le b)$$가 같다.
-- **기댓값과 분산:** 합을 적분으로 바꾼다. $$\mathbb{E}[X] = \int x f(x)\,dx$$, $$\mathbb{E}[g(X)] = \int g(x)f(x)\,dx$$(LOTUS), 분산은 이산일 때와 같은 식이다. 예시는 $$\mathbb{E}[X] = \int_0^1 2x^2dx = \frac23$$, $$\operatorname{Var}[X] = \frac12 - \frac49 = \frac{1}{18}$$이다. 기댓값이 있으려면 [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/) $$\int\vert x\vert f(x)\,dx$$가 수렴해야 한다.
+- **기댓값과 분산:** 합을 적분으로 바꾼다. $$\mathbb{E}[X] = \int x f(x)\,dx$$($$\mathbb{E}[\cdot]$$은 평균(기댓값)), $$\mathbb{E}[g(X)] = \int g(x)f(x)\,dx$$(LOTUS), 분산은 이산일 때와 같은 식이다. 예시는 $$\mathbb{E}[X] = \int_0^1 2x^2dx = \frac23$$, $$\operatorname{Var}[X] = \frac12 - \frac49 = \frac{1}{18}$$이다. 기댓값이 있으려면 [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/) $$\int\vert x\vert f(x)\,dx$$가 수렴해야 한다.
 
 ## 예제
 
@@ -97,7 +97,7 @@ $$P(a \le X \le b) = \int_a^b f(x)\,dx$$
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C2** 연속 확률변수에서 $$P(X = a) = 0$$인데도 $$X$$가 결국 어떤 값은 갖는다. 모순이 아닌 이유는?</summary>
 
-**답:** 확률의 덧셈은 셀 수 있는 개수의 배반 사건에서만 성립한다. 구간의 점은 셀 수 없이 많아서 "확률 0인 점들을 다 더하면 0"이라는 계산이 허용되지 않는다. 확률은 점이 아니라 구간(넓이)에 실려 있다.
+**답:** 확률의 덧셈은 셀 수 있는 개수의 배반 사건에서만 맞는다. 구간의 점은 셀 수 없이 많아서 "확률 0인 점들을 다 더하면 0"이라는 계산이 허용되지 않는다. 확률은 점이 아니라 구간(넓이)에 실려 있다.
 
 </details>
 

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Law of Large Numbers", "큰 수의 법칙", "대수의 법칙", "LLN", "약한 큰 수의 법칙", "weak law of large numbers", "강한 큰 수의 법칙", "strong law of large numbers", "표본평균", "sample mean"]
 description: "같은 실험을 서로 독립으로 많이 되풀이하면, 결과들의 평균이 기댓값에 점점 가까워진다. \"앞면이 나올 확률이 절반\"을 \"오래 던지면 절반쯤 앞면\"으로 읽어도 되는 근거이고, 무작위 표본의 평균으로 적분이나 확률을 어림하는 몬테카를로 방법의 근거다. 하지만 얼마나 빨리 가까워지는지는…"
@@ -49,7 +49,7 @@ $$P(\vert \bar X_n - \mu\vert  \ge \varepsilon) \le \frac{\sigma^2}{n\varepsilon
 </div>
 
 
-말로 하면 "허용 오차 $$\varepsilon$$을 아무리 작게 잡아도, 표본을 충분히 모으면 그보다 벗어날 확률을 원하는 만큼 작게 할 수 있다"다. 분산이 유한하다는 조건 없이 평균만 있어도 성립하고, 거의 모든 실험 경로에서 $$\bar X_n \to \mu$$라는 더 강한 결론(강한 큰 수의 법칙)도 있다 [증명 생략: Blitzstein·Hwang 10.2절][^1].
+말로 하면 "허용 오차 $$\varepsilon$$을 아무리 작게 잡아도, 표본을 충분히 모으면 그보다 벗어날 확률을 원하는 만큼 작게 할 수 있다"다. 분산이 유한하다는 조건 없이 평균만 있어도 맞고, 거의 모든 실험 경로에서 $$\bar X_n \to \mu$$라는 더 강한 결론(강한 큰 수의 법칙)도 있다 [증명 생략: Blitzstein·Hwang 10.2절][^1].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
@@ -80,7 +80,7 @@ $$P(\vert \bar X_n - \mu\vert  \ge \varepsilon) \le \frac{\sigma^2}{n\varepsilon
 
 - **몬테카를로.** 적분이나 확률을 "무작위 표본의 평균"으로 어림하는 방법이 수렴한다는 보장이다([몬테카를로 적분](/Hongs_Blog/studies/calculus/multiple-integrals/)).
 - **벤치마크.** 실행 시간을 여러 번 재 평균을 내면 참 평균에 가까워진다. 반복 횟수를 늘릴수록 흔들림이 준다.
-- **가정이 깨질 때.** 평균이 없는 분포에서는 성립하지 않는다. 코시 분포의 표본평균은 다시 같은 코시 분포라, 10개로 평균 내든 1,000개로 평균 내든 퍼짐(사분위 범위 약 2)이 그대로다. 아주 가끔 엄청나게 큰 값이 나오는 자료에서 평균이 안정되지 않으면 이것을 의심한다.
+- **가정이 깨질 때.** 평균이 없는 분포에서는 맞지 않는다. 코시 분포의 표본평균은 다시 같은 코시 분포라, 10개로 평균 내든 1,000개로 평균 내든 퍼짐(사분위 범위 약 2)이 그대로다. 아주 가끔 엄청나게 큰 값이 나오는 자료에서 평균이 안정되지 않으면 이것을 의심한다.
 
 ## 연결
 

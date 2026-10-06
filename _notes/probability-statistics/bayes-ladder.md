@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 베이즈 정리, 조건부 확률(전확률 공식)."
 next_url: "/studies/probability-statistics/expectation-ladder/"
@@ -26,7 +26,7 @@ permalink: "/studies/probability-statistics/bayes-ladder/"
 
 1. *사건 정하기:* 원인 후보 $$H_1, \dots, H_n$$(겹치지 않고 전체를 덮게)과 관측한 증거 $$E$$를 이름 붙인다.
 2. *주어진 값 적기:* 사전확률 $$P(H_i)$$와 가능도 $$P(E \mid H_i)$$를 표로 적는다.
-3. *증거의 전체 확률:* 전확률 공식으로 $$P(E) = \sum_i P(E \mid H_i)P(H_i)$$.
+3. *증거의 전체 확률:* 전확률 공식으로 $$P(E) = \sum_i P(E \mid H_i)P(H_i)$$($$\sum$$은 차례로 모두 더한다는 기호).
 4. *뒤집고 해석하기:* $$P(H \mid E) = \frac{P(E \mid H)P(H)}{P(E)}$$를 구하고, 사전확률과 비교해 증거가 믿음을 얼마나 움직였는지 본다.
 
 ## 문제 1 · 완전한 풀이

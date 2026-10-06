@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Female Sexual Interest/Arousal Disorder", "FSIAD", "여성 성적 관심/흥분장애", "욕구의 불일치", "desire discrepancy"]
 description: "성에 대한 관심과 몸의 흥분이 함께 크게 줄어, 반년 넘게 본인이 괴로운 상태다. 남성은 성욕 문제와 발기 문제를 따로 진단하지만, 여성은 관심과 흥분이 잘 나뉘지 않아 하나로 묶었다. 관심·생각·먼저 시작하기·즐거움·자극에 대한 반응·몸의 감각 여섯 가지 가운데 셋 이상이 줄어야…"
@@ -52,7 +52,8 @@ A. 성적 관심이나 흥분이 없거나 현저히 줄어든 상태가 다음 
 6. 거의 모든 경우(약 75~100%) 성적 행위 동안 성기 또는 성기 외 감각의 부재·감소
 
 B. 최소 6개월 이상.<br>
-C. 본인에게 임상적으로 현저한 고통이 생긴다.
+C. 본인에게 임상적으로 현저한 고통이 생긴다.<br>
+   — 치료가 필요할 만큼 뚜렷하게 괴롭다.
 
 </div>
 

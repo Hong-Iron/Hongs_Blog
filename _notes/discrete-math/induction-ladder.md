@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 수학적 귀납법."
 next_url: "/studies/discrete-math/counting-ladder/"
@@ -32,13 +32,13 @@ permalink: "/studies/discrete-math/induction-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-$$n \ge 0$$이면 $$\sum_{k=0}^{n} 2^k = 2^{n+1} - 1$$임을 보여라.
+$$n \ge 0$$이면 $$\sum_{k=0}^{n} 2^k = 2^{n+1} - 1$$($$\sum$$은 차례로 모두 더한다는 기호)임을 보여라.
 
 1. *명제와 시작점:* $$P(n)$$: $$1 + 2 + \cdots + 2^n = 2^{n+1} - 1$$, $$n \ge 0$$.
 2. *기저:* $$n = 0$$이면 왼쪽 $$1$$, 오른쪽 $$2 - 1 = 1$$.
 3. *귀납 가정:* 어떤 $$n \ge 0$$에서 $$\sum_{k=0}^{n} 2^k = 2^{n+1} - 1$$이라 하자.
 4. *바꿔 쓰고 가정 쓰기:* $$\sum_{k=0}^{n+1} 2^k = \left(\sum_{k=0}^{n} 2^k\right) + 2^{n+1} = (2^{n+1} - 1) + 2^{n+1} = 2^{n+2} - 1$$.
-5. *결론:* 모든 $$n \ge 0$$에서 성립한다.
+5. *결론:* 모든 $$n \ge 0$$에서 맞는다.
 
 ## 문제 2 · 마지막 하위목표만 빈칸
 
@@ -66,7 +66,7 @@ $$n \ge 4$$이면 $$n! > 2^n$$임을 보여라.
 2. *기저:* ______
 3. *귀납 가정:* 어떤 $$n \ge 4$$에서 $$n! > 2^n$$이라 하자.
 4. *바꿔 쓰고 가정 쓰기:* ______
-5. *결론:* 모든 $$n \ge 4$$에서 성립한다.
+5. *결론:* 모든 $$n \ge 4$$에서 맞는다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -85,7 +85,7 @@ $$x \ge -1$$인 실수와 $$n \ge 0$$인 정수에 대해 $$(1 + x)^n \ge 1 + nx
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-기저 $$n = 0$$: $$1 \ge 1$$. 가정: $$(1 + x)^n \ge 1 + nx$$. 단계: $$1 + x \ge 0$$이므로 가정의 양변에 곱해도 부등호가 유지되어 $$(1 + x)^{n+1} \ge (1 + nx)(1 + x) = 1 + (n+1)x + nx^2 \ge 1 + (n+1)x$$. 마지막은 $$nx^2 \ge 0$$. 따라서 모든 $$n \ge 0$$에서 성립한다.
+기저 $$n = 0$$: $$1 \ge 1$$. 가정: $$(1 + x)^n \ge 1 + nx$$. 단계: $$1 + x \ge 0$$이므로 가정의 양변에 곱해도 부등호가 유지되어 $$(1 + x)^{n+1} \ge (1 + nx)(1 + x) = 1 + (n+1)x + nx^2 \ge 1 + (n+1)x$$. 마지막은 $$nx^2 \ge 0$$. 따라서 모든 $$n \ge 0$$에서 맞는다.
 
 **흔한 오답:** $$1 + x \ge 0$$을 쓰는 곳을 놓치는 것. $$x < -1$$이면 음수를 곱해 부등호가 뒤집혀 증명이 깨진다. 조건 $$x \ge -1$$이 바로 여기서 쓰인다.
 

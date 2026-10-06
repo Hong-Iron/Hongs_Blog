@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Last-Mile Links", "가입자 회선", "라스트 마일", "DSL", "xDSL", "Digital Subscriber Line", "Digital Subscriber Loop", "ADSL", "VDSL", "DSLAM", "DSL access multiplexer", "스플리터", "splitter", "케이블 모뎀", "cable modem", "로컬 루프", "local loop"]
 description: "가입자 선로는 집과 인터넷 회사 사이를 잇는 마지막 구간이다. 사용자가 직접 골라 쓰는 링크라서 중요하다. 예전에는 이미 깔린 전화선 하나에 음성은 낮은 주파수로, 데이터는 높은 주파수로 함께 실어 보냈다(DSL). 전화선은 길수록 잡음이 커서, 요즘은 집 앞이나 집 안까지 광케이…"
@@ -33,7 +33,7 @@ permalink: "/studies/computer-communication/last-mile-links/"
 
 ## 예시로 보기
 
-슬라이드 그림에서 집 안의 전화기와 DSL 모뎀이 스플리터(splitter)에서 만나 전화선 하나로 전화국(central office)까지 간다[^1]. 음성과 데이터는 이 전화국까지의 전용선 위에서 서로 다른 주파수로 실린다. 전화국의 DSLAM(DSL access multiplexer)이 둘을 갈라, 데이터는 인터넷 회사(ISP)로, 음성은 전화망으로 보낸다[^1].
+슬라이드 그림에서 집 안의 전화기와 DSL 모뎀이 스플리터(신호를 나누고 합치는 장치)에서 만나 전화선 하나로 전화국까지 간다[^1]. 음성과 데이터는 이 전화국까지의 전용선 위에서 서로 다른 주파수로 실린다. 전화국의 DSLAM(여러 집의 DSL 선을 모아 받는 다중화 장치)이 둘을 갈라, 데이터는 인터넷 회사(ISP)로, 음성은 전화망으로 보낸다[^1].
 
 ```
 집:  전화기 ─┐
@@ -41,7 +41,7 @@ permalink: "/studies/computer-communication/last-mile-links/"
     DSL 모뎀 ─┘                                                                    └─→ ISP → 인터넷
 ```
 
-전화선 하나를 링크로, 음성과 데이터를 입력 두 개로, 주파수 대역을 DEMUX 키로 옮기면 [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/) 그대로다[^2]. 케이블 하나에 링크가 여럿 있을 수 있다는 예로 슬라이드가 ADSL을 드는 것도 이 때문이다[^3].
+다중화의 말로 읽으면 전화선 하나가 링크, 음성과 데이터가 입력 두 개, 주파수 대역이 DEMUX 키다. 그러니 [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/) 그대로다[^2]. 케이블 하나에 링크가 여럿 있을 수 있다는 예로 슬라이드가 ADSL을 드는 것도 이 때문이다[^3].
 
 ## 정의
 
@@ -52,7 +52,7 @@ permalink: "/studies/computer-communication/last-mile-links/"
 | xDSL | 음성과 데이터를 FDM 방식으로 동시에[^2] | |
 | ADSL | 전화국 ↔ 가입자 사이의 로컬 루프. 내려받기와 올려 보내기의 속도가 다르다 | 내려받기 1.554~8.448 Mbps [확인필요], 올려 보내기 16~640 Kbps |
 | VDSL | 전화국 —(광케이블, STS-N)— 동네 광 네트워크 장치(Neighborhood optical network unit) —(구리선 1,000~4,500 ft)— 가입자 | 12.96~55.2 Mbps |
-| 케이블 모뎀 | 케이블 TV 선을 이웃과 함께 씀(shared bandwidth). 비대칭 | 6~100 M |
+| 케이블 모뎀 | 케이블 TV 선을 이웃과 함께 씀(대역 공유). 비대칭 | 6~100 M |
 
 ADSL이 비대칭인 이유는 사용자 대부분이 올려 보내기보다 내려받기를 훨씬 많이 하기 때문이다. 그래서 두 방향의 비율을 조정한다[^4]. VDSL은 구리선이 길면 잡음 때문에 느려지고 짧으면 빠르다는 점을 이용한다. 전화국에서 동네까지는 광케이블로 가고, 동네 장치에서 집까지의 짧은 구간만 기존 구리선을 쓴다[^4].
 

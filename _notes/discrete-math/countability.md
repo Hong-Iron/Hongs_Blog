@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Countable Set", "Diagonal Argument", "가산 집합", "셀 수 있는 집합", "countably infinite", "비가산 집합", "uncountable", "칸토어의 대각선 논법", "Cantor's diagonal argument", "칸토어 정리", "계산 불가능성", "uncomputable", "정지 문제", "halting problem"]
 description: "원소에 1번, 2번, 3번… 번호를 빠짐없이 붙일 수 있으면 셀 수 있는(가산) 집합이다. 정수와 분수는 자연수보다 훨씬 많아 보이지만 번호를 붙일 수 있어 크기가 같다. 반면 실수나 끝없는 0·1의 나열은 어떤 번호 매기기로도 빠뜨리는 것이 반드시 생긴다(대각선 논법). 이 논법…"
@@ -41,7 +41,7 @@ permalink: "/studies/discrete-math/countability/"
 |---|---|---|---|---|---|---|---|---|
 | 정수 $$f(n)$$ | 0 | −1 | 1 | −2 | 2 | −3 | 3 | … |
 
-모든 정수가 언젠가 한 번씩, 딱 한 번 나온다. 이 줄 세우기가 아래 정의의 전단사 $$f: \mathbb{N} \to \mathbb{Z}$$다.
+모든 정수가 언젠가 한 번씩, 딱 한 번 나온다. 이 줄 세우기가 아래 정의의 전단사 $$f: \mathbb{N} \to \mathbb{Z}$$($$\mathbb{Z}$$는 정수 전체)다.
 
 ## 정의
 
@@ -57,7 +57,7 @@ $$\mathbb{N} = \{0, 1, 2, \dots\}$$에서 $$A$$로 가는 [전단사](/Hongs_Blo
 <div class="callout-title callout-title--default" markdown="span">정리</div>
 
 1. $$\mathbb{Z}$$와 $$\mathbb{Q}$$(유리수)는 가산이다.
-2. 0과 1로 된 무한 수열 전체의 집합은 비가산이다. 따라서 실수 $$\mathbb{R}$$도 비가산이다.
+2. 0과 1로 된 무한 수열 전체의 집합은 비가산이다. 따라서 실수 $$\mathbb{R}$$($$\mathbb{R}$$은 실수 전체)도 비가산이다.
 3. (칸토어) 어떤 집합 $$A$$에서도 $$\mathcal{P}(A)$$로 가는 전사는 없다. 즉 $$\vert A\vert  < \vert \mathcal{P}(A)\vert $$다.
 
 </div>

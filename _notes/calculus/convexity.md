@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Convex Function", "볼록 함수", "볼록성", "convexity", "볼록 집합", "convex set", "볼록 최적화", "convex optimization", "순볼록", "strictly convex", "강볼록", "strongly convex", "오목 함수", "concave function", "옌센 부등식", "Jensen's inequality"]
 description: "그래프가 그릇 모양인 함수다. 그래프 위의 두 점을 줄로 이으면 그 줄이 늘 그래프보다 위(또는 같은 높이)에 있다. 이런 함수에는 움푹한 곳이 하나뿐이라, 어디서 내려가기 시작하든 가장 낮은 바닥에 닿는다. 그래서 볼록인지 확인하는 것이 곧 \"경사 하강법 결과를 믿어도 되는가\"에…"
@@ -48,18 +48,18 @@ $$f(x) = x^2$$ 위의 두 점 $$(0, 0)$$과 $$(2, 4)$$를 잇는 줄의 가운�
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-집합 $$C \subseteq \mathbb{R}^n$$이 **볼록 집합**이라는 것은 $$C$$의 두 점을 잇는 선분이 늘 $$C$$ 안에 있다는 뜻이다. 볼록 집합 $$C$$ 위의 함수 $$f$$가 **볼록**이라는 것은 모든 $$\mathbf{x}, \mathbf{y} \in C$$와 $$t \in [0, 1]$$에 대해
+집합 $$C \subseteq \mathbb{R}^n$$이 **볼록 집합**이라는 것은 $$C$$의 두 점을 잇는 선분이 늘 $$C$$ 안에 있다는 뜻이다. 볼록 집합 $$C$$ 위의 함수 $$f$$가 **볼록**이라는 것은 모든 $$\mathbf{x}, \mathbf{y} \in C$$($$\in$$은 "~에 속한다")와 $$t \in [0, 1]$$에 대해
 
 $$f(t\mathbf{x} + (1 - t)\mathbf{y}) \le t f(\mathbf{x}) + (1 - t)f(\mathbf{y})$$
 
-가 성립한다는 뜻이다. $$\mathbf{x} \ne \mathbf{y}$$, $$0 < t < 1$$에서 늘 등호 없이 $$<$$이면 **순볼록**, $$-f$$가 볼록이면 $$f$$는 **오목**이다[^1].
+가 맞는다는 뜻이다. $$\mathbf{x} \ne \mathbf{y}$$, $$0 < t < 1$$에서 늘 등호 없이 $$<$$이면 **순볼록**, $$-f$$가 볼록이면 $$f$$는 **오목**이다[^1].
 
 </div>
 
 
 **동치 조건.** $$C$$가 열린 볼록 집합일 때 다음이 같다.
 
-1. *1계 조건:* $$f$$가 미분 가능하면, 볼록 ⇔ 모든 점의 접평면이 그래프 아래에 있다. $$f(\mathbf{y}) \ge f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot(\mathbf{y} - \mathbf{x})$$.
+1. *1계 조건:* $$f$$가 미분 가능하면, 볼록 ⇔ 모든 점의 접평면이 그래프 아래에 있다. $$f(\mathbf{y}) \ge f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot(\mathbf{y} - \mathbf{x})$$($$\nabla f$$는 편미분을 모은 벡터(그래디언트)).
 2. *2계 조건:* $$f$$가 두 번 미분 가능하면, 볼록 ⇔ 모든 점에서 헤세 행렬이 [양의 준정부호](/Hongs_Blog/studies/linear-algebra/positive-definite/)(고윳값이 모두 0 이상)다. 헤세 행렬이 모든 점에서 양의 정부호이면 순볼록이다(역은 아니다: $$x^4$$은 순볼록인데 0에서 $$f'' = 0$$).
 
 <div class="callout callout-theorem" markdown="1">
@@ -113,7 +113,7 @@ $$f(t\mathbf{x} + (1 - t)\mathbf{y}) \le t f(\mathbf{x}) + (1 - t)f(\mathbf{y})$
 
 - **믿을 수 있는 최적화.** 선형 회귀, 릿지, 로지스틱 회귀, SVM은 볼록 문제라 [경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/)이 시작점과 상관없이 최적해로 간다. 신경망은 볼록이 아니어서 초기화와 학습률에 따라 결과가 달라진다.
 - **문제를 볼록하게 바꾸기.** 풀기 어려운 제약을 볼록한 것으로 완화하거나, 볼록 정칙화 항을 더해 해를 하나로 만든다.
-- **옌센 부등식.** 볼록 함수에서는 평균의 함숫값이 함숫값의 평균 이하다. 정의의 부등식을 여러 점으로 늘린 것이며, 확률에서 $$f(\mathbb{E}[X]) \le \mathbb{E}[f(X)]$$로 쓰인다. [엔트로피](/Hongs_Blog/studies/probability-statistics/entropy/)의 상한 증명이 한 예다.
+- **옌센 부등식.** 볼록 함수에서는 평균의 함숫값이 함숫값의 평균 이하다. 정의의 부등식을 여러 점으로 늘린 것이며, 확률에서 $$f(\mathbb{E}[X]) \le \mathbb{E}[f(X)]$$($$\mathbb{E}[\cdot]$$은 평균(기댓값))로 쓰인다. [엔트로피](/Hongs_Blog/studies/probability-statistics/entropy/)의 상한 증명이 한 예다.
 - 알고리즘에서: 블록 하나를 더하는 비용이 $$P$$, 빼는 비용이 $$Q$$일 때 모든 칸을 높이 $$t$$로 맞추는 [지형 편집](/Hongs_Blog/studies/algorithms/pg12984/)의 비용은, 높이 $$h$$인 칸마다 $$P\max(t - h, 0) + Q\max(h - t, 0)$$을 더한 값이다. 칸마다 한 번 꺾인 볼록 함수이고 그 합도 볼록이라, $$t$$를 1 올릴 때의 비용 변화가 처음으로 0 이상이 되는 높이가 가장 싸다. $$P = Q$$면 그 높이는 칸 높이들의 중앙값이다.
 
 ## 연결

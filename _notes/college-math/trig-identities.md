@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Trigonometric Identities", "덧셈정리", "sum and difference formulas", "배각 공식", "double-angle formula", "반각 공식", "half-angle formula", "차수 내림", "곱을 합으로", "product-to-sum", "합을 곱으로", "sum-to-product", "삼각함수의 합성", "harmonic addition", "맥놀이", "beats"]
 description: "삼각함수 공식은 외울 것이 많아 보이지만, 사실은 덧셈정리 두 개에서 배각·반각·곱을 합으로 바꾸는 공식이 모두 나온다. 덧셈정리는 \"두 번 돌린 것 = 두 각을 더해 한 번 돌린 것\"을 좌표로 적은 것이다. 이 공식들 덕분에 신호를 곱해 주파수를 옮기는 변조, 사인파의 합성, 회…"
@@ -26,7 +26,7 @@ permalink: "/studies/college-math/trig-identities/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-삼각함수 공식은 외울 것이 많아 보이지만, 사실은 덧셈정리 두 개에서 배각·반각·곱을 합으로 바꾸는 공식이 모두 나온다. 덧셈정리는 "두 번 돌린 것 = 두 각을 더해 한 번 돌린 것"을 좌표로 적은 것이다. 이 공식들 덕분에 신호를 곱해 주파수를 옮기는 변조, 사인파의 합성, 회전의 합성을 계산할 수 있다. 다만 항등식은 모든 각에서 성립해야 하므로, 값 몇 개를 넣어 맞는 것만으로는 증명이 되지 않는다.
+삼각함수 공식은 외울 것이 많아 보이지만, 사실은 덧셈정리 두 개에서 배각·반각·곱을 합으로 바꾸는 공식이 모두 나온다. 덧셈정리는 "두 번 돌린 것 = 두 각을 더해 한 번 돌린 것"을 좌표로 적은 것이다. 이 공식들 덕분에 신호를 곱해 주파수를 옮기는 변조, 사인파의 합성, 회전의 합성을 계산할 수 있다. 다만 항등식은 모든 각에서 맞아야 하므로, 값 몇 개를 넣어 맞는 것만으로는 증명이 되지 않는다.
 
 </div>
 

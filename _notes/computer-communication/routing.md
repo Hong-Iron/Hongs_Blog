@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-24"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Routing", "경로 설정", "포워딩", "forwarding", "전달표", "forwarding table"]
 description: "내비게이션에 목적지를 넣으면 경로를 계산하듯, 주소로 상대가 정해진 뒤 그곳까지 어떤 길로 보낼지 정하는 일이다. 길이 여러 갈래인 간접 연결에서만 필요하다. 한 길이 끊겨도 다른 길로 돌아갈 수 있게 해 준다."
@@ -33,7 +33,7 @@ permalink: "/studies/computer-communication/routing/"
 
 ## 예시로 보기
 
-내비게이션은 목적지까지 경로를 계산한다(라우팅). 운전 중에는 교차로마다 계산된 방향으로 꺾는다(포워딩, forwarding). 교차로를 스위치로, 도로를 링크로, "다음 교차로에서 왼쪽"을 전달표(forwarding table)의 한 줄로 옮긴다[^s1].
+내비게이션은 목적지까지 경로를 계산한다(라우팅). 운전 중에는 교차로마다 계산된 방향으로 꺾는다(포워딩). 네트워크로 옮기면 교차로가 스위치, 도로가 링크다. "다음 교차로에서 왼쪽" 같은 안내 한 줄이 스위치가 가진 전달표의 한 줄이다[^s1].
 
 ```mermaid
 graph LR
@@ -45,26 +45,28 @@ graph LR
   S3 --- H2[H2]
 ```
 
-H1에서 H2로 가는 경로는 S1–S2–S3와 S1–S4–S3 두 가지다. S1의 전달표에 "목적지 H2 → S2 쪽 링크"라고 적혀 있으면 위쪽 경로로 간다. 교차로마다의 방향 안내가 아래 정의의 $$T_v$$다. 차선 수나 신호등은 버린다.
+H1에서 H2로 가는 경로는 S1–S2–S3와 S1–S4–S3 두 가지다. S1의 전달표에 "목적지 H2 → S2 쪽 링크"라고 적혀 있으면 위쪽 경로로 간다.
 
-내비게이션은 보통 출발 전에 전체 경로를 한 번에 계산한다. 인터넷에서는 대개 각 라우터가 다음 한 구간만 정하고, 전체 경로는 그 선택들이 이어져 만들어진다(hop-by-hop)[^s1].
+내비게이션은 보통 출발 전에 전체 경로를 한 번에 계산한다. 인터넷에서는 대개 각 라우터가 다음 한 구간만 정한다. 전체 경로는 그 선택들이 이어져서 만들어진다(홉 단위 전달)[^s1].
 
 ## 정의
 
-라우팅(routing)은 주소가 주어져 상대가 지정되었을 때, 그 상대까지 가는 경로를 찾는 일이다[^1].
+라우팅은 주소로 상대가 정해졌을 때, 그 상대까지 가는 경로를 찾는 일이다[^1].
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-네트워크 그래프 $$G = (V, E)$$, 출발지 $$s \in V$$, 목적지 $$d \in V$$가 있다. **라우팅**은 $$s$$에서 $$d$$로 가는 경로 $$s = v_0, v_1, \dots, v_k = d$$를 정하는 일이다. 스위치 $$v$$의 **전달표** $$T_v$$는 목적지 주소를 $$v$$에 붙은 링크 하나로 보내는 함수다. 경로 위의 각 $$v_i$$($$0 \le i < k$$)에 대해 $$T_{v_i}(d) = (v_i, v_{i+1})$$이면 데이터가 이 경로를 따라간다[^s1].
+**라우팅**은 출발지에서 목적지까지 거쳐 갈 노드들을 차례로 정하는 일이다. 스위치마다 **전달표**가 있다. 전달표는 "이 목적지로 가는 데이터는 이 링크로 내보낸다"를 적어 둔 표다. 경로 위의 스위치들이 모두 그 목적지에 대해 다음 노드 쪽 링크를 가리키고 있으면, 데이터는 그 경로를 따라간다[^s1].
+
+**기호로 쓰면.** 네트워크 그래프 $$G = (V, E)$$(노드 모음 $$V$$, 링크 모음 $$E$$), 출발지 $$s \in V$$($$\in$$은 "~에 속한다"), 목적지 $$d \in V$$가 있다. 라우팅은 $$s$$에서 $$d$$로 가는 경로 $$s = v_0, v_1, \dots, v_k = d$$를 정하는 일이다. 스위치 $$v$$의 전달표 $$T_v$$는 목적지 주소를 $$v$$에 붙은 링크 하나로 보내는 함수다. 경로 위의 각 $$v_i$$($$0 \le i < k$$)에 대해 $$T_{v_i}(d) = (v_i, v_{i+1})$$(다음 노드로 가는 링크)이면 데이터가 이 경로를 따라간다.
 
 </div>
 
 
 ## 예제
 
-- 해당하는 예: 인터넷 라우터가 목적지 IP 주소를 보고 다음 라우터를 고른다. 전화망의 회선 설정에서 A–I–II–III–D 경로를 고른다[^2]. 경로 위 링크가 고장 나면 다른 경로로 돌아가도록 전달표를 고친다[^s1].
-- 해당하지 않는 예: [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/) 하나로 된 연결(경로가 하나뿐), [다중 접근 링크](/Hongs_Blog/studies/computer-communication/multiple-access-link/)에서 같은 매체의 상대에게 보내기(중계 노드가 없음)
+- 라우팅인 것: 인터넷 라우터가 목적지 IP 주소를 보고 다음 라우터를 고른다. 전화망의 회선 설정에서 A–I–II–III–D 경로를 고른다[^2]. 경로 위 링크가 고장 나면 다른 경로로 돌아가도록 전달표를 고친다[^s1].
+- 라우팅이 필요 없는 것: [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/) 하나로 된 연결(경로가 하나뿐), [다중 접근 링크](/Hongs_Blog/studies/computer-communication/multiple-access-link/)에서 같은 매체의 상대에게 보내기(중계 노드가 없음)
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 그래프의 H1 → H2 단순 경로 2개, S2–S3 고장 뒤 S1의 다음 노드 S4 — [11_routing_verify.py](/Hongs_Blog/studies/computer-communication/code/11_routing_verify/)</div>

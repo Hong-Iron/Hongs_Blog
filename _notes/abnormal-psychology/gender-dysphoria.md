@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Gender Dysphoria", "성정체감 장애", "Gender Identity Disorder", "성전환", "transition", "트랜스젠더", "transgender", "성역할 비순응", "gender nonconformity", "성발달장애", "Disorders of Sex Development", "관찰하며 기다리기", "watchful waiting", "탈전환자", "detransitioner"]
 description: "태어날 때 할당된 성별과 스스로 경험하고 표현하는 성별이 뚜렷하게 어긋나, 그 때문에 반년 넘게 괴롭거나 생활이 어려운 상태다. 진단의 초점은 정체성 자체가 아니라 불일치가 낳는 고통에 있다. 그래서 예전 이름 \"성정체감 장애\"를 바꿨다. 경험하는 성별이 꼭 반대 성별일 필요는 없…"
@@ -74,7 +74,7 @@ A. 경험하거나 표현하는 성별과 할당된 성별 사이의 현저한 �
 
 B. 임상적으로 현저한 고통이나 손상.
 
-명시자 **전환 후 상태:** 원하는 성별로 온전히 살아가고, 적어도 하나의 의학적 조치나 요법을 받았거나 준비하고 있다.
+명시자(같은 진단에 경과, 심한 정도, 특별한 양상 같은 특징을 덧붙여 적는 항목. 여러 개를 함께 붙일 수 있다) **전환 후 상태:** 원하는 성별로 온전히 살아가고, 적어도 하나의 의학적 조치나 요법을 받았거나 준비하고 있다.
 
 </div>
 

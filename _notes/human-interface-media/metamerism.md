@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Metamerism", "메타머리즘", "메타머", "metamer", "조건등색쌍", "점묘법", "pointillism", "가법 혼색"]
 description: "재료가 다른 두 요리가 혀에는 같은 맛으로 느껴지는 것과 같다. 스펙트럼이 전혀 다른 두 빛도 세 추상체에 같은 반응을 만들면 똑같은 색으로 보인다. 덕분에 모니터는 빛 세 가지로 수많은 색을 흉내 낸다. 반대로, 가게 조명에서 같아 보이던 두 옷감이 햇빛 아래서 달라 보이는 문제…"
@@ -49,12 +49,12 @@ permalink: "/studies/human-interface-media/metamerism/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**조건등색**(metamerism): 물리적으로 다른 두 자극이 지각적으로 같은 현상[^1]. 두 빛 $$i_1 \neq i_2$$가 세 추상체 반응 $$r_S, r_M, r_L$$이 모두 같으면 서로 조건등색(메타머, metamer)이다.
+**조건등색**(metamerism): 물리적으로 다른 두 자극이 지각적으로 같은 현상[^1]. 두 빛의 스펙트럼이 다른데($$i_1 \neq i_2$$) 세 추상체의 반응 $$r_S, r_M, r_L$$(짧은·중간·긴 파장 추상체)이 모두 같으면, 두 빛은 서로 조건등색(메타머)이다. 눈은 세 반응만 받으므로 두 빛을 구별하지 못한다.
 
 </div>
 
 
-스펙트럼을 400~700 nm에서 10 nm 간격 31칸의 세기 벡터 $$\mathbf{i} \in \mathbb{R}^{31}$$로 나누어 보자. 추상체 반응은 $$3 \times 31$$ 행렬 $$C$$를 곱한 $$\mathbf{r} = C\mathbf{i}$$다([삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/)의 적분식을 칸으로 나눈 것)[^s3].
+스펙트럼을 400~700 nm에서 10 nm 간격 31칸의 세기 벡터 $$\mathbf{i} \in \mathbb{R}^{31}$$($$\in$$은 "~에 속한다")로 나누어 보자. 추상체 반응은 $$3 \times 31$$ 행렬 $$C$$를 곱한 $$\mathbf{r} = C\mathbf{i}$$다([삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/)의 적분식을 칸으로 나눈 것)[^s3].
 
 $$
 \mathbf{i}_1, \mathbf{i}_2 \text{가 조건등색} \iff C(\mathbf{i}_1 - \mathbf{i}_2) = \mathbf{0} \iff \mathbf{i}_1 - \mathbf{i}_2 \in \operatorname{null}(C)

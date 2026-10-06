@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Dot Product", "내적", "점곱", "inner product", "Norm", "노름", "길이", "length", "단위벡터", "unit vector", "직교", "orthogonal", "수직", "코사인 유사도", "cosine similarity", "코시-슈바르츠 부등식", "Cauchy–Schwarz inequality", "삼각부등식", "triangle inequality"]
 description: "두 벡터의 성분끼리 곱해 더한 수가 내적이다. 이 수는 \"두 화살표가 얼마나 같은 쪽을 향하는가\"를 재며, 같은 방향이면 크고, 수직이면 0, 반대면 음수다. 자기 자신과의 내적은 길이의 제곱이라, 길이·각도·수직을 모두 이것 하나로 계산한다. 추천 시스템의 유사도, 뉴런의 가중합…"
@@ -45,8 +45,8 @@ permalink: "/studies/linear-algebra/dot-product/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-$$\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$$에 대해
-- **내적**: $$\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = \mathbf{u}^\top\mathbf{v}$$.
+$$\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$$($$\in$$은 "~에 속한다")에 대해
+- **내적**: $$\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = \mathbf{u}^\top\mathbf{v}$$($$\sum$$은 차례로 모두 더한다는 기호).
 - **노름(길이)**: $$\Vert \mathbf{v}\Vert  = \sqrt{\mathbf{v} \cdot \mathbf{v}}$$. 길이가 1이면 **단위벡터**이고, $$\mathbf{v} \ne \mathbf{0}$$이면 $$\frac{\mathbf{v}}{\Vert \mathbf{v}\Vert }$$가 같은 방향의 단위벡터다.
 - **사잇각**: $$\mathbf{u}, \mathbf{v} \ne \mathbf{0}$$이면 $$\cos\theta = \frac{\mathbf{u}\cdot\mathbf{v}}{\Vert \mathbf{u}\Vert \Vert \mathbf{v}\Vert }$$($$0 \le \theta \le \pi$$). $$\mathbf{u}\cdot\mathbf{v} = 0$$이면 **직교**(수직)한다고 한다[^1].
 
@@ -102,7 +102,7 @@ $$\vert \mathbf{u}\cdot\mathbf{v}\vert  \le \Vert \mathbf{u}\Vert \Vert \mathbf{
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">2. 5단계의 "늘 0 이상이면 판별식 ≤ 0"은 왜 성립하는가?</summary>
+<summary class="callout-title" markdown="span">2. 5단계의 "늘 0 이상이면 판별식 ≤ 0"은 왜 맞는가?</summary>
 
 판별식이 양수면 서로 다른 두 실근이 있고, 최고차 계수 $$\Vert \mathbf{v}\Vert ^2 > 0$$인 포물선은 두 근 사이에서 음수가 된다. 늘 0 이상이라는 가정에 어긋난다.
 

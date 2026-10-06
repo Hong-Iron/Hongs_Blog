@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Estimator", "추정량", "점추정", "point estimation", "표본분포", "sampling distribution", "편향", "bias", "불편추정량", "unbiased estimator", "평균제곱오차", "MSE", "mean squared error", "편향-분산 분해", "bias-variance decomposition", "일치성", "consistency", "베셀 보정", "Bessel's correction"]
 description: "표본에서 계산한 평균 같은 값은 표본을 다시 뽑으면 달라지는 확률변수다. 그래서 \"이 계산법이 얼마나 좋은가\"를 과녁 맞히기처럼 따진다. 평균적으로 과녁 중심에서 비껴 있는가(편향), 화살이 얼마나 흩어지는가(분산), 둘을 합쳐 중심에서 평균적으로 얼마나 먼가(평균제곱오차). 표본…"
@@ -43,7 +43,7 @@ permalink: "/studies/probability-statistics/estimators/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 모수 $$\theta$$를 표본 $$X_1, \dots, X_n$$으로 어림하는 규칙 $$\hat\theta = g(X_1, \dots, X_n)$$을 **추정량**이라 하고, 그 분포를 **표본분포**라 한다[^1].
-- **편향:** $$\operatorname{bias}(\hat\theta) = \mathbb{E}[\hat\theta] - \theta$$. 0이면 **불편**.
+- **편향:** $$\operatorname{bias}(\hat\theta) = \mathbb{E}[\hat\theta] - \theta$$($$\mathbb{E}[\cdot]$$은 평균(기댓값)). 0이면 **불편**.
 - **표준오차:** $$\operatorname{SD}(\hat\theta)$$.
 - **평균제곱오차:** $$\operatorname{MSE}(\hat\theta) = \mathbb{E}[(\hat\theta - \theta)^2]$$.
 - **일치성:** $$n \to \infty$$일 때 모든 $$\varepsilon > 0$$에서 $$P(\vert \hat\theta - \theta\vert  > \varepsilon) \to 0$$.
@@ -54,7 +54,7 @@ permalink: "/studies/probability-statistics/estimators/"
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">편향-분산 분해</div>
 
-$$\operatorname{MSE}(\hat\theta) = \operatorname{bias}(\hat\theta)^2 + \operatorname{Var}(\hat\theta)$$.
+$$\operatorname{MSE}(\hat\theta) = \operatorname{bias}(\hat\theta)^2 + \operatorname{Var}(\hat\theta)$$($$\operatorname{Var}$$는 분산).
 
 </div>
 
@@ -69,7 +69,7 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 
 **표본평균.** $$\bar X$$는 불편이고 분산 $$\frac{\sigma^2}{n}$$이라 일치 추정량이다([큰 수의 법칙](/Hongs_Blog/studies/probability-statistics/lln/)). $$n$$이 크면 표본분포가 정규분포에 가깝다([중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)).
 
-**$$n - 1$$로 나누는 이유.** $$\mathbb{E}\left[\sum(X_i - \bar X)^2\right] = (n - 1)\sigma^2$$이다. 편차를 참 평균 $$\mu$$가 아니라 자료에 가장 가깝게 맞춘 $$\bar X$$로 재서 제곱합이 조금 작게 나온다. 그만큼 나누는 수를 줄여 보정한다.
+**$$n - 1$$로 나누는 이유.** $$\mathbb{E}\left[\sum(X_i - \bar X)^2\right] = (n - 1)\sigma^2$$($$\sum$$은 차례로 모두 더한다는 기호)이다. 편차를 참 평균 $$\mu$$가 아니라 자료에 가장 가깝게 맞춘 $$\bar X$$로 재서 제곱합이 조금 작게 나온다. 그만큼 나누는 수를 줄여 보정한다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">$$(n - 1)\sigma^2$$의 유도</summary>

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Improper Integral", "이상적분", "특이적분", "p-적분", "p-integral", "비교 판정", "comparison test", "가우스 적분", "Gaussian integral", "감마 함수"]
 description: "끝이 없는 구간이나, 값이 한없이 커지는 점이 있는 구간에서의 적분이다. 끝을 유한한 곳에서 잘라 적분한 뒤, 자르는 곳을 한없이 밀어 극한을 본다. 무한히 긴 꼬리도 충분히 빨리 얇아지면 넓이가 유한하다. 하지만 거리에 반비례하는 곡선처럼 느리게 얇아지면 넓이가 무한대가 되고, …"
@@ -48,7 +48,7 @@ $$\frac{1}{x^2}$$은 넓이가 1로 모이고, $$\frac1x$$은 느리지만 끝�
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- 무한 구간: $$\int_a^\infty f(x)\,dx = \lim_{t \to \infty}\int_a^t f(x)\,dx$$.
+- 무한 구간: $$\int_a^\infty f(x)\,dx = \lim_{t \to \infty}\int_a^t f(x)\,dx$$($$\lim$$은 한없이 가까이 갈 때 다가가는 값(극한)).
 - 끝점에서 값이 한없이 커질 때($$a$$에서): $$\int_a^b f(x)\,dx = \lim_{t \to a^+}\int_t^b f(x)\,dx$$.
 - 극한이 유한하면 **수렴**, 아니면 **발산**한다.
 - 양쪽이 모두 무한이거나 가운데에 문제점이 있으면 둘로 나누고, **두 조각이 모두 수렴할 때만** 전체가 수렴한다: $$\int_{-\infty}^{\infty} f = \int_{-\infty}^{c} f + \int_{c}^{\infty} f$$.<br>
@@ -103,7 +103,7 @@ $$0 \le f(x) \le g(x)$$이면, $$\int_a^\infty g$$가 수렴할 때 $$\int_a^\in
 
 - **확률분포.** 확률밀도는 전체 넓이가 1이어야 한다. 지수분포 $$\lambda e^{-\lambda x}$$($$x \ge 0$$)는 $$\int_0^\infty\lambda e^{-\lambda x}dx = 1$$이다. 정규분포의 넓이 1은 가우스 적분 $$\int_{-\infty}^\infty e^{-x^2}dx = \sqrt\pi$$에서 나온다([정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/)).
 - **꼬리가 두꺼운 분포.** 파일 크기나 웹 트래픽처럼 꼬리가 $$x^{-p}$$ 모양으로 얇아지는 분포는 $$p$$에 따라 평균이 무한대가 될 수 있다. 평균이 있으려면 $$\int^\infty x\cdot x^{-p}dx$$가 수렴해야 하고, p-적분에 따라 $$p > 2$$가 필요하다[^s1].
-- **급수 판정.** 합 $$\sum \frac{1}{n^p}$$의 수렴을 같은 모양의 적분으로 판정한다([급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/)의 적분 판정).
+- **급수 판정.** 합 $$\sum \frac{1}{n^p}$$($$\sum$$은 차례로 모두 더한다는 기호)의 수렴을 같은 모양의 적분으로 판정한다([급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/)의 적분 판정).
 
 ## 연결
 
@@ -115,7 +115,7 @@ $$0 \le f(x) \le g(x)$$이면, $$\int_a^\infty g$$가 수렴할 때 $$\int_a^\in
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"$$\int_{-\infty}^{\infty} x\,dx$$는 대칭이라 0이다"</div>
 
-틀렸다. $$\int_{-t}^{t}x\,dx = 0$$이 모든 $$t$$에서 성립하니 극한도 0처럼 보인다. 하지만 정의는 두 조각 $$\int_{-\infty}^0 x\,dx$$와 $$\int_0^\infty x\,dx$$가 **각각** 수렴하기를 요구하고, 둘 다 발산한다. 대칭으로 자르는 방식만 특별히 0이 나오는 것이다. $$\int_{-t}^{2t}x\,dx = \frac{3t^2}{2}$$처럼 자르는 방식을 바꾸면 무한대로 간다.
+틀렸다. $$\int_{-t}^{t}x\,dx = 0$$이 모든 $$t$$에서 맞으니 극한도 0처럼 보인다. 하지만 정의는 두 조각 $$\int_{-\infty}^0 x\,dx$$와 $$\int_0^\infty x\,dx$$가 **각각** 수렴하기를 요구하고, 둘 다 발산한다. 대칭으로 자르는 방식만 특별히 0이 나오는 것이다. $$\int_{-t}^{2t}x\,dx = \frac{3t^2}{2}$$처럼 자르는 방식을 바꾸면 무한대로 간다.
 
 </div>
 
@@ -147,5 +147,5 @@ $$0 \le f(x) \le g(x)$$이면, $$\int_a^\infty g$$가 수렴할 때 $$\int_a^\in
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 3.7절 "Improper Integrals"(무한 구간, 불연속 피적분함수, 비교 판정).
-[^s1]: 에이전트 보충. 파레토 분포(꼬리 $$x^{-p}$$ 모양의 밀도)의 평균이 $$p > 2$$에서만 유한하다는 것은 p-적분에서 바로 나온다. 인터넷 트래픽의 꼬리가 두껍다는 관찰은 네트워크 측정 연구에서 널리 보고되었다[확인필요].
+[^s1]: 에이전트 보충. 파레토 분포(꼬리 $$x^{-p}$$ 모양의 밀도)의 평균이 $$p > 2$$에서만 유한하다는 것은 p-적분에서 바로 나온다. 인터넷 트래픽의 꼬리가 두껍다는 관찰은 Crovella & Bestavros(1997, *IEEE/ACM Transactions on Networking* 5(6))가 대표적이다. 웹 전송 크기의 꼬리가 지수 약 1.06인 파레토 분포로 잘 맞았다. 이 지수는 "$$x$$보다 클 확률"의 지수라 밀도로는 약 2.06이고, 위 판정대로 평균은 유한하지만 분산은 무한하다.
 {% endraw %}

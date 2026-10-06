@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Matrix Multiplication", "행렬 곱셈", "행렬곱", "Transpose", "전치", "전치행렬", "대칭행렬", "symmetric matrix", "합성", "composition", "교환법칙", "결합법칙"]
 description: "두 행렬의 곱은 \"먼저 오른쪽 행렬로 바꾸고, 이어서 왼쪽 행렬로 바꾸는\" 두 변환을 하나로 합친 행렬이다. 그래서 여러 단계의 좌표 변환이나 신경망의 층들을 행렬 하나로 미리 합칠 수 있다. 합성이라 순서가 중요해서, 곱하는 순서를 바꾸면 보통 결과가 달라진다. 곱하는 순서를 괄…"
@@ -48,7 +48,7 @@ $$SR = \begin{pmatrix}0 & -2\\ 1 & 0\end{pmatrix}, \qquad RS = \begin{pmatrix}0 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-$$A \in \mathbb{R}^{m \times n}$$, $$B \in \mathbb{R}^{n \times p}$$일 때 $$AB \in \mathbb{R}^{m \times p}$$는 모든 $$\mathbf{x}$$에서 $$(AB)\mathbf{x} = A(B\mathbf{x})$$가 되도록 정한 행렬이다. 성분으로는
+$$A \in \mathbb{R}^{m \times n}$$($$\in$$은 "~에 속한다"), $$B \in \mathbb{R}^{n \times p}$$일 때 $$AB \in \mathbb{R}^{m \times p}$$는 모든 $$\mathbf{x}$$에서 $$(AB)\mathbf{x} = A(B\mathbf{x})$$가 되도록 정한 행렬이다. 성분으로는
 
 $$(AB)_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} = (A\text{의 } i\text{행}) \cdot (B\text{의 } j\text{열}).$$
 
@@ -59,7 +59,7 @@ $$A$$의 열 수와 $$B$$의 행 수가 같아야 한다[^1].
 
 $$AB$$의 $$j$$번째 열은 $$A$$에 $$B$$의 $$j$$번째 열을 곱한 것이다. $$(AB)\mathbf{e}_j = A(B\mathbf{e}_j)$$이기 때문이다. 이것이 성분 공식의 근거다.
 
-**성질.** 결합법칙 $$(AB)C = A(BC)$$, 분배법칙 $$A(B + C) = AB + AC$$, 단위행렬 $$AI = IA = A$$가 성립한다. **교환법칙은 성립하지 않는다.** 결합법칙은 변환의 합성이 결합적이라는 사실([함수의 합성](/Hongs_Blog/studies/college-math/function-transformation/))에서 나온다.
+**성질.** 결합법칙 $$(AB)C = A(BC)$$, 분배법칙 $$A(B + C) = AB + AC$$, 단위행렬 $$AI = IA = A$$가 맞는다. **교환법칙은 맞지 않는다.** 결합법칙은 변환의 합성이 결합적이라는 사실([함수의 합성](/Hongs_Blog/studies/college-math/function-transformation/))에서 나온다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">전치</div>
@@ -118,7 +118,7 @@ $$\big((AB)^\top\big)_{ij} = (AB)_{ji} = \sum_k a_{jk}b_{ki} = \sum_k (B^\top)_{
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C2** 두 정사각 행렬에서 $$AB = BA$$가 성립하지 않는 예를 들고, 변환으로 해석하라.</summary>
+<summary class="callout-title" markdown="span">**C2** 두 정사각 행렬에서 $$AB = BA$$가 맞지 않는 예를 들고, 변환으로 해석하라.</summary>
 
 **답:** 90° 회전 $$R$$과 가로 두 배 늘이기 $$S$$. $$(1, 0)$$은 $$SR$$로 $$(0, 1)$$, $$RS$$로 $$(0, 2)$$에 간다. 늘인 뒤 돌리는 것과 돌린 뒤 늘이는 것은 다르다.
 

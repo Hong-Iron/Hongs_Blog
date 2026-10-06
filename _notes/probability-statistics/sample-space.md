@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Sample Space", "표본공간", "사건", "event", "근원사건", "outcome", "결과", "여사건", "complement", "배반 사건", "disjoint events", "분할", "partition", "드모르간 법칙", "De Morgan's laws"]
 description: "실험에서 나올 수 있는 결과를 빠짐없이 모은 목록이 표본공간이고, 그중 관심 있는 결과들의 묶음이 사건이다. 사건을 집합으로 보면 \"또는\", \"그리고\", \"아니다\"가 각각 합집합, 교집합, 여집합이 되어 말로 된 확률 문제를 기계적으로 옮길 수 있다. 다만 결과를 어떤 단위로 적느…"
@@ -33,7 +33,7 @@ permalink: "/studies/probability-statistics/sample-space/"
 
 주사위 두 개를 던진다. 결과를 (첫 주사위, 둘째 주사위)의 순서쌍으로 적으면 $$6 \times 6 = 36$$개이고, 모두 똑같이 그럴듯하다. "합이 7"은 $$(1,6), (2,5), \dots, (6,1)$$의 6개 결과를 묶은 사건이다.
 
-같은 실험을 "두 눈의 합"만 적어 $$\{2, 3, \dots, 12\}$$로 쓸 수도 있다. 틀린 표본공간은 아니지만, 합 2는 $$(1,1)$$ 하나뿐이고 합 7은 결과 6개가 모인 것이라 가능성이 다르다. 순서쌍 하나하나가 아래 정의의 결과 $$\omega$$, 순서쌍 36개의 모음이 $$\Omega$$, "합이 7"이 사건 $$A \subseteq \Omega$$다.
+같은 실험을 "두 눈의 합"만 적어 $$\{2, 3, \dots, 12\}$$로 쓸 수도 있다. 틀린 표본공간은 아니지만, 합 2는 $$(1,1)$$ 하나뿐이고 합 7은 결과 6개가 모인 것이라 가능성이 다르다. 순서쌍 하나하나가 아래 정의의 결과 $$\omega$$, 순서쌍 36개의 모음이 $$\Omega$$, "합이 7"이 사건 $$A \subseteq \Omega$$($$\subseteq$$는 "~에 모두 들어 있다(부분집합)")다.
 
 ## 정의
 

@@ -9,10 +9,10 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Exponents", "Laws of Exponents", "지수법칙", "거듭제곱", "power", "밑", "base", "지수", "exponent", "유리수 지수", "거듭제곱근", "과학적 표기법", "scientific notation", "크기 어림", "order of magnitude"]
-description: "거듭제곱은 같은 수를 몇 번 곱했는지 적는 방법이다. 곱셈의 횟수를 세는 것이라서, 곱하면 횟수끼리 더해지고 거듭제곱을 다시 거듭제곱하면 횟수끼리 곱해진다. 0번, 음수 번, 분수 번 곱하기는 이 규칙이 계속 성립하도록 뜻을 정한 것이다. 단, 음수를 분수 번 곱하면 규칙이 깨지므…"
+description: "거듭제곱은 같은 수를 몇 번 곱했는지 적는 방법이다. 곱셈의 횟수를 세는 것이라서, 곱하면 횟수끼리 더해지고 거듭제곱을 다시 거듭제곱하면 횟수끼리 곱해진다. 0번, 음수 번, 분수 번 곱하기는 이 규칙이 계속 맞도록 뜻을 정한 것이다. 단, 음수를 분수 번 곱하면 규칙이 깨지므로 …"
 prev_url: "/studies/college-math/polynomial/"
 prev_title: "다항식과 방정식"
 next_url: "/studies/college-math/exponential-function/"
@@ -26,7 +26,7 @@ permalink: "/studies/college-math/exponent-laws/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-거듭제곱은 같은 수를 몇 번 곱했는지 적는 방법이다. 곱셈의 횟수를 세는 것이라서, 곱하면 횟수끼리 더해지고 거듭제곱을 다시 거듭제곱하면 횟수끼리 곱해진다. 0번, 음수 번, 분수 번 곱하기는 이 규칙이 계속 성립하도록 뜻을 정한 것이다. 단, 음수를 분수 번 곱하면 규칙이 깨지므로 밑은 양수로 제한한다.
+거듭제곱은 같은 수를 몇 번 곱했는지 적는 방법이다. 곱셈의 횟수를 세는 것이라서, 곱하면 횟수끼리 더해지고 거듭제곱을 다시 거듭제곱하면 횟수끼리 곱해진다. 0번, 음수 번, 분수 번 곱하기는 이 규칙이 계속 맞도록 뜻을 정한 것이다. 단, 음수를 분수 번 곱하면 규칙이 깨지므로 밑은 양수로 제한한다.
 
 </div>
 
@@ -64,16 +64,16 @@ $$2^3 \cdot 2^4$$는 $$2$$를 세 번 곱한 것과 네 번 곱한 것을 이어
 - $$a^n = \underbrace{a \times \cdots \times a}_{n\text{번}}$$ ($$n \ge 1$$), $$a^0 = 1$$, $$a^{-n} = \dfrac{1}{a^n}$$
 - $$a^{p/q} = \left(\sqrt[q]{a}\right)^p$$. 여기서 $$\sqrt[q]{a}$$는 $$q$$제곱해서 $$a$$가 되는 **양수**다.
 
-이때 지수법칙이 성립한다.
+이때 지수법칙이 맞는다.
 
 $$a^m a^n = a^{m+n}, \qquad \frac{a^m}{a^n} = a^{m-n}, \qquad (a^m)^n = a^{mn}, \qquad (ab)^n = a^n b^n$$
 
-유리수 지수에서도 같은 법칙이 성립한다.
+유리수 지수에서도 같은 법칙이 맞는다.
 
 </div>
 
 
-0, 음수, 분수 지수의 정의는 임의로 고른 것이 아니다. 지수법칙을 지키는 정의가 이것 하나뿐이다. 예를 들어 $$a^0 a^n = a^{0+n} = a^n$$이 성립하려면 $$a^0 = 1$$일 수밖에 없다.
+0, 음수, 분수 지수의 정의는 임의로 고른 것이 아니다. 지수법칙을 지키는 정의가 이것 하나뿐이다. 예를 들어 $$a^0 a^n = a^{0+n} = a^n$$이 맞으려면 $$a^0 = 1$$일 수밖에 없다.
 
 **밑을 양수로 두는 이유.** 음수 밑에서는 분수 지수가 법칙과 부딪힌다. 실수 세제곱근으로 $$(-8)^{1/3} = -2$$다. 그런데 $$\tfrac13 = \tfrac26$$이니 $$(-8)^{2/6} = \left((-8)^2\right)^{1/6} = 64^{1/6} = 2$$로도 계산된다. 같은 수가 $$-2$$와 $$2$$로 갈린다.
 
@@ -101,7 +101,7 @@ $$a^m a^n = a^{m+n}, \qquad \frac{a^m}{a^n} = a^{m-n}, \qquad (a^m)^n = a^{mn}, 
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"(a + b)² = a² + b²"</div>
 
-틀렸다. $$(ab)^2 = a^2 b^2$$가 성립하니 덧셈에도 성립할 것처럼 보인다. 지수법칙은 **곱**에 대한 규칙이다. 합의 제곱은 $$(a + b)^2 = a^2 + 2ab + b^2$$이다. $$a = b = 1$$이면 $$(1 + 1)^2 = 4$$인데 $$1^2 + 1^2 = 2$$다.
+틀렸다. $$(ab)^2 = a^2 b^2$$가 맞으니 덧셈에도 맞을 것처럼 보인다. 지수법칙은 **곱**에 대한 규칙이다. 합의 제곱은 $$(a + b)^2 = a^2 + 2ab + b^2$$이다. $$a = b = 1$$이면 $$(1 + 1)^2 = 4$$인데 $$1^2 + 1^2 = 2$$다.
 
 </div>
 
@@ -111,7 +111,7 @@ $$a^m a^n = a^{m+n}, \qquad \frac{a^m}{a^n} = a^{m-n}, \qquad (a^m)^n = a^{mn}, 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C1** a⁰ = 1, a⁻ⁿ = 1/aⁿ로 정하는 이유를 지수법칙으로 설명하라.</summary>
 
-**답:** $$a^m a^n = a^{m+n}$$이 $$0$$과 음수 지수에서도 성립하게 하려면 $$a^0 a^n = a^n$$이어야 하므로 $$a^0 = 1$$이다. 또 $$a^{-n} a^n = a^0 = 1$$이어야 하므로 $$a^{-n} = 1/a^n$$이다.
+**답:** $$a^m a^n = a^{m+n}$$이 $$0$$과 음수 지수에서도 맞게 하려면 $$a^0 a^n = a^n$$이어야 하므로 $$a^0 = 1$$이다. 또 $$a^{-n} a^n = a^0 = 1$$이어야 하므로 $$a^{-n} = 1/a^n$$이다.
 
 **흔한 오답:** "$$a^0 = 0$$". $$a$$를 한 번도 곱하지 않았으니 0이라고 생각하기 쉽지만, 곱셈에서 아무것도 안 한 상태는 $$1$$이다.
 

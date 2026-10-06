@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 고윳값과 고유벡터, 대각화와 행렬 거듭제곱."
 prev_url: "/studies/linear-algebra/least-squares-ladder/"
@@ -27,7 +27,7 @@ permalink: "/studies/linear-algebra/diagonalization-ladder/"
 1. *고윳값:* $$\det(A - \lambda I) = 0$$을 푼다. $$2 \times 2$$면 $$\lambda^2 - (\operatorname{tr}A)\lambda + \det A = 0$$.
 2. *고유벡터:* 고윳값마다 $$(A - \lambda I)\mathbf{x} = \mathbf{0}$$의 영이 아닌 해를 구한다.
 3. *대각화 판정:* 독립인 고유벡터가 $$n$$개면 $$X$$(열 = 고유벡터), $$\Lambda$$(대각 = 고윳값)를 세운다.
-4. *목표 계산과 검산:* $$A^k = X\Lambda^kX^{-1}$$ 또는 $$\mathbf{u}_k = \sum c_i\lambda_i^k\mathbf{x}_i$$를 쓰고, $$k = 1$$이나 $$AX = X\Lambda$$로 확인한다.
+4. *목표 계산과 검산:* $$A^k = X\Lambda^kX^{-1}$$ 또는 $$\mathbf{u}_k = \sum c_i\lambda_i^k\mathbf{x}_i$$($$\sum$$은 차례로 모두 더한다는 기호)를 쓰고, $$k = 1$$이나 $$AX = X\Lambda$$로 확인한다.
 
 ## 문제 1 · 완전한 풀이
 

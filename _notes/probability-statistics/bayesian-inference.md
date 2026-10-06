@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Bayesian Inference", "베이즈 추론", "베이지안 추론", "사전분포", "prior distribution", "사후분포", "posterior distribution", "MAP", "최대 사후 추정", "maximum a posteriori", "켤레 사전분포", "conjugate prior", "베타분포", "Beta distribution", "신용구간", "credible interval", "라플라스 평활", "Laplace smoothing"]
 description: "모르는 모수를 하나의 정해진 값이 아니라 \"얼마나 그럴듯한가\"의 분포로 보고, 데이터를 볼 때마다 베이즈 정리로 그 분포를 갱신한다. 원래 믿음(사전분포)에 데이터의 가능도를 곱하면 새 믿음(사후분포)이 된다. 사후분포의 봉우리(MAP)는 가능도에 벌점 항을 더해 최대화한 것이라,…"
@@ -67,11 +67,11 @@ $$a, b$$는 "미리 본 가상의 성공·실패 수"처럼 작동한다. $$n$$�
 
 ## 예제
 
-**MAP = 릿지 회귀.** 선형 모델 $$\mathbf{y} = X\mathbf{w} + \boldsymbol\varepsilon$$, 잡음 $$\varepsilon_i \sim \mathcal{N}(0, \sigma^2)$$, 가중치의 사전분포 $$w_j \sim \mathcal{N}(0, \tau^2)$$(독립).
+**MAP = 릿지 회귀.** 선형 모델 $$\mathbf{y} = X\mathbf{w} + \boldsymbol\varepsilon$$, 잡음 $$\varepsilon_i \sim \mathcal{N}(0, \sigma^2)$$($$X \sim$$ 분포는 "$$X$$가 그 분포를 따른다"), 가중치의 사전분포 $$w_j \sim \mathcal{N}(0, \tau^2)$$(독립).
 
-1. *음의 로그 사후:* $$-\ln L - \ln\pi = \frac{1}{2\sigma^2}\Vert \mathbf{y} - X\mathbf{w}\Vert ^2 + \frac{1}{2\tau^2}\Vert \mathbf{w}\Vert ^2 + \text{상수}$$.
+1. *음의 로그 사후:* $$-\ln L - \ln\pi = \frac{1}{2\sigma^2}\Vert \mathbf{y} - X\mathbf{w}\Vert ^2 + \frac{1}{2\tau^2}\Vert \mathbf{w}\Vert ^2 + \text{상수}$$($$\lVert\cdot\rVert$$는 벡터의 길이).
 2. *MAP:* 이것을 최소화하는 것은 $$\Vert \mathbf{y} - X\mathbf{w}\Vert ^2 + \lambda\Vert \mathbf{w}\Vert ^2$$, $$\lambda = \frac{\sigma^2}{\tau^2}$$을 최소화하는 것과 같다.
-3. *해:* [행렬 미분](/Hongs_Blog/studies/calculus/matrix-calculus/)의 릿지 해 $$(X^\top X + \lambda I)\mathbf{w} = X^\top\mathbf{y}$$.
+3. *해:* [행렬 미분](/Hongs_Blog/studies/calculus/matrix-calculus/)의 릿지 해 $$(X^\top X + \lambda I)\mathbf{w} = X^\top\mathbf{y}$$($$^\top$$는 행과 열을 바꾸는 전치).
 4. *해석:* "가중치는 0 근처일 것"이라는 사전 믿음이 벌점 항이 된다. 사전분포가 넓을수록($$\tau$$ 큼) $$\lambda$$가 작아져 보통의 최소제곱에 가까워진다.
 
 <div class="callout callout-check" markdown="1">

@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Encapsulation", "포장", "헤더", "header", "머리말", "바디", "body", "페이로드", "payload", "역캡슐화", "decapsulation"]
 description: "편지를 봉투에 넣고, 그 봉투를 다시 택배 상자에 넣는 것처럼, 층마다 위에서 받은 데이터를 통째로 내용물로 삼고 앞에 자기 머리말(헤더)을 붙여 아래층에 넘긴다. 받는 쪽은 거꾸로 한 겹씩 벗긴다. 각 층은 내용물의 속을 들여다보지 않아도 되어서 층끼리 독립적이다. 대신 층마다 …"
@@ -43,7 +43,7 @@ HHP    [HHP|RRP|Data]      ─ ─ ─ ─ →      [HHP|RRP|Data]  ↑ HHP가 H
             └────── 망에는 [HHP|RRP|Data]가 흐른다 ──────┘
 ```
 
-RRP는 응용의 Data를 바디(body)로 삼아 앞에 RRP 헤더를 붙인다. HHP는 <code>[RRP&#124;Data]</code> 전체를 다시 바디로 삼는다. HHP에게는 RRP 헤더도 그냥 내용물이다. 봉투를 층으로, 봉투 겉면의 주소를 헤더로, 편지를 바디로 옮긴다. 비유와 달리 받는 쪽의 각 층은 헤더의 키를 보고 다음에 넘길 위층을 고른다([프로토콜 그래프](/Hongs_Blog/studies/computer-communication/protocol-graph/)의 demux key).
+RRP는 응용의 Data를 내용물(바디)로 삼아 앞에 RRP 헤더를 붙인다. HHP는 <code>[RRP&#124;Data]</code> 전체를 다시 바디로 삼는다. HHP에게는 RRP 헤더도 그냥 내용물이다. 비유로 보면 봉투 한 겹이 층 하나, 봉투 겉면의 주소가 헤더, 편지가 바디다. 비유와 달리 받는 쪽의 각 층은 헤더의 키를 보고 다음에 넘길 위층을 고른다([프로토콜 그래프](/Hongs_Blog/studies/computer-communication/protocol-graph/)의 demux key).
 
 ## 정의
 
@@ -52,10 +52,12 @@ RRP는 응용의 Data를 바디(body)로 삼아 앞에 RRP 헤더를 붙인다. 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-층 $$\ell$$의 프로토콜이 위층에서 받은 메시지를 $$m_{\ell+1}$$이라 하자.
-- **보낼 때(캡슐화):** $$m_\ell = h_\ell \,\Vert \, m_{\ell+1}$$. 헤더 $$h_\ell$$을 앞에 붙인다. $$m_{\ell+1}$$이 바디다.
+보낼 때는 위층에서 받은 것 전체 앞에 자기 헤더를 붙여 아래로 내린다. 받을 때는 자기 헤더를 읽고 떼어 낸 뒤, 헤더가 가리키는 위층으로 올린다. 그래서 선에는 원래 데이터에 층마다의 헤더가 모두 더해진 길이가 실린다.
+
+**기호로 쓰면.** 층 $$\ell$$(엘)의 프로토콜이 위층에서 받은 메시지를 $$m_{\ell+1}$$이라 하자.
+- **보낼 때(캡슐화):** $$m_\ell = h_\ell \,\Vert \, m_{\ell+1}$$($$\Vert $$는 앞뒤로 이어 붙이기). 헤더 $$h_\ell$$을 앞에 붙인다. $$m_{\ell+1}$$이 바디다.
 - **받을 때(역캡슐화):** $$h_\ell$$을 읽고 떼어 낸 $$m_{\ell+1}$$을 $$h_\ell$$이 가리키는 위층에 넘긴다.
-- 가장 위층의 데이터가 $$M$$비트이고 층 $$\ell$$의 헤더가 $$\vert h_\ell\vert $$비트이면, 선에 실리는 길이는 $$M + \sum_\ell \vert h_\ell\vert $$비트다.
+- 가장 위층의 데이터가 $$M$$비트이고 층 $$\ell$$의 헤더 길이가 $$\vert h_\ell\vert $$비트이면, 선에 실리는 길이는 $$M + \sum_\ell \vert h_\ell\vert $$비트(데이터 + 모든 층의 헤더 길이 합)다.
 
 </div>
 

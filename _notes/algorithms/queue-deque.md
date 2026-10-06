@@ -9,10 +9,10 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-09-30"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Queue", "Deque", "큐", "덱", "데크", "FIFO", "선입선출", "collections.deque", "popleft", "LRU"]
-description: "매표소 줄처럼 먼저 온 사람이 먼저 나가는 것이 큐다(선입선출, FIFO). 파이썬의 deque는 줄의 양쪽 끝에서 넣고 빼는 일이 모두 한 번에 끝나서, 큐로도 스택으로도 양쪽을 다 쓰는 줄(덱)로도 쓴다. 리스트로 큐를 만들면 앞에서 뺄 때마다 나머지를 한 칸씩 당겨야 해서 느…"
+description: "매표소 줄처럼 먼저 온 사람이 먼저 나가는 것이 큐다. 이 규칙을 선입선출(FIFO)이라 부른다. 파이썬의 deque는 줄의 양쪽 끝에서 넣고 빼는 일이 모두 한 번에 끝나서, 큐로도 스택으로도 양쪽을 다 쓰는 줄(덱)로도 쓴다. 리스트로 큐를 만들면 앞에서 뺄 때마다 나머지를 한…"
 prev_url: "/studies/algorithms/stack/"
 prev_title: "스택"
 next_url: "/studies/algorithms/heap/"
@@ -26,7 +26,7 @@ permalink: "/studies/algorithms/queue-deque/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-매표소 줄처럼 먼저 온 사람이 먼저 나가는 것이 큐다(선입선출, FIFO). 파이썬의 `deque`는 줄의 양쪽 끝에서 넣고 빼는 일이 모두 한 번에 끝나서, 큐로도 스택으로도 양쪽을 다 쓰는 줄(덱)로도 쓴다. 리스트로 큐를 만들면 앞에서 뺄 때마다 나머지를 한 칸씩 당겨야 해서 느리다. 대신 덱도 가운데 원소를 꺼내거나 찾는 일은 느리다.
+매표소 줄처럼 먼저 온 사람이 먼저 나가는 것이 큐다. 이 규칙을 선입선출(FIFO)이라 부른다. 파이썬의 `deque`는 줄의 양쪽 끝에서 넣고 빼는 일이 모두 한 번에 끝나서, 큐로도 스택으로도 양쪽을 다 쓰는 줄(덱)로도 쓴다. 리스트로 큐를 만들면 앞에서 뺄 때마다 나머지를 한 칸씩 당겨야 해서 느리다. 대신 덱도 가운데 원소를 꺼내거나 찾는 일은 느리다.
 
 </div>
 

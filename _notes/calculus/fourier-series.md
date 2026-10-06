@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Fourier Series", "푸리에 급수", "푸리에 계수", "Fourier coefficient", "삼각급수", "trigonometric series", "직교 함수", "orthogonal functions", "파스발 항등식", "Parseval's identity", "깁스 현상", "Gibbs phenomenon", "디리클레 정리", "Dirichlet's theorem", "사각파", "square wave", "톱니파", "sawtooth wave", "바젤 문제", "Basel problem"]
 description: "반복되는 신호는 아무리 모양이 복잡해도, 기본 주파수와 그 정수배 주파수 사인파들을 알맞은 세기로 더해 만들 수 있다. 각 사인파의 세기는 신호가 그 사인파와 \"얼마나 닮았는가\"로 구하는데, 벡터를 서로 수직인 축들로 분해할 때 축마다 그림자 길이를 재는 것과 똑같은 계산이다. 신…"
@@ -48,7 +48,7 @@ $$\text{사각파} = \frac{4}{\pi}\left(\sin x + \frac{\sin 3x}{3} + \frac{\sin 
 
 ## 정의
 
-[벡터의 내적](/Hongs_Blog/studies/linear-algebra/orthogonal-projection/)을 함수로 넓혀, 주기 $$2\pi$$인 두 함수의 내적을 $$\langle f, g\rangle = \int_{-\pi}^{\pi}f(x)g(x)\,dx$$로 둔다. 그러면 $$1, \cos x, \sin x, \cos 2x, \sin 2x, \dots$$는 서로 수직이다. 서로 다른 둘의 내적은 0이고, $$\langle\sin kx, \sin kx\rangle = \langle\cos kx, \cos kx\rangle = \pi$$ ($$k \ge 1$$), $$\langle 1, 1\rangle = 2\pi$$다[^1].
+[벡터의 내적](/Hongs_Blog/studies/linear-algebra/orthogonal-projection/)을 함수로 넓혀, 주기 $$2\pi$$인 두 함수의 내적을 $$\langle f, g\rangle = \int_{-\pi}^{\pi}f(x)g(x)\,dx$$($$\int$$는 넓이를 구하는 적분 기호)로 둔다. 그러면 $$1, \cos x, \sin x, \cos 2x, \sin 2x, \dots$$는 서로 수직이다. 서로 다른 둘의 내적은 0이고, $$\langle\sin kx, \sin kx\rangle = \langle\cos kx, \cos kx\rangle = \pi$$ ($$k \ge 1$$), $$\langle 1, 1\rangle = 2\pi$$다[^1].
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -57,7 +57,7 @@ $$\text{사각파} = \frac{4}{\pi}\left(\sin x + \frac{\sin 3x}{3} + \frac{\sin 
 
 $$a_0 = \frac{1}{2\pi}\int_{-\pi}^{\pi}f\,dx,\qquad a_k = \frac1\pi\int_{-\pi}^{\pi}f(x)\cos kx\,dx,\qquad b_k = \frac1\pi\int_{-\pi}^{\pi}f(x)\sin kx\,dx\quad(k \ge 1)$$
 
-이고, **푸리에 급수**는 $$a_0 + \sum_{k=1}^{\infty}(a_k\cos kx + b_k\sin kx)$$다. 계수는 사영 공식 $$\frac{\langle f, \sin kx\rangle}{\langle\sin kx, \sin kx\rangle}$$ 그대로다. [오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/)으로 묶으면 $$f \sim \sum_{k=-\infty}^{\infty}c_k e^{ikx}$$, $$c_k = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-ikx}dx$$로도 쓴다.
+이고, **푸리에 급수**는 $$a_0 + \sum_{k=1}^{\infty}(a_k\cos kx + b_k\sin kx)$$다. 계수는 사영 공식 $$\frac{\langle f, \sin kx\rangle}{\langle\sin kx, \sin kx\rangle}$$ 그대로다. [오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/)으로 묶으면 $$f \sim \sum_{k=-\infty}^{\infty}c_k e^{ikx}$$($$\sim$$는 "$$f$$를 오른쪽 급수로 나타낸다"는 뜻이다. 등호와 달리 모든 점에서 값이 같다는 보장은 없다), $$c_k = \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-ikx}dx$$로도 쓴다.
 
 </div>
 

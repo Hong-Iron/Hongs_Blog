@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Frotteuristic Disorder", "마찰도착증", "frotteurism", "접촉도착증"]
 description: "동의하지 않은 사람의 몸에 자기 몸을 대거나 문지르는 것에서 강렬한 성적 흥분을 느끼는 일이 반년 넘게 되풀이되고, 그 때문에 괴롭거나 실제로 그렇게 하는 장애다. 혼잡한 지하철이나 버스처럼 몰래 접촉하기 쉬운 곳에서 흔히 일어난다. 대개 청소년기 후기나 성인기 초기에 처음 알아차린다."
@@ -41,7 +41,8 @@ permalink: "/studies/abnormal-psychology/frotteuristic-disorder/"
 <div class="callout-title" markdown="span">마찰도착장애의 진단기준[^1]</div>
 
 A. 동의하지 않은 사람에게 몸을 대거나 문지르는 행위를 통해 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 이상 이어진다.<br>
-B. 임상적으로 현저한 고통이나 손상을 낳는다. DSM-5-TR은 동의하지 않은 사람에게 이 충동을 행동으로 옮긴 경우도 B에 넣는다[^s2].
+B. 임상적으로 현저한 고통이나 손상을 낳는다. DSM-5-TR은 동의하지 않은 사람에게 이 충동을 행동으로 옮긴 경우도 B에 넣는다[^s2].<br>
+   — 치료가 필요할 만큼 괴롭거나, 생활에 뚜렷한 지장이 생긴다.
 
 </div>
 

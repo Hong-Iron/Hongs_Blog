@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Visual Pathway", "시지각 흐름", "LGN", "외측 슬상체", "lateral geniculate nucleus", "시각 피질", "striate cortex", "선조 피질", "V1", "상구", "superior colliculus", "시교차", "optic chiasm", "망막 위상 지도", "retinotopic map"]
 description: "눈에서 뇌까지 가는 길은 택배 물류망과 같다. 망막에서 모인 신호는 시신경을 타고 가다 시교차에서 반쯤 갈라지고, 시상의 외측 슬상체(LGN)라는 분류 센터를 거쳐 뒤통수의 시각 피질에 닿는다. LGN은 그냥 넘겨주는 창고가 아니다. 피질에서 거꾸로 오는 지시를 받아 무엇을 얼마나…"
@@ -49,7 +49,7 @@ graph LR
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-시각 자극의 흐름은 눈 → LGN → 선조 피질(striate cortex, 시각 피질)이다[^1]. 요약하면 망막 → 시세포(추상체, 간상체) → 시신경 → LGN → 대뇌 후두엽이다[^3].
+시각 자극의 흐름은 눈 → LGN → 선조 피질(시각 피질)이다[^1]. 요약하면 망막 → 시세포(추상체, 간상체) → 시신경 → LGN → 대뇌 후두엽이다[^3].
 
 </div>
 

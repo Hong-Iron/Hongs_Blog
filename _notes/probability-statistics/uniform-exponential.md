@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Uniform Distribution", "균등분포", "연속 균등분포", "Exponential Distribution", "지수분포", "역변환 샘플링", "inverse transform sampling", "균등분포의 보편성", "universality of the uniform", "포아송 과정", "Poisson process", "도착 간격", "interarrival time"]
 description: "균등분포는 구간 안 어디든 똑같이 그럴듯한 값이다. 컴퓨터의 기본 난수가 이 분포이고, 여기에 알맞은 함수를 씌우면 다른 어떤 분포의 난수도 만들 수 있다. 지수분포는 드물게 일어나는 일을 기다리는 시간이다. 요청이 무작위로 오면 다음 요청까지의 간격이 이 분포를 따르고, 평균 발…"
@@ -90,7 +90,7 @@ permalink: "/studies/probability-statistics/uniform-exponential/"
 
 - **시뮬레이션의 출발점.** 언어가 주는 기본 난수는 0~1 균등분포다. 역변환으로 지수분포를, [박스–뮬러 변환](/Hongs_Blog/studies/calculus/multiple-integrals/)으로 정규분포를 만든다.
 - **대기행렬과 신뢰성.** 도착 간격과 처리 시간을 지수분포로 두면 대기행렬 모델이 풀리기 쉬워진다. 고장까지의 시간을 지수분포로 두면 "고장률이 일정하다"는 가정이 된다.
-- **맞지 않는 경우.** 오래 쓸수록 잘 고장 나는 기계 부품, 처음에 잘 고장 나는 불량품처럼 고장률이 시간에 따라 바뀌면 지수분포가 틀린다. 무기억성이 성립하는지부터 따진다.
+- **맞지 않는 경우.** 오래 쓸수록 잘 고장 나는 기계 부품, 처음에 잘 고장 나는 불량품처럼 고장률이 시간에 따라 바뀌면 지수분포가 틀린다. 무기억성이 맞는지부터 따진다.
 - 알고리즘에서: 나올 수 있는 값이 유한 개인 분포는 누적 확률표에서 '누적 확률이 0~1 균등 난수 $$U$$보다 큰 첫 값'을 [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)으로 찾아 뽑는다. 가중치를 준 파이썬 `random.choices`가 이 방식이다.
 
 ## 연결

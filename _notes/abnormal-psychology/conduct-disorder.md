@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Conduct Disorder", "CD", "제한된 친사회적 정서", "with limited prosocial emotions", "냉담-무정서 특성", "callous-unemotional traits", "아동기 발병형", "childhood-onset type", "청소년기 발병형", "adolescent-onset type", "적대적 귀인 편향", "hostile attribution bias", "품행장애의 발달경로모델", "Capaldi & Patterson"]
 description: "남을 괴롭히고, 동물을 학대하고, 물건을 부수고, 훔치고, 가출하는 등 다른 사람의 기본 권리를 침해하고 나이에 맞는 규칙을 반복해서 어기는 아동·청소년의 장애다. 어른에게 반항하는 데 그치는 적대적 반항장애보다 훨씬 심각하다. 어릴 때의 ADHD에서 시작해 품행장애를 거쳐 성인의…"
@@ -36,7 +36,7 @@ permalink: "/studies/abnormal-psychology/conduct-disorder/"
 열다섯 살 IU는 1년 동안 후배를 협박해 돈을 빼앗고, 싸움에서 칼을 꺼낸 적이 있으며, 길고양이를 괴롭혔다. 열두 살 때부터 부모 몰래 밤늦게 들어오지 않았고, 두 번 가출했다. 들켜도 미안해하지 않고 "걔가 약해서 그런 거"라고 말한다. 아버지는 술을 마시면 IU를 때렸고, 어머니는 IU의 행동을 거의 모른다[^s1].
 
 - 사람과 동물에 대한 공격성(협박, 무기, 동물 학대), 사기·절도(갈취), 중대한 규칙 위반(13세 이전 외박, 가출).
-- 후회나 죄책감의 결여, 공감의 결여: "제한된 친사회적 정서" 명시자 후보.
+- 후회나 죄책감의 결여, 공감의 결여: "제한된 친사회적 정서" 명시자(같은 진단에 경과, 심한 정도, 특별한 양상 같은 특징을 덧붙여 적는 항목. 여러 개를 함께 붙일 수 있다) 후보.
 - 가정환경: 폭력적 양육, 방임, 부모의 알코올 문제.
 
 ## 정의

@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["거듭제곱 vs 지수", "power vs exponential", "다항 시간 vs 지수 시간", "polynomial vs exponential time"]
 description: "x^2과 2^x는 둘 다 \"제곱\"처럼 보이지만 변수가 있는 자리가 다르다. 가르는 질문은 \"변수가 밑에 있는가, 지수에 있는가\"다. 밑에 있으면 거듭제곱함수, 지수에 있으면 지수함수다. 결국에는 밑이 1보다 큰 지수함수가 어떤 거듭제곱함수보다도 커지지만, 언제 역전하는지는 계수에 …"
@@ -50,9 +50,9 @@ $$x^2$$과 $$2^x$$는 둘 다 "제곱"처럼 보이지만 변수가 있는 자�
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C3** n이 자연수일 때 n² < 2ⁿ은 언제부터 늘 성립하는가? 두 식이 같은 n과 거꾸로인 n은?</summary>
+<summary class="callout-title" markdown="span">**C3** n이 자연수일 때 n² < 2ⁿ은 언제부터 늘 맞는가? 두 식이 같은 n과 거꾸로인 n은?</summary>
 
-**답:** $$n \ge 5$$부터 늘 성립한다. $$n = 2, 4$$에서는 같고($$4 = 4$$, $$16 = 16$$), $$n = 3$$에서는 $$9 > 8$$로 거꾸로다. "늘"을 증명하려면 이산수학의 [수학적 귀납법](/Hongs_Blog/studies/discrete-math/induction/)을 쓴다.
+**답:** $$n \ge 5$$부터 늘 맞는다. $$n = 2, 4$$에서는 같고($$4 = 4$$, $$16 = 16$$), $$n = 3$$에서는 $$9 > 8$$로 거꾸로다. "늘"을 증명하려면 이산수학의 [수학적 귀납법](/Hongs_Blog/studies/discrete-math/induction/)을 쓴다.
 
 </details>
 

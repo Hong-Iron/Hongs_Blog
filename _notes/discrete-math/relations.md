@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Relation", "Binary Relation", "이항 관계", "반사적", "reflexive", "비반사적", "irreflexive", "대칭적", "symmetric", "반대칭적", "antisymmetric", "추이적", "transitive", "추이 폐포", "transitive closure", "와셜 알고리즘", "Warshall's algorithm", "관계 행렬"]
 description: "관계는 \"누가 누구와 이어져 있는가\"를 짝의 모음으로 적은 것이다. 친구, 부모와 자식, 작거나 같다, 선수 과목이 모두 관계다. 반사·대칭·반대칭·추이 네 성질로 관계의 성격을 가르면, 같은 무리로 묶는 관계(동치관계)와 줄을 세우는 관계(순서)가 나온다. 다만 \"대칭이 아니면 …"
@@ -49,7 +49,7 @@ permalink: "/studies/discrete-math/relations/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 집합 $$A$$에서 $$B$$로의 **이항 관계**는 $$A \times B$$의 부분집합 $$R$$이다. $$(a, b) \in R$$을 $$a\,R\,b$$로도 쓴다. $$A = B$$이면 "$$A$$ 위의 관계"라 한다[^1]. $$A$$ 위의 관계 $$R$$에 대해
-- 반사적: $$\forall a\ (a\,R\,a)$$. 비반사적: $$\forall a\ \neg(a\,R\,a)$$
+- 반사적: $$\forall a\ (a\,R\,a)$$($$\forall$$은 "모든"). 비반사적: $$\forall a\ \neg(a\,R\,a)$$
 - 대칭적: $$a\,R\,b \Rightarrow b\,R\,a$$
 - 반대칭적: $$a\,R\,b \wedge b\,R\,a \Rightarrow a = b$$
 - 추이적: $$a\,R\,b \wedge b\,R\,c \Rightarrow a\,R\,c$$

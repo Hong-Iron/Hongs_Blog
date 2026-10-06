@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Complex Numbers", "허수", "imaginary number", "허수 단위", "i", "실수부", "real part", "허수부", "imaginary part", "켤레복소수", "complex conjugate", "절댓값", "modulus", "복소평면", "complex plane"]
 description: "제곱해서 −1이 되는 수를 하나 새로 들여와 만든 수의 체계다. 실수가 한 줄로 늘어선 수직선이라면, 복소수는 평면 위의 점이다. 이 확장 덕분에 모든 다항식이 근을 갖게 되고, 회전과 진동을 곱셈 하나로 다룰 수 있게 된다. 대신 복소수 사이에는 \"어느 쪽이 더 큰가\"라는 순서가…"
@@ -53,7 +53,7 @@ $$(2 + 3i)(1 - i) = 2 - 2i + 3i - 3i^2 = 2 + i + 3 = 5 + i$$
 $$i^2 = -1$$인 수 $$i$$(허수 단위)와 실수 $$a$$, $$b$$로 된 $$z = a + bi$$를 **복소수**라 하고, 그 집합을 $$\mathbb{C}$$로 쓴다[^1].
 - 실수부 $$\operatorname{Re} z = a$$, 허수부 $$\operatorname{Im} z = b$$. $$b = 0$$이면 실수, $$a = 0$$이면 순허수다.
 - 덧셈·곱셈: $$(a + bi) + (c + di) = (a + c) + (b + d)i$$, $$\ (a + bi)(c + di) = (ac - bd) + (ad + bc)i$$
-- 켤레: $$\bar z = a - bi$$. 절댓값: $$\vert z\vert  = \sqrt{a^2 + b^2}$$ (원점까지의 거리). 둘 사이에 $$z\bar z = \vert z\vert ^2$$가 성립한다.
+- 켤레: $$\bar z = a - bi$$. 절댓값: $$\vert z\vert  = \sqrt{a^2 + b^2}$$ (원점까지의 거리). 둘 사이에 $$z\bar z = \vert z\vert ^2$$가 맞는다.
 - 나눗셈: 분모의 켤레를 위아래에 곱해 분모를 실수로 만든다. $$\dfrac{z}{w} = \dfrac{z\bar w}{\vert w\vert ^2}$$ ($$w \ne 0$$)
 
 </div>
@@ -109,7 +109,7 @@ $$(1 + 2i)(3 - i)$$와 $$\dfrac{1 + 2i}{3 - i}$$를 계산한다.
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"√(−4) · √(−9) = √36 = 6"</div>
 
-틀렸다. 실수에서 $$\sqrt{a}\sqrt{b} = \sqrt{ab}$$를 써 왔으니 음수에도 될 것 같다. 이 규칙은 $$a, b \ge 0$$일 때만 성립한다. 실제로 $$\sqrt{-4} = 2i$$, $$\sqrt{-9} = 3i$$이므로 곱은 $$6i^2 = -6$$이다. 음수의 제곱근은 먼저 $$i$$를 꺼내서 계산하면 틀리지 않는다.
+틀렸다. 실수에서 $$\sqrt{a}\sqrt{b} = \sqrt{ab}$$를 써 왔으니 음수에도 될 것 같다. 이 규칙은 $$a, b \ge 0$$일 때만 맞는다. 실제로 $$\sqrt{-4} = 2i$$, $$\sqrt{-9} = 3i$$이므로 곱은 $$6i^2 = -6$$이다. 음수의 제곱근은 먼저 $$i$$를 꺼내서 계산하면 틀리지 않는다.
 
 </div>
 

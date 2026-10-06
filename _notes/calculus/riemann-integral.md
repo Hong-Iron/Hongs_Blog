@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Definite Integral", "정적분", "Riemann Sum", "리만 합", "리만 적분", "Riemann integral", "적분 가능", "integrable", "상합", "하합", "Darboux sum", "수치 적분", "numerical integration", "사다리꼴 규칙", "trapezoidal rule", "심프슨 규칙", "Simpson's rule"]
 description: "속도계 기록만으로 이동 거리를 구하려면, 짧은 시간마다 \"그때 속도 × 시간\"을 더하면 된다. 시간을 잘게 나눌수록 이 합은 참값에 다가가고, 그 극한이 정적분이다. 거리, 넓이, 누적 사용량처럼 \"변하는 양을 쌓은 것\"을 모두 이 방법으로 정의한다. 다만 값이 아래로 내려가면 음…"
@@ -54,7 +54,7 @@ $$f$$가 $$[a, b]$$에서 정의된 함수라 하자. 구간을 $$a = x_0 < x_1 
 $$S = \sum_{i=1}^{n} f(x_i^*)\,\Delta x_i \qquad (\Delta x_i = x_i - x_{i-1})$$
 
 를 **리만 합**이라 한다. 가장 넓은 칸의 폭 $$\max_i \Delta x_i$$가 0으로 갈 때, 점을 어떻게 고르든 $$S$$가 같은 수 $$I$$로 다가가면 $$f$$는 **적분 가능**하고 $$\int_a^b f(x)\,dx = I$$라 쓴다[^1].<br>
-엄밀히는: $$\forall \varepsilon > 0\ \exists \delta > 0$$, 폭이 모두 $$\delta$$ 미만인 모든 분할과 점 선택에서 $$\vert S - I\vert  < \varepsilon$$.
+엄밀히는: $$\forall \varepsilon > 0\ \exists \delta > 0$$($$\forall$$은 "모든"), 폭이 모두 $$\delta$$ 미만인 모든 분할과 점 선택에서 $$\vert S - I\vert  < \varepsilon$$.
 
 </div>
 

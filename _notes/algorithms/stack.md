@@ -9,10 +9,10 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Stack", "스택", "LIFO", "후입선출", "push", "pop", "괄호 검사"]
-description: "접시를 쌓으면 맨 위에 놓은 접시를 가장 먼저 꺼낸다. 스택은 이렇게 마지막에 넣은 것을 먼저 꺼내는 자료구조다(후입선출, LIFO). \"가장 최근 것과 짝 맞추기\"나 \"방금 한 일 되돌리기\"에 딱 맞고, 넣기와 꺼내기가 한 번에 끝난다. 대신 맨 위만 볼 수 있어서, 중간에 있는…"
+description: "접시를 쌓으면 맨 위에 놓은 접시를 가장 먼저 꺼낸다. 스택은 이렇게 마지막에 넣은 것을 먼저 꺼내는 자료구조다. 이 규칙을 후입선출(LIFO)이라 부른다. \"가장 최근 것과 짝 맞추기\"나 \"방금 한 일 되돌리기\"에 딱 맞고, 넣기와 꺼내기가 한 번에 끝난다. 대신 맨 위만 볼 수…"
 prev_url: "/studies/algorithms/bit-operations/"
 prev_title: "비트 연산과 비트마스크"
 next_url: "/studies/algorithms/queue-deque/"
@@ -26,7 +26,7 @@ permalink: "/studies/algorithms/stack/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-접시를 쌓으면 맨 위에 놓은 접시를 가장 먼저 꺼낸다. 스택은 이렇게 **마지막에 넣은 것을 먼저 꺼내는** 자료구조다(후입선출, LIFO). "가장 최근 것과 짝 맞추기"나 "방금 한 일 되돌리기"에 딱 맞고, 넣기와 꺼내기가 한 번에 끝난다. 대신 맨 위만 볼 수 있어서, 중간에 있는 것을 찾으려면 느리다.
+접시를 쌓으면 맨 위에 놓은 접시를 가장 먼저 꺼낸다. 스택은 이렇게 **마지막에 넣은 것을 먼저 꺼내는** 자료구조다. 이 규칙을 후입선출(LIFO)이라 부른다. "가장 최근 것과 짝 맞추기"나 "방금 한 일 되돌리기"에 딱 맞고, 넣기와 꺼내기가 한 번에 끝난다. 대신 맨 위만 볼 수 있어서, 중간에 있는 것을 찾으려면 느리다.
 
 </div>
 

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Geometric Distribution", "기하분포", "무기억성", "memorylessness", "memoryless property", "도박사의 오류", "gambler's fallacy", "쿠폰 수집 문제", "coupon collector problem", "재전송", "retransmission"]
 description: "성공할 때까지 몇 번 시도해야 하는지의 분포다. 평균 횟수는 성공 확률의 역수라, 주사위로 6이 나올 때까지는 평균 6번이 걸린다. 가장 특이한 성질은 무기억성이다. 이미 여러 번 실패했어도 앞으로 더 기다릴 횟수의 분포는 처음과 똑같아서, \"이제 나올 때가 됐다\"는 느낌은 틀렸다…"
@@ -87,7 +87,7 @@ $$P(X = k) = (1 - p)^{k-1}p\quad(k = 1, 2, \dots),\qquad \mathbb{E}[X] = \frac1p
 **쿠폰 수집.** 과자마다 $$n$$종류 스티커 중 하나가 똑같은 확률로 들어 있다. 모든 종류를 모으려면 평균 몇 개를 사야 하는가?
 
 1. *단계로 나누기:* 이미 $$i$$종류를 가졌을 때 새 종류가 나올 확률은 $$\frac{n - i}{n}$$. 그때까지 사는 개수 $$T_i$$는 기하분포라 평균 $$\frac{n}{n - i}$$.
-2. *선형성:* 전체 개수는 $$T_0 + T_1 + \cdots + T_{n-1}$$이라 [기댓값의 선형성](/Hongs_Blog/studies/probability-statistics/expectation/)으로 $$\sum_{i=0}^{n-1}\frac{n}{n - i} = n\left(1 + \frac12 + \cdots + \frac1n\right)$$.
+2. *선형성:* 전체 개수는 $$T_0 + T_1 + \cdots + T_{n-1}$$이라 [기댓값의 선형성](/Hongs_Blog/studies/probability-statistics/expectation/)으로 $$\sum_{i=0}^{n-1}\frac{n}{n - i} = n\left(1 + \frac12 + \cdots + \frac1n\right)$$($$\sum$$은 차례로 모두 더한다는 기호).
 3. *값:* $$n = 10$$이면 약 29.3개. 종류 수의 세 배 가까이 사야 한다. 마지막 몇 종류가 오래 걸리기 때문이다($$T_9$$만 평균 10개).
 
 <div class="callout callout-check" markdown="1">

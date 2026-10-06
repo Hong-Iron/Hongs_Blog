@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Binomial Theorem", "이항정리", "이항계수", "binomial coefficient", "파스칼 삼각형", "Pascal's triangle", "조합적 증명", "combinatorial proof", "방데르몽드 항등식", "Vandermonde's identity"]
 description: "(x + y)를 n번 곱해 전개하면, 괄호 n개 중 x를 몇 개의 괄호에서 고르느냐에 따라 항이 정해진다. 그래서 각 항의 계수가 \"n개 중 k개를 고르는 수\"이고, 파스칼 삼각형의 한 줄이 곧 전개식의 계수다. 같은 것을 두 가지로 세어 등식을 얻는 조합적 증명의 대표 예이기도 …"
@@ -66,7 +66,7 @@ $$(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$$
 
 *조합적 증명:* $$(x + y)^n$$을 전개하면 괄호 $$n$$개에서 $$x$$나 $$y$$를 하나씩 골라 곱한 항들의 합이다. $$x^{n-k}y^k$$는 $$y$$를 고를 괄호 $$k$$개를 정하는 방법만큼, 즉 $$\binom{n}{k}$$번 나온다.
 
-*귀납적 증명:* $$n = 0$$이면 $$1 = 1$$. $$n$$에서 성립하면 $$(x+y)^{n+1} = (x+y)\sum_k \binom{n}{k}x^{n-k}y^k$$를 전개해 $$x^{n+1-k}y^k$$의 계수를 모으면 $$\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$$(파스칼 항등식)다. ∎
+*귀납적 증명:* $$n = 0$$이면 $$1 = 1$$. $$n$$에서 맞으면 $$(x+y)^{n+1} = (x+y)\sum_k \binom{n}{k}x^{n-k}y^k$$를 전개해 $$x^{n+1-k}y^k$$의 계수를 모으면 $$\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$$(파스칼 항등식)다. ∎
 
 </details>
 

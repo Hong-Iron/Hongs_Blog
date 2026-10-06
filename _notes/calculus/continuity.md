@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Continuity", "Intermediate Value Theorem", "연속", "연속함수", "continuous function", "불연속", "discontinuity", "사잇값 정리", "IVT", "최대·최소 정리", "extreme value theorem", "이분법", "bisection method"]
 description: "연속은 그래프를 펜을 떼지 않고 그릴 수 있다는 뜻으로, 그 점의 극한값과 함숫값이 같다는 것이다. 연속함수가 구간의 양 끝에서 부호가 다르면 그 사이 어딘가에서 반드시 0을 지난다(사잇값 정리). 이것이 \"반씩 줄여 가며 근을 찾는\" 이분법의 근거다. 단, 구간 안에 끊긴 곳이 …"
@@ -50,9 +50,9 @@ $$f(x) = x^3 - x - 2$$는 $$f(1) = -2 < 0$$, $$f(2) = 4 > 0$$이다. 연속함�
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-함수 $$f$$가 $$a$$에서 **연속**이라는 것은 다음 세 조건이 모두 성립한다는 뜻이다[^1].
+함수 $$f$$가 $$a$$에서 **연속**이라는 것은 다음 세 조건이 모두 맞는다는 뜻이다[^1].
 1. $$f(a)$$가 정의되어 있다.
-2. $$\lim_{x \to a} f(x)$$가 있다.
+2. $$\lim_{x \to a} f(x)$$($$\lim$$은 한없이 가까이 갈 때 다가가는 값(극한))가 있다.
 3. 둘이 같다: $$\lim_{x \to a} f(x) = f(a)$$.
 
 구간의 모든 점에서 연속이면 그 구간에서 연속이라 한다(끝점은 한쪽 극한으로 본다). 다항식, 지수·로그, 삼각함수는 정의역에서 연속이고, 연속함수의 합·곱·몫(분모가 0이 아닐 때)·합성도 연속이다.
@@ -63,7 +63,7 @@ $$f(x) = x^3 - x - 2$$는 $$f(1) = -2 < 0$$, $$f(2) = 4 > 0$$이다. 연속함�
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
 
-1. **사잇값 정리:** $$f$$가 $$[a, b]$$에서 연속이고 $$y$$가 $$f(a)$$와 $$f(b)$$ 사이의 값이면, $$f(c) = y$$인 $$c \in [a, b]$$가 있다. 특히 $$f(a)$$와 $$f(b)$$의 부호가 다르면 $$[a, b]$$ 안에 근이 있다.
+1. **사잇값 정리:** $$f$$가 $$[a, b]$$에서 연속이고 $$y$$가 $$f(a)$$와 $$f(b)$$ 사이의 값이면, $$f(c) = y$$인 $$c \in [a, b]$$($$\in$$은 "~에 속한다")가 있다. 특히 $$f(a)$$와 $$f(b)$$의 부호가 다르면 $$[a, b]$$ 안에 근이 있다.
 2. **최대·최소 정리:** $$f$$가 닫힌 구간 $$[a, b]$$에서 연속이면 최댓값과 최솟값을 그 구간 안에서 가진다[^2].
 
 [증명 생략: 두 정리 모두 실수의 완비성(빈틈없음)에 기대며, OpenStax 교재도 증명 없이 쓴다.]

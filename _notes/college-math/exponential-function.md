@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Exponential Function", "지수적 성장", "exponential growth", "지수적 감소", "exponential decay", "자연상수", "e", "오일러 수", "Euler's number", "자연지수함수", "exp", "연속 복리"]
 description: "종이를 반으로 접을 때마다 두께가 두 배가 되듯, 같은 간격마다 같은 비율로 곱해지는 양을 나타내는 함수다. 더하는 성장이 아니라 곱하는 성장이라, 처음에는 느려 보여도 결국 어떤 다항식보다 빨리 커진다. 비율이 1보다 크면 늘고 1보다 작으면 줄어든다. 곱하는 수는 양수이고 1이…"
@@ -68,7 +68,7 @@ permalink: "/studies/college-math/exponential-function/"
 
 무리수 지수 $$b^{\sqrt2}$$는 $$b^{1.4}, b^{1.41}, b^{1.414}, \dots$$처럼 유리수 지수 값이 다가가는 극한으로 정한다[^1]. [증명 생략: 극한이 존재하고 지수법칙이 유지된다는 것은 미분적분학의 결과]
 
-**자연상수** $$e = \displaystyle\lim_{n \to \infty}\left(1 + \frac1n\right)^n \approx 2.718281828$$이고, $$e^x$$를 자연지수함수라 하며 $$\exp(x)$$로도 쓴다[^1].
+**자연상수** $$e = \displaystyle\lim_{n \to \infty}\left(1 + \frac1n\right)^n \approx 2.718281828$$($$\lim$$은 한없이 가까이 갈 때 다가가는 값(극한))이고, $$e^x$$를 자연지수함수라 하며 $$\exp(x)$$로도 쓴다[^1].
 
 </div>
 

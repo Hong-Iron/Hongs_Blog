@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Multivariable Chain Rule", "다변수 연쇄 법칙", "Jacobian", "야코비 행렬", "야코비안", "Jacobian matrix", "야코비 행렬식", "Jacobian determinant", "전미분", "total derivative", "합성 함수의 미분"]
 description: "여러 입력, 여러 출력의 함수도 아주 가까이서 보면 선형 변환이고, 그 변환의 행렬이 야코비 행렬이다. 함수를 이어 붙이면 가까이서 본 선형 변환도 이어 붙여지므로, 합성 함수의 미분은 야코비 행렬의 곱이다. 한 변수 연쇄 법칙을 \"영향이 흐르는 모든 길을 따라 곱하고 더한다\"로 …"
@@ -26,7 +26,7 @@ permalink: "/studies/calculus/multivariable-chain-rule/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-여러 입력, 여러 출력의 함수도 아주 가까이서 보면 선형 변환이고, 그 변환의 행렬이 야코비 행렬이다. 함수를 이어 붙이면 가까이서 본 선형 변환도 이어 붙여지므로, 합성 함수의 미분은 야코비 행렬의 곱이다. 한 변수 연쇄 법칙을 "영향이 흐르는 모든 길을 따라 곱하고 더한다"로 넓힌 것이고, 신경망의 역전파가 정확히 이 계산이다. 다만 한 경로만 따라가고 다른 경로를 빠뜨리면 틀리며, 편미분만 있고 미분 가능하지 않으면 공식이 성립하지 않는다.
+여러 입력, 여러 출력의 함수도 아주 가까이서 보면 선형 변환이고, 그 변환의 행렬이 야코비 행렬이다. 함수를 이어 붙이면 가까이서 본 선형 변환도 이어 붙여지므로, 합성 함수의 미분은 야코비 행렬의 곱이다. 한 변수 연쇄 법칙을 "영향이 흐르는 모든 길을 따라 곱하고 더한다"로 넓힌 것이고, 신경망의 역전파가 정확히 이 계산이다. 다만 한 경로만 따라가고 다른 경로를 빠뜨리면 틀리며, 편미분만 있고 미분 가능하지 않으면 공식이 맞지 않는다.
 
 </div>
 
@@ -35,7 +35,7 @@ permalink: "/studies/calculus/multivariable-chain-rule/"
 
 $$z = uv$$이고 $$u = x^2$$, $$v = \sin x$$라 하자. $$x$$가 $$z$$에 영향을 주는 길은 두 개다. $$u$$를 거치는 길과 $$v$$를 거치는 길이다.
 
-- $$u$$를 거치는 길: $$\frac{\partial z}{\partial u}\frac{du}{dx} = v \cdot 2x$$.
+- $$u$$를 거치는 길: $$\frac{\partial z}{\partial u}\frac{du}{dx} = v \cdot 2x$$($$\partial$$는 다른 변수는 그대로 두고 한 변수로만 미분한다는 기호).
 - $$v$$를 거치는 길: $$\frac{\partial z}{\partial v}\frac{dv}{dx} = u \cdot \cos x$$.
 - 합: $$\frac{dz}{dx} = 2x\sin x + x^2\cos x$$. 곱의 미분 $$(x^2\sin x)'$$과 같다.
 
@@ -46,7 +46,7 @@ $$z = uv$$이고 $$u = x^2$$, $$v = \sin x$$라 하자. $$x$$가 $$z$$에 영향
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-$$\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$$, $$\mathbf{f} = (f_1, \dots, f_m)$$의 **야코비 행렬**은 $$m \times n$$ 행렬
+$$\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체), $$\mathbf{f} = (f_1, \dots, f_m)$$의 **야코비 행렬**은 $$m \times n$$ 행렬
 
 $$J_{\mathbf{f}} = \begin{pmatrix}\frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n}\\ \vdots & & \vdots\\ \frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_n}\end{pmatrix}$$
 
@@ -58,11 +58,11 @@ $$J_{\mathbf{f}} = \begin{pmatrix}\frac{\partial f_1}{\partial x_1} & \cdots & \
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">다변수 연쇄 법칙</div>
 
-$$\mathbf{f}$$가 $$\mathbf{a}$$에서, $$\mathbf{g}$$가 $$\mathbf{f}(\mathbf{a})$$에서 미분 가능하면 $$\mathbf{g} \circ \mathbf{f}$$도 $$\mathbf{a}$$에서 미분 가능하고
+$$\mathbf{f}$$가 $$\mathbf{a}$$에서, $$\mathbf{g}$$가 $$\mathbf{f}(\mathbf{a})$$에서 미분 가능하면 $$\mathbf{g} \circ \mathbf{f}$$($$\circ$$는 합성. $$g \circ f$$는 $$f$$를 먼저, $$g$$를 나중에 한다)도 $$\mathbf{a}$$에서 미분 가능하고
 
 $$J_{\mathbf{g}\circ\mathbf{f}}(\mathbf{a}) = J_{\mathbf{g}}(\mathbf{f}(\mathbf{a}))\,J_{\mathbf{f}}(\mathbf{a}).$$
 
-성분으로 쓰면 $$\frac{\partial (g \circ \mathbf{f})}{\partial x_j} = \sum_k \frac{\partial g}{\partial y_k}\frac{\partial f_k}{\partial x_j}$$, 곧 모든 중간 변수 $$y_k$$를 거치는 길의 곱을 더한 것이다.
+성분으로 쓰면 $$\frac{\partial (g \circ \mathbf{f})}{\partial x_j} = \sum_k \frac{\partial g}{\partial y_k}\frac{\partial f_k}{\partial x_j}$$($$\sum$$은 차례로 모두 더한다는 기호), 곧 모든 중간 변수 $$y_k$$를 거치는 길의 곱을 더한 것이다.
 
 </div>
 

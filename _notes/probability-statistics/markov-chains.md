@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Markov Chain", "마르코프 연쇄", "마르코프 체인", "마르코프 성질", "Markov property", "전이행렬", "transition matrix", "확률행렬", "stochastic matrix", "정상분포", "stationary distribution", "기약", "irreducible", "비주기", "aperiodic", "귀환 시간", "return time"]
 description: "다음 상태가 지금 상태에만 달려 있고, 여기까지 어떤 길로 왔는지는 상관없는 무작위 과정이다. 상태끼리 옮겨 갈 확률을 표(전이행렬)로 모으면, 여러 단계 뒤의 분포는 그 행렬을 거듭 곱해 구한다. 오래 돌리면 출발점과 상관없이 일정한 비율(정상분포)로 가라앉는 경우가 많아, 웹 …"
@@ -67,7 +67,7 @@ $$P(X_{t+1} = j \mid X_t = i, X_{t-1}, \dots, X_0) = P(X_{t+1} = j \mid X_t = i)
 
 
 - **$$k$$단계 전이:** 분포를 행벡터 $$\boldsymbol\pi_t$$로 쓰면 $$\boldsymbol\pi_{t+1} = \boldsymbol\pi_t P$$, 그래서 $$\boldsymbol\pi_t = \boldsymbol\pi_0 P^t$$이다. $$(P^k)_{ij}$$는 $$i$$에서 출발해 $$k$$단계 뒤 $$j$$에 있을 확률이다.
-- **정상분포:** $$\boldsymbol\pi P = \boldsymbol\pi$$, $$\pi_i \ge 0$$, $$\sum_i\pi_i = 1$$인 $$\boldsymbol\pi$$. $$P^\top$$의 고윳값 1에 대한 [고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/)다(왼쪽 고유벡터).
+- **정상분포:** $$\boldsymbol\pi P = \boldsymbol\pi$$, $$\pi_i \ge 0$$, $$\sum_i\pi_i = 1$$($$\sum$$은 차례로 모두 더한다는 기호)인 $$\boldsymbol\pi$$. $$P^\top$$의 고윳값 1에 대한 [고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/)다(왼쪽 고유벡터).
 - **기약:** 어느 상태에서든 어느 상태로든 몇 단계 안에 갈 수 있다. **비주기:** 한 상태로 돌아오는 단계 수들의 최대공약수가 1이다.
 
 | 보장한다(유한·기약·비주기일 때) | 보장하지 않는다 |

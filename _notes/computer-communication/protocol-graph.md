@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Protocol Graph", "프로토콜 스택", "protocol stack", "의존 관계", "dependency", "역다중화 키", "RRP", "MSP", "HHP"]
 description: "여러 프로토콜을 \"누가 누구를 딛고 서 있나\"로 이어 그린 그림이다. 여러 응용이 아래의 프로토콜 하나를 함께 쓰므로, 아래 프로토콜은 받은 데이터를 위의 누구에게 올려 줄지 알아야 한다. 그래서 머리말에 역다중화 키(demux key)를 넣는다. 함께 쓰는 덕분에 부품을 다시 쓸…"
@@ -54,7 +54,9 @@ Host 2의 HHP가 메시지 하나를 받았다. HHP는 이것을 RRP와 MSP 중 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**프로토콜 그래프**(protocol graph, 프로토콜 스택)는 프로토콜의 모음과 그들 사이의 의존 관계를 나타낸 방향 그래프 $$G_P = (V_P, E_P)$$다[^1]. 꼭짓점은 프로토콜이고, 간선 $$(u, v) \in E_P$$는 "$$u$$가 $$v$$의 서비스를 쓴다"는 뜻이다.<br>
+프로토콜을 점으로, "A가 B를 딛고 선다"를 화살표로 그린 그림이 프로토콜 그래프다. 화살표가 둘 이상 들어오는 프로토콜은 여럿이 함께 쓰는 것이다. 그래서 위로 올려 줄 때 머리말의 키를 보고 누구 것인지 나눠 준다.
+
+**기호로 쓰면.** **프로토콜 그래프**(프로토콜 스택이라고도 한다)는 프로토콜의 모음과 그들 사이의 의존 관계를 나타낸 방향 그래프 $$G_P = (V_P, E_P)$$다[^1]. 꼭짓점은 프로토콜이고, 간선 $$(u, v) \in E_P$$($$u$$에서 $$v$$로 가는 화살표)는 "$$u$$가 $$v$$의 서비스를 쓴다"는 뜻이다.<br>
 $$v$$로 들어오는 간선이 둘 이상이면 $$v$$는 하위 프로토콜을 공유당하는 것이다. 이때 $$v$$는 위 프로토콜들의 데이터를 합쳐 보내고(다중화), 받은 데이터를 알맞은 위 프로토콜에 나눠 준다(역다중화). 나눌 때 쓰는 머리말 속 식별자가 **demux key**다[^1].
 
 </div>

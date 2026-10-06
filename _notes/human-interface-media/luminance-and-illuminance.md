@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Luminance", "Illuminance", "휘도", "조도", "광도", "luminous intensity", "밝기", "brightness", "intensity", "대비", "contrast"]
 description: "조도는 무대에 쏟아지는 조명의 양이고, 휘도는 그 무대에서 관객 눈으로 되돌아오는 빛의 양이다. 같은 조명 아래서도 흰 종이와 검은 종이는 휘도가 다르다. 눈이 직접 받는 것은 휘도다. 그런데 조명이 바뀌어도 흰 종이는 계속 희게 보인다. 눈이 절대적인 밝기보다 주변과의 비(대비)…"
@@ -53,7 +53,10 @@ permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- 점광원에서 거리 $$d$$만큼 떨어진, 빛에 수직인 면의 조도: $$E = I / d^2$$ (역제곱 법칙).
+전등에서 멀어질수록 면에 닿는 빛(조도)은 거리의 제곱에 반비례해 줄어든다. 2배 멀어지면 4분의 1이다. 면이 되쏘아 눈에 보이는 밝기(휘도)는 닿은 빛이 많을수록, 면이 빛을 잘 되쏠수록(반사율이 클수록) 커진다. 대비는 두 밝기의 차이를 기준이 되는 밝기로 나눈 값이다. 기준은 웨버 대비에서는 배경 밝기, 마이컬슨 대비에서는 가장 밝은 곳과 가장 어두운 곳의 합이다.
+
+**기호로 쓰면.**
+- 점광원(광도 $$I$$)에서 거리 $$d$$만큼 떨어진, 빛에 수직인 면의 조도: $$E = I / d^2$$ (역제곱 법칙).
 - 빛을 모든 방향으로 고르게 되쏘는 면(완전 확산면)의 휘도: $$L = \rho E / \pi$$. $$\rho$$는 반사율($$0 \le \rho \le 1$$).
 - 대비: 과녁과 배경의 휘도 $$L_t$$, $$L_b$$로 웨버 대비 $$C_W = (L_t - L_b)/L_b$$, 가장 밝은 곳과 어두운 곳의 휘도로 마이컬슨 대비 $$C_M = (L_{\max} - L_{\min})/(L_{\max} + L_{\min})$$.
 

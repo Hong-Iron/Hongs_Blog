@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Exhibitionistic Disorder", "노출증", "exhibitionism"]
 description: "눈치채지 못한 낯선 사람에게 성기를 노출하는 것에서 강렬한 성적 흥분을 느끼는 일이 반년 넘게 되풀이되고, 그 때문에 괴롭거나 실제로 노출하는 장애다. 노출하고 싶은 관심이 있어도 괴롭지 않고 행동하지 않으면 장애로 진단하지 않는다. 관음장애와 달리 진단에 최소 나이 기준이 없다."
@@ -44,7 +44,8 @@ permalink: "/studies/abnormal-psychology/exhibitionistic-disorder/"
 <div class="callout-title" markdown="span">노출장애의 진단기준[^1]</div>
 
 A. 눈치채지 못한 사람에게 성기를 노출하는 행위를 통해 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 이상 이어진다.<br>
-B. 임상적으로 현저한 고통이나 손상을 낳는다. DSM-5-TR은 동의하지 않은 사람에게 이 충동을 행동으로 옮긴 경우도 B에 넣는다[^s2].
+B. 임상적으로 현저한 고통이나 손상을 낳는다. DSM-5-TR은 동의하지 않은 사람에게 이 충동을 행동으로 옮긴 경우도 B에 넣는다[^s2].<br>
+   — 치료가 필요할 만큼 괴롭거나, 생활에 뚜렷한 지장이 생긴다.
 
 </div>
 

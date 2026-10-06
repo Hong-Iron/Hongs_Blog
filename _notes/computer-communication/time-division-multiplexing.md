@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-24"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Time-Division Multiplexing", "TDM", "동기식 시분할 다중화", "synchronous TDM", "타임 슬롯", "time slot", "칸", "프레임", "frame"]
 description: "놀이기구를 정해진 순서대로 한 명씩 돌아가며 타듯, 링크를 쓰는 시간을 짧은 칸으로 잘라 사용자들이 순서대로 돌아가며 쓰게 하는 방법이다. 자기 차례에는 링크 전체를 쓰고, 받는 쪽은 차례만 보고 누구 것인지 안다. 대신 차례가 미리 정해져 있어서, 보낼 것이 없는 사용자의 칸은 …"
@@ -40,15 +40,17 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 | 주인 | 1 | 2 | 3 | 4 | 1 | 2 | 3 | 4 | … |
 | 프레임 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 2 | … |
 
-색이 입력 번호, 막대의 위치가 칸 번호 $$j$$가 된다. 칸 $$N$$개가 한 바퀴(프레임, frame)를 이룬다. 슬라이드의 동기식 시분할 그림(입력 6개)도 같은 구조다: 1 2 3 4 5 6 1 2 3 4 5 6[^1]. 색이나 막대 폭 같은 그림의 성질은 버린다.
+그림의 색이 입력 번호, 막대의 위치가 칸 번호 $$j$$다. 칸 $$N$$개가 한 바퀴 도는 것을 프레임이라 부른다. 슬라이드의 동기식 시분할 그림(입력 6개)도 같은 구조다: 1 2 3 4 5 6 1 2 3 4 5 6[^1].
 
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-링크 전송률 $$R$$(bps), 입력 $$N \in \mathbb{Z}^+$$개, 칸 길이 $$\tau$$(초). 칸 $$j = 0, 1, 2, \dots$$는 입력 $$(j \bmod N) + 1$$에 배정된다. 이 함수가 DEMUX 키다.
-- 입력 하나가 받는 평균 전송률은 $$R/N$$이다. 입력의 실제 트래픽과 무관하다.
+링크를 쓰는 시간을 같은 길이의 칸으로 자르고, 입력 1, 2, …, $$N$$ 순서로 한 칸씩 돌아가며 준다. 그래서 칸 번호를 $$N$$으로 나눈 나머지만 보면 주인을 안다. 위 표에서 $$N = 4$$이면 칸 5는 5를 4로 나눈 나머지 1에 1을 더한 입력 2의 것이다.
+
+**기호로 쓰면.** 링크 전송률 $$R$$(bps), 입력 $$N \in \mathbb{Z}^+$$개(1 이상의 정수), 칸 길이 $$\tau$$(타우, 초). 칸 $$j = 0, 1, 2, \dots$$는 입력 $$(j \bmod N) + 1$$에 배정된다($$j \bmod N$$은 $$j$$를 $$N$$으로 나눈 나머지). 이 함수가 DEMUX 키다.
+- 입력 하나가 받는 평균 전송률은 $$R/N$$이다. 링크 속도를 $$N$$명이 똑같이 나눠 갖는 셈이고, 입력이 실제로 얼마나 보내는지와는 상관없다.
 - 한 입력의 연속한 두 칸 사이에는 다른 입력의 칸 $$N-1$$개, 즉 시간 $$(N-1)\tau$$가 있다.
 
 </div>
@@ -69,7 +71,7 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 2. *대입:* $$17 \bmod 6 = 5$$이므로 입력 6.
 3. *거꾸로 풀기:* 입력 3은 $$j \bmod 6 = 2$$인 칸이다. 2, 8, 14.
 
-- 경계 사례: $$N = 1$$이면 모든 칸이 한 입력의 것이다. 다중화하지 않은 링크와 같다.
+- 끝 경우: $$N = 1$$이면 모든 칸이 한 입력의 것이다. 다중화하지 않은 링크와 같다.
 - 모든 입력이 늘 보낼 것이 있으면 빈 칸이 없어 낭비가 0이다. 시분할 다중화가 가장 잘 맞는 경우다.
 
 <div class="callout callout-check" markdown="1">

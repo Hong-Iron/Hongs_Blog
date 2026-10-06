@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Vector", "벡터", "스칼라", "scalar", "벡터 덧셈", "vector addition", "스칼라배", "scalar multiplication", "성분", "component", "영벡터", "zero vector", "위치 벡터", "변위"]
 description: "벡터는 \"어느 쪽으로 얼마나\"를 나타내는 화살표이자, 숫자 몇 개를 순서대로 늘어놓은 목록이다. 할 수 있는 연산은 두 가지뿐이다. 화살표를 이어 붙이는 덧셈과, 길이를 늘이거나 줄이는 수배(스칼라배)다. 게임 캐릭터의 속도, 데이터 한 행(키, 몸무게, 나이), 단어의 임베딩이 …"
@@ -51,7 +51,7 @@ permalink: "/studies/linear-algebra/vectors/"
 </div>
 
 
-두 연산은 성분마다 하는 보통의 덧셈·곱셈이라 익숙한 법칙이 그대로 성립한다. $$\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$$, $$(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$$, $$\mathbf{v} + \mathbf{0} = \mathbf{v}$$, $$\mathbf{v} + (-\mathbf{v}) = \mathbf{0}$$, $$c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$$, $$(c + d)\mathbf{v} = c\mathbf{v} + d\mathbf{v}$$, $$c(d\mathbf{v}) = (cd)\mathbf{v}$$, $$1\mathbf{v} = \mathbf{v}$$. 이 여덟 법칙만 쓰면 되는 대상은 모두 벡터처럼 다룰 수 있다([추상 벡터공간](/Hongs_Blog/studies/linear-algebra/abstract-vector-spaces/)).
+두 연산은 성분마다 하는 보통의 덧셈·곱셈이라 익숙한 법칙이 그대로 맞는다. $$\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$$, $$(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$$, $$\mathbf{v} + \mathbf{0} = \mathbf{v}$$, $$\mathbf{v} + (-\mathbf{v}) = \mathbf{0}$$, $$c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$$, $$(c + d)\mathbf{v} = c\mathbf{v} + d\mathbf{v}$$, $$c(d\mathbf{v}) = (cd)\mathbf{v}$$, $$1\mathbf{v} = \mathbf{v}$$. 이 여덟 법칙만 쓰면 되는 대상은 모두 벡터처럼 다룰 수 있다([추상 벡터공간](/Hongs_Blog/studies/linear-algebra/abstract-vector-spaces/)).
 
 **화살표와 목록의 대응.** 평면에서 크기 $$r$$, 방향각 $$\theta$$인 화살표는 $$(r\cos\theta, r\sin\theta)$$다. 덧셈은 화살표의 꼬리를 앞 화살표의 머리에 붙이는 것(평행사변형 법칙), 스칼라배는 같은 직선 위에서 늘이는 것($$c < 0$$이면 방향이 뒤집힌다)이다. 화살표 그림은 2·3차원에서만 그릴 수 있지만, 목록은 1000차원에서도 똑같이 계산된다.
 

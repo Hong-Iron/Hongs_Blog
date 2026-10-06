@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Lateral Inhibition", "측억제", "헤르만 격자", "Hermann Grid", "마하 띠", "Mach Band", "마하 밴드", "경계 강조", "edge enhancement"]
 description: "옆 사람이 크게 부를수록 내 목소리를 줄이는 합창단과 같다. 망막의 각 세포는 이웃 세포가 받은 빛에 비례해 자기 신호를 줄인다. 고른 영역에서는 모두가 비슷하게 줄어 차이가 그대로지만, 밝은 곳과 어두운 곳의 경계에서는 차이가 부풀려진다. 그래서 윤곽이 또렷해지는 대신, 헤르만 …"
@@ -72,9 +72,11 @@ A가 D보다 약하게 반응하므로 교차점이 길보다 어둡게 보인�
 
 **측면 억제**: 이웃한 수용기(또는 세포)끼리 서로의 신호를 억제하는 연결. 각 세포의 최종 반응은 자기 반응에서 이웃의 반응에 비례한 억제를 뺀 값이다[^1][^2].
 
-1차원(좌우 이웃)에서 $$x_n$$을 수용기 반응, $$0 < k < \tfrac{1}{2}$$을 억제 비율이라 하면
+1차원(좌우 이웃)에서 $$x_n$$을 수용기 반응, $$0 < k < \tfrac{1}{2}$$(0보다 크고 절반보다 작은 수)을 억제 비율이라 하면
 
 $$ y_n = x_n - k\,(x_{n-1} + x_{n+1}) $$
+
+예를 들어 $$k = 0.1$$이고 세 수용기 반응이 모두 10이면 가운데 세포는 $$10 - 0.1 \times (10 + 10) = 8$$이다. 이웃이 0이면 억제가 없어 10 그대로다[^s8].
 
 2차원(상하좌우 이웃)에서는 $$y_{m,n} = x_{m,n} - k\,(x_{m-1,n} + x_{m+1,n} + x_{m,n-1} + x_{m,n+1})$$이다. 슬라이드는 $$k = 0.1$$이다.
 
@@ -253,4 +255,5 @@ $$
 [^s5]: 에이전트 보충. 주파수 응답 $$1 - 2k\cos\omega$$는 $$\cos(\omega(n \pm 1)) = \cos\omega n\cos\omega \mp \sin\omega n\sin\omega$$에서 사인 항이 상쇄되어 나온다. unsharp masking과의 대응은 영상 처리의 표준 내용이다.
 [^s6]: 에이전트 보충. Krizhevsky, Sutskever & Hinton(2012)의 "local response normalization" 설명과, Carandini & Heeger(2012, *Nature Reviews Neuroscience*)의 분할 정규화 개관에 근거한다.
 [^s7]: 에이전트 보충. 그라데이션의 색 띠가 마하 띠 때문에 더 눈에 띈다는 것은 영상 공학에서 흔히 드는 설명이다.
+[^s8]: 에이전트 보충. 숫자 예(10 → 8)는 위 식에 $$k = 0.1$$을 넣은 계산이다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Singular Value Decomposition", "SVD", "특잇값 분해", "특이값 분해", "특잇값", "singular value", "저랭크 근사", "low-rank approximation", "에카르트-영 정리", "Eckart–Young theorem", "유사역행렬", "pseudoinverse", "주성분 분석", "PCA"]
 description: "어떤 행렬이든(정사각이 아니어도, 대칭이 아니어도) \"돌리기 → 축마다 늘이기 → 돌리기\" 세 단계로 쪼갤 수 있다. 늘이는 배율이 특잇값이고, 큰 것부터 줄 세우면 행렬의 \"중요한 방향\"이 순서대로 드러난다. 큰 특잇값 몇 개만 남기면 그 크기에서 가장 정확한 근사가 되어, 이미…"
@@ -59,7 +59,7 @@ $$A_k = \sigma_1\mathbf{u}_1\mathbf{v}_1^\top + \cdots + \sigma_k\mathbf{u}_k\ma
 </div>
 
 
-**가정.** 없다. 모든 실수 행렬에 성립한다. 이 점이 고윳값 분해(정사각이고, 대각화 가능해야 함)와 다르다.
+**가정.** 없다. 모든 실수 행렬에 맞는다. 이 점이 고윳값 분해(정사각이고, 대각화 가능해야 함)와 다르다.
 
 **고윳값 분해와의 관계.** 대칭이고 양의 준정부호인 행렬에서는 $$U = V = Q$$라 SVD가 [스펙트럼 분해](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)와 같다. 일반 행렬에서는 다르다. 특잇값은 모두 0 이상이고, 입력 축과 출력 축이 다를 수 있다.
 

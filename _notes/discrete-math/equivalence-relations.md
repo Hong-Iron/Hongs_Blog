@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Equivalence Relation", "Partition", "동치관계", "동치류", "equivalence class", "분할", "몫집합", "quotient set", "유니온-파인드", "union-find", "서로소 집합", "disjoint set"]
 description: "반사·대칭·추이를 모두 갖춘 관계는 \"같은 무리로 본다\"는 뜻의 동치관계다. 동치관계가 있으면 집합이 서로 겹치지 않는 무리로 깔끔하게 나뉘고, 거꾸로 집합을 무리로 나누면 동치관계가 생긴다. 나머지가 같은 정수, 서로 연결된 네트워크 노드, 같은 동작을 하는 상태들이 모두 이 구…"
@@ -48,7 +48,7 @@ permalink: "/studies/discrete-math/equivalence-relations/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-집합 $$A$$ 위의 관계 $$\sim$$가 반사적·대칭적·추이적이면 **동치관계**라 한다. $$a$$의 **동치류**는 $$[a] = \{x \in A : x \sim a\}$$다[^1].
+집합 $$A$$ 위의 관계 $$\sim$$가 반사적·대칭적·추이적이면 **동치관계**라 한다. $$a$$의 **동치류**는 $$[a] = \{x \in A : x \sim a\}$$($$\in$$은 "~에 속한다")다[^1].
 
 $$A$$의 **분할**은 공집합이 아닌 부분집합들의 모음으로, 서로 겹치지 않고 합하면 $$A$$가 되는 것이다.
 
@@ -79,9 +79,9 @@ $$A$$의 **분할**은 공집합이 아닌 부분집합들의 모음으로, 서�
 
 "두 실수의 차가 1 이하"는 동치관계인가?
 
-1. *반사:* $$\vert a - a\vert  = 0 \le 1$$. 성립한다.
-2. *대칭:* $$\vert a - b\vert  = \vert b - a\vert $$. 성립한다.
-3. *추이:* $$0$$과 $$1$$, $$1$$과 $$2$$는 차가 1 이하지만 $$0$$과 $$2$$는 차가 2다. 성립하지 않는다.
+1. *반사:* $$\vert a - a\vert  = 0 \le 1$$. 맞는다.
+2. *대칭:* $$\vert a - b\vert  = \vert b - a\vert $$. 맞는다.
+3. *추이:* $$0$$과 $$1$$, $$1$$과 $$2$$는 차가 1 이하지만 $$0$$과 $$2$$는 차가 2다. 맞지 않는다.
 4. *결론:* 동치관계가 아니다. "비슷하다"로 무리를 지으려 하면 0과 2가 같은 무리인지 정할 수 없어 무리가 겹친다.
 
 <div class="callout callout-check" markdown="1">

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Python Basics", "파이썬 문법", "변수", "조건문", "반복문", "함수", "solution 함수", "몫", "나머지", "floor division"]
 description: "코드는 요리 순서표와 비슷하다. 재료에 이름을 붙이고, 상황에 따라 다른 순서로 가고, 같은 일을 여러 번 하고, 자주 하는 일은 묶어서 이름을 붙인다. 코딩테스트에서는 이 순서표를 함수 하나로 쓰고, 마지막에 답을 돌려주면 끝난다. 화면에 찍거나 입력을 읽을 필요는 없다. 파이썬…"
@@ -47,7 +47,7 @@ def solution(num):          # 1. solution이라는 함수를 만든다. num이 �
 
 ## 값과 변수
 
-값에는 종류(자료형, type)가 있다. 코딩테스트에서는 아래 다섯 가지면 거의 된다.
+값에는 종류가 있다. 이 종류를 자료형(type)이라 부른다. 코딩테스트에서는 아래 다섯 가지면 거의 된다.
 
 | 종류 | 예 | 알아 둘 점 |
 |---|---|---|
@@ -157,7 +157,7 @@ area(3)      # 3
 - 다음 개념: [리스트와 문자열](/Hongs_Blog/studies/algorithms/list-string/), [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/)
 - 연습: [짝수와 홀수](/Hongs_Blog/studies/algorithms/pg12937/)
 - 양수로 나눌 때 `//`와 `%`가 주는 값은 [나눗셈과 합동](/Hongs_Blog/studies/discrete-math/modular-arithmetic/)에 나오는 나눗셈 정리의 몫과 나머지다. 이 정리는 나머지가 0 이상이고 나누는 수보다 작은 (몫, 나머지) 짝이 딱 한 쌍뿐임을 보인다. 음수를 나눌 때 C·Java와 답이 다른 까닭도 거기서 다룬다.
-- `for i in range(1, n + 1): total += i`를 합의 기호로 쓰면 $$\sum_{i=1}^{n} i$$이다. `range(a, b)`는 a ≤ b일 때 a부터 b − 1까지 b − a개를 낸다. 합의 기호와 항 개수 세는 법은 [수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/)에 있다.
+- `for i in range(1, n + 1): total += i`를 합의 기호로 쓰면 $$\sum_{i=1}^{n} i$$($$\sum$$은 차례로 모두 더한다는 기호)이다. `range(a, b)`는 a ≤ b일 때 a부터 b − 1까지 b − a개를 낸다. 합의 기호와 항 개수 세는 법은 [수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/)에 있다.
 - `float`가 빠짐없이 정확히 담는 정수는 $$2^{53}$$까지다. 그래서 큰 정수를 `/`로 나누면 끝자리가 틀릴 수 있다. 정수 몫은 `//`로 구한다. 까닭은 [거듭제곱과 지수법칙](/Hongs_Blog/studies/college-math/exponent-laws/)의 부동소수점 항목에 있다.
 - 참·거짓 값끼리 쓰면 `and`, `or`, `not`은 수학의 그리고(∧), 또는(∨), 아니다(¬)와 같다. 여러 조건을 묶은 `if`가 언제 참인지는 [명제와 논리 연산](/Hongs_Blog/studies/discrete-math/propositional-logic/)의 진리표로 따진다. `and`의 앞 조건이 거짓이면 뒤를 보지 않는 단락 평가도 거기 있다.
 

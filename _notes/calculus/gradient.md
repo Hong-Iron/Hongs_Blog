@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Gradient", "그래디언트", "기울기 벡터", "경사", "nabla", "델", "Directional Derivative", "방향도함수", "미분 가능성", "differentiability", "가장 가파른 방향", "steepest ascent", "접평면", "tangent plane", "소벨 필터", "Sobel filter"]
 description: "편미분들을 한데 모은 화살표가 그래디언트다. 이 화살표는 산에서 가장 가파르게 오르는 방향을 가리키고, 그 길이가 그 방향의 기울기다. 다른 방향으로 갈 때의 기울기는 그 방향과 그래디언트의 내적으로 바로 계산되고, 그래디언트는 늘 등고선과 수직이다. 그래서 반대 방향으로 조금씩 …"
@@ -26,7 +26,7 @@ permalink: "/studies/calculus/gradient/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-편미분들을 한데 모은 화살표가 그래디언트다. 이 화살표는 산에서 가장 가파르게 오르는 방향을 가리키고, 그 길이가 그 방향의 기울기다. 다른 방향으로 갈 때의 기울기는 그 방향과 그래디언트의 내적으로 바로 계산되고, 그래디언트는 늘 등고선과 수직이다. 그래서 반대 방향으로 조금씩 내려가는 것이 기계학습의 경사 하강법이다. 다만 이 모든 성질은 함수가 매끄러울(미분 가능할) 때만 성립하고, 편미분이 있다는 것만으로는 부족하다.
+편미분들을 한데 모은 화살표가 그래디언트다. 이 화살표는 산에서 가장 가파르게 오르는 방향을 가리키고, 그 길이가 그 방향의 기울기다. 다른 방향으로 갈 때의 기울기는 그 방향과 그래디언트의 내적으로 바로 계산되고, 그래디언트는 늘 등고선과 수직이다. 그래서 반대 방향으로 조금씩 내려가는 것이 기계학습의 경사 하강법이다. 다만 이 모든 성질은 함수가 매끄러울(미분 가능할) 때만 맞고, 편미분이 있다는 것만으로는 부족하다.
 
 </div>
 
@@ -49,8 +49,8 @@ permalink: "/studies/calculus/gradient/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- $$f: \mathbb{R}^n \to \mathbb{R}$$의 **그래디언트**는 편미분을 모은 벡터 $$\nabla f = \left(\frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n}\right)$$이다.
-- 단위벡터 $$\mathbf{u}$$ 방향의 **방향도함수**는 $$D_{\mathbf{u}}f(\mathbf{a}) = \lim_{h \to 0}\frac{f(\mathbf{a} + h\mathbf{u}) - f(\mathbf{a})}{h}$$이다.
+- $$f: \mathbb{R}^n \to \mathbb{R}$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체)의 **그래디언트**는 편미분을 모은 벡터 $$\nabla f = \left(\frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n}\right)$$이다.
+- 단위벡터 $$\mathbf{u}$$ 방향의 **방향도함수**는 $$D_{\mathbf{u}}f(\mathbf{a}) = \lim_{h \to 0}\frac{f(\mathbf{a} + h\mathbf{u}) - f(\mathbf{a})}{h}$$($$\lim$$은 한없이 가까이 갈 때 다가가는 값(극한))이다.
 - $$f$$가 $$\mathbf{a}$$에서 **미분 가능**하다는 것은 $$f(\mathbf{a} + \mathbf{h}) = f(\mathbf{a}) + \nabla f(\mathbf{a})\cdot\mathbf{h} + r(\mathbf{h})$$로 쓸 때 $$\frac{r(\mathbf{h})}{\Vert \mathbf{h}\Vert } \to 0$$($$\mathbf{h} \to \mathbf{0}$$)이라는 뜻이다. 한 점에서 편미분들이 모두 연속이면 미분 가능하다[^1].
 
 </div>

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Panic Disorder", "공황발작", "panic attack", "예기불안", "anticipatory anxiety", "과잉호흡이론", "hyperventilation theory", "질식오경보 이론", "suffocation false alarm theory", "공황통제치료", "panic control treatment", "PCT", "내부감각수용 노출", "interoceptive exposure", "복식호흡"]
 description: "아무 예고 없이 갑자기 심장이 터질 듯 뛰고 숨이 막히며 \"이러다 죽겠다\" 싶은 공포(공황발작)가 몇 분 만에 치솟는 일이 되풀이되는 장애다. 발작 자체보다 그 뒤가 더 괴롭다. 또 올까 봐 늘 걱정하고, 발작이 날 만한 활동과 장소를 피하면서 생활이 줄어든다. 공황발작은 다른 장…"
@@ -181,5 +181,5 @@ DSM-5-TR은 공황발작이 반복되어야 하고, 물질이나 의학적 상�
 [^4]: 4-1학기/이상 심리학/1.수업자료/04.불안장애.pdf, p.40
 [^5]: 4-1학기/이상 심리학/1.수업자료/04.불안장애.pdf, p.41
 [^s1]: 에이전트 보충. CK의 사례는 진단기준을 보이려고 만든 가상 사례다.
-[^s2]: 에이전트 보충. DSM-5-TR 공황장애 진단기준의 "반복되는 예기치 못한 공황발작", 배제 조건, 다른 장애에 붙는 "공황발작 동반" 명시자를 보탰다.
+[^s2]: 에이전트 보충. DSM-5-TR 공황장애 진단기준의 "반복되는 예기치 못한 공황발작", 배제 조건, 다른 장애에 붙는 "공황발작 동반" 명시자(같은 진단에 경과, 심한 정도, 특별한 양상 같은 특징을 덧붙여 적는 항목. 여러 개를 함께 붙일 수 있다)를 보탰다.
 {% endraw %}

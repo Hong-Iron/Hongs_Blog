@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Limit of a Sequence", "수열의 극한", "수렴", "convergence", "발산", "divergence", "단조 수렴 정리", "monotone convergence theorem", "자연상수 e", "수렴 속도", "rate of convergence", "조화수", "harmonic number"]
 description: "수열이 뒤로 갈수록 어떤 값에 한없이 가까워지면 그 값에 수렴한다고 한다. \"커지기만 하는데 넘을 수 없는 벽이 있으면 반드시 어떤 값에 수렴한다\"는 사실로 (1 + 1/n)ⁿ이 한 값에 다가감을 알 수 있고, 그 값이 e다. 반복 알고리즘이 끝나는지, 오차가 얼마나 빨리 주는지를…"
@@ -51,7 +51,7 @@ $$\forall \varepsilon > 0\ \exists N\ \forall n \ge N\ \ \vert a_n - L\vert  < \
 </div>
 
 
-극한 법칙(합·곱·몫)과 조임 정리는 [함수의 극한](/Hongs_Blog/studies/calculus/limits/)과 같이 성립한다.
+극한 법칙(합·곱·몫)과 조임 정리는 [함수의 극한](/Hongs_Blog/studies/calculus/limits/)과 같이 맞는다.
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
@@ -119,7 +119,7 @@ $$\lim_{n \to \infty}\frac{3n^2 + n}{n^2 + 5}$$를 구한다.
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C2** (a) lim (3n² + n)/(n² + 5) (b) 0.9ⁿ < 0.001이 처음 성립하는 n을 구하라.</summary>
+<summary class="callout-title" markdown="span">**C2** (a) lim (3n² + n)/(n² + 5) (b) 0.9ⁿ < 0.001이 처음 맞는 n을 구하라.</summary>
 
 **답:** (a) 3. (b) $$n > \frac{\ln 0.001}{\ln 0.9} \approx 65.6$$이므로 $$n = 66$$.
 

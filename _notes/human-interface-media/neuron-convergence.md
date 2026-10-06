@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Neuron Convergence", "수렴", "신경 수렴", "수렴 구조", "convergence"]
 description: "여러 수용기의 신호를 뉴런 하나로 모으는 배선이다. 깔때기로 빗물을 모으듯 약한 신호도 합쳐지면 발화 문턱을 넘기 쉬워진다. 대신 어느 수용기에서 온 신호인지 섞여 버려서 위치를 구별하는 힘(해상도)을 잃는다. 억제성 연결을 섞으면 단순한 합이 아니라 \"가운데만 자극받은 모양\"처럼…"
@@ -48,7 +48,7 @@ permalink: "/studies/human-interface-media/neuron-convergence/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**수렴**(convergence)은 여러 뉴런(또는 수용기)이 한 뉴런에 시냅스로 연결되는 구조다[^2]. 받는 뉴런은 들어온 신호를 흥분성은 더하고 억제성은 빼서 합친다.
+**수렴**은 여러 뉴런(또는 수용기)이 한 뉴런에 시냅스로 연결되는 구조다[^2]. 받는 뉴런은 들어온 신호를 흥분성은 더하고 억제성은 빼서 합친다.
 
 </div>
 

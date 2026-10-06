@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-24"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Statistical Multiplexing", "통계적 시분할 다중화", "statistical TDM", "비동기식 시분할 다중화", "asynchronous TDM", "통계적 이득", "오버헤드", "overhead"]
 description: "식당이 예약석을 따로 비워 두지 않고 온 손님 순서대로 빈자리에 앉히듯, 칸을 미리 나눠 주지 않고 보낼 데이터가 있는 사용자에게만 그때그때 링크를 내주는 방법이다. 쉬는 사람 몫이 비지 않으니 같은 링크로 훨씬 많은 사용자를 받는다. 대신 조각마다 누구 것인지 적은 이름표를 붙여…"
@@ -40,7 +40,7 @@ permalink: "/studies/computer-communication/statistical-multiplexing/"
 통계적        : |a|A1|a|B1|a|B2|a|C2|   남는 대역 →        ← 빈 칸 없음, 대신 주소 칸
 ```
 
-동기식 시분할에서 칸 위치가 하던 일을 통계적 다중화에서는 주소 칸 `a`가 한다. 빈 칸이 사라진 자리는 다른 데이터에 쓸 수 있는 여유 대역이 된다(Extra Bandwidth Available)[^1]. 주기마다 데이터가 있는 사용자 모임이 아래 정의의 "요구 전송률이 0보다 큰 입력"이고, 주소 칸의 크기가 $$b_{\text{addr}}$$다. 사용자 이름과 데이터 내용은 버린다.
+동기식 시분할에서 칸 위치가 하던 일을 통계적 다중화에서는 주소 칸 `a`가 한다. 빈 칸이 사라진 자리는 다른 데이터에 쓸 수 있는 여유 대역이 된다(Extra Bandwidth Available)[^1]. 아래 정의에서는 주소 칸 하나의 크기를 $$b_{\text{addr}}$$비트, 데이터 조각 하나의 크기를 $$b_{\text{data}}$$비트라 쓴다.
 
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
@@ -66,8 +66,10 @@ permalink: "/studies/computer-communication/statistical-multiplexing/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-링크 전송률 $$R$$(bps), 입력 $$N$$개. 시각 $$t$$에 입력 $$i$$가 보내려는 전송률을 $$r_i(t) \ge 0$$라 하자.
-- $$\sum_i r_i(t) \le R$$이면 모든 입력의 데이터가 바로 실린다.
+그 순간 모든 입력이 보내려는 양을 더해서 링크 속도 $$R$$ 이하이면 모두 바로 나간다. 넘치면 넘친 만큼 줄 서서 기다리고, 줄 설 자리(버퍼)까지 차면 버린다. 조각마다 주소를 붙이므로 링크의 일부는 주소가 차지한다. 예를 들어 데이터 1,000비트에 주소 40비트를 붙이면 데이터 비율은 $$1000/1040 \approx 96\%$$다[^s3].
+
+**기호로 쓰면.** 링크 전송률 $$R$$(bps), 입력 $$N$$개. 시각 $$t$$에 입력 $$i$$가 보내려는 전송률을 $$r_i(t) \ge 0$$라 하자.
+- $$\sum_i r_i(t) \le R$$(모든 입력의 요구를 더한 값이 $$R$$ 이하)이면 모든 입력의 데이터가 바로 실린다.
 - $$\sum_i r_i(t) > R$$이면 넘친 부분은 버퍼에서 기다린다. 버퍼가 가득 차면 버려진다[^s1].
 - 데이터 $$b_{\text{data}}$$비트짜리 조각마다 주소 $$b_{\text{addr}}$$비트를 붙인다. 링크에서 데이터가 차지하는 비율은 $$\dfrac{b_{\text{data}}}{b_{\text{data}} + b_{\text{addr}}}$$다.
 
@@ -78,14 +80,16 @@ permalink: "/studies/computer-communication/statistical-multiplexing/"
 |---|---|
 | 쉬는 입력의 몫을 다른 입력이 쓴다. 링크가 비어 있는 동안 기다리는 데이터는 없다 | 입력별 전송률, 지연의 상한, 손실 없음. 여러 입력이 동시에 몰리면 모두 깨진다 |
 
+말로 하면, 각자 확률 $$p$$로 따로따로 켜지는 사용자 $$n$$명 가운데 링크가 감당할 수 있는 수보다 많은 사람이 동시에 켜질 확률을 구한다.
+
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">링크가 넘칠 확률</div>
 
-사용자 $$n$$명이 활동할 때 전송률 $$a$$를 쓰고, 각자 어느 순간이든 확률 $$p$$로 활동하며, **사용자끼리 서로 독립**이라 하자. 링크가 한꺼번에 감당할 수 있는 사용자 수를 $$n_{\max} = \lfloor R/a \rfloor$$라 하면, 링크가 넘칠 확률은
+사용자 $$n$$명이 활동할 때 전송률 $$a$$를 쓰고, 각자 어느 순간이든 확률 $$p$$로 활동하며, **사용자끼리 서로 독립**이라 하자. 링크가 한꺼번에 감당할 수 있는 사용자 수를 $$n_{\max} = \lfloor R/a \rfloor$$($$\lfloor\ \rfloor$$는 소수점 아래를 버린 정수)라 하면, 링크가 넘칠 확률은
 
 $$\Pr[X > n_{\max}] = \sum_{k = n_{\max}+1}^{n} \binom{n}{k} p^k (1-p)^{n-k}$$
 
-이다. 여기서 $$X$$는 동시에 활동하는 사용자 수이고 $$X \sim \mathrm{Binomial}(n, p)$$다[^s2].
+이다. 여기서 $$X$$는 동시에 활동하는 사용자 수이고 $$X \sim \mathrm{Binomial}(n, p)$$($$X \sim$$ 분포는 "$$X$$가 그 분포를 따른다")다[^s2].
 
 </div>
 
@@ -215,4 +219,5 @@ $$\Pr[X > n_{\max}] = \sum_{k = n_{\max}+1}^{n} \binom{n}{k} p^k (1-p)^{n-k}$$
 [^2]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 68~72행
 [^s1]: 에이전트 보충. 버퍼 넘침과 손실, 보장하지 않는 것, 패킷 헤더가 주소 칸이라는 대응은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 통계적 다중화 설명과 같다.
 [^s2]: 에이전트 보충. 이항분포 모델과 35명 예제는 원본에 없다. 예제 수치는 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 패킷 스위칭과 회선 스위칭 비교 예제와 같다. 증명과 반례, 사용자 수별 값은 이 모델에서 나온다.
+[^s3]: 에이전트 보충. 데이터 1,000비트·주소 40비트는 비율 식을 보이려고 고른 예시 값이다. $$1000/1040 = 0.9615$$.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 가우스 소거법, 행렬과 행렬-벡터 곱."
 next_url: "/studies/linear-algebra/least-squares-ladder/"
@@ -81,7 +81,7 @@ $$x + y + z = 2$$, $$x + 2y + 3z = 3$$, $$2x + 3y + 4z = 5$$의 모든 해를 �
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-소거하면 $$(0, 1, 2 \mid 1)$$이 두 번 나오고 셋째 줄은 $$(0, 0, 0 \mid 0)$$이다. 셋째 열에 피벗이 없어 $$z = t$$가 자유변수다. $$y = 1 - 2t$$, $$x = 2 - y - z = 1 + t$$. 모든 해는 $$(x, y, z) = (1, 1, 0) + t(1, -2, 1)$$, $$t \in \mathbb{R}$$이다. 방향 $$(1, -2, 1)$$은 $$A\mathbf{x} = \mathbf{0}$$의 해다.
+소거하면 $$(0, 1, 2 \mid 1)$$이 두 번 나오고 셋째 줄은 $$(0, 0, 0 \mid 0)$$이다. 셋째 열에 피벗이 없어 $$z = t$$가 자유변수다. $$y = 1 - 2t$$, $$x = 2 - y - z = 1 + t$$. 모든 해는 $$(x, y, z) = (1, 1, 0) + t(1, -2, 1)$$, $$t \in \mathbb{R}$$($$\in$$은 "~에 속한다")이다. 방향 $$(1, -2, 1)$$은 $$A\mathbf{x} = \mathbf{0}$$의 해다.
 
 **흔한 오답:** 문제 3과 좌변이 같으니 "해 없음"이라고 쓰는 것. 우변이 $$2 + 3 = 5$$로 맞아 모순이 생기지 않는다.
 

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Psychotic Symptoms", "조현병의 핵심 증상", "망상", "delusion", "피해망상", "persecutory delusion", "과대망상", "grandiose delusion", "관계망상", "delusion of reference", "애정망상", "erotomanic delusion", "질투망상", "신체망상", "somatic delusion", "환각", "hallucination", "환청", "환시", "착각", "illusion", "현실검증", "reality testing", "혼란스러운 언어", "와해된 언어", "disorganized speech", "사고장애", "지리멸렬", "말비빔", "word salad", "반향언어", "echolalia", "우원증", "circumstantiality", "사고이탈", "tangentiality", "혼란스러운 행동", "긴장증", "catatonia", "음성 증상", "negative symptoms", "정서적 둔마", "affective flattening", "무언어증", "alogia", "무의욕증", "avolition", "무쾌감증", "anhedonia", "비사회성", "asociality"]
 description: "조현병의 증상은 다섯 가지다. 틀린 믿음을 증거에도 굽히지 않는 망상, 없는 것을 보고 듣는 환각, 앞뒤가 끊긴 말, 상황에 맞지 않거나 굳어 버린 행동, 그리고 감정·말·의욕이 사라지는 음성 증상이다. 앞의 넷은 보통 사람에게 없던 것이 더해진 증상이고, 마지막은 있던 것이 빠진…"
@@ -47,7 +47,7 @@ permalink: "/studies/abnormal-psychology/psychotic-symptoms/"
 
 ## 정의
 
-### 1. 망상(妄想, delusion)[^2]
+### 1. 망상(delusion)[^2]
 
 강하게 믿는 잘못된 신념이다. 외부 세계에 대해 잘못 추론한 결과이고, 분명한 반증이 있어도 굳게 유지된다. 내용에 따라 나눈다[^1].
 
@@ -62,7 +62,7 @@ permalink: "/studies/abnormal-psychology/psychotic-symptoms/"
 | 혼합형 | 두 가지 이상이 섞였다 |
 | 불특정형 | 내용이 불분명하거나 어느 유형에도 들지 않는다 |
 
-### 2. 환각(幻覺, hallucination)[^3]
+### 2. 환각(hallucination)[^3]
 
 현저하게 왜곡된 비현실적 지각이다. 외부 현실과 내면 경험의 구분을 잃은 상태이고, 현실검증(reality testing)이 심하게 손상된 것이다. 필기의 말로는 "아무것도 없는데 경험하는 것"이다.
 
@@ -71,7 +71,7 @@ permalink: "/studies/abnormal-psychology/psychotic-symptoms/"
 
 ### 3. 혼란스러운 언어(disorganized speech)[^4]
 
-비논리적이고 앞뒤가 이어지지 않는(지리멸렬, incoherence) 말이다. 생각의 흐름이 무너진 사고장애에서 나온다. 슬라이드의 예를 풀면 다음과 같다[^s2].
+비논리적이고 앞뒤가 이어지지 않는(지리멸렬) 말이다. 생각의 흐름이 무너진 사고장애에서 나온다. 슬라이드의 예를 풀면 다음과 같다[^s2].
 
 - **우원증**(circumstantial): 쓸데없는 곁가지를 한참 돌다가 결국 요점에 닿는다.
 - **사고이탈**(tangential): 곁가지로 빠진 뒤 요점으로 돌아오지 못한다.

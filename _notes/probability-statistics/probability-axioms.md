@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Probability Axioms", "확률의 공리", "콜모고로프 공리", "Kolmogorov axioms", "확률 측도", "probability measure", "고전적 확률", "naive definition of probability", "여사건 법칙", "complement rule", "합집합 한계", "union bound", "생일 문제", "birthday problem"]
 description: "확률은 사건마다 0에서 1 사이의 수를 붙이는 규칙이다. 지켜야 할 약속은 셋뿐이다. 음수는 없고, 전체의 확률은 1이며, 겹치지 않는 사건들의 확률은 더한다. 결과가 모두 똑같이 그럴듯하면 \"원하는 경우의 수 ÷ 전체 경우의 수\"로 세면 되어 계산이 쉬워진다. 하지만 그 조건이 …"
@@ -43,7 +43,7 @@ permalink: "/studies/probability-statistics/probability-axioms/"
 표본공간 $$\Omega$$의 사건 $$A$$마다 수 $$P(A)$$를 붙이는 함수 $$P$$가 다음을 만족하면 **확률**이라 한다[^1].
 1. 모든 사건 $$A$$에서 $$P(A) \ge 0$$.
 2. $$P(\Omega) = 1$$.
-3. 서로 배반인 사건 $$A_1, A_2, \dots$$에 대해 $$P\left(\bigcup_i A_i\right) = \sum_i P(A_i)$$.
+3. 서로 배반인 사건 $$A_1, A_2, \dots$$에 대해 $$P\left(\bigcup_i A_i\right) = \sum_i P(A_i)$$($$\sum$$은 차례로 모두 더한다는 기호).
 
 </div>
 

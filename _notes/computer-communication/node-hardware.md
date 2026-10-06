@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Node", "노드의 실체", "하드웨어 구성요소", "단말", "terminal", "호스트", "host", "네트워크 어댑터", "network adaptor", "NIC", "Network Interface Card", "병목", "bottleneck"]
 description: "노드는 링크 끝에 붙은 장치다. 단말(호스트)이든 스위치(라우터)든 속은 보통의 컴퓨터로, CPU와 메모리와 선을 이어 주는 네트워크 어댑터로 이루어진다. 메모리가 유한해서 패킷을 쌓아 둘 버퍼도 유한하다. 프로세서는 빠르고 메모리는 느려서, 요즘은 링크보다 노드가, 노드 안에서는…"
@@ -52,7 +52,7 @@ Memory ──┬── I/O bus ── Network adaptor ──→ (To network)
 | 구성 요소 | 네트워크에서의 뜻 |
 |---|---|
 | 유한한 메모리 | 버퍼 공간이 제한되어 있다. 넘치면 패킷을 버린다([패킷 스위칭](/Hongs_Blog/studies/computer-communication/packet-switching/)의 혼잡) |
-| 네트워크 어댑터(NIC, Network Interface Card) | 노드를 네트워크에 잇는다 |
+| 네트워크 어댑터(NIC, 랜카드) | 노드를 네트워크에 잇는다 |
 | 프로세서와 메모리 | 프로세서는 빠르고 메모리는 느리다 |
 
 단말·터미널·호스트는 같은 말이고, 스위치와 라우터도 비슷하게 쓴다. 요즘은 둘의 경계가 흐려져서 단말이 라우터 역할을 하기도 한다[^2]. 선이 실어 나르는 것은 신호이므로, 노드에는 신호를 데이터로 바꾸는 모뎀이 들어 있어야 한다[^3].

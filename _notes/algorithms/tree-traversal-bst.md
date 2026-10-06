@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Tree Traversal", "Binary Search Tree", "BST", "전위 순회", "중위 순회", "후위 순회", "preorder", "inorder", "postorder", "이진 탐색 트리", "포화 이진 트리"]
 description: "가계도 같은 나무의 모든 칸을 한 번씩 빠짐없이 도는 순서가 순회다. 뿌리를 먼저 보면 전위, 왼쪽을 다 본 뒤 보면 중위, 양쪽을 다 본 뒤 보면 후위다. 이진 탐색 트리는 \"왼쪽은 작고 오른쪽은 크다\"는 규칙으로 값을 넣어 두는 나무라, 찾기와 넣기가 나무의 높이만큼만 걸리고 …"
@@ -79,7 +79,7 @@ def preorder(n, out):              # 뿌리 → 왼쪽 → 오른쪽
 | 찾기·넣기 | $$O(h)$$ | h는 높이 |
 | 높이 h | 고르게 퍼지면 약 log₂ n, 정렬된 순서로 넣으면 n − 1 | |
 
-**포화 이진 트리를 중위 순서로 늘어놓기:** 모든 층이 꽉 찬 이진 나무(포화 이진 트리)는 높이가 h − 1일 때 칸이 2ʰ − 1개다. 이 칸들을 중위 순서로 한 줄에 늘어놓으면 뿌리는 정확히 한가운데이고, 왼쪽 절반과 오른쪽 절반이 다시 포화 이진 트리다. [표현 가능한 이진트리](/Hongs_Blog/studies/algorithms/pg150367/)가 이 성질을 쓴다.
+**포화 이진 트리를 중위 순서로 늘어놓기:** 모든 층이 꽉 찬 이진 나무(포화 이진 트리)는 층이 h개(높이 h − 1)일 때 칸이 2ʰ − 1개다. 예를 들어 위 예시처럼 층이 3개면 칸은 7개다. 이 칸들을 중위 순서로 한 줄에 늘어놓으면 뿌리는 정확히 한가운데이고, 왼쪽 절반과 오른쪽 절반이 다시 포화 이진 트리다. [표현 가능한 이진트리](/Hongs_Blog/studies/algorithms/pg150367/)가 이 성질을 쓴다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 표의 세 순회, 찾기 칸 수, 한 줄로 늘어진 나무의 높이, 확인 문제 C1·C3의 답, 포화 이진 트리의 뿌리가 중위 순서의 한가운데임(h = 1 ~ 5)을 확인했다. 무작위 나무 2,000개에서 중위 순회가 정렬 결과와 같고, 찾기가 집합과 같은 답을 냈다. 깊이 1,000인 나무에서 재귀 순회가 파이썬 기본 한도(1,000)로는 `RecursionError`가 나는 것도 확인했다 — [29_tree-traversal-bst_impl.py](/Hongs_Blog/studies/algorithms/code/29_tree-traversal-bst_impl/)</div>
@@ -89,7 +89,7 @@ def preorder(n, out):              # 뿌리 → 왼쪽 → 오른쪽
 
 ## 활용
 
-- **쓰는 곳:** 폴더 크기 계산(후위: 아래를 다 더한 뒤 자신), 수식 나무 출력(중위), 나무 복사·저장(전위), 데이터베이스 색인의 B-트리와 여러 언어의 정렬된 맵(예: C++ `std::map`)이 균형 이진 탐색 트리 계열이다[확인필요].
+- **쓰는 곳:** 폴더 크기 계산(후위: 아래를 다 더한 뒤 자신), 수식 나무 출력(중위), 나무 복사·저장(전위), 여러 언어의 정렬된 맵(예: C++ `std::map`)은 보통 균형 이진 탐색 트리(레드-블랙 트리)로 만든다. 데이터베이스 색인의 B-트리는 한 칸에 값을 여러 개 두는 균형 탐색 트리라 이진은 아니지만, "작은 쪽은 왼쪽, 큰 쪽은 오른쪽"이라는 생각은 같다[^s1].
 - **파이썬에서:** 표준 라이브러리에 이진 탐색 트리가 없다. 값이 고정되어 있으면 정렬 + [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)으로 같은 일을 한다.
 - **재귀 한도:** 파이썬의 기본 재귀 한도는 1,000이다. 깊이가 1,000에 가까우면 `sys.setrecursionlimit(10**6)`으로 늘리거나 스택으로 순회를 짠다.
 - **층별 순회:** 뿌리부터 층마다 왼쪽에서 오른쪽으로 도는 순서는 [BFS](/Hongs_Blog/studies/algorithms/bfs/)로 만든다.
@@ -132,4 +132,5 @@ def preorder(n, out):              # 뿌리 → 왼쪽 → 오른쪽
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 14.4 "Binary trees"(전위·중위·후위의 정의, 전위와 중위로 나무가 정해지지만 전위와 후위만으로는 정해지지 않는 예 [1, 2]), Cormen 외, *Introduction to Algorithms* 3판, 12장(이진 탐색 트리 성질, 중위 순회가 정렬된 순서를 냄, 찾기·넣기 O(h)).
+[^s1]: 에이전트 보충. `std::map`은 C++ 표준이 구현 방식을 정하지 않지만 주요 표준 라이브러리(libstdc++, libc++, MSVC)는 레드-블랙 트리를 쓴다. B-트리는 Bayer & McCreight(1972)가 제안한 다진(多進) 균형 탐색 트리다(Cormen 외, *Introduction to Algorithms* 18장).
 {% endraw %}

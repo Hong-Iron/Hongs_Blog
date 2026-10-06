@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Sequences", "Summation Notation", "수열", "시그마", "sigma notation", "Σ", "등차수열", "arithmetic sequence", "등비수열", "geometric sequence", "등차급수", "망원합", "telescoping sum", "가우스 합"]
 description: "수열은 번호를 붙여 줄 세운 수이고, 시그마(Σ)는 그 수들을 \"여기부터 저기까지 더하라\"는 약속이다. 반복문이 한 바퀴 돌 때마다 드는 비용을 더하는 것이 곧 Σ 계산이라, 알고리즘 분석의 기본 언어가 된다. 같은 수를 더해 가면 등차수열, 같은 수를 곱해 가면 등비수열이다. 다…"
@@ -48,7 +48,7 @@ for i in range(n):        # i = 0, 1, ..., n-1
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**수열**은 정수 번호에 수를 대응시키는 함수 $$a: \{m, m+1, \dots\} \to \mathbb{R}$$이고, $$a(k)$$를 $$a_k$$로 쓴다[^1].
+**수열**은 정수 번호에 수를 대응시키는 함수 $$a: \{m, m+1, \dots\} \to \mathbb{R}$$($$\mathbb{R}$$은 실수 전체)이고, $$a(k)$$를 $$a_k$$로 쓴다[^1].
 - 등차수열: $$a_k = a_1 + (k - 1)d$$. 이웃한 항의 **차**가 늘 $$d$$다.
 - 등비수열: $$a_k = a_1 r^{k-1}$$. 이웃한 항의 **비**가 늘 $$r$$이다.
 
@@ -136,7 +136,7 @@ $$\sum_{k=3}^{10}(2k + 1)$$을 구한다.
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C3** 1 + 2 + … + n = n(n+1)/2가 성립하는 이유를 짝 맞추기로 설명하라.</summary>
+<summary class="callout-title" markdown="span">**C3** 1 + 2 + … + n = n(n+1)/2가 맞는 이유를 짝 맞추기로 설명하라.</summary>
 
 **답:** 합을 거꾸로 한 번 더 적어 위아래를 더하면 모든 짝이 $$n + 1$$이 되고 짝이 $$n$$개라 두 배 합이 $$n(n+1)$$이다. 한 쪽이 1씩 늘 때 다른 쪽이 1씩 줄어서 짝의 합이 일정하다.
 

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-28"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Dependent Personality Disorder", "DPD", "의존성", "구강기 성격", "oral character", "자율", "autonomy"]
 description: "혼자서는 설 수 없다고 믿어 늘 기댈 사람을 찾는 사람이다. 점심 메뉴부터 진로까지 남이 정해 주길 바라고, 사랑을 잃을까 봐 싫다는 말을 못 하며, 관계가 끝나면 곧바로 다른 보호자를 찾는다. 치료에서도 치료자에게 의존하므로, 기대게 하되 점점 스스로 서게 해야 한다. 목표는 누…"
@@ -55,7 +55,15 @@ permalink: "/studies/abnormal-psychology/dependent-pd/"
 
 ## 임상적 특징[^2]
 
-- 유병률: 일반 인구의 2~48% [확인필요][^s2].
+- 유병률: 일반 인구의 약 0.5%(0.49~0.6%)[^s2].
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: "유병률: 일반 인구의 2~48%" / 문제점: DSM-5-TR이 인용하는 일반 인구 유병률은 0.49%(미국 NESARC)와 0.6%(미국 NCS-R Part II)이고, 서구 일반 인구 메타분석도 0.78%다. 2~48%는 일반 인구 수치로 볼 수 없다. 0.49~0.6을 옮겨 적다 생긴 오기이거나 임상 표본의 범위일 수 있다. / 수정안: "일반 인구의 약 0.5%" / 근거: [^s2]
+
+</div>
+
 - 성비는 여자가 더 많다는 보고와 같다는 보고가 함께 있다.
 - 다른 성격장애, 특히 경계선, 연극성, 회피성 성격장애와 함께 나타나는 경향이 있다.
 
@@ -123,5 +131,5 @@ permalink: "/studies/abnormal-psychology/dependent-pd/"
 [^3]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.61
 [^4]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.62
 [^s1]: 에이전트 보충. MC의 사례는 진단기준을 보이려고 만든 가상 사례다.
-[^s2]: 에이전트 보충. DSM-5-TR은 일반 인구 유병률을 약 0.5%(미국 NESARC 0.49%, 영국 조사 0.6%)로 적는다. 2~48%라는 범위는 일반 인구 수치로 보기 어렵고, 임상 표본이나 연구마다 다른 수치의 범위일 수 있다.
+[^s2]: 에이전트 보충. DSM-5-TR의 유병률: NESARC 0.49%, NCS-R Part II 0.6%(StatPearls "Dependent Personality Disorder", NCBI Bookshelf NBK606086이 DSM-5-TR을 인용). 서구 일반 인구 메타분석(Volkert, Gablonski & Rabung, 2018, *British Journal of Psychiatry*)은 0.78%다. 이전 판의 이 각주는 0.6%를 "영국 조사"로 잘못 적었다.
 {% endraw %}

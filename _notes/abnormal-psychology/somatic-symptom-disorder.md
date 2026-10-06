@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Somatic Symptom Disorder", "SSD", "신체화", "somatization", "재신체화", "resomatization", "탈신체화", "desomatization", "감정표현 불능증", "감정표현불능증", "alexithymia", "일차적 이득", "primary gain", "이차적 이득", "secondary gain", "의사쇼핑", "doctor shopping", "증폭 지각", "symptom amplification", "주의편향", "attention bias", "화병", "Hwa-Byung"]
 description: "몸이 실제로 아프거나 불편한데, 그 증상에 대한 걱정과 거기에 쏟는 시간이 지나쳐 삶 전체가 증상을 중심으로 돌아가는 장애다. 문제는 증상 자체보다 증상을 대하는 생각과 행동이다. 환자는 진짜로 괴롭고, 일부러 꾸미는 것이 아니다. 다만 \"마음의 문제\"라는 설명을 잘 받아들이지 않…"
@@ -81,7 +81,7 @@ permalink: "/studies/abnormal-psychology/somatic-symptom-disorder/"
 억압된 감정이 몸으로 표현된 것이다.
 
 - **신체화(somatization):** 방어기제이자 의사소통 방식이다. 말로 할 수 없는 감정을 몸이 대신 말한다.
-- **재신체화(resomatization):** 어린 시절에 익숙했던 신체 반응으로 감정을 표현하는 일종의 퇴행이다. 아기는 불편을 몸으로 드러내고, 자라면서 감정을 말과 생각으로 다루는 법을 익힌다(탈신체화, desomatization). 스트레스가 커지면 다시 몸의 표현으로 돌아간다[^s3].
+- **재신체화(resomatization):** 어린 시절에 익숙했던 신체 반응으로 감정을 표현하는 일종의 퇴행이다. 아기는 불편을 몸으로 드러내고, 자라면서 감정을 말과 생각으로 다루는 법을 익힌다(탈신체화). 스트레스가 커지면 다시 몸의 표현으로 돌아간다[^s3].
 - **감정표현 불능증(alexithymia):** 자신의 감정을 정확히 알아차리고 표현하지 못한다.
 
 ```mermaid

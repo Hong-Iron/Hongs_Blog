@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Walks and Markov Chains", "보행 수와 전이 확률", "무작위 보행", "random walk on a graph", "그래프 위의 무작위 보행", "인접행렬 거듭제곱"]
 description: "표를 펼치기 전에 두 사례의 공통 구조와 대응 관계를 먼저 적어 본다. 특히 \"행렬 곱의 한 성분을 계산할 때 더하는 항 하나하나가 무엇을 뜻하는가\"를 두 쪽에서 각각 말해 본다."
@@ -60,7 +60,7 @@ permalink: "/studies/probability-statistics/walks-markov-bridge/"
 ## 이 연결로 얻는 것
 
 - **정상분포가 공짜로 나온다.** 연결된 무방향 그래프의 무작위 보행은 $$\pi_i = \frac{\deg(i)}{2m}$$이다. $$\sum_i\deg(i) = 2m$$(악수 정리)이 정규화 상수다. 고윳값 문제를 풀 필요 없이 차수만 세면 된다[^2].
-- **보행 수를 고윳값으로 센다.** $$A = Q\Lambda Q^\top$$로 [대각화](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)하면 $$(A^k)_{ij} = \sum_\ell\lambda_\ell^k q_{i\ell}q_{j\ell}$$이라, 긴 보행의 수는 가장 큰 고윳값이 지배한다.
+- **보행 수를 고윳값으로 센다.** $$A = Q\Lambda Q^\top$$($$^\top$$는 행과 열을 바꾸는 전치)로 [대각화](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)하면 $$(A^k)_{ij} = \sum_\ell\lambda_\ell^k q_{i\ell}q_{j\ell}$$이라, 긴 보행의 수는 가장 큰 고윳값이 지배한다.
 - **주기성을 그래프로 판정한다.** 연쇄가 수렴하는지를 "그래프에 홀수 사이클이 있는가"로 확인할 수 있다.
 - 알고리즘에서: 걸음 무게를 곱하는 대신 더하고 경로 중 가장 작은 것을 고르도록 연산을 바꾸면 성분이 최단 거리가 되고, [플로이드–워셜](/Hongs_Blog/studies/algorithms/floyd-warshall/)은 이 틀에서 걸음 수 대신 거쳐도 되는 점을 하나씩 늘려 표를 채운다. 상태 그래프의 보행 수는 [동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/) 표 dp[k][상태]를 한 줄씩 채워도 센다. 한 줄을 채우는 일이 인접행렬을 한 번 곱하는 일이다.
 

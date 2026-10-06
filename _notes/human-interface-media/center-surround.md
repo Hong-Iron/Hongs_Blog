@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Center-surround Antagonism", "중심-주변", "길항 작용", "Antagonism", "수용장", "receptive field", "흥분성 중심", "억제성 주변"]
 description: "과녁 모양의 감지 구역을 가진 뉴런이다. 과녁 가운데에 자극이 오면 신나게 발화하고, 둘레에 오면 오히려 발화를 줄인다. 그래서 넓고 고른 자극에는 둔하고, 가운데와 둘레의 차이, 곧 경계나 작은 점에 민감하다. 가운데를 딱 채우는 크기의 자극에 가장 세게 반응한다."
@@ -100,7 +100,7 @@ $$
 
 - 선수: [흥분성과 억제성 시냅스](/Hongs_Blog/studies/human-interface-media/excitatory-inhibitory/), [뉴런의 수렴](/Hongs_Blog/studies/human-interface-media/neuron-convergence/) (회로 3)
 - 이런 수용장을 만드는 배선: [측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/)
-- 경계를 수식으로 잡는 다른 방법(1차 미분): [이미지 함수](/Hongs_Blog/studies/human-interface-media/image-function/)의 $$\nabla i$$
+- 경계를 수식으로 잡는 다른 방법(1차 미분): [이미지 함수](/Hongs_Blog/studies/human-interface-media/image-function/)의 $$\nabla i$$($$\nabla f$$는 편미분을 모은 벡터(그래디언트))
 
 ## 자주 하는 오해
 

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["도박사의 오류와 독립", "gambler's fallacy and independence", "몬테카를로 오류", "Monte Carlo fallacy", "동전에는 기억이 없다", "하우스 엣지", "house edge", "마틴게일", "martingale"]
 description: "도박장애의 인지 왜곡인 도박사의 오류는 \"서로 독립적으로 일어나는 확률적 사건의 착각\"이다. 확률과 통계의 말로 옮기면, 독립 시행에서 조건부 확률이 바뀐다고 믿는 오류다. 이 대응을 알면 \"이제 딸 차례\"라는 믿음을 계산으로 반박할 수 있다."
@@ -52,7 +52,7 @@ permalink: "/studies/abnormal-psychology/gamblers-fallacy--independence/"
 
 ## 어디까지 같은가
 
-대응이 성립하는 범위는 판마다 확률 장치가 같은 조건으로 다시 돌아가는 게임이다. 룰렛, 주사위, 동전, 제대로 작동하는 슬롯머신, 매주 새로 뽑는 복권이 여기에 든다.
+대응이 맞는 범위는 판마다 확률 장치가 같은 조건으로 다시 돌아가는 게임이다. 룰렛, 주사위, 동전, 제대로 작동하는 슬롯머신, 매주 새로 뽑는 복권이 여기에 든다.
 
 대응이 깨지는 지점은 셋이다.
 

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["List", "String", "리스트", "문자열", "인덱스", "슬라이싱", "slicing", "리스트 컴프리헨션", "list comprehension", "2차원 리스트", "split", "join"]
 description: "리스트는 번호가 붙은 칸이 한 줄로 늘어선 사물함이다. 번호만 알면 바로 꺼낼 수 있고, 맨 끝에 넣고 빼는 것도 빠르다. 대신 맨 앞이나 가운데에 넣고 빼면 뒤의 칸을 모두 한 칸씩 밀어야 해서 느리다. 무엇이 들어 있는지 찾을 때도 처음부터 다 봐야 한다. 문자열은 글자로 된 …"
@@ -41,7 +41,7 @@ permalink: "/studies/algorithms/list-string/"
 뒤 번호   -5   -4   -3   -2   -1
 ```
 
-- 번호(인덱스, index)는 0부터 센다. `a[0]`은 10, `a[4]`는 50이다.
+- 칸 번호(인덱스)는 0부터 센다. `a[0]`은 10, `a[4]`는 50이다.
 - 음수 번호는 뒤에서 센다. `a[-1]`은 맨 끝의 50이다.
 - 칸 수는 `len(a)`로 알며 5다. 쓸 수 있는 번호는 0~4, 또는 −5~−1이다. `a[5]`를 꺼내면 `IndexError`가 난다.
 
@@ -139,7 +139,7 @@ grid[1][2] = 7
 - 다음 개념: [딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/)(빠른 찾기), 문자열을 규칙대로 자르는 방법은 문자열 파싱 문서에서 다룬다
 - `append`가 평균 $$O(1)$$인 까닭은 꽉 차면 칸 수를 일정한 비율로 늘리기 때문이다. 그러면 복사 횟수의 합이 [등비급수](/Hongs_Blog/studies/college-math/geometric-series/)가 되어 넣은 개수의 상수배를 넘지 않는다.
 - `a[i:j]`는 j − i칸이다(0 ≤ i ≤ j ≤ len(a)일 때). 양 끝을 모두 넣는 "i번째부터 j번째까지"는 j − i + 1개로, [수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/)의 항 개수 공식 n − m + 1과 같은 셈이다.
-- 컴프리헨션 `[x * x for x in a if 조건]`은 [집합](/Hongs_Blog/studies/discrete-math/sets/)의 조건제시법 $$\{x^2 : x \in A,\ \text{조건}\}$$과 모양이 같다. 다른 점은 리스트가 순서와 중복을 남긴다는 것이다. 중괄호로 쓴 `{x * x for x in a if 조건}`은 결과가 집합이라 중복이 사라진다.
+- 컴프리헨션 `[x * x for x in a if 조건]`은 [집합](/Hongs_Blog/studies/discrete-math/sets/)의 조건제시법 $$\{x^2 : x \in A,\ \text{조건}\}$$($$\in$$은 "~에 속한다")과 모양이 같다. 다른 점은 리스트가 순서와 중복을 남긴다는 것이다. 중괄호로 쓴 `{x * x for x in a if 조건}`은 결과가 집합이라 중복이 사라진다.
 - 연습: [평균 구하기](/Hongs_Blog/studies/algorithms/pg12944/), [숫자 문자열과 영단어](/Hongs_Blog/studies/algorithms/pg81301/)
 
 ## 확인 문제

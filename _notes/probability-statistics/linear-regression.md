@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Linear Regression", "선형회귀", "단순 선형회귀", "simple linear regression", "다중 선형회귀", "multiple linear regression", "최소제곱 추정", "ordinary least squares", "OLS", "잔차", "residual", "결정계수", "coefficient of determination", "R²", "회귀계수", "regression coefficient"]
 description: "결과를 입력들의 가중합에 잡음이 더해진 것으로 보는 모델이다. 잡음이 종 모양(정규분포)이라고 가정하면, 가장 그럴듯한 가중치를 찾는 것이 곧 오차 제곱합을 최소로 하는 것이라 행렬 계산 한 번으로 답이 나온다. 가중치는 \"다른 입력을 그대로 둘 때 이 입력이 하나 늘면 결과가 얼…"
@@ -54,7 +54,7 @@ $$y_i = \mathbf{x}_i^\top\boldsymbol\beta + \varepsilon_i,\qquad \varepsilon_i \
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">최대가능도 = 최소제곱</div>
 
-이 모델에서 $$\boldsymbol\beta$$의 최대가능도 추정값은 오차 제곱합 $$\Vert \mathbf{y} - X\boldsymbol\beta\Vert ^2$$을 최소로 하는 값, 곧 [정규방정식](/Hongs_Blog/studies/linear-algebra/least-squares/) $$X^\top X\hat{\boldsymbol\beta} = X^\top\mathbf{y}$$의 해다. 분산의 MLE는 $$\hat\sigma^2 = \frac{\text{RSS}}{n}$$이다(RSS는 잔차 제곱합).
+이 모델에서 $$\boldsymbol\beta$$의 최대가능도 추정값은 오차 제곱합 $$\Vert \mathbf{y} - X\boldsymbol\beta\Vert ^2$$($$\lVert\cdot\rVert$$는 벡터의 길이)을 최소로 하는 값, 곧 [정규방정식](/Hongs_Blog/studies/linear-algebra/least-squares/) $$X^\top X\hat{\boldsymbol\beta} = X^\top\mathbf{y}$$의 해다. 분산의 MLE는 $$\hat\sigma^2 = \frac{\text{RSS}}{n}$$이다(RSS는 잔차 제곱합).
 
 </div>
 
@@ -85,7 +85,7 @@ $$y_i = \mathbf{x}_i^\top\boldsymbol\beta + \varepsilon_i,\qquad \varepsilon_i \
 **계수의 불확실성.** $$x = 0, 0.5, 1, \dots, 5.5$$(12개)에서 참 모델 $$y = 1 + 2x + \varepsilon$$, $$\sigma = 1$$로 자료를 2만 번 만들어 기울기를 추정하면
 
 1. *평균:* 추정 기울기의 평균이 2와 0.005 안으로 맞는다(불편).
-2. *분산:* 추정 기울기의 분산이 $$\frac{\sigma^2}{\sum(x_i - \bar x)^2}$$와 5% 안으로 맞는다.
+2. *분산:* 추정 기울기의 분산이 $$\frac{\sigma^2}{\sum(x_i - \bar x)^2}$$($$\sum$$은 차례로 모두 더한다는 기호)와 5% 안으로 맞는다.
 3. *해석:* $$x$$가 넓게 퍼질수록 분모가 커져 기울기가 정확해진다. 실험을 설계할 때 입력을 넓게 잡는 이유다.
 
 <div class="callout callout-check" markdown="1">

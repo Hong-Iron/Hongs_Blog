@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-24"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Internetwork", "인터네트워킹", "internetworking", "네트워크들의 네트워크", "network of networks", "라우터", "router", "게이트웨이", "gateway"]
 description: "따로 만들어진 네트워크 여러 개를 다시 이어서 만든 더 큰 네트워크, 즉 \"네트워크들의 네트워크\"다. 학과 네트워크들을 잇고, 그것을 다시 통신사 네트워크에 잇는 식이다. 이미 있는 네트워크를 그대로 두고 규모를 얼마든지 키울 수 있다. 대신 네트워크마다 기술이 다를 수 있어서, …"
@@ -33,16 +33,18 @@ permalink: "/studies/computer-communication/internetwork/"
 
 ## 예시로 보기
 
-슬라이드 그림에서 구름 하나가 네트워크 하나다. 구름 사이에 놓인 작은 상자는 두 구름에 동시에 붙어 있으므로 **라우터**(router, 예전 이름은 게이트웨이 gateway)다. 구름 하나에만 붙은 상자는 호스트다[^1][^s1].
+슬라이드 그림에서 구름 하나가 네트워크 하나다. 구름 사이에 놓인 작은 상자는 두 구름에 동시에 붙어 있다. 이런 상자를 **라우터**(예전 이름은 게이트웨이)라 부른다. 구름 하나에만 붙은 상자는 호스트다[^1][^s1].
 
-구름 하나가 아래 정의의 $$G_i$$ 하나다. "두 구름에 동시에 붙은 상자"가 "둘 이상의 $$V_i$$에 속한 노드"가 된다. 각 구름 내부가 어떤 기술로 만들어졌는지는 버린다.
+구름 안이 어떤 기술로 만들어졌는지는 따지지 않는다. 구름끼리 라우터로 이어졌는지만 본다.
 
-## 정의
+## 정확히 말하면
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-네트워크 $$G_1, \dots, G_k$$($$k \ge 2$$)가 있고, 각 $$G_i$$의 노드 집합을 $$V_i$$라 하자. 두 개 이상의 $$V_i$$에 속하는 노드를 **라우터**라 한다. 네트워크들과 라우터들이 이루는 전체를 **인터네트워크**라 한다. 서로 다른 네트워크에 있는 두 호스트는 라우터를 거쳐 통신한다.
+네트워크가 2개 이상 있다. 그중 두 네트워크 이상에 동시에 붙어 있는 노드를 **라우터**라 한다. 네트워크들과 라우터들을 모두 합친 전체를 **인터네트워크**라 한다. 서로 다른 네트워크에 있는 두 호스트는 라우터를 거쳐 통신한다.
+
+**기호로 쓰면.** 네트워크 $$G_1, \dots, G_k$$($$k \ge 2$$, 네트워크가 2개 이상)가 있고, 각 $$G_i$$의 노드 집합을 $$V_i$$라 하자. 두 개 이상의 $$V_i$$에 속하는 노드가 라우터다.
 
 </div>
 
@@ -51,8 +53,8 @@ permalink: "/studies/computer-communication/internetwork/"
 
 ## 예제
 
-- 해당하는 예: 인터넷, 학과 네트워크들을 라우터로 이은 캠퍼스 네트워크, 집 안 네트워크와 통신사 네트워크를 잇는 가정용 공유기[^s2]
-- 해당하지 않는 예: 스위치 하나에 PC들이 붙은 사무실 네트워크 한 개(네트워크가 하나뿐), 두 PC를 직접 이은 [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/)
+- 인터네트워크인 것: 인터넷, 학과 네트워크들을 라우터로 이은 캠퍼스 네트워크, 집 안 네트워크와 통신사 네트워크를 잇는 가정용 공유기[^s2]
+- 아닌 것: 스위치 하나에 PC들이 붙은 사무실 네트워크 한 개(네트워크가 하나뿐), 두 PC를 직접 이은 [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/)
 
 ## 연결
 

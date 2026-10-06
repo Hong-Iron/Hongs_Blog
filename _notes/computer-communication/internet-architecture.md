@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Internet Architecture", "TCP/IP 구조", "TCP/IP model", "모래시계", "hourglass", "IP", "Internet Protocol", "TCP", "UDP", "IETF"]
 description: "인터넷 구조는 실제로 인터넷을 운영하며 다듬어진 계층 구조다. 모래시계처럼 가운데가 IP 하나로 좁고, 위로는 여러 응용이, 아래로는 여러 종류의 네트워크가 넓게 퍼진다. 가운데가 하나뿐이라 어떤 응용이든 어떤 네트워크 위에서든 돌 수 있다. 대신 OSI처럼 층을 엄격하게 지키지는…"
@@ -54,7 +54,7 @@ graph TD
 
 인터넷 구조는 IETF(Internet Engineering Task Force)가 관리하는 표준 구조다[^1]. OSI와 비교하면 다음과 같다[^2].
 
-| 인터넷 구조 | 예 | OSI에 대응 |
+| 인터넷 구조 | 예 | OSI에서는 |
 |---|---|---|
 | 응용 (Application) | FTP, HTTP, NV, TFTP | 7층. 5·6층의 일은 필요하면 응용 안에서 한다 |
 | TCP / UDP | TCP, UDP | 4층 트랜스포트 |

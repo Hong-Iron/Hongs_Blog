@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Time Complexity Budget", "시간 복잡도", "시간 제한", "연산 횟수 어림", "Big-O 어림", "estimating efficiency"]
 description: "여행 가기 전에 \"차로 몇 시간 걸리지?\"를 먼저 따져 보는 것과 같다. 문제에는 \"입력이 최대 얼마까지 온다\"는 제한이 적혀 있다. 코드를 짜기 전에 내 방법이 계산을 몇 번쯤 하는지 세어 보면, 시간 안에 끝날지 짜기 전에 알 수 있다. 다만 이 셈은 자릿수만 맞추는 어림이다.…"
@@ -161,7 +161,7 @@ def solution(participant, completion):
 - "겹친 반복은 곱하고, 나란한 반복은 더한다"는 [셈의 기본 법칙](/Hongs_Blog/studies/discrete-math/counting-rules/)의 곱의 법칙과 합의 법칙이다. 곱하려면 안쪽 횟수가 바깥 변수와 상관없이 같아야 한다. 안쪽 횟수가 바깥 변수에 따라 바뀌면 바깥 값마다 나눠 더한다.
 - 제한표에서 $$n^3$$, $$n^2$$ 칸의 n은 수백·수천인데 $$2^n$$ 칸은 20뿐인 까닭은 [거듭제곱함수와 지수함수 비교](/Hongs_Blog/studies/college-math/power-vs-exponential/)에 있다. $$2^n$$ 방법은 n이 1 늘 때마다 일이 두 배라서, 1000배 빠른 컴퓨터로도 n이 10쯤만 늘어난다. $$2^{20} \approx$$ 100만, $$2^{40} \approx$$ 1조 같은 어림은 $$2^{10} = 1024 \approx 10^3$$을 [거듭제곱과 지수법칙](/Hongs_Blog/studies/college-math/exponent-laws/)으로 넓힌 것이다. 예를 들어 $$2^{40} = (2^{10})^4 \approx 10^{12}$$이다.
 - 입력을 두 배로 늘렸을 때 시간이 r배가 되면, 시간은 대략 $$n^k$$($$k = \log_2 r$$)에 비례한다. 네 배면 $$n^2$$, 여덟 배면 $$n^3$$이다. 위 검증의 로그-로그 기울기 2.16이 이 k를 잰 값이고, 그래프로 읽는 법은 [로그함수와 로그 스케일](/Hongs_Blog/studies/college-math/log-scale/)에 있다.
-- 예제에서 원소마다 앞부분을 훑는 횟수를 정확히 세면 0 + 1 + ⋯ + (n − 1) = n(n − 1)/2번이다. 이런 합을 닫힌 꼴로 바꾸는 법은 [수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/)에 있다. 이 수는 n개에서 둘을 고르는 쌍의 수 $$\binom{n}{2}$$와 같다. 쌍의 수와 모든 순서의 수 n!은 [순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/)에서 센다.
+- 예제에서 원소마다 앞부분을 훑는 횟수를 정확히 세면 0 + 1 + ⋯ + (n − 1) = n(n − 1)/2번이다. 이런 합을 닫힌 꼴로 바꾸는 법은 [수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/)에 있다. 이 수는 n개에서 둘을 고르는 쌍의 수 $$\binom{n}{2}$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수)와 같다. 쌍의 수와 모든 순서의 수 n!은 [순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/)에서 센다.
 - 제한표 맨 아래 줄에서 n이 $$10^9$$을 넘어도 $$O(\log n)$$이면 되는 것은 $$\log_2 10^9 \approx 30$$이라서다. 이런 로그 값을 어림하는 법은 [로그](/Hongs_Blog/studies/college-math/logarithm/)에 있다.
 
 ## 자주 하는 오해

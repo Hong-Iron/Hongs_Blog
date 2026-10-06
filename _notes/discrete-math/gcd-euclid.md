@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["GCD", "Greatest Common Divisor", "최대공약수", "Euclidean Algorithm", "유클리드 호제법", "유클리드 알고리즘", "Extended Euclidean Algorithm", "확장 유클리드 호제법", "베주 항등식", "Bézout's identity", "일차 부정방정식", "linear Diophantine equation", "라메의 정리", "Lamé's theorem"]
 description: "두 수의 최대공약수는 \"큰 수를 작은 수로 나눈 나머지\"로 바꿔도 변하지 않는다. 그래서 나머지로 계속 바꿔 나가다 0이 되기 직전의 수가 답이다. 소인수분해 없이 몇십 자리 수도 순식간에 계산하고, 과정을 거꾸로 따라가면 \"최대공약수 = 두 수의 정수 배의 합\"을 만드는 계수까지…"
@@ -103,7 +103,7 @@ $$\gcd(a, b) = as + bt$$인 정수 $$s, t$$가 있다. $$\gcd(a, b)$$는 $$as + 
 
 **가장 작은 양의 결합.** $$as + bt > 0$$인 아무 결합을 잡으면 $$g$$가 $$a$$와 $$b$$를 나누므로 $$g$$가 그 결합도 나눠 $$g \le as + bt$$이다. $$g$$ 자신도 결합이므로 가장 작다.
 
-**속도.** 두 단계마다 나머지가 절반 미만이 된다. $$r_{i+1} \le r_i/2$$이면 바로 성립한다. 아니면 $$r_{i+1} > r_i/2$$라 $$r_{i+2} = r_i - r_{i+1} < r_i/2$$이다. 그래서 나눗셈 횟수는 $$2\lg b + 2$$ 이하, 즉 $$O(\log \min(a, b))$$다. ∎
+**속도.** 두 단계마다 나머지가 절반 미만이 된다. $$r_{i+1} \le r_i/2$$이면 바로 맞는다. 아니면 $$r_{i+1} > r_i/2$$라 $$r_{i+2} = r_i - r_{i+1} < r_i/2$$이다. 그래서 나눗셈 횟수는 $$2\lg b + 2$$ 이하, 즉 $$O(\log \min(a, b))$$다. ∎
 
 </details>
 
@@ -159,7 +159,7 @@ $$r$$의 갱신 $$r_0 - qr_1$$이 일차식이라, $$r_0$$과 $$r_1$$을 $$a, b$
 ## 활용
 
 - **복잡도.** 나눗셈 횟수가 $$O(\log \min(a, b))$$라, 2048비트 수에서도 수천 번 이내다. 가장 오래 걸리는 입력은 이웃한 피보나치 수다. $$\gcd(89, 55)$$는 몫이 모두 1이라 9번 나눈다(라메의 정리)[^2].
-- **모듈러 역원과 RSA.** $$\gcd(a, m) = 1$$이면 $$as + mt = 1$$에서 $$as \equiv 1 \pmod m$$이라 $$s$$가 $$a$$의 역원이다. RSA의 개인키 계산이 정확히 이것이다([모듈러 역원](/Hongs_Blog/studies/discrete-math/modular-inverse-crt/)).
+- **모듈러 역원과 RSA.** $$\gcd(a, m) = 1$$이면 $$as + mt = 1$$에서 $$as \equiv 1 \pmod m$$($$a \equiv b \pmod m$$은 "$$a$$와 $$b$$를 $$m$$으로 나눈 나머지가 같다")이라 $$s$$가 $$a$$의 역원이다. RSA의 개인키 계산이 정확히 이것이다([모듈러 역원](/Hongs_Blog/studies/discrete-math/modular-inverse-crt/)).
 - **분수 약분과 비율.** 화면 비율 1920 : 1080을 $$\gcd = 120$$으로 나눠 16 : 9로 줄인다.
 - **라이브러리.** Python의 `math.gcd`, C++의 `std::gcd`. Python 3.8 이상에서는 `pow(a, -1, m)`이 역원을 준다.
 - 연습: [유클리드 호제법 예제 사다리](/Hongs_Blog/studies/discrete-math/gcd-ladder/)
@@ -210,7 +210,7 @@ def f(a, b):
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C3** gcd(a, b) = gcd(b, a mod b)가 성립하는 이유를 설명하라.</summary>
+<summary class="callout-title" markdown="span">**C3** gcd(a, b) = gcd(b, a mod b)가 맞는 이유를 설명하라.</summary>
 
 **답:** $$a = qb + r$$이다. $$a$$와 $$b$$의 공약수는 $$r = a - qb$$도 나누고, $$b$$와 $$r$$의 공약수는 $$a = qb + r$$도 나눈다. 두 쌍의 공약수가 똑같아 최대공약수도 같다.
 

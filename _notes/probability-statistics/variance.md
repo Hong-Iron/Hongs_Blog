@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Variance", "분산", "표준편차", "standard deviation", "SD", "산포", "dispersion", "웰퍼드 방법", "Welford's algorithm", "평균의 분산"]
 description: "값들이 평균에서 평균적으로 얼마나 멀리 흩어지는지를 재는 수다. 평균에서 벗어난 거리를 제곱해 평균 낸 것이 분산이고, 그 제곱근이 원래 단위로 돌아온 표준편차다. 평균 응답 시간이 같은 두 서버도 흔들림이 크게 다를 수 있어서, 평균만으로는 성능을 말할 수 없다. 서로 독립인 것…"
@@ -26,7 +26,7 @@ permalink: "/studies/probability-statistics/variance/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-값들이 평균에서 평균적으로 얼마나 멀리 흩어지는지를 재는 수다. 평균에서 벗어난 거리를 제곱해 평균 낸 것이 분산이고, 그 제곱근이 원래 단위로 돌아온 표준편차다. 평균 응답 시간이 같은 두 서버도 흔들림이 크게 다를 수 있어서, 평균만으로는 성능을 말할 수 없다. 서로 독립인 것들을 더하면 분산도 그대로 더해지지만, 독립이 아니면 이 덧셈이 성립하지 않는다.
+값들이 평균에서 평균적으로 얼마나 멀리 흩어지는지를 재는 수다. 평균에서 벗어난 거리를 제곱해 평균 낸 것이 분산이고, 그 제곱근이 원래 단위로 돌아온 표준편차다. 평균 응답 시간이 같은 두 서버도 흔들림이 크게 다를 수 있어서, 평균만으로는 성능을 말할 수 없다. 서로 독립인 것들을 더하면 분산도 그대로 더해지지만, 독립이 아니면 이 덧셈이 맞지 않는다.
 
 </div>
 
@@ -47,7 +47,7 @@ B의 분산 2500은 단위가 ms²라 감이 오지 않는다. 제곱근을 씌�
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-평균이 $$\mu = \mathbb{E}[X]$$인 확률변수 $$X$$의 **분산**은
+평균이 $$\mu = \mathbb{E}[X]$$($$\mathbb{E}[\cdot]$$은 평균(기댓값))인 확률변수 $$X$$의 **분산**은
 
 $$\operatorname{Var}[X] = \mathbb{E}\big[(X - \mu)^2\big] = \mathbb{E}[X^2] - \mu^2$$
 
@@ -64,7 +64,7 @@ $$\operatorname{Var}[X] = \mathbb{E}\big[(X - \mu)^2\big] = \mathbb{E}[X^2] - \m
 |---|---|
 | $$\operatorname{Var}[aX + b] = a^2\operatorname{Var}[X]$$ | $$b$$만큼 옮기면 평균도 같이 옮겨 거리가 그대로다. $$a$$배 늘리면 거리가 $$a$$배, 제곱이 $$a^2$$배다 |
 | $$X$$, $$Y$$가 독립이면 $$\operatorname{Var}[X + Y] = \operatorname{Var}[X] + \operatorname{Var}[Y]$$ | 전개하면 교차항 $$2\mathbb{E}[(X - \mu_X)(Y - \mu_Y)]$$가 남는데, 독립이면 [곱의 기댓값](/Hongs_Blog/studies/probability-statistics/expectation/)이 나뉘어 0이다 |
-| 독립이 아니면 성립하지 않을 수 있다 | $$\operatorname{Var}[X + X] = \operatorname{Var}[2X] = 4\operatorname{Var}[X]$$이지 $$2\operatorname{Var}[X]$$가 아니다 |
+| 독립이 아니면 맞지 않을 수 있다 | $$\operatorname{Var}[X + X] = \operatorname{Var}[2X] = 4\operatorname{Var}[X]$$이지 $$2\operatorname{Var}[X]$$가 아니다 |
 
 **설계 이유.** 거리의 평균 $$\mathbb{E}[\vert X - \mu\vert ]$$도 쓸 수 있지만, 제곱을 쓰면 독립합의 덧셈 법칙이 생기고 미분하기 쉽다. 제곱의 평균은 [벡터 길이의 제곱](/Hongs_Blog/studies/linear-algebra/dot-product/)과 같은 구조라, 최소제곱과도 자연스럽게 이어진다.
 
@@ -115,7 +115,7 @@ $$\operatorname{Var}[X] = \mathbb{E}\big[(X - \mu)^2\big] = \mathbb{E}[X^2] - \m
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C3** 같은 주사위의 눈 $$X$$에 대해 $$\operatorname{Var}[X + X]$$가 $$2\operatorname{Var}[X]$$가 아니라 $$4\operatorname{Var}[X]$$인 이유는?</summary>
 
-**답:** $$X + X = 2X$$라 성질 1로 $$4\operatorname{Var}[X]$$다. 분산의 덧셈 법칙은 독립일 때만 성립하는데, $$X$$와 자기 자신은 완전히 같이 움직여서 흔들림이 상쇄되지 않고 겹쳐 커진다. 교차항 $$2\operatorname{Var}[X]$$가 0이 아니다.
+**답:** $$X + X = 2X$$라 성질 1로 $$4\operatorname{Var}[X]$$다. 분산의 덧셈 법칙은 독립일 때만 맞는데, $$X$$와 자기 자신은 완전히 같이 움직여서 흔들림이 상쇄되지 않고 겹쳐 커진다. 교차항 $$2\operatorname{Var}[X]$$가 0이 아니다.
 
 </details>
 

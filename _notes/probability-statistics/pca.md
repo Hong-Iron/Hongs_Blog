@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Principal Component Analysis", "주성분 분석", "PCA", "주성분", "principal component", "설명된 분산 비율", "explained variance ratio", "차원 축소", "dimensionality reduction", "주성분 점수", "principal component score"]
 description: "변수가 많은 데이터에서 점들이 가장 넓게 퍼진 방향을 첫 번째 새 축으로, 그다음으로 넓게 퍼진 수직 방향을 두 번째 축으로 잡는 식으로 좌표를 다시 짠다. 앞의 몇 축만 남기면 정보를 크게 잃지 않고 차원을 줄일 수 있어, 시각화·압축·잡음 제거에 쓴다. 새 축은 공분산 행렬의 …"
@@ -50,7 +50,7 @@ permalink: "/studies/probability-statistics/pca/"
 **절차.** 자료 $$n$$개, 변수 $$d$$개인 행렬 $$X$$($$n \times d$$)에서
 
 1. *가운데로 옮기기:* 열마다 평균을 빼 $$\tilde X$$를 만든다(단위가 다르면 표준편차로도 나눈다).
-2. *공분산 행렬:* $$\Sigma = \frac1n\tilde X^\top\tilde X$$.
+2. *공분산 행렬:* $$\Sigma = \frac1n\tilde X^\top\tilde X$$($$^\top$$는 행과 열을 바꾸는 전치).
 3. *고유분해:* [스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)로 $$\Sigma = V\Lambda V^\top$$, 고윳값 $$\lambda_1 \ge \cdots \ge \lambda_d \ge 0$$.
 4. *투영:* 앞의 $$k$$개 고유벡터로 점수 $$\tilde X V_k$$를 구한다. **설명된 분산 비율**은 $$\frac{\lambda_1 + \cdots + \lambda_k}{\lambda_1 + \cdots + \lambda_d}$$.
 

@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Throughput", "처리속도", "실효 처리량", "effective throughput", "전송 완료 시간", "transfer time", "TransferTime"]
 description: "처리량은 실제로 1초에 몇 비트를 받아 냈는지다. 고속도로의 제한속도가 대역폭이라면, 처리량은 출발 전 준비 시간과 톨게이트 대기까지 합쳐 실제로 낸 평균 속도다. 그래서 대역폭이 아무리 커도 작은 메시지는 소요시간에 묶여 처리량이 낮다. 메시지가 클수록 처리량이 대역폭에 가까워진다."
@@ -42,7 +42,7 @@ permalink: "/studies/computer-communication/throughput/"
 
 1바이트에서는 소요시간 1 ms와 100 ms의 차이(99 ms)가 대역폭 1 Mbps와 100 Mbps의 차이(0.008 ms)를 압도한다. 25 MB에서는 반대로 대역폭이 100배 차이를 만들고, 소요시간 99 ms는 묻힌다. 게임은 소요시간이, 영상은 대역폭이 중요한 이유다[^2].
 
-메시지 크기가 아래 식의 $$M$$, 소요시간이 RTT, 대역폭이 $$R$$이다. 도로 비유와 달리 통신에서는 대역폭을 늘려도 소요시간 중 전파 지연은 줄지 않는다.
+아래 식에서는 메시지 크기를 $$M$$, 왕복 소요시간을 RTT, 대역폭을 $$R$$이라 쓴다. 도로 비유와 달리 통신에서는 대역폭을 늘려도 소요시간 중 전파 지연은 줄지 않는다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표의 값, 1 MB·1 Gbps와 1 KB·1 Mbps의 싣는 시간, 카드 C2의 77.4 Mbps — [27_throughput_verify.py](/Hongs_Blog/studies/computer-communication/code/27_throughput_verify/)</div>
@@ -57,7 +57,7 @@ permalink: "/studies/computer-communication/throughput/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-크기 $$M$$비트를 보내기 시작해서 다 받기까지 걸린 전송 완료 시간을 $$T_{\text{xfer}}$$라 하면[^1]
+처리량은 보낸 양을 걸린 시간으로 나눈 값이다. 크기 $$M$$비트를 보내기 시작해서 다 받기까지 걸린 전송 완료 시간을 $$T_{\text{xfer}}$$라 하면[^1]
 
 $$\text{처리량} = \frac{M}{T_{\text{xfer}}}$$
 

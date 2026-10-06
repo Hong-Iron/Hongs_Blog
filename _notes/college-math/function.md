@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Function", "정의역", "domain", "공역", "codomain", "치역", "range", "image", "자연 정의역", "수직선 판정", "vertical line test"]
 description: "함수는 자판기와 같다. 버튼 하나를 누르면 음료가 정확히 하나 나온다. 여러 버튼이 같은 음료를 내는 것은 괜찮지만, 같은 버튼에서 매번 다른 음료가 나오면 함수가 아니다. 그리고 함수를 말할 때는 어떤 입력을 받는지도 함께 정해야 한다."
@@ -53,7 +53,7 @@ $$x \in X$$는 "$$x$$가 집합 $$X$$의 원소"라는 뜻이다.
 집합 $$X$$, $$Y$$에 대해, $$X$$의 **각** 원소 $$x$$에 $$Y$$의 원소 $$f(x)$$를 **정확히 하나씩** 대응시키는 규칙을 함수 $$f: X \to Y$$라 한다[^1].
 - 정의역(domain) $$X$$: 입력으로 받는 값 전체
 - 공역(codomain) $$Y$$: 출력이 속하도록 정해 둔 집합
-- 치역(range, image) $$f(X) = \{ f(x) : x \in X \}$$: 실제로 나오는 출력 전체. 늘 $$f(X) \subseteq Y$$다.
+- 치역(range, image) $$f(X) = \{ f(x) : x \in X \}$$: 실제로 나오는 출력 전체. 늘 $$f(X) \subseteq Y$$($$\subseteq$$는 "~에 모두 들어 있다(부분집합)")다.
 - 두 함수가 같다는 것은 정의역과 공역이 같고, 정의역의 모든 $$x$$에서 출력이 같다는 뜻이다.
 
 </div>

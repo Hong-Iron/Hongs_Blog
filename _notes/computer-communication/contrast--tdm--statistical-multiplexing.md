@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["TDM vs 통계적 다중화", "synchronous TDM vs statistical TDM", "동기식 vs 비동기식 시분할"]
 description: "둘 다 시간을 나눠 링크를 쓴다. 슬라이드도 통계적 다중화를 \"시분할 방법의 일종\"이라 부른다. 그래서 헷갈린다. 가르는 기준은 \"칸을 미리 정해 두는가\"다."
@@ -47,7 +47,7 @@ permalink: "/studies/computer-communication/contrast--tdm--statistical-multiplex
 
 | 기준 | 동기식 시분할 다중화 | 통계적 다중화 |
 |---|---|---|
-| 칸 배정 | 고정: 칸 $$j$$는 입력 $$(j \bmod N) + 1$$[^2] | 요구에 따라 동적[^1] |
+| 칸 배정 | 고정: 칸 $$j$$는 입력 $$(j \bmod N) + 1$$($$j$$를 $$N$$으로 나눈 나머지 + 1)[^2] | 요구에 따라 그때그때(동적)[^1] |
 | DEMUX 키 | 칸 위치 (따로 보내지 않음) | 조각마다 붙인 주소[^1] |
 | 오버헤드 | 동기 맞추기 비트 정도[^s1] | 조각마다 주소[^1] |
 | 쉬는 입력의 몫 | 빈 칸으로 낭비 (Wasted Bandwidth)[^1] | 다른 입력이 씀 (Extra Bandwidth)[^1] |

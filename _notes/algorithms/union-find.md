@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Union-Find", "Disjoint Set Union", "DSU", "서로소 집합", "분리 집합", "경로 압축", "union by size"]
 description: "반 친구들을 무리로 나눌 때 무리마다 대표 한 명을 정하고, 각자는 \"내 위의 사람\"만 기억한다. 위로 따라가 대표가 같으면 같은 무리다. 두 무리를 합칠 때는 한쪽 대표를 다른 쪽 대표 밑에 넣기만 하면 된다. 작은 무리를 큰 무리 밑에 넣고, 대표를 찾을 때 지나온 사람들을 대…"
@@ -127,5 +127,5 @@ def union(a, b):
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 15.2 "Union-find structure": 대표로 이어지는 줄, 작은 무리를 큰 무리에 잇는 방법, 연산이 O(log n)이다.
-[^2]: Cormen 외, *Introduction to Algorithms* 3판, 21.3절(순위(rank)로 합치기와 경로 압축), 21.4절(두 방법을 함께 쓰면 m번 연산이 O(m α(n)), α(n)은 실제로 쓰는 n에서 4 이하). 이 문서의 코드는 순위 대신 크기로 합친다. 크기로 합치기에도 같은 상한이 성립한다고 알려져 있으나 이 책에서 확인하지는 않았다[확인필요].
+[^2]: Cormen 외, *Introduction to Algorithms* 3판, 21.3절(순위(rank)로 합치기와 경로 압축), 21.4절(두 방법을 함께 쓰면 m번 연산이 O(m α(n)), α(n)은 실제로 쓰는 n에서 4 이하). 이 문서의 코드는 순위 대신 크기로 합친다. 크기로 합치기도 경로 압축과 함께 쓰면 같은 $$\Theta(m\,\alpha(n))$$이다(Tarjan & van Leeuwen, "Worst-case analysis of set union algorithms", *JACM* 31(2), 1984. 위키백과 "Disjoint-set data structure"가 이 논문을 근거로 "union by size or by rank"를 함께 적는다).
 {% endraw %}

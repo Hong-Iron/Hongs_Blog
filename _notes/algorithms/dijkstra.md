@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Dijkstra", "Dijkstra's Algorithm", "데이크스트라", "다익스트라 알고리즘", "최단 경로", "가중치 최단 경로", "늦은 삭제"]
 description: "길마다 걸리는 시간이 다를 때, 출발점에서 가장 가까운 곳부터 하나씩 \"여기까지는 이 시간이 최소\"라고 확정해 나간다. 확정한 곳에서 이어진 길로 다른 곳까지의 시간을 줄여 두고, 아직 확정하지 않은 곳 중 가장 가까운 곳을 또 확정한다. 가장 가까운 곳은 힙으로 빨리 찾는다. 단…"
@@ -54,7 +54,7 @@ permalink: "/studies/algorithms/dijkstra/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">입력과 출력</div>
 
-- **입력:** 그래프 $$G = (V, E)$$, 모든 간선에 대해 $$w(u, v) \ge 0$$인 비용 $$w$$, 출발점 $$s \in V$$.
+- **입력:** 그래프 $$G = (V, E)$$, 모든 간선에 대해 $$w(u, v) \ge 0$$인 비용 $$w$$, 출발점 $$s \in V$$($$\in$$은 "~에 속한다").
 - **출력:** 모든 $$v \in V$$에 대해 $$dist[v] = \delta(s, v)$$. $$\delta(s, v)$$는 $$s$$에서 $$v$$로 가는 경로의 비용 합 중 최솟값이고, 경로가 없으면 $$\infty$$다.
 
 </div>
@@ -158,7 +158,7 @@ x를 확정해 처리할 때 코드가 모든 간선 x → y에 대해 "d + w < 
 ## 활용
 
 - **비용:** 점마다 이웃을 한 번 훑고, 간선마다 힙에 많아야 한 번 넣는다. 힙 연산 한 번이 $$O(\log m)$$이니 전체는 $$O((n + m) \log m)$$이다[^2]. 공간은 $$O(n + m)$$이다. 점 5만 개, 간선 20만 개로 재 보니 0.1초 안팎이었다. 간선이 n²에 가까운 조밀한 그래프에서는 힙 없이 매번 가장 가까운 점을 리스트에서 찾는 $$O(n^2)$$ 방식이 낫다.
-- **쓰는 곳:** 지도 앱의 길 찾기, 네트워크 라우팅(OSPF 같은 링크 상태 방식은 라우터마다 최단 경로 트리를 계산한다[확인필요]), 게임 캐릭터의 이동 경로.
+- **쓰는 곳:** 지도 앱의 길 찾기, 네트워크 라우팅(OSPF 같은 링크 상태 방식은 라우터마다 다익스트라로 최단 경로 트리를 계산한다[^s1]), 게임 캐릭터의 이동 경로.
 - **상태 다익스트라:** 같은 칸이라도 들어온 방향에 따라 앞으로의 비용이 다르면, (칸, 방향)을 점으로 본다. [경주로 건설](/Hongs_Blog/studies/algorithms/pg67259/)이 이 모양이다.
 - **흔한 실수:** 처음 발견할 때 확정한다(아래 오해). 무방향 그래프에서 간선을 한쪽만 넣는다. 음수 간선에 쓴다. 거리 초기값을 너무 작은 수(예: 10⁹)로 잡았는데 실제 거리가 그보다 크다.
 
@@ -220,4 +220,5 @@ x를 확정해 처리할 때 코드가 모든 간선 x → y에 대해 "d + w < 
 
 [^1]: 증명의 구조(경계의 점 y를 잡는 귀류법)는 Cormen 외, *Introduction to Algorithms* 3판, 24.3절 "Dijkstra's algorithm"의 정리 24.6을 풀어 쓴 것이다.
 [^2]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 13.2 "Dijkstra's algorithm": 음수 간선이 없어야 하고, 같은 점이 우선순위 큐에 여러 번 들어갈 수 있지만 가장 작은 거리의 것만 처리하며, 시간은 O(n + m log m)이다.
+[^s1]: 에이전트 보충. RFC 2328(OSPF Version 2) 16.1절: "Using the Dijkstra algorithm, a tree is formed from this subset of the link state database."
 {% endraw %}

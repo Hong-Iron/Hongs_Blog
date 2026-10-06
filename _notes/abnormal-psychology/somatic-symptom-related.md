@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Somatic Symptom and Related Disorders", "신체 증상 관련 장애", "신체형 장애", "심신 상호작용", "Mind-Body Interaction", "일원론", "monism", "이원론", "dualism", "심리신체질환", "Psychosomatic Diseases", "건강심리학", "Health Psychology", "꾀병", "Malingering"]
 description: "마음이 몸의 말로 드러나는 장애들이다. 배가 아프거나 다리가 마비되는 등 몸의 증상이 주인공이지만, 의학적 손상이 없거나 손상에 비해 걱정과 고통이 지나치다. 환자는 진짜로 아프다고 느끼므로 \"꾀병\"으로 보면 틀린다. 반대로 증상을 일부러 꾸미는 경우도 이 범주 안팎에 있다. 그래…"
@@ -47,7 +47,7 @@ permalink: "/studies/abnormal-psychology/somatic-symptom-related/"
 
 ### 몸과 마음의 관계[^1]
 
-몸과 마음이 하나인지(일원론, monism) 둘인지(이원론, dualism)는 오래된 질문이다. 사람은 신체적 존재이자 정신적 존재다. 정신은 신체에 영향을 주고, 신체는 다시 정신에 영향을 준다. 이를 심신 상호작용(mind-body interaction)이라 한다.
+몸과 마음이 하나인지(일원론) 둘인지(이원론)는 오래된 질문이다. 사람은 신체적 존재이자 정신적 존재다. 정신은 신체에 영향을 주고, 신체는 다시 정신에 영향을 준다. 이를 심신 상호작용(mind-body interaction)이라 한다.
 
 ### 심신 관계와 관련된 세 경우[^2]
 

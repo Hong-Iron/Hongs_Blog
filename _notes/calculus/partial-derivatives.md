@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Partial Derivative", "편미분", "편도함수", "다변수 함수", "multivariable function", "등고선", "level curve", "등위곡선", "클레로 정리", "Clairaut's theorem", "혼합 편미분", "mixed partial derivative", "유한 차분", "finite difference"]
 description: "산의 높이는 동서 위치와 남북 위치 두 값에 따라 정해진다. 이런 여러 입력의 함수에서 \"다른 방향은 그대로 두고 동쪽으로만 한 걸음 가면 얼마나 오르나\"를 재는 것이 편미분이다. 입력마다 하나씩 편미분이 있어, 한 변수 미분의 도구를 그대로 쓴다. 이미지의 밝기 변화, 손실 함수…"
@@ -45,7 +45,7 @@ permalink: "/studies/calculus/partial-derivatives/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-$$f: \mathbb{R}^n \to \mathbb{R}$$와 점 $$\mathbf{a}$$에 대해 $$x_i$$에 대한 **편미분**은 다른 변수를 고정한 한 변수 도함수다.
+$$f: \mathbb{R}^n \to \mathbb{R}$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체)와 점 $$\mathbf{a}$$에 대해 $$x_i$$에 대한 **편미분**은 다른 변수를 고정한 한 변수 도함수다.
 
 $$\frac{\partial f}{\partial x_i}(\mathbf{a}) = \lim_{h \to 0}\frac{f(\mathbf{a} + h\mathbf{e}_i) - f(\mathbf{a})}{h}$$
 

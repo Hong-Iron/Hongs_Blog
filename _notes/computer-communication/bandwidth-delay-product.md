@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Bandwidth-Delay Product", "BDP", "대역폭 지연 곱", "링크의 부피", "파이프", "pipe"]
 description: "링크를 파이프로 보면 대역폭은 파이프의 굵기, 지연은 길이이고, 둘을 곱하면 파이프에 한꺼번에 담기는 비트 수(부피)가 된다. 이 부피를 데이터로 채워야 링크를 놀리지 않는다. 대역폭이 커지면 부피도 커져서, 같은 크기의 데이터를 보내면 파이프는 오히려 더 비어 있다. 그래서 빠른…"
@@ -43,7 +43,7 @@ permalink: "/studies/computer-communication/bandwidth-delay-product/"
 
 슬라이드 그림에서 ①의 노란 띠가 링크를 가득 채우고, ②의 노란 조각은 B 앞에 조그맣게 붙어 있다. 대역폭이 10배인 ②가 상대적으로 덜 쓰였다[^1][^2].
 
-파이프의 지름을 대역폭 $$R$$로, 길이를 전파 지연 $$d_{\text{prop}}$$로 옮긴다[^2]. 물은 흘러가는 동안 파이프 속에서 섞이지만, 비트는 보낸 순서대로 줄지어 간다.
+파이프로 읽으면 지름이 대역폭 $$R$$, 길이가 전파 지연 $$d_{\text{prop}}$$다[^2]. 비유가 다른 곳도 있다. 물은 흘러가는 동안 파이프 속에서 섞이지만, 비트는 보낸 순서대로 줄지어 간다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표의 값, 카드 C1의 6,250,000바이트, 카드 C3의 37.5%와 5.7% — [28_bandwidth-delay-product_verify.py](/Hongs_Blog/studies/computer-communication/code/28_bandwidth-delay-product_verify/)</div>
@@ -65,7 +65,7 @@ $$\text{BDP} = R \times d_{\text{prop}} \quad (\text{비트})$$
 </div>
 
 
-첫 비트가 도착한 순간 길이 $$L$$비트의 프레임이 링크를 채운 비율은 $$\min(1, L / \text{BDP})$$다. 보내는 쪽이 답을 받기 전에 실을 수 있는 양을 따질 때는 지연 자리에 RTT를 넣은 $$R \times \text{RTT}$$를 쓴다[^s1].
+첫 비트가 도착한 순간 길이 $$L$$비트의 프레임이 링크를 채운 비율은 $$\min(1, L / \text{BDP})$$($$L / \text{BDP}$$와 1 중 작은 값)다. 위 표의 링크 ②라면 $$12{,}000 / 100{,}000 = 12\%$$다. 보내는 쪽이 답을 받기 전에 실을 수 있는 양을 따질 때는 지연 자리에 RTT를 넣은 $$R \times \text{RTT}$$를 쓴다[^s1].
 
 망 운영자에게는 네트워크 자원을 효율적으로 나누는 것이 중요하고, 이때 BDP가 중요한 인자로 나온다. BDP는 링크에 담을 수 있는 양의 상한이어서 성능의 기준선 역할을 한다[^2].
 

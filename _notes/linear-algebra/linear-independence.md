@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Linear Independence", "선형독립", "일차독립", "Linear Dependence", "선형종속", "일차종속", "다중공선성", "multicollinearity", "해밍 부호", "Hamming code"]
 description: "벡터 몇 개가 선형독립이라는 것은 그중 어느 것도 나머지를 섞어서 만들 수 없다는 뜻이다. 즉 모두가 새로운 방향을 하나씩 보태고, 쓸데없이 겹치는 정보가 없다. 독립인 벡터로 만든 결합은 계수가 하나로 정해져서 \"몇 개씩 섞었는지\"를 되짚을 수 있다. 반대로 겹치는 벡터가 있으면…"
@@ -64,7 +64,7 @@ $$c_1\mathbf{v}_1 + \cdots + c_k\mathbf{v}_k = \mathbf{0} \implies c_1 = \cdots 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">너무 많으면 종속</div>
 
-$$\mathbb{R}^n$$의 벡터가 $$n$$개보다 많으면 반드시 선형종속이다.
+$$\mathbb{R}^n$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체)의 벡터가 $$n$$개보다 많으면 반드시 선형종속이다.
 
 </div>
 

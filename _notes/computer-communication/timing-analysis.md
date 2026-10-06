@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Timing Analysis", "시간 흐름 그림", "시간-공간 그림", "time-space diagram", "타이밍 다이어그램", "timing diagram", "소요시간 계산", "전송 완료 시간", "파이프라이닝", "pipelining", "패킷 분할", "packet segmentation"]
 description: "가로축에 노드를, 세로축에 시간을 놓고 데이터가 언제 어디에 있는지 그려서 총 걸리는 시간을 구하는 방법이다. 기차 시간표를 그리듯 구간마다 싣는 시간, 달리는 시간, 역에서 머무는 시간을 쌓으면 답이 나온다. 회선 스위칭은 처음 설정에 시간을 쓰고 그 뒤로는 멈춤 없이 흐른다. …"
@@ -46,7 +46,7 @@ permalink: "/studies/computer-communication/timing-analysis/"
 
 패킷 1 하나만 보면 링크마다 "싣기 2 + 전파 1"이, 노드마다 처리 0.5가 쌓여 $$3 \times 3 + 2 \times 0.5 = 10$$ ms다. 노드가 패킷을 끝까지 받은 뒤에야 내보내므로(저장 후 전달) 싣는 시간이 링크마다 다시 들어간다[^2]. 뒤 패킷들은 앞 패킷이 비운 링크에 곧바로 실려 2 ms 간격으로 따라온다. Host 1이 패킷 2를 싣는 동안 Node 1은 패킷 1을 내보낸다. 슬라이드가 "Pipelining"이라 부르는 모습이다[^3].
 
-시간표의 역이 노드, 기차 한 량이 패킷, 싣는 시간이 $$L/R$$, 달리는 시간이 $$d_{\text{prop}}$$, 역에 머무는 시간이 $$d_{\text{proc}}$$다. 다른 기차와의 신호 대기(큐잉 지연)는 버린다.
+기차 시간표로 읽으면 역이 노드, 기차 한 량이 패킷, 싣는 시간이 $$L/R$$, 달리는 시간이 $$d_{\text{prop}}$$, 역에 머무는 시간이 $$d_{\text{proc}}$$다. 다른 기차를 기다리는 시간(큐잉 지연)은 0으로 친다.
 
 회선 스위칭의 그림은 세 구간으로 나뉜다[^1].
 
@@ -62,7 +62,7 @@ Host 1        Node 1        Node 2        Host 2
 회선은 설정에 공을 들이고, 그 뒤 데이터는 노드에서 멈추지 않고 스트림으로 흐른다[^4].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 시간표, 정리 두 개, 카드 C2~C4 — 정수 틱 시뮬레이션과 대기열 점화식과 닫힌 식이 648가지 설정에서 일치 (실험으로 확인됨. 일반적 성립은 아래 증명) — [26_timing-analysis_verify.py](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_verify/)</div>
+<div class="callout-title" markdown="span">검증: 위 시간표, 정리 두 개, 카드 C2~C4 — 정수 틱 시뮬레이션과 대기열 점화식과 닫힌 식이 648가지 설정에서 같음 (실험으로 확인. 모든 경우에 맞는 이유는 아래 증명) — [26_timing-analysis_verify.py](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_verify/)</div>
 
 </div>
 
@@ -106,7 +106,7 @@ $$T_{\text{pkt}} = (H + P - 1)\frac{L}{R} + H\,d_{\text{prop}} + (H - 1)\,d_{\te
 
 ## 증명
 
-전략: 패킷 $$k$$의 마지막 비트가 링크 $$i$$에 실리는 시각 $$F(k, i)$$의 점화식을 세우고, 닫힌 식을 $$(k, i)$$에 대한 강한 귀납법으로 보인다. $$\tau = L/R$$, $$\delta = d_{\text{prop}}$$, $$\rho = d_{\text{proc}}$$로 줄여 쓴다.
+전략: 패킷 $$k$$의 마지막 비트가 링크 $$i$$에 실리는 시각 $$F(k, i)$$의 점화식을 세우고, 닫힌 식을 $$(k, i)$$에 대한 강한 귀납법으로 보인다. $$\tau = L/R$$(타우, 싣는 시간), $$\delta = d_{\text{prop}}$$(델타, 전파 지연), $$\rho = d_{\text{proc}}$$(로, 처리 시간)로 줄여 쓴다.
 
 <details markdown="1"><summary markdown="span">증명 펼치기</summary>
 
@@ -220,7 +220,7 @@ $$T_{\text{pkt}} = (H + P - 1)\frac{L}{R} + H\,d_{\text{prop}} + (H - 1)\,d_{\te
 
 </details>
 
-<details markdown="1"><summary markdown="span"><b>C5</b> 패킷 스위칭 정리의 증명 4단계에서 "처리는 기다리지 않는다"가 성립하는 근거는 무엇인가? 그 가정이 깨지는 예를 들어라.</summary>
+<details markdown="1"><summary markdown="span"><b>C5</b> 패킷 스위칭 정리의 증명 4단계에서 "처리는 기다리지 않는다"가 맞는 근거는 무엇인가? 그 가정이 깨지는 예를 들어라.</summary>
 
 
 **답:** 가정 $$d_{\text{proc}} \le L/R$$. 패킷은 $$L/R$$ 간격으로 도착하므로, 처리 시간이 그보다 짧으면 다음 패킷이 올 때 앞 처리가 이미 끝나 있다. 반례: 링크 2개, 패킷 5개, $$L/R = 1$$, $$d_{\text{proc}} = 3$$이면 노드에서 줄이 생겨 실제 17, 공식 9다.

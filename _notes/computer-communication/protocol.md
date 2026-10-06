@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Protocol", "통신 규약", "프로토콜 개체", "protocol object", "프로토콜 계층", "서비스 인터페이스", "service interface", "동료 인터페이스", "peer-to-peer interface", "동료", "peer"]
 description: "프로토콜은 통신하는 양쪽이 미리 맞춰 둔 약속이다. 두 사람이 같은 언어와 같은 순서로 말해야 대화가 되듯, 보내는 쪽과 받는 쪽이 같은 프로토콜을 써야 한다. 계층 구조에서 프로토콜 하나는 한 층을 맡은 부품이다. 그래서 같은 컴퓨터의 위층에 해 주는 일과, 상대 컴퓨터의 같은 …"
@@ -38,7 +38,7 @@ permalink: "/studies/computer-communication/protocol/"
 - **위아래(같은 컴퓨터 안):** 브라우저는 아래의 HTTP 모듈에 "이 주소의 페이지를 가져와"라고 요청만 한다. 요청을 어떻게 전하는지는 모른다. 이 요청 창구가 **서비스 인터페이스**다.
 - **옆(다른 컴퓨터와):** 노트북의 HTTP는 서버의 HTTP에게 `GET /index.html` 같은 정해진 형식의 메시지를 보낸다. 서버는 `200 OK`와 페이지로 답한다. 이 메시지의 형식과 순서가 **동료 인터페이스**다.
 
-슬라이드 그림에서 Host 1과 Host 2의 "Protocol" 상자 사이의 가로선이 동료 인터페이스이고, 각 호스트 안의 세로선이 서비스 인터페이스다[^1]. HTTP를 한 층의 프로토콜로, 브라우저를 그 위의 "high-level object"로 옮긴다. 페이지의 내용은 버리고, 누가 누구와 어떤 창구로 말하는지만 남긴다.
+슬라이드 그림에서 Host 1과 Host 2의 "Protocol" 상자 사이의 가로선이 동료 인터페이스이고, 각 호스트 안의 세로선이 서비스 인터페이스다[^1]. 이 장면에서 HTTP가 한 층의 프로토콜이고, 브라우저가 그 위의 "high-level object"다. 페이지 내용은 따지지 않고, 누가 누구와 어떤 창구로 말하는지만 본다.
 
 ## 정의
 
@@ -50,8 +50,8 @@ permalink: "/studies/computer-communication/protocol/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 프로토콜에는 계층이 필수이므로, 각 프로토콜 개체는 두 인터페이스를 갖는다[^1].
-- **서비스 인터페이스**(service interface): 같은 호스트의 위층 개체에게 이 프로토콜이 해 주는 작업을 정의한다.
-- **동료 인터페이스**(peer-to-peer interface): 다른 호스트의 같은 층 개체(동료)와 주고받는 메시지를 정의한다.
+- **서비스 인터페이스**: 같은 호스트의 위층 개체에게 이 프로토콜이 해 주는 작업을 정의한다.
+- **동료 인터페이스**: 다른 호스트의 같은 층 개체(동료)와 주고받는 메시지를 정의한다.
 
 </div>
 

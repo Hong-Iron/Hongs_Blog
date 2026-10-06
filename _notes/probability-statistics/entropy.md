@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Entropy", "엔트로피", "섀넌 엔트로피", "Shannon entropy", "정보량", "information content", "놀라움", "surprisal", "비트", "bit", "이진 엔트로피", "binary entropy", "원천 부호화 정리", "source coding theorem", "허프만 부호", "Huffman coding", "크래프트 부등식", "Kraft inequality", "접두어 부호", "prefix code", "정보 이득", "information gain"]
 description: "결과를 알게 되었을 때 평균적으로 얼마나 놀라는지를 재는 수이고, 그 결과를 전하는 데 평균적으로 꼭 필요한 비트 수와 같다. 공정한 동전 하나는 1비트, 거의 늘 앞면이 나오는 동전은 1비트보다 훨씬 적다. 확률이 고르게 퍼질수록 크고 한쪽에 몰릴수록 작아서, 데이터를 얼마나 압…"
@@ -132,7 +132,7 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 - **압축.** 무손실 압축은 엔트로피보다 짧게 할 수 없다. 허프만 부호는 DEFLATE(zip, gzip, PNG)의 한 단계다[^s1].
 - **결정 트리.** 질문 하나로 라벨의 엔트로피가 얼마나 줄어드는지(정보 이득)를 기준으로 분할할 특징을 고른다.
 - **암호와 난수.** 비밀번호나 키의 강도를 엔트로피 비트로 말한다. 균등하게 고른 64비트 키는 64비트 엔트로피, 사람이 고른 비밀번호는 길이에 비해 훨씬 적다.
-- 알고리즘에서: 허프만 부호는 확률이 가장 작은 두 묶음을 [힙](/Hongs_Blog/studies/algorithms/heap/)으로 꺼내 합치는 일을 되풀이하는 [그리디](/Hongs_Blog/studies/algorithms/greedy/)이고, 이 부호가 접두어 부호 중 평균 길이가 가장 짧다는 것도 그리디의 바꿔치기(교환 논증)로 보인다. 접두어 부호는 0과 1로 갈라지는 [트라이](/Hongs_Blog/studies/algorithms/trie/)에서 끝 표시가 모두 잎에만 있는 모양이라, 부호 길이는 그 잎의 깊이이고 해독은 뿌리부터 비트를 따라 내려가다 잎에서 기호를 내는 일이다. 가능한 답 $$n$$가지가 똑같이 그럴듯하면 예·아니오 질문으로 찾는 데 평균 $$\log_2 n$$번 이상 물어야 하고, [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)은 많아야 $$\lceil \log_2 n \rceil$$번이라 이 한계와 1번 미만 차이다.
+- 알고리즘에서: 허프만 부호는 확률이 가장 작은 두 묶음을 [힙](/Hongs_Blog/studies/algorithms/heap/)으로 꺼내 합치는 일을 되풀이하는 [그리디](/Hongs_Blog/studies/algorithms/greedy/)이고, 이 부호가 접두어 부호 중 평균 길이가 가장 짧다는 것도 그리디의 바꿔치기(교환 논증)로 보인다. 접두어 부호는 0과 1로 갈라지는 [트라이](/Hongs_Blog/studies/algorithms/trie/)에서 끝 표시가 모두 잎에만 있는 모양이라, 부호 길이는 그 잎의 깊이이고 해독은 뿌리부터 비트를 따라 내려가다 잎에서 기호를 내는 일이다. 가능한 답 $$n$$가지가 똑같이 그럴듯하면 예·아니오 질문으로 찾는 데 평균 $$\log_2 n$$번 이상 물어야 하고, [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)은 많아야 $$\lceil \log_2 n \rceil$$($$\lceil\ \rceil$$는 소수점 아래를 올린 정수)번이라 이 한계와 1번 미만 차이다.
 
 ## 연결
 

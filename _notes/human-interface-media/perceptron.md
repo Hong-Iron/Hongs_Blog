@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Perceptron", "단층 퍼셉트론", "선형 분류기", "linear classifier", "퍼셉트론 학습 규칙", "XOR 문제", "다층 퍼셉트론", "MLP"]
 description: "여러 증거에 점수를 매겨 합한 뒤, 합이 기준을 넘으면 \"예\", 아니면 \"아니오\"라고 답하는 투표기다. 틀릴 때마다 점수 배분을 고쳐 스스로 배운다. 직선(평면) 하나로 두 무리를 가를 수 있는 문제라면 반드시 끝에 가서 다 맞히지만, XOR처럼 직선 하나로 못 가르는 문제는 아무…"
@@ -96,9 +96,12 @@ $$(1, 0)$$은 직선 위에 딱 걸친다. 합이 0이고 "0보다 클 때만 1"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- 입력: $$\mathbf{x} \in \mathbb{R}^D$$. 매개변수: 가중치 $$\mathbf{w} \in \mathbb{R}^D$$, 바이어스 $$b \in \mathbb{R}$$.
+퍼셉트론은 입력마다 가중치를 곱해 더하고 바이어스를 더한다. 그 값이 0보다 크면 1, 아니면 0을 내놓는다. 틀린 답을 내면 정답 쪽으로 가중치와 바이어스를 조금 고치고, 맞으면 그대로 둔다.
+
+**기호로 쓰면.**
+- 입력: $$\mathbf{x} \in \mathbb{R}^D$$(실수 $$D$$개짜리 목록). 매개변수: 가중치 $$\mathbf{w} \in \mathbb{R}^D$$, 바이어스 $$b \in \mathbb{R}$$.
 - 출력: $$y = 1$$ ($$\mathbf{w}\cdot\mathbf{x} + b > 0$$), $$y = 0$$ (그 밖).
-- 학습 규칙: 정답이 $$t \in \{0, 1\}$$인 샘플마다 $$\mathbf{w} \leftarrow \mathbf{w} + \eta\,(t - y)\,\mathbf{x}$$, $$b \leftarrow b + \eta\,(t - y)$$. 학습률 $$\eta > 0$$.
+- 학습 규칙: 정답이 $$t \in \{0, 1\}$$인 샘플마다 $$\mathbf{w} \leftarrow \mathbf{w} + \eta\,(t - y)\,\mathbf{x}$$, $$b \leftarrow b + \eta\,(t - y)$$. 학습률 $$\eta > 0$$($$\eta$$는 에타, 한 번에 고치는 크기). 맞히면 $$t - y = 0$$이라 아무것도 바뀌지 않는다.
 
 </div>
 

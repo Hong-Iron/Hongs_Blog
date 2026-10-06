@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Suicide", "자살 위험요인", "자살 억제요인", "보호요인", "절망감", "hopelessness", "자살의 대인관계 이론", "interpersonal theory of suicide", "조이너", "Joiner", "좌절된 소속감", "thwarted belongingness", "짐이 된다는 지각", "perceived burdensomeness", "자살 능력", "acquired capability", "위기개입", "crisis intervention", "자살예방", "타나토스", "Thanatos"]
 description: "자살은 대부분 정신장애, 특히 우울과 함께 오고, 그 한가운데에는 \"이 고통은 나아지지 않는다\"는 절망감이 있다. 나쁜 일이 방아쇠가 되지만, 누구나 그 방아쇠에 무너지지는 않는다. 위험요인과 억제요인의 균형, 그리고 \"나는 혼자다\", \"나는 짐이다\"라는 생각과 죽음에 대한 두려움…"
@@ -86,7 +86,7 @@ graph LR
     - 좌절된 소속감: "나는 혼자다"
     - 짐이 된다는 지각: "나는 짐덩어리다"
 2. **자살 시도를 이끄는 요인: 자살 능력** — "나는 죽는 것이 두렵지 않다"
-    - 기질적 특성: 낮은 통증 민감성, 과감성, 충동성
+    - 타고난 성향(기질적 특성): 낮은 통증 민감성, 과감성, 충동성
     - 후천적 경험: 신체적 학대나 외상, 과거의 자해나 자살 시도, 고통스러운 사건에 반복 노출된 경험
     - 실제 상황: 자살 방법에 대한 지식, 치명적인 도구에 대한 접근성
 

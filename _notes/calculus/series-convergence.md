@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Convergence of Series", "급수", "series", "부분합", "partial sum", "발산 판정", "divergence test", "적분 판정", "integral test", "비교 판정", "comparison test", "비 판정", "ratio test", "교대급수", "alternating series", "절대수렴", "absolute convergence", "조건수렴", "conditional convergence", "p-급수", "바젤 문제"]
 description: "무한히 많은 수를 더해도 결과가 유한한 값에 머무는지를 따진다. 앞에서부터 더한 합이 어떤 값에 다가가면 수렴이다. 항이 0으로 가는 것은 필요하지만 충분하지 않다. 1, 2분의 1, 3분의 1, …을 차례로 더한 합은 항이 0으로 가도 끝없이 커진다. 그래서 등비급수, 적분, 이…"
@@ -57,10 +57,10 @@ permalink: "/studies/calculus/series-convergence/"
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">판정법</div>
 
-1. **발산 판정.** $$a_k \not\to 0$$이면 발산한다. 역은 성립하지 않는다.
-2. **적분 판정.** $$f$$가 $$[1, \infty)$$에서 양수이고 연속이며 줄어들기만 하고 $$a_k = f(k)$$이면, $$\sum a_k$$와 $$\int_1^\infty f$$는 함께 수렴하거나 함께 발산한다. 그래서 p-급수 $$\sum\frac{1}{k^p}$$는 $$p > 1$$일 때만 수렴한다.
+1. **발산 판정.** $$a_k \not\to 0$$이면 발산한다. 역은 맞지 않는다.
+2. **적분 판정.** $$f$$가 $$[1, \infty)$$에서 양수이고 연속이며 줄어들기만 하고 $$a_k = f(k)$$이면, $$\sum a_k$$와 $$\int_1^\infty f$$($$\int$$는 넓이를 구하는 적분 기호)는 함께 수렴하거나 함께 발산한다. 그래서 p-급수 $$\sum\frac{1}{k^p}$$는 $$p > 1$$일 때만 수렴한다.
 3. **비교 판정.** $$0 \le a_k \le b_k$$이고 $$\sum b_k$$가 수렴하면 $$\sum a_k$$도 수렴한다.
-4. **비 판정.** $$L = \lim\left\vert \frac{a_{k+1}}{a_k}\right\vert $$이 $$L < 1$$이면 절대수렴, $$L > 1$$이면 발산, $$L = 1$$이면 판정할 수 없다.
+4. **비 판정.** $$L = \lim\left\vert \frac{a_{k+1}}{a_k}\right\vert $$($$\lim$$은 한없이 가까이 갈 때 다가가는 값(극한))이 $$L < 1$$이면 절대수렴, $$L > 1$$이면 발산, $$L = 1$$이면 판정할 수 없다.
 5. **교대급수 판정.** $$b_k > 0$$이 줄어들며 0으로 가면 $$\sum(-1)^{k+1}b_k$$는 수렴하고, $$n$$개까지 더한 오차는 다음 항 $$b_{n+1}$$ 이하다.
 6. **절대수렴이면 수렴한다.** 절대수렴하는 급수는 순서를 바꿔 더해도 합이 같다. 조건수렴하는 급수는 순서를 바꾸면 합이 달라질 수 있다(리만 재배열 정리).
 
@@ -97,7 +97,7 @@ $$\sum_{k=1}^{\infty}\frac{k^2}{2^k}$$이 수렴하는지 본다.
 
 - **근사의 오차 예산.** 무한급수로 정의된 값(예: $$e = \sum\frac{1}{k!}$$)을 계산할 때 몇 항에서 멈출지 정한다. 교대급수는 "다음 항"이 오차의 상한이라 멈출 곳을 바로 안다. [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/)가 대표적인 예다.
 - **알고리즘 비용.** 힙 만들기의 $$\sum\frac{h}{2^h} < 2$$처럼 무한급수의 수렴이 "총비용은 선형"을 보장한다([합의 계산과 어림](/Hongs_Blog/studies/discrete-math/sums-asymptotics/)).
-- **부동소수점 덧셈의 순서.** 컴퓨터의 덧셈은 결합법칙이 정확히 성립하지 않아, 같은 항을 다른 순서로 더하면 결과의 끝자리가 달라진다. 작은 항부터 더하거나 보정 덧셈(카한 합)을 쓰면 오차가 준다[^s1]. 수학의 재배열 정리와는 원인이 다르지만 "순서가 결과를 바꿀 수 있다"는 경고는 같다.
+- **부동소수점 덧셈의 순서.** 컴퓨터의 덧셈은 결합법칙이 정확히 맞지 않아, 같은 항을 다른 순서로 더하면 결과의 끝자리가 달라진다. 작은 항부터 더하거나 보정 덧셈(카한 합)을 쓰면 오차가 준다[^s1]. 수학의 재배열 정리와는 원인이 다르지만 "순서가 결과를 바꿀 수 있다"는 경고는 같다.
 - 알고리즘에서: 파이썬 `heapq.heapify`가 리스트를 $$O(n)$$에 힙으로 바꾸는 것이 위 힙 만들기의 실제 예다. 높이 $$h$$인 노드는 약 $$n/2^{h+1}$$개이고 각자 많아야 $$h$$층 내려가서, 총비용이 대략 $$n\sum_{h\ge0}\frac{h}{2^{h+1}} = n$$이다([힙과 우선순위 큐](/Hongs_Blog/studies/algorithms/heap/)).
 
 ## 연결

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Chain Rule", "연쇄 법칙", "합성함수의 미분", "역함수의 미분", "derivative of inverse function", "음함수 미분", "implicit differentiation", "로그 미분법", "logarithmic differentiation", "시그모이드", "sigmoid", "소프트플러스", "softplus", "역전파", "backpropagation"]
 description: "함수 안에 함수가 든 합성함수는 안쪽과 바깥쪽의 변화율을 곱해서 미분한다. 맞물린 톱니바퀴에서 전체 회전 비가 각 톱니 쌍의 비를 곱한 것과 같다. 신경망의 학습(역전파)과 자동미분은 이 규칙을 수백만 번 적용하는 일이다. 다만 바깥 함수의 도함수는 안쪽 함수의 값에서 계산해야 한다."
@@ -42,7 +42,7 @@ $$y = \sin(x^2)$$에서 안쪽 $$u = x^2$$은 $$x$$가 조금 늘 때 $$2x$$배�
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">연쇄 법칙</div>
 
-$$g$$가 $$x$$에서 미분 가능하고 $$f$$가 $$g(x)$$에서 미분 가능하면, $$f \circ g$$는 $$x$$에서 미분 가능하고
+$$g$$가 $$x$$에서 미분 가능하고 $$f$$가 $$g(x)$$에서 미분 가능하면, $$f \circ g$$($$\circ$$는 합성. $$g \circ f$$는 $$f$$를 먼저, $$g$$를 나중에 한다)는 $$x$$에서 미분 가능하고
 
 $$(f \circ g)'(x) = f'\big(g(x)\big) \cdot g'(x)$$
 
@@ -51,9 +51,9 @@ $$(f \circ g)'(x) = f'\big(g(x)\big) \cdot g'(x)$$
 </div>
 
 
-**가정.** (1) 안쪽 $$g$$가 $$x$$에서 미분 가능하다. (2) 바깥 $$f$$가 **$$g(x)$$에서** 미분 가능하다. 두 가정은 충분조건이지 필요조건은 아니다(역은 성립하지 않는다).
+**가정.** (1) 안쪽 $$g$$가 $$x$$에서 미분 가능하다. (2) 바깥 $$f$$가 **$$g(x)$$에서** 미분 가능하다. 두 가정은 충분조건이지 필요조건은 아니다(역은 맞지 않는다).
 - (2)가 깨지면 결론도 깨질 수 있다: $$f(u) = \vert u\vert $$, $$g(x) = x$$이면 $$f \circ g = \vert x\vert $$는 0에서 미분 불가능이다.
-- 가정이 깨져도 결론이 성립할 수 있다: $$f(u) = u^2$$, $$g(x) = \vert x\vert $$이면 $$g$$는 0에서 미분 불가능이지만 $$f \circ g = x^2$$은 미분 가능하다.
+- 가정이 깨져도 결론이 맞을 수 있다: $$f(u) = u^2$$, $$g(x) = \vert x\vert $$이면 $$g$$는 0에서 미분 불가능이지만 $$f \circ g = x^2$$은 미분 가능하다.
 
 연쇄 법칙에서 따라 나오는 도구들이다.
 

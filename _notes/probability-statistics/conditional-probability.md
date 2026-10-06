@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Conditional Probability", "조건부 확률", "곱셈 법칙", "multiplication rule", "연쇄 법칙", "chain rule of probability", "전확률 공식", "law of total probability", "LOTP", "몬티 홀 문제", "Monty Hall problem"]
 description: "\"이미 이런 일이 일어났다\"는 정보를 받으면, 가능한 세계가 그 정보와 맞는 결과들로 줄어든다. 줄어든 세계 안에서 관심 사건이 차지하는 몫이 조건부 확률이다. 이것으로 복잡한 확률을 \"먼저 이것, 그다음 저것\"의 단계로 쪼개 곱하거나, 경우를 나눠 더해 계산할 수 있다. 가장 흔…"
@@ -63,7 +63,7 @@ $$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$
 
 - *곱셈 법칙:* $$P(A \cap B) = P(B)\,P(A \mid B) = P(A)\,P(B \mid A)$$.
 - *연쇄 법칙:* $$P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1)\,P(A_2 \mid A_1)\cdots P(A_n \mid A_1 \cap \cdots \cap A_{n-1})$$.
-- *전확률 공식:* $$B_1, \dots, B_n$$이 $$\Omega$$의 분할이고 $$P(B_i) > 0$$이면 $$P(A) = \sum_i P(A \mid B_i)\,P(B_i)$$.
+- *전확률 공식:* $$B_1, \dots, B_n$$이 $$\Omega$$의 분할이고 $$P(B_i) > 0$$이면 $$P(A) = \sum_i P(A \mid B_i)\,P(B_i)$$($$\sum$$은 차례로 모두 더한다는 기호).
 
 **해당하는 예와 해당하지 않는 예.**
 

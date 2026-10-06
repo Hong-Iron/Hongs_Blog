@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Gradient Descent", "경사 하강법", "경사하강법", "학습률", "learning rate", "스텝 크기", "step size", "하강 보조정리", "descent lemma", "L-매끄러움", "L-smooth", "모멘텀", "momentum", "헤비볼", "heavy ball", "확률적 경사 하강법", "SGD", "stochastic gradient descent"]
 description: "안개 낀 산에서 내려가는 사람처럼, 발밑의 경사만 보고 가장 가파르게 내려가는 쪽으로 한 걸음씩 옮긴다. 계산이 단순해서 변수가 수억 개인 신경망 학습에도 그대로 쓰인다. 성패는 걸음 크기(학습률)가 가른다. 너무 크면 골짜기를 건너뛰며 튀어 올라 발산하고, 너무 작으면 한없이 느…"
@@ -46,7 +46,7 @@ $$f(x) = x^2$$을 $$x_0 = 1$$에서 시작해 줄인다. 기울기는 $$f'(x) = 
 
 ## 정의
 
-**입력:** 미분 가능한 $$f : \mathbb{R}^n \to \mathbb{R}$$의 기울기 함수 $$\nabla f$$, 시작점 $$\mathbf{x}_0$$, 학습률 $$\eta > 0$$, 허용오차 $$\varepsilon > 0$$, 최대 반복 수 $$K$$. **출력:** 기울기가 작은 점 $$\mathbf{x}$$.
+**입력:** 미분 가능한 $$f : \mathbb{R}^n \to \mathbb{R}$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체)의 기울기 함수 $$\nabla f$$, 시작점 $$\mathbf{x}_0$$, 학습률 $$\eta > 0$$, 허용오차 $$\varepsilon > 0$$, 최대 반복 수 $$K$$. **출력:** 기울기가 작은 점 $$\mathbf{x}$$.
 
 ```
 GRADIENT-DESCENT(∇f, x0, η, ε, K)
@@ -58,7 +58,7 @@ GRADIENT-DESCENT(∇f, x0, η, ε, K)
   return x
 ```
 
-**$$L$$-매끄러움.** 기울기가 너무 급하게 바뀌지 않는다는 조건이다. 모든 $$\mathbf{x}, \mathbf{y}$$에서 $$\Vert \nabla f(\mathbf{x}) - \nabla f(\mathbf{y})\Vert  \le L\Vert \mathbf{x} - \mathbf{y}\Vert $$이면 $$f$$를 **$$L$$-매끄럽다**고 한다. $$f$$가 두 번 미분 가능하면, 모든 점에서 [헤세 행렬](/Hongs_Blog/studies/calculus/hessian/)의 고윳값 절댓값이 $$L$$ 이하인 것과 같다[^1].
+**$$L$$-매끄러움.** 기울기가 너무 급하게 바뀌지 않는다는 조건이다. 모든 $$\mathbf{x}, \mathbf{y}$$에서 $$\Vert \nabla f(\mathbf{x}) - \nabla f(\mathbf{y})\Vert  \le L\Vert \mathbf{x} - \mathbf{y}\Vert $$($$\lVert\cdot\rVert$$는 벡터의 길이)이면 $$f$$를 **$$L$$-매끄럽다**고 한다. $$f$$가 두 번 미분 가능하면, 모든 점에서 [헤세 행렬](/Hongs_Blog/studies/calculus/hessian/)의 고윳값 절댓값이 $$L$$ 이하인 것과 같다[^1].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">하강 보조정리와 수렴</div>
@@ -67,14 +67,14 @@ $$f$$가 $$L$$-매끄럽고 $$0 < \eta < \frac{2}{L}$$이면 한 걸음마다
 
 $$f(\mathbf{x} - \eta\nabla f(\mathbf{x})) \le f(\mathbf{x}) - \eta\left(1 - \frac{L\eta}{2}\right)\Vert \nabla f(\mathbf{x})\Vert ^2.$$
 
-$$\eta = \frac1L$$로 두고 $$f$$의 하한을 $$f_{\inf}$$라 하면, $$K$$걸음 안에 $$\min_{k < K}\Vert \nabla f(\mathbf{x}_k)\Vert ^2 \le \frac{2L(f(\mathbf{x}_0) - f_{\inf})}{K}$$다. 볼록하지 않은 함수에도 성립한다. 여기에 더해
+$$\eta = \frac1L$$로 두고 $$f$$의 하한을 $$f_{\inf}$$라 하면, $$K$$걸음 안에 $$\min_{k < K}\Vert \nabla f(\mathbf{x}_k)\Vert ^2 \le \frac{2L(f(\mathbf{x}_0) - f_{\inf})}{K}$$다. 볼록하지 않은 함수에도 맞는다. 여기에 더해
 1. $$f$$가 볼록이고 최솟점 $$\mathbf{x}^*$$가 있으면 $$f(\mathbf{x}_k) - f(\mathbf{x}^*) \le \frac{L\Vert \mathbf{x}_0 - \mathbf{x}^*\Vert ^2}{2k}$$.
 2. 헤세 행렬의 고윳값이 늘 $$\mu > 0$$ 이상(강볼록)이면 $$f(\mathbf{x}_k) - f(\mathbf{x}^*) \le \left(1 - \frac{\mu}{L}\right)^k\big(f(\mathbf{x}_0) - f(\mathbf{x}^*)\big)$$.
 
 </div>
 
 
-**루프 불변식.** $$\eta = \frac1L$$일 때, $$k$$번째 반복이 시작할 때 $$f(\mathbf{x}_k) \le f(\mathbf{x}_0) - \frac{1}{2L}\sum_{j<k}\Vert \nabla f(\mathbf{x}_j)\Vert ^2$$이다. 값이 매 걸음 줄고, 줄어든 양은 지나온 기울기 크기의 제곱합만큼이다.
+**루프 불변식.** $$\eta = \frac1L$$일 때, $$k$$번째 반복이 시작할 때 $$f(\mathbf{x}_k) \le f(\mathbf{x}_0) - \frac{1}{2L}\sum_{j<k}\Vert \nabla f(\mathbf{x}_j)\Vert ^2$$($$\sum$$은 차례로 모두 더한다는 기호)이다. 값이 매 걸음 줄고, 줄어든 양은 지나온 기울기 크기의 제곱합만큼이다.
 
 ## 증명
 
@@ -93,7 +93,7 @@ $$f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot\mathbf{d} + \frac{
 
 **2. 한 걸음 대입.** $$\mathbf{d} = -\eta\mathbf{g}$$, $$\mathbf{g} = \nabla f(\mathbf{x})$$를 넣으면 $$f(\mathbf{y}) \le f(\mathbf{x}) - \eta\Vert \mathbf{g}\Vert ^2 + \frac{L\eta^2}{2}\Vert \mathbf{g}\Vert ^2$$. 이것이 하강 보조정리다. $$0 < \eta < \frac2L$$이면 괄호 $$1 - \frac{L\eta}{2}$$가 양수라 값이 실제로 준다.
 
-**3. 불변식.** *초기화:* $$k = 0$$이면 합이 비어 $$f(\mathbf{x}_0) \le f(\mathbf{x}_0)$$. *유지:* $$\eta = \frac1L$$이면 2에서 $$f(\mathbf{x}_{k+1}) \le f(\mathbf{x}_k) - \frac{1}{2L}\Vert \nabla f(\mathbf{x}_k)\Vert ^2$$이고, 이것을 불변식에 더하면 $$k + 1$$에서도 성립한다.
+**3. 불변식.** *초기화:* $$k = 0$$이면 합이 비어 $$f(\mathbf{x}_0) \le f(\mathbf{x}_0)$$. *유지:* $$\eta = \frac1L$$이면 2에서 $$f(\mathbf{x}_{k+1}) \le f(\mathbf{x}_k) - \frac{1}{2L}\Vert \nabla f(\mathbf{x}_k)\Vert ^2$$이고, 이것을 불변식에 더하면 $$k + 1$$에서도 맞는다.
 
 **4. 종료.** 불변식에서 $$\frac{1}{2L}\sum_{j<K}\Vert \nabla f(\mathbf{x}_j)\Vert ^2 \le f(\mathbf{x}_0) - f(\mathbf{x}_K) \le f(\mathbf{x}_0) - f_{\inf}$$. 합이 이 값 이하이면 가장 작은 항은 평균 이하이므로 $$K\min_j\Vert \nabla f(\mathbf{x}_j)\Vert ^2 \le 2L(f(\mathbf{x}_0) - f_{\inf})$$. ∎
 
@@ -173,7 +173,7 @@ $$f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot\mathbf{d} + \frac{
 
 - 선수: [헤세 행렬과 극값 판정](/Hongs_Blog/studies/calculus/hessian/)(곡률 $$L$$과 $$\mu$$), [그래디언트](/Hongs_Blog/studies/calculus/gradient/)(가장 가파른 방향)
 - 기울기 계산: [행렬 미분](/Hongs_Blog/studies/calculus/matrix-calculus/), [역전파](/Hongs_Blog/studies/calculus/backprop-bridge/)
-- 이어지는 개념: [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/)(수렴 보장이 성립하는 함수). 학습률의 안정 조건은 [미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/)의 걸음 크기 조건과 같은 구조다.
+- 이어지는 개념: [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/)(수렴 보장이 맞는 함수). 학습률의 안정 조건은 [미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/)의 걸음 크기 조건과 같은 구조다.
 
 ## 자주 하는 오해
 

@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Linear Combination", "선형결합", "일차결합", "Span", "생성", "생성하는 공간", "spanned subspace"]
 description: "벡터 몇 개를 각각 늘이거나 줄여서 더한 것이 선형결합이고, 그렇게 만들 수 있는 모든 벡터의 모임이 생성(span)이다. 물감 세 가지를 비율만 바꿔 섞어 만들 수 있는 모든 색을 떠올리면 된다. \"이 목표에 닿을 수 있는가\"가 곧 \"연립방정식에 해가 있는가\"라서 선형대수의 거의…"
@@ -42,7 +42,7 @@ $$c\,\mathbf{a} + d\,\mathbf{b} = (c + d,\ c + 2d) = (3, 5)$$에서 $$d = 2$$, $
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- 벡터 $$\mathbf{v}_1, \dots, \mathbf{v}_k \in \mathbb{R}^n$$과 스칼라 $$c_1, \dots, c_k$$로 만든 $$c_1\mathbf{v}_1 + \cdots + c_k\mathbf{v}_k$$를 **선형결합**이라 한다.
+- 벡터 $$\mathbf{v}_1, \dots, \mathbf{v}_k \in \mathbb{R}^n$$($$\in$$은 "~에 속한다")과 스칼라 $$c_1, \dots, c_k$$로 만든 $$c_1\mathbf{v}_1 + \cdots + c_k\mathbf{v}_k$$를 **선형결합**이라 한다.
 - 가능한 모든 선형결합의 집합을 **생성**이라 하고 $$\operatorname{span}\{\mathbf{v}_1, \dots, \mathbf{v}_k\}$$로 쓴다[^1].
 
 </div>

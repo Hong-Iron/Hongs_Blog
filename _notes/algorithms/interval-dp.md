@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Interval DP", "구간 동적 계획법", "행렬 곱셈 순서", "Matrix Chain Multiplication", "괄호 치기"]
 description: "줄지어 선 것들을 두 덩어리씩 합쳐 하나로 만들 때, \"마지막에 어디서 나뉘었나\"를 모두 따져 가장 좋은 방법을 찾는다. 긴 구간의 답을 그 안의 더 짧은 두 구간의 답으로 만들기 때문에, 짧은 구간부터 표를 채운다. 괄호 치는 순서, 행렬 곱셈 순서, 문자열을 나누는 방법 같은 …"
@@ -57,6 +57,8 @@ dp[i][j]를 "i번째부터 j번째 행렬까지 곱하는 최소 비용"으로 �
 $$dp[i][i] = 0, \qquad dp[i][j] = \min_{i \le m < j} \big(dp[i][m] + dp[m+1][j] + d_{i-1} \, d_m \, d_j\big).$$
 
 답은 $$dp[1][k]$$다.
+
+말로 읽으면, $$i$$번부터 $$j$$번까지 곱하는 가장 싼 비용은 "어느 자리 $$m$$에서 둘로 나눠 왼쪽 묶음과 오른쪽 묶음을 각각 가장 싸게 곱한 비용 + 마지막에 두 결과를 곱하는 비용 $$d_{i-1} d_m d_j$$" 가운데 가장 작은 값이다. 행렬이 하나뿐이면($$i = j$$) 곱할 것이 없어 0이다.
 
 </div>
 

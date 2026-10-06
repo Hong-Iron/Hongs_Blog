@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Recursive Definition", "Structural Induction", "재귀적 정의", "귀납적 정의", "구조적 귀납법", "재귀 자료형", "recursive data type", "균형 괄호", "balanced parentheses", "정 이진 트리", "full binary tree", "카탈랑 수", "Catalan number"]
 description: "끝없이 많은 대상을 \"기본 재료 몇 개\"와 \"이미 만든 것으로 새것을 만드는 규칙\"으로 정의하는 방법이다. 리스트, 트리, 수식, 프로그래밍 언어의 문법이 모두 이렇게 정의되고, 재귀 함수가 이 정의를 그대로 따라간다. 이렇게 정의한 대상의 성질은 같은 모양으로 증명한다. 기본 재…"
@@ -26,7 +26,7 @@ permalink: "/studies/discrete-math/recursive-definitions/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-끝없이 많은 대상을 "기본 재료 몇 개"와 "이미 만든 것으로 새것을 만드는 규칙"으로 정의하는 방법이다. 리스트, 트리, 수식, 프로그래밍 언어의 문법이 모두 이렇게 정의되고, 재귀 함수가 이 정의를 그대로 따라간다. 이렇게 정의한 대상의 성질은 같은 모양으로 증명한다. 기본 재료에서 성립하고 규칙이 성질을 보존하면 모든 대상에서 성립한다(구조적 귀납법). 단, "이 규칙으로 만든 것만 해당한다"는 조건이 있어야 대상이 딱 정해진다.
+끝없이 많은 대상을 "기본 재료 몇 개"와 "이미 만든 것으로 새것을 만드는 규칙"으로 정의하는 방법이다. 리스트, 트리, 수식, 프로그래밍 언어의 문법이 모두 이렇게 정의되고, 재귀 함수가 이 정의를 그대로 따라간다. 이렇게 정의한 대상의 성질은 같은 모양으로 증명한다. 기본 재료에서 맞고 규칙이 성질을 보존하면 모든 대상에서 맞는다(구조적 귀납법). 단, "이 규칙으로 만든 것만 해당한다"는 조건이 있어야 대상이 딱 정해진다.
 
 </div>
 
@@ -74,7 +74,7 @@ def leaves(t):
 **정 이진 트리의 잎은 내부 노드보다 하나 많다.**
 
 1. *성질:* $$P(T)$$: $$\text{leaves}(T) = \text{internal}(T) + 1$$.
-2. *기저:* 잎 하나짜리 트리는 잎 1, 내부 노드 0이라 성립한다.
+2. *기저:* 잎 하나짜리 트리는 잎 1, 내부 노드 0이라 맞는다.
 3. *생성 규칙:* $$T_L$$, $$T_R$$이 $$P$$를 가진다고 하자. 둘을 새 노드로 붙인 $$T$$는 잎이 $$\text{leaves}(T_L) + \text{leaves}(T_R) = (\text{internal}(T_L) + 1) + (\text{internal}(T_R) + 1)$$개, 내부 노드가 $$\text{internal}(T_L) + \text{internal}(T_R) + 1$$개(새 노드 포함)다. 잎이 내부 노드보다 1 많다.
 4. *결론:* 모든 정 이진 트리가 $$P$$를 가진다.
 

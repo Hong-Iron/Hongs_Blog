@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 동적 계획법."
 prev_url: "/studies/algorithms/pg42897/"
@@ -55,7 +55,7 @@ for i in range(2, n + 1):
 
 ## 문제 2 · 마지막 하위목표를 채운다
 
-격자 [[1, 3, 1], [1, 5, 1], [4, 2, 1]]의 왼쪽 위에서 오른쪽 아래까지 오른쪽이나 아래로만 간다. 지나는 칸(처음과 끝 포함)의 합을 가장 작게 하면?
+격자 `[[1, 3, 1], [1, 5, 1], [4, 2, 1]]`의 왼쪽 위에서 오른쪽 아래까지 오른쪽이나 아래로만 간다. 지나는 칸(처음과 끝 포함)의 합을 가장 작게 하면?
 
 1. *상태 정하기:* dp[r][c] = 왼쪽 위에서 (r, c)까지 오는 길의 최소 합.
 2. *점화식 세우기:* (r, c)에는 위(r − 1, c)나 왼쪽(r, c − 1)에서 온다. dp[r][c] = min(dp[r − 1][c], dp[r][c − 1]) + 격자[r][c]. 맨 윗줄은 왼쪽에서만, 맨 왼쪽 줄은 위에서만 온다.
@@ -78,7 +78,7 @@ for i in range(2, n + 1):
 </details>
 
 
-최소 합 대신 길의 수를 세면, 같은 나누기에서 점화식이 "위에서 온 길 수 + 왼쪽에서 온 길 수"가 된다. 이것이 [순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/)의 파스칼 항등식이고, (r, c)까지의 길은 $$\binom{r+c}{r}$$개다. 10 × 10 격자면 길이 48,620개지만, DP는 칸 100개만 채운다.
+최소 합 대신 길의 수를 세면, 같은 나누기에서 점화식이 "위에서 온 길 수 + 왼쪽에서 온 길 수"가 된다. 이것이 [순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/)의 파스칼 항등식이고, (r, c)까지의 길은 $$\binom{r+c}{r}$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수)개다. 10 × 10 격자면 길이 48,620개지만, DP는 칸 100개만 채운다.
 
 ## 문제 3 · 하위목표 절반을 채운다
 

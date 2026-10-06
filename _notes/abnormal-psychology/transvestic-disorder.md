@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-27"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Transvestic Disorder", "복장도착증", "의상도착증", "transvestism", "옷 바꿔 입기", "cross-dressing", "물품음란증 동반", "with fetishism", "자가여성애 동반", "with autogynephilia", "자가여성애", "autogynephilia"]
 description: "이성의 옷을 입는 것에서 반복적으로 강렬한 성적 흥분을 느끼고, 그 때문에 반년 넘게 괴롭거나 생활이 흔들리는 장애다. 이성의 옷을 입는 사람이 모두 해당하는 것은 아니다. 핵심은 옷 바꿔 입기가 성적 흥분의 수단이라는 점이다. 거의 전부 이성애자 남성이고, 옷을 버렸다가 다시 사…"
@@ -46,9 +46,10 @@ permalink: "/studies/abnormal-psychology/transvestic-disorder/"
 <div class="callout-title" markdown="span">복장도착장애의 진단기준[^1]</div>
 
 A. 옷 바꿔 입기로부터 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 동안 이어진다.<br>
-B. 임상적으로 현저한 고통이나 손상을 낳는다.
+B. 임상적으로 현저한 고통이나 손상을 낳는다.<br>
+   — 치료가 필요할 만큼 괴롭거나, 생활에 뚜렷한 지장이 생긴다.
 
-명시자:
+명시자(같은 진단에 경과, 심한 정도, 특별한 양상 같은 특징을 덧붙여 적는 항목. 여러 개를 함께 붙일 수 있다):
 - **물품음란증 동반:** 직물, 소재, 의복 자체에서 성적 흥분을 느낀다. 성별 불쾌감으로 이어질 가능성이 줄어든다.
 - **자가여성애 동반:** 자신을 여성이라고 생각하거나 떠올리는 것으로 성적 흥분을 느낀다. 성별 불쾌감으로 이어질 가능성이 커진다.
 

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Matrix Calculus", "행렬 미분", "벡터 미분", "vector calculus identities", "그래디언트 공식", "이차형식의 미분", "로지스틱 회귀의 기울기", "기울기 검사", "gradient check"]
 description: "변수가 수백 개인 식을 성분마다 편미분하지 않고, 벡터와 행렬 채로 한 번에 미분하는 규칙 모음이다. 곱의 미분처럼 몇 가지 공식만 익히면 최소제곱의 정규방정식이나 로지스틱 회귀의 기울기가 한두 줄로 나온다. 기계학습 논문의 유도는 거의 이 언어로 쓰여 있다. 다만 결과의 모양(행…"
@@ -33,7 +33,7 @@ permalink: "/studies/calculus/matrix-calculus/"
 
 ## 예시로 보기
 
-$$f(\mathbf{x}) = \mathbf{x}^\top A\mathbf{x}$$, $$A = \begin{pmatrix}1 & 2\\ 0 & 3\end{pmatrix}$$을 성분으로 쓰면 $$x_1^2 + 2x_1x_2 + 3x_2^2$$이다. 편미분은
+$$f(\mathbf{x}) = \mathbf{x}^\top A\mathbf{x}$$($$^\top$$는 행과 열을 바꾸는 전치), $$A = \begin{pmatrix}1 & 2\\ 0 & 3\end{pmatrix}$$을 성분으로 쓰면 $$x_1^2 + 2x_1x_2 + 3x_2^2$$이다. 편미분은
 
 $$\frac{\partial f}{\partial x_1} = 2x_1 + 2x_2, \qquad \frac{\partial f}{\partial x_2} = 2x_1 + 6x_2.$$
 
@@ -72,7 +72,7 @@ $$\frac{\partial f}{\partial x_1} = 2x_1 + 2x_2, \qquad \frac{\partial f}{\parti
 3. *정리:* $$(A^\top A + \lambda I)\mathbf{x} = A^\top\mathbf{b}$$. $$\lambda = 0$$이면 [정규방정식](/Hongs_Blog/studies/linear-algebra/least-squares/)이다.
 4. *최소인 이유:* 헤세 행렬 $$2(A^\top A + \lambda I)$$가 $$\lambda > 0$$이면 늘 양의 정부호라 유일한 최솟점이다([헤세 판정](/Hongs_Blog/studies/calculus/hessian/)).
 
-**로지스틱 회귀의 기울기.** 데이터 행렬 $$X$$, 정답 $$\mathbf{y} \in \{0, 1\}^m$$, 예측 $$\mathbf{p} = \sigma(X\mathbf{w})$$(성분별 시그모이드)일 때 교차 엔트로피 손실 $$L = -\sum_i\big(y_i\ln p_i + (1 - y_i)\ln(1 - p_i)\big)$$의 기울기는 $$\nabla_{\mathbf{w}}L = X^\top(\mathbf{p} - \mathbf{y})$$다. 시그모이드의 도함수 $$\sigma(1 - \sigma)$$가 로그 미분과 지워져 이렇게 간단해진다[^2].
+**로지스틱 회귀의 기울기.** 데이터 행렬 $$X$$, 정답 $$\mathbf{y} \in \{0, 1\}^m$$($$\in$$은 "~에 속한다"), 예측 $$\mathbf{p} = \sigma(X\mathbf{w})$$(성분별 시그모이드)일 때 교차 엔트로피 손실 $$L = -\sum_i\big(y_i\ln p_i + (1 - y_i)\ln(1 - p_i)\big)$$의 기울기는 $$\nabla_{\mathbf{w}}L = X^\top(\mathbf{p} - \mathbf{y})$$다. 시그모이드의 도함수 $$\sigma(1 - \sigma)$$가 로그 미분과 지워져 이렇게 간단해진다[^2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 규칙표 다섯 줄과 예시의 $$(A + A^\top)\mathbf{x}$$(무작위 행렬·벡터, 중앙 차분), 릿지 해에서 기울기가 0이고 주변보다 작음, 로지스틱 회귀 기울기 공식(무작위 데이터, 중앙 차분), 카드의 값 — [24_matrix-calculus_verify.py](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_verify/)</div>

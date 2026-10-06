@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Pigeonhole Principle", "비둘기집 원리", "서랍 원리", "일반화된 비둘기집 원리", "generalized pigeonhole principle", "충돌", "collision"]
 description: "비둘기가 비둘기집보다 많으면 어떤 집에는 두 마리 이상 들어간다. 너무 당연해 보이지만, 아무것도 직접 찾지 않고 \"겹치는 것이 반드시 있다\"를 증명하는 강력한 도구다. 해시 충돌, 무손실 압축의 한계 같은 필연적인 충돌이 모두 이 원리에서 나온다. 다만 어느 집에서 겹치는지는 알…"
@@ -44,7 +44,7 @@ permalink: "/studies/discrete-math/pigeonhole/"
 
 물건 $$n$$개를 칸 $$k$$개에 넣으면[^1]
 1. $$n > k$$이면 어떤 칸에는 물건이 2개 이상 들어간다.
-2. (일반화) 어떤 칸에는 물건이 $$\lceil n / k \rceil$$개 이상 들어간다.
+2. (일반화) 어떤 칸에는 물건이 $$\lceil n / k \rceil$$($$\lceil\ \rceil$$는 소수점 아래를 올린 정수)개 이상 들어간다.
 
 함수로 말하면, 유한 집합 $$A$$에서 $$B$$로 가는 함수는 $$\vert A\vert  > \vert B\vert $$이면 단사가 아니다.
 

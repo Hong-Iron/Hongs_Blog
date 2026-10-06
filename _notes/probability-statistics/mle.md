@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Maximum Likelihood Estimation", "최대가능도 추정", "최대우도 추정", "MLE", "가능도 함수", "likelihood function", "로그 가능도", "log-likelihood", "음의 로그 가능도", "negative log-likelihood", "점수 함수", "score function", "피셔 정보량", "Fisher information", "불변성", "invariance"]
 description: "여러 후보 설명 중에서 지금 본 데이터가 나올 가능성을 가장 크게 만드는 것을 고르는 방법이다. 동전을 10번 던져 앞면이 7번이면, 앞면 확률 0.7이 이 결과를 가장 그럴듯하게 만든다. 확률을 곱한 식에 로그를 씌워 합으로 바꾸고 미분해 0으로 놓는 기계적인 절차라, 거의 모든…"
@@ -50,7 +50,7 @@ permalink: "/studies/probability-statistics/mle/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-독립인 관측 $$x_1, \dots, x_n$$에 대해 **가능도 함수**는 $$L(\theta) = \prod_{i=1}^{n}f(x_i; \theta)$$, **로그 가능도**는 $$\ell(\theta) = \sum_{i=1}^{n}\ln f(x_i; \theta)$$다. **최대가능도 추정값**은 $$\hat\theta = \arg\max_\theta L(\theta) = \arg\max_\theta\ell(\theta)$$다[^1].
+독립인 관측 $$x_1, \dots, x_n$$에 대해 **가능도 함수**는 $$L(\theta) = \prod_{i=1}^{n}f(x_i; \theta)$$, **로그 가능도**는 $$\ell(\theta) = \sum_{i=1}^{n}\ln f(x_i; \theta)$$($$\sum$$은 차례로 모두 더한다는 기호)다. **최대가능도 추정값**은 $$\hat\theta = \arg\max_\theta L(\theta) = \arg\max_\theta\ell(\theta)$$다[^1].
 
 </div>
 
@@ -68,7 +68,7 @@ permalink: "/studies/probability-statistics/mle/"
 
 정규분포의 $$\hat\sigma^2$$는 $$n$$으로 나눠 [편향](/Hongs_Blog/studies/probability-statistics/estimators/)이 있다. MLE가 늘 불편인 것은 아니다.
 
-**성질 [증명 생략: Wasserman "Parametric Inference" 장].** 모델이 맞고 규칙성 조건이 성립하면 MLE는 일치 추정량이고, $$n$$이 크면 대략 정규분포를 따르며 분산은 $$\frac{1}{nI(\theta)}$$($$I$$는 피셔 정보량)로 가능한 한 가장 작다. **불변성:** $$g(\theta)$$의 MLE는 $$g(\hat\theta)$$다. 지수분포의 평균 $$\frac1\lambda$$의 MLE는 $$\frac{1}{\hat\lambda} = \bar x$$다.
+**성질 [증명 생략: Wasserman "Parametric Inference" 장].** 모델이 맞고 규칙성 조건이 맞으면 MLE는 일치 추정량이고, $$n$$이 크면 대략 정규분포를 따르며 분산은 $$\frac{1}{nI(\theta)}$$($$I$$는 피셔 정보량)로 가능한 한 가장 작다. **불변성:** $$g(\theta)$$의 MLE는 $$g(\hat\theta)$$다. 지수분포의 평균 $$\frac1\lambda$$의 MLE는 $$\frac{1}{\hat\lambda} = \bar x$$다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">베르누이 MLE의 유도</summary>
@@ -119,7 +119,7 @@ permalink: "/studies/probability-statistics/mle/"
 
 **대표 문제 1: 포아송 도착률.** 5분 동안 분마다 들어온 요청 수가 $$2, 3, 1, 4, 0$$이다.
 
-1. *모델:* 분당 요청 수 $$\sim \mathrm{Pois}(\lambda)$$, 서로 독립.
+1. *모델:* 분당 요청 수 $$\sim \mathrm{Pois}(\lambda)$$($$X \sim$$ 분포는 "$$X$$가 그 분포를 따른다"), 서로 독립.
 2. *로그 가능도:* $$\ell(\lambda) = \sum(x_i\ln\lambda - \lambda - \ln x_i!) = 10\ln\lambda - 5\lambda + \text{상수}$$.
 3. *미분:* $$\frac{10}{\lambda} - 5 = 0$$에서 $$\hat\lambda = 2$$ = 표본평균.
 4. *해석:* 도착률의 MLE는 관측 평균이다. 2계 도함수 $$-\frac{10}{\lambda^2} < 0$$이라 최대다.
@@ -149,7 +149,7 @@ permalink: "/studies/probability-statistics/mle/"
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"가능도 $$L(\theta)$$는 모수 $$\theta$$가 그 값일 확률이다"</div>
 
-틀렸다. 식이 확률 $$f(x; \theta)$$로 되어 있어 그렇게 읽기 쉽다. 하지만 가능도는 데이터를 고정하고 $$\theta$$를 움직인 함수라, $$\theta$$에 대해 적분해도 1이 되지 않는다. 동전 예시에서 $$\int_0^1 p^7(1 - p)^3dp = \frac{1}{1320}$$이다. "$$\theta$$일 확률"을 말하려면 사전 분포를 두고 [베이즈 추론](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)을 해야 한다.
+틀렸다. 식이 확률 $$f(x; \theta)$$로 되어 있어 그렇게 읽기 쉽다. 하지만 가능도는 데이터를 고정하고 $$\theta$$를 움직인 함수라, $$\theta$$에 대해 적분해도 1이 되지 않는다. 동전 예시에서 $$\int_0^1 p^7(1 - p)^3dp = \frac{1}{1320}$$($$\int$$는 넓이를 구하는 적분 기호)이다. "$$\theta$$일 확률"을 말하려면 사전 분포를 두고 [베이즈 추론](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)을 해야 한다.
 
 </div>
 

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Cross-Entropy", "교차 엔트로피", "KL 발산", "Kullback–Leibler divergence", "쿨백-라이블러 발산", "상대 엔트로피", "relative entropy", "기브스 부등식", "Gibbs' inequality", "교차 엔트로피 손실", "cross-entropy loss", "로그 손실", "log loss", "음의 로그 가능도", "negative log-likelihood"]
 description: "실제 분포를 따르는 기호를, 잘못 믿은 다른 분포에 맞춰 만든 부호로 보내면 평균 비트가 엔트로피보다 늘어난다. 그 평균 비트가 교차 엔트로피이고, 늘어난 만큼이 KL 발산이다. KL 발산은 \"믿은 분포가 실제와 얼마나 다른가\"를 재는 대표적인 수라서, 분류 모델은 예측 분포와 정…"
@@ -35,7 +35,7 @@ permalink: "/studies/probability-statistics/cross-entropy-kl/"
 
 - 교차 엔트로피 $$H(p, q) = 2$$비트: 틀린 분포에 맞춘 부호의 평균 길이.
 - 엔트로피 $$H(p) = 1.75$$비트: 맞는 분포에 맞춘 부호의 평균 길이.
-- KL 발산 $$D(p \Vert  q) = 2 - 1.75 = 0.25$$비트: 틀린 가정 때문에 기호마다 낭비한 비트.
+- KL 발산 $$D(p \Vert  q) = 2 - 1.75 = 0.25$$($$\lVert\cdot\rVert$$는 벡터의 길이)비트: 틀린 가정 때문에 기호마다 낭비한 비트.
 
 $$p$$가 아래 식의 실제 분포, $$q$$가 모델이 믿는 분포다.
 
@@ -72,7 +72,7 @@ $$D(p \Vert  q) \ge 0$$이고, 등호는 $$p = q$$일 때만이다. 곧 $$H(p, q
 </details>
 
 
-**거리가 아니다.** $$p = (0.9, 0.1)$$, $$q = (0.5, 0.5)$$이면 $$D(p\Vert q) \approx 0.531$$, $$D(q\Vert p) \approx 0.737$$비트로 다르다. 삼각부등식도 성립하지 않는다. 그래서 "거리"가 아니라 "발산"이라 부른다.
+**거리가 아니다.** $$p = (0.9, 0.1)$$, $$q = (0.5, 0.5)$$이면 $$D(p\Vert q) \approx 0.531$$, $$D(q\Vert p) \approx 0.737$$비트로 다르다. 삼각부등식도 맞지 않는다. 그래서 "거리"가 아니라 "발산"이라 부른다.
 
 ## 예제
 

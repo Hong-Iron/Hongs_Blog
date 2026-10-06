@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Implementation", "Simulation", "구현", "시뮬레이션", "격자", "방향 배열", "맨해튼 거리", "행렬 회전"]
 description: "보드게임 규칙서를 한 줄씩 읽으며 말을 옮기는 것처럼, 시뮬레이션은 문제에 적힌 규칙을 그대로 한 단계씩 코드로 옮긴다. 기발한 아이디어는 거의 필요 없고, 규칙을 하나도 빠뜨리지 않는 꼼꼼함이 전부다. 대신 규칙이 많아서 한 줄만 잘못 옮겨도 틀리고, 단계 수가 너무 많으면 시간…"
@@ -103,10 +103,10 @@ for d in range(4):
 - 선수: [리스트와 문자열](/Hongs_Blog/studies/algorithms/list-string/)의 2차원 리스트
 - 같이 쓰는 개념: [시간·날짜 계산](/Hongs_Blog/studies/algorithms/time-conversion/), [스택](/Hongs_Blog/studies/algorithms/stack/)
 - 범위 검사를 `and`의 앞에 두면 안전한 까닭은 단락 평가다. "거짓 그리고 무엇이든"은 늘 거짓이라($$F \wedge b = F$$), 앞이 거짓이면 뒤 조건은 결과를 바꾸지 못한다. 그래서 파이썬은 뒤 조건을 아예 계산하지 않는다([명제와 논리 연산](/Hongs_Blog/studies/discrete-math/propositional-logic/)).
-- `zip(*a)`로 만드는 전치는 [행렬 곱셈과 전치](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/)의 $$A^\top$$이다. $$(A^\top)_{ij} = a_{ji}$$라서 직사각형 격자는 행 수와 열 수가 맞바뀐다.
+- `zip(*a)`로 만드는 전치는 [행렬 곱셈과 전치](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/)의 $$A^\top$$($$^\top$$는 행과 열을 바꾸는 전치)이다. $$(A^\top)_{ij} = a_{ji}$$라서 직사각형 격자는 행 수와 열 수가 맞바뀐다.
 - 위아래 뒤집기와 전치는 둘 다 반사(뒤집기)이고, 반사 두 번을 이으면 회전이 된다. 순서를 바꿔 전치부터 하면(`list(zip(*a))[::-1]`) 반시계 방향으로 돈다. 회전식 (c, n − 1 − r)은 회전 행렬이 주는 (c, −r)을 열 쪽으로 n − 1칸 옮긴 것이다. 이 평행이동은 선형변환이 아니라서 행렬 곱만으로는 나오지 않는다([선형변환](/Hongs_Blog/studies/linear-algebra/linear-transformations/)).
 - 맨해튼 거리는 두 칸의 차이 $$(r_1 - r_2, c_1 - c_2)$$의 1-노름이다. 벽이 없는 격자에서 대각선 이동도 한 걸음으로 치면, 최소 걸음 수는 $$\max(\vert r_1 - r_2\vert , \vert c_1 - c_2\vert )$$로 $$\infty$$-노름이 된다([노름과 조건수](/Hongs_Blog/studies/linear-algebra/conditioning/)).
-- 같은 격자 연산을 다른 수학으로도 읽는다. 방향 배열의 `(dr[d], dc[d])`는 지금 칸의 위치에 더하는 이동 벡터다([벡터](/Hongs_Blog/studies/linear-algebra/vectors/)). `zip(*a[::-1])`에서 괄호 안쪽의 뒤집기를 먼저 하는 것은 합성 $$g \circ f$$에서 오른쪽의 $$f$$를 먼저 하는 것과 같다([함수의 변환과 합성](/Hongs_Blog/studies/college-math/function-transformation/)). 칸 $$(r, c)$$를 복소수 $$r + ci$$로 보면, 위의 (c, −r)은 $$-i$$를 곱한 결과다([복소수의 극형식과 오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/)).
+- 같은 격자 연산을 다른 수학으로도 읽는다. 방향 배열의 `(dr[d], dc[d])`는 지금 칸의 위치에 더하는 이동 벡터다([벡터](/Hongs_Blog/studies/linear-algebra/vectors/)). `zip(*a[::-1])`에서 괄호 안쪽의 뒤집기를 먼저 하는 것은 합성 $$g \circ f$$($$\circ$$는 합성. $$g \circ f$$는 $$f$$를 먼저, $$g$$를 나중에 한다)에서 오른쪽의 $$f$$를 먼저 하는 것과 같다([함수의 변환과 합성](/Hongs_Blog/studies/college-math/function-transformation/)). 칸 $$(r, c)$$를 복소수 $$r + ci$$로 보면, 위의 (c, −r)은 $$-i$$를 곱한 결과다([복소수의 극형식과 오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/)).
 - 브리지: [격자 회전 ↔ 선형변환](/Hongs_Blog/studies/algorithms/grid-rotation-linear/)
 - 연습: [키패드 누르기](/Hongs_Blog/studies/algorithms/pg67256/), [붕대 감기](/Hongs_Blog/studies/algorithms/pg250137/), [크레인 인형뽑기 게임](/Hongs_Blog/studies/algorithms/pg64061/), [셔틀버스](/Hongs_Blog/studies/algorithms/pg17678/), [기둥과 보 설치](/Hongs_Blog/studies/algorithms/pg60061/), [블록 게임](/Hongs_Blog/studies/algorithms/pg42894/)
 

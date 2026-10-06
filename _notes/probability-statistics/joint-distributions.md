@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Joint Distribution", "결합분포", "결합확률밀도", "joint density", "주변분포", "marginal distribution", "조건부 분포", "conditional distribution", "조건부 기댓값", "conditional expectation", "아담의 법칙", "Adam's law", "전체 기댓값의 법칙", "law of total expectation", "이브의 법칙", "Eve's law", "전체 분산의 법칙", "law of total variance"]
 description: "두 확률변수를 따로가 아니라 함께 보는 표가 결합분포다. 한쪽만 보고 싶으면 다른 쪽을 모두 더해 없애고(주변분포), 한쪽 값을 알 때 다른 쪽을 보려면 그 줄만 잘라 합이 1이 되게 다시 맞춘다(조건부 분포). 조건부 기댓값은 \"이것을 알 때 저것의 가장 좋은 예측\"이고, 그룹별…"
@@ -53,7 +53,7 @@ permalink: "/studies/probability-statistics/joint-distributions/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 이산 확률변수 $$X, Y$$의 **결합 PMF**는 $$p(x, y) = P(X = x, Y = y)$$다. 연속이면 **결합밀도** $$f(x, y) \ge 0$$가 있어 평면의 영역 $$A$$에 대해 $$P((X, Y) \in A) = \iint_A f(x, y)\,dx\,dy$$이다([중적분](/Hongs_Blog/studies/calculus/multiple-integrals/)).
-- **주변분포:** $$p_X(x) = \sum_y p(x, y)$$, $$f_X(x) = \int f(x, y)\,dy$$.
+- **주변분포:** $$p_X(x) = \sum_y p(x, y)$$, $$f_X(x) = \int f(x, y)\,dy$$($$\int$$는 넓이를 구하는 적분 기호).
 - **조건부 분포:** $$p_X(x) > 0$$일 때 $$p_{Y \mid X}(y \mid x) = \frac{p(x, y)}{p_X(x)}$$. 연속이면 밀도로 같은 식.
 - **독립:** 모든 $$x, y$$에서 $$p(x, y) = p_X(x)p_Y(y)$$(연속이면 밀도로).
 - **조건부 기댓값:** $$\mathbb{E}[Y \mid X = x] = \sum_y y\,p_{Y \mid X}(y \mid x)$$. 이것을 $$g(x)$$라 할 때 확률변수 $$g(X)$$를 $$\mathbb{E}[Y \mid X]$$로 쓴다[^1].
@@ -65,7 +65,7 @@ permalink: "/studies/probability-statistics/joint-distributions/"
 <div class="callout-title" markdown="span">아담의 법칙과 이브의 법칙</div>
 
 1. **전체 기댓값(아담):** $$\mathbb{E}\big[\mathbb{E}[Y \mid X]\big] = \mathbb{E}[Y]$$.
-2. **전체 분산(이브):** $$\operatorname{Var}[Y] = \mathbb{E}\big[\operatorname{Var}(Y \mid X)\big] + \operatorname{Var}\big(\mathbb{E}[Y \mid X]\big)$$.
+2. **전체 분산(이브):** $$\operatorname{Var}[Y] = \mathbb{E}\big[\operatorname{Var}(Y \mid X)\big] + \operatorname{Var}\big(\mathbb{E}[Y \mid X]\big)$$($$\operatorname{Var}$$는 분산).
 
 </div>
 

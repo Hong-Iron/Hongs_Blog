@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Derivative", "미분", "미분계수", "도함수", "순간 변화율", "instantaneous rate of change", "접선의 기울기", "slope of tangent", "평균 변화율", "average rate of change", "미분 가능", "differentiable", "수치 미분", "numerical differentiation", "유한 차분", "finite difference"]
 description: "도함수는 \"지금 이 순간 얼마나 빨리 변하는가\"를 재는 함수다. 짧은 구간의 평균 변화율에서 구간을 한없이 줄인 극한이고, 그래프에서는 그 점의 접선의 기울기다. 기울기를 알면 함수를 가장 빨리 줄이는 방향을 알 수 있어서, 머신러닝의 학습이 모두 도함수 위에 선다. 다만 뾰족하거…"
@@ -64,7 +64,7 @@ $$f'(a) = \lim_{h \to 0}\frac{f(a + h) - f(a)}{h}$$
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
 
-$$f$$가 $$a$$에서 미분 가능하면 $$a$$에서 연속이다. 역은 성립하지 않는다($$\vert x\vert $$).
+$$f$$가 $$a$$에서 미분 가능하면 $$a$$에서 연속이다. 역은 맞지 않는다($$\vert x\vert $$).
 
 </div>
 

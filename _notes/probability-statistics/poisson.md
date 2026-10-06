@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Poisson Distribution", "포아송 분포", "푸아송 분포", "포아송 근사", "Poisson approximation", "소수의 법칙", "law of rare events", "도착률", "arrival rate", "과대산포", "overdispersion"]
 description: "넓은 시간이나 공간에 드문드문 흩어져 일어나는 일이, 정해진 구간에 몇 번 일어나는지의 분포다. 1초 동안 서버에 오는 요청 수, 한 페이지의 오타 수가 예다. 평균 하나로 모양이 정해지고, 평균과 분산이 같다. 시도는 아주 많고 각각의 확률은 아주 작은 이항분포의 극한이라 계산이…"
@@ -50,17 +50,17 @@ $$\lambda > 0$$일 때 **포아송 분포** $$\mathrm{Pois}(\lambda)$$를 따르
 
 $$P(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}\quad(k = 0, 1, 2, \dots)$$
 
-이고, $$\mathbb{E}[X] = \operatorname{Var}[X] = \lambda$$다[^1].
+이고, $$\mathbb{E}[X] = \operatorname{Var}[X] = \lambda$$($$\mathbb{E}[\cdot]$$은 평균(기댓값))다[^1].
 
 </div>
 
 
-확률의 합이 1인 것은 $$e^\lambda$$의 [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/) $$\sum_k\frac{\lambda^k}{k!} = e^\lambda$$ 덕분이다.
+확률의 합이 1인 것은 $$e^\lambda$$의 [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/) $$\sum_k\frac{\lambda^k}{k!} = e^\lambda$$($$\sum$$은 차례로 모두 더한다는 기호) 덕분이다.
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">이항분포의 포아송 극한</div>
 
-$$\lambda$$를 고정하고 $$p = \frac{\lambda}{n}$$으로 두면, 모든 $$k$$에서 $$n \to \infty$$일 때 $$\binom nk p^k(1 - p)^{n-k} \to \frac{e^{-\lambda}\lambda^k}{k!}$$.
+$$\lambda$$를 고정하고 $$p = \frac{\lambda}{n}$$으로 두면, 모든 $$k$$에서 $$n \to \infty$$일 때 $$\binom nk p^k(1 - p)^{n-k} \to \frac{e^{-\lambda}\lambda^k}{k!}$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수).
 
 </div>
 

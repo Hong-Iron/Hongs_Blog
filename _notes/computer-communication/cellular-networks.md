@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "4-1학기"
-updated: "2026-09-29"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Cellular Networks", "셀룰러", "셀룰러 네트워크", "셀", "cell", "기지국", "base station", "핸드오프", "handoff", "hand-off", "주파수 재사용", "frequency reuse", "공간 분할 다중화", "space-division multiplexing", "AMPS", "PCS", "GSM", "CDMA", "W-CDMA", "4G", "5G", "마이크로셀", "microcell"]
 description: "이동통신은 넓은 지역을 작은 구역(셀)으로 나누고, 구역마다 기지국을 두어 휴대 단말기와 잇는 방식이다. 서로 떨어진 셀은 같은 주파수를 다시 써서, 한정된 전파로 많은 사람을 받는다. 대신 사용자가 셀 경계를 넘을 때 끊기지 않게 담당 기지국을 바꿔 주어야 한다(핸드오프). 세대…"
@@ -37,7 +37,7 @@ permalink: "/studies/computer-communication/cellular-networks/"
 
 슬라이드의 세 그림은 셀을 그리는 방식이다[^2]. 실제 전파는 원 모양으로 퍼져 서로 겹친다(Overlapping circular cells). 계산하기 좋게 빈틈없는 육각형으로 그린다(Idealised hexagonal network). 사람이 많은 곳에는 큰 셀 안에 작은 셀을 더 둔다(Microcells within a network).
 
-휴대폰을 단말기로, 기지국의 전파가 닿는 범위를 셀로 옮긴다. 도로와 차의 속도는 버린다.
+이 장면에서 휴대폰이 단말기, 기지국의 전파가 닿는 범위가 셀이다.
 
 ## 정의
 
@@ -45,9 +45,9 @@ permalink: "/studies/computer-communication/cellular-networks/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 기지국과 단말기가 무선으로 통신한다[^2].
-- **셀**(cell): 하나의 기지국이 관할하는 지역.
-- **핸드오프**(hand-off): 단말기가 셀 사이를 옮길 때 관할하는 기지국을 바꾸는 문제. 핸드오프를 위해 셀 사이에 겹치는 지역이 있다[^1].
-- **공간 분할 다중화**(space-division multiplexing): 공간(셀)을 나눠, 떨어진 셀끼리 같은 주파수를 다시 쓴다. 인접한 셀은 서로 다른 주파수를 써야 한다[^2][^1].
+- **셀**: 하나의 기지국이 관할하는 지역.
+- **핸드오프**: 단말기가 셀 사이를 옮길 때 관할하는 기지국을 바꾸는 문제. 핸드오프를 위해 셀 사이에 겹치는 지역이 있다[^1].
+- **공간 분할 다중화**: 공간(셀)을 나눠, 떨어진 셀끼리 같은 주파수를 다시 쓴다. 인접한 셀은 서로 다른 주파수를 써야 한다[^2][^1].
 
 </div>
 

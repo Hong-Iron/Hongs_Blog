@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Random Variable", "확률변수", "이산 확률변수", "discrete random variable", "확률질량함수", "PMF", "probability mass function", "누적분포함수", "CDF", "cumulative distribution function", "분포", "distribution", "지시 확률변수", "indicator random variable", "확률변수의 독립"]
 description: "확률변수는 실험 결과마다 수를 하나 붙이는 규칙이다. \"동전 열 번 중 앞면 수\", \"요청 처리 시간\"처럼 결과 자체보다 거기서 뽑은 수에 관심이 있을 때 쓴다. 수를 붙이고 나면 \"이 값이 나올 확률\" 표(분포)만 알면 되고, 합·평균·최댓값 같은 계산을 할 수 있다. 이름과 달…"
@@ -48,7 +48,7 @@ permalink: "/studies/probability-statistics/random-variables/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-표본공간 $$\Omega$$ 위의 **확률변수**는 함수 $$X : \Omega \to \mathbb{R}$$이다. 값이 유한하거나 셀 수 있게 많으면 **이산** 확률변수라 한다. 이산 확률변수의 **확률질량함수(PMF)**는 $$p_X(x) = P(X = x)$$이고, $$\sum_x p_X(x) = 1$$이다. 모든 확률변수의 **누적분포함수(CDF)**는 $$F_X(x) = P(X \le x)$$다[^1].
+표본공간 $$\Omega$$ 위의 **확률변수**는 함수 $$X : \Omega \to \mathbb{R}$$이다. 값이 유한하거나 셀 수 있게 많으면 **이산** 확률변수라 한다. 이산 확률변수의 **확률질량함수(PMF)**는 $$p_X(x) = P(X = x)$$이고, $$\sum_x p_X(x) = 1$$($$\sum$$은 차례로 모두 더한다는 기호)이다. 모든 확률변수의 **누적분포함수(CDF)**는 $$F_X(x) = P(X \le x)$$다[^1].
 
 </div>
 

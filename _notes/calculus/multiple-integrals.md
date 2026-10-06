@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Multiple Integral", "중적분", "이중적분", "double integral", "반복적분", "iterated integral", "푸비니 정리", "Fubini's theorem", "변수변환", "change of variables", "극좌표 적분", "polar integral", "가우스 적분", "Gaussian integral", "박스-뮬러 변환", "Box–Muller transform", "몬테카를로 적분", "Monte Carlo integration"]
 description: "땅 위에 쌓인 눈의 총량을 구하려면, 땅을 작은 칸으로 나눠 칸마다 \"넓이 × 눈 높이\"를 더하면 된다. 이것이 이중적분이고, 실제 계산은 한 방향씩 차례로 적분(반복적분)해서 한다. 원이나 부채꼴처럼 둥근 영역은 극좌표로 바꾸면 쉬워지는데, 좌표를 바꾸면 작은 칸의 넓이가 달라지…"
@@ -70,7 +70,7 @@ $$\vert \det J_T\vert $$는 [행렬식](/Hongs_Blog/studies/linear-algebra/deter
 
 **가우스 적분.** $$I = \int_{-\infty}^{\infty}e^{-x^2}dx$$는 원시함수를 기본 함수로 쓸 수 없는데, 제곱해서 이중적분으로 바꾸면 풀린다.
 
-1. *제곱:* $$I^2 = \int e^{-x^2}dx\int e^{-y^2}dy = \iint_{\mathbb{R}^2}e^{-(x^2 + y^2)}\,dx\,dy$$.
+1. *제곱:* $$I^2 = \int e^{-x^2}dx\int e^{-y^2}dy = \iint_{\mathbb{R}^2}e^{-(x^2 + y^2)}\,dx\,dy$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체).
 2. *극좌표:* $$x^2 + y^2 = r^2$$, $$dx\,dy = r\,dr\,d\theta$$. $$I^2 = \int_0^{2\pi}\int_0^\infty e^{-r^2}r\,dr\,d\theta$$.
 3. *안쪽 적분:* $$u = r^2$$으로 [치환](/Hongs_Blog/studies/calculus/substitution/)하면 $$\int_0^\infty e^{-r^2}r\,dr = \frac12$$. 곱하기 $$2\pi$$로 $$I^2 = \pi$$.
 4. *결론:* $$I = \sqrt\pi$$. [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/) 문서에서 미뤄 둔 값이다. 정규분포의 넓이가 1이 되도록 앞에 붙는 $$\frac{1}{\sqrt{2\pi}}$$가 여기서 나온다.

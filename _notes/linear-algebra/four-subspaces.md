@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Rank", "랭크", "계수", "Four Fundamental Subspaces", "네 부분공간", "열공간", "column space", "영공간", "null space", "kernel", "핵", "행공간", "row space", "왼쪽 영공간", "left null space", "차원 정리", "rank-nullity theorem", "특수해", "special solution"]
 description: "행렬이 할 수 있는 일과 할 수 없는 일을 네 개의 부분공간이 나눠 담는다. 도달할 수 있는 출력(열공간), 0으로 뭉개지는 입력(영공간), 그리고 전치 쪽의 두 공간이다. 이 공간들의 크기는 모두 랭크(피벗의 개수) 하나로 정해지고, \"살아남는 차원 + 뭉개지는 차원 = 입력 차…"
@@ -49,7 +49,7 @@ $$A = \begin{pmatrix}1 & 2 & 3\\ 2 & 4 & 6\end{pmatrix}$$을 본다. 둘째 행�
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-$$A \in \mathbb{R}^{m \times n}$$에 대해
+$$A \in \mathbb{R}^{m \times n}$$($$\in$$은 "~에 속한다")에 대해
 - **열공간** $$C(A) = \{A\mathbf{x} : \mathbf{x} \in \mathbb{R}^n\} \subseteq \mathbb{R}^m$$(열들의 생성).
 - **영공간** $$N(A) = \{\mathbf{x} : A\mathbf{x} = \mathbf{0}\} \subseteq \mathbb{R}^n$$.
 - **행공간** $$C(A^\top) \subseteq \mathbb{R}^n$$, **왼쪽 영공간** $$N(A^\top) \subseteq \mathbb{R}^m$$.
@@ -69,7 +69,7 @@ $$A \in \mathbb{R}^{m \times n}$$에 대해
 </div>
 
 
-**가정과 역.** 정리는 모든 실수 행렬에 성립하고 따로 가정이 없다. 4번은 양쪽 방향이 모두 성립한다. $$\mathbf{b} \in C(A)$$이면 $$\mathbf{b} = A\mathbf{x}$$인 $$\mathbf{x}$$가 있다는 것이 열공간의 정의 자체이기 때문이다. 차원 정리의 $$n$$은 **열**(입력)의 개수다. 행의 개수 $$m$$을 쓰면 틀린다.
+**가정과 역.** 정리는 모든 실수 행렬에 맞고 따로 가정이 없다. 4번은 양쪽 방향이 모두 맞는다. $$\mathbf{b} \in C(A)$$이면 $$\mathbf{b} = A\mathbf{x}$$인 $$\mathbf{x}$$가 있다는 것이 열공간의 정의 자체이기 때문이다. 차원 정리의 $$n$$은 **열**(입력)의 개수다. 행의 개수 $$m$$을 쓰면 틀린다.
 
 ## 증명
 

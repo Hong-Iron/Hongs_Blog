@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Multivariate Normal Distribution", "다변량 정규분포", "다변수 정규분포", "공분산 행렬", "covariance matrix", "마할라노비스 거리", "Mahalanobis distance", "신뢰 타원", "confidence ellipse", "숄레스키 분해로 표본 만들기"]
 description: "변수가 여럿이면 각자의 흩어짐과 둘씩의 공분산을 한 행렬에 모은다. 다변량 정규분포는 평균 벡터와 이 공분산 행렬만으로 정해지는 여러 차원의 종 모양이다. 밀도가 같은 점들은 타원을 그리는데, 타원의 축 방향과 길이가 공분산 행렬의 고유벡터와 고윳값에서 나온다. 한 변수가 다른 변…"
@@ -44,7 +44,7 @@ $$\Sigma = \begin{pmatrix}4 & 2\\ 2 & 3\end{pmatrix}$$
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-확률벡터 $$\mathbf{X} = (X_1, \dots, X_n)^\top$$의 **공분산 행렬**은 $$\Sigma = \mathbb{E}\big[(\mathbf{X} - \boldsymbol\mu)(\mathbf{X} - \boldsymbol\mu)^\top\big]$$, 곧 $$\Sigma_{ij} = \operatorname{Cov}(X_i, X_j)$$다. $$\Sigma$$가 양의 정부호일 때 **다변량 정규분포** $$\mathcal{N}(\boldsymbol\mu, \Sigma)$$의 밀도는
+확률벡터 $$\mathbf{X} = (X_1, \dots, X_n)^\top$$($$^\top$$는 행과 열을 바꾸는 전치)의 **공분산 행렬**은 $$\Sigma = \mathbb{E}\big[(\mathbf{X} - \boldsymbol\mu)(\mathbf{X} - \boldsymbol\mu)^\top\big]$$, 곧 $$\Sigma_{ij} = \operatorname{Cov}(X_i, X_j)$$다. $$\Sigma$$가 양의 정부호일 때 **다변량 정규분포** $$\mathcal{N}(\boldsymbol\mu, \Sigma)$$의 밀도는
 
 $$f(\mathbf{x}) = \frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}}\exp\left(-\frac12(\mathbf{x} - \boldsymbol\mu)^\top\Sigma^{-1}(\mathbf{x} - \boldsymbol\mu)\right)$$
 
@@ -81,7 +81,7 @@ $$f(\mathbf{x}) = \frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}}\exp\left(-\frac12(\mat
 - **이상 탐지.** 정상 데이터의 평균과 공분산을 구하고, 마할라노비스 거리가 큰 점을 이상치로 본다. 변수끼리 상관이 있어도 방향마다 알맞게 잰다.
 - **칼만 필터와 가우스 과정.** 상태의 불확실성을 평균 벡터와 공분산 행렬로 들고 다니며, 일차 변환(성질 2)과 조건부 분포로 갱신한다.
 - **차원 축소.** 공분산 행렬의 고유벡터가 데이터가 가장 퍼진 방향이다. 이것이 [주성분 분석](/Hongs_Blog/studies/probability-statistics/pca/)이다.
-- **흔한 실수.** 각 변수가 정규분포이면 함께도 다변량 정규라고 여기는 것. $$X \sim \mathcal{N}(0, 1)$$과 무작위 부호 $$S = \pm1$$로 만든 $$Y = SX$$는 둘 다 표준정규이고 공분산도 0이지만 $$\vert Y\vert  = \vert X\vert $$라 독립이 아니다. 결합이 정규일 때만 성질 3이 성립한다.
+- **흔한 실수.** 각 변수가 정규분포이면 함께도 다변량 정규라고 여기는 것. $$X \sim \mathcal{N}(0, 1)$$과 무작위 부호 $$S = \pm1$$로 만든 $$Y = SX$$는 둘 다 표준정규이고 공분산도 0이지만 $$\vert Y\vert  = \vert X\vert $$라 독립이 아니다. 결합이 정규일 때만 성질 3이 맞는다.
 
 ## 연결
 

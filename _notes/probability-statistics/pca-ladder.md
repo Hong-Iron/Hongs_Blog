@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "공학수학"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 주성분 분석, 고윳값과 고유벡터, 공분산."
 prev_url: "/studies/probability-statistics/hypothesis-testing-ladder/"
@@ -25,7 +25,7 @@ permalink: "/studies/probability-statistics/pca-ladder/"
 손으로 하는 PCA는 2차원 자료면 충분히 연습된다. 핵심은 **가운데로 옮기는 것을 잊지 않고, 고유벡터를 단위 길이로 맞추는 것**이다. 풀이는 늘 같은 네 하위목표로 나뉜다[^1].
 
 1. *가운데로 옮기기:* 변수마다 평균을 빼고, 단위가 다르면 표준편차로도 나눈다.
-2. *공분산 행렬:* $$\Sigma = \frac1n\sum\tilde{\mathbf{x}}_i\tilde{\mathbf{x}}_i^\top$$.
+2. *공분산 행렬:* $$\Sigma = \frac1n\sum\tilde{\mathbf{x}}_i\tilde{\mathbf{x}}_i^\top$$($$\sum$$은 차례로 모두 더한다는 기호).
 3. *고유분해:* 고윳값을 큰 순서로, 고유벡터를 단위 길이로 구한다. 2×2 대칭행렬 $$\begin{pmatrix}a & b\\ b & a\end{pmatrix}$$는 고윳값 $$a \pm b$$, 방향 $$\frac{1}{\sqrt2}(1, \pm1)$$이다.
 4. *투영과 설명 비율:* 점수 $$\tilde{\mathbf{x}}^\top\mathbf{v}_1$$과 비율 $$\frac{\lambda_1}{\lambda_1 + \lambda_2}$$을 구한다.
 

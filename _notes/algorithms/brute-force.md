@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Brute Force", "Complete Search", "완전탐색", "브루트포스", "전수 조사", "itertools", "순열", "조합", "product", "permutations", "combinations"]
 description: "비밀번호를 잊은 세 자리 자물쇠를 000부터 999까지 모두 돌려 보는 것과 같다. 가능한 경우를 빠짐없이 만들어 하나씩 확인하므로, 생각할 것이 가장 적고 틀릴 일도 적다. 그래서 경우의 수가 작으면 가장 먼저 고른다. 대신 경우의 수는 조금만 커져도 폭발하므로, 짜기 전에 몇 …"
@@ -44,7 +44,7 @@ permalink: "/studies/algorithms/brute-force/"
 | 2, 4 | 6 | |
 | 3, 4 | 7 | |
 
-두 장을 고르는 경우는 $$\binom{4}{2} = 6$$가지다. 6가지를 모두 확인했으니 빠진 답이 없다. 카드가 1,000장이어도 두 장 고르기는 약 50만 가지라 다 해 볼 수 있다. 하지만 "몇 장이든 골라서"라면 $$2^{1000}$$가지라 불가능하다.
+두 장을 고르는 경우는 $$\binom{4}{2} = 6$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수)가지다. 6가지를 모두 확인했으니 빠진 답이 없다. 카드가 1,000장이어도 두 장 고르기는 약 50만 가지라 다 해 볼 수 있다. 하지만 "몇 장이든 골라서"라면 $$2^{1000}$$가지라 불가능하다.
 
 ## 경우의 수 세기
 
@@ -98,7 +98,7 @@ list(combinations("abc", 2))      # [('a','b'), ('a','c'), ('b','c')]
 - 연습: [노란불 신호등](/Hongs_Blog/studies/algorithms/pg468371/), [자물쇠와 열쇠](/Hongs_Blog/studies/algorithms/pg60059/), [외벽 점검](/Hongs_Blog/studies/algorithms/pg60062/)
 - 표의 $$k^n$$과 $$2^n$$은 n이 곱하는 횟수라 [지수함수](/Hongs_Blog/studies/college-math/exponential-function/)이고, 두 장 고르기 $$n(n-1)/2$$는 n이 곱해지는 값이라 거듭제곱이다. $$2^n$$은 n이 10 늘 때마다 약 1000배($$2^{10} = 1024$$)가 된다. 둘이 언제 역전하고 얼마나 벌어지는지는 [거듭제곱함수와 지수함수 비교](/Hongs_Blog/studies/college-math/power-vs-exponential/)에 있다.
 - "순서가 결과를 바꾸나"에 "같은 것을 다시 뽑을 수 있나"를 더하면 공식이 넷으로 갈린다. 표 첫 줄의 `product`가 중복순열이고, 표에 없는 넷째 칸 중복조합 $$\binom{n+r-1}{r}$$은 `combinations_with_replacement`가 만든다([순열·조합·중복조합 비교](/Hongs_Blog/studies/discrete-math/counting-formula-choice/)).
-- 표 마지막 줄의 $$2^n$$은 원소마다 넣을지 뺄지 두 가지씩 고른 수로, n개짜리 집합의 부분집합을 모두 모은 것([멱집합](/Hongs_Blog/studies/discrete-math/sets/))의 크기다. 크기 r마다 `combinations`로 만들어 더해도 같은 수가 나온다. [이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/)에 x = y = 1을 넣으면 $$\sum_r \binom{n}{r} = 2^n$$이기 때문이다.
+- 표 마지막 줄의 $$2^n$$은 원소마다 넣을지 뺄지 두 가지씩 고른 수로, n개짜리 집합의 부분집합을 모두 모은 것([멱집합](/Hongs_Blog/studies/discrete-math/sets/))의 크기다. 크기 r마다 `combinations`로 만들어 더해도 같은 수가 나온다. [이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/)에 x = y = 1을 넣으면 $$\sum_r \binom{n}{r} = 2^n$$($$\sum$$은 차례로 모두 더한다는 기호)이기 때문이다.
 - 완전탐색과 답을 비교하는 검증은 "모든 입력에서 두 풀이의 답이 같다"의 반례를 찾는 일이다([술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/)). 다른 답이 하나라도 나오면 틀렸다는 증거지만, 시험한 입력에서 모두 같아도 증명은 아니다. 입력을 무작위로 만들어 비교하면 [몬테카를로 방법](/Hongs_Blog/studies/probability-statistics/monte-carlo/)이 된다. 틀리는 입력이 드물면 무작위로는 잘 걸리지 않으니, 빈 입력, 길이 1, 값이 모두 같은 입력 같은 경계는 따로 넣는다.
 - 함께 보면 좋은 수학: [셈의 기본 법칙](/Hongs_Blog/studies/discrete-math/counting-rules/)(표의 $$k^n$$과 4번 질문의 곱셈), [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/)(`product(range(k), repeat=n)`의 순서가 k진법으로 0부터 세는 순서다), [중국인의 나머지 정리](/Hongs_Blog/studies/discrete-math/modular-inverse-crt/)(주기가 서로소이면 두 상태의 모든 짝이 한 바퀴 안에 나온다)
 

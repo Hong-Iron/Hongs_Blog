@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "공학수학"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Gram-Schmidt", "그람-슈미트", "그람-슈미트 직교화", "Gram–Schmidt process", "QR Decomposition", "QR 분해", "정규직교 기저", "orthonormal basis", "직교 행렬", "orthogonal matrix", "수정 그람-슈미트", "modified Gram–Schmidt"]
 description: "기울어진 기저를 서로 수직이고 길이가 1인 기저(정규직교 기저)로 바로 세우는 절차다. 벡터를 하나씩 보면서, 이미 세운 방향들로의 그림자(사영)를 빼고 남은 부분을 길이 1로 맞춘다. 정규직교 기저에서는 좌표가 내적 한 번으로 나오고 역행렬이 필요 없어서, 최소제곱을 정규방정식보…"
@@ -57,11 +57,11 @@ GRAM-SCHMIDT(A)                  # 수정(modified) 순서
   return Q = [q_1 … q_n], R = (r[i][j])
 ```
 
-**정규직교**란 $$\mathbf{q}_i\cdot\mathbf{q}_j = 0$$($$i \ne j$$), $$\Vert \mathbf{q}_i\Vert  = 1$$이라는 뜻이고, 곧 $$Q^\top Q = I$$다. 정사각이면 $$Q$$를 **직교 행렬**이라 하며 $$Q^{-1} = Q^\top$$이다[^1].
+**정규직교**란 $$\mathbf{q}_i\cdot\mathbf{q}_j = 0$$($$i \ne j$$), $$\Vert \mathbf{q}_i\Vert  = 1$$($$\lVert\cdot\rVert$$는 벡터의 길이)이라는 뜻이고, 곧 $$Q^\top Q = I$$다. 정사각이면 $$Q$$를 **직교 행렬**이라 하며 $$Q^{-1} = Q^\top$$이다[^1].
 
 **불변식.** $$j$$번째 반복이 끝나면 $$\mathbf{q}_1, \dots, \mathbf{q}_j$$는 정규직교이고, $$\mathbf{a}_1, \dots, \mathbf{a}_j$$와 같은 공간을 생성한다.
 
-**정확성.** 유지: $$\mathbf{v} = \mathbf{a}_j - \sum_{i<j} r_{ij}\mathbf{q}_i$$는 [사영](/Hongs_Blog/studies/linear-algebra/orthogonal-projection/)을 뺀 오차라 앞의 $$\mathbf{q}_i$$들과 모두 수직이다. $$\mathbf{a}_j$$가 앞의 $$\mathbf{a}$$들과 독립이라 $$\mathbf{v} \ne \mathbf{0}$$이고, 길이로 나눠도 된다. $$\mathbf{a}_j = \sum_{i \le j} r_{ij}\mathbf{q}_i$$이므로 생성하는 공간도 같다. 종료: $$n$$번 반복 뒤 $$A = QR$$이다. $$\mathbf{a}_j$$가 $$\mathbf{q}_1, \dots, \mathbf{q}_j$$만 쓰므로 $$R$$은 위삼각이다.
+**정확성.** 유지: $$\mathbf{v} = \mathbf{a}_j - \sum_{i<j} r_{ij}\mathbf{q}_i$$($$\sum$$은 차례로 모두 더한다는 기호)는 [사영](/Hongs_Blog/studies/linear-algebra/orthogonal-projection/)을 뺀 오차라 앞의 $$\mathbf{q}_i$$들과 모두 수직이다. $$\mathbf{a}_j$$가 앞의 $$\mathbf{a}$$들과 독립이라 $$\mathbf{v} \ne \mathbf{0}$$이고, 길이로 나눠도 된다. $$\mathbf{a}_j = \sum_{i \le j} r_{ij}\mathbf{q}_i$$이므로 생성하는 공간도 같다. 종료: $$n$$번 반복 뒤 $$A = QR$$이다. $$\mathbf{a}_j$$가 $$\mathbf{q}_1, \dots, \mathbf{q}_j$$만 쓰므로 $$R$$은 위삼각이다.
 
 **비용.** 곱셈이 약 $$2mn^2$$번이다. **최소제곱:** $$A = QR$$을 정규방정식에 넣으면 $$R^\top Q^\top QR\hat{\mathbf{x}} = R^\top Q^\top\mathbf{b}$$, 곧 $$R\hat{\mathbf{x}} = Q^\top\mathbf{b}$$다. 삼각계라 후진 대입으로 풀고, $$A^\top A$$를 만들지 않아 조건수가 제곱되지 않는다.
 

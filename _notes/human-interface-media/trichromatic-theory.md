@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "4-1학기"
-updated: "2026-09-25"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Trichromatic Theory", "삼원색설", "영-헬름홀츠 이론", "색채 인식", "단일 변수 원리", "principle of univariance", "색 맞추기", "color matching", "원색", "primary"]
 description: "색은 세 개의 음량계가 가리키는 눈금의 조합이다. 눈에는 짧은·중간·긴 파장에 각각 잘 반응하는 세 종류의 추상체가 있고, 뇌는 빛의 스펙트럼 전체가 아니라 세 반응의 크기만 받는다. 그래서 빨강·초록·파랑 세 빛만 섞어도 대부분의 색을 흉내 낼 수 있다. 대신 서로 다른 빛이 똑…"
@@ -74,7 +74,7 @@ graph LR
   R --> B["뇌: 색"]
 ```
 
-추상화하면서 버리는 것은 스펙트럼의 모양 자체다. 수많은 값이 세 값으로 줄어든다.
+세 값으로 줄이면서 스펙트럼의 모양 자체는 잃는다. 파장마다 하나씩 있던 수많은 값이 세 값으로 줄어든다.
 
 | 설명한다 | 설명하지 못한다 |
 |---|---|

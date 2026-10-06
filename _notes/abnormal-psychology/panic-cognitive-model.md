@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "4-1학기"
-updated: "2026-09-26"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Cognitive Model of Panic", "클라크의 공황 인지모델", "Clark 1986", "파국적 오해석", "catastrophic misinterpretation", "3요인 인지이론", "tripartite cognitive model", "불안 민감성", "anxiety sensitivity", "공황적 자기효능감", "panic self-efficacy"]
 description: "공황발작은 두근거림이나 어지러움 같은 몸의 감각을 \"심장마비다\", \"미쳐 간다\"처럼 끔찍한 일의 징조로 잘못 해석할 때 생긴다는 설명이다. 그렇게 해석하면 더 불안해지고, 불안은 감각을 더 키우고, 커진 감각은 해석이 맞다는 증거처럼 느껴진다. 이 악순환이 몇 분 만에 발작을 만든…"
@@ -67,7 +67,7 @@ graph LR
 
 | 요인 | 뜻 |
 |---|---|
-| 불안 민감성 | 기질적 요소. 공포와 불안의 경험 자체가 신체적·심리적·사회적으로 해로운 결과를 낳는다는 믿음 |
+| 불안 민감성 | 타고난 성향(기질적 요소). 공포와 불안의 경험 자체가 신체적·심리적·사회적으로 해로운 결과를 낳는다는 믿음 |
 | 파국적 오해석 | 신체감각을 재앙의 징조로 해석함 |
 | 공황적 자기효능감 | 공황발작과 관련된 위험에 대처하거나 통제할 능력이 부족하다는 인식 |
 

@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Asymptotic Notation", "Big-O", "빅오", "대문자 O", "Big-Omega", "빅오메가", "Big-Theta", "빅세타", "little-o", "소문자 o", "little-omega", "시간 복잡도", "time complexity", "증가 차수", "order of growth"]
 description: "알고리즘의 비용을 \"입력이 커질 때 얼마나 빨리 커지는가\"로만 비교하려고, 상수배와 작은 항을 버린 표기다. O는 \"많아야 이 정도로\", Ω는 \"적어도 이 정도로\", Θ는 \"딱 이 정도로\" 자란다는 뜻이다. 그래서 컴퓨터가 몇 배 빠른지와 상관없이 알고리즘끼리 비교할 수 있다. 다…"
@@ -47,11 +47,11 @@ permalink: "/studies/discrete-math/asymptotic-notation/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-음이 아닌 함수 $$f, g: \mathbb{N} \to \mathbb{R}$$에 대해[^1]
-- $$f = O(g)$$: $$\exists c > 0\ \exists n_0\ \forall n \ge n_0\ \ f(n) \le c\,g(n)$$ — 위로 묶임
+음이 아닌 함수 $$f, g: \mathbb{N} \to \mathbb{R}$$($$\mathbb{R}$$은 실수 전체)에 대해[^1]
+- $$f = O(g)$$: $$\exists c > 0\ \exists n_0\ \forall n \ge n_0\ \ f(n) \le c\,g(n)$$($$\forall$$은 "모든") — 위로 묶임
 - $$f = \Omega(g)$$: $$\exists c > 0\ \exists n_0\ \forall n \ge n_0\ \ f(n) \ge c\,g(n)$$ — 아래로 묶임
 - $$f = \Theta(g)$$: $$f = O(g)$$이고 $$f = \Omega(g)$$ — 같은 차수
-- $$f = o(g)$$: $$\forall c > 0\ \exists n_0\ \forall n \ge n_0\ \ f(n) < c\,g(n)$$ — 확실히 느림. $$\lim f/g = 0$$과 같다.
+- $$f = o(g)$$: $$\forall c > 0\ \exists n_0\ \forall n \ge n_0\ \ f(n) < c\,g(n)$$ — 확실히 느림. $$\lim f/g = 0$$($$\lim$$은 한없이 가까이 갈 때 다가가는 값(극한))과 같다.
 - $$f = \omega(g)$$: $$g = o(f)$$ — 확실히 빠름
 
 "$$f = O(g)$$"의 등호는 "$$f \in O(g)$$"(집합에 속함)를 관례로 쓴 것이다. 그래서 $$n = O(n^2)$$은 참이지만 $$n^2 = O(n)$$은 거짓이고, 좌우를 바꿔 읽지 않는다.
@@ -61,7 +61,7 @@ permalink: "/studies/discrete-math/asymptotic-notation/"
 
 **설계 이유.** 상수 $$c$$를 허용하는 것은 기계의 속도, 언어, 컴파일러 같은 상수배 차이를 지우기 위해서다. $$n_0$$을 허용하는 것은 작은 입력의 사정을 무시하기 위해서다. 한정기호의 순서 $$\exists c\,\exists n_0\,\forall n$$은 "상수와 경계를 **먼저** 정해 두면 그 뒤로는 **모든** $$n$$에서 성립"이라는 뜻이다([술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/)).
 
-**동치인 다른 정의.** 극한 $$L = \lim_{n \to \infty} f(n)/g(n)$$이 있으면 $$0 < L < \infty$$이면 $$\Theta$$, $$L = 0$$이면 $$o$$(따라서 $$O$$), $$L = \infty$$이면 $$\omega$$(따라서 $$\Omega$$)다. 극한은 [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)로 계산할 때가 많다. 단, 극한이 없어도 $$O$$, $$\Omega$$는 성립할 수 있다.
+**동치인 다른 정의.** 극한 $$L = \lim_{n \to \infty} f(n)/g(n)$$이 있으면 $$0 < L < \infty$$이면 $$\Theta$$, $$L = 0$$이면 $$o$$(따라서 $$O$$), $$L = \infty$$이면 $$\omega$$(따라서 $$\Omega$$)다. 극한은 [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)로 계산할 때가 많다. 단, 극한이 없어도 $$O$$, $$\Omega$$는 맞을 수 있다.
 
 **해당하는 예:** $$3n^2 + 5n + 7 = \Theta(n^2)$$, $$\lg n = O(\sqrt n)$$(사실 $$o$$), $$n! = \omega(2^n)$$. **해당하지 않는 예:** $$n^2 \ne O(n)$$(어떤 $$c$$도 $$n > c$$에서 깨짐), $$n$$과 "$$n$$이 짝수면 $$n^2$$, 홀수면 1"인 $$g$$는 $$O$$도 $$\Omega$$도 아니다(아래 카드 C4).
 
@@ -81,7 +81,7 @@ permalink: "/studies/discrete-math/asymptotic-notation/"
 ### 스스로 설명해 보기
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">1. 증명 1에서 "5n ≤ 5n²"이 성립하는 조건과, 그 조건이 n₀으로 들어가는 방식은?</summary>
+<summary class="callout-title" markdown="span">1. 증명 1에서 "5n ≤ 5n²"이 맞는 조건과, 그 조건이 n₀으로 들어가는 방식은?</summary>
 
 $$n \ge 1$$이어야 한다($$n < 1$$이면 $$n^2 < n$$). 그래서 $$n_0 = 1$$로 두고 "그 뒤의 모든 $$n$$"만 약속한다.
 

@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Logarithmic Function", "Log Scale", "로그 눈금", "로그-로그 그래프", "log-log plot", "반로그 그래프", "semi-log plot", "데시벨", "decibel", "dB", "거듭제곱 법칙", "power law"]
 description: "로그함수의 그래프는 끝없이 올라가지만 아주 느리게 올라간다. 로그 눈금은 같은 간격이 같은 \"배율\"을 뜻하는 자라서, 1, 10, 100, 1000이 같은 간격에 놓인다. 그래서 수천 배 차이 나는 값을 한 그림에 담고, 측정값이 입력의 몇 제곱으로 느는지를 기울기로 읽는다. 단,…"
@@ -52,7 +52,7 @@ permalink: "/studies/college-math/log-scale/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-$$b > 1$$일 때 로그함수 $$y = \log_b x$$는 정의역 $$(0, \infty)$$, 치역 $$\mathbb{R}$$에서 순증가하고 점 $$(1, 0)$$을 지난다. $$x$$가 $$0$$에 다가가면 값이 한없이 작아지므로 $$y$$축(직선 $$x = 0$$)이 세로 점근선이다[^1]. $$0 < b < 1$$이면 순감소다.
+$$b > 1$$일 때 로그함수 $$y = \log_b x$$는 정의역 $$(0, \infty)$$, 치역 $$\mathbb{R}$$($$\mathbb{R}$$은 실수 전체)에서 순증가하고 점 $$(1, 0)$$을 지난다. $$x$$가 $$0$$에 다가가면 값이 한없이 작아지므로 $$y$$축(직선 $$x = 0$$)이 세로 점근선이다[^1]. $$0 < b < 1$$이면 순감소다.
 
 **로그 눈금**(log scale)은 값 $$v > 0$$을 $$\log_{10} v$$에 비례하는 위치에 놓는 눈금이다. 다른 밑을 써도 눈금 간격이 일정한 비율로 늘거나 줄 뿐이다. 두 축이 모두 로그 눈금이면 로그-로그 그래프, 세로축만 로그 눈금이면 반로그 그래프라 한다.
 

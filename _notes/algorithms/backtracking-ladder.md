@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "알고리즘"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 description: "사용 개념: 재귀와 백트래킹."
 prev_url: "/studies/algorithms/pg92342/"
@@ -38,7 +38,7 @@ permalink: "/studies/algorithms/backtracking-ladder/"
 1. *상태 정하기:* 지금까지 고른 수 리스트 `chosen`, 그리고 다음에 볼 수 있는 가장 작은 수 `start`.
 2. *기저 사례:* `len(chosen) == k`면 `chosen[:]`을 기록하고 돌아간다.
 3. *고르고·들어가고·되돌리기:* `start`부터 n까지의 x마다 `chosen.append(x)`, `go(x + 1)`, `chosen.pop()`.
-4. *겹침 막기·가지치기:* 다음 호출이 x + 1부터 보므로 늘 커지는 순서로만 고른다. 그래서 (1, 2)와 (2, 1)처럼 순서만 다른 것이 두 번 나오지 않는다. k개짜리 묶음 하나를 줄 세우는 순서는 k!가지인데, 커지는 순서는 그중 하나뿐이다. 그래서 결과는 정확히 [조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/)의 수 $$\binom{n}{k}$$개이고, n = 4, k = 2면 6개다.
+4. *겹침 막기·가지치기:* 다음 호출이 x + 1부터 보므로 늘 커지는 순서로만 고른다. 그래서 (1, 2)와 (2, 1)처럼 순서만 다른 것이 두 번 나오지 않는다. k개짜리 묶음 하나를 줄 세우는 순서는 k!가지인데, 커지는 순서는 그중 하나뿐이다. 그래서 결과는 정확히 [조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/)의 수 $$\binom{n}{k}$$($$\binom{\ }{\ }$$은 위의 수만큼 있는 것에서 아래의 수만큼 고르는 경우의 수)개이고, n = 4, k = 2면 6개다.
 
 ```python
 def combos(n, k):

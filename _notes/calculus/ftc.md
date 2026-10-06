@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Fundamental Theorem of Calculus", "FTC", "미적분학의 기본정리", "원시함수", "antiderivative", "부정적분", "indefinite integral", "누적 함수", "accumulation function", "적분의 평균값 정리", "누적합", "prefix sum"]
 description: "물탱크의 물 양이 늘어나는 속도는 지금 수도꼭지에서 들어오는 양 그 자체다. 거꾸로, 한 시간 동안 들어온 물의 총량은 물 양의 처음과 끝 차이다. 이 두 문장이 미적분의 기본정리이고, \"잘게 나눠 더한 극한\"이던 적분을 \"미분하면 그 함수가 되는 함수(원시함수)의 양 끝 값 차이…"
@@ -183,7 +183,7 @@ $$\frac{\sin t}{t}$$의 원시함수는 기본 함수로 쓸 수 없지만, 1부
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C3** $$\int_{-1}^{1} \frac{dx}{x^2} = \left[-\frac1x\right]_{-1}^{1} = -2$$라는 계산의 잘못을 지적하라.</summary>
 
-**답:** 2부는 $$f$$가 구간 전체에서 연속이고 $$G' = f$$가 구간 전체에서 성립해야 쓸 수 있다. $$\frac{1}{x^2}$$은 $$x = 0$$에서 정의되지 않는다. 양수 함수의 적분이 음수라는 것도 모순이다. 실제로는 발산한다.
+**답:** 2부는 $$f$$가 구간 전체에서 연속이고 $$G' = f$$가 구간 전체에서 맞아야 쓸 수 있다. $$\frac{1}{x^2}$$은 $$x = 0$$에서 정의되지 않는다. 양수 함수의 적분이 음수라는 것도 모순이다. 실제로는 발산한다.
 
 </details>
 

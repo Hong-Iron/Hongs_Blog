@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "공학수학"
-updated: "2026-10-02"
+updated: "2026-10-06"
 status: "verified"
 aliases: ["Set", "집합", "원소", "element", "부분집합", "subset", "공집합", "empty set", "합집합", "union", "교집합", "intersection", "차집합", "difference", "여집합", "complement", "멱집합", "power set", "곱집합", "Cartesian product", "벤 다이어그램", "Venn diagram", "러셀의 역설", "Russell's paradox"]
 description: "집합은 순서와 중복을 따지지 않는 \"원소의 모음\"이다. 합집합·교집합·차집합으로 모음을 조합하고, 부분집합을 모두 모은 멱집합, 순서쌍을 모은 곱집합으로 새 집합을 만든다. 데이터베이스의 표, 타입, 권한 그룹이 모두 집합이다. 다만 \"자기 자신을 원소로 갖지 않는 모든 집합의 집…"
@@ -50,7 +50,7 @@ permalink: "/studies/discrete-math/sets/"
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
 $$x \in A$$는 "$$x$$가 집합 $$A$$의 원소"라는 뜻이다. 집합은 원소로 정해진다: 원소가 모두 같으면 같은 집합이다. 전체집합 $$U$$ 안에서[^1]
-- 부분집합: $$A \subseteq B \iff \forall x\,(x \in A \to x \in B)$$. 진부분집합 $$A \subsetneq B$$는 $$A \subseteq B$$이고 $$A \ne B$$.
+- 부분집합: $$A \subseteq B \iff \forall x\,(x \in A \to x \in B)$$($$\forall$$은 "모든"). 진부분집합 $$A \subsetneq B$$는 $$A \subseteq B$$이고 $$A \ne B$$.
 - 공집합 $$\varnothing$$: 원소가 없는 집합. 모든 집합의 부분집합이다.
 - $$A \cup B = \{x : x \in A \vee x \in B\}$$, $$\ A \cap B = \{x : x \in A \wedge x \in B\}$$, $$\ A - B = \{x : x \in A \wedge x \notin B\}$$, $$\ \bar A = U - A$$
 - 멱집합 $$\mathcal{P}(A)$$: $$A$$의 모든 부분집합의 집합. $$\vert A\vert  = n$$이면 $$\vert \mathcal{P}(A)\vert  = 2^n$$.
