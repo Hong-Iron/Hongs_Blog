@@ -1,0 +1,158 @@
+# 홍철's lines for the probability-statistics course pages. Format: _data/robot/README.md
+greeting:
+- "확률과 통계예요. 혼자 공부하면서 정리했어요. 주사위에서 시작해서 머신러닝이랑 정보이론까지 가요."
+- "확률과 통계 페이지예요. 배경에서 공이 떨어져 종 모양으로 쌓여요."
+- "여긴 확률과 통계예요. 불확실한 걸 숫자로 다루는 과목이에요."
+- "확통 노트예요. 베이즈 정리부터 머신러닝 손실 함수까지 있어요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "확률의 기초부터 이산, 연속, 여러 변수, 극한 정리, 확률 과정, 추론, 데이터 모델, 정보이론까지 아홉 단원이에요."
+  link: /studies/probability-statistics/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "공학수학 다른 네 과목을 다 끌어와서 써요. 셈, 적분, 행렬이 다 나와요. 무거운 개념도 {heavy}개예요."
+- q: "배워서 어디에 써요?"
+  a: "스팸 필터, A/B 테스트, 오차 막대, 신뢰구간이 다 여기서 나와요. 회귀 모델도 결국 조건부 기댓값을 어림하는 거예요."
+  link: /studies/probability-statistics/bayes-theorem/
+  link_label: "베이즈 정리"
+- q: "제일 중요한 건 뭐예요?"
+  a: "'분산과 표준편차'랑 '기댓값과 선형성'이 뒤를 제일 많이 받쳐요. '조건부 확률'은 베이즈 정리로 가는 문이고요."
+  link: /studies/probability-statistics/expectation/
+  link_label: "기댓값과 선형성"
+- q: "다른 과목이랑도 이어져요?"
+  a: "이상 심리학에서 '통계적으로 이상'이라고 할 때가 정규분포 꼬리예요. 컴퓨터 통신의 동시 사용자 수는 이항분포고요."
+  link: /studies/abnormal-psychology/statistical-deviation--normal-distribution/
+  link_label: "통계적 일탈 ↔ 정규분포"
+chats:
+- q: "확률과 통계는 왜 배워요?"
+  a: "불확실한 걸 숫자로 다루려고요. A/B 테스트, 스팸 필터, 머신러닝 손실 함수가 다 여기서 나와요."
+  next:
+  - q: "스팸 필터요?"
+    a: "베이즈 정리로 '이 단어가 나왔을 때 스팸일 확률'을 계산해요. 단어 하나하나가 증거예요."
+    link: /studies/probability-statistics/bayes-theorem/
+    link_label: "베이즈 정리"
+  - q: "배경 공은 뭐예요?"
+    a: "골턴 보드예요. 공이 못에 부딪힐 때마다 왼쪽, 오른쪽으로 반반 튀어요. 그게 쌓이면 이항분포고, 많이 쌓이면 정규분포에 가까워져요."
+    link: /studies/probability-statistics/binomial/
+    link_label: 이항분포
+- q: "베이즈 정리 쉽게 설명해 주세요"
+  a: "새 증거를 보고 믿음을 고치는 공식이에요. 양성 판정이 나와도, 원래 드문 병이면 진짜 걸렸을 확률은 생각보다 낮아요."
+  link: /studies/probability-statistics/bayes-theorem/
+  link_label: "베이즈 정리"
+  next:
+  - q: "얼마나 낮아요?"
+    a: "100명 중 1명이 걸리는 병이 있고, 검사가 아픈 사람의 99%를 잡지만 건강한 사람의 5%도 양성으로 낸다고 쳐요. 그러면 양성일 때 진짜 아플 확률은 약 17%예요."
+    next:
+    - q: "왜 그렇게 낮아요?"
+      a: "1만 명으로 세 보면 쉬워요. 아픈 100명 중 99명이 양성, 건강한 9,900명 중 495명도 양성이에요. 양성 594명 중 진짜는 99명이에요."
+  - q: "베이즈 추론은요?"
+    a: "모르는 값을 확률분포로 두고, 데이터를 볼 때마다 그 분포를 고쳐 나가요. 제일 그럴듯한 값을 고르면 MAP 추정이에요."
+    link: /studies/probability-statistics/bayesian-inference/
+    link_label: "베이즈 추론과 MAP"
+- q: "독립이랑 배반이 헷갈려요"
+  a: "배반은 같이 일어날 수 없는 거고, 독립은 하나가 일어나도 다른 쪽 확률이 안 바뀌는 거예요."
+  link: /studies/probability-statistics/independent-vs-disjoint/
+  link_label: "독립과 배반 비교"
+  next:
+  - q: "둘 다일 수는 없어요?"
+    a: "확률이 0이 아닌 두 사건이 배반이면, 하나가 일어나는 순간 다른 쪽 확률이 0이 돼요. 그래서 오히려 독립이 아니에요."
+- q: "정규분포는 왜 그렇게 많이 나와요?"
+  a: "작은 우연이 많이 더해지면 그 합이 종 모양에 가까워져요. 중심극한정리예요."
+  link: /studies/probability-statistics/clt/
+  link_label: 중심극한정리
+  next:
+  - q: "68-95-99.7이 뭐예요?"
+    a: "평균에서 표준편차 1개, 2개, 3개 안에 각각 약 68%, 95%, 99.7%가 들어가요."
+    link: /studies/probability-statistics/normal-distribution/
+    link_label: 정규분포
+  - q: "큰 수의 법칙이랑은 달라요?"
+    a: "큰 수의 법칙은 평균이 참값에 다가간다는 거고, 중심극한정리는 그 평균이 흔들리는 모양이 종 모양이라는 거예요."
+    link: /studies/probability-statistics/lln/
+    link_label: "큰 수의 법칙"
+- q: "p값이 뭐예요?"
+  a: "효과가 없다고 칠 때(귀무가설), 지금만큼 또는 더 극단적인 결과가 나올 확률이에요."
+  link: /studies/probability-statistics/hypothesis-testing/
+  link_label: "가설검정과 p값"
+  next:
+  - q: "그럼 가설이 맞을 확률이에요?"
+    a: "아니요. 제일 흔한 오해예요. p값은 '가설이 맞다면 이런 데이터가 나올 확률'이지, 그 반대가 아니에요."
+  - q: 신뢰구간은요?
+    a: "95% 신뢰구간은, 같은 방법으로 구간을 100번 만들면 약 95번은 참값을 품는다는 뜻이에요."
+    link: /studies/probability-statistics/confidence-intervals/
+    link_label: 신뢰구간
+- q: "엔트로피가 뭐예요?"
+  a: "결과가 얼마나 예측하기 어려운지예요. 공정한 동전 한 번은 1비트예요."
+  link: /studies/probability-statistics/entropy/
+  link_label: 엔트로피
+  next:
+  - q: "교차 엔트로피는요?"
+    a: "분류 모델의 손실 함수로 많이 써요. 모델이 정답에 낮은 확률을 줄수록 손실이 커져요."
+    link: /studies/probability-statistics/cross-entropy-kl/
+    link_label: "교차 엔트로피와 KL 발산"
+- q: "몬테카를로가 뭐예요?"
+  a: "무작위로 많이 뽑아서 답을 어림해요. 정사각형에 점을 뿌리고 원 안에 든 비율로 π를 구하는 게 대표적이에요."
+  link: /studies/probability-statistics/monte-carlo/
+  link_label: "몬테카를로 방법"
+- q: "마르코프 연쇄요?"
+  a: "다음 상태가 지금 상태에만 달린 과정이에요. 어제 날씨는 상관없고 오늘 날씨로 내일을 정하는 식이에요."
+  link: /studies/probability-statistics/markov-chains/
+  link_label: "마르코프 연쇄"
+  next:
+  - q: "오래 돌리면 어떻게 돼요?"
+    a: "조건이 맞으면 어디서 시작하든 같은 분포로 수렴해요. 웹 서핑을 마르코프 연쇄로 보고 그 분포를 구한 게 PageRank예요."
+    link: /studies/probability-statistics/pagerank/
+    link_label: PageRank
+- q: "과적합이 뭐예요?"
+  a: "연습 문제 답을 외워서 처음 보는 시험은 못 푸는 상태예요. 학습 데이터에만 너무 딱 맞춘 거죠."
+  link: /studies/probability-statistics/overfitting-cv/
+  link_label: "과적합과 교차검증"
+  next:
+  - q: "어떻게 막아요?"
+    a: "데이터 일부를 떼어 두고 그걸로 성능을 확인해요. 여러 번 돌려 가며 떼어 두면 교차검증이에요."
+- q: "분포가 너무 많아요"
+  a: "질문부터 보면 골라져요. n번 중 몇 번 성공하나면 이항, 첫 성공까지 몇 번이면 기하, 일정 시간에 몇 번 일어나나면 포아송이에요."
+  link: /studies/probability-statistics/discrete-distributions-compared/
+  link_label: "이항·기하·포아송 비교"
+talk:
+- text: "정확도 99% 검사에서 양성이 나와도 병일 확률이 99%는 아니에요. 병이 드물면 9%까지 떨어지기도 해요."
+  link: /studies/probability-statistics/bayes-theorem/
+  link_label: "베이즈 정리"
+- text: "농구 선수가 키 190 넘을 확률은 높은데, 키 190 넘는 사람이 농구 선수일 확률은 낮잖아요. P(A|B)랑 P(B|A)는 달라요."
+  link: /studies/probability-statistics/conditional-probability/
+  link_label: "조건부 확률"
+- text: "합의 기댓값을 쪼갤 땐 독립이 필요 없어요. 그래서 모자 문제 답이 딱 1이에요."
+  link: /studies/probability-statistics/expectation/
+  link_label: "기댓값과 선형성"
+- text: "몇 번 연속 졌다고 이번엔 이길 확률이 높아지진 않아요. 주사위는 지난 판을 기억 못 해요."
+  link: /studies/probability-statistics/geometric-distribution/
+  link_label: 기하분포
+- text: "아이스크림 판매랑 물놀이 사고가 같이 늘어도 아이스크림 때문은 아니에요. 둘 다 더위 때문이에요."
+  link: /studies/probability-statistics/covariance/
+  link_label: "공분산과 상관계수"
+- text: "자료를 많이 모은다고 자료가 정규분포가 되는 건 아니에요. 정규에 가까워지는 건 평균들이에요."
+  link: /studies/probability-statistics/clt/
+  link_label: 중심극한정리
+- text: "95% 신뢰구간이 '참값이 여기 있을 확률 95%'는 아니에요. 그렇게 구간을 만드는 방법이 95%로 맞는다는 거예요."
+  link: /studies/probability-statistics/confidence-intervals/
+  link_label: 신뢰구간
+- text: "p = 0.03은 귀무가설이 맞을 확률 3%가 아니에요. 귀무가설이 맞을 때 이런 자료가 나올 확률이에요."
+  link: /studies/probability-statistics/hypothesis-testing/
+  link_label: "가설검정과 p값"
+- text: "엔트로피가 높다고 좋은 정보가 많은 건 아니에요. 무작위 잡음이 엔트로피가 제일 높거든요."
+  link: /studies/probability-statistics/entropy/
+  link_label: 엔트로피
+- text: "3σ 밖은 0.3%라는 건 정규분포 얘기예요. 꼬리가 두꺼운 분포는 1%가 넘기도 해요."
+  link: /studies/probability-statistics/normal-distribution/
+  link_label: 정규분포
+- text: "기댓값은 더하기에 잘 쪼개져요. 사건들이 독립이 아니어도요. 이게 생각보다 엄청 편해요."
+  link: /studies/probability-statistics/expectation/
+  link_label: "기댓값과 선형성"
+- text: "상관관계가 있다고 원인은 아니에요. 아이스크림 판매량이랑 물놀이 사고는 둘 다 여름에 늘어요."
+  link: /studies/probability-statistics/covariance/
+  link_label: "공분산과 상관계수"
+- text: "주성분 분석은 데이터가 가장 넓게 퍼진 방향부터 축을 다시 잡는 거예요."
+  link: /studies/probability-statistics/pca/
+  link_label: "주성분 분석"
+- text: "지수분포는 기억이 없어요. 10분 기다렸다고 버스가 곧 올 확률이 높아지진 않아요. 물론 버스가 지수분포를 따른다면요."
+  link: /studies/probability-statistics/uniform-exponential/
+  link_label: "균등분포와 지수분포"

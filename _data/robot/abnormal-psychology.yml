@@ -1,0 +1,268 @@
+# 홍철's lines for the abnormal-psychology course pages. Format: _data/robot/README.md
+greeting:
+- "이상 심리학이에요. 이번 학기에 듣고 있는 수업인데, 개념만 {concepts}개를 정리했어요."
+- "이상 심리학 페이지예요. 배경이 잉크 얼룩처럼 번지는 거 보셨어요?"
+- "여긴 이상 심리학이에요. 마음이 아플 때 무슨 일이 일어나는지 배우는 과목이에요."
+- "이상 심리학 노트 보러 오셨네요. 궁금한 장애 있으면 물어보세요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "강의 순서대로 보시면 돼요. 1회에서 '이상행동의 기준'이랑 DSM부터 잡고, 2회 조현병부터 12회 성격장애까지 쭉 가요. 장애 문서 대부분이 DSM 문서를 깔고 있어서 1회는 꼭 보고 가세요."
+  link: /studies/abnormal-psychology/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "수식은 거의 없어요. 대신 비슷한 장애끼리 기간, 증상 개수, 배제 조건으로 갈려서 헷갈려요. 그래서 '○○와 ○○ 비교' 문서를 따로 만들어 뒀어요."
+- q: "배워서 어디에 써요?"
+  a: "주변 사람 이해할 때 진짜 많이 써요. 자살 생각을 직접 물어보는 건 생각을 심는 게 아니라 털어놓을 틈을 주는 거래요. 조현병 환자 대부분이 폭력적이지 않다는 것도 여기서 알았어요."
+  link: /studies/abnormal-psychology/suicide/
+  link_label: 자살
+- q: "제일 중요한 건 뭐예요?"
+  a: "'정신장애와 DSM'이요. 문서 17개가 이걸 깔고 있어요. 치료 쪽은 인지행동치료가 20개 넘는 문서에, 노출치료가 10개 넘는 문서에 계속 나와요."
+  link: /studies/abnormal-psychology/mental-disorder-dsm/
+  link_label: "정신장애와 DSM"
+- q: "다른 과목이랑도 이어져요?"
+  a: "확률과 통계랑 이어져요. '통계적으로 드물면 이상'이라고 할 때 그 기준선이 정규분포 꼬리예요. 평균에서 표준편차 2개 아래면 2.3%쯤이요. 도박사의 오류도 확률의 독립 얘기고요."
+  link: /studies/abnormal-psychology/statistical-deviation--normal-distribution/
+  link_label: "통계적 일탈 ↔ 정규분포"
+chats:
+- q: "이상심리학은 뭘 배워요?"
+  a: "마음이 아픈 상태를 어떻게 알아보고, 왜 생기고, 어떻게 돕는지 배워요."
+  next:
+  - q: "정상이랑 이상은 어떻게 갈라요?"
+    a: "기준이 여러 개예요. 통계적으로 드문지, 사회 규범에서 벗어나는지, 본인이 괴로운지, 생활이 망가지는지요. 하나만 쓰면 다 구멍이 있어요."
+    link: /studies/abnormal-psychology/abnormality-criteria/
+    link_label: "이상행동의 기준"
+    next:
+    - q: "구멍이 있다는 게 무슨 뜻이에요?"
+      a: "IQ 145는 드물지만 장애가 아니고, 반사회성 성격장애는 본인이 별로 괴롭지 않을 수 있어요. 그래서 기준을 여러 개 같이 봐요."
+  - q: "DSM이 뭐예요?"
+    a: "미국정신의학회가 만든 진단 기준 책이에요. 증상이 몇 개, 얼마나 오래 있어야 하는지까지 적혀 있어요."
+    link: /studies/abnormal-psychology/mental-disorder-dsm/
+    link_label: "정신장애와 DSM"
+    next:
+    - q: "진단명 붙이는 게 좋은 거예요?"
+      a: "같은 말로 소통하고 치료를 고를 수 있어요. 대신 사람을 진단명으로만 보게 되는 낙인 문제가 있어요."
+      link: /studies/abnormal-psychology/diagnostic-classification-evaluation/
+      link_label: "진단 분류의 장단점"
+    - q: "있다/없다로만 나눠요?"
+      a: "DSM은 주로 그렇게 나눠요(범주적 분류). 반대로 정도의 차이로 보는 방식(차원적 분류)도 있어요. 성격장애엔 대안 모델로 차원적 방식이 들어가 있어요."
+      link: /studies/abnormal-psychology/categorical-vs-dimensional/
+      link_label: "범주적 분류와 차원적 분류"
+  - q: "원인은 어떻게 봐요?"
+    a: "입장마다 달라요. 뇌와 유전을 보는 생물의학적 입장, 학습을 보는 행동주의, 생각을 보는 인지적 입장, 무의식을 보는 정신분석이요. 요즘은 다 합쳐서 생물심리사회적 모델로 봐요."
+    link: /studies/abnormal-psychology/biopsychosocial-model/
+    link_label: "생물심리사회적 모델"
+- q: "우울증이랑 그냥 우울한 거랑 달라요?"
+  a: "달라요. 주요우울장애는 우울한 기분이나 흥미 상실을 포함한 증상 다섯 개 이상이 2주 넘게, 거의 매일 이어지는 거예요."
+  link: /studies/abnormal-psychology/major-depressive-disorder/
+  link_label: 주요우울장애
+  next:
+  - q: "오래 가는 건요?"
+    a: "지속성 우울장애요. 증상은 조금 덜해도 2년 넘게 이어져요."
+    link: /studies/abnormal-psychology/mdd-vs-pdd/
+    link_label: "주요우울장애와 지속성 우울장애 비교"
+  - q: "왜 생겨요?"
+    a: "한 가지로 설명이 안 돼요. 벡은 '나, 세상, 미래'를 부정적으로 보는 생각 습관을 꼽았고, 학습된 무기력 이론은 뭘 해도 소용없었던 경험을 꼽아요."
+    link: /studies/abnormal-psychology/depression-causes/
+    link_label: "우울장애의 원인"
+    next:
+    - q: "학습된 무기력이 뭐예요?"
+      a: "셀리그먼 실험에서 피할 수 없는 충격을 겪은 개는, 나중에 피할 수 있게 돼도 피하지 않았어요. 해도 안 된다는 걸 배워 버린 거예요."
+      link: /studies/abnormal-psychology/learned-helplessness/
+      link_label: "학습된 무기력 이론"
+    - q: "생각 습관은 어떻게 바꿔요?"
+      a: "인지치료에선 그 생각의 증거를 따져 봐요. 무조건 긍정하는 게 아니라 현실적으로 보는 연습이에요."
+      link: /studies/abnormal-psychology/beck-cognitive-theory/
+      link_label: "우울증의 인지이론"
+  - q: "조증은 반대예요?"
+    a: "양극성장애에서 나와요. 기분이 들뜨고, 잠을 안 자도 쌩쌩하고, 일을 마구 벌여요. 조증은 일주일 이상, 경조증은 나흘 이상 이어지고 경조증은 생활이 무너질 정도는 아니에요."
+    link: /studies/abnormal-psychology/mania-vs-hypomania/
+    link_label: "조증과 경조증 비교"
+- q: "불안장애엔 뭐가 있어요?"
+  a: "공황장애, 광장공포증, 범불안장애, 사회불안장애, 특정공포증 같은 것들이요."
+  next:
+  - q: "불안이랑 공포는 같은 거 아니에요?"
+    a: "공포는 지금 눈앞의 위협에, 불안은 앞으로 올지 모르는 위협에 반응하는 거예요."
+    link: /studies/abnormal-psychology/anxiety-and-fear/
+    link_label: "불안과 공포"
+  - q: "공황발작은 어떤 느낌이에요?"
+    a: "심장이 터질 듯 뛰고, 숨이 막히고, 죽을 것 같은 공포가 몇 분 안에 꼭대기까지 올라와요. 그러고는 가라앉아요."
+    link: /studies/abnormal-psychology/panic-disorder/
+    link_label: 공황장애
+    next:
+    - q: "왜 그렇게 무서워져요?"
+      a: "인지모델에선 심장이 빨리 뛰는 걸 '심장마비다'처럼 파국적으로 해석해서, 그 해석이 불안을 더 키운다고 봐요."
+      link: /studies/abnormal-psychology/panic-cognitive-model/
+      link_label: "공황의 인지모델"
+  - q: "걱정이 많은 것도 병이에요?"
+    a: "범불안장애는 여러 일에 대한 걱정이 6개월 넘게, 조절이 안 될 만큼 이어지는 거예요. 걱정 자체보다 멈출 수 없다는 게 핵심이에요."
+    link: /studies/abnormal-psychology/generalized-anxiety-disorder/
+    link_label: 범불안장애
+- q: "트라우마 얘기 해 주세요"
+  a: "끔찍한 일을 겪은 뒤에 그 장면이 자꾸 떠오르고, 관련된 걸 피하고, 늘 긴장해 있는 상태가 한 달 넘게 가면 PTSD예요. 한 달 안이면 급성 스트레스 장애고요."
+  link: /studies/abnormal-psychology/ptsd/
+  link_label: "외상 후 스트레스 장애"
+  next:
+  - q: "다 PTSD가 돼요?"
+    a: "아니요. 대부분은 아니에요. 참전 군인도 15.2%, 9.11 근처 주민도 20% 정도였대요."
+  - q: "복합 PTSD는요?"
+    a: "오랫동안 반복된 외상 뒤에 PTSD 증상에 더해 감정 조절, 자기 인식, 관계의 어려움이 같이 오는 거예요. ICD-11에 있는 진단이에요."
+    link: /studies/abnormal-psychology/ptsd-vs-cptsd/
+    link_label: "PTSD와 복합 PTSD 비교"
+  - q: "외상 후 성장은요?"
+    a: "큰일을 겪고 나서 오히려 삶을 보는 눈이 깊어지는 변화예요. 고통이 없어진다는 뜻은 아니에요. 둘이 같이 있을 수 있어요."
+    link: /studies/abnormal-psychology/posttraumatic-growth/
+    link_label: "외상 후 성장"
+- q: "조현병은 어떤 병이에요?"
+  a: "망상, 환각, 말과 행동이 엉키는 증상이 나와요. 증상이 6개월 넘게 이어지면 조현병이에요."
+  link: /studies/abnormal-psychology/psychosis-spectrum/
+  link_label: "정신증과 조현병 스펙트럼"
+  next:
+  - q: "양성 증상, 음성 증상이 뭐예요?"
+    a: "양성은 없던 게 생기는 거예요. 망상, 환각이요. 음성은 있던 게 줄어드는 거예요. 감정 표현, 의욕, 말수요."
+    link: /studies/abnormal-psychology/positive-vs-negative-symptoms/
+    link_label: "양성 증상과 음성 증상"
+  - q: "기간이 짧으면요?"
+    a: "한 달 안이면 단기 정신병적 장애, 1~6개월이면 조현양상장애예요. 기간으로 이름이 갈려요."
+    link: /studies/abnormal-psychology/psychotic-duration-contrast/
+    link_label: "정신병적 장애의 지속 기간 비교"
+  - q: "원인은 밝혀졌어요?"
+    a: "도파민이 너무 많이 작용한다는 도파민 가설이 유명해요. 다만 그거 하나로 다 설명되진 않아요."
+    link: /studies/abnormal-psychology/dopamine-hypothesis/
+    link_label: "도파민 가설"
+  - q: "조현병이면 위험한 거 아니에요?"
+    a: "대부분은 폭력적이지 않아요. 오히려 피해를 당하는 쪽인 경우가 많대요. 이 과목에서 제일 먼저 고쳐진 편견이에요."
+- q: "성격장애는 뭐예요?"
+  a: "생각하고 느끼고 관계 맺는 방식이 오래, 여러 상황에서 한쪽으로 굳어서 본인이나 주변이 힘든 거예요."
+  link: /studies/abnormal-psychology/personality-disorders/
+  link_label: 성격장애
+  next:
+  - q: "종류가 많아요?"
+    a: "DSM은 열 개를 세 묶음으로 나눠요. A는 이상하고 괴짜 같은 쪽, B는 감정이 극적이고 변덕스러운 쪽, C는 불안하고 겁 많은 쪽이에요."
+    next:
+    - q: "B군엔 뭐가 있어요?"
+      a: "반사회성, 경계선, 연극성, 자기애성이요."
+      link: /studies/abnormal-psychology/borderline-pd/
+      link_label: "경계선 성격장애"
+    - q: C군엔요?
+      a: "회피성, 의존성, 강박성이요. 사회불안장애랑 회피성 성격장애는 많이 비슷해서 비교 문서를 따로 만들었어요."
+      link: /studies/abnormal-psychology/sad-vs-avoidant/
+      link_label: "사회불안장애와 회피성 성격장애"
+  - q: "강박장애랑 강박성 성격장애는 달라요?"
+    a: "강박장애는 원치 않는 생각이 괴로워서 의식을 반복해요. 강박성 성격장애는 질서와 완벽함을 본인은 옳다고 여기면서 고집해요."
+    link: /studies/abnormal-psychology/ocd-vs-ocpd/
+    link_label: "강박장애와 강박성 성격장애"
+- q: "치료는 어떻게 해요?"
+  a: "약물도 있고 심리치료도 있어요. 이 과목에서 제일 많이 나오는 건 인지행동치료예요."
+  link: /studies/abnormal-psychology/cbt/
+  link_label: 인지행동치료
+  next:
+  - q: "인지행동치료는 뭐예요?"
+    a: "생각, 감정, 행동이 서로 물고 있다고 봐요. 그래서 생각을 따져 보고, 행동을 바꿔 보는 연습을 해요."
+  - q: 노출치료는요?
+    a: "무서운 걸 피하지 않고 조금씩 마주하게 해요. 피하면 그 순간은 편하지만 공포가 계속 살아남거든요."
+    link: /studies/abnormal-psychology/exposure-therapy/
+    link_label: "노출치료와 체계적 둔감법"
+    next:
+    - q: "강박장애에도 써요?"
+      a: "네, 노출 및 반응방지법이요. 불안한 상황에 노출하고, 손 씻기 같은 의식을 하지 않고 버텨 보게 해요."
+      link: /studies/abnormal-psychology/erp/
+      link_label: "노출 및 반응방지법"
+  - q: "잠이 안 올 때는요?"
+    a: "불면증엔 약보다 불면증 인지행동치료를 먼저 권해요. 침대는 잠잘 때만 쓰고, 잠이 안 오면 일어나는 식이에요."
+    link: /studies/abnormal-psychology/cbt-i/
+    link_label: "불면증 인지행동치료"
+- q: "어린 시절이랑도 관련 있어요?"
+  a: "애착 얘기가 나와요. 어릴 때 돌봐 주는 사람과 맺은 관계 방식이 커서도 이어진다고 봐요."
+  link: /studies/abnormal-psychology/attachment/
+  link_label: 애착
+  next:
+  - q: "애착 유형이 뭐예요?"
+    a: "에인스워스의 '낯선 상황' 실험에서 안정, 불안-양가, 회피 유형이 나왔어요. 나중에 혼란 유형이 더해졌고요."
+  - q: "ADHD도 어릴 때부터예요?"
+    a: "네. 신경발달장애라서 증상 몇 개는 12세 이전부터 있어야 해요."
+    link: /studies/abnormal-psychology/adhd/
+    link_label: ADHD
+  - q: 자폐는요?
+    a: "자폐스펙트럼장애는 사회적 의사소통의 어려움과 제한된, 반복적인 행동이 둘 다 있어야 해요. 반복 행동 없이 소통만 어려우면 사회적 의사소통장애예요."
+    link: /studies/abnormal-psychology/asd-vs-scd/
+    link_label: "자폐스펙트럼장애와 사회적 의사소통장애"
+- q: "이 수업 들으면서 뭐 느꼈어요?"
+  a: "제 지난 1년이 좀 설명되더라고요. 그 얘기는 Tenacity라는 글에 써 뒀어요."
+  link: /pensees/2026/09/30/tenacity/
+  link_label: Tenacity
+  next:
+  - q: "어떤 이론이 와닿았어요?"
+    a: "아브람슨의 절망감 이론이랑 벡의 인지 모델이요. 둘을 엮어서 도식을 그려 봤어요."
+    link: /pensees/2026/09/30/tenacity/
+    link_label: Tenacity
+  - q: "공부하면서 힘들진 않았어요?"
+    a: "가끔요. 그래도 아는 만큼 주변 사람한테 덜 실수하게 돼서 좋아요."
+- q: "섭식장애도 배워요?"
+  a: "네. 신경성 식욕부진증, 신경성 폭식증, 폭식장애 세 개가 중심이에요."
+  link: /studies/abnormal-psychology/eating-disorders-contrast/
+  link_label: "세 섭식장애 비교"
+  next:
+  - q: "셋은 어떻게 달라요?"
+    a: "식욕부진증은 체중이 지나치게 낮아요. 폭식증은 폭식 뒤에 구토 같은 보상 행동을 해요. 폭식장애는 폭식은 있는데 보상 행동이 없어요."
+- q: "해리가 뭐예요?"
+  a: "기억, 정체감, 감각이 평소처럼 하나로 이어지지 않고 끊기는 거예요."
+  link: /studies/abnormal-psychology/dissociation/
+  link_label: 해리
+  next:
+  - q: 다중인격이요?
+    a: "해리성 정체감 장애요. 조현병이랑 헷갈리기 쉬운데 완전히 다른 장애예요."
+    link: /studies/abnormal-psychology/dissociative-identity-disorder/
+    link_label: "해리성 정체감 장애"
+  - q: "내가 나 같지 않은 느낌은요?"
+    a: "이인증이에요. 주변이 꿈처럼 비현실적으로 느껴지면 비현실감이고요. 잠깐 겪는 건 흔해서, 오래 반복되고 괴로울 때만 장애로 봐요."
+    link: /studies/abnormal-psychology/depersonalization-derealization/
+    link_label: "이인증·비현실감 장애"
+talk:
+- text: "이 수업 들으면서 제 지난 1년이 좀 설명되더라고요. 그 얘기는 Tenacity라는 글에 써 뒀어요."
+  link: /pensees/2026/09/30/tenacity/
+  link_label: Tenacity
+- text: "'드물면 이상'이라고들 많이 생각하잖아요. 근데 IQ 145도 드물지만 장애는 아니에요. 드문 거랑 이상한 건 다른 얘기예요."
+  link: /studies/abnormal-psychology/abnormality-criteria/
+  link_label: "이상행동의 기준"
+- text: "'부적 강화'를 처벌로 아는 분이 많아요. 사실은 불쾌한 걸 없애 줘서 행동이 느는 거예요. 두통약 먹는 습관이 그래요."
+  link: /studies/abnormal-psychology/behavioral-perspective/
+  link_label: "행동주의적 입장"
+- text: "조현병은 인격이 쪼개지는 병이 아니에요. 그건 해리성 정체감 장애고, 조현병은 망상이랑 환각으로 현실 감각이 무너지는 쪽이에요."
+  link: /studies/abnormal-psychology/psychotic-symptoms/
+  link_label: "정신병적 증상"
+- text: "우울한 사람한테 '마음먹기 나름'이라는 말은 하지 말아 주세요. 의욕이 없는 것 자체가 증상이라 죄책감만 커져요."
+  link: /studies/abnormal-psychology/major-depressive-disorder/
+  link_label: 주요우울장애
+- text: "인지치료가 '긍정적으로 생각해'는 아니에요. 증거를 따져서 현실적으로 보는 거예요. 잘한 점이랑 고칠 점을 같이요."
+  link: /studies/abnormal-psychology/beck-cognitive-theory/
+  link_label: "우울증의 인지이론"
+- text: "공황발작이 와도 심장이 위험한 건 아니래요. 경보가 잘못 울린 거라 몇 분이면 가라앉아요. 그래도 처음이면 병원에서 몸부터 확인하는 게 맞고요."
+  link: /studies/abnormal-psychology/panic-disorder/
+  link_label: 공황장애
+- text: "정리 좋아하는 사람한테 '강박 있다'고 하잖아요. 근데 즐기면서 하는 건 강박이 아니에요. 원치 않는 불안 때문에 억지로 반복하는 게 강박이에요."
+  link: /studies/abnormal-psychology/ocd/
+  link_label: 강박장애
+- text: "끔찍한 일을 겪어도 대부분은 PTSD까지 가진 않아요. 참전 군인도 15.2%, 9.11 근처 주민도 20% 정도였대요."
+  link: /studies/abnormal-psychology/ptsd/
+  link_label: "외상 후 스트레스 장애"
+- text: "ADHD 약이 각성제라 더 날뛸 것 같죠? 오히려 행동을 억제하는 뇌 기능을 도와줘서 차분해져요."
+  link: /studies/abnormal-psychology/adhd/
+  link_label: ADHD
+- text: "공포는 지금 눈앞의 위협에, 불안은 앞으로 올지 모르는 위협에 반응하는 거래요."
+  link: /studies/abnormal-psychology/anxiety-and-fear/
+  link_label: "불안과 공포"
+- text: "섬망은 며칠 사이에 갑자기, 치매는 몇 년에 걸쳐 천천히 와요. 그래서 할머니가 갑자기 헷갈려하시면 섬망부터 의심해야 해요."
+  link: /studies/abnormal-psychology/delirium-vs-dementia/
+  link_label: "섬망과 치매 비교"
+- text: "꾀병은 이득(돈, 휴가)을 위해 증상을 꾸미고, 인위성장애는 뚜렷한 이득 없이 환자 역할 자체를 위해 꾸며요."
+  link: /studies/abnormal-psychology/factitious-vs-malingering/
+  link_label: "인위성장애와 꾀병"
+- text: "도박사의 오류 아세요? 동전이 앞면만 다섯 번 나왔다고 다음에 뒷면 나올 확률이 높아지진 않아요."
+  link: /studies/abnormal-psychology/gamblers-fallacy--independence/
+  link_label: "도박사의 오류 ↔ 독립"
+- text: "방어기제는 프로이트 쪽 개념이에요. 투사, 합리화, 승화 같은 거요. 승화는 그나마 건강한 쪽이에요."
+  link: /studies/abnormal-psychology/defense-mechanisms/
+  link_label: 방어기제
+- text: "지속성 비탄 장애는 DSM-5-TR에 새로 들어간 진단이에요. 성인은 사별 뒤 1년이 넘도록 일상이 무너질 만큼 슬픔이 이어질 때요."
+  link: /studies/abnormal-psychology/prolonged-grief-disorder/
+  link_label: "지속성 비탄 장애"

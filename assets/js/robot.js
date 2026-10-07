@@ -1,7 +1,11 @@
-/* 홍철, the corner robot. Opens a game-style speech bubble with two modes:
- * 질문하기 (pick one of the course's preset questions) and 대화하기 (a random
- * line from the course's pool, no repeats until the pool runs out).
- * Lines come from _data/robot.yml via the JSON in _includes/robot.html.
+/* 홍철, the corner robot. Opens a game-style speech bubble with three modes:
+ *   질문하기   the course's preset questions
+ *   대화하기   conversation threads: the visitor picks what to say, 홍철
+ *              answers, and each answer offers the next things to say
+ *   아무 얘기나 a random one-liner, no repeats until the pool runs out
+ * Lines live in _data/robot/*.yml and load from assets/robot-data.json the
+ * first time the bubble opens. On a course page the course's threads mix with
+ * the general ones from default.yml.
  */
 (function () {
   "use strict";
@@ -15,8 +19,27 @@
   } catch (e) {
     return;
   }
-  var script = data.script || {};
   var base = root.getAttribute("data-base") || "";
+  var script = null;      // this page's block
+  var common = null;      // default.yml's block, mixed in on course pages
+  var loading = null;
+
+  function load(then) {
+    if (script) return then();
+    if (!loading) {
+      loading = fetch(base + "/assets/robot-data.json", { credentials: "same-origin" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (all) {
+          script = all[data.key] || all["default"] || {};
+          common = data.key !== "default" ? all["default"] || null : null;
+        })
+        .catch(function () { loading = null; });
+    }
+    loading.then(function () {
+      if (script) then();
+      else say("어, 지금은 말이 잘 안 나오네요. 잠시 뒤에 다시 눌러 주세요.");
+    });
+  }
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var button = root.querySelector(".robot__button");
@@ -27,9 +50,26 @@
   var closeEl = root.querySelector(".robot__close");
 
   var typing = null;      // { full, i, timer, done }
-  var bag = [];           // shuffled indices of talk lines still to come
+  var bag = [];           // shuffled talk lines still to come
+  var heard = [];         // conversation threads already started this visit
 
   /* -- text --------------------------------------------------------------- */
+
+  // a line can be one string or a list of variants
+  function pick(v) {
+    if (Array.isArray(v)) return v[Math.floor(Math.random() * v.length)];
+    return v;
+  }
+
+  function shuffled(list) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = a[i];
+      a[i] = a[j];
+      a[j] = t;
+    }
+    return a;
+  }
 
   function fill(text) {
     var stats = data.stats || {}, site = data.site || {};
@@ -123,53 +163,90 @@
 
   /* -- screens ------------------------------------------------------------- */
 
-  function home() {
-    say(script.greeting || "안녕하세요!", function () {
+  function home(again) {
+    var hi = again ? (pick(script.again) || pick(common && common.again) || "또 뭐 할까요?") : pick(script.greeting) || "안녕하세요!";
+    say(hi, function () {
       choices([
         { label: "질문하기", run: questions, kind: "primary" },
-        { label: "대화하기", run: talk }
-      ], true);
+        { label: "대화하기", run: topics },
+        { label: "아무 얘기나 해 줘요", run: talk, kind: "quiet" }
+      ]);
     });
   }
 
   function questions() {
     var qs = script.questions || [];
-    say(script.ask || "뭐가 궁금해요?", function () {
+    say(pick(script.ask) || "뭐가 궁금해요?", function () {
       choices(qs.map(function (q) {
-        return { label: q.q, run: function () { answer(q); } };
-      }).concat([{ label: "처음으로", run: home, kind: "quiet" }]));
+        return { label: q.q, run: function () { reply(q, questions); } };
+      }).concat([{ label: "처음으로", run: function () { home(true); }, kind: "quiet" }]));
     });
   }
 
-  function answer(q) {
-    say(q.a, function () {
-      choices(linkChoice(q).concat([
-        { label: "다른 것도 물어볼래요", run: questions },
-        { label: "그냥 얘기해요", run: talk, kind: "quiet" }
+  /* threads to offer: unheard first; on a course page, mostly the course's */
+  function offer() {
+    var own = script.chats || [], general = (common && common.chats) || [];
+    function fresh(list) {
+      var f = list.filter(function (c) { return heard.indexOf(c) < 0; });
+      return shuffled(f.length ? f : list);
+    }
+    var a = fresh(own), b = fresh(general);
+    var out = common ? a.slice(0, 3).concat(b.slice(0, 1)) : a.slice(0, 4);
+    if (out.length < 4) out = out.concat(a.slice(3), b.slice(1)).slice(0, 4);
+    return shuffled(out);
+  }
+
+  function topics() {
+    var list = offer();
+    if (!list.length) return talk();
+    say(pick(script.chat_prompt) || pick(common && common.chat_prompt) || "무슨 얘기 할까요?", function () {
+      choices(list.map(function (c) {
+        return { label: c.q, run: function () { heard.push(c); reply(c, topics); } };
+      }).concat([
+        { label: "다른 얘기는 없어요?", run: topics },
+        { label: "처음으로", run: function () { home(true); }, kind: "quiet" }
       ]));
     });
   }
 
+  /* one exchange: 홍철 answers, then offers what the visitor might say next.
+     `rest` carries the not-yet-asked options from earlier in the same thread,
+     so a dead end still offers the other branches. */
+  function reply(node, back, rest) {
+    rest = (rest || []).filter(function (n) { return n !== node; });
+    say(pick(node.a), function () {
+      var kids = node.next || [];
+      var offer = kids.length ? kids : rest.slice(0, 3);
+      var carry = kids.length ? rest : rest.slice(3);
+      var next = offer.map(function (n) {
+        var others = offer.filter(function (o) { return o !== n; }).concat(carry);
+        return { label: n.q, run: function () { reply(n, back, others); } };
+      });
+      var other = back === questions ? "다른 거 물어볼래요" : "다른 얘기 해요";
+      var tail = next.length
+        ? [{ label: other, run: back, kind: "quiet" }]
+        : [
+            { label: back === questions ? "다른 것도 물어볼래요" : "다른 얘기 해요", run: back },
+            { label: "처음으로", run: function () { home(true); }, kind: "quiet" }
+          ];
+      choices(next.concat(linkChoice(node), tail));
+    });
+  }
+
   function nextTalk() {
-    var lines = script.talk || [];
+    var lines = (script.talk || []).concat(common ? (common.talk || []).slice(0) : []);
     if (!lines.length) return null;
-    if (!bag.length) {
-      bag = lines.map(function (_, i) { return i; });
-      for (var i = bag.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1)), t = bag[i];
-        bag[i] = bag[j];
-        bag[j] = t;
-      }
-    }
-    return lines[bag.pop()];
+    if (!bag.length) bag = shuffled(lines);
+    return bag.pop();
   }
 
   function talk() {
     var line = nextTalk();
-    if (!line) return home();
-    say(line.text, function () {
+    if (!line) return home(true);
+    say(pick(line.text), function () {
       choices(linkChoice(line).concat([
         { label: "더 얘기해 줘요", run: talk },
+        { label: "대화할래요", run: topics },
         { label: "물어볼 게 있어요", run: questions, kind: "quiet" }
       ]));
     });
@@ -184,7 +261,9 @@
     root.classList.add("is-open");
     button.setAttribute("aria-expanded", "true");
     dialog.focus();
-    home();
+    if (script) return home();
+    textEl.textContent = "…";
+    load(function () { home(); });
   }
 
   function close() {

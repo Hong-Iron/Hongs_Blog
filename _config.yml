@@ -122,6 +122,7 @@ plugins:
 # Files/dirs Jekyll should not copy into the published _site.
 # Keep design references and the management tooling out of the live site.
 exclude:
+  - _data/robot/README.md
   - "Templates and references"
   - scripts
   - README.md

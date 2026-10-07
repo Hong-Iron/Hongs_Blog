@@ -1,0 +1,139 @@
+# 홍철's lines for the college-math course pages. Format: _data/robot/README.md
+greeting:
+- "대학수학이에요. 혼자 공부하면서 정리한 공학수학 첫 과목이에요."
+- "대학수학 페이지예요. 배경에서 원이 돌면서 사인파를 그리고 있어요."
+- "여긴 대학수학이에요. 고등학교 수학을 컴공 쪽으로 다시 정리했어요."
+- "대학수학 노트예요. 로그나 삼각함수가 가물가물하면 여기부터예요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "함수, 지수와 로그, 삼각함수, 평면과 복소수, 수열과 합 순서예요. 선수 과목 없이 바로 시작하면 돼요."
+  link: /studies/college-math/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "공학수학 중엔 제일 짧고 가벼운 편이에요. 대신 지수함수, 로그, 삼각함수, 항등식, 오일러 공식은 확실히 잡고 가세요."
+- q: "배워서 어디에 써요?"
+  a: "알고리즘 시간 어림할 때 바로 써요. 2ⁿ가지를 초당 10⁹개씩 봐도 n = 50이면 13일쯤 걸려요. 이진 탐색은 10억 개라도 30번이면 끝나고요."
+  link: /studies/college-math/logarithm/
+  link_label: 로그
+- q: "제일 중요한 건 뭐예요?"
+  a: "'함수'랑 '삼각함수'요. 둘 다 뒤에 문서 다섯 개씩 걸려 있어요. 로그는 다른 과목에서 진짜 자주 불려 나와요."
+  link: /studies/college-math/function/
+  link_label: 함수
+- q: "다른 과목이랑도 이어져요?"
+  a: "덧셈정리, 복소수 곱, 회전 행렬이 사실 같은 얘기예요. 각을 더하면 회전이 합쳐진다는 거요."
+  link: /studies/linear-algebra/rotation-bridge/
+  link_label: "덧셈정리 ↔ 회전 행렬"
+chats:
+- q: "대학수학은 뭘 다뤄요?"
+  a: "함수, 지수와 로그, 삼각함수, 복소수요. 미적분이랑 선형대수로 가기 전에 깔아 두는 기초예요."
+  link: /studies/college-math/
+  link_label: 로드맵
+  next:
+  - q: "고등학교 때 수학을 못했는데요"
+    a: "그래서 쉬운 말로 다시 썼어요. 확인 문제부터 풀어 보면 어디가 비었는지 바로 보여요."
+  - q: "혼자 공부한 거예요?"
+    a: "네, 혼자 정리했어요. 문서마다 파이썬 코드로 직접 확인도 해 놨어요."
+- q: "로그는 왜 배워요?"
+  a: "곱셈을 덧셈으로 바꿔 주고, 엄청 큰 수를 다룰 수 있게 해 줘요. 지진 규모, 소리 크기(데시벨)가 다 로그 스케일이에요."
+  link: /studies/college-math/logarithm/
+  link_label: 로그
+  next:
+  - q: "컴공에서도 써요?"
+    a: "이분 탐색이 log n번 만에 끝나요. 100만 개도 20번 정도면 찾아요. 2를 20번 곱하면 100만이 조금 넘거든요."
+  - q: "로그 스케일 그래프는요?"
+    a: "축의 한 칸이 '더하기 1'이 아니라 '곱하기 10'이에요. 그래서 엄청 차이 나는 값을 한 그림에 담을 수 있어요."
+    link: /studies/college-math/log-scale/
+    link_label: "로그 스케일"
+- q: "라디안이 뭐예요?"
+  a: "반지름만큼의 호를 잡았을 때의 각이 1라디안이에요. 한 바퀴는 2π라디안이고요."
+  link: /studies/college-math/radian/
+  link_label: "각과 라디안"
+  next:
+  - q: "도 쓰면 안 돼요?"
+    a: "계산은 돼요. 근데 미분할 때 라디안이어야 sin x의 미분이 cos x로 딱 떨어져요. 도로 재면 π/180이 계속 따라붙어요."
+- q: "오일러 공식이 뭐예요?"
+  a: "e^(iθ) = cos θ + i sin θ요. θ에 π를 넣으면 e^(iπ) + 1 = 0이 나와요."
+  link: /studies/college-math/euler-formula/
+  link_label: "오일러 공식"
+  next:
+  - q: "그게 왜 쓸모 있어요?"
+    a: "회전을 곱셈으로 바꿔 줘요. 신호 처리에서 사인파를 다룰 때 계속 나와요."
+    link: /studies/college-math/sinusoid/
+    link_label: 사인파
+  - q: "허수가 진짜 있어요?"
+    a: "제곱해서 −1이 되는 수를 하나 정해 두고 쓰는 거예요. 평면 위 점으로 그리면 회전이랑 딱 맞아서 아주 실용적이에요."
+    link: /studies/college-math/complex-numbers/
+    link_label: 복소수
+- q: "x²이랑 2ˣ는 뭐가 달라요?"
+  a: "x²은 밑이 변하고, 2ˣ는 지수가 변해요. 처음엔 비슷해 보여도 결국 2ˣ가 무조건 이겨요."
+  link: /studies/college-math/power-vs-exponential/
+  link_label: "거듭제곱함수와 지수함수 비교"
+  next:
+  - q: "알고리즘이랑 무슨 상관이에요?"
+    a: "O(n²)이랑 O(2ⁿ)의 차이예요. n이 50이면 2,500번 대 약 1,126조 번이에요."
+- q: 진법은요?
+  a: "컴퓨터는 2진법, 사람은 10진법, 프로그래머는 16진법을 자주 써요. 16진법 한 자리가 2진법 네 자리랑 딱 맞아서요."
+  link: /studies/college-math/positional-notation/
+  link_label: "진법과 자릿수"
+  next:
+  - q: "색깔 코드도 16진법이에요?"
+    a: "네. #FF0000이면 빨강 255, 초록 0, 파랑 0이에요. 두 자리씩 끊어 읽어요."
+- q: 등비급수는요?
+  a: "1 + 1/2 + 1/4 + …는 끝없이 더해도 2에 다가가요. 공비의 절댓값이 1보다 작으면 첫째항 ÷ (1 − 공비)로 합이 나와요."
+  link: /studies/college-math/geometric-series/
+  link_label: 등비급수
+  next:
+  - q: "공비가 1보다 크면요?"
+    a: "끝없이 커져요. 합이 없어요."
+- q: "삼각함수 공식이 너무 많아요"
+  a: "덧셈정리 하나만 확실히 알면 나머지는 거의 다 거기서 나와요."
+  link: /studies/college-math/trig-identities/
+  link_label: "삼각함수 항등식"
+  next:
+  - q: "덧셈정리는 어떻게 외워요?"
+    a: "외우기보다 회전으로 보세요. 두 번 돌리는 건 각을 더해서 한 번 돌리는 거랑 같아요. 그걸 식으로 쓴 게 덧셈정리예요."
+    link: /studies/linear-algebra/rotation-bridge/
+    link_label: "덧셈정리 ↔ 회전 행렬"
+talk:
+- text: "f(x − 3)은 그래프를 오른쪽으로 옮겨요. 빼기라서 왼쪽 같은데, x = 3일 때 원래 f(0)이 나오거든요."
+  link: /studies/college-math/function-transformation/
+  link_label: "함수의 변환과 합성"
+- text: "f⁻¹(x)를 1/f(x)로 읽으면 안 돼요. 그냥 '되돌리는 함수'라는 이름표예요."
+  link: /studies/college-math/inverse-function/
+  link_label: 역함수
+- text: "log(x + y)는 log x + log y가 아니에요. 로그가 바꿔 주는 건 곱이에요."
+  link: /studies/college-math/logarithm/
+  link_label: 로그
+- text: "파이썬에서 math.sin(30) 하면 0.5가 안 나와요. 30라디안이라 −0.988이에요. 에러도 안 나서 한참 뒤에 발견하는 버그예요."
+  link: /studies/college-math/radian/
+  link_label: "각과 라디안"
+- text: "지수적 성장이 처음부터 빠른 건 아니에요. 1.01ˣ는 x = 100일 때 겨우 2.7인데, x = 917쯤에서 10x를 따라잡고 그 뒤로는 끝없이 벌어져요."
+  link: /studies/college-math/exponential-function/
+  link_label: 지수함수
+- text: "8을 2진수로 쓰면 1000, 네 자리예요. lg 8은 3이니까 하나 더 필요한 거죠."
+  link: /studies/college-math/positional-notation/
+  link_label: "진법과 자릿수"
+- text: "√(−4) × √(−9)는 6이 아니라 −6이에요. 2i × 3i거든요."
+  link: /studies/college-math/complex-numbers/
+  link_label: 복소수
+- text: "로그 그래프에서 직선이라고 비례하는 건 아니에요. 로그-로그면 거듭제곱, 반로그면 지수예요."
+  link: /studies/college-math/log-scale/
+  link_label: "로그 스케일"
+- text: "근의 공식을 코드에 그대로 넣으면 틀릴 때가 있어요. x² + 10⁸x + 1 = 0의 작은 근이 25%나 어긋나요."
+  link: /studies/college-math/polynomial/
+  link_label: "다항식과 방정식"
+- text: "sin(α + β)는 sin α + sin β가 아니에요. α = β = π/2만 넣어 봐도 0이랑 2로 달라요."
+  link: /studies/college-math/trig-identities/
+  link_label: "삼각함수 항등식"
+- text: "2를 10번 곱하면 1,024예요. 그래서 컴퓨터에서 1K가 1,000일 때도 있고 1,024일 때도 있어요."
+  link: /studies/college-math/positional-notation/
+  link_label: "진법과 자릿수"
+- text: "역함수는 거꾸로 돌리는 함수예요. 그래프로는 y = x 직선에 비춰 본 모양이고요."
+  link: /studies/college-math/inverse-function/
+  link_label: 역함수
+- text: "코사인 법칙은 피타고라스 정리의 확장판이에요. 각이 90도면 원래 피타고라스로 돌아와요."
+  link: /studies/college-math/triangle-laws/
+  link_label: "사인 법칙과 코사인 법칙"
+- text: "극좌표는 '얼마나 멀리, 어느 방향'으로 위치를 말해요. 레이더 화면이 딱 그래요."
+  link: /studies/college-math/polar-parametric/
+  link_label: "극좌표와 매개변수 곡선"

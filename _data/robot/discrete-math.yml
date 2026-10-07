@@ -1,0 +1,163 @@
+# 홍철's lines for the discrete-math course pages. Format: _data/robot/README.md
+greeting:
+- "이산수학이에요. 혼자 공부하면서 정리했어요. 알고리즘 공부의 바닥을 다지는 과목이에요."
+- "이산수학 페이지예요. 배경 선들이 하나씩 이어지면서 트리를 만들어요."
+- "여긴 이산수학이에요. 컴공의 기초 체력 같은 과목이에요."
+- "이산수학 노트예요. 증명이 막막하면 귀납법부터 같이 봐요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "논리와 증명, 집합·함수·관계, 귀납과 재귀, 셈, 점화식, 정수론, 그래프 순서예요. 대학수학의 로그랑 수열은 먼저 보고 오시면 편해요."
+  link: /studies/discrete-math/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "증명을 처음 써 보면 1단원이 제일 고비예요. 무거운 개념도 {heavy}개라 많은 편이에요."
+  link: /studies/discrete-math/proof-methods/
+  link_label: "추론 규칙과 증명 방법"
+- q: "배워서 어디에 써요?"
+  a: "코드에 바로 써요. 꼬인 조건문을 드모르간으로 풀고, 경우의 수로 브루트포스가 될지 판단하고, 반복문이 맞는지 귀납법으로 보여요. RSA 암호도 여기서 나와요."
+- q: "제일 중요한 건 뭐예요?"
+  a: "'수학적 귀납법'이요. 문서 여섯 개가 이걸 깔고 있고, 알고리즘의 루프 불변식이랑도 같은 얘기예요."
+  link: /studies/discrete-math/induction/
+  link_label: "수학적 귀납법"
+- q: "다른 과목이랑도 이어져요?"
+  a: "알고리즘이랑 제일 많이 이어져요. 귀납법은 루프 불변식으로, 추이 폐포는 플로이드–워셜로, 위상 정렬은 DP 계산 순서로 가요."
+  link: /studies/algorithms/induction-loop-invariant/
+  link_label: "귀납법 ↔ 루프 불변식"
+chats:
+- q: "이산수학은 뭐예요?"
+  a: "끊어져 있는 것들, 그러니까 정수, 집합, 그래프 같은 걸 다루는 수학이에요."
+  next:
+  - q: "제일 중요한 건요?"
+    a: "증명이요. 특히 수학적 귀납법은 알고리즘이 맞다는 걸 보이는 루프 불변식이랑 바로 이어져요."
+    link: /studies/algorithms/induction-loop-invariant/
+    link_label: "귀납법 ↔ 루프 불변식"
+  - q: "프로그래밍이랑 무슨 상관이에요?"
+    a: "논리는 조건문, 집합은 자료구조, 그래프는 네트워크와 길 찾기, 정수론은 암호예요. 거의 다 쓰여요."
+- q: "귀납법이 뭐예요?"
+  a: "도미노예요. 첫 번째가 넘어지고, k번째가 넘어지면 k+1번째도 넘어진다는 걸 보이면 다 넘어져요."
+  link: /studies/discrete-math/induction/
+  link_label: "수학적 귀납법"
+  next:
+  - q: "강한 귀납법은요?"
+    a: "k+1을 보일 때 바로 앞 하나가 아니라 앞의 전부를 가정해도 돼요. 소인수분해가 있다는 증명에 딱이에요."
+  - q: "구조적 귀납법은요?"
+    a: "트리나 리스트처럼 재귀로 정의한 것에 쓰는 귀납법이에요. 숫자 대신 '만드는 규칙'을 따라 올라가요."
+    link: /studies/discrete-math/recursive-definitions/
+    link_label: "재귀적 정의와 구조적 귀납법"
+- q: "비둘기집 원리요?"
+  a: "비둘기 10마리가 집 9개에 들어가면 어딘가엔 두 마리 이상 있어요. 당연해 보이는데 의외의 걸 증명해요."
+  link: /studies/discrete-math/pigeonhole/
+  link_label: "비둘기집 원리"
+  next:
+  - q: "예를 들어 주세요"
+    a: "사람이 367명 있으면 생일이 같은 두 사람이 무조건 있어요. 2월 29일까지 쳐도 날짜는 366개뿐이니까요."
+- q: "RSA는 어떻게 돼요?"
+  a: "큰 소수 두 개를 곱하기는 쉽고, 곱한 수를 다시 쪼개기는 엄청 어렵다는 걸 이용해요."
+  link: /studies/discrete-math/rsa/
+  link_label: "RSA 암호"
+  next:
+  - q: "어떤 수학이 들어가요?"
+    a: "나머지 계산(모듈러 산술), 오일러 정리, 모듈러 역원이요. 다 이산수학 노트에 있어요."
+    link: /studies/discrete-math/fermat-euler/
+    link_label: "페르마 소정리와 오일러 정리"
+  - q: "소수는 끝없이 있어요?"
+    a: "네. 유클리드가 귀류법으로 보였어요. 소수가 유한하다고 치고 다 곱해서 1을 더하면, 그 수는 어떤 소수로도 안 나눠떨어지거든요."
+    link: /studies/discrete-math/primes/
+    link_label: "소수와 산술의 기본정리"
+- q: "그래프 이론 얘기 해 주세요"
+  a: "점과 선으로 관계를 그려요. 지하철 노선도, 친구 관계, 웹 링크가 다 그래프예요."
+  link: /studies/discrete-math/graph-basics/
+  link_label: "그래프의 기초"
+  next:
+  - q: "오일러 경로는요?"
+    a: "모든 선을 딱 한 번씩 지나는 길이에요. 연결된 그래프에서 차수가 홀수인 점이 0개나 2개일 때만 있어요. 쾨니히스베르크 다리 문제가 그래서 안 풀려요."
+    link: /studies/discrete-math/euler-hamilton/
+    link_label: "오일러 경로와 해밀턴 경로"
+    next:
+    - q: "해밀턴 경로는요?"
+      a: "모든 점을 한 번씩 지나는 길이에요. 오일러 경로처럼 간단한 조건이 없어요. 있는지 판정하는 게 NP-완전 문제예요."
+  - q: "트리는 그래프예요?"
+    a: "네. 사이클 없이 연결된 그래프예요. 점이 n개면 선은 꼭 n−1개고요."
+    link: /studies/discrete-math/trees/
+    link_label: 트리
+- q: "경우의 수가 어려워요"
+  a: "순서가 중요하면 순열, 아니면 조합, 같은 걸 여러 번 고를 수 있으면 중복조합이에요. 그 셋만 먼저 갈라 보세요."
+  link: /studies/discrete-math/counting-formula-choice/
+  link_label: "순열·조합·중복조합 비교"
+  next:
+  - q: 포함-배제는요?
+    a: "겹친 걸 두 번 셌으면 한 번 빼고, 세 번 겹친 건 다시 더해요."
+    link: /studies/discrete-math/inclusion-exclusion/
+    link_label: "포함-배제 원리"
+  - q: 생성함수는요?
+    a: "수열을 다항식의 계수로 넣어서 다루는 방법이에요. 곱하면 경우의 수가 알아서 합쳐져요."
+    link: /studies/discrete-math/generating-functions/
+    link_label: 생성함수
+- q: "점근 표기 헷갈려요"
+  a: "큰 O는 '이것보다 빨리 자라지 않는다'는 위쪽 한계예요. n이 충분히 크면 상수배 차이는 무시해요."
+  link: /studies/discrete-math/asymptotic-notation/
+  link_label: "점근 표기"
+  next:
+  - q: "마스터 정리는요?"
+    a: "T(n) = aT(n/b) + f(n) 꼴 점화식을 세 경우로 바로 풀어요. 병합 정렬은 T(n) = 2T(n/2) + n이라 n log n이에요."
+    link: /studies/discrete-math/master-theorem/
+    link_label: "마스터 정리"
+- q: "대각선 논법이 뭐예요?"
+  a: "실수가 자연수보다 많다는 걸 보여요. 목록을 다 적었다고 치고, n번째 수의 n번째 자리를 바꾼 새 수를 만들면 그 수는 목록에 없거든요."
+  link: /studies/discrete-math/countability/
+  link_label: "가산 집합과 대각선 논법"
+  next:
+  - q: "무한끼리도 크기가 달라요?"
+    a: "네. 자연수와 정수와 유리수는 개수가 같은데(가산), 실수는 그보다 많아요."
+- q: "논리 문제는 어떻게 풀어요?"
+  a: "진리표를 그리면 거의 다 풀려요. 변수가 많으면 동치 법칙으로 식을 줄이고요."
+  link: /studies/discrete-math/logical-equivalence/
+  link_label: "논리적 동치와 정규형"
+  next:
+  - q: "조건문 p → q가 헷갈려요"
+    a: "p가 거짓이면 q가 뭐든 참이에요. '비가 오면 우산을 쓴다'는 비가 안 온 날엔 어긴 게 아니니까요."
+    link: /studies/discrete-math/propositional-logic/
+    link_label: "명제와 논리 연산"
+talk:
+- text: "'p이면 q'는 p가 거짓이면 그냥 참이에요. '1 = 2이면 달은 치즈다'도 논리적으론 참이에요."
+  link: /studies/discrete-math/propositional-logic/
+  link_label: "명제와 논리 연산"
+- text: "'비 오면 땅이 젖는다'가 맞아도 '땅이 젖었으면 비가 왔다'는 아닐 수 있어요. 스프링클러가 있잖아요."
+  link: /studies/discrete-math/logical-equivalence/
+  link_label: "논리적 동치"
+- text: "예를 아무리 많이 확인해도 증명은 아니에요. n² + n + 41은 0부터 39까지 다 소수인데 40에서 깨져요."
+  link: /studies/discrete-math/proof-methods/
+  link_label: "증명 방법"
+- text: "∅랑 {∅}는 달라요. 빈 상자랑, 빈 상자가 하나 든 상자 차이예요."
+  link: /studies/discrete-math/sets/
+  link_label: 집합
+- text: "귀납 가정이 순환 논증 같죠? 사실은 'P(n)이면 P(n+1)'만 보이는 거라, 기저가 있어야 도미노가 넘어가요."
+  link: /studies/discrete-math/induction/
+  link_label: "수학적 귀납법"
+- text: "5명 중 2명 뽑기는 20가지가 아니라 10가지예요. 20은 순서까지 센 거예요."
+  link: /studies/discrete-math/permutations-combinations/
+  link_label: "순열과 조합"
+- text: "O가 작다고 늘 빠른 건 아니에요. n이 100보다 작으면 n²이 100n보다 작거든요."
+  link: /studies/discrete-math/asymptotic-notation/
+  link_label: "점근 표기"
+- text: "−7 mod 3은 수학에선 2예요. 파이썬도 2인데, C랑 Java는 −1을 줘서 헷갈려요."
+  link: /studies/discrete-math/modular-arithmetic/
+  link_label: "나눗셈과 합동"
+- text: "교과서 그대로 짠 RSA는 안전하지 않아요. 같은 평문이 늘 같은 암호문이 되거든요. 실제론 패딩을 붙여요."
+  link: /studies/discrete-math/rsa/
+  link_label: "RSA 암호"
+- text: "정점 n개에 간선 n − 1개라고 다 트리는 아니에요. 연결돼 있거나 사이클이 없어야 해요."
+  link: /studies/discrete-math/trees/
+  link_label: 트리
+- text: "유클리드 호제법은 2천 년 넘게 쓰인 알고리즘이에요. 큰 수를 작은 수로 나눈 나머지로 계속 바꾸면 최대공약수가 나와요."
+  link: /studies/discrete-math/gcd-euclid/
+  link_label: "최대공약수와 유클리드 호제법"
+- text: "점이 n개인 트리의 선은 언제나 n−1개예요. 하나만 더 그으면 사이클이 생겨요."
+  link: /studies/discrete-math/trees/
+  link_label: 트리
+- text: "중국인의 나머지 정리로 '3으로 나누면 2, 5로 나누면 3'인 수를 찾을 수 있어요. 답은 8이에요. 15를 더해도 되고요."
+  link: /studies/discrete-math/modular-inverse-crt/
+  link_label: "모듈러 역원과 중국인의 나머지 정리"
+- text: "부분순서가 있는 일들을 한 줄로 세우는 게 위상 정렬이에요. 수강 신청할 때 선수 과목 순서 정하는 거요."
+  link: /studies/discrete-math/partial-orders/
+  link_label: "부분순서와 위상 정렬"

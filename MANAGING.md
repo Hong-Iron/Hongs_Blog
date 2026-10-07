@@ -223,13 +223,16 @@ What shows when someone pastes a link into KakaoTalk, iMessage, Slack, etc.
 
 ## 홍철 (the corner robot)
 
-The pixel face in the bottom-right corner opens a speech bubble with two
-buttons: 질문하기 (preset questions) and 대화하기 (a random line, no repeats
-until the pool runs out).
+The pixel face in the bottom-right corner opens a speech bubble with three
+buttons: 질문하기 (preset questions), 대화하기 (conversation threads where the
+visitor picks what to say and each answer offers the next lines), and
+아무 얘기나 (a random line, no repeats until the pool runs out).
 
-- **What it says:** `_data/robot.yml`, one block per course slug plus
-  `default` for other pages. `{concepts}`, `{heavy}` etc. are filled from the
-  course numbers, so they stay right after a re-export.
+- **What it says:** `_data/robot/<course-slug>.yml`, plus `default.yml` for
+  other pages; on course pages the course's lines mix with the default ones.
+  The format is in `_data/robot/README.md`. The data reaches the browser as
+  `assets/robot-data.json`, fetched the first time the bubble opens.
+  `{concepts}`, `{heavy}` etc. are filled from the course numbers.
 - **The face:** a 24 × 23 pixel grid in `scripts/robot_face.py`; edit the
   grid and run `python3 scripts/robot_face.py` to rewrite
   `_includes/robot-face.svg`. Blink and talk frames are swapped in

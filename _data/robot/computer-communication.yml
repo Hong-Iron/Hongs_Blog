@@ -1,0 +1,185 @@
+# 홍철's lines for the computer-communication course pages. Format: _data/robot/README.md
+greeting:
+- "컴퓨터 통신이에요. 이번 학기 수업이에요. 링크 한 가닥에서 시작해서 인터넷까지 쌓아 올리는 과목이에요."
+- "컴퓨터 통신 페이지예요. 배경에 패킷이 돌아다니는 거 보이세요?"
+- "여긴 컴퓨터 통신이에요. 인터넷이 어떻게 돌아가는지 쌓아 올리는 과목이에요."
+- "컴퓨터 통신 노트예요. 계산 문제 막히면 저한테 물어보세요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "1회 '점대점 링크'부터요. 링크, 스위칭 네트워크, 인터네트워크, 계층이랑 프로토콜, 데이터 링크 순서로 한 층씩 올라가요."
+  link: /studies/computer-communication/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "개념은 쉬운데 계산에서 많이 막혀요. 선에 싣는 시간(L/R)이랑 신호가 건너가는 시간(거리/속도)만 안 섞으면 돼요. 무거운 건 패킷 스위칭, 통계적 다중화, 소요시간 분석 세 개예요."
+  link: /studies/computer-communication/timing-analysis/
+  link_label: "소요시간 분석"
+- q: "배워서 어디에 써요?"
+  a: "인터넷이 딱 이렇게 돌아가요. 파일을 패킷으로 쪼개면 왜 더 빨리 가는지, 회선 속도를 올려도 왜 지연은 그대로인지 계산으로 보여 줄 수 있어요."
+  link: /studies/computer-communication/packet-switching/
+  link_label: "패킷 스위칭"
+- q: "제일 중요한 건 뭐예요?"
+  a: "'전송 속도와 대역폭'이요. 문서 10개가 이걸 깔고 있어요."
+  link: /studies/computer-communication/rate-and-bandwidth/
+  link_label: "전송 속도와 대역폭"
+- q: "다른 과목이랑도 이어져요?"
+  a: "수학이 꽤 나와요. 동시 사용자 수는 이항분포고, 주파수 나누기는 삼각함수 곱셈이고, 다 직접 잇는 링크 수 n(n−1)/2는 조합이에요."
+chats:
+- q: "인터넷은 어떻게 이어져 있어요?"
+  a: "작은 네트워크들을 라우터로 이어 붙인 '네트워크의 네트워크'예요."
+  link: /studies/computer-communication/internetwork/
+  link_label: 인터네트워크
+  next:
+  - q: "라우터는 뭐 해요?"
+    a: "패킷의 목적지 주소를 보고 다음에 어느 쪽으로 보낼지 정해요. 그 길을 정하는 게 라우팅이에요."
+    link: /studies/computer-communication/routing/
+    link_label: 라우팅
+  - q: "주소는 어떻게 붙여요?"
+    a: "노드마다 주소가 있어요. 한 명에게 보내면 유니캐스트, 모두에게 보내면 브로드캐스트, 일부 묶음에게 보내면 멀티캐스트예요."
+    link: /studies/computer-communication/addressing/
+    link_label: "주소 지정"
+  - q: "집까지는 어떻게 와요?"
+    a: "마지막 구간을 가입자 선로라고 해요. 전화선(DSL), 케이블, 광케이블, 무선 같은 게 있어요."
+    link: /studies/computer-communication/last-mile-links/
+    link_label: "가입자 선로"
+- q: "패킷 스위칭이랑 회선 스위칭 차이가 뭐예요?"
+  a: "회선은 전화처럼 길을 미리 잡아 두고 혼자 써요. 패킷은 데이터를 잘게 쪼개서 길을 다 같이 나눠 써요."
+  link: /studies/computer-communication/contrast--circuit-switching--packet-switching/
+  link_label: "회선 스위칭과 패킷 스위칭 비교"
+  next:
+  - q: "어느 게 더 좋아요?"
+    a: "몰려왔다 쉬었다 하는 데이터에는 패킷이 유리해요. 내가 쉬는 동안 남이 쓸 수 있으니까요. 대신 줄 서서 기다리는 지연이 생겨요."
+    link: /studies/computer-communication/bursty-traffic/
+    link_label: "버스티 트래픽"
+    next:
+    - q: "몰려왔다 쉬었다 하는 게 뭐예요?"
+      a: "웹 서핑이 그래요. 페이지 열 때만 확 받고, 읽는 동안은 거의 안 써요. 이런 걸 버스티하다고 해요."
+  - q: "그럼 전화는 왜 회선이었어요?"
+    a: "통화는 계속 일정한 양이 흐르고, 끊기면 안 되니까요. 자리를 미리 잡아 두는 게 맞았어요."
+- q: "지연은 뭐로 이뤄져요?"
+  a: "싣는 시간(전송 지연), 날아가는 시간(전파 지연), 줄 서는 시간(큐잉 지연), 그리고 처리 시간이요."
+  link: /studies/computer-communication/latency/
+  link_label: 소요시간
+  next:
+  - q: "전송 지연이랑 전파 지연이 헷갈려요"
+    a: "전송은 패킷 길이 ÷ 링크 속도(L/R), 전파는 거리 ÷ 신호 속도예요. 차 여러 대가 톨게이트를 다 빠져나가는 시간이랑, 고속도로를 달리는 시간의 차이로 보면 돼요."
+    link: /studies/computer-communication/timing-analysis/
+    link_label: "소요시간 분석"
+    next:
+    - q: "숫자로 한번 보여 주세요"
+      a: "1,000바이트 패킷을 1 Mbps로 보내면 8,000비트 ÷ 1,000,000 = 8 ms 동안 실어요. 거리가 2,000 km면 빛의 2/3 속도로 약 10 ms 더 날아가고요."
+  - q: "대역폭-지연 곱이 뭐예요?"
+    a: "선 위에 한 번에 떠 있을 수 있는 비트 수예요. 파이프의 부피라고 보면 돼요. 그만큼은 응답을 기다리지 않고 보내야 선이 놀지 않아요."
+    link: /studies/computer-communication/bandwidth-delay-product/
+    link_label: "대역폭-지연 곱"
+- q: "계층은 왜 나눠요?"
+  a: "복잡한 일을 층으로 쪼개면 각 층은 바로 아래층이 주는 기능만 쓰면 돼요. 한 층을 바꿔도 다른 층은 그대로고요."
+  link: /studies/computer-communication/layering/
+  link_label: 계층화
+  next:
+  - q: "OSI 7계층 외워야 해요?"
+    a: "아래부터 물리, 데이터 링크, 네트워크, 전송, 세션, 표현, 응용이에요. 실제 인터넷은 이보다 단순한 구조로 돌아가요."
+    link: /studies/computer-communication/osi-reference-model/
+    link_label: "OSI 참조 모델"
+  - q: "캡슐화가 뭐예요?"
+    a: "위층 데이터를 아래층이 봉투에 넣고 자기 헤더를 붙여요. 받는 쪽에선 한 겹씩 벗기고요. 택배 상자 안에 상자 넣는 거랑 비슷해요."
+    link: /studies/computer-communication/encapsulation/
+    link_label: 캡슐화
+  - q: 프로토콜은요?
+    a: "같은 층끼리 지키기로 한 약속이에요. 무슨 메시지를 어떤 순서로 주고받을지요."
+    link: /studies/computer-communication/protocol/
+    link_label: 프로토콜
+- q: "선 하나를 여럿이 어떻게 같이 써요?"
+  a: "다중화요. 시간으로 칸을 나누면 시분할(TDM), 주파수로 나누면 주파수 분할(FDM)이에요."
+  link: /studies/computer-communication/multiplexing/
+  link_label: 다중화
+  next:
+  - q: "FDM은 어디서 써요?"
+    a: "라디오가 대표적이에요. 방송국마다 다른 주파수를 써서 한 공기 속을 같이 지나가요."
+    link: /studies/computer-communication/frequency-division-multiplexing/
+    link_label: "주파수 분할 다중화"
+  - q: "통계적 다중화는요?"
+    a: "칸을 고정으로 나눠 주지 않고, 보낼 게 있는 사람이 그때그때 쓰는 방식이에요. 대신 누가 보냈는지 알아야 해서 패킷마다 주소를 붙여요."
+    link: /studies/computer-communication/statistical-multiplexing/
+    link_label: "통계적 다중화"
+    next:
+    - q: "그래서 사람을 더 받을 수 있어요?"
+      a: "네. 다들 동시에 보내진 않으니까요. 몇 명이 동시에 보낼지는 이항분포로 계산해요."
+- q: "무선은 어떻게 보내요?"
+  a: "전파에 데이터를 싣는 변조를 해요. 진폭, 주파수, 위상 중 무엇을 바꾸느냐로 방식이 갈려요."
+  link: /studies/computer-communication/signal-and-modulation/
+  link_label: "신호와 변조"
+  next:
+  - q: "위성 인터넷은 느려요?"
+    a: "정지궤도 위성은 약 3만 6천 km 위에 있어요. 한 번 올라갔다 내려오는 데만 0.2초 넘게 걸려요."
+    link: /studies/computer-communication/satellite-systems/
+    link_label: 위성통신
+  - q: 휴대폰은요?
+    a: "지역을 칸(셀)으로 나누고 칸마다 기지국을 둬요. 멀리 떨어진 칸끼리는 같은 주파수를 다시 써요."
+    link: /studies/computer-communication/cellular-networks/
+    link_label: 이동통신
+  - q: "와이파이도 같은 원리예요?"
+    a: "여러 기기가 같은 매체를 나눠 쓰는 다중 접근 링크예요. 그래서 동시에 말하면 부딪히고, 그걸 피하는 규칙이 필요해요."
+    link: /studies/computer-communication/multiple-access-link/
+    link_label: "다중 접근 링크"
+- q: "처리량이랑 대역폭은 달라요?"
+  a: "대역폭(전송 속도)은 링크가 낼 수 있는 최대치고, 처리량은 실제로 끝에서 끝까지 전달된 양이에요."
+  link: /studies/computer-communication/throughput/
+  link_label: 처리량
+  next:
+  - q: "그럼 처리량은 뭐가 정해요?"
+    a: "길 중에 가장 느린 링크요. 병목이라고 하죠."
+- q: "이 수업 어때요?"
+  a: "이번 학기 수업이에요. 개념은 쉬운데 계산에서 단위를 꼭 맞춰야 해요."
+  next:
+  - q: "단위가 왜요?"
+    a: "속도는 비트, 파일 크기는 바이트로 말할 때가 많아요. 그리고 전송 속도의 k는 1000이에요. 1024가 아니라요."
+  - q: "시험 팁 있어요?"
+    a: "선에 싣는 시간이랑 건너가는 시간을 따로 적고 더하세요. 둘을 섞는 실수가 제일 많아요."
+    link: /studies/computer-communication/timing-analysis/
+    link_label: "소요시간 분석"
+talk:
+- text: "'직접 링크'랑 '점대점 링크'는 다른 말이에요. 중간에 중계하는 게 없으면 직접, 끝이 딱 둘이면 점대점이에요."
+  link: /studies/computer-communication/point-to-point-link/
+  link_label: "점대점 링크"
+- text: "인터넷 속도가 빨라져도 신호가 더 빨리 달리는 건 아니에요. 싣는 속도가 빨라지는 거라, 400 km 건너는 2 ms는 그대로예요."
+  link: /studies/computer-communication/rate-and-bandwidth/
+  link_label: "전송 속도와 대역폭"
+- text: "회선을 잡는다고 전선 한 가닥을 통째로 쓰는 게 아니에요. 1.536 Mbps 링크 하나에 64 kbps 회선 24개가 같이 지나가요."
+  link: /studies/computer-communication/circuit-switching/
+  link_label: "회선 스위칭"
+- text: "스위치는 패킷 앞부분이 오자마자 넘기지 않아요. 다 받고 나서 보내요. 그래서 링크마다 L/R이 붙어요."
+  link: /studies/computer-communication/packet-switching/
+  link_label: "패킷 스위칭"
+- text: "시분할 다중화는 칸 순서가 정해져 있어서 주소를 안 붙여요. 주소 붙이는 건 통계적 다중화예요."
+  link: /studies/computer-communication/time-division-multiplexing/
+  link_label: "시분할 다중화"
+- text: "통계적 다중화가 늘 좋은 건 아니에요. 다들 꽉 채워 보내면 이득은 없고 주소만큼 손해예요."
+  link: /studies/computer-communication/statistical-multiplexing/
+  link_label: "통계적 다중화"
+- text: "TCP랑 UDP는 생긴 건 비슷한데 하는 일이 달라요. TCP는 잃어버린 걸 다시 보내고, UDP는 그냥 가요."
+  link: /studies/computer-communication/encapsulation/
+  link_label: 캡슐화
+- text: "파일을 패킷으로 나누면 스위치가 패킷 하나씩 넘겨요. 계산해 보면 10,704 ms가 5,105 ms로 절반쯤 줄어요."
+  link: /studies/computer-communication/timing-analysis/
+  link_label: "소요시간 분석"
+- text: "기기 여러 대가 선 하나에 붙어 있어도 직접 연결이에요. 선은 그냥 매체고, 중계하는 노드가 없으니까요."
+  link: /studies/computer-communication/multiple-access-link/
+  link_label: "다중 접근 링크"
+- text: "다중화한다고 조각마다 이름표가 필요한 건 아니에요. 시분할은 칸 순서, 주파수 분할은 대역이 곧 이름표예요."
+  link: /studies/computer-communication/multiplexing/
+  link_label: 다중화
+- text: "OSI는 7층인데 실제 인터넷은 그보다 훨씬 단순하게 쌓여 있어요."
+  link: /studies/computer-communication/osi-reference-model/
+  link_label: "OSI 참조 모델"
+- text: "정지궤도 위성은 지구 자전이랑 같은 속도로 돌아서, 땅에서 보면 하늘에 멈춰 있어요."
+  link: /studies/computer-communication/satellite-systems/
+  link_label: 위성통신
+- text: "파이프에 물을 가득 채우려면 대역폭 × 지연만큼 보내 놔야 해요. 대역폭-지연 곱이에요."
+  link: /studies/computer-communication/bandwidth-delay-product/
+  link_label: "대역폭-지연 곱"
+- text: "택배 상자 안에 상자, 그 안에 또 상자. 캡슐화가 딱 그래요."
+  link: /studies/computer-communication/encapsulation/
+  link_label: 캡슐화
+- text: "회선 스위칭은 전화, 패킷 스위칭은 우편이랑 비슷해요. 물론 비유라서 딱 맞진 않아요."
+  link: /studies/computer-communication/contrast--circuit-switching--packet-switching/
+  link_label: "회선 스위칭과 패킷 스위칭"

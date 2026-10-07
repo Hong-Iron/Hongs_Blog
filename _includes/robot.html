@@ -1,8 +1,9 @@
 {%- comment -%}
   홍철, the corner robot: a pixel face drawn after the profile photo
   (_includes/robot-face.svg, made by scripts/robot_face.py). Lines live in
-  _data/robot.yml (one block per course slug, "default" elsewhere);
-  assets/js/robot.js runs the speech bubble.
+  _data/robot/<course-slug>.yml ("default" elsewhere) and reach the page as
+  assets/robot-data.json, loaded on first open; assets/js/robot.js runs the
+  speech bubble. Only the course key and its numbers are inlined here.
 {%- endcomment -%}
 {%- assign robot_key = page.course_slug | default: "default" -%}
 {%- assign robot_script = site.data.robot[robot_key] | default: site.data.robot.default -%}
@@ -15,7 +16,7 @@
 {%- endfor -%}{%- endfor -%}
 {%- if robot_script -%}
 <div class="robot" data-robot data-base="{{ site.baseurl }}">
-  <script type="application/json" class="robot__data">{"course": {{ page.course | default: "" | jsonify }}, "stats": {{ robot_stats | jsonify }}, "site": {"courses": {{ robot_courses }}, "notes": {{ robot_notes }}}, "script": {{ robot_script | jsonify }}}</script>
+  <script type="application/json" class="robot__data">{"key": {% if site.data.robot[robot_key] %}{{ robot_key | jsonify }}{% else %}"default"{% endif %}, "course": {{ page.course | default: "" | jsonify }}, "stats": {{ robot_stats | jsonify }}, "site": {"courses": {{ robot_courses }}, "notes": {{ robot_notes }}}}</script>
   <div class="robot__dialog" role="dialog" aria-label="홍철과 대화" tabindex="-1" hidden>
     <span class="robot__name">홍철{% if page.course %}<small> · {{ page.course }}</small>{% endif %}</span>
     <button type="button" class="robot__close" aria-label="닫기">&times;</button>

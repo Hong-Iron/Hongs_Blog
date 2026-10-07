@@ -1,0 +1,160 @@
+# 홍철's lines for the linear-algebra course pages. Format: _data/robot/README.md
+greeting:
+- "선형대수학이에요. 혼자 공부하면서 정리했어요. 벡터에서 시작해서 특잇값 분해까지 가요."
+- "선형대수학 페이지예요. 내릴수록 배경 격자가 비스듬히 휘어요."
+- "여긴 선형대수학이에요. 숫자 표로 세상을 다루는 과목이에요."
+- "선형대수 노트예요. 행렬이 왜 그렇게 곱하는지 궁금했다면 잘 왔어요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "벡터, 행렬과 연립방정식, 벡터공간과 선형변환, 직교성, 고윳값과 분해, 응용 순서예요. 앞뒤가 13단계로 길게 이어져서 순서를 지키는 게 중요해요."
+  link: /studies/linear-algebra/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "계산은 손에 익으면 되는데, '공간'으로 생각하는 게 어려워요. 열공간, 영공간, 랭크는 한 묶음으로 보면 덜 헷갈려요."
+  link: /studies/linear-algebra/four-subspaces/
+  link_label: "랭크와 네 부분공간"
+- q: "배워서 어디에 써요?"
+  a: "추천이나 검색에 쓰는 코사인 유사도, 신경망 층의 Wx + b가 다 선형대수예요. NumPy의 solve도 안에서 가우스 소거를 해요."
+  link: /studies/linear-algebra/dot-product/
+  link_label: "내적과 노름"
+- q: "제일 중요한 건 뭐예요?"
+  a: "'역행렬'이랑 '가우스 소거법'이 뒤를 많이 받쳐요. '고윳값과 고유벡터'는 대각화, 스펙트럼 정리, SVD로 가는 문이고요."
+  link: /studies/linear-algebra/eigenvalues/
+  link_label: "고윳값과 고유벡터"
+- q: "다른 과목이랑도 이어져요?"
+  a: "휴먼 인터페이스 미디어랑 많이 겹쳐요. 뉴런 층이 o = Ax + b고, 퍼셉트론이 wᵀx + b예요. 이산수학의 점화식도 행렬 거듭제곱으로 풀려요."
+  link: /studies/linear-algebra/recurrence-matrix-bridge/
+  link_label: "선형 점화식 ↔ 행렬 거듭제곱"
+chats:
+- q: "선형대수는 왜 배워요?"
+  a: "데이터를 숫자 표(행렬)로 다루려고요. 사진, 추천, 검색, 그래픽, 머신러닝이 다 행렬 계산이에요."
+  next:
+  - q: "행렬 곱셈은 왜 그렇게 해요?"
+    a: "변환을 이어서 하는 거라서요. 돌리고 늘리기를 한 번에 하는 행렬이 두 행렬의 곱이에요."
+    link: /studies/linear-algebra/matrix-multiplication/
+    link_label: "행렬 곱셈과 전치"
+    next:
+    - q: "그래서 순서를 바꾸면 달라져요?"
+      a: "네. 돌리고 늘리기랑 늘리고 돌리기는 결과가 달라요. 그래서 AB와 BA가 보통 달라요."
+  - q: "벡터는 뭐예요?"
+    a: "크기와 방향이 있는 화살표, 또는 숫자를 한 줄로 늘어놓은 목록이에요. 둘은 같은 걸 다르게 본 거예요."
+    link: /studies/linear-algebra/vectors/
+    link_label: 벡터
+- q: "고윳값이 뭐예요?"
+  a: "어떤 변환을 해도 방향은 안 바뀌고 길이만 바뀌는 벡터가 고유벡터, 그 배율이 고윳값이에요."
+  link: /studies/linear-algebra/eigenvalues/
+  link_label: "고윳값과 고유벡터"
+  next:
+  - q: "어디에 써요?"
+    a: "구글 PageRank가 아주 큰 행렬의 고유벡터예요. 주성분 분석도 공분산 행렬의 고유벡터를 찾는 거고요."
+    link: /studies/probability-statistics/pagerank/
+    link_label: PageRank
+  - q: 대각화는요?
+    a: "고유벡터들을 새 좌표축으로 쓰면 변환이 그냥 축마다 늘리기가 돼요. 그러면 행렬 100제곱도 쉽게 계산돼요."
+    link: /studies/linear-algebra/diagonalization/
+    link_label: "대각화와 행렬 거듭제곱"
+    next:
+    - q: "피보나치도 그걸로 풀어요?"
+      a: "네. 피보나치 점화식을 2×2 행렬 거듭제곱으로 바꾸면 일반항이 고윳값에서 나와요. 황금비가 거기서 튀어나와요."
+      link: /studies/linear-algebra/recurrence-matrix-bridge/
+      link_label: "선형 점화식 ↔ 행렬 거듭제곱"
+- q: "SVD는 뭐예요?"
+  a: "어떤 행렬이든 '돌리고, 축마다 늘리고, 또 돌리기' 세 단계로 쪼개요."
+  link: /studies/linear-algebra/svd/
+  link_label: "특잇값 분해"
+  next:
+  - q: "그게 왜 대단해요?"
+    a: "큰 특잇값 몇 개만 남기면 정보를 거의 잃지 않고 크기를 확 줄여요. 이미지 압축, 추천 시스템에 써요."
+  - q: "다른 분해들이랑은요?"
+    a: "LU는 연립방정식 풀기, QR은 최소제곱, 고윳값 분해는 거듭제곱, SVD는 압축에 강해요. 비교 문서가 있어요."
+    link: /studies/linear-algebra/decompositions-compared/
+    link_label: "LU·QR·고윳값·SVD 비교"
+- q: "역행렬은 언제 없어요?"
+  a: "행렬식이 0일 때요. 공간을 한 차원 납작하게 눌러 버려서 되돌릴 방법이 없어요."
+  link: /studies/linear-algebra/determinant/
+  link_label: 행렬식
+  next:
+  - q: "행렬식이 뭔데요?"
+    a: "변환이 넓이(3차원이면 부피)를 몇 배로 바꾸는지예요. 음수면 뒤집혔다는 뜻이고요."
+  - q: 랭크는요?
+    a: "변환한 결과가 몇 차원을 차지하는지예요. 랭크가 차원보다 작으면 역행렬이 없어요."
+    link: /studies/linear-algebra/four-subspaces/
+    link_label: "랭크와 네 부분공간"
+- q: "최소제곱법이 뭐예요?"
+  a: "점들을 다 지나는 직선이 없을 때, 오차 제곱의 합이 가장 작은 직선을 골라요. 그림으로는 직교 사영이에요."
+  link: /studies/linear-algebra/least-squares/
+  link_label: 최소제곱법
+  next:
+  - q: "직교 사영은요?"
+    a: "벡터를 어떤 평면에 수직으로 떨어뜨렸을 때 그림자예요. 그 그림자가 평면 위에서 원래 벡터와 가장 가까운 점이에요."
+    link: /studies/linear-algebra/orthogonal-projection/
+    link_label: "직교성과 직교 사영"
+- q: "가우스 소거법이 뭐예요?"
+  a: "연립방정식을 한 줄씩 빼서 계단 모양으로 만들어요. 그러면 아래부터 하나씩 풀려요."
+  link: /studies/linear-algebra/gaussian-elimination/
+  link_label: "가우스 소거법"
+  next:
+  - q: "컴퓨터도 그렇게 풀어요?"
+    a: "기본은 같아요. 다만 LU 분해로 정리해 두고, 0에 가까운 수로 나누지 않도록 줄 순서를 바꿔 가며 풀어요."
+    link: /studies/linear-algebra/lu-decomposition/
+    link_label: "LU 분해"
+  - q: "답이 이상하게 나올 때도 있어요?"
+    a: "조건수가 큰 행렬이면 그래요. 입력이 조금만 흔들려도 답이 크게 흔들려요."
+    link: /studies/linear-algebra/conditioning/
+    link_label: "노름과 조건수"
+- q: "기저가 뭐예요?"
+  a: "공간을 만드는 최소한의 벡터 세트예요. 좌표는 그 기저 벡터를 몇 번씩 쓰느냐고요."
+  link: /studies/linear-algebra/basis-dimension/
+  link_label: "부분공간, 기저와 차원"
+  next:
+  - q: 선형독립은요?
+    a: "어느 하나도 나머지를 섞어서 만들 수 없는 상태예요. 쓸데없이 겹치는 벡터가 없다는 뜻이에요."
+    link: /studies/linear-algebra/linear-independence/
+    link_label: 선형독립
+- q: "회전은 어떻게 행렬로 해요?"
+  a: "cos, sin으로 된 2×2 행렬을 곱하면 돼요. 복소수 곱셈, 삼각함수 덧셈정리랑 같은 이야기라 셋을 한 문서에 엮었어요."
+  link: /studies/linear-algebra/rotation-bridge/
+  link_label: "덧셈정리 ↔ 복소수 곱 ↔ 회전 행렬"
+talk:
+- text: "내적이 크다고 더 비슷한 건 아니에요. 길이에도 비례하거든요. 방향만 보려면 코사인 유사도를 써요."
+  link: /studies/linear-algebra/dot-product/
+  link_label: "내적과 노름"
+- text: "Ax + b는 선형변환이 아니에요. 0을 0으로 안 보내서 '아핀'이라고 불러요."
+  link: /studies/linear-algebra/matrix-vector/
+  link_label: "행렬과 행렬-벡터 곱"
+- text: "식이랑 미지수 개수가 같아도 해가 하나라는 보장은 없어요. x + y = 1, 2x + 2y = 3은 해가 아예 없어요."
+  link: /studies/linear-algebra/gaussian-elimination/
+  link_label: "가우스 소거법"
+- text: "평면에서 벡터 세 개는 늘 종속이에요. 서로 평행한 게 하나도 없어도요."
+  link: /studies/linear-algebra/linear-independence/
+  link_label: 선형독립
+- text: "기저는 하나가 아니에요. 무수히 많고, 정해진 건 개수뿐이에요. 그게 차원이에요."
+  link: /studies/linear-algebra/basis-dimension/
+  link_label: "기저와 차원"
+- text: "det(2A)는 2 det A가 아니라 2ⁿ det A예요. 가로, 세로를 다 2배 하면 넓이는 4배잖아요."
+  link: /studies/linear-algebra/determinant/
+  link_label: 행렬식
+- text: "선형변환이 모양을 지켜 주진 않아요. 원이 타원이 되고 정사각형이 평행사변형이 돼요."
+  link: /studies/linear-algebra/linear-transformations/
+  link_label: 선형변환
+- text: "최소제곱은 점에서 직선까지 수직 거리를 줄이는 게 아니라 세로 차이만 줄여요."
+  link: /studies/linear-algebra/least-squares/
+  link_label: 최소제곱법
+- text: "고윳값이 겹쳐도 대각화될 수 있어요. 단위행렬은 1이 n번 겹치는데 이미 대각이잖아요."
+  link: /studies/linear-algebra/diagonalization/
+  link_label: 대각화
+- text: "특잇값이 고윳값 절댓값이랑 같은 건 대칭행렬일 때뿐이에요."
+  link: /studies/linear-algebra/svd/
+  link_label: "특잇값 분해"
+- text: "행렬식이 0이면 공간이 납작해진 거예요. 납작해진 걸 다시 펴는 방법은 없어요."
+  link: /studies/linear-algebra/determinant/
+  link_label: 행렬식
+- text: "베지어 곡선도 벡터공간 얘기예요. 점 몇 개를 섞는 비율로 부드러운 곡선을 그려요."
+  link: /studies/linear-algebra/abstract-vector-spaces/
+  link_label: "추상 벡터공간과 베지어 곡선"
+- text: "대칭행렬은 고유벡터들이 서로 수직이에요. 스펙트럼 정리라고 해요."
+  link: /studies/linear-algebra/spectral-theorem/
+  link_label: "대칭행렬과 스펙트럼 정리"
+- text: "그람-슈미트는 비스듬한 벡터들을 서로 수직이 되게 하나씩 다듬는 방법이에요."
+  link: /studies/linear-algebra/gram-schmidt-qr/
+  link_label: "그람-슈미트와 QR 분해"

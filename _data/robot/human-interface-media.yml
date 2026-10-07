@@ -1,0 +1,155 @@
+# 홍철's lines for the human-interface-media course pages. Format: _data/robot/README.md
+greeting:
+- "휴먼 인터페이스 미디어예요. 이번 학기 수업이에요. 눈이랑 뇌가 빛을 어떻게 신호로 바꾸는지 배워요."
+- "휴먼 인터페이스 미디어예요. 배경에 빛 세 개가 겹치는 거 보이세요?"
+- "여긴 휴먼 인터페이스 미디어예요. 사람이 어떻게 보는지 배우는 과목이에요."
+- "눈이랑 뇌 얘기 좋아하세요? 여긴 그 과목이에요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "지각, 뉴런, 뉴런 모형, 빛이랑 눈, 색 순서로 보시면 돼요. 마지막이 삼색 이론이랑 반대색 과정이에요."
+  link: /studies/human-interface-media/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "강의 소개에 미적분, 확률통계, 푸리에, C/C++를 미리 알아야 한다고 나와요. 수업에선 따로 안 가르쳐 준대요. 행렬도 꽤 나와요."
+- q: "배워서 어디에 써요?"
+  a: "모니터랑 카메라가 R, G, B 세 개뿐인 이유가 삼색 이론이에요. 세 개면 사람 눈엔 충분하거든요. 측면 억제는 우리가 밝기보다 경계를 더 잘 보는 이유고요."
+  link: /studies/human-interface-media/trichromatic-theory/
+  link_label: "삼색 이론"
+- q: "제일 중요한 건 뭐예요?"
+  a: "'흥분성과 억제성 시냅스'랑 '뉴런과 신호 전달'이요. 뒤에 나오는 문서들이 이걸 많이 깔고 있어요."
+  link: /studies/human-interface-media/excitatory-inhibitory/
+  link_label: "흥분성과 억제성 시냅스"
+- q: "다른 과목이랑도 이어져요?"
+  a: "선형대수랑 많이 겹쳐요. 뉴런 층은 o = Ax + b, 퍼셉트론은 wᵀx + b, 조건등색은 영공간 문제예요. 컴퓨터 통신이랑은 같은 전자기파의 다른 구간을 써요."
+chats:
+- q: "이 과목은 뭘 배워요?"
+  a: "사람이 어떻게 보고 느끼는지요. 빛이 눈에 들어와서 뇌에서 '보인다'가 되기까지를 따라가요."
+  link: /studies/human-interface-media/
+  link_label: 로드맵
+  next:
+  - q: "컴공에서 왜 그걸 배워요?"
+    a: "화면, 색, 인터페이스를 만들려면 결국 보는 사람의 눈을 알아야 하니까요. 뉴런 모형은 인공신경망으로도 이어지고요."
+    link: /studies/human-interface-media/perceptron/
+    link_label: 퍼셉트론
+  - q: "지각이랑 감각은 달라요?"
+    a: "감각은 눈이 빛을 받는 단계, 지각은 뇌가 그걸 '사과다'로 해석하는 단계예요. 같은 빛도 맥락에 따라 다르게 지각돼요."
+    link: /studies/human-interface-media/perception/
+    link_label: 지각
+- q: "색은 어떻게 봐요?"
+  a: "눈의 추상체가 세 종류예요. 짧은, 중간, 긴 파장에 잘 반응하는 S, M, L이요. 이 셋이 얼마나 반응했는지 비율로 색을 느껴요."
+  link: /studies/human-interface-media/trichromatic-theory/
+  link_label: "삼색 이론"
+  next:
+  - q: "그럼 반대색 과정은요?"
+    a: "그 뒤 단계에서 빨강-초록, 파랑-노랑, 밝음-어두움을 짝지어 처리해요. 그래서 '초록빛 빨강'은 상상이 안 돼요."
+    link: /studies/human-interface-media/contrast--trichromatic--opponent-process/
+    link_label: "삼색 이론과 반대색 과정 비교"
+    next:
+    - q: "둘 중에 뭐가 맞아요?"
+      a: "둘 다 맞아요. 삼색은 눈의 추상체 단계, 반대색은 그 뒤 신경 단계 얘기라서 순서대로 일어나요."
+  - q: "조건등색이 뭐예요?"
+    a: "빛의 스펙트럼이 달라도 세 추상체 반응이 같으면 똑같은 색으로 보여요. 모니터가 빨강, 초록, 파랑 세 개로 노란색을 만드는 원리예요."
+    link: /studies/human-interface-media/metamerism/
+    link_label: 조건등색
+- q: "간상체랑 추상체 차이가 뭐예요?"
+  a: "간상체는 어두운 데서 잘 보지만 색을 못 봐요. 추상체는 밝은 데서 색과 세밀한 걸 봐요. 그래서 밤엔 색이 흐려 보여요."
+  link: /studies/human-interface-media/rods-and-cones/
+  link_label: "간상체와 추상체"
+  next:
+  - q: 맹점은요?
+    a: "시신경이 눈을 빠져나가는 자리엔 시세포가 없어서 안 보여요. 뇌가 주변으로 메워서 못 느낄 뿐이에요."
+    link: /studies/human-interface-media/eye-anatomy/
+    link_label: "눈의 구조"
+  - q: "어두운 데서 별이 곁눈질로 더 잘 보이는 건요?"
+    a: "망막 한가운데엔 추상체가 몰려 있고, 간상체는 바깥쪽에 많아요. 곁눈질하면 간상체가 많은 쪽으로 빛이 들어가요."
+- q: "착시는 왜 생겨요?"
+  a: "측면 억제 때문인 게 있어요. 세포가 옆 세포를 눌러서 경계를 실제보다 진하게 보이게 해요. 마하 띠가 그래요."
+  link: /studies/human-interface-media/lateral-inhibition/
+  link_label: "측면 억제"
+  next:
+  - q: "중심-주변이 뭐예요?"
+    a: "망막의 어떤 세포는 가운데에 빛이 오면 흥분하고 주변에 오면 억제돼요. 반대인 세포도 있고요. 그래서 고르게 밝은 것보다 경계에 크게 반응해요."
+    link: /studies/human-interface-media/center-surround/
+    link_label: "중심-주변 길항"
+  - q: "그게 왜 쓸모 있어요?"
+    a: "물체의 윤곽을 빨리 잡아내려고요. 이미지 처리의 엣지 검출이 비슷한 일을 해요."
+- q: "입체는 어떻게 느껴요?"
+  a: "두 눈이 6 cm 남짓 떨어져 있어서 보는 장면이 조금씩 달라요. 그 차이(양안 시차)로 거리를 가늠해요."
+  link: /studies/human-interface-media/binocular-disparity/
+  link_label: "양안 시차"
+  next:
+  - q: "3D 영화도 그거예요?"
+    a: "네. 왼눈, 오른눈에 조금 다른 그림을 따로 보여 줘서 깊이를 만들어요."
+- q: "뉴런은 어떻게 신호를 보내요?"
+  a: "세포 안에서는 전기(활동 전위)로, 세포 사이에서는 화학 물질(신경전달물질)로 보내요."
+  link: /studies/human-interface-media/neuron-signaling/
+  link_label: "뉴런과 신호 전달"
+  next:
+  - q: "신호 세기는 어떻게 표현해요?"
+    a: "활동 전위 크기는 늘 같아요. 그래서 얼마나 자주 발화하느냐로 세기를 나타내요. 발화율 부호화예요."
+    link: /studies/human-interface-media/rate-coding/
+    link_label: "발화율 부호화"
+  - q: "흥분성, 억제성은요?"
+    a: "받는 뉴런을 발화 쪽으로 미는 게 흥분성, 반대로 붙잡는 게 억제성 시냅스예요. 둘을 다 더한 결과로 발화가 정해져요."
+    link: /studies/human-interface-media/excitatory-inhibitory/
+    link_label: "흥분성과 억제성 시냅스"
+  - q: "퍼셉트론이랑 비슷해요?"
+    a: "네. 입력에 가중치를 곱해 더하고, 문턱을 넘으면 1을 내는 인공 뉴런이에요. 선 하나로 나눌 수 있는 문제만 풀어서 XOR은 못 풀어요."
+    link: /studies/human-interface-media/perceptron/
+    link_label: 퍼셉트론
+- q: "휘도랑 조도는 뭐가 달라요?"
+  a: "조도는 표면에 떨어지는 빛의 양(럭스), 휘도는 표면에서 눈 쪽으로 나오는 밝기(cd/m²)예요. 모니터 밝기를 말할 땐 휘도예요."
+  link: /studies/human-interface-media/luminance-and-illuminance/
+  link_label: "휘도와 조도"
+- q: "빛은 뭐예요?"
+  a: "전자기파예요. 그중 사람 눈에 보이는 건 대략 380~750 nm 파장 사이고요."
+  link: /studies/human-interface-media/wave-and-light/
+  link_label: "파동과 빛"
+  next:
+  - q: "이미지 함수는 뭐예요?"
+    a: "사진을 '위치를 넣으면 밝기가 나오는 함수'로 보는 거예요. 컴퓨터는 그 함수를 칸마다 숫자로 저장해요."
+    link: /studies/human-interface-media/image-function/
+    link_label: "이미지 함수"
+talk:
+- text: "눈은 카메라처럼 그대로 찍는 게 아니에요. 헤르만 격자 보면 없는 회색 점이 보이잖아요. 망막에서부터 이미 가공하고 있다는 거예요."
+  link: /studies/human-interface-media/perception/
+  link_label: 지각
+- text: "신경 신호는 생각보다 느려요. 초속 1~120 m 정도라, 눈에서 손가락까지 0.2초 안팎이 걸려요."
+  link: /studies/human-interface-media/neuron-signaling/
+  link_label: "뉴런과 신호 전달"
+- text: "자극이 세다고 스파이크가 커지진 않아요. 크기는 늘 같고, 얼마나 자주 튀느냐로 세기를 전해요."
+  link: /studies/human-interface-media/rate-coding/
+  link_label: "발화율 부호화"
+- text: "퍼셉트론 하나로는 XOR을 절대 못 맞혀요. 오래 돌린다고 되는 게 아니라 답이 아예 없어요."
+  link: /studies/human-interface-media/perceptron/
+  link_label: 퍼셉트론
+- text: "모니터의 노란색은 노란 빛이 아니에요. 빨강이랑 초록을 같이 켠 거예요. 돋보기로 보면 바로 보여요."
+  link: /studies/human-interface-media/trichromatic-theory/
+  link_label: "삼색 이론"
+- text: "똑같은 색으로 보여도 같은 빛이 아닐 수 있어요. 580 nm 하나랑 530, 620 nm를 섞은 빛이 둘 다 노랑이거든요."
+  link: /studies/human-interface-media/metamerism/
+  link_label: 조건등색
+- text: "마하 띠라는 게 있는데, 그림에 진짜 그려진 띠가 아니에요. 눈이 경계를 부풀려서 보이는 거라 옆 줄을 가리면 사라져요."
+  link: /studies/human-interface-media/lateral-inhibition/
+  link_label: "측면 억제"
+- text: "맹점이 있는데도 시야에 구멍이 안 보이는 건, 두 눈이 서로 채워 주고 뇌가 주변 무늬로 메워서예요."
+  link: /studies/human-interface-media/eye-anatomy/
+  link_label: "눈의 구조"
+- text: "마젠타는 무지개에 없는 색이에요. 빨강이랑 파랑을 섞어야만 보여요."
+  link: /studies/human-interface-media/wave-and-light/
+  link_label: "파동과 빛"
+- text: "한 눈을 감아도 깊이는 꽤 알아요. 가림, 크기, 원근 같은 단서가 있거든요. 바늘귀 꿰기는 확 어려워지지만요."
+  link: /studies/human-interface-media/binocular-disparity/
+  link_label: "양안 시차"
+- text: "모니터는 빨강, 초록, 파랑 빛 세 개만으로 거의 모든 색을 흉내 내요. 우리 눈의 추상체가 세 종류라서 가능한 일이에요."
+  link: /studies/human-interface-media/metamerism/
+  link_label: 조건등색
+- text: "맹점은 누구에게나 있어요. 뇌가 주변 색으로 감쪽같이 메워 줄 뿐이에요."
+  link: /studies/human-interface-media/eye-anatomy/
+  link_label: "눈의 구조"
+- text: "XOR 문제는 선 하나로 못 나눠요. 그래서 퍼셉트론 하나로는 안 되고 층을 쌓아야 해요."
+  link: /studies/human-interface-media/perceptron/
+  link_label: 퍼셉트론
+- text: "뉴런은 '세게'를 크기가 아니라 횟수로 말해요. 더 자주 발화할수록 센 자극이에요."
+  link: /studies/human-interface-media/rate-coding/
+  link_label: "발화율 부호화"
