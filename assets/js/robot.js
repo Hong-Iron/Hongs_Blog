@@ -51,7 +51,41 @@
 
   var typing = null;      // { full, i, timer, done }
   var bag = [];           // shuffled talk lines still to come
-  var heard = [];         // conversation threads already started this visit
+  /* -- memory -------------------------------------------------------------
+     A short record kept only in this visitor's browser (localStorage), so a
+     return visit can pick up where the last one left off. Nothing leaves the
+     browser; if storage is blocked everything still works, just forgetfully. */
+  var MEM_KEY = "robot-memory";
+  var mem = {};
+  try { mem = JSON.parse(localStorage.getItem(MEM_KEY) || "{}") || {}; } catch (e) { mem = {}; }
+  if (!Array.isArray(mem.heard)) mem.heard = [];
+
+  function save() {
+    try { localStorage.setItem(MEM_KEY, JSON.stringify(mem)); } catch (e) { /* storage blocked */ }
+  }
+
+  function forget() {
+    heard.length = 0;
+    mem = { heard: heard, visits: 1, last: Date.now(), welcomed: true };
+    try { localStorage.removeItem(MEM_KEY); } catch (e) { /* storage blocked */ }
+  }
+
+  // one visit = one browser session; remember when and where the last one was
+  (function () {
+    var fresh = true;
+    try { fresh = sessionStorage.getItem("robot-visit") !== "1"; sessionStorage.setItem("robot-visit", "1"); } catch (e) { /* blocked */ }
+    if (fresh) {
+      mem.prevLast = mem.last || null;
+      mem.prevPage = mem.page || null;
+      mem.visits = (mem.visits || 0) + 1;
+      mem.welcomed = false;
+    }
+    mem.last = Date.now();
+    mem.page = { key: data.key, course: data.course || "", path: location.pathname };
+    save();
+  })();
+
+  var heard = mem.heard;  // openers of threads already started (their q text)
 
   /* -- text --------------------------------------------------------------- */
 
@@ -71,9 +105,12 @@
     return a;
   }
 
+  var vars = {};          // extra {placeholders}, e.g. {days} for a return visit
+
   function fill(text) {
     var stats = data.stats || {}, site = data.site || {};
     return String(text || "").replace(/\{(\w+)\}/g, function (m, key) {
+      if (vars[key] != null) return vars[key];
       if (stats[key] != null) return stats[key];
       if (site[key] != null) return site[key];
       return m;
@@ -163,15 +200,56 @@
 
   /* -- screens ------------------------------------------------------------- */
 
+  function menu() {
+    choices([
+      { label: "질문하기", run: questions, kind: "primary" },
+      { label: "대화하기", run: topics },
+      { label: "아무 얘기나 해 줘요", run: talk, kind: "quiet" }
+    ]);
+  }
+
   function home(again) {
+    if (!again && welcomeBack()) return;
     var hi = again ? (pick(script.again) || pick(common && common.again) || "또 뭐 할까요?") : pick(script.greeting) || "안녕하세요!";
-    say(hi, function () {
-      choices([
-        { label: "질문하기", run: questions, kind: "primary" },
-        { label: "대화하기", run: topics },
-        { label: "아무 얘기나 해 줘요", run: talk, kind: "quiet" }
-      ]);
-    });
+    say(hi, menu);
+  }
+
+  function findThread(q) {
+    var all = (script.chats || []).concat((common && common.chats) || []);
+    for (var i = 0; i < all.length; i++) if (all[i].q === q) return all[i];
+    return null;
+  }
+
+  /* the first time the bubble opens on a return visit */
+  function welcomeBack() {
+    var wb = (common && common.welcome_back) || script.welcome_back;
+    if (!wb || mem.welcomed || !mem.prevLast || (mem.visits || 0) < 2) return false;
+    mem.welcomed = true;
+    save();
+    var days = Math.floor((Date.now() - mem.prevLast) / 86400000);
+    vars.days = days;
+    vars.visits = mem.visits;
+    var parts = [pick(days < 1 ? wb.same_day : days < 14 ? wb.days : wb.long)];
+    if ([5, 10, 20, 50, 100].indexOf(mem.visits) >= 0 && wb.visits) parts.push(pick(wb.visits));
+    var prev = mem.prevPage || {};
+    if (prev.course && prev.course !== (data.course || "") && wb.last_course) {
+      vars.last_course = prev.course;
+      parts.push(pick(wb.last_course));
+    }
+    var t = mem.thread, node = t && !t.done ? findThread(t.q) : null;
+    if (node && wb.resume) {
+      vars.topic = node.q;
+      parts.push(pick(wb.resume));
+      say(parts.join(" "), function () {
+        choices([
+          { label: "이어서 할래요", run: function () { reply(node, topics); }, kind: "primary" },
+          { label: "다른 거 할래요", run: function () { mem.thread = null; save(); home(true); } }
+        ]);
+      });
+    } else {
+      say(parts.join(" "), menu);
+    }
+    return true;
   }
 
   function questions() {
@@ -187,7 +265,7 @@
   function offer() {
     var own = script.chats || [], general = (common && common.chats) || [];
     function fresh(list) {
-      var f = list.filter(function (c) { return heard.indexOf(c) < 0; });
+      var f = list.filter(function (c) { return heard.indexOf(c.q) < 0; });
       return shuffled(f.length ? f : list);
     }
     var a = fresh(own), b = fresh(general);
@@ -201,7 +279,7 @@
     if (!list.length) return talk();
     say(pick(script.chat_prompt) || pick(common && common.chat_prompt) || "무슨 얘기 할까요?", function () {
       choices(list.map(function (c) {
-        return { label: c.q, run: function () { heard.push(c); reply(c, topics); } };
+        return { label: c.q, run: function () { startThread(c); reply(c, topics); } };
       }).concat([
         { label: "다른 얘기는 없어요?", run: topics },
         { label: "처음으로", run: function () { home(true); }, kind: "quiet" }
@@ -209,13 +287,22 @@
     });
   }
 
+  function startThread(c) {
+    if (heard.indexOf(c.q) < 0) heard.push(c.q);
+    if (heard.length > 300) heard.splice(0, heard.length - 300);
+    mem.thread = { q: c.q, done: false };
+    save();
+  }
+
   /* one exchange: 홍철 answers, then offers what the visitor might say next.
      `rest` carries the not-yet-asked options from earlier in the same thread,
      so a dead end still offers the other branches. */
   function reply(node, back, rest) {
     rest = (rest || []).filter(function (n) { return n !== node; });
+    if (node.action === "forget") forget();
     say(pick(node.a), function () {
       var kids = node.next || [];
+      if (!kids.length && back === topics && mem.thread) { mem.thread.done = true; save(); }
       var offer = kids.length ? kids : rest.slice(0, 3);
       var carry = kids.length ? rest : rest.slice(3);
       var next = offer.map(function (n) {
