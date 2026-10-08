@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Applications of Derivatives", "Optimization", "증가와 감소", "increasing and decreasing", "극값", "local extremum", "극대", "극소", "임계점", "critical point", "페르마 정리", "Fermat's theorem", "이계도함수 판정법", "second derivative test", "오목과 볼록", "concavity", "변곡점", "inflection point", "최댓값과 최솟값", "최적화"]
 description: "도함수의 부호가 함수가 오르는지 내리는지 알려 주고, 도함수가 0이 되는 곳이 봉우리나 골짜기의 후보다. 이계도함수는 곡선이 그릇 모양인지 뒤집힌 그릇 모양인지 알려 준다. 이 둘로 \"비용은 가장 작게, 이익은 가장 크게\" 하는 값을 찾는다. 다만 도함수가 0인 곳이 늘 최대·최소…"
@@ -148,6 +148,14 @@ permalink: "/studies/calculus/curve-analysis/"
 </div>
 
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 최적화를 "함수의 극대·극소를 찾는 방법"으로 시작한다. $$x = p$$를 포함하는 열린 구간이 있어 그 안의 모든 $$x$$에서 $$f(x) \ge f(p)$$이면 $$f(p)$$가 극솟값이다. 극대도 같은 방식이다[^n1]. 극값이 생기는 곳은 $$f'(p) = 0$$이거나 $$f'$$이 없는 점이고, 1계 도함수 판정(부호가 바뀌는지)과 2계 도함수 판정($$f'(p) = 0$$이고 $$f''(p) > 0$$이면 극소, $$f''(p) < 0$$이면 극대)으로 가른다[^n2].
+
+슬라이드의 예 $$f(x) = x^3 + x^2 - x + 1$$($$[-2, 2]$$)은 $$f'(x) = (3x - 1)(x + 1)$$, $$f''(x) = 6x + 2$$다. $$x = \frac13$$에서 $$f'' = 4 > 0$$이라 극소, $$x = -1$$에서 $$f'' = -4 < 0$$이라 극대다[^n3]. 극솟값 $$\frac{22}{27}$$이 구간 전체의 최솟값은 아니다. 끝점 $$f(-2) = -1$$이 더 작다[^sn1].
+
+도함수를 쓸 수 없거나 계산하기 어려울 때는 함수 값만 비교해 구간을 좁히는 방법을 쓴다([황금분할 탐색](/Hongs_Blog/studies/numerical-analysis/golden-section-search/), [피보나치 탐색](/Hongs_Blog/studies/numerical-analysis/fibonacci-search/))[^n4].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -182,6 +190,19 @@ permalink: "/studies/calculus/curve-analysis/"
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** $$f(x) = x^3 - 3x$$의 임계점을 2계 도함수 판정으로 분류하라.</summary>
+
+**답:** $$f'(x) = 3x^2 - 3 = 0$$에서 $$x = \pm1$$. $$f''(x) = 6x$$라 $$f''(1) = 6 > 0$$으로 극소($$f(1) = -2$$), $$f''(-1) = -6 < 0$$으로 극대($$f(-1) = 2$$)[^sn1].
+
+</details>
+
+
 [^1]: OpenStax, *Calculus Volume 1*, 4.3절 "Maxima and Minima"(임계점, 페르마 정리, 닫힌 구간 방법), 4.5절 "Derivatives and the Shape of a Graph"(증감·볼록성·이계도함수 판정), 4.7절 "Applied Optimization Problems"
 [^s1]: 에이전트 보충. 이 비용 모형과 최적 간격 $$\sqrt{2CM}$$은 Young, "A first order approximation to the optimum checkpoint interval", *Communications of the ACM* 17(9), 1974의 결과다. 고장이 드물고 저장 비용이 작을 때의 1차 근사다.
+[^n1]: 2-2학기/수치해석/1.수업자료/14.na14_optimization.pdf, p.2~4
+[^n2]: 같은 자료, p.5~7
+[^n3]: 같은 자료, p.8
+[^n4]: 같은 자료, p.9
+[^sn1]: 에이전트 보충. 끝점 값과 비교, 카드 C5는 원본에 없다. 07_curve-analysis_verify.py로 확인했다.
 {% endraw %}

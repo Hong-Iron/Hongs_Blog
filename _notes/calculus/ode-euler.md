@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Differential Equation", "미분방정식", "상미분방정식", "ODE", "ordinary differential equation", "초깃값 문제", "initial value problem", "오일러 방법", "Euler's method", "오일러법", "수치 적분", "numerical integration", "안정성", "stability", "반암시적 오일러", "semi-implicit Euler", "심플렉틱 오일러", "symplectic Euler", "룽게-쿠타", "Runge–Kutta", "RK4"]
 description: "미분방정식은 \"지금 상태가 이렇다면 이만큼 변한다\"는 규칙이다. 오일러 방법은 지금의 변화율을 믿고 아주 짧은 시간만큼 나아가기를 반복해서 미래를 계산한다. 게임이 매 프레임 물체의 위치를 갱신하는 것과 같은 방식이라 단순하고 어디든 쓸 수 있다. 대신 걸음마다 오차가 쌓여 걸음 …"
@@ -100,6 +100,12 @@ $$\vert y_k - y(t_k)\vert  \le \frac{hM}{2K}\left(e^{K(t_k - t_0)} - 1\right).$$
 - 선수: [선형 근사](/Hongs_Blog/studies/calculus/linear-approx-newton/)(한 걸음), [지수함수](/Hongs_Blog/studies/college-math/exponential-function/)($$y' = ky$$의 해)
 - 같은 구조: [경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/) = 기울기 흐름의 오일러 방법, [선형 점화식](/Hongs_Blog/studies/linear-algebra/recurrence-matrix-bridge/)(선형 연립 미분방정식에 오일러 방법을 쓰면 $$\mathbf{y}_{k+1} = (I + hA)\mathbf{y}_k$$라는 행렬 거듭제곱이 된다)
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** $$y'(x) = f(x, y)$$와 처음 값 $$y(x_0) = y_0$$을 알 때, 오일러 방법은 기울기의 정의 $$\frac{y(x_0 + h) - y_0}{h} \approx f(x, y)$$를 뒤집어 $$y(x_0 + h) = y_0 + hf(x, y)$$로 한 걸음 간다. 아주 단순하지만 정확도가 낮다. 되풀이하면 $$x_{i+1} = x_i + h$$, $$y_{i+1} = y_i + hf(x_i, y_i)$$다[^n1][^n2].
+
+슬라이드의 예는 위로 던진 공의 높이 $$y'(t) = v_0 - gt$$를 $$y_{i+1} = y_i + h(v_0 - gt_i)$$로 따라가는 것이다. 속도가 줄어드는데 걸음의 처음 속도를 쓰므로, 오일러로 구한 점들이 참 곡선 $$y = v_0t - \frac12gt^2$$보다 위에 놓인다[^n2]. 더 정확한 방법은 [테일러 급수 방법](/Hongs_Blog/studies/numerical-analysis/taylor-method/)과 [룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/)이다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -126,7 +132,18 @@ $$\vert y_k - y(t_k)\vert  \le \frac{hM}{2K}\left(e^{K(t_k - t_0)} - 1\right).$$
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** $$y' = 10 - 9.8t$$, $$y(0) = 0$$을 $$h = 0.5$$인 오일러 방법으로 두 걸음 가라. 참값 $$y(1)$$과 비교하라.</summary>
+
+**답:** $$y_1 = 0 + 0.5\cdot10 = 5$$, $$y_2 = 5 + 0.5(10 - 4.9) = 7.55$$. 참값 $$y(1) = 10 - 4.9 = 5.1$$. 걸음의 시작 속도(더 빠른 값)를 쓰므로 크게 위로 벗어난다[^sn1].
+
+</details>
+
+
 [^1]: OpenStax, *Calculus Volume 2*, 4.1절 "Basics of Differential Equations", 4.2절 "Direction Fields and Numerical Methods"(오일러 방법).
 [^2]: Burden, Faires, *Numerical Analysis*, 5.1절(초깃값 문제의 기본 이론: 립시츠 조건과 해의 존재·유일성), 5.2절 "Euler's Method"(오차 한계), 5.4절(룽게–쿠타 방법).
 [^s1]: 에이전트 보충. 명시적 오일러와 반암시적 오일러의 에너지 실험, RK4의 오차 비율은 29_ode-euler_verify.py로 확인했다. 반암시적 오일러가 에너지를 오래 보존하는 이론은 Hairer, Lubich, Wanner, *Geometric Numerical Integration* 1장의 심플렉틱 오일러 방법에 있다. `solve_ivp`의 기본값 `method='RK45'`는 SciPy 문서에 적혀 있다.
+[^n1]: 2-2학기/수치해석/1.수업자료/18.na18_diff_eq.pdf, p.2
+[^n2]: 같은 자료, p.3
+[^sn1]: 에이전트 보충. 참 곡선보다 위에 놓이는 이유와 카드는 원본에 없다. 29_ode-euler_verify.py로 확인했다.
 {% endraw %}

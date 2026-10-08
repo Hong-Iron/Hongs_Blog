@@ -77,6 +77,14 @@ defaults:
     values:
       image: /assets/img/og/signals-and-systems.png
   - scope:
+      path: "_notes/numerical-analysis"
+    values:
+      image: /assets/img/og/numerical-analysis.png
+  - scope:
+      path: "_notes/data-science"
+    values:
+      image: /assets/img/og/data-science.png
+  - scope:
       path: "_notes/calculus"
     values:
       image: /assets/img/og/calculus.png

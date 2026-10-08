@@ -179,6 +179,15 @@ def main():
         assert mpow(T, k) == [[3 ** k, 3 ** k - 2 ** k], [0, 2 ** k]]
     assert inv([[1, 1], [0, -1]]) == [[1, 1], [0, -1]]
     print("[OK] 주장 7: 사다리")
+    # 수치해석(2-2) 과목별 관점: 슬라이드의 [[5,-1],[3,1]], 카드 C5의 [[2,1],[0,3]]
+    A = [[F(5), F(-1)], [F(3), F(1)]]
+    tr_, dt = A[0][0] + A[1][1], A[0][0] * A[1][1] - A[0][1] * A[1][0]
+    assert (tr_, dt) == (6, 8) and all(l * l - 6 * l + 8 == 0 for l in (2, 4))
+    P = [[F(1), F(1)], [F(3), F(1)]]; Pi = [[F(-1, 2), F(1, 2)], [F(3, 2), F(-1, 2)]]
+    mul = lambda X, Y: [[sum(X[i][k] * Y[k][j] for k in range(2)) for j in range(2)] for i in range(2)]
+    assert mul(P, Pi) == [[1, 0], [0, 1]] and mul(Pi, mul(A, P)) == [[2, 0], [0, 4]]
+    B = [[F(2), F(1)], [F(0), F(3)]]; Q = [[F(1), F(1)], [F(0), F(1)]]; Qi = [[F(1), F(-1)], [F(0), F(1)]]
+    assert mul(Qi, mul(B, Q)) == [[2, 0], [0, 3]] and all(l * l - 5 * l + 6 == 0 for l in (2, 3))
     print("ALL CHECKS PASSED")
 
 

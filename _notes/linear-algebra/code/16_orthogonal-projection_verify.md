@@ -154,6 +154,25 @@ def main():
     xh = F(dot(a, b), dot(a, a))
     assert xh == 1 and [xh * x for x in a] == [1, 1] and [bi - xh * ai for ai, bi in zip(a, b)] == [1, -1]
     print("[OK] 주장 7·카드 C2")
+    # 수치해석(2-2) 과목별 관점: 직교 행렬은 길이와 각을 지킨다, 슬라이드의 30° 회전
+    import math
+    s3 = math.sqrt(3)
+    Q = [[s3 / 2, -0.5], [0.5, s3 / 2]]
+    QQt = [[sum(Q[i][k] * Q[j][k] for k in range(2)) for j in range(2)] for i in range(2)]
+    assert all(abs(QQt[i][j] - (i == j)) < 1e-12 for i in range(2) for j in range(2))
+    assert [Q[0][0], Q[1][0]] == [s3 / 2, 0.5] and [Q[0][1], Q[1][1]] == [-0.5, s3 / 2]
+    random.seed(16)
+    for _ in range(200):
+        th = random.uniform(-3, 3); c, s = math.cos(th), math.sin(th)
+        Rm = [[c, -s, 0], [s, c, 0], [0, 0, 1]]
+        x = [random.uniform(-3, 3) for _ in range(3)]; y = [random.uniform(-3, 3) for _ in range(3)]
+        Rx_ = [sum(Rm[i][k] * x[k] for k in range(3)) for i in range(3)]; Ry_ = [sum(Rm[i][k] * y[k] for k in range(3)) for i in range(3)]
+        assert abs(sum(a * b for a, b in zip(Rx_, Ry_)) - sum(a * b for a, b in zip(x, y))) < 1e-9
+        assert abs(sum(a * a for a in Rx_) - sum(a * a for a in x)) < 1e-9
+    P = [[F(3, 5), F(-4, 5)], [F(4, 5), F(3, 5)]]           # 카드 C5
+    assert [[sum(P[k][i] * P[k][j] for k in range(2)) for j in range(2)] for i in range(2)] == [[1, 0], [0, 1]]
+    v = [P[0][0] * 1 + P[0][1] * 2, P[1][0] * 1 + P[1][1] * 2]
+    assert v[0] ** 2 + v[1] ** 2 == 5
     print("ALL CHECKS PASSED")
 
 

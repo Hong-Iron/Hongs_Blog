@@ -351,7 +351,9 @@
     "probability-statistics": ["bell", "dice", "dot"],
     "algorithms": ["chevron", "tile", "stairs"],
     "operating-systems": ["tile", "squareOutline", "capsule"],
-    "signals-and-systems": ["wave", "bell", "tallbar"]
+    "signals-and-systems": ["wave", "bell", "tallbar"],
+    "numerical-analysis": ["arch", "wedge", "dot"],
+    "data-science": ["dot", "circle", "hexagon"]
   };
 
   function mixHex(a, b, f) {
@@ -1013,6 +1015,95 @@
         line(ctx, c * half, yy, (c + 1) * half, yy);
       }
       label(ctx, "N = " + N, 14, Rg.y0 + h * 0.92, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 수치해석: Newton's method walks down tangents to the root as you scroll.
+  MOTIFS["numerical-analysis"] = {
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), h = Rg.y1 - Rg.y0;
+      var xmin = -0.6, xmax = 2.9, ymin = -3.2, ymax = 10;
+      function f(x) { return x * x * x - 2 * x - 1.2; }
+      function df(x) { return 3 * x * x - 2; }
+      function X(x) { return (x - xmin) / (xmax - xmin) * L.W; }
+      function Y(y) { return Rg.y1 - (y - ymin) / (ymax - ymin) * h; }
+      var x, i;
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = rgba(F.pal.ink, 0.15);
+      line(ctx, 0, Y(0), L.W, Y(0));
+      ctx.beginPath();
+      for (i = 0; i <= 200; i++) {
+        x = xmin + (xmax - xmin) * i / 200;
+        if (i === 0) ctx.moveTo(X(x), Y(f(x))); else ctx.lineTo(X(x), Y(f(x)));
+      }
+      ctx.strokeStyle = rgba(F.pal.a, 0.85);
+      ctx.lineWidth = 2.2;
+      ctx.stroke();
+      var steps = F.p * 5, xn = 2.5, k;
+      for (k = 0; k < 5 && k < steps; k++) {
+        var part = Math.min(1, steps - k), yn = f(xn), xn1 = xn - yn / df(xn);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = rgba(F.pal.ink, 0.3);
+        line(ctx, X(xn), Y(0), X(xn), Y(yn));
+        ctx.strokeStyle = rgba(F.pal.b, 0.9);
+        ctx.lineWidth = 1.6;
+        line(ctx, X(xn), Y(yn), X(lerp(xn, xn1, part)), Y(lerp(yn, 0, part)));
+        ctx.fillStyle = rgba(F.pal.b, 0.95);
+        ctx.beginPath(); ctx.arc(X(xn), Y(yn), 3.2, 0, TAU); ctx.fill();
+        if (part < 1) break;
+        xn = xn1;
+      }
+      ctx.fillStyle = rgba(F.pal.b, 0.95);
+      ctx.beginPath(); ctx.arc(X(xn), Y(0), 3.6, 0, TAU); ctx.fill();
+      label(ctx, "x = " + xn.toFixed(4), 14, Rg.y0 + h * 0.12, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 데이터 과학: k-means moves three centers to their clusters as you scroll.
+  MOTIFS["data-science"] = {
+    setup: function (L, rand) {
+      var pts = [], c, i, cs = [[0.22, 0.35], [0.55, 0.7], [0.82, 0.32]];
+      for (c = 0; c < 3; c++) for (i = 0; i < 26; i++) {
+        var r = Math.sqrt(-2 * Math.log(rand() + 1e-9)) * 0.07, t = rand() * TAU;
+        pts.push([cs[c][0] + r * Math.cos(t), cs[c][1] + r * Math.sin(t) * 1.2]);
+      }
+      var cen = [[0.45, 0.2], [0.5, 0.28], [0.58, 0.22]], hist = [], it, j;
+      function assign(cn) {
+        return pts.map(function (p) {
+          var best = 0, bd = 1e9;
+          cn.forEach(function (q, k) { var d = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1]); if (d < bd) { bd = d; best = k; } });
+          return best;
+        });
+      }
+      for (it = 0; it < 8; it++) {
+        var lab = assign(cen);
+        hist.push({ cen: cen.map(function (q) { return q.slice(); }), lab: lab });
+        cen = cen.map(function (q, k) {
+          var sx = 0, sy = 0, n = 0;
+          for (j = 0; j < pts.length; j++) if (lab[j] === k) { sx += pts[j][0]; sy += pts[j][1]; n++; }
+          return n ? [sx / n, sy / n] : q;
+        });
+      }
+      return { pts: pts, hist: hist };
+    },
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), h = Rg.y1 - Rg.y0;
+      var t = F.p * (S.hist.length - 1), a = Math.floor(t), b = Math.min(a + 1, S.hist.length - 1), u = t - a;
+      var lab = S.hist[a].lab, cols = [F.pal.a, F.pal.b, F.pal.ink];
+      function P(p) { return [p[0] * L.W, Rg.y0 + p[1] * h]; }
+      S.pts.forEach(function (p, i) {
+        var q = P(p);
+        ctx.fillStyle = rgba(cols[lab[i]], 0.55);
+        ctx.beginPath(); ctx.arc(q[0], q[1], 3, 0, TAU); ctx.fill();
+      });
+      S.hist[a].cen.forEach(function (c, k) {
+        var d = S.hist[b].cen[k], q = P([lerp(c[0], d[0], u), lerp(c[1], d[1], u)]);
+        ctx.strokeStyle = rgba(cols[k], 0.95);
+        ctx.lineWidth = 2;
+        line(ctx, q[0] - 7, q[1] - 7, q[0] + 7, q[1] + 7);
+        line(ctx, q[0] - 7, q[1] + 7, q[0] + 7, q[1] - 7);
+      });
+      label(ctx, "iter " + a, 14, Rg.y0 + h * 0.95, rgba(F.pal.ink, 0.5));
     }
   };
 

@@ -131,6 +131,13 @@ def main():
         euler_next = [a + eta * b for a, b in zip(p, [-g for g in grad(p)])]
         assert gd_next == euler_next
     print("[OK] 주장 6: 카드 C1·C2·C3")
+    # 수치해석(2-2) 과목별 관점: 던진 공 y' = v0 − g t, 카드
+    v0, gg, hh = 10.0, 9.8, 0.5
+    ys = [0.0]; ts = [0.0]
+    for _ in range(2):
+        ys.append(ys[-1] + hh * (v0 - gg * ts[-1])); ts.append(ts[-1] + hh)
+    assert ys == [0.0, 5.0, 7.55] and abs((v0 * 1 - gg / 2) - 5.1) < 1e-12
+    assert all(y >= v0 * t - gg / 2 * t * t for y, t in zip(ys, ts))          # 오일러 점이 참 곡선보다 위
     print("ALL CHECKS PASSED")
 
 

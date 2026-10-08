@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Covariance", "공분산", "상관계수", "correlation coefficient", "피어슨 상관계수", "Pearson correlation", "무상관", "uncorrelated", "상관과 인과", "correlation vs causation"]
 description: "두 값이 함께 움직이는 정도를 하나의 수로 요약한다. 한쪽이 평균보다 클 때 다른 쪽도 평균보다 큰 경향이면 양수, 반대면 음수다. 상관계수는 단위를 없애 −1에서 1 사이로 맞춘 것으로, 두 자료를 벡터로 봤을 때 사이 각의 코사인과 같다. 하지만 직선 관계만 잡아내서 0이어도 …"
@@ -112,6 +112,22 @@ $$\operatorname{Cov}(X, Y) = \mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big] = \mathb
 </div>
 
 
+## 과목별 관점
+
+**데이터 과학 (3-2학기).** 두 속성이 함께 변하는 정도를 재서, 하나에서 다른 하나를 거의 계산해 낼 수 있는 쓸모없는 속성(중복)을 찾는다. 예: 월 매출 × 12 = 연 매출이면 둘 중 하나는 버려도 된다[^d2].
+
+슬라이드는 $$n$$으로 나눈 공분산 $$\operatorname{Cov}(A, B) = \frac1n\sum(a_i - \bar A)(b_i - \bar B)$$와 그 정규화인 피어슨 상관계수(PCC) $$r_{A,B} = \frac{\operatorname{Cov}(A, B)}{\sigma_A\sigma_B}$$를 쓴다[^d1]. 다섯 시점의 두 회사 주가(AllElectronics 6, 5, 4, 3, 2 / HighTech 20, 10, 14, 5, 5)에서 곱의 평균 50.2에서 평균의 곱 $$4 \times 10.8 = 43.2$$를 빼 $$\operatorname{Cov} = 7$$이다. 같이 오르내린다. 공분산은 단위에 따라 크기가 바뀌므로, 크기를 비교하려면 상관계수(약 0.87)를 본다[^d1][^sd1].
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 슬라이드 p.17 "Cov(A, B) = 0: A and B are independent", p.18 r = 0 그림에 "Independent" / 문제점: 공분산(상관계수)이 0이면 직선 관계가 없다는 뜻일 뿐 독립은 아니다. 역(독립이면 공분산 0)만 맞다 / 수정안: "Cov = 0이면 무상관(uncorrelated). 독립이면 Cov = 0이지만 반대는 아니다" / 근거: 이 문서의 카드 C2($$Y = X^2$$), 18_covariance_verify.py 주장 3
+
+</div>
+
+
+명목 속성끼리의 관련성은 공분산 대신 [카이제곱 상관 분석](/Hongs_Blog/studies/data-science/chi-square-correlation/)으로 잰다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -138,5 +154,16 @@ $$\operatorname{Cov}(X, Y) = \mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big] = \mathb
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 두 속성 $$A = (6, 5, 4, 3, 2)$$, $$B = (20, 10, 14, 5, 5)$$의 공분산($$n$$으로 나눔)을 구하라. 두 속성은 함께 오르내리는가?</summary>
+
+**답:** $$\overline{AB} = 50.2$$, $$\bar A\bar B = 4 \times 10.8 = 43.2$$이므로 $$\operatorname{Cov} = 7 > 0$$. 함께 오르내린다. 상관계수는 $$\frac{7}{\sqrt2 \times \sqrt{32.56}} \approx 0.87$$이다[^d1].
+
+</details>
+
+
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.3절 "Covariance and correlation"(정의, 성질, 합의 분산, 무상관과 독립의 차이).
+[^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.17 (공분산, AllElectronics·HighTech 예), p.18 (피어슨 상관계수)
+[^d2]: 같은 자료, p.39 (상관 분석으로 중복 속성 찾기)
+[^sd1]: 에이전트 보충. 상관계수 약 0.87과 원본 오류 의심의 판정은 18_covariance_verify.py로 계산했다.
 {% endraw %}

@@ -74,6 +74,16 @@ def main():
         assert abs(math.log(1 + r) - r) / r < r
     assert abs((1.001) ** 50 - (1 + 50 * 0.001)) < 0.002 and abs(math.sin(0.01) - 0.01) < 2e-7
     print("[OK] 주장 5")
+    # 수치해석(2-2) 과목별 관점: e^{−x} − x 예, 상대 오차, 카드 C4
+    fe = lambda x: math.exp(-x) - x; dfe = lambda x: -math.exp(-x) - 1
+    xs_ = [0.0]
+    for _ in range(4):
+        xs_.append(xs_[-1] - fe(xs_[-1]) / dfe(xs_[-1]))
+    assert [round(v, 9) for v in xs_] == [0.0, 0.5, 0.566311003, 0.567143165, 0.56714329]
+    rt = 0.56714329040978387
+    et_ = [abs(rt - v) / rt * 100 for v in xs_]
+    assert round(et_[1], 1) == 11.8 and round(et_[2], 3) == 0.147 and abs(et_[3] - 0.000022) < 1e-6 and et_[4] < 1e-6
+    x1_ = 1 - fe(1) / dfe(1); assert abs(x1_ - 0.537883) < 1e-6
     print("ALL CHECKS PASSED")
 
 

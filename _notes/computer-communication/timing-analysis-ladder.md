@@ -14,6 +14,8 @@ status: "verified"
 description: "사용 개념: 소요시간 분석의 두 식. 회선은 d{\\text{setup}} + M/R + H\\,d{\\text{prop}}, 패킷은 (H + P - 1)L/R + H\\,d{\\text{prop}} + (H-1)\\,d{\\text{proc}}."
 prev_url: "/studies/computer-communication/packet-switching-ladder/"
 prev_title: "패킷 스위칭 예제 사다리"
+next_url: "/studies/computer-communication/line-coding-ladder/"
+next_title: "인코딩 예제 사다리"
 math: true
 mermaid: false
 code_count: 0

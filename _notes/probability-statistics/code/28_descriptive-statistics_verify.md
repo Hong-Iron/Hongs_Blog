@@ -64,6 +64,12 @@ def main():
         gaps.append(max(max(abs((i + 1) / n - F(x)), abs(i / n - F(x))) for i, x in enumerate(xs)))
     assert gaps[0] > gaps[1] > gaps[2] and gaps[2] < 0.05
     print("[OK] 주장 4: 경험적 CDF", [round(g, 3) for g in gaps])
+    # 데이터 과학 2회 슬라이드 12·13: 가중 평균, 오른쪽으로 긴 꼬리에서 최빈값 < 중앙값 < 평균
+    w = [3, 1]; x = [80, 90]
+    assert sum(a * b for a, b in zip(w, x)) / sum(w) == 82.5
+    skew = [1, 2, 2, 2, 3, 3, 4, 5, 9, 20]
+    assert st.mode(skew) == 2 and st.median(skew) == 3 and st.mean(skew) == 5.1
+    print("[OK] 데이터 과학 관점·카드 C4·C5: 가중 평균 82.5, 최빈값 2 < 중앙값 3 < 평균 5.1")
     print("ALL CHECKS PASSED")
 
 

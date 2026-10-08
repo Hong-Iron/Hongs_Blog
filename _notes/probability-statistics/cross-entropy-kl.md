@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Cross-Entropy", "교차 엔트로피", "KL 발산", "Kullback–Leibler divergence", "쿨백-라이블러 발산", "상대 엔트로피", "relative entropy", "기브스 부등식", "Gibbs' inequality", "교차 엔트로피 손실", "cross-entropy loss", "로그 손실", "log loss", "음의 로그 가능도", "negative log-likelihood"]
 description: "실제 분포를 따르는 기호를, 잘못 믿은 다른 분포에 맞춰 만든 부호로 보내면 평균 비트가 엔트로피보다 늘어난다. 그 평균 비트가 교차 엔트로피이고, 늘어난 만큼이 KL 발산이다. KL 발산은 \"믿은 분포가 실제와 얼마나 다른가\"를 재는 대표적인 수라서, 분류 모델은 예측 분포와 정…"
@@ -104,6 +104,10 @@ $$\mathcal{L}(\theta) = -\frac1n\sum_{i=1}^{n}\ln q_\theta(y_i \mid \mathbf{x}_i
 - 증명 도구: [볼록 함수](/Hongs_Blog/studies/calculus/convexity/)(접선 부등식)
 - 쓰는 곳: [경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/)으로 교차 엔트로피 손실을 줄인다
 
+## 과목별 관점
+
+**데이터 과학 (3-2학기).** 두 확률분포가 얼마나 다른지 재는 척도로 소개한다. $$p(x)$$는 데이터의 "참" 분포, $$q(x)$$는 학습시키려는 모델이고, $$D_{KL}(p \Vert  q) = \sum_x p(x)\ln\frac{p(x)}{q(x)}$$는 $$q$$로 $$p$$를 흉내 낼 때 잃는 정보다. 0 이상이고 $$p = q$$일 때만 0이지만, $$D_{KL}(p\Vert q) \ne D_{KL}(q\Vert p)$$라 거리(distance)가 아니다[^d1]. 데이터 과학에서는 같은 "비슷함 재기" 단원에서 [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/), 코사인 유사도와 함께 다룬다. 거리는 대칭과 삼각부등식을 지켜야 하는데 KL 발산은 대칭부터 깨진다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -132,4 +136,5 @@ $$\mathcal{L}(\theta) = -\frac1n\sum_{i=1}^{n}\ln q_\theta(y_i \mid \mathbf{x}_i
 
 [^1]: Cover, Thomas, *Elements of Information Theory* 2판, 2장(상대 엔트로피의 정의, 정보 부등식 $$D(p\Vert q) \ge 0$$, 틀린 분포로 부호화할 때의 추가 길이).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 3.13절(KL 발산과 교차 엔트로피), 5.5절(최대가능도와 교차 엔트로피의 관계).
+[^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.27 (Measuring Similar Distributions)
 {% endraw %}

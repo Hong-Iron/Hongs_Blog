@@ -225,6 +225,18 @@ def main():
     h = gd(lambda p: [6 * p[0], 2 * p[1]], [1.0, 1.0], 0.25, 3)
     assert all(abs(a - b) < 1e-12 for a, b in zip(h[1], [-0.5, 0.5]))
     print("[OK] 주장 8: 예제 사다리")
+    # 수치해석(2-2) 과목별 관점: 기울기 예, 직선 탐색이 있는 최급상승법, 카드 C5
+    gx, gy = 2 ** 2, 2 * 2 * 2                                               # f = xy² at (2, 2)
+    assert (gx, gy) == (4, 8) and abs(math.hypot(gx, gy) - 8.944) < 1e-3
+    fa = lambda x, y: 2 * x * y + 2 * x - x * x - 2 * y * y
+    grad = lambda x, y: (2 * y + 2 - 2 * x, 2 * x - 4 * y)
+    assert grad(-1, 1) == (6, -6)
+    for hh in (0.0, 0.1, 0.25, 0.5):
+        assert abs(fa(-1 + 6 * hh, 1 - 6 * hh) - (-7 + 72 * hh - 180 * hh * hh)) < 1e-12
+    assert abs(72 / 360 - 0.2) < 1e-15 and abs(fa(0.2, -0.2) - 0.2) < 1e-12
+    assert grad(0.2, -0.2) == (1.2, 1.2) or all(abs(a - b) < 1e-12 for a, b in zip(grad(0.2, -0.2), (1.2, 1.2)))
+    best_h = max(range(30001), key=lambda k: fa(0.2 + 1.2 * k / 10000, -0.2 + 1.2 * k / 10000)) / 10000
+    assert abs(best_h - 1.0) < 1e-4 and abs(fa(1.4, 1.0) - 1.64) < 1e-12 and fa(2, 1) == 2
     print("ALL CHECKS PASSED")
 
 

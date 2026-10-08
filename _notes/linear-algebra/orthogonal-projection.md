@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Orthogonal Projection", "직교 사영", "정사영", "사영", "projection", "사영 행렬", "projection matrix", "직교 여공간", "orthogonal complement", "정규방정식", "normal equations", "오차 벡터", "error vector"]
 description: "점에서 평면까지 가장 가까운 곳은 평면에 수직으로 내린 발이다. 벡터를 어떤 부분공간에 직교 사영한다는 것은 이 \"수직으로 내린 발\"을 찾는 것이고, 남는 오차는 부분공간 전체와 수직이다. 이 수직 조건 하나에서 계산 공식(정규방정식)이 나오며, 풀 수 없는 방정식에 대한 최선의 …"
@@ -160,6 +160,15 @@ $$\mathbf{b} = (6, 0, 0)$$을 $$(1, 1, 1)$$과 $$(0, 1, 2)$$가 만드는 평면
 </div>
 
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 그래픽스의 회전을 다루려고 직교 행렬을 따로 정의한다. $$AA^\top = I$$이면 $$A$$를 **직교 행렬**이라 한다. 곧 $$A^{-1} = A^\top$$이다[^n1]. 두 벡터가 서로 수직이고 둘 다 길이 1이면 정규직교라 부른다[^n1].
+
+- **정리 1.** 열 벡터들이 정규직교 집합이면 그 행렬은 직교 행렬이다. $$A^\top A$$의 $$(i, j)$$ 칸이 $$i$$번째 열과 $$j$$번째 열의 내적이라, $$\delta_{ij}$$(같으면 1, 다르면 0)가 되기 때문이다[^n2].
+- **정리 2.** 직교 행렬은 길이와 각을 지킨다. $$\vert A\mathbf x\vert ^2 = \mathbf x^\top A^\top A\mathbf x = \vert \mathbf x\vert ^2$$이고, 내적도 $$(A\mathbf x)\cdot(A\mathbf y) = \mathbf x\cdot\mathbf y$$로 그대로라 사잇각의 코사인이 같다[^n3].
+
+회전 행렬 $$\begin{pmatrix}\cos\theta & -\sin\theta\\ \sin\theta & \cos\theta\end{pmatrix}$$가 직교 행렬이다[^n4]. 슬라이드의 예는 30° 회전 $$\begin{pmatrix}\sqrt3/2 & -1/2\\ 1/2 & \sqrt3/2\end{pmatrix}$$이고, 두 열 $$(\frac{\sqrt3}{2}, \frac12)$$, $$(-\frac12, \frac{\sqrt3}{2})$$은 서로 수직인 단위 벡터다[^n5]. 이 성질 덕분에 회전한 물체의 법선은 같은 회전 행렬로 바꿔도 된다([법선 벡터의 변환](/Hongs_Blog/studies/numerical-analysis/normal-transform/)).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -194,5 +203,19 @@ $$\mathbf{b} = (6, 0, 0)$$을 $$(1, 1, 1)$$과 $$(0, 1, 2)$$가 만드는 평면
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** $$\begin{pmatrix}3/5 & -4/5\\ 4/5 & 3/5\end{pmatrix}$$가 직교 행렬임을 보이고, $$(1, 2)$$를 곱한 결과의 길이를 계산 없이 말하라. 근거는?</summary>
+
+**답:** 두 열 $$(\frac35, \frac45)$$, $$(-\frac45, \frac35)$$의 길이가 1이고 내적이 0이라 $$A^\top A = I$$다. 직교 행렬은 길이를 지키므로 $$\vert (1, 2)\vert  = \sqrt5$$ 그대로다. 근거는 $$\vert A\mathbf x\vert ^2 = \mathbf x^\top A^\top A\mathbf x$$에서 $$A^\top A = I$$를 쓰는 것이다[^sn1].
+
+</details>
+
+
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 4.1절 "Orthogonality of the Four Subspaces"(직교 여공간), 4.2절 "Projections"(직선·부분공간으로의 사영, $$P^2 = P$$, $$P^\top = P$$, 예 $$\mathbf{b} = (6, 0, 0)$$).
+[^n1]: 2-2학기/수치해석/1.수업자료/05.na05_ortho.pdf, p.2
+[^n2]: 같은 자료, p.3
+[^n3]: 같은 자료, p.4~5
+[^n4]: 같은 자료, p.5
+[^n5]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.13
+[^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 16_orthogonal-projection_verify.py로 확인했다.
 {% endraw %}

@@ -137,6 +137,34 @@ def main():
     a, b = math.exp(float(lx[0])), float(lx[1])
     assert abs(a - 2.01) < 0.01 and abs(b - 0.999) < 0.001
     print("[OK] 주장 9: 사다리")
+    # 수치해석(2-2) 과목별 관점: 오차 노름, 슬라이드 직선 예, 포물선 예
+    from fractions import Fraction as Fr
+    xs = [-1, 0, 1, 2, 3, 4, 5, 6]; ys = [10, 9, 7, 5, 4, 3, 0, -1]
+    e = [abs(Fr(86, 10) - Fr(16, 10) * x - y) for x, y in zip(xs, ys)]
+    assert max(e) == Fr(8, 10) and sum(e) / 8 == Fr(325, 1000) and sum(v * v for v in e) == Fr(14, 10)
+    assert abs(float(sum(v * v for v in e) / 8) ** 0.5 - 0.41833) < 1e-5
+    sx, sy, sxx, sxy = sum(xs), sum(ys), sum(x * x for x in xs), sum(x * y for x, y in zip(xs, ys))
+    assert (sxx, sx, sxy, sy) == (92, 20, 25, 37)
+    d_ = sxx * 8 - sx * sx
+    A_ = Fr(sxy * 8 - sx * sy, d_); B_ = Fr(sxx * sy - sx * sxy, d_)
+    assert A_ == Fr(-45, 28) and B_ == Fr(121, 14)
+    assert abs(float(A_) + 1.6071429) < 1e-7 and abs(float(B_) - 8.6428571) < 1e-7
+    px = [-3, 0, 2, 4]; py = [3, 1, 1, 3]
+    S = lambda k: sum(Fr(x) ** k for x in px); T = lambda k: sum(Fr(x) ** k * y for x, y in zip(px, py))
+    assert (S(4), S(3), S(2), S(1), T(2), T(1), T(0)) == (353, 45, 29, 3, 79, 5, 8)
+    Mq = [[S(4), S(3), S(2)], [S(3), S(2), S(1)], [S(2), S(1), Fr(4)]]; rq = [T(2), T(1), T(0)]
+    det3 = lambda m: (m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]))
+    dq = det3(Mq); sol = []
+    for c in range(3):
+        Mc = [list(r) for r in Mq]
+        for r in range(3):
+            Mc[r][c] = rq[r]
+        sol.append(det3(Mc) / dq)
+    assert sol == [Fr(585, 3278), Fr(-631, 3278), Fr(1394, 1639)]
+    # 카드 C5: (0, 1), (1, 3), (2, 4)의 E∞, E1 (직선 y = 1.5x + 7/6)
+    f5 = lambda x: Fr(3, 2) * x + Fr(7, 6)
+    e5 = [abs(f5(x) - y) for x, y in [(0, 1), (1, 3), (2, 4)]]
+    assert e5 == [Fr(1, 6), Fr(1, 3), Fr(1, 6)] and max(e5) == Fr(1, 3) and sum(e5) / 3 == Fr(2, 9)
     print("ALL CHECKS PASSED")
 
 

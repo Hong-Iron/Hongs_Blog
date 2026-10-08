@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["PageRank", "페이지랭크", "구글 행렬", "Google matrix", "감쇠 계수", "damping factor", "순간이동", "teleportation", "거듭제곱법", "power iteration", "댕글링 노드", "dangling node", "무작위 서퍼", "random surfer"]
 description: "웹 페이지의 중요도를, 링크를 무작위로 따라 끝없이 돌아다니는 사람이 각 페이지에 머무는 시간의 비율로 정한다. \"중요한 페이지가 많이 가리키는 페이지가 중요하다\"는 돌고 도는 정의가 마르코프 연쇄의 정상분포 하나로 깔끔하게 풀리고, 링크 표를 수십 번 곱하는 것만으로 계산된다. …"
@@ -95,6 +95,44 @@ PAGERANK(out, n, d, ε)
 - 선수: [마르코프 연쇄](/Hongs_Blog/studies/probability-statistics/markov-chains/)(정상분포, 수렴 조건), [대각화와 행렬 거듭제곱](/Hongs_Blog/studies/linear-algebra/diagonalization/)(거듭제곱법의 수렴 속도)
 - 비교: 순간이동 없는 무방향 그래프라면 정상분포가 차수에 비례한다([인접행렬 거듭제곱 ↔ 마르코프 전이](/Hongs_Blog/studies/probability-statistics/walks-markov-bridge/))
 
+## 과목별 관점
+
+**데이터 과학 (3-2학기).** PageRank를 "그래프에서 꼭짓점의 순위 매기기"로 다룬다. 링크를 투표로 보되, 중요한 페이지의 투표가 더 무겁다. 페이지 $$j$$의 점수는 $$j$$를 가리키는 페이지들의 점수를 각자의 나가는 링크 수로 나눠 더한 것이다[^d1].
+
+$$r_j = \sum_{i \to j}\frac{r_i}{d_i}$$
+
+
+$$d_i$$는 페이지 $$i$$의 나가는 링크 수다. 슬라이드는 이것을 행이 확률분포인 행렬 $$M$$($$M_{ij} = \frac{1}{d_i}$$)으로 $$\mathbf r^{n+1} = \mathbf r^n M$$이라 쓴다[^d2]. 페이지 1 → 1, 2 / 2 → 1, 3 / 3 → 2인 그래프에서 $$\frac13$$씩 시작하면[^d3]
+
+$$\mathbf r^1 = \left(\tfrac13, \tfrac12, \tfrac16\right),\ \mathbf r^2 = \left(\tfrac{5}{12}, \tfrac13, \tfrac14\right),\ \mathbf r^3 = \left(\tfrac{9}{24}, \tfrac{11}{24}, \tfrac16\right),\ \dots \to \left(\tfrac{6}{15}, \tfrac{6}{15}, \tfrac{3}{15}\right)$$
+
+
+로 수렴한다. 수렴한 $$\mathbf r$$은 $$\mathbf r = \mathbf rM$$을 만족하는 정상분포, 곧 $$M$$의 주 고유벡터다[^d4].
+
+두 문제와 순간이동[^d5]:
+
+- **막다른 페이지**(나가는 링크 없음): 점수가 새어 나가 모두 0이 된다. 그 페이지에서는 모든 페이지로 $$\frac1N$$씩 순간이동하게 $$M$$의 행을 바꾼다.
+- **거미줄 함정**(무리 밖으로 나가는 링크가 없음): 그 무리가 점수를 모두 빨아들인다. 매 순간 확률 $$\beta$$로 링크를 따르고 $$1 - \beta$$로 아무 페이지로 순간이동한다. 보통 $$\beta = 0.8 \sim 0.9$$라 평균 5~10걸음마다 순간이동한다.
+
+$$r_j = \sum_{i \to j}\beta\frac{r_i}{d_i} + (1 - \beta)\frac1N, \qquad G = \beta M + (1 - \beta)\left[\frac1N\right]_{N \times N}$$
+
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 13회 슬라이드 p.14 "$$G = \beta M - (1 - \beta)\left[\frac1N\right]_{N \times N}$$" / 문제점: 빼면 행의 합이 $$\beta - (1 - \beta) = 2\beta - 1$$이 되어 확률분포가 아니다. 같은 쪽의 수치 예 "$$G = 0.8M + 0.2[\frac13]$$"와 바로 위 식 $$r_j = \sum\beta\frac{r_i}{d_i} + (1 - \beta)\frac1N$$은 더하기다 / 수정안: $$G = \beta M + (1 - \beta)\left[\frac1N\right]_{N \times N}$$ / 근거: 25_pagerank_verify.py에서 슬라이드의 $$G$$ 성분(7/15, 1/15, 13/15)을 더하기로 재현했다
+
+</div>
+
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 13회 슬라이드 p.12 막다른 페이지를 고친 뒤의 반복 "$$(\frac13, \frac13, \frac13) \to (\frac19, \frac79, \frac19) \to (\frac{1}{27}, \frac{25}{27}, \frac{1}{27})$$" / 문제점: $$(\frac19, \frac79, \frac19)$$에 고친 $$M$$을 곱하면 페이지 1은 페이지 2의 몫 $$\frac79 \times \frac13 = \frac{7}{27}$$을 받는다. 셋째 벡터가 틀렸다 / 수정안: $$(\frac{7}{27}, \frac{13}{27}, \frac{7}{27})$$ / 근거: 25_pagerank_verify.py
+
+</div>
+
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -124,6 +162,19 @@ new = [0.15 / n + sum(0.85 * r[i] / len(links[i]) for i in links if j in links[i
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 페이지 1 → 2, 3 → 2이고 페이지 2는 나가는 링크가 없다. 막다른 페이지 2를 "모든 페이지로 $$\frac13$$씩"으로 고친 뒤, $$(\frac13, \frac13, \frac13)$$에서 두 번 반복한 점수를 구하라.</summary>
+
+**답:** 고친 $$M$$의 행은 1: (0, 1, 0), 2: ($$\frac13, \frac13, \frac13$$), 3: (0, 1, 0). 한 번: $$(\frac19, \frac13 + \frac19 + \frac13, \frac19) = (\frac19, \frac79, \frac19)$$. 두 번: $$(\frac79 \cdot \frac13, \frac19 + \frac{7}{27} + \frac19, \frac79 \cdot \frac13) = (\frac{7}{27}, \frac{13}{27}, \frac{7}{27})$$. (슬라이드의 $$\frac{1}{27}, \frac{25}{27}, \frac{1}{27}$$은 오기다.)[^d5]
+
+</details>
+
+
 [^1]: Page, Brin, Motwani, Winograd, "The PageRank Citation Ranking: Bringing Order to the Web", Stanford InfoLab 기술 보고서(1999). Brin, Page, "The Anatomy of a Large-Scale Hypertextual Web Search Engine", *WWW7*(1998)(감쇠 계수 0.85).
 [^2]: 에이전트 보충. L1 거리가 매 반복 $$d$$배 이하로 준다는 성질과 구글 행렬의 두 번째 고윳값이 $$d$$ 이하라는 결과는 Haveliwala, Kamvar, "The Second Eigenvalue of the Google Matrix", Stanford 기술 보고서(2003)에 있다. 25_pagerank_verify.py에서 무작위 그래프로 확인했다.
+[^d1]: 3-2학기/데이터 과학/1.수업자료/13.13_pagerank.pdf, p.5~6
+[^d2]: 같은 자료, p.7
+[^d3]: 같은 자료, p.10 (거듭제곱법 예)
+[^d4]: 같은 자료, p.8~9 (무작위 서퍼, 정상분포)
+[^d5]: 같은 자료, p.11~14 (막다른 페이지, 거미줄 함정, 구글 행렬)
 {% endraw %}

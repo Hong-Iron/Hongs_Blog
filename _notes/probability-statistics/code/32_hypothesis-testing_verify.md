@@ -92,6 +92,16 @@ def main():
     exact = sum(comb(1000, k) * 0.02 ** k * 0.98 ** (1000 - k) for k in range(30, 1001))
     assert abs(exact - 0.021) < 1e-3
     print("[OK] 주장 5: 예제 사다리")
+    # 데이터 과학 6회 슬라이드 p.6: 겹마다 정확도 차이로 하는 짝지은 t-검정 (카드 C5)
+    A = [0.82, 0.85, 0.80, 0.84, 0.83]; B = [0.80, 0.82, 0.79, 0.81, 0.80]
+    d = [a - b for a, b in zip(A, B)]; k = len(d); db = sum(d) / k
+    var_k = sum((x - db) ** 2 for x in d) / k            # 슬라이드 식: k로 나눔
+    var_k1 = sum((x - db) ** 2 for x in d) / (k - 1)     # 보통의 표본분산: k - 1로 나눔
+    t_slide = db / (var_k ** 0.5 / k ** 0.5); t_std = db / (var_k1 ** 0.5 / k ** 0.5)
+    assert abs(db - 0.024) < 1e-12 and abs(var_k - 0.000064) < 1e-12
+    assert round(t_slide, 2) == 6.71 and round(t_std, 2) == 6.0
+    assert t_std > 2.776                                  # 자유도 4, 양측 0.05 임계값
+    print(f"[OK] 데이터 과학 관점·카드 C5: d평균 0.024, t = {t_slide:.2f}(k로 나눔) / {t_std:.2f}(k-1로 나눔) > 2.776")
     print("ALL CHECKS PASSED")
 
 

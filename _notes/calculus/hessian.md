@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Hessian", "헤세 행렬", "헤시안", "Hessian matrix", "2계 도함수 판정", "second derivative test", "임계점", "critical point", "안장점", "saddle point", "극소", "local minimum", "극대", "local maximum", "2차 근사", "quadratic approximation"]
 description: "기울기가 0인 곳(평지)은 산꼭대기일 수도, 골짜기 바닥일 수도, 말안장처럼 한쪽으로는 오르고 다른 쪽으로는 내리는 곳일 수도 있다. 2계 편미분을 모은 헤세 행렬이 어느 쪽인지 알려 준다. 모든 방향으로 위로 휘면(양의 정부호) 바닥, 모든 방향으로 아래로 휘면 꼭대기, 방향에 …"
@@ -107,6 +107,20 @@ $$f(x, y) = x^3 - 3x + y^2$$의 임계점을 분류한다.
 - 한 변수판: [2계 도함수 판정](/Hongs_Blog/studies/calculus/curve-analysis/)
 - 이어지는 개념: 볼록 함수(헤세가 늘 준정부호), [경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/)
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 두 변수 함수의 판정을 헤세 행렬의 행렬식 $$\vert H\vert  = \frac{\partial^2 f}{\partial x^2}\frac{\partial^2 f}{\partial y^2} - \left(\frac{\partial^2 f}{\partial x\,\partial y}\right)^2$$으로 쓴다. 임계점에서 $$\vert H\vert  > 0$$이고 $$\frac{\partial^2 f}{\partial x^2} > 0$$이면 극소, $$\vert H\vert  > 0$$이고 $$\frac{\partial^2 f}{\partial x^2} < 0$$이면 극대, $$\vert H\vert  < 0$$이면 안장점이다[^n1].
+
+$$x$$ 방향과 $$y$$ 방향의 2계 도함수만 보면 안 된다. $$f = xy$$는 $$x$$축과 $$y$$축을 따라 보면 평평하지만, 대각선 $$y = x$$를 따라서는 올라가고 $$y = -x$$를 따라서는 내려간다. 그래서 섞인 편도함수 $$\frac{\partial^2 f}{\partial x\,\partial y}$$까지 넣은 $$\vert H\vert $$로 판정한다[^n2].
+
+편도함수를 식으로 구하기 어려우면 중심 차분으로 근사한다[^n3].
+
+$$\frac{\partial f}{\partial x} \approx \frac{f(x + \delta x, y) - f(x - \delta x, y)}{2\delta x}, \qquad \frac{\partial^2 f}{\partial x^2} \approx \frac{f(x + \delta x, y) - 2f(x, y) + f(x - \delta x, y)}{\delta x^2}$$
+
+
+$$\frac{\partial^2 f}{\partial x\,\partial y} \approx \frac{f(x + \delta x, y + \delta y) - f(x + \delta x, y - \delta y) - f(x - \delta x, y + \delta y) + f(x - \delta x, y - \delta y)}{4\,\delta x\,\delta y}$$
+
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -133,6 +147,18 @@ $$f(x, y) = x^3 - 3x + y^2$$의 임계점을 분류한다.
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** $$f(x, y) = x^2y$$의 $$\frac{\partial^2 f}{\partial x\,\partial y}$$를 $$(1, 1)$$에서 $$\delta x = \delta y = 0.1$$인 중심 차분으로 근사하고 참값과 비교하라.</summary>
+
+**답:** $$\frac{1.331 - 1.089 - 0.891 + 0.729}{0.04} = \frac{0.08}{0.04} = 2$$. 참값 $$2x = 2$$와 같다. $$x^2y$$에서는 이 공식의 오차가 정확히 0이다[^sn1].
+
+</details>
+
+
 [^1]: OpenStax, *Calculus Volume 3*, 4.7절 "Maxima/Minima Problems"(임계점, 2계 도함수 판정 $$D = f_{xx}f_{yy} - f_{xy}^2$$, 안장점). Strang, *Introduction to Linear Algebra* 5판, 6.5절(양의 정부호와 최솟점, 2차 근사).
 [^s1]: 에이전트 보충. Dauphin et al., "Identifying and attacking the saddle point problem in high-dimensional non-convex optimization", *NeurIPS* 2014. 23_hessian_verify.py의 무작위 대칭 행렬 실험은 이 관찰의 단순한 모형일 뿐 신경망 손실 곡면 자체를 보인 것은 아니다.
+[^n1]: 2-2학기/수치해석/1.수업자료/15.na15_multiop.pdf, p.11, p.15~16
+[^n2]: 같은 자료, p.12~14
+[^n3]: 같은 자료, p.17
+[^sn1]: 에이전트 보충. 카드 C4는 원본에 없다. 23_hessian_verify.py로 확인했다.
 {% endraw %}

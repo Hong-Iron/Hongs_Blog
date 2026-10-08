@@ -116,6 +116,18 @@ def main():
             assert abs(d2 + f(t)) < 1e-6
     assert abs(math.cos(0) * math.cos(math.pi / 2) - 0) < 1e-15  # 독립: c1 cos + c2 sin = 0을 t = 0, π/2에 넣으면 c1 = c2 = 0
     print("[OK] 주장 5·카드 C2: 해당하지 않는 예, 해 공간")
+    # 수치해석(2-2) 과목별 관점: 3차 베지어의 행렬 꼴 M_B, 끝 접선, 카드 C4
+    Ab = [[F(1), F(0), F(0), F(0)], [F(1), F(1, 3), F(0), F(0)], [F(1), F(2, 3), F(1, 3), F(0)], [F(1), F(1), F(1), F(1)]]
+    MB = [[1, 0, 0, 0], [-3, 3, 0, 0], [3, -6, 3, 0], [-1, 3, -3, 1]]
+    assert [[sum(Ab[i][k] * MB[k][j] for k in range(4)) for j in range(4)] for i in range(4)] == [[int(i == j) for j in range(4)] for i in range(4)]
+    for k in range(11):
+        u = F(k, 10); uu = [1, u, u * u, u ** 3]
+        b = [sum(uu[r] * MB[r][i] for r in range(4)) for i in range(4)]
+        assert b == [bern(i, 3, u) for i in range(4)]
+    Pc = [(0, 0), (1, 2), (3, 2), (4, 0)]
+    d0 = tuple(sum(c * p[d] for c, p in zip([-3, 3, 0, 0], Pc)) for d in range(2))
+    assert d0 == (3, 6) and tuple(3 * (a - b) for a, b in zip(Pc[1], Pc[0])) == (3, 6)
+    assert bezier(Pc, F(1, 2)) == (2, F(3, 2))
     print("ALL CHECKS PASSED")
 
 

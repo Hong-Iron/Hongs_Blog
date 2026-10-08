@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Dot Product", "내적", "점곱", "inner product", "Norm", "노름", "길이", "length", "단위벡터", "unit vector", "직교", "orthogonal", "수직", "코사인 유사도", "cosine similarity", "코시-슈바르츠 부등식", "Cauchy–Schwarz inequality", "삼각부등식", "triangle inequality"]
 description: "두 벡터의 성분끼리 곱해 더한 수가 내적이다. 이 수는 \"두 화살표가 얼마나 같은 쪽을 향하는가\"를 재며, 같은 방향이면 크고, 수직이면 0, 반대면 음수다. 자기 자신과의 내적은 길이의 제곱이라, 길이·각도·수직을 모두 이것 하나로 계산한다. 추천 시스템의 유사도, 뉴런의 가중합…"
@@ -162,6 +162,12 @@ $$\mathbf{a} = (1, 1, 0)$$과 $$\mathbf{b} = (1, 0, 1)$$의 사잇각.
 </div>
 
 
+## 과목별 관점
+
+**데이터 과학 (3-2학기).** 문서를 "단어마다 몇 번 나왔는가"를 적은 긴 벡터(단어 빈도 벡터)로 바꾸고, 두 문서의 비슷함을 코사인 유사도로 잰다. 이 벡터는 길고 대부분이 0이다(희소). 슬라이드의 두 문서 $$\mathbf x = (5, 0, 3, 0, 2, 0, 0, 2, 0, 0)$$, $$\mathbf y = (3, 0, 2, 0, 1, 1, 0, 1, 0, 1)$$은 내적 25, 길이 $$\sqrt{42}$$, $$\sqrt{17}$$이라 코사인 유사도가 약 0.94다[^d1].
+
+코사인 유사도가 늘 알맞은 척도는 아니다. 슬라이드의 토론 예에서는 두 언어 모델의 LayerNorm 가중치 코사인 유사도가 96.8%를 넘어 "베꼈다"는 주장이 나왔다. 하지만 서로 무관한 모델들도 그 가중치의 방향이 비슷해 높은 코사인을 보였고, 평균을 빼고 잰 피어슨 상관계수는 약 −0.01이었다[^d2]. 코사인은 모든 성분이 공통으로 큰 값을 가지면(평균이 0에서 멀면) 그것만으로 1에 가까워진다. 피어슨 상관계수는 각 벡터에서 평균을 뺀 뒤 잰 코사인이라 그 공통 부분을 지운다[^sd1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -196,6 +202,17 @@ $$\mathbf{a} = (1, 1, 0)$$과 $$\mathbf{b} = (1, 0, 1)$$의 사잇각.
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** $$\mathbf u = (1, 2, 3)$$, $$\mathbf v = (3, 2, 1)$$의 모든 성분에 100을 더했다. 코사인 유사도와 피어슨 상관계수는 각각 어떻게 되는가? 두 모델의 가중치가 "비슷한가"를 판정할 때 무엇을 써야 하나?</summary>
+
+**답:** 코사인은 $$\frac{10}{14} \approx 0.71$$에서 0.9999로 치솟고, 상관계수는 −1 그대로다. 공통으로 더해진 큰 값이 방향을 거의 같게 만들기 때문이다. 공통 부분이 아니라 값의 오르내림이 닮았는지를 보려면 평균을 빼는 상관계수를 쓴다[^d2][^sd1].
+
+</details>
+
+
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.2절 "Lengths and Dot Products"(내적, 길이, 단위벡터, 코사인 공식, 코시–슈바르츠와 삼각부등식).
 [^s1]: 에이전트 보충. 램버트 조명과 뒷면 제거는 컴퓨터 그래픽스 교재의 표준 내용이다. 고차원 무작위 벡터의 코사인이 0 근처에 모이는 것(1000차원에서 표준편차 약 $$1/\sqrt{1000} \approx 0.03$$)은 02_dot-product_verify.py에서 실험으로 확인했다.
+[^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.26 (문서의 단어 빈도 벡터와 코사인 유사도, sim = 0.94)
+[^d2]: 같은 자료, p.28 (Discussion: Cosine Similarity vs PCC)
+[^sd1]: 에이전트 보충. "상관계수는 평균을 뺀 코사인"이라는 설명과 카드 C5의 수치는 원본에 없다. 02_dot-product_verify.py로 계산했다.
 {% endraw %}

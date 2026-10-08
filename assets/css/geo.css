@@ -94,6 +94,8 @@ body[data-tone="dark"] .btn--primary {
 [data-course="algorithms"]             { --course: #1d6b57; --course-2: #b0432c; }
 [data-course="operating-systems"]      { --course: #4b5d2e; --course-2: #c9952e; }
 [data-course="signals-and-systems"]    { --course: #2c5a85; --course-2: #b0432c; }
+[data-course="numerical-analysis"]     { --course: #6a4c8c; --course-2: #c9952e; }
+[data-course="data-science"]           { --course: #1f6f7a; --course-2: #b0432c; }
 
 [data-course] {
   --geo-1: var(--course);

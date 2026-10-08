@@ -168,6 +168,63 @@ def main():
     L, U, _ = lu_exact([[2, 1], [6, 8]])
     assert L == [[1, 0], [3, 1]] and U == [[2, 1], [0, 5]]
     print("[OK] 주장 7·카드 C1")
+    # 수치해석(2-2) 과목별 관점: 둘리틀 공식, 슬라이드 예, 오차 줄이기, 열마다 풀어 역행렬
+    from fractions import Fraction as Fr
+    def doolittle(M):
+        n = len(M); L = [[Fr(int(i == j)) for j in range(n)] for i in range(n)]; U = [[Fr(0)] * n for _ in range(n)]
+        for j in range(n):
+            for i in range(j + 1):                       # 위에서부터 U의 j열
+                U[i][j] = Fr(M[i][j]) - sum(L[i][k] * U[k][j] for k in range(i))
+            for i in range(j + 1, n):                    # 그 아래 L의 j열
+                L[i][j] = (Fr(M[i][j]) - sum(L[i][k] * U[k][j] for k in range(j))) / U[j][j]
+        return L, U
+    def fwd(L, r):
+        x = []
+        for i in range(len(r)):
+            x.append((r[i] - sum(L[i][k] * x[k] for k in range(i))) / L[i][i])
+        return x
+    def bwd(U, r):
+        n = len(r); x = [Fr(0)] * n
+        for i in reversed(range(n)):
+            x[i] = (r[i] - sum(U[i][k] * x[k] for k in range(i + 1, n))) / U[i][i]
+        return x
+    Mn = [[6, 4, 2], [3, -2, -1], [3, 4, 1]]
+    Ln, Un = doolittle(Mn)
+    assert Ln == [[1, 0, 0], [Fr(1, 2), 1, 0], [Fr(1, 2), Fr(-1, 2), 1]] and Un == [[6, 4, 2], [0, -4, -2], [0, 0, -1]]
+    yv = fwd(Ln, [Fr(12), Fr(0), Fr(8)]); assert yv == [12, -6, -1]
+    assert bwd(Un, yv) == [1, 1, 1]                                  # 카드 C4
+    cols = [bwd(Un, fwd(Ln, [Fr(int(i == j)) for i in range(3)])) for j in range(3)]
+    Minv = [[cols[j][i] for j in range(3)] for i in range(3)]
+    assert Minv == [[Fr(1, 12), Fr(1, 6), 0], [Fr(-1, 4), 0, Fr(1, 2)], [Fr(3, 4), Fr(-1, 2), -1]]
+    assert all(sum(Mn[i][k] * Minv[k][j] for k in range(3)) == int(i == j) for i in range(3) for j in range(3))
+    # 오차 줄이기: 부동소수 해 x0에서 M Δx = M x0 − r을 풀어 x = x0 − Δx
+    import random as _r
+    _r.seed(8)
+    H = [[1.0 / (i + j + 1) for j in range(6)] for i in range(6)]       # 힐베르트 행렬(조건이 나쁨)
+    xt = [1.0] * 6; rr = [sum(H[i][j] * xt[j] for j in range(6)) for i in range(6)]
+    def solve_f(A, b):
+        n = len(b); M = [row[:] + [b[i]] for i, row in enumerate(A)]
+        for c in range(n):
+            for r_ in range(c + 1, n):
+                f = M[r_][c] / M[c][c]
+                M[r_] = [a - f * bb for a, bb in zip(M[r_], M[c])]
+        x = [0.0] * n
+        for i in reversed(range(n)):
+            x[i] = (M[i][n] - sum(M[i][k] * x[k] for k in range(i + 1, n))) / M[i][i]
+        return x
+    x0 = solve_f(H, rr)
+    Hx = [[Fr(v) for v in row] + [Fr(rr[i])] for i, row in enumerate(H)]      # 부동소수 H, r의 정확한 해
+    for c in range(6):
+        Hx[c] = [v / Hx[c][c] for v in Hx[c]]
+        for r_ in range(6):
+            if r_ != c:
+                Hx[r_] = [a - Hx[r_][c] * b for a, b in zip(Hx[r_], Hx[c])]
+    xe = [row[6] for row in Hx]
+    exact_res = [sum(Fr(H[i][j]) * Fr(x0[j]) for j in range(6)) - Fr(rr[i]) for i in range(6)]   # 잔차는 정밀하게
+    dx = solve_f(H, [float(v) for v in exact_res])
+    x1 = [a - b for a, b in zip(x0, dx)]
+    err0 = max(abs(Fr(a) - b) for a, b in zip(x0, xe)); err1 = max(abs(Fr(a) - b) for a, b in zip(x1, xe))
+    assert err1 < err0 / 10
     print("ALL CHECKS PASSED")
 
 

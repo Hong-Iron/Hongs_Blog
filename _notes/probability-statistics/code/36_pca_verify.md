@@ -131,6 +131,18 @@ def main():
     assert abs(l1 / (l1 + l2) - 0.75) < 1e-12
     assert abs((3 + 1) / math.sqrt(2) - 2.83) < 0.005   # 카드 C3
     print("[OK] 주장 5: 예제 사다리")
+    # 데이터 과학 10회 관점·카드 C5: 군집 정보가 분산이 작은 방향에 있으면 첫 주성분 투영에서 사라진다
+    pts = [(t2, 0.0) for t2 in range(-10, 11)] + [(t2, 1.0) for t2 in range(-10, 11)]
+    mx = sum(p[0] for p in pts) / len(pts); my = sum(p[1] for p in pts) / len(pts)
+    sxx = sum((p[0] - mx) ** 2 for p in pts); syy = sum((p[1] - my) ** 2 for p in pts)
+    sxy = sum((p[0] - mx) * (p[1] - my) for p in pts)
+    assert sxy == 0 and sxx > syy                      # 첫 주성분은 x축
+    proj_a = sorted(p[0] for p in pts[:21]); proj_b = sorted(p[0] for p in pts[21:])
+    assert proj_a == proj_b                            # 투영하면 두 군집이 완전히 겹친다
+    c = [(100, 30), (101, 31), (99, 29)]
+    m0 = (sum(p[0] for p in c) / 3, sum(p[1] for p in c) / 3)
+    assert [(p[0] - m0[0], p[1] - m0[1]) for p in c] == [(0, 0), (1, 1), (-1, -1)]
+    print("[OK] 데이터 과학 관점·카드 C5: x축 투영에서 두 군집이 겹침, 평균 빼기 예 (0,0),(1,1),(-1,-1)")
     print("ALL CHECKS PASSED")
 
 

@@ -1,0 +1,60 @@
+# 홍철's lines for the numerical-analysis course pages. Format: _data/robot/README.md
+greeting:
+- "수치해석이에요. 2-2학기에 들었고, 앞쪽은 그래픽스 수학이에요."
+- "수치해석 페이지예요. 내릴수록 배경에서 뉴턴 방법이 접선을 타고 근으로 내려가요."
+- "여긴 수치해석이에요. 회전, 곡선, 근 찾기, 미분방정식 순서로 가요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "외적과 동차 좌표 같은 3차원 변환부터요. 그다음 곡선, 연립방정식 반복법, 보간, 최적화, 근 찾기, 미분방정식 순서예요."
+  link: /studies/numerical-analysis/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "임의 축 회전이 행렬을 여러 번 곱해서 제일 헷갈려요. 예제 사다리로 한 단계씩 해 보세요."
+  link: /studies/numerical-analysis/axis-rotation-ladder/
+  link_label: "임의 축 회전 예제 사다리"
+- q: "배워서 어디에 써요?"
+  a: "게임 카메라 회전, 폰트랑 일러스트의 곡선, 물리 시뮬레이션이요. 컴퓨터가 정확히 못 푸는 걸 거의 맞게 푸는 방법들이에요."
+  link: /studies/numerical-analysis/runge-kutta/
+  link_label: "룽게-쿠타 방법"
+- q: "다른 과목이랑도 이어져요?"
+  a: "선형대수, 미분적분 문서 열두 개에 수치해석 관점을 붙여 놨어요. 행렬 계산이랑 테일러 급수가 계속 나와요."
+  link: /studies/numerical-analysis/jacobi-gauss-seidel/
+  link_label: "야코비 방법과 가우스-자이델 방법"
+chats:
+- q: "회전은 각도 세 개면 되지 않아요?"
+  a: "오일러 각이요. 읽기는 쉬운데 가운데 각이 90°가 되면 두 회전이 같은 축을 돌아서 자유도 하나를 잃어요. 짐벌 잠금이에요."
+  link: /studies/numerical-analysis/euler-angles/
+  link_label: "오일러 각과 짐벌 잠금"
+  next:
+  - q: "그럼 뭘 써요?"
+    a: "숫자 네 개짜리 쿼터니언이요. 축과 각을 그대로 담아서 짐벌 잠금이 없고, 두 자세 사이를 매끄럽게 이어요."
+    link: /studies/numerical-analysis/quaternion/
+    link_label: 쿼터니언
+- q: "근은 어떻게 찾아요?"
+  a: "부호가 바뀌는 구간을 반씩 줄이는 이분법은 늘 성공하지만 느려요. 뉴턴 방법이랑 할선법은 빠르지만 실패할 수 있어요."
+  link: /studies/numerical-analysis/root-finding-compared/
+  link_label: "근 찾기 방법 비교"
+  next:
+  - q: "도함수를 모르면요?"
+    a: "할선법이요. 접선 대신 최근 두 점을 잇는 직선을 써서, 도함수 없이도 뉴턴 방법에 가깝게 빨라요."
+    link: /studies/numerical-analysis/secant-method/
+    link_label: 할선법
+- q: "미분방정식은 어떻게 풀어요?"
+  a: "한 걸음 안의 몇 군데에서 기울기를 재서 평균 내며 나아가요. 네 번 재는 RK4를 제일 많이 써요."
+  link: /studies/numerical-analysis/runge-kutta/
+  link_label: "룽게-쿠타 방법"
+  next:
+  - q: "끝점 조건이 주어지면요?"
+    a: "모르는 시작 기울기를 짐작해서 쏴 보고, 끝에서 빗나간 만큼 조준을 고쳐요. 사격법이에요."
+    link: /studies/numerical-analysis/shooting-method/
+    link_label: 사격법
+talk:
+- text: "B-스플라인은 조절점을 지나지 않아요. 대신 점 하나를 옮기면 근처 조각만 바뀌어서 고치기 쉬워요."
+  link: /studies/numerical-analysis/b-spline/
+  link_label: B-스플라인
+- text: "가우스-자이델은 방금 고친 값을 바로 다음 식에 써서 야코비보다 빨리 다가가요. 대각 우세면 반드시 수렴해요."
+  link: /studies/numerical-analysis/jacobi-gauss-seidel/
+  link_label: "야코비 방법과 가우스-자이델 방법"
+- text: "이동은 행렬 곱셈이 아닌데, 좌표에 1을 하나 더 붙이면 곱셈이 돼요. 동차 좌표예요."
+  link: /studies/numerical-analysis/homogeneous-coordinates/
+  link_label: "동차 좌표"

@@ -108,6 +108,24 @@ def main():
     sd = math.sqrt(sum(cc * cc for cc in cs) / trials)
     assert abs(sd - 1 / math.sqrt(n)) < 0.006 and max(abs(cc) for cc in cs) < 0.15
     print(f"[OK] 주장 8: 1000차원 코사인 표준편차 {sd:.4f}")
+    # 데이터 과학 2회 슬라이드 26: 문서 단어 빈도 벡터의 코사인 유사도
+    x = [5, 0, 3, 0, 2, 0, 0, 2, 0, 0]; y = [3, 0, 2, 0, 1, 1, 0, 1, 0, 1]
+    d = sum(a * b for a, b in zip(x, y))
+    cos = d / (sum(a * a for a in x) ** 0.5 * sum(b * b for b in y) ** 0.5)
+    assert d == 25 and sum(a * a for a in x) == 42 and sum(b * b for b in y) == 17
+    assert round(cos, 2) == 0.94
+    # 카드 C5: 모든 성분에 같은 수를 더하면 코사인은 바뀌지만 상관계수는 그대로
+    def pcc(u, v):
+        mu = sum(u) / len(u); mv = sum(v) / len(v)
+        num = sum((a - mu) * (b - mv) for a, b in zip(u, v))
+        return num / (sum((a - mu) ** 2 for a in u) ** 0.5 * sum((b - mv) ** 2 for b in v) ** 0.5)
+    def cosf(u, v):
+        return sum(a * b for a, b in zip(u, v)) / (sum(a * a for a in u) ** 0.5 * sum(b * b for b in v) ** 0.5)
+    u = [1.0, 2.0, 3.0]; v = [3.0, 2.0, 1.0]
+    assert abs(pcc(u, v) + 1) < 1e-12 and abs(cosf(u, v) - 10 / 14) < 1e-12
+    u2 = [a + 100 for a in u]; v2 = [b + 100 for b in v]
+    assert cosf(u2, v2) > 0.999 and abs(pcc(u2, v2) + 1) < 1e-12
+    print(f"[OK] 데이터 과학 관점·카드 C5: 문서 코사인 {cos:.3f}; +100 이동 뒤 코사인 {cosf(u2, v2):.4f}, 상관계수 -1 그대로")
     print("ALL CHECKS PASSED")
 
 

@@ -138,14 +138,6 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 3. *파스발:* 반전·이동은 평균 전력을 바꾸지 않으므로 $$\vert b_1\vert ^2 + \vert b_{-1}\vert ^2 = \frac12$$, $$\vert b_1\vert  = \frac12$$. 순허수라 $$b_1 = \pm\frac j2$$.
 4. *되돌리기:* $$a_0 = b_0 = 0$$, $$a_1 = e^{-j\pi/2}b_{-1} = -jb_{-1} = jb_1$$. $$b_1 = \frac j2$$이면 $$a_1 = -\frac12$$, $$x = -\cos\frac{\pi t}{2}$$. $$b_1 = -\frac j2$$이면 $$a_1 = \frac12$$, $$x = \cos\frac{\pi t}{2}$$.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 9주차 p.28~30 사실 4 "$$b_k = e^{j\pi k/2}a_{-k}$$", p.30 "$$b_1 = \frac12$$로 하면 $$a_1 = -\frac12$$" / 문제점: ① 사실 4의 지수 부호가 같은 쪽의 풀이($$x(-(t-1))$$, $$e^{-jk\omega_0}$$)와 오른쪽 상자의 유도($$b_{-k} = e^{j\pi k/2}a_k$$)와 반대다. ② 바로 앞에서 $$b_1$$은 순허수라 $$\pm\frac j2$$라고 했으므로 "$$b_1 = \frac12$$"는 "$$b_1 = \frac j2$$"여야 $$a_1 = jb_1 = -\frac12$$가 나온다 / 수정안: $$b_k = e^{-j\pi k/2}a_{-k}$$, $$b_1 = \pm\frac j2$$ / 근거: Oppenheim·Willsky 2판 예제 3.9의 원래 조건, [32_ctfs-properties_verify.py](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_verify/)가 $$x(-t+1)$$의 계수와 $$e^{-j\pi k/2}a_{-k}$$가 같음을 계산 (최종 답 $$\pm\cos\frac{\pi t}{2}$$는 맞다)
-
-</div>
-
-
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표 3.1의 선형성·시간 이동·반전·척도·곱셈·미분·켤레 대칭·주기 컨벌루션·파스발을 분석식 수치 적분으로 확인, 예제 3.6·3.7·3.8과 사각파 도함수의 계수, 예제 3.9의 답 확인 — [32_ctfs-properties_verify.py](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_verify/)</div>
 
@@ -216,18 +208,18 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/09.Week09_CH03_2_handout.pdf, p.21~22 (예제 3.6, 그림 3.10)
+[^1]: 3-1학기/신호 및 시스템/1.수업자료/09.Week09_CH03_2_handout.pdf, p.22~23 (예제 3.6, 그림 3.10)
 [^2]: 같은 자료, p.10~11
 [^3]: 같은 자료, p.10 (표 3.1)
 [^4]: 같은 자료, p.12
 [^5]: 같은 자료, p.13~14
-[^6]: 같은 자료, p.15, p.16
+[^6]: 같은 자료, p.15, p.18
 [^7]: 같은 자료, p.15, p.18
 [^8]: 같은 자료, p.19, p.21
 [^9]: 같은 자료, p.20
-[^10]: 같은 자료, p.22 (예제 3.7, 그림 3.11)
-[^11]: 같은 자료, p.23 (예제 3.8, 그림 3.12)
-[^12]: 같은 자료, p.23~24
-[^13]: 같은 자료, p.24~26 (예제 3.9)
+[^10]: 같은 자료, p.24 (예제 3.7, 그림 3.11)
+[^11]: 같은 자료, p.25 (예제 3.8, 그림 3.12)
+[^12]: 같은 자료, p.26~27
+[^13]: 같은 자료, p.28~31 (예제 3.9)
 [^s1]: 에이전트 보충. 오해 항목과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
 {% endraw %}

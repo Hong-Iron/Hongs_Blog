@@ -61,7 +61,7 @@ permalink: "/studies/computer-communication/throughput/"
 
 $$\text{처리량} = \frac{M}{T_{\text{xfer}}}$$
 
-회선 스위칭처럼 RTT 하나를 들인 뒤 대역폭 $$R$$로 흘려보내면 $$T_{\text{xfer}} = \text{RTT} + M/R$$이다. 패킷 스위칭의 $$T_{\text{xfer}}$$는 여러 요소에 영향을 받으며, [소요시간 분석](/Hongs_Blog/studies/computer-communication/timing-analysis/)으로 구한다[^1].
+회선 스위칭처럼 RTT 하나를 들인 뒤 대역폭 $$R$$로 흘려보내면 $$T_{\text{xfer}} = \text{RTT} + M/R$$이다. 이 시간은 데이터를 받는 쪽에서 잰다. 받는 쪽이 요청을 보내 상대에게 닿기까지 RTT의 절반, 첫 비트가 되돌아오기까지 나머지 절반, 마지막 비트까지 싣는 데 $$M/R$$이 걸린다[^s1]. 패킷 스위칭의 $$T_{\text{xfer}}$$는 여러 요소에 영향을 받으며, [소요시간 분석](/Hongs_Blog/studies/computer-communication/timing-analysis/)으로 구한다[^1].
 
 </div>
 
@@ -110,4 +110,5 @@ RTT가 0보다 크면 처리량은 늘 $$R$$보다 작다. $$M$$이 커질수록
 [^2]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 86~96행
 [^3]: 4-1학기/pasted_images/Pasted image 20260925230348.png — 슬라이드 "성능 (Performance): 대역폭". 표기 방법 KB = 2¹⁰ bytes, Mbps = 10⁶ bits per second. 필기 03.3주차.md 36~40행도 대역폭을 "이론상 최상의 속도", "링크의 최대속도"로 적는다
 [^4]: 4-1학기/pasted_images/Pasted image 20260926020456.png — 슬라이드 "성능: 기타 사항"
+[^s1]: 에이전트 보충. 슬라이드는 이 식을 누구 기준으로 재는지 적지 않는다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.5절의 같은 식은 파일을 요청한 쪽이 요청을 보낸 때부터 마지막 비트를 받을 때까지를 잰다. 보내는 쪽이 회선 설정을 시작한 때부터 받는 쪽이 마지막 비트를 받을 때까지 재면 한쪽 전파 지연(RTT의 절반)이 더 붙는다.
 {% endraw %}

@@ -50,6 +50,14 @@
       codes: 43
       heavy: 20
       units: "복습: 자연상수, 오일러 등식, 미분방정식 · 1장 신호의 종류, 에너지, 시간축 변환 · 1장 지수·정현파 신호, 임펄스와 계단 · 1장 시스템과 시스템의 성질 …"
+    - name: "수치해석"
+      slug: "numerical-analysis"
+      url: "/studies/numerical-analysis/"
+      concepts: 37
+      practices: 5
+      codes: 42
+      heavy: 6
+      units: "벡터, 직선과 평면 · 행렬 · 기하 변환 · 직교 행렬과 좌표계 …"
 - track: "컴퓨터 과학"
   courses:
     - name: "알고리즘"
@@ -71,10 +79,10 @@
     - name: "컴퓨터 통신"
       slug: "computer-communication"
       url: "/studies/computer-communication/"
-      concepts: 36
-      practices: 2
-      codes: 19
-      heavy: 3
+      concepts: 53
+      practices: 4
+      codes: 34
+      heavy: 6
       units: "연결과 자원 공유 · 패킷 스위칭과 네트워크 구조 · 인터넷 구조와 성능 · 데이터 링크 네트워크: 링크의 실체 …"
     - name: "휴먼 인터페이스 미디어"
       slug: "human-interface-media"
@@ -84,6 +92,14 @@
       codes: 14
       heavy: 2
       units: "사람의 지각 · 사람의 시각"
+    - name: "데이터 과학"
+      slug: "data-science"
+      url: "/studies/data-science/"
+      concepts: 46
+      practices: 3
+      codes: 36
+      heavy: 5
+      units: "데이터, 측정, 전처리 · 빈발 패턴 · 앙상블 · 군집화 기초와 밀도 기반 군집화 …"
 - track: "심리학"
   courses:
     - name: "이상 심리학"

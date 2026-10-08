@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Modulation", "변조", "모듈레이션", "복조", "demodulation", "모뎀", "modem", "신호", "signal", "신호화", "인코딩", "encoding", "전자기 스펙트럼", "electromagnetic spectrum", "아날로그 신호", "analog signal", "디지털 신호", "digital signal"]
 description: "링크 위를 지나가는 것은 0과 1이 아니라 전기, 빛, 전파 같은 물리 신호다. 그래서 보내는 쪽은 데이터를 신호로 바꾸고(변조), 받는 쪽은 신호를 데이터로 되돌린다(복조). 이 둘을 하는 장치가 모뎀이다. 낮은 주파수는 장애물을 잘 지나가지만 빠른 전송에는 한계가 있어서, 통신…"
@@ -65,6 +65,16 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 </div>
 
 
+변조는 보내는 쪽이, 복조는 받는 쪽이 한다. 보내는 노드는 전송할 이진 데이터를 신호로 만들어야 하고, 이 일은 네트워크 어댑터(NIC) 안의 신호 부품이 한다[^4]. 좁은 뜻의 인코딩은 디지털 데이터를 디지털 신호로 바꾸는 변조이고, 주로 유선 링크에서 쓴다[^4]. 방법은 [NRZ와 클럭 복구](/Hongs_Blog/studies/computer-communication/nrz-clock-recovery/)부터 이어진다.
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 5주차 필기 9행 "Mod(수신) - Demod(송신)", 94행 "Encoding(수신) <-> Decoding(송신)" / 문제점: 송신과 수신이 서로 바뀌었다. 데이터를 신호로 바꾸는 변조·인코딩은 보내는 쪽이 하고, 신호를 데이터로 되돌리는 복조·디코딩은 받는 쪽이 한다 / 수정안: 변조·인코딩(송신) ↔ 복조·디코딩(수신) / 근거: 슬라이드 20 "결국, 발신지에서 전송하려는 이진 데이터를 신호로 만들어야 함"[^4]
+
+</div>
+
+
 신호의 종류는 전자기파 스펙트럼으로 나타낸다[^2][^3]. 신호의 모양으로는 매끄럽게 변하는 아날로그 신호와 두 값 사이를 오가는 디지털 신호가 있다[^2].
 
 | 주파수 대역 (Hz) | 이름 | 쓰는 매체와 용도 |
@@ -78,12 +88,14 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 
 주파수에 따른 맞바꿈이 있다[^3].
 - 저주파일수록 전송 특성이 좋다. 장애물을 잘 통과한다.
-- 저주파는 고속의 데이터 전송에 한계가 있다. 통신 속도(대역폭)와 비트 폭의 관계 때문이고, 뒤에서 다시 다룬다.
+- 저주파는 고속의 데이터 전송에 한계가 있다. 통신 속도(대역폭)와 비트 폭의 관계 때문이다. 높은 주파수 대역으로 속도를 올리는 방법은 [진폭·주파수·위상 변조](/Hongs_Blog/studies/computer-communication/digital-modulation/)에서 다룬다.
 - 그래서 통신은 저주파에서 고주파로 발전한다.
 
 ## 연결
 
 - 선수: [데이터 링크 계층](/Hongs_Blog/studies/computer-communication/data-link-layer/)(비트 교환), [전송 속도와 대역폭](/Hongs_Blog/studies/computer-communication/rate-and-bandwidth/)(비트 폭)
+- 중계할 때 신호를 키우는가, 0과 1을 되살리는가: [디지털 전송](/Hongs_Blog/studies/computer-communication/digital-transmission/)
+- 0과 1을 반송파에 싣는 구체적인 방법: [진폭·주파수·위상 변조](/Hongs_Blog/studies/computer-communication/digital-modulation/)
 - 신호를 싣는 매체: [유선 링크](/Hongs_Blog/studies/computer-communication/wired-links/), [무선 링크](/Hongs_Blog/studies/computer-communication/wireless-links/)
 - 신호를 서로 다른 주파수로 옮겨 나눠 쓰기: [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/)
 - 다른 과목: 진폭·주파수·파장은 대학수학의 [사인파](/Hongs_Blog/studies/college-math/sinusoid/), 휴먼 인터페이스 미디어의 [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/)과 같은 양이다. 휴먼 인터페이스 미디어에서 눈이 읽는 가시광은 이 스펙트럼의 적외선과 자외선 사이 좁은 구간이다[^s1].
@@ -115,5 +127,6 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 [^1]: 4-1학기/컴퓨터 통신/2.필기노트/04.4주차.md, 7~10행
 [^2]: 4-1학기/pasted_images/Pasted image 20260926022823.png — 슬라이드 "모듈레이션: 데이터의 신호화". 원문의 빨간 글씨: Mo, Dem
 [^3]: 4-1학기/pasted_images/Pasted image 20260926023315.png — 슬라이드 "전자기 스펙트럼과 용도/매체 특성"
+[^4]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 20 "변조 (Modulation) / 인코딩(Encoding): 개요"와 슬라이드 34 "인코딩(Encoding): 개요" (4-1학기/pasted_images/Pasted image 20261005195306.png, Pasted image 20261006180649.png). 4-1학기/컴퓨터 통신/2.필기노트/05.5주차.md, 4~9행, 94행
 [^s1]: 에이전트 보충. 주파수 × 파장 = 신호 속도의 관계, 표의 파장 값, 와이파이 주파수, 카드 C3, 가시광의 위치는 원본에 없다. 관계식은 파동의 기본 성질이고, 휴먼 인터페이스 미디어의 파동과 빛 문서에도 같은 식 $$c = f\lambda$$가 있다. 와이파이의 2.4 GHz와 5 GHz 대역은 IEEE 802.11 표준의 대역이다.
 {% endraw %}

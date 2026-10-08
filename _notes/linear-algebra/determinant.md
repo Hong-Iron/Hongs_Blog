@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Determinant", "행렬식", "det", "부호 있는 넓이", "signed area", "부호 있는 부피", "여인수 전개", "cofactor expansion", "라이프니츠 공식", "Leibniz formula", "방향 판정", "orientation test", "신발끈 공식", "shoelace formula"]
 description: "행렬식은 선형변환이 넓이(3차원에서는 부피)를 몇 배로 바꾸는지를 나타내는 수 하나다. 넓이 1인 정사각형이 넓이 5인 평행사변형이 되면 행렬식은 5이고, 뒤집어지면(시계 방향과 반시계 방향이 바뀌면) 음수가 된다. 행렬식이 0이면 공간이 더 낮은 차원으로 눌려 되돌릴 수 없으므로…"
@@ -106,6 +106,12 @@ $$A = \begin{pmatrix}1 & 2 & 1\\ 3 & 8 & 1\\ 0 & 4 & 1\end{pmatrix}$$의 행렬�
 </div>
 
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 행렬식을 여인수 전개로 정의한다. $$a_{ij}$$의 소행렬식(minor) $$\vert A_{ij}\vert $$는 $$i$$행과 $$j$$열을 지운 행렬의 행렬식이고, 여인수(cofactor)는 부호를 붙인 $$c_{ij} = (-1)^{i+j}\vert A_{ij}\vert $$다. 아무 행 $$i$$를 따라 $$\vert A\vert  = \sum_j a_{ij}c_{ij}$$로, 아무 열을 따라서도 같은 값으로 전개한다[^n1].
+
+성질은 슬라이드의 예로 확인한다. $$\begin{vmatrix}1 & 2\\ 3 & 4\end{vmatrix} = -2$$, 두 행을 바꾸면 $$2$$, 첫 행의 2배를 둘째 행에 더한 $$\begin{vmatrix}1 & 2\\ 5 & 8\end{vmatrix}$$는 그대로 $$-2$$, 두 행이 같은 $$\begin{vmatrix}1 & 2\\ 1 & 2\end{vmatrix}$$는 $$0$$이다[^n2]. $$3 \times 3$$ 예 $$\begin{pmatrix}2 & -1 & 3\\ 1 & 6 & -4\\ 5 & 0 & 8\end{pmatrix}$$의 행렬식은 34이고, 이 값으로 역행렬을 만든다([역행렬](/Hongs_Blog/studies/linear-algebra/inverse-matrix/))[^n3].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -132,6 +138,17 @@ $$A = \begin{pmatrix}1 & 2 & 1\\ 3 & 8 & 1\\ 0 & 4 & 1\end{pmatrix}$$의 행렬�
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 첫 행을 따라 여인수 전개해 $$\begin{vmatrix}2 & -1 & 3\\ 1 & 6 & -4\\ 5 & 0 & 8\end{vmatrix}$$를 구하라.</summary>
+
+**답:** $$2(6\cdot8 - (-4)\cdot0) - (-1)(1\cdot8 - (-4)\cdot5) + 3(1\cdot0 - 6\cdot5) = 96 + 28 - 90 = 34$$. 둘째 항의 부호가 $$(-1)^{1+2} = -1$$이라 $$-(-1) = +1$$이 되는 것이 흔한 실수 자리다[^n3].
+
+</details>
+
+
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 5.1절 "The Properties of Determinants"(세 성질과 그 결과, $$\det AB$$, $$\det A^\top$$), 5.2절 "Permutations and Cofactors"(라이프니츠 공식, 여인수 전개), 5.3절 "Cramer's Rule, Inverses, and Volumes"(넓이·부피).
 [^s1]: 에이전트 보충. 방향 판정과 신발끈 공식은 계산 기하 교재의 표준 도구다. 15_determinant_verify.py에서 무작위 삼각형·다각형으로 확인했다.
+[^n1]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.16~18
+[^n2]: 같은 자료, p.19~20
+[^n3]: 같은 자료, p.25
 {% endraw %}

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Descriptive Statistics", "기술통계", "요약 통계", "summary statistics", "표본평균", "sample mean", "중앙값", "median", "분위수", "quantile", "백분위수", "percentile", "p99", "사분위 범위", "IQR", "interquartile range", "히스토그램", "histogram", "경험적 분포함수", "empirical CDF", "견고성", "robustness"]
 description: "수천 개의 측정값을 몇 개의 수와 그림으로 요약하는 방법이다. 가운데(평균, 중앙값), 흩어진 정도(표준편차, 사분위 범위), 모양(히스토그램, 분위수)을 본다. 평균은 극단값 하나에 크게 끌려가지만 중앙값과 분위수는 버틴다. 응답 시간처럼 가끔 아주 큰 값이 나오는 자료는 평균보…"
@@ -89,6 +89,15 @@ API 응답 시간 10개(ms)가 $$12, 13, 13, 14, 15, 15, 16, 18, 20, 250$$이다
 - 선수: [분산과 표준편차](/Hongs_Blog/studies/probability-statistics/variance/)(확률변수의 분산에 대응하는 자료판)
 - 이어지는 개념: [표본분포와 추정량](/Hongs_Blog/studies/probability-statistics/estimators/)(요약값도 확률변수다)
 
+## 과목별 관점
+
+**데이터 과학 (3-2학기).** 기술통계를 "전처리 전에 자료 전체를 한눈에 보는 도구"로 쓴다. 어느 값을 잡음이나 이상치로 다룰지, 빈 값을 무엇으로 채울지 정하기 전에 중심과 흩어짐부터 본다[^d1].
+
+- **가중 평균.** 값마다 중요도 $$w_i$$가 다르면 $$\bar x = \frac{\sum w_i x_i}{\sum w_i}$$로 평균을 낸다. 예: 80점에 가중치 3, 90점에 1이면 $$\frac{240 + 90}{4} = 82.5$$다[^d1].
+- **최빈값.** 가장 자주 나오는 값이다. 가장 많이 나오는 값이 여럿이면 다봉(multimodal)이라 부른다. 좌우가 대칭이면 최빈값 = 중앙값 = 평균이다. 오른쪽으로 꼬리가 길면 큰 값들이 평균만 끌어올려 최빈값 < 중앙값 < 평균이 되고, 왼쪽으로 길면 순서가 반대다[^d2].
+- **다섯 수 요약과 상자 그림.** 최솟값, $$Q_1$$, 중앙값, $$Q_3$$, 최댓값 다섯 개로 분포를 요약한다. 상자 그림은 상자의 양 끝을 $$Q_1$$과 $$Q_3$$, 상자 안의 선을 중앙값, 상자 밖 두 선을 최솟값과 최댓값으로 그린다[^d3].
+- **분산의 분모.** 슬라이드는 자료 $$N$$개의 분산을 $$\sigma^2 = \frac1N\sum(x_i - \bar x)^2$$로 $$N$$으로 나눈다[^d4]. 위 표의 표본분산 $$s^2$$는 $$n - 1$$로 나눈다. 자료 전체를 모집단으로 보면 $$N$$, 더 큰 모집단에서 뽑은 표본으로 보고 모집단 분산을 추정하면 $$n - 1$$이다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -115,5 +124,25 @@ API 응답 시간 10개(ms)가 $$12, 13, 13, 14, 15, 15, 16, 18, 20, 250$$이다
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 과목 점수 80점(학점 3)과 90점(학점 1)의 학점 가중 평균은? 단순 평균과 왜 다른가?</summary>
+
+**답:** $$\frac{3 \times 80 + 1 \times 90}{4} = 82.5$$. 단순 평균 85와 다른 이유는 학점이 큰 80점이 평균을 더 세게 끌어당기기 때문이다[^d1].
+
+</details>
+
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 자료 $$1, 2, 2, 2, 3, 3, 4, 5, 9, 20$$에서 최빈값, 중앙값, 평균의 크기 순서를 예측하고, 그 순서가 나오는 이유를 대라.</summary>
+
+**답:** 최빈값 2 < 중앙값 3 < 평균 5.1. 오른쪽 꼬리의 9와 20이 합에는 크게 더해져 평균만 끌어올린다. 중앙값은 가운데 순위만 보고, 최빈값은 가장 많은 값만 본다[^d2].
+
+</details>
+
+
 [^1]: Wasserman, *All of Statistics*, "Estimating the CDF and Statistical Functionals" 장(경험적 분포함수, 통계적 범함수로서의 평균·분위수).
+[^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.11~12 (기술통계를 쓰는 이유, 평균과 가중 평균)
+[^d2]: 같은 자료, p.13 (중앙값, 최빈값, 대칭·비대칭 분포에서 세 값의 순서)
+[^d3]: 같은 자료, p.14~15 (범위, 사분위수, IQR, 다섯 수 요약, 상자 그림)
+[^d4]: 같은 자료, p.16 (분산과 표준편차)
 {% endraw %}

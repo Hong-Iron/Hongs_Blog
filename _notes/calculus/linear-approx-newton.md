@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Approximation", "Newton's Method", "선형 근사", "접선 근사", "tangent line approximation", "미분", "differential", "뉴턴 방법", "뉴턴-랩슨", "Newton-Raphson", "이차 수렴", "quadratic convergence", "바빌로니아 방법"]
 description: "매끄러운 곡선은 한 점 근처를 확대하면 직선(접선)처럼 보인다. 그래서 복잡한 함수값을 접선으로 어림하고(선형 근사), 방정식의 근은 \"접선이 0이 되는 곳\"으로 거듭 옮겨 가며 찾는다(뉴턴 방법). 뉴턴 방법은 근 근처에서 한 번 반복할 때마다 맞는 자릿수가 거의 두 배로 는다.…"
@@ -115,6 +115,14 @@ $$\sqrt2$$를 뉴턴 방법으로 구하는 첫 두 걸음을 추적한다. $$f(
 - 비교: [이분법](/Hongs_Blog/studies/calculus/continuity/)(느리지만 늘 수렴)과 뉴턴 방법(빠르지만 출발점에 민감). 수렴 속도의 말은 [수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/).
 - 이어지는 개념: [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/)(오차 분석), [미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/)(선형 근사로 한 걸음씩)
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 뉴턴-랩슨 방법을 근 찾기 알고리즘으로 정리한다. 시작값 $$x_0$$에서 $$f$$와 $$f'$$를 계산하고 $$x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}$$로 고친 뒤, 상대 오차 $$\vert \epsilon_a\vert  = \left\vert \frac{x_{i+1} - x_i}{x_{i+1}}\right\vert  \times 100$$이 허용 오차보다 작으면 멈춘다. 반복 횟수의 상한도 함께 둔다[^n1].
+
+슬라이드의 예는 $$f(x) = e^{-x} - x$$, $$x_0 = 0$$이다. $$x_i$$는 $$0.5$$, $$0.566311003$$, $$0.567143165$$, $$0.567143290$$으로, 참 오차가 11.8%, 0.147%, 0.0000220%, $$10^{-8}$$% 미만으로 준다. 오차의 자릿수가 매번 대략 두 배로 는다[^n2].
+
+장점은 수렴하면 빠르고 시작값이 하나뿐이라는 것이다. 단점은 천천히 수렴하거나, 근을 지나쳐 실패하거나, $$f'(x_i) = 0$$이면 0으로 나누게 된다는 것이다[^n3]. $$f'$$을 계산하기 어려우면 두 점의 기울기로 바꾼 [할선법](/Hongs_Blog/studies/numerical-analysis/secant-method/)을 쓰고, 연립방정식이면 [다변수 뉴턴 방법](/Hongs_Blog/studies/numerical-analysis/multivariate-newton/)을 쓴다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -141,7 +149,19 @@ $$\sqrt2$$를 뉴턴 방법으로 구하는 첫 두 걸음을 추적한다. $$f(
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** $$f(x) = e^{-x} - x$$에 뉴턴 방법을 $$x_0 = 1$$에서 한 번 적용하라.</summary>
+
+**답:** $$f(1) = e^{-1} - 1 \approx -0.632121$$, $$f'(1) = -e^{-1} - 1 \approx -1.367879$$. $$x_1 = 1 - \frac{-0.632121}{-1.367879} \approx 1 - 0.462117 = 0.537883$$[^sn1].
+
+</details>
+
+
 [^1]: OpenStax, *Calculus Volume 1*, 4.2절 "Linear Approximations and Differentials"
 [^2]: OpenStax, *Calculus Volume 1*, 4.9절 "Newton's Method"(실패하는 경우 포함)
 [^s1]: 에이전트 보충. "빠른 역제곱근"(fast inverse square root)은 게임 Quake III Arena의 소스 코드로 알려진 기법이다.
+[^n1]: 2-2학기/수치해석/1.수업자료/16.na16_nonlinear.pdf, p.14~16
+[^n2]: 같은 자료, p.17
+[^n3]: 같은 자료, p.18
+[^sn1]: 에이전트 보충. 카드 C4는 원본에 없다. 10_linear-approx-newton_verify.py로 확인했다.
 {% endraw %}

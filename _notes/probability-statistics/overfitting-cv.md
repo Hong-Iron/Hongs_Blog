@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Overfitting", "과적합", "과대적합", "과소적합", "underfitting", "교차검증", "cross-validation", "k겹 교차검증", "k-fold cross-validation", "훈련 오차", "training error", "시험 오차", "test error", "일반화 오차", "generalization error", "검증 집합", "validation set", "시험 집합", "test set", "편향-분산 절충", "bias-variance tradeoff"]
 description: "모델이 훈련 데이터의 우연한 잡음까지 외우면 훈련 데이터에서는 거의 완벽해 보이지만 새 데이터에서는 크게 틀린다. 시험 범위의 문제와 답을 통째로 외운 학생이 처음 보는 문제에서 무너지는 것과 같다. 데이터를 나눠 일부로 학습하고 나머지로 평가하면(교차검증) 새 데이터에서의 성능을…"
@@ -93,6 +93,22 @@ CROSS-VALIDATE(data, k, 모델 후보들)
 - 이론: [편향-분산 분해](/Hongs_Blog/studies/probability-statistics/estimators/)
 - 해결책: 정칙화 = [MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)
 
+## 과목별 관점
+
+**데이터 과학 (3-2학기).** 모델 평가의 목표는 훈련 자료가 아니라 처음 보는 자료에서의 "진짜" 성능을 재고, 그것으로 모델을 고르는 것이다[^d1]. 평가 방법 세 가지를 비교한다[^d2].
+
+| | 홀드아웃 | k겹 교차검증 | 부트스트랩 |
+|---|---|---|---|
+| 나누는 법 | 한 번 나눔(예: 70% 훈련, 30% 시험) | $$k$$번 나눔 | 복원 추출 |
+| 훈련 자료 크기 | 전체보다 작다 | 거의 전체 | 원래와 같은 크기 |
+| 시험 자료 | 고정된 시험 집합 | 돌아가며 한 겹 | 한 번도 안 뽑힌 자료(OOB) |
+| 추정의 믿음직함 | 낮다 | 높다 | 높다 |
+| 계산 비용 | 낮다 | 중간 | 중간~높음 |
+
+부트스트랩에서 자료 $$n$$개를 복원으로 $$n$$번 뽑으면, 어떤 자료가 한 번도 안 뽑힐 확률은 $$(1 - \frac1n)^n$$이다. $$n$$이 크면 $$\frac1e \approx 0.368$$로 다가가, 약 36.8%가 시험용(OOB)으로 남는다[^sd1].
+
+**편향과 분산의 모습.** 슬라이드는 모델의 편향을 "모델이 현실을 얼마나 강하게 단순화하는가", 분산을 "훈련 자료에 얼마나 민감한가"로 설명한다[^d3]. 편향이 크면 단순하고 예측이 안정적이지만 체계적으로 틀려 과소적합하기 쉽다. 분산이 크면 복잡하고 결정 경계가 유연하지만 자료가 조금만 바뀌어도 예측이 크게 흔들려 과적합하기 쉽다. 오차는 편향² + 분산 + 줄일 수 없는 잡음으로 나뉘고[^d4], 이 분해가 [앙상블 학습](/Hongs_Blog/studies/data-science/ensemble-learning/)의 출발점이다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -119,6 +135,19 @@ CROSS-VALIDATE(data, k, 모델 후보들)
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 자료 100개로 부트스트랩 표본을 하나 만들면, 평균 몇 개의 자료가 한 번도 뽑히지 않는가? 자료가 매우 많으면 그 비율은?</summary>
+
+**답:** $$100 \times (1 - \frac{1}{100})^{100} \approx 36.6$$개. 자료가 많아지면 비율은 $$\frac1e \approx 36.8\%$$로 다가간다. 이 자료들(OOB)을 시험에 쓴다[^sd1].
+
+</details>
+
+
 [^1]: James, Witten, Hastie, Tibshirani, *An Introduction to Statistical Learning*, "Resampling Methods" 장(검증 집합 방법, $$k$$겹 교차검증).
 [^2]: Hastie, Tibshirani, Friedman, *The Elements of Statistical Learning* 2판, "Model Assessment and Selection" 장(편향-분산 분해, 교차검증의 올바른 사용과 잘못된 사용).
+[^d1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.3 (6-1 복습: 모델 평가와 선택)
+[^d2]: 같은 자료, p.5 (복습: 평가 방법 비교표)
+[^d3]: 같은 자료, p.9
+[^d4]: 같은 자료, p.10
+[^sd1]: 에이전트 보충. OOB 비율 $$(1 - 1/n)^n \to 1/e$$와 카드 C4는 원본에 없다. 35_overfitting-cv_verify.py로 계산했다.
 {% endraw %}

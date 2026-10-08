@@ -128,6 +128,26 @@ def main():
     snippet = [0.15 / n + sum(0.85 * r0[i] / len(links[i]) for i in links if j in links[i]) for j in range(n)]
     assert all(abs(a - b) < 1e-15 for a, b in zip(one, snippet))
     print("[OK] 주장 6: 카드 C2")
+    # 데이터 과학 13회 관점: 슬라이드 p.10 거듭제곱법, p.12 막다른 페이지, p.14 구글 행렬
+    from fractions import Fraction as Fr
+    def step(r, M):
+        return [sum(r[i] * M[i][j] for i in range(len(r))) for j in range(len(r))]
+    M = [[Fr(1, 2), Fr(1, 2), 0], [Fr(1, 2), 0, Fr(1, 2)], [0, 1, 0]]
+    r = [Fr(1, 3)] * 3
+    seq = []
+    for _ in range(3):
+        r = step(r, M); seq.append(r)
+    assert seq == [[Fr(1, 3), Fr(1, 2), Fr(1, 6)], [Fr(5, 12), Fr(1, 3), Fr(1, 4)], [Fr(9, 24), Fr(11, 24), Fr(1, 6)]]
+    st = [Fr(6, 15), Fr(6, 15), Fr(3, 15)]
+    assert step(st, M) == st
+    Mde = [[0, 1, 0], [Fr(1, 3)] * 3, [0, 1, 0]]
+    r1 = step([Fr(1, 3)] * 3, Mde); r2 = step(r1, Mde)
+    assert r1 == [Fr(1, 9), Fr(7, 9), Fr(1, 9)] and r2 == [Fr(7, 27), Fr(13, 27), Fr(7, 27)]
+    G = [[Fr(4, 5) * M[i][j] + Fr(1, 5) * Fr(1, 3) for j in range(3)] for i in range(3)]
+    assert G == [[Fr(7, 15), Fr(7, 15), Fr(1, 15)], [Fr(7, 15), Fr(1, 15), Fr(7, 15)], [Fr(1, 15), Fr(13, 15), Fr(1, 15)]]
+    Gm = [[Fr(4, 5) * M[i][j] - Fr(1, 5) * Fr(1, 3) for j in range(3)] for i in range(3)]
+    assert all(sum(row) == Fr(3, 5) for row in Gm)        # 빼기로 하면 행의 합이 2β - 1 = 0.6
+    print("[OK] 데이터 과학 관점·카드 C4: r^1~r^3, 정상분포 (6,6,3)/15, 막다른 페이지 (7,13,7)/27, G 성분(더하기)")
     print("ALL CHECKS PASSED")
 
 

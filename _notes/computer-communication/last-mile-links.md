@@ -50,9 +50,20 @@ permalink: "/studies/computer-communication/last-mile-links/"
 | 방식 | 구조 | 속도 (슬라이드) |
 |---|---|---|
 | xDSL | 음성과 데이터를 FDM 방식으로 동시에[^2] | |
-| ADSL | 전화국 ↔ 가입자 사이의 로컬 루프. 내려받기와 올려 보내기의 속도가 다르다 | 내려받기 1.554~8.448 Mbps [확인필요], 올려 보내기 16~640 Kbps |
+| ADSL | 전화국 ↔ 가입자 사이의 로컬 루프. 내려받기와 올려 보내기의 속도가 다르다 | 내려받기 1.544~8.448 Mbps, 올려 보내기 16~640 Kbps |
 | VDSL | 전화국 —(광케이블, STS-N)— 동네 광 네트워크 장치(Neighborhood optical network unit) —(구리선 1,000~4,500 ft)— 가입자 | 12.96~55.2 Mbps |
 | 케이블 모뎀 | 케이블 TV 선을 이웃과 함께 씀(대역 공유). 비대칭 | 6~100 M |
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: ADSL "1.554 – 8.448 Mbps" (슬라이드 "가입자 선로 (Last-Mile Links)")[^2]<br>
+문제점: ADSL 내려받기의 가장 느린 속도는 T1 회선 속도와 같은 1.544 Mbps다. 1.554는 숫자 하나가 바뀐 오기로 보인다.<br>
+수정안: 내려받기 1.544~8.448 Mbps.<br>
+근거: ADSL 내려받기 속도는 선로가 길수록 느려져, 약 18,000 ft(5.5 km)에서 1.544 Mbps, 약 9,000 ft(2.7 km)에서 8.448 Mbps다. 올려 보내기는 16~640 kbps다[^s2].
+
+</div>
+
 
 ADSL이 비대칭인 이유는 사용자 대부분이 올려 보내기보다 내려받기를 훨씬 많이 하기 때문이다. 그래서 두 방향의 비율을 조정한다[^4]. VDSL은 구리선이 길면 잡음 때문에 느려지고 짧으면 빠르다는 점을 이용한다. 전화국에서 동네까지는 광케이블로 가고, 동네 장치에서 집까지의 짧은 구간만 기존 구리선을 쓴다[^4].
 
@@ -94,4 +105,5 @@ ISP 가입자 선로는 두 방향으로 발전하고 있다[^5].
 [^4]: 4-1학기/컴퓨터 통신/2.필기노트/04.4주차.md, 36~45행
 [^5]: 4-1학기/pasted_images/Pasted image 20260927201727.png — 슬라이드 "ISP (인터넷망) 가입자 선로의 발전 추세". 필기 04.4주차.md 48~49행
 [^s1]: 에이전트 보충. 저녁 시간의 예와 "전화국 너머에서는 DSL도 나눠 쓴다"는 원본에 없다. 슬라이드의 dedicated(DSL)와 shared bandwidth(케이블 모뎀)의 대비에서 나오는 결론이다.
+[^s2]: 에이전트 보충. ADSL의 거리별 내려받기 속도는 18,000 ft 1.544 Mbps, 16,000 ft 2.048 Mbps, 12,000 ft 6.312 Mbps, 9,000 ft 8.448 Mbps다(Saric, Perakovic & Brdar, "Asymmetric Digital Subscriber Line (ADSL)", *Promet – Traffic & Transportation*, 1997). 1.544 Mbps는 T1 회선 속도와 같다.
 {% endraw %}

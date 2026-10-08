@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Inverse Matrix", "역행렬", "가역", "invertible", "비특이", "nonsingular", "특이 행렬", "singular matrix", "가우스-조르당", "Gauss–Jordan", "기본 행렬", "elementary matrix", "가역 행렬 정리", "invertible matrix theorem"]
 description: "역행렬은 행렬이 한 변환을 되돌리는 행렬이다. 암호화한 좌표를 복원하거나, 결과에서 원인을 거꾸로 구할 때 쓴다. 되돌릴 수 있으려면 변환이 정보를 잃지 않아야 한다. 서로 다른 두 입력이 같은 출력으로 뭉개지면(예: 평면을 한 직선으로 누르면) 어느 쪽으로 되돌릴지 정할 수 없다…"
@@ -105,6 +105,19 @@ $$A = \begin{pmatrix}2 & 1\\ 5 & 3\end{pmatrix}$$의 역행렬을 가우스–�
 - 같은 생각: [역함수](/Hongs_Blog/studies/college-math/inverse-function/)는 일대일 대응일 때만 있다. 가역 행렬은 일대일 대응인 선형 변환이다.
 - 이어지는 개념: [LU 분해](/Hongs_Blog/studies/linear-algebra/lu-decomposition/), [행렬식](/Hongs_Blog/studies/linear-algebra/determinant/)
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 역행렬을 여인수로 쓰는 공식을 먼저 배운다. $$A_{ij}$$를 $$i$$행과 $$j$$열을 지운 행렬의 행렬식(소행렬식)이라 하면 다음과 같다. 오른쪽 첨자가 $$ji$$로 뒤바뀐 것에 주의한다[^n1].
+
+$$(A^{-1})_{ij} = \frac{(-1)^{i+j}\vert A_{ji}\vert }{\vert A\vert }$$
+
+
+슬라이드의 가우스–조르당 알고리즘은 열 $$j$$마다 $$j$$번째 행과 그 아래 행 중 $$\vert a_{ij}\vert $$가 가장 큰 행을 골라 $$j$$번째 행과 맞바꾼다. 0이 아닌 수가 하나도 없으면 역행렬이 없다[^n2]. 이렇게 큰 수를 골라 나누는 것을 부분 피벗팅이라 한다. 0으로 나누는 것을 피하고, 0에 가까운 수로 나눠 반올림 오차가 커지는 것도 막는다[^sn1].
+
+예: $$A = \begin{pmatrix}2 & -1 & 3\\ 1 & 6 & -4\\ 5 & 0 & 8\end{pmatrix}$$은 첫 열에서 가장 큰 5가 있는 셋째 행을 첫 행과 바꾸며 시작한다. 결과는 $$A^{-1} = \frac{1}{34}\begin{pmatrix}48 & 8 & -14\\ -28 & 1 & 11\\ -30 & -5 & 13\end{pmatrix}$$이다[^n3]. 연립방정식 $$x - 3y + z = 5$$, $$4x + y - 2z = -2$$, $$-2x + 3y = 1$$은 $$\vert A\vert  = 8$$이고 $$X = A^{-1}B = (\frac{29}{8}, \frac{22}{8}, \frac{77}{8})$$이다[^n4].
+
+$$\vert A\vert  = 0$$이면 $$x - 3y = 5$$, $$-2x + 6y = 1$$처럼 두 직선이 평행해 만나지 않을 수 있다. 우변이 0인 $$AX = 0$$은 $$\vert A\vert  \ne 0$$이면 $$X = 0$$만 해이고, $$\vert A\vert  = 0$$이면 0이 아닌 해가 있다[^n5].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -131,6 +144,21 @@ $$A = \begin{pmatrix}2 & 1\\ 5 & 3\end{pmatrix}$$의 역행렬을 가우스–�
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 부분 피벗팅을 쓰는 가우스–조르당으로 $$\begin{pmatrix}1 & 2\\ 3 & 4\end{pmatrix}$$의 역행렬을 구한다. 첫 단계에서 무엇을 하고, 답은?</summary>
+
+**답:** 첫 열에서 $$\vert 3\vert  > \vert 1\vert $$이라 두 행을 바꾼다. 답은 $$\begin{pmatrix}-2 & 1\\ \frac32 & -\frac12\end{pmatrix}$$[^n6].
+
+</details>
+
+
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.5절 "Inverse Matrices"(역행렬의 유일성, $$2 \times 2$$ 공식, 가우스–조르당, $$(AB)^{-1}$$, 가역성과 피벗).
 [^s1]: 에이전트 보충. "역행렬을 구해 곱하지 말고 푼다"는 수치 선형대수의 표준 권고다(NumPy 문서도 `inv` 대신 `solve`를 권한다). 연산 수 비교: 역행렬 약 $$2n^3$$, LU 풀이 약 $$\frac23 n^3$$.
+[^n1]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.23
+[^n2]: 같은 자료, p.26~28
+[^n3]: 같은 자료, p.25, p.29~30
+[^n4]: 같은 자료, p.31, p.34~36
+[^n5]: 같은 자료, p.32~33
+[^n6]: 같은 자료, p.24
+[^sn1]: 에이전트 보충. "부분 피벗팅"이라는 이름과 오차를 줄이는 이유는 원본에 없다. 슬라이드 예의 역행렬과 해, 카드 C4는 07_inverse-matrix_verify.py로 확인했다.
 {% endraw %}

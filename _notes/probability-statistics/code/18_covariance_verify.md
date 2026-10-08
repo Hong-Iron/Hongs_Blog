@@ -83,6 +83,16 @@ def main():
 
     assert 4 + 9 + 2 * 0.5 * 2 * 3 == 19 and 4 + 9 - 2 * 0.5 * 2 * 3 == 7
     print("[OK] 주장 5·카드 C3")
+    # 데이터 과학 2회 슬라이드 17·18: AllElectronics와 HighTech 주가 (n으로 나눈 공분산)
+    A = [6, 5, 4, 3, 2]; B = [20, 10, 14, 5, 5]
+    n = len(A); ma = sum(A) / n; mb = sum(B) / n
+    cov = sum((a - ma) * (b - mb) for a, b in zip(A, B)) / n
+    assert abs(sum(a * b for a, b in zip(A, B)) / n - 50.2) < 1e-9 and abs(ma * mb - 43.2) < 1e-9
+    assert abs(cov - 7) < 1e-9
+    sa = (sum((a - ma) ** 2 for a in A) / n) ** 0.5; sb = (sum((b - mb) ** 2 for b in B) / n) ** 0.5
+    r = cov / (sa * sb)
+    assert abs(sa ** 2 - 2) < 1e-9 and abs(sb ** 2 - 32.56) < 1e-9 and abs(r - 0.8675) < 1e-4
+    print(f"[OK] 데이터 과학 관점·카드 C4: Cov = 50.2 - 43.2 = 7, r = {r:.4f}")
     print("ALL CHECKS PASSED")
 
 

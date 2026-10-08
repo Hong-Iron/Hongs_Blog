@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["LU Decomposition", "LU 분해", "LU factorization", "PA = LU", "아래삼각행렬", "lower triangular", "위삼각행렬", "upper triangular", "전진 대입", "forward substitution", "순열 행렬", "permutation matrix"]
 description: "가우스 소거를 할 때 \"몇 배를 뺐는지\"(곱수)를 버리지 않고 아래쪽 삼각 모양의 행렬에 적어 두면, 원래 행렬이 그 행렬과 소거 결과(위쪽 삼각 모양)의 곱으로 쪼개진다. 한 번 쪼개 두면 방정식의 우변이 바뀔 때마다 비싼 소거를 다시 하지 않고, 삼각행렬 두 개로 빠르게 푼다.…"
@@ -106,6 +106,19 @@ SOLVE(P, L, U, b)
 - 같은 과정: [가우스 소거법](/Hongs_Blog/studies/linear-algebra/gaussian-elimination/)
 - 이어지는 개념: [QR 분해](/Hongs_Blog/studies/linear-algebra/gram-schmidt-qr/), [고윳값 분해](/Hongs_Blog/studies/linear-algebra/diagonalization/), [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/). 무엇을 풀려는지에 따라 분해를 고른다.
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 같은 분해를 소거 대신 공식으로 직접 계산한다. 대각이 1인 $$L$$을 쓰는 방식을 둘리틀 방법이라 하고, $$L$$과 $$U$$를 한 행렬에 겹쳐 저장한다($$L$$의 대각 1은 적지 않는다)[^n1]. 열 $$j$$마다 위에서 아래로, 먼저 $$U$$를 채우고 그 아래 $$L$$을 채운다[^n2].
+
+$$U_{ij} = M_{ij} - \sum_{k=1}^{i-1}L_{ik}U_{kj}\ (i \le j), \qquad L_{ij} = \frac{1}{U_{jj}}\left(M_{ij} - \sum_{k=1}^{j-1}L_{ik}U_{kj}\right)\ (i > j)$$
+
+
+슬라이드의 예는 $$M = \begin{pmatrix}6 & 4 & 2\\ 3 & -2 & -1\\ 3 & 4 & 1\end{pmatrix}$$, $$L = \begin{pmatrix}1 & 0 & 0\\ 1/2 & 1 & 0\\ 1/2 & -1/2 & 1\end{pmatrix}$$, $$U = \begin{pmatrix}6 & 4 & 2\\ 0 & -4 & -2\\ 0 & 0 & -1\end{pmatrix}$$이다[^n3]. 삼각 연립방정식은 전진 대입 $$x_i = \frac{1}{L_{ii}}\big(r_i - \sum_{k<i}L_{ik}x_k\big)$$과 후진 대입 $$x_i = \frac{1}{U_{ii}}\big(r_i - \sum_{k>i}U_{ik}x_k\big)$$으로 푼다[^n4].
+
+**역행렬.** $$M^{-1}$$의 $$j$$번째 열은 $$LU\mathbf d_j = \mathbf e_j$$($$\mathbf e_j$$는 $$j$$번째 칸만 1)의 해다. 한 번 분해해 두고 우변 $$n$$개를 차례로 푼다[^n5]. 예의 $$M$$이면 $$M^{-1} = \begin{pmatrix}1/12 & 1/6 & 0\\ -1/4 & 0 & 1/2\\ 3/4 & -1/2 & -1\end{pmatrix}$$이다[^sn1].
+
+**오차 줄이기(반복 개선).** 반올림 오차 때문에 컴퓨터로 구한 해 $$\mathbf x_0$$은 참값 $$\mathbf x$$와 조금 다르다. $$\mathbf x_0 = \mathbf x + \Delta\mathbf x$$로 두면 $$M\Delta\mathbf x = M\mathbf x_0 - \mathbf r$$이다. 우변은 계산할 수 있으니 이 식을 같은 $$LU$$로 풀어 $$\mathbf x = \mathbf x_0 - \Delta\mathbf x$$로 고친다[^n6]. 잔차 $$M\mathbf x_0 - \mathbf r$$을 더 정밀하게 계산할 때 효과가 크다. 검증 코드에서 조건이 나쁜 $$6 \times 6$$ 힐베르트 행렬의 해가 한 번의 개선으로 참값에 더 가까워졌다[^sn1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -136,6 +149,21 @@ for i in range(n):
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 위의 $$L$$, $$U$$로 $$M\mathbf x = (12, 0, 8)$$을 풀라.</summary>
+
+**답:** 전진 대입 $$L\mathbf y = (12, 0, 8)$$: $$y_1 = 12$$, $$y_2 = 0 - \frac12\cdot12 = -6$$, $$y_3 = 8 - \frac12\cdot12 + \frac12\cdot(-6) = -1$$. 후진 대입 $$U\mathbf x = \mathbf y$$: $$x_3 = 1$$, $$-4x_2 - 2 = -6$$이라 $$x_2 = 1$$, $$6x_1 + 4 + 2 = 12$$라 $$x_1 = 1$$. $$\mathbf x = (1, 1, 1)$$[^n3].
+
+</details>
+
+
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.6절 "Elimination = Factorization: A = LU"(곱수가 $$L$$에 그대로 놓이는 이유, 연산 수), 2.7절 "Transposes and Permutations"($$PA = LU$$).
 [^s1]: 에이전트 보충. SciPy 문서는 `lu_factor`가 LAPACK `getrf`를 쓴다고 밝힌다. 행렬식과 $$U$$의 대각 원소 곱의 관계는 08_lu-decomposition_verify.py에서 확인했다.
+[^n1]: 2-2학기/수치해석/1.수업자료/10.na10_decomposition.pdf, p.6~8
+[^n2]: 같은 자료, p.9
+[^n3]: 같은 자료, p.10~11 (풀이는 슬라이드에 없다)
+[^n4]: 같은 자료, p.2~5
+[^n5]: 같은 자료, p.13~14
+[^n6]: 같은 자료, p.12
+[^sn1]: 에이전트 보충. 슬라이드 p.11·p.14는 문제만 내고 답이 없다. 해 $$(1, 1, 1)$$, $$M^{-1}$$, 힐베르트 행렬 실험은 08_lu-decomposition_verify.py로 계산했다.
 {% endraw %}

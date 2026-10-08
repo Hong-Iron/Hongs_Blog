@@ -15,6 +15,8 @@ aliases: ["Satellite System", "위성", "satellite", "정지궤도", "GEO", "중
 description: "위성통신은 하늘에 띄운 중계기로 먼 곳을 잇는다. 높이 띄울수록 위성 하나가 넓은 지역을 덮지만, 신호가 오가는 거리가 길어 늦고, 지상에서 올려 보내는 신호도 세야 한다. 그래서 방송처럼 한 방향이면 높은 정지궤도를 쓰고, 휴대 기기와 주고받으려면 낮은 저궤도 위성을 여러 대 띄운다."
 prev_url: "/studies/computer-communication/cellular-networks/"
 prev_title: "이동통신"
+next_url: "/studies/computer-communication/digital-transmission/"
+next_title: "디지털 전송"
 math: true
 mermaid: false
 code_count: 1

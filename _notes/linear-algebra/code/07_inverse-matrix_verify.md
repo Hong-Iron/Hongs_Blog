@@ -146,6 +146,42 @@ def main():
     assert gauss_jordan([[4, 7], [2, 6]])[0] == [[F(3, 5), F(-7, 10)], [F(-1, 5), F(2, 5)]]
     assert gauss_jordan([[1, 2], [2, 4]])[0] is None and pivot_count([[1, 2], [2, 4]]) == 1
     print("[OK] 주장 5·예제·카드 C1")
+    # 수치해석(2-2) 과목별 관점: 부분 피벗팅 가우스–조르당, 여인수 역행렬, 슬라이드 예
+    def gj_pivot(A):
+        n = len(A); M = [[F(x) for x in r] + [F(int(i == j)) for j in range(n)] for i, r in enumerate(A)]
+        swaps = []
+        for j in range(n):
+            i = max(range(j, n), key=lambda r: abs(M[r][j]))
+            assert M[i][j] != 0
+            if i != j:
+                M[i], M[j] = M[j], M[i]; swaps.append((j, i))
+            M[j] = [x / M[j][j] for x in M[j]]
+            for k in range(n):
+                if k != j:
+                    M[k] = [x - M[k][j] * y for x, y in zip(M[k], M[j])]
+        return [r[n:] for r in M], swaps
+    A = [[2, -1, 3], [1, 6, -4], [5, 0, 8]]
+    Ai, sw = gj_pivot(A)
+    assert sw[0] == (0, 2)                                   # 첫 열의 5가 있는 셋째 행과 바꿈
+    assert Ai == [[F(v, 34) for v in r] for r in [[48, 8, -14], [-28, 1, 11], [-30, -5, 13]]]
+    def det3(m):
+        return (m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0])
+                + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]))
+    def minor(m, i, j):
+        return [[m[r][c] for c in range(3) if c != j] for r in range(3) if r != i]
+    d = det3(A); assert d == 34
+    cof = [[F((-1) ** (i + j) * (minor(A, j, i)[0][0] * minor(A, j, i)[1][1] - minor(A, j, i)[0][1] * minor(A, j, i)[1][0]), d) for j in range(3)] for i in range(3)]
+    assert cof == Ai                                         # A⁻¹의 (i, j) = (−1)^{i+j}|A_ji| / |A|
+    B = [[1, -3, 1], [4, 1, -2], [-2, 3, 0]]
+    assert det3(B) == 8
+    Bi, _ = gj_pivot(B)
+    assert Bi == [[F(v, 8) for v in r] for r in [[6, 3, 5], [4, 2, 6], [14, 3, 13]]]
+    X = [sum(Bi[i][k] * b for k, b in enumerate([5, -2, 1])) for i in range(3)]
+    assert X == [F(29, 8), F(22, 8), F(77, 8)]
+    Ci, sw = gj_pivot([[1, 2], [3, 4]])                      # 카드 C4
+    assert sw == [(0, 1)] and Ci == [[-2, 1], [F(3, 2), F(-1, 2)]]
+    assert 1 * 6 - (-3) * (-2) == 0                          # x − 3y = 5, −2x + 6y = 1: 평행
+    assert [[1, 0, 0], [0, 1, 0], [0, 0, 1]] != Ai
     print("ALL CHECKS PASSED")
 
 

@@ -148,6 +148,18 @@ def main():
         fracs.append(same / trials)
     assert fracs[0] == 1.0 and fracs[1] < 0.5 and fracs[1] >= fracs[2] >= fracs[3] and fracs[3] < 0.02
     print(f"[OK] 주장 5: 한 부호 비율 {fracs}")
+    # 수치해석(2-2) 과목별 관점: 중심 차분 근사, 카드 C4
+    fd = lambda x, y: x * x * y
+    dd = 0.1
+    mixed = (fd(1 + dd, 1 + dd) - fd(1 + dd, 1 - dd) - fd(1 - dd, 1 + dd) + fd(1 - dd, 1 - dd)) / (4 * dd * dd)
+    assert abs(mixed - 2) < 1e-9
+    fxx = (fd(1 + dd, 1) - 2 * fd(1, 1) + fd(1 - dd, 1)) / dd ** 2
+    fx = (fd(1 + dd, 1) - fd(1 - dd, 1)) / (2 * dd)
+    assert abs(fxx - 2) < 1e-9 and abs(fx - 2) < 1e-9
+    # 안장점 예 f = xy: x, y 방향으로는 평평하지만 대각선 방향으로 오르내림
+    fs_ = lambda x, y: x * y
+    assert fs_(0.5, 0) == fs_(0, 0.5) == 0 and fs_(0.5, 0.5) > 0 and fs_(0.5, -0.5) < 0
+    assert 0 * 0 - 1 ** 2 < 0                                                # |H| = −1 < 0
     print("ALL CHECKS PASSED")
 
 

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Hypothesis Testing", "가설검정", "p값", "p-value", "귀무가설", "null hypothesis", "대립가설", "alternative hypothesis", "유의수준", "significance level", "제1종 오류", "type I error", "제2종 오류", "type II error", "검정력", "power", "z검정", "z-test", "순열 검정", "permutation test", "다중 검정", "multiple testing", "본페로니 보정", "Bonferroni correction", "A/B 테스트", "A/B testing"]
 description: "\"차이가 없다\"는 기본 가설을 세우고, 그 가설이 맞는데도 지금만큼(또는 더) 극단적인 결과가 우연히 나올 확률을 계산한다. 이 확률(p값)이 아주 작으면 \"우연으로 보기 어렵다\"며 기본 가설을 버린다. 새 기능이 전환율을 올렸는지, 새 버전이 느려졌는지를 판정하는 A/B 테스트의…"
@@ -139,6 +139,17 @@ permalink: "/studies/probability-statistics/hypothesis-testing/"
 </div>
 
 
+## 과목별 관점
+
+**데이터 과학 (3-2학기).** 두 분류 모델 A, B를 같은 $$k$$겹 교차검증으로 평가해, 정확도 차이가 우연인지 가린다(짝지은 t-검정)[^d1]. 겹 $$i$$의 차이 $$d_i = \operatorname{Acc}(A_i) - \operatorname{Acc}(B_i)$$로 가설을 세운다. $$H_0: \mu_d = 0$$(평균적으로 같다), $$H_1: \mu_d \ne 0$$이다.
+
+$$t = \frac{\bar d}{s_d / \sqrt k}, \qquad \bar d = \frac1k\sum_{i=1}^{k} d_i, \qquad s_d = \sqrt{\frac1k\sum_{i=1}^{k}(d_i - \bar d)^2}$$
+
+
+분자 $$\bar d$$는 A가 B보다 평균 얼마나 나은지(양수면 A가 낫다)다. 분모는 그 차이가 겹마다 얼마나 흔들리는지다. $$t$$가 크면 차이가 우연이 아니라고 본다. p값은 $$H_0$$ 아래에서 지금만큼 또는 더 극단적인 차이가 나올 확률이고, 0.05보다 작으면 유의하다[^d1].
+
+슬라이드는 $$s_d$$를 $$k$$로 나눈다. 보통의 표본표준편차는 $$k - 1$$로 나누고, $$t$$를 자유도 $$k - 1$$인 t 분포와 비교한다[^sd1]. 예: 5겹의 차이가 0.02, 0.03, 0.01, 0.03, 0.03이면 $$\bar d = 0.024$$, $$t$$는 $$k$$로 나누면 6.71, $$k - 1$$로 나누면 6.00이다. 자유도 4의 양측 0.05 임계값 2.776보다 커서 A가 유의하게 낫다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -173,6 +184,16 @@ permalink: "/studies/probability-statistics/hypothesis-testing/"
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 5겹 교차검증에서 모델 A와 B의 정확도 차이가 0.02, 0.03, 0.01, 0.03, 0.03이다. 짝지은 t-검정의 $$t$$($$s_d$$는 $$k - 1$$로 나눔)를 구하고, 유의수준 0.05(자유도 4, 임계값 2.776)에서 판단하라.</summary>
+
+**답:** $$\bar d = 0.024$$, 편차 제곱합 0.00032, $$s_d = \sqrt{0.00032/4} \approx 0.00894$$, $$t = \frac{0.024}{0.00894/\sqrt5} \approx 6.00 > 2.776$$. 귀무가설을 버리고 A가 낫다고 판단한다[^sd1].
+
+</details>
+
+
 [^1]: Wasserman, *All of Statistics*, "Hypothesis Testing and p-values" 장(귀무·대립가설, 유의수준, 검정력, p값, 순열 검정, 다중 검정과 본페로니).
 [^2]: Wasserstein, Lazar, "The ASA Statement on p-Values: Context, Process, and Purpose", *The American Statistician* 70(2), 2016.
+[^d1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.6 (6-1 복습: T-Test와 P-value)
+[^sd1]: 에이전트 보충. $$k - 1$$로 나누는 표준 방법, 5겹 예와 카드 C5는 원본에 없다. 슬라이드처럼 $$k$$로 나누는 식은 Han, Kamber, Pei, *Data Mining* 3판 8.5.5절의 식이다. 32_hypothesis-testing_verify.py로 계산했다.
 {% endraw %}

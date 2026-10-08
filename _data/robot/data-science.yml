@@ -1,0 +1,68 @@
+# 홍철's lines for the data-science course pages. Format: _data/robot/README.md
+greeting:
+- "데이터 과학이에요. 3-2학기에 들었고, 전처리부터 추천 시스템까지예요."
+- "데이터 과학 페이지예요. 내릴수록 배경의 k-평균 중심들이 자기 무리로 찾아가요."
+- "여긴 데이터 과학이에요. 빈발 패턴, 군집화, 추천 순서로 가요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "속성 종류와 거리 재기, 데이터 정제 같은 전처리부터요. 그다음 빈발 패턴, 앙상블, 군집화, 추천 시스템 순서예요."
+  link: /studies/data-science/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "FP-Growth 트리 만드는 게 손으로 하면 제일 헷갈려요. 예제 사다리로 한 단계씩 따라가 보세요."
+  link: /studies/data-science/fp-growth-ladder/
+  link_label: "FP-Growth 예제 사다리"
+- q: "배워서 어디에 써요?"
+  a: "장바구니 분석, 고객 묶기, 넷플릭스 같은 추천이요. 영수증이랑 평점표가 있으면 다 써먹을 수 있어요."
+  link: /studies/data-science/recommender-systems/
+  link_label: "추천 시스템"
+- q: "다른 과목이랑도 이어져요?"
+  a: "공분산, PCA, KL 발산, PageRank는 공학수학 문서에 데이터 과학 관점을 붙여 놨어요. 행렬 분해 추천은 선형대수 그대로예요."
+  link: /studies/data-science/mf-recommendation/
+  link_label: "행렬 분해 추천"
+chats:
+- q: "k-평균이 뭐예요?"
+  a: "중심 k개를 아무 데나 놓고, 점마다 가까운 중심에 붙인 뒤 중심을 무리 평균으로 옮기기를 되풀이해요."
+  link: /studies/data-science/k-means/
+  link_label: "k-평균"
+  next:
+  - q: "k는 어떻게 정해요?"
+    a: "k를 늘려 가며 무리 안 거리가 갑자기 덜 줄어드는 꺾이는 곳을 보거나, 실루엣 같은 지표를 봐요."
+    link: /studies/data-science/choosing-k/
+    link_label: "군집 수 고르기"
+  - q: "고리 모양 무리도 찾아요?"
+    a: "k-평균은 둥근 무리만 잘 찾아요. 고리나 나선은 빽빽하게 이어진 곳을 타고 퍼지는 DBSCAN이 찾아요."
+    link: /studies/data-science/dbscan/
+    link_label: DBSCAN
+- q: "연관 규칙이 뭐예요?"
+  a: "'기저귀를 사면 맥주도 산다' 같은 규칙이에요. 같이 자주 나오는 묶음을 먼저 찾고 거기서 규칙을 뽑아요."
+  link: /studies/data-science/association-rules/
+  link_label: "연관 규칙"
+  next:
+  - q: "신뢰도가 높으면 좋은 규칙이에요?"
+    a: "아니에요. B를 원래 75%가 사는데 A를 산 사람의 67%가 B를 사면, A가 오히려 B를 덜 사게 만드는 거예요. 그래서 리프트를 봐요."
+    link: /studies/data-science/lift/
+    link_label: 리프트
+  - q: "리프트는 믿어도 돼요?"
+    a: "둘 다 없는 영수증이 많아지면 리프트가 크게 부풀어요. 그런 영수증 수에 안 흔들리는 널 불변 측정을 같이 봐요."
+    link: /studies/data-science/null-invariant-measures/
+    link_label: "널 불변 측정"
+- q: "추천은 어떻게 해요?"
+  a: "나랑 취향이 비슷한 사람이 좋아한 걸 고르거나, 내가 좋아한 것과 비슷하게 평가된 걸 골라요. 협업 필터링이에요."
+  link: /studies/data-science/collaborative-filtering/
+  link_label: "협업 필터링"
+  next:
+  - q: "평점표가 거의 비어 있으면요?"
+    a: "보통 95% 넘게 비어 있어요. 관심 없어서 안 봤을 칸에만 0을 넣어 표를 채우는 0 주입이 있어요."
+    link: /studies/data-science/zero-injection/
+    link_label: "0 주입"
+talk:
+- text: "차원이 많아지면 모든 점 쌍의 거리가 거의 같아져요. 그러면 가깝다 멀다가 의미가 없어져요."
+  link: /studies/data-science/curse-of-dimensionality/
+  link_label: "차원의 저주"
+- text: "Apriori는 빈발 묶음의 일부도 반드시 빈발이라는 성질 하나로 후보를 확 줄여요."
+  link: /studies/data-science/apriori/
+  link_label: "Apriori 알고리즘"
+- text: "배깅은 여러 모델을 따로 키워 투표하고, 부스팅은 앞 모델이 틀린 데를 다음 모델이 더 신경 써요."
+  link: /studies/data-science/contrast--bagging-boosting/
+  link_label: "배깅과 부스팅 비교"

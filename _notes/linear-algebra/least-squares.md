@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Least Squares", "최소제곱법", "최소자승법", "선형 회귀", "linear regression", "회귀 직선", "regression line", "곡선 맞추기", "curve fitting", "잔차", "residual", "오차 제곱합", "sum of squared errors", "정규방정식", "normal equations"]
 description: "측정값이 조금씩 흔들리면 모든 점을 정확히 지나는 직선은 없다. 최소제곱법은 각 점에서 직선까지의 세로 차이(잔차)를 제곱해 더한 값이 가장 작은 직선을 고른다. 식이 미지수보다 많아 풀 수 없는 연립방정식 대신, 우변을 풀 수 있는 곳(열공간)으로 사영한 방정식을 푸는 것과 같다…"
@@ -153,6 +153,22 @@ $$A$$의 첫 열이 모두 1인 벡터다. 잔차는 모든 열과 수직이므�
 </div>
 
 
+## 과목별 관점
+
+**수치해석 (2-2학기).** 곡선이 자료에서 얼마나 떨어졌는지 재는 세 가지 오차를 먼저 비교한다. $$e_k = f(x_k) - y_k$$라 하면 다음과 같다[^n1].
+
+$$E_\infty = \max_k\vert e_k\vert , \qquad E_1 = \frac1N\sum_k\vert e_k\vert , \qquad E_2 = \left(\frac1N\sum_k e_k^2\right)^{1/2}$$
+
+
+최대 오차는 극단적인 자료에 민감하고, 평균 오차는 계산이 쉬워 자주 쓰고, 제곱 평균 제곱근(RMS) 오차는 자료에 통계적 성질이 있을 때 쓴다. 슬라이드의 자료 $$(-1, 10), (0, 9), (1, 7), (2, 5), (3, 4), (4, 3), (5, 0), (6, -1)$$과 $$f(x) = 8.6 - 1.6x$$에서 $$E_\infty = 0.8$$, $$E_1 = 0.325$$, $$E_2 \approx 0.41833$$이다[^n2]. 최소제곱 직선은 $$E_2$$를 가장 작게 하는 직선이다. $$E_2$$가 최소인 것과 $$\sum e_k^2$$이 최소인 것은 같다[^n3].
+
+$$y = Ax + B$$의 정규방정식을 합으로 쓰면 다음과 같다. 두 편미분을 0으로 놓아 얻는다[^n4].
+
+$$\left(\sum x_k^2\right)A + \left(\sum x_k\right)B = \sum x_ky_k, \qquad \left(\sum x_k\right)A + NB = \sum y_k$$
+
+
+같은 자료에서 $$92A + 20B = 25$$, $$20A + 8B = 37$$이라 $$y = -1.6071429x + 8.6428571$$이다[^n5]. 포물선 $$y = Ax^2 + Bx + C$$도 같은 방법으로 $$3 \times 3$$ 연립방정식이 된다. 자료 $$(-3, 3), (0, 1), (2, 1), (4, 3)$$이면 $$353A + 45B + 29C = 79$$, $$45A + 29B + 3C = 5$$, $$29A + 3B + 4C = 8$$이고 $$A = \frac{585}{3278}$$, $$B = -\frac{631}{3278}$$, $$C = \frac{1394}{1639}$$다[^n6]. 미지수에 대해 일차가 아닌 모형은 [자료 선형화](/Hongs_Blog/studies/numerical-analysis/data-linearization/)로 바꾸거나 직접 최소화한다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -187,6 +203,21 @@ $$A$$의 첫 열이 모두 1인 벡터다. 잔차는 모든 열과 수직이므�
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** C2의 최소제곱 직선 $$y = 1.5t + \frac76$$에 대해 세 점의 $$E_\infty$$와 $$E_1$$을 구하라.</summary>
+
+**답:** 오차의 절댓값은 $$\frac16, \frac13, \frac16$$이다. $$E_\infty = \frac13$$, $$E_1 = \frac{1}{3}\left(\frac16 + \frac13 + \frac16\right) = \frac29$$[^sn1].
+
+</details>
+
+
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 4.3절 "Least Squares Approximations"(정규방정식, 직선 맞추기의 예 $$\mathbf{b} = (6, 0, 0)$$, 포물선 맞추기, 사영과 미분 두 관점).
 [^s1]: 에이전트 보충. 릿지 회귀는 통계학습 교재의 표준 방법이다. NumPy 문서는 `lstsq`가 LAPACK의 SVD 기반 `gelsd`를 쓴다고 밝힌다. 정규방정식의 조건수가 $$A$$의 조건수의 제곱임은 17_least-squares_verify.py에서 수치로 확인했다.
+[^n1]: 2-2학기/수치해석/1.수업자료/13.na13_least-squares.pdf, p.3
+[^n2]: 같은 자료, p.4~5
+[^n3]: 같은 자료, p.6~7
+[^n4]: 같은 자료, p.8~11
+[^n5]: 같은 자료, p.12~13
+[^n6]: 같은 자료, p.32~36
+[^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 17_least-squares_verify.py로 확인했다.
 {% endraw %}
