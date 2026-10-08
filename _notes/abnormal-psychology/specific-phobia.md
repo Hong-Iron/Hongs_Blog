@@ -8,7 +8,7 @@ num: "048"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Specific Phobia", "단순공포증", "simple phobia", "상황형", "situational type", "자연환경형", "natural environment type", "혈액-주사-상처형", "blood-injection-injury type", "동물형", "animal type", "꼬마 한스", "Little Hans", "꼬마 앨버트", "Little Albert"]

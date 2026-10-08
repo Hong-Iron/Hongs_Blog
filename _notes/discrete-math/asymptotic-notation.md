@@ -8,7 +8,7 @@ num: "24"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Asymptotic Notation", "Big-O", "빅오", "대문자 O", "Big-Omega", "빅오메가", "Big-Theta", "빅세타", "little-o", "소문자 o", "little-omega", "시간 복잡도", "time complexity", "증가 차수", "order of growth"]

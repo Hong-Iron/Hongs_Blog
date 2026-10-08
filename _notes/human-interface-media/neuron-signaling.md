@@ -8,7 +8,7 @@ num: "04"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Neuron", "뉴런", "신경 세포", "수용기", "receptor", "활동 전위", "action potential", "휴지 전위", "resting potential", "시냅스", "synapse", "신경 전달 물질", "Transfer of Signal"]

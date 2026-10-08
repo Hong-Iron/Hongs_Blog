@@ -8,7 +8,7 @@ num: "037"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Third-wave CBT", "제3의 물결", "마음챙김", "mindfulness", "위빠사나", "vipassana", "카밧진", "Kabat-Zinn", "수용전념치료", "ACT", "Acceptance and Commitment Therapy", "경험 회피", "experiential avoidance", "마음챙김 기반 인지치료", "MBCT"]

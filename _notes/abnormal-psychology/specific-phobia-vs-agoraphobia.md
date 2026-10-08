@@ -8,7 +8,7 @@ num: "055"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["특정공포증 vs 광장공포증", "상황형 특정공포증 vs 광장공포증", "Specific Phobia vs Agoraphobia"]

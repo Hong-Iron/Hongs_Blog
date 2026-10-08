@@ -8,7 +8,7 @@ num: "14"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Frequency-Division Multiplexing", "FDM", "주파수분할 다중화", "보호 대역", "guard band", "반송파", "subcarrier"]

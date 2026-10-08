@@ -8,7 +8,7 @@ num: "009"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Defense Mechanisms", "방어 기제", "억압", "repression", "부인", "denial", "투사", "projection", "고립", "isolation", "주지화", "intellectualization", "취소", "undoing", "반동형성", "reaction formation", "합리화", "rationalization", "대치", "전치", "displacement", "퇴행", "regression", "승화", "sublimation"]

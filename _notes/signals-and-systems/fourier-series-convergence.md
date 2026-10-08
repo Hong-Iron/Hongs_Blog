@@ -8,7 +8,7 @@ num: "31"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Convergence of the Fourier Series", "디리클레 조건", "Dirichlet Conditions", "깁스 현상", "Gibbs Phenomenon", "근사 오차 에너지", "Approximation Error Energy", "부분합", "Partial Sum", "유계 변동", "Bounded Variation"]

@@ -8,7 +8,7 @@ num: "40"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Properties of the Fourier Transform", "표 4.1", "시간 이동", "주파수 이동", "Frequency Shifting", "켤레 대칭", "Conjugate Symmetry", "시간 척도", "Time Scaling", "미분 성질", "적분 성질", "주파수 미분", "Differentiation in Frequency", "파스발 관계", "Parseval's Relation", "에너지 밀도 스펙트럼", "Energy-Density Spectrum"]

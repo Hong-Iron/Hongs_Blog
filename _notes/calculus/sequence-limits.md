@@ -8,7 +8,7 @@ num: "03"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Limit of a Sequence", "수열의 극한", "수렴", "convergence", "발산", "divergence", "단조 수렴 정리", "monotone convergence theorem", "자연상수 e", "수렴 속도", "rate of convergence", "조화수", "harmonic number"]

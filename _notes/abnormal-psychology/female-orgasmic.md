@@ -8,7 +8,7 @@ num: "114"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Female Orgasmic Disorder", "여성 절정감장애", "여성극치감장애"]

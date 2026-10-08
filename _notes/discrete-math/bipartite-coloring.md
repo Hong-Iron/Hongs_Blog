@@ -8,7 +8,7 @@ num: "36"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Bipartite Graph", "이분 그래프", "두 부분 그래프", "Graph Coloring", "그래프 색칠", "정점 색칠", "vertex coloring", "채색수", "chromatic number", "탐욕 색칠", "greedy coloring", "4색 정리", "four color theorem", "레지스터 할당", "register allocation"]

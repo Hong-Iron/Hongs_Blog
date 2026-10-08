@@ -8,7 +8,7 @@ num: "28"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Deadlock", "교착상태의 네 조건", "Conditions for Deadlock", "상호 배제", "점유와 대기", "Hold and Wait", "비선점", "No Preemption", "순환 대기", "Circular Wait", "자원 할당 그래프", "Resource Allocation Graph", "재사용 자원", "소모성 자원", "타조 정책"]

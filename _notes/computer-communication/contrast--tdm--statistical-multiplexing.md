@@ -8,7 +8,7 @@ num: "16"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["TDM vs 통계적 다중화", "synchronous TDM vs statistical TDM", "동기식 vs 비동기식 시분할"]

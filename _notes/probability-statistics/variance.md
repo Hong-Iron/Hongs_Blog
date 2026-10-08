@@ -8,7 +8,7 @@ num: "09"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Variance", "분산", "표준편차", "standard deviation", "SD", "산포", "dispersion", "웰퍼드 방법", "Welford's algorithm", "평균의 분산"]

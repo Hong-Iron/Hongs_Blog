@@ -8,7 +8,7 @@ num: "171"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Social Anxiety Disorder vs Avoidant Personality Disorder", "사회불안 vs 회피성"]

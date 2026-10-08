@@ -8,7 +8,7 @@ num: "12"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Mathematical Induction", "수학적 귀납법", "기저 단계", "base case", "귀납 단계", "inductive step", "귀납 가정", "induction hypothesis", "강한 귀납법", "strong induction", "정렬 원리", "well-ordering principle", "루프 불변식", "loop invariant"]

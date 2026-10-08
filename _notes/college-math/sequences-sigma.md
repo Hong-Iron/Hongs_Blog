@@ -8,7 +8,7 @@ num: "20"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Sequences", "Summation Notation", "수열", "시그마", "sigma notation", "Σ", "등차수열", "arithmetic sequence", "등비수열", "geometric sequence", "등차급수", "망원합", "telescoping sum", "가우스 합"]

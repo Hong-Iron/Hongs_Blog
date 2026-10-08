@@ -8,7 +8,7 @@ num: "05"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Differentiation Rules", "거듭제곱 법칙", "power rule", "곱의 미분법", "product rule", "몫의 미분법", "quotient rule", "선형성", "linearity", "지수함수의 도함수", "로그함수의 도함수", "삼각함수의 도함수"]

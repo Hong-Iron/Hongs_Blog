@@ -8,7 +8,7 @@ num: "09"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Relation", "Binary Relation", "이항 관계", "반사적", "reflexive", "비반사적", "irreflexive", "대칭적", "symmetric", "반대칭적", "antisymmetric", "추이적", "transitive", "추이 폐포", "transitive closure", "와셜 알고리즘", "Warshall's algorithm", "관계 행렬"]

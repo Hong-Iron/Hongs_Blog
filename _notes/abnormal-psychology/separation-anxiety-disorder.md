@@ -8,7 +8,7 @@ num: "046"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Separation Anxiety Disorder", "분리불안", "separation anxiety", "등교 거부", "school refusal", "행동억제 기질", "behavioral inhibition"]

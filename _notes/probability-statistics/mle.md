@@ -8,7 +8,7 @@ num: "30"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Maximum Likelihood Estimation", "최대가능도 추정", "최대우도 추정", "MLE", "가능도 함수", "likelihood function", "로그 가능도", "log-likelihood", "음의 로그 가능도", "negative log-likelihood", "점수 함수", "score function", "피셔 정보량", "Fisher information", "불변성", "invariance"]

@@ -8,7 +8,7 @@ num: "157"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Alzheimer's Disease", "알츠하이머", "알츠하이머성 치매", "아밀로이드반", "amyloid plaque", "신경섬유다발", "neurofibrillary tangle", "APOE4", "콜린에스테라제 억제제", "cholinesterase inhibitor", "ChEI", "NMDA 수용체 길항제", "기억 지갑", "memory wallet"]

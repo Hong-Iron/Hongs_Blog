@@ -8,7 +8,7 @@ num: "02"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Second-Order Linear ODE with Constant Coefficients", "특성방정식", "Characteristic Equation", "제차", "Homogeneous", "비제차", "Non-homogeneous", "일반해", "General Solution", "특수해", "Particular Solution", "미정계수법", "Method of Undetermined Coefficients", "초기 조건", "Initial Condition"]

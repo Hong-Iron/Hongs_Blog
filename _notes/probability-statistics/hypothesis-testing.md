@@ -8,7 +8,7 @@ num: "32"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Hypothesis Testing", "가설검정", "p값", "p-value", "귀무가설", "null hypothesis", "대립가설", "alternative hypothesis", "유의수준", "significance level", "제1종 오류", "type I error", "제2종 오류", "type II error", "검정력", "power", "z검정", "z-test", "순열 검정", "permutation test", "다중 검정", "multiple testing", "본페로니 보정", "Bonferroni correction", "A/B 테스트", "A/B testing"]

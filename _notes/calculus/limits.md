@@ -8,7 +8,7 @@ num: "01"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Limit", "극한", "극한값", "입실론-델타", "epsilon-delta", "한쪽 극한", "one-sided limit", "좌극한", "우극한", "극한 법칙", "limit laws", "조임 정리", "squeeze theorem"]

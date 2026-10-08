@@ -8,7 +8,7 @@ num: "142"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Language Disorder", "수용 언어", "receptive language", "표현 언어", "expressive language"]

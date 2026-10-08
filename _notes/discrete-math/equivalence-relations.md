@@ -8,7 +8,7 @@ num: "10"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Equivalence Relation", "Partition", "동치관계", "동치류", "equivalence class", "분할", "몫집합", "quotient set", "유니온-파인드", "union-find", "서로소 집합", "disjoint set"]

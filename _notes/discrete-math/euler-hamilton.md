@@ -8,7 +8,7 @@ num: "34"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Euler Path", "오일러 경로", "오일러 회로", "Euler circuit", "오일러 트레일", "Hamiltonian Path", "해밀턴 경로", "해밀턴 사이클", "Hamiltonian cycle", "쾨니히스베르크 다리 문제", "Königsberg bridges", "히어홀처 알고리즘", "Hierholzer's algorithm", "디랙 정리", "Dirac's theorem", "외판원 문제", "TSP"]

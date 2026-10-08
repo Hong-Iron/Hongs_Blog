@@ -8,7 +8,7 @@ num: "21"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Law of Large Numbers", "큰 수의 법칙", "대수의 법칙", "LLN", "약한 큰 수의 법칙", "weak law of large numbers", "강한 큰 수의 법칙", "strong law of large numbers", "표본평균", "sample mean"]

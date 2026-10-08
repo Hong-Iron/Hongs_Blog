@@ -8,7 +8,7 @@ num: "28"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Prime Numbers", "소수", "소인수분해", "prime factorization", "Fundamental Theorem of Arithmetic", "산술의 기본정리", "유클리드 보조정리", "Euclid's lemma", "에라토스테네스의 체", "Sieve of Eratosthenes", "소수 정리", "prime number theorem"]

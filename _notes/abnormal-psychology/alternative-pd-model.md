@@ -8,7 +8,7 @@ num: "172"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Alternative DSM-5 Model for Personality Disorders", "AMPD", "대안모델", "혼용 모델", "hybrid model", "성격 기능 수준", "Level of Personality Functioning", "병리적 성격 특질", "pathological personality traits", "특질 영역", "trait domain", "특질 양상", "trait facet", "PD-TS", "부정적 정서성", "애착상실", "적대성", "탈억제", "정신병적 경향성"]

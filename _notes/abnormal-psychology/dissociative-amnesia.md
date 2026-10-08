@@ -8,7 +8,7 @@ num: "078"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Dissociative Amnesia", "심인성 기억상실증", "Psychogenic Amnesia", "국소적 기억상실", "localized amnesia", "전반적 기억상실", "generalized amnesia", "해리성 둔주", "Dissociative Fugue", "배신 외상", "betrayal trauma"]

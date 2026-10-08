@@ -8,7 +8,7 @@ num: "22"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Encapsulation", "포장", "헤더", "header", "머리말", "바디", "body", "페이로드", "payload", "역캡슐화", "decapsulation"]

@@ -8,7 +8,7 @@ num: "23"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Sums and Approximations", "합의 계산", "거듭제곱의 합", "조화수", "harmonic number", "교란법", "perturbation method", "스털링 근사", "Stirling's approximation", "계승의 크기", "정렬의 하한"]

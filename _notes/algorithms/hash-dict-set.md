@@ -8,7 +8,7 @@ num: "04"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Dictionary", "Set", "딕셔너리", "집합", "해시", "해시 테이블", "hash table", "dict", "set", "Counter", "defaultdict", "키", "값"]

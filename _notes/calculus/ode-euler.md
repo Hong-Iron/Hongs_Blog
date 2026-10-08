@@ -8,7 +8,7 @@ num: "29"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Differential Equation", "미분방정식", "상미분방정식", "ODE", "ordinary differential equation", "초깃값 문제", "initial value problem", "오일러 방법", "Euler's method", "오일러법", "수치 적분", "numerical integration", "안정성", "stability", "반암시적 오일러", "semi-implicit Euler", "심플렉틱 오일러", "symplectic Euler", "룽게-쿠타", "Runge–Kutta", "RK4"]

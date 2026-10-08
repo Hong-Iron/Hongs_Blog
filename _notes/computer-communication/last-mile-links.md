@@ -8,7 +8,7 @@ num: "33"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Last-Mile Links", "가입자 회선", "라스트 마일", "DSL", "xDSL", "Digital Subscriber Line", "Digital Subscriber Loop", "ADSL", "VDSL", "DSLAM", "DSL access multiplexer", "스플리터", "splitter", "케이블 모뎀", "cable modem", "로컬 루프", "local loop"]

@@ -8,7 +8,7 @@ num: "35"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Tree", "트리", "나무", "루트 트리", "rooted tree", "이진 트리", "binary tree", "잎", "leaf", "높이", "height", "깊이", "depth", "신장 트리", "spanning tree", "포리스트", "forest", "케일리 공식", "Cayley's formula"]

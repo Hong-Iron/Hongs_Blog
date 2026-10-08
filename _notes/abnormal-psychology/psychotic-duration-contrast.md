@@ -8,7 +8,7 @@ num: "024"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["단기 정신병적 장애 vs 조현양상장애 vs 조현병", "정신병의 기간 기준", "1일 1개월 6개월"]

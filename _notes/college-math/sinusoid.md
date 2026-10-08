@@ -8,7 +8,7 @@ num: "13"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Sinusoid", "Sine Wave", "정현파", "진폭", "amplitude", "주파수", "frequency", "주기", "period", "위상", "phase", "각주파수", "angular frequency", "에일리어싱", "aliasing", "표본화", "sampling"]

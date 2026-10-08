@@ -8,7 +8,7 @@ num: "19"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Eigenvalue", "고윳값", "고유값", "Eigenvector", "고유벡터", "특성방정식", "characteristic equation", "특성다항식", "characteristic polynomial", "고유공간", "eigenspace", "거듭제곱법", "power iteration", "마르코프 행렬", "Markov matrix", "페이지랭크", "PageRank"]

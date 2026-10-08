@@ -8,7 +8,7 @@ num: "36"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Principal Component Analysis", "주성분 분석", "PCA", "주성분", "principal component", "설명된 분산 비율", "explained variance ratio", "차원 축소", "dimensionality reduction", "주성분 점수", "principal component score"]

@@ -8,7 +8,7 @@ num: "43"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Types of Processor Scheduling", "Scheduling Criteria", "장기 스케줄링", "Long-Term Scheduling", "중기 스케줄링", "Medium-Term Scheduling", "단기 스케줄링", "Short-Term Scheduling", "반환 시간", "Turnaround Time", "응답 시간", "Response Time", "처리량", "Throughput", "우선순위", "Priority", "에이징", "Aging"]

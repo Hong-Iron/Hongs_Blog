@@ -8,7 +8,7 @@ num: "32"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Dining Philosophers Problem", "식사하는 철학자"]

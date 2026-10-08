@@ -8,7 +8,7 @@ num: "23"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Graph Representation", "Adjacency List", "Adjacency Matrix", "Edge List", "인접 리스트", "인접 행렬", "간선 목록", "격자 그래프", "상태 그래프"]

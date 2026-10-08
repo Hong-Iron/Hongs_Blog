@@ -8,7 +8,7 @@ num: "146"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Autism Spectrum Disorder", "ASD", "자폐증", "autism", "아스퍼거 장애", "Asperger's disorder", "합동 주시", "공동 주의", "joint attention", "마음이론", "theory of mind", "여성 방어 효과", "female protective effect", "성장 조절 이상 가설", "growth dysregulation hypothesis", "응용행동분석", "Applied Behavior Analysis", "ABA", "기계적 기억", "rote memory", "파편적 기술", "splinter skills"]

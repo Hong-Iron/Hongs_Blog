@@ -8,7 +8,7 @@ num: "034"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Attributional Theory of Depression", "귀인이론", "attribution theory", "귀인", "attribution", "내부적-외부적", "internal-external", "안정적-불안정적", "stable-unstable", "전반적-특수적", "global-specific", "우울 유발적 귀인", "depressogenic attribution", "방어적 귀인", "절망감 이론", "hopelessness theory", "개정된 학습된 무기력 이론"]

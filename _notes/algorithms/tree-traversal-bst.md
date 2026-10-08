@@ -8,7 +8,7 @@ num: "29"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Tree Traversal", "Binary Search Tree", "BST", "전위 순회", "중위 순회", "후위 순회", "preorder", "inorder", "postorder", "이진 탐색 트리", "포화 이진 트리"]

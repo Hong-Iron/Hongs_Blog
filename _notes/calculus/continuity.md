@@ -8,7 +8,7 @@ num: "02"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Continuity", "Intermediate Value Theorem", "연속", "연속함수", "continuous function", "불연속", "discontinuity", "사잇값 정리", "IVT", "최대·최소 정리", "extreme value theorem", "이분법", "bisection method"]

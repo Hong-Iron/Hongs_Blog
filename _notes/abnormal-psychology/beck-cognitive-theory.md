@@ -8,7 +8,7 @@ num: "035"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Beck's Cognitive Theory of Depression", "벡의 인지이론", "벡", "Beck", "인지삼제", "cognitive triad", "자동적 사고", "automatic thoughts", "인지적 오류", "cognitive errors", "인지 왜곡", "부정적 인지도식", "schema", "역기능적 신념", "흑백논리적 사고", "과잉 일반화", "정신적 여과", "의미확대 및 축소", "개인화", "잘못된 명명", "독심술", "예언자적 오류", "감정적 추리", "should statement"]

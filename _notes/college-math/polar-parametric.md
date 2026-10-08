@@ -8,7 +8,7 @@ num: "17"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Polar Coordinates", "Parametric Equations", "극좌표", "매개변수 방정식", "매개변수 곡선", "parametric curve", "선형 보간", "linear interpolation", "lerp", "궤적", "trajectory"]

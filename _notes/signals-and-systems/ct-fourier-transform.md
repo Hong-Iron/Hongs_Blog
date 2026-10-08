@@ -8,7 +8,7 @@ num: "38"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Continuous-Time Fourier Transform", "CTFT", "푸리에 변환", "Fourier Transform", "역푸리에 변환", "Inverse Fourier Transform", "푸리에 변환 쌍", "Fourier Transform Pair", "스펙트럼", "Spectrum", "sinc 함수", "Sinc Function", "비주기 신호", "Aperiodic Signal"]

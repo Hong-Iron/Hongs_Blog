@@ -8,7 +8,7 @@ num: "15"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Determinant", "행렬식", "det", "부호 있는 넓이", "signed area", "부호 있는 부피", "여인수 전개", "cofactor expansion", "라이프니츠 공식", "Leibniz formula", "방향 판정", "orientation test", "신발끈 공식", "shoelace formula"]

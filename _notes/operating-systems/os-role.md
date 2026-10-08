@@ -8,7 +8,7 @@ num: "08"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Role of an Operating System", "운영체제", "Operating System", "OS", "자원 관리자", "Resource Manager", "운영체제의 목표", "커널", "Kernel"]

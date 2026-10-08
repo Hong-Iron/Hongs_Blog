@@ -8,7 +8,7 @@ num: "13"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Rotation Bridge", "회전의 세 표현", "덧셈정리", "복소수 곱", "회전 행렬", "드무아브르 공식", "De Moivre's formula", "페이저", "phasor", "쿼터니언", "quaternion"]

@@ -8,7 +8,7 @@ num: "026"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Mood Disorders", "정동장애", "affective disorder", "느낌", "feeling", "감정", "정서", "emotion", "정동", "affect", "기분", "mood", "우울장애", "depressive disorders", "양극성 및 관련 장애", "bipolar and related disorders", "단극성", "unipolar"]

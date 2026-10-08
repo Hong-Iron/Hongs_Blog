@@ -8,7 +8,7 @@ num: "144"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Childhood-Onset Fluency Disorder", "말더듬", "Stuttering", "유창성장애", "비유창성", "disfluency"]

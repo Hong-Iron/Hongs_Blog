@@ -8,7 +8,7 @@ num: "16"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Law of Sines", "Law of Cosines", "사인 법칙", "코사인 법칙", "삼각형의 넓이", "삼각측량", "triangulation", "두 점 사이의 거리", "distance formula", "모호한 경우", "ambiguous case"]

@@ -8,7 +8,7 @@ num: "03"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Continuous-Time Signal", "Discrete-Time Signal", "신호", "Signal", "연속 신호", "이산 신호", "아날로그 신호", "Analog Signal", "디지털 신호", "Digital Signal", "결정론적 신호", "Deterministic Signal", "랜덤 신호", "Random Signal", "독립 변수", "Independent Variable", "C-T", "D-T"]

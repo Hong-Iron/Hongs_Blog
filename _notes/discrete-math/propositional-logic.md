@@ -8,7 +8,7 @@ num: "01"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Propositional Logic", "명제", "proposition", "논리 연산자", "logical connective", "진리표", "truth table", "부정", "negation", "논리곱", "conjunction", "논리합", "disjunction", "조건문", "implication", "쌍조건문", "biconditional", "배타적 논리합", "XOR"]

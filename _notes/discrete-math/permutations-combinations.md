@@ -8,7 +8,7 @@ num: "15"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Permutations", "Combinations", "순열", "조합", "이항계수", "binomial coefficient", "nCk", "nPk", "계승", "factorial", "파스칼 항등식", "Pascal's identity", "격자 경로", "lattice path"]

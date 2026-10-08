@@ -8,7 +8,7 @@ num: "42"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Heap Indexing and Binary Representation", "칸 번호와 2진 표현", "1부터 센 칸 번호", "1-based index", "부모 i // 2", "가장 가까운 공통 조상", "lowest common ancestor", "LCA", "가장 긴 공통 앞부분", "longest common prefix", "bit_length"]

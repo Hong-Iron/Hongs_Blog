@@ -8,7 +8,7 @@ num: "61"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Inode", "Index Node", "아이노드", "i-node", "i-number", "직접 포인터", "Direct Pointer", "간접 포인터", "Indirect Pointer", "단일 간접", "이중 간접", "삼중 간접", "UNIX 파일 종류", "하드 링크", "심볼릭 링크", "UNIX 파일 권한", "rwx"]

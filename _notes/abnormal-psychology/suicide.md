@@ -8,7 +8,7 @@ num: "042"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Suicide", "자살 위험요인", "자살 억제요인", "보호요인", "절망감", "hopelessness", "자살의 대인관계 이론", "interpersonal theory of suicide", "조이너", "Joiner", "좌절된 소속감", "thwarted belongingness", "짐이 된다는 지각", "perceived burdensomeness", "자살 능력", "acquired capability", "위기개입", "crisis intervention", "자살예방", "타나토스", "Thanatos"]

@@ -8,7 +8,7 @@ num: "066"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Posttraumatic Stress Disorder", "PTSD", "외상후 스트레스 장애", "침투 증상", "intrusion", "플래시백", "flashback", "회피", "avoidance", "과각성", "hyperarousal", "과도한 경계", "hypervigilance", "대리 외상", "vicarious trauma", "2차 외상 스트레스", "secondary traumatic stress", "스트레스 접종 훈련", "stress inoculation training", "심리적 사후보고", "psychological debriefing", "지속적 노출법", "prolonged exposure", "PE", "인지처리치료", "cognitive processing therapy", "CPT", "안구운동 둔감화 및 재처리", "EMDR"]

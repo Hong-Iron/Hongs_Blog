@@ -8,7 +8,7 @@ num: "55"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Disk Cache", "LRU", "LFU", "Least Frequently Used", "빈도 기반 교체", "Frequency-Based Replacement", "페이지 캐시", "Page Cache"]

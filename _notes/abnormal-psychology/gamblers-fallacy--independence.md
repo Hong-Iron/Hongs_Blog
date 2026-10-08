@@ -8,7 +8,7 @@ num: "137"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["도박사의 오류와 독립", "gambler's fallacy and independence", "몬테카를로 오류", "Monte Carlo fallacy", "동전에는 기억이 없다", "하우스 엣지", "house edge", "마틴게일", "martingale"]

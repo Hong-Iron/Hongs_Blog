@@ -8,7 +8,7 @@ num: "47"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Multiprocessor Scheduling", "병렬성의 입도", "Granularity", "정적 배정", "Static Assignment", "동적 배정", "Dynamic Assignment", "주종 구조", "Master/Slave", "대등 구조", "Peer", "부하 공유", "Load Sharing", "갱 스케줄링", "Gang Scheduling", "전용 프로세서 배정", "Dedicated Processor Assignment", "동적 스케줄링", "Dynamic Scheduling"]

@@ -8,7 +8,7 @@ num: "020"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Family Theories of Schizophrenia", "조현병을 만드는 어머니", "schizophrenogenic mother", "프롬-라이히만", "Fromm-Reichmann", "편향적 부부관계", "분열적 부부관계", "이중구속이론", "double-bind theory", "베이트슨", "Bateson", "표현된 정서", "expressed emotion", "EE", "정서적 과잉개입", "emotional overinvolvement"]

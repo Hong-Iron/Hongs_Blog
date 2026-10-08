@@ -8,7 +8,7 @@ num: "37"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Edge Detection", "Image Smoothing", "경계 검출", "에지 검출", "평활화", "Smoothing", "영상 기울기", "Image Gradient", "유한 차분", "Finite Difference", "평균 필터", "Mean Filter", "상자 필터", "Box Filter", "가우시안 필터", "Gaussian Filter", "컨벌루션의 미분 정리", "Derivative Theorem of Convolution", "PSNR", "Peak Signal-to-Noise Ratio", "신호 대 잡음비", "SNR"]

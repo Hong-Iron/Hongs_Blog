@@ -8,7 +8,7 @@ num: "152"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Tic Disorders", "틱", "tic", "투렛장애", "Tourette's Disorder", "지속성 틱장애", "Persistent Tic Disorder", "일시성 틱장애", "Provisional Tic Disorder", "운동틱", "motor tic", "음성틱", "vocal tic", "단순틱", "복합틱", "전조 감각", "premonitory urge", "포괄적 행동 개입", "CBIT"]

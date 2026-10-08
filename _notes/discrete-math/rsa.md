@@ -8,7 +8,7 @@ num: "31"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["RSA", "RSA 암호", "RSA cryptosystem", "공개키 암호", "public-key cryptography", "비대칭 암호", "asymmetric cryptography", "공개키", "public key", "개인키", "private key", "전자서명", "digital signature", "밀러–라빈", "Miller–Rabin"]

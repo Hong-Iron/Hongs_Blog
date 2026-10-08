@@ -8,7 +8,7 @@ num: "125"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Gender Dysphoria", "성정체감 장애", "Gender Identity Disorder", "성전환", "transition", "트랜스젠더", "transgender", "성역할 비순응", "gender nonconformity", "성발달장애", "Disorders of Sex Development", "관찰하며 기다리기", "watchful waiting", "탈전환자", "detransitioner"]

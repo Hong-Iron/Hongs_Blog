@@ -8,7 +8,7 @@ num: "163"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Antisocial Personality Disorder", "ASPD", "반사회성", "사이코패스", "psychopath", "소시오패스", "sociopath", "비사회성 성격장애", "dyssocial personality disorder"]

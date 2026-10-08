@@ -8,7 +8,7 @@ num: "11"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Definite Integral", "정적분", "Riemann Sum", "리만 합", "리만 적분", "Riemann integral", "적분 가능", "integrable", "상합", "하합", "Darboux sum", "수치 적분", "numerical integration", "사다리꼴 규칙", "trapezoidal rule", "심프슨 규칙", "Simpson's rule"]

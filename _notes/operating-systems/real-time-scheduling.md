@@ -8,7 +8,7 @@ num: "49"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Real-Time Scheduling", "마감 시간 스케줄링", "Deadline Scheduling", "가장 이른 마감 우선", "Earliest Deadline First", "EDF", "비율 단조 스케줄링", "Rate Monotonic Scheduling", "RMS", "정적 테이블 기반", "정적 우선순위 기반", "동적 계획 기반", "동적 최선 노력", "시작 마감", "Starting Deadline", "완료 마감", "Completion Deadline"]

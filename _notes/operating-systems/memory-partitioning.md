@@ -8,7 +8,7 @@ num: "34"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Memory Partitioning", "고정 분할", "Fixed Partitioning", "동적 분할", "Dynamic Partitioning", "내부 단편화", "Internal Fragmentation", "외부 단편화", "External Fragmentation", "압축", "Compaction", "최적 적합", "Best-fit", "최초 적합", "First-fit", "다음 적합", "Next-fit", "배치 알고리즘", "Placement Algorithm"]

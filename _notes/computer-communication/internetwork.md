@@ -8,7 +8,7 @@ num: "04"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Internetwork", "인터네트워킹", "internetworking", "네트워크들의 네트워크", "network of networks", "라우터", "router", "게이트웨이", "gateway"]

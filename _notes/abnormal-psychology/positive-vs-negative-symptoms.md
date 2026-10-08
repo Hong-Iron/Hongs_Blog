@@ -8,7 +8,7 @@ num: "017"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["양성 증상 vs 음성 증상", "Positive vs Negative Symptoms", "양성 증상", "positive symptoms", "음성 증상", "negative symptoms", "제1형 조현병", "제2형 조현병", "급성 조현병", "만성 조현병"]

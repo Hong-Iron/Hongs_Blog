@@ -8,7 +8,7 @@ num: "41"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Page Replacement Algorithms", "교체 정책", "Replacement Policy", "최적 교체", "OPT", "Optimal", "LRU", "FIFO", "클록", "Clock", "사용 비트", "Use Bit", "프레임 잠금", "Frame Locking", "페이지 버퍼링", "Page Buffering", "벨레이디의 이상 현상", "Belady's Anomaly"]

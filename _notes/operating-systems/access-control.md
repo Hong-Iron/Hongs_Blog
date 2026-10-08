@@ -8,7 +8,7 @@ num: "62"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Access Control", "접근 행렬", "Access Matrix", "접근 제어 목록", "Access Control List", "ACL", "권한 목록", "Capability List", "임의적 접근 제어", "Discretionary Access Control", "DAC", "강제적 접근 제어", "Mandatory Access Control", "MAC", "역할 기반 접근 제어", "Role-Based Access Control", "RBAC", "최소 권한 원칙", "Principle of Least Privilege"]

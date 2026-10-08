@@ -8,7 +8,7 @@ num: "17"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Least Squares", "최소제곱법", "최소자승법", "선형 회귀", "linear regression", "회귀 직선", "regression line", "곡선 맞추기", "curve fitting", "잔차", "residual", "오차 제곱합", "sum of squared errors", "정규방정식", "normal equations"]

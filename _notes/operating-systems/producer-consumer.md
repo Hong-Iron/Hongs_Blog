@@ -8,7 +8,7 @@ num: "24"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Producer-Consumer Problem", "유한 버퍼 문제", "Bounded-Buffer Problem", "원형 버퍼", "Circular Buffer"]

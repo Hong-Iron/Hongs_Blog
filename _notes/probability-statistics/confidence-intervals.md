@@ -8,7 +8,7 @@ num: "31"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Confidence Interval", "신뢰구간", "구간추정", "interval estimation", "신뢰수준", "confidence level", "적중률", "coverage", "t분포", "Student's t distribution", "오차 한계", "margin of error"]

@@ -8,7 +8,7 @@ num: "089"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Anorexia Nervosa", "AN", "거식증", "제한형", "restricting type", "폭식/제거형", "binge-eating/purging type", "체질량지수", "BMI", "Body Mass Index", "체중공포증", "Weight Phobia", "체형평정척도", "Body Type Scale", "러셀 징후", "Russell's sign", "설정점", "set point"]

@@ -8,7 +8,7 @@ num: "22"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Hardware Support for Mutual Exclusion", "인터럽트 금지", "Interrupt Disabling", "비교 후 교환", "Compare and Swap", "CAS", "교환 명령어", "Exchange Instruction", "XCHG", "바쁜 대기", "Busy Waiting", "스핀락", "Spinlock"]

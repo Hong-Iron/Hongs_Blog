@@ -8,7 +8,7 @@ num: "17"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Joint Distribution", "결합분포", "결합확률밀도", "joint density", "주변분포", "marginal distribution", "조건부 분포", "conditional distribution", "조건부 기댓값", "conditional expectation", "아담의 법칙", "Adam's law", "전체 기댓값의 법칙", "law of total expectation", "이브의 법칙", "Eve's law", "전체 분산의 법칙", "law of total variance"]

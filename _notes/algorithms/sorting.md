@@ -8,7 +8,7 @@ num: "05"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Sorting", "정렬", "sorted", "sort", "key", "lambda", "안정 정렬", "stable sort", "병합 정렬", "merge sort", "Timsort", "사전순"]

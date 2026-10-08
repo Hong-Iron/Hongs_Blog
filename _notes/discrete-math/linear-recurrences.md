@@ -8,7 +8,7 @@ num: "21"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Linear Recurrence", "Recurrence Relation", "점화식", "선형 점화식", "특성방정식", "characteristic equation", "비네 공식", "Binet's formula", "피보나치 수", "Fibonacci numbers", "하노이의 탑", "Tower of Hanoi", "동차", "homogeneous"]

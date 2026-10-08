@@ -8,7 +8,7 @@ num: "18"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Binomial Theorem", "이항정리", "이항계수", "binomial coefficient", "파스칼 삼각형", "Pascal's triangle", "조합적 증명", "combinatorial proof", "방데르몽드 항등식", "Vandermonde's identity"]

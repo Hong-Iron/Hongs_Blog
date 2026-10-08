@@ -8,7 +8,7 @@ num: "19"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Multivariate Normal Distribution", "다변량 정규분포", "다변수 정규분포", "공분산 행렬", "covariance matrix", "마할라노비스 거리", "Mahalanobis distance", "신뢰 타원", "confidence ellipse", "숄레스키 분해로 표본 만들기"]

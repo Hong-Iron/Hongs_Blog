@@ -8,7 +8,7 @@ num: "07"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Random Variable", "확률변수", "이산 확률변수", "discrete random variable", "확률질량함수", "PMF", "probability mass function", "누적분포함수", "CDF", "cumulative distribution function", "분포", "distribution", "지시 확률변수", "indicator random variable", "확률변수의 독립"]

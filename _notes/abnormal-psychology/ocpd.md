@@ -8,7 +8,7 @@ num: "167"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Obsessive-Compulsive Personality Disorder", "OCPD", "강박성", "항문기 성격", "anal character", "완벽주의"]

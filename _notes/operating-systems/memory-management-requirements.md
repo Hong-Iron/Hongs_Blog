@@ -8,7 +8,7 @@ num: "33"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Memory Management Requirements", "재배치", "Relocation", "보호", "Protection", "공유", "Sharing", "논리적 구성", "Logical Organization", "물리적 구성", "Physical Organization", "오버레이", "Overlay", "논리 주소", "Logical Address", "상대 주소", "Relative Address", "물리 주소", "Physical Address", "기준 레지스터", "Base Register", "경계 레지스터", "Bounds Register"]

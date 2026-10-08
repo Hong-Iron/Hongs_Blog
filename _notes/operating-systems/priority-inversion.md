@@ -8,7 +8,7 @@ num: "50"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Priority Inversion", "무한 우선순위 역전", "Unbounded Priority Inversion", "우선순위 상속", "Priority Inheritance", "우선순위 상한", "Priority Ceiling"]

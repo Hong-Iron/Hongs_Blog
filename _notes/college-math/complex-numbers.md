@@ -8,7 +8,7 @@ num: "18"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Complex Numbers", "허수", "imaginary number", "허수 단위", "i", "실수부", "real part", "허수부", "imaginary part", "켤레복소수", "complex conjugate", "절댓값", "modulus", "복소평면", "complex plane"]

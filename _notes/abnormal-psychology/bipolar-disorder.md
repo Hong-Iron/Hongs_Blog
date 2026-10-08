@@ -8,7 +8,7 @@ num: "038"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Bipolar Disorder", "조울병", "manic-depressive illness", "제1형 양극성장애", "bipolar I disorder", "제2형 양극성장애", "bipolar II disorder", "조증 삽화", "manic episode", "경조증 삽화", "hypomanic episode", "사고비약", "flight of ideas", "기분안정제", "mood stabilizer", "리튬", "lithium", "항경련제", "대인관계 및 사회적 리듬 치료", "IPSRT", "사회적 리듬 차트"]

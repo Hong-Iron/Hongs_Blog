@@ -8,7 +8,7 @@ num: "07"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["연산 모형", "뉴런 모델링", "인공 뉴런", "artificial neuron", "활성 함수", "activation function", "바이어스", "bias", "변환 행렬", "transform matrix", "선형-비선형 모형", "LN model"]

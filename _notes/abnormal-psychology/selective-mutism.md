@@ -8,7 +8,7 @@ num: "047"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Selective Mutism", "선택적 무언증", "자기모델링", "self-modeling"]

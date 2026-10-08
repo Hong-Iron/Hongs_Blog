@@ -8,7 +8,7 @@ num: "28"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Lagrange Multipliers", "라그랑주 승수법", "라그랑주 승수", "Lagrange multiplier", "라그랑지안", "Lagrangian", "제약 최적화", "constrained optimization", "잠재 가격", "shadow price", "KKT 조건", "KKT conditions", "레일리 몫", "Rayleigh quotient", "최대 엔트로피", "maximum entropy"]

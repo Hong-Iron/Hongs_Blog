@@ -8,7 +8,7 @@ num: "25"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Latency", "Delay", "지연시간", "지연", "왕복지연시간", "RTT", "round-trip time", "큐잉 지연", "대기 지연", "queuing delay", "처리 지연", "processing delay", "스위칭 시간", "지터", "jitter", "광속", "speed of light"]

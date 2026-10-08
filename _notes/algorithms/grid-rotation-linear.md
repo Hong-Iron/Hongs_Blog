@@ -8,7 +8,7 @@ num: "36"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Grid Rotation and Linear Maps", "격자 회전", "2차원 리스트 회전", "반사 두 번은 회전", "정사각형의 대칭", "아핀 변환", "affine map", "동차 좌표", "반대각선 뒤집기"]

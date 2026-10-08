@@ -8,7 +8,7 @@ num: "127"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Disruptive", "Impulse-Control", "and Conduct Disorders", "파괴적 충동조절 및 품행장애", "충동조절장애", "impulse control disorders"]

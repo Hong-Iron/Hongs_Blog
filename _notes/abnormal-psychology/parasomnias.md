@@ -8,7 +8,7 @@ num: "105"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Parasomnias", "수면이상증", "NREM 수면 각성장애", "Non-REM Sleep Arousal Disorders", "수면보행증", "Sleepwalking", "몽유병", "야경증", "Sleep Terrors", "악몽장애", "Nightmare Disorder", "REM 수면 행동장애", "REM Sleep Behavior Disorder", "RBD", "REM수면 각성장애", "하지불안 증후군", "Restless Legs Syndrome", "심상시연치료", "Imagery Rehearsal Therapy", "IRT", "클로나제팜", "Clonazepam"]

@@ -8,7 +8,7 @@ num: "23"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Semaphore", "계수 세마포어", "Counting Semaphore", "일반 세마포어", "General Semaphore", "이진 세마포어", "Binary Semaphore", "뮤텍스", "Mutex", "semWait", "semSignal", "P", "V", "강한 세마포어", "약한 세마포어"]

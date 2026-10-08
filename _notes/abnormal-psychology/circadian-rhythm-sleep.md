@@ -8,7 +8,7 @@ num: "104"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Circadian Rhythm Sleep-Wake Disorder", "일주기 리듬 수면장애", "Circadian Rhythm Sleep Disorder", "지연 수면 위상형", "delayed sleep phase type", "올빼미형", "앞당겨진 수면 위상형", "이른 수면 위상형", "advanced sleep phase type", "종달새형", "불규칙 수면-각성형", "irregular sleep-wake type", "비24시간 수면-각성형", "non-24-hour sleep-wake type", "교대근무형", "shift work type", "시차", "jet lag", "광치료", "light therapy", "멜라토닌", "melatonin"]

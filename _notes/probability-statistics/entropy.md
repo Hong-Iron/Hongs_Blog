@@ -8,7 +8,7 @@ num: "37"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Entropy", "엔트로피", "섀넌 엔트로피", "Shannon entropy", "정보량", "information content", "놀라움", "surprisal", "비트", "bit", "이진 엔트로피", "binary entropy", "원천 부호화 정리", "source coding theorem", "허프만 부호", "Huffman coding", "크래프트 부등식", "Kraft inequality", "접두어 부호", "prefix code", "정보 이득", "information gain"]

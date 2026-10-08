@@ -8,7 +8,7 @@ num: "05"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Exponents", "Laws of Exponents", "지수법칙", "거듭제곱", "power", "밑", "base", "지수", "exponent", "유리수 지수", "거듭제곱근", "과학적 표기법", "scientific notation", "크기 어림", "order of magnitude"]

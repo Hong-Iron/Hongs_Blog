@@ -8,7 +8,7 @@ num: "08"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Mean Value Theorem", "MVT", "평균값 정리", "롤의 정리", "Rolle's theorem", "립시츠 조건", "Lipschitz condition", "구간단속"]

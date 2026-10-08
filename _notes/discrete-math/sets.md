@@ -8,7 +8,7 @@ num: "06"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Set", "집합", "원소", "element", "부분집합", "subset", "공집합", "empty set", "합집합", "union", "교집합", "intersection", "차집합", "difference", "여집합", "complement", "멱집합", "power set", "곱집합", "Cartesian product", "벤 다이어그램", "Venn diagram", "러셀의 역설", "Russell's paradox"]

@@ -8,7 +8,7 @@ num: "38"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Induction and Loop Invariants", "귀납법과 루프 불변식", "초기화·유지·끝난다·종료", "부분 정확성", "partial correctness", "끝남 증명", "termination argument"]

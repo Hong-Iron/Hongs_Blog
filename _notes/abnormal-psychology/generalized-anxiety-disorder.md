@@ -8,7 +8,7 @@ num: "056"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Generalized Anxiety Disorder", "GAD", "걱정", "worry", "부동불안", "free-floating anxiety", "다중공포증", "multiple phobia", "파국화", "catastrophizing", "인지적 회피", "cognitive avoidance", "사고-사건 융합", "thought-event fusion", "상위걱정", "meta-worry", "걱정의 유용성에 대한 믿음", "불확실성에 대한 인내력 부족", "벤조다이아제핀", "benzodiazepine", "GABA", "걱정사고 기록지", "걱정하는 시간"]

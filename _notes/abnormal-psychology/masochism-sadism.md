@@ -8,7 +8,7 @@ num: "120"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Sexual Masochism Disorder", "성적피학장애", "성적 피학장애", "Sexual Sadism Disorder", "성적가학장애", "성적 가학장애", "피학증", "masochism", "가학증", "sadism", "질식기호증", "asphyxiophilia", "BDSM"]

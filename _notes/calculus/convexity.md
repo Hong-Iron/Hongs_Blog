@@ -8,7 +8,7 @@ num: "27"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Convex Function", "볼록 함수", "볼록성", "convexity", "볼록 집합", "convex set", "볼록 최적화", "convex optimization", "순볼록", "strictly convex", "강볼록", "strongly convex", "오목 함수", "concave function", "옌센 부등식", "Jensen's inequality"]

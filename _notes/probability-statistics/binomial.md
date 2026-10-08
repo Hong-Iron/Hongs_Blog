@@ -8,7 +8,7 @@ num: "10"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Binomial Distribution", "이항분포", "베르누이 시행", "Bernoulli trial", "베르누이 분포", "Bernoulli distribution", "초기하분포", "hypergeometric distribution", "패킷 손실", "packet loss"]

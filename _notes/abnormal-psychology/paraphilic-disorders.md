@@ -8,7 +8,7 @@ num: "115"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Paraphilic Disorders", "변태성욕장애", "성도착증", "변태성욕", "paraphilia", "성도착", "변태", "perversion", "성적 왜곡", "sexual deviation", "외설언어증", "coprolalia", "위험성-욕구-반응성 원칙", "Risk-Need-Responsivity", "RNR 원칙", "화학적 거세"]

@@ -8,7 +8,7 @@ num: "15"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Improper Integral", "이상적분", "특이적분", "p-적분", "p-integral", "비교 판정", "comparison test", "가우스 적분", "Gaussian integral", "감마 함수"]

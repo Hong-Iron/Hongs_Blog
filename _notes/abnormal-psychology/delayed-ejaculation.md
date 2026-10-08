@@ -8,7 +8,7 @@ num: "111"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Delayed Ejaculation", "지루", "남성 극치감장애", "Male Orgasmic Disorder", "질 내 사정 잠복 시간", "Intravaginal Ejaculatory Latency Time", "IELT"]

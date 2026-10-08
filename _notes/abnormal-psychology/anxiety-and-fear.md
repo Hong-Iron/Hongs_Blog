@@ -8,7 +8,7 @@ num: "044"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Anxiety and Fear", "불안", "anxiety", "공포", "fear", "정상적 불안", "normal anxiety", "병적 불안", "pathological anxiety", "불안장애", "anxiety disorders"]

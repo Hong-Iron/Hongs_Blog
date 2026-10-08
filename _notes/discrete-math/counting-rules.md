@@ -8,7 +8,7 @@ num: "14"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Counting Rules", "합의 법칙", "sum rule", "곱의 법칙", "product rule", "일반화된 곱의 법칙", "generalized product rule", "전단사 법칙", "bijection rule", "나눗셈 법칙", "division rule", "여사건으로 세기", "complement counting", "경우의 수"]

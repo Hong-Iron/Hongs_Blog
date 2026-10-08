@@ -8,7 +8,7 @@ num: "028"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Persistent Depressive Disorder", "PDD", "기분저하증", "dysthymia", "만성 우울", "이중 우울증", "double depression"]

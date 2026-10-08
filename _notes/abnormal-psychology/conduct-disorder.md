@@ -8,7 +8,7 @@ num: "130"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Conduct Disorder", "CD", "제한된 친사회적 정서", "with limited prosocial emotions", "냉담-무정서 특성", "callous-unemotional traits", "아동기 발병형", "childhood-onset type", "청소년기 발병형", "adolescent-onset type", "적대적 귀인 편향", "hostile attribution bias", "품행장애의 발달경로모델", "Capaldi & Patterson"]

@@ -8,7 +8,7 @@ num: "008"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Psychoanalytic Perspective", "정신분석", "psychoanalysis", "프로이트", "Freud", "심리결정론", "psychic determinism", "무의식", "unconscious", "지형학적 모델", "topographic model", "성격의 삼원구조", "tripartite theory", "원초아", "id", "자아", "ego", "초자아", "superego", "현실 불안", "신경증적 불안", "도덕적 불안", "심리성적 발달", "psychosexual development", "고착", "fixation", "자유연상", "전이", "저항", "대상관계이론", "자아심리학", "자기심리학"]

@@ -8,7 +8,7 @@ num: "08"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Logarithmic Function", "Log Scale", "로그 눈금", "로그-로그 그래프", "log-log plot", "반로그 그래프", "semi-log plot", "데시벨", "decibel", "dB", "거듭제곱 법칙", "power law"]

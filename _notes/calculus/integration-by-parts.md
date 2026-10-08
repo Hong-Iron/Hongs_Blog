@@ -8,7 +8,7 @@ num: "14"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Integration by Parts", "부분적분", "부분 적분법", "표 방법", "tabular method", "LIATE", "감마 함수", "Gamma function"]

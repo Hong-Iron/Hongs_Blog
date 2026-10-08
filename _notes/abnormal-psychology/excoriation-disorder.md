@@ -8,7 +8,7 @@ num: "063"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Excoriation Disorder", "Skin-Picking Disorder", "피부벗기기장애", "강박적 피부 뜯기", "자기진정", "자극하기"]

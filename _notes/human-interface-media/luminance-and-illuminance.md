@@ -8,7 +8,7 @@ num: "13"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Luminance", "Illuminance", "휘도", "조도", "광도", "luminous intensity", "밝기", "brightness", "intensity", "대비", "contrast"]

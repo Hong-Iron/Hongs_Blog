@@ -8,7 +8,7 @@ num: "060"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Body Dysmorphic Disorder", "BDD", "신체변형장애", "추형공포증", "dysmorphophobia", "근육이형증", "muscle dysmorphia", "미적 민감성", "지각 재훈련"]

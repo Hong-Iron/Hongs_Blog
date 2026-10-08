@@ -8,7 +8,7 @@ num: "58"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Directory", "File Directory", "2단계 디렉터리", "Two-Level Directory", "트리 구조 디렉터리", "Tree-Structured Directory", "경로 이름", "Pathname", "작업 디렉터리", "Working Directory", "파일 공유", "File Sharing", "접근 권한", "Access Rights", "사용자 부류", "User Classes"]

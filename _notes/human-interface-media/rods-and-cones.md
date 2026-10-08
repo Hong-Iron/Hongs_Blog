@@ -8,7 +8,7 @@ num: "15"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Rods", "Cones", "간상세포", "추상세포", "간상체", "추상체", "시세포", "photoreceptor", "야간 시각", "색 시각", "L 추상체", "M 추상체", "S 추상체", "시세포의 분포"]

@@ -8,7 +8,7 @@ num: "11"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Multiprogramming", "멀티프로그래밍", "다중 작업", "Multitasking", "단일 프로그래밍", "Uniprogramming", "다중 프로그래밍 배치 시스템", "Multiprogrammed Batch System", "프로세서 사용률", "CPU Utilization"]

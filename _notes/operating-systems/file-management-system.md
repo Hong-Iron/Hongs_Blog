@@ -8,7 +8,7 @@ num: "56"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Files", "File Management System", "필드", "Field", "레코드", "Record", "파일", "File", "데이터베이스", "Database", "접근 방법", "Access Method", "논리적 입출력", "기본 입출력 감독자", "Basic I/O Supervisor", "기본 파일 시스템", "Basic File System"]

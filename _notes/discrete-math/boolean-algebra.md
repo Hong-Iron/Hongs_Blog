@@ -8,7 +8,7 @@ num: "05"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Boolean Algebra", "Logic Gates", "불 대수", "불 함수", "Boolean function", "논리 게이트", "AND 게이트", "OR 게이트", "NOT 게이트", "NAND", "NOR", "XOR 게이트", "반가산기", "half adder", "전가산기", "full adder", "기능적 완전성", "functional completeness", "비트마스크", "bitmask"]

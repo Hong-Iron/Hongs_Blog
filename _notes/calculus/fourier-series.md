@@ -8,7 +8,7 @@ num: "30"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Fourier Series", "푸리에 급수", "푸리에 계수", "Fourier coefficient", "삼각급수", "trigonometric series", "직교 함수", "orthogonal functions", "파스발 항등식", "Parseval's identity", "깁스 현상", "Gibbs phenomenon", "디리클레 정리", "Dirichlet's theorem", "사각파", "square wave", "톱니파", "sawtooth wave", "바젤 문제", "Basel problem"]

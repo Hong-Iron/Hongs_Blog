@@ -8,7 +8,7 @@ num: "145"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Social (Pragmatic) Communication Disorder", "사회적(실용적) 의사소통장애", "실용적 의사소통장애", "화용언어", "pragmatics"]

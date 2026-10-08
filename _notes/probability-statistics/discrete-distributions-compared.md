@@ -8,7 +8,7 @@ num: "13"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["이항 vs 기하 vs 포아송", "이산분포 고르기", "choosing a discrete distribution"]

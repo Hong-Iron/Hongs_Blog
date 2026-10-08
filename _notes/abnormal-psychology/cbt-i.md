@@ -8,7 +8,7 @@ num: "100"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Cognitive Behavioral Therapy for Insomnia", "CBT-I", "수면제한", "sleep restriction", "자극통제", "stimulus control", "수면 위생 교육", "sleep hygiene education", "이완훈련", "relaxation training", "수면일지", "sleep diary", "수면 효율", "sleep efficiency", "조건화된 각성", "conditioned arousal"]

@@ -8,7 +8,7 @@ num: "20"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Tail Bounds", "확률 부등식", "꼬리 확률", "tail probability", "마르코프 부등식", "Markov's inequality", "체비쇼프 부등식", "Chebyshev's inequality", "체르노프 한계", "Chernoff bound", "집중 부등식", "concentration inequality"]

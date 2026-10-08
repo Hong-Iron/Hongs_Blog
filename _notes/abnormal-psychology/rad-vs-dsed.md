@@ -8,7 +8,7 @@ num: "075"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["RAD vs DSED", "억제형 vs 탈억제형 애착장애", "두 애착장애 비교"]

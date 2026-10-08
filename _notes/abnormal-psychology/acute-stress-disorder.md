@@ -8,7 +8,7 @@ num: "070"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Acute Stress Disorder", "ASD", "급성 스트레스 반응", "해리 증상", "dissociative symptoms"]

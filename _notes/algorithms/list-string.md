@@ -8,7 +8,7 @@ num: "03"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["List", "String", "리스트", "문자열", "인덱스", "슬라이싱", "slicing", "리스트 컴프리헨션", "list comprehension", "2차원 리스트", "split", "join"]

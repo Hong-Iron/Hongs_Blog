@@ -8,7 +8,7 @@ num: "08"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["LU Decomposition", "LU 분해", "LU factorization", "PA = LU", "아래삼각행렬", "lower triangular", "위삼각행렬", "upper triangular", "전진 대입", "forward substitution", "순열 행렬", "permutation matrix"]

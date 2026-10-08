@@ -8,7 +8,7 @@ num: "18"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Convolution Sum", "컨볼루션 합", "합성곱", "이산 시간 LTI 시스템", "Discrete-Time LTI System", "단위 임펄스 응답", "Unit Impulse Response", "임펄스 응답", "Impulse Response", "중첩 합", "Superposition Sum", "LTI"]

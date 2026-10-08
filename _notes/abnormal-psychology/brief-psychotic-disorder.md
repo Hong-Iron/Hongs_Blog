@@ -8,7 +8,7 @@ num: "023"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Brief Psychotic Disorder", "단기 정신증적 장애", "단기 반응성 정신병", "brief reactive psychosis"]

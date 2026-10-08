@@ -8,7 +8,7 @@ num: "083"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Illness Anxiety Disorder", "IAD", "건강염려증", "Hypochondriasis", "진료 추구형", "care-seeking type", "진료 회피형", "care-avoidant type"]

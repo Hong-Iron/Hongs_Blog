@@ -8,7 +8,7 @@ num: "10"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Unit Impulse", "Unit Step", "단위 샘플", "Unit Sample", "디랙 델타", "Dirac Delta", "크로네커 델타", "Kronecker Delta", "누적 합", "Running Sum", "표본화 성질", "Sampling Property", "체 거르기 성질", "Sifting Property", "단위 계단 함수", "Unit Step Function"]

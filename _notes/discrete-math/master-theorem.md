@@ -8,7 +8,7 @@ num: "25"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Master Theorem", "마스터 정리", "마스터 방법", "master method", "분할 정복 점화식", "divide-and-conquer recurrence", "재귀 트리", "recursion tree", "임계 지수", "critical exponent"]

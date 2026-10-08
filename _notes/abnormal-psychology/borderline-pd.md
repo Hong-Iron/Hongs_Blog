@@ -8,7 +8,7 @@ num: "166"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Borderline Personality Disorder", "BPD", "경계선", "분열", "splitting", "거절 민감성", "rejection sensitivity", "변증법적 행동치료", "Dialectical Behavior Therapy", "DBT", "지혜로운 마음", "분리-개별화"]

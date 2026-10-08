@@ -8,7 +8,7 @@ num: "22"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Spectral Theorem", "스펙트럼 정리", "대칭행렬", "symmetric matrix", "직교 대각화", "orthogonal diagonalization", "스펙트럼 분해", "spectral decomposition", "주축 정리", "principal axis theorem", "그래프 라플라시안", "graph Laplacian"]

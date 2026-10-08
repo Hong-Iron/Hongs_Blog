@@ -8,7 +8,7 @@ num: "12"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["System", "연속 시간 시스템", "Continuous-Time System", "이산 시간 시스템", "Discrete-Time System", "직렬 연결", "Cascade Interconnection", "병렬 연결", "Parallel Interconnection", "피드백 연결", "Feedback Interconnection", "혼합 시스템", "Hybrid System"]

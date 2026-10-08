@@ -8,7 +8,7 @@ num: "135"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Alcohol-Related Disorders", "알코올 사용 장애", "Alcohol Use Disorder", "AUD", "알코올 의존", "알코올 남용", "알코올 중독", "Alcohol Intoxication", "알코올 금단", "Alcohol Withdrawal", "내성", "tolerance", "금단", "withdrawal", "옐리네크", "Jellinek", "음주기대 이론", "alcohol expectancy theory", "자가 투약", "self-medication", "코르사코프 증후군", "Korsakoff syndrome", "태아알코올증후군", "익명의 알코올 중독자 모임", "Alcoholics Anonymous", "AA", "동기강화면담", "motivational interviewing", "디설피람", "disulfiram", "안타부스", "Antabuse"]

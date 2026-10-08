@@ -8,7 +8,7 @@ num: "12"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Linear Transformation", "선형변환", "일차변환", "linear map", "선형사상", "회전 행렬", "rotation matrix", "반사", "reflection", "사영", "projection", "전단", "shear", "늘이기", "scaling", "핵", "kernel", "상", "image"]

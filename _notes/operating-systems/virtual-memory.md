@@ -8,7 +8,7 @@ num: "38"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Virtual Memory", "가상 주소", "Virtual Address", "실제 주소", "Real Address", "메모리 관리 장치", "MMU", "상주 집합", "Resident Set", "페이지 부재", "Page Fault", "스래싱", "Thrashing", "페이지 크기", "Page Size", "페이징과 세그먼테이션 결합"]

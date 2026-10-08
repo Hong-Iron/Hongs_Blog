@@ -8,7 +8,7 @@ num: "081"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Somatic Symptom Disorder", "SSD", "신체화", "somatization", "재신체화", "resomatization", "탈신체화", "desomatization", "감정표현 불능증", "감정표현불능증", "alexithymia", "일차적 이득", "primary gain", "이차적 이득", "secondary gain", "의사쇼핑", "doctor shopping", "증폭 지각", "symptom amplification", "주의편향", "attention bias", "화병", "Hwa-Byung"]

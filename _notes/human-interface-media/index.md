@@ -5,7 +5,7 @@ display_title: "휴먼 인터페이스 미디어 로드맵"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 concepts: 22
 practices: 3
 codes: 14

@@ -8,7 +8,7 @@ num: "24"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["BFS", "Breadth-First Search", "너비 우선 탐색", "넓이 우선 탐색", "최단 거리", "여러 출발점 BFS", "상태 BFS"]

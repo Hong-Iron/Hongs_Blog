@@ -8,7 +8,7 @@ num: "05"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Gaussian Elimination", "가우스 소거법", "소거법", "elimination", "행 연산", "elementary row operation", "기본 행 연산", "피벗", "pivot", "부분 피벗팅", "partial pivoting", "후진 대입", "back substitution", "행 사다리꼴", "row echelon form", "기약 행 사다리꼴", "RREF", "첨가행렬", "augmented matrix", "자유변수", "free variable"]

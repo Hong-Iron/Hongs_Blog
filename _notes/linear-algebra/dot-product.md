@@ -8,7 +8,7 @@ num: "02"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Dot Product", "내적", "점곱", "inner product", "Norm", "노름", "길이", "length", "단위벡터", "unit vector", "직교", "orthogonal", "수직", "코사인 유사도", "cosine similarity", "코시-슈바르츠 부등식", "Cauchy–Schwarz inequality", "삼각부등식", "triangle inequality"]

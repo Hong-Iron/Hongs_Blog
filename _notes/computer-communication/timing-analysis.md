@@ -8,7 +8,7 @@ num: "26"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Timing Analysis", "시간 흐름 그림", "시간-공간 그림", "time-space diagram", "타이밍 다이어그램", "timing diagram", "소요시간 계산", "전송 완료 시간", "파이프라이닝", "pipelining", "패킷 분할", "packet segmentation"]

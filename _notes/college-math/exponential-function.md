@@ -8,7 +8,7 @@ num: "06"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Exponential Function", "지수적 성장", "exponential growth", "지수적 감소", "exponential decay", "자연상수", "e", "오일러 수", "Euler's number", "자연지수함수", "exp", "연속 복리"]

@@ -8,7 +8,7 @@ num: "03"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Conditional Probability", "조건부 확률", "곱셈 법칙", "multiplication rule", "연쇄 법칙", "chain rule of probability", "전확률 공식", "law of total probability", "LOTP", "몬티 홀 문제", "Monty Hall problem"]

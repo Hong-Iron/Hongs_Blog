@@ -8,7 +8,7 @@ num: "42"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Resident Set Management", "Load Control", "반입 정책", "Fetch Policy", "요구 페이징", "Demand Paging", "선행 페이징", "Prepaging", "배치 정책", "Placement Policy", "고정 할당", "Fixed Allocation", "가변 할당", "Variable Allocation", "지역 교체", "Local Replacement", "전역 교체", "Global Replacement", "정리 정책", "Cleaning Policy", "다중 프로그래밍 수준", "Multiprogramming Level", "프로세스 일시 중단 정책"]

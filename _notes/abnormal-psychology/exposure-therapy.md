@@ -8,7 +8,7 @@ num: "050"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Exposure Therapy", "노출치료", "노출법", "체계적 둔감법", "systematic desensitization", "울페", "Wolpe", "상호억제", "reciprocal inhibition", "불안 위계", "fear hierarchy", "주관적 불편감 척도", "SUDS", "실제적 노출", "in vivo exposure", "상상적 노출", "imaginal exposure", "점진적 노출", "graded exposure", "홍수법", "flooding", "내부감각수용 노출", "interoceptive exposure", "안전행동", "safety behavior", "습관화", "habituation"]

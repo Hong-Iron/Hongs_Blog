@@ -8,7 +8,7 @@ num: "09"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["L'Hôpital's Rule", "로피탈 정리", "부정형", "indeterminate form", "증가 속도", "rate of growth", "함수의 증가 속도 비교", "expm1"]

@@ -8,7 +8,7 @@ num: "021"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["정형 vs 비정형 항정신병 약물", "Typical vs Atypical Antipsychotics", "항정신병 약물", "antipsychotics", "1세대 항정신병약물", "2세대 항정신병약물", "정형", "비정형", "추체외로증상", "EPS", "extrapyramidal symptoms", "지연성 운동장애", "tardive dyskinesia", "고프로락틴혈증", "대사증후군", "haloperidol", "clozapine", "risperidone"]

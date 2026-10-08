@@ -8,7 +8,7 @@ num: "23"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["OSI Reference Model", "OSI 7계층", "OSI 7 layers", "Open Systems Interconnection", "참조 모델", "reference model", "표준 구조", "standard architecture", "물리 계층", "physical layer", "네트워크 계층", "network layer", "트랜스포트 계층", "transport layer", "세션 계층", "session layer", "프레젠테이션 계층", "presentation layer", "응용 계층", "application layer", "ISO", "ITU"]

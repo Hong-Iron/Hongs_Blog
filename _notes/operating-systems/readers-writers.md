@@ -8,7 +8,7 @@ num: "27"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Readers-Writers Problem", "독자 우선", "Readers Have Priority", "저자 우선", "Writers Have Priority", "읽기-쓰기 잠금", "Read-Write Lock"]

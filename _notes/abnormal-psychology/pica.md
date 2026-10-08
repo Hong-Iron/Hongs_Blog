@@ -8,7 +8,7 @@ num: "094"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Pica", "이식", "비음식 섭취", "nonfood", "차별강화", "differential reinforcement"]

@@ -8,7 +8,7 @@ num: "005"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["범주적 분류 vs 차원적 분류", "Categorical vs Dimensional Classification", "범주적 분류", "categorical classification", "차원적 분류", "dimensional classification", "혼합 모델", "hybrid model"]

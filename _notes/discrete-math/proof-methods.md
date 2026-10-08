@@ -8,7 +8,7 @@ num: "04"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Proof Methods", "Rules of Inference", "추론 규칙", "전건 긍정", "modus ponens", "후건 부정", "modus tollens", "직접 증명", "direct proof", "대우 증명", "proof by contrapositive", "귀류법", "proof by contradiction", "경우 나누기", "proof by cases", "반례", "counterexample", "존재 증명", "후건 긍정의 오류", "affirming the consequent"]

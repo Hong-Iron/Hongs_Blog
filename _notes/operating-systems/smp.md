@@ -8,7 +8,7 @@ num: "19"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Symmetric Multiprocessing", "SMP", "다중 처리", "Multiprocessing", "플린의 분류", "Flynn's Taxonomy", "SISD", "SIMD", "MISD", "MIMD", "클러스터", "Cluster", "프로세서 친화성", "Processor Affinity"]

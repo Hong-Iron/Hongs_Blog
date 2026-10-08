@@ -8,7 +8,7 @@ num: "006"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["분류의 장단점", "DSM 비판", "진단의 가치", "낙인", "stigma", "진단적 타당성", "diagnostic validity", "과잉 진단", "의료화", "medicalization", "중복 진단", "comorbidity"]

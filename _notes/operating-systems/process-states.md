@@ -8,7 +8,7 @@ num: "14"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Process States", "5상태 모델", "Five-State Process Model", "2상태 모델", "Two-State Process Model", "준비", "Ready", "실행", "Running", "대기", "Blocked", "일시 중단", "Suspend", "스와핑", "Swapping", "디스패처", "Dispatcher"]

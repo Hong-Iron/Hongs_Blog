@@ -8,7 +8,7 @@ num: "27"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Throughput", "처리속도", "실효 처리량", "effective throughput", "전송 완료 시간", "transfer time", "TransferTime"]

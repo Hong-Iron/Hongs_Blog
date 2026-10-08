@@ -8,7 +8,7 @@ num: "16"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Counting with Repetition", "중복조합", "combinations with repetition", "중복순열", "별과 막대", "stars and bars", "같은 것이 있는 순열", "permutations of a multiset", "다항계수", "multinomial coefficient", "부정방정식의 해"]

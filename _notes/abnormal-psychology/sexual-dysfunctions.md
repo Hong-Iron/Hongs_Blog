@@ -8,7 +8,7 @@ num: "107"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Sexual Dysfunctions", "성기능 장애", "성반응주기", "sexual response cycle", "성욕구 단계", "desire stage", "흥분 단계", "excitement stage", "고조기", "plateau", "절정 단계", "orgasm stage", "해소 단계", "resolution stage", "평생형", "lifelong type", "후천형", "acquired type", "관찰자적 역할", "spectatoring", "감각 초점 훈련", "sensate focus", "마스터스와 존슨", "Masters & Johnson", "PDE5 억제제"]

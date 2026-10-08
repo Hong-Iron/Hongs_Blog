@@ -8,7 +8,7 @@ num: "091"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Binge Eating Disorder", "BED", "비보상성 폭식", "binge eating without compensatory behaviors", "섭식 절제", "dietary restraint", "정서적 섭식", "emotional eating", "이중경로 모델", "dual pathway model", "대인관계 심리치료", "Interpersonal Psychotherapy", "IPT"]

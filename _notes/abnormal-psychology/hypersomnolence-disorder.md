@@ -8,7 +8,7 @@ num: "101"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Hypersomnolence Disorder", "과다수면", "hypersomnia", "과도한 주간 졸림", "excessive daytime sleepiness", "단면가", "short sleeper", "장면가", "long sleeper", "CBT-H", "수면 관성", "sleep inertia"]

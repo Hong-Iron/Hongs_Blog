@@ -8,7 +8,7 @@ num: "34"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Linear Regression", "선형회귀", "단순 선형회귀", "simple linear regression", "다중 선형회귀", "multiple linear regression", "최소제곱 추정", "ordinary least squares", "OLS", "잔차", "residual", "결정계수", "coefficient of determination", "R²", "회귀계수", "regression coefficient"]

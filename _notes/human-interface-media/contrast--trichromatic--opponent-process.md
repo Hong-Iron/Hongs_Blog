@@ -8,7 +8,7 @@ num: "20"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["삼색 이론 vs 반대색 과정", "trichromatic vs opponent-process", "삼원색설과 반대색설"]

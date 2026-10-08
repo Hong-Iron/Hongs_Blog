@@ -8,7 +8,7 @@ num: "35"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Overfitting", "과적합", "과대적합", "과소적합", "underfitting", "교차검증", "cross-validation", "k겹 교차검증", "k-fold cross-validation", "훈련 오차", "training error", "시험 오차", "test error", "일반화 오차", "generalization error", "검증 집합", "validation set", "시험 집합", "test set", "편향-분산 절충", "bias-variance tradeoff"]

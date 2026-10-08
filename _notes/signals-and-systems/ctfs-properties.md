@@ -8,7 +8,7 @@ num: "32"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Properties of Continuous-Time Fourier Series", "푸리에 급수의 성질", "시간 이동 성질", "Time Shifting Property", "시간 반전 성질", "시간 척도 성질", "곱셈 성질", "Multiplication Property", "주기 컨벌루션", "Periodic Convolution", "미분 성질", "Differentiation Property", "켤레 대칭", "Conjugate Symmetry", "파스발 관계", "Parseval's Relation"]

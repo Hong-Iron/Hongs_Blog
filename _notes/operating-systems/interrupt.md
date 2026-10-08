@@ -8,7 +8,7 @@ num: "04"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Interrupt", "인터럽트 처리기", "Interrupt Handler", "인터럽트 서비스 루틴", "ISR", "중첩 인터럽트", "Nested Interrupt"]

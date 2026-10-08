@@ -8,7 +8,7 @@ num: "30"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Dynamic Programming", "DP", "다이나믹 프로그래밍", "메모이제이션", "memoization", "점화식", "최적 부분 구조", "겹치는 부분 문제", "타뷸레이션"]

@@ -8,7 +8,7 @@ num: "13"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Time-Division Multiplexing", "TDM", "동기식 시분할 다중화", "synchronous TDM", "타임 슬롯", "time slot", "칸", "프레임", "frame"]

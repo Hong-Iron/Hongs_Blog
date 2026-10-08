@@ -8,7 +8,7 @@ num: "14"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Trigonometric Identities", "덧셈정리", "sum and difference formulas", "배각 공식", "double-angle formula", "반각 공식", "half-angle formula", "차수 내림", "곱을 합으로", "product-to-sum", "합을 곱으로", "sum-to-product", "삼각함수의 합성", "harmonic addition", "맥놀이", "beats"]

@@ -8,7 +8,7 @@ num: "20"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Diagonalization", "대각화", "고유분해", "eigendecomposition", "행렬 거듭제곱", "matrix power", "대각화 가능", "diagonalizable", "결함 행렬", "defective matrix", "조르당 블록", "Jordan block", "정상 상태", "steady state", "선형 동역학계", "linear dynamical system"]

@@ -8,7 +8,7 @@ num: "12"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Trigonometric Functions", "사인", "sine", "sin", "코사인", "cosine", "cos", "탄젠트", "tangent", "tan", "단위원", "unit circle", "기준각", "reference angle", "피타고라스 항등식"]

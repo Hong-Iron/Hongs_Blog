@@ -8,7 +8,7 @@ num: "33"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Bayesian Inference", "베이즈 추론", "베이지안 추론", "사전분포", "prior distribution", "사후분포", "posterior distribution", "MAP", "최대 사후 추정", "maximum a posteriori", "켤레 사전분포", "conjugate prior", "베타분포", "Beta distribution", "신용구간", "credible interval", "라플라스 평활", "Laplace smoothing"]

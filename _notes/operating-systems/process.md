@@ -8,7 +8,7 @@ num: "13"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Process", "작업", "Job", "태스크", "Task", "실행 문맥", "Execution Context", "프로세스 상태", "Process State", "프로세스 목록", "Process List", "프로세스 전환", "Process Switch"]

@@ -8,7 +8,7 @@ num: "18"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["User-Level Thread", "Kernel-Level Thread", "ULT", "KLT", "사용자 수준 스레드", "커널 수준 스레드", "커널 지원 스레드", "결합 방식", "Combined Approach", "경량 프로세스", "LWP"]

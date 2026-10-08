@@ -8,7 +8,7 @@ num: "11"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Radian", "rad", "호도법", "도", "degree", "호의 길이", "arc length", "부채꼴 넓이", "각속도", "angular velocity", "동경", "coterminal angle"]

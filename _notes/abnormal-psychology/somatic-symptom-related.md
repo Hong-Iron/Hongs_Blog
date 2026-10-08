@@ -8,7 +8,7 @@ num: "080"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Somatic Symptom and Related Disorders", "신체 증상 관련 장애", "신체형 장애", "심신 상호작용", "Mind-Body Interaction", "일원론", "monism", "이원론", "dualism", "심리신체질환", "Psychosomatic Diseases", "건강심리학", "Health Psychology", "꾀병", "Malingering"]

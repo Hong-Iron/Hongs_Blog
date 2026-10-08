@@ -8,7 +8,7 @@ num: "27"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Discrete Fourier Transform", "DFT", "이산 푸리에 변환", "Fast Fourier Transform", "FFT", "고속 푸리에 변환", "쿨리-튜키", "Cooley–Tukey", "푸리에 행렬", "Fourier matrix", "단위근", "roots of unity", "합성곱 정리", "convolution theorem", "회전 인자", "twiddle factor"]

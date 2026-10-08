@@ -8,7 +8,7 @@ num: "16"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Normal Distribution", "정규분포", "가우스 분포", "Gaussian distribution", "표준정규분포", "standard normal", "표준화", "standardization", "z점수", "z-score", "68-95-99.7 규칙", "empirical rule", "Φ", "오차함수", "error function"]

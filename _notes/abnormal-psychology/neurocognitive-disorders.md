@@ -8,7 +8,7 @@ num: "154"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Neurocognitive Disorders", "NCD", "치매", "dementia", "주요 신경인지장애", "Major Neurocognitive Disorder", "경도 신경인지장애", "Mild Neurocognitive Disorder", "경도인지장애", "MCI", "인지 영역"]

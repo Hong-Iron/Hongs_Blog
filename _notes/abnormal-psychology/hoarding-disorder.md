@@ -8,7 +8,7 @@ num: "061"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Hoarding Disorder", "수집광", "강박적 수집", "compulsive collecting", "강박적 저장", "compulsive hoarding", "전이대상", "transitional object", "손실 회피"]

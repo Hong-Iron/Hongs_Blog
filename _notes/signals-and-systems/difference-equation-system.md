@@ -8,7 +8,7 @@ num: "24"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Linear Constant-Coefficient Difference Equation", "선형 상수계수 차분방정식", "차분방정식", "Difference Equation", "재귀 방정식", "Recursive Equation", "비재귀 방정식", "Nonrecursive Equation", "FIR", "Finite Impulse Response", "IIR", "Infinite Impulse Response"]

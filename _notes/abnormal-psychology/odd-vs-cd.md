@@ -8,7 +8,7 @@ num: "131"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["ODD vs CD", "반항장애 vs 품행장애"]

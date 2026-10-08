@@ -8,7 +8,7 @@ num: "19"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Layering", "계층", "layer", "추상화", "abstraction", "논리적 통신", "logical communication", "물리적 통신", "physical communication", "계층 구조"]

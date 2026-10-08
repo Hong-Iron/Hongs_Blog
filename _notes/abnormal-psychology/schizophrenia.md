@@ -8,7 +8,7 @@ num: "019"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Schizophrenia", "정신분열증", "조현병의 진단기준", "전구기", "prodromal phase", "활성기", "active phase", "관해", "remission", "뇌실 확장", "신경발달장애로서의 조현병", "사회적 유발설", "sociogenic hypothesis", "사회적 선택설", "social selection hypothesis", "자아 경계", "ego boundary", "인지재활", "cognitive remediation", "토큰 경제", "token economy", "사회기술훈련", "social skill training", "SST", "심리교육", "psychoeducation", "낮병원", "day hospital", "전기충격치료"]

@@ -8,7 +8,7 @@ num: "036"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Cognitive Behavioral Therapy", "CBT", "인지치료", "cognitive therapy", "인지적 재구성", "cognitive restructuring", "ABC 기법", "소크라테스식 대화법", "Socratic questioning", "역기능적 사고일지", "thought record", "행동실험", "behavioral experiment", "하향화살표 기법", "downward arrow", "중간믿음", "핵심믿음", "core belief", "행동활성화", "behavioral activation", "자기생활 관찰표", "activity monitoring"]

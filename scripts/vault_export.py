@@ -35,26 +35,27 @@ NOTES_DIR = ROOT / "_notes"
 DATA_FILE = ROOT / "_data" / "study_courses.yml"
 STUDIES_PAGE = ROOT / "studies.html"
 
-# (track, [(vault folder, course name, url slug), ...]) in display order.
+# (category, [(vault folder, course name, url slug), ...]) in display order.
+# Courses are grouped by subject category, not by semester.
 TRACKS = [
-    ("4-1학기", [
-        ("4-1학기/이상 심리학", "이상 심리학", "abnormal-psychology"),
-        ("4-1학기/컴퓨터 통신", "컴퓨터 통신", "computer-communication"),
-        ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
-    ]),
-    ("3-1학기", [
-        ("3-1학기/운영체제", "운영체제", "operating-systems"),
-        ("3-1학기/신호 및 시스템", "신호 및 시스템", "signals-and-systems"),
-    ]),
-    ("공학수학", [
+    ("수학", [
         ("공학수학/대학수학", "대학수학", "college-math"),
         ("공학수학/이산수학", "이산수학", "discrete-math"),
         ("공학수학/미분적분학", "미분적분학", "calculus"),
         ("공학수학/선형대수학", "선형대수학", "linear-algebra"),
         ("공학수학/확률과 통계", "확률과 통계", "probability-statistics"),
     ]),
-    ("알고리즘", [
+    ("컴퓨터 과학", [
         ("알고리즘", "알고리즘", "algorithms"),
+        ("3-1학기/운영체제", "운영체제", "operating-systems"),
+        ("4-1학기/컴퓨터 통신", "컴퓨터 통신", "computer-communication"),
+    ]),
+    ("신호와 미디어", [
+        ("3-1학기/신호 및 시스템", "신호 및 시스템", "signals-and-systems"),
+        ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
+    ]),
+    ("심리학", [
+        ("4-1학기/이상 심리학", "이상 심리학", "abnormal-psychology"),
     ]),
 ]
 

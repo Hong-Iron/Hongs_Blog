@@ -8,7 +8,7 @@ num: "022"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Schizophreniform Disorder", "정신분열형 장애", "잠정적 진단", "provisional"]

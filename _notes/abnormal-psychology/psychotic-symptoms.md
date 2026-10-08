@@ -8,7 +8,7 @@ num: "016"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Psychotic Symptoms", "조현병의 핵심 증상", "망상", "delusion", "피해망상", "persecutory delusion", "과대망상", "grandiose delusion", "관계망상", "delusion of reference", "애정망상", "erotomanic delusion", "질투망상", "신체망상", "somatic delusion", "환각", "hallucination", "환청", "환시", "착각", "illusion", "현실검증", "reality testing", "혼란스러운 언어", "와해된 언어", "disorganized speech", "사고장애", "지리멸렬", "말비빔", "word salad", "반향언어", "echolalia", "우원증", "circumstantiality", "사고이탈", "tangentiality", "혼란스러운 행동", "긴장증", "catatonia", "음성 증상", "negative symptoms", "정서적 둔마", "affective flattening", "무언어증", "alogia", "무의욕증", "avolition", "무쾌감증", "anhedonia", "비사회성", "asociality"]

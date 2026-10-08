@@ -8,7 +8,7 @@ num: "23"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Markov Chain", "마르코프 연쇄", "마르코프 체인", "마르코프 성질", "Markov property", "전이행렬", "transition matrix", "확률행렬", "stochastic matrix", "정상분포", "stationary distribution", "기약", "irreducible", "비주기", "aperiodic", "귀환 시간", "return time"]

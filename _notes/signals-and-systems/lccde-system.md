@@ -8,7 +8,7 @@ num: "23"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Linear Constant-Coefficient Differential Equation", "LCCDE", "선형 상수계수 미분방정식", "초기 휴지 조건", "Initial Rest", "자연 응답", "Natural Response", "강제 응답", "Forced Response", "입력 0 응답", "영상태 응답", "보조 조건", "Auxiliary Condition"]

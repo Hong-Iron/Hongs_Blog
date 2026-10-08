@@ -8,7 +8,7 @@ num: "06"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Bayes' Theorem", "Bayes' rule", "베이즈 정리", "베이즈 규칙", "사전확률", "prior", "사후확률", "posterior", "가능도", "likelihood", "기저율", "base rate", "기저율 무시", "base rate fallacy", "오즈", "odds", "가능도비", "likelihood ratio", "나이브 베이즈", "naive Bayes"]

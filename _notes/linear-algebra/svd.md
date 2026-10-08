@@ -8,7 +8,7 @@ num: "24"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Singular Value Decomposition", "SVD", "특잇값 분해", "특이값 분해", "특잇값", "singular value", "저랭크 근사", "low-rank approximation", "에카르트-영 정리", "Eckart–Young theorem", "유사역행렬", "pseudoinverse", "주성분 분석", "PCA"]

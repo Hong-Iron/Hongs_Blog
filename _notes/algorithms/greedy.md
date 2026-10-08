@@ -8,7 +8,7 @@ num: "22"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Greedy", "Greedy Algorithm", "탐욕법", "탐욕 알고리즘", "욕심쟁이 방법", "교환 논증", "회의실 배정"]

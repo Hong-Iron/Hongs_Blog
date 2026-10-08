@@ -8,7 +8,7 @@ num: "23"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Hessian", "헤세 행렬", "헤시안", "Hessian matrix", "2계 도함수 판정", "second derivative test", "임계점", "critical point", "안장점", "saddle point", "극소", "local minimum", "극대", "local maximum", "2차 근사", "quadratic approximation"]

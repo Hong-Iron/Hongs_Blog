@@ -8,7 +8,7 @@ num: "60"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["File Allocation", "연속 할당", "Contiguous Allocation", "연결 할당", "Chained Allocation", "색인 할당", "Indexed Allocation", "파일 할당 표", "File Allocation Table", "FAT", "선할당", "Preallocation", "동적 할당", "빈 공간 관리", "Free Space Management", "비트 표", "Bit Table", "비트맵", "볼륨", "Volume"]

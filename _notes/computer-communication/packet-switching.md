@@ -8,7 +8,7 @@ num: "08"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Packet Switching", "패킷 교환", "저장 후 전달", "store-and-forward", "패킷", "packet", "혼잡", "congestion", "버퍼링", "buffering", "FIFO", "버퍼 오버플로우", "buffer overflow"]

@@ -8,7 +8,7 @@ num: "29"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Estimator", "추정량", "점추정", "point estimation", "표본분포", "sampling distribution", "편향", "bias", "불편추정량", "unbiased estimator", "평균제곱오차", "MSE", "mean squared error", "편향-분산 분해", "bias-variance decomposition", "일치성", "consistency", "베셀 보정", "Bessel's correction"]

@@ -5,7 +5,7 @@ display_title: "이산수학 로드맵"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 concepts: 36
 practices: 5
 codes: 40

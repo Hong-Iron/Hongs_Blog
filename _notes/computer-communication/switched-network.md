@@ -8,7 +8,7 @@ num: "03"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Switched Network", "간접 연결", "indirect connectivity", "스위치", "switch", "스위치드 네트워크"]

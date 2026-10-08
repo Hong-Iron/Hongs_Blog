@@ -8,7 +8,7 @@ num: "07"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["I/O Communication Techniques", "프로그램 입출력", "Programmed I/O", "인터럽트 구동 입출력", "Interrupt-Driven I/O", "직접 메모리 접근", "DMA", "Direct Memory Access"]

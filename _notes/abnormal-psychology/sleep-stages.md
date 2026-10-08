@@ -8,7 +8,7 @@ num: "097"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Sleep Stages", "수면 단계", "수면 주기", "sleep cycle", "NREM 수면", "Non-REM sleep", "REM 수면", "렘수면", "Rapid Eye Movement sleep", "수면방추", "sleep spindle", "K복합", "K-complex", "델타파", "delta wave", "숙면", "수면다원검사", "polysomnography", "PSG"]

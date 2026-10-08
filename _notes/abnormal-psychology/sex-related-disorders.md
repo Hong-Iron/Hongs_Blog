@@ -8,7 +8,7 @@ num: "106"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Sex-Related Disorders", "성과 관련된 장애", "생물학적 성", "sex", "사회적 성", "gender", "젠더"]

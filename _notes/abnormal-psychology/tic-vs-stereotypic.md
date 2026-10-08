@@ -8,7 +8,7 @@ num: "153"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Tic vs Stereotypy", "틱 vs 상동증"]

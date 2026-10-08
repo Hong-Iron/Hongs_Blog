@@ -8,7 +8,7 @@ num: "30"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Deadlock Avoidance", "은행원 알고리즘", "Banker's Algorithm", "안전 상태", "Safe State", "불안전 상태", "Unsafe State", "프로세스 시작 거부", "Process Initiation Denial", "자원 할당 거부", "Resource Allocation Denial", "최대 요구 행렬", "Claim Matrix"]

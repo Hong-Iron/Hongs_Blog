@@ -8,7 +8,7 @@ num: "004"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Mental Disorder", "정신질환", "DSM", "DSM-5", "DSM-5-TR", "Diagnostic and Statistical Manual of Mental Disorders", "정신장애 진단 및 통계 편람", "ICD", "International Classification of Diseases", "국제질병분류", "증후군", "syndrome", "미국정신의학회", "American Psychiatric Association"]

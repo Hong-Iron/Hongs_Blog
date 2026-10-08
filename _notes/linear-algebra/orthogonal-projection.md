@@ -8,7 +8,7 @@ num: "16"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Orthogonal Projection", "직교 사영", "정사영", "사영", "projection", "사영 행렬", "projection matrix", "직교 여공간", "orthogonal complement", "정규방정식", "normal equations", "오차 벡터", "error vector"]

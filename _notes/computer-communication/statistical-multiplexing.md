@@ -8,7 +8,7 @@ num: "15"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Statistical Multiplexing", "통계적 시분할 다중화", "statistical TDM", "비동기식 시분할 다중화", "asynchronous TDM", "통계적 이득", "오버헤드", "overhead"]

@@ -8,7 +8,7 @@ num: "17"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Convergence of Series", "급수", "series", "부분합", "partial sum", "발산 판정", "divergence test", "적분 판정", "integral test", "비교 판정", "comparison test", "비 판정", "ratio test", "교대급수", "alternating series", "절대수렴", "absolute convergence", "조건수렴", "conditional convergence", "p-급수", "바젤 문제"]

@@ -8,7 +8,7 @@ num: "07"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Injective", "Surjective", "Bijective", "단사", "일대일 함수", "injection", "전사", "위로의 함수", "surjection", "전단사", "일대일 대응", "bijection", "기수", "cardinality", "집합의 크기"]

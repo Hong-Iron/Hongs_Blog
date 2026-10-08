@@ -8,7 +8,7 @@ num: "059"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Exposure and Response Prevention", "ERP", "반응방지", "response prevention", "사고중지", "thought stopping", "역설적 의도", "paradoxical intention", "자기주장 훈련", "self-assertion training", "파이 기법", "pie-chart technique", "이중기준 기법", "double standard technique", "법정 절차", "courtroom procedure"]

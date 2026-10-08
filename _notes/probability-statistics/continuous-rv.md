@@ -8,7 +8,7 @@ num: "14"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Continuous Random Variable", "연속 확률변수", "확률밀도함수", "PDF", "probability density function", "확률밀도", "density", "밀도의 변수변환", "change of variables for densities"]

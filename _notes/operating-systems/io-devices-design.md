@@ -8,7 +8,7 @@ num: "51"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["I/O Devices", "I/O Design", "입출력 장치의 분류", "입출력 기능의 발전", "Evolution of the I/O Function", "입출력 프로세서", "I/O Processor", "입출력 채널", "I/O Channel", "논리적 입출력", "Logical I/O", "장치 입출력", "Device I/O", "장치 특수 파일", "Special File"]

@@ -8,7 +8,7 @@ num: "68"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Buffer Overflow", "Stack Buffer Overflow", "스택 버퍼 오버플로", "컴파일 시간 방어", "Compile-Time Defenses", "실행 시간 방어", "Run-Time Defenses", "스택 보호", "Stack Protection", "카나리", "Canary", "실행 불가 메모리", "NX", "주소 공간 무작위화", "ASLR", "Address Space Randomization", "가드 페이지", "Guard Pages"]

@@ -8,7 +8,7 @@ num: "29"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Deadlock Prevention", "간접 예방", "직접 예방", "자원 순서 정하기", "Resource Ordering", "한꺼번에 요청하기"]

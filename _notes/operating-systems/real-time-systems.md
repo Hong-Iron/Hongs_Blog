@@ -8,7 +8,7 @@ num: "48"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Real-Time Systems", "실시간 운영체제", "RTOS", "경성 실시간", "Hard Real-Time", "연성 실시간", "Soft Real-Time", "주기 작업", "Periodic Task", "비주기 작업", "Aperiodic Task", "결정성", "Determinism", "응답성", "Responsiveness", "실패 연착륙", "Fail-Soft Operation"]

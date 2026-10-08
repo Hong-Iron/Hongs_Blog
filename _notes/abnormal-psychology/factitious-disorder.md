@@ -8,7 +8,7 @@ num: "085"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Factitious Disorder", "위병장애", "허위성장애", "스스로에게 부여한 인위성장애", "Factitious Disorder Imposed on Self", "타인에게 부여한 인위성장애", "Factitious Disorder Imposed on Another", "뮌하우젠 증후군", "Munchausen syndrome", "대리인에 의한 뮌하우젠 증후군", "Munchausen syndrome by proxy", "환자 역할", "sick role"]

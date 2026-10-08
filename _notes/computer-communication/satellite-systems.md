@@ -8,7 +8,7 @@ num: "36"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-09-29"
 status: "verified"
 aliases: ["Satellite System", "위성", "satellite", "정지궤도", "GEO", "중궤도", "MEO", "저궤도", "LEO", "VSAT", "GPS", "이리듐", "Iridium", "스타링크", "Starlink"]

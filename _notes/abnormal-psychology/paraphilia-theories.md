@@ -8,7 +8,7 @@ num: "124"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Theories of Paraphilia", "성도착의 원인", "러브맵", "lovemap", "머니", "Money", "통합 이론", "integrated theory", "마셜과 바버리", "Marshall & Barbaree", "라크먼의 실험", "Rachman", "혐오 조건형성", "aversive conditioning", "내적 연습", "mental rehearsal"]

@@ -8,7 +8,7 @@ num: "087"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Elimination Disorders", "유뇨증", "Enuresis", "유분증", "Encopresis", "소변 경보기", "벨-패드 방법", "bell-and-pad", "마른 침대 훈련", "dry bed training"]

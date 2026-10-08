@@ -8,7 +8,7 @@ num: "66"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Intrusion Detection", "침입 탐지 시스템", "IDS", "Intrusion Detection System", "호스트 기반 IDS", "Host-Based IDS", "네트워크 기반 IDS", "Network-Based IDS", "이상 탐지", "Anomaly Detection", "시그니처 탐지", "Signature Detection", "임계값 탐지", "Threshold Detection", "프로필 기반 탐지", "감사 기록", "Audit Record"]

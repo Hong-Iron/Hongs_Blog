@@ -8,7 +8,7 @@ num: "19"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Inclusion-Exclusion Principle", "포함-배제", "포함배제", "교란순열", "derangement", "모자 문제", "hat-check problem", "전사 함수의 수", "surjections"]

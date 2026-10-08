@@ -8,7 +8,7 @@ num: "084"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["SSD vs IAD", "신체증상장애 vs 건강염려증"]

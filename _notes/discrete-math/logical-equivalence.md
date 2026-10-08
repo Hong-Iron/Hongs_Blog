@@ -8,7 +8,7 @@ num: "02"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Logical Equivalence", "논리적 동치", "드모르간 법칙", "De Morgan's laws", "대우", "contrapositive", "역", "converse", "이", "inverse", "분배법칙", "흡수법칙", "정규형", "normal form", "논리합 표준형", "DNF", "논리곱 표준형", "CNF", "충족 가능성", "SAT"]

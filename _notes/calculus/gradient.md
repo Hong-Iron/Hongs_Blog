@@ -8,7 +8,7 @@ num: "20"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Gradient", "그래디언트", "기울기 벡터", "경사", "nabla", "델", "Directional Derivative", "방향도함수", "미분 가능성", "differentiability", "가장 가파른 방향", "steepest ascent", "접평면", "tangent plane", "소벨 필터", "Sobel filter"]

@@ -8,7 +8,7 @@ num: "21"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Protocol Graph", "프로토콜 스택", "protocol stack", "의존 관계", "dependency", "역다중화 키", "RRP", "MSP", "HHP"]

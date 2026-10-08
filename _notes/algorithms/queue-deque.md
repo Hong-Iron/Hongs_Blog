@@ -8,7 +8,7 @@ num: "11"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Queue", "Deque", "큐", "덱", "데크", "FIFO", "선입선출", "collections.deque", "popleft", "LRU"]

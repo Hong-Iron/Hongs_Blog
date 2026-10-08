@@ -8,7 +8,7 @@ num: "26"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Dijkstra", "Dijkstra's Algorithm", "데이크스트라", "다익스트라 알고리즘", "최단 경로", "가중치 최단 경로", "늦은 삭제"]

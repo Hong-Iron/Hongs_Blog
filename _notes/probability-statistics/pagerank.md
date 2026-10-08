@@ -8,7 +8,7 @@ num: "25"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["PageRank", "페이지랭크", "구글 행렬", "Google matrix", "감쇠 계수", "damping factor", "순간이동", "teleportation", "거듭제곱법", "power iteration", "댕글링 노드", "dangling node", "무작위 서퍼", "random surfer"]

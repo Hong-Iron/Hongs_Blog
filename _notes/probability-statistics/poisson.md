@@ -8,7 +8,7 @@ num: "12"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Poisson Distribution", "포아송 분포", "푸아송 분포", "포아송 근사", "Poisson approximation", "소수의 법칙", "law of rare events", "도착률", "arrival rate", "과대산포", "overdispersion"]

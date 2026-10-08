@@ -8,7 +8,7 @@ num: "09"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Evolution of Operating Systems", "직렬 처리", "Serial Processing", "단순 배치 시스템", "Simple Batch System", "모니터", "Monitor", "상주 모니터", "Resident Monitor", "작업 제어 언어", "Job Control Language", "JCL"]

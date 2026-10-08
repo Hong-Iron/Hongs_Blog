@@ -8,7 +8,7 @@ num: "41"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Subproblem Graph", "부분 문제 그래프", "상태 그래프", "DP 계산 순서", "표 채우는 순서", "DAG 위의 DP", "DP on DAG", "선형 확장과 DP"]

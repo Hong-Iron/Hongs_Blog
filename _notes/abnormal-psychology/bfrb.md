@@ -8,7 +8,7 @@ num: "064"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Body-Focused Repetitive Behavior", "BFRB", "습관 반전 훈련", "Habit Reversal Training", "HRT", "경쟁반응 훈련", "competing response", "자각 훈련", "awareness training", "수용 증진 행동치료", "Acceptance-Enhanced Behavior Therapy", "AEBT", "손톱 물어뜯기"]

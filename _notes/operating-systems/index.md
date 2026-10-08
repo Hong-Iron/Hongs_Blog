@@ -5,7 +5,7 @@ display_title: "운영체제 로드맵"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 concepts: 68
 practices: 8
 codes: 31

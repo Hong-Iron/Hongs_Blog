@@ -5,7 +5,7 @@ display_title: "선형대수학 로드맵"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 concepts: 28
 practices: 3
 codes: 32

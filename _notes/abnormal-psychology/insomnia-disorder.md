@@ -8,7 +8,7 @@ num: "099"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Insomnia Disorder", "불면증", "insomnia", "수면 시작 불면증", "Sleep Onset Insomnia", "수면 유지 불면증", "Sleep Maintenance Insomnia", "수면 종료 불면증", "Sleep Terminal Insomnia", "과다각성", "hyperarousal", "3P 모델", "스필만 모델", "Spielman model", "취약성 요인", "predisposing factor", "촉발요인", "precipitating factor", "지속요인", "perpetuating factor"]

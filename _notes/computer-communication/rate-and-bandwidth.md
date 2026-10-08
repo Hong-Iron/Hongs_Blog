@@ -8,7 +8,7 @@ num: "05"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Transmission Rate", "Bandwidth", "전송률", "데이터 전송률", "bit rate", "bps", "대역폭", "전송 지연", "전송 시간", "transmission delay", "전파 지연", "전파지연시간", "propagation delay", "비트 폭", "bit width"]

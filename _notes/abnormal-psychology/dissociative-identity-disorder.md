@@ -8,7 +8,7 @@ num: "077"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Dissociative Identity Disorder", "DID", "다중인격장애", "다중성격장애", "multiple personality disorder", "주 인격", "host personality", "대체 인격", "alternate personalities", "외상 모델", "trauma model", "4요인 모델", "four factor model", "신해리이론", "neo-dissociation theory", "집행적 자아", "executive ego"]

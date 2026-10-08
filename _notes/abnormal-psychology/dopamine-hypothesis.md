@@ -8,7 +8,7 @@ num: "018"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Dopamine Hypothesis", "조현병의 도파민 가설", "도파민", "dopamine", "세로토닌-도파민 가설", "serotonin-dopamine hypothesis", "도파민 효능제", "dopamine agonist", "암페타민 정신병", "D2 수용체"]

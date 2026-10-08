@@ -8,7 +8,7 @@ num: "26"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Message Passing", "send", "receive", "랑데부", "Rendezvous", "블로킹", "Blocking", "논블로킹", "Nonblocking", "직접 주소 지정", "Direct Addressing", "간접 주소 지정", "Indirect Addressing", "메일박스", "Mailbox", "포트", "Port"]

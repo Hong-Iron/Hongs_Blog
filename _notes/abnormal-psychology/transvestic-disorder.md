@@ -8,7 +8,7 @@ num: "123"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Transvestic Disorder", "복장도착증", "의상도착증", "transvestism", "옷 바꿔 입기", "cross-dressing", "물품음란증 동반", "with fetishism", "자가여성애 동반", "with autogynephilia", "자가여성애", "autogynephilia"]

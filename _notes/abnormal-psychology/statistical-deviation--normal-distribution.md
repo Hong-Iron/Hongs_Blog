@@ -8,7 +8,7 @@ num: "003"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["통계적 기준과 정규분포", "statistical deviation and normal distribution", "절단점과 꼬리 확률", "z점수 절단점"]

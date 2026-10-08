@@ -8,7 +8,7 @@ num: "031"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Premenstrual Dysphoric Disorder", "PMDD", "월경 전 불쾌감 장애", "월경전 불쾌장애", "월경전증후군", "PMS", "premenstrual syndrome"]

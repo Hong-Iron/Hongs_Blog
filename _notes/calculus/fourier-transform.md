@@ -8,7 +8,7 @@ num: "31"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Fourier Transform", "푸리에 변환", "역푸리에 변환", "inverse Fourier transform", "스펙트럼", "spectrum", "합성곱", "convolution", "합성곱 정리", "convolution theorem", "변조", "modulation", "sinc 함수", "불확정성 원리", "uncertainty principle", "저역 통과 필터", "low-pass filter"]

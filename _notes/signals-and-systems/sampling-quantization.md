@@ -8,7 +8,7 @@ num: "11"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Sampling", "Quantization", "샘플링", "표본 간격", "Sampling Interval", "양자화 단계", "Quantization Level", "화소", "Pixel", "격자", "Grid", "A/D 변환", "Analog-to-Digital Conversion"]

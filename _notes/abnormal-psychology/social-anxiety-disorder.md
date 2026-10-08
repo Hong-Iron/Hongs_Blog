@@ -8,7 +8,7 @@ num: "051"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Social Anxiety Disorder", "사회공포증", "social phobia", "대인공포증", "가해 염려형 사회불안", "안전행동", "safety behavior", "자기초점적 주의", "self-focused attention", "클라크와 웰스", "Clark and Wells", "라피와 하임버그", "Rapee and Heimberg", "사후 반추", "post-event rumination", "긍정적 평가에 대한 두려움", "인지행동적 집단치료"]

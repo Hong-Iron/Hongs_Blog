@@ -8,7 +8,7 @@ num: "04"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Polynomial", "다항함수", "차수", "degree", "근", "root", "zero", "나머지 정리", "Remainder Theorem", "인수정리", "Factor Theorem", "근의 공식", "Quadratic Formula", "판별식", "discriminant", "조립제법", "synthetic division", "호너 방법", "Horner's method", "다항식 보간"]

@@ -8,7 +8,7 @@ num: "02"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Probability Axioms", "확률의 공리", "콜모고로프 공리", "Kolmogorov axioms", "확률 측도", "probability measure", "고전적 확률", "naive definition of probability", "여사건 법칙", "complement rule", "합집합 한계", "union bound", "생일 문제", "birthday problem"]

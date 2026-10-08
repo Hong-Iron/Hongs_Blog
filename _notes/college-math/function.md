@@ -8,7 +8,7 @@ num: "01"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Function", "정의역", "domain", "공역", "codomain", "치역", "range", "image", "자연 정의역", "수직선 판정", "vertical line test"]

@@ -8,7 +8,7 @@ num: "138"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Internet Gaming Disorder", "IGD", "게임 중독", "게임 장애", "gaming disorder", "I-PACE 모델", "Interaction of Person-Affect-Cognition-Execution", "CBT-IA", "인터넷 중독", "Internet Addiction"]

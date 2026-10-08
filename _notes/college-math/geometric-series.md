@@ -8,7 +8,7 @@ num: "21"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Geometric Series", "등비수열의 합", "무한 등비급수", "infinite geometric series", "공비", "common ratio", "두 배 늘리기", "doubling"]

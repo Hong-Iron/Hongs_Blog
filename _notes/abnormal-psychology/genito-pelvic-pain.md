@@ -8,7 +8,7 @@ num: "113"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Genito-Pelvic Pain/Penetration Disorder", "GPPPD", "성기-골반 통증/삽입장애", "성교통", "dyspareunia", "질경련", "vaginismus"]

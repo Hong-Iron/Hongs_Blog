@@ -8,7 +8,7 @@ num: "065"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Trauma- and Stressor-Related Disorders", "외상", "trauma", "외상 및 스트레스 사건 관련 장애", "인간 외적 외상", "impersonal trauma", "대인관계적 외상", "interpersonal trauma", "애착 외상", "attachment trauma", "일회적 외상", "반복적 외상"]

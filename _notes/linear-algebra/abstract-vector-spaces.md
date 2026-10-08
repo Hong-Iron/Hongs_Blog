@@ -8,7 +8,7 @@ num: "25"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Abstract Vector Space", "추상 벡터공간", "벡터공간의 공리", "vector space axioms", "함수 공간", "function space", "다항식 공간", "polynomial space", "베른슈타인 다항식", "Bernstein polynomial", "베지어 곡선", "Bézier curve", "드 카스텔조 알고리즘", "de Casteljau's algorithm"]

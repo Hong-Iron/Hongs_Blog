@@ -8,7 +8,7 @@ num: "025"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Delusional Disorder", "편집증", "paranoia", "색정형", "erotomanic type", "과대형", "grandiose type", "질투형", "jealous type", "피해형", "persecutory type", "신체형", "somatic type", "잘못된 삼단논법", "폰 도마루스 원리", "Von Domarus principle", "외부 귀인"]

@@ -8,7 +8,7 @@ num: "06"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Excitatory & Inhibitory", "흥분", "억제", "흥분성", "억제성", "탈분극", "depolarization", "과분극", "hyperpolarization", "문턱", "threshold"]

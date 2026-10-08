@@ -8,7 +8,7 @@ num: "39"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Page Table Structure", "페이지 표 항목", "Page Table Entry", "PTE", "존재 비트", "Present Bit", "변경 비트", "Modify Bit", "다단계 페이지 표", "Hierarchical Page Table", "2단계 페이지 표", "역 페이지 표", "Inverted Page Table"]

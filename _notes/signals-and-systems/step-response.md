@@ -8,7 +8,7 @@ num: "22"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Unit Step Response", "계단 응답", "Step Response", "s[n]", "s(t)"]

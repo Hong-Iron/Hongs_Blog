@@ -8,7 +8,7 @@ num: "011"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Cognitive Perspective", "인지적 모델", "인지행동적 입장", "cognitive-behavioral perspective", "인지행동치료", "CBT", "Cognitive Behavior Therapy", "인지적 왜곡", "cognitive distortion", "역기능적 신념", "dysfunctional belief", "비합리적 신념", "irrational belief", "ABC 모델", "엘리스", "Ellis", "벡", "Beck", "합리적 정서행동치료", "REBT"]

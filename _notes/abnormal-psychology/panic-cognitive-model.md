@@ -8,7 +8,7 @@ num: "053"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Cognitive Model of Panic", "클라크의 공황 인지모델", "Clark 1986", "파국적 오해석", "catastrophic misinterpretation", "3요인 인지이론", "tripartite cognitive model", "불안 민감성", "anxiety sensitivity", "공황적 자기효능감", "panic self-efficacy"]

@@ -8,7 +8,7 @@ num: "052"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Panic Disorder", "공황발작", "panic attack", "예기불안", "anticipatory anxiety", "과잉호흡이론", "hyperventilation theory", "질식오경보 이론", "suffocation false alarm theory", "공황통제치료", "panic control treatment", "PCT", "내부감각수용 노출", "interoceptive exposure", "복식호흡"]

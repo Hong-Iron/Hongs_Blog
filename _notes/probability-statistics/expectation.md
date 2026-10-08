@@ -8,7 +8,7 @@ num: "08"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Expectation", "기댓값", "기대값", "expected value", "평균", "mean", "기댓값의 선형성", "linearity of expectation", "LOTUS", "무의식적 통계학자의 법칙", "law of the unconscious statistician", "근본 다리", "fundamental bridge", "모자 돌려받기 문제", "상트페테르부르크 역설", "St. Petersburg paradox"]

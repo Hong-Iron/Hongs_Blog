@@ -8,7 +8,7 @@ num: "29"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Data Link Layer", "데이터 링크", "링크 계층", "link layer", "데이터 링크 네트워크", "프레이밍", "framing", "비트 교환", "오류 검출", "error detection"]

@@ -8,7 +8,7 @@ num: "041"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Schizoaffective Disorder", "분열정동장애", "우울형", "depressive type", "양극형", "bipolar type", "정신병적 양상을 동반한 기분장애"]

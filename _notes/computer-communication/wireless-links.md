@@ -8,7 +8,7 @@ num: "34"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Wireless Links", "무선", "wireless", "다중 경로", "multipath", "다중 경로 문제", "multipath problem", "라이선스", "전파 규제", "고정 무선통신", "wireless fixed links", "무선 가입자망", "단거리 무선통신", "short range", "무선 LAN", "Wi-Fi", "IEEE 802.11", "블루투스", "Bluetooth", "지그비", "ZigBee", "IEEE 802.15.4", "적외선 통신", "WAN", "LAN", "PAN"]

@@ -8,7 +8,7 @@ num: "13"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Memory", "Memoryless System", "기억 없는 시스템", "기억 있는 시스템", "System with Memory", "항등 시스템", "Identity System", "누산기", "Accumulator", "지연기", "Delay", "가역성", "Invertibility", "역시스템", "Inverse System"]

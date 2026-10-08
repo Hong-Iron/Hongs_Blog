@@ -8,7 +8,7 @@ num: "17"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Recursion", "Backtracking", "재귀", "재귀 함수", "백트래킹", "기저 사례", "base case", "가지치기", "pruning", "호출 스택", "recursion limit"]

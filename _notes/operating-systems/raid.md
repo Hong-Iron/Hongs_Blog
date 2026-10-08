@@ -8,7 +8,7 @@ num: "54"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["RAID", "Redundant Array of Independent Disks", "스트라이핑", "Striping", "미러링", "Mirroring", "패리티", "Parity", "RAID 0", "RAID 1", "RAID 2", "RAID 3", "RAID 4", "RAID 5", "RAID 6"]

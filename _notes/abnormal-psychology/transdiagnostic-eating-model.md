@@ -8,7 +8,7 @@ num: "093"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Transdiagnostic Model of Eating Disorders", "초진단적 모델", "transdiagnostic model", "페어번 모델", "Fairburn", "CBT-E", "Enhanced Cognitive Behavioral Therapy", "향상된 인지행동치료", "CBT-Ef", "CBT-Eb", "자기평가에 대한 역기능적 신념", "dysfunctional scheme for self-evaluation", "임상적 완벽주의", "clinical perfectionism", "정서 불내성", "mood intolerance"]

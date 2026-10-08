@@ -8,7 +8,7 @@ num: "126"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Transvestic Disorder vs Gender Dysphoria", "복장도착 vs 성별 불쾌감", "옷 바꿔 입기의 두 의미"]

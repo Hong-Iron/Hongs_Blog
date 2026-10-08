@@ -5,7 +5,7 @@ display_title: "미분적분학 로드맵"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 concepts: 31
 practices: 4
 codes: 36

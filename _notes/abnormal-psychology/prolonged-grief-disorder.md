@@ -8,7 +8,7 @@ num: "072"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Prolonged Grief Disorder", "PGD", "지속성 애도장애", "복합 애도", "complicated grief", "사별", "bereavement", "비탄", "grief", "애도", "mourning", "애도치료", "grief therapy", "복합적 애도치료", "complicated grief treatment"]

@@ -8,7 +8,7 @@ num: "134"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Substance-Related and Addictive Disorders", "물질관련장애", "비물질관련장애", "물질사용장애", "Substance Use Disorders", "물질 중독", "Substance Intoxication", "물질 금단", "Substance Withdrawal", "물질유도성장애", "Substance-Induced Disorders", "물질 유도성 정신장애", "Substance-Induced Mental Disorders", "중독", "addiction", "행위 중독"]

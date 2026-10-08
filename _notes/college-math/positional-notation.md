@@ -8,7 +8,7 @@ num: "10"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Positional Notation", "진법", "radix", "기수법", "2진법", "binary", "8진법", "octal", "16진법", "hexadecimal", "자릿수", "비트 수", "bit length", "진법 변환"]

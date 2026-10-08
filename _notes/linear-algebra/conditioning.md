@@ -8,7 +8,7 @@ num: "26"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Norm", "노름", "벡터 노름", "vector norm", "행렬 노름", "matrix norm", "연산자 노름", "operator norm", "Condition Number", "조건수", "불량 조건", "ill-conditioned", "기계 엡실론", "machine epsilon", "힐베르트 행렬", "Hilbert matrix", "수치 안정성", "numerical stability"]

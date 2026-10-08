@@ -8,7 +8,7 @@ num: "38"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Cross-Entropy", "교차 엔트로피", "KL 발산", "Kullback–Leibler divergence", "쿨백-라이블러 발산", "상대 엔트로피", "relative entropy", "기브스 부등식", "Gibbs' inequality", "교차 엔트로피 손실", "cross-entropy loss", "로그 손실", "log loss", "음의 로그 가능도", "negative log-likelihood"]

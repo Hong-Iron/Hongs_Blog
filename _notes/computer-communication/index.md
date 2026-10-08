@@ -5,7 +5,7 @@ display_title: "컴퓨터 통신 로드맵"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 concepts: 36
 practices: 2
 codes: 19

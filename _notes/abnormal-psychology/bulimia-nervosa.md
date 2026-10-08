@@ -8,7 +8,7 @@ num: "090"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Bulimia Nervosa", "BN", "폭식 삽화", "binge eating episode", "보상행동", "compensatory behavior", "제거 행동", "purging", "접근-회피 갈등", "approach-avoidance conflict", "전이대상", "transitional object"]

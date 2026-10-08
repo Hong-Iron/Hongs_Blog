@@ -8,7 +8,7 @@ num: "027"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Major Depressive Disorder", "MDD", "우울증", "주요우울 삽화", "major depressive episode", "MDE", "심리적 독감", "항우울제", "antidepressant", "SSRI", "SNRI", "TCA", "삼환계 항우울제", "대인관계치료", "IPT", "Interpersonal Psychotherapy", "정신운동성 초조", "정신운동성 지체"]

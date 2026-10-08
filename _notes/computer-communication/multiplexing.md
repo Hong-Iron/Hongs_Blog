@@ -8,7 +8,7 @@ num: "12"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Multiplexing", "멀티플렉싱", "MUX", "DEMUX", "역다중화기", "DEMUX 키", "demux key", "자원 공유", "resource sharing", "다채널 분할", "Multi-Channel Splitting", "역다중화", "inverse multiplexing"]

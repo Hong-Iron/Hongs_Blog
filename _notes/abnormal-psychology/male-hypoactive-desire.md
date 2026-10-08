@@ -8,7 +8,7 @@ num: "108"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Male Hypoactive Sexual Desire Disorder", "남성성욕감퇴장애", "욕구의 불일치", "desire discrepancy", "무성애", "asexuality"]

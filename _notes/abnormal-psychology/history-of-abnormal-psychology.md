@@ -8,7 +8,7 @@ num: "007"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["History of Abnormal Psychology", "귀신론", "demonology", "체액설", "humoral theory", "히포크라테스", "Hippocrates", "피넬", "Pinel", "튜크", "Tuke", "딕스", "Dix", "분트", "Wundt", "크레펠린", "Kraepelin", "비네", "Binet", "인지혁명"]

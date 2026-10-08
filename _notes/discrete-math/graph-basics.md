@@ -8,7 +8,7 @@ num: "32"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Graph", "그래프", "정점", "vertex", "꼭짓점", "간선", "edge", "차수", "degree", "악수 정리", "handshake lemma", "인접행렬", "adjacency matrix", "인접 리스트", "adjacency list", "방향 그래프", "directed graph", "단순 그래프", "simple graph", "완전 그래프", "complete graph"]

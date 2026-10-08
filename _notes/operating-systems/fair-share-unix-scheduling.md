@@ -8,7 +8,7 @@ num: "46"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Fair-Share Scheduling", "Traditional UNIX Scheduling", "공정 분배 스케줄링", "전통 UNIX 스케줄링", "nice", "기본 우선순위", "Base Priority", "우선순위 대역", "Priority Bands"]

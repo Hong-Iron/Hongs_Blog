@@ -8,7 +8,7 @@ num: "31"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Deadlock Detection", "Deadlock Recovery", "교착상태 탐지", "교착상태 복구", "요청 행렬", "Request Matrix", "체크포인트", "Checkpoint"]

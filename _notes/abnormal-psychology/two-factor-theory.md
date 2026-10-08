@@ -8,7 +8,7 @@ num: "049"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Mowrer's Two-Factor Theory", "2요인 학습이론", "two-factor theory", "회피 학습의 2요인 과정 이론", "모러", "Mowrer", "준비성", "preparedness", "대리학습", "vicarious learning", "정보전이", "information transmission"]

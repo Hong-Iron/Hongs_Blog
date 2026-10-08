@@ -8,7 +8,7 @@ num: "27"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Singularity Functions", "이상화된 짧은 펄스", "Idealized Short Pulse", "단위 램프", "Unit Ramp", "컨벌루션으로 정의한 임펄스", "Defining the Unit Impulse through Convolution"]

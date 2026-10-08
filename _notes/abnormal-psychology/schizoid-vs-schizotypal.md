@@ -8,7 +8,7 @@ num: "162"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Schizoid vs Schizotypal", "조현성 vs 조현형", "A군 성격장애 비교"]

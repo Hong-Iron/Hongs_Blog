@@ -8,7 +8,7 @@ num: "07"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Logarithm", "log", "로그 법칙", "logarithm rules", "밑변환 공식", "change of base", "진수", "상용로그", "common logarithm", "자연로그", "natural logarithm", "ln", "이진로그", "binary logarithm", "lg"]

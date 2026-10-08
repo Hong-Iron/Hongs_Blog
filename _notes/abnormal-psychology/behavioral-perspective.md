@@ -8,7 +8,7 @@ num: "010"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Behavioral Perspective", "행동주의", "behaviorism", "학습이론", "learning theory", "고전적 조건형성", "classical conditioning", "파블로프", "Pavlov", "조작적 조건형성", "operant conditioning", "스키너", "Skinner", "강화", "reinforcement", "정적 강화", "부적 강화", "처벌", "punishment", "사회적 학습", "관찰학습", "모방학습", "모델링", "modeling", "반두라", "Bandura", "소거", "extinction", "체계적 둔감법", "systematic desensitization", "행동조성", "shaping", "행동치료", "행동수정"]

@@ -8,7 +8,7 @@ num: "25"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["DFS", "Depth-First Search", "깊이 우선 탐색", "연결 성분", "사이클 판정", "세 가지 색"]

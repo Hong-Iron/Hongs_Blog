@@ -8,7 +8,7 @@ num: "13"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Integration by Substitution", "치환적분", "u-치환", "u-substitution", "변수 바꾸기", "change of variables"]

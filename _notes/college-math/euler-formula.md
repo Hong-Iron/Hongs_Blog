@@ -8,7 +8,7 @@ num: "19"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Euler's Formula", "Polar Form of Complex Numbers", "오일러 공식", "극형식", "편각", "argument", "arg", "드무아브르 공식", "De Moivre's theorem", "1의 거듭제곱근", "roots of unity", "오일러 항등식", "Euler's identity"]

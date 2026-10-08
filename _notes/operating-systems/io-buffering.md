@@ -8,7 +8,7 @@ num: "52"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["I/O Buffering", "단일 버퍼", "Single Buffer", "이중 버퍼", "Double Buffer", "순환 버퍼", "Circular Buffer", "블록 지향", "Block-Oriented", "스트림 지향", "Stream-Oriented", "미리 읽기", "Read Ahead", "버퍼 캐시", "Buffer Cache"]

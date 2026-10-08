@@ -8,7 +8,7 @@ num: "045"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Attachment", "애착 이론", "attachment theory", "볼비", "Bowlby", "할로", "Harlow", "접촉 위안", "contact comfort", "에인스워스", "Ainsworth", "낯선 상황 절차", "strange situation procedure", "안정 애착", "secure attachment", "회피 애착", "avoidant attachment", "불안 애착", "anxious attachment", "저항 애착", "불안정 애착", "insecure attachment", "안전기지", "secure base"]

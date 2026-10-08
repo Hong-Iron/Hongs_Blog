@@ -8,7 +8,7 @@ num: "103"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Breathing-Related Sleep Disorder", "폐쇄성 수면 무호흡 저호흡", "Obstructive Sleep Apnea Hypopnea", "폐색성 수면 무호흡증", "수면무호흡", "sleep apnea", "중추성 수면 무호흡증", "Central Sleep Apnea", "수면관련 환기저하", "Sleep-Related Hypoventilation", "양압기", "CPAP"]

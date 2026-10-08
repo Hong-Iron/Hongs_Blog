@@ -8,7 +8,7 @@ num: "121"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Pedophilic Disorder", "소아기호증", "소아성애", "pedophilia", "음경 혈량측정법", "penile plethysmography", "시각반응시간", "viewing time"]

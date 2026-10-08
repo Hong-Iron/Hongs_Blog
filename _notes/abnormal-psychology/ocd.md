@@ -8,7 +8,7 @@ num: "057"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Obsessive-Compulsive Disorder", "OCD", "강박증", "강박사고", "obsession", "강박행동", "compulsion", "외현적 강박행동", "내현적 강박행동", "순수한 강박사고형", "청결행동", "확인행동", "반복행동", "정리정돈행동", "수집행동", "지연행동", "기저핵", "basal ganglia", "강박 및 관련 장애"]

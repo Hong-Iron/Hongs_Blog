@@ -8,7 +8,7 @@ num: "33"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Paths and Connectivity", "보행", "walk", "트레일", "trail", "경로", "path", "사이클", "cycle", "연결 그래프", "connected graph", "연결 성분", "connected component", "도달 가능성", "reachability", "너비 우선 탐색", "BFS", "breadth-first search", "깊이 우선 탐색", "DFS", "depth-first search", "강연결 성분", "strongly connected component"]

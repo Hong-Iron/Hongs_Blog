@@ -8,7 +8,7 @@ num: "57"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["File Organization", "더미 파일", "Pile", "순차 파일", "Sequential File", "색인 순차 파일", "Indexed Sequential File", "색인 파일", "Indexed File", "직접 파일", "해시 파일", "Direct File", "Hashed File", "키 필드", "Key Field", "오버플로 파일", "Overflow File"]

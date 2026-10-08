@@ -8,7 +8,7 @@ num: "11"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Routing", "경로 설정", "포워딩", "forwarding", "전달표", "forwarding table"]

@@ -8,7 +8,7 @@ num: "11"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Partial Order", "Topological Sort", "부분순서", "poset", "부분순서 집합", "전순서", "total order", "하세 도표", "Hasse diagram", "극소 원소", "minimal element", "선형 확장", "linear extension", "위상 정렬", "칸 알고리즘", "Kahn's algorithm", "DAG", "방향 비순환 그래프"]

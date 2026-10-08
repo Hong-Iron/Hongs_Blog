@@ -8,7 +8,7 @@ num: "012"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Biomedical Perspective", "생물학적 입장", "의학적 모델", "medical model", "신경전달물질", "neurotransmitter", "유전적 요인", "뇌의 구조적 이상", "신경생화학", "약물치료", "pharmacotherapy", "전기충격치료", "ECT", "electroconvulsive therapy", "뇌수술", "정신외과"]

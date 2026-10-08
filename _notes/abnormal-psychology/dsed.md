@@ -8,7 +8,7 @@ num: "074"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Disinhibited Social Engagement Disorder", "DSED", "탈억제형 애착장애", "disinhibited type", "가짜 위안", "pseudo-comfort", "무분별한 사회성"]

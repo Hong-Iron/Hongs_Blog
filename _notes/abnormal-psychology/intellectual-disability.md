@@ -8,7 +8,7 @@ num: "140"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Intellectual Disability", "지적발달장애", "Intellectual Developmental Disorder", "정신지체", "mental retardation", "적응 기능", "adaptive functioning", "전반적 발달지연", "Global Developmental Delay"]

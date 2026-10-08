@@ -8,7 +8,7 @@ num: "19"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Prefix Sum", "Difference Array", "누적 합", "구간 합", "부분 합", "차분 배열", "imos", "accumulate", "2차원 누적 합"]

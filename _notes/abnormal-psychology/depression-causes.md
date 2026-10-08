@@ -8,7 +8,7 @@ num: "032"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Causes of Depression", "우울증의 원인", "부정적 생활사건", "negative life events", "사회적 지지", "social support", "보호요인", "protective factors", "모노아민 가설", "monoamine hypothesis", "카테콜아민", "catecholamine", "HPA 축", "hypothalamic-pituitary-adrenal axis", "코르티솔", "cortisol", "생체리듬", "biorhythm", "계절성 우울증", "seasonal affective disorder", "멜라토닌", "광치료", "light therapy", "분노의 내향화", "anger turned inward", "긍정적 강화의 상실", "르윈손", "Lewinsohn"]

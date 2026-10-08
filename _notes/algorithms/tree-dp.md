@@ -8,7 +8,7 @@ num: "32"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Tree DP", "트리 동적 계획법", "트리에서의 DP", "최대 독립 집합", "후위 순서 계산"]

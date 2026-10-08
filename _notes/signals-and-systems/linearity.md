@@ -8,7 +8,7 @@ num: "17"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Linearity", "Linear System", "선형 시스템", "비선형 시스템", "Nonlinear System", "중첩", "Superposition", "덧셈성", "Additivity", "동차성", "Homogeneity", "Scaling", "증분 선형 시스템", "Incrementally Linear System", "입력 0 응답", "Zero-Input Response", "영상태 응답", "Zero-State Response"]

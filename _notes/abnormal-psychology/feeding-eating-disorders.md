@@ -8,7 +8,7 @@ num: "088"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Feeding and Eating Disorders", "급식장애", "Feeding Disorder", "섭식장애", "Eating Disorder", "식이장애"]

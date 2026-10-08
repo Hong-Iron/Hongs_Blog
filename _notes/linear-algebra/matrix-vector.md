@@ -8,7 +8,7 @@ num: "04"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Matrix", "행렬", "Matrix-Vector Product", "행렬-벡터 곱", "열 관점", "column picture", "행 관점", "row picture", "연립일차방정식", "system of linear equations", "선형 함수", "linear map", "단위행렬", "identity matrix", "표준 기저", "standard basis"]

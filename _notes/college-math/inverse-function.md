@@ -8,7 +8,7 @@ num: "03"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Inverse Function", "일대일 함수", "one-to-one", "injective", "수평선 판정", "horizontal line test"]

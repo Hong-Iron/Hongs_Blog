@@ -8,7 +8,7 @@ num: "102"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Narcolepsy", "수면발작", "sleep attack", "탈력발작", "Cataplexy", "히포크레틴", "hypocretin", "오렉신", "orexin", "수면 잠복기 반복 검사", "MSLT", "수면마비", "가위눌림", "sleep paralysis", "입면시 환각", "hypnagogic hallucination", "탈면시 환각", "hypnopompic hallucination", "2역치 다중요인 모델", "HLA", "모다피닐", "Modafinil"]

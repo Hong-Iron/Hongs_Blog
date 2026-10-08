@@ -8,7 +8,7 @@ num: "148"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Attention-Deficit/Hyperactivity Disorder", "ADHD", "부주의", "inattention", "과잉행동", "hyperactivity", "충동성", "impulsivity", "복합형", "부주의 우세형", "과잉행동-충동성 우세형", "미세 두뇌기능 장애", "minimal brain dysfunction", "메틸페니데이트", "methylphenidate", "아토목세틴", "atomoxetine", "소리 내어 생각하기", "think aloud", "협동적 생활기술", "Collaborative Life Skills", "CLS"]

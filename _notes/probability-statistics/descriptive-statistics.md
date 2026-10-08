@@ -8,7 +8,7 @@ num: "28"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Descriptive Statistics", "기술통계", "요약 통계", "summary statistics", "표본평균", "sample mean", "중앙값", "median", "분위수", "quantile", "백분위수", "percentile", "p99", "사분위 범위", "IQR", "interquartile range", "히스토그램", "histogram", "경험적 분포함수", "empirical CDF", "견고성", "robustness"]

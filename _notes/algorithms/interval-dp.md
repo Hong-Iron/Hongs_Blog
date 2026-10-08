@@ -8,7 +8,7 @@ num: "31"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Interval DP", "구간 동적 계획법", "행렬 곱셈 순서", "Matrix Chain Multiplication", "괄호 치기"]

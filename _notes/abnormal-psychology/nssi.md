@@ -8,7 +8,7 @@ num: "043"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Non-Suicidal Self-Injury", "NSSI", "자해", "self-harm", "자해의 기능"]

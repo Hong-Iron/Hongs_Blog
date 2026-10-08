@@ -8,7 +8,7 @@ num: "21"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "4-1학기"
+track: "신호와 미디어"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Binocular Disparity", "양안 인식", "양안 시각", "입체시", "stereopsis", "호롭터", "horopter", "대응점", "시야", "field of view", "두눈과 시야"]

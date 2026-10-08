@@ -8,7 +8,7 @@ num: "27"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Floyd-Warshall", "Floyd–Warshall", "플로이드 워셜", "플로이드", "모든 쌍 최단 경로", "All-Pairs Shortest Paths"]

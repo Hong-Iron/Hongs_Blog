@@ -8,7 +8,7 @@ num: "11"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Rank", "랭크", "계수", "Four Fundamental Subspaces", "네 부분공간", "열공간", "column space", "영공간", "null space", "kernel", "핵", "행공간", "row space", "왼쪽 영공간", "left null space", "차원 정리", "rank-nullity theorem", "특수해", "special solution"]

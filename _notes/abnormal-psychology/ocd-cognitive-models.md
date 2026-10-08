@@ -8,7 +8,7 @@ num: "058"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Cognitive Models of OCD", "침투적 사고", "intrusive thoughts", "살코브스키스", "Salkovskis", "자아-이질적", "ego-dystonic", "자아-동질적", "ego-syntonic", "중화", "neutralizing", "팽창된 책임감", "inflated responsibility", "사고-행위 융합", "thought-action fusion", "도덕성 융합", "발생가능성 융합", "라크만", "Rachman", "추론융합", "inferential confusion", "사고억제의 역설적 효과", "흰곰 실험", "white bear", "웨그너", "Wegner", "불완전감", "incompleteness", "Not Just Right Experience", "강박장애의 2차원 모델"]

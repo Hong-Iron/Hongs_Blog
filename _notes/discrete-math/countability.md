@@ -8,7 +8,7 @@ num: "08"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Countable Set", "Diagonal Argument", "가산 집합", "셀 수 있는 집합", "countably infinite", "비가산 집합", "uncountable", "칸토어의 대각선 논법", "Cantor's diagonal argument", "칸토어 정리", "계산 불가능성", "uncomputable", "정지 문제", "halting problem"]

@@ -8,7 +8,7 @@ num: "06"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Chain Rule", "연쇄 법칙", "합성함수의 미분", "역함수의 미분", "derivative of inverse function", "음함수 미분", "implicit differentiation", "로그 미분법", "logarithmic differentiation", "시그모이드", "sigmoid", "소프트플러스", "softplus", "역전파", "backpropagation"]

@@ -8,7 +8,7 @@ num: "26"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Probabilistic Analysis of Algorithms", "확률적 분석", "무작위 알고리즘", "randomized algorithm", "해시 충돌", "hash collision", "체이닝", "chaining", "적재율", "load factor", "무작위 퀵정렬", "randomized quicksort", "공과 통", "balls into bins", "두 선택의 힘", "power of two choices", "블룸 필터", "Bloom filter"]

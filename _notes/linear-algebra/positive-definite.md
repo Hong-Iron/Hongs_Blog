@@ -8,7 +8,7 @@ num: "23"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Positive Definite Matrix", "양의 정부호", "양정치", "positive definite", "양의 준정부호", "positive semidefinite", "PSD", "이차형식", "quadratic form", "에너지", "실베스터 판정", "Sylvester's criterion", "숄레스키 분해", "Cholesky decomposition"]

@@ -8,7 +8,7 @@ num: "65"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["User Authentication", "식별", "Identification", "확인", "Verification", "인증 요소", "Authentication Factors", "비밀번호", "Password", "해시된 비밀번호", "Hashed Password", "솔트", "Salt", "사전 공격", "Dictionary Attack", "토큰", "Token", "메모리 카드", "Memory Card", "스마트 카드", "Smart Card", "생체 인증", "Biometrics"]

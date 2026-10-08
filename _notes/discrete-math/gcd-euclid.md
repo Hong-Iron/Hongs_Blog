@@ -8,7 +8,7 @@ num: "27"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["GCD", "Greatest Common Divisor", "최대공약수", "Euclidean Algorithm", "유클리드 호제법", "유클리드 알고리즘", "Extended Euclidean Algorithm", "확장 유클리드 호제법", "베주 항등식", "Bézout's identity", "일차 부정방정식", "linear Diophantine equation", "라메의 정리", "Lamé's theorem"]

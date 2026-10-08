@@ -8,7 +8,7 @@ num: "002"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Criteria of Abnormality", "이상행동의 판별 기준", "주관적 불편감", "distress", "discomfort", "통계적 일탈", "statistical deviation", "규범적 일탈", "사회문화적 기준", "적응 기능의 저하", "dysfunction", "disability", "3D", "4D", "절단점", "cutoff"]

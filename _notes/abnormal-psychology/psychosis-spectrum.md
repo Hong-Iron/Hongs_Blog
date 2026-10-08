@@ -8,7 +8,7 @@ num: "015"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Psychosis", "정신증", "정신병", "신경증", "neurosis", "병식", "insight", "현실 판단력", "reality testing", "조현병 스펙트럼", "Schizophrenia Spectrum and Other Psychotic Disorders", "조발성 치매", "dementia praecox", "크레펠린", "블로일러", "Bleuler", "정신분열증", "약화된 정신병 증후군", "Attenuated Psychosis Syndrome"]

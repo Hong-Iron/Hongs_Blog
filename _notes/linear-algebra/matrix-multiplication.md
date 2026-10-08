@@ -8,7 +8,7 @@ num: "06"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Matrix Multiplication", "행렬 곱셈", "행렬곱", "Transpose", "전치", "전치행렬", "대칭행렬", "symmetric matrix", "합성", "composition", "교환법칙", "결합법칙"]

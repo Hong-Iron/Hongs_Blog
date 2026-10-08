@@ -8,7 +8,7 @@ num: "030"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-26"
 status: "verified"
 aliases: ["Disruptive Mood Dysregulation Disorder", "DMDD", "파괴적 기분조절부전장애", "분노 발작", "temper tantrum", "소아 양극성장애 논란"]

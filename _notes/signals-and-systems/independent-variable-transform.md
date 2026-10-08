@@ -8,7 +8,7 @@ num: "05"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "3-1학기"
+track: "신호와 미디어"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Transformations of the Independent Variable", "시간 이동", "Time Shift", "시간 반전", "Time Reversal", "시간 척도 변환", "Time Scaling", "지연", "Delay", "아핀 변환", "Affine Transformation"]

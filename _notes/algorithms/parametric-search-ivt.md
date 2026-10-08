@@ -8,7 +8,7 @@ num: "39"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Parametric Search and the Intermediate Value Theorem", "이산 사잇값 정리", "discrete intermediate value theorem", "이분법의 루프 불변식", "사잇값 정리의 이분법 증명"]

@@ -8,7 +8,7 @@ num: "30"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Fermat's Little Theorem", "페르마 소정리", "페르마의 작은 정리", "Euler's Theorem", "오일러 정리", "오일러 피 함수", "Euler's totient function", "φ(n)", "빠른 거듭제곱", "fast exponentiation", "square-and-multiply", "제곱 곱셈", "카마이클 수", "Carmichael number", "페르마 판정법", "Fermat primality test"]

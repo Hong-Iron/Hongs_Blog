@@ -8,7 +8,7 @@ num: "24"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Matrix Calculus", "행렬 미분", "벡터 미분", "vector calculus identities", "그래디언트 공식", "이차형식의 미분", "로지스틱 회귀의 기울기", "기울기 검사", "gradient check"]

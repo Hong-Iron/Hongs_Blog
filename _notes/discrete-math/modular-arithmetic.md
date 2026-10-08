@@ -8,7 +8,7 @@ num: "26"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Modular Arithmetic", "모듈러 산술", "합동", "congruence", "나머지 연산", "modulo", "mod", "나눗셈 정리", "division theorem", "약수", "divisor", "배수", "시계 산술", "clock arithmetic"]

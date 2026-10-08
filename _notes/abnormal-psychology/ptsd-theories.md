@@ -8,7 +8,7 @@ num: "067"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Psychological Theories of PTSD", "스트레스 반응 이론", "stress response theory", "호로위츠", "Horowitz", "박살난 가정 이론", "theory of shattered assumptions", "야노프-불먼", "Janoff-Bulman", "정서적 처리 이론", "emotional processing theory", "공포 기억구조", "fear structure", "이중 표상 이론", "dual representation theory", "브루인", "Brewin", "VAM", "SAM", "언어적으로 접근 가능한 기억", "상황적으로 접근 가능한 기억", "PTSD의 통합적 인지모델", "엘러스와 클라크", "Ehlers and Clark"]

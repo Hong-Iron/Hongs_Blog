@@ -8,7 +8,7 @@ num: "13"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Recursive Definition", "Structural Induction", "재귀적 정의", "귀납적 정의", "구조적 귀납법", "재귀 자료형", "recursive data type", "균형 괄호", "balanced parentheses", "정 이진 트리", "full binary tree", "카탈랑 수", "Catalan number"]

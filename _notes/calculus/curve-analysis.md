@@ -8,7 +8,7 @@ num: "07"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Applications of Derivatives", "Optimization", "증가와 감소", "increasing and decreasing", "극값", "local extremum", "극대", "극소", "임계점", "critical point", "페르마 정리", "Fermat's theorem", "이계도함수 판정법", "second derivative test", "오목과 볼록", "concavity", "변곡점", "inflection point", "최댓값과 최솟값", "최적화"]

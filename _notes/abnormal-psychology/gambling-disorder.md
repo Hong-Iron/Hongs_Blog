@@ -8,7 +8,7 @@ num: "136"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Gambling Disorder", "병적 도박", "pathological gambling", "도박중독", "손실 추구", "chasing losses", "통제력의 착각", "illusion of control", "도박사의 오류", "gambler's fallacy", "미신적 사고", "익명의 도박중독자 모임", "Gamblers Anonymous", "GA", "보상에 대한 과잉민감성"]

@@ -8,7 +8,7 @@ num: "02"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Time Complexity Budget", "시간 복잡도", "시간 제한", "연산 횟수 어림", "Big-O 어림", "estimating efficiency"]

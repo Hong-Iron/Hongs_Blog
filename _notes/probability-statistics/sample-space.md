@@ -8,7 +8,7 @@ num: "01"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Sample Space", "표본공간", "사건", "event", "근원사건", "outcome", "결과", "여사건", "complement", "배반 사건", "disjoint events", "분할", "partition", "드모르간 법칙", "De Morgan's laws"]

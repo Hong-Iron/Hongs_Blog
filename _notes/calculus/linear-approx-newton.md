@@ -8,7 +8,7 @@ num: "10"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "공학수학"
+track: "수학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Linear Approximation", "Newton's Method", "선형 근사", "접선 근사", "tangent line approximation", "미분", "differential", "뉴턴 방법", "뉴턴-랩슨", "Newton-Raphson", "이차 수렴", "quadratic convergence", "바빌로니아 방법"]

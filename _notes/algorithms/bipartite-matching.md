@@ -8,7 +8,7 @@ num: "34"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Bipartite Matching", "최대 이분 매칭", "증가 경로", "Augmenting Path", "헝가리안 방법", "Hungarian Method"]

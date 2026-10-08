@@ -8,7 +8,7 @@ num: "45"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Burst Time Prediction", "지수 평균", "Exponential Averaging", "지수 평활", "Exponential Smoothing", "단순 평균", "Simple Average", "버스트", "Burst"]

@@ -8,7 +8,7 @@ num: "40"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "3-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Translation Lookaside Buffer", "변환 색인 버퍼", "TLB 적중", "TLB Hit", "TLB 실패", "TLB Miss", "연관 사상", "Associative Mapping", "유효 접근 시간", "Effective Access Time"]

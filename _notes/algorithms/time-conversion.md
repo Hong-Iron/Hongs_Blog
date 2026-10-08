@@ -8,7 +8,7 @@ num: "07"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Time Conversion", "시간 계산", "날짜 계산", "분 단위 변환", "divmod", "두 자리 맞추기", "zero padding"]

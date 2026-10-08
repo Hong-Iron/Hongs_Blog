@@ -8,7 +8,7 @@ num: "17"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["순열 vs 조합", "셈 공식 고르기", "twelvefold way", "경우의 수 공식 선택"]

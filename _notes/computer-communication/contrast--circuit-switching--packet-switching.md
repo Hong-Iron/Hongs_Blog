@@ -8,7 +8,7 @@ num: "09"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["회선 스위칭 vs 패킷 스위칭", "circuit vs packet switching"]

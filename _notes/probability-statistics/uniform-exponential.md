@@ -8,7 +8,7 @@ num: "15"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "공학수학"
+track: "수학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Uniform Distribution", "균등분포", "연속 균등분포", "Exponential Distribution", "지수분포", "역변환 샘플링", "inverse transform sampling", "균등분포의 보편성", "universality of the uniform", "포아송 과정", "Poisson process", "도착 간격", "interarrival time"]

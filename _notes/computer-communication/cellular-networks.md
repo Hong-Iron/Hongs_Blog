@@ -8,7 +8,7 @@ num: "35"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "4-1학기"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Cellular Networks", "셀룰러", "셀룰러 네트워크", "셀", "cell", "기지국", "base station", "핸드오프", "handoff", "hand-off", "주파수 재사용", "frequency reuse", "공간 분할 다중화", "space-division multiplexing", "AMPS", "PCS", "GSM", "CDMA", "W-CDMA", "4G", "5G", "마이크로셀", "microcell"]

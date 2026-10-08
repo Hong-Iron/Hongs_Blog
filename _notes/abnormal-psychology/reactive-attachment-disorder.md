@@ -8,7 +8,7 @@ num: "073"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-27"
 status: "verified"
 aliases: ["Reactive Attachment Disorder", "RAD", "억제형 애착장애", "inhibited type", "애착 외상", "attachment trauma", "탈애착", "detachment", "적합도", "goodness of fit"]

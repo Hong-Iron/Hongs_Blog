@@ -8,7 +8,7 @@ num: "151"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "4-1학기"
+track: "심리학"
 updated: "2026-09-28"
 status: "verified"
 aliases: ["Stereotypic Movement Disorder", "상동증", "stereotypy", "상동행동", "단순 상동증적 운동", "복합 상동증적 운동"]
