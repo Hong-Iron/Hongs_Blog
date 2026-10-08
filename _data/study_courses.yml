@@ -42,6 +42,14 @@
       codes: 40
       heavy: 11
       units: "확률의 기초 · 이산 확률변수 · 연속 확률변수 · 여러 확률변수 …"
+    - name: "신호 및 시스템"
+      slug: "signals-and-systems"
+      url: "/studies/signals-and-systems/"
+      concepts: 44
+      practices: 6
+      codes: 43
+      heavy: 20
+      units: "복습: 자연상수, 오일러 등식, 미분방정식 · 1장 신호의 종류, 에너지, 시간축 변환 · 1장 지수·정현파 신호, 임펄스와 계단 · 1장 시스템과 시스템의 성질 …"
 - track: "컴퓨터 과학"
   courses:
     - name: "알고리즘"
@@ -68,16 +76,6 @@
       codes: 19
       heavy: 3
       units: "연결과 자원 공유 · 패킷 스위칭과 네트워크 구조 · 인터넷 구조와 성능 · 데이터 링크 네트워크: 링크의 실체 …"
-- track: "신호와 미디어"
-  courses:
-    - name: "신호 및 시스템"
-      slug: "signals-and-systems"
-      url: "/studies/signals-and-systems/"
-      concepts: 44
-      practices: 6
-      codes: 43
-      heavy: 20
-      units: "복습: 자연상수, 오일러 등식, 미분방정식 · 1장 신호의 종류, 에너지, 시간축 변환 · 1장 지수·정현파 신호, 임펄스와 계단 · 1장 시스템과 시스템의 성질 …"
     - name: "휴먼 인터페이스 미디어"
       slug: "human-interface-media"
       url: "/studies/human-interface-media/"

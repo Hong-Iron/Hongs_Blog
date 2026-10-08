@@ -8,7 +8,7 @@ num: "34"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Properties of Discrete-Time Fourier Series", "표 3.2", "첫 번째 차 성질", "First Difference Property", "누적 합 성질", "Running Sum Property", "이산 주기 컨벌루션", "Discrete Periodic Convolution", "이산 파스발 관계"]

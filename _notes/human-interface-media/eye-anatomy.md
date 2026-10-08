@@ -8,7 +8,7 @@ num: "14"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "신호와 미디어"
+track: "컴퓨터 과학"
 updated: "2026-09-25"
 status: "verified"
 aliases: ["Eye", "눈", "각막", "cornea", "동공", "pupil", "홍채", "iris", "수정체", "lens", "망막", "retina", "중심와", "fovea", "맹점", "blind spot", "시신경", "optic nerve"]

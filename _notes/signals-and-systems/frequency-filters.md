@@ -8,7 +8,7 @@ num: "36"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Frequency-Shaping Filter", "Frequency-Selective Filter", "필터", "Filter", "필터링", "Filtering", "저역 통과 필터", "Lowpass Filter", "고역 통과 필터", "Highpass Filter", "대역 통과 필터", "Bandpass Filter", "차단 주파수", "Cutoff Frequency", "통과 대역", "Passband", "정지 대역", "Stopband", "이상적 필터", "Ideal Filter", "RC 필터", "이동 평균 필터", "Moving Average Filter", "데시벨", "dB", "이퀄라이저", "Equalizer"]

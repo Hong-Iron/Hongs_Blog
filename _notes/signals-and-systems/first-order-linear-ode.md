@@ -8,7 +8,7 @@ num: "01"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["First-Order Linear ODE", "미분방정식", "Differential Equation", "상미분방정식", "Ordinary Differential Equation", "ODE", "편미분방정식", "Partial Differential Equation", "계수", "Order", "차수", "Degree", "변수분리형", "Separable Equation", "적분인자", "Integrating Factor"]

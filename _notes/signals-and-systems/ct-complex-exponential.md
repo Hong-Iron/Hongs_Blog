@@ -8,7 +8,7 @@ num: "08"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Continuous-Time Complex Exponential Signal", "복소 지수 신호", "Complex Exponential", "실수 지수 신호", "Real Exponential", "정현파 신호", "Sinusoidal Signal", "각주파수", "Angular Frequency", "위상", "Phase", "페이저", "Phasor", "고조파", "Harmonic", "감쇠 정현파", "Damped Sinusoid"]

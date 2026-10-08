@@ -8,7 +8,7 @@ num: "28"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Eigenfunctions of LTI Systems", "고유함수", "Eigenfunction", "고유값", "Eigenvalue", "시스템 함수", "System Function", "H(s)", "H(z)", "복소 지수 응답", "Response to Complex Exponentials"]

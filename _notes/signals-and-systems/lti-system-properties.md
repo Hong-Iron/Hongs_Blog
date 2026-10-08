@@ -8,7 +8,7 @@ num: "21"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Properties of LTI Systems", "LTI 시스템의 기억", "LTI 시스템의 가역성", "LTI 시스템의 인과성", "LTI 시스템의 안정성", "절대 합 가능", "Absolutely Summable", "절대 적분 가능", "Absolutely Integrable", "역시스템", "Inverse System"]

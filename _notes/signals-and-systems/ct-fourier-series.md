@@ -8,7 +8,7 @@ num: "30"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Continuous-Time Fourier Series", "CTFS", "푸리에 급수", "Fourier Series", "푸리에 계수", "Fourier Coefficients", "스펙트럼 계수", "Spectral Coefficients", "합성식", "Synthesis Equation", "분석식", "Analysis Equation", "직류 성분", "DC Component", "기본파", "Fundamental", "포락선", "Envelope", "sinc 함수"]

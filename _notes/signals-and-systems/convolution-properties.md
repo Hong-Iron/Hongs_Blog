@@ -8,7 +8,7 @@ num: "20"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Properties of Convolution", "교환법칙", "Commutative Property", "분배법칙", "Distributive Property", "결합법칙", "Associative Property", "직렬 연결", "Cascade", "병렬 연결", "Parallel"]

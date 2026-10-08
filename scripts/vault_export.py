@@ -44,14 +44,12 @@ TRACKS = [
         ("공학수학/미분적분학", "미분적분학", "calculus"),
         ("공학수학/선형대수학", "선형대수학", "linear-algebra"),
         ("공학수학/확률과 통계", "확률과 통계", "probability-statistics"),
+        ("3-1학기/신호 및 시스템", "신호 및 시스템", "signals-and-systems"),
     ]),
     ("컴퓨터 과학", [
         ("알고리즘", "알고리즘", "algorithms"),
         ("3-1학기/운영체제", "운영체제", "operating-systems"),
         ("4-1학기/컴퓨터 통신", "컴퓨터 통신", "computer-communication"),
-    ]),
-    ("신호와 미디어", [
-        ("3-1학기/신호 및 시스템", "신호 및 시스템", "signals-and-systems"),
         ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
     ]),
     ("심리학", [

@@ -8,7 +8,7 @@ num: "09"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Discrete-Time Complex Exponential Signal", "이산 시간 정현파", "Discrete-Time Sinusoid", "이산 시간 주기성", "Periodicity of Discrete-Time Complex Exponentials", "기본 주파수", "Fundamental Frequency", "고조파 집합", "Harmonically Related Exponentials"]

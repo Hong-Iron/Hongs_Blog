@@ -8,7 +8,7 @@ num: "33"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Discrete-Time Fourier Series", "DTFS", "이산 푸리에 급수", "이산 시간 푸리에 계수", "Discrete-Time Fourier Coefficients", "유한 급수", "Finite Series"]

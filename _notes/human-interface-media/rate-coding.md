@@ -8,7 +8,7 @@ num: "05"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "신호와 미디어"
+track: "컴퓨터 과학"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Rate Coding", "Representation of Strength", "자극 세기의 표현", "발화율", "firing rate", "불응기", "refractory period", "전부 아니면 전무", "all-or-none", "자발 발화"]

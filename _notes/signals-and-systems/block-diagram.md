@@ -8,7 +8,7 @@ num: "26"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Block Diagram", "블록 선도", "가산기", "Adder", "계수 곱셈기", "Coefficient Multiplier", "단위 지연기", "Unit Delay", "적분기", "Integrator", "미분기", "Differentiator"]

@@ -8,7 +8,7 @@ num: "41"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 미디어"
+track: "수학"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Duality", "쌍대성", "쌍대성 정리", "Duality Theorem", "사각 펄스와 sinc"]
