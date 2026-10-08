@@ -349,7 +349,9 @@
     "calculus": ["bar", "arch", "tallbar"],
     "linear-algebra": ["arrow", "parallelogram", "squareOutline"],
     "probability-statistics": ["bell", "dice", "dot"],
-    "algorithms": ["chevron", "tile", "stairs"]
+    "algorithms": ["chevron", "tile", "stairs"],
+    "operating-systems": ["tile", "squareOutline", "capsule"],
+    "signals-and-systems": ["wave", "bell", "tallbar"]
   };
 
   function mixHex(a, b, f) {
@@ -929,6 +931,88 @@
           ctx.fill();
         }
       });
+    }
+  };
+
+  // 운영체제: a round-robin Gantt chart fills in as you scroll.
+  MOTIFS["operating-systems"] = {
+    setup: function () {
+      // 다섯 프로세스 (도착, 서비스 시간), 시간 할당량 1인 라운드 로빈
+      var P = [[0, 3], [2, 6], [4, 4], [6, 5], [8, 2]], left = P.map(function (x) { return x[1]; });
+      var queue = [], slots = [], t = 0, next = 0, cur = -1, done = 0;
+      while (done < P.length) {
+        while (next < P.length && P[next][0] <= t) queue.push(next++);
+        if (cur >= 0 && left[cur] > 0) queue.push(cur);
+        cur = queue.length ? queue.shift() : -1;
+        slots.push(cur);
+        if (cur >= 0 && --left[cur] === 0) { done++; cur = -1; }
+        t++;
+      }
+      return { P: P, slots: slots };
+    },
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), h = Rg.y1 - Rg.y0, n = S.slots.length, rows = S.P.length;
+      var x0 = L.W * 0.06, x1 = L.W * 0.94, w = (x1 - x0) / n, rh = h * 0.62 / rows, y0 = Rg.y0 + h * 0.16;
+      var shown = Math.round(F.p * n), i, r;
+      ctx.lineWidth = 1;
+      for (r = 0; r < rows; r++) {
+        ctx.strokeStyle = rgba(F.pal.ink, 0.08);
+        line(ctx, x0, y0 + (r + 1) * rh, x1, y0 + (r + 1) * rh);
+        ctx.fillStyle = rgba(F.pal.a, 0.12);
+        ctx.fillRect(x0 + S.P[r][0] * w, y0 + r * rh + rh * 0.42, 3, rh * 0.16);
+      }
+      for (i = 0; i < shown; i++) {
+        r = S.slots[i];
+        if (r < 0) continue;
+        var hot = i === shown - 1;
+        ctx.fillStyle = hot ? rgba(F.pal.b, 0.95) : rgba(F.pal.a, 0.42);
+        ctx.fillRect(x0 + i * w + 1, y0 + r * rh + rh * 0.18, w - 2, rh * 0.64);
+      }
+      var xt = x0 + shown * w;
+      ctx.strokeStyle = rgba(F.pal.b, 0.8);
+      ctx.lineWidth = 1.5;
+      line(ctx, xt, y0 - 8, xt, y0 + rows * rh + 8);
+      for (r = 0; r < rows; r++) label(ctx, "ABCDE"[r], x0 - 14, y0 + r * rh + rh * 0.62, rgba(F.pal.ink, 0.5));
+      label(ctx, "t = " + shown, x0, y0 + rows * rh + 22, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 신호 및 시스템: harmonics add up into a square wave as you scroll.
+  MOTIFS["signals-and-systems"] = {
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), h = Rg.y1 - Rg.y0, ym = Rg.y0 + h * 0.5, A = h * 0.22;
+      var N = Math.round(lerp(1, 31, F.p)), cyc = 2.5, k, x;
+      function harm(k, x) { return 4 / (Math.PI * k) * Math.sin(k * x / L.W * TAU * cyc); }
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = rgba(F.pal.ink, 0.08);
+      line(ctx, 0, ym, L.W, ym);
+      for (k = 1; k <= Math.min(N, 9); k += 2) {
+        ctx.beginPath();
+        for (x = 0; x <= L.W; x += 4) {
+          var yk = ym - A * harm(k, x) * 0.55;
+          if (x === 0) ctx.moveTo(x, yk); else ctx.lineTo(x, yk);
+        }
+        ctx.strokeStyle = rgba(F.pal.a, 0.12 + 0.18 / k);
+        ctx.stroke();
+      }
+      ctx.beginPath();
+      for (x = 0; x <= L.W; x += 2) {
+        var sum = 0;
+        for (k = 1; k <= N; k += 2) sum += harm(k, x);
+        var y = ym - A * sum;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = rgba(F.pal.b, 0.9);
+      ctx.lineWidth = 2.2;
+      ctx.stroke();
+      ctx.strokeStyle = rgba(F.pal.ink, 0.25);
+      ctx.lineWidth = 1;
+      var half = L.W / (2 * cyc);
+      for (var c = 0; c * half < L.W; c++) {
+        var yy = ym - (c % 2 === 0 ? A : -A);
+        line(ctx, c * half, yy, (c + 1) * half, yy);
+      }
+      label(ctx, "N = " + N, 14, Rg.y0 + h * 0.92, rgba(F.pal.ink, 0.5));
     }
   };
 

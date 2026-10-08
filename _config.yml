@@ -69,6 +69,14 @@ defaults:
     values:
       image: /assets/img/og/algorithms.png
   - scope:
+      path: "_notes/operating-systems"
+    values:
+      image: /assets/img/og/operating-systems.png
+  - scope:
+      path: "_notes/signals-and-systems"
+    values:
+      image: /assets/img/og/signals-and-systems.png
+  - scope:
       path: "_notes/calculus"
     values:
       image: /assets/img/og/calculus.png

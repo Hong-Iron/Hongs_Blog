@@ -26,6 +26,24 @@
       codes: 14
       heavy: 2
       units: "사람의 지각 · 사람의 시각"
+- track: "3-1학기"
+  courses:
+    - name: "운영체제"
+      slug: "operating-systems"
+      url: "/studies/operating-systems/"
+      concepts: 68
+      practices: 8
+      codes: 31
+      heavy: 17
+      units: "컴퓨터 시스템 개요 · 운영체제 개요 · 프로세스 설명과 제어 · 스레드, SMP, 마이크로커널 …"
+    - name: "신호 및 시스템"
+      slug: "signals-and-systems"
+      url: "/studies/signals-and-systems/"
+      concepts: 44
+      practices: 6
+      codes: 43
+      heavy: 20
+      units: "복습: 자연상수, 오일러 등식, 미분방정식 · 1장 신호의 종류, 에너지, 시간축 변환 · 1장 지수·정현파 신호, 임펄스와 계단 · 1장 시스템과 시스템의 성질 …"
 - track: "공학수학"
   courses:
     - name: "대학수학"

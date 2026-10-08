@@ -1,0 +1,99 @@
+# 홍철's lines for the signals-and-systems course pages. Format: _data/robot/README.md
+greeting:
+- "신호 및 시스템이에요. 3-1학기에 들었고, Oppenheim 교재 1~4장이에요."
+- "신호 및 시스템 페이지예요. 내릴수록 배경 물결이 사각파로 모여요."
+- "여긴 신호 및 시스템이에요. 결국 다 푸리에로 가는 과목이에요."
+- "신호 및 시스템 노트예요. 수식 손필기를 하나하나 옮기고 계산을 코드로 다시 해 봤어요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "1주차 미분방정식 복습, 1장 신호와 시스템의 성질, 2장 컨벌루션, 3장 푸리에 급수, 4장 푸리에 변환 순서예요."
+  link: /studies/signals-and-systems/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "컨벌루션 계산에서 구간 나누는 게 제일 헷갈려요. 뒤집고 밀어서 겹치는 끝점이 바뀌는 순간마다 끊으면 돼요."
+  link: /studies/signals-and-systems/convolution-ladder/
+  link_label: "컨벌루션 계산 예제 사다리"
+- q: "배워서 어디에 써요?"
+  a: "오디오 이퀄라이저, 사진 흐림·선명하게, 라디오, 딥러닝 합성곱까지 다 여기서 나와요."
+  link: /studies/signals-and-systems/frequency-filters/
+  link_label: "주파수 형성 필터와 주파수 선택 필터"
+- q: "제일 중요한 건 뭐예요?"
+  a: "복소 지수 신호가 LTI 시스템을 지나도 모양이 안 바뀐다는 거요. 3장, 4장이 다 여기서 출발해요."
+  link: /studies/signals-and-systems/lti-eigenfunction/
+  link_label: "LTI 시스템의 고유함수"
+- q: "다른 과목이랑도 이어져요?"
+  a: "차분방정식은 이산수학의 점화식이랑 똑같이 풀고, LTI의 고유함수는 선형대수의 고유벡터랑 같은 생각이에요. 브리지 문서 두 개로 이어 놨어요."
+  link: /studies/signals-and-systems/eigenfunction-eigenvector-bridge/
+  link_label: "LTI 고유함수 ↔ 행렬 고유벡터"
+chats:
+- q: "신호랑 시스템이 뭐예요?"
+  a: "신호는 시간에 따라 변하는 값이고, 시스템은 신호를 받아 다른 신호로 바꾸는 상자예요. 마이크 전압이 신호, 앰프가 시스템이에요."
+  link: /studies/signals-and-systems/ct-dt-signals/
+  link_label: "연속 시간 신호와 이산 시간 신호"
+  next:
+  - q: "연속이랑 이산은 뭐가 달라요?"
+    a: "모든 순간에 값이 있으면 연속, 정해진 순간에만 있으면 이산이에요. 컴퓨터는 이산만 다뤄서 연속 신호를 일정 간격으로 뽑아요."
+    link: /studies/signals-and-systems/sampling-quantization/
+    link_label: "표본화와 양자화"
+  - q: "시스템 성질은 뭐가 있어요?"
+    a: "기억, 가역, 인과, 안정, 시불변, 선형이요. 그중 선형이랑 시불변이 같이 있으면 LTI라서 계산이 엄청 쉬워져요."
+    link: /studies/signals-and-systems/system-properties-ladder/
+    link_label: "시스템 성질 판별 예제 사다리"
+- q: "컨벌루션이 뭐예요?"
+  a: "입력을 바늘 같은 임펄스들로 쪼개고, 바늘 하나에 대한 반응을 옮기고 키워서 다 더하는 거예요. 메아리가 겹쳐 들리는 거랑 같아요."
+  link: /studies/signals-and-systems/convolution-sum/
+  link_label: "컨벌루션 합"
+  next:
+  - q: "왜 바늘 하나 반응만 알면 돼요?"
+    a: "선형이라 쪼갠 걸 따로 계산해서 더해도 되고, 시불변이라 늦게 들어온 바늘은 반응도 그만큼 늦을 뿐이거든요."
+    link: /studies/signals-and-systems/unit-impulse-step/
+    link_label: "단위 임펄스와 단위 계단"
+  - q: "y = 2x + 3은 선형이에요?"
+    a: "아니에요. 입력 0을 넣어도 3이 나오잖아요. 직선이어도 시스템으로는 선형이 아니에요."
+    link: /studies/signals-and-systems/linearity/
+    link_label: 선형성
+- q: "푸리에 급수가 뭐예요?"
+  a: "되풀이되는 신호를 기본 진동이랑 2배, 3배 빠른 진동들의 합으로 쓰는 거예요. 화음이 배음으로 이뤄진 것처럼요."
+  link: /studies/signals-and-systems/ct-fourier-series/
+  link_label: "연속 시간 푸리에 급수"
+  next:
+  - q: "사각파도 정현파로 만들 수 있어요?"
+    a: "네, 홀수 고조파를 계속 더하면 돼요. 근데 모서리 옆에 9% 정도 튀어나온 게 끝까지 안 없어져요. 깁스 현상이에요."
+    link: /studies/signals-and-systems/fourier-series-convergence/
+    link_label: "푸리에 급수의 수렴"
+  - q: "이산 신호도 돼요?"
+    a: "돼요. 오히려 더 깔끔해요. 고조파가 N개뿐이라 유한합이고, 수렴 걱정이 없어요."
+    link: /studies/signals-and-systems/dt-fourier-series/
+    link_label: "이산 시간 푸리에 급수"
+- q: "푸리에 변환은 급수랑 뭐가 달라요?"
+  a: "한 번만 나타나는 신호용이에요. 주기를 무한히 늘리면 띄엄띄엄하던 고조파가 이어져서 합이 적분이 돼요."
+  link: /studies/signals-and-systems/ct-fourier-transform/
+  link_label: "연속 시간 푸리에 변환"
+  next:
+  - q: "그걸로 뭐가 편해져요?"
+    a: "컨벌루션이 곱셈이 돼요. 시스템 출력을 변환해서 곱하고 다시 돌리면 끝이에요."
+    link: /studies/signals-and-systems/convolution-property/
+    link_label: "컨벌루션 성질과 주파수 응답"
+  - q: "라디오는 어떻게 돼요?"
+    a: "목소리에 높은 주파수 코사인을 곱하면 스펙트럼이 그 주파수로 통째로 옮겨 가요. 받는 쪽에서 한 번 더 곱하고 걸러서 되살려요."
+    link: /studies/signals-and-systems/multiplication-modulation/
+    link_label: "곱셈 성질과 진폭 변조"
+talk:
+- text: "x(2t)는 두 배 넓어지는 게 아니라 절반으로 좁아져요. 두 배 빨리 감은 거예요."
+  link: /studies/signals-and-systems/independent-variable-transform/
+  link_label: "독립 변수의 변환"
+- text: "cos(n/6) 같은 이산 정현파는 주기가 없어요. 코사인처럼 생겼는데 정수 칸에서 출발점으로 정확히 안 돌아와요."
+  link: /studies/signals-and-systems/dt-complex-exponential/
+  link_label: "이산 시간 복소 지수 신호"
+- text: "이산 시간에서 제일 빠른 진동은 ω = π예요. 그보다 키우면 다시 느려져요."
+  link: /studies/signals-and-systems/dt-complex-exponential/
+  link_label: "이산 시간 복소 지수 신호"
+- text: "이상적인 저역 통과 필터는 못 만들어요. 임펄스 응답이 sinc라서 입력이 들어오기 전부터 반응해야 하거든요."
+  link: /studies/signals-and-systems/convolution-property/
+  link_label: "컨벌루션 성질과 주파수 응답"
+- text: "잡음 섞인 사진을 바로 미분하면 경계보다 잡음이 더 커 보여요. 그래서 먼저 흐리게 하고 미분해요."
+  link: /studies/signals-and-systems/edge-detection-smoothing/
+  link_label: "영상의 경계 검출과 평활화"
+- text: "핸드아웃 손필기에서 계산 틀린 곳을 일곱 군데 찾아서 로드맵 '확인할 것'에 적어 뒀어요. 크기 1.118을 1.25로 쓴 것 같은 거요."
+  link: /studies/signals-and-systems/
+  link_label: 로드맵

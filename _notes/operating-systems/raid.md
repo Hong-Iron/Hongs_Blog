@@ -1,0 +1,127 @@
+---
+layout: "note"
+title: "RAID"
+display_title: "RAID (Redundant Array of Independent Disks)"
+kind: "concept"
+kind_label: "모델"
+num: "54"
+course: "운영체제"
+course_slug: "operating-systems"
+course_url: "/studies/operating-systems/"
+track: "3-1학기"
+updated: "2026-10-08"
+status: "verified"
+aliases: ["RAID", "Redundant Array of Independent Disks", "스트라이핑", "Striping", "미러링", "Mirroring", "패리티", "Parity", "RAID 0", "RAID 1", "RAID 2", "RAID 3", "RAID 4", "RAID 5", "RAID 6"]
+description: "RAID는 디스크 여러 개를 운영체제에게 디스크 하나처럼 보이게 묶는 방법이다. 데이터를 여러 디스크에 나눠 놓아 동시에 읽고 쓰면 빨라지고, 남는 공간에 복사본이나 검사용 값(패리티)을 두면 디스크 하나가 고장 나도 데이터를 되살릴 수 있다. 시험지를 여러 사람이 한 장씩 나눠 …"
+prev_url: "/studies/operating-systems/disk-scheduling/"
+prev_title: "디스크 스케줄링"
+next_url: "/studies/operating-systems/disk-cache/"
+next_title: "디스크 캐시"
+math: true
+mermaid: false
+code_count: 1
+permalink: "/studies/operating-systems/raid/"
+---
+{% raw %}
+<div class="callout callout-summary" markdown="1">
+<div class="callout-title callout-title--default" markdown="span">요약</div>
+
+RAID는 디스크 여러 개를 운영체제에게 디스크 하나처럼 보이게 묶는 방법이다. 데이터를 여러 디스크에 나눠 놓아 동시에 읽고 쓰면 빨라지고, 남는 공간에 복사본이나 검사용 값(패리티)을 두면 디스크 하나가 고장 나도 데이터를 되살릴 수 있다. 시험지를 여러 사람이 한 장씩 나눠 채점하면 빠르고, 답안 사본을 따로 두면 한 장을 잃어도 괜찮은 것과 같다. 대신 안전을 위한 여분만큼 용량이 줄고, 패리티를 갱신하느라 쓰기가 느려질 수 있다.
+
+</div>
+
+
+## 예시로 보기
+
+데이터 디스크 셋에 같은 위치의 조각(스트립)이 1010, 0110, 1100이 있다고 하자. 패리티 디스크에는 셋을 비트마다 XOR한 값을 둔다[^s1].
+
+$$1010 \oplus 0110 \oplus 1100 = 0000$$
+
+
+둘째 디스크가 고장 나면 남은 것을 모두 XOR해서 되살린다.
+
+$$1010 \oplus 1100 \oplus 0000 = 0110$$
+
+
+XOR은 같은 값을 두 번 하면 사라지는 성질($$x \oplus x = 0$$)이 있어서, 하나를 뺀 나머지를 모두 XOR하면 빠진 하나가 나온다.
+
+<div class="callout callout-check" markdown="1">
+<div class="callout-title" markdown="span">검증: 디스크 2~6개, 무작위 데이터 200번에서 디스크 하나를 지우고 XOR로 되살리기, 작은 쓰기의 패리티 갱신식 — [54_raid_verify.py](/Hongs_Blog/studies/operating-systems/code/54_raid_verify/)</div>
+
+</div>
+
+
+## 정확히 말하면
+
+<div class="callout callout-definition" markdown="1">
+<div class="callout-title callout-title--default" markdown="span">정의</div>
+
+RAID는 운영체제가 하나의 논리 드라이브로 보는 물리 디스크 묶음이다. 데이터는 배열의 물리 드라이브들에 나뉘어 놓인다. 남는 디스크 용량에 패리티 정보를 두어 디스크 고장에서 복구할 수 있게 한다[^1]. 여러 헤드나 여러 디스크로 연산을 나누면 디스크 입출력 성능도 오른다[^2].
+
+</div>
+
+
+| 단계 | 방식 | 여분 | 특징 |
+|---|---|---|---|
+| RAID 0 | 데이터를 스트립으로 나눠 디스크들에 돌아가며 놓는다(스트라이핑) | 없음 | 진짜 RAID가 아니다. 병렬로 읽고 써서 매우 빠르지만, 디스크 하나만 고장 나도 치명적이다[^3] |
+| RAID 1 | 모든 스트립을 서로 다른 두 디스크에 둔다(미러링) | 복사본 | 읽기는 두 디스크 중 탐색·회전 지연이 짧은 쪽에서 한다. 쓰기는 둘 다 고치되 병렬로 하므로 느린 쪽에 맞춰진다. 고장 나면 다른 디스크로 계속 쓴다[^4] |
+| RAID 2 | 디스크 회전을 맞춰 아주 작은(비트·워드 단위) 스트립으로 나누고, 해밍 코드를 여러 디스크에 둔다 | 해밍 코드 | 한 비트 오류를 고치고 두 비트 오류를 찾는다[^5] |
+| RAID 3 | RAID 2와 같지만 같은 자리 비트들의 패리티 비트 하나만 둔다 | 패리티 디스크 1개 | 디스크 수와 상관없이 여분 디스크가 하나다[^6] |
+| RAID 4 | 블록 단위 스트립. 데이터 디스크들의 같은 자리 스트립을 비트별로 XOR해 패리티 디스크에 둔다 | 패리티 디스크 1개 | 각 디스크가 따로 일해 작은 요청 여러 개를 동시에 처리한다[^7] |
+| RAID 5 | RAID 4와 같지만 패리티 스트립을 모든 디스크에 돌아가며 나눠 둔다 | 패리티 (분산) | $$n$$개 디스크라면 처음 $$n$$ 스트라이프의 패리티가 서로 다른 디스크에 있고 이 패턴을 되풀이한다. RAID 4의 패리티 디스크 병목을 없앤다[^8] |
+| RAID 6 | 서로 다른 두 가지 패리티(P, Q)를 계산해 다른 디스크의 다른 블록에 둔다 | 패리티 2개 | 디스크 둘이 고장 나도 복구한다. 데이터에 $$N$$개 디스크가 필요하면 $$N + 2$$개를 쓴다. P는 XOR이고 Q는 독립된 다른 검사 알고리즘이다[^9] |
+
+**용량.** 디스크 $$N$$개라면 데이터에 쓰는 용량은 RAID 0이 $$N$$개, RAID 1이 $$N/2$$개, RAID 3·4·5가 $$N - 1$$개, RAID 6이 $$N - 2$$개 분이다[^s1].
+
+**RAID 4·5의 작은 쓰기.** 스트립 하나만 고칠 때, 다른 데이터 스트립을 다 읽지 않고도 새 패리티를 구할 수 있다[^s1].
+
+$$P_{\text{새}} = P_{\text{옛}} \oplus D_{\text{옛}} \oplus D_{\text{새}}$$
+
+
+옛 데이터와 옛 패리티를 읽고(2번) 새 데이터와 새 패리티를 쓴다(2번). 쓰기 한 번에 디스크 접근 네 번이다. RAID 4에서는 모든 쓰기가 패리티 디스크 하나를 거쳐 병목이 되고, RAID 5는 패리티를 나눠 두어 이를 피한다.
+
+## 활용
+
+- Windows는 운영체제 안에서 소프트웨어 RAID 0, 1, 5를 제공해 어떤 디스크 묶음에도 쓸 수 있다. RAID 1의 두 디스크는 같은 컨트롤러에 있어도, 다른 컨트롤러에 있어도 된다[^10].
+- RAID는 백업이 아니다. 실수로 지운 파일이나 바이러스가 고친 데이터는 모든 복사본과 패리티에 그대로 반영된다[^s1].
+
+## 연결
+
+- 선수: [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) (디스크 성능)
+- XOR 패리티는 컴퓨터 통신의 오류 검출 패리티와 같은 계산이다[^s1].
+
+## 확인 문제
+
+<details markdown="1"><summary markdown="span"><b>C1</b> 다음 요구에 맞는 RAID 단계는? ① 속도만 중요하고 고장 나도 괜찮다 ② 디스크 둘이 동시에 고장 나도 버텨야 한다 ③ 작은 쓰기가 많고 패리티를 써서 용량을 아끼고 싶다</summary>
+
+
+**답:** ① RAID 0 ② RAID 6 ③ RAID 5 (RAID 4는 패리티 디스크가 병목이 된다).
+
+</details>
+
+<details markdown="1"><summary markdown="span"><b>C2</b> RAID 4에서 데이터 스트립이 A = 1011, B = 0101, C = 1110이다. 패리티는? B가 고장 나면 어떻게 되살리는가?</summary>
+
+
+**답:** $$P = 1011 \oplus 0101 \oplus 1110 = 0000$$. B는 $$A \oplus C \oplus P = 1011 \oplus 1110 \oplus 0000 = 0101$$.
+
+</details>
+
+<details markdown="1"><summary markdown="span"><b>C3</b> RAID 5가 RAID 4보다 작은 쓰기에 유리한 이유는?</summary>
+
+
+**답:** 작은 쓰기마다 패리티를 읽고 써야 한다. RAID 4는 패리티가 한 디스크에 모여 있어 모든 쓰기가 그 디스크를 기다린다. RAID 5는 스트라이프마다 패리티가 다른 디스크에 있어, 서로 다른 스트라이프의 쓰기를 동시에 처리할 수 있다.
+
+</details>
+
+[^1]: 3-1학기/운영체제/1.수업자료/11.Chapter11-new.pptx, 슬라이드 58
+[^2]: 같은 자료, 슬라이드 57
+[^3]: 같은 자료, 슬라이드 59
+[^4]: 같은 자료, 슬라이드 60과 슬라이드 58의 발표자 노트
+[^5]: 같은 자료, 슬라이드 61과 슬라이드 59의 발표자 노트
+[^6]: 같은 자료, 슬라이드 62와 슬라이드 60의 발표자 노트
+[^7]: 같은 자료, 슬라이드 63과 슬라이드 61의 발표자 노트
+[^8]: 같은 자료, 슬라이드 64와 슬라이드 62의 발표자 노트
+[^9]: 같은 자료, 슬라이드 65와 슬라이드 63의 발표자 노트
+[^10]: 같은 자료, 슬라이드 89
+[^s1]: 에이전트 보충. XOR 예시와 복구 원리, 단계별 용량, 작은 쓰기의 패리티 갱신식과 접근 횟수, "RAID는 백업이 아니다", 통신 패리티 연결, 확인 문제는 슬라이드에 없다. 갱신식과 RAID 4 병목 설명은 Stallings 6판 11.6절을 따랐다.
+{% endraw %}

@@ -1,0 +1,112 @@
+---
+layout: "note"
+title: "프로세스 제어 블록"
+display_title: "프로세스 제어 블록 (Process Control Block, PCB)"
+kind: "concept"
+kind_label: "자료구조"
+num: "15"
+course: "운영체제"
+course_slug: "operating-systems"
+course_url: "/studies/operating-systems/"
+track: "3-1학기"
+updated: "2026-10-07"
+status: "verified"
+aliases: ["Process Control Block", "PCB", "프로세스 이미지", "Process Image", "프로세스 표", "Process Table", "운영체제 제어 구조", "OS Control Structures", "메모리 표", "입출력 표", "파일 표"]
+description: "프로세스 제어 블록은 운영체제가 프로세스마다 하나씩 들고 있는 신상 카드다. 이름표(번호), 멈춘 순간의 레지스터 값, 지금 상태와 우선순위, 가진 자원이 적혀 있다. 운영체제는 이 카드만 보고 프로세스를 줄 세우고, 멈추고, 다시 시작한다. 카드가 망가지면 그 프로세스를 관리할 …"
+prev_url: "/studies/operating-systems/process-states/"
+prev_title: "프로세스 상태"
+next_url: "/studies/operating-systems/process-creation-switching/"
+next_title: "프로세스 생성과 전환"
+math: false
+mermaid: false
+code_count: 0
+permalink: "/studies/operating-systems/process-control-block/"
+---
+{% raw %}
+<div class="callout callout-summary" markdown="1">
+<div class="callout-title callout-title--default" markdown="span">요약</div>
+
+프로세스 제어 블록은 운영체제가 프로세스마다 하나씩 들고 있는 신상 카드다. 이름표(번호), 멈춘 순간의 레지스터 값, 지금 상태와 우선순위, 가진 자원이 적혀 있다. 운영체제는 이 카드만 보고 프로세스를 줄 세우고, 멈추고, 다시 시작한다. 카드가 망가지면 그 프로세스를 관리할 수 없으므로, 카드는 운영체제만 고칠 수 있는 곳에 보호해 둔다.
+
+</div>
+
+
+## 예시로 보기
+
+운영체제는 자기가 관리하는 것마다 표를 만든다. 무엇을 누구에게 줬는지 적어야 하기 때문이다. 표는 네 종류다[^1].
+
+| 표 | 적는 것 |
+|---|---|
+| 메모리 표 | 주기억장치와 2차 기억장치를 어느 프로세스에 줬는지, 공유 메모리의 보호 속성, 가상 메모리 관리 정보[^2] |
+| 입출력 표 | 장치가 비었는지 누구에게 배정됐는지, 입출력 진행 상태, 입출력 데이터를 둘 주기억장치 위치[^3] |
+| 파일 표 | 파일이 있는지, 2차 기억장치 어디에 있는지, 현재 상태와 속성[^4] |
+| 프로세스 표 | 프로세스마다 한 칸. 각 칸이 프로세스 이미지를 가리킨다[^5] |
+
+네 표는 서로 이어져 있다. 예를 들어 프로세스 표의 한 칸은 그 프로세스가 쓰는 메모리와 파일을 메모리 표·파일 표에서 찾아갈 수 있게 한다[^s1].
+
+## 정확히 말하면
+
+**프로세스 이미지.** 프로세스 하나를 이루는 것 전체다. 프로그램, 데이터, 스택, 그리고 속성이다. 속성 모음을 **프로세스 제어 블록**(PCB)이라고 부른다[^5].
+
+PCB의 정보는 세 무리다.
+
+| 무리 | 내용 |
+|---|---|
+| 프로세스 식별 정보 | 고유한 번호(프로세스 ID). 주 프로세스 표의 칸 번호일 수 있다. 그 프로세스에 책임이 있는 사용자의 ID[^6] |
+| 프로세서 상태 정보 | 레지스터 내용. 사용자 가시 레지스터, 제어·상태 레지스터, 스택 포인터, 그리고 PSW. 예: 펜티엄의 PSW는 EFLAGS 레지스터다[^7] |
+| 프로세스 제어 정보 | 운영체제가 여러 프로세스를 조율하는 데 쓰는 정보. 스케줄링과 상태 정보(상태, 우선순위), 자료 구조 연결(부모·자식 관계, 대기·준비 큐에서의 위치), 프로세스 간 통신, 특권, 메모리 관리, 자원 소유와 사용량[^8] |
+
+"대기·준비 큐"는 실제로 PCB를 포인터로 이은 연결 리스트로 만든다. 프로세스를 다른 큐로 옮긴다는 것은 PCB의 연결을 바꾸는 것이다[^s1].
+
+```
+준비 큐: [헤드] → PCB(7) → PCB(3) → PCB(12) → NULL
+디스크 대기 큐: [헤드] → PCB(5) → NULL
+```
+
+**두 번 나오는 레지스터 값.** 프로세스가 실행 중일 때는 레지스터 값이 프로세서 안에 있다. 실행을 멈출 때 그 값을 PCB의 프로세서 상태 정보에 저장한다. 다시 실행할 때 PCB에서 꺼내 프로세서에 되돌린다. [인터럽트](/Hongs_Blog/studies/operating-systems/interrupt/) 때 스택에 저장하던 것을, 프로세스 단위로 길게 보관하는 셈이다[^s1].
+
+## 활용
+
+- 리눅스는 PCB를 `task_struct`라는 구조체로 둔다. 상태, 스케줄링 정보, 식별자, 프로세스 간 통신 정보 등이 들어 있다[^9].
+- PCB는 운영체제에서 가장 중요한 자료 구조다. 거의 모든 운영체제 모듈(스케줄러, 메모리 관리, 입출력)이 읽고 고친다. 그래서 PCB를 보호하는 것이 운영체제 설계의 중요한 문제다[^s1].
+
+## 연결
+
+- 선수: [프로세스 상태](/Hongs_Blog/studies/operating-systems/process-states/), [프로세서 레지스터](/Hongs_Blog/studies/operating-systems/processor-registers/)
+- PCB를 쓰는 일: [프로세스 생성과 전환](/Hongs_Blog/studies/operating-systems/process-creation-switching/)
+- 2장 그림 2.8의 "실행 문맥"이 PCB의 프로세서 상태 정보와 제어 정보다: [프로세스](/Hongs_Blog/studies/operating-systems/process/)
+
+## 확인 문제
+
+<details markdown="1"><summary markdown="span"><b>C1</b> PCB 정보의 세 무리를 쓰고, 각각의 예를 하나씩 들라.</summary>
+
+
+**답:** 프로세스 식별 정보(프로세스 ID, 사용자 ID), 프로세서 상태 정보(PC, PSW, 스택 포인터), 프로세스 제어 정보(상태, 우선순위, 부모·자식 관계, 가진 자원).
+
+</details>
+
+<details markdown="1"><summary markdown="span"><b>C2</b> 다음 정보는 PCB의 세 무리 중 어디에 들어가는가? ① 프로세스가 연 파일 목록 ② 마지막으로 멈췄을 때의 PC 값 ③ 이 프로세스의 부모 프로세스 ④ 프로세스 번호 1234</summary>
+
+
+**답:** ① 프로세스 제어 정보(자원 소유). ② 프로세서 상태 정보. ③ 프로세스 제어 정보(자료 구조 연결). ④ 프로세스 식별 정보.
+
+</details>
+
+<details markdown="1"><summary markdown="span"><b>C3</b> 실행 중인 프로세스의 PC 값은 PCB에 늘 최신으로 적혀 있는가? 그렇지 않다면 언제 PCB에 들어가는가?</summary>
+
+
+**답:** 아니다. 실행 중에는 PC 값이 프로세서 안 레지스터에 있고, 명령어마다 바뀐다. 매번 PCB에 쓰면 너무 느리다. 프로세스가 실행을 멈추는 순간(인터럽트, 시스템 호출 뒤 전환) 저장된다.
+
+</details>
+
+[^1]: 3-1학기/운영체제/1.수업자료/03.chap3 (Stony Brook).pdf, p.17
+[^2]: 같은 자료, p.18
+[^3]: 같은 자료, p.19
+[^4]: 같은 자료, p.20
+[^5]: 같은 자료, p.21
+[^6]: 같은 자료, p.22
+[^7]: 같은 자료, p.23
+[^8]: 같은 자료, p.24
+[^9]: 3-1학기/운영체제/1.수업자료/04.Chapter04-new.pptx, 슬라이드 59
+[^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 표끼리 이어져 있다는 설명, 큐를 PCB 연결 리스트로 만든다는 설명과 그림, 레지스터 값이 저장되는 때, PCB 보호의 중요성은 Stallings, *Operating Systems: Internals and Design Principles* 6판, 3.3절을 따랐다. 확인 문제 C2·C3은 원본 범위 밖이다.
+{% endraw %}

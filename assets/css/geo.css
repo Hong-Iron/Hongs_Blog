@@ -92,6 +92,8 @@ body[data-tone="dark"] .btn--primary {
 [data-course="linear-algebra"]         { --course: #2f4858; --course-2: #b0432c; }
 [data-course="probability-statistics"] { --course: #3f4f9a; --course-2: #b0432c; }
 [data-course="algorithms"]             { --course: #1d6b57; --course-2: #b0432c; }
+[data-course="operating-systems"]      { --course: #4b5d2e; --course-2: #c9952e; }
+[data-course="signals-and-systems"]    { --course: #2c5a85; --course-2: #b0432c; }
 
 [data-course] {
   --geo-1: var(--course);

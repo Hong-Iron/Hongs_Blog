@@ -42,6 +42,10 @@ TRACKS = [
         ("4-1학기/컴퓨터 통신", "컴퓨터 통신", "computer-communication"),
         ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
     ]),
+    ("3-1학기", [
+        ("3-1학기/운영체제", "운영체제", "operating-systems"),
+        ("3-1학기/신호 및 시스템", "신호 및 시스템", "signals-and-systems"),
+    ]),
     ("공학수학", [
         ("공학수학/대학수학", "대학수학", "college-math"),
         ("공학수학/이산수학", "이산수학", "discrete-math"),

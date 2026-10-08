@@ -1,0 +1,122 @@
+# 홍철's lines for the operating-systems course pages. Format: _data/robot/README.md
+greeting:
+- "운영체제예요. 3-1학기에 들은 과목이에요. Stallings 교재 순서로 정리했어요."
+- "운영체제 페이지예요. 내릴수록 배경의 스케줄링 표가 채워져요."
+- "여긴 운영체제예요. 프로세스, 메모리, 파일, 보안까지 다 있어요."
+- "운영체제 노트예요. 시뮬레이터 코드로 표를 직접 다시 만들어 봤어요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "컴퓨터 구조(인터럽트, 캐시)부터 프로세스, 스레드, 동시성, 교착상태, 메모리, 스케줄링, 입출력, 파일, 보안 순서예요. 번호 순서대로 읽으면 앞에서 배운 걸로 뒤를 설명해요."
+  link: /studies/operating-systems/
+  link_label: 로드맵
+- q: 어려워요?
+  a: "동시성이 제일 어려워요. 두 프로세스가 번갈아 실행되는 순서를 하나하나 따라가 봐야 문제가 보여요."
+  link: /studies/operating-systems/race-condition-critical-section/
+  link_label: "경쟁 조건과 임계 구역"
+- q: "배워서 어디에 써요?"
+  a: "멀티스레드 프로그램 짤 때 바로 써요. 락을 왜 걸어야 하는지, 언제 교착상태가 나는지 알면 디버깅이 훨씬 빨라져요."
+  link: /studies/operating-systems/deadlock/
+  link_label: 교착상태
+- q: "제일 중요한 건 뭐예요?"
+  a: "가상 메모리랑 스케줄링이요. 슬라이드가 제일 많았던 부분이기도 해요."
+  link: /studies/operating-systems/virtual-memory/
+  link_label: "가상 메모리"
+- q: "자료가 다 교수님 거예요?"
+  a: "3·5·6·7장은 교수님 자료가 없어서, 같은 교재를 쓰는 다른 대학의 공개 강의자료로 채웠어요. 로드맵에 장마다 적어 뒀어요."
+  link: /studies/operating-systems/
+  link_label: 로드맵
+chats:
+- q: "운영체제가 하는 일이 뭐예요?"
+  a: "하드웨어를 프로그램들이 나눠 쓰게 해 주는 관리인이에요. 프로세서, 메모리, 입출력 장치를 누가 언제 쓸지 정해요."
+  link: /studies/operating-systems/os-role/
+  link_label: "운영체제의 역할"
+  next:
+  - q: "왜 여러 프로그램을 같이 돌려요?"
+    a: "입출력을 기다리는 동안 프로세서가 놀거든요. 그 사이 다른 프로그램을 돌리면 낭비가 줄어요. 그게 다중 프로그래밍이에요."
+    link: /studies/operating-systems/multiprogramming/
+    link_label: "다중 프로그래밍"
+  - q: "인터럽트는 뭐예요?"
+    a: "장치가 '나 끝났어요' 하고 프로세서를 부르는 신호예요. 덕분에 프로세서가 장치를 계속 들여다보며 기다리지 않아도 돼요."
+    link: /studies/operating-systems/interrupt/
+    link_label: 인터럽트
+- q: "프로세스랑 스레드 차이가 뭐예요?"
+  a: "프로세스는 자기 메모리를 가진 실행 중인 프로그램이고, 스레드는 그 안에서 메모리를 같이 쓰며 따로 실행되는 흐름이에요."
+  link: /studies/operating-systems/thread/
+  link_label: 스레드
+  next:
+  - q: "그럼 스레드가 더 좋아요?"
+    a: "만들고 바꾸는 게 훨씬 가벼워요. 대신 메모리를 같이 쓰니까 서로 망가뜨리지 않게 조심해야 해요."
+    link: /studies/operating-systems/ult-klt/
+    link_label: "사용자 수준 스레드와 커널 수준 스레드"
+  - q: "프로세스는 어떤 상태가 있어요?"
+    a: "실행, 준비, 대기가 기본이에요. 메모리에서 잠깐 내려가 있는 일시 중단 상태도 있어요."
+    link: /studies/operating-systems/process-states/
+    link_label: "프로세스 상태"
+- q: "교착상태는 어떻게 생겨요?"
+  a: "서로 상대가 가진 걸 기다리면서 아무도 양보하지 않을 때요. 네 조건이 다 맞아야 생겨요."
+  link: /studies/operating-systems/deadlock/
+  link_label: 교착상태
+  next:
+  - q: "네 조건이 뭐예요?"
+    a: "상호 배제, 점유 대기, 비선점, 순환 대기요. 하나만 깨도 교착상태는 안 생겨요."
+    link: /studies/operating-systems/deadlock-prevention/
+    link_label: "교착상태 예방"
+  - q: "미리 피할 수는 없어요?"
+    a: "은행원 알고리즘이요. 자원을 줬을 때 모두가 끝까지 갈 수 있는 순서가 있는지 확인하고 줘요."
+    link: /studies/operating-systems/deadlock-avoidance/
+    link_label: "교착상태 회피"
+- q: "가상 메모리가 뭐예요?"
+  a: "프로그램한테는 넓은 메모리가 있는 척하고, 실제로는 지금 필요한 조각만 메모리에 올려 두는 거예요. 나머지는 디스크에 있어요."
+  link: /studies/operating-systems/virtual-memory/
+  link_label: "가상 메모리"
+  next:
+  - q: "필요한 게 메모리에 없으면요?"
+    a: "페이지 부재가 나서 디스크에서 가져와요. 자리가 없으면 누군가를 내보내야 하고, 누구를 내보낼지가 페이지 교체예요."
+    link: /studies/operating-systems/page-replacement/
+    link_label: "페이지 교체 알고리즘"
+    next:
+    - q: "제일 좋은 교체 방법은요?"
+      a: "앞으로 가장 늦게 쓸 걸 내보내는 OPT가 최고지만 미래를 알 수 없어요. 그래서 최근에 안 쓴 걸 내보내는 LRU나, 그걸 싸게 흉내 낸 CLOCK을 써요."
+  - q: "주소는 어떻게 바꿔요?"
+    a: "주소를 페이지 번호와 그 안의 위치로 나누고, 페이지 표에서 페이지 번호를 실제 칸 번호로 바꿔요. 자주 쓰는 건 TLB에 캐시해 둬요."
+    link: /studies/operating-systems/paging/
+    link_label: 페이징
+- q: "스케줄링은 왜 여러 개예요?"
+  a: "원하는 게 달라서요. 평균 대기 시간을 줄이고 싶으면 짧은 작업부터, 공평하게 하고 싶으면 돌아가면서 조금씩(라운드 로빈) 해요."
+  link: /studies/operating-systems/scheduling-algorithms/
+  link_label: "스케줄링 알고리즘"
+  next:
+  - q: "짧은 작업부터 하면 손해 보는 사람은요?"
+    a: "긴 작업이요. 짧은 게 계속 오면 영영 못 돌 수도 있어요. 그걸 기아라고 해요."
+  - q: "실시간 시스템은 달라요?"
+    a: "마감 시간을 지키는 게 제일 중요해요. 마감이 가장 가까운 것부터 하는 EDF가 대표적이에요."
+    link: /studies/operating-systems/real-time-scheduling/
+    link_label: "실시간 스케줄링"
+- q: "보안 부분도 있어요?"
+  a: "네, 14·15장이요. 기밀성·무결성·가용성이라는 목표부터, 비밀번호 저장, 침입 탐지, 버퍼 오버플로 방어까지 있어요."
+  link: /studies/operating-systems/security-goals-threats/
+  link_label: "보안의 목표와 위협"
+  next:
+  - q: "비밀번호는 어떻게 저장해요?"
+    a: "그대로 저장 안 해요. 사용자마다 다른 솔트를 섞어서 해시한 값만 저장해요. 파일을 도둑맞아도 바로 안 드러나요."
+    link: /studies/operating-systems/user-authentication/
+    link_label: "사용자 인증"
+talk:
+- text: "LRU는 '가장 덜 쓴' 게 아니라 '가장 오래전에 쓴' 걸 내보내요. 덜 쓴 걸 내보내는 건 LFU예요. 교수님 슬라이드에도 하나 섞여 있어서 확인할 것에 적어 뒀어요."
+  link: /studies/operating-systems/cache-memory/
+  link_label: "캐시 메모리"
+- text: "세마포어는 숫자 하나에 기다리는 줄이 붙은 거예요. wait는 하나 빼고, 0 밑이면 줄 서요."
+  link: /studies/operating-systems/semaphore/
+  link_label: 세마포어
+- text: "CLOCK은 LRU를 싸게 흉내 낸 거예요. 페이지마다 사용 비트 하나만 두고, 시곗바늘이 돌다가 비트가 0인 걸 내보내요."
+  link: /studies/operating-systems/page-replacement/
+  link_label: "페이지 교체 알고리즘"
+- text: "우선순위가 높은 작업이 낮은 작업 때문에 못 도는 일이 있어요. 그래서 낮은 작업의 우선순위를 잠깐 올려 주는 방법을 써요."
+  link: /studies/operating-systems/priority-inversion/
+  link_label: "우선순위 역전"
+- text: "디스크는 팔을 덜 움직이는 순서로 읽어요. 엘리베이터처럼 한 방향으로 쭉 가는 게 SCAN이에요."
+  link: /studies/operating-systems/disk-scheduling/
+  link_label: "디스크 스케줄링"
+- text: "UNIX 아이노드는 작은 파일은 직접, 큰 파일은 간접 블록을 몇 겹 거쳐 찾아요. 4 KB 블록이면 5백 GB 넘게 담아요."
+  link: /studies/operating-systems/unix-inode/
+  link_label: "UNIX 아이노드"
