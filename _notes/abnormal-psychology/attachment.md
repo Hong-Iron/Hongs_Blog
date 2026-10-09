@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Attachment", "애착 이론", "attachment theory", "볼비", "Bowlby", "할로", "Harlow", "접촉 위안", "contact comfort", "에인스워스", "Ainsworth", "낯선 상황 절차", "strange situation procedure", "안정 애착", "secure attachment", "회피 애착", "avoidant attachment", "불안 애착", "anxious attachment", "저항 애착", "불안정 애착", "insecure attachment", "안전기지", "secure base"]
 description: "아기와 주 양육자 사이에 생기는 오래가는 정서적 끈이다. 겁날 때 달려갈 수 있는 품(안전한 피난처)이자, 마음 놓고 세상을 탐색하러 나갔다 돌아올 수 있는 기지(안전기지)다. 양육자가 일관되고 민감하게 반응하면 안정 애착이, 무관심하거나 오락가락하면 불안정 애착이 생긴다. 어린 …"
@@ -18,7 +18,7 @@ prev_title: "불안과 공포"
 next_url: "/studies/abnormal-psychology/separation-anxiety-disorder/"
 next_title: "분리불안장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/attachment/"
 ---
@@ -46,6 +46,18 @@ BQ에게 엄마는 돌아오면 진정할 수 있는 안전기지다. BR은 매�
 ## 정의
 
 애착은 주 양육자와 아동 사이의 지속적인 사회적·정서적 관계다(Zimbardo, Weber, Johnson, 2003)[^1]. 슬라이드의 그림은 애착의 네 모습으로 근접성 유지(곁에 있으려 함), 안전한 피난처, 안전기지, 분리 고통을 든다[^1].
+
+```mermaid
+flowchart LR
+  B["양육자 곁: 안전기지"] --> X["세상을 탐색하러 나감"]
+  X --> T["겁나는 일을 만남"]
+  T --> H["양육자에게 달려옴: 안전한 피난처"]
+  H --> C["진정함"]
+  C --> B
+  S["양육자와 떨어짐"] --> D["분리 고통"]
+```
+
+위의 고리는 아이가 양육자 곁을 떠났다가 돌아오는 한 바퀴다. 아래 줄은 그 기지와 떨어질 때 드는 괴로움이다[^s3].
 
 ### 주요 연구[^1]
 
@@ -96,4 +108,5 @@ BQ에게 엄마는 돌아오면 진정할 수 있는 안전기지다. BR은 매�
 [^2]: 4-1학기/이상 심리학/1.수업자료/04.불안장애.pdf, p.8
 [^s1]: 에이전트 보충. 세 아이의 사례는 낯선 상황 절차에서 각 유형이 보이는 전형적 반응을 옮긴 것이다. 슬라이드의 "불안 애착"은 에인스워스의 저항(양가) 애착에 해당한다.
 [^s2]: 에이전트 보충. 혼란 애착은 Main과 Solomon(1990)이 더한 유형이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 요약과 '정의'의 네 요소(슬라이드 p.7 그림의 Proximity Maintenance, Safe Haven, Secure Base, Separation Distress)를 근거로 그렸다.
 {% endraw %}

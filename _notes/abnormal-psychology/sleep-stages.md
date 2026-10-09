@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sleep Stages", "수면 단계", "수면 주기", "sleep cycle", "NREM 수면", "Non-REM sleep", "REM 수면", "렘수면", "Rapid Eye Movement sleep", "수면방추", "sleep spindle", "K복합", "K-complex", "델타파", "delta wave", "숙면", "수면다원검사", "polysomnography", "PSG"]
 description: "잠은 스위치를 끄듯 한 번에 꺼지는 상태가 아니라, 얕은 잠에서 깊은 잠으로 내려갔다가 꿈꾸는 잠으로 올라오는 한 바퀴를 밤새 여러 번 도는 과정이다. 깊은 잠은 몸을 회복시키고, 꿈꾸는 REM 수면은 뇌를 정리한다. 그래서 오래 자는 것보다 이 바퀴를 고르게 여러 번 도는 것이 …"
@@ -18,7 +18,7 @@ prev_title: "회피적·제한적 음식섭취 장애"
 next_url: "/studies/abnormal-psychology/sleep-wake-disorders/"
 next_title: "수면-각성장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/sleep-stages/"
 ---
@@ -44,6 +44,24 @@ permalink: "/studies/abnormal-psychology/sleep-stages/"
 | 1:00~7:00 | 같은 순서를 반복 | 밤 전반부에는 N3가 길고, 후반부로 갈수록 REM이 길어진다 |
 
 이 시간표는 p.49 그림의 흐름을 따라 만든 예다. 한 바퀴는 대략 90분이고, 하룻밤에 4~5번 돈다[^s1].
+
+```mermaid
+stateDiagram-v2
+    state "깨어 있음" as W
+    state "N1 얕은 잠" as N1
+    state "N2 얕은 잠" as N2
+    state "N3 깊은 잠" as N3
+    state "REM 꿈꾸는 잠" as R
+    [*] --> W
+    W --> N1: 잠들기 시작
+    N1 --> N2
+    N2 --> N3: 깊은 잠으로 내려감
+    N3 --> R: 꿈꾸는 잠으로 올라옴
+    R --> N1: 다음 바퀴, 약 90분마다
+    R --> W: 아침에 깸
+```
+
+이 고리를 하룻밤에 4~5번 돈다. 앞쪽 바퀴에서는 N3에 오래 머물고, 뒤쪽 바퀴로 갈수록 REM이 길어진다[^s4].
 
 ## 정의
 
@@ -121,4 +139,5 @@ REM 수면 동안에는 뇌는 활발하지만 몸의 근육은 거의 완전히
 [^s1]: 에이전트 보충. 시간표의 구체적 시각은 p.49 그림(약 8시간, REM 4~5회)을 읽기 쉽게 옮긴 예다. 한 주기 약 90분은 수면 생리학의 일반적 수치다.
 [^s2]: 에이전트 보충. 미국수면의학회(AASM)의 2007년 판정 기준이 R&K 분류의 3·4단계를 N3로 통합했다.
 [^s3]: 에이전트 보충. REM 수면 중 골격근의 긴장 소실(atonia)은 수면 생리학의 표준 설명이다. 원본은 REM 수면을 꿈과 뇌의 정리로만 설명한다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 시간표와 p.49~50의 수면 주기 그림을 상태 전이로 옮겼다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "헤세 행렬과 극값 판정"
 next_url: "/studies/calculus/multiple-integrals/"
 next_title: "중적분과 변수변환"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/matrix-calculus/"
 ---
@@ -64,6 +64,16 @@ $$\frac{\partial f}{\partial x_1} = 2x_1 + 2x_2, \qquad \frac{\partial f}{\parti
 
 </details>
 
+
+```mermaid
+flowchart LR
+    x["x"] -- "야코비 행렬 A" --> r["r = Ax − b"]
+    r -- "∇_r f = 2r" --> f["f = rᵀr"]
+    f -. "2r" .-> r
+    r -. "Aᵀ 곱하기 2r" .-> x
+```
+
+실선은 앞으로 계산하는 방향, 점선은 기울기가 돌아오는 방향이다. 돌아올 때 야코비 행렬 $$A$$는 전치 $$A^\top$$로 곱해진다. 그래서 결과가 $$\mathbf{x}$$와 같은 크기의 열벡터가 된다[^s2].
 
 **알아보는 신호와 요령.** 식에 $$\mathbf{x}^\top$$, 행렬, 노름이 있고 "기울기를 구하라", "최솟점의 조건을 구하라"는 문제다. (1) 결과의 크기가 $$\mathbf{x}$$와 같은지 먼저 본다. (2) 한 변수로 줄여(모든 것을 $$1 \times 1$$로) 공식이 맞는 모양인지 본다. (3) 작은 무작위 입력에서 수치 미분과 비교한다(기울기 검사).
 
@@ -124,4 +134,5 @@ $$\frac{\partial f}{\partial x_1} = 2x_1 + 2x_2, \qquad \frac{\partial f}{\parti
 [^1]: Petersen, Pedersen, *The Matrix Cookbook*, 2절 "Derivatives"(일차식·이차형식·노름의 미분, 배치 관례).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 4.5절(선형 최소제곱의 기울기), 6.2.2절(시그모이드 출력과 교차 엔트로피의 결합). 공식은 24_matrix-calculus_verify.py에서 수치 미분과 맞춰 확인했다.
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [24_matrix-calculus_plot.py](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. $$(A + A^\top)\mathbf{x}$$가 무작위 점 50개에서 중앙 차분과 같은 것, 여섯 점에서 등고선의 접선과 수직인 것, $$2A\mathbf{x}$$는 수직이 아닌 것을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 규칙의 근거 3번($$\mathbf{r} = A\mathbf{x} - \mathbf{b}$$로 두고 연쇄 법칙)과 규칙표의 마지막 줄 $$J_{\mathbf{h}}^\top\nabla g$$를 근거로 그렸다.
 {% endraw %}

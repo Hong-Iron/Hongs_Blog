@@ -18,7 +18,7 @@ prev_title: "구면 선형 보간"
 next_url: "/studies/numerical-analysis/golden-section-search/"
 next_title: "황금분할 탐색"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/data-linearization/"
 ---
@@ -89,6 +89,17 @@ $$A = \frac{\sum_k x_k^My_k}{\sum_k x_k^{2M}}$$
 $$\left(\sum X_k^2\right)A + \left(\sum X_k\right)B = \sum X_kY_k, \qquad \left(\sum X_k\right)A + NB = \sum Y_k$$
 
 
+```mermaid
+flowchart LR
+    D["자료 xk, yk"] -->|"변수 바꾸기"| T["바꾼 자료 Xk, Yk"]
+    T -->|"정규방정식"| AB["직선의 A, B"]
+    AB -->|"계수 되돌리기"| M["모형의 계수"]
+    M -.->|"시작값으로"| N["비선형 최소제곱 반복"]
+    N --> M2["원래 축 오차가 최소인 계수"]
+```
+
+실선만 따라가면 선형화로 끝난다. 원래 축의 오차를 정말 최소로 하려면 점선을 따라 그 답을 반복법의 시작값으로 넘긴다[^s3].
+
 ### 비선형 최소제곱
 
 원래 축의 오차 $$E(A, C) = \sum_k(Ce^{Ax_k} - y_k)^2$$을 직접 최소화한다. 두 편미분을 0으로 두면 $$A$$, $$C$$에 대한 비선형 연립방정식이 된다[^12][^13]. 이것은 뉴턴 방법으로 풀 수 있지만 시간이 들고 좋은 시작값이 필요하다. 최적화 방법으로 $$E$$를 직접 줄이기도 한다. 선형화한 답을 시작값으로 쓰면 좋다[^14].
@@ -146,4 +157,5 @@ $$\left(\sum X_k^2\right)A + \left(\sum X_k\right)B = \sum X_kY_k, \qquad \left(
 [^14]: 같은 자료, p.39
 [^s1]: 에이전트 보충. 세균 비유, 두 방법의 오차 제곱합(가우스-뉴턴으로 계산), 셋째 선형화의 유도 한 줄, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [24_data-linearization_plot.py](/Hongs_Blog/studies/numerical-analysis/code/24_data-linearization_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 두 맞춤의 계수, 오차 제곱합 0.0501과 0.0409, $$x = 10$$ 예측 78.9955와 74.6287. 비선형 해는 가우스-뉴턴 방법으로 다시 구했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '자료 선형화'의 표와 정규방정식, '비선형 최소제곱' 절(원본 13.na13_least-squares.pdf p.17~19, p.37~39)로 그렸다.
 {% endraw %}

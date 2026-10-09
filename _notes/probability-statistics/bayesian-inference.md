@@ -18,7 +18,7 @@ prev_title: "가설검정과 p값"
 next_url: "/studies/probability-statistics/linear-regression/"
 next_title: "선형회귀"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/bayesian-inference/"
 ---
@@ -62,6 +62,15 @@ $$\pi(\theta \mid \text{자료}) = \frac{L(\theta)\,\pi(\theta)}{\int L(t)\,\pi(
 | MLE(비교) | $$\frac kn$$ |
 
 $$a, b$$는 "미리 본 가상의 성공·실패 수"처럼 작동한다. $$n$$이 커지면 $$k$$와 $$n$$이 압도해 사후 평균이 MLE로 다가간다.
+
+```mermaid
+flowchart LR
+    P["사전분포 Beta(a, b)"] -->|"n번 중 k번 성공의 가능도를 곱함"| Q["사후분포 Beta(a + k, b + n - k)"]
+    Q --> S["요약: 사후 평균, MAP, 신용구간"]
+    Q -.->|"새 자료가 오면 다음 사전분포"| P
+```
+
+점선처럼 오늘의 사후분포가 다음 자료의 사전분포가 된다. 베타 분포 안에서 두 모수에 성공 수와 실패 수만 더하면 된다.[^s2]
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/33_bayesian-inference_fig1.svg" alt="그림" loading="lazy">
 
@@ -125,4 +134,5 @@ $$a, b$$는 "미리 본 가상의 성공·실패 수"처럼 작동한다. $$n$$�
 [^1]: Wasserman, *All of Statistics*, "Bayesian Inference" 장(사전·사후분포, 사후 평균, 신용구간, 빈도주의와의 비교).
 [^2]: Blitzstein, Hwang, *Introduction to Probability* 2판, 8.3절 "Beta"(베타–이항 켤레, 사전분포의 가상 관측 해석).
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [33_bayesian-inference_plot.py](/Hongs_Blog/studies/probability-statistics/code/33_bayesian-inference_plot/)로 그렸고, 그림에 쓴 값(사후 평균 0.8과 $$\frac57 \approx 0.71$$, MAP 0.8, 네 밀도의 넓이 1)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 베타–이항 켤레 절을 그렸다. 사후분포를 다음 사전분포로 쓰는 차례 갱신은 [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/)의 두 번 연속 양성 예제와 같은 계산이다(Blitzstein·Hwang 2판 2.6절).
 {% endraw %}

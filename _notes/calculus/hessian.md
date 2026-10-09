@@ -18,7 +18,7 @@ prev_title: "연쇄 법칙 ↔ 역전파"
 next_url: "/studies/calculus/matrix-calculus/"
 next_title: "행렬 미분"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/hessian/"
 ---
@@ -70,6 +70,19 @@ $$f$$의 2계 편미분이 연속이고 $$\mathbf{a}$$가 임계점일 때
 
 </div>
 
+
+```mermaid
+flowchart TD
+    A["∇f = 0인 임계점"] --> B["D = f_xx f_yy − f_xy²를 계산한다"]
+    B --> C{"D의 부호"}
+    C -- "D > 0" --> E{"f_xx의 부호"}
+    E -- "양수" --> P["극소"]
+    E -- "음수" --> Q["극대"]
+    C -- "D < 0" --> S["안장점"]
+    C -- "D = 0" --> U["판정 불가. 더 높은 차수의 항이 정한다"]
+```
+
+$$D$$는 헤세 행렬의 행렬식, 곧 두 고윳값의 곱이다. $$D > 0$$이면 두 고윳값의 부호가 같고, $$D < 0$$이면 다르다. 그래서 부호가 같을 때만 $$f_{xx}$$로 위아래를 가린다[^s3].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 스케치</summary>
@@ -170,4 +183,5 @@ $$\frac{\partial^2 f}{\partial x\,\partial y} \approx \frac{f(x + \delta x, y + 
 [^n3]: 같은 자료, p.17
 [^sn1]: 에이전트 보충. 카드 C4는 원본에 없다. 23_hessian_verify.py로 확인했다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [23_hessian_plot.py](/Hongs_Blog/studies/calculus/code/23_hessian_plot/)로 그렸고, 예제의 값 $$f(1, 0) = -2$$, $$f(-1, 0) = 2$$, $$(1, 0)$$ 둘레 무작위 점 1,000개가 모두 $$-2$$보다 높은 것, $$(-1, 0)$$에서 $$x$$ 방향은 내려가고 $$y$$ 방향은 올라가는 것, 예시 세 함수의 원점 둘레 부호를 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 두 변수 판정을 그렸다. $$D$$가 $$2 \times 2$$ 헤세 행렬의 행렬식이고 행렬식이 고윳값의 곱이라는 것은 선형대수의 표준 사실이다.
 {% endraw %}

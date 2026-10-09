@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Process", "작업", "Job", "태스크", "Task", "실행 문맥", "Execution Context", "프로세스 상태", "Process State", "프로세스 목록", "Process List", "프로세스 전환", "Process Switch"]
 description: "프로세스는 실행 중인 프로그램이다. 프로그램이 요리책이라면 프로세스는 그 요리책으로 지금 요리하는 중인 상태다. 몇 쪽까지 했는지, 어떤 재료를 썰어 두었는지까지 포함한다. 운영체제는 이 \"어디까지 했나\" 기록(실행 문맥)을 따로 챙겨 두기 때문에, 여러 프로그램을 번갈아 돌려도 …"
@@ -18,7 +18,7 @@ prev_title: "시분할"
 next_url: "/studies/operating-systems/process-states/"
 next_title: "프로세스 상태"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/process/"
 ---
@@ -100,6 +100,19 @@ permalink: "/studies/operating-systems/process/"
 | 장기 큐 | 아직 시스템에 들어오지 못한 새 작업들 | 운영체제가 메모리를 너무 많이 내주지 않게 조절하며 단기 큐로 옮긴다 |
 | 입출력 큐 | 특정 입출력 장치를 기다리는 것들. 장치마다 하나 | 장치가 비면 운영체제가 누구에게 줄지 정한다 |
 
+```mermaid
+flowchart LR
+  N(["새 작업"]) --> LQ["장기 큐"]
+  LQ -->|"메모리를 보고 들여보냄"| SQ["단기 큐"]
+  SQ -->|"단기 스케줄러가 고름"| CPU["프로세서"]
+  CPU -->|"시간 조각을 다 씀"| SQ
+  CPU -->|"입출력 요청"| IOQ["입출력 큐, 장치마다 하나"]
+  IOQ -->|"입출력 끝"| SQ
+  CPU --> E(["끝남"])
+```
+
+프로세서로 들어가는 길은 단기 큐 하나뿐이다. 입출력을 기다리던 프로세스도 일이 끝나면 단기 큐로 돌아가 다시 차례를 기다린다[^s3].
+
 인터럽트나 서비스 요청을 처리하고 나면 단기 스케줄러가 불려 다음에 실행할 프로세스를 고른다. 이렇게 고를 때는 세 가지를 따진다. 비슷한 작업에 비슷한 몫을 주는 공평성, 요구가 다른 작업을 다르게 대하는 차등 응답성, 처리량·응답 시간·사용자 수를 챙기는 효율성이다. 이 셋은 서로 부딪힌다[^7].
 
 ## 활용
@@ -148,4 +161,5 @@ permalink: "/studies/operating-systems/process/"
 [^7]: 같은 자료, 슬라이드 43과 슬라이드 42의 발표자 노트
 [^s1]: 에이전트 보충. 크롬 창 예시와 ASCII 그림은 원본에 없다. 그림은 원본 그림 2.8의 요소를 옮긴 것이다.
 [^s2]: 에이전트 보충. 네 가지 오류 원인과 프로세스 개념을 잇는 문장은 원본 순서(오류 원인 → 프로세스 구성 요소)를 해석한 것이다. 확인 문제 C3의 상황은 원본에 없다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "운영체제가 프로세스를 줄 세우는 방법"의 큐 표(슬라이드 43~44, 그림 2.11)를 흐름도로 옮겼다. "시간 조각을 다 씀" 화살표는 표의 라운드 로빈 설명을 나타낸 것이다.
 {% endraw %}

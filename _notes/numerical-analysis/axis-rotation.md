@@ -18,7 +18,7 @@ prev_title: "반사와 반전"
 next_url: "/studies/numerical-analysis/euler-angles/"
 next_title: "오일러 각과 짐벌 잠금"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/numerical-analysis/axis-rotation/"
 ---
@@ -78,6 +78,20 @@ $$P = \underbrace{(A\cdot P)A}_{\text{축 방향, 돌려도 그대로}} + \under
 
 $$P' = P\cos\theta + (A \times P)\sin\theta + A(A\cdot P)(1 - \cos\theta)$$
 
+
+```mermaid
+flowchart LR
+    P["점 P"] --> PA["축 방향 부분 (A·P)A"]
+    P --> PP["수직 부분 P - (A·P)A"]
+    P --> AX["A × P: 수직 부분을 90° 돌린 것"]
+    PP --> RT["cos θ, sin θ로 섞어 θ만큼 돌리기"]
+    AX --> RT
+    PA --> S["더하기"]
+    RT --> S
+    S --> Q["P'"]
+```
+
+점을 두 갈래로 나눈 뒤 수직 부분만 돌리고, 축 방향 부분은 그대로 다시 더한다[^s2].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">유도 과정</summary>
@@ -200,4 +214,5 @@ $$P' = P\cos\theta + (A \times P)\sin\theta + A(A\cdot P)(1 - \cos\theta)$$
 [^3]: 같은 자료, p.11~16
 [^4]: 같은 자료, p.17~18
 [^s1]: 에이전트 보충. 정육면체 대각선 예, 부호 자리의 설명, 로드리게스 유도의 한 줄, 스스로 설명해 보기, 예제, OpenCV, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '로드리게스 공식' 절의 분해와 공식(원본 06.na06_rotation.pdf p.17~18)으로 그렸다.
 {% endraw %}

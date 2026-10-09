@@ -18,7 +18,7 @@ prev_title: "주성분 분석"
 next_url: "/studies/probability-statistics/cross-entropy-kl/"
 next_title: "교차 엔트로피와 KL 발산"
 math: true
-mermaid: false
+mermaid: true
 code_count: 3
 permalink: "/studies/probability-statistics/entropy/"
 ---
@@ -43,6 +43,18 @@ permalink: "/studies/probability-statistics/entropy/"
 | 치명 | $$\frac18$$ | 3비트 | `111` |
 
 자주 나오는 것에 짧은 부호를 주면 평균 길이가 $$\frac12 \cdot 1 + \frac14 \cdot 2 + \frac18 \cdot 3 + \frac18 \cdot 3 = 1.75$$비트다. 상태 넷에 고정 길이 2비트를 쓰는 것보다 짧고, 어떤 부호로도 이보다 짧게 할 수 없다. 1.75가 아래 정의의 엔트로피 $$H$$이고, 놀라움 열의 가중평균이다.
+
+```mermaid
+flowchart TD
+    R(("시작")) -->|"0"| A["정상 1/2"]
+    R -->|"1"| N1(("1"))
+    N1 -->|"0"| B["경고 1/4"]
+    N1 -->|"1"| N2(("11"))
+    N2 -->|"0"| C["오류 1/8"]
+    N2 -->|"1"| D["치명 1/8"]
+```
+
+시작점에서 비트를 따라 내려가 끝에 닿으면 상태 하나가 나온다. 내려간 깊이가 부호 길이라서, 확률이 큰 상태일수록 시작점에 가깝다. 상태가 모두 가지 끝에만 있으니 어느 부호도 다른 부호의 앞부분이 되지 않는다.[^s3]
 
 ## 정의
 
@@ -192,4 +204,5 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 [^2]: Cover, Thomas, *Elements of Information Theory* 2판, 5장 "Data Compression"(크래프트 부등식, 최적 부호의 한계 $$H \le L < H + 1$$, 허프만 부호).
 [^s1]: 에이전트 보충. DEFLATE가 LZ77과 허프만 부호를 함께 쓴다는 것은 RFC 1951에 정의되어 있다. 묶음 부호화 수치와 허프만의 한계는 37_entropy_verify.py로 확인했다.
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [37_entropy_plot.py](/Hongs_Blog/studies/probability-statistics/code/37_entropy_plot/)로 그렸고, 그림에 쓴 값($$h(0.5) = 1$$, $$h(0.9) = 0.469$$, $$h(0) = h(1) = 0$$)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 부호 네 개를 부호 나무로 그렸다. 부호 길이 = 깊이라는 설명은 활용 절(트라이)에 있다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "다항식 보간"
 next_url: "/studies/numerical-analysis/slerp/"
 next_title: "구면 선형 보간"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/newton-divided-difference/"
 ---
@@ -78,6 +78,24 @@ $$f[x_k] = f(x_k), \qquad f[x_{k-j}, \dots, x_k] = \frac{f[x_{k-j+1}, \dots, x_k
 
 
 1계 분할 차분은 두 점을 잇는 직선의 기울기다. 2계는 1계 차분끼리의 차이, 곧 기울기의 기울기다[^6][^7]. 그리고 $$a_k = f[x_0, \dots, x_k]$$다[^8].
+
+```mermaid
+flowchart LR
+    F0["f[x0] = a0"] --> D01["f[x0,x1] = a1"]
+    F1["f[x1]"] --> D01
+    F1 --> D12["f[x1,x2]"]
+    F2["f[x2]"] --> D12
+    F2 --> D23["f[x2,x3]"]
+    F3["f[x3]"] --> D23
+    D01 --> D012["f[x0,x1,x2] = a2"]
+    D12 --> D012
+    D12 --> D123["f[x1,x2,x3]"]
+    D23 --> D123
+    D012 --> D0123["f[x0,...,x3] = a3"]
+    D123 --> D0123
+```
+
+칸마다 왼쪽 열의 이웃 두 칸에서 화살표를 받는다. 계수 $$a_k$$는 각 열의 맨 위 칸, 곧 $$x_0$$에서 시작하는 차분이다[^s3].
 
 평균값 정리로 $$f[x_0, x_1] = f'(c)$$인 $$c$$가 $$x_0$$과 $$x_1$$ 사이에 있다. 그래서 1계 차분은 가운데 점의 도함수 근삿값으로 쓴다: $$f'\left(\frac{x_0 + x_1}{2}\right) \approx f[x_0, x_1]$$[^9]. 같은 방식으로 $$k$$계 차분은 $$\frac{f^{(k)}(c)}{k!}$$와 같다. 2차식 $$3x^2 - x + 2$$이면 2계 차분이 정확히 $$\frac{6}{2} = 3$$이다[^s1].
 
@@ -140,4 +158,5 @@ $$f[x_k] = f(x_k), \qquad f[x_{k-j}, \dots, x_k] = \frac{f[x_{k-j+1}, \dots, x_k
 [^9]: 같은 자료, p.22
 [^s1]: 에이전트 보충. 4·5계가 0인 이유, $$k$$계 차분과 $$f^{(k)}/k!$$, 2차식 예, 중첩 곱셈, 활용과 복잡도, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [22_newton-divided-difference_plot.py](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 뉴턴 계수 $$-3, 3, 6, 1, 0, 0$$과 $$P_3 = f$$.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 분할 차분 재귀식과 $$a_k = f[x_0, \dots, x_k]$$(원본 12.na12_interpolation.pdf p.21~27)로 그렸다.
 {% endraw %}

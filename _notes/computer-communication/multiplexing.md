@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Multiplexing", "멀티플렉싱", "MUX", "DEMUX", "역다중화기", "DEMUX 키", "demux key", "자원 공유", "resource sharing", "다채널 분할", "Multi-Channel Splitting", "역다중화", "inverse multiplexing"]
 description: "여러 사람의 통신이 선 하나를 나눠 쓰게 하는 방법이다. 이삿짐 여러 집 것을 트럭 한 대에 섞어 싣는 것과 같다. 선을 계속 새로 깔지 않고 있는 자원을 아껴 쓸 수 있다. 대신 받는 쪽에서 다시 나누려면 각 조각이 누구 것인지 알아낼 단서가 반드시 있어야 한다."
@@ -99,6 +99,20 @@ $$\kappa : \{y\text{의 조각}\} \to \{1, \dots, N\}$$
 - 트래픽이 일정하면 고정 할당(시분할·주파수 분할)도 낭비가 작다. 트래픽이 몰렸다 끊겼다 하면([버스티 트래픽](/Hongs_Blog/studies/computer-communication/bursty-traffic/)) 고정 할당은 낭비가 커서 [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)가 필요하다[^6].
 - 오늘날은 방향이 반대인 경우도 있다. **다채널 분할**은 입력 하나를 채널 $$N$$개로 나눠(Split) 보내고 받는 쪽에서 합친다(Merge)[^5]. 한 사용자의 트래픽이 링크 하나보다 클 때 쓴다[^7]. 채널마다 지연이 달라 도착 순서가 뒤바뀔 수 있어서, 조각에 순서 번호를 붙여 되살린다[^s2].
 
+```mermaid
+flowchart LR
+  IN["입력 1개"] --> SP["Split"]
+  SP --> C1["채널 1"]
+  SP --> C2["채널 2"]
+  SP --> CN["채널 N"]
+  C1 --> MG["Merge"]
+  C2 --> MG
+  CN --> MG
+  MG --> OUT["출력 1개"]
+```
+
+위의 MUX 그림을 거꾸로 뒤집은 모양이다. 입력 하나가 Split에서 여러 채널로 갈라졌다가 Merge에서 다시 하나로 모인다[^s3].
+
 ## 연결
 
 - 선수: [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/), [전송 속도와 대역폭](/Hongs_Blog/studies/computer-communication/rate-and-bandwidth/)
@@ -151,4 +165,5 @@ $$\kappa : \{y\text{의 조각}\} \to \{1, \dots, N\}$$
 [^8]: 4-1학기/pasted_images/Pasted image 20260924204450.png — 슬라이드 "시분할 다중화", 동기식 시분할 다중화 그림
 [^s1]: 에이전트 보충. 방식별 비교표는 슬라이드와 필기의 내용을 표로 모은 것이다. 전화망과 FM 라디오 예는 원본에 없다.
 [^s2]: 에이전트 보충. 순서 번호로 되살리는 방법은 원본에 없다. 역다중화(inverse multiplexing)라고도 하며, 이더넷 링크 묶음(IEEE 802.1AX)이나 MPTCP(RFC 8684)가 실제 사례다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "(Multi-Channel) Splitting"(1 inputs, Split, N channels, Merge, 1 outputs)을 위 MUX 그림과 같은 모양으로 옮겼다.
 {% endraw %}

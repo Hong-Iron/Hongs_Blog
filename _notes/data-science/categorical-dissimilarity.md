@@ -18,7 +18,7 @@ prev_title: "카이제곱 상관 분석"
 next_url: "/studies/data-science/minkowski-distance/"
 next_title: "민코프스키 거리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/data-science/categorical-dissimilarity/"
 ---
@@ -86,6 +86,18 @@ $$d(i, j) = \frac{r + s}{q + r + s}, \qquad \operatorname{sim}(i, j) = \frac{q}{
 
 뒤의 유사도를 자카드 계수라 부른다. 1인 칸을 집합으로 보면 "둘 다 가진 것 ÷ 둘 중 하나라도 가진 것", 즉 $$\frac{\vert X \cap Y\vert }{\vert X \cup Y\vert }$$다[^s1].
 
+```mermaid
+flowchart TD
+    S["두 대상을 비교한다"] --> K{"속성 종류는?"}
+    K -->|"명목"| N["다른 칸 수 ÷ 전체 칸 수"]
+    K -->|"이진"| W{"두 상태의 무게가 같은가?"}
+    W -->|"같다"| SY["대칭: 다른 칸 ÷ 모든 칸"]
+    W -->|"1이 더 중요하다"| AS["비대칭: 둘 다 0인 칸을 빼고 센다"]
+    AS --> J["1 − 비유사도 = 자카드 계수"]
+```
+
+먼저 속성 종류로 갈리고, 이진이면 두 상태의 무게로 한 번 더 갈린다. 비대칭 쪽만 둘 다 0인 칸을 셈에서 뺀다[^s3].
+
 <img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/03_categorical-dissimilarity_fig1.svg" alt="그림" loading="lazy">
 
 Jack과 Jim에게 '둘 다 음성'인 검사를 계속 더했다. 대칭 비유사도는 0으로 내려가 두 사람이 점점 똑같아 보인다. 비대칭 비유사도는 $$\frac23$$에서 움직이지 않는다[^s2].
@@ -132,4 +144,5 @@ Jack과 Jim에게 '둘 다 음성'인 검사를 계속 더했다. 대칭 비유�
 [^3]: 같은 자료, p.24
 [^s1]: 에이전트 보충. 환자 예(Jack·Mary·Jim)는 Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.3절의 예다. 자카드 계수의 집합 표현, 장바구니 활용, 섞인 속성의 합치기, 카드 C2·C3은 원본에 없다. 수치는 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [03_categorical-dissimilarity_plot.py](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_plot/)로 그렸고, 둘 다 0인 칸이 3개일 때 $$\frac13$$과 $$\frac23$$, 10,000개일 때 대칭 비유사도가 0.001 미만임을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 명목·대칭 이진·비대칭 이진 식을 근거로 그렸다.
 {% endraw %}

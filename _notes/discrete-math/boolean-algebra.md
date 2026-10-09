@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Boolean Algebra", "Logic Gates", "불 대수", "불 함수", "Boolean function", "논리 게이트", "AND 게이트", "OR 게이트", "NOT 게이트", "NAND", "NOR", "XOR 게이트", "반가산기", "half adder", "전가산기", "full adder", "기능적 완전성", "functional completeness", "비트마스크", "bitmask"]
 description: "참·거짓을 1·0으로 쓰면 논리식이 덧셈·곱셈 같은 계산이 되고, 그 식은 그대로 전자 회로(논리 게이트)로 만들 수 있다. 식을 간단히 하면 게이트 수가 줄어 회로가 작고 빨라진다. 놀랍게도 NAND 게이트 한 종류만으로 모든 회로를 만들 수 있다. 다만 불 대수에서는 1 + 1…"
@@ -18,7 +18,7 @@ prev_title: "추론 규칙과 증명 방법"
 next_url: "/studies/discrete-math/sets/"
 next_title: "집합"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/boolean-algebra/"
 ---
@@ -86,6 +86,21 @@ permalink: "/studies/discrete-math/boolean-algebra/"
 
 **4비트 덧셈 추적.** $$0101_2 + 0011_2$$ (5 + 3)을 전가산기 네 개로 더한다. 전가산기는 합 $$s = a \oplus b \oplus c_{\text{in}}$$, 올림 $$c_{\text{out}} = ab + c_{\text{in}}(a \oplus b)$$를 낸다.
 
+```mermaid
+flowchart LR
+  CIN["c_in = 0"] --> FA0["전가산기 0: a0, b0"]
+  FA0 -->|"올림 c1"| FA1["전가산기 1: a1, b1"]
+  FA1 -->|"올림 c2"| FA2["전가산기 2: a2, b2"]
+  FA2 -->|"올림 c3"| FA3["전가산기 3: a3, b3"]
+  FA3 -->|"올림 c4"| OUT["맨 위 올림"]
+  FA0 --> S0["s0"]
+  FA1 --> S1["s1"]
+  FA2 --> S2["s2"]
+  FA3 --> S3["s3"]
+```
+
+전가산기마다 같은 자리의 $$a_i$$, $$b_i$$와 바로 아래 자리에서 올라온 올림을 받는다. 올림이 그림의 왼쪽에서 오른쪽으로 한 칸씩 넘어가므로, 맨 위 자리의 합은 아래 세 칸이 끝나야 정해진다[^s2].
+
 | 자리 | $$a$$ | $$b$$ | $$c_{\text{in}}$$ | $$s$$ | $$c_{\text{out}}$$ |
 |---|---|---|---|---|---|
 | 0 (1의 자리) | 1 | 1 | 0 | 0 | 1 |
@@ -145,4 +160,5 @@ permalink: "/studies/discrete-math/boolean-algebra/"
 
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 12장 "Boolean Algebra"(불 함수, 불 함수의 표현, 논리 게이트, 회로의 최소화). 불 함수의 개수와 기능적 완전성 포함.
 [^s1]: 에이전트 보충. 전파 지연·글리치·순차 회로는 디지털 논리 설계 과목의 내용이다. 올림을 미리 계산하는 회로는 캐리 예측 가산기(carry-lookahead adder)다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 4비트 리플 캐리 가산기 설명과 전가산기 식을 연결 그림으로 그렸다.
 {% endraw %}

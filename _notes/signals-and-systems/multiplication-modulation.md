@@ -18,7 +18,7 @@ prev_title: "컨벌루션 성질과 주파수 응답"
 next_url: "/studies/signals-and-systems/lccde-frequency-response/"
 next_title: "미분방정식 시스템의 주파수 응답"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/multiplication-modulation/"
 ---
@@ -65,6 +65,20 @@ $$r(t) = s(t)p(t) \overset{\mathcal{F}}{\longleftrightarrow} R(j\omega) = \frac{
 - 가운데 $$\frac12S(j\omega)$$가 원래 메시지이고, $$\pm2\omega_0$$ 근처에 고주파 성분이 붙었다.
 - $$\vert \omega\vert  < \omega_1$$을 통과시키는 저역 통과 필터로 거르면 $$\frac12s(t)$$, 곧 크기만 바뀐 메시지가 복원된다.
 
+```mermaid
+flowchart LR
+  S["메시지 s(t)"] --> M1(("×"))
+  C1["cos ω₀t"] --> M1
+  M1 --> R["r(t), 전송"]
+  R --> M2(("×"))
+  C2["cos ω₀t"] --> M2
+  M2 --> G["g(t)"]
+  G --> L["저역 통과 필터, |ω| < ω₁"]
+  L --> O["½ s(t)"]
+```
+
+보내는 쪽과 받는 쪽이 같은 반송파를 한 번씩 곱한다. 두 번 곱해서 생긴 $$\pm2\omega_0$$ 근처 성분은 마지막 필터가 걸러 낸다.[^s3]
+
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig2.svg" alt="그림" loading="lazy">
 
 삼각형 메시지 스펙트럼($$\omega_1 = 1$$)과 $$\omega_0 = 5$$로 그린 예다. 반송파를 곱하면 높이 $$\frac12$$인 두 덩어리가 $$\pm\omega_0$$로 옮겨지고, 한 번 더 곱하면 가운데 $$\frac12S$$와 $$\pm2\omega_0$$의 $$\frac14$$ 덩어리가 생긴다. 점선 필터가 가운데만 남긴다[^s2].
@@ -81,6 +95,18 @@ $$r(t) = s(t)p(t) \overset{\mathcal{F}}{\longleftrightarrow} R(j\omega) = \frac{
 2. 고정된 이상적 저역 통과 필터($$\vert \omega\vert  < \omega_0$$)를 지난다: 원래 $$-\omega_c$$ 근처 성분만 남는다.
 3. $$e^{-j\omega_ct}$$를 곱한다: $$F(j\omega) = W(j(\omega + \omega_c))$$, 왼쪽으로 되돌린다.
 4. 전체는 중심 $$-\omega_c$$, 대역폭 $$2\omega_0$$인 이상적 대역 통과 필터와 같다(그림 4.28). 실수 부분을 취하면 $$\pm\omega_c$$ 대칭 필터가 된다(그림 4.29~4.30). 발진기 주파수 $$\omega_c$$를 다이얼로 바꾸면 중심 주파수가 바뀐다.
+
+```mermaid
+flowchart LR
+  X["x(t)"] --> A(("×"))
+  E1["e^jω_c t"] --> A
+  A --> L["고정된 저역 통과 필터, |ω| < ω₀"]
+  L --> B(("×"))
+  E2["e^−jω_c t"] --> B
+  B --> F["f(t)"]
+```
+
+필터는 고정되어 있고, 앞뒤의 두 곱셈이 스펙트럼을 옮겼다가 되돌린다. 발진기 주파수 $$\omega_c$$만 바꾸면 통과 대역이 옮겨 간다.[^s3]
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 가우스 꼴 메시지로 예제 4.21의 $$R$$, 예제 4.22의 $$G$$와 복원값, 예제 4.23의 사다리꼴, $$e^{j\omega_ct}$$ 곱셈의 스펙트럼 이동을 수치 적분으로 확인 — [43_multiplication-modulation_verify.py](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_verify/)</div>
@@ -131,4 +157,5 @@ $$r(t) = s(t)p(t) \overset{\mathcal{F}}{\longleftrightarrow} R(j\omega) = \frac{
 [^6]: 같은 자료, p.32, p.33
 [^s1]: 에이전트 보충. 반송 주파수 조건의 설명과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [43_multiplication-modulation_plot.py](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 메시지 $$s(t) = \mathrm{sinc}^2(\frac{t}{2\pi})$$의 변환이 삼각형 꼴임(수치 적분), $$R$$의 두 덩어리가 겹치지 않음, $$G$$의 가운데가 $$\frac12S$$. 메시지 모양과 $$\omega_0 = 5$$는 설명을 위해 고른 값이다.
+[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 예제 4.21~4.22(15주차 자료 p.16~19)와 가변 중심 주파수 대역 통과 필터(p.21~22, 그림 4.26)를 근거로 그렸다.
 {% endraw %}

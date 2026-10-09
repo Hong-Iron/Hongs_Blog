@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Floyd-Warshall", "Floyd–Warshall", "플로이드 워셜", "플로이드", "모든 쌍 최단 경로", "All-Pairs Shortest Paths"]
 description: "모든 도시 쌍 사이의 최단 거리표를 한 번에 채운다. 처음에는 바로 이어진 길만 적고, \"1번 도시를 거쳐도 되면?\", \"1·2번까지 거쳐도 되면?\"처럼 거쳐 갈 도시를 하나씩 늘리며 표를 고친다. 코드는 반복문 세 겹으로 아주 짧지만, 도시 수의 세제곱만큼 걸려 도시가 수백 개일…"
@@ -18,7 +18,7 @@ prev_title: "다익스트라"
 next_url: "/studies/algorithms/mst/"
 next_title: "최소 신장 트리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/floyd-warshall/"
 ---
@@ -34,6 +34,16 @@ permalink: "/studies/algorithms/floyd-warshall/"
 ## 예시로 보기
 
 도시 1 ~ 4와 양방향 도로 1–2(5), 1–4(9), 2–3(2), 3–4(1)이 있다. D[i][j]는 "지금까지 허락한 도시만 거쳐서 i에서 j로 가는 최소 비용"이다. 처음에는 아무 도시도 거치지 못한다.
+
+```mermaid
+flowchart LR
+    n1(("1")) ---|"5"| n2(("2"))
+    n1 ---|"9"| n4(("4"))
+    n2 ---|"2"| n3(("3"))
+    n3 ---|"1"| n4
+```
+
+네 도시가 고리 하나로 이어져 있다. 1에서 4로 가는 길은 바로 가는 9와, 2와 3을 거쳐 도는 5 + 2 + 1 두 가지다[^s1].
 
 | 단계 | 1행 | 2행 | 3행 | 4행 | 바뀐 칸 |
 |---|---|---|---|---|---|
@@ -128,4 +138,5 @@ any(D[i][i] < 0 for i in range(1, n + 1))
 
 
 [^1]: Cormen 외, *Introduction to Algorithms* 3판, 25.2절 "The Floyd-Warshall algorithm"(중간 점을 {1, …, k}로 제한한 점화식과 O(n³)), Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 13.3 "Floyd–Warshall algorithm".
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 양방향 도로 1–2(5), 1–4(9), 2–3(2), 3–4(1)을 그대로 그렸다.
 {% endraw %}

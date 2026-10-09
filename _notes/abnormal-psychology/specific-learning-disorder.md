@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Specific Learning Disorder", "학습장애", "learning disability", "읽기 곤란", "난독증", "dyslexia", "쓰기 곤란", "산술 곤란", "난산증", "dyscalculia", "음운처리", "phonological processing"]
 description: "지능도 괜찮고 제대로 배울 기회도 있었는데, 읽기, 쓰기, 셈하기 가운데 특정한 학습 기술만 유독 익히기 어려운 장애다. 게으르거나 머리가 나빠서가 아니라, 글자와 소리를 연결하거나 수를 처리하는 뇌의 기초 과정에 결함이 있기 때문이다. 정규 교육이 시작된 뒤에야 드러난다. 환경은…"
@@ -18,7 +18,7 @@ prev_title: "주의력결핍 과잉행동장애"
 next_url: "/studies/abnormal-psychology/developmental-coordination/"
 next_title: "발달성 협응장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/specific-learning-disorder/"
 ---
@@ -64,6 +64,16 @@ permalink: "/studies/abnormal-psychology/specific-learning-disorder/"
 - **원인:** 신경생물학적 요인과 환경적 요인의 상호작용.
     - 신경생물학적 요인: 뇌 구조와 기능의 문제가 기초 인지 처리 과정의 결함을 낳는다. 예를 들어 언어 처리 영역의 활성 저하, 운동 계획과 언어 처리를 통합하는 영역의 기능 약화가 음운 처리 결함, 작업기억 약화, 처리 속도 저하, 시각-운동 협응 문제로 이어진다.
     - 환경적 요인은 원인보다 증상을 악화시키는 요인이다. 예: 초기 언어 자극 부족, 부모의 낮은 학력과 문해 수준, 스트레스와 정서적 불안.
+
+```mermaid
+flowchart LR
+    B["뇌 구조와 기능의 문제"] --> P["기초 인지 처리의 결함: 음운 처리, 작업기억, 처리 속도, 시각-운동 협응"]
+    P --> L["읽기, 쓰기, 산술 같은 특정 학습 기술의 어려움"]
+    E["환경: 초기 언어 자극 부족, 부모의 낮은 문해 수준, 스트레스"] -.->|"악화"| L
+```
+
+실선은 원인의 길이고, 점선은 이미 생긴 어려움을 더 키우는 길이다[^s2].
+
 - **치료의 세 요소:**
     1. 구체적 학습 기술 교육
     2. 심리적 지지를 통한 자존감과 자신감 향상
@@ -95,4 +105,5 @@ permalink: "/studies/abnormal-psychology/specific-learning-disorder/"
 [^2]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.47
 [^3]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.48. 이 쪽 위의 "이렇게 단순화되어 있는 경우 다른 장애와 통합하여 출제"는 손글씨 필기다.
 [^s1]: 에이전트 보충. JX의 사례는 진단 특징을 보이려고 만든 가상 사례다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '원인과 치료'의 신경생물학적 요인과 환경적 요인(p.48)을 그렸다.
 {% endraw %}

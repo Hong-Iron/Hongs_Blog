@@ -18,7 +18,7 @@ prev_title: "좌표계 변환"
 next_url: "/studies/numerical-analysis/axis-rotation/"
 next_title: "임의 축 회전"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/reflection/"
 ---
@@ -71,6 +71,18 @@ $$X' = T R F_x R^{-1} T^{-1} X, \qquad T = \begin{pmatrix}1 & 0 & a\\ 0 & 1 & b\
 $$X' = T R^{-1} F_{xy} R T^{-1} X$$
 
 
+```mermaid
+flowchart LR
+    X["점 X"] --> A["T⁻¹: P를 원점으로"]
+    A --> B["R: 법선 N을 z축으로"]
+    B --> C["F_xy: z 부호 바꾸기"]
+    C --> D["R⁻¹: 법선을 제자리로"]
+    D --> E["T: 원점을 P로"]
+    E --> Y["반사된 점 X'"]
+```
+
+가운데 반사 하나를 두고, 앞의 두 단계와 뒤의 두 단계가 서로 거꾸로 짝을 이룬다. 식에서는 이 순서를 오른쪽부터 읽는다[^s3].
+
 같은 결과를 법선으로 바로 쓸 수도 있다. $$\hat n$$을 단위 법선이라 하면 $$X' = X - 2\big((X - P)\cdot\hat n\big)\hat n$$이다. 점에서 평면까지 법선 방향으로 간 거리의 두 배만큼 반대로 보내는 것이다[^s1].
 
 ## 활용
@@ -119,4 +131,5 @@ $$X' = T R^{-1} F_{xy} R T^{-1} X$$
 [^7]: 같은 자료, p.8
 [^s1]: 에이전트 보충. 예시, 3차원 반전이 회전이 아니라는 점, $$\cos2\theta$$ 꼴 행렬, 법선으로 쓴 평면 반사 공식, 거울 렌더링, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [07_reflection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$(2, 3) \to (2, -1)$$, 직선까지 거리 2씩, 반사 행렬의 행렬식 $$-1$$.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 평면 반사 식 $$X' = TR^{-1}F_{xy}RT^{-1}X$$(원본 06.na06_rotation.pdf p.7~8)로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Kleptomania", "도벽", "절도광", "생리도벽"]
 description: "필요하지도 않고 값어치도 없는 물건을 훔치고 싶은 충동을 되풀이해서 참지 못하는 장애다. 훔치기 직전에 긴장이 차오르고, 훔치고 나면 기쁨이나 안도를 느낀다. 물건이 필요하거나 돈이 되어서, 또는 분노나 복수 때문에 훔치는 일반적인 절도와 다르다. 본인도 잘못이라는 것을 알고 죄책…"
@@ -18,7 +18,7 @@ prev_title: "병적 방화"
 next_url: "/studies/abnormal-psychology/substance-related-addictive/"
 next_title: "물질관련 및 중독 장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/kleptomania/"
 ---
@@ -55,6 +55,17 @@ permalink: "/studies/abnormal-psychology/kleptomania/"
 - 매우 드문 장애로 여겨진다.
 - 청소년기에 시작해 만성화된다.
 - 여성에게 더 많다.
+
+```mermaid
+flowchart LR
+    U["훔치고 싶은 충동, 억누르려 함"] --> T["훔치기 직전 긴장이 고조됨"]
+    T --> S["쓸모없는 물건을 훔침"]
+    S --> R["기쁨, 충족감, 안도"]
+    R --> G["죄책감, 우울, 체포 걱정"]
+    R -.->|"되풀이"| U
+```
+
+본인은 잘못인 줄 알고 충동을 억누르려 하지만, 긴장에서 안도까지의 흐름이 되풀이된다. 죄책감은 안도 뒤에 따로 온다[^s3].
 
 ## 원인[^3]
 
@@ -108,4 +119,5 @@ permalink: "/studies/abnormal-psychology/kleptomania/"
 [^4]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.41
 [^s1]: 에이전트 보충. JC의 사례는 진단기준을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 원본은 기법의 이름만 적는다. 체계적 둔감법과 혐오적 조건형성의 적용 방식은 행동치료의 일반 원리를 도벽에 맞춰 풀었다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '정의'의 긴장과 안도(p.38), '임상적 특징'의 억제 노력과 죄책감(p.39)을 이어 그렸다.
 {% endraw %}

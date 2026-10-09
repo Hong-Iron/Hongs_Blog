@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Routing", "경로 설정", "포워딩", "forwarding", "전달표", "forwarding table"]
 description: "내비게이션에 목적지를 넣으면 경로를 계산하듯, 주소로 상대가 정해진 뒤 그곳까지 어떤 길로 보낼지 정하는 일이다. 길이 여러 갈래인 간접 연결에서만 필요하다. 한 길이 끊겨도 다른 길로 돌아갈 수 있게 해 준다."
@@ -48,6 +48,24 @@ graph LR
 H1에서 H2로 가는 경로는 S1–S2–S3와 S1–S4–S3 두 가지다. S1의 전달표에 "목적지 H2 → S2 쪽 링크"라고 적혀 있으면 위쪽 경로로 간다.
 
 내비게이션은 보통 출발 전에 전체 경로를 한 번에 계산한다. 인터넷에서는 대개 각 라우터가 다음 한 구간만 정한다. 전체 경로는 그 선택들이 이어져서 만들어진다(홉 단위 전달)[^s1].
+
+```mermaid
+sequenceDiagram
+  participant H1
+  participant S1
+  participant S2
+  participant S3
+  participant H2
+  H1->>S1: 패킷 (목적지 H2)
+  Note over S1: 전달표에서 H2를 찾음 → S2 쪽 링크
+  S1->>S2: 패킷
+  Note over S2: 전달표에서 H2를 찾음 → S3 쪽 링크
+  S2->>S3: 패킷
+  Note over S3: 전달표에서 H2를 찾음 → H2 쪽 링크
+  S3->>H2: 패킷
+```
+
+스위치마다 자기 전달표만 보고 다음 한 구간을 고른다. 전체 경로 S1–S2–S3는 이 세 번의 선택이 이어져 만들어진다[^s2].
 
 ## 정의
 
@@ -111,4 +129,5 @@ H1에서 H2로 가는 경로는 S1–S2–S3와 S1–S4–S3 두 가지다. S1�
 [^1]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 47행
 [^2]: 4-1학기/pasted_images/Pasted image 20260924200141.png — 슬라이드 "간접 연결 방법: 스위칭 정책"의 전화망 그림
 [^s1]: 에이전트 보충. 라우팅과 포워딩의 구분, 전달표, hop-by-hop 전달, 고장 시 경로 변경은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 3장의 내용이다. 회선 설정의 경로 선택을 라우팅의 예로 본 것은 해석이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 그래프, S1 전달표의 예, 홉 단위 전달 설명을 바탕으로 그렸다. S2와 S3의 전달표 내용은 위쪽 경로를 따르도록 정한 설명용 값이다.
 {% endraw %}

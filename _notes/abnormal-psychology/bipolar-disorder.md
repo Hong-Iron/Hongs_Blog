@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Bipolar Disorder", "조울병", "manic-depressive illness", "제1형 양극성장애", "bipolar I disorder", "제2형 양극성장애", "bipolar II disorder", "조증 삽화", "manic episode", "경조증 삽화", "hypomanic episode", "사고비약", "flight of ideas", "기분안정제", "mood stabilizer", "리튬", "lithium", "항경련제", "대인관계 및 사회적 리듬 치료", "IPSRT", "사회적 리듬 차트"]
 description: "기분이 비정상적으로 들뜨는 시기(조증·경조증)와 가라앉는 시기(우울)가 번갈아 오는 병으로, 흔히 조울병이라 부른다. 들뜬 시기에는 잠을 안 자도 기운이 넘치고 말과 계획이 쏟아지다가, 무리한 소비나 투자로 생활을 무너뜨리기도 한다. 재발이 매우 잦아서 약이 우선이자 필수이고, 규…"
@@ -18,7 +18,7 @@ prev_title: "제3세대 인지행동치료"
 next_url: "/studies/abnormal-psychology/mania-vs-hypomania/"
 next_title: "조증 삽화와 경조증 삽화 비교"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/bipolar-disorder/"
 ---
@@ -54,6 +54,17 @@ permalink: "/studies/abnormal-psychology/bipolar-disorder/"
 | 제1형 양극성장애 | 조증 삽화의 기준을 충족한다. 기능 저하가 뚜렷하다                                            |
 | 제2형 양극성장애 | 1회 이상의 주요우울 삽화와 경조증 삽화가 있다. 기능 저하가 두드러지지 않는다                            |
 | 순환성장애     | 경미한 우울 증상과 경조증 증상이 2년 이상 나타난다 → [순환성장애](/Hongs_Blog/studies/abnormal-psychology/cyclothymic-disorder/) |
+
+```mermaid
+flowchart TD
+  Q1{"조증 삽화가 한 번이라도 있었나"} -- "예" --> I["제1형 양극성장애"]
+  Q1 -- "아니오" --> Q2{"경조증 삽화와 주요우울 삽화가 모두 있었나"}
+  Q2 -- "예" --> II["제2형 양극성장애"]
+  Q2 -- "아니오" --> Q3{"경미한 우울 증상과 경조증 증상이 2년 이상 이어졌나"}
+  Q3 -- "예" --> C["순환성장애"]
+```
+
+위에서부터 질문을 하나씩 내려간다. 조증 삽화가 한 번이라도 있으면 우울 삽화가 있든 없든 바로 제1형에서 멈춘다[^s3].
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">조증 삽화와 경조증 삽화</div>
@@ -218,4 +229,5 @@ DSM-5-TR은 기분이 과민하기만 할 때는 증상이 4가지 이상 필요
 [^15]: 4-1학기/이상 심리학/1.수업자료/03.양극성장애와 우울장애.pdf, p.59
 [^s1]: 에이전트 보충. BD의 사례는 진단 과정을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 조증 삽화 기준의 세부(과민한 기분만 있으면 4가지, 입원하면 기간 무관)와 제1형에 주요우울 삽화가 필수가 아니라는 점을 보탰다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 '세 종류' 표(슬라이드 p.43)와 '설계 이유'를 근거로 그렸다.
 {% endraw %}

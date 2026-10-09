@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Directory", "File Directory", "2단계 디렉터리", "Two-Level Directory", "트리 구조 디렉터리", "Tree-Structured Directory", "경로 이름", "Pathname", "작업 디렉터리", "Working Directory", "파일 공유", "File Sharing", "접근 권한", "Access Rights", "사용자 부류", "User Classes"]
 description: "디렉터리는 파일 이름과 파일 자체(위치, 주인, 권한 등)를 이어 주는 목록이다. 도서관 목록 카드처럼, 이름으로 찾으면 책이 어디 있고 누가 빌릴 수 있는지 알려 준다. 폴더 안에 폴더를 두는 트리 구조로 만들면 다른 폴더끼리는 같은 이름을 써도 되고, 파일을 무리 지어 정리할 …"
@@ -18,7 +18,7 @@ prev_title: "파일 조직"
 next_url: "/studies/operating-systems/record-blocking/"
 next_title: "레코드 블로킹"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/directories-file-sharing/"
 ---
@@ -55,6 +55,18 @@ permalink: "/studies/operating-systems/directories-file-sharing/"
 | 트리 (계층) | 마스터 디렉터리 아래 사용자 디렉터리, 그 아래 하위 디렉터리와 파일 | 아래 설명[^7] |
 
 **경로 이름.** 루트(마스터) 디렉터리에서 가지를 따라 파일까지 가는 디렉터리 이름들의 나열에 파일 이름을 붙인 것이 경로 이름이다. 경로가 다르면 같은 파일 이름을 써도 된다[^8].
+
+```mermaid
+flowchart TD
+  R["/ 마스터 디렉터리"] --> U["user"]
+  U --> H["hong"]
+  H --> OS["os"]
+  H --> NET["net"]
+  OS --> F1["report.txt"]
+  NET --> F2["report.txt"]
+```
+
+두 report.txt는 이름이 같지만 루트에서 내려오는 길이 다르다. 왼쪽은 /user/hong/os/report.txt, 오른쪽은 /user/hong/net/report.txt다[^s2].
 
 **작업 디렉터리.** 전체 경로를 매번 쓰는 것은 번거롭다. 그래서 대화형 사용자나 프로세스에게 현재(작업) 디렉터리를 두고, 전체 경로를 쓰지 않은 파일 이름은 작업 디렉터리 기준으로 해석한다[^9].
 
@@ -126,4 +138,5 @@ permalink: "/studies/operating-systems/directories-file-sharing/"
 [^13]: 같은 자료, 슬라이드 49
 [^14]: 같은 자료, 슬라이드 91과 슬라이드 87의 발표자 노트
 [^s1]: 에이전트 보충. 셸 명령 예와 확인 문제는 슬라이드에 없다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기"의 경로 예와 "경로 이름" 문단(슬라이드 38~41)을 트리로 그렸다.
 {% endraw %}

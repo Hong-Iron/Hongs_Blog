@@ -18,7 +18,7 @@ prev_title: "군집 분석"
 next_url: "/studies/data-science/k-medoids/"
 next_title: "k-메도이드"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/data-science/k-means/"
 ---
@@ -76,6 +76,17 @@ $$\mathbf z_i \in \mathbb{R}^k$$는 점 $$i$$의 소속을 적은 벡터로, 소
     (2) 갱신: 각 중심을 자기 군집 점들의 평균(무게중심)으로 옮긴다
 중심이 더 바뀌지 않으면 멈춘다
 ```
+
+```mermaid
+flowchart TD
+    S["k를 정하고 중심 k개를 무작위로 놓는다"] --> A["배정: 각 점을 가장 가까운 중심의 무리에 넣는다"]
+    A --> U["갱신: 각 중심을 자기 무리 점들의 평균으로 옮긴다"]
+    U --> Q{"중심이 바뀌었는가?"}
+    Q -->|"바뀌었다"| A
+    Q -->|"그대로다"| E["멈추고 중심과 소속을 돌려준다"]
+```
+
+고리는 배정과 갱신 두 칸뿐이다. 한 칸은 중심을 고정하고 소속을 고치고, 다른 칸은 소속을 고정하고 중심을 고친다[^s3].
 
 슬라이드의 그림처럼 이 두 단계를 중심이 바뀌지 않을 때까지 되풀이한다[^3].
 
@@ -224,4 +235,5 @@ $$\sum\Vert \mathbf x_i - \boldsymbol\mu\Vert ^2 = \sum\Vert \mathbf x_i - \bar{
 [^6]: 같은 자료, p.17
 [^s1]: 에이전트 보충. 1차원 추적, 수렴 증명, 스스로 설명해 보기, 복잡도 식, k-means++, 오해 항목의 정사각형 예, 카드 C2·C4는 원본에 없다. 구현 코드로 확인했다(Lloyd, 1982. Arthur & Vassilvitskii, 2007).
 [^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [25_k-means_plot.py](/Hongs_Blog/studies/data-science/code/25_k-means_plot/)로 그렸고, 그림 1에서 $$J$$가 줄기만 하고 세 무리를 정확히 나누는 것, 그림 2에서 k-평균의 $$J$$ 1194 < 실제 나눔의 $$J$$ 2430, 맞힌 비율 0.54를 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서의 의사코드(원본 7-1 p.10~12)를 근거로 그렸다.
 {% endraw %}

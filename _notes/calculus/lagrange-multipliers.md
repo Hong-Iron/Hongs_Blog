@@ -18,7 +18,7 @@ prev_title: "볼록 함수와 볼록 최적화"
 next_url: "/studies/calculus/ode-euler/"
 next_title: "미분방정식과 오일러 방법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/lagrange-multipliers/"
 ---
@@ -56,6 +56,20 @@ $$\nabla f(\mathbf{x}^*) = \lambda\,\nabla g(\mathbf{x}^*)$$
 
 
 **푸는 법.** 미지수 $$\mathbf{x}$$와 $$\lambda$$에 대해 $$\nabla f = \lambda\nabla g$$($$n$$개 식)와 $$g = c$$(1개 식)를 연립한다. 라그랑지안 $$\mathcal{L}(\mathbf{x}, \lambda) = f(\mathbf{x}) - \lambda(g(\mathbf{x}) - c)$$의 모든 편미분을 0으로 놓는 것과 같다. 나온 후보들의 $$f$$ 값을 비교해 최대·최소를 가린다. 제약이 여러 개면 $$\nabla f = \sum_i\lambda_i\nabla g_i$$($$\sum$$은 차례로 모두 더한다는 기호)로 늘린다.
+
+```mermaid
+flowchart TD
+    A["목표 f, 제약 g = c"] --> B["∇f = λ∇g와 g = c를 연립한다"]
+    A --> C["제약 위에서 ∇g = 0인 점을 따로 찾는다"]
+    A --> D["영역에 끝점이 있으면 끝점도 넣는다"]
+    B --> E["후보 목록"]
+    C --> E
+    D --> E
+    E --> F["후보마다 f 값을 계산해 비교한다"]
+    F --> G["최대·최소가 있다면 가장 큰 값이 최대, 가장 작은 값이 최소"]
+```
+
+연립방정식은 후보를 내는 한 갈래일 뿐이다. 제약식의 그래디언트가 0인 점과 끝점을 함께 모아야 아래 첨점 반례 같은 최솟점을 놓치지 않는다[^s3].
 
 **승수의 뜻.** $$\lambda$$는 제약의 값 $$c$$를 조금 늘릴 때 최적값이 늘어나는 비율이다(잠재 가격). 예시에서 둘레의 절반이 $$c$$면 최대 넓이는 $$\frac{c^2}{4}$$이고, 이를 $$c$$로 미분하면 $$\frac{c}{2}$$, $$c = 10$$에서 5다[^s1].
 
@@ -134,4 +148,5 @@ $$\nabla f(\mathbf{x}^*) = \lambda\,\nabla g(\mathbf{x}^*)$$
 [^2]: Boyd, Vandenberghe, *Convex Optimization*, 5장 "Duality"(라그랑지안, 쌍대 문제, KKT 최적 조건, 승수의 민감도 해석).
 [^s1]: 에이전트 보충. 승수를 최적값의 민감도로 읽는 해석은 Boyd·Vandenberghe 5장에 있다. PCA가 공분산 행렬의 최대 고윳값 방향을 찾는다는 것은 [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/)에서 다룬다. 수치는 28_lagrange-multipliers_verify.py에서 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [28_lagrange-multipliers_plot.py](/Hongs_Blog/studies/calculus/code/28_lagrange-multipliers_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. 직선 위 최댓값 25가 $$x = 5$$에서 나오는 것, $$\nabla f = 5\nabla g$$, 등고선 $$xy = 25$$의 $$(5, 5)$$ 접선 기울기가 직선과 같은 $$-1$$인 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 푸는 법, 가정 $$\nabla g \ne \mathbf{0}$$이 필요한 이유, 활용 절의 흔한 실수를 근거로 그렸다.
 {% endraw %}

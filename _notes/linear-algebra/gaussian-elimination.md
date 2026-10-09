@@ -18,7 +18,7 @@ prev_title: "행렬과 행렬-벡터 곱"
 next_url: "/studies/linear-algebra/matrix-multiplication/"
 next_title: "행렬 곱셈과 전치"
 math: true
-mermaid: false
+mermaid: true
 code_count: 3
 permalink: "/studies/linear-algebra/gaussian-elimination/"
 ---
@@ -63,6 +63,22 @@ GAUSS(A, b)                      # 첨가행렬 M = [A | b], 인덱스는 1부�
       x[i] ← (M[i][n+1] − Σ_{j>i} M[i][j]·x[j]) / M[i][i]
   return x
 ```
+
+```mermaid
+flowchart TD
+    S["첨가행렬 M 만들기, k = 1"] --> P["k열의 k행 아래에서 절댓값이 가장 큰 수 찾기"]
+    P --> W["그 행을 k행과 바꾸기"]
+    W --> Z{"피벗 자리의 수가 0인가"}
+    Z -->|"예"| X["멈춤: 특이 행렬"]
+    Z -->|"아니오"| E["k행 아래 각 행에서 곱수 배의 k행 빼기"]
+    E --> N{"k < n 인가"}
+    N -->|"예"| K["k ← k + 1"]
+    K --> P
+    N -->|"아니오"| B["i = n부터 1까지 후진 대입"]
+    B --> R["해 x"]
+```
+
+위에서부터 한 열씩 피벗을 고르고 그 아래를 지우는 고리를 n번 돈다. 고리를 다 돈 뒤에야 아래에서 위로 대입한다[^s4].
 
 소거법은 표를 고칠 때 아래 세 가지만 한다. 이 셋을 **기본 행 연산**이라 부른다.
 
@@ -223,4 +239,5 @@ for i in range(n - 1, -1, -1):
 [^s1]: 에이전트 보충. NumPy 문서는 `numpy.linalg.solve`가 LAPACK의 `gesv`(부분 피벗팅 LU)를 부른다고 밝힌다. 연산 수와 피벗팅 예는 05_gaussian-elimination_verify.py에서 확인했다.
 [^s2]: 에이전트 보충. IEEE 754 배정밀도의 유효숫자는 10진수로 약 15~17자리다(가수 53비트, $$2^{-53} \approx 1.1 \times 10^{-16}$$).
 [^s3]: 에이전트 보충. 그림은 원본에 없다. [05_gaussian-elimination_plot.py](/Hongs_Blog/studies/linear-algebra/code/05_gaussian-elimination_plot/)로 그렸고, $$\varepsilon = 10^{-20}$$에서 그냥 풀면 $$x = 0$$, 행을 바꾸면 $$x = 1$$이 나오는 것, $$\varepsilon \le 10^{-16}$$에서 오차가 1 정도인 것, 행을 바꾼 풀이의 오차가 $$2.2 \times 10^{-16}$$ 이하인 것을 같은 코드로 확인했다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 GAUSS 의사코드를 그대로 옮겼다(Strang 5판 2.2~2.3절, 11.1절).
 {% endraw %}

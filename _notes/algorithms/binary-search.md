@@ -81,6 +81,17 @@ lower_bound(a, x):
 </div>
 
 
+```
+ 번호   0         lo-1   lo        hi-1   hi        n-1
+       +-------------+------------------+-------------+
+       | 모두 x 미만 |    아직 모른다   | 모두 x 이상 |
+       +-------------+------------------+-------------+
+                     ^                  ^
+                    lo                 hi
+```
+
+가운데 "아직 모른다" 구간만 매 바퀴 절반쯤으로 줄고, 양쪽 구간은 늘기만 한다. 가운데가 비면(lo == hi) 두 구간의 경계 lo가 답이다[^s2].
+
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
 
@@ -229,4 +240,5 @@ def f(a, x):
 [^1]: 루프 불변식의 세 단계(초기화·유지·종료)는 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.1절의 방식을 따랐다. 이분 탐색 자체는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search".
 [^2]: Python 3 표준 라이브러리 문서, "bisect — Array bisection algorithm"의 `bisect_left`, `bisect_right`.
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [20_binary-search_plot.py](/Hongs_Blog/studies/algorithms/code/20_binary-search_plot/)로 그렸고, n = 1 ~ 2,048에서 답이 될 수 있는 모든 자리를 넣어 본 가장 많은 반복 횟수가 ⌈log₂(n + 1)⌉과 같다는 것, 예시의 8칸에서 3번, 100만 개에서 20번이라는 것을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '증명' 절의 루프 불변식과 증명 4단계(종료)를 배열 구간 그림으로 옮겼다.
 {% endraw %}

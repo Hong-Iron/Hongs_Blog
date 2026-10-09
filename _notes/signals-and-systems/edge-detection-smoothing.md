@@ -18,7 +18,7 @@ prev_title: "주파수 형성 필터와 주파수 선택 필터"
 next_url: "/studies/signals-and-systems/ct-fourier-transform/"
 next_title: "연속 시간 푸리에 변환"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/edge-detection-smoothing/"
 ---
@@ -64,6 +64,14 @@ $$\frac{d}{dx}(f * g) = f * \frac{dg}{dx}$$
 
 
 커널을 미리 미분해 두면($$\frac{dg}{dx}$$, 가우시안 미분 커널) 영상에 컨벌루션을 한 번만 하면 된다.
+
+```mermaid
+flowchart LR
+  F["영상 f"] --> G["가우시안 g로 평활화"] --> D["미분"] --> P["봉우리 = 경계"]
+  F --> K["미리 미분한 커널 dg/dx와 한 번 컨벌루션"] --> P
+```
+
+두 길은 같은 봉우리에 닿는다. 커널을 미리 미분한 길은 영상에 컨벌루션을 한 번만 한다.[^s3]
 
 **평균 필터.** 이웃 $$m \times m$$ 화소의 평균으로 바꾼다. $$m = 3$$이면 $$A_{\text{avg}} = \frac19\begin{bmatrix}1&1&1\\1&1&1\\1&1&1\end{bmatrix}$$이다. 커널의 합이 1이 아니면 영상이 원래보다 밝아지므로 합으로 나눈다[^9]. 너비 $$2W$$인 1차원 평균(상자) 커널의 주파수 특성은 $$\frac{2\sin(\omega W)}{\omega}$$(sinc 꼴)다. 상자 필터로 흐리게 하면 점광원 하나가 작은 사각형으로 번져, 초점이 나간 렌즈의 둥근 흐림과 다르다. 가우시안 커널은 주파수 특성도 매끄러운 종 모양이라 이런 문제가 적다[^10].
 
@@ -149,4 +157,5 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 [^s1]: 에이전트 보충. 2000개 화소 계단 예(원본 그림 13~14와 같은 설정을 숫자로 재현), 소벨·캐니 필터, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [37_edge-detection-smoothing_plot.py](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 봉우리가 경계 ±15 안, 그대로 차분한 잡음 봉우리가 경계 값보다 큼, $$\frac{d}{dx}(f * g) = f * \frac{dg}{dx}$$.
 [^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.23~42 (움직이는 창, 평균·가중 평균·미분 필터, 창 크기, 임펄스 합성곱)
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 먼저 평활화·컨벌루션의 미분 정리 절(12주차 자료 p.13~14)을 근거로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Partial Order", "Topological Sort", "부분순서", "poset", "부분순서 집합", "전순서", "total order", "하세 도표", "Hasse diagram", "극소 원소", "minimal element", "선형 확장", "linear extension", "위상 정렬", "칸 알고리즘", "Kahn's algorithm", "DAG", "방향 비순환 그래프"]
 description: "부분순서는 \"무엇이 먼저 와야 하는가\"를 나타내되, 모든 쌍을 비교하지는 않는 순서다. 과목의 선수관계, 작업의 의존성, 버전의 포함 관계가 그렇다. 의존 관계에 사이클이 없으면 늘 한 줄로 세울 수 있고(위상 정렬), 그 줄은 보통 여러 가지다. 사이클이 있으면 어떤 순서로도 세…"
@@ -58,6 +58,19 @@ graph LR
 </div>
 
 
+```mermaid
+flowchart BT
+  d1["1"] --- d2["2"]
+  d1 --- d3["3"]
+  d2 --- d4["4"]
+  d2 --- d6["6"]
+  d3 --- d6
+  d4 --- d12["12"]
+  d6 --- d12
+```
+
+12의 약수에 '나누어떨어진다'라는 순서를 준 하세 도표다. 아래에서 위로 선을 따라 올라갈 수 있으면 아래 수가 위 수를 나눈다. 1과 12처럼 선 여러 개를 거치는 관계는 따로 긋지 않는다. 4와 6은 오르는 길로 이어지지 않아 비교할 수 없다[^s1].
+
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
 
@@ -77,6 +90,18 @@ graph LR
 
 
 증명 2가 곧 **칸 알고리즘**이다. 들어오는 화살표가 없는 정점을 하나 꺼내 출력하고, 그 정점의 화살표를 지우는 일을 되풀이한다. 정점 $$n$$개, 간선 $$m$$개에 $$O(n + m)$$이다. 끝났는데 남은 정점이 있으면 사이클이 있다는 뜻이다.
+
+```mermaid
+flowchart TD
+  S["시작"] --> Q{"들어오는 화살표가 없는 정점이 남아 있나?"}
+  Q -->|"있다"| T["하나 꺼내 출력하고, 그 정점에서 나가는 화살표를 지운다"]
+  T --> Q
+  Q -->|"없다"| R{"출력하지 않은 정점이 남아 있나?"}
+  R -->|"없다"| OK["출력 순서가 위상 정렬"]
+  R -->|"있다"| CY["사이클이 있다"]
+```
+
+꺼낼 수 있는 정점이 바닥나면 반복이 멈춘다. 그때 남은 정점이 있는지로 결과가 갈린다[^s1].
 
 ## 예제
 
@@ -142,4 +167,5 @@ graph LR
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장 "Directed graphs & Partial Orders"(DAG, 부분순서, 위상 정렬). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장(부분순서, 하세 도표, 위상 정렬).
+[^s1]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 하세 도표는 정의의 하세 도표 설명을 12의 약수에 적용했고, 흐름도는 '칸 알고리즘' 문단을 그렸다.
 {% endraw %}

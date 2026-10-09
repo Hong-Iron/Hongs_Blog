@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["User-Level Thread", "Kernel-Level Thread", "ULT", "KLT", "사용자 수준 스레드", "커널 수준 스레드", "커널 지원 스레드", "결합 방식", "Combined Approach", "경량 프로세스", "LWP"]
 description: "스레드를 누가 관리하느냐에 따라 두 방식이 있다. 사용자 수준 스레드는 프로그램 안의 라이브러리가 관리하고, 커널은 스레드가 있는 줄도 모른다. 반장이 조원들 순서를 알아서 정하고 선생님은 조 단위로만 보는 셈이다. 커널을 거치지 않으니 스레드를 바꾸는 일이 빠르다. 하지만 한 스…"
@@ -18,7 +18,7 @@ prev_title: "스레드"
 next_url: "/studies/operating-systems/smp/"
 next_title: "대칭형 다중 처리"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/ult-klt/"
 ---
@@ -68,6 +68,27 @@ Solaris는 스레드 관련 개념을 네 가지로 나눈다[^8].
 | 사용자 수준 스레드 | 프로세스 안의 스레드 라이브러리로 만든 실행 단위. 운영체제에 보이지 않는다 |
 | 경량 프로세스 (LWP) | 사용자 수준 스레드와 커널 스레드를 잇는 다리. LWP 하나는 커널 스레드 하나에 대응한다. 커널이 따로 스케줄링하고, 여러 프로세서에서 동시에 돌 수 있다 |
 | 커널 스레드 | 프로세서에 배정되어 실행되는 기본 단위 |
+
+```mermaid
+flowchart LR
+  subgraph PR["프로세스, 사용자 공간"]
+    U1["사용자 수준 스레드 1"]
+    U2["사용자 수준 스레드 2"]
+    U3["사용자 수준 스레드 3"]
+    LIB["스레드 라이브러리"]
+  end
+  U1 --> LIB
+  U2 --> LIB
+  U3 --> LIB
+  LIB --> L1["LWP 1"]
+  LIB --> L2["LWP 2"]
+  L1 --> K1["커널 스레드 1"]
+  L2 --> K2["커널 스레드 2"]
+  K1 --> C1["프로세서 1"]
+  K2 --> C2["프로세서 2"]
+```
+
+왼쪽의 사용자 수준 스레드 셋은 커널에 보이지 않는다. 라이브러리가 이들을 LWP 둘에 나눠 싣고, LWP마다 커널 스레드가 하나씩 붙어 서로 다른 프로세서에서 동시에 돌 수 있다[^s5].
 
 ### 스레드와 프로세스의 수 관계
 
@@ -136,4 +157,5 @@ Solaris는 스레드 관련 개념을 네 가지로 나눈다[^8].
 [^s2]: 에이전트 보충. 슬라이드는 KLT의 장단점만 적었다. ULT 쪽 칸은 같은 교재 4.2절의 ULT 장단점(모드 전환 없음, 응용별 스케줄링, 어느 운영체제에서나 실행 / 막히는 호출이 프로세스 전체를 막음, 다중 프로세서를 쓰지 못함)으로 채웠다.
 [^s3]: 에이전트 보충. Windows가 KLT 방식인 것은 슬라이드 25에 있다. Linux는 프로세스와 스레드를 따로 구분하지 않고 둘 다 커널이 스케줄링하는 task로 다룬다(슬라이드 59 "Linux Tasks"; Stallings 6판 4.6절).
 [^s4]: 에이전트 보충. 다른 교재의 다대일 모델과의 비교는 원본에 없다. Silberschatz, Galvin & Gagne, *Operating System Concepts*, 4장 "다중 스레딩 모델".
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "결합 방식" 문단과 Solaris 네 개념 표(슬라이드 28, 53~55)를 바탕으로 그렸다. 스레드 3개, LWP 2개라는 수는 보기를 위해 고른 값이다.
 {% endraw %}

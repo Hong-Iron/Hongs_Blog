@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Neurodevelopmental Disorders", "발달장애", "운동장애", "Motor Disorders"]
 description: "뇌가 자라는 과정이 늦어지거나 손상되어 어린 시절부터 나타나는 장애들이다. 전반적인 지적 능력, 말과 언어, 사회적 소통, 주의와 활동 조절, 학습, 운동 가운데 어디가 걸렸느냐에 따라 나뉜다. 결함은 한 영역에 좁게 머물기도 하고 전반에 걸치기도 한다. 한 아이가 여러 장애를 함…"
@@ -18,7 +18,7 @@ prev_title: "인터넷 게임 장애"
 next_url: "/studies/abnormal-psychology/intellectual-disability/"
 next_title: "지적장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/neurodevelopmental-disorders/"
 ---
@@ -67,6 +67,24 @@ permalink: "/studies/abnormal-psychology/neurodevelopmental-disorders/"
 
 나이나 발달 단계에 맞지 않는 운동 능력의 문제다. [발달성 협응장애](/Hongs_Blog/studies/abnormal-psychology/developmental-coordination/), [상동증적 운동장애](/Hongs_Blog/studies/abnormal-psychology/stereotypic-movement/), [틱장애](/Hongs_Blog/studies/abnormal-psychology/tic-disorders/)(투렛장애, 지속성 운동·음성 틱장애, 일시성 틱장애)가 있다.
 
+```mermaid
+flowchart TD
+    R["신경발달장애"] --> A["지적장애"]
+    R --> B["의사소통장애"]
+    R --> C["자폐스펙트럼장애"]
+    R --> D["주의력결핍 과잉행동장애"]
+    R --> E["특정학습장애"]
+    R --> M["운동장애"]
+    M --> M1["발달성 협응장애"]
+    M --> M2["상동증적 운동장애"]
+    M --> T["틱장애"]
+    T --> T1["투렛장애"]
+    T --> T2["지속성 운동·음성 틱장애"]
+    T --> T3["일시성 틱장애"]
+```
+
+운동장애는 그 자체로 세 장애를 묶은 무리이고, 틱장애는 다시 세 진단으로 나뉜다[^s2].
+
 ## 연결
 
 - 반대로, 발달이 끝난 뒤 후천적으로 인지가 떨어지는 장애: [신경인지장애](/Hongs_Blog/studies/abnormal-psychology/neurocognitive-disorders/)
@@ -92,4 +110,5 @@ permalink: "/studies/abnormal-psychology/neurodevelopmental-disorders/"
 [^2]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.4
 [^3]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.50
 [^s1]: 에이전트 보충. 여섯 아이의 사례는 무리를 가르려고 만든 가상 예다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '여섯 장애' 표(p.4)와 '운동장애'(p.50)를 한 분류 나무로 그렸다.
 {% endraw %}

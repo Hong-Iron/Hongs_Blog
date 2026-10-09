@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Counting Rules", "합의 법칙", "sum rule", "곱의 법칙", "product rule", "일반화된 곱의 법칙", "generalized product rule", "전단사 법칙", "bijection rule", "나눗셈 법칙", "division rule", "여사건으로 세기", "complement counting", "경우의 수"]
 description: "경우의 수는 세 가지 도구로 거의 다 센다. 겹치지 않는 경우들은 더하고(합의 법칙), 차례로 고르는 선택은 곱하고(곱의 법칙), 세기 어려운 것은 세기 쉬운 것과 하나씩 짝지어 센다(전단사 법칙). 같은 것을 여러 번 세었다면 그 횟수로 나눈다(나눗셈 법칙). 합의 법칙은 경우들…"
@@ -18,7 +18,7 @@ prev_title: "재귀적 정의와 구조적 귀납법"
 next_url: "/studies/discrete-math/permutations-combinations/"
 next_title: "순열과 조합"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/counting-rules/"
 ---
@@ -113,6 +113,21 @@ permalink: "/studies/discrete-math/counting-rules/"
 2. *자리별 선택지:* 26, 이미 쓴 하나를 뺀 25, 두 개를 뺀 24. 앞에서 무엇을 골랐든 개수는 같다.
 3. *곱하기:* $$26 \times 25 \times 24 = 15{,}600$$.
 
+```mermaid
+flowchart TD
+  S["시작"] --> A["a"]
+  S --> B["b"]
+  S --> C["c"]
+  A --> AB["ab"]
+  A --> AC["ac"]
+  B --> BA["ba"]
+  B --> BC["bc"]
+  C --> CA["ca"]
+  C --> CB["cb"]
+```
+
+글자 a, b, c만으로 서로 다른 두 글자 문자열을 만드는 작은 판이다. 둘째 자리에 올 수 있는 글자는 첫 글자마다 다르지만, 갈래 수는 늘 2개다. 그래서 $$3 \times 2 = 6$$이다[^s1].
+
 연습: [경우의 수 예제 사다리](/Hongs_Blog/studies/discrete-math/counting-ladder/)
 
 <div class="callout callout-check" markdown="1">
@@ -180,4 +195,5 @@ permalink: "/studies/discrete-math/counting-rules/"
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(전단사 법칙, 합·곱의 법칙, 일반화된 곱의 법칙, 나눗셈 법칙). OpenStax, *Precalculus 2e*, 11.5절 "Counting Principles".
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 서로 다른 글자 문자열 셈을 글자 3개, 두 자리로 줄여 그렸다.
 {% endraw %}

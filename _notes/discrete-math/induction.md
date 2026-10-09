@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Mathematical Induction", "수학적 귀납법", "기저 단계", "base case", "귀납 단계", "inductive step", "귀납 가정", "induction hypothesis", "강한 귀납법", "strong induction", "정렬 원리", "well-ordering principle", "루프 불변식", "loop invariant"]
 description: "줄지어 선 도미노를 떠올린다. 첫 도미노가 넘어지고, 어떤 도미노든 넘어지면 바로 다음 것도 넘어진다는 것만 보이면 모든 도미노가 넘어진다. 이 두 단계로 \"모든 자연수에서 맞는다\"를 끝없는 확인 없이 증명한다. 앞의 모든 경우를 가정해도 되는 강한 귀납법은 재귀 알고리즘의 정확성…"
@@ -18,7 +18,7 @@ prev_title: "부분순서와 위상 정렬"
 next_url: "/studies/discrete-math/recursive-definitions/"
 next_title: "재귀적 정의와 구조적 귀납법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/induction/"
 ---
@@ -90,6 +90,16 @@ $$1 + 3 + 5 + \cdots + (2n - 1) = n^2$$을 증명한다. 처음 몇 개는 $$1 =
 1. *기저 넷:* $$12 = 4 + 4 + 4$$, $$13 = 4 + 4 + 5$$, $$14 = 4 + 5 + 5$$, $$15 = 5 + 5 + 5$$.
 2. *귀납 단계:* $$n \ge 15$$에서 $$12, \dots, n$$을 모두 만들 수 있다고 하자. $$n + 1 - 4 = n - 3 \ge 12$$도 만들 수 있으므로 거기에 4원 한 장을 더한다.
 3. *기저가 넷인 이유:* 귀납 단계가 네 칸 앞($$n - 3$$)을 쓰기 때문이다. 기저가 12 하나뿐이면 13, 14, 15는 가정할 칸이 없다.
+
+```mermaid
+flowchart LR
+  b12["12: 기저"] -->|"+4"| n16["16"] -->|"+4"| n20["20"]
+  b13["13: 기저"] -->|"+4"| n17["17"] -->|"+4"| n21["21"]
+  b14["14: 기저"] -->|"+4"| n18["18"] -->|"+4"| n22["22"]
+  b15["15: 기저"] -->|"+4"| n19["19"] -->|"+4"| n23["23"]
+```
+
+줄마다 4원 한 장씩 더하며 오른쪽으로 간다. 네 줄은 서로 섞이지 않아서, 줄마다 출발점이 되는 기저가 하나씩 있어야 한다[^s1].
 
 연습: [귀납법 증명 예제 사다리](/Hongs_Blog/studies/discrete-math/induction-ladder/)
 
@@ -192,4 +202,5 @@ $$m$$이 반례 중 가장 작은 수이고 $$m - 1 \ge b$$이므로, $$m - 1$$�
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 5장 "Induction"(보통 귀납법, 강한 귀납법, 우표 문제). Rosen, *Discrete Mathematics and Its Applications* 7판, 5장.
 [^2]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 2장 "The Well Ordering Principle"
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 우표 강한 귀납법(귀납 단계가 네 칸 앞을 쓴다)을 그렸다.
 {% endraw %}

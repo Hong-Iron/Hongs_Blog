@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Tic Disorders", "틱", "tic", "투렛장애", "Tourette's Disorder", "지속성 틱장애", "Persistent Tic Disorder", "일시성 틱장애", "Provisional Tic Disorder", "운동틱", "motor tic", "음성틱", "vocal tic", "단순틱", "복합틱", "전조 감각", "premonitory urge", "포괄적 행동 개입", "CBIT"]
 description: "눈 깜빡임, 어깨 들썩임, 킁킁거림, 헛기침처럼 갑작스럽고 빠른 동작이나 소리가 리듬 없이 되풀이되는 장애다. 틱 직전에 간질간질하거나 답답한 느낌(전조 감각)이 오고 틱을 하면 풀리므로, 완전히 저절로 일어나는 것만은 아니다. 대개 4~6세에 시작해 10~12세에 가장 심하고 점…"
@@ -18,7 +18,7 @@ prev_title: "상동증적 운동장애"
 next_url: "/studies/abnormal-psychology/tic-vs-stereotypic/"
 next_title: "틱장애와 상동증적 운동장애 비교"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/tic-disorders/"
 ---
@@ -52,6 +52,17 @@ permalink: "/studies/abnormal-psychology/tic-disorders/"
 | 일시성 틱장애 | 운동 틱이나 음성 틱 | 1년 미만 |
 
 - 18세 이전에 발병해야 한다.
+
+```mermaid
+flowchart TD
+    A{"18세 이전에 발병했는가"} -->|"예"| B{"틱이 1년 이상 이어졌는가"}
+    B -->|"아니오"| T["일시성 틱장애"]
+    B -->|"예"| C{"여러 운동 틱과 하나 이상의 음성 틱이 있는가"}
+    C -->|"예"| TS["투렛장애"]
+    C -->|"아니오, 한 종류만"| P["지속성 틱장애"]
+```
+
+더 심한 진단의 기준을 채우면 그 진단을 내리므로, 1년 넘게 이어진 틱은 투렛장애부터 확인한다[^s2].
 
 ## 임상적 특징[^2]
 
@@ -107,4 +118,5 @@ permalink: "/studies/abnormal-psychology/tic-disorders/"
 [^3]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.57
 [^4]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.58
 [^s1]: 에이전트 보충. JY의 사례는 투렛장애의 특징을 보이려고 만든 가상 사례다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '정의'의 위계적 구조와 세 진단 표(p.54)를 순서도로 옮겼다.
 {% endraw %}

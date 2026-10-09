@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Paths and Connectivity", "보행", "walk", "트레일", "trail", "경로", "path", "사이클", "cycle", "연결 그래프", "connected graph", "연결 성분", "connected component", "도달 가능성", "reachability", "너비 우선 탐색", "BFS", "breadth-first search", "깊이 우선 탐색", "DFS", "depth-first search", "강연결 성분", "strongly connected component"]
 description: "그래프에서 간선을 따라 한 정점에서 다른 정점으로 갈 수 있는지, 가장 적게 몇 번 건너면 되는지를 묻는다. 서로 오갈 수 있는 정점끼리 묶으면 그래프가 섬(연결 성분)들로 깔끔하게 나뉜다. 너비 우선 탐색(BFS)은 가까운 곳부터 넓혀 가며 최단 거리를, 깊이 우선 탐색(DFS)…"
@@ -18,7 +18,7 @@ prev_title: "그래프의 기초"
 next_url: "/studies/discrete-math/euler-hamilton/"
 next_title: "오일러 경로와 해밀턴 경로"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/connectivity/"
 ---
@@ -45,6 +45,18 @@ permalink: "/studies/discrete-math/connectivity/"
 | 5 | 없음 | [] |
 
 1에서 5까지 최단 거리는 3이다(1–2–4–5). 6과 7은 끝내 닿지 않는다. 그래프가 $$\{1, \dots, 5\}$$와 $$\{6, 7\}$$ 두 섬으로 나뉜다. 거리가 아래 정의의 경로 길이, 섬이 연결 성분이다.
+
+```mermaid
+flowchart LR
+  v1(("1")) --- v2(("2"))
+  v1 --- v3(("3"))
+  v2 --- v4(("4"))
+  v3 --- v4
+  v4 --- v5(("5"))
+  v6(("6")) --- v7(("7"))
+```
+
+1–2–4와 1–3–4 두 길이 모두 간선 2개로 4에 닿는다. 6–7은 나머지와 이어진 간선이 없어 따로 떨어진 섬이다[^s2].
 
 ## 정의
 
@@ -146,4 +158,5 @@ permalink: "/studies/discrete-math/connectivity/"
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장(방향 그래프의 보행과 경로), 12장(단순 그래프의 연결성).
 [^2]: Cormen et al., *Introduction to Algorithms* 3판, 22.2절 "Breadth-first search"(최단 거리의 정확성), 22.3절 "Depth-first search".
 [^s1]: 에이전트 보충. $$A^k$$와 보행 수의 관계는 33_connectivity_verify.py에서 작은 그래프의 모든 보행을 세어 확인했고, 선형대수학에서 다시 다룬다. 쓰레기 수집기의 표시–청소(mark-and-sweep) 방식은 운영체제·언어 구현 교재의 표준 내용이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 정점 1~7과 간선 여섯 개를 그렸다.
 {% endraw %}

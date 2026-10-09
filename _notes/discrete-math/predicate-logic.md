@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Predicate Logic", "Quantifiers", "술어", "predicate", "전칭 한정기호", "universal quantifier", "존재 한정기호", "existential quantifier", "∀", "∃", "정의역", "domain of discourse", "중첩 한정기호", "nested quantifiers", "1차 논리", "first-order logic"]
 description: "\"x는 짝수다\"처럼 변수가 들어가 값에 따라 참·거짓이 바뀌는 문장을 술어라 하고, \"모든 x에 대해\"(∀)와 \"어떤 x가 있어\"(∃)로 변수를 묶어 명제로 만든다. 알고리즘의 명세, 데이터베이스 질의, 수학의 정의가 모두 이 말로 쓰인다. 부정할 때는 \"모든\"과 \"어떤\"이 서로 …"
@@ -18,7 +18,7 @@ prev_title: "논리적 동치와 정규형"
 next_url: "/studies/discrete-math/proof-methods/"
 next_title: "추론 규칙과 증명 방법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/predicate-logic/"
 ---
@@ -39,6 +39,15 @@ permalink: "/studies/discrete-math/predicate-logic/"
 |---|---|---|
 | 모든 사람에게 좋아하는 사람이 있다 | $$\forall x\, \exists y\, L(x, y)$$ | 참. 가→나, 나→다, 다→가 |
 | 모두가 좋아하는 한 사람이 있다 | $$\exists y\, \forall x\, L(x, y)$$ | 거짓. 셋 모두에게 사랑받는 사람이 없다 |
+
+```mermaid
+flowchart LR
+  G["가"] -->|"좋아함"| N["나"]
+  N -->|"좋아함"| D["다"]
+  D -->|"좋아함"| G
+```
+
+화살표 하나가 참인 $$L(x, y)$$ 하나다. 모든 사람에게서 화살표가 하나씩 나가지만, 세 사람 모두에게서 화살표를 받는 사람은 없다[^s1].
 
 첫째는 $$x$$마다 **다른** $$y$$를 골라도 되고, 둘째는 **하나의** $$y$$가 모든 $$x$$에 통해야 한다. 한정기호의 순서가 "누가 먼저 고르는가"를 정한다.
 
@@ -197,4 +206,5 @@ $$\neg\forall x\, P(x) \equiv \exists x\, \neg P(x), \qquad \neg\exists x\, P(x)
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 3장 "Logical Formulas"(술어 식). Rosen, *Discrete Mathematics and Its Applications* 7판, 1장(술어와 한정기호, 중첩 한정기호).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 세 사람과 좋아함 관계를 화살표로 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "근 찾기 방법 비교"
 next_url: "/studies/numerical-analysis/runge-kutta/"
 next_title: "룽게-쿠타 방법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/taylor-method/"
 ---
@@ -71,6 +71,20 @@ $$y(x_i + h) = y(x_i) + hT_k(x_i, y_i), \qquad T_k(x_i, y_i) = f(x_i, y_i) + \fr
 
 $$k = 1$$이면 오일러 방법과 같다[^4].
 
+```mermaid
+flowchart LR
+    F0["f"] -->|"전미분"| F1["f'"]
+    F1 -->|"전미분"| F2["f''"]
+    F2 -->|"전미분"| F3["f'''"]
+    F0 --> T["T_k: h의 거듭제곱을 곱하고 계승으로 나눠 더하기"]
+    F1 --> T
+    F2 --> T
+    F3 --> T
+    T --> Y["y_i+1 = y_i + h T_k"]
+```
+
+$$k = 4$$이면 $$f$$를 전미분하는 사슬을 세 번 지나야 $$T_4$$를 만든다. 한 번 지날 때마다 $$\frac{\partial f}{\partial x} + f\frac{\partial f}{\partial y}$$ 꼴의 계산이 붙어 식이 길어진다[^s3].
+
 한 걸음에서 버린 첫 항이 $$h^{k+1}$$에 비례하므로 한 걸음 오차(국소 절단 오차)는 $$h^{k+1}$$ 차수다. 구간 끝까지 $$\frac{1}{h}$$걸음을 가며 쌓이면 전역 오차는 $$h^k$$ 차수다. 그래서 $$h$$를 반으로 줄이면 오차가 $$2^k$$분의 1이 된다[^s1].
 
 ## 활용
@@ -116,4 +130,5 @@ $$k = 1$$이면 오일러 방법과 같다[^4].
 [^4]: 같은 자료, p.7
 [^s1]: 에이전트 보충. 예시 문제와 오차 표, 전미분의 연쇄 법칙 식, 국소·전역 오차 차수, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [33_taylor-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 오차 $$2.5 \times 10^{-1}$$, $$8.4 \times 10^{-3}$$, $$2.1 \times 10^{-4}$$, $$4.2 \times 10^{-6}$$, $$h$$를 반으로 하면 오차가 약 $$2^k$$분의 1.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 $$y^{(n)} = f^{(n-1)}$$, 전미분, $$T_k$$ 식(원본 18.na18_diff_eq.pdf p.6~7)으로 그렸다.
 {% endraw %}

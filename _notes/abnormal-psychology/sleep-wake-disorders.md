@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sleep-Wake Disorders", "수면장애", "sleep disorders", "수면-각성 장애"]
 description: "잠의 양이나 질, 잠드는 시간대가 흐트러져 낮 동안 괴롭고 생활에 지장이 생기는 장애들이다. 잠을 못 자는 쪽(불면), 너무 졸린 쪽(과다수면, 기면증), 잠자는 동안 숨이 막히는 쪽(호흡관련), 몸의 시계가 어긋난 쪽(일주기 리듬), 잠자는 동안 이상 행동을 하는 쪽(사건수면)으…"
@@ -18,7 +18,7 @@ prev_title: "수면과 수면 단계"
 next_url: "/studies/abnormal-psychology/insomnia-disorder/"
 next_title: "불면장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/sleep-wake-disorders/"
 ---
@@ -62,6 +62,23 @@ permalink: "/studies/abnormal-psychology/sleep-wake-disorders/"
 
 표의 "REM 수면 행동장애"를 슬라이드는 "REM수면 각성장애"로 적는다. 이름 문제는 [사건수면](/Hongs_Blog/studies/abnormal-psychology/parasomnias/)에 적었다[^s2].
 
+```mermaid
+flowchart TD
+    S["수면-각성장애"] --> A["못 자는 쪽: 불면장애"]
+    S --> B["너무 졸린 쪽"]
+    S --> C["숨이 막히는 쪽: 호흡관련 수면장애"]
+    S --> D["몸의 시계가 어긋난 쪽: 일주기 리듬 수면-각성장애"]
+    S --> E["자는 동안 이상 행동: 사건수면"]
+    S --> F["하지불안 증후군"]
+    B --> B1["과다수면장애"]
+    B --> B2["기면증"]
+    E --> E1["NREM 수면 각성장애"]
+    E --> E2["악몽장애"]
+    E --> E3["REM 수면 행동장애"]
+```
+
+표의 아홉 행은 요약의 다섯 갈래와 하지불안 증후군으로 묶인다. 너무 졸린 쪽에 둘, 이상 행동 쪽에 셋이 들어간다[^s3].
+
 ## 연결
 
 - 바탕이 되는 수면 생리: [수면과 수면 단계](/Hongs_Blog/studies/abnormal-psychology/sleep-stages/)
@@ -86,4 +103,5 @@ permalink: "/studies/abnormal-psychology/sleep-wake-disorders/"
 [^1]: 4-1학기/이상 심리학/1.수업자료/08.급식 및 섭식장애, 수면-각성장애.pdf, p.55
 [^s1]: 에이전트 보충. 여섯 호소는 유형을 가르려고 만든 가상 예다.
 [^s2]: 에이전트 보충. DSM-5-TR의 이름은 "REM 수면 행동장애(REM Sleep Behavior Disorder)"다. 슬라이드 p.55와 p.77은 "REM수면 각성장애"로 적는다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 요약의 다섯 갈래와 '정의'의 유형 표(p.55)를 묶어 그렸다.
 {% endraw %}

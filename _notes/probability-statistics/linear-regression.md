@@ -18,7 +18,7 @@ prev_title: "베이즈 추론과 MAP"
 next_url: "/studies/probability-statistics/overfitting-cv/"
 next_title: "과적합과 교차검증"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/linear-regression/"
 ---
@@ -108,6 +108,16 @@ $$y_i = \mathbf{x}_i^\top\boldsymbol\beta + \varepsilon_i,\qquad \varepsilon_i \
 - **특징의 효과 읽기.** 다른 입력을 고정한 조건에서의 효과를 계수로 읽는다. 무작위 실험이 아니면 인과로 읽지 않는다.
 - **더 복잡한 모델의 출발점.** 입력을 $$x, x^2, \dots$$로 바꾸면 다항 회귀, 결과를 로지스틱 함수로 감싸면 로지스틱 회귀, 여러 층으로 쌓으면 신경망이다. 입력을 늘릴수록 [과적합](/Hongs_Blog/studies/probability-statistics/overfitting-cv/)에 주의한다.
 
+```mermaid
+flowchart TD
+    L["선형회귀"] -->|"입력을 x, x², …로 바꿈"| P["다항 회귀"]
+    L -->|"결과를 로지스틱 함수로 감쌈"| G["로지스틱 회귀"]
+    L -->|"여러 층으로 쌓음"| N["신경망"]
+    L -->|"가중치에 정규 사전분포"| R["릿지 회귀 = MAP"]
+```
+
+선형회귀 한 칸에서 무엇을 바꾸느냐에 따라 네 모델로 갈라진다.[^s3]
+
 ## 연결
 
 - 선수: [최대가능도 추정](/Hongs_Blog/studies/probability-statistics/mle/), [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/), [최소제곱법](/Hongs_Blog/studies/linear-algebra/least-squares/)(기하적으로는 직교 사영)
@@ -141,4 +151,5 @@ $$y_i = \mathbf{x}_i^\top\boldsymbol\beta + \varepsilon_i,\qquad \varepsilon_i \
 
 [^1]: Wasserman, *All of Statistics*, "Linear and Logistic Regression" 장(모델, 최소제곱과 최대가능도, 추정량의 분산, $$R^2$$). Strang, *Introduction to Linear Algebra* 5판, 4.3절 "Least Squares Approximations"(정규방정식).
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [34_linear-regression_plot.py](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_plot/)로 그렸고, 그림에 쓴 값($$\hat y = 0.05 + 1.99x$$, RSS 0.107, $$R^2 = 0.997$$, U자 잔차의 부호, 기울기 2와 $$-1.76$$)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 활용 절의 세 확장과 [베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)의 예제(MAP = 릿지 회귀)를 모아 그렸다.
 {% endraw %}

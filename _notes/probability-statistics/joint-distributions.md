@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Joint Distribution", "결합분포", "결합확률밀도", "joint density", "주변분포", "marginal distribution", "조건부 분포", "conditional distribution", "조건부 기댓값", "conditional expectation", "아담의 법칙", "Adam's law", "전체 기댓값의 법칙", "law of total expectation", "이브의 법칙", "Eve's law", "전체 분산의 법칙", "law of total variance"]
 description: "두 확률변수를 따로가 아니라 함께 보는 표가 결합분포다. 한쪽만 보고 싶으면 다른 쪽을 모두 더해 없애고(주변분포), 한쪽 값을 알 때 다른 쪽을 보려면 그 줄만 잘라 합이 1이 되게 다시 맞춘다(조건부 분포). 조건부 기댓값은 \"이것을 알 때 저것의 가장 좋은 예측\"이고, 그룹별…"
@@ -18,7 +18,7 @@ prev_title: "정규분포"
 next_url: "/studies/probability-statistics/covariance/"
 next_title: "공분산과 상관계수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/probability-statistics/joint-distributions/"
 ---
@@ -73,6 +73,17 @@ permalink: "/studies/probability-statistics/joint-distributions/"
 이브의 법칙은 전체 흔들림을 "그룹 안의 흔들림의 평균"과 "그룹 평균끼리의 흔들림"으로 나눈다.
 
 **설계 이유.** 조건부 분포를 $$p_X(x)$$로 나누는 것은 [조건부 확률](/Hongs_Blog/studies/probability-statistics/conditional-probability/)과 같은 이유다. 한 줄만 남기고 나머지를 버린 뒤 합을 1로 맞춘다. $$\mathbb{E}[Y \mid X]$$를 수가 아닌 확률변수로 두는 이유는, $$X$$가 무엇이 나오느냐에 따라 예측값이 달라지기 때문이다. 이렇게 두면 아담의 법칙을 "예측값의 평균 = 실제 평균"이라는 한 줄로 쓸 수 있다.
+
+```mermaid
+flowchart LR
+    J["결합분포 p(x, y)"] -->|"y를 모두 더함"| M["주변분포 p_X(x): 그룹 크기"]
+    J -->|"X = x인 줄만 남기고 p_X(x)로 나눔"| C["X = x일 때 Y의 조건부 분포"]
+    C -->|"Y로 평균"| CE["그룹 평균: X = x일 때 Y의 평균"]
+    CE -->|"그룹 크기로 가중평균: 아담의 법칙"| EY["전체 평균 E[Y]"]
+    M --> EY
+```
+
+결합분포 하나에서 두 갈래가 나온다. 아래 갈래로 그룹마다 평균을 낸 뒤, 위 갈래의 그룹 크기로 다시 묶으면 전체 평균으로 돌아온다.[^s1]
 
 **해당하는 예와 해당하지 않는 예.**
 
@@ -198,4 +209,5 @@ $$\sum_x p(x, y)$$는 $$Y = y$$인 칸을 모든 $$x$$에 대해 더한 것, 곧
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.1절 "Joint, marginal, and conditional", 7.2절 "2D LOTUS", 9.1~9.3절(조건부 기댓값과 그 성질, 아담의 법칙), 9.4절(조건부 기댓값은 제곱오차를 가장 작게 하는 예측), 9.5절 "Conditional variance"(이브의 법칙).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의(주변분포, 조건부 분포, 조건부 기댓값)와 아담의 법칙의 증명 순서를 그렸다.
 {% endraw %}

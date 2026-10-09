@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Protocol", "통신 규약", "프로토콜 개체", "protocol object", "프로토콜 계층", "서비스 인터페이스", "service interface", "동료 인터페이스", "peer-to-peer interface", "동료", "peer"]
 description: "프로토콜은 통신하는 양쪽이 미리 맞춰 둔 약속이다. 두 사람이 같은 언어와 같은 순서로 말해야 대화가 되듯, 보내는 쪽과 받는 쪽이 같은 프로토콜을 써야 한다. 계층 구조에서 프로토콜 하나는 한 층을 맡은 부품이다. 그래서 같은 컴퓨터의 위층에 해 주는 일과, 상대 컴퓨터의 같은 …"
@@ -18,7 +18,7 @@ prev_title: "계층화"
 next_url: "/studies/computer-communication/protocol-graph/"
 next_title: "프로토콜 그래프"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/computer-communication/protocol/"
 ---
@@ -39,6 +39,21 @@ permalink: "/studies/computer-communication/protocol/"
 - **옆(다른 컴퓨터와):** 노트북의 HTTP는 서버의 HTTP에게 `GET /index.html` 같은 정해진 형식의 메시지를 보낸다. 서버는 `200 OK`와 페이지로 답한다. 이 메시지의 형식과 순서가 **동료 인터페이스**다.
 
 슬라이드 그림에서 Host 1과 Host 2의 "Protocol" 상자 사이의 가로선이 동료 인터페이스이고, 각 호스트 안의 세로선이 서비스 인터페이스다[^1]. 이 장면에서 HTTP가 한 층의 프로토콜이고, 브라우저가 그 위의 "high-level object"다. 페이지 내용은 따지지 않고, 누가 누구와 어떤 창구로 말하는지만 본다.
+
+```mermaid
+flowchart LR
+  subgraph H1["노트북"]
+    direction TB
+    B["브라우저"] ---|"서비스 인터페이스"| P1["HTTP"]
+  end
+  subgraph H2["서버"]
+    direction TB
+    W["웹 서버 프로그램"] ---|"서비스 인터페이스"| P2["HTTP"]
+  end
+  P1 <-->|"동료 인터페이스 - GET 요청, 200 OK 응답"| P2
+```
+
+한 컴퓨터 안의 위아래 선이 서비스 인터페이스이고, 두 컴퓨터의 HTTP 사이를 잇는 가로선이 동료 인터페이스다. 브라우저는 가로선에 오가는 메시지의 형식을 몰라도 된다[^s2].
 
 ## 정의
 
@@ -91,4 +106,5 @@ permalink: "/studies/computer-communication/protocol/"
 [^1]: 4-1학기/pasted_images/Pasted image 20260925023614.png — 슬라이드 "프로토콜 계층/개체"
 [^2]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 42~44행, 55~57행
 [^s1]: 에이전트 보충. HTTP, `GET`/`200 OK`, 소켓 함수 예는 원본에 없다. HTTP 메시지 형식은 RFC 9110(2022)에, 소켓 API는 POSIX 표준에 정의되어 있다. 두 인터페이스의 구분은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절과 같다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "프로토콜 계층/개체"의 Host 1·Host 2 그림을 이 문서 '예시로 보기'의 브라우저·HTTP 장면으로 옮겨 그렸다.
 {% endraw %}

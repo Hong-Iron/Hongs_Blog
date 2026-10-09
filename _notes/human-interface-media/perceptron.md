@@ -18,7 +18,7 @@ prev_title: "뉴런의 연산 모형"
 next_url: "/studies/human-interface-media/neuron-convergence/"
 next_title: "뉴런의 수렴"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/human-interface-media/perceptron/"
 ---
@@ -175,6 +175,18 @@ XOR은 $$(0,0) \to 0$$, $$(0,1) \to 1$$, $$(1,0) \to 1$$, $$(1,1) \to 0$$이다.
 | $$h_2$$ | $$(-1, -1)$$ | $$1.5$$ | NAND |
 | $$y$$ | $$(1, 1)$$ (입력 $$h_1, h_2$$) | $$-1.5$$ | AND |
 
+```mermaid
+flowchart LR
+  X1["x1"] -- "1" --> H1["h1: OR, b = -0.5"]
+  X2["x2"] -- "1" --> H1
+  X1 -- "-1" --> H2["h2: NAND, b = 1.5"]
+  X2 -- "-1" --> H2
+  H1 -- "1" --> Y["y: AND, b = -1.5"]
+  H2 -- "1" --> Y
+```
+
+선 위의 숫자가 가중치다. 입력 둘이 첫 층의 두 퍼셉트론에 모두 들어가고, 둘째 층은 첫 층의 두 출력만 받는다[^s8].
+
 첫 층이 입력 공간을 두 직선으로 자르고, 둘째 층이 두 결과를 조합한다. 직선 하나로 못 하는 일을 직선 둘과 그 조합으로 한다. 층 사이의 계단 함수(비선형)가 없으면 두 층이 한 층으로 줄어들어 이 일도 못 한다([뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/)의 증명).
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/08_perceptron_fig1.svg" alt="그림" loading="lazy">
@@ -254,4 +266,5 @@ XOR은 $$(0,0) \to 0$$, $$(0,1) \to 1$$, $$(1,0) \to 1$$, $$(1,1) \to 0$$이다.
 [^s5]: 에이전트 보충. 확률적 경사 하강과의 관계, 역전파, 보편 근사 정리(Cybenko 1989, Hornik 1991)는 머신러닝 교재의 표준 내용이다.
 [^s6]: 에이전트 보충. 연표와 NAND의 완전성은 인공지능·디지털 논리 교재의 표준 내용이다.
 [^s7]: 에이전트 보충. 그림 1장은 원본에 없다. [08_perceptron_plot.py](/Hongs_Blog/studies/human-interface-media/code/08_perceptron_plot/)로 그렸고, 그림에 쓴 값(두 층 XOR이 네 점을 모두 맞히고, 출력 1인 점이 $$0.5 < x_1 + x_2 < 1.5$$인 띠 안에만 있음)을 같은 코드로 확인했다.
+[^s8]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예제의 두 층 XOR 표(가중치와 바이어스)를 그대로 옮겨 그렸다.
 {% endraw %}

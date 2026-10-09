@@ -18,7 +18,7 @@ prev_title: "단위 계단 응답"
 next_url: "/studies/signals-and-systems/difference-equation-system/"
 next_title: "차분방정식으로 표현한 LTI 시스템"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/lccde-system/"
 ---
@@ -65,6 +65,18 @@ $$t \le t_0 \text{에서 } x(t) = 0 \;\Rightarrow\; t \le t_0 \text{에서 } y(t
 
 
 그러면 $$t > t_0$$의 출력은 초기 조건 $$y(t_0) = \frac{dy(t_0)}{dt} = \cdots = \frac{d^{N-1}y(t_0)}{dt^{N-1}} = 0$$으로 풀면 된다. 초기 휴지 조건과 함께라면 이 미분방정식은 인과적인 LTI 시스템이다[^4]. 언제 실험하든 같은 응답을 기대할 수 있다.
+
+```mermaid
+flowchart TD
+  A["N차 선형 상수계수 미분방정식"] --> B{"N = 0인가?"}
+  B -->|"예"| C["출력이 입력의 식으로 바로 나온다"]
+  B -->|"아니오"| D["y = 자연 응답 + 강제 응답, 보조 조건이 필요하다"]
+  D --> E{"어떤 보조 조건인가?"}
+  E -->|"초기 휴지 조건"| F["인과적인 LTI 시스템"]
+  E -->|"0이 아닌 다른 초기값"| G["LTI가 아닐 수 있다"]
+```
+
+차수 $$N$$이 1 이상이면 식만으로는 출력이 하나로 정해지지 않는다. 어떤 보조 조건을 붙이느냐에 따라 시스템의 성질이 갈린다.[^s3]
 
 **$$e^{st}$$를 쓰는 이유.**[^5] 미분해도 $$\frac{d}{dt}e^{st} = se^{st}$$로 모양이 유지된다. $$s = \sigma + j\omega$$의 $$\sigma$$는 성장($$\sigma > 0$$)·감쇠($$\sigma < 0$$)를, $$\omega$$는 진동을 정한다. 특성방정식 $$s^2 + 3s + 2 = 0$$의 근이 $$-1, -2$$이면 자연 응답 $$e^{-t}, e^{-2t}$$가 모두 줄어들어 시스템이 안정하다.
 
@@ -193,4 +205,5 @@ $$t \le t_0 \text{에서 } x(t) = 0 \;\Rightarrow\; t \le t_0 \text{에서 } y(t
 [^8]: 같은 자료, p.20
 [^s1]: 에이전트 보충. 오해 항목의 반례와 확인 문제는 원본에 없다. 해는 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [23_lccde-system_plot.py](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$y = \frac12(1 - e^{-2t})$$가 식과 $$y(0) = 0$$을 만족하고 오일러 방법과 같음.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 차수별 설명, 해의 구조, 초기 휴지 조건 절(6주차 자료 p.22, p.25~26)과 요약을 근거로 그렸다.
 {% endraw %}

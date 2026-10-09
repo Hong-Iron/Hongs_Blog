@@ -18,7 +18,7 @@ prev_title: "푸리에 변환의 쌍대성"
 next_url: "/studies/signals-and-systems/multiplication-modulation/"
 next_title: "곱셈 성질과 진폭 변조"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/convolution-property/"
 ---
@@ -39,6 +39,16 @@ $$h(t) = e^{-at}u(t)$$인 시스템에 $$x(t) = e^{-bt}u(t)$$를 넣는다($$a, 
 2. *곱하기:* $$Y = \dfrac{1}{(a + j\omega)(b + j\omega)}$$.
 3. *부분 분수($$a \ne b$$):* $$Y = \dfrac{A}{a + j\omega} + \dfrac{B}{b + j\omega}$$로 두고 분자를 맞추면 $$A + B = 0$$, $$Ab + Ba = 1$$이라 $$A = \frac{1}{b - a} = -B$$.
 4. *역변환:* $$y(t) = \dfrac{1}{b - a}\left[e^{-at} - e^{-bt}\right]u(t)$$.
+
+```mermaid
+flowchart LR
+  X["x(t), h(t)"] -->|"컨벌루션 적분"| Y["y(t)"]
+  X -->|"푸리에 변환"| XF["X(jω), H(jω)"]
+  XF -->|"곱하기"| YF["Y = HX"]
+  YF -->|"부분 분수 후 역변환"| Y
+```
+
+같은 $$y(t)$$로 가는 두 길이다. 주파수 영역 길은 걸음이 셋이지만, 적분 대신 곱셈을 쓴다.[^s3]
 
 시간 영역 컨벌루션 $$\int_0^te^{-b\tau}e^{-a(t-\tau)}d\tau$$를 직접 해도 같은 답이 나온다.
 
@@ -197,4 +207,5 @@ $$h(t - \tau)$$는 $$h$$를 $$\tau$$만큼 늦춘 신호이고, 시간 이동 �
 [^10]: 같은 자료, p.14 (예제 4.20)
 [^s1]: 에이전트 보충. FFT 활용, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [42_convolution-property_plot.py](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 수치 컨벌루션과 $$(e^{-t} - e^{-2t})u(t)$$가 같음, 이상적 필터의 $$h(-0.4) \approx 0.74$$.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 네 단계(예제 4.19, 15주차 자료 p.12)와 정리(p.4)를 근거로 그렸다.
 {% endraw %}

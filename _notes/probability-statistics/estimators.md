@@ -18,7 +18,7 @@ prev_title: "기술통계"
 next_url: "/studies/probability-statistics/mle/"
 next_title: "최대가능도 추정"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/estimators/"
 ---
@@ -50,6 +50,17 @@ permalink: "/studies/probability-statistics/estimators/"
 
 </div>
 
+
+```mermaid
+flowchart LR
+    P["모집단: 모수 θ"] -->|"뽑기"| S["표본 X1, …, Xn"]
+    S -->|"규칙 g"| E["추정값 θ̂ 하나"]
+    E -.->|"뽑기를 되풀이"| D["표본분포: θ̂ 값들의 분포"]
+    D --> B["편향: 평균이 θ에서 비낀 정도"]
+    D --> V["표준오차: 흩어진 정도"]
+```
+
+표본 한 번은 추정값 하나만 준다. 점선처럼 뽑기를 되풀이해야 표본분포가 보이고, 편향과 표준오차는 그 분포에서 읽는다.[^s3]
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">편향-분산 분해</div>
@@ -139,4 +150,5 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 [^1]: Wasserman, *All of Statistics*, "Models, Statistical Inference and Learning" 장(점추정, 편향, 표준오차, MSE의 편향-분산 분해, 일치성). Blitzstein, Hwang, *Introduction to Probability* 2판, 6.3절 "Sample moments"(표본분산의 기댓값).
 [^s1]: 에이전트 보충. 정규분포에서 $$\operatorname{Var}(S^2_{n-1}) = \frac{2\sigma^4}{n - 1}$$은 $$\frac{(n-1)S^2}{\sigma^2}$$이 자유도 $$n - 1$$인 카이제곱분포를 따른다는 데서 나온다(Blitzstein·Hwang 10.4절). 두 MSE는 29_estimators_verify.py로 확인했다.
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [29_estimators_plot.py](/Hongs_Blog/studies/probability-statistics/code/29_estimators_plot/)로 그렸고, 그림에 쓴 값(모의실험 20만 회의 평균 1과 0.8, MSE 0.50과 0.36)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시(주사위 4번의 평균을 10만 번 되풀이)와 정의를 순서대로 그렸다.
 {% endraw %}

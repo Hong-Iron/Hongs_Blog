@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Memory Partitioning", "고정 분할", "Fixed Partitioning", "동적 분할", "Dynamic Partitioning", "내부 단편화", "Internal Fragmentation", "외부 단편화", "External Fragmentation", "압축", "Compaction", "최적 적합", "Best-fit", "최초 적합", "First-fit", "다음 적합", "Next-fit", "배치 알고리즘", "Placement Algorithm"]
 description: "메모리를 프로세스들에게 나눠 주는 가장 단순한 방법은 덩어리로 자르는 것이다. 미리 정해진 크기로 잘라 두면(고정 분할) 단순하지만, 작은 프로그램도 큰 칸 하나를 다 차지해 칸 안에 빈 공간이 생긴다(내부 단편화). 필요한 만큼 딱 잘라 주면(동적 분할) 칸 안 낭비는 없지만, …"
@@ -43,6 +43,17 @@ permalink: "/studies/operating-systems/memory-partitioning/"
 | f | P4(128K)를 P2 자리에 넣음 | P1 320 · P4 128 · 빈칸 96 · P3 288 · 빈칸 64 |
 | g | P1을 내보냄 | 빈칸 320 · P4 128 · 빈칸 96 · P3 288 · 빈칸 64 |
 | h | P2(224K)를 P1 자리에 다시 넣음 | P2 224 · 빈칸 96 · P4 128 · 빈칸 96 · P3 288 · 빈칸 64 |
+
+```
+ 한 글자 = 16K, 점(.)으로 채운 칸 = 빈칸, 숫자 = 크기(K)
+(d) |OS 128 |P1 320             |P2 224       |P3 288           |64.|
+(e) |OS 128 |P1 320             |224..........|P3 288           |64.|
+(f) |OS 128 |P1 320             |P4 128 |96...|P3 288           |64.|
+(g) |OS 128 |320................|P4 128 |96...|P3 288           |64.|
+(h) |OS 128 |P2 224       |96...|P4 128 |96...|P3 288           |64.|
+```
+
+칸 길이는 크기에 비례한다. 프로세스가 빠진 자리에 더 작은 프로세스가 들어갈 때마다 남는 조각이 생기고, (h)에서는 빈칸 세 개가 서로 떨어져 있다[^s2].
 
 마지막에 빈칸은 96 + 96 + 64 = 256 K나 되지만, 가장 큰 덩어리가 96 K라서 128 K짜리 프로세스도 못 들어간다. 이것이 외부 단편화다.
 
@@ -179,4 +190,5 @@ permalink: "/studies/operating-systems/memory-partitioning/"
 [^9]: 같은 자료, p.20~22
 [^10]: 같은 자료, p.23 (그림 7.5)
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 압축에 재배치가 필요하다는 설명, malloc·가비지 컬렉터 연결, 확인 문제는 Stallings 6판 7.2절을 바탕으로 보탰다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기" 표의 (d)~(h) 단계(p.17~19, 그림 7.4)를 크기에 비례한 메모리 막대로 옮겼다.
 {% endraw %}

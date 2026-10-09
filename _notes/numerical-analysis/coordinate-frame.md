@@ -18,7 +18,7 @@ prev_title: "법선 벡터의 변환"
 next_url: "/studies/numerical-analysis/reflection/"
 next_title: "반사와 반전"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/numerical-analysis/coordinate-frame/"
 ---
@@ -62,6 +62,21 @@ $$X' = R^{-1}T^{-1}X, \qquad R^{-1} = \begin{pmatrix}u_x & u_y & u_z & 0\\ v_x &
 
 $$R$$은 열에 $$U, V, N$$을 놓은 회전 행렬이다. 직교 행렬이라 역행렬은 전치, 곧 행에 $$U, V, N$$을 놓은 것이다. 그래서 $$R^{-1}$$을 곱하는 것은 축마다 내적하는 것이다: $$X' = (U\cdot(X - X_0),\ V\cdot(X - X_0),\ N\cdot(X - X_0))$$[^s1].
 
+```mermaid
+flowchart LR
+    O["원점 X0"] --> TI["T⁻¹: 마지막 열에 -X0"]
+    U["축 U"] --> N["N = U×V 정규화"]
+    V["축 V"] --> N
+    U --> RI["R⁻¹: 행에 U, V, N"]
+    V --> RI
+    N --> RI
+    W["월드 좌표 X"] --> TI
+    TI -->|"X - X0"| RI
+    RI --> C["새 좌표 X'"]
+```
+
+원점과 두 축으로 두 행렬을 만든다. 월드 좌표 $$X$$는 $$T^{-1}$$을 먼저, $$R^{-1}$$을 나중에 지나 새 좌표가 된다[^s2].
+
 ## 활용
 
 - 그래픽스의 뷰 행렬(카메라 행렬)이 바로 이 $$R^{-1}T^{-1}$$이다. OpenGL의 `gluLookAt`는 카메라 위치와 바라보는 점, 위쪽 방향으로 $$U, V, N$$을 외적으로 만들어 이 행렬을 짠다[^s1].
@@ -104,4 +119,5 @@ $$R$$은 열에 $$U, V, N$$을 놓은 회전 행렬이다. 직교 행렬이라 �
 [^4]: 같은 자료, p.11~12
 [^5]: 같은 자료, p.13
 [^s1]: 에이전트 보충. 카메라 예시, 내적으로 읽는 법, gluLookAt, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 $$N = U \times V$$, $$X' = R^{-1}T^{-1}X$$와 두 행렬(원본 05.na05_ortho.pdf p.10~13)로 그렸다.
 {% endraw %}

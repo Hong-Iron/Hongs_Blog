@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Exposure Therapy", "노출치료", "노출법", "체계적 둔감법", "systematic desensitization", "울페", "Wolpe", "상호억제", "reciprocal inhibition", "불안 위계", "fear hierarchy", "주관적 불편감 척도", "SUDS", "실제적 노출", "in vivo exposure", "상상적 노출", "imaginal exposure", "점진적 노출", "graded exposure", "홍수법", "flooding", "내부감각수용 노출", "interoceptive exposure", "안전행동", "safety behavior", "습관화", "habituation"]
 description: "두려워 피하던 대상을 일부러, 반복해서 마주하게 하는 치료다. 차가운 바닷물에 발부터 조금씩 담그면 결국 몸이 물에 익숙해지는 것과 같다. 마주한 채 버티면 \"아무 일도 일어나지 않는다\"는 것을 몸으로 배워, 피할수록 굳어지던 공포의 고리가 끊긴다. 공포증에 가장 효과적인 치료지만…"
@@ -18,7 +18,7 @@ prev_title: "모러의 2요인 이론"
 next_url: "/studies/abnormal-psychology/social-anxiety-disorder/"
 next_title: "사회불안장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/exposure-therapy/"
 ---
@@ -49,6 +49,21 @@ permalink: "/studies/abnormal-psychology/exposure-therapy/"
 
 {: start="3"}
 3. **단계별 노출:** 이완한 상태로 1단계부터 마주한다. 불안이 충분히 가라앉을 때까지 머문 뒤 다음 단계로 간다.
+
+```mermaid
+flowchart TD
+  R["이완 훈련"] --> H["불안 위계 만들기"]
+  H --> S["가장 낮은 단계부터 시작"]
+  S --> E["이완한 채 그 장면을 마주한다"]
+  E --> Q{"불안이 충분히 가라앉았나"}
+  Q -- "아니오" --> E
+  Q -- "예" --> L{"마지막 단계인가"}
+  L -- "아니오" --> N["다음 단계로"]
+  N --> E
+  L -- "예" --> D["끝"]
+```
+
+두 개의 되돌이 고리를 본다. 불안이 가라앉기 전에는 같은 단계에 머물고, 가라앉아야 한 칸 올라간다[^s4].
 
 4주 뒤 CB는 혼자 10층까지 올라갔다. 엘리베이터는 그대로인데, 엘리베이터와 공포의 짝이 풀렸다.
 
@@ -172,4 +187,5 @@ permalink: "/studies/abnormal-psychology/exposure-therapy/"
 [^s1]: 에이전트 보충. CB의 불안 위계는 가상 예다. 0~100의 주관적 불편감 척도(SUDS)는 노출치료에서 쓰는 표준 방식이다.
 [^s2]: 에이전트 보충. 울페의 상호억제 원리와, 노출의 효과를 습관화·소거·예상의 반증으로 설명하는 것은 행동치료 교재의 표준 설명이다.
 [^s3]: 에이전트 보충. 안전행동이 노출의 효과를 줄인다는 것은 불안장애 인지행동치료의 표준 설명이다. 사회불안장애 문서의 클라크와 웰스 모형에도 안전행동이 나온다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 세 단계와 '체계적 둔감법' 절(슬라이드 p.25)을 근거로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["String Parsing", "Regular Expression", "파싱", "정규식", "정규 표현식", "regex", "re", "split", "토큰"]
 description: "글을 읽을 때 띄어쓰기와 문장부호로 단어를 나누듯, 파싱은 긴 문자열을 규칙에 따라 뜻 있는 조각으로 나누는 일이다. 나누는 기호가 정해져 있으면 그 기호로 자르고, 조각의 길이가 들쭉날쭉하면 글자를 하나씩 읽으며 모은다. 모양이 복잡하면 정규 표현식이라는 \"모양 설명서\"로 한 번…"
@@ -18,7 +18,7 @@ prev_title: "정렬과 정렬 기준"
 next_url: "/studies/algorithms/time-conversion/"
 next_title: "시간·날짜 계산"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/string-parsing/"
 ---
@@ -70,6 +70,18 @@ re.findall(r"(\d+)([SDT])([*#]?)", "1S2D*3T")
 ```
 
 `(\d+)([SDT])([*#]?)`는 "숫자 하나 이상, 그다음 S·D·T 중 한 글자, 그다음 `*`나 `#`이 0개나 1개"라는 뜻이다. 괄호로 묶은 세 부분이 따로 꺼내진다.
+
+```mermaid
+stateDiagram-v2
+    [*] --> 숫자: 숫자 한 글자
+    숫자 --> 숫자: 숫자가 또 오면
+    숫자 --> 글자: S, D, T 중 하나
+    글자 --> 기호: * 또는 #
+    글자 --> [*]: 기호 없음
+    기호 --> [*]
+```
+
+한 조각을 읽는 동안 지나는 단계다. 숫자 칸에서 제자리로 도는 화살표가 `\d+`의 "하나 이상"이고, 글자 칸에서 바로 끝으로 가는 화살표가 `[*#]?`의 "0개"다. 한 조각이 끝나면 다음 조각은 다시 처음부터 읽는다[^s1].
 
 ## 정규 표현식 기호
 
@@ -154,4 +166,5 @@ re.sub(r"\.{2,}", ".", "a...b..c")    # 'a.b.c'  점이 두 개 이상 이어지
 
 
 [^1]: Python 3 표준 라이브러리 문서, "re — Regular expression operations"(기호와 `findall`, `sub`, `fullmatch`), 그리고 "Regular Expression HOWTO"(r 문자열을 쓰는 까닭, "The Backslash Plague" 절).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 방법 3의 정규 표현식 `(\d+)([SDT])([*#]?)`과 그 뜻풀이 문장을 상태 전이도로 옮겼다. 정규 표현식과 이런 상태 전이도(유한 오토마타)가 같은 것을 나타낸다는 것은 표준 결과다(Sipser, Introduction to the Theory of Computation, 1.3).
 {% endraw %}

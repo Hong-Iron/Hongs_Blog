@@ -18,7 +18,7 @@ prev_title: "급수의 수렴"
 next_url: "/studies/calculus/partial-derivatives/"
 next_title: "다변수 함수와 편미분"
 math: true
-mermaid: false
+mermaid: true
 code_count: 3
 permalink: "/studies/calculus/taylor-series/"
 ---
@@ -180,6 +180,18 @@ $$0$$과 $$x$$ 사이에서 $$\vert f^{(n+1)}\vert  = e^t \le e^{\vert x\vert } 
 - **2차 근사와 최적화.** 한 점 근처에서 함수를 $$f(a) + f'(a)(x - a) + \frac{f''(a)}{2}(x - a)^2$$로 보고 그 포물선의 꼭짓점으로 가는 것이 최적화의 뉴턴 방법이다([헤세 행렬과 극값 판정](/Hongs_Blog/studies/calculus/hessian/)).
 - **흔한 실수.** 기준점이 0이 아닌데 $$(x - a)^k$$ 대신 $$x^k$$을 쓰는 것. 나머지 한계의 $$M$$을 구간 전체가 아닌 기준점 한 곳에서만 재는 것.
 
+```mermaid
+flowchart LR
+    X["입력 x"] --> S["x = k ln 2 + r로 나눈다. r의 크기는 0.35 이하"]
+    S --> T["e^r을 테일러 급수 15항 정도로 계산한다"]
+    S --> K["정수 k"]
+    T --> M["2^k를 곱한다"]
+    K --> M
+    M --> Y["e^x = 2^k e^r"]
+```
+
+어떤 $$x$$가 들어와도 급수에는 0 근처의 작은 $$r$$만 들어간다. 테일러 다항식이 기준점 가까이에서만 정확하다는 약점을, 입력을 기준점 가까이로 끌어와서 피한다[^s3].
+
 ## 연결
 
 - 선수: [급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/), [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/)
@@ -236,4 +248,5 @@ $$0$$과 $$x$$ 사이에서 $$\vert f^{(n+1)}\vert  = e^t \le e^{\vert x\vert } 
 [^1]: OpenStax, *Calculus Volume 2*, 6.1절 "Power Series and Functions"(수렴 반지름), 6.2절 "Properties of Power Series"(항별 미분, 계수의 유일성), 6.3절 "Taylor and Maclaurin Series"(테일러 정리와 나머지), 6.4절 "Working with Taylor Series".
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [18_taylor-series_plot.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_plot/)로 그렸고, 그림에 쓴 값($$T_5(1) = 2.71667$$, $$x = 1.5$$에서 $$T_{20}$$이 $$T_5$$보다 더 벗어남)을 같은 코드로 확인했다.
 [^s1]: 에이전트 보충. 수학 라이브러리의 범위 줄이기와 최소최대 다항식은 fdlibm 같은 공개 구현의 주석에 설명되어 있다. 수렴 반지름이 가장 가까운 복소 특이점까지의 거리라는 것은 복소해석의 결과로, 이 과목 범위 밖이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 활용 절의 수학 라이브러리 $$e^x$$ 항목과 [18_taylor-series_impl.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_impl/)를 근거로 그렸다.
 {% endraw %}

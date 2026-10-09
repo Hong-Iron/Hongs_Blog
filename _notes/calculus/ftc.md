@@ -18,7 +18,7 @@ prev_title: "정적분과 리만 합"
 next_url: "/studies/calculus/substitution/"
 next_title: "치환적분"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/ftc/"
 ---
@@ -63,6 +63,20 @@ $$\int_0^3 t^2\,dt$$는 $$G(t) = \frac{t^3}{3}$$으로 $$9 - 0 = 9$$다. [리만
 ## 증명
 
 2부는 망원 합과 평균값 정리로, 1부는 차분몫을 좁은 구간의 평균값으로 보는 방법으로 증명한다.
+
+```mermaid
+flowchart TD
+    MV["평균값 정리"] --> P2["2부: 적분 = G(b) − G(a)"]
+    TS["망원 합"] --> P2
+    INT["연속이면 적분 가능"] --> P2
+    MM["최대·최소 정리"] --> P1["1부: F′ = f"]
+    IVT["사잇값 정리"] --> P1
+    CON["f의 연속성"] --> P1
+    P2 --> SUB["치환적분"]
+    P2 --> PARTS["부분적분"]
+```
+
+두 부는 서로 다른 도구로 따로 증명한다. 1부는 최대·최소 정리와 사잇값 정리, 그리고 $$f$$의 연속성을 쓴다. 2부는 평균값 정리와 망원 합을 쓰고, 두 적분 기법이 그 위에 선다[^s3].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
@@ -203,4 +217,5 @@ $$\frac{\sin t}{t}$$의 원시함수는 기본 함수로 쓸 수 없지만, 1부
 [^1]: OpenStax, *Calculus Volume 1*, 4.10절 "Antiderivatives", 5.3절 "The Fundamental Theorem of Calculus"(적분의 평균값 정리, 1부와 2부), 5.4절 "Integration Formulas and the Net Change Theorem".
 [^s1]: 에이전트 보충. 2차원 누적합(합 영역 표, summed-area table)은 비올라–존스 얼굴 검출에서 "integral image"라는 이름으로 쓰였다. 누적합의 $$O(1)$$ 구간 질의와 누적합 예시는 12_ftc_verify.py에서 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [12_ftc_plot.py](/Hongs_Blog/studies/calculus/code/12_ftc_plot/)로 그렸고, 넓이 $$F(2) = \frac83$$(리만 합), $$F'(2) = f(2) = 4$$(수치 미분), $$\int_0^3 t^2\,dt = 9$$를 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 증명 단계(2부의 1~3단계, 1부의 4~6단계)와 연결 절의 두 기법을 근거로 그렸다.
 {% endraw %}

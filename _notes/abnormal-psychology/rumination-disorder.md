@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Rumination Disorder", "반추장애", "되새김 장애", "역류", "regurgitation", "자기 위로", "self-soothing", "자기 자극", "self-stimulation"]
 description: "먹은 음식을 삼킨 뒤 다시 입으로 올려 되씹거나, 다시 삼키거나, 뱉는 일을 한 달 넘게 되풀이하는 장애다. 소가 되새김질하듯 음식을 게워 올리는데, 위장병 때문이 아니다. 아기에게는 스스로를 달래고 자극하는 방법이 되는 경우가 많아, 자극이 부족하거나 방임된 환경이 배경으로 꼽힌…"
@@ -18,7 +18,7 @@ prev_title: "이식증"
 next_url: "/studies/abnormal-psychology/arfid/"
 next_title: "회피적·제한적 음식섭취 장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/rumination-disorder/"
 ---
@@ -53,6 +53,16 @@ DSM-5-TR은 되새김이 다른 섭식장애(신경성 식욕부진증, 신경�
 - 영유아기, 아동기, 청소년기, 성인기 모두에 나타날 수 있다.
 - 유아는 혀를 빠는 동작을 하고, 머리를 뒤로 젖힌 채 등을 활처럼 휘는 특징적 자세를 보인다. 이 행동으로 만족을 얻는다.
 - 되새김은 자기 위로 또는 자기 자극 기능을 한다.
+
+```mermaid
+flowchart LR
+    A["자극의 결여, 방임, 부모-자녀 문제"] --> B["음식을 게워 올려 되씹음"]
+    B --> C["자기 위로와 자기 자극, 만족"]
+    C -->|"다시 되씹게 함"| B
+    B --> D["많이 먹어도 체중 미달과 영양실조"]
+```
+
+모자란 자극을 되새김의 만족이 채우면서 같은 행동이 되풀이된다. 그사이 먹은 영양은 빠져나간다[^s4].
 
 ## 원인과 치료[^2]
 
@@ -90,4 +100,5 @@ DSM-5-TR은 되새김이 다른 섭식장애(신경성 식욕부진증, 신경�
 [^s1]: 에이전트 보충. GK의 사례는 진단기준과 원인을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 되새김장애 기준 C를 보탰다.
 [^s3]: 에이전트 보충. 소거와 차별강화, 정서적 관계 회복의 괄호 안 설명은 슬라이드의 치료 이름을 되새김의 자기 위로 기능에 맞춰 풀었다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '임상적 특징'과 '원인과 치료'의 자기 위로 기능, 원인, 체중 미달(p.43)을 이어 그렸다. 만족이 행동을 되풀이하게 한다는 화살표는 해석이다.
 {% endraw %}

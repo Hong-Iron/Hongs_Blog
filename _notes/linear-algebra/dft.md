@@ -18,7 +18,7 @@ prev_title: "노름과 조건수"
 next_url: "/studies/linear-algebra/decompositions-compared/"
 next_title: "LU·QR·고윳값·SVD 비교"
 math: true
-mermaid: false
+mermaid: true
 code_count: 3
 permalink: "/studies/linear-algebra/dft/"
 ---
@@ -61,6 +61,18 @@ FFT(x)                              # n = 2^m, 인덱스 0부터
       X[k + n/2] ← E[k] − t
   return X
 ```
+
+```mermaid
+flowchart TD
+    A["x₀ x₁ x₂ x₃ x₄ x₅ x₆ x₇"] -->|"짝수 번째"| E["x₀ x₂ x₄ x₆"]
+    A -->|"홀수 번째"| O["x₁ x₃ x₅ x₇"]
+    E -->|"짝수 번째"| EE["x₀ x₄"]
+    E -->|"홀수 번째"| EO["x₂ x₆"]
+    O -->|"짝수 번째"| OE["x₁ x₅"]
+    O -->|"홀수 번째"| OO["x₃ x₇"]
+```
+
+n = 8이면 이렇게 나누고, 맨 아래 두 칸짜리는 한 번 더 나뉘어 길이 1이 된다. 그다음 아래에서 위로 올라오며 E[k] ± t로 합친다. 나누는 층이 log₂ 8 = 3개이고 층마다 n번 정도 계산하므로 n log n이 된다[^s3].
 
 **정확성.** $$X_k = \sum_{\text{짝수 } j}x_j\omega^{-jk} + \sum_{\text{홀수 } j}x_j\omega^{-jk}$$. 짝수 $$j = 2l$$ 쪽은 $$\omega^{-2lk} = (\omega^2)^{-lk}$$이고 $$\omega^2$$은 길이 $$n/2$$의 단위근이라 $$E_k$$다. 홀수 쪽은 $$\omega^{-k}$$를 묶어 내면 $$\omega^{-k}O_k$$다. $$E$$, $$O$$는 주기 $$n/2$$이고 $$\omega^{-(k + n/2)} = -\omega^{-k}$$라 뒤쪽 절반은 부호만 바뀐다.
 
@@ -147,4 +159,5 @@ for k in range(n // 2):
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 9.3절 "The Fast Fourier Transform"(푸리에 행렬, $$\bar{F}^\top F = nI$$, FFT의 분해). Cormen et al., *Introduction to Algorithms* 3판, 30장 "Polynomials and the FFT"(합성곱 정리와 다항식 곱셈, 재귀 FFT).
 [^s1]: 에이전트 보충. JPEG의 DCT와 OFDM의 IFFT/FFT는 각각 JPEG(ITU-T T.81)과 Wi-Fi·LTE 표준의 내용이다. 속도 비교(백만 점에서 약 10만 배)는 $$n^2$$ 대 $$\frac n2\log_2 n$$ 곱셈 수로 센 값이고, 실제 실행 시간의 비는 덧셈·메모리 접근 때문에 이와 다르다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [27_dft_plot.py](/Hongs_Blog/studies/linear-algebra/code/27_dft_plot/)로 그렸고, 정의대로 한 DFT가 `numpy.fft.fft`와 같은 것, 가장 큰 네 막대가 $$k = 5, 12, 52, 59$$인 것, $$n = 2^{20}$$에서 곱셈 수의 비가 약 10만 배(104,858)인 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 FFT 의사코드(짝수·홀수 번째로 나누는 재귀)와 복잡도 문단을 $$n = 8$$에 적용해 그렸다.
 {% endraw %}

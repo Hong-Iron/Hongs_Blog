@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Alcohol-Related Disorders", "알코올 사용 장애", "Alcohol Use Disorder", "AUD", "알코올 의존", "알코올 남용", "알코올 중독", "Alcohol Intoxication", "알코올 금단", "Alcohol Withdrawal", "내성", "tolerance", "금단", "withdrawal", "옐리네크", "Jellinek", "음주기대 이론", "alcohol expectancy theory", "자가 투약", "self-medication", "코르사코프 증후군", "Korsakoff syndrome", "태아알코올증후군", "익명의 알코올 중독자 모임", "Alcoholics Anonymous", "AA", "동기강화면담", "motivational interviewing", "디설피람", "disulfiram", "안타부스", "Antabuse"]
 description: "술 때문에 일, 가정, 건강에 문제가 생기는 것을 알면서도 조절하지 못하고 계속 마시는 상태가 알코올 사용장애다. 같은 효과를 얻으려고 점점 더 마시고(내성), 끊으면 손이 떨리고 잠을 못 이룬다(금단). 가장 흔한 정신장애 가운데 하나이지만, 본인은 문제를 잘 인정하지 않아 의지…"
@@ -18,7 +18,7 @@ prev_title: "물질관련 및 중독 장애"
 next_url: "/studies/abnormal-psychology/gambling-disorder/"
 next_title: "도박장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/alcohol-related-disorders/"
 ---
@@ -104,6 +104,17 @@ C. 섭취 중이나 직후에 다음 가운데 1가지 이상: 불분명한 말,
 | 4. 만성 단계 | 통제력을 완전히 잃고, 내성과 금단이 심하다. 외모와 사회 적응에 무관심. 영양실조, 신체 질병 |
 
 옐리네크 곡선은 이 하강 곡선의 바닥(강박적 음주의 악순환)에서 "도움을 원하는 진정한 마음"을 계기로 회복의 상승 곡선으로 올라가는 모습까지 그린다[^8].
+
+```mermaid
+flowchart LR
+    S1["1 전 알코올 증상 단계: 사회적 음주"] --> S2["2 전조 단계: 필름이 끊김"]
+    S2 --> S3["3 결정적 단계: 통제력을 서서히 잃음"]
+    S3 --> S4["4 만성 단계: 통제력을 완전히 잃음"]
+    S4 --> B["바닥: 강박적 음주의 악순환"]
+    B -->|"도움을 원하는 진정한 마음"| UP["회복의 상승 곡선"]
+```
+
+곡선은 4단계까지 내려가다 바닥에서 방향을 바꾼다. 방향을 바꾸는 계기는 본인이 도움을 원하는 것이다[^s5].
 
 ## 원인[^9][^10][^11]
 
@@ -222,4 +233,5 @@ C. 섭취 중이나 직후에 다음 가운데 1가지 이상: 불분명한 말,
 [^s2]: 에이전트 보충. 클로닝거(Cloninger, 1981)의 유형론에서 제1형은 늦은 발병·환경 영향·불안 성향, 제2형은 이른 발병·남성 한정·높은 유전성·새로움 추구와 반사회적 행동이 특징이다. 출처: Cloninger, Bohman & Sigvardsson(1981), "Inheritance of alcohol abuse: cross-fostering analysis of adopted men", *Archives of General Psychiatry* 38(8), 861–868. 슬라이드가 이 유형을 왜 분해 능력 옆에 적었는지는 강의 확인이 필요하다.
 [^s3]: 에이전트 보충. 디설피람은 알데하이드 탈수소효소를 억제하는 약으로, 음주 시 아세트알데하이드가 쌓여 불쾌 반응(디설피람-알코올 반응)을 일으킨다. 혐오 조건형성에서 구토 유도제로 에메틴을 쓴 역사가 있다.
 [^s4]: 에이전트 보충. "마셨다고 믿기만 해도 행동이 바뀐다"는 예는 음주기대 연구의 위약 음료(balanced placebo) 실험 결과를 요약했다. 원본 범위를 넘는 문항이다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 옐리네크의 4단계 표(p.54)와 p.55의 옐리네크 곡선 설명을 흐름도로 옮겼다.
 {% endraw %}

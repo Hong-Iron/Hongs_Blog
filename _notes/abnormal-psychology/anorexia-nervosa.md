@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Anorexia Nervosa", "AN", "거식증", "제한형", "restricting type", "폭식/제거형", "binge-eating/purging type", "체질량지수", "BMI", "Body Mass Index", "체중공포증", "Weight Phobia", "체형평정척도", "Body Type Scale", "러셀 징후", "Russell's sign", "설정점", "set point"]
 description: "이미 뚜렷하게 말랐는데도 살찌는 것이 너무 두려워 먹기를 줄이고, 거울 속 자신은 여전히 뚱뚱해 보이는 장애다. 날씬함이 곧 자기 가치가 되어, 먹지 않는 것이 스스로를 통제하는 증거처럼 느껴진다. 본인은 문제라고 여기지 않아 빠르게 나빠지기 쉽다. 굶주림의 합병증과 자살 때문에 …"
@@ -18,7 +18,7 @@ prev_title: "급식 및 섭식장애"
 next_url: "/studies/abnormal-psychology/bulimia-nervosa/"
 next_title: "신경성 폭식증"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/abnormal-psychology/anorexia-nervosa/"
 ---
@@ -122,6 +122,16 @@ DSM-5는 "이상 체중의 85% 미만" 같은 고정 수치를 요구하지 않�
 
 일종의 **체중공포증(weight phobia)**이다. 뚱뚱함에 벌이 주어지는 사회에서 뚱뚱함과 과식에 대한 공포를 배운다. 먹는 양을 줄이면 체중 공포가 줄어들고(부적 강화), 음식 거부 행동은 점점 더 극단적으로 된다.
 
+```mermaid
+flowchart LR
+    A["뚱뚱함과 과식에 대한 공포"] --> B["먹는 양을 줄임"]
+    B --> C["체중 공포가 잠깐 줄어듦"]
+    C -->|"부적 강화"| B
+    B --> D["음식 거부가 점점 극단적으로 됨"]
+```
+
+먹기를 줄일 때마다 공포가 잠깐 가라앉는다. 그 안도가 줄이는 행동을 다시 붙잡아, 거부가 갈수록 심해진다[^s4].
+
 ### 4. 인지적 입장[^8][^9]
 
 - 자기 신체를 왜곡해서 지각한다. 체형평정척도(body type scale)에서 여러 체형 그림 가운데 "실제 내 몸"과 "이상적인 몸"을 고르게 하면, 실제 신체상은 더 뚱뚱한 쪽으로, 이상적 신체상은 더 마른 쪽으로 치우친다.
@@ -216,4 +226,5 @@ DSM-5는 "이상 체중의 85% 미만" 같은 고정 수치를 요구하지 않�
 [^s1]: 에이전트 보충. FP의 사례는 진단기준을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 성인 심각도의 BMI 구간은 DSM-5-TR의 기준이다. 슬라이드는 "BMI에 따라 경도, 중등도, 고도, 극도를 구분"한다고만 적는다. 아동·청소년은 BMI 백분위를 쓴다.
 [^s3]: 에이전트 보충. 대부분의 환자에게 식욕 상실이 드물다는 점은 DSM-5-TR 설명과 섭식장애 교재의 일반적 설명이다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '원인'의 행동주의적 입장(체중공포증, 부적 강화, p.11)을 그렸다.
 {% endraw %}

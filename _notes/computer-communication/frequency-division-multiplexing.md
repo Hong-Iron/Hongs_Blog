@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Frequency-Division Multiplexing", "FDM", "주파수분할 다중화", "보호 대역", "guard band", "반송파", "subcarrier"]
 description: "라디오 방송국들이 서로 다른 주파수로 동시에 방송하듯, 링크가 실어 나를 수 있는 주파수 범위를 여러 좁은 구간으로 나눠 사용자마다 한 구간을 계속 쓰게 하는 방법이다. 모두가 동시에, 쉬지 않고 보낼 수 있다. 대신 이웃 구간끼리 새지 않도록 사이를 띄워야 해서 그만큼 낭비되고,…"
@@ -18,7 +18,7 @@ prev_title: "시분할 다중화"
 next_url: "/studies/computer-communication/statistical-multiplexing/"
 next_title: "통계적 다중화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/computer-communication/frequency-division-multiplexing/"
 ---
@@ -64,6 +64,18 @@ FM 라디오에서 방송국마다 다른 주파수를 쓴다. 모든 방송국�
 | 보호 대역이 충분하면 입력끼리 간섭하지 않는다  | 대역의 완전한 활용. 채널 사이 보호 대역만큼은 늘 낭비된다[^3]      |
 
 필터가 불완전하거나 반송파 주파수가 흔들리면 이웃 채널의 신호가 섞여 들어온다(누화). 채널 사이에 빈 간격, 즉 보호 대역을 두는 이유다[^s1].
+
+```mermaid
+flowchart LR
+  M1["입력 1을 반송파 64 kHz에 실음"] --> S["합쳐서 링크 하나로"]
+  M2["입력 2를 반송파 68 kHz에 실음"] --> S
+  M3["입력 3을 반송파 72 kHz에 실음"] --> S
+  S --> F1["60~64 kHz만 거름"] --> O1["출력 1"]
+  S --> F2["64~68 kHz만 거름"] --> O2["출력 2"]
+  S --> F3["68~72 kHz만 거름"] --> O3["출력 3"]
+```
+
+보내는 쪽은 입력마다 다른 반송파에 실어 링크 하나에 합친다. 받는 쪽은 주파수 구간마다 거르는 장치(필터)로 다시 가른다. 필터가 구간 경계를 깔끔하게 자르지 못하면 이웃 채널이 섞여 들어온다. 이것이 위의 누화다[^s3].
 
 ## 예제
 
@@ -122,4 +134,5 @@ FM 라디오에서 방송국마다 다른 주파수를 쓴다. 모든 방송국�
 [^4]: 4-1학기/pasted_images/Pasted image 20260926030111.png — 슬라이드 "가입자 선로 (Last-Mile Links)", "xDSL: 음성과 data를 FDM 방식으로 동시에"
 [^s1]: 에이전트 보충. 쉬는 채널의 낭비와 누화는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 내용이다. 변조는 4회 슬라이드 "모듈레이션: 데이터의 신호화"(4-1학기/pasted_images/Pasted image 20260926022823.png)가 다룬다.
 [^s2]: 에이전트 보충. 음성 대역 300~3,400 Hz와 12채널 그룹(60~108 kHz), 와이파이 예는 원본에 없는 표준적인 수치와 사례다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "주파수분할 다중화"의 반송파 64·68·72 kHz 스펙트럼과 이 문서 '정의' 절의 변조·필터 설명을 바탕으로 그렸다. 받는 쪽이 주파수 구간마다 필터로 거른다는 구조는 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 일반 구조다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Exposure and Response Prevention", "ERP", "반응방지", "response prevention", "사고중지", "thought stopping", "역설적 의도", "paradoxical intention", "자기주장 훈련", "self-assertion training", "파이 기법", "pie-chart technique", "이중기준 기법", "double standard technique", "법정 절차", "courtroom procedure"]
 description: "두려운 자극에 일부러 다가가되, 늘 하던 강박행동은 하지 못하게 하는 치료다. 더러운 문고리를 만지고 손을 씻지 않고 버틴다. 처음에는 불안이 치솟지만, 씻지 않아도 불안이 저절로 가라앉고 두려워하던 일(병에 걸림)도 일어나지 않는다는 것을 몸으로 배운다. 강박장애 환자의 60~8…"
@@ -18,7 +18,7 @@ prev_title: "강박장애의 인지모델"
 next_url: "/studies/abnormal-psychology/body-dysmorphic-disorder/"
 next_title: "신체이형장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/erp/"
 ---
@@ -41,6 +41,20 @@ permalink: "/studies/abnormal-psychology/erp/"
 | 반응을 막을 때 | 노출 → 불안이 빠르게 오른다 → 정점 → 강박행동 없이 머문다 → 습관화: 불안이 저절로 줄어든다 |
 
 강박행동은 불안이 "저절로 줄어드는" 경험을 빼앗는다. 반응방지는 그 경험을 되돌려 준다.
+
+```mermaid
+flowchart TD
+  E["노출: 두려운 자극에 다가간다"] --> U["불안이 빠르게 오른다"]
+  U --> P["불안의 정점"]
+  P --> Q{"강박행동을 하나?"}
+  Q -->|"한다"| R["잠깐의 안도"]
+  R --> N["습관화가 일어나지 않는다"]
+  N -->|"다음 노출에서 불안이 다시 쌓인다"| E
+  Q -->|"막는다"| S["강박행동 없이 머문다"]
+  S --> H["습관화: 불안이 저절로 줄어든다"]
+```
+
+왼쪽 길은 노출로 되돌아가는 고리가 되고, 오른쪽 길만 고리를 벗어난다. 갈림길은 정점에서 강박행동을 하느냐 하나뿐이다[^s2].
 
 ## 정의
 
@@ -108,4 +122,5 @@ permalink: "/studies/abnormal-psychology/erp/"
 [^3]: 4-1학기/이상 심리학/1.수업자료/05.강박 관련 장애.pdf, p.20
 [^4]: 4-1학기/이상 심리학/1.수업자료/05.강박 관련 장애.pdf, p.21. 역설적 의도·파이 기법·이중기준 기법·법정 절차 옆의 설명은 손글씨 필기다.
 [^s1]: 에이전트 보충. 사고중지 기법, 자기주장 훈련의 설명은 행동치료의 표준 설명이다. 사고중지는 사고억제의 역설적 효과 때문에 지금은 효과를 의심받는다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `예시로 보기`의 두 경로 표와 슬라이드 p.19의 그래프(Exposure, Panic Peak, Habituation)를 근거로 그렸다.
 {% endraw %}

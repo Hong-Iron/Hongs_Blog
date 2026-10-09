@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Family Theories of Schizophrenia", "조현병을 만드는 어머니", "schizophrenogenic mother", "프롬-라이히만", "Fromm-Reichmann", "편향적 부부관계", "분열적 부부관계", "이중구속이론", "double-bind theory", "베이트슨", "Bateson", "표현된 정서", "expressed emotion", "EE", "정서적 과잉개입", "emotional overinvolvement"]
 description: "\"집안 분위기가 조현병과 상관이 있을까?\"에 답하려던 이론 네 가지다. 차갑거나 지나치게 감싸는 엄마, 사이가 기울거나 갈라진 부모, 말과 행동이 어긋나는 부모, 환자를 탓하고 간섭하는 가족을 각각 원인으로 보았다. 앞의 이론들은 결국 부모 탓으로 몰고 가서 지금은 인정받지 못한다…"
@@ -18,7 +18,7 @@ prev_title: "조현병"
 next_url: "/studies/abnormal-psychology/typical-vs-atypical-antipsychotics/"
 next_title: "정형과 비정형 항정신병 약물 비교"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/family-theories-schizophrenia/"
 ---
@@ -56,6 +56,19 @@ permalink: "/studies/abnormal-psychology/family-theories-schizophrenia/"
 - "애가 아니니까 혼자 해라"라고 했다가, 다른 때는 "어리니까 혼자 하는 건 무리야"라고 한다. 같은 사람의 말이 그때그때 바뀐다.
 
 이 이론에 따르면, 어느 쪽을 따라도 혼나는 일이 계속되면 아이는 남의 말을 믿고 뜻을 알아듣는 법을 잃어버린다[^s2].
+
+```mermaid
+flowchart TD
+  M1["메시지 1: 애가 아니니까 혼자 해라"] --> K["아이"]
+  M2["메시지 2: 어리니까 혼자 하는 건 무리야"] --> K
+  K --> A["혼자 한다: 메시지 2를 어김"]
+  K --> B["혼자 안 한다: 메시지 1을 어김"]
+  A --> X["어느 쪽이든 혼난다"]
+  B --> X
+  X -- "되풀이" --> L["남의 말을 믿고 뜻을 알아듣는 법을 잃는다"]
+```
+
+두 메시지가 서로 반대라서 아이가 고를 수 있는 길이 모두 꾸중으로 끝난다. 이 막다른 길이 되풀이될 때 마지막 칸의 결과가 생긴다고 본다[^s5].
 
 ### 표현된 정서의 근거
 
@@ -113,4 +126,5 @@ permalink: "/studies/abnormal-psychology/family-theories-schizophrenia/"
 [^s2]: 에이전트 보충. 이중구속이 해석 능력을 잃게 한다는 요지는 베이트슨 등(1956)의 원래 주장을 요약한 것이다.
 [^s3]: 에이전트 보충. "조현병을 만드는 어머니" 개념이 경험적 지지를 얻지 못하고 가족에게 비난을 돌렸다는 평가는 이상심리학 교재의 표준 서술이다.
 [^s4]: 에이전트 보충. 이름 풀이(표현된 정서, double bind)와 "감정을 숨겨야 하나"에 대한 답은 원본에 없다. 답은 슬라이드 p.30(문제는 비난·적대·과잉개입)과 p.39(건강한 감정 표현 방식을 가르친다)에 근거한 해석이다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '이중구속의 예'의 둘째 예(슬라이드 p.29)와 그 아래 문단([^s2]의 해석)을 그렸다.
 {% endraw %}

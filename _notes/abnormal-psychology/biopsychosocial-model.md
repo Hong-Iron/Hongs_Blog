@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Biopsychosocial Model", "생물-심리-사회 모델", "BPS 모델", "통합적 입장", "integrative perspective", "엥겔", "Engel"]
 description: "마음의 병을 몸(생물), 마음(심리), 환경(사회) 세 겹의 원인이 겹친 결과로 보고, 겹마다 맞는 치료를 짝짓는 지도다. 한 입장만 고집하면 놓치는 원인을 빠짐없이 챙기게 해 준다는 점이 강점이다. 대신 \"모든 것이 관련 있다\"로 끝나기 쉬워서, 한 사람에게 어느 원인이 가장 중…"
@@ -18,7 +18,7 @@ prev_title: "취약성-스트레스 모델"
 next_url: "/studies/abnormal-psychology/psychosis-spectrum/"
 next_title: "정신증과 조현병 스펙트럼"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/biopsychosocial-model/"
 ---
@@ -61,6 +61,25 @@ permalink: "/studies/abnormal-psychology/biopsychosocial-model/"
 
 심리적 요인의 세 칸은 앞의 이론적 입장과 하나씩 맞물린다. 정서동기적 요인은 [정신분석적 입장](/Hongs_Blog/studies/abnormal-psychology/psychoanalytic-perspective/), 인지적 요인은 [인지적 입장](/Hongs_Blog/studies/abnormal-psychology/cognitive-perspective/), 행동적 요인은 [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/)이다. 생물학적 요인은 [생물의학적 입장](/Hongs_Blog/studies/abnormal-psychology/biomedical-perspective/)이다. 이 모델은 네 입장을 버리지 않고 한 표 안에 자리를 준다[^s2].
 
+```mermaid
+flowchart LR
+  subgraph BPS["생물심리사회적 모델"]
+    BIO["생물학적 요인"]
+    subgraph PSY["심리적 요인"]
+      EM["정서동기적 요인"]
+      CO["인지적 요인"]
+      BE["행동적 요인"]
+    end
+    SOC["사회적 요인"]
+  end
+  BM["생물의학적 입장"] --> BIO
+  PA["정신분석적 입장"] --> EM
+  CG["인지적 입장"] --> CO
+  BV["행동주의적 입장"] --> BE
+```
+
+네 이론적 입장이 모델 안의 한 칸씩을 맡는다. 사회적 요인 칸에는 이어지는 입장이 없다[^s3].
+
 ## 연결
 
 - 헷갈리는 짝: [취약성-스트레스 모델](/Hongs_Blog/studies/abnormal-psychology/vulnerability-stress-model/). 둘 다 통합적 입장이다. 취약성-스트레스 모델은 "타고난 약점과 스트레스가 만날 때 발병한다"는 시간의 흐름을, 생물심리사회적 모델은 "원인이 어느 수준에 있고 어떤 치료가 맞나"라는 수준의 지도를 준다.
@@ -94,4 +113,5 @@ permalink: "/studies/abnormal-psychology/biopsychosocial-model/"
 [^2]: 4-1학기/이상 심리학/1.수업자료/01.이상심리학.pdf, p.57
 [^s1]: 에이전트 보충. Q의 사례와 표는 p.57의 표를 한 사례에 적용한 가상 사례다.
 [^s2]: 에이전트 보충. 심리적 세부 요인과 이론적 입장의 대응은 p.57의 치료 열(정신역동치료, 인지치료, 행동치료)에서 읽어 낸 것이다. 생물심리사회적 모델은 엥겔(Engel)이 1977년 의학의 생의학 모델을 넘어서자며 제안했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 요인 표와 그 아래 문단(슬라이드 p.57)을 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Graph Representation", "Adjacency List", "Adjacency Matrix", "Edge List", "인접 리스트", "인접 행렬", "간선 목록", "격자 그래프", "상태 그래프"]
 description: "지하철 노선도를 코드로 옮기는 방법이다. 역마다 \"바로 갈 수 있는 역 목록\"을 적어 두는 인접 리스트가 기본이다. 역이 몇백 개 이하이고 \"두 역이 바로 이어졌나\"를 자주 물으면 표(인접 행렬)를 쓴다. 격자 지도는 따로 옮기지 않고 칸 자체를 역으로 본다. 번호가 1부터인지, …"
@@ -18,7 +18,7 @@ prev_title: "그리디"
 next_url: "/studies/algorithms/bfs/"
 next_title: "너비 우선 탐색(BFS)"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/graph-representation/"
 ---
@@ -34,6 +34,16 @@ permalink: "/studies/algorithms/graph-representation/"
 ## 예시로 보기
 
 도시 1 ~ 4와 양방향 도로 1–2(5km), 1–3(2km), 2–4(1km), 3–4(7km)가 있다. 문제는 보통 이것을 **간선 목록**으로 준다: `[[1, 2, 5], [1, 3, 2], [2, 4, 1], [3, 4, 7]]`.
+
+```mermaid
+flowchart LR
+    c1(("1")) ---|"5km"| c2(("2"))
+    c1 ---|"2km"| c3(("3"))
+    c2 ---|"1km"| c4(("4"))
+    c3 ---|"7km"| c4
+```
+
+동그라미가 도시(점), 선이 도로(간선)다. 아래의 인접 리스트와 인접 행렬은 모두 이 그림 하나를 다르게 적은 것이다[^s1].
 
 **인접 리스트**로 옮기면 도시마다 (이웃, 거리) 목록이 생긴다. 번호가 1부터라 칸을 n + 1개 만들고 0번은 비워 둔다.
 
@@ -125,4 +135,5 @@ for dr, dc in ((1, 0), (-1, 0), (0, 1), (0, -1)):
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 11.2 "Graph representation"(인접 리스트, 인접 행렬, 간선 목록), Cormen 외, *Introduction to Algorithms* 3판, 22.1절(인접 리스트는 Θ(V + E), 인접 행렬은 Θ(V²) 메모리).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 간선 목록 [[1, 2, 5], [1, 3, 2], [2, 4, 1], [3, 4, 7]]을 그대로 그렸다.
 {% endraw %}

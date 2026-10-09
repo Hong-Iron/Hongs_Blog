@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Time Conversion", "시간 계산", "날짜 계산", "분 단위 변환", "divmod", "두 자리 맞추기", "zero padding"]
 description: "\"9시 5분부터 10시 2분까지 몇 분?\"을 시와 분으로 따로 빼면 받아내림 때문에 헷갈린다. 모든 시각을 \"0시 0분부터 몇 분째\"처럼 가장 작은 단위 하나로 바꾸면, 더하기·빼기·비교가 그냥 숫자 계산이 된다. 계산을 다 끝낸 뒤에만 \"시:분\" 모양으로 되돌린다. 되돌릴 때 5…"
@@ -18,7 +18,7 @@ prev_title: "문자열 파싱과 정규 표현식"
 next_url: "/studies/algorithms/simulation/"
 next_title: "구현과 시뮬레이션"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/time-conversion/"
 ---
@@ -63,6 +63,17 @@ def to_str(x):                  # 545 → "09:05"
 ```
 
 `f"{h:02d}"`의 `02d`는 "정수를 최소 두 자리로 쓰고, 모자란 자리는 0으로 채운다"는 뜻이다[^2]. `h = 9`면 `"09"`가 된다.
+
+```mermaid
+flowchart LR
+    A["문자열 09:05"] -->|"split과 int"| B["시 9, 분 5"]
+    B -->|"9 × 60 + 5"| C["545분"]
+    C -->|"빼기, 더하기, 비교"| D["새 분 값"]
+    D -->|"divmod로 60씩 나누기"| E["시와 분"]
+    E -->|"두 자리로 맞추기"| F["문자열 HH:MM"]
+```
+
+계산은 가운데의 분 값에서만 한다. 왼쪽 두 화살표가 `to_min`, 오른쪽 두 화살표가 `to_str`이다[^s1].
 
 **날짜.** 날짜도 같은 생각이다. "모든 달이 28일"이라는 문제라면 날짜를 "첫날부터 며칠째"로 바꾼다.
 
@@ -126,4 +137,5 @@ def to_day(date):               # "2022.05.19"
 
 [^1]: Python 3 표준 라이브러리 문서, Built-in Functions의 `divmod(a, b)`: 정수에서는 `(a // b, a % b)`를 돌려준다.
 [^2]: Python 3 표준 라이브러리 문서, "Format Specification Mini-Language": 너비 앞의 `0`은 부호를 고려한 0 채우기를 켠다. `d`는 10진 정수다.
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '바꾸기와 되돌리기' 절의 to_min, to_str 코드와 예시 표(09:05 → 545)를 흐름도로 옮겼다.
 {% endraw %}

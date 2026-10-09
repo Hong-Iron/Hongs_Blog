@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Narcolepsy", "수면발작", "sleep attack", "탈력발작", "Cataplexy", "히포크레틴", "hypocretin", "오렉신", "orexin", "수면 잠복기 반복 검사", "MSLT", "수면마비", "가위눌림", "sleep paralysis", "입면시 환각", "hypnagogic hallucination", "탈면시 환각", "hypnopompic hallucination", "2역치 다중요인 모델", "HLA", "모다피닐", "Modafinil"]
 description: "참을 수 없는 졸음이 파도처럼 덮쳐 회의 중이나 운전 중에도 갑자기 잠들어 버리는 장애다. 크게 웃거나 흥분하면 갑자기 몸에 힘이 빠져 주저앉는 탈력발작이 특징이다. 잠든 몸이 움직이지 않도록 근육을 풀어 두는 REM 수면의 장치가 깨어 있을 때 끼어드는 것으로 이해할 수 있다. …"
@@ -18,7 +18,7 @@ prev_title: "과다수면장애"
 next_url: "/studies/abnormal-psychology/breathing-related-sleep/"
 next_title: "호흡관련 수면장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/narcolepsy/"
 ---
@@ -81,6 +81,19 @@ DSM-5-TR은 A가 지난 3개월 동안 주 3회 이상 나타나야 한다고 �
 - **첫 번째 역치:** 과다수면장애, 과도한 주간 졸림이 생긴다.
 - **두 번째 역치:** 기면증. 탈력발작과 수면마비 같은 증상이 따른다.
 
+```mermaid
+flowchart LR
+    G["유전적 취약성, HLA 양성"] --> T["취약성과 스트레스 요인의 총량"]
+    F["스트레스 요인 F1~F4"] --> T
+    T --> Q1{"첫 번째 역치를 넘는가"}
+    Q1 -->|"아니오"| N["증상 없음"]
+    Q1 -->|"예"| H["과다수면장애, 과도한 주간 졸림"]
+    H --> Q2{"두 번째 역치도 넘는가"}
+    Q2 -->|"예"| NA["기면증: 탈력발작, 수면마비"]
+```
+
+왼쪽 두 상자를 더한 총량이 역치를 하나 넘으면 과다수면장애, 둘 다 넘으면 기면증이다[^s4].
+
 p.69의 그림은 사람들의 분포를 두 곡선으로 그린다. 유전적 취약성이 없는 사람들(HLA 음성, 정상인 분포)의 큰 곡선과, 취약성이 있는 사람들(HLA 양성)의 작은 곡선이다. 취약성이 있는 곡선은 오른쪽, 곧 역치 가까이 치우쳐 있다. 그래서 같은 양의 스트레스 요인(F1~F4)이 더해져도 이 사람들이 먼저 첫 번째 역치(과도한 주간 졸림)와 두 번째 역치(기면증)를 넘는다[^3].
 
 ## 치료[^4]
@@ -126,4 +139,5 @@ p.69의 그림은 사람들의 분포를 두 곡선으로 그린다. 유전적 �
 [^s1]: 에이전트 보충. HA의 사례는 진단기준과 부수 증상을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 기면증 기준 A의 빈도(지난 3개월 동안 주 3회 이상)와 히포크레틴의 기능을 보탰다.
 [^s3]: 에이전트 보충. 부수 증상을 REM 수면 요소의 침범으로 정리한 표와 입면기 REM(sleep-onset REM period)은 수면의학의 표준 설명이다. 슬라이드의 "잠에서 깨어날 때 REM수면이 반복적으로 나타나며"는 깨어나는 순간에 REM 요소가 섞이는 현상으로 읽었다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '원인: 2역치 다중요인 모델'의 목록과 p.69 그림 설명을 순서도로 옮겼다.
 {% endraw %}

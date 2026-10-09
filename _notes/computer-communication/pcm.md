@@ -18,7 +18,7 @@ prev_title: "디지털 전송"
 next_url: "/studies/computer-communication/digital-modulation/"
 next_title: "진폭·주파수·위상 변조"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/computer-communication/pcm/"
 ---
@@ -60,6 +60,17 @@ permalink: "/studies/computer-communication/pcm/"
 ## 정의
 
 PCM은 아날로그 데이터를 디지털 데이터로 바꾼다. 재는 장치(PAM sampler)가 파형을 일정한 간격으로 재서 PAM 펄스를 만들고, 반올림 장치(Quantizer)가 각 펄스를 정해진 단계로 바꿔 PCM 펄스를 만든다[^1].
+
+```mermaid
+flowchart LR
+  A["목소리 파형"] --> S["PAM sampler - 간격 Ts마다 잼"]
+  S --> P["PAM 펄스"]
+  P --> Q["Quantizer - 가장 가까운 단계로"]
+  Q --> C["PCM 펄스"]
+  C --> B["단계 번호를 2진수로 적은 비트열"]
+```
+
+장치 두 개를 지나며 파형이 높이 막대(PAM 펄스)로, 막대가 정해진 단계(PCM 펄스)로 바뀐다. 마지막 비트열이 보낼 데이터다[^s5].
 
 손실을 줄이는 방법은 둘이다[^2].
 
@@ -132,4 +143,5 @@ $$8{,}000 \ \text{표본/초} \times 8 \ \text{비트/표본} = 64{,}000 \ \text
 [^s2]: 에이전트 보충. 슬라이드 26은 "Sampling rate ≈ 2 × Highest signal frequency"다(pptx 원본의 Symbol 글꼴 문자 0xBB가 ≈, 0xB4가 ×). 필기 40행도 "≈ 2×"로 적는다. 표본화 정리의 정확한 조건은 $$f_s > 2f_{\max}$$다(Oppenheim & Willsky, *Signals and Systems*, 7.1절). 정확히 2배에서는 $$f_{\max}$$인 사인파를 매번 0인 지점에서 잴 수 있어 되살릴 수 없다. 전화 음성 대역 300~3,400 Hz는 ITU-T G.711(PCM 64 kbps)의 대역이다.
 [^s3]: 에이전트 보충. T1의 24채널(1.544 Mbps = 24 × 64 kbps + 8 kbps 동기), CD의 44.1 kHz·16비트는 원본에 없다. 표준 값이다(ANSI T1.403, IEC 60908).
 [^s4]: 에이전트 보충. 그림 두 장은 원본에 없다. 그림 1의 곡선은 슬라이드의 표본 일곱 개를 지나도록 그린 매끄러운 곡선(3차 스플라인)이라, 표본 사이의 모양은 슬라이드의 원래 파형과 다를 수 있다. [38_pcm_plot.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_plot/)로 그렸고, 반올림 결과 3, 1, 6, 1, 3, 6, 4와 비트열 `011001110001011110100`, 반올림 오차가 0.5 이하인 것, 8 kHz로 잰 4 kHz 사인파의 값이 모두 0인 것을 같은 코드로 확인했다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 25 "PCM (Pulse Code Modulation)"의 그림(PAM sampler, Quantizer, PCM output)과 이 문서 '예시로 보기' 표의 세 단계를 바탕으로 그렸다.
 {% endraw %}

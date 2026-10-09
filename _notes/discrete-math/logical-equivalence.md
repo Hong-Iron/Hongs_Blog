@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Logical Equivalence", "논리적 동치", "드모르간 법칙", "De Morgan's laws", "대우", "contrapositive", "역", "converse", "이", "inverse", "분배법칙", "흡수법칙", "정규형", "normal form", "논리합 표준형", "DNF", "논리곱 표준형", "CNF", "충족 가능성", "SAT"]
 description: "모양은 달라도 모든 경우에 참·거짓이 같은 두 식은 사실상 같은 조건이다. 드모르간 법칙, \"이면\"을 \"아니거나\"로 바꾸기, 대우 같은 규칙으로 조건문을 단순하게 바꾸거나 부정을 정확히 쓸 수 있다. 모든 식은 \"그리고들의 또는\"이나 \"또는들의 그리고\"라는 표준 모양으로 바꿀 수 …"
@@ -18,7 +18,7 @@ prev_title: "명제와 논리 연산"
 next_url: "/studies/discrete-math/predicate-logic/"
 next_title: "술어와 한정기호"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/logical-equivalence/"
 ---
@@ -82,6 +82,16 @@ $$a$$ = 회원, $$b$$ = 정지로 두면 첫째는 $$\neg(a \wedge \neg b)$$, �
 
 
 **역·이·대우.** $$p \to q$$와 동치인 것은 대우 $$\neg q \to \neg p$$뿐이다. 역 $$q \to p$$와 이 $$\neg p \to \neg q$$는 원래 명제와 동치가 아니다($$p$$ = F, $$q$$ = T에서 원래는 참, 역은 거짓). 역과 이는 서로 대우 관계라 서로 동치다.
+
+```mermaid
+flowchart LR
+  P["원래: p → q"] <-->|"동치"| C["대우: ¬q → ¬p"]
+  V["역: q → p"] <-->|"동치"| I["이: ¬p → ¬q"]
+  P -.-|"동치 아님"| V
+  P -.-|"동치 아님"| I
+```
+
+실선으로 이어진 짝만 늘 같은 값을 갖는다. 원래 명제와 대우는 앞뒤를 바꾸고 둘 다 부정한 사이이고, 역과 이도 같은 사이다[^s2].
 
 ## 증명
 
@@ -209,4 +219,5 @@ $$a$$ = 회원, $$b$$ = 정지로 두면 첫째는 $$\neg(a \wedge \neg b)$$, �
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 3장 "Logical Formulas"(동치와 타당성, 명제의 대수, 정규형, SAT). Rosen, *Discrete Mathematics and Its Applications* 7판, 1장.
 [^s1]: 에이전트 보충. SAT가 NP-완전이라는 것은 쿡-레빈 정리다(Cook 1971). 실제 SAT 솔버는 최악의 경우 지수 시간이지만 산업 문제의 많은 사례를 빠르게 푼다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 섹션의 '역·이·대우' 문단과 동치 법칙 표의 대우 줄을 그렸다.
 {% endraw %}

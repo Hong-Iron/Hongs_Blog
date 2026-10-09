@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Resident Set Management", "Load Control", "반입 정책", "Fetch Policy", "요구 페이징", "Demand Paging", "선행 페이징", "Prepaging", "배치 정책", "Placement Policy", "고정 할당", "Fixed Allocation", "가변 할당", "Variable Allocation", "지역 교체", "Local Replacement", "전역 교체", "Global Replacement", "정리 정책", "Cleaning Policy", "다중 프로그래밍 수준", "Multiprogramming Level", "프로세스 일시 중단 정책"]
 description: "가상 메모리를 운영하는 운영체제는 교체 말고도 여러 결정을 한다. 페이지를 언제 가져올지, 프로세스마다 프레임을 몇 개 줄지, 내보낼 페이지를 그 프로세스 안에서만 고를지 전체에서 고를지, 바뀐 페이지를 언제 디스크에 쓸지, 메모리에 프로세스를 몇 개 올릴지다. 목표는 하나, 페이…"
@@ -18,7 +18,7 @@ prev_title: "페이지 교체 알고리즘"
 next_url: "/studies/operating-systems/scheduling-types-criteria/"
 next_title: "스케줄링의 종류와 기준"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/resident-set-load-control/"
 ---
@@ -80,6 +80,18 @@ permalink: "/studies/operating-systems/resident-set-load-control/"
 | 사전 정리 | 여러 페이지를 모아서 미리 쓴다 |
 
 가장 좋은 방법은 페이지 버퍼링과 함께 쓰는 것이다. 내보낸 페이지를 변경·비변경 두 목록에 넣고, 변경 목록은 주기적으로 모아서 쓴다. 비변경 목록의 페이지는 다시 참조되면 되찾고, 그 프레임을 다른 페이지가 가져가면 사라진다[^9].
+
+```mermaid
+flowchart TD
+  V["교체로 선택된 페이지"] --> Q{"올라온 뒤 바뀌었나?"}
+  Q -->|"예"| ML["변경 목록"]
+  Q -->|"아니오"| FL["비변경 목록"]
+  ML -->|"주기적으로"| W["여러 페이지를 모아 디스크에 한꺼번에 씀"]
+  FL -->|"다시 참조되면"| BACK["디스크를 거치지 않고 되찾음"]
+  FL -->|"그 프레임을 다른 페이지가 가져가면"| GONE["사라짐"]
+```
+
+내보낸 페이지는 곧바로 디스크로 가지 않는다. 바뀐 페이지는 목록에 모였다가 한꺼번에 쓰이고, 바뀌지 않은 페이지는 프레임을 빼앗기기 전까지 되찾을 기회가 있다[^s2].
 
 ### 적재 제어
 
@@ -144,4 +156,5 @@ permalink: "/studies/operating-systems/resident-set-load-control/"
 [^12]: 같은 자료, 슬라이드 93
 [^13]: 같은 자료, 슬라이드 96~99
 [^s1]: 에이전트 보충. 스래싱 대처 이야기와 확인 문제는 슬라이드에 없다. 그림 8.21은 ASCII로 모양만 옮겼다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "정리 정책" 아래 문단(슬라이드 79~80)을 흐름도로 옮겼다.
 {% endraw %}

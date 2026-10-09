@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Node", "노드의 실체", "하드웨어 구성요소", "단말", "terminal", "호스트", "host", "네트워크 어댑터", "network adaptor", "NIC", "Network Interface Card", "병목", "bottleneck"]
 description: "노드는 링크 끝에 붙은 장치다. 단말(호스트)이든 스위치(라우터)든 속은 보통의 컴퓨터로, CPU와 메모리와 선을 이어 주는 네트워크 어댑터로 이루어진다. 메모리가 유한해서 패킷을 쌓아 둘 버퍼도 유한하다. 프로세서는 빠르고 메모리는 느려서, 요즘은 링크보다 노드가, 노드 안에서는…"
@@ -18,7 +18,7 @@ prev_title: "데이터 링크 계층"
 next_url: "/studies/computer-communication/signal-and-modulation/"
 next_title: "신호와 변조"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/computer-communication/node-hardware/"
 ---
@@ -44,6 +44,21 @@ Memory ──┬── I/O bus ── Network adaptor ──→ (To network)
 ```
 
 패킷이 링크에서 들어오면 네트워크 어댑터가 받아 I/O 버스를 거쳐 메모리의 버퍼에 쌓는다. CPU가 헤더를 보고 내보낼 곳을 정하면, 다시 메모리에서 버스를 거쳐 어댑터로 나간다. 패킷 하나가 버스와 메모리를 두 번 지난다[^s1]. 링크가 아무리 빨라도 이 길이 막히면 노드가 따라가지 못한다.
+
+```mermaid
+sequenceDiagram
+  participant L as 링크
+  participant N as 네트워크 어댑터
+  participant M as 메모리 버퍼
+  participant C as CPU
+  L->>N: 패킷 도착
+  N->>M: I/O 버스로 옮김 (첫 번째)
+  C->>M: 헤더를 읽고 내보낼 곳을 정함
+  M->>N: I/O 버스로 옮김 (두 번째)
+  N->>L: 패킷을 내보냄
+```
+
+패킷은 I/O 버스를 두 번 건너고, CPU가 헤더를 읽는 동안 메모리에 머문다. 링크 쪽 화살표는 처음과 끝 두 개뿐이다[^s2].
 
 ## 정의
 
@@ -90,4 +105,5 @@ Memory ──┬── I/O bus ── Network adaptor ──→ (To network)
 [^4]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 115~117행
 [^5]: 4-1학기/pasted_images/Pasted image 20260926020456.png — 슬라이드 "성능: 기타 사항". 초록 글씨: "통신망 (links + nodes) 에서 병목 지점은 어디?"
 [^s1]: 에이전트 보충. 패킷이 버스와 메모리를 두 번 지난다는 설명은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절(노드)의 내용이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "하드웨어 구성요소 : 노드(Nodes)"의 구성도와 이 문서 '예시로 보기'의 패킷 경로 설명(Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절)을 바탕으로 그렸다.
 {% endraw %}

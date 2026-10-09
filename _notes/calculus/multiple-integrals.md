@@ -18,7 +18,7 @@ prev_title: "행렬 미분"
 next_url: "/studies/calculus/gradient-descent/"
 next_title: "경사 하강법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/multiple-integrals/"
 ---
@@ -69,6 +69,20 @@ $$\iint_R f(x, y)\,dx\,dy = \iint_S f(T(u, v))\,\left\vert \det J_T(u, v)\right\
 $$\vert \det J_T\vert $$는 [행렬식](/Hongs_Blog/studies/linear-algebra/determinant/)이 넓이의 배율이라는 사실에서 나온다. $$T$$를 한 점 근처에서 [선형 근사](/Hongs_Blog/studies/calculus/multivariable-chain-rule/)하면 작은 사각형 $$du \times dv$$가 넓이 $$\vert \det J_T\vert \,du\,dv$$인 평행사변형이 된다.
 
 **떠올리는 신호.** 영역이 원·부채꼴·고리이거나 식에 $$x^2 + y^2$$이 있으면 극좌표, 영역이 기울어진 평행사변형이면 그것을 직사각형으로 펴는 일차 변환을 쓴다.
+
+```mermaid
+flowchart TD
+    A["영역 R 위의 이중적분"] --> B{"R의 모양"}
+    B -- "직사각형" --> C["푸비니: 한 방향씩 반복적분"]
+    B -- "원, 부채꼴, 고리 또는 식에 x² + y²" --> D["극좌표로 바꾼다"]
+    B -- "기울어진 평행사변형" --> E["직사각형으로 펴는 일차 변환"]
+    D --> F["배율 r을 곱한다"]
+    E --> G["배율: 야코비 행렬식의 절댓값"]
+    F --> C
+    G --> C
+```
+
+어느 길로 가든 마지막 계산은 반복적분이다. 변환을 거친 길에서만 배율을 곱한다. 이것을 빠뜨리는 것이 가장 흔한 실수다[^s3].
 
 ## 예제
 
@@ -127,4 +141,5 @@ $$\vert \det J_T\vert $$는 [행렬식](/Hongs_Blog/studies/linear-algebra/deter
 [^1]: OpenStax, *Calculus Volume 3*, 5.1절 "Double Integrals over Rectangular Regions"(리만 합, 푸비니 정리), 5.2절 "Double Integrals over General Regions", 5.3절 "Double Integrals in Polar Coordinates", 5.7절 "Change of Variables in Multiple Integrals"(야코비 행렬식).
 [^s1]: 에이전트 보충. 박스–뮬러 변환은 Box, Muller, "A note on the generation of random normal deviates", *Annals of Mathematical Statistics* 29 (1958)의 방법이다. 몬테카를로 적분의 오차가 $$1/\sqrt N$$에 비례한다는 것은 중심극한정리에서 나온다(확률과 통계). 경로 추적 렌더링이 렌더링 방정식을 몬테카를로로 푸는 방식은 Kajiya, "The Rendering Equation", *SIGGRAPH* (1986)에서 나왔다. 둘 다 25_multiple-integrals_verify.py에서 실험으로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [25_multiple-integrals_plot.py](/Hongs_Blog/studies/calculus/code/25_multiple-integrals_plot/)로 그렸고, 두 칸의 넓이 0.012와 0.086, 그 비율 7, 칸 64개 넓이의 합이 $$\pi$$인 것, 가운데 반지름 × $$dr$$ × $$d\theta$$가 칸 넓이와 같은 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 푸비니 정리와 변수변환, 떠올리는 신호를 근거로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Buddy System", "버디 할당", "Buddy Allocation", "짝 블록", "Buddy"]
 description: "버디 시스템은 메모리를 반, 반의 반, … 으로 쪼개 2의 거듭제곱 크기 블록만 나눠 주는 방법이다. 초콜릿 판을 반으로 쪼개고 또 반으로 쪼개 필요한 크기에 가장 가까운 조각을 주고, 돌려받으면 옆 조각(짝)과 다시 붙이는 식이다. 고정 분할과 동적 분할의 중간이라, 쪼개고 합치…"
@@ -18,7 +18,7 @@ prev_title: "메모리 분할"
 next_url: "/studies/operating-systems/paging/"
 next_title: "페이징"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/operating-systems/buddy-system/"
 ---
@@ -50,6 +50,22 @@ permalink: "/studies/operating-systems/buddy-system/"
 | D 해제 (256+256 → 512, 512+512 → 1024) | 1024 |
 
 A 요청 때 1024를 512·512로, 앞 512를 256·256으로, 앞 256을 128·128로 쪼개 앞 128을 A에 준다.
+
+```mermaid
+flowchart TD
+  T["1024"] --> L["512"]
+  T --> R["512"]
+  L --> L1["256"]
+  L --> B["256: B"]
+  L1 --> A["128: A"]
+  L1 --> X["128"]
+  X --> C["64: C"]
+  X --> F["64 빈칸"]
+  R --> D["256: D"]
+  R --> E["256 빈칸"]
+```
+
+D 요청까지 마친 순간의 모습이다. 같은 부모에서 나온 두 칸이 서로의 짝이고, 해제할 때는 짝이 둘 다 비어야 부모로 합쳐진다[^s2].
 
 B 해제 뒤에도 256 블록이 합쳐지지 않는 것을 보라. B의 짝은 앞쪽 256(A와 빈 128로 나뉘어 있음)이라, 짝 전체가 비어 있지 않다.
 
@@ -110,4 +126,5 @@ B 해제 뒤에도 256 블록이 합쳐지지 않는 것을 보라. B의 짝은 
 </details>
 
 [^s1]: 에이전트 보충. 공개 7장 슬라이드(Stony Brook)에 버디 시스템이 없어 문서 전체를 Stallings, *Operating Systems: Internals and Design Principles* 6판, 7.2절(그림 7.6, 7.7)로 채웠다. 짝 주소의 XOR 계산, 복잡도, 리눅스 사용은 교재 밖의 표준 설명이다(리눅스: Bovet & Cesati, *Understanding the Linux Kernel*, 8장 "Buddy System Algorithm").
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기" 표의 D 요청 행을 쪼개기 나무로 옮겼다.
 {% endraw %}

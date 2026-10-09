@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Gambling Disorder", "병적 도박", "pathological gambling", "도박중독", "손실 추구", "chasing losses", "통제력의 착각", "illusion of control", "도박사의 오류", "gambler's fallacy", "미신적 사고", "익명의 도박중독자 모임", "Gamblers Anonymous", "GA", "보상에 대한 과잉민감성"]
 description: "물질 없이도 술이나 약물처럼 사람을 붙잡는 대표적인 행위 중독이다. 처음 딴 기억에 끌려 판돈을 키우고, 잃으면 되찾으려고 더 걸고(손실 추구), 그 사실을 숨기려고 거짓말하고, 돈을 빌린다. \"이번엔 딸 차례\"라는 착각 같은 인지 왜곡이 도박을 붙잡는다. 대부분 가족이나 법원에 …"
@@ -18,7 +18,7 @@ prev_title: "알코올 관련 장애"
 next_url: "/studies/abnormal-psychology/gamblers-fallacy--independence/"
 next_title: "도박사의 오류 ↔ 독립"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/gambling-disorder/"
 ---
@@ -103,6 +103,19 @@ DSM-5-TR은 4~5개를 경도, 6~7개를 중등도, 8~9개를 중증으로 나눈
 
 간헐적 강화는 언제 보상이 올지 모르게 주어지는 강화로, 행동을 가장 끈질기게 유지하게 하고 소거하기 어렵게 만든다. 잃는 판이 이어져도 도박이 멈추지 않는 이유다[^s3].
 
+```mermaid
+flowchart LR
+    B["판돈을 걸기"] --> W["가끔 땀"]
+    B --> L["잃음"]
+    W -->|"간헐적 강화"| B
+    L --> C["이제 딸 차례라는 착각"]
+    C --> M["잃은 돈을 만회하려고 더 걸기"]
+    M --> B
+    M --> D["빚, 거짓말, 돈 빌리기"]
+```
+
+따도 잃어도 다시 거는 쪽으로 돌아간다. 따면 강화가 되고, 잃으면 인지 왜곡이 만회하려는 판돈을 부른다[^s4].
+
 ## 치료[^11][^12]
 
 - 치료가 매우 어렵고 재발률이 높다. 대부분 가족이나 법원에 의한 강제 치료다.
@@ -160,4 +173,5 @@ DSM-5-TR은 4~5개를 경도, 6~7개를 중등도, 8~9개를 중증으로 나눈
 [^s1]: 에이전트 보충. JH의 사례는 기준 번호를 짚으려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 도박장애의 심각도 구분(경도 4~5, 중등도 6~7, 중증 8~9)을 보탰다.
 [^s3]: 에이전트 보충. 간헐적(변동비율) 강화의 소거 저항은 조작적 조건형성의 표준 결과(스키너)다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '원인'의 행동주의적 입장과 인지적 왜곡(p.70~71), 진단기준 6·7·9(p.64)를 한 고리로 이었다.
 {% endraw %}

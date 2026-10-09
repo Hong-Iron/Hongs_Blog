@@ -18,7 +18,7 @@ prev_title: "군집화 알고리즘 비교"
 next_url: "/studies/data-science/nmf-clustering/"
 next_title: "행렬 분해 군집화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/data-science/curse-of-dimensionality/"
 ---
@@ -72,6 +72,20 @@ permalink: "/studies/data-science/curse-of-dimensionality/"
 
 슬라이드는 해결책으로 두 가지를 다룬다. (1) 차원을 줄인 뒤 군집화하는 [PCA](/Hongs_Blog/studies/probability-statistics/pca/), (2) 음수 없는 제약과 L1 정칙화를 건 [행렬 분해](/Hongs_Blog/studies/data-science/nmf-clustering/)[^4].
 
+```mermaid
+flowchart LR
+    D["차원이 많다"] --> S["자료가 희소해진다"]
+    D --> U["쓸모없는 속성이 늘어난다"]
+    S --> R["모든 점이 비슷하게 멀어 보인다"]
+    R --> B["거리·밀도에 기대는 군집화가 무너진다"]
+    U --> B
+    B --> P["차원을 줄인 뒤 군집화: PCA"]
+    B --> N["음수 없는 행렬 분해: NMF"]
+    B --> C["부분공간에서 찾기: CLIQUE"]
+```
+
+왼쪽 두 갈래 원인이 가운데에서 한 문제로 모인다. 오른쪽 세 칸이 그 문제를 피하는 방법이다[^s3].
+
 ## 연결
 
 - 선수: [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/), [군집화 알고리즘 비교](/Hongs_Blog/studies/data-science/contrast--clustering-algorithms/)
@@ -101,4 +115,5 @@ permalink: "/studies/data-science/curse-of-dimensionality/"
 [^4]: 같은 자료, p.12
 [^s1]: 에이전트 보충. 점 60개 실험과 카드 C2는 원본에 없다. 검증 코드로 계산했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [34_curse-of-dimensionality_plot.py](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_plot/)로 그렸다. 검증 코드와 같은 난수로 같은 점을 만들었고, (최대 − 최소)/최소 94.6과 0.14, 1000차원에서 0.93~1.06배 범위를 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 어려움 목록, 방법별 표, 해결책 문단(원본 10-1 p.9~12)을 근거로 그렸다.
 {% endraw %}

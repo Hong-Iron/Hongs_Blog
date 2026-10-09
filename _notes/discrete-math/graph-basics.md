@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Graph", "그래프", "정점", "vertex", "꼭짓점", "간선", "edge", "차수", "degree", "악수 정리", "handshake lemma", "인접행렬", "adjacency matrix", "인접 리스트", "adjacency list", "방향 그래프", "directed graph", "단순 그래프", "simple graph", "완전 그래프", "complete graph"]
 description: "지하철 노선도는 실제 거리와 모양을 버리고 \"어느 역이 어느 역과 이어져 있나\"만 남긴다. 그래프도 이렇게 대상은 점(정점)으로, 관계는 선(간선)으로만 그린 그림이다. 친구 관계, 웹 링크, 도로망, 회로, 의존성처럼 모양이 전혀 다른 문제를 같은 언어와 같은 알고리즘으로 다룬다…"
@@ -18,7 +18,7 @@ prev_title: "RSA 암호"
 next_url: "/studies/discrete-math/connectivity/"
 next_title: "경로와 연결성"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/graph-basics/"
 ---
@@ -60,6 +60,16 @@ A ─── B
 **동치인 다른 정의.** 단순 그래프는 $$V$$ 위의 [관계](/Hongs_Blog/studies/discrete-math/relations/) $$R$$ 중 대칭적이고 비반사적인 것과 같다. $$\{u, v\} \in E \iff (u, v) \in R$$로 대응시키면, 대칭성은 "간선에 방향이 없음", 비반사성은 "자기 자신으로 가는 고리가 없음"이다. 방향 그래프는 그냥 $$V$$ 위의 관계다.
 
 **설계 이유.** 간선을 "두 원소의 집합"으로 정의하면 방향이 없고, 같은 쌍 사이에 간선이 둘일 수 없고, 고리도 없다. 가장 단순한 모델에서 정리를 세운 뒤, 필요할 때 방향·무게·중복 간선(다중 그래프)을 더한다.
+
+```mermaid
+flowchart TD
+  S["단순 그래프: 방향 없음, 고리 없음, 같은 쌍에 간선 하나"] -->|"간선에 화살표를 준다"| D["방향 그래프"]
+  S -->|"간선에 수를 단다"| W["무게 있는 그래프"]
+  S -->|"고리와 같은 쌍의 여러 간선을 허용"| M["다중 그래프"]
+  S -->|"한 선이 셋 이상을 잇는다"| H["하이퍼그래프: 그래프가 아님"]
+```
+
+단순 그래프에서 출발해 무엇을 더 허용하느냐로 모델이 갈린다. 마지막 갈래의 하이퍼그래프는 간선이 두 점을 잇는다는 약속 자체를 깨서 그래프 밖에 있다[^s1].
 
 **해당하는 예:** 위의 친구 그래프, 모든 쌍이 이어진 완전 그래프 $$K_4$$(간선 $$\binom42 = 6$$개), 웹 페이지와 링크의 방향 그래프. **해당하지 않는 예:** 자기 자신으로 가는 고리가 있는 그림은 단순 그래프가 아니다(다중 그래프로 다룬다). 세 사람의 단체 대화방처럼 한 "선"이 세 점을 잇는 것은 그래프가 아니라 하이퍼그래프다.
 
@@ -210,4 +220,5 @@ A ─── B
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장 "Directed graphs & Partial Orders", 12장 "Simple Graphs"(차수, 악수 정리). Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(그래프의 종류, 인접 행렬과 인접 리스트).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 섹션의 '설계 이유'와 '해당하지 않는 예', '활용'의 무게 있는 간선을 갈래로 그렸다.
 {% endraw %}

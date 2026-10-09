@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Minimum Spanning Tree", "MST", "최소 스패닝 트리", "크루스칼", "Kruskal", "프림", "Prim", "자르기 성질"]
 description: "섬들을 다리로 모두 잇되, 다리 값의 합을 가장 적게 하고 싶다. 가장 싼 다리부터 보며, 이미 이어진 두 섬 사이의 다리면 건너뛰고 아니면 놓는다(크루스칼). 결과는 고리 없이 모든 섬을 잇는 나무가 되고, 섬이 n개면 다리는 n − 1개다. 단, 모든 섬이 이어질 수 있는 그래…"
@@ -18,7 +18,7 @@ prev_title: "플로이드–워셜"
 next_url: "/studies/algorithms/tree-traversal-bst/"
 next_title: "트리 순회와 이진 탐색 트리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/mst/"
 ---
@@ -45,6 +45,19 @@ permalink: "/studies/algorithms/mst/"
 | 3–4 (8), 3–5 (10) | 이어졌다 | 건너뜀 | |
 
 고른 간선 4개의 합은 1 + 2 + 2 + 5 = 10이다.
+
+```mermaid
+flowchart LR
+    n1(("1")) ===|"1"| n3(("3"))
+    n2(("2")) ===|"2"| n3
+    n4(("4")) ===|"2"| n5(("5"))
+    n2 ===|"5"| n4
+    n1 ---|"4"| n2
+    n3 ---|"8"| n4
+    n3 ---|"10"| n5
+```
+
+굵은 선이 고른 간선 4개이고, 가는 선이 건너뛴 간선 3개다. 가는 선을 하나라도 더하면 굵은 선과 함께 고리가 생긴다[^s1].
 
 ```python
 def kruskal(n, edges):                  # edges: (a, b, w), 점은 1 ~ n
@@ -130,4 +143,5 @@ def kruskal(n, edges):                  # edges: (a, b, w), 점은 1 ~ n
 
 
 [^1]: 자르기 성질과 그 증명은 Cormen 외, *Introduction to Algorithms* 3판, 23.1절 "Growing a minimum spanning tree"(정리 23.1)을 풀어 쓴 것이다. 크루스칼과 프림의 구현은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 15.1·15.3절.
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 간선 일곱 개와 크루스칼 표의 고름·건너뜀 결과를 그대로 그렸다.
 {% endraw %}

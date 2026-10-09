@@ -18,7 +18,7 @@ prev_title: "표본 추출"
 next_url: "/studies/data-science/association-rules/"
 next_title: "연관 규칙"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/data-science/frequent-patterns/"
 ---
@@ -74,6 +74,21 @@ $$X$$의 지지도가 기준 $$\sigma$$(min_sup) 이상이면 $$X$$를 **빈발 
 
 **아프리오리 성질.** 빈발 항목 집합의 부분집합은 모두 빈발이다. $$X \subseteq Y$$이면 $$Y$$를 담은 거래는 모두 $$X$$도 담으므로 $$\operatorname{support}(X) \ge \operatorname{support}(Y)$$이기 때문이다[^4]. 그래서 길이 100인 빈발 집합 하나가 있으면 그 부분집합 $$2^{100} - 1 \approx 1.27 \times 10^{30}$$개가 모두 빈발이다. 전부 계산하고 저장하기는 불가능하다[^4].
 
+```mermaid
+flowchart BT
+    E1["맥주 3"] --> P1["맥주, 기저귀 3"]
+    E2["기저귀 4"] --> P1
+    E1 --> P2["맥주, 달걀 1"]
+    E3["달걀 3"] --> P2
+    E2 --> P3["기저귀, 달걀 2"]
+    E3 --> P3
+    P1 --> T["맥주, 기저귀, 달걀 1"]
+    P2 --> T
+    P3 --> T
+```
+
+맥주, 기저귀, 달걀로 만들 수 있는 묶음을 아래에서 위로 쌓았다. 숫자는 지지 개수다. 화살표를 따라 위로 갈수록 묶음이 커지고 지지 개수는 같거나 줄어든다. 기준 50%(5장 중 3장 이상)를 넘는 묶음은 한 개짜리 셋과 {맥주, 기저귀}뿐이다[^s1].
+
 ## 연결
 
 - 집합의 언어: [집합](/Hongs_Blog/studies/discrete-math/sets/)(부분집합, 멱집합의 크기 $$2^n$$)
@@ -112,4 +127,5 @@ $$X$$의 지지도가 기준 $$\sigma$$(min_sup) 이상이면 $$X$$를 **빈발 
 [^2]: 같은 자료, p.7
 [^3]: 같은 자료, p.8
 [^4]: 같은 자료, p.11, p.17
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 영수증 5장(원본 p.7~8)에서 맥주·기저귀·달걀로 만든 항목 집합의 지지 개수를 직접 세어 그렸다.
 {% endraw %}

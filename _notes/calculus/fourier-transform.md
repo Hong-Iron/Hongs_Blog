@@ -16,7 +16,7 @@ description: "되풀이되지 않는 신호도 모든 주파수의 사인파로 
 prev_url: "/studies/calculus/fourier-series/"
 prev_title: "푸리에 급수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/fourier-transform/"
 ---
@@ -115,6 +115,16 @@ $$(f * g)(x) = \int_{-\infty}^{\infty}f(y)\,g(x - y)\,dy$$
 - **CNN.** 합성곱 신경망의 합성곱 층은 필터를 뒤집지 않고 밀며 곱해 더한다(상호상관). 이름은 합성곱이지만, 필터를 학습하므로 뒤집었는지는 결과에 영향이 없다[^2].
 - **불확정성.** 신호의 퍼진 정도 $$\Delta x$$와 스펙트럼의 퍼진 정도 $$\Delta\xi$$(각각 $$\vert f\vert ^2$$, $$\vert \hat f\vert ^2$$의 표준편차) 사이에 $$\Delta x\,\Delta\xi \ge \frac{1}{4\pi}$$가 맞고, 가우스 함수에서 등호다[^1]. 짧은 펄스로 빠르게 보내려면 넓은 대역이 필요하다는 통신의 기본 제약이다.
 
+```mermaid
+flowchart LR
+    FG["두 수열 f, g"] -- "직접 겹쳐 밀며 곱해 더한다, O(n²)" --> R["합성곱 f * g"]
+    FG -- "FFT, O(n log n)" --> H["두 스펙트럼"]
+    H -- "주파수마다 곱한다, O(n)" --> P["스펙트럼의 곱"]
+    P -- "역 FFT, O(n log n)" --> R
+```
+
+두 길은 같은 결과에 닿는다(합성곱 정리). 아래로 돌아가는 길은 세 번을 거쳐도 위의 직접 계산보다 싸다[^s3].
+
 ## 연결
 
 - 선수: [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/), [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/), [오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/)
@@ -151,4 +161,5 @@ $$(f * g)(x) = \int_{-\infty}^{\infty}f(y)\,g(x - y)\,dy$$
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 9.1절 "The Convolution Operation"(많은 라이브러리가 상호상관을 합성곱이라 부른다).
 [^s1]: 에이전트 보충. 반송파를 곱하면 양쪽 측파대가 생기고, 한쪽 측파대만 남기는 방식(SSB)이 대역을 절반만 쓴다는 것은 변조 성질에서 바로 나온다. 연결된 컴퓨터 통신 문서의 60~64 kHz 채널(반송파 64 kHz)이 한쪽 측파대를 쓴 배치다. 대역 수치는 31_fourier-transform_verify.py에서 DFT로 확인했다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [31_fourier-transform_plot.py](/Hongs_Blog/studies/calculus/code/31_fourier-transform_plot/)로 그렸고, $$\hat f(\frac12) = \frac2\pi$$, 정수 주파수와 폭 2의 $$\xi = \frac12$$에서 0, 겹친 넓이 0.6과 삼각형 값, 삼각형을 수치로 변환한 값이 $$\mathrm{sinc}^2$$와 같은 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 활용 절의 빠른 합성곱과 정리의 합성곱 정리를 근거로 그렸다. 이산 수열에서 DFT의 곱은 순환 합성곱이라, 보통의 합성곱을 얻으려면 두 수열 뒤에 0을 덧붙여 길이를 늘린 뒤 변환한다. 이산 순환 합성곱 = DFT 곱은 [31_fourier-transform_verify.py](/Hongs_Blog/studies/calculus/code/31_fourier-transform_verify/)에서 확인했다.
 {% endraw %}

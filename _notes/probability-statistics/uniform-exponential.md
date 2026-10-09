@@ -18,7 +18,7 @@ prev_title: "연속 확률변수와 확률밀도"
 next_url: "/studies/probability-statistics/normal-distribution/"
 next_title: "정규분포"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/uniform-exponential/"
 ---
@@ -76,6 +76,16 @@ permalink: "/studies/probability-statistics/uniform-exponential/"
 </details>
 
 
+```mermaid
+flowchart LR
+    PP["발생률 λ인 포아송 과정"] -->|"단위 시간의 사건 수"| Po["포아송 Pois(λ)"]
+    PP -->|"사건 사이 간격"| Ex["지수 Exp(λ)"]
+    Ge["기하분포"] -.->|"연속 시간판"| Ex
+    U["균등 난수 U, Unif(0, 1)"] -->|"-ln(1-U)/λ"| Ex
+```
+
+같은 포아송 과정을 개수로 세면 포아송 분포, 간격으로 재면 지수분포다. 아래의 균등 난수는 역변환을 거쳐 지수분포 표본이 된다.[^s2]
+
 ## 예제
 
 **복제본 중 첫 고장.** 서버 세 대가 독립으로 고장 나고, 각 고장까지의 시간이 $$\mathrm{Exp}(0.01)$$(시간 단위, 평균 100시간)이다.
@@ -130,4 +140,5 @@ permalink: "/studies/probability-statistics/uniform-exponential/"
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 5.2절 "Uniform", 5.3절 "Universality of the Uniform"(역변환), 5.5절 "Exponential"(무기억성, 최솟값), 5.6절 "Poisson processes"(도착 간격).
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [15_uniform-exponential_plot.py](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_plot/)로 그렸고, 그림에 쓴 값($$\frac{3}{10}$$, 수치 적분한 $$P(X > 1) = e^{-3} \approx 0.050$$)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정리의 성질 2·4와 연결 절(기하분포의 연속판)을 그렸다.
 {% endraw %}

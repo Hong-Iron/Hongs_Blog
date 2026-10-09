@@ -18,7 +18,7 @@ prev_title: "황금분할 탐색"
 next_url: "/studies/numerical-analysis/direct-search/"
 next_title: "직접 탐색법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/fibonacci-search/"
 ---
@@ -77,6 +77,20 @@ $$c_k = a_k + \left(1 - \frac{F_{n-k-1}}{F_{n-k}}\right)(b_k - a_k), \qquad d_k 
 
 
 마지막 $$r_{n-3} = \frac12$$에서는 두 점이 같아진다. 그래서 작은 구별 상수 $$e$$를 두고 $$(b_k - a_k)$$의 계수를 $$\frac12 - e$$나 $$\frac12 + e$$로 한다[^10].
+
+```mermaid
+flowchart TD
+    A["허용 오차 ε로 회차 수 n 정하기"] --> B["k = 0, 비율 F_n-1 / F_n"]
+    B --> C{"이번 비율이 1/2 인가?"}
+    C -->|"아니오"| D["두 점 c_k, d_k 놓기. 옛 점 하나는 그대로"]
+    C -->|"예"| E["한 점을 1/2 ± e 자리로 옮기기"]
+    D --> F["값 비교로 한쪽 버리기"]
+    E --> G["값 비교로 한쪽 버리고 끝"]
+    F --> H["k를 1 늘리고 비율을 F_n-k-1 / F_n-k로"]
+    H --> C
+```
+
+비율이 회차마다 작은 피보나치 수의 비로 바뀌다가 $$\frac12$$이 되는 회차에서 멈춘다. 그 마지막 회차만 구별 상수가 필요하다[^s3].
 
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
@@ -142,4 +156,5 @@ $$c_k = a_k + \left(1 - \frac{F_{n-k-1}}{F_{n-k}}\right)(b_k - a_k), \qquad d_k 
 [^10]: 같은 자료, p.26
 [^s1]: 에이전트 보충. 황금비와의 관계, 두 방법의 폭 비교, 장단점, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [26_fibonacci-search_plot.py](/Hongs_Blog/studies/numerical-analysis/code/26_fibonacci-search_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$F_{21} = 10{,}946$$, $$r_0 \approx 0.6180340$$, $$r_{18} = \frac12$$, 비율을 모두 곱하면 $$\frac{1}{F_{21}}$$.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 비율 정하기, 회차 수와 점, 구별 상수(원본 14.na14_optimization.pdf p.20~26)로 그렸다.
 {% endraw %}

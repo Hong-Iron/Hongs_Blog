@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Paraphilic Disorders", "변태성욕장애", "성도착증", "변태성욕", "paraphilia", "성도착", "변태", "perversion", "성적 왜곡", "sexual deviation", "외설언어증", "coprolalia", "위험성-욕구-반응성 원칙", "Risk-Need-Responsivity", "RNR 원칙", "화학적 거세"]
 description: "성적으로 흥분하는 대상이나 방식이 일반적이지 않은 상태가 성도착(변태성욕)이고, 그것이 본인을 괴롭히거나 생활을 무너뜨리거나 동의하지 않은 사람을 해칠 때 성도착장애가 된다. 특이한 성적 관심을 가졌다는 것만으로는 장애가 아니라는 점이 핵심이다. 대부분 남성이고, 행동이 범죄가 되…"
@@ -18,7 +18,7 @@ prev_title: "여성 극치감장애"
 next_url: "/studies/abnormal-psychology/paraphilia-vs-disorder/"
 next_title: "성도착과 성도착장애 비교"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/paraphilic-disorders/"
 ---
@@ -50,6 +50,18 @@ permalink: "/studies/abnormal-psychology/paraphilic-disorders/"
 - 6개월 이상 이어지고, 심각한 고통을 받거나 직업적·사회적 부적응을 보일 때 진단한다.
 
 DSM-5-TR의 진단기준은 대부분 두 부분으로 되어 있다. A는 특이한 성적 흥분이 6개월 이상 반복되는 것이고, B는 그 충동으로 본인이 고통이나 손상을 겪거나, 동의하지 않은 사람에게 행동으로 옮긴 것이다. 피해자가 있을 수 있는 유형(관음, 노출, 마찰도착, 가학, 소아성애)에서는 동의 없는 사람에게 행동한 것만으로도 B를 채운다[^s2].
+
+```mermaid
+flowchart TD
+    A{"특이한 성적 흥분이 6개월 이상 반복되는가 (기준 A)"} -->|"아니오"| N["해당 없음"]
+    A -->|"예"| B{"본인의 고통이나 기능 손상이 있는가"}
+    B -->|"예"| D["성도착장애"]
+    B -->|"아니오"| C{"동의하지 않은 사람에게 행동으로 옮겼는가 (피해자가 있을 수 있는 유형)"}
+    C -->|"예"| D
+    C -->|"아니오"| P["성도착, 장애는 아님"]
+```
+
+기준 B로 들어가는 문은 두 개다. 하나라도 열리면 장애이고, 둘 다 닫혀 있으면 특이한 관심일 뿐이다[^s4].
 
 ### DSM-5-TR의 여덟 유형[^2]
 
@@ -113,4 +125,5 @@ DSM-5-TR의 진단기준은 대부분 두 부분으로 되어 있다. A는 특�
 [^s1]: 에이전트 보충. 여덟 유형을 세 무리로 묶은 표는 DSM-5의 분류(구애 행동의 왜곡, 고통·굴욕 관련, 비정형적 대상)를 쉬운 말로 옮겼다.
 [^s2]: 에이전트 보충. DSM-5-TR 진단기준 B의 "동의하지 않은 사람에게 이 충동을 행동으로 옮긴 적이 있다"는 부분은 슬라이드의 진단기준에는 없고, 유형별 설명(p.37, 39, 41, 45의 "성적 충동에 따라 행동하지 않는다는 것이 시사될 경우 진단 X")에 간접적으로만 나온다.
 [^s3]: 에이전트 보충. RNR 원칙의 세 요소는 앤드루스와 본타(Andrews & Bonta)의 범죄자 재활 모델을 요약했다. 원본은 원칙의 이름만 적는다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '정의'의 진단 조건(p.33)과 DSM-5-TR 기준 B의 두 갈래([^s2])를 순서도로 옮겼다.
 {% endraw %}

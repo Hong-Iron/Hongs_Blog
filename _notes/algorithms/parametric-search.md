@@ -18,7 +18,7 @@ prev_title: "이분 탐색"
 next_url: "/studies/algorithms/greedy/"
 next_title: "그리디"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/algorithms/parametric-search/"
 ---
@@ -164,6 +164,20 @@ def max_true(lo, hi, ok):          # 참…참 거짓…거짓, ok(lo)는 참
 - **조건 1:** 답 후보 x가 커질 때 판정의 대답이 한 번만 바뀐다(단조성).
 - **조건 2:** "x면 되나?"를 빠르게, 보통 $$O(n)$$이나 $$O(n \log n)$$에 판정할 수 있다. 판정은 대개 앞에서부터 욕심껏 채우는 [그리디](/Hongs_Blog/studies/algorithms/greedy/)다.
 - **신호:** "최솟값의 최댓값", "최댓값의 최솟값", "가장 긴/짧은 ~을 구하라", 그리고 답의 범위가 10⁹처럼 커서 하나씩 해 볼 수 없다.
+
+```mermaid
+flowchart TD
+    P["가장 좋은 값을 구하라"] --> J["x면 되나? 라는 판정 질문으로 바꾼다"]
+    J --> M{"x가 커질 때 대답이 한 번만 바뀌나?"}
+    M -->|"아니오"| N["이 방법은 못 쓴다"]
+    M -->|"예"| T{"판정 하나를 빨리 할 수 있나?"}
+    T -->|"아니오"| N
+    T -->|"예"| K{"대답이 어느 쪽으로 바뀌나?"}
+    K -->|"거짓…거짓 참…참"| A["min_true: mid는 내림"]
+    K -->|"참…참 거짓…거짓"| B["max_true: mid는 올림"]
+```
+
+두 조건을 모두 통과해야 틀을 고른다. 대답이 바뀌는 방향에 따라 mid를 내림으로 잡을지 올림으로 잡을지가 갈린다[^s2].
 - **대표 문제:** [징검다리 건너기](/Hongs_Blog/studies/algorithms/pg64062/)는 "x명이 건널 수 있나?"를, [징검다리](/Hongs_Blog/studies/algorithms/pg43236/)는 "바위 사이 거리를 모두 x 이상으로 만들 수 있나?"를 판정한다.
 - 연습 순서: [매개변수 탐색 예제 사다리](/Hongs_Blog/studies/algorithms/parametric-search-ladder/)
 
@@ -234,4 +248,5 @@ def max_true(lo, hi, ok):          # 참…참 거짓…거짓, ok(lo)는 참
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search"의 Finding the smallest solution: ok(x)가 x < k에서 거짓, x ≥ k에서 참이면 k를 이분 탐색으로 찾고, ok를 O(log z)번 부른다. 불변식 증명의 형식은 Cormen 외, *Introduction to Algorithms* 3판 2.1절을 따랐다.
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [21_parametric-search_plot.py](/Hongs_Blog/studies/algorithms/code/21_parametric-search_plot/)로 그렸고, 토막 수(L = 1 ~ 6에서 24, 11, 6, 5, 4, 2), 토막 수가 L에 따라 늘지 않는다는 것, max_true 틀이 6, 3, 4, 5를 묻고 4를 돌려준다는 것을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '적용 조건과 알아보는 신호' 절의 조건 1·2와 '정의' 절의 최소형·최대형 틀(min_true, max_true의 mid 잡는 법)을 순서도로 옮겼다.
 {% endraw %}

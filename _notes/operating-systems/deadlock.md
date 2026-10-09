@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Deadlock", "교착상태의 네 조건", "Conditions for Deadlock", "상호 배제", "점유와 대기", "Hold and Wait", "비선점", "No Preemption", "순환 대기", "Circular Wait", "자원 할당 그래프", "Resource Allocation Graph", "재사용 자원", "소모성 자원", "타조 정책"]
 description: "신호등 없는 네거리에 네 방향 차가 동시에 들어와, 각자 앞 칸을 차지한 채 옆 차가 비켜 주기를 기다리면 아무도 움직이지 못한다. 프로세스들이 서로 상대가 쥔 자원을 기다리며 영원히 멈추는 것이 교착상태다. 네 가지 조건이 모두 맞을 때만 생기므로, 하나만 깨면 막을 수 있다. …"
@@ -43,6 +43,16 @@ permalink: "/studies/operating-systems/deadlock/"
 | 4 | D, A | D | A |
 
 차 1은 차 2가, 차 2는 차 3이, 차 3은 차 4가, 차 4는 차 1이 비켜 주기를 기다린다. 기다림이 원을 이루어 아무도 비켜 줄 수 없다[^2].
+
+```mermaid
+flowchart LR
+  C1["차 1, A를 차지"] -->|"B를 기다림"| C2["차 2, B를 차지"]
+  C2 -->|"C를 기다림"| C3["차 3, C를 차지"]
+  C3 -->|"D를 기다림"| C4["차 4, D를 차지"]
+  C4 -->|"A를 기다림"| C1
+```
+
+화살표는 "앞 차가 뒤 차의 칸이 비기를 기다린다"는 뜻이다. 화살표를 따라가면 출발한 차로 돌아오므로, 어느 차도 먼저 움직일 수 없다[^s2].
 
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
@@ -215,4 +225,5 @@ flowchart LR
 [^11]: 같은 자료, p.20~21 (그림 6.5, 6.6)
 [^12]: 같은 자료, p.22
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 지금 자료와 같은 시리즈(Stallings 6판, Dave Bremer 작성)의 공개본(Radboud 대학)을 원본으로 썼다. 네 조건의 논리식과 성질·사건의 구별, 타조 정책의 뜻, 잠금 순서·데이터베이스·운영체제 연결, 확인 문제 C3·C4는 Stallings 6판 6.1절을 바탕으로 보탰다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기"의 네거리 표(p.4~5)를 기다림 관계 그림으로 그렸다.
 {% endraw %}

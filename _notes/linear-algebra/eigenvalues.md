@@ -18,7 +18,7 @@ prev_title: "그람-슈미트와 QR 분해"
 next_url: "/studies/linear-algebra/diagonalization/"
 next_title: "대각화와 행렬 거듭제곱"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/eigenvalues/"
 ---
@@ -69,6 +69,17 @@ $$n \times n$$ 행렬의 고윳값(복소수 포함, 중복을 세어 $$n$$개) 
 
 </div>
 
+
+```mermaid
+flowchart LR
+    A["정사각 행렬 A"] --> D["특성방정식 det(A - λI) = 0 풀기"]
+    D --> L["고윳값 λ₁ … λₙ"]
+    L --> N["λ마다 A - λI의 영공간 구하기"]
+    N --> V["그 λ의 고유벡터"]
+    L --> C["검산: 합 = 대각합, 곱 = det A"]
+```
+
+고윳값을 먼저 모두 구하고, 고유벡터는 고윳값마다 따로 구한다. 고윳값의 합과 곱을 대각합·행렬식과 맞춰 보면 계산 실수를 바로 잡아낸다[^s3].
 
 ## 증명
 
@@ -194,4 +205,5 @@ $$A = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$의 고윳값과 고유벡터.
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.1절 "Introduction to Eigenvalues"(마르코프 행렬 예, 특성방정식, 대각합과 행렬식, 사영·반사·회전).
 [^s1]: 에이전트 보충. 페이지랭크를 거듭제곱법으로 구하는 방법은 Brin·Page의 1998년 논문 이후 선형대수 교재의 표준 응용 예다(Strang 5판 10.3절 "Markov Matrices"). 라이브러리가 QR 알고리즘을 쓴다는 것은 LAPACK 문서(`geev`)에 있다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [19_eigenvalues_plot.py](/Hongs_Blog/studies/linear-algebra/code/19_eigenvalues_plot/)로 그렸고, $$(0.8, 0.2)$$, $$(0.7, 0.3)$$, $$(0.65, 0.35)$$의 순서, 두 고유벡터, 남은 차이가 늘 $$(1, -1)$$ 방향이고 해마다 절반이 되는 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 동치인 정의(특성방정식, $$N(A - \lambda I)$$)와 "합과 곱" 정리, `예제`의 풀이 순서를 옮겼다(Strang 5판 6.1절).
 {% endraw %}

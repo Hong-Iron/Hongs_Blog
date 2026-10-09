@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Queue", "Deque", "큐", "덱", "데크", "FIFO", "선입선출", "collections.deque", "popleft", "LRU"]
 description: "매표소 줄처럼 먼저 온 사람이 먼저 나가는 것이 큐다. 이 규칙을 선입선출(FIFO)이라 부른다. 파이썬의 deque는 줄의 양쪽 끝에서 넣고 빼는 일이 모두 한 번에 끝나서, 큐로도 스택으로도 양쪽을 다 쓰는 줄(덱)로도 쓴다. 리스트로 큐를 만들면 앞에서 뺄 때마다 나머지를 한…"
@@ -18,7 +18,7 @@ prev_title: "스택"
 next_url: "/studies/algorithms/heap/"
 next_title: "힙과 우선순위 큐"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/queue-deque/"
 ---
@@ -73,6 +73,18 @@ q = deque([1, 2, 3])   # 리스트로 만들기
 - 이미 있는 것을 쓰면: 줄에서 빼서(`remove`) 맨 뒤로 다시 넣는다(`append`).
 - 없는 것을 넣는데 가득 찼으면: 맨 앞을 버린다(`popleft`).
 
+```mermaid
+flowchart TD
+    Q["요청 x가 온다"] --> H{"x가 줄에 있나?"}
+    H -->|"있다"| R["remove로 x를 빼고 append로 맨 뒤에"]
+    H -->|"없다"| F{"줄이 가득 찼나?"}
+    F -->|"찼다"| P["popleft로 맨 앞을 버린다"]
+    F -->|"아니다"| A["append로 x를 맨 뒤에"]
+    P --> A
+```
+
+어느 길로 가든 마지막에 x는 줄의 맨 뒤에 선다. 버리는 일은 x가 줄에 없고 줄이 가득 찼을 때만 생긴다[^s1].
+
 `remove`가 $$O(k)$$라서 보관함 크기 k가 작을 때 알맞다. k가 크면 넣은 순서를 기억하는 딕셔너리 `OrderedDict`의 `move_to_end`(맨 뒤로 옮기기)와 `popitem(last=False)`(맨 앞 빼기)로 모든 일을 평균 $$O(1)$$에 한다[^1].
 
 <div class="callout callout-check" markdown="1">
@@ -121,4 +133,5 @@ q = deque([1, 2, 3])   # 리스트로 만들기
 
 [^1]: Python 3 표준 라이브러리 문서, `collections.deque`: 양쪽 끝의 append·pop이 어느 방향이든 대략 O(1)이고, 번호로 꺼내기는 양 끝에서 O(1)이지만 가운데로 갈수록 O(n)으로 느려진다고 적혀 있다. `rotate`, `maxlen`도 같은 문서. `OrderedDict`의 `move_to_end`와 `popitem(last=False)`도 같은 모듈 문서. 큐의 정의는 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.1 "Stacks and queues".
 [^2]: Python 3 공식 튜토리얼 5.1.2 "Using Lists as Queues": 리스트는 앞에서 넣고 빼는 것이 느리므로 큐에는 `collections.deque`를 쓰라고 한다.
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '가장 오래 안 쓴 것 버리기 (LRU)' 절의 세 규칙(이미 있으면 remove 후 append, 없고 가득 찼으면 popleft, 그 뒤 append)을 순서도로 옮겼다.
 {% endraw %}

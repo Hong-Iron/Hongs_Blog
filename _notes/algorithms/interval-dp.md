@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Interval DP", "구간 동적 계획법", "행렬 곱셈 순서", "Matrix Chain Multiplication", "괄호 치기"]
 description: "줄지어 선 것들을 두 덩어리씩 합쳐 하나로 만들 때, \"마지막에 어디서 나뉘었나\"를 모두 따져 가장 좋은 방법을 찾는다. 긴 구간의 답을 그 안의 더 짧은 두 구간의 답으로 만들기 때문에, 짧은 구간부터 표를 채운다. 괄호 치는 순서, 행렬 곱셈 순서, 문자열을 나누는 방법 같은 …"
@@ -18,7 +18,7 @@ prev_title: "동적 계획법"
 next_url: "/studies/algorithms/tree-dp/"
 next_title: "트리 DP"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/interval-dp/"
 ---
@@ -37,6 +37,24 @@ permalink: "/studies/algorithms/interval-dp/"
 
 - (AB)C: AB에 10·30·5 = 1,500, 그 결과(10×5)와 C에 10·5·60 = 3,000. 합 4,500
 - A(BC): BC에 30·5·60 = 9,000, A와 그 결과(30×60)에 10·30·60 = 18,000. 합 27,000
+
+```mermaid
+flowchart TD
+    subgraph left["(AB)C, 합 4,500"]
+        L2["× 3,000"] --> L1["× 1,500"]
+        L2 --> LC["C 5×60"]
+        L1 --> LA["A 10×30"]
+        L1 --> LB["B 30×5"]
+    end
+    subgraph right["A(BC), 합 27,000"]
+        R2["× 18,000"] --> RA["A 10×30"]
+        R2 --> R1["× 9,000"]
+        R1 --> RB["B 30×5"]
+        R1 --> RC["C 5×60"]
+    end
+```
+
+괄호 치는 방법 하나가 나무 하나다. 잎은 행렬이고, 안쪽 칸 하나가 곱셈 한 번이며 칸 안의 수가 그 곱셈의 비용이다. 맨 위 칸이 마지막 곱셈이고, 그 칸이 앞 덩어리와 뒤 덩어리를 어디서 나누는지가 점화식의 m이다[^s1].
 
 dp[i][j]를 "i번째부터 j번째 행렬까지 곱하는 최소 비용"으로 두고 짧은 구간부터 채운다.
 
@@ -125,4 +143,5 @@ for length in range(2, k + 1):                 # 짧은 구간부터
 
 
 [^1]: Cormen 외, *Introduction to Algorithms* 3판, 15.2절 "Matrix-chain multiplication": 마지막 나눔 자리 k를 모두 따지는 점화식, 구간 길이 순서로 채우는 표, O(n³) 시간.
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 두 곱셈 순서와 비용, '연결' 절의 '괄호를 치는 방법 하나는 정 이진 트리 하나'라는 설명을 나무로 그렸다.
 {% endraw %}

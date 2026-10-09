@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Cognitive Perspective", "인지적 모델", "인지행동적 입장", "cognitive-behavioral perspective", "인지행동치료", "CBT", "Cognitive Behavior Therapy", "인지적 왜곡", "cognitive distortion", "역기능적 신념", "dysfunctional belief", "비합리적 신념", "irrational belief", "ABC 모델", "엘리스", "Ellis", "벡", "Beck", "합리적 정서행동치료", "REBT"]
 description: "같은 일을 겪어도 그 일을 어떻게 해석하느냐가 감정과 행동을 정한다고 본다. 마음의 병은 자신과 세상을 비현실적으로 부정적으로 보는 생각 습관에서 생기므로, 그 생각을 찾아 현실에 맞게 바꾸면 낫는다. 생각이라는 눈에 보이지 않는 과정을 다루면서도 검증할 수 있는 치료를 만들었다는…"
@@ -18,7 +18,7 @@ prev_title: "행동주의적 입장"
 next_url: "/studies/abnormal-psychology/biomedical-perspective/"
 next_title: "생물의학적 입장"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/cognitive-perspective/"
 ---
@@ -65,6 +65,19 @@ permalink: "/studies/abnormal-psychology/cognitive-perspective/"
 
 행동주의가 "무엇을 겪었나(자극과 결과)"를 본다면, 인지적 입장은 그 사이에 "어떻게 받아들였나(해석)"를 끼워 넣는다. 같은 경험에도 사람마다 반응이 다른 이유, 곧 행동주의가 설명하지 못한 부분을 여기서 설명한다.
 
+```mermaid
+flowchart LR
+  P["파블로프"] --> BH["행동주의적 입장: 학습 원리"]
+  SK["스키너"] --> BH
+  BA["반두라"] --> BH
+  EL["엘리스: A-B-C 모델, 합리적 정서행동치료"] --> CG["인지적 입장: 인지치료"]
+  BE["벡: 우울의 인지치료"] --> CG
+  BH --> CBT["인지행동적 입장과 인지행동치료"]
+  CG --> CBT
+```
+
+다섯 사람이 두 줄기로 모이고, 두 줄기가 합쳐 인지행동치료가 된다[^s4].
+
 ## 연결
 
 - 앞선 입장과 통합: [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/)
@@ -102,4 +115,5 @@ permalink: "/studies/abnormal-psychology/cognitive-perspective/"
 [^s1]: 에이전트 보충. 단체 채팅방 사례와 A-B-C 표는 기본 가정을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 이 가정은 스토아 철학자 에픽테토스의 말("사람을 괴롭히는 것은 사물이 아니라 사물에 대한 견해다")에서 왔고, 엘리스와 벡이 인지치료의 출발점으로 인용했다.
 [^s3]: 에이전트 보충. 엘리스의 A-B-C 모델(사건-신념-결과)과 합리적 정서행동치료(REBT), 벡의 우울 인지치료는 인지치료의 역사에 대한 표준 설명이다. 3회 슬라이드가 "인지적 재구성: ABC 기법"을 다룬다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '인지행동적 입장' 절(슬라이드 p.52의 인물 목록)을 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "테일러 급수 방법"
 next_url: "/studies/numerical-analysis/ode-systems/"
 next_title: "연립 상미분방정식"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/runge-kutta/"
 ---
@@ -95,6 +95,19 @@ RK4_STEP(f, x, y, h)
   k4 ← f(x + h,   y + h·k3)
   return y + h/6·(k1 + 2k2 + 2k3 + k4)
 ```
+
+```mermaid
+flowchart LR
+    K1["k1: 시작점 x"] -->|"반 걸음 짐작"| K2["k2: x + h/2"]
+    K2 -->|"반 걸음 다시 짐작"| K3["k3: x + h/2"]
+    K3 -->|"한 걸음 짐작"| K4["k4: x + h"]
+    K1 --> Y["다음 값 y_i+1"]
+    K2 --> Y
+    K3 --> Y
+    K4 --> Y
+```
+
+각 기울기는 바로 앞 기울기로 $$y$$를 짐작해 옮긴 점에서 잰다. 그래서 $$k_1$$부터 $$k_4$$까지 차례대로만 계산할 수 있다[^s3].
 
 ### 스스로 설명해 보기
 
@@ -200,4 +213,5 @@ $$F$$의 $$h^1$$ 항 $$w_2ahf'$$이 테일러의 $$\frac h2f'$$과 같아야 2�
 [^4]: 같은 자료, p.10
 [^s1]: 에이전트 보충. 오차 표와 호인 걸음, 세 2차 방법의 이름, RK4 공식(슬라이드는 2차 유도까지만 있다), 스스로 설명해 보기, 활용·RK45, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [34_runge-kutta_plot.py](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 세 방법의 오차, 호인 첫 걸음 $$y_1 = 1.11$$, 계산 40번에서 오일러 오차 0.066과 RK4 오차 $$4.2 \times 10^{-6}$$의 비가 1만 이상.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 'RK4' 절의 의사코드로 그렸다.
 {% endraw %}

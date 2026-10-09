@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Childhood-Onset Fluency Disorder", "말더듬", "Stuttering", "유창성장애", "비유창성", "disfluency"]
 description: "말더듬이다. 첫소리를 되풀이하거나(\"ㄱ-ㄱ-가방\"), 길게 끌거나, 말이 막혀 나오지 않아 말의 흐름이 끊긴다. 신기하게도 소리 내어 읽거나 노래할 때, 동물에게 말할 때는 잘 나타나지 않고, 잘 말해야 한다는 부담이 클수록 심해진다. 그래서 또 더듬을까 봐 두려워하고 말할 상황을…"
@@ -18,7 +18,7 @@ prev_title: "말소리장애"
 next_url: "/studies/abnormal-psychology/social-communication-disorder/"
 next_title: "사회적 의사소통장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/stuttering/"
 ---
@@ -57,6 +57,16 @@ permalink: "/studies/abnormal-psychology/stuttering/"
 - 전형적으로 2~7세에 서서히 생긴다.
 - 종단 연구에 따르면 65~85%의 아동이 비유창성에서 회복한다. 8세 때 유창성장애의 심각도가 회복 여부를 예측한다.
 
+```mermaid
+flowchart LR
+    P["의사소통 부담, 예: 발표"] --> S["말더듬이 심해짐"]
+    S --> F["또 더듬을까 봐 예기 공포"]
+    F --> A["말할 상황을 피하거나, 단어와 말 속도를 바꿈"]
+    F -.->|"다음 말하기의 부담이 커짐"| P
+```
+
+부담이 말더듬을 키우고, 말더듬이 공포와 회피를 낳는다. 점선은 공포가 다음 말하기를 더 부담스럽게 만드는 길이다[^s3].
+
 ## 연결
 
 - 소리의 정확성 문제: [말소리장애](/Hongs_Blog/studies/abnormal-psychology/speech-sound-disorder/)
@@ -83,4 +93,5 @@ permalink: "/studies/abnormal-psychology/stuttering/"
 [^2]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.18
 [^s1]: 에이전트 보충. KC의 사례는 진단 특징을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 리듬과 평가의 부재로 설명한 것은 해석이다. 원본은 상황에 따른 변화만 적는다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '정의'의 부담에 따른 악화(p.17)와 '임상적 특징'의 예기 공포와 회피(p.18)를 이었다. 점선의 되먹임은 해석이다.
 {% endraw %}

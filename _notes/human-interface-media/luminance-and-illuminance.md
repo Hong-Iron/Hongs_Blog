@@ -18,7 +18,7 @@ prev_title: "이미지 함수"
 next_url: "/studies/human-interface-media/eye-anatomy/"
 next_title: "눈의 구조"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 ---
@@ -62,6 +62,16 @@ permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 
 </div>
 
+
+```mermaid
+flowchart LR
+  S["광원: 광도 I, cd"] -- "거리 d만큼 가며 퍼짐, E = I / d²" --> E["면에 닿는 빛: 조도 E, lx"]
+  E -- "반사율 ρ만큼 되쏨, L = ρE / π" --> L["면에서 나오는 빛: 휘도 L, cd/m²"]
+  L --> V["눈"]
+  V --> B["느끼는 밝기: 주변과의 대비를 크게 참고"]
+```
+
+빛 하나가 왼쪽에서 오른쪽으로 가면서 이름이 바뀐다. 거리는 조도를, 반사율은 휘도를 정한다. 눈에 닿는 것은 맨 끝의 휘도뿐이다[^s5].
 
 두 식을 합치면 대비가 조도와 무관한 이유가 바로 보인다. 흰 종이와 검은 종이의 휘도는 $$\rho_w E/\pi$$와 $$\rho_b E/\pi$$이므로 $$C_M = (\rho_w - \rho_b)/(\rho_w + \rho_b)$$다. $$E$$가 약분되어 사라진다. 예시의 종이는 $$C_M = 0.75/0.85 \approx 0.882$$다.
 
@@ -133,4 +143,5 @@ permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 [^s2]: 에이전트 보충. 측광량의 표와 식(역제곱 법칙, 완전 확산면의 $$L = \rho E/\pi$$, 웨버·마이컬슨 대비)은 측광·영상 공학 교재의 표준 내용이다. 슬라이드는 이름만 든다. 이미지 값이 휘도에 비례한다는 것은 감마 보정 전의 선형 센서 값에 대한 설명이다.
 [^s3]: 에이전트 보충. 밝기 항등성을 주변과의 비로 설명하는 것은 지각 교재의 표준 설명(비율 원리)이지만, 그것만으로 모든 경우를 설명하지는 못한다.
 [^s4]: 에이전트 보충. 그림 1장은 원본에 없다. [13_luminance-and-illuminance_plot.py](/Hongs_Blog/studies/human-interface-media/code/13_luminance-and-illuminance_plot/)로 그렸고, 그림에 쓴 값(500 lx에서 127.3과 7.96 cd/m², 모든 조도에서 휘도 비 16과 마이컬슨 대비 0.882)을 같은 코드로 확인했다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의의 측광량 표와 두 식(역제곱 법칙, 완전 확산면의 휘도), 강의 3 p.4의 빛 파라미터 목록을 근거로 그렸다.
 {% endraw %}

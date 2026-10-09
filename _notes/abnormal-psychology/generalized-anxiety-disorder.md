@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Generalized Anxiety Disorder", "GAD", "걱정", "worry", "부동불안", "free-floating anxiety", "다중공포증", "multiple phobia", "파국화", "catastrophizing", "인지적 회피", "cognitive avoidance", "사고-사건 융합", "thought-event fusion", "상위걱정", "meta-worry", "걱정의 유용성에 대한 믿음", "불확실성에 대한 인내력 부족", "벤조다이아제핀", "benzodiazepine", "GABA", "걱정사고 기록지", "걱정하는 시간"]
 description: "가족, 돈, 건강, 일, 앞날처럼 여러 가지를 두고 걱정이 끊이지 않는 장애다. 걱정이 실제 일의 크기보다 지나치고, 스스로 멈추려 해도 멈춰지지 않으며, 몸이 늘 긴장하고 피곤하다. 역설적이게도 걱정은 불쾌한 감정과 몸의 각성을 잠시 피하게 해 주는 수단이 되어, 그 덕분에 오히…"
@@ -18,7 +18,7 @@ prev_title: "특정공포증과 광장공포증 비교"
 next_url: "/studies/abnormal-psychology/ocd/"
 next_title: "강박장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/generalized-anxiety-disorder/"
 ---
@@ -108,6 +108,16 @@ D. 심각한 고통이나 사회적·직업적·그 밖의 중요한 영역의 �
 - **상위걱정(meta-worry):** 걱정에 대한 걱정. 필기의 예: "난 왜 이렇게 걱정이 많지?"[^6]
 - **걱정의 유용성에 대한 믿음:** "걱정해야 대비할 수 있다", "걱정하면 나쁜 일을 막을 수 있다".
 
+```mermaid
+flowchart LR
+  A["불쾌한 신체감각과 각성"] --> W["말로 하는 걱정으로 도망친다"]
+  W --> R["신체 각성이 줄어든다"]
+  R -- "보상" --> K["다음에도 걱정을 고른다"]
+  K --> A
+```
+
+위 목록의 인지적 회피는 한 바퀴 도는 고리다. 걱정이 괴로운데도 계속되는 이유는 셋째 칸에 있다. 걱정할 때마다 몸의 각성이 잠깐 줄어서, 걱정이 도망칠 곳으로 굳어진다[^s4].
+
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심 (필기)</div>
 
@@ -194,4 +204,5 @@ D. 심각한 고통이나 사회적·직업적·그 밖의 중요한 영역의 �
 [^s1]: 에이전트 보충. CT의 하루는 인지적 특성을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 대치로 공포증이 생긴다는 예는 슬라이드의 "특정 다른 방어기제를 사용하게 되면 다른 특정 장애로 발전"을 꼬마 한스 사례(특정공포증 문서)와 이어 설명한 것이다.
 [^s3]: 에이전트 보충. 사고-사건 융합은 웰스(Wells)의 범불안장애 메타인지 모형에서 나온 개념으로, 강박장애 연구의 사고-행위 융합(thought-action fusion, Rachman)과 비슷하다. 필기의 설명과 표준 정의의 차이는 로드맵 확인할 것에 올렸다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '과도한 걱정에 초점을 둔 설명들'의 인지적 회피 항목(슬라이드 p.54)을 근거로 그렸다.
 {% endraw %}

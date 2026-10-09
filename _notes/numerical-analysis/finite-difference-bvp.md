@@ -67,6 +67,18 @@ $$\frac{d^2T}{dx^2} \approx \frac{T_{i-1} - 2T_i + T_{i+1}}{\Delta x^2}$$
 $$\frac{T_{i-1} - 2T_i + T_{i+1}}{\Delta x^2} + h'(T_a - T_i) = 0 \quad\Longrightarrow\quad -T_{i-1} + (2 + h'\Delta x^2)T_i - T_{i+1} = h'\Delta x^2T_a$$
 
 
+```
+x       0      2      4      6      8      10
+        o------*------*------*------*------o
+        T0     T1     T2     T3     T4     T5
+       (40)   (?)    (?)    (?)    (?)   (200)
+
+i = 2의 식:   T1 ---- T2 ---- T3
+             (-1)  (2.04)   (-1)
+```
+
+`o`는 값을 아는 양 끝, `*`는 미지수다. 식 하나는 한 점과 그 양옆 두 점만 쓴다. 그래서 행렬의 한 줄에는 수가 세 개뿐이고, $$T_0$$와 $$T_5$$는 첫 식과 마지막 식의 우변으로 간다[^s3].
+
 $$T_0$$와 $$T_n$$은 알고 있으므로 첫 식과 마지막 식의 오른쪽으로 옮긴다. 그러면 계수 행렬은 대각선과 그 바로 위아래에만 수가 있는 **삼중대각 행렬**이다[^4].
 
 $$\begin{pmatrix}2 + h'\Delta x^2 & -1 & & \\ -1 & 2 + h'\Delta x^2 & -1 & \\ & \ddots & \ddots & \ddots\\ & & -1 & 2 + h'\Delta x^2\end{pmatrix}\begin{pmatrix}T_1\\ T_2\\ \vdots\\ T_{n-1}\end{pmatrix} = \begin{pmatrix}h'\Delta x^2T_a + T_0\\ h'\Delta x^2T_a\\ \vdots\\ h'\Delta x^2T_a + T_n\end{pmatrix}$$
@@ -120,4 +132,5 @@ $$\begin{pmatrix}2 + h'\Delta x^2 & -1 & & \\ -1 & 2 + h'\Delta x^2 & -1 & \\ & 
 [^4]: 같은 자료, p.12
 [^s1]: 에이전트 보충. 참값 비교와 간격 실험, 토마스 알고리즘, 대각 우세, 오차 차수, 활용, 사격법과의 비교, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [37_finite-difference-bvp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 유한 차분 값과 참값, 가장 큰 오차가 간격을 반으로 할 때마다 약 $$\frac14$$.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 격자($$\Delta x = 2$$, 경계 40과 200)와 '정의'의 안쪽 점 식(원본 19.na19_diff_eq2.pdf p.11~13)으로 그렸다.
 {% endraw %}

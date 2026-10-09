@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Segment Tree", "구간 트리", "Sweep Line", "스위핑", "평면 쓸기"]
 description: "반 대표, 학년 대표, 전교 대표가 각자 맡은 학생들의 점수 합을 들고 있다고 하자. 한 학생 점수가 바뀌면 그 위 대표 몇 명만 고치고, 몇 번부터 몇 번까지의 합은 대표 몇 명의 값을 모으면 된다. 누적 합은 값이 하나만 바뀌어도 다시 만들어야 하는데, 이 나무는 바꾸기와 묻기…"
@@ -18,7 +18,7 @@ prev_title: "트리 DP"
 next_url: "/studies/algorithms/bipartite-matching/"
 next_title: "이분 매칭"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/segment-tree-sweep/"
 ---
@@ -79,6 +79,19 @@ def query(t, size, l, r):                  # [l, r)의 합
 ```
 
 **스위핑:** 직사각형마다 왼쪽 변을 "들어옴", 오른쪽 변을 "나감" 사건으로 만들고 x 순서로 정렬한다. 사건과 사건 사이에서는 덮인 모양이 바뀌지 않는다. 그래서 "지금 세로로 덮인 길이 × 다음 사건까지의 폭"을 더하면 넓이가 된다. 덮인 길이는 y 좌표를 압축한 세그먼트 트리로 관리한다. 마디마다 "이 마디를 통째로 덮는 직사각형 수"(cnt)와 "이 마디 안에서 덮인 길이"(cov)를 둔다. cnt > 0이면 cov는 마디 길이 전체, 아니면 두 자식 cov의 합이다[^2].
+
+```mermaid
+flowchart TD
+    A["직사각형마다 왼쪽 변은 들어옴, 오른쪽 변은 나감 사건으로 만든다"] --> B["사건을 x 순서로 정렬한다"]
+    B --> C["다음 사건을 꺼낸다"]
+    C --> D["그 변의 y 구간에 cnt를 들어옴이면 +1, 나감이면 -1 한다"]
+    D --> E["넓이 += 뿌리의 cov × 다음 사건까지의 x 폭"]
+    E --> F{"사건이 남았나?"}
+    F -->|"예"| C
+    F -->|"아니오"| G["넓이를 돌려준다"]
+```
+
+사건 하나를 처리할 때마다 트리를 고치고, 그다음 사건까지의 띠 하나의 넓이를 더한다. 마지막 사건 뒤에는 덮인 길이가 0이라 더할 것이 없다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 그림의 마디 값, 2 ~ 6번 칸의 합과 쓰인 마디, 3번 칸을 바꿀 때 고친 마디를 코드로 확인했다. 무작위 배열 300개에서 합, 최솟값, 최댓값, 최대공약수 묻기를 직접 계산과 비교했다. 덮인 길이 트리로 구한 직사각형 합집합 넓이도 무작위 1,000묶음에서 칸을 하나씩 센 값과 같았다 — [33_segment-tree-sweep_verify.py](/Hongs_Blog/studies/algorithms/code/33_segment-tree-sweep_verify/)</div>
@@ -149,4 +162,5 @@ def query(t, size, l, r):                  # [l, r)의 합
 
 [^1]: 배열로 만드는 아래에서 위로의 세그먼트 트리는 Laaksonen, *Competitive Programmer's Handbook* (2018판), 9.3 "Segment tree"의 방식이다.
 [^2]: 사건을 x 순서로 처리하는 생각은 같은 책 30장 "Sweep line algorithms"에 있다. 덮인 길이를 cnt와 cov로 관리하는 방법은 그 책에 없는 보충이고, 무작위 비교로 확인했다.
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '정의' 절 아래 스위핑 문단(들어옴·나감 사건, x 순서 정렬, '덮인 길이 × 다음 사건까지의 폭', cnt와 cov)을 순서도로 옮겼다.
 {% endraw %}

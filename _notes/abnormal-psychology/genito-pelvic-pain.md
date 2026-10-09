@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Genito-Pelvic Pain/Penetration Disorder", "GPPPD", "성기-골반 통증/삽입장애", "성교통", "dyspareunia", "질경련", "vaginismus"]
 description: "삽입할 때 아프거나, 아플까 봐 몹시 두렵거나, 삽입하려 하면 골반 근육이 저절로 조여서 삽입이 어려운 상태가 반년 넘게 이어지는 장애다. 통증, 통증에 대한 두려움, 근육의 긴장이 서로를 키우는 공포 반응과 비슷하다. 성적 관심이 있어도 상황을 피하고, 부인과 검진까지 피하기도 …"
@@ -18,7 +18,7 @@ prev_title: "여성 성적 관심·흥분장애"
 next_url: "/studies/abnormal-psychology/female-orgasmic/"
 next_title: "여성 극치감장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/genito-pelvic-pain/"
 ---
@@ -69,6 +69,17 @@ DSM-IV의 성교통(dyspareunia)과 질경련(vaginismus)을 합친 진단이다
 - 삽입 성교와 남성의 성적 욕구를 우선하고 여성스러움을 강조하는 성 역할의 사회 구조가 영향을 준다.
 - 이 진단은 여성에게만 내린다. 남성의 만성 골반통 증후군은 2.2~9.7%로 추정되지만 연구와 임상 경험이 부족하다.
 
+```mermaid
+flowchart LR
+    A["삽입 때의 통증"] --> B["다음 삽입에서 통증을 예상하는 두려움"]
+    B --> C["골반저근이 긴장하고 조여짐"]
+    C --> D["삽입이 어렵고 더 아픔"]
+    D --> B
+    B --> E["성적 상황과 부인과 검진을 피함"]
+```
+
+통증, 두려움, 근육 긴장이 서로를 키우며 돈다. 피하는 행동은 관심이 있어도 생긴다[^s4].
+
 ## 연결
 
 - 통증 예상 → 두려움 → 근육 긴장 → 통증의 고리가 공포증과 같다: [특정공포증](/Hongs_Blog/studies/abnormal-psychology/specific-phobia/), 치료 원리는 [노출치료와 체계적 둔감법](/Hongs_Blog/studies/abnormal-psychology/exposure-therapy/)
@@ -96,4 +107,5 @@ DSM-IV의 성교통(dyspareunia)과 질경련(vaginismus)을 합친 진단이다
 [^s1]: 에이전트 보충. HU의 사례는 진단기준을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5가 DSM-IV의 성교통과 질경련을 합친 이유는 DSM-5의 설명을 요약했다.
 [^s3]: 에이전트 보충. 공포-긴장-통증의 고리와 치료 원리는 슬라이드의 "공포반응과 유사"(p.23)를 공포증 모델로 풀었다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 기준 A의 네 항목과 '임상적 특징'의 공포 반응·회피(p.23), '연결'의 고리 설명을 그렸다.
 {% endraw %}

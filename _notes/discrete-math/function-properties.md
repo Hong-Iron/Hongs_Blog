@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Injective", "Surjective", "Bijective", "단사", "일대일 함수", "injection", "전사", "위로의 함수", "surjection", "전단사", "일대일 대응", "bijection", "기수", "cardinality", "집합의 크기"]
 description: "함수를 두 질문으로 나눈다. 출력이 서로 겹치지 않는가(단사), 도착 쪽을 빠짐없이 덮는가(전사). 둘 다이면 전단사로, 두 집합의 원소를 하나씩 짝지을 수 있어 크기가 같다. 끝없이 큰 집합의 크기도 이 짝짓기로 비교한다. 해시 함수처럼 큰 집합에서 작은 집합으로 가는 함수는 단…"
@@ -18,7 +18,7 @@ prev_title: "집합"
 next_url: "/studies/discrete-math/countability/"
 next_title: "가산 집합과 대각선 논법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/function-properties/"
 ---
@@ -42,6 +42,26 @@ permalink: "/studies/discrete-math/function-properties/"
 | 학생 30명, 좌석 30개, 한 좌석에 한 명씩 꽉 참 | 없음 | 없음 | 전단사 |
 
 마지막 경우에는 학생 수를 세지 않고도 좌석 수와 같다는 것을 안다. 짝이 딱 맞기 때문이다. 이 생각이 "크기가 같다"의 정의가 된다.
+
+```mermaid
+flowchart LR
+  subgraph U1["단사, 전사 아님"]
+    a1["학생 1"] --> x1["좌석 1"]
+    a2["학생 2"] --> x2["좌석 2"]
+    x3["좌석 3: 빈자리"]
+  end
+  subgraph U2["전사, 단사 아님"]
+    b1["학생 1"] --> y1["좌석 1"]
+    b2["학생 2"] --> y1
+    b3["학생 3"] --> y2["좌석 2"]
+  end
+  subgraph U3["전단사"]
+    c1["학생 1"] --> z1["좌석 1"]
+    c2["학생 2"] --> z2["좌석 2"]
+  end
+```
+
+첫 묶음에는 화살표가 닿지 않는 좌석이 있다. 둘째 묶음에서는 화살표 둘이 한 좌석에 모인다. 셋째 묶음만 학생과 좌석이 하나씩 짝지어진다[^s2].
 
 ## 정의
 
@@ -133,4 +153,5 @@ $$A$$, $$B$$가 유한할 때
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장 "Mathematical Data Types"(함수, 이항 관계, 유한 집합의 크기). Rosen, *Discrete Mathematics and Its Applications* 7판, 2장(함수, 집합의 크기).
 [^s1]: 에이전트 보충. 무손실 압축의 한계는 "길이 $$n$$ 비트 파일은 $$2^n$$개인데 길이 $$n$$ 미만 파일은 $$2^n - 1$$개"라는 셈에서 나온다. [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/)의 대표 예다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 세 상황을 학생과 좌석 2~3개로 줄여 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "사인파"
 next_url: "/studies/college-math/inverse-trig/"
 next_title: "역삼각함수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/college-math/trig-identities/"
 ---
@@ -61,6 +61,22 @@ $$\cos 75° = \cos 45° \cos 30° - \sin 45° \sin 30° = \frac{\sqrt2}{2}\cdot\
 ## 증명
 
 $$\cos(\alpha - \beta)$$ 하나를 거리 계산으로 증명하고, 나머지는 모두 거기서 대수로 끌어낸다.
+
+```mermaid
+flowchart TD
+  A["cos(α − β): 거리를 두 번 재서 증명"] -->|"β 대신 −β"| B["cos(α + β)"]
+  A -->|"sin x = cos(π/2 − x)"| C["sin(α ± β)"]
+  B --> D["배각"]
+  C --> D
+  D --> E["차수 내림"]
+  A --> F["곱 → 합"]
+  B --> F
+  C --> F
+  F -->|"거꾸로 읽기"| G["합 → 곱"]
+  C --> H["합성 a sin x + b cos x"]
+```
+
+맨 위의 공식 하나만 기하로 보이고, 아래는 모두 대입과 대칭으로 이어진다. 화살표를 거슬러 올라가면 어떤 공식이든 출발점이 어디인지 찾을 수 있다[^s3].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
@@ -213,4 +229,5 @@ $$\sin^2\omega t$$(파랑)는 $$\sin\omega t$$보다 두 배 빠르게 0과 1 �
 [^1]: OpenStax, *Precalculus 2e*, 7.1절 "Simplifying and Verifying Trigonometric Identities", 7.2절 "Sum and Difference Identities", 7.3절 "Double-Angle, Half-Angle, and Reduction Formulas", 7.4절 "Sum-to-Product and Product-to-Sum Formulas". 단위원 위 두 점의 거리를 두 번 재는 덧셈정리 증명은 표준적인 증명 방법 중 하나다.
 [^s1]: 에이전트 보충. 반송파를 곱하는 진폭 변조와 실효값 $$A/\sqrt2$$은 통신·전기 공학의 표준 내용이다. 실제 주파수 분할 다중화는 한쪽 옆띠만 남기는 등 더 다듬은 변조를 쓴다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [14_trig-identities_plot.py](/Hongs_Blog/studies/college-math/code/14_trig-identities_plot/)로 그렸고, 그림에 쓴 값($$\sin^2$$의 한 주기 평균 0.5, 합 → 곱 공식으로 두 사인파의 합이 $$2\sin(2\pi \cdot 21t)\cos(2\pi \cdot 1 \cdot t)$$)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `증명`의 1~9단계가 각각 앞의 어느 공식을 쓰는지를 근거로 그렸다(OpenStax, *Precalculus 2e*, 7.2~7.4절).
 {% endraw %}

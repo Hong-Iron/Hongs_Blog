@@ -18,7 +18,7 @@ prev_title: "연쇄 법칙"
 next_url: "/studies/calculus/mean-value-theorem/"
 next_title: "평균값 정리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/curve-analysis/"
 ---
@@ -66,6 +66,20 @@ permalink: "/studies/calculus/curve-analysis/"
 
 </div>
 
+
+```mermaid
+flowchart TD
+    A["f′(c) = 0인 점 c"] --> B{"f″(c)의 부호"}
+    B -- "양수" --> P["극소"]
+    B -- "음수" --> Q["극대"]
+    B -- "0" --> R["이계도함수 판정은 결론을 못 낸다"]
+    R --> S{"c 양옆에서 f′의 부호가 바뀌나"}
+    S -- "음수에서 양수로" --> P
+    S -- "양수에서 음수로" --> Q
+    S -- "바뀌지 않는다" --> T["극값이 아니다"]
+```
+
+이계도함수가 0이면 판정을 미루고, 도함수의 좌우 부호로 돌아가 다시 가른다[^s3].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명</summary>
@@ -214,4 +228,5 @@ permalink: "/studies/calculus/curve-analysis/"
 [^n4]: 같은 자료, p.9
 [^sn1]: 에이전트 보충. 끝점 값과 비교, 카드 C5는 원본에 없다. 07_curve-analysis_verify.py로 확인했다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [07_curve-analysis_plot.py](/Hongs_Blog/studies/calculus/code/07_curve-analysis_plot/)로 그렸고, 표의 부피 100, 128, 108, 64, 20, 격자 탐색으로 찾은 최댓값 128($$x = 2$$), 도함수의 부호, $$C = 5$$, $$M = 1440$$에서 $$T^* = 120$$을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리 2(증감 판정), 정리 3(이계도함수 판정), 자주 하는 오해의 "좌우 부호 변화나 이계도함수로 판정", 과목별 관점의 1계 도함수 판정을 근거로 그렸다.
 {% endraw %}

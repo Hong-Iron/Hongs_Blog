@@ -18,7 +18,7 @@ prev_title: "연속 시간 푸리에 변환"
 next_url: "/studies/signals-and-systems/fourier-transform-properties/"
 next_title: "푸리에 변환의 성질"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/periodic-fourier-transform/"
 ---
@@ -50,6 +50,21 @@ $$X(j\omega) = \sum_{k=-\infty}^{\infty}2\pi a_k\,\delta(\omega - k\omega_0)$$
 
 </div>
 
+
+```mermaid
+flowchart LR
+  A["CTFS: 주기 연속 신호, 계수 a_k, 무한합"]
+  B["DTFS: 주기 N 수열, 계수 a_k, N개 유한합"]
+  C["CTFT: 비주기 연속 신호, X(jω), 적분"]
+  D["주기 신호의 푸리에 변환: kω₀ 자리의 임펄스 줄"]
+  A -->|"주기 T → ∞"| C
+  C -->|"한 주기의 변환을 찍으면 a_k = X(jkω₀)/T"| A
+  A -->|"a_k를 넓이 2πa_k 임펄스로"| D
+  D -->|"CTFT의 틀 안에 들어감"| C
+  A -->|"이산 시간판, 고조파가 N개뿐"| B
+```
+
+급수 두 개와 변환 하나가 화살표로 이어진다. 주기를 무한히 늘리면 급수가 변환이 되고, 거꾸로 임펄스를 쓰면 주기 신호도 변환의 틀 안으로 들어온다.[^s3]
 
 ## 예제
 
@@ -118,4 +133,5 @@ $$X(j\omega) = \frac{2\pi}{T}\sum_{k=-\infty}^{\infty}\delta\left(\omega - \frac
 [^4]: 같은 자료, p.5 (예제 4.8, 그림 4.14)
 [^s1]: 에이전트 보충. 스펙트럼 분석기 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [39_periodic-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/39_periodic-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$T_1 = 1$$, $$T = 4$$에서 넓이 $$\pi, 2, 0, -\frac23$$이 $$2\pi a_k$$와 같고, 합성식으로 사각파 값 1과 0이 되돌아옴.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 정리(14주차 자료 p.1~2), [연속 시간 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/ct-fourier-transform/)의 유도 3~5단계, [이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/)의 정의를 근거로 그렸다.
 {% endraw %}

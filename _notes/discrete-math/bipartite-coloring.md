@@ -9,14 +9,14 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Bipartite Graph", "이분 그래프", "두 부분 그래프", "Graph Coloring", "그래프 색칠", "정점 색칠", "vertex coloring", "채색수", "chromatic number", "탐욕 색칠", "greedy coloring", "4색 정리", "four color theorem", "레지스터 할당", "register allocation"]
 description: "이웃한 정점끼리는 다른 색이 되도록 정점에 색을 칠하는 문제다. 시험 시간표(같은 학생이 듣는 과목은 다른 시간), 레지스터 할당(동시에 살아 있는 변수는 다른 레지스터)이 모두 이 모양이다. 두 색으로 충분한지는 \"홀수 길이 사이클이 있는가\"만 보면 되고 빠르게 판정된다. 그런데…"
 prev_url: "/studies/discrete-math/trees/"
 prev_title: "트리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/bipartite-coloring/"
 ---
@@ -37,6 +37,26 @@ permalink: "/studies/discrete-math/bipartite-coloring/"
 - 여기에 A–C를 더하면 A, B, C가 서로 이웃한 삼각형이 된다. 셋이 모두 달라야 하므로 두 교시로는 부족하다.
 
 첫 그래프는 사이클 A–B–C–D–A의 길이가 4(짝수)이고, 둘째에는 길이 3(홀수) 사이클이 생겼다. 교시가 아래 정의의 색, 과목이 정점이다.
+
+```mermaid
+flowchart LR
+  subgraph T1["1교시"]
+    A["A"]
+    C["C"]
+  end
+  subgraph T2["2교시"]
+    B["B"]
+    D["D"]
+    E["E"]
+  end
+  A --- B
+  B --- C
+  C --- D
+  D --- A
+  A --- E
+```
+
+첫 그래프의 간선은 모두 1교시 무리와 2교시 무리 사이를 건넌다. 같은 무리 안을 잇는 간선은 없다. 여기에 A–C를 더하면 1교시 안을 잇는 간선이 생긴다[^s2].
 
 ## 정의
 
@@ -138,4 +158,5 @@ permalink: "/studies/discrete-math/bipartite-coloring/"
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 12장 "Simple Graphs"(색칠, 이분 그래프와 홀수 사이클).
 [^2]: Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(그래프 색칠, 4색 정리의 역사, 색칠 문제의 어려움). 3-색칠의 NP-완전성은 Cormen et al., *Introduction to Algorithms* 3판, 34장 문제 34-3. 4색 정리는 Appel과 Haken(1976)이 컴퓨터를 써서 증명했다.
 [^s1]: 에이전트 보충. 그래프 색칠로 레지스터를 배정하는 방법은 Chaitin의 연구(1982)에서 시작된 표준 기법으로, 컴파일러 교재의 레지스터 할당 장에서 다룬다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 시험 시간표 그래프와 두 교시 배정을 그렸다.
 {% endraw %}

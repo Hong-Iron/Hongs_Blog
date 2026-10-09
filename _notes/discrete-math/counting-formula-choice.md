@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["순열 vs 조합", "셈 공식 고르기", "twelvefold way", "경우의 수 공식 선택"]
 description: "n종류에서 k개를 뽑는 문제는 공식이 넷이라 헷갈린다. 가르는 질문은 두 개다. 뽑은 순서가 결과를 바꾸는가, 같은 것을 다시 뽑을 수 있는가. 두 질문에 답하면 공식이 하나로 정해진다. 공식을 고르기 전에 가장 작은 경우를 손으로 세어 보면 틀린 공식을 걸러낸다."
@@ -18,7 +18,7 @@ prev_title: "중복을 허용하는 셈"
 next_url: "/studies/discrete-math/binomial-theorem/"
 next_title: "이항정리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/counting-formula-choice/"
 ---
@@ -86,5 +86,21 @@ $$n$$종류에서 $$k$$개를 뽑는 문제는 공식이 넷이라 헷갈린다.
 - **"모든 칸이 하나 이상"** 같은 제약은 포함-배제나 먼저 하나씩 넣고 나머지를 나누는 방법을 쓴다.
 - **구별되지 않는 물건을 구별되지 않는 상자에** 나누는 수(정수의 분할)에는 간단한 닫힌 꼴이 없다. 점화식이나 [생성함수](/Hongs_Blog/studies/discrete-math/generating-functions/)로 센다.
 
+```mermaid
+flowchart TD
+  S["n종류에서 k개"] --> Q0{"모든 칸이 하나 이상 같은 제약이 있나?"}
+  Q0 -->|"예"| IE["포함-배제, 또는 먼저 하나씩 넣기"]
+  Q0 -->|"아니오"| Q1{"순서가 결과를 바꾸나?"}
+  Q1 -->|"예"| Q2{"같은 것을 다시 뽑을 수 있나?"}
+  Q1 -->|"아니오"| Q3{"같은 것을 다시 뽑을 수 있나?"}
+  Q2 -->|"아니오"| P["순열 n!/(n-k)!"]
+  Q2 -->|"예"| PR["중복순열 n^k"]
+  Q3 -->|"아니오"| C["조합 C(n, k)"]
+  Q3 -->|"예"| CR["중복조합 C(n+k-1, k)"]
+```
+
+위에서부터 질문에 하나씩 답하며 내려간다. 맨 아래 네 갈래가 '결정적 차이' 표의 네 칸이고, 맨 위 갈림길은 표 밖으로 나가는 경우다[^s1].
+
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules". Rosen, *Discrete Mathematics and Its Applications* 7판, 6장(중복을 허용한 순열과 조합의 표).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '결정적 차이' 표, 판단을 돕는 두 질문, '둘 다 아닐 때'의 제약 조건을 갈림길로 그렸다.
 {% endraw %}

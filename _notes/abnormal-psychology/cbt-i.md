@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Cognitive Behavioral Therapy for Insomnia", "CBT-I", "수면제한", "sleep restriction", "자극통제", "stimulus control", "수면 위생 교육", "sleep hygiene education", "이완훈련", "relaxation training", "수면일지", "sleep diary", "수면 효율", "sleep efficiency", "조건화된 각성", "conditioned arousal"]
 description: "침대와 잠 사이의 끊어진 연결을 다시 잇는 치료다. 오래 불면을 겪으면 침대가 \"뒤척이고 걱정하는 곳\"으로 학습되어, 눕기만 해도 정신이 또렷해진다. CBT-I는 침대에 있는 시간을 실제로 자는 시간만큼 줄이고, 침대에서는 잠만 자게 하고, 잠에 대한 걱정스러운 생각을 고친다. 처…"
@@ -18,7 +18,7 @@ prev_title: "불면장애"
 next_url: "/studies/abnormal-psychology/hypersomnolence-disorder/"
 next_title: "과다수면장애"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/abnormal-psychology/cbt-i/"
 ---
@@ -63,6 +63,20 @@ $$\text{수면 효율(\%)} = \frac{\text{실제 수면 시간}}{\text{침대에 
 
 
 수면제한은 보통 침대 시간을 평균 실제 수면 시간까지 줄이되 5시간 밑으로는 줄이지 않는다. 기상 시각을 고정하고, 한 주 평균 효율이 85% 이상이면 침대 시간을 15분씩 늘린다[^s2].
+
+```mermaid
+flowchart TD
+    A["1주 동안 수면일지 쓰기"] --> B["수면 효율 = 실제 수면 ÷ 침대 시간 × 100"]
+    B --> C["침대 시간을 평균 실제 수면 시간으로 줄임, 5시간 밑으로는 줄이지 않음"]
+    C --> D["기상 시각은 고정하고 취침 시각을 늦춤"]
+    D --> E["한 주 지냄"]
+    E --> F{"한 주 평균 효율이 85% 이상인가"}
+    F -->|"예"| G["침대 시간을 15분 늘림"]
+    G --> E
+    F -->|"아니오"| E
+```
+
+기상 시각은 처음부터 끝까지 그대로이고, 움직이는 것은 취침 시각뿐이다. 효율이 85%를 넘을 때마다 침대 시간이 15분씩 다시 늘어난다[^s5].
 
 ## 자극통제의 원리[^1]
 
@@ -119,4 +133,5 @@ $$\text{수면 효율(\%)} = \frac{\text{실제 수면 시간}}{\text{침대에 
 [^s2]: 에이전트 보충. 최소 침대 시간(5시간), 기상 시각 고정, 주 단위 15분 조정은 스필만(Spielman)의 수면제한 요법을 바탕으로 한 일반적인 CBT-I 절차다. 기관마다 기준(85% 또는 90%, 15분 또는 30분)이 조금씩 다르다.
 [^s3]: 에이전트 보충. 조건형성으로의 번역과 다섯 지침은 부트진(Bootzin)의 자극통제 요법을 요약했다.
 [^s4]: 에이전트 보충. 수면제한 초기의 낮 졸림 증가와 안전 주의는 CBT-I 지침의 일반적인 주의 사항이다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 네 단계와 '구성 요소'의 수면제한 절차를 순서도로 옮겼다. 85% 미만일 때의 조정은 기관마다 달라 그리지 않았다.
 {% endraw %}

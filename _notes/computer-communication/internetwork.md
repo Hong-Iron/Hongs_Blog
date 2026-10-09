@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Internetwork", "인터네트워킹", "internetworking", "네트워크들의 네트워크", "network of networks", "라우터", "router", "게이트웨이", "gateway"]
 description: "따로 만들어진 네트워크 여러 개를 다시 이어서 만든 더 큰 네트워크, 즉 \"네트워크들의 네트워크\"다. 학과 네트워크들을 잇고, 그것을 다시 통신사 네트워크에 잇는 식이다. 이미 있는 네트워크를 그대로 두고 규모를 얼마든지 키울 수 있다. 대신 네트워크마다 기술이 다를 수 있어서, …"
@@ -18,7 +18,7 @@ prev_title: "스위칭 네트워크"
 next_url: "/studies/computer-communication/rate-and-bandwidth/"
 next_title: "전송 속도와 대역폭"
 math: true
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/computer-communication/internetwork/"
 ---
@@ -36,6 +36,18 @@ permalink: "/studies/computer-communication/internetwork/"
 슬라이드 그림에서 구름 하나가 네트워크 하나다. 구름 사이에 놓인 작은 상자는 두 구름에 동시에 붙어 있다. 이런 상자를 **라우터**(예전 이름은 게이트웨이)라 부른다. 구름 하나에만 붙은 상자는 호스트다[^1][^s1].
 
 구름 안이 어떤 기술로 만들어졌는지는 따지지 않는다. 구름끼리 라우터로 이어졌는지만 본다.
+
+```mermaid
+flowchart LR
+  HA["호스트 A"] --- N1(("네트워크 1"))
+  N1 --- R1["라우터 1"]
+  R1 --- N2(("네트워크 2"))
+  N2 --- R2["라우터 2"]
+  R2 --- N3(("네트워크 3"))
+  N3 --- HB["호스트 B"]
+```
+
+동그라미 하나가 구름 하나, 곧 네트워크 하나다. 라우터는 늘 두 동그라미 사이에 붙어 있고, 호스트는 동그라미 하나에만 붙어 있다. 호스트 A의 데이터는 라우터 두 개를 거쳐 호스트 B에 닿는다[^s3].
 
 ## 정확히 말하면
 
@@ -88,4 +100,5 @@ permalink: "/studies/computer-communication/internetwork/"
 [^1]: 4-1학기/pasted_images/Pasted image 20260924190905.png — 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks" (필기 29행에 삽입)
 [^s1]: 에이전트 보충. 라우터·게이트웨이라는 이름과 재귀적 구성은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절(연결성)의 설명이다.
 [^s2]: 에이전트 보충. 예는 원본에 없다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 라우터·호스트 구분과 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks"의 구름 그림을 바탕으로 그렸다. 네트워크 3개는 설명용으로 고른 수다.
 {% endraw %}

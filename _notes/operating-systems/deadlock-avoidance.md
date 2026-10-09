@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Deadlock Avoidance", "은행원 알고리즘", "Banker's Algorithm", "안전 상태", "Safe State", "불안전 상태", "Unsafe State", "프로세스 시작 거부", "Process Initiation Denial", "자원 할당 거부", "Resource Allocation Denial", "최대 요구 행렬", "Claim Matrix"]
 description: "은행이 대출을 내줄 때 \"이 돈을 빌려줘도, 모든 고객이 최대 한도까지 빌려 가는 최악의 경우에 누군가부터 차례로 갚을 수 있는가\"를 따지는 것과 같다. 운영체제는 자원 요청이 올 때마다 들어준 뒤의 상태를 미리 계산해, 모두가 끝날 수 있는 순서가 하나라도 있으면(안전 상태) 들…"
@@ -18,7 +18,7 @@ prev_title: "교착상태 예방"
 next_url: "/studies/operating-systems/deadlock-detection/"
 next_title: "교착상태 탐지와 복구"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/operating-systems/deadlock-avoidance/"
 ---
@@ -114,6 +114,20 @@ $$C_{ij} - A_{ij} \le V_j \quad \text{(모든 } j = 1, \dots, m\text{)}$$
         rest에서 k를 뺀다
     return rest가 비었는가
 ```
+
+```mermaid
+flowchart TD
+  R(["프로세스 i가 req를 요청"]) --> Q1{"A + req가 최대 요구 C를 넘나?"}
+  Q1 -->|"예"| ERR["오류"]
+  Q1 -->|"아니오"| Q2{"req가 가용 V보다 큰가?"}
+  Q2 -->|"예"| W1["i를 막는다"]
+  Q2 -->|"아니오"| T["임시로 할당: A += req, V -= req"]
+  T --> Q3{"바꾼 상태가 안전한가?"}
+  Q3 -->|"예"| OK["확정하고 들어준다"]
+  Q3 -->|"아니오"| W2["상태를 되돌리고 i를 막는다"]
+```
+
+요청을 들어주지 않는 길은 셋이다. 그중 마지막 길은 자원이 남아 있는데도 막히는 경우다. 안전 검사가 이 길을 가른다[^s2].
 
 **정확성.** 안전 함수가 지키는 성질(루프 불변식)은 "rest 밖의 프로세스는 모두 차례로 끝낼 수 있고, work는 그들이 돌려준 뒤의 가용 자원이다"이다. 처음에는 rest 밖이 비어 있고 work = V이므로 맞다. 반복마다 끝낼 수 있는 $$k$$ 하나를 끝내고 그 할당을 work에 더하므로 계속 맞다. 끝났을 때 rest가 비었으면 그 순서 자체가 안전 순서다[^s1].
 
@@ -230,4 +244,5 @@ $$C_{ij} - A_{ij} \le V_j \quad \text{(모든 } j = 1, \dots, m\text{)}$$
 [^10]: 같은 자료, p.41
 [^11]: 같은 자료, p.42
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 지금 자료와 같은 시리즈(Stallings 6판, Dave Bremer 작성)의 공개본(Radboud 대학)을 원본으로 썼다. 슬라이드 p.39~40의 알고리즘 그림은 이미지라 Stallings 6판 그림 6.9를 의사코드로 옮겼다. 은행 비유, 불변식과 선택 순서 무관성, 복잡도, 쓰임새, 확인 문제 C3~C5는 교재 6.3절을 바탕으로 보탰다. 슬라이드 p.32의 "Allocations are made to processors"는 "processes"의 오타로 보인다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "알고리즘"의 의사코드(p.38~40, 그림 6.9)를 흐름도로 옮겼다.
 {% endraw %}

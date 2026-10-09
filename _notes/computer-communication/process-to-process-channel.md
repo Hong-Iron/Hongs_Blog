@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Process-to-Process Channel", "프로세스 간 통신", "통신 서비스", "communication service", "네트워크 투명성", "network transparency", "통신 장애", "장애 극복", "채널", "channel"]
 description: "네트워크가 컴퓨터끼리 선을 이어 주는 것만으로는 부족하다. 실제로 대화하는 것은 컴퓨터 안의 응용 프로그램이라서, 두 프로그램 사이에 전용 통로(채널)가 있는 것처럼 보이게 해 줘야 한다. 목표는 멀리 있는 상대와 주고받아도 같은 컴퓨터 안에서 주고받는 것처럼 느끼게 하는 것이다.…"
@@ -18,7 +18,7 @@ prev_title: "패킷 스위칭과 통계적 다중화 비교"
 next_url: "/studies/computer-communication/layering/"
 next_title: "계층화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/computer-communication/process-to-process-channel/"
 ---
@@ -36,6 +36,22 @@ permalink: "/studies/computer-communication/process-to-process-channel/"
 노트북의 웹 브라우저가 서버의 웹 서버 프로그램과 대화한다. 노트북에는 메신저와 음악 앱도 돌고 있다. 인터네트워크가 해 주는 일은 노트북과 서버라는 **호스트 사이**를 잇는 것까지다. 브라우저가 원하는 것은 **자기와 웹 서버 사이**의 통로다. 슬라이드 그림에서 구름을 가로지르는 파란 선이 이 통로다[^1].
 
 실행 중인 프로그램을 프로세스라 부르고, 파란 선을 채널이라 부른다. 채널을 쓰는 응용은 망 안의 경로가 어떤지, 링크가 몇 개인지 몰라도 된다. "상대 프로세스에게 보낸다"만 알면 된다.
+
+```mermaid
+flowchart LR
+  subgraph L["노트북"]
+    B["웹 브라우저"]
+    M["메신저"]
+    A["음악 앱"]
+  end
+  subgraph S["서버"]
+    W["웹 서버 프로그램"]
+  end
+  L === NET(("인터네트워크")) === S
+  B -.-|"채널"| W
+```
+
+굵은 선은 인터네트워크가 잇는 호스트 사이의 연결이다. 점선은 그 위에 만든 브라우저와 웹 서버 사이의 통로다. 같은 노트북의 메신저와 음악 앱은 이 통로를 쓰지 않는다[^s4].
 
 실제 망에서 생기는 일과 응용의 기대를 나란히 놓으면 메워야 할 차이가 보인다[^2].
 
@@ -107,4 +123,5 @@ permalink: "/studies/computer-communication/process-to-process-channel/"
 [^s1]: 에이전트 보충. 채널의 형식적 정의와 "채널마다 약속하는 성질이 다르다", "지연의 상한은 보장하지 않는다"는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절(공통 서비스 지원)의 내용이다.
 [^s2]: 에이전트 보충. 끝의 호스트가 최종 확인을 맡아야 한다는 논리는 종단 간 논증(end-to-end argument, Saltzer, Reed & Clark 1984)이다. 슬라이드는 "통신망의 협조 + 호스트 소프트웨어로 완성"까지만 쓴다.
 [^s3]: 에이전트 보충. '투명'이라는 이름 풀이는 원본에 없다. 컴퓨터 분야에서 '투명하다'는 '쓰는 쪽에서 존재를 의식하지 않아도 된다'는 뜻으로 쓰인다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 노트북·서버 장면과 슬라이드 "통신 서비스 제공"의 구름을 가로지르는 파란 선을 바탕으로 그렸다.
 {% endraw %}

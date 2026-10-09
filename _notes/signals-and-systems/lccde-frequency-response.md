@@ -16,7 +16,7 @@ description: "미분방정식으로 적힌 LTI 시스템은 양변을 푸리에 
 prev_url: "/studies/signals-and-systems/multiplication-modulation/"
 prev_title: "곱셈 성질과 진폭 변조"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/lccde-frequency-response/"
 ---
@@ -59,6 +59,20 @@ $$j\omega$$에 대한 다항식 두 개의 비(유리함수)다[^2].
 - 서로 다른 근: $$\frac{1}{(x-2)(x-1)} = \frac{A}{x-2} + \frac{B}{x-1}$$. $$A = \lim_{x\to2}(x-2)\cdot\frac{1}{(x-2)(x-1)} = 1$$, $$B = -1$$.
 - 제곱근(중근)이 있으면 $$\frac{A}{x+p} + \frac{B}{x+q} + \frac{C}{(x+q)^2}$$ 꼴로 둔다. 예: $$\frac{1}{x^2(x+4)} = \frac Ax + \frac{B}{x^2} + \frac{C}{x+4}$$에서 $$C = \frac{1}{x^2}\big\vert _{x=-4} = \frac{1}{16}$$, $$B = \frac{1}{x+4}\big\vert _{x=0} = \frac14$$, $$A = \frac{d}{dx}\frac{1}{x+4}\big\vert _{x=0} = -\frac{1}{16}$$.
 - 계수 비교로 풀어도 된다.
+
+```mermaid
+flowchart TD
+  A["미분방정식"] -->|"양변을 푸리에 변환, d/dt는 jω 곱하기"| B["H(jω) = 분자 다항식 / 분모 다항식"]
+  B -->|"입력 X를 곱함"| C["Y = HX"]
+  C --> D["분모를 인수분해해 부분 분수로 쪼갬"]
+  D --> E{"중근이 있는가?"}
+  E -->|"없음"| F["A/(a + jω) 꼴의 합"]
+  E -->|"있음"| G["B/(a + jω)² 꼴 항도 넣는다"]
+  F --> H["아는 변환쌍으로 하나씩 역변환해 더한다"]
+  G --> H
+```
+
+미분방정식이 대수식으로 바뀐 뒤에는 부분 분수와 아는 변환쌍만 쓴다. 중근이 있으면 쪼갤 때 제곱 항을 따로 둔다.[^s3]
 
 ## 예제
 
@@ -128,4 +142,5 @@ $$j\omega$$에 대한 다항식 두 개의 비(유리함수)다[^2].
 [^5]: 같은 자료, p.30 (예제 4.26)
 [^s1]: 에이전트 보충. 보드 선도 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [44_lccde-frequency-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$H(0) = \frac23$$, $$y(0) = 0$$, $$y(t)$$가 미분방정식을 만족하고 $$h * x$$의 수치 컨벌루션과 같음.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 두 길과 부분 분수 전개(15주차 자료 p.27~28, p.31), 예제 4.25~4.26(p.29~30)을 근거로 그렸다.
 {% endraw %}

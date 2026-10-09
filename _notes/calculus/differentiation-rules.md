@@ -18,7 +18,7 @@ prev_title: "도함수"
 next_url: "/studies/calculus/chain-rule/"
 next_title: "연쇄 법칙"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/differentiation-rules/"
 ---
@@ -85,6 +85,23 @@ $$\left(\dfrac{x + 1}{x - 1}\right)'$$을 구한다.
 3. *몫의 법칙:* $$\dfrac{1 \cdot (x - 1) - (x + 1) \cdot 1}{(x - 1)^2} = \dfrac{-2}{(x - 1)^2}$$.
 4. *확인:* 함수가 $$x > 1$$에서 줄어드는 모양($$x = 2$$에서 3, $$x = 3$$에서 2)과 도함수가 음수인 것이 맞는다.
 
+```mermaid
+flowchart TD
+    A["식의 가장 바깥 연산을 찾는다"] --> B{"무엇으로 묶였나"}
+    B -- "합, 상수배" --> R1["선형성: 각각 미분해 더한다"]
+    B -- "곱" --> R2["곱의 법칙: f′g + fg′"]
+    B -- "몫" --> R3["몫의 법칙, 분모 g ≠ 0"]
+    B -- "함수 안의 함수" --> R4["연쇄 법칙"]
+    B -- "기본 함수 하나" --> R5["기본 도함수 표에서 읽는다"]
+    R1 --> S["나온 조각마다 같은 질문을 되풀이한다"]
+    R2 --> S
+    R3 --> S
+    R4 --> S
+    S --> A
+```
+
+예제의 1단계 "구조 보기"가 맨 위 질문이다. 법칙을 한 번 쓰면 더 작은 조각의 도함수가 필요해진다. 조각마다 같은 질문을 던지다 보면 결국 기본 도함수 표에 닿는다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 기본 도함수 7가지와 곱·몫 법칙, 두 예제를 무작위 3,000점에서 중앙 차분과 비교(실험으로 확인됨. 증명은 위), 도 단위 사인의 도함수, 세 기본 극한 — [05_differentiation-rules_verify.py](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_verify/)</div>
 
@@ -142,4 +159,5 @@ $$\left(\dfrac{x + 1}{x - 1}\right)'$$을 구한다.
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.3절 "Differentiation Rules", 3.5절 "Derivatives of Trigonometric Functions", 3.9절 "Derivatives of Exponential and Logarithmic Functions"
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [05_differentiation-rules_plot.py](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_plot/)로 그렸다. 늘어난 양은 잘 보이게 크게 잡았다. 늘어난 넓이가 두 띠와 모서리의 합인 것, $$f = x^2$$, $$g = e^x$$, $$x = 1$$에서 모서리를 $$h$$로 나눈 값이 0으로 가는 것, $$(x^2e^x)' = (2x + x^2)e^x$$를 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 기본 도함수 표와 법칙, 예제의 풀이 순서, [연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/)을 근거로 그렸다.
 {% endraw %}

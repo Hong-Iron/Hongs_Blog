@@ -18,7 +18,7 @@ prev_title: "포함-배제 원리"
 next_url: "/studies/discrete-math/linear-recurrences/"
 next_title: "선형 점화식"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/pigeonhole/"
 ---
@@ -67,6 +67,16 @@ permalink: "/studies/discrete-math/pigeonhole/"
 2. *물건 넣기:* 고른 $$n + 1$$개를 각자 속한 칸에 넣는다.
 3. *원리 적용:* 물건이 칸보다 많아 어떤 칸에 두 수가 들어가고, 한 칸의 두 수는 차가 1이다.
 4. *더 줄일 수 없음:* 홀수 $$1, 3, \dots, 2n - 1$$의 $$n$$개를 고르면 이웃한 두 수가 없다.
+
+```mermaid
+flowchart LR
+  x1["1"] --> k1["칸 1, 2"]
+  x3["3"] --> k2["칸 3, 4"]
+  x4["4"] --> k2
+  x6["6"] --> k3["칸 5, 6"]
+```
+
+$$n = 3$$에서 1, 3, 4, 6의 네 수를 고른 경우다. 칸이 셋뿐이라 두 수가 한 칸에 들어가고, 여기서는 3과 4다[^s2].
 
 비둘기집 원리를 쓰는 요령은 3단계보다 1단계, 즉 "무엇을 칸으로 삼을까"에 있다.
 
@@ -122,4 +132,5 @@ permalink: "/studies/discrete-math/pigeonhole/"
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(비둘기집 원리). Rosen, *Discrete Mathematics and Its Applications* 7판, 6장 "Counting"(일반화된 비둘기집 원리).
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [20_pigeonhole_plot.py](/Hongs_Blog/studies/discrete-math/code/20_pigeonhole_plot/)로 그렸고, 22명에서 0.5 미만, 23명에서 0.5073, 57명에서 0.99 초과를 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 이웃한 두 수 논증을 $$n = 3$$의 한 경우로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Page Table Structure", "페이지 표 항목", "Page Table Entry", "PTE", "존재 비트", "Present Bit", "변경 비트", "Modify Bit", "다단계 페이지 표", "Hierarchical Page Table", "2단계 페이지 표", "역 페이지 표", "Inverted Page Table"]
 description: "가상 메모리의 페이지 표는 \"이 페이지가 지금 메모리에 있나, 있다면 어느 프레임인가, 올라온 뒤 바뀌었나\"를 페이지마다 적은 표다. 문제는 크기다. 32비트 주소에 4 KB 페이지면 프로세스마다 항목이 백만 개쯤 된다. 그래서 표를 여러 단계로 나눠 필요한 부분만 메모리에 두거나…"
@@ -18,7 +18,7 @@ prev_title: "가상 메모리"
 next_url: "/studies/operating-systems/tlb/"
 next_title: "TLB"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/operating-systems/page-table-structure/"
 ---
@@ -77,6 +77,17 @@ permalink: "/studies/operating-systems/page-table-structure/"
 2. 그 페이지 안에서 두 번째 색인으로 항목을 찾아 프레임 번호를 얻는다.
 3. 프레임 번호 뒤에 오프셋을 붙인다.
 
+```mermaid
+flowchart LR
+  VA["가상 주소: 루트 색인, 두 번째 색인, 오프셋"] -->|"루트 색인"| RT["루트 페이지 표 4 KB, 늘 메모리에 있음"]
+  RT -->|"사용자 페이지 표의 몇 번째 페이지인가"| UP["사용자 페이지 표의 한 페이지 4 KB"]
+  VA -->|"두 번째 색인"| UP
+  UP -->|"프레임 번호"| PA["실제 주소: 프레임 번호와 오프셋"]
+  VA -->|"오프셋은 그대로"| PA
+```
+
+가상 주소의 세 부분이 각각 다른 곳에 쓰인다. 앞 10비트는 루트 표에서, 가운데 10비트는 사용자 페이지 표의 한 페이지에서 쓰이고, 오프셋은 실제 주소까지 그대로 간다[^s2].
+
 예: 가상 주소 0x00403ABC는 루트 색인 1, 두 번째 색인 3, 오프셋 0xABC다.
 
 ### 역 페이지 표
@@ -86,6 +97,19 @@ permalink: "/studies/operating-systems/page-table-structure/"
 - 실제 메모리의 **프레임마다** 항목이 하나다. 그래서 프로세스 수와 상관없이 실제 메모리의 일정 비율만 표에 쓴다.
 - 가상 주소의 페이지 번호를 해시 함수로 해시값으로 바꾸고, 그 값이 역 페이지 표의 항목을 가리킨다. 해시가 겹치면 사슬로 잇는다[^7].
 - 항목에는 페이지 번호, 이 페이지를 가진 프로세스 ID, 제어 비트(유효, 참조 등), 사슬의 다음 항목 번호가 있다[^7].
+
+```mermaid
+flowchart TD
+  P["가상 주소의 페이지 번호"] --> H["해시 함수"]
+  H --> E["역 페이지 표의 항목"]
+  E --> Q{"항목의 페이지 번호와 프로세스 ID가 맞나?"}
+  Q -->|"예"| F["이 항목의 프레임에 페이지가 있다"]
+  Q -->|"아니오"| N{"사슬에 다음 항목이 있나?"}
+  N -->|"있다"| E
+  N -->|"없다"| PF["페이지 부재"]
+```
+
+해시값은 출발점일 뿐이다. 그 칸이 다른 페이지 것이면 사슬을 따라 다음 칸으로 옮겨 가며 같은 비교를 되풀이한다[^s2].
 - PowerPC, UltraSPARC, IA-64가 쓴다[^6].
 
 | | 다단계 페이지 표 | 역 페이지 표 |
@@ -136,4 +160,5 @@ permalink: "/studies/operating-systems/page-table-structure/"
 [^7]: 같은 자료, 슬라이드 22~23 (그림 8.6)
 [^8]: 같은 자료, 슬라이드 101~104
 [^s1]: 에이전트 보충. 크기 계산표, 주소 0x00403ABC 예, 두 구조의 비교표, 확인 문제 C2·C3은 슬라이드에 없다. Stallings 6판 8.1절을 바탕으로 보탰다.
+[^s2]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 2단계 표는 "다단계 페이지 표"의 1~3단계(슬라이드 19, 그림 8.5), 역 페이지 표는 그 아래 목록(슬라이드 20~23, 그림 8.6)을 흐름도로 옮겼다. 사슬 끝까지 맞는 항목이 없을 때 페이지 부재로 가는 갈래는 "프레임마다 항목이 하나"라는 정의에서 나온다.
 {% endraw %}

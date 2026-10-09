@@ -18,7 +18,7 @@ prev_title: "스펙트럼 군집화"
 next_url: "/studies/data-science/content-based-recommendation/"
 next_title: "내용 기반 추천"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/data-science/recommender-systems/"
 ---
@@ -51,6 +51,21 @@ permalink: "/studies/data-science/recommender-systems/"
 **추천 시스템**의 목표는 사용자의 정보 과부하를 덜고 만족을 최대로 하는 것, 곧 대상 사용자가 좋아할 아이템 몇 개를 제공하는 것이다[^3].
 
 **분류**[^5]: 내용 기반 추천, 협업 필터링(CF) 기반 추천, 둘을 섞은 하이브리드 추천, 신뢰 기반(사회적) 추천 등.
+
+```mermaid
+flowchart TD
+    R["추천 방법"] --> CB["내용 기반"]
+    R --> CF["협업 필터링"]
+    R --> HY["하이브리드"]
+    R --> TR["신뢰 기반"]
+    CB -.-> HY
+    CF -.-> HY
+    CF --> UB["사용자 기반"]
+    CF --> IB["아이템 기반"]
+    CF --> MF["행렬 분해"]
+```
+
+내용 기반은 아이템 속성을, 협업 필터링은 사용자들이 남긴 평점을 쓴다. 점선은 하이브리드가 이 두 갈래를 섞는다는 뜻이다[^s1].
 
 **주요 과제**[^6][^7]:
 
@@ -89,4 +104,5 @@ permalink: "/studies/data-science/recommender-systems/"
 [^5]: 같은 자료, p.11
 [^6]: 같은 자료, p.7
 [^7]: 같은 자료, p.8
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 분류(원본 11-1 p.11)에, 40·41·44번 문서가 다루는 갈래를 붙여 그렸다.
 {% endraw %}

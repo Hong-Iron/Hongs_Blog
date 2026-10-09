@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Attention-Deficit/Hyperactivity Disorder", "ADHD", "부주의", "inattention", "과잉행동", "hyperactivity", "충동성", "impulsivity", "복합형", "부주의 우세형", "과잉행동-충동성 우세형", "미세 두뇌기능 장애", "minimal brain dysfunction", "메틸페니데이트", "methylphenidate", "아토목세틴", "atomoxetine", "소리 내어 생각하기", "think aloud", "협동적 생활기술", "Collaborative Life Skills", "CLS"]
 description: "한 가지에 주의를 오래 붙잡아 두지 못하고(부주의), 가만히 있지 못하며 생각보다 행동이 먼저 나가는(과잉행동·충동성) 상태가 어릴 때부터 집과 학교처럼 여러 곳에서 나타나는 장애다. 게으르거나 버릇이 없어서가 아니라, 행동에 브레이크를 거는 뇌의 기능이 약한 것이다. 자라면서 뛰…"
@@ -18,7 +18,7 @@ prev_title: "자폐스펙트럼장애와 사회적 의사소통장애 비교"
 next_url: "/studies/abnormal-psychology/specific-learning-disorder/"
 next_title: "특정학습장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/adhd/"
 ---
@@ -95,6 +95,21 @@ DSM-5-TR은 각 영역에서 6개 이상(17세 이상은 5개 이상)의 증상�
 - 학업 수행과 성취 저하, 가족 간의 불화와 부정적 상호작용, 낮은 자존감과 정서적 문제가 따른다.
 - 품행장애, 반사회성 성격장애, 물질사용장애, 투옥, 부상과 사고의 가능성이 높아 전반적인 사망률이 높아진다.
 - 나이가 들수록 동반 질환이 늘어나(아동기의 불안장애·틱장애·적대적 반항장애·품행장애에서, 성인기의 양극성장애·우울증·물질사용장애·성격장애까지) 가족의 부담과 의료 비용이 커진다.
+
+```mermaid
+flowchart LR
+    IN["부주의"] --> A1["학업 결함, 학교 관련 문제"]
+    IN --> A2["또래의 무시"]
+    HI["과잉행동·충동성"] --> B1["또래의 배척"]
+    HI --> B2["우발적인 가해"]
+    A1 --> C["학업 성취 저하, 가족 불화, 낮은 자존감"]
+    A2 --> C
+    B1 --> C
+    B2 --> C
+    C --> D["나이가 들수록 동반 질환이 늘고 가족 부담과 의료 비용이 커짐"]
+```
+
+두 증상 영역은 서로 다른 길로 문제를 만들지만, 결국 학업, 가족, 자존감의 문제로 모인다[^s3].
 
 ## 원인[^6]
 
@@ -182,4 +197,5 @@ DSM-5-TR은 각 영역에서 6개 이상(17세 이상은 5개 이상)의 증상�
 [^8]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.44
 [^s1]: 에이전트 보충. JW의 사례는 두 영역의 증상과 조건을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 주의력결핍 과잉행동장애 기준 A의 개수(6개, 17세 이상 5개)와 기간(6개월)을 보탰다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '나이에 따른 모습' 아래 목록(p.39~41)을 흐름으로 이었다. 가운데 상자로 모으는 화살표는 목록의 순서를 따른 정리다.
 {% endraw %}

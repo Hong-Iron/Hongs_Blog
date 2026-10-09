@@ -16,7 +16,7 @@ description: "같은 비율로 곱해 가는 수들을 더한 합에는 간단�
 prev_url: "/studies/college-math/sequences-sigma/"
 prev_title: "수열과 합의 기호"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/college-math/geometric-series/"
 ---
@@ -86,6 +86,18 @@ $$\vert r\vert  < 1$$이면 $$n$$이 커질 때 $$r^n$$이 $$0$$으로 다가가
 
 **포화 이진 트리.** 모든 층이 꽉 찬 이진 트리(포화 이진 트리)는 높이가 $$h$$일 때 깊이 $$d$$에는 노드가 $$2^d$$개 있다. 전체는 $$\sum_{d=0}^{h} 2^d = 2^{h+1} - 1$$개이고, 잎은 $$2^h$$개로 절반보다 많다.
 
+```mermaid
+flowchart TD
+  R["깊이 0: 1개"] --> A["깊이 1"]
+  R --> B["깊이 1"]
+  A --> A1["깊이 2: 잎"]
+  A --> A2["깊이 2: 잎"]
+  B --> B1["깊이 2: 잎"]
+  B --> B2["깊이 2: 잎"]
+```
+
+높이 2인 포화 이진 트리다. 층마다 노드가 1, 2, 4개로 두 배씩 늘어 모두 $$1 + 2 + 4 = 7 = 2^3 - 1$$개다. 맨 아래층의 잎 4개가 위의 모든 층(3개)보다 하나 많다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 공식을 유리수 비율 70여 개 × $$n < 25$$에서 정확히 확인, $$2^{k+1} - 1$$, 부분합이 2와 10에 다가감, 반복 소수, 동적 배열 시뮬레이션(복사 1,023번), 이진 트리, 발산하는 경우 — [21_geometric-series_verify.py](/Hongs_Blog/studies/college-math/code/21_geometric-series_verify/)</div>
 
@@ -136,4 +148,5 @@ $$\vert r\vert  < 1$$이면 $$n$$이 커질 때 $$r^n$$이 $$0$$으로 다가가
 [^1]: OpenStax, *Precalculus 2e*, 11.4절 "Series and Their Notations"(유한·무한 등비급수)
 [^2]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 부록 A.1 "Summation formulas and properties"(등비급수), 17.4절 "Dynamic tables"(두 배 늘리는 표의 분할상환 비용)
 [^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [21_geometric-series_plot.py](/Hongs_Blog/studies/college-math/code/21_geometric-series_plot/)로 그렸고, 그림에 쓴 값(복사 1,023번과 최종 용량 1,024, 누적 복사가 늘 $$2n$$ 미만, 부분합의 극한 2와 10)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예제`의 포화 이진 트리 노드 수 $$\sum_{d=0}^{h} 2^d = 2^{h+1} - 1$$에 $$h = 2$$를 넣어 그렸다.
 {% endraw %}

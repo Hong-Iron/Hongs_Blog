@@ -18,7 +18,7 @@ prev_title: "직선과 평면의 방정식"
 next_url: "/studies/numerical-analysis/homogeneous-coordinates/"
 next_title: "동차 좌표"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/transformation-classes/"
 ---
@@ -76,6 +76,19 @@ $$k$$는 확대 배율이다. 닮음 변환에서 길이는 모두 $$k$$배가 �
 
 종류들은 포함 관계를 이룬다. 강체 ⊂ 닮음 ⊂ 아핀 ⊂ 사영이다. 선형변환(원점을 지키는 $$\mathbf x' = M\mathbf x$$)은 회전, 고른 확대, 축별 확대, 전단을 포함하지만 평행이동은 포함하지 않는다. 원근 투영은 아핀이 아니고 사영 변환에만 들어간다[^12].
 
+```mermaid
+flowchart TD
+    P["사영 변환: 곧은 선만 지킨다"] --> A["아핀 변환: 평행도 지킨다"]
+    P --> PP["예: 원근 투영"]
+    A --> S["닮음 변환: 각도 지킨다"]
+    A --> AE["예: 전단, 축마다 다른 확대"]
+    S --> R["강체 변환: 거리도 지킨다"]
+    S --> SE["예: 고른 확대"]
+    R --> RE["예: 평행이동, 회전, 반사"]
+```
+
+위로 갈수록 들어가는 변환이 많고, 아래로 갈수록 지키는 성질이 하나씩 늘어난다. 아래 칸의 변환은 모두 그 위 칸에도 들어간다[^s3].
+
 가역 선형변환은 연립방정식 $$\mathbf x' = M\mathbf x$$에서 $$\vert M\vert  \ne 0$$일 때 역변환이 하나로 정해진다. 평행이동을 더한 $$\mathbf x' = M\mathbf x + \mathbf t$$가 아핀 변환이다[^13].
 
 ## 활용
@@ -130,4 +143,5 @@ $$k$$는 확대 배율이다. 닮음 변환에서 길이는 모두 $$k$$배가 �
 [^13]: 같은 자료, p.17~19
 [^s1]: 에이전트 보충. 원근 그림의 폭 계산, 무게중심과 원근 보정 텍스처 매핑, 흔한 실수의 각도, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [03_transformation-classes_plot.py](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 회전·평행이동 뒤 변의 길이 1, 고르게 2배 뒤 직각, 전단 $$k = 1.5$$에서 각 33.7°, 원근의 폭 2와 $$\frac23$$.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 표와 포함 관계 문단(원본 04.na04_transformation.pdf p.9~20)으로 그렸다.
 {% endraw %}

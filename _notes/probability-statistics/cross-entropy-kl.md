@@ -16,7 +16,7 @@ description: "실제 분포를 따르는 기호를, 잘못 믿은 다른 분포�
 prev_url: "/studies/probability-statistics/entropy/"
 prev_title: "엔트로피"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/cross-entropy-kl/"
 ---
@@ -52,6 +52,17 @@ $$H(p, q) = -\sum_x p(x)\log_2 q(x),\qquad D(p \,\Vert \, q) = \sum_x p(x)\log_2
 
 </div>
 
+
+```mermaid
+flowchart LR
+    p["실제 분포 p"] --> H["엔트로피 H(p): 맞는 부호의 평균 비트"]
+    p --> X["교차 엔트로피 H(p, q): q에 맞춘 부호의 평균 비트"]
+    q["모델이 믿는 분포 q"] --> X
+    X -->|"H(p)를 뺌"| D["KL 발산 D(p ‖ q): 낭비한 비트"]
+    H --> D
+```
+
+교차 엔트로피에서 엔트로피를 빼면 KL 발산이 남는다. $$p$$와 $$q$$가 둘 다 들어가는 칸은 교차 엔트로피와 KL 발산뿐이다.[^s2]
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">기브스 부등식</div>
@@ -142,4 +153,5 @@ $$\mathcal{L}(\theta) = -\frac1n\sum_{i=1}^{n}\ln q_\theta(y_i \mid \mathbf{x}_i
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 3.13절(KL 발산과 교차 엔트로피), 5.5절(최대가능도와 교차 엔트로피의 관계).
 [^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.27 (Measuring Similar Distributions)
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [38_cross-entropy-kl_plot.py](/Hongs_Blog/studies/probability-statistics/code/38_cross-entropy-kl_plot/)로 그렸고, 그림에 쓴 값($$t = 0.5$$에서 0.531과 0.737, $$D(p \Vert  p) = 0$$, 예시의 KL 0.25)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시(2비트, 1.75비트, 0.25비트)와 정의의 관계식 $$D(p\Vert q) = H(p, q) - H(p)$$를 그렸다.
 {% endraw %}

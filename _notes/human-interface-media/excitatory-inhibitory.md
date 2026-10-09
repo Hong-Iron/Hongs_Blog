@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Excitatory & Inhibitory", "흥분", "억제", "흥분성", "억제성", "탈분극", "depolarization", "과분극", "hyperpolarization", "문턱", "threshold"]
 description: "시냅스는 다음 뉴런에 \"발화해라\" 또는 \"참아라\" 두 종류의 쪽지를 보낸다. 흥분성 신호는 막전위를 발화 문턱 쪽으로 올리고, 억제성 신호는 문턱에서 멀어지게 내린다. 뉴런은 두 신호를 합친 결과로 발화 빈도를 정한다. 억제가 있어서 신경계는 신호를 더하기만 하지 않고 빼기도 한다…"
@@ -18,7 +18,7 @@ prev_title: "발화율 부호화"
 next_url: "/studies/human-interface-media/neuron-computational-model/"
 next_title: "뉴런의 연산 모형"
 math: true
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/human-interface-media/excitatory-inhibitory/"
 ---
@@ -52,6 +52,17 @@ permalink: "/studies/human-interface-media/excitatory-inhibitory/"
 
 </div>
 
+
+```mermaid
+flowchart LR
+  E["흥분성 시냅스들"] -- "막전위를 올린다" --> M["막전위"]
+  I["억제성 시냅스들"] -- "막전위를 내린다" --> M
+  M --> T{"발화 문턱을 넘었나"}
+  T -- "넘음" --> F["활동 전위 발화"]
+  T -- "못 넘음" --> N["발화 없음"]
+```
+
+두 종류의 입력이 막전위 하나에서 만난다. 문턱 판정은 그 다음 한 번만 한다. 그래서 같은 흥분이 와도 억제가 함께 오면 발화가 줄어든다[^s2].
 
 발화율을 식 하나로 줄이면 이렇게 쓸 수 있다[^s1].
 
@@ -103,4 +114,5 @@ $$r_0$$는 자발 발화율, $$x_{+}$$와 $$x_{-}$$는 흥분성·억제성 입�
 
 [^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/02.HIM_강의02_사람의지각.pdf, p.10 (Excitatory & Inhibitory)
 [^s1]: 에이전트 보충. 발화율 식은 원본에 없다. p.10의 (a)~(e) 결과를 한 줄로 요약하는 설명용 모형이며, [뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/)의 $$a(Ax + b)$$에서 가중치가 두 개인 경우와 같다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 정의(흥분성·억제성 입력의 합, 발화 문턱)와 강의 2 p.10의 막전위 그래프를 근거로 그렸다.
 {% endraw %}

@@ -8,7 +8,7 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 concepts: 31
 practices: 4
-codes: 43
+codes: 44
 description: "휴먼 인터페이스 미디어 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -96,7 +96,7 @@ permalink: "/studies/human-interface-media/"
 | 18 | [측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/) | 이웃을 빼서 경계를 강조. 마하 띠 80·88·8·16, 헤르만 격자 60 대 76 | [검증](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/18_lateral-inhibition_fig1.svg) | [측면 억제 예제 사다리](/Hongs_Blog/studies/human-interface-media/lateral-inhibition-ladder/) |
 | 19 | [반대색 과정](/Hongs_Blog/studies/human-interface-media/opponent-process/) | 빨강-초록, 파랑-노랑, 흰-검 짝을 +와 −로. 잔상 | [검증](/Hongs_Blog/studies/human-interface-media/code/19_opponent-process_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/19_opponent-process_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/19_opponent-process_fig1.svg) | — |
 | 20 | [삼색 이론과 반대색 과정 비교](/Hongs_Blog/studies/human-interface-media/contrast--trichromatic--opponent-process/) | 가르는 질문: 세 반응의 크기만으로 정해지는가, 짝의 차이가 필요한가 | — | — |
-| 21 | [양안 시차](/Hongs_Blog/studies/human-interface-media/binocular-disparity/) | 두 눈 상의 차이로 깊이. 가까울수록 크고 멀면 급히 줄어듦 (강조)[^8] | [검증](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig1.svg) | — |
+| 21 | [양안 시차](/Hongs_Blog/studies/human-interface-media/binocular-disparity/) | 두 눈 상의 차이로 깊이. 가까울수록 크고 멀면 급히 줄어듦 (강조)[^8] | [검증](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig2.svg) | — |
 | 22 | [시각 경로](/Hongs_Blog/studies/human-interface-media/visual-pathway/) | 망막 → LGN → 시각 피질. LGN은 피드백을 받아 조절 (강조)[^9] | — | — |
 
 강의 순서와 다른 점: 점묘법(p.9)은 삼색 이론(p.10)이 먼저 필요해 조건등색(17)에서 다룬다.
@@ -118,7 +118,7 @@ permalink: "/studies/human-interface-media/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 23 | [종파와 횡파](/Hongs_Blog/studies/human-interface-media/longitudinal-transverse-wave/) | 소리는 나아가는 방향으로, 빛은 수직으로 흔들림. 빛은 2차원이라 편광 | — | — |
+| 23 | [종파와 횡파](/Hongs_Blog/studies/human-interface-media/longitudinal-transverse-wave/) | 소리는 나아가는 방향으로, 빛은 수직으로 흔들림. 빛은 2차원이라 편광 | [그림 코드](/Hongs_Blog/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/23_longitudinal-transverse-wave_fig1.svg) | — |
 | 24 | [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/) | 원 위를 도는 점 $$Ae^{i(2\pi t/T + \phi)}$$. 사인은 그 그림자 (강조)[^11] | [검증](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/24_complex-wave_fig1.svg) | — |
 
 자료: 강의 4 파동의 표현

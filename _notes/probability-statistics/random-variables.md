@@ -18,7 +18,7 @@ prev_title: "베이즈 정리"
 next_url: "/studies/probability-statistics/expectation/"
 next_title: "기댓값과 선형성"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/random-variables/"
 ---
@@ -42,6 +42,27 @@ permalink: "/studies/probability-statistics/random-variables/"
 | 2 | $$HH$$ | $$\frac14$$ | 1 |
 
 셋째 열이 아래 정의의 PMF, 넷째 열이 CDF다. $$X$$는 결과를 수로 바꾸는 함수이고, 무작위성은 어떤 결과가 나오느냐에서 온다.
+
+```mermaid
+flowchart LR
+    subgraph O["표본공간의 결과"]
+        HH["HH"]
+        HT["HT"]
+        TH["TH"]
+        TT["TT"]
+    end
+    subgraph R["X의 값"]
+        V2["2"]
+        V1["1"]
+        V0["0"]
+    end
+    HH --> V2
+    HT --> V1
+    TH --> V1
+    TT --> V0
+```
+
+결과 하나에서 화살표가 정확히 하나씩 나가고, 값 1에는 화살표가 둘 모인다. 그래서 $$P(X = 1)$$은 두 결과의 확률 $$\frac14$$를 더한 $$\frac12$$이다.[^s2]
 
 ## 정의
 
@@ -118,4 +139,5 @@ $$\{X = x\}$$는 "$$X$$가 $$x$$를 주는 결과들의 집합" $$\{\omega : X(\
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.1절 "Random variables", 3.2절 "Distributions and probability mass functions", 3.6절 "Cumulative distribution functions", 3.7절 "Functions of random variables", 3.8절 "Independence of rvs".
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [07_random-variables_plot.py](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_plot/)로 그렸고, 그림에 쓴 값(PMF의 합 1, $$P(S = 7) = \frac{6}{36}$$, 합 7에서 CDF가 뛰는 높이 $$= P(S = 7)$$)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시 표(동전 두 번, 앞면 수)의 결과 → 값 대응을 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Heap", "Priority Queue", "Binary Heap", "힙", "우선순위 큐", "최소 힙", "최대 힙", "heapq", "heappush", "heappop", "heapify"]
 description: "응급실은 온 순서가 아니라 가장 급한 환자부터 부른다. 이렇게 \"가장 작은(급한) 것부터 꺼내는 줄\"이 우선순위 큐이고, 힙은 그것을 빠르게 만드는 방법이다. 넣기와 가장 작은 것 꺼내기가 모두 빠르다. 원소가 100만 개여도 스무 번이 안 되게 자리를 바꾸면 끝난다. 대신 가장 …"
@@ -59,6 +59,17 @@ permalink: "/studies/algorithms/heap/"
 
 - **넣기(위로 올리기):** 맨 끝에 붙인 뒤, 부모(칸 (i − 1) // 2)보다 작으면 자리를 바꾸며 올라간다. 1을 넣을 때 [3, 5, 8, **1**] → 부모 5와 바꿔 [3, **1**, 8, 5] → 부모 3과 바꿔 [**1**, 3, 8, 5].
 - **꺼내기(아래로 내리기):** 맨 위를 꺼내고, 맨 끝 값을 맨 위로 옮긴다. 두 자식 중 더 작은 쪽보다 크면 자리를 바꾸며 내려간다. [1, 3, 8, 5]에서 1을 꺼내면 [**5**, 3, 8] → 자식 3이 더 작아 바꿔 [3, **5**, 8].
+
+```
+     A                 B                 C
+     3                 3                (1)
+    / \               / \               / \
+   5   8      ->    (1)  8      ->     3   8
+  /                 /                 /
+(1)                 5                 5
+```
+
+A는 1을 맨 끝(칸 3)에 붙인 모습, B는 부모 5와 바꾼 뒤, C는 부모 3과 바꾼 뒤다. 괄호 친 1이 한 층씩 올라가고, 부모가 자기보다 크지 않은 자리에 닿거나 맨 위에 오면 멈춘다[^s1].
 
 나무의 층수는 원소 n개일 때 ⌊log₂ n⌋ + 1이다. 올리기·내리기는 한 층에 한 번씩이라 $$O(\log n)$$이다. 원소 100만 개면 층이 20개다.
 
@@ -125,4 +136,5 @@ permalink: "/studies/algorithms/heap/"
 
 
 [^1]: Python 3 표준 라이브러리 문서, "heapq — Heap queue algorithm": 모든 k에 대해 `a[k] <= a[2*k+1]`, `a[k] <= a[2*k+2]`인 리스트, 가장 작은 값은 `a[0]`, `heapify`는 선형 시간. 넣기·꺼내기의 O(log n)은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 4.5 "Other structures"의 Priority queue와 Cormen 외, *Introduction to Algorithms* 3판 6장.
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '넣고 꺼내는 방법' 절의 넣기 예 [3, 5, 8, 1] → [3, 1, 8, 5] → [1, 3, 8, 5]를 칸 i의 자식이 2i + 1, 2i + 2라는 규칙대로 나무로 그렸다.
 {% endraw %}

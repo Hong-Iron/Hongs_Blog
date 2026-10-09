@@ -9,14 +9,14 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Python Basics", "파이썬 문법", "변수", "조건문", "반복문", "함수", "solution 함수", "몫", "나머지", "floor division"]
 description: "코드는 요리 순서표와 비슷하다. 재료에 이름을 붙이고, 상황에 따라 다른 순서로 가고, 같은 일을 여러 번 하고, 자주 하는 일은 묶어서 이름을 붙인다. 코딩테스트에서는 이 순서표를 함수 하나로 쓰고, 마지막에 답을 돌려주면 끝난다. 화면에 찍거나 입력을 읽을 필요는 없다. 파이썬…"
 next_url: "/studies/algorithms/complexity-budget/"
 next_title: "시간 복잡도로 방법 고르기"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/python-basics/"
 ---
@@ -92,6 +92,20 @@ else:                 # 위가 다 틀렸으면
 ```
 
 위에서부터 처음 맞는 한 곳만 실행한다. `score = 95`이면 `"A"`에서 멈추고 아래는 보지 않는다.
+
+```mermaid
+flowchart TD
+    S["score를 받는다"] --> Q1{"score >= 90?"}
+    Q1 -->|"예"| A["grade = A"]
+    Q1 -->|"아니오"| Q2{"score >= 80?"}
+    Q2 -->|"예"| B["grade = B"]
+    Q2 -->|"아니오"| C["grade = C"]
+    A --> E["if 문 다음 줄로"]
+    B --> E
+    C --> E
+```
+
+"예"로 빠지는 순간 나머지 질문은 건너뛰고 끝으로 간다. 그래서 `elif`의 질문은 앞 질문이 "아니오"일 때만 받는다[^s1].
 
 ## 반복문
 
@@ -197,4 +211,5 @@ for i in range(1, 10, 2):
 
 
 [^1]: Python 3 언어 레퍼런스 6.7 "Binary arithmetic operations": 정수 나눗셈 `//`는 결과를 내림(floor)하고, `x == (x//y)*y + (x%y)`가 맞으며, `%`의 결과는 나누는 수와 부호가 같다. 문법 전반은 Python 3 공식 튜토리얼 3장 "An Informal Introduction to Python", 4장 "More Control Flow Tools".
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '조건문' 절의 score 예시 코드와 "위에서부터 처음 맞는 한 곳만 실행한다"는 설명을 순서도로 옮겼다(Python 3 공식 튜토리얼 4.1 if Statements).
 {% endraw %}

@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linearity", "Linear System", "선형 시스템", "비선형 시스템", "Nonlinear System", "중첩", "Superposition", "덧셈성", "Additivity", "동차성", "Homogeneity", "Scaling", "증분 선형 시스템", "Incrementally Linear System", "입력 0 응답", "Zero-Input Response", "영상태 응답", "Zero-State Response"]
 description: "선형 시스템은 \"따로 넣고 더한 것\"과 \"더해서 넣은 것\"이 같은 시스템이다. 입력을 두 배로 하면 출력도 정확히 두 배가 되고, 두 입력을 섞어 넣으면 각자의 출력을 섞은 것이 나온다(중첩). 그래서 복잡한 입력을 쉬운 조각으로 나눠 따로 계산한 뒤 더하면 된다. 이 성질은 아주…"
@@ -18,7 +18,7 @@ prev_title: "시불변성"
 next_url: "/studies/signals-and-systems/convolution-sum/"
 next_title: "컨벌루션 합"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/signals-and-systems/linearity/"
 ---
@@ -64,6 +64,14 @@ $$ax_1(t) + bx_2(t) \to ay_1(t) + by_2(t), \qquad ax_1[n] + bx_2[n] \to ay_1[n] 
 선형성과 시불변성은 서로 다른 성질이다. $$y[n] = nx[n]$$은 시변이면서 선형이고, $$y(t) = \sin[x(t)]$$는 시불변이면서 비선형이다[^4].
 
 **증분 선형 시스템.** 선형 시스템의 출력에 "입력 0일 때의 응답" $$y_0$$을 더한 구조다(그림 1.48)[^5]. 두 입력에 대한 출력의 차이는 입력 차이의 선형 함수다. 예제 1.20은 선형 시스템 $$x \to 2x$$에 $$y_0 = 3$$을 더한 것이라 $$y_1 - y_2 = 2(x_1 - x_2)$$다. 적분 회로 $$y(t) = y(t_0) + \int_{t_0}^{t}f(\tau)d\tau$$의 출력도 입력 0 응답 $$y(t_0)$$과 영상태 응답(초기값 0에서 입력만으로 생기는 응답)의 합이다[^5].
+
+```mermaid
+flowchart LR
+  X["x(t)"] --> L["선형 시스템"] --> P(("+")) --> Y["y(t)"]
+  Z["입력 0일 때의 응답 y₀(t)"] --> P
+```
+
+입력은 선형 시스템만 지나고, $$y_0$$는 입력과 상관없이 늘 더해진다. 그래서 두 출력을 빼면 $$y_0$$가 지워지고 선형 부분만 남는다.[^s2]
 
 ### 스스로 설명해 보기
 
@@ -190,4 +198,5 @@ $$x_1$$의 식에 $$a$$, $$x_2$$의 식에 $$b$$를 곱해 더하면 $$(ay_1 + b
 [^5]: 같은 자료, p.25 (그림 1.48)
 [^6]: 같은 자료, p.23 (예제 1.19)
 [^s1]: 에이전트 보충. 실수 계수로 제한하면 예제 1.19가 선형이 된다는 점, 회로의 중첩 원리, 스스로 설명해 보기의 2·핵심 아이디어, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 판정은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 증분 선형 시스템 절과 4주차 자료 p.25의 그림 1.48을 근거로 그렸다.
 {% endraw %}

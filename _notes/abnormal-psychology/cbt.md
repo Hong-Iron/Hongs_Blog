@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Cognitive Behavioral Therapy", "CBT", "인지치료", "cognitive therapy", "인지적 재구성", "cognitive restructuring", "ABC 기법", "소크라테스식 대화법", "Socratic questioning", "역기능적 사고일지", "thought record", "행동실험", "behavioral experiment", "하향화살표 기법", "downward arrow", "중간믿음", "핵심믿음", "core belief", "행동활성화", "behavioral activation", "자기생활 관찰표", "activity monitoring"]
 description: "생각, 감정, 행동이 서로 물고 도는 고리를 찾아, 고리의 한 곳을 바꿔 전체를 바꾸는 치료다. 저절로 떠오르는 생각을 적고 증거로 따져 현실적인 생각으로 고치고, 무기력할 때는 생각보다 행동을 먼저 움직인다. 효과가 여러 장애에서 검증되어 가장 널리 쓰이는 심리치료다. 다만 생각…"
@@ -18,7 +18,7 @@ prev_title: "우울증의 인지이론"
 next_url: "/studies/abnormal-psychology/third-wave-cbt/"
 next_title: "제3세대 인지행동치료"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/cbt/"
 ---
@@ -51,6 +51,17 @@ AX가 친구의 답장을 하루 동안 받지 못했다. 역기능적 사고일
 ## 정의
 
 인지행동치료(CBT)는 인지, 감정, 행동의 연결고리를 이해하고 바꾸는 치료다. "사람은 사건 자체가 아니라 그 사건에 대한 생각 때문에 고통받는다"는 에픽테토스의 말을 출발점으로 삼는다[^1].
+
+```mermaid
+flowchart LR
+  T["생각"] --> E["감정"]
+  E --> B["행동"]
+  B --> T
+  CR["인지적 재구성"] -.-> T
+  BT["행동적 기법"] -.-> B
+```
+
+세 칸이 한 바퀴로 이어져 있어서 어느 한 칸을 바꾸면 나머지도 따라 바뀐다. 점선은 치료가 손대는 두 곳, 생각과 행동이다[^s3].
 
 ### 인지적 재구성
 
@@ -153,4 +164,5 @@ AX가 친구의 답장을 하루 동안 받지 못했다. 역기능적 사고일
 [^5]: 4-1학기/이상 심리학/1.수업자료/03.양극성장애와 우울장애.pdf, p.58
 [^s1]: 에이전트 보충. AX의 사고일지는 기법을 보이려고 만든 가상 사례다. 확신과 감정의 0~100 점수는 사고일지에서 흔히 쓰는 방식이다.
 [^s2]: 에이전트 보충. 슬라이드는 기법의 이름만 든다. 각 기법의 설명과 예는 인지치료(Beck, J. S., *Cognitive Behavior Therapy*)의 표준 설명이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 요약과 '인지적 재구성', '행동적 요소' 절(슬라이드 p.36, p.38)을 근거로 그렸다.
 {% endraw %}

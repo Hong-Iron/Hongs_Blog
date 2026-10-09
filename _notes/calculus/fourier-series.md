@@ -18,7 +18,7 @@ prev_title: "미분방정식과 오일러 방법"
 next_url: "/studies/calculus/fourier-transform/"
 next_title: "푸리에 변환과 합성곱"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/fourier-series/"
 ---
@@ -77,6 +77,17 @@ $$a_0 = \frac{1}{2\pi}\int_{-\pi}^{\pi}f\,dx,\qquad a_k = \frac1\pi\int_{-\pi}^{
 
 </div>
 
+
+```mermaid
+flowchart LR
+    F["주기 2π 신호 f"] -- "기저 함수와 내적, 사영 공식" --> C["계수 a_k, b_k"]
+    C -- "N에서 자른다" --> S["부분합 S_N"]
+    S -- "N → ∞, 조각마다 매끄러우면" --> P["연속점에서 f(x), 뛰는 점에서 좌우 평균"]
+    C -- "계수의 제곱합" --> E["파스발: 신호 제곱의 적분과 같다"]
+    S -- "같은 차수 중에서" --> B["제곱 오차가 가장 작은 근사"]
+```
+
+왼쪽에서 오른쪽으로 가며 신호를 계수로 나누고, 계수로 다시 쌓는다. 정리의 세 항목이 각각 화살표 하나에 붙어 있다[^s3].
 
 ## 예제
 
@@ -142,4 +153,5 @@ $$a_0 = \frac{1}{2\pi}\int_{-\pi}^{\pi}f\,dx,\qquad a_k = \frac1\pi\int_{-\pi}^{
 [^2]: Stein, Shakarchi, *Fourier Analysis: An Introduction*, 2장 "Basic Properties of Fourier Series", 3장 "Convergence of Fourier Series"(평균제곱 수렴, 파스발 항등식, 최선 근사).
 [^s1]: 에이전트 보충. 깁스 봉우리의 극한은 $$\frac2\pi\int_0^\pi\frac{\sin t}{t}dt \approx 1.17898$$이고, 30_fourier-series_verify.py로 부분합의 최댓값과 함께 계산했다. JPEG의 $$8 \times 8$$ 이산 코사인 변환은 JPEG 표준(ITU-T T.81)에, MP3의 MDCT는 MPEG-1 Audio Layer III 표준에 정의되어 있다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [30_fourier-series_plot.py](/Hongs_Blog/studies/calculus/code/30_fourier-series_plot/)로 그렸고, 첫 항의 높이 $$\frac4\pi \approx 1.27$$, 깁스 상수 1.17898, $$k \le 51, 201, 801$$인 부분합의 봉우리가 모두 그 값에서 0.005 안인 것, $$x = \frac\pi2$$에서 부분합이 1로 가는 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 계수 공식(사영 공식)과 정리의 세 항목(점별 수렴, 파스발 항등식, 최선 근사)을 근거로 그렸다.
 {% endraw %}

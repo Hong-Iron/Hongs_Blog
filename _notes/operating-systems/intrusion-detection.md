@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Intrusion Detection", "침입 탐지 시스템", "IDS", "Intrusion Detection System", "호스트 기반 IDS", "Host-Based IDS", "네트워크 기반 IDS", "Network-Based IDS", "이상 탐지", "Anomaly Detection", "시그니처 탐지", "Signature Detection", "임계값 탐지", "Threshold Detection", "프로필 기반 탐지", "감사 기록", "Audit Record"]
 description: "침입 탐지는 문을 잠그는 것(인증, 접근 제어)이 뚫렸을 때를 대비해, 시스템에서 일어나는 일을 지켜보다가 침입으로 보이면 경보를 울리는 일이다. 건물의 방범 카메라처럼, 평소와 다른 행동을 알아채거나(이상 탐지) 알려진 범죄 수법과 같은 행동을 찾아낸다(시그니처 탐지). 일찍 찾…"
@@ -18,7 +18,7 @@ prev_title: "사용자 인증"
 next_url: "/studies/operating-systems/malware-countermeasures/"
 next_title: "악성 코드 대응"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/intrusion-detection/"
 ---
@@ -71,6 +71,18 @@ permalink: "/studies/operating-systems/intrusion-detection/"
 | 기본 감사 기록 | 거의 모든 다중 사용자 운영체제의 계정 관리 소프트웨어가 모으는 기록. 따로 모을 소프트웨어가 필요 없지만, 필요한 정보가 없거나 쓰기 불편한 형태일 수 있다 |
 | 탐지 전용 감사 기록 | IDS에 필요한 정보만 담은 기록을 따로 만든다. 운영체제와 무관하게 만들 수 있지만, 기록 장치가 둘이라 부담이 든다 |
 
+```mermaid
+flowchart LR
+  EV["시스템 사건, 네트워크 트래픽"] --> AU["감사 기록"]
+  AU --> S["센서: 데이터를 모아 보냄"]
+  S --> AN["분석기: 침입인지 판단"]
+  AN --> UI["사용자 인터페이스: 경보"]
+  M1["이상 탐지: 임계값, 프로필"] -.->|"판단 방법"| AN
+  M2["시그니처 탐지: 공격 패턴과 규칙"] -.->|"판단 방법"| AN
+```
+
+데이터는 왼쪽에서 오른쪽으로 흐른다. 분석기가 판단할 때 쓰는 방법이 두 갈래이고, 어느 쪽이든 결과는 사용자 인터페이스의 경보로 나온다[^s2].
+
 ## 활용
 
 - 리눅스의 `auditd`는 시스템 호출과 파일 접근을 감사 기록으로 남기고, 호스트 기반 IDS(예: OSSEC, Wazuh)가 이를 분석한다[^s1].
@@ -111,4 +123,5 @@ permalink: "/studies/operating-systems/intrusion-detection/"
 [^5]: 같은 자료, 슬라이드 31과 슬라이드 30의 발표자 노트
 [^6]: 같은 자료, 슬라이드 32와 슬라이드 31의 발표자 노트
 [^s1]: 에이전트 보충. hong 계정 예시, 오탐·미탐 용어와 1종·2종 오류 연결, 임계값·프로필 탐지의 풀이, 탐지 전용 감사 기록의 단점, auditd·OSSEC 예, 확인 문제는 Stallings 6판 15.3절과 일반 지식을 바탕으로 보탰다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 구성 요소(슬라이드 29), 탐지 방법 표(슬라이드 30~31), 감사 기록(슬라이드 31~32)을 한 흐름도로 이었다.
 {% endraw %}

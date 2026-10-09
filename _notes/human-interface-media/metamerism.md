@@ -18,7 +18,7 @@ prev_title: "삼색 이론"
 next_url: "/studies/human-interface-media/lateral-inhibition/"
 next_title: "측면 억제"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/human-interface-media/metamerism/"
 ---
@@ -39,6 +39,16 @@ permalink: "/studies/human-interface-media/metamerism/"
 |---|---|---|---|---|---|
 | 섞은 빛 | 530 nm + 620 nm 두 봉우리 | 1.0 | 5.0 | 8.0 | 노랑 |
 | 단색광 | 580 nm 한 봉우리 | 1.0 | 5.0 | 8.0 | 노랑 |
+
+```mermaid
+flowchart LR
+  A["섞은 빛: 530 nm + 620 nm"] --> K["세 추상체 S, M, L"]
+  B["단색광: 580 nm"] --> K
+  K --> R["반응 S 1.0, M 5.0, L 8.0"]
+  R --> Y["보이는 색: 노랑"]
+```
+
+입력은 둘인데 추상체를 지나면 반응 하나로 합쳐진다. 그 뒤의 단계는 반응만 받으므로, 어느 빛에서 왔는지 되돌아갈 길이 없다[^s6].
 
 슬라이드 수치는 설명을 위해 딱 맞춘 값이다. 가우스 모형으로 계산하면 530 nm × 0.40 + 620 nm × 1.24로 M과 L은 정확히 맞고 S가 0.007 어긋난다. S가 이 파장대에서 거의 반응하지 않아 사실상 같다[^s1].
 
@@ -130,4 +140,5 @@ $$C$$의 계수(rank)가 3이면 영공간(null space)은 $$31 - 3 = 28$$차원�
 [^s3]: 에이전트 보충. 행렬 $$C$$와 영공간으로 조건등색을 설명하는 것은 색채학의 표준 관점이며 슬라이드에는 없다.
 [^s4]: 에이전트 보충. 디스플레이, 조명 조건등색, 카메라 사례는 색채 공학의 표준 사례다.
 [^s5]: 에이전트 보충. 그림 1장은 원본에 없다. [17_metamerism_plot.py](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_plot/)로 그렸고, 그림에 쓴 값(두 스펙트럼의 세 반응 차이 $$10^{-9}$$ 이내, 음수 칸 없음, 칸마다 차이 최대 2.02)을 같은 코드로 확인했다.
+[^s6]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 수치와 강의 3 p.10 오른쪽 그림(두 빛이 같은 추상체 반응을 만드는 예)을 근거로 그렸다.
 {% endraw %}

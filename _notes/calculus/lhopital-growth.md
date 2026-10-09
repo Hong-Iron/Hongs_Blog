@@ -18,7 +18,7 @@ prev_title: "평균값 정리"
 next_url: "/studies/calculus/linear-approx-newton/"
 next_title: "선형 근사와 뉴턴 방법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/lhopital-growth/"
 ---
@@ -73,6 +73,23 @@ $$\lim_{x \to 0}\frac{e^x - 1 - x}{x^2}$$를 구한다.
 4. *결론:* 극한은 $$\frac12$$. 뜻은 $$x$$가 작을 때 $$e^x \approx 1 + x + \frac{x^2}{2}$$라는 것이다([테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/)).
 
 $$0 \cdot \infty$$나 $$1^\infty$$ 꼴도 바꿔서 쓴다. $$x \ln x = \frac{\ln x}{1/x}$$($$\frac{-\infty}{\infty}$$)는 $$x \to 0^+$$에서 $$\frac{1/x}{-1/x^2} = -x \to 0$$. $$\left(1 + \frac{a}{x}\right)^x$$은 로그를 취하면 $$\frac{\ln(1 + a/x)}{1/x} \to a$$라서 $$e^a$$로 간다.
+
+```mermaid
+flowchart TD
+    A["극한 lim f/g를 구한다"] --> B{"그냥 대입해서 값이 나오나"}
+    B -- "예" --> V["그 값이 답이다. 로피탈을 쓰지 않는다"]
+    B -- "아니오" --> C{"어떤 꼴인가"}
+    C -- "0·∞" --> D["분수로 바꾼다. 예: x ln x = ln x ÷ 1/x"]
+    C -- "1^∞" --> E["로그를 취해 분수로 만든다"]
+    D --> C
+    E --> C
+    C -- "0/0 또는 ∞/∞" --> G["분자와 분모를 각각 미분한다"]
+    G --> H{"f′/g′의 극한이 바로 나오나"}
+    H -- "예" --> I["그 값이 답이다. 로그를 취했으면 e의 지수로 되돌린다"]
+    H -- "아직 0/0 또는 ∞/∞" --> G
+```
+
+예제는 아래쪽 고리를 두 바퀴 돈 것이다. $$0 \cdot \infty$$와 $$1^\infty$$ 꼴은 먼저 분수로 바꾼 뒤 고리에 들어간다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예제의 1/2, $$x\ln x \to 0$$, $$(1 + a/x)^x \to e^a$$, $$\ln x / x^{0.1}$$이 아주 느리게 0으로 감, $$x^{10}/1.1^x$$, 오해의 반례, `expm1`의 정확도 — [09_lhopital-growth_verify.py](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_verify/)</div>
@@ -133,4 +150,5 @@ $$0 \cdot \infty$$나 $$1^\infty$$ 꼴도 바꿔서 쓴다. $$x \ln x = \frac{\l
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.8절 "L'Hôpital's Rule"(부정형, 증가 속도 비교)
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [09_lhopital-growth_plot.py](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_plot/)로 그렸고, $$\frac{\ln x}{x^{0.1}}$$의 값(2.3과 $$2.3 \times 10^{-8}$$)과 꼭대기 위치 $$x = e^{10}$$, $$\frac{x^{10}}{1.1^x}$$의 꼭대기 $$x = \frac{10}{\ln 1.1} \approx 105$$와 1 아래로 내려가는 $$x \approx 685$$를 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 가정($$\frac00$$, $$\frac{\infty}{\infty}$$ 꼴), 예제의 두 번 미분과 꼴 바꾸기, 자주 하는 오해를 근거로 그렸다.
 {% endraw %}

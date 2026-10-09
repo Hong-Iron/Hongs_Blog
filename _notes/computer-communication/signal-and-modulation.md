@@ -18,7 +18,7 @@ prev_title: "노드"
 next_url: "/studies/computer-communication/wired-links/"
 next_title: "유선 링크"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/computer-communication/signal-and-modulation/"
 ---
@@ -66,6 +66,16 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 
 
 변조는 보내는 쪽이, 복조는 받는 쪽이 한다. 보내는 노드는 전송할 이진 데이터를 신호로 만들어야 하고, 이 일은 네트워크 어댑터(NIC) 안의 신호 부품이 한다[^4]. 좁은 뜻의 인코딩은 디지털 데이터를 디지털 신호로 바꾸는 변조이고, 주로 유선 링크에서 쓴다[^4]. 방법은 [NRZ와 클럭 복구](/Hongs_Blog/studies/computer-communication/nrz-clock-recovery/)부터 이어진다.
+
+```mermaid
+flowchart LR
+  D1["0과 1 (데이터)"] --> MO["변조 - 보내는 쪽 모뎀"]
+  MO --> SG["전압, 빛, 전파 (신호)"]
+  SG --> DM["복조 - 받는 쪽 모뎀"]
+  DM --> D2["0과 1 (데이터)"]
+```
+
+변조는 늘 보내는 쪽 끝에, 복조는 받는 쪽 끝에 있다. 링크 위를 지나는 것은 가운데의 신호뿐이다[^s2].
 
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
@@ -129,4 +139,5 @@ permalink: "/studies/computer-communication/signal-and-modulation/"
 [^3]: 4-1학기/pasted_images/Pasted image 20260926023315.png — 슬라이드 "전자기 스펙트럼과 용도/매체 특성"
 [^4]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 20 "변조 (Modulation) / 인코딩(Encoding): 개요"와 슬라이드 34 "인코딩(Encoding): 개요" (4-1학기/pasted_images/Pasted image 20261005195306.png, Pasted image 20261006180649.png). 4-1학기/컴퓨터 통신/2.필기노트/05.5주차.md, 4~9행, 94행
 [^s1]: 에이전트 보충. 주파수 × 파장 = 신호 속도의 관계, 표의 파장 값, 와이파이 주파수, 카드 C3, 가시광의 위치는 원본에 없다. 관계식은 파동의 기본 성질이고, 휴먼 인터페이스 미디어의 파동과 빛 문서에도 같은 식 $$c = f\lambda$$가 있다. 와이파이의 2.4 GHz와 5 GHz 대역은 IEEE 802.11 표준의 대역이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절과 슬라이드 20 "변조 (Modulation) / 인코딩(Encoding): 개요"의 '발신지에서 전송하려는 이진 데이터를 신호로 만든다'를 바탕으로 그렸다.
 {% endraw %}

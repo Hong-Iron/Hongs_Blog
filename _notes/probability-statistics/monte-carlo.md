@@ -18,7 +18,7 @@ prev_title: "해싱과 무작위 알고리즘의 확률"
 next_url: "/studies/probability-statistics/descriptive-statistics/"
 next_title: "기술통계"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/monte-carlo/"
 ---
@@ -54,6 +54,16 @@ $$\hat\theta_n = \frac1n\sum_{i=1}^{n}Y_i$$
 로 어림한다. [큰 수의 법칙](/Hongs_Blog/studies/probability-statistics/lln/)으로 $$\hat\theta_n \to \theta$$이고, [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)로 오차는 대략 $$\mathcal{N}\left(0, \frac{\sigma^2}{n}\right)$$을 따른다($$\sigma^2 = \operatorname{Var}[Y]$$). 그래서 95% 오차 막대는 $$\hat\theta_n \pm 1.96\frac{\hat\sigma}{\sqrt n}$$이다($$\hat\sigma$$는 표본 표준편차)[^1].
 
 **적분으로 쓰기.** $$\int_D g(\mathbf{x})\,d\mathbf{x}$$($$\int$$는 넓이를 구하는 적분 기호)는 $$D$$ 위 균등분포의 $$\mathbf{X}$$에 대해 $$\vert D\vert  \cdot \mathbb{E}[g(\mathbf{X})]$$다. 확률 $$P(A)$$는 지시 확률변수의 기댓값 $$\mathbb{E}[I_A]$$다.
+
+```mermaid
+flowchart LR
+    T["구하려는 값 θ"] --> E["기댓값 E[Y]로 쓰기"]
+    E --> S["독립 표본 Y1, …, Yn 만들기"]
+    S --> A["표본평균 θ̂n"]
+    A --> B["오차 막대 ±1.96 σ̂/√n"]
+```
+
+모든 몬테카를로 계산이 이 네 칸을 차례로 지난다. 문제마다 달라지는 곳은 첫 칸, 곧 구하려는 값을 어떤 확률변수의 기댓값으로 쓰느냐다.[^s2]
 
 **알아보는 신호.** 적분 차원이 높다, 식으로 풀기 어려운 시스템의 확률이나 기댓값이다, 난수로 시스템을 흉내 낼 수는 있다.
 
@@ -117,4 +127,5 @@ $$\hat\theta_n = \frac1n\sum_{i=1}^{n}Y_i$$
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.2절(큰 수의 법칙과 몬테카를로), 10.3절(중심극한정리와 오차의 크기).
 [^2]: Owen, *Monte Carlo Theory, Methods and Examples*(온라인 교재), 중요도 샘플링 장. 수치는 27_monte-carlo_verify.py로 확인했다.
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [27_monte-carlo_plot.py](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_plot/)로 그렸고, 그림에 쓴 값($$\frac{1.64}{\sqrt n}$$이 1,000·4,000·16,000에서 0.052·0.026·0.013, 모의실험과 12% 안)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의 절의 식(표본평균과 95% 오차 막대)과 적분으로 쓰기를 순서대로 그렸다.
 {% endraw %}

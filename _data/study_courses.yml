@@ -81,7 +81,7 @@
       url: "/studies/computer-communication/"
       concepts: 53
       practices: 4
-      codes: 45
+      codes: 46
       heavy: 6
       units: "연결과 자원 공유 · 패킷 스위칭과 네트워크 구조 · 인터넷 구조와 성능 · 데이터 링크 네트워크: 링크의 실체 …"
     - name: "휴먼 인터페이스 미디어"
@@ -89,7 +89,7 @@
       url: "/studies/human-interface-media/"
       concepts: 31
       practices: 4
-      codes: 43
+      codes: 44
       heavy: 4
       units: "사람의 지각 · 사람의 시각 · 파동의 표현 · 이미지의 표현 …"
     - name: "데이터 과학"

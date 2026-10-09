@@ -18,7 +18,7 @@ prev_title: "미분 법칙"
 next_url: "/studies/calculus/curve-analysis/"
 next_title: "도함수의 활용과 최적화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/chain-rule/"
 ---
@@ -134,6 +134,16 @@ $$k = g'(x)h + r_1(h)$$이고 $$r_1(h)/h \to 0$$이므로, $$h$$가 충분히 �
 $$\frac{\partial L}{\partial w} = \underbrace{2(y - t)}_{dL/dy}\cdot\underbrace{\sigma(1 - \sigma)}_{dy/dz}\cdot\underbrace{x}_{dz/dw}, \qquad z = wx + b$$
 
 
+```mermaid
+flowchart LR
+    w["w"] -- "∂z/∂w = x" --> z["z = wx + b"]
+    b["b"] -- "∂z/∂b = 1" --> z
+    z -- "dy/dz = σ(1 − σ)" --> y["y = σ(z)"]
+    y -- "dL/dy = 2(y − t)" --> L["L = (y − t)²"]
+```
+
+화살표는 계산이 흐르는 방향이고, 화살표 위의 식은 그 한 칸의 도함수다. $$L$$에서 $$w$$까지 거꾸로 가며 화살표 위의 식을 곱하면 위 식이 된다. $$b$$로 가는 길에서는 마지막에 $$x$$ 대신 1을 곱한다[^s3].
+
 연습: [미분 계산 예제 사다리](/Hongs_Blog/studies/calculus/differentiation-ladder/)
 
 <div class="callout callout-check" markdown="1">
@@ -200,4 +210,5 @@ $$\frac{\partial L}{\partial w} = \underbrace{2(y - t)}_{dL/dy}\cdot\underbrace{
 [^1]: OpenStax, *Calculus Volume 1*, 3.6절 "The Chain Rule", 3.7절 "Derivatives of Inverse Functions", 3.8절 "Implicit Differentiation", 3.9절 "Derivatives of Exponential and Logarithmic Functions"(로그 미분법)
 [^s1]: 에이전트 보충. 기울기 소실 문제와 ReLU의 도입은 딥러닝의 표준 서술이다(Goodfellow·Bengio·Courville, *Deep Learning*, 6장).
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [06_chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/06_chain-rule_plot/)로 그렸고, 세 곡선이 차례로 도함수 관계인 것(중앙 차분, $$-5 \le x \le 5$$)과 $$\sigma(1 - \sigma)$$의 최댓값이 $$x = 0$$의 $$\frac14$$인 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예제의 뉴런 하나의 학습 기울기 식을 계산 그래프로 옮겼다. $$\frac{\partial z}{\partial b} = 1$$은 $$z = wx + b$$에서 바로 나온다.
 {% endraw %}

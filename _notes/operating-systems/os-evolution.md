@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Evolution of Operating Systems", "직렬 처리", "Serial Processing", "단순 배치 시스템", "Simple Batch System", "모니터", "Monitor", "상주 모니터", "Resident Monitor", "작업 제어 언어", "Job Control Language", "JCL"]
 description: "운영체제는 \"비싼 프로세서를 어떻게 하면 놀리지 않을까\"라는 고민을 풀면서 네 단계로 자랐다. 사람이 직접 기계를 다루던 직렬 처리, 작업을 묶어 프로그램(모니터)이 차례로 돌리는 단순 배치, 여러 작업을 메모리에 올려 번갈아 돌리는 다중 프로그래밍 배치, 여러 사람이 터미널로 동…"
@@ -18,7 +18,7 @@ prev_title: "운영체제의 역할"
 next_url: "/studies/operating-systems/user-kernel-mode/"
 next_title: "사용자 모드와 커널 모드"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/os-evolution/"
 ---
@@ -57,6 +57,18 @@ permalink: "/studies/operating-systems/os-evolution/"
 2. 그 작업에 프로세서를 넘긴다.
 3. 작업이 끝나면 모니터로 돌아오도록 프로그램이 짜여 있다. 모니터는 곧바로 다음 작업을 읽는다.
 4. 결과는 프린터 같은 출력 장치로 나간다.
+
+```mermaid
+flowchart LR
+  R["모니터가 작업 하나를 읽어 싣는다"] --> G["작업에 프로세서를 넘긴다"]
+  G --> U["사용자 프로그램 실행"]
+  U --> O["결과를 출력 장치로"]
+  U -->|"끝나면 모니터로 돌아온다"| Q{"남은 작업이 있나?"}
+  Q -->|"예"| R
+  Q -->|"아니오"| E(["멈춤"])
+```
+
+프로세서는 모니터와 사용자 프로그램 사이를 오간다. 작업이 끝날 때마다 모니터가 다시 프로세서를 잡고 곧바로 다음 작업을 싣는다[^s2].
 
 모니터 가운데 늘 주기억장치에 있어야 하는 부분을 **상주 모니터**(resident monitor)라고 부른다. 나머지(유틸리티, 공용 함수)는 필요한 작업이 시작될 때 불러온다[^4].
 
@@ -105,4 +117,5 @@ permalink: "/studies/operating-systems/os-evolution/"
 [^5]: 같은 자료, 슬라이드 17과 슬라이드 16의 발표자 노트
 [^6]: 같은 자료, 슬라이드 17의 발표자 노트
 [^s1]: 에이전트 보충. 계산실 장면은 원본 노트의 예약표·준비 과정 설명을 이야기로 옮긴 것이다. 오늘날 일괄 작업과의 연결은 원본에 없다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "단순 배치 시스템과 모니터"의 1~4단계(슬라이드 14~15)를 흐름도로 옮겨 그렸다. "남은 작업이 있나?" 갈림길은 "곧바로 다음 작업을 읽는다"를 반복으로 나타낸 것이다.
 {% endraw %}

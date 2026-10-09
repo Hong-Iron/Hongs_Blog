@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Producer-Consumer Problem", "유한 버퍼 문제", "Bounded-Buffer Problem", "원형 버퍼", "Circular Buffer"]
 description: "빵집 진열대를 떠올리면 된다. 제빵사(생산자)는 빵을 구워 진열대(버퍼)에 놓고, 손님(소비자)은 하나씩 가져간다. 진열대가 꽉 차면 제빵사는 기다리고, 비어 있으면 손님이 기다린다. 두 사람이 동시에 같은 칸을 만지면 안 된다. 세마포어 셋으로 깔끔하게 풀리지만, semWait …"
@@ -84,6 +84,19 @@ void producer() {                 void consumer() {
 
 버퍼 칸을 $$n$$개로 두고 원형으로 쓴다. 포인터를 $$n$$으로 나눈 나머지로 돌린다. 가득 찬 조건은 `(in + 1) % n == out`, 빈 조건은 `in == out`이다[^5]. 세마포어 해답에는 빈 칸 수 `e`를 더한다[^6].
 
+```
+ 칸 번호    0     1     2     3     4
+         +-----+-----+-----+-----+-----+
+ b       |     | 빵  | 빵  |     |     |
+         +-----+-----+-----+-----+-----+
+                  ^           ^
+                 out          in
+ out: 소비자가 다음에 꺼낼 칸 / in: 생산자가 다음에 넣을 칸
+ 4번 칸 다음은 다시 0번 칸이다: in = (in + 1) % 5
+```
+
+칸이 5개이고 빵 두 개가 1·2번 칸에 있는 순간이다. 생산자는 `in`을, 소비자는 `out`을 오른쪽으로 밀고, 둘 다 끝에 닿으면 0번 칸으로 돌아온다[^s2].
+
 ```c
 const int sizeofbuffer = /* 버퍼 크기 */;
 semaphore s = 1, n = 0, e = sizeofbuffer;
@@ -155,4 +168,5 @@ void producer() {                 void consumer() {
 [^5]: 같은 자료, p.44, 46
 [^6]: 같은 자료, p.45 (그림 5.13)
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 지금 자료와 같은 시리즈(Stallings 6판, Dave Bremer 작성)의 공개 슬라이드를 원본으로 썼다. 빵집 비유, 생산자의 semWait 순서 문제, 운영체제·라이브러리 예, 확인 문제 C3은 슬라이드에 없다. 그림 속 코드는 슬라이드 이미지라 Stallings 6판 그림 5.11, 5.13을 따랐다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "버퍼가 유한할 때" 문단(p.44, 46)의 원형 버퍼를 ASCII로 그렸다. 칸 수 5와 in·out 값은 보기를 위해 고른 값이다.
 {% endraw %}

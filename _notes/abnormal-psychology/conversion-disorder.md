@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Functional Neurological Symptom Disorder", "FND", "전환장애", "Conversion Disorder", "히스테리", "hysteria", "만족스러운 무관심", "la belle indifference", "안나 O", "Anna O", "장갑 마비", "glove anesthesia"]
 description: "다리가 마비되거나, 눈이 안 보이거나, 발작을 하는데 신경을 검사해 보면 그 증상을 설명할 손상이 없는 장애다. 옛 이름은 전환장애로, 억눌린 마음의 갈등이 몸의 증상으로 \"전환\"된다고 보았다. 환자가 일부러 꾸미는 것이 아니라는 점이 꾀병과 다르다. 증상이 심각한데도 환자가 이상…"
@@ -18,7 +18,7 @@ prev_title: "신체증상장애"
 next_url: "/studies/abnormal-psychology/illness-anxiety-disorder/"
 next_title: "질병불안장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/conversion-disorder/"
 ---
@@ -74,6 +74,16 @@ permalink: "/studies/abnormal-psychology/conversion-disorder/"
 - 무의식적 욕구의 표현과 그 욕구에 대한 두려움이 타협한 결과다. 억압된 욕구를 신체 증상으로 "전환"한다.
 - **안나 O(Anna O) 사례:** 병든 아버지를 간병해야 한다는 의무와 밖에서 놀고 싶은 욕구가 부딪쳤다. "밖에서 놀면 안 돼"라는 금지와 욕구가 타협한 결과가 두 다리의 마비다. 마비는 나갈 수 없게 만들어 금지를 지키게 하고, 동시에 간병의 의무에서도 벗어나게 한다[^s4].
 
+```mermaid
+flowchart LR
+  W["욕구: 밖에서 놀고 싶다"] --> C["타협: 두 다리의 마비"]
+  P["금지: 밖에서 놀면 안 된다, 간병해야 한다"] --> C
+  C --> K["나갈 수 없다: 금지를 지킨다"]
+  C --> F["간병의 의무에서 벗어난다"]
+```
+
+부딪치는 두 힘이 증상 하나로 모이고, 그 증상이 다시 두 가지 일을 한다[^s5].
+
 ### 2. 행동주의적 입장
 
 - 충격적인 사건이나 정서적 경험 뒤에 생긴 신체 이상이 바깥에서 강화된다.
@@ -123,4 +133,5 @@ permalink: "/studies/abnormal-psychology/conversion-disorder/"
 [^s2]: 에이전트 보충. 장갑 마비는 해부학적 신경 분포와 맞지 않는 증상의 고전적 예로, 이상심리학 교재에 널리 실린다.
 [^s3]: 에이전트 보충. DSM-5-TR은 만족스러운 무관심이 이 장애에 특이적이지 않아 진단에 쓰지 말아야 한다고 설명한다.
 [^s4]: 에이전트 보충. 필기의 도식을 욕구와 금지의 타협, 그리고 간병 의무에서 벗어나는 이득으로 풀었다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `원인`의 정신분석적 입장과 안나 O 사례 문단(슬라이드 p.20과 손글씨 필기)을 근거로 그렸다.
 {% endraw %}

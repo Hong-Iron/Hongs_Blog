@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Paranoid Personality Disorder", "편집성", "편집증적 성격"]
 description: "늘 색안경을 끼고 사람을 보는 것과 같다. 남의 친절에서도 속셈을 찾고, 작은 실수도 자신을 깎아내리려는 의도로 읽으며, 한번 받은 상처는 잊지 않고 되갚는다. 이 경계심은 스스로를 지키려는 것이지만, 결국 모든 관계를 갈등과 불화로 만든다. 확신이 흔들리지 않는 망상 수준에는 이…"
@@ -18,7 +18,7 @@ prev_title: "성격장애"
 next_url: "/studies/abnormal-psychology/schizoid-pd/"
 next_title: "조현성 성격장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/paranoid-pd/"
 ---
@@ -65,6 +65,16 @@ permalink: "/studies/abnormal-psychology/paranoid-pd/"
 | 정신분석적 | 어린 시절 부모에게 가학적으로 양육된 경험. 자신과 타인에 대한 가학적 태도를 내면화한다 |
 | 인지적 | 독특한 역기능적 신념과 사고 과정: "사람들은 악의적이고 기만적이다", "그들은 기회만 있으면 공격할 것이다", "긴장하고 경계해야만 나에게 피해가 없을 것이다" |
 
+```mermaid
+flowchart LR
+    A["사람들은 악의적이고 기만적이라는 신념"] --> B["남의 말과 행동을 악의적으로 해석"]
+    B --> C["경계하고 반격함"]
+    C --> D["상대와의 갈등과 불화"]
+    D -.->|"역시 사람들은 나를 공격한다"| A
+```
+
+경계는 스스로를 지키려는 것이지만, 그 결과인 갈등이 처음의 신념을 다시 확인해 준다(점선)[^s2].
+
 ## 치료[^4]
 
 - 보통 성격 문제가 아니라 우울증이나 불안장애 때문에 치료자를 찾는다.
@@ -107,4 +117,5 @@ permalink: "/studies/abnormal-psychology/paranoid-pd/"
 [^3]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.11
 [^4]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.12
 [^s1]: 에이전트 보충. LM의 사례는 진단기준을 보이려고 만든 가상 사례다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '원인'의 인지적 신념(p.11), '정의'의 핵심 특징과 기준 4·6(p.9)을 고리로 이었다. 갈등이 신념을 확인해 준다는 점선은 해석이다.
 {% endraw %}

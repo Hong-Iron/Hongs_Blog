@@ -18,7 +18,7 @@ prev_title: "프레이밍 방식 비교"
 next_url: "/studies/computer-communication/two-dimensional-parity/"
 next_title: "2차원 패리티"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/computer-communication/error-detecting-code/"
 ---
@@ -57,6 +57,23 @@ permalink: "/studies/computer-communication/error-detecting-code/"
 
 - **만들기(보내는 쪽):** $$\mathrm{EDC} \leftarrow f(\mathrm{data})$$
 - **점검(받는 쪽):** 받은 $$\mathrm{data}'$$, $$\mathrm{EDC}'$$로 $$\mathrm{EDC}' = f(\mathrm{data}')$$인지 본다.
+
+```mermaid
+flowchart LR
+  subgraph TX["보내는 쪽"]
+    direction TB
+    D["data"] --> F1["f를 계산"] --> E["EDC"]
+  end
+  subgraph RX["받는 쪽"]
+    direction TB
+    R["data′와 EDC′를 받음"] --> F2["f(data′)를 계산"] --> Q{"EDC′와 같은가"}
+    Q -->|"같다"| OK["오류 없다고 봄"]
+    Q -->|"다르다"| ER["오류 검출"]
+  end
+  TX -->|"data와 EDC를 함께 보냄, 도중에 비트가 뒤집힐 수 있음"| RX
+```
+
+받는 쪽은 보내는 쪽과 똑같은 f를 다시 계산해 비교만 한다. "같다"는 오류가 없다는 증명이 아니다. 이 코드로 찾을 수 있는 오류가 없다는 뜻일 뿐이다[^s2].
 
 좋은 코드의 조건은 셋이다[^3].
 
@@ -105,4 +122,5 @@ EDC는 오류를 완벽하게 잡을 수 없다. 오류를 놓치면(미검출 �
 [^4]: 같은 자료, 슬라이드 48 "오류 검출율" (4-1학기/pasted_images/Pasted image 20261008211339.png)
 [^5]: 4-1학기/컴퓨터 통신/2.필기노트/06.6주차.md, 89행
 [^s1]: 에이전트 보충. 패리티 예와 표, 계층별 중복 검사의 예, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 47 "오류 검출 코드"의 만들기·점검 식을 보내는 쪽과 받는 쪽의 흐름으로 옮겼다.
 {% endraw %}

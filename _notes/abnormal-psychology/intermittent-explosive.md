@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Intermittent Explosive Disorder", "IED", "분노조절장애", "분노 폭발", "분노조절 프로그램", "anger management"]
 description: "쉽게 말해 분노조절장애다. 평소에는 괜찮다가 사소한 일에 갑자기 폭발해 욕하고 물건을 부수거나 사람을 때리는데, 그 강도가 상황에 비해 지나치다. 계획한 공격도, 돈이나 힘을 얻으려는 공격도 아니다. 폭발 전에 긴장이 차오르고 폭발하면 잠깐 후련하지만, 뒤이어 직장, 가정, 법의 …"
@@ -18,7 +18,7 @@ prev_title: "적대적 반항장애"
 next_url: "/studies/abnormal-psychology/conduct-disorder/"
 next_title: "품행장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/intermittent-explosive/"
 ---
@@ -58,6 +58,17 @@ DSM-5-TR은 빈도 기준을 둔다. 피해가 없는 언어적·신체적 공�
 - 공격 전에 긴장감이나 각성을 느끼고, 공격 뒤 곧바로 안도감을 느낀다.
 - 과거에 외상 경험이 많다.
 - 첫 발병은 주로 청소년기 후기부터 30대까지다.
+
+```mermaid
+flowchart LR
+    S["사소한 자극, 흔히 가까운 사람"] --> I["상대의 의도를 위협으로 해석"]
+    I --> T["긴장과 각성이 차오름"]
+    T --> X["언어적·신체적 폭발, 대개 30분 이하"]
+    X --> R["곧바로 안도감"]
+    R --> P["후회, 직장·가정·법의 문제"]
+```
+
+자극은 사소한데, 해석과 긴장을 거치며 폭발은 상황보다 훨씬 커진다. 안도는 잠깐이고, 뒤에 남는 손상은 크다[^s4].
 
 ## 원인[^3]
 
@@ -113,4 +124,5 @@ DSM-5-TR은 빈도 기준을 둔다. 피해가 없는 언어적·신체적 공�
 [^s1]: 에이전트 보충. IT의 사례는 진단 특징을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 간헐적 폭발장애 기준 A의 빈도 조건(A1: 3개월간 주 2회, A2: 12개월간 3회)을 보탰다.
 [^s3]: 에이전트 보충. 브레이크와 경보기의 비유는 전전두엽-편도체 설명을 쉽게 풀었다. 실제 회로는 두 부위만이 아니라 여러 영역의 상호작용이다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '임상적 특징'의 긴장·폭발·안도(p.15), '원인'의 왜곡된 인지(p.16), '정의'의 손상(p.14)과 예시의 후회를 한 삽화의 흐름으로 이었다.
 {% endraw %}

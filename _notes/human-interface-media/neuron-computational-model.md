@@ -18,7 +18,7 @@ prev_title: "흥분성과 억제성 시냅스"
 next_url: "/studies/human-interface-media/perceptron/"
 next_title: "퍼셉트론"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/human-interface-media/neuron-computational-model/"
 ---
@@ -72,6 +72,18 @@ $$
 
 </div>
 
+
+```mermaid
+flowchart LR
+  X1["입력 x1"] -- "× A_r1" --> S["모두 더하기"]
+  X2["입력 x2"] -- "× A_r2" --> S
+  XD["입력 xD"] -- "× A_rD" --> S
+  B["바이어스 b_r"] --> S
+  S -- "o_r" --> A["활성 함수 a"]
+  A --> O["출력 o'_r"]
+```
+
+출력 하나는 이 세 칸을 왼쪽부터 지나서 나온다. 무게를 곱하고, 모두 더하고, 범위 안으로 누른다. 출력이 $$R$$개면 이 그림이 $$R$$벌 있고, 벌마다 $$A$$의 다른 행을 쓴다[^s6].
 
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
@@ -181,4 +193,5 @@ $$k$$층이면 같은 논리를 $$k - 1$$번 되풀이한다(수학적 귀납법
 [^s3]: 에이전트 보충. 템플릿·상관·합성곱 해석은 코시-슈바르츠 부등식에서 나온다. 선형-비선형(LN) 모형은 망막 신경절 세포 같은 뉴런의 반응을 설명하는 계산 신경과학의 표준 모형이다.
 [^s4]: 에이전트 보충. 기호주의와 연결주의의 구분은 인공지능 교과서(예: Russell & Norvig, *Artificial Intelligence: A Modern Approach*)의 표준 구분이다.
 [^s5]: 에이전트 보충. 그림 1장은 원본에 없다. [07_neuron-computational-model_plot.py](/Hongs_Blog/studies/human-interface-media/code/07_neuron-computational-model_plot/)로 그렸고, 그림에 쓴 값(계단 출력 $$\{0, 1\}$$, 자르기 $$[0, 1]$$, ReLU 하한 0, 시그모이드$$(0) = 0.5$$)을 같은 코드로 확인했다.
+[^s6]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의의 성분 식 $$o'_r = a\bigl(\sum_d A_{rd}x_d + b_r\bigr)$$와 강의 2 p.11의 연산 모형을 근거로 그렸다.
 {% endraw %}

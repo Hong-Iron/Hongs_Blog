@@ -18,7 +18,7 @@ prev_title: "선형회귀"
 next_url: "/studies/probability-statistics/pca/"
 next_title: "주성분 분석"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/overfitting-cv/"
 ---
@@ -67,6 +67,19 @@ CROSS-VALIDATE(data, k, 모델 후보들)
 모든 자료가 한 번씩 검증에 쓰여 자료가 적을 때도 평가가 안정적이다. $$k$$는 흔히 5나 10이다[^1].
 
 **세 집합.** 훈련 집합(모델 학습) · 검증 집합 또는 교차검증(모델 고르기) · 시험 집합(최종 성능 보고, 한 번만). 고르는 데 쓴 점수는 고른 만큼 낙관적으로 치우친다.
+
+```mermaid
+flowchart TD
+    D["전체 자료"] --> T["시험 집합: 떼어 두고 손대지 않음"]
+    D --> R["나머지 자료"]
+    R --> CV["후보마다 k겹 교차검증 점수"]
+    CV --> B["점수가 가장 좋은 후보 고르기"]
+    B --> F["고른 후보를 나머지 자료 전체로 다시 학습"]
+    F --> E["시험 집합으로 한 번만 평가해 보고"]
+    T --> E
+```
+
+시험 집합은 맨 처음 갈라져 나와 맨 마지막 칸에서만 다시 만난다. 그 사이의 고르기는 모두 나머지 자료 안에서 한다.[^s2]
 
 **편향-분산 절충.** 새 점에서의 기대 제곱 오차 = (편향)² + 분산 + 줄일 수 없는 잡음 분산이다([편향-분산 분해](/Hongs_Blog/studies/probability-statistics/estimators/)). 모델이 단순하면 편향이, 복잡하면 분산이 커진다. 예시에서 시험 오차는 잡음 분산 $$0.3^2 = 0.09$$ 아래로는 내려가지 않는다[^2].
 
@@ -155,4 +168,5 @@ CROSS-VALIDATE(data, k, 모델 후보들)
 [^d4]: 같은 자료, p.10
 [^sd1]: 에이전트 보충. OOB 비율 $$(1 - 1/n)^n \to 1/e$$와 카드 C4는 원본에 없다. 35_overfitting-cv_verify.py로 계산했다.
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [35_overfitting-cv_plot.py](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_plot/)로 그렸고, 그림에 쓴 값(예시 표의 훈련·시험 오차(검증 코드와 같은 자료), 시험 오차 최소 차수 3, 모든 시험 오차 > 0.09)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 k겹 교차검증 의사코드, 세 집합 절, 예제 4단계(고른 모델을 다시 맞추고 새 자료로 보고)를 한 흐름으로 그렸다.
 {% endraw %}

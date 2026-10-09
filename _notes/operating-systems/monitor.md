@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Monitor", "조건 변수", "Condition Variable", "cwait", "csignal", "호어 모니터", "Hoare Monitor", "메사 모니터", "Mesa Monitor", "cnotify", "cbroadcast"]
 description: "모니터는 공유 데이터와 그 데이터를 다루는 함수들을 한 방에 넣고, 방에는 한 번에 한 프로세스만 들어가게 한 프로그래밍 언어 구조다. 세마포어처럼 semWait과 semSignal을 코드 곳곳에 흩어 놓지 않아도, 방에 들어가는 것만으로 상호 배제가 된다. 그래서 짝을 빠뜨리는 …"
@@ -18,7 +18,7 @@ prev_title: "생산자-소비자 문제"
 next_url: "/studies/operating-systems/message-passing/"
 next_title: "메시지 전달"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/monitor/"
 ---
@@ -75,6 +75,19 @@ void take(char x) {
 
 세마포어의 semSignal과 달리 `csignal`은 기다리는 프로세스가 없으면 그냥 사라진다. 나중에 cwait하는 프로세스를 위해 저장되지 않는다[^s1].
 
+```mermaid
+flowchart LR
+  A(["들어오려는 프로세스"]) --> Q["입구 큐"]
+  Q -->|"모니터가 비면 하나만 들어감"| M["모니터 안: 지역 데이터와 함수"]
+  M -->|"cwait c1"| C1["조건 c1의 큐"]
+  C1 -->|"csignal c1로 깨어남"| M
+  M -->|"cwait c2"| C2["조건 c2의 큐"]
+  C2 -->|"csignal c2로 깨어남"| M
+  M --> X(["함수를 마치고 나감"])
+```
+
+모니터 안에는 늘 많아야 하나가 있다. 나머지는 입구 큐에 서 있거나, 조건 변수마다 따로 있는 큐에서 신호를 기다린다. cwait한 프로세스는 모니터를 비워 주므로 입구 큐의 다음 프로세스가 들어올 수 있다[^s2].
+
 ### 호어 방식과 메사 방식
 
 | | 호어(Hoare) 방식 | 메사(Mesa) 방식 (Lampson·Redell) |
@@ -125,4 +138,5 @@ void take(char x) {
 [^4]: 같은 자료, p.51~52 (그림 5.15)
 [^5]: 같은 자료, p.54~55 (그림 5.17)와 발표자 노트
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 지금 자료와 같은 시리즈(Stallings 6판, Dave Bremer 작성)의 공개 슬라이드를 원본으로 썼다. 모니터 코드는 슬라이드 이미지라 Stallings 6판 그림 5.16을 따랐다. csignal이 흔적을 남기지 않는다는 설명, 자바·파이썬 연결, 확인 문제 C3은 슬라이드에 없고 교재 5.4절을 바탕으로 보탰다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 세 가지 특징과 조건 변수 표(p.50~52, 그림 5.15)를 흐름도로 그렸다. 조건 변수 두 개는 보기를 위해 고른 수다.
 {% endraw %}

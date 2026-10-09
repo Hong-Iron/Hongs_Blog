@@ -18,7 +18,7 @@ prev_title: "거듭제곱함수와 지수함수 비교"
 next_url: "/studies/college-math/radian/"
 next_title: "각과 라디안"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/college-math/positional-notation/"
 ---
@@ -45,7 +45,31 @@ $$2025 = 2 \cdot 10^3 + 0 \cdot 10^2 + 2 \cdot 10^1 + 5 \cdot 10^0$$이다. 같�
             읽는 방향 ↑ : 1101₂
 ```
 
+```mermaid
+flowchart TD
+  S["n과 밑 b를 받는다"] --> Q{"n이 0보다 큰가?"}
+  Q -->|"예"| D["n을 b로 나눠 몫 q와 나머지 r을 얻는다"]
+  D --> W["r을 지금까지 적은 숫자의 왼쪽에 붙인다"]
+  W --> N["n을 q로 바꾼다"]
+  N --> Q
+  Q -->|"아니오"| E["적은 숫자열이 b진 표현이다"]
+```
+
+나머지는 1의 자리부터 나오므로, 새 나머지를 늘 왼쪽에 붙인다. 위 표에서 "아래에서 위로 읽는" 것과 같은 일이다. 몫이 매번 줄어들어 언젠가 0이 되므로 반복은 반드시 끝난다[^s2].
+
 16은 $$2^4$$이므로 2진수를 오른쪽부터 네 자리씩 끊으면 16진수 한 자리가 된다. $$255 = 1111\,1111_2 = \text{FF}_{16}$$이다. 16진수의 A~F는 10~15를 뜻한다.
+
+```mermaid
+flowchart LR
+  T["10진수"] -->|"2로 반복 나눗셈"| B2["2진수"]
+  B2 -->|"자리마다 2의 거듭제곱을 곱해 더하기"| T
+  B2 -->|"오른쪽부터 네 자리씩 끊기"| H["16진수"]
+  H -->|"한 글자를 네 자리로 펴기"| B2
+  B2 -->|"오른쪽부터 세 자리씩 끊기"| O["8진수"]
+  O -->|"한 글자를 세 자리로 펴기"| B2
+```
+
+10진수와 2진수 사이는 나눗셈과 곱셈으로 계산해야 한다. 16진수와 8진수는 밑이 $$2^4$$, $$2^3$$이라서 2진수를 끊거나 펴기만 하면 된다[^s2].
 
 자릿수는 로그와 맞물린다. 네 자리 10진수는 $$1000$$부터 $$9999$$까지다. 즉 $$10^3 \le n < 10^4$$이다. 양변에 $$\log_{10}$$을 취하면 $$3 \le \log_{10} n < 4$$이니, 자릿수는 $$\log_{10} n$$의 정수 부분에 1을 더한 값이다.
 
@@ -159,4 +183,5 @@ $$n = \sum_{i=0}^{m-1} d_i\, b^i = d_{m-1} b^{m-1} + \dots + d_1 b + d_0, \qquad
 
 [^1]: Knuth, *The Art of Computer Programming*, Vol. 2 *Seminumerical Algorithms*, 4.1절 "Positional Number Systems"
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [10_positional-notation_plot.py](/Hongs_Blog/studies/college-math/code/10_positional-notation_plot/)로 그렸고, 그림에 쓴 값($$n < 5{,}000$$에서 $$2^{m-1} \le n < 2^m$$($$m$$은 2진 자릿수), $$8$$은 4비트이고 $$\lg 8 = 3$$)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 2개는 원본에 없다. `예시로 보기`의 반복 나눗셈과 16진수 묶기, `활용`의 8진수 한 자리 = 2진수 세 자리, `정의`의 자릿값 합 $$\sum d_i b^i$$를 근거로 그렸다. 진법 표현의 출처는 Knuth, *The Art of Computer Programming*, Vol. 2, 4.1절이다.
 {% endraw %}

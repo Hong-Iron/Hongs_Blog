@@ -18,7 +18,7 @@ prev_title: "데이터 정제"
 next_url: "/studies/data-science/normalization/"
 next_title: "정규화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/data-science/data-integration/"
 ---
@@ -47,6 +47,21 @@ permalink: "/studies/data-science/data-integration/"
 **개체 식별 문제**는 여러 출처에서 같은 현실 대상을 가리키는 것끼리 맞추는 문제다. 칸 구조를 맞추는 일(스키마 통합)과 같은 대상의 줄을 찾아 잇는 일(객체 매칭)로 이루어진다. 메타데이터가 도움이 된다. 합칠 때 칸 사이의 규칙(한 칸이 다른 칸을 결정하는 관계, 다른 표를 가리키는 칸의 제약)을 깨지 않아야 한다[^2].
 
 **중복과 상관 분석.** 한 속성이 다른 속성(들)에서 "계산되어 나올" 수 있으면 중복일 수 있다. 상관 분석으로 한 속성이 다른 속성을 얼마나 강하게 암시하는지 잰다. 수치 속성은 [피어슨 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/), 명목 속성은 [카이제곱 검정](/Hongs_Blog/studies/data-science/chi-square-correlation/)을 쓴다. 강한 상관은 중복의 신호일 수 있다[^3].
+
+```mermaid
+flowchart LR
+    A["출처 A"] --> E
+    B["출처 B"] --> E
+    M["메타데이터"] -.-> E
+    subgraph E["개체 식별"]
+        S["스키마 통합: 칸 맞추기"] --> O["객체 매칭: 줄 잇기"]
+    end
+    E --> U["합친 자료"]
+    U --> C["상관 분석으로 중복 후보 찾기"]
+    C --> F["중복을 걸러 낸 자료"]
+```
+
+두 출처는 개체 식별을 거쳐야 한 표가 된다. 중복 검사는 합친 뒤에 한다[^s2].
 
 ## 연결
 
@@ -86,4 +101,5 @@ permalink: "/studies/data-science/data-integration/"
 [^2]: 같은 자료, p.38
 [^3]: 같은 자료, p.39
 [^s1]: 에이전트 보충. 오해 항목과 카드 C2의 판단은 원본에 없다. $$y = x^2$$ 예는 [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/)의 카드 C2와 같다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 개체 식별 문제와 중복·상관 분석 문단을 근거로 그렸다.
 {% endraw %}

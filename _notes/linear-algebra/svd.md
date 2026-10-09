@@ -18,7 +18,7 @@ prev_title: "양의 정부호 행렬과 이차형식"
 next_url: "/studies/linear-algebra/abstract-vector-spaces/"
 next_title: "추상 벡터공간과 베지어 곡선"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/svd/"
 ---
@@ -54,6 +54,15 @@ $$A = U\Sigma V^\top = \sigma_1\mathbf{u}_1\mathbf{v}_1^\top + \cdots + \sigma_r
 
 </div>
 
+
+```mermaid
+flowchart LR
+    X["입력 x"] -->|"Vᵀ"| CV["입력 축 v₁ … vₙ로 잰 좌표"]
+    CV -->|"Σ"| S["i번째 좌표는 σᵢ배, r번째 뒤는 0"]
+    S -->|"U"| Y["출력 축 u₁ … uₘ으로 다시 조립한 Ax"]
+```
+
+Ax = UΣVᵀx를 오른쪽부터 읽으면 세 단계다. 수직인 입력 축으로 재고, 축마다 따로 늘이고, 수직인 출력 축으로 다시 조립한다[^s4].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">최선의 저랭크 근사 (에카르트–영)</div>
@@ -203,4 +212,5 @@ $$100 \times 100$$ 합성 이미지를 랭크 1, 5, 20으로 줄였다. 랭크 2
 [^s1]: 에이전트 보충. 에카르트–영 정리는 C. Eckart, G. Young, "The approximation of one matrix by another of lower rank", *Psychometrika* 1 (1936)의 결과다. 24_svd_verify.py에서 무작위 랭크 $$k$$ 행렬과 비교해 실험으로 확인했다(증명이 아니다).
 [^s2]: 에이전트 보충. 저장량 $$k(m + n + 1)$$은 $$\mathbf{u}_i$$, $$\mathbf{v}_i$$, $$\sigma_i$$의 개수를 센 것이다. 저랭크 행렬 분해로 평점을 예측하는 방법은 넷플릭스 상 대회(2006~2009) 이후 추천 시스템의 표준 기법이 되었다(Koren·Bell·Volinsky, "Matrix factorization techniques for recommender systems", *IEEE Computer* 2009).
 [^s3]: 에이전트 보충. 그림 두 장은 원본에 없다. [24_svd_plot.py](/Hongs_Blog/studies/linear-algebra/code/24_svd_plot/)로 그렸고, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 $$\sigma_1 = 3\sqrt5$$, $$\sigma_2 = \sqrt5$$, 랭크 $$k$$ 근사의 상대 오차가 버린 특잇값으로 정해지는 것(랭크 1, 5, 20에서 약 31%, 9%, 0.2%)을 같은 코드로 확인했다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$A = U\Sigma V^\top$$, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 `예시로 보기`의 "수직인 입력 축이 수직인 출력 축으로 $$\sigma_i$$배"를 옮겼다(Strang 5판 7.2절).
 {% endraw %}

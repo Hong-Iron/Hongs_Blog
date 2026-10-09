@@ -18,7 +18,7 @@ prev_title: "직접 탐색법"
 next_url: "/studies/numerical-analysis/secant-method/"
 next_title: "할선법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/bisection-method/"
 ---
@@ -72,6 +72,21 @@ $$f(12) > 0$$, $$f(16) < 0$$이라 $$[12, 16]$$에 근이 있다.
 3. $$f(x_l)f(x_r) < 0$$이면 근은 $$[x_l, x_r]$$에 있어 $$x_u \leftarrow x_r$$. $$f(x_l)f(x_r) > 0$$이면 $$x_l \leftarrow x_r$$. $$= 0$$이면 $$x_r$$이 근이라 멈춘다[^7].
 4. 상대 근사 오차 $$\vert \epsilon_a\vert  = \left\vert \frac{x_r^{\text{new}} - x_r^{\text{old}}}{x_r^{\text{new}}}\right\vert  \times 100$$을 구한다[^8].
 5. $$\vert \epsilon_a\vert  \le \epsilon_s$$이면 멈추고, 아니면 2로 간다. 반복 횟수의 상한도 둔다[^9].
+
+```mermaid
+flowchart TD
+    A["f의 부호가 다른 xl, xu"] --> B["xr = 가운데 점"]
+    B --> C{"f(xl)·f(xr)의 부호"}
+    C -->|"0"| Z["xr이 근. 멈춤"]
+    C -->|"음수"| D["xu ← xr"]
+    C -->|"양수"| E["xl ← xr"]
+    D --> F{"상대 오차 εa ≤ εs, 또는 횟수 상한?"}
+    E --> F
+    F -->|"예"| Y["xr을 답으로. 멈춤"]
+    F -->|"아니오"| B
+```
+
+곱의 부호로 남길 반쪽을 고르고, 바뀐 정도가 기준 아래로 떨어질 때까지 고리를 돈다[^s3].
 
 $$n$$번 뒤 구간의 폭은 $$\frac{x_u - x_l}{2^n}$$이다. 그래서 폭을 $$\varepsilon$$ 이하로 하려면 $$n \ge \log_2\frac{x_u - x_l}{\varepsilon}$$번이면 된다. 폭 4를 $$10^{-6}$$으로 줄이려면 22번이다[^s1].
 
@@ -143,4 +158,5 @@ $$n$$번 뒤 구간의 폭은 $$\frac{x_u - x_l}{2^n}$$이다. 그래서 폭을 
 [^12]: 같은 자료, p.13
 [^s1]: 에이전트 보충. 참값 14.7802(이분법 100번으로 계산), 필요한 횟수 공식, 브렌트 방법, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [28_bisection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/28_bisection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 $$x_r$$ = 14, 15, 14.5, 14.75, 14.875, 14.8125, $$f(12) > 0 > f(16)$$, 근 14.7802.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 다섯 단계(원본 16.na16_nonlinear.pdf p.5~9)로 그렸다.
 {% endraw %}

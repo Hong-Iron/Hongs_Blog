@@ -18,7 +18,7 @@ prev_title: "생성함수"
 next_url: "/studies/discrete-math/asymptotic-notation/"
 next_title: "점근 표기"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/sums-asymptotics/"
 ---
@@ -77,6 +77,22 @@ $$\lg n! = \Theta(n \lg n)$$이 정렬에 대해 알려 주는 것.
 3. *부등식:* $$2^k \ge n!$$이어야 하므로 $$k \ge \lg n!$$.
 4. *어림:* 정리 4로 $$\lg n! \ge \frac n2 \lg \frac n2$$라, 어떤 비교 정렬도 최악의 경우 $$n \lg n$$에 비례하는 비교가 필요하다. 병합 정렬은 이 한계에 닿는다.
 
+```mermaid
+flowchart TD
+  Q1{"a < b ?"} -->|"예"| Q2{"b < c ?"}
+  Q1 -->|"아니오"| Q3{"a < c ?"}
+  Q2 -->|"예"| L1["a < b < c"]
+  Q2 -->|"아니오"| Q4{"a < c ?"}
+  Q4 -->|"예"| L2["a < c < b"]
+  Q4 -->|"아니오"| L3["c < a < b"]
+  Q3 -->|"예"| L4["b < a < c"]
+  Q3 -->|"아니오"| Q5{"b < c ?"}
+  Q5 -->|"예"| L5["b < c < a"]
+  Q5 -->|"아니오"| L6["c < b < a"]
+```
+
+서로 다른 세 수 $$a, b, c$$를 비교로 정렬하는 과정을 갈림길로 그렸다. 잎은 순서 $$3! = 6$$가지다. 비교 2번으로는 잎이 많아야 $$2^2 = 4$$개라, 어떤 순서는 비교가 3번 든다. 2·3단계의 부등식은 이 나무의 깊이에 대한 말이다[^s2].
+
 <img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig2.svg" alt="그림" loading="lazy">
 
 비 $$\lg n!/(n\lg n)$$은 $$n = 10^6$$에서도 약 0.93이다. $$\Theta$$는 비가 0보다 큰 일정한 범위 안에 머문다는 뜻이지, 1에 가깝다는 뜻이 아니다. 아래 끼우기의 비는 $$\frac12$$ 밑에 머물지만 $$\Theta(n\lg n)$$을 보이기에는 충분하다[^s1].
@@ -127,4 +143,5 @@ $$\lg n! = \Theta(n \lg n)$$이 정렬에 대해 알려 주는 것.
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14장 "Sums and Asymptotics"(거듭제곱의 합, 합의 어림, 조화수, 스털링 근사). Graham·Knuth·Patashnik, *Concrete Mathematics*, 2장 "Sums"(교란법).
 [^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [23_sums-asymptotics_plot.py](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_plot/)로 그렸고, $$n \le 10^4$$에서 조화수의 끼우기, $$H_{128}$$과 $$\ln 128 + 0.5772$$의 차이 0.005 미만, $$n = 10^6$$에서 $$\lg n!/(n\lg n) \approx 0.93$$을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제' 1~3단계의 비교 정렬 논증을 $$n = 3$$의 비교 나무로 그렸다.
 {% endraw %}

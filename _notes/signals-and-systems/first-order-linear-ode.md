@@ -16,7 +16,7 @@ description: "미분방정식은 \"지금 값이 이렇다면 이만큼 변한�
 next_url: "/studies/signals-and-systems/second-order-linear-ode/"
 next_title: "상수계수 2계 선형 미분방정식"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/first-order-linear-ode/"
 ---
@@ -82,6 +82,18 @@ $$y = \frac{1}{u(x)}\int g(x)u(x)\,dx = e^{-\int p\,dx}\left[\int g(x)e^{\int p\
 
 
 적분인자는 왼쪽을 "무엇의 미분" 한 덩어리로 바꿔 주는 장치다. 한 덩어리가 되면 그대로 적분할 수 있다.
+
+```mermaid
+flowchart TD
+  A["1계 상미분방정식"] --> B{"y′ = F(x)G(y) 꼴인가?"}
+  B -->|"예"| C["변수분리: y는 왼쪽, x는 오른쪽에 모아 양변 적분"]
+  B -->|"아니오"| D{"y′ + p(x)y = g(x) 꼴인가?"}
+  D -->|"예"| E["적분인자 u = e^∫p dx를 양변에 곱한다"]
+  E --> F["(uy)′ = gu를 적분해 y를 구한다"]
+  D -->|"아니오"| G["두 방법 모두 바로 쓸 수 없다"]
+```
+
+식의 꼴을 위에서부터 차례로 맞춰 보고, 처음 맞는 칸의 방법을 쓴다. $$g(x) = 0$$이면 두 꼴에 모두 맞아서 어느 방법으로 풀어도 된다.[^s3]
 
 ## 예제
 
@@ -153,4 +165,5 @@ $$y = \frac{1}{u(x)}\int g(x)u(x)\,dx = e^{-\int p\,dx}\left[\int g(x)e^{\int p\
 [^7]: 3-1학기/신호 및 시스템/1.수업자료/04.Week04_CH01_3_handout.pdf, p.3~4 (예제 1.8, 1.9)
 [^s1]: 에이전트 보충. RC 회로의 계단 응답 $$1 - e^{-t/RC}$$와 63% 값, 적분상수에 관한 설명, 확인 문제 C1은 원본에 없다. 해는 식에 넣어 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [01_first-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/01_first-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$RC = 0.5, 1, 2$$에서 $$v_c(RC) = 1 - e^{-1} \approx 0.632$$이고 오일러 방법으로 푼 값과 같음.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 변수분리형·적분인자 절(1주차 미분방정식 자료 p.5~6)을 근거로 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "최대공약수와 유클리드 호제법"
 next_url: "/studies/discrete-math/modular-inverse-crt/"
 next_title: "모듈러 역원과 중국인의 나머지 정리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 3
 permalink: "/studies/discrete-math/primes/"
 ---
@@ -34,6 +34,22 @@ permalink: "/studies/discrete-math/primes/"
 ## 예시로 보기
 
 $$360$$을 쪼갠다. $$360 = 2 \times 180 = 2 \times 2 \times 90 = \cdots = 2^3 \times 3^2 \times 5$$. 어떤 순서로 쪼개도($$360 = 10 \times 36 = (2 \times 5)(2^2 \times 3^2)$$) 같은 결과가 나온다. 설계도가 유일하므로 약수도 설계도로 센다. 약수는 $$2^i 3^j 5^k$$($$0 \le i \le 3$$, $$0 \le j \le 2$$, $$0 \le k \le 1$$)라 $$4 \times 3 \times 2 = 24$$개다([곱의 법칙](/Hongs_Blog/studies/discrete-math/counting-rules/)). 2, 3, 5가 아래 정리의 $$p_i$$, 지수 3, 2, 1이 $$e_i$$다.
+
+```mermaid
+flowchart TD
+  n360["360"] --> n10["10"]
+  n360 --> n36["36"]
+  n10 --> p2a["2"]
+  n10 --> p5["5"]
+  n36 --> n4["4"]
+  n36 --> n9["9"]
+  n4 --> p2b["2"]
+  n4 --> p2c["2"]
+  n9 --> p3a["3"]
+  n9 --> p3b["3"]
+```
+
+$$360 = 10 \times 36$$에서 출발해 더 쪼갤 수 없을 때까지 나눈 나무다. 잎을 모으면 2가 셋, 3이 둘, 5가 하나다. $$2 \times 180$$에서 출발해도 같은 잎이 나온다[^s3].
 
 ## 정의
 
@@ -140,4 +156,5 @@ $$360$$을 쪼갠다. $$360 = 2 \times 180 = 2 \times 2 \times 90 = \cdots = 2^3
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(소수, 산술의 기본정리). Rosen, *Discrete Mathematics and Its Applications* 7판, 4장(소수의 무한성, 에라토스테네스의 체, 소수 정리 소개).
 [^s1]: 에이전트 보충. 체의 $$O(n\log\log n)$$과 소수 정리는 증명하지 않고 인용했다(소수 정리는 해석적 정수론의 결과). 해시 칸 예와 $$\pi(10^6)$$은 28_primes_verify.py에서 계산했다.
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [28_primes_plot.py](/Hongs_Blog/studies/discrete-math/code/28_primes_plot/)로 그렸고, $$\pi(10^6) = 78{,}498$$, $$10^6/\ln 10^6$$의 정수 부분 72,382, 비 약 1.08을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 $$360 = 10 \times 36$$ 분해를 인수 나무로 그렸다.
 {% endraw %}

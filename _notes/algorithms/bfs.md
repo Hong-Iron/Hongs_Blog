@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["BFS", "Breadth-First Search", "너비 우선 탐색", "넓이 우선 탐색", "최단 거리", "여러 출발점 BFS", "상태 BFS"]
 description: "연못에 돌을 던지면 물결이 가까운 곳부터 둥글게 퍼진다. BFS도 출발점에서 한 걸음 거리인 곳을 모두 본 다음, 두 걸음 거리인 곳을 보는 식으로 퍼진다. 그래서 어떤 곳에 처음 닿는 순간의 걸음 수가 곧 최단 거리다. 단, 모든 한 걸음의 비용이 같을 때만 그렇다. 길마다 비용…"
@@ -18,7 +18,7 @@ prev_title: "그래프 표현"
 next_url: "/studies/algorithms/dfs/"
 next_title: "깊이 우선 탐색(DFS)"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/bfs/"
 ---
@@ -195,6 +195,17 @@ v까지 k걸음에 가는 길에 v → u 한 걸음을 붙이면 u까지 k + 1�
 </div>
 
 
+```mermaid
+flowchart LR
+    s(("s")) --- a(("a"))
+    s --- b(("b"))
+    a --- w(("w"))
+    b --- u(("u"))
+    w --- u
+```
+
+반례 그래프다. s에서 u까지는 b를 거치는 두 걸음 길과 a, w를 거치는 세 걸음 길이 있다. 꺼낼 때 표시하면 늦게 꺼낸 w가 u에 3을 덮어쓴다[^s1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -246,4 +257,5 @@ def f(maze, sources):
 
 
 [^1]: 층 순서 증명의 구성은 Cormen 외, *Introduction to Algorithms* 3판, 22.2절 "Breadth-first search"의 정확성 증명(큐 안의 거리는 줄지 않고 차이가 1 이하)을 층 단위로 다시 쓴 것이다. 구현과 O(n + m)은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 12.2 "Breadth-first search".
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '자주 하는 오해'의 반례 그래프(s–a, s–b, a–w, b–u, w–u)를 그대로 그렸다.
 {% endraw %}

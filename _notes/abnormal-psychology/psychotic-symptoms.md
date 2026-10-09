@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Psychotic Symptoms", "조현병의 핵심 증상", "망상", "delusion", "피해망상", "persecutory delusion", "과대망상", "grandiose delusion", "관계망상", "delusion of reference", "애정망상", "erotomanic delusion", "질투망상", "신체망상", "somatic delusion", "환각", "hallucination", "환청", "환시", "착각", "illusion", "현실검증", "reality testing", "혼란스러운 언어", "와해된 언어", "disorganized speech", "사고장애", "지리멸렬", "말비빔", "word salad", "반향언어", "echolalia", "우원증", "circumstantiality", "사고이탈", "tangentiality", "혼란스러운 행동", "긴장증", "catatonia", "음성 증상", "negative symptoms", "정서적 둔마", "affective flattening", "무언어증", "alogia", "무의욕증", "avolition", "무쾌감증", "anhedonia", "비사회성", "asociality"]
 description: "조현병의 증상은 다섯 가지다. 틀린 믿음을 증거에도 굽히지 않는 망상, 없는 것을 보고 듣는 환각, 앞뒤가 끊긴 말, 상황에 맞지 않거나 굳어 버린 행동, 그리고 감정·말·의욕이 사라지는 음성 증상이다. 앞의 넷은 보통 사람에게 없던 것이 더해진 증상이고, 마지막은 있던 것이 빠진…"
@@ -18,7 +18,7 @@ prev_title: "정신증과 조현병 스펙트럼"
 next_url: "/studies/abnormal-psychology/positive-vs-negative-symptoms/"
 next_title: "양성 증상과 음성 증상 비교"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/psychotic-symptoms/"
 ---
@@ -100,6 +100,22 @@ permalink: "/studies/abnormal-psychology/psychotic-symptoms/"
 ### 동치인 다른 정리 방식
 
 다섯 증상을 두 묶음으로 나누기도 한다. 1~4는 보통 사람에게 없는 것이 더해진 **양성 증상**, 5는 있던 것이 빠진 **음성 증상**이다[^8]. 둘의 차이는 [양성 증상과 음성 증상 비교](/Hongs_Blog/studies/abnormal-psychology/positive-vs-negative-symptoms/)에서 다룬다.
+
+```mermaid
+flowchart TD
+  R["정신병적 증상"] --> POS["양성 증상: 없던 것이 더해짐"]
+  R --> NEG["음성 증상: 있던 것이 빠짐"]
+  POS --> P1["망상"]
+  POS --> P2["환각"]
+  POS --> P3["혼란스러운 언어"]
+  POS --> P4["혼란스러운 행동, 긴장증적 행동"]
+  NEG --> E["표현의 감소"]
+  NEG --> V["의욕 저하, 무감동"]
+  E --> E1["정서적 둔마, 무언어증"]
+  V --> V1["무의욕증, 비사회성, 무쾌감증"]
+```
+
+다섯 증상은 먼저 더해진 것과 빠진 것으로 갈린다. 빠진 쪽은 p.15 그림을 따라 다시 두 묶음으로 나뉜다[^s5].
 
 ### 해당하는 것과 해당하지 않는 것
 
@@ -203,4 +219,5 @@ permalink: "/studies/abnormal-psychology/psychotic-symptoms/"
 [^s2]: 에이전트 보충. 슬라이드는 네 용어의 영어 이름만 든다. 뜻은 정신병리학의 표준 설명이다.
 [^s3]: 에이전트 보충. 긴장증은 DSM-5-TR에서 환경에 대한 반응성의 현저한 감소로 정의되며, 경직된 자세 유지(강경증), 무언증, 거부증, 반향행동 등을 포함한다.
 [^s4]: 에이전트 보충. 문화적으로 공유된 믿음의 제외, 입면·출면 환각, 질투망상의 "실제로 사실일 수 있음"은 DSM-5-TR과 정신병리학 교재의 표준 설명이다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 다섯 증상, '동치인 다른 정리 방식', 음성 증상의 두 묶음(슬라이드 p.15)을 나무 모양으로 그렸다.
 {% endraw %}

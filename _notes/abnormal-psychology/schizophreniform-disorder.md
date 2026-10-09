@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Schizophreniform Disorder", "정신분열형 장애", "잠정적 진단", "provisional"]
 description: "증상은 조현병과 똑같지만 1개월에서 6개월 사이에 끝나는 경우다. 아직 6개월이 안 된 채 증상이 계속되면 일단 이 이름을 붙였다가, 6개월을 넘기면 조현병으로 바꾼다. 조현병보다 갑자기 시작하고 병 전의 생활이 좋았으며 빨리 완전히 회복하는 경우가 많다. 그래도 셋 중 둘은 결국…"
@@ -18,7 +18,7 @@ prev_title: "정형과 비정형 항정신병 약물 비교"
 next_url: "/studies/abnormal-psychology/brief-psychotic-disorder/"
 next_title: "단기 정신병적 장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/schizophreniform-disorder/"
 ---
@@ -73,6 +73,18 @@ DSM-5-TR은 조현병과 달리 조현양상장애에는 사회적·직업적 �
 - 3분의 2: 조현병이나 조현정동장애로 진단이 바뀐다.
 - 평생 유병률 0.2%.
 
+```mermaid
+stateDiagram-v2
+  state "조현양상장애, 잠정 진단" as P
+  state "조현양상장애로 확정" as F
+  state "조현병이나 조현정동장애로 변경" as S
+  [*] --> P : 조현병과 같은 증상이 1개월 넘게 이어짐
+  P --> F : 6개월 전에 회복, 약 3분의 1
+  P --> S : 진단이 바뀜, 약 3분의 2. 6개월을 넘기면 조현병
+```
+
+증상이 이어지는 동안의 진단은 가운데 칸에 머문다. 6개월 전에 회복하느냐에 따라 두 칸 중 하나로 옮겨 간다[^s3].
+
 ## 연결
 
 - 같은 증상의 긴 형태: [조현병](/Hongs_Blog/studies/abnormal-psychology/schizophrenia/)
@@ -106,4 +118,5 @@ DSM-5-TR은 조현병과 달리 조현양상장애에는 사회적·직업적 �
 [^2]: 4-1학기/이상 심리학/1.수업자료/02.조현병 스펙트럼 장애.pdf, p.46 (조현병과의 차이). 표의 조현병 열은 p.18~20에서 옮겼다.
 [^s1]: 에이전트 보충. AC의 사례는 기간 기준을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 조현양상장애의 진단기준은 삽화가 "1개월 이상 6개월 미만"이고, 기능 저하를 요구하지 않으며, 회복을 기다리는 동안에는 "잠정적(provisional)"이라고 명시한다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 두 경우와 '경과' 절(슬라이드 p.45)을 상태도로 그렸다.
 {% endraw %}

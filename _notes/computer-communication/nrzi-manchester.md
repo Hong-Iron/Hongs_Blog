@@ -18,7 +18,7 @@ prev_title: "NRZ와 클럭 복구"
 next_url: "/studies/computer-communication/4b5b/"
 next_title: "4B/5B"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/computer-communication/nrzi-manchester/"
 ---
@@ -61,6 +61,18 @@ NRZI       __ __ _‾ ‾‾ ‾_ _‾ ‾_ _‾ ‾‾ ‾_ __ __ __ __ _‾ �
 
 - **NRZI**(Non-return to Zero Inverted): 1을 보낼 때는 지금 신호에서 한가운데서 뒤집는다(중간 전이, mid-transition). 0을 보낼 때는 지금 신호를 그대로 둔다. 이어지는 1의 문제를 푼다.
 - **맨체스터**(Manchester): 0은 올라가는 전이, 1은 내려가는 전이다. NRZ로 나타낸 데이터와 클럭을 배타적 논리합(XOR)한 것이다. 효율이 50%라는 문제가 있다.
+
+```mermaid
+stateDiagram-v2
+  state "낮음" as LO
+  state "높음" as HI
+  LO --> HI : 1 - 칸 한가운데서 뒤집음
+  HI --> LO : 1 - 칸 한가운데서 뒤집음
+  LO --> LO : 0 - 그대로
+  HI --> HI : 0 - 그대로
+```
+
+NRZI는 지금 높이 하나만 기억한다. 1이 오면 반대 상태로 넘어가고, 0이 오면 제자리에 머문다. 0이 이어지면 제자리 화살표만 돌아서 신호가 평평해진다[^s3].
 
 배타적 논리합 $$\oplus$$는 두 값이 다르면 1, 같으면 0을 낸다. 슬라이드는 다음 세 성질을 쓴다[^2].
 
@@ -244,4 +256,5 @@ NRZI는 앞의 1 네 개에서 계속 바뀌다가 뒤의 0 네 개에서 평평
 [^4]: 4-1학기/컴퓨터 통신/2.필기노트/05.5주차.md, 118행
 [^s1]: 에이전트 보충. 의사코드, 클럭을 "앞 절반 0, 뒤 절반 1"로 정한 것, 디코딩 규칙, `10110` 추적 표, NRZI 불변식과 정확성 논증, 카드 C3~C5는 원본에 없다. 클럭의 모양은 슬라이드 38 그림(클럭이 칸마다 낮음으로 시작)과 "0: up transition"에 맞췄다. 구현 코드의 자체 테스트로 확인했다.
 [^s2]: 에이전트 보충. 10 Mbps 이더넷의 맨체스터(IEEE 802.3, 10BASE-T)와 USB의 NRZI·비트 스터핑(USB 2.0 규격)은 원본에 없다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 38 "NRZI and Manchester"의 NRZI 규칙(1이면 중간 전이, 0이면 그대로)을 상태 두 개로 옮겼다.
 {% endraw %}

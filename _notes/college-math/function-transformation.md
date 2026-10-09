@@ -18,7 +18,7 @@ prev_title: "함수"
 next_url: "/studies/college-math/inverse-function/"
 next_title: "역함수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/college-math/function-transformation/"
 ---
@@ -57,6 +57,14 @@ $$f(x) = x^2$$의 그래프 위의 점 $$(1, 1)$$이 각 조작에서 어디로 
 
 기호 $$g \circ f$$는 오른쪽의 $$f$$를 먼저 적용한다.
 
+```mermaid
+flowchart LR
+  A1["x = 3"] -->|"f: 1 더하기"| B1["4"] -->|"g: 2배"| C1["8 = 2x + 2"]
+  A2["x = 3"] -->|"g: 2배"| B2["6"] -->|"f: 1 더하기"| C2["7 = 2x + 1"]
+```
+
+위 줄이 $$g \circ f$$, 아래 줄이 $$f \circ g$$다. 같은 3을 넣어도 어느 상자를 먼저 지나느냐에 따라 8과 7로 갈린다[^s3].
+
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
@@ -72,6 +80,13 @@ $$\left(\frac{x_0}{b} + h,\ \ a\,y_0 + k\right)$$
 
 </div>
 
+
+```mermaid
+flowchart LR
+  X["입력 x"] -->|"h 빼기"| U["x − h"] -->|"b배"| V["b·(x − h)"] -->|"f 적용"| W["f 값"] -->|"a배"| Z["a·f 값"] -->|"k 더하기"| Y["출력 g(x)"]
+```
+
+$$g(x) = a\,f\big(b(x - h)\big) + k$$를 계산하는 순서다. 왼쪽 두 상자는 $$f$$에 들어가기 전의 입력 쪽 조작이고, 오른쪽 두 상자는 $$f$$가 낸 출력 쪽 조작이다[^s3].
 
 점 대응은 대입 한 번으로 확인된다.
 
@@ -159,4 +174,5 @@ $$y = -2(x - 1)^2 + 3$$의 그래프를 $$y = x^2$$에서 얻는다.
 [^2]: OpenStax, *Precalculus 2e*, 1.4절 "Composition of Functions"
 [^s1]: 에이전트 보충. 신호 지연·화면 좌표·셸 파이프라인은 컴퓨터공학에서 변환과 합성이 쓰이는 곳을 보이려고 넣었다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [02_function-transformation_plot.py](/Hongs_Blog/studies/college-math/code/02_function-transformation_plot/)로 그렸고, 그림에 쓴 값(점 대응 $$(1, 1) \to (4, 1)$$, 예제의 $$g(1) = 3$$, $$g(0) = g(2) = 1$$)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. `예시로 보기`의 두 합성 $$g \circ f$$, $$f \circ g$$($$x = 3$$을 넣은 값 8과 7은 두 식에서 계산)와 `정의`의 식 $$a\,f\big(b(x - h)\big) + k$$의 계산 순서를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.4~1.5절).
 {% endraw %}

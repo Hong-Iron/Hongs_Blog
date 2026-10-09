@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Brute Force", "Complete Search", "완전탐색", "브루트포스", "전수 조사", "itertools", "순열", "조합", "product", "permutations", "combinations"]
 description: "비밀번호를 잊은 세 자리 자물쇠를 000부터 999까지 모두 돌려 보는 것과 같다. 가능한 경우를 빠짐없이 만들어 하나씩 확인하므로, 생각할 것이 가장 적고 틀릴 일도 적다. 그래서 경우의 수가 작으면 가장 먼저 고른다. 대신 경우의 수는 조금만 커져도 폭발하므로, 짜기 전에 몇 …"
@@ -18,7 +18,7 @@ prev_title: "유니온 파인드"
 next_url: "/studies/algorithms/recursion-backtracking/"
 next_title: "재귀와 백트래킹"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/brute-force/"
 ---
@@ -79,6 +79,21 @@ list(combinations("abc", 2))      # [('a','b'), ('a','c'), ('b','c')]
 - **반복되는 것은 한 바퀴만 본다.** 상태가 일정한 주기로 되풀이되면, 여러 주기가 함께 도는 경우 전체가 되풀이되는 길이는 주기들의 최소공배수다([최대공약수와 유클리드 호제법](/Hongs_Blog/studies/discrete-math/gcd-euclid/)). 그 안에서 못 찾으면 영원히 없다.
 - **답이 될 수 없는 경우는 일찍 버린다.** 선택을 하나씩 쌓다가 이미 틀린 것이 보이면 더 쌓지 않는다. 이것이 백트래킹이다. [재귀와 백트래킹](/Hongs_Blog/studies/algorithms/recursion-backtracking/) 문서에서 다룬다.
 
+```mermaid
+flowchart TD
+    Q1["1. 한 경우가 무엇인지 적는다"] --> Q2["2. 경우의 수를 표로 센다"]
+    Q2 --> Q3["3. 한 경우를 확인하는 비용을 센다"]
+    Q3 --> Q4{"4. 경우의 수 × 확인 비용이 천만 이하인가?"}
+    Q4 -->|"예"| G["모두 나열해 확인하는 코드를 짠다"]
+    Q4 -->|"아니오"| O["경우를 줄일 관찰을 찾는다"]
+    O --> O1["반복되면 한 바퀴만 본다"]
+    O --> O2["틀린 것이 보이면 일찍 버린다"]
+    O1 --> Q2
+    O2 --> Q2
+```
+
+관찰로 경우를 줄였으면 2번으로 돌아가 다시 센다. 곱이 천만 아래로 내려올 때 비로소 짠다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시(합이 5인 쌍 2개), 표의 개수 공식(n ≤ 8, r ≤ n의 모든 경우에서 itertools가 만든 개수와 일치), 코드 예의 출력, "주기 p와 q로 도는 두 상태를 합친 것은 lcm(p, q)마다 되풀이된다"(p, q ≤ 20의 모든 쌍)를 확인했다 — [16_brute-force_verify.py](/Hongs_Blog/studies/algorithms/code/16_brute-force_verify/)</div>
 
@@ -129,4 +144,5 @@ list(combinations("abc", 2))      # [('a','b'), ('a','c'), ('b','c')]
 
 
 [^1]: Python 3 표준 라이브러리 문서, "itertools — Functions creating iterators for efficient looping"(`product`, `permutations`, `combinations`와 각각이 만드는 개수). 완전탐색의 부분집합·순열 만들기는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 5.1 "Generating subsets", 5.2 "Generating permutations".
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '짜기 전 네 가지 질문' 절의 네 질문과 그 아래 '경우를 줄일 관찰' 두 가지를 순서도로 옮겼다.
 {% endraw %}

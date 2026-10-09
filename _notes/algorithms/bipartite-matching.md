@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Bipartite Matching", "최대 이분 매칭", "증가 경로", "Augmenting Path", "헝가리안 방법", "Hungarian Method"]
 description: "학생마다 가고 싶은 동아리가 몇 개 있고, 동아리마다 한 명만 받는다. 학생을 한 명씩 넣다가 원하는 자리가 이미 차 있으면, 그 자리 주인에게 \"다른 데로 옮겨 줄 수 있니?\"라고 묻는다. 주인이 또 다른 주인에게 묻는 식으로 연쇄로 비켜 주면 짝이 하나 는다. 먼저 온 사람에게…"
@@ -18,7 +18,7 @@ prev_title: "세그먼트 트리와 스위핑"
 next_url: "/studies/algorithms/geometry-ccw/"
 next_title: "계산 기하 기초"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/bipartite-matching/"
 ---
@@ -34,6 +34,27 @@ permalink: "/studies/algorithms/bipartite-matching/"
 ## 예시로 보기
 
 학생 1, 2, 3과 동아리 a, b, c가 있다. 1은 a나 b, 2는 a만, 3은 b나 c를 원한다.
+
+```mermaid
+flowchart LR
+    subgraph L["학생"]
+        s1["1"]
+        s2["2"]
+        s3["3"]
+    end
+    subgraph R["동아리"]
+        ca["a"]
+        cb["b"]
+        cc["c"]
+    end
+    s1 --- ca
+    s1 --- cb
+    s2 --- ca
+    s3 --- cb
+    s3 --- cc
+```
+
+선은 "이 학생이 이 동아리를 원한다"이고, 선은 늘 학생 쪽과 동아리 쪽을 잇는다. 2는 a 하나뿐이라 a를 두고 1과 다툰다[^s1].
 
 | 차례 | 한 일 | 짝 |
 |---|---|---|
@@ -123,4 +144,5 @@ def max_matching(adj, n_right):            # adj[u]: 왼쪽 u가 갈 수 있는 
 
 [^1]: Cormen 외, *Introduction to Algorithms* 3판, 26.3 "Maximum bipartite matching"은 매칭을 최대 흐름으로 바꿔 구한다. 증가 경로로 최대 매칭을 판정하는 성질은 베르주(C. Berge, 1957)의 정리로 알려져 있다. Laaksonen, *Competitive Programmer's Handbook* (2018판), 20.3 "Maximum matchings"도 흐름으로 구한다.
 [^2]: Kuhn, "The Hungarian method for the assignment problem", *Naval Research Logistics Quarterly* 2 (1955). $$O(n^3)$$ 구현은 잠재값을 쓰는 널리 알려진 판이고, 검증 코드에서 순열 전부와 비교했다.
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 학생 1, 2, 3과 동아리 a, b, c의 희망 관계를 이분 그래프로 그렸다.
 {% endraw %}

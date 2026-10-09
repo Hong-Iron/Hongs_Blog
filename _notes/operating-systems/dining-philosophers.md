@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Dining Philosophers Problem", "식사하는 철학자"]
 description: "둥근 식탁에 철학자 다섯 명이 앉아 있고, 사람 사이마다 포크가 하나씩, 모두 다섯 개 있다. 스파게티를 먹으려면 양옆 포크 두 개가 다 필요하다. 모두가 동시에 왼쪽 포크를 집으면 아무도 오른쪽 포크를 못 집어 다 같이 굶는다. 공유 자원을 여럿이 나눠 쓸 때 교착상태와 기아를 …"
@@ -18,7 +18,7 @@ prev_title: "교착상태 탐지와 복구"
 next_url: "/studies/operating-systems/memory-management-requirements/"
 next_title: "메모리 관리의 요구 사항"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/operating-systems/dining-philosophers/"
 ---
@@ -50,6 +50,22 @@ void philosopher(int i) {
 ```
 
 다섯 명이 동시에 첫 줄을 실행하면 포크 다섯 개가 모두 왼쪽 손에 들린다. 이제 모두 오른쪽 포크를 기다리는데, 그 포크는 오른쪽 사람의 왼손에 있다. 0 → 1 → 2 → 3 → 4 → 0으로 기다림이 원을 이룬다. [교착상태](/Hongs_Blog/studies/operating-systems/deadlock/)다.
+
+```mermaid
+flowchart LR
+  F0["포크 0"] -->|"쥠"| P0(("철학자 0"))
+  P0 -->|"기다림"| F1["포크 1"]
+  F1 -->|"쥠"| P1(("철학자 1"))
+  P1 -->|"기다림"| F2["포크 2"]
+  F2 -->|"쥠"| P2(("철학자 2"))
+  P2 -->|"기다림"| F3["포크 3"]
+  F3 -->|"쥠"| P3(("철학자 3"))
+  P3 -->|"기다림"| F4["포크 4"]
+  F4 -->|"쥠"| P4(("철학자 4"))
+  P4 -->|"기다림"| F0
+```
+
+원은 철학자, 네모는 포크다. 포크에서 철학자로 가는 화살표는 쥐고 있다는 뜻이고, 반대 방향은 기다린다는 뜻이다. 화살표가 한 바퀴 닫힌 원을 이루고 포크는 하나씩뿐이라 교착상태다[^s2].
 
 ## 정확히 말하면
 
@@ -123,4 +139,5 @@ void philosopher(int i) {
 </details>
 
 [^s1]: 에이전트 보충. 공개본 6장 슬라이드는 목차(p.2)에 이 문제를 적었지만 해당 슬라이드가 50쪽에서 끊겨 내용이 없다. 문서 전체를 Stallings, *Operating Systems: Internals and Design Principles* 6판, 6.6절(그림 6.12, 6.13, 6.14)로 채웠다. '방에 넷만'이 통하는 이유, 포크 번호 순서 해법, 라이브락은 교재 밖의 표준 설명이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기"에서 다섯 명이 모두 왼쪽 포크를 쥔 순간을 자원 할당 그래프로 그렸다.
 {% endraw %}

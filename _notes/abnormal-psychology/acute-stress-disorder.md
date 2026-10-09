@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Acute Stress Disorder", "ASD", "급성 스트레스 반응", "해리 증상", "dissociative symptoms"]
 description: "외상 사건 직후 PTSD와 거의 같은 증상이 3일에서 한 달 사이에 나타나는 장애다. 멍하고 현실감이 없고 기억이 끊기는 해리 증상이 두드러진다. 해리는 너무 강한 충격에서 잠시 자신을 지키는 방패 역할을 한다. 한 달이 지나도 증상이 이어지면 약 절반이 PTSD로 넘어가므로, 이…"
@@ -18,7 +18,7 @@ prev_title: "외상 후 성장"
 next_url: "/studies/abnormal-psychology/adjustment-disorder/"
 next_title: "적응장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/acute-stress-disorder/"
 ---
@@ -65,6 +65,17 @@ DSM-5-TR은 다섯 묶음(침투, 부정적 기분, 해리, 회피, 각성)의 1
 - 침투 증상이나 각성 증상이 두드러지면 PTSD로 진행할 가능성이 높다. 방치하면 증상이 악화되어 PTSD로 발전한다.
 - **치료:** 노출과 인지 재구성을 중심으로 한 인지행동치료가 증상을 완화하고 PTSD로의 진행을 막는 데 효과적이다.
 
+```mermaid
+flowchart LR
+  E["외상 사건"] --> A["급성 스트레스 장애: 3일 이상 1개월 이내"]
+  A --> Q{"1개월 넘게 이어지나?"}
+  Q -->|"예, 약 50%"| P["PTSD로 전환"]
+  Q -->|"아니오"| R["증상이 가라앉는다"]
+  T["노출과 인지 재구성"] -.->|"진행을 막는다"| Q
+```
+
+갈림길은 한 달이 지난 시점이다. 치료가 끼어드는 곳도 이 갈림길 앞, 곧 급성 스트레스 장애 시기다[^s4].
+
 ## 연결
 
 - 더 오래 가는 형태: [외상 후 스트레스 장애](/Hongs_Blog/studies/abnormal-psychology/ptsd/)
@@ -94,4 +105,5 @@ DSM-5-TR은 다섯 묶음(침투, 부정적 기분, 해리, 회피, 각성)의 1
 [^s1]: 에이전트 보충. DW의 사례는 진단 조건을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 급성 스트레스 장애 진단기준 B(14개 중 9개 이상)를 보탰다.
 [^s3]: 에이전트 보충. DSM-5의 유병률 설명(Psychology Today "Acute Stress Disorder" 항목이 DSM-5를 인용): 대인관계 폭행이 아닌 외상(교통사고, 가벼운 외상성 뇌손상, 화상) 뒤에는 20% 미만, 폭행·강간·총기 난사 목격 같은 대인관계 외상 뒤에는 20~50%다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 기간 조건과 약 50% 전환, `원인과 치료`의 치료 효과 서술(슬라이드 p.3, p.28, p.30)을 근거로 그렸다.
 {% endraw %}

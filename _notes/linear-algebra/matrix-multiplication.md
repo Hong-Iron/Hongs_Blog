@@ -61,6 +61,19 @@ $$A$$의 열 수와 $$B$$의 행 수가 같아야 한다[^1].
 </div>
 
 
+```
+         A (m x n)                 B (n x p)          AB (m x p)
+   [ .  .  .  .  .  . ]          [ .  .  #  . ]       [ .  .  .  . ]
+i  [ #  #  #  #  #  # ]          [ .  .  #  . ]    i  [ .  .  *  . ]
+   [ .  .  .  .  .  . ]    x     [ .  .  #  . ]  =    [ .  .  .  . ]
+                                 [ .  .  #  . ]
+                                 [ .  .  #  . ]
+                                 [ .  .  #  . ]
+                                         j                    j
+```
+
+A의 i행(#)과 B의 j열(#)은 둘 다 n칸이라 한 칸씩 짝지어 곱해 더할 수 있다. 그 합이 AB의 (i, j) 칸(*)이고, 결과의 크기는 바깥쪽 두 수 m × p다[^s2].
+
 $$AB$$의 $$j$$번째 열은 $$A$$에 $$B$$의 $$j$$번째 열을 곱한 것이다. $$(AB)\mathbf{e}_j = A(B\mathbf{e}_j)$$이기 때문이다. 이것이 성분 공식의 근거다.
 
 **성질.** 결합법칙 $$(AB)C = A(BC)$$, 분배법칙 $$A(B + C) = AB + AC$$, 단위행렬 $$AI = IA = A$$가 맞는다. **교환법칙은 맞지 않는다.** 결합법칙은 변환의 합성이 결합적이라는 사실([함수의 합성](/Hongs_Blog/studies/college-math/function-transformation/))에서 나온다.
@@ -139,4 +152,5 @@ $$\big((AB)^\top\big)_{ij} = (AB)_{ji} = \sum_k a_{jk}b_{ki} = \sum_k (B^\top)_{
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.4절 "Rules for Matrix Operations"(곱의 네 가지 보는 법, 결합법칙, 교환 불가), 2.7절 "Transposes and Permutations"($$(AB)^\top = B^\top A^\top$$, 대칭행렬, $$A^\top A$$).
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [06_matrix-multiplication_plot.py](/Hongs_Blog/studies/linear-algebra/code/06_matrix-multiplication_plot/)로 그렸고, $$SR$$, $$RS$$와 점 $$(1, 0)$$의 도착점을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 성분 공식 $$(AB)_{ij} = (A\text{의 } i\text{행}) \cdot (B\text{의 } j\text{열})$$과 크기 조건을 ASCII로 그렸다(Strang 5판 2.4절).
 {% endraw %}

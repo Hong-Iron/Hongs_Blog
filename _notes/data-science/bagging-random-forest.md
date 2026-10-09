@@ -18,7 +18,7 @@ prev_title: "앙상블 학습"
 next_url: "/studies/data-science/boosting-adaboost/"
 next_title: "부스팅과 AdaBoost"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/data-science/bagging-random-forest/"
 ---
@@ -67,6 +67,22 @@ permalink: "/studies/data-science/bagging-random-forest/"
 ```
 
 복원 추출이 자료 벌들을 서로 다르게 만든다. 각 모델의 편향과 분산은 비슷하고, 모아서 분산이 준다[^1].
+
+```mermaid
+flowchart LR
+    D["훈련 자료 D"] --> D1["표본 D1"]
+    D --> D2["표본 D2"]
+    D --> Dk["표본 Dk"]
+    D1 --> M1["모델 M1"]
+    D2 --> M2["모델 M2"]
+    Dk --> Mk["모델 Mk"]
+    M1 --> V["다수결 또는 평균"]
+    M2 --> V
+    Mk --> V
+    V --> P["최종 예측"]
+```
+
+세 줄은 서로 이어지지 않는다. 표본도 모델도 서로를 보지 않고 따로 만들어지고, 맨 끝에서만 한데 모인다[^s3].
 
 **랜덤 포레스트**는 분산이 큰 결정 트리에 쓰는 배깅이다[^2].
 
@@ -122,4 +138,5 @@ permalink: "/studies/data-science/bagging-random-forest/"
 [^2]: 같은 자료, p.16
 [^s1]: 에이전트 보충. 실험 수치, 속성 뽑기가 상관을 낮추는 이유, 마디마다 뽑는 보통의 구현(Breiman, "Random Forests", Machine Learning 2001), 복잡도, 사이킷런, OOB 평가, 카드는 원본에 없다. 검증 코드로 실험했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [21_bagging-random-forest_plot.py](/Hongs_Blog/studies/data-science/code/21_bagging-random-forest_plot/)로 그렸다. 같은 코드에서 다른 난수로 150회 다시 실험해 예측 분산 0.090 → 0.046, 편향² 0.0002 그대로를 확인했다(위 표와 같은 경향).
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 배깅 의사코드(원본 6-2 p.15)를 근거로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Relation", "Binary Relation", "이항 관계", "반사적", "reflexive", "비반사적", "irreflexive", "대칭적", "symmetric", "반대칭적", "antisymmetric", "추이적", "transitive", "추이 폐포", "transitive closure", "와셜 알고리즘", "Warshall's algorithm", "관계 행렬"]
 description: "관계는 \"누가 누구와 이어져 있는가\"를 짝의 모음으로 적은 것이다. 친구, 부모와 자식, 작거나 같다, 선수 과목이 모두 관계다. 반사·대칭·반대칭·추이 네 성질로 관계의 성격을 가르면, 같은 무리로 묶는 관계(동치관계)와 줄을 세우는 관계(순서)가 나온다. 다만 \"대칭이 아니면 …"
@@ -18,7 +18,7 @@ prev_title: "가산 집합과 대각선 논법"
 next_url: "/studies/discrete-math/equivalence-relations/"
 next_title: "동치관계와 분할"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/relations/"
 ---
@@ -42,6 +42,20 @@ permalink: "/studies/discrete-math/relations/"
 | $$a < b$$ | (1,2), (2,3), (1,3) | X | X | O | O |
 
 관계는 행렬로도, 화살표 그림으로도 그린다. "나눈다"를 4×4 표로 쓰면 $$(a, b)$$ 칸에 $$a$$가 $$b$$를 나누면 1을 적는다. 화살표 그림에서는 $$a$$에서 $$b$$로 화살표를 긋는다. 반사는 모든 점의 제자리 고리, 대칭은 화살표가 늘 왕복, 추이는 두 걸음으로 가는 곳에 한 걸음 화살표도 있다는 뜻이다.
+
+```mermaid
+flowchart LR
+  n1(("1")) --> n2(("2"))
+  n1 --> n3(("3"))
+  n1 --> n4(("4"))
+  n2 --> n4
+  n1 --> n1
+  n2 --> n2
+  n3 --> n3
+  n4 --> n4
+```
+
+{1, 2, 3, 4} 위의 '나눈다'를 화살표 그림으로 그린 것이다. 점마다 제자리 고리가 있다. 2 → 4는 있지만 4 → 2는 없다. 1 → 2 → 4처럼 두 걸음으로 가는 곳에는 1 → 4 화살표도 있다[^s1].
 
 ## 정의
 
@@ -129,4 +143,5 @@ $$\{1, 2, 3, 4\}$$ 위의 $$R = \{(1,2), (2,3), (3,4)\}$$의 추이 폐포를 �
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장(이항 관계), 10장 "Directed graphs & Partial Orders"(관계의 성질). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장 "Relations".
 [^2]: Rosen, *Discrete Mathematics and Its Applications* 7판, 9장(폐포와 와셜 알고리즘)
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 첫 관계와 화살표 그림 설명을 그렸다.
 {% endraw %}

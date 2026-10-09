@@ -18,7 +18,7 @@ prev_title: "극한"
 next_url: "/studies/calculus/sequence-limits/"
 next_title: "수열의 극한과 e"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/continuity/"
 ---
@@ -48,6 +48,20 @@ $$f(x) = x^3 - x - 2$$는 $$f(1) = -2 < 0$$, $$f(2) = 4 > 0$$이다. 연속함�
 <img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/02_continuity_fig1.svg" alt="그림" loading="lazy">
 
 아래 칸의 막대 하나가 표의 한 줄이다. 막대는 단계마다 절반으로 짧아지고, 늘 점선(근)을 품은 채 줄어든다[^s2].
+
+```mermaid
+flowchart TD
+    A["양 끝 부호가 다른 구간 a, b에서 시작"] --> B["중점 m에서 f(m)의 부호를 본다"]
+    B --> C{"f(a)와 f(m)의 부호가 다른가"}
+    C -- "예" --> D["b를 m으로 바꾼다"]
+    C -- "아니오" --> E["a를 m으로 바꾼다"]
+    D --> F{"구간 길이가 허용 오차 이하인가"}
+    E --> F
+    F -- "아니오" --> B
+    F -- "예" --> G["남은 구간의 중점을 근의 어림으로 낸다"]
+```
+
+표의 한 줄이 고리를 한 바퀴 도는 것이다. 어느 쪽을 버려도 남는 구간의 양 끝은 부호가 다르다. 그래서 사잇값 정리에 따라 근은 늘 남는 구간 안에 있다[^s3].
 
 ## 정의
 
@@ -134,4 +148,5 @@ $$f(x) = x^3 - x - 2$$는 $$f(1) = -2 < 0$$, $$f(2) = 4 > 0$$이다. 연속함�
 [^2]: OpenStax, *Calculus Volume 1*, 4.3절 "Maxima and Minima"(최대·최소 정리)
 [^s1]: 에이전트 보충. `git bisect`는 커밋 이력을 이분 탐색해 문제를 처음 일으킨 커밋을 찾는 git 명령이다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [02_continuity_plot.py](/Hongs_Blog/studies/calculus/code/02_continuity_plot/)로 그렸고, 표의 중점 1.5, 1.75, 1.625, 1.5625, 1.53125와 마지막 구간 $$[1.5, 1.53125]$$, 근 1.52138을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 이분법 표와 예제의 멈춤 조건(구간 길이 $$1/2^k \le 10^{-6}$$)을 근거로 그렸다.
 {% endraw %}

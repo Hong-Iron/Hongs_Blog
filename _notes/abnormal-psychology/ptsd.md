@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Posttraumatic Stress Disorder", "PTSD", "외상후 스트레스 장애", "침투 증상", "intrusion", "플래시백", "flashback", "회피", "avoidance", "과각성", "hyperarousal", "과도한 경계", "hypervigilance", "대리 외상", "vicarious trauma", "2차 외상 스트레스", "secondary traumatic stress", "스트레스 접종 훈련", "stress inoculation training", "심리적 사후보고", "psychological debriefing", "지속적 노출법", "prolonged exposure", "PE", "인지처리치료", "cognitive processing therapy", "CPT", "안구운동 둔감화 및 재처리", "EMDR"]
 description: "죽음, 심한 부상, 성폭력 같은 끔찍한 일을 겪거나 목격한 뒤, 그 일이 끝났는데도 마음은 계속 그 순간에 붙잡혀 있는 장애다. 기억과 악몽이 원치 않게 되살아나고, 떠올리게 하는 것을 피하고, 자신과 세상을 어둡게 보며, 늘 긴장해 작은 소리에도 놀란다. 이런 증상이 한 달 넘게…"
@@ -18,7 +18,7 @@ prev_title: "외상과 스트레스 관련 장애"
 next_url: "/studies/abnormal-psychology/ptsd-theories/"
 next_title: "외상 후 스트레스 장애의 심리적 이론"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/ptsd/"
 ---
@@ -103,6 +103,17 @@ DSM-5-TR은 묶음마다 필요한 개수(B 1개 이상, C 1개 이상, D 2개 �
 ### 심리적 이론
 
 외상 정보가 기존 신념에 통합되지 못한다는 다섯 이론은 [외상 후 스트레스 장애의 심리적 이론](/Hongs_Blog/studies/abnormal-psychology/ptsd-theories/)에서 다룬다. 행동주의로 보면 [모러의 2요인 이론](/Hongs_Blog/studies/abnormal-psychology/two-factor-theory/)과 같다. 외상 단서가 공포와 짝지어지고(고전적 조건형성), 단서를 피하면 불안이 줄어 회피가 유지된다(조작적 조건형성)[^s3].
+
+```mermaid
+flowchart LR
+  E["외상 사건"] -->|"고전적 조건형성"| C["외상 단서가 공포와 짝지어진다"]
+  C --> F["단서를 만나면 공포가 온다"]
+  F --> A["단서를 피한다"]
+  A --> R["불안이 줄어든다"]
+  R -->|"조작적 조건형성: 회피가 강화된다"| A
+```
+
+왼쪽 절반은 공포가 생기는 과정이고, 오른쪽의 되돌아가는 화살표는 회피가 굳는 과정이다. 피할 때마다 불안이 줄어드니 다음에도 피하게 된다[^s5].
 
 ## 예방과 치료
 
@@ -211,4 +222,5 @@ DSM-5-TR은 묶음마다 필요한 개수(B 1개 이상, C 1개 이상, D 2개 �
 [^s2]: 에이전트 보충. DSM-5-TR PTSD 진단기준의 묶음별 필요 개수와 A-4의 전자 매체 제외 규정을 보탰다.
 [^s3]: 에이전트 보충. PTSD를 2요인 이론으로 설명하는 것은 행동주의적 설명의 표준이다. 슬라이드는 이 부분을 따로 두지 않는다.
 [^s4]: 에이전트 보충. 단회기 심리적 사후보고가 PTSD 예방 효과가 없거나 해로울 수 있다는 코크란 체계적 고찰(Rose et al., 2002) 등의 결과가 있다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `원인`의 심리적 이론 문단(2요인 이론의 고전적·조작적 조건형성)을 근거로 그렸다.
 {% endraw %}

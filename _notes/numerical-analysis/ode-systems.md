@@ -18,7 +18,7 @@ prev_title: "룽게-쿠타 방법"
 next_url: "/studies/numerical-analysis/shooting-method/"
 next_title: "사격법"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/ode-systems/"
 ---
@@ -67,6 +67,17 @@ $$\frac{dy_k}{dx} = f_k(x, y_1, y_2, \dots, y_n), \qquad k = 1, \dots, n$$
 풀려면 시작점 $$x_0$$에서 처음 값 $$n$$개가 필요하다[^2]. 모든 조건이 같은 $$x$$(보통 $$t = 0$$)에서 주어지면 **초깃값 문제**다[^3]. 조건이 서로 다른 $$x$$에서 주어지는 경계값 문제는 [사격법](/Hongs_Blog/studies/numerical-analysis/shooting-method/)과 [유한 차분법](/Hongs_Blog/studies/numerical-analysis/finite-difference-bvp/)에서 다룬다.
 
 벡터 $$\mathbf y = (y_1, \dots, y_n)$$, $$\mathbf f = (f_1, \dots, f_n)$$으로 쓰면 $$\mathbf y' = \mathbf f(x, \mathbf y)$$가 되어, 한 개짜리 방정식의 방법을 그대로 쓴다[^4]. RK4라면 $$\mathbf k_1, \dots, \mathbf k_4$$가 모두 벡터이고, $$\mathbf k_2$$를 잴 때는 모든 칸을 $$\frac h2\mathbf k_1$$만큼 옮긴 점에서 잰다[^s1].
+
+```mermaid
+flowchart LR
+    S["지금 점 x, y1, y2"] --> F1["f1 계산"]
+    S --> F2["f2 계산"]
+    F1 --> U["y1, y2를 한꺼번에 고치기"]
+    F2 --> U
+    U --> N["다음 점 x + h"]
+```
+
+두 기울기를 모두 같은 점에서 잰 뒤에 두 칸을 함께 고친다. 새 $$y_1$$이 $$f_2$$ 계산으로 들어가는 화살표는 없다[^s3].
 
 **고계 방정식을 1계 연립으로.** $$y'' = g(x, y, y')$$이면 $$z = y'$$로 두어 다음과 같이 쓴다[^s1].
 
@@ -118,4 +129,5 @@ $$y' = z, \qquad z' = g(x, y, z)$$
 [^4]: 같은 자료, p.3
 [^s1]: 에이전트 보충. 참값과 RK4 비교, 벡터 RK4의 설명, 고계 방정식 바꾸기, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [35_ode-systems_plot.py](/Hongs_Blog/studies/numerical-analysis/code/35_ode-systems_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 오일러 표의 값, RK4 오차 $$10^{-4}$$ 아래. $$y_2$$의 참값 $$\frac{40}{3} + 2e^{-x/2} - \frac{28}{3}e^{-0.3x}$$는 일차 방정식을 손으로 풀어 얻었고, 같은 코드에서 방정식을 만족하는지 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시의 오일러 계산(원본 19.na19_diff_eq2.pdf p.3)과 '활용'의 흔한 실수로 그렸다.
 {% endraw %}

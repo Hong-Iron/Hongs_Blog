@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Erectile Disorder", "ED", "발기부전", "Impotence"]
 description: "성행위의 거의 모든 경우에 발기가 되지 않거나, 유지되지 않거나, 충분히 단단하지 않은 상태가 반년 넘게 이어져 괴로운 장애다. 가끔 한 번 안 되는 것은 누구에게나 있는 일이다. 나이가 들수록 크게 늘어 50세 이후에 흔하다. 자신감과 남성다움이 무너지는 느낌, 다음 성행위에 대…"
@@ -18,7 +18,7 @@ prev_title: "남성 성욕감퇴장애"
 next_url: "/studies/abnormal-psychology/premature-ejaculation/"
 next_title: "조기사정"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/erectile-disorder/"
 ---
@@ -34,6 +34,18 @@ permalink: "/studies/abnormal-psychology/erectile-disorder/"
 ## 예시로 보기
 
 [성기능부전](/Hongs_Blog/studies/abnormal-psychology/sexual-dysfunctions/)의 예시인 HO가 발기장애의 사례다. 반년째 거의 매번 발기가 유지되지 않고, "이번에도 안 되면 어쩌지"라는 두려움 때문에 성관계를 피하기 시작했다. 한 번의 실패가 두려움을 낳고, 두려움이 다음 실패를 부르는 고리다[^s1].
+
+```mermaid
+flowchart LR
+    A["한 번의 발기 실패"] --> B["이번에도 안 되면 어쩌지 하는 두려움"]
+    B --> C["자기 반응을 지켜보며 평가함"]
+    C --> D["흥분이 사라짐"]
+    D --> E["다음 성행위에서 또 실패"]
+    E --> B
+    B --> F["성관계를 피함"]
+```
+
+실패가 두려움을 부르고, 두려움이 지켜보기를 거쳐 다시 실패를 부른다[^s2].
 
 ## 정의
 
@@ -92,4 +104,5 @@ C. 본인에게 임상적으로 현저한 고통이 생긴다.<br>
 [^2]: 4-1학기/이상 심리학/1.수업자료/09.성 관련 장애.pdf, p.11
 [^3]: 4-1학기/이상 심리학/1.수업자료/09.성 관련 장애.pdf, p.12
 [^s1]: 에이전트 보충. 예시는 성기능부전 문서의 가상 사례를 이어 쓴 것이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 고리와 '임상적 특징'의 두려움과 회피(p.11), 성기능부전 문서의 관찰자적 역할(p.29)을 이어 그렸다.
 {% endraw %}

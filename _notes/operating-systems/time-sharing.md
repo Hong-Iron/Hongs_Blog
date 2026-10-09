@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Time Sharing", "시분할 시스템", "Time-Sharing System", "시간 할당", "Time Slicing", "CTSS", "Compatible Time-Sharing System"]
 description: "시분할은 프로세서 시간을 잘게 썰어 여러 사용자에게 번갈아 나눠 주는 방식이다. 한 선생님이 여러 학생의 질문을 몇 초씩 돌아가며 받아 주면, 학생마다 선생님을 혼자 쓰는 것처럼 느끼는 것과 같다. 배치 방식과 달리 사용자가 터미널 앞에서 명령을 치고 바로 답을 받는다. 대신 자주…"
@@ -73,6 +73,17 @@ MIT의 Project MAC 팀이 만든 CTSS(Compatible Time-Sharing System)가 초기 
 | (e) | JOB4 | 5,000~15,000을 덮는다. JOB1의 15,000~20,000과 JOB2의 20,000~25,000은 남는다 |
 | (f) | JOB2 | JOB4와 남아 있던 JOB1 조각을 내보내고, JOB2의 빠진 부분(5,000~20,000)만 읽어 들인다. 20,000~25,000은 이미 있으므로 다시 읽지 않는다 |
 
+```
+워드 번호     0       5,000   10,000  15,000  20,000  25,000
+              |       |       |       |       |       |
+(a) JOB1 실행 |모니터 | JOB1  | JOB1  | JOB1  |       |
+(b) JOB2 실행 |모니터 | JOB2  | JOB2  | JOB2  | JOB2  |
+(c) JOB3 실행 |모니터 | JOB3  | JOB2  | JOB2  | JOB2  |
+(d) JOB1 실행 |모니터 | JOB1  | JOB1  | JOB1  | JOB2  |
+```
+
+한 칸은 5,000워드다. 새 작업은 늘 5,000번부터 자기 크기만큼만 덮고, 그 뒤쪽 칸에는 앞 작업의 조각이 그대로 남는다[^s2].
+
 ### 새로 생긴 문제
 
 여러 작업이 메모리에 있고 여러 사용자가 접속하면 운영체제가 새로 풀어야 할 문제가 생긴다[^6].
@@ -123,4 +134,5 @@ MIT의 Project MAC 팀이 만든 CTSS(Compatible Time-Sharing System)가 초기 
 [^6]: 같은 자료, 슬라이드 30과 슬라이드 29의 발표자 노트
 [^7]: 같은 자료, 슬라이드 43의 발표자 노트 (슬라이드 44 그림 2.11 설명)
 [^s1]: 에이전트 보충. 타자 속도와 프로세서 속도의 비교, SSH 서버 예는 원본에 없다. 확인 문제 C1은 원본 범위 밖의 상황 문제다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. CTSS 표의 (a)~(d) 단계(슬라이드 29, 그림 2.7)를 메모리 칸 그림으로 옮겼다.
 {% endraw %}

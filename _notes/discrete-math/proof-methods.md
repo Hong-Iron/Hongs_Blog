@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Proof Methods", "Rules of Inference", "추론 규칙", "전건 긍정", "modus ponens", "후건 부정", "modus tollens", "직접 증명", "direct proof", "대우 증명", "proof by contrapositive", "귀류법", "proof by contradiction", "경우 나누기", "proof by cases", "반례", "counterexample", "존재 증명", "후건 긍정의 오류", "affirming the consequent"]
 description: "증명은 이미 참이라고 인정된 것에서 출발해, 한 걸음마다 정당한 규칙만 써서 결론까지 가는 글이다. 직접 증명, 대우 증명, 귀류법, 경우 나누기, 반례 들기 다섯 가지면 대부분의 명제를 다룬다. 어떤 방법을 쓸지는 결론의 모양이 알려 준다. 다만 예를 아무리 많이 확인해도 \"모든…"
@@ -18,7 +18,7 @@ prev_title: "술어와 한정기호"
 next_url: "/studies/discrete-math/boolean-algebra/"
 next_title: "불 대수와 논리 회로"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/proof-methods/"
 ---
@@ -69,6 +69,21 @@ permalink: "/studies/discrete-math/proof-methods/"
 | 필요충분 | $$P \to Q$$와 $$Q \to P$$를 따로 증명한다 | "~일 때 그리고 그때에만" |
 
 존재 명제 $$\exists x\,P(x)$$는 그런 $$x$$를 직접 보이거나(구성적), 없다고 가정해 모순을 끌어낸다(비구성적).
+
+```mermaid
+flowchart TD
+  S["증명할 명제의 모양은?"] -->|"모든 ~가 거짓임을 보이기"| CE["반례 하나"]
+  S -->|"~일 때 그리고 그때에만"| BOTH["P → Q와 Q → P를 따로"]
+  S -->|"~가 있다"| CON["직접 보이기, 또는 없다고 가정해 모순"]
+  S -->|"P이면 Q"| Q1{"가정에서 결론까지 식이 바로 이어지나?"}
+  Q1 -->|"예"| DIR["직접 증명"]
+  Q1 -->|"아니오"| Q2{"결론이 어떤 모양인가?"}
+  Q2 -->|"부정이 다루기 쉬움"| CP["대우 증명"]
+  Q2 -->|"~는 없다, 무리수, 무한히 많다"| RAA["귀류법"]
+  Q2 -->|"짝·홀, 부호, 나머지로 갈림"| CASE["경우 나누기"]
+```
+
+맨 위에서 명제의 모양을 보고 갈래를 고른다. 갈래는 표의 '이럴 때 떠올린다' 열과 같다. 한 갈래에서 막히면 다른 갈래로 옮긴다. 예시의 $$n^2$$ 명제가 직접 증명에서 대우 증명으로 옮겨 간 경우다[^s1].
 
 ## 예제
 
@@ -184,4 +199,5 @@ permalink: "/studies/discrete-math/proof-methods/"
 
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 1장(추론 규칙, 증명 방법과 전략)
 [^2]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 1장 "What is a Proof?"(직접 증명, 대우, 필요충분, 경우 나누기, 귀류법, $$\sqrt2$$의 무리수성)
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 섹션의 증명 방법 표('이럴 때 떠올린다' 열)와 존재 명제 문단을 갈림길로 그렸다.
 {% endraw %}

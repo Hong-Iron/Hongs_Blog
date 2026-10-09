@@ -18,7 +18,7 @@ prev_title: "최대가능도 추정"
 next_url: "/studies/probability-statistics/hypothesis-testing/"
 next_title: "가설검정과 p값"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/confidence-intervals/"
 ---
@@ -65,6 +65,20 @@ $$P_\theta(L \le \theta \le U) \ge 1 - \alpha$$
 | 비율 | $$\hat p \pm 1.96\sqrt{\frac{\hat p(1 - \hat p)}{n}}$$ ($$n$$이 크고 $$\hat p$$가 0이나 1에 가깝지 않을 때) |
 
 $$\sigma$$ 대신 표본 표준편차 $$s$$를 쓰면 $$s$$도 흔들리는 만큼 구간을 넓혀야 한다. 그 보정이 $$t$$분포다[^2]. 표본 5개에서 1.96을 쓰면 적중률이 95%가 아니라 약 88%로 떨어지고, $$t_{4} = 2.776$$을 쓰면 95%가 맞는다.
+
+```mermaid
+flowchart TD
+    S["표본 n개에서 표본평균 x̄ 계산"] --> Q1{"모집단 σ를 아는가"}
+    Q1 -->|"예"| Z["z 분위수와 σ/√n"]
+    Q1 -->|"아니오"| Q2{"n이 큰가"}
+    Q2 -->|"예"| Z2["1.96과 s/√n"]
+    Q2 -->|"아니오, 모집단이 정규"| T["자유도 n-1인 t 분위수와 s/√n"]
+    Z --> I["x̄ ± 분위수 × 표준오차"]
+    Z2 --> I
+    T --> I
+```
+
+질문 두 개로 분위수와 표준오차를 고른 뒤, 마지막 칸의 같은 모양으로 구간을 만든다.[^s2]
 
 ## 예제
 
@@ -130,4 +144,5 @@ $$\sigma$$ 대신 표본 표준편차 $$s$$를 쓰면 $$s$$도 흔들리는 만�
 [^1]: Wasserman, *All of Statistics*, "Models, Statistical Inference and Learning" 장(신뢰집합의 정의와 해석, 정규 근사 구간).
 [^2]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.4절 "Chi-Square and Student-t"($$t$$분포).
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [31_confidence-intervals_plot.py](/Hongs_Blog/studies/probability-statistics/code/31_confidence-intervals_plot/)로 그렸고, 그림에 쓴 값(오차 한계 2.863, 구간 1,000개 중 952개가 50을 담음)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 '자주 쓰는 구간' 표 가운데 평균의 세 줄을 고르는 순서로 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "1계 선형 미분방정식"
 next_url: "/studies/signals-and-systems/ct-dt-signals/"
 next_title: "연속 시간 신호와 이산 시간 신호"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/second-order-linear-ode/"
 ---
@@ -68,6 +68,24 @@ permalink: "/studies/signals-and-systems/second-order-linear-ode/"
 | $$e^{5x}$$ | $$Ae^{5x}$$ |
 
 이 표는 $$g$$가 다항식, $$\sin$$·$$\cos$$, 지수함수와 그 선형결합일 때만 쓸 수 있다[^4]. 또 $$g$$의 꼴이 이미 $$y_h$$에 들어 있으면(예: $$g = e^{x}$$인데 특성근에 1이 있으면) 그 꼴을 넣어도 0이 되므로 $$x$$를 한 번 더 곱한 꼴을 넣어야 한다[^s1].
+
+```mermaid
+flowchart TD
+  A["ay″ + by′ + cy = g(x)"] --> B["특성방정식 aλ² + bλ + c = 0"]
+  B --> C{"판별식 b² − 4ac의 부호"}
+  C -->|"양수"| D["서로 다른 두 실근"]
+  C -->|"0"| E["중근"]
+  C -->|"음수"| F["켤레 복소근"]
+  D --> H["제차해 y_h"]
+  E --> H
+  F --> H
+  H --> I{"g(x) = 0인가?"}
+  I -->|"예"| J["답: y = y_h"]
+  I -->|"아니오"| K["미정계수법으로 y_p를 찾는다. g의 꼴이 y_h에 있으면 x를 곱한다"]
+  K --> L["답: y = y_h + y_p"]
+```
+
+근의 종류는 판별식의 부호 하나로 갈리고, 어느 경우든 제차해를 먼저 구한다. 오른쪽 $$g(x)$$가 0이 아닐 때만 특수해를 더 찾는다.[^s3]
 
 ### 스스로 설명해 보기
 
@@ -203,4 +221,5 @@ $$e^{(\alpha \pm j\beta)x} = e^{\alpha x}e^{\pm j\beta x}$$이고 오일러 공�
 [^7]: 같은 자료, p.13 (ex.2)
 [^s1]: 에이전트 보충. 중근의 예 $$y'' - 2y' + y = 0$$, $$g$$가 제차해와 겹칠 때 $$x$$를 곱하는 규칙, 고유 응답·강제 응답의 이름, 스스로 설명해 보기, 오해 항목, 확인 문제 C4는 원본에 없다. 표준 미분방정식 교재(Zill, *Differential Equations* 4장)의 내용이며 해는 식에 넣어 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [02_second-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/02_second-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예 1의 $$1.4e^{-8x} - 1.4e^{-3x}$$, 예 2의 $$-\frac{8\sqrt5}{5}e^{2x}\sin\sqrt5x$$, 중근의 $$xe^x$$, 감쇠 예 $$e^{-0.5x}\cos 3x$$($$y'' + y' + 9.25y = 0$$, $$y(0) = 1$$, $$y'(0) = -0.5$$)가 각자의 식과 초기 조건을 만족함. 감쇠 예는 원본에 없는 식이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 제차식·비제차식 절(1주차 미분방정식 자료 p.8, p.11)을 근거로 그렸다.
 {% endraw %}

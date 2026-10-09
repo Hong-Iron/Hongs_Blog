@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Independence", "독립", "독립 사건", "independent events", "상호 독립", "mutual independence", "쌍마다 독립", "pairwise independence", "공통 원인 고장", "common-cause failure"]
 description: "한 사건이 일어났다는 소식이 다른 사건의 확률을 조금도 바꾸지 않으면 두 사건은 독립이다. 그러면 둘이 함께 일어날 확률은 각 확률의 곱이 되어 계산이 아주 쉬워진다. 서버 여러 대, 패킷 여러 개의 확률 모델은 거의 다 이 가정 위에 서 있다. 하지만 같은 전원, 같은 소프트웨어…"
@@ -18,7 +18,7 @@ prev_title: "조건부 확률"
 next_url: "/studies/probability-statistics/independent-vs-disjoint/"
 next_title: "독립과 배반 비교"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/probability-statistics/independence/"
 ---
@@ -65,6 +65,18 @@ $$P(A \cap B) = P(A)\,P(B)$$
 2. *공통 원인 추가:* 세 대가 같은 랙 전원을 쓰고, 그 전원이 하루에 0.001의 확률로 나가 세 대를 한꺼번에 멈춘다고 하자.
 3. *다시 계산:* 모두 멈출 확률은 $$0.001 + 0.999 \times 10^{-6} \approx 0.001$$이다.
 4. *결론:* 독립 가정은 위험을 약 1,000배 작게 잡았다. 고가용성 설계에서 복제본을 다른 랙, 다른 데이터센터에 두는 이유다.
+
+```mermaid
+flowchart TD
+    P["공통 랙 전원: 하루 0.001로 나감"] --> S1["서버 1 멈춤"]
+    P --> S2["서버 2 멈춤"]
+    P --> S3["서버 3 멈춤"]
+    F1["서버 1 자체 고장 0.01"] --> S1
+    F2["서버 2 자체 고장 0.01"] --> S2
+    F3["서버 3 자체 고장 0.01"] --> S3
+```
+
+아래쪽 자체 고장 셋은 서로 따로 일어난다. 위쪽 전원 하나가 세 서버에 모두 이어져 있어서, 세 서버의 멈춤은 더 이상 독립이 아니다.[^s1]
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시의 두 쌍(독립·비독립), 여사건 독립(무작위 확률 200쌍), 쌍마다 독립이지만 셋은 독립이 아닌 반례, 공통 원인 계산과 모의실험 40만 회, 카드의 값 — [04_independence_verify.py](/Hongs_Blog/studies/probability-statistics/code/04_independence_verify/)</div>
@@ -120,4 +132,5 @@ $$P(A \cap B) = P(A)\,P(B)$$
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.5절 "Independence of events"(두 사건과 여러 사건의 독립, 쌍마다 독립과의 차이).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예제(복제본과 공통 원인)의 2단계 설정을 원인 그림으로 옮겼다.
 {% endraw %}

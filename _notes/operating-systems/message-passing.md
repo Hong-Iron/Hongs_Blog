@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Message Passing", "send", "receive", "랑데부", "Rendezvous", "블로킹", "Blocking", "논블로킹", "Nonblocking", "직접 주소 지정", "Direct Addressing", "간접 주소 지정", "Indirect Addressing", "메일박스", "Mailbox", "포트", "Port"]
 description: "메시지 전달은 프로세스들이 메모리를 함께 쓰지 않고, 편지를 주고받듯 send와 receive로 데이터를 넘기는 방법이다. 데이터를 넘기는 일(통신)과 순서를 맞추는 일(동기화)을 한 번에 한다. 메모리를 공유하지 않으므로 다른 컴퓨터 사이에서도 그대로 쓸 수 있다. 대신 데이터를…"
@@ -18,7 +18,7 @@ prev_title: "모니터"
 next_url: "/studies/operating-systems/readers-writers/"
 next_title: "독자-저자 문제"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/message-passing/"
 ---
@@ -92,6 +92,16 @@ void main() {
 
 **생산자-소비자.** 메일박스 두 개를 쓴다. `mayconsume`에는 생산자가 만든 데이터가 메시지로 들어간다. `mayproduce`에는 처음에 버퍼 크기만큼 빈 메시지를 넣어 둔다. 생산자는 `mayproduce`에서 빈 메시지를 하나 꺼내야 생산할 수 있고, 소비자는 소비하면서 빈 메시지를 `mayproduce`에 돌려준다. 빈 메시지 수가 버퍼의 빈 칸 수 역할을 한다[^9].
 
+```mermaid
+flowchart LR
+  MP["메일박스 mayproduce, 빈 메시지"] -->|"receive: 빈 메시지 하나 꺼냄"| P["생산자"]
+  P -->|"send: 데이터 메시지"| MC["메일박스 mayconsume, 데이터"]
+  MC -->|"receive: 데이터 꺼냄"| C["소비자"]
+  C -->|"send: 빈 메시지 돌려줌"| MP
+```
+
+메시지가 두 메일박스 사이를 한 바퀴 돈다. 생산자나 소비자가 손에 든 메시지까지 세면, 빈 메시지와 데이터 메시지를 합친 수는 늘 처음 넣은 버퍼 크기 그대로다[^s2].
+
 ## 활용
 
 - [마이크로커널](/Hongs_Blog/studies/operating-systems/microkernel/)의 서버들은 메시지 전달로 통신한다.
@@ -136,4 +146,5 @@ void main() {
 [^8]: 같은 자료, p.66 (그림 5.19)과 발표자 노트
 [^9]: 같은 자료, p.68 (그림 5.21)과 발표자 노트
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 지금 자료와 같은 시리즈(Stallings 6판, Dave Bremer 작성)의 공개 슬라이드를 원본으로 썼다. 상호 배제 코드는 슬라이드 이미지라 Stallings 6판 그림 5.20을 따랐다. 유닉스·Go 연결과 확인 문제는 슬라이드에 없다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "생산자-소비자" 문단(p.68, 그림 5.21)을 흐름도로 그렸다.
 {% endraw %}

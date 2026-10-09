@@ -18,7 +18,7 @@ prev_title: "PCA와 NMF 비교"
 next_url: "/studies/data-science/spectral-clustering/"
 next_title: "스펙트럼 군집화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/data-science/graph-partitioning/"
 ---
@@ -36,6 +36,23 @@ permalink: "/studies/data-science/graph-partitioning/"
 소셜 네트워크, 도로망, 신경망, 바이러스 전파, 웹, 단백질 상호작용처럼 현실 자료는 그래프로 주어지는 경우가 많다. k-평균과 GMM은 점마다 벡터가 있어야 한다[^1]. 또 고리처럼 휜 군집은 이어진 정도로 묶는 편이 낫다. DBSCAN도 이어짐을 보지만 Eps와 MinPts에 민감하다[^2].
 
 삼각형 두 개(꼭짓점 0, 1, 2와 3, 4, 5)를 선 하나(2–3)로 이은 그래프를 자른다. 모든 선의 무게는 1이다[^s1].
+
+```mermaid
+flowchart LR
+    subgraph A["조각 A"]
+        V0(("0")) --- V1(("1"))
+        V1 --- V2(("2"))
+        V0 --- V2
+    end
+    subgraph B["조각 B"]
+        V3(("3")) --- V4(("4"))
+        V4 --- V5(("5"))
+        V3 --- V5
+    end
+    V2 -.-|"다리"| V3
+```
+
+점선 다리 하나만 끊으면 두 삼각형이 떨어진다. 꼭짓점 0만 떼어 내려면 실선 두 개를 끊어야 한다[^s2].
 
 | 나눔 | 잘리는 선의 무게 합 (컷) | 정규화 컷 |
 |---|---|---|
@@ -122,4 +139,5 @@ $$d_i$$는 꼭짓점 $$i$$의 차수(이어진 선의 무게 합)다. 조각이 
 [^5]: 같은 자료, p.13
 [^6]: 같은 자료, p.14
 [^s1]: 에이전트 보충. 두 삼각형 예, 매달린 꼭짓점 예, 카드 C2·C3은 원본에 없다. 구현 코드로 모든 나눔을 시험해 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 두 삼각형 그래프를 그렸다.
 {% endraw %}

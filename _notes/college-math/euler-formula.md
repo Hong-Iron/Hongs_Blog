@@ -18,7 +18,7 @@ prev_title: "복소수"
 next_url: "/studies/college-math/sequences-sigma/"
 next_title: "수열과 합의 기호"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/college-math/euler-formula/"
 ---
@@ -58,6 +58,16 @@ $$z = r(\cos\theta + i\sin\theta)$$
 
 </div>
 
+
+```mermaid
+flowchart LR
+  R["직교형 a + bi"] -->|"r = √(a² + b²), θ = atan2(b, a)"| P["극형식 r(cos θ + i sin θ)"]
+  P -->|"a = r cos θ, b = r sin θ"| R
+  P -->|"오일러 공식"| E["지수형 re^(iθ)"]
+  E -->|"오일러 공식"| P
+```
+
+같은 복소수를 세 가지로 적는 방법과 서로 오가는 길이다. 직교형과 극형식 사이는 [극좌표](/Hongs_Blog/studies/college-math/polar-parametric/) 변환과 같은 계산이고, 극형식과 지수형은 오일러 공식으로 이름만 바꿔 적는다. $$\theta$$에는 $$2\pi$$의 정수배를 더해도 같은 수가 된다[^s3].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
@@ -213,5 +223,6 @@ $$(\omega_1 - 1)S = 0$$이고 $$n \ge 2$$이면 $$\omega_1 \ne 1$$이므로 양�
 [^2]: Strang, *Introduction to Linear Algebra* 5판, 9.1절 "Complex Numbers"(오일러 공식, 1의 거듭제곱근). FFT는 같은 책 9.3절.
 [^s1]: 에이전트 보충. 쿼터니언은 3차원 회전을 나타내는 수 체계로, 복소수 곱이 2차원 회전인 것을 넓힌 것이다. 게임 엔진의 회전 표현에 흔히 쓴다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [19_euler-formula_plot.py](/Hongs_Blog/studies/college-math/code/19_euler-formula_plot/)로 그렸고, 그림에 쓴 값($$(1 + i)^8 = 16$$, 한 번 곱할 때마다 거리가 $$\sqrt2$$배, 1의 세제곱근과 다섯제곱근의 합이 0)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `정의`의 극형식과 오일러 공식, [극좌표와 매개변수 곡선](/Hongs_Blog/studies/college-math/polar-parametric/)의 변환식 $$r = \sqrt{x^2 + y^2}$$, $$\theta = \operatorname{atan2}(y, x)$$를 근거로 그렸다(OpenStax, *Precalculus 2e*, 8.5절).
 [^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf, p.7 (2차원 진동의 표현, 복소수 체계), p.8 (오일러 공식, 파동의 기본 표현)
 {% endraw %}

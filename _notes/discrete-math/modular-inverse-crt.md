@@ -18,7 +18,7 @@ prev_title: "소수와 산술의 기본정리"
 next_url: "/studies/discrete-math/fermat-euler/"
 next_title: "페르마 소정리와 오일러 정리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/modular-inverse-crt/"
 ---
@@ -87,6 +87,19 @@ $$m_1, \dots, m_k$$가 **쌍마다 서로소**이고 $$M = m_1 \cdots m_k$$이�
 3. *조립:* $$x = 2 \cdot 35 \cdot 2 + 3 \cdot 21 \cdot 1 + 2 \cdot 15 \cdot 1 = 140 + 63 + 30 = 233 \equiv 23 \pmod{105}$$.
 4. *검산:* $$23 = 7 \cdot 3 + 2 = 4 \cdot 5 + 3 = 3 \cdot 7 + 2$$.
 
+```mermaid
+flowchart LR
+  a1["3으로 나눈 나머지 2"] --> t1["2 × 35 × 2 = 140"]
+  a2["5로 나눈 나머지 3"] --> t2["3 × 21 × 1 = 63"]
+  a3["7로 나눈 나머지 2"] --> t3["2 × 15 × 1 = 30"]
+  t1 --> S["합 233"]
+  t2 --> S
+  t3 --> S
+  S --> X["105로 나눈 나머지 23"]
+```
+
+나머지 하나가 항 하나를 만들고, 세 항을 더한 뒤 105로 나눈다. 각 항은 자기 법에서만 $$a_i$$를 남기고, 다른 두 법에서는 0이 되도록 만든 것이다[^s3].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 역원의 존재 조건과 유일성($$m \le 60$$ 전수), $$7^{-1} \equiv 15 \pmod{26}$$과 아핀 암호의 왕복, $$y = 2x$$의 충돌, CRT 해의 존재·유일성(작은 법 전수)과 손자산경 23, 서로소가 아닐 때의 예, RSA-CRT 복호의 일치 — [29_modular-inverse-crt_verify.py](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_verify/)</div>
 
@@ -135,4 +148,5 @@ $$m_1, \dots, m_k$$가 **쌍마다 서로소**이고 $$M = m_1 \cdots m_k$$이�
 [^2]: 손자산경의 문제는 Rosen 7판 4장의 중국인의 나머지 정리 절에 역사적 예로 실려 있다.
 [^s1]: 에이전트 보충. RSA-CRT 복호는 실제 RSA 구현이 쓰는 표준 기법이다. 잉여 수 체계는 큰 정수·다항식 곱셈 알고리즘에서 쓰는 표준 기법이다. 여러 소수로 나눈 나머지로 곱셈을 하고 되살리는 과정과 RSA-CRT 복호 결과가 직접 복호와 같음은 29_modular-inverse-crt_verify.py에서 확인했다.
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [29_modular-inverse-crt_plot.py](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_plot/)로 그렸고, 법 3, 5에서 15칸이 하나씩 차는 것, 법 4, 6에서 12칸에 두 개씩 몰리는 것, $$x \equiv 1 \pmod 4$$, $$x \equiv 0 \pmod 6$$의 해가 없는 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 손자산경 문제 풀이(1~4단계)와 정리 증명의 존재 부분을 그렸다.
 {% endraw %}

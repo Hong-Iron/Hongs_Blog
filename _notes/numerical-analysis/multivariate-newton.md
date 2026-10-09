@@ -18,7 +18,7 @@ prev_title: "고정점 반복"
 next_url: "/studies/numerical-analysis/root-finding-compared/"
 next_title: "근 찾기 방법 비교"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/multivariate-newton/"
 ---
@@ -75,6 +75,19 @@ $$x_{i+1} = x_i - \frac{u_i\frac{\partial v_i}{\partial y} - v_i\frac{\partial u
 
 행렬로 쓰면 $$J\Delta\mathbf x = -\mathbf F$$를 풀고 $$\mathbf x_{i+1} = \mathbf x_i + \Delta\mathbf x$$로 가는 것이다. $$J$$는 야코비 행렬, $$\mathbf F = (u, v)$$다. 변수가 $$n$$개여도 같다[^s1].
 
+```mermaid
+flowchart TD
+    A["시작점 x0"] --> B["지금 점에서 함수 값과 편미분 계산"]
+    B --> C["각 방정식을 평면으로 근사"]
+    C --> D["연립 일차방정식 풀기"]
+    D --> E["다음 점으로 이동"]
+    E --> F{"움직인 거리가 충분히 작은가?"}
+    F -->|"아니오"| B
+    F -->|"예"| G["근"]
+```
+
+고리 한 바퀴마다 편미분을 새로 계산하고 일차방정식을 한 번 푼다. 한 바퀴가 비싼 대신 바퀴 수가 적다[^s2].
+
 ## 활용
 
 - 회로·구조물의 비선형 방정식, 로봇 팔의 역기구학, [비선형 최소제곱](/Hongs_Blog/studies/numerical-analysis/data-linearization/)의 가우스-뉴턴 방법이 이 방법의 변형이다[^s1].
@@ -119,4 +132,5 @@ $$x_{i+1} = x_i - \frac{u_i\frac{\partial v_i}{\partial y} - v_i\frac{\partial u
 [^5]: 같은 자료, p.12
 [^s1]: 에이전트 보충. 오차 표, 행렬 꼴 $$J\Delta\mathbf x = -\mathbf F$$, 활용과 복잡도, 다른 근 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [31_multivariate-newton_plot.py](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 반복 $$(2.03603, 2.84388)$$, 거리 표의 값, 고정점 방법 ii의 첫 값 $$(2.17945, 2.86051)$$.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 1차 근사와 연립 일차방정식(원본 17.na17_nonlinear2.pdf p.10~12), '활용'의 복잡도로 그렸다. 멈추는 기준은 예시 표의 근까지 거리를 보고 일반적인 꼴로 적었다.
 {% endraw %}

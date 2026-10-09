@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Countable Set", "Diagonal Argument", "가산 집합", "셀 수 있는 집합", "countably infinite", "비가산 집합", "uncountable", "칸토어의 대각선 논법", "Cantor's diagonal argument", "칸토어 정리", "계산 불가능성", "uncomputable", "정지 문제", "halting problem"]
 description: "원소에 1번, 2번, 3번… 번호를 빠짐없이 붙일 수 있으면 셀 수 있는(가산) 집합이다. 정수와 분수는 자연수보다 훨씬 많아 보이지만 번호를 붙일 수 있어 크기가 같다. 반면 실수나 끝없는 0·1의 나열은 어떤 번호 매기기로도 빠뜨리는 것이 반드시 생긴다(대각선 논법). 이 논법…"
@@ -18,7 +18,7 @@ prev_title: "함수의 성질과 집합의 크기"
 next_url: "/studies/discrete-math/relations/"
 next_title: "관계와 그 성질"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/countability/"
 ---
@@ -72,6 +72,16 @@ $$\mathbb{N} = \{0, 1, 2, \dots\}$$에서 $$A$$로 가는 [전단사](/Hongs_Blo
 
 </details>
 
+
+```mermaid
+flowchart LR
+  H1["높이 1: 0/1"] --> H2["높이 2: 1/1, -1/1"]
+  H2 --> H3["높이 3: 1/2, -1/2, 2/1, -2/1"]
+  H3 --> H4["높이 4: 1/3, -1/3, 3/1, -3/1"]
+  H4 --> H5["…"]
+```
+
+증명 1의 $$\mathbb{Q}$$ 목록을 높이 $$\vert p\vert  + q$$별로 묶은 것이다. 칸마다 기약분수가 유한 개라, 앞 칸부터 차례로 번호를 붙이면 어떤 유리수든 유한 번째에 번호를 받는다[^s2].
 
 ## 예제
 
@@ -133,4 +143,5 @@ $$\mathbb{N} = \{0, 1, 2, \dots\}$$에서 $$A$$로 가는 [전단사](/Hongs_Blo
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 8장 "Infinite Sets"(무한 집합의 크기, 대각선 논법, 칸토어 정리, 정지 문제)
 [^s1]: 에이전트 보충. 정지 문제의 결정 불가능성은 튜링(1936)의 결과다. 이 문서는 "셀 수 있는 프로그램 vs 셀 수 없는 문제"라는 개수 논증만 보인다. 정지 문제 자체의 증명은 계산 이론 과목의 범위다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 증명 1의 '높이 $$\vert p\vert  + q$$가 작은 것부터' 늘어놓는 방법을 높이 4까지 그렸다. 칸마다 기약분수만 넣었다.
 {% endraw %}

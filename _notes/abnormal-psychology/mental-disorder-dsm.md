@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Mental Disorder", "정신질환", "DSM", "DSM-5", "DSM-5-TR", "Diagnostic and Statistical Manual of Mental Disorders", "정신장애 진단 및 통계 편람", "ICD", "International Classification of Diseases", "국제질병분류", "증후군", "syndrome", "미국정신의학회", "American Psychiatric Association"]
 description: "이상행동이 증상 하나라면, 정신장애는 여러 증상이 한 덩어리로 함께 나타나는 묶음이다. 어떤 묶음을 어떤 장애라 부를지는 미국정신의학회가 만든 진단 편람(DSM)이 정하고, 세계 어디서나 이 목록을 공통 언어로 쓴다. 다만 목록은 판이 바뀔 때마다 달라지므로, 목록에 없다고 해서 …"
@@ -18,7 +18,7 @@ prev_title: "통계적 일탈 기준 ↔ 정규분포"
 next_url: "/studies/abnormal-psychology/categorical-vs-dimensional/"
 next_title: "범주적 분류와 차원적 분류 비교"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/mental-disorder-dsm/"
 ---
@@ -71,6 +71,21 @@ permalink: "/studies/abnormal-psychology/mental-disorder-dsm/"
 
 
 네 요소는 [이상행동의 기준](/Hongs_Blog/studies/abnormal-psychology/abnormality-criteria/)과 이렇게 이어진다. 1의 "기능 이상"은 개인 내부의 고장을, 2는 주관적 고통과 적응 기능의 저하를 가리킨다. 3과 4는 문화적 규범의 일탈만으로는 장애라 하지 않는다는 제한이다.
+
+```mermaid
+flowchart TD
+  A["여러 이상행동, 곧 증상"] --> B{"생각·감정 조절·행동의 뚜렷한 장해가 한 묶음, 곧 증후군으로 나타나나?"}
+  B -- "아니오" --> X["정신장애가 아니다"]
+  B -- "예" --> C{"마음이나 뇌가 일하는 과정의 기능 이상을 반영하나?"}
+  C -- "아니오" --> X
+  C -- "예" --> D{"흔한 스트레스나 상실에 대해 예상할 수 있거나 문화적으로 용인되는 반응인가?"}
+  D -- "예" --> X
+  D -- "아니오" --> E{"사회와 부딪히는 일탈이나 갈등일 뿐, 개인의 기능 이상에서 나온 것이 아닌가?"}
+  E -- "예" --> X
+  E -- "아니오" --> F["정신장애다. 대개 기능 손상이나 유의미한 고통이 따른다"]
+```
+
+위에서부터 질문에 하나씩 답한다. 어느 질문에서든 "정신장애가 아니다" 칸으로 빠지면 장애로 보지 않는다. 고통과 기능 손상은 거르는 질문이 아니라 대개 함께 나타나는 특징이라 마지막 칸에 들어 있다[^s3].
 
 ### DSM과 ICD
 
@@ -161,4 +176,5 @@ DSM-5-TR은 5판의 본문개정판(Text Revision)이다. 2022년에 나왔고, 
 [^7]: 4-1학기/이상 심리학/1.수업자료/01.이상심리학.pdf, p.24. 필기의 예와 별표는 손글씨다. 회차 열은 이 과목의 슬라이드 제목과 대응시킨 것이다.
 [^s1]: 에이전트 보충. 주요우울장애의 증상 묶음은 3회에서 자세히 다룬다. 여기서는 증상과 증후군의 차이를 보이는 예로만 썼다.
 [^s2]: 에이전트 보충. 정의 상자의 네 요소는 슬라이드 p.19를 DSM-5(American Psychiatric Association, 2013) 원문과 대조해 다시 쓴 것이다. 슬라이드는 둘째 요소를 "관련되어 있다"로 쓰지만 원문은 "보통(usually) 관련된다"다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. DSM-5 정신장애 정의의 네 요소(정의 절, 슬라이드 p.19, 원본 오류 의심의 수정안)를 순서도로 그렸다.
 {% endraw %}

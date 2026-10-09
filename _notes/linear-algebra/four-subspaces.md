@@ -18,7 +18,7 @@ prev_title: "부분공간, 기저와 차원"
 next_url: "/studies/linear-algebra/linear-transformations/"
 next_title: "선형변환"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/four-subspaces/"
 ---
@@ -72,6 +72,25 @@ $$A \in \mathbb{R}^{m \times n}$$($$\in$$은 "~에 속한다")에 대해
 
 </div>
 
+
+```mermaid
+flowchart LR
+    subgraph IN["입력 공간 Rⁿ"]
+        R["행공간 C(Aᵀ), 차원 r"]
+        N["영공간 N(A), 차원 n - r"]
+    end
+    subgraph OUT["출력 공간 Rᵐ"]
+        C["열공간 C(A), 차원 r"]
+        L["왼쪽 영공간 N(Aᵀ), 차원 m - r"]
+        Z["영벡터 0"]
+    end
+    R -->|"A"| C
+    N -->|"A"| Z
+    R ---|"수직"| N
+    C ---|"수직"| L
+```
+
+왼쪽 상자의 두 공간은 서로 수직이고, 차원을 더하면 n이다. 오른쪽 상자도 같아서 차원을 더하면 m이다. A는 영공간을 0 한 점으로 보내고, 무엇을 넣든 출력은 열공간 안에 떨어진다[^s3].
 
 **가정과 역.** 정리는 모든 실수 행렬에 맞고 따로 가정이 없다. 4번은 양쪽 방향이 모두 맞는다. $$\mathbf{b} \in C(A)$$이면 $$\mathbf{b} = A\mathbf{x}$$인 $$\mathbf{x}$$가 있다는 것이 열공간의 정의 자체이기 때문이다. 차원 정리의 $$n$$은 **열**(입력)의 개수다. 행의 개수 $$m$$을 쓰면 틀린다.
 
@@ -202,4 +221,5 @@ $$A = \begin{pmatrix}1 & 2 & 0\\ 0 & 0 & 1\\ 1 & 2 & 1\end{pmatrix}$$의 네 부
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.2절 "The Nullspace of A"(특수해), 3.3절 "The Complete Solution to Ax = b", 3.5절 "Dimensions of the Four Subspaces", 4.1절 "Orthogonality of the Four Subspaces".
 [^s1]: 에이전트 보충. 그래프의 근접 행렬(간선 × 정점)에 차원 정리를 쓰면 연결 그래프에서 랭크 $$n - 1$$, 사이클 공간의 차원 $$m - n + 1$$이 나온다. Strang 5판 10.1절 "Graphs and Networks"에 같은 내용이 있다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [11_four-subspaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/11_four-subspaces_plot/)로 그렸고, 영공간 평면이 $$A\mathbf{x} = \mathbf{0}$$을 만족하는 것, 행공간과의 수직, 무작위 입력 60개의 출력이 모두 열공간 위에 있는 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 네 부분공간 정의와 선형대수의 기본정리 1~3을 옮겼다(Strang 5판 3.5절, 4.1절).
 {% endraw %}

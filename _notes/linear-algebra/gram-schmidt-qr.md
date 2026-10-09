@@ -18,7 +18,7 @@ prev_title: "최소제곱법"
 next_url: "/studies/linear-algebra/eigenvalues/"
 next_title: "고윳값과 고유벡터"
 math: true
-mermaid: false
+mermaid: true
 code_count: 3
 permalink: "/studies/linear-algebra/gram-schmidt-qr/"
 ---
@@ -50,6 +50,17 @@ $$\mathbf{q}_1 \cdot \mathbf{q}_2 = \frac{1 - 1 + 0}{\sqrt{12}} = 0$$이고 둘 
 **입력:** 열 $$\mathbf{a}_1, \dots, \mathbf{a}_n$$이 독립인 $$m \times n$$ 행렬 $$A$$. **출력:** 열이 정규직교인 $$Q$$($$m \times n$$)와 대각이 양수인 위삼각 $$R$$($$n \times n$$)로 $$A = QR$$.
 
 ```
+       A (m x n)            Q (m x n)          R (n x n)
+     [ *  *  * ]          [ *  *  * ]
+     [ *  *  * ]          [ *  *  * ]        [ *  *  * ]
+     [ *  *  * ]    =     [ *  *  * ]   x    [ 0  *  * ]
+     [ *  *  * ]          [ *  *  * ]        [ 0  0  * ]
+     [ *  *  * ]          [ *  *  * ]
+```
+
+m = 5, n = 3인 모양이다. Q는 A와 크기가 같은 길쭉한 행렬이고, R은 작은 정사각 행렬이며 대각 아래 칸이 늘 0이다[^s3].
+
+```
 GRAM-SCHMIDT(A)                  # 수정(modified) 순서
   for j = 1 to n
       v ← a_j
@@ -60,6 +71,21 @@ GRAM-SCHMIDT(A)                  # 수정(modified) 순서
       q_j ← v / r[j][j]
   return Q = [q_1 … q_n], R = (r[i][j])
 ```
+
+```mermaid
+flowchart TD
+    S["j = 1"] --> V["v ← aⱼ"]
+    V --> L{"앞에서 만든 qᵢ 중 아직 안 쓴 것이 있나"}
+    L -->|"예"| P["rᵢⱼ = qᵢ · v 를 지금의 v로 재고, v에서 rᵢⱼqᵢ 빼기"]
+    P --> L
+    L -->|"아니오"| N["rⱼⱼ = v의 길이, qⱼ = v / rⱼⱼ"]
+    N --> E{"j < n 인가"}
+    E -->|"예"| J["j ← j + 1"]
+    J --> V
+    E -->|"아니오"| R["Q와 R 돌려주기"]
+```
+
+안쪽 고리는 v에서 앞 방향들의 그림자를 하나씩 뺀다. 그림자를 모두 뺀 뒤에야 길이를 재고 1로 맞춘다[^s3].
 
 **정규직교**란 $$\mathbf{q}_i\cdot\mathbf{q}_j = 0$$($$i \ne j$$), $$\Vert \mathbf{q}_i\Vert  = 1$$($$\lVert\cdot\rVert$$는 벡터의 길이)이라는 뜻이고, 곧 $$Q^\top Q = I$$다. 정사각이면 $$Q$$를 **직교 행렬**이라 하며 $$Q^{-1} = Q^\top$$이다[^1].
 
@@ -128,4 +154,5 @@ v = [v[k] - r * q[k] for k in range(m)]
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 4.4절 "Orthonormal Bases and Gram-Schmidt"(정규직교 기저, 직교 행렬, 그람–슈미트, $$A = QR$$, QR로 푸는 최소제곱).
 [^s1]: 에이전트 보충. 고전 그람–슈미트의 직교성 손실과 라우흘리 행렬 예, 하우스홀더 QR은 수치 선형대수 교재(Trefethen·Bau, *Numerical Linear Algebra*, 8장·10장)의 표준 내용이다. 18_gram-schmidt-qr_impl.py에서 두 순서의 차이를 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [18_gram-schmidt-qr_plot.py](/Hongs_Blog/studies/linear-algebra/code/18_gram-schmidt-qr_plot/)로 그렸고, $$\mathbf{v} = (\frac12, -\frac12, 1)$$, $$\mathbf{q}_2 = \frac{1}{\sqrt6}(1, -1, 2)$$, $$\mathbf{q}_1\cdot\mathbf{q}_2 = 0$$을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 이 문서 `정의`의 입출력(크기와 위삼각 $$R$$)과 GRAM-SCHMIDT 의사코드를 옮겼다(Strang 5판 4.4절).
 {% endraw %}

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Transitive Closure and Floyd–Warshall", "와셜 알고리즘과 플로이드–워셜", "Warshall's algorithm", "이행적 폐포", "반사 추이 폐포", "reflexive transitive closure", "반환", "semiring", "가장 믿을 만한 경로", "most reliable path"]
 description: "이산수학에서 추이 폐포를 구하는 와셜 알고리즘과 플로이드–워셜은, 거쳐도 되는 점을 하나씩 늘리며 표를 고치는 같은 세 겹 반복이다. 와셜은 \"또는·그리고\"로 갈 수 있는지를, 플로이드–워셜은 \"작은 쪽 고르기·더하기\"로 가장 싼 비용을 적는다. 그래서 자기 자신으로 가는 칸(대각…"
@@ -18,7 +18,7 @@ prev_title: "매개변수 탐색 ↔ 사잇값 정리"
 next_url: "/studies/algorithms/toposort-dp-order/"
 next_title: "위상 정렬 ↔ 동적 계획법의 계산 순서"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/warshall-floyd/"
 ---
@@ -36,6 +36,16 @@ permalink: "/studies/algorithms/warshall-floyd/"
 표를 펼치기 전에 두 사례의 공통 구조와 대응 관계를 먼저 적어 본다.
 
 점 1 ~ 4와 화살표 1→2, 2→3, 3→4, 1→4가 있다. [관계와 그 성질](/Hongs_Blog/studies/discrete-math/relations/) 예제의 사슬에 지름길 1→4가 하나 붙은 모양이다. 왼쪽은 화살표들을 관계 R로 보고 와셜 알고리즘을 돌린다. 오른쪽은 화살표에 비용 2, 3, 1, 9를 차례로 달고 [플로이드–워셜](/Hongs_Blog/studies/algorithms/floyd-warshall/)을 돌린다.
+
+```mermaid
+flowchart LR
+    n1(("1")) -->|"2"| n2(("2"))
+    n2 -->|"3"| n3(("3"))
+    n3 -->|"1"| n4(("4"))
+    n1 -->|"9"| n4
+```
+
+화살표 위의 수가 오른쪽 열에서 쓰는 비용이다. 왼쪽 열은 수를 지우고 화살표만 본다[^s4].
 
 | 단계 | 이산수학: R의 추이 폐포 | 알고리즘: 최단 거리 |
 |---|---|---|
@@ -151,4 +161,5 @@ permalink: "/studies/algorithms/warshall-floyd/"
 [^s1]: 에이전트 보충. 연산 짝 표, 고리 조건(제자리 값과 고리 값 중 고르면 제자리 값이 남는다), 분배법칙, 길의 수의 겹침 문제는 원본에 없다. 40_warshall-floyd_verify.py에서 무작위 그래프로 네 줄을 대조했다(실험으로 확인). 갈 수 있나는 점마다 탐색한 결과와, 최단 거리는 벨만–포드와, 나머지 두 줄은 모든 경로를 센 결과와 맞췄다. 같은 반복이 맞는 까닭은 본문의 "k를 안 거치거나 한 번 거치거나" 논증이다.
 [^s2]: 에이전트 보충. "삼각 부등식 + 처음 표 이하인 표 가운데 가장 큰 표" 성질과 그 두 줄 증명은 원본에 없다. 점 3개짜리 무작위 그래프 12개에서 대각선 밖 칸에 −1 ~ 4와 ∞를 넣은 표를 모두 훑어 확인했다. 대각선은 따로 훑지 않아도 된다. 삼각 부등식 d[i][i] ≤ d[i][i] + d[i][i]에서 d[i][i] ≥ 0이고, 처음 표에서 d[i][i] ≤ 0이라 0으로 정해진다.
 [^s3]: 에이전트 보충. 전이 문제는 원본 범위 밖이다. 확률 경로의 답은 분수로 모든 경로를 세어 맞췄고, 환율 고리는 무작위 그래프 400개에서 "곱이 1보다 큰 고리가 있다 ⇔ 어떤 P[i][i] > 1"을 확인했다. 차익 거래를 음수 사이클 찾기로 바꾸는 문제는 Cormen 외, *Introduction to Algorithms* 3판, 24장 문제 24-3 "Arbitrage"에 있다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '먼저 비교해 보기'의 화살표 1→2, 2→3, 3→4, 1→4와 비용 2, 3, 1, 9를 그대로 그렸다.
 {% endraw %}

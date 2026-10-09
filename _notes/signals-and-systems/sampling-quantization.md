@@ -18,7 +18,7 @@ prev_title: "단위 임펄스와 단위 계단"
 next_url: "/studies/signals-and-systems/systems-interconnection/"
 next_title: "시스템과 시스템 연결"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/sampling-quantization/"
 ---
@@ -56,6 +56,17 @@ $$f_s(x, y) = f(x, y)\sum_{j=1}^{M}\sum_{k=1}^{N}\delta(x - j\Delta x,\ y - k\De
 - 사람 눈이 미세한 음영을 느낄 만큼 단계가 많아야 한다. 보통 화소당 8비트, 정밀 측정 장치는 12비트 이상을 쓴다.
 
 칸의 폭을 $$\Delta_q$$라 하고 각 칸의 가운데 값으로 반올림하면, 양자화 오차는 $$\pm\Delta_q/2$$를 넘지 않는다[^s1]. 범위 $$-1 \sim 1$$을 4비트로 나누면 $$\Delta_q = 2/16 = 0.125$$이고 최대 오차는 0.0625다.
+
+```mermaid
+flowchart LR
+  A["연속 신호 x(t)"] -->|"T_s 간격으로 읽기"| B["표본화"]
+  B --> C["이산 신호 x[n] = x(nT_s)"]
+  C -->|"2^b 단계 중 가까운 값으로 반올림"| D["양자화"]
+  D --> E["디지털 값"]
+  D -.->|"반올림으로 버린 차이"| F["양자화 오차, ±Δ_q/2 이하"]
+```
+
+표본화는 시간을 끊고, 양자화는 값을 끊는다. 양자화에서 반올림으로 버린 차이는 점선 가지로 떨어져 나가고 되돌릴 수 없다.[^s3]
 
 ## 예제
 
@@ -110,4 +121,5 @@ $$f_s(x, y) = f(x, y)\sum_{j=1}^{M}\sum_{k=1}^{N}\delta(x - j\Delta x,\ y - k\De
 [^4]: 3-1학기/신호 및 시스템/1.수업자료/12.Week12_CH03_4_handout.pdf, p.3
 [^s1]: 에이전트 보충. 양자화 오차의 한계 $$\Delta_q/2$$와 4비트 예, 2Hz 코사인 표본화 예, 음악 CD의 수치, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [11_sampling-quantization_plot.py](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 10개마다 되풀이, 3비트 양자화의 8단계와 최대 오차 0.125, 2Hz와 0.5Hz 코사인이 초당 2.5번 뽑은 표본에서 같음. 3비트와 2.5Hz 표본화는 설명을 위해 고른 값이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 표본화·양자화 절(2주차 자료 p.4, 3주차 자료 p.35~37)을 근거로 그렸다.
 {% endraw %}

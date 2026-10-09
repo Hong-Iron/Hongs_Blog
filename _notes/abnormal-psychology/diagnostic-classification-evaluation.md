@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["분류의 장단점", "DSM 비판", "진단의 가치", "낙인", "stigma", "진단적 타당성", "diagnostic validity", "과잉 진단", "의료화", "medicalization", "중복 진단", "comorbidity"]
 description: "진단은 \"이 사람의 문제는 이런 종류다\"라고 전문가가 이름을 붙이는 일이다. 이름이 있으면 전문가끼리 말이 통하고, 연구가 쌓이고, 맞는 치료를 고르기 쉬워진다. 대신 그 사람만의 사정이 이름 뒤로 사라지고, 낙인이 찍히고, 병이 아닌 것까지 병으로 만들 위험이 있다. 결론은 분류…"
@@ -18,7 +18,7 @@ prev_title: "범주적 분류와 차원적 분류 비교"
 next_url: "/studies/abnormal-psychology/history-of-abnormal-psychology/"
 next_title: "이상심리학의 역사"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/diagnostic-classification-evaluation/"
 ---
@@ -63,6 +63,18 @@ permalink: "/studies/abnormal-psychology/diagnostic-classification-evaluation/"
 - 장애의 생물학적·유전적 원인을 과장한다.
 - 그 결과 약물의 효과는 부풀려지고 부작용은 축소·은폐된다.
 - 삶의 문제를 의학적 문제로 여겨(의료화) 약으로 쉽게 풀리기를 바라게 만든다.
+
+```mermaid
+flowchart LR
+  W["미국정신의학회, 제약사, 일부 학자, 언론의 이해관계"] --> A["병이 아닌 것까지 병으로 규정"]
+  W --> B["생물학적·유전적 원인을 과장"]
+  A --> C["약물 효과는 부풀리고 부작용은 축소·은폐"]
+  B --> C
+  W --> D["삶의 문제를 의학적 문제로 여김, 곧 의료화"]
+  D --> E["약으로 쉽게 풀리기를 바람"]
+```
+
+이해관계 한 칸에서 비판의 네 항목이 모두 나온다. 앞의 두 항목이 겹쳐 약물 효과의 과장으로 이어진다[^s2].
 
 **진단적 타당성이 약하다.** 범주론을 내세우면서도 분류가 어려우면 여러 진단을 한꺼번에 붙이는 중복 진단을 허용하는 편리주의를 쓴다[^6].
 
@@ -116,4 +128,5 @@ DSM이 완벽하지 않다고 해서 진단 체계를 버려야 한다는 뜻은
 [^6]: 4-1학기/이상 심리학/1.수업자료/01.이상심리학.pdf, p.28
 [^7]: 4-1학기/이상 심리학/1.수업자료/01.이상심리학.pdf, p.30
 [^s1]: 에이전트 보충. 조현병 진단을 받은 학생의 사례는 p.31의 "낙인 찍기"와 "환자 자신의 태도 변화"를 보이려고 만든 가상 사례다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 'DSM에 대한 비판'의 이해관계 항목(슬라이드 p.27)을 그렸다.
 {% endraw %}

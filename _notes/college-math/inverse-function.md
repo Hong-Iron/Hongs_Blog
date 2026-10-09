@@ -18,7 +18,7 @@ prev_title: "함수의 변환과 합성"
 next_url: "/studies/college-math/polynomial/"
 next_title: "다항식과 방정식"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/college-math/inverse-function/"
 ---
@@ -34,6 +34,14 @@ permalink: "/studies/college-math/inverse-function/"
 ## 예시로 보기
 
 섭씨를 화씨로 바꾸는 함수 $$F = 1.8C + 32$$는 되돌릴 수 있다. $$32$$를 빼고 $$1.8$$로 나누면 $$C = (F - 32)/1.8$$이다. $$100$$°C는 $$212$$°F가 되고, $$212$$°F는 다시 $$100$$°C가 된다. 원래 함수가 "1.8배 한 뒤 32 더하기"이니, 역함수는 "32 빼고 1.8로 나누기"로 순서와 연산이 모두 거꾸로다.
+
+```mermaid
+flowchart LR
+  C["섭씨 100"] -->|"1.8배"| M["180"] -->|"32 더하기"| F["화씨 212"]
+  F -->|"32 빼기"| N["180"] -->|"1.8로 나누기"| C2["섭씨 100"]
+```
+
+위로 가는 길이 $$F = 1.8C + 32$$, 아래로 돌아오는 길이 역함수다. 돌아올 때는 마지막에 한 조작부터 거꾸로 풀어서, 가운데 값 180을 똑같이 지난다[^s3].
 
 $$x^2$$은 되돌릴 수 없다. 출력 $$9$$를 보고 입력이 $$3$$이었는지 $$-3$$이었는지 알 수 없다. 입력을 $$x \ge 0$$으로 제한하면 답이 하나로 정해지고, 그 역함수가 $$\sqrt{x}$$다.
 
@@ -150,4 +158,5 @@ $$f(x) = \dfrac{2x + 1}{x - 3}$$의 역함수를 구한다.
 [^1]: OpenStax, *Precalculus 2e*, 1.7절 "Inverse Functions". 정의역을 잘라 역함수를 만드는 예는 3.8절 "Inverses and Radical Functions".
 [^s1]: 에이전트 보충. 좌표 변환과 해시는 컴퓨터공학에서 역함수가 쓰이는 곳과 쓰이지 않는 곳을 보이려고 넣었다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [03_inverse-function_plot.py](/Hongs_Blog/studies/college-math/code/03_inverse-function_plot/)로 그렸고, 그림에 쓴 값($$(2, 4)$$와 $$(4, 2)$$, $$(-2)^2 = 2^2 = 4$$, $$0 \le x \le 3$$에서 $$\sqrt{x^2} = x$$)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 섭씨-화씨 변환과 그 역함수(100°C ↔ 212°F)를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.7절).
 {% endraw %}

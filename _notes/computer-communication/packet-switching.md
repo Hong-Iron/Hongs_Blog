@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Packet Switching", "패킷 교환", "저장 후 전달", "store-and-forward", "패킷", "packet", "혼잡", "congestion", "버퍼링", "buffering", "FIFO", "버퍼 오버플로우", "buffer overflow"]
 description: "편지마다 주소를 적어 우체국에 맡기면 우체국들이 받아서 분류한 뒤 다음 우체국으로 넘기는 것처럼, 데이터를 작은 묶음으로 나눠 길을 미리 잡지 않고 보내는 방식이다. 보낼 것이 있을 때만 링크를 쓰므로 쉬는 사용자 몫의 낭비가 없다. 대신 묶음이 한꺼번에 몰리면 줄을 서서 기다리거…"
@@ -18,7 +18,7 @@ prev_title: "버스티 트래픽"
 next_url: "/studies/computer-communication/contrast--circuit-switching--packet-switching/"
 next_title: "회선 스위칭과 패킷 스위칭 비교"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/computer-communication/packet-switching/"
 ---
@@ -72,6 +72,18 @@ permalink: "/studies/computer-communication/packet-switching/"
 | 연결 설정 없이 바로 보낼 수 있다 | 보낸 순서대로의 도착 (패킷마다 다른 경로로 갈 수 있다) |
 
 여러 곳에서 온 패킷이 한 링크로 몰려 섞인다. 한꺼번에 나갈 수 없으니 스위치는 아직 못 나간 패킷을 잠깐 쌓아 둔다(버퍼링). 쌓인 패킷은 먼저 온 순서(FIFO)로, 또는 다른 규칙으로 내보낸다. 쌓아 둘 자리(버퍼)가 넘치는 상태를 혼잡이라 부른다[^3]. 넘친 패킷은 버린다. 버린 패킷을 다시 보내면 망에 트래픽이 더 늘어 혼잡이 쌓인다[^4].
+
+```mermaid
+flowchart TD
+  A["패킷이 스위치에 다 도착"] --> B{"출력 링크가 비어 있나"}
+  B -->|"예"| C["바로 내보냄"]
+  B -->|"아니오"| D{"버퍼에 자리가 있나"}
+  D -->|"예"| E["버퍼에 쌓고 차례를 기다림"]
+  E --> C
+  D -->|"아니오"| F["버림"]
+```
+
+패킷 하나가 스위치에서 만나는 갈림길이다. 출력 링크가 바쁘면 버퍼에서 기다리고, 버퍼마저 차 있으면 그 자리에서 버려진다[^s3].
 
 ## 증명
 
@@ -208,4 +220,5 @@ permalink: "/studies/computer-communication/packet-switching/"
 [^4]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 12~16행
 [^s1]: 에이전트 보충. 보장하지 않는 것의 목록과 cut-through 방식은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3~1.4절의 내용이다.
 [^s2]: 에이전트 보충. 원본은 저장 후 전달의 동작만 쓰고 지연 공식은 없다. 공식은 Kurose & Ross, 1.3절의 저장 후 전달 전송과 같다. 교재의 링크 수 기호 $$N$$은 다중화의 입력 수 $$N$$과 겹쳐서 여기서는 $$H$$로 쓴다. 본문의 7과 15는 이 공식과 패킷을 하나씩 보내는 경우($$H \cdot P$$)에 $$H = 3$$, $$P = 5$$를 넣은 값이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 버퍼링·혼잡 설명과 슬라이드 "통계적 다중화와 패킷스위칭"의 store-and-forward 그림을 바탕으로 그렸다.
 {% endraw %}

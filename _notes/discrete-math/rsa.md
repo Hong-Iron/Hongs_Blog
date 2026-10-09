@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["RSA", "RSA 암호", "RSA cryptosystem", "공개키 암호", "public-key cryptography", "비대칭 암호", "asymmetric cryptography", "공개키", "public key", "개인키", "private key", "전자서명", "digital signature", "밀러–라빈", "Miller–Rabin"]
 description: "누구나 채울 수 있지만 열쇠를 가진 사람만 열 수 있는 자물쇠를 수학으로 만든 것이다. 두 큰 소수를 곱해 공개하고, 그 곱을 쪼개야만 알 수 있는 열쇠는 혼자 갖는다. 곱하기는 쉽고 소인수분해는 어렵다는 비대칭 덕분에, 미리 비밀을 나누지 않은 사람끼리도 암호문을 주고받고 전자서…"
@@ -18,7 +18,7 @@ prev_title: "페르마 소정리와 오일러 정리"
 next_url: "/studies/discrete-math/graph-basics/"
 next_title: "그래프의 기초"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/rsa/"
 ---
@@ -43,6 +43,19 @@ permalink: "/studies/discrete-math/rsa/"
 
 $$n = 55$$를 아는 사람은 누구나 암호화할 수 있다. 하지만 $$d$$를 구하려면 $$\varphi(n) = 40$$이 필요하고, 그러려면 55를 $$5 \times 11$$로 쪼개야 한다. 실제로는 $$p, q$$가 각각 1024비트 이상이라 쪼갤 수 없다.
 
+```mermaid
+sequenceDiagram
+  participant A as 앨리스 (키 주인)
+  participant B as 밥 (보내는 사람)
+  A->>A: p, q를 골라 n, e, d를 만든다
+  A->>B: 공개키 n, e
+  B->>B: c = m^e mod n
+  B->>A: 암호문 c
+  A->>A: m = c^d mod n
+```
+
+가운데를 오가는 것은 공개키와 암호문뿐이다. 둘을 모두 엿본 사람도 $$d$$가 없으면 $$m$$을 되살리지 못한다[^s3].
+
 ## 정의
 
 **입력:** 서로 다른 큰 소수 $$p, q$$. **출력:** 공개키 $$(n, e)$$와 개인키 $$d$$. 평문과 암호문은 $$0 \le m < n$$인 정수다[^1].
@@ -58,6 +71,20 @@ KEYGEN(p, q)
 ENCRYPT(m, n, e) = m^e mod n    # 빠른 거듭제곱
 DECRYPT(c, n, d) = c^d mod n
 ```
+
+```mermaid
+flowchart LR
+  P["소수 p, q"] --> N["n = p·q"]
+  P --> F["φ = (p-1)(q-1)"]
+  F --> E["e: φ와 서로소"]
+  E --> D["d = e⁻¹ mod φ"]
+  F --> D
+  N --> PUB["공개키 n, e"]
+  E --> PUB
+  D --> PRI["개인키 d"]
+```
+
+공개키로 나가는 것은 $$n$$과 $$e$$뿐이다. $$d$$를 만들려면 $$\varphi$$가 필요하고, $$\varphi$$는 $$p$$, $$q$$를 알아야 계산된다. 그래서 $$p$$, $$q$$, $$\varphi$$, $$d$$는 키 주인만 가진다[^s3].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">정확성</div>
@@ -161,4 +188,5 @@ m = pow(c, d, p * q)
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(RSA와 정확성 증명). Cormen et al., *Introduction to Algorithms* 3판, 31.7절 "The RSA public-key cryptosystem", 31.8절(소수 찾기와 밀러–라빈).
 [^s1]: 에이전트 보충. $$p = 61$$, $$q = 53$$, $$e = 17$$의 예는 여러 교재와 해설에서 쓰는 값이다. 모든 값과 "$$\varphi(n)$$을 알면 $$p, q$$가 나온다"는 31_rsa_verify.py에서 계산으로 확인했다.
 [^s2]: 에이전트 보충. OAEP와 PSS 패딩은 PKCS #1 v2.2(RFC 8017)에 정의되어 있다. TLS 1.3(RFC 8446)은 RSA 키 전송을 없애고 RSA를 서명에만 쓴다.
+[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 주고받는 순서는 '예시로 보기'의 다섯 단계를, 키 생성 흐름은 KEYGEN 의사코드를 그렸다. 앨리스와 밥은 암호 설명에서 흔히 쓰는 가상의 이름이다.
 {% endraw %}

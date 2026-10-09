@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Virtual Memory", "가상 주소", "Virtual Address", "실제 주소", "Real Address", "메모리 관리 장치", "MMU", "상주 집합", "Resident Set", "페이지 부재", "Page Fault", "스래싱", "Thrashing", "페이지 크기", "Page Size", "페이징과 세그먼테이션 결합"]
 description: "가상 메모리는 프로세스의 일부만 주기억장치에 올려 두고 나머지는 디스크에 둔 채 실행하는 방법이다. 두꺼운 요리책 전체를 조리대에 펼치지 않고 지금 만드는 요리의 몇 쪽만 펼쳐 두는 것과 같다. 그래서 주기억장치보다 큰 프로그램을 돌릴 수 있고, 더 많은 프로세스를 함께 올릴 수 …"
@@ -18,7 +18,7 @@ prev_title: "세그먼테이션"
 next_url: "/studies/operating-systems/page-table-structure/"
 next_title: "페이지 표 구조"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/operating-systems/virtual-memory/"
 ---
@@ -99,6 +99,17 @@ permalink: "/studies/operating-systems/virtual-memory/"
 세그먼테이션은 프로그래머가 메모리를 여러 주소 공간(세그먼트)으로 보게 한다. 크기가 다르고 바뀔 수 있어서, 자라는 자료 구조를 다루기 쉽고, 프로그램을 따로 고쳐 컴파일할 수 있으며, 공유와 보호에 잘 맞는다[^14]. 가상 메모리에서 세그먼트 표 항목에는 시작 주소와 길이 외에, 세그먼트가 주기억장치에 있는지(P 비트)와 올라온 뒤 바뀌었는지(M 비트)를 나타내는 비트가 필요하다[^15].
 
 두 방식을 합치면 각 세그먼트를 고정 크기 페이지로 나눈다. 페이징은 프로그래머에게 보이지 않고, 세그먼테이션은 보인다. 주소는 (세그먼트 번호, 페이지 번호, 오프셋)이 된다[^16]. 세그먼트 표 항목에 시작 주소와 길이가 있으므로, 잘못된 메모리 접근을 막고 여러 프로세스가 같은 세그먼트를 가리켜 공유할 수 있다[^17].
+
+```mermaid
+flowchart LR
+  VA["가상 주소: 세그먼트 번호 s, 페이지 번호 p, 오프셋 o"] -->|"s로 찾음"| ST["세그먼트 표의 s번 항목"]
+  ST -->|"이 세그먼트의 페이지 표 위치"| PT["그 세그먼트의 페이지 표"]
+  VA -->|"p로 찾음"| PT
+  PT -->|"프레임 번호"| PA["실제 주소: 프레임 번호와 오프셋 o"]
+  VA -->|"o는 그대로"| PA
+```
+
+표를 두 번 거친다. 세그먼트 표가 어느 페이지 표를 볼지 정하고, 그 페이지 표가 프레임을 정한다. 오프셋은 바뀌지 않고 끝까지 간다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 카드 C1의 주소 계산 — [38_virtual-memory_verify.py](/Hongs_Blog/studies/operating-systems/code/38_virtual-memory_verify/)</div>
@@ -220,4 +231,5 @@ permalink: "/studies/operating-systems/virtual-memory/"
 [^19]: 같은 자료, 슬라이드 107~108 (그림 8.26)
 [^20]: 3-1학기/운영체제/1.수업자료/02.Chapter02-new.pptx, 슬라이드 10의 발표자 노트
 [^s1]: 에이전트 보충. 캐시와의 연결, 스스로 설명해 보기의 근거, 확인 문제 C1·C3·C4는 원본에 없다. C1의 계산은 2장 슬라이드의 "가상 주소 = 페이지 번호 + 오프셋"을 숫자로 옮긴 것이고, C3·C4는 8장 슬라이드 6~7, 11을 바탕으로 만들었다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "세그먼테이션과 결합" 문단(슬라이드 41~45, 그림 8.13)을 주소 변환 흐름으로 그렸다.
 {% endraw %}

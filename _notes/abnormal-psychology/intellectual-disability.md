@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Intellectual Disability", "지적발달장애", "Intellectual Developmental Disorder", "정신지체", "mental retardation", "적응 기능", "adaptive functioning", "전반적 발달지연", "Global Developmental Delay"]
 description: "발달기부터 생각하고 배우는 능력(지적 기능)이 또래보다 전반적으로 낮고, 그 때문에 혼자 생활하는 능력(적응 기능)도 부족한 장애다. 두 가지가 모두 있어야 한다. 지능지수가 낮다는 것만으로는 부족하고, 실제로 의사소통, 학업, 대인관계, 일상 기술에 어려움이 있어야 한다. 평생 …"
@@ -18,7 +18,7 @@ prev_title: "신경발달장애"
 next_url: "/studies/abnormal-psychology/communication-disorders/"
 next_title: "의사소통장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/intellectual-disability/"
 ---
@@ -64,6 +64,19 @@ permalink: "/studies/abnormal-psychology/intellectual-disability/"
 ### 전반적 발달지연[^2]
 
 지적 기능의 여러 영역에서 기대되는 발달 이정표에 도달하지 못했지만, 지적 기능을 체계적으로 평가할 수 없는 5세 미만의 아동에게 쓰는 진단이다.
+
+```mermaid
+flowchart TD
+    A{"발달 시기에 시작했는가"} -->|"예"| B{"5세 미만이라 지적 기능을 체계적으로 평가할 수 없는가"}
+    B -->|"예, 발달 이정표에 못 미침"| G["전반적 발달지연"]
+    B -->|"아니오"| C{"표준화 검사에서 지적 기능의 결함, IQ 70 미만"}
+    C -->|"아니오"| X["지적장애 아님"]
+    C -->|"예"| D{"적응 기능의 결함: 개념적, 사회적, 실행적"}
+    D -->|"아니오"| X
+    D -->|"예"| ID["지적장애"]
+```
+
+두 결함 가운데 하나라도 없으면 지적장애가 아니다. 다섯 살이 안 되어 검사를 할 수 없으면 전반적 발달지연을 쓴다[^s3].
 
 ## 임상적 특징[^3]
 
@@ -112,4 +125,5 @@ permalink: "/studies/abnormal-psychology/intellectual-disability/"
 [^4]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.9
 [^s1]: 에이전트 보충. JT의 사례는 두 결함과 세 영역을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR은 지적발달장애의 심각도를 개념적·사회적·실행적 영역의 적응 기능으로 경도·중등도·고도·최고도로 정한다. 슬라이드의 지능지수 구간은 DSM-IV-TR 방식이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '정의'의 두 결함과 시작 시기(p.6), '전반적 발달지연'(p.7)을 순서도로 옮겼다.
 {% endraw %}

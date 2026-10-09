@@ -18,7 +18,7 @@ prev_title: "오일러 각과 짐벌 잠금"
 next_url: "/studies/numerical-analysis/projection/"
 next_title: "평행 투영과 원근 투영"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/numerical-analysis/quaternion/"
 ---
@@ -66,6 +66,19 @@ $$\mathbf v' = q\,\mathbf v\,\bar q$$
 
 $$R_q = \begin{pmatrix}1 - 2y^2 - 2z^2 & 2xy - 2wz & 2xz + 2wy\\ 2xy + 2wz & 1 - 2x^2 - 2z^2 & 2yz - 2wx\\ 2xz - 2wy & 2yz + 2wx & 1 - 2x^2 - 2y^2\end{pmatrix}$$
 
+
+```mermaid
+flowchart LR
+    AA["축-각: 단위 축 n, 각 θ"] -->|"반각을 넣는다"| Q["단위 쿼터니언 q"]
+    E["오일러 각 α, β, γ"] -->|"q_x q_y q_z 곱"| Q
+    E -->|"R_x R_y R_z 곱"| M["3×3 회전 행렬"]
+    Q -->|"R_q 공식"| M
+    AA -->|"로드리게스 공식"| V["돌린 점 v'"]
+    Q -->|"q와 켤레로 감싸 곱하기"| V
+    M -->|"행렬 곱"| V
+```
+
+세 표현은 모두 같은 회전을 적는다. 화살표는 이 문서와 앞 두 문서가 주는 바꾸기 공식이고, 어느 길로 가도 같은 점 $$\mathbf v'$$에 닿는다[^s2].
 
 **보간.** 단위 쿼터니언은 4차원 단위 구 위의 점이다. 두 회전 사이를 보간하는 것은 구 위의 두 점 사이를 잇는 것이다. 한 경로가 정해지고, 오일러 각보다 예측 가능하고 안정적이다[^3]. 구 위를 일정한 빠르기로 잇는 방법은 [구면 선형 보간](/Hongs_Blog/studies/numerical-analysis/slerp/)이다.
 
@@ -170,4 +183,5 @@ $$q\mathbf v\bar q = q_x\big(q_y(q_z\mathbf v\bar q_z)\bar q_y\big)\bar q_x$$이
 [^2]: 같은 자료, p.26
 [^3]: 같은 자료, p.27
 [^s1]: 에이전트 보충. 예시, 단위 벡터 축-각 공식과 $$q\mathbf v\bar q$$(슬라이드는 축별 쿼터니언과 행렬만 적는다), 스스로 설명해 보기, 게임 엔진·자세 제어, 정규화, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 축-각 쿼터니언, $$q = q_xq_yq_z$$, $$R_q$$ 공식(원본 06.na06_rotation.pdf p.26~27)과 [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/)의 로드리게스 공식, [오일러 각과 짐벌 잠금](/Hongs_Blog/studies/numerical-analysis/euler-angles/)의 행렬 곱으로 그렸다.
 {% endraw %}

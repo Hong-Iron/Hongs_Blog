@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Breathing-Related Sleep Disorder", "폐쇄성 수면 무호흡 저호흡", "Obstructive Sleep Apnea Hypopnea", "폐색성 수면 무호흡증", "수면무호흡", "sleep apnea", "중추성 수면 무호흡증", "Central Sleep Apnea", "수면관련 환기저하", "Sleep-Related Hypoventilation", "양압기", "CPAP"]
 description: "잠자는 동안 숨이 막히거나 잠깐씩 멈춰서, 본인도 모르게 밤새 수십 번 깨는 장애다. 그 결과 오래 자도 개운하지 않고 낮에 졸리거나, 반대로 잠을 설친다. 가장 흔한 것은 목구멍의 기도가 좁아져 막히는 폐쇄성 수면 무호흡으로, 심하게 코를 골다 숨이 멎는 모습으로 드러난다. 체중…"
@@ -18,7 +18,7 @@ prev_title: "기면증"
 next_url: "/studies/abnormal-psychology/circadian-rhythm-sleep/"
 next_title: "일주기 리듬 수면-각성장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/breathing-related-sleep/"
 ---
@@ -61,6 +61,19 @@ permalink: "/studies/abnormal-psychology/breathing-related-sleep/"
 
 술과 수면제는 목 근육을 더 풀어 기도를 쉽게 막히게 하고, 숨이 막혔을 때 깨어나는 반응도 둔하게 만든다. 그래서 수면무호흡이 있는 사람이 잠을 못 잔다고 수면제를 먹으면 오히려 위험하다[^s3].
 
+```mermaid
+flowchart LR
+    A["잠이 들고 목 근육이 풀림"] --> B["기도가 좁아져 막힘, 코골이"]
+    B --> C["숨이 10초 넘게 멎음"]
+    C --> D["본인도 모르게 잠깐 깨어 컥 하고 숨을 쉼"]
+    D --> A
+    D --> E["밤새 되풀이, 낮 졸림과 아침 두통"]
+    M["술, 수면제"] -->|"근육을 더 풀어 막힘이 쉬워짐"| B
+    M -->|"깨는 반응이 둔해짐"| D
+```
+
+고리를 한 바퀴 돌 때마다 잠이 끊긴다. 술과 수면제는 막힘을 쉽게 만들고, 숨이 막혔을 때 깨는 반응까지 늦춘다[^s4].
+
 ## 연결
 
 - 낮 졸림이 주 증상인 다른 장애: [과다수면장애](/Hongs_Blog/studies/abnormal-psychology/hypersomnolence-disorder/). 과다수면을 진단하기 전에 호흡관련 수면장애를 먼저 배제한다.
@@ -88,4 +101,5 @@ permalink: "/studies/abnormal-psychology/breathing-related-sleep/"
 [^s1]: 에이전트 보충. HB의 사례는 폐쇄성 수면 무호흡의 전형적 모습을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 폐쇄성과 중추성의 차이(호흡 노력의 유무)와 DSM-5-TR의 수면다원검사 기준(증상이 있으면 시간당 5회 이상, 증상과 무관하게 15회 이상)은 DSM-5-TR과 수면의학의 표준 설명이다.
 [^s3]: 에이전트 보충. 양압기의 작동 원리와, 술·수면제가 무호흡을 악화시키는 이유는 수면의학의 일반적 설명이다. 원본은 "금주 및 수면제 비사용", "양압기 치료"라고만 적는다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 HB 사례와 '치료' 아래 술·수면제 설명([^s3])을 고리로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linked List", "Doubly Linked List", "이중 연결 리스트", "연결 목록", "prev", "next"]
 description: "손을 잡고 한 줄로 선 사람들처럼, 각 칸이 바로 앞과 바로 뒤 칸만 기억하는 줄이다. 가운데 한 명이 빠지면 양옆 사람이 서로 손을 잡으면 끝이라, 위치만 알면 지우기와 끼워 넣기가 한 번에 된다. 대신 \"앞에서 k번째\"를 찾으려면 맨 앞부터 k번 따라가야 한다. 파이썬 리스트는…"
@@ -44,6 +44,21 @@ permalink: "/studies/algorithms/linked-list/"
 | 되살리기(2) | next[1] = 2, prev[3] = 2 | 0 → 1 → 2 → 3 → 4 |
 
 지울 때 바꾸는 곳은 양옆 두 칸뿐이다. 지워진 칸 자신의 prev, next는 그대로 둔다. 그래서 2는 지워진 뒤에도 "내 앞은 1, 뒤는 3"을 기억한다. 되살릴 때는 이 기억대로 양옆이 다시 나를 가리키게 하면 된다.
+
+```
+처음
+  [0] <-> [1] <-> [2] <-> [3] <-> [4]
+
+2 지우기 뒤
+          +---------------+
+          |   next[1] = 3 v
+  [0] <-> [1]            [3] <-> [4]
+          ^   prev[3] = 1 |
+          +---------------+
+               [2]   prev[2] = 1, next[2] = 3 (그대로)
+```
+
+2를 지운 뒤 1과 3은 서로를 가리키고, 2는 줄에서 빠졌지만 1과 3을 가리키는 기억은 남아 있다[^s1].
 
 되살리는 순서는 **지운 역순**이어야 한다. 가장 최근에 지운 것부터 되살리니, 지운 칸 번호를 [스택](/Hongs_Blog/studies/algorithms/stack/)에 쌓아 두고 꺼내 쓴다. 순서를 어기면 줄이 망가진다(확인 문제 C2).
 
@@ -131,4 +146,5 @@ def restore():
 
 [^1]: Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.2절 "Linked lists": 이중 연결 리스트의 삽입·삭제가 O(1)이고 탐색이 O(n)이다.
 [^2]: CPython 소스 `Modules/_collectionsmodule.c`: deque의 데이터를 고정 길이 블록의 이중 연결 리스트에 담는다[확인필요: 블록 크기 등 세부는 버전마다 다를 수 있다].
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시 표의 '처음'과 '2 지우기' 줄(next[1] = 3, prev[3] = 1)과 '지워진 칸 자신의 prev, next는 그대로 둔다'는 설명을 포인터 그림으로 옮겼다.
 {% endraw %}

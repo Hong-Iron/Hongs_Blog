@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Defense Mechanisms", "방어 기제", "억압", "repression", "부인", "denial", "투사", "projection", "고립", "isolation", "주지화", "intellectualization", "취소", "undoing", "반동형성", "reaction formation", "합리화", "rationalization", "대치", "전치", "displacement", "퇴행", "regression", "승화", "sublimation"]
 description: "마음속 갈등으로 불안해질 때, 자아가 본인도 모르게 쓰는 불안 줄이기 기술이다. 불편한 욕구를 잊거나, 남 탓으로 돌리거나, 그럴듯한 이유를 붙이는 식이다. 누구나 쓰고 잠깐은 도움이 되지만, 현실을 크게 비틀거나 한 가지만 고집하면 증상이 된다. 가장 건강한 방어는 욕구를 사회가…"
@@ -18,7 +18,7 @@ prev_title: "정신분석적 입장"
 next_url: "/studies/abnormal-psychology/behavioral-perspective/"
 next_title: "행동주의적 입장"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/defense-mechanisms/"
 ---
@@ -69,6 +69,22 @@ permalink: "/studies/abnormal-psychology/defense-mechanisms/"
 ### 동치인 다른 정리 방식
 
 방어기제를 성숙도에 따라 나누는 분류도 있다(Vaillant)[^s3]. 투사나 현실 부인은 미숙한 방어로, 억압·반동형성·대치·주지화는 신경증적 방어로, 승화는 성숙한 방어로 본다. 정신분석의 원인론이 말하는 "미숙한 방어기제"가 이 분류의 아래쪽이다[^3].
+
+```mermaid
+flowchart TD
+  R["성숙도에 따른 방어기제 분류"] --> I["미숙한 방어"]
+  R --> N["신경증적 방어"]
+  R --> M["성숙한 방어"]
+  I --> I1["투사"]
+  I --> I2["현실 부인"]
+  N --> N1["억압"]
+  N --> N2["반동형성"]
+  N --> N3["대치"]
+  N --> N4["주지화"]
+  M --> M1["승화"]
+```
+
+세 무리는 미숙, 신경증적, 성숙 순서로 놓였다. 정신분석이 이상행동의 원인으로 꼽는 "미숙한 방어기제"는 맨 앞 무리다[^s5].
 
 ### 방어기제가 아닌 것
 
@@ -179,4 +195,5 @@ permalink: "/studies/abnormal-psychology/defense-mechanisms/"
 [^s2]: 에이전트 보충. 정의 표의 예 열은 슬라이드에 없다. 이상심리학 교재에서 흔히 드는 전형적인 예를 골랐다.
 [^s3]: 에이전트 보충. G. E. Vaillant는 방어기제를 성숙도에 따라 위계로 나누었고, 승화를 성숙한 방어로, 투사를 미숙한 방어로 분류했다. 여기서는 슬라이드의 11가지 가운데 분류가 분명한 것만 적었다.
 [^s4]: 에이전트 보충. 방어기제(대부분 무의식적·자동적)와 대처(의식적·의도적)의 구분은 스트레스와 대처 연구의 표준 설명이다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '동치인 다른 정리 방식'의 성숙도 분류([^s3]의 Vaillant 분류)를 나무 모양으로 그렸다.
 {% endraw %}

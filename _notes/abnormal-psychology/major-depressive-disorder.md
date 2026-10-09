@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Major Depressive Disorder", "MDD", "우울증", "주요우울 삽화", "major depressive episode", "MDE", "심리적 독감", "항우울제", "antidepressant", "SSRI", "SNRI", "TCA", "삼환계 항우울제", "대인관계치료", "IPT", "Interpersonal Psychotherapy", "정신운동성 초조", "정신운동성 지체"]
 description: "거의 매일, 두 주 넘게, 가라앉은 기분이나 무엇에도 흥미가 없는 상태가 이어지고, 잠·식욕·기력·생각·자기 평가까지 함께 무너지는 병이다. 가장 흔한 정신장애라서 \"마음의 감기(심리적 독감)\"라고도 하지만, 감기와 달리 한 번 겪으면 다시 오기 쉽고 자살 위험이 크다. 약과 심리…"
@@ -18,7 +18,7 @@ prev_title: "기분장애"
 next_url: "/studies/abnormal-psychology/persistent-depressive-disorder/"
 next_title: "지속성 우울장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/major-depressive-disorder/"
 ---
@@ -106,6 +106,15 @@ DSM-5-TR은 물질이나 다른 의학적 상태 때문이 아닐 것, 조현병
 - 자살 행동의 가능성이 높고, 가장 위험한 요인은 과거의 자살 시도력이다.
 - 좋은 예후: 스트레스 생활사건이 적음, 지지체계, 첫 삽화의 빠른 회복, 높은 자존감. 나쁜 예후: 이른 발병, 기존의 성격장애, 이전의 우울 삽화.
 - 병전 기능으로 완전히 돌아오기도 하지만, 만성화되고 재발할수록 완전한 회복이 어려워진다. 그래서 조기 진단과 치료가 중요하다.
+
+```mermaid
+flowchart LR
+  E1["첫 삽화"] -- "50~60%" --> E2["두 번째 삽화"]
+  E2 -- "70%" --> E3["세 번째 삽화"]
+  E3 -- "90%" --> E4["네 번째 삽화"]
+```
+
+화살표의 숫자는 앞 삽화를 겪은 사람 가운데 다음 삽화를 겪는 비율이다. 삽화를 겪을수록 숫자가 커진다[^s3].
 
 ## 원인
 
@@ -214,4 +223,5 @@ DSM-5-TR은 물질이나 다른 의학적 상태 때문이 아닐 것, 조현병
 [^8]: 4-1학기/이상 심리학/1.수업자료/03.양극성장애와 우울장애.pdf, p.35
 [^s1]: 에이전트 보충. AJ와 해당·비해당 예는 진단기준을 적용해 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 주요우울장애 진단기준 C~E의 요약이다. 슬라이드는 "at least one MDE, no mania history"로 줄여 적었다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '경과와 예후'의 재발 수치(슬라이드 p.11)를 그렸다.
 {% endraw %}

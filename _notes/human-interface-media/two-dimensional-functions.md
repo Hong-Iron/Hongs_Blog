@@ -18,7 +18,7 @@ prev_title: "해상도와 공간 주파수"
 next_url: "/studies/human-interface-media/shape-similarity/"
 next_title: "모양의 비슷함 재기"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/human-interface-media/two-dimensional-functions/"
 ---
@@ -68,6 +68,18 @@ $$x$$가 판 안($$\vert x\vert  < a/2$$)이고 $$y$$도 판 안이면 $$1 \time
 
 
 여기서 $$\delta$$는 [단위 임펄스](/Hongs_Blog/studies/signals-and-systems/unit-impulse-step/)다. 넓이가 1이고 한 점에 몰린 바늘로 생각하면 된다. 2차원 델타 $$\delta(x)\delta(y)$$는 두 칼날 $$\delta(x)$$와 $$\delta(y)$$가 겹치는 원점에만 남은 바늘이다. 그리드의 앞에 붙은 $$\vert a\vert \vert b\vert $$는 $$\delta(x/a) = \vert a\vert \delta(x)$$라는 성질에서 나온다[^s2].
+
+```mermaid
+flowchart LR
+  SX["델타 시트 δ(x)"] -- "곱하기" --> D["2차원 델타 δ(x, y)"]
+  SY["델타 시트 δ(y)"] -- "곱하기" --> D
+  D -- "(x0, y0)로 옮기기" --> DS["옮긴 델타"]
+  DS -- "간격 a, b로 되풀이" --> GD["그리드"]
+  SY -- "y0로 옮기기" --> BL["블레이드 δ(y - y0)"]
+  BL -- "간격 b로 되풀이" --> GR["그릴"]
+```
+
+위 줄은 바늘 하나에서 바늘 판으로, 아래 줄은 칼날 하나에서 칼날 여러 개로 간다. 두 줄 모두 옮기기와 되풀이만으로 만들어진다[^s5].
 
 사각 함수의 경계 부등호는 슬라이드마다 다르다. 강의 5는 $$\vert x\vert  \le a$$로 반폭을 $$a$$로 쓰고, 강의 6은 $$\mathrm{rect}(x/a)$$로 전체 폭을 $$a$$로 쓰며 경계값을 1/2로 정한다[^2][^3]. 같은 기호라도 $$a$$가 반폭인지 전체 폭인지 먼저 확인한다.
 
@@ -148,4 +160,5 @@ $$ f_p(\theta, r) \equiv f(x, y), \qquad r = \sqrt{x^2 + y^2}, \qquad \theta = \
 [^s2]: 에이전트 보충. 2차원 델타를 두 칼날이 겹친 바늘로 보는 설명과 $$\delta(x/a) = \vert a\vert \delta(x)$$는 원본에 없다. 신호 처리 교재의 표준 성질이다.
 [^s3]: 에이전트 보충. atan2 이야기는 원본에 없다. 검증 코드로 두 점의 각을 비교했다.
 [^s4]: 에이전트 보충. 분리 가능한 커널의 계산량 $$k^2$$ 대 $$2k$$는 영상 처리의 표준 내용이다. 카드 C2·C3은 원본 범위를 넘는다.
+[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의의 기본 함수 표와 강의 5 p.15, 강의 6 p.18의 2차원 임펄스(delta, blade, grill, grid)를 근거로 그렸다.
 {% endraw %}

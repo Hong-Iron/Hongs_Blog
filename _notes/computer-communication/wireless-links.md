@@ -18,7 +18,7 @@ prev_title: "가입자 선로"
 next_url: "/studies/computer-communication/cellular-networks/"
 next_title: "이동통신"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/computer-communication/wireless-links/"
 ---
@@ -63,6 +63,24 @@ permalink: "/studies/computer-communication/wireless-links/"
 | | 다중 경로 문제 |
 
 신호는 아날로그를 주로 쓴다. 디지털 신호는 쓰기 어렵다[^2].
+
+무선 링크를 쓰임새로 나누면 다음과 같다.
+
+```mermaid
+flowchart TD
+  W["무선 링크"] --> F["고정 무선통신"]
+  W --> SR["단거리 무선통신"]
+  W --> CE["이동통신"]
+  W --> SA["위성통신"]
+  F --> F1["무선 고속 전용 링크"]
+  F --> F2["무선 가입자망"]
+  SR --> S1["무선 LAN (Wi-Fi)"]
+  SR --> S2["Bluetooth"]
+  SR --> S3["ZigBee"]
+  SR --> S4["적외선 통신"]
+```
+
+고정 무선통신과 단거리 무선통신은 이 문서에서, 이동통신과 위성통신은 따로 다룬다[^s3].
 
 **고정 무선통신.** 무선의 두 번째 장점(즉시 사용)을 살린다[^3][^1].
 - 무선 고속 전용 링크: 본사와 지점 사이에 국경이 있어 선을 깔기 어려우면, 두 건물 사이에 무선 링크를 연다.
@@ -114,4 +132,5 @@ permalink: "/studies/computer-communication/wireless-links/"
 [^4]: 4-1학기/pasted_images/Pasted image 20260927204743.png — 슬라이드 "단거리 무선통신(Short Range)"
 [^s1]: 에이전트 보충. 카페 예, 300 m와 1 μs, 비트 폭 표, 기지국당 150 Mbit/s와 면적은 원본에 없다. 슬라이드의 수치(72°, 30 Mbit/s, 8 km)와 비트 폭 = 1 ÷ 전송률(전송 속도와 대역폭 문서)에서 나온 계산이다.
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. 반사파의 세기 60%와 비트열은 설명용 가정이다. [34_wireless-links_plot.py](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_plot/)로 그렸고, 반사파 지연 1 μs가 0.1, 1, 10 Mbps에서 비트 0.1개, 1개, 10개 폭이라는 것과 0.1 Mbps에서는 칸 가운데의 부호가 보낸 비트와 모두 같다는 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 '고정 무선통신'·'단거리 무선통신' 절(슬라이드 "고정 무선통신(Wireless Fixed links)", "단거리 무선통신(Short Range)")과 '연결' 절의 이동통신·위성통신을 한 그림에 모았다. 위성통신 슬라이드도 같은 "무선 링크" 단원 아래에 있다.
 {% endraw %}

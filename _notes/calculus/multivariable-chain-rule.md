@@ -18,7 +18,7 @@ prev_title: "그래디언트와 방향도함수"
 next_url: "/studies/calculus/backprop-bridge/"
 next_title: "연쇄 법칙 ↔ 역전파"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/multivariable-chain-rule/"
 ---
@@ -38,6 +38,16 @@ $$z = uv$$이고 $$u = x^2$$, $$v = \sin x$$라 하자. $$x$$가 $$z$$에 영향
 - $$u$$를 거치는 길: $$\frac{\partial z}{\partial u}\frac{du}{dx} = v \cdot 2x$$($$\partial$$는 다른 변수는 그대로 두고 한 변수로만 미분한다는 기호).
 - $$v$$를 거치는 길: $$\frac{\partial z}{\partial v}\frac{dv}{dx} = u \cdot \cos x$$.
 - 합: $$\frac{dz}{dx} = 2x\sin x + x^2\cos x$$. 곱의 미분 $$(x^2\sin x)'$$과 같다.
+
+```mermaid
+flowchart LR
+    x["x"] -- "du/dx = 2x" --> u["u = x²"]
+    x -- "dv/dx = cos x" --> v["v = sin x"]
+    u -- "∂z/∂u = v" --> z["z = uv"]
+    v -- "∂z/∂v = u" --> z
+```
+
+$$x$$에서 $$z$$로 가는 길이 두 갈래다. 길마다 화살표 위의 식을 곱하고, 두 길의 곱을 더하면 위의 합이 된다[^s3].
 
 두 길을 행과 열로 정리하면 $$\begin{pmatrix}\frac{\partial z}{\partial u} & \frac{\partial z}{\partial v}\end{pmatrix}\begin{pmatrix}\frac{du}{dx}\\ \frac{dv}{dx}\end{pmatrix}$$, 곧 행렬 곱이다. 이 행과 열이 아래 정리의 야코비 행렬이다.
 
@@ -204,4 +214,5 @@ $$\mathbf{r}_2$$는 $$\Vert \mathbf{k}\Vert $$에 비해 작다는 것만 알려
 [^1]: OpenStax, *Calculus Volume 3*, 4.5절 "The Chain Rule"(여러 변수의 연쇄 법칙, 나무 그림으로 길 세기). Strang, *Introduction to Linear Algebra* 5판, 8.1절(선형 변환의 합성과 행렬 곱).
 [^s1]: 에이전트 보충. 야코비 행렬을 이용한 역기구학은 로봇공학 교재(예: Craig, *Introduction to Robotics*)의 표준 내용이다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [21_multivariable-chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_plot/)로 그렸다. 사각형은 $$dr = 0.4$$, $$d\theta = 0.3$$으로 잘 보이게 크게 잡았다. $$\det J = 2$$, 평행사변형 넓이 0.24, 실제 조각의 넓이 $$\int\!\!\int r\,dr\,d\theta = 0.24$$(신발끈 공식으로도)를 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 두 길을 그래프로 옮겼다.
 {% endraw %}

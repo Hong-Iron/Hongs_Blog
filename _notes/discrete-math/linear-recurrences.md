@@ -18,7 +18,7 @@ prev_title: "비둘기집 원리"
 next_url: "/studies/discrete-math/generating-functions/"
 next_title: "생성함수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/linear-recurrences/"
 ---
@@ -143,6 +143,21 @@ $$r \ne 0$$이어야 한다. $$c_k \ne 0$$이면 0은 특성근이 아니므로 
 ## 활용
 
 - **재귀 알고리즘의 비용.** 크기를 1 줄이며 두 번 호출하는 재귀는 $$T_n = 2T_{n-1} + c$$로 $$2^n$$에 비례한다. 피보나치를 정의 그대로 재귀하면 호출 수가 $$2F_{n+1} - 1$$로 $$1.618^n$$배씩 는다.
+
+```mermaid
+flowchart TD
+  f4["fib 4"] --> f3["fib 3"]
+  f4 --> f2a["fib 2"]
+  f3 --> f2b["fib 2"]
+  f3 --> f1a["fib 1"]
+  f2a --> f1b["fib 1"]
+  f2a --> f0a["fib 0"]
+  f2b --> f1c["fib 1"]
+  f2b --> f0b["fib 0"]
+```
+
+fib 4를 정의 그대로 부르면 호출이 9번이다. $$2F_{n+1} - 1$$에 $$n = 4$$를 넣은 $$2 \cdot 5 - 1$$과 같다. fib 2를 두 번 따로 계산하듯 같은 값을 다시 계산하는 가지가 생기고, $$n$$이 커지면 이런 가지가 지수적으로 늘어난다[^s2].
+
 - **동적 계획법.** 2×$$n$$ 칸을 도미노로 덮는 수, 이웃한 1이 없는 이진 문자열의 수는 맨 끝을 보고 경우를 나누면 피보나치 점화식이 된다. 앞에서부터 표를 채우면 $$n$$번에 계산한다.
 - **빠른 계산.** $$\varphi^n$$의 성질이나 행렬 거듭제곱을 쓰면 $$F_n$$을 $$O(\log n)$$번의 곱셈으로 구한다.
 - 알고리즘에서: 상태, 점화식, 시작값, 계산 순서 네 가지를 정해 표를 채우는 방법은 [동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/)에 있다. 1을 터는 집으로 보면, 길이 $$i$$이고 이웃한 1이 없는 문자열의 수 $$a_i = a_{i-1} + a_{i-2}$$에서 덧셈을 max로 바꾸고 $$a_{i-2}$$ 쪽에 $$i$$번째 집의 돈을 더한 것이 [도둑질](/Hongs_Blog/studies/algorithms/pg42897/)의 점화식이다. 층이 $$k$$개인 포화 이진 트리의 칸 수는 $$s_k = 2s_{k-1} + 1$$로 하노이와 같은 식이라 $$2^k - 1$$이다([표현 가능한 이진트리](/Hongs_Blog/studies/algorithms/pg150367/)). 그 밖에 [동적 계획법 예제 사다리](/Hongs_Blog/studies/algorithms/dp-ladder/)에서도 쓴다.
@@ -198,4 +213,5 @@ $$r \ne 0$$이어야 한다. $$c_k \ne 0$$이면 0은 특성근이 아니므로 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 22장 "Recurrences"(하노이의 탑, 선형 점화식). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장(선형 점화식의 풀이).
 [^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [21_linear-recurrences_plot.py](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_plot/)로 그렸고, $$n \le 30$$에서 $$F_n = \operatorname{round}(\varphi^n/\sqrt5)$$와 $$T_n = 2^n - 1$$, 비 $$F_{n+1}/F_n$$이 $$\varphi$$ 위아래를 번갈아 오가는 것, $$\vert F_{16}/F_{15} - \varphi\vert  < 10^{-5}$$을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '활용'의 순진한 피보나치 재귀(호출 수 $$2F_{n+1} - 1$$)를 $$n = 4$$의 호출 나무로 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "Apriori 알고리즘"
 next_url: "/studies/data-science/fp-growth/"
 next_title: "FP-Growth"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/data-science/eclat/"
 ---
@@ -95,6 +95,20 @@ A로 시작하는 가지를 깊이 우선으로 따라간다(최소 지지 개�
 
 A 가지가 끝나면 B로 시작하는 가지로 넘어간다.
 
+```mermaid
+flowchart TD
+    A["A: 6"] --> AB["AB: 4"]
+    A --> AC["AC: 4"]
+    A --> AD["AD: 1, 버림"]
+    A --> AE["AE: 2"]
+    AB --> ABC["ABC: 2"]
+    AB --> ABE["ABE: 2"]
+    ABC --> ABCE["ABCE: 1, 버림"]
+    AC --> ACE["ACE: 1, 버림"]
+```
+
+숫자는 TID 목록의 길이, 곧 지지 개수다. ECLAT은 AB 아래를 끝까지 내려간 뒤에야 AC로 돌아온다. 같은 부모 아래의 형제끼리만 교집합을 구한다[^s2].
+
 ### 복잡도
 
 교집합 한 번은 두 목록의 길이에 비례한다(정렬된 목록이면 한 번에 훑어 겹친다). TID 목록의 길이 합은 거래 속 항목 등장 수와 같아서, 흔한 항목이 많은 큰 DB에서는 목록이 길어진다[^s1].
@@ -149,4 +163,5 @@ A 가지가 끝나면 B로 시작하는 가지로 넘어간다.
 [^2]: 같은 자료, p.28
 [^3]: 같은 자료, p.39 (요약 표: DB 1번 훑기, 수직 형식, 후보 생성 있음, TID 집합 교집합, DFS, 메모리 많음)
 [^s1]: 에이전트 보충. 의사코드, 교집합이 지지도가 되는 이유, 실행 추적 표, 복잡도, 비트열 저장, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다(Zaki, "Scalable Algorithms for Association Mining", IEEE TKDE 2000).
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서의 `실행 추적` 표(수직 표는 원본 3-1 p.28)를 그대로 나무로 옮겼다.
 {% endraw %}

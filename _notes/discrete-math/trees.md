@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Tree", "트리", "나무", "루트 트리", "rooted tree", "이진 트리", "binary tree", "잎", "leaf", "높이", "height", "깊이", "depth", "신장 트리", "spanning tree", "포리스트", "forest", "케일리 공식", "Cayley's formula"]
 description: "트리는 모두 이어져 있으면서 빙 돌아오는 고리(사이클)가 하나도 없는 그래프다. 이어져 있기에 딱 필요한 만큼의 간선만 있어, 간선은 늘 정점보다 하나 적고 두 정점 사이의 길은 하나뿐이다. 그래서 폴더 구조, 조직도, 탐색 트리처럼 \"어디서 어디로 가는 길이 하나\"인 구조를 모두…"
@@ -18,7 +18,7 @@ prev_title: "오일러 경로와 해밀턴 경로"
 next_url: "/studies/discrete-math/bipartite-coloring/"
 next_title: "이분 그래프와 그래프 색칠"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/trees/"
 ---
@@ -137,6 +137,17 @@ alice  bob   bin
 2. *크기:* 정점이 $$n$$개면 신장 트리의 간선은 $$n - 1$$개다. 간선 $$m$$개인 연결 그래프에서 $$m - n + 1$$개를 빼야 한다.
 3. *개수:* 완전 그래프 $$K_n$$의 신장 트리(번호 붙은 정점 $$n$$개 위의 트리)는 $$n^{n-2}$$개다(케일리 공식)[^2]. $$n = 4$$면 16개, $$n = 6$$이면 1296개다.
 
+```mermaid
+flowchart LR
+  v1(("1")) --- v2(("2"))
+  v2 --- v3(("3"))
+  v3 --- v4(("4"))
+  v4 -.- v1
+  v1 -.- v3
+```
+
+정점 4개, 간선 5개인 연결 그래프다. 점선 두 개를 빼면 실선 3개가 신장 트리로 남는다. 뺀 간선 수가 $$m - n + 1 = 5 - 4 + 1 = 2$$다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$n \le 7$$의 무작위 그래프 수천 개에서 여섯 동치 조건이 모두 같은 판정, 잎이 둘 이상, 폴더 예시, 해당하지 않는 예(삼각형 + 점), 이진 트리 높이 한계, 케일리 공식($$n \le 6$$, 부분 그래프 전수), 신장 트리의 간선 수, 카드의 값 — [35_trees_verify.py](/Hongs_Blog/studies/discrete-math/code/35_trees_verify/)</div>
 
@@ -203,4 +214,5 @@ alice  bob   bin
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 12장 "Simple Graphs"(트리의 성질, 신장 트리). Rosen, *Discrete Mathematics and Its Applications* 7판, 11장(트리, 루트 트리, $$m$$진 트리의 높이).
 [^2]: 케일리 공식의 증명은 Aigner·Ziegler, *Proofs from THE BOOK*, "Cayley's formula for the number of trees" 장에 네 가지가 실려 있다. 이 문서에서는 $$n \le 6$$에서 전수로 확인만 했다.
 [^s1]: 에이전트 보충. 신장 트리 프로토콜은 IEEE 802.1D 표준의 내용이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제' 1·2단계의 신장 트리 만들기(사이클의 간선을 빼기)를 작은 그래프로 그렸다.
 {% endraw %}

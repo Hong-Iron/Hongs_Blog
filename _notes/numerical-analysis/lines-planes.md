@@ -18,7 +18,7 @@ prev_title: "외적"
 next_url: "/studies/numerical-analysis/transformation-classes/"
 next_title: "기하 변환의 종류"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/numerical-analysis/lines-planes/"
 ---
@@ -98,6 +98,22 @@ $$u = -\frac{(\mathbf b - \mathbf x_0)\cdot\mathbf n}{\mathbf a\cdot\mathbf n}$$
 
 선분이면 구한 $$u$$가 $$[0, 1]$$ 안에 있는지도 확인한다. 예: 직선 $$\mathbf x = (1, 1, 1)u$$와 평면 $$z = 2$$는 $$u = 2$$, 점 $$(2, 2, 2)$$에서 만난다[^s1].
 
+```mermaid
+flowchart TD
+    A["직선 방향 a, 출발점 b와 평면 x0, n"] --> B{"a·n = 0 인가?"}
+    B -->|"아니오"| C["u = -(b - x0)·n / (a·n)"]
+    C --> D{"선분인가?"}
+    D -->|"아니오"| E["한 점에서 만난다"]
+    D -->|"예"| F{"0 ≤ u ≤ 1 인가?"}
+    F -->|"예"| E
+    F -->|"아니오"| G["선분은 평면에 닿지 않는다"]
+    B -->|"예"| H{"(b - x0)·n = 0 인가?"}
+    H -->|"예"| I["직선이 평면 안에 있다"]
+    H -->|"아니오"| J["평행해서 만나지 않는다"]
+```
+
+먼저 $$\mathbf a\cdot\mathbf n$$으로 갈래를 나누고, 선분일 때만 $$u$$의 범위를 한 번 더 본다. 왼쪽 갈래만 교점을 계산한다[^s2].
+
 ## 활용
 
 - 그래픽스의 광선 추적은 화면의 각 픽셀에서 광선(직선)을 쏘아 장면의 평면·삼각형과 만나는 $$u$$ 중 가장 작은 양수를 찾는다. 위의 교점 공식이 그 첫 단계다[^s1].
@@ -160,4 +176,5 @@ $$u = -\frac{(\mathbf b - \mathbf x_0)\cdot\mathbf n}{\mathbf a\cdot\mathbf n}$$
 [^15]: 같은 자료, p.28
 [^16]: 같은 자료, p.40
 [^s1]: 에이전트 보충. $$d = 0$$일 때와 방향 성분이 0일 때 실패한다는 조건, 교점 예, 광선 추적과 흔한 실수, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '직선과 평면이 만나는 점'의 세 경우와 선분 조건(원본 02.na02_vector.pdf p.40)으로 그렸다.
 {% endraw %}

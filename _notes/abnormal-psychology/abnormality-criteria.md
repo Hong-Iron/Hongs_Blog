@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Criteria of Abnormality", "이상행동의 판별 기준", "주관적 불편감", "distress", "discomfort", "통계적 일탈", "statistical deviation", "규범적 일탈", "사회문화적 기준", "적응 기능의 저하", "dysfunction", "disability", "3D", "4D", "절단점", "cutoff"]
 description: "무엇이 이상인지 가르는 잣대는 넷이다. 본인이 괴로운가, 통계적으로 드문가, 사회의 규범에서 벗어나는가, 생활이 제대로 돌아가지 않는가. 넷 모두 그럴듯하지만, 어느 하나만 쓰면 반드시 틀리는 사례가 생긴다. 그래서 단 하나의 절대 기준 없이 여러 잣대를 함께 보고 판단한다."
@@ -18,7 +18,7 @@ prev_title: "이상심리학"
 next_url: "/studies/abnormal-psychology/statistical-deviation--normal-distribution/"
 next_title: "통계적 일탈 기준 ↔ 정규분포"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/abnormality-criteria/"
 ---
@@ -64,6 +64,27 @@ permalink: "/studies/abnormal-psychology/abnormality-criteria/"
 
 - **셋이냐 넷이냐:** p.10의 Deviation 하나를 p.16은 "통계적 평균의 일탈"과 "문화적 규범의 일탈" 둘로 나눴다. 내용은 같고 나누는 굵기만 다르다[^4].
 - **위험(danger)을 더한 4D:** 다른 교재는 일탈(deviance), 고통(distress), 기능장애(dysfunction)에 자신이나 남에게 위험한가(danger)를 더해 넷으로 정리한다[^s2]. 이 과목의 네 기준에는 위험이 따로 없다.
+
+```mermaid
+flowchart LR
+  subgraph T["p.10의 세 기준"]
+    DI["고통 Distress"]
+    DE["일탈 Deviation"]
+    DY["기능 저하 Dysfunction"]
+  end
+  subgraph F["p.16의 네 기준"]
+    F1["주관적 불편감과 고통"]
+    F2["통계적 평균의 일탈"]
+    F3["문화적 규범의 일탈"]
+    F4["적응 기능의 저하와 손상"]
+  end
+  DI --> F1
+  DE --> F2
+  DE --> F3
+  DY --> F4
+```
+
+두 정리는 일탈 하나가 통계와 문화 둘로 갈라진 것만 다르다. 고통과 기능 저하는 그대로 하나씩 이어진다[^s4].
 
 ### 설계 이유
 
@@ -177,4 +198,5 @@ permalink: "/studies/abnormal-psychology/abnormality-criteria/"
 [^s1]: 에이전트 보충. C, D, E, F, G의 사례와 판단 표는 슬라이드의 네 기준을 가상 사례에 적용한 것이다. 표의 판단은 설명용이고 진단이 아니다.
 [^s2]: 에이전트 보충. 위험(danger)을 넣은 "4D"는 Comer의 이상심리학 교재가 쓰는 정리다.
 [^s3]: 에이전트 보충. 미국정신의학회는 1973년 동성애를 DSM-II의 장애 목록에서 삭제했다. 널리 알려진 역사적 사실이다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '동치인 다른 정리 방식'의 첫 항목(슬라이드 p.10의 세 기준, p.16의 요약 그림)을 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "과적합과 교차검증"
 next_url: "/studies/probability-statistics/entropy/"
 next_title: "엔트로피"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/pca/"
 ---
@@ -55,6 +55,22 @@ permalink: "/studies/probability-statistics/pca/"
 4. *투영:* 앞의 $$k$$개 고유벡터로 점수 $$\tilde X V_k$$를 구한다. **설명된 분산 비율**은 $$\frac{\lambda_1 + \cdots + \lambda_k}{\lambda_1 + \cdots + \lambda_d}$$.
 
 실무에서는 $$\Sigma$$를 만들지 않고 $$\tilde X$$의 [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/) $$\tilde X = U S V^\top$$로 바로 구한다. 오른쪽 특이벡터가 주성분 방향이고 $$\lambda_i = \frac{s_i^2}{n}$$이다. $$\tilde X^\top\tilde X$$를 만들면 조건수가 제곱으로 나빠지기 때문이다[^1].
+
+```mermaid
+flowchart TD
+    X["자료 행렬 X, n × d"] --> C["열마다 평균 빼기"]
+    C --> Q{"변수 단위가 서로 다른가"}
+    Q -->|"예"| S["열마다 표준편차로도 나누기"]
+    Q -->|"아니오"| K{"계산 방법"}
+    S --> K
+    K -->|"교과서식"| E["공분산 행렬 Σ를 만들어 고유분해"]
+    K -->|"실무"| V["X̃의 특잇값 분해"]
+    E --> P["앞의 k개 방향으로 투영해 점수 구하기"]
+    V --> P
+    P --> R["설명된 분산 비율 확인"]
+```
+
+위쪽 갈림길에서 표준화 여부를 정하고, 아래쪽 두 계산 길 중 하나로 같은 주성분에 닿는다.[^s2]
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">첫 주성분은 분산이 최대인 방향이다</div>
@@ -204,4 +220,5 @@ $$\frac1n\sum(\mathbf{x}_i^\top\mathbf{v})^2$$는 분산이 아니라 원점에�
 [^d4]: 같은 자료, p.17 (군집화를 위한 PCA의 장단점)
 [^sd1]: 에이전트 보충. 카드 C5의 예는 원본에 없다. 36_pca_verify.py로 확인했다.
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [36_pca_plot.py](/Hongs_Blog/studies/probability-statistics/code/36_pca_plot/)로 그렸고, 그림에 쓴 값(고윳값 5.56과 1.44, 각도별 분산의 최대·최소, 설명된 분산 비율 0.795)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의 절의 절차 1~4단계와 특잇값 분해 문단을 그렸다.
 {% endraw %}

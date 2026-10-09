@@ -18,7 +18,7 @@ prev_title: "베르누이 시행과 이항분포"
 next_url: "/studies/probability-statistics/poisson/"
 next_title: "포아송 분포"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/geometric-distribution/"
 ---
@@ -94,6 +94,24 @@ $$P(X = k) = (1 - p)^{k-1}p\quad(k = 1, 2, \dots),\qquad \mathbb{E}[X] = \frac1p
 2. *선형성:* 전체 개수는 $$T_0 + T_1 + \cdots + T_{n-1}$$이라 [기댓값의 선형성](/Hongs_Blog/studies/probability-statistics/expectation/)으로 $$\sum_{i=0}^{n-1}\frac{n}{n - i} = n\left(1 + \frac12 + \cdots + \frac1n\right)$$($$\sum$$은 차례로 모두 더한다는 기호).
 3. *값:* $$n = 10$$이면 약 29.3개. 종류 수의 세 배 가까이 사야 한다. 마지막 몇 종류가 오래 걸리기 때문이다($$T_9$$만 평균 10개).
 
+```mermaid
+stateDiagram-v2
+    direction LR
+    state "0종" as s0
+    state "1종" as s1
+    state "i종" as si
+    state "i+1종" as sj
+    state "n종 모두" as sn
+    s0 --> s1: 1
+    s1 --> s1: 1/n
+    s1 --> si: 몇 칸 지나
+    si --> si: i/n
+    si --> sj: (n-i)/n
+    sj --> sn: 몇 칸 지나
+```
+
+$$i$$종을 가진 동안은 과자 하나마다 확률 $$\frac{n-i}{n}$$로 다음 칸에 가고, 아니면 제자리 고리를 돈다. 한 칸을 넘는 데 드는 개수 $$T_i$$가 기하분포인 이유다. 오른쪽으로 갈수록 제자리 고리의 확률이 커져 오래 머문다.[^s3]
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: PMF의 합·평균·분산과 두 규약(네 가지 $$p$$), 무기억성(분수로 정확히, 모의실험 10만 회), 주사위의 값, 쿠폰 수집 29.29(모의실험 2만 회), 재전송 평균, 균일 해싱의 탐사 수(모의실험) — [11_geometric-distribution_verify.py](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_verify/)</div>
 
@@ -153,4 +171,5 @@ $$P(X = k) = (1 - p)^{k-1}p\quad(k = 1, 2, \dots),\qquad \mathbb{E}[X] = \frac1p
 [^2]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 11.4절 "Open addressing"(정리 11.6, 실패한 탐색의 기대 탐사 수 $$\frac{1}{1 - \alpha}$$ 이하).
 [^s1]: 에이전트 보충. SciPy의 `scipy.stats.geom`은 PMF를 $$(1-p)^{k-1}p$$($$k \ge 1$$)로 정의해 시행 수 규약을 쓴다(SciPy 문서). 두 규약의 평균과 분산은 11_geometric-distribution_verify.py로 확인했다.
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [11_geometric-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_plot/)로 그렸고, 그림에 쓴 값(평균 6, $$\left(\frac56\right)^6 = 0.335$$)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예제(쿠폰 수집)의 1단계를 상태 전이 그림으로 옮겼다.
 {% endraw %}

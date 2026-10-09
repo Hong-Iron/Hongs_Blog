@@ -46,6 +46,10 @@ permalink: "/studies/human-interface-media/binocular-disparity/"
 
 가까운 곳에서는 수십 cm 차이가 10° 넘게 벌어지고, 먼 곳에서는 1 m 차이가 0.03°로 거의 사라진다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig2.svg" alt="그림" loading="lazy">
+
+두 눈에서 한 점으로 그은 두 시선이 그 점에서 각을 이룬다. 점이 가까울수록 각이 벌어지고, 두 점의 각 차이가 시차다. 그림은 보기 쉽게 두 눈 사이를 거리에 비해 크게 그렸다[^s7].
+
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
@@ -145,4 +149,5 @@ $$
 [^s4]: 에이전트 보충. 한 눈 깊이 단서(단안 단서)는 표준 지각 교재의 내용이며 슬라이드에는 없다.
 [^s5]: 에이전트 보충. 사람 시야의 대표값: 한 눈 수평 시야는 귀 쪽 약 100°, 코 쪽 약 60°(안과 시야 검사의 표준값), 두 눈을 뜬 전체 수평 시야는 약 190°(IEC 국제전기기술용어 IEV의 field of view 정의), 겹치는 양안 시야는 약 120°. 그림 원래 출처는 찾지 못했다.
 [^s6]: 에이전트 보충. 그림 1장은 원본에 없다. [21_binocular-disparity_plot.py](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/)로 그렸고, 그림에 쓴 값($$B = 6.5$$ cm에서 30 cm 대 3 m 시차 11.12°, 10 m 대 11 m 시차 0.034°)을 같은 코드로 확인했다.
+[^s7]: 에이전트 보충. 그림 1장은 원본에 없다. [21_binocular-disparity_plot.py](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/)로 그렸고, 그림에 쓴 값(두 눈 사이 1, 거리 2와 6일 때 두 시선의 각 28.1°와 9.5°, 각이 $$2\arctan(B/2d)$$와 같음)을 같은 코드로 확인했다.
 {% endraw %}

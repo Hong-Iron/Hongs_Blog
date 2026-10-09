@@ -8,7 +8,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 concepts: 53
 practices: 4
-codes: 45
+codes: 46
 description: "컴퓨터 통신 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -122,7 +122,7 @@ permalink: "/studies/computer-communication/"
 | 29 | [데이터 링크 계층](/Hongs_Blog/studies/computer-communication/data-link-layer/) | 링크 하나로 이은 두 노드의 프레임 교환. 비트 교환·프레이밍·오류 검출 | — | — |
 | 30 | [노드](/Hongs_Blog/studies/computer-communication/node-hardware/) | 링크 끝의 컴퓨터. 유한한 버퍼, 오늘날의 병목 | — | — |
 | 31 | [신호와 변조](/Hongs_Blog/studies/computer-communication/signal-and-modulation/) | 데이터를 신호로 바꾸고 되돌림(모뎀). 저주파는 멀리, 고주파는 빠르게 | [검증](/Hongs_Blog/studies/computer-communication/code/31_signal-and-modulation_verify/) | — |
-| 32 | [유선 링크](/Hongs_Blog/studies/computer-communication/wired-links/) | UTP·동축·광케이블의 거리와 속도. 전반사, 멀티모드와 싱글모드 | [검증](/Hongs_Blog/studies/computer-communication/code/32_wired-links_verify/) | — |
+| 32 | [유선 링크](/Hongs_Blog/studies/computer-communication/wired-links/) | UTP·동축·광케이블의 거리와 속도. 전반사, 멀티모드와 싱글모드 | [검증](/Hongs_Blog/studies/computer-communication/code/32_wired-links_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/32_wired-links_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/32_wired-links_fig1.svg) | — |
 | 33 | [가입자 선로](/Hongs_Blog/studies/computer-communication/last-mile-links/) | 집과 인터넷 회사 사이의 마지막 링크. DSL은 전화선에 FDM (강조)[^13] | — | — |
 | 34 | [무선 링크](/Hongs_Blog/studies/computer-communication/wireless-links/) | 선 없이 이동성과 즉시성. 간섭·다중 경로·라이선스 | [검증](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/34_wireless-links_fig1.svg) | — |
 | 35 | [이동통신](/Hongs_Blog/studies/computer-communication/cellular-networks/) | 셀과 기지국. 핸드오프, 공간 분할로 주파수 재사용 | — | — |

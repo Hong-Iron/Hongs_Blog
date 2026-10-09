@@ -18,7 +18,7 @@ prev_title: "인접행렬 거듭제곱 ↔ 마르코프 전이"
 next_url: "/studies/probability-statistics/randomized-analysis/"
 next_title: "해싱과 무작위 알고리즘의 확률"
 math: true
-mermaid: false
+mermaid: true
 code_count: 3
 permalink: "/studies/probability-statistics/pagerank/"
 ---
@@ -34,6 +34,17 @@ permalink: "/studies/probability-statistics/pagerank/"
 ## 예시로 보기
 
 페이지 네 개 A, B, C, D가 A→B, A→C, B→C, C→A, D→C로 링크한다. 서퍼는 85% 확률로 지금 페이지의 링크 중 하나를 고르게 따라가고, 15% 확률로 네 페이지 중 아무 데로나 순간이동한다. 처음에는 네 페이지에 $$\frac14$$씩 있다고 두고 한 걸음씩 갱신한다.
+
+```mermaid
+flowchart LR
+    A["A"] --> B["B"]
+    A --> C["C"]
+    B --> C
+    C --> A
+    D["D"] --> C
+```
+
+C로 들어오는 화살표가 셋으로 가장 많고, D로 들어오는 화살표는 없다. 15% 순간이동은 모든 페이지 쌍 사이에 생기므로 그림에서 뺐다[^s2].
 
 | 반복 | A | B | C | D |
 |---|---|---|---|---|
@@ -182,4 +193,5 @@ new = [0.15 / n + sum(0.85 * r[i] / len(links[i]) for i in links if j in links[i
 [^d4]: 같은 자료, p.8~9 (무작위 서퍼, 정상분포)
 [^d5]: 같은 자료, p.11~14 (막다른 페이지, 거미줄 함정, 구글 행렬)
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [25_pagerank_plot.py](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_plot/)로 그렸고, 그림에 쓴 값(예시의 1회 반복값과 수렴값, 매 반복 합 1·음수 없음, 모든 반복에서 오차 ≤ $$2 \cdot 0.85^k$$. 무작위 그래프는 같은 크기(페이지 300개, 페이지당 링크 약 5개)로 새로 만든 것이다)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시의 링크 다섯 개를 그렸다.
 {% endraw %}

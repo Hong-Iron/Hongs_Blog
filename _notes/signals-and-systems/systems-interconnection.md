@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["System", "연속 시간 시스템", "Continuous-Time System", "이산 시간 시스템", "Discrete-Time System", "직렬 연결", "Cascade Interconnection", "병렬 연결", "Parallel Interconnection", "피드백 연결", "Feedback Interconnection", "혼합 시스템", "Hybrid System"]
 description: "시스템은 입력 신호를 받아 출력 신호로 바꾸는 상자다. 녹음기(소리 → 전기), 회로(전원 전압 → 축전기 전압), 자동차(엔진 힘 → 속도)가 모두 시스템이다. 복잡한 시스템은 작은 상자들을 줄줄이(직렬), 나란히(병렬), 되먹임(피드백)으로 이어 만든다. 상자 안을 몰라도 입력…"
@@ -57,6 +57,24 @@ permalink: "/studies/signals-and-systems/systems-interconnection/"
 | 피드백 | 시스템 1의 출력이 시스템 2를 거쳐 다시 시스템 1의 입력에 더해짐 | 비행기 자동조종 장치 |
 
 ```mermaid
+flowchart LR
+  subgraph S["직렬"]
+    direction LR
+    X1["입력"] --> A1["시스템 1"] --> A2["시스템 2"] --> Y1["출력"]
+  end
+  subgraph P["병렬"]
+    direction LR
+    X2["입력"] --> B1["시스템 1"]
+    X2 --> B2["시스템 2"]
+    B1 --> Q(("+"))
+    B2 --> Q
+    Q --> Y2["출력"]
+  end
+```
+
+직렬에서는 신호가 상자를 차례로 한 번씩 지나고, 병렬에서는 같은 입력이 두 갈래로 나뉘었다가 더해진다. 아래 피드백 그림에서는 시스템 1의 출력이 시스템 2를 거쳐 입력 쪽으로 되돌아간다.[^s2]
+
+```mermaid
 graph LR
   X[입력] --> P(("+")) --> S1[시스템 1] --> Y[출력]
   S1 --> S2[시스템 2] --> P
@@ -96,4 +114,5 @@ graph LR
 [^3]: 같은 자료, p.5 (그림 1.42)
 [^4]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.14
 [^s1]: 에이전트 보충. 온도 조절·하울링 예, 확인 문제는 원본에 없다.
+[^s2]: 에이전트 보충. 다이어그램 1개(직렬·병렬)는 원본에 없다. 정의의 연결 방식 표와 4주차 자료 p.5의 그림 1.42를 근거로 그렸다.
 {% endraw %}

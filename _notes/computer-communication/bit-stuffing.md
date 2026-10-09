@@ -18,7 +18,7 @@ prev_title: "바이트 중심 프레이밍"
 next_url: "/studies/computer-communication/framing-compared/"
 next_title: "프레이밍 방식 비교"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/computer-communication/bit-stuffing/"
 ---
@@ -65,6 +65,24 @@ permalink: "/studies/computer-communication/bit-stuffing/"
   - 다음이 `0`이면 끼워 넣은 비트라 지운다.
   - 다음이 `10`이면 깃발 `01111110`이라 프레임의 끝이다.
   - 다음이 `11`이면(1이 7개 이상) 오류다.
+
+```mermaid
+flowchart TD
+  A["비트 하나를 받음"] --> B{"1인가"}
+  B -->|"아니오"| R["카운터를 0으로"]
+  R --> A
+  B -->|"예"| C["카운터 +1"]
+  C --> D{"카운터가 5인가"}
+  D -->|"아니오"| A
+  D -->|"예"| E{"다음 비트"}
+  E -->|"0"| F["끼운 0이라 지움, 카운터를 0으로"]
+  F --> A
+  E -->|"1"| G{"그다음 비트"}
+  G -->|"0"| H["깃발이므로 프레임 끝"]
+  G -->|"1"| I["오류"]
+```
+
+카운터는 지금까지 이어진 1의 개수다. 0을 받으면 언제든 0으로 돌아가고, 5에 닿을 때만 뒤 비트를 보고 세 갈래로 나뉜다[^s2].
 
 필기도 같은 규칙을 적었다[^3].
 
@@ -115,4 +133,5 @@ permalink: "/studies/computer-communication/bit-stuffing/"
 [^2]: 4-1학기/컴퓨터 통신/2.필기노트/06.6주차.md, 51행
 [^3]: 같은 필기, 52~58행
 [^s1]: 에이전트 보충. 예시 비트열과 표, 오버헤드와 평균, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 받는 쪽 규칙(슬라이드 45)을 카운터 하나로 옮긴 순서도다. 구현 코드의 받는 쪽 동작과 같다.
 {% endraw %}

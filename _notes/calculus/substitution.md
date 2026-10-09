@@ -18,7 +18,7 @@ prev_title: "미적분의 기본정리"
 next_url: "/studies/calculus/integration-by-parts/"
 next_title: "부분적분"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/substitution/"
 ---
@@ -79,6 +79,21 @@ $$F$$를 $$f$$의 원시함수라 하자. 연쇄 법칙으로 $$\big(F(g(x))\big
 
 왼쪽은 치환 전, 오른쪽은 치환 후의 피적분함수다. 가로축이 $$x$$에서 $$u = x^2$$으로 바뀌면서 곡선 모양이 달라졌지만, 칠한 넓이는 둘 다 0.859다. $$du = 2x\,dx$$가 가로 폭이 늘고 주는 비율을 맞춰 주기 때문이다[^s2].
 
+```mermaid
+flowchart TD
+    A["정적분: a부터 b까지 f(g(x)) g′(x) dx"] --> B["u = g(x), du = g′(x) dx로 둔다"]
+    B --> C{"끝값을 어떻게 다루나"}
+    C -- "방법 1" --> D["끝값을 g(a), g(b)로 바꾼다"]
+    D --> E["u로 적분하고 u의 끝값을 넣는다"]
+    C -- "방법 2" --> F["끝값 없이 u로 원시함수를 구한다"]
+    F --> G["u = g(x)로 되돌린다"]
+    G --> H["x의 끝값 a, b를 넣는다"]
+    E --> Z["같은 값"]
+    H --> Z
+```
+
+위 예제는 방법 1이다. 두 길은 같은 값에 닿는다. 하지만 한 길 안에서 섞으면, 예를 들어 $$u$$로 바꾼 식에 $$x$$의 끝값을 넣으면 틀린다(활용의 흔한 실수)[^s3].
+
 **탄젠트.** $$\int \tan x\,dx = \int\frac{\sin x}{\cos x}dx$$. $$u = \cos x$$, $$du = -\sin x\,dx$$로 $$-\int\frac{du}{u} = -\ln\vert \cos x\vert  + C$$.
 
 <div class="callout callout-check" markdown="1">
@@ -128,4 +143,5 @@ $$F$$를 $$f$$의 원시함수라 하자. 연쇄 법칙으로 $$\big(F(g(x))\big
 [^1]: OpenStax, *Calculus Volume 1*, 5.5절 "Substitution", 5.6절 "Integrals Involving Exponential and Logarithmic Functions", 5.7절 "Integrals Resulting in Inverse Trigonometric Functions".
 [^s1]: 에이전트 보충. 단조 변환의 확률밀도 공식은 확률론 교재의 "확률변수의 함수" 절에 있는 표준 결과다. 확률과 통계 과목에서 증명과 함께 다룬다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [13_substitution_plot.py](/Hongs_Blog/studies/calculus/code/13_substitution_plot/)로 그렸고, 두 넓이가 모두 $$\frac{e - 1}{2} \approx 0.859$$인 것을 같은 코드로(중점 합) 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 두 식과 활용 절의 흔한 실수("둘 중 한 방식으로 통일한다")를 근거로 그렸다.
 {% endraw %}

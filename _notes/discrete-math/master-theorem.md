@@ -18,7 +18,7 @@ prev_title: "점근 표기"
 next_url: "/studies/discrete-math/modular-arithmetic/"
 next_title: "나눗셈과 합동"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/master-theorem/"
 ---
@@ -46,6 +46,18 @@ $$n = 16$$에서 세 점화식을 층별로 펼친다. $$T(1) = 1$$이다. 0층�
 | 층 비율 | 1배 (고름) | 2배 (아래가 무거움) | ½배 (위가 무거움) |
 
 가운데 열은 합 496 중 절반 이상이 잎에서 나오고, 오른쪽 열은 절반 이상이 맨 위에서 나온다. 가운데는 잎의 개수 $$4^{\lg n} = n^2$$, 오른쪽은 맨 위의 $$n$$, 왼쪽은 "한 층의 $$n$$ × 층 수 $$\lg n$$"이 답의 모양이다. 조각 수 2·4·1이 아래 정리의 $$a$$, 절반의 2가 $$b$$, 더하는 $$n$$이 $$f(n)$$이다.
+
+```mermaid
+flowchart TD
+  r["16"] --> a1["8"]
+  r --> a2["8"]
+  a1 --> b1["4"]
+  a1 --> b2["4"]
+  a2 --> b3["4"]
+  a2 --> b4["4"]
+```
+
+왼쪽 열 $$2T(n/2) + n$$의 재귀 트리 위쪽 세 층이다. 마디의 수는 그 조각을 나누고 합치는 데 드는 일이다. 한 층 내려갈 때마다 마디 수는 두 배, 마디의 일은 절반이라 층마다 합이 16이다[^s3].
 
 ## 정의
 
@@ -231,4 +243,5 @@ $$f$$가 다항식이면 정칙 조건은 저절로 맞는다. $$a f(n/b) = \fra
 [^2]: 카라츠바 곱셈은 Kleinberg·Tardos, *Algorithm Design*, 5장. 슈트라센 알고리즘은 Cormen et al. 3판, 4.2절.
 [^s1]: 에이전트 보충. 정칙 조건의 반례, 역의 반례, $$2T(n/2) + n\lg n$$의 답은 재귀 트리의 층별 합으로 유도했고 $$n = 2^k$$에서 정확히 계산해 확인했다(25_master-theorem_verify.py).
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [25_master-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/25_master-theorem_plot/)로 그렸고, $$n = 2^k$$($$k \le 20$$)에서 닫힌 꼴 $$n\lg n + n$$, $$2n^2 - n$$, $$2n - 1$$, $$3n^{\lg 3} - 2n$$과 예시 표의 합 80, 496, 31을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 왼쪽 열($$n = 16$$) 0~2층을 재귀 트리로 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sexual Dysfunctions", "성기능 장애", "성반응주기", "sexual response cycle", "성욕구 단계", "desire stage", "흥분 단계", "excitement stage", "고조기", "plateau", "절정 단계", "orgasm stage", "해소 단계", "resolution stage", "평생형", "lifelong type", "후천형", "acquired type", "관찰자적 역할", "spectatoring", "감각 초점 훈련", "sensate focus", "마스터스와 존슨", "Masters & Johnson", "PDE5 억제제"]
 description: "성적인 반응은 욕구가 생기고, 흥분하고, 절정에 이르고, 가라앉는 네 단계로 흘러간다. 성기능부전은 앞의 세 단계 가운데 하나 이상에서 반응이나 즐거움을 느끼는 능력이 오래(대개 6개월 넘게) 뚜렷하게 손상되어 괴로운 상태다. 몸의 병이 원인일 때도 많지만, 잘해야 한다는 두려움과…"
@@ -51,6 +51,21 @@ permalink: "/studies/abnormal-psychology/sexual-dysfunctions/"
 | 4. 해소 단계(resolution) | 몸이 흥분 전 상태로 돌아온다 |
 
 성기능 장애는 해소 단계를 뺀 세 단계 가운데 하나 이상에서 나타난다. 남성은 절정 뒤 다시 반응하지 못하는 불응기(refractory period)를 거쳐 해소되고, 여성은 여러 번의 절정, 절정 없는 해소, 빠른 절정처럼 경로가 여럿이다[^2].
+
+```mermaid
+flowchart LR
+    D["1 욕구"] --> E["2 흥분·고조"]
+    E --> O["3 절정"]
+    O -->|"남성"| RP["불응기"]
+    RP --> R["4 해소"]
+    O -->|"여성"| O2["다시 절정, 여러 번"]
+    O2 --> R
+    O -->|"여성"| R
+    E -->|"여성: 절정 없이"| R
+    E -->|"여성: 빠른 절정"| O
+```
+
+성기능부전은 1~3번 상자 가운데 하나 이상에서 반응이 막힌 것이다. 해소에 이르는 길은 남성은 불응기를 거치는 하나이고, 여성은 여러 갈래다[^s4].
 
 ### DSM-5-TR의 성기능부전[^3]
 
@@ -152,4 +167,5 @@ flowchart TB
 [^s1]: 에이전트 보충. HO의 사례는 성반응주기와 즉시적 원인을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 일곱 장애를 성반응주기 단계에 대응시킨 표는 p.4의 "세 단계 가운데 한 단계 이상에서 장애"와 각 장애의 진단기준을 이어 정리했다.
 [^s3]: 에이전트 보충. 현재의 정신의학은 성적 지향을 장애나 장애의 원인으로 보지 않는다. 이 문장은 그림 속 항목을 어떻게 읽을지에 대한 해석이다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '성반응주기' 표와 p.5의 남녀 성반응주기 그림 설명을 흐름도로 옮겼다.
 {% endraw %}

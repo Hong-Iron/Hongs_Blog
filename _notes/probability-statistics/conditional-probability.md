@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Conditional Probability", "조건부 확률", "곱셈 법칙", "multiplication rule", "연쇄 법칙", "chain rule of probability", "전확률 공식", "law of total probability", "LOTP", "몬티 홀 문제", "Monty Hall problem"]
 description: "\"이미 이런 일이 일어났다\"는 정보를 받으면, 가능한 세계가 그 정보와 맞는 결과들로 줄어든다. 줄어든 세계 안에서 관심 사건이 차지하는 몫이 조건부 확률이다. 이것으로 복잡한 확률을 \"먼저 이것, 그다음 저것\"의 단계로 쪼개 곱하거나, 경우를 나눠 더해 계산할 수 있다. 가장 흔…"
@@ -18,7 +18,7 @@ prev_title: "확률의 공리와 계산"
 next_url: "/studies/probability-statistics/independence/"
 next_title: "독립"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/probability-statistics/conditional-probability/"
 ---
@@ -126,6 +126,18 @@ $$B_i$$들이 서로 배반이라 $$A \cap B_i$$와 $$A \cap B_j$$($$i \ne j$$)�
 3. *전확률 공식:* $$P(\text{바꿔서 이김}) = 0 \cdot \frac13 + 1 \cdot \frac23 = \frac23$$.
 4. *핵심:* 진행자는 무작위로 여는 것이 아니라 "차가 없는 문"을 고른다. 이 정보가 남은 문의 확률을 바꾼다[^1].
 
+```mermaid
+flowchart LR
+    S["처음 고른 문"] -->|"1/3"| C["차가 있음"]
+    S -->|"2/3"| G["염소가 있음"]
+    C --> C1["진행자가 남은 염소 문 둘 중 하나를 연다"]
+    G --> G1["진행자가 하나 남은 염소 문을 연다"]
+    C1 --> C2["바꾸면 진다"]
+    G1 --> G2["바꾸면 차를 얻는다"]
+```
+
+맨 왼쪽 갈림길의 확률 1/3과 2/3은 진행자가 문을 연 뒤에도 그대로다. 바꿔서 이기는 길은 아래쪽 줄기 하나뿐이다.[^s1]
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 표의 세 조건부 확률, 모의실험 10만 회의 상대도수, 조건부 확률이 공리를 만족함, 에이스 두 장 $$\frac{1}{221}$$(순서쌍 2,652개 전수), 전확률 0.032, 몬티 홀 $$\frac23$$(9가지 경우 전수와 모의실험 6만 회) — [03_conditional-probability_verify.py](/Hongs_Blog/studies/probability-statistics/code/03_conditional-probability_verify/)</div>
 
@@ -197,4 +209,5 @@ $$B_i$$들이 서로 배반이라 $$A \cap B_i$$와 $$A \cap B_j$$($$i \ne j$$)�
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.2절 "Definition and intuition", 2.3절 "Bayes' rule and the law of total probability", 2.4절 "Conditional probabilities are probabilities", 2.7절 "Conditioning as a problem-solving tool"(몬티 홀), 2.8절 "Pitfalls and paradoxes".
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예제(몬티 홀 문제)의 1~3단계를 확률 나무로 옮겼다. 근거는 Blitzstein·Hwang 2판 2.7절이다.
 {% endraw %}

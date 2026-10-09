@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Euler Path", "오일러 경로", "오일러 회로", "Euler circuit", "오일러 트레일", "Hamiltonian Path", "해밀턴 경로", "해밀턴 사이클", "Hamiltonian cycle", "쾨니히스베르크 다리 문제", "Königsberg bridges", "히어홀처 알고리즘", "Hierholzer's algorithm", "디랙 정리", "Dirac's theorem", "외판원 문제", "TSP"]
 description: "모든 간선을 한 번씩 지나는 길(오일러)과 모든 정점을 한 번씩 지나는 길(해밀턴)은 말은 비슷하지만 난이도가 전혀 다르다. 오일러 쪽은 \"모든 정점의 차수가 짝수인가\"만 보면 판정되고 빠르게 찾을 수 있다. 해밀턴 쪽은 이런 간단한 판정법이 알려져 있지 않고, 사실상 경우를 다 …"
@@ -18,7 +18,7 @@ prev_title: "경로와 연결성"
 next_url: "/studies/discrete-math/trees/"
 next_title: "트리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/euler-hamilton/"
 ---
@@ -34,6 +34,19 @@ permalink: "/studies/discrete-math/euler-hamilton/"
 ## 예시로 보기
 
 1736년 쾨니히스베르크에는 강으로 나뉜 네 땅(A, B, C, D)이 일곱 다리로 이어져 있었다. 모든 다리를 한 번씩만 건너는 산책이 가능한가? 땅을 정점, 다리를 간선으로 두면(같은 두 땅 사이에 다리가 둘인 곳이 있어 다중 그래프다) 차수는 A 5, B 3, C 3, D 3이다.
+
+```mermaid
+flowchart LR
+  A(("A")) --- B(("B"))
+  A --- B
+  A --- C(("C"))
+  A --- C
+  A --- D(("D"))
+  B --- D
+  C --- D
+```
+
+선 하나가 다리 하나다. A–B 사이와 A–C 사이에는 다리가 둘씩 있다. 점마다 닿은 선을 세면 A 5, B 3, C 3, D 3이다[^s2].
 
 산책 중에 지나가기만 하는 땅은 들어온 다리와 나간 다리가 짝을 이루므로 차수가 짝수여야 한다. 차수가 홀수일 수 있는 것은 출발점과 도착점 둘뿐이다. 홀수 차수인 땅이 넷이라 불가능하다. 다리가 아래 정리의 간선, 땅의 차수가 $$\deg(v)$$다[^1].
 
@@ -126,4 +139,5 @@ permalink: "/studies/discrete-math/euler-hamilton/"
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(쾨니히스베르크 다리 문제, 오일러 회로와 트레일의 필요충분조건).
 [^2]: Rosen 7판, 10장(해밀턴 경로, 디랙 정리와 오레 정리, 오일러 회로를 찾는 알고리즘). 해밀턴 사이클 문제의 NP-완전성은 Cormen et al., *Introduction to Algorithms* 3판, 34.5.3절.
 [^s1]: 에이전트 보충. 드 브루인 그래프로 유전체를 조립하는 방법은 Compeau, Pevzner, Tesler, "How to apply de Bruijn graphs to genome assembly", *Nature Biotechnology* 29 (2011)에 해설되어 있다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 다리 배치는 오일러(1736)가 다룬 쾨니히스베르크의 일곱 다리(섬 A에서 양쪽 강변으로 둘씩, 동쪽 땅으로 하나, 동쪽 땅에서 두 강변으로 하나씩)이고, 문서의 차수 5, 3, 3, 3과 맞는다.
 {% endraw %}

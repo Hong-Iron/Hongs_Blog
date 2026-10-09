@@ -18,7 +18,7 @@ prev_title: "도함수의 활용과 최적화"
 next_url: "/studies/calculus/lhopital-growth/"
 next_title: "로피탈 정리와 증가 속도"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/mean-value-theorem/"
 ---
@@ -81,6 +81,20 @@ $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
 
 세 가지 모두 두 점 $$x < y$$에 평균값 정리를 쓰면 $$f(y) - f(x) = f'(c)(y - x)$$에서 바로 나온다.
 
+```mermaid
+flowchart TD
+    E["최대·최소 정리"] --> R["롤의 정리"]
+    F["페르마 정리"] --> R
+    R -- "할선을 빼서 양 끝 높이를 맞춘다" --> M["평균값 정리"]
+    R --> H["코시 평균값 정리 → 로피탈 정리"]
+    M --> K1["f′ = 0이면 상수"]
+    M --> K2["f′의 부호로 증가·감소"]
+    M --> K3["립시츠 조건"]
+    M --> T["미적분의 기본정리 2부"]
+```
+
+위쪽 두 정리가 롤의 정리를 받치고, 평균값 정리는 롤의 정리에서 바로 나온다. 아래 줄의 결과들은 이 두 정리를 다른 문제에 가져다 쓴 것이다[^s3].
+
 ## 예제
 
 $$f(x) = x^2$$을 $$[0, 2]$$에서 볼 때 정리의 $$c$$를 구한다.
@@ -135,4 +149,5 @@ $$f(x) = x^2$$을 $$[0, 2]$$에서 볼 때 정리의 $$c$$를 구한다.
 [^1]: OpenStax, *Calculus Volume 1*, 4.4절 "The Mean Value Theorem"(롤의 정리, 평균값 정리, 따름정리)
 [^s1]: 에이전트 보충. 립시츠 연속성은 학습의 안정성과 적대적 견고성 연구에서 쓰는 조건이다. 기울기 자르기는 순환 신경망 학습의 표준 기법이다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [08_mean-value-theorem_plot.py](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_plot/)로 그렸고, $$x^2$$의 평균 변화율 2와 $$c = 1$$, $$\vert x\vert $$의 평균 변화율 0과 도함수 $$\pm 1$$을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 증명과 따름정리, [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)의 증명(코시 평균값 정리를 롤의 정리로 얻는다), [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) 2부의 증명을 근거로 그렸다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "역행렬"
 next_url: "/studies/linear-algebra/linear-independence/"
 next_title: "선형독립"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/lu-decomposition/"
 ---
@@ -79,6 +79,20 @@ SOLVE(P, L, U, b)
 
 
 **비용.** 분해는 소거와 같은 약 $$\frac23 n^3$$번의 연산이다. 한 번의 풀이(전진 + 후진 대입)는 약 $$2n^2$$번이다. 같은 $$A$$로 우변 $$k$$개를 풀면 $$\frac23 n^3 + 2kn^2$$번이라, 매번 소거하는 $$k \cdot \frac23 n^3$$보다 훨씬 싸다.
+
+```mermaid
+flowchart LR
+    A["행렬 A"] --> F["분해 PA = LU, 한 번만, 약 2/3 n³"]
+    B["새 우변 b"] --> PB["행 순서 바꾸기 Pb"]
+    F -->|"P"| PB
+    PB --> FW["전진 대입 Lc = Pb, 위에서부터"]
+    F -->|"L"| FW
+    FW --> BW["후진 대입 Ux = c, 아래에서부터"]
+    F -->|"U"| BW
+    BW --> X["해 x"]
+```
+
+윗줄의 분해는 행렬 A 하나에 한 번만 한다. 새 우변 b가 올 때마다 아랫줄의 두 대입만 다시 돌고, 둘을 합쳐 약 2n²번이다[^s2].
 
 ## 예제
 
@@ -166,4 +180,5 @@ for i in range(n):
 [^n5]: 같은 자료, p.13~14
 [^n6]: 같은 자료, p.12
 [^sn1]: 에이전트 보충. 슬라이드 p.11·p.14는 문제만 내고 답이 없다. 해 $$(1, 1, 1)$$, $$M^{-1}$$, 힐베르트 행렬 실험은 08_lu-decomposition_verify.py로 계산했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 LU·SOLVE 의사코드와 비용 문단을 옮겼다(Strang 5판 2.6~2.7절).
 {% endraw %}

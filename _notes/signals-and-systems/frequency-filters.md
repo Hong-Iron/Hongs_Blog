@@ -18,7 +18,7 @@ prev_title: "푸리에 급수와 LTI 시스템"
 next_url: "/studies/signals-and-systems/edge-detection-smoothing/"
 next_title: "영상의 경계 검출과 평활화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/frequency-filters/"
 ---
@@ -58,6 +58,23 @@ $$\text{저역 통과: } H(j\omega) = \begin{cases}1 & \vert \omega\vert  \le \o
 
 
 고역 통과는 반대로 $$\vert \omega\vert  > \omega_c$$를 통과, 대역 통과는 $$\omega_{c1} < \vert \omega\vert  < \omega_{c2}$$를 통과시킨다(그림 3.26~3.27). 실수 정현파는 $$e^{j\omega t}$$와 $$e^{-j\omega t}$$ 두 성분이라 응답이 $$\omega = 0$$에 대해 대칭이다. 이산 시간 필터는 $$H(e^{j\omega})$$가 주기 $$2\pi$$라, $$\pi$$의 짝수배 근처가 저주파, 홀수배 근처가 고주파다(그림 3.28)[^5].
+
+```mermaid
+flowchart TD
+  A["필터: 주파수마다 H를 곱하는 LTI 시스템"] --> B["주파수 형성: 스펙트럼 모양 다듬기"]
+  A --> C["주파수 선택: 어떤 대역은 통과, 나머지는 제거"]
+  C --> D["이상적 필터: 경계에서 칼같이 자름"]
+  C --> E["실제 필터: 경계가 완만함"]
+  D --> D1["저역 통과 · 고역 통과 · 대역 통과"]
+  E --> F["연속 시간: RC 회로"]
+  E --> G["이산 시간"]
+  F --> F1["축전기 전압 출력: 저역 통과"]
+  F --> F2["저항 전압 출력: 고역 통과"]
+  G --> G1["1차 재귀 필터, IIR"]
+  G --> G2["이동 평균, FIR"]
+```
+
+이 문서의 필터는 모두 이 갈래 중 하나에 들어간다. 아래 두 절은 실제 필터 가지를 연속 시간, 이산 시간 순서로 다룬다.[^s3]
 
 ### 연속 시간 실제 필터: RC 회로
 
@@ -234,4 +251,5 @@ $$RC = 0.5$$인 RC 저역 통과에서 차단 주파수 $$\omega = \frac{1}{RC} 
 [^14]: 같은 자료, p.5~6 (그림 3.23)
 [^s1]: 에이전트 보충. $$-3$$dB 값, $$RC = 0.5$$ 예, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C5는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 3장은 원본에 없다. [36_frequency-filters_plot.py](/Hongs_Blog/studies/signals-and-systems/code/36_frequency-filters_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\vert H(j2)\vert  = \frac{1}{\sqrt2}$$와 위상 $$-45°$$, $$H + G = 1$$, $$\omega = \frac{10}{RC}$$에서 $$\vert H\vert  \approx 0.0995$$, 1차 재귀의 2.5와 0.625, 3점 평균의 영점 $$\frac{2\pi}{3}$$.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 종류 표, 이상적 필터, RC 회로, 이산 시간 실제 필터 절(12주차 자료 p.1, p.19~32)을 근거로 그렸다.
 {% endraw %}

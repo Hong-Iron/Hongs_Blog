@@ -18,7 +18,7 @@ prev_title: "인코딩 방식 비교"
 next_url: "/studies/computer-communication/bit-stuffing/"
 next_title: "비트 채우기"
 math: false
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/computer-communication/byte-framing/"
 ---
@@ -63,6 +63,19 @@ BISYNC는 본문 끝에 ETX(End of Text) 글자를 붙인다. 본문 바이트�
 ```
 
 SYN은 동기 글자, SOH는 헤더 시작, STX는 본문 시작, ETX는 본문 끝이다[^1][^4]. 본문에 ETX가 나오는 문제는 확장 문자로 푼다. BISYNC는 ETX 앞에 DLE를 붙이고, IMP-IMP는 DLE 앞에 DLE를 붙인다[^1]. 두 규칙을 함께 쓰면 받는 쪽은 "DLE 다음 글자는 그대로 데이터, 앞에 DLE가 없는 ETX는 끝"으로 읽는다[^s1].
+
+```mermaid
+flowchart TD
+  A["본문 바이트 하나를 읽음"] --> B{"DLE인가"}
+  B -->|"예"| C["바로 다음 바이트를 데이터로 받음"]
+  B -->|"아니오"| D{"ETX인가"}
+  D -->|"예"| E["본문 끝"]
+  D -->|"아니오"| F["데이터로 받음"]
+  C --> A
+  F --> A
+```
+
+DLE를 만나면 그 뒤 한 바이트는 무엇이든 데이터로 넘긴다. 그래서 앞에 DLE가 붙은 ETX는 끝으로 읽히지 않는다[^s2].
 
 필기는 같은 생각을 다른 짝으로 적었다. 끝을 `DLE ETX` 두 글자로 표시하고, 본문의 DLE만 두 번 쓴다[^5]. 이것은 BISYNC의 투명 모드 방식이다. 본문에 `DLE ETX`가 있으면 `DLE DLE ETX`가 되어 받는 쪽이 "DLE 하나 + ETX"로 되돌린다. 두 방식 모두 검증 코드에서 무작위 본문을 정확히 되돌렸다[^s1].
 
@@ -117,4 +130,5 @@ SYN은 동기 글자, SOH는 헤더 시작, STX는 본문 시작, ETX는 본문 
 [^5]: 같은 필기, 25~31행
 [^6]: 같은 필기, 33~44행
 [^s1]: 에이전트 보충. 편지 비유, 바이트 예와 표, 두 규칙을 함께 읽는 방법, 필기의 방식이 BISYNC 투명 모드라는 설명(Peterson & Davie, *Computer Networks: A Systems Approach*, 2.3절), 흔한 실수와 오버헤드, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '보초 방법' 절의 읽는 규칙(슬라이드 44의 BISYNC·IMP-IMP 확장 문자)을 받는 쪽 순서도로 옮겼다. 구현 코드의 되돌리기와 같은 순서다.
 {% endraw %}

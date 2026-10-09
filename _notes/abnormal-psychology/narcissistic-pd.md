@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Narcissistic Personality Disorder", "NPD", "자기애성", "나르시시즘", "narcissism", "자기애적 손상", "narcissistic injury", "웅대성", "grandiosity", "일차적 자기애"]
 description: "겉은 단단한 성처럼 보이지만 속은 얇은 유리 같은 자존감이다. 자신이 특별하고 우월하다고 믿어 찬사와 특별대우를 당연히 요구하고, 남의 감정에는 공감하지 못한다. 그런데 작은 비판에도 깊이 상처받아 분노하거나 우울해진다. 사회적으로 성공한 사람에게 흔하지만, 자기 약점을 보지 않으…"
@@ -18,7 +18,7 @@ prev_title: "연극성 성격장애"
 next_url: "/studies/abnormal-psychology/borderline-pd/"
 next_title: "경계선 성격장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/narcissistic-pd/"
 ---
@@ -62,6 +62,17 @@ permalink: "/studies/abnormal-psychology/narcissistic-pd/"
     - 비판을 계속 곱씹고, 창피와 모욕, 공허감을 느끼며, 상대를 무시하거나 분노를 터뜨리거나 반격한다.
     - 지속적인 수치심과 모욕감에 따르는 자기비판은 사회적 위축, 우울, 지속성 우울장애, 주요우울장애를 일으키기도 한다.
 - 유병률은 일반 인구의 1%, 정신과 환자의 2~15%. 자기애성 성격장애의 50~75%가 남자다.
+
+```mermaid
+flowchart TD
+    H["비판이나 패배"] --> V["웅대함 아래의 취약한 자존감이 상처받음"]
+    V --> R["곱씹기, 창피와 모욕, 공허감"]
+    R --> O["밖으로: 상대를 무시, 분노 폭발, 반격"]
+    R --> I["안으로: 지속적인 수치심과 자기비판"]
+    I --> DEP["사회적 위축, 지속성 우울장애, 주요우울장애"]
+```
+
+같은 상처가 밖으로 향하면 분노와 반격이 되고, 안으로 향하면 우울이 된다[^s3].
 
 ## 원인[^3]
 
@@ -119,4 +130,5 @@ permalink: "/studies/abnormal-psychology/narcissistic-pd/"
 [^4]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.42
 [^s1]: 에이전트 보충. LX의 사례는 진단기준과 웅대성·취약성을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 필기는 이 다음 단계를 "이차적 자기애"라고 부른다. Freud의 1914년 논문 「나르시시즘 서론」에서 이차적 자기애는 대상에게 향했던 리비도가 다시 자기에게 돌아온 상태를 말하고, 타인을 사랑하는 건강한 다음 단계는 보통 대상애(object love)라고 부른다. 본문에는 필기가 설명한 내용(타인에 대한 배려, 자신의 부족함)을 적고, 용어는 강의에서 어떻게 썼는지 확인이 필요하다 [확인필요].
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '임상적 특징'의 웅대성 대 취약성(p.40)을 흐름도로 옮겼다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Trichotillomania", "Hair-Pulling Disorder", "발모광", "모발뽑기장애"]
 description: "머리카락, 눈썹, 속눈썹 같은 자기 몸의 털을 반복해서 뽑아 눈에 띄게 빠지는데도 멈추지 못하는 장애다. 뽑기 직전에 긴장이 오르고, 뽑고 나면 시원함이나 안도감이 온다. 그 안도감이 행동을 굳혀 스트레스를 푸는 습관이 된다. 강박장애처럼 반복하지만, 불안한 생각을 없애려는 것이 …"
@@ -18,7 +18,7 @@ prev_title: "저장장애"
 next_url: "/studies/abnormal-psychology/excoriation-disorder/"
 next_title: "피부뜯기장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/trichotillomania/"
 ---
@@ -58,6 +58,17 @@ DSM-5-TR은 털 뽑기로 털이 빠지고, 줄이거나 멈추려는 시도가 
 - **정신분석적 입장:** 털 뽑기는 무의식적 갈등의 상징적 표현이고, 좋지 못한 대상관계의 결과다. 어린 시절의 정서적 결핍과 관련되고, 털을 뽑는 행위는 처벌적인 어머니와 다시 결합하려는 상징적 표현이라고 본다.
 - **행동주의적 입장:** 털을 뽑으면 긴장이 풀리므로, 스트레스 해소법으로 잘못 학습된다(부적 강화). 뽑는 행동과 관련된 신체 감각에 대한 갈망이 조건형성된다.
 
+```mermaid
+flowchart LR
+  T["불안이나 지루함"] --> K["뽑기 직전의 긴장"]
+  K --> P["털을 뽑는다"]
+  P --> R["안도감, 만족감"]
+  R -->|"긴장이 풀린 경험이 행동을 굳힌다"| H["다음 스트레스에도 뽑기를 찾는다"]
+  H --> T
+```
+
+뽑은 뒤의 안도감에서 다시 처음으로 돌아가는 화살표를 따라가면 된다. 긴장이 풀릴 때마다 고리가 한 바퀴 더 굳는다[^s3].
+
 ## 치료
 
 피부뜯기장애와 함께 다룬다. 항우울제(SSRI), 습관 반전 훈련, 수용 증진 행동치료. [신체중심 반복행동](/Hongs_Blog/studies/abnormal-psychology/bfrb/)에서 설명한다.
@@ -88,4 +99,5 @@ DSM-5-TR은 털 뽑기로 털이 빠지고, 줄이거나 멈추려는 시도가 
 [^3]: 4-1학기/이상 심리학/1.수업자료/05.강박 관련 장애.pdf, p.38
 [^s1]: 에이전트 보충. DD의 사례는 진단 특징을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 털뽑기장애 진단기준을 요약했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 긴장·안도 서술과 `원인`의 행동주의적 입장(부적 강화)을 근거로 그렸다. 슬라이드 p.36, p.38.
 {% endraw %}

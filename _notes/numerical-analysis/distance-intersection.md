@@ -18,7 +18,7 @@ prev_title: "평행 투영과 원근 투영"
 next_url: "/studies/numerical-analysis/cubic-interpolation-curve/"
 next_title: "3차 보간 곡선"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/numerical-analysis/distance-intersection/"
 ---
@@ -65,6 +65,16 @@ $$\begin{pmatrix}t_1\\ t_2\end{pmatrix} = \frac{1}{(V_1\cdot V_2)^2 - \vert V_1\
 
 
 두 직선이 평행하면 분모 $$(V_1\cdot V_2)^2 - \vert V_1\vert ^2\vert V_2\vert ^2$$이 0이다(코시-슈바르츠 부등식의 등호). 이때는 한 직선 위의 아무 점과 다른 직선 사이의 거리(점과 직선)로 잰다[^6].
+
+```mermaid
+flowchart TD
+    A["두 직선 S1 + t1V1, S2 + t2V2"] --> B{"분모가 0인가? 곧 평행한가?"}
+    B -->|"예"| C["S1과 둘째 직선 사이 거리를 점과 직선 공식으로"]
+    B -->|"아니오"| D["2×2 연립방정식으로 t1, t2 구하기"]
+    D --> E["두 점 S1 + t1V1, S2 + t2V2 사이 거리"]
+```
+
+먼저 평행인지 보고, 평행이면 점과 직선 문제로 넘긴다. 평행하지 않을 때만 $$t_1, t_2$$를 구한다[^s2].
 
 ### 점과 평면
 
@@ -129,4 +139,5 @@ $$Q = \begin{pmatrix}N_1\\ N_2\\ N_1 \times N_2\end{pmatrix}^{-1}\begin{pmatrix}
 [^9]: 같은 자료, p.41
 [^10]: 같은 자료, p.42
 [^s1]: 에이전트 보충. 꼬인 직선 예, 평행일 때 분모가 0인 이유(코시-슈바르츠), 단위 법선 조건, 교선의 셋째 식 설명, 충돌 판정 등 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '두 직선' 절의 연립방정식과 평행일 때의 처리(원본 06.na06_rotation.pdf p.36~38)로 그렸다.
 {% endraw %}

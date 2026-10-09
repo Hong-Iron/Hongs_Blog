@@ -16,7 +16,7 @@ description: "데이터의 한 줄(고객 한 명, 상품 하나)을 설명하�
 next_url: "/studies/data-science/chi-square-correlation/"
 next_title: "카이제곱 상관 분석"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/data-science/attribute-types/"
 ---
@@ -63,6 +63,20 @@ permalink: "/studies/data-science/attribute-types/"
 
 - **대칭 이진:** 두 상태가 똑같이 중요하다. 예: 성별.
 - **비대칭 이진:** 한 상태가 더 중요하다. 예: 의료 검사의 양성(1)은 음성(0)보다 드물고 의미가 크다. 이 차이가 [비유사도](/Hongs_Blog/studies/data-science/categorical-dissimilarity/)를 계산하는 방법을 바꾼다.
+
+```mermaid
+flowchart TD
+    A["속성"] --> N["명목"]
+    A --> O["순서"]
+    A --> Q["수치"]
+    N --> B["이진"]
+    B --> BS["대칭 이진"]
+    B --> BA["비대칭 이진"]
+    Q --> I["구간 척도"]
+    Q --> R["비율 척도"]
+```
+
+이진은 명목 안의 한 갈래이고, 구간 척도와 비율 척도는 수치 안의 두 갈래다. 가지 끝으로 내려갈수록 분류가 더 좁아진다[^s2].
 
 ## 연결
 
@@ -114,4 +128,5 @@ permalink: "/studies/data-science/attribute-types/"
 [^5]: 같은 자료, p.6
 [^6]: 같은 자료, p.7
 [^s1]: 에이전트 보충. 화씨와 켈빈으로 바꾼 비율, 오해 항목, 카드 C2의 예는 원본에 없다. 10 °C = 50 °F = 283.15 K, 20 °C = 68 °F = 293.15 K다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 표와 이진 속성 분류(원본 p.6~10)를 근거로 그렸다.
 {% endraw %}

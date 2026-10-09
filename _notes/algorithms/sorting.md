@@ -18,7 +18,7 @@ prev_title: "딕셔너리와 집합"
 next_url: "/studies/algorithms/string-parsing/"
 next_title: "문자열 파싱과 정규 표현식"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/algorithms/sorting/"
 ---
@@ -94,6 +94,20 @@ people.sort(key=lambda p: p[1])                 # 숫자 순. 같은 숫자는 �
 | 합치기 2 | [4]+[1, 3] → [1, 3, 4] |
 | 합치기 3 | [2, 5]+[1, 3, 4] → 맨 앞끼리 비교: 1, 2, 3, 4, 5 |
 
+```mermaid
+flowchart TD
+    R["5, 2, 4, 1, 3 → 합치면 1, 2, 3, 4, 5"] --> L["5, 2 → 합치면 2, 5"]
+    R --> RR["4, 1, 3 → 합치면 1, 3, 4"]
+    L --> A["5"]
+    L --> B["2"]
+    RR --> C["4"]
+    RR --> D["1, 3 → 합치면 1, 3"]
+    D --> E["1"]
+    D --> F["3"]
+```
+
+위에서 아래로 내려가며 나누고, 맨 아래 한 칸짜리부터 위로 올라오며 합친다. 칸마다 화살표 뒤의 줄이 그 칸에서 합친 결과다[^s2].
+
 반으로 나누기는 약 $$\log_2 n$$층이고, 층마다 합치는 비용이 $$n$$이라 모두 $$O(n \log n)$$이다. 크기 비교만으로 정렬하는 방법은 어떤 것이든 최악에 $$n \log n$$에 비례하는 비교가 필요하다는 것이 알려져 있어서[^2], `sorted`보다 빠른 비교 정렬을 직접 짤 일은 없다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/05_sorting_fig1.svg" alt="그림" loading="lazy">
@@ -153,4 +167,5 @@ people.sort(key=lambda p: p[1])                 # 숫자 순. 같은 숫자는 �
 [^1]: Python 3 문서 "Sorting Techniques": `sort()`와 `sorted()`는 안정 정렬이 보장되고, 여러 기준은 덜 중요한 기준부터 여러 번 정렬해 만들 수 있다("Sort Stability and Complex Sorts"). 같은 문서에서 파이썬이 Timsort를 쓴다고 밝힌다.
 [^2]: Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.3 "Designing algorithms"(병합 정렬과 $$\Theta(n \lg n)$$ 분석), 8.1 "Lower bounds for sorting"(비교 정렬은 최악에 $$\Omega(n \lg n)$$ 번 비교한다).
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [05_sorting_plot.py](/Hongs_Blog/studies/algorithms/code/05_sorting_plot/)로 그렸고, 비교 횟수(4,096개에서 병합 정렬 43,928번, 삽입 정렬 4,210,245번), 병합 정렬이 늘 $$n\log_2 n$$ 이하라는 것, 로그-로그 기울기(병합 정렬 1.16, 삽입 정렬 2.01)를 같은 코드로 확인했다. 병합 정렬의 기울기가 1보다 조금 큰 것은 $$\log_2 n$$이 함께 자라기 때문이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '속에서 일어나는 일' 절의 [5, 2, 4, 1, 3] 병합 정렬 단계 표를 나누기·합치기 나무로 옮겼다(Cormen 외 3판 2.3.1의 병합 정렬 재귀 트리 그림과 같은 모양).
 {% endraw %}

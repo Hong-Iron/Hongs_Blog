@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["이항 vs 기하 vs 포아송", "이산분포 고르기", "choosing a discrete distribution"]
 description: "셋 다 \"독립인 시도에서 성공을 센다\"는 이야기에서 나와 헷갈린다. 가르는 질문은 무엇을 세는가다. 정해진 횟수 안의 성공 수면 이항, 첫 성공까지 걸린 시도 수면 기하, 정해진 시간·공간 안에서 드물게 일어나는 사건 수(시도 횟수를 따로 정할 수 없음)면 포아송이다."
@@ -18,7 +18,7 @@ prev_title: "포아송 분포"
 next_url: "/studies/probability-statistics/continuous-rv/"
 next_title: "연속 확률변수와 확률밀도"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/probability-statistics/discrete-distributions-compared/"
 ---
@@ -87,5 +87,20 @@ permalink: "/studies/probability-statistics/discrete-distributions-compared/"
 - **$$r$$번째 성공까지:** 기하분포를 $$r$$개 더한 음이항분포다.
 - **몰려서 일어나는 사건:** 평균이 시간마다 흔들리면 분산이 평균보다 커진다(과대산포). 평균이 0.5와 5.5 사이를 오가는 포아송을 섞으면 분산이 평균의 약 3배가 된다. 이런 자료에는 음이항분포 같은 더 넓은 모델을 쓴다.
 
+```mermaid
+flowchart TD
+    B["베르누이 시행: 성공 확률 p"] -->|"정해진 n번의 성공 수"| Bin["이항 Bin(n, p)"]
+    B -->|"첫 성공까지의 시행 수"| G["기하"]
+    G -->|"r개를 더함"| NB["음이항: r번째 성공까지"]
+    Bin -.->|"n→∞, np = λ 고정"| P["포아송 Pois(λ)"]
+    Bin -.->|"n이 클 때 표준화"| N["정규 근사"]
+    H["초기하: 비복원 추출"] -.->|"모집단이 뽑는 수보다 훨씬 클 때"| Bin
+    P -->|"같은 과정의 사건 사이 간격"| E["지수 Exp(λ)"]
+    G -.->|"연속 시간판"| E
+```
+
+실선은 같은 시행이나 과정에서 무엇을 세느냐로 갈라지는 관계이고, 점선은 극한·근사·연속판으로 옮겨 가는 관계다.[^s1]
+
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.3절(이항), 3.4절(초기하), 4.3절(기하와 음이항), 4.7~4.8절(포아송과 이항의 관계).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서와 [이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)(초기하분포), [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)(이항분포의 포아송 극한), [균등분포와 지수분포](/Hongs_Blog/studies/probability-statistics/uniform-exponential/)(포아송 과정의 간격, 연속 시간의 기하분포), [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)(이항분포의 정규 근사)에 적힌 관계를 모아 그렸다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Avoidant/Restrictive Food Intake Disorder", "ARFID", "회피적/제한적 음식섭취 장애", "편식", "picky eating", "감각통합치료", "sensory integration therapy"]
 description: "음식의 냄새나 식감이 너무 싫거나, 먹다가 체한 기억 때문에 먹는 것이 두려워서, 먹기를 피하거나 몇 가지만 먹다가 몸이 상하는 장애다. 단순한 편식과 달리 체중이 줄고, 영양이 모자라고, 생활이 흔들린다. 살찌는 것이 두려워서 안 먹는 것이 아니라는 점이 신경성 식욕부진증과 다르…"
@@ -18,7 +18,7 @@ prev_title: "되새김장애"
 next_url: "/studies/abnormal-psychology/sleep-stages/"
 next_title: "수면과 수면 단계"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/arfid/"
 ---
@@ -68,6 +68,20 @@ D. 다른 의학적 상태나 정신장애로 더 잘 설명되지 않는다.
 
 </div>
 
+
+```mermaid
+flowchart TD
+    R1["먹는 것에 흥미가 없음"] --> E["먹기를 피하거나 크게 제한함"]
+    R2["냄새, 식감 같은 감각 때문에 피함"] --> E
+    R3["질식, 구토 같은 나쁜 결과를 걱정함"] --> E
+    E --> Q{"아래 결과가 하나 이상 있는가"}
+    Q --> O1["뚜렷한 체중 감소"]
+    Q --> O2["뚜렷한 영양 결핍"]
+    Q --> O3["위장관 급식이나 영양 보충제에 의존"]
+    Q --> O4["심리사회적 기능에 지장"]
+```
+
+위의 세 이유 가운데 무엇이든 먹기를 줄이고, 그 결과가 아래 넷 가운데 하나 이상으로 나타나야 한다. 체중이나 체형에 대한 걱정은 이 흐름에 들어 있지 않다(기준 C)[^s3].
 
 ## 임상적 특징[^1][^2]
 
@@ -126,4 +140,5 @@ D. 다른 의학적 상태나 정신장애로 더 잘 설명되지 않는다.
 [^3]: 4-1학기/이상 심리학/1.수업자료/08.급식 및 섭식장애, 수면-각성장애.pdf, p.46
 [^s1]: 에이전트 보충. GL의 사례는 진단기준과 식욕부진증과의 차이를 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR 회피적·제한적 음식섭취 장애 진단기준 A~D를 요약했다. DSM-IV-TR의 "유아기 또는 초기 아동기의 급식장애"는 "6세 이전 발병", "적어도 1개월 동안 적절히 먹지 못해 체중이 늘지 않거나 줄어듦"을 요구했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 'DSM-5-TR의 기준' 콜아웃의 기준 A와 C를 그렸다(p.44~45와 DSM-5-TR).
 {% endraw %}

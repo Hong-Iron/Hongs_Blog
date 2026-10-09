@@ -18,7 +18,7 @@ prev_title: "수열의 극한과 e"
 next_url: "/studies/calculus/differentiation-rules/"
 next_title: "미분 법칙"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/derivative/"
 ---
@@ -72,6 +72,16 @@ $$f$$가 $$a$$에서 미분 가능하면 $$a$$에서 연속이다. 역은 맞지
 
 </div>
 
+
+```mermaid
+flowchart LR
+    D["a에서 미분 가능"] -- "늘 맞다" --> C["a에서 연속"]
+    C -- "늘 맞다" --> L["a에서 극한이 있다"]
+    C -. "거꾸로는 꺾인 점에서 깨진다" .-> D
+    L -. "거꾸로는 뚫린 점에서 깨진다" .-> C
+```
+
+실선 화살표는 늘 맞는 방향이고, 점선은 거꾸로 가면 깨지는 방향이다. 꺾인 점은 연속이지만 미분할 수 없다. 뚫린 점은 극한이 있지만 연속이 아니다[^s3].
 
 ## 증명
 
@@ -204,4 +214,5 @@ $$h$$가 크면 극한에서 먼 오차(절단 오차)가, 작으면 거의 같�
 [^1]: OpenStax, *Calculus Volume 1*, 3.1절 "Defining the Derivative", 3.2절 "The Derivative as a Function"(미분 가능성과 연속성)
 [^s1]: 에이전트 보충. 수치 미분의 최적 $$h$$가 기계 엡실론 $$\epsilon \approx 2.2 \times 10^{-16}$$의 제곱근(전진 차분), 세제곱근(중앙 차분) 정도라는 것은 수치 해석의 표준 결과다. 표의 값은 검증 코드로 계산했다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [04_derivative_plot.py](/Hongs_Blog/studies/calculus/code/04_derivative_plot/)로 그렸고, 할선 기울기가 $$6 + h$$인 것과 오차표의 값(전진 차분 $$h = 10^{-1}, 10^{-4}, 10^{-8}, 10^{-15}$$, 중앙 차분 $$h = 10^{-1}, 10^{-4}, 10^{-5}$$)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 정리(미분 가능하면 연속, 역은 거짓), [연속](/Hongs_Blog/studies/calculus/continuity/)의 세 조건, [극한](/Hongs_Blog/studies/calculus/limits/)의 오해(극한값과 함숫값이 다른 함수)를 근거로 그렸다.
 {% endraw %}

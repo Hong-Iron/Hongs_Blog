@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Alzheimer's Disease", "알츠하이머", "알츠하이머성 치매", "아밀로이드반", "amyloid plaque", "신경섬유다발", "neurofibrillary tangle", "APOE4", "콜린에스테라제 억제제", "cholinesterase inhibitor", "ChEI", "NMDA 수용체 길항제", "기억 지갑", "memory wallet"]
 description: "치매의 절반 이상을 차지하는 가장 흔한 원인이다. 뇌에 비정상 단백질 찌꺼기가 쌓이고 신경세포가 죽어 가면서, 방금 한 일부터 잊기 시작해 길 찾기, 말, 옷 입기까지 수년에 걸쳐 차례로 무너진다. 증상이 나타나기 10년 이상 전부터 뇌의 변화가 시작된다. 아직 망가진 뇌를 되살리…"
@@ -18,7 +18,7 @@ prev_title: "섬망과 치매 비교"
 next_url: "/studies/abnormal-psychology/personality-disorders/"
 next_title: "성격장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/alzheimers-disease/"
 ---
@@ -58,6 +58,18 @@ permalink: "/studies/abnormal-psychology/alzheimers-disease/"
 | 후기 | 일상생활 활동(ADL) 기능 저하, 대화 불가능, 와상 상태, 사망 |
 
 단계별 기간은 무증상과 건망증이 약 12년, 인지장애 8년, 경증 치매 3~6년, 중증 치매 평균 3년이다. 치매 유발 단백질은 증상보다 먼저 쌓이기 시작하고, 뇌 손상과 인지 기능 손상이 그 뒤를 따른다.
+
+```mermaid
+flowchart LR
+    subgraph S1["뇌 안에서 일어나는 순서"]
+        P["치매 유발 단백질 축적"] --> BR["뇌 손상"] --> CO["인지 기능 손상"]
+    end
+    subgraph S2["단계와 기간"]
+        A["무증상과 건망증, 약 12년"] --> B["인지장애, 약 8년"] --> C["경증 치매, 3~6년"] --> D["중증 치매, 평균 3년"]
+    end
+```
+
+단백질은 증상보다 먼저 쌓이기 시작한다. 그래서 단백질 축적은 단계와 기간 줄의 무증상 시기부터 이미 진행된다[^s2].
 
 ## 원인[^3]
 
@@ -139,4 +151,5 @@ permalink: "/studies/abnormal-psychology/alzheimers-disease/"
 [^5]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.74
 [^6]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.75
 [^s1]: 에이전트 보충. LA의 사례는 p.71의 진행 단계를 보이려고 만든 가상 사례다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '진행'의 단계별 기간과 단백질·뇌 손상·인지 손상의 순서(p.71 그래프 설명)를 그렸다.
 {% endraw %}

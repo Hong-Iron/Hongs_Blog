@@ -18,7 +18,7 @@ prev_title: "추천 방법 비교"
 next_url: "/studies/data-science/mf-recommendation/"
 next_title: "행렬 분해 추천"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/data-science/recommender-metrics/"
 ---
@@ -70,6 +70,18 @@ permalink: "/studies/data-science/recommender-metrics/"
 ## 정의
 
 추천 시스템은 세 가지로 평가한다. ① 예측 정확도(평점을 얼마나 정확히 추정하나) ② 상위 N 추천의 질(목록에 관련 항목이 얼마나 들었나) ③ 순위의 질(관련 항목이 얼마나 위에 있나)[^9].
+
+```mermaid
+flowchart TD
+    E["추천 평가"] --> A["예측 정확도: 평점을 맞히나"]
+    E --> T["상위 N 추천의 질: 목록에 들었나"]
+    E --> R["순위의 질: 몇 위에 들었나"]
+    A --> A1["MSE · MAE · RMSE"]
+    T --> T1["P@K · R@K · HR@K · F1@K"]
+    R --> R1["MR · MRR · nDCG"]
+```
+
+세 갈래는 묻는 것이 다르다. 왼쪽부터 점수가 맞는지, 좋아할 것이 목록에 들었는지, 몇 위에 들었는지를 본다[^s2].
 
 **예측 정확도**[^1][^2]. $$\hat r_i$$는 예측 평점, $$r_i$$는 실제 평점이다.
 
@@ -147,4 +159,5 @@ $$rel_i \in \{0, 1\}$$은 $$i$$위의 관련 여부, $$\log_2(i + 1)$$은 아래
 [^11]: 같은 자료, p.19
 [^12]: 같은 자료, p.21
 [^s1]: 에이전트 보충. 카드 C2는 원본에 없다. 검증 코드로 계산했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 세 갈래와 지표 목록(원본 11-2 p.10~19)을 근거로 그렸다.
 {% endraw %}

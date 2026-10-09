@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/complex-wave/"
 next_title: "파동의 복소수 표현"
 math: true
 mermaid: false
-code_count: 0
+code_count: 1
 permalink: "/studies/human-interface-media/longitudinal-transverse-wave/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/human-interface-media/longitudinal-transverse-wave/"
 스피커 앞의 공기 입자는 소리가 나아가는 쪽으로 밀렸다가 되돌아온다. 입자가 빽빽한 곳과 성긴 곳이 번갈아 생기고, 그 무늬가 앞으로 나아간다[^1]. 흔들리는 방향이 나아가는 방향 하나로 정해져 있으니, 소리는 "이 순간 이 지점의 압력이 얼마인가"라는 숫자 하나로 적힌다. 시간에 따라 바뀌는 값이 하나라서 1차원 신호다.
 
 빛은 전기장과 자기장이 나아가는 방향에 수직으로 흔들리며 나아간다[^1]. 빛이 $$z$$ 방향으로 나아가면 흔들림은 $$x$$ 방향일 수도, $$y$$ 방향일 수도, 둘이 섞인 방향일 수도 있다. 흔들리는 면이 2차원이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/23_longitudinal-transverse-wave_fig1.svg" alt="그림" loading="lazy">
+
+두 그림 모두 물결은 오른쪽으로 나아간다. 위쪽 점들은 좌우로만 밀려서 빽빽한 곳과 성긴 곳을 만든다. 아래쪽 점들은 위아래로만 밀린다. 빛에서 실제로 흔들리는 것은 입자가 아니라 전기장과 자기장이다. 횡파는 나아가는 방향에 수직이기만 하면 어느 쪽으로든 흔들릴 수 있고, 그림은 그중 한 방향만 그렸다[^s3].
 
 이 차이는 편광 선글라스에서 보인다. 편광 필터는 한 방향으로 흔들리는 빛만 통과시킨다. 필터 두 장을 겹쳐 하나를 90° 돌리면 빛이 거의 막힌다. 소리에는 이런 현상이 없다. 흔들리는 방향이 하나뿐이라 고를 것이 없기 때문이다[^s1].
 
@@ -112,4 +116,5 @@ $$ V = \frac{\lambda}{T} $$
 [^3]: 같은 자료, p.7 (2차원 진동의 표현: 변인은 시간, 초기값은 위상과 회전. 2차원 수인 복소수 체계의 도입)
 [^s1]: 에이전트 보충. 편광 필터와 선글라스 예는 원본에 없다. 슬라이드는 "편광 현상"이라는 이름만 든다. 표준 물리 교재의 내용이다.
 [^s2]: 에이전트 보충. 440 Hz 예와 카드 C3의 수치는 원본에 없다. 343 m/s는 [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/)에서 쓴 공기 중 음속이다. 440 Hz의 파장 343/440 = 0.78 m, C3의 0.686/0.002 = 343은 직접 계산했다.
+[^s3]: 에이전트 보충. 그림 1장은 원본에 없다. [23_longitudinal-transverse-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/)로 그렸고, 그림에 쓴 값(종파는 나아가는 방향으로만, 횡파는 그에 수직으로만 밀림, 종파에서 입자 간격이 쉬는 간격 0.5보다 좁은 곳과 넓은 곳이 함께 생김)을 같은 코드로 확인했다. 근거는 강의 4 p.6의 종파·횡파 설명이다.
 {% endraw %}

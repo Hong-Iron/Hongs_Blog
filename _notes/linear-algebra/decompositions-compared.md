@@ -9,14 +9,14 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["행렬 분해 비교", "matrix decompositions compared", "분해 고르기", "LU vs QR", "고윳값 분해 vs SVD"]
 description: "네 분해는 모두 \"행렬을 쉬운 조각의 곱으로 쪼갠다\"는 점이 같아서, 무엇을 써야 할지 헷갈린다. 가르는 질문은 하나다. 무엇을 하려는가. 방정식을 풀려면 LU, 가장 가까운 근사를 구하려면 QR, 같은 변환을 되풀이하려면 고윳값, 행렬의 구조를 크기 순으로 보거나 압축하려면 SV…"
 prev_url: "/studies/linear-algebra/dft/"
 prev_title: "이산 푸리에 변환과 FFT"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/linear-algebra/decompositions-compared/"
 ---
@@ -66,8 +66,48 @@ permalink: "/studies/linear-algebra/decompositions-compared/"
 | [고윳값](/Hongs_Blog/studies/linear-algebra/diagonalization/) | $$A = X\Lambda X^{-1}$$ | 정사각, 대각화 가능 | 반복법, $$O(n^3)$$ | 방향이 안 바뀌는 축, 성장률 | $$A^k$$, 안정성, 마르코프 |
 | [SVD](/Hongs_Blog/studies/linear-algebra/svd/) | $$A = U\Sigma V^\top$$ | 모든 행렬 | 반복법, 넷 중 가장 비쌈 | 랭크, 크기 순 방향, 조건수 | 저랭크 근사, 유사역행렬, PCA |
 
+```
+LU (n = 3)             PA      =      L       x      U
+                    [* * *]        [1 0 0]        [* * *]
+                    [* * *]        [* 1 0]        [0 * *]
+                    [* * *]        [* * 1]        [0 0 *]
+
+QR (m = 4, n = 3)       A      =      Q       x      R
+                    [* * *]        [* * *]        [* * *]
+                    [* * *]        [* * *]        [0 * *]
+                    [* * *]        [* * *]        [0 0 *]
+                    [* * *]        [* * *]
+
+고윳값 (n = 3)          A      =      X       x   Lambda   x   X^-1
+                    [* * *]        [* * *]        [l 0 0]      [* * *]
+                    [* * *]        [* * *]        [0 l 0]      [* * *]
+                    [* * *]        [* * *]        [0 0 l]      [* * *]
+
+SVD (m = 4, n = 3)      A      =      U       x    Sigma   x   V^T
+                    [* * *]       [* * * *]       [s 0 0]      [* * *]
+                    [* * *]       [* * * *]       [0 s 0]      [* * *]
+                    [* * *]       [* * * *]       [0 0 s]      [* * *]
+                    [* * *]       [* * * *]       [0 0 0]
+```
+
+`*`는 아무 수, `l`은 고윳값 λ, `s`는 특잇값 σ, `0`과 `1`은 늘 그 값인 칸이다. 길쭉한 A를 받는 것은 QR과 SVD뿐이다. SVD의 Σ는 A와 크기가 같고, 대각 아래 남는 줄은 0으로 채운다[^s2].
+
 - **대칭행렬에서는 겹친다.** 대칭이면 고윳값 분해가 $$Q\Lambda Q^\top$$([스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/))이고, 양의 준정부호이면 SVD와 같다.
 - **직교 행렬이 들어간 분해(QR, 대칭의 $$Q\Lambda Q^\top$$, SVD)는 수치적으로 안정하다.** 직교 행렬은 [조건수](/Hongs_Blog/studies/linear-algebra/conditioning/)가 1이라 오차를 키우지 않는다. LU는 피벗팅으로 안정성을 챙긴다.
+
+```mermaid
+flowchart TD
+    Q{"무엇을 하려는가"}
+    Q -->|"Ax = b를 풀기"| LU["LU: 정사각, 가역"]
+    Q -->|"가장 가까운 근사"| QR["QR: m ≥ n, 열 독립"]
+    Q -->|"같은 변환을 되풀이"| EIG["고윳값 분해: 정사각, 대각화 가능"]
+    Q -->|"구조를 크기 순으로 보기, 압축"| SVD["SVD: 모든 행렬"]
+    LU -.->|"대칭 양의 정부호"| CH["숄레스키 LLᵀ, LU의 절반 비용"]
+    EIG -.->|"대칭"| SP["QΛQᵀ, 양의 준정부호면 SVD와 같다"]
+    Q -->|"크고 희소한 행렬"| IT["반복법: 켤레 기울기법, GMRES"]
+```
+
+먼저 하려는 일로 갈래를 고른다. 그다음 점선을 따라 행렬 모양에 맞는 더 싼 방법이 있는지 본다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 우변 500개에서 LU 재사용과 매번 소거의 연산 수, 불량 조건 다항식 맞추기에서 QR 오차 < 정규방정식 오차, 마르코프 행렬의 $$A^k$$가 $$X\Lambda^kX^{-1}$$와 같고 $$\sigma(A^k) \ne \sigma(A)^k$$(비대칭), 직사각 행렬의 SVD, 대칭 양의 정부호에서 고윳값 = 특잇값, 숄레스키가 $$LL^\top$$를 재구성 — [28_decompositions-compared_verify.py](/Hongs_Blog/studies/linear-algebra/code/28_decompositions-compared_verify/)</div>
@@ -83,4 +123,5 @@ permalink: "/studies/linear-algebra/decompositions-compared/"
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.6절(LU), 4.4절(QR), 6.2절(대각화), 7.2절(SVD), 11.1절(실제 계산). Trefethen·Bau, *Numerical Linear Algebra*, 2부(QR과 최소제곱), 4부(연립방정식과 숄레스키), 5부(고윳값), 1부(SVD).
 [^s1]: 에이전트 보충. 켤레 기울기법·GMRES·란초스는 Trefethen·Bau 6부 "Iterative Methods"에, 무작위 SVD는 Halko·Martinsson·Tropp, "Finding structure with randomness", *SIAM Review* 53 (2011)에 있다.
+[^s2]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 이 문서 `결정적 차이` 표의 꼴·쓸 수 있는 행렬과 첫 문단, `둘 다 아닐 때` 목록을 옮겼다(Strang 5판 2.6·4.4·6.2·7.2절, Trefethen·Bau).
 {% endraw %}

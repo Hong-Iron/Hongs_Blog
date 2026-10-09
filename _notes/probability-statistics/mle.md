@@ -18,7 +18,7 @@ prev_title: "표본분포와 추정량"
 next_url: "/studies/probability-statistics/confidence-intervals/"
 next_title: "신뢰구간"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/mle/"
 ---
@@ -60,6 +60,20 @@ permalink: "/studies/probability-statistics/mle/"
 
 
 로그는 증가함수라 최댓점이 같다. 곱을 합으로 바꿔 미분하기 쉽고, 아주 작은 확률의 곱이 컴퓨터에서 0으로 뭉개지는 것도 막는다.
+
+```mermaid
+flowchart TD
+    A["모델 f(x; θ)와 독립 관측 x1, …, xn"] --> B["가능도 L(θ): 확률의 곱"]
+    B --> C["로그 가능도 ℓ(θ): 로그의 합"]
+    C --> D{"ℓ′(θ) = 0을 손으로 풀 수 있는가"}
+    D -->|"예"| E["후보 θ̂"]
+    E --> F["2계 도함수와 경계값으로 최대인지 확인"]
+    D -->|"아니오"| G["경사 하강법 같은 수치 최적화"]
+    F --> H["최대가능도 추정값 θ̂"]
+    G --> H
+```
+
+'예' 갈래가 아래 대표 문제 1(포아송 도착률)의 길이고, '아니오' 갈래가 대표 문제 2(로지스틱 회귀)의 길이다.[^s2]
 
 **대표적인 결과.**
 
@@ -194,4 +208,5 @@ permalink: "/studies/probability-statistics/mle/"
 
 [^1]: Wasserman, *All of Statistics*, "Parametric Inference" 장(최대가능도, 일치성, 점근 정규성, 피셔 정보량, 불변성).
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [30_mle_plot.py](/Hongs_Blog/studies/probability-statistics/code/30_mle_plot/)로 그렸고, 그림에 쓴 값(예시 표의 다섯 값, 두 곡선의 최댓점 0.7)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의와 베르누이 MLE 유도, 대표 문제 1·2의 단계를 한 흐름으로 그렸다.
 {% endraw %}

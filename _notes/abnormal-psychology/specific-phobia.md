@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Specific Phobia", "단순공포증", "simple phobia", "상황형", "situational type", "자연환경형", "natural environment type", "혈액-주사-상처형", "blood-injection-injury type", "동물형", "animal type", "꼬마 한스", "Little Hans", "꼬마 앨버트", "Little Albert"]
 description: "거미, 높은 곳, 주사처럼 딱 정해진 대상이나 상황 하나 앞에서만 극심한 공포를 느끼고, 그것을 적극적으로 피하는 장애다. 대상만 없으면 멀쩡하지만, 피하느라 여행이나 병원 진료를 포기할 만큼 생활이 좁아진다. 흔하지만 대상을 피하며 살 수 있어 병원에는 잘 오지 않는다. 약은 별…"
@@ -18,7 +18,7 @@ prev_title: "선택적 함구증"
 next_url: "/studies/abnormal-psychology/two-factor-theory/"
 next_title: "모러의 2요인 이론"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/specific-phobia/"
 ---
@@ -74,6 +74,23 @@ permalink: "/studies/abnormal-psychology/specific-phobia/"
 
 왓슨의 꼬마 앨버트 실험에서, 흰쥐(조건 자극)를 보여 줄 때마다 큰 소리(무조건 자극)를 내자 앨버트는 흰쥐만 봐도 두려워하게 되었다. 공포가 고전적 조건형성으로 학습된다는 증거다. 공포가 생기는 과정과 유지되는 과정은 [모러의 2요인 이론](/Hongs_Blog/studies/abnormal-psychology/two-factor-theory/)에서 다룬다.
 
+```mermaid
+flowchart LR
+  subgraph 전["실험 전"]
+    R1["흰쥐"] --> N1["두려움 없음"]
+    L1["큰 소리"] --> F1["두려움"]
+  end
+  subgraph 중["짝짓기를 되풀이"]
+    P["흰쥐 + 큰 소리"] --> F2["두려움"]
+  end
+  subgraph 후["실험 후"]
+    R3["흰쥐만"] --> F3["두려움"]
+  end
+  전 --> 중 --> 후
+```
+
+왼쪽에서 오른쪽으로 흰쥐 칸만 따라가면 된다. 처음에는 아무 반응도 없던 흰쥐가 큰 소리와 함께 나오기를 되풀이한 뒤에는 혼자서도 두려움을 일으킨다[^s3].
+
 같은 현상을 두 입장은 이렇게 다르게 읽는다.
 
 | | 꼬마 한스 (정신분석) | 꼬마 앨버트 (행동주의) |
@@ -123,4 +140,5 @@ permalink: "/studies/abnormal-psychology/specific-phobia/"
 [^6]: 4-1학기/이상 심리학/1.수업자료/04.불안장애.pdf, p.25
 [^s1]: 에이전트 보충. BZ의 사례는 진단 조건을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 혈액-주사-상처형의 혈관미주신경 반응(기절)은 DSM-5-TR과 불안장애 교재의 표준 설명이다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '행동주의적 입장'의 꼬마 앨버트 실험 설명(슬라이드 p.23)을 근거로 그렸다.
 {% endraw %}

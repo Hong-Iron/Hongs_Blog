@@ -18,7 +18,7 @@ prev_title: "그래프 분할과 정규화 컷"
 next_url: "/studies/data-science/recommender-systems/"
 next_title: "추천 시스템"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/data-science/spectral-clustering/"
 ---
@@ -104,6 +104,18 @@ $$\min_{A, B}\operatorname{NCut}(A, B) \ \to\ \min_{\mathbf f}\frac{\mathbf f^\t
     U의 각 행(꼭짓점의 새 좌표)에 k-평균을 돌린다
 ```
 
+```mermaid
+flowchart LR
+    X["자료 X"] --> W["유사도 그래프 W"]
+    W --> L["D와 L = D − W"]
+    L --> E["Lf = λDf의 고유벡터"]
+    E --> U["상수 벡터를 빼고 다음 k개로 U"]
+    U --> K["U의 행마다 k-평균"]
+    K --> C["군집 k개"]
+```
+
+점의 원래 좌표는 첫 칸에서만 쓰인다. 그 뒤로는 그래프와 고유벡터가 만든 새 좌표로 군집을 나눈다[^s3].
+
 ## 활용
 
 - 구현: [38_spectral-clustering_impl.py](/Hongs_Blog/studies/data-science/code/38_spectral-clustering_impl/)
@@ -156,4 +168,5 @@ $$\min_{A, B}\operatorname{NCut}(A, B) \ \to\ \min_{\mathbf f}\frac{\mathbf f^\t
 [^4]: 같은 자료, p.18
 [^s1]: 에이전트 보충. 고윳값 0, 2, 4, 4와 둘째 고유벡터, 일반화 고유문제와 정규화 라플라시안의 관계(Shi & Malik, PAMI 2000), 증명, 세 가지 예, 사이킷런, 반복법, 카드 C2·C4는 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [38_spectral-clustering_plot.py](/Hongs_Blog/studies/data-science/code/38_spectral-clustering_plot/)로 그렸고, 두 삼각형에서 부호가 {0, 1, 2}와 {3, 4, 5}를 가르고 $$L\mathbf f = \lambda D\mathbf f$$를 만족함, 두 고리에서 스펙트럼 군집화가 모두 맞히고 k-평균은 0.53만 맞힘을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서의 의사코드, 37번 문서의 유사도 그래프 만들기(원본 10-2 p.11, p.15~18)를 근거로 그렸다.
 {% endraw %}

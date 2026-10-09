@@ -18,7 +18,7 @@ prev_title: "이분법"
 next_url: "/studies/numerical-analysis/fixed-point-iteration/"
 next_title: "고정점 반복"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/secant-method/"
 ---
@@ -65,6 +65,20 @@ $$x_{i+1} = x_i - \frac{f(x_i)(x_i - x_{i-1})}{f(x_i) - f(x_{i-1})}$$
 
 
 **입력:** 시작점 두 개 $$x_{-1}$$, $$x_0$$, 허용 오차. **출력:** 근의 근삿값. 매 반복 $$f$$를 한 번만 새로 계산한다(앞 점의 값은 다시 쓴다).
+
+```mermaid
+flowchart TD
+    A["시작점 두 개, 두 점의 f 값"] --> B{"두 f 값이 같은가?"}
+    B -->|"예"| X["0으로 나누게 된다. 시작점을 바꾼다"]
+    B -->|"아니오"| C["할선이 x축과 만나는 점을 새 점으로"]
+    C --> D["새 점에서 f를 한 번 계산"]
+    D --> E{"상대 오차가 허용 오차 이하인가?"}
+    E -->|"예"| Y["새 점을 답으로"]
+    E -->|"아니오"| F["가장 오래된 점을 버리고 최근 두 점을 남김"]
+    F --> B
+```
+
+고리를 한 번 돌 때마다 점 하나가 새로 들어오고 가장 오래된 점이 빠진다. 이분법과 달리 부호를 보고 고르는 단계가 없다[^s3].
 
 | 장점 | 단점 |
 |---|---|
@@ -115,4 +129,5 @@ $$x_{i+1} = x_i - \frac{f(x_i)(x_i - x_{i-1})}{f(x_i) - f(x_{i-1})}$$
 [^3]: 같은 자료, p.21
 [^s1]: 에이전트 보충. 수렴 차수(황금비 1.618, 실험값 1.65), 가위치법과 브렌트 방법, 흔한 실수의 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [29_secant-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$x_1 = 0.61270$$, $$x_2 = 0.56384$$, 둘째 반복의 두 점에서 함수 값이 모두 음수.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 갱신식, 입출력과 장단점 표(원본 16.na16_nonlinear.pdf p.19~21)로 그렸다. 상대 오차로 멈추는 기준은 [이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/)과 같은 것을 썼다.
 {% endraw %}

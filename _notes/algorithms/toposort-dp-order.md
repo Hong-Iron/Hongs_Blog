@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Subproblem Graph", "부분 문제 그래프", "상태 그래프", "DP 계산 순서", "표 채우는 순서", "DAG 위의 DP", "DP on DAG", "선형 확장과 DP"]
 description: "표를 채워 답을 구하는 방법(동적 계획법)에서 칸들은 \"이 칸을 구하려면 저 칸이 먼저 있어야 한다\"는 관계로 이어진다. 이 관계를 화살표로 그리면, 표를 채우는 올바른 순서는 화살표가 모두 앞에서 뒤로 가게 칸을 한 줄로 세운 것(위상 정렬)과 같다. 그래서 어떤 순서가 맞는지는…"
@@ -18,7 +18,7 @@ prev_title: "추이 폐포 ↔ 플로이드–워셜"
 next_url: "/studies/algorithms/tree-index-binary/"
 next_title: "트리 칸 번호 ↔ 2진법 자릿수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/toposort-dp-order/"
 ---
@@ -64,6 +64,20 @@ permalink: "/studies/algorithms/toposort-dp-order/"
 
 </details>
 
+
+```mermaid
+flowchart LR
+    A["A"] --> AB["A, B"]
+    B["B"] --> AB
+    B --> BC["B, C"]
+    C["C"] --> BC
+    A --> ABC["A, B, C"]
+    BC --> ABC
+    AB --> ABC
+    C --> ABC
+```
+
+먼저 비교해 보기 왼쪽 열의 구간 DP 칸 여섯 개를 화살표로 이은 그림이다. 화살표 a → b는 "b를 구할 때 a를 읽는다"이다. 맞는 채우기 순서는 모든 화살표가 앞에서 뒤로 가게 이 여섯 칸을 한 줄로 세운 것이다[^s4].
 
 ## 어디까지 같은가
 
@@ -157,4 +171,6 @@ permalink: "/studies/algorithms/toposort-dp-order/"
 [^s1]: 에이전트 보충. 구간 DP를 시작점이 큰 것부터 또는 끝점 순으로 채우는 순서, 행렬 3개 구간 DP의 순서 16가지, 기억하기 재귀가 끝내는 순서가 그대로 선형 확장이라는 것, 늘 커지는 값으로 순서를 정하는 방법은 위 출처의 정리를 볼트의 문서들에 맞춰 풀어 쓴 것이다. 41_toposort-dp-order_verify.py에서 전수와 무작위 입력으로 확인했다.
 [^s2]: 에이전트 보충. 1차원 배낭의 덮어쓰기 조건, 벨만–포드를 "간선 t개 이하"로 둔 상태, 고리를 푸는 세 가지 길, 네 방향 격자의 예는 이 문서에서 보탠 설명이다. 같은 검증 코드에서 수를 맞췄다.
 [^s3]: 에이전트 보충. 라면 단계와 의존 관계는 예로 지어낸 것이다. 순서의 개수, 최소 시간, 고리는 검증 코드로 셌다.
+
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '먼저 비교해 보기' 왼쪽 열의 칸 여섯 개와 '[A,B,C]를 구할 때 [A]와 [B,C], [A,B]와 [C]를 읽는다'는 의존 관계, [구간 DP](/Hongs_Blog/studies/algorithms/interval-dp/)의 점화식이 읽는 칸을 화살표로 그렸다.
 {% endraw %}

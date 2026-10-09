@@ -18,7 +18,7 @@ prev_title: "덧셈정리 ↔ 복소수 곱 ↔ 회전 행렬"
 next_url: "/studies/linear-algebra/determinant/"
 next_title: "행렬식"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/change-of-basis/"
 ---
@@ -54,6 +54,16 @@ $$\mathbf{b}_1, \mathbf{b}_2$$를 기저로 쓰면 좌표 $$(c_1, c_2)$$인 점�
 
 
 $$B$$를 오른쪽부터 읽으면 과정이 보인다. 새 좌표 $$\mathbf{c}$$를 $$P$$로 표준 좌표로 바꾸고, $$A$$로 변환하고, $$P^{-1}$$로 다시 새 좌표로 돌아온다.
+
+```mermaid
+flowchart LR
+    c["새 좌표 c"] -->|"P"| x["표준 좌표 Pc"]
+    x -->|"A"| y["표준 좌표 APc"]
+    y -->|"P⁻¹"| d["새 좌표 Bc"]
+    c -->|"B = P⁻¹AP"| d
+```
+
+새 좌표 c에서 Bc로 가는 길이 두 가지다. B로 곧장 가는 길과, 표준 좌표로 돌아가는 세 단계가 늘 같은 곳에 닿는다[^s3].
 
 **떠올리는 신호.** 변환이 어떤 방향들을 **그 방향 그대로** 두거나 늘이거나 뒤집는다는 것이 보이면, 그 방향들을 기저로 잡는다. 반사(고정 방향과 뒤집힌 방향), 사영(남는 방향과 사라지는 방향), 한 축을 따라 늘이기가 대표적이다. 이런 방향을 체계적으로 찾는 것이 [고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/)다.
 
@@ -115,4 +125,5 @@ $$B$$를 오른쪽부터 읽으면 과정이 보인다. 새 좌표 $$\mathbf{c}$
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 8.2절 "The Matrix of a Linear Transformation"(기저를 바꾸면 행렬이 바뀜), 8.3절 "The Search for a Good Basis"($$B = M^{-1}AM$$, 닮은 행렬).
 [^s1]: 에이전트 보충. RGB와 YCbCr의 변환 행렬은 ITU-R BT.601 규격에 정의되어 있고, JPEG(JFIF)이 이것을 쓴다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [14_change-of-basis_plot.py](/Hongs_Blog/studies/linear-algebra/code/14_change-of-basis_plot/)로 그렸고, 새 좌표 $$(2, 1)$$, 반사 결과 $$(1, 3)$$, $$P^{-1}AP = \operatorname{diag}(1, -1)$$을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$B = P^{-1}AP$$와 그것을 오른쪽부터 읽는 문단을 옮겼다(Strang 5판 8.2~8.3절).
 {% endraw %}

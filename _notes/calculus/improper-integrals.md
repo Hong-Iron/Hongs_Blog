@@ -18,7 +18,7 @@ prev_title: "부분적분"
 next_url: "/studies/calculus/sum-integral-bounds/"
 next_title: "합 ↔ 적분"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/improper-integrals/"
 ---
@@ -95,6 +95,20 @@ $$0 \le f(x) \le g(x)$$이면, $$\int_a^\infty g$$가 수렴할 때 $$\int_a^\in
 2. *비교할 함수 찾기:* $$x \ge 1$$이면 $$x^2 \ge x$$라 $$e^{-x^2} \le e^{-x}$$.
 3. *비교:* $$\int_1^\infty e^{-x}dx = e^{-1}$$로 수렴하므로 $$\int_1^\infty e^{-x^2}dx$$도 수렴한다.
 
+```mermaid
+flowchart TD
+    A["이상적분이 주어진다"] --> B["끝없는 끝과 값이 터지는 점마다 잘라 조각으로 나눈다"]
+    B --> C{"조각의 원시함수를 식으로 쓸 수 있나"}
+    C -- "예" --> D["유한한 곳에서 잘라 적분하고 극한을 본다"]
+    C -- "아니오" --> E["음이 아닌 함수면 크기를 아는 함수와 비교한다"]
+    D --> F{"모든 조각이 수렴하나"}
+    E --> F
+    F -- "예" --> G["전체가 수렴한다"]
+    F -- "하나라도 발산" --> H["전체가 발산한다"]
+```
+
+예제는 원시함수를 쓸 수 없어 비교로 가는 갈래다. 마지막 갈림, 곧 조각 하나만 발산해도 전체가 발산한다는 것이 아래 오해의 핵심이다[^s3].
+
 실제 값은 $$\frac{\sqrt\pi}{2}$$이고, 이 값은 극좌표로 바꾼 중적분으로 구한다([중적분과 변수변환](/Hongs_Blog/studies/calculus/multiple-integrals/)).
 
 <div class="callout callout-check" markdown="1">
@@ -153,4 +167,5 @@ $$0 \le f(x) \le g(x)$$이면, $$\int_a^\infty g$$가 수렴할 때 $$\int_a^\in
 [^1]: OpenStax, *Calculus Volume 2*, 3.7절 "Improper Integrals"(무한 구간, 불연속 피적분함수, 비교 판정).
 [^s1]: 에이전트 보충. 파레토 분포(꼬리 $$x^{-p}$$ 모양의 밀도)의 평균이 $$p > 2$$에서만 유한하다는 것은 p-적분에서 바로 나온다. 인터넷 트래픽의 꼬리가 두껍다는 관찰은 Crovella & Bestavros(1997, *IEEE/ACM Transactions on Networking* 5(6))가 대표적이다. 웹 전송 크기의 꼬리가 지수 약 1.06인 파레토 분포로 잘 맞았다. 이 지수는 "$$x$$보다 클 확률"의 지수라 밀도로는 약 2.06이고, 위 판정대로 평균은 유한하지만 분산은 무한하다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [15_improper-integrals_plot.py](/Hongs_Blog/studies/calculus/code/15_improper-integrals_plot/)로 그렸고, 표의 값($$t = 10, 1000, 10^6$$에서 $$1 - \frac1t$$과 $$\ln t$$)과 $$\int_1^{10}\frac{dx}{x^2} = 0.9$$(중점 합)를 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절(조각으로 나누고 두 조각이 모두 수렴할 때만 전체가 수렴), 비교 판정, 예제의 풀이 순서를 근거로 그렸다.
 {% endraw %}

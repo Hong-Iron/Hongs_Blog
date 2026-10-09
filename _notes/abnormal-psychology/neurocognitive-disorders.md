@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-28"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Neurocognitive Disorders", "NCD", "치매", "dementia", "주요 신경인지장애", "Major Neurocognitive Disorder", "경도 신경인지장애", "Mild Neurocognitive Disorder", "경도인지장애", "MCI", "인지 영역"]
 description: "멀쩡하던 기억력, 언어, 판단력이 뇌의 병 때문에 나중에 떨어져 일상생활을 제대로 못 하게 되는 장애다. 예전의 \"치매\"를 넓힌 이름으로, 나이 든 사람에게만 생기는 것이 아님을 담았다. 혼자 힘으로 생활할 수 있느냐로 주요와 경도를 가르고, 며칠 사이에 의식이 흐려졌다가 돌아오는…"
@@ -18,7 +18,7 @@ prev_title: "틱장애와 상동증적 운동장애 비교"
 next_url: "/studies/abnormal-psychology/delirium/"
 next_title: "섬망"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/neurocognitive-disorders/"
 ---
@@ -64,6 +64,17 @@ permalink: "/studies/abnormal-psychology/neurocognitive-disorders/"
 | B. 일상 독립성 | 방해된다. 최소한 공과금 납부나 약 관리 같은 복잡한 도구적 활동에 도움이 필요하다 | 방해되지 않는다. 복잡한 도구적 활동은 보존되지만 더 많은 노력, 보상 전략, 조정이 필요할 수 있다 |
 
 두 진단을 가르는 것은 B의 독립성이다[^4].
+
+```mermaid
+flowchart TD
+    A{"인지 기능이 이전보다 떨어졌고 검사로 확인되는가"} -->|"예"| B{"며칠 사이에 시작해 의식과 주의가 흐리고 하루 중 오르내리는가"}
+    B -->|"예"| D["섬망"]
+    B -->|"아니오"| C{"혼자서 일상생활을 꾸릴 수 있는가"}
+    C -->|"아니오, 공과금과 약 관리에 도움이 필요"| M["주요 신경인지장애"]
+    C -->|"예, 더 많은 노력과 보상 전략으로"| L["경도 신경인지장애"]
+```
+
+섬망을 먼저 가려낸 뒤, 남은 경우를 일상의 독립성으로 주요와 경도로 나눈다[^s2].
 
 **병인에 따른 아형.** 알츠하이머병, 혈관성, 루이소체, 파킨슨병, 전두측두엽, 외상성 뇌손상, HIV 감염, 물질/치료약물, 헌팅턴병, 프라이온병, 다른 의학적 상태, 다중 병인, 미상의 병인[^3].
 
@@ -119,4 +130,5 @@ permalink: "/studies/abnormal-psychology/neurocognitive-disorders/"
 [^4]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.64~65. p.64 기준 B 옆에 "독립적 X", p.65 기준 B 옆에 "독립적"이라는 손글씨 필기가 있다.
 [^5]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.68~69
 [^s1]: 에이전트 보충. KW의 사례는 주요 신경인지장애와 경도 신경인지장애의 경계를 보이려고 만든 가상 사례다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '세 진단'의 표(p.63~65)와 요약의 섬망 구별을 순서도로 옮겼다. 판단의 순서는 설명을 위한 배치다.
 {% endraw %}

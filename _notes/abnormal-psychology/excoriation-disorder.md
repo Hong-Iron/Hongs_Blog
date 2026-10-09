@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Excoriation Disorder", "Skin-Picking Disorder", "피부벗기기장애", "강박적 피부 뜯기", "자기진정", "자극하기"]
 description: "피부를 반복해서 뜯거나 벗겨 상처가 나는데도 멈추지 못하는 장애다. 얼굴의 뾰루지, 입술 껍질, 손톱 주변을 뜯다가 다른 부위로 옮겨 간다. 스트레스가 높을 때는 마음을 가라앉히고, 지루할 때는 자극을 주는 두 가지 쓸모가 있어 습관으로 굳는다. 스스로도 괴로워하며 상처를 숨기고,…"
@@ -18,7 +18,7 @@ prev_title: "털뽑기장애"
 next_url: "/studies/abnormal-psychology/bfrb/"
 next_title: "신체중심 반복행동"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/excoriation-disorder/"
 ---
@@ -61,6 +61,18 @@ permalink: "/studies/abnormal-psychology/excoriation-disorder/"
 - **정신분석적 입장:** 풀리지 않은 아동기의 정서적 문제, 권위적인 부모에 대한 억압된 분노의 표현.
 - **인지행동적 입장:** 일종의 스트레스 대처 방식이다. 알맞은 각성 수준을 유지하는 기능이 있다. 스트레스를 줄이는 "자기진정" 효과와, 지루할 때 각성시키는 "자극하기" 효과다.
 
+```mermaid
+flowchart LR
+  S["스트레스가 높다"] --> P["피부를 뜯는다"]
+  B["지루하다"] --> P
+  P -->|"자기진정"| D["각성이 내려간다"]
+  P -->|"자극하기"| U["각성이 올라간다"]
+  D --> M["알맞은 각성 수준"]
+  U --> M
+```
+
+출발점은 정반대인 두 상황인데, 같은 행동 하나가 양쪽 모두를 알맞은 수준으로 돌려놓는다. 그래서 어느 상황에서든 뜯기가 늘어난다[^s3].
+
 ## 치료
 
 털뽑기장애와 함께 다룬다. [신체중심 반복행동](/Hongs_Blog/studies/abnormal-psychology/bfrb/)의 습관 반전 훈련과 수용 증진 행동치료, 항우울제(SSRI).
@@ -92,4 +104,5 @@ permalink: "/studies/abnormal-psychology/excoriation-disorder/"
 [^3]: 4-1학기/이상 심리학/1.수업자료/05.강박 관련 장애.pdf, p.42
 [^s1]: 에이전트 보충. DE의 사례는 두 기능을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR은 신체이형장애의 외모 개선 목적 피부 뜯기를 피부뜯기장애의 배제 조건으로 둔다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `원인`의 인지행동적 입장(자기진정, 자극하기, 알맞은 각성 수준)을 근거로 그렸다. 슬라이드 p.42.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "트라이"
 next_url: "/studies/algorithms/brute-force/"
 next_title: "완전탐색"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/algorithms/union-find/"
 ---
@@ -45,6 +45,24 @@ permalink: "/studies/algorithms/union-find/"
 | find(3) | [0, 0, 0, **0**, 4, 4] | 3 → 2 → 0, 대표 0. 3을 0에 바로 잇는다 |
 
 union(1, 3)은 1의 대표 0과 3의 대표 2를 찾아, 2를 0 밑에 넣는다. 3은 여전히 2 밑이지만 2를 거쳐 0에 닿는다. find(3)이 한 번 올라간 뒤로는 3이 0을 바로 가리켜 다음부터 빠르다.
+
+```mermaid
+flowchart BT
+    subgraph before["union(4, 5) 뒤"]
+        b1["1"] --> b0["0 대표"]
+        b2["2"] --> b0
+        b3["3"] --> b2
+        b5["5"] --> b4["4 대표"]
+    end
+    subgraph after["find(3) 뒤"]
+        a1["1"] --> a0["0 대표"]
+        a2["2"] --> a0
+        a3["3"] --> a0
+        a5["5"] --> a4["4 대표"]
+    end
+```
+
+화살표는 parent가 가리키는 "위 사람"이다. "union(4, 5) 뒤" 묶음에서 3은 2를 거쳐야 0에 닿고, "find(3) 뒤" 묶음에서는 경로 압축으로 0을 바로 가리킨다[^s2].
 
 ```python
 parent = list(range(n))
@@ -133,4 +151,5 @@ def union(a, b):
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 15.2 "Union-find structure": 대표로 이어지는 줄, 작은 무리를 큰 무리에 잇는 방법, 연산이 O(log n)이다.
 [^2]: Cormen 외, *Introduction to Algorithms* 3판, 21.3절(순위(rank)로 합치기와 경로 압축), 21.4절(두 방법을 함께 쓰면 m번 연산이 O(m α(n)), α(n)은 실제로 쓰는 n에서 4 이하). 이 문서의 코드는 순위 대신 크기로 합친다. 크기로 합치기도 경로 압축과 함께 쓰면 같은 $$\Theta(m\,\alpha(n))$$이다(Tarjan & van Leeuwen, "Worst-case analysis of set union algorithms", *JACM* 31(2), 1984. 위키백과 "Disjoint-set data structure"가 이 논문을 근거로 "union by size or by rank"를 함께 적는다).
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [15_union-find_plot.py](/Hongs_Blog/studies/algorithms/code/15_union-find_plot/)로 그렸고, n = 2 ~ 4,096에서 크기를 안 보면 깊이 n − 1, 크기로 합치면 같은 순서에서 깊이 1, 가장 나쁜 순서에서 정확히 $$\log_2 n$$이라는 것과, 무작위 union 300묶음에서 깊이가 $$\log_2 n$$ 이하라는 것을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시 표의 union(4, 5) 줄 parent = [0, 0, 0, 2, 4, 4]와 find(3) 줄 parent = [0, 0, 0, 0, 4, 4]를 나무로 그렸다.
 {% endraw %}

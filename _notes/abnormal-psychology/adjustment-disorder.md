@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Adjustment Disorder", "적응 장애", "심리사회적 스트레스", "psychosocial stressor", "좌절 인내력", "심리적 탄력성", "resilience"]
 description: "이혼, 실직, 전학처럼 분명히 짚을 수 있는 생활의 변화 뒤에, 그 일의 무게에 비해 지나치게 우울하거나 불안하거나 말썽을 부리는 상태다. 스트레스 뒤 3개월 안에 시작하고, 스트레스가 끝나면 6개월 안에 사라지는 것이 보통이다. 우울장애나 불안장애와 증상이 비슷해 보이지만 그 장…"
@@ -18,7 +18,7 @@ prev_title: "급성 스트레스 장애"
 next_url: "/studies/abnormal-psychology/prolonged-grief-disorder/"
 next_title: "지속성 비탄 장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/adjustment-disorder/"
 ---
@@ -54,6 +54,20 @@ permalink: "/studies/abnormal-psychology/adjustment-disorder/"
 - 다른 정신장애의 진단기준에 해당하지 않아야 한다. 필기는 "우울장애, 불안장애와 증상이 헷갈릴 수 있음"이라 적었다[^1].
 
 DSM-5-TR은 정상적인 사별 반응이나 지속성 비탄 장애로 설명되는 경우를 빼고, 우울 기분·불안·품행 문제 등의 동반 양상을 명시하게 한다[^s2].
+
+```mermaid
+flowchart TD
+  S{"분명히 확인할 수 있는 스트레스가 있나?"} -->|"예"| T{"그 뒤 3개월 안에 증상이 시작했나?"}
+  S -->|"아니오"| N["적응장애가 아니다"]
+  T -->|"예"| D{"스트레스 강도에 비해 증상이 지나친가?"}
+  T -->|"아니오"| N
+  D -->|"예"| O{"다른 정신장애의 기준을 채우나?"}
+  D -->|"아니오"| N
+  O -->|"채운다"| X["그 장애로 진단한다"]
+  O -->|"못 채운다"| A["적응장애"]
+```
+
+네 질문을 위에서부터 차례로 묻는다. 마지막 질문에서 다른 장애의 기준을 채우면 적응장애가 아니라 그 장애가 된다는 점을 따라가면 된다[^s3].
 
 ## 임상적 특징과 경과[^2]
 
@@ -109,4 +123,5 @@ DSM-5-TR은 정상적인 사별 반응이나 지속성 비탄 장애로 설명�
 [^4]: 4-1학기/이상 심리학/1.수업자료/06.외상 후 스트레스 장애 및 해리장애.pdf, p.35
 [^s1]: 에이전트 보충. DY의 사례와 풀이 순서는 필기가 예고한 사례형 문제를 연습하려고 만든 가상 예다.
 [^s2]: 에이전트 보충. DSM-5-TR 적응장애의 배제 조건과 동반 양상 명시자(우울 기분, 불안, 혼합, 품행 장해 등)를 보탰다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 네 조건(분명한 스트레스, 3개월 이내 시작, 지나친 정도, 다른 장애 배제)과 `예시로 보기`의 풀이 순서를 근거로 그렸다. 슬라이드 p.32.
 {% endraw %}

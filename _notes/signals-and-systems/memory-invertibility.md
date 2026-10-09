@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Memory", "Memoryless System", "기억 없는 시스템", "기억 있는 시스템", "System with Memory", "항등 시스템", "Identity System", "누산기", "Accumulator", "지연기", "Delay", "가역성", "Invertibility", "역시스템", "Inverse System"]
 description: "지금의 출력이 지금의 입력만 보고 정해지면 기억 없는 시스템이다. 저항에 걸린 전압처럼, 과거에 무슨 일이 있었는지는 상관없다. 출력을 정하는 데 과거(또는 미래)의 입력이 필요하면 기억이 있는 시스템이다. 축전기는 그동안 들어온 전류를 쌓아 두므로 기억이 있다. 가역성은 출력만 …"
@@ -18,7 +18,7 @@ prev_title: "시스템과 시스템 연결"
 next_url: "/studies/signals-and-systems/causality/"
 next_title: "인과성"
 math: true
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/signals-and-systems/memory-invertibility/"
 ---
@@ -57,6 +57,13 @@ permalink: "/studies/signals-and-systems/memory-invertibility/"
 
 $$x \to y \text{ 가 가역} \iff y \to w \text{이고 } w = x \text{인 역시스템이 있다}$$
 
+
+```mermaid
+flowchart LR
+  X["x(t)"] --> S["시스템: y = 2x"] --> Y["y(t)"] --> I["역시스템: w = y/2"] --> W["w(t) = x(t)"]
+```
+
+가역 시스템 뒤에 역시스템을 이으면, 둘을 합친 전체는 입력을 그대로 돌려준다. 예시 표 첫 줄의 2배 시스템으로 그렸다(그림 1.45(b)).[^s2]
 
 ## 활용
 
@@ -99,4 +106,5 @@ $$x \to y \text{ 가 가역} \iff y \to w \text{이고 } w = x \text{인 역시�
 [^3]: 같은 자료, p.6
 [^4]: 같은 자료, p.7
 [^s1]: 에이전트 보충. 지연기의 가역성, zip·PNG·MP3·JPEG 예, 확인 문제 C3은 원본에 없다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 가역성 진술과 4주차 자료 p.8의 그림 1.45(b)를 근거로 그렸다.
 {% endraw %}

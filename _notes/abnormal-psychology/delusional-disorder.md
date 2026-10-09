@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Delusional Disorder", "편집증", "paranoia", "색정형", "erotomanic type", "과대형", "grandiose type", "질투형", "jealous type", "피해형", "persecutory type", "신체형", "somatic type", "잘못된 삼단논법", "폰 도마루스 원리", "Von Domarus principle", "외부 귀인"]
 description: "한 가지 이상의 망상이 한 달 넘게 이어지지만, 망상과 관련된 일 말고는 생활이 멀쩡한 경우다. 이웃이 자기를 해치려 한다고 믿으면서도 직장에는 잘 다니는 식이다. 조현병보다 기능은 좋지만, 본인은 병이라 여기지 않아 치료자를 믿지 않고 약도 거부하기 쉽다. 그래서 망상에 정면으로…"
@@ -18,7 +18,7 @@ prev_title: "정신병적 장애의 지속 기간 비교"
 next_url: "/studies/abnormal-psychology/mood-disorders/"
 next_title: "기분장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/delusional-disorder/"
 ---
@@ -72,6 +72,16 @@ permalink: "/studies/abnormal-psychology/delusional-disorder/"
 - **사회적 귀인의 오류:** 나쁜 일의 원인을 지나치게 바깥(남)에게 돌린다.
 - **정보처리의 인지적 편향:** 망상을 입증하는 정보만 골라 받아들인다. 위의 AE가 "증거가 없으면 더 교묘하게 숨긴다"고 해석하는 것이 이 편향이다.
 
+```mermaid
+flowchart LR
+  D["망상: 아내가 바람을 피운다"] --> S["휴대전화를 몰래 보고 퇴근길을 따라간다"]
+  S --> E["증거가 나오지 않는다"]
+  E --> I["더 교묘하게 숨긴다고 해석한다"]
+  I -- "믿음이 그대로 남는다" --> D
+```
+
+고리 어디에도 믿음을 바꿀 출구가 없다. 반증이 될 정보까지 망상을 지지하는 쪽으로 해석되기 때문이다[^s4].
+
 ## 치료[^5]
 
 - **어려움:** 망상이 환자의 현실 생활과 밀접하게 얽혀 오래 간다. 환자가 치료자를 믿지 않고 약을 거부한다.
@@ -116,4 +126,5 @@ permalink: "/studies/abnormal-psychology/delusional-disorder/"
 [^s1]: 에이전트 보충. AE의 사례는 망상장애의 조건을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. DSM-5-TR은 다섯 유형에 혼합형과 불특정형을 더한다.
 [^s3]: 에이전트 보충. 술어(속성)가 같다는 이유로 주어를 같은 것으로 보는 추론은 "폰 도마루스 원리"로 알려져 있다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시의 AE 사례와 인지적 입장의 '정보처리의 인지적 편향'(슬라이드 p.51)을 순환 고리로 그렸다.
 {% endraw %}

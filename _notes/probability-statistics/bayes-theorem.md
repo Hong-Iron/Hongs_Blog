@@ -18,7 +18,7 @@ prev_title: "독립과 배반 비교"
 next_url: "/studies/probability-statistics/random-variables/"
 next_title: "확률변수와 분포"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/bayes-theorem/"
 ---
@@ -44,6 +44,18 @@ permalink: "/studies/probability-statistics/bayes-theorem/"
 | 합 | **590** | 9,410 | 10,000 |
 
 양성 590명 중 병이 있는 사람은 95명뿐이라 $$\frac{95}{590} \approx 16\%$$다. 병 없는 사람이 99배 많아서, 5%의 위양성이 95명의 진양성보다 많아졌다. 표의 첫 열 비율 계산이 아래 정리의 식이다. "병 있음"이 원인 $$H$$, "양성"이 증거 $$E$$다.
+
+```mermaid
+flowchart LR
+    T["1만 명"] -->|"유병률 1%"| D["병 있음 100명"]
+    T -->|"99%"| H["병 없음 9,900명"]
+    D -->|"민감도 95%"| DP["양성 95명"]
+    D -->|"5%"| DN["음성 5명"]
+    H -->|"위양성률 5%"| HP["양성 495명"]
+    H -->|"95%"| HN["음성 9,405명"]
+```
+
+양성으로 끝나는 가지는 두 개다. 첫 갈림길은 원인($$H$$), 둘째 갈림길은 원인에서 증거($$E$$)가 나오는 확률이다. 사후확률은 양성 가지 두 개의 사람 수 95와 495 중 95의 몫이다.[^s3]
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/06_bayes-theorem_fig1.svg" alt="그림" loading="lazy">
 
@@ -200,4 +212,5 @@ $$P(H \mid E)$$와 $$P(H^c \mid E)$$의 분모가 똑같이 $$P(E)$$라 비를 �
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.3절 "Bayes' rule and the law of total probability"(정리, 오즈 꼴, 검사 예제), 2.6절 "Coherency of Bayes' rule"(증거를 한꺼번에 또는 차례로 반영해도 같다), 2.8절 "Pitfalls and paradoxes"(검사 오류 혼동).
 [^s1]: 에이전트 보충. 나이브 베이즈 스팸 필터는 Paul Graham의 글 "A Plan for Spam"(2002)으로 널리 알려졌다. 조건부 독립 가정이 틀려도 분류 성능이 좋은 이유는 이 과정의 범위 밖이다.
 [^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [06_bayes-theorem_plot.py](/Hongs_Blog/studies/probability-statistics/code/06_bayes-theorem_plot/)로 그렸고, 그림에 쓴 값(유병률 1%에서 0.161과 0.785, 10%에서 0.679)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시의 1만 명 표를 원인 → 증거 순서의 확률 나무로 옮겼다. 근거는 Blitzstein·Hwang 2판 2.3절의 검사 예제다.
 {% endraw %}

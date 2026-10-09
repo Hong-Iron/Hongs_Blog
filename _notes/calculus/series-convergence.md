@@ -18,7 +18,7 @@ prev_title: "합 ↔ 적분"
 next_url: "/studies/calculus/taylor-series/"
 next_title: "테일러 급수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/series-convergence/"
 ---
@@ -70,6 +70,22 @@ permalink: "/studies/calculus/series-convergence/"
 
 </div>
 
+
+```mermaid
+flowchart TD
+    A["급수 Σ a_k"] --> B{"a_k가 0으로 가나"}
+    B -- "아니오" --> X["발산"]
+    B -- "예" --> C{"부호가 번갈아 바뀌나"}
+    C -- "예" --> D["교대급수 판정. 절댓값을 씌운 급수도 따로 본다"]
+    C -- "아니오" --> E{"계승이나 지수가 들어 있나"}
+    E -- "예" --> F["비 판정"]
+    E -- "아니오" --> G{"양수이고 줄어드는 f(k) 꼴인가"}
+    G -- "예" --> H["적분 판정, p-급수"]
+    G -- "아니오" --> I["아는 급수와 크기를 비교한다"]
+    F -- "비의 극한이 1" --> I
+```
+
+발산 판정은 맨 먼저 하는 값싼 확인이다. 통과해도 수렴이 정해지지는 않아서, 급수의 모양을 보고 아래 판정 중 하나로 간다. 이 순서는 흔히 쓰는 요령일 뿐 규칙은 아니다[^s4].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명</summary>
@@ -139,4 +155,5 @@ $$\sum_{k=1}^{\infty}\frac{k^2}{2^k}$$이 수렴하는지 본다.
 [^s1]: 에이전트 보충. 부동소수점 덧셈이 결합법칙을 만족하지 않는다는 것과 카한 보정 덧셈은 수치 해석의 표준 내용이다. 17_series-convergence_verify.py에서 같은 항을 큰 것부터와 작은 것부터 더한 결과가 다름을 확인했다.
 [^s2]: 에이전트 보충. $$\sum\frac{1}{k^2} = \frac{\pi^2}{6}$$은 오일러가 구한 값(바젤 문제)이다. 푸리에 급수의 파르스발 등식으로 증명할 수 있어 미분적분학의 [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/)에서 다룬다.
 [^s3]: 에이전트 보충. 그림은 원본에 없다. [17_series-convergence_plot.py](/Hongs_Blog/studies/calculus/code/17_series-convergence_plot/)로 그렸고, 예시 표의 부분합($$n = 10$$, 1,000, $$10^6$$)을 같은 코드로 확인했다.
+[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 여섯 판정법과 예제의 "알맞은 판정 고르기"(다항식 ÷ 지수 꼴이라 비 판정)를 근거로 그렸다. 모양을 보고 판정을 고르는 순서는 판정법들의 조건에서 나온 요령이다.
 {% endraw %}

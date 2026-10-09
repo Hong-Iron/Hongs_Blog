@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Non-Suicidal Self-Injury", "NSSI", "자해", "self-harm", "자해의 기능"]
 description: "죽으려는 뜻 없이 자기 몸에 일부러 상처를 내는 행동이다. 대개 견디기 힘든 감정을 가라앉히거나, 도움을 청하거나, 자신을 벌하는 식의 \"쓸모\"가 있어서 되풀이된다. 죽을 뜻이 없다고 해서 가볍지 않다. 고통에 무뎌지게 만들어 자살 위험을 높이는 강력한 위험인자다. 그래서 행동을 …"
@@ -18,7 +18,7 @@ prev_title: "자살"
 next_url: "/studies/abnormal-psychology/anxiety-and-fear/"
 next_title: "불안과 공포"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/nssi/"
 ---
@@ -38,6 +38,16 @@ permalink: "/studies/abnormal-psychology/nssi/"
 - 죽으려는 의도: 없다 → 자살 시도가 아니라 비자살적 자해.
 - 기능: 부정 정서 완화("머릿속이 조용해진다").
 - 행동주의로 보면: 괴로운 감정이 사라지는 결과가 행동을 강화한다(부적 강화). 그래서 되풀이된다.
+
+```mermaid
+flowchart LR
+  E["견디기 힘든 감정"] --> S["자해"]
+  S --> R["감정이 잠깐 가라앉음"]
+  R -- "부적 강화" --> N["다음에 괴로울 때 또 자해"]
+  N --> E
+```
+
+고리의 핵심은 셋째 칸이다. 괴로움이 줄어드는 결과가 바로 따라오기 때문에, 같은 상황이 오면 같은 행동이 다시 나온다[^s3].
 
 ## 정의
 
@@ -83,4 +93,5 @@ permalink: "/studies/abnormal-psychology/nssi/"
 [^2]: 4-1학기/이상 심리학/1.수업자료/03.양극성장애와 우울장애.pdf, p.72
 [^s1]: 에이전트 보충. BJ의 사례는 정의와 기능을 보이려고 만든 가상 사례다. 방법에 대한 자세한 묘사는 일부러 넣지 않았다.
 [^s2]: 에이전트 보충. DSM-5-TR은 비자살적 자해를 3편 "추가 연구가 필요한 상태"에 싣는다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 부적 강화 설명과 '기능과 대안' 표(부정 정서 완화)를 근거로 그렸다.
 {% endraw %}

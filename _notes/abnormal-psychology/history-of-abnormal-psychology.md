@@ -62,7 +62,7 @@ permalink: "/studies/abnormal-psychology/history-of-abnormal-psychology/"
 4. **다양한 심리검사의 개발:** 비네(Binet)가 최초의 지능검사를 만들었고, 로르샤흐 검사, 성격검사, 다면적 인성검사(MMPI) 등이 뒤따랐다. 이 검사들은 이상행동의 과학적 연구와 진단, 치료효과 평가에 기여했다.
 5. **다양한 심리치료와 연구방법의 발전:** 인간중심치료, 합리적 정서치료, 인지치료, 게슈탈트 치료가 나왔다. 인지혁명으로 정신장애의 인지적 요인에 대한 연구가 급증했고, 신경과학과 뇌영상술의 발전으로 뇌과학적 연구가 늘었다.
 
-현대의 흐름은 다섯 이론적 입장으로 이어진다. 1이 [정신분석적 입장](/Hongs_Blog/studies/abnormal-psychology/psychoanalytic-perspective/), 2가 [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/), 5의 인지혁명이 [인지적 입장](/Hongs_Blog/studies/abnormal-psychology/cognitive-perspective/), 5의 신경과학이 [생물의학적 입장](/Hongs_Blog/studies/abnormal-psychology/biomedical-perspective/)이 된다.
+현대의 흐름은 네 이론적 입장으로 이어진다. 1이 [정신분석적 입장](/Hongs_Blog/studies/abnormal-psychology/psychoanalytic-perspective/), 2가 [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/), 5의 인지혁명이 [인지적 입장](/Hongs_Blog/studies/abnormal-psychology/cognitive-perspective/), 5의 신경과학이 [생물의학적 입장](/Hongs_Blog/studies/abnormal-psychology/biomedical-perspective/)이 된다.
 
 ## 연결
 

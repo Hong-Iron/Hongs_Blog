@@ -18,7 +18,7 @@ prev_title: "B-스플라인"
 next_url: "/studies/numerical-analysis/bezier-subdivision/"
 next_title: "베지어 곡선의 세분화"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/surface-patches/"
 ---
@@ -50,6 +50,16 @@ permalink: "/studies/numerical-analysis/surface-patches/"
 ## 정의
 
 곡면도 음함수로 $$f(x, y, z) = 0$$(평면 $$ax + by + cz + d = 0$$, 구 $$x^2 + y^2 + z^2 - r^2 = 0$$)처럼 쓸 수 있다[^2]. **매개변수 곡면**은 각 성분이 독립변수 둘 $$u$$, $$v$$에 달린 $$\mathbf P(u, v) = (x(u, v), y(u, v), z(u, v))$$다[^3]. 곡면을 여러 패치로 나누고 패치마다 매개변수 식을 둔다[^4].
+
+```mermaid
+flowchart LR
+    L["선형 보간"] -->|"u, v 두 방향"| BL["쌍선형 곡면"]
+    H["에르미트 곡선"] -->|"u, v 두 방향"| BC["쌍3차 패치"]
+    Z["베지어 곡선"] -->|"u, v 두 방향"| BZ["베지어 곡면"]
+    S["B-스플라인"] -->|"u, v 두 방향"| SS["스플라인 곡면"]
+```
+
+왼쪽 곡선 방법을 $$u$$와 $$v$$에 한 번씩 쓰면 오른쪽 곡면 방법이 된다.[^s3]
 
 ### 쌍선형 곡면
 
@@ -146,4 +156,5 @@ $$\mathbf p(u, v) = \mathbf u^\top M_S\,P\,M_S^\top\mathbf v, \qquad \mathbf u =
 [^16]: 같은 자료, p.17
 [^s1]: 에이전트 보충. 메시와 패치의 비교, 쌍선형 예와 카드 C2, CAD·유타 찻주전자, 흔한 실수, 카드 C3은 원본에 없다. 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [17_surface-patches_plot.py](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 가운데 $$(1, 1, \frac12)$$, 꼭짓점 통과, $$u$$를 고정한 선 위의 가운데 점이 양 끝의 평균(곧은 선).
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 요약과 '정의'의 네 곡면 방법(원본 08.na08_surfaces.pdf p.6~17)으로 그렸다.
 {% endraw %}

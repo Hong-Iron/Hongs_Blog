@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Body-Focused Repetitive Behavior", "BFRB", "습관 반전 훈련", "Habit Reversal Training", "HRT", "경쟁반응 훈련", "competing response", "자각 훈련", "awareness training", "수용 증진 행동치료", "Acceptance-Enhanced Behavior Therapy", "AEBT", "손톱 물어뜯기"]
 description: "털 뽑기, 피부 뜯기, 손톱 물어뜯기, 볼·입술 씹기처럼 자기 몸을 대상으로 거의 무의식적으로 되풀이하는 행동들이다. 몸의 어떤 감각이 긴장을 만들고, 행동을 하면 긴장이 풀리는 고리로 굴러간다. 강박장애가 \"불안한 생각 → 그 생각을 지우는 행동\"이라면, 이것은 \"감각 → 긴장 …"
@@ -18,7 +18,7 @@ prev_title: "피부뜯기장애"
 next_url: "/studies/abnormal-psychology/trauma-and-stressor/"
 next_title: "외상과 스트레스 관련 장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/bfrb/"
 ---
@@ -61,6 +61,18 @@ permalink: "/studies/abnormal-psychology/bfrb/"
 - **습관 반전 훈련(HRT):** 틱, 손가락 빨기, 발모광 같은 습관 장애를 치료하는 행동 기법이다.
     - 목표 행동과 전조의 자각
     - 경쟁반응 훈련: 습관 행동과 동시에 할 수 없는 행동을 늘린다.
+
+```mermaid
+flowchart LR
+  S["몸의 감각: 간질거림, 까칠함"] --> T["긴장"]
+  T --> A["반복 행동"]
+  A --> R["해소"]
+  R -.->|"다음에 다시"| S
+  W["자각 훈련"] -.->|"전조를 알아챈다"| T
+  C["경쟁반응 훈련"] -.->|"동시에 할 수 없는 행동으로 바꾼다"| A
+```
+
+위쪽 줄이 "감각 → 긴장 → 행동 → 해소"의 고리다. 습관 반전 훈련은 고리의 두 자리, 즉 전조를 알아채는 자리와 행동이 나오는 자리에 끼어든다[^s2].
 - **수용 증진 행동치료(AEBT):** 습관 반전 훈련에 수용전념치료(ACT)를 더한 것이다. 행동을 억누르는 데서 그치지 않고, 행동 충동과 불편한 감각·정서를 받아들이고, 자기에게 중요한 가치에 따른 행동으로 옮겨 가게 돕는다.
 
 ## 연결
@@ -97,4 +109,5 @@ permalink: "/studies/abnormal-psychology/bfrb/"
 [^1]: 4-1학기/이상 심리학/1.수업자료/05.강박 관련 장애.pdf, p.44. "뭔가 간지럽거나, 불편하거나…", "습관 행동과 양립할 수 없는 행동 증진"은 손글씨 필기다.
 [^2]: 4-1학기/이상 심리학/1.수업자료/05.강박 관련 장애.pdf, p.43
 [^s1]: 에이전트 보충. DF의 훈련 과정은 습관 반전 훈련의 표준 절차를 사례에 적용한 가상 예다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 "감각 → 긴장 → 행동 → 해소" 기제와 `치료`의 습관 반전 훈련 두 요소를 근거로 그렸다. 슬라이드 p.43~44.
 {% endraw %}

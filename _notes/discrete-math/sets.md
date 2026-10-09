@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Set", "집합", "원소", "element", "부분집합", "subset", "공집합", "empty set", "합집합", "union", "교집합", "intersection", "차집합", "difference", "여집합", "complement", "멱집합", "power set", "곱집합", "Cartesian product", "벤 다이어그램", "Venn diagram", "러셀의 역설", "Russell's paradox"]
 description: "집합은 순서와 중복을 따지지 않는 \"원소의 모음\"이다. 합집합·교집합·차집합으로 모음을 조합하고, 부분집합을 모두 모은 멱집합, 순서쌍을 모은 곱집합으로 새 집합을 만든다. 데이터베이스의 표, 타입, 권한 그룹이 모두 집합이다. 다만 \"자기 자신을 원소로 갖지 않는 모든 집합의 집…"
@@ -18,7 +18,7 @@ prev_title: "불 대수와 논리 회로"
 next_url: "/studies/discrete-math/function-properties/"
 next_title: "함수의 성질과 집합의 크기"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/sets/"
 ---
@@ -87,6 +87,18 @@ $$A = \{1,2,3,4\}$$, $$B = \{3,4,5\}$$에서 $$\mathcal{P}(A \cap B)$$를 구한
 2. *부분집합 늘어놓기:* 원소마다 넣을지 뺄지 두 가지씩이다. $$\varnothing, \{3\}, \{4\}, \{3,4\}$$.
 3. *개수 확인:* $$2^2 = 4$$개다. 공집합과 자기 자신도 부분집합이다.
 
+```mermaid
+flowchart TD
+  R["시작: 아무것도 안 고름"] -->|"3 넣음"| A["3"]
+  R -->|"3 뺌"| B["없음"]
+  A -->|"4 넣음"| L1["{3, 4}"]
+  A -->|"4 뺌"| L2["{3}"]
+  B -->|"4 넣음"| L3["{4}"]
+  B -->|"4 뺌"| L4["∅"]
+```
+
+원소마다 갈림길이 둘이라 한 단계 내려갈 때마다 갈래가 두 배가 된다. 맨 아래 잎 네 개가 부분집합 넷이고, 원소가 $$n$$개면 잎이 $$2^n$$개다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 무작위 부분집합 3,000조에서 드모르간·분배, $$\vert \mathcal{P}(A)\vert  = 2^n$$, $$\vert A \times B\vert $$, 예시와 예제, 비트마스크 연산, $$\varnothing \ne \{\varnothing\}$$ — [06_sets_verify.py](/Hongs_Blog/studies/discrete-math/code/06_sets_verify/)</div>
 
@@ -143,4 +155,5 @@ $$A = \{1,2,3,4\}$$, $$B = \{3,4,5\}$$에서 $$\mathcal{P}(A \cap B)$$를 구한
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장 "Mathematical Data Types"(집합). Rosen, *Discrete Mathematics and Its Applications* 7판, 2장(집합, 집합 연산).
 [^s1]: 에이전트 보충. 러셀의 역설과 이를 피하는 분리 공리는 공리적 집합론(ZFC)의 내용이다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제' 2단계의 '원소마다 넣을지 뺄지 두 가지씩'을 갈림길로 그렸다.
 {% endraw %}

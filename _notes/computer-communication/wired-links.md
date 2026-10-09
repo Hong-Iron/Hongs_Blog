@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Wired Links", "유선 링크의 종류", "트위스티드 페어", "twisted pair", "UTP", "Cat 5", "동축 케이블", "coax", "coaxial cable", "광케이블", "optical fiber", "멀티모드", "multimode", "싱글모드", "single-mode", "굴절률", "index of refraction", "코어", "core", "클래딩", "cladding", "전반사", "전용선", "leased line", "T1", "T3", "STS", "SONET", "ISDN"]
 description: "선을 직접 깔 때는 거리와 속도를 보고 구리선이나 광케이블을 고른다. 꼬인 구리선은 싸고 흔하지만 100 m 정도가 한계이고, 광케이블은 빛을 유리 속에 가두어 수십 km를 빠르게 간다. 광케이블도 가운데 심이 굵은 멀티모드는 빛이 여러 길로 퍼져서 짧은 거리용이고, 심이 가는 싱…"
@@ -19,7 +19,7 @@ next_url: "/studies/computer-communication/last-mile-links/"
 next_title: "가입자 선로"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/computer-communication/wired-links/"
 ---
 {% raw %}
@@ -55,6 +55,10 @@ permalink: "/studies/computer-communication/wired-links/"
 | 코어 | 비교적 굵다[^3] | 비교적 가늘다[^3] |
 | 빛의 길 | 여러 각도의 길(모드)로 튕기며 간다 | 거의 곧은 길 하나로 간다 |
 | 결과 | 길마다 도착 시간이 달라 신호가 퍼진다. 느리고 짧은 거리용[^2] | 덜 퍼져서 빠르고 멀리 간다[^2] |
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/32_wired-links_fig1.svg" alt="그림" loading="lazy">
+
+위가 멀티모드, 아래가 싱글모드다. 멀티모드에서는 같은 순간 들어간 빛이 기울기에 따라 다른 길로 튕기며 간다. 많이 기운 빛일수록 길이 길어 늦게 도착한다. 싱글모드는 코어가 가늘어 빛이 축을 따라 거의 한 길로만 간다[^s3].
 
 
 <div class="callout callout-warning" markdown="1">
@@ -136,4 +140,5 @@ permalink: "/studies/computer-communication/wired-links/"
 [^3]: 4-1학기/pasted_images/Pasted image 20260926025851.png — 슬라이드 "광케이블: Optical Fiber". "Index of reflection = Speed in Vacuum / Speed in medium"
 [^s1]: 에이전트 보충. 굴절률 1.5의 계산, 전반사와 임계각, 모드마다 도착 시간이 다른 현상(모드 분산)은 원본에 없다. 표준적인 광학 내용이고, Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절의 광케이블 설명과 같다. 슬라이드의 "Index of reflection"은 굴절률(index of refraction)을 가리킨다.
 [^s2]: 에이전트 보충. STS-$$n$$이 STS-1의 $$n$$배라는 규칙은 SONET 표준(ANSI T1.105)의 정의다.
+[^s3]: 에이전트 보충. 그림 한 장은 원본에 없다. [32_wired-links_plot.py](/Hongs_Blog/studies/computer-communication/code/32_wired-links_plot/)로 그렸다. 굴절률은 원본 오류 의심 상자의 예($$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$)를 썼다. 그린 빛의 기울기(축에서 4°, 8°)가 임계각 80.6°에서 나오는 한계 9.4°보다 작아 모두 전반사된다는 것과, 8° 기운 길이 곧은 길보다 약 1% 길다는 것을 같은 코드로 확인했다. 코어 굵기와 케이블 길이의 비율은 보기 좋게 바꿨다.
 {% endraw %}

@@ -9,14 +9,14 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Propositional Logic", "명제", "proposition", "논리 연산자", "logical connective", "진리표", "truth table", "부정", "negation", "논리곱", "conjunction", "논리합", "disjunction", "조건문", "implication", "쌍조건문", "biconditional", "배타적 논리합", "XOR"]
 description: "명제는 참인지 거짓인지 딱 정해지는 문장이다. \"그리고·또는·아니다·이면\" 같은 연결어로 짧은 명제를 이어 복잡한 조건을 만들고, 그 참·거짓은 모든 경우를 표로 늘어놓아(진리표) 기계적으로 따진다. 프로그램의 if 조건이 곧 명제 논리다. 가장 헷갈리는 곳은 \"p이면 q\"로, p…"
 next_url: "/studies/discrete-math/logical-equivalence/"
 next_title: "논리적 동치와 정규형"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/propositional-logic/"
 ---
@@ -45,6 +45,16 @@ permalink: "/studies/discrete-math/propositional-logic/"
 | F | F | F | F | F |
 
 코드로는 `if (pw_ok and active) or admin:`이다. 진리표의 한 행이 입력 한 가지, 마지막 열이 그 입력에 대한 판정이다.
+
+```mermaid
+flowchart TD
+  OR["또는 ∨: 마지막에 계산"] --> AND["그리고 ∧: 먼저 계산"]
+  OR --> C["c: 관리자"]
+  AND --> A["a: 비밀번호 맞음"]
+  AND --> B["b: 계정 활성"]
+```
+
+식을 나무 모양으로 그리면 아래쪽 연결어부터 값을 정해 위로 올라간다. 진리표의 $$a \wedge b$$ 열이 가운데 마디의 값이고, 마지막 열이 맨 위 마디의 값이다[^s1].
 
 ## 정의
 
@@ -136,4 +146,5 @@ $$(p \to q) \wedge (q \to p)$$의 진리표를 만든다.
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 3장 "Logical Formulas". Rosen, *Discrete Mathematics and Its Applications* 7판, 1장 "The Foundations: Logic and Proofs".
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 로그인 규칙 $$(a \wedge b) \vee c$$와 정의의 연산 순서를 식의 나무 모양으로 그렸다.
 {% endraw %}

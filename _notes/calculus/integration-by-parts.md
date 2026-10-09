@@ -18,7 +18,7 @@ prev_title: "치환적분"
 next_url: "/studies/calculus/improper-integrals/"
 next_title: "이상적분"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/integration-by-parts/"
 ---
@@ -91,6 +91,21 @@ $$u = \ln x$$, $$v = x$$로 두고 $$x$$가 1에서 $$e$$까지 가면 점 $$(v,
 2. *한 번 더:* $$\int e^x\cos x\,dx = e^x\cos x + \int e^x \sin x\,dx = e^x\cos x + I$$.
 3. *방정식으로 풀기:* $$I = e^x\sin x - e^x\cos x - I$$에서 $$I = \frac{e^x(\sin x - \cos x)}{2} + C$$.
 
+```mermaid
+flowchart TD
+    A["곱의 적분"] --> B["미분하면 단순해지는 쪽을 u, 나머지를 dv로 나눈다"]
+    B --> C["uv − ∫ v du로 바꾼다"]
+    C --> D{"남은 적분 ∫ v du는 어떤가"}
+    D -- "바로 풀린다" --> E["끝"]
+    D -- "같은 꼴, 차수만 낮아졌다" --> F["다시 부분적분한다. 여러 번이면 표 방법"]
+    F --> C
+    D -- "원래 적분이 돌아왔다" --> G["원래 적분을 I로 두고 방정식으로 푼다"]
+    D -- "더 복잡해졌다" --> H["u와 dv를 바꿔 고른다"]
+    H --> B
+```
+
+예시의 $$xe^x$$는 한 바퀴 만에 끝나고, 표 방법의 $$x^2e^x$$는 고리를 여러 번 돈다. $$e^x\sin x$$는 두 바퀴 뒤 원래 적분이 돌아오는 갈래로 빠진다[^s3].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 모든 원시함수를 수치 미분해 피적분함수와 비교, $$\int_0^\infty x e^{-x} dx = 1$$과 $$\int_0^\infty x^n e^{-x}dx = n!$$($$n \le 6$$, 수치 적분), 푸리에 계수 예 — [14_integration-by-parts_verify.py](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_verify/)</div>
 
@@ -138,4 +153,5 @@ $$u = \ln x$$, $$v = x$$로 두고 $$x$$가 1에서 $$e$$까지 가면 점 $$(v,
 [^1]: OpenStax, *Calculus Volume 2*, 3.1절 "Integration by Parts"(공식, $$u$$ 고르기, 반복 적용, 정적분).
 [^s1]: 에이전트 보충. LIATE는 여러 미적분 교재와 강의에서 쓰는 경험칙이다. 아벨의 부분합은 Graham·Knuth·Patashnik, *Concrete Mathematics* 2.6절의 "summation by parts"로 확인할 수 있다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [14_integration-by-parts_plot.py](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_plot/)로 그렸고, 두 넓이 1과 $$e - 1$$, 그 합 $$e$$, 원시함수 $$x\ln x - x$$로 계산한 값 1을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기(잘못 고르면 차수가 오름), $$u$$ 고르는 요령, 반복과 표, 예제의 두 경우를 근거로 그렸다.
 {% endraw %}

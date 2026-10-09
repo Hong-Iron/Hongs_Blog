@@ -18,7 +18,7 @@ prev_title: "셈의 기본 법칙"
 next_url: "/studies/discrete-math/multiset-counting/"
 next_title: "중복을 허용하는 셈"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/permutations-combinations/"
 ---
@@ -39,6 +39,18 @@ permalink: "/studies/discrete-math/permutations-combinations/"
 - **대표 위원 3명을 뽑는다(순서 무관).** 위원 {가, 나, 다}는 직책이 없으니, 위의 720가지 중 같은 세 사람을 직책만 바꿔 앉힌 $$3! = 6$$가지가 모두 한 경우다. 그래서 $$720 / 6 = 120$$가지다.
 
 10명이 아래 정의의 $$n$$, 뽑는 3명이 $$k$$, 직책을 바꿔 앉히는 수 $$3!$$이 나누는 수다.
+
+```mermaid
+flowchart LR
+  G["위원 묶음: 가, 나, 다"] --> P1["가 나 다"]
+  G --> P2["가 다 나"]
+  G --> P3["나 가 다"]
+  G --> P4["나 다 가"]
+  G --> P5["다 가 나"]
+  G --> P6["다 나 가"]
+```
+
+오른쪽 줄은 회장, 부회장, 총무 순서로 앉힌 것이다. 위원 묶음 하나에 줄 6개가 딸려 있어서, 720개의 줄을 6개씩 묶으면 묶음이 120개다[^s2].
 
 ## 정의
 
@@ -204,4 +216,5 @@ permalink: "/studies/discrete-math/permutations-combinations/"
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(순열, 부분집합 세기, 포커 패, 조합적 증명). OpenStax, *Precalculus 2e*, 11.5절 "Counting Principles".
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [15_permutations-combinations_plot.py](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_plot/)로 그렸고, $$\binom{40}{20} = 137{,}846{,}528{,}820$$과 어림 $$2^{40}/\sqrt{20\pi}$$의 차이가 1% 미만인 것, $$\binom{40}{3} = 9{,}880$$을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 '같은 세 사람을 직책만 바꿔 앉힌 $$3! = 6$$가지'를 그렸다.
 {% endraw %}

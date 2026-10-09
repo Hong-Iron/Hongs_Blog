@@ -18,7 +18,7 @@ prev_title: "다변수 함수와 편미분"
 next_url: "/studies/calculus/multivariable-chain-rule/"
 next_title: "다변수 연쇄 법칙과 야코비 행렬"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/gradient/"
 ---
@@ -129,6 +129,16 @@ $$f$$가 $$\mathbf{a}$$에서 미분 가능하면
 
 **충분조건.** 편미분이 그 점 근처에서 연속이면 미분 가능하다. 위 예의 편미분은 원점에서 연속이 아니다[^1].
 
+```mermaid
+flowchart TD
+    A["편미분이 그 점 근처에서 연속"] --> B["미분 가능"]
+    B --> C["모든 방향에서 D_u f = ∇f · u"]
+    B --> D["편미분이 모두 있다"]
+    D -. "거꾸로는 꼭 그렇지 않다" .-> B
+```
+
+실선은 늘 맞는 방향이다. 편미분이 있다는 것만으로는 점선을 거슬러 올라갈 수 없다(표의 반례). 그래서 공식을 쓰기 전에 맨 위 상자, 곧 편미분의 연속을 확인한다[^s3].
+
 ## 예제
 
 **이미지 윤곽의 방향.** 밝기가 $$i(x, y) = 3x + 4y$$로 변하는 이미지 조각이 있다.
@@ -202,4 +212,5 @@ $$f$$가 $$\mathbf{a}$$에서 미분 가능하면
 [^1]: OpenStax, *Calculus Volume 3*, 4.4절 "Tangent Planes and Linear Approximations"(미분 가능성, 편미분이 연속이면 미분 가능), 4.6절 "Directional Derivatives and the Gradient"(방향도함수 = 그래디언트와의 내적, 가장 가파른 방향, 등고선과 수직).
 [^s1]: 에이전트 보충. 캐니 윤곽 검출기(Canny, 1986)는 그래디언트의 크기와 방향으로 윤곽을 찾는 표준 알고리즘이다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [20_gradient_plot.py](/Hongs_Blog/studies/calculus/code/20_gradient_plot/)로 그렸다. 화살표 길이는 같게 줄였다. 표의 네 방향도함수($$-2$$, $$-4$$, $$\sqrt{20}$$, 0)를 중앙 차분으로, 그래디언트와 등고선 방향이 수직인 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 미분 가능성과 충분조건, 정리 1, 가정이 필요한 이유의 표를 근거로 그렸다.
 {% endraw %}

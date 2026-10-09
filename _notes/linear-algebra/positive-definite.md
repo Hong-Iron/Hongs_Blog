@@ -18,7 +18,7 @@ prev_title: "대칭행렬과 스펙트럼 정리"
 next_url: "/studies/linear-algebra/svd/"
 next_title: "특잇값 분해"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/positive-definite/"
 ---
@@ -72,12 +72,30 @@ $$\mathbf{x}^\top S\mathbf{x} = 2x^2 - 2xy + 2y^2 = x^2 + y^2 + (x - y)^2.$$
 *(2 ⇒ 1)* [스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)로 $$S = Q\Lambda Q^\top$$. $$\mathbf{y} = Q^\top\mathbf{x}$$로 두면 $$\mathbf{x}^\top S\mathbf{x} = \mathbf{y}^\top\Lambda\mathbf{y} = \sum\lambda_iy_i^2$$. $$\mathbf{x} \ne \mathbf{0}$$이면 $$\mathbf{y} \ne \mathbf{0}$$이고($$Q$$ 가역) 모든 $$\lambda_i > 0$$이라 양수다.<br>
 *(1 ⇒ 2)* 고유벡터 $$\mathbf{q}$$를 넣으면 $$\mathbf{q}^\top S\mathbf{q} = \lambda\Vert \mathbf{q}\Vert ^2 > 0$$이라 $$\lambda > 0$$.<br>
 *(5 ⇒ 1)* $$\mathbf{x}^\top A^\top A\mathbf{x} = \Vert A\mathbf{x}\Vert ^2 \ge 0$$이고, 열이 독립이라 $$\mathbf{x} \ne \mathbf{0}$$이면 $$A\mathbf{x} \ne \mathbf{0}$$이어서 양수다.<br>
-3, 4와의 동치는 [증명 생략: Strang 5판 6.5절]. ∎
+1 ⇒ 5(예: 숄레스키 분해로 $$A$$를 만든다)와 3, 4와의 동치는 [증명 생략: Strang 5판 6.5절]. ∎
 
 </details>
 
 
 $$2 \times 2$$에서 3과 4는 한 줄이다. $$\begin{pmatrix}a & b\\ b & c\end{pmatrix}$$의 피벗은 $$a$$와 $$\frac{ac - b^2}{a}$$이라, $$a > 0$$이고 $$ac - b^2 > 0$$이면 양의 정부호다.
+
+```mermaid
+flowchart LR
+    P1["1. 모든 x ≠ 0에서 xᵀSx > 0"]
+    P2["2. 고윳값이 모두 양수"]
+    P3["3. 피벗이 모두 양수"]
+    P4["4. 왼쪽 위 행렬식이 모두 양수"]
+    P5["5. 열이 독립인 A로 S = AᵀA"]
+    P2 -->|"스펙트럼 정리"| P1
+    P1 -->|"고유벡터 대입"| P2
+    P5 --> P1
+    P1 -.->|"증명 생략"| P5
+    P1 -.-|"증명 생략"| P3
+    P1 -.-|"증명 생략"| P4
+    P3 -.-|"왼쪽 위 행렬식 = 피벗의 누적곱"| P4
+```
+
+실선 화살표는 위 증명에서 보인 방향이고, 점선은 이 문서에서 증명을 생략한 연결이다[^s3].
 
 ## 예제
 
@@ -134,4 +152,5 @@ $$S = \begin{pmatrix}2 & -1 & 0\\ -1 & 2 & -1\\ 0 & -1 & 2\end{pmatrix}$$가 양
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.5절 "Positive Definite Matrices"(에너지 $$\mathbf{x}^\top S\mathbf{x}$$, 다섯 가지 판정, $$A^\top A$$, 숄레스키).
 [^s1]: 에이전트 보충. 숄레스키 분해의 연산 수가 LU의 약 절반($$\frac13n^3$$)이라는 것과, 공분산 $$\Sigma = LL^\top$$로 $$L\mathbf{z}$$($$\mathbf{z}$$는 표준정규)를 만들어 다변수 정규 표본을 얻는 방법은 수치 선형대수·통계 계산의 표준 내용이다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [23_positive-definite_plot.py](/Hongs_Blog/studies/linear-algebra/code/23_positive-definite_plot/)로 그렸고, 두 행렬의 고윳값(모두 양수, $$3$$과 $$-1$$), $$(1, -1)$$에서의 값 $$-2$$, 제곱합 표현을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 판정법 1~5, 증명(1 ⇔ 2, 5 ⇒ 1, 3·4는 증명 생략), `예제`의 "피벗의 누적곱"을 옮겼다(Strang 5판 6.5절).
 {% endraw %}

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Chain Rule and Backpropagation", "역전파", "backpropagation", "오차 역전파", "자동미분", "automatic differentiation", "역방향 모드", "reverse mode", "순방향 모드", "forward mode", "계산 그래프", "computational graph"]
 description: "신경망을 학습시키는 역전파는 새로운 수학이 아니라, 다변수 연쇄 법칙을 계산 그래프 위에서 출력 쪽부터 거꾸로 적용하는 방법이다. 연쇄 법칙의 \"길을 따라 곱하고, 여러 길은 더한다\"가 역전파의 \"간선을 따라 기울기를 곱해 내려보내고, 한 노드에 모이면 더한다\"와 같다. 출력이 손…"
@@ -18,7 +18,7 @@ prev_title: "다변수 연쇄 법칙과 야코비 행렬"
 next_url: "/studies/calculus/hessian/"
 next_title: "헤세 행렬과 극값 판정"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/backprop-bridge/"
 ---
@@ -71,6 +71,19 @@ permalink: "/studies/calculus/backprop-bridge/"
 - **구현.** 스칼라 역방향 자동미분의 최소 구현: [22_backprop-bridge_impl.py](/Hongs_Blog/studies/calculus/code/22_backprop-bridge_impl/). [뉴런](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/) 하나 $$(\sigma(\mathbf{w}^\top\mathbf{x} + b) - t)^2$$의 기울기를 이것으로 계산해 수치 미분과 맞춰 본다.
 - 알고리즘에서: 역전파는 노드마다 기울기를 한 번만 구해 다시 쓰는 [동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/)이라, 입력에서 출력까지 가는 길이 아무리 많아도 계산은 간선 수에 비례한다. 야코비를 곱할 순서를 고르는 일은 [구간 DP](/Hongs_Blog/studies/algorithms/interval-dp/)의 행렬 곱셈 순서 문제이고, 층마다 폭이 다르면 왼쪽부터가 늘 가장 싸지는 않다. 위 구현의 `backward()`는 출력에서 시작한 [DFS](/Hongs_Blog/studies/algorithms/dfs/)가 끝나는 순서를 거꾸로 훑어(위상 정렬), 한 노드에 기울기가 다 모인 뒤에 넘긴다.
 
+```mermaid
+flowchart TD
+    A["출력 노드에서 DFS를 시작한다"] --> B["부모를 먼저 방문하고, 끝난 노드를 순서 목록에 넣는다"]
+    B --> C["출력의 grad를 1로 둔다"]
+    C --> D["순서 목록을 거꾸로 훑으며 노드 v를 꺼낸다"]
+    D --> E["v의 부모 p마다 p.grad += 국소 도함수 × v.grad"]
+    E --> F{"남은 노드가 있나"}
+    F -- "예" --> D
+    F -- "아니오" --> G["입력마다 grad에 기울기가 들어 있다"]
+```
+
+거꾸로 훑기 때문에, 노드 $$v$$를 꺼낼 때는 $$v$$를 쓰는 노드가 모두 처리된 뒤다. 그래서 `v.grad`에 기울기가 다 모여 있다. 한 노드로 여러 길이 모이면 `+=`가 그 기울기를 더한다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 비교 표의 3과 8, 자동미분 구현이 무작위 뉴런 손실 200개에서 중앙 차분과 일치, 카드 C2의 18과 6, 전이 문제의 64와 32, 곱셈 순서에 따른 비용 $$Ln^2$$ 대 $$Ln^3$$(세기) — [22_backprop-bridge_verify.py](/Hongs_Blog/studies/calculus/code/22_backprop-bridge_verify/)</div>
 
@@ -119,4 +132,5 @@ permalink: "/studies/calculus/backprop-bridge/"
 
 [^1]: Goodfellow, Bengio, Courville, *Deep Learning*, 6.5절 "Back-Propagation and Other Differentiation Algorithms"(계산 그래프, 연쇄 법칙의 재귀적 적용, 메모리와 비용).
 [^2]: Griewank, Walther, *Evaluating Derivatives* 2판, 3장(역방향 모드와 기울기 계산 비용의 상수배 한계).
+[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. [22_backprop-bridge_impl.py](/Hongs_Blog/studies/calculus/code/22_backprop-bridge_impl/)의 `backward()`(DFS로 위상 순서를 만들고, 역순으로 `부모.grad += 국소 도함수 × 자신.grad`)를 따라 그렸다.
 {% endraw %}

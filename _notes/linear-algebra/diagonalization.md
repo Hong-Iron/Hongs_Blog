@@ -18,7 +18,7 @@ prev_title: "고윳값과 고유벡터"
 next_url: "/studies/linear-algebra/recurrence-matrix-bridge/"
 next_title: "선형 점화식 ↔ 행렬 거듭제곱"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/diagonalization/"
 ---
@@ -60,6 +60,16 @@ $$A = X\Lambda X^{-1}, \qquad A^k = X\Lambda^k X^{-1}.$$
 $$\mathbf{u}_k = c_1\lambda_1^k\mathbf{x}_1 + \cdots + c_n\lambda_n^k\mathbf{x}_n.$$
 
 $$\vert \lambda_i\vert  < 1$$인 성분은 사라지고, $$\vert \lambda_i\vert  > 1$$인 성분은 폭발하며, $$\lambda_i = 1$$인 성분은 남는다. 계수는 $$\mathbf{c} = X^{-1}\mathbf{u}_0$$이다.
+
+```mermaid
+flowchart LR
+    U0["출발 상태 u₀"] -->|"X⁻¹"| C["고유벡터 좌표 c₁ … cₙ"]
+    C -->|"cᵢ마다 λᵢᵏ 곱하기"| CK["c₁λ₁ᵏ … cₙλₙᵏ"]
+    CK -->|"X"| UK["k단계 뒤 uₖ"]
+    U0 -->|"A를 k번 곱하기"| UK
+```
+
+A를 k번 곱하는 대신, 고유벡터 좌표로 옮겨 칸마다 λᵏ만 곱하고 되돌아온다. 가운데 단계에서는 칸끼리 섞이지 않는다[^s2].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/20_diagonalization_fig1.svg" alt="그림" loading="lazy">
 
@@ -213,4 +223,5 @@ $$2 \times 2$$ 행렬 $$\begin{pmatrix}a & b\\ c & d\end{pmatrix}$$의 특성방
 [^n3]: 같은 자료, p.39~40, p.46
 [^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 20_diagonalization_verify.py로 확인했다.
 [^s1]: 에이전트 보충. 그림은 원본에 없다. [20_diagonalization_plot.py](/Hongs_Blog/studies/linear-algebra/code/20_diagonalization_plot/)로 그렸고, $$(1, 0) = 1\cdot(0.6, 0.4) + 0.4\cdot(1, -1)$$, $$k \le 12$$에서 $$A^k\mathbf{u}_0 = X\Lambda^kX^{-1}\mathbf{u}_0$$, $$A^{60}$$이 극한 행렬과 같은 것을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 동역학계 문단($$\mathbf{c} = X^{-1}\mathbf{u}_0$$, $$\mathbf{u}_k = \sum c_i\lambda_i^k\mathbf{x}_i$$)을 옮겼다(Strang 5판 6.2절).
 {% endraw %}

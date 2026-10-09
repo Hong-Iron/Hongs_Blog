@@ -16,7 +16,7 @@ description: "극한은 입력이 어떤 값에 한없이 다가갈 때 출력�
 next_url: "/studies/calculus/continuity/"
 next_title: "연속과 사잇값 정리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/limits/"
 ---
@@ -57,6 +57,17 @@ $$\lim_{x \to a} f(x) = L \iff \forall \varepsilon > 0\ \exists \delta > 0\ \for
 
 </div>
 
+
+```mermaid
+flowchart TD
+    A["x가 a로 다가갈 때 f(x)를 본다"] --> B{"왼쪽 극한과 오른쪽 극한이 모두 있나"}
+    B -- "아니오" --> N1["극한 없음: 한쪽에서 한없이 커지거나 계속 흔들린다"]
+    B -- "예" --> C{"두 값이 같은가"}
+    C -- "아니오" --> N2["극한 없음: 양쪽에서 다가가는 높이가 갈린다"]
+    C -- "예" --> Y["극한이 있고, 그 공통값이 L이다"]
+```
+
+극한이 있는지는 왼쪽과 오른쪽을 따로 본 뒤 두 값을 맞대어 정한다. $$x = a$$에서의 함숫값은 이 판단 어디에도 들어가지 않는다[^s3].
 
 **설계 이유.** 조건 $$0 < \vert x - a\vert $$는 $$x = a$$를 뺀다. 극한은 점 자체가 아니라 주변의 행동에 대한 말이기 때문이다. 한정기호 순서 $$\forall\varepsilon\,\exists\delta$$는 "상대가 오차 허용치 $$\varepsilon$$을 아무리 작게 불러도, 나는 그에 맞는 $$\delta$$를 댈 수 있다"는 게임이다([술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/)). 순서를 바꾸면 전혀 다른 뜻이 된다.
 
@@ -202,4 +213,5 @@ $$\lim_{x \to 0}\frac{\sin 3x}{x}$$를 구한다.
 [^2]: OpenStax, *Calculus Volume 1*, 2.5절 "The Precise Definition of a Limit"
 [^s1]: 에이전트 보충. 싱크 함수와 표본화 정리(휘태커-섀넌 보간)는 신호 처리의 표준 내용이다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [01_limits_plot.py](/Hongs_Blog/studies/calculus/code/01_limits_plot/)로 그렸고, 예시 표의 값($$f(0.9) = 1.9$$, $$f(1.1) = 2.1$$ 등)과 0에 아무리 가까워도 $$\sin(1/x)$$가 1과 $$-1$$을 모두 지나는 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 한쪽 극한 조건(두 한쪽 극한이 있고 같을 때만 극한이 있다)과 해당하지 않는 예를 근거로 그렸다.
 {% endraw %}

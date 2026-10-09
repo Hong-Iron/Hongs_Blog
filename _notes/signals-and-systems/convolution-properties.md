@@ -18,7 +18,7 @@ prev_title: "컨벌루션 적분"
 next_url: "/studies/signals-and-systems/lti-system-properties/"
 next_title: "임펄스 응답으로 본 LTI 시스템의 성질"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/signals-and-systems/convolution-properties/"
 ---
@@ -52,6 +52,34 @@ permalink: "/studies/signals-and-systems/convolution-properties/"
 
 </div>
 
+
+```mermaid
+flowchart LR
+  subgraph S["직렬 연결"]
+    direction LR
+    A["x"] --> B["h₁"] --> C["h₂"] --> D["y"]
+  end
+  subgraph S2["하나로 합친 시스템"]
+    direction LR
+    E["x"] --> F["h₁ * h₂"] --> G["y"]
+  end
+```
+
+```mermaid
+flowchart LR
+  subgraph P["병렬 연결"]
+    direction LR
+    H["x"] --> I["h₁"] --> K(("+"))
+    H --> J["h₂"] --> K
+    K --> L["y"]
+  end
+  subgraph P2["하나로 합친 시스템"]
+    direction LR
+    M["x"] --> N["h₁ + h₂"] --> O["y"]
+  end
+```
+
+각 그림의 두 묶음은 같은 $$x$$에 같은 $$y$$를 낸다. 상자가 모두 LTI일 때만 이렇게 바꿔 그릴 수 있다.[^s3]
 
 분배법칙은 입력 쪽으로도 통한다: $$(x_1 + x_2) * h = x_1 * h + x_2 * h$$. 두 입력의 합에 대한 응답은 각 응답의 합이라는 뜻이다[^3].
 
@@ -143,4 +171,5 @@ $$y_1$$은 $$n \ge 0$$에서만 값이 있고, $$y_2$$는 음의 $$n$$에서도 
 [^7]: 같은 자료, p.2~3
 [^s1]: 에이전트 보충. 마이크 신호 비유, 분배법칙 증명의 한 줄, 하나로 합쳐 계산을 줄이는 활용, 확인 문제는 원본에 없다. 성질은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [20_convolution-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 정의대로 계산한 컨벌루션과 닫힌 꼴이 같고, $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$.
+[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 정의의 정리 표(6주차 자료 p.4, p.8의 그림 2.23, 2.25)를 근거로 그렸다.
 {% endraw %}

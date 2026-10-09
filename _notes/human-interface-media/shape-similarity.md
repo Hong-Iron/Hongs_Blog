@@ -18,7 +18,7 @@ prev_title: "2차원 함수"
 next_url: "/studies/human-interface-media/cross-correlation/"
 next_title: "교차 상관"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/human-interface-media/shape-similarity/"
 ---
@@ -53,6 +53,16 @@ permalink: "/studies/human-interface-media/shape-similarity/"
 | $$[4, 3, 2, 1]$$ (뒤집힘) | 5 | −1 |
 
 전체가 밝아진 사진은 모양이 그대로인데 평균 제곱 차이는 가장 크다. "평균이 같아도 모양이 다를 수 있음", 거꾸로 "평균이 달라도 모양이 같음"을 나타내는 또 다른 척도가 필요하다[^2]. 그것이 오른쪽 열의 상관계수다.
+
+```mermaid
+flowchart TD
+  A["칸마다 차이의 합"] -- "개수에 따라 커진다" --> B["개수로 나눈 평균 차이"]
+  B -- "양수와 음수가 지워진다" --> C["평균 제곱 차이"]
+  C -- "밝기가 통째로 바뀌어도 커진다" --> D["각자 평균을 빼고 곱해 평균: 공분산"]
+  D -- "크기가 커지면 값도 커진다" --> E["두 표준편차로 나눔: 상관계수"]
+```
+
+위에서 아래로 한 칸 내려갈 때마다 바로 위 척도의 약점 하나를 고친다. 맨 아래의 상관계수만 밝기와 크기가 바뀌어도 값이 그대로다[^s2].
 
 ## 정의
 
@@ -145,4 +155,5 @@ $$ NCC(f, g) = \frac{1}{n}\sum_{i=1}^{n}\frac{f(x_i)g(x_i)}{\sigma_f\sigma_g} \q
 [^5]: 같은 자료, p.8 (상관계수, 교차 상관 계수 NCC의 두 식, 상관, zero-normalized Corr)
 [^6]: 같은 자료, p.3, p.43 (상관 그래프 영상)
 [^s1]: 에이전트 보충. 표의 수치, NCC 두 식의 차이 설명, 카드 C2·C3은 원본에 없다. 검증 코드로 계산했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시로 보기의 순서(합 → 평균 → 제곱 → 상관계수)와 강의 6 p.4~5, p.7~8의 설명, 원본 오류 의심 상자의 공분산 사례를 근거로 그렸다.
 {% endraw %}

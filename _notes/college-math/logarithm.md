@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Logarithm", "log", "로그 법칙", "logarithm rules", "밑변환 공식", "change of base", "진수", "상용로그", "common logarithm", "자연로그", "natural logarithm", "ln", "이진로그", "binary logarithm", "lg"]
 description: "로그는 \"몇 번 곱해야 이 수가 되나\"에 답하는 수다. 1000을 만들려면 10을 세 번 곱해야 하니 답은 3이다. 로그를 쓰면 곱셈이 덧셈으로, 거듭제곱이 곱셈으로 바뀌어 아주 크거나 작은 수를 다루기 쉬워진다. 다만 곱하는 수는 양수이고 1이 아니어야 하며, 0이나 음수의 로그…"
@@ -18,7 +18,7 @@ prev_title: "지수함수"
 next_url: "/studies/college-math/log-scale/"
 next_title: "로그함수와 로그 스케일"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/college-math/logarithm/"
 ---
@@ -77,6 +77,22 @@ $$b, c > 0$$, $$b, c \ne 1$$, $$x, y > 0$$, $$r \in \mathbb{R}$$일 때[^2]
 
 </div>
 
+
+```mermaid
+flowchart LR
+  subgraph P["양수의 세계: 곱한다"]
+    X["x, y"] -->|"곱하기"| XY["xy"]
+  end
+  subgraph R["실수의 세계: 더한다"]
+    U["u, v"] -->|"더하기"| UV["u + v"]
+  end
+  X -->|"log_b"| U
+  U -->|"b의 거듭제곱"| X
+  XY -->|"log_b"| UV
+  UV -->|"b의 거듭제곱"| XY
+```
+
+왼쪽에서 두 양수를 곱한 결과와, 오른쪽으로 건너가 두 로그 $$u = \log_b x$$, $$v = \log_b y$$를 더한 결과는 같은 자리에서 만난다. 법칙 1이 이 그림이다. 오른쪽에서 왼쪽으로 돌아오는 화살표는 [지수함수](/Hongs_Blog/studies/college-math/exponential-function/) $$b^u$$이고, 두 방향은 서로 역함수다[^s2].
 
 **설계 이유.** 로그의 조건은 모두 지수함수에서 물려받는다. $$b^y$$는 늘 양수이므로 $$x \le 0$$이면 $$b^y = x$$인 $$y$$가 없다. $$b = 1$$이면 $$1^y = 1$$이라 "몇 번 곱해야 5가 되나"에 답이 없다.
 
@@ -228,4 +244,5 @@ $$u = \log_b x$$, $$v = \log_b y$$로 두면 로그의 정의로 $$x = b^u$$, $$
 [^2]: OpenStax, *Precalculus 2e*, 4.5절 "Logarithmic Properties", 4.6절 "Exponential and Logarithmic Equations"
 [^3]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.2절 "Standard notations and common functions"의 로그 표기와 성질
 [^s1]: 에이전트 보충. 로그 확률은 확률 모델을 계산할 때의 표준 기법이다. 배정밀도의 가장 작은 양수(비정규수) 약 $$4.9 \times 10^{-324}$$는 IEEE 754 형식에서 나온다. 파이썬 `math.log`의 동작은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `정의`의 $$\log_b: (0, \infty) \to \mathbb{R}$$과 $$b^x: \mathbb{R} \to (0, \infty)$$가 서로 역함수라는 진술과 로그 법칙 1을 근거로 그렸다(OpenStax, *Precalculus 2e*, 4.3절, 4.5절).
 {% endraw %}

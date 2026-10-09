@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Dijkstra", "Dijkstra's Algorithm", "데이크스트라", "다익스트라 알고리즘", "최단 경로", "가중치 최단 경로", "늦은 삭제"]
 description: "길마다 걸리는 시간이 다를 때, 출발점에서 가장 가까운 곳부터 하나씩 \"여기까지는 이 시간이 최소\"라고 확정해 나간다. 확정한 곳에서 이어진 길로 다른 곳까지의 시간을 줄여 두고, 아직 확정하지 않은 곳 중 가장 가까운 곳을 또 확정한다. 가장 가까운 곳은 힙으로 빨리 찾는다. 단…"
@@ -18,7 +18,7 @@ prev_title: "깊이 우선 탐색(DFS)"
 next_url: "/studies/algorithms/floyd-warshall/"
 next_title: "플로이드–워셜"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/algorithms/dijkstra/"
 ---
@@ -34,6 +34,18 @@ permalink: "/studies/algorithms/dijkstra/"
 ## 예시로 보기
 
 방향 그래프 1 → 2(4), 1 → 3(1), 3 → 2(2), 2 → 4(1), 3 → 4(5), 4 → 5(3)에서 1부터의 최소 비용을 구한다. 괄호 안이 비용이다.
+
+```mermaid
+flowchart LR
+    n1(("1")) -->|"4"| n2(("2"))
+    n1 -->|"1"| n3(("3"))
+    n3 -->|"2"| n2
+    n2 -->|"1"| n4(("4"))
+    n3 -->|"5"| n4
+    n4 -->|"3"| n5(("5"))
+```
+
+1에서 2로 가는 길은 바로 가는 화살표(4)와 3을 거치는 화살표 둘(1 + 2)이다. 간선 수가 적은 쪽이 더 비싸다[^s2].
 
 [힙](/Hongs_Blog/studies/algorithms/heap/)에 (거리, 점)을 넣는다. 꺼낸 거리가 이미 적힌 거리보다 크면, 나중에 더 좋은 값이 생겨 낡은 기록이니 버린다.
 
@@ -106,6 +118,17 @@ def dijkstra(graph, s):              # graph[v]: (이웃, 비용) 목록
 
 </details>
 
+
+```mermaid
+flowchart LR
+    subgraph S["확정한 점들 S"]
+        s(("s")) -.->|"P의 앞부분"| x(("x"))
+    end
+    x -->|"간선 x → y"| y(("y"))
+    y -.->|"P의 나머지"| u(("u"))
+```
+
+증명에 나오는 점들의 자리다. 최단 경로 P는 s에서 출발해 x까지 S 안에 있다가, 간선 x → y에서 처음 S 밖으로 나간다. u는 그 뒤에 있다(y = u일 수도 있다)[^s2].
 
 ### 스스로 설명해 보기
 
@@ -221,4 +244,5 @@ x를 확정해 처리할 때 코드가 모든 간선 x → y에 대해 "d + w < 
 [^1]: 증명의 구조(경계의 점 y를 잡는 귀류법)는 Cormen 외, *Introduction to Algorithms* 3판, 24.3절 "Dijkstra's algorithm"의 정리 24.6을 풀어 쓴 것이다.
 [^2]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 13.2 "Dijkstra's algorithm": 음수 간선이 없어야 하고, 같은 점이 우선순위 큐에 여러 번 들어갈 수 있지만 가장 작은 거리의 것만 처리하며, 시간은 O(n + m log m)이다.
 [^s1]: 에이전트 보충. RFC 2328(OSPF Version 2) 16.1절: "Using the Dijkstra algorithm, a tree is formed from this subset of the link state database."
+[^s2]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 예시로 보기의 방향 간선 여섯 개를 그대로 그렸고, '증명' 절 2~4단계의 점 s, x, y, u와 경로 P의 관계를 그림으로 옮겼다.
 {% endraw %}

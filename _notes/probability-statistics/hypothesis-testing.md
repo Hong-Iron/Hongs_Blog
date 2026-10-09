@@ -18,7 +18,7 @@ prev_title: "신뢰구간"
 next_url: "/studies/probability-statistics/bayesian-inference/"
 next_title: "베이즈 추론과 MAP"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/probability-statistics/hypothesis-testing/"
 ---
@@ -58,6 +58,20 @@ permalink: "/studies/probability-statistics/hypothesis-testing/"
 
 </div>
 
+
+```mermaid
+flowchart TD
+    A["실험 전: H0, H1, 유의수준 α, 표본 크기 정하기"] --> B["자료 모으기"]
+    B --> C["검정통계량 T 계산"]
+    C --> D["p값: H0이 참일 때 T가 관측값만큼 또는 더 극단적일 확률"]
+    D --> E{"p ≤ α 인가"}
+    E -->|"예"| F["H0 기각"]
+    E -->|"아니오"| G["H0을 기각하지 않음"]
+    F --> H["효과 크기와 신뢰구간을 함께 보고"]
+    G --> H
+```
+
+맨 위 칸은 결과를 보기 전에 정해 둔다. 어느 갈래로 끝나든 마지막 칸에서 효과 크기와 신뢰구간을 함께 적는다.[^s3]
 
 | | $$H_0$$ 참 | $$H_0$$ 거짓 |
 |---|---|---|
@@ -205,4 +219,5 @@ $$t = \frac{\bar d}{s_d / \sqrt k}, \qquad \bar d = \frac1k\sum_{i=1}^{k} d_i, \
 [^d1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.6 (6-1 복습: T-Test와 P-value)
 [^sd1]: 에이전트 보충. $$k - 1$$로 나누는 표준 방법, 5겹 예와 카드 C5는 원본에 없다. 슬라이드처럼 $$k$$로 나누는 식은 Han, Kamber, Pei, *Data Mining* 3판 8.5.5절의 식이다. 32_hypothesis-testing_verify.py로 계산했다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [32_hypothesis-testing_plot.py](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_plot/)로 그렸고, 그림에 쓴 값(표준오차 0.01427, $$z = 2.10$$, p값 0.035, 1,000명씩의 검정력 0.56, 2,000명씩 0.8 초과)을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의, 대표 문제 2(검정력과 표본 크기), 활용 절(실험 전에 정해 두기), 자주 하는 오해(효과 크기와 신뢰구간 보고)를 한 흐름으로 그렸다.
 {% endraw %}

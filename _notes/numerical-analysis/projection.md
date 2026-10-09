@@ -18,7 +18,7 @@ prev_title: "쿼터니언"
 next_url: "/studies/numerical-analysis/distance-intersection/"
 next_title: "점·직선·평면 사이의 거리와 교점"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/projection/"
 ---
@@ -75,6 +75,16 @@ $$z$$로 나누기는 선형변환이 아니다. 그래서 동차 좌표의 마�
 $$\begin{pmatrix}x'\\ y'\\ z'\\ w'\end{pmatrix} = \begin{pmatrix}1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 1/d & 0\end{pmatrix}\begin{pmatrix}x\\ y\\ z\\ 1\end{pmatrix}, \qquad \frac{x'}{w'} = \frac{x}{z/d},\ \frac{y'}{w'} = \frac{y}{z/d},\ \frac{z'}{w'} = d$$
 
 
+```mermaid
+flowchart LR
+    L["물체의 로컬 좌표"] -->|"모델 행렬"| W["월드 좌표"]
+    W -->|"뷰 행렬 R⁻¹T⁻¹"| C["카메라 좌표"]
+    C -->|"투영 행렬"| H["동차 좌표 x', y', z', w'"]
+    H -->|"w'로 나누기"| S["화면 좌표"]
+```
+
+투영은 맨 끝의 두 칸이다. 그 앞에서 점을 카메라 기준 좌표로 바꿔 두어야 눈이 원점에 오고 화면이 $$z = d$$에 놓인다. 세 행렬은 모두 $$4 \times 4$$라 미리 곱해 둘 수 있지만, 마지막 나누기는 행렬이 아니라 따로 한다[^s3].
+
 ## 활용
 
 - 3D 게임과 영화는 원근 투영, CAD 도면과 2D 게임의 아이소메트릭 화면은 평행 투영을 쓴다. 그래픽스 파이프라인의 투영 행렬도 마지막 성분으로 나누는 이 방법을 쓴다(원근 나누기)[^s1].
@@ -120,4 +130,5 @@ $$\begin{pmatrix}x'\\ y'\\ z'\\ w'\end{pmatrix} = \begin{pmatrix}1 & 0 & 0 & 0\\
 [^5]: 같은 자료, p.33
 [^s1]: 에이전트 보충. 막대와 철길 예시, 쓰이는 곳, 중점과 텍스처 보간, 흔한 실수, 직교 사영과의 관계, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [11_projection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 막대 높이 1과 0.5, 폭 2가 거리 10에서 0.2, 거리 1000에서 0.002.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 원근 투영 행렬과 $$w'$$로 나누기(원본 06.na06_rotation.pdf p.32~33), [좌표계 변환](/Hongs_Blog/studies/numerical-analysis/coordinate-frame/)의 뷰 행렬, [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) '활용'의 모델·뷰·투영 행렬로 그렸다.
 {% endraw %}

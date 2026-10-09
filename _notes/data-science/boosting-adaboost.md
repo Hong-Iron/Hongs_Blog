@@ -18,7 +18,7 @@ prev_title: "배깅과 랜덤 포레스트"
 next_url: "/studies/data-science/contrast--bagging-boosting/"
 next_title: "배깅과 부스팅 비교"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/data-science/boosting-adaboost/"
 ---
@@ -46,6 +46,20 @@ permalink: "/studies/data-science/boosting-adaboost/"
 1라운드 뒤 틀린 7, 8, 9의 무게는 $$\frac{1}{10}$$에서 $$\frac16$$으로 커지고, 맞힌 점들은 $$\frac{1}{14}$$로 작아진다. 틀린 세 점의 무게 합이 정확히 $$\frac12$$이 된다. 그래서 2라운드 모델은 7, 8, 9를 꼭 맞히는 규칙을 고른다.
 
 세 모델의 가중 투표 $$0.424h_1 + 0.650h_2 + 0.752h_3$$의 부호는 10개 점을 모두 맞힌다. 모델 하나하나는 3~4개씩 틀리는데도 그렇다.
+
+```mermaid
+flowchart LR
+    W1["무게 w: 모두 1/10"] --> H1["h1: x ≤ 3.5면 +"]
+    H1 --> W2["7, 8, 9의 무게를 키운다"]
+    W2 --> H2["h2: x ≤ 9.5면 +"]
+    H2 --> W3["4, 5, 6의 무게를 키운다"]
+    W3 --> H3["h3: x ≤ 6.5면 −"]
+    H1 -->|"α 0.424"| F["가중 투표의 부호"]
+    H2 -->|"α 0.650"| F
+    H3 -->|"α 0.752"| F
+```
+
+모델은 한 줄로 이어져 있다. 각 모델이 틀린 점의 무게가 다음 모델의 훈련 자료를 바꾼다. 마지막 투표에서는 가중 오류가 작았던 모델일수록 큰 무게를 받는다[^s3].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/22_boosting-adaboost_fig1.svg" alt="그림" loading="lazy">
 
@@ -134,4 +148,5 @@ $$\alpha_m$$의 식에서 $$\epsilon_m < \frac12$$(찍기보다 낫다)이면 $$
 [^3]: 같은 자료, p.19
 [^s1]: 에이전트 보충. 점 10개 예와 추적 표, 틀린 점의 합이 1/2이 되는 성질, $$\epsilon = 1/2$$의 해석, 그래디언트 부스팅, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다(Freund & Schapire, 1997).
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [22_boosting-adaboost_plot.py](/Hongs_Blog/studies/data-science/code/22_boosting-adaboost_plot/)로 그렸고, 세 라운드의 $$\epsilon$$ 0.300, 0.214, 0.182와 $$\alpha$$ 0.424, 0.650, 0.752, 1라운드 뒤 무게 $$\frac16$$과 $$\frac1{14}$$, 가중 투표의 부호를 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 세 라운드 추적 표와 `정의`의 의사코드(원본 6-2 p.18)를 근거로 그렸다.
 {% endraw %}

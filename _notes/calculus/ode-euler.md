@@ -18,7 +18,7 @@ prev_title: "라그랑주 승수법"
 next_url: "/studies/calculus/fourier-series/"
 next_title: "푸리에 급수"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/calculus/ode-euler/"
 ---
@@ -103,6 +103,20 @@ $$\vert y_k - y(t_k)\vert  \le \frac{hM}{2K}\left(e^{K(t_k - t_0)} - 1\right).$$
 - **더 정확한 방법.** 한 걸음 안에서 기울기를 네 번 재서 섞는 룽게–쿠타 4차 방법(RK4)은 전역 오차가 $$h^4$$에 비례한다. $$h$$를 절반으로 줄이면 오차가 약 16분의 1이 된다. SciPy의 `solve_ivp`는 기본값으로 걸음 크기를 스스로 조절하는 룽게–쿠타 방법(RK45)을 쓴다[^s1].
 - **모델링.** 인구·전염병(SIR 모형)·회로·화학 반응처럼 "변화율이 현재 상태로 정해지는" 현상은 모두 미분방정식으로 쓰고, 대부분 수치적으로 푼다.
 
+```mermaid
+flowchart LR
+    subgraph E1["오일러 방법"]
+        x0["옛 x, 옛 v"] --> xn["새 x = x + h·v"]
+        x0 --> vn["새 v = v − h·x"]
+    end
+    subgraph E2["반암시적 오일러"]
+        y0["옛 x, 옛 v"] --> vn2["새 v = v − h·x"]
+        vn2 --> xn2["새 x = x + h·새 v"]
+    end
+```
+
+용수철의 한 걸음이다. 왼쪽은 두 값을 모두 옛 값으로 고친다. 오른쪽은 속도를 먼저 고치고 그 새 속도로 위치를 고친다. 화살표 하나의 차이가 에너지가 불어나느냐 제자리에 머무느냐를 가른다[^s3].
+
 ## 연결
 
 - 선수: [선형 근사](/Hongs_Blog/studies/calculus/linear-approx-newton/)(한 걸음), [지수함수](/Hongs_Blog/studies/college-math/exponential-function/)($$y' = ky$$의 해)
@@ -155,4 +169,5 @@ $$\vert y_k - y(t_k)\vert  \le \frac{hM}{2K}\left(e^{K(t_k - t_0)} - 1\right).$$
 [^n2]: 같은 자료, p.3
 [^sn1]: 에이전트 보충. 참 곡선보다 위에 놓이는 이유와 카드는 원본에 없다. 29_ode-euler_verify.py로 확인했다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [29_ode-euler_plot.py](/Hongs_Blog/studies/calculus/code/29_ode-euler_plot/)로 그렸고, 표의 값 2.25, 2.5937, 2.7048, 세 걸음 크기의 인수 0.5, $$-0.5$$, $$-1.5$$, $$h = 0.25$$로 40걸음이면 $$10^6$$을 넘는 것을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 활용 절의 게임과 물리 시뮬레이션 항목($$x' = v$$, $$v' = -x$$와 두 갱신 순서)을 근거로 그렸다.
 {% endraw %}

@@ -86,6 +86,23 @@ $$P(X_{t+1} = j \mid X_t = i, X_{t-1}, \dots, X_0) = P(X_{t+1} = j \mid X_t = i)
 - *주기:* 두 상태가 매번 서로 바뀌는 $$P = \begin{pmatrix}0 & 1\\ 1 & 0\end{pmatrix}$$에서 한쪽에서 출발하면 분포가 $$(0, 1), (1, 0), (0, 1), \dots$$로 번갈아 수렴하지 않는다. 정상분포 $$\left(\frac12, \frac12\right)$$는 있지만 도달하지 않는다.
 - *가약:* 상태 1은 자기 자리에 갇혀 있고 상태 2, 3은 서로만 오가면, $$(1, 0, 0)$$도 $$\left(0, \frac12, \frac12\right)$$도 그 섞음도 모두 정상분포다. 장기 분포가 출발점에 따라 달라진다.
 
+```mermaid
+flowchart LR
+    subgraph per["주기 2인 연쇄"]
+        a1["1"] -->|"1"| a2["2"]
+        a2 -->|"1"| a1
+    end
+    subgraph red["가약인 연쇄"]
+        b1["1"] -->|"1"| b1
+        b2["2"] -->|"0.5"| b3["3"]
+        b3 -->|"0.5"| b2
+        b2 -->|"0.5"| b2
+        b3 -->|"0.5"| b3
+    end
+```
+
+왼쪽은 화살표를 따라가면 늘 두 걸음 만에 제자리로 돌아온다. 오른쪽은 상태 1과 나머지 둘 사이에 화살표가 없어서, 출발한 쪽에 영영 머문다.[^s2]
+
 ## 예제
 
 **정상분포와 수렴 속도 구하기.** 날씨 연쇄에서
@@ -143,4 +160,5 @@ $$P(X_{t+1} = j \mid X_t = i, X_{t-1}, \dots, X_0) = P(X_{t+1} = j \mid X_t = i)
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 11.1절 "Markov property and transition matrix", 11.2절 "Classification of states"(기약, 주기), 11.3절 "Stationary distribution"(존재·유일성·수렴, 평균 귀환 시간 $$\frac{1}{\pi_i}$$).
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [23_markov-chains_plot.py](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_plot/)로 그렸고, 그림에 쓴 값(예시 표의 0.5·0.7·0.78, 정상분포 $$\left(\frac56, \frac16\right)$$, 차이의 비 0.4, 고윳값 1과 0.4)을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 실패 시나리오 두 가지를 그렸다. 가약 연쇄의 전이 확률 0.5는 [23_markov-chains_verify.py](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_verify/) 주장 3의 행렬에서 가져왔다.
 {% endraw %}

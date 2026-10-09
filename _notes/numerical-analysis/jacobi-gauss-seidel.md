@@ -18,7 +18,7 @@ prev_title: "경계 볼륨"
 next_url: "/studies/numerical-analysis/polynomial-interpolation/"
 next_title: "다항식 보간"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/jacobi-gauss-seidel/"
 ---
@@ -73,6 +73,24 @@ $$x_i^{(k+1)} = \frac{1}{a_{ii}}\left(b_i - \sum_{j \ne i}a_{ij}x_j^{(k)}\right)
 
 
 **가우스-자이델 방법.** 같은 식이지만 이미 이번 회차에 고친 $$x_1, \dots, x_{i-1}$$은 새 값을 쓴다. 더 나은 근삿값을 쓸 수 있을 때 바로 써서 빨리 다가간다[^6].
+
+```mermaid
+flowchart LR
+    subgraph J["야코비 한 회차"]
+        JO["k회차의 x, y, z"] --> JX["새 x"]
+        JO --> JY["새 y"]
+        JO --> JZ["새 z"]
+    end
+    subgraph G["가우스-자이델 한 회차"]
+        GO["k회차의 y, z"] --> GX["새 x"]
+        GX --> GY["새 y"]
+        GO -->|"옛 z"| GY
+        GX --> GZ["새 z"]
+        GY --> GZ
+    end
+```
+
+화살표는 "이 값을 써서 계산한다"는 뜻이다. 야코비의 세 값은 서로 기다리지 않고, 가우스-자이델은 앞에서 고친 값이 바로 뒤 식으로 흘러간다[^s3].
 
 $$x_i^{(k+1)} = \frac{1}{a_{ii}}\left(b_i - \sum_{j < i}a_{ij}x_j^{(k+1)} - \sum_{j > i}a_{ij}x_j^{(k)}\right)$$
 
@@ -252,4 +270,5 @@ $$x_i$$에 대해 풀 때 $$a_{ii}$$로 나누기 때문이다. 대각에 0이 �
 [^8]: 같은 자료, p.13
 [^s1]: 에이전트 보충. 반복 횟수와 이완 실험, 대각 우세가 아니어도 수렴하는 예, 의사코드, 증명 스케치(무한 노름 축소), 스스로 설명해 보기, 예제, 복잡도·병렬화·쓰는 곳, 흔한 실수, 오해, 카드 C2~C5는 원본에 없다. 구현 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [20_jacobi-gauss-seidel_plot.py](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 3회차 값, 1~14회차에서 가우스-자이델 오차가 더 작음, 순서를 바꾸면 30회차에 1000을 넘음.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 두 갱신식과 예시의 세 식(원본 11.na11_iterative.pdf p.7~8)으로 그렸다.
 {% endraw %}

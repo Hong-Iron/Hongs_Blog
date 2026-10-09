@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Causes of Depression", "우울증의 원인", "부정적 생활사건", "negative life events", "사회적 지지", "social support", "보호요인", "protective factors", "모노아민 가설", "monoamine hypothesis", "카테콜아민", "catecholamine", "HPA 축", "hypothalamic-pituitary-adrenal axis", "코르티솔", "cortisol", "생체리듬", "biorhythm", "계절성 우울증", "seasonal affective disorder", "멜라토닌", "광치료", "light therapy", "분노의 내향화", "anger turned inward", "긍정적 강화의 상실", "르윈손", "Lewinsohn"]
 description: "우울은 한 가지 원인으로 생기지 않는다. 힘든 일(생활사건)은 중요한 방아쇠지만 그것만으로는 우울의 20%도 설명하지 못한다. 그 밑에 뇌의 화학물질과 스트레스 호르몬 체계, 생체시계의 이상, 상실에 대한 무의식적 반응, 보상이 줄어든 생활, 비관적인 설명 습관과 생각의 틀이 겹쳐…"
@@ -96,6 +96,19 @@ graph LR
 
 슬라이드의 모형(Lewinsohn, Hoberman, Teri & Hautzinger, 1985)은 A 우울 촉발 사건 → B 중요한 행동 패턴의 붕괴 → C 정적 강화의 감소와 혐오적 경험의 증가 → D 자각의 증가 → E 우울의 증가 → F 행동·인지·정서적 결과로 이어지고, G 취약성과 면역성(개인의 소인)이 모든 단계에 영향을 준다. F는 다시 A와 D로 되돌아가 악순환을 만든다[^9].
 
+```mermaid
+flowchart LR
+  A["A 우울 촉발 사건"] --> B["B 행동 패턴의 붕괴"] --> C["C 정적 강화 감소, 혐오 경험 증가"] --> D["D 자각의 증가"] --> E["E 우울의 증가"] --> F["F 행동·인지·정서적 결과"]
+  F --> A
+  F --> D
+  G["G 취약성과 면역성"] -.-> B
+  G -.-> C
+  G -.-> D
+  G -.-> E
+```
+
+A에서 F까지 한 줄로 따라간 뒤, F에서 A와 D로 되돌아가는 두 화살표를 본다. 점선은 개인의 소인(G)이 중간 단계마다 끼어든다는 뜻이다[^s3].
+
 **학습된 무기력과 귀인, 인지.** 따로 문서가 있다: [학습된 무기력 이론](/Hongs_Blog/studies/abnormal-psychology/learned-helplessness/), [우울증의 귀인이론](/Hongs_Blog/studies/abnormal-psychology/attribution-theory-depression/), [우울증의 인지이론](/Hongs_Blog/studies/abnormal-psychology/beck-cognitive-theory/).
 
 ### 3. 사회환경적 원인[^10]
@@ -144,4 +157,5 @@ graph LR
 [^10]: 4-1학기/이상 심리학/1.수업자료/03.양극성장애와 우울장애.pdf, p.31
 [^s1]: 에이전트 보충. AQ와 AR의 비교 표는 각 입장의 원인론을 한 사례에 적용한 가상 사례다.
 [^s2]: 에이전트 보충. 카테콜아민(도파민, 노르에피네프린, 에피네프린)과 인돌아민(세로토닌)을 합쳐 모노아민이라 부르는 것은 신경화학의 표준 분류다. 우울의 "모노아민 가설"이 이 이름을 쓴다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '행동주의적 입장'의 모형 설명과 p.25 Lewinsohn 외(1985) 그림을 근거로 그렸다.
 {% endraw %}

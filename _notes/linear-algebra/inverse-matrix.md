@@ -18,7 +18,7 @@ prev_title: "행렬 곱셈과 전치"
 next_url: "/studies/linear-algebra/lu-decomposition/"
 next_title: "LU 분해"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/linear-algebra/inverse-matrix/"
 ---
@@ -75,6 +75,16 @@ $$n \times n$$ 행렬 $$A$$에 대해 다음은 동치다.
 
 </details>
 
+
+```mermaid
+flowchart LR
+    C1["1. A는 가역"] -->|"x = A⁻¹b"| C2["2. 모든 b에 해가 하나"]
+    C2 -->|"b = 0인 경우"| C3["3. Ax = 0의 해는 0뿐"]
+    C3 -->|"자유변수가 없다"| C4["4. 0 아닌 피벗이 n개"]
+    C4 -->|"가우스–조르당"| C1
+```
+
+증명의 화살표 네 개가 한 바퀴를 돈다. 그래서 어느 조건에서 출발해도 나머지 셋에 닿고, 넷은 모두 같은 말이 된다[^s3].
 
 **가우스–조르당.** $$[A \mid I]$$에 행 연산을 해 왼쪽을 $$I$$로 만들면 오른쪽이 $$A^{-1}$$이 된다. 왼쪽에 곱해진 $$E_k\cdots E_1 = A^{-1}$$이 오른쪽의 $$I$$에도 똑같이 곱해지기 때문이다.
 
@@ -166,4 +176,5 @@ $$\vert A\vert  = 0$$이면 $$x - 3y = 5$$, $$-2x + 6y = 1$$처럼 두 직선이
 [^n6]: 같은 자료, p.24
 [^sn1]: 에이전트 보충. "부분 피벗팅"이라는 이름과 오차를 줄이는 이유는 원본에 없다. 슬라이드 예의 역행렬과 해, 카드 C4는 07_inverse-matrix_verify.py로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [07_inverse-matrix_plot.py](/Hongs_Blog/studies/linear-algebra/code/07_inverse-matrix_plot/)로 그렸고, $$B(2, -1) = B(0, 0) = (0, 0)$$, 무작위 점 400개의 상이 모두 $$y = 2x$$ 위에 있다는 것, $$\det B = 0$$을 같은 코드로 확인했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 가역 행렬 정리와 그 증명(1 ⇒ 2 ⇒ 3 ⇒ 4 ⇒ 1)을 그대로 옮겼다(Strang 5판 2.5절).
 {% endraw %}

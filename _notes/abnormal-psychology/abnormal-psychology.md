@@ -9,14 +9,14 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Abnormal Psychology", "異常心理學", "유병률", "prevalence", "발병률", "incidence", "위험요인", "risk factor", "역학", "epidemiology", "임상심리학", "정신의학"]
 description: "사람이 겪는 괴로움 가운데 보통과 다른 행동과 마음의 병을 과학의 방법으로 연구하는 심리학 분야다. 이상한 행동을 찾아 기술하고, 왜 생기는지 밝히고, 어떻게 고치고 막을지 연구한다. 다만 정상과 이상 사이에 뚜렷한 선이 없어서, 무엇을 연구 대상으로 삼을지부터가 이 분야의 첫 문제다."
 next_url: "/studies/abnormal-psychology/abnormality-criteria/"
 next_title: "이상행동의 기준"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/abnormal-psychology/"
 ---
@@ -52,6 +52,22 @@ permalink: "/studies/abnormal-psychology/abnormal-psychology/"
 1. **발견과 기술:** 이상행동과 정신장애의 분류, 역학 조사(유병률, 발병률, 위험요인)
 2. **원인 규명:** 이상행동을 일으키는 심리적·신체적 원인과 그 과정
 3. **치료와 예방:** 치료·예방 방법의 개발과 효과 검증
+
+```mermaid
+flowchart TD
+  R["이상심리학의 세 연구 주제"] --> A["1. 발견과 기술"]
+  R --> B["2. 원인 규명"]
+  R --> C["3. 치료와 예방"]
+  A --> A1["분류"]
+  A --> A2["역학 조사"]
+  A2 --> P["유병률"]
+  A2 --> I["발병률"]
+  A2 --> K["위험요인"]
+  B --> B1["심리적·신체적 원인과 그 과정"]
+  C --> C1["방법 개발과 효과 검증"]
+```
+
+숫자를 세는 일은 모두 첫 갈래의 역학 조사에 모인다. 유병률, 발병률, 위험요인이 그 아래 가지다[^s3].
 
 역학(어떤 병이 얼마나, 누구에게 생기는지 세는 연구)의 두 비율은 헷갈리기 쉽다[^s2].
 
@@ -101,4 +117,5 @@ permalink: "/studies/abnormal-psychology/abnormal-psychology/"
 [^4]: 4-1학기/이상 심리학/1.수업자료/01.이상심리학.pdf, p.5 (인접 분야: "교육 및 훈련 배경에 따라 구분", "활동 영역 중첩")
 [^s1]: 에이전트 보충. 대학생 사례와 연구 질문 표는 슬라이드 p.7의 세 주제를 구체 사례에 적용한 것이다.
 [^s2]: 에이전트 보충. 슬라이드는 두 용어의 이름만 든다. 정의는 역학의 표준 정의다. 욕조 비유(C3)는 "유병률 ≈ 발병률 × 평균 앓는 기간"이라는 역학의 근사 관계를 풀어 쓴 것으로, 발병률과 앓는 기간이 오래 일정할 때 성립한다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 세 연구 주제 목록(슬라이드 p.7)을 나무 모양으로 그렸다.
 {% endraw %}

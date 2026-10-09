@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Reactive Attachment Disorder", "RAD", "억제형 애착장애", "inhibited type", "애착 외상", "attachment trauma", "탈애착", "detachment", "적합도", "goodness of fit"]
 description: "아기 때 돌봄을 거의 받지 못해, 누구에게도 애착을 맺지 못하고 움츠러든 아이의 장애다. 넘어져 울어도 어른을 찾지 않고, 안아 줘도 반응하지 않는다. 기대했다가 번번이 실망하자 애착하려는 노력 자체를 포기한 모습이다. 심하게 방임된 아이 가운데서도 10% 이하에게만 나타나며, 한…"
@@ -18,7 +18,7 @@ prev_title: "지속성 비탄 장애"
 next_url: "/studies/abnormal-psychology/dsed/"
 next_title: "탈억제성 사회적 유대감 장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/reactive-attachment-disorder/"
 ---
@@ -79,6 +79,18 @@ D. 증상이 발달 연령 9개월 이상, 5세 이전에 나타난다.
 2. **기질:** 타고난 과민성이 양육자의 학대나 방임을 부르고, 애착 결핍에 지나치게 좌절해 회피적으로 행동한다.
 3. **정신분석적 입장:** 애착 대상을 잃은 경험으로 생긴 일종의 우울이다. 실망과 좌절로 애착 노력을 포기한 탈애착(detachment)이다.
 
+```mermaid
+flowchart LR
+  K["아이의 타고난 과민성"] --> P["양육자의 학대나 방임을 부른다"]
+  P --> L["애착 결핍"]
+  L --> F["지나친 좌절"]
+  F --> W["회피하고 움츠러든다"]
+  W -->|"양육자가 분노와 불안으로 반응한다"| L
+  T["치료: 양육자의 감수성과 반응성 높이기"] -.-> L
+```
+
+기질과 양육이 서로를 부추기는 고리다. 치료는 양육자 쪽에서 고리에 들어가 애착 결핍을 줄인다[^s3].
+
 ## 치료[^6]
 
 - **양육자와의 애착관계 개선**
@@ -117,4 +129,5 @@ D. 증상이 발달 연령 9개월 이상, 5세 이전에 나타난다.
 [^6]: 4-1학기/이상 심리학/1.수업자료/06.외상 후 스트레스 장애 및 해리장애.pdf, p.50
 [^s1]: 에이전트 보충. ED의 사례는 진단기준을 보이려고 만든 가상 사례다.
 [^s2]: 에이전트 보충. 양육 환경 개선 뒤 반응성 애착장애가 호전되는 경향은 루마니아 고아 입양 연구 등에서 보고된 결과다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `원인`의 애착 외상·기질 항목(슬라이드 p.49)과 `치료`의 양육자 반응 서술(슬라이드 p.50)을 이어 그렸다. 두 쪽의 내용을 하나의 고리로 잇는 것은 해석이다.
 {% endraw %}

@@ -18,7 +18,7 @@ prev_title: "매개변수 곡면 패치"
 next_url: "/studies/numerical-analysis/bounding-volume/"
 next_title: "경계 볼륨"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/numerical-analysis/bezier-subdivision/"
 ---
@@ -73,6 +73,19 @@ $$\mathbf l_1 = \tfrac12(\mathbf p_0 + \mathbf p_1), \quad \mathbf r_2 = \tfrac1
 
 
 **언제 멈추나.** 곡선이 평평하거나 거의 평평해질 때까지 나눈다. $$\mathbf l_1$$과 $$\mathbf l_2$$가 $$\mathbf l_0$$과 $$\mathbf l_3$$을 잇는 선분에서 얼마나 떨어졌는지 재서, 기준보다 작으면 멈추고 선분 하나로 그린다[^6].
+
+```mermaid
+flowchart TD
+    A["베지어 조절점 네 개"] --> B{"가운데 두 조절점이 양 끝을 잇는 선분에서 ε 안에 있나?"}
+    B -->|"예"| C["양 끝을 잇는 선분 하나를 그린다"]
+    B -->|"아니오"| D["중점을 세 번 잡아 왼쪽 반, 오른쪽 반 조절점을 만든다"]
+    D --> E["왼쪽 반으로 처음부터"]
+    D --> F["오른쪽 반으로 처음부터"]
+    E -.-> A
+    F -.-> A
+```
+
+점선은 같은 절차를 반쪽 곡선에 다시 하는 자리다. 평평한 조각만 선분이 되어 나오고, 굽은 조각은 계속 반으로 나뉜다[^s3].
 
 **다른 곡선 나누기.** 다른 곡선은 계산이 더 복잡하다. 그래서 같은 곡선을 내는 베지어 조절점으로 바꾼 뒤 위 방법을 쓴다[^7]. 곡선이 $$\mathbf p(u) = \mathbf u^\top M\mathbf p$$로 주어지면, $$\mathbf u^\top M_B\mathbf q$$와 같아야 하므로 $$\mathbf q = M_B^{-1}M\mathbf p$$다[^8]. $$M_B$$는 베지어 기하 행렬이다([추상 벡터공간과 베지어 곡선](/Hongs_Blog/studies/linear-algebra/abstract-vector-spaces/)의 과목별 관점).
 
@@ -145,4 +158,5 @@ $$M_B^{-1}M_I = \begin{pmatrix}1 & 0 & 0 & 0\\ -\frac56 & 3 & -\frac32 & \frac13
 [^10]: 같은 자료, p.26
 [^s1]: 에이전트 보충. 예시 수치, $$\mathbf l(u) = \mathbf p(u/2)$$의 설명, 폰트 렌더러·드 카스텔조, 연산 수, 흔한 실수, 카드는 원본에 없다. 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림은 원본에 없다. [18_bezier-subdivision_plot.py](/Hongs_Blog/studies/numerical-analysis/code/18_bezier-subdivision_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 중점 $$(0, 2)$$, $$(2, 4)$$, $$(4, 2)$$, $$(1, 3)$$, $$(3, 3)$$, $$(2, 3)$$과, 왼쪽 반이 $$\mathbf p(u/2)$$, 오른쪽 반이 $$\mathbf p((1 + u)/2)$$와 같음.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 입출력, 반으로 나누기와 멈추는 기준(원본 08.na08_surfaces.pdf p.19~22)으로 그렸다.
 {% endraw %}

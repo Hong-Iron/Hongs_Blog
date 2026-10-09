@@ -18,7 +18,7 @@ prev_title: "합의 계산과 어림"
 next_url: "/studies/discrete-math/master-theorem/"
 next_title: "분할 정복 점화식과 마스터 정리"
 math: true
-mermaid: false
+mermaid: true
 code_count: 2
 permalink: "/studies/discrete-math/asymptotic-notation/"
 ---
@@ -66,6 +66,19 @@ permalink: "/studies/discrete-math/asymptotic-notation/"
 **설계 이유.** 상수 $$c$$를 허용하는 것은 기계의 속도, 언어, 컴파일러 같은 상수배 차이를 지우기 위해서다. $$n_0$$을 허용하는 것은 작은 입력의 사정을 무시하기 위해서다. 한정기호의 순서 $$\exists c\,\exists n_0\,\forall n$$은 "상수와 경계를 **먼저** 정해 두면 그 뒤로는 **모든** $$n$$에서 성립"이라는 뜻이다([술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/)).
 
 **동치인 다른 정의.** 극한 $$L = \lim_{n \to \infty} f(n)/g(n)$$이 있으면 $$0 < L < \infty$$이면 $$\Theta$$, $$L = 0$$이면 $$o$$(따라서 $$O$$), $$L = \infty$$이면 $$\omega$$(따라서 $$\Omega$$)다. 극한은 [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)로 계산할 때가 많다. 단, 극한이 없어도 $$O$$, $$\Omega$$는 맞을 수 있다.
+
+```mermaid
+flowchart LR
+  L["L = lim f/g"] -->|"L = 0"| o["f = o(g)"]
+  L -->|"0 < L < ∞"| T["f = Θ(g)"]
+  L -->|"L = ∞"| w["f = ω(g)"]
+  o --> O["f = O(g)"]
+  T --> O
+  T --> W["f = Ω(g)"]
+  w --> W
+```
+
+화살표는 '이면'이다. $$o$$와 $$\Theta$$는 모두 $$O$$에 들고, $$\omega$$와 $$\Theta$$는 모두 $$\Omega$$에 든다. 극한이 없는 함수 쌍은 맨 왼쪽 갈림길을 쓸 수 없어 정의로 직접 따진다[^s2].
 
 **해당하는 예:** $$3n^2 + 5n + 7 = \Theta(n^2)$$, $$\lg n = O(\sqrt n)$$(사실 $$o$$), $$n! = \omega(2^n)$$. **해당하지 않는 예:** $$n^2 \ne O(n)$$(어떤 $$c$$도 $$n > c$$에서 깨짐), $$n$$과 "$$n$$이 짝수면 $$n^2$$, 홀수면 1"인 $$g$$는 $$O$$도 $$\Omega$$도 아니다(아래 카드 C4).
 
@@ -196,4 +209,5 @@ $$a$$, $$b$$는 고정된 밑이라 $$n$$에 따라 변하지 않는다. $$O$$�
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14.7절 "Asymptotic Notation". Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.1절 "Asymptotic notation".
 [^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [24_asymptotic-notation_plot.py](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_plot/)로 그렸고, 예시 표의 값, $$n \ge 112$$에서 $$A(n) > B(n)$$(그 아래에서는 $$A(n) \le B(n)$$), $$n = 40$$과 $$64$$에서 여덟 함수의 서열, $$\lg 8 > \sqrt 8$$을 같은 코드로 확인했다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 섹션의 다섯 기호 정의와 '동치인 다른 정의'(극한으로 판정)를 그렸다.
 {% endraw %}

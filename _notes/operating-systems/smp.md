@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Symmetric Multiprocessing", "SMP", "다중 처리", "Multiprocessing", "플린의 분류", "Flynn's Taxonomy", "SISD", "SIMD", "MISD", "MIMD", "클러스터", "Cluster", "프로세서 친화성", "Processor Affinity"]
 description: "SMP는 똑같은 일꾼(프로세서) 여러 명이 한 작업장(주기억장치와 입출력 장치)을 함께 쓰는 구조다. 누구나 어떤 일이든 할 수 있어서 \"대칭\"이라고 부른다. 일을 나눌 수 있으면 빨라지고, 한 명이 쓰러져도 나머지가 계속 일한다. 대신 운영체제는 두 일꾼이 같은 일을 집거나, 같…"
@@ -18,7 +18,7 @@ prev_title: "사용자 수준 스레드와 커널 수준 스레드"
 next_url: "/studies/operating-systems/microkernel/"
 next_title: "마이크로커널"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/smp/"
 ---
@@ -57,6 +57,19 @@ SMP는 똑같은 일꾼(프로세서) 여러 명이 한 작업장(주기억장�
 | MIMD (다중 명령어, 다중 데이터) | 여러 프로세서가 동시에 각자 다른 명령어를 각자 다른 데이터에 실행한다 |
 
 MIMD는 프로세서끼리 통신하는 방법으로 다시 나뉜다. 프로세서마다 전용 메모리가 있으면 각각이 독립된 컴퓨터이고, 이것을 **클러스터**(멀티컴퓨터)라고 부른다. 메모리를 함께 쓰면 **공유 메모리 다중 프로세서**이고, 프로세서들은 그 메모리를 통해 통신한다[^4]. SMP는 공유 메모리 다중 프로세서의 한 종류다[^s2].
+
+```mermaid
+flowchart TD
+  P["컴퓨터, 명령어 흐름과 데이터 흐름의 수로 나눔"] --> SISD["SISD"]
+  P --> SIMD["SIMD"]
+  P --> MISD["MISD"]
+  P --> MIMD["MIMD"]
+  MIMD --> SH["공유 메모리 다중 프로세서"]
+  MIMD --> CL["클러스터, 프로세서마다 전용 메모리"]
+  SH --> SMP["SMP"]
+```
+
+플린의 네 칸 가운데 MIMD만 다시 둘로 갈린다. 가르는 기준은 프로세서들이 메모리를 함께 쓰느냐다. SMP는 함께 쓰는 쪽 가지 끝에 있다[^s3].
 
 ### SMP의 정의
 
@@ -153,4 +166,5 @@ SMP에서는 커널이 어느 프로세서에서나 실행된다. 보통 프로�
 [^10]: 같은 자료, 슬라이드 52와 슬라이드 45의 발표자 노트
 [^s1]: 에이전트 보충. 시각별 표는 원본 그림 2.12의 모양을 단위 시간으로 옮긴 것이다. 정확한 구간은 그림과 다르다.
 [^s2]: 에이전트 보충. "SMP는 공유 메모리 다중 프로세서의 한 종류"라는 문장은 원본 그림 4.8의 분류를 글로 옮긴 것이다. 멀티코어 연결은 원본에 없다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "컴퓨터를 나누는 네 가지" 표와 그 아래 문단(슬라이드 32~34, 그림 4.8)을 분류 나무로 그렸다. SMP를 공유 메모리 쪽에 둔 것은 문서의 보충 문장(각주 s2)을 따랐다.
 {% endraw %}

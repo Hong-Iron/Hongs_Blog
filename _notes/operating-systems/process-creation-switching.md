@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Process Creation", "Process Termination", "Process Switching", "프로세스 생성", "프로세스 종료", "프로세스 전환", "문맥 교환", "Context Switch", "모드 전환", "Mode Switch", "트랩", "Trap", "시스템 호출", "Supervisor Call"]
 description: "운영체제는 프로세스를 만들 때 번호를 주고, 메모리를 주고, 신상 카드(PCB)를 채워 준비 줄에 세운다. 실행 중인 프로세스를 바꿀 때는 지금 프로세스의 레지스터 값을 카드에 적고, 다음 프로세스의 카드에서 값을 꺼내 되살린다. 운영체제 코드로 잠깐 넘어가는 것(모드 전환)과 실…"
@@ -18,7 +18,7 @@ prev_title: "프로세스 제어 블록"
 next_url: "/studies/operating-systems/thread/"
 next_title: "스레드"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/operating-systems/process-creation-switching/"
 ---
@@ -39,6 +39,22 @@ permalink: "/studies/operating-systems/process-creation-switching/"
 2. 운영체제가 디스크에 쓰기를 시작한다. 디스크는 느리므로 워드 프로세서는 기다려야 한다. 운영체제는 워드 프로세서의 상태를 대기로 바꾼다.
 3. 운영체제가 준비 큐에서 음악 플레이어를 골라 실행시킨다. 여기서 **프로세스 전환**이 일어난다.
 4. 디스크 쓰기가 끝나면 인터럽트가 온다. 운영체제는 워드 프로세서를 준비 큐로 옮긴다. 음악 플레이어를 계속 실행할지, 워드 프로세서로 바꿀지는 스케줄러가 정한다.
+
+```mermaid
+sequenceDiagram
+  participant W as 워드 프로세서
+  participant K as 운영체제
+  participant D as 디스크
+  participant M as 음악 플레이어
+  W->>K: 파일 쓰기 시스템 호출, 모드 전환
+  K->>D: 쓰기 시작
+  Note over W: 대기 상태
+  K->>M: 프로세스 전환, 음악 플레이어 실행
+  D->>K: 쓰기 완료 인터럽트
+  Note over W: 준비 상태, 다음 차례는 스케줄러가 정함
+```
+
+첫 화살표에서는 실행 중인 프로세스가 그대로 워드 프로세서다. 프로세서를 쓰는 프로세스가 바뀌는 것은 세 번째 화살표에서다[^s3].
 
 ## 정확히 말하면
 
@@ -147,4 +163,5 @@ permalink: "/studies/operating-systems/process-creation-switching/"
 [^6]: 같은 자료, p.33~34
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 저장 버튼 예시는 원본에 없다.
 [^s2]: 에이전트 보충. 부모·자식 용어, PCB 초기화 내용, 모드 전환과 프로세스 전환의 비교, `fork()`·`exec()`, 스레드 전환이 싼 이유, 확인 문제는 Stallings, *Operating Systems: Internals and Design Principles* 6판, 3.2·3.4절을 따랐다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기"의 1~4단계를 순서도로 옮겼다.
 {% endraw %}

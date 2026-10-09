@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "심리학"
-updated: "2026-09-27"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Substance-Related and Addictive Disorders", "물질관련장애", "비물질관련장애", "물질사용장애", "Substance Use Disorders", "물질 중독", "Substance Intoxication", "물질 금단", "Substance Withdrawal", "물질유도성장애", "Substance-Induced Disorders", "물질 유도성 정신장애", "Substance-Induced Mental Disorders", "중독", "addiction", "행위 중독"]
 description: "술, 담배, 약물처럼 몸에 들어가 뇌에 작용하는 물질, 그리고 도박처럼 물질 없이도 같은 방식으로 사람을 붙잡는 행동의 문제를 묶은 범주다. 물질에 대한 문제는 크게 두 가지다. 문제가 생기는데도 끊지 못하고 계속 쓰는 것(사용장애)과, 물질이 몸에 들어오거나 빠져나갈 때 생기는 …"
@@ -18,7 +18,7 @@ prev_title: "병적 도벽"
 next_url: "/studies/abnormal-psychology/alcohol-related-disorders/"
 next_title: "알코올 관련 장애"
 math: false
-mermaid: false
+mermaid: true
 code_count: 0
 permalink: "/studies/abnormal-psychology/substance-related-addictive/"
 ---
@@ -71,6 +71,21 @@ DSM이 "substance"를 쓰는 이유는 술, 카페인, 담배처럼 약이 아�
 | | 물질 금단(withdrawal) | 물질 사용을 중단하거나 줄여서 생기는 물질 특유의 부적응적 변화 |
 | | 물질 유도성 정신장애 | 물질 때문에 생긴 정신질환 |
 
+```mermaid
+flowchart TD
+    R["물질관련 및 중독 장애"] --> S["물질관련장애: 10가지 물질"]
+    R --> N["비물질관련장애"]
+    N --> G["도박장애"]
+    N -.-> I["인터넷 게임 장애: 추가 연구가 필요한 진단"]
+    S --> U["물질사용장애"]
+    S --> D["물질유도성장애"]
+    D --> D1["물질 중독"]
+    D --> D2["물질 금단"]
+    D --> D3["물질 유도성 정신장애"]
+```
+
+점선으로 이은 인터넷 게임 장애는 정식 진단이 아니다. 중독, 금단, 유도성 정신장애는 모두 물질유도성장애 한 갈래에 든다[^s3].
+
 우리말 "중독"은 두 가지를 다 가리켜서 헷갈린다. DSM의 물질 중독(intoxication)은 "취한 상태"라는 단기적 증후군이고, 일상어의 중독(addiction)은 끊지 못하고 계속 쓰는 상태, 곧 사용장애에 가깝다[^3].
 
 ## 연결
@@ -99,4 +114,5 @@ DSM이 "substance"를 쓰는 이유는 술, 카페인, 담배처럼 약이 아�
 [^3]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.46. 물질 중독의 "가역적" 위 "단기적"과, 오타 "Addiciton"을 지우고 "Addiction"으로 고쳐 쓴 것은 손글씨 필기다.
 [^s1]: 에이전트 보충. 네 상황은 유형을 가르려고 만든 가상 예다.
 [^s2]: 에이전트 보충. substance라는 말을 쓰는 이유는 p.45의 용어 설명을 DSM의 용어 선택과 이어 해석했다.
+[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '두 무리'(p.43)와 '물질관련장애의 유형'(p.46) 표를 한 분류 나무로 그렸다.
 {% endraw %}

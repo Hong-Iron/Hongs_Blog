@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Segmentation", "세그먼트", "Segment", "세그먼트 표", "Segment Table", "세그먼트 번호"]
 description: "세그먼테이션은 프로그램을 코드, 데이터, 스택처럼 뜻이 있는 덩어리(세그먼트)로 나누고, 덩어리마다 길이를 다르게 둔다. 책을 낱장이 아니라 장(chapter) 단위로 나누는 것과 같다. 프로그래머가 보는 구조와 맞아서, 세그먼트마다 읽기 전용·실행 전용 같은 보호를 주고 통째로 …"
@@ -42,6 +42,15 @@ permalink: "/studies/operating-systems/segmentation/"
 | 3 | 26 | 4 |
 
 메모리에서는 세그먼트 2가 0~9, 세그먼트 1이 12~23, 세그먼트 3이 26~29에 있다. 프로그램이 "세그먼트 1의 5번째"를 찾으면 12 + 5 = 17번지다. "세그먼트 3의 6번째"는 길이 4를 넘으므로 접근을 막는다[^s1].
+
+```
+ 번지      0~9       10~11      12~23      24~25      26~29
+      +------------+--------+------------+--------+------------+
+      | 세그먼트 2 | 안 씀  | 세그먼트 1 | 안 씀  | 세그먼트 3 |
+      +------------+--------+------------+--------+------------+
+```
+
+세그먼트는 번호 순서와 상관없이 메모리 아무 곳에나, 서로 떨어져 놓인다. 세그먼트 사이에 남은 틈은 크기가 제각각이다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 표의 변환과 길이 초과 검사, 그림 7.12b의 8976 — [36_paging_impl.py](/Hongs_Blog/studies/operating-systems/code/36_paging_impl/)</div>
@@ -121,4 +130,5 @@ permalink: "/studies/operating-systems/segmentation/"
 [^3]: 같은 자료, p.34
 [^4]: 같은 자료, p.34
 [^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 표로 계산한 예, 변환 단계, 그림 7.12b 예, 페이징과의 비교표, 실행 파일·segmentation fault 연결, 확인 문제는 Stallings 6판 7.4절을 바탕으로 보탰다.
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기"의 세그먼트 표(p.35)에서 시작 주소와 길이로 계산한 메모리 배치를 그렸다. 칸 너비는 크기에 비례하지 않는다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Recursive Definition", "Structural Induction", "재귀적 정의", "귀납적 정의", "구조적 귀납법", "재귀 자료형", "recursive data type", "균형 괄호", "balanced parentheses", "정 이진 트리", "full binary tree", "카탈랑 수", "Catalan number"]
 description: "끝없이 많은 대상을 \"기본 재료 몇 개\"와 \"이미 만든 것으로 새것을 만드는 규칙\"으로 정의하는 방법이다. 리스트, 트리, 수식, 프로그래밍 언어의 문법이 모두 이렇게 정의되고, 재귀 함수가 이 정의를 그대로 따라간다. 이렇게 정의한 대상의 성질은 같은 모양으로 증명한다. 기본 재…"
@@ -18,7 +18,7 @@ prev_title: "수학적 귀납법"
 next_url: "/studies/discrete-math/counting-rules/"
 next_title: "셈의 기본 법칙"
 math: true
-mermaid: false
+mermaid: true
 code_count: 1
 permalink: "/studies/discrete-math/recursive-definitions/"
 ---
@@ -60,6 +60,16 @@ $$\varepsilon \to ()$$ (규칙 2) $$\to ()()$$ (규칙 3) $$\to (()())$$ (규칙
 구조적 귀납법은 "만드는 데 쓴 규칙의 횟수"에 대한 강한 귀납법이라 [수학적 귀납법](/Hongs_Blog/studies/discrete-math/induction/)과 같은 근거로 옳다.
 
 **재귀 함수.** 재귀적으로 정의된 대상 위의 함수는 경우를 나눠 정의한다. 정 이진 트리(full binary tree, 각 노드가 자식 0개 또는 2개)를 "잎 하나" 또는 "왼쪽·오른쪽 트리를 붙인 노드"로 정의하면, 잎의 수는 $$\text{leaves}(\text{잎}) = 1$$, $$\ \text{leaves}(T_L, T_R) = \text{leaves}(T_L) + \text{leaves}(T_R)$$이다. 코드도 같은 모양이다.
+
+```mermaid
+flowchart TD
+  R["새 노드: 내부 노드"] --> L["T_L의 뿌리: 내부 노드"]
+  R --> RR["T_R: 잎 하나"]
+  L --> L1["잎"]
+  L --> L2["잎"]
+```
+
+왼쪽 트리 $$T_L$$(내부 노드 1, 잎 2)과 오른쪽 트리 $$T_R$$(잎 하나)을 새 노드 아래에 붙였다. 생성 규칙을 한 번 쓴 결과이고, 붙인 트리는 잎 3, 내부 노드 2다[^s2].
 
 ```python
 def leaves(t):
@@ -125,4 +135,5 @@ def leaves(t):
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 7장 "Recursive Data Types"(재귀적 정의, 구조적 귀납법, 균형 괄호). Rosen, *Discrete Mathematics and Its Applications* 7판, 5장.
 [^s1]: 에이전트 보충. $$n$$번째 카탈랑 수는 $$\frac{1}{n+1}\binom{2n}{n}$$이다. 이 값은 검증 코드의 개수와 같다(1, 1, 2, 5, 14, 42, 132).
+[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '재귀 함수' 문단의 정 이진 트리 정의(잎 하나, 또는 두 트리를 붙인 노드)를 작은 예로 그렸다.
 {% endraw %}
