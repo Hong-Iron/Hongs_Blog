@@ -105,6 +105,10 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 - 선수: [주파수 형성 필터와 주파수 선택 필터](/Hongs_Blog/studies/signals-and-systems/frequency-filters/) (미분기 = 고주파 강조, 평균 = 저역 통과), [컨벌루션의 성질](/Hongs_Blog/studies/signals-and-systems/convolution-properties/) (결합법칙)
 - 수학 쪽: [그래디언트와 방향도함수](/Hongs_Blog/studies/calculus/gradient/)
 
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 강의 6은 같은 평균·미분 커널을 2차원 "움직이는 창" $$G[i, j] = \sum_u\sum_v H[u, v]F[i - u, j - v]$$로 다룬다[^h1]. 3×3 평균 $$\frac{1}{9}$$, 가중 평균 $$\frac{1}{16}\begin{bmatrix}1&2&1\\2&4&2\\1&2&1\end{bmatrix}$$, 미분 $$[-1\ \ 1]$$과 $$[-1\ \ 1]^\top$$, 창 크기 3·5·9·17에 따른 흐림, 임펄스와의 합성곱으로 영상 옮기기가 나온다: [2차원 합성곱](/Hongs_Blog/studies/human-interface-media/two-dimensional-convolution/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -144,4 +148,5 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 [^11]: 같은 자료, p.4
 [^s1]: 에이전트 보충. 2000개 화소 계단 예(원본 그림 13~14와 같은 설정을 숫자로 재현), 소벨·캐니 필터, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [37_edge-detection-smoothing_plot.py](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 봉우리가 경계 ±15 안, 그대로 차분한 잡음 봉우리가 경계 값보다 큼, $$\frac{d}{dx}(f * g) = f * \frac{dg}{dx}$$.
+[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.23~42 (움직이는 창, 평균·가중 평균·미분 필터, 창 크기, 임펄스 합성곱)
 {% endraw %}

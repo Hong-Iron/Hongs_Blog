@@ -114,6 +114,10 @@ $$P_\infty \triangleq \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert 
 - 선수: [연속 시간 신호와 이산 시간 신호](/Hongs_Blog/studies/signals-and-systems/ct-dt-signals/), [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/), [등비급수](/Hongs_Blog/studies/college-math/geometric-series/)
 - [연속 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/ct-complex-exponential/)는 한 주기 에너지가 $$T_0$$이고 평균 전력이 1인 전력 신호다.
 
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 강의 4는 같은 두 식, 구간 $$t_1 \le t \le t_2$$의 에너지 $$\int_{t_1}^{t_2}\vert x(t)\vert ^2dt$$와 평균 전력 $$P_\infty = \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert ^2dt$$를 "파동의 에너지"로 소개한다[^h1]. 파동을 복소수 $$Ae^{i(2\pi t/T + \phi)}$$로 쓰면 $$\vert x(t)\vert ^2 = A^2$$이라 전력이 $$A^2$$이고, 실수 사인 $$A\sin(\cdot)$$은 그 절반 $$A^2/2$$다: [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -152,4 +156,5 @@ $$P_\infty \triangleq \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert 
 [^9]: 3-1학기/신호 및 시스템/1.수업자료/03.Week03_CH01_2_handout.pdf, p.32
 [^s1]: 에이전트 보충. 사인파 실효값 $$A/\sqrt2$$, 신호 대 잡음비, 220V 예, 확인 문제 C1의 ②·③과 C3는 원본에 없다. 값은 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [04_signal-energy-power_plot.py](/Hongs_Blog/studies/signals-and-systems/code/04_signal-energy-power_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 펄스의 $$E_T \to 1$$, $$\cos 2\pi t$$의 $$E_T = T + \frac{\sin 4\pi T}{4\pi}$$(수치 적분과 비교)와 $$P_T \to \frac12$$.
+[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf, p.9 (파동의 에너지)
 {% endraw %}

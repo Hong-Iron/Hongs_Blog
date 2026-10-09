@@ -2,6 +2,40 @@
 layout: default
 geo_clear: 26rem
 ---
+{%- comment -%} Contents from the course roadmap (_data/toc/<course>.yml, written by
+     scripts/vault_export.py). The part holding this note is open; code pages
+     mark their parent note. assets/js/note-toc.js fills in this note's own
+     headings and runs the drawer on narrow screens. {%- endcomment -%}
+{%- assign toc = site.data.toc[page.course_slug] -%}
+{%- assign here = page.url -%}
+{%- if page.parent_url -%}{%- assign here = page.parent_url -%}{%- endif -%}
+{%- if toc -%}
+<aside class="note-toc" id="note-toc" aria-label="{{ page.course }} 목차">
+  <a class="note-toc__course" href="{{ page.course_url | relative_url }}">{{ page.course }}</a>
+  <ol class="note-toc__parts">
+  {%- for part in toc -%}
+    {%- assign open = false -%}
+    {%- for it in part.items -%}{%- if it.u == here -%}{%- assign open = true -%}{%- endif -%}{%- endfor -%}
+    <li>
+      <details class="note-toc__part{% if open %} is-current{% endif %}"{% if open %} open{% endif %}>
+        <summary>{{ part.title }}</summary>
+        <ol>
+        {%- for it in part.items -%}
+          <li>
+            <a class="note-toc__link{% if it.u == here %} is-current{% endif %}{% if it.k == "practice" %} is-practice{% endif %}" href="{{ it.u | relative_url }}"{% if it.u == here %} aria-current="page"{% endif %}><span class="note-toc__no">{{ it.n }}</span><span class="note-toc__name">{{ it.t }}</span></a>
+            {%- if it.u == here and page.kind != "code" %}<ol class="note-toc__here" data-note-headings hidden></ol>{% endif -%}
+          </li>
+        {%- endfor -%}
+        </ol>
+      </details>
+    </li>
+  {%- endfor -%}
+  </ol>
+</aside>
+<button type="button" class="note-toc-toggle" aria-controls="note-toc" aria-expanded="false"><span aria-hidden="true">≡</span> 목차</button>
+<div class="note-toc-scrim" hidden></div>
+{%- endif -%}
+<div class="note-shell{% if toc %} has-toc{% endif %}">
 <article class="note">
   <header class="article-header container note-header" data-geo-band>
     <nav class="note-crumbs" aria-label="위치">
@@ -39,3 +73,5 @@ geo_clear: 26rem
     {% endif %}
   </nav>
 {% endif %}
+</div>
+<script src="{{ '/assets/js/note-toc.js' | relative_url }}" defer></script>

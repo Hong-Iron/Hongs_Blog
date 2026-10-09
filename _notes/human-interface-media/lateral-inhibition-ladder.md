@@ -14,6 +14,8 @@ status: "verified"
 description: "사용 개념: 측면 억제의 최종 반응 = 자기 수용기 반응 − 이웃마다 (이웃 수용기 반응 × k)."
 prev_url: "/studies/human-interface-media/metamerism-ladder/"
 prev_title: "조건등색 예제 사다리"
+next_url: "/studies/human-interface-media/convolution-practice/"
+next_title: "합성곱 연습"
 math: true
 mermaid: false
 code_count: 0

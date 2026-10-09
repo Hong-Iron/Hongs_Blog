@@ -31,4 +31,23 @@ geo_clear: none
   </dl>
 
   {% include doors.html %}
+
+  <section class="changelog" aria-labelledby="changelog-title">
+    <h2 id="changelog-title" class="changelog__title">업데이트 로그</h2>
+    <ol class="changelog__list">
+      {%- for entry in site.data.changelog %}
+      <li class="changelog__entry">
+        <time class="changelog__date" datetime="{{ entry.date }}">{{ entry.date | date: "%Y.%m.%d" }}</time>
+        <div>
+          <h3 class="changelog__name">{{ entry.title }}</h3>
+          <ul>
+            {%- for item in entry.items %}
+            <li>{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
 </div></div>

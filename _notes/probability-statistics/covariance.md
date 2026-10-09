@@ -132,6 +132,16 @@ $$\operatorname{Cov}(X, Y) = \mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big] = \mathb
 
 명목 속성끼리의 관련성은 공분산 대신 [카이제곱 상관 분석](/Hongs_Blog/studies/data-science/chi-square-correlation/)으로 잰다.
 
+**휴먼 인터페이스 미디어 (4-1학기).** 강의 6은 두 데이터(막대그래프, 영상 조각)의 모양이 비슷한지 재는 데 상관계수를 쓴다. 평균을 빼서 전체 밝기를, 표준편차로 나눠 대비를 지우므로, 밝기와 대비가 달라도 모양이 같으면 1이다. 영상에서는 이 값을 정규화 교차 상관 계수(NCC)라 부른다[^h1]. 자세한 내용은 [모양의 비슷함 재기](/Hongs_Blog/studies/human-interface-media/shape-similarity/)에 있다. 강의 5 p.13도 "상관관계가 0이면 독립"이라고 적는데, 위의 원본 오류 의심과 같은 문제다([2차원 함수](/Hongs_Blog/studies/human-interface-media/two-dimensional-functions/)).
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 강의 6 p.7 "교차 공분산 (cross covariance)" 아래의 식 $$(f \star g)(x) = \int \overline{f(t)}g(x + t)\,dt$$ / 문제점: 평균을 빼지 않아 p.9의 교차 상관 식과 똑같다. 공분산은 각자 평균을 뺀 뒤 곱한다 / 수정안: 교차 공분산은 $$\frac{1}{n}\sum_k (f[k] - \bar{f})(g[n + k] - \bar{g})$$처럼 평균을 뺀 신호의 교차 상관이다. 평균이 0인 신호에서만 두 식이 같다 / 근거: 이 문서의 공분산 정의, [28_shape-similarity_verify.py](/Hongs_Blog/studies/human-interface-media/code/28_shape-similarity_verify/) 주장 5(평균을 빼지 않은 식은 $$X$$와 $$X + 10$$에서 값이 달라짐)
+
+</div>
+
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -171,4 +181,5 @@ $$\operatorname{Cov}(X, Y) = \mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big] = \mathb
 [^d2]: 같은 자료, p.39 (상관 분석으로 중복 속성 찾기)
 [^sd1]: 에이전트 보충. 상관계수 약 0.87과 원본 오류 의심의 판정은 18_covariance_verify.py로 계산했다.
 [^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [18_covariance_plot.py](/Hongs_Blog/studies/probability-statistics/code/18_covariance_plot/)로 그렸고, 그림에 쓴 값(예시의 $$\sqrt{0.6}$$, 세 구름의 $$r$$, 포물선의 $$r = 0$$)을 같은 코드로 확인했다.
+[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.7 (분산 가족), p.8 (상관계수, 교차 상관 계수 NCC), p.43 (패턴 찾기)
 {% endraw %}

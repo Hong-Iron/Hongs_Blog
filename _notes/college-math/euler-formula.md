@@ -171,6 +171,10 @@ $$(\omega_1 - 1)S = 0$$이고 $$n \ge 2$$이면 $$\omega_1 \ne 1$$이므로 양�
 </div>
 
 
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 파동 $$A\sin(2\pi t/T + \phi)$$를 원 위를 도는 점의 세로 그림자로 보고, 점 전체를 $$Ae^{i(2\pi t/T + \phi)} = e^{\alpha + i\phi}e^{i2\pi t/T}$$($$A = e^\alpha$$)로 적는다[^h1]. 빛처럼 흔들림이 2차원인 파동을 수 하나로 다루고, 같은 세기지만 도는 방향이 다른 파동을 구별하려는 것이다: [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -209,4 +213,5 @@ $$(\omega_1 - 1)S = 0$$이고 $$n \ge 2$$이면 $$\omega_1 \ne 1$$이므로 양�
 [^2]: Strang, *Introduction to Linear Algebra* 5판, 9.1절 "Complex Numbers"(오일러 공식, 1의 거듭제곱근). FFT는 같은 책 9.3절.
 [^s1]: 에이전트 보충. 쿼터니언은 3차원 회전을 나타내는 수 체계로, 복소수 곱이 2차원 회전인 것을 넓힌 것이다. 게임 엔진의 회전 표현에 흔히 쓴다.
 [^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [19_euler-formula_plot.py](/Hongs_Blog/studies/college-math/code/19_euler-formula_plot/)로 그렸고, 그림에 쓴 값($$(1 + i)^8 = 16$$, 한 번 곱할 때마다 거리가 $$\sqrt2$$배, 1의 세제곱근과 다섯제곱근의 합이 0)을 같은 코드로 확인했다.
+[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf, p.7 (2차원 진동의 표현, 복소수 체계), p.8 (오일러 공식, 파동의 기본 표현)
 {% endraw %}

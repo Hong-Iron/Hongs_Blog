@@ -15,6 +15,8 @@ aliases: ["Visual Pathway", "시지각 흐름", "LGN", "외측 슬상체", "late
 description: "눈에서 뇌까지 가는 길은 택배 물류망과 같다. 망막에서 모인 신호는 시신경을 타고 가다 시교차에서 반쯤 갈라지고, 시상의 외측 슬상체(LGN)라는 분류 센터를 거쳐 뒤통수의 시각 피질에 닿는다. LGN은 그냥 넘겨주는 창고가 아니다. 피질에서 거꾸로 오는 지시를 받아 무엇을 얼마나…"
 prev_url: "/studies/human-interface-media/binocular-disparity/"
 prev_title: "양안 시차"
+next_url: "/studies/human-interface-media/longitudinal-transverse-wave/"
+next_title: "종파와 횡파"
 math: false
 mermaid: true
 code_count: 0

@@ -6,9 +6,9 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-concepts: 22
-practices: 3
-codes: 27
+concepts: 31
+practices: 4
+codes: 43
 description: "휴먼 인터페이스 미디어 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -16,7 +16,11 @@ permalink: "/studies/human-interface-media/"
 ---
 {% raw %}
 ## 먼저 알아야 할 것
-- 강의 소개가 밝힌 사전 지식: 초월 함수의 미분·적분, 기초 확률통계, 푸리에 급수·변환, C/C++ 프로그래밍[^1]. 수업에서 따로 가르치지 않는다고 못 박았다. 이 저장소에는 아직 해당 과목 문서가 없다.
+- 강의 소개가 밝힌 사전 지식: 초월 함수의 미분·적분, 기초 확률통계, 푸리에 급수·변환, C/C++ 프로그래밍[^1]. 수업에서 따로 가르치지 않는다고 못 박았다.
+- 4~6회에서 바로 쓰는 다른 과목 문서:
+  - [복소수의 극형식과 오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/) (공학수학 대학수학)
+  - [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/) (공학수학 확률과 통계)
+  - [단위 임펄스와 단위 계단](/Hongs_Blog/studies/signals-and-systems/unit-impulse-step/), [컨벌루션 합](/Hongs_Blog/studies/signals-and-systems/convolution-sum/), [컨벌루션 적분](/Hongs_Blog/studies/signals-and-systems/convolution-integral/) (3-1학기 신호 및 시스템)
 - 뉴런의 연산 모형, 퍼셉트론, 삼색 이론, 조건등색에는 선형대수(행렬 곱, 역행렬, 영공간)를 쓴다.
 
 ## 0·1회 · 과목 소개와 들어가기
@@ -101,8 +105,74 @@ permalink: "/studies/human-interface-media/"
 필기: 아직 없다.
 떠올려 보기: 노트를 닫고 빛이 눈에 들어와 시각 피질에 닿기까지를 한 줄로 그린 뒤, 그 길 위에서 색(삼색 → 반대색), 밝기(측면 억제), 깊이(양안 시차)가 각각 어디서 처리되는지 표시해 본다.
 
+## 4회 · 파동의 표현
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">읽기 전에</summary>
+
+1. 편광 선글라스는 빛에 쓰는데, 소리에도 "편광 귀마개"를 만들 수 있을까? → [종파와 횡파](/Hongs_Blog/studies/human-interface-media/longitudinal-transverse-wave/)
+2. 사인파의 높이 하나만 보고 그 파동이 올라가는 중인지 내려가는 중인지 알 수 있을까? → [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/)
+
+</details>
+
+
+| 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
+|---|---|---|---|---|
+| 23 | [종파와 횡파](/Hongs_Blog/studies/human-interface-media/longitudinal-transverse-wave/) | 소리는 나아가는 방향으로, 빛은 수직으로 흔들림. 빛은 2차원이라 편광 | — | — |
+| 24 | [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/) | 원 위를 도는 점 $$Ae^{i(2\pi t/T + \phi)}$$. 사인은 그 그림자 (강조)[^11] | [검증](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/24_complex-wave_fig1.svg) | — |
+
+자료: 강의 4 파동의 표현
+필기: 아직 없다.
+떠올려 보기: 노트를 닫고 원 위를 도는 점과 그 그림자 사인파를 그린 뒤, $$A$$, $$T$$, $$\phi$$가 그림의 어디인지 표시하고 $$Ae^{i(2\pi t/T + \phi)}$$의 실수부·허수부를 적어 본다.
+
+## 5회 · 이미지의 표현
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">읽기 전에</summary>
+
+1. 풀HD 동영상을 압축 없이 보내면 초당 몇 비트쯤일까? 방송 회선(약 19 Mbps)과 비교하면? → [디지털 이미지](/Hongs_Blog/studies/human-interface-media/digital-image/)
+2. 사진 데이터를 25%만 남겨야 한다면 픽셀 일부와 낮은 주파수 중 무엇을 남기겠는가? → [해상도와 공간 주파수](/Hongs_Blog/studies/human-interface-media/resolution-spatial-frequency/)
+3. 둥근 판을 "가로 모양 × 세로 모양"으로 쓸 수 있을까? → [2차원 함수](/Hongs_Blog/studies/human-interface-media/two-dimensional-functions/)
+
+</details>
+
+
+| 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
+|---|---|---|---|---|
+| 25 | [디지털 이미지](/Hongs_Blog/studies/human-interface-media/digital-image/) | 픽셀 배열과 밝기 양자화. $$b$$비트면 $$2^b$$단계, 풀HD는 초당 약 3 Gbps | [검증](/Hongs_Blog/studies/human-interface-media/code/25_digital-image_verify/) | — |
+| 26 | [해상도와 공간 주파수](/Hongs_Blog/studies/human-interface-media/resolution-spatial-frequency/) | 픽셀 $$N$$개의 최대 공간 주파수 $$N/2$$. 낮은 주파수에 모양, 높은 주파수에 질감 (강조)[^12] | [검증](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/26_resolution-spatial-frequency_fig1.svg) | — |
+| 27 | [2차원 함수](/Hongs_Blog/studies/human-interface-media/two-dimensional-functions/) | 사각·원판·델타·그리드. 사각은 분리 가능, 원판은 극좌표로 | [검증](/Hongs_Blog/studies/human-interface-media/code/27_two-dimensional-functions_verify/) | — |
+
+자료: 강의 5 이미지의 표현
+필기: 아직 없다.
+떠올려 보기: 노트를 닫고 이미지 → 픽셀 배열 → 양자화 → 데이터의 흐름을 그린 뒤, 각 단계에서 무엇을 잃는지(위치의 세밀함, 밝기의 세밀함)와 픽셀 $$N$$개의 최대 공간 주파수를 적어 본다.
+
+## 6회 · 모양 맞추기
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">읽기 전에</summary>
+
+1. 모양은 같고 전체 밝기만 다른 두 사진의 평균 제곱 차이는 클까 작을까? → [모양의 비슷함 재기](/Hongs_Blog/studies/human-interface-media/shape-similarity/)
+2. 틀을 옮기며 곱해 더한 값이 가장 큰 곳이 늘 틀과 같은 무늬일까? → [교차 상관](/Hongs_Blog/studies/human-interface-media/cross-correlation/)
+3. 3×3 평균 필터를 쓸 때 커널을 180° 돌리든 안 돌리든 결과가 같은 이유는? → [교차 상관과 합성곱 비교](/Hongs_Blog/studies/human-interface-media/correlation-vs-convolution/)
+
+</details>
+
+
+| 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
+|---|---|---|---|---|
+| 28 | [모양의 비슷함 재기](/Hongs_Blog/studies/human-interface-media/shape-similarity/) | 평균 제곱 차이는 밝기에 흔들림. 평균 빼고 표준편차로 나눈 상관계수로 | [검증](/Hongs_Blog/studies/human-interface-media/code/28_shape-similarity_verify/) | — |
+| 29 | [교차 상관](/Hongs_Blog/studies/human-interface-media/cross-correlation/) | 틀을 옮기며 겹친 값의 곱을 더함. 패턴 찾기에는 정규화 (강조)[^13] | [구현](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/29_cross-correlation_fig1.svg) | — |
+| 30 | [교차 상관과 합성곱 비교](/Hongs_Blog/studies/human-interface-media/correlation-vs-convolution/) | 가르는 질문: 옮기기 전에 뒤집는가 | [검증](/Hongs_Blog/studies/human-interface-media/code/30_correlation-vs-convolution_verify/) | — |
+| 31 | [2차원 합성곱](/Hongs_Blog/studies/human-interface-media/two-dimensional-convolution/) | 커널을 180° 돌려 창처럼 밀며 곱해 더함. 흐리기·미분·옮기기 (강조)[^13] | [구현](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/31_two-dimensional-convolution_fig1.svg) | [합성곱 연습](/Hongs_Blog/studies/human-interface-media/convolution-practice/) · [문제 코드 p2](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p2/) · [문제 코드 p4](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p4/) · [문제 코드 p5](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p5/) · [문제 코드 p7](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p7/) |
+
+자료: 강의 6 모양 맞추기
+필기: 아직 없다.
+떠올려 보기: 노트를 닫고 비슷함을 재는 방법을 차례로(평균 차이 → 평균 제곱 차이 → 상관계수 → 교차 상관 → 합성곱) 쓰고, 각 방법이 앞 방법의 어떤 문제를 고쳤는지 한 줄씩 붙인다.
+
 ## 다른 과목과의 연결
-- 아직 없다. 이 저장소에 같은 구조를 가진 다른 과목 개념이 들어오면 만든다. 후보는 `_시스템/작업 기록.md`에 있다.
+- 브리지 문서는 아직 없다. 후보는 `_시스템/작업 기록.md`에 있다.
+- 다른 과목 문서의 `과목별 관점`에 이 과목의 시각을 붙였다: [오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/), [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/), [신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/), [컨벌루션 적분](/Hongs_Blog/studies/signals-and-systems/convolution-integral/), [영상의 경계 검출과 평활화](/Hongs_Blog/studies/signals-and-systems/edge-detection-smoothing/)
 
 ## 흐름
 ```mermaid
@@ -129,6 +199,15 @@ graph TD
   n20["20 삼색 이론과 반대색 과정 비교"]
   n21["21 양안 시차"]
   n22["22 시각 경로"]
+  n23["23 종파와 횡파"]
+  n24["24 파동의 복소수 표현"]
+  n25["25 디지털 이미지"]
+  n26["26 해상도와 공간 주파수"]
+  n27["27 2차원 함수"]
+  n28["28 모양의 비슷함 재기"]
+  n29["29 교차 상관"]
+  n30["30 교차 상관과 합성곱 비교"]
+  n31["31 2차원 합성곱"]
   n01 --> n02
   n01 --> n03
   n02 --> n04
@@ -161,6 +240,17 @@ graph TD
   n14 --> n21
   n14 --> n22
   n04 --> n22
+  n11 --> n23
+  n23 --> n24
+  n12 --> n25
+  n25 --> n26
+  n11 --> n26
+  n12 --> n27
+  n25 --> n28
+  n28 --> n29
+  n29 --> n30
+  n27 --> n31
+  n30 --> n31
 ```
 
 ## 시험 대비
@@ -171,11 +261,11 @@ graph TD
 |---|---|---|---|
 | 1 | Course Introduction & Human Perception System | 9/1, 3 | 01~10 |
 | 2 | Human Visual System | 9/8, 10 | 11~22 |
-| 3 | Light, Electromagnetic Wave & Signal Representation | 9/15, 17 | 11 일부. 자료 없음 |
+| 3 | Light, Electromagnetic Wave & Signal Representation | 9/15, 17 | 11 일부, 23~24 (강의 4) |
 | 4 | Color Perception & Representation Parameters | 9/22, (9/24 추석) | 16~20 일부. 자료 없음 |
 | 5 | Color Space - CIE XYZ, CIE Lab | 9/29, 10/1 | — |
-| 6 | Image Representation & Spatial Frequency | 10/6, 8 | — |
-| 7 | Convolution & Pattern Detection | 10/13, 15 | — |
+| 6 | Image Representation & Spatial Frequency | 10/6, 8 | 25~27 (강의 5) |
+| 7 | Convolution & Pattern Detection | 10/13, 15 | 28~31 (강의 6) |
 | 8 | **중간고사** | 10/22 | 1~7주 |
 | 9 | Sound & Human Auditory Perception | 10/27, 29 | — |
 | 10 | Representation of Audio Signal | 11/3, 5 | — |
@@ -198,4 +288,7 @@ graph TD
 [^8]: 03.HIM_강의03_사람의시각.pdf, p.14의 굵은 글씨 "Binocular Disparity"
 [^9]: 03.HIM_강의03_사람의시각.pdf, p.16~18 세 장과 요약 p.19
 [^10]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar, Evaluation Policy. 00. HIM_강의00-강의소개.pdf, p.9~10
+[^11]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf p.8의 파동의 기본 표현이 요약 p.10에 반복된다.
+[^12]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/05.HIM_강의05_이미지의표현.pdf p.10~12 세 장과 요약 p.17
+[^13]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf에서 교차 상관은 p.7~9에 세 번, 합성곱 예는 p.12~42에 걸쳐 나오고, 요약 p.44에서 다시 묶는다.
 {% endraw %}

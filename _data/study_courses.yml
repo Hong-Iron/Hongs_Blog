@@ -87,11 +87,11 @@
     - name: "휴먼 인터페이스 미디어"
       slug: "human-interface-media"
       url: "/studies/human-interface-media/"
-      concepts: 22
-      practices: 3
-      codes: 27
-      heavy: 2
-      units: "사람의 지각 · 사람의 시각"
+      concepts: 31
+      practices: 4
+      codes: 43
+      heavy: 4
+      units: "사람의 지각 · 사람의 시각 · 파동의 표현 · 이미지의 표현 …"
     - name: "데이터 과학"
       slug: "data-science"
       url: "/studies/data-science/"

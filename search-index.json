@@ -1,0 +1,35 @@
+---
+layout: null
+permalink: /assets/search-index.json
+sitemap: false
+---
+{%- comment -%} Everything the site search (assets/js/search.js) can find. Loaded the
+     first time the search opens. t title, u url, s section, k kind, a aliases,
+     d short description, x start of the text. {%- endcomment -%}
+[
+{%- assign first = true -%}
+{%- for p in site.pages -%}
+  {%- if p.title and p.layout and p.layout != "null" and p.sitemap != false and p.url != "/404.html" -%}
+  {%- unless first -%},{%- endunless -%}{%- assign first = false %}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"s":"페이지","k":"","a":"","d":{{ p.description | default: "" | strip_html | normalize_whitespace | truncate: 160 | jsonify }},"x":""}
+  {%- endif -%}
+{%- endfor -%}
+{%- for p in site.projects -%}
+,
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"s":"Projects","k":"프로젝트","a":{{ p.tags | join: " " | jsonify }},"d":{{ p.summary | default: p.excerpt | strip_html | normalize_whitespace | truncate: 200 | jsonify }},"x":{{ p.content | strip_html | normalize_whitespace | truncate: 500 | jsonify }}}
+{%- endfor -%}
+{%- for p in site.posts -%}
+,
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"s":"나의 팡세","k":{{ p.date | date: "%Y-%m-%d" | jsonify }},"a":{{ p.tags | join: " " | jsonify }},"d":{{ p.excerpt | strip_html | normalize_whitespace | truncate: 200 | jsonify }},"x":{{ p.content | strip_html | normalize_whitespace | truncate: 500 | jsonify }}}
+{%- endfor -%}
+{%- for p in site.notes -%}
+,
+{%- if p.kind == "code" %}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"s":{{ p.course | jsonify }},"k":{{ p.kind_label | jsonify }},"a":{{ p.parent_title | default: "" | jsonify }},"d":"","x":""}
+{%- else %}
+{%- assign parts = p.content | split: "<h2" -%}
+{%- if parts.size > 1 -%}{%- assign body = parts | slice: 1, 999 | join: " <h2" -%}{%- else -%}{%- assign body = p.content -%}{%- endif %}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"s":{{ p.course | jsonify }},"k":{{ p.kind_label | jsonify }},"a":{{ p.aliases | join: " · " | jsonify }},"d":{{ p.description | default: "" | jsonify }},"x":{{ body | prepend: "<h2" | strip_html | replace: "\(", "" | replace: "\)", "" | replace: "\[", "" | replace: "\]", "" | normalize_whitespace | truncate: 600 | jsonify }}}
+{%- endif -%}
+{%- endfor %}
+]
