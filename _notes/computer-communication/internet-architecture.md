@@ -111,8 +111,8 @@ graph TD
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260925225050.png — 슬라이드 "표준 구조 (Standard Architectures) (2)", 인터네트 구조. 원문의 빨간 글씨: IP
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 1~13행
-[^3]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 3행은 "OSI 모델과 계층 구조를 그대로 따른다"고 적어 슬라이드의 "그대로 따르지는 않음"과 반대다 [확인필요]
-[^s1]: 에이전트 보충. 이더넷·와이파이·5G 예, 응용이 IP를 바로 쓰는 경우, 좁은 허리의 이점, OSI의 표준 우선 방식은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "표준 구조 (Standard Architectures) (2)", 인터네트 구조. 원문의 빨간 글씨: IP
+[^2]: 컴퓨터 통신 3회 필기 「3주차」, 1~13행
+[^3]: 컴퓨터 통신 3회 필기 「3주차」, 3행은 "OSI 모델과 계층 구조를 그대로 따른다"고 적어 슬라이드의 "그대로 따르지는 않음"과 반대다 [확인필요]
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이더넷·와이파이·5G 예, 응용이 IP를 바로 쓰는 경우, 좁은 허리의 이점, OSI의 표준 우선 방식은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다.
 {% endraw %}

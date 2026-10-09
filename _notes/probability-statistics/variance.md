@@ -121,5 +121,5 @@ $$\operatorname{Var}[X] = \mathbb{E}\big[(X - \mu)^2\big] = \mathbb{E}[X^2] - \m
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 4.6절 "Variance"(정의, 계산 공식, 성질, 독립합의 분산).
-[^s1]: 에이전트 보충. 웰퍼드 방법은 B. P. Welford, "Note on a method for calculating corrected sums of squares and products", *Technometrics* 4(3), 1962에서 나왔다. 두 공식의 결과(0과 22.5)는 09_variance_verify.py로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 웰퍼드 방법은 B. P. Welford, "Note on a method for calculating corrected sums of squares and products", *Technometrics* 4(3), 1962에서 나왔다. 두 공식의 결과(0과 22.5)는 09_variance_verify.py로 확인했다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "10_basis-dimension_plot.py"
 display_title: "10_basis-dimension_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "10"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/basis-dimension/"
 parent_title: "부분공간, 기저와 차원"
-description: "선형대수학 · 부분공간, 기저와 차원 코드 코드"
+description: "선형대수학 · 부분공간, 기저와 차원 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/10_basis-dimension_plot/"
 ---
 {% raw %}
-[부분공간, 기저와 차원](/Hongs_Blog/studies/linear-algebra/basis-dimension/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[부분공간, 기저와 차원](/Hongs_Blog/studies/linear-algebra/basis-dimension/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 부분공간, 기저와 차원 문서의 그림을 만든다: 10_basis-dimension_fig1.svg

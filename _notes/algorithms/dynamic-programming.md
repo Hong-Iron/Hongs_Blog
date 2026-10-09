@@ -51,7 +51,7 @@ flowchart TD
 
 f(4)를 그대로 재귀로 구할 때의 호출 나무다. f(2) 아래 나무가 통째로 두 번 나온다. n이 커지면 이런 겹침이 층마다 쌓여 호출 수가 불어난다[^s2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/30_dynamic-programming_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/30_dynamic-programming_fig1.svg" alt="그림" width="519" height="332" loading="lazy">
 
 세로축은 10배마다 한 칸이다. 그대로 재귀로 구하면 n이 1 늘 때마다 부르는 횟수가 약 1.6배씩 늘어 곧은 선으로 올라간다. 표에 적어 두면 2n − 1번이라 n = 30에서도 59번이다[^s1].
 
@@ -233,6 +233,6 @@ dp[x]를 구할 때 dp[x − c]를 읽는다. x − c < x이니 작은 금액부
 
 [^1]: 최적 부분 구조와 겹치는 부분 문제, 잘라 붙이기 논증은 Cormen 외, *Introduction to Algorithms* 3판, 15.3절 "Elements of dynamic programming". 동전 문제의 점화식과 기억하기는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 7.1 "Coin problem".
 [^2]: 편집 거리는 같은 책 7.5 "Edit distance", 벨만–포드와 플로이드–워셜은 13.1·13.3절. 맞춤법 교정과 DNA 서열 비교에 편집 거리를 쓰는 것은 위키백과 "Edit distance" 항목(Wagner–Fischer 동적 계획법)에, 문서 비교 도구 diff가 최장 공통 부분 수열 문제를 푼다는 것은 Hunt & McIlroy(1976) "An Algorithm for Differential File Comparison"과 위키백과 "Diff" 항목에 있다.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [30_dynamic-programming_plot.py](/Hongs_Blog/studies/algorithms/code/30_dynamic-programming_plot/)로 그렸고, f(30)에서 2,692,537번과 59번, 부르는 횟수를 점화식(횟수 = 1 + 앞 두 횟수의 합)으로 센 값이 실제로 센 값과 같다는 것(n ≤ 20), 표에 적으면 2n − 1번이라는 것을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '같은 계산의 반복' 절의 피보나치 재귀 f(n) = f(n − 1) + f(n − 2)(f(0) = 0, f(1) = 1)를 n = 4에서 호출 나무로 그렸다. 호출 9번은 '연결' 절의 공식 2f(n + 1) − 1 = 2 · 5 − 1과 같다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [30_dynamic-programming_plot.py](/Hongs_Blog/studies/algorithms/code/30_dynamic-programming_plot/)로 그렸고, f(30)에서 2,692,537번과 59번, 부르는 횟수를 점화식(횟수 = 1 + 앞 두 횟수의 합)으로 센 값이 실제로 센 값과 같다는 것(n ≤ 20), 표에 적으면 2n − 1번이라는 것을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '같은 계산의 반복' 절의 피보나치 재귀 f(n) = f(n − 1) + f(n − 2)(f(0) = 0, f(1) = 1)를 n = 4에서 호출 나무로 그렸다. 호출 9번은 '연결' 절의 공식 2f(n + 1) − 1 = 2 · 5 − 1과 같다.
 {% endraw %}

@@ -46,7 +46,7 @@ $$f(x) = x^2$$의 그래프 위의 점 $$(1, 1)$$이 각 조작에서 어디로 
 
 입력 쪽이 거꾸로인 이유는 이렇다. $$g(x) = f(x - 3)$$이 원래의 $$f(0)$$을 내려면 $$x - 3 = 0$$, 즉 $$x = 3$$이어야 한다. 원래 $$x = 0$$에서 일어나던 일이 $$x = 3$$에서 일어나니 오른쪽 이동이다. 거꾸로 움직이는 것이 아니라, 같은 일이 일어나는 새 위치를 푼 결과다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/02_function-transformation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/02_function-transformation_fig1.svg" alt="그림" width="486" height="342" loading="lazy">
 
 회색 $$x^2$$의 점을 모두 오른쪽으로 3 옮기면 파란 $$(x - 3)^2$$이 된다. 꼭짓점 $$(0, 0)$$은 $$(3, 0)$$으로, $$(1, 1)$$은 $$(4, 1)$$로 간다[^s2].
 
@@ -104,7 +104,7 @@ $$y = -2(x - 1)^2 + 3$$의 그래프를 $$y = x^2$$에서 얻는다.
 3. *모양 읽기:* $$a < 0$$이라 아래로 열리고, $$\vert a\vert  = 2$$라 원래보다 세로로 2배 가파르다.
 4. *확인:* $$x = 0$$과 $$x = 2$$에서 모두 $$y = 1$$이다. 꼭짓점 $$x = 1$$에 대해 대칭이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/02_function-transformation_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/02_function-transformation_fig2.svg" alt="그림" width="679" height="335" loading="lazy">
 
 꼭짓점이 $$(0, 0)$$에서 $$(1, 3)$$으로 옮겨 가고, 그래프는 아래로 열리며 더 가파르다. 속이 빈 두 점 $$(0, 1)$$과 $$(2, 1)$$이 꼭짓점을 사이에 두고 같은 높이에 있다[^s2].
 
@@ -172,7 +172,7 @@ $$y = -2(x - 1)^2 + 3$$의 그래프를 $$y = x^2$$에서 얻는다.
 
 [^1]: OpenStax, *Precalculus 2e*, 1.5절 "Transformation of Functions". 교재는 이동·대칭·확대를 하나씩 다룬다. 한 식으로 묶은 점 대응은 그 결과를 합친 것이다.
 [^2]: OpenStax, *Precalculus 2e*, 1.4절 "Composition of Functions"
-[^s1]: 에이전트 보충. 신호 지연·화면 좌표·셸 파이프라인은 컴퓨터공학에서 변환과 합성이 쓰이는 곳을 보이려고 넣었다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [02_function-transformation_plot.py](/Hongs_Blog/studies/college-math/code/02_function-transformation_plot/)로 그렸고, 그림에 쓴 값(점 대응 $$(1, 1) \to (4, 1)$$, 예제의 $$g(1) = 3$$, $$g(0) = g(2) = 1$$)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. `예시로 보기`의 두 합성 $$g \circ f$$, $$f \circ g$$($$x = 3$$을 넣은 값 8과 7은 두 식에서 계산)와 `정의`의 식 $$a\,f\big(b(x - h)\big) + k$$의 계산 순서를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.4~1.5절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 신호 지연·화면 좌표·셸 파이프라인은 컴퓨터공학에서 변환과 합성이 쓰이는 곳을 보이려고 넣었다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [02_function-transformation_plot.py](/Hongs_Blog/studies/college-math/code/02_function-transformation_plot/)로 그렸고, 그림에 쓴 값(점 대응 $$(1, 1) \to (4, 1)$$, 예제의 $$g(1) = 3$$, $$g(0) = g(2) = 1$$)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. `예시로 보기`의 두 합성 $$g \circ f$$, $$f \circ g$$($$x = 3$$을 넣은 값 8과 7은 두 식에서 계산)와 `정의`의 식 $$a\,f\big(b(x - h)\big) + k$$의 계산 순서를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.4~1.5절).
 {% endraw %}

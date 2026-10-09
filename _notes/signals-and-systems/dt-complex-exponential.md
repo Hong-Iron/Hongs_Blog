@@ -124,7 +124,7 @@ $$n$$이 정수라는 것. 연속 시간에서는 $$t$$가 모든 실수라서 $
 
 $$15\pi/8 = 2\pi - \pi/8$$이라 $$\cos(15\pi n/8) = \cos(\pi n/8)$$이다. 표에서 아래로 갈수록 주파수 숫자는 크지만 그림은 다시 느려진다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/09_dt-complex-exponential_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/09_dt-complex-exponential_fig1.svg" alt="그림" width="563" height="525" loading="lazy">
 
 $$\omega_0$$를 $$\pi/8$$에서 $$\pi$$까지 키우면 진동이 빨라지고, $$15\pi/8$$에서는 $$\pi/8$$과 똑같은 점이 찍힌다. 맨 아래의 회색 곡선은 연속 시간 $$\cos(15\pi t/8)$$이고, 정수 $$n$$에서만 점선 $$\cos(\pi t/8)$$과 만난다[^s2].
 
@@ -219,7 +219,7 @@ $$\omega_0$$를 $$\pi/8$$에서 $$\pi$$까지 키우면 진동이 빨라지고, 
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/03.Week03_CH01_2_handout.pdf, p.22, p.25
+[^1]: 신호 및 시스템 3회 강의 자료 「Week03_CH01_2_handout」, p.22, p.25
 [^2]: 같은 자료, p.13~14 (그림 1.24)
 [^3]: 같은 자료, p.15 (그림 1.25)
 [^4]: 같은 자료, p.16 (그림 1.26)
@@ -231,6 +231,6 @@ $$\omega_0$$를 $$\pi/8$$에서 $$\pi$$까지 키우면 진동이 빨라지고, 
 [^10]: 같은 자료, p.18, p.21 (그림 1.27의 $$N$$, $$m$$ 표시)
 [^11]: 같은 자료, p.26~27 (예제 1.6)
 [^12]: 같은 자료, p.24~25
-[^s1]: 에이전트 보충. 초침 사진 비유, 예제 1.6에서 크기의 주기가 24라는 설명, 에일리어싱 활용, 스스로 설명해 보기, 확인 문제 C1·C2·C4는 원본에 없다. 값은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [09_dt-complex-exponential_plot.py](/Hongs_Blog/studies/signals-and-systems/code/09_dt-complex-exponential_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\cos(15\pi n/8) = \cos(\pi n/8)$$, $$\cos 7\pi n = (-1)^n$$, 네 신호의 기본 주기 16, 4, 2, 16.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 초침 사진 비유, 예제 1.6에서 크기의 주기가 24라는 설명, 에일리어싱 활용, 스스로 설명해 보기, 확인 문제 C1·C2·C4는 원본에 없다. 값은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [09_dt-complex-exponential_plot.py](/Hongs_Blog/studies/signals-and-systems/code/09_dt-complex-exponential_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\cos(15\pi n/8) = \cos(\pi n/8)$$, $$\cos 7\pi n = (-1)^n$$, 네 신호의 기본 주기 16, 4, 2, 16.
 {% endraw %}

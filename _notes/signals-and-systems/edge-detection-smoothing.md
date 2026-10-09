@@ -91,7 +91,7 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 3. 그것을 차분하면 1000번째 근처에 봉우리 하나가 선다.
 4. 가우시안을 먼저 미분한 커널 $$\frac{dg}{dx}$$와 한 번만 컨벌루션해도 같은 결과다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/37_edge-detection-smoothing_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/37_edge-detection-smoothing_fig1.svg" alt="그림" width="564" height="448" loading="lazy">
 
 위 예제의 1단계(그대로 차분)와 4단계(가우시안 미분 커널과 컨벌루션) 결과를 나란히 그렸다[^s2].
 
@@ -143,7 +143,7 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/12.Week12_CH03_4_handout.pdf, p.7 (L. Lazebnik 자료)
+[^1]: 신호 및 시스템 12회 강의 자료 「Week12_CH03_4_handout」, p.7 (L. Lazebnik 자료)
 [^2]: 같은 자료, p.11~12 (S. Seitz 자료)
 [^3]: 같은 자료, p.9
 [^4]: 같은 자료, p.10
@@ -154,8 +154,8 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 [^9]: 같은 자료, p.34
 [^10]: 같은 자료, p.34~35
 [^11]: 같은 자료, p.4
-[^s1]: 에이전트 보충. 2000개 화소 계단 예(원본 그림 13~14와 같은 설정을 숫자로 재현), 소벨·캐니 필터, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [37_edge-detection-smoothing_plot.py](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 봉우리가 경계 ±15 안, 그대로 차분한 잡음 봉우리가 경계 값보다 큼, $$\frac{d}{dx}(f * g) = f * \frac{dg}{dx}$$.
-[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.23~42 (움직이는 창, 평균·가중 평균·미분 필터, 창 크기, 임펄스 합성곱)
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 먼저 평활화·컨벌루션의 미분 정리 절(12주차 자료 p.13~14)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 2000개 화소 계단 예(원본 그림 13~14와 같은 설정을 숫자로 재현), 소벨·캐니 필터, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [37_edge-detection-smoothing_plot.py](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 봉우리가 경계 ±15 안, 그대로 차분한 잡음 봉우리가 경계 값보다 큼, $$\frac{d}{dx}(f * g) = f * \frac{dg}{dx}$$.
+[^h1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.23~42 (움직이는 창, 평균·가중 평균·미분 필터, 창 크기, 임펄스 합성곱)
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 먼저 평활화·컨벌루션의 미분 정리 절(12주차 자료 p.13~14)을 근거로 그렸다.
 {% endraw %}

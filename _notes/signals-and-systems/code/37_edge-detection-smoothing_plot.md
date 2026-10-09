@@ -3,7 +3,7 @@ layout: "note"
 title: "37_edge-detection-smoothing_plot.py"
 display_title: "37_edge-detection-smoothing_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "37"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/edge-detection-smoothing/"
 parent_title: "영상의 경계 검출과 평활화"
-description: "신호 및 시스템 · 영상의 경계 검출과 평활화 코드 코드"
+description: "신호 및 시스템 · 영상의 경계 검출과 평활화 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/"
 ---
 {% raw %}
-[영상의 경계 검출과 평활화](/Hongs_Blog/studies/signals-and-systems/edge-detection-smoothing/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[영상의 경계 검출과 평활화](/Hongs_Blog/studies/signals-and-systems/edge-detection-smoothing/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 영상의 경계 검출과 평활화 문서의 그림을 만든다: 37_edge-detection-smoothing_fig1.svg

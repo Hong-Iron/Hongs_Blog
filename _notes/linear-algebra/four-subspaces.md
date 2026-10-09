@@ -44,7 +44,7 @@ $$A = \begin{pmatrix}1 & 2 & 3\\ 2 & 4 & 6\end{pmatrix}$$을 본다. 둘째 행�
 
 입력 공간 $$\mathbb{R}^3$$은 행공간(1차원)과 영공간(2차원)으로 나뉘고, 둘은 서로 수직이다($$(1, 2, 3)\cdot(-2, 1, 0) = 0$$). 출력 공간 $$\mathbb{R}^2$$도 열공간과 왼쪽 영공간으로 나뉘어 수직이다($$(1, 2)\cdot(2, -1) = 0$$). $$\mathbf{b} = (1, 0)$$은 열공간 밖이라 $$A\mathbf{x} = (1, 0)$$은 해가 없다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/11_four-subspaces_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/11_four-subspaces_fig1.svg" alt="그림" width="503" height="286" loading="lazy">
 
 왼쪽 입력 공간에서는 행공간(직선)이 영공간(평면)을 수직으로 꿰뚫는다. 오른쪽 출력 공간에서는 아무 입력이나 넣은 출력 $$A\mathbf{x}$$(점들)가 모두 열공간 직선 위에 떨어지고, 그 밖의 $$\mathbf{b} = (1, 0)$$에는 닿지 않는다[^s2].
 
@@ -219,7 +219,7 @@ $$A = \begin{pmatrix}1 & 2 & 0\\ 0 & 0 & 1\\ 1 & 2 & 1\end{pmatrix}$$의 네 부
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.2절 "The Nullspace of A"(특수해), 3.3절 "The Complete Solution to Ax = b", 3.5절 "Dimensions of the Four Subspaces", 4.1절 "Orthogonality of the Four Subspaces".
-[^s1]: 에이전트 보충. 그래프의 근접 행렬(간선 × 정점)에 차원 정리를 쓰면 연결 그래프에서 랭크 $$n - 1$$, 사이클 공간의 차원 $$m - n + 1$$이 나온다. Strang 5판 10.1절 "Graphs and Networks"에 같은 내용이 있다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [11_four-subspaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/11_four-subspaces_plot/)로 그렸고, 영공간 평면이 $$A\mathbf{x} = \mathbf{0}$$을 만족하는 것, 행공간과의 수직, 무작위 입력 60개의 출력이 모두 열공간 위에 있는 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 네 부분공간 정의와 선형대수의 기본정리 1~3을 옮겼다(Strang 5판 3.5절, 4.1절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그래프의 근접 행렬(간선 × 정점)에 차원 정리를 쓰면 연결 그래프에서 랭크 $$n - 1$$, 사이클 공간의 차원 $$m - n + 1$$이 나온다. Strang 5판 10.1절 "Graphs and Networks"에 같은 내용이 있다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [11_four-subspaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/11_four-subspaces_plot/)로 그렸고, 영공간 평면이 $$A\mathbf{x} = \mathbf{0}$$을 만족하는 것, 행공간과의 수직, 무작위 입력 60개의 출력이 모두 열공간 위에 있는 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 네 부분공간 정의와 선형대수의 기본정리 1~3을 옮겼다(Strang 5판 3.5절, 4.1절).
 {% endraw %}

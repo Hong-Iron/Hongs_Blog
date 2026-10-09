@@ -132,5 +132,5 @@ flowchart TD
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.5절 "Independence of events"(두 사건과 여러 사건의 독립, 쌍마다 독립과의 차이).
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예제(복제본과 공통 원인)의 2단계 설정을 원인 그림으로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예제(복제본과 공통 원인)의 2단계 설정을 원인 그림으로 옮겼다.
 {% endraw %}

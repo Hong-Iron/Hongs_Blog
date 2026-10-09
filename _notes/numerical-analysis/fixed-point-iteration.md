@@ -46,7 +46,7 @@ $$f(x) = e^{-x} - x = 0$$은 $$x = e^{-x}$$로 바꿀 수 있다. $$x_0 = 0$$에
 
 근(0.56714329)의 양쪽을 오가며 다가간다. 오차는 매번 약 0.567배로 준다. 근에서 $$g'(x) = -e^{-x}$$의 절댓값이 $$e^{-0.567} \approx 0.567$$이기 때문이다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/30_fixed-point-iteration_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/30_fixed-point-iteration_fig1.svg" alt="그림" width="408" height="312" loading="lazy">
 
 곡선 $$y = e^{-x}$$에서 값을 읽고(세로로), 직선 $$y = x$$에서 그 값을 다음 입력으로 옮기는(가로로) 일을 되풀이한 그림이다. 사각형이 근을 감싸며 점점 작아진다. 근의 양쪽을 번갈아 오가는 것이 보인다[^s2].
 
@@ -97,7 +97,7 @@ flowchart TD
 
 $$x^2 - x - 2 = 0$$의 세 꼴을 근 2에서 보면 $$g(x) = x^2 - 2$$는 $$g'(2) = 4$$라 발산하고, $$\sqrt{x + 2}$$는 $$\frac14$$, $$1 + \frac2x$$는 $$-\frac12$$라 수렴한다. $$g'$$이 음수이면 근의 양쪽을 번갈아 오간다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/30_fixed-point-iteration_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/30_fixed-point-iteration_fig2.svg" alt="그림" width="542" height="286" loading="lazy">
 
 왼쪽 $$g(x) = x^2 - 2$$는 근 바로 옆 2.1에서 시작해도 한 번마다 근에서 크게 멀어진다. 오른쪽 $$g(x) = 1 + \frac2x$$는 1에서 시작해 근 2의 양쪽을 번갈아 오가며 다가간다[^s2].
 
@@ -168,14 +168,14 @@ $$\left\vert \frac{\partial g_1}{\partial x}\right\vert  + \left\vert \frac{\par
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/17.na17_nonlinear2.pdf, p.5
+[^1]: 수치해석 17회 강의 자료 「na17_nonlinear2」, p.5
 [^2]: 같은 자료, p.3
 [^3]: 같은 자료, p.4
 [^4]: 같은 자료, p.6
 [^5]: 같은 자료, p.2, p.7
 [^6]: 같은 자료, p.8
 [^7]: 같은 자료, p.9
-[^s1]: 에이전트 보충. 오차 비율 0.567, 평균값 정리로 쓴 이유, 세 꼴의 기울기, 방법 ii의 편미분 합 1.25, 활용, 흔한 실수, 카드 C2~C4는 원본에 없다. 방법 i의 $$y_1$$은 정확히 −24.375이고 슬라이드는 −24.3으로 줄여 썼다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [30_fixed-point-iteration_plot.py](/Hongs_Blog/studies/numerical-analysis/code/30_fixed-point-iteration_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 $$x_2$$, $$x_4$$, $$x_{10}$$, 오차 비율 $$-0.567$$, $$x^2 - 2$$의 발산과 $$1 + \frac2x$$의 수렴.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 갱신식과 바꾸는 꼴(원본 17.na17_nonlinear2.pdf p.3~4), 예시 표의 $$\epsilon_a$$, '활용'의 흔한 실수로 그렸다. 멀어지는지 보는 갈래는 그 흔한 실수를 절차로 옮긴 것이다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오차 비율 0.567, 평균값 정리로 쓴 이유, 세 꼴의 기울기, 방법 ii의 편미분 합 1.25, 활용, 흔한 실수, 카드 C2~C4는 원본에 없다. 방법 i의 $$y_1$$은 정확히 −24.375이고 슬라이드는 −24.3으로 줄여 썼다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [30_fixed-point-iteration_plot.py](/Hongs_Blog/studies/numerical-analysis/code/30_fixed-point-iteration_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 $$x_2$$, $$x_4$$, $$x_{10}$$, 오차 비율 $$-0.567$$, $$x^2 - 2$$의 발산과 $$1 + \frac2x$$의 수렴.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 갱신식과 바꾸는 꼴(원본 17.na17_nonlinear2.pdf p.3~4), 예시 표의 $$\epsilon_a$$, '활용'의 흔한 실수로 그렸다. 멀어지는지 보는 갈래는 그 흔한 실수를 절차로 옮긴 것이다.
 {% endraw %}

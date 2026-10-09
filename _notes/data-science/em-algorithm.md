@@ -54,7 +54,7 @@ permalink: "/studies/data-science/em-algorithm/"
 
 무리 2의 평균이 2에서 5.4로 크게 움직였다. 이를 되풀이하면 평균 1과 7, 비중 $$\frac12$$씩으로 다가간다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/30_em-algorithm_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/30_em-algorithm_fig1.svg" alt="그림" width="612" height="266" loading="lazy">
 
 같은 자료로 E 단계와 M 단계를 15번 되풀이했다. 무리 2의 평균은 2 → 5.4 → … → 7로 올라가고, 무리 1은 1 근처에 자리 잡는다. 오른쪽의 로그가능도는 한 번도 줄지 않고, 평균이 자리를 잡으면 함께 멈춘다[^s2].
 
@@ -233,11 +233,11 @@ M 단계는 책임도를 무게로 한 평균과 공분산이다. 책임도가 �
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/07.7-1_basic-clustering.pdf, p.27
+[^1]: 데이터 과학 7회 강의 자료 「7-1_basic-clustering」, p.27
 [^2]: 같은 자료, p.28
 [^3]: 같은 자료, p.29
 [^4]: 같은 자료, p.31
-[^s1]: 에이전트 보충. 1차원 추적 표, 단조성 증명 스케치, 스스로 설명해 보기, 복잡도, k-평균 초기화, 퇴화, 카드 C2·C4·C5는 원본에 없다. 구현 코드로 확인했다(Dempster, Laird, Rubin, 1977).
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [30_em-algorithm_plot.py](/Hongs_Blog/studies/data-science/code/30_em-algorithm_plot/)로 그렸고, 위 두 표의 값(책임도 0.818 … 0.002, 평균 0.809·5.405, 분산 0.885·7.076, 비중 0.306·0.694), 로그가능도가 줄지 않음, 평균 1과 7·비중 $$\frac12$$로 수렴함을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 네 단계 순서와 의사코드(원본 7-1 p.27~29)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1차원 추적 표, 단조성 증명 스케치, 스스로 설명해 보기, 복잡도, k-평균 초기화, 퇴화, 카드 C2·C4·C5는 원본에 없다. 구현 코드로 확인했다(Dempster, Laird, Rubin, 1977).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [30_em-algorithm_plot.py](/Hongs_Blog/studies/data-science/code/30_em-algorithm_plot/)로 그렸고, 위 두 표의 값(책임도 0.818 … 0.002, 평균 0.809·5.405, 분산 0.885·7.076, 비중 0.306·0.694), 로그가능도가 줄지 않음, 평균 1과 7·비중 $$\frac12$$로 수렴함을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 네 단계 순서와 의사코드(원본 7-1 p.27~29)를 근거로 그렸다.
 {% endraw %}

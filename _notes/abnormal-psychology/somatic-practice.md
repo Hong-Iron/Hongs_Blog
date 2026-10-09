@@ -112,5 +112,5 @@ permalink: "/studies/abnormal-psychology/somatic-practice/"
 </details>
 
 
-[^s1]: 에이전트 보충. 모든 사례와 풀이는 07.신체증상 및 관련 장애, 배설장애.pdf의 장애별 설명(p.3, 6, 9~12, 18~21, 23, 27, 30~34)을 적용한 가상 사례다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 07.신체증상 및 관련 장애, 배설장애.pdf의 장애별 설명(p.3, 6, 9~12, 18~21, 23, 27, 30~34)을 적용한 가상 사례다.
 {% endraw %}

@@ -40,7 +40,7 @@ permalink: "/studies/signals-and-systems/fourier-series-convergence/"
 - $$N = 79$$: 거의 사각형이다. 그러나 모서리 옆에 작고 뾰족한 넘침이 여전히 있다.
 - 끊긴 점 $$t = T_1$$에서는 $$N$$과 상관없이 늘 $$\frac12$$(위 값 1과 아래 값 0의 평균)을 지난다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig1.svg" alt="그림" width="563" height="583" loading="lazy">
 
 $$T = 4$$, $$T_1 = 1$$인 사각파의 부분합이다. 회색 점이 끊긴 점 $$t = \pm1$$의 값 $$\frac12$$이고, $$N$$이 커져도 모서리 옆의 작은 넘침은 남는다[^s2].
 
@@ -89,7 +89,7 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 
 **깁스 현상**[^7]. 사각파의 $$x_N$$은 불연속점 근처에서 넘침과 물결이 생긴다. $$N$$을 늘리면 물결이 불연속점 쪽으로 좁아지지만, 넘치는 높이는 점프 크기의 약 9%로 줄지 않는다. 그래도 넓이가 0으로 줄어 오차 에너지는 0으로 간다. 이것이 "오차 에너지 → 0"과 "모든 점에서 같다"가 다른 이유다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig2.svg" alt="그림" width="541" height="297" loading="lazy">
 
 끊긴 점 $$t = 1$$ 근처를 확대했다. $$N$$을 19에서 301로 늘려도 꼭대기는 약 1.09에 머물고, 물결의 폭만 끊긴 점 쪽으로 좁아진다[^s2].
 
@@ -135,13 +135,13 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/09.Week09_CH03_2_handout.pdf, p.8 (그림 3.9)
+[^1]: 신호 및 시스템 9회 강의 자료 「Week09_CH03_2_handout」, p.8 (그림 3.9)
 [^2]: 같은 자료, p.2
 [^3]: 같은 자료, p.3
 [^4]: 같은 자료, p.4
 [^5]: 같은 자료, p.4~6 (그림 3.8)
 [^6]: 같은 자료, p.7
 [^7]: 같은 자료, p.8~9
-[^s1]: 에이전트 보충. 링잉과 창 함수의 활용, 넘침 높이 약 9%의 수치(Oppenheim·Willsky 2판 3.4절), 확인 문제는 원본에 없다. 수치는 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [31_fourier-series-convergence_plot.py](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 끊긴 점에서 $$x_N = \frac12$$, $$N = 19, 79, 301$$의 넘침이 모두 0.085~0.095, 오차 에너지가 줄어 0.006 아래.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 링잉과 창 함수의 활용, 넘침 높이 약 9%의 수치(Oppenheim·Willsky 2판 3.4절), 확인 문제는 원본에 없다. 수치는 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [31_fourier-series-convergence_plot.py](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 끊긴 점에서 $$x_N = \frac12$$, $$N = 19, 79, 301$$의 넘침이 모두 0.085~0.095, 오차 에너지가 줄어 0.006 아래.
 {% endraw %}

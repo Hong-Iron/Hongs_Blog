@@ -128,11 +128,11 @@ flowchart LR
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260924204202.png — 슬라이드 "주파수분할 다중화", (c) Spectrum of composite signal using subcarriers at 64 kHz, 68 kHz, and 72 kHz
-[^2]: 4-1학기/pasted_images/Pasted image 20260924204740.png — FDM 그림 (4 users, frequency–time)
-[^3]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 65~67행
-[^4]: 4-1학기/pasted_images/Pasted image 20260926030111.png — 슬라이드 "가입자 선로 (Last-Mile Links)", "xDSL: 음성과 data를 FDM 방식으로 동시에"
-[^s1]: 에이전트 보충. 쉬는 채널의 낭비와 누화는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 내용이다. 변조는 4회 슬라이드 "모듈레이션: 데이터의 신호화"(4-1학기/pasted_images/Pasted image 20260926022823.png)가 다룬다.
-[^s2]: 에이전트 보충. 음성 대역 300~3,400 Hz와 12채널 그룹(60~108 kHz), 와이파이 예는 원본에 없는 표준적인 수치와 사례다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "주파수분할 다중화"의 반송파 64·68·72 kHz 스펙트럼과 이 문서 '정의' 절의 변조·필터 설명을 바탕으로 그렸다. 받는 쪽이 주파수 구간마다 필터로 거른다는 구조는 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 일반 구조다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "주파수분할 다중화", (c) Spectrum of composite signal using subcarriers at 64 kHz, 68 kHz, and 72 kHz
+[^2]: 수업 슬라이드 캡처 — FDM 그림 (4 users, frequency–time)
+[^3]: 컴퓨터 통신 1회 필기 「1주차」, 65~67행
+[^4]: 수업 슬라이드 캡처 — 슬라이드 "가입자 선로 (Last-Mile Links)", "xDSL: 음성과 data를 FDM 방식으로 동시에"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 쉬는 채널의 낭비와 누화는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 내용이다. 변조는 4회 슬라이드 "모듈레이션: 데이터의 신호화"(수업 슬라이드 캡처)가 다룬다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 음성 대역 300~3,400 Hz와 12채널 그룹(60~108 kHz), 와이파이 예는 원본에 없는 표준적인 수치와 사례다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 "주파수분할 다중화"의 반송파 64·68·72 kHz 스펙트럼과 이 문서 '정의' 절의 변조·필터 설명을 바탕으로 그렸다. 받는 쪽이 주파수 구간마다 필터로 거른다는 구조는 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 일반 구조다.
 {% endraw %}

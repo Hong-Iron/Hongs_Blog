@@ -3,7 +3,7 @@ layout: "note"
 title: "24_asymptotic-notation_plot.py"
 display_title: "24_asymptotic-notation_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "24"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/asymptotic-notation/"
 parent_title: "점근 표기"
-description: "이산수학 · 점근 표기 코드 코드"
+description: "이산수학 · 점근 표기 그림 생성 코드"
 permalink: "/studies/discrete-math/code/24_asymptotic-notation_plot/"
 ---
 {% raw %}
-[점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 점근 표기 문서의 그림을 만든다: 24_asymptotic-notation_fig1.svg, 24_asymptotic-notation_fig2.svg

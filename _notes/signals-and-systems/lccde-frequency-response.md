@@ -88,7 +88,7 @@ flowchart TD
 2. *부분 분수:* $$\dfrac{A_{11}}{j\omega + 1} + \dfrac{A_{12}}{(j\omega + 1)^2} + \dfrac{A_{21}}{j\omega + 3}$$. 분자를 맞추면 $$A_{11} + A_{21} = 0$$, $$4A_{11} + A_{12} + 2A_{21} = 1$$, $$3A_{11} + 3A_{12} + A_{21} = 2$$에서 $$A_{11} = \frac14$$, $$A_{12} = \frac12$$, $$A_{21} = -\frac14$$.
 3. *역변환:* $$te^{-at}u(t) \leftrightarrow \frac{1}{(a + j\omega)^2}$$(예제 4.19)를 쓰면 $$y(t) = \left[\frac14e^{-t} + \frac12te^{-t} - \frac14e^{-3t}\right]u(t)$$.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/44_lccde-frequency-response_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/44_lccde-frequency-response_fig1.svg" alt="그림" width="650" height="276" loading="lazy">
 
 왼쪽은 예제 4.25의 $$\vert H(j\omega)\vert $$로, $$\omega = 0$$에서 $$\frac23$$이고 주파수가 높을수록 작아진다. 오른쪽의 굵은 선이 예제 4.26의 출력이고, 점선 세 조각을 더한 것이다[^s2].
 
@@ -135,12 +135,12 @@ flowchart TD
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/15.Week15_CH04_3_handout.pdf, p.29 (예제 4.24)
+[^1]: 신호 및 시스템 15회 강의 자료 「Week15_CH04_3_handout」, p.29 (예제 4.24)
 [^2]: 같은 자료, p.27~28
 [^3]: 같은 자료, p.31 (참조: 부분 분수 풀이)
 [^4]: 같은 자료, p.29 (예제 4.25)
 [^5]: 같은 자료, p.30 (예제 4.26)
-[^s1]: 에이전트 보충. 보드 선도 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [44_lccde-frequency-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$H(0) = \frac23$$, $$y(0) = 0$$, $$y(t)$$가 미분방정식을 만족하고 $$h * x$$의 수치 컨벌루션과 같음.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 두 길과 부분 분수 전개(15주차 자료 p.27~28, p.31), 예제 4.25~4.26(p.29~30)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 보드 선도 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [44_lccde-frequency-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$H(0) = \frac23$$, $$y(0) = 0$$, $$y(t)$$가 미분방정식을 만족하고 $$h * x$$의 수치 컨벌루션과 같음.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 두 길과 부분 분수 전개(15주차 자료 p.27~28, p.31), 예제 4.25~4.26(p.29~30)을 근거로 그렸다.
 {% endraw %}

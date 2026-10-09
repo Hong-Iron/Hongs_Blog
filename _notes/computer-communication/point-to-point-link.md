@@ -65,7 +65,7 @@ graph LR
 
 왜 $$n(n-1)/2$$일까? 노드마다 나머지 $$n-1$$개와 이어지니 포트를 모두 세면 $$n(n-1)$$개다. 그런데 링크 하나는 양 끝 포트에서 한 번씩, 모두 두 번 세어졌다. 그래서 링크 수는 그 절반이다. 숫자로 보면 노드 10개는 45개, 100개는 4,950개다[^s1]. 노드가 10배가 되면 링크는 약 100배가 된다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/01_point-to-point-link_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/01_point-to-point-link_fig1.svg" alt="그림" width="650" height="335" loading="lazy">
 
 파란 선이 완전 연결의 링크 수, 주황 선이 노드 수다. 노드 수는 곧게 늘지만 링크 수는 위로 휘며 올라가, 노드 30개에서 이미 435개다. 파란 선은 늘 $$n^2/4$$와 $$n^2/2$$ 사이의 띠 안에 있다[^s4].
 
@@ -155,13 +155,13 @@ graph LR
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 12~24행
-[^2]: 4-1학기/pasted_images/Pasted image 20260924184222.png — 슬라이드 "연결: 직접 링크 (Direct Links)"
-[^3]: 4-1학기/pasted_images/Pasted image 20260924200141.png — 슬라이드 "간접 연결 방법: 스위칭 정책"
-[^4]: 4-1학기/pasted_images/Pasted image 20260926022517.png — 슬라이드 "링크 (Link)" (2장. 데이터 링크 네트워크: 점대점 링크)
-[^5]: 4-1학기/pasted_images/Pasted image 20260926021332.png — 슬라이드 "데이터 링크 계층"
-[^s1]: 에이전트 보충. 필기 21행은 증가 차수 "$$n^2$$"만 적는다. 정확한 개수 $$n(n-1)/2$$와 부등식의 근거는 두 번 세기 논증과 검증 코드다. 본문의 45, 4,950은 이 공식에 $$n = 10, 100$$을 넣은 값이다.
-[^s2]: 에이전트 보충. 광케이블 예와 PPP는 원본에 없는 실제 사용처다. PPP는 RFC 1661(1994)에 정의되어 있다.
-[^s3]: 에이전트 보충. 전송 모드의 예(TV 방송, 무전기, 전화)는 원본에 없다. 슬라이드는 세 모드의 이름과 화살표 그림만 준다.
-[^s4]: 에이전트 보충. 그림 한 장은 원본에 없다. [01_point-to-point-link_plot.py](/Hongs_Blog/studies/computer-communication/code/01_point-to-point-link_plot/)로 그렸고, $$n = 10, 20, 30$$에서 링크 45, 190, 435개와 $$n = 2, \dots, 30$$에서 $$n^2/4 \le m \le n^2/2$$를 같은 코드로 확인했다.
+[^1]: 컴퓨터 통신 1회 필기 「1주차」, 12~24행
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "연결: 직접 링크 (Direct Links)"
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "간접 연결 방법: 스위칭 정책"
+[^4]: 수업 슬라이드 캡처 — 슬라이드 "링크 (Link)" (2장. 데이터 링크 네트워크: 점대점 링크)
+[^5]: 수업 슬라이드 캡처 — 슬라이드 "데이터 링크 계층"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 필기 21행은 증가 차수 "$$n^2$$"만 적는다. 정확한 개수 $$n(n-1)/2$$와 부등식의 근거는 두 번 세기 논증과 검증 코드다. 본문의 45, 4,950은 이 공식에 $$n = 10, 100$$을 넣은 값이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 광케이블 예와 PPP는 원본에 없는 실제 사용처다. PPP는 RFC 1661(1994)에 정의되어 있다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전송 모드의 예(TV 방송, 무전기, 전화)는 원본에 없다. 슬라이드는 세 모드의 이름과 화살표 그림만 준다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [01_point-to-point-link_plot.py](/Hongs_Blog/studies/computer-communication/code/01_point-to-point-link_plot/)로 그렸고, $$n = 10, 20, 30$$에서 링크 45, 190, 435개와 $$n = 2, \dots, 30$$에서 $$n^2/4 \le m \le n^2/2$$를 같은 코드로 확인했다.
 {% endraw %}

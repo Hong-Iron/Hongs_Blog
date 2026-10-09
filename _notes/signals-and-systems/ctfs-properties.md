@@ -127,7 +127,7 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 - *미분 성질:* $$d_k = jk\frac\pi2e_k$$이므로 $$e_k = \frac{2d_k}{jk\pi} = \frac{2\sin(\pi k/2)}{j(k\pi)^2}e^{-jk\pi/2}$$ ($$k \ne 0$$).
 - *$$k = 0$$은 따로:* 미분 성질로는 $$e_0$$를 알 수 없다(0을 곱했기 때문). 한 주기의 평균을 직접 구한다: $$e_0 = \frac14\left[\int_0^2\frac t2dt + \int_2^4\left(2 - \frac t2\right)dt\right] = \frac14(1 + 1) = \frac12$$.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/32_ctfs-properties_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/32_ctfs-properties_fig1.svg" alt="그림" width="660" height="266" loading="lazy">
 
 오른쪽은 로그 눈금이다. 끊긴 사각파의 계수는 $$\frac1k$$로, 꺾이기만 하는 삼각파의 계수는 $$\frac{1}{k^2}$$로 줄어든다. 미분하면 계수에 $$k$$가 곱해진다는 성질을 거꾸로 본 것이다[^s2].
 
@@ -212,7 +212,7 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/09.Week09_CH03_2_handout.pdf, p.22~23 (예제 3.6, 그림 3.10)
+[^1]: 신호 및 시스템 9회 강의 자료 「Week09_CH03_2_handout」, p.22~23 (예제 3.6, 그림 3.10)
 [^2]: 같은 자료, p.10~11
 [^3]: 같은 자료, p.10 (표 3.1)
 [^4]: 같은 자료, p.12
@@ -225,6 +225,6 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 [^11]: 같은 자료, p.25 (예제 3.8, 그림 3.12)
 [^12]: 같은 자료, p.26~27
 [^13]: 같은 자료, p.28~31 (예제 3.9)
-[^s1]: 에이전트 보충. 오해 항목과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [32_ctfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$jk\omega_0e_k = d_k$$(미분 성질), 삼각파 계수 $$e_1$$, $$e_3$$과 $$e_0 = \frac12$$를 분석식 수치 적분과 비교.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오해 항목과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [32_ctfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$jk\omega_0e_k = d_k$$(미분 성질), 삼각파 계수 $$e_1$$, $$e_3$$과 $$e_0 = \frac12$$를 분석식 수치 적분과 비교.
 {% endraw %}

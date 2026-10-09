@@ -75,7 +75,7 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 2. $$X$$, $$Y$$가 독립이면 $$H(X, Y) = H(X) + H(Y)$$.
 3. 확률 $$p$$인 사건 하나의 **이진 엔트로피** $$h(p) = -p\log_2 p - (1 - p)\log_2(1 - p)$$는 $$p = \frac12$$에서 1, $$p = 0.9$$에서 약 0.469다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/37_entropy_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/37_entropy_fig1.svg" alt="그림" width="562" height="335" loading="lazy">
 
 반반($$p = 0.5$$)일 때 1비트로 가장 크고, 한쪽으로 몰릴수록 0으로 내려간다. $$p = 0.9$$인 동전은 던질 때마다 평균 0.469비트의 정보만 준다[^s2].
 
@@ -202,7 +202,7 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 
 [^1]: Cover, Thomas, *Elements of Information Theory* 2판, 2장 "Entropy, Relative Entropy, and Mutual Information"(정의, 성질, 옌센 부등식을 이용한 상한).
 [^2]: Cover, Thomas, *Elements of Information Theory* 2판, 5장 "Data Compression"(크래프트 부등식, 최적 부호의 한계 $$H \le L < H + 1$$, 허프만 부호).
-[^s1]: 에이전트 보충. DEFLATE가 LZ77과 허프만 부호를 함께 쓴다는 것은 RFC 1951에 정의되어 있다. 묶음 부호화 수치와 허프만의 한계는 37_entropy_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [37_entropy_plot.py](/Hongs_Blog/studies/probability-statistics/code/37_entropy_plot/)로 그렸고, 그림에 쓴 값($$h(0.5) = 1$$, $$h(0.9) = 0.469$$, $$h(0) = h(1) = 0$$)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 부호 네 개를 부호 나무로 그렸다. 부호 길이 = 깊이라는 설명은 활용 절(트라이)에 있다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DEFLATE가 LZ77과 허프만 부호를 함께 쓴다는 것은 RFC 1951에 정의되어 있다. 묶음 부호화 수치와 허프만의 한계는 37_entropy_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [37_entropy_plot.py](/Hongs_Blog/studies/probability-statistics/code/37_entropy_plot/)로 그렸고, 그림에 쓴 값($$h(0.5) = 1$$, $$h(0.9) = 0.469$$, $$h(0) = h(1) = 0$$)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 부호 네 개를 부호 나무로 그렸다. 부호 길이 = 깊이라는 설명은 활용 절(트라이)에 있다.
 {% endraw %}

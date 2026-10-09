@@ -3,7 +3,7 @@ layout: "note"
 title: "24_svd_plot.py"
 display_title: "24_svd_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "24"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/svd/"
 parent_title: "특잇값 분해"
-description: "선형대수학 · 특잇값 분해 코드 코드"
+description: "선형대수학 · 특잇값 분해 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/24_svd_plot/"
 ---
 {% raw %}
-[특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 특잇값 분해 문서의 그림을 만든다: 24_svd_fig1.svg, 24_svd_fig2.svg

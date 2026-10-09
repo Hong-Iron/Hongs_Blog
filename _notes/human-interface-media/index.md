@@ -36,7 +36,7 @@ permalink: "/studies/human-interface-media/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 01 | [휴먼 인터페이스 미디어](/Hongs_Blog/studies/human-interface-media/human-interface-media/) | 사람의 자극과 컴퓨터의 수치·코드를 서로 바꾸는 매체 (강조)[^2] | — | — |
+| 01 | [휴먼 인터페이스 미디어](/Hongs_Blog/studies/human-interface-media/human-interface-media/) | 사람의 자극과 컴퓨터의 수치·코드를 서로 바꾸는 매체 (강조)[<sup>2</sup>] | — | — |
 
 자료: 강의 소개 · 강의 계획서 · 강의 1 들어가기
 필기: 아직 없다.
@@ -56,14 +56,14 @@ permalink: "/studies/human-interface-media/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 02 | [지각](/Hongs_Blog/studies/human-interface-media/perception/) | 감각은 수용, 지각은 신호를 골라 정리하고 해석하는 능동적 처리 (강조)[^3] | — | — |
+| 02 | [지각](/Hongs_Blog/studies/human-interface-media/perception/) | 감각은 수용, 지각은 신호를 골라 정리하고 해석하는 능동적 처리 (강조)[<sup>3</sup>] | — | — |
 | 03 | [지능 시스템](/Hongs_Blog/studies/human-interface-media/intelligent-system/) | 사람처럼/이성적으로 × 생각/행동의 네 관점. 기호주의와 연결주의 | — | — |
 | 04 | [뉴런과 신호 전달](/Hongs_Blog/studies/human-interface-media/neuron-signaling/) | 수용기가 자극을 전기로, 시냅스가 화학으로 넘김. 휴지 전위 −70 mV | — | — |
 | 05 | [발화율 부호화](/Hongs_Blog/studies/human-interface-media/rate-coding/) | 세기는 스파이크 크기가 아니라 빈도. 불응기 1 ms로 상한 | [검증](/Hongs_Blog/studies/human-interface-media/code/05_rate-coding_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/05_rate-coding_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/05_rate-coding_fig1.svg) | — |
 | 06 | [흥분성과 억제성 시냅스](/Hongs_Blog/studies/human-interface-media/excitatory-inhibitory/) | 문턱 쪽으로 올리는 흥분, 멀어지게 내리는 억제 | — | — |
 | 07 | [뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/) | $$a(A\mathbf{x} + \mathbf{b})$$. 활성 함수가 없으면 층을 쌓아도 한 층 | [검증](/Hongs_Blog/studies/human-interface-media/code/07_neuron-computational-model_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/07_neuron-computational-model_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/07_neuron-computational-model_fig1.svg) | — |
-| 08 | [퍼셉트론](/Hongs_Blog/studies/human-interface-media/perceptron/) | 가중 합 + 문턱, 틀리면 가중치 수정. 선형 분리만 가능, XOR 불가[^4] | [구현](/Hongs_Blog/studies/human-interface-media/code/08_perceptron_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/08_perceptron_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/08_perceptron_fig1.svg) | — |
-| 09 | [뉴런의 수렴](/Hongs_Blog/studies/human-interface-media/neuron-convergence/) | 모으면 약한 신호에 민감해지고 위치를 잃음 (강조)[^5] | [검증](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/09_neuron-convergence_fig1.svg) | [뉴런 수렴 모델링 연습](/Hongs_Blog/studies/human-interface-media/neuron-convergence-modeling/) |
+| 08 | [퍼셉트론](/Hongs_Blog/studies/human-interface-media/perceptron/) | 가중 합 + 문턱, 틀리면 가중치 수정. 선형 분리만 가능, XOR 불가[<sup>4</sup>] | [구현](/Hongs_Blog/studies/human-interface-media/code/08_perceptron_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/08_perceptron_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/08_perceptron_fig1.svg) | — |
+| 09 | [뉴런의 수렴](/Hongs_Blog/studies/human-interface-media/neuron-convergence/) | 모으면 약한 신호에 민감해지고 위치를 잃음 (강조)[<sup>5</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/09_neuron-convergence_fig1.svg) | [뉴런 수렴 모델링 연습](/Hongs_Blog/studies/human-interface-media/neuron-convergence-modeling/) |
 | 10 | [중심-주변 길항](/Hongs_Blog/studies/human-interface-media/center-surround/) | 가운데 흥분·둘레 억제. 고른 빛보다 경계에 반응하는 대역 통과 필터 | [검증](/Hongs_Blog/studies/human-interface-media/code/10_center-surround_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/10_center-surround_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/10_center-surround_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/10_center-surround_fig2.svg) | — |
 
 퍼셉트론은 슬라이드에 없고, 강의에서 연산 모형과 함께 설명되었다(사용자 전달)[^4].
@@ -86,18 +86,18 @@ permalink: "/studies/human-interface-media/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 11 | [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/) | 진폭·주파수·위상. 청각은 1차원 시간, 시각은 2차원 평면 (강조)[^6] | [검증](/Hongs_Blog/studies/human-interface-media/code/11_wave-and-light_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/11_wave-and-light_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/11_wave-and-light_fig1.svg) | — |
-| 12 | [이미지 함수](/Hongs_Blog/studies/human-interface-media/image-function/) | $$i(x, y)$$, 컬러는 세 채널 벡터, 윤곽선은 $$\nabla i$$ (강조)[^6] | [검증](/Hongs_Blog/studies/human-interface-media/code/12_image-function_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/12_image-function_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/12_image-function_fig1.svg) | — |
+| 11 | [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/) | 진폭·주파수·위상. 청각은 1차원 시간, 시각은 2차원 평면 (강조)[<sup>6</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/11_wave-and-light_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/11_wave-and-light_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/11_wave-and-light_fig1.svg) | — |
+| 12 | [이미지 함수](/Hongs_Blog/studies/human-interface-media/image-function/) | $$i(x, y)$$, 컬러는 세 채널 벡터, 윤곽선은 $$\nabla i$$ (강조)[<sup>6</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/12_image-function_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/12_image-function_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/12_image-function_fig1.svg) | — |
 | 13 | [휘도와 조도](/Hongs_Blog/studies/human-interface-media/luminance-and-illuminance/) | 조도는 떨어지는 빛, 휘도는 되돌아오는 빛. 대비는 조명과 무관 | [검증](/Hongs_Blog/studies/human-interface-media/code/13_luminance-and-illuminance_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/13_luminance-and-illuminance_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/13_luminance-and-illuminance_fig1.svg) | — |
 | 14 | [눈의 구조](/Hongs_Blog/studies/human-interface-media/eye-anatomy/) | 카메라와 닮았지만 센서가 고르지 않고 스스로 가공함 | — | — |
 | 15 | [간상체와 추상체](/Hongs_Blog/studies/human-interface-media/rods-and-cones/) | 간상체는 어둠·흑백, 추상체는 밝음·색. 중심와에는 추상체만 | [검증](/Hongs_Blog/studies/human-interface-media/code/15_rods-and-cones_verify/) | — |
-| 16 | [삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/) | 색은 세 추상체 반응의 조합. 원색 셋으로 맞추되 못 만드는 색이 있음 (강조)[^7] | [검증](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig2.svg) | — |
-| 17 | [조건등색](/Hongs_Blog/studies/human-interface-media/metamerism/) | 스펙트럼이 달라도 세 반응이 같으면 같은 색. 영공간 (강조)[^7] | [검증](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/17_metamerism_fig1.svg) | [조건등색 예제 사다리](/Hongs_Blog/studies/human-interface-media/metamerism-ladder/) |
+| 16 | [삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/) | 색은 세 추상체 반응의 조합. 원색 셋으로 맞추되 못 만드는 색이 있음 (강조)[<sup>7</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig2.svg) | — |
+| 17 | [조건등색](/Hongs_Blog/studies/human-interface-media/metamerism/) | 스펙트럼이 달라도 세 반응이 같으면 같은 색. 영공간 (강조)[<sup>7</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/17_metamerism_fig1.svg) | [조건등색 예제 사다리](/Hongs_Blog/studies/human-interface-media/metamerism-ladder/) |
 | 18 | [측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/) | 이웃을 빼서 경계를 강조. 마하 띠 80·88·8·16, 헤르만 격자 60 대 76 | [검증](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/18_lateral-inhibition_fig1.svg) | [측면 억제 예제 사다리](/Hongs_Blog/studies/human-interface-media/lateral-inhibition-ladder/) |
 | 19 | [반대색 과정](/Hongs_Blog/studies/human-interface-media/opponent-process/) | 빨강-초록, 파랑-노랑, 흰-검 짝을 +와 −로. 잔상 | [검증](/Hongs_Blog/studies/human-interface-media/code/19_opponent-process_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/19_opponent-process_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/19_opponent-process_fig1.svg) | — |
 | 20 | [삼색 이론과 반대색 과정 비교](/Hongs_Blog/studies/human-interface-media/contrast--trichromatic--opponent-process/) | 가르는 질문: 세 반응의 크기만으로 정해지는가, 짝의 차이가 필요한가 | — | — |
-| 21 | [양안 시차](/Hongs_Blog/studies/human-interface-media/binocular-disparity/) | 두 눈 상의 차이로 깊이. 가까울수록 크고 멀면 급히 줄어듦 (강조)[^8] | [검증](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig2.svg) | — |
-| 22 | [시각 경로](/Hongs_Blog/studies/human-interface-media/visual-pathway/) | 망막 → LGN → 시각 피질. LGN은 피드백을 받아 조절 (강조)[^9] | — | — |
+| 21 | [양안 시차](/Hongs_Blog/studies/human-interface-media/binocular-disparity/) | 두 눈 상의 차이로 깊이. 가까울수록 크고 멀면 급히 줄어듦 (강조)[<sup>8</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig2.svg) | — |
+| 22 | [시각 경로](/Hongs_Blog/studies/human-interface-media/visual-pathway/) | 망막 → LGN → 시각 피질. LGN은 피드백을 받아 조절 (강조)[<sup>9</sup>] | — | — |
 
 강의 순서와 다른 점: 점묘법(p.9)은 삼색 이론(p.10)이 먼저 필요해 조건등색(17)에서 다룬다.
 
@@ -119,7 +119,7 @@ permalink: "/studies/human-interface-media/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 23 | [종파와 횡파](/Hongs_Blog/studies/human-interface-media/longitudinal-transverse-wave/) | 소리는 나아가는 방향으로, 빛은 수직으로 흔들림. 빛은 2차원이라 편광 | [그림 코드](/Hongs_Blog/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/23_longitudinal-transverse-wave_fig1.svg) | — |
-| 24 | [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/) | 원 위를 도는 점 $$Ae^{i(2\pi t/T + \phi)}$$. 사인은 그 그림자 (강조)[^11] | [검증](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/24_complex-wave_fig1.svg) | — |
+| 24 | [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/) | 원 위를 도는 점 $$Ae^{i(2\pi t/T + \phi)}$$. 사인은 그 그림자 (강조)[<sup>11</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/24_complex-wave_fig1.svg) | — |
 
 자료: 강의 4 파동의 표현
 필기: 아직 없다.
@@ -140,7 +140,7 @@ permalink: "/studies/human-interface-media/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 25 | [디지털 이미지](/Hongs_Blog/studies/human-interface-media/digital-image/) | 픽셀 배열과 밝기 양자화. $$b$$비트면 $$2^b$$단계, 풀HD는 초당 약 3 Gbps | [검증](/Hongs_Blog/studies/human-interface-media/code/25_digital-image_verify/) | — |
-| 26 | [해상도와 공간 주파수](/Hongs_Blog/studies/human-interface-media/resolution-spatial-frequency/) | 픽셀 $$N$$개의 최대 공간 주파수 $$N/2$$. 낮은 주파수에 모양, 높은 주파수에 질감 (강조)[^12] | [검증](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/26_resolution-spatial-frequency_fig1.svg) | — |
+| 26 | [해상도와 공간 주파수](/Hongs_Blog/studies/human-interface-media/resolution-spatial-frequency/) | 픽셀 $$N$$개의 최대 공간 주파수 $$N/2$$. 낮은 주파수에 모양, 높은 주파수에 질감 (강조)[<sup>12</sup>] | [검증](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/26_resolution-spatial-frequency_fig1.svg) | — |
 | 27 | [2차원 함수](/Hongs_Blog/studies/human-interface-media/two-dimensional-functions/) | 사각·원판·델타·그리드. 사각은 분리 가능, 원판은 극좌표로 | [검증](/Hongs_Blog/studies/human-interface-media/code/27_two-dimensional-functions_verify/) | — |
 
 자료: 강의 5 이미지의 표현
@@ -162,9 +162,9 @@ permalink: "/studies/human-interface-media/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 28 | [모양의 비슷함 재기](/Hongs_Blog/studies/human-interface-media/shape-similarity/) | 평균 제곱 차이는 밝기에 흔들림. 평균 빼고 표준편차로 나눈 상관계수로 | [검증](/Hongs_Blog/studies/human-interface-media/code/28_shape-similarity_verify/) | — |
-| 29 | [교차 상관](/Hongs_Blog/studies/human-interface-media/cross-correlation/) | 틀을 옮기며 겹친 값의 곱을 더함. 패턴 찾기에는 정규화 (강조)[^13] | [구현](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/29_cross-correlation_fig1.svg) | — |
+| 29 | [교차 상관](/Hongs_Blog/studies/human-interface-media/cross-correlation/) | 틀을 옮기며 겹친 값의 곱을 더함. 패턴 찾기에는 정규화 (강조)[<sup>13</sup>] | [구현](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/29_cross-correlation_fig1.svg) | — |
 | 30 | [교차 상관과 합성곱 비교](/Hongs_Blog/studies/human-interface-media/correlation-vs-convolution/) | 가르는 질문: 옮기기 전에 뒤집는가 | [검증](/Hongs_Blog/studies/human-interface-media/code/30_correlation-vs-convolution_verify/) | — |
-| 31 | [2차원 합성곱](/Hongs_Blog/studies/human-interface-media/two-dimensional-convolution/) | 커널을 180° 돌려 창처럼 밀며 곱해 더함. 흐리기·미분·옮기기 (강조)[^13] | [구현](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/31_two-dimensional-convolution_fig1.svg) | [합성곱 연습](/Hongs_Blog/studies/human-interface-media/convolution-practice/) · [문제 코드 p2](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p2/) · [문제 코드 p4](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p4/) · [문제 코드 p5](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p5/) · [문제 코드 p7](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p7/) |
+| 31 | [2차원 합성곱](/Hongs_Blog/studies/human-interface-media/two-dimensional-convolution/) | 커널을 180° 돌려 창처럼 밀며 곱해 더함. 흐리기·미분·옮기기 (강조)[<sup>13</sup>] | [구현](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_impl/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/31_two-dimensional-convolution_fig1.svg) | [합성곱 연습](/Hongs_Blog/studies/human-interface-media/convolution-practice/) · [문제 코드 p2](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p2/) · [문제 코드 p4](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p4/) · [문제 코드 p5](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p5/) · [문제 코드 p7](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p7/) |
 
 자료: 강의 6 모양 맞추기
 필기: 아직 없다.
@@ -253,7 +253,7 @@ graph TD
   n30 --> n31
 ```
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_강의00-강의소개.pdf, p.8, p.11. 강의 계획서의 Pre-requisites도 같다.
+[^1]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_강의00-강의소개」, p.8, p.11. 강의 계획서의 Pre-requisites도 같다.
 [^2]: 같은 그림이 00. HIM_강의00-강의소개.pdf p.4와 01.HIM_강의01-들어가기.pdf p.6에 반복되고, 사람의 정보 처리 슬라이드가 강의 1 p.4와 강의 2 p.3, p.16에 반복된다.
 [^3]: 02.HIM_강의02_사람의지각.pdf, p.2, p.5, p.6과 요약 p.16의 "감각과 지각"
 [^4]: 사용자 전달(2026-09-25): 교수님이 퍼셉트론 등의 모델을 함께 설명하며 연산 모형(강의 2 p.11)을 이야기했다.
@@ -262,8 +262,8 @@ graph TD
 [^7]: 03.HIM_강의03_사람의시각.pdf, p.10의 굵은 글씨 "Trichromatic Theory", "Metamerism"
 [^8]: 03.HIM_강의03_사람의시각.pdf, p.14의 굵은 글씨 "Binocular Disparity"
 [^9]: 03.HIM_강의03_사람의시각.pdf, p.16~18 세 장과 요약 p.19
-[^10]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar, Evaluation Policy. 00. HIM_강의00-강의소개.pdf, p.9~10
-[^11]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf p.8의 파동의 기본 표현이 요약 p.10에 반복된다.
-[^12]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/05.HIM_강의05_이미지의표현.pdf p.10~12 세 장과 요약 p.17
+[^10]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar, Evaluation Policy. 00. HIM_강의00-강의소개.pdf, p.9~10
+[^11]: 휴먼 인터페이스 미디어 4회 강의 자료 「HIM_강의04_파동의표현」 p.8의 파동의 기본 표현이 요약 p.10에 반복된다.
+[^12]: 휴먼 인터페이스 미디어 5회 강의 자료 「HIM_강의05_이미지의표현」 p.10~12 세 장과 요약 p.17
 [^13]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf에서 교차 상관은 p.7~9에 세 번, 합성곱 예는 p.12~42에 걸쳐 나오고, 요약 p.44에서 다시 묶는다.
 {% endraw %}

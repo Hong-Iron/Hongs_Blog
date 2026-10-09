@@ -41,7 +41,7 @@ permalink: "/studies/probability-statistics/geometric-distribution/"
 
 확률이 공비 $$\frac56$$로 줄어드는 [등비수열](/Hongs_Blog/studies/college-math/geometric-series/)이라 "기하"분포다. 여섯 번 넘게 걸릴 확률은 처음 여섯 번이 모두 실패할 확률 $$\left(\frac56\right)^6 \approx 0.335$$라, 평균 6번이라도 세 번에 한 번은 그보다 오래 걸린다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/11_geometric-distribution_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/11_geometric-distribution_fig1.svg" alt="그림" width="529" height="335" loading="lazy">
 
 막대 높이가 한 칸마다 $$\frac56$$배로 줄어든다. 평균(점선)은 6번이지만, 주황 막대를 모두 더한 0.335만큼은 6번보다 오래 걸린다[^s2].
 
@@ -169,7 +169,7 @@ $$i$$종을 가진 동안은 과자 하나마다 확률 $$\frac{n-i}{n}$$로 다
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 4.3절 "Geometric and Negative Binomial"(실패 수 규약의 기하분포, 첫 성공 분포, 쿠폰 수집 문제).
 [^2]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 11.4절 "Open addressing"(정리 11.6, 실패한 탐색의 기대 탐사 수 $$\frac{1}{1 - \alpha}$$ 이하).
-[^s1]: 에이전트 보충. SciPy의 `scipy.stats.geom`은 PMF를 $$(1-p)^{k-1}p$$($$k \ge 1$$)로 정의해 시행 수 규약을 쓴다(SciPy 문서). 두 규약의 평균과 분산은 11_geometric-distribution_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [11_geometric-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_plot/)로 그렸고, 그림에 쓴 값(평균 6, $$\left(\frac56\right)^6 = 0.335$$)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예제(쿠폰 수집)의 1단계를 상태 전이 그림으로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> SciPy의 `scipy.stats.geom`은 PMF를 $$(1-p)^{k-1}p$$($$k \ge 1$$)로 정의해 시행 수 규약을 쓴다(SciPy 문서). 두 규약의 평균과 분산은 11_geometric-distribution_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [11_geometric-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_plot/)로 그렸고, 그림에 쓴 값(평균 6, $$\left(\frac56\right)^6 = 0.335$$)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예제(쿠폰 수집)의 1단계를 상태 전이 그림으로 옮겼다.
 {% endraw %}

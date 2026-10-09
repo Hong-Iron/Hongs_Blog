@@ -41,7 +41,7 @@ permalink: "/studies/calculus/derivative/"
 
 평균 속도는 정확히 $$6 + h$$이고, 구간을 줄이면 6에 다가간다. 그래서 $$t = 3$$의 순간 속도는 6 m/s다. 그래프에서 두 점을 잇는 할선이 구간이 줄면서 접선으로 바뀌고, 그 기울기가 6이다. 구간 길이가 아래 정의의 $$h$$, 평균 속도가 차분몫이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/04_derivative_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/04_derivative_fig1.svg" alt="그림" width="525" height="335" loading="lazy">
 
 세 할선은 모두 점 $$(3, 9)$$를 지난다. $$h$$가 1, 0.5, 0.1로 줄면 할선의 기울기가 7, 6.5, 6.1로 줄며 보라색 점선(접선)에 겹쳐 간다[^s2].
 
@@ -156,7 +156,7 @@ $$f(x) = 1/x$$의 $$x = 2$$에서의 접선을 구한다.
 
 $$h$$가 크면 극한에서 먼 오차(절단 오차)가, 작으면 거의 같은 두 수를 빼는 반올림 오차가 커진다. 전진 차분은 $$h \approx 10^{-8}$$, 중앙 차분은 $$h \approx 10^{-5}$$(오차 $$1.2 \times 10^{-11}$$)에서 가장 정확하다[^s1]. 그래서 신경망은 수치 미분 대신 자동미분을 쓴다([연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/)).
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/04_derivative_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/04_derivative_fig2.svg" alt="그림" width="539" height="336" loading="lazy">
 
 두 눈금 모두 로그다. 오른쪽에서 왼쪽으로 $$h$$를 줄이면 오차가 처음엔 곧게 내려가다가, 점선 근처의 바닥을 지나면 들쭉날쭉하게 다시 오른다. 중앙 차분은 더 가파르게 내려가서 바닥이 더 깊다[^s2].
 
@@ -212,7 +212,7 @@ $$h$$가 크면 극한에서 먼 오차(절단 오차)가, 작으면 거의 같�
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.1절 "Defining the Derivative", 3.2절 "The Derivative as a Function"(미분 가능성과 연속성)
-[^s1]: 에이전트 보충. 수치 미분의 최적 $$h$$가 기계 엡실론 $$\epsilon \approx 2.2 \times 10^{-16}$$의 제곱근(전진 차분), 세제곱근(중앙 차분) 정도라는 것은 수치 해석의 표준 결과다. 표의 값은 검증 코드로 계산했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [04_derivative_plot.py](/Hongs_Blog/studies/calculus/code/04_derivative_plot/)로 그렸고, 할선 기울기가 $$6 + h$$인 것과 오차표의 값(전진 차분 $$h = 10^{-1}, 10^{-4}, 10^{-8}, 10^{-15}$$, 중앙 차분 $$h = 10^{-1}, 10^{-4}, 10^{-5}$$)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 정리(미분 가능하면 연속, 역은 거짓), [연속](/Hongs_Blog/studies/calculus/continuity/)의 세 조건, [극한](/Hongs_Blog/studies/calculus/limits/)의 오해(극한값과 함숫값이 다른 함수)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수치 미분의 최적 $$h$$가 기계 엡실론 $$\epsilon \approx 2.2 \times 10^{-16}$$의 제곱근(전진 차분), 세제곱근(중앙 차분) 정도라는 것은 수치 해석의 표준 결과다. 표의 값은 검증 코드로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [04_derivative_plot.py](/Hongs_Blog/studies/calculus/code/04_derivative_plot/)로 그렸고, 할선 기울기가 $$6 + h$$인 것과 오차표의 값(전진 차분 $$h = 10^{-1}, 10^{-4}, 10^{-8}, 10^{-15}$$, 중앙 차분 $$h = 10^{-1}, 10^{-4}, 10^{-5}$$)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 정리(미분 가능하면 연속, 역은 거짓), [연속](/Hongs_Blog/studies/calculus/continuity/)의 세 조건, [극한](/Hongs_Blog/studies/calculus/limits/)의 오해(극한값과 함숫값이 다른 함수)를 근거로 그렸다.
 {% endraw %}

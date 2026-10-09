@@ -79,7 +79,7 @@ $$L$$은 대칭 행렬이라 서로 수직인 고유벡터로 신호를 나눌 �
 
 ## 출처
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/07.Week07_CH03_1_handout.pdf, p.14~16 (고유값과 고유벡터, 대각화 $$A = C\Lambda C^{-1}$$), p.20 ("analogous to eigenvectors/eigenvalues matrix decomposition")
+[^1]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.14~16 (고유값과 고유벡터, 대각화 $$A = C\Lambda C^{-1}$$), p.20 ("analogous to eigenvectors/eigenvalues matrix decomposition")
 [^2]: 같은 자료, p.37~38 (직교 기저 벡터와 내적으로 계수 구하기)
-[^s1]: 에이전트 보충. 순환 행렬과 DFT의 관계, 직렬 연결의 $$H^m$$, 전이 문제는 원본에 없다. Strang, *Introduction to Linear Algebra* 5판 9.3절과 그래프 신호 처리의 표준 정의를 바탕으로 썼고, 행렬 예의 고윳값은 [28_lti-eigenfunction_verify.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_verify/)로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 순환 행렬과 DFT의 관계, 직렬 연결의 $$H^m$$, 전이 문제는 원본에 없다. Strang, *Introduction to Linear Algebra* 5판 9.3절과 그래프 신호 처리의 표준 정의를 바탕으로 썼고, 행렬 예의 고윳값은 [28_lti-eigenfunction_verify.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_verify/)로 확인했다.
 {% endraw %}

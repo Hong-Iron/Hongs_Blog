@@ -37,7 +37,7 @@ $$A = \begin{pmatrix}3 & 0\\ 4 & 5\end{pmatrix}$$는 단위원을 타원으로 �
 
 타원의 긴 반지름이 $$\sigma_1 = 3\sqrt5$$, 짧은 반지름이 $$\sigma_2 = \sqrt5$$다. 수직인 입력 축 $$\mathbf{v}_i$$가 수직인 출력 축 $$\mathbf{u}_i$$로 $$\sigma_i$$배 늘어 가는 것이 아래 정리의 $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/24_svd_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/24_svd_fig1.svg" alt="그림" width="597" height="324" loading="lazy">
 
 왼쪽 단위원의 수직인 두 반지름 $$\mathbf{v}_1$$, $$\mathbf{v}_2$$가 오른쪽 타원의 긴 반지름과 짧은 반지름이 된다. 출력 쪽 두 축도 여전히 수직이다[^s3].
 
@@ -154,7 +154,7 @@ $$\Vert A\mathbf{v}_i\Vert ^2 = \mathbf{v}_i^\top A^\top A\mathbf{v}_i = \lambda
 - **최소제곱과 유사역행렬.** $$A^+ = V\Sigma^+U^\top$$($$\Sigma^+$$는 0이 아닌 $$\sigma_i$$를 $$1/\sigma_i$$로)로 $$\hat{\mathbf{x}} = A^+\mathbf{b}$$를 구하면, 열이 종속이어도 최소제곱 해 중 길이가 가장 짧은 것을 준다. NumPy의 `lstsq`가 이 방법이다.
 - **비용.** 밀집 행렬의 SVD는 $$O(mn\min(m, n))$$이다. 큰 행렬에서는 필요한 $$k$$개만 반복법으로 구한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/24_svd_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/24_svd_fig2.svg" alt="그림" width="612" height="174" loading="lazy">
 
 $$100 \times 100$$ 합성 이미지를 랭크 1, 5, 20으로 줄였다. 랭크 20은 저장하는 수가 원본의 40%인데도 원본과 거의 구별되지 않는다(상대 오차 0.2%)[^s3].
 
@@ -209,8 +209,8 @@ $$100 \times 100$$ 합성 이미지를 랭크 1, 5, 20으로 줄였다. 랭크 2
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 7.1절 "Image Processing by Linear Algebra"(저랭크 이미지), 7.2절 "Bases and Matrices in the SVD"(존재 증명, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$, 예 $$\begin{pmatrix}3 & 0\\ 4 & 5\end{pmatrix}$$), 7.3절 "Principal Component Analysis by the SVD", 7.4절 "The Geometry of the SVD".
-[^s1]: 에이전트 보충. 에카르트–영 정리는 C. Eckart, G. Young, "The approximation of one matrix by another of lower rank", *Psychometrika* 1 (1936)의 결과다. 24_svd_verify.py에서 무작위 랭크 $$k$$ 행렬과 비교해 실험으로 확인했다(증명이 아니다).
-[^s2]: 에이전트 보충. 저장량 $$k(m + n + 1)$$은 $$\mathbf{u}_i$$, $$\mathbf{v}_i$$, $$\sigma_i$$의 개수를 센 것이다. 저랭크 행렬 분해로 평점을 예측하는 방법은 넷플릭스 상 대회(2006~2009) 이후 추천 시스템의 표준 기법이 되었다(Koren·Bell·Volinsky, "Matrix factorization techniques for recommender systems", *IEEE Computer* 2009).
-[^s3]: 에이전트 보충. 그림 두 장은 원본에 없다. [24_svd_plot.py](/Hongs_Blog/studies/linear-algebra/code/24_svd_plot/)로 그렸고, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 $$\sigma_1 = 3\sqrt5$$, $$\sigma_2 = \sqrt5$$, 랭크 $$k$$ 근사의 상대 오차가 버린 특잇값으로 정해지는 것(랭크 1, 5, 20에서 약 31%, 9%, 0.2%)을 같은 코드로 확인했다.
-[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$A = U\Sigma V^\top$$, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 `예시로 보기`의 "수직인 입력 축이 수직인 출력 축으로 $$\sigma_i$$배"를 옮겼다(Strang 5판 7.2절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 에카르트–영 정리는 C. Eckart, G. Young, "The approximation of one matrix by another of lower rank", *Psychometrika* 1 (1936)의 결과다. 24_svd_verify.py에서 무작위 랭크 $$k$$ 행렬과 비교해 실험으로 확인했다(증명이 아니다).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 저장량 $$k(m + n + 1)$$은 $$\mathbf{u}_i$$, $$\mathbf{v}_i$$, $$\sigma_i$$의 개수를 센 것이다. 저랭크 행렬 분해로 평점을 예측하는 방법은 넷플릭스 상 대회(2006~2009) 이후 추천 시스템의 표준 기법이 되었다(Koren·Bell·Volinsky, "Matrix factorization techniques for recommender systems", *IEEE Computer* 2009).
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [24_svd_plot.py](/Hongs_Blog/studies/linear-algebra/code/24_svd_plot/)로 그렸고, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 $$\sigma_1 = 3\sqrt5$$, $$\sigma_2 = \sqrt5$$, 랭크 $$k$$ 근사의 상대 오차가 버린 특잇값으로 정해지는 것(랭크 1, 5, 20에서 약 31%, 9%, 0.2%)을 같은 코드로 확인했다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$A = U\Sigma V^\top$$, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 `예시로 보기`의 "수직인 입력 축이 수직인 출력 축으로 $$\sigma_i$$배"를 옮겼다(Strang 5판 7.2절).
 {% endraw %}

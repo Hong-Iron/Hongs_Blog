@@ -3,7 +3,7 @@ layout: "note"
 title: "34_linear-regression_plot.py"
 display_title: "34_linear-regression_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "34"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/linear-regression/"
 parent_title: "선형회귀"
-description: "확률과 통계 · 선형회귀 코드 코드"
+description: "확률과 통계 · 선형회귀 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/34_linear-regression_plot/"
 ---
 {% raw %}
-[선형회귀](/Hongs_Blog/studies/probability-statistics/linear-regression/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[선형회귀](/Hongs_Blog/studies/probability-statistics/linear-regression/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 선형회귀 문서의 그림을 만든다: 34_linear-regression_fig1.svg, 34_linear-regression_fig2.svg

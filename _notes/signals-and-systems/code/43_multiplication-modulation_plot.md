@@ -3,7 +3,7 @@ layout: "note"
 title: "43_multiplication-modulation_plot.py"
 display_title: "43_multiplication-modulation_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "43"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/multiplication-modulation/"
 parent_title: "곱셈 성질과 진폭 변조"
-description: "신호 및 시스템 · 곱셈 성질과 진폭 변조 코드 코드"
+description: "신호 및 시스템 · 곱셈 성질과 진폭 변조 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/43_multiplication-modulation_plot/"
 ---
 {% raw %}
-[곱셈 성질과 진폭 변조](/Hongs_Blog/studies/signals-and-systems/multiplication-modulation/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[곱셈 성질과 진폭 변조](/Hongs_Blog/studies/signals-and-systems/multiplication-modulation/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 곱셈 성질과 진폭 변조 문서의 그림을 만든다: 43_multiplication-modulation_fig1.svg, 43_multiplication-modulation_fig2.svg

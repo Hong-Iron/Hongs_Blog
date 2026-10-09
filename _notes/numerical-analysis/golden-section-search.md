@@ -48,7 +48,7 @@ $$f(x) = x^2 - \sin x$$를 $$[0, 1]$$에서 줄인다[^2][^3].
 
 0회차에 $$f(c) < f(d)$$라 $$[d, b]$$를 버린다. 1회차의 $$d$$는 0회차의 $$c$$를 그대로 쓴다. 새로 계산하는 점은 $$c_1$$ 하나다. 참 최솟값은 $$x \approx 0.4501836$$이다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/25_golden-section_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/25_golden-section_fig1.svg" alt="그림" width="526" height="350" loading="lazy">
 
 아래 막대가 회차마다 남은 구간이고, 주황 눈금이 안쪽 두 점 $$c$$, $$d$$다. 구간이 매번 약 0.618배로 줄며 최솟값 쪽으로 좁혀진다. 각 회차의 눈금 하나는 앞 회차의 눈금 자리를 그대로 쓴다[^s2].
 
@@ -141,7 +141,7 @@ GOLDEN(f, a, b, n)
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/14.na14_optimization.pdf, p.9
+[^1]: 수치해석 14회 강의 자료 「na14_optimization」, p.9
 [^2]: 같은 자료, p.17
 [^3]: 같은 자료, p.18
 [^4]: 같은 자료, p.10
@@ -149,6 +149,6 @@ GOLDEN(f, a, b, n)
 [^6]: 같은 자료, p.14
 [^7]: 같은 자료, p.15
 [^8]: 같은 자료, p.16
-[^s1]: 에이전트 보충. 동기 예, 참 최솟값, 의사코드, 복잡도, 활용, 단봉이 아닌 예, 카드 C2~C4는 원본에 없다. 22행에서 $$f(c)$$와 $$f(d)$$가 8자리까지 같아 23행의 선택은 반올림에 달린다. 슬라이드의 23행과 구현의 23행 모두 참 최솟값을 담는다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [25_golden-section_plot.py](/Hongs_Blog/studies/numerical-analysis/code/25_golden-section_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 0·1·3·22회차 값, 구간이 매번 $$r$$배, 최솟값 $$x \approx 0.4501836$$에서 $$2x - \cos x = 0$$.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 동기 예, 참 최솟값, 의사코드, 복잡도, 활용, 단봉이 아닌 예, 카드 C2~C4는 원본에 없다. 22행에서 $$f(c)$$와 $$f(d)$$가 8자리까지 같아 23행의 선택은 반올림에 달린다. 슬라이드의 23행과 구현의 23행 모두 참 최솟값을 담는다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [25_golden-section_plot.py](/Hongs_Blog/studies/numerical-analysis/code/25_golden-section_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 0·1·3·22회차 값, 구간이 매번 $$r$$배, 최솟값 $$x \approx 0.4501836$$에서 $$2x - \cos x = 0$$.
 {% endraw %}

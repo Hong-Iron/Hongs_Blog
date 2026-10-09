@@ -109,5 +109,5 @@ $$1.15^t = 2$$에서 $$t = \dfrac{\ln 2}{\ln 1.15} \approx 4.96$$달. 성장률�
 
 
 [^1]: OpenStax, *Precalculus 2e*, 4.6절 "Exponential and Logarithmic Equations"
-[^s1]: 에이전트 보충. $$\ln(1 + r) \approx r$$은 미분적분학의 [선형 근사](/Hongs_Blog/studies/calculus/linear-approx-newton/)에서 나온다. 72의 법칙은 금융에서 쓰는 어림 규칙이며, 성장률이 클수록 오차가 커진다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$\ln(1 + r) \approx r$$은 미분적분학의 [선형 근사](/Hongs_Blog/studies/calculus/linear-approx-newton/)에서 나온다. 72의 법칙은 금융에서 쓰는 어림 규칙이며, 성장률이 클수록 오차가 커진다.
 {% endraw %}

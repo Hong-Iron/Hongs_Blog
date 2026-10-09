@@ -154,6 +154,6 @@ flowchart TD
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장 "Mathematical Data Types"(집합). Rosen, *Discrete Mathematics and Its Applications* 7판, 2장(집합, 집합 연산).
-[^s1]: 에이전트 보충. 러셀의 역설과 이를 피하는 분리 공리는 공리적 집합론(ZFC)의 내용이다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제' 2단계의 '원소마다 넣을지 뺄지 두 가지씩'을 갈림길로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 러셀의 역설과 이를 피하는 분리 공리는 공리적 집합론(ZFC)의 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제' 2단계의 '원소마다 넣을지 뺄지 두 가지씩'을 갈림길로 그렸다.
 {% endraw %}

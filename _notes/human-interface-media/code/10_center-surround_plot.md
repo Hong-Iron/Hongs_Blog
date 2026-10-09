@@ -3,7 +3,7 @@ layout: "note"
 title: "10_center-surround_plot.py"
 display_title: "10_center-surround_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "10"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/center-surround/"
 parent_title: "중심-주변 길항"
-description: "휴먼 인터페이스 미디어 · 중심-주변 길항 코드 코드"
+description: "휴먼 인터페이스 미디어 · 중심-주변 길항 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/10_center-surround_plot/"
 ---
 {% raw %}
-[중심-주변 길항](/Hongs_Blog/studies/human-interface-media/center-surround/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[중심-주변 길항](/Hongs_Blog/studies/human-interface-media/center-surround/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 중심-주변 길항 문서의 그림을 만든다: 10_center-surround_fig1.svg, 10_center-surround_fig2.svg

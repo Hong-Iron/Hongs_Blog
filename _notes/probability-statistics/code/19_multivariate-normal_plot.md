@@ -3,7 +3,7 @@ layout: "note"
 title: "19_multivariate-normal_plot.py"
 display_title: "19_multivariate-normal_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/multivariate-normal/"
 parent_title: "공분산 행렬과 다변량 정규분포"
-description: "확률과 통계 · 공분산 행렬과 다변량 정규분포 코드 코드"
+description: "확률과 통계 · 공분산 행렬과 다변량 정규분포 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/19_multivariate-normal_plot/"
 ---
 {% raw %}
-[공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 공분산 행렬과 다변량 정규분포 문서의 그림을 만든다: 19_multivariate-normal_fig1.svg

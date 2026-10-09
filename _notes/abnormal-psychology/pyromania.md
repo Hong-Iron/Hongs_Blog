@@ -100,12 +100,12 @@ permalink: "/studies/abnormal-psychology/pyromania/"
 
 </details>
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.32
-[^2]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.33
-[^3]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.34
-[^4]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.35
-[^5]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.36
-[^s1]: 에이전트 보충. JB의 사례는 진단기준을 보이려고 만든 가상 사례다.
-[^s2]: 에이전트 보충. DSM-5 병적 방화 기준 A의 원문은 "Deliberate and purposeful fire setting on more than one occasion"이다(*American Journal of Psychiatry Residents' Journal*, 2016, "Fire Setting and the Impulse-Control Disorder of Pyromania" 등에서 인용). "more than one"은 "2회 이상"이다. 슬라이드의 "1회 이상"이 어디서 왔는지는 확인하지 못했다.
-[^s3]: 에이전트 보충. DSM-5-TR 병적 방화 기준 F(품행장애, 조증 삽화, 반사회성 성격장애로 더 잘 설명되지 않음)를 보탰다.
+[^1]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.32
+[^2]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.33
+[^3]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.34
+[^4]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.35
+[^5]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.36
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> JB의 사례는 진단기준을 보이려고 만든 가상 사례다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5 병적 방화 기준 A의 원문은 "Deliberate and purposeful fire setting on more than one occasion"이다(*American Journal of Psychiatry Residents' Journal*, 2016, "Fire Setting and the Impulse-Control Disorder of Pyromania" 등에서 인용). "more than one"은 "2회 이상"이다. 슬라이드의 "1회 이상"이 어디서 왔는지는 확인하지 못했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR 병적 방화 기준 F(품행장애, 조증 삽화, 반사회성 성격장애로 더 잘 설명되지 않음)를 보탰다.
 {% endraw %}

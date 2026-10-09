@@ -3,7 +3,7 @@ layout: "note"
 title: "22_generating-functions_plot.py"
 display_title: "22_generating-functions_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "22"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/generating-functions/"
 parent_title: "생성함수"
-description: "이산수학 · 생성함수 코드 코드"
+description: "이산수학 · 생성함수 그림 생성 코드"
 permalink: "/studies/discrete-math/code/22_generating-functions_plot/"
 ---
 {% raw %}
-[생성함수](/Hongs_Blog/studies/discrete-math/generating-functions/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[생성함수](/Hongs_Blog/studies/discrete-math/generating-functions/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 생성함수 문서의 그림을 만든다: 22_generating-functions_fig1.svg

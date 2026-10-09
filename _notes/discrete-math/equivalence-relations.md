@@ -131,5 +131,5 @@ $$A$$의 **분할**은 공집합이 아닌 부분집합들의 모음으로, 서�
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장(동치관계). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장 "Relations"(동치관계와 분할).
-[^s1]: 에이전트 보충. 유니온-파인드의 경로 압축과 랭크 합치기를 함께 쓰면 연산당 비용이 역아커만 함수 $$\alpha(n)$$로 사실상 상수다(Cormen et al., *Introduction to Algorithms* 3판, 21장).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 유니온-파인드의 경로 압축과 랭크 합치기를 함께 쓰면 연산당 비용이 역아커만 함수 $$\alpha(n)$$로 사실상 상수다(Cormen et al., *Introduction to Algorithms* 3판, 21장).
 {% endraw %}

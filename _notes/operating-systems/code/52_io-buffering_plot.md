@@ -3,7 +3,7 @@ layout: "note"
 title: "52_io-buffering_plot.py"
 display_title: "52_io-buffering_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "52"
 course: "운영체제"
 course_slug: "operating-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 parent_url: "/studies/operating-systems/io-buffering/"
 parent_title: "입출력 버퍼링"
-description: "운영체제 · 입출력 버퍼링 코드 코드"
+description: "운영체제 · 입출력 버퍼링 그림 생성 코드"
 permalink: "/studies/operating-systems/code/52_io-buffering_plot/"
 ---
 {% raw %}
-[입출력 버퍼링](/Hongs_Blog/studies/operating-systems/io-buffering/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[입출력 버퍼링](/Hongs_Blog/studies/operating-systems/io-buffering/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 입출력 버퍼링 문서의 그림을 만든다: 52_io-buffering_fig1.svg

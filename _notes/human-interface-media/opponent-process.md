@@ -87,7 +87,7 @@ $$
 
 세 추상체 반응을 세 개의 "차이 신호"로 바꾸는 것이다. 흥분과 억제를 조합해 빼기를 만드는 구조는 [흥분성과 억제성 시냅스](/Hongs_Blog/studies/human-interface-media/excitatory-inhibitory/), [측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/)와 같다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/19_opponent-process_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/19_opponent-process_fig1.svg" alt="그림" width="546" height="335" loading="lazy">
 
 주황 선(RG)은 555 nm에서 0을 지나, 그보다 짧은 파장에는 음수(초록 쪽), 긴 파장에는 양수(빨강 쪽)를 낸다. 파랑 선(BY)은 약 488 nm에서 부호가 바뀐다. 두 선이 0을 지나는 자리가 달라서, 두 부호의 조합만으로도 파장대를 셋(약 488 nm 아래, 488~555 nm, 555 nm 위)으로 가를 수 있다[^s4].
 
@@ -147,11 +147,11 @@ graph LR
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.13 (보색). 슬라이드 제목은 "보색"이다. 반대색 짝(빨강-초록, 파랑-노랑)은 물리적 보색(섞으면 흰색이 되는 짝, 예: 빨강-청록)과 파랑-노랑에서는 같고 빨강-초록에서는 조금 다르다.
-[^2]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar 5주차
-[^s1]: 에이전트 보충. 반대색 신호의 식은 여러 교재가 쓰는 단순화이며 실제 가중치는 연구마다 다르다. 슬라이드에는 식이 없다.
-[^s2]: 에이전트 보충. 잔상의 적응 설명과 네 칸 그림의 용도는 표준 지각 교재의 설명에 따른 해석이다.
-[^s3]: 에이전트 보충. CIELAB의 $$a^*$$, $$b^*$$ 축과 YCbCr의 밝기·색차 분리는 색채·영상 공학의 표준 내용이다.
-[^s4]: 에이전트 보충. 그림 1장은 원본에 없다. [19_opponent-process_plot.py](/Hongs_Blog/studies/human-interface-media/code/19_opponent-process_plot/)로 그렸고, 그림에 쓴 값(가우스 추상체 모형에서 535 nm $$-0.326$$, 575 nm $$+0.326$$, 450 nm $$+0.892$$, 580 nm $$-0.800$$, 0을 지나는 곳 RG 555 nm·BY 약 488 nm)을 같은 코드로 확인했다.
-[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 회로 표와 강의 3 p.13의 회로 그림 두 개를 근거로 그렸다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.13 (보색). 슬라이드 제목은 "보색"이다. 반대색 짝(빨강-초록, 파랑-노랑)은 물리적 보색(섞으면 흰색이 되는 짝, 예: 빨강-청록)과 파랑-노랑에서는 같고 빨강-초록에서는 조금 다르다.
+[^2]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 5주차
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 반대색 신호의 식은 여러 교재가 쓰는 단순화이며 실제 가중치는 연구마다 다르다. 슬라이드에는 식이 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 잔상의 적응 설명과 네 칸 그림의 용도는 표준 지각 교재의 설명에 따른 해석이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> CIELAB의 $$a^*$$, $$b^*$$ 축과 YCbCr의 밝기·색차 분리는 색채·영상 공학의 표준 내용이다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [19_opponent-process_plot.py](/Hongs_Blog/studies/human-interface-media/code/19_opponent-process_plot/)로 그렸고, 그림에 쓴 값(가우스 추상체 모형에서 535 nm $$-0.326$$, 575 nm $$+0.326$$, 450 nm $$+0.892$$, 580 nm $$-0.800$$, 0을 지나는 곳 RG 555 nm·BY 약 488 nm)을 같은 코드로 확인했다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 회로 표와 강의 3 p.13의 회로 그림 두 개를 근거로 그렸다.
 {% endraw %}

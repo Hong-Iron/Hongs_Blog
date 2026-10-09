@@ -213,6 +213,6 @@ flowchart LR
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 12장 "Simple Graphs"(트리의 성질, 신장 트리). Rosen, *Discrete Mathematics and Its Applications* 7판, 11장(트리, 루트 트리, $$m$$진 트리의 높이).
 [^2]: 케일리 공식의 증명은 Aigner·Ziegler, *Proofs from THE BOOK*, "Cayley's formula for the number of trees" 장에 네 가지가 실려 있다. 이 문서에서는 $$n \le 6$$에서 전수로 확인만 했다.
-[^s1]: 에이전트 보충. 신장 트리 프로토콜은 IEEE 802.1D 표준의 내용이다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제' 1·2단계의 신장 트리 만들기(사이클의 간선을 빼기)를 작은 그래프로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 신장 트리 프로토콜은 IEEE 802.1D 표준의 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제' 1·2단계의 신장 트리 만들기(사이클의 간선을 빼기)를 작은 그래프로 그렸다.
 {% endraw %}

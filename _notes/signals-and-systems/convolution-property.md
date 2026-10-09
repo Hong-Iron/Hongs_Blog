@@ -52,7 +52,7 @@ flowchart LR
 
 시간 영역 컨벌루션 $$\int_0^te^{-b\tau}e^{-a(t-\tau)}d\tau$$를 직접 해도 같은 답이 나온다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig1.svg" alt="그림" width="650" height="273" loading="lazy">
 
 $$a = 1$$, $$b = 2$$일 때다. 왼쪽 시간에서는 두 신호를 컨벌루션해 $$y = e^{-t} - e^{-2t}$$를 얻고, 오른쪽 주파수에서는 같은 결과가 크기끼리의 곱 $$\vert Y\vert  = \vert H\vert \vert X\vert $$로 나온다[^s2].
 
@@ -99,7 +99,7 @@ $$H(j\omega)$$를 주파수 응답이라 한다. 입력 스펙트럼이 주파�
 - $$t < 0$$에서 $$h(t) \ne 0$$이라 인과적이지 않다. 출력이 미래 입력에 영향을 받으므로, 실시간 시스템에는 이상적 필터를 쓸 수 없다.
 - 그래서 실제로는 $$h(t) = e^{-t}u(t)$$, $$H = \frac{1}{j\omega + 1}$$(RC 회로) 같은 비이상적 필터를 쓴다. 날카로운 선택성은 없지만 인과적이고, 임펄스 응답이 진동 없이 줄어든다(그림 4.22). 더 높은 차수의 미분방정식에 해당하는 필터를 쓰면 인과성, 구현의 쉬움, 주파수 선택성, 시간 영역 진동 사이에서 균형을 맞출 수 있다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig2.svg" alt="그림" width="546" height="291" loading="lazy">
 
 $$\omega_c = 3$$인 이상적 저역 통과 필터의 임펄스 응답은 색칠한 $$t < 0$$ 쪽에서도 출렁인다. RC 필터 $$e^{-t}u(t)$$는 $$t < 0$$에서 0이고 진동 없이 줄어든다[^s2].
 
@@ -195,7 +195,7 @@ $$h(t - \tau)$$는 $$h$$를 $$\tau$$만큼 늦춘 신호이고, 시간 이동 �
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/15.Week15_CH04_3_handout.pdf, p.12 (예제 4.19)
+[^1]: 신호 및 시스템 15회 강의 자료 「Week15_CH04_3_handout」, p.12 (예제 4.19)
 [^2]: 같은 자료, p.4
 [^3]: 같은 자료, p.1~4
 [^4]: 같은 자료, p.5~6 (그림 4.19)
@@ -205,7 +205,7 @@ $$h(t - \tau)$$는 $$h$$를 $$\tau$$만큼 늦춘 신호이고, 시간 이동 �
 [^8]: 같은 자료, p.10~11 (예제 4.18, 그림 4.20~4.22)
 [^9]: 같은 자료, p.13
 [^10]: 같은 자료, p.14 (예제 4.20)
-[^s1]: 에이전트 보충. FFT 활용, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [42_convolution-property_plot.py](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 수치 컨벌루션과 $$(e^{-t} - e^{-2t})u(t)$$가 같음, 이상적 필터의 $$h(-0.4) \approx 0.74$$.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 네 단계(예제 4.19, 15주차 자료 p.12)와 정리(p.4)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> FFT 활용, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [42_convolution-property_plot.py](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 수치 컨벌루션과 $$(e^{-t} - e^{-2t})u(t)$$가 같음, 이상적 필터의 $$h(-0.4) \approx 0.74$$.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 네 단계(예제 4.19, 15주차 자료 p.12)와 정리(p.4)를 근거로 그렸다.
 {% endraw %}

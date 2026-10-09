@@ -3,7 +3,7 @@ layout: "note"
 title: "29_gaussian-mixture-model_plot.py"
 display_title: "29_gaussian-mixture-model_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "29"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/gaussian-mixture-model/"
 parent_title: "가우스 혼합 모델"
-description: "데이터 과학 · 가우스 혼합 모델 코드 코드"
+description: "데이터 과학 · 가우스 혼합 모델 그림 생성 코드"
 permalink: "/studies/data-science/code/29_gaussian-mixture-model_plot/"
 ---
 {% raw %}
-[가우스 혼합 모델](/Hongs_Blog/studies/data-science/gaussian-mixture-model/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[가우스 혼합 모델](/Hongs_Blog/studies/data-science/gaussian-mixture-model/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 가우스 혼합 모델 문서의 그림을 만든다: 29_gaussian-mixture-model_fig1.svg, 29_gaussian-mixture-model_fig2.svg

@@ -39,7 +39,7 @@ permalink: "/studies/numerical-analysis/slerp/"
 - **정규화한 선형 보간**: 길이는 1로 되돌리지만, 0.25초 간격마다 돈 각도가 고르지 않다. 가운데에서 빨리 돈다[^1][^2].
 - **구면 선형 보간**: $$t$$초에 정확히 $$90° \times t$$만큼 돈다. $$t = \frac13$$이면 30° 방향 $$(\frac{\sqrt3}{2}, \frac12)$$다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/23_slerp_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/23_slerp_fig1.svg" alt="그림" width="536" height="298" loading="lazy">
 
 왼쪽은 $$t$$를 $$\frac18$$씩 늘린 점들이다. 선형 보간(초록)은 원 안쪽으로 들어가고, 정규화한 선형 보간(주황)은 원 위에 있지만 가운데로 갈수록 간격이 넓다. 구면 선형 보간(파랑)은 간격이 고르다. 오른쪽은 돈 각도로, 구면 선형 보간만 곧은 선이다[^s2].
 
@@ -152,14 +152,14 @@ $$y$$ 방향을 먼저 해도 결과가 같다[^s1]. **삼선형 보간**은 정
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/12.na12_interpolation.pdf, p.29~30
+[^1]: 수치해석 12회 강의 자료 「na12_interpolation」, p.29~30
 [^2]: 같은 자료, p.31
 [^3]: 같은 자료, p.32
 [^4]: 같은 자료, p.33
 [^5]: 같은 자료, p.34
 [^6]: 같은 자료, p.35
 [^7]: 같은 자료, p.36
-[^s1]: 에이전트 보충. 카메라 예와 수치, 각이 $$\theta t$$인 확인, 쿼터니언 부호 뒤집기, 순서를 바꿔도 같은 쌍선형 보간, 쓰는 곳, 흔한 실수, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [23_slerp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 선형 보간의 가운데 길이 $$\frac{1}{\sqrt2}$$, 구면 선형 보간의 $$t = \frac13$$이 $$(\frac{\sqrt3}{2}, \frac12)$$, 각이 $$90° \times t$$, 정규화한 선형 보간의 $$t = \frac14$$가 22.5°에서 3° 넘게 벗어남.
-[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 첫째는 이 문서 요약과 쿼터니언 부호 문단, 둘째는 '격자에서의 보간'의 세 식(원본 12.na12_interpolation.pdf p.35)으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카메라 예와 수치, 각이 $$\theta t$$인 확인, 쿼터니언 부호 뒤집기, 순서를 바꿔도 같은 쌍선형 보간, 쓰는 곳, 흔한 실수, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [23_slerp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 선형 보간의 가운데 길이 $$\frac{1}{\sqrt2}$$, 구면 선형 보간의 $$t = \frac13$$이 $$(\frac{\sqrt3}{2}, \frac12)$$, 각이 $$90° \times t$$, 정규화한 선형 보간의 $$t = \frac14$$가 22.5°에서 3° 넘게 벗어남.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 첫째는 이 문서 요약과 쿼터니언 부호 문단, 둘째는 '격자에서의 보간'의 세 식(원본 12.na12_interpolation.pdf p.35)으로 그렸다.
 {% endraw %}

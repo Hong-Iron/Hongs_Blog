@@ -78,7 +78,7 @@ $$T = d_{\text{prop}} + d_{\text{trans}} + d_{\text{queue}} \ [+\ d_{\text{proc}
 
 가장 단순한 대기 행렬 모형에서는 링크가 바쁠수록 평균 큐잉 지연이 아래처럼 늘어난다. 가로축은 들어오는 비트의 양을 링크 전송률로 나눈 값이다. 이 값을 트래픽 강도라 하고 $$\rho$$(로)로 쓴다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/25_latency_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/25_latency_fig1.svg" alt="그림" width="524" height="342" loading="lazy">
 
 링크가 절반쯤 바쁠 때($$\rho = 0.5$$)는 평균 대기가 패킷 하나를 싣는 시간 정도다. $$\rho = 0.9$$가 되면 그 9배이고, 1에 가까워질수록 끝없이 커진다. 링크가 아직 꽉 차지 않았는데도 대기가 폭발하는 것은, 패킷이 고르게 오지 않고 몰려서 오기 때문이다[^s1].
 
@@ -120,9 +120,9 @@ $$T = d_{\text{prop}} + d_{\text{trans}} + d_{\text{queue}} \ [+\ d_{\text{proc}
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260925231047.png — 슬라이드 "성능: 소요시간/지연시간". 신호 속도 3.0·2.3·2.0 × 10⁸ m/s, "직접 링크에서는 큐잉 지연(queuing delay)은 없음"
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 45~58행
-[^3]: 4-1학기/pasted_images/Pasted image 20260926020456.png — 슬라이드 "성능: 기타 사항". 지터, 소프트웨어 처리 부하
-[^4]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 89~90행
-[^s1]: 에이전트 보충. 그림 한 장과 식 $$\rho/(1-\rho)$$는 원본에 없다. 패킷이 서로 독립으로 무작위하게(포아송 과정) 오고 크기도 무작위(지수 분포)인 가장 단순한 대기 행렬(M/M/1)의 평균 대기 시간이다(Kleinrock, *Queueing Systems*, Vol. 1, 3장). Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.4절도 트래픽 강도가 1에 가까워지면 큐잉 지연이 급격히 커진다고 설명한다. [25_latency_plot.py](/Hongs_Blog/studies/computer-communication/code/25_latency_plot/)로 그렸고, 식의 값($$\rho = 0.5, 0.8, 0.9$$에서 1, 4, 9)과 패킷 20만 개 시뮬레이션이 식과 15% 안에서 맞는 것을 같은 코드로 확인했다. 실제 인터넷 트래픽은 이 가정과 다르므로 정확한 값보다 곡선의 모양을 본다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "성능: 소요시간/지연시간". 신호 속도 3.0·2.3·2.0 × 10⁸ m/s, "직접 링크에서는 큐잉 지연(queuing delay)은 없음"
+[^2]: 컴퓨터 통신 3회 필기 「3주차」, 45~58행
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "성능: 기타 사항". 지터, 소프트웨어 처리 부하
+[^4]: 컴퓨터 통신 3회 필기 「3주차」, 89~90행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장과 식 $$\rho/(1-\rho)$$는 원본에 없다. 패킷이 서로 독립으로 무작위하게(포아송 과정) 오고 크기도 무작위(지수 분포)인 가장 단순한 대기 행렬(M/M/1)의 평균 대기 시간이다(Kleinrock, *Queueing Systems*, Vol. 1, 3장). Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.4절도 트래픽 강도가 1에 가까워지면 큐잉 지연이 급격히 커진다고 설명한다. [25_latency_plot.py](/Hongs_Blog/studies/computer-communication/code/25_latency_plot/)로 그렸고, 식의 값($$\rho = 0.5, 0.8, 0.9$$에서 1, 4, 9)과 패킷 20만 개 시뮬레이션이 식과 15% 안에서 맞는 것을 같은 코드로 확인했다. 실제 인터넷 트래픽은 이 가정과 다르므로 정확한 값보다 곡선의 모양을 본다.
 {% endraw %}

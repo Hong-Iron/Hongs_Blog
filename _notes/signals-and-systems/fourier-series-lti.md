@@ -43,7 +43,7 @@ permalink: "/studies/signals-and-systems/fourier-series-lti/"
 
 직류 성분은 그대로 통과하고, 주파수가 높을수록 $$\vert H\vert $$가 작아져 크게 줄어든다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/35_fourier-series-lti_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/35_fourier-series-lti_fig1.svg" alt="그림" width="660" height="276" loading="lazy">
 
 왼쪽에서 회색 곡선 $$\vert H(j\omega)\vert $$가 고조파마다 곱해져, 파란 막대 $$\vert a_k\vert $$가 주황 막대 $$\vert b_k\vert $$로 줄어든다. 그래서 오른쪽의 출력은 직류 1 근처에서 조금만 흔들린다[^s2].
 
@@ -171,13 +171,13 @@ $$b_k = D_ke^{j\theta_k}$$로 쓰면 각 항은 $$2D_k\cos(k\omega_0t + \theta_k
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/10.Week10_CH03_3_handout.pdf, p.34 (예제 3.16)
+[^1]: 신호 및 시스템 10회 강의 자료 「Week10_CH03_3_handout」, p.34 (예제 3.16)
 [^2]: 같은 자료, p.32~33
 [^3]: 같은 자료, p.33
 [^4]: 같은 자료, p.36
 [^5]: 같은 자료, p.35
 [^6]: 같은 자료, p.35~36
 [^7]: 같은 자료, p.37~38 (예제 3.17)
-[^s1]: 에이전트 보충. 페이저 해석 연결, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [35_fourier-series-lti_plot.py](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$b_0 = 1$$, $$\vert b_1\vert  = \frac{1}{4\sqrt{1 + 4\pi^2}}$$, 출력 $$y(t)$$가 $$h = e^{-t}u(t)$$와의 수치 컨벌루션과 같음.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 페이저 해석 연결, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [35_fourier-series-lti_plot.py](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$b_0 = 1$$, $$\vert b_1\vert  = \frac{1}{4\sqrt{1 + 4\pi^2}}$$, 출력 $$y(t)$$가 $$h = e^{-t}u(t)$$와의 수치 컨벌루션과 같음.
 {% endraw %}

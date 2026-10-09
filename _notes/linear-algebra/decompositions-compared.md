@@ -122,6 +122,6 @@ flowchart TD
 - **거대한 행렬의 상위 몇 개:** 특잇값·고윳값 몇 개만 필요하면 란초스 방법이나 무작위 SVD로 전체 분해 없이 구한다[^s1].
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.6절(LU), 4.4절(QR), 6.2절(대각화), 7.2절(SVD), 11.1절(실제 계산). Trefethen·Bau, *Numerical Linear Algebra*, 2부(QR과 최소제곱), 4부(연립방정식과 숄레스키), 5부(고윳값), 1부(SVD).
-[^s1]: 에이전트 보충. 켤레 기울기법·GMRES·란초스는 Trefethen·Bau 6부 "Iterative Methods"에, 무작위 SVD는 Halko·Martinsson·Tropp, "Finding structure with randomness", *SIAM Review* 53 (2011)에 있다.
-[^s2]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 이 문서 `결정적 차이` 표의 꼴·쓸 수 있는 행렬과 첫 문단, `둘 다 아닐 때` 목록을 옮겼다(Strang 5판 2.6·4.4·6.2·7.2절, Trefethen·Bau).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 켤레 기울기법·GMRES·란초스는 Trefethen·Bau 6부 "Iterative Methods"에, 무작위 SVD는 Halko·Martinsson·Tropp, "Finding structure with randomness", *SIAM Review* 53 (2011)에 있다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 이 문서 `결정적 차이` 표의 꼴·쓸 수 있는 행렬과 첫 문단, `둘 다 아닐 때` 목록을 옮겼다(Strang 5판 2.6·4.4·6.2·7.2절, Trefethen·Bau).
 {% endraw %}

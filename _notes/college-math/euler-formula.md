@@ -37,7 +37,7 @@ permalink: "/studies/college-math/euler-formula/"
 
 $$1 + i$$는 거리 $$\sqrt2$$, 각 $$\pi/4$$다. 여덟 번 곱하면 거리는 $$(\sqrt2)^8 = 16$$, 각은 $$8 \times \pi/4 = 2\pi$$(한 바퀴)다. 그래서 $$(1 + i)^8 = 16$$이다. 전개하면 항이 아홉 개지만, 극형식으로는 한 줄이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig1.svg" alt="그림" width="495" height="328" loading="lazy">
 
 점이 $$k = 0$$부터 $$k = 8$$까지 한 번에 45°씩 돌면서 원점에서 $$\sqrt2$$배씩 멀어진다. 여덟 번이면 한 바퀴를 돌아 가로축 위의 16에 닿는다[^s2].
 
@@ -146,7 +146,7 @@ $$(\omega_1 - 1)S = 0$$이고 $$n \ge 2$$이면 $$\omega_1 \ne 1$$이므로 양�
 
 **1의 세제곱근.** $$\omega_k = e^{2\pi i k/3}$$에서 $$1$$, $$-\frac12 + \frac{\sqrt3}{2}i$$, $$-\frac12 - \frac{\sqrt3}{2}i$$. 단위원을 셋으로 나눈 점이고, 합은 0이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig2.svg" alt="그림" width="503" height="261" loading="lazy">
 
 1의 세제곱근은 단위원을 셋으로, 다섯제곱근은 다섯으로 똑같이 나눈 점이다. 원점에서 각 점으로 가는 화살표를 끝과 끝을 이어 모두 붙이면 제자리로 돌아오므로 합이 0이다[^s2].
 
@@ -221,8 +221,8 @@ $$(\omega_1 - 1)S = 0$$이고 $$n \ge 2$$이면 $$\omega_1 \ne 1$$이므로 양�
 
 [^1]: OpenStax, *Precalculus 2e*, 8.5절 "Polar Form of Complex Numbers"(극형식, 곱과 몫, 드무아브르 정리, $$n$$제곱근)
 [^2]: Strang, *Introduction to Linear Algebra* 5판, 9.1절 "Complex Numbers"(오일러 공식, 1의 거듭제곱근). FFT는 같은 책 9.3절.
-[^s1]: 에이전트 보충. 쿼터니언은 3차원 회전을 나타내는 수 체계로, 복소수 곱이 2차원 회전인 것을 넓힌 것이다. 게임 엔진의 회전 표현에 흔히 쓴다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [19_euler-formula_plot.py](/Hongs_Blog/studies/college-math/code/19_euler-formula_plot/)로 그렸고, 그림에 쓴 값($$(1 + i)^8 = 16$$, 한 번 곱할 때마다 거리가 $$\sqrt2$$배, 1의 세제곱근과 다섯제곱근의 합이 0)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `정의`의 극형식과 오일러 공식, [극좌표와 매개변수 곡선](/Hongs_Blog/studies/college-math/polar-parametric/)의 변환식 $$r = \sqrt{x^2 + y^2}$$, $$\theta = \operatorname{atan2}(y, x)$$를 근거로 그렸다(OpenStax, *Precalculus 2e*, 8.5절).
-[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf, p.7 (2차원 진동의 표현, 복소수 체계), p.8 (오일러 공식, 파동의 기본 표현)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 쿼터니언은 3차원 회전을 나타내는 수 체계로, 복소수 곱이 2차원 회전인 것을 넓힌 것이다. 게임 엔진의 회전 표현에 흔히 쓴다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [19_euler-formula_plot.py](/Hongs_Blog/studies/college-math/code/19_euler-formula_plot/)로 그렸고, 그림에 쓴 값($$(1 + i)^8 = 16$$, 한 번 곱할 때마다 거리가 $$\sqrt2$$배, 1의 세제곱근과 다섯제곱근의 합이 0)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `정의`의 극형식과 오일러 공식, [극좌표와 매개변수 곡선](/Hongs_Blog/studies/college-math/polar-parametric/)의 변환식 $$r = \sqrt{x^2 + y^2}$$, $$\theta = \operatorname{atan2}(y, x)$$를 근거로 그렸다(OpenStax, *Precalculus 2e*, 8.5절).
+[^h1]: 휴먼 인터페이스 미디어 4회 강의 자료 「HIM_강의04_파동의표현」, p.7 (2차원 진동의 표현, 복소수 체계), p.8 (오일러 공식, 파동의 기본 표현)
 {% endraw %}

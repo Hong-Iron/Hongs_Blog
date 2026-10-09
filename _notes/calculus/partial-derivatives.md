@@ -40,7 +40,7 @@ permalink: "/studies/calculus/partial-derivatives/"
 
 같은 점이라도 방향마다 기울기가 다르다. 높이가 같은 점들을 이은 선(등고선)을 그리면 지도처럼 볼 수 있다. $$x$$만 움직이는 단면의 기울기가 아래 정의의 $$\frac{\partial f}{\partial x}$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/19_partial-derivatives_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/19_partial-derivatives_fig1.svg" alt="그림" width="612" height="285" loading="lazy">
 
 왼쪽 지도에서 주황 선은 $$(1, 0)$$을 지나 동쪽으로, 초록 선은 북쪽으로 가는 길이다. 오른쪽은 그 두 길을 따라 걸을 때의 높이다. 주황은 높이 0의 평지라 기울기 0이고, 초록은 출발점에서 점선(기울기 2)에 붙어 오른다[^s2].
 
@@ -70,7 +70,7 @@ $$\frac{\partial f}{\partial x_i}(\mathbf{a}) = \lim_{h \to 0}\frac{f(\mathbf{a}
 2. *대각선 위:* $$y = x$$ 위에서 $$f(x, x) = \frac{x^2}{2x^2} = \frac12$$. 원점에 아무리 가까이 가도 $$\frac12$$다.
 3. *결론:* 원점의 값 0과 다르므로 $$f$$는 원점에서 연속이 아니다. 두 축 방향만 봐서는 축 사이에서 무슨 일이 일어나는지 알 수 없다. 그래서 다변수에서는 "미분 가능"을 편미분의 존재보다 강하게 정의한다([그래디언트와 방향도함수](/Hongs_Blog/studies/calculus/gradient/)).
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/19_partial-derivatives_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/19_partial-derivatives_fig2.svg" alt="그림" width="437" height="353" loading="lazy">
 
 색이 원점에서 부채꼴로 퍼진다. 원점을 지나는 직선 위에서는 값이 일정하다는 뜻이다. 두 축(실선) 위는 0인 옅은 띠이고, 대각선(점선) 위는 가장 진한 빨강 $$\frac12$$다. 원점에 어느 방향으로 다가가느냐에 따라 다가가는 값이 다르다[^s2].
 
@@ -118,6 +118,6 @@ $$\frac{\partial f}{\partial x_i}(\mathbf{a}) = \lim_{h \to 0}\frac{f(\mathbf{a}
 
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.1절 "Functions of Several Variables"(등고선), 4.2절 "Limits and Continuity", 4.3절 "Partial Derivatives"(정의, 2계 편미분, 클레로 정리).
-[^s1]: 에이전트 보충. 소벨 필터는 영상 처리 교재의 표준 윤곽 검출 연산자다. 19_partial-derivatives_verify.py에서 밝기가 선형으로 변하는 작은 이미지의 차분이 편미분과 같음을 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [19_partial-derivatives_plot.py](/Hongs_Blog/studies/calculus/code/19_partial-derivatives_plot/)로 그렸고, $$(1, 0)$$의 두 편미분 0과 2(중앙 차분), 예제 함수가 축 위에서 0, 대각선 위에서 원점에 $$10^{-8}$$까지 가까워도 $$\frac12$$인 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 소벨 필터는 영상 처리 교재의 표준 윤곽 검출 연산자다. 19_partial-derivatives_verify.py에서 밝기가 선형으로 변하는 작은 이미지의 차분이 편미분과 같음을 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [19_partial-derivatives_plot.py](/Hongs_Blog/studies/calculus/code/19_partial-derivatives_plot/)로 그렸고, $$(1, 0)$$의 두 편미분 0과 2(중앙 차분), 예제 함수가 축 위에서 0, 대각선 위에서 원점에 $$10^{-8}$$까지 가까워도 $$\frac12$$인 것을 같은 코드로 확인했다.
 {% endraw %}

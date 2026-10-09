@@ -56,7 +56,7 @@ permalink: "/studies/computer-communication/wired-links/"
 | 빛의 길 | 여러 각도의 길(모드)로 튕기며 간다 | 거의 곧은 길 하나로 간다 |
 | 결과 | 길마다 도착 시간이 달라 신호가 퍼진다. 느리고 짧은 거리용[^2] | 덜 퍼져서 빠르고 멀리 간다[^2] |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/32_wired-links_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/32_wired-links_fig1.svg" alt="그림" width="503" height="335" loading="lazy">
 
 위가 멀티모드, 아래가 싱글모드다. 멀티모드에서는 같은 순간 들어간 빛이 기울기에 따라 다른 길로 튕기며 간다. 많이 기운 빛일수록 길이 길어 늦게 도착한다. 싱글모드는 코어가 가늘어 빛이 축을 따라 거의 한 길로만 간다[^s3].
 
@@ -135,10 +135,10 @@ permalink: "/studies/computer-communication/wired-links/"
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260926024425.png — 슬라이드 "사용 가능한 유선 링크의 종류" (2장. 데이터 링크 네트워크: 점대점 링크)
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/04.4주차.md, 20~34행
-[^3]: 4-1학기/pasted_images/Pasted image 20260926025851.png — 슬라이드 "광케이블: Optical Fiber". "Index of reflection = Speed in Vacuum / Speed in medium"
-[^s1]: 에이전트 보충. 굴절률 1.5의 계산, 전반사와 임계각, 모드마다 도착 시간이 다른 현상(모드 분산)은 원본에 없다. 표준적인 광학 내용이고, Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절의 광케이블 설명과 같다. 슬라이드의 "Index of reflection"은 굴절률(index of refraction)을 가리킨다.
-[^s2]: 에이전트 보충. STS-$$n$$이 STS-1의 $$n$$배라는 규칙은 SONET 표준(ANSI T1.105)의 정의다.
-[^s3]: 에이전트 보충. 그림 한 장은 원본에 없다. [32_wired-links_plot.py](/Hongs_Blog/studies/computer-communication/code/32_wired-links_plot/)로 그렸다. 굴절률은 원본 오류 의심 상자의 예($$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$)를 썼다. 그린 빛의 기울기(축에서 4°, 8°)가 임계각 80.6°에서 나오는 한계 9.4°보다 작아 모두 전반사된다는 것과, 8° 기운 길이 곧은 길보다 약 1% 길다는 것을 같은 코드로 확인했다. 코어 굵기와 케이블 길이의 비율은 보기 좋게 바꿨다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "사용 가능한 유선 링크의 종류" (2장. 데이터 링크 네트워크: 점대점 링크)
+[^2]: 컴퓨터 통신 4회 필기 「4주차」, 20~34행
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "광케이블: Optical Fiber". "Index of reflection = Speed in Vacuum / Speed in medium"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 굴절률 1.5의 계산, 전반사와 임계각, 모드마다 도착 시간이 다른 현상(모드 분산)은 원본에 없다. 표준적인 광학 내용이고, Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절의 광케이블 설명과 같다. 슬라이드의 "Index of reflection"은 굴절률(index of refraction)을 가리킨다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> STS-$$n$$이 STS-1의 $$n$$배라는 규칙은 SONET 표준(ANSI T1.105)의 정의다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [32_wired-links_plot.py](/Hongs_Blog/studies/computer-communication/code/32_wired-links_plot/)로 그렸다. 굴절률은 원본 오류 의심 상자의 예($$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$)를 썼다. 그린 빛의 기울기(축에서 4°, 8°)가 임계각 80.6°에서 나오는 한계 9.4°보다 작아 모두 전반사된다는 것과, 8° 기운 길이 곧은 길보다 약 1% 길다는 것을 같은 코드로 확인했다. 코어 굵기와 케이블 길이의 비율은 보기 좋게 바꿨다.
 {% endraw %}

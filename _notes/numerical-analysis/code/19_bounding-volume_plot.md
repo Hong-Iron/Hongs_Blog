@@ -3,7 +3,7 @@ layout: "note"
 title: "19_bounding-volume_plot.py"
 display_title: "19_bounding-volume_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/bounding-volume/"
 parent_title: "경계 볼륨"
-description: "수치해석 · 경계 볼륨 코드 코드"
+description: "수치해석 · 경계 볼륨 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/19_bounding-volume_plot/"
 ---
 {% raw %}
-[경계 볼륨](/Hongs_Blog/studies/numerical-analysis/bounding-volume/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[경계 볼륨](/Hongs_Blog/studies/numerical-analysis/bounding-volume/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 경계 볼륨 문서의 그림을 만든다: 19_bounding-volume_fig1.svg

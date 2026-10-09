@@ -77,7 +77,7 @@ $$\operatorname{Cov}(X, Y) = \mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big] = \mathb
 
 그래서 $$\rho$$는 가운데로 옮긴 두 확률변수 사이 각의 코사인이다. 자료에서는 편차 벡터 두 개의 코사인이 표본 상관계수다. 예시에서 $$\frac{(4 + 0 + 0 + 0 + 2)}{\sqrt{10}\sqrt6} = \sqrt{0.6}$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/18_covariance_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/18_covariance_fig1.svg" alt="그림" width="612" height="170" loading="lazy">
 
 왼쪽 세 그림은 점 200개씩 뽑은 구름이고, 맨 오른쪽은 포물선 $$y = x^2$$ 위의 점들이다. $$r$$은 각 그림의 표본 상관계수다. 점이 한 직선 둘레에 몰릴수록 $$\vert r\vert $$이 1에 가깝다. 포물선은 $$x$$가 $$y$$를 완전히 정하는데도 $$r = 0$$이다[^s1].
 
@@ -177,9 +177,9 @@ $$\operatorname{Cov}(X, Y) = \mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big] = \mathb
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.3절 "Covariance and correlation"(정의, 성질, 합의 분산, 무상관과 독립의 차이).
-[^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.17 (공분산, AllElectronics·HighTech 예), p.18 (피어슨 상관계수)
+[^d1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.17 (공분산, AllElectronics·HighTech 예), p.18 (피어슨 상관계수)
 [^d2]: 같은 자료, p.39 (상관 분석으로 중복 속성 찾기)
-[^sd1]: 에이전트 보충. 상관계수 약 0.87과 원본 오류 의심의 판정은 18_covariance_verify.py로 계산했다.
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [18_covariance_plot.py](/Hongs_Blog/studies/probability-statistics/code/18_covariance_plot/)로 그렸고, 그림에 쓴 값(예시의 $$\sqrt{0.6}$$, 세 구름의 $$r$$, 포물선의 $$r = 0$$)을 같은 코드로 확인했다.
-[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.7 (분산 가족), p.8 (상관계수, 교차 상관 계수 NCC), p.43 (패턴 찾기)
+[^sd1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상관계수 약 0.87과 원본 오류 의심의 판정은 18_covariance_verify.py로 계산했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [18_covariance_plot.py](/Hongs_Blog/studies/probability-statistics/code/18_covariance_plot/)로 그렸고, 그림에 쓴 값(예시의 $$\sqrt{0.6}$$, 세 구름의 $$r$$, 포물선의 $$r = 0$$)을 같은 코드로 확인했다.
+[^h1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.7 (분산 가족), p.8 (상관계수, 교차 상관 계수 NCC), p.43 (패턴 찾기)
 {% endraw %}

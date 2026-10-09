@@ -3,7 +3,7 @@ layout: "note"
 title: "04_hash-dict-set_plot.py"
 display_title: "04_hash-dict-set_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "04"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/hash-dict-set/"
 parent_title: "딕셔너리와 집합"
-description: "알고리즘 · 딕셔너리와 집합 코드 코드"
+description: "알고리즘 · 딕셔너리와 집합 그림 생성 코드"
 permalink: "/studies/algorithms/code/04_hash-dict-set_plot/"
 ---
 {% raw %}
-[딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 딕셔너리와 집합 문서의 그림을 만든다: 04_hash-dict-set_fig1.svg

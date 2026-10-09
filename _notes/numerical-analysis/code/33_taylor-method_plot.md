@@ -3,7 +3,7 @@ layout: "note"
 title: "33_taylor-method_plot.py"
 display_title: "33_taylor-method_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "33"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/taylor-method/"
 parent_title: "테일러 급수 방법"
-description: "수치해석 · 테일러 급수 방법 코드 코드"
+description: "수치해석 · 테일러 급수 방법 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/33_taylor-method_plot/"
 ---
 {% raw %}
-[테일러 급수 방법](/Hongs_Blog/studies/numerical-analysis/taylor-method/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[테일러 급수 방법](/Hongs_Blog/studies/numerical-analysis/taylor-method/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 테일러 급수 방법 문서의 그림을 만든다: 33_taylor-method_fig1.svg

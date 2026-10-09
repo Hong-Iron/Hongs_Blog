@@ -88,7 +88,7 @@ PAGERANK(out, n, d, ε)
 3. *실제:* 무작위 링크 그래프(페이지 300개, 페이지당 링크 약 5개)에서는 19번 만에 멈췄다. $$d^k$$는 최악의 상한이고, 실제 수렴은 두 번째로 큰 고윳값이 정한다.
 4. *전체:* $$O((n + m)\log\frac1\varepsilon)$$. 공간은 점수 벡터 두 개와 링크 목록으로 $$O(n + m)$$.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/25_pagerank_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/25_pagerank_fig1.svg" alt="그림" width="547" height="335" loading="lazy">
 
 세로축은 로그 눈금이다. 점선은 정확성 논증에서 나온 상한 $$2 \cdot 0.85^k$$이다(두 확률분포의 L1 거리는 처음에 2를 넘지 않는다). 실제 오차는 두 그래프 모두 상한보다 훨씬 빨리 준다[^s1].
 
@@ -186,12 +186,12 @@ new = [0.15 / n + sum(0.85 * r[i] / len(links[i]) for i in links if j in links[i
 
 
 [^1]: Page, Brin, Motwani, Winograd, "The PageRank Citation Ranking: Bringing Order to the Web", Stanford InfoLab 기술 보고서(1999). Brin, Page, "The Anatomy of a Large-Scale Hypertextual Web Search Engine", *WWW7*(1998)(감쇠 계수 0.85).
-[^2]: 에이전트 보충. L1 거리가 매 반복 $$d$$배 이하로 준다는 성질과 구글 행렬의 두 번째 고윳값이 $$d$$ 이하라는 결과는 Haveliwala, Kamvar, "The Second Eigenvalue of the Google Matrix", Stanford 기술 보고서(2003)에 있다. 25_pagerank_verify.py에서 무작위 그래프로 확인했다.
-[^d1]: 3-2학기/데이터 과학/1.수업자료/13.13_pagerank.pdf, p.5~6
+[^2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> L1 거리가 매 반복 $$d$$배 이하로 준다는 성질과 구글 행렬의 두 번째 고윳값이 $$d$$ 이하라는 결과는 Haveliwala, Kamvar, "The Second Eigenvalue of the Google Matrix", Stanford 기술 보고서(2003)에 있다. 25_pagerank_verify.py에서 무작위 그래프로 확인했다.
+[^d1]: 데이터 과학 13회 강의 자료 「13_pagerank」, p.5~6
 [^d2]: 같은 자료, p.7
 [^d3]: 같은 자료, p.10 (거듭제곱법 예)
 [^d4]: 같은 자료, p.8~9 (무작위 서퍼, 정상분포)
 [^d5]: 같은 자료, p.11~14 (막다른 페이지, 거미줄 함정, 구글 행렬)
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [25_pagerank_plot.py](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_plot/)로 그렸고, 그림에 쓴 값(예시의 1회 반복값과 수렴값, 매 반복 합 1·음수 없음, 모든 반복에서 오차 ≤ $$2 \cdot 0.85^k$$. 무작위 그래프는 같은 크기(페이지 300개, 페이지당 링크 약 5개)로 새로 만든 것이다)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시의 링크 다섯 개를 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [25_pagerank_plot.py](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_plot/)로 그렸고, 그림에 쓴 값(예시의 1회 반복값과 수렴값, 매 반복 합 1·음수 없음, 모든 반복에서 오차 ≤ $$2 \cdot 0.85^k$$. 무작위 그래프는 같은 크기(페이지 300개, 페이지당 링크 약 5개)로 새로 만든 것이다)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시의 링크 다섯 개를 그렸다.
 {% endraw %}

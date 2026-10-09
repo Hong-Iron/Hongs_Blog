@@ -75,7 +75,7 @@ $$F$$를 $$f$$의 원시함수라 하자. 연쇄 법칙으로 $$\big(F(g(x))\big
 2. *치환:* $$u = x^2$$, $$du = 2x\,dx$$라 $$x\,dx = \frac12 du$$. 끝값은 $$x = 0 \to u = 0$$, $$x = 1 \to u = 1$$.
 3. *계산:* $$\frac12\int_0^1 e^u du = \frac12(e - 1) \approx 0.859$$.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/13_substitution_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/13_substitution_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽은 치환 전, 오른쪽은 치환 후의 피적분함수다. 가로축이 $$x$$에서 $$u = x^2$$으로 바뀌면서 곡선 모양이 달라졌지만, 칠한 넓이는 둘 다 0.859다. $$du = 2x\,dx$$가 가로 폭이 늘고 주는 비율을 맞춰 주기 때문이다[^s2].
 
@@ -141,7 +141,7 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 5.5절 "Substitution", 5.6절 "Integrals Involving Exponential and Logarithmic Functions", 5.7절 "Integrals Resulting in Inverse Trigonometric Functions".
-[^s1]: 에이전트 보충. 단조 변환의 확률밀도 공식은 확률론 교재의 "확률변수의 함수" 절에 있는 표준 결과다. 확률과 통계 과목에서 증명과 함께 다룬다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [13_substitution_plot.py](/Hongs_Blog/studies/calculus/code/13_substitution_plot/)로 그렸고, 두 넓이가 모두 $$\frac{e - 1}{2} \approx 0.859$$인 것을 같은 코드로(중점 합) 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 두 식과 활용 절의 흔한 실수("둘 중 한 방식으로 통일한다")를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 단조 변환의 확률밀도 공식은 확률론 교재의 "확률변수의 함수" 절에 있는 표준 결과다. 확률과 통계 과목에서 증명과 함께 다룬다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [13_substitution_plot.py](/Hongs_Blog/studies/calculus/code/13_substitution_plot/)로 그렸고, 두 넓이가 모두 $$\frac{e - 1}{2} \approx 0.859$$인 것을 같은 코드로(중점 합) 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정리의 두 식과 활용 절의 흔한 실수("둘 중 한 방식으로 통일한다")를 근거로 그렸다.
 {% endraw %}

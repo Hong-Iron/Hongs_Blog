@@ -3,7 +3,7 @@ layout: "note"
 title: "27_direct-search_plot.py"
 display_title: "27_direct-search_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "27"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/direct-search/"
 parent_title: "직접 탐색법"
-description: "수치해석 · 직접 탐색법 코드 코드"
+description: "수치해석 · 직접 탐색법 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/27_direct-search_plot/"
 ---
 {% raw %}
-[직접 탐색법](/Hongs_Blog/studies/numerical-analysis/direct-search/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[직접 탐색법](/Hongs_Blog/studies/numerical-analysis/direct-search/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 직접 탐색법 문서의 그림을 만든다: 27_direct-search_fig1.svg

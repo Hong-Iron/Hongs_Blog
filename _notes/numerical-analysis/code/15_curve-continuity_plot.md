@@ -3,7 +3,7 @@ layout: "note"
 title: "15_curve-continuity_plot.py"
 display_title: "15_curve-continuity_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "15"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/curve-continuity/"
 parent_title: "곡선의 연속성"
-description: "수치해석 · 곡선의 연속성 코드 코드"
+description: "수치해석 · 곡선의 연속성 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/15_curve-continuity_plot/"
 ---
 {% raw %}
-[곡선의 연속성](/Hongs_Blog/studies/numerical-analysis/curve-continuity/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[곡선의 연속성](/Hongs_Blog/studies/numerical-analysis/curve-continuity/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 곡선의 연속성 문서의 그림을 만든다: 15_curve-continuity_fig1.svg

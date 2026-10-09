@@ -3,7 +3,7 @@ layout: "note"
 title: "15_permutations-combinations_plot.py"
 display_title: "15_permutations-combinations_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "15"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/permutations-combinations/"
 parent_title: "순열과 조합"
-description: "이산수학 · 순열과 조합 코드 코드"
+description: "이산수학 · 순열과 조합 그림 생성 코드"
 permalink: "/studies/discrete-math/code/15_permutations-combinations_plot/"
 ---
 {% raw %}
-[순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 순열과 조합 문서의 그림을 만든다: 15_permutations-combinations_fig1.svg

@@ -71,7 +71,7 @@ API 응답 시간 10개(ms)가 $$12, 13, 13, 14, 15, 15, 16, 18, 20, 250$$이다
 3. *꼬리:* 사용자가 느끼는 최악은 p99, p99.9로 말한다. 요청 100개를 여는 페이지라면 그중 하나쯤은 p99보다 느리다.
 4. *흩어짐:* 표준편차는 꼬리에 크게 흔들리므로 IQR을 함께 본다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/28_descriptive-statistics_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/28_descriptive-statistics_fig1.svg" alt="그림" width="534" height="335" loading="lazy">
 
 오른쪽 꼬리가 긴 지연 시간 자료 10만 건의 히스토그램이다. 꼬리가 평균을 중앙값보다 오른쪽으로 끌고, p99는 중앙값의 세 배 가까이 떨어져 있다[^s1].
 
@@ -145,9 +145,9 @@ API 응답 시간 10개(ms)가 $$12, 13, 13, 14, 15, 15, 16, 18, 20, 250$$이다
 
 
 [^1]: Wasserman, *All of Statistics*, "Estimating the CDF and Statistical Functionals" 장(경험적 분포함수, 통계적 범함수로서의 평균·분위수).
-[^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.11~12 (기술통계를 쓰는 이유, 평균과 가중 평균)
+[^d1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.11~12 (기술통계를 쓰는 이유, 평균과 가중 평균)
 [^d2]: 같은 자료, p.13 (중앙값, 최빈값, 대칭·비대칭 분포에서 세 값의 순서)
 [^d3]: 같은 자료, p.14~15 (범위, 사분위수, IQR, 다섯 수 요약, 상자 그림)
 [^d4]: 같은 자료, p.16 (분산과 표준편차)
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [28_descriptive-statistics_plot.py](/Hongs_Blog/studies/probability-statistics/code/28_descriptive-statistics_plot/)로 그렸고, 그림에 쓴 값(예시 표의 38.6·15·74.3, 중앙값 < 평균 < p99. 그림의 자료는 로그정규분포로 만든 모의 자료다)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [28_descriptive-statistics_plot.py](/Hongs_Blog/studies/probability-statistics/code/28_descriptive-statistics_plot/)로 그렸고, 그림에 쓴 값(예시 표의 38.6·15·74.3, 중앙값 < 평균 < p99. 그림의 자료는 로그정규분포로 만든 모의 자료다)을 같은 코드로 확인했다.
 {% endraw %}

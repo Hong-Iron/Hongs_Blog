@@ -118,5 +118,5 @@ permalink: "/studies/linear-algebra/rotation-bridge/"
 ## 출처
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 8.2절(회전 행렬, $$R_\theta R_\phi = R_{\theta + \phi}$$), 9.1절 "Complex Numbers"(극형식, 곱은 각을 더함). OpenStax, *Precalculus 2e*, 7.2절 "Sum and Difference Identities", 8.5절 "Polar Form of Complex Numbers"(드무아브르 정리).
-[^s1]: 에이전트 보충. 쿼터니언으로 3D 회전을 나타내는 방법은 그래픽스·로봇공학에서 널리 쓰인다(짐벌 잠금이 없고 보간이 쉽다). 3D 회전의 비교환성은 13_rotation-bridge_verify.py에서 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 쿼터니언으로 3D 회전을 나타내는 방법은 그래픽스·로봇공학에서 널리 쓰인다(짐벌 잠금이 없고 보간이 쉽다). 3D 회전의 비교환성은 13_rotation-bridge_verify.py에서 확인했다.
 {% endraw %}

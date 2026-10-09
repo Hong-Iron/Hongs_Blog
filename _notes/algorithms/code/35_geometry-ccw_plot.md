@@ -3,7 +3,7 @@ layout: "note"
 title: "35_geometry-ccw_plot.py"
 display_title: "35_geometry-ccw_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "35"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/geometry-ccw/"
 parent_title: "계산 기하 기초"
-description: "알고리즘 · 계산 기하 기초 코드 코드"
+description: "알고리즘 · 계산 기하 기초 그림 생성 코드"
 permalink: "/studies/algorithms/code/35_geometry-ccw_plot/"
 ---
 {% raw %}
-[계산 기하 기초](/Hongs_Blog/studies/algorithms/geometry-ccw/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[계산 기하 기초](/Hongs_Blog/studies/algorithms/geometry-ccw/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 계산 기하 기초 문서의 그림을 만든다: 35_geometry-ccw_fig1.svg

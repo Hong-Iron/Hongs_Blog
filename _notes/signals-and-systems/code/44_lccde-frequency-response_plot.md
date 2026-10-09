@@ -3,7 +3,7 @@ layout: "note"
 title: "44_lccde-frequency-response_plot.py"
 display_title: "44_lccde-frequency-response_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "44"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/lccde-frequency-response/"
 parent_title: "미분방정식 시스템의 주파수 응답"
-description: "신호 및 시스템 · 미분방정식 시스템의 주파수 응답 코드 코드"
+description: "신호 및 시스템 · 미분방정식 시스템의 주파수 응답 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/44_lccde-frequency-response_plot/"
 ---
 {% raw %}
-[미분방정식 시스템의 주파수 응답](/Hongs_Blog/studies/signals-and-systems/lccde-frequency-response/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[미분방정식 시스템의 주파수 응답](/Hongs_Blog/studies/signals-and-systems/lccde-frequency-response/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 미분방정식 시스템의 주파수 응답 문서의 그림을 만든다: 44_lccde-frequency-response_fig1.svg

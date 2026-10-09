@@ -72,7 +72,7 @@ permalink: "/studies/data-science/contrast--bagging-boosting/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.19
+[^1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.19
 [^2]: 같은 자료, p.17
-[^s1]: 에이전트 보충. 상황 문제, "모으는 법" 줄, 두 슬라이드 표현의 해석, 스태킹은 원본에 없다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상황 문제, "모으는 법" 줄, 두 슬라이드 표현의 해석, 스태킹은 원본에 없다.
 {% endraw %}

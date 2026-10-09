@@ -112,7 +112,7 @@ $$r_0$$는 자발 발화율, $$x_{+}$$와 $$x_{-}$$는 흥분성·억제성 입�
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/02.HIM_강의02_사람의지각.pdf, p.10 (Excitatory & Inhibitory)
-[^s1]: 에이전트 보충. 발화율 식은 원본에 없다. p.10의 (a)~(e) 결과를 한 줄로 요약하는 설명용 모형이며, [뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/)의 $$a(Ax + b)$$에서 가중치가 두 개인 경우와 같다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 정의(흥분성·억제성 입력의 합, 발화 문턱)와 강의 2 p.10의 막전위 그래프를 근거로 그렸다.
+[^1]: 휴먼 인터페이스 미디어 2회 강의 자료 「HIM_강의02_사람의지각」, p.10 (Excitatory & Inhibitory)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 발화율 식은 원본에 없다. p.10의 (a)~(e) 결과를 한 줄로 요약하는 설명용 모형이며, [뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/)의 $$a(Ax + b)$$에서 가중치가 두 개인 경우와 같다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 정의(흥분성·억제성 입력의 합, 발화 문턱)와 강의 2 p.10의 막전위 그래프를 근거로 그렸다.
 {% endraw %}

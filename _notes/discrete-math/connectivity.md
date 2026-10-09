@@ -157,6 +157,6 @@ flowchart LR
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장(방향 그래프의 보행과 경로), 12장(단순 그래프의 연결성).
 [^2]: Cormen et al., *Introduction to Algorithms* 3판, 22.2절 "Breadth-first search"(최단 거리의 정확성), 22.3절 "Depth-first search".
-[^s1]: 에이전트 보충. $$A^k$$와 보행 수의 관계는 33_connectivity_verify.py에서 작은 그래프의 모든 보행을 세어 확인했고, 선형대수학에서 다시 다룬다. 쓰레기 수집기의 표시–청소(mark-and-sweep) 방식은 운영체제·언어 구현 교재의 표준 내용이다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 정점 1~7과 간선 여섯 개를 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$A^k$$와 보행 수의 관계는 33_connectivity_verify.py에서 작은 그래프의 모든 보행을 세어 확인했고, 선형대수학에서 다시 다룬다. 쓰레기 수집기의 표시–청소(mark-and-sweep) 방식은 운영체제·언어 구현 교재의 표준 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 정점 1~7과 간선 여섯 개를 그렸다.
 {% endraw %}

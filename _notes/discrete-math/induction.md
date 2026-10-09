@@ -202,5 +202,5 @@ $$m$$이 반례 중 가장 작은 수이고 $$m - 1 \ge b$$이므로, $$m - 1$$�
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 5장 "Induction"(보통 귀납법, 강한 귀납법, 우표 문제). Rosen, *Discrete Mathematics and Its Applications* 7판, 5장.
 [^2]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 2장 "The Well Ordering Principle"
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 우표 강한 귀납법(귀납 단계가 네 칸 앞을 쓴다)을 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제'의 우표 강한 귀납법(귀납 단계가 네 칸 앞을 쓴다)을 그렸다.
 {% endraw %}

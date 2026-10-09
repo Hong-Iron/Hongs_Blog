@@ -91,7 +91,7 @@ permalink: "/studies/computer-communication/cellular-networks/"
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/2.필기노트/04.4주차.md, 69~82행
-[^2]: 4-1학기/pasted_images/Pasted image 20260927202451.png — 슬라이드 "이동통신(Cellular Networks)". 초록 글씨: space-division multiplexing
-[^s1]: 에이전트 보충. AMPS가 통화마다 주파수 채널을 나눠 주는 방식(FDMA)이라는 것은 원본에 없다. 원본은 1세대를 "아날로그"로만 적는다. AMPS는 30 kHz 채널을 쓰는 아날로그 FDMA 방식이다(Kurose & Ross, *Computer Networking: A Top-Down Approach*, 7장).
+[^1]: 컴퓨터 통신 4회 필기 「4주차」, 69~82행
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "이동통신(Cellular Networks)". 초록 글씨: space-division multiplexing
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> AMPS가 통화마다 주파수 채널을 나눠 주는 방식(FDMA)이라는 것은 원본에 없다. 원본은 1세대를 "아날로그"로만 적는다. AMPS는 30 kHz 채널을 쓰는 아날로그 FDMA 방식이다(Kurose & Ross, *Computer Networking: A Top-Down Approach*, 7장).
 {% endraw %}

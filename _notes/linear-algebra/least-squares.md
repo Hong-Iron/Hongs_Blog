@@ -39,7 +39,7 @@ $$\begin{pmatrix}1 & 1\\ 1 & 2\\ 1 & 3\\ 1 & 4\end{pmatrix}\begin{pmatrix}C\\ D\
 
 이어야 하는데, 식 4개에 미지수 2개라 해가 없다. 정규방정식 $$A^\top A\hat{\mathbf{x}} = A^\top\mathbf{b}$$($$^\top$$는 행과 열을 바꾸는 전치)는 $$\begin{pmatrix}4 & 10\\ 10 & 30\end{pmatrix}\begin{pmatrix}C\\ D\end{pmatrix} = \begin{pmatrix}16\\ 47\end{pmatrix}$$이고, 풀면 $$C = 0.5$$, $$D = 1.4$$다. 잔차는 $$0.1, -0.3, 0.3, -0.1$$이고 제곱합 0.2가 어떤 직선보다도 작다. 데이터 행렬이 아래의 $$A$$, 점수가 $$\mathbf{b}$$, 기울기와 절편이 $$\hat{\mathbf{x}}$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/17_least-squares_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/17_least-squares_fig1.svg" alt="그림" width="478" height="342" loading="lazy">
 
 주황 막대가 잔차다. 위아래로 엇갈려 합이 0이고, 직선을 조금이라도 돌리거나 옮기면 어느 쪽 막대가 길어져 제곱합이 0.2보다 커진다[^s2].
 
@@ -233,14 +233,14 @@ $$\left(\sum x_k^2\right)A + \left(\sum x_k\right)B = \sum x_ky_k, \qquad \left(
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 4.3절 "Least Squares Approximations"(정규방정식, 직선 맞추기의 예 $$\mathbf{b} = (6, 0, 0)$$, 포물선 맞추기, 사영과 미분 두 관점).
-[^s1]: 에이전트 보충. 릿지 회귀는 통계학습 교재의 표준 방법이다. NumPy 문서는 `lstsq`가 LAPACK의 SVD 기반 `gelsd`를 쓴다고 밝힌다. 정규방정식의 조건수가 $$A$$의 조건수의 제곱임은 17_least-squares_verify.py에서 수치로 확인했다.
-[^n1]: 2-2학기/수치해석/1.수업자료/13.na13_least-squares.pdf, p.3
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 릿지 회귀는 통계학습 교재의 표준 방법이다. NumPy 문서는 `lstsq`가 LAPACK의 SVD 기반 `gelsd`를 쓴다고 밝힌다. 정규방정식의 조건수가 $$A$$의 조건수의 제곱임은 17_least-squares_verify.py에서 수치로 확인했다.
+[^n1]: 수치해석 13회 강의 자료 「na13_least-squares」, p.3
 [^n2]: 같은 자료, p.4~5
 [^n3]: 같은 자료, p.6~7
 [^n4]: 같은 자료, p.8~11
 [^n5]: 같은 자료, p.12~13
 [^n6]: 같은 자료, p.32~36
-[^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 17_least-squares_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [17_least-squares_plot.py](/Hongs_Blog/studies/linear-algebra/code/17_least-squares_plot/)로 그렸고, $$C = 0.5$$, $$D = 1.4$$, 잔차 $$0.1, -0.3, 0.3, -0.1$$과 그 합 0, 제곱합 0.2를 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `예시로 보기`의 $$A$$, $$\mathbf{b}$$, $$A^\top A$$, $$A^\top\mathbf{b}$$ 값과 `정의`의 정규방정식을 그대로 옮겼다.
+[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C5는 원본에 없다. 17_least-squares_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [17_least-squares_plot.py](/Hongs_Blog/studies/linear-algebra/code/17_least-squares_plot/)로 그렸고, $$C = 0.5$$, $$D = 1.4$$, 잔차 $$0.1, -0.3, 0.3, -0.1$$과 그 합 0, 제곱합 0.2를 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `예시로 보기`의 $$A$$, $$\mathbf{b}$$, $$A^\top A$$, $$A^\top\mathbf{b}$$ 값과 `정의`의 정규방정식을 그대로 옮겼다.
 {% endraw %}

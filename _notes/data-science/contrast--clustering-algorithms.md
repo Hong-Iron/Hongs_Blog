@@ -71,7 +71,7 @@ permalink: "/studies/data-science/contrast--clustering-algorithms/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/07.7-1_basic-clustering.pdf, p.32
-[^2]: 3-2학기/데이터 과학/1.수업자료/07.7-2_density-clustering.pdf, p.19
-[^s1]: 에이전트 보충. 상황 문제와 10회로 넘기는 답은 원본에 없다. 10회 슬라이드(고차원 군집화, 그래프 군집화)의 주제다.
+[^1]: 데이터 과학 7회 강의 자료 「7-1_basic-clustering」, p.32
+[^2]: 데이터 과학 7회 강의 자료 「7-2_density-clustering」, p.19
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상황 문제와 10회로 넘기는 답은 원본에 없다. 10회 슬라이드(고차원 군집화, 그래프 군집화)의 주제다.
 {% endraw %}

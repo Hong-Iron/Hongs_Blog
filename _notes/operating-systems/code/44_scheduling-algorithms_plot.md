@@ -3,7 +3,7 @@ layout: "note"
 title: "44_scheduling-algorithms_plot.py"
 display_title: "44_scheduling-algorithms_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "44"
 course: "운영체제"
 course_slug: "operating-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 parent_url: "/studies/operating-systems/scheduling-algorithms/"
 parent_title: "스케줄링 알고리즘"
-description: "운영체제 · 스케줄링 알고리즘 코드 코드"
+description: "운영체제 · 스케줄링 알고리즘 그림 생성 코드"
 permalink: "/studies/operating-systems/code/44_scheduling-algorithms_plot/"
 ---
 {% raw %}
-[스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 스케줄링 알고리즘 문서의 그림을 만든다: 44_scheduling-algorithms_fig1.svg

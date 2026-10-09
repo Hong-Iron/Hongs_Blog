@@ -136,5 +136,5 @@ A는 1을 맨 끝(칸 3)에 붙인 모습, B는 부모 5와 바꾼 뒤, C는 부
 
 
 [^1]: Python 3 표준 라이브러리 문서, "heapq — Heap queue algorithm": 모든 k에 대해 `a[k] <= a[2*k+1]`, `a[k] <= a[2*k+2]`인 리스트, 가장 작은 값은 `a[0]`, `heapify`는 선형 시간. 넣기·꺼내기의 O(log n)은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 4.5 "Other structures"의 Priority queue와 Cormen 외, *Introduction to Algorithms* 3판 6장.
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '넣고 꺼내는 방법' 절의 넣기 예 [3, 5, 8, 1] → [3, 1, 8, 5] → [1, 3, 8, 5]를 칸 i의 자식이 2i + 1, 2i + 2라는 규칙대로 나무로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '넣고 꺼내는 방법' 절의 넣기 예 [3, 5, 8, 1] → [3, 1, 8, 5] → [1, 3, 8, 5]를 칸 i의 자식이 2i + 1, 2i + 2라는 규칙대로 나무로 그렸다.
 {% endraw %}

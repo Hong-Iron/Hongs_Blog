@@ -37,7 +37,7 @@ permalink: "/studies/probability-statistics/uniform-exponential/"
 
 이번에는 서버에 요청이 1초에 평균 3개씩 무작위로(포아송 과정으로) 들어온다. 다음 요청까지 1초 넘게 기다릴 확률은 "1초 동안 요청이 0개일 확률"과 같아 [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)로 $$e^{-3} \approx 0.05$$다. 평균 간격은 $$\frac13$$초다. 첫 사례가 아래의 $$\mathrm{Unif}(0, 10)$$, 둘째가 $$\mathrm{Exp}(3)$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/15_uniform-exponential_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/15_uniform-exponential_fig1.svg" alt="그림" width="610" height="276" loading="lazy">
 
 색칠한 넓이가 두 예시의 확률이다. 균등분포는 높이가 평평해서 넓이가 구간 길이에 비례한다. 지수분포는 0 근처가 가장 높고, 오른쪽으로 갈수록 빠르게 낮아진다[^s1].
 
@@ -139,6 +139,6 @@ flowchart LR
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 5.2절 "Uniform", 5.3절 "Universality of the Uniform"(역변환), 5.5절 "Exponential"(무기억성, 최솟값), 5.6절 "Poisson processes"(도착 간격).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [15_uniform-exponential_plot.py](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_plot/)로 그렸고, 그림에 쓴 값($$\frac{3}{10}$$, 수치 적분한 $$P(X > 1) = e^{-3} \approx 0.050$$)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정리의 성질 2·4와 연결 절(기하분포의 연속판)을 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [15_uniform-exponential_plot.py](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_plot/)로 그렸고, 그림에 쓴 값($$\frac{3}{10}$$, 수치 적분한 $$P(X > 1) = e^{-3} \approx 0.050$$)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정리의 성질 2·4와 연결 절(기하분포의 연속판)을 그렸다.
 {% endraw %}

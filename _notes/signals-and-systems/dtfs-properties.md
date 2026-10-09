@@ -87,7 +87,7 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 - *계수:* 주기 컨벌루션 성질로 $$c_k = 7d_k^2$$, $$d_k$$는 구형파의 계수 $$\frac17\frac{\sin(3\pi k/7)}{\sin(\pi k/7)}$$. 그래서 $$c_k = \dfrac{\sin^2(3\pi k/7)}{7\sin^2(\pi k/7)}$$.
 - *수열 자체:* 한 주기만 남긴 $$\hat x[r]$$($$-1 \le r \le 1$$에서 1)과 $$x$$의 보통 컨벌루션과 같다. $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$인 삼각형이 7마다 반복된다(그림 3.21). 사각형끼리 컨벌루션하면 삼각형이 되는 연속 시간 결과와 같다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/34_dtfs-properties_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/34_dtfs-properties_fig1.svg" alt="그림" width="564" height="333" loading="lazy">
 
 위가 구형파 $$x[n]$$, 아래가 주기 컨벌루션 $$w[n]$$이다. 폭 3인 사각형끼리 겹치는 칸 수를 세면 3, 2, 1, 0이 되어 삼각형이 7칸마다 되풀이된다[^s2].
 
@@ -133,12 +133,12 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/10.Week10_CH03_3_handout.pdf, p.25~26 (예제 3.13, 그림 3.19)
+[^1]: 신호 및 시스템 10회 강의 자료 「Week10_CH03_3_handout」, p.25~26 (예제 3.13, 그림 3.19)
 [^2]: 같은 자료, p.22 (표 3.2)
 [^3]: 같은 자료, p.24
 [^4]: 같은 자료, p.23~24
 [^5]: 같은 자료, p.27~28 (예제 3.14, 그림 3.20)
 [^6]: 같은 자료, p.29~31 (예제 3.15, 그림 3.21)
-[^s1]: 에이전트 보충. 신호 복원·원형 컨벌루션 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [34_dtfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$과 $$c_k = 7d_k^2$$.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 신호 복원·원형 컨벌루션 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [34_dtfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$과 $$c_k = 7d_k^2$$.
 {% endraw %}

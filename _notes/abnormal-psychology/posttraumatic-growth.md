@@ -77,7 +77,7 @@ permalink: "/studies/abnormal-psychology/posttraumatic-growth/"
 
 </details>
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/06.외상 후 스트레스 장애 및 해리장애.pdf, p.26 (외상 후 적응의 여러 유형 그림, Jeon et al., 2015)
-[^s1]: 에이전트 보충. DV의 사례는 가상 예다.
-[^s2]: 에이전트 보충. 외상 후 성장과 PTSD 증상의 공존, 신념 재구성으로서의 성장은 Tedeschi와 Calhoun의 외상 후 성장 연구의 표준 설명이다.
+[^1]: 이상 심리학 6회 강의 자료 「외상 후 스트레스 장애 및 해리장애」, p.26 (외상 후 적응의 여러 유형 그림, Jeon et al., 2015)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DV의 사례는 가상 예다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 외상 후 성장과 PTSD 증상의 공존, 신념 재구성으로서의 성장은 Tedeschi와 Calhoun의 외상 후 성장 연구의 표준 설명이다.
 {% endraw %}

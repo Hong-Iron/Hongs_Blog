@@ -179,9 +179,9 @@ $$q\mathbf v\bar q = q_x\big(q_y(q_z\mathbf v\bar q_z)\bar q_y\big)\bar q_x$$이
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/06.na06_rotation.pdf, p.24~25
+[^1]: 수치해석 6회 강의 자료 「na06_rotation」, p.24~25
 [^2]: 같은 자료, p.26
 [^3]: 같은 자료, p.27
-[^s1]: 에이전트 보충. 예시, 단위 벡터 축-각 공식과 $$q\mathbf v\bar q$$(슬라이드는 축별 쿼터니언과 행렬만 적는다), 스스로 설명해 보기, 게임 엔진·자세 제어, 정규화, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 축-각 쿼터니언, $$q = q_xq_yq_z$$, $$R_q$$ 공식(원본 06.na06_rotation.pdf p.26~27)과 [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/)의 로드리게스 공식, [오일러 각과 짐벌 잠금](/Hongs_Blog/studies/numerical-analysis/euler-angles/)의 행렬 곱으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시, 단위 벡터 축-각 공식과 $$q\mathbf v\bar q$$(슬라이드는 축별 쿼터니언과 행렬만 적는다), 스스로 설명해 보기, 게임 엔진·자세 제어, 정규화, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 축-각 쿼터니언, $$q = q_xq_yq_z$$, $$R_q$$ 공식(원본 06.na06_rotation.pdf p.26~27)과 [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/)의 로드리게스 공식, [오일러 각과 짐벌 잠금](/Hongs_Blog/studies/numerical-analysis/euler-angles/)의 행렬 곱으로 그렸다.
 {% endraw %}

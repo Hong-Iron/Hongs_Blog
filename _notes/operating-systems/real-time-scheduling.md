@@ -43,7 +43,7 @@ permalink: "/studies/operating-systems/real-time-scheduling/"
 
 EDF는 시각 30에 A3(마감 60)보다 B1(마감 50)을 먼저 해서 B1을 지킨다. 시각 80에는 A5와 B2의 마감이 둘 다 100이라, 먼저 와 있던 B2를 계속한다. 두 작업이 프로세서를 쓰는 비율은 $$10/20 + 25/50 = 1$$, 곧 100%인데도 EDF는 모든 마감을 지킨다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/49_real-time-scheduling_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/49_real-time-scheduling_fig1.svg" alt="그림" width="557" height="283" loading="lazy">
 
 보라색 삼각형이 놓친 마감이다. 고정 우선순위에서는 어느 쪽을 앞세우든 한 작업이 마감을 넘긴다. EDF 줄은 0부터 100까지 빈틈 없이 차 있으면서도 삼각형이 하나도 없다[^s2].
 
@@ -210,7 +210,7 @@ EDF가 사용률 합 1 이하에서 최적이라는 것은 교환 논증으로 �
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/10.Chapter10-new.pptx, 슬라이드 49~50 (표 10.2, 그림 10.6)
+[^1]: 운영체제 10회 강의 자료 「Chapter10-new」, 슬라이드 49~50 (표 10.2, 그림 10.6)
 [^2]: 같은 자료, 슬라이드 45와 발표자 노트
 [^3]: 같은 자료, 슬라이드 46
 [^4]: 같은 자료, 슬라이드 47과 발표자 노트
@@ -219,6 +219,6 @@ EDF가 사용률 합 1 이하에서 최적이라는 것은 교환 논증으로 �
 [^7]: 같은 자료, 슬라이드 52 (그림 10.7)
 [^8]: 같은 자료, 슬라이드 53과 발표자 노트
 [^9]: 같은 자료, 슬라이드 55 (그림 10.9)의 발표자 노트
-[^s1]: 에이전트 보충. 사용률 조건, RMS 한계 $$n(2^{1/n} - 1)$$과 교재의 세 작업 예, RMS의 장점, EDF 최적성의 증명 스케치는 Stallings 6판 10.2절(식 10.1~10.2, Liu & Layland 1973 인용)을 따랐다. 슬라이드는 RMS의 정의와 그림만 있다. 리눅스 SCHED_DEADLINE과 확인 문제 C2~C5는 슬라이드에 없다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [49_real-time-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_plot/)로 그렸고, 세 정책의 놓친 마감(B1 / A1, A4 / 없음)과 EDF의 B1 30~45, B2 55~60·70~90 구간을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 사용률 조건, RMS 한계 $$n(2^{1/n} - 1)$$과 교재의 세 작업 예, RMS의 장점, EDF 최적성의 증명 스케치는 Stallings 6판 10.2절(식 10.1~10.2, Liu & Layland 1973 인용)을 따랐다. 슬라이드는 RMS의 정의와 그림만 있다. 리눅스 SCHED_DEADLINE과 확인 문제 C2~C5는 슬라이드에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [49_real-time-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_plot/)로 그렸고, 세 정책의 놓친 마감(B1 / A1, A4 / 없음)과 EDF의 B1 30~45, B2 55~60·70~90 구간을 같은 코드로 확인했다.
 {% endraw %}

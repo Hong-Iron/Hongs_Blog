@@ -3,7 +3,7 @@ layout: "note"
 title: "14_integration-by-parts_plot.py"
 display_title: "14_integration-by-parts_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "14"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/integration-by-parts/"
 parent_title: "부분적분"
-description: "미분적분학 · 부분적분 코드 코드"
+description: "미분적분학 · 부분적분 그림 생성 코드"
 permalink: "/studies/calculus/code/14_integration-by-parts_plot/"
 ---
 {% raw %}
-[부분적분](/Hongs_Blog/studies/calculus/integration-by-parts/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[부분적분](/Hongs_Blog/studies/calculus/integration-by-parts/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 부분적분 문서의 그림을 만든다: 14_integration-by-parts_fig1.svg

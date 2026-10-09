@@ -128,9 +128,9 @@ permalink: "/studies/computer-communication/multiple-access-link/"
 </div>
 
 
-[^1]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 21~24행
-[^2]: 4-1학기/pasted_images/Pasted image 20260924184222.png — 슬라이드 "연결: 직접 링크 (Direct Links)"의 (b) multiple access network
-[^s1]: 에이전트 보충. 충돌 모델은 필기의 "동시성 문제"를 정식화한 것이다. 실제 매체에서는 신호 세기에 따라 한쪽이 수신되기도 하지만, 입문 모델은 둘 다 잃는다고 본다.
-[^s2]: 에이전트 보충. 이더넷·와이파이 예와 MAC 규칙 이름은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 2장(직접 연결 네트워크)의 내용이다.
-[^s3]: 에이전트 보충. 공유 매체에서 각 기기가 받은 프레임의 목적지 주소를 보고 자기 것이 아니면 버리는 동작은 원본에 없다. 이더넷 같은 공유 매체 LAN의 일반 동작이다(Peterson & Davie, *Computer Networks: A Systems Approach*, 2장).
+[^1]: 컴퓨터 통신 1회 필기 「1주차」, 21~24행
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "연결: 직접 링크 (Direct Links)"의 (b) multiple access network
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 충돌 모델은 필기의 "동시성 문제"를 정식화한 것이다. 실제 매체에서는 신호 세기에 따라 한쪽이 수신되기도 하지만, 입문 모델은 둘 다 잃는다고 본다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이더넷·와이파이 예와 MAC 규칙 이름은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 2장(직접 연결 네트워크)의 내용이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 공유 매체에서 각 기기가 받은 프레임의 목적지 주소를 보고 자기 것이 아니면 버리는 동작은 원본에 없다. 이더넷 같은 공유 매체 LAN의 일반 동작이다(Peterson & Davie, *Computer Networks: A Systems Approach*, 2장).
 {% endraw %}

@@ -125,7 +125,7 @@ graph LR
 
 추상체 민감도를 봉우리 1인 가우스 곡선으로 두고(봉우리 S 445, M 535, L 575 nm, 폭 30·45·45 nm로 가정), 색 맞추기를 계산했다[^s3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig1.svg" alt="그림" width="532" height="320" loading="lazy">
 
 L과 M 곡선은 대부분 겹치고, S 곡선만 짧은 파장 쪽에 따로 떨어져 있다[^s5].
 
@@ -137,7 +137,7 @@ L과 M 곡선은 대부분 겹치고, S 곡선만 짧은 파장 쪽에 따로 �
 
 400~700 nm를 5 nm 간격으로 본 61개 단색광 가운데 58개가 이 모형에서 어느 한 원색을 음수로 요구했다. 실제 원색 셋이 만드는 색의 범위(색역, gamut)는 사람이 볼 수 있는 모든 색을 덮지 못한다[^s4].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig2.svg" alt="그림" width="537" height="342" loading="lazy">
 
 0 아래 회색 구역으로 내려간 선은 그 원색을 섞는 게 아니라 목표 쪽에 더해야 맞는다는 뜻이다. 청록(480~510 nm)에서 빨강 선이 가장 깊이 내려간다[^s5].
 
@@ -211,13 +211,13 @@ L과 M 곡선은 대부분 겹치고, S 곡선만 짧은 파장 쪽에 따로 �
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.10 (왼쪽 그림)
-[^2]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.10 ("Trichromatic Theory"가 굵은 글씨). 영어 정의를 우리말로 옮겼다.
-[^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.13 (Trichromatic → Opponent-process 그림)
-[^4]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar 4~5주차
-[^s1]: 에이전트 보충. 단일 변수 원리는 지각 교재(예: Goldstein, *Sensation and Perception*)의 표준 용어다. 1.35배 수치는 아래 가우스 모형의 계산값이다.
-[^s2]: 에이전트 보충. 반응 적분식, 선형성(그라스만 법칙), 행렬식 색 맞추기와 증명은 색채학의 표준 내용이며 슬라이드에는 없다.
-[^s3]: 에이전트 보충. 가우스 민감도 모형은 설명용 가정이다. 봉우리는 슬라이드 p.8 값, 폭은 슬라이드 그래프의 모양에 맞춰 가정했다. 실제 민감도 곡선은 가우스가 아니므로 수치는 경향만 보여 준다.
-[^s4]: 에이전트 보충. 실제 색 맞추기 실험(CIE 1931 RGB 등색 함수)에서도 약 440~550 nm 구간에서 빨강 원색이 음수가 된다. XYZ가 가상 원색으로 이를 피한다는 것은 색채학의 표준 내용이다.
-[^s5]: 에이전트 보충. 그림 두 장은 원본에 없다. [16_trichromatic-theory_plot.py](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_plot/)로 그렸고, 그림에 쓴 값(480~510 nm의 빨강 세기 −0.37 ~ −0.28, 5 nm 간격 61개 중 58개가 음수 원색을 요구)을 같은 코드로 확인했다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.10 (왼쪽 그림)
+[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.10 ("Trichromatic Theory"가 굵은 글씨). 영어 정의를 우리말로 옮겼다.
+[^3]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.13 (Trichromatic → Opponent-process 그림)
+[^4]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 4~5주차
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 단일 변수 원리는 지각 교재(예: Goldstein, *Sensation and Perception*)의 표준 용어다. 1.35배 수치는 아래 가우스 모형의 계산값이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 반응 적분식, 선형성(그라스만 법칙), 행렬식 색 맞추기와 증명은 색채학의 표준 내용이며 슬라이드에는 없다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 가우스 민감도 모형은 설명용 가정이다. 봉우리는 슬라이드 p.8 값, 폭은 슬라이드 그래프의 모양에 맞춰 가정했다. 실제 민감도 곡선은 가우스가 아니므로 수치는 경향만 보여 준다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실제 색 맞추기 실험(CIE 1931 RGB 등색 함수)에서도 약 440~550 nm 구간에서 빨강 원색이 음수가 된다. XYZ가 가상 원색으로 이를 피한다는 것은 색채학의 표준 내용이다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [16_trichromatic-theory_plot.py](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_plot/)로 그렸고, 그림에 쓴 값(480~510 nm의 빨강 세기 −0.37 ~ −0.28, 5 nm 간격 61개 중 58개가 음수 원색을 요구)을 같은 코드로 확인했다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "04_derivative_plot.py"
 display_title: "04_derivative_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "04"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/derivative/"
 parent_title: "도함수"
-description: "미분적분학 · 도함수 코드 코드"
+description: "미분적분학 · 도함수 그림 생성 코드"
 permalink: "/studies/calculus/code/04_derivative_plot/"
 ---
 {% raw %}
-[도함수](/Hongs_Blog/studies/calculus/derivative/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[도함수](/Hongs_Blog/studies/calculus/derivative/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 도함수 문서의 그림을 만든다: 04_derivative_fig1.svg, 04_derivative_fig2.svg

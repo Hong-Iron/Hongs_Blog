@@ -137,5 +137,5 @@ $$a^m a^n = a^{m+n}, \qquad \frac{a^m}{a^n} = a^{m-n}, \qquad (a^m)^n = a^{mn}, 
 
 
 [^1]: OpenStax, *College Algebra 2e*, 1.2절 "Exponents and Scientific Notation", 1.3절 "Radicals and Rational Exponents"
-[^s1]: 에이전트 보충. KiB·GiB는 IEC의 2진 접두어이고 kB·GB는 10진 접두어다. 배정밀도의 가수 53비트(저장 52비트와 숨은 비트 1개)는 IEEE 754 표준의 형식이다. 두 사실 모두 검증 코드로 수치를 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> KiB·GiB는 IEC의 2진 접두어이고 kB·GB는 10진 접두어다. 배정밀도의 가수 53비트(저장 52비트와 숨은 비트 1개)는 IEEE 754 표준의 형식이다. 두 사실 모두 검증 코드로 수치를 확인했다.
 {% endraw %}

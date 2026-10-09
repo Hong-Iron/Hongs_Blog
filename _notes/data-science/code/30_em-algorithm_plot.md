@@ -3,7 +3,7 @@ layout: "note"
 title: "30_em-algorithm_plot.py"
 display_title: "30_em-algorithm_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "30"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/em-algorithm/"
 parent_title: "EM 알고리즘"
-description: "데이터 과학 · EM 알고리즘 코드 코드"
+description: "데이터 과학 · EM 알고리즘 그림 생성 코드"
 permalink: "/studies/data-science/code/30_em-algorithm_plot/"
 ---
 {% raw %}
-[EM 알고리즘](/Hongs_Blog/studies/data-science/em-algorithm/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[EM 알고리즘](/Hongs_Blog/studies/data-science/em-algorithm/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # EM 알고리즘 문서의 그림을 만든다: 30_em-algorithm_fig1.svg

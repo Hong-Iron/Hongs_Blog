@@ -3,7 +3,7 @@ layout: "note"
 title: "37_digital-transmission_plot.py"
 display_title: "37_digital-transmission_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "37"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/digital-transmission/"
 parent_title: "디지털 전송"
-description: "컴퓨터 통신 · 디지털 전송 코드 코드"
+description: "컴퓨터 통신 · 디지털 전송 그림 생성 코드"
 permalink: "/studies/computer-communication/code/37_digital-transmission_plot/"
 ---
 {% raw %}
-[디지털 전송](/Hongs_Blog/studies/computer-communication/digital-transmission/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[디지털 전송](/Hongs_Blog/studies/computer-communication/digital-transmission/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 디지털 전송 문서의 그림을 만든다: 37_digital-transmission_fig1.svg

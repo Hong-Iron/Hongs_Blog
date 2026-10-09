@@ -105,7 +105,7 @@ permalink: "/studies/computer-communication/addressing/"
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 42~52행
-[^s1]: 에이전트 보충. 학교 방송 비유의 한계와 세 방식을 수신 집합으로 묶는 정의는 원본에 없다. "노드를 식별하는 바이트열"이라는 표현은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 같다.
-[^s2]: 에이전트 보충. MAC·IPv4 주소 예, 호스트 이름과 포트 번호, ARP는 원본에 없는 실제 사례다.
+[^1]: 컴퓨터 통신 1회 필기 「1주차」, 42~52행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 학교 방송 비유의 한계와 세 방식을 수신 집합으로 묶는 정의는 원본에 없다. "노드를 식별하는 바이트열"이라는 표현은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 같다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MAC·IPv4 주소 예, 호스트 이름과 포트 번호, ARP는 원본에 없는 실제 사례다.
 {% endraw %}

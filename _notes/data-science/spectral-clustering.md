@@ -44,7 +44,7 @@ $$L$$의 고윳값은 0, 2, 4, 4다. 가장 작은 0의 고유벡터는 모든 �
 
 삼각형 두 개를 다리 하나로 이은 그래프에서는 둘째 고유벡터의 부호가 정확히 두 삼각형을 가른다. 덩어리 셋을 약하게 이은 그래프에서는 둘째·셋째 고유벡터로 점을 옮기면 같은 덩어리끼리 한 자리에 모인다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/38_spectral-clustering_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/38_spectral-clustering_fig1.svg" alt="그림" width="525" height="276" loading="lazy">
 
 꼭짓점 0~2와 3~5가 각각 삼각형이고 2–3이 다리다. 둘째 고유벡터는 한 삼각형에 음수, 다른 삼각형에 양수를 준다. 부호만 보고 자르면 두 삼각형이 나온다. 다리 끝 2와 3은 0에 더 가깝다[^s2].
 
@@ -70,7 +70,7 @@ $$\min_{A, B}\operatorname{NCut}(A, B) \ \to\ \min_{\mathbf f}\frac{\mathbf f^\t
 
 슬라이드는 이것을 "그래프 라플라시안의 둘째로 작은 고유벡터"라 부른다[^1]. 정확히는 일반화 문제 $$L\mathbf f = \lambda D\mathbf f$$의 고유벡터이고, 정규화 라플라시안 $$D^{-1/2}LD^{-1/2}$$의 고유벡터 $$\mathbf g$$에서 $$\mathbf f = D^{-1/2}\mathbf g$$로 얻는다. 차수가 모두 같으면 $$L$$의 고유벡터와 같다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/38_spectral-clustering_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/38_spectral-clustering_fig2.svg" alt="그림" width="582" height="302" loading="lazy">
 
 반지름 1과 3인 두 고리(점 200개)다. k-평균은 거리만 보고 둘로 잘라 두 고리를 섞는다. 스펙트럼 군집화는 가까운 점끼리 무게가 큰 그래프(가우스 커널, $$\sigma = 0.4$$)를 만들고 둘째 고유벡터의 부호로 나눠, 두 고리를 정확히 가른다[^s2].
 
@@ -162,11 +162,11 @@ flowchart LR
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/10.10-2_graph-clustering.pdf, p.15
+[^1]: 데이터 과학 10회 강의 자료 「10-2_graph-clustering」, p.15
 [^2]: 같은 자료, p.16 (Stanford CS224W 2019 강의 05의 그림)
 [^3]: 같은 자료, p.17
 [^4]: 같은 자료, p.18
-[^s1]: 에이전트 보충. 고윳값 0, 2, 4, 4와 둘째 고유벡터, 일반화 고유문제와 정규화 라플라시안의 관계(Shi & Malik, PAMI 2000), 증명, 세 가지 예, 사이킷런, 반복법, 카드 C2·C4는 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [38_spectral-clustering_plot.py](/Hongs_Blog/studies/data-science/code/38_spectral-clustering_plot/)로 그렸고, 두 삼각형에서 부호가 {0, 1, 2}와 {3, 4, 5}를 가르고 $$L\mathbf f = \lambda D\mathbf f$$를 만족함, 두 고리에서 스펙트럼 군집화가 모두 맞히고 k-평균은 0.53만 맞힘을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서의 의사코드, 37번 문서의 유사도 그래프 만들기(원본 10-2 p.11, p.15~18)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 고윳값 0, 2, 4, 4와 둘째 고유벡터, 일반화 고유문제와 정규화 라플라시안의 관계(Shi & Malik, PAMI 2000), 증명, 세 가지 예, 사이킷런, 반복법, 카드 C2·C4는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [38_spectral-clustering_plot.py](/Hongs_Blog/studies/data-science/code/38_spectral-clustering_plot/)로 그렸고, 두 삼각형에서 부호가 {0, 1, 2}와 {3, 4, 5}를 가르고 $$L\mathbf f = \lambda D\mathbf f$$를 만족함, 두 고리에서 스펙트럼 군집화가 모두 맞히고 k-평균은 0.53만 맞힘을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서의 의사코드, 37번 문서의 유사도 그래프 만들기(원본 10-2 p.11, p.15~18)를 근거로 그렸다.
 {% endraw %}

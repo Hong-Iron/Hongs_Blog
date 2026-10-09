@@ -41,7 +41,7 @@ permalink: "/studies/probability-statistics/monte-carlo/"
 
 표본을 4배로 늘릴 때마다 오차가 절반이 된다. 점 하나가 "사분원 안이면 4, 밖이면 0"인 확률변수 $$Y$$이고, 비율에 4를 곱한 값이 아래 정의의 표본평균이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/27_monte-carlo_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/27_monte-carlo_fig1.svg" alt="그림" width="582" height="285" loading="lazy">
 
 왼쪽은 점 2,000개를 뿌린 한 번의 실험이다. 오른쪽은 표본 수마다 실험을 400번 되풀이해 오차의 제곱평균을 잰 것이다. 로그 눈금에서 점들이 직선 $$\frac{1.64}{\sqrt n}$$ 위에 놓인다. 1.64는 $$Y$$의 표준편차 $$\sqrt{\pi(4 - \pi)}$$다[^s1].
 
@@ -126,6 +126,6 @@ flowchart LR
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.2절(큰 수의 법칙과 몬테카를로), 10.3절(중심극한정리와 오차의 크기).
 [^2]: Owen, *Monte Carlo Theory, Methods and Examples*(온라인 교재), 중요도 샘플링 장. 수치는 27_monte-carlo_verify.py로 확인했다.
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [27_monte-carlo_plot.py](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_plot/)로 그렸고, 그림에 쓴 값($$\frac{1.64}{\sqrt n}$$이 1,000·4,000·16,000에서 0.052·0.026·0.013, 모의실험과 12% 안)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의 절의 식(표본평균과 95% 오차 막대)과 적분으로 쓰기를 순서대로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [27_monte-carlo_plot.py](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_plot/)로 그렸고, 그림에 쓴 값($$\frac{1.64}{\sqrt n}$$이 1,000·4,000·16,000에서 0.052·0.026·0.013, 모의실험과 12% 안)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의 절의 식(표본평균과 95% 오차 막대)과 적분으로 쓰기를 순서대로 그렸다.
 {% endraw %}

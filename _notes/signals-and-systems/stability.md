@@ -60,7 +60,7 @@ $$\text{불안정} \iff \text{어떤 유계 입력 } x\text{에 대해 } y\text{
 - $$y[n] = \sum_{k=-\infty}^{n}u[k] = (n+1)u[n]$$이므로 $$y[0] = 1, y[1] = 2, y[2] = 3, \dots$$
 - 끝없이 커지므로 불안정이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig1.svg" alt="그림" width="621" height="352" loading="lazy">
 
 왼쪽은 이 반례이고, 오른쪽은 아래 오해에서 다루는 $$(-1)^n u[n]$$ 입력이다. 둘 다 크기 1 이하인 유계 입력인데, 출력은 한쪽만 끝없이 커진다[^s2].
 
@@ -71,7 +71,7 @@ $$\text{불안정} \iff \text{어떤 유계 입력 } x\text{에 대해 } y\text{
 
 **1계 미분방정식** $$\dfrac{dy}{dt} + ay = bx$$: 입력이 0일 때의 출력은 $$Ce^{-at}$$다. $$a > 0$$이면 줄어들고, $$a < 0$$이면 시간이 지날수록 무한대로 간다. 그래서 $$a > 0$$이면 안정, $$a < 0$$이면 불안정이다[^2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig2.svg" alt="그림" width="507" height="297" loading="lazy">
 
 $$b = 1$$이고 상수 입력 1을 넣은 경우다. $$a = 1$$이면 $$b/a = 1$$에 머물고, $$a = -1$$이면 끝없이 커진다[^s2].
 
@@ -127,9 +127,9 @@ $$b = 1$$이고 상수 입력 1을 넣은 경우다. $$a = 1$$이면 $$b/a = 1$$
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/04.Week04_CH01_3_handout.pdf, p.12 (그림 1.46)
+[^1]: 신호 및 시스템 4회 강의 자료 「Week04_CH01_3_handout」, p.12 (그림 1.46)
 [^2]: 같은 자료, p.13
 [^3]: 같은 자료, p.14 (예제 1.13)
-[^s1]: 에이전트 보충. 하울링 예, LTI 안정 판정법 예고, 오해 항목의 $$(-1)^n u[n]$$ 예, 확인 문제 C1·C2는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [15_stability_plot.py](/Hongs_Blog/studies/signals-and-systems/code/15_stability_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 누산기 출력 $$n + 1$$과 1, 0, 1, 0, 미분방정식의 닫힌 꼴 $$(1 - e^{-at})/a$$가 오일러 방법과 같음.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하울링 예, LTI 안정 판정법 예고, 오해 항목의 $$(-1)^n u[n]$$ 예, 확인 문제 C1·C2는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [15_stability_plot.py](/Hongs_Blog/studies/signals-and-systems/code/15_stability_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 누산기 출력 $$n + 1$$과 1, 0, 1, 0, 미분방정식의 닫힌 꼴 $$(1 - e^{-at})/a$$가 오일러 방법과 같음.
 {% endraw %}

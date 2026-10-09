@@ -61,7 +61,7 @@ permalink: "/studies/college-math/"
 | 07 | [로그](/Hongs_Blog/studies/college-math/logarithm/) | 몇 번 곱해야 하는지 답하는 수. 곱을 합으로 바꾼다 (무거움) | [검증](/Hongs_Blog/studies/college-math/code/07_logarithm_verify/) | [로그 계산 예제 사다리](/Hongs_Blog/studies/college-math/logarithm-ladder/) |
 | 08 | [로그함수와 로그 스케일](/Hongs_Blog/studies/college-math/log-scale/) | 아주 느리게 자라는 함수. 비율을 등간격으로 보는 눈금 | [그림1](/Hongs_Blog/assets/notes/college-math/08_log-scale_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/college-math/08_log-scale_fig2.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/08_log-scale_plot/) · [검증](/Hongs_Blog/studies/college-math/code/08_log-scale_verify/) | — |
 | 09 | [거듭제곱함수와 지수함수 비교](/Hongs_Blog/studies/college-math/power-vs-exponential/) | 가르는 질문: 변수가 밑에 있는가, 지수에 있는가 | [그림1](/Hongs_Blog/assets/notes/college-math/09_power-vs-exponential_fig1.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/09_power-vs-exponential_plot/) · [검증](/Hongs_Blog/studies/college-math/code/09_power-vs-exponential_verify/) | — |
-| 10 | [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/) | 2진·16진 변환. n의 자릿수는 ⌊log_b n⌋ + 1 | [그림1](/Hongs_Blog/assets/notes/college-math/10_positional-notation_fig1.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/10_positional-notation_plot/) · [검증](/Hongs_Blog/studies/college-math/code/10_positional-notation_verify/) | — |
+| 10 | [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/) | 2진·16진 변환. n의 자릿수는 ⌊log<sub>b</sub> n⌋ + 1 | [그림1](/Hongs_Blog/assets/notes/college-math/10_positional-notation_fig1.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/10_positional-notation_plot/) · [검증](/Hongs_Blog/studies/college-math/code/10_positional-notation_verify/) | — |
 
 떠올려 보기: 지수법칙 네 개를 쓰고 각각이 어느 로그 법칙이 되는지 짝지은 뒤, "변수가 밑에 있는가, 지수에 있는가"로 가르는 예를 두 개씩 든다.
 
@@ -104,7 +104,7 @@ permalink: "/studies/college-math/"
 |---|---|---|---|---|
 | 17 | [극좌표와 매개변수 곡선](/Hongs_Blog/studies/college-math/polar-parametric/) | 점을 (거리, 각)으로, 곡선을 시간에 따른 점의 이동으로 | [그림1](/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig2.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/17_polar-parametric_plot/) · [검증](/Hongs_Blog/studies/college-math/code/17_polar-parametric_verify/) | — |
 | 18 | [복소수](/Hongs_Blog/studies/college-math/complex-numbers/) | i² = −1을 더한 수. 평면 위의 점 | [그림1](/Hongs_Blog/assets/notes/college-math/18_complex-numbers_fig1.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/18_complex-numbers_plot/) · [검증](/Hongs_Blog/studies/college-math/code/18_complex-numbers_verify/) | — |
-| 19 | [복소수의 극형식과 오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/) | e^{iθ} = cos θ + i sin θ. 복소수 곱은 회전과 확대 (무거움) | [그림1](/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig2.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/19_euler-formula_plot/) · [검증](/Hongs_Blog/studies/college-math/code/19_euler-formula_verify/) | — |
+| 19 | [복소수의 극형식과 오일러 공식](/Hongs_Blog/studies/college-math/euler-formula/) | e<sup>iθ</sup> = cos θ + i sin θ. 복소수 곱은 회전과 확대 (무거움) | [그림1](/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig2.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/19_euler-formula_plot/) · [검증](/Hongs_Blog/studies/college-math/code/19_euler-formula_verify/) | — |
 
 떠올려 보기: 복소수 곱셈을 전개(대수)와 늘이기·돌리기(기하) 두 가지로 설명하고, 오일러 공식에서 덧셈정리가 나오는 과정을 적어 본다.
 
@@ -122,7 +122,7 @@ permalink: "/studies/college-math/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 20 | [수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/) | 등차·등비수열과 Σ 기호 다루기 | [그림1](/Hongs_Blog/assets/notes/college-math/20_sequences-sigma_fig1.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/20_sequences-sigma_plot/) · [검증](/Hongs_Blog/studies/college-math/code/20_sequences-sigma_verify/) | — |
-| 21 | [등비급수](/Hongs_Blog/studies/college-math/geometric-series/) | 1 + r + … + r^{n−1}의 닫힌 꼴. \|r\| < 1이면 무한합이 수렴 | [그림1](/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig2.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/21_geometric-series_plot/) · [검증](/Hongs_Blog/studies/college-math/code/21_geometric-series_verify/) | — |
+| 21 | [등비급수](/Hongs_Blog/studies/college-math/geometric-series/) | 1 + r + … + r<sup>n−1</sup>의 닫힌 꼴. \|r\| < 1이면 무한합이 수렴 | [그림1](/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig2.svg) · [그림 코드](/Hongs_Blog/studies/college-math/code/21_geometric-series_plot/) · [검증](/Hongs_Blog/studies/college-math/code/21_geometric-series_verify/) | — |
 
 떠올려 보기: 등차·등비수열의 합 공식을 증명(짝 맞추기, rS − S)과 함께 쓰고, 각각 반복문 비용과 동적 배열 비용에 연결해 본다.
 

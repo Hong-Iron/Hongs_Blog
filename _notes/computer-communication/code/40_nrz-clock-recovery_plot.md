@@ -3,7 +3,7 @@ layout: "note"
 title: "40_nrz-clock-recovery_plot.py"
 display_title: "40_nrz-clock-recovery_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "40"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/nrz-clock-recovery/"
 parent_title: "NRZ와 클럭 복구"
-description: "컴퓨터 통신 · NRZ와 클럭 복구 코드 코드"
+description: "컴퓨터 통신 · NRZ와 클럭 복구 그림 생성 코드"
 permalink: "/studies/computer-communication/code/40_nrz-clock-recovery_plot/"
 ---
 {% raw %}
-[NRZ와 클럭 복구](/Hongs_Blog/studies/computer-communication/nrz-clock-recovery/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[NRZ와 클럭 복구](/Hongs_Blog/studies/computer-communication/nrz-clock-recovery/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # NRZ와 클럭 복구 문서의 그림을 만든다: 40_nrz-clock-recovery_fig1.svg

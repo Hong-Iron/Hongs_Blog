@@ -39,7 +39,7 @@ $$\Sigma = \begin{pmatrix}4 & 2\\ 2 & 3\end{pmatrix}$$
 
 인 다변량 정규분포를 따른다. 대각선 4와 3은 각자의 분산, 2는 둘의 공분산이다(상관계수 $$\frac{2}{2\sqrt3} \approx 0.58$$). 표본을 20만 개 뽑아 찍으면 점들이 오른쪽 위로 기운 타원 모양 구름을 이룬다. 타원의 긴 축은 $$\Sigma$$의 큰 고윳값 $$\frac{7 + \sqrt{17}}{2} \approx 5.56$$의 고유벡터 방향, 짧은 축은 작은 고윳값 $$\approx 1.44$$의 방향이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/19_multivariate-normal_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/19_multivariate-normal_fig1.svg" alt="그림" width="485" height="380" loading="lazy">
 
 점은 이 분포에서 뽑은 표본 800개다. 주황 타원 안에 약 95%가 들어가고, 초록과 보라 선분이 타원의 긴 축과 짧은 축이다. 두 축의 길이 비는 $$\sqrt{5.56 / 1.44} \approx 2$$다[^s1].
 
@@ -119,5 +119,5 @@ $$f(\mathbf{x}) = \frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}}\exp\left(-\frac12(\mat
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.5절 "Multivariate Normal"(정의, 일차 변환, 결합 정규에서 무상관 = 독립, 각자 정규여도 결합이 정규가 아닌 예).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [19_multivariate-normal_plot.py](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_plot/)로 그렸고, 그림에 쓴 값(고윳값 $$\frac{7 \pm \sqrt{17}}{2}$$, 숄레스키 인수 $$L$$, 타원 안 비율 95%(±1.5%p))을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [19_multivariate-normal_plot.py](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_plot/)로 그렸고, 그림에 쓴 값(고윳값 $$\frac{7 \pm \sqrt{17}}{2}$$, 숄레스키 인수 $$L$$, 타원 안 비율 95%(±1.5%p))을 같은 코드로 확인했다.
 {% endraw %}

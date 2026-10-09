@@ -3,7 +3,7 @@ layout: "note"
 title: "08_ct-complex-exponential_plot.py"
 display_title: "08_ct-complex-exponential_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "08"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/ct-complex-exponential/"
 parent_title: "연속 시간 복소 지수 신호"
-description: "신호 및 시스템 · 연속 시간 복소 지수 신호 코드 코드"
+description: "신호 및 시스템 · 연속 시간 복소 지수 신호 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/08_ct-complex-exponential_plot/"
 ---
 {% raw %}
-[연속 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/ct-complex-exponential/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[연속 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/ct-complex-exponential/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 연속 시간 복소 지수 신호 문서의 그림을 만든다: 08_ct-complex-exponential_fig1.svg, 08_ct-complex-exponential_fig2.svg

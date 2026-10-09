@@ -56,7 +56,7 @@ permalink: "/studies/human-interface-media/cross-correlation/"
 
 그냥 곱해 더하면 가장 큰 값은 위치 7의 54다. 틀과 모양이 전혀 다른, 그냥 밝은 구간이다. 겹친 조각마다 평균을 빼고 표준편차로 나눈 정규화 점수(상관계수)는 진짜 자리 2에서 정확히 1이고, 밝기만 높은 위치 7에서는 0이다(조각이 9, 9, 9로 평평해서 모양이 없다). 오르막 모양이 틀의 앞부분과 닮은 위치 6은 0.87로 두 번째다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/29_cross-correlation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/29_cross-correlation_fig1.svg" alt="그림" width="612" height="487" loading="lazy">
 
 위는 신호, 가운데는 곱의 합, 아래는 정규화 점수다. 곱의 합은 밝은 구간에서 솟고, 정규화 점수는 틀과 같은 모양이 있는 자리에서만 1에 닿는다[^s2].
 
@@ -179,12 +179,12 @@ def scan(t, s):
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.3 (같은 그림 찾기: 틀을 옮기며 만든 상관 그래프)
+[^1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.3 (같은 그림 찾기: 틀을 옮기며 만든 상관 그래프)
 [^2]: 같은 자료, p.9 (교차 상관의 연속·불연속 정의). 같은 식이 p.8 "교차 상관"과 p.7 "교차 공분산"에도 있다.
 [^3]: 같은 자료, p.6 (상관 가족: 상관, 교차 상관, 자기 상관)과 p.11 (비교 그림의 Autocorrelation)
 [^4]: 같은 자료, p.43 (합성곱 - 패턴 찾기: 동전과 항공 사진의 틀, 상관 그래프 영상)과 p.44 (요약)
-[^s1]: 에이전트 보충. 1차원 예와 표의 수치는 원본에 없다. [29_cross-correlation_impl.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/)로 계산했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [29_cross-correlation_plot.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_plot/)로 그렸고, 곱의 합 최대(위치 7, 54)와 정규화 점수 최대(위치 2, 1)를 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 자기 상관의 최댓값 성질과 코시-슈바르츠 근거, 순서를 바꾸면 뒤집힌다는 성질은 원본에 없다. 표준 결과이고 검증 코드로 확인했다.
-[^s4]: 에이전트 보충. 계산량과 푸리에 변환으로 빠르게 하는 방법, 응용 예(메아리, GPS·레이더)는 신호 처리 교재의 표준 내용이다. 카드 C2~C4는 원본 범위를 넘는다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1차원 예와 표의 수치는 원본에 없다. [29_cross-correlation_impl.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/)로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [29_cross-correlation_plot.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_plot/)로 그렸고, 곱의 합 최대(위치 7, 54)와 정규화 점수 최대(위치 2, 1)를 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 자기 상관의 최댓값 성질과 코시-슈바르츠 근거, 순서를 바꾸면 뒤집힌다는 성질은 원본에 없다. 표준 결과이고 검증 코드로 확인했다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 계산량과 푸리에 변환으로 빠르게 하는 방법, 응용 예(메아리, GPS·레이더)는 신호 처리 교재의 표준 내용이다. 카드 C2~C4는 원본 범위를 넘는다.
 {% endraw %}

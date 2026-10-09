@@ -220,5 +220,5 @@ flowchart TD
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장 "Directed graphs & Partial Orders", 12장 "Simple Graphs"(차수, 악수 정리). Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(그래프의 종류, 인접 행렬과 인접 리스트).
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 섹션의 '설계 이유'와 '해당하지 않는 예', '활용'의 무게 있는 간선을 갈래로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 섹션의 '설계 이유'와 '해당하지 않는 예', '활용'의 무게 있는 간선을 갈래로 그렸다.
 {% endraw %}

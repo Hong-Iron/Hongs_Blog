@@ -72,7 +72,7 @@ $$k$$계 점화식도 $$k \times k$$ 동반 행렬로 같은 대응이 맞는다
 - **전이 행렬로 세기.** "허용되는 패턴"을 상태로, 한 글자 붙이기를 행렬로 두면 문자열·타일링의 개수가 행렬 거듭제곱의 성분이 된다. 오토마타가 받아들이는 길이 $$n$$ 문자열의 수를 세는 표준 방법이다[^s1].
 - 알고리즘에서: 앞 칸들에 상수를 곱해 더하는 [동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/)은 표를 n칸 모두 채워야 한다. n이 $$10^{18}$$처럼 커서 표를 다 채울 수 없을 때 위의 행렬 거듭제곱을 쓴다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/21_recurrence-matrix-bridge_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/21_recurrence-matrix-bridge_fig1.svg" alt="그림" width="625" height="276" loading="lazy">
 
 왼쪽처럼 $$F_{n+1}/F_n$$은 $$\varphi$$의 위아래를 번갈아 오가며 다가간다. 오른쪽처럼 그 차이는 한 단계마다 약 $$\varphi^2 \approx 2.6$$배씩 줄어든다. 둘째 고윳값 $$\psi \approx -0.618$$이 음수라 번갈아 오가고, $$\vert \psi/\varphi\vert  = 1/\varphi^2$$이 작아 빨리 준다[^s2].
 
@@ -123,6 +123,6 @@ $$k$$계 점화식도 $$k \times k$$ 동반 행렬로 같은 대응이 맞는다
 ## 출처
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.2절(피보나치 수와 $$\begin{pmatrix}1 & 1\\ 1 & 0\end{pmatrix}$$, 황금비 고윳값). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장(선형 점화식과 특성방정식).
-[^s1]: 에이전트 보충. 전이 행렬로 문자열·경로를 세는 방법은 조합론의 전이 행렬 방법이며, 결정적 유한 오토마타의 인접 행렬 거듭제곱이 길이 $$n$$ 문자열의 수를 준다. 전이 문제의 개수는 21_recurrence-matrix-bridge_verify.py에서 전수로 셌다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [21_recurrence-matrix-bridge_plot.py](/Hongs_Blog/studies/linear-algebra/code/21_recurrence-matrix-bridge_plot/)로 그렸고, $$F_{10} = 55$$, $$Q^{10}$$, 비가 $$\varphi$$의 위아래를 번갈아 오가는 것, 차이가 줄어드는 비율이 $$\varphi^2$$에 가까운 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전이 행렬로 문자열·경로를 세는 방법은 조합론의 전이 행렬 방법이며, 결정적 유한 오토마타의 인접 행렬 거듭제곱이 길이 $$n$$ 문자열의 수를 준다. 전이 문제의 개수는 21_recurrence-matrix-bridge_verify.py에서 전수로 셌다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [21_recurrence-matrix-bridge_plot.py](/Hongs_Blog/studies/linear-algebra/code/21_recurrence-matrix-bridge_plot/)로 그렸고, $$F_{10} = 55$$, $$Q^{10}$$, 비가 $$\varphi$$의 위아래를 번갈아 오가는 것, 차이가 줄어드는 비율이 $$\varphi^2$$에 가까운 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "30_fermat-euler_plot.py"
 display_title: "30_fermat-euler_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "30"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/fermat-euler/"
 parent_title: "페르마 소정리와 오일러 정리"
-description: "이산수학 · 페르마 소정리와 오일러 정리 코드 코드"
+description: "이산수학 · 페르마 소정리와 오일러 정리 그림 생성 코드"
 permalink: "/studies/discrete-math/code/30_fermat-euler_plot/"
 ---
 {% raw %}
-[페르마 소정리와 오일러 정리](/Hongs_Blog/studies/discrete-math/fermat-euler/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[페르마 소정리와 오일러 정리](/Hongs_Blog/studies/discrete-math/fermat-euler/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 페르마 소정리와 오일러 정리 문서의 그림을 만든다: 30_fermat-euler_fig1.svg

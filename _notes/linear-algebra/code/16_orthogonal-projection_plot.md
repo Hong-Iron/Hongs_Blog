@@ -3,7 +3,7 @@ layout: "note"
 title: "16_orthogonal-projection_plot.py"
 display_title: "16_orthogonal-projection_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "16"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/orthogonal-projection/"
 parent_title: "직교성과 직교 사영"
-description: "선형대수학 · 직교성과 직교 사영 코드 코드"
+description: "선형대수학 · 직교성과 직교 사영 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/16_orthogonal-projection_plot/"
 ---
 {% raw %}
-[직교성과 직교 사영](/Hongs_Blog/studies/linear-algebra/orthogonal-projection/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[직교성과 직교 사영](/Hongs_Blog/studies/linear-algebra/orthogonal-projection/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 직교성과 직교 사영 문서의 그림을 만든다: 16_orthogonal-projection_fig1.svg, 16_orthogonal-projection_fig2.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "23_hessian_plot.py"
 display_title: "23_hessian_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "23"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/hessian/"
 parent_title: "헤세 행렬과 극값 판정"
-description: "미분적분학 · 헤세 행렬과 극값 판정 코드 코드"
+description: "미분적분학 · 헤세 행렬과 극값 판정 그림 생성 코드"
 permalink: "/studies/calculus/code/23_hessian_plot/"
 ---
 {% raw %}
-[헤세 행렬과 극값 판정](/Hongs_Blog/studies/calculus/hessian/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[헤세 행렬과 극값 판정](/Hongs_Blog/studies/calculus/hessian/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 헤세 행렬과 극값 판정 문서의 그림을 만든다: 23_hessian_fig1.svg, 23_hessian_fig2.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "46_fair-share-unix-scheduling_plot.py"
 display_title: "46_fair-share-unix-scheduling_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "46"
 course: "운영체제"
 course_slug: "operating-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 parent_url: "/studies/operating-systems/fair-share-unix-scheduling/"
 parent_title: "공정 분배와 UNIX 스케줄링"
-description: "운영체제 · 공정 분배와 UNIX 스케줄링 코드 코드"
+description: "운영체제 · 공정 분배와 UNIX 스케줄링 그림 생성 코드"
 permalink: "/studies/operating-systems/code/46_fair-share-unix-scheduling_plot/"
 ---
 {% raw %}
-[공정 분배와 UNIX 스케줄링](/Hongs_Blog/studies/operating-systems/fair-share-unix-scheduling/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[공정 분배와 UNIX 스케줄링](/Hongs_Blog/studies/operating-systems/fair-share-unix-scheduling/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 공정 분배와 UNIX 스케줄링 문서의 그림을 만든다: 46_fair-share-unix-scheduling_fig1.svg

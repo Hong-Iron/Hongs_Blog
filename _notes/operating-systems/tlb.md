@@ -79,7 +79,7 @@ flowchart TB
 $$\text{평균 접근 시간} = h\,(t + m) + (1 - h)\,(t + 2m)$$
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/40_tlb_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/40_tlb_fig1.svg" alt="그림" width="536" height="335" loading="lazy">
 
 $$t = 20$$, $$m = 100$$ ns로 그린 직선이다. 적중률이 1%포인트 오를 때마다 평균이 1 ns씩 준다. 적중률이 20%보다 낮으면 TLB를 먼저 찾아보는 20 ns가 손해가 되어, TLB가 없을 때보다 오히려 느리다[^s2].
 
@@ -116,10 +116,10 @@ $$t = 20$$, $$m = 100$$ ns로 그린 직선이다. 적중률이 1%포인트 오�
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/08.Chapter08-new.pptx, 슬라이드 24
+[^1]: 운영체제 8회 강의 자료 「Chapter08-new」, 슬라이드 24
 [^2]: 같은 자료, 슬라이드 25~28 (그림 8.7, 8.8)
 [^3]: 같은 자료, 슬라이드 29~30 (그림 8.9)
 [^4]: 같은 자료, 슬라이드 31 (그림 8.10)
-[^s1]: 에이전트 보충. 시간 예와 유효 접근 시간 식, 프로세스·스레드 전환과 TLB, 확인 문제 C2·C3은 슬라이드에 없다. Stallings 6판 8.1절과 일반 교재의 유효 접근 시간 계산을 따랐다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [40_tlb_plot.py](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/)로 그렸고, 적중률 98%에서 122 ns, 0%에서 220 ns, 100%에서 120 ns, 20%에서 TLB 없을 때와 같은 200 ns를 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 시간 예와 유효 접근 시간 식, 프로세스·스레드 전환과 TLB, 확인 문제 C2·C3은 슬라이드에 없다. Stallings 6판 8.1절과 일반 교재의 유효 접근 시간 계산을 따랐다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [40_tlb_plot.py](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/)로 그렸고, 적중률 98%에서 122 ns, 0%에서 220 ns, 100%에서 120 ns, 20%에서 TLB 없을 때와 같은 200 ns를 같은 코드로 확인했다.
 {% endraw %}

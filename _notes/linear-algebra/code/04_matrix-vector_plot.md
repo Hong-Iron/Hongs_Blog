@@ -3,7 +3,7 @@ layout: "note"
 title: "04_matrix-vector_plot.py"
 display_title: "04_matrix-vector_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "04"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/matrix-vector/"
 parent_title: "행렬과 행렬-벡터 곱"
-description: "선형대수학 · 행렬과 행렬-벡터 곱 코드 코드"
+description: "선형대수학 · 행렬과 행렬-벡터 곱 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/04_matrix-vector_plot/"
 ---
 {% raw %}
-[행렬과 행렬-벡터 곱](/Hongs_Blog/studies/linear-algebra/matrix-vector/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[행렬과 행렬-벡터 곱](/Hongs_Blog/studies/linear-algebra/matrix-vector/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 행렬과 행렬-벡터 곱 문서의 그림을 만든다: 04_matrix-vector_fig1.svg

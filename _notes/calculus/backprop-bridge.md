@@ -132,5 +132,5 @@ flowchart TD
 
 [^1]: Goodfellow, Bengio, Courville, *Deep Learning*, 6.5절 "Back-Propagation and Other Differentiation Algorithms"(계산 그래프, 연쇄 법칙의 재귀적 적용, 메모리와 비용).
 [^2]: Griewank, Walther, *Evaluating Derivatives* 2판, 3장(역방향 모드와 기울기 계산 비용의 상수배 한계).
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. [22_backprop-bridge_impl.py](/Hongs_Blog/studies/calculus/code/22_backprop-bridge_impl/)의 `backward()`(DFS로 위상 순서를 만들고, 역순으로 `부모.grad += 국소 도함수 × 자신.grad`)를 따라 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. [22_backprop-bridge_impl.py](/Hongs_Blog/studies/calculus/code/22_backprop-bridge_impl/)의 `backward()`(DFS로 위상 순서를 만들고, 역순으로 `부모.grad += 국소 도함수 × 자신.grad`)를 따라 그렸다.
 {% endraw %}

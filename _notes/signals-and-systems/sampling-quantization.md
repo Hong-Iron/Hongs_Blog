@@ -72,7 +72,7 @@ flowchart LR
 
 **정현파 표본화.**[^s1] 2Hz 코사인 $$\cos(2\pi \cdot 2t)$$를 $$T_s = 0.05$$초(초당 20번)로 읽으면 $$x[n] = \cos(2\pi \cdot 0.1\,n)$$이다. $$\frac{\omega_0}{2\pi} = 0.1 = \frac{1}{10}$$이므로 10개마다 되풀이된다. 연속 신호의 한 주기(0.5초) 동안 정확히 10개를 뽑기 때문이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig1.svg" alt="그림" width="564" height="391" loading="lazy">
 
 동그라미가 $$T_s = 0.05$$초마다 뽑은 표본이고, 네모가 그 값을 3비트 8단계(점선) 중 가운데 값으로 반올림한 것이다. 아래의 오차는 칸 폭의 절반인 $$\pm 0.125$$를 넘지 않는다[^s2].
 
@@ -88,7 +88,7 @@ flowchart LR
 - 표본 간격이 너무 넓으면 빠른 신호가 느린 신호로 잘못 보인다. 12주차 자료는 주파수 $$f$$인 정현파를 서로 다른 표본화율 $$f_s$$로 뽑은 그림으로 이를 보인다[^4]. 정확한 조건(표본화 정리)은 4장 뒤에서 다룬다.
 - 그림 (A)~(D)처럼 표본화율과 양자화 단계를 함께 늘려야 원래 곡선에 가까워진다[^2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig2.svg" alt="그림" width="538" height="276" loading="lazy">
 
 표본 간격이 너무 넓은 예다. 2Hz 코사인을 초당 2.5번만 뽑으면, 그 점들이 0.5Hz 코사인 위에 그대로 놓여 느린 신호로 보인다[^s2].
 
@@ -115,11 +115,11 @@ flowchart LR
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/03.Week03_CH01_2_handout.pdf, p.35
+[^1]: 신호 및 시스템 3회 강의 자료 「Week03_CH01_2_handout」, p.35
 [^2]: 같은 자료, p.36~37
-[^3]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.4, p.13
-[^4]: 3-1학기/신호 및 시스템/1.수업자료/12.Week12_CH03_4_handout.pdf, p.3
-[^s1]: 에이전트 보충. 양자화 오차의 한계 $$\Delta_q/2$$와 4비트 예, 2Hz 코사인 표본화 예, 음악 CD의 수치, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [11_sampling-quantization_plot.py](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 10개마다 되풀이, 3비트 양자화의 8단계와 최대 오차 0.125, 2Hz와 0.5Hz 코사인이 초당 2.5번 뽑은 표본에서 같음. 3비트와 2.5Hz 표본화는 설명을 위해 고른 값이다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 표본화·양자화 절(2주차 자료 p.4, 3주차 자료 p.35~37)을 근거로 그렸다.
+[^3]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.4, p.13
+[^4]: 신호 및 시스템 12회 강의 자료 「Week12_CH03_4_handout」, p.3
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 양자화 오차의 한계 $$\Delta_q/2$$와 4비트 예, 2Hz 코사인 표본화 예, 음악 CD의 수치, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [11_sampling-quantization_plot.py](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 10개마다 되풀이, 3비트 양자화의 8단계와 최대 오차 0.125, 2Hz와 0.5Hz 코사인이 초당 2.5번 뽑은 표본에서 같음. 3비트와 2.5Hz 표본화는 설명을 위해 고른 값이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 표본화·양자화 절(2주차 자료 p.4, 3주차 자료 p.35~37)을 근거로 그렸다.
 {% endraw %}

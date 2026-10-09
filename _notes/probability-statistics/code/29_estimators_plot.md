@@ -3,7 +3,7 @@ layout: "note"
 title: "29_estimators_plot.py"
 display_title: "29_estimators_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "29"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/estimators/"
 parent_title: "표본분포와 추정량"
-description: "확률과 통계 · 표본분포와 추정량 코드 코드"
+description: "확률과 통계 · 표본분포와 추정량 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/29_estimators_plot/"
 ---
 {% raw %}
-[표본분포와 추정량](/Hongs_Blog/studies/probability-statistics/estimators/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[표본분포와 추정량](/Hongs_Blog/studies/probability-statistics/estimators/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 표본분포와 추정량 문서의 그림을 만든다: 29_estimators_fig1.svg

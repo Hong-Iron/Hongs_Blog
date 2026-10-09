@@ -125,6 +125,6 @@ B 해제 뒤에도 256 블록이 합쳐지지 않는 것을 보라. B의 짝은 
 
 </details>
 
-[^s1]: 에이전트 보충. 공개 7장 슬라이드(Stony Brook)에 버디 시스템이 없어 문서 전체를 Stallings, *Operating Systems: Internals and Design Principles* 6판, 7.2절(그림 7.6, 7.7)로 채웠다. 짝 주소의 XOR 계산, 복잡도, 리눅스 사용은 교재 밖의 표준 설명이다(리눅스: Bovet & Cesati, *Understanding the Linux Kernel*, 8장 "Buddy System Algorithm").
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기" 표의 D 요청 행을 쪼개기 나무로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 공개 7장 슬라이드(Stony Brook)에 버디 시스템이 없어 문서 전체를 Stallings, *Operating Systems: Internals and Design Principles* 6판, 7.2절(그림 7.6, 7.7)로 채웠다. 짝 주소의 XOR 계산, 복잡도, 리눅스 사용은 교재 밖의 표준 설명이다(리눅스: Bovet & Cesati, *Understanding the Linux Kernel*, 8장 "Buddy System Algorithm").
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "예시로 보기" 표의 D 요청 행을 쪼개기 나무로 옮겼다.
 {% endraw %}

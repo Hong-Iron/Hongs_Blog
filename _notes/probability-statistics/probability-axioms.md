@@ -80,7 +80,7 @@ $$\Omega$$가 유한하고 모든 결과가 똑같이 그럴듯하면 $$P(A) = \
 
 직관이 틀리는 이유는 "나와 같은 생일"(22쌍)이 아니라 "누구든 두 사람"($$\binom{23}{2} = 253$$쌍)을 따지기 때문이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/02_probability-axioms_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/02_probability-axioms_fig1.svg" alt="그림" width="520" height="335" loading="lazy">
 
 파란 선은 누구든 두 사람의 생일이 겹칠 확률이고, 주황 선은 나와 생일이 같은 사람이 있을 확률이다. 23명에서 파란 선은 절반을 넘지만, 주황 선은 6%에 그친다[^s2].
 
@@ -131,6 +131,6 @@ $$\Omega$$가 유한하고 모든 결과가 똑같이 그럴듯하면 $$P(A) = \
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 1.3절 "Naive definition of probability", 1.4절 "How to count"(생일 문제), 1.6절 "Non-naive definition of probability"(공리와 그 성질).
-[^s1]: 에이전트 보충. 절반 지점의 근사 $$\sqrt{2n\ln 2}$$는 $$\prod_{i<k}\left(1 - \frac in\right) \approx e^{-k^2/(2n)}$$에서 나온다. $$n = 2^{32}$$에서 정확한 경계 77,164는 02_probability-axioms_verify.py로 계산했다. 해시 테이블의 충돌 처리는 CLRS 3판 11장에서 다룬다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [02_probability-axioms_plot.py](/Hongs_Blog/studies/probability-statistics/code/02_probability-axioms_plot/)로 그렸고, 그림에 쓴 값(23명 0.5073, 57명에서 처음 0.99를 넘음, 나와 같은 생일 23명 0.059)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 절반 지점의 근사 $$\sqrt{2n\ln 2}$$는 $$\prod_{i<k}\left(1 - \frac in\right) \approx e^{-k^2/(2n)}$$에서 나온다. $$n = 2^{32}$$에서 정확한 경계 77,164는 02_probability-axioms_verify.py로 계산했다. 해시 테이블의 충돌 처리는 CLRS 3판 11장에서 다룬다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [02_probability-axioms_plot.py](/Hongs_Blog/studies/probability-statistics/code/02_probability-axioms_plot/)로 그렸고, 그림에 쓴 값(23명 0.5073, 57명에서 처음 0.99를 넘음, 나와 같은 생일 23명 0.059)을 같은 코드로 확인했다.
 {% endraw %}

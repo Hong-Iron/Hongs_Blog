@@ -87,7 +87,7 @@ permalink: "/studies/operating-systems/processor-registers/"
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/01.Chapter01-new.pptx, 슬라이드 11 발표자 노트
+[^1]: 운영체제 1회 강의 자료 「Chapter01-new」, 슬라이드 11 발표자 노트
 [^2]: 같은 자료, 슬라이드 15와 발표자 노트
 [^3]: 같은 자료, 슬라이드 12~13과 발표자 노트
 [^4]: 같은 자료, 슬라이드 11

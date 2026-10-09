@@ -3,7 +3,7 @@ layout: "note"
 title: "26_conditioning_plot.py"
 display_title: "26_conditioning_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "26"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/conditioning/"
 parent_title: "노름과 조건수"
-description: "선형대수학 · 노름과 조건수 코드 코드"
+description: "선형대수학 · 노름과 조건수 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/26_conditioning_plot/"
 ---
 {% raw %}
-[노름과 조건수](/Hongs_Blog/studies/linear-algebra/conditioning/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[노름과 조건수](/Hongs_Blog/studies/linear-algebra/conditioning/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 노름과 조건수 문서의 그림을 만든다: 26_conditioning_fig1.svg, 26_conditioning_fig2.svg

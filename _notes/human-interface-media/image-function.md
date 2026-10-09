@@ -68,7 +68,7 @@ $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 
 디지털 이미지는 $$i(x, y)$$를 격자점에서만 재고(표본화, sampling) 값을 정수로 반올림한(양자화, quantization) 것이다. 강의 계획표 6주차 "Image Representation & Spatial Frequency"가 다룬다[^3][^s2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/12_image-function_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/12_image-function_fig1.svg" alt="그림" width="612" height="352" loading="lazy">
 
 위 그림은 1 cm에 5주기인 줄무늬(500 cycle/m)를 0.25 mm마다 잰 점이다. 아래 그림은 그 값을 8단계 중 가장 가까운 단계로 맞춘 결과다. 매끈한 곡선이 계단이 된다[^s3].
 
@@ -122,10 +122,10 @@ $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.3 (시각 정보)
-[^2]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.19 (요약: "윤곽선: 평면에 대한 밝기 변화 또는 색깔 변화 정도 ∇i(x,y)")
-[^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar 6주차
-[^s1]: 에이전트 보충. 벡터 값 함수 표기와 "채널 사진의 벡터 덧셈"이라는 해석은 슬라이드 그림(원본 = 빨강 + 초록 + 파랑 채널 사진)에 맞춘 것이다.
-[^s2]: 에이전트 보충. 표본화·양자화, 윤곽 검출과 흐리기의 주파수 해석은 영상 처리의 표준 내용이다.
-[^s3]: 에이전트 보충. 그림 1장은 원본에 없다. [12_image-function_plot.py](/Hongs_Blog/studies/human-interface-media/code/12_image-function_plot/)로 그렸고, 그림에 쓴 값(한 주기 2 mm라 1 cm에 5주기, 양자화 오차가 단계 간격의 절반(16) 이하)을 같은 코드로 확인했다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.3 (시각 정보)
+[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.19 (요약: "윤곽선: 평면에 대한 밝기 변화 또는 색깔 변화 정도 ∇i(x,y)")
+[^3]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 6주차
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 벡터 값 함수 표기와 "채널 사진의 벡터 덧셈"이라는 해석은 슬라이드 그림(원본 = 빨강 + 초록 + 파랑 채널 사진)에 맞춘 것이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표본화·양자화, 윤곽 검출과 흐리기의 주파수 해석은 영상 처리의 표준 내용이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [12_image-function_plot.py](/Hongs_Blog/studies/human-interface-media/code/12_image-function_plot/)로 그렸고, 그림에 쓴 값(한 주기 2 mm라 1 cm에 5주기, 양자화 오차가 단계 간격의 절반(16) 이하)을 같은 코드로 확인했다.
 {% endraw %}

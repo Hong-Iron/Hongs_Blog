@@ -72,7 +72,7 @@ permalink: "/studies/signals-and-systems/independent-variable-transform/"
 - 다른 순서: $$x(\frac32 t)$$를 먼저 그리면 $$0 \sim \frac23$$에서 1, $$\frac23 \sim \frac43$$에서 내려간다. 여기서 1이 아니라 $$\frac23$$만큼 왼쪽으로 밀어야 같은 답이 나온다.
 - 빠른 확인: $$a = 0$$, $$b = 2$$, $$\alpha = \frac32$$, $$\beta = 1$$이면 $$\frac{0 - 1}{3/2} = -\frac23$$, $$\frac{2 - 1}{3/2} = \frac23$$. 맞다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/05_independent-variable-transform_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/05_independent-variable-transform_fig1.svg" alt="그림" width="564" height="448" loading="lazy">
 
 가운데는 예 1, 아래는 예 2의 결과다. 예 1은 좌우가 뒤집혔고, 예 2는 뒤집히지 않은 채 왼쪽으로 옮겨지고 폭이 $$\frac23$$배로 줄었다[^s2].
 
@@ -131,12 +131,12 @@ permalink: "/studies/signals-and-systems/independent-variable-transform/"
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.28~29 (그림 1.8)
+[^1]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.28~29 (그림 1.8)
 [^2]: 같은 자료, p.30 (그림 1.10, 1.11)
 [^3]: 같은 자료, p.31 (그림 1.12)
 [^4]: 같은 자료, p.32
 [^5]: 같은 자료, p.35
 [^6]: 같은 자료, p.33~34 (예제 1.1~1.3, 그림 1.13)
-[^s1]: 에이전트 보충. 끝점으로 구간을 구하는 빠른 확인법, 시험 문제 유형에 관한 말, 확인 문제 C1·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [05_independent-variable-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/05_independent-variable-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예 1의 $$-1 \sim 1$$, 예 2의 $$-\frac23 \sim \frac23$$ 구간과 중간값을 점마다 계산.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 끝점으로 구간을 구하는 빠른 확인법, 시험 문제 유형에 관한 말, 확인 문제 C1·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [05_independent-variable-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/05_independent-variable-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예 1의 $$-1 \sim 1$$, 예 2의 $$-\frac23 \sim \frac23$$ 구간과 중간값을 점마다 계산.
 {% endraw %}

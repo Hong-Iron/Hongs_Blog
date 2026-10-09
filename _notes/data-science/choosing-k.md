@@ -43,7 +43,7 @@ k-평균은 무리 수를 미리 알려 줘야 한다. 무리를 늘리면 점�
 
 $$J$$는 $$k$$를 늘릴수록 계속 줄지만, $$k = 3$$ 다음부터 거의 줄지 않는다. 그래프의 팔꿈치(엘보)가 $$k = 3$$이다. 실루엣도 $$k = 3$$에서 가장 높다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/28_choosing-k_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/28_choosing-k_fig1.svg" alt="그림" width="612" height="266" loading="lazy">
 
 위 표의 값이다. 왼쪽 $$J$$는 $$k = 3$$에서 꺾인 뒤 거의 평평하고, 오른쪽 실루엣은 $$k = 3$$에서 가장 높다[^s2].
 
@@ -116,9 +116,9 @@ $$s(i)$$는 $$-1$$에서 1 사이다. 1에 가까우면 잘 묶였고, 0에 가�
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/07.7-1_basic-clustering.pdf, p.17~18
+[^1]: 데이터 과학 7회 강의 자료 「7-1_basic-clustering」, p.17~18
 [^2]: 같은 자료, p.19
 [^3]: 같은 자료, p.20
-[^s1]: 에이전트 보충. 1차원 예와 표, 카드 C2·C3은 원본에 없다. 검증 코드로 계산했다(가장 좋은 k-평균 답은 모든 나눔을 시험해 찾았다).
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [28_choosing-k_plot.py](/Hongs_Blog/studies/data-science/code/28_choosing-k_plot/)로 그렸고, 표의 $$J$$ 548, 127.5, 6, 4.5, 3과 실루엣 0.665, 0.854, 0.620, 0.392를 모든 나눔을 시험해 다시 계산했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1차원 예와 표, 카드 C2·C3은 원본에 없다. 검증 코드로 계산했다(가장 좋은 k-평균 답은 모든 나눔을 시험해 찾았다).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [28_choosing-k_plot.py](/Hongs_Blog/studies/data-science/code/28_choosing-k_plot/)로 그렸고, 표의 $$J$$ 548, 127.5, 6, 4.5, 3과 실루엣 0.665, 0.854, 0.620, 0.392를 모든 나눔을 시험해 다시 계산했다.
 {% endraw %}

@@ -41,7 +41,7 @@ permalink: "/studies/calculus/curve-analysis/"
 
 너무 조금 잘라도, 너무 많이 잘라도 부피가 작다. 가장 큰 곳에서 그래프는 평평해진다. 도함수 $$V'(x) = (12 - 2x)(12 - 6x)$$는 $$x = 2$$에서 0이고, 그 왼쪽에서 양수(오름), 오른쪽에서 음수(내림)다. 부피가 아래의 목적함수, $$x = 2$$가 임계점이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/07_curve-analysis_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/07_curve-analysis_fig1.svg" alt="그림" width="526" height="342" loading="lazy">
 
 점은 표의 다섯 값이다. 초록 칸에서는 곡선이 오르고 주황 칸에서는 내린다. 두 칸이 바뀌는 $$x = 2$$에서 접선이 수평(점선)이 된다[^s2].
 
@@ -137,7 +137,7 @@ flowchart TD
 3. *판정:* $$W''(T) = \frac{2C}{T^3} > 0$$이라 극소이고, 임계점이 하나뿐이라 최소다.
 4. *해석:* $$C = 5$$분, $$M = 1440$$분(하루)이면 $$T^* = \sqrt{14400} = 120$$분. 저장이 싸거나 고장이 잦을수록 자주 저장한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/07_curve-analysis_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/07_curve-analysis_fig2.svg" alt="그림" width="539" height="342" loading="lazy">
 
 주황 곡선(저장 비용)은 $$T$$가 커질수록 줄고, 초록 직선(잃는 계산)은 커질수록 는다. 둘을 더한 파란 곡선은 두 선이 만나는 $$T = 120$$에서 가장 낮다[^s2].
 
@@ -221,12 +221,12 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.3절 "Maxima and Minima"(임계점, 페르마 정리, 닫힌 구간 방법), 4.5절 "Derivatives and the Shape of a Graph"(증감·볼록성·이계도함수 판정), 4.7절 "Applied Optimization Problems"
-[^s1]: 에이전트 보충. 이 비용 모형과 최적 간격 $$\sqrt{2CM}$$은 Young, "A first order approximation to the optimum checkpoint interval", *Communications of the ACM* 17(9), 1974의 결과다. 고장이 드물고 저장 비용이 작을 때의 1차 근사다.
-[^n1]: 2-2학기/수치해석/1.수업자료/14.na14_optimization.pdf, p.2~4
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 비용 모형과 최적 간격 $$\sqrt{2CM}$$은 Young, "A first order approximation to the optimum checkpoint interval", *Communications of the ACM* 17(9), 1974의 결과다. 고장이 드물고 저장 비용이 작을 때의 1차 근사다.
+[^n1]: 수치해석 14회 강의 자료 「na14_optimization」, p.2~4
 [^n2]: 같은 자료, p.5~7
 [^n3]: 같은 자료, p.8
 [^n4]: 같은 자료, p.9
-[^sn1]: 에이전트 보충. 끝점 값과 비교, 카드 C5는 원본에 없다. 07_curve-analysis_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [07_curve-analysis_plot.py](/Hongs_Blog/studies/calculus/code/07_curve-analysis_plot/)로 그렸고, 표의 부피 100, 128, 108, 64, 20, 격자 탐색으로 찾은 최댓값 128($$x = 2$$), 도함수의 부호, $$C = 5$$, $$M = 1440$$에서 $$T^* = 120$$을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리 2(증감 판정), 정리 3(이계도함수 판정), 자주 하는 오해의 "좌우 부호 변화나 이계도함수로 판정", 과목별 관점의 1계 도함수 판정을 근거로 그렸다.
+[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 끝점 값과 비교, 카드 C5는 원본에 없다. 07_curve-analysis_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [07_curve-analysis_plot.py](/Hongs_Blog/studies/calculus/code/07_curve-analysis_plot/)로 그렸고, 표의 부피 100, 128, 108, 64, 20, 격자 탐색으로 찾은 최댓값 128($$x = 2$$), 도함수의 부호, $$C = 5$$, $$M = 1440$$에서 $$T^* = 120$$을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정리 2(증감 판정), 정리 3(이계도함수 판정), 자주 하는 오해의 "좌우 부호 변화나 이계도함수로 판정", 과목별 관점의 1계 도함수 판정을 근거로 그렸다.
 {% endraw %}

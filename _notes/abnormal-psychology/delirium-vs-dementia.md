@@ -60,7 +60,7 @@ permalink: "/studies/abnormal-psychology/delirium-vs-dementia/"
 - **처음부터 발달이 늦었던 경우:** [지적장애](/Hongs_Blog/studies/abnormal-psychology/intellectual-disability/). 떨어진 것이 아니라 도달하지 못한 것이다.
 - **의식은 맑은데 환청과 망상이 중심일 때:** [조현병](/Hongs_Blog/studies/abnormal-psychology/schizophrenia/) 같은 정신병적 장애.
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.66 (섬망 vs 치매 표). 표 위에 "한 번 읽어보기!"라는 손글씨 필기가 있다.
-[^s1]: 에이전트 보충. 치매가 섬망의 가장 큰 위험 요인이고 두 상태가 겹칠 수 있다는 점은 DSM-5-TR 섬망의 위험 요인 설명을 따랐다.
-[^s2]: 에이전트 보충. 우울증에 의한 인지 저하와 치매의 감별은 임상에서 흔히 쓰는 구별이다. 가성치매는 DSM의 공식 진단명이 아니다.
+[^1]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.66 (섬망 vs 치매 표). 표 위에 "한 번 읽어보기!"라는 손글씨 필기가 있다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 치매가 섬망의 가장 큰 위험 요인이고 두 상태가 겹칠 수 있다는 점은 DSM-5-TR 섬망의 위험 요인 설명을 따랐다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 우울증에 의한 인지 저하와 치매의 감별은 임상에서 흔히 쓰는 구별이다. 가성치매는 DSM의 공식 진단명이 아니다.
 {% endraw %}

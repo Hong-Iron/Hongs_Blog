@@ -112,5 +112,5 @@ permalink: "/studies/abnormal-psychology/neurodevelopmental-practice/"
 </details>
 
 
-[^s1]: 에이전트 보충. 모든 사례와 풀이는 11.신경발달장애, 신경인지장애.pdf의 장애별 설명(p.3~58)을 적용한 가상 사례다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 11.신경발달장애, 신경인지장애.pdf의 장애별 설명(p.3~58)을 적용한 가상 사례다.
 {% endraw %}

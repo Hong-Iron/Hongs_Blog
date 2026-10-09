@@ -3,7 +3,7 @@ layout: "note"
 title: "19_eigenvalues_plot.py"
 display_title: "19_eigenvalues_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/eigenvalues/"
 parent_title: "고윳값과 고유벡터"
-description: "선형대수학 · 고윳값과 고유벡터 코드 코드"
+description: "선형대수학 · 고윳값과 고유벡터 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/19_eigenvalues_plot/"
 ---
 {% raw %}
-[고윳값과 고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[고윳값과 고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 고윳값과 고유벡터 문서의 그림을 만든다: 19_eigenvalues_fig1.svg

@@ -134,6 +134,6 @@ def leaves(t):
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 7장 "Recursive Data Types"(재귀적 정의, 구조적 귀납법, 균형 괄호). Rosen, *Discrete Mathematics and Its Applications* 7판, 5장.
-[^s1]: 에이전트 보충. $$n$$번째 카탈랑 수는 $$\frac{1}{n+1}\binom{2n}{n}$$이다. 이 값은 검증 코드의 개수와 같다(1, 1, 2, 5, 14, 42, 132).
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '재귀 함수' 문단의 정 이진 트리 정의(잎 하나, 또는 두 트리를 붙인 노드)를 작은 예로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$n$$번째 카탈랑 수는 $$\frac{1}{n+1}\binom{2n}{n}$$이다. 이 값은 검증 코드의 개수와 같다(1, 1, 2, 5, 14, 42, 132).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '재귀 함수' 문단의 정 이진 트리 정의(잎 하나, 또는 두 트리를 붙인 노드)를 작은 예로 그렸다.
 {% endraw %}

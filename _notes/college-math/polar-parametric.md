@@ -43,7 +43,7 @@ permalink: "/studies/college-math/polar-parametric/"
 | 극좌표 | $$r = 2$$ | $$r = \theta$$ |
 | 매개변수 | $$(2\cos t, 2\sin t)$$, $$0 \le t < 2\pi$$ | $$(t\cos t,\ t\sin t)$$, $$t \ge 0$$ |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig1.svg" alt="그림" width="464" height="312" loading="lazy">
 
 원 $$r = 2$$는 방향이 바뀌어도 거리가 그대로다. 나선 $$r = \theta$$는 한 바퀴 돌 때마다 원점에서 $$2\pi$$(약 6.28)씩 멀어진다. 주황 점은 $$\theta$$가 $$\pi/2$$씩 늘 때의 위치다[^s1].
 
@@ -81,7 +81,7 @@ $$x = r\cos\theta,\quad y = r\sin\theta; \qquad r = \sqrt{x^2 + y^2},\quad \thet
 
 **포물선 운동.** 속력 $$v$$, 발사각 $$\alpha$$로 던진 공은 $$(vt\cos\alpha,\ vt\sin\alpha - \frac12 g t^2)$$을 따라간다. $$v = 20$$ m/s, $$\alpha = 45°$$, $$g = 9.8$$ m/s²이면 $$y = 0$$으로 돌아오는 $$t = 2v\sin\alpha / g$$에서 약 40.8 m 떨어진 곳에 떨어진다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig2.svg" alt="그림" width="550" height="190" loading="lazy">
 
 주황 점은 0.25초마다 찍은 공의 위치다. 가로 간격은 늘 같다. 가로 속도 $$v\cos\alpha$$가 바뀌지 않기 때문이다. 세로 간격은 꼭대기에 가까울수록 줄어든다[^s1].
 
@@ -135,5 +135,5 @@ $$x = r\cos\theta,\quad y = r\sin\theta; \qquad r = \sqrt{x^2 + y^2},\quad \thet
 
 [^1]: OpenStax, *Precalculus 2e*, 8.3절 "Polar Coordinates", 8.4절 "Polar Coordinates: Graphs"
 [^2]: OpenStax, *Precalculus 2e*, 8.6절 "Parametric Equations", 8.7절 "Parametric Equations: Graphs"(포물선 운동 포함)
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [17_polar-parametric_plot.py](/Hongs_Blog/studies/college-math/code/17_polar-parametric_plot/)로 그렸고, 그림에 쓴 값(나선의 $$\theta = \pi$$ 점이 $$(-\pi, 0)$$, 사거리 40.82 m, 비행 시간 2.886초)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [17_polar-parametric_plot.py](/Hongs_Blog/studies/college-math/code/17_polar-parametric_plot/)로 그렸고, 그림에 쓴 값(나선의 $$\theta = \pi$$ 점이 $$(-\pi, 0)$$, 사거리 40.82 m, 비행 시간 2.886초)을 같은 코드로 확인했다.
 {% endraw %}

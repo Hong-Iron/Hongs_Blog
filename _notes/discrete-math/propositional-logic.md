@@ -146,5 +146,5 @@ $$(p \to q) \wedge (q \to p)$$의 진리표를 만든다.
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 3장 "Logical Formulas". Rosen, *Discrete Mathematics and Its Applications* 7판, 1장 "The Foundations: Logic and Proofs".
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 로그인 규칙 $$(a \wedge b) \vee c$$와 정의의 연산 순서를 식의 나무 모양으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 로그인 규칙 $$(a \wedge b) \vee c$$와 정의의 연산 순서를 식의 나무 모양으로 그렸다.
 {% endraw %}

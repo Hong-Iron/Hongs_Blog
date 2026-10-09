@@ -54,7 +54,7 @@ permalink: "/studies/probability-statistics/randomized-analysis/"
 
 **체이닝 해시 테이블.** 해시값이 고르고 독립이라 가정하면(단순 균등 해싱) 체인 길이의 기댓값이 $$\alpha = \frac nm$$라, 탐색의 기대 시간은 $$\Theta(1 + \alpha)$$다. 칸 수를 키 수에 비례하게 늘려 $$\alpha$$를 상수로 두면 기대 $$O(1)$$이다[^1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/26_randomized-analysis_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/26_randomized-analysis_fig1.svg" alt="그림" width="538" height="335" loading="lazy">
 
 예시처럼 키 2,000개를 칸 500개에 넣는 실험을 200번 되풀이해, 칸마다 키 수를 센 것이다. 평균은 4지만 빈 칸도 2%쯤 있고, 10개 넘게 몰린 칸도 생긴다. 점은 포아송 분포($$\lambda = 4$$)로, 막대와 거의 겹친다[^s2].
 
@@ -114,6 +114,6 @@ permalink: "/studies/probability-statistics/randomized-analysis/"
 
 [^1]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 5.4절(생일 문제, 공과 통), 7.4절 "Analysis of quicksort"(쌍이 비교될 확률 $$\frac{2}{j - i + 1}$$, 기대 비교 횟수 $$O(n\lg n)$$), 11.2절 "Hash tables"(체이닝, 정리 11.1·11.2), 11.5절 "Perfect hashing".
 [^2]: Mitzenmacher, Upfal, *Probability and Computing*, 5장(공과 통의 최대 부하, 블룸 필터).
-[^s1]: 에이전트 보충. 두 선택 중 덜 찬 곳에 넣으면 최대 부하가 $$\frac{\ln\ln n}{\ln 2} + O(1)$$로 준다는 결과는 Azar, Broder, Karlin, Upfal, "Balanced Allocations", *SIAM Journal on Computing* 29(1), 1999에 있다. 부하 7과 3, 블룸 필터 0.8%, 퀵정렬 수치는 26_randomized-analysis_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [26_randomized-analysis_plot.py](/Hongs_Blog/studies/probability-statistics/code/26_randomized-analysis_plot/)로 그렸고, 그림에 쓴 값(칸당 평균 4, 충돌 쌍의 평균이 $$\binom{2000}{2}\frac{1}{500}$$과 2% 안, 빈 칸 비율 $$e^{-4} \approx 0.018$$, 포아송과의 차이 0.01 미만)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 선택 중 덜 찬 곳에 넣으면 최대 부하가 $$\frac{\ln\ln n}{\ln 2} + O(1)$$로 준다는 결과는 Azar, Broder, Karlin, Upfal, "Balanced Allocations", *SIAM Journal on Computing* 29(1), 1999에 있다. 부하 7과 3, 블룸 필터 0.8%, 퀵정렬 수치는 26_randomized-analysis_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [26_randomized-analysis_plot.py](/Hongs_Blog/studies/probability-statistics/code/26_randomized-analysis_plot/)로 그렸고, 그림에 쓴 값(칸당 평균 4, 충돌 쌍의 평균이 $$\binom{2000}{2}\frac{1}{500}$$과 2% 안, 빈 칸 비율 $$e^{-4} \approx 0.018$$, 포아송과의 차이 0.01 미만)을 같은 코드로 확인했다.
 {% endraw %}

@@ -42,7 +42,7 @@ $$A = 2$$, $$T = 0.5$$ s, $$\phi = \pi/3$$을 넣으면 $$f(0) = 2\sin(\pi/3) \a
 
 그런데 높이 1.73만 보면 원 위의 점이 위로 올라가는 중인지 내려가는 중인지 모른다. 그림자를 하나 더 보면 안다. 가로 그림자 $$A\cos(\cdot)$$와 세로 그림자 $$A\sin(\cdot)$$를 함께 적으면 원 위의 점이 정해진다. 이 두 값을 복소수 하나로 묶는다[^2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/24_complex-wave_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/24_complex-wave_fig1.svg" alt="그림" width="679" height="276" loading="lazy">
 
 왼쪽 원 위의 점이 시계 반대 방향으로 돈다. 점의 세로 위치를 시간에 따라 옮겨 적은 것이 오른쪽 사인 곡선이고, 가로 위치를 옮겨 적으면 코사인이 된다. 점 $$\bullet$$들은 같은 순간을 잇는다[^s1].
 
@@ -128,11 +128,11 @@ $$ x(t) = e^{(\alpha + i\phi)}\, e^{i\,2\pi t/T} $$
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf, p.5 (파동의 시간 함수: 1주기는 1회전, 주기의 정규화, 위상)
+[^1]: 휴먼 인터페이스 미디어 4회 강의 자료 「HIM_강의04_파동의표현」, p.5 (파동의 시간 함수: 1주기는 1회전, 주기의 정규화, 위상)
 [^2]: 같은 자료, p.8 (오일러 공식, 1차원 진동을 복소 평면으로 확대, 파동의 기본 표현 $$x(t) = Ae^{i(2\pi t/T + \phi)} = e^{(\alpha + i\phi)}e^{i(2\pi t/T)}$$). 같은 식이 요약 p.10에 반복된다.
 [^3]: 같은 자료, p.7 (동일한 에너지의 파동이지만 회전 모양이 다른 파동을 표현하는 방법, 2차원 수 복소수)
 [^4]: 같은 자료, p.9 (파동의 에너지)
 [^5]: 같은 자료, p.4 (파동의 표현: 시간 영역 $$F(t)$$, $$F(T)$$, 공간 영역 $$f(x)$$, $$F(\lambda_x)$$, $$f(x,y)$$, $$F(\lambda_x, \lambda_y)$$)
-[^s1]: 에이전트 보충. 그림 1장은 원본 p.5의 회전-사인 그림을 같은 원리로 다시 계산해 그린 것이다. [24_complex-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/)로 그렸고, 점의 세로 위치가 $$\sin$$, 가로 위치가 $$\cos$$와 같은지를 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 슬라이드는 $$\alpha$$를 정의하지 않는다. $$Ae^{i\phi} = e^{\alpha + i\phi}$$가 되려면 $$A = e^\alpha$$, 곧 $$\alpha = \ln A$$여야 한다. 실수 사인을 복소수의 허수부로 읽는 해석, 회전 방향 예, 실수와 복소수 전력의 비교, 카드 C2·C3은 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본 p.5의 회전-사인 그림을 같은 원리로 다시 계산해 그린 것이다. [24_complex-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/)로 그렸고, 점의 세로 위치가 $$\sin$$, 가로 위치가 $$\cos$$와 같은지를 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 $$\alpha$$를 정의하지 않는다. $$Ae^{i\phi} = e^{\alpha + i\phi}$$가 되려면 $$A = e^\alpha$$, 곧 $$\alpha = \ln A$$여야 한다. 실수 사인을 복소수의 허수부로 읽는 해석, 회전 방향 예, 실수와 복소수 전력의 비교, 카드 C2·C3은 원본에 없다. 계산은 검증 코드로 확인했다.
 {% endraw %}

@@ -104,9 +104,9 @@ flowchart LR
 
 </details>
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/04.불안장애.pdf, p.7 (애착의 정의, 주요 연구, 네 요소 그림 Proximity Maintenance·Safe Haven·Secure Base·Separation Distress, 할로의 원숭이 사진)
-[^2]: 4-1학기/이상 심리학/1.수업자료/04.불안장애.pdf, p.8
-[^s1]: 에이전트 보충. 세 아이의 사례는 낯선 상황 절차에서 각 유형이 보이는 전형적 반응을 옮긴 것이다. 슬라이드의 "불안 애착"은 에인스워스의 저항(양가) 애착에 해당한다.
-[^s2]: 에이전트 보충. 혼란 애착은 Main과 Solomon(1990)이 더한 유형이다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 요약과 '정의'의 네 요소(슬라이드 p.7 그림의 Proximity Maintenance, Safe Haven, Secure Base, Separation Distress)를 근거로 그렸다.
+[^1]: 이상 심리학 4회 강의 자료 「불안장애」, p.7 (애착의 정의, 주요 연구, 네 요소 그림 Proximity Maintenance·Safe Haven·Secure Base·Separation Distress, 할로의 원숭이 사진)
+[^2]: 이상 심리학 4회 강의 자료 「불안장애」, p.8
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 아이의 사례는 낯선 상황 절차에서 각 유형이 보이는 전형적 반응을 옮긴 것이다. 슬라이드의 "불안 애착"은 에인스워스의 저항(양가) 애착에 해당한다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 혼란 애착은 Main과 Solomon(1990)이 더한 유형이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 요약과 '정의'의 네 요소(슬라이드 p.7 그림의 Proximity Maintenance, Safe Haven, Secure Base, Separation Distress)를 근거로 그렸다.
 {% endraw %}

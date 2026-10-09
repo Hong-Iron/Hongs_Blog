@@ -3,7 +3,7 @@ layout: "note"
 title: "02_complexity-budget_plot.py"
 display_title: "02_complexity-budget_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "02"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/complexity-budget/"
 parent_title: "시간 복잡도로 방법 고르기"
-description: "알고리즘 · 시간 복잡도로 방법 고르기 코드 코드"
+description: "알고리즘 · 시간 복잡도로 방법 고르기 그림 생성 코드"
 permalink: "/studies/algorithms/code/02_complexity-budget_plot/"
 ---
 {% raw %}
-[시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 시간 복잡도로 방법 고르기 문서의 그림을 만든다: 02_complexity-budget_fig1.svg, 02_complexity-budget_fig2.svg

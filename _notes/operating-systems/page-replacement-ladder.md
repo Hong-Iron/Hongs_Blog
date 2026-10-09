@@ -100,5 +100,5 @@ permalink: "/studies/operating-systems/page-replacement-ladder/"
 </div>
 
 
-[^s1]: 에이전트 보충. 참조열 7 0 1 2 0 3 0 4 2 3과 1 2 3 4 1 2 5 1 2 3 4 5는 Silberschatz, *Operating System Concepts* 9장의 예제 참조열을 줄이거나 그대로 쓴 것이다. 문제는 모두 원본 범위 밖의 변형이다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 참조열 7 0 1 2 0 3 0 4 2 3과 1 2 3 4 1 2 5 1 2 3 4 5는 Silberschatz, *Operating System Concepts* 9장의 예제 참조열을 줄이거나 그대로 쓴 것이다. 문제는 모두 원본 범위 밖의 변형이다.
 {% endraw %}

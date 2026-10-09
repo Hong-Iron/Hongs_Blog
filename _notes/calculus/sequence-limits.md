@@ -37,7 +37,7 @@ $$a_n = 1/n$$은 $$1, 0.5, 0.333, \dots$$로 0에 다가간다. "0에서 0.001 �
 
 $$(1 + 1/n)^n$$은 $$2, 2.25, 2.37, 2.44, \dots$$로 늘어나지만 3을 넘지 못한다. 계속 커지기만 하는데 넘지 못하는 벽이 있으니 어떤 값에 멈춰 다가가야 한다. 그 값이 $$e \approx 2.71828$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/03_sequence-limits_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/03_sequence-limits_fig1.svg" alt="그림" width="518" height="320" loading="lazy">
 
 점은 오른쪽으로 갈수록 오르기만 하고, 오르는 폭은 점점 줄어든다. 주황 선 3에는 닿지 못하고 초록 점선 $$e$$ 아래에 붙는다[^s1].
 
@@ -112,7 +112,7 @@ $$\lim_{n \to \infty}\frac{3n^2 + n}{n^2 + 5}$$를 구한다.
 </div>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/03_sequence-limits_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/03_sequence-limits_fig2.svg" alt="그림" width="495" height="323" loading="lazy">
 
 가로축이 로그 눈금이라, $$n$$을 10배 할 때마다 $$H_n$$이 비슷한 폭으로 계속 오른다. 주황 점은 $$n = 2^k$$일 때의 아래 한계 $$1 + k/2$$이고, 파란 선은 늘 그 위에 있다[^s1].
 
@@ -143,5 +143,5 @@ $$\lim_{n \to \infty}\frac{3n^2 + n}{n^2 + 5}$$를 구한다.
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 5.1절 "Sequences"(수열의 극한, 단조 수렴 정리)
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [03_sequence-limits_plot.py](/Hongs_Blog/studies/calculus/code/03_sequence-limits_plot/)로 그렸고, $$(1 + 1/n)^n$$이 $$n \le 40$$에서 증가하고 3 미만임(유리수로 정확히), $$H_{2^k} \ge 1 + k/2$$($$k \le 16$$), $$H_{65536} \ge 9$$를 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [03_sequence-limits_plot.py](/Hongs_Blog/studies/calculus/code/03_sequence-limits_plot/)로 그렸고, $$(1 + 1/n)^n$$이 $$n \le 40$$에서 증가하고 3 미만임(유리수로 정확히), $$H_{2^k} \ge 1 + k/2$$($$k \le 16$$), $$H_{65536} \ge 9$$를 같은 코드로 확인했다.
 {% endraw %}

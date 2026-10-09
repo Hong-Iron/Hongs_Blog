@@ -71,7 +71,7 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 3. $$2\pi$$를 곱하고 $$t$$를 $$-t$$로: $$2\pi e^{-\vert t\vert } = \int\frac{2}{1+\omega^2}e^{-j\omega t}d\omega$$.
 4. $$t$$와 $$\omega$$를 바꾸면 $$2\pi e^{-\vert \omega\vert } = \int\frac{2}{1+t^2}e^{-j\omega t}dt$$, 곧 $$G(j\omega) = 2\pi e^{-\vert \omega\vert }$$.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/41_duality_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/41_duality_fig1.svg" alt="그림" width="621" height="391" loading="lazy">
 
 위 줄 쌍의 시간 쪽 모양과 주파수 쪽 모양을 맞바꾸면 아래 줄 쌍이 된다. 주파수 쪽 높이에는 $$2\pi$$가 곱해진다[^s2].
 
@@ -121,10 +121,10 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/14.Week14_CH04_2_handout.pdf, p.25 (그림 4.17), 3-1학기/신호 및 시스템/1.수업자료/14.Week14_CH04_1_handout.pdf, p.17
+[^1]: 신호 및 시스템 14회 강의 자료 「Week14_CH04_2_handout」, p.25 (그림 4.17), 신호 및 시스템 14회 강의 자료 「Week14_CH04_1_handout」, p.17
 [^2]: 같은 자료(14.Week14_CH04_2_handout.pdf), p.28 (쌍대성 정리)
 [^3]: 같은 자료, p.26
 [^4]: 같은 자료, p.27 (예제 4.13)
-[^s1]: 에이전트 보충. 쌍대성 정리의 한 줄 유도와 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [41_duality_plot.py](/Hongs_Blog/studies/signals-and-systems/code/41_duality_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\frac{2}{1 + t^2}$$의 변환과 $$e^{-\vert t\vert }$$의 변환을 수치 적분해 $$2\pi e^{-\vert \omega\vert }$$, $$\frac{2}{1 + \omega^2}$$와 비교.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 쌍대성 정리의 한 줄 유도와 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [41_duality_plot.py](/Hongs_Blog/studies/signals-and-systems/code/41_duality_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\frac{2}{1 + t^2}$$의 변환과 $$e^{-\vert t\vert }$$의 변환을 수치 적분해 $$2\pi e^{-\vert \omega\vert }$$, $$\frac{2}{1 + \omega^2}$$와 비교.
 {% endraw %}

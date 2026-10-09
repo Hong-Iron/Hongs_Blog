@@ -3,7 +3,7 @@ layout: "note"
 title: "23_lccde-system_plot.py"
 display_title: "23_lccde-system_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "23"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/lccde-system/"
 parent_title: "미분방정식으로 표현한 LTI 시스템"
-description: "신호 및 시스템 · 미분방정식으로 표현한 LTI 시스템 코드 코드"
+description: "신호 및 시스템 · 미분방정식으로 표현한 LTI 시스템 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/23_lccde-system_plot/"
 ---
 {% raw %}
-[미분방정식으로 표현한 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/lccde-system/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[미분방정식으로 표현한 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/lccde-system/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 미분방정식으로 표현한 LTI 시스템 문서의 그림을 만든다: 23_lccde-system_fig1.svg

@@ -42,7 +42,7 @@ $$f(x) = e^{-x} - x$$의 근(참값 0.56714329…)을 $$x_{-1} = 0$$, $$x_0 = 1$
 
 둘째 반복의 두 점은 모두 근의 오른쪽에 있다(함수 값이 둘 다 음수). 이분법이었다면 이렇게 할 수 없다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/29_secant-method_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/29_secant-method_fig1.svg" alt="그림" width="515" height="335" loading="lazy">
 
 할선은 곡선 위 두 점을 잇는 직선이고, 이 직선이 $$x$$축과 만나는 곳(×)이 다음 점이다. 둘째 할선(주황)은 근 오른쪽의 두 점으로 그었는데도 근 바로 옆에 떨어진다[^s2].
 
@@ -124,10 +124,10 @@ flowchart TD
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/16.na16_nonlinear.pdf, p.20
+[^1]: 수치해석 16회 강의 자료 「na16_nonlinear」, p.20
 [^2]: 같은 자료, p.19
 [^3]: 같은 자료, p.21
-[^s1]: 에이전트 보충. 수렴 차수(황금비 1.618, 실험값 1.65), 가위치법과 브렌트 방법, 흔한 실수의 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [29_secant-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$x_1 = 0.61270$$, $$x_2 = 0.56384$$, 둘째 반복의 두 점에서 함수 값이 모두 음수.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 갱신식, 입출력과 장단점 표(원본 16.na16_nonlinear.pdf p.19~21)로 그렸다. 상대 오차로 멈추는 기준은 [이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/)과 같은 것을 썼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수렴 차수(황금비 1.618, 실험값 1.65), 가위치법과 브렌트 방법, 흔한 실수의 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [29_secant-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$x_1 = 0.61270$$, $$x_2 = 0.56384$$, 둘째 반복의 두 점에서 함수 값이 모두 음수.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 갱신식, 입출력과 장단점 표(원본 16.na16_nonlinear.pdf p.19~21)로 그렸다. 상대 오차로 멈추는 기준은 [이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/)과 같은 것을 썼다.
 {% endraw %}

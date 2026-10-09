@@ -3,7 +3,7 @@ layout: "note"
 title: "16_sum-integral-bounds_plot.py"
 display_title: "16_sum-integral-bounds_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "16"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/sum-integral-bounds/"
 parent_title: "합 ↔ 적분"
-description: "미분적분학 · 합 ↔ 적분 코드 코드"
+description: "미분적분학 · 합 ↔ 적분 그림 생성 코드"
 permalink: "/studies/calculus/code/16_sum-integral-bounds_plot/"
 ---
 {% raw %}
-[합 ↔ 적분](/Hongs_Blog/studies/calculus/sum-integral-bounds/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[합 ↔ 적분](/Hongs_Blog/studies/calculus/sum-integral-bounds/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 합 ↔ 적분 문서의 그림을 만든다: 16_sum-integral-bounds_fig1.svg

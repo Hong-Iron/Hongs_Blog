@@ -110,5 +110,5 @@ permalink: "/studies/human-interface-media/neuron-convergence-modeling/"
 </div>
 
 
-[^1]: 에이전트 보충. 가중치 벡터로 푸는 방법은 슬라이드의 빈칸을 연산 모형으로 채운 것이다. 강의에서 교수님이 쓴 식과 표기가 다를 수 있다. 문제 4와 변형 문제는 원본에 없다.
+[^1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 가중치 벡터로 푸는 방법은 슬라이드의 빈칸을 연산 모형으로 채운 것이다. 강의에서 교수님이 쓴 식과 표기가 다를 수 있다. 문제 4와 변형 문제는 원본에 없다.
 {% endraw %}

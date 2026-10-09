@@ -143,5 +143,5 @@ $$\{1, 2, 3, 4\}$$ 위의 $$R = \{(1,2), (2,3), (3,4)\}$$의 추이 폐포를 �
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장(이항 관계), 10장 "Directed graphs & Partial Orders"(관계의 성질). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장 "Relations".
 [^2]: Rosen, *Discrete Mathematics and Its Applications* 7판, 9장(폐포와 와셜 알고리즘)
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 첫 관계와 화살표 그림 설명을 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 첫 관계와 화살표 그림 설명을 그렸다.
 {% endraw %}

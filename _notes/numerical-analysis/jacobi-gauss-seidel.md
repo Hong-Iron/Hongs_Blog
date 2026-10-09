@@ -53,7 +53,7 @@ $$4x - y + z = 7, \qquad 4x - 8y + z = -21, \qquad -2x + y + 5z = 15$$
 
 가우스-자이델의 1회차 $$y$$는 방금 구한 $$x = 1.75$$를 써서 $$\frac{21 + 7 + 2}{8} = 3.75$$다. 야코비는 아직 옛 $$x = 1$$을 써서 3.375다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/20_jacobi-gauss-seidel_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/20_jacobi-gauss-seidel_fig1.svg" alt="그림" width="539" height="335" loading="lazy">
 
 세로축은 한 칸이 10배인 눈금(로그 눈금)이라, 곧게 내려가는 선은 매 회차 같은 비율로 오차가 준다는 뜻이다. 가우스-자이델(주황)이 야코비(파랑)보다 가파르게 내려간다. 첫 두 식의 순서를 바꿔 대각 우세를 깨면(보라) 같은 시작값에서도 오차가 불어난다[^s2].
 
@@ -260,7 +260,7 @@ $$x_i$$에 대해 풀 때 $$a_{ii}$$로 나누기 때문이다. 대각에 0이 �
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/11.na11_iterative.pdf, p.2
+[^1]: 수치해석 11회 강의 자료 「na11_iterative」, p.2
 [^2]: 같은 자료, p.3~4
 [^3]: 같은 자료, p.5~6
 [^4]: 같은 자료, p.9~10
@@ -268,7 +268,7 @@ $$x_i$$에 대해 풀 때 $$a_{ii}$$로 나누기 때문이다. 대각에 0이 �
 [^6]: 같은 자료, p.8
 [^7]: 같은 자료, p.12
 [^8]: 같은 자료, p.13
-[^s1]: 에이전트 보충. 반복 횟수와 이완 실험, 대각 우세가 아니어도 수렴하는 예, 의사코드, 증명 스케치(무한 노름 축소), 스스로 설명해 보기, 예제, 복잡도·병렬화·쓰는 곳, 흔한 실수, 오해, 카드 C2~C5는 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [20_jacobi-gauss-seidel_plot.py](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 3회차 값, 1~14회차에서 가우스-자이델 오차가 더 작음, 순서를 바꾸면 30회차에 1000을 넘음.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 두 갱신식과 예시의 세 식(원본 11.na11_iterative.pdf p.7~8)으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 반복 횟수와 이완 실험, 대각 우세가 아니어도 수렴하는 예, 의사코드, 증명 스케치(무한 노름 축소), 스스로 설명해 보기, 예제, 복잡도·병렬화·쓰는 곳, 흔한 실수, 오해, 카드 C2~C5는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_jacobi-gauss-seidel_plot.py](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 3회차 값, 1~14회차에서 가우스-자이델 오차가 더 작음, 순서를 바꾸면 30회차에 1000을 넘음.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 두 갱신식과 예시의 세 식(원본 11.na11_iterative.pdf p.7~8)으로 그렸다.
 {% endraw %}

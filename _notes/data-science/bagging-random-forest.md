@@ -44,7 +44,7 @@ permalink: "/studies/data-science/bagging-random-forest/"
 
 분산은 절반으로 줄고 편향은 그대로다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/21_bagging-random-forest_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/21_bagging-random-forest_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 같은 참 함수(굵은 회색)에서 훈련 자료를 다섯 번 새로 뽑아 모델을 만들었다. 왼쪽 1-NN 예측은 자료마다 들쭉날쭉 크게 다르다. 오른쪽 배깅 예측은 다섯 선이 서로 더 가깝게 붙는다[^s2].
 
@@ -134,9 +134,9 @@ flowchart LR
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.15
+[^1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.15
 [^2]: 같은 자료, p.16
-[^s1]: 에이전트 보충. 실험 수치, 속성 뽑기가 상관을 낮추는 이유, 마디마다 뽑는 보통의 구현(Breiman, "Random Forests", Machine Learning 2001), 복잡도, 사이킷런, OOB 평가, 카드는 원본에 없다. 검증 코드로 실험했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [21_bagging-random-forest_plot.py](/Hongs_Blog/studies/data-science/code/21_bagging-random-forest_plot/)로 그렸다. 같은 코드에서 다른 난수로 150회 다시 실험해 예측 분산 0.090 → 0.046, 편향² 0.0002 그대로를 확인했다(위 표와 같은 경향).
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 배깅 의사코드(원본 6-2 p.15)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실험 수치, 속성 뽑기가 상관을 낮추는 이유, 마디마다 뽑는 보통의 구현(Breiman, "Random Forests", Machine Learning 2001), 복잡도, 사이킷런, OOB 평가, 카드는 원본에 없다. 검증 코드로 실험했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [21_bagging-random-forest_plot.py](/Hongs_Blog/studies/data-science/code/21_bagging-random-forest_plot/)로 그렸다. 같은 코드에서 다른 난수로 150회 다시 실험해 예측 분산 0.090 → 0.046, 편향² 0.0002 그대로를 확인했다(위 표와 같은 경향).
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 배깅 의사코드(원본 6-2 p.15)를 근거로 그렸다.
 {% endraw %}

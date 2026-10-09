@@ -3,7 +3,7 @@ layout: "note"
 title: "53_disk-scheduling_plot.py"
 display_title: "53_disk-scheduling_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "53"
 course: "운영체제"
 course_slug: "operating-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 parent_url: "/studies/operating-systems/disk-scheduling/"
 parent_title: "디스크 스케줄링"
-description: "운영체제 · 디스크 스케줄링 코드 코드"
+description: "운영체제 · 디스크 스케줄링 그림 생성 코드"
 permalink: "/studies/operating-systems/code/53_disk-scheduling_plot/"
 ---
 {% raw %}
-[디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 디스크 스케줄링 문서의 그림을 만든다: 53_disk-scheduling_fig1.svg

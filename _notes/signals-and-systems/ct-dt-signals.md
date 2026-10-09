@@ -40,7 +40,7 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 
 두 번째 기록은 첫 번째 신호를 $$T_s$$(표본 간격)마다 뽑은 것이다. 그래서 $$x[n] = x(nT_s)$$로 적는다[^1]. 둘을 구별하려고 연속 시간은 둥근 괄호 $$x(t)$$, 이산 시간은 대괄호 $$x[n]$$을 쓴다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/03_ct-dt-signals_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/03_ct-dt-signals_fig1.svg" alt="그림" width="564" height="372" loading="lazy">
 
 위는 모든 실수 $$t$$에 값이 있는 $$x(t)$$, 아래는 $$T_s = 0.5$$마다 뽑은 $$x[n]$$이다. 아래 그래프에는 정수 $$n$$ 사이에 값이 없다[^s1].
 
@@ -106,11 +106,11 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.4, p.13
+[^1]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.4, p.13
 [^2]: 같은 자료, p.3, p.11
 [^3]: 같은 자료, p.12
 [^4]: 같은 자료, p.6 (정보통신기술용어해설 인용)
 [^5]: 같은 자료, p.8~9
-[^6]: 3-1학기/신호 및 시스템/1.수업자료/04.Week04_CH01_3_handout.pdf, p.2
-[^s1]: 에이전트 보충. 그림 1장은 원본에 없다. [03_ct-dt-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/03_ct-dt-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 신호 $$x(t) = \sin 0.6t + 0.5\cos 1.7t$$는 설명을 위해 고른 것이고, $$x[4] = x(2)$$를 확인.
+[^6]: 신호 및 시스템 4회 강의 자료 「Week04_CH01_3_handout」, p.2
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [03_ct-dt-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/03_ct-dt-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 신호 $$x(t) = \sin 0.6t + 0.5\cos 1.7t$$는 설명을 위해 고른 것이고, $$x[4] = x(2)$$를 확인.
 {% endraw %}

@@ -78,7 +78,7 @@ n = 8이면 이렇게 나누고, 맨 아래 두 칸짜리는 한 번 더 나뉘�
 
 **복잡도.** $$T(n) = 2T(n/2) + O(n)$$이라 [마스터 정리](/Hongs_Blog/studies/discrete-math/master-theorem/)의 경우 2로 $$O(n\log n)$$이다. 정의대로 하면 곱셈이 $$n^2$$번, FFT는 회전 인자 곱셈이 $$\frac n2\log_2 n$$번이라 $$n = 2^{20}$$(약 백만)에서 곱셈이 약 10만 배 적다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/27_dft_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/27_dft_fig2.svg" alt="그림" width="530" height="314" loading="lazy">
 
 로그 눈금이라 기울기가 증가 속도다. 두 선의 간격이 계속 벌어져 $$n = 2^{20}$$에서 약 10만 배가 된다[^s2].
 
@@ -113,7 +113,7 @@ n = 8이면 이렇게 나누고, 맨 아래 두 칸짜리는 한 번 더 나뉘�
 - **큰 수와 다항식의 곱.** 수십만 자리 정수의 곱, 다항식 곱은 FFT로 $$O(n\log n)$$에 한다. 합성곱 신경망의 큰 필터도 FFT로 계산하기도 한다.
 - **통신.** 여러 주파수에 데이터를 나눠 싣는 방식(OFDM)은 송신에 역 FFT, 수신에 FFT를 쓴다[^s1]. 주파수를 나눠 쓰는 생각은 [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/)와 이어진다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/27_dft_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/27_dft_fig1.svg" alt="그림" width="583" height="352" loading="lazy">
 
 길이 64인 신호에 주파수 번호 5와 12인 사인파 두 개와 잡음을 섞었다. 위의 신호에서는 잘 안 보이던 두 파동이 아래 $$\vert X_k\vert $$에서 $$k = 5, 12$$의 막대로 솟는다. 실수 신호라 $$k = 59, 52$$에 같은 높이의 짝이 있다[^s2].
 
@@ -157,7 +157,7 @@ for k in range(n // 2):
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 9.3절 "The Fast Fourier Transform"(푸리에 행렬, $$\bar{F}^\top F = nI$$, FFT의 분해). Cormen et al., *Introduction to Algorithms* 3판, 30장 "Polynomials and the FFT"(합성곱 정리와 다항식 곱셈, 재귀 FFT).
-[^s1]: 에이전트 보충. JPEG의 DCT와 OFDM의 IFFT/FFT는 각각 JPEG(ITU-T T.81)과 Wi-Fi·LTE 표준의 내용이다. 속도 비교(백만 점에서 약 10만 배)는 $$n^2$$ 대 $$\frac n2\log_2 n$$ 곱셈 수로 센 값이고, 실제 실행 시간의 비는 덧셈·메모리 접근 때문에 이와 다르다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [27_dft_plot.py](/Hongs_Blog/studies/linear-algebra/code/27_dft_plot/)로 그렸고, 정의대로 한 DFT가 `numpy.fft.fft`와 같은 것, 가장 큰 네 막대가 $$k = 5, 12, 52, 59$$인 것, $$n = 2^{20}$$에서 곱셈 수의 비가 약 10만 배(104,858)인 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 FFT 의사코드(짝수·홀수 번째로 나누는 재귀)와 복잡도 문단을 $$n = 8$$에 적용해 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> JPEG의 DCT와 OFDM의 IFFT/FFT는 각각 JPEG(ITU-T T.81)과 Wi-Fi·LTE 표준의 내용이다. 속도 비교(백만 점에서 약 10만 배)는 $$n^2$$ 대 $$\frac n2\log_2 n$$ 곱셈 수로 센 값이고, 실제 실행 시간의 비는 덧셈·메모리 접근 때문에 이와 다르다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [27_dft_plot.py](/Hongs_Blog/studies/linear-algebra/code/27_dft_plot/)로 그렸고, 정의대로 한 DFT가 `numpy.fft.fft`와 같은 것, 가장 큰 네 막대가 $$k = 5, 12, 52, 59$$인 것, $$n = 2^{20}$$에서 곱셈 수의 비가 약 10만 배(104,858)인 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 FFT 의사코드(짝수·홀수 번째로 나누는 재귀)와 복잡도 문단을 $$n = 8$$에 적용해 그렸다.
 {% endraw %}

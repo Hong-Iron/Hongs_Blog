@@ -3,7 +3,7 @@ layout: "note"
 title: "18_covariance_plot.py"
 display_title: "18_covariance_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "18"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/covariance/"
 parent_title: "공분산과 상관계수"
-description: "확률과 통계 · 공분산과 상관계수 코드 코드"
+description: "확률과 통계 · 공분산과 상관계수 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/18_covariance_plot/"
 ---
 {% raw %}
-[공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 공분산과 상관계수 문서의 그림을 만든다: 18_covariance_fig1.svg

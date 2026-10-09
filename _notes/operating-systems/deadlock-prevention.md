@@ -99,9 +99,9 @@ permalink: "/studies/operating-systems/deadlock-prevention/"
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/06.Chapter06-new.pdf, p.24
+[^1]: 운영체제 6회 강의 자료 「Chapter06-new」, p.24
 [^2]: 같은 자료, p.25
 [^3]: 같은 자료, p.26
 [^4]: 같은 자료, p.50 (표 6.1)
-[^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 지금 자료와 같은 시리즈(Stallings 6판, Dave Bremer 작성)의 공개본(Radboud 대학)을 원본으로 썼다. 계좌 이체 예, 각 방법의 대가 설명, 순환 대기 예방의 증명, 리눅스 lockdep, 확인 문제는 Stallings 6판 6.2절을 바탕으로 보탰다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 지금 자료와 같은 시리즈(Stallings 6판, Dave Bremer 작성)의 공개본(Radboud 대학)을 원본으로 썼다. 계좌 이체 예, 각 방법의 대가 설명, 순환 대기 예방의 증명, 리눅스 lockdep, 확인 문제는 Stallings 6판 6.2절을 바탕으로 보탰다.
 {% endraw %}

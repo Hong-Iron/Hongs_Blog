@@ -101,7 +101,7 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 3. *편향된 추정량의 MSE:* 편향 $$-\frac{\sigma^2}{5}$$, 분산이 더 작아 합이 $$\frac{2n - 1}{n^2}\sigma^4 = 0.36\sigma^4$$.
 4. *결론:* 조금 치우쳐도 덜 흩어지는 쪽이 평균적으로 더 정확하다. 이 편향-분산 줄다리기가 [과적합](/Hongs_Blog/studies/probability-statistics/overfitting-cv/)과 정칙화의 핵심이다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/29_estimators_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/29_estimators_fig1.svg" alt="그림" width="520" height="335" loading="lazy">
 
 참 분산이 1인 정규분포에서 표본 5개로 두 추정량을 계산한 값의 분포다. 파랑($$n - 1$$로 나눔)은 평균이 정확히 1이지만 오른쪽으로 넓게 퍼진다. 주황($$n$$으로 나눔)은 평균이 0.8로 비껴 있지만 덜 퍼져서, 평균제곱오차가 더 작다[^s2].
 
@@ -148,7 +148,7 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 
 
 [^1]: Wasserman, *All of Statistics*, "Models, Statistical Inference and Learning" 장(점추정, 편향, 표준오차, MSE의 편향-분산 분해, 일치성). Blitzstein, Hwang, *Introduction to Probability* 2판, 6.3절 "Sample moments"(표본분산의 기댓값).
-[^s1]: 에이전트 보충. 정규분포에서 $$\operatorname{Var}(S^2_{n-1}) = \frac{2\sigma^4}{n - 1}$$은 $$\frac{(n-1)S^2}{\sigma^2}$$이 자유도 $$n - 1$$인 카이제곱분포를 따른다는 데서 나온다(Blitzstein·Hwang 10.4절). 두 MSE는 29_estimators_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [29_estimators_plot.py](/Hongs_Blog/studies/probability-statistics/code/29_estimators_plot/)로 그렸고, 그림에 쓴 값(모의실험 20만 회의 평균 1과 0.8, MSE 0.50과 0.36)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시(주사위 4번의 평균을 10만 번 되풀이)와 정의를 순서대로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 정규분포에서 $$\operatorname{Var}(S^2_{n-1}) = \frac{2\sigma^4}{n - 1}$$은 $$\frac{(n-1)S^2}{\sigma^2}$$이 자유도 $$n - 1$$인 카이제곱분포를 따른다는 데서 나온다(Blitzstein·Hwang 10.4절). 두 MSE는 29_estimators_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [29_estimators_plot.py](/Hongs_Blog/studies/probability-statistics/code/29_estimators_plot/)로 그렸고, 그림에 쓴 값(모의실험 20만 회의 평균 1과 0.8, MSE 0.50과 0.36)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시(주사위 4번의 평균을 10만 번 되풀이)와 정의를 순서대로 그렸다.
 {% endraw %}

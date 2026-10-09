@@ -3,7 +3,7 @@ layout: "note"
 title: "28_bisection_plot.py"
 display_title: "28_bisection_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "28"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/bisection-method/"
 parent_title: "이분법"
-description: "수치해석 · 이분법 코드 코드"
+description: "수치해석 · 이분법 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/28_bisection_plot/"
 ---
 {% raw %}
-[이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 이분법 문서의 그림을 만든다: 28_bisection_fig1.svg

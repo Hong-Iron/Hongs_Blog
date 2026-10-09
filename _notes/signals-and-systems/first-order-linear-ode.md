@@ -38,7 +38,7 @@ $$\frac{dv_c(t)}{dt} + \frac{1}{RC}v_c(t) = \frac{1}{RC}v_s(t)$$
 
 전원을 $$t = 0$$에 켜서 $$v_s = 1$$로 두면, 축전기는 처음엔 빨리 차다가 점점 느리게 찬다. 풀면 $$v_c(t) = 1 - e^{-t/RC}$$이다[^s1]. $$RC$$만큼 시간이 지나면 최종값의 약 63%까지 찬다. 이 식을 왜, 어떻게 이렇게 푸는지가 이 문서의 내용이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/01_first-order-linear-ode_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/01_first-order-linear-ode_fig1.svg" alt="그림" width="549" height="320" loading="lazy">
 
 세 곡선 모두 $$t = RC$$에서 최종값의 63%를 지난다. $$RC$$가 클수록 같은 높이에 늦게 닿는다[^s2].
 
@@ -156,14 +156,14 @@ flowchart TD
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.14, p.19
-[^2]: 3-1학기/신호 및 시스템/1.수업자료/01.Week01_2_미분방정식.pdf, p.1
+[^1]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.14, p.19
+[^2]: 신호 및 시스템 1회 강의 자료 「Week01_2_미분방정식」, p.1
 [^3]: 같은 자료, p.2
 [^4]: 같은 자료, p.5
 [^5]: 같은 자료, p.6
 [^6]: 같은 자료, p.7
-[^7]: 3-1학기/신호 및 시스템/1.수업자료/04.Week04_CH01_3_handout.pdf, p.3~4 (예제 1.8, 1.9)
-[^s1]: 에이전트 보충. RC 회로의 계단 응답 $$1 - e^{-t/RC}$$와 63% 값, 적분상수에 관한 설명, 확인 문제 C1은 원본에 없다. 해는 식에 넣어 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [01_first-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/01_first-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$RC = 0.5, 1, 2$$에서 $$v_c(RC) = 1 - e^{-1} \approx 0.632$$이고 오일러 방법으로 푼 값과 같음.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 변수분리형·적분인자 절(1주차 미분방정식 자료 p.5~6)을 근거로 그렸다.
+[^7]: 신호 및 시스템 4회 강의 자료 「Week04_CH01_3_handout」, p.3~4 (예제 1.8, 1.9)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> RC 회로의 계단 응답 $$1 - e^{-t/RC}$$와 63% 값, 적분상수에 관한 설명, 확인 문제 C1은 원본에 없다. 해는 식에 넣어 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [01_first-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/01_first-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$RC = 0.5, 1, 2$$에서 $$v_c(RC) = 1 - e^{-1} \approx 0.632$$이고 오일러 방법으로 푼 값과 같음.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 변수분리형·적분인자 절(1주차 미분방정식 자료 p.5~6)을 근거로 그렸다.
 {% endraw %}

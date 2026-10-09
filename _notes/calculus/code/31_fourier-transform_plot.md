@@ -3,7 +3,7 @@ layout: "note"
 title: "31_fourier-transform_plot.py"
 display_title: "31_fourier-transform_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "31"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/fourier-transform/"
 parent_title: "푸리에 변환과 합성곱"
-description: "미분적분학 · 푸리에 변환과 합성곱 코드 코드"
+description: "미분적분학 · 푸리에 변환과 합성곱 그림 생성 코드"
 permalink: "/studies/calculus/code/31_fourier-transform_plot/"
 ---
 {% raw %}
-[푸리에 변환과 합성곱](/Hongs_Blog/studies/calculus/fourier-transform/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[푸리에 변환과 합성곱](/Hongs_Blog/studies/calculus/fourier-transform/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 푸리에 변환과 합성곱 문서의 그림을 만든다: 31_fourier-transform_fig1.svg, 31_fourier-transform_fig2.svg

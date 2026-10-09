@@ -3,7 +3,7 @@ layout: "note"
 title: "01_function_plot.py"
 display_title: "01_function_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "01"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/function/"
 parent_title: "함수"
-description: "대학수학 · 함수 코드 코드"
+description: "대학수학 · 함수 그림 생성 코드"
 permalink: "/studies/college-math/code/01_function_plot/"
 ---
 {% raw %}
-[함수](/Hongs_Blog/studies/college-math/function/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[함수](/Hongs_Blog/studies/college-math/function/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 함수 문서의 그림을 만든다: 01_function_fig1.svg, 01_function_fig2.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "32_hypothesis-testing_plot.py"
 display_title: "32_hypothesis-testing_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "32"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/hypothesis-testing/"
 parent_title: "가설검정과 p값"
-description: "확률과 통계 · 가설검정과 p값 코드 코드"
+description: "확률과 통계 · 가설검정과 p값 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/32_hypothesis-testing_plot/"
 ---
 {% raw %}
-[가설검정과 p값](/Hongs_Blog/studies/probability-statistics/hypothesis-testing/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[가설검정과 p값](/Hongs_Blog/studies/probability-statistics/hypothesis-testing/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 가설검정과 p값 문서의 그림을 만든다: 32_hypothesis-testing_fig1.svg, 32_hypothesis-testing_fig2.svg

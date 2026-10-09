@@ -124,11 +124,11 @@ $$r \ne 0$$이어야 한다. $$c_k \ne 0$$이면 0은 특성근이 아니므로 
 3. *초기값:* $$\alpha + \beta = 0$$, $$\alpha\varphi + \beta\psi = 1$$에서 $$\alpha = \frac{1}{\sqrt5}$$, $$\beta = -\frac{1}{\sqrt5}$$.
 4. *결과:* $$F_n = \dfrac{\varphi^n - \psi^n}{\sqrt5}$$(비네 공식). $$\vert \psi\vert  < 1$$이라 $$F_n$$은 $$\frac{\varphi^n}{\sqrt5}$$을 반올림한 수이고, 약 $$1.618^n$$배로 자란다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig1.svg" alt="그림" width="496" height="335" loading="lazy">
 
 세로축이 로그 눈금이라, 일정한 비율로 곱해지며 자라는 수열은 직선이 된다. 기울기가 그 비율이어서 하노이(2배씩)가 피보나치(약 1.618배씩)보다 가파르다. 피보나치 점은 처음부터 $$\varphi^n/\sqrt5$$ 점선 위에 놓인다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig2.svg" alt="그림" width="518" height="312" loading="lazy">
 
 이웃한 두 항의 비는 2, 1.5, 1.667, 1.6처럼 $$\varphi$$ 위아래를 번갈아 넘으며 다가간다. 비네 공식의 $$\psi^n$$이 부호를 바꾸며 0으로 줄어들기 때문이다[^s1].
 
@@ -212,6 +212,6 @@ fib 4를 정의 그대로 부르면 호출이 9번이다. $$2F_{n+1} - 1$$에 $$
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 22장 "Recurrences"(하노이의 탑, 선형 점화식). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장(선형 점화식의 풀이).
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [21_linear-recurrences_plot.py](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_plot/)로 그렸고, $$n \le 30$$에서 $$F_n = \operatorname{round}(\varphi^n/\sqrt5)$$와 $$T_n = 2^n - 1$$, 비 $$F_{n+1}/F_n$$이 $$\varphi$$ 위아래를 번갈아 오가는 것, $$\vert F_{16}/F_{15} - \varphi\vert  < 10^{-5}$$을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '활용'의 순진한 피보나치 재귀(호출 수 $$2F_{n+1} - 1$$)를 $$n = 4$$의 호출 나무로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [21_linear-recurrences_plot.py](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_plot/)로 그렸고, $$n \le 30$$에서 $$F_n = \operatorname{round}(\varphi^n/\sqrt5)$$와 $$T_n = 2^n - 1$$, 비 $$F_{n+1}/F_n$$이 $$\varphi$$ 위아래를 번갈아 오가는 것, $$\vert F_{16}/F_{15} - \varphi\vert  < 10^{-5}$$을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '활용'의 순진한 피보나치 재귀(호출 수 $$2F_{n+1} - 1$$)를 $$n = 4$$의 호출 나무로 그렸다.
 {% endraw %}

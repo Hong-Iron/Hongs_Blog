@@ -3,7 +3,7 @@ layout: "note"
 title: "27_dft_plot.py"
 display_title: "27_dft_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "27"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/dft/"
 parent_title: "이산 푸리에 변환과 FFT"
-description: "선형대수학 · 이산 푸리에 변환과 FFT 코드 코드"
+description: "선형대수학 · 이산 푸리에 변환과 FFT 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/27_dft_plot/"
 ---
 {% raw %}
-[이산 푸리에 변환과 FFT](/Hongs_Blog/studies/linear-algebra/dft/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[이산 푸리에 변환과 FFT](/Hongs_Blog/studies/linear-algebra/dft/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 이산 푸리에 변환과 FFT 문서의 그림을 만든다: 27_dft_fig1.svg, 27_dft_fig2.svg

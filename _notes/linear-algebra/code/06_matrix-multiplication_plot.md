@@ -3,7 +3,7 @@ layout: "note"
 title: "06_matrix-multiplication_plot.py"
 display_title: "06_matrix-multiplication_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "06"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/matrix-multiplication/"
 parent_title: "행렬 곱셈과 전치"
-description: "선형대수학 · 행렬 곱셈과 전치 코드 코드"
+description: "선형대수학 · 행렬 곱셈과 전치 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/06_matrix-multiplication_plot/"
 ---
 {% raw %}
-[행렬 곱셈과 전치](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[행렬 곱셈과 전치](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 행렬 곱셈과 전치 문서의 그림을 만든다: 06_matrix-multiplication_fig1.svg

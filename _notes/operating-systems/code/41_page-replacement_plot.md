@@ -3,7 +3,7 @@ layout: "note"
 title: "41_page-replacement_plot.py"
 display_title: "41_page-replacement_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "41"
 course: "운영체제"
 course_slug: "operating-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 parent_url: "/studies/operating-systems/page-replacement/"
 parent_title: "페이지 교체 알고리즘"
-description: "운영체제 · 페이지 교체 알고리즘 코드 코드"
+description: "운영체제 · 페이지 교체 알고리즘 그림 생성 코드"
 permalink: "/studies/operating-systems/code/41_page-replacement_plot/"
 ---
 {% raw %}
-[페이지 교체 알고리즘](/Hongs_Blog/studies/operating-systems/page-replacement/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[페이지 교체 알고리즘](/Hongs_Blog/studies/operating-systems/page-replacement/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 페이지 교체 알고리즘 문서의 그림을 만든다: 41_page-replacement_fig1.svg

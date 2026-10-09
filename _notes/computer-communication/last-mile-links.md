@@ -99,11 +99,11 @@ ISP 가입자 선로는 두 방향으로 발전하고 있다[^5].
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260926030258.png — 슬라이드 "Digital subscriber line (DSL)". 원문의 빨간 글씨: existing, dedicated. 그림 없이 첫 줄만 있는 같은 슬라이드는 4-1학기/pasted_images/Pasted image 20260926030237.png
-[^2]: 4-1학기/pasted_images/Pasted image 20260926030111.png — 슬라이드 "가입자 선로 (Last-Mile Links)". 원문의 빨간 글씨: "음성과 data를 FDM 방식으로 동시에". ADSL 내려받기 하한은 슬라이드에 1.554로 적혀 있다. T1 속도 1.544 Mbps와 한 자리가 다르다
-[^3]: 4-1학기/pasted_images/Pasted image 20260926022517.png — 슬라이드 "링크 (Link)", "하나의 케이블에 여러 링크: 예) ADSL"
-[^4]: 4-1학기/컴퓨터 통신/2.필기노트/04.4주차.md, 36~45행
-[^5]: 4-1학기/pasted_images/Pasted image 20260927201727.png — 슬라이드 "ISP (인터넷망) 가입자 선로의 발전 추세". 필기 04.4주차.md 48~49행
-[^s1]: 에이전트 보충. 저녁 시간의 예와 "전화국 너머에서는 DSL도 나눠 쓴다"는 원본에 없다. 슬라이드의 dedicated(DSL)와 shared bandwidth(케이블 모뎀)의 대비에서 나오는 결론이다.
-[^s2]: 에이전트 보충. ADSL의 거리별 내려받기 속도는 18,000 ft 1.544 Mbps, 16,000 ft 2.048 Mbps, 12,000 ft 6.312 Mbps, 9,000 ft 8.448 Mbps다(Saric, Perakovic & Brdar, "Asymmetric Digital Subscriber Line (ADSL)", *Promet – Traffic & Transportation*, 1997). 1.544 Mbps는 T1 회선 속도와 같다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "Digital subscriber line (DSL)". 원문의 빨간 글씨: existing, dedicated. 그림 없이 첫 줄만 있는 같은 슬라이드는 수업 슬라이드 캡처
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "가입자 선로 (Last-Mile Links)". 원문의 빨간 글씨: "음성과 data를 FDM 방식으로 동시에". ADSL 내려받기 하한은 슬라이드에 1.554로 적혀 있다. T1 속도 1.544 Mbps와 한 자리가 다르다
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "링크 (Link)", "하나의 케이블에 여러 링크: 예) ADSL"
+[^4]: 컴퓨터 통신 4회 필기 「4주차」, 36~45행
+[^5]: 수업 슬라이드 캡처 — 슬라이드 "ISP (인터넷망) 가입자 선로의 발전 추세". 필기 04.4주차.md 48~49행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 저녁 시간의 예와 "전화국 너머에서는 DSL도 나눠 쓴다"는 원본에 없다. 슬라이드의 dedicated(DSL)와 shared bandwidth(케이블 모뎀)의 대비에서 나오는 결론이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> ADSL의 거리별 내려받기 속도는 18,000 ft 1.544 Mbps, 16,000 ft 2.048 Mbps, 12,000 ft 6.312 Mbps, 9,000 ft 8.448 Mbps다(Saric, Perakovic & Brdar, "Asymmetric Digital Subscriber Line (ADSL)", *Promet – Traffic & Transportation*, 1997). 1.544 Mbps는 T1 회선 속도와 같다.
 {% endraw %}

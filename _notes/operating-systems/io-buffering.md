@@ -43,7 +43,7 @@ permalink: "/studies/operating-systems/io-buffering/"
 
 버퍼가 없으면 읽는 동안 처리를 못 하고, 처리하는 동안 읽지 못한다. 단일 버퍼는 지금 블록을 처리하는 동안 다음 블록을 미리 읽어 둔다. 이중 버퍼는 옮기는 시간 $$M$$까지 숨긴다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/52_io-buffering_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/52_io-buffering_fig1.svg" alt="그림" width="587" height="346" loading="lazy">
 
 막대 안의 숫자는 블록 번호다. 버퍼가 없으면 계산하는 동안 장치 줄이 빈다. 단일 버퍼에서는 계산이 다음 읽기와 겹치지만, 옮기는 1 ms(노란 막대) 동안 장치가 다음 읽기를 시작하지 못한다. 이중 버퍼에서는 장치가 쉬지 않고 읽어 블록이 10 ms마다 끝난다[^s2].
 
@@ -121,7 +121,7 @@ permalink: "/studies/operating-systems/io-buffering/"
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/11.Chapter11-new.pptx, 슬라이드 31과 발표자 노트
+[^1]: 운영체제 11회 강의 자료 「Chapter11-new」, 슬라이드 31과 발표자 노트
 [^2]: 같은 자료, 슬라이드 32
 [^3]: 같은 자료, 슬라이드 33
 [^4]: 같은 자료, 슬라이드 34 (그림 11.5a)
@@ -132,7 +132,7 @@ permalink: "/studies/operating-systems/io-buffering/"
 [^9]: 같은 자료, 슬라이드 40과 슬라이드 39의 발표자 노트
 [^10]: 같은 자료, 슬라이드 75~76
 [^11]: 같은 자료, 슬라이드 77과 슬라이드 75의 발표자 노트
-[^s1]: 에이전트 보충. 블록당 시간 식 $$T + C$$, $$\max(C, T) + M$$, $$\max(C, T)$$는 Stallings 6판 11.4절을 따랐다(슬라이드는 그림만 있다). 수치 예, 그래픽 더블 버퍼링, 확인 문제는 슬라이드에 없다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [52_io-buffering_plot.py](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_plot/)로 그렸고, 세 방식에서 블록이 끝나는 간격 14, 11, 10 ms를 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 네 방식의 문단(슬라이드 34~39, 그림 11.5)을 한 장의 ASCII로 모았다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 블록당 시간 식 $$T + C$$, $$\max(C, T) + M$$, $$\max(C, T)$$는 Stallings 6판 11.4절을 따랐다(슬라이드는 그림만 있다). 수치 예, 그래픽 더블 버퍼링, 확인 문제는 슬라이드에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [52_io-buffering_plot.py](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_plot/)로 그렸고, 세 방식에서 블록이 끝나는 간격 14, 11, 10 ms를 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 네 방식의 문단(슬라이드 34~39, 그림 11.5)을 한 장의 ASCII로 모았다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "07_reflection_plot.py"
 display_title: "07_reflection_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "07"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/reflection/"
 parent_title: "반사와 반전"
-description: "수치해석 · 반사와 반전 코드 코드"
+description: "수치해석 · 반사와 반전 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/07_reflection_plot/"
 ---
 {% raw %}
-[반사와 반전](/Hongs_Blog/studies/numerical-analysis/reflection/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[반사와 반전](/Hongs_Blog/studies/numerical-analysis/reflection/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 반사와 반전 문서의 그림을 만든다: 07_reflection_fig1.svg

@@ -143,5 +143,5 @@ def kruskal(n, edges):                  # edges: (a, b, w), 점은 1 ~ n
 
 
 [^1]: 자르기 성질과 그 증명은 Cormen 외, *Introduction to Algorithms* 3판, 23.1절 "Growing a minimum spanning tree"(정리 23.1)을 풀어 쓴 것이다. 크루스칼과 프림의 구현은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 15.1·15.3절.
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 간선 일곱 개와 크루스칼 표의 고름·건너뜀 결과를 그대로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 간선 일곱 개와 크루스칼 표의 고름·건너뜀 결과를 그대로 그렸다.
 {% endraw %}

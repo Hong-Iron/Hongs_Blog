@@ -3,7 +3,7 @@ layout: "note"
 title: "33_dt-fourier-series_plot.py"
 display_title: "33_dt-fourier-series_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "33"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/dt-fourier-series/"
 parent_title: "이산 시간 푸리에 급수"
-description: "신호 및 시스템 · 이산 시간 푸리에 급수 코드 코드"
+description: "신호 및 시스템 · 이산 시간 푸리에 급수 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/33_dt-fourier-series_plot/"
 ---
 {% raw %}
-[이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 이산 시간 푸리에 급수 문서의 그림을 만든다: 33_dt-fourier-series_fig1.svg, 33_dt-fourier-series_fig2.svg

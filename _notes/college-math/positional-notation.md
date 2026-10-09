@@ -109,7 +109,7 @@ $$n = \sum_{i=0}^{m-1} d_i\, b^i = d_{m-1} b^{m-1} + \dots + d_1 b + d_0, \qquad
 
 표현이 있고 하나뿐이라는 사실은 위의 반복 나눗셈이 늘 끝나고 나머지가 하나로 정해진다는 데서 나온다. [증명 스케치] 엄밀한 증명은 이산수학의 [나눗셈 정리](/Hongs_Blog/studies/discrete-math/modular-arithmetic/)를 쓴다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/10_positional-notation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/10_positional-notation_fig1.svg" alt="그림" width="484" height="335" loading="lazy">
 
 계단(2진 자릿수)은 $$n$$이 2의 거듭제곱 1, 2, 4, 8, …에 닿을 때마다 한 칸 오른다. 곡선 $$\lg n$$은 늘 계단보다 아래에 있고, 2의 거듭제곱에서는 정확히 1 모자란다[^s1].
 
@@ -182,6 +182,6 @@ $$n = \sum_{i=0}^{m-1} d_i\, b^i = d_{m-1} b^{m-1} + \dots + d_1 b + d_0, \qquad
 
 
 [^1]: Knuth, *The Art of Computer Programming*, Vol. 2 *Seminumerical Algorithms*, 4.1절 "Positional Number Systems"
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [10_positional-notation_plot.py](/Hongs_Blog/studies/college-math/code/10_positional-notation_plot/)로 그렸고, 그림에 쓴 값($$n < 5{,}000$$에서 $$2^{m-1} \le n < 2^m$$($$m$$은 2진 자릿수), $$8$$은 4비트이고 $$\lg 8 = 3$$)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 2개는 원본에 없다. `예시로 보기`의 반복 나눗셈과 16진수 묶기, `활용`의 8진수 한 자리 = 2진수 세 자리, `정의`의 자릿값 합 $$\sum d_i b^i$$를 근거로 그렸다. 진법 표현의 출처는 Knuth, *The Art of Computer Programming*, Vol. 2, 4.1절이다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [10_positional-notation_plot.py](/Hongs_Blog/studies/college-math/code/10_positional-notation_plot/)로 그렸고, 그림에 쓴 값($$n < 5{,}000$$에서 $$2^{m-1} \le n < 2^m$$($$m$$은 2진 자릿수), $$8$$은 4비트이고 $$\lg 8 = 3$$)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. `예시로 보기`의 반복 나눗셈과 16진수 묶기, `활용`의 8진수 한 자리 = 2진수 세 자리, `정의`의 자릿값 합 $$\sum d_i b^i$$를 근거로 그렸다. 진법 표현의 출처는 Knuth, *The Art of Computer Programming*, Vol. 2, 4.1절이다.
 {% endraw %}

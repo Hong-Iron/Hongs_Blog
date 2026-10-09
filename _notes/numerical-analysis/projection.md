@@ -37,7 +37,7 @@ permalink: "/studies/numerical-analysis/projection/"
 
 철길처럼 $$z$$ 방향으로 뻗은 두 평행선 $$x = \pm1$$은 거리 1에서 폭 2, 거리 10에서 폭 0.2, 거리 1000에서 0.002로 보인다. 멀어질수록 한 점(소실점)으로 모인다. 평행 투영이었다면 폭이 늘 2다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/11_projection_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/11_projection_fig1.svg" alt="그림" width="544" height="291" loading="lazy">
 
 왼쪽은 옆에서 본 모습이다. 눈에서 막대 끝으로 그은 선이 화면을 지나는 높이가 화면 속 크기다. 거리 4의 막대는 1, 거리 8의 막대는 0.5로 보인다. 오른쪽은 철길이 화면에 비친 모습이고, 가로선은 깊이 1, 2, 3, 5, 10의 자리다. 두 레일이 멀어질수록 좁아져 소실점 한 점으로 모인다[^s2].
 
@@ -123,12 +123,12 @@ flowchart LR
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/06.na06_rotation.pdf, p.28
+[^1]: 수치해석 6회 강의 자료 「na06_rotation」, p.28
 [^2]: 같은 자료, p.29~30
 [^3]: 같은 자료, p.31
 [^4]: 같은 자료, p.32
 [^5]: 같은 자료, p.33
-[^s1]: 에이전트 보충. 막대와 철길 예시, 쓰이는 곳, 중점과 텍스처 보간, 흔한 실수, 직교 사영과의 관계, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [11_projection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 막대 높이 1과 0.5, 폭 2가 거리 10에서 0.2, 거리 1000에서 0.002.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 원근 투영 행렬과 $$w'$$로 나누기(원본 06.na06_rotation.pdf p.32~33), [좌표계 변환](/Hongs_Blog/studies/numerical-analysis/coordinate-frame/)의 뷰 행렬, [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) '활용'의 모델·뷰·투영 행렬로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 막대와 철길 예시, 쓰이는 곳, 중점과 텍스처 보간, 흔한 실수, 직교 사영과의 관계, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [11_projection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 막대 높이 1과 0.5, 폭 2가 거리 10에서 0.2, 거리 1000에서 0.002.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 원근 투영 행렬과 $$w'$$로 나누기(원본 06.na06_rotation.pdf p.32~33), [좌표계 변환](/Hongs_Blog/studies/numerical-analysis/coordinate-frame/)의 뷰 행렬, [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) '활용'의 모델·뷰·투영 행렬로 그렸다.
 {% endraw %}

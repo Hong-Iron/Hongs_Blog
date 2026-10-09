@@ -97,8 +97,8 @@ flowchart LR
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260924190905.png — 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks" (필기 29행에 삽입)
-[^s1]: 에이전트 보충. 라우터·게이트웨이라는 이름과 재귀적 구성은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절(연결성)의 설명이다.
-[^s2]: 에이전트 보충. 예는 원본에 없다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 라우터·호스트 구분과 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks"의 구름 그림을 바탕으로 그렸다. 네트워크 3개는 설명용으로 고른 수다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks" (필기 29행에 삽입)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 라우터·게이트웨이라는 이름과 재귀적 구성은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절(연결성)의 설명이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예는 원본에 없다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 라우터·호스트 구분과 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks"의 구름 그림을 바탕으로 그렸다. 네트워크 3개는 설명용으로 고른 수다.
 {% endraw %}

@@ -103,5 +103,5 @@ permalink: "/studies/operating-systems/bankers-ladder/"
 </div>
 
 
-[^s1]: 에이전트 보충. 문제 1은 원본 그림 6.7의 수치다. 문제 2~4의 상태는 Silberschatz, Galvin & Gagne, *Operating System Concepts*의 은행원 알고리즘 예제와 같은 수치를 쓰고, 요청은 바꿨다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1은 원본 그림 6.7의 수치다. 문제 2~4의 상태는 Silberschatz, Galvin & Gagne, *Operating System Concepts*의 은행원 알고리즘 예제와 같은 수치를 쓰고, 요청은 바꿨다.
 {% endraw %}

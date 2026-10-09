@@ -100,7 +100,7 @@ $$GCPU_k(i)$$는 프로세스 $$j$$가 속한 그룹 $$k$$의 프로세서 사�
 
 예: 시각 1에 A는 CPU 30, 그룹 CPU 30이므로 $$60 + 15 + 30/(4 \times 0.5) = 90$$이다. 실행 순서가 A, B, A, C, A로, A가 시간의 절반, B와 C가 나머지 절반을 나눠 쓴다. 그룹 두 개가 몫 0.5씩을 받는 셈이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/46_fair-share-unix-scheduling_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/46_fair-share-unix-scheduling_fig1.svg" alt="그림" width="612" height="295" loading="lazy">
 
 같은 규칙을 30초까지 계속 돌린 누적 실행 시간이다. 전통 UNIX에서는 셋이 10초씩 똑같이 나눈다. 공정 분배에서는 그룹 1의 A 혼자 15초를, 그룹 2의 B와 C가 합쳐 15초를 받는다. 프로세스 수가 아니라 그룹 수로 프로세서가 나뉜다[^s2].
 
@@ -137,13 +137,13 @@ $$GCPU_k(i)$$는 프로세스 $$j$$가 속한 그룹 $$k$$의 프로세서 사�
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/09.Chapter09-new.pptx, 슬라이드 58 (그림 9.17)
+[^1]: 운영체제 9회 강의 자료 「Chapter09-new」, 슬라이드 58 (그림 9.17)
 [^2]: 같은 자료, 슬라이드 53의 발표자 노트
 [^3]: 같은 자료, 슬라이드 55
 [^4]: 같은 자료, 슬라이드 56
 [^5]: 같은 자료, 슬라이드 57과 슬라이드 55의 발표자 노트
 [^6]: 같은 자료, 슬라이드 52. 공정 분배 식은 Stallings 6판 9.3절의 식이다(슬라이드는 그림만 있다).
 [^7]: 같은 자료, 슬라이드 53 (그림 9.16)과 슬라이드 52의 발표자 노트
-[^s1]: 에이전트 보충. nice 명령과 다중 사용자 서버 예, 확인 문제 C3은 슬라이드에 없다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [46_fair-share-unix-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/46_fair-share-unix-scheduling_plot/)로 그렸고, 처음 5초의 실행 순서가 위 두 표와 같다는 것, 30초 동안 받은 시간 10·10·10초와 15·8·7초를 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> nice 명령과 다중 사용자 서버 예, 확인 문제 C3은 슬라이드에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [46_fair-share-unix-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/46_fair-share-unix-scheduling_plot/)로 그렸고, 처음 5초의 실행 순서가 위 두 표와 같다는 것, 30초 동안 받은 시간 10·10·10초와 15·8·7초를 같은 코드로 확인했다.
 {% endraw %}

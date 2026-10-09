@@ -47,7 +47,7 @@ permalink: "/studies/computer-communication/pcm/"
 
 2단계에서 1.4가 1이 되면서 0.4만큼 틀어진다. 이 차이(양자화 오차)는 받는 쪽이 되돌릴 수 없다. 단계를 반올림하므로 오차는 한 단계 폭의 절반을 넘지 않는다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig1.svg" alt="그림" width="507" height="331" loading="lazy">
 
 주황 점과 파란 막대 끝 사이가 반올림 오차다. 점이 막대 끝에서 반 칸 넘게 벗어난 곳은 없다. 점과 점 사이에서 파형이 어떻게 움직였는지는 막대에 남지 않는다. 그 정보는 재는 순간에 이미 사라진다[^s4].
 
@@ -96,7 +96,7 @@ $$8{,}000 \ \text{표본/초} \times 8 \ \text{비트/표본} = 64{,}000 \ \text
 
 슬라이드는 "약 2배"라고 쓰고, 4 kHz 음성에 8 kHz라는 정확히 2배의 예를 든다. 실제 전화망은 음성을 미리 약 3.4 kHz 아래로 걸러 두므로, 8 kHz는 $$2f_{\max}$$보다 크다[^s2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig2.svg" alt="그림" width="486" height="370" loading="lazy">
 
 4 kHz로 떨리는 소리를 1초에 정확히 8,000번 재면, 재는 순간이 매번 파형이 0을 지나는 자리에 걸릴 수 있다(위). 잰 값만 보면 소리가 없는 것과 같다. 1초에 10,000번 재면(아래) 오르내림이 점에 남는다. "2배"가 아니라 "2배보다 많이"여야 하는 이유다[^s4].
 
@@ -136,12 +136,12 @@ $$8{,}000 \ \text{표본/초} \times 8 \ \text{비트/표본} = 64{,}000 \ \text
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 25 "PCM (Pulse Code Modulation)" (4-1학기/pasted_images/Pasted image 20261006010228.png). 그림 FIGURE 3.11의 PCM output에 빨간 동그라미
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/05.5주차.md, 33~37행
-[^3]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 26 "PCM을 이용한 음성 데이터의 D-data화". 필기 39~43행
-[^s1]: 에이전트 보충. 양자화 오차가 단계 폭의 절반 이하라는 것과 카드 C2·C3의 수치는 원본에 없다. 검증 코드로 계산했다.
-[^s2]: 에이전트 보충. 슬라이드 26은 "Sampling rate ≈ 2 × Highest signal frequency"다(pptx 원본의 Symbol 글꼴 문자 0xBB가 ≈, 0xB4가 ×). 필기 40행도 "≈ 2×"로 적는다. 표본화 정리의 정확한 조건은 $$f_s > 2f_{\max}$$다(Oppenheim & Willsky, *Signals and Systems*, 7.1절). 정확히 2배에서는 $$f_{\max}$$인 사인파를 매번 0인 지점에서 잴 수 있어 되살릴 수 없다. 전화 음성 대역 300~3,400 Hz는 ITU-T G.711(PCM 64 kbps)의 대역이다.
-[^s3]: 에이전트 보충. T1의 24채널(1.544 Mbps = 24 × 64 kbps + 8 kbps 동기), CD의 44.1 kHz·16비트는 원본에 없다. 표준 값이다(ANSI T1.403, IEC 60908).
-[^s4]: 에이전트 보충. 그림 두 장은 원본에 없다. 그림 1의 곡선은 슬라이드의 표본 일곱 개를 지나도록 그린 매끄러운 곡선(3차 스플라인)이라, 표본 사이의 모양은 슬라이드의 원래 파형과 다를 수 있다. [38_pcm_plot.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_plot/)로 그렸고, 반올림 결과 3, 1, 6, 1, 3, 6, 4와 비트열 `011001110001011110100`, 반올림 오차가 0.5 이하인 것, 8 kHz로 잰 4 kHz 사인파의 값이 모두 0인 것을 같은 코드로 확인했다.
-[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 25 "PCM (Pulse Code Modulation)"의 그림(PAM sampler, Quantizer, PCM output)과 이 문서 '예시로 보기' 표의 세 단계를 바탕으로 그렸다.
+[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 25 "PCM (Pulse Code Modulation)" (수업 슬라이드 캡처). 그림 FIGURE 3.11의 PCM output에 빨간 동그라미
+[^2]: 컴퓨터 통신 5회 필기 「5주차」, 33~37행
+[^3]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 26 "PCM을 이용한 음성 데이터의 D-data화". 필기 39~43행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 양자화 오차가 단계 폭의 절반 이하라는 것과 카드 C2·C3의 수치는 원본에 없다. 검증 코드로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 26은 "Sampling rate ≈ 2 × Highest signal frequency"다(pptx 원본의 Symbol 글꼴 문자 0xBB가 ≈, 0xB4가 ×). 필기 40행도 "≈ 2×"로 적는다. 표본화 정리의 정확한 조건은 $$f_s > 2f_{\max}$$다(Oppenheim & Willsky, *Signals and Systems*, 7.1절). 정확히 2배에서는 $$f_{\max}$$인 사인파를 매번 0인 지점에서 잴 수 있어 되살릴 수 없다. 전화 음성 대역 300~3,400 Hz는 ITU-T G.711(PCM 64 kbps)의 대역이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> T1의 24채널(1.544 Mbps = 24 × 64 kbps + 8 kbps 동기), CD의 44.1 kHz·16비트는 원본에 없다. 표준 값이다(ANSI T1.403, IEC 60908).
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. 그림 1의 곡선은 슬라이드의 표본 일곱 개를 지나도록 그린 매끄러운 곡선(3차 스플라인)이라, 표본 사이의 모양은 슬라이드의 원래 파형과 다를 수 있다. [38_pcm_plot.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_plot/)로 그렸고, 반올림 결과 3, 1, 6, 1, 3, 6, 4와 비트열 `011001110001011110100`, 반올림 오차가 0.5 이하인 것, 8 kHz로 잰 4 kHz 사인파의 값이 모두 0인 것을 같은 코드로 확인했다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 25 "PCM (Pulse Code Modulation)"의 그림(PAM sampler, Quantizer, PCM output)과 이 문서 '예시로 보기' 표의 세 단계를 바탕으로 그렸다.
 {% endraw %}

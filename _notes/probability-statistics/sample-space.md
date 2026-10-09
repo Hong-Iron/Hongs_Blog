@@ -107,5 +107,5 @@ permalink: "/studies/probability-statistics/sample-space/"
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 1.2절 "Sample spaces and Pebble World"(표본공간, 사건, 집합 연산과 말의 대응표).
-[^s1]: 에이전트 보충. 셀 수 없게 무한한 표본공간에서는 모든 부분집합에 확률을 일관되게 줄 수 없어서, 확률을 줄 사건의 모음을 제한한다(측도론의 σ-대수). 이 과정에서는 그런 제한이 결과를 바꾸는 경우를 다루지 않는다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 셀 수 없게 무한한 표본공간에서는 모든 부분집합에 확률을 일관되게 줄 수 없어서, 확률을 줄 사건의 모음을 제한한다(측도론의 σ-대수). 이 과정에서는 그런 제한이 결과를 바꾸는 경우를 다루지 않는다.
 {% endraw %}

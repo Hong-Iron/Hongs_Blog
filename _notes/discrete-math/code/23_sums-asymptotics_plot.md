@@ -3,7 +3,7 @@ layout: "note"
 title: "23_sums-asymptotics_plot.py"
 display_title: "23_sums-asymptotics_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "23"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/sums-asymptotics/"
 parent_title: "합의 계산과 어림"
-description: "이산수학 · 합의 계산과 어림 코드 코드"
+description: "이산수학 · 합의 계산과 어림 그림 생성 코드"
 permalink: "/studies/discrete-math/code/23_sums-asymptotics_plot/"
 ---
 {% raw %}
-[합의 계산과 어림](/Hongs_Blog/studies/discrete-math/sums-asymptotics/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[합의 계산과 어림](/Hongs_Blog/studies/discrete-math/sums-asymptotics/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 합의 계산과 어림 문서의 그림을 만든다: 23_sums-asymptotics_fig1.svg, 23_sums-asymptotics_fig2.svg

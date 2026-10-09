@@ -3,7 +3,7 @@ layout: "note"
 title: "17_series-convergence_plot.py"
 display_title: "17_series-convergence_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "17"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/series-convergence/"
 parent_title: "급수의 수렴"
-description: "미분적분학 · 급수의 수렴 코드 코드"
+description: "미분적분학 · 급수의 수렴 그림 생성 코드"
 permalink: "/studies/calculus/code/17_series-convergence_plot/"
 ---
 {% raw %}
-[급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 급수의 수렴 문서의 그림을 만든다: 17_series-convergence_fig1.svg

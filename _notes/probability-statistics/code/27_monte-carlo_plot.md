@@ -3,7 +3,7 @@ layout: "note"
 title: "27_monte-carlo_plot.py"
 display_title: "27_monte-carlo_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "27"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/monte-carlo/"
 parent_title: "몬테카를로 방법"
-description: "확률과 통계 · 몬테카를로 방법 코드 코드"
+description: "확률과 통계 · 몬테카를로 방법 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/27_monte-carlo_plot/"
 ---
 {% raw %}
-[몬테카를로 방법](/Hongs_Blog/studies/probability-statistics/monte-carlo/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[몬테카를로 방법](/Hongs_Blog/studies/probability-statistics/monte-carlo/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 몬테카를로 방법 문서의 그림을 만든다: 27_monte-carlo_fig1.svg

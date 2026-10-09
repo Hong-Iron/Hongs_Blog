@@ -3,7 +3,7 @@ layout: "note"
 title: "20_ensemble-learning_plot.py"
 display_title: "20_ensemble-learning_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "20"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/ensemble-learning/"
 parent_title: "앙상블 학습"
-description: "데이터 과학 · 앙상블 학습 코드 코드"
+description: "데이터 과학 · 앙상블 학습 그림 생성 코드"
 permalink: "/studies/data-science/code/20_ensemble-learning_plot/"
 ---
 {% raw %}
-[앙상블 학습](/Hongs_Blog/studies/data-science/ensemble-learning/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[앙상블 학습](/Hongs_Blog/studies/data-science/ensemble-learning/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 앙상블 학습 문서의 그림을 만든다: 20_ensemble-learning_fig1.svg

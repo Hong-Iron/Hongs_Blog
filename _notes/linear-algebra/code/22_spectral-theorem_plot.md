@@ -3,7 +3,7 @@ layout: "note"
 title: "22_spectral-theorem_plot.py"
 display_title: "22_spectral-theorem_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "22"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/spectral-theorem/"
 parent_title: "대칭행렬과 스펙트럼 정리"
-description: "선형대수학 · 대칭행렬과 스펙트럼 정리 코드 코드"
+description: "선형대수학 · 대칭행렬과 스펙트럼 정리 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/22_spectral-theorem_plot/"
 ---
 {% raw %}
-[대칭행렬과 스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[대칭행렬과 스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 대칭행렬과 스펙트럼 정리 문서의 그림을 만든다: 22_spectral-theorem_fig1.svg

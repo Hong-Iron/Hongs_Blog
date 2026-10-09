@@ -3,7 +3,7 @@ layout: "note"
 title: "11_multiprogramming_plot.py"
 display_title: "11_multiprogramming_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "11"
 course: "운영체제"
 course_slug: "operating-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 parent_url: "/studies/operating-systems/multiprogramming/"
 parent_title: "다중 프로그래밍"
-description: "운영체제 · 다중 프로그래밍 코드 코드"
+description: "운영체제 · 다중 프로그래밍 그림 생성 코드"
 permalink: "/studies/operating-systems/code/11_multiprogramming_plot/"
 ---
 {% raw %}
-[다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 다중 프로그래밍 문서의 그림을 만든다: 11_multiprogramming_fig1.svg

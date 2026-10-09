@@ -169,7 +169,7 @@ graph TD
 | 중간 줄무늬 | $$\pi/2$$ | 1.0 |
 | 가장 촘촘한 줄무늬 | $$\pi$$ | 1.2 |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/18_lateral-inhibition_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/18_lateral-inhibition_fig1.svg" alt="그림" width="519" height="327" loading="lazy">
 
 이득이 정확히 1인 경계는 $$\omega = \pi/2$$다. 곡선이 양 끝에서 평평해서, 고른 빛 근처와 가장 촘촘한 무늬 근처에서는 이득이 거의 바뀌지 않는다[^s9].
 
@@ -249,16 +249,16 @@ $$
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.12 (Mach Band)
-[^2]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.11 (Hermann Grid)
-[^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar 7주차
-[^s1]: 에이전트 보충. 슬라이드 p.12에는 그림 두 개가 함께 있다. 계산 그림(오른쪽)의 세포 A~F와, 지각 그래프(왼쪽 아래)의 A~D는 같은 글자가 서로 다른 위치를 가리킨다. 계산 그림에서 밝은 띠는 C, 어두운 띠는 D이고, 지각 그래프에서는 봉우리가 B, 골이 C로 적혀 있다. 이 문서의 글자는 계산 그림을 따른다.
-[^s2]: 에이전트 보충. 수평 세포·아마크린 세포의 역할과 배선 그림은 표준 지각 교재의 설명을 슬라이드 p.11 (b)의 "Lateral inhibition" 배선에 맞춰 그린 것이다.
-[^s3]: 에이전트 보충. 헤르만 격자의 측면 억제 설명은 교과서의 고전적 설명이지만, 격자선을 물결 모양으로 바꾸면 착시가 사라진다는 반례가 보고되었다(Schiller & Carvey 2005, *Perception*; Geier et al. 2008). 착시에 망막보다 높은 단계가 관여한다는 뜻이다.
-[^s4]: 에이전트 보충. 일반 계단에 대한 증명은 원본에 없다. 슬라이드의 수치 예를 문자로 일반화했다.
-[^s5]: 에이전트 보충. 주파수 응답 $$1 - 2k\cos\omega$$는 $$\cos(\omega(n \pm 1)) = \cos\omega n\cos\omega \mp \sin\omega n\sin\omega$$에서 사인 항이 상쇄되어 나온다. unsharp masking과의 대응은 영상 처리의 표준 내용이다.
-[^s6]: 에이전트 보충. Krizhevsky, Sutskever & Hinton(2012)의 "local response normalization" 설명과, Carandini & Heeger(2012, *Nature Reviews Neuroscience*)의 분할 정규화 개관에 근거한다.
-[^s7]: 에이전트 보충. 그라데이션의 색 띠가 마하 띠 때문에 더 눈에 띈다는 것은 영상 공학에서 흔히 드는 설명이다.
-[^s8]: 에이전트 보충. 숫자 예(10 → 8)는 위 식에 $$k = 0.1$$을 넣은 계산이다.
-[^s9]: 에이전트 보충. 그림 1장은 원본에 없다. [18_lateral-inhibition_plot.py](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_plot/)로 그렸고, 그림에 쓴 값($$\omega = 0, \pi/3, \pi/2, \pi$$에서 이득 0.8, 0.9, 1.0, 1.2, 각각 커널 $$(-0.1, 1, -0.1)$$ 합성곱 결과와 일치)을 같은 코드로 확인했다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.12 (Mach Band)
+[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.11 (Hermann Grid)
+[^3]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 7주차
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.12에는 그림 두 개가 함께 있다. 계산 그림(오른쪽)의 세포 A~F와, 지각 그래프(왼쪽 아래)의 A~D는 같은 글자가 서로 다른 위치를 가리킨다. 계산 그림에서 밝은 띠는 C, 어두운 띠는 D이고, 지각 그래프에서는 봉우리가 B, 골이 C로 적혀 있다. 이 문서의 글자는 계산 그림을 따른다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수평 세포·아마크린 세포의 역할과 배선 그림은 표준 지각 교재의 설명을 슬라이드 p.11 (b)의 "Lateral inhibition" 배선에 맞춰 그린 것이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 헤르만 격자의 측면 억제 설명은 교과서의 고전적 설명이지만, 격자선을 물결 모양으로 바꾸면 착시가 사라진다는 반례가 보고되었다(Schiller & Carvey 2005, *Perception*; Geier et al. 2008). 착시에 망막보다 높은 단계가 관여한다는 뜻이다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 일반 계단에 대한 증명은 원본에 없다. 슬라이드의 수치 예를 문자로 일반화했다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 주파수 응답 $$1 - 2k\cos\omega$$는 $$\cos(\omega(n \pm 1)) = \cos\omega n\cos\omega \mp \sin\omega n\sin\omega$$에서 사인 항이 상쇄되어 나온다. unsharp masking과의 대응은 영상 처리의 표준 내용이다.
+[^s6]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Krizhevsky, Sutskever & Hinton(2012)의 "local response normalization" 설명과, Carandini & Heeger(2012, *Nature Reviews Neuroscience*)의 분할 정규화 개관에 근거한다.
+[^s7]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그라데이션의 색 띠가 마하 띠 때문에 더 눈에 띈다는 것은 영상 공학에서 흔히 드는 설명이다.
+[^s8]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 숫자 예(10 → 8)는 위 식에 $$k = 0.1$$을 넣은 계산이다.
+[^s9]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [18_lateral-inhibition_plot.py](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_plot/)로 그렸고, 그림에 쓴 값($$\omega = 0, \pi/3, \pi/2, \pi$$에서 이득 0.8, 0.9, 1.0, 1.2, 각각 커널 $$(-0.1, 1, -0.1)$$ 합성곱 결과와 일치)을 같은 코드로 확인했다.
 {% endraw %}

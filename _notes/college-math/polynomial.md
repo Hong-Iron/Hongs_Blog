@@ -44,7 +44,7 @@ $$p(x) = x^3 - 6x^2 + 11x - 6$$에 $$x = 1$$을 넣으면 $$1 - 6 + 11 - 6 = 0$$
 
 몫 $$x^2 - 5x + 6$$은 $$(x - 2)(x - 3)$$으로 인수분해된다. 그래서 $$p(x) = (x - 1)(x - 2)(x - 3)$$이고 근은 $$1, 2, 3$$이다. 3차식이 근 세 개를 다 썼으니 더는 근이 없다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/04_polynomial_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/04_polynomial_fig1.svg" alt="그림" width="501" height="342" loading="lazy">
 
 그래프가 가로축을 1, 2, 3에서 지나고, 근을 하나 지날 때마다 값의 부호가 바뀐다[^s3].
 
@@ -92,7 +92,7 @@ flowchart LR
 
 복소수까지 허용하면 $$n$$차 다항식은 중복을 세어 정확히 $$n$$개의 근을 가진다(대수학의 기본정리)[^2]. [증명 생략: 복소해석의 결과] 판별식이 음수인 이차방정식도 복소수 근은 두 개다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/04_polynomial_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/04_polynomial_fig2.svg" alt="그림" width="489" height="335" loading="lazy">
 
 세 포물선은 모양이 같고 높이만 다르다. 판별식이 양수면 가로축과 두 번 만나고, 0이면 한 번 닿고, 음수면 가로축 위에 떠 있어서 실근이 없다[^s3].
 
@@ -165,8 +165,8 @@ flowchart LR
 
 [^1]: OpenStax, *Precalculus 2e*, 3.2절 "Quadratic Functions", 3.3절 "Power Functions and Polynomial Functions", 3.5절 "Dividing Polynomials", 3.6절 "Zeros of Polynomial Functions"
 [^2]: OpenStax, *Precalculus 2e*, 3.6절 "Zeros of Polynomial Functions"(대수학의 기본정리와 일차 인수 분해 정리)
-[^s1]: 에이전트 보충. 호너 방법, 롤링 해시, 샤미르 비밀 분산, 리드-솔로몬 부호는 다항식이 컴퓨터공학에서 쓰이는 곳을 보이려고 넣었다. 롤링 해시는 라빈-카프 문자열 탐색에서 쓴다.
-[^s2]: 에이전트 보충. 아벨-루피니 정리는 5차 이상 방정식의 **일반** 공식이 없다는 뜻이다. 특정한 5차 방정식은 근호로 풀리기도 한다. 증명은 갈루아 이론의 범위다.
-[^s3]: 에이전트 보충. 그림 두 장은 원본에 없다. [04_polynomial_plot.py](/Hongs_Blog/studies/college-math/code/04_polynomial_plot/)로 그렸고, 그림에 쓴 값($$p(1) = p(2) = p(3) = 0$$, $$p(x) = (x - 1)(x - 2)(x - 3)$$, 판별식 16, 0, −8과 첫 식의 근 −1, 3)을 같은 코드로 확인했다.
-[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `정의`의 정리 1~3과 그 증명, `예시로 보기`의 조립제법, `예제`의 보간 유일성 논증이 서로 무엇을 쓰는지를 근거로 그렸다(OpenStax, *Precalculus 2e*, 3.5~3.6절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 호너 방법, 롤링 해시, 샤미르 비밀 분산, 리드-솔로몬 부호는 다항식이 컴퓨터공학에서 쓰이는 곳을 보이려고 넣었다. 롤링 해시는 라빈-카프 문자열 탐색에서 쓴다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 아벨-루피니 정리는 5차 이상 방정식의 **일반** 공식이 없다는 뜻이다. 특정한 5차 방정식은 근호로 풀리기도 한다. 증명은 갈루아 이론의 범위다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [04_polynomial_plot.py](/Hongs_Blog/studies/college-math/code/04_polynomial_plot/)로 그렸고, 그림에 쓴 값($$p(1) = p(2) = p(3) = 0$$, $$p(x) = (x - 1)(x - 2)(x - 3)$$, 판별식 16, 0, −8과 첫 식의 근 −1, 3)을 같은 코드로 확인했다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `정의`의 정리 1~3과 그 증명, `예시로 보기`의 조립제법, `예제`의 보간 유일성 논증이 서로 무엇을 쓰는지를 근거로 그렸다(OpenStax, *Precalculus 2e*, 3.5~3.6절).
 {% endraw %}

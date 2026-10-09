@@ -39,7 +39,7 @@ $$\mathbf{a}\cdot(\mathbf{b} - \hat{x}\mathbf{a}) = 0 \implies \hat{x} = \frac{\
 
 사영은 $$\mathbf{p} = \frac59(1, 2, 2)$$, 오차는 $$\mathbf{e} = (\frac49, -\frac19, -\frac19)$$이다. 확인하면 $$\mathbf{a}\cdot\mathbf{e} = \frac49 - \frac29 - \frac29 = 0$$이다. 직선이 아래 정리의 부분공간 $$C(A)$$(열이 $$\mathbf{a}$$ 하나), $$\mathbf{p}$$가 사영이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/16_orthogonal-projection_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/16_orthogonal-projection_fig1.svg" alt="그림" width="315" height="315" loading="lazy">
 
 $$\mathbf{b}$$에서 직선에 수직으로 내린 발이 $$\mathbf{p}$$이고, 그 수선이 오차 $$\mathbf{e}$$다. 직선 위의 다른 점은 모두 $$\mathbf{b}$$에서 이보다 멀다[^s1].
 
@@ -126,7 +126,7 @@ $$\mathbf{x}^\top A^\top = (A\mathbf{x})^\top$$이라 $$(A\mathbf{x})^\top(A\mat
 | $$A$$의 열이 독립 | $$A^\top A$$가 비가역이라 공식을 쓸 수 없다(사영 자체는 있다) | 열이 $$(1, 1)$$, $$(2, 2)$$면 $$A^\top A = \begin{pmatrix}2 & 4\\ 4 & 8\end{pmatrix}$$, 행렬식 0 |
 | $$P^\top = P$$(수직으로 내림) | $$P^2 = P$$여도 가장 가까운 점이 아니다 | $$P = \begin{pmatrix}1 & 1\\ 0 & 0\end{pmatrix}$$은 $$P^2 = P$$인 비스듬한 사영. $$(0, 1) \mapsto (1, 0)$$이지만 $$x$$축에서 가장 가까운 점은 $$(0, 0)$$ |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/16_orthogonal-projection_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/16_orthogonal-projection_fig2.svg" alt="그림" width="414" height="222" loading="lazy">
 
 $$(0, 1)$$을 $$x$$축으로 내리는 두 방법이다. 비스듬한 사영은 $$(1, 0)$$으로 보내 거리가 $$\sqrt2$$이고, 수직으로 내린 $$(0, 0)$$은 거리가 1이다[^s1].
 
@@ -220,11 +220,11 @@ $$\mathbf{b} = (6, 0, 0)$$을 $$(1, 1, 1)$$과 $$(0, 1, 2)$$가 만드는 평면
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 4.1절 "Orthogonality of the Four Subspaces"(직교 여공간), 4.2절 "Projections"(직선·부분공간으로의 사영, $$P^2 = P$$, $$P^\top = P$$, 예 $$\mathbf{b} = (6, 0, 0)$$).
-[^n1]: 2-2학기/수치해석/1.수업자료/05.na05_ortho.pdf, p.2
+[^n1]: 수치해석 5회 강의 자료 「na05_ortho」, p.2
 [^n2]: 같은 자료, p.3
 [^n3]: 같은 자료, p.4~5
 [^n4]: 같은 자료, p.5
-[^n5]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.13
-[^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 16_orthogonal-projection_verify.py로 확인했다.
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [16_orthogonal-projection_plot.py](/Hongs_Blog/studies/linear-algebra/code/16_orthogonal-projection_plot/)로 그렸고, $$\hat{x} = \frac59$$, $$\mathbf{e} = (\frac49, -\frac19, -\frac19)$$와 $$\mathbf{a}\cdot\mathbf{e} = 0$$, 비스듬한 사영의 $$P^2 = P$$와 거리 $$\sqrt2$$를 같은 코드로 확인했다.
+[^n5]: 수치해석 3회 강의 자료 「na03_matrix」, p.13
+[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C5는 원본에 없다. 16_orthogonal-projection_verify.py로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [16_orthogonal-projection_plot.py](/Hongs_Blog/studies/linear-algebra/code/16_orthogonal-projection_plot/)로 그렸고, $$\hat{x} = \frac59$$, $$\mathbf{e} = (\frac49, -\frac19, -\frac19)$$와 $$\mathbf{a}\cdot\mathbf{e} = 0$$, 비스듬한 사영의 $$P^2 = P$$와 거리 $$\sqrt2$$를 같은 코드로 확인했다.
 {% endraw %}

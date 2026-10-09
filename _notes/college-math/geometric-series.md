@@ -38,7 +38,7 @@ $$1 + 2 + 4 + \cdots + 512 = 1023$$
 
 넣은 원소 1,000개의 두 배도 안 된다. 원소 하나를 넣을 때 평균 복사가 1번 남짓이다. 늘 마지막으로 늘린 한 번(512)이 전체의 절반을 차지한다. 여기서 1이 아래 정리의 첫 항, 2가 비율 $$r$$, 늘린 횟수 10이 항 개수 $$n$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig1.svg" alt="그림" width="510" height="335" loading="lazy">
 
 계단이 한 칸 오를 때마다 배열을 늘리며 복사한다. 계단의 높이는 매번 두 배씩 뛰지만, 늘 점선 $$2n$$ 아래에 머문다[^s1].
 
@@ -72,7 +72,7 @@ $$\vert r\vert  < 1$$이면 $$n$$이 커질 때 $$r^n$$이 $$0$$으로 다가가
 </details>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig2.svg" alt="그림" width="492" height="342" loading="lazy">
 
 비율이 1/2이면 부분합이 금방 2에 붙고, 0.9이면 천천히 10에 다가간다. 비율이 1.1이면 한 값에 다가가지 않고 계속 커진다[^s1].
 
@@ -147,6 +147,6 @@ flowchart TD
 
 [^1]: OpenStax, *Precalculus 2e*, 11.4절 "Series and Their Notations"(유한·무한 등비급수)
 [^2]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 부록 A.1 "Summation formulas and properties"(등비급수), 17.4절 "Dynamic tables"(두 배 늘리는 표의 분할상환 비용)
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [21_geometric-series_plot.py](/Hongs_Blog/studies/college-math/code/21_geometric-series_plot/)로 그렸고, 그림에 쓴 값(복사 1,023번과 최종 용량 1,024, 누적 복사가 늘 $$2n$$ 미만, 부분합의 극한 2와 10)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예제`의 포화 이진 트리 노드 수 $$\sum_{d=0}^{h} 2^d = 2^{h+1} - 1$$에 $$h = 2$$를 넣어 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [21_geometric-series_plot.py](/Hongs_Blog/studies/college-math/code/21_geometric-series_plot/)로 그렸고, 그림에 쓴 값(복사 1,023번과 최종 용량 1,024, 누적 복사가 늘 $$2n$$ 미만, 부분합의 극한 2와 10)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `예제`의 포화 이진 트리 노드 수 $$\sum_{d=0}^{h} 2^d = 2^{h+1} - 1$$에 $$h = 2$$를 넣어 그렸다.
 {% endraw %}

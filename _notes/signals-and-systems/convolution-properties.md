@@ -114,7 +114,7 @@ $$(f * g)(t) = \int_{\infty}^{-\infty}f(t-u)g(u)(-du) = \int_{-\infty}^{\infty}g
 - $$y_2 = x_2 * h$$는 예제 2.5: $$2$$ ($$n \ge 0$$), $$2^{n+1}$$ ($$n < 0$$).
 - 더하면 $$y[n] = 4 - (\frac12)^n$$ ($$n \ge 0$$), $$2^{n+1}$$ ($$n < 0$$). 값은 $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$로 4에 다가간다(그림 2.24).
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/20_convolution-properties_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/20_convolution-properties_fig1.svg" alt="그림" width="564" height="429" loading="lazy">
 
 $$y_1$$은 $$n \ge 0$$에서만 값이 있고, $$y_2$$는 음의 $$n$$에서도 값이 있다. 둘을 더한 맨 아래 줄이 4(점선)로 다가간다[^s2].
 
@@ -162,14 +162,14 @@ $$y_1$$은 $$n \ge 0$$에서만 값이 있고, $$y_2$$는 음의 $$n$$에서도 
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/06.Week06_CH02_2_handout.pdf, p.8 (그림 2.25)
+[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.8 (그림 2.25)
 [^2]: 같은 자료, p.3
 [^3]: 같은 자료, p.4 (그림 2.23)
 [^4]: 같은 자료, p.8
 [^5]: 같은 자료, p.43
 [^6]: 같은 자료, p.5~6 (예제 2.10, 그림 2.24)
 [^7]: 같은 자료, p.2~3
-[^s1]: 에이전트 보충. 마이크 신호 비유, 분배법칙 증명의 한 줄, 하나로 합쳐 계산을 줄이는 활용, 확인 문제는 원본에 없다. 성질은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [20_convolution-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 정의대로 계산한 컨벌루션과 닫힌 꼴이 같고, $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$.
-[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 정의의 정리 표(6주차 자료 p.4, p.8의 그림 2.23, 2.25)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 마이크 신호 비유, 분배법칙 증명의 한 줄, 하나로 합쳐 계산을 줄이는 활용, 확인 문제는 원본에 없다. 성질은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [20_convolution-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 정의대로 계산한 컨벌루션과 닫힌 꼴이 같고, $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 정의의 정리 표(6주차 자료 p.4, p.8의 그림 2.23, 2.25)를 근거로 그렸다.
 {% endraw %}

@@ -37,7 +37,7 @@ $$x$$축에 대한 반사는 $$(x, y) \to (x, -y)$$로 쉽다. 그런데 직선 
 
 점 $$(2, 3)$$: 내리면 $$(2, 2)$$ → 반사 $$(2, -2)$$ → 올리면 $$(2, -1)$$. 실제로 $$(2, 3)$$과 $$(2, -1)$$은 $$y = 1$$에서 2씩 떨어져 있다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/07_reflection_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/07_reflection_fig1.svg" alt="그림" width="219" height="285" loading="lazy">
 
 파란 F가 원래 모양, 주황 F가 $$y = 1$$에 대한 반사다. 각 점이 직선에서 같은 거리만큼 반대편으로 간다. 반사된 F는 위아래가 뒤집혀서, 원래 F를 어떻게 돌려도 이 모양이 되지 않는다[^s2].
 
@@ -122,14 +122,14 @@ flowchart LR
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/06.na06_rotation.pdf, p.2
+[^1]: 수치해석 6회 강의 자료 「na06_rotation」, p.2
 [^2]: 같은 자료, p.3
 [^3]: 같은 자료, p.4
 [^4]: 같은 자료, p.5
 [^5]: 같은 자료, p.6
 [^6]: 같은 자료, p.7
 [^7]: 같은 자료, p.8
-[^s1]: 에이전트 보충. 예시, 3차원 반전이 회전이 아니라는 점, $$\cos2\theta$$ 꼴 행렬, 법선으로 쓴 평면 반사 공식, 거울 렌더링, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [07_reflection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$(2, 3) \to (2, -1)$$, 직선까지 거리 2씩, 반사 행렬의 행렬식 $$-1$$.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 평면 반사 식 $$X' = TR^{-1}F_{xy}RT^{-1}X$$(원본 06.na06_rotation.pdf p.7~8)로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시, 3차원 반전이 회전이 아니라는 점, $$\cos2\theta$$ 꼴 행렬, 법선으로 쓴 평면 반사 공식, 거울 렌더링, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [07_reflection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$(2, 3) \to (2, -1)$$, 직선까지 거리 2씩, 반사 행렬의 행렬식 $$-1$$.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 평면 반사 식 $$X' = TR^{-1}F_{xy}RT^{-1}X$$(원본 06.na06_rotation.pdf p.7~8)로 그렸다.
 {% endraw %}

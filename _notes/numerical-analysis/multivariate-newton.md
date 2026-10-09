@@ -43,7 +43,7 @@ $$u(x, y) = x^2 + xy - 10 = 0$$, $$v(x, y) = y + 3xy^2 - 57 = 0$$을 $$(x_0, y_0
 
 오차의 자릿수가 매번 대략 두 배가 된다. 같은 문제의 고정점 반복(방법 ii)은 훨씬 천천히 다가간다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/31_multivariate-newton_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/31_multivariate-newton_fig1.svg" alt="그림" width="555" height="291" loading="lazy">
 
 왼쪽에서 파란 곡선($$u = 0$$)과 초록 곡선($$v = 0$$)이 만나는 곳이 근 $$(2, 3)$$이다. 뉴턴(주황)은 두 걸음 만에 근에 닿고, 고정점 반복(보라 점선)은 근 둘레를 맴돌며 다가간다. 오른쪽은 근까지 거리를 한 칸이 10배인 눈금으로 그렸다. 뉴턴은 아래로 꺾여 떨어지고, 고정점은 일정한 기울기로 천천히 내려간다[^s2].
 
@@ -125,12 +125,12 @@ flowchart TD
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/17.na17_nonlinear2.pdf, p.13
+[^1]: 수치해석 17회 강의 자료 「na17_nonlinear2」, p.13
 [^2]: 같은 자료, p.14
 [^3]: 같은 자료, p.10
 [^4]: 같은 자료, p.11
 [^5]: 같은 자료, p.12
-[^s1]: 에이전트 보충. 오차 표, 행렬 꼴 $$J\Delta\mathbf x = -\mathbf F$$, 활용과 복잡도, 다른 근 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [31_multivariate-newton_plot.py](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 반복 $$(2.03603, 2.84388)$$, 거리 표의 값, 고정점 방법 ii의 첫 값 $$(2.17945, 2.86051)$$.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 1차 근사와 연립 일차방정식(원본 17.na17_nonlinear2.pdf p.10~12), '활용'의 복잡도로 그렸다. 멈추는 기준은 예시 표의 근까지 거리를 보고 일반적인 꼴로 적었다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오차 표, 행렬 꼴 $$J\Delta\mathbf x = -\mathbf F$$, 활용과 복잡도, 다른 근 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [31_multivariate-newton_plot.py](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 반복 $$(2.03603, 2.84388)$$, 거리 표의 값, 고정점 방법 ii의 첫 값 $$(2.17945, 2.86051)$$.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 1차 근사와 연립 일차방정식(원본 17.na17_nonlinear2.pdf p.10~12), '활용'의 복잡도로 그렸다. 멈추는 기준은 예시 표의 근까지 거리를 보고 일반적인 꼴로 적었다.
 {% endraw %}

@@ -138,5 +138,5 @@ any(D[i][i] < 0 for i in range(1, n + 1))
 
 
 [^1]: Cormen 외, *Introduction to Algorithms* 3판, 25.2절 "The Floyd-Warshall algorithm"(중간 점을 {1, …, k}로 제한한 점화식과 O(n³)), Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 13.3 "Floyd–Warshall algorithm".
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 양방향 도로 1–2(5), 1–4(9), 2–3(2), 3–4(1)을 그대로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 양방향 도로 1–2(5), 1–4(9), 2–3(2), 3–4(1)을 그대로 그렸다.
 {% endraw %}

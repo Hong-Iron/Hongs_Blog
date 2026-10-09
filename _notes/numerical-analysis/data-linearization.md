@@ -45,7 +45,7 @@ permalink: "/studies/numerical-analysis/data-linearization/"
 
 자료 범위 안에서는 둘이 거의 같지만, 멀리 외삽하면 차이가 커진다[^4][^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/24_data-linearization_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/24_data-linearization_fig1.svg" alt="그림" width="555" height="311" loading="lazy">
 
 왼쪽은 세로축에 $$y$$ 대신 $$\ln y$$를 둔 것으로, 점들이 거의 한 직선 위에 놓인다. 오른쪽은 원래 축이다. 두 곡선은 자료 범위에서는 겹치고, $$x = 4$$를 넘어 외삽할수록 벌어진다[^s2].
 
@@ -141,7 +141,7 @@ flowchart LR
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/13.na13_least-squares.pdf, p.17
+[^1]: 수치해석 13회 강의 자료 「na13_least-squares」, p.17
 [^2]: 같은 자료, p.20
 [^3]: 같은 자료, p.21~22
 [^4]: 같은 자료, p.40
@@ -155,7 +155,7 @@ flowchart LR
 [^12]: 같은 자료, p.37
 [^13]: 같은 자료, p.38
 [^14]: 같은 자료, p.39
-[^s1]: 에이전트 보충. 세균 비유, 두 방법의 오차 제곱합(가우스-뉴턴으로 계산), 셋째 선형화의 유도 한 줄, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [24_data-linearization_plot.py](/Hongs_Blog/studies/numerical-analysis/code/24_data-linearization_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 두 맞춤의 계수, 오차 제곱합 0.0501과 0.0409, $$x = 10$$ 예측 78.9955와 74.6287. 비선형 해는 가우스-뉴턴 방법으로 다시 구했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '자료 선형화'의 표와 정규방정식, '비선형 최소제곱' 절(원본 13.na13_least-squares.pdf p.17~19, p.37~39)로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세균 비유, 두 방법의 오차 제곱합(가우스-뉴턴으로 계산), 셋째 선형화의 유도 한 줄, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [24_data-linearization_plot.py](/Hongs_Blog/studies/numerical-analysis/code/24_data-linearization_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 두 맞춤의 계수, 오차 제곱합 0.0501과 0.0409, $$x = 10$$ 예측 78.9955와 74.6287. 비선형 해는 가우스-뉴턴 방법으로 다시 구했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '자료 선형화'의 표와 정규방정식, '비선형 최소제곱' 절(원본 13.na13_least-squares.pdf p.17~19, p.37~39)로 그렸다.
 {% endraw %}

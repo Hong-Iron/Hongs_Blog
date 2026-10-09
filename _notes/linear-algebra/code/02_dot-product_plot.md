@@ -3,7 +3,7 @@ layout: "note"
 title: "02_dot-product_plot.py"
 display_title: "02_dot-product_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "02"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/dot-product/"
 parent_title: "내적과 노름"
-description: "선형대수학 · 내적과 노름 코드 코드"
+description: "선형대수학 · 내적과 노름 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/02_dot-product_plot/"
 ---
 {% raw %}
-[내적과 노름](/Hongs_Blog/studies/linear-algebra/dot-product/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[내적과 노름](/Hongs_Blog/studies/linear-algebra/dot-product/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 내적과 노름 문서의 그림을 만든다: 02_dot-product_fig1.svg

@@ -58,7 +58,7 @@ permalink: "/studies/algorithms/parametric-search-ivt/"
 </details>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/39_parametric-search-ivt_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/39_parametric-search-ivt_fig1.svg" alt="그림" width="564" height="372" loading="lazy">
 
 위 그림의 네모는 정수 0 ~ 4에서의 판정이다(초록은 참, 주황은 거짓). 아래 보라 막대는 이분법이 반씩 줄여 간 구간이다. 구간은 늘 부호가 바뀌는 자리를 품은 채 오른쪽 근 3.3으로 모이고, 가장 작은 근 0.5는 첫 걸음에 구간 밖으로 빠진다[^s4].
 
@@ -140,8 +140,8 @@ $$f$$가 $$[a, b]$$에서 연속이고 $$f(a) < 0 < f(b)$$라 하자.
 [^1]: 판정 함수의 경계를 이분 탐색으로 찾는 틀은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search"의 Finding the smallest solution. 불변식의 세 단계(초기화·유지·종료)는 Cormen 외, *Introduction to Algorithms* 3판, 2.1절의 방식을 따랐다.
 [^2]: Python 3 표준 라이브러리 문서, `math.ulp`(어떤 부동소수점 수와 그다음 수의 간격). `math.ulp(1e9)`를 계산하면 $$2^{-23}$$이다.
 [^3]: Bartle·Sherbert, *Introduction to Real Analysis* 3판(Wiley, 2000), 5.3절 "Continuous Functions on Intervals"의 정리 5.3.5 Location of Roots Theorem. 구간을 반씩 나누어 근이 있음을 보이고, 이 증명이 곧 이분법(Bisection Method)이라고 적는다. 사잇값 정리의 진술은 OpenStax, *Calculus Volume 1*, 2.4절.
-[^s1]: 에이전트 보충. 비교 표의 삼차함수는 정수 0 ~ 4에서 "f(x) ≥ 0인가?"의 대답이 매개변수 탐색 C3의 판정 줄과 같도록 근 0.5, 1.5, 3.3을 골라 만든 예다. 표의 중점과 부호의 근거: 39_parametric-search-ivt_verify.py.
-[^s2]: 에이전트 보충. 연속과 사잇값 정리 문서에서 생략한 증명이다. Bartle·Sherbert의 이분법 증명을 매개변수 탐색의 불변식 말로 쓴 것이다. Bartle·Sherbert는 중점에서 $$f = 0$$이면 거기서 멈추고, 완비성을 축소 구간 성질(Nested Intervals Property)로 쓴다. 이 문서는 $$f(p_k) \ge 0$$을 오른쪽 끝으로 보내 멈춤 없이 이어 가고, 완비성을 단조 수렴 정리의 형태로 쓴다.
-[^s3]: 에이전트 보충. MTU 상황과 4000 ~ 6000바이트를 버리는 장비는 이 문서에서 만든 예다. 수치의 근거: 39_parametric-search-ivt_verify.py(576 ~ 9000의 모든 MTU 값, 무작위로 버리는 구간 300가지).
-[^s4]: 에이전트 보충. 그림은 원본에 없다. [39_parametric-search-ivt_plot.py](/Hongs_Blog/studies/algorithms/code/39_parametric-search-ivt_plot/)로 그렸고, 정수 0 ~ 4의 판정 줄(거짓, 참, 거짓, 거짓, 참), 이분법 구간 [0, 4] → [2, 4] → [3, 4] → [3, 3.5] → [3.25, 3.5], 60번 뒤 양 끝이 3.3과 $$10^{-12}$$ 안으로 붙는다는 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 비교 표의 삼차함수는 정수 0 ~ 4에서 "f(x) ≥ 0인가?"의 대답이 매개변수 탐색 C3의 판정 줄과 같도록 근 0.5, 1.5, 3.3을 골라 만든 예다. 표의 중점과 부호의 근거: 39_parametric-search-ivt_verify.py.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 연속과 사잇값 정리 문서에서 생략한 증명이다. Bartle·Sherbert의 이분법 증명을 매개변수 탐색의 불변식 말로 쓴 것이다. Bartle·Sherbert는 중점에서 $$f = 0$$이면 거기서 멈추고, 완비성을 축소 구간 성질(Nested Intervals Property)로 쓴다. 이 문서는 $$f(p_k) \ge 0$$을 오른쪽 끝으로 보내 멈춤 없이 이어 가고, 완비성을 단조 수렴 정리의 형태로 쓴다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MTU 상황과 4000 ~ 6000바이트를 버리는 장비는 이 문서에서 만든 예다. 수치의 근거: 39_parametric-search-ivt_verify.py(576 ~ 9000의 모든 MTU 값, 무작위로 버리는 구간 300가지).
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [39_parametric-search-ivt_plot.py](/Hongs_Blog/studies/algorithms/code/39_parametric-search-ivt_plot/)로 그렸고, 정수 0 ~ 4의 판정 줄(거짓, 참, 거짓, 거짓, 참), 이분법 구간 [0, 4] → [2, 4] → [3, 4] → [3, 3.5] → [3.25, 3.5], 60번 뒤 양 끝이 3.3과 $$10^{-12}$$ 안으로 붙는다는 것을 같은 코드로 확인했다.
 {% endraw %}

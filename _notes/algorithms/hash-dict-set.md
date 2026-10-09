@@ -68,7 +68,7 @@ for f in fruits:
 
 서로 다른 키가 같은 칸에 오는 것을 충돌이라고 한다. 충돌이 나면 다른 빈칸을 찾거나 한 칸에 여러 개를 매달아 둔다. 칸이 너무 차면 칸 수를 두 배쯤으로 늘리고 모두 다시 넣는다. 그래서 칸마다 들어 있는 키 수가 평균 몇 개를 넘지 않고, 넣기·찾기·지우기가 평균 $$O(1)$$이다. 모든 키가 한 칸에 몰리는 아주 나쁜 경우에는 $$O(n)$$까지 느려질 수 있다[^1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/04_hash-dict-set_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/04_hash-dict-set_fig1.svg" alt="그림" width="639" height="276" loading="lazy">
 
 왼쪽은 칸 하나에 키가 평균 몇 개 있는지다. 1을 넘으려는 순간 칸을 두 배로 늘려 절반으로 떨어지므로, 톱니 모양으로 0.5와 1 사이를 오간다. 오른쪽은 들어 있는 키 하나를 찾을 때 평균 비교 횟수다(세로는 10배마다 한 칸). 리스트는 키 수에 비례해 늘지만, 딕셔너리는 2번 아래에 머문다[^s1].
 
@@ -256,5 +256,5 @@ for ch in "banana":
 [^2]: Python Wiki, "TimeComplexity"의 dict, set 항목. 평균과 최악 비용을 함께 싣는다.
 [^3]: Python 3.7 "What's New": 딕셔너리가 넣은 순서를 지키는 것이 언어 명세의 일부가 되었다. 표준 라이브러리 문서 "Mapping Types — dict"에도 순서 보장이 적혀 있다.
 [^4]: Python 3 표준 라이브러리 문서, `collections.Counter`, `collections.defaultdict`.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [04_hash-dict-set_plot.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_plot/)로 그렸고, 칸을 고르는 규칙은 [04_hash-dict-set_impl.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_impl/)의 TinyDict와 같다(칸에 매달기, 키 수가 칸 수를 넘으면 두 배). 무작위 정수 키 2,000개를 넣는 동안 칸 하나당 키 수가 늘 1 이하이고 처음 8개 뒤로는 0.5보다 크다는 것, 딕셔너리 찾기는 평균 2번 미만이고 리스트는 1,000.5번이라는 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [04_hash-dict-set_plot.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_plot/)로 그렸고, 칸을 고르는 규칙은 [04_hash-dict-set_impl.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_impl/)의 TinyDict와 같다(칸에 매달기, 키 수가 칸 수를 넘으면 두 배). 무작위 정수 키 2,000개를 넣는 동안 칸 하나당 키 수가 늘 1 이하이고 처음 8개 뒤로는 0.5보다 크다는 것, 딕셔너리 찾기는 평균 2번 미만이고 리스트는 1,000.5번이라는 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "23_longitudinal-transverse-wave_plot.py"
 display_title: "23_longitudinal-transverse-wave_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "23"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/longitudinal-transverse-wave/"
 parent_title: "종파와 횡파"
-description: "휴먼 인터페이스 미디어 · 종파와 횡파 코드 코드"
+description: "휴먼 인터페이스 미디어 · 종파와 횡파 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/"
 ---
 {% raw %}
-[종파와 횡파](/Hongs_Blog/studies/human-interface-media/longitudinal-transverse-wave/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[종파와 횡파](/Hongs_Blog/studies/human-interface-media/longitudinal-transverse-wave/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 종파와 횡파 문서의 그림을 만든다: 23_longitudinal-transverse-wave_fig1.svg

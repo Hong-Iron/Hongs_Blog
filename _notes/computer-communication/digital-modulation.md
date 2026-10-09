@@ -45,7 +45,7 @@ permalink: "/studies/computer-communication/digital-modulation/"
 
 같은 비트 1 0 1 1 0을 세 방법으로 실으면 다음과 같다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/39_digital-modulation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/39_digital-modulation_fig1.svg" alt="그림" width="569" height="390" loading="lazy">
 
 진폭 변조는 0인 칸에서 물결이 꺼진다. 주파수 변조는 1인 칸에서 두 배 빠르게 출렁인다. 위상 변조는 높이와 빠르기가 늘 같고, 비트가 바뀌는 경계에서 물결이 뚝 끊겨 반대 방향으로 이어진다[^s4].
 
@@ -53,7 +53,7 @@ permalink: "/studies/computer-communication/digital-modulation/"
 
 높이를 네 단계(5, 3.5, 1.5, 0 V)로 나누고 각 단계에 00, 11, 01, 10을 붙이면, 심볼 하나에 2비트를 싣는다[^4]. 같은 시간에 두 배를 보낸다. 슬라이드 Figure 2.7도 진폭을 네 단계로 나눈 그림이다[^1][^s3]. 그렇다면 왜 100단계로 나누지 않을까? 단계 사이가 좁아지면 1.2 V와 1.5 V처럼 가까운 높이를 잡음 때문에 서로 헷갈리기 때문이다[^4].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/39_digital-modulation_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/39_digital-modulation_fig2.svg" alt="그림" width="470" height="370" loading="lazy">
 
 두 그림에 섞인 잡음의 크기는 같다. 높이가 2단계면 두 산이 멀리 떨어져 거의 틀리지 않는다. 4단계면 이웃 산의 꼬리가 점선(단계를 가르는 기준)을 넘어, 받은 값의 약 13%를 이웃 단계로 잘못 읽는다[^s4].
 
@@ -123,14 +123,14 @@ $$R = S \times \lg M \ \text{(bps)}$$
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 27 "변조: Amplitude Modulation", Figure 2.6과 2.7 (4-1학기/pasted_images/Pasted image 20261006165743.png)
-[^2]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 28 "주파수 변조: Freq. Modulation", Figure 2.8 (4-1학기/pasted_images/Pasted image 20261006170430.png). 890·910 MHz 예는 4-1학기/컴퓨터 통신/2.필기노트/05.5주차.md, 59~60행
-[^3]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 29 "위상 변조: Phase Modulation", Figure 2.7 "Binary and Quad Phase modulation" (4-1학기/pasted_images/Pasted image 20261006170652.png). 필기 66행
-[^4]: 4-1학기/컴퓨터 통신/2.필기노트/05.5주차.md, 51~53행
-[^5]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 30 "이동통신의 속도가 2배 ↑". 필기 70~78행
-[^6]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 31 "참고: 아날로그 데이터 → 아날로그 신호 예: Amplitude Modulation (AM)" (4-1학기/pasted_images/Pasted image 20261006172730.png). 슬라이드 질문 "Digital Transmission 가능?"
-[^s1]: 에이전트 보충. $$R = S \times \lg M$$, 심볼 수와 속도의 관계, 카드 C3은 원본에 없다. 심볼 하나가 $$M$$가지 중 하나를 고르므로 $$\lg M$$비트를 나른다는 정의에서 나온다. 검증 코드로 계산했다.
-[^s2]: 에이전트 보충. 높은 주파수 대역에서 넓은 대역폭을 얻기 쉽다는 이유는 원본에 없다. 같은 비율의 대역(예: 반송파의 10%)이 높은 주파수일수록 Hz로 넓다.
-[^s3]: 에이전트 보충. 슬라이드 27의 Figure 2.7은 "Quadrature amplitude modulation (QAM)"이라 적혀 있지만, 그림은 진폭만 네 단계(Off, Low, Medium, High)로 바꾼다. 보통 QAM(직교 진폭 변조)은 진폭과 위상을 함께 바꾸는 방법을 가리킨다(예: 16-QAM). 필기 05.5주차.md 52행은 이 그림을 "진폭을 네 단계로 나눠 2비트씩 보내는 방법"으로 적는다. 그래서 이 문서는 그림을 진폭만 여러 단계로 바꾸는 방법(다단계 진폭 변조, 4-ASK)으로 읽는다. 그림의 QAM 이름표는 정확한 이름이 아니다.
-[^s4]: 에이전트 보충. 그림 두 장은 원본에 없다. 그림 1은 반송파가 비트 한 칸에 3번 출렁이도록 줄여 그렸다. 890 MHz와 910 MHz처럼 가까운 두 주파수는 눈으로 구별되지 않아서, 주파수 변조의 1은 두 배 빠르게 그렸다. 그림 2의 잡음 크기(표준편차 0.6 V)는 설명용 가정이다. [39_digital-modulation_plot.py](/Hongs_Blog/studies/computer-communication/code/39_digital-modulation_plot/)로 그렸고, 각 칸에서 반송파의 정해진 성질만 바뀌는 것과, 받은 값 2만 개씩에서 잘못 읽은 비율이 2단계 0.1% 미만, 4단계 5~20%(그림에서 12.8%)인 것을 같은 코드로 확인했다.
+[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 27 "변조: Amplitude Modulation", Figure 2.6과 2.7 (수업 슬라이드 캡처)
+[^2]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 28 "주파수 변조: Freq. Modulation", Figure 2.8 (수업 슬라이드 캡처). 890·910 MHz 예는 컴퓨터 통신 5회 필기 「5주차」, 59~60행
+[^3]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 29 "위상 변조: Phase Modulation", Figure 2.7 "Binary and Quad Phase modulation" (수업 슬라이드 캡처). 필기 66행
+[^4]: 컴퓨터 통신 5회 필기 「5주차」, 51~53행
+[^5]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 30 "이동통신의 속도가 2배 ↑". 필기 70~78행
+[^6]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 31 "참고: 아날로그 데이터 → 아날로그 신호 예: Amplitude Modulation (AM)" (수업 슬라이드 캡처). 슬라이드 질문 "Digital Transmission 가능?"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$R = S \times \lg M$$, 심볼 수와 속도의 관계, 카드 C3은 원본에 없다. 심볼 하나가 $$M$$가지 중 하나를 고르므로 $$\lg M$$비트를 나른다는 정의에서 나온다. 검증 코드로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 높은 주파수 대역에서 넓은 대역폭을 얻기 쉽다는 이유는 원본에 없다. 같은 비율의 대역(예: 반송파의 10%)이 높은 주파수일수록 Hz로 넓다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 27의 Figure 2.7은 "Quadrature amplitude modulation (QAM)"이라 적혀 있지만, 그림은 진폭만 네 단계(Off, Low, Medium, High)로 바꾼다. 보통 QAM(직교 진폭 변조)은 진폭과 위상을 함께 바꾸는 방법을 가리킨다(예: 16-QAM). 필기 05.5주차.md 52행은 이 그림을 "진폭을 네 단계로 나눠 2비트씩 보내는 방법"으로 적는다. 그래서 이 문서는 그림을 진폭만 여러 단계로 바꾸는 방법(다단계 진폭 변조, 4-ASK)으로 읽는다. 그림의 QAM 이름표는 정확한 이름이 아니다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. 그림 1은 반송파가 비트 한 칸에 3번 출렁이도록 줄여 그렸다. 890 MHz와 910 MHz처럼 가까운 두 주파수는 눈으로 구별되지 않아서, 주파수 변조의 1은 두 배 빠르게 그렸다. 그림 2의 잡음 크기(표준편차 0.6 V)는 설명용 가정이다. [39_digital-modulation_plot.py](/Hongs_Blog/studies/computer-communication/code/39_digital-modulation_plot/)로 그렸고, 각 칸에서 반송파의 정해진 성질만 바뀌는 것과, 받은 값 2만 개씩에서 잘못 읽은 비율이 2단계 0.1% 미만, 4단계 5~20%(그림에서 12.8%)인 것을 같은 코드로 확인했다.
 {% endraw %}

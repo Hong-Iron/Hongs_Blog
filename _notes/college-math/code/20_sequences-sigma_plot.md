@@ -3,7 +3,7 @@ layout: "note"
 title: "20_sequences-sigma_plot.py"
 display_title: "20_sequences-sigma_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "20"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/sequences-sigma/"
 parent_title: "수열과 합의 기호"
-description: "대학수학 · 수열과 합의 기호 코드 코드"
+description: "대학수학 · 수열과 합의 기호 그림 생성 코드"
 permalink: "/studies/college-math/code/20_sequences-sigma_plot/"
 ---
 {% raw %}
-[수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[수열과 합의 기호](/Hongs_Blog/studies/college-math/sequences-sigma/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 수열과 합의 기호 문서의 그림을 만든다: 20_sequences-sigma_fig1.svg

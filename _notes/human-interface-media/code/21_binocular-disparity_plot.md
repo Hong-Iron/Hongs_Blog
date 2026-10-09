@@ -3,7 +3,7 @@ layout: "note"
 title: "21_binocular-disparity_plot.py"
 display_title: "21_binocular-disparity_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "21"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/binocular-disparity/"
 parent_title: "양안 시차"
-description: "휴먼 인터페이스 미디어 · 양안 시차 코드 코드"
+description: "휴먼 인터페이스 미디어 · 양안 시차 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/21_binocular-disparity_plot/"
 ---
 {% raw %}
-[양안 시차](/Hongs_Blog/studies/human-interface-media/binocular-disparity/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[양안 시차](/Hongs_Blog/studies/human-interface-media/binocular-disparity/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 양안 시차 문서의 그림을 만든다: 21_binocular-disparity_fig1.svg, fig2.svg

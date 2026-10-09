@@ -3,7 +3,7 @@ layout: "note"
 title: "19_partial-derivatives_plot.py"
 display_title: "19_partial-derivatives_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/partial-derivatives/"
 parent_title: "다변수 함수와 편미분"
-description: "미분적분학 · 다변수 함수와 편미분 코드 코드"
+description: "미분적분학 · 다변수 함수와 편미분 그림 생성 코드"
 permalink: "/studies/calculus/code/19_partial-derivatives_plot/"
 ---
 {% raw %}
-[다변수 함수와 편미분](/Hongs_Blog/studies/calculus/partial-derivatives/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[다변수 함수와 편미분](/Hongs_Blog/studies/calculus/partial-derivatives/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 다변수 함수와 편미분 문서의 그림을 만든다: 19_partial-derivatives_fig1.svg, 19_partial-derivatives_fig2.svg

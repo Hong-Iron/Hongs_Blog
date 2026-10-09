@@ -61,7 +61,7 @@ flowchart LR
 
 모델은 한 줄로 이어져 있다. 각 모델이 틀린 점의 무게가 다음 모델의 훈련 자료를 바꾼다. 마지막 투표에서는 가중 오류가 작았던 모델일수록 큰 무게를 받는다[^s3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/22_boosting-adaboost_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/22_boosting-adaboost_fig1.svg" alt="그림" width="602" height="410" loading="lazy">
 
 막대는 점의 무게다. 파란색은 정답이 +, 주황색은 정답이 −인 점이다. ×는 그 라운드의 규칙(점선에서 자름)이 틀린 점이다. 틀린 점은 다음 라운드에서 막대가 커지고, 마지막 그림의 가중 투표는 10개 점 모두에서 정답과 부호가 같다[^s2].
 
@@ -143,10 +143,10 @@ $$\alpha_m$$의 식에서 $$\epsilon_m < \frac12$$(찍기보다 낫다)이면 $$
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.17
+[^1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.17
 [^2]: 같은 자료, p.18
 [^3]: 같은 자료, p.19
-[^s1]: 에이전트 보충. 점 10개 예와 추적 표, 틀린 점의 합이 1/2이 되는 성질, $$\epsilon = 1/2$$의 해석, 그래디언트 부스팅, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다(Freund & Schapire, 1997).
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [22_boosting-adaboost_plot.py](/Hongs_Blog/studies/data-science/code/22_boosting-adaboost_plot/)로 그렸고, 세 라운드의 $$\epsilon$$ 0.300, 0.214, 0.182와 $$\alpha$$ 0.424, 0.650, 0.752, 1라운드 뒤 무게 $$\frac16$$과 $$\frac1{14}$$, 가중 투표의 부호를 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 세 라운드 추적 표와 `정의`의 의사코드(원본 6-2 p.18)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 점 10개 예와 추적 표, 틀린 점의 합이 1/2이 되는 성질, $$\epsilon = 1/2$$의 해석, 그래디언트 부스팅, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다(Freund & Schapire, 1997).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [22_boosting-adaboost_plot.py](/Hongs_Blog/studies/data-science/code/22_boosting-adaboost_plot/)로 그렸고, 세 라운드의 $$\epsilon$$ 0.300, 0.214, 0.182와 $$\alpha$$ 0.424, 0.650, 0.752, 1라운드 뒤 무게 $$\frac16$$과 $$\frac1{14}$$, 가중 투표의 부호를 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `예시로 보기`의 세 라운드 추적 표와 `정의`의 의사코드(원본 6-2 p.18)를 근거로 그렸다.
 {% endraw %}

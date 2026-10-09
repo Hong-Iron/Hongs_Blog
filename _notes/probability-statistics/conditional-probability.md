@@ -209,5 +209,5 @@ flowchart LR
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.2절 "Definition and intuition", 2.3절 "Bayes' rule and the law of total probability", 2.4절 "Conditional probabilities are probabilities", 2.7절 "Conditioning as a problem-solving tool"(몬티 홀), 2.8절 "Pitfalls and paradoxes".
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예제(몬티 홀 문제)의 1~3단계를 확률 나무로 옮겼다. 근거는 Blitzstein·Hwang 2판 2.7절이다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예제(몬티 홀 문제)의 1~3단계를 확률 나무로 옮겼다. 근거는 Blitzstein·Hwang 2판 2.7절이다.
 {% endraw %}

@@ -67,7 +67,7 @@ flowchart LR
 
 그래프로는 세로선을 그어 판정한다. 어디에 그어도 그래프와 두 번 이상 만나지 않으면 함수의 그래프다(수직선 판정). 원 $$x^2 + y^2 = 1$$은 세로선 $$x = 0$$과 $$(0, 1)$$, $$(0, -1)$$ 두 점에서 만난다. 그래서 원 전체는 $$y$$를 $$x$$의 함수로 나타내지 않는다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/01_function_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/01_function_fig1.svg" alt="그림" width="572" height="276" loading="lazy">
 
 왼쪽 원은 세로선 $$x = 0$$과 두 점에서 만나서 함수의 그래프가 아니다. 오른쪽 포물선은 어디에 세로선을 그어도 한 점에서만 만난다[^s2].
 
@@ -97,7 +97,7 @@ $$f(x) = \dfrac{\sqrt{x - 1}}{x - 3}$$의 자연 정의역을 구한다.
 2. *분모 조건:* $$x - 3 \ne 0$$이므로 $$x \ne 3$$.
 3. *합치기:* $$[1, 3) \cup (3, \infty)$$. 구간 $$[1, 3)$$은 $$1 \le x < 3$$을 뜻한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/01_function_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/01_function_fig2.svg" alt="그림" width="507" height="342" loading="lazy">
 
 그래프는 $$x = 1$$에서 값 0으로 시작하고, 그 왼쪽(회색)에는 없다. $$x = 3$$에서는 분모가 0이라 그래프가 끊기고, 3에 다가갈수록 위아래로 한없이 뻗는다[^s2].
 
@@ -164,7 +164,7 @@ $$f(x) = \dfrac{\sqrt{x - 1}}{x - 3}$$의 자연 정의역을 구한다.
 
 [^1]: OpenStax, *Precalculus 2e*, 1.1절 "Functions and Function Notation"
 [^2]: OpenStax, *Precalculus 2e*, 1.2절 "Domain and Range"
-[^s1]: 에이전트 보충. 순수 함수는 함수형 프로그래밍의 용어다. 수학의 함수와 코드의 함수가 어디서 갈리는지 보이려고 넣었다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [01_function_plot.py](/Hongs_Blog/studies/college-math/code/01_function_plot/)로 그렸고, 그림에 쓴 값(원 위 $$x = 0$$의 두 점 $$(0, \pm 1)$$, $$f(1) = 0$$, $$f(2) = -1$$, $$f(5) = 1$$, $$x = 0.5$$와 $$x = 3$$에서 계산이 안 됨)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 $$x^2$$ 값 표와 `정의`의 정의역·공역·치역을 근거로, 공역을 실수 전체로 두고 그렸다(OpenStax, *Precalculus 2e*, 1.1절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 순수 함수는 함수형 프로그래밍의 용어다. 수학의 함수와 코드의 함수가 어디서 갈리는지 보이려고 넣었다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [01_function_plot.py](/Hongs_Blog/studies/college-math/code/01_function_plot/)로 그렸고, 그림에 쓴 값(원 위 $$x = 0$$의 두 점 $$(0, \pm 1)$$, $$f(1) = 0$$, $$f(2) = -1$$, $$f(5) = 1$$, $$x = 0.5$$와 $$x = 3$$에서 계산이 안 됨)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `예시로 보기`의 $$x^2$$ 값 표와 `정의`의 정의역·공역·치역을 근거로, 공역을 실수 전체로 두고 그렸다(OpenStax, *Precalculus 2e*, 1.1절).
 {% endraw %}

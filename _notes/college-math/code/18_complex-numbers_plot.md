@@ -3,7 +3,7 @@ layout: "note"
 title: "18_complex-numbers_plot.py"
 display_title: "18_complex-numbers_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "18"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/complex-numbers/"
 parent_title: "복소수"
-description: "대학수학 · 복소수 코드 코드"
+description: "대학수학 · 복소수 그림 생성 코드"
 permalink: "/studies/college-math/code/18_complex-numbers_plot/"
 ---
 {% raw %}
-[복소수](/Hongs_Blog/studies/college-math/complex-numbers/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[복소수](/Hongs_Blog/studies/college-math/complex-numbers/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 복소수 문서의 그림을 만든다: 18_complex-numbers_fig1.svg

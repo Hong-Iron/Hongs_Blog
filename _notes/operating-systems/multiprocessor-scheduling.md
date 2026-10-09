@@ -119,7 +119,7 @@ permalink: "/studies/operating-systems/multiprocessor-scheduling/"
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/10.Chapter10-new.pptx, 슬라이드 25 (그림 10.3)의 발표자 노트
+[^1]: 운영체제 10회 강의 자료 「Chapter10-new」, 슬라이드 25 (그림 10.3)의 발표자 노트
 [^2]: 같은 자료, 슬라이드 3
 [^3]: 같은 자료, 슬라이드 4~9 (표 10.1)
 [^4]: 같은 자료, 슬라이드 10~11 (그림 10.1)
@@ -132,5 +132,5 @@ permalink: "/studies/operating-systems/multiprocessor-scheduling/"
 [^11]: 같은 자료, 슬라이드 26과 발표자 노트
 [^12]: 같은 자료, 슬라이드 28
 [^13]: 같은 자료, 슬라이드 27 (그림 10.4)과 발표자 노트. 프로세서 16개는 Stallings 6판 10.1절의 실험 설명을 따랐다.
-[^s1]: 에이전트 보충. 스레드 넷의 예시와 낭비율 15% 계산, 리눅스·Windows 연결, 확인 문제 C1·C3은 슬라이드에 없다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 스레드 넷의 예시와 낭비율 15% 계산, 리눅스·Windows 연결, 확인 문제 C1·C3은 슬라이드에 없다.
 {% endraw %}

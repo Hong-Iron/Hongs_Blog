@@ -3,7 +3,7 @@ layout: "note"
 title: "13_luminance-and-illuminance_plot.py"
 display_title: "13_luminance-and-illuminance_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "13"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/luminance-and-illuminance/"
 parent_title: "휘도와 조도"
-description: "휴먼 인터페이스 미디어 · 휘도와 조도 코드 코드"
+description: "휴먼 인터페이스 미디어 · 휘도와 조도 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/13_luminance-and-illuminance_plot/"
 ---
 {% raw %}
-[휘도와 조도](/Hongs_Blog/studies/human-interface-media/luminance-and-illuminance/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[휘도와 조도](/Hongs_Blog/studies/human-interface-media/luminance-and-illuminance/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 휘도와 조도 문서의 그림을 만든다: 13_luminance-and-illuminance_fig1.svg

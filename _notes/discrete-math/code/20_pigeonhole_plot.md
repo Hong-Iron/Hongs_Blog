@@ -3,7 +3,7 @@ layout: "note"
 title: "20_pigeonhole_plot.py"
 display_title: "20_pigeonhole_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "20"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/pigeonhole/"
 parent_title: "비둘기집 원리"
-description: "이산수학 · 비둘기집 원리 코드 코드"
+description: "이산수학 · 비둘기집 원리 그림 생성 코드"
 permalink: "/studies/discrete-math/code/20_pigeonhole_plot/"
 ---
 {% raw %}
-[비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 비둘기집 원리 문서의 그림을 만든다: 20_pigeonhole_fig1.svg

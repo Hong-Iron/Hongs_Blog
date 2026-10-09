@@ -3,7 +3,7 @@ layout: "note"
 title: "36_contrast--pca-nmf_plot.py"
 display_title: "36_contrast--pca-nmf_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "36"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/contrast--pca-nmf/"
 parent_title: "PCA와 NMF 비교"
-description: "데이터 과학 · PCA와 NMF 비교 코드 코드"
+description: "데이터 과학 · PCA와 NMF 비교 그림 생성 코드"
 permalink: "/studies/data-science/code/36_contrast--pca-nmf_plot/"
 ---
 {% raw %}
-[PCA와 NMF 비교](/Hongs_Blog/studies/data-science/contrast--pca-nmf/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[PCA와 NMF 비교](/Hongs_Blog/studies/data-science/contrast--pca-nmf/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # PCA와 NMF 비교 문서의 그림을 만든다: 36_contrast--pca-nmf_fig1.svg

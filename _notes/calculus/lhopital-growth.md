@@ -101,7 +101,7 @@ flowchart TD
 
 - **점근 표기의 근거.** 알고리즘의 비용을 비교할 때 "$$n \lg n$$은 결국 $$n^2$$보다 작다", "다항 시간은 결국 지수 시간보다 빠르다"는 모두 이 극한이다. 다만 "결국"이 늦게 올 수 있다. $$\frac{\ln x}{x^{0.1}}$$은 $$x = 10^{10}$$에서 아직 약 2.3이고, $$x = 10^{100}$$이 되어야 $$2.3 \times 10^{-8}$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/09_lhopital-growth_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/09_lhopital-growth_fig1.svg" alt="그림" width="614" height="276" loading="lazy">
 
 왼쪽 곡선은 $$x = e^{10} \approx 22{,}000$$까지 오히려 오르다가, $$10^{40}$$ 근처가 되어서야 바닥에 붙는다. 오른쪽 $$x^{10}/1.1^x$$도 $$x \approx 105$$에서 $$10^{16}$$ 가까이 올랐다가, $$x \approx 685$$를 지나야 1 아래로 내려간다(세로축은 로그 눈금)[^s1].
 - **수치 계산.** $$\frac{e^x - 1}{x}$$를 아주 작은 $$x$$에서 그대로 계산하면 $$e^x$$와 1이 거의 같아 유효숫자가 사라진다($$x = 10^{-12}$$에서 오차가 $$10^{-5}$$ 정도). 극한값 1 근처의 이런 식은 `math.expm1(x)`($$e^x - 1$$을 정확히 계산)과 `math.log1p(x)`($$\ln(1 + x)$$)를 쓴다.
@@ -149,6 +149,6 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.8절 "L'Hôpital's Rule"(부정형, 증가 속도 비교)
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [09_lhopital-growth_plot.py](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_plot/)로 그렸고, $$\frac{\ln x}{x^{0.1}}$$의 값(2.3과 $$2.3 \times 10^{-8}$$)과 꼭대기 위치 $$x = e^{10}$$, $$\frac{x^{10}}{1.1^x}$$의 꼭대기 $$x = \frac{10}{\ln 1.1} \approx 105$$와 1 아래로 내려가는 $$x \approx 685$$를 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 가정($$\frac00$$, $$\frac{\infty}{\infty}$$ 꼴), 예제의 두 번 미분과 꼴 바꾸기, 자주 하는 오해를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [09_lhopital-growth_plot.py](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_plot/)로 그렸고, $$\frac{\ln x}{x^{0.1}}$$의 값(2.3과 $$2.3 \times 10^{-8}$$)과 꼭대기 위치 $$x = e^{10}$$, $$\frac{x^{10}}{1.1^x}$$의 꼭대기 $$x = \frac{10}{\ln 1.1} \approx 105$$와 1 아래로 내려가는 $$x \approx 685$$를 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정리의 가정($$\frac00$$, $$\frac{\infty}{\infty}$$ 꼴), 예제의 두 번 미분과 꼴 바꾸기, 자주 하는 오해를 근거로 그렸다.
 {% endraw %}

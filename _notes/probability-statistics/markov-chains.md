@@ -52,7 +52,7 @@ stateDiagram-v2
 
 오늘 맑았어도 결국 같은 $$\left(\frac56, \frac16\right)$$로 간다. 그림의 화살표 확률이 아래 정의의 전이행렬 $$P$$, 마지막 열이 정상분포 $$\boldsymbol\pi$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/23_markov-chains_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/23_markov-chains_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽은 비 온 날과 맑은 날에서 각각 출발해, 맑을 확률을 날마다 계산한 것이다. 두 선 모두 일주일 안에 $$\frac56$$에 붙는다. 오른쪽은 $$\frac56$$과의 차이를 로그 눈금으로 그린 것이다. 매일 정확히 0.4배가 되어 직선으로 내려간다[^s1].
 
@@ -159,6 +159,6 @@ flowchart LR
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 11.1절 "Markov property and transition matrix", 11.2절 "Classification of states"(기약, 주기), 11.3절 "Stationary distribution"(존재·유일성·수렴, 평균 귀환 시간 $$\frac{1}{\pi_i}$$).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [23_markov-chains_plot.py](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_plot/)로 그렸고, 그림에 쓴 값(예시 표의 0.5·0.7·0.78, 정상분포 $$\left(\frac56, \frac16\right)$$, 차이의 비 0.4, 고윳값 1과 0.4)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 실패 시나리오 두 가지를 그렸다. 가약 연쇄의 전이 확률 0.5는 [23_markov-chains_verify.py](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_verify/) 주장 3의 행렬에서 가져왔다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [23_markov-chains_plot.py](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_plot/)로 그렸고, 그림에 쓴 값(예시 표의 0.5·0.7·0.78, 정상분포 $$\left(\frac56, \frac16\right)$$, 차이의 비 0.4, 고윳값 1과 0.4)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 실패 시나리오 두 가지를 그렸다. 가약 연쇄의 전이 확률 0.5는 [23_markov-chains_verify.py](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_verify/) 주장 3의 행렬에서 가져왔다.
 {% endraw %}

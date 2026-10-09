@@ -44,7 +44,7 @@ permalink: "/studies/linear-algebra/linear-transformations/"
 
 회전의 두 열은 [삼각함수](/Hongs_Blog/studies/college-math/trig-functions/)의 정의 그대로다. $$\mathbf{e}_2$$는 $$\mathbf{e}_1$$보다 90° 앞서 있으므로 $$(\cos(\theta + 90°), \sin(\theta + 90°)) = (-\sin\theta, \cos\theta)$$로 간다. 각 변환이 아래 정의의 $$T$$, 표의 행렬이 $$A$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/12_linear-transformations_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/12_linear-transformations_fig1.svg" alt="그림" width="612" height="181" loading="lazy">
 
 연한 F가 변환 전, 파란 F와 기울어진 격자가 변환 뒤다. 주황·초록 화살표가 $$\mathbf{e}_1$$, $$\mathbf{e}_2$$의 도착점, 곧 행렬의 두 열이다. 격자선은 어느 변환 뒤에도 곧고 평행하며 간격이 고르다[^s2].
 
@@ -194,6 +194,6 @@ $$\mathbf{e}_2$$는 각 90°의 단위벡터라 $$\theta$$만큼 돌리면 각 $
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 8.1절 "The Idea of a Linear Transformation"(선형성, 직선과 평행선, 핵과 상), 8.2절 "The Matrix of a Linear Transformation"(기저의 상으로 만든 행렬, 회전·사영·반사).
-[^s1]: 에이전트 보충. 역변환으로 원본 위치를 찾는 "역방향 사상"과 보간은 영상 처리 교재의 표준 방법이다. 정방향으로 픽셀을 보내면 빈 구멍이 생기기 때문이다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [12_linear-transformations_plot.py](/Hongs_Blog/studies/linear-algebra/code/12_linear-transformations_plot/)로 그렸고, 네 행렬이 $$\mathbf{e}_1$$, $$\mathbf{e}_2$$를 표대로 보내는 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 역변환으로 원본 위치를 찾는 "역방향 사상"과 보간은 영상 처리 교재의 표준 방법이다. 정방향으로 픽셀을 보내면 빈 구멍이 생기기 때문이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [12_linear-transformations_plot.py](/Hongs_Blog/studies/linear-algebra/code/12_linear-transformations_plot/)로 그렸고, 네 행렬이 $$\mathbf{e}_1$$, $$\mathbf{e}_2$$를 표대로 보내는 것을 같은 코드로 확인했다.
 {% endraw %}

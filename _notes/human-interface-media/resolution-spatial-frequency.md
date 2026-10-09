@@ -46,7 +46,7 @@ permalink: "/studies/human-interface-media/resolution-spatial-frequency/"
 
 같은 25%라도 낮은 주파수를 남기면 전체 모양이 살아남는다. 1차원으로 같은 실험을 하면 이렇다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/26_resolution-spatial-frequency_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/26_resolution-spatial-frequency_fig1.svg" alt="그림" width="534" height="291" loading="lazy">
 
 회색 선이 원래 신호(표본 64개)다. 주황 선은 앞쪽 16개 표본만 남긴 것이라 나머지를 전혀 모른다. 파란 선은 가장 낮은 주파수 16개만 남겨 되살린 것인데 원래 신호와 거의 겹친다[^s1].
 
@@ -129,15 +129,15 @@ $$ \text{최대 공간 주파수} = \frac{N}{2}\ \text{주기 (픽셀 } N\text{�
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/05.HIM_강의05_이미지의표현.pdf, p.5 (해상도: 1024, 512, 256, 128, 64, 32 크기의 장미와 같은 크기로 키운 여섯 장)
+[^1]: 휴먼 인터페이스 미디어 5회 강의 자료 「HIM_강의05_이미지의표현」, p.5 (해상도: 1024, 512, 256, 128, 64, 32 크기의 장미와 같은 크기로 키운 여섯 장)
 [^2]: 같은 자료, p.10 (시지각에 필요한 데이터 양: a) 25% of data in pixel format, b) 6.25%, c) 25% of lowest frequency data, d) 6.25%)
 [^3]: 같은 자료, p.11 (공간 주파수: 스캔 라인을 따라 일어나는 밝기 변화, 주기는 거리, 주파수는 단위 거리당 밝기가 변하는 횟수, 해상도는 단위 거리당 나타낼 수 있는 최대 공간 주파수)
 [^4]: 같은 자료, p.12 (디지털 이미지의 공간 주파수: 거리는 픽셀의 개수, 픽셀 N개당 밝기 변화, 최대 공간 주파수 N/2)
 [^5]: 같은 자료, p.6 (해상도: 화면 크기가 일정하면 단위 면적당 화소 수, dpi 1250, 200, 150, 72, 줌인/아웃 시 해상도는?)
 [^6]: 같은 자료, p.17 (요약: 지각되는 정보는 공간 주파수의 스펙트럼, 윤곽선은 저주파, 질감은 고주파)
-[^s1]: 에이전트 보충. 그림 1장은 원본 p.10의 실험을 1차원 신호로 다시 한 것이다. [26_resolution-spatial-frequency_plot.py](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_plot/)로 그렸고, 두 방법의 복원 오차를 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 0.6 → 0.4 cycle/pixel 예와 에일리어싱 연결은 원본에 없다. 표본화 정리의 표준 내용이다.
-[^s3]: 에이전트 보충. 슬라이드는 줌인/아웃 때 해상도가 어떻게 되는지 질문만 던진다. 답은 위의 추론이다.
-[^s4]: 에이전트 보충. JPEG의 원리는 이산 코사인 변환 계수를 양자화해 높은 주파수를 거칠게 적는 것이다(강의 계획표 14주차).
-[^s5]: 에이전트 보충. "윤곽선은 저주파"라는 요약을 대략의 모양과 날카로운 경계로 나눠 해석했다. 날카로운 경계(계단)가 높은 주파수 성분을 가진다는 것은 푸리에 급수의 표준 결과다([푸리에 급수의 수렴](/Hongs_Blog/studies/signals-and-systems/fourier-series-convergence/)).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본 p.10의 실험을 1차원 신호로 다시 한 것이다. [26_resolution-spatial-frequency_plot.py](/Hongs_Blog/studies/human-interface-media/code/26_resolution-spatial-frequency_plot/)로 그렸고, 두 방법의 복원 오차를 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 0.6 → 0.4 cycle/pixel 예와 에일리어싱 연결은 원본에 없다. 표본화 정리의 표준 내용이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 줌인/아웃 때 해상도가 어떻게 되는지 질문만 던진다. 답은 위의 추론이다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> JPEG의 원리는 이산 코사인 변환 계수를 양자화해 높은 주파수를 거칠게 적는 것이다(강의 계획표 14주차).
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "윤곽선은 저주파"라는 요약을 대략의 모양과 날카로운 경계로 나눠 해석했다. 날카로운 경계(계단)가 높은 주파수 성분을 가진다는 것은 푸리에 급수의 표준 결과다([푸리에 급수의 수렴](/Hongs_Blog/studies/signals-and-systems/fourier-series-convergence/)).
 {% endraw %}

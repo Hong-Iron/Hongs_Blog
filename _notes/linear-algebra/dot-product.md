@@ -146,7 +146,7 @@ $$\mathbf{a} = (1, 1, 0)$$과 $$\mathbf{b} = (1, 0, 1)$$의 사잇각.
 - **그래픽스.** 면의 법선과 빛 방향의 내적으로 밝기를 정한다(램버트 조명). 법선과 시선의 내적 부호로 뒤쪽 면을 건너뛴다[^s1].
 - **고차원의 성질.** 1000차원에서 무작위로 뽑은 두 벡터의 코사인은 거의 0이다(대부분 거의 수직). 그래서 고차원 임베딩에서는 코사인 0.3도 꽤 비슷한 편이다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/02_dot-product_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/02_dot-product_fig1.svg" alt="그림" width="489" height="320" loading="lazy">
 
 무작위로 뽑은 두 벡터의 코사인을 차원마다 2만 번 잰 분포다. 2차원에서는 $$-1$$부터 1까지 넓게 퍼지고 오히려 양 끝에 많다. 1000차원에서는 거의 모두 0 근처에 모인다[^s2].
 
@@ -215,9 +215,9 @@ $$\mathbf{a} = (1, 1, 0)$$과 $$\mathbf{b} = (1, 0, 1)$$의 사잇각.
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.2절 "Lengths and Dot Products"(내적, 길이, 단위벡터, 코사인 공식, 코시–슈바르츠와 삼각부등식).
-[^s1]: 에이전트 보충. 램버트 조명과 뒷면 제거는 컴퓨터 그래픽스 교재의 표준 내용이다. 고차원 무작위 벡터의 코사인이 0 근처에 모이는 것(1000차원에서 표준편차 약 $$1/\sqrt{1000} \approx 0.03$$)은 02_dot-product_verify.py에서 실험으로 확인했다.
-[^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.26 (문서의 단어 빈도 벡터와 코사인 유사도, sim = 0.94)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 램버트 조명과 뒷면 제거는 컴퓨터 그래픽스 교재의 표준 내용이다. 고차원 무작위 벡터의 코사인이 0 근처에 모이는 것(1000차원에서 표준편차 약 $$1/\sqrt{1000} \approx 0.03$$)은 02_dot-product_verify.py에서 실험으로 확인했다.
+[^d1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.26 (문서의 단어 빈도 벡터와 코사인 유사도, sim = 0.94)
 [^d2]: 같은 자료, p.28 (Discussion: Cosine Similarity vs PCC)
-[^sd1]: 에이전트 보충. "상관계수는 평균을 뺀 코사인"이라는 설명과 카드 C5의 수치는 원본에 없다. 02_dot-product_verify.py로 계산했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [02_dot-product_plot.py](/Hongs_Blog/studies/linear-algebra/code/02_dot-product_plot/)로 그렸고, 코사인의 표준편차가 약 $$1/\sqrt{n}$$($$n$$은 차원, 2차원 0.71, 10차원 0.32, 1000차원 0.032)인 것을 같은 코드로 확인했다.
+[^sd1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "상관계수는 평균을 뺀 코사인"이라는 설명과 카드 C5의 수치는 원본에 없다. 02_dot-product_verify.py로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [02_dot-product_plot.py](/Hongs_Blog/studies/linear-algebra/code/02_dot-product_plot/)로 그렸고, 코사인의 표준편차가 약 $$1/\sqrt{n}$$($$n$$은 차원, 2차원 0.71, 10차원 0.32, 1000차원 0.032)인 것을 같은 코드로 확인했다.
 {% endraw %}

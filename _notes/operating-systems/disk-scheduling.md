@@ -44,7 +44,7 @@ permalink: "/studies/operating-systems/disk-scheduling/"
 
 FIFO는 55 → 18 → 90 → 160 → 38 → 184처럼 디스크를 오락가락한다. SSTF는 늘 가장 가까운 요청으로 가서 이동이 절반 이하로 준다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/53_disk-scheduling_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/53_disk-scheduling_fig1.svg" alt="그림" width="612" height="429" loading="lazy">
 
 가로축은 헤드가 있는 트랙, 세로축은 처리한 순서다(네모가 출발점 100). FIFO는 좌우로 크게 오가고, SCAN은 방향을 한 번만 바꾼다. C-SCAN의 점선은 184에서 18까지 요청을 처리하지 않고 건너가는 구간이고, 이 거리도 이동 합 322에 들어간다[^s2].
 
@@ -223,7 +223,7 @@ SCAN은 가장 안쪽과 바깥쪽 트랙의 요청, 그리고 가장 늦게 도
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/11.Chapter11-new.pptx, 슬라이드 45, 54 (표 11.2)
+[^1]: 운영체제 11회 강의 자료 「Chapter11-new」, 슬라이드 45, 54 (표 11.2)
 [^2]: 같은 자료, 슬라이드 43과 슬라이드 42의 발표자 노트
 [^3]: 같은 자료, 슬라이드 44와 슬라이드 43의 발표자 노트
 [^4]: 같은 자료, 슬라이드 42 (그림 11.6)
@@ -237,6 +237,6 @@ SCAN은 가장 안쪽과 바깥쪽 트랙의 요청, 그리고 가장 늦게 도
 [^12]: 같은 자료, 슬라이드 50과 슬라이드 49의 발표자 노트
 [^13]: 같은 자료, 슬라이드 55 (표 11.3)
 [^14]: 같은 자료, 슬라이드 81~83
-[^s1]: 에이전트 보충. 접근 시간 식과 4 ms·15,000 rpm 예는 Stallings 6판 11.5절을 따랐다(슬라이드는 정의만 있다). 표 11.2 평균값의 반올림 차이, SCAN/LOOK 정의 비교와 끝까지 가는 SCAN의 이동 합, 팔 붙잡힘, 복잡도, SSD 이야기, 확인 문제 C2·C4·C5는 슬라이드에 없다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [53_disk-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_plot/)로 그렸고, 네 정책의 처리 순서와 이동 합 498, 248, 250, 322를 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 접근 시간 식과 4 ms·15,000 rpm 예는 Stallings 6판 11.5절을 따랐다(슬라이드는 정의만 있다). 표 11.2 평균값의 반올림 차이, SCAN/LOOK 정의 비교와 끝까지 가는 SCAN의 이동 합, 팔 붙잡힘, 복잡도, SSD 이야기, 확인 문제 C2·C4·C5는 슬라이드에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [53_disk-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_plot/)로 그렸고, 네 정책의 처리 순서와 이동 합 498, 248, 250, 322를 같은 코드로 확인했다.
 {% endraw %}

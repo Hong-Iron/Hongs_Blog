@@ -69,7 +69,7 @@ permalink: "/studies/algorithms/two-pointers/"
 
 두 경우 모두 "옮기면 한쪽으로만 변한다"(단조성)가 핵심이다. 이 성질이 없으면 버린 쪽에 답이 남아 있을 수 있다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/18_two-pointers_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/18_two-pointers_fig1.svg" alt="그림" width="383" height="385" loading="lazy">
 
 양 끝 좁히기 예시의 두 수의 합을 모두 표로 펴 놓은 것이다. 행은 L이, 열은 R이 가리키는 수이고, 오른쪽으로 갈수록, 아래로 갈수록 합이 커진다. 합이 크면 그 칸 아래(같은 R, 더 큰 L)는 모두 더 크니 R을 왼쪽으로 옮겨 그 열을 버린다. 합이 작으면 그 칸 왼쪽은 모두 더 작으니 L을 내려 그 행을 버린다. 그래서 15칸 중 5칸만 들르고도 10을 놓치지 않는다[^s1].
 
@@ -132,5 +132,5 @@ def count_windows(a, S):          # a는 모두 양수
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 8.1 "Two pointers method": 부분 배열 합 문제(양수 배열)와 2SUM 문제(정렬 후 양 끝에서 좁혀 오기)로 설명하고, 두 포인터가 각각 O(n)번만 움직여 전체가 O(n)임을 보인다.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [18_two-pointers_plot.py](/Hongs_Blog/studies/algorithms/code/18_two-pointers_plot/)로 그렸고, 들른 순서 (1, 11) → (1, 8) → (3, 8) → (3, 6) → (4, 6), 표가 행과 열 방향으로 커진다는 것, 15칸 중 5칸을 들른다는 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [18_two-pointers_plot.py](/Hongs_Blog/studies/algorithms/code/18_two-pointers_plot/)로 그렸고, 들른 순서 (1, 11) → (1, 8) → (3, 8) → (3, 6) → (4, 6), 표가 행과 열 방향으로 커진다는 것, 15칸 중 5칸을 들른다는 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -47,7 +47,7 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 
 거꾸로 "재료가 13, 19만큼 있을 때 몇 개씩 만들면 딱 맞게 쓰나"는 연립방정식 $$2x_1 + x_2 = 13$$, $$x_1 + 3x_2 = 19$$이다. 표가 아래 정의의 행렬 $$A$$, 개수가 $$\mathbf{x}$$, 재료량이 $$\mathbf{b}$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/04_matrix-vector_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/04_matrix-vector_fig1.svg" alt="그림" width="577" height="333" loading="lazy">
 
 왼쪽은 열 관점이다. 열 $$(2, 1)$$을 4번, 열 $$(1, 3)$$을 5번 이어 붙이면 $$(13, 19)$$에 닿는다. 오른쪽은 행 관점이다. 식 하나가 직선 하나이고, 두 직선이 만나는 $$(4, 5)$$가 답이다[^s2].
 
@@ -195,6 +195,6 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.3절 "Matrices"(열들의 결합으로 본 $$A\mathbf{x}$$), 2.1절 "Vectors and Linear Equations"(행 그림과 열 그림, 성분별 계산).
-[^s1]: 에이전트 보충. 동차 좌표로 평행이동을 행렬 곱으로 쓰는 방법은 컴퓨터 그래픽스 교재의 표준 내용이다. 04_matrix-vector_verify.py에서 $$3 \times 3$$ 행렬로 평행이동이 되는 것을 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [04_matrix-vector_plot.py](/Hongs_Blog/studies/linear-algebra/code/04_matrix-vector_plot/)로 그렸고, $$4(2, 1) + 5(1, 3) = (13, 19)$$와 두 직선의 교점 $$(4, 5)$$를 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 동차 좌표로 평행이동을 행렬 곱으로 쓰는 방법은 컴퓨터 그래픽스 교재의 표준 내용이다. 04_matrix-vector_verify.py에서 $$3 \times 3$$ 행렬로 평행이동이 되는 것을 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [04_matrix-vector_plot.py](/Hongs_Blog/studies/linear-algebra/code/04_matrix-vector_plot/)로 그렸고, $$4(2, 1) + 5(1, 3) = (13, 19)$$와 두 직선의 교점 $$(4, 5)$$를 같은 코드로 확인했다.
 {% endraw %}

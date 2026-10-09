@@ -37,7 +37,7 @@ permalink: "/studies/probability-statistics/lln/"
 
 그런데 앞면 **수**와 "던진 횟수의 절반"의 차이는 오히려 커진다. 100번에서 평균 약 4개, 1,600번에서 약 16개 차이다(횟수를 16배로 늘리면 차이는 약 $$\sqrt{16} = 4$$배). 차이가 커져도 횟수가 더 빨리 커지니 비율은 모인다. 비율이 아래 정리의 표본평균 $$\bar X_n$$, 0.5가 $$\mu$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/21_lln_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/21_lln_fig1.svg" alt="그림" width="610" height="276" loading="lazy">
 
 왼쪽은 동전 1만 번을 세 번 따로 던진 앞면 비율이다. 세 선 모두 회색 띠($$0.5 \pm \frac{0.5}{\sqrt n}$$) 안으로 모여 0.5에 붙는다. 오른쪽은 앞면 수와 $$\frac n2$$의 차이를 2,000번 평균 낸 것이다. 로그 눈금에서 기울기 $$\frac12$$인 직선이라, 차이가 $$\sqrt n$$에 비례해 커진다[^s1].
 
@@ -118,5 +118,5 @@ $$P(\vert \bar X_n - \mu\vert  \ge \varepsilon) \le \frac{\sigma^2}{n\varepsilon
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.2절 "Law of large numbers"(약한·강한 법칙, 체비쇼프를 이용한 증명, 도박사의 오류와의 구별).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [21_lln_plot.py](/Hongs_Blog/studies/probability-statistics/code/21_lln_plot/)로 그렸고, 그림에 쓴 값(100번에서 차이 약 4개, 1만 번에서 약 40개, 기울기 0.5)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [21_lln_plot.py](/Hongs_Blog/studies/probability-statistics/code/21_lln_plot/)로 그렸고, 그림에 쓴 값(100번에서 차이 약 4개, 1만 번에서 약 40개, 기울기 0.5)을 같은 코드로 확인했다.
 {% endraw %}

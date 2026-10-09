@@ -214,11 +214,11 @@ flowchart TD
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260924201830.png — 슬라이드 "패킷 스위칭(packet switching): 인터넷/우편"
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 33~38행
-[^3]: 4-1학기/pasted_images/Pasted image 20260925012109.png — 슬라이드 "통계적 다중화와 패킷스위칭". 오른쪽: store-and-forward, store ; forward
-[^4]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 12~16행
-[^s1]: 에이전트 보충. 보장하지 않는 것의 목록과 cut-through 방식은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3~1.4절의 내용이다.
-[^s2]: 에이전트 보충. 원본은 저장 후 전달의 동작만 쓰고 지연 공식은 없다. 공식은 Kurose & Ross, 1.3절의 저장 후 전달 전송과 같다. 교재의 링크 수 기호 $$N$$은 다중화의 입력 수 $$N$$과 겹쳐서 여기서는 $$H$$로 쓴다. 본문의 7과 15는 이 공식과 패킷을 하나씩 보내는 경우($$H \cdot P$$)에 $$H = 3$$, $$P = 5$$를 넣은 값이다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 버퍼링·혼잡 설명과 슬라이드 "통계적 다중화와 패킷스위칭"의 store-and-forward 그림을 바탕으로 그렸다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "패킷 스위칭(packet switching): 인터넷/우편"
+[^2]: 컴퓨터 통신 1회 필기 「1주차」, 33~38행
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화와 패킷스위칭". 오른쪽: store-and-forward, store ; forward
+[^4]: 컴퓨터 통신 2회 필기 「2주차」, 12~16행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 보장하지 않는 것의 목록과 cut-through 방식은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3~1.4절의 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원본은 저장 후 전달의 동작만 쓰고 지연 공식은 없다. 공식은 Kurose & Ross, 1.3절의 저장 후 전달 전송과 같다. 교재의 링크 수 기호 $$N$$은 다중화의 입력 수 $$N$$과 겹쳐서 여기서는 $$H$$로 쓴다. 본문의 7과 15는 이 공식과 패킷을 하나씩 보내는 경우($$H \cdot P$$)에 $$H = 3$$, $$P = 5$$를 넣은 값이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 버퍼링·혼잡 설명과 슬라이드 "통계적 다중화와 패킷스위칭"의 store-and-forward 그림을 바탕으로 그렸다.
 {% endraw %}

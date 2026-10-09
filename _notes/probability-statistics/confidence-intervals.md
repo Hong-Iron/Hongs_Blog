@@ -37,7 +37,7 @@ permalink: "/studies/probability-statistics/confidence-intervals/"
 
 "± 뒤의 값"이 아래 정의의 오차 한계, 95%가 신뢰수준 $$1 - \alpha$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/31_confidence-intervals_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/31_confidence-intervals_fig1.svg" alt="그림" width="515" height="385" loading="lazy">
 
 구간 1,000개 중 앞의 60개를 그렸다. 세로선이 참값 50이고, 주황 구간이 50을 놓친 것이다. 놓친 구간도 겉보기에는 다른 구간과 다를 바 없다[^s1].
 
@@ -143,6 +143,6 @@ flowchart TD
 
 [^1]: Wasserman, *All of Statistics*, "Models, Statistical Inference and Learning" 장(신뢰집합의 정의와 해석, 정규 근사 구간).
 [^2]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.4절 "Chi-Square and Student-t"($$t$$분포).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [31_confidence-intervals_plot.py](/Hongs_Blog/studies/probability-statistics/code/31_confidence-intervals_plot/)로 그렸고, 그림에 쓴 값(오차 한계 2.863, 구간 1,000개 중 952개가 50을 담음)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 '자주 쓰는 구간' 표 가운데 평균의 세 줄을 고르는 순서로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [31_confidence-intervals_plot.py](/Hongs_Blog/studies/probability-statistics/code/31_confidence-intervals_plot/)로 그렸고, 그림에 쓴 값(오차 한계 2.863, 구간 1,000개 중 952개가 50을 담음)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 '자주 쓰는 구간' 표 가운데 평균의 세 줄을 고르는 순서로 그렸다.
 {% endraw %}

@@ -110,7 +110,7 @@ $$x(t)$$는 $$\vert t\vert  > T_1$$에서 0이고 $$\frac T2 > T_1$$이라, 넓�
 - 복소수라 크기와 위상으로 그린다: $$\vert X\vert  = \frac{1}{\sqrt{a^2 + \omega^2}}$$, $$\angle X = -\tan^{-1}\frac\omega a$$ (분모를 실수화 $$\frac{a - j\omega}{a^2 + \omega^2}$$). $$\omega = \pm a$$에서 크기는 $$\frac{\sqrt2}{2a}$$, 위상은 $$\mp\frac\pi4$$(그림 4.5).
 - $$a$$가 복소수여도 $$\mathrm{Re}\{a\} > 0$$이면 같은 식이 맞다. $$a$$가 음수면 적분이 발산한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig1.svg" alt="그림" width="650" height="266" loading="lazy">
 
 $$a = 1$$일 때다. 크기는 $$\omega = 0$$에서 가장 큰 짝함수, 위상은 홀함수다. 점은 $$\omega = \pm1$$에서 크기 $$\frac{\sqrt2}{2}$$, 위상 $$\mp\frac\pi4$$다[^s2].
 
@@ -124,7 +124,7 @@ $$a = 1$$일 때다. 크기는 $$\omega = 0$$에서 가장 큰 짝함수, 위상
 
 예제 4.4와 4.5는 사각형과 sinc가 자리를 바꾼 쌍이다(쌍대성). $$W$$를 키우면 $$X$$가 넓어지고, $$x(t)$$는 꼭대기가 높아지며 첫 봉우리 폭($$\vert t\vert  < \frac\pi W$$)이 좁아진다. $$W \to \infty$$면 $$x(t)$$는 임펄스에 다가간다(그림 4.11). 시간에서 좁으면 주파수에서 넓다[^10].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig2.svg" alt="그림" width="631" height="266" loading="lazy">
 
 $$W$$를 1, 2, 4로 키우면 왼쪽 사각형은 넓어지고, 오른쪽 $$x(t)$$는 꼭대기 $$\frac{W}{\pi}$$가 높아지며 가운데 봉우리가 좁아진다[^s2].
 
@@ -189,7 +189,7 @@ $$W$$를 1, 2, 4로 키우면 왼쪽 사각형은 넓어지고, 오른쪽 $$x(t)
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/14.Week14_CH04_1_handout.pdf, p.2~6 (그림 3.7, 4.1, 4.2)
+[^1]: 신호 및 시스템 14회 강의 자료 「Week14_CH04_1_handout」, p.2~6 (그림 3.7, 4.1, 4.2)
 [^2]: 같은 자료, p.12
 [^3]: 같은 자료, p.7~11 (그림 4.3, 4.4)
 [^4]: 같은 자료, p.12
@@ -199,6 +199,6 @@ $$W$$를 1, 2, 4로 키우면 왼쪽 사각형은 넓어지고, 오른쪽 $$x(t)
 [^8]: 같은 자료, p.16 (예제 4.4, 그림 4.8, 4.10)
 [^9]: 같은 자료, p.17 (예제 4.5, 그림 4.9)
 [^10]: 같은 자료, p.17~18 (그림 4.11)
-[^s1]: 에이전트 보충. 통신 대역폭 활용, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [38_ct-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 4.1의 분석식 수치 적분, $$\omega = \pm1$$의 크기·위상, 예제 4.5($$W = 1, 2, 4$$)의 합성식 수치 적분과 $$x(0) = \frac W\pi$$.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 통신 대역폭 활용, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [38_ct-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 4.1의 분석식 수치 적분, $$\omega = \pm1$$의 크기·위상, 예제 4.5($$W = 1, 2, 4$$)의 합성식 수치 적분과 $$x(0) = \frac W\pi$$.
 {% endraw %}

@@ -37,7 +37,7 @@ $$A = \begin{pmatrix}3 & 1\\ 1 & 2\end{pmatrix}$$는 $$\mathbf{e}_1$$을 $$(3, 1
 
 두 열의 순서를 바꾼 $$\begin{pmatrix}1 & 3\\ 2 & 1\end{pmatrix}$$은 넓이는 같지만 방향이 뒤집혀 행렬식이 $$-5$$다. 열이 평행한 $$\begin{pmatrix}1 & 2\\ 2 & 4\end{pmatrix}$$는 평행사변형이 선분으로 납작해져 행렬식이 0이다. 넓이의 배율 5가 아래 정의의 $$\det A$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/15_determinant_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/15_determinant_fig1.svg" alt="그림" width="572" height="247" loading="lazy">
 
 점선 정사각형(넓이 1)이 칠한 평행사변형으로 간다. 왼쪽과 가운데는 넓이가 5로 같지만, 첫 열(주황)에서 둘째 열(초록)로 도는 방향이 왼쪽은 시계 반대 방향, 가운데는 시계 방향이라 부호가 다르다. 오른쪽은 두 열이 한 직선 위에 있어 넓이가 0이다[^s2].
 
@@ -151,9 +151,9 @@ $$A = \begin{pmatrix}1 & 2 & 1\\ 3 & 8 & 1\\ 0 & 4 & 1\end{pmatrix}$$의 행렬�
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 5.1절 "The Properties of Determinants"(세 성질과 그 결과, $$\det AB$$, $$\det A^\top$$), 5.2절 "Permutations and Cofactors"(라이프니츠 공식, 여인수 전개), 5.3절 "Cramer's Rule, Inverses, and Volumes"(넓이·부피).
-[^s1]: 에이전트 보충. 방향 판정과 신발끈 공식은 계산 기하 교재의 표준 도구다. 15_determinant_verify.py에서 무작위 삼각형·다각형으로 확인했다.
-[^n1]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.16~18
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 방향 판정과 신발끈 공식은 계산 기하 교재의 표준 도구다. 15_determinant_verify.py에서 무작위 삼각형·다각형으로 확인했다.
+[^n1]: 수치해석 3회 강의 자료 「na03_matrix」, p.16~18
 [^n2]: 같은 자료, p.19~20
 [^n3]: 같은 자료, p.25
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [15_determinant_plot.py](/Hongs_Blog/studies/linear-algebra/code/15_determinant_plot/)로 그렸고, 세 행렬식 $$5$$, $$-5$$, $$0$$과 도는 방향의 부호를 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [15_determinant_plot.py](/Hongs_Blog/studies/linear-algebra/code/15_determinant_plot/)로 그렸고, 세 행렬식 $$5$$, $$-5$$, $$0$$과 도는 방향의 부호를 같은 코드로 확인했다.
 {% endraw %}

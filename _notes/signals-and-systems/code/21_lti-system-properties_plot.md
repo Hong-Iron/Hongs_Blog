@@ -3,7 +3,7 @@ layout: "note"
 title: "21_lti-system-properties_plot.py"
 display_title: "21_lti-system-properties_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "21"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/lti-system-properties/"
 parent_title: "임펄스 응답으로 본 LTI 시스템의 성질"
-description: "신호 및 시스템 · 임펄스 응답으로 본 LTI 시스템의 성질 코드 코드"
+description: "신호 및 시스템 · 임펄스 응답으로 본 LTI 시스템의 성질 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/21_lti-system-properties_plot/"
 ---
 {% raw %}
-[임펄스 응답으로 본 LTI 시스템의 성질](/Hongs_Blog/studies/signals-and-systems/lti-system-properties/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[임펄스 응답으로 본 LTI 시스템의 성질](/Hongs_Blog/studies/signals-and-systems/lti-system-properties/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 임펄스 응답으로 본 LTI 시스템의 성질 문서의 그림을 만든다: 21_lti-system-properties_fig1.svg

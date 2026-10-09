@@ -3,7 +3,7 @@ layout: "note"
 title: "39_parametric-search-ivt_plot.py"
 display_title: "39_parametric-search-ivt_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "39"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/parametric-search-ivt/"
 parent_title: "매개변수 탐색 ↔ 사잇값 정리"
-description: "알고리즘 · 매개변수 탐색 ↔ 사잇값 정리 코드 코드"
+description: "알고리즘 · 매개변수 탐색 ↔ 사잇값 정리 그림 생성 코드"
 permalink: "/studies/algorithms/code/39_parametric-search-ivt_plot/"
 ---
 {% raw %}
-[매개변수 탐색 ↔ 사잇값 정리](/Hongs_Blog/studies/algorithms/parametric-search-ivt/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[매개변수 탐색 ↔ 사잇값 정리](/Hongs_Blog/studies/algorithms/parametric-search-ivt/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 매개변수 탐색 ↔ 사잇값 정리 문서의 그림을 만든다: 39_parametric-search-ivt_fig1.svg

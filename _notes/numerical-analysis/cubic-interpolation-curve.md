@@ -37,7 +37,7 @@ permalink: "/studies/numerical-analysis/cubic-interpolation-curve/"
 
 점 $$(0, 0)$$, $$(1, 2)$$, $$(2, 2)$$, $$(3, 0)$$을 $$u = 0, \frac13, \frac23, 1$$에서 지나는 3차 곡선을 만들면, $$u = \frac12$$에서 점 $$(1.5, 2.25)$$를 지난다. 가운데 두 점의 높이 2보다 높이 솟는다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig1.svg" alt="그림" width="349" height="320" loading="lazy">
 
 회색 점선과 음영이 네 점을 이은 다각형이다. 곡선은 네 점을 모두 지나지만, 가운데에서는 다각형 위로 0.25만큼 튀어나간다[^s2].
 
@@ -71,7 +71,7 @@ $$b_2(u) = -\tfrac{27}{2}u(u - \tfrac13)(u - 1), \quad b_3(u) = \tfrac92u(u - \t
 
 $$b_i$$는 자기 점의 $$u$$에서 1이고 나머지 세 $$u$$에서 0이다[^10]. 네 무게의 합은 늘 1이다. 그러나 $$b_0(\frac12) = -\frac1{16}$$처럼 음수가 될 수 있다. 그래서 곡선이 네 점이 만드는 볼록 다각형 밖으로 나갈 수 있다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig2.svg" alt="그림" width="502" height="351" loading="lazy">
 
 네 함수는 자기 점의 $$u$$에서 1, 다른 세 점에서 0이다. 음영 부분이 무게가 0 아래로 내려가는 구간이다. 가운데 두 점 사이에서는 양 끝 점의 무게 $$b_0$$, $$b_3$$이 음수가 된다[^s2].
 
@@ -114,7 +114,7 @@ $$b_i$$는 자기 점의 $$u$$에서 1이고 나머지 세 $$u$$에서 0이다[^
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/07.na07_curves.pdf, p.2
+[^1]: 수치해석 7회 강의 자료 「na07_curves」, p.2
 [^2]: 같은 자료, p.3
 [^3]: 같은 자료, p.4
 [^4]: 같은 자료, p.6
@@ -125,6 +125,6 @@ $$b_i$$는 자기 점의 $$u$$에서 1이고 나머지 세 $$u$$에서 0이다[^
 [^9]: 같은 자료, p.13~14
 [^10]: 같은 자료, p.14~15
 [^11]: 같은 자료, p.16
-[^s1]: 에이전트 보충. 예시 점과 $$u = \frac12$$ 값, 음수 블렌딩 값과 볼록 껍질 설명, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [13_cubic-interpolation_plot.py](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 네 점 통과, $$\mathbf p(\frac12) = (1.5, 2.25)$$, $$b_0(\frac12) = -\frac1{16}$$, 네 함수의 합 1.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시 점과 $$u = \frac12$$ 값, 음수 블렌딩 값과 볼록 껍질 설명, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [13_cubic-interpolation_plot.py](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 네 점 통과, $$\mathbf p(\frac12) = (1.5, 2.25)$$, $$b_0(\frac12) = -\frac1{16}$$, 네 함수의 합 1.
 {% endraw %}

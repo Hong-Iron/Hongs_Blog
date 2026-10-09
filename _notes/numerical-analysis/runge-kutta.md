@@ -43,7 +43,7 @@ $$y' = x + y$$, $$y(0) = 1$$을 $$x = 1$$까지 $$h = 0.1$$로 풀면 오차가 
 
 호인 방법의 한 걸음은 이렇다. 시작점의 기울기 $$k_1 = f(0, 1) = 1$$로 끝점을 짐작해 $$(0.1, 1.1)$$에서 기울기 $$k_2 = 1.2$$를 잰다. 두 기울기의 평균 1.1로 가서 $$y_1 = 1 + 0.1 \times 1.1 = 1.11$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/34_runge-kutta_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/34_runge-kutta_fig1.svg" alt="그림" width="539" height="339" loading="lazy">
 
 가로축은 $$x = 1$$까지 기울기 $$f$$를 계산한 총횟수다. 같은 40번이라도 오일러($$h = 0.025$$)보다 RK4($$h = 0.1$$)의 오차가 만 배 넘게 작다. 계산 횟수보다 기울기에 붙이는 무게가 정확도를 더 크게 가른다[^s2].
 
@@ -207,11 +207,11 @@ $$F$$의 $$h^1$$ 항 $$w_2ahf'$$이 테일러의 $$\frac h2f'$$과 같아야 2�
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/18.na18_diff_eq.pdf, p.8
+[^1]: 수치해석 18회 강의 자료 「na18_diff_eq」, p.8
 [^2]: 같은 자료, p.8
 [^3]: 같은 자료, p.9
 [^4]: 같은 자료, p.10
-[^s1]: 에이전트 보충. 오차 표와 호인 걸음, 세 2차 방법의 이름, RK4 공식(슬라이드는 2차 유도까지만 있다), 스스로 설명해 보기, 활용·RK45, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [34_runge-kutta_plot.py](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 세 방법의 오차, 호인 첫 걸음 $$y_1 = 1.11$$, 계산 40번에서 오일러 오차 0.066과 RK4 오차 $$4.2 \times 10^{-6}$$의 비가 1만 이상.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 'RK4' 절의 의사코드로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오차 표와 호인 걸음, 세 2차 방법의 이름, RK4 공식(슬라이드는 2차 유도까지만 있다), 스스로 설명해 보기, 활용·RK45, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [34_runge-kutta_plot.py](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 세 방법의 오차, 호인 첫 걸음 $$y_1 = 1.11$$, 계산 40번에서 오일러 오차 0.066과 RK4 오차 $$4.2 \times 10^{-6}$$의 비가 1만 이상.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 'RK4' 절의 의사코드로 그렸다.
 {% endraw %}

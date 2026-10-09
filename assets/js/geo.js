@@ -380,16 +380,31 @@
     Object.keys(SCENES).forEach(function (k) { SCENES[k].rgb = SCENES[k].palette.map(parseColor); });
   }
 
+  // How visible a shape at viewport (x, y) with radius r is: 1 in the clear,
+  // low while it overlaps a text box (see `calm` in startBackground).
+  function clearOfText(F, x, y, r) {
+    var boxes = F.calm, yd = y + (F.scrollY || 0);
+    if (!boxes || !boxes.length) return 1;
+    for (var k = 0; k < boxes.length; k++) {
+      var b = boxes[k];
+      var dx = x < b[0] ? b[0] - x : x > b[2] ? x - b[2] : 0;
+      var dy = yd < b[1] ? b[1] - yd : yd > b[3] ? yd - b[3] : 0;
+      if (dx * dx + dy * dy < r * r) return 0.1;
+    }
+    return 1;
+  }
+
   MOTIFS.confetti = {
     ambient: true,
     pointer: true,
+    calm: true,
     setup: function (L, rand) {
       var n = clamp(Math.round(L.W * L.H / 26000), 14, 58), list = [], stars = [];
       for (var i = 0; i < n; i++) {
         list.push({
           x: rand() * L.W, y: rand() * (L.H + 240) - 120, z: 0.35 + rand() * 0.65,
           s: 14 + rand() * 42, slot: (rand() * 9973) | 0, r: rand() * TAU,
-          spin: rand() - 0.5, c: (rand() * 4) | 0, ph: rand() * TAU, ox: 0, oy: 0
+          spin: rand() - 0.5, c: (rand() * 4) | 0, ph: rand() * TAU, ox: 0, oy: 0, q: 1
         });
       }
       for (var j = 0; j < 110; j++) {
@@ -437,6 +452,9 @@
           kSize += e.w * sh.size;
         }
         var size = o.s * (0.55 + 0.45 * o.z) * sceneSize * kSize, r = size / 2;
+        var want = clearOfText(F, x + o.ox, y + o.oy, r * 0.8);
+        o.q = F.still ? want : o.q + (want - o.q) * 0.12;
+        if (o.q < 0.02) return;
         ctx.save();
         ctx.translate(x + o.ox, y + o.oy);
         ctx.rotate(o.r + F.scroll * 0.004 * o.spin + F.t * 0.15 * o.spin);
@@ -445,11 +463,11 @@
         for (i = 1; i < NP; i++) ctx.lineTo(buf[2 * i] * r, buf[2 * i + 1] * r);
         ctx.closePath();
         if (fill > 0.02) {
-          ctx.fillStyle = rgba(col, (0.32 + 0.4 * o.z) * fill);
+          ctx.fillStyle = rgba(col, (0.32 + 0.4 * o.z) * fill * o.q);
           ctx.fill();
         }
         if (fill < 0.98) {
-          ctx.strokeStyle = rgba(col, (0.5 + 0.4 * o.z) * (1 - fill));
+          ctx.strokeStyle = rgba(col, (0.5 + 0.4 * o.z) * (1 - fill) * o.q);
           ctx.lineWidth = Math.max(1.6, size * 0.12);
           ctx.stroke();
         }
@@ -1204,12 +1222,48 @@
     var sceneEls = [].slice.call(document.querySelectorAll("[data-scene]"));
     var segs = [], hoverName = null, hoverScene = null, hoverW = 0;
 
+    // Text the shapes should not cross: motifs with `calm` fade a shape while
+    // it overlaps the box of any element that holds text (document
+    // coordinates, padded). Fixed layers (robot, overlays) are skipped.
+    var SKIP = ".robot, .search-overlay, .note-toc, script, style, noscript, svg";
+    var calm = [], calmLive = [];
+
     function measure() {
+      if (motif.calm) {
+        var y0 = window.scrollY, pad = 6, seen = new Set(), walk, n, el, r;
+        // text inside sticky/fixed boxes moves with the viewport: re-read it per frame
+        var pinned = [].filter.call(body.querySelectorAll("*"), function (e) {
+          var pos = getComputedStyle(e).position;
+          return (pos === "sticky" || pos === "fixed") && !e.closest(SKIP);
+        });
+        calm = [];
+        calmLive = [];
+        walk = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (t) { return t.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP; }
+        });
+        for (n = walk.nextNode(); n; n = walk.nextNode()) {
+          el = n.parentElement;
+          if (!el || seen.has(el)) continue;
+          seen.add(el);
+          if (el.closest(SKIP)) continue;
+          if (pinned.some(function (box) { return box.contains(el); })) { calmLive.push(el); continue; }
+          r = el.getBoundingClientRect();
+          if (r.width && r.height) calm.push([r.left - pad, r.top + y0 - pad, r.right + pad, r.bottom + y0 + pad]);
+        }
+      }
       segs = sceneEls.map(function (el) {
         var r = el.getBoundingClientRect();
         return { top: r.top + window.scrollY, bottom: r.bottom + window.scrollY, s: SCENES[el.getAttribute("data-scene")] };
       }).filter(function (g) { return g.s; }).sort(function (a, b) { return a.top - b.top; });
       if (segs.length && segs[0].top > H * 0.5) segs.unshift({ top: 0, bottom: segs[0].top, s: SCENES.paper });
+    }
+
+    function calmBoxes(y0) {
+      if (!calmLive.length) return calm;
+      return calm.concat(calmLive.map(function (el) {
+        var r = el.getBoundingClientRect();
+        return [r.left - 6, r.top + y0 - 6, r.right + 6, r.bottom + y0 + 6];
+      }));
     }
 
     function scrollMix() {
@@ -1334,7 +1388,7 @@
         if (L.mode === "band") ctx.translate(0, -scroll);
         motif.draw(ctx, L, S, {
           p: p, t: reduceMotion ? 0 : (now - t0) / 1000, scroll: reduceMotion ? 0 : scroll,
-          pal: pal, ptr: ptr, mix: mix
+          pal: pal, ptr: ptr, mix: mix, calm: calmBoxes(scroll), scrollY: L.mode === "band" ? 0 : scroll, still: reduceMotion
         });
       }
       var settling = Math.abs(hoverTo - hoverW) > 0.002;
@@ -1367,6 +1421,8 @@
     }
     // fonts and images move things after first paint
     window.addEventListener("load", function () { resize(true); });
+    // scroll-reveal moves text into place after the first measure
+    setTimeout(function () { measure(); schedule(); }, 1500);
     if ("ResizeObserver" in window) new ResizeObserver(function () { measure(); schedule(); }).observe(document.body);
     resize(true);
   }

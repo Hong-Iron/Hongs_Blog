@@ -3,7 +3,7 @@ layout: "note"
 title: "21_multivariable-chain-rule_plot.py"
 display_title: "21_multivariable-chain-rule_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "21"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/multivariable-chain-rule/"
 parent_title: "다변수 연쇄 법칙과 야코비 행렬"
-description: "미분적분학 · 다변수 연쇄 법칙과 야코비 행렬 코드 코드"
+description: "미분적분학 · 다변수 연쇄 법칙과 야코비 행렬 그림 생성 코드"
 permalink: "/studies/calculus/code/21_multivariable-chain-rule_plot/"
 ---
 {% raw %}
-[다변수 연쇄 법칙과 야코비 행렬](/Hongs_Blog/studies/calculus/multivariable-chain-rule/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[다변수 연쇄 법칙과 야코비 행렬](/Hongs_Blog/studies/calculus/multivariable-chain-rule/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 다변수 연쇄 법칙과 야코비 행렬 문서의 그림을 만든다: 21_multivariable-chain-rule_fig1.svg

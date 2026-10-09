@@ -45,7 +45,7 @@ $$f(x) = x^3 - x - 2$$는 $$f(1) = -2 < 0$$, $$f(2) = 4 > 0$$이다. 연속함�
 
 구간이 매번 절반이 되어 근 $$x \approx 1.52138$$로 좁혀진다. 구간의 양 끝이 아래 정리의 $$a$$, $$b$$이고, 0이 사잇값 $$y$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/02_continuity_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/02_continuity_fig1.svg" alt="그림" width="564" height="352" loading="lazy">
 
 아래 칸의 막대 하나가 표의 한 줄이다. 막대는 단계마다 절반으로 짧아지고, 늘 점선(근)을 품은 채 줄어든다[^s2].
 
@@ -146,7 +146,7 @@ flowchart TD
 
 [^1]: OpenStax, *Calculus Volume 1*, 2.4절 "Continuity"(연속의 세 조건, 사잇값 정리)
 [^2]: OpenStax, *Calculus Volume 1*, 4.3절 "Maxima and Minima"(최대·최소 정리)
-[^s1]: 에이전트 보충. `git bisect`는 커밋 이력을 이분 탐색해 문제를 처음 일으킨 커밋을 찾는 git 명령이다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [02_continuity_plot.py](/Hongs_Blog/studies/calculus/code/02_continuity_plot/)로 그렸고, 표의 중점 1.5, 1.75, 1.625, 1.5625, 1.53125와 마지막 구간 $$[1.5, 1.53125]$$, 근 1.52138을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 이분법 표와 예제의 멈춤 조건(구간 길이 $$1/2^k \le 10^{-6}$$)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `git bisect`는 커밋 이력을 이분 탐색해 문제를 처음 일으킨 커밋을 찾는 git 명령이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [02_continuity_plot.py](/Hongs_Blog/studies/calculus/code/02_continuity_plot/)로 그렸고, 표의 중점 1.5, 1.75, 1.625, 1.5625, 1.53125와 마지막 구간 $$[1.5, 1.53125]$$, 근 1.52138을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 이분법 표와 예제의 멈춤 조건(구간 길이 $$1/2^k \le 10^{-6}$$)을 근거로 그렸다.
 {% endraw %}

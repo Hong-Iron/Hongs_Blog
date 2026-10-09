@@ -134,7 +134,7 @@ LTI 시스템의 모든 성질은 $$h$$ 안에 들어 있다. 입력 전체를 �
 - 통신의 채널 보정(이퀄라이저)은 채널 $$h$$의 역시스템 $$h_1$$을 근사해 신호를 되살리는 것이다[^s1].
 - 흔한 실수: 안정을 "$$h$$가 유계"로 착각하는 것. $$u[n]$$은 유계지만 절대 합이 무한대라 불안정이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/21_lti-system-properties_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/21_lti-system-properties_fig1.svg" alt="그림" width="621" height="352" loading="lazy">
 
 두 $$h$$ 모두 값이 1 이하다. 계단을 넣으면 절대 합이 무한대인 $$u[n]$$ 쪽 출력은 $$n + 1$$로 끝없이 커지고, 절대 합이 2인 쪽은 2 아래에 머문다[^s2].
 
@@ -187,13 +187,13 @@ LTI 시스템의 모든 성질은 $$h$$ 안에 들어 있다. 입력 전체를 �
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/06.Week06_CH02_2_handout.pdf, p.8~9
+[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.8~9
 [^2]: 같은 자료, p.10 (그림 2.26)
 [^3]: 같은 자료, p.15~16
 [^4]: 같은 자료, p.17
 [^5]: 같은 자료, p.11~12 (예제 2.11)
 [^6]: 같은 자료, p.18 (예제 2.13)
 [^7]: 같은 자료, p.13~14 (예제 2.12)
-[^s1]: 에이전트 보충. 맨 앞 표, 안정 조건의 필요조건 증명 방법(Oppenheim·Willsky 2판 문제 2.49), 채널 보정 예, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [21_lti-system-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$u * u = n + 1$$, $$(\frac12)^n u * u = 2 - (\frac12)^n < 2$$.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 맨 앞 표, 안정 조건의 필요조건 증명 방법(Oppenheim·Willsky 2판 문제 2.49), 채널 보정 예, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [21_lti-system-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$u * u = n + 1$$, $$(\frac12)^n u * u = 2 - (\frac12)^n < 2$$.
 {% endraw %}

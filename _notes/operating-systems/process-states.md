@@ -180,7 +180,7 @@ stateDiagram-v2
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/03.chap3 (Stony Brook).pdf, p.5
+[^1]: 운영체제 3회 강의 자료 「chap3 (Stony Brook)」, p.5
 [^2]: 같은 자료, p.4
 [^3]: 같은 자료, p.10
 [^4]: 같은 자료, p.11~12
@@ -188,5 +188,5 @@ stateDiagram-v2
 [^6]: 같은 자료, p.15
 [^7]: 같은 자료, p.16
 [^8]: 같은 자료, p.35
-[^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 병원 비유, 각 상태의 뜻 풀이, 큐를 사건마다 두는 이유, `ps` 연결, 확인 문제 C3·C4는 슬라이드에 없다. 상태 뜻은 Stallings, *Operating Systems: Internals and Design Principles* 6판, 3.2절을 따랐다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 병원 비유, 각 상태의 뜻 풀이, 큐를 사건마다 두는 이유, `ps` 연결, 확인 문제 C3·C4는 슬라이드에 없다. 상태 뜻은 Stallings, *Operating Systems: Internals and Design Principles* 6판, 3.2절을 따랐다.
 {% endraw %}

@@ -137,5 +137,5 @@ def to_day(date):               # "2022.05.19"
 
 [^1]: Python 3 표준 라이브러리 문서, Built-in Functions의 `divmod(a, b)`: 정수에서는 `(a // b, a % b)`를 돌려준다.
 [^2]: Python 3 표준 라이브러리 문서, "Format Specification Mini-Language": 너비 앞의 `0`은 부호를 고려한 0 채우기를 켠다. `d`는 10진 정수다.
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '바꾸기와 되돌리기' 절의 to_min, to_str 코드와 예시 표(09:05 → 545)를 흐름도로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '바꾸기와 되돌리기' 절의 to_min, to_str 코드와 예시 표(09:05 → 545)를 흐름도로 옮겼다.
 {% endraw %}

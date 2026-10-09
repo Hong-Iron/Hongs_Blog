@@ -72,7 +72,7 @@ permalink: "/studies/data-science/classification-metrics/"
 
 표는 슬라이드를 옮긴 것이다[^1]. F1은 두 값의 조화평균이라 작은 쪽에 끌린다. 위 예는 정밀도 16.7%, 재현율 80%로 산술평균은 48%지만 F1은 27.6%다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/19_classification-metrics_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/19_classification-metrics_fig1.svg" alt="그림" width="506" height="334" loading="lazy">
 
 재현율을 0.8에 두고 정밀도만 바꿨다. 정밀도가 낮을수록 F1(파란 선)은 산술평균(회색 점선)보다 훨씬 아래, 작은 쪽인 정밀도 쪽으로 끌려 내려간다. 두 값이 0.8로 같을 때만 둘이 만난다[^s2].
 
@@ -108,7 +108,7 @@ permalink: "/studies/data-science/classification-metrics/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.4 (6-1 복습: 분류 평가 지표). 6-1 강의 자료는 받은 자료에 없다
-[^s1]: 에이전트 보충. 환자 예와 수치, F1과 산술평균의 비교, 카드 C2·C3은 원본에 없다. 검증 코드로 계산했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [19_classification-metrics_plot.py](/Hongs_Blog/studies/data-science/code/19_classification-metrics_plot/)로 그렸고, 정밀도 16.7%·재현율 80%에서 F1 0.276, 산술평균 0.483, 그리고 F1이 늘 작은 값 이상·산술평균 이하임을 같은 코드로 확인했다.
+[^1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.4 (6-1 복습: 분류 평가 지표). 6-1 강의 자료는 받은 자료에 없다
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 환자 예와 수치, F1과 산술평균의 비교, 카드 C2·C3은 원본에 없다. 검증 코드로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [19_classification-metrics_plot.py](/Hongs_Blog/studies/data-science/code/19_classification-metrics_plot/)로 그렸고, 정밀도 16.7%·재현율 80%에서 F1 0.276, 산술평균 0.483, 그리고 F1이 늘 작은 값 이상·산술평균 이하임을 같은 코드로 확인했다.
 {% endraw %}

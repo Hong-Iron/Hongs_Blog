@@ -127,7 +127,7 @@ $$(1, 1, 0)$$, $$(0, 1, 1)$$, $$(1, 0, 1)$$이 독립인지 판정한다.
 2. *소거:* 2행 $$-$$ 1행 → $$(0, 1, -1)$$. 3행 $$-$$ 2행 → $$(0, 0, 2)$$.
 3. *판정:* 피벗 1, 1, 2가 세 열 모두에 있어 독립이다. 같은 벡터에서 $$(1, 0, 1)$$을 $$(1, 2, 1)$$로 바꾸면 $$(1, 1, 0) + (0, 1, 1)$$이라 종속이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/09_linear-independence_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/09_linear-independence_fig1.svg" alt="그림" width="517" height="282" loading="lazy">
 
 파란 면은 앞의 두 벡터 $$(1, 1, 0)$$, $$(0, 1, 1)$$이 만드는 평면이다. 왼쪽의 $$(1, 0, 1)$$은 이 평면 밖으로 나가 새 방향을 보탠다. 오른쪽의 $$(1, 2, 1)$$은 평면 안에 있어 보탤 방향이 없다[^s2].
 
@@ -193,6 +193,6 @@ $$(1, 1, 0)$$, $$(0, 1, 1)$$, $$(1, 0, 1)$$이 독립인지 판정한다.
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.4절 "Independence, Basis and Dimension"(독립의 정의, 영공간과의 관계, $$n$$개보다 많은 벡터는 종속).
-[^s1]: 에이전트 보충. "검사 행렬의 어떤 $$d - 1$$개 열도 독립이면 최소 거리 $$\ge d$$"는 부호 이론 교재의 표준 결과이고, 여기서는 2진수(법 2) 위의 선형대수다. 해밍(7, 4) 부호의 모든 부호어 16개의 최소 무게가 3임을 09_linear-independence_verify.py에서 전수로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [09_linear-independence_plot.py](/Hongs_Blog/studies/linear-algebra/code/09_linear-independence_plot/)로 그렸고, 두 모임의 랭크(3과 2)와 $$(1, 2, 1) = (1, 1, 0) + (0, 1, 1)$$을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "검사 행렬의 어떤 $$d - 1$$개 열도 독립이면 최소 거리 $$\ge d$$"는 부호 이론 교재의 표준 결과이고, 여기서는 2진수(법 2) 위의 선형대수다. 해밍(7, 4) 부호의 모든 부호어 16개의 최소 무게가 3임을 09_linear-independence_verify.py에서 전수로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [09_linear-independence_plot.py](/Hongs_Blog/studies/linear-algebra/code/09_linear-independence_plot/)로 그렸고, 두 모임의 랭크(3과 2)와 $$(1, 2, 1) = (1, 1, 0) + (0, 1, 1)$$을 같은 코드로 확인했다.
 {% endraw %}

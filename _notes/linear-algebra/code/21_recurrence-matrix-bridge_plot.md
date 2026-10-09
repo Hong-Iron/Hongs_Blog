@@ -3,7 +3,7 @@ layout: "note"
 title: "21_recurrence-matrix-bridge_plot.py"
 display_title: "21_recurrence-matrix-bridge_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "21"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/recurrence-matrix-bridge/"
 parent_title: "선형 점화식 ↔ 행렬 거듭제곱"
-description: "선형대수학 · 선형 점화식 ↔ 행렬 거듭제곱 코드 코드"
+description: "선형대수학 · 선형 점화식 ↔ 행렬 거듭제곱 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/21_recurrence-matrix-bridge_plot/"
 ---
 {% raw %}
-[선형 점화식 ↔ 행렬 거듭제곱](/Hongs_Blog/studies/linear-algebra/recurrence-matrix-bridge/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[선형 점화식 ↔ 행렬 거듭제곱](/Hongs_Blog/studies/linear-algebra/recurrence-matrix-bridge/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 선형 점화식 ↔ 행렬 거듭제곱 문서의 그림을 만든다: 21_recurrence-matrix-bridge_fig1.svg

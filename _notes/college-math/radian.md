@@ -41,7 +41,7 @@ permalink: "/studies/college-math/radian/"
 
 걸은 거리가 아래 정의의 호의 길이 $$s$$, 반지름이 $$r$$, 각이 $$\theta$$다. 라디안은 "길이 ÷ 길이"라 단위가 없는 수다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/11_radian_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/11_radian_fig1.svg" alt="그림" width="361" height="285" loading="lazy">
 
 주황 호의 길이가 반지름(파란 선)과 같은 2일 때, 두 반지름 사이의 각이 1라디안이다. 원을 여섯으로 나눈 60°보다 조금 작다[^s2].
 
@@ -129,6 +129,6 @@ $$1\ \text{rad} = \frac{180°}{\pi} \approx 57.2958°, \qquad 1° = \frac{\pi}{1
 
 
 [^1]: OpenStax, *Precalculus 2e*, 5.1절 "Angles"(라디안, 호의 길이, 부채꼴 넓이, 각속도와 선속도)
-[^s1]: 에이전트 보충. $$\sin$$의 도함수가 라디안에서만 $$\cos$$이라는 것은 미분적분학의 [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/)에서 보인다. 파이썬 `%`와 C `fmod`의 부호 차이는 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [11_radian_plot.py](/Hongs_Blog/studies/college-math/code/11_radian_plot/)로 그렸고, 그림에 쓴 값(선분 10만 개로 잰 호의 길이가 2, $$1\ \text{rad} = 57.2958°$$)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$\sin$$의 도함수가 라디안에서만 $$\cos$$이라는 것은 미분적분학의 [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/)에서 보인다. 파이썬 `%`와 C `fmod`의 부호 차이는 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [11_radian_plot.py](/Hongs_Blog/studies/college-math/code/11_radian_plot/)로 그렸고, 그림에 쓴 값(선분 10만 개로 잰 호의 길이가 2, $$1\ \text{rad} = 57.2958°$$)을 같은 코드로 확인했다.
 {% endraw %}

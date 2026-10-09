@@ -46,7 +46,7 @@ flowchart LR
 
 검증 코드에서 35° 기울어진 길이 10, 폭 1, 높이 1의 점 구름 400개를 감쌌다. 축에 나란한 상자의 부피는 52.48, 주성분 방향으로 돌린 상자는 13.72로 약 4분의 1이다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/19_bounding-volume_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/19_bounding-volume_fig1.svg" alt="그림" width="415" height="335" loading="lazy">
 
 같은 점 구름을 위에서 내려다본 모습이다. 주황 상자는 구름 양옆에 빈 곳이 넓고, 파란 상자는 구름 방향을 따라 꼭 맞는다[^s2].
 
@@ -120,7 +120,7 @@ $$C = \begin{pmatrix}\frac32 & \frac12 & \frac34\\ \frac12 & \frac12 & \frac14\\
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/09.na09_PCA.pdf, p.2
+[^1]: 수치해석 9회 강의 자료 「na09_PCA」, p.2
 [^2]: 같은 자료, p.3
 [^3]: 같은 자료, p.4
 [^4]: 같은 자료, p.5
@@ -129,7 +129,7 @@ $$C = \begin{pmatrix}\frac32 & \frac12 & \frac34\\ \frac12 & \frac12 & \frac14\\
 [^7]: 같은 자료, p.9
 [^8]: 같은 자료, p.10
 [^9]: 같은 자료, p.11
-[^s1]: 에이전트 보충. 충돌 판정 동기, 점 구름 실험, 대칭이라 $$A$$가 회전이라는 설명, 사영으로 상자 만들기, 슬라이드 예의 상자 폭·부피, BVH, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [19_bounding-volume_plot.py](/Hongs_Blog/studies/numerical-analysis/code/19_bounding-volume_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 검증 코드와 같은 난수로 만든 점 구름에서 상자 부피 52.48과 13.72, 첫 주성분이 35° 방향.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 요약과 '활용'의 충돌 판정 설명(원본 09.na09_PCA.pdf p.2~3)으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 충돌 판정 동기, 점 구름 실험, 대칭이라 $$A$$가 회전이라는 설명, 사영으로 상자 만들기, 슬라이드 예의 상자 폭·부피, BVH, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [19_bounding-volume_plot.py](/Hongs_Blog/studies/numerical-analysis/code/19_bounding-volume_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 검증 코드와 같은 난수로 만든 점 구름에서 상자 부피 52.48과 13.72, 첫 주성분이 35° 방향.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 요약과 '활용'의 충돌 판정 설명(원본 09.na09_PCA.pdf p.2~3)으로 그렸다.
 {% endraw %}

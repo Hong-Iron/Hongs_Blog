@@ -75,7 +75,7 @@ DOC_TYPE_LABELS = {
     "data-structure": "자료구조", "technique": "기법", "model": "모델",
     "contrast": "비교", "steps": "징검다리", "bridge": "브리지",
 }
-CODE_ROLE_LABELS = {"impl": "구현", "verify": "검증", "bench": "실험"}
+CODE_ROLE_LABELS = {"impl": "구현", "verify": "검증", "bench": "실험", "plot": "그림 생성"}
 
 CALLOUT_TITLES = {
     "summary": "요약", "definition": "정의", "theorem": "정리", "proof": "증명",
@@ -428,6 +428,7 @@ class Linker:
         self.by_name = {}   # basename -> [(url, title)]
         self.unresolved = {}
         self.images = {}    # vault path -> site url of a copied figure
+        self.sizes = {}     # vault path -> (width, height) in px, so the page reserves the room
 
     def add(self, vault_path, url, title):
         key = vault_path[:-3] if vault_path.endswith(".md") else vault_path
@@ -461,7 +462,9 @@ class Linker:
             display = hit[1] if hit else re.sub(r"^\d+[._]", "", target.rsplit("/", 1)[-1])
         if embed and target in self.images:
             alt = display if len(parts) > 1 else "그림"
-            return f'<img class="note-fig" src="{self.images[target]}" alt="{alt}" loading="lazy">'
+            size = self.sizes.get(target)
+            dims = f' width="{size[0]}" height="{size[1]}"' if size else ""
+            return f'<img class="note-fig" src="{self.images[target]}" alt="{alt}"{dims} loading="lazy">'
         if target in self.images:
             return f"[{display}]({self.images[target]})"
         if embed or not hit:
@@ -539,8 +542,67 @@ def convert_spans(lines, linker, source):
 # Document assembly
 # ---------------------------------------------------------------------------
 
+# Footnotes are written for the vault: "에이전트 보충." marks an added note and
+# sources are vault paths. On the site they read as a 보충 tag and a short
+# "<과목> <n>회 강의 자료 「…」" source.
+SOURCE_RE = re.compile(
+    r"(?:\d-(?:\d|여름|겨울)학기|공학수학)/([^/\n]+)/(1\.수업자료|2\.필기노트)/"
+    r"([^\n]+?)\.(?:pdf|pptx?|md|png|jpe?g|docx?|hwp|txt|py|c|ipynb|zip)\b")
+PASTED_RE = re.compile(r"(?:\d-(?:\d|여름|겨울)학기/)?pasted_images/Pasted image \d+\.(?:png|jpe?g)")
+
+
+def source_label(m):
+    course, folder, name = m.group(1), m.group(2), m.group(3)
+    num = re.match(r"(\d{2})\.(.+)", name)
+    title = num.group(2) if num else name
+    if folder.startswith("2"):
+        kind = f"{int(num.group(1))}회 필기" if num else "필기"
+    elif num and int(num.group(1)) < 90:
+        kind = f"{int(num.group(1))}회 강의 자료"
+    else:
+        kind = "참고 자료"
+    return f"{course} {kind} 「{title}」"
+
+
+def tidy_footnotes(body):
+    def fix(m):
+        line = re.sub(r"^(\[\^[^\]]+\]:\s*)에이전트 보충\.\s*", r'\1<span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> ', m.group(0))
+        line = SOURCE_RE.sub(source_label, line)
+        return PASTED_RE.sub("수업 슬라이드 캡처", line)
+    return re.sub(r"^\[\^[^\]]+\]:.*$", fix, body, flags=re.M)
+
+
+def tidy_oneliners(body):
+    """Roadmap "한 줄" cells write powers and indices without $…$ (e^{iθ}, H_n)."""
+    def fmt(text):
+        out = []
+        for k, part in enumerate(re.split(r"(\$[^$]*\$)", text)):
+            if k % 2 == 0:
+                part = re.sub(r"\^\{([^{}]+)\}", r"<sup>\1</sup>", part)
+                part = re.sub(r"\^([A-Za-z0-9]+)", r"<sup>\1</sup>", part)
+                part = re.sub(r"(?<=[A-Za-z0-9)])_\{([^{}]+)\}", r"<sub>\1</sub>", part)
+                part = re.sub(r"(?<=[A-Za-z)])_([A-Za-z0-9])(?![A-Za-z0-9])", r"<sub>\1</sub>", part)
+            out.append(part)
+        return "".join(out)
+    lines, out, col = body.split("\n"), [], None
+    for line in lines:
+        if line.startswith("|"):
+            cells = re.split(r"(?<!\\)\|", line.strip())[1:-1]
+            names = [c.strip() for c in cells]
+            if col is None and "한 줄" in names:
+                col = names.index("한 줄")
+            elif col is not None and len(cells) > col and "[[" not in cells[col]:
+                cells[col] = fmt(cells[col])
+                line = "|" + "|".join(cells) + "|"
+        else:
+            col = None
+        out.append(line)
+    return "\n".join(out)
+
+
 def clean_body(body, is_roadmap):
     body = re.sub(r"<!--.*?-->\n?", "", body, flags=re.S)
+    body = tidy_footnotes(body)
     # drop an empty "## 내 메모" section (keeps any notes actually written there)
     body = re.sub(r"^## 내 메모\s*\n(?:[ \t]*\n)*(?=\[\^|^## |\Z)", "", body, flags=re.M)
     title = None
@@ -555,6 +617,7 @@ def clean_body(body, is_roadmap):
         # exam schedules stay private
         body = re.sub(r"^## 시험 대비\n.*?(?=^## |^\[\^[^\]]+\]:|\Z)", "", body, flags=re.M | re.S)
         body = drop_status_column(body)
+        body = tidy_oneliners(body)
     return title, body
 
 
@@ -694,6 +757,9 @@ def export(vault):
                     elif f.suffix == ".svg":
                         figures.append((f, slug))
                         linker.images[rel] = f"{baseurl}/assets/notes/{slug}/{f.name}"
+                        vb = re.search(r'viewBox="[\d.\-]+ [\d.\-]+ ([\d.]+) ([\d.]+)"', f.read_text(encoding="utf-8")[:2000])
+                        if vb:   # matplotlib writes pt; 1pt = 4/3 px
+                            linker.sizes[rel] = tuple(round(float(v) * 4 / 3) for v in vb.groups())
                     elif f.suffix in CODE_EXTS:
                         code = {"path": f, "rel": rel, "kind": kind, "num": num_prefix(f.name),
                                 "url": f"/studies/{slug}/code/{f.stem.lower()}/"}

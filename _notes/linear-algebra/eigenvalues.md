@@ -37,7 +37,7 @@ permalink: "/studies/linear-algebra/eigenvalues/"
 
 $$(0.6, 0.4)$$에 $$A$$를 곱하면 $$(0.48 + 0.12,\ 0.12 + 0.28) = (0.6, 0.4)$$ 그대로다. 배율 1인 고유벡터다. 또 $$(1, -1)$$에 곱하면 $$(0.5, -0.5)$$로 방향은 같고 길이가 절반이다. 배율 $$\frac12$$인 고유벡터다. 모든 출발점은 이 둘의 결합이라, 해마다 $$(1, -1)$$ 성분이 절반씩 줄어 결국 $$(0.6, 0.4)$$만 남는다. 두 배율 1과 $$\frac12$$가 아래 정의의 $$\lambda$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/19_eigenvalues_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/19_eigenvalues_fig1.svg" alt="그림" width="384" height="380" loading="lazy">
 
 점 하나가 한 해다. 어디서 출발하든 점들은 $$(1, -1)$$ 방향 직선을 따라 $$(0.6, 0.4)$$로 다가가고, 남은 거리가 해마다 절반이 된다. 파란 직선은 배율 1인 고유벡터의 방향이다[^s2].
 
@@ -203,7 +203,7 @@ $$A = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$의 고윳값과 고유벡터.
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.1절 "Introduction to Eigenvalues"(마르코프 행렬 예, 특성방정식, 대각합과 행렬식, 사영·반사·회전).
-[^s1]: 에이전트 보충. 페이지랭크를 거듭제곱법으로 구하는 방법은 Brin·Page의 1998년 논문 이후 선형대수 교재의 표준 응용 예다(Strang 5판 10.3절 "Markov Matrices"). 라이브러리가 QR 알고리즘을 쓴다는 것은 LAPACK 문서(`geev`)에 있다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [19_eigenvalues_plot.py](/Hongs_Blog/studies/linear-algebra/code/19_eigenvalues_plot/)로 그렸고, $$(0.8, 0.2)$$, $$(0.7, 0.3)$$, $$(0.65, 0.35)$$의 순서, 두 고유벡터, 남은 차이가 늘 $$(1, -1)$$ 방향이고 해마다 절반이 되는 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 동치인 정의(특성방정식, $$N(A - \lambda I)$$)와 "합과 곱" 정리, `예제`의 풀이 순서를 옮겼다(Strang 5판 6.1절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 페이지랭크를 거듭제곱법으로 구하는 방법은 Brin·Page의 1998년 논문 이후 선형대수 교재의 표준 응용 예다(Strang 5판 10.3절 "Markov Matrices"). 라이브러리가 QR 알고리즘을 쓴다는 것은 LAPACK 문서(`geev`)에 있다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [19_eigenvalues_plot.py](/Hongs_Blog/studies/linear-algebra/code/19_eigenvalues_plot/)로 그렸고, $$(0.8, 0.2)$$, $$(0.7, 0.3)$$, $$(0.65, 0.35)$$의 순서, 두 고유벡터, 남은 차이가 늘 $$(1, -1)$$ 방향이고 해마다 절반이 되는 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 동치인 정의(특성방정식, $$N(A - \lambda I)$$)와 "합과 곱" 정리, `예제`의 풀이 순서를 옮겼다(Strang 5판 6.1절).
 {% endraw %}

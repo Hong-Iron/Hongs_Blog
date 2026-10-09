@@ -166,5 +166,5 @@ re.sub(r"\.{2,}", ".", "a...b..c")    # 'a.b.c'  점이 두 개 이상 이어지
 
 
 [^1]: Python 3 표준 라이브러리 문서, "re — Regular expression operations"(기호와 `findall`, `sub`, `fullmatch`), 그리고 "Regular Expression HOWTO"(r 문자열을 쓰는 까닭, "The Backslash Plague" 절).
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 방법 3의 정규 표현식 `(\d+)([SDT])([*#]?)`과 그 뜻풀이 문장을 상태 전이도로 옮겼다. 정규 표현식과 이런 상태 전이도(유한 오토마타)가 같은 것을 나타낸다는 것은 표준 결과다(Sipser, Introduction to the Theory of Computation, 1.3).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 방법 3의 정규 표현식 `(\d+)([SDT])([*#]?)`과 그 뜻풀이 문장을 상태 전이도로 옮겼다. 정규 표현식과 이런 상태 전이도(유한 오토마타)가 같은 것을 나타낸다는 것은 표준 결과다(Sipser, Introduction to the Theory of Computation, 1.3).
 {% endraw %}

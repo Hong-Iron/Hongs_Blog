@@ -91,5 +91,5 @@ permalink: "/studies/operating-systems/paging-ladder/"
 </div>
 
 
-[^s1]: 에이전트 보충. 문제 1은 Stallings 6판 그림 7.11의 예다. 문제 2~4는 원본 범위 밖의 변형 문제다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1은 Stallings 6판 그림 7.11의 예다. 문제 2~4는 원본 범위 밖의 변형 문제다.
 {% endraw %}

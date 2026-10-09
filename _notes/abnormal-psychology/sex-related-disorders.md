@@ -71,7 +71,7 @@ permalink: "/studies/abnormal-psychology/sex-related-disorders/"
 
 </details>
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/09.성 관련 장애.pdf, p.2
-[^s1]: 에이전트 보충. 세 호소는 세 무리를 가르려고 만든 가상 예다.
-[^s2]: 에이전트 보충. DSM-5-TR은 성기능부전, 성별 불쾌감, 변태성욕장애를 각각 독립된 장으로 둔다.
+[^1]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.2
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 호소는 세 무리를 가르려고 만든 가상 예다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR은 성기능부전, 성별 불쾌감, 변태성욕장애를 각각 독립된 장으로 둔다.
 {% endraw %}

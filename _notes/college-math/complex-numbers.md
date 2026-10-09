@@ -40,7 +40,7 @@ $$x = \frac{-2 \pm 4i}{2} = -1 \pm 2i$$
 
 $$-1 + 2i$$를 평면의 점 $$(-1, 2)$$로 그리면, 두 근은 가로축에 대해 대칭인 두 점이다. 가로축이 실수부, 세로축이 허수부다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/18_complex-numbers_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/18_complex-numbers_fig1.svg" alt="그림" width="312" height="319" loading="lazy">
 
 두 근은 가로축을 거울로 두고 마주 본다. 원점에서 점까지의 거리는 아래에서 절댓값 $$\vert z\vert $$라 부르며, 여기서는 $$\sqrt5$$다[^s2].
 
@@ -148,6 +148,6 @@ $$(1 + 2i)(3 - i)$$와 $$\dfrac{1 + 2i}{3 - i}$$를 계산한다.
 
 [^1]: OpenStax, *Precalculus 2e*, 3.1절 "Complex Numbers"
 [^2]: OpenStax, *Precalculus 2e*, 3.6절 "Zeros of Polynomial Functions"(켤레근 정리)
-[^s1]: 에이전트 보충. 큐비트 상태 $$\alpha\vert 0\rangle + \beta\vert 1\rangle$$에서 $$\vert \alpha\vert ^2 + \vert \beta\vert ^2 = 1$$이고 $$\vert \alpha\vert ^2$$가 0을 측정할 확률이라는 것은 양자 계산의 표준 서술이다(Nielsen & Chuang, *Quantum Computation and Quantum Information*, 1.2절).
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [18_complex-numbers_plot.py](/Hongs_Blog/studies/college-math/code/18_complex-numbers_plot/)로 그렸고, 그림에 쓴 값(두 근이 $$x^2 + 2x + 5 = 0$$을 만족, $$\vert -1 + 2i\vert  = \sqrt5$$)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 큐비트 상태 $$\alpha\vert 0\rangle + \beta\vert 1\rangle$$에서 $$\vert \alpha\vert ^2 + \vert \beta\vert ^2 = 1$$이고 $$\vert \alpha\vert ^2$$가 0을 측정할 확률이라는 것은 양자 계산의 표준 서술이다(Nielsen & Chuang, *Quantum Computation and Quantum Information*, 1.2절).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [18_complex-numbers_plot.py](/Hongs_Blog/studies/college-math/code/18_complex-numbers_plot/)로 그렸고, 그림에 쓴 값(두 근이 $$x^2 + 2x + 5 = 0$$을 만족, $$\vert -1 + 2i\vert  = \sqrt5$$)을 같은 코드로 확인했다.
 {% endraw %}

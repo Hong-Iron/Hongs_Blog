@@ -3,7 +3,7 @@ layout: "note"
 title: "32_wired-links_plot.py"
 display_title: "32_wired-links_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "32"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/wired-links/"
 parent_title: "유선 링크"
-description: "컴퓨터 통신 · 유선 링크 코드 코드"
+description: "컴퓨터 통신 · 유선 링크 그림 생성 코드"
 permalink: "/studies/computer-communication/code/32_wired-links_plot/"
 ---
 {% raw %}
-[유선 링크](/Hongs_Blog/studies/computer-communication/wired-links/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[유선 링크](/Hongs_Blog/studies/computer-communication/wired-links/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 유선 링크 문서의 그림을 만든다: 32_wired-links_fig1.svg

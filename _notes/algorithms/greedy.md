@@ -49,7 +49,7 @@ permalink: "/studies/algorithms/greedy/"
 
 A, D, H로 3개다. 모든 조합을 다 봐도 3개가 최대다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/22_greedy_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/22_greedy_fig1.svg" alt="그림" width="466" height="320" loading="lazy">
 
 그림의 회의는 위에서부터 끝나는 시각 순이고, 파란 막대가 고른 A, D, H다. 점선은 앞서 고른 회의가 끝나는 시각이다. 그 점선보다 먼저 시작하는 회색 막대는 모두 건너뛴다[^s1].
 
@@ -142,5 +142,5 @@ def max_meetings(meetings):
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 6.1 "Coin problem": 동전 {1, 3, 4}로 6을 만들 때 그리디는 4 + 1 + 1, 최적은 3 + 3이다.
 [^2]: 같은 책 6.2 "Scheduling"(가장 먼저 끝나는 일부터 고르면 최적), Cormen 외, *Introduction to Algorithms* 3판, 16.1절 "An activity-selection problem"(같은 문제의 증명), 16.3절 "Huffman codes"(허프만 부호화도 그리디이고, 만든 부호는 최적 접두어 부호다).
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [22_greedy_plot.py](/Hongs_Blog/studies/algorithms/code/22_greedy_plot/)로 그렸고, 그리디가 A, D, H를 고른다는 것과 모든 조합을 봐도 최대가 3이라는 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [22_greedy_plot.py](/Hongs_Blog/studies/algorithms/code/22_greedy_plot/)로 그렸고, 그리디가 A, D, H를 고른다는 것과 모든 조합을 봐도 최대가 3이라는 것을 같은 코드로 확인했다.
 {% endraw %}

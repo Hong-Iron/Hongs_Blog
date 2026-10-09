@@ -327,6 +327,18 @@ details.callout[open] > summary + * {
   text-decoration: none;
 }
 
+/* "에이전트 보충." in the vault: something added beyond the course material */
+.note-body .fn-tag {
+  display: inline-block;
+  margin-right: 0.3em;
+  padding: 0 0.4em;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font: 600 0.7rem/1.5 var(--font-sans);
+  color: var(--ink-muted);
+  vertical-align: 0.08em;
+}
+
 /* -- diagrams --------------------------------------------------------------- */
 
 .note-body pre.mermaid {
@@ -339,6 +351,39 @@ details.callout[open] > summary + * {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+/* too wide to shrink without losing the text: scroll sideways (notes-mermaid.js) */
+.note-body pre.mermaid.is-wide {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  text-align: left;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.note-body pre.mermaid.is-wide svg {
+  display: block;
+  margin: 0;
+}
+
+.note-body .mermaid-hint {
+  margin: 0 0 1.4rem;
+  font: 500 0.75rem var(--font-sans);
+  color: var(--ink-muted);
+  text-align: right;
+}
+
+/* edge labels: the page colour instead of white boxes */
+.note-body pre.mermaid .edgeLabel,
+.note-body pre.mermaid .edgeLabel p,
+.note-body pre.mermaid .labelBkg {
+  background-color: var(--bg) !important;
+}
+
+.note-body pre.mermaid .edgeLabel rect {
+  fill: var(--bg) !important;
 }
 
 /* -- syntax highlighting (rouge) -------------------------------------------- */

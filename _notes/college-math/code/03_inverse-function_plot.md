@@ -3,7 +3,7 @@ layout: "note"
 title: "03_inverse-function_plot.py"
 display_title: "03_inverse-function_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "03"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/inverse-function/"
 parent_title: "역함수"
-description: "대학수학 · 역함수 코드 코드"
+description: "대학수학 · 역함수 그림 생성 코드"
 permalink: "/studies/college-math/code/03_inverse-function_plot/"
 ---
 {% raw %}
-[역함수](/Hongs_Blog/studies/college-math/inverse-function/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[역함수](/Hongs_Blog/studies/college-math/inverse-function/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 역함수 문서의 그림을 만든다: 03_inverse-function_fig1.svg

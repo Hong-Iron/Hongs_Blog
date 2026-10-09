@@ -3,7 +3,7 @@ layout: "note"
 title: "33_bayesian-inference_plot.py"
 display_title: "33_bayesian-inference_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "33"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/bayesian-inference/"
 parent_title: "베이즈 추론과 MAP"
-description: "확률과 통계 · 베이즈 추론과 MAP 코드 코드"
+description: "확률과 통계 · 베이즈 추론과 MAP 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/33_bayesian-inference_plot/"
 ---
 {% raw %}
-[베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 베이즈 추론과 MAP 문서의 그림을 만든다: 33_bayesian-inference_fig1.svg

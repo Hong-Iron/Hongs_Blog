@@ -79,7 +79,7 @@ $$x$$와 $$y$$에 특별한 값을 넣으면 항등식이 나온다.
 | $$x = 1, y = -1$$ ($$n \ge 1$$) | $$\sum_k (-1)^k\binom{n}{k} = 0$$ | 짝수 크기 부분집합 수 = 홀수 크기 부분집합 수 |
 | 양변을 $$y$$로 미분 후 $$x = y = 1$$ | $$\sum_k k\binom{n}{k} = n2^{n-1}$$ | 모든 부분집합의 크기의 합 |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/18_binomial-theorem_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/18_binomial-theorem_fig1.svg" alt="그림" width="508" height="335" loading="lazy">
 
 한 줄의 이항계수를 $$2^n$$으로 나누면 크기별 부분집합의 비율이 된다. 가로축은 크기의 비율 $$k/n$$이고, 줄마다 넓이가 같도록 세로에 $$n$$을 곱했다. $$n$$이 커질수록 부분집합 대부분이 크기 $$n/2$$ 근처에 몰린다. $$n = 50$$이면 크기 20~30인 부분집합이 전체의 약 88%다[^s1].
 
@@ -140,5 +140,5 @@ $$(2x - 1)^5$$에서 $$x^3$$의 계수를 구한다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 11.6절 "Binomial Theorem". 조합적 증명과 방데르몽드 항등식은 Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장.
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [18_binomial-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/18_binomial-theorem_plot/)로 그렸고, 줄마다 합이 $$2^n$$인 것, $$n = 50$$에서 크기 20~30인 부분집합의 비율 0.881을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [18_binomial-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/18_binomial-theorem_plot/)로 그렸고, 줄마다 합이 $$2^n$$인 것, $$n = 50$$에서 크기 20~30인 부분집합의 비율 0.881을 같은 코드로 확인했다.
 {% endraw %}

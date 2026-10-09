@@ -159,6 +159,6 @@ flowchart LR
 
 
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 12장 "Boolean Algebra"(불 함수, 불 함수의 표현, 논리 게이트, 회로의 최소화). 불 함수의 개수와 기능적 완전성 포함.
-[^s1]: 에이전트 보충. 전파 지연·글리치·순차 회로는 디지털 논리 설계 과목의 내용이다. 올림을 미리 계산하는 회로는 캐리 예측 가산기(carry-lookahead adder)다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 4비트 리플 캐리 가산기 설명과 전가산기 식을 연결 그림으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전파 지연·글리치·순차 회로는 디지털 논리 설계 과목의 내용이다. 올림을 미리 계산하는 회로는 캐리 예측 가산기(carry-lookahead adder)다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제'의 4비트 리플 캐리 가산기 설명과 전가산기 식을 연결 그림으로 그렸다.
 {% endraw %}

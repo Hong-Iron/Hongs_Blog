@@ -44,7 +44,7 @@ permalink: "/studies/discrete-math/inclusion-exclusion/"
 
 30의 배수(예: 30)는 첫 줄에서 세 번 더해지고 둘째 줄에서 세 번 빠져 0번이 되므로, 셋째 줄에서 한 번 더해 정확히 1번이 된다. 2·3·5의 배수가 아래 정리의 $$A_1, A_2, A_3$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/19_inclusion-exclusion_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/19_inclusion-exclusion_fig2.svg" alt="그림" width="405" height="359" loading="lazy">
 
 원 셋이 2·3·5의 배수이고, 칸의 수는 그 칸에만 드는 수의 개수다. 원 하나에 든 칸을 더하면 그 원의 크기(500, 333, 200)가 되고, 일곱 칸을 모두 더하면 734다. 가운데 33이 세 원에 모두 드는 30의 배수다[^s2].
 
@@ -85,7 +85,7 @@ $$\sum_{j=1}^{t}(-1)^{j+1}\binom{t}{j} = 1 - \sum_{j=0}^{t}(-1)^{j}\binom{t}{j} 
 
 일반적으로 $$D_n = n!\sum_{k=0}^{n}\frac{(-1)^k}{k!}$$이고, 아무도 자기 모자를 받지 못할 확률 $$D_n / n!$$은 $$n$$이 커지면 $$1/e \approx 0.368$$에 다가간다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/19_inclusion-exclusion_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/19_inclusion-exclusion_fig1.svg" alt="그림" width="520" height="327" loading="lazy">
 
 확률은 0.5, 0.333, 0.375처럼 $$1/e$$ 위아래를 번갈아 넘으며 다가간다. 6명이면 이미 0.368이라, 그 뒤로는 사람이 늘어도 확률이 거의 그대로다[^s1].
 
@@ -136,6 +136,6 @@ $$\sum_{j=1}^{t}(-1)^{j+1}\binom{t}{j} = 1 - \sum_{j=0}^{t}(-1)^{j}\binom{t}{j} 
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(포함-배제). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장 "Advanced Counting Techniques"(포함-배제의 응용, 교란순열).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, $$D_1, \dots, D_6 = 0, 1, 2, 9, 44, 265$$, $$D_6/6! \approx 0.368$$, $$\vert D_{10}/10! - 1/e\vert  < 10^{-7}$$을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, 일곱 칸의 수(267, 134, 67, 133, 67, 33, 33)와 합 734, 원 밖의 266을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, $$D_1, \dots, D_6 = 0, 1, 2, 9, 44, 265$$, $$D_6/6! \approx 0.368$$, $$\vert D_{10}/10! - 1/e\vert  < 10^{-7}$$을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, 일곱 칸의 수(267, 134, 67, 133, 67, 33, 33)와 합 734, 원 밖의 266을 같은 코드로 확인했다.
 {% endraw %}

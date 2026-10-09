@@ -125,7 +125,7 @@ $$k = g'(x)h + r_1(h)$$이고 $$r_1(h)/h \to 0$$이므로, $$h$$가 충분히 �
 3. *안쪽의 도함수를 곱하기:* $$\frac{1}{1 + e^x} \cdot e^x = \frac{e^x}{1 + e^x} = \frac{1}{1 + e^{-x}} = \sigma(x)$$.
 4. *해석:* 소프트플러스의 도함수가 시그모이드 $$\sigma$$다. $$\sigma$$ 자신의 도함수는 $$\sigma(1 - \sigma)$$다(같은 방법으로 확인).
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/06_chain-rule_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/06_chain-rule_fig1.svg" alt="그림" width="497" height="342" loading="lazy">
 
 파란 곡선의 기울기를 점마다 재면 주황 곡선의 높이가 되고, 주황 곡선의 기울기는 초록 곡선의 높이가 된다. 초록 곡선은 $$x = 0$$에서 가장 높아도 $$\frac14$$이고, $$x$$가 0에서 멀어지면 거의 0이다(아래 기울기 소실)[^s2].
 
@@ -208,7 +208,7 @@ flowchart LR
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.6절 "The Chain Rule", 3.7절 "Derivatives of Inverse Functions", 3.8절 "Implicit Differentiation", 3.9절 "Derivatives of Exponential and Logarithmic Functions"(로그 미분법)
-[^s1]: 에이전트 보충. 기울기 소실 문제와 ReLU의 도입은 딥러닝의 표준 서술이다(Goodfellow·Bengio·Courville, *Deep Learning*, 6장).
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [06_chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/06_chain-rule_plot/)로 그렸고, 세 곡선이 차례로 도함수 관계인 것(중앙 차분, $$-5 \le x \le 5$$)과 $$\sigma(1 - \sigma)$$의 최댓값이 $$x = 0$$의 $$\frac14$$인 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예제의 뉴런 하나의 학습 기울기 식을 계산 그래프로 옮겼다. $$\frac{\partial z}{\partial b} = 1$$은 $$z = wx + b$$에서 바로 나온다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기울기 소실 문제와 ReLU의 도입은 딥러닝의 표준 서술이다(Goodfellow·Bengio·Courville, *Deep Learning*, 6장).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [06_chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/06_chain-rule_plot/)로 그렸고, 세 곡선이 차례로 도함수 관계인 것(중앙 차분, $$-5 \le x \le 5$$)과 $$\sigma(1 - \sigma)$$의 최댓값이 $$x = 0$$의 $$\frac14$$인 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예제의 뉴런 하나의 학습 기울기 식을 계산 그래프로 옮겼다. $$\frac{\partial z}{\partial b} = 1$$은 $$z = wx + b$$에서 바로 나온다.
 {% endraw %}

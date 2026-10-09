@@ -3,7 +3,7 @@ layout: "note"
 title: "39_digital-modulation_plot.py"
 display_title: "39_digital-modulation_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "39"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/digital-modulation/"
 parent_title: "진폭·주파수·위상 변조"
-description: "컴퓨터 통신 · 진폭·주파수·위상 변조 코드 코드"
+description: "컴퓨터 통신 · 진폭·주파수·위상 변조 그림 생성 코드"
 permalink: "/studies/computer-communication/code/39_digital-modulation_plot/"
 ---
 {% raw %}
-[진폭·주파수·위상 변조](/Hongs_Blog/studies/computer-communication/digital-modulation/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[진폭·주파수·위상 변조](/Hongs_Blog/studies/computer-communication/digital-modulation/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 진폭·주파수·위상 변조 문서의 그림을 만든다: 39_digital-modulation_fig1.svg, 39_digital-modulation_fig2.svg

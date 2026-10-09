@@ -110,7 +110,7 @@ flowchart TD
 
 반으로 나누기는 약 $$\log_2 n$$층이고, 층마다 합치는 비용이 $$n$$이라 모두 $$O(n \log n)$$이다. 크기 비교만으로 정렬하는 방법은 어떤 것이든 최악에 $$n \log n$$에 비례하는 비교가 필요하다는 것이 알려져 있어서[^2], `sorted`보다 빠른 비교 정렬을 직접 짤 일은 없다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/05_sorting_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/05_sorting_fig1.svg" alt="그림" width="519" height="336" loading="lazy">
 
 무작위 실수를 정렬하며 비교 횟수를 센 결과다. 가로·세로 모두 로그 눈금이라, 늘어나는 빠르기가 기울기로 보인다. 병합 정렬은 점선 $$n\log_2 n$$ 바로 아래를 따라간다. 하나씩 앞으로 끼워 넣는 정렬(삽입 정렬)은 기울기가 2라서, n이 두 배가 되면 비교가 네 배가 된다. 원소 4,096개에서 둘은 약 96배 차이다[^s1].
 
@@ -166,6 +166,6 @@ flowchart TD
 
 [^1]: Python 3 문서 "Sorting Techniques": `sort()`와 `sorted()`는 안정 정렬이 보장되고, 여러 기준은 덜 중요한 기준부터 여러 번 정렬해 만들 수 있다("Sort Stability and Complex Sorts"). 같은 문서에서 파이썬이 Timsort를 쓴다고 밝힌다.
 [^2]: Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.3 "Designing algorithms"(병합 정렬과 $$\Theta(n \lg n)$$ 분석), 8.1 "Lower bounds for sorting"(비교 정렬은 최악에 $$\Omega(n \lg n)$$ 번 비교한다).
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [05_sorting_plot.py](/Hongs_Blog/studies/algorithms/code/05_sorting_plot/)로 그렸고, 비교 횟수(4,096개에서 병합 정렬 43,928번, 삽입 정렬 4,210,245번), 병합 정렬이 늘 $$n\log_2 n$$ 이하라는 것, 로그-로그 기울기(병합 정렬 1.16, 삽입 정렬 2.01)를 같은 코드로 확인했다. 병합 정렬의 기울기가 1보다 조금 큰 것은 $$\log_2 n$$이 함께 자라기 때문이다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '속에서 일어나는 일' 절의 [5, 2, 4, 1, 3] 병합 정렬 단계 표를 나누기·합치기 나무로 옮겼다(Cormen 외 3판 2.3.1의 병합 정렬 재귀 트리 그림과 같은 모양).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [05_sorting_plot.py](/Hongs_Blog/studies/algorithms/code/05_sorting_plot/)로 그렸고, 비교 횟수(4,096개에서 병합 정렬 43,928번, 삽입 정렬 4,210,245번), 병합 정렬이 늘 $$n\log_2 n$$ 이하라는 것, 로그-로그 기울기(병합 정렬 1.16, 삽입 정렬 2.01)를 같은 코드로 확인했다. 병합 정렬의 기울기가 1보다 조금 큰 것은 $$\log_2 n$$이 함께 자라기 때문이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '속에서 일어나는 일' 절의 [5, 2, 4, 1, 3] 병합 정렬 단계 표를 나누기·합치기 나무로 옮겼다(Cormen 외 3판 2.3.1의 병합 정렬 재귀 트리 그림과 같은 모양).
 {% endraw %}

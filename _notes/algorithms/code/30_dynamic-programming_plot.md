@@ -3,7 +3,7 @@ layout: "note"
 title: "30_dynamic-programming_plot.py"
 display_title: "30_dynamic-programming_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "30"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/dynamic-programming/"
 parent_title: "동적 계획법"
-description: "알고리즘 · 동적 계획법 코드 코드"
+description: "알고리즘 · 동적 계획법 그림 생성 코드"
 permalink: "/studies/algorithms/code/30_dynamic-programming_plot/"
 ---
 {% raw %}
-[동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 동적 계획법 문서의 그림을 만든다: 30_dynamic-programming_fig1.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "25_abstract-vector-spaces_plot.py"
 display_title: "25_abstract-vector-spaces_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "25"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/abstract-vector-spaces/"
 parent_title: "추상 벡터공간과 베지어 곡선"
-description: "선형대수학 · 추상 벡터공간과 베지어 곡선 코드 코드"
+description: "선형대수학 · 추상 벡터공간과 베지어 곡선 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/25_abstract-vector-spaces_plot/"
 ---
 {% raw %}
-[추상 벡터공간과 베지어 곡선](/Hongs_Blog/studies/linear-algebra/abstract-vector-spaces/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[추상 벡터공간과 베지어 곡선](/Hongs_Blog/studies/linear-algebra/abstract-vector-spaces/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 추상 벡터공간과 베지어 곡선 문서의 그림을 만든다: 25_abstract-vector-spaces_fig1.svg

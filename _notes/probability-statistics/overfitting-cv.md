@@ -42,7 +42,7 @@ permalink: "/studies/probability-statistics/overfitting-cv/"
 
 훈련 오차는 차수를 올릴수록 계속 줄어 9차에서는 10개 점을 정확히 지난다(0). 시험 오차는 3차에서 가장 작고 9차에서 네 배로 커진다. 3차보다 낮으면 곡선을 따라가지 못하고(과소적합), 높으면 잡음을 따라간다(과적합). 차수가 아래의 모델 복잡도다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/35_overfitting-cv_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/35_overfitting-cv_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽 회색 점선이 참 곡선 $$\sin 2\pi x$$, 회색 점이 훈련 점 10개다. 1차는 곡선을 따라가지 못하고, 9차는 점을 모두 지나려고 점 사이에서 크게 출렁인다. 오른쪽에서 3차 이후 훈련 오차는 계속 줄지만 시험 오차는 더 줄지 않는다[^s1].
 
@@ -162,11 +162,11 @@ flowchart TD
 
 [^1]: James, Witten, Hastie, Tibshirani, *An Introduction to Statistical Learning*, "Resampling Methods" 장(검증 집합 방법, $$k$$겹 교차검증).
 [^2]: Hastie, Tibshirani, Friedman, *The Elements of Statistical Learning* 2판, "Model Assessment and Selection" 장(편향-분산 분해, 교차검증의 올바른 사용과 잘못된 사용).
-[^d1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.3 (6-1 복습: 모델 평가와 선택)
+[^d1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.3 (6-1 복습: 모델 평가와 선택)
 [^d2]: 같은 자료, p.5 (복습: 평가 방법 비교표)
 [^d3]: 같은 자료, p.9
 [^d4]: 같은 자료, p.10
-[^sd1]: 에이전트 보충. OOB 비율 $$(1 - 1/n)^n \to 1/e$$와 카드 C4는 원본에 없다. 35_overfitting-cv_verify.py로 계산했다.
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [35_overfitting-cv_plot.py](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_plot/)로 그렸고, 그림에 쓴 값(예시 표의 훈련·시험 오차(검증 코드와 같은 자료), 시험 오차 최소 차수 3, 모든 시험 오차 > 0.09)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 k겹 교차검증 의사코드, 세 집합 절, 예제 4단계(고른 모델을 다시 맞추고 새 자료로 보고)를 한 흐름으로 그렸다.
+[^sd1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> OOB 비율 $$(1 - 1/n)^n \to 1/e$$와 카드 C4는 원본에 없다. 35_overfitting-cv_verify.py로 계산했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [35_overfitting-cv_plot.py](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_plot/)로 그렸고, 그림에 쓴 값(예시 표의 훈련·시험 오차(검증 코드와 같은 자료), 시험 오차 최소 차수 3, 모든 시험 오차 > 0.09)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 k겹 교차검증 의사코드, 세 집합 절, 예제 4단계(고른 모델을 다시 맞추고 새 자료로 보고)를 한 흐름으로 그렸다.
 {% endraw %}

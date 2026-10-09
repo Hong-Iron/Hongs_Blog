@@ -83,7 +83,7 @@ permalink: "/studies/data-science/cluster-analysis/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/07.7-1_basic-clustering.pdf, p.3
+[^1]: 데이터 과학 7회 강의 자료 「7-1_basic-clustering」, p.3
 [^2]: 같은 자료, p.5
 [^3]: 같은 자료, p.6
 [^4]: 같은 자료, p.4

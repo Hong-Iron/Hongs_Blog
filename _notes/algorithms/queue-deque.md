@@ -133,5 +133,5 @@ flowchart TD
 
 [^1]: Python 3 표준 라이브러리 문서, `collections.deque`: 양쪽 끝의 append·pop이 어느 방향이든 대략 O(1)이고, 번호로 꺼내기는 양 끝에서 O(1)이지만 가운데로 갈수록 O(n)으로 느려진다고 적혀 있다. `rotate`, `maxlen`도 같은 문서. `OrderedDict`의 `move_to_end`와 `popitem(last=False)`도 같은 모듈 문서. 큐의 정의는 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.1 "Stacks and queues".
 [^2]: Python 3 공식 튜토리얼 5.1.2 "Using Lists as Queues": 리스트는 앞에서 넣고 빼는 것이 느리므로 큐에는 `collections.deque`를 쓰라고 한다.
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '가장 오래 안 쓴 것 버리기 (LRU)' 절의 세 규칙(이미 있으면 remove 후 append, 없고 가득 찼으면 popleft, 그 뒤 append)을 순서도로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '가장 오래 안 쓴 것 버리기 (LRU)' 절의 세 규칙(이미 있으면 remove 후 append, 없고 가득 찼으면 popleft, 그 뒤 append)을 순서도로 옮겼다.
 {% endraw %}

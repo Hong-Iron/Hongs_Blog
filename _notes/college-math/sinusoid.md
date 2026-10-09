@@ -43,7 +43,7 @@ permalink: "/studies/college-math/sinusoid/"
 
 표의 세 조작은 [함수의 변환](/Hongs_Blog/studies/college-math/function-transformation/)과 짝을 이룬다. 진폭은 세로 배율, 주파수는 가로 배율, 위상은 가로 이동이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/13_sinusoid_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/13_sinusoid_fig1.svg" alt="그림" width="610" height="237" loading="lazy">
 
 회색이 원래의 440 Hz 사인파다. 진폭을 키우면 위아래로 늘어나고, 주파수를 키우면 가로로 줄어들고, 위상을 바꾸면 모양은 그대로 왼쪽으로 옮겨 간다[^s2].
 
@@ -81,7 +81,7 @@ $$s(t) = A \sin(2\pi f t + \varphi) + C = A\sin(\omega t + \varphi) + C$$
 
 표본화 주파수의 절반보다 높은 주파수는 이렇게 낮은 주파수로 보인다(에일리어싱). 그래서 음성 전화처럼 8 kHz로 표본화하는 장치는 먼저 4 kHz보다 높은 성분을 걸러 낸다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/13_sinusoid_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/13_sinusoid_fig2.svg" alt="그림" width="707" height="291" loading="lazy">
 
 회색 점이 8 kHz로 잰 값이다. 빠르게 떨리는 7 kHz 파형(파랑)과 느린 1 kHz 파형(주황)이 모든 점을 똑같이 지나서, 점만 보고는 둘을 가릴 수 없다[^s2].
 
@@ -133,6 +133,6 @@ $$s(t) = A \sin(2\pi f t + \varphi) + C = A\sin(\omega t + \varphi) + C$$
 
 
 [^1]: OpenStax, *Precalculus 2e*, 6.1절 "Graphs of the Sine and Cosine Functions"(진폭, 주기, 위상 이동), 7.6절 "Modeling with Trigonometric Functions"
-[^s1]: 에이전트 보충. 표본화 주파수의 절반보다 높은 성분이 낮은 주파수로 겹친다는 것은 표본화 정리(나이퀴스트-섀넌)의 내용이다. 전화 음성의 8 kHz 표본화는 PCM 음성 부호화의 표준 값이다. 이 문서의 예제는 삼각함수의 주기성과 홀함수 성질만으로 한 경우를 보였다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [13_sinusoid_plot.py](/Hongs_Blog/studies/college-math/code/13_sinusoid_plot/)로 그렸고, 그림에 쓴 값(주기 $$1/440$$초 ≈ 2.27 ms, 위상 $$\pi/2$$가 $$1/1760$$초 앞섬, 7 kHz와 −1 kHz 사인파의 표본 2,000개 일치)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표본화 주파수의 절반보다 높은 성분이 낮은 주파수로 겹친다는 것은 표본화 정리(나이퀴스트-섀넌)의 내용이다. 전화 음성의 8 kHz 표본화는 PCM 음성 부호화의 표준 값이다. 이 문서의 예제는 삼각함수의 주기성과 홀함수 성질만으로 한 경우를 보였다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [13_sinusoid_plot.py](/Hongs_Blog/studies/college-math/code/13_sinusoid_plot/)로 그렸고, 그림에 쓴 값(주기 $$1/440$$초 ≈ 2.27 ms, 위상 $$\pi/2$$가 $$1/1760$$초 앞섬, 7 kHz와 −1 kHz 사인파의 표본 2,000개 일치)을 같은 코드로 확인했다.
 {% endraw %}

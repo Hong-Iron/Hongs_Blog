@@ -47,7 +47,7 @@ permalink: "/studies/signals-and-systems/convolution-sum/"
 
 여기서 $$h[n]$$을 단위 임펄스 응답이라 부른다. 시스템에 $$\delta[n]$$을 넣었을 때의 출력이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig1.svg" alt="그림" width="525" height="410" loading="lazy">
 
 위 두 줄이 입력 조각 각각의 메아리이고, 맨 아래가 그 합이다. 같은 $$n$$의 막대 높이를 더하면 아래 줄이 된다[^s2].
 
@@ -142,7 +142,7 @@ $$h[n-k]$$가 미끄러지며 $$x[k]$$와 겹치는 정도에 따라 다섯 구�
 | $$6 < n \le 10$$ | $$n - 6 \le k \le 4$$ | $$\dfrac{\alpha^{n-4} - \alpha^{7}}{1 - \alpha}$$ |
 | $$n > 10$$ | 없음 | 0 |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig2.svg" alt="그림" width="584" height="564" loading="lazy">
 
 $$\alpha = 1.2$$로 계산한 예다. 뒤집힌 $$h[n-k]$$가 오른쪽으로 미끄러지며 $$x[k]$$와 겹치는 칸(색칠)이 늘었다가 줄어든다. 맨 아래에서 동그라미 친 $$y[2]$$, $$y[5]$$, $$y[8]$$이 위 세 줄의 겹친 곱을 더한 값이다[^s2].
 
@@ -235,7 +235,7 @@ $$\alpha = 1.2$$로 계산한 예다. 뒤집힌 $$h[n-k]$$가 오른쪽으로 �
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/05.Week05_CH02_1_handout.pdf, p.14 (예제 2.1, 그림 2.3)
+[^1]: 신호 및 시스템 5회 강의 자료 「Week05_CH02_1_handout」, p.14 (예제 2.1, 그림 2.3)
 [^2]: 같은 자료, p.3~5 (그림 2.1)
 [^3]: 같은 자료, p.6~10 (그림 2.2)
 [^4]: 같은 자료, p.11~13
@@ -245,6 +245,6 @@ $$\alpha = 1.2$$로 계산한 예다. 뒤집힌 $$h[n-k]$$가 오른쪽으로 �
 [^8]: 같은 자료, p.19~25 (예제 2.4, 그림 2.8~2.10)
 [^9]: 같은 자료, p.25~26 (예제 2.5, 그림 2.11)
 [^10]: 같은 자료, p.15~16
-[^s1]: 에이전트 보충. 계산 복잡도와 FFT, NumPy·CNN 예, 오해 항목의 $$x^2$$ 반례, 확인 문제 C2~C5는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [18_convolution-sum_plot.py](/Hongs_Blog/studies/signals-and-systems/code/18_convolution-sum_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.1의 0.5, 2.5, 2.5, 2와 예제 2.4($$\alpha = 1.2$$)의 다섯 구간 닫힌 꼴, 세 장면의 겹친 곱의 합.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 계산 복잡도와 FFT, NumPy·CNN 예, 오해 항목의 $$x^2$$ 반례, 확인 문제 C2~C5는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [18_convolution-sum_plot.py](/Hongs_Blog/studies/signals-and-systems/code/18_convolution-sum_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.1의 0.5, 2.5, 2.5, 2와 예제 2.4($$\alpha = 1.2$$)의 다섯 구간 닫힌 꼴, 세 장면의 겹친 곱의 합.
 {% endraw %}

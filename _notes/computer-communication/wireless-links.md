@@ -43,7 +43,7 @@ permalink: "/studies/computer-communication/wireless-links/"
 
 같은 반사라도 전송률이 높을수록 여러 비트에 겹친다. 속도가 올라 비트 폭이 줄면 신호가 겹쳐 간섭이 심해진다는 필기의 설명이 이것이다[^1]. 이것을 다중 경로 문제라 부른다. 신호가 여러 길로 와서 생기는 문제라는 뜻이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/34_wireless-links_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/34_wireless-links_fig1.svg" alt="그림" width="521" height="431" loading="lazy">
 
 두 그림 모두 곧장 온 신호(파란 선)에 60% 세기의 반사파가 1 μs 늦게 더해졌다. 0.1 Mbps(위)에서는 비트가 바뀌는 자리마다 칸의 10%만 흐트러지고, 칸 가운데는 깨끗하다. 10 Mbps(아래)에서는 10칸 앞의 비트가 칸 전체에 겹친다. 그래서 같은 1이라도 칸마다 높이가 달라지고, 낮아진 칸은 잡음이 조금만 더해져도 반대 비트로 읽히기 쉽다[^s2].
 
@@ -126,11 +126,11 @@ flowchart TD
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/2.필기노트/04.4주차.md, 53~65행, 84~93행, 103~110행
-[^2]: 4-1학기/pasted_images/Pasted image 20260927201907.png — 슬라이드 "무선 링크 (Wireless Links): 일반"
-[^3]: 4-1학기/pasted_images/Pasted image 20260927203345.png — 슬라이드 "고정 무선통신(Wireless Fixed links)". 기지국 그림: 8 km, 72°, 30 Mbit/s per sector
-[^4]: 4-1학기/pasted_images/Pasted image 20260927204743.png — 슬라이드 "단거리 무선통신(Short Range)"
-[^s1]: 에이전트 보충. 카페 예, 300 m와 1 μs, 비트 폭 표, 기지국당 150 Mbit/s와 면적은 원본에 없다. 슬라이드의 수치(72°, 30 Mbit/s, 8 km)와 비트 폭 = 1 ÷ 전송률(전송 속도와 대역폭 문서)에서 나온 계산이다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. 반사파의 세기 60%와 비트열은 설명용 가정이다. [34_wireless-links_plot.py](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_plot/)로 그렸고, 반사파 지연 1 μs가 0.1, 1, 10 Mbps에서 비트 0.1개, 1개, 10개 폭이라는 것과 0.1 Mbps에서는 칸 가운데의 부호가 보낸 비트와 모두 같다는 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 '고정 무선통신'·'단거리 무선통신' 절(슬라이드 "고정 무선통신(Wireless Fixed links)", "단거리 무선통신(Short Range)")과 '연결' 절의 이동통신·위성통신을 한 그림에 모았다. 위성통신 슬라이드도 같은 "무선 링크" 단원 아래에 있다.
+[^1]: 컴퓨터 통신 4회 필기 「4주차」, 53~65행, 84~93행, 103~110행
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "무선 링크 (Wireless Links): 일반"
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "고정 무선통신(Wireless Fixed links)". 기지국 그림: 8 km, 72°, 30 Mbit/s per sector
+[^4]: 수업 슬라이드 캡처 — 슬라이드 "단거리 무선통신(Short Range)"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카페 예, 300 m와 1 μs, 비트 폭 표, 기지국당 150 Mbit/s와 면적은 원본에 없다. 슬라이드의 수치(72°, 30 Mbit/s, 8 km)와 비트 폭 = 1 ÷ 전송률(전송 속도와 대역폭 문서)에서 나온 계산이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. 반사파의 세기 60%와 비트열은 설명용 가정이다. [34_wireless-links_plot.py](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_plot/)로 그렸고, 반사파 지연 1 μs가 0.1, 1, 10 Mbps에서 비트 0.1개, 1개, 10개 폭이라는 것과 0.1 Mbps에서는 칸 가운데의 부호가 보낸 비트와 모두 같다는 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 '고정 무선통신'·'단거리 무선통신' 절(슬라이드 "고정 무선통신(Wireless Fixed links)", "단거리 무선통신(Short Range)")과 '연결' 절의 이동통신·위성통신을 한 그림에 모았다. 위성통신 슬라이드도 같은 "무선 링크" 단원 아래에 있다.
 {% endraw %}

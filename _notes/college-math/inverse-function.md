@@ -47,7 +47,7 @@ $$x^2$$은 되돌릴 수 없다. 출력 $$9$$를 보고 입력이 $$3$$이었는
 
 그래프에서 역함수는 $$x$$와 $$y$$를 바꾼 것이다. $$(a, b)$$가 $$f$$ 위에 있으면 $$(b, a)$$가 $$f^{-1}$$ 위에 있다. 그래서 두 그래프는 직선 $$y = x$$에 대해 대칭이다. 섭씨-화씨 그래프의 점 $$(0, 32)$$는 역함수 그래프의 점 $$(32, 0)$$이 된다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/03_inverse-function_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/03_inverse-function_fig1.svg" alt="그림" width="564" height="319" loading="lazy">
 
 굵은 파란 선($$x \ge 0$$인 $$x^2$$)과 주황 선($$\sqrt{x}$$)은 점선 $$y = x$$를 거울로 두고 서로 비친 모양이다. 잘라 낸 $$x < 0$$ 쪽(점선)까지 두면 $$(-2, 4)$$와 $$(2, 4)$$가 둘 다 높이 4라서 4를 보고 입력을 되찾을 수 없다[^s2].
 
@@ -156,7 +156,7 @@ $$f(x) = \dfrac{2x + 1}{x - 3}$$의 역함수를 구한다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 1.7절 "Inverse Functions". 정의역을 잘라 역함수를 만드는 예는 3.8절 "Inverses and Radical Functions".
-[^s1]: 에이전트 보충. 좌표 변환과 해시는 컴퓨터공학에서 역함수가 쓰이는 곳과 쓰이지 않는 곳을 보이려고 넣었다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [03_inverse-function_plot.py](/Hongs_Blog/studies/college-math/code/03_inverse-function_plot/)로 그렸고, 그림에 쓴 값($$(2, 4)$$와 $$(4, 2)$$, $$(-2)^2 = 2^2 = 4$$, $$0 \le x \le 3$$에서 $$\sqrt{x^2} = x$$)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 섭씨-화씨 변환과 그 역함수(100°C ↔ 212°F)를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.7절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 좌표 변환과 해시는 컴퓨터공학에서 역함수가 쓰이는 곳과 쓰이지 않는 곳을 보이려고 넣었다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [03_inverse-function_plot.py](/Hongs_Blog/studies/college-math/code/03_inverse-function_plot/)로 그렸고, 그림에 쓴 값($$(2, 4)$$와 $$(4, 2)$$, $$(-2)^2 = 2^2 = 4$$, $$0 \le x \le 3$$에서 $$\sqrt{x^2} = x$$)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `예시로 보기`의 섭씨-화씨 변환과 그 역함수(100°C ↔ 212°F)를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.7절).
 {% endraw %}

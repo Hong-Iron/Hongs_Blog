@@ -41,7 +41,7 @@ permalink: "/studies/probability-statistics/clt/"
 
 주사위 하나는 1~6이 균등한 납작한 모양인데, 합은 금방 종 모양이 된다. 주사위 하나가 아래 정리의 $$X_i$$, 합을 표준화한 것이 $$Z_n$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig1.svg" alt="그림" width="612" height="218" loading="lazy">
 
 막대는 합을 표준화한 정확한 분포(막대 넓이 = 확률)이고, 주황 곡선은 표준정규분포다. 주사위 2개만 더해도 삼각형 모양이 되고, 10개면 곡선과 거의 겹친다[^s2].
 
@@ -73,7 +73,7 @@ $$Z_n = \frac{\bar X_n - \mu}{\sigma/\sqrt n} = \frac{X_1 + \cdots + X_n - n\mu}
 
 **수렴 속도.** 치우친 분포일수록 느리다. 지수분포 $$n$$개의 평균이 "표준편차 2개 위"를 넘을 확률의 참값은 $$n = 5, 50, 500$$에서 0.041, 0.030, 0.025로, 정규분포의 0.0228에 천천히 다가간다. 주사위(대칭)보다 훨씬 느리다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig2.svg" alt="그림" width="520" height="335" loading="lazy">
 
 지수분포 하나(파랑)는 오른쪽으로 꼬리가 길게 치우쳐 있다. 5개를 평균 내도 봉우리가 왼쪽으로 쏠려 있고, 50개쯤 되어야 회색 정규 곡선에 가까워진다[^s2].
 
@@ -183,6 +183,6 @@ $$\bar X_n - \mu = \frac{(X_1 + \cdots + X_n) - n\mu}{n}$$이다. 이것을 $$\f
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.3절 "Central limit theorem"(진술, 적률생성함수를 이용한 증명, 이항분포의 정규 근사와 연속성 보정).
-[^s1]: 에이전트 보충. 분포가 같지 않은 독립 합의 중심극한정리(린데베르크–펠러 정리)는 측도론적 확률 교재, 예를 들어 Billingsley, *Probability and Measure*의 중심극한정리 절에서 다룬다. 이 과정에서는 진술만 소개한다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [22_clt_plot.py](/Hongs_Blog/studies/probability-statistics/code/22_clt_plot/)로 그렸고, 그림에 쓴 값(예시 표의 최대 CDF 차이, 지수분포 평균의 꼬리 확률 0.041·0.030·0.025)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 분포가 같지 않은 독립 합의 중심극한정리(린데베르크–펠러 정리)는 측도론적 확률 교재, 예를 들어 Billingsley, *Probability and Measure*의 중심극한정리 절에서 다룬다. 이 과정에서는 진술만 소개한다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [22_clt_plot.py](/Hongs_Blog/studies/probability-statistics/code/22_clt_plot/)로 그렸고, 그림에 쓴 값(예시 표의 최대 CDF 차이, 지수분포 평균의 꼬리 확률 0.041·0.030·0.025)을 같은 코드로 확인했다.
 {% endraw %}

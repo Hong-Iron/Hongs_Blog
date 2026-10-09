@@ -41,7 +41,7 @@ permalink: "/studies/probability-statistics/mle/"
 
 0.7에서 가장 크다. 데이터를 고정하고 $$p$$를 움직이며 본 이 함수가 아래의 가능도 $$L(p)$$이고, 가장 높은 곳이 최대가능도 추정값 $$\hat p = 0.7$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/30_mle_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/30_mle_fig1.svg" alt="그림" width="520" height="335" loading="lazy">
 
 파란 곡선은 위 표의 $$p^7(1 - p)^3$$을 꼭대기가 1이 되게 나눈 것이고, 점이 표의 다섯 값이다. 같은 비율 70/100이면 봉우리는 같은 0.7인데 훨씬 좁다. 자료가 많을수록 그럴듯한 $$p$$의 범위가 줄어든다[^s1].
 
@@ -207,6 +207,6 @@ flowchart TD
 
 
 [^1]: Wasserman, *All of Statistics*, "Parametric Inference" 장(최대가능도, 일치성, 점근 정규성, 피셔 정보량, 불변성).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [30_mle_plot.py](/Hongs_Blog/studies/probability-statistics/code/30_mle_plot/)로 그렸고, 그림에 쓴 값(예시 표의 다섯 값, 두 곡선의 최댓점 0.7)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의와 베르누이 MLE 유도, 대표 문제 1·2의 단계를 한 흐름으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [30_mle_plot.py](/Hongs_Blog/studies/probability-statistics/code/30_mle_plot/)로 그렸고, 그림에 쓴 값(예시 표의 다섯 값, 두 곡선의 최댓점 0.7)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의와 베르누이 MLE 유도, 대표 문제 1·2의 단계를 한 흐름으로 그렸다.
 {% endraw %}

@@ -79,8 +79,8 @@ permalink: "/studies/computer-communication/contrast--line-coding/"
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 35 "Non-Return to Zero(NRZ)"
-[^2]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 38 "NRZI and Manchester", 슬라이드 39 "Mid-transition의 의미"
-[^3]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 40 "4B/5B"
-[^s1]: 에이전트 보충. 상황 문제(C1~C4), "신호가 바뀌지 않는 최대 길이"와 "받는 쪽이 보는 것" 줄, 무선과 별도 클럭 선의 경우는 원본에 없다. 각 방식의 규칙에서 나오며 구현·검증 코드로 확인했다. 슬라이드 33은 무선에서 쓰는 변조(Data ⇒ A-Signal)와 주로 유선에서 쓰는 인코딩(Data ⇒ D-Signal)을 나눈다.
+[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 35 "Non-Return to Zero(NRZ)"
+[^2]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 38 "NRZI and Manchester", 슬라이드 39 "Mid-transition의 의미"
+[^3]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 40 "4B/5B"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상황 문제(C1~C4), "신호가 바뀌지 않는 최대 길이"와 "받는 쪽이 보는 것" 줄, 무선과 별도 클럭 선의 경우는 원본에 없다. 각 방식의 규칙에서 나오며 구현·검증 코드로 확인했다. 슬라이드 33은 무선에서 쓰는 변조(Data ⇒ A-Signal)와 주로 유선에서 쓰는 인코딩(Data ⇒ D-Signal)을 나눈다.
 {% endraw %}

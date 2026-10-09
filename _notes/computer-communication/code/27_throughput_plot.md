@@ -3,7 +3,7 @@ layout: "note"
 title: "27_throughput_plot.py"
 display_title: "27_throughput_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "27"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/throughput/"
 parent_title: "처리량"
-description: "컴퓨터 통신 · 처리량 코드 코드"
+description: "컴퓨터 통신 · 처리량 그림 생성 코드"
 permalink: "/studies/computer-communication/code/27_throughput_plot/"
 ---
 {% raw %}
-[처리량](/Hongs_Blog/studies/computer-communication/throughput/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[처리량](/Hongs_Blog/studies/computer-communication/throughput/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 처리량 문서의 그림을 만든다: 27_throughput_fig1.svg

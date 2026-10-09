@@ -69,7 +69,7 @@ flowchart TD
 - **점이 삼각형 안에 있는가:** 세 변 ab, bc, ca에 대해 ccw 값의 부호가 서로 엇갈리지 않으면(양수와 음수가 함께 나오지 않으면) 안이나 변 위다.
 - **각도 순 정렬:** 한 점 o에서 본 점들이 모두 반평면(180도 미만의 범위) 안에 있으면, "ccw(o, p, q) > 0이면 p가 q보다 앞"이라는 비교로 정렬한다. 파이썬에서는 `functools.cmp_to_key`로 비교 함수를 넘긴다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/35_geometry-ccw_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/35_geometry-ccw_fig1.svg" alt="그림" width="636" height="295" loading="lazy">
 
 왼쪽은 예시의 세 점이다. O에서 P 쪽을 보다가 Q 쪽으로 반시계 방향으로 고개를 돌리고, 색칠한 삼각형의 넓이 5.5가 외적 11의 절반이다. 오른쪽의 두 선분은 엇갈린다. 괄호 속 부호처럼 p₁과 p₂는 직선 q₁q₂의 양쪽에 하나씩, q₁과 q₂는 직선 p₁p₂의 양쪽에 하나씩 있다[^s1].
 
@@ -147,6 +147,6 @@ def crosses(p1, p2, q1, q2):               # 끝점이 아닌 곳에서 엇갈�
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018판), 29.2 "Points and lines"는 외적으로 점이 직선의 어느 쪽에 있는지와 선분 교차를 판정한다. 넓이 관계는 29.3 "Polygon area"에 있다.
 [^2]: 한 줄에 놓인 경우까지 다루는 선분 교차 판정은 Cormen 외, *Introduction to Algorithms* 3판, 33.1 "Line-segment properties"에 있다.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [35_geometry-ccw_plot.py](/Hongs_Blog/studies/algorithms/code/35_geometry-ccw_plot/)로 그렸고, cross(O, P, Q) = 11, cross(O, Q, P) = −11, 삼각형 넓이 5.5(헤론 공식으로 따로 계산), 오른쪽 선분 p₁(0, 0)–p₂(4, 2)와 q₁(1, 3)–q₂(3, −1)의 네 부호 값 10, −10, −10, 10을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '정의' 절의 선분 교차 판정 문장과 crosses 코드의 d1 ~ d4를 순서도로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [35_geometry-ccw_plot.py](/Hongs_Blog/studies/algorithms/code/35_geometry-ccw_plot/)로 그렸고, cross(O, P, Q) = 11, cross(O, Q, P) = −11, 삼각형 넓이 5.5(헤론 공식으로 따로 계산), 오른쪽 선분 p₁(0, 0)–p₂(4, 2)와 q₁(1, 3)–q₂(3, −1)의 네 부호 값 10, −10, −10, 10을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '정의' 절의 선분 교차 판정 문장과 crosses 코드의 d1 ~ d4를 순서도로 옮겼다.
 {% endraw %}

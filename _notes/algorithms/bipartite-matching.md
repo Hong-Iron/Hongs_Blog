@@ -144,5 +144,5 @@ def max_matching(adj, n_right):            # adj[u]: 왼쪽 u가 갈 수 있는 
 
 [^1]: Cormen 외, *Introduction to Algorithms* 3판, 26.3 "Maximum bipartite matching"은 매칭을 최대 흐름으로 바꿔 구한다. 증가 경로로 최대 매칭을 판정하는 성질은 베르주(C. Berge, 1957)의 정리로 알려져 있다. Laaksonen, *Competitive Programmer's Handbook* (2018판), 20.3 "Maximum matchings"도 흐름으로 구한다.
 [^2]: Kuhn, "The Hungarian method for the assignment problem", *Naval Research Logistics Quarterly* 2 (1955). $$O(n^3)$$ 구현은 잠재값을 쓰는 널리 알려진 판이고, 검증 코드에서 순열 전부와 비교했다.
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 학생 1, 2, 3과 동아리 a, b, c의 희망 관계를 이분 그래프로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 학생 1, 2, 3과 동아리 a, b, c의 희망 관계를 이분 그래프로 그렸다.
 {% endraw %}

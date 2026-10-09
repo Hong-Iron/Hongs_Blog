@@ -3,7 +3,7 @@ layout: "note"
 title: "27_gcd-euclid_plot.py"
 display_title: "27_gcd-euclid_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "27"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/gcd-euclid/"
 parent_title: "최대공약수와 유클리드 호제법"
-description: "이산수학 · 최대공약수와 유클리드 호제법 코드 코드"
+description: "이산수학 · 최대공약수와 유클리드 호제법 그림 생성 코드"
 permalink: "/studies/discrete-math/code/27_gcd-euclid_plot/"
 ---
 {% raw %}
-[최대공약수와 유클리드 호제법](/Hongs_Blog/studies/discrete-math/gcd-euclid/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[최대공약수와 유클리드 호제법](/Hongs_Blog/studies/discrete-math/gcd-euclid/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 최대공약수와 유클리드 호제법 문서의 그림을 만든다: 27_gcd-euclid_fig1.svg, 27_gcd-euclid_fig2.svg

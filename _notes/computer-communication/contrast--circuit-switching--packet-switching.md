@@ -67,9 +67,9 @@ permalink: "/studies/computer-communication/contrast--circuit-switching--packet-
 
 경로는 미리 정하되 용량은 예약하지 않는 가상 회선이 있다. 패킷 스위칭처럼 링크를 나눠 쓰면서, 회선 스위칭처럼 연결 설정 때 경로를 정한다. 그래서 순서가 지켜지고 패킷마다 경로를 찾지 않아도 된다[^s1].
 
-[^1]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 30~40행
-[^2]: 4-1학기/pasted_images/Pasted image 20260924200141.png — 슬라이드 "간접 연결 방법: 스위칭 정책", 회선 스위칭
-[^3]: 4-1학기/pasted_images/Pasted image 20260924201830.png — 슬라이드 "패킷 스위칭"
-[^4]: 4-1학기/pasted_images/Pasted image 20260925232245.png, 4-1학기/pasted_images/Pasted image 20260925234108.png — 슬라이드 "Timing in Circuit Switching", "Timing of Packet Switching"
-[^s1]: 에이전트 보충. 보장·거절·혼잡의 비교와 가상 회선은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 3장(가상 회선 스위칭)의 내용이다.
+[^1]: 컴퓨터 통신 1회 필기 「1주차」, 30~40행
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "간접 연결 방법: 스위칭 정책", 회선 스위칭
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "패킷 스위칭"
+[^4]: 수업 슬라이드 캡처, 수업 슬라이드 캡처 — 슬라이드 "Timing in Circuit Switching", "Timing of Packet Switching"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 보장·거절·혼잡의 비교와 가상 회선은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 3장(가상 회선 스위칭)의 내용이다.
 {% endraw %}

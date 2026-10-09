@@ -209,5 +209,5 @@ $$\sum_x p(x, y)$$는 $$Y = y$$인 칸을 모든 $$x$$에 대해 더한 것, 곧
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.1절 "Joint, marginal, and conditional", 7.2절 "2D LOTUS", 9.1~9.3절(조건부 기댓값과 그 성질, 아담의 법칙), 9.4절(조건부 기댓값은 제곱오차를 가장 작게 하는 예측), 9.5절 "Conditional variance"(이브의 법칙).
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의(주변분포, 조건부 분포, 조건부 기댓값)와 아담의 법칙의 증명 순서를 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의(주변분포, 조건부 분포, 조건부 기댓값)와 아담의 법칙의 증명 순서를 그렸다.
 {% endraw %}

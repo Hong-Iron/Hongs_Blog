@@ -3,7 +3,7 @@ layout: "note"
 title: "05_independent-variable-transform_plot.py"
 display_title: "05_independent-variable-transform_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "05"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/independent-variable-transform/"
 parent_title: "독립 변수의 변환"
-description: "신호 및 시스템 · 독립 변수의 변환 코드 코드"
+description: "신호 및 시스템 · 독립 변수의 변환 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/05_independent-variable-transform_plot/"
 ---
 {% raw %}
-[독립 변수의 변환](/Hongs_Blog/studies/signals-and-systems/independent-variable-transform/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[독립 변수의 변환](/Hongs_Blog/studies/signals-and-systems/independent-variable-transform/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 독립 변수의 변환 문서의 그림을 만든다: 05_independent-variable-transform_fig1.svg

@@ -46,7 +46,7 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 
 같은 패킷과 400 km 링크에서 전송률만 1 Mbps부터 10 Gbps까지 바꾸면 다음과 같다. 두 축 모두 한 칸이 10배다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/05_rate-and-bandwidth_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/05_rate-and-bandwidth_fig1.svg" alt="그림" width="534" height="335" loading="lazy">
 
 파란 선(전송 지연)은 전송률이 10배가 될 때마다 10분의 1로 준다. 주황 선(전파 지연)은 2 ms에서 움직이지 않는다. 그래서 둘의 합(회색)은 100 Mbps쯤부터 2 ms에 거의 붙고, 속도를 더 올려도 도착 시각이 별로 당겨지지 않는다[^s3].
 
@@ -143,13 +143,13 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260924204202.png — 슬라이드 "주파수분할 다중화", 반송파 64·68·72 kHz 스펙트럼
-[^2]: 4-1학기/pasted_images/Pasted image 20260924204837.png — 슬라이드 "통계적 다중화", Wasted Bandwidth / Extra Bandwidth Available
-[^3]: 4-1학기/pasted_images/Pasted image 20260925230348.png — 슬라이드 "성능 (Performance): 대역폭". 비트 폭 그림: 1 Mbps는 비트당 1 μs, 2 Mbps는 0.5 μs
-[^4]: 4-1학기/pasted_images/Pasted image 20260925231047.png — 슬라이드 "성능: 소요시간/지연시간". 신호 속도: 진공 3.0 × 10⁸, 케이블 2.3 × 10⁸, 광케이블 2.0 × 10⁸ m/s
-[^5]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 36~43행
-[^6]: 4-1학기/pasted_images/Pasted image 20260927203919.png — 슬라이드 "위성통신", 정지궤도 약 36,000 km
-[^s1]: 에이전트 보충. 기차 비유와 그 한계(실제 신호는 첫 비트가 실리자마자 나아가지만 마지막 비트의 도착 시각은 같음)는 원본에 없다. Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.4절의 비유와 같다.
-[^s2]: 에이전트 보충. 주파수 대역폭과 최대 전송률의 관계는 섀넌 용량 공식 $$C = B \log_2(1 + S/N)$$이 준다. 1주차 자료에는 나오지 않는다.
-[^s3]: 에이전트 보충. 그림 한 장은 원본에 없다. [05_rate-and-bandwidth_plot.py](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_plot/)로 그렸고, 표의 값(100 Mbps에서 120 μs, 1 Gbps에서 12 μs, 전파 지연 2 ms)과 1 Gbps에서의 합 2.012 ms를 같은 코드로 확인했다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "주파수분할 다중화", 반송파 64·68·72 kHz 스펙트럼
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화", Wasted Bandwidth / Extra Bandwidth Available
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "성능 (Performance): 대역폭". 비트 폭 그림: 1 Mbps는 비트당 1 μs, 2 Mbps는 0.5 μs
+[^4]: 수업 슬라이드 캡처 — 슬라이드 "성능: 소요시간/지연시간". 신호 속도: 진공 3.0 × 10⁸, 케이블 2.3 × 10⁸, 광케이블 2.0 × 10⁸ m/s
+[^5]: 컴퓨터 통신 3회 필기 「3주차」, 36~43행
+[^6]: 수업 슬라이드 캡처 — 슬라이드 "위성통신", 정지궤도 약 36,000 km
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기차 비유와 그 한계(실제 신호는 첫 비트가 실리자마자 나아가지만 마지막 비트의 도착 시각은 같음)는 원본에 없다. Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.4절의 비유와 같다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 주파수 대역폭과 최대 전송률의 관계는 섀넌 용량 공식 $$C = B \log_2(1 + S/N)$$이 준다. 1주차 자료에는 나오지 않는다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [05_rate-and-bandwidth_plot.py](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_plot/)로 그렸고, 표의 값(100 Mbps에서 120 μs, 1 Gbps에서 12 μs, 전파 지연 2 ms)과 1 Gbps에서의 합 2.012 ms를 같은 코드로 확인했다.
 {% endraw %}

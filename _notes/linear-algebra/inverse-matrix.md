@@ -37,7 +37,7 @@ permalink: "/studies/linear-algebra/inverse-matrix/"
 
 반면 $$B = \begin{pmatrix}1 & 2\\ 2 & 4\end{pmatrix}$$는 $$(2, -1)$$과 $$(0, 0)$$을 모두 $$(0, 0)$$으로 보낸다. $$(0, 0)$$을 받은 쪽은 원래 무엇이었는지 알 수 없다. $$A$$는 아래 정리의 가역 행렬, $$B$$는 특이 행렬이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/07_inverse-matrix_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/07_inverse-matrix_fig1.svg" alt="그림" width="529" height="352" loading="lazy">
 
 $$B$$는 평면의 모든 점을 직선 $$y = 2x$$ 위로 누른다. 왼쪽 주황 직선 $$x + 2y = 0$$ 위의 점은 모두 $$(0, 0)$$ 한 점으로 간다. 여러 입력이 한 출력으로 모이니 되돌릴 방법이 없다[^s2].
 
@@ -167,14 +167,14 @@ $$\vert A\vert  = 0$$이면 $$x - 3y = 5$$, $$-2x + 6y = 1$$처럼 두 직선이
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.5절 "Inverse Matrices"(역행렬의 유일성, $$2 \times 2$$ 공식, 가우스–조르당, $$(AB)^{-1}$$, 가역성과 피벗).
-[^s1]: 에이전트 보충. "역행렬을 구해 곱하지 말고 푼다"는 수치 선형대수의 표준 권고다(NumPy 문서도 `inv` 대신 `solve`를 권한다). 연산 수 비교: 역행렬 약 $$2n^3$$, LU 풀이 약 $$\frac23 n^3$$.
-[^n1]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.23
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "역행렬을 구해 곱하지 말고 푼다"는 수치 선형대수의 표준 권고다(NumPy 문서도 `inv` 대신 `solve`를 권한다). 연산 수 비교: 역행렬 약 $$2n^3$$, LU 풀이 약 $$\frac23 n^3$$.
+[^n1]: 수치해석 3회 강의 자료 「na03_matrix」, p.23
 [^n2]: 같은 자료, p.26~28
 [^n3]: 같은 자료, p.25, p.29~30
 [^n4]: 같은 자료, p.31, p.34~36
 [^n5]: 같은 자료, p.32~33
 [^n6]: 같은 자료, p.24
-[^sn1]: 에이전트 보충. "부분 피벗팅"이라는 이름과 오차를 줄이는 이유는 원본에 없다. 슬라이드 예의 역행렬과 해, 카드 C4는 07_inverse-matrix_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [07_inverse-matrix_plot.py](/Hongs_Blog/studies/linear-algebra/code/07_inverse-matrix_plot/)로 그렸고, $$B(2, -1) = B(0, 0) = (0, 0)$$, 무작위 점 400개의 상이 모두 $$y = 2x$$ 위에 있다는 것, $$\det B = 0$$을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 가역 행렬 정리와 그 증명(1 ⇒ 2 ⇒ 3 ⇒ 4 ⇒ 1)을 그대로 옮겼다(Strang 5판 2.5절).
+[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "부분 피벗팅"이라는 이름과 오차를 줄이는 이유는 원본에 없다. 슬라이드 예의 역행렬과 해, 카드 C4는 07_inverse-matrix_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [07_inverse-matrix_plot.py](/Hongs_Blog/studies/linear-algebra/code/07_inverse-matrix_plot/)로 그렸고, $$B(2, -1) = B(0, 0) = (0, 0)$$, 무작위 점 400개의 상이 모두 $$y = 2x$$ 위에 있다는 것, $$\det B = 0$$을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 가역 행렬 정리와 그 증명(1 ⇒ 2 ⇒ 3 ⇒ 4 ⇒ 1)을 그대로 옮겼다(Strang 5판 2.5절).
 {% endraw %}

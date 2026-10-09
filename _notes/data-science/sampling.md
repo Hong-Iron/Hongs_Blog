@@ -83,6 +83,6 @@ permalink: "/studies/data-science/sampling/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.44
-[^s1]: 에이전트 보충. VIP 예와 놓칠 확률(비복원이라 정확히는 약 0.817), 복원 추출에서 빠지는 비율, 배깅과 사이킷런의 쓰임, 카드는 원본에 없다. 수치는 검증 코드로 확인했다.
+[^1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.44
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> VIP 예와 놓칠 확률(비복원이라 정확히는 약 0.817), 복원 추출에서 빠지는 비율, 배깅과 사이킷런의 쓰임, 카드는 원본에 없다. 수치는 검증 코드로 확인했다.
 {% endraw %}

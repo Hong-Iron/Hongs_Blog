@@ -47,7 +47,7 @@ permalink: "/studies/college-math/log-scale/"
 
 로그-로그 그래프의 가로 위치가 $$\log_{10} n$$, 세로 위치가 $$\log_{10}(\text{비교 횟수})$$이고, 기울기가 아래 정리의 $$k$$다. 곱셈 관계가 로그 눈금에서 덧셈 관계, 즉 직선이 된다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/08_log-scale_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/08_log-scale_fig1.svg" alt="그림" width="611" height="276" loading="lazy">
 
 보통 눈금(왼쪽)에서는 병합 정렬이 바닥에 깔려 보이지 않는다. 로그-로그 눈금(오른쪽)에서는 둘 다 직선이 되고, 삽입 정렬의 선이 더 가파르다[^s2].
 
@@ -63,7 +63,7 @@ $$b > 1$$일 때 로그함수 $$y = \log_b x$$는 정의역 $$(0, \infty)$$, 치
 </div>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/08_log-scale_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/08_log-scale_fig2.svg" alt="그림" width="590" height="342" loading="lazy">
 
 네 곡선이 모두 $$(1, 0)$$을 지난다. 밑이 1보다 큰 세 곡선은 오른쪽으로 갈수록 느리게 오르고, 밑이 클수록 더 느리다. $$x$$가 0에 다가가면 이 세 곡선은 $$y$$축을 따라 한없이 내려간다. $$\log_{1/2} x$$는 위아래를 뒤집은 모양이다[^s2].
 
@@ -159,6 +159,6 @@ $$c, a, x > 0$$일 때
 
 
 [^1]: OpenStax, *Precalculus 2e*, 4.4절 "Graphs of Logarithmic Functions". 로그 눈금을 쓰는 모형은 4.7절 "Exponential and Logarithmic Models".
-[^s1]: 에이전트 보충. 데시벨로 이득과 손실을 더하는 방식은 통신 공학의 표준 관례다. 웨버의 법칙(자극의 변별 문턱이 자극 세기에 비례)과, 이로부터 감각이 자극의 로그에 비례한다는 페히너의 법칙은 정신물리학의 고전적 결과다. 페히너의 법칙은 근사이며 모든 감각과 범위에서 성립하지는 않는다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [08_log-scale_plot.py](/Hongs_Blog/studies/college-math/code/08_log-scale_plot/)로 그렸고, 그림에 쓴 값(삽입 정렬 비교 횟수가 정확히 $$n(n-1)/2$$, 로그-로그 기울기 2.00과 1.14, 네 로그가 모두 $$(1, 0)$$을 지남)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 데시벨로 이득과 손실을 더하는 방식은 통신 공학의 표준 관례다. 웨버의 법칙(자극의 변별 문턱이 자극 세기에 비례)과, 이로부터 감각이 자극의 로그에 비례한다는 페히너의 법칙은 정신물리학의 고전적 결과다. 페히너의 법칙은 근사이며 모든 감각과 범위에서 성립하지는 않는다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [08_log-scale_plot.py](/Hongs_Blog/studies/college-math/code/08_log-scale_plot/)로 그렸고, 그림에 쓴 값(삽입 정렬 비교 횟수가 정확히 $$n(n-1)/2$$, 로그-로그 기울기 2.00과 1.14, 네 로그가 모두 $$(1, 0)$$을 지남)을 같은 코드로 확인했다.
 {% endraw %}

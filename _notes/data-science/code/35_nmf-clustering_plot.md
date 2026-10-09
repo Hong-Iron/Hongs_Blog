@@ -3,7 +3,7 @@ layout: "note"
 title: "35_nmf-clustering_plot.py"
 display_title: "35_nmf-clustering_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "35"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/nmf-clustering/"
 parent_title: "행렬 분해 군집화"
-description: "데이터 과학 · 행렬 분해 군집화 코드 코드"
+description: "데이터 과학 · 행렬 분해 군집화 그림 생성 코드"
 permalink: "/studies/data-science/code/35_nmf-clustering_plot/"
 ---
 {% raw %}
-[행렬 분해 군집화](/Hongs_Blog/studies/data-science/nmf-clustering/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[행렬 분해 군집화](/Hongs_Blog/studies/data-science/nmf-clustering/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 행렬 분해 군집화 문서의 그림을 만든다: 35_nmf-clustering_fig1.svg

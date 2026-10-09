@@ -3,7 +3,7 @@ layout: "note"
 title: "28_primes_plot.py"
 display_title: "28_primes_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "28"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/primes/"
 parent_title: "소수와 산술의 기본정리"
-description: "이산수학 · 소수와 산술의 기본정리 코드 코드"
+description: "이산수학 · 소수와 산술의 기본정리 그림 생성 코드"
 permalink: "/studies/discrete-math/code/28_primes_plot/"
 ---
 {% raw %}
-[소수와 산술의 기본정리](/Hongs_Blog/studies/discrete-math/primes/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[소수와 산술의 기본정리](/Hongs_Blog/studies/discrete-math/primes/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 소수와 산술의 기본정리 문서의 그림을 만든다: 28_primes_fig1.svg

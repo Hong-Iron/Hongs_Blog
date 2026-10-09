@@ -98,7 +98,7 @@ flowchart TD
 
 먼저 속성 종류로 갈리고, 이진이면 두 상태의 무게로 한 번 더 갈린다. 비대칭 쪽만 둘 다 0인 칸을 셈에서 뺀다[^s3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/03_categorical-dissimilarity_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/03_categorical-dissimilarity_fig1.svg" alt="그림" width="520" height="327" loading="lazy">
 
 Jack과 Jim에게 '둘 다 음성'인 검사를 계속 더했다. 대칭 비유사도는 0으로 내려가 두 사람이 점점 똑같아 보인다. 비대칭 비유사도는 $$\frac23$$에서 움직이지 않는다[^s2].
 
@@ -139,10 +139,10 @@ Jack과 Jim에게 '둘 다 음성'인 검사를 계속 더했다. 대칭 비유�
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.21~22
+[^1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.21~22
 [^2]: 같은 자료, p.23
 [^3]: 같은 자료, p.24
-[^s1]: 에이전트 보충. 환자 예(Jack·Mary·Jim)는 Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.3절의 예다. 자카드 계수의 집합 표현, 장바구니 활용, 섞인 속성의 합치기, 카드 C2·C3은 원본에 없다. 수치는 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [03_categorical-dissimilarity_plot.py](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_plot/)로 그렸고, 둘 다 0인 칸이 3개일 때 $$\frac13$$과 $$\frac23$$, 10,000개일 때 대칭 비유사도가 0.001 미만임을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 명목·대칭 이진·비대칭 이진 식을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 환자 예(Jack·Mary·Jim)는 Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.3절의 예다. 자카드 계수의 집합 표현, 장바구니 활용, 섞인 속성의 합치기, 카드 C2·C3은 원본에 없다. 수치는 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [03_categorical-dissimilarity_plot.py](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_plot/)로 그렸고, 둘 다 0인 칸이 3개일 때 $$\frac13$$과 $$\frac23$$, 10,000개일 때 대칭 비유사도가 0.001 미만임을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 명목·대칭 이진·비대칭 이진 식을 근거로 그렸다.
 {% endraw %}

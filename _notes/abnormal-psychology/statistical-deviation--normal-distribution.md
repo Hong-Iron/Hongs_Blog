@@ -61,7 +61,7 @@ permalink: "/studies/abnormal-psychology/statistical-deviation--normal-distribut
 - **측정 오차가 있는 경우.** 관측 점수는 참 점수에 오차가 더해진 값이다. 측정 표준오차가 3점이면, 참 점수가 72점인 사람도 약 25%의 확률로 70 미만이 나온다. 그래서 진단 편람은 지능지수 70에 측정 오차를 감안한 범위(대략 65~75)를 허용하고, 점수만이 아니라 적응 기능을 함께 본다[^s2].
 - **특성이 하나의 수치가 아닌 경우.** 환각, 착취, 공허감처럼 한 줄의 점수로 재기 어려운 특성에는 이 대응을 쓸 수 없다. 통계 기준이 "사람의 수많은 특성에 다 적용되지 않는다"는 단점이 여기서 나온다[^3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig1.svg" alt="그림" width="503" height="306" loading="lazy">
 
 두 분포 모두 평균 0, 표준편차 1로 맞췄다. 그래도 지수분포는 오른쪽 꼬리가 두꺼워서, 같은 "평균 + 2σ" 위에 두 배 넘는 넓이가 남는다[^s3].
 
@@ -71,7 +71,7 @@ permalink: "/studies/abnormal-psychology/statistical-deviation--normal-distribut
 - **서로 다른 검사를 한 자로 비교한다.** 평균과 표준편차가 다른 두 검사라도 $$z = (x - \mu)/\sigma$$로 바꾸면 "평균에서 몇 표준편차"라는 같은 단위가 된다.
 - **오분류를 계산한다.** 측정 오차의 크기를 알면 절단점 부근에서 잘못 분류될 확률을 구할 수 있다. 이 계산이 "한 번의 검사 점수만으로 판정하지 말라"는 규칙의 근거가 된다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig2.svg" alt="그림" width="503" height="330" loading="lazy">
 
 평균에 가까운 쪽일수록 곡선이 높다. 그래서 절단점을 같은 폭만큼 옮겨도, 평균 쪽으로 옮길 때 늘어나는 넓이가 더 크다[^s3].
 
@@ -114,10 +114,10 @@ permalink: "/studies/abnormal-psychology/statistical-deviation--normal-distribut
 ## 출처
 
 [^1]: [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/)의 "예시로 보기"(서버 응답 시간 평균 200 ms, 표준편차 20 ms)
-[^2]: 4-1학기/이상 심리학/1.수업자료/11.신경발달장애, 신경인지장애.pdf, p.6 ("지능지수(IQ)가 70미만인 경우")
-[^3]: 4-1학기/이상 심리학/1.수업자료/01.이상심리학.pdf, p.13 (통계적 기준의 장단점과 손글씨 필기)
-[^4]: 4-1학기/이상 심리학/1.수업자료/01.이상심리학.pdf, p.12 ("전제: 측정하는 심리적 특성이 정규분포를 이루고 있음", 정규분포 그림)
-[^s1]: 에이전트 보충. 웩슬러 지능검사 등 표준 지능검사는 평균 100, 표준편차 15가 되도록 점수를 환산한다.
-[^s2]: 에이전트 보충. DSM-5-TR의 지적발달장애 설명은 지능이 평균보다 약 2 표준편차 아래이고, 측정 오차(약 ±5점)를 감안해 65~75 범위를 본다고 적는다. 측정 표준오차 3점은 계산을 위한 가정이다.
-[^s3]: 에이전트 보충. 그림 두 장은 원본에 없다. [003_statistical-deviation--normal-distribution_plot.py](/Hongs_Blog/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_plot/)로 그렸고, 그림에 쓴 값(지능지수 평균 100, 표준편차 15에서 62.5, 70, 77.5 미만의 비율 0.6%, 2.3%, 6.7%, 평균 + 2σ 위의 넓이 정규분포 2.3%와 평균 0·표준편차 1로 옮긴 지수분포 5.0%)을 같은 코드로 확인했다.
+[^2]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.6 ("지능지수(IQ)가 70미만인 경우")
+[^3]: 이상 심리학 1회 강의 자료 「이상심리학」, p.13 (통계적 기준의 장단점과 손글씨 필기)
+[^4]: 이상 심리학 1회 강의 자료 「이상심리학」, p.12 ("전제: 측정하는 심리적 특성이 정규분포를 이루고 있음", 정규분포 그림)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 웩슬러 지능검사 등 표준 지능검사는 평균 100, 표준편차 15가 되도록 점수를 환산한다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR의 지적발달장애 설명은 지능이 평균보다 약 2 표준편차 아래이고, 측정 오차(약 ±5점)를 감안해 65~75 범위를 본다고 적는다. 측정 표준오차 3점은 계산을 위한 가정이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [003_statistical-deviation--normal-distribution_plot.py](/Hongs_Blog/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_plot/)로 그렸고, 그림에 쓴 값(지능지수 평균 100, 표준편차 15에서 62.5, 70, 77.5 미만의 비율 0.6%, 2.3%, 6.7%, 평균 + 2σ 위의 넓이 정규분포 2.3%와 평균 0·표준편차 1로 옮긴 지수분포 5.0%)을 같은 코드로 확인했다.
 {% endraw %}

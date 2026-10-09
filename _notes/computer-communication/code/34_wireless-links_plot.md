@@ -3,7 +3,7 @@ layout: "note"
 title: "34_wireless-links_plot.py"
 display_title: "34_wireless-links_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "34"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/wireless-links/"
 parent_title: "무선 링크"
-description: "컴퓨터 통신 · 무선 링크 코드 코드"
+description: "컴퓨터 통신 · 무선 링크 그림 생성 코드"
 permalink: "/studies/computer-communication/code/34_wireless-links_plot/"
 ---
 {% raw %}
-[무선 링크](/Hongs_Blog/studies/computer-communication/wireless-links/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[무선 링크](/Hongs_Blog/studies/computer-communication/wireless-links/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 무선 링크 문서의 그림을 만든다: 34_wireless-links_fig1.svg

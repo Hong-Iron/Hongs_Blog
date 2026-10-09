@@ -3,7 +3,7 @@ layout: "note"
 title: "19_inclusion-exclusion_plot.py"
 display_title: "19_inclusion-exclusion_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/inclusion-exclusion/"
 parent_title: "포함-배제 원리"
-description: "이산수학 · 포함-배제 원리 코드 코드"
+description: "이산수학 · 포함-배제 원리 그림 생성 코드"
 permalink: "/studies/discrete-math/code/19_inclusion-exclusion_plot/"
 ---
 {% raw %}
-[포함-배제 원리](/Hongs_Blog/studies/discrete-math/inclusion-exclusion/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[포함-배제 원리](/Hongs_Blog/studies/discrete-math/inclusion-exclusion/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 포함-배제 원리 문서의 그림을 만든다: 19_inclusion-exclusion_fig1.svg, 19_inclusion-exclusion_fig2.svg

@@ -90,5 +90,5 @@ permalink: "/studies/operating-systems/file-allocation-inode-ladder/"
 </div>
 
 
-[^s1]: 에이전트 보충. 문제 1은 Stallings 6판 12.7절의 FreeBSD 예다. 문제 2~4는 원본 범위 밖의 변형 문제다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1은 Stallings 6판 12.7절의 FreeBSD 예다. 문제 2~4는 원본 범위 밖의 변형 문제다.
 {% endraw %}

@@ -45,7 +45,7 @@ $$x = 0$$ 근처에서 $$e^x$$를 다항식으로 흉내 낸다. $$e^x$$는 몇 
 
 참값 $$e = 2.718281828\ldots$$에 빠르게 다가간다. 같은 다항식을 $$x$$ 전체에 그려 보면, 차수를 올릴수록 $$e^x$$와 겹치는 구간이 0을 중심으로 넓어진다. 오차 한계는 아래의 나머지 공식에서 나온다. 기준점 0이 아래 정의의 $$a$$, 차수 $$n$$까지의 다항식이 $$T_n$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/18_taylor-series_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/18_taylor-series_fig1.svg" alt="그림" width="489" height="335" loading="lazy">
 
 굵은 회색 선이 $$e^x$$이고, 색 선이 $$T_1, T_2, T_3, T_5$$다. 0 가까이에서는 모두 붙어 있고, 0에서 멀어질수록 낮은 차수부터 떨어져 나간다[^s2].
 
@@ -87,7 +87,7 @@ $$\vert f(x) - T_n(x)\vert  \le \frac{M\,\vert x - a\vert ^{n+1}}{(n + 1)!}.$$
 
 거듭제곱 급수 $$\sum c_k x^k$$가 수렴하는 $$x$$는 $$\vert x\vert  < R$$인 구간(끝점은 따로 확인)이고, $$R$$을 **수렴 반지름**이라 한다. [비 판정](/Hongs_Blog/studies/calculus/series-convergence/)으로 구한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/18_taylor-series_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/18_taylor-series_fig2.svg" alt="그림" width="501" height="355" loading="lazy">
 
 $$\ln(1 + x)$$의 수렴 반지름은 1이다. 1 안쪽에서는 항을 늘릴수록 굵은 회색 선에 더 붙는다. 1 바깥에서는 항을 늘릴수록 오히려 더 빨리 벗어난다[^s2].
 
@@ -246,7 +246,7 @@ flowchart LR
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 6.1절 "Power Series and Functions"(수렴 반지름), 6.2절 "Properties of Power Series"(항별 미분, 계수의 유일성), 6.3절 "Taylor and Maclaurin Series"(테일러 정리와 나머지), 6.4절 "Working with Taylor Series".
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [18_taylor-series_plot.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_plot/)로 그렸고, 그림에 쓴 값($$T_5(1) = 2.71667$$, $$x = 1.5$$에서 $$T_{20}$$이 $$T_5$$보다 더 벗어남)을 같은 코드로 확인했다.
-[^s1]: 에이전트 보충. 수학 라이브러리의 범위 줄이기와 최소최대 다항식은 fdlibm 같은 공개 구현의 주석에 설명되어 있다. 수렴 반지름이 가장 가까운 복소 특이점까지의 거리라는 것은 복소해석의 결과로, 이 과목 범위 밖이다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 활용 절의 수학 라이브러리 $$e^x$$ 항목과 [18_taylor-series_impl.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_impl/)를 근거로 그렸다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [18_taylor-series_plot.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_plot/)로 그렸고, 그림에 쓴 값($$T_5(1) = 2.71667$$, $$x = 1.5$$에서 $$T_{20}$$이 $$T_5$$보다 더 벗어남)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수학 라이브러리의 범위 줄이기와 최소최대 다항식은 fdlibm 같은 공개 구현의 주석에 설명되어 있다. 수렴 반지름이 가장 가까운 복소 특이점까지의 거리라는 것은 복소해석의 결과로, 이 과목 범위 밖이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 활용 절의 수학 라이브러리 $$e^x$$ 항목과 [18_taylor-series_impl.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_impl/)를 근거로 그렸다.
 {% endraw %}

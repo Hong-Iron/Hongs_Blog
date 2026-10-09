@@ -75,7 +75,7 @@ flowchart LR
 
 두 식을 합치면 대비가 조도와 무관한 이유가 바로 보인다. 흰 종이와 검은 종이의 휘도는 $$\rho_w E/\pi$$와 $$\rho_b E/\pi$$이므로 $$C_M = (\rho_w - \rho_b)/(\rho_w + \rho_b)$$다. $$E$$가 약분되어 사라진다. 예시의 종이는 $$C_M = 0.75/0.85 \approx 0.882$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/13_luminance-and-illuminance_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/13_luminance-and-illuminance_fig1.svg" alt="그림" width="593" height="340" loading="lazy">
 
 두 축이 모두 로그 눈금이라 "몇 배"가 같은 길이로 보인다. 두 선이 나란하다는 것이 곧 휘도 비 16배가 조도와 상관없다는 뜻이다[^s4].
 
@@ -138,10 +138,10 @@ flowchart LR
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.4 (가시광: 빛의 표현), p.19 (요약)
-[^s1]: 에이전트 보충. 전구와 종이의 수치(100 cd, 반사율 0.8·0.05, 500 lx)는 설명용 가상 수치다.
-[^s2]: 에이전트 보충. 측광량의 표와 식(역제곱 법칙, 완전 확산면의 $$L = \rho E/\pi$$, 웨버·마이컬슨 대비)은 측광·영상 공학 교재의 표준 내용이다. 슬라이드는 이름만 든다. 이미지 값이 휘도에 비례한다는 것은 감마 보정 전의 선형 센서 값에 대한 설명이다.
-[^s3]: 에이전트 보충. 밝기 항등성을 주변과의 비로 설명하는 것은 지각 교재의 표준 설명(비율 원리)이지만, 그것만으로 모든 경우를 설명하지는 못한다.
-[^s4]: 에이전트 보충. 그림 1장은 원본에 없다. [13_luminance-and-illuminance_plot.py](/Hongs_Blog/studies/human-interface-media/code/13_luminance-and-illuminance_plot/)로 그렸고, 그림에 쓴 값(500 lx에서 127.3과 7.96 cd/m², 모든 조도에서 휘도 비 16과 마이컬슨 대비 0.882)을 같은 코드로 확인했다.
-[^s5]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의의 측광량 표와 두 식(역제곱 법칙, 완전 확산면의 휘도), 강의 3 p.4의 빛 파라미터 목록을 근거로 그렸다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.4 (가시광: 빛의 표현), p.19 (요약)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전구와 종이의 수치(100 cd, 반사율 0.8·0.05, 500 lx)는 설명용 가상 수치다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 측광량의 표와 식(역제곱 법칙, 완전 확산면의 $$L = \rho E/\pi$$, 웨버·마이컬슨 대비)은 측광·영상 공학 교재의 표준 내용이다. 슬라이드는 이름만 든다. 이미지 값이 휘도에 비례한다는 것은 감마 보정 전의 선형 센서 값에 대한 설명이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 밝기 항등성을 주변과의 비로 설명하는 것은 지각 교재의 표준 설명(비율 원리)이지만, 그것만으로 모든 경우를 설명하지는 못한다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [13_luminance-and-illuminance_plot.py](/Hongs_Blog/studies/human-interface-media/code/13_luminance-and-illuminance_plot/)로 그렸고, 그림에 쓴 값(500 lx에서 127.3과 7.96 cd/m², 모든 조도에서 휘도 비 16과 마이컬슨 대비 0.882)을 같은 코드로 확인했다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의의 측광량 표와 두 식(역제곱 법칙, 완전 확산면의 휘도), 강의 3 p.4의 빛 파라미터 목록을 근거로 그렸다.
 {% endraw %}

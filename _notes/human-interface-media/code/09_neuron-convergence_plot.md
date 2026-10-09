@@ -3,7 +3,7 @@ layout: "note"
 title: "09_neuron-convergence_plot.py"
 display_title: "09_neuron-convergence_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "09"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/neuron-convergence/"
 parent_title: "뉴런의 수렴"
-description: "휴먼 인터페이스 미디어 · 뉴런의 수렴 코드 코드"
+description: "휴먼 인터페이스 미디어 · 뉴런의 수렴 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/09_neuron-convergence_plot/"
 ---
 {% raw %}
-[뉴런의 수렴](/Hongs_Blog/studies/human-interface-media/neuron-convergence/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[뉴런의 수렴](/Hongs_Blog/studies/human-interface-media/neuron-convergence/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 뉴런의 수렴 문서의 그림을 만든다: 09_neuron-convergence_fig1.svg

@@ -43,7 +43,7 @@ permalink: "/studies/probability-statistics/normal-distribution/"
 
 160 ms 미만일 확률은 "평균보다 표준편차 2개 아래"라 $$\frac{1 - 0.954}{2} \approx 2.3\%$$다. 값을 "평균에서 표준편차 몇 개 떨어졌나"로 바꾸는 이 계산이 아래의 표준화이고, 200이 $$\mu$$, 20이 $$\sigma$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/16_normal-distribution_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/16_normal-distribution_fig1.svg" alt="그림" width="466" height="335" loading="lazy">
 
 가장 진한 띠가 평균 ± 1σ, 그다음이 ± 2σ와 ± 3σ다. 띠를 한 칸 넓힐 때마다 더해지는 넓이가 빠르게 줄어, ± 3σ 밖에는 0.3%만 남는다[^s2].
 
@@ -72,7 +72,7 @@ $$\Phi$$는 기본 함수로 쓸 수 없어 표나 오차함수로 계산한다.
 
 **설계 이유.** 지수 안의 $$-\frac{(x - \mu)^2}{2\sigma^2}$$는 평균에서 멀어질수록 거리의 제곱으로 빠르게 줄게 한다. 앞의 $$\frac{1}{\sigma\sqrt{2\pi}}$$는 넓이를 1로 맞추는 상수이고, $$\sqrt{2\pi}$$는 가우스 적분에서 나온다(아래 증명). 이 모양이 특별한 이유는 [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/) 때문이다. 독립인 것들의 합은 원래 분포와 상관없이 이 모양으로 모인다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/16_normal-distribution_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/16_normal-distribution_fig2.svg" alt="그림" width="529" height="335" loading="lazy">
 
 $$\mu$$를 0에서 3으로 바꾸면 종이 모양 그대로 옮겨 간다. $$\sigma$$를 2로 키우면 종이 두 배 넓어지고 높이는 절반이 되어, 넓이 1이 그대로다[^s2].
 
@@ -190,5 +190,5 @@ $$\mu$$를 0에서 3으로 바꾸면 종이 모양 그대로 옮겨 간다. $$\s
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 5.4절 "Normal"(밀도, 표준화, $$\Phi$$, 68-95-99.7 규칙, 정규분포의 일차 변환), 6.6절 "Sums of independent r.v.s via MGFs"(독립인 정규분포의 합).
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [16_normal-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/16_normal-distribution_plot/)로 그렸고, 그림에 쓴 값(68.3%·95.4%·99.7%, $$\Phi(-2) \approx 0.023$$, 세 밀도의 넓이 1, $$\sigma = 2$$일 때 꼭대기 높이가 절반)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [16_normal-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/16_normal-distribution_plot/)로 그렸고, 그림에 쓴 값(68.3%·95.4%·99.7%, $$\Phi(-2) \approx 0.023$$, 세 밀도의 넓이 1, $$\sigma = 2$$일 때 꼭대기 높이가 절반)을 같은 코드로 확인했다.
 {% endraw %}

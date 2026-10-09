@@ -3,7 +3,7 @@ layout: "note"
 title: "04_minkowski-distance_plot.py"
 display_title: "04_minkowski-distance_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "04"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/minkowski-distance/"
 parent_title: "민코프스키 거리"
-description: "데이터 과학 · 민코프스키 거리 코드 코드"
+description: "데이터 과학 · 민코프스키 거리 그림 생성 코드"
 permalink: "/studies/data-science/code/04_minkowski-distance_plot/"
 ---
 {% raw %}
-[민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 민코프스키 거리 문서의 그림을 만든다: 04_minkowski-distance_fig1.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "14_trig-identities_plot.py"
 display_title: "14_trig-identities_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "14"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/trig-identities/"
 parent_title: "삼각함수 항등식"
-description: "대학수학 · 삼각함수 항등식 코드 코드"
+description: "대학수학 · 삼각함수 항등식 그림 생성 코드"
 permalink: "/studies/college-math/code/14_trig-identities_plot/"
 ---
 {% raw %}
-[삼각함수 항등식](/Hongs_Blog/studies/college-math/trig-identities/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[삼각함수 항등식](/Hongs_Blog/studies/college-math/trig-identities/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 삼각함수 항등식 문서의 그림을 만든다: 14_trig-identities_fig1.svg, 14_trig-identities_fig2.svg

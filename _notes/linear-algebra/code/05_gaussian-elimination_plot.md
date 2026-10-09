@@ -3,7 +3,7 @@ layout: "note"
 title: "05_gaussian-elimination_plot.py"
 display_title: "05_gaussian-elimination_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "05"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/gaussian-elimination/"
 parent_title: "가우스 소거법"
-description: "선형대수학 · 가우스 소거법 코드 코드"
+description: "선형대수학 · 가우스 소거법 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/05_gaussian-elimination_plot/"
 ---
 {% raw %}
-[가우스 소거법](/Hongs_Blog/studies/linear-algebra/gaussian-elimination/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[가우스 소거법](/Hongs_Blog/studies/linear-algebra/gaussian-elimination/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 가우스 소거법 문서의 그림을 만든다: 05_gaussian-elimination_fig1.svg

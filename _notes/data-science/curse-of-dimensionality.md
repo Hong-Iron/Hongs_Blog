@@ -43,7 +43,7 @@ permalink: "/studies/data-science/curse-of-dimensionality/"
 
 무작위 점 60개의 모든 쌍 거리에서 가장 먼 것과 가장 가까운 것의 차이를 가장 가까운 거리로 나누면, 2차원에서 94.6, 1000차원에서 0.14다[^s1]. 고차원에서는 거리가 좁은 범위에 몰린다[^2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/34_curse-of-dimensionality_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/34_curse-of-dimensionality_fig1.svg" alt="그림" width="525" height="320" loading="lazy">
 
 같은 실험의 쌍 거리 1,770개를 평균 거리로 나눠 분포를 그렸다. 2차원에서는 평균의 0.02배부터 2.3배까지 넓게 퍼진다. 1000차원에서는 모든 쌍이 평균의 0.93~1.06배 안에 몰린다[^s2].
 
@@ -109,11 +109,11 @@ flowchart LR
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/10.10-1_high-dim-clustering.pdf, p.10
+[^1]: 데이터 과학 10회 강의 자료 「10-1_high-dim-clustering」, p.10
 [^2]: 같은 자료, p.11
 [^3]: 같은 자료, p.9
 [^4]: 같은 자료, p.12
-[^s1]: 에이전트 보충. 점 60개 실험과 카드 C2는 원본에 없다. 검증 코드로 계산했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [34_curse-of-dimensionality_plot.py](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_plot/)로 그렸다. 검증 코드와 같은 난수로 같은 점을 만들었고, (최대 − 최소)/최소 94.6과 0.14, 1000차원에서 0.93~1.06배 범위를 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 어려움 목록, 방법별 표, 해결책 문단(원본 10-1 p.9~12)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 점 60개 실험과 카드 C2는 원본에 없다. 검증 코드로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [34_curse-of-dimensionality_plot.py](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_plot/)로 그렸다. 검증 코드와 같은 난수로 같은 점을 만들었고, (최대 − 최소)/최소 94.6과 0.14, 1000차원에서 0.93~1.06배 범위를 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 어려움 목록, 방법별 표, 해결책 문단(원본 10-1 p.9~12)을 근거로 그렸다.
 {% endraw %}

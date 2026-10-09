@@ -3,7 +3,7 @@ layout: "note"
 title: "12_ftc_plot.py"
 display_title: "12_ftc_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "12"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/ftc/"
 parent_title: "미적분의 기본정리"
-description: "미분적분학 · 미적분의 기본정리 코드 코드"
+description: "미분적분학 · 미적분의 기본정리 그림 생성 코드"
 permalink: "/studies/calculus/code/12_ftc_plot/"
 ---
 {% raw %}
-[미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 미적분의 기본정리 문서의 그림을 만든다: 12_ftc_fig1.svg

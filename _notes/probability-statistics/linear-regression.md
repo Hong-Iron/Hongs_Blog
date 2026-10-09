@@ -37,7 +37,7 @@ permalink: "/studies/probability-statistics/linear-regression/"
 
 기울기 1.99가 아래 정의의 $$\beta_1$$, 절편 0.05가 $$\beta_0$$, 잔차가 $$\varepsilon$$의 추정값이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig1.svg" alt="그림" width="512" height="335" loading="lazy">
 
 주황 선분이 잔차, 곧 점에서 직선까지의 세로 거리다. 다섯 잔차의 제곱을 더한 0.107은 다른 어떤 직선보다 작다[^s2].
 
@@ -84,7 +84,7 @@ $$y_i = \mathbf{x}_i^\top\boldsymbol\beta + \varepsilon_i,\qquad \varepsilon_i \
 - *극단값:* $$y = 2x + 1$$을 따르는 점 10개 중 하나를 $$-50$$으로 바꾸면 기울기가 음수로 뒤집힌다. 제곱 오차는 큰 오차를 매우 무겁게 본다.
 - *공선성:* 입력끼리 거의 일차종속이면 $$X^\top X$$의 [조건수](/Hongs_Blog/studies/linear-algebra/conditioning/)가 커져 계수가 불안정해진다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig2.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽은 $$y = x^2$$에 직선을 맞춘 뒤의 잔차로, 양 끝은 양수이고 가운데는 음수인 U자다. 오른쪽은 $$y = 2x + 1$$ 위의 점 10개 중 마지막 하나만 $$-50$$으로 바꾼 것이다. 기울기가 2에서 $$-1.76$$으로 뒤집힌다[^s2].
 
@@ -150,6 +150,6 @@ flowchart TD
 
 
 [^1]: Wasserman, *All of Statistics*, "Linear and Logistic Regression" 장(모델, 최소제곱과 최대가능도, 추정량의 분산, $$R^2$$). Strang, *Introduction to Linear Algebra* 5판, 4.3절 "Least Squares Approximations"(정규방정식).
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [34_linear-regression_plot.py](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_plot/)로 그렸고, 그림에 쓴 값($$\hat y = 0.05 + 1.99x$$, RSS 0.107, $$R^2 = 0.997$$, U자 잔차의 부호, 기울기 2와 $$-1.76$$)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 활용 절의 세 확장과 [베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)의 예제(MAP = 릿지 회귀)를 모아 그렸다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [34_linear-regression_plot.py](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_plot/)로 그렸고, 그림에 쓴 값($$\hat y = 0.05 + 1.99x$$, RSS 0.107, $$R^2 = 0.997$$, U자 잔차의 부호, 기울기 2와 $$-1.76$$)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 활용 절의 세 확장과 [베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)의 예제(MAP = 릿지 회귀)를 모아 그렸다.
 {% endraw %}

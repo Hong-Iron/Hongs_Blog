@@ -3,7 +3,7 @@ layout: "note"
 title: "41_duality_plot.py"
 display_title: "41_duality_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "41"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/fourier-duality/"
 parent_title: "푸리에 변환의 쌍대성"
-description: "신호 및 시스템 · 푸리에 변환의 쌍대성 코드 코드"
+description: "신호 및 시스템 · 푸리에 변환의 쌍대성 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/41_duality_plot/"
 ---
 {% raw %}
-[푸리에 변환의 쌍대성](/Hongs_Blog/studies/signals-and-systems/fourier-duality/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[푸리에 변환의 쌍대성](/Hongs_Blog/studies/signals-and-systems/fourier-duality/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 푸리에 변환의 쌍대성 문서의 그림을 만든다: 41_duality_fig1.svg

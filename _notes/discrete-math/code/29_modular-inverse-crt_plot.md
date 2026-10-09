@@ -3,7 +3,7 @@ layout: "note"
 title: "29_modular-inverse-crt_plot.py"
 display_title: "29_modular-inverse-crt_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "29"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/modular-inverse-crt/"
 parent_title: "모듈러 역원과 중국인의 나머지 정리"
-description: "이산수학 · 모듈러 역원과 중국인의 나머지 정리 코드 코드"
+description: "이산수학 · 모듈러 역원과 중국인의 나머지 정리 그림 생성 코드"
 permalink: "/studies/discrete-math/code/29_modular-inverse-crt_plot/"
 ---
 {% raw %}
-[모듈러 역원과 중국인의 나머지 정리](/Hongs_Blog/studies/discrete-math/modular-inverse-crt/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[모듈러 역원과 중국인의 나머지 정리](/Hongs_Blog/studies/discrete-math/modular-inverse-crt/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 모듈러 역원과 중국인의 나머지 정리 문서의 그림을 만든다: 29_modular-inverse-crt_fig1.svg

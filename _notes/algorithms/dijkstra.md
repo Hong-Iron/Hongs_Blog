@@ -243,6 +243,6 @@ x를 확정해 처리할 때 코드가 모든 간선 x → y에 대해 "d + w < 
 
 [^1]: 증명의 구조(경계의 점 y를 잡는 귀류법)는 Cormen 외, *Introduction to Algorithms* 3판, 24.3절 "Dijkstra's algorithm"의 정리 24.6을 풀어 쓴 것이다.
 [^2]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 13.2 "Dijkstra's algorithm": 음수 간선이 없어야 하고, 같은 점이 우선순위 큐에 여러 번 들어갈 수 있지만 가장 작은 거리의 것만 처리하며, 시간은 O(n + m log m)이다.
-[^s1]: 에이전트 보충. RFC 2328(OSPF Version 2) 16.1절: "Using the Dijkstra algorithm, a tree is formed from this subset of the link state database."
-[^s2]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 예시로 보기의 방향 간선 여섯 개를 그대로 그렸고, '증명' 절 2~4단계의 점 s, x, y, u와 경로 P의 관계를 그림으로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> RFC 2328(OSPF Version 2) 16.1절: "Using the Dijkstra algorithm, a tree is formed from this subset of the link state database."
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 예시로 보기의 방향 간선 여섯 개를 그대로 그렸고, '증명' 절 2~4단계의 점 s, x, y, u와 경로 P의 관계를 그림으로 옮겼다.
 {% endraw %}

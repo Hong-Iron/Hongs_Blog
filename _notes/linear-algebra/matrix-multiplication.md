@@ -43,7 +43,7 @@ $$SR = \begin{pmatrix}0 & -2\\ 1 & 0\end{pmatrix}, \qquad RS = \begin{pmatrix}0 
 
 이다. $$SR$$이 "먼저 $$R$$, 다음 $$S$$"다. 오른쪽 행렬이 벡터에 먼저 작용한다. $$R$$과 $$S$$가 아래 정의의 $$B$$와 $$A$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/06_matrix-multiplication_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/06_matrix-multiplication_fig1.svg" alt="그림" width="612" height="145" loading="lazy">
 
 같은 글자 F에 두 순서로 했더니 모양이 다르다. $$SR$$에서는 누운 F가 가로로 두 배 늘어나고, $$RS$$에서는 넓어진 F가 눕는다. 점 $$(1, 0)$$도 각각 $$(0, 1)$$과 $$(0, 2)$$로 간다[^s1].
 
@@ -151,6 +151,6 @@ $$\big((AB)^\top\big)_{ij} = (AB)_{ji} = \sum_k a_{jk}b_{ki} = \sum_k (B^\top)_{
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.4절 "Rules for Matrix Operations"(곱의 네 가지 보는 법, 결합법칙, 교환 불가), 2.7절 "Transposes and Permutations"($$(AB)^\top = B^\top A^\top$$, 대칭행렬, $$A^\top A$$).
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [06_matrix-multiplication_plot.py](/Hongs_Blog/studies/linear-algebra/code/06_matrix-multiplication_plot/)로 그렸고, $$SR$$, $$RS$$와 점 $$(1, 0)$$의 도착점을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 성분 공식 $$(AB)_{ij} = (A\text{의 } i\text{행}) \cdot (B\text{의 } j\text{열})$$과 크기 조건을 ASCII로 그렸다(Strang 5판 2.4절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [06_matrix-multiplication_plot.py](/Hongs_Blog/studies/linear-algebra/code/06_matrix-multiplication_plot/)로 그렸고, $$SR$$, $$RS$$와 점 $$(1, 0)$$의 도착점을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 성분 공식 $$(AB)_{ij} = (A\text{의 } i\text{행}) \cdot (B\text{의 } j\text{열})$$과 크기 조건을 ASCII로 그렸다(Strang 5판 2.4절).
 {% endraw %}

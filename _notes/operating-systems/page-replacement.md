@@ -94,7 +94,7 @@ permalink: "/studies/operating-systems/page-replacement/"
 
 슬라이드 그림 8.17은 프로세스에 줄 프레임 수를 6~14개로 바꿔 가며 1000번 참조당 부재 수를 비교한다. 프레임이 6개일 때 그래프를 읽으면 FIFO 약 37, 클록 약 31, LRU 약 24, OPT 약 16이다. 프레임이 늘수록 네 알고리즘의 차이가 줄어든다[^12].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/41_page-replacement_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/41_page-replacement_fig1.svg" alt="그림" width="512" height="335" loading="lazy">
 
 벨레이디의 참조열 1 2 3 4 1 2 5 1 2 3 4 5에서 프레임 수를 1개부터 7개까지 바꿔 센 부재 수다(처음 채우는 부재 포함). LRU와 OPT의 선은 오른쪽으로 갈수록 내려가거나 그대로인데, FIFO 선만 프레임 3개에서 4개로 갈 때 위로 꺾인다. 프레임이 5개 이상이면 다섯 페이지가 다 들어가 세 알고리즘 모두 처음 채우는 부재 5번만 낸다[^s2].
 
@@ -208,7 +208,7 @@ LRU와 클록은 복잡하고 부담이 있다. 또 바뀐 페이지를 내보�
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/08.Chapter08-new.pptx, 슬라이드 56, 68 (그림 8.15)
+[^1]: 운영체제 8회 강의 자료 「Chapter08-new」, 슬라이드 56, 68 (그림 8.15)
 [^2]: 같은 자료, 슬라이드 58, 60, 62, 64
 [^3]: 같은 자료, 슬라이드 52
 [^4]: 같은 자료, 슬라이드 53
@@ -223,6 +223,6 @@ LRU와 클록은 복잡하고 부담이 있다. 또 바뀐 페이지를 내보�
 [^13]: 같은 자료, 슬라이드 70~71
 [^14]: 같은 자료, 슬라이드 94~95 (그림 8.23)
 [^15]: 같은 자료, 슬라이드 105
-[^s1]: 에이전트 보충. CLOCK 실행 추적표(그림 8.15를 단계별로 풀어 씀), 정확성·복잡도 표, 벨레이디의 이상 현상과 LRU에 그것이 없는 이유(포함 성질), 확인 문제 C2·C4·C5는 슬라이드에 없다. Stallings 6판 8.2절과 Silberschatz, *Operating System Concepts* 9장을 바탕으로 보탰다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [41_page-replacement_plot.py](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_plot/)로 그렸고, FIFO 9번 → 10번, LRU 10번 → 8번, LRU·OPT의 부재 수가 프레임을 늘릴 때 늘지 않음을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> CLOCK 실행 추적표(그림 8.15를 단계별로 풀어 씀), 정확성·복잡도 표, 벨레이디의 이상 현상과 LRU에 그것이 없는 이유(포함 성질), 확인 문제 C2·C4·C5는 슬라이드에 없다. Stallings 6판 8.2절과 Silberschatz, *Operating System Concepts* 9장을 바탕으로 보탰다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [41_page-replacement_plot.py](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_plot/)로 그렸고, FIFO 9번 → 10번, LRU 10번 → 8번, LRU·OPT의 부재 수가 프레임을 늘릴 때 늘지 않음을 같은 코드로 확인했다.
 {% endraw %}

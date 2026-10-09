@@ -3,7 +3,7 @@ layout: "note"
 title: "30_fixed-point-iteration_plot.py"
 display_title: "30_fixed-point-iteration_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "30"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/fixed-point-iteration/"
 parent_title: "고정점 반복"
-description: "수치해석 · 고정점 반복 코드 코드"
+description: "수치해석 · 고정점 반복 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/30_fixed-point-iteration_plot/"
 ---
 {% raw %}
-[고정점 반복](/Hongs_Blog/studies/numerical-analysis/fixed-point-iteration/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[고정점 반복](/Hongs_Blog/studies/numerical-analysis/fixed-point-iteration/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 고정점 반복 문서의 그림을 만든다: 30_fixed-point-iteration_fig1.svg, 30_fixed-point-iteration_fig2.svg

@@ -123,7 +123,7 @@ $$y(t) = \sum_k a_kH(s_k)e^{s_kt}$$
 
 **$$h(t) = e^{-t}u(t)$$**[^s1]. $$H(s) = \int_0^\infty e^{-\tau}e^{-s\tau}d\tau = \dfrac{1}{s + 1}$$ ($$s$$의 실수부가 $$-1$$보다 클 때만 수렴). 입력 $$e^{j2t}$$의 출력은 $$\dfrac{1}{1 + j2}e^{j2t}$$로 크기는 $$\frac{1}{\sqrt5}$$배, 위상은 $$-\tan^{-1}2$$만큼 바뀐다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/28_lti-eigenfunction_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/28_lti-eigenfunction_fig1.svg" alt="그림" width="538" height="291" loading="lazy">
 
 실수 입력 $$\cos 2t$$를 넣은 경우다. 출력은 같은 주파수의 코사인이고, 높이는 $$\frac{1}{\sqrt5} \approx 0.447$$배, 봉우리는 $$\frac{\tan^{-1}2}{2} \approx 0.55$$초 늦다(화살표)[^s2].
 
@@ -189,13 +189,13 @@ $$y(t) = \sum_k a_kH(s_k)e^{s_kt}$$
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/07.Week07_CH03_1_handout.pdf, p.24 (예제 3.1)
+[^1]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.24 (예제 3.1)
 [^2]: 같은 자료, p.18, p.20
 [^3]: 같은 자료, p.21
 [^4]: 같은 자료, p.22
 [^5]: 같은 자료, p.24
 [^6]: 같은 자료, p.22~24
 [^7]: 같은 자료, p.19
-[^s1]: 에이전트 보충. $$h = e^{-t}u(t)$$ 예, 오해 항목, 스스로 설명해 보기의 1·3·4, 확인 문제 C3은 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [28_lti-eigenfunction_plot.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^\infty e^{-\tau}\cos 2(t - \tau)d\tau$$의 수치 적분이 $$\frac{1}{\sqrt5}\cos(2t - \tan^{-1}2)$$와 같음.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$h = e^{-t}u(t)$$ 예, 오해 항목, 스스로 설명해 보기의 1·3·4, 확인 문제 C3은 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [28_lti-eigenfunction_plot.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^\infty e^{-\tau}\cos 2(t - \tau)d\tau$$의 수치 적분이 $$\frac{1}{\sqrt5}\cos(2t - \tan^{-1}2)$$와 같음.
 {% endraw %}

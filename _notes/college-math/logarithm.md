@@ -243,6 +243,6 @@ $$u = \log_b x$$, $$v = \log_b y$$로 두면 로그의 정의로 $$x = b^u$$, $$
 [^1]: OpenStax, *Precalculus 2e*, 4.3절 "Logarithmic Functions"
 [^2]: OpenStax, *Precalculus 2e*, 4.5절 "Logarithmic Properties", 4.6절 "Exponential and Logarithmic Equations"
 [^3]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.2절 "Standard notations and common functions"의 로그 표기와 성질
-[^s1]: 에이전트 보충. 로그 확률은 확률 모델을 계산할 때의 표준 기법이다. 배정밀도의 가장 작은 양수(비정규수) 약 $$4.9 \times 10^{-324}$$는 IEEE 754 형식에서 나온다. 파이썬 `math.log`의 동작은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `정의`의 $$\log_b: (0, \infty) \to \mathbb{R}$$과 $$b^x: \mathbb{R} \to (0, \infty)$$가 서로 역함수라는 진술과 로그 법칙 1을 근거로 그렸다(OpenStax, *Precalculus 2e*, 4.3절, 4.5절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 로그 확률은 확률 모델을 계산할 때의 표준 기법이다. 배정밀도의 가장 작은 양수(비정규수) 약 $$4.9 \times 10^{-324}$$는 IEEE 754 형식에서 나온다. 파이썬 `math.log`의 동작은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `정의`의 $$\log_b: (0, \infty) \to \mathbb{R}$$과 $$b^x: \mathbb{R} \to (0, \infty)$$가 서로 역함수라는 진술과 로그 법칙 1을 근거로 그렸다(OpenStax, *Precalculus 2e*, 4.3절, 4.5절).
 {% endraw %}

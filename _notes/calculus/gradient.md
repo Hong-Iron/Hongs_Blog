@@ -44,7 +44,7 @@ permalink: "/studies/calculus/gradient/"
 
 그래디언트 방향이 정상(원점) 쪽을 가리키고, 그와 수직인 방향은 등고선 $$x^2 + 2y^2 = 3$$을 따라간다. 방향 $$\mathbf{u}$$가 아래 정의의 방향도함수의 방향이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/20_gradient_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/20_gradient_fig1.svg" alt="그림" width="515" height="349" loading="lazy">
 
 초록 굵은 선이 $$(1, 1)$$이 놓인 높이 7의 등고선이다. 주황 화살표($$\nabla f$$ 방향)는 그 선에 수직으로 안쪽을 향한다. 정상을 곧장 겨누지는 않고, 등고선이 더 촘촘한 $$y$$ 쪽으로 더 기운다. 초록 화살표 두 개(등고선 방향)로 걸으면 높이가 그대로다[^s2].
 
@@ -210,7 +210,7 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.4절 "Tangent Planes and Linear Approximations"(미분 가능성, 편미분이 연속이면 미분 가능), 4.6절 "Directional Derivatives and the Gradient"(방향도함수 = 그래디언트와의 내적, 가장 가파른 방향, 등고선과 수직).
-[^s1]: 에이전트 보충. 캐니 윤곽 검출기(Canny, 1986)는 그래디언트의 크기와 방향으로 윤곽을 찾는 표준 알고리즘이다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [20_gradient_plot.py](/Hongs_Blog/studies/calculus/code/20_gradient_plot/)로 그렸다. 화살표 길이는 같게 줄였다. 표의 네 방향도함수($$-2$$, $$-4$$, $$\sqrt{20}$$, 0)를 중앙 차분으로, 그래디언트와 등고선 방향이 수직인 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 미분 가능성과 충분조건, 정리 1, 가정이 필요한 이유의 표를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 캐니 윤곽 검출기(Canny, 1986)는 그래디언트의 크기와 방향으로 윤곽을 찾는 표준 알고리즘이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_gradient_plot.py](/Hongs_Blog/studies/calculus/code/20_gradient_plot/)로 그렸다. 화살표 길이는 같게 줄였다. 표의 네 방향도함수($$-2$$, $$-4$$, $$\sqrt{20}$$, 0)를 중앙 차분으로, 그래디언트와 등고선 방향이 수직인 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 미분 가능성과 충분조건, 정리 1, 가정이 필요한 이유의 표를 근거로 그렸다.
 {% endraw %}

@@ -61,7 +61,7 @@ $$d(i, j) = \sqrt[h]{\vert x_{i1} - x_{j1}\vert ^h + \vert x_{i2} - x_{j2}\vert 
 
 $$h$$가 커질수록 가장 큰 좌표 차이가 합을 좌우한다. 예시 두 점은 $$h = 1, 2, 4, 10$$에서 5, 3.61, 3.14, 3.005로 줄어 가장 큰 차이인 3에 다가간다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/04_minkowski-distance_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/04_minkowski-distance_fig1.svg" alt="그림" width="440" height="357" loading="lazy">
 
 원점에서 거리가 정확히 1인 점들을 $$h$$마다 이었다. $$h = 1$$은 마름모, $$h = 2$$는 원이고, $$h$$가 커질수록 정사각형($$h = \infty$$)에 다가간다. 점선 $$h = \frac12$$는 안쪽으로 오목하다. 그래서 곧장 가는 길이 꺾어 가는 길보다 길어진다[^s2].
 
@@ -118,7 +118,7 @@ $$h$$가 커질수록 가장 큰 좌표 차이가 합을 좌우한다. 예시 �
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.25
-[^s1]: 에이전트 보충. 최대 거리($$h \to \infty$$), $$h$$에 따른 감소, $$h < 1$$의 반례, 맨해튼 거리의 견고성, 카드 C1~C3은 원본에 없다. Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.4절이 최대 거리를 다룬다. 수치는 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [04_minkowski-distance_plot.py](/Hongs_Blog/studies/data-science/code/04_minkowski-distance_plot/)로 그렸고, 곡선 위 점들의 거리가 1인지, 예시 두 점의 5, 3.61, 3.14, 3.005, $$h = \frac12$$의 반례를 같은 코드로 확인했다.
+[^1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.25
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 최대 거리($$h \to \infty$$), $$h$$에 따른 감소, $$h < 1$$의 반례, 맨해튼 거리의 견고성, 카드 C1~C3은 원본에 없다. Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.4절이 최대 거리를 다룬다. 수치는 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [04_minkowski-distance_plot.py](/Hongs_Blog/studies/data-science/code/04_minkowski-distance_plot/)로 그렸고, 곡선 위 점들의 거리가 1인지, 예시 두 점의 5, 3.61, 3.14, 3.005, $$h = \frac12$$의 반례를 같은 코드로 확인했다.
 {% endraw %}

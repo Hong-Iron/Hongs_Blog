@@ -145,7 +145,7 @@ $$\mathbf{r}_2$$는 $$\Vert \mathbf{k}\Vert $$에 비해 작다는 것만 알려
 3. *행렬식:* $$r\cos^2\theta + r\sin^2\theta = r$$. 작은 극좌표 사각형 $$dr \times d\theta$$가 넓이 약 $$r\,dr\,d\theta$$인 조각이 된다([중적분과 변수변환](/Hongs_Blog/studies/calculus/multiple-integrals/)).
 4. *연쇄 법칙으로 확인:* 원 위를 도는 $$r = 2$$, $$\theta = t$$에서 속도는 $$J\begin{pmatrix}0\\ 1\end{pmatrix} = (-2\sin t, 2\cos t)$$로, 직접 미분한 $$(2\cos t, 2\sin t)' $$와 같다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/21_multivariable-chain-rule_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/21_multivariable-chain-rule_fig1.svg" alt="그림" width="613" height="285" loading="lazy">
 
 점 $$(r, \theta) = (2, \frac{\pi}{6})$$ 둘레의 작은 사각형(왼쪽)을 극좌표 함수로 보내면, 오른쪽의 살짝 휜 조각(파랑)이 된다. 야코비 행렬이 보낸 평행사변형(주황 점선)이 그 조각과 거의 겹친다. 사각형을 작게 잡을수록 둘의 어긋남은 사각형 크기보다 더 빨리 줄어든다. 두 넓이는 모두 $$r \cdot dr \cdot d\theta = 2 \times 0.4 \times 0.3 = 0.24$$다[^s2].
 
@@ -212,7 +212,7 @@ $$\mathbf{r}_2$$는 $$\Vert \mathbf{k}\Vert $$에 비해 작다는 것만 알려
 
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.5절 "The Chain Rule"(여러 변수의 연쇄 법칙, 나무 그림으로 길 세기). Strang, *Introduction to Linear Algebra* 5판, 8.1절(선형 변환의 합성과 행렬 곱).
-[^s1]: 에이전트 보충. 야코비 행렬을 이용한 역기구학은 로봇공학 교재(예: Craig, *Introduction to Robotics*)의 표준 내용이다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [21_multivariable-chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_plot/)로 그렸다. 사각형은 $$dr = 0.4$$, $$d\theta = 0.3$$으로 잘 보이게 크게 잡았다. $$\det J = 2$$, 평행사변형 넓이 0.24, 실제 조각의 넓이 $$\int\!\!\int r\,dr\,d\theta = 0.24$$(신발끈 공식으로도)를 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시로 보기의 두 길을 그래프로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 야코비 행렬을 이용한 역기구학은 로봇공학 교재(예: Craig, *Introduction to Robotics*)의 표준 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [21_multivariable-chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_plot/)로 그렸다. 사각형은 $$dr = 0.4$$, $$d\theta = 0.3$$으로 잘 보이게 크게 잡았다. $$\det J = 2$$, 평행사변형 넓이 0.24, 실제 조각의 넓이 $$\int\!\!\int r\,dr\,d\theta = 0.24$$(신발끈 공식으로도)를 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 두 길을 그래프로 옮겼다.
 {% endraw %}

@@ -86,7 +86,7 @@ $$\operatorname{IR}(A, B) = \frac{\vert s(A) - s(B)\vert }{s(A) + s(B) - s(A \cu
 - D1과 D2는 널 거래 수만 다르다(10만 대 100). Kulc는 둘 다 0.91인데, 리프트는 9.26과 1, 카이제곱은 90,557과 0으로 정반대 결론을 낸다.
 - D4, D5, D6은 Kulc가 모두 0.5다. D4는 B와 C의 인기가 같아(IR 0) 정말 중립이다. D5와 D6은 IR이 0.89, 0.99로 크다. 한쪽(C)을 산 사람은 대부분 B도 샀지만, B를 산 사람 대부분은 C를 사지 않았다. 신뢰도 하나는 높고 하나는 낮아 평균이 0.5가 된 것이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/18_null-invariant-measures_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/18_null-invariant-measures_fig1.svg" alt="그림" width="519" height="328" loading="lazy">
 
 D1, D2의 BC 10,000, ¬BC 1,000, B¬C 1,000을 그대로 두고 널 거래만 늘렸다. 리프트는 널 거래 100건에서 1(독립)이다가 10만 건에서 9.26으로 오르고, 그 뒤로도 끝없이 커진다. Kulc는 0.91에서 움직이지 않는다[^s2].
 
@@ -123,11 +123,11 @@ D1, D2의 BC 10,000, ¬BC 1,000, B¬C 1,000을 그대로 두고 널 거래만 �
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/03.3-2_FP-eval.pdf, p.15
+[^1]: 데이터 과학 3회 강의 자료 「3-2_FP-eval」, p.15
 [^2]: 같은 자료, p.16
 [^3]: 같은 자료, p.17
 [^4]: 같은 자료, p.18
 [^5]: 같은 자료, p.19
-[^s1]: 에이전트 보충. Kulc의 읽는 법(0.5 중립), 자카드 계수와의 비교, D4~D6의 풀이, 카드 C2·C3은 원본에 없다. 표의 모든 값은 검증 코드로 다시 계산했다(D6의 카이제곱은 965.5라 반올림하면 966이다. 슬라이드는 965).
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [18_null-invariant-measures_plot.py](/Hongs_Blog/studies/data-science/code/18_null-invariant-measures_plot/)로 그렸고, 리프트 1.00(D2)과 9.26(D1), 널 거래 10건~$$10^9$$건에서 Kulc가 $$\frac{10000}{11000} \approx 0.91$$로 같음을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Kulc의 읽는 법(0.5 중립), 자카드 계수와의 비교, D4~D6의 풀이, 카드 C2·C3은 원본에 없다. 표의 모든 값은 검증 코드로 다시 계산했다(D6의 카이제곱은 965.5라 반올림하면 966이다. 슬라이드는 965).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [18_null-invariant-measures_plot.py](/Hongs_Blog/studies/data-science/code/18_null-invariant-measures_plot/)로 그렸고, 리프트 1.00(D2)과 9.26(D1), 널 거래 10건~$$10^9$$건에서 Kulc가 $$\frac{10000}{11000} \approx 0.91$$로 같음을 같은 코드로 확인했다.
 {% endraw %}

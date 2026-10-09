@@ -132,5 +132,5 @@ def preorder(n, out):              # 뿌리 → 왼쪽 → 오른쪽
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 14.4 "Binary trees"(전위·중위·후위의 정의, 전위와 중위로 나무가 정해지지만 전위와 후위만으로는 정해지지 않는 예 [1, 2]), Cormen 외, *Introduction to Algorithms* 3판, 12장(이진 탐색 트리 성질, 중위 순회가 정렬된 순서를 냄, 찾기·넣기 O(h)).
-[^s1]: 에이전트 보충. `std::map`은 C++ 표준이 구현 방식을 정하지 않지만 주요 표준 라이브러리(libstdc++, libc++, MSVC)는 레드-블랙 트리를 쓴다. B-트리는 Bayer & McCreight(1972)가 제안한 다진(多進) 균형 탐색 트리다(Cormen 외, *Introduction to Algorithms* 18장).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `std::map`은 C++ 표준이 구현 방식을 정하지 않지만 주요 표준 라이브러리(libstdc++, libc++, MSVC)는 레드-블랙 트리를 쓴다. B-트리는 Bayer & McCreight(1972)가 제안한 다진(多進) 균형 탐색 트리다(Cormen 외, *Introduction to Algorithms* 18장).
 {% endraw %}

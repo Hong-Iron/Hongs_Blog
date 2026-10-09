@@ -3,7 +3,7 @@ layout: "note"
 title: "003_statistical-deviation--normal-distribution_plot.py"
 display_title: "003_statistical-deviation--normal-distribution_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "003"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
@@ -11,11 +11,11 @@ course_url: "/studies/abnormal-psychology/"
 track: "심리학"
 parent_url: "/studies/abnormal-psychology/statistical-deviation--normal-distribution/"
 parent_title: "통계적 일탈 기준 ↔ 정규분포"
-description: "이상 심리학 · 통계적 일탈 기준 ↔ 정규분포 코드 코드"
+description: "이상 심리학 · 통계적 일탈 기준 ↔ 정규분포 그림 생성 코드"
 permalink: "/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_plot/"
 ---
 {% raw %}
-[통계적 일탈 기준 ↔ 정규분포](/Hongs_Blog/studies/abnormal-psychology/statistical-deviation--normal-distribution/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[통계적 일탈 기준 ↔ 정규분포](/Hongs_Blog/studies/abnormal-psychology/statistical-deviation--normal-distribution/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 통계적 일탈 기준 ↔ 정규분포 문서의 그림을 만든다: 003_statistical-deviation--normal-distribution_fig1.svg, _fig2.svg

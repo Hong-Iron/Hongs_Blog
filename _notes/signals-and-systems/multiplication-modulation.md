@@ -39,7 +39,7 @@ permalink: "/studies/signals-and-systems/multiplication-modulation/"
 - 곱셈 성질과 $$X * \delta(\omega - \omega_0) = X(\omega - \omega_0)$$로 $$R(j\omega) = \frac12S(j(\omega - \omega_0)) + \frac12S(j(\omega + \omega_0))$$.
 - $$\omega_0 > \omega_1$$이면 옮겨진 두 덩어리가 겹치지 않는다(그림 4.23). 메시지의 정보가 그대로 높은 주파수로 옮겨졌다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig1.svg" alt="그림" width="538" height="290" loading="lazy">
 
 같은 메시지를 시간에서 본 모습이다. $$r(t)$$는 $$\cos\omega_0 t$$로 빠르게 진동하고, 그 진폭이 메시지 $$s(t)$$(파란 선)를 따라 오르내린다[^s2].
 
@@ -79,7 +79,7 @@ flowchart LR
 
 보내는 쪽과 받는 쪽이 같은 반송파를 한 번씩 곱한다. 두 번 곱해서 생긴 $$\pm2\omega_0$$ 근처 성분은 마지막 필터가 걸러 낸다.[^s3]
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig2.svg" alt="그림" width="581" height="448" loading="lazy">
 
 삼각형 메시지 스펙트럼($$\omega_1 = 1$$)과 $$\omega_0 = 5$$로 그린 예다. 반송파를 곱하면 높이 $$\frac12$$인 두 덩어리가 $$\pm\omega_0$$로 옮겨지고, 한 번 더 곱하면 가운데 $$\frac12S$$와 $$\pm2\omega_0$$의 $$\frac14$$ 덩어리가 생긴다. 점선 필터가 가운데만 남긴다[^s2].
 
@@ -149,13 +149,13 @@ flowchart LR
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/15.Week15_CH04_3_handout.pdf, p.16~17 (예제 4.21, 그림 4.23)
+[^1]: 신호 및 시스템 15회 강의 자료 「Week15_CH04_3_handout」, p.16~17 (예제 4.21, 그림 4.23)
 [^2]: 같은 자료, p.15
 [^3]: 같은 자료, p.18~19 (예제 4.22, 그림 4.24)
 [^4]: 같은 자료, p.20 (예제 4.23, 그림 4.25)
 [^5]: 같은 자료, p.21~22 (그림 4.26~4.30)
 [^6]: 같은 자료, p.32, p.33
-[^s1]: 에이전트 보충. 반송 주파수 조건의 설명과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [43_multiplication-modulation_plot.py](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 메시지 $$s(t) = \mathrm{sinc}^2(\frac{t}{2\pi})$$의 변환이 삼각형 꼴임(수치 적분), $$R$$의 두 덩어리가 겹치지 않음, $$G$$의 가운데가 $$\frac12S$$. 메시지 모양과 $$\omega_0 = 5$$는 설명을 위해 고른 값이다.
-[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 예제 4.21~4.22(15주차 자료 p.16~19)와 가변 중심 주파수 대역 통과 필터(p.21~22, 그림 4.26)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 반송 주파수 조건의 설명과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [43_multiplication-modulation_plot.py](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 메시지 $$s(t) = \mathrm{sinc}^2(\frac{t}{2\pi})$$의 변환이 삼각형 꼴임(수치 적분), $$R$$의 두 덩어리가 겹치지 않음, $$G$$의 가운데가 $$\frac12S$$. 메시지 모양과 $$\omega_0 = 5$$는 설명을 위해 고른 값이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 예제 4.21~4.22(15주차 자료 p.16~19)와 가변 중심 주파수 대역 통과 필터(p.21~22, 그림 4.26)를 근거로 그렸다.
 {% endraw %}

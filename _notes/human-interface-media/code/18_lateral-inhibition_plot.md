@@ -3,7 +3,7 @@ layout: "note"
 title: "18_lateral-inhibition_plot.py"
 display_title: "18_lateral-inhibition_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "18"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/lateral-inhibition/"
 parent_title: "측면 억제"
-description: "휴먼 인터페이스 미디어 · 측면 억제 코드 코드"
+description: "휴먼 인터페이스 미디어 · 측면 억제 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/18_lateral-inhibition_plot/"
 ---
 {% raw %}
-[측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 측면 억제 문서의 그림을 만든다: 18_lateral-inhibition_fig1.svg

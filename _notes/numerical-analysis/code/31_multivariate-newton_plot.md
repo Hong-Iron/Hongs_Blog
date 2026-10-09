@@ -3,7 +3,7 @@ layout: "note"
 title: "31_multivariate-newton_plot.py"
 display_title: "31_multivariate-newton_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "31"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/multivariate-newton/"
 parent_title: "다변수 뉴턴 방법"
-description: "수치해석 · 다변수 뉴턴 방법 코드 코드"
+description: "수치해석 · 다변수 뉴턴 방법 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/31_multivariate-newton_plot/"
 ---
 {% raw %}
-[다변수 뉴턴 방법](/Hongs_Blog/studies/numerical-analysis/multivariate-newton/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[다변수 뉴턴 방법](/Hongs_Blog/studies/numerical-analysis/multivariate-newton/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 다변수 뉴턴 방법 문서의 그림을 만든다: 31_multivariate-newton_fig1.svg

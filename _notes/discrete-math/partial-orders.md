@@ -167,5 +167,5 @@ flowchart TD
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장 "Directed graphs & Partial Orders"(DAG, 부분순서, 위상 정렬). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장(부분순서, 하세 도표, 위상 정렬).
-[^s1]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 하세 도표는 정의의 하세 도표 설명을 12의 약수에 적용했고, 흐름도는 '칸 알고리즘' 문단을 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 하세 도표는 정의의 하세 도표 설명을 12의 약수에 적용했고, 흐름도는 '칸 알고리즘' 문단을 그렸다.
 {% endraw %}

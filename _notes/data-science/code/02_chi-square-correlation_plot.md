@@ -3,7 +3,7 @@ layout: "note"
 title: "02_chi-square-correlation_plot.py"
 display_title: "02_chi-square-correlation_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "02"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/chi-square-correlation/"
 parent_title: "카이제곱 상관 분석"
-description: "데이터 과학 · 카이제곱 상관 분석 코드 코드"
+description: "데이터 과학 · 카이제곱 상관 분석 그림 생성 코드"
 permalink: "/studies/data-science/code/02_chi-square-correlation_plot/"
 ---
 {% raw %}
-[카이제곱 상관 분석](/Hongs_Blog/studies/data-science/chi-square-correlation/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[카이제곱 상관 분석](/Hongs_Blog/studies/data-science/chi-square-correlation/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 카이제곱 상관 분석 문서의 그림을 만든다: 02_chi-square-correlation_fig1.svg

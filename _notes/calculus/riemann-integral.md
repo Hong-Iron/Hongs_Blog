@@ -44,7 +44,7 @@ permalink: "/studies/calculus/riemann-integral/"
 
 속도가 계속 커지므로 왼쪽 끝 합은 모자라고 오른쪽 끝 합은 넘친다. 두 합이 함께 9로 모이므로 거리는 9 m다. 그래프로 보면 곡선 $$y = t^2$$ 아래 $$[0, 3]$$ 구간의 넓이다. 속도 함수가 아래 정의의 $$f$$, 칸의 폭이 $$\Delta x$$, 칸마다 고른 시각이 $$x_i^*$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 표의 $$n = 6$$ 줄이다. 왼쪽은 막대마다 곡선 아래에 틈이 남고, 오른쪽은 막대가 곡선 위로 삐져나온다. 두 그림에서 막대와 곡선이 어긋난 부분이 칸을 잘게 할수록 함께 줄어든다[^s1].
 
@@ -158,7 +158,7 @@ $$\int_0^1 x\,dx$$를 정의대로 구한다.
 
 - **수치 적분.** 원시함수를 모르는 함수(예: $$e^{-x^2}$$)는 리만 합으로 계산한다. 칸 수 $$n$$을 두 배로 할 때 오차가 왼쪽 끝 합은 약 절반, 사다리꼴 규칙은 약 $$\frac14$$, 심프슨 규칙은 약 $$\frac{1}{16}$$로 준다(매끄러운 함수)[^3]. 구현: [11_riemann-integral_impl.py](/Hongs_Blog/studies/calculus/code/11_riemann-integral_impl/).
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig2.svg" alt="그림" width="539" height="338" loading="lazy">
 
 $$\int_0^1 e^x\,dx$$를 세 방법으로 계산한 오차다. 두 눈금이 모두 로그라 세 선이 곧게 내려가고, 기울기가 가파를수록 칸을 늘릴 때 오차가 빨리 준다. 심프슨 규칙은 칸 512개면 오차가 $$10^{-12}$$ 아래다[^s1].
 - **누적량.** 전력(W)을 시간에 대해 적분하면 에너지(J), 네트워크 전송률을 적분하면 보낸 데이터 양이다. 로그가 일정 간격으로 찍힌 측정값이면 그 자체가 리만 합이다.
@@ -218,8 +218,8 @@ $$\int_0^1 e^x\,dx$$를 세 방법으로 계산한 오차다. 두 눈금이 모�
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 5.1절 "Approximating Areas"(왼쪽·오른쪽 끝 합, 상합·하합), 5.2절 "The Definite Integral"(정의, 적분 가능성, 성질).
-[^2]: 에이전트 보충. 다르부 판정과 "불연속점이 유한 개인 유계 함수는 적분 가능"은 해석학 교재의 리만 적분 장에 있는 표준 결과다. 이 문서에서는 증가함수의 경우만 증명했다. 계단 함수의 값 3은 11_riemann-integral_verify.py에서 확인했다.
+[^2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다르부 판정과 "불연속점이 유한 개인 유계 함수는 적분 가능"은 해석학 교재의 리만 적분 장에 있는 표준 결과다. 이 문서에서는 증가함수의 경우만 증명했다. 계단 함수의 값 3은 11_riemann-integral_verify.py에서 확인했다.
 [^3]: OpenStax, *Calculus Volume 2*, 3.6절 "Numerical Integration"(중점·사다리꼴·심프슨 규칙과 오차 한계). 오차 비율은 11_riemann-integral_verify.py에서 실험으로 확인했다.
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [11_riemann-integral_plot.py](/Hongs_Blog/studies/calculus/code/11_riemann-integral_plot/)로 그렸고, 표의 $$L_6 = 6.875$$, $$R_6 = 11.375$$와, $$n$$을 64에서 128로 늘릴 때 오차 비율이 왼쪽 끝 합 약 2, 사다리꼴 약 4, 심프슨 약 16인 것을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 동치인 정의(다르부 판정), 적분 가능한 것과 적분 가능하지 않은 것을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [11_riemann-integral_plot.py](/Hongs_Blog/studies/calculus/code/11_riemann-integral_plot/)로 그렸고, 표의 $$L_6 = 6.875$$, $$R_6 = 11.375$$와, $$n$$을 64에서 128로 늘릴 때 오차 비율이 왼쪽 끝 합 약 2, 사다리꼴 약 4, 심프슨 약 16인 것을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 동치인 정의(다르부 판정), 적분 가능한 것과 적분 가능하지 않은 것을 근거로 그렸다.
 {% endraw %}

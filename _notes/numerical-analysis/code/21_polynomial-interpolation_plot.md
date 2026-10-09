@@ -3,7 +3,7 @@ layout: "note"
 title: "21_polynomial-interpolation_plot.py"
 display_title: "21_polynomial-interpolation_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "21"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/polynomial-interpolation/"
 parent_title: "다항식 보간"
-description: "수치해석 · 다항식 보간 코드 코드"
+description: "수치해석 · 다항식 보간 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/21_polynomial-interpolation_plot/"
 ---
 {% raw %}
-[다항식 보간](/Hongs_Blog/studies/numerical-analysis/polynomial-interpolation/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[다항식 보간](/Hongs_Blog/studies/numerical-analysis/polynomial-interpolation/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 다항식 보간 문서의 그림을 만든다: 21_polynomial-interpolation_fig1.svg

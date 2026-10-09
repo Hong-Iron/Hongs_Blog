@@ -172,13 +172,13 @@ for i in range(n):
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.6절 "Elimination = Factorization: A = LU"(곱수가 $$L$$에 그대로 놓이는 이유, 연산 수), 2.7절 "Transposes and Permutations"($$PA = LU$$).
-[^s1]: 에이전트 보충. SciPy 문서는 `lu_factor`가 LAPACK `getrf`를 쓴다고 밝힌다. 행렬식과 $$U$$의 대각 원소 곱의 관계는 08_lu-decomposition_verify.py에서 확인했다.
-[^n1]: 2-2학기/수치해석/1.수업자료/10.na10_decomposition.pdf, p.6~8
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> SciPy 문서는 `lu_factor`가 LAPACK `getrf`를 쓴다고 밝힌다. 행렬식과 $$U$$의 대각 원소 곱의 관계는 08_lu-decomposition_verify.py에서 확인했다.
+[^n1]: 수치해석 10회 강의 자료 「na10_decomposition」, p.6~8
 [^n2]: 같은 자료, p.9
 [^n3]: 같은 자료, p.10~11 (풀이는 슬라이드에 없다)
 [^n4]: 같은 자료, p.2~5
 [^n5]: 같은 자료, p.13~14
 [^n6]: 같은 자료, p.12
-[^sn1]: 에이전트 보충. 슬라이드 p.11·p.14는 문제만 내고 답이 없다. 해 $$(1, 1, 1)$$, $$M^{-1}$$, 힐베르트 행렬 실험은 08_lu-decomposition_verify.py로 계산했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 LU·SOLVE 의사코드와 비용 문단을 옮겼다(Strang 5판 2.6~2.7절).
+[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.11·p.14는 문제만 내고 답이 없다. 해 $$(1, 1, 1)$$, $$M^{-1}$$, 힐베르트 행렬 실험은 08_lu-decomposition_verify.py로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 LU·SOLVE 의사코드와 비용 문단을 옮겼다(Strang 5판 2.6~2.7절).
 {% endraw %}

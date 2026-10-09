@@ -3,7 +3,7 @@ layout: "note"
 title: "25_latency_plot.py"
 display_title: "25_latency_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "25"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/latency/"
 parent_title: "소요시간"
-description: "컴퓨터 통신 · 소요시간 코드 코드"
+description: "컴퓨터 통신 · 소요시간 그림 생성 코드"
 permalink: "/studies/computer-communication/code/25_latency_plot/"
 ---
 {% raw %}
-[소요시간](/Hongs_Blog/studies/computer-communication/latency/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[소요시간](/Hongs_Blog/studies/computer-communication/latency/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 소요시간 문서의 그림을 만든다: 25_latency_fig1.svg

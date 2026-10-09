@@ -195,5 +195,5 @@ flowchart TD
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(전단사 법칙, 합·곱의 법칙, 일반화된 곱의 법칙, 나눗셈 법칙). OpenStax, *Precalculus 2e*, 11.5절 "Counting Principles".
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제'의 서로 다른 글자 문자열 셈을 글자 3개, 두 자리로 줄여 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제'의 서로 다른 글자 문자열 셈을 글자 3개, 두 자리로 줄여 그렸다.
 {% endraw %}

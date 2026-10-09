@@ -52,7 +52,7 @@ NRZ        _ _ ‾ _ ‾ ‾ ‾ ‾ _ ‾ _ _ _ _ ‾ _
 
 읽는 시각이 칸마다 $$1/16$$씩 앞당겨진다. 9번째 읽기에서 앞당김이 반 칸을 넘어, 8번째 칸(1)을 한 번 더 읽는다. 그 뒤로는 모든 비트가 한 칸씩 밀린다. 받는 쪽은 `0010111110100001`을 받았다고 믿는다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/40_nrz-clock-recovery_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/40_nrz-clock-recovery_fig1.svg" alt="그림" width="551" height="313" loading="lazy">
 
 파란 선이 보낸 NRZ 신호이고, 주황 세로선이 받는 쪽이 읽는 순간이다. 주황 선은 처음에는 칸 한가운데에 있다가 조금씩 왼쪽으로 밀린다. 8번째 칸(1)을 두 번 읽은 뒤로는 읽은 비트가 보낸 비트보다 한 칸씩 늦다[^s5].
 
@@ -216,13 +216,13 @@ $$w < 1$$일 때 받는 쪽은 칸을 건너뛰지 않고, 앞당김이 반 칸�
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 35·37 "Non-Return to Zero(NRZ)" (4-1학기/pasted_images/Pasted image 20261006180810.png, Pasted image 20261006181613.png). 슬라이드 37은 "클럭(clock) 복구"와 "수신자가 송신자의 클럭에 자신의 클럭을 맞추는 작업"을 빨간 글씨로 적고, 필기 캡처에 빨간 동그라미와 밑줄이 있다
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/05.5주차.md, 97~107행. "물리적으로 완벽하게 동일한 클락은 불가능하다"(101행)
-[^3]: 4-1학기/컴퓨터 통신/1.수업자료/04.2장-1.pptx, 슬라이드 33 "정리"(마지막 주제: Data ⇒ D-Signal, Encoding! (Modulation의 일종))와 슬라이드 34 "인코딩(Encoding): 개요" (4-1학기/pasted_images/Pasted image 20261006180649.png)
-[^s1]: 에이전트 보충. 한가운데서 재는 이유는 원본에 없다. 슬라이드는 "수신자는 비트폭의 중앙에서 신호 level 측정"만 적는다.
-[^s2]: 에이전트 보충. 비트 폭 15/16의 수신 표, 칸 번호 식 $$i_k$$, 첫 오류 조건과 증명, 다시 맞추기 실험, 1% 예, 백만분의 1 예, 카드 C3·C4·C5는 원본에 없다. 슬라이드 36 그림(4-1학기/pasted_images/Pasted image 20261006181146.png, Pasted image 20261006181416.png)의 "빠른 clock ⇒ 비트폭↓"를 수로 옮긴 것이다. 검증 코드로 확인했다.
-[^s3]: 에이전트 보충. NRZ 이름의 뜻과 기준 전압이 흔들리는 원리(기저선 변동, baseline wander)는 Peterson & Davie, *Computer Networks: A Systems Approach*, 2.2절의 설명이다.
-[^s4]: 에이전트 보충. SPI의 별도 클럭 선과 UART의 시작 비트는 원본에 없다. SPI는 클럭 선(SCLK)을 데이터 선과 함께 쓰고, UART는 프레임마다 시작 비트의 하강 모서리에서 박자를 다시 맞춘다.
-[^s5]: 에이전트 보충. 그림 한 장은 원본에 없다. [40_nrz-clock-recovery_plot.py](/Hongs_Blog/studies/computer-communication/code/40_nrz-clock-recovery_plot/)로 그렸고, 9번째 읽기 시각 7.97(8번째 칸), 받은 열 `0010111110100001`, 식 $$k > 1/(2\varepsilon) - 1/2$$이 $$\varepsilon = 1/16$$에서 주는 첫 중복 $$k = 8$$을 같은 코드로 확인했다.
-[^s6]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 다시 맞추기 설명과 '정의' 절의 첫 오류 조건, 슬라이드 37 "클럭(clock) 복구"를 바탕으로 그렸다.
+[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 35·37 "Non-Return to Zero(NRZ)" (수업 슬라이드 캡처, Pasted image 20261006181613.png). 슬라이드 37은 "클럭(clock) 복구"와 "수신자가 송신자의 클럭에 자신의 클럭을 맞추는 작업"을 빨간 글씨로 적고, 필기 캡처에 빨간 동그라미와 밑줄이 있다
+[^2]: 컴퓨터 통신 5회 필기 「5주차」, 97~107행. "물리적으로 완벽하게 동일한 클락은 불가능하다"(101행)
+[^3]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 33 "정리"(마지막 주제: Data ⇒ D-Signal, Encoding! (Modulation의 일종))와 슬라이드 34 "인코딩(Encoding): 개요" (수업 슬라이드 캡처)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 한가운데서 재는 이유는 원본에 없다. 슬라이드는 "수신자는 비트폭의 중앙에서 신호 level 측정"만 적는다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 비트 폭 15/16의 수신 표, 칸 번호 식 $$i_k$$, 첫 오류 조건과 증명, 다시 맞추기 실험, 1% 예, 백만분의 1 예, 카드 C3·C4·C5는 원본에 없다. 슬라이드 36 그림(수업 슬라이드 캡처, Pasted image 20261006181416.png)의 "빠른 clock ⇒ 비트폭↓"를 수로 옮긴 것이다. 검증 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> NRZ 이름의 뜻과 기준 전압이 흔들리는 원리(기저선 변동, baseline wander)는 Peterson & Davie, *Computer Networks: A Systems Approach*, 2.2절의 설명이다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> SPI의 별도 클럭 선과 UART의 시작 비트는 원본에 없다. SPI는 클럭 선(SCLK)을 데이터 선과 함께 쓰고, UART는 프레임마다 시작 비트의 하강 모서리에서 박자를 다시 맞춘다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [40_nrz-clock-recovery_plot.py](/Hongs_Blog/studies/computer-communication/code/40_nrz-clock-recovery_plot/)로 그렸고, 9번째 읽기 시각 7.97(8번째 칸), 받은 열 `0010111110100001`, 식 $$k > 1/(2\varepsilon) - 1/2$$이 $$\varepsilon = 1/16$$에서 주는 첫 중복 $$k = 8$$을 같은 코드로 확인했다.
+[^s6]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 다시 맞추기 설명과 '정의' 절의 첫 오류 조건, 슬라이드 37 "클럭(clock) 복구"를 바탕으로 그렸다.
 {% endraw %}

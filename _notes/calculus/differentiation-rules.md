@@ -40,7 +40,7 @@ $$(x^2 e^x)' = (x^2)'\,e^x + x^2\,(e^x)' = 2x e^x + x^2 e^x = (2x + x^2)e^x$$
 
 넓이로 보면 이해가 쉽다. 가로 $$f$$, 세로 $$g$$인 직사각형의 넓이 $$fg$$가 조금 변할 때, 가로가 늘어 생긴 띠 $$f'g$$와 세로가 늘어 생긴 띠 $$fg'$$가 더해진다. 모서리의 작은 조각은 $$h^2$$ 크기라 극한에서 사라진다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/05_differentiation-rules_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/05_differentiation-rules_fig1.svg" alt="그림" width="439" height="285" loading="lazy">
 
 입력이 $$h$$만큼 늘면 가로는 $$\Delta f \approx f'h$$, 세로는 $$\Delta g \approx g'h$$만큼 는다. 늘어난 넓이를 $$h$$로 나누면 주황 띠는 $$f'g$$, 초록 띠는 $$fg'$$로 남고, 보라 모서리만 0으로 줄어든다[^s1].
 
@@ -158,6 +158,6 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.3절 "Differentiation Rules", 3.5절 "Derivatives of Trigonometric Functions", 3.9절 "Derivatives of Exponential and Logarithmic Functions"
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [05_differentiation-rules_plot.py](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_plot/)로 그렸다. 늘어난 양은 잘 보이게 크게 잡았다. 늘어난 넓이가 두 띠와 모서리의 합인 것, $$f = x^2$$, $$g = e^x$$, $$x = 1$$에서 모서리를 $$h$$로 나눈 값이 0으로 가는 것, $$(x^2e^x)' = (2x + x^2)e^x$$를 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 기본 도함수 표와 법칙, 예제의 풀이 순서, [연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [05_differentiation-rules_plot.py](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_plot/)로 그렸다. 늘어난 양은 잘 보이게 크게 잡았다. 늘어난 넓이가 두 띠와 모서리의 합인 것, $$f = x^2$$, $$g = e^x$$, $$x = 1$$에서 모서리를 $$h$$로 나눈 값이 0으로 가는 것, $$(x^2e^x)' = (2x + x^2)e^x$$를 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 기본 도함수 표와 법칙, 예제의 풀이 순서, [연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/)을 근거로 그렸다.
 {% endraw %}

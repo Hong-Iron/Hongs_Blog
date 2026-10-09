@@ -37,7 +37,7 @@ permalink: "/studies/linear-algebra/change-of-basis/"
 
 $$\mathbf{b}_1, \mathbf{b}_2$$를 기저로 쓰면 좌표 $$(c_1, c_2)$$인 점은 $$(c_1, -c_2)$$로 간다. 이 기저에서 반사의 행렬은 $$\begin{pmatrix}1 & 0\\ 0 & -1\end{pmatrix}$$이다. 예를 들어 표준 좌표 $$(3, 1) = 2\mathbf{b}_1 + 1\mathbf{b}_2$$는 새 좌표 $$(2, 1)$$이고, 반사하면 새 좌표 $$(2, -1)$$, 곧 $$2\mathbf{b}_1 - \mathbf{b}_2 = (1, 3)$$이다. $$\mathbf{b}_1, \mathbf{b}_2$$를 열로 세운 행렬이 아래의 $$P$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/14_change-of-basis_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/14_change-of-basis_fig1.svg" alt="그림" width="332" height="357" loading="lazy">
 
 기울어진 격자가 새 기저의 눈금이다. $$(3, 1)$$은 $$\mathbf{b}_1$$ 방향으로 2칸, $$\mathbf{b}_2$$ 방향으로 1칸 간 점이고, 반사는 $$\mathbf{b}_2$$ 방향 1칸만 반대로 돌려 $$(1, 3)$$으로 보낸다[^s2].
 
@@ -123,7 +123,7 @@ flowchart LR
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 8.2절 "The Matrix of a Linear Transformation"(기저를 바꾸면 행렬이 바뀜), 8.3절 "The Search for a Good Basis"($$B = M^{-1}AM$$, 닮은 행렬).
-[^s1]: 에이전트 보충. RGB와 YCbCr의 변환 행렬은 ITU-R BT.601 규격에 정의되어 있고, JPEG(JFIF)이 이것을 쓴다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [14_change-of-basis_plot.py](/Hongs_Blog/studies/linear-algebra/code/14_change-of-basis_plot/)로 그렸고, 새 좌표 $$(2, 1)$$, 반사 결과 $$(1, 3)$$, $$P^{-1}AP = \operatorname{diag}(1, -1)$$을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$B = P^{-1}AP$$와 그것을 오른쪽부터 읽는 문단을 옮겼다(Strang 5판 8.2~8.3절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> RGB와 YCbCr의 변환 행렬은 ITU-R BT.601 규격에 정의되어 있고, JPEG(JFIF)이 이것을 쓴다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [14_change-of-basis_plot.py](/Hongs_Blog/studies/linear-algebra/code/14_change-of-basis_plot/)로 그렸고, 새 좌표 $$(2, 1)$$, 반사 결과 $$(1, 3)$$, $$P^{-1}AP = \operatorname{diag}(1, -1)$$을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$B = P^{-1}AP$$와 그것을 오른쪽부터 읽는 문단을 옮겼다(Strang 5판 8.2~8.3절).
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "03_categorical-dissimilarity_plot.py"
 display_title: "03_categorical-dissimilarity_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "03"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/categorical-dissimilarity/"
 parent_title: "범주형 속성의 비유사도"
-description: "데이터 과학 · 범주형 속성의 비유사도 코드 코드"
+description: "데이터 과학 · 범주형 속성의 비유사도 그림 생성 코드"
 permalink: "/studies/data-science/code/03_categorical-dissimilarity_plot/"
 ---
 {% raw %}
-[범주형 속성의 비유사도](/Hongs_Blog/studies/data-science/categorical-dissimilarity/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[범주형 속성의 비유사도](/Hongs_Blog/studies/data-science/categorical-dissimilarity/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 범주형 속성의 비유사도 문서의 그림을 만든다: 03_categorical-dissimilarity_fig1.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "22_newton-divided-difference_plot.py"
 display_title: "22_newton-divided-difference_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "22"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/newton-divided-difference/"
 parent_title: "뉴턴 다항식과 분할 차분"
-description: "수치해석 · 뉴턴 다항식과 분할 차분 코드 코드"
+description: "수치해석 · 뉴턴 다항식과 분할 차분 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/22_newton-divided-difference_plot/"
 ---
 {% raw %}
-[뉴턴 다항식과 분할 차분](/Hongs_Blog/studies/numerical-analysis/newton-divided-difference/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[뉴턴 다항식과 분할 차분](/Hongs_Blog/studies/numerical-analysis/newton-divided-difference/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 뉴턴 다항식과 분할 차분 문서의 그림을 만든다: 22_newton-divided-difference_fig1.svg

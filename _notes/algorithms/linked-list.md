@@ -146,5 +146,5 @@ def restore():
 
 [^1]: Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.2절 "Linked lists": 이중 연결 리스트의 삽입·삭제가 O(1)이고 탐색이 O(n)이다.
 [^2]: CPython 소스 `Modules/_collectionsmodule.c`: deque의 데이터를 고정 길이 블록의 이중 연결 리스트에 담는다[확인필요: 블록 크기 등 세부는 버전마다 다를 수 있다].
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시 표의 '처음'과 '2 지우기' 줄(next[1] = 3, prev[3] = 1)과 '지워진 칸 자신의 prev, next는 그대로 둔다'는 설명을 포인터 그림으로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시 표의 '처음'과 '2 지우기' 줄(next[1] = 3, prev[3] = 1)과 '지워진 칸 자신의 prev, next는 그대로 둔다'는 설명을 포인터 그림으로 옮겼다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "04_signal-energy-power_plot.py"
 display_title: "04_signal-energy-power_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "04"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/signal-energy-power/"
 parent_title: "신호의 에너지와 전력"
-description: "신호 및 시스템 · 신호의 에너지와 전력 코드 코드"
+description: "신호 및 시스템 · 신호의 에너지와 전력 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/04_signal-energy-power_plot/"
 ---
 {% raw %}
-[신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 신호의 에너지와 전력 문서의 그림을 만든다: 04_signal-energy-power_fig1.svg

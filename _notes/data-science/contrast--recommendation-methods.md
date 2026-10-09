@@ -64,7 +64,7 @@ permalink: "/studies/data-science/contrast--recommendation-methods/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/11.11-1_intro-rec.pdf, p.28
+[^1]: 데이터 과학 11회 강의 자료 「11-1_intro-rec」, p.28
 [^2]: 같은 자료, p.29 (방식 1: 따로 만든 추천기 결합)
 [^3]: 같은 자료, p.30 (방식 2: 내용을 통한 협업)
 [^4]: 같은 자료, p.31 (방식 3: 내용 프로필의 차원 축소)

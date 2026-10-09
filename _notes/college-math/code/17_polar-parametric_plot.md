@@ -3,7 +3,7 @@ layout: "note"
 title: "17_polar-parametric_plot.py"
 display_title: "17_polar-parametric_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "17"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/polar-parametric/"
 parent_title: "극좌표와 매개변수 곡선"
-description: "대학수학 · 극좌표와 매개변수 곡선 코드 코드"
+description: "대학수학 · 극좌표와 매개변수 곡선 그림 생성 코드"
 permalink: "/studies/college-math/code/17_polar-parametric_plot/"
 ---
 {% raw %}
-[극좌표와 매개변수 곡선](/Hongs_Blog/studies/college-math/polar-parametric/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[극좌표와 매개변수 곡선](/Hongs_Blog/studies/college-math/polar-parametric/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 극좌표와 매개변수 곡선 문서의 그림을 만든다: 17_polar-parametric_fig1.svg, 17_polar-parametric_fig2.svg

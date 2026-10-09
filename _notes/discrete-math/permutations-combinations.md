@@ -155,7 +155,7 @@ flowchart LR
 - **네트워크.** 노드 $$n$$개를 모두 직접 잇는 링크 수는 두 노드의 짝 $$\binom{n}{2} = \frac{n(n-1)}{2}$$이다([점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/)).
 - **알고리즘 비용.** 크기 $$k$$인 부분집합을 모두 검사하는 알고리즘은 $$\binom{n}{k}$$번 돈다. $$k$$가 고정이면 $$n^k$$ 정도, $$k = n/2$$이면 $$\binom{n}{n/2} \approx \frac{4^{n/2}}{\sqrt{\pi n/2}}$$로 지수적이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/15_permutations-combinations_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/15_permutations-combinations_fig1.svg" alt="그림" width="520" height="335" loading="lazy">
 
 세로축이 로그 눈금이다. $$k$$를 2나 3으로 고정한 선은 점점 눕지만, $$k = n/2$$인 선은 곧은 직선으로 올라간다. 직선은 일정한 비율로 곱해지며 자란다는 뜻이라 지수적이다. 점선 어림은 $$n = 40$$에서 실제 값과 1% 안쪽으로 겹친다[^s1].
 
@@ -215,6 +215,6 @@ flowchart LR
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(순열, 부분집합 세기, 포커 패, 조합적 증명). OpenStax, *Precalculus 2e*, 11.5절 "Counting Principles".
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [15_permutations-combinations_plot.py](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_plot/)로 그렸고, $$\binom{40}{20} = 137{,}846{,}528{,}820$$과 어림 $$2^{40}/\sqrt{20\pi}$$의 차이가 1% 미만인 것, $$\binom{40}{3} = 9{,}880$$을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 '같은 세 사람을 직책만 바꿔 앉힌 $$3! = 6$$가지'를 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [15_permutations-combinations_plot.py](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_plot/)로 그렸고, $$\binom{40}{20} = 137{,}846{,}528{,}820$$과 어림 $$2^{40}/\sqrt{20\pi}$$의 차이가 1% 미만인 것, $$\binom{40}{3} = 9{,}880$$을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 '같은 세 사람을 직책만 바꿔 앉힌 $$3! = 6$$가지'를 그렸다.
 {% endraw %}

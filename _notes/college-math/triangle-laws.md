@@ -85,7 +85,7 @@ $$C = 90°$$이면 $$\cos C = 0$$이라 코사인 법칙이 피타고라스 정�
 2. *각 두 개:* $$B \approx 41.81°$$ 또는 $$180° - 41.81° = 138.19°$$.
 3. *둘 다 되는지:* $$30° + 138.19° < 180°$$이므로 두 경우 모두 삼각형이 된다. 주어진 정보만으로는 하나로 정해지지 않는다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/16_triangle-laws_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/16_triangle-laws_fig1.svg" alt="그림" width="503" height="216" loading="lazy">
 
 C를 중심으로 반지름 6인 원(점선)이 밑변과 $$B_1$$, $$B_2$$ 두 점에서 만난다. 두 점 모두 $$a = 6$$, $$b = 8$$, $$A = 30°$$를 만족하므로 삼각형이 둘 생긴다[^s1].
 
@@ -135,5 +135,5 @@ C를 중심으로 반지름 6인 원(점선)이 밑변과 $$B_1$$, $$B_2$$ 두 �
 
 
 [^1]: OpenStax, *Precalculus 2e*, 8.1절 "Non-right Triangles: Law of Sines"(모호한 경우와 넓이 포함), 8.2절 "Non-right Triangles: Law of Cosines"
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [16_triangle-laws_plot.py](/Hongs_Blog/studies/college-math/code/16_triangle-laws_plot/)로 그렸고, 그림에 쓴 값(B에서의 각 138.19°와 41.81°, 두 삼각형 모두 $$BC = 6$$)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [16_triangle-laws_plot.py](/Hongs_Blog/studies/college-math/code/16_triangle-laws_plot/)로 그렸고, 그림에 쓴 값(B에서의 각 138.19°와 41.81°, 두 삼각형 모두 $$BC = 6$$)을 같은 코드로 확인했다.
 {% endraw %}

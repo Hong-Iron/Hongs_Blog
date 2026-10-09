@@ -39,7 +39,7 @@ $$\mathbf{x}^\top S\mathbf{x} = 2x^2 - 2xy + 2y^2 = x^2 + y^2 + (x - y)^2.$$
 
 세 제곱의 합이라 $$(x, y) \ne (0, 0)$$이면 늘 양수다. 그래프는 원점이 바닥인 그릇이다. 반면 $$\begin{pmatrix}1 & 2\\ 2 & 1\end{pmatrix}$$의 식 $$x^2 + 4xy + y^2$$은 $$(1, -1)$$에서 $$1 - 4 + 1 = -2$$로 음수다. 한쪽은 올라가고 한쪽은 내려가는 말안장이다. $$S$$가 아래 정의의 행렬, $$x^2 + y^2 + (x - y)^2$$이 에너지다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/23_positive-definite_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/23_positive-definite_fig1.svg" alt="그림" width="594" height="328" loading="lazy">
 
 왼쪽 등고선은 원점을 둘러싼 타원이라, 어느 방향으로 가도 값이 올라간다. 오른쪽은 점선 두 개를 경계로 값이 음수인 영역(주황)이 생기고, 점 $$(1, -1)$$에서 $$-2$$다[^s2].
 
@@ -150,7 +150,7 @@ $$S = \begin{pmatrix}2 & -1 & 0\\ -1 & 2 & -1\\ 0 & -1 & 2\end{pmatrix}$$가 양
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.5절 "Positive Definite Matrices"(에너지 $$\mathbf{x}^\top S\mathbf{x}$$, 다섯 가지 판정, $$A^\top A$$, 숄레스키).
-[^s1]: 에이전트 보충. 숄레스키 분해의 연산 수가 LU의 약 절반($$\frac13n^3$$)이라는 것과, 공분산 $$\Sigma = LL^\top$$로 $$L\mathbf{z}$$($$\mathbf{z}$$는 표준정규)를 만들어 다변수 정규 표본을 얻는 방법은 수치 선형대수·통계 계산의 표준 내용이다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [23_positive-definite_plot.py](/Hongs_Blog/studies/linear-algebra/code/23_positive-definite_plot/)로 그렸고, 두 행렬의 고윳값(모두 양수, $$3$$과 $$-1$$), $$(1, -1)$$에서의 값 $$-2$$, 제곱합 표현을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 판정법 1~5, 증명(1 ⇔ 2, 5 ⇒ 1, 3·4는 증명 생략), `예제`의 "피벗의 누적곱"을 옮겼다(Strang 5판 6.5절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 숄레스키 분해의 연산 수가 LU의 약 절반($$\frac13n^3$$)이라는 것과, 공분산 $$\Sigma = LL^\top$$로 $$L\mathbf{z}$$($$\mathbf{z}$$는 표준정규)를 만들어 다변수 정규 표본을 얻는 방법은 수치 선형대수·통계 계산의 표준 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [23_positive-definite_plot.py](/Hongs_Blog/studies/linear-algebra/code/23_positive-definite_plot/)로 그렸고, 두 행렬의 고윳값(모두 양수, $$3$$과 $$-1$$), $$(1, -1)$$에서의 값 $$-2$$, 제곱합 표현을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 판정법 1~5, 증명(1 ⇔ 2, 5 ⇒ 1, 3·4는 증명 생략), `예제`의 "피벗의 누적곱"을 옮겼다(Strang 5판 6.5절).
 {% endraw %}

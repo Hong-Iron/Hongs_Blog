@@ -130,13 +130,13 @@ $$\Pr[X > n_{\max}] = \sum_{k = n_{\max}+1}^{n} \binom{n}{k} p^k (1-p)^{n-k}$$
 3. *넘칠 확률:* $$n_{\max} = 10$$이므로 11명 이상이 동시에 활동할 때 넘친다. $$\Pr[X \ge 11] \approx 0.000424$$.
 4. *해석:* 99.95% 이상의 시간 동안 35명 모두 막힘없이 보낸다. 같은 링크로 고정 할당보다 3.5배 많은 사용자를 받는다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/15_statistical-multiplexing_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/15_statistical-multiplexing_fig1.svg" alt="그림" width="529" height="320" loading="lazy">
 
 막대 하나가 "35명 중 동시에 $$X$$명이 활동할 확률"이다. 대부분 2~5명에 몰려 있고, 점선 오른쪽(11명 이상)의 막대는 너무 낮아 보이지도 않는다. 그 막대들을 모두 더한 값이 0.000424다[^s4].
 
 사용자 수를 늘리면 넘칠 확률이 빠르게 커진다. 30명 0.000089, 40명 0.00147, 50명 0.00935다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/15_statistical-multiplexing_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/15_statistical-multiplexing_fig2.svg" alt="그림" width="541" height="327" loading="lazy">
 
 세로축은 한 칸이 100배다. 10명까지는 넘칠 일이 아예 없고, 그 위로는 사용자를 늘릴수록 넘칠 확률이 꾸준히 커진다. 몇 명까지 받을지는 견딜 수 있는 넘칠 확률을 먼저 정한 뒤 이 곡선에서 읽는다[^s4].
 
@@ -223,10 +223,10 @@ $$\Pr[X > n_{\max}] = \sum_{k = n_{\max}+1}^{n} \binom{n}{k} p^k (1-p)^{n-k}$$
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260924204837.png — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 68~72행
-[^s1]: 에이전트 보충. 버퍼 넘침과 손실, 보장하지 않는 것, 패킷 헤더가 주소 칸이라는 대응은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 통계적 다중화 설명과 같다.
-[^s2]: 에이전트 보충. 이항분포 모델과 35명 예제는 원본에 없다. 예제 수치는 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 패킷 스위칭과 회선 스위칭 비교 예제와 같다. 증명과 반례, 사용자 수별 값은 이 모델에서 나온다.
-[^s3]: 에이전트 보충. 데이터 1,000비트·주소 40비트는 비율 식을 보이려고 고른 예시 값이다. $$1000/1040 = 0.9615$$.
-[^s4]: 에이전트 보충. 그림 두 장은 원본에 없다. [15_statistical-multiplexing_plot.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_plot/)로 그렸고, 35명에서 넘칠 확률 0.000424, 30·40·50명에서 0.000089, 0.00147, 0.00935를 같은 코드로 확인했다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
+[^2]: 컴퓨터 통신 1회 필기 「1주차」, 68~72행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 버퍼 넘침과 손실, 보장하지 않는 것, 패킷 헤더가 주소 칸이라는 대응은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 통계적 다중화 설명과 같다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이항분포 모델과 35명 예제는 원본에 없다. 예제 수치는 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 패킷 스위칭과 회선 스위칭 비교 예제와 같다. 증명과 반례, 사용자 수별 값은 이 모델에서 나온다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 데이터 1,000비트·주소 40비트는 비율 식을 보이려고 고른 예시 값이다. $$1000/1040 = 0.9615$$.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [15_statistical-multiplexing_plot.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_plot/)로 그렸고, 35명에서 넘칠 확률 0.000424, 30·40·50명에서 0.000089, 0.00147, 0.00935를 같은 코드로 확인했다.
 {% endraw %}

@@ -44,7 +44,7 @@ permalink: "/studies/algorithms/binary-search/"
 
 a[3] = 7이다. 8칸짜리를 세 번 만에 찾았다. 7이 없고 6을 찾았다면 같은 과정으로 "6 이상인 첫 위치" 3을 돌려준다. 그러면 "6보다 작은 수가 3개 있다"는 뜻도 된다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/20_binary-search_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/20_binary-search_fig1.svg" alt="그림" width="519" height="342" loading="lazy">
 
 가로·세로 모두 10배마다 한 칸인 눈금이다. 원소가 10배 늘면 처음부터 훑는 방법은 비교도 10배 늘지만, 이분 탐색은 3~4번만 는다. 100만 개에서 하나씩 보면 100만 번, 이분 탐색은 20번이다[^s1].
 
@@ -239,6 +239,6 @@ def f(a, x):
 
 [^1]: 루프 불변식의 세 단계(초기화·유지·종료)는 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.1절의 방식을 따랐다. 이분 탐색 자체는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search".
 [^2]: Python 3 표준 라이브러리 문서, "bisect — Array bisection algorithm"의 `bisect_left`, `bisect_right`.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [20_binary-search_plot.py](/Hongs_Blog/studies/algorithms/code/20_binary-search_plot/)로 그렸고, n = 1 ~ 2,048에서 답이 될 수 있는 모든 자리를 넣어 본 가장 많은 반복 횟수가 ⌈log₂(n + 1)⌉과 같다는 것, 예시의 8칸에서 3번, 100만 개에서 20번이라는 것을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '증명' 절의 루프 불변식과 증명 4단계(종료)를 배열 구간 그림으로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_binary-search_plot.py](/Hongs_Blog/studies/algorithms/code/20_binary-search_plot/)로 그렸고, n = 1 ~ 2,048에서 답이 될 수 있는 모든 자리를 넣어 본 가장 많은 반복 횟수가 ⌈log₂(n + 1)⌉과 같다는 것, 예시의 8칸에서 3번, 100만 개에서 20번이라는 것을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '증명' 절의 루프 불변식과 증명 4단계(종료)를 배열 구간 그림으로 옮겼다.
 {% endraw %}

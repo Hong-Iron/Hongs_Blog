@@ -150,8 +150,8 @@ $$L_{\text{행}}$$과 $$L_{\text{열}}$$은 2차원 표시판의 행 수, 열 �
 [^2]: Strang, *Introduction to Linear Algebra* 5판, 1.3절 "Matrices"(차분 행렬과 합 행렬이 서로의 역행렬이고, 미분·적분과 짝을 이룬다는 예).
 [^3]: Laaksonen, 같은 책, 9.1의 Minimum queries(최솟값 질문은 합 질문보다 다루기 어렵다), 9.2 "Binary indexed tree"(값을 바꿀 때마다 누적 합 배열을 $$O(n)$$에 다시 만들어야 한다).
 [^4]: Strang, *Introduction to Linear Algebra* 5판, 2.4절(결합법칙), 2.6절(전진 대입과 연산 수), 2.7절(전치와 곱의 순서).
-[^s1]: 에이전트 보충. P[0]을 붙인 행렬 $$M$$, $$B$$와 $$BM = I$$, $$MB \ne I$$, XOR·나머지 덧셈 판, float 반올림 반례는 교재의 1차원 예를 누적 합과 차분 배열의 표기(P[0] = 0, 길이 n + 1)에 맞춰 넓힌 내용이다. 근거는 37_prefix-sum-triangular_verify.py의 계산이다.
-[^s2]: 에이전트 보충. 2차원 표시를 바깥곱 $$x\,\mathbf{u}\mathbf{w}^\top$$로, 가로·세로 누적을 양쪽에서 곱하는 일로, 직사각형 합을 $$(\mathbf{e}_{r_2+1} - \mathbf{e}_{r_1})^\top S\,(\mathbf{e}_{c_2+1} - \mathbf{e}_{c_1})$$로 읽는 것은 교재의 1차원 합 행렬·차분 행렬을 행과 열에 따로 쓴 것이다. 37_prefix-sum-triangular_verify.py에서 무작위 표시판 500개로 확인했다.
-[^s3]: 에이전트 보충. 0이 아닌 칸 수($$n(n+1)/2$$, $$2n - 1$$)와 계산 횟수($$n(n-1)$$, $$n - 1$$)는 37_prefix-sum-triangular_verify.py에서 $$n \le 40$$까지 세어 확인했다.
-[^s4]: 에이전트 보충. 결합 누적분포 $$F(x, y) = \Pr[X \le x, Y \le y]$$의 정의는 Blitzstein·Hwang, *Introduction to Probability* 2판, 7.1절에 있다. [결합분포와 조건부 기댓값](/Hongs_Blog/studies/probability-statistics/joint-distributions/)에는 결합 누적분포가 없다. 표의 수는 문제용 예이고, 답은 37_prefix-sum-triangular_verify.py에서 분수로 계산했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> P[0]을 붙인 행렬 $$M$$, $$B$$와 $$BM = I$$, $$MB \ne I$$, XOR·나머지 덧셈 판, float 반올림 반례는 교재의 1차원 예를 누적 합과 차분 배열의 표기(P[0] = 0, 길이 n + 1)에 맞춰 넓힌 내용이다. 근거는 37_prefix-sum-triangular_verify.py의 계산이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 2차원 표시를 바깥곱 $$x\,\mathbf{u}\mathbf{w}^\top$$로, 가로·세로 누적을 양쪽에서 곱하는 일로, 직사각형 합을 $$(\mathbf{e}_{r_2+1} - \mathbf{e}_{r_1})^\top S\,(\mathbf{e}_{c_2+1} - \mathbf{e}_{c_1})$$로 읽는 것은 교재의 1차원 합 행렬·차분 행렬을 행과 열에 따로 쓴 것이다. 37_prefix-sum-triangular_verify.py에서 무작위 표시판 500개로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 0이 아닌 칸 수($$n(n+1)/2$$, $$2n - 1$$)와 계산 횟수($$n(n-1)$$, $$n - 1$$)는 37_prefix-sum-triangular_verify.py에서 $$n \le 40$$까지 세어 확인했다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 결합 누적분포 $$F(x, y) = \Pr[X \le x, Y \le y]$$의 정의는 Blitzstein·Hwang, *Introduction to Probability* 2판, 7.1절에 있다. [결합분포와 조건부 기댓값](/Hongs_Blog/studies/probability-statistics/joint-distributions/)에는 결합 누적분포가 없다. 표의 수는 문제용 예이고, 답은 37_prefix-sum-triangular_verify.py에서 분수로 계산했다.
 {% endraw %}

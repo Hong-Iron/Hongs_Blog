@@ -50,7 +50,7 @@ $$ \frac{1}{9}\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix} 
 
 창을 키우면 더 넓게 평균 내므로 더 흐려진다. 슬라이드는 같은 영상을 3×3, 5×5, 9×9, 17×17 창으로 흐린다. 창이 클수록 촘촘한 줄무늬가 먼저 지워지고, 17×17에서는 굵은 체크무늬만 남는다[^3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/31_two-dimensional-convolution_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/31_two-dimensional-convolution_fig1.svg" alt="그림" width="612" height="467" loading="lazy">
 
 맨 위는 주기가 다른 세 줄무늬다(주기 4, 8, 16픽셀). 창 폭이 커질수록 짧은 주기부터 납작해진다. 폭 5 창은 주기 4 줄무늬를 납작하게 만들 뿐 아니라 밝고 어두운 줄을 뒤집는다(진폭 1/5, 부호 반대)[^s1].
 
@@ -238,7 +238,7 @@ G = [[sum(F[i+u][j+v] for u in (-1, 0, 1) for v in (-1, 0, 1)) / 9
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.27~30 (평균 윈도우 1/9)
+[^1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.27~30 (평균 윈도우 1/9)
 [^2]: 같은 자료, p.23 (2D Convolution by Moving Window: 합성곱과 상관의 식)과 p.26 (Convolution by Moving Window 그림)
 [^3]: 같은 자료, p.31~35 (윈도우 크기: 원본, 3×3, 5×5, 9×9, 17×17)
 [^4]: 같은 자료, p.20 (2차원 합성곱: flip(rotate −180°), shift, multiply, integrate)
@@ -248,7 +248,7 @@ G = [[sum(F[i+u][j+v] for u in (-1, 0, 1) for v in (-1, 0, 1)) / 9
 [^8]: 같은 자료, p.24 (평균 필터와 가중 평균 필터)
 [^9]: 같은 자료, p.25 (미분 필터 $$[-1\ 1]$$, $$[-1\ 1]^\top$$)
 [^10]: 같은 자료, p.36~42 (임펄스 합성곱: 1 임펄스 16픽셀 이동, 5 임펄스, 5 임펄스 + 이동은 흐리는 필터, 1/5 다섯 개와 0 네 개인 행렬)
-[^s1]: 에이전트 보충. 그림 1장과 진폭 배율 식, 1/3·−1/5·0은 원본에 없다. 슬라이드 31~35쪽의 창 크기 실험을 1차원 줄무늬로 다시 한 것이다. [31_two-dimensional-convolution_plot.py](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_plot/)로 그렸고, 배율을 같은 코드와 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 5×4 영상의 계산 예, 22쪽 예를 복사본 세 장으로 푸는 방법, 21쪽 네 식을 $$\mathrm{tri}(x)\mathrm{tri}(y)$$로 묶는 설명, 경계 예는 원본에 없다. 구현 코드로 확인했다.
-[^s3]: 에이전트 보충. 계산량, 가장자리 처리, 실제 사용처(소벨, CNN)는 영상 처리 교재의 표준 내용이다. 카드 C2~C5는 원본 범위를 넘는다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장과 진폭 배율 식, 1/3·−1/5·0은 원본에 없다. 슬라이드 31~35쪽의 창 크기 실험을 1차원 줄무늬로 다시 한 것이다. [31_two-dimensional-convolution_plot.py](/Hongs_Blog/studies/human-interface-media/code/31_two-dimensional-convolution_plot/)로 그렸고, 배율을 같은 코드와 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 5×4 영상의 계산 예, 22쪽 예를 복사본 세 장으로 푸는 방법, 21쪽 네 식을 $$\mathrm{tri}(x)\mathrm{tri}(y)$$로 묶는 설명, 경계 예는 원본에 없다. 구현 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 계산량, 가장자리 처리, 실제 사용처(소벨, CNN)는 영상 처리 교재의 표준 내용이다. 카드 C2~C5는 원본 범위를 넘는다.
 {% endraw %}

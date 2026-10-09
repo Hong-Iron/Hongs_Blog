@@ -44,7 +44,7 @@ permalink: "/studies/calculus/series-convergence/"
 
 첫 열은 로그처럼 느리게 끝없이 자란다([합 ↔ 적분](/Hongs_Blog/studies/calculus/sum-integral-bounds/)). 둘째 열은 항이 더 빨리 줄어 수렴한다. 셋째 열은 첫 열과 크기가 같은 항에 부호만 번갈아 붙였는데 수렴한다. 부분합의 열이 아래 정의의 $$S_n$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/17_series-convergence_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/17_series-convergence_fig1.svg" alt="그림" width="518" height="336" loading="lazy">
 
 가로축이 로그 눈금이라, 파란 선이 곧게 오른다는 것은 항을 10배 더할 때마다 같은 폭씩 커진다는 뜻이다. 주황 선은 점선 $$\frac{\pi^2}{6}$$에 붙는다. 초록 선은 위아래로 번갈아 튀면서 그 폭이 줄어들어 점선 $$\ln 2$$로 모인다[^s3].
 
@@ -152,8 +152,8 @@ $$\sum_{k=1}^{\infty}\frac{k^2}{2^k}$$이 수렴하는지 본다.
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 5.2절 "Infinite Series", 5.3절 "The Divergence and Integral Tests", 5.4절 "Comparison Tests", 5.5절 "Alternating Series"(절대·조건수렴, 재배열), 5.6절 "Ratio and Root Tests".
-[^s1]: 에이전트 보충. 부동소수점 덧셈이 결합법칙을 만족하지 않는다는 것과 카한 보정 덧셈은 수치 해석의 표준 내용이다. 17_series-convergence_verify.py에서 같은 항을 큰 것부터와 작은 것부터 더한 결과가 다름을 확인했다.
-[^s2]: 에이전트 보충. $$\sum\frac{1}{k^2} = \frac{\pi^2}{6}$$은 오일러가 구한 값(바젤 문제)이다. 푸리에 급수의 파르스발 등식으로 증명할 수 있어 미분적분학의 [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/)에서 다룬다.
-[^s3]: 에이전트 보충. 그림은 원본에 없다. [17_series-convergence_plot.py](/Hongs_Blog/studies/calculus/code/17_series-convergence_plot/)로 그렸고, 예시 표의 부분합($$n = 10$$, 1,000, $$10^6$$)을 같은 코드로 확인했다.
-[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정리의 여섯 판정법과 예제의 "알맞은 판정 고르기"(다항식 ÷ 지수 꼴이라 비 판정)를 근거로 그렸다. 모양을 보고 판정을 고르는 순서는 판정법들의 조건에서 나온 요령이다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부동소수점 덧셈이 결합법칙을 만족하지 않는다는 것과 카한 보정 덧셈은 수치 해석의 표준 내용이다. 17_series-convergence_verify.py에서 같은 항을 큰 것부터와 작은 것부터 더한 결과가 다름을 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$\sum\frac{1}{k^2} = \frac{\pi^2}{6}$$은 오일러가 구한 값(바젤 문제)이다. 푸리에 급수의 파르스발 등식으로 증명할 수 있어 미분적분학의 [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/)에서 다룬다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [17_series-convergence_plot.py](/Hongs_Blog/studies/calculus/code/17_series-convergence_plot/)로 그렸고, 예시 표의 부분합($$n = 10$$, 1,000, $$10^6$$)을 같은 코드로 확인했다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정리의 여섯 판정법과 예제의 "알맞은 판정 고르기"(다항식 ÷ 지수 꼴이라 비 판정)를 근거로 그렸다. 모양을 보고 판정을 고르는 순서는 판정법들의 조건에서 나온 요령이다.
 {% endraw %}

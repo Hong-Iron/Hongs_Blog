@@ -38,13 +38,13 @@ permalink: "/studies/abnormal-psychology/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 001 | [이상심리학](/Hongs_Blog/studies/abnormal-psychology/abnormal-psychology/) | 이상행동과 정신장애를 기술하고, 원인을 밝히고, 치료·예방하는 심리학 분야 | — | — |
-| 002 | [이상행동의 기준](/Hongs_Blog/studies/abnormal-psychology/abnormality-criteria/) | 고통·통계적 일탈·규범 일탈·기능 저하. 하나만으로는 늘 틀리는 사례가 있어 함께 본다 (강조)[^1] | — | — |
+| 002 | [이상행동의 기준](/Hongs_Blog/studies/abnormal-psychology/abnormality-criteria/) | 고통·통계적 일탈·규범 일탈·기능 저하. 하나만으로는 늘 틀리는 사례가 있어 함께 본다 (강조)[<sup>1</sup>] | — | — |
 | 003 | [통계적 일탈 기준 ↔ 정규분포](/Hongs_Blog/studies/abnormal-psychology/statistical-deviation--normal-distribution/) | 절단점은 꼬리 확률이다. 평균 − 2 표준편차면 약 2.3%가 이상으로 분류된다 | [검증](/Hongs_Blog/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_verify/) · [그림 코드](/Hongs_Blog/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_plot/) · [그림1](/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig2.svg) | — |
-| 004 | [정신장애와 DSM](/Hongs_Blog/studies/abnormal-psychology/mental-disorder-dsm/) | 정신장애는 증상이 묶인 증후군. DSM-5-TR은 22개 범주로 나눈 진단 목록 (강조)[^2] | — | — |
+| 004 | [정신장애와 DSM](/Hongs_Blog/studies/abnormal-psychology/mental-disorder-dsm/) | 정신장애는 증상이 묶인 증후군. DSM-5-TR은 22개 범주로 나눈 진단 목록 (강조)[<sup>2</sup>] | — | — |
 | 005 | [범주적 분류와 차원적 분류 비교](/Hongs_Blog/studies/abnormal-psychology/categorical-vs-dimensional/) | 가르는 질문: 있다/없다로 나누는가, 얼마나 심한지 재는가 | — | — |
 | 006 | [진단 분류의 장단점](/Hongs_Blog/studies/abnormal-psychology/diagnostic-classification-evaluation/) | 소통·연구·치료 선택에 쓸모 있지만 낙인과 과잉 진단의 위험. 버리지 말고 한계를 알고 쓴다 | — | — |
 | 007 | [이상심리학의 역사](/Hongs_Blog/studies/abnormal-psychology/history-of-abnormal-psychology/) | 귀신론 → 신체 원인론 → 귀신론 회귀 → 인도주의 치료 → 심리·학습·실험·검사·뇌과학 | — | — |
-| 008 | [정신분석적 입장](/Hongs_Blog/studies/abnormal-psychology/psychoanalytic-perspective/) | 무의식의 갈등을 자아가 다스리지 못하면 증상. 치료는 무의식의 의식화 (강조)[^3] | — | — |
+| 008 | [정신분석적 입장](/Hongs_Blog/studies/abnormal-psychology/psychoanalytic-perspective/) | 무의식의 갈등을 자아가 다스리지 못하면 증상. 치료는 무의식의 의식화 (강조)[<sup>3</sup>] | — | — |
 | 009 | [방어기제](/Hongs_Blog/studies/abnormal-psychology/defense-mechanisms/) | 불안을 줄이려 자아가 쓰는 무의식적 책략 11가지. 현실을 얼마나 왜곡하느냐가 관건 | — | — |
 | 010 | [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/) | 이상행동도 학습된 것. 고전적·조작적 조건형성과 관찰 학습으로 생기고 같은 원리로 고친다 | — | — |
 | 011 | [인지적 입장](/Hongs_Blog/studies/abnormal-psychology/cognitive-perspective/) | 사건이 아니라 사건에 대한 해석이 감정을 만든다. 부적응적 인지를 바꾸는 치료 | — | — |
@@ -70,16 +70,16 @@ permalink: "/studies/abnormal-psychology/"
 
 | 번호  | 개념                                                                | 한 줄                                                             | 개념 코드 | 연습                                                         |
 | --- | ----------------------------------------------------------------- | --------------------------------------------------------------- | ----- | ---------------------------------------------------------- |
-| 015 | [정신증과 조현병 스펙트럼](/Hongs_Blog/studies/abnormal-psychology/psychosis-spectrum/)           | 현실 판단력을 잃는 정신증. 증상의 심각도·기간으로 조현형 성격장애부터 조현병까지 한 줄에 놓는다 (강조)[^4] | —     | —                                                          |
+| 015 | [정신증과 조현병 스펙트럼](/Hongs_Blog/studies/abnormal-psychology/psychosis-spectrum/)           | 현실 판단력을 잃는 정신증. 증상의 심각도·기간으로 조현형 성격장애부터 조현병까지 한 줄에 놓는다 (강조)[<sup>4</sup>] | —     | —                                                          |
 | 016 | [정신병적 증상](/Hongs_Blog/studies/abnormal-psychology/psychotic-symptoms/)                       | 망상, 환각, 혼란스러운 언어, 혼란스러운 행동·긴장증, 음성 증상의 다섯 가지                    | —     | —                                                          |
 | 017 | [양성 증상과 음성 증상 비교](/Hongs_Blog/studies/abnormal-psychology/positive-vs-negative-symptoms/)       | 가르는 질문: 정상에 없던 것이 더해졌나, 정상에 있던 것이 빠졌나                           | —     | —                                                          |
 | 018 | [도파민 가설](/Hongs_Blog/studies/abnormal-psychology/dopamine-hypothesis/)                         | 도파민이 지나치면 양성 증상. 약의 작용과 각성제 정신병이 근거지만, 음성 증상은 설명 못 하는 가설        | —     | —                                                          |
-| 019 | [조현병](/Hongs_Blog/studies/abnormal-psychology/schizophrenia/)                               | 핵심 증상 2개 이상이 1개월, 징후가 6개월 이상, 기능 저하. 여러 요인의 상호작용으로 생긴다 (강조)[^5] | —     | —                                                          |
+| 019 | [조현병](/Hongs_Blog/studies/abnormal-psychology/schizophrenia/)                               | 핵심 증상 2개 이상이 1개월, 징후가 6개월 이상, 기능 저하. 여러 요인의 상호작용으로 생긴다 (강조)[<sup>5</sup>] | —     | —                                                          |
 | 020 | [조현병의 가족관계 이론](/Hongs_Blog/studies/abnormal-psychology/family-theories-schizophrenia/)             | 조현병을 만드는 어머니·부부관계·이중구속·표현된 정서. 재발과 가장 확실히 이어지는 것은 표현된 정서        | —     | —                                                          |
 | 021 | [정형과 비정형 항정신병 약물 비교](/Hongs_Blog/studies/abnormal-psychology/typical-vs-atypical-antipsychotics/) | 가르는 질문: 도파민만 막는가, 세로토닌도 막는가. 음성 증상과 부작용의 차이                     | —     | —                                                          |
 | 022 | [조현양상장애](/Hongs_Blog/studies/abnormal-psychology/schizophreniform-disorder/)                         | 조현병과 같은 증상이 1~6개월. 셋 중 둘은 조현병 등으로 진단이 바뀐다                       | —     | —                                                          |
 | 023 | [단기 정신병적 장애](/Hongs_Blog/studies/abnormal-psychology/brief-psychotic-disorder/)                 | 정신병적 증상이 하루 이상 한 달 안에 끝나고 완전히 회복된다. 심한 스트레스 뒤에 흔하다              | —     | —                                                          |
-| 024 | [정신병적 장애의 지속 기간 비교](/Hongs_Blog/studies/abnormal-psychology/psychotic-duration-contrast/)   | 가르는 질문: 증상이 얼마나 오래 갔나. 1일~1개월, 1~6개월, 6개월 이상 (강조)[^6]           | —     | —                                                          |
+| 024 | [정신병적 장애의 지속 기간 비교](/Hongs_Blog/studies/abnormal-psychology/psychotic-duration-contrast/)   | 가르는 질문: 증상이 얼마나 오래 갔나. 1일~1개월, 1~6개월, 6개월 이상 (강조)[<sup>6</sup>]           | —     | —                                                          |
 | 025 | [망상장애](/Hongs_Blog/studies/abnormal-psychology/delusional-disorder/)                             | 망상 하나 이상이 1개월 넘게, 그 밖의 생활은 멀쩡하다. 망상에 정면으로 도전하지 않는다              | —     | [조현병 스펙트럼 사례 연습](/Hongs_Blog/studies/abnormal-psychology/schizophrenia-spectrum-practice/) |
 | 041 | [조현정동장애](/Hongs_Blog/studies/abnormal-psychology/schizoaffective-disorder/)                         | 조현병 증상과 기분 삽화가 겹치고, 기분 삽화 없이 망상·환각만 있는 기간이 2주 이상                | —     | [기분장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/mood-disorders-practice/)         |
 
@@ -104,9 +104,9 @@ permalink: "/studies/abnormal-psychology/"
 | 번호  | 개념                                                                  | 한 줄                                                                 | 개념 코드 | 연습                                                       |
 | --- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ----- | -------------------------------------------------------- |
 | 026 | [기분장애](/Hongs_Blog/studies/abnormal-psychology/mood-disorders/)                               | 오래 지속되는 기분의 문제. 아래로만 가는 우울장애와 위아래를 오가는 양극성장애                        | —     | —                                                        |
-| 027 | [주요우울장애](/Hongs_Blog/studies/abnormal-psychology/major-depressive-disorder/)                           | 우울한 기분이나 흥미 상실을 포함한 9개 중 5개 증상이 2주 이상. 조증은 없었다 (강조)[^7]             | —     | —                                                        |
+| 027 | [주요우울장애](/Hongs_Blog/studies/abnormal-psychology/major-depressive-disorder/)                           | 우울한 기분이나 흥미 상실을 포함한 9개 중 5개 증상이 2주 이상. 조증은 없었다 (강조)[<sup>7</sup>]             | —     | —                                                        |
 | 028 | [지속성 우울장애](/Hongs_Blog/studies/abnormal-psychology/persistent-depressive-disorder/)                       | 덜 심하지만 2년 넘게 이어지는 만성 우울. 치료가 더 어렵다                                  | —     | —                                                        |
-| 029 | [주요우울장애와 지속성 우울장애 비교](/Hongs_Blog/studies/abnormal-psychology/mdd-vs-pdd/) | 가르는 질문: 삽화로 오는가, 만성으로 깔려 있는가 (강조)[^8]                               | —     | —                                                        |
+| 029 | [주요우울장애와 지속성 우울장애 비교](/Hongs_Blog/studies/abnormal-psychology/mdd-vs-pdd/) | 가르는 질문: 삽화로 오는가, 만성으로 깔려 있는가 (강조)[<sup>8</sup>]                               | —     | —                                                        |
 | 030 | [파괴적 기분조절곤란 장애](/Hongs_Blog/studies/abnormal-psychology/dmdd/)             | 10세 전에 시작하는 만성 짜증과 잦은 분노 폭발(6세 미만은 진단 안 함). 아동 양극성 진단 남발을 막으려 만든 진단 | —     | —                                                        |
 | 031 | [월경전불쾌감장애](/Hongs_Blog/studies/abnormal-psychology/pmdd/)                       | 월경 전 주에 시작해 월경 시작 무렵 사라지는 불쾌감·과민·우울                                 | —     | —                                                        |
 | 032 | [우울장애의 원인](/Hongs_Blog/studies/abnormal-psychology/depression-causes/)                       | 생활사건만으로는 20%도 설명 못 한다. 신경전달물질, HPA 축, 생체리듬, 상실, 강화의 상실              | —     | —                                                        |
@@ -116,7 +116,7 @@ permalink: "/studies/abnormal-psychology/"
 | 036 | [인지행동치료](/Hongs_Blog/studies/abnormal-psychology/cbt/)                           | 생각-감정-행동의 고리를 찾아 자동적 사고를 검토하고 바꾸며, 행동부터 움직인다                        | —     | [인지행동치료 예제 사다리](/Hongs_Blog/studies/abnormal-psychology/cbt-ladder/) |
 | 037 | [제3세대 인지행동치료](/Hongs_Blog/studies/abnormal-psychology/third-wave-cbt/)                 | 생각을 바꾸기보다 생각과 거리를 두고 받아들인 뒤 가치 있는 행동을 한다. 마음챙김과 수용전념치료              | —     | —                                                        |
 | 038 | [양극성장애](/Hongs_Blog/studies/abnormal-psychology/bipolar-disorder/)                             | 조증 또는 경조증과 우울이 오간다. 제1형은 조증, 제2형은 경조증과 주요우울 삽화                      | —     | —                                                        |
-| 039 | [조증 삽화와 경조증 삽화 비교](/Hongs_Blog/studies/abnormal-psychology/mania-vs-hypomania/)       | 가르는 질문: 기능이 뚜렷하게 무너지거나 입원·정신병적 양상이 있는가. 7일 대 4일 (강조)[^9]            | —     | —                                                        |
+| 039 | [조증 삽화와 경조증 삽화 비교](/Hongs_Blog/studies/abnormal-psychology/mania-vs-hypomania/)       | 가르는 질문: 기능이 뚜렷하게 무너지거나 입원·정신병적 양상이 있는가. 7일 대 4일 (강조)[<sup>9</sup>]            | —     | —                                                        |
 | 040 | [순환성장애](/Hongs_Blog/studies/abnormal-psychology/cyclothymic-disorder/)                             | 기준에 못 미치는 가벼운 들뜸과 우울이 2년 넘게 번갈아 이어진다                                | —     | —                                                        |
 | 042 | [자살](/Hongs_Blog/studies/abnormal-psychology/suicide/)                                   | 절망감이 핵심. 소속감 좌절과 짐이 된다는 지각이 욕구를, 자살 능력이 시도를 만든다                     | —     | —                                                        |
 | 043 | [비자살적 자해](/Hongs_Blog/studies/abnormal-psychology/nssi/)                         | 죽으려는 뜻 없이 몸을 해치는 행동. 부정 정서를 줄이는 등의 기능이 있고 자살 위험을 높인다                | —     | —                                                        |
@@ -147,12 +147,12 @@ permalink: "/studies/abnormal-psychology/"
 | 047 | [선택적 함구증](/Hongs_Blog/studies/abnormal-psychology/selective-mutism/) | 말할 수 있는데도 학교처럼 말이 기대되는 곳에서 1개월 넘게 말하지 않는다 | — | — |
 | 048 | [특정공포증](/Hongs_Blog/studies/abnormal-psychology/specific-phobia/) | 특정 대상·상황에만 국한된 극심한 공포와 회피가 6개월 이상. 상황·자연환경·혈액·동물형 | — | — |
 | 049 | [모러의 2요인 이론](/Hongs_Blog/studies/abnormal-psychology/two-factor-theory/) | 공포는 고전적 조건형성으로 생기고, 회피가 주는 안도(조작적 조건형성)로 유지된다 | — | — |
-| 050 | [노출치료와 체계적 둔감법](/Hongs_Blog/studies/abnormal-psychology/exposure-therapy/) | 피하던 자극을 반복해서 마주해 회피의 고리를 끊는다. 점진적·급진적, 실제·상상 노출 (강조)[^10] | — | [노출치료 예제 사다리](/Hongs_Blog/studies/abnormal-psychology/exposure-ladder/) |
+| 050 | [노출치료와 체계적 둔감법](/Hongs_Blog/studies/abnormal-psychology/exposure-therapy/) | 피하던 자극을 반복해서 마주해 회피의 고리를 끊는다. 점진적·급진적, 실제·상상 노출 (강조)[<sup>10</sup>] | — | [노출치료 예제 사다리](/Hongs_Blog/studies/abnormal-psychology/exposure-ladder/) |
 | 051 | [사회불안장애](/Hongs_Blog/studies/abnormal-psychology/social-anxiety-disorder/) | 남에게 관찰·평가되는 상황에서 부정적 평가를 두려워해 피한다. 안전행동과 자기초점적 주의가 유지시킨다 | — | — |
 | 052 | [공황장애](/Hongs_Blog/studies/abnormal-psychology/panic-disorder/) | 예기치 못한 공황발작이 반복되고, 그 뒤 1개월 이상 또 올까 걱정하거나 행동을 바꾼다 | — | — |
 | 053 | [공황의 인지모델](/Hongs_Blog/studies/abnormal-psychology/panic-cognitive-model/) | 두근거림 같은 신체감각을 죽을 징조로 파국적으로 오해석해 공포가 불어나는 악순환 | — | — |
 | 054 | [광장공포증](/Hongs_Blog/studies/abnormal-psychology/agoraphobia/) | 공황 같은 증상이 나면 피하거나 도움받기 어려운 장소 두 가지 이상을 두려워해 피한다 | — | — |
-| 055 | [특정공포증과 광장공포증 비교](/Hongs_Blog/studies/abnormal-psychology/specific-phobia-vs-agoraphobia/) | 가르는 질문: 대상 자체가 무서운가, 거기서 증상이 나면 못 빠져나올까 봐 무서운가 (강조)[^11] | — | — |
+| 055 | [특정공포증과 광장공포증 비교](/Hongs_Blog/studies/abnormal-psychology/specific-phobia-vs-agoraphobia/) | 가르는 질문: 대상 자체가 무서운가, 거기서 증상이 나면 못 빠져나올까 봐 무서운가 (강조)[<sup>11</sup>] | — | — |
 | 056 | [범불안장애](/Hongs_Blog/studies/abnormal-psychology/generalized-anxiety-disorder/) | 여러 일에 대한 통제하기 어려운 걱정이 6개월 넘게 절반 이상의 날. 걱정이 회피의 수단이 된다 | — | [불안장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/anxiety-disorders-practice/) |
 
 자료: 슬라이드
@@ -203,10 +203,10 @@ permalink: "/studies/abnormal-psychology/"
 | 065 | [외상과 스트레스 관련 장애](/Hongs_Blog/studies/abnormal-psychology/trauma-and-stressor/) | 외부의 충격적 사건이 남긴 심리적 상처. 원인 사건을 진단기준에 적는 드문 범주 | — | — |
 | 066 | [외상 후 스트레스 장애](/Hongs_Blog/studies/abnormal-psychology/ptsd/) | 외상 뒤 침투·회피·부정적 인지와 감정·과각성이 1개월 넘게 이어진다 | — | — |
 | 067 | [외상 후 스트레스 장애의 심리적 이론](/Hongs_Blog/studies/abnormal-psychology/ptsd-theories/) | 외상 정보가 기존 신념에 통합되지 못해 침투가 이어진다. 처리 단계·가정 붕괴·공포 구조·이중 표상·인지모델 | — | — |
-| 068 | [PTSD와 복합 PTSD 비교](/Hongs_Blog/studies/abnormal-psychology/ptsd-vs-cptsd/) | 가르는 질문: 한 번의 사건인가, 오래 반복된 외상인가. 자기·관계·정서 조절까지 무너졌는가 (강조)[^12] | — | — |
+| 068 | [PTSD와 복합 PTSD 비교](/Hongs_Blog/studies/abnormal-psychology/ptsd-vs-cptsd/) | 가르는 질문: 한 번의 사건인가, 오래 반복된 외상인가. 자기·관계·정서 조절까지 무너졌는가 (강조)[<sup>12</sup>] | — | — |
 | 069 | [외상 후 성장](/Hongs_Blog/studies/abnormal-psychology/posttraumatic-growth/) | 외상 전 수준으로 돌아오는 것을 넘어 자기·관계·인생관이 긍정적으로 바뀌는 과정 | — | — |
 | 070 | [급성 스트레스 장애](/Hongs_Blog/studies/abnormal-psychology/acute-stress-disorder/) | 외상 직후 PTSD와 비슷한 증상과 해리가 3일~1개월. 1개월을 넘기면 약 절반이 PTSD로 | — | — |
-| 071 | [적응장애](/Hongs_Blog/studies/abnormal-psychology/adjustment-disorder/) | 분명한 스트레스 뒤 3개월 안에 지나친 정서·행동 증상. 다른 장애 기준에 안 맞고 스트레스 끝나면 6개월 안에 사라진다 (강조)[^13] | — | — |
+| 071 | [적응장애](/Hongs_Blog/studies/abnormal-psychology/adjustment-disorder/) | 분명한 스트레스 뒤 3개월 안에 지나친 정서·행동 증상. 다른 장애 기준에 안 맞고 스트레스 끝나면 6개월 안에 사라진다 (강조)[<sup>13</sup>] | — | — |
 | 072 | [지속성 비탄 장애](/Hongs_Blog/studies/abnormal-psychology/prolonged-grief-disorder/) | 사별 뒤 12개월(아동 6개월)이 지나도 그리움과 집착이 거의 매일, 문화가 기대하는 애도를 넘어선다 | — | — |
 | 073 | [반응성 애착장애](/Hongs_Blog/studies/abnormal-psychology/reactive-attachment-disorder/) | 극단적 양육 결핍 뒤 보호자에게도 위안을 구하지 않고 정서적으로 위축된다 | — | — |
 | 074 | [탈억제성 사회적 유대감 장애](/Hongs_Blog/studies/abnormal-psychology/dsed/) | 극단적 양육 결핍 뒤 낯선 어른에게 경계 없이 다가가고 따라간다 | — | — |
@@ -240,7 +240,7 @@ permalink: "/studies/abnormal-psychology/"
 | 083 | [질병불안장애](/Hongs_Blog/studies/abnormal-psychology/illness-anxiety-disorder/) | 증상은 없거나 가벼운데 심각한 병에 걸렸다는 생각에 6개월 넘게 사로잡힌다. 옛 이름 건강염려증 | — | — |
 | 084 | [신체증상장애와 질병불안장애 비교](/Hongs_Blog/studies/abnormal-psychology/ssd-vs-iad/) | 가르는 질문: 괴로운 신체 증상 자체가 중심인가, 증상은 가벼운데 병에 걸렸다는 불안이 중심인가 | — | — |
 | 085 | [인위성장애](/Hongs_Blog/studies/abnormal-psychology/factitious-disorder/) | 외적 보상이 없는데도 환자 역할을 하려고 증상을 일부러 만들거나 꾸민다 | — | — |
-| 086 | [인위성장애와 꾀병 비교](/Hongs_Blog/studies/abnormal-psychology/factitious-vs-malingering/) | 가르는 질문: 일부러 꾸민 목적이 환자 역할 자체인가, 돈·징집 회피 같은 외적 이득인가 (강조)[^14] | — | [신체증상 관련 장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/somatic-practice/) |
+| 086 | [인위성장애와 꾀병 비교](/Hongs_Blog/studies/abnormal-psychology/factitious-vs-malingering/) | 가르는 질문: 일부러 꾸민 목적이 환자 역할 자체인가, 돈·징집 회피 같은 외적 이득인가 (강조)[<sup>14</sup>] | — | [신체증상 관련 장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/somatic-practice/) |
 | 087 | [배설장애](/Hongs_Blog/studies/abnormal-psychology/elimination-disorders/) | 가릴 나이가 지났는데 소변(5세 이후)이나 대변(4세 이후)을 반복해서 부적절한 곳에 본다 | — | — |
 
 자료: 슬라이드
@@ -265,7 +265,7 @@ permalink: "/studies/abnormal-psychology/"
 | 089 | [신경성 식욕부진증](/Hongs_Blog/studies/abnormal-psychology/anorexia-nervosa/) | 뚜렷한 저체중인데도 살찌는 것을 극도로 두려워해 먹기를 제한한다. 정신장애 가운데 사망률이 가장 높다 | [검증](/Hongs_Blog/studies/abnormal-psychology/code/089_anorexia-nervosa_verify/) | — |
 | 090 | [신경성 폭식증](/Hongs_Blog/studies/abnormal-psychology/bulimia-nervosa/) | 통제를 잃은 폭식과 구토·설사제·굶기 같은 보상행동이 주 1회 이상 3개월 반복된다. 체중은 정상 범위 | — | — |
 | 091 | [폭식장애](/Hongs_Blog/studies/abnormal-psychology/binge-eating-disorder/) | 통제를 잃은 폭식이 주 1회 이상 3개월 반복되지만 보상행동이 없다. 섭식 절제와 부정 정서가 폭식을 부른다 | — | — |
-| 092 | [세 섭식장애 비교](/Hongs_Blog/studies/abnormal-psychology/eating-disorders-contrast/) | 가르는 질문: 체중이 뚜렷이 낮은가, 폭식이 있는가, 폭식 뒤 보상행동을 하는가 (강조)[^15] | — | — |
+| 092 | [세 섭식장애 비교](/Hongs_Blog/studies/abnormal-psychology/eating-disorders-contrast/) | 가르는 질문: 체중이 뚜렷이 낮은가, 폭식이 있는가, 폭식 뒤 보상행동을 하는가 (강조)[<sup>15</sup>] | — | — |
 | 093 | [섭식장애의 초진단적 모델](/Hongs_Blog/studies/abnormal-psychology/transdiagnostic-eating-model/) | 세 섭식장애의 공통 핵심은 체중·체형으로 자기를 평가하는 역기능적 신념. 이를 겨냥한 치료가 CBT-E | — | — |
 | 094 | [이식증](/Hongs_Blog/studies/abnormal-psychology/pica/) | 흙, 종이, 머리카락처럼 영양이 없는 것을 1개월 넘게 먹는다. 2세 이상에서 진단 | — | — |
 | 095 | [되새김장애](/Hongs_Blog/studies/abnormal-psychology/rumination-disorder/) | 먹은 음식을 1개월 넘게 반복해서 게워 내 다시 씹거나 뱉는다. 의학적 원인이 아니다 | — | — |
@@ -308,7 +308,7 @@ permalink: "/studies/abnormal-psychology/"
 | 113 | [성기-골반 통증·삽입장애](/Hongs_Blog/studies/abnormal-psychology/genito-pelvic-pain/) | 삽입 때의 통증, 통증에 대한 두려움, 골반저근의 긴장이 6개월 넘게 반복된다. 공포 반응과 비슷하다 | — | — |
 | 114 | [여성 극치감장애](/Hongs_Blog/studies/abnormal-psychology/female-orgasmic/) | 거의 모든 성행위에서 극치감이 현저히 늦거나 없거나 약해진 상태가 6개월 넘게 이어져 고통이 생긴다 | — | — |
 | 115 | [성도착장애](/Hongs_Blog/studies/abnormal-psychology/paraphilic-disorders/) | 부적절한 대상이나 방식에 대한 강렬한 성적 흥분이 6개월 넘게 이어지고, 고통·손상을 낳거나 동의하지 않은 사람에게 행동으로 옮긴다 | — | — |
-| 116 | [성도착과 성도착장애 비교](/Hongs_Blog/studies/abnormal-psychology/paraphilia-vs-disorder/) | 가르는 질문: 특이한 성적 관심이 있을 뿐인가, 본인의 고통·기능 손상이나 동의하지 않은 타인에 대한 행동이 있는가 (강조)[^16] | — | — |
+| 116 | [성도착과 성도착장애 비교](/Hongs_Blog/studies/abnormal-psychology/paraphilia-vs-disorder/) | 가르는 질문: 특이한 성적 관심이 있을 뿐인가, 본인의 고통·기능 손상이나 동의하지 않은 타인에 대한 행동이 있는가 (강조)[<sup>16</sup>] | — | — |
 | 117 | [관음장애](/Hongs_Blog/studies/abnormal-psychology/voyeuristic-disorder/) | 눈치채지 못한 사람이 옷을 벗거나 성행위하는 모습을 몰래 보는 것으로 성적 흥분. 18세 이상에서 진단 | — | — |
 | 118 | [노출장애](/Hongs_Blog/studies/abnormal-psychology/exhibitionistic-disorder/) | 눈치채지 못한 낯선 사람에게 성기를 노출하는 것으로 성적 흥분. 진단 최소 연령 기준이 없다 | — | — |
 | 119 | [마찰도착장애](/Hongs_Blog/studies/abnormal-psychology/frotteuristic-disorder/) | 동의하지 않은 사람에게 몸을 대거나 문지르는 것으로 성적 흥분. 혼잡한 곳에서 흔하다 | — | — |
@@ -341,7 +341,7 @@ permalink: "/studies/abnormal-psychology/"
 | 127 | [파괴적, 충동조절 및 품행장애](/Hongs_Blog/studies/abnormal-psychology/disruptive-impulse-conduct/) | 정서와 행동을 스스로 다스리지 못해 남의 권리를 침해하거나 사회 규범을 어기는 장애들 | — | — |
 | 128 | [적대적 반항장애](/Hongs_Blog/studies/abnormal-psychology/odd/) | 분노·과민한 기분, 어른과의 논쟁과 반항, 앙심이 6개월 넘게 이어진다. 대개 8세 이전에 시작 | — | — |
 | 129 | [간헐적 폭발장애](/Hongs_Blog/studies/abnormal-psychology/intermittent-explosive/) | 계획 없이 사소한 자극에 과도한 언어적·신체적 공격이 폭발한다. 6세 이상, 흔히 분노조절장애로 부른다 | — | — |
-| 130 | [품행장애](/Hongs_Blog/studies/abnormal-psychology/conduct-disorder/) | 남의 기본 권리를 침해하고 나이에 맞는 규범을 반복해서 어긴다. ADHD → 품행장애 → 반사회성 성격장애의 경로 (강조)[^17] | — | — |
+| 130 | [품행장애](/Hongs_Blog/studies/abnormal-psychology/conduct-disorder/) | 남의 기본 권리를 침해하고 나이에 맞는 규범을 반복해서 어긴다. ADHD → 품행장애 → 반사회성 성격장애의 경로 (강조)[<sup>17</sup>] | — | — |
 | 131 | [적대적 반항장애와 품행장애 비교](/Hongs_Blog/studies/abnormal-psychology/odd-vs-cd/) | 가르는 질문: 어른에게 따지고 반항하는 데 그치는가, 사람·동물·재산을 해치고 중대한 규칙을 어기는가 | — | — |
 | 132 | [병적 방화](/Hongs_Blog/studies/abnormal-psychology/pyromania/) | 이득이나 복수 때문이 아니라, 불에 매혹되어 긴장을 풀려고 일부러 여러 번 불을 지른다 | — | — |
 | 133 | [병적 도벽](/Hongs_Blog/studies/abnormal-psychology/kleptomania/) | 쓸모도 값어치도 없는 물건을 훔치려는 충동을 반복해서 참지 못한다. 훔치기 전 긴장, 훔친 뒤 안도 | — | [파괴적 행동과 충동조절 사례 연습](/Hongs_Blog/studies/abnormal-psychology/disruptive-practice/) |
@@ -386,7 +386,7 @@ permalink: "/studies/abnormal-psychology/"
 | 153 | [틱장애와 상동증적 운동장애 비교](/Hongs_Blog/studies/abnormal-psychology/tic-vs-stereotypic/) | 가르는 질문: 전조 충동이 있고 모습이 계속 바뀌는가, 이른 나이부터 고정된 율동적 동작인가 | — | [신경발달장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/neurodevelopmental-practice/) |
 | 154 | [신경인지장애](/Hongs_Blog/studies/abnormal-psychology/neurocognitive-disorders/) | 후천적으로 인지 기능이 떨어진 장애. 독립적 생활이 어려우면 주요, 가능하면 경도, 일시적 의식 장애면 섬망 | — | — |
 | 155 | [섬망](/Hongs_Blog/studies/abnormal-psychology/delirium/) | 몇 시간에서 며칠 사이에 생기는 주의와 의식의 장해. 하루에도 오락가락하고 원인이 풀리면 돌아온다 | — | — |
-| 156 | [섬망과 치매 비교](/Hongs_Blog/studies/abnormal-psychology/delirium-vs-dementia/) | 가르는 질문: 급성이고 의식이 흐리며 되돌아오는가, 서서히 시작해 의식은 맑은 채 진행하는가 (강조)[^18] | — | — |
+| 156 | [섬망과 치매 비교](/Hongs_Blog/studies/abnormal-psychology/delirium-vs-dementia/) | 가르는 질문: 급성이고 의식이 흐리며 되돌아오는가, 서서히 시작해 의식은 맑은 채 진행하는가 (강조)[<sup>18</sup>] | — | — |
 | 157 | [알츠하이머병](/Hongs_Blog/studies/abnormal-psychology/alzheimers-disease/) | 주요 신경인지장애의 가장 흔한 원인. 최근 기억부터 무너져 서서히 진행하고, 아밀로이드반과 신경섬유다발이 쌓인다 | — | [신경인지장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/neurocognitive-practice/) |
 
 자료: 슬라이드
@@ -407,7 +407,7 @@ permalink: "/studies/abnormal-psychology/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 158 | [성격장애](/Hongs_Blog/studies/abnormal-psychology/personality-disorders/) | 생각, 감정, 대인관계, 충동 조절의 방식이 문화의 기대에서 크게 벗어나 굳어진 장애. 세 군집, 열 가지 (강조)[^19] | — | — |
+| 158 | [성격장애](/Hongs_Blog/studies/abnormal-psychology/personality-disorders/) | 생각, 감정, 대인관계, 충동 조절의 방식이 문화의 기대에서 크게 벗어나 굳어진 장애. 세 군집, 열 가지 (강조)[<sup>19</sup>] | — | — |
 | 159 | [편집성 성격장애](/Hongs_Blog/studies/abnormal-psychology/paranoid-pd/) | 남이 자신을 속이고 해칠 것이라는 뿌리 깊은 불신과 의심. 망상 수준에는 이르지 않는다 | — | — |
 | 160 | [조현성 성격장애](/Hongs_Blog/studies/abnormal-psychology/schizoid-pd/) | 친밀한 관계를 원하지도 즐기지도 않고 감정 표현이 메마른 고립된 삶 | — | — |
 | 161 | [조현형 성격장애](/Hongs_Blog/studies/abnormal-psychology/schizotypal-pd/) | 관계에 대한 불안, 마술적 사고와 기이한 지각·행동. 조현병 스펙트럼의 가장 가벼운 끝 | — | — |
@@ -421,7 +421,7 @@ permalink: "/studies/abnormal-psychology/"
 | 169 | [의존성 성격장애](/Hongs_Blog/studies/abnormal-psychology/dependent-pd/) | 보호받으려는 과도한 욕구로 스스로 결정하지 못하고 매달린다. 치료 목표는 독립이 아니라 자율 | — | — |
 | 170 | [회피성 성격장애](/Hongs_Blog/studies/abnormal-psychology/avoidant-pd/) | 거절과 비난이 두려워 관계를 피하고 스스로 부적절하다고 느낀다. 핵심 감정은 수치심 | — | — |
 | 171 | [사회불안장애와 회피성 성격장애 비교](/Hongs_Blog/studies/abnormal-psychology/sad-vs-avoidant/) | 가르는 질문: 특정 사회적 상황의 불안인가, 자기상 전체에 배어 있는 부적절감과 관계 회피인가 | — | — |
-| 172 | [성격장애의 대안 모델](/Hongs_Blog/studies/abnormal-psychology/alternative-pd-model/) | 성격장애 = 성격 기능(자기, 대인관계)의 손상 + 병리적 성격 특질. 범주와 차원을 섞은 혼용 모델 (강조)[^20] | — | [성격장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/personality-disorders-practice/) |
+| 172 | [성격장애의 대안 모델](/Hongs_Blog/studies/abnormal-psychology/alternative-pd-model/) | 성격장애 = 성격 기능(자기, 대인관계)의 손상 + 병리적 성격 특질. 범주와 차원을 섞은 혼용 모델 (강조)[<sup>20</sup>] | — | [성격장애 사례 연습](/Hongs_Blog/studies/abnormal-psychology/personality-disorders-practice/) |
 
 출제 안내(11회 p.45 손글씨): 성격장애 전반과 대안적 모델은 객관식, 성격장애 하나를 골라 핵심 증상·원인·치료·진단기준을 쓰는 서술형. 조현형 성격장애는 2회 p.54에도 나온다.
 

@@ -96,7 +96,7 @@ def union(a, b):
 - **작은 무리를 큰 무리 밑에(크기로 합치기):** 어떤 칸의 깊이가 1 늘 때마다 그 칸이 든 무리의 크기가 두 배 이상이 된다. 크기는 n을 넘을 수 없으니 깊이는 log₂ n 이하다. 그래서 find가 $$O(\log n)$$이다[^1].
 - **경로 압축까지 쓰면:** 여러 번 연산의 평균 비용이 거의 상수(역아커만 함수 α(n), 현실의 n에서는 4 이하)가 된다[^2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/15_union-find_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/15_union-find_fig1.svg" alt="그림" width="519" height="336" loading="lazy">
 
 경로 압축 없이 union만 했을 때 가장 깊은 칸의 깊이다(가로·세로 모두 로그 눈금). union(1, 0), union(2, 1), …처럼 새 칸을 계속 첫째 인자로 넣으면, 크기를 안 볼 때는 한 줄로 늘어서 깊이가 n − 1이 된다. 크기로 합치면 같은 순서에서 깊이가 1이다. 크기가 같은 무리끼리만 짝지어 합치는 가장 나쁜 순서에서도 깊이는 $$\log_2 n$$에서 멈춘다[^s1].
 
@@ -150,6 +150,6 @@ def union(a, b):
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 15.2 "Union-find structure": 대표로 이어지는 줄, 작은 무리를 큰 무리에 잇는 방법, 연산이 O(log n)이다.
 [^2]: Cormen 외, *Introduction to Algorithms* 3판, 21.3절(순위(rank)로 합치기와 경로 압축), 21.4절(두 방법을 함께 쓰면 m번 연산이 O(m α(n)), α(n)은 실제로 쓰는 n에서 4 이하). 이 문서의 코드는 순위 대신 크기로 합친다. 크기로 합치기도 경로 압축과 함께 쓰면 같은 $$\Theta(m\,\alpha(n))$$이다(Tarjan & van Leeuwen, "Worst-case analysis of set union algorithms", *JACM* 31(2), 1984. 위키백과 "Disjoint-set data structure"가 이 논문을 근거로 "union by size or by rank"를 함께 적는다).
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [15_union-find_plot.py](/Hongs_Blog/studies/algorithms/code/15_union-find_plot/)로 그렸고, n = 2 ~ 4,096에서 크기를 안 보면 깊이 n − 1, 크기로 합치면 같은 순서에서 깊이 1, 가장 나쁜 순서에서 정확히 $$\log_2 n$$이라는 것과, 무작위 union 300묶음에서 깊이가 $$\log_2 n$$ 이하라는 것을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 예시 표의 union(4, 5) 줄 parent = [0, 0, 0, 2, 4, 4]와 find(3) 줄 parent = [0, 0, 0, 0, 4, 4]를 나무로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [15_union-find_plot.py](/Hongs_Blog/studies/algorithms/code/15_union-find_plot/)로 그렸고, n = 2 ~ 4,096에서 크기를 안 보면 깊이 n − 1, 크기로 합치면 같은 순서에서 깊이 1, 가장 나쁜 순서에서 정확히 $$\log_2 n$$이라는 것과, 무작위 union 300묶음에서 깊이가 $$\log_2 n$$ 이하라는 것을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시 표의 union(4, 5) 줄 parent = [0, 0, 0, 2, 4, 4]와 find(3) 줄 parent = [0, 0, 0, 0, 4, 4]를 나무로 그렸다.
 {% endraw %}

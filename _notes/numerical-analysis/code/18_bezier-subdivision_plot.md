@@ -3,7 +3,7 @@ layout: "note"
 title: "18_bezier-subdivision_plot.py"
 display_title: "18_bezier-subdivision_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "18"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/bezier-subdivision/"
 parent_title: "베지어 곡선의 세분화"
-description: "수치해석 · 베지어 곡선의 세분화 코드 코드"
+description: "수치해석 · 베지어 곡선의 세분화 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/18_bezier-subdivision_plot/"
 ---
 {% raw %}
-[베지어 곡선의 세분화](/Hongs_Blog/studies/numerical-analysis/bezier-subdivision/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[베지어 곡선의 세분화](/Hongs_Blog/studies/numerical-analysis/bezier-subdivision/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 베지어 곡선의 세분화 문서의 그림을 만든다: 18_bezier-subdivision_fig1.svg

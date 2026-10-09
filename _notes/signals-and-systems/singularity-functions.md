@@ -40,7 +40,7 @@ $$\frac{dy}{dt} + 2y = x$$ 시스템(임펄스 응답 $$h(t) = e^{-2t}u(t)$$)에
 
 $$\Delta = 0.25$$이면 두 응답의 모양이 눈에 띄게 다르다. $$\Delta = 0.1$$, $$0.0025$$로 줄이면 차이가 줄고, 모두 $$h(t) = e^{-2t}u(t)$$로 모인다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/27_singularity-functions_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/27_singularity-functions_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 굵은 회색 선이 $$h(t) = e^{-2t}$$다. $$\Delta = 0.25$$에서는 사각 펄스와 삼각 펄스의 응답이 서로 다르고 $$h$$와도 다르지만, $$\Delta = 0.1$$에서는 셋이 거의 겹친다[^s2].
 
@@ -98,11 +98,11 @@ $$x(t) = x(t) * \delta(t)$$
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/07.Week07_CH03_1_handout.pdf, p.6 (예제 2.16)
+[^1]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.6 (예제 2.16)
 [^2]: 같은 자료, p.1
 [^3]: 같은 자료, p.5
 [^4]: 같은 자료, p.1~4
 [^5]: 같은 자료, p.1, p.7
-[^s1]: 에이전트 보충. 충격 시험 예와 시간 상수 비교, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [27_singularity-functions_plot.py](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 두 펄스의 넓이 1, 사각 펄스 응답의 닫힌 꼴, $$\Delta = 0.25 \to 0.1 \to 0.0025$$로 갈수록 $$h$$와의 차이가 줄어듦.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 충격 시험 예와 시간 상수 비교, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [27_singularity-functions_plot.py](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 두 펄스의 넓이 1, 사각 펄스 응답의 닫힌 꼴, $$\Delta = 0.25 \to 0.1 \to 0.0025$$로 갈수록 $$h$$와의 차이가 줄어듦.
 {% endraw %}

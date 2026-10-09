@@ -3,7 +3,7 @@ layout: "note"
 title: "15_union-find_plot.py"
 display_title: "15_union-find_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "15"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/union-find/"
 parent_title: "유니온 파인드"
-description: "알고리즘 · 유니온 파인드 코드 코드"
+description: "알고리즘 · 유니온 파인드 그림 생성 코드"
 permalink: "/studies/algorithms/code/15_union-find_plot/"
 ---
 {% raw %}
-[유니온 파인드](/Hongs_Blog/studies/algorithms/union-find/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[유니온 파인드](/Hongs_Blog/studies/algorithms/union-find/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 유니온 파인드 문서의 그림을 만든다: 15_union-find_fig1.svg

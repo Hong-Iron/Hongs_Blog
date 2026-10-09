@@ -43,7 +43,7 @@ permalink: "/studies/calculus/ode-euler/"
 
 $$h$$를 10분의 1로 줄이면 오차도 약 10분의 1이 된다. $$h = \frac1n$$이면 값이 정확히 $$\left(1 + \frac1n\right)^n$$이라, [수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/)에서 본 $$e$$의 정의가 곧 오일러 방법의 극한이다. 표의 한 줄 한 줄이 아래 정의의 $$y_k$$이고, 규칙 "변화율 = 잔액"이 $$f(t, y) = y$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig1.svg" alt="그림" width="527" height="335" loading="lazy">
 
 꺾은선의 각 마디가 한 걸음이다. 마디마다 그 점의 기울기로 곧게 나아가는데, 참값 곡선은 그사이에 더 가파르게 휘어 오른다. 그래서 꺾은선이 늘 곡선 아래에 남고, 걸음이 짧을수록 덜 처진다[^s2].
 
@@ -85,7 +85,7 @@ $$\vert y_k - y(t_k)\vert  \le \frac{hM}{2K}\left(e^{K(t_k - t_0)} - 1\right).$$
 4. *$$h = 0.25$$:* 인수 $$-1.5$$. 부호를 바꾸며 커져 40걸음이면 $$10^6$$을 넘는다.
 5. *결론:* 줄어들려면 $$\vert 1 - 10h\vert  < 1$$, 곧 $$h < \frac{2}{10} = 0.2$$. 일반적으로 $$y' = -\lambda y$$($$\lambda > 0$$)에서 $$h < \frac{2}{\lambda}$$가 안정 조건이다. 빨리 변하는 성분(큰 $$\lambda$$)이 걸음 크기를 제한한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig2.svg" alt="그림" width="705" height="327" loading="lazy">
 
 파랑($$h = 0.05$$)은 참값 곡선을 따라 내려간다. 주황($$h = 0.15$$)은 0 위아래를 오가지만 폭이 줄어 0으로 간다. 초록($$h = 0.25$$)은 오갈 때마다 폭이 1.5배씩 커져 그림 밖으로 나간다[^s2].
 
@@ -164,10 +164,10 @@ flowchart LR
 
 [^1]: OpenStax, *Calculus Volume 2*, 4.1절 "Basics of Differential Equations", 4.2절 "Direction Fields and Numerical Methods"(오일러 방법).
 [^2]: Burden, Faires, *Numerical Analysis*, 5.1절(초깃값 문제의 기본 이론: 립시츠 조건과 해의 존재·유일성), 5.2절 "Euler's Method"(오차 한계), 5.4절(룽게–쿠타 방법).
-[^s1]: 에이전트 보충. 명시적 오일러와 반암시적 오일러의 에너지 실험, RK4의 오차 비율은 29_ode-euler_verify.py로 확인했다. 반암시적 오일러가 에너지를 오래 보존하는 이론은 Hairer, Lubich, Wanner, *Geometric Numerical Integration* 1장의 심플렉틱 오일러 방법에 있다. `solve_ivp`의 기본값 `method='RK45'`는 SciPy 문서에 적혀 있다.
-[^n1]: 2-2학기/수치해석/1.수업자료/18.na18_diff_eq.pdf, p.2
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 명시적 오일러와 반암시적 오일러의 에너지 실험, RK4의 오차 비율은 29_ode-euler_verify.py로 확인했다. 반암시적 오일러가 에너지를 오래 보존하는 이론은 Hairer, Lubich, Wanner, *Geometric Numerical Integration* 1장의 심플렉틱 오일러 방법에 있다. `solve_ivp`의 기본값 `method='RK45'`는 SciPy 문서에 적혀 있다.
+[^n1]: 수치해석 18회 강의 자료 「na18_diff_eq」, p.2
 [^n2]: 같은 자료, p.3
-[^sn1]: 에이전트 보충. 참 곡선보다 위에 놓이는 이유와 카드는 원본에 없다. 29_ode-euler_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [29_ode-euler_plot.py](/Hongs_Blog/studies/calculus/code/29_ode-euler_plot/)로 그렸고, 표의 값 2.25, 2.5937, 2.7048, 세 걸음 크기의 인수 0.5, $$-0.5$$, $$-1.5$$, $$h = 0.25$$로 40걸음이면 $$10^6$$을 넘는 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 활용 절의 게임과 물리 시뮬레이션 항목($$x' = v$$, $$v' = -x$$와 두 갱신 순서)을 근거로 그렸다.
+[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 참 곡선보다 위에 놓이는 이유와 카드는 원본에 없다. 29_ode-euler_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [29_ode-euler_plot.py](/Hongs_Blog/studies/calculus/code/29_ode-euler_plot/)로 그렸고, 표의 값 2.25, 2.5937, 2.7048, 세 걸음 크기의 인수 0.5, $$-0.5$$, $$-1.5$$, $$h = 0.25$$로 40걸음이면 $$10^6$$을 넘는 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 활용 절의 게임과 물리 시뮬레이션 항목($$x' = v$$, $$v' = -x$$와 두 갱신 순서)을 근거로 그렸다.
 {% endraw %}

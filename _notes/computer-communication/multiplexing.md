@@ -155,15 +155,15 @@ flowchart LR
 
 </details>
 
-[^1]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 55~60행
-[^2]: 4-1학기/pasted_images/Pasted image 20260924203902.png — 슬라이드 "Multiplexing" (N inputs, MUX, 1 link / N channels, DEMUX, N outputs)
-[^3]: 4-1학기/pasted_images/Pasted image 20260924203046.png — 슬라이드 "비용 효율적인 자원 공유 (Resource Sharing)", 1장. 기본 개념: 요구 사항 2
-[^4]: 4-1학기/pasted_images/Pasted image 20260924204837.png — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
-[^5]: 4-1학기/pasted_images/Pasted image 20260924205725.png — 슬라이드 "(Multi-Channel) Splitting" (1 inputs, Split, N channels, Merge, 1 outputs)
-[^6]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 68~70행
-[^7]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 73~74행
-[^8]: 4-1학기/pasted_images/Pasted image 20260924204450.png — 슬라이드 "시분할 다중화", 동기식 시분할 다중화 그림
-[^s1]: 에이전트 보충. 방식별 비교표는 슬라이드와 필기의 내용을 표로 모은 것이다. 전화망과 FM 라디오 예는 원본에 없다.
-[^s2]: 에이전트 보충. 순서 번호로 되살리는 방법은 원본에 없다. 역다중화(inverse multiplexing)라고도 하며, 이더넷 링크 묶음(IEEE 802.1AX)이나 MPTCP(RFC 8684)가 실제 사례다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "(Multi-Channel) Splitting"(1 inputs, Split, N channels, Merge, 1 outputs)을 위 MUX 그림과 같은 모양으로 옮겼다.
+[^1]: 컴퓨터 통신 1회 필기 「1주차」, 55~60행
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "Multiplexing" (N inputs, MUX, 1 link / N channels, DEMUX, N outputs)
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "비용 효율적인 자원 공유 (Resource Sharing)", 1장. 기본 개념: 요구 사항 2
+[^4]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
+[^5]: 수업 슬라이드 캡처 — 슬라이드 "(Multi-Channel) Splitting" (1 inputs, Split, N channels, Merge, 1 outputs)
+[^6]: 컴퓨터 통신 1회 필기 「1주차」, 68~70행
+[^7]: 컴퓨터 통신 1회 필기 「1주차」, 73~74행
+[^8]: 수업 슬라이드 캡처 — 슬라이드 "시분할 다중화", 동기식 시분할 다중화 그림
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 방식별 비교표는 슬라이드와 필기의 내용을 표로 모은 것이다. 전화망과 FM 라디오 예는 원본에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 순서 번호로 되살리는 방법은 원본에 없다. 역다중화(inverse multiplexing)라고도 하며, 이더넷 링크 묶음(IEEE 802.1AX)이나 MPTCP(RFC 8684)가 실제 사례다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 "(Multi-Channel) Splitting"(1 inputs, Split, N channels, Merge, 1 outputs)을 위 MUX 그림과 같은 모양으로 옮겼다.
 {% endraw %}

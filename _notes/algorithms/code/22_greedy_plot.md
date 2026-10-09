@@ -3,7 +3,7 @@ layout: "note"
 title: "22_greedy_plot.py"
 display_title: "22_greedy_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "22"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/greedy/"
 parent_title: "그리디"
-description: "알고리즘 · 그리디 코드 코드"
+description: "알고리즘 · 그리디 그림 생성 코드"
 permalink: "/studies/algorithms/code/22_greedy_plot/"
 ---
 {% raw %}
-[그리디](/Hongs_Blog/studies/algorithms/greedy/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[그리디](/Hongs_Blog/studies/algorithms/greedy/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 그리디 문서의 그림을 만든다: 22_greedy_fig1.svg

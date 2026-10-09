@@ -109,7 +109,7 @@ $$x(\tau)$$는 $$\tau > 0$$에서만 0이 아니고, $$h(t - \tau) = u(t - \tau)
 - $$2T < t < 3T$$: $$\int_{t-2T}^{T}(t - \tau)d\tau = -\frac12t^2 + Tt + \frac32T^2$$.
 - 구간 경계 $$t = T, 2T, 3T$$에서 값이 이어진다(그림 2.21). 이어지는지 확인하는 것이 계산 실수를 잡는 좋은 방법이다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig1.svg" alt="그림" width="581" height="564" loading="lazy">
 
 $$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아래의 점 세 개가 위 세 장면의 넓이다. 점선 $$t = 1, 2, 3$$에서 겹치는 모양이 바뀌어 식도 바뀐다[^s2].
 
@@ -121,7 +121,7 @@ $$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아�
 
 **사각 펄스 두 개** 높이 1, 폭 $$a$$와 $$b$$($$b > a$$)인 펄스를 컨벌루션하면 사다리꼴이 나온다[^9]. $$0 \le t < a$$에서 $$t$$, $$a \le t < b$$에서 $$a$$, $$b \le t < a + b$$에서 $$a + b - t$$, 나머지 0. 폭이 같으면($$a = b$$) 삼각형이 된다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig2.svg" alt="그림" width="506" height="276" loading="lazy">
 
 폭 1과 폭 2이면 꼭대기가 평평한 사다리꼴, 둘 다 폭 1이면 삼각형이다[^s2].
 
@@ -192,7 +192,7 @@ $$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아�
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/05.Week05_CH02_1_handout.pdf, p.40~41 (예제 2.6, 그림 2.17~2.18)
+[^1]: 신호 및 시스템 5회 강의 자료 「Week05_CH02_1_handout」, p.40~41 (예제 2.6, 그림 2.17~2.18)
 [^2]: 같은 자료, p.28~29 (그림 2.12)
 [^3]: 같은 자료, p.30~32 (그림 2.13)
 [^4]: 같은 자료, p.35~37 (그림 2.15, 2.16)
@@ -200,9 +200,9 @@ $$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아�
 [^6]: 같은 자료, p.39
 [^7]: 같은 자료, p.42~45 (예제 2.7, 그림 2.19~2.21)
 [^8]: 같은 자료, p.45~47 (예제 2.8, 그림 2.22)
-[^9]: 3-1학기/신호 및 시스템/1.수업자료/07.Week07_CH03_1_handout.pdf, p.3~4
-[^s1]: 에이전트 보충. 축전기 비유, 구간 경계 연속성으로 실수를 잡는 방법, 폭이 같으면 삼각형이라는 점, 흐림·확률 활용, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [19_convolution-integral_plot.py](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.7($$T = 1$$)의 겹친 넓이를 수치 적분해 네 구간 답과 비교, 경계 $$t = 1, 2$$에서의 연속성, 사다리꼴 값.
-[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/06.HIM_강의06_모양맞추기.pdf, p.6, p.10~11 (분산·상관·합성곱, 합성곱 정의, 비교)
+[^9]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.3~4
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 축전기 비유, 구간 경계 연속성으로 실수를 잡는 방법, 폭이 같으면 삼각형이라는 점, 흐림·확률 활용, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [19_convolution-integral_plot.py](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.7($$T = 1$$)의 겹친 넓이를 수치 적분해 네 구간 답과 비교, 경계 $$t = 1, 2$$에서의 연속성, 사다리꼴 값.
+[^h1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.6, p.10~11 (분산·상관·합성곱, 합성곱 정의, 비교)
 [^h2]: 같은 자료, p.12~13 (1-D 합성곱 예, 예2)
 {% endraw %}

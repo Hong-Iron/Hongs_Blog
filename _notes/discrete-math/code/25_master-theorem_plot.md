@@ -3,7 +3,7 @@ layout: "note"
 title: "25_master-theorem_plot.py"
 display_title: "25_master-theorem_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "25"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/master-theorem/"
 parent_title: "분할 정복 점화식과 마스터 정리"
-description: "이산수학 · 분할 정복 점화식과 마스터 정리 코드 코드"
+description: "이산수학 · 분할 정복 점화식과 마스터 정리 그림 생성 코드"
 permalink: "/studies/discrete-math/code/25_master-theorem_plot/"
 ---
 {% raw %}
-[분할 정복 점화식과 마스터 정리](/Hongs_Blog/studies/discrete-math/master-theorem/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[분할 정복 점화식과 마스터 정리](/Hongs_Blog/studies/discrete-math/master-theorem/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 분할 정복 점화식과 마스터 정리 문서의 그림을 만든다: 25_master-theorem_fig1.svg

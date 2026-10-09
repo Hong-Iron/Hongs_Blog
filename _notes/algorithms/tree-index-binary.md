@@ -163,8 +163,8 @@ $$130 = 10000010_2$$, $$200 = 11001000_2$$이다. 앞에서부터 같은 자리�
 [^2]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 9.3 "Segment tree": 칸 수를 2의 거듭제곱으로 두고, k번 칸을 tree[n + k]에, 마디 k의 부모를 ⌊k/2⌋에, 자식을 2k, 2k + 1에 둔다.
 [^3]: Python 3 표준 라이브러리 문서, "heapq — Heap queue algorithm": 0부터 세어 `heap[k] <= heap[2*k+1]`, `heap[k] <= heap[2*k+2]`이고, 1부터 세는 교과서 방식과 다르다고 밝힌다. `int.bit_length()`는 같은 문서 모음의 Built-in Types 항목에 있고, 부호와 앞의 0을 뺀 2진 자릿수를 돌려준다.
 [^4]: RFC 4632, "Classless Inter-domain Routing (CIDR): The Internet Address Assignment and Aggregation Plan"(2006): 주소 앞부분의 비트 수를 /k로 적는 묶음 표기.
-[^s1]: 에이전트 보충. 대응표에서 자식·부모 식을 뺀 나머지 행(길, 깊이, 층수, 잎 번호, 공통 조상, 마디 번호)과 '어디까지 같은가'의 반례들은 표준 정의를 2진 표현으로 읽은 것이다. 값은 모두 42_tree-index-binary_verify.py의 전수·무작위 검사와 맞는다.
-[^s2]: 에이전트 보충. 공통 조상 = 가장 긴 공통 앞부분과 비트 연산 코드 lca는 출처에 없는 내용이다. 조상 목록을 직접 따라 올라가 구한 값과 82만 쌍에서 같다(42_tree-index-binary_verify.py).
-[^s3]: 에이전트 보충. 서브넷 문제와 127·128 반례는 출처에 없는 예다. /25 묶음, 128 ~ 255 범위, /26 이상에는 두 주소가 함께 들지 않는다는 것은 파이썬 ipaddress 모듈의 계산과 맞는다(42_tree-index-binary_verify.py).
-[^s4]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '먼저 비교해 보기' 표의 13번 칸 줄(부모 13 → 6 → 3 → 1, 길 오른쪽·왼쪽·오른쪽, 자식 2i와 2i + 1)을 나무로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 대응표에서 자식·부모 식을 뺀 나머지 행(길, 깊이, 층수, 잎 번호, 공통 조상, 마디 번호)과 '어디까지 같은가'의 반례들은 표준 정의를 2진 표현으로 읽은 것이다. 값은 모두 42_tree-index-binary_verify.py의 전수·무작위 검사와 맞는다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 공통 조상 = 가장 긴 공통 앞부분과 비트 연산 코드 lca는 출처에 없는 내용이다. 조상 목록을 직접 따라 올라가 구한 값과 82만 쌍에서 같다(42_tree-index-binary_verify.py).
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 서브넷 문제와 127·128 반례는 출처에 없는 예다. /25 묶음, 128 ~ 255 범위, /26 이상에는 두 주소가 함께 들지 않는다는 것은 파이썬 ipaddress 모듈의 계산과 맞는다(42_tree-index-binary_verify.py).
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '먼저 비교해 보기' 표의 13번 칸 줄(부모 13 → 6 → 3 → 1, 길 오른쪽·왼쪽·오른쪽, 자식 2i와 2i + 1)을 나무로 그렸다.
 {% endraw %}

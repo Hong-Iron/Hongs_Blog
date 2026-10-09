@@ -3,7 +3,7 @@ layout: "note"
 title: "11_sampling-quantization_plot.py"
 display_title: "11_sampling-quantization_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "11"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/sampling-quantization/"
 parent_title: "표본화와 양자화"
-description: "신호 및 시스템 · 표본화와 양자화 코드 코드"
+description: "신호 및 시스템 · 표본화와 양자화 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/11_sampling-quantization_plot/"
 ---
 {% raw %}
-[표본화와 양자화](/Hongs_Blog/studies/signals-and-systems/sampling-quantization/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[표본화와 양자화](/Hongs_Blog/studies/signals-and-systems/sampling-quantization/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 표본화와 양자화 문서의 그림을 만든다: 11_sampling-quantization_fig1.svg, 11_sampling-quantization_fig2.svg

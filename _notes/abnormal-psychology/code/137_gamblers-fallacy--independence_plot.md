@@ -3,7 +3,7 @@ layout: "note"
 title: "137_gamblers-fallacy--independence_plot.py"
 display_title: "137_gamblers-fallacy--independence_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "137"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
@@ -11,11 +11,11 @@ course_url: "/studies/abnormal-psychology/"
 track: "심리학"
 parent_url: "/studies/abnormal-psychology/gamblers-fallacy--independence/"
 parent_title: "도박사의 오류 ↔ 독립"
-description: "이상 심리학 · 도박사의 오류 ↔ 독립 코드 코드"
+description: "이상 심리학 · 도박사의 오류 ↔ 독립 그림 생성 코드"
 permalink: "/studies/abnormal-psychology/code/137_gamblers-fallacy--independence_plot/"
 ---
 {% raw %}
-[도박사의 오류 ↔ 독립](/Hongs_Blog/studies/abnormal-psychology/gamblers-fallacy--independence/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[도박사의 오류 ↔ 독립](/Hongs_Blog/studies/abnormal-psychology/gamblers-fallacy--independence/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 도박사의 오류 ↔ 독립 문서의 그림을 만든다: 137_gamblers-fallacy--independence_fig1.svg, _fig2.svg

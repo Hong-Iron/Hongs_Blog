@@ -138,6 +138,6 @@ flowchart LR
 
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(쾨니히스베르크 다리 문제, 오일러 회로와 트레일의 필요충분조건).
 [^2]: Rosen 7판, 10장(해밀턴 경로, 디랙 정리와 오레 정리, 오일러 회로를 찾는 알고리즘). 해밀턴 사이클 문제의 NP-완전성은 Cormen et al., *Introduction to Algorithms* 3판, 34.5.3절.
-[^s1]: 에이전트 보충. 드 브루인 그래프로 유전체를 조립하는 방법은 Compeau, Pevzner, Tesler, "How to apply de Bruijn graphs to genome assembly", *Nature Biotechnology* 29 (2011)에 해설되어 있다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 다리 배치는 오일러(1736)가 다룬 쾨니히스베르크의 일곱 다리(섬 A에서 양쪽 강변으로 둘씩, 동쪽 땅으로 하나, 동쪽 땅에서 두 강변으로 하나씩)이고, 문서의 차수 5, 3, 3, 3과 맞는다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 드 브루인 그래프로 유전체를 조립하는 방법은 Compeau, Pevzner, Tesler, "How to apply de Bruijn graphs to genome assembly", *Nature Biotechnology* 29 (2011)에 해설되어 있다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 다리 배치는 오일러(1736)가 다룬 쾨니히스베르크의 일곱 다리(섬 A에서 양쪽 강변으로 둘씩, 동쪽 땅으로 하나, 동쪽 땅에서 두 강변으로 하나씩)이고, 문서의 차수 5, 3, 3, 3과 맞는다.
 {% endraw %}

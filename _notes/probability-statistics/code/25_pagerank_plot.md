@@ -3,7 +3,7 @@ layout: "note"
 title: "25_pagerank_plot.py"
 display_title: "25_pagerank_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "25"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/pagerank/"
 parent_title: "PageRank"
-description: "확률과 통계 · PageRank 코드 코드"
+description: "확률과 통계 · PageRank 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/25_pagerank_plot/"
 ---
 {% raw %}
-[PageRank](/Hongs_Blog/studies/probability-statistics/pagerank/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[PageRank](/Hongs_Blog/studies/probability-statistics/pagerank/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # PageRank 문서의 그림을 만든다: 25_pagerank_fig1.svg

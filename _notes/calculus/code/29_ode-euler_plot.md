@@ -3,7 +3,7 @@ layout: "note"
 title: "29_ode-euler_plot.py"
 display_title: "29_ode-euler_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "29"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/ode-euler/"
 parent_title: "미분방정식과 오일러 방법"
-description: "미분적분학 · 미분방정식과 오일러 방법 코드 코드"
+description: "미분적분학 · 미분방정식과 오일러 방법 그림 생성 코드"
 permalink: "/studies/calculus/code/29_ode-euler_plot/"
 ---
 {% raw %}
-[미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 미분방정식과 오일러 방법 문서의 그림을 만든다: 29_ode-euler_fig1.svg, 29_ode-euler_fig2.svg

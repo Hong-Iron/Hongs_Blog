@@ -102,5 +102,5 @@ flowchart TD
 위에서부터 질문에 하나씩 답하며 내려간다. 맨 아래 네 갈래가 '결정적 차이' 표의 네 칸이고, 맨 위 갈림길은 표 밖으로 나가는 경우다[^s1].
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules". Rosen, *Discrete Mathematics and Its Applications* 7판, 6장(중복을 허용한 순열과 조합의 표).
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '결정적 차이' 표, 판단을 돕는 두 질문, '둘 다 아닐 때'의 제약 조건을 갈림길로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '결정적 차이' 표, 판단을 돕는 두 질문, '둘 다 아닐 때'의 제약 조건을 갈림길로 그렸다.
 {% endraw %}

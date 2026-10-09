@@ -152,6 +152,6 @@ $$A$$, $$B$$가 유한할 때
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장 "Mathematical Data Types"(함수, 이항 관계, 유한 집합의 크기). Rosen, *Discrete Mathematics and Its Applications* 7판, 2장(함수, 집합의 크기).
-[^s1]: 에이전트 보충. 무손실 압축의 한계는 "길이 $$n$$ 비트 파일은 $$2^n$$개인데 길이 $$n$$ 미만 파일은 $$2^n - 1$$개"라는 셈에서 나온다. [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/)의 대표 예다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 세 상황을 학생과 좌석 2~3개로 줄여 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 무손실 압축의 한계는 "길이 $$n$$ 비트 파일은 $$2^n$$개인데 길이 $$n$$ 미만 파일은 $$2^n - 1$$개"라는 셈에서 나온다. [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/)의 대표 예다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 세 상황을 학생과 좌석 2~3개로 줄여 그렸다.
 {% endraw %}

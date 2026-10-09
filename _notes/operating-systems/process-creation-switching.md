@@ -155,13 +155,13 @@ sequenceDiagram
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/03.chap3 (Stony Brook).pdf, p.6
+[^1]: 운영체제 3회 강의 자료 「chap3 (Stony Brook)」, p.6
 [^2]: 같은 자료, p.28
 [^3]: 같은 자료, p.7~9
 [^4]: 같은 자료, p.29~30
 [^5]: 같은 자료, p.31~32
 [^6]: 같은 자료, p.33~34
-[^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 저장 버튼 예시는 원본에 없다.
-[^s2]: 에이전트 보충. 부모·자식 용어, PCB 초기화 내용, 모드 전환과 프로세스 전환의 비교, `fork()`·`exec()`, 스레드 전환이 싼 이유, 확인 문제는 Stallings, *Operating Systems: Internals and Design Principles* 6판, 3.2·3.4절을 따랐다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기"의 1~4단계를 순서도로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 저장 버튼 예시는 원본에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부모·자식 용어, PCB 초기화 내용, 모드 전환과 프로세스 전환의 비교, `fork()`·`exec()`, 스레드 전환이 싼 이유, 확인 문제는 Stallings, *Operating Systems: Internals and Design Principles* 6판, 3.2·3.4절을 따랐다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "예시로 보기"의 1~4단계를 순서도로 옮겼다.
 {% endraw %}

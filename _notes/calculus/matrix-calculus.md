@@ -39,7 +39,7 @@ $$\frac{\partial f}{\partial x_1} = 2x_1 + 2x_2, \qquad \frac{\partial f}{\parti
 
 이것을 모으면 $$\begin{pmatrix}2 & 2\\ 2 & 6\end{pmatrix}\mathbf{x} = (A + A^\top)\mathbf{x}$$다. 한 변수의 $$(ax^2)' = 2ax$$와 닮았지만, $$A$$가 대칭이 아니면 $$2A\mathbf{x}$$가 아니라 $$(A + A^\top)\mathbf{x}$$다. 성분 계산을 행렬 한 줄로 바꾼 것이 아래 규칙표의 한 줄이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/24_matrix-calculus_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/24_matrix-calculus_fig1.svg" alt="그림" width="652" height="357" loading="lazy">
 
 회색 타원은 이 $$f$$의 등고선이다. 가운데 등고선($$f = 1$$) 위의 여섯 점에서 초록 화살표 $$(A + A^\top)\mathbf{x}$$는 모두 등고선에 수직이다. [그래디언트](/Hongs_Blog/studies/calculus/gradient/)라면 그래야 한다. 주황 점선 $$2A\mathbf{x}$$는 비스듬히 기울어 있어 그래디언트가 아니다[^s1].
 
@@ -133,6 +133,6 @@ flowchart LR
 
 [^1]: Petersen, Pedersen, *The Matrix Cookbook*, 2절 "Derivatives"(일차식·이차형식·노름의 미분, 배치 관례).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 4.5절(선형 최소제곱의 기울기), 6.2.2절(시그모이드 출력과 교차 엔트로피의 결합). 공식은 24_matrix-calculus_verify.py에서 수치 미분과 맞춰 확인했다.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [24_matrix-calculus_plot.py](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. $$(A + A^\top)\mathbf{x}$$가 무작위 점 50개에서 중앙 차분과 같은 것, 여섯 점에서 등고선의 접선과 수직인 것, $$2A\mathbf{x}$$는 수직이 아닌 것을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 규칙의 근거 3번($$\mathbf{r} = A\mathbf{x} - \mathbf{b}$$로 두고 연쇄 법칙)과 규칙표의 마지막 줄 $$J_{\mathbf{h}}^\top\nabla g$$를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [24_matrix-calculus_plot.py](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. $$(A + A^\top)\mathbf{x}$$가 무작위 점 50개에서 중앙 차분과 같은 것, 여섯 점에서 등고선의 접선과 수직인 것, $$2A\mathbf{x}$$는 수직이 아닌 것을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 규칙의 근거 3번($$\mathbf{r} = A\mathbf{x} - \mathbf{b}$$로 두고 연쇄 법칙)과 규칙표의 마지막 줄 $$J_{\mathbf{h}}^\top\nabla g$$를 근거로 그렸다.
 {% endraw %}

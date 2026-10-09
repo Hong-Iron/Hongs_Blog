@@ -3,7 +3,7 @@ layout: "note"
 title: "18_binomial-theorem_plot.py"
 display_title: "18_binomial-theorem_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "18"
 course: "이산수학"
 course_slug: "discrete-math"
@@ -11,11 +11,11 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 parent_url: "/studies/discrete-math/binomial-theorem/"
 parent_title: "이항정리"
-description: "이산수학 · 이항정리 코드 코드"
+description: "이산수학 · 이항정리 그림 생성 코드"
 permalink: "/studies/discrete-math/code/18_binomial-theorem_plot/"
 ---
 {% raw %}
-[이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 이항정리 문서의 그림을 만든다: 18_binomial-theorem_fig1.svg

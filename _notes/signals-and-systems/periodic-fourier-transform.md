@@ -70,7 +70,7 @@ flowchart LR
 
 **예제 4.6 주기 사각파**[^2]. 계수 $$a_k = \frac{2\sin(k\omega_0T_1)}{k\omega_0T}$$(예제 3.5)이므로 $$X(j\omega) = \sum_k\frac{2\sin(k\omega_0T_1)}{k}\delta(\omega - k\omega_0)$$. $$T = 4T_1$$이면 $$k\omega_0T_1 = \frac{k\pi}{2}$$라 넓이는 $$\pi\,\mathrm{sinc}(\frac k2)$$: $$k = 0$$에서 $$\pi$$, $$k = \pm1$$에서 2, $$k = \pm2$$에서 0, $$k = \pm3$$에서 $$-\frac23$$(그림 4.12). 계수 막대그래프를 $$2\pi$$배 한 모양이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/39_periodic-fourier-transform_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/39_periodic-fourier-transform_fig1.svg" alt="그림" width="523" height="306" loading="lazy">
 
 화살표 길이가 임펄스의 넓이 $$\pi, 2, 0, -\frac23, \dots$$이다. 화살표 끝은 모두 펄스 하나의 변환 $$\frac{2\sin\omega T_1}{\omega}$$에 $$\omega_0$$를 곱한 점선 위에 있다[^s2].
 
@@ -127,11 +127,11 @@ $$X(j\omega) = \frac{2\pi}{T}\sum_{k=-\infty}^{\infty}\delta\left(\omega - \frac
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/14.Week14_CH04_2_handout.pdf, p.1~2
+[^1]: 신호 및 시스템 14회 강의 자료 「Week14_CH04_2_handout」, p.1~2
 [^2]: 같은 자료, p.3 (예제 4.6, 그림 4.12)
 [^3]: 같은 자료, p.4 (예제 4.7, 그림 4.13)
 [^4]: 같은 자료, p.5 (예제 4.8, 그림 4.14)
-[^s1]: 에이전트 보충. 스펙트럼 분석기 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [39_periodic-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/39_periodic-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$T_1 = 1$$, $$T = 4$$에서 넓이 $$\pi, 2, 0, -\frac23$$이 $$2\pi a_k$$와 같고, 합성식으로 사각파 값 1과 0이 되돌아옴.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 정리(14주차 자료 p.1~2), [연속 시간 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/ct-fourier-transform/)의 유도 3~5단계, [이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/)의 정의를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 스펙트럼 분석기 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [39_periodic-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/39_periodic-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$T_1 = 1$$, $$T = 4$$에서 넓이 $$\pi, 2, 0, -\frac23$$이 $$2\pi a_k$$와 같고, 합성식으로 사각파 값 1과 0이 되돌아옴.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 정리(14주차 자료 p.1~2), [연속 시간 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/ct-fourier-transform/)의 유도 3~5단계, [이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/)의 정의를 근거로 그렸다.
 {% endraw %}

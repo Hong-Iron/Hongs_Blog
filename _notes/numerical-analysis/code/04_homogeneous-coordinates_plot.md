@@ -3,7 +3,7 @@ layout: "note"
 title: "04_homogeneous-coordinates_plot.py"
 display_title: "04_homogeneous-coordinates_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "04"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/homogeneous-coordinates/"
 parent_title: "동차 좌표"
-description: "수치해석 · 동차 좌표 코드 코드"
+description: "수치해석 · 동차 좌표 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/"
 ---
 {% raw %}
-[동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 동차 좌표 문서의 그림을 만든다: 04_homogeneous-coordinates_fig1.svg

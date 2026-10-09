@@ -52,7 +52,7 @@ $$\underbrace{1}_{1} + \underbrace{\tfrac12 + \tfrac13}_{\le 1} + \underbrace{\t
 </div>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig1.svg" alt="그림" width="483" height="335" loading="lazy">
 
 굵은 회색 선 $$H_n$$이 두 끼우기 사이에 있고, 초록 점선 $$\ln n + 0.5772$$와는 거의 겹친다. 두 끼우기는 모두 $$\lg n$$의 상수배라 크기의 모양은 맞지만, 실제 값과는 꽤 떨어져 있다[^s1].
 
@@ -93,7 +93,7 @@ flowchart TD
 
 서로 다른 세 수 $$a, b, c$$를 비교로 정렬하는 과정을 갈림길로 그렸다. 잎은 순서 $$3! = 6$$가지다. 비교 2번으로는 잎이 많아야 $$2^2 = 4$$개라, 어떤 순서는 비교가 3번 든다. 2·3단계의 부등식은 이 나무의 깊이에 대한 말이다[^s2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig2.svg" alt="그림" width="497" height="321" loading="lazy">
 
 비 $$\lg n!/(n\lg n)$$은 $$n = 10^6$$에서도 약 0.93이다. $$\Theta$$는 비가 0보다 큰 일정한 범위 안에 머문다는 뜻이지, 1에 가깝다는 뜻이 아니다. 아래 끼우기의 비는 $$\frac12$$ 밑에 머물지만 $$\Theta(n\lg n)$$을 보이기에는 충분하다[^s1].
 
@@ -142,6 +142,6 @@ flowchart TD
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14장 "Sums and Asymptotics"(거듭제곱의 합, 합의 어림, 조화수, 스털링 근사). Graham·Knuth·Patashnik, *Concrete Mathematics*, 2장 "Sums"(교란법).
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [23_sums-asymptotics_plot.py](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_plot/)로 그렸고, $$n \le 10^4$$에서 조화수의 끼우기, $$H_{128}$$과 $$\ln 128 + 0.5772$$의 차이 0.005 미만, $$n = 10^6$$에서 $$\lg n!/(n\lg n) \approx 0.93$$을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예제' 1~3단계의 비교 정렬 논증을 $$n = 3$$의 비교 나무로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [23_sums-asymptotics_plot.py](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_plot/)로 그렸고, $$n \le 10^4$$에서 조화수의 끼우기, $$H_{128}$$과 $$\ln 128 + 0.5772$$의 차이 0.005 미만, $$n = 10^6$$에서 $$\lg n!/(n\lg n) \approx 0.93$$을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제' 1~3단계의 비교 정렬 논증을 $$n = 3$$의 비교 나무로 그렸다.
 {% endraw %}

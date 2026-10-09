@@ -3,7 +3,7 @@ layout: "note"
 title: "05_sorting_plot.py"
 display_title: "05_sorting_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "05"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/sorting/"
 parent_title: "정렬과 정렬 기준"
-description: "알고리즘 · 정렬과 정렬 기준 코드 코드"
+description: "알고리즘 · 정렬과 정렬 기준 그림 생성 코드"
 permalink: "/studies/algorithms/code/05_sorting_plot/"
 ---
 {% raw %}
-[정렬과 정렬 기준](/Hongs_Blog/studies/algorithms/sorting/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[정렬과 정렬 기준](/Hongs_Blog/studies/algorithms/sorting/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 정렬과 정렬 기준 문서의 그림을 만든다: 05_sorting_fig1.svg

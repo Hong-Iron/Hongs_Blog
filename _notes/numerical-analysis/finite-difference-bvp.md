@@ -45,7 +45,7 @@ $$\begin{pmatrix}2.04 & -1 & 0 & 0\\ -1 & 2.04 & -1 & 0\\ 0 & -1 & 2.04 & -1\\ 0
 
 가장 큰 오차는 0.035다. $$\Delta x = 1$$로 줄이면 0.0087로 약 4분의 1이 된다[^1][^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/37_finite-difference-bvp_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/37_finite-difference-bvp_fig1.svg" alt="그림" width="590" height="311" loading="lazy">
 
 왼쪽은 $$\Delta x = 2$$의 점들이 참값 곡선 위에 거의 그대로 놓이는 모습이다. 오른쪽은 간격을 반씩 줄일 때 가장 큰 오차가 0.035, 0.0087, 0.0022, 0.00055로 매번 약 4분의 1이 되는 것을 보인다[^s2].
 
@@ -126,11 +126,11 @@ $$\begin{pmatrix}2 + h'\Delta x^2 & -1 & & \\ -1 & 2 + h'\Delta x^2 & -1 & \\ & 
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/19.na19_diff_eq2.pdf, p.13
+[^1]: 수치해석 19회 강의 자료 「na19_diff_eq2」, p.13
 [^2]: 같은 자료, p.10
 [^3]: 같은 자료, p.11
 [^4]: 같은 자료, p.12
-[^s1]: 에이전트 보충. 참값 비교와 간격 실험, 토마스 알고리즘, 대각 우세, 오차 차수, 활용, 사격법과의 비교, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [37_finite-difference-bvp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 유한 차분 값과 참값, 가장 큰 오차가 간격을 반으로 할 때마다 약 $$\frac14$$.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 격자($$\Delta x = 2$$, 경계 40과 200)와 '정의'의 안쪽 점 식(원본 19.na19_diff_eq2.pdf p.11~13)으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 참값 비교와 간격 실험, 토마스 알고리즘, 대각 우세, 오차 차수, 활용, 사격법과의 비교, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [37_finite-difference-bvp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 유한 차분 값과 참값, 가장 큰 오차가 간격을 반으로 할 때마다 약 $$\frac14$$.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 격자($$\Delta x = 2$$, 경계 40과 200)와 '정의'의 안쪽 점 식(원본 19.na19_diff_eq2.pdf p.11~13)으로 그렸다.
 {% endraw %}

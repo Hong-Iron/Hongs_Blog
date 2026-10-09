@@ -39,7 +39,7 @@ $$f(x) = \dfrac{x^2 - 1}{x - 1}$$은 $$x = 1$$에서 $$0/0$$이라 값이 없다
 
 양쪽 어디서 다가가도 2에 가까워진다. $$x \ne 1$$이면 $$f(x) = \frac{(x-1)(x+1)}{x-1} = x + 1$$이라 그래프는 직선 $$y = x + 1$$에서 점 $$(1, 2)$$ 하나만 뚫린 모양이다. 뚫린 점의 높이 2가 극한이다. 여기서 1이 아래 정의의 $$a$$, 2가 $$L$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/01_limits_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/01_limits_fig1.svg" alt="그림" width="529" height="335" loading="lazy">
 
 빈 동그라미가 값이 없는 자리다. 주황 점($$x = 0.9$$, $$1.1$$)처럼 양쪽 어디서 다가가도 높이가 2로 모인다[^s2].
 
@@ -75,7 +75,7 @@ flowchart TD
 
 **해당하는 예:** $$\lim_{x \to 2}(x^2 + 1) = 5$$, $$\lim_{x \to 1}\frac{x^2 - 1}{x - 1} = 2$$, $$\lim_{x \to 0}\frac{\sin x}{x} = 1$$. **해당하지 않는 예:** $$\lim_{x \to 0}\frac{1}{x}$$(양쪽에서 $$+\infty$$와 $$-\infty$$로 달아남), $$\lim_{x \to 0}\sin\frac1x$$(0 근처에서 $$-1$$과 $$1$$ 사이를 끝없이 오감).
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/01_limits_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/01_limits_fig2.svg" alt="그림" width="597" height="276" loading="lazy">
 
 왼쪽은 0의 양옆에서 다가가는 높이가 $$-1$$과 $$1$$로 갈린다. 오른쪽은 0에 다가갈수록 흔들림이 더 촘촘해져서, 어느 한 높이로 모이지 않는다[^s2].
 
@@ -211,7 +211,7 @@ $$\lim_{x \to 0}\frac{\sin 3x}{x}$$를 구한다.
 
 [^1]: OpenStax, *Calculus Volume 1*, 2.2절 "The Limit of a Function", 2.3절 "The Limit Laws"(조임 정리, $$\sin x / x$$)
 [^2]: OpenStax, *Calculus Volume 1*, 2.5절 "The Precise Definition of a Limit"
-[^s1]: 에이전트 보충. 싱크 함수와 표본화 정리(휘태커-섀넌 보간)는 신호 처리의 표준 내용이다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [01_limits_plot.py](/Hongs_Blog/studies/calculus/code/01_limits_plot/)로 그렸고, 예시 표의 값($$f(0.9) = 1.9$$, $$f(1.1) = 2.1$$ 등)과 0에 아무리 가까워도 $$\sin(1/x)$$가 1과 $$-1$$을 모두 지나는 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절의 한쪽 극한 조건(두 한쪽 극한이 있고 같을 때만 극한이 있다)과 해당하지 않는 예를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 싱크 함수와 표본화 정리(휘태커-섀넌 보간)는 신호 처리의 표준 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [01_limits_plot.py](/Hongs_Blog/studies/calculus/code/01_limits_plot/)로 그렸고, 예시 표의 값($$f(0.9) = 1.9$$, $$f(1.1) = 2.1$$ 등)과 0에 아무리 가까워도 $$\sin(1/x)$$가 1과 $$-1$$을 모두 지나는 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 한쪽 극한 조건(두 한쪽 극한이 있고 같을 때만 극한이 있다)과 해당하지 않는 예를 근거로 그렸다.
 {% endraw %}

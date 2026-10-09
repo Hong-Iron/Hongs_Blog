@@ -3,7 +3,7 @@ layout: "note"
 title: "18_two-pointers_plot.py"
 display_title: "18_two-pointers_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "18"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/two-pointers/"
 parent_title: "투 포인터와 슬라이딩 윈도"
-description: "알고리즘 · 투 포인터와 슬라이딩 윈도 코드 코드"
+description: "알고리즘 · 투 포인터와 슬라이딩 윈도 그림 생성 코드"
 permalink: "/studies/algorithms/code/18_two-pointers_plot/"
 ---
 {% raw %}
-[투 포인터와 슬라이딩 윈도](/Hongs_Blog/studies/algorithms/two-pointers/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[투 포인터와 슬라이딩 윈도](/Hongs_Blog/studies/algorithms/two-pointers/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 투 포인터와 슬라이딩 윈도 문서의 그림을 만든다: 18_two-pointers_fig1.svg

@@ -103,8 +103,8 @@ flowchart LR
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260925023614.png — 슬라이드 "프로토콜 계층/개체"
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 42~44행, 55~57행
-[^s1]: 에이전트 보충. HTTP, `GET`/`200 OK`, 소켓 함수 예는 원본에 없다. HTTP 메시지 형식은 RFC 9110(2022)에, 소켓 API는 POSIX 표준에 정의되어 있다. 두 인터페이스의 구분은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절과 같다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "프로토콜 계층/개체"의 Host 1·Host 2 그림을 이 문서 '예시로 보기'의 브라우저·HTTP 장면으로 옮겨 그렸다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "프로토콜 계층/개체"
+[^2]: 컴퓨터 통신 2회 필기 「2주차」, 42~44행, 55~57행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> HTTP, `GET`/`200 OK`, 소켓 함수 예는 원본에 없다. HTTP 메시지 형식은 RFC 9110(2022)에, 소켓 API는 POSIX 표준에 정의되어 있다. 두 인터페이스의 구분은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절과 같다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 "프로토콜 계층/개체"의 Host 1·Host 2 그림을 이 문서 '예시로 보기'의 브라우저·HTTP 장면으로 옮겨 그렸다.
 {% endraw %}

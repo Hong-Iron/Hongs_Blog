@@ -59,7 +59,7 @@ $$P(a \le X \le b) = \int_a^b f(x)\,dx$$
 - **한 점의 확률:** $$P(X = a) = \int_a^a f = 0$$. 그래서 $$P(a < X < b)$$와 $$P(a \le X \le b)$$가 같다.
 - **기댓값과 분산:** 합을 적분으로 바꾼다. $$\mathbb{E}[X] = \int x f(x)\,dx$$($$\mathbb{E}[\cdot]$$은 평균(기댓값)), $$\mathbb{E}[g(X)] = \int g(x)f(x)\,dx$$(LOTUS), 분산은 이산일 때와 같은 식이다. 예시는 $$\mathbb{E}[X] = \int_0^1 2x^2dx = \frac23$$, $$\operatorname{Var}[X] = \frac12 - \frac49 = \frac{1}{18}$$이다. 기댓값이 있으려면 [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/) $$\int\vert x\vert f(x)\,dx$$가 수렴해야 한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/14_continuous-rv_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/14_continuous-rv_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽 색칠한 삼각형의 넓이 $$\frac14$$가 $$P(X \le \frac12)$$이고, 오른쪽 CDF의 $$x = \frac12$$에서의 높이와 같다. 밀도는 $$x = 1$$에서 2까지 올라가지만, CDF는 1을 넘지 않는다[^s1].
 
@@ -115,5 +115,5 @@ $$P(a \le X \le b) = \int_a^b f(x)\,dx$$
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 5.1절 "Probability density functions"(정의, CDF와의 관계, 기댓값), 8.1절 "Change of variables"(단조 변환의 밀도).
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [14_continuous-rv_plot.py](/Hongs_Blog/studies/probability-statistics/code/14_continuous-rv_plot/)로 그렸고, 그림에 쓴 값(넓이 $$\frac14$$(수치 적분)와 $$F(\frac12) = \frac14$$)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [14_continuous-rv_plot.py](/Hongs_Blog/studies/probability-statistics/code/14_continuous-rv_plot/)로 그렸고, 그림에 쓴 값(넓이 $$\frac14$$(수치 적분)와 $$F(\frac12) = \frac14$$)을 같은 코드로 확인했다.
 {% endraw %}

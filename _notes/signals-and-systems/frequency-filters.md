@@ -87,7 +87,7 @@ $$\omega = 0$$ 근처에서 $$\vert H\vert  \approx 1$$이고 $$\omega$$가 커�
 
 **시간과 주파수의 맞바꿈**[^7]. 임펄스 응답 $$h(t) = \frac{1}{RC}e^{-t/RC}u(t)$$, 계단 응답 $$s(t) = (1 - e^{-t/RC})u(t)$$. $$RC$$가 크면 차단 주파수 $$\frac{1}{RC}$$가 낮아져 높은 주파수를 더 잘 거르지만, 계단 응답이 1에 닿는 데 오래 걸린다. 빨리 반응하려면 $$RC$$가 작아야 하고, 그러면 높은 주파수가 더 많이 통과한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 $$RC = 1$$이면 $$\omega$$가 커질 때 $$\vert H\vert $$가 빨리 줄어 높은 주파수를 잘 거르지만, 계단 응답은 $$RC = 0.25$$보다 훨씬 늦게 1에 닿는다[^s2].
 
@@ -100,7 +100,7 @@ $$v_r = v_s - v_c$$이므로 $$G = 1 - H$$다. 계단 응답은 $$v_r(t) = e^{-t
 
 12주차 자료는 두 크기를 약분하지 않은 꼴 $$\frac{\sqrt{1 + (RC\omega)^2}}{1 + (RC\omega)^2}$$, $$\frac{\sqrt{(RC\omega)^4 + (RC\omega)^2}}{1 + (RC\omega)^2}$$로 적었다. 분자·분모를 $$\sqrt{1 + (RC\omega)^2}$$로 나누면 위의 꼴과 같다[^8].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig2.svg" alt="그림" width="497" height="306" loading="lazy">
 
 $$RC = 0.5$$일 때다. 저역 통과(파랑)와 고역 통과(주황)는 차단 주파수 $$\omega = 2$$에서 $$\frac{1}{\sqrt2}$$로 만나고, 이상적 필터(점선)와 달리 경계 너머에서도 0이 되지 않는다[^s2].
 
@@ -129,7 +129,7 @@ $$H(e^{j\omega}) = \frac{1}{N + M + 1}e^{j\omega(N - M)/2}\frac{\sin[\omega(M + 
 
 **단순 고역 통과** $$y[n] = \frac12(x[n] - x[n-1])$$: $$H(e^{j\omega}) = \frac12(1 - e^{-j\omega}) = je^{-j\omega/2}\sin\frac\omega2$$. $$\omega = 0$$에서 0, $$\omega = \pi$$에서 크기 1(그림 3.37)[^13].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig3.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig3.svg" alt="그림" width="534" height="306" loading="lazy">
 
 $$\omega = 0$$ 근처가 저주파, $$\pm\pi$$ 근처가 고주파다. $$a = 0.6$$, 3점 평균, 2점 평균은 가운데가 높은 저역 통과이고, $$a = -0.6$$은 양 끝이 높은 고역 통과다[^s2].
 
@@ -235,7 +235,7 @@ $$RC = 0.5$$인 RC 저역 통과에서 차단 주파수 $$\omega = \frac{1}{RC} 
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/12.Week12_CH03_4_handout.pdf, p.15, p.18 (그림 3.25)
+[^1]: 신호 및 시스템 12회 강의 자료 「Week12_CH03_4_handout」, p.15, p.18 (그림 3.25)
 [^2]: 같은 자료, p.1
 [^3]: 같은 자료, p.2
 [^4]: 같은 자료, p.19~20 (그림 3.26)
@@ -249,7 +249,7 @@ $$RC = 0.5$$인 RC 저역 통과에서 차단 주파수 $$\omega = \frac{1}{RC} 
 [^12]: 같은 자료, p.31 (그림 3.36)
 [^13]: 같은 자료, p.32 (그림 3.37)
 [^14]: 같은 자료, p.5~6 (그림 3.23)
-[^s1]: 에이전트 보충. $$-3$$dB 값, $$RC = 0.5$$ 예, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C5는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 3장은 원본에 없다. [36_frequency-filters_plot.py](/Hongs_Blog/studies/signals-and-systems/code/36_frequency-filters_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\vert H(j2)\vert  = \frac{1}{\sqrt2}$$와 위상 $$-45°$$, $$H + G = 1$$, $$\omega = \frac{10}{RC}$$에서 $$\vert H\vert  \approx 0.0995$$, 1차 재귀의 2.5와 0.625, 3점 평균의 영점 $$\frac{2\pi}{3}$$.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 종류 표, 이상적 필터, RC 회로, 이산 시간 실제 필터 절(12주차 자료 p.1, p.19~32)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$-3$$dB 값, $$RC = 0.5$$ 예, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C5는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 3장은 원본에 없다. [36_frequency-filters_plot.py](/Hongs_Blog/studies/signals-and-systems/code/36_frequency-filters_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\vert H(j2)\vert  = \frac{1}{\sqrt2}$$와 위상 $$-45°$$, $$H + G = 1$$, $$\omega = \frac{10}{RC}$$에서 $$\vert H\vert  \approx 0.0995$$, 1차 재귀의 2.5와 0.625, 3점 평균의 영점 $$\frac{2\pi}{3}$$.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 종류 표, 이상적 필터, RC 회로, 이산 시간 실제 필터 절(12주차 자료 p.1, p.19~32)을 근거로 그렸다.
 {% endraw %}

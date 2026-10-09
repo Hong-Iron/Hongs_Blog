@@ -67,11 +67,11 @@ permalink: "/studies/abnormal-psychology/gamblers-fallacy--independence/"
 - **손실 만회 전략의 반박.** 잃을 때마다 판돈을 두 배로 올리는 마틴게일 전략은 "언젠가 한 번 이기면 본전"이라는 믿음이다. 자금 100에서 1부터 걸어 최대 200판을 하는 모의실험에서 약 69%가 걸 돈이 모자라 멈췄고, 평균 손익은 약 −10이었다. 판마다 기댓값이 음수이므로 판돈 전략은 부호를 바꾸지 못한다.
 - **큰 수의 법칙의 바른 이해.** 뒷면 5개가 먼저 나온 뒤 계속 던지면 앞면 비율은 1/2에 가까워지지만, 앞면과 뒷면 개수 차이의 기댓값은 −5 그대로다. 비율이 1/2로 가는 것은 차이가 메워져서가 아니라, 늘어나는 전체 횟수에 묻혀서다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/137_gamblers-fallacy--independence_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/137_gamblers-fallacy--independence_fig1.svg" alt="그림" width="610" height="276" loading="lazy">
 
 다섯 색은 각각 따로 던진 기록이다. 왼쪽 비율은 모두 1/2로 모이지만, 오른쪽 차이는 −5로 돌아오지 않고 제멋대로 떠돈다. 회색 점선이 기댓값이다[^s2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/137_gamblers-fallacy--independence_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/abnormal-psychology/137_gamblers-fallacy--independence_fig2.svg" alt="그림" width="527" height="326" loading="lazy">
 
 다섯 색은 각각 빨강에 1단위씩 2,000판 건 기록이다. 끝까지 앞서는 기록도 있지만, 기댓값은 판마다 1/37씩 내려가는 회색 점선이다[^s2].
 
@@ -114,9 +114,9 @@ permalink: "/studies/abnormal-psychology/gamblers-fallacy--independence/"
 
 ## 출처
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.71 (인지적 왜곡: 통제력의 착각, 자기편의적 오류, 도박사의 오류, 회상의 편파성, 미신적 사고)
+[^1]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.71 (인지적 왜곡: 통제력의 착각, 자기편의적 오류, 도박사의 오류, 회상의 편파성, 미신적 사고)
 [^2]: [독립](/Hongs_Blog/studies/probability-statistics/independence/)의 정의 $$P(A \cap B) = P(A)P(B)$$, 곧 $$P(A \mid B) = P(A)$$
-[^3]: 4-1학기/이상 심리학/1.수업자료/10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf, p.75 (Petry 등, 2006의 CBT: 도박과 관련된 비합리적 인지 수정)
-[^s1]: 에이전트 보충. 룰렛 사례, 기대 손실, 마틴게일 모의실험, 전이 문제는 브리지를 위해 만든 예이고 수치는 검증 코드로 확인했다. 룰렛 칸의 색 배정은 계산을 위한 단순화다(실제 룰렛의 빨강·검정 번호 배열과 무관하게 비율만 같다).
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [137_gamblers-fallacy--independence_plot.py](/Hongs_Blog/studies/abnormal-psychology/code/137_gamblers-fallacy--independence_plot/)로 그렸고, 그림에 쓴 값(뒷면 5개를 먼저 안은 뒤 차이의 기댓값 −5와 비율의 기댓값 $$\frac{n/2}{n+5}$$, 빨강 베팅 한 판의 기댓값 $$-\frac{1}{37}$$(200만 판 모의실험), 100판 기대 손실 27,027원. 색 선 다섯 개는 모의실험 한 번의 예이며 통계 수치가 아니다)을 같은 코드로 확인했다.
+[^3]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.75 (Petry 등, 2006의 CBT: 도박과 관련된 비합리적 인지 수정)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 룰렛 사례, 기대 손실, 마틴게일 모의실험, 전이 문제는 브리지를 위해 만든 예이고 수치는 검증 코드로 확인했다. 룰렛 칸의 색 배정은 계산을 위한 단순화다(실제 룰렛의 빨강·검정 번호 배열과 무관하게 비율만 같다).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [137_gamblers-fallacy--independence_plot.py](/Hongs_Blog/studies/abnormal-psychology/code/137_gamblers-fallacy--independence_plot/)로 그렸고, 그림에 쓴 값(뒷면 5개를 먼저 안은 뒤 차이의 기댓값 −5와 비율의 기댓값 $$\frac{n/2}{n+5}$$, 빨강 베팅 한 판의 기댓값 $$-\frac{1}{37}$$(200만 판 모의실험), 100판 기대 손실 27,027원. 색 선 다섯 개는 모의실험 한 번의 예이며 통계 수치가 아니다)을 같은 코드로 확인했다.
 {% endraw %}

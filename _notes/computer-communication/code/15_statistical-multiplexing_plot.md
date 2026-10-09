@@ -3,7 +3,7 @@ layout: "note"
 title: "15_statistical-multiplexing_plot.py"
 display_title: "15_statistical-multiplexing_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "15"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/statistical-multiplexing/"
 parent_title: "통계적 다중화"
-description: "컴퓨터 통신 · 통계적 다중화 코드 코드"
+description: "컴퓨터 통신 · 통계적 다중화 그림 생성 코드"
 permalink: "/studies/computer-communication/code/15_statistical-multiplexing_plot/"
 ---
 {% raw %}
-[통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 통계적 다중화 문서의 그림을 만든다: 15_statistical-multiplexing_fig1.svg, 15_statistical-multiplexing_fig2.svg

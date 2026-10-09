@@ -66,7 +66,7 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 </details>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig1.svg" alt="그림" width="520" height="342" loading="lazy">
 
 시도 수 $$n = 10$$은 그대로 두고 $$p$$만 바꾼 그림이다. 봉우리는 평균 $$np$$ 근처에 서고, $$p$$가 0.5에서 멀어질수록 한쪽 끝으로 쏠려 좌우가 비대칭이 된다[^s2].
 
@@ -81,7 +81,7 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 3. *넘침:* 링크는 10명까지 감당하므로 넘칠 확률은 $$P(X \ge 11) = \sum_{k=11}^{35}\binom{35}{k}0.1^k 0.9^{35-k} \approx 0.00042$$.
 4. *결론:* 고정 할당이면 10명만 받는데, 넘칠 확률 0.04%를 받아들이면 35명을 받는다. [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)가 회선 교환보다 많은 사용자를 받는 수학적 근거다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig2.svg" alt="그림" width="577" height="335" loading="lazy">
 
 막대 대부분이 0~8명에 몰려 있다. 링크 한계(점선) 오른쪽의 막대는 너무 작아 거의 보이지 않는다[^s2].
 
@@ -130,6 +130,6 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.3절 "Bernoulli and Binomial", 3.4절 "Hypergeometric", 4.6절 "Variance"(이항분포의 분산).
-[^s1]: 에이전트 보충. 링크 용량과 사용자 수는 컴퓨터 통신 문서의 예제와 같은 값이다. 넘침 확률은 10_binomial_verify.py로 다시 계산했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [10_binomial_plot.py](/Hongs_Blog/studies/probability-statistics/code/10_binomial_plot/)로 그렸고, 그림에 쓴 값($$P(X = 0) = 0.349$$, $$P(X = 1) = 0.387$$, $$P(X \ge 11) = 0.000424$$)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 링크 용량과 사용자 수는 컴퓨터 통신 문서의 예제와 같은 값이다. 넘침 확률은 10_binomial_verify.py로 다시 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [10_binomial_plot.py](/Hongs_Blog/studies/probability-statistics/code/10_binomial_plot/)로 그렸고, 그림에 쓴 값($$P(X = 0) = 0.349$$, $$P(X = 1) = 0.387$$, $$P(X \ge 11) = 0.000424$$)을 같은 코드로 확인했다.
 {% endraw %}

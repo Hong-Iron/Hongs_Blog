@@ -53,7 +53,7 @@ $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
 
 그래프로는 두 끝점을 잇는 할선과 평행한 접선이 구간 안 어딘가에 있다는 뜻이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/08_mean-value-theorem_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/08_mean-value-theorem_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽에서 $$x^2$$의 $$c = 1$$ 접선(주황 점선)은 할선(파랑)과 기울기가 2로 같다. 오른쪽 $$\vert x\vert $$는 할선이 수평인데, 그래프의 기울기는 꺾인 점 양쪽에서 $$-1$$과 1뿐이라 수평인 접선이 없다(아래 가정의 필요성)[^s2].
 
@@ -147,7 +147,7 @@ $$f(x) = x^2$$을 $$[0, 2]$$에서 볼 때 정리의 $$c$$를 구한다.
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.4절 "The Mean Value Theorem"(롤의 정리, 평균값 정리, 따름정리)
-[^s1]: 에이전트 보충. 립시츠 연속성은 학습의 안정성과 적대적 견고성 연구에서 쓰는 조건이다. 기울기 자르기는 순환 신경망 학습의 표준 기법이다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [08_mean-value-theorem_plot.py](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_plot/)로 그렸고, $$x^2$$의 평균 변화율 2와 $$c = 1$$, $$\vert x\vert $$의 평균 변화율 0과 도함수 $$\pm 1$$을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서의 증명과 따름정리, [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)의 증명(코시 평균값 정리를 롤의 정리로 얻는다), [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) 2부의 증명을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 립시츠 연속성은 학습의 안정성과 적대적 견고성 연구에서 쓰는 조건이다. 기울기 자르기는 순환 신경망 학습의 표준 기법이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [08_mean-value-theorem_plot.py](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_plot/)로 그렸고, $$x^2$$의 평균 변화율 2와 $$c = 1$$, $$\vert x\vert $$의 평균 변화율 0과 도함수 $$\pm 1$$을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 증명과 따름정리, [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)의 증명(코시 평균값 정리를 롤의 정리로 얻는다), [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) 2부의 증명을 근거로 그렸다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "22_boosting-adaboost_plot.py"
 display_title: "22_boosting-adaboost_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "22"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/boosting-adaboost/"
 parent_title: "부스팅과 AdaBoost"
-description: "데이터 과학 · 부스팅과 AdaBoost 코드 코드"
+description: "데이터 과학 · 부스팅과 AdaBoost 그림 생성 코드"
 permalink: "/studies/data-science/code/22_boosting-adaboost_plot/"
 ---
 {% raw %}
-[부스팅과 AdaBoost](/Hongs_Blog/studies/data-science/boosting-adaboost/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[부스팅과 AdaBoost](/Hongs_Blog/studies/data-science/boosting-adaboost/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 부스팅과 AdaBoost 문서의 그림을 만든다: 22_boosting-adaboost_fig1.svg

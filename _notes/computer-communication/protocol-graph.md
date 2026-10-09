@@ -94,8 +94,8 @@ $$v$$로 들어오는 간선이 둘 이상이면 $$v$$는 하위 프로토콜을
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260925024434.png — 슬라이드 "(전체) 프로토콜 정의: 프로토콜 그래프". 원문의 빨간 글씨: 그래프, 스택, 간접적으로
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 59~66행
-[^3]: 4-1학기/pasted_images/Pasted image 20260925025456.png — RRP·HHP 그림 위의 빨간 점선과 초록 화살표. 표시가 없는 원본 그림은 4-1학기/pasted_images/Pasted image 20260925025309.png
-[^s1]: 에이전트 보충. RRP, MSP, HHP의 풀이와 인터넷의 프로토콜 번호·포트 번호 예는 원본에 없다. 슬라이드는 약자만 쓴다. 풀이와 인터넷의 demux key는 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "(전체) 프로토콜 정의: 프로토콜 그래프". 원문의 빨간 글씨: 그래프, 스택, 간접적으로
+[^2]: 컴퓨터 통신 2회 필기 「2주차」, 59~66행
+[^3]: 수업 슬라이드 캡처 — RRP·HHP 그림 위의 빨간 점선과 초록 화살표. 표시가 없는 원본 그림은 수업 슬라이드 캡처
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> RRP, MSP, HHP의 풀이와 인터넷의 프로토콜 번호·포트 번호 예는 원본에 없다. 슬라이드는 약자만 쓴다. 풀이와 인터넷의 demux key는 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다.
 {% endraw %}

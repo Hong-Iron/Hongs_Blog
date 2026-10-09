@@ -102,7 +102,7 @@ flowchart LR
 | ReLU | $$\max(0, o)$$ | $$[0, \infty)$$ | 하한 0만 반영 |
 | 시그모이드 | $$1 / (1 + e^{-o})$$ | $$(0, 1)$$ | 부드럽게 포화하는 발화율 곡선 |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/07_neuron-computational-model_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/07_neuron-computational-model_fig1.svg" alt="그림" width="612" height="189" loading="lazy">
 
 네 함수 모두 합이 0보다 작으면 출력을 낮게 누른다. 위쪽은 서로 다르다. 계단·자르기·시그모이드는 1에서 멈추고, ReLU만 끝없이 올라간다[^s5].
 
@@ -185,13 +185,13 @@ $$k$$층이면 같은 논리를 $$k - 1$$번 되풀이한다(수학적 귀납법
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/02.HIM_강의02_사람의지각.pdf, p.11 (연산 모형)
+[^1]: 휴먼 인터페이스 미디어 2회 강의 자료 「HIM_강의02_사람의지각」, p.11 (연산 모형)
 [^2]: 사용자 전달(2026-09-25): 교수님이 강의에서 퍼셉트론 등의 모델을 함께 설명하며 이 내용을 이야기했다. 슬라이드에는 "퍼셉트론"이라는 말이 없다.
-[^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar 7주차
-[^s1]: 에이전트 보충. 예시의 가중치와 입력값은 설명용 가상 수치다. 생물과 식의 대응표는 원본에 없는 해석이며, 실제 뉴런은 시간에 따라 변하는 스파이크 열과 비선형 수상돌기를 가지므로 이 대응은 발화율 수준의 근사다.
-[^s2]: 에이전트 보충. 활성 함수 표와 "층 쌓기" 논의는 원본 밖이다. 증명은 선형대수의 분배·결합법칙만 쓴다.
-[^s3]: 에이전트 보충. 템플릿·상관·합성곱 해석은 코시-슈바르츠 부등식에서 나온다. 선형-비선형(LN) 모형은 망막 신경절 세포 같은 뉴런의 반응을 설명하는 계산 신경과학의 표준 모형이다.
-[^s4]: 에이전트 보충. 기호주의와 연결주의의 구분은 인공지능 교과서(예: Russell & Norvig, *Artificial Intelligence: A Modern Approach*)의 표준 구분이다.
-[^s5]: 에이전트 보충. 그림 1장은 원본에 없다. [07_neuron-computational-model_plot.py](/Hongs_Blog/studies/human-interface-media/code/07_neuron-computational-model_plot/)로 그렸고, 그림에 쓴 값(계단 출력 $$\{0, 1\}$$, 자르기 $$[0, 1]$$, ReLU 하한 0, 시그모이드$$(0) = 0.5$$)을 같은 코드로 확인했다.
-[^s6]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의의 성분 식 $$o'_r = a\bigl(\sum_d A_{rd}x_d + b_r\bigr)$$와 강의 2 p.11의 연산 모형을 근거로 그렸다.
+[^3]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 7주차
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시의 가중치와 입력값은 설명용 가상 수치다. 생물과 식의 대응표는 원본에 없는 해석이며, 실제 뉴런은 시간에 따라 변하는 스파이크 열과 비선형 수상돌기를 가지므로 이 대응은 발화율 수준의 근사다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 활성 함수 표와 "층 쌓기" 논의는 원본 밖이다. 증명은 선형대수의 분배·결합법칙만 쓴다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 템플릿·상관·합성곱 해석은 코시-슈바르츠 부등식에서 나온다. 선형-비선형(LN) 모형은 망막 신경절 세포 같은 뉴런의 반응을 설명하는 계산 신경과학의 표준 모형이다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기호주의와 연결주의의 구분은 인공지능 교과서(예: Russell & Norvig, *Artificial Intelligence: A Modern Approach*)의 표준 구분이다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [07_neuron-computational-model_plot.py](/Hongs_Blog/studies/human-interface-media/code/07_neuron-computational-model_plot/)로 그렸고, 그림에 쓴 값(계단 출력 $$\{0, 1\}$$, 자르기 $$[0, 1]$$, ReLU 하한 0, 시그모이드$$(0) = 0.5$$)을 같은 코드로 확인했다.
+[^s6]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의의 성분 식 $$o'_r = a\bigl(\sum_d A_{rd}x_d + b_r\bigr)$$와 강의 2 p.11의 연산 모형을 근거로 그렸다.
 {% endraw %}

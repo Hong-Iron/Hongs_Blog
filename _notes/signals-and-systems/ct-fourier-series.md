@@ -45,7 +45,7 @@ $$x(t) = 1 + \tfrac12\cos2\pi t + \cos4\pi t + \tfrac23\cos6\pi t$$
 
 그림 3.4는 상수 1에 $$\frac12\cos2\pi t$$, $$\cos4\pi t$$, $$\frac23\cos6\pi t$$를 차례로 더해 가며 모양이 쌓이는 것을 보여 준다. 반대로 이 모양만 받았을 때 1, $$\frac14$$, $$\frac12$$, $$\frac13$$을 되찾는 방법이 분석식이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/30_ct-fourier-series_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/30_ct-fourier-series_fig1.svg" alt="그림" width="563" height="487" loading="lazy">
 
 칸마다 점선이 앞 칸까지의 합, 색 선이 한 항을 더 더한 합이다. 항을 더할수록 $$t = 0, \pm1$$에 뾰족한 봉우리가 생긴다[^s2].
 
@@ -155,7 +155,7 @@ $$x(t) = a_0 + 2\sum_{k=1}^{\infty}\mathrm{Re}\{a_ke^{jk\omega_0t}\} = a_0 + 2\s
 
 **포락선.** $$Ta_k = \frac{2\sin(\omega T_1)}{\omega}\Big\vert _{\omega = k\omega_0}$$이다. 즉 $$Ta_k$$는 매끄러운 곡선 $$\frac{2\sin\omega T_1}{\omega}$$(포락선)을 $$\omega_0$$ 간격으로 찍은 값이다. $$T$$를 키우면($$4T_1 \to 8T_1 \to 16T_1$$) 같은 곡선을 더 촘촘히 찍는다(그림 3.7)[^11]. 이 곡선은 정규화된 sinc 함수 $$\mathrm{sinc}\,x = \frac{\sin\pi x}{\pi x}$$ 꼴이다. 4장의 푸리에 변환이 이 "촘촘해지는 극한"에서 나온다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/30_ct-fourier-series_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/30_ct-fourier-series_fig2.svg" alt="그림" width="563" height="448" loading="lazy">
 
 $$T_1 = 1$$일 때다. 세 줄의 막대는 모두 같은 점선 곡선 위에 있고, $$T$$가 두 배가 될 때마다 막대 간격 $$\omega_0$$가 절반으로 좁아진다[^s2].
 
@@ -224,7 +224,7 @@ $$T_1 = 1$$일 때다. 세 줄의 막대는 모두 같은 점선 곡선 위에 �
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/07.Week07_CH03_1_handout.pdf, p.28~29 (예제 3.2, 그림 3.4)
+[^1]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.28~29 (예제 3.2, 그림 3.4)
 [^2]: 같은 자료, p.26, p.28
 [^3]: 같은 자료, p.36
 [^4]: 같은 자료, p.35~36
@@ -235,6 +235,6 @@ $$T_1 = 1$$일 때다. 세 줄의 막대는 모두 같은 점선 곡선 위에 �
 [^9]: 같은 자료, p.40~41 (예제 3.4, 그림 3.5)
 [^10]: 같은 자료, p.42~44 (예제 3.5, 그림 3.6)
 [^11]: 같은 자료, p.45 (그림 3.7)
-[^s1]: 에이전트 보충. 음색, 고조파 분석, JPEG·MP3 예, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [30_ct-fourier-series_plot.py](/Hongs_Blog/studies/signals-and-systems/code/30_ct-fourier-series_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 3.2의 $$x(0) = 1 + \frac12 + 1 + \frac23$$, 예제 3.5($$T = 4T_1$$)의 $$a_0 = \frac12$$, $$a_1 = \frac1\pi$$, $$a_3 = -\frac{1}{3\pi}$$를 분석식 수치 적분과 비교, $$T = 8T_1$$의 $$a_1 = \frac{\sqrt2}{2\pi}$$.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 음색, 고조파 분석, JPEG·MP3 예, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [30_ct-fourier-series_plot.py](/Hongs_Blog/studies/signals-and-systems/code/30_ct-fourier-series_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 3.2의 $$x(0) = 1 + \frac12 + 1 + \frac23$$, 예제 3.5($$T = 4T_1$$)의 $$a_0 = \frac12$$, $$a_1 = \frac1\pi$$, $$a_3 = -\frac{1}{3\pi}$$를 분석식 수치 적분과 비교, $$T = 8T_1$$의 $$a_1 = \frac{\sqrt2}{2\pi}$$.
 {% endraw %}

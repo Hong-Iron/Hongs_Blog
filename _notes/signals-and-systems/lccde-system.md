@@ -104,7 +104,7 @@ flowchart TD
 - 임펄스 응답 $$\dot h + ah = b\delta$$, $$h(0) = 0$$: $$t > 0$$에서는 오른쪽이 0이라 $$h = ce^{-at}u(t)$$. 이것을 식에 넣으면 $$-ace^{-at}u + ce^{-at}\delta + ace^{-at}u = ce^{-at}\delta(t) = c\delta(t)$$ (표본화 성질 $$f(t)\delta(t) = f(0)\delta(t)$$). 오른쪽 $$b\delta$$와 맞추면 $$c = b$$.
 - 결과 $$h(t) = be^{-at}u(t)$$. $$h(0^-) = 0$$이던 값이 임펄스 때문에 $$h(0^+) = b$$로 뛴다. 계단 응답을 미분한 것과 같다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/23_lccde-system_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/23_lccde-system_fig1.svg" alt="그림" width="502" height="306" loading="lazy">
 
 예시의 자동차 식 $$\frac{dy}{dt} + 2y = x$$($$a = 2$$, $$b = 1$$)에 계단을 넣은 경우다. 입력을 닮은 강제 응답 $$\frac12$$과 저절로 사라지는 자연 응답 $$-\frac12e^{-2t}$$를 더하면, $$t = 0$$에서 0으로 출발하는 계단 응답이 된다[^s2].
 
@@ -195,7 +195,7 @@ flowchart TD
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/06.Week06_CH02_2_handout.pdf, p.21
+[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.21
 [^2]: 같은 자료, p.26
 [^3]: 같은 자료, p.22
 [^4]: 같은 자료, p.25~26
@@ -203,7 +203,7 @@ flowchart TD
 [^6]: 같은 자료, p.23~24 (예제 2.14)
 [^7]: 같은 자료, p.36~37
 [^8]: 같은 자료, p.20
-[^s1]: 에이전트 보충. 오해 항목의 반례와 확인 문제는 원본에 없다. 해는 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [23_lccde-system_plot.py](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$y = \frac12(1 - e^{-2t})$$가 식과 $$y(0) = 0$$을 만족하고 오일러 방법과 같음.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 차수별 설명, 해의 구조, 초기 휴지 조건 절(6주차 자료 p.22, p.25~26)과 요약을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오해 항목의 반례와 확인 문제는 원본에 없다. 해는 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [23_lccde-system_plot.py](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$y = \frac12(1 - e^{-2t})$$가 식과 $$y(0) = 0$$을 만족하고 오일러 방법과 같음.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 차수별 설명, 해의 구조, 초기 휴지 조건 절(6주차 자료 p.22, p.25~26)과 요약을 근거로 그렸다.
 {% endraw %}

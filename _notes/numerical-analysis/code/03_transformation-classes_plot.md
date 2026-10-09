@@ -3,7 +3,7 @@ layout: "note"
 title: "03_transformation-classes_plot.py"
 display_title: "03_transformation-classes_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "03"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/transformation-classes/"
 parent_title: "기하 변환의 종류"
-description: "수치해석 · 기하 변환의 종류 코드 코드"
+description: "수치해석 · 기하 변환의 종류 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/03_transformation-classes_plot/"
 ---
 {% raw %}
-[기하 변환의 종류](/Hongs_Blog/studies/numerical-analysis/transformation-classes/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[기하 변환의 종류](/Hongs_Blog/studies/numerical-analysis/transformation-classes/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 기하 변환의 종류 문서의 그림을 만든다: 03_transformation-classes_fig1.svg

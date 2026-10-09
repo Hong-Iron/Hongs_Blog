@@ -3,7 +3,7 @@ layout: "note"
 title: "11_riemann-integral_plot.py"
 display_title: "11_riemann-integral_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "11"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/riemann-integral/"
 parent_title: "정적분과 리만 합"
-description: "미분적분학 · 정적분과 리만 합 코드 코드"
+description: "미분적분학 · 정적분과 리만 합 그림 생성 코드"
 permalink: "/studies/calculus/code/11_riemann-integral_plot/"
 ---
 {% raw %}
-[정적분과 리만 합](/Hongs_Blog/studies/calculus/riemann-integral/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[정적분과 리만 합](/Hongs_Blog/studies/calculus/riemann-integral/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 정적분과 리만 합 문서의 그림을 만든다: 11_riemann-integral_fig1.svg, 11_riemann-integral_fig2.svg

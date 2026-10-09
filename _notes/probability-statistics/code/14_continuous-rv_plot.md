@@ -3,7 +3,7 @@ layout: "note"
 title: "14_continuous-rv_plot.py"
 display_title: "14_continuous-rv_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "14"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/continuous-rv/"
 parent_title: "연속 확률변수와 확률밀도"
-description: "확률과 통계 · 연속 확률변수와 확률밀도 코드 코드"
+description: "확률과 통계 · 연속 확률변수와 확률밀도 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/14_continuous-rv_plot/"
 ---
 {% raw %}
-[연속 확률변수와 확률밀도](/Hongs_Blog/studies/probability-statistics/continuous-rv/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[연속 확률변수와 확률밀도](/Hongs_Blog/studies/probability-statistics/continuous-rv/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 연속 확률변수와 확률밀도 문서의 그림을 만든다: 14_continuous-rv_fig1.svg

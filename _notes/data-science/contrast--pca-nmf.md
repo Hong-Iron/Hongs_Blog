@@ -56,7 +56,7 @@ permalink: "/studies/data-science/contrast--pca-nmf/"
 
 표는 슬라이드 p.21을 옮긴 것이다[^1]. 선택을 가르는 줄은 "표현"이다. 자료에 음수가 있거나 분산 보존이 목적이면 PCA, 음수 없는 횟수·강도 자료를 부분으로 나누려면 NMF다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/36_contrast--pca-nmf_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/36_contrast--pca-nmf_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 같은 문서 × 단어 표에서 뽑은 성분이다. PCA 첫 성분은 스포츠 단어에 −0.4, 요리 단어에 +0.4를 줘서, 한 성분 안에서 두 주제가 서로 빼진다. NMF는 한 성분이 스포츠 단어만, 다른 성분이 요리 단어만 크게 가진다[^s2].
 
@@ -76,7 +76,7 @@ permalink: "/studies/data-science/contrast--pca-nmf/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/10.10-1_high-dim-clustering.pdf, p.21
-[^s1]: 에이전트 보충. 상황 문제와 PCA 성분의 수치 예는 원본에 없다. 검증 코드로 계산했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [36_contrast--pca-nmf_plot.py](/Hongs_Blog/studies/data-science/code/36_contrast--pca-nmf_plot/)로 그렸고, PCA 첫 성분 −0.41, −0.41, −0.38, 0.41, 0.41, 0.42와 NMF의 $$W$$, $$H$$에 음수가 없고 문서가 두 주제로 정확히 나뉘는 것을 같은 코드로 확인했다.
+[^1]: 데이터 과학 10회 강의 자료 「10-1_high-dim-clustering」, p.21
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상황 문제와 PCA 성분의 수치 예는 원본에 없다. 검증 코드로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [36_contrast--pca-nmf_plot.py](/Hongs_Blog/studies/data-science/code/36_contrast--pca-nmf_plot/)로 그렸고, PCA 첫 성분 −0.41, −0.41, −0.38, 0.41, 0.41, 0.42와 NMF의 $$W$$, $$H$$에 음수가 없고 문서가 두 주제로 정확히 나뉘는 것을 같은 코드로 확인했다.
 {% endraw %}

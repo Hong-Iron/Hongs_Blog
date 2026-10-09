@@ -42,7 +42,7 @@ $$y' = x + y$$, $$y(0) = 1$$을 $$x = 1$$까지 걸음 $$h = 0.1$$로 푼다. �
 
 항을 하나 늘릴 때마다 오차가 한 자릿수 이상 준다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/33_taylor-method_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/33_taylor-method_fig1.svg" alt="그림" width="532" height="339" loading="lazy">
 
 가로축과 세로축 모두 한 칸이 10배인 눈금이다. 이런 눈금에서는 오차가 $$h^k$$에 비례하면 기울기 $$k$$인 곧은 선이 된다. 항을 늘릴수록 선이 더 가파르다[^s2].
 
@@ -124,11 +124,11 @@ $$k = 4$$이면 $$f$$를 전미분하는 사슬을 세 번 지나야 $$T_4$$를 
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/18.na18_diff_eq.pdf, p.4
+[^1]: 수치해석 18회 강의 자료 「na18_diff_eq」, p.4
 [^2]: 같은 자료, p.5
 [^3]: 같은 자료, p.6
 [^4]: 같은 자료, p.7
-[^s1]: 에이전트 보충. 예시 문제와 오차 표, 전미분의 연쇄 법칙 식, 국소·전역 오차 차수, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [33_taylor-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 오차 $$2.5 \times 10^{-1}$$, $$8.4 \times 10^{-3}$$, $$2.1 \times 10^{-4}$$, $$4.2 \times 10^{-6}$$, $$h$$를 반으로 하면 오차가 약 $$2^k$$분의 1.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 $$y^{(n)} = f^{(n-1)}$$, 전미분, $$T_k$$ 식(원본 18.na18_diff_eq.pdf p.6~7)으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시 문제와 오차 표, 전미분의 연쇄 법칙 식, 국소·전역 오차 차수, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [33_taylor-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 오차 $$2.5 \times 10^{-1}$$, $$8.4 \times 10^{-3}$$, $$2.1 \times 10^{-4}$$, $$4.2 \times 10^{-6}$$, $$h$$를 반으로 하면 오차가 약 $$2^k$$분의 1.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 $$y^{(n)} = f^{(n-1)}$$, 전미분, $$T_k$$ 식(원본 18.na18_diff_eq.pdf p.6~7)으로 그렸다.
 {% endraw %}

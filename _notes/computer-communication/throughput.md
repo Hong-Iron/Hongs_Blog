@@ -44,7 +44,7 @@ permalink: "/studies/computer-communication/throughput/"
 
 표의 세 경우를 메시지 크기 1바이트부터 1 GB까지 늘려 가며 처리량으로 그리면 다음과 같다. 두 축 모두 로그 눈금이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/27_throughput_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/27_throughput_fig1.svg" alt="그림" width="559" height="335" loading="lazy">
 
 작은 메시지에서는 세 선 모두 대역폭 천장(점선)보다 한참 아래에 있다. 이 구간에서 파란 선과 주황 선은 겹친다. 대역폭이 100배여도 처리량이 같다는 뜻이다. 메시지가 커지면 각 선이 자기 천장에 붙는다. 소요시간이 100배인 초록 선은 메시지가 더 커져야 천장에 닿는다[^s2].
 
@@ -112,10 +112,10 @@ RTT가 0보다 크면 처리량은 늘 $$R$$보다 작다. $$M$$이 커질수록
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260926012124.png — 슬라이드 "성능 (Performance) (3)". 원문의 빨간 글씨: "(?)", "데이터도 같이 증가!"
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 86~96행
-[^3]: 4-1학기/pasted_images/Pasted image 20260925230348.png — 슬라이드 "성능 (Performance): 대역폭". 표기 방법 KB = 2¹⁰ bytes, Mbps = 10⁶ bits per second. 필기 03.3주차.md 36~40행도 대역폭을 "이론상 최상의 속도", "링크의 최대속도"로 적는다
-[^4]: 4-1학기/pasted_images/Pasted image 20260926020456.png — 슬라이드 "성능: 기타 사항"
-[^s1]: 에이전트 보충. 슬라이드는 이 식을 누구 기준으로 재는지 적지 않는다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.5절의 같은 식은 파일을 요청한 쪽이 요청을 보낸 때부터 마지막 비트를 받을 때까지를 잰다. 보내는 쪽이 회선 설정을 시작한 때부터 받는 쪽이 마지막 비트를 받을 때까지 재면 한쪽 전파 지연(RTT의 절반)이 더 붙는다.
-[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [27_throughput_plot.py](/Hongs_Blog/studies/computer-communication/code/27_throughput_plot/)로 그렸고, 표의 값(1바이트 1.00008, 1.008, 100.008 ms, 25 MB 약 2.1, 209.7, 209.8초)과 처리량이 늘 대역폭보다 작고 크기와 함께 커진다는 것을 같은 코드로 확인했다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "성능 (Performance) (3)". 원문의 빨간 글씨: "(?)", "데이터도 같이 증가!"
+[^2]: 컴퓨터 통신 3회 필기 「3주차」, 86~96행
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "성능 (Performance): 대역폭". 표기 방법 KB = 2¹⁰ bytes, Mbps = 10⁶ bits per second. 필기 03.3주차.md 36~40행도 대역폭을 "이론상 최상의 속도", "링크의 최대속도"로 적는다
+[^4]: 수업 슬라이드 캡처 — 슬라이드 "성능: 기타 사항"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 이 식을 누구 기준으로 재는지 적지 않는다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.5절의 같은 식은 파일을 요청한 쪽이 요청을 보낸 때부터 마지막 비트를 받을 때까지를 잰다. 보내는 쪽이 회선 설정을 시작한 때부터 받는 쪽이 마지막 비트를 받을 때까지 재면 한쪽 전파 지연(RTT의 절반)이 더 붙는다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [27_throughput_plot.py](/Hongs_Blog/studies/computer-communication/code/27_throughput_plot/)로 그렸고, 표의 값(1바이트 1.00008, 1.008, 100.008 ms, 25 MB 약 2.1, 209.7, 209.8초)과 처리량이 늘 대역폭보다 작고 크기와 함께 커진다는 것을 같은 코드로 확인했다.
 {% endraw %}

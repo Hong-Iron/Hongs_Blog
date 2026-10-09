@@ -3,6 +3,8 @@
    ========================================================================== */
 
 .site-header {
+  position: relative;
+  z-index: 40; /* above the fixed note sidebar (notes.css .note-toc, z 30) */
   border-bottom: 1px solid var(--rule);
   padding: 1.25rem 0;
 }
@@ -594,8 +596,24 @@ main {
 .article-body img.note-fig {
   display: block;
   width: 100%;
+  height: auto; /* width/height attributes from the exporter keep the room reserved */
   max-width: 560px;
   margin: 1.4rem auto;
   border-radius: 0;
   box-shadow: none;
+}
+
+/* Floating buttons step aside while reading downward (assets/js/nav.js). */
+@media (max-width: 1099.98px) {
+  .robot,
+  .note-toc-toggle {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  body.is-reading .robot:not(.is-open),
+  body.is-reading .note-toc-toggle {
+    transform: translateY(calc(100% + 1.5rem));
+    opacity: 0;
+    pointer-events: none;
+  }
 }

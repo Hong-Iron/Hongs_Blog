@@ -87,7 +87,7 @@ permalink: "/studies/college-math/exponential-function/"
 | $$e^x = 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots$$ | [증명 생략: [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/)] |
 | $$e$$는 $$x = 0$$에서 $$b^x$$ 그래프의 기울기가 정확히 1인 밑 | 수치로: 기울기가 $$b = 2$$에서 0.6931, $$b = 3$$에서 1.0986, $$b = e$$에서 1.0000. [증명 생략: [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/)] |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/06_exponential-function_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/06_exponential-function_fig1.svg" alt="그림" width="652" height="342" loading="lazy">
 
 모든 곡선이 $$(0, 1)$$을 지난다. 밑이 1보다 크면 오른쪽으로 갈수록 올라가고, $$(1/2)^x$$는 내려간다. 점선 $$y = 1 + x$$에 $$(0, 1)$$에서 딱 붙어 지나는 곡선은 $$e^x$$뿐이다[^s2].
 
@@ -192,7 +192,7 @@ $$f(1/q)^q = b$$를 만족하는 수는 $$q$$가 짝수면 양수와 음수 두 
 </div>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/06_exponential-function_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/06_exponential-function_fig2.svg" alt="그림" width="520" height="342" loading="lazy">
 
 주황 곡선 $$1.01^x$$는 $$x = 800$$ 근처까지 바닥에 붙어 있어서 직선 $$10x$$보다 한참 아래다. 역전한 뒤에는 거의 수직으로 솟는다[^s2].
 
@@ -237,6 +237,6 @@ $$f(1/q)^q = b$$를 만족하는 수는 $$q$$가 짝수면 양수와 음수 두 
 
 
 [^1]: OpenStax, *Precalculus 2e*, 4.1절 "Exponential Functions"(정의, 밑의 조건, 연속 복리와 $$e$$), 4.2절 "Graphs of Exponential Functions"
-[^s1]: 에이전트 보충. 지수 백오프는 이더넷의 충돌 뒤 재전송 등에 쓰이는 방식이다(Kurose & Ross, *Computer Networking*, 6장 다중 접근 프로토콜). 소프트맥스에서 최댓값을 빼는 기법은 수치 계산의 표준 기법이다. `math.exp`의 경계(709와 710)는 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [06_exponential-function_plot.py](/Hongs_Blog/studies/college-math/code/06_exponential-function_plot/)로 그렸고, 그림에 쓴 값($$x = 0$$에서의 기울기 0.6931, 1.0000, 1.0986, $$1.01^{100} \approx 2.70$$, 역전점 $$x = 917$$)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 지수 백오프는 이더넷의 충돌 뒤 재전송 등에 쓰이는 방식이다(Kurose & Ross, *Computer Networking*, 6장 다중 접근 프로토콜). 소프트맥스에서 최댓값을 빼는 기법은 수치 계산의 표준 기법이다. `math.exp`의 경계(709와 710)는 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [06_exponential-function_plot.py](/Hongs_Blog/studies/college-math/code/06_exponential-function_plot/)로 그렸고, 그림에 쓴 값($$x = 0$$에서의 기울기 0.6931, 1.0000, 1.0986, $$1.01^{100} \approx 2.70$$, 역전점 $$x = 917$$)을 같은 코드로 확인했다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "23_markov-chains_plot.py"
 display_title: "23_markov-chains_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "23"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/markov-chains/"
 parent_title: "마르코프 연쇄"
-description: "확률과 통계 · 마르코프 연쇄 코드 코드"
+description: "확률과 통계 · 마르코프 연쇄 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/23_markov-chains_plot/"
 ---
 {% raw %}
-[마르코프 연쇄](/Hongs_Blog/studies/probability-statistics/markov-chains/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[마르코프 연쇄](/Hongs_Blog/studies/probability-statistics/markov-chains/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 마르코프 연쇄 문서의 그림을 만든다: 23_markov-chains_fig1.svg

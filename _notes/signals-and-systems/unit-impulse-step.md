@@ -72,7 +72,7 @@ $$u(t)$$는 $$t = 0$$에서 끊겨 원래는 미분할 수 없다. 그래서 $$\
 2. $$\Delta \to 0$$이면 폭은 0으로, 높이는 무한대로 가지만 넓이는 1 그대로다. 이 극한을 단위 임펄스 $$\delta(t) = \lim_{\Delta\to0}\delta_\Delta(t)$$라 한다.
 3. 그래서 $$\delta(t) = \dfrac{du(t)}{dt}$$, $$u(t) = \displaystyle\int_{-\infty}^{t}\delta(\tau)\,d\tau$$다[^5].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/10_unit-impulse-step_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/10_unit-impulse-step_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 $$\Delta$$를 1, 0.5, 0.25로 줄이면 $$u_\Delta$$는 점점 가파른 계단이 되고, $$\delta_\Delta$$는 좁고 높아지지만 색칠한 넓이는 늘 1이다[^s2].
 
@@ -120,7 +120,7 @@ $$\delta[n - k]$$는 $$k = n$$일 때만 1이다. $$n \ge 0$$이면 그런 $$k$$
 - 미분: 크기 $$k$$인 계단을 미분하면 그 자리에 넓이 $$k$$인 임펄스가 생긴다. 그래서 $$\dot x(t) = 2\delta(t-1) - 3\delta(t-2) + 2\delta(t-4)$$.
 - 되돌리기: $$x(t) = \int_0^t\dot x(\tau)d\tau$$이므로, $$t$$까지 지나온 임펄스 넓이를 더하면 원래 값(2, $$-1$$, 1)이 나온다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/10_unit-impulse-step_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/10_unit-impulse-step_fig2.svg" alt="그림" width="564" height="352" loading="lazy">
 
 위의 계단이 뛰는 자리마다 아래에 화살표가 선다. 화살표 옆 숫자는 뛴 크기이자 임펄스의 넓이다[^s2].
 
@@ -196,13 +196,13 @@ $$\delta[n - k]$$는 $$k = n$$일 때만 1이다. $$n \ge 0$$이면 그런 $$k$$
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/03.Week03_CH01_2_handout.pdf, p.29
+[^1]: 신호 및 시스템 3회 강의 자료 「Week03_CH01_2_handout」, p.29
 [^2]: 같은 자료, p.30~31
 [^3]: 같은 자료, p.31
 [^4]: 같은 자료, p.33
 [^5]: 같은 자료, p.32
 [^6]: 같은 자료, p.34
 [^7]: 같은 자료, p.38 (예제 1.7)
-[^s1]: 에이전트 보충. 표본화 성질에 연속 조건이 필요하다는 점, $$u(0)$$을 정하지 않는 이유, 스스로 설명해 보기, 오해 항목, 확인 문제 C2~C4는 원본에 없다. Oppenheim·Willsky 2판 1.4절의 내용이며 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [10_unit-impulse-step_plot.py](/Hongs_Blog/studies/signals-and-systems/code/10_unit-impulse-step_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 세 펄스의 넓이 1, 예제 1.7의 값 2, $$-1$$, 1이 임펄스 넓이의 누적 합과 같음.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표본화 성질에 연속 조건이 필요하다는 점, $$u(0)$$을 정하지 않는 이유, 스스로 설명해 보기, 오해 항목, 확인 문제 C2~C4는 원본에 없다. Oppenheim·Willsky 2판 1.4절의 내용이며 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [10_unit-impulse-step_plot.py](/Hongs_Blog/studies/signals-and-systems/code/10_unit-impulse-step_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 세 펄스의 넓이 1, 예제 1.7의 값 2, $$-1$$, 1이 임펄스 넓이의 누적 합과 같음.
 {% endraw %}

@@ -57,7 +57,7 @@ permalink: "/studies/data-science/mf-recommendation/"
 - $$V$$는 $$R^\top R$$($$= V\Sigma^2V^\top$$)의 고유벡터들이다. 아이템-아이템 유사도의 축이다[^4].
 - 사용자와 아이템이 상호작용을 바탕으로 숨은 공간에 잘 놓이기 때문에 추천에 통한다[^5].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/44_mf-recommendation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/44_mf-recommendation_fig1.svg" alt="그림" width="415" height="380" loading="lazy">
 
 사용자 5명 × 아이템 4개 평점표(U1 = (5, 3, 0, 1), U2 = (4, 0, 0, 1), U3 = (1, 1, 0, 5), U4 = (1, 0, 0, 4), U5 = (0, 1, 5, 4), 0은 빈칸)를 PureSVD로 2차원에 놓았다. 아이템 1을 좋아한 U1, U2는 I1과 함께 위쪽에, 아이템 3·4를 좋아한 U3, U4, U5는 I3, I4와 함께 아래쪽에 놓인다. 사용자 점과 아이템 점의 내적이 예측 평점이다[^s2].
 
@@ -138,7 +138,7 @@ $$\min\sum_{(u,i) \in \mathcal O}\left(r_{ui} - \mu - b_u - b_i - \mathbf p_u^\t
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/12.12-1_MF-based.pdf, p.3
+[^1]: 데이터 과학 12회 강의 자료 「12-1_MF-based」, p.3
 [^2]: 같은 자료, p.4
 [^3]: 같은 자료, p.5 (Cremonesi, Koren, Turrin, RecSys 2010)
 [^4]: 같은 자료, p.6~7
@@ -150,6 +150,6 @@ $$\min\sum_{(u,i) \in \mathcal O}\left(r_{ui} - \mu - b_u - b_i - \mathbf p_u^\t
 [^10]: 같은 자료, p.14
 [^11]: 같은 자료, p.15
 [^12]: 같은 자료, p.16
-[^s1]: 에이전트 보충. 실험 수치, 넷플릭스 대회, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [44_mf-recommendation_plot.py](/Hongs_Blog/studies/data-science/code/44_mf-recommendation_plot/)로 그렸다. 평점표는 구현 코드의 예이고, 사용자 점 $$\mathbf p_u = U_2\Sigma_2^{1/2}$$의 행, 아이템 점 $$\mathbf q_i = V_2\Sigma_2^{1/2}$$의 행으로 놓았다. 내적이 2차원 재구성과 같음, 재구성 오차 56.428, 17.624, 3.382, U2의 재구성 (3.43, 1.28, −0.46, 1.09)가 구현 코드와 같음을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실험 수치, 넷플릭스 대회, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [44_mf-recommendation_plot.py](/Hongs_Blog/studies/data-science/code/44_mf-recommendation_plot/)로 그렸다. 평점표는 구현 코드의 예이고, 사용자 점 $$\mathbf p_u = U_2\Sigma_2^{1/2}$$의 행, 아이템 점 $$\mathbf q_i = V_2\Sigma_2^{1/2}$$의 행으로 놓았다. 내적이 2차원 재구성과 같음, 재구성 오차 56.428, 17.624, 3.382, U2의 재구성 (3.43, 1.28, −0.46, 1.09)가 구현 코드와 같음을 같은 코드로 확인했다.
 {% endraw %}

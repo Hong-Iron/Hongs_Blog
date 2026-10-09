@@ -78,7 +78,7 @@ $$\{X = x\}$$는 "$$X$$가 $$x$$를 주는 결과들의 집합" $$\{\omega : X(\
 
 **CDF의 성질.** 감소하지 않고, 오른쪽에서 연속이며, $$x \to -\infty$$에서 0, $$x \to \infty$$에서 1이다. 이산 확률변수의 CDF는 계단 모양이고 점프 크기가 그 점의 PMF다. 구간 확률은 $$P(a < X \le b) = F(b) - F(a)$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/07_random-variables_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/07_random-variables_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽은 두 주사위 합 $$S$$의 PMF, 오른쪽은 CDF다. CDF는 값이 있는 곳에서만 계단처럼 뛰고, 뛰는 높이가 왼쪽 막대의 높이와 같다. 합 7에서는 $$\frac{6}{36}$$만큼 뛴다[^s1].
 
@@ -138,6 +138,6 @@ $$\{X = x\}$$는 "$$X$$가 $$x$$를 주는 결과들의 집합" $$\{\omega : X(\
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.1절 "Random variables", 3.2절 "Distributions and probability mass functions", 3.6절 "Cumulative distribution functions", 3.7절 "Functions of random variables", 3.8절 "Independence of rvs".
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [07_random-variables_plot.py](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_plot/)로 그렸고, 그림에 쓴 값(PMF의 합 1, $$P(S = 7) = \frac{6}{36}$$, 합 7에서 CDF가 뛰는 높이 $$= P(S = 7)$$)을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시 표(동전 두 번, 앞면 수)의 결과 → 값 대응을 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [07_random-variables_plot.py](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_plot/)로 그렸고, 그림에 쓴 값(PMF의 합 1, $$P(S = 7) = \frac{6}{36}$$, 합 7에서 CDF가 뛰는 높이 $$= P(S = 7)$$)을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시 표(동전 두 번, 앞면 수)의 결과 → 값 대응을 그렸다.
 {% endraw %}

@@ -55,7 +55,7 @@ permalink: "/studies/operating-systems/scheduling-algorithms/"
 
 **반환 시간** $$T_r$$은 끝난 시각 − 도착 시각이다. **정규화 반환 시간** $$T_r / T_s$$는 반환 시간을 서비스 시간 $$T_s$$로 나눈 값으로, "일한 시간에 비해 얼마나 오래 시스템에 있었나"다. 1이면 기다리지 않은 것이다[^2]. 예: FCFS에서 E는 2만큼 일하려고 8에 도착해 20에 끝났다. $$T_r = 12$$, $$T_r/T_s = 6$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/44_scheduling-algorithms_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/44_scheduling-algorithms_fig1.svg" alt="그림" width="643" height="357" loading="lazy">
 
 막대 색이 프로세스이고, 오른쪽 숫자가 평균 반환 시간이다. 가장 짧은 E(노란 막대)는 FCFS에서 맨 끝으로 밀리고, SPN과 SRT에서는 훨씬 앞으로 당겨진다. RR과 피드백은 막대가 잘게 쪼개져 모두가 일찍 차례를 받지만, 그 대신 다들 늦게 끝난다[^s2].
 
@@ -226,7 +226,7 @@ RR은 프로세서 위주 프로세스에게 유리하다. 입출력 위주 프�
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/09.Chapter09-new.pptx, 슬라이드 27 (표 9.4)
+[^1]: 운영체제 9회 강의 자료 「Chapter09-new」, 슬라이드 27 (표 9.4)
 [^2]: 같은 자료, 슬라이드 51 (그림 9.14). 실행 순서와 결과값은 표 9.4의 프로세스로 그림 9.5·표 9.5와 같은 방식으로 계산했다.
 [^3]: 같은 자료, 슬라이드 24
 [^4]: 같은 자료, 슬라이드 25~26
@@ -243,7 +243,7 @@ RR은 프로세서 위주 프로세스에게 유리하다. 입출력 위주 프�
 [^15]: 같은 자료, 슬라이드 32~33 (그림 9.6)과 슬라이드 32의 발표자 노트
 [^16]: 같은 자료, 슬라이드 34 (그림 9.7)와 슬라이드 33의 발표자 노트
 [^17]: 같은 자료, 슬라이드 46~51과 슬라이드 45~46의 발표자 노트
-[^s1]: 에이전트 보충. 은행 창구 비유, HRRN 시각 9 계산, "할당량이 너무 크면 FCFS", 스스로 설명해 보기의 근거, 디스크 스케줄링 연결, 확인 문제 C2~C5는 슬라이드에 없다. 실행 순서는 Stallings 6판 그림 9.5와 같은 규칙(같은 시각에는 새로 도착한 프로세스가 선점된 프로세스보다 먼저 큐에 섬)으로 계산했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [44_scheduling-algorithms_plot.py](/Hongs_Blog/studies/operating-systems/code/44_scheduling-algorithms_plot/)로 그렸고, 여덟 정책의 실행 순서와 평균 반환 시간이 위 표와 같음을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "피드백" 1~3단계(슬라이드 43~44, 그림 9.10)를 큐 흐름도로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 은행 창구 비유, HRRN 시각 9 계산, "할당량이 너무 크면 FCFS", 스스로 설명해 보기의 근거, 디스크 스케줄링 연결, 확인 문제 C2~C5는 슬라이드에 없다. 실행 순서는 Stallings 6판 그림 9.5와 같은 규칙(같은 시각에는 새로 도착한 프로세스가 선점된 프로세스보다 먼저 큐에 섬)으로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [44_scheduling-algorithms_plot.py](/Hongs_Blog/studies/operating-systems/code/44_scheduling-algorithms_plot/)로 그렸고, 여덟 정책의 실행 순서와 평균 반환 시간이 위 표와 같음을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "피드백" 1~3단계(슬라이드 43~44, 그림 9.10)를 큐 흐름도로 옮겼다.
 {% endraw %}

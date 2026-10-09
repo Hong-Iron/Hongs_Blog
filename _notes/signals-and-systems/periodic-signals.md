@@ -63,7 +63,7 @@ $$x(t) = \begin{cases}\cos t & t < 0\\ \sin t & t \ge 0\end{cases}$$
 - 그런데 $$t = 0$$에서 $$\cos 0 = 1$$이 $$\sin 0 = 0$$으로 갑자기 바뀐다. 이 끊김은 $$t = 0$$ 한 곳에만 있고 $$2\pi$$나 $$-2\pi$$에는 없다.
 - 그래서 $$2\pi$$만큼 밀면 끊김의 위치가 달라지고, 신호는 주기적이지 않다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/06_periodic-signals_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/06_periodic-signals_fig1.svg" alt="그림" width="538" height="291" loading="lazy">
 
 $$x(t)$$를 $$2\pi$$만큼 왼쪽으로 민 점선은 색칠한 $$-2\pi \le t < 0$$에서만 원래 신호와 어긋난다. 그 구간에서 한쪽은 코사인, 다른 쪽은 사인이다[^s2].
 
@@ -96,8 +96,8 @@ $$x(t)$$를 $$2\pi$$만큼 왼쪽으로 민 점선은 색칠한 $$-2\pi \le t < 
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.36
+[^1]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.36
 [^2]: 같은 자료, p.37 (예제 1.4, 그림 1.16)
-[^s1]: 에이전트 보충. 상수 신호의 기본 주기가 정의되지 않는다는 설명(3주차 자료 p.4의 "$$\omega_0 = 0$$이면 기본 주기 정의 안 됨"과 같은 내용), 확인 문제 C1, C2의 $$\sin t \cdot u(t)$$ 예는 원본에 없다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [06_periodic-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/06_periodic-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$t = -\frac\pi2$$에서 $$x(t) = 0$$, $$x(t + 2\pi) = -1$$로 다르고, $$t = 1$$과 $$t = -7$$에서는 같음.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상수 신호의 기본 주기가 정의되지 않는다는 설명(3주차 자료 p.4의 "$$\omega_0 = 0$$이면 기본 주기 정의 안 됨"과 같은 내용), 확인 문제 C1, C2의 $$\sin t \cdot u(t)$$ 예는 원본에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [06_periodic-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/06_periodic-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$t = -\frac\pi2$$에서 $$x(t) = 0$$, $$x(t + 2\pi) = -1$$로 다르고, $$t = 1$$과 $$t = -7$$에서는 같음.
 {% endraw %}

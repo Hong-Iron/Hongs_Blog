@@ -42,7 +42,7 @@ permalink: "/studies/discrete-math/asymptotic-notation/"
 
 작은 $$n$$에서는 $$A$$가 빠르지만 $$n$$이 커지면 $$B$$가 크게 앞선다. $$A$$에서 $$5n + 7$$은 $$n$$이 커지면 $$3n^2$$에 비해 무시할 만하고, 3이나 50 같은 상수는 컴퓨터를 바꾸면 달라진다. 그래서 $$A$$를 $$\Theta(n^2)$$, $$B$$를 $$\Theta(n\lg n)$$으로 요약한다. $$3n^2$$의 3이 아래 정의의 상수 $$c$$, "충분히 큰 $$n$$"의 경계가 $$n_0$$이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig1.svg" alt="그림" width="519" height="336" loading="lazy">
 
 두 축이 모두 로그 눈금이라, 차수가 큰 $$A$$가 더 가파르게 오른다. 두 선은 $$n = 112$$에서 엇갈린다. $$c = 1$$로 잡으면 $$B(n) \le A(n)$$이 $$n_0 = 112$$부터 계속 맞는다[^s1].
 
@@ -138,7 +138,7 @@ $$a$$, $$b$$는 고정된 밑이라 $$n$$에 따라 변하지 않는다. $$O$$�
 3. *지수와 계승:* $$n^2 = o(2^n)$$, $$2^n = o(n!)$$.
 4. *결과:* $$\lg n \prec \sqrt n \prec n \prec n\lg n \prec n^{1.5} \prec n^2 \prec 2^n \prec n!$$.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig2.svg" alt="그림" width="586" height="350" loading="lazy">
 
 두 축 모두 로그 눈금이다. 점선 $$n = 16$$ 왼쪽에서는 선들이 엉켜 있다. 예를 들어 $$4 < n < 16$$에서는 $$\lg n$$이 $$\sqrt n$$보다 크다. $$n$$이 커지면 여덟 선이 서열대로 갈라지고, $$2^n$$과 $$n!$$은 곧 그림 위로 빠져나간다[^s1].
 
@@ -208,6 +208,6 @@ $$a$$, $$b$$는 고정된 밑이라 $$n$$에 따라 변하지 않는다. $$O$$�
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14.7절 "Asymptotic Notation". Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.1절 "Asymptotic notation".
-[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [24_asymptotic-notation_plot.py](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_plot/)로 그렸고, 예시 표의 값, $$n \ge 112$$에서 $$A(n) > B(n)$$(그 아래에서는 $$A(n) \le B(n)$$), $$n = 40$$과 $$64$$에서 여덟 함수의 서열, $$\lg 8 > \sqrt 8$$을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 섹션의 다섯 기호 정의와 '동치인 다른 정의'(극한으로 판정)를 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [24_asymptotic-notation_plot.py](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_plot/)로 그렸고, 예시 표의 값, $$n \ge 112$$에서 $$A(n) > B(n)$$(그 아래에서는 $$A(n) \le B(n)$$), $$n = 40$$과 $$64$$에서 여덟 함수의 서열, $$\lg 8 > \sqrt 8$$을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 섹션의 다섯 기호 정의와 '동치인 다른 정의'(극한으로 판정)를 그렸다.
 {% endraw %}

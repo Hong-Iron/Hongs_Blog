@@ -197,5 +197,5 @@ $$r - d$$도 $$a - d(\text{정수})$$ 꼴이고 0 이상이라 $$S$$에 들어�
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(나눗셈 정리, 합동). Rosen, *Discrete Mathematics and Its Applications* 7판, 4장.
-[^s1]: 에이전트 보충. ISBN-10의 검사식과 오류 검출은 국제 ISBN 규약에 따른 것이다. 한 자리 오류와 이웃한 두 자리 바꿈을 모두 잡는다는 것은 26_modular-arithmetic_verify.py에서 예제 번호의 모든 경우를 전수로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> ISBN-10의 검사식과 오류 검출은 국제 ISBN 규약에 따른 것이다. 한 자리 오류와 이웃한 두 자리 바꿈을 모두 잡는다는 것은 26_modular-arithmetic_verify.py에서 예제 번호의 모든 경우를 전수로 확인했다.
 {% endraw %}

@@ -43,7 +43,7 @@ $$y = \frac{1}{x^2}$$과 $$y = \frac1x$$은 둘 다 $$x$$가 커지면 0으로 �
 
 $$\frac{1}{x^2}$$은 넓이가 1로 모이고, $$\frac1x$$은 느리지만 끝없이 자란다. 앞의 것을 "수렴한다", 뒤의 것을 "발산한다"고 한다. 자른 곳 $$t$$가 아래 정의의 극한 변수다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/15_improper-integrals_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/15_improper-integrals_fig1.svg" alt="그림" width="611" height="276" loading="lazy">
 
 왼쪽에서 두 곡선은 모두 0으로 내려가지만, $$\frac{1}{x^2}$$이 훨씬 빨리 얇아진다. 오른쪽은 표를 $$t$$마다 이어 그린 것이다. 가로축이 로그 눈금이라 $$\ln t$$는 곧은 직선으로 끝없이 오르고, $$1 - \frac1t$$은 점선 1 아래에 눕는다[^s2].
 
@@ -165,7 +165,7 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 3.7절 "Improper Integrals"(무한 구간, 불연속 피적분함수, 비교 판정).
-[^s1]: 에이전트 보충. 파레토 분포(꼬리 $$x^{-p}$$ 모양의 밀도)의 평균이 $$p > 2$$에서만 유한하다는 것은 p-적분에서 바로 나온다. 인터넷 트래픽의 꼬리가 두껍다는 관찰은 Crovella & Bestavros(1997, *IEEE/ACM Transactions on Networking* 5(6))가 대표적이다. 웹 전송 크기의 꼬리가 지수 약 1.06인 파레토 분포로 잘 맞았다. 이 지수는 "$$x$$보다 클 확률"의 지수라 밀도로는 약 2.06이고, 위 판정대로 평균은 유한하지만 분산은 무한하다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [15_improper-integrals_plot.py](/Hongs_Blog/studies/calculus/code/15_improper-integrals_plot/)로 그렸고, 표의 값($$t = 10, 1000, 10^6$$에서 $$1 - \frac1t$$과 $$\ln t$$)과 $$\int_1^{10}\frac{dx}{x^2} = 0.9$$(중점 합)를 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의 절(조각으로 나누고 두 조각이 모두 수렴할 때만 전체가 수렴), 비교 판정, 예제의 풀이 순서를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 파레토 분포(꼬리 $$x^{-p}$$ 모양의 밀도)의 평균이 $$p > 2$$에서만 유한하다는 것은 p-적분에서 바로 나온다. 인터넷 트래픽의 꼬리가 두껍다는 관찰은 Crovella & Bestavros(1997, *IEEE/ACM Transactions on Networking* 5(6))가 대표적이다. 웹 전송 크기의 꼬리가 지수 약 1.06인 파레토 분포로 잘 맞았다. 이 지수는 "$$x$$보다 클 확률"의 지수라 밀도로는 약 2.06이고, 위 판정대로 평균은 유한하지만 분산은 무한하다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [15_improper-integrals_plot.py](/Hongs_Blog/studies/calculus/code/15_improper-integrals_plot/)로 그렸고, 표의 값($$t = 10, 1000, 10^6$$에서 $$1 - \frac1t$$과 $$\ln t$$)과 $$\int_1^{10}\frac{dx}{x^2} = 0.9$$(중점 합)를 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절(조각으로 나누고 두 조각이 모두 수렴할 때만 전체가 수렴), 비교 판정, 예제의 풀이 순서를 근거로 그렸다.
 {% endraw %}

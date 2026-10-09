@@ -145,7 +145,7 @@ $$f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot\mathbf{d} + \frac{
 3. *$$\eta = 0.09$$:* $$x$$는 0.82배씩, $$y$$는 $$-0.8$$배씩 준다. $$y$$가 매 걸음 부호를 바꾸며 골짜기 벽을 오가는 지그재그를 그리면서 수렴한다.
 4. *$$\eta = 0.1$$이나 $$0.11$$:* $$y$$ 쪽 인수가 $$-1$$이 되어 제자리에서 진동하거나, $$-1.2$$가 되어 발산한다. 완만한 $$x$$ 방향은 멀쩡한데도 가파른 방향 하나가 학습률의 상한을 정한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig1.svg" alt="그림" width="263" height="306" loading="lazy">
 
 $$\eta = 0.09$$로 25걸음 간 길이다. 가파른 $$y$$ 방향으로는 골짜기 벽을 넘나들며 위아래로 튀고, 완만한 $$x$$ 방향으로는 조금씩만 다가간다. 그래서 바닥(+)으로 곧장 가지 못하고 톱니 모양으로 간다[^s2].
 
@@ -170,7 +170,7 @@ $$\eta = 0.09$$로 25걸음 간 길이다. 가파른 $$y$$ 방향으로는 골�
 - **뉴턴 방법과 비교.** [뉴턴 방법](/Hongs_Blog/studies/calculus/linear-approx-newton/)은 $$\mathbf{x} \leftarrow \mathbf{x} - H^{-1}\nabla f$$로 곡률까지 써서 이차함수라면 한 걸음에 끝난다. 대신 헤세 행렬을 저장하는 데 $$n^2$$, 풀어 쓰는 데 $$O(n^3)$$이 든다. 변수가 $$10^6$$개면 헤세 행렬 원소만 $$10^{12}$$개라, 대규모 학습은 경사 하강법 계열을 쓴다.
 - **모멘텀.** 이전 걸음의 방향을 일정 비율 이어 가면 지그재그가 서로 상쇄된다. 조건수 100인 이차함수에서 오차를 $$10^{-6}$$배로 줄이는 데, $$\eta = \frac1L$$이면 약 1,340걸음, 가장 좋은 고정 학습률 $$\frac{2}{L + \mu}$$이면 약 690걸음, 모멘텀(헤비볼)이면 약 90걸음이 걸렸다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig2.svg" alt="그림" width="532" height="320" loading="lazy">
 
 세로축이 로그 눈금이라 세 방법 모두 곧은 선으로 줄어든다. 선이 가파를수록 한 걸음에 더 많이 줄인다. 점선 $$10^{-6}$$에 닿는 걸음 수가 위 문장의 세 숫자다[^s2].
 - **확률적 경사 하강법(SGD).** 데이터가 수백만 개면 전체 기울기 대신 작은 묶음(미니배치)으로 어림한 기울기를 쓴다. Adam 같은 방법은 좌표마다 학습률을 따로 맞춘다[^2].
@@ -275,11 +275,11 @@ def step(w, X, y, lr):
 
 [^1]: Boyd, Vandenberghe, *Convex Optimization*, 9.1절(비제약 최소화, 강볼록성과 그 결과), 9.2절(하강 방법), 9.3절 "Gradient descent method"(수렴 분석).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 4.3절 "Gradient-Based Optimization", 8.3절(SGD와 모멘텀), 8.5절(Adam 등 적응적 학습률).
-[^s1]: 에이전트 보충. 함수 $$\frac12(x^2 + 100y^2)$$, 시작점 $$(1, 1)$$에서 26_gradient-descent_verify.py로 센 값이다. 헤비볼의 계수는 폴랴크의 최적값 $$\eta = \frac{4}{(\sqrt L + \sqrt\mu)^2}$$, $$\beta = \left(\frac{\sqrt L - \sqrt\mu}{\sqrt L + \sqrt\mu}\right)^2$$을 썼다. 이론상 오차는 한 걸음마다 경사 하강법이 약 $$\frac{\kappa - 1}{\kappa + 1}$$배, 헤비볼이 약 $$\frac{\sqrt\kappa - 1}{\sqrt\kappa + 1}$$배로 준다.
-[^n1]: 2-2학기/수치해석/1.수업자료/15.na15_multiop.pdf, p.8~10
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 함수 $$\frac12(x^2 + 100y^2)$$, 시작점 $$(1, 1)$$에서 26_gradient-descent_verify.py로 센 값이다. 헤비볼의 계수는 폴랴크의 최적값 $$\eta = \frac{4}{(\sqrt L + \sqrt\mu)^2}$$, $$\beta = \left(\frac{\sqrt L - \sqrt\mu}{\sqrt L + \sqrt\mu}\right)^2$$을 썼다. 이론상 오차는 한 걸음마다 경사 하강법이 약 $$\frac{\kappa - 1}{\kappa + 1}$$배, 헤비볼이 약 $$\frac{\sqrt\kappa - 1}{\sqrt\kappa + 1}$$배로 준다.
+[^n1]: 수치해석 15회 강의 자료 「na15_multiop」, p.8~10
 [^n2]: 같은 자료, p.18~19
 [^n3]: 같은 자료, p.20~21
-[^sn1]: 에이전트 보충. 슬라이드 p.21은 $$(0.2, -0.2)$$를 "최적점"이라 부르는데, 이것은 직선 위의 최적점이라는 뜻이다. 둘째 걸음, 참 최대점 $$(2, 1)$$, 수직인 이웃 방향, 카드 C5는 원본에 없다. 26_gradient-descent_verify.py로 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [26_gradient-descent_plot.py](/Hongs_Blog/studies/calculus/code/26_gradient-descent_plot/)로 그렸고, $$\eta = 0.09$$에서 $$x$$는 0.82배, $$y$$는 $$-0.8$$배씩 줄며 부호가 바뀌는 것, 오차를 $$10^{-6}$$배로 줄이는 걸음 수 1,341, 691, 93(문서의 약 1,340, 690, 90)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 자주 하는 오해 두 개, 예제(조건수와 지그재그), 활용 절의 모멘텀과 흔한 실수(특성 표준화), [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/)의 시작점에 따라 답이 다른 예를 근거로 그렸다.
+[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.21은 $$(0.2, -0.2)$$를 "최적점"이라 부르는데, 이것은 직선 위의 최적점이라는 뜻이다. 둘째 걸음, 참 최대점 $$(2, 1)$$, 수직인 이웃 방향, 카드 C5는 원본에 없다. 26_gradient-descent_verify.py로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [26_gradient-descent_plot.py](/Hongs_Blog/studies/calculus/code/26_gradient-descent_plot/)로 그렸고, $$\eta = 0.09$$에서 $$x$$는 0.82배, $$y$$는 $$-0.8$$배씩 줄며 부호가 바뀌는 것, 오차를 $$10^{-6}$$배로 줄이는 걸음 수 1,341, 691, 93(문서의 약 1,340, 690, 90)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 자주 하는 오해 두 개, 예제(조건수와 지그재그), 활용 절의 모멘텀과 흔한 실수(특성 표준화), [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/)의 시작점에 따라 답이 다른 예를 근거로 그렸다.
 {% endraw %}

@@ -3,7 +3,7 @@ layout: "note"
 title: "18_null-invariant-measures_plot.py"
 display_title: "18_null-invariant-measures_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "18"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/null-invariant-measures/"
 parent_title: "널 불변 측정"
-description: "데이터 과학 · 널 불변 측정 코드 코드"
+description: "데이터 과학 · 널 불변 측정 그림 생성 코드"
 permalink: "/studies/data-science/code/18_null-invariant-measures_plot/"
 ---
 {% raw %}
-[널 불변 측정](/Hongs_Blog/studies/data-science/null-invariant-measures/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[널 불변 측정](/Hongs_Blog/studies/data-science/null-invariant-measures/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 널 불변 측정 문서의 그림을 만든다: 18_null-invariant-measures_fig1.svg

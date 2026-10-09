@@ -3,7 +3,7 @@ layout: "note"
 title: "11_wave-and-light_plot.py"
 display_title: "11_wave-and-light_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "11"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/wave-and-light/"
 parent_title: "파동과 빛"
-description: "휴먼 인터페이스 미디어 · 파동과 빛 코드 코드"
+description: "휴먼 인터페이스 미디어 · 파동과 빛 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/11_wave-and-light_plot/"
 ---
 {% raw %}
-[파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 파동과 빛 문서의 그림을 만든다: 11_wave-and-light_fig1.svg

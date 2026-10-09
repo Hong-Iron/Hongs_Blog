@@ -3,7 +3,7 @@ layout: "note"
 title: "14_change-of-basis_plot.py"
 display_title: "14_change-of-basis_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "14"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/change-of-basis/"
 parent_title: "기저 변환"
-description: "선형대수학 · 기저 변환 코드 코드"
+description: "선형대수학 · 기저 변환 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/14_change-of-basis_plot/"
 ---
 {% raw %}
-[기저 변환](/Hongs_Blog/studies/linear-algebra/change-of-basis/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[기저 변환](/Hongs_Blog/studies/linear-algebra/change-of-basis/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 기저 변환 문서의 그림을 만든다: 14_change-of-basis_fig1.svg

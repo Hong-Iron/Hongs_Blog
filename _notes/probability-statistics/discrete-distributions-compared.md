@@ -102,5 +102,5 @@ flowchart TD
 실선은 같은 시행이나 과정에서 무엇을 세느냐로 갈라지는 관계이고, 점선은 극한·근사·연속판으로 옮겨 가는 관계다.[^s1]
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.3절(이항), 3.4절(초기하), 4.3절(기하와 음이항), 4.7~4.8절(포아송과 이항의 관계).
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서와 [이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)(초기하분포), [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)(이항분포의 포아송 극한), [균등분포와 지수분포](/Hongs_Blog/studies/probability-statistics/uniform-exponential/)(포아송 과정의 간격, 연속 시간의 기하분포), [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)(이항분포의 정규 근사)에 적힌 관계를 모아 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서와 [이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)(초기하분포), [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)(이항분포의 포아송 극한), [균등분포와 지수분포](/Hongs_Blog/studies/probability-statistics/uniform-exponential/)(포아송 과정의 간격, 연속 시간의 기하분포), [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)(이항분포의 정규 근사)에 적힌 관계를 모아 그렸다.
 {% endraw %}

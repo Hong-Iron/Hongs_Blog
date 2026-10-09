@@ -3,7 +3,7 @@ layout: "note"
 title: "15_uniform-exponential_plot.py"
 display_title: "15_uniform-exponential_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "15"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/uniform-exponential/"
 parent_title: "균등분포와 지수분포"
-description: "확률과 통계 · 균등분포와 지수분포 코드 코드"
+description: "확률과 통계 · 균등분포와 지수분포 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/15_uniform-exponential_plot/"
 ---
 {% raw %}
-[균등분포와 지수분포](/Hongs_Blog/studies/probability-statistics/uniform-exponential/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[균등분포와 지수분포](/Hongs_Blog/studies/probability-statistics/uniform-exponential/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 균등분포와 지수분포 문서의 그림을 만든다: 15_uniform-exponential_fig1.svg

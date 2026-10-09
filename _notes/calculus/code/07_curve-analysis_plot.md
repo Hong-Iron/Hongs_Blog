@@ -3,7 +3,7 @@ layout: "note"
 title: "07_curve-analysis_plot.py"
 display_title: "07_curve-analysis_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "07"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/curve-analysis/"
 parent_title: "도함수의 활용과 최적화"
-description: "미분적분학 · 도함수의 활용과 최적화 코드 코드"
+description: "미분적분학 · 도함수의 활용과 최적화 그림 생성 코드"
 permalink: "/studies/calculus/code/07_curve-analysis_plot/"
 ---
 {% raw %}
-[도함수의 활용과 최적화](/Hongs_Blog/studies/calculus/curve-analysis/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[도함수의 활용과 최적화](/Hongs_Blog/studies/calculus/curve-analysis/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 도함수의 활용과 최적화 문서의 그림을 만든다: 07_curve-analysis_fig1.svg, 07_curve-analysis_fig2.svg

@@ -128,9 +128,9 @@ $$c(X \Rightarrow Y) = P(Y \mid X) = \frac{\operatorname{support}(X \cup Y)}{\op
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/03.3-1_FP.pdf, p.9
+[^1]: 데이터 과학 3회 강의 자료 「3-1_FP」, p.9
 [^2]: 같은 자료, p.10
 [^3]: 같은 자료, p.11
 [^4]: 같은 자료, p.23
-[^5]: 3-2학기/데이터 과학/1.수업자료/03.3-2_FP-eval.pdf, p.11
+[^5]: 데이터 과학 3회 강의 자료 「3-2_FP-eval」, p.11
 {% endraw %}

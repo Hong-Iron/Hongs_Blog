@@ -257,5 +257,5 @@ def f(maze, sources):
 
 
 [^1]: 층 순서 증명의 구성은 Cormen 외, *Introduction to Algorithms* 3판, 22.2절 "Breadth-first search"의 정확성 증명(큐 안의 거리는 줄지 않고 차이가 1 이하)을 층 단위로 다시 쓴 것이다. 구현과 O(n + m)은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 12.2 "Breadth-first search".
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '자주 하는 오해'의 반례 그래프(s–a, s–b, a–w, b–u, w–u)를 그대로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '자주 하는 오해'의 반례 그래프(s–a, s–b, a–w, b–u, w–u)를 그대로 그렸다.
 {% endraw %}

@@ -50,7 +50,7 @@ $$\int_{t_1}^{t_2} p(t)\,dt = \int_{t_1}^{t_2}\frac1R v^2(t)\,dt$$
 
 펄스는 1초 동안만 크기 1이니 에너지가 $$1^2 \times 1 = 1$$이다. 상수 4는 매초 16씩 영원히 쌓여 에너지는 끝이 없지만, 1초당 평균은 늘 16이다[^3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/04_signal-energy-power_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/04_signal-energy-power_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 구간 $$[-T, T]$$를 넓혀 가면 펄스의 에너지는 1에서 멈추고 평균 전력은 0으로 내려간다. 아래 예제의 $$\cos 2\pi t$$는 에너지가 끝없이 쌓이지만 평균 전력은 $$\frac12$$에 머문다[^s2].
 
@@ -145,7 +145,7 @@ $$P_\infty \triangleq \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert 
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.10, p.17
+[^1]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.10, p.17
 [^2]: 같은 자료, p.21
 [^3]: 같은 자료, p.24
 [^4]: 같은 자료, p.20
@@ -153,8 +153,8 @@ $$P_\infty \triangleq \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert 
 [^6]: 같은 자료, p.21 (정보통신기술용어해설 인용)
 [^7]: 같은 자료, p.23
 [^8]: 같은 자료, p.25
-[^9]: 3-1학기/신호 및 시스템/1.수업자료/03.Week03_CH01_2_handout.pdf, p.32
-[^s1]: 에이전트 보충. 사인파 실효값 $$A/\sqrt2$$, 신호 대 잡음비, 220V 예, 확인 문제 C1의 ②·③과 C3는 원본에 없다. 값은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [04_signal-energy-power_plot.py](/Hongs_Blog/studies/signals-and-systems/code/04_signal-energy-power_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 펄스의 $$E_T \to 1$$, $$\cos 2\pi t$$의 $$E_T = T + \frac{\sin 4\pi T}{4\pi}$$(수치 적분과 비교)와 $$P_T \to \frac12$$.
-[^h1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf, p.9 (파동의 에너지)
+[^9]: 신호 및 시스템 3회 강의 자료 「Week03_CH01_2_handout」, p.32
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 사인파 실효값 $$A/\sqrt2$$, 신호 대 잡음비, 220V 예, 확인 문제 C1의 ②·③과 C3는 원본에 없다. 값은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [04_signal-energy-power_plot.py](/Hongs_Blog/studies/signals-and-systems/code/04_signal-energy-power_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 펄스의 $$E_T \to 1$$, $$\cos 2\pi t$$의 $$E_T = T + \frac{\sin 4\pi T}{4\pi}$$(수치 적분과 비교)와 $$P_T \to \frac12$$.
+[^h1]: 휴먼 인터페이스 미디어 4회 강의 자료 「HIM_강의04_파동의표현」, p.9 (파동의 에너지)
 {% endraw %}

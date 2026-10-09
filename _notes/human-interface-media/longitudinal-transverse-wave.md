@@ -37,7 +37,7 @@ permalink: "/studies/human-interface-media/longitudinal-transverse-wave/"
 
 빛은 전기장과 자기장이 나아가는 방향에 수직으로 흔들리며 나아간다[^1]. 빛이 $$z$$ 방향으로 나아가면 흔들림은 $$x$$ 방향일 수도, $$y$$ 방향일 수도, 둘이 섞인 방향일 수도 있다. 흔들리는 면이 2차원이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/23_longitudinal-transverse-wave_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/23_longitudinal-transverse-wave_fig1.svg" alt="그림" width="660" height="391" loading="lazy">
 
 두 그림 모두 물결은 오른쪽으로 나아간다. 위쪽 점들은 좌우로만 밀려서 빽빽한 곳과 성긴 곳을 만든다. 아래쪽 점들은 위아래로만 밀린다. 빛에서 실제로 흔들리는 것은 입자가 아니라 전기장과 자기장이다. 횡파는 나아가는 방향에 수직이기만 하면 어느 쪽으로든 흔들릴 수 있고, 그림은 그중 한 방향만 그렸다[^s3].
 
@@ -111,10 +111,10 @@ $$ V = \frac{\lambda}{T} $$
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/04.HIM_강의04_파동의표현.pdf, p.6 (파동의 공간 전파: 소리는 종파, 빛은 횡파와 편광 현상, $$f(x,y,t)$$)
+[^1]: 휴먼 인터페이스 미디어 4회 강의 자료 「HIM_강의04_파동의표현」, p.6 (파동의 공간 전파: 소리는 종파, 빛은 횡파와 편광 현상, $$f(x,y,t)$$)
 [^2]: 같은 자료, p.3 (에너지: 진폭, 시간축: 주기, 공간축: 파장, 시공간: 파속 $$V = \lambda/T$$)
 [^3]: 같은 자료, p.7 (2차원 진동의 표현: 변인은 시간, 초기값은 위상과 회전. 2차원 수인 복소수 체계의 도입)
-[^s1]: 에이전트 보충. 편광 필터와 선글라스 예는 원본에 없다. 슬라이드는 "편광 현상"이라는 이름만 든다. 표준 물리 교재의 내용이다.
-[^s2]: 에이전트 보충. 440 Hz 예와 카드 C3의 수치는 원본에 없다. 343 m/s는 [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/)에서 쓴 공기 중 음속이다. 440 Hz의 파장 343/440 = 0.78 m, C3의 0.686/0.002 = 343은 직접 계산했다.
-[^s3]: 에이전트 보충. 그림 1장은 원본에 없다. [23_longitudinal-transverse-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/)로 그렸고, 그림에 쓴 값(종파는 나아가는 방향으로만, 횡파는 그에 수직으로만 밀림, 종파에서 입자 간격이 쉬는 간격 0.5보다 좁은 곳과 넓은 곳이 함께 생김)을 같은 코드로 확인했다. 근거는 강의 4 p.6의 종파·횡파 설명이다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 편광 필터와 선글라스 예는 원본에 없다. 슬라이드는 "편광 현상"이라는 이름만 든다. 표준 물리 교재의 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 440 Hz 예와 카드 C3의 수치는 원본에 없다. 343 m/s는 [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/)에서 쓴 공기 중 음속이다. 440 Hz의 파장 343/440 = 0.78 m, C3의 0.686/0.002 = 343은 직접 계산했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [23_longitudinal-transverse-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/)로 그렸고, 그림에 쓴 값(종파는 나아가는 방향으로만, 횡파는 그에 수직으로만 밀림, 종파에서 입자 간격이 쉬는 간격 0.5보다 좁은 곳과 넓은 곳이 함께 생김)을 같은 코드로 확인했다. 근거는 강의 4 p.6의 종파·횡파 설명이다.
 {% endraw %}

@@ -112,5 +112,5 @@ permalink: "/studies/abnormal-psychology/anxiety-disorders-practice/"
 </details>
 
 
-[^s1]: 에이전트 보충. 모든 사례와 풀이는 04.불안장애.pdf의 진단기준(p.3, 5, 27, 36, 43, 49)을 적용한 가상 사례다. 실제 진단은 면담과 검사를 거쳐 전문가가 내린다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 04.불안장애.pdf의 진단기준(p.3, 5, 27, 36, 43, 49)을 적용한 가상 사례다. 실제 진단은 면담과 검사를 거쳐 전문가가 내린다.
 {% endraw %}

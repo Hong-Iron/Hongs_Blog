@@ -3,7 +3,7 @@ layout: "note"
 title: "36_frequency-filters_plot.py"
 display_title: "36_frequency-filters_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "36"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/frequency-filters/"
 parent_title: "주파수 형성 필터와 주파수 선택 필터"
-description: "신호 및 시스템 · 주파수 형성 필터와 주파수 선택 필터 코드 코드"
+description: "신호 및 시스템 · 주파수 형성 필터와 주파수 선택 필터 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/36_frequency-filters_plot/"
 ---
 {% raw %}
-[주파수 형성 필터와 주파수 선택 필터](/Hongs_Blog/studies/signals-and-systems/frequency-filters/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[주파수 형성 필터와 주파수 선택 필터](/Hongs_Blog/studies/signals-and-systems/frequency-filters/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 주파수 형성 필터와 주파수 선택 필터 문서의 그림을 만든다: 36_frequency-filters_fig1.svg, 36_frequency-filters_fig2.svg, 36_frequency-filters_fig3.svg

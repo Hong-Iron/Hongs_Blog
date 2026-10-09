@@ -211,5 +211,5 @@ for i in range(1, 10, 2):
 
 
 [^1]: Python 3 언어 레퍼런스 6.7 "Binary arithmetic operations": 정수 나눗셈 `//`는 결과를 내림(floor)하고, `x == (x//y)*y + (x%y)`가 맞으며, `%`의 결과는 나누는 수와 부호가 같다. 문법 전반은 Python 3 공식 튜토리얼 3장 "An Informal Introduction to Python", 4장 "More Control Flow Tools".
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 '조건문' 절의 score 예시 코드와 "위에서부터 처음 맞는 한 곳만 실행한다"는 설명을 순서도로 옮겼다(Python 3 공식 튜토리얼 4.1 if Statements).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '조건문' 절의 score 예시 코드와 "위에서부터 처음 맞는 한 곳만 실행한다"는 설명을 순서도로 옮겼다(Python 3 공식 튜토리얼 4.1 if Statements).
 {% endraw %}

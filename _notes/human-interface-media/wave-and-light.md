@@ -78,7 +78,7 @@ $$ c = f\lambda, \qquad \lambda = \frac{c}{f} $$
 
 위상 $$\phi$$는 파동이 언제 시작하는지를 정한다. $$\phi = \pi/2$$만큼 밀린 사인은 코사인이다. 파동 하나만 볼 때는 눈에 띄지 않지만, 여러 파동을 더할 때 서로 보강하는지 상쇄하는지를 정한다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/11_wave-and-light_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/11_wave-and-light_fig1.svg" alt="그림" width="612" height="199" loading="lazy">
 
 회색 선이 기준 파동 $$\sin(2\pi t)$$다. 진폭을 바꾸면 높이만, 주파수를 바꾸면 촘촘함만, 위상을 바꾸면 옆으로 놓인 자리만 바뀐다. $$\phi = \pi/2$$인 초록 선은 코사인과 같다[^s7].
 
@@ -144,15 +144,15 @@ $$ c = f\lambda, \qquad \lambda = \frac{c}{f} $$
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.2 (들어가기)
-[^2]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.4 (가시광)
-[^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.3 (시각 정보), p.19 (요약)
-[^4]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar
-[^s1]: 에이전트 보충. 주파수·파장 계산은 $$c = f\lambda$$에 슬라이드의 가시광 범위를 넣은 것이다. 소리의 속도(20 °C 공기에서 약 343 m/s)와 가청 범위 20 Hz~20 kHz는 표준 물리 값이며, 청각은 강의 계획표 9주차에서 다룬다.
-[^s2]: 에이전트 보충. 슬라이드는 $$A$$, $$f$$, $$\phi$$의 이름만 적는다. 사인파 식은 표준 표기다.
-[^s3]: 에이전트 보충. 세기가 진폭의 제곱에 비례한다는 것은 파동 에너지의 표준 결과다. 느끼는 밝기가 세기보다 천천히 는다는 것은 정신물리학의 표준 결과(예: Stevens의 거듭제곱 법칙)다.
-[^s4]: 에이전트 보충. 푸리에 분해와의 연결은 강의 계획표 11~14주차 주제에 비춘 해석이다.
-[^s5]: 에이전트 보충. 자홍색이 스펙트럼에 없는 색(비스펙트럼색)이라는 것은 색채학의 표준 사실이다.
-[^s6]: 에이전트 보충. 와이파이 예는 원본에 없다. 컴퓨터 통신의 [신호와 변조](/Hongs_Blog/studies/computer-communication/signal-and-modulation/) 표와 같은 계산이다.
-[^s7]: 에이전트 보충. 그림 1장은 원본에 없다. [11_wave-and-light_plot.py](/Hongs_Blog/studies/human-interface-media/code/11_wave-and-light_plot/)로 그렸고, 그림에 쓴 값(위상 $$\pi/2$$인 사인 = 코사인, 진폭 2인 파동의 평균 제곱 2)을 같은 코드로 확인했다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.2 (들어가기)
+[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.4 (가시광)
+[^3]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.3 (시각 정보), p.19 (요약)
+[^4]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 주파수·파장 계산은 $$c = f\lambda$$에 슬라이드의 가시광 범위를 넣은 것이다. 소리의 속도(20 °C 공기에서 약 343 m/s)와 가청 범위 20 Hz~20 kHz는 표준 물리 값이며, 청각은 강의 계획표 9주차에서 다룬다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 $$A$$, $$f$$, $$\phi$$의 이름만 적는다. 사인파 식은 표준 표기다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세기가 진폭의 제곱에 비례한다는 것은 파동 에너지의 표준 결과다. 느끼는 밝기가 세기보다 천천히 는다는 것은 정신물리학의 표준 결과(예: Stevens의 거듭제곱 법칙)다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 푸리에 분해와의 연결은 강의 계획표 11~14주차 주제에 비춘 해석이다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 자홍색이 스펙트럼에 없는 색(비스펙트럼색)이라는 것은 색채학의 표준 사실이다.
+[^s6]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 와이파이 예는 원본에 없다. 컴퓨터 통신의 [신호와 변조](/Hongs_Blog/studies/computer-communication/signal-and-modulation/) 표와 같은 계산이다.
+[^s7]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [11_wave-and-light_plot.py](/Hongs_Blog/studies/human-interface-media/code/11_wave-and-light_plot/)로 그렸고, 그림에 쓴 값(위상 $$\pi/2$$인 사인 = 코사인, 진폭 2인 파동의 평균 제곱 2)을 같은 코드로 확인했다.
 {% endraw %}

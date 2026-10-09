@@ -186,7 +186,7 @@ m = pow(c, d, p * q)
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(RSA와 정확성 증명). Cormen et al., *Introduction to Algorithms* 3판, 31.7절 "The RSA public-key cryptosystem", 31.8절(소수 찾기와 밀러–라빈).
-[^s1]: 에이전트 보충. $$p = 61$$, $$q = 53$$, $$e = 17$$의 예는 여러 교재와 해설에서 쓰는 값이다. 모든 값과 "$$\varphi(n)$$을 알면 $$p, q$$가 나온다"는 31_rsa_verify.py에서 계산으로 확인했다.
-[^s2]: 에이전트 보충. OAEP와 PSS 패딩은 PKCS #1 v2.2(RFC 8017)에 정의되어 있다. TLS 1.3(RFC 8446)은 RSA 키 전송을 없애고 RSA를 서명에만 쓴다.
-[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 주고받는 순서는 '예시로 보기'의 다섯 단계를, 키 생성 흐름은 KEYGEN 의사코드를 그렸다. 앨리스와 밥은 암호 설명에서 흔히 쓰는 가상의 이름이다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$p = 61$$, $$q = 53$$, $$e = 17$$의 예는 여러 교재와 해설에서 쓰는 값이다. 모든 값과 "$$\varphi(n)$$을 알면 $$p, q$$가 나온다"는 31_rsa_verify.py에서 계산으로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> OAEP와 PSS 패딩은 PKCS #1 v2.2(RFC 8017)에 정의되어 있다. TLS 1.3(RFC 8446)은 RSA 키 전송을 없애고 RSA를 서명에만 쓴다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 주고받는 순서는 '예시로 보기'의 다섯 단계를, 키 생성 흐름은 KEYGEN 의사코드를 그렸다. 앨리스와 밥은 암호 설명에서 흔히 쓰는 가상의 이름이다.
 {% endraw %}

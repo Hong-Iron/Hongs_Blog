@@ -3,7 +3,7 @@ layout: "note"
 title: "08_log-scale_plot.py"
 display_title: "08_log-scale_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "08"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/log-scale/"
 parent_title: "로그함수와 로그 스케일"
-description: "대학수학 · 로그함수와 로그 스케일 코드 코드"
+description: "대학수학 · 로그함수와 로그 스케일 그림 생성 코드"
 permalink: "/studies/college-math/code/08_log-scale_plot/"
 ---
 {% raw %}
-[로그함수와 로그 스케일](/Hongs_Blog/studies/college-math/log-scale/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[로그함수와 로그 스케일](/Hongs_Blog/studies/college-math/log-scale/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 로그함수와 로그 스케일 문서의 그림을 만든다: 08_log-scale_fig1.svg, 08_log-scale_fig2.svg

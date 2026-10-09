@@ -3,7 +3,7 @@ layout: "note"
 title: "05_rate-and-bandwidth_plot.py"
 display_title: "05_rate-and-bandwidth_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "05"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/rate-and-bandwidth/"
 parent_title: "전송 속도와 대역폭"
-description: "컴퓨터 통신 · 전송 속도와 대역폭 코드 코드"
+description: "컴퓨터 통신 · 전송 속도와 대역폭 그림 생성 코드"
 permalink: "/studies/computer-communication/code/05_rate-and-bandwidth_plot/"
 ---
 {% raw %}
-[전송 속도와 대역폭](/Hongs_Blog/studies/computer-communication/rate-and-bandwidth/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[전송 속도와 대역폭](/Hongs_Blog/studies/computer-communication/rate-and-bandwidth/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 전송 속도와 대역폭 문서의 그림을 만든다: 05_rate-and-bandwidth_fig1.svg

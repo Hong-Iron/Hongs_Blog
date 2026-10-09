@@ -3,7 +3,7 @@ layout: "note"
 title: "12_image-function_plot.py"
 display_title: "12_image-function_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "12"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/image-function/"
 parent_title: "이미지 함수"
-description: "휴먼 인터페이스 미디어 · 이미지 함수 코드 코드"
+description: "휴먼 인터페이스 미디어 · 이미지 함수 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/12_image-function_plot/"
 ---
 {% raw %}
-[이미지 함수](/Hongs_Blog/studies/human-interface-media/image-function/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[이미지 함수](/Hongs_Blog/studies/human-interface-media/image-function/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 이미지 함수 문서의 그림을 만든다: 12_image-function_fig1.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "09_power-vs-exponential_plot.py"
 display_title: "09_power-vs-exponential_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "09"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/power-vs-exponential/"
 parent_title: "거듭제곱함수와 지수함수 비교"
-description: "대학수학 · 거듭제곱함수와 지수함수 비교 코드 코드"
+description: "대학수학 · 거듭제곱함수와 지수함수 비교 그림 생성 코드"
 permalink: "/studies/college-math/code/09_power-vs-exponential_plot/"
 ---
 {% raw %}
-[거듭제곱함수와 지수함수 비교](/Hongs_Blog/studies/college-math/power-vs-exponential/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[거듭제곱함수와 지수함수 비교](/Hongs_Blog/studies/college-math/power-vs-exponential/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 거듭제곱함수와 지수함수 비교 문서의 그림을 만든다: 09_power-vs-exponential_fig1.svg

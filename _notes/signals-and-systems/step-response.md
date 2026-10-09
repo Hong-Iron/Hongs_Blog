@@ -53,7 +53,7 @@ $$\begin{aligned} s[n] &= \cdots + h[n-1] + h[n] \\ -\;s[n-1] &= \cdots + h[n-1]
 
 $$h(t) = e^{-2t}u(t)$$이면 $$s(t) = \int_0^t e^{-2\tau}d\tau = \frac12(1 - e^{-2t})u(t)$$다. 이것을 미분하면 $$e^{-2t}$$로 $$h(t)$$가 다시 나온다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/22_step-response_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/22_step-response_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 왼쪽의 색칠한 넓이($$0 \sim 0.5$$)가 오른쪽 점의 높이 $$s(0.5)$$이고, 그 점에서 $$s$$의 기울기가 $$h(0.5)$$다[^s2].
 
@@ -91,7 +91,7 @@ $$h(t) = e^{-2t}u(t)$$이면 $$s(t) = \int_0^t e^{-2\tau}d\tau = \frac12(1 - e^{
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/06.Week06_CH02_2_handout.pdf, p.19~20
-[^s1]: 에이전트 보충. 누산기 예, 연속 시간 예, 제어 공학 활용, 확인 문제는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [22_step-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^{0.5}h = s(0.5) = \frac12(1 - e^{-1})$$, $$s'(0.5) = h(0.5) = e^{-1}$$.
+[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.19~20
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 누산기 예, 연속 시간 예, 제어 공학 활용, 확인 문제는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [22_step-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^{0.5}h = s(0.5) = \frac12(1 - e^{-1})$$, $$s'(0.5) = h(0.5) = e^{-1}$$.
 {% endraw %}

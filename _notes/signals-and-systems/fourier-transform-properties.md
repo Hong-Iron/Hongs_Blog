@@ -77,7 +77,7 @@ $$x(t) \leftrightarrow X(j\omega)$$, $$y(t) \leftrightarrow Y(j\omega)$$[^2].
 
 **척도.** $$\tau = at$$로 바꾸면 $$a > 0$$이면 $$\frac1aX(\frac{j\omega}{a})$$, $$a < 0$$이면 적분 범위가 뒤집혀 $$-\frac1aX(\frac{j\omega}{a})$$다. 합쳐서 $$\frac{1}{\vert a\vert }X(\frac{j\omega}{a})$$[^7]. 시간에서 $$a$$배 압축하면 주파수에서 $$\frac1a$$배 압축, 곧 $$a$$배 넓어진다. 녹음을 빨리 틀면($$\vert a\vert  > 1$$) 소리가 높아지고(스펙트럼 확장), 느리게 틀면 낮아진다[^8]. $$a = -1$$이면 시간 반전 $$x(-t) \leftrightarrow X(-j\omega)$$다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/40_fourier-transform-properties_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/40_fourier-transform-properties_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 $$\vert t\vert  < 1$$인 펄스 $$x(t)$$와 두 배 빨리 감은 $$x(2t)$$다. 시간 폭이 절반이 되면 스펙트럼은 첫 영점이 $$\pi$$에서 $$2\pi$$로 옮겨 가 두 배 넓어지고, 높이는 2에서 1로 절반이 된다[^s2].
 
@@ -188,8 +188,8 @@ $$X$$가 실수·짝이라 $$x$$도 실수·짝이다. 짝함수의 도함수는
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/14.Week14_CH04_2_handout.pdf, p.9 (예제 4.9, 그림 4.15)
-[^2]: 같은 자료, p.6~7 (표 4.1), 3-1학기/신호 및 시스템/1.수업자료/15.Week15_CH04_3_handout.pdf, p.25
+[^1]: 신호 및 시스템 14회 강의 자료 「Week14_CH04_2_handout」, p.9 (예제 4.9, 그림 4.15)
+[^2]: 같은 자료, p.6~7 (표 4.1), 신호 및 시스템 15회 강의 자료 「Week15_CH04_3_handout」, p.25
 [^3]: 같은 자료(14.Week14_CH04_2_handout.pdf), p.8
 [^4]: 같은 자료, p.10
 [^5]: 같은 자료, p.11
@@ -201,6 +201,6 @@ $$X$$가 실수·짝이라 $$x$$도 실수·짝이다. 짝함수의 도함수는
 [^11]: 같은 자료, p.18 (예제 4.11)
 [^12]: 같은 자료, p.19~20 (예제 4.12, 그림 4.16)
 [^13]: 같은 자료, p.31~32 (예제 4.14, 그림 4.18)
-[^s1]: 에이전트 보충. 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [40_fourier-transform-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$x(2t)$$의 변환을 수치 적분해 $$\frac12X(\frac{j\omega}{2})$$와 비교, 첫 영점 $$\pi$$와 $$2\pi$$.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [40_fourier-transform-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$x(2t)$$의 변환을 수치 적분해 $$\frac12X(\frac{j\omega}{2})$$와 비교, 첫 영점 $$\pi$$와 $$2\pi$$.
 {% endraw %}

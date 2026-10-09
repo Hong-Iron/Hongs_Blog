@@ -99,11 +99,11 @@ sequenceDiagram
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260926022020.png — 슬라이드 "하드웨어 구성요소 : 노드(Nodes)"
-[^2]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 26~29행
-[^3]: 4-1학기/컴퓨터 통신/2.필기노트/04.4주차.md, 5행, 10행
-[^4]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 115~117행
-[^5]: 4-1학기/pasted_images/Pasted image 20260926020456.png — 슬라이드 "성능: 기타 사항". 초록 글씨: "통신망 (links + nodes) 에서 병목 지점은 어디?"
-[^s1]: 에이전트 보충. 패킷이 버스와 메모리를 두 번 지난다는 설명은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절(노드)의 내용이다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 슬라이드 "하드웨어 구성요소 : 노드(Nodes)"의 구성도와 이 문서 '예시로 보기'의 패킷 경로 설명(Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절)을 바탕으로 그렸다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "하드웨어 구성요소 : 노드(Nodes)"
+[^2]: 컴퓨터 통신 2회 필기 「2주차」, 26~29행
+[^3]: 컴퓨터 통신 4회 필기 「4주차」, 5행, 10행
+[^4]: 컴퓨터 통신 3회 필기 「3주차」, 115~117행
+[^5]: 수업 슬라이드 캡처 — 슬라이드 "성능: 기타 사항". 초록 글씨: "통신망 (links + nodes) 에서 병목 지점은 어디?"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 패킷이 버스와 메모리를 두 번 지난다는 설명은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절(노드)의 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 "하드웨어 구성요소 : 노드(Nodes)"의 구성도와 이 문서 '예시로 보기'의 패킷 경로 설명(Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절)을 바탕으로 그렸다.
 {% endraw %}

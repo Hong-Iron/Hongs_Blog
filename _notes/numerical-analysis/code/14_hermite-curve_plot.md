@@ -3,7 +3,7 @@ layout: "note"
 title: "14_hermite-curve_plot.py"
 display_title: "14_hermite-curve_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "14"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/hermite-curve/"
 parent_title: "에르미트 곡선"
-description: "수치해석 · 에르미트 곡선 코드 코드"
+description: "수치해석 · 에르미트 곡선 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/14_hermite-curve_plot/"
 ---
 {% raw %}
-[에르미트 곡선](/Hongs_Blog/studies/numerical-analysis/hermite-curve/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[에르미트 곡선](/Hongs_Blog/studies/numerical-analysis/hermite-curve/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 에르미트 곡선 문서의 그림을 만든다: 14_hermite-curve_fig1.svg

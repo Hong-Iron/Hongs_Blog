@@ -60,7 +60,7 @@ permalink: "/studies/abnormal-psychology/schizoid-vs-schizotypal/"
 - **고립의 이유가 타인에 대한 불신과 의심일 때:** [편집성 성격장애](/Hongs_Blog/studies/abnormal-psychology/paranoid-pd/).
 - **사회적 의사소통의 결함과 제한적·반복적 행동이 발달 초기부터 있을 때:** [자폐스펙트럼장애](/Hongs_Blog/studies/abnormal-psychology/autism-spectrum-disorder/). 성격장애의 진단은 이 신경발달장애로 더 잘 설명되지 않아야 한다[^s1].
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.14~18 (조현성)
-[^2]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.20~24 (조현형)
-[^s1]: 에이전트 보충. DSM-5-TR은 조현성·조현형 성격장애의 배제 조건에 자폐스펙트럼장애를 둔다.
+[^1]: 이상 심리학 12회 강의 자료 「성격장애」, p.14~18 (조현성)
+[^2]: 이상 심리학 12회 강의 자료 「성격장애」, p.20~24 (조현형)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR은 조현성·조현형 성격장애의 배제 조건에 자폐스펙트럼장애를 둔다.
 {% endraw %}

@@ -71,8 +71,8 @@ permalink: "/studies/computer-communication/contrast--tdm--statistical-multiplex
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260924204837.png — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
-[^2]: 4-1학기/pasted_images/Pasted image 20260924204450.png — 슬라이드 "시분할 다중화", 동기식 시분할 다중화
-[^3]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 10행
-[^s1]: 에이전트 보충. 입력 수 제한, 동기 비트, 몰릴 때의 동작, 필요한 링크 용량의 비교는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 내용이다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "시분할 다중화", 동기식 시분할 다중화
+[^3]: 컴퓨터 통신 2회 필기 「2주차」, 10행
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 입력 수 제한, 동기 비트, 몰릴 때의 동작, 필요한 링크 용량의 비교는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 내용이다.
 {% endraw %}

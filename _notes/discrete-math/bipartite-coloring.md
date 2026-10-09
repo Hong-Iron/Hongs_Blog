@@ -157,6 +157,6 @@ flowchart LR
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 12장 "Simple Graphs"(색칠, 이분 그래프와 홀수 사이클).
 [^2]: Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(그래프 색칠, 4색 정리의 역사, 색칠 문제의 어려움). 3-색칠의 NP-완전성은 Cormen et al., *Introduction to Algorithms* 3판, 34장 문제 34-3. 4색 정리는 Appel과 Haken(1976)이 컴퓨터를 써서 증명했다.
-[^s1]: 에이전트 보충. 그래프 색칠로 레지스터를 배정하는 방법은 Chaitin의 연구(1982)에서 시작된 표준 기법으로, 컴파일러 교재의 레지스터 할당 장에서 다룬다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '예시로 보기'의 시험 시간표 그래프와 두 교시 배정을 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그래프 색칠로 레지스터를 배정하는 방법은 Chaitin의 연구(1982)에서 시작된 표준 기법으로, 컴파일러 교재의 레지스터 할당 장에서 다룬다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 시험 시간표 그래프와 두 교시 배정을 그렸다.
 {% endraw %}

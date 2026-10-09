@@ -3,7 +3,7 @@ layout: "note"
 title: "03_sequence-limits_plot.py"
 display_title: "03_sequence-limits_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "03"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/sequence-limits/"
 parent_title: "수열의 극한과 e"
-description: "미분적분학 · 수열의 극한과 e 코드 코드"
+description: "미분적분학 · 수열의 극한과 e 그림 생성 코드"
 permalink: "/studies/calculus/code/03_sequence-limits_plot/"
 ---
 {% raw %}
-[수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 수열의 극한과 e 문서의 그림을 만든다: 03_sequence-limits_fig1.svg, 03_sequence-limits_fig2.svg

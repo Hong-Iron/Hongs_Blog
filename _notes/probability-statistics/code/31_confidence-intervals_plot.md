@@ -3,7 +3,7 @@ layout: "note"
 title: "31_confidence-intervals_plot.py"
 display_title: "31_confidence-intervals_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "31"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/confidence-intervals/"
 parent_title: "신뢰구간"
-description: "확률과 통계 · 신뢰구간 코드 코드"
+description: "확률과 통계 · 신뢰구간 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/31_confidence-intervals_plot/"
 ---
 {% raw %}
-[신뢰구간](/Hongs_Blog/studies/probability-statistics/confidence-intervals/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[신뢰구간](/Hongs_Blog/studies/probability-statistics/confidence-intervals/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 신뢰구간 문서의 그림을 만든다: 31_confidence-intervals_fig1.svg

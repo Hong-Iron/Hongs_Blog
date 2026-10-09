@@ -41,7 +41,7 @@ $$\sin\theta = \frac12$$인 각은 $$\frac{\pi}{6}$$과 $$\frac{5\pi}{6}$$이 �
 
 [역함수](/Hongs_Blog/studies/college-math/inverse-function/)는 일대일 함수에만 있으므로, 삼각함수의 정의역을 값이 한 번씩만 나오는 구간으로 자른다[^1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/15_inverse-trig_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/15_inverse-trig_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
 왼쪽에서 가로선 $$y = 1/2$$은 사인 그래프와 끝없이 많이 만난다. 굵게 칠한 $$[-\pi/2, \pi/2]$$ 부분과는 $$\pi/6$$에서 한 번만 만난다. 그 굵은 부분을 직선 $$y = x$$에 대해 뒤집은 것이 오른쪽의 $$\arcsin x$$다[^s2].
 
@@ -103,7 +103,7 @@ $$[0, 2\pi)$$에서 $$\sin\theta = \frac12$$을 푼다.
 </div>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/15_inverse-trig_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/15_inverse-trig_fig2.svg" alt="그림" width="510" height="297" loading="lazy">
 
 회색 띠 $$[-\pi/2, \pi/2]$$ 안에서만 $$\arcsin(\sin x)$$가 점선 $$y = x$$와 겹친다. 띠 밖에서는 $$-\pi/2$$와 $$\pi/2$$ 사이를 지그재그로 오갈 뿐이라 $$x$$로 돌아오지 않는다[^s2].
 
@@ -136,6 +136,6 @@ $$[0, 2\pi)$$에서 $$\sin\theta = \frac12$$을 푼다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 6.3절 "Inverse Trigonometric Functions", 일반해는 7.5절 "Solving Trigonometric Equations"
-[^s1]: 에이전트 보충. atan2는 C·파이썬·자바스크립트 등 대부분의 수학 라이브러리에 있는 함수로, 인자 순서가 $$(y, x)$$다. 코사인 유사도가 1을 넘는 벡터 $$(-0.4, 0.5, 0.2)$$는 검증 코드로 찾아 확인했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [15_inverse-trig_plot.py](/Hongs_Blog/studies/college-math/code/15_inverse-trig_plot/)로 그렸고, 그림에 쓴 값($$\arcsin(1/2) = \pi/6$$, 그림에 찍은 해에서 모두 $$\sin\theta = 1/2$$, $$\arcsin(\sin\frac{2\pi}{3}) = \frac{\pi}{3}$$)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> atan2는 C·파이썬·자바스크립트 등 대부분의 수학 라이브러리에 있는 함수로, 인자 순서가 $$(y, x)$$다. 코사인 유사도가 1을 넘는 벡터 $$(-0.4, 0.5, 0.2)$$는 검증 코드로 찾아 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [15_inverse-trig_plot.py](/Hongs_Blog/studies/college-math/code/15_inverse-trig_plot/)로 그렸고, 그림에 쓴 값($$\arcsin(1/2) = \pi/6$$, 그림에 찍은 해에서 모두 $$\sin\theta = 1/2$$, $$\arcsin(\sin\frac{2\pi}{3}) = \frac{\pi}{3}$$)을 같은 코드로 확인했다.
 {% endraw %}

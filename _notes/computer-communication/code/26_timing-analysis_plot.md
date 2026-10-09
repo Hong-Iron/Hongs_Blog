@@ -3,7 +3,7 @@ layout: "note"
 title: "26_timing-analysis_plot.py"
 display_title: "26_timing-analysis_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "26"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
@@ -11,11 +11,11 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 parent_url: "/studies/computer-communication/timing-analysis/"
 parent_title: "소요시간 분석"
-description: "컴퓨터 통신 · 소요시간 분석 코드 코드"
+description: "컴퓨터 통신 · 소요시간 분석 그림 생성 코드"
 permalink: "/studies/computer-communication/code/26_timing-analysis_plot/"
 ---
 {% raw %}
-[소요시간 분석](/Hongs_Blog/studies/computer-communication/timing-analysis/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[소요시간 분석](/Hongs_Blog/studies/computer-communication/timing-analysis/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 소요시간 분석 문서의 그림을 만든다: 26_timing-analysis_fig1.svg

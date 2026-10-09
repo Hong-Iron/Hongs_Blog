@@ -73,7 +73,7 @@ $$
 
 $$C$$의 계수(rank)가 3이면 영공간(null space)은 $$31 - 3 = 28$$차원이다. 스펙트럼의 31가지 방향 가운데 28가지는 눈에 보이지 않는다는 뜻이다. 어떤 빛에 영공간 방향의 변화를 더해도, 세기가 어디서도 음수가 되지 않는 한 같은 색으로 보인다. 칸을 더 잘게 나눌수록 영공간은 더 커진다. 조건등색은 드문 예외가 아니라 흔한 일이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/17_metamerism_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/17_metamerism_fig1.svg" alt="그림" width="525" height="335" loading="lazy">
 
 주황 선은 흰빛에 영공간 방향의 변화를 더한 빛이다. 네 칸의 세기가 크게 다르지만(최대 2.02 차이), 세 추상체의 반응은 흰빛과 똑같다[^s5].
 
@@ -132,13 +132,13 @@ $$C$$의 계수(rank)가 3이면 영공간(null space)은 $$31 - 3 = 28$$차원�
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.10 ("Metamerism"이 굵은 글씨, 오른쪽 그림의 530+620과 580). 영어 정의를 우리말로 옮겼다.
-[^2]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.9 (점묘법 이미지)
-[^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar 5주차
-[^s1]: 에이전트 보충. 가우스 모형(봉우리 S 445, M 535, L 575 nm, 폭 30·45·45 nm 가정)의 계산값이다. [삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/)의 예제와 같은 모형이다.
-[^s2]: 에이전트 보충. 점묘법을 공간적 혼색과 조건등색으로 설명한 것은 해석이다. 슬라이드는 그림과 확대 부분만 보여 준다.
-[^s3]: 에이전트 보충. 행렬 $$C$$와 영공간으로 조건등색을 설명하는 것은 색채학의 표준 관점이며 슬라이드에는 없다.
-[^s4]: 에이전트 보충. 디스플레이, 조명 조건등색, 카메라 사례는 색채 공학의 표준 사례다.
-[^s5]: 에이전트 보충. 그림 1장은 원본에 없다. [17_metamerism_plot.py](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_plot/)로 그렸고, 그림에 쓴 값(두 스펙트럼의 세 반응 차이 $$10^{-9}$$ 이내, 음수 칸 없음, 칸마다 차이 최대 2.02)을 같은 코드로 확인했다.
-[^s6]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 수치와 강의 3 p.10 오른쪽 그림(두 빛이 같은 추상체 반응을 만드는 예)을 근거로 그렸다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.10 ("Metamerism"이 굵은 글씨, 오른쪽 그림의 530+620과 580). 영어 정의를 우리말로 옮겼다.
+[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.9 (점묘법 이미지)
+[^3]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 5주차
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 가우스 모형(봉우리 S 445, M 535, L 575 nm, 폭 30·45·45 nm 가정)의 계산값이다. [삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/)의 예제와 같은 모형이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 점묘법을 공간적 혼색과 조건등색으로 설명한 것은 해석이다. 슬라이드는 그림과 확대 부분만 보여 준다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 행렬 $$C$$와 영공간으로 조건등색을 설명하는 것은 색채학의 표준 관점이며 슬라이드에는 없다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 디스플레이, 조명 조건등색, 카메라 사례는 색채 공학의 표준 사례다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [17_metamerism_plot.py](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_plot/)로 그렸고, 그림에 쓴 값(두 스펙트럼의 세 반응 차이 $$10^{-9}$$ 이내, 음수 칸 없음, 칸마다 차이 최대 2.02)을 같은 코드로 확인했다.
+[^s6]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 수치와 강의 3 p.10 오른쪽 그림(두 빛이 같은 추상체 반응을 만드는 예)을 근거로 그렸다.
 {% endraw %}

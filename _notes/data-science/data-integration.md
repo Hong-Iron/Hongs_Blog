@@ -97,9 +97,9 @@ flowchart LR
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.37
+[^1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.37
 [^2]: 같은 자료, p.38
 [^3]: 같은 자료, p.39
-[^s1]: 에이전트 보충. 오해 항목과 카드 C2의 판단은 원본에 없다. $$y = x^2$$ 예는 [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/)의 카드 C2와 같다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 개체 식별 문제와 중복·상관 분석 문단을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오해 항목과 카드 C2의 판단은 원본에 없다. $$y = x^2$$ 예는 [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/)의 카드 C2와 같다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 개체 식별 문제와 중복·상관 분석 문단을 근거로 그렸다.
 {% endraw %}

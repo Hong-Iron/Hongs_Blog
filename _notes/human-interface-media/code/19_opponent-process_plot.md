@@ -3,7 +3,7 @@ layout: "note"
 title: "19_opponent-process_plot.py"
 display_title: "19_opponent-process_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
@@ -11,11 +11,11 @@ course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
 parent_url: "/studies/human-interface-media/opponent-process/"
 parent_title: "반대색 과정"
-description: "휴먼 인터페이스 미디어 · 반대색 과정 코드 코드"
+description: "휴먼 인터페이스 미디어 · 반대색 과정 그림 생성 코드"
 permalink: "/studies/human-interface-media/code/19_opponent-process_plot/"
 ---
 {% raw %}
-[반대색 과정](/Hongs_Blog/studies/human-interface-media/opponent-process/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[반대색 과정](/Hongs_Blog/studies/human-interface-media/opponent-process/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 반대색 과정 문서의 그림을 만든다: 19_opponent-process_fig1.svg

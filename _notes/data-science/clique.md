@@ -46,7 +46,7 @@ permalink: "/studies/data-science/clique/"
 
 $$x_3$$은 1차원으로는 모든 칸이 밀집이다. 점이 고르게 퍼져서 칸마다 20%쯤 들기 때문이다. 하지만 다른 축과 짝지으면 어디에도 모이지 않는다. 무리는 $$(x_1, x_2)$$ 부분공간에서만 보이고, 세 축 전체로 보면 사라진다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/32_clique_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/32_clique_fig1.svg" alt="그림" width="612" height="323" loading="lazy">
 
 같은 점 300개를 두 평면에 비췄다. 파란 점이 모인 120개, 회색 점이 잡음이다. 밀집 기준 15%는 45개다. $$(x_1, x_2)$$에서는 한 칸에 129개가 모여 밀집 칸이 된다. $$(x_1, x_3)$$에서는 모인 점이 세로 띠로 퍼져서, 가장 많은 칸도 35개라 밀집 칸이 없다[^s2].
 
@@ -112,11 +112,11 @@ $$\frac{\#\text{(단위 안의 점)}}{n} \ge \tau$$
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/07.7-2_density-clustering.pdf, p.14
+[^1]: 데이터 과학 7회 강의 자료 「7-2_density-clustering」, p.14
 [^2]: 같은 자료, p.15 (Agrawal et al., SIGMOD 1998)
 [^3]: 같은 자료, p.16
 [^4]: 같은 자료, p.17
 [^5]: 같은 자료, p.18
-[^s1]: 에이전트 보충. 300개 점 예와 표, 투영이 밀집인 이유, 카드 C3은 원본에 없다. 구현 코드로 확인했다(난수 씨앗 8).
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [32_clique_plot.py](/Hongs_Blog/studies/data-science/code/32_clique_plot/)로 그렸다. 32_clique_impl.py와 같은 난수 흐름으로 같은 점 300개를 만들었고, 1차원 칸의 149·49·161개, $$(x_1, x_2)$$의 129개, $$(x_1, x_3)$$과 $$(x_2, x_3)$$에 밀집 칸이 없음을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 300개 점 예와 표, 투영이 밀집인 이유, 카드 C3은 원본에 없다. 구현 코드로 확인했다(난수 씨앗 8).
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [32_clique_plot.py](/Hongs_Blog/studies/data-science/code/32_clique_plot/)로 그렸다. 32_clique_impl.py와 같은 난수 흐름으로 같은 점 300개를 만들었고, 1차원 칸의 149·49·161개, $$(x_1, x_2)$$의 129개, $$(x_1, x_3)$$과 $$(x_2, x_3)$$에 밀집 칸이 없음을 같은 코드로 확인했다.
 {% endraw %}

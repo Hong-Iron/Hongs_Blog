@@ -3,7 +3,7 @@ layout: "note"
 title: "19_prefix-sum_plot.py"
 display_title: "19_prefix-sum_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/prefix-sum/"
 parent_title: "누적 합과 차분 배열"
-description: "알고리즘 · 누적 합과 차분 배열 코드 코드"
+description: "알고리즘 · 누적 합과 차분 배열 그림 생성 코드"
 permalink: "/studies/algorithms/code/19_prefix-sum_plot/"
 ---
 {% raw %}
-[누적 합과 차분 배열](/Hongs_Blog/studies/algorithms/prefix-sum/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[누적 합과 차분 배열](/Hongs_Blog/studies/algorithms/prefix-sum/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 누적 합과 차분 배열 문서의 그림을 만든다: 19_prefix-sum_fig1.svg

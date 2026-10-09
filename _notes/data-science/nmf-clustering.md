@@ -92,7 +92,7 @@ $$\lambda$$는 벌점의 세기다. 많은 $$W_{i,j}$$가 비슷한 값이면(�
 
 왜 L2가 아니라 L1인가? 2차원으로 보면 L1이 허용하는 영역 $$\vert w_1\vert  + \vert w_2\vert  \le c$$는 꼭짓점이 축 위에 있는 마름모다. 오차의 등고선이 이 마름모에 처음 닿는 곳은 꼭짓점일 때가 많고, 꼭짓점에서는 한 좌표가 0이다(예: $$(0.01, 0.99)$$). L2 영역 $$w_1^2 + w_2^2 \le c$$는 매끄러운 원이라 닿는 곳에서 두 좌표가 모두 0이 아니다(예: $$(0.25, 0.75)$$)[^3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/35_nmf-clustering_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/35_nmf-clustering_fig1.svg" alt="그림" width="601" height="328" loading="lazy">
 
 오차가 가장 작은 곳(+)을 (0.6, 1.4)에 두고, 등고선을 키워 가며 허용 영역에 처음 닿는 곳(주황 점)을 찾았다. 마름모에서는 꼭짓점 (0, 1)에 닿아 $$w_1$$이 정확히 0이 된다. 원에서는 (0.26, 0.97)에 닿아 두 값이 모두 남는다[^s2].
 
@@ -146,11 +146,11 @@ $$\odot$$과 분수는 칸끼리의 곱과 나눗셈이다. 곱하고 나누기�
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/10.10-1_high-dim-clustering.pdf, p.18
+[^1]: 데이터 과학 10회 강의 자료 「10-1_high-dim-clustering」, p.18
 [^2]: 같은 자료, p.19
 [^3]: 같은 자료, p.20
 [^4]: 같은 자료, p.21
-[^s1]: 에이전트 보충. 문서 × 단어 예와 결과, 곱셈 갱신(Lee & Seung, NIPS 2000)과 L1 항을 분모에 더하는 방식은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [35_nmf-clustering_plot.py](/Hongs_Blog/studies/data-science/code/35_nmf-clustering_plot/)로 그렸다. 오차는 $$(w_1 - 0.6)^2 + 3(w_2 - 1.4)^2$$로 정했고, 경계 위 2만 개 점에서 가장 작은 곳이 L1에서 (0, 1), L2에서 (0.26, 0.97)임을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 문서 `정의`의 행렬 크기 $$W \in \mathbb{R}^{n \times k}$$, $$H \in \mathbb{R}^{k \times d}$$(원본 10-1 p.18)를 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문서 × 단어 예와 결과, 곱셈 갱신(Lee & Seung, NIPS 2000)과 L1 항을 분모에 더하는 방식은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [35_nmf-clustering_plot.py](/Hongs_Blog/studies/data-science/code/35_nmf-clustering_plot/)로 그렸다. 오차는 $$(w_1 - 0.6)^2 + 3(w_2 - 1.4)^2$$로 정했고, 경계 위 2만 개 점에서 가장 작은 곳이 L1에서 (0, 1), L2에서 (0.26, 0.97)임을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 행렬 크기 $$W \in \mathbb{R}^{n \times k}$$, $$H \in \mathbb{R}^{k \times d}$$(원본 10-1 p.18)를 근거로 그렸다.
 {% endraw %}

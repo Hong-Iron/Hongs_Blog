@@ -76,7 +76,7 @@ $$S_{n+1} = \alpha T_n + (1 - \alpha) S_n \qquad (0 < \alpha < 1)$$
 
 슬라이드 그림 9.9는 실제 값이 갑자기 오르거나 내릴 때, 단순 평균보다 지수 평균이, 그리고 α가 클수록 빨리 따라간다는 것을 보여 준다[^4].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/45_burst-prediction_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/45_burst-prediction_fig1.svg" alt="그림" width="650" height="335" loading="lazy">
 
 예시의 버스트로 그렸다. 실제 값이 13으로 뛴 뒤 α = 0.8 선은 두 번 만에 12.6까지 올라가고, α = 0.2 선과 단순 평균은 8번째 예측에서도 10 아래에 머문다. 반대로 4와 6을 오갈 때는 α = 0.8 선이 실제 값을 따라 출렁이고, α = 0.2 선은 천천히 내려오기만 한다[^s2].
 
@@ -113,10 +113,10 @@ $$S_{n+1} = \alpha T_n + (1 - \alpha) S_n \qquad (0 < \alpha < 1)$$
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/09.Chapter09-new.pptx, 슬라이드 37 (식 9.1, 9.2)
+[^1]: 운영체제 9회 강의 자료 「Chapter09-new」, 슬라이드 37 (식 9.1, 9.2)
 [^2]: 같은 자료, 슬라이드 38 (식 9.3)
 [^3]: 같은 자료, 슬라이드 39 (그림 9.8)
 [^4]: 같은 자료, 슬라이드 40~41 (그림 9.9)
-[^s1]: 에이전트 보충. 버스트 6, 4, 6, 4, 13, 13, 13 예는 Silberschatz, *Operating System Concepts* 6장의 예제 수치다. 무게를 풀어 쓴 식, α의 성질 표, TCP 연결, 확인 문제 C2·C3은 슬라이드에 없다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [45_burst-prediction_plot.py](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_plot/)로 그렸고, α = 0.5의 예측값 10, 8, 6, 6, 5, 9, 11, 12와 8번째 예측의 순서(α = 0.8 > α = 0.5 > α = 0.2 > 단순 평균 59/7)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 버스트 6, 4, 6, 4, 13, 13, 13 예는 Silberschatz, *Operating System Concepts* 6장의 예제 수치다. 무게를 풀어 쓴 식, α의 성질 표, TCP 연결, 확인 문제 C2·C3은 슬라이드에 없다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [45_burst-prediction_plot.py](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_plot/)로 그렸고, α = 0.5의 예측값 10, 8, 6, 6, 5, 9, 11, 12와 8번째 예측의 순서(α = 0.8 > α = 0.5 > α = 0.2 > 단순 평균 59/7)을 같은 코드로 확인했다.
 {% endraw %}

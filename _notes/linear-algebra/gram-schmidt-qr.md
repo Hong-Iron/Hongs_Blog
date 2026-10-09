@@ -41,7 +41,7 @@ $$\mathbf{a}_1 = (1, 1, 0)$$, $$\mathbf{a}_2 = (1, 0, 1)$$은 서로 수직이 �
 
 $$\mathbf{q}_1 \cdot \mathbf{q}_2 = \frac{1 - 1 + 0}{\sqrt{12}} = 0$$이고 둘 다 길이 1이다. 두 벡터가 만드는 평면은 그대로다. $$\mathbf{a}$$들이 아래 알고리즘의 입력 열, $$\mathbf{q}$$들이 $$Q$$의 열이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/18_gram-schmidt-qr_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/18_gram-schmidt-qr_fig1.svg" alt="그림" width="315" height="315" loading="lazy">
 
 회색이 처음의 $$\mathbf{a}_1$$, $$\mathbf{a}_2$$이고, 연한 면이 둘이 만드는 평면이다. $$\mathbf{a}_2$$에서 $$\mathbf{q}_1$$ 방향의 그림자를 빼고 남은 $$\mathbf{v}$$는 $$\mathbf{q}_1$$과 수직이고, 그 길이를 1로 맞춘 것이 $$\mathbf{q}_2$$다[^s2].
 
@@ -152,7 +152,7 @@ v = [v[k] - r * q[k] for k in range(m)]
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 4.4절 "Orthonormal Bases and Gram-Schmidt"(정규직교 기저, 직교 행렬, 그람–슈미트, $$A = QR$$, QR로 푸는 최소제곱).
-[^s1]: 에이전트 보충. 고전 그람–슈미트의 직교성 손실과 라우흘리 행렬 예, 하우스홀더 QR은 수치 선형대수 교재(Trefethen·Bau, *Numerical Linear Algebra*, 8장·10장)의 표준 내용이다. 18_gram-schmidt-qr_impl.py에서 두 순서의 차이를 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [18_gram-schmidt-qr_plot.py](/Hongs_Blog/studies/linear-algebra/code/18_gram-schmidt-qr_plot/)로 그렸고, $$\mathbf{v} = (\frac12, -\frac12, 1)$$, $$\mathbf{q}_2 = \frac{1}{\sqrt6}(1, -1, 2)$$, $$\mathbf{q}_1\cdot\mathbf{q}_2 = 0$$을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 2개는 원본에 없다. 이 문서 `정의`의 입출력(크기와 위삼각 $$R$$)과 GRAM-SCHMIDT 의사코드를 옮겼다(Strang 5판 4.4절).
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 고전 그람–슈미트의 직교성 손실과 라우흘리 행렬 예, 하우스홀더 QR은 수치 선형대수 교재(Trefethen·Bau, *Numerical Linear Algebra*, 8장·10장)의 표준 내용이다. 18_gram-schmidt-qr_impl.py에서 두 순서의 차이를 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [18_gram-schmidt-qr_plot.py](/Hongs_Blog/studies/linear-algebra/code/18_gram-schmidt-qr_plot/)로 그렸고, $$\mathbf{v} = (\frac12, -\frac12, 1)$$, $$\mathbf{q}_2 = \frac{1}{\sqrt6}(1, -1, 2)$$, $$\mathbf{q}_1\cdot\mathbf{q}_2 = 0$$을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 이 문서 `정의`의 입출력(크기와 위삼각 $$R$$)과 GRAM-SCHMIDT 의사코드를 옮겼다(Strang 5판 4.4절).
 {% endraw %}

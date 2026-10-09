@@ -116,11 +116,11 @@ physical  ─────→    physical  ─────→    physical
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260925022004.png — 슬라이드 "계층화 (Layering)". 4층 그림은 4-1학기/pasted_images/Pasted image 20260925022815.png
-[^2]: 4-1학기/pasted_images/Pasted image 20260925031304.png — 슬라이드 "Layering: logical communication"
-[^3]: 4-1학기/pasted_images/Pasted image 20260925031353.png — 슬라이드 "Layering: physical communication"
-[^4]: 4-1학기/컴퓨터 통신/2.필기노트/02.2주차.md, 46~53행, 63~66행
-[^5]: 4-1학기/pasted_images/Pasted image 20260925024434.png — 슬라이드 "(전체) 프로토콜 정의: 프로토콜 그래프", "동료 간의 통신은 대개 간접적으로 이루어진다"
-[^6]: 4-1학기/pasted_images/Pasted image 20260925015219.png — 슬라이드 "1장. 기본 개념", 네트워크 구조: "체계적인 접근이 필수: 계층화에 기초한 표준"
-[^s1]: 에이전트 보충. 계층화의 단점(오버헤드, 아래층 정보를 숨겨 생기는 비효율)과 유선→와이파이 교체 예는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다. 원본 슬라이드는 "계층이 많은 것은 장점인가, 단점인가?"를 질문으로 남긴다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "계층화 (Layering)". 4층 그림은 수업 슬라이드 캡처
+[^2]: 수업 슬라이드 캡처 — 슬라이드 "Layering: logical communication"
+[^3]: 수업 슬라이드 캡처 — 슬라이드 "Layering: physical communication"
+[^4]: 컴퓨터 통신 2회 필기 「2주차」, 46~53행, 63~66행
+[^5]: 수업 슬라이드 캡처 — 슬라이드 "(전체) 프로토콜 정의: 프로토콜 그래프", "동료 간의 통신은 대개 간접적으로 이루어진다"
+[^6]: 수업 슬라이드 캡처 — 슬라이드 "1장. 기본 개념", 네트워크 구조: "체계적인 접근이 필수: 계층화에 기초한 표준"
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 계층화의 단점(오버헤드, 아래층 정보를 숨겨 생기는 비효율)과 유선→와이파이 교체 예는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다. 원본 슬라이드는 "계층이 많은 것은 장점인가, 단점인가?"를 질문으로 남긴다.
 {% endraw %}

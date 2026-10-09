@@ -41,7 +41,7 @@ permalink: "/studies/probability-statistics/hypothesis-testing/"
 
 3.5%는 흔하지 않으니 "차이가 없다"를 버린다(유의수준 5% 기준). "차이가 없다"가 아래 정의의 귀무가설 $$H_0$$, 2.1이 검정통계량, 3.5%가 p값이다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig1.svg" alt="그림" width="528" height="335" loading="lazy">
 
 회색 곡선은 차이가 없을 때 두 가입률의 차이가 흔들리는 분포다. 관측한 0.03보다 바깥쪽(양쪽) 넓이를 더한 것이 p값 0.035다. 0.03이 파란 기각 경계보다 바깥이라 5% 수준에서 기각한다[^s2].
 
@@ -129,7 +129,7 @@ flowchart TD
 
 **대표 문제 2: 검정력과 표본 크기.** 참 전환율이 정말 10%와 13%라면, 1,000명씩으로는 5% 수준에서 차이를 잡아낼 확률(검정력)이 약 56%에 불과하다. 2,000명씩이면 80%를 넘는다. 실험 전에 원하는 검정력으로 표본 크기를 정해야, 효과가 있는데도 "유의하지 않음"으로 놓치는 일을 줄인다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig2.svg" alt="그림" width="515" height="335" loading="lazy">
 
 초록 곡선은 참 차이가 0.03일 때 관측한 차이의 분포다. 파란 기각 경계 오른쪽의 넓이가 검정력 0.56이고, 왼쪽 보라 부분에서는 효과가 있어도 놓친다. 표본을 늘리면 두 곡선이 좁아져 겹치는 부분이 준다[^s2].
 
@@ -216,8 +216,8 @@ $$t = \frac{\bar d}{s_d / \sqrt k}, \qquad \bar d = \frac1k\sum_{i=1}^{k} d_i, \
 
 [^1]: Wasserman, *All of Statistics*, "Hypothesis Testing and p-values" 장(귀무·대립가설, 유의수준, 검정력, p값, 순열 검정, 다중 검정과 본페로니).
 [^2]: Wasserstein, Lazar, "The ASA Statement on p-Values: Context, Process, and Purpose", *The American Statistician* 70(2), 2016.
-[^d1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.6 (6-1 복습: T-Test와 P-value)
-[^sd1]: 에이전트 보충. $$k - 1$$로 나누는 표준 방법, 5겹 예와 카드 C5는 원본에 없다. 슬라이드처럼 $$k$$로 나누는 식은 Han, Kamber, Pei, *Data Mining* 3판 8.5.5절의 식이다. 32_hypothesis-testing_verify.py로 계산했다.
-[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [32_hypothesis-testing_plot.py](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_plot/)로 그렸고, 그림에 쓴 값(표준오차 0.01427, $$z = 2.10$$, p값 0.035, 1,000명씩의 검정력 0.56, 2,000명씩 0.8 초과)을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 정의, 대표 문제 2(검정력과 표본 크기), 활용 절(실험 전에 정해 두기), 자주 하는 오해(효과 크기와 신뢰구간 보고)를 한 흐름으로 그렸다.
+[^d1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.6 (6-1 복습: T-Test와 P-value)
+[^sd1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$k - 1$$로 나누는 표준 방법, 5겹 예와 카드 C5는 원본에 없다. 슬라이드처럼 $$k$$로 나누는 식은 Han, Kamber, Pei, *Data Mining* 3판 8.5.5절의 식이다. 32_hypothesis-testing_verify.py로 계산했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [32_hypothesis-testing_plot.py](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_plot/)로 그렸고, 그림에 쓴 값(표준오차 0.01427, $$z = 2.10$$, p값 0.035, 1,000명씩의 검정력 0.56, 2,000명씩 0.8 초과)을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의, 대표 문제 2(검정력과 표본 크기), 활용 절(실험 전에 정해 두기), 자주 하는 오해(효과 크기와 신뢰구간 보고)를 한 흐름으로 그렸다.
 {% endraw %}

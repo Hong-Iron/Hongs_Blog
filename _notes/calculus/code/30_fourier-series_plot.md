@@ -3,7 +3,7 @@ layout: "note"
 title: "30_fourier-series_plot.py"
 display_title: "30_fourier-series_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "30"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/fourier-series/"
 parent_title: "푸리에 급수"
-description: "미분적분학 · 푸리에 급수 코드 코드"
+description: "미분적분학 · 푸리에 급수 그림 생성 코드"
 permalink: "/studies/calculus/code/30_fourier-series_plot/"
 ---
 {% raw %}
-[푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 푸리에 급수 문서의 그림을 만든다: 30_fourier-series_fig1.svg, 30_fourier-series_fig2.svg

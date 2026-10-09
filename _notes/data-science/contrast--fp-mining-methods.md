@@ -81,7 +81,7 @@ permalink: "/studies/data-science/contrast--fp-mining-methods/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/03.3-1_FP.pdf, p.35 (Discussion: Apriori vs FP-Growth)
+[^1]: 데이터 과학 3회 강의 자료 「3-1_FP」, p.35 (Discussion: Apriori vs FP-Growth)
 [^2]: 같은 자료, p.39 (Summary: FP Mining Methods)
-[^s1]: 에이전트 보충. 상황 문제 C1~C4는 원본에 없다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상황 문제 C1~C4는 원본에 없다.
 {% endraw %}

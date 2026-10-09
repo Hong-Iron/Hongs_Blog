@@ -67,7 +67,7 @@ $$y[n] = \frac{1}{a_0}\left\{\sum_{k=0}^{M}b_kx[n-k] - \sum_{k=1}^{N}a_ky[n-k]\r
 
 비재귀식은 그 자체가 컨벌루션 합이다. 임펄스 응답의 0 아닌 값이 $$M + 1$$개뿐이다[^3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig1.svg" alt="그림" width="650" height="256" loading="lazy">
 
 3점 평균(FIR)은 3칸 뒤에 응답이 끝나고, $$y[n] = x[n] + \frac12y[n-1]$$(IIR)은 반씩 줄며 끝없이 이어진다[^s2].
 
@@ -96,7 +96,7 @@ $$y[n] = a^2y[n-2] + abx[n-1] + bx[n] = a^3y[n-3] + a^2bx[n-2] + abx[n-1] + bx[n
 - 제차해 $$C(0.6)^n$$, 특수해 $$A - 0.6A = 1$$에서 $$A = \frac52$$.
 - $$y[1] = 0.6C + \frac52 = 2.68$$에서 $$C = 0.3$$, 그래서 $$y[n] = 0.3(0.6)^n + \frac52$$ ($$n \ge 0$$).
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig2.svg" alt="그림" width="504" height="291" loading="lazy">
 
 같은 식이라도 출발값이 다르면 $$y[0]$$이 1과 2.8로 다르다. 두 출력 모두 특수해 2.5로 다가간다[^s2].
 
@@ -188,7 +188,7 @@ $$x = \delta$$를 넣으면 $$a_0h[n] = b_0\delta[n] + b_1\delta[n-1] + \cdots +
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/06.Week06_CH02_2_handout.pdf, p.30 (예제 2.15)
+[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.30 (예제 2.15)
 [^2]: 같은 자료, p.27~28
 [^3]: 같은 자료, p.28~30
 [^4]: 같은 자료, p.31
@@ -196,6 +196,6 @@ $$x = \delta$$를 넣으면 $$a_0h[n] = b_0\delta[n] + b_1\delta[n-1] + \cdots +
 [^6]: 같은 자료, p.38
 [^7]: 같은 자료, p.39
 [^8]: 같은 자료, p.42
-[^s1]: 에이전트 보충. 지수 이동 평균 예, FIR·IIR의 안정성, 오해 항목의 계산, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [24_difference-equation-system_plot.py](/Hongs_Blog/studies/signals-and-systems/code/24_difference-equation-system_plot/)로 그렸고, 같은 코드로 다음을 확인했다: FIR $$h = \frac13, \frac13, \frac13$$, IIR $$h = (\frac12)^n$$, 초기 휴지 해 $$(1 - 0.6^{n+1})/0.4$$, 다른 보조 조건의 $$y[0] = 2.8$$, $$y[1] = 2.68$$.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 지수 이동 평균 예, FIR·IIR의 안정성, 오해 항목의 계산, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [24_difference-equation-system_plot.py](/Hongs_Blog/studies/signals-and-systems/code/24_difference-equation-system_plot/)로 그렸고, 같은 코드로 다음을 확인했다: FIR $$h = \frac13, \frac13, \frac13$$, IIR $$h = (\frac12)^n$$, 초기 휴지 해 $$(1 - 0.6^{n+1})/0.4$$, 다른 보조 조건의 $$y[0] = 2.8$$, $$y[1] = 2.68$$.
 {% endraw %}

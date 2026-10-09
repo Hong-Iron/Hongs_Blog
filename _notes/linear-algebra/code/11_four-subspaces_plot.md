@@ -3,7 +3,7 @@ layout: "note"
 title: "11_four-subspaces_plot.py"
 display_title: "11_four-subspaces_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "11"
 course: "선형대수학"
 course_slug: "linear-algebra"
@@ -11,11 +11,11 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 parent_url: "/studies/linear-algebra/four-subspaces/"
 parent_title: "랭크와 네 부분공간"
-description: "선형대수학 · 랭크와 네 부분공간 코드 코드"
+description: "선형대수학 · 랭크와 네 부분공간 그림 생성 코드"
 permalink: "/studies/linear-algebra/code/11_four-subspaces_plot/"
 ---
 {% raw %}
-[랭크와 네 부분공간](/Hongs_Blog/studies/linear-algebra/four-subspaces/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[랭크와 네 부분공간](/Hongs_Blog/studies/linear-algebra/four-subspaces/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 랭크와 네 부분공간 문서의 그림을 만든다: 11_four-subspaces_fig1.svg

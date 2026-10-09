@@ -3,7 +3,7 @@ layout: "note"
 title: "19_classification-metrics_plot.py"
 display_title: "19_classification-metrics_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "19"
 course: "데이터 과학"
 course_slug: "data-science"
@@ -11,11 +11,11 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 parent_url: "/studies/data-science/classification-metrics/"
 parent_title: "분류 평가 지표"
-description: "데이터 과학 · 분류 평가 지표 코드 코드"
+description: "데이터 과학 · 분류 평가 지표 그림 생성 코드"
 permalink: "/studies/data-science/code/19_classification-metrics_plot/"
 ---
 {% raw %}
-[분류 평가 지표](/Hongs_Blog/studies/data-science/classification-metrics/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[분류 평가 지표](/Hongs_Blog/studies/data-science/classification-metrics/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 분류 평가 지표 문서의 그림을 만든다: 19_classification-metrics_fig1.svg

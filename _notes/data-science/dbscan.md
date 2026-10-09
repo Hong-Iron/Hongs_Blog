@@ -35,7 +35,7 @@ permalink: "/studies/data-science/dbscan/"
 
 [k-평균](/Hongs_Blog/studies/data-science/k-means/)과 [GMM](/Hongs_Blog/studies/data-science/gaussian-mixture-model/)은 무리 수를 정해야 하고, 둥근 모양이나 종 모양을 가정하며, 이상치에 흔들리고, 고리처럼 생긴 무리를 찾지 못한다[^1]. 고리 하나 안에 덩어리 하나가 있는 자료를 k-평균($$k = 2$$)에 넣으면 고리를 반으로 자른다. DBSCAN은 고리와 덩어리를 따로 묶는다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/31_dbscan_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/31_dbscan_fig1.svg" alt="그림" width="612" height="325" loading="lazy">
 
 고리 점 40개와 가운데 덩어리 15개에, 고리 바깥에 살짝 붙은 점 2개와 멀리 떨어진 점 3개를 더했다. k-평균은 고리와 덩어리를 섞어 둘로 자른다. DBSCAN(Eps 1, MinPts 3)은 고리와 덩어리를 따로 묶고, 붙은 점 2개는 경계점, 먼 점 3개는 잡음으로 남긴다[^s2].
 
@@ -168,13 +168,13 @@ flowchart LR
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/07.7-2_density-clustering.pdf, p.8
+[^1]: 데이터 과학 7회 강의 자료 「7-2_density-clustering」, p.8
 [^2]: 같은 자료, p.9
 [^3]: 같은 자료, p.10. 슬라이드는 이웃이 MinPts보다 "많으면(higher)" 핵심점이라 적는다. 보통의 정의(Ester et al., KDD 1996)와 이 문서는 "MinPts 이상"이다
 [^4]: 같은 자료, p.11
 [^5]: 같은 자료, p.12
 [^6]: 같은 자료, p.13
-[^s1]: 에이전트 보충. 1차원 예, 고리 예, 공간 색인, 쓰임 예, 흔한 실수, 카드 C2는 원본에 없다. 구현 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [31_dbscan_plot.py](/Hongs_Blog/studies/data-science/code/31_dbscan_plot/)로 그렸고, 고리와 덩어리가 서로 다른 군집이 되는 것, 붙은 점 2개가 핵심점이 아닌 경계점이고 먼 점 3개가 잡음인 것, k-평균($$k = 2$$, 열 번 다시 시작)이 고리와 덩어리를 가르지 못하는 것을 같은 코드로 확인했다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. `예시로 보기`의 1차원 예 표와 `정의`의 직접 밀도 도달(원본 7-2 p.11)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1차원 예, 고리 예, 공간 색인, 쓰임 예, 흔한 실수, 카드 C2는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [31_dbscan_plot.py](/Hongs_Blog/studies/data-science/code/31_dbscan_plot/)로 그렸고, 고리와 덩어리가 서로 다른 군집이 되는 것, 붙은 점 2개가 핵심점이 아닌 경계점이고 먼 점 3개가 잡음인 것, k-평균($$k = 2$$, 열 번 다시 시작)이 고리와 덩어리를 가르지 못하는 것을 같은 코드로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `예시로 보기`의 1차원 예 표와 `정의`의 직접 밀도 도달(원본 7-2 p.11)을 근거로 그렸다.
 {% endraw %}

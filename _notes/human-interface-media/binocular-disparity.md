@@ -46,7 +46,7 @@ permalink: "/studies/human-interface-media/binocular-disparity/"
 
 가까운 곳에서는 수십 cm 차이가 10° 넘게 벌어지고, 먼 곳에서는 1 m 차이가 0.03°로 거의 사라진다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig2.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig2.svg" alt="그림" width="260" height="433" loading="lazy">
 
 두 눈에서 한 점으로 그은 두 시선이 그 점에서 각을 이룬다. 점이 가까울수록 각이 벌어지고, 두 점의 각 차이가 시차다. 그림은 보기 쉽게 두 눈 사이를 거리에 비해 크게 그렸다[^s7].
 
@@ -69,7 +69,7 @@ $$
 
 이다. $$B$$는 두 눈 사이 거리(기선, baseline)다. 시차는 거리의 역수 차이에 비례하므로 멀어질수록 빠르게 줄어든다[^s2].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig1.svg" alt="그림" width="519" height="335" loading="lazy">
 
 곡선은 1 m 안쪽에서 가파르게 떨어지고, 몇 m만 넘어가도 바닥에 붙는다. 바닥에 붙은 구간에서는 거리가 1 m 달라져도 높이 차이가 눈에 보이지 않는다[^s6].
 
@@ -140,14 +140,14 @@ $$
 
 </details>
 
-[^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.14 (양안 인식, "Binocular Disparity"가 굵은 글씨). 영어 정의를 우리말로 옮겼다.
-[^2]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/03.HIM_강의03_사람의시각.pdf, p.15 (두눈과 시야). 그림의 숫자는 확대해 읽었다.
-[^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/01.HIM_강의01-들어가기.pdf, p.7
-[^s1]: 에이전트 보충. 대응점, 호롭터 위의 시차 0, 호롭터 안쪽의 교차 시차는 표준 지각 교재(예: Goldstein, *Sensation and Perception*)의 설명이다. 슬라이드는 그림만 보여 준다.
-[^s2]: 에이전트 보충. 두 눈 사이 거리 6.5 cm는 성인의 대표값으로 둔 가정이다. 시차 식과 근사는 기하학에서 나온다.
-[^s3]: 에이전트 보충. 눈의 위치와 포식·피식 관계, 입체 영상과 VR의 원리는 표준 설명이다. 시야 그림에는 동물 이름이 없어서 머리 모양과 그림 속 설명으로만 구별했다.
-[^s4]: 에이전트 보충. 한 눈 깊이 단서(단안 단서)는 표준 지각 교재의 내용이며 슬라이드에는 없다.
-[^s5]: 에이전트 보충. 사람 시야의 대표값: 한 눈 수평 시야는 귀 쪽 약 100°, 코 쪽 약 60°(안과 시야 검사의 표준값), 두 눈을 뜬 전체 수평 시야는 약 190°(IEC 국제전기기술용어 IEV의 field of view 정의), 겹치는 양안 시야는 약 120°. 그림 원래 출처는 찾지 못했다.
-[^s6]: 에이전트 보충. 그림 1장은 원본에 없다. [21_binocular-disparity_plot.py](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/)로 그렸고, 그림에 쓴 값($$B = 6.5$$ cm에서 30 cm 대 3 m 시차 11.12°, 10 m 대 11 m 시차 0.034°)을 같은 코드로 확인했다.
-[^s7]: 에이전트 보충. 그림 1장은 원본에 없다. [21_binocular-disparity_plot.py](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/)로 그렸고, 그림에 쓴 값(두 눈 사이 1, 거리 2와 6일 때 두 시선의 각 28.1°와 9.5°, 각이 $$2\arctan(B/2d)$$와 같음)을 같은 코드로 확인했다.
+[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.14 (양안 인식, "Binocular Disparity"가 굵은 글씨). 영어 정의를 우리말로 옮겼다.
+[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.15 (두눈과 시야). 그림의 숫자는 확대해 읽었다.
+[^3]: 휴먼 인터페이스 미디어 1회 강의 자료 「HIM_강의01-들어가기」, p.7
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 대응점, 호롭터 위의 시차 0, 호롭터 안쪽의 교차 시차는 표준 지각 교재(예: Goldstein, *Sensation and Perception*)의 설명이다. 슬라이드는 그림만 보여 준다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 눈 사이 거리 6.5 cm는 성인의 대표값으로 둔 가정이다. 시차 식과 근사는 기하학에서 나온다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 눈의 위치와 포식·피식 관계, 입체 영상과 VR의 원리는 표준 설명이다. 시야 그림에는 동물 이름이 없어서 머리 모양과 그림 속 설명으로만 구별했다.
+[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 한 눈 깊이 단서(단안 단서)는 표준 지각 교재의 내용이며 슬라이드에는 없다.
+[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 사람 시야의 대표값: 한 눈 수평 시야는 귀 쪽 약 100°, 코 쪽 약 60°(안과 시야 검사의 표준값), 두 눈을 뜬 전체 수평 시야는 약 190°(IEC 국제전기기술용어 IEV의 field of view 정의), 겹치는 양안 시야는 약 120°. 그림 원래 출처는 찾지 못했다.
+[^s6]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [21_binocular-disparity_plot.py](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/)로 그렸고, 그림에 쓴 값($$B = 6.5$$ cm에서 30 cm 대 3 m 시차 11.12°, 10 m 대 11 m 시차 0.034°)을 같은 코드로 확인했다.
+[^s7]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [21_binocular-disparity_plot.py](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/)로 그렸고, 그림에 쓴 값(두 눈 사이 1, 거리 2와 6일 때 두 시선의 각 28.1°와 9.5°, 각이 $$2\arctan(B/2d)$$와 같음)을 같은 코드로 확인했다.
 {% endraw %}

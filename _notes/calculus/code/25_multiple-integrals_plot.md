@@ -3,7 +3,7 @@ layout: "note"
 title: "25_multiple-integrals_plot.py"
 display_title: "25_multiple-integrals_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "25"
 course: "미분적분학"
 course_slug: "calculus"
@@ -11,11 +11,11 @@ course_url: "/studies/calculus/"
 track: "수학"
 parent_url: "/studies/calculus/multiple-integrals/"
 parent_title: "중적분과 변수변환"
-description: "미분적분학 · 중적분과 변수변환 코드 코드"
+description: "미분적분학 · 중적분과 변수변환 그림 생성 코드"
 permalink: "/studies/calculus/code/25_multiple-integrals_plot/"
 ---
 {% raw %}
-[중적분과 변수변환](/Hongs_Blog/studies/calculus/multiple-integrals/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[중적분과 변수변환](/Hongs_Blog/studies/calculus/multiple-integrals/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 중적분과 변수변환 문서의 그림을 만든다: 25_multiple-integrals_fig1.svg

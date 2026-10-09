@@ -77,7 +77,7 @@ $$f(x) = e^{-x} - x$$, 오차 $$10^{-10}$$까지의 반복 횟수는 검증 코�
 | 반복 횟수 | 33 | 4 | 5 | 40 |
 | 실패하는 경우 | 불연속(1/x)[^1] | $$f' = 0$$, 맴돌기, 발산[^2] | 두 점 값이 같음[^3] | $$\lvert g'\rvert > 1$$ |
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/32_root-finding-compared_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/32_root-finding-compared_fig1.svg" alt="그림" width="539" height="335" loading="lazy">
 
 세로축은 한 칸이 10배인 눈금이다. 이분법(파랑)은 들쭉날쭉하면서 일정한 빠르기로, 고정점(보라)은 곧은 선으로 천천히 내려간다. 뉴턴(주황)과 할선(초록)은 아래로 꺾이며 몇 번 만에 목표 오차 아래로 떨어진다[^s2].
 
@@ -121,9 +121,9 @@ $$f(x) = e^{-x} - x$$, 오차 $$10^{-10}$$까지의 반복 횟수는 검증 코�
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/16.na16_nonlinear.pdf, p.12~13
+[^1]: 수치해석 16회 강의 자료 「na16_nonlinear」, p.12~13
 [^2]: 같은 자료, p.18
 [^3]: 같은 자료, p.21
-[^s1]: 에이전트 보충. 네 상황 문제, 반복 횟수 비교와 맴도는 예, 수렴 차수 정리, 브렌트 방법과 라이브러리, 카드는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [32_root-finding-compared_plot.py](/Hongs_Blog/studies/numerical-analysis/code/32_root-finding-compared_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 검증 코드와 같은 시작값에서 반복 횟수 33, 4, 5, 40.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 상황 문제, 반복 횟수 비교와 맴도는 예, 수렴 차수 정리, 브렌트 방법과 라이브러리, 카드는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [32_root-finding-compared_plot.py](/Hongs_Blog/studies/numerical-analysis/code/32_root-finding-compared_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 검증 코드와 같은 시작값에서 반복 횟수 33, 4, 5, 40.
 {% endraw %}

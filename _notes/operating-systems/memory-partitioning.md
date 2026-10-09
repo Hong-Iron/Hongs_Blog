@@ -179,7 +179,7 @@ permalink: "/studies/operating-systems/memory-partitioning/"
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/07.chap7 (Stony Brook).pdf, p.17~19 (그림 7.4)
+[^1]: 운영체제 7회 강의 자료 「chap7 (Stony Brook)」, p.17~19 (그림 7.4)
 [^2]: 같은 자료, p.9
 [^3]: 같은 자료, p.9~10
 [^4]: 같은 자료, p.11
@@ -189,6 +189,6 @@ permalink: "/studies/operating-systems/memory-partitioning/"
 [^8]: 같은 자료, p.16
 [^9]: 같은 자료, p.20~22
 [^10]: 같은 자료, p.23 (그림 7.5)
-[^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 압축에 재배치가 필요하다는 설명, malloc·가비지 컬렉터 연결, 확인 문제는 Stallings 6판 7.2절을 바탕으로 보탰다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기" 표의 (d)~(h) 단계(p.17~19, 그림 7.4)를 크기에 비례한 메모리 막대로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 압축에 재배치가 필요하다는 설명, malloc·가비지 컬렉터 연결, 확인 문제는 Stallings 6판 7.2절을 바탕으로 보탰다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "예시로 보기" 표의 (d)~(h) 단계(p.17~19, 그림 7.4)를 크기에 비례한 메모리 막대로 옮겼다.
 {% endraw %}

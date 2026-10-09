@@ -3,7 +3,7 @@ layout: "note"
 title: "35_ode-systems_plot.py"
 display_title: "35_ode-systems_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "35"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/ode-systems/"
 parent_title: "연립 상미분방정식"
-description: "수치해석 · 연립 상미분방정식 코드 코드"
+description: "수치해석 · 연립 상미분방정식 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/35_ode-systems_plot/"
 ---
 {% raw %}
-[연립 상미분방정식](/Hongs_Blog/studies/numerical-analysis/ode-systems/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[연립 상미분방정식](/Hongs_Blog/studies/numerical-analysis/ode-systems/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 연립 상미분방정식 문서의 그림을 만든다: 35_ode-systems_fig1.svg

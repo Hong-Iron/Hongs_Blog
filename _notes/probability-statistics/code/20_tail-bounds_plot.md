@@ -3,7 +3,7 @@ layout: "note"
 title: "20_tail-bounds_plot.py"
 display_title: "20_tail-bounds_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "20"
 course: "확률과 통계"
 course_slug: "probability-statistics"
@@ -11,11 +11,11 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 parent_url: "/studies/probability-statistics/tail-bounds/"
 parent_title: "확률 부등식"
-description: "확률과 통계 · 확률 부등식 코드 코드"
+description: "확률과 통계 · 확률 부등식 그림 생성 코드"
 permalink: "/studies/probability-statistics/code/20_tail-bounds_plot/"
 ---
 {% raw %}
-[확률 부등식](/Hongs_Blog/studies/probability-statistics/tail-bounds/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[확률 부등식](/Hongs_Blog/studies/probability-statistics/tail-bounds/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 확률 부등식 문서의 그림을 만든다: 20_tail-bounds_fig1.svg

@@ -3,7 +3,7 @@ layout: "note"
 title: "29_secant-method_plot.py"
 display_title: "29_secant-method_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "29"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/secant-method/"
 parent_title: "할선법"
-description: "수치해석 · 할선법 코드 코드"
+description: "수치해석 · 할선법 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/29_secant-method_plot/"
 ---
 {% raw %}
-[할선법](/Hongs_Blog/studies/numerical-analysis/secant-method/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[할선법](/Hongs_Blog/studies/numerical-analysis/secant-method/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 할선법 문서의 그림을 만든다: 29_secant-method_fig1.svg

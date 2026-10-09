@@ -125,10 +125,10 @@ permalink: "/studies/operating-systems/segmentation/"
 
 </details>
 
-[^1]: 3-1학기/운영체제/1.수업자료/07.chap7 (Stony Brook).pdf, p.35
+[^1]: 운영체제 7회 강의 자료 「chap7 (Stony Brook)」, p.35
 [^2]: 같은 자료, p.33
 [^3]: 같은 자료, p.34
 [^4]: 같은 자료, p.34
-[^s1]: 에이전트 보충. 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 표로 계산한 예, 변환 단계, 그림 7.12b 예, 페이징과의 비교표, 실행 파일·segmentation fault 연결, 확인 문제는 Stallings 6판 7.4절을 바탕으로 보탰다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. "예시로 보기"의 세그먼트 표(p.35)에서 시작 주소와 길이로 계산한 메모리 배치를 그렸다. 칸 너비는 크기에 비례하지 않는다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 표로 계산한 예, 변환 단계, 그림 7.12b 예, 페이징과의 비교표, 실행 파일·segmentation fault 연결, 확인 문제는 Stallings 6판 7.4절을 바탕으로 보탰다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "예시로 보기"의 세그먼트 표(p.35)에서 시작 주소와 길이로 계산한 메모리 배치를 그렸다. 칸 너비는 크기에 비례하지 않는다.
 {% endraw %}

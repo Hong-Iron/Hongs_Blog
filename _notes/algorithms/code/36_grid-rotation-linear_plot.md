@@ -3,7 +3,7 @@ layout: "note"
 title: "36_grid-rotation-linear_plot.py"
 display_title: "36_grid-rotation-linear_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "36"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/grid-rotation-linear/"
 parent_title: "격자 회전 ↔ 선형변환"
-description: "알고리즘 · 격자 회전 ↔ 선형변환 코드 코드"
+description: "알고리즘 · 격자 회전 ↔ 선형변환 그림 생성 코드"
 permalink: "/studies/algorithms/code/36_grid-rotation-linear_plot/"
 ---
 {% raw %}
-[격자 회전 ↔ 선형변환](/Hongs_Blog/studies/algorithms/grid-rotation-linear/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[격자 회전 ↔ 선형변환](/Hongs_Blog/studies/algorithms/grid-rotation-linear/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 격자 회전 ↔ 선형변환 문서의 그림을 만든다: 36_grid-rotation-linear_fig1.svg

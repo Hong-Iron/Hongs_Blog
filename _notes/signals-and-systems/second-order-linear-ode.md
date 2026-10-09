@@ -53,7 +53,7 @@ permalink: "/studies/signals-and-systems/second-order-linear-ode/"
 
 복소근일 때는 오일러 공식 $$e^{j\beta x} = \cos\beta x + j\sin\beta x$$로 $$C_1 e^{(\alpha + j\beta)x} + C_2 e^{(\alpha - j\beta)x}$$를 풀어 쓴 뒤, 계수를 새 상수로 묶는다. $$e^{\alpha x}$$는 크기가 늘거나 줄게 하고, $$\cos$$와 $$\sin$$은 진동하게 한다. 이 교재는 허수 단위를 $$j$$로 쓴다(1주차 자료는 $$i$$와 섞어 쓴다)[^3].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/02_second-order-linear-ode_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/02_second-order-linear-ode_fig1.svg" alt="그림" width="612" height="429" loading="lazy">
 
 위 두 칸은 실근(예 1)과 중근($$y'' - 2y' + y = 0$$, $$y(0) = 0$$, $$y'(0) = 1$$이면 $$y = xe^x$$)의 해이고, 아래 두 칸은 복소근의 해다. 복소근이면 진동하고, 점선이 정하는 진폭은 실수부 $$\alpha$$가 양수면 커지고(예 2) 음수면 줄어든다($$-0.5 \pm j3$$)[^s2].
 
@@ -212,14 +212,14 @@ $$e^{(\alpha \pm j\beta)x} = e^{\alpha x}e^{\pm j\beta x}$$이고 오일러 공�
 </details>
 
 
-[^1]: 3-1학기/신호 및 시스템/1.수업자료/01.Week01_2_미분방정식.pdf, p.9 (ex.1)
+[^1]: 신호 및 시스템 1회 강의 자료 「Week01_2_미분방정식」, p.9 (ex.1)
 [^2]: 같은 자료, p.8
-[^3]: 같은 자료, p.8 (복소근의 풀이), 3-1학기/신호 및 시스템/1.수업자료/01.Week01_1_자연상수와 오일러 등식.pdf, p.1
+[^3]: 같은 자료, p.8 (복소근의 풀이), 신호 및 시스템 1회 강의 자료 「Week01_1_자연상수와 오일러 등식」, p.1
 [^4]: 같은 자료(01.Week01_2_미분방정식.pdf), p.11 (미정계수 테이블)
 [^5]: 같은 자료, p.9 (ex.2)
 [^6]: 같은 자료, p.10 (ex.4)
 [^7]: 같은 자료, p.13 (ex.2)
-[^s1]: 에이전트 보충. 중근의 예 $$y'' - 2y' + y = 0$$, $$g$$가 제차해와 겹칠 때 $$x$$를 곱하는 규칙, 고유 응답·강제 응답의 이름, 스스로 설명해 보기, 오해 항목, 확인 문제 C4는 원본에 없다. 표준 미분방정식 교재(Zill, *Differential Equations* 4장)의 내용이며 해는 식에 넣어 확인했다.
-[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [02_second-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/02_second-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예 1의 $$1.4e^{-8x} - 1.4e^{-3x}$$, 예 2의 $$-\frac{8\sqrt5}{5}e^{2x}\sin\sqrt5x$$, 중근의 $$xe^x$$, 감쇠 예 $$e^{-0.5x}\cos 3x$$($$y'' + y' + 9.25y = 0$$, $$y(0) = 1$$, $$y'(0) = -0.5$$)가 각자의 식과 초기 조건을 만족함. 감쇠 예는 원본에 없는 식이다.
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 정의의 제차식·비제차식 절(1주차 미분방정식 자료 p.8, p.11)을 근거로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 중근의 예 $$y'' - 2y' + y = 0$$, $$g$$가 제차해와 겹칠 때 $$x$$를 곱하는 규칙, 고유 응답·강제 응답의 이름, 스스로 설명해 보기, 오해 항목, 확인 문제 C4는 원본에 없다. 표준 미분방정식 교재(Zill, *Differential Equations* 4장)의 내용이며 해는 식에 넣어 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [02_second-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/02_second-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예 1의 $$1.4e^{-8x} - 1.4e^{-3x}$$, 예 2의 $$-\frac{8\sqrt5}{5}e^{2x}\sin\sqrt5x$$, 중근의 $$xe^x$$, 감쇠 예 $$e^{-0.5x}\cos 3x$$($$y'' + y' + 9.25y = 0$$, $$y(0) = 1$$, $$y'(0) = -0.5$$)가 각자의 식과 초기 조건을 만족함. 감쇠 예는 원본에 없는 식이다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 제차식·비제차식 절(1주차 미분방정식 자료 p.8, p.11)을 근거로 그렸다.
 {% endraw %}

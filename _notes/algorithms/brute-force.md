@@ -144,5 +144,5 @@ flowchart TD
 
 
 [^1]: Python 3 표준 라이브러리 문서, "itertools — Functions creating iterators for efficient looping"(`product`, `permutations`, `combinations`와 각각이 만드는 개수). 완전탐색의 부분집합·순열 만들기는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 5.1 "Generating subsets", 5.2 "Generating permutations".
-[^s1]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '짜기 전 네 가지 질문' 절의 네 질문과 그 아래 '경우를 줄일 관찰' 두 가지를 순서도로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '짜기 전 네 가지 질문' 절의 네 질문과 그 아래 '경우를 줄일 관찰' 두 가지를 순서도로 옮겼다.
 {% endraw %}

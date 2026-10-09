@@ -3,7 +3,7 @@ layout: "note"
 title: "21_geometric-series_plot.py"
 display_title: "21_geometric-series_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "21"
 course: "대학수학"
 course_slug: "college-math"
@@ -11,11 +11,11 @@ course_url: "/studies/college-math/"
 track: "수학"
 parent_url: "/studies/college-math/geometric-series/"
 parent_title: "등비급수"
-description: "대학수학 · 등비급수 코드 코드"
+description: "대학수학 · 등비급수 그림 생성 코드"
 permalink: "/studies/college-math/code/21_geometric-series_plot/"
 ---
 {% raw %}
-[등비급수](/Hongs_Blog/studies/college-math/geometric-series/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[등비급수](/Hongs_Blog/studies/college-math/geometric-series/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 등비급수 문서의 그림을 만든다: 21_geometric-series_fig1.svg, 21_geometric-series_fig2.svg

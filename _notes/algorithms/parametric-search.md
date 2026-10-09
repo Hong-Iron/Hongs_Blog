@@ -56,7 +56,7 @@ L이 커지면 토막 수는 줄기만 한다. 그래서 대답은 "예"가 이�
 
 11가지 L 중 네 개만 물었다. [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)과 같은 일을 하는데, 정렬된 리스트 대신 "예·아니오의 줄"에서 경계를 찾는다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/21_parametric-search_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/21_parametric-search_fig1.svg" alt="그림" width="535" height="320" loading="lazy">
 
 L이 커지면 토막 수가 줄기만 한다. 그래서 5개 점선에 닿는 초록 막대와 못 닿는 주황 막대가 L = 4와 5 사이에서 딱 한 번 갈린다. 동그라미 숫자는 이분 탐색이 물은 순서이고, L = 6, 3, 4, 5 차례다[^s1].
 
@@ -247,6 +247,6 @@ flowchart TD
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search"의 Finding the smallest solution: ok(x)가 x < k에서 거짓, x ≥ k에서 참이면 k를 이분 탐색으로 찾고, ok를 O(log z)번 부른다. 불변식 증명의 형식은 Cormen 외, *Introduction to Algorithms* 3판 2.1절을 따랐다.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [21_parametric-search_plot.py](/Hongs_Blog/studies/algorithms/code/21_parametric-search_plot/)로 그렸고, 토막 수(L = 1 ~ 6에서 24, 11, 6, 5, 4, 2), 토막 수가 L에 따라 늘지 않는다는 것, max_true 틀이 6, 3, 4, 5를 묻고 4를 돌려준다는 것을 같은 코드로 확인했다.
-[^s2]: 에이전트 보충. 다이어그램 1개는 원본에 없다. '적용 조건과 알아보는 신호' 절의 조건 1·2와 '정의' 절의 최소형·최대형 틀(min_true, max_true의 mid 잡는 법)을 순서도로 옮겼다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [21_parametric-search_plot.py](/Hongs_Blog/studies/algorithms/code/21_parametric-search_plot/)로 그렸고, 토막 수(L = 1 ~ 6에서 24, 11, 6, 5, 4, 2), 토막 수가 L에 따라 늘지 않는다는 것, max_true 틀이 6, 3, 4, 5를 묻고 4를 돌려준다는 것을 같은 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '적용 조건과 알아보는 신호' 절의 조건 1·2와 '정의' 절의 최소형·최대형 틀(min_true, max_true의 mid 잡는 법)을 순서도로 옮겼다.
 {% endraw %}

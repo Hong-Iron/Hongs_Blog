@@ -126,10 +126,10 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 
 </details>
 
-[^1]: 4-1학기/pasted_images/Pasted image 20260924204450.png — 슬라이드 "시분할 다중화 (Time Division Multiplexing)", 동기식 시분할 다중화
-[^2]: 4-1학기/pasted_images/Pasted image 20260924204751.png — TDM 그림 (4 users, frequency–time)
-[^3]: 4-1학기/컴퓨터 통신/2.필기노트/01.1주차.md, 62~64행, 72행
-[^4]: 4-1학기/pasted_images/Pasted image 20260924204837.png — 슬라이드 "통계적 다중화"의 Synchronous TDM 그림 (Wasted Bandwidth)
-[^s1]: 에이전트 보충. 지연이 일정하다는 보장, 입력 수 제한, 동기 상실, T1·E1·GSM 사례, 회선 스위칭 구현은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 내용이다.
-[^s2]: 에이전트 보충. 필기 63행은 "FDM보다는 효율적으로 나눌 수 있다"고 쓴다. 보호 대역 기준으로는 맞고, 쉬는 입력의 낭비 기준으로는 둘이 같다.
+[^1]: 수업 슬라이드 캡처 — 슬라이드 "시분할 다중화 (Time Division Multiplexing)", 동기식 시분할 다중화
+[^2]: 수업 슬라이드 캡처 — TDM 그림 (4 users, frequency–time)
+[^3]: 컴퓨터 통신 1회 필기 「1주차」, 62~64행, 72행
+[^4]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화"의 Synchronous TDM 그림 (Wasted Bandwidth)
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 지연이 일정하다는 보장, 입력 수 제한, 동기 상실, T1·E1·GSM 사례, 회선 스위칭 구현은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 내용이다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 필기 63행은 "FDM보다는 효율적으로 나눌 수 있다"고 쓴다. 보호 대역 기준으로는 맞고, 쉬는 입력의 낭비 기준으로는 둘이 같다.
 {% endraw %}

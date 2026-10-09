@@ -126,10 +126,10 @@ permalink: "/studies/abnormal-psychology/dependent-pd/"
 
 </details>
 
-[^1]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.59
-[^2]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.60 ("여 > 남 or 여 = 남")
-[^3]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.61
-[^4]: 4-1학기/이상 심리학/1.수업자료/12.성격장애.pdf, p.62
-[^s1]: 에이전트 보충. MC의 사례는 진단기준을 보이려고 만든 가상 사례다.
-[^s2]: 에이전트 보충. DSM-5-TR의 유병률: NESARC 0.49%, NCS-R Part II 0.6%(StatPearls "Dependent Personality Disorder", NCBI Bookshelf NBK606086이 DSM-5-TR을 인용). 서구 일반 인구 메타분석(Volkert, Gablonski & Rabung, 2018, *British Journal of Psychiatry*)은 0.78%다. 이전 판의 이 각주는 0.6%를 "영국 조사"로 잘못 적었다.
+[^1]: 이상 심리학 12회 강의 자료 「성격장애」, p.59
+[^2]: 이상 심리학 12회 강의 자료 「성격장애」, p.60 ("여 > 남 or 여 = 남")
+[^3]: 이상 심리학 12회 강의 자료 「성격장애」, p.61
+[^4]: 이상 심리학 12회 강의 자료 「성격장애」, p.62
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MC의 사례는 진단기준을 보이려고 만든 가상 사례다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR의 유병률: NESARC 0.49%, NCS-R Part II 0.6%(StatPearls "Dependent Personality Disorder", NCBI Bookshelf NBK606086이 DSM-5-TR을 인용). 서구 일반 인구 메타분석(Volkert, Gablonski & Rabung, 2018, *British Journal of Psychiatry*)은 0.78%다. 이전 판의 이 각주는 0.6%를 "영국 조사"로 잘못 적었다.
 {% endraw %}

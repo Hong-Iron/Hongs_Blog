@@ -75,7 +75,7 @@ permalink: "/studies/algorithms/grid-rotation-linear/"
 </details>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/36_grid-rotation-linear_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/36_grid-rotation-linear_fig1.svg" alt="그림" width="510" height="188" loading="lazy">
 
 색칠한 1, 2, 3을 따라가면 된다. 가로 거울(위아래 뒤집기)에 비추면 첫 줄이 맨 아래로 간다. 이어서 대각선 거울(전치)에 비추면 그 줄이 오른쪽 열로 선다. 거울 두 번을 거친 결과가 시계 방향으로 90° 돈 격자다[^s3].
 
@@ -166,7 +166,7 @@ permalink: "/studies/algorithms/grid-rotation-linear/"
 
 [^1]: Python 3 공식 튜토리얼 5.1.4 "Nested List Comprehensions": `list(zip(*matrix))`로 행렬의 행과 열을 바꾼다. Python 3 표준 라이브러리 문서, Built-in Functions의 `zip`: 가장 짧은 입력이 끝나면 멈춘다.
 [^2]: Strang, *Introduction to Linear Algebra* 5판, 2.4절 "Rules for Matrix Operations"(교환 불가), 2.5절 "Inverse Matrices"($$(AB)^{-1} = B^{-1}A^{-1}$$), 2.7절 "Transposes and Permutations"($$(AB)^\top = B^\top A^\top$$, 치환 행렬), 5.1절 "The Properties of Determinants"($$\det(AB) = \det A \cdot \det B$$), 8.1~8.2절(회전·반사 행렬).
-[^s1]: 에이전트 보충. 문서 전체가 알고리즘 트랙과 선형대수학을 잇는 보충이다. 칸 번호 식, 값 행렬 $$J_nA$$ 꼴의 식, 대칭 열쇠·대칭 사진의 예외, 전이 문제의 답은 36_grid-rotation-linear_verify.py에서 무작위 직사각형 격자와 작은 0/1 격자 전부로 확인했다.
-[^s2]: 에이전트 보충. 거울선이 첫 축에서 각 $$\alpha$$만큼 기운 반사는 $$S_\alpha = \begin{pmatrix}\cos 2\alpha & \sin 2\alpha\\ \sin 2\alpha & -\cos 2\alpha\end{pmatrix}$$이다. 둘을 곱해 덧셈정리를 쓰면 $$S_\alpha S_\beta = R_{2(\alpha - \beta)}$$, 곧 $$\beta$$ 거울 뒤 $$\alpha$$ 거울은 $$2(\alpha - \beta)$$만큼의 회전이다. 평면 기하의 표준 사실이다. $$(r, c)$$ 좌표에서 가로줄 거울은 $$\alpha = 90°$$, 전치의 대각선은 $$45°$$, 세로줄은 $$0°$$, 반대각선은 $$-45°$$이고, 검증 스크립트에서 이 네 값과 무작위 각 1,000개로 확인했다.
-[^s3]: 에이전트 보충. 그림은 원본에 없다. [36_grid-rotation-linear_plot.py](/Hongs_Blog/studies/algorithms/code/36_grid-rotation-linear_plot/)로 그렸고, 뒤집은 격자 `[[7, 8, 9], [4, 5, 6], [1, 2, 3]]`, 돌린 격자 `[[7, 4, 1], [8, 5, 2], [9, 6, 3]]`, 칸 번호 식 $$(r, c) \to (c,\ n-1-r)$$, 두 반사 행렬의 곱이 $$R_{-90°}$$라는 것을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문서 전체가 알고리즘 트랙과 선형대수학을 잇는 보충이다. 칸 번호 식, 값 행렬 $$J_nA$$ 꼴의 식, 대칭 열쇠·대칭 사진의 예외, 전이 문제의 답은 36_grid-rotation-linear_verify.py에서 무작위 직사각형 격자와 작은 0/1 격자 전부로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 거울선이 첫 축에서 각 $$\alpha$$만큼 기운 반사는 $$S_\alpha = \begin{pmatrix}\cos 2\alpha & \sin 2\alpha\\ \sin 2\alpha & -\cos 2\alpha\end{pmatrix}$$이다. 둘을 곱해 덧셈정리를 쓰면 $$S_\alpha S_\beta = R_{2(\alpha - \beta)}$$, 곧 $$\beta$$ 거울 뒤 $$\alpha$$ 거울은 $$2(\alpha - \beta)$$만큼의 회전이다. 평면 기하의 표준 사실이다. $$(r, c)$$ 좌표에서 가로줄 거울은 $$\alpha = 90°$$, 전치의 대각선은 $$45°$$, 세로줄은 $$0°$$, 반대각선은 $$-45°$$이고, 검증 스크립트에서 이 네 값과 무작위 각 1,000개로 확인했다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [36_grid-rotation-linear_plot.py](/Hongs_Blog/studies/algorithms/code/36_grid-rotation-linear_plot/)로 그렸고, 뒤집은 격자 `[[7, 8, 9], [4, 5, 6], [1, 2, 3]]`, 돌린 격자 `[[7, 4, 1], [8, 5, 2], [9, 6, 3]]`, 칸 번호 식 $$(r, c) \to (c,\ n-1-r)$$, 두 반사 행렬의 곱이 $$R_{-90°}$$라는 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -37,7 +37,7 @@ permalink: "/studies/numerical-analysis/surface-patches/"
 
 가장 단순한 패치는 네 꼭짓점 $$\mathbf P_{00} = (0, 0, 0)$$, $$\mathbf P_{10} = (2, 0, 1)$$, $$\mathbf P_{01} = (0, 2, 1)$$, $$\mathbf P_{11} = (2, 2, 0)$$만으로 만든다. 먼저 $$v$$ 방향 두 변에서 각각 비율 $$v$$인 점을 잡고, 그 두 점을 다시 비율 $$u$$로 잇는다. 가운데 $$(u, v) = (\frac12, \frac12)$$는 네 꼭짓점의 평균 $$(1, 1, \frac12)$$이다[^s1].
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/17_surface-patches_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/17_surface-patches_fig1.svg" alt="그림" width="344" height="311" loading="lazy">
 
 파란 선은 $$u$$를, 주황 선은 $$v$$를 고정한 선이다. 이 선들은 모두 곧은 선인데, 면 전체는 말안장처럼 비틀린다. 네 꼭짓점이 한 평면 위에 있지 않기 때문이다[^s2].
 
@@ -138,7 +138,7 @@ $$\mathbf p(u, v) = \mathbf u^\top M_S\,P\,M_S^\top\mathbf v, \qquad \mathbf u =
 </details>
 
 
-[^1]: 2-2학기/수치해석/1.수업자료/08.na08_surfaces.pdf, p.2
+[^1]: 수치해석 8회 강의 자료 「na08_surfaces」, p.2
 [^2]: 같은 자료, p.3
 [^3]: 같은 자료, p.4
 [^4]: 같은 자료, p.5
@@ -154,7 +154,7 @@ $$\mathbf p(u, v) = \mathbf u^\top M_S\,P\,M_S^\top\mathbf v, \qquad \mathbf u =
 [^14]: 같은 자료, p.15
 [^15]: 같은 자료, p.16
 [^16]: 같은 자료, p.17
-[^s1]: 에이전트 보충. 메시와 패치의 비교, 쌍선형 예와 카드 C2, CAD·유타 찻주전자, 흔한 실수, 카드 C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: 에이전트 보충. 그림은 원본에 없다. [17_surface-patches_plot.py](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 가운데 $$(1, 1, \frac12)$$, 꼭짓점 통과, $$u$$를 고정한 선 위의 가운데 점이 양 끝의 평균(곧은 선).
-[^s3]: 에이전트 보충. 다이어그램 1개는 원본에 없다. 이 문서 요약과 '정의'의 네 곡면 방법(원본 08.na08_surfaces.pdf p.6~17)으로 그렸다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 메시와 패치의 비교, 쌍선형 예와 카드 C2, CAD·유타 찻주전자, 흔한 실수, 카드 C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [17_surface-patches_plot.py](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 가운데 $$(1, 1, \frac12)$$, 꼭짓점 통과, $$u$$를 고정한 선 위의 가운데 점이 양 끝의 평균(곧은 선).
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 요약과 '정의'의 네 곡면 방법(원본 08.na08_surfaces.pdf p.6~17)으로 그렸다.
 {% endraw %}

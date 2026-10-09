@@ -3,7 +3,7 @@ layout: "note"
 title: "20_binary-search_plot.py"
 display_title: "20_binary-search_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "20"
 course: "알고리즘"
 course_slug: "algorithms"
@@ -11,11 +11,11 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 parent_url: "/studies/algorithms/binary-search/"
 parent_title: "이분 탐색"
-description: "알고리즘 · 이분 탐색 코드 코드"
+description: "알고리즘 · 이분 탐색 그림 생성 코드"
 permalink: "/studies/algorithms/code/20_binary-search_plot/"
 ---
 {% raw %}
-[이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 이분 탐색 문서의 그림을 만든다: 20_binary-search_fig1.svg

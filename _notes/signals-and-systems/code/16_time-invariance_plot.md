@@ -3,7 +3,7 @@ layout: "note"
 title: "16_time-invariance_plot.py"
 display_title: "16_time-invariance_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "16"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/time-invariance/"
 parent_title: "시불변성"
-description: "신호 및 시스템 · 시불변성 코드 코드"
+description: "신호 및 시스템 · 시불변성 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/16_time-invariance_plot/"
 ---
 {% raw %}
-[시불변성](/Hongs_Blog/studies/signals-and-systems/time-invariance/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[시불변성](/Hongs_Blog/studies/signals-and-systems/time-invariance/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 시불변성 문서의 그림을 만든다: 16_time-invariance_fig1.svg

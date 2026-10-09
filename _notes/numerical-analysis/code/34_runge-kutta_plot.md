@@ -3,7 +3,7 @@ layout: "note"
 title: "34_runge-kutta_plot.py"
 display_title: "34_runge-kutta_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "34"
 course: "수치해석"
 course_slug: "numerical-analysis"
@@ -11,11 +11,11 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 parent_url: "/studies/numerical-analysis/runge-kutta/"
 parent_title: "룽게-쿠타 방법"
-description: "수치해석 · 룽게-쿠타 방법 코드 코드"
+description: "수치해석 · 룽게-쿠타 방법 그림 생성 코드"
 permalink: "/studies/numerical-analysis/code/34_runge-kutta_plot/"
 ---
 {% raw %}
-[룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 룽게-쿠타 방법 문서의 그림을 만든다: 34_runge-kutta_fig1.svg

@@ -88,7 +88,7 @@ for i in range(n):        # i = 0, 1, ..., n-1
 </details>
 
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/20_sequences-sigma_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/20_sequences-sigma_fig1.svg" alt="그림" width="484" height="335" loading="lazy">
 
 파란 막대 1, 2, …, 6 위에 거꾸로 6, 5, …, 1(주황)을 얹으면 모든 막대의 높이가 7이 된다. 직사각형 넓이 $$6 \times 7 = 42$$가 합의 두 배이므로 합은 21이다[^s1].
 
@@ -149,5 +149,5 @@ $$\sum_{k=3}^{10}(2k + 1)$$을 구한다.
 
 [^1]: OpenStax, *Precalculus 2e*, 11.1절 "Sequences and Their Notations", 11.2절 "Arithmetic Sequences", 11.3절 "Geometric Sequences"
 [^2]: OpenStax, *Precalculus 2e*, 11.4절 "Series and Their Notations". Σ의 조작 규칙과 망원합은 Graham·Knuth·Patashnik, *Concrete Mathematics*, 2장 "Sums"의 방식이다.
-[^s1]: 에이전트 보충. 그림은 원본에 없다. [20_sequences-sigma_plot.py](/Hongs_Blog/studies/college-math/code/20_sequences-sigma_plot/)로 그렸고, 그림에 쓴 값($$1 + 2 + \cdots + 6 = 21$$, $$2 \times 21 = 6 \times 7$$, $$n \le 2{,}000$$에서 공식 일치)을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_sequences-sigma_plot.py](/Hongs_Blog/studies/college-math/code/20_sequences-sigma_plot/)로 그렸고, 그림에 쓴 값($$1 + 2 + \cdots + 6 = 21$$, $$2 \times 21 = 6 \times 7$$, $$n \le 2{,}000$$에서 공식 일치)을 같은 코드로 확인했다.
 {% endraw %}

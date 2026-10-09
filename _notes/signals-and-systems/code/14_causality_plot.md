@@ -3,7 +3,7 @@ layout: "note"
 title: "14_causality_plot.py"
 display_title: "14_causality_plot.py"
 kind: "code"
-kind_label: "코드 · 코드"
+kind_label: "코드 · 그림 생성"
 num: "14"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
@@ -11,11 +11,11 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 parent_url: "/studies/signals-and-systems/causality/"
 parent_title: "인과성"
-description: "신호 및 시스템 · 인과성 코드 코드"
+description: "신호 및 시스템 · 인과성 그림 생성 코드"
 permalink: "/studies/signals-and-systems/code/14_causality_plot/"
 ---
 {% raw %}
-[인과성](/Hongs_Blog/studies/signals-and-systems/causality/) 문서의 코드 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[인과성](/Hongs_Blog/studies/signals-and-systems/causality/) 문서의 그림 생성 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
 # 인과성 문서의 그림을 만든다: 14_causality_fig1.svg

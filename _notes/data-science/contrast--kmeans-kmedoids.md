@@ -71,6 +71,6 @@ permalink: "/studies/data-science/contrast--kmeans-kmedoids/"
 </details>
 
 
-[^1]: 3-2학기/데이터 과학/1.수업자료/07.7-1_basic-clustering.pdf, p.16
-[^2]: 같은 자료, p.22. 3-2학기/데이터 과학/1.수업자료/07.7-2_density-clustering.pdf, p.8
+[^1]: 데이터 과학 7회 강의 자료 「7-1_basic-clustering」, p.16
+[^2]: 같은 자료, p.22. 데이터 과학 7회 강의 자료 「7-2_density-clustering」, p.8
 {% endraw %}

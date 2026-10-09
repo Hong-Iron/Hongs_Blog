@@ -39,7 +39,7 @@ $$(x + x^2 + \cdots + x^6)^2 = x^2 + 2x^3 + 3x^4 + 4x^5 + 5x^6 + 6x^7 + 5x^8 + \
 
 $$x^7$$의 계수 6이 합이 7인 경우의 수다. 곱할 때 지수가 더해지므로, "두 주사위의 눈을 더한다"가 "다항식을 곱한다"로 바뀌었다. 수열 $$(0, 1, 1, 1, 1, 1, 1)$$이 아래 정의의 $$a_n$$, 다항식이 생성함수다.
 
-<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/22_generating-functions_fig1.svg" alt="그림" loading="lazy">
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/22_generating-functions_fig1.svg" alt="그림" width="538" height="335" loading="lazy">
 
 주사위를 하나 더할 때마다 다항식을 한 번 더 곱한다. 하나일 때 평평하던 모양이 둘에서 삼각형, 셋과 넷에서 가운데가 불룩한 종 모양이 된다. 합성곱을 거듭하면 종 모양에 가까워진다는 것이 [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)다[^s1].
 
@@ -133,5 +133,5 @@ $$A(x) = \sum a_n x^n$$, $$B(x) = \sum b_n x^n$$이면 $$A(x)B(x)$$의 $$x^n$$ �
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 16장 "Generating Functions". Graham·Knuth·Patashnik, *Concrete Mathematics*, 7장 "Generating Functions".
-[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [22_generating-functions_plot.py](/Hongs_Blog/studies/discrete-math/code/22_generating-functions_plot/)로 그렸고, 두 개의 계수 1, 2, …, 6, …, 1, 세 개에서 합 10과 11의 계수 27, 계수의 합 $$6^m$$을 같은 코드로 확인했다.
+[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [22_generating-functions_plot.py](/Hongs_Blog/studies/discrete-math/code/22_generating-functions_plot/)로 그렸고, 두 개의 계수 1, 2, …, 6, …, 1, 세 개에서 합 10과 11의 계수 27, 계수의 합 $$6^m$$을 같은 코드로 확인했다.
 {% endraw %}
