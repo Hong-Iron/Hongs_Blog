@@ -1,0 +1,456 @@
+/* Study features (assets/js/study.js, review.js): solve-first cards,
+   progress dots and bars, the review page. */
+
+/* ---- cards ---- */
+.study-card {
+  margin: 1.2rem 0;
+  padding: 1rem 1.1rem 1.05rem;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--course, var(--accent));
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, var(--card) 85%, transparent);
+  font-family: var(--font-sans);
+}
+
+.study-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.study-card__no {
+  font-weight: 700;
+  color: var(--course, var(--accent));
+}
+
+.study-card__status {
+  color: var(--ink-muted);
+}
+
+.study-card__peek,
+.study-card__again {
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.78rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.study-card__again {
+  margin-left: 0.6rem;
+}
+
+.study-card__q {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.study-card__work {
+  margin-top: 0.7rem;
+}
+
+.study-card__input {
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 0.95rem/1.5 var(--font-sans);
+  resize: vertical;
+}
+
+.study-card__input:focus {
+  outline: 2px solid color-mix(in srgb, var(--course, var(--accent)) 45%, transparent);
+  outline-offset: 1px;
+}
+
+.study-card__row,
+.study-card__grade {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.study-card__conf {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.study-card__conf-label {
+  margin-right: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.study-chip {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-muted);
+  font: 500 0.8rem var(--font-sans);
+  cursor: pointer;
+}
+
+.study-chip[aria-pressed="true"] {
+  border-color: var(--course, var(--accent));
+  background: color-mix(in srgb, var(--course, var(--accent)) 14%, transparent);
+  color: var(--ink);
+}
+
+.study-card__err {
+  font-size: 0.8rem;
+  color: #b0432c;
+}
+
+.study-card__a {
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--rule);
+}
+
+.study-card__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+.study-card__a > :last-child {
+  margin-bottom: 0;
+}
+
+.study-card__mine {
+  flex-basis: 100%;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  font-size: 0.88rem;
+  white-space: pre-wrap;
+}
+
+.study-card__gq {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.study-card__done {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.study-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  font: 600 0.85rem var(--font-sans);
+  text-decoration: none;
+  background-image: none !important;
+  cursor: pointer;
+}
+
+.study-btn:hover {
+  border-color: var(--ink-muted);
+}
+
+.study-btn--primary {
+  border-color: var(--course, var(--accent));
+  background: var(--course, var(--accent));
+  color: #fff;
+}
+
+.study-btn--ok {
+  border-color: #3a7d4f;
+  color: #2f6b42;
+}
+
+.study-btn--no {
+  border-color: #b0432c;
+  color: #9a3a26;
+}
+
+/* ---- progress ---- */
+.study-dot {
+  --p: 0%;
+  flex: none;
+  align-self: center;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-left: 0.35rem;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  border-radius: 50%;
+  background: conic-gradient(var(--course, var(--accent)) var(--p), transparent 0);
+}
+
+.study-dot--mastered {
+  border-color: var(--course, var(--accent));
+  background: var(--course, var(--accent));
+}
+
+.note-body td .study-dot {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.study-toc-stats {
+  display: block;
+  margin: -0.4rem 0 1rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--ink-muted);
+  text-decoration: none;
+  background-image: none !important;
+}
+
+.study-toc-stats:hover {
+  color: var(--ink);
+}
+
+.study-bar {
+  display: block;
+  height: 6px;
+  margin: 0.5rem 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 10%, transparent);
+  overflow: hidden;
+}
+
+.study-bar__fill {
+  display: block;
+  height: 100%;
+  min-width: 0;
+  border-radius: 999px;
+  background: var(--course, var(--accent));
+}
+
+.study-bar--row {
+  max-width: 14rem;
+}
+
+.study-progress {
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  max-width: var(--measure-wide, 46rem);
+  font-family: var(--font-sans);
+}
+
+.study-progress__line,
+.study-progress__next {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.study-progress .study-btn {
+  margin-top: 0.4rem;
+}
+
+.study-banner {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font: 600 0.9rem var(--font-sans);
+  text-decoration: none;
+  background-image: none !important;
+}
+
+/* ---- review page ---- */
+.review {
+  padding-bottom: 4rem;
+  font-family: var(--font-sans);
+}
+
+.review > section {
+  max-width: 46rem;
+}
+
+.review-home > div + div {
+  margin-top: 2.2rem;
+}
+
+.review-h {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.review-big {
+  margin: 0 0 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.review-hint {
+  margin: 0.2rem 0 0.6rem;
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}
+
+.review-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.7rem;
+  margin: 0.6rem 0;
+}
+
+.review-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin: 0.6rem 0;
+  font-size: 0.9rem;
+}
+
+.review-file {
+  position: relative;
+}
+
+.review-msg {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.review-from {
+  margin: 0.8rem 0 0;
+  font-size: 0.85rem;
+}
+
+.review-stage {
+  padding: 0 !important;
+}
+
+/* ---- hands-on figures (assets/js/widgets.js) ---- */
+.widget {
+  margin: 0.8rem 0 1.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--card) 80%, transparent);
+  font-family: var(--font-sans);
+}
+
+.widget__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.6rem;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.widget__summary::-webkit-details-marker {
+  display: none;
+}
+
+.widget__badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--course, var(--accent));
+}
+
+.widget__badge::before {
+  content: "▸ ";
+}
+
+.widget[open] .widget__badge::before {
+  content: "▾ ";
+}
+
+.widget__hint {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.widget__box {
+  padding: 0.2rem 0.9rem 0.9rem;
+}
+
+.widget-ctls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.widget-ctl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.widget-ctl input[type="range"] {
+  width: 9rem;
+  accent-color: var(--course, var(--accent));
+}
+
+.widget-ctl select {
+  padding: 0.2rem 0.3rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+.widget-ctl__val {
+  min-width: 2.6rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.widget-canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.widget-note {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.study-card [hidden],
+.review [hidden],
+.widget [hidden] {
+  display: none !important;
+}
+
+.widget__summary::marker {
+  content: "";
+}

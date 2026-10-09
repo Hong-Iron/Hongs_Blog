@@ -1,0 +1,57 @@
+---
+layout: default
+title: 복습
+permalink: /studies/review/
+math: true
+notes_assets: true
+geo: confetti
+geo_clear: 34rem
+description: 오늘 복습할 카드를 섞어 풀고 기록을 내려받는 곳
+---
+<section class="page-intro container" data-geo-band>
+  <span class="eyebrow">Studies</span>
+  <h1 class="page-intro__title">복습</h1>
+  <p class="page-intro__desc">노트의 확인 문제를 한 장씩 풀어요. 답을 먼저 써 보고, 확신도를 고르고, 답을 본 뒤 맞았는지 스스로 매겨요. 기록은 이 브라우저에만 남아요.</p>
+</section>
+
+<div class="container review" id="review">
+  <section class="review-home" data-review-home>
+    <div class="review-today" data-review-today>불러오는 중…</div>
+    <div class="review-new">
+      <h2 class="review-h">새 카드 섞어 풀기</h2>
+      <p class="review-hint">아직 안 푼 카드를 과목에서 골라 섞어 내요. 과목을 여러 개 고르면 서로 섞여 나와요.</p>
+      <div class="review-courses" data-review-courses></div>
+      <div class="review-row">
+        <label>카드 수 <select data-review-count><option>5</option><option selected>10</option><option>20</option></select></label>
+        <button type="button" class="study-btn study-btn--primary" data-review-new>섞어 풀기</button>
+        <span class="study-card__err" data-review-err></span>
+      </div>
+    </div>
+    <div class="review-data">
+      <h2 class="review-h">기록</h2>
+      <p class="review-hint">CSV는 볼트의 <code>review-log.csv</code>와 같은 형식이에요. 백업 파일로 다른 기기에 옮길 수 있어요.</p>
+      <div class="review-row">
+        <button type="button" class="study-btn" data-review-csv>CSV 내려받기</button>
+        <button type="button" class="study-btn" data-review-backup>백업 내려받기</button>
+        <label class="study-btn review-file">백업 가져오기<input type="file" accept="application/json" data-review-import hidden></label>
+        <span class="review-msg" data-review-msg></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="review-session" data-review-session hidden>
+    <div class="review-top">
+      <span data-review-progress></span>
+      <button type="button" class="study-btn" data-review-quit>그만하기</button>
+    </div>
+    <p class="review-from" data-review-from></p>
+    <div class="note-body article-body review-stage" data-review-stage></div>
+    <div class="review-row" data-review-nextrow hidden>
+      <button type="button" class="study-btn study-btn--primary" data-review-next>다음 카드</button>
+    </div>
+  </section>
+
+  <section class="review-summary" data-review-summary hidden></section>
+</div>
+
+<script src="{{ '/assets/js/review.js' | relative_url }}" defer></script>
