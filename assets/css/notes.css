@@ -564,9 +564,48 @@ body[data-bg="midnight"] .highlight {
   background: var(--course, var(--accent));
 }
 
-/* this note's own headings, under its entry */
-.note-toc__here {
-  margin: 0.1rem 0 0.35rem 1.85rem;
+/* this note's own headings, under its entry: one indent deeper, on their
+   own thin rail, folded and unfolded by the small arrow beside the entry */
+.note-toc__entry {
+  display: flex;
+  align-items: flex-start;
+}
+
+.note-toc__entry .note-toc__link {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.note-toc__fold {
+  flex: none;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0.15rem 0 0 0.35rem;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--course, var(--accent));
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.note-toc__fold:hover,
+.note-toc__fold:focus-visible {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+
+.note-toc__fold[aria-expanded="false"] {
+  transform: rotate(-90deg);
+}
+
+.note-toc .note-toc__here {
+  margin: 0.15rem 0 0.45rem 2.15rem;
+  padding-left: 0.7rem;
+  border-left: 1px dashed color-mix(in srgb, var(--ink) 22%, transparent);
 }
 
 .note-toc__here a {
@@ -575,6 +614,11 @@ body[data-bg="midnight"] .highlight {
   font-size: 0.8rem;
   line-height: 1.3;
   color: var(--ink-muted);
+}
+
+.note-toc__here a.is-sub {
+  padding-left: 0.85rem;
+  font-size: 0.76rem;
 }
 
 .note-toc__here a.is-active {

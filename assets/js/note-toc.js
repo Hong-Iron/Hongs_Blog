@@ -19,12 +19,39 @@
       var a = document.createElement("a");
       a.href = "#" + h.id;
       a.textContent = h.textContent.trim();
-      if (h.tagName === "H3") a.style.paddingLeft = "0.8rem";
+      if (h.tagName === "H3") a.className = "is-sub";
       li.appendChild(a);
       list.appendChild(li);
       links.push({ a: a, h: h });
     });
-    list.hidden = false;
+
+    // fold button beside the current entry; the choice is remembered
+    var KEY = "note-toc-headings";
+    var link = list.previousElementSibling;
+    var entry = document.createElement("div");
+    entry.className = "note-toc__entry";
+    link.parentNode.insertBefore(entry, link);
+    entry.appendChild(link);
+    var fold = document.createElement("button");
+    fold.type = "button";
+    fold.className = "note-toc__fold";
+    fold.textContent = "▾";
+    if (!list.id) list.id = "note-toc-here";
+    fold.setAttribute("aria-controls", list.id);
+    entry.appendChild(fold);
+    function setFold(open) {
+      list.hidden = !open;
+      fold.setAttribute("aria-expanded", open ? "true" : "false");
+      fold.setAttribute("aria-label", open ? "이 문서의 소제목 접기" : "이 문서의 소제목 펼치기");
+    }
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    setFold(saved !== "closed");
+    fold.addEventListener("click", function () {
+      var open = list.hidden;
+      setFold(open);
+      try { localStorage.setItem(KEY, open ? "open" : "closed"); } catch (e) {}
+    });
   }
 
   var ticking = false;
