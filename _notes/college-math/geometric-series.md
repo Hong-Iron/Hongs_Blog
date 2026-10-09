@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Geometric Series", "등비수열의 합", "무한 등비급수", "infinite geometric series", "공비", "common ratio", "두 배 늘리기", "doubling"]
 description: "같은 비율로 곱해 가는 수들을 더한 합에는 간단한 공식이 있다. 비율이 1보다 크면 합이 마지막 항의 몇 배 정도라서 \"마지막 항이 거의 전부\"이고, 1보다 작으면 합이 첫 항의 몇 배로 묶여서 \"첫 항이 거의 전부\"다. 이것이 동적 배열의 두 배 늘리기가 싼 이유이고, 포화 이진…"
@@ -17,7 +17,7 @@ prev_url: "/studies/college-math/sequences-sigma/"
 prev_title: "수열과 합의 기호"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/geometric-series/"
 ---
 {% raw %}
@@ -37,6 +37,10 @@ $$1 + 2 + 4 + \cdots + 512 = 1023$$
 
 
 넣은 원소 1,000개의 두 배도 안 된다. 원소 하나를 넣을 때 평균 복사가 1번 남짓이다. 늘 마지막으로 늘린 한 번(512)이 전체의 절반을 차지한다. 여기서 1이 아래 정리의 첫 항, 2가 비율 $$r$$, 늘린 횟수 10이 항 개수 $$n$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig1.svg" alt="그림" loading="lazy">
+
+계단이 한 칸 오를 때마다 배열을 늘리며 복사한다. 계단의 높이는 매번 두 배씩 뛰지만, 늘 점선 $$2n$$ 아래에 머문다[^s1].
 
 ## 정의
 
@@ -67,6 +71,10 @@ $$\vert r\vert  < 1$$이면 $$n$$이 커질 때 $$r^n$$이 $$0$$으로 다가가
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/21_geometric-series_fig2.svg" alt="그림" loading="lazy">
+
+비율이 1/2이면 부분합이 금방 2에 붙고, 0.9이면 천천히 10에 다가간다. 비율이 1.1이면 한 값에 다가가지 않고 계속 커진다[^s1].
 
 ## 예제
 
@@ -127,4 +135,5 @@ $$\vert r\vert  < 1$$이면 $$n$$이 커질 때 $$r^n$$이 $$0$$으로 다가가
 
 [^1]: OpenStax, *Precalculus 2e*, 11.4절 "Series and Their Notations"(유한·무한 등비급수)
 [^2]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 부록 A.1 "Summation formulas and properties"(등비급수), 17.4절 "Dynamic tables"(두 배 늘리는 표의 분할상환 비용)
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [21_geometric-series_plot.py](/Hongs_Blog/studies/college-math/code/21_geometric-series_plot/)로 그렸고, 그림에 쓴 값(복사 1,023번과 최종 용량 1,024, 누적 복사가 늘 $$2n$$ 미만, 부분합의 극한 2와 10)을 같은 코드로 확인했다.
 {% endraw %}

@@ -8,7 +8,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 concepts: 68
 practices: 8
-codes: 31
+codes: 40
 description: "운영체제 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true
@@ -60,7 +60,7 @@ permalink: "/studies/operating-systems/"
 | 08 | [운영체제의 역할](/Hongs_Blog/studies/operating-systems/os-role/) | 응용의 실행을 지휘하고 하드웨어를 대신 관리하는 프로그램 | — | — |
 | 09 | [운영체제의 발전](/Hongs_Blog/studies/operating-systems/os-evolution/) | 직렬 처리 → 단순 배치 → 다중 프로그래밍 배치 → 시분할 | — | — |
 | 10 | [사용자 모드와 커널 모드](/Hongs_Blog/studies/operating-systems/user-kernel-mode/) | 사용자 프로그램은 제한된 모드, 운영체제는 모든 권한 | — | — |
-| 11 | [다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/) | 입출력을 기다리는 동안 다른 프로그램을 실행 (강조)[^강조] | [verify](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_verify/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/multiprogramming-ladder/) |
+| 11 | [다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/) | 입출력을 기다리는 동안 다른 프로그램을 실행 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/11_multiprogramming_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_verify/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/multiprogramming-ladder/) |
 | 12 | [시분할](/Hongs_Blog/studies/operating-systems/time-sharing/) | 프로세서 시간을 잘게 나눠 여러 사용자에게 번갈아 | — | — |
 | 13 | [프로세스](/Hongs_Blog/studies/operating-systems/process/) | 실행 중인 프로그램. 프로그램, 데이터, 실행 문맥 | — | — |
 
@@ -209,8 +209,8 @@ permalink: "/studies/operating-systems/"
 |---|---|---|---|---|
 | 38 | [가상 메모리](/Hongs_Blog/studies/operating-systems/virtual-memory/) | 프로세스의 일부만 메모리에 두고 실행. 지역성, 스래싱, 페이지 크기 (강조)[^강조] | [verify](/Hongs_Blog/studies/operating-systems/code/38_virtual-memory_verify/) | — |
 | 39 | [페이지 표 구조](/Hongs_Blog/studies/operating-systems/page-table-structure/) | P·M 비트, 다단계 페이지 표, 역 페이지 표 | [verify](/Hongs_Blog/studies/operating-systems/code/39_page-table_verify/) | — |
-| 40 | [TLB](/Hongs_Blog/studies/operating-systems/tlb/) | 최근 페이지 표 항목을 담은 하드웨어 캐시 | [verify](/Hongs_Blog/studies/operating-systems/code/40_tlb_verify/) | — |
-| 41 | [페이지 교체 알고리즘](/Hongs_Blog/studies/operating-systems/page-replacement/) | OPT, LRU, FIFO, CLOCK. 무엇을 내보낼까 (강조)[^강조] | [impl](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_impl/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/page-replacement-ladder/) |
+| 40 | [TLB](/Hongs_Blog/studies/operating-systems/tlb/) | 최근 페이지 표 항목을 담은 하드웨어 캐시 | [fig1](/Hongs_Blog/assets/notes/operating-systems/40_tlb_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/40_tlb_verify/) | — |
+| 41 | [페이지 교체 알고리즘](/Hongs_Blog/studies/operating-systems/page-replacement/) | OPT, LRU, FIFO, CLOCK. 무엇을 내보낼까 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/41_page-replacement_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/page-replacement-ladder/) |
 | 42 | [상주 집합 관리와 적재 제어](/Hongs_Blog/studies/operating-systems/resident-set-load-control/) | 반입·배치·상주 집합·정리 정책과 다중 프로그래밍 수준 | — | — |
 
 자료: Chapter08-new.pdf · Chapter08-new.pptx
@@ -231,9 +231,9 @@ permalink: "/studies/operating-systems/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 43 | [스케줄링의 종류와 기준](/Hongs_Blog/studies/operating-systems/scheduling-types-criteria/) | 장기·중기·단기 스케줄링과 평가 기준, 우선순위 | — | — |
-| 44 | [스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/) | FCFS, RR, SPN, SRT, HRRN, 피드백 (강조)[^강조] | [impl](/Hongs_Blog/studies/operating-systems/code/44_scheduling_impl/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/scheduling-ladder/) |
-| 45 | [실행 시간 예측](/Hongs_Blog/studies/operating-systems/burst-prediction/) | 지난 실행 시간으로 다음 버스트를 지수 평균으로 짐작 | [verify](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_verify/) | — |
-| 46 | [공정 분배와 UNIX 스케줄링](/Hongs_Blog/studies/operating-systems/fair-share-unix-scheduling/) | 사용량을 반씩 잊는 UNIX 우선순위와 그룹 단위 공정 분배 | [verify](/Hongs_Blog/studies/operating-systems/code/46_unix-fair-share_verify/) | — |
+| 44 | [스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/) | FCFS, RR, SPN, SRT, HRRN, 피드백 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/44_scheduling-algorithms_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/44_scheduling-algorithms_plot/) · [impl](/Hongs_Blog/studies/operating-systems/code/44_scheduling_impl/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/scheduling-ladder/) |
+| 45 | [실행 시간 예측](/Hongs_Blog/studies/operating-systems/burst-prediction/) | 지난 실행 시간으로 다음 버스트를 지수 평균으로 짐작 | [fig1](/Hongs_Blog/assets/notes/operating-systems/45_burst-prediction_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_verify/) | — |
+| 46 | [공정 분배와 UNIX 스케줄링](/Hongs_Blog/studies/operating-systems/fair-share-unix-scheduling/) | 사용량을 반씩 잊는 UNIX 우선순위와 그룹 단위 공정 분배 | [fig1](/Hongs_Blog/assets/notes/operating-systems/46_fair-share-unix-scheduling_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/46_fair-share-unix-scheduling_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/46_unix-fair-share_verify/) | — |
 
 자료: Chapter09-new.pdf · Chapter09-new.pptx
 필기: 아직 없다.
@@ -254,7 +254,7 @@ permalink: "/studies/operating-systems/"
 |---|---|---|---|---|
 | 47 | [다중 프로세서 스케줄링](/Hongs_Blog/studies/operating-systems/multiprocessor-scheduling/) | 어느 프로세서에서 돌릴까. 부하 공유, 갱 스케줄링, 전용 배정 | — | — |
 | 48 | [실시간 시스템](/Hongs_Blog/studies/operating-systems/real-time-systems/) | 늦으면 틀린 시스템. 경성·연성, 결정성과 응답성 | — | — |
-| 49 | [실시간 스케줄링](/Hongs_Blog/studies/operating-systems/real-time-scheduling/) | 마감이 가장 이른 것 먼저(EDF)와 비율 단조(RMS) (강조)[^강조] | [impl](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_impl/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/real-time-scheduling-ladder/) |
+| 49 | [실시간 스케줄링](/Hongs_Blog/studies/operating-systems/real-time-scheduling/) | 마감이 가장 이른 것 먼저(EDF)와 비율 단조(RMS) (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/49_real-time-scheduling_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/real-time-scheduling-ladder/) |
 | 50 | [우선순위 역전](/Hongs_Blog/studies/operating-systems/priority-inversion/) | 높은 작업이 낮은 작업을 기다리는 함정과 우선순위 상속 | — | — |
 
 자료: Chapter10-new.pdf · Chapter10-new.pptx
@@ -275,8 +275,8 @@ permalink: "/studies/operating-systems/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 51 | [입출력 장치와 입출력 설계](/Hongs_Blog/studies/operating-systems/io-devices-design/) | 장치 종류와 차이, 입출력 기능의 발전, 층 구조 | — | — |
-| 52 | [입출력 버퍼링](/Hongs_Blog/studies/operating-systems/io-buffering/) | 단일·이중·순환 버퍼로 장치와 프로세스의 속도 차이를 흡수 | [verify](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_verify/) | — |
-| 53 | [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) | FIFO, SSTF, SCAN, C-SCAN. 팔 이동을 줄이는 순서 (강조)[^강조] | [impl](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_impl/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/disk-scheduling-ladder/) |
+| 52 | [입출력 버퍼링](/Hongs_Blog/studies/operating-systems/io-buffering/) | 단일·이중·순환 버퍼로 장치와 프로세스의 속도 차이를 흡수 | [fig1](/Hongs_Blog/assets/notes/operating-systems/52_io-buffering_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_verify/) | — |
+| 53 | [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) | FIFO, SSTF, SCAN, C-SCAN. 팔 이동을 줄이는 순서 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/53_disk-scheduling_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/disk-scheduling-ladder/) |
 | 54 | [RAID](/Hongs_Blog/studies/operating-systems/raid/) | 디스크 여러 개를 하나처럼. 스트라이핑, 미러링, 패리티 | [verify](/Hongs_Blog/studies/operating-systems/code/54_raid_verify/) | — |
 | 55 | [디스크 캐시](/Hongs_Blog/studies/operating-systems/disk-cache/) | 디스크 섹터를 메모리에. LRU, LFU, 빈도 기반 교체 | — | — |
 

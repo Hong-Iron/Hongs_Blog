@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Inverse Function", "일대일 함수", "one-to-one", "injective", "수평선 판정", "horizontal line test"]
 description: "역함수는 암호를 푸는 열쇠처럼 출력에서 입력을 되찾는 함수다. 서로 다른 두 입력이 같은 출력을 내면 원래 어느 쪽이었는지 알 수 없으므로, 그런 함수에는 역함수가 없다. 그럴 때는 입력 범위를 잘라서 역함수를 만든다. 이 자르기가 제곱근, 로그, 아크사인에서 계속 나온다."
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/polynomial/"
 next_title: "다항식과 방정식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/inverse-function/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ permalink: "/studies/college-math/inverse-function/"
 $$x^2$$은 되돌릴 수 없다. 출력 $$9$$를 보고 입력이 $$3$$이었는지 $$-3$$이었는지 알 수 없다. 입력을 $$x \ge 0$$으로 제한하면 답이 하나로 정해지고, 그 역함수가 $$\sqrt{x}$$다.
 
 그래프에서 역함수는 $$x$$와 $$y$$를 바꾼 것이다. $$(a, b)$$가 $$f$$ 위에 있으면 $$(b, a)$$가 $$f^{-1}$$ 위에 있다. 그래서 두 그래프는 직선 $$y = x$$에 대해 대칭이다. 섭씨-화씨 그래프의 점 $$(0, 32)$$는 역함수 그래프의 점 $$(32, 0)$$이 된다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/03_inverse-function_fig1.svg" alt="그림" loading="lazy">
+
+굵은 파란 선($$x \ge 0$$인 $$x^2$$)과 주황 선($$\sqrt{x}$$)은 점선 $$y = x$$를 거울로 두고 서로 비친 모양이다. 잘라 낸 $$x < 0$$ 쪽(점선)까지 두면 $$(-2, 4)$$와 $$(2, 4)$$가 둘 다 높이 4라서 4를 보고 입력을 되찾을 수 없다[^s2].
 
 ## 정의
 
@@ -145,4 +149,5 @@ $$f(x) = \dfrac{2x + 1}{x - 3}$$의 역함수를 구한다.
 
 [^1]: OpenStax, *Precalculus 2e*, 1.7절 "Inverse Functions". 정의역을 잘라 역함수를 만드는 예는 3.8절 "Inverses and Radical Functions".
 [^s1]: 에이전트 보충. 좌표 변환과 해시는 컴퓨터공학에서 역함수가 쓰이는 곳과 쓰이지 않는 곳을 보이려고 넣었다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [03_inverse-function_plot.py](/Hongs_Blog/studies/college-math/code/03_inverse-function_plot/)로 그렸고, 그림에 쓴 값($$(2, 4)$$와 $$(4, 2)$$, $$(-2)^2 = 2^2 = 4$$, $$0 \le x \le 3$$에서 $$\sqrt{x^2} = x$$)을 같은 코드로 확인했다.
 {% endraw %}

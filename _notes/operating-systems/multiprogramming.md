@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Multiprogramming", "멀티프로그래밍", "다중 작업", "Multitasking", "단일 프로그래밍", "Uniprogramming", "다중 프로그래밍 배치 시스템", "Multiprogrammed Batch System", "프로세서 사용률", "CPU Utilization"]
 description: "다중 프로그래밍은 프로그램 여러 개를 메모리에 함께 올려 두고, 하나가 입출력을 기다리면 그사이 다른 하나를 실행하는 방식이다. 빨래가 돌아가는 동안 설거지를 하는 것과 같다. 입출력은 프로세서보다 훨씬 느려서, 프로그램 하나만 올리면 프로세서는 대부분의 시간을 기다리며 보낸다. …"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/time-sharing/"
 next_title: "시분할"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/multiprogramming/"
 ---
 {% raw %}
@@ -107,6 +107,10 @@ $$\text{사용률} = 1 - p^n$$
 
 
 $$p = 0.8$$(시간의 80%를 기다림)이면 1개일 때 20%, 3개일 때 $$1 - 0.512 = 48.8\%$$, 5개일 때 약 67%다. 늘릴수록 오르지만 오르는 폭은 점점 줄어든다. 프로그램들이 같은 장치를 두고 다투면 독립 가정이 깨져 이보다 낮아진다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/11_multiprogramming_fig1.svg" alt="그림" loading="lazy">
+
+$$p$$가 클수록, 곧 프로그램마다 입출력을 오래 기다릴수록 같은 사용률을 얻는 데 프로그램이 더 많이 필요하다. 세 선 모두 처음 몇 개를 올릴 때 크게 오르고, 그 뒤로는 하나를 더 올려도 오르는 폭이 작다[^s4].
 
 </details>
 
@@ -206,4 +210,5 @@ $$p = 0.8$$(시간의 80%를 기다림)이면 1개일 때 20%, 3개일 때 $$1 -
 [^s1]: 에이전트 보충. 위 표의 시각은 원본 그림 2.5c의 모양을 단위 시간으로 옮긴 것이다. 다중 프로그래밍이 인터럽트·DMA를 필요로 한다는 문장은 원본 1장과 2장을 이은 해석이다.
 [^s2]: 에이전트 보충. 원본 슬라이드에는 결과 표(표 2.2)가 없고 사용률 막대그래프(그림 2.6)만 있다. 경과 시간, 처리량, 평균 응답 시간, 메모리·디스크·프린터 사용률은 표 2.1과 그림 2.6으로 직접 계산했다. 프로세서 사용률은 그림에서 정확한 값을 읽을 수 없어 넣지 않았다. 확인 문제 C1, C4는 원본 범위 밖의 변형 문제다.
 [^s3]: 에이전트 보충. $$1 - p^n$$ 모형은 원본에 없다. 출처: Tanenbaum & Bos, *Modern Operating Systems*, 2장 "다중 프로그래밍 모델링".
+[^s4]: 에이전트 보충. 그림 1장은 원본에 없다. [11_multiprogramming_plot.py](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_plot/)로 그렸고, $$p = 0.8$$일 때의 사용률 20%, 48.8%, 약 67%를 같은 코드로 확인했다.
 {% endraw %}

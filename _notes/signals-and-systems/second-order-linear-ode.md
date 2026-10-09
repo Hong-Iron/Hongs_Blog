@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Second-Order Linear ODE with Constant Coefficients", "특성방정식", "Characteristic Equation", "제차", "Homogeneous", "비제차", "Non-homogeneous", "일반해", "General Solution", "특수해", "Particular Solution", "미정계수법", "Method of Undetermined Coefficients", "초기 조건", "Initial Condition"]
 description: "지수함수 e^{\\lambda x}는 미분해도 모양이 그대로이고 앞에 \\lambda만 붙는다. 그래서 ay'' + by' + cy = 0에 e^{\\lambda x}를 넣으면 미분방정식이 2차방정식 a\\lambda^2 + b\\lambda + c = 0으로 바뀌고, 그 두 근이 답의 모…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/ct-dt-signals/"
 next_title: "연속 시간 신호와 이산 시간 신호"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/second-order-linear-ode/"
 ---
 {% raw %}
@@ -52,6 +52,10 @@ permalink: "/studies/signals-and-systems/second-order-linear-ode/"
 | 켤레 복소근 $$\lambda = \alpha \pm j\beta$$ ($$b^2 < 4ac$$) | $$y = e^{\alpha x}(C_1\cos\beta x + C_2 \sin\beta x)$$ |
 
 복소근일 때는 오일러 공식 $$e^{j\beta x} = \cos\beta x + j\sin\beta x$$로 $$C_1 e^{(\alpha + j\beta)x} + C_2 e^{(\alpha - j\beta)x}$$를 풀어 쓴 뒤, 계수를 새 상수로 묶는다. $$e^{\alpha x}$$는 크기가 늘거나 줄게 하고, $$\cos$$와 $$\sin$$은 진동하게 한다. 이 교재는 허수 단위를 $$j$$로 쓴다(1주차 자료는 $$i$$와 섞어 쓴다)[^3].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/02_second-order-linear-ode_fig1.svg" alt="그림" loading="lazy">
+
+위 두 칸은 실근(예 1)과 중근($$y'' - 2y' + y = 0$$, $$y(0) = 0$$, $$y'(0) = 1$$이면 $$y = xe^x$$)의 해이고, 아래 두 칸은 복소근의 해다. 복소근이면 진동하고, 점선이 정하는 진폭은 실수부 $$\alpha$$가 양수면 커지고(예 2) 음수면 줄어든다($$-0.5 \pm j3$$)[^s2].
 
 **비제차식.** $$ay'' + by' + cy = g(x)$$의 일반해는 "제차식의 일반해 $$y_h$$ + 특수해 $$y_p$$ 하나"다. $$y_p$$는 미정계수법으로 찾는다. 다항식을 미분하면 다항식, 지수함수는 지수함수, $$\sin$$·$$\cos$$은 $$\sin$$·$$\cos$$이 나오므로 $$g$$와 같은 꼴에 모르는 계수를 붙여 넣고 계수를 맞춘다[^4].
 
@@ -198,4 +202,5 @@ $$e^{(\alpha \pm j\beta)x} = e^{\alpha x}e^{\pm j\beta x}$$이고 오일러 공�
 [^6]: 같은 자료, p.10 (ex.4)
 [^7]: 같은 자료, p.13 (ex.2)
 [^s1]: 에이전트 보충. 중근의 예 $$y'' - 2y' + y = 0$$, $$g$$가 제차해와 겹칠 때 $$x$$를 곱하는 규칙, 고유 응답·강제 응답의 이름, 스스로 설명해 보기, 오해 항목, 확인 문제 C4는 원본에 없다. 표준 미분방정식 교재(Zill, *Differential Equations* 4장)의 내용이며 해는 식에 넣어 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [02_second-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/02_second-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예 1의 $$1.4e^{-8x} - 1.4e^{-3x}$$, 예 2의 $$-\frac{8\sqrt5}{5}e^{2x}\sin\sqrt5x$$, 중근의 $$xe^x$$, 감쇠 예 $$e^{-0.5x}\cos 3x$$($$y'' + y' + 9.25y = 0$$, $$y(0) = 1$$, $$y'(0) = -0.5$$)가 각자의 식과 초기 조건을 만족함. 감쇠 예는 원본에 없는 식이다.
 {% endraw %}

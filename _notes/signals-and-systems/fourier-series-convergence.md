@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Convergence of the Fourier Series", "디리클레 조건", "Dirichlet Conditions", "깁스 현상", "Gibbs Phenomenon", "근사 오차 에너지", "Approximation Error Energy", "부분합", "Partial Sum", "유계 변동", "Bounded Variation"]
 description: "고조파를 무한히 더하면 정말 원래 신호가 될까? 실제로 쓰는 거의 모든 주기 신호에서는 그렇다. 한 주기의 에너지가 유한하면 오차의 에너지가 0으로 가고, 디리클레의 세 조건을 만족하면 끊기지 않은 점마다 원래 값으로 간다. 하지만 끊긴 점에서는 양쪽 값의 평균으로 가고, 그 근처…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/ctfs-properties/"
 next_title: "연속 시간 푸리에 급수의 성질"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/fourier-series-convergence/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ permalink: "/studies/signals-and-systems/fourier-series-convergence/"
 - $$N = 3, 7, 19$$: 점점 사각형에 가까워지고 위쪽이 평평해진다.
 - $$N = 79$$: 거의 사각형이다. 그러나 모서리 옆에 작고 뾰족한 넘침이 여전히 있다.
 - 끊긴 점 $$t = T_1$$에서는 $$N$$과 상관없이 늘 $$\frac12$$(위 값 1과 아래 값 0의 평균)을 지난다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig1.svg" alt="그림" loading="lazy">
+
+$$T = 4$$, $$T_1 = 1$$인 사각파의 부분합이다. 회색 점이 끊긴 점 $$t = \pm1$$의 값 $$\frac12$$이고, $$N$$이 커져도 모서리 옆의 작은 넘침은 남는다[^s2].
 
 A. Michelson은 이 근사를 기계(조화 분석기)로 그려 보다가 이 넘침을 처음 보고했다[^1].
 
@@ -84,6 +88,10 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 ## 예제
 
 **깁스 현상**[^7]. 사각파의 $$x_N$$은 불연속점 근처에서 넘침과 물결이 생긴다. $$N$$을 늘리면 물결이 불연속점 쪽으로 좁아지지만, 넘치는 높이는 점프 크기의 약 9%로 줄지 않는다. 그래도 넓이가 0으로 줄어 오차 에너지는 0으로 간다. 이것이 "오차 에너지 → 0"과 "모든 점에서 같다"가 다른 이유다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig2.svg" alt="그림" loading="lazy">
+
+끊긴 점 $$t = 1$$ 근처를 확대했다. $$N$$을 19에서 301로 늘려도 꼭대기는 약 1.09에 머물고, 물결의 폭만 끊긴 점 쪽으로 좁아진다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 사각파($$T = 4T_1$$)의 $$E_N$$이 $$N = 1, 2, 3, 7, 19, 79$$에서 늘지 않고 0.006 아래로 줄어듦, 불연속점에서 $$x_N(T_1) = \frac12$$, 연속점에서 원래 값에 수렴, $$N = 19, 79, 301$$에서 넘침이 모두 0.085~0.095 — [31_fourier-series-convergence_verify.py](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_verify/)</div>
@@ -135,4 +143,5 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 [^6]: 같은 자료, p.7
 [^7]: 같은 자료, p.8~9
 [^s1]: 에이전트 보충. 링잉과 창 함수의 활용, 넘침 높이 약 9%의 수치(Oppenheim·Willsky 2판 3.4절), 확인 문제는 원본에 없다. 수치는 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [31_fourier-series-convergence_plot.py](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 끊긴 점에서 $$x_N = \frac12$$, $$N = 19, 79, 301$$의 넘침이 모두 0.085~0.095, 오차 에너지가 줄어 0.006 아래.
 {% endraw %}

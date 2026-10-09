@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Inclusion-Exclusion Principle", "포함-배제", "포함배제", "교란순열", "derangement", "모자 문제", "hat-check problem", "전사 함수의 수", "surjections"]
 description: "겹치는 모음들의 합집합 크기를 셀 때, 각 크기를 그냥 더하면 겹친 부분이 여러 번 세어진다. 둘이 겹친 부분을 빼고, 셋이 겹친 부분은 다시 더하는 식으로 번갈아 고쳐 정확한 수를 얻는다. 여러 조건을 \"모두 피하는\" 경우의 수를 셀 때 특히 강하다. 다만 모음이 많아지면 더하고…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/pigeonhole/"
 next_title: "비둘기집 원리"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/inclusion-exclusion/"
 ---
 {% raw %}
@@ -81,6 +81,10 @@ $$\sum_{j=1}^{t}(-1)^{j+1}\binom{t}{j} = 1 - \sum_{j=0}^{t}(-1)^{j}\binom{t}{j} 
 
 일반적으로 $$D_n = n!\sum_{k=0}^{n}\frac{(-1)^k}{k!}$$이고, 아무도 자기 모자를 받지 못할 확률 $$D_n / n!$$은 $$n$$이 커지면 $$1/e \approx 0.368$$에 다가간다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/19_inclusion-exclusion_fig1.svg" alt="그림" loading="lazy">
+
+확률은 0.5, 0.333, 0.375처럼 $$1/e$$ 위아래를 번갈아 넘으며 다가간다. 6명이면 이미 0.368이라, 그 뒤로는 사람이 늘어도 확률이 거의 그대로다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 무작위 집합 1~5개 2,000회에서 공식 = 합집합 크기, 734를 전수로 확인, 교란순열 $$D_1 \dots D_6$$을 전수로 세어 공식과 비교, $$D_{10}/10! \approx 1/e$$, 전사 150, 원소가 한 번씩 세어짐 — [19_inclusion-exclusion_verify.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_verify/)</div>
 
@@ -128,4 +132,5 @@ $$\sum_{j=1}^{t}(-1)^{j+1}\binom{t}{j} = 1 - \sum_{j=0}^{t}(-1)^{j}\binom{t}{j} 
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(포함-배제). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장 "Advanced Counting Techniques"(포함-배제의 응용, 교란순열).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, $$D_1, \dots, D_6 = 0, 1, 2, 9, 44, 265$$, $$D_6/6! \approx 0.368$$, $$\vert D_{10}/10! - 1/e\vert  < 10^{-7}$$을 같은 코드로 확인했다.
 {% endraw %}

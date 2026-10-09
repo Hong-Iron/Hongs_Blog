@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Complex Numbers", "허수", "imaginary number", "허수 단위", "i", "실수부", "real part", "허수부", "imaginary part", "켤레복소수", "complex conjugate", "절댓값", "modulus", "복소평면", "complex plane"]
 description: "제곱해서 −1이 되는 수를 하나 새로 들여와 만든 수의 체계다. 실수가 한 줄로 늘어선 수직선이라면, 복소수는 평면 위의 점이다. 이 확장 덕분에 모든 다항식이 근을 갖게 되고, 회전과 진동을 곱셈 하나로 다룰 수 있게 된다. 대신 복소수 사이에는 \"어느 쪽이 더 큰가\"라는 순서가…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/euler-formula/"
 next_title: "복소수의 극형식과 오일러 공식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/complex-numbers/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ $$x = \frac{-2 \pm 4i}{2} = -1 \pm 2i$$
 
 
 $$-1 + 2i$$를 평면의 점 $$(-1, 2)$$로 그리면, 두 근은 가로축에 대해 대칭인 두 점이다. 가로축이 실수부, 세로축이 허수부다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/18_complex-numbers_fig1.svg" alt="그림" loading="lazy">
+
+두 근은 가로축을 거울로 두고 마주 본다. 원점에서 점까지의 거리는 아래에서 절댓값 $$\vert z\vert $$라 부르며, 여기서는 $$\sqrt5$$다[^s2].
 
 계산은 $$i^2 = -1$$만 기억하고 다항식처럼 한다.
 
@@ -145,4 +149,5 @@ $$(1 + 2i)(3 - i)$$와 $$\dfrac{1 + 2i}{3 - i}$$를 계산한다.
 [^1]: OpenStax, *Precalculus 2e*, 3.1절 "Complex Numbers"
 [^2]: OpenStax, *Precalculus 2e*, 3.6절 "Zeros of Polynomial Functions"(켤레근 정리)
 [^s1]: 에이전트 보충. 큐비트 상태 $$\alpha\vert 0\rangle + \beta\vert 1\rangle$$에서 $$\vert \alpha\vert ^2 + \vert \beta\vert ^2 = 1$$이고 $$\vert \alpha\vert ^2$$가 0을 측정할 확률이라는 것은 양자 계산의 표준 서술이다(Nielsen & Chuang, *Quantum Computation and Quantum Information*, 1.2절).
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [18_complex-numbers_plot.py](/Hongs_Blog/studies/college-math/code/18_complex-numbers_plot/)로 그렸고, 그림에 쓴 값(두 근이 $$x^2 + 2x + 5 = 0$$을 만족, $$\vert -1 + 2i\vert  = \sqrt5$$)을 같은 코드로 확인했다.
 {% endraw %}

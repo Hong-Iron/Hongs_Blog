@@ -19,7 +19,7 @@ next_url: "/studies/data-science/categorical-dissimilarity/"
 next_title: "범주형 속성의 비유사도"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/chi-square-correlation/"
 ---
 {% raw %}
@@ -74,6 +74,10 @@ $$\chi^2 = \sum_{i=1}^{c}\sum_{j=1}^{r}\frac{(o_{ij} - e_{ij})^2}{e_{ij}}$$
 
 $$\chi^2$$이 클수록 독립이라는 가정에서 멀다. 얼마나 커야 "관련 있다"고 할지는 자유도 $$(r - 1)(c - 1)$$인 카이제곱 분포의 임계값과 비교해 정한다[^s1]. 위 예는 자유도가 $$(2 - 1)(2 - 1) = 1$$이고, 유의수준 0.001의 임계값이 10.828이라 507.93은 훨씬 크다. 이 비교는 [가설검정](/Hongs_Blog/studies/probability-statistics/hypothesis-testing/)의 한 경우다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/02_chi-square-correlation_fig1.svg" alt="그림" loading="lazy">
+
+두 속성이 정말 관련 없다면 $$\chi^2$$ 값은 대부분 0~4 근처에 머문다. 10.828보다 클 확률은 0.001뿐이고, 이 예의 507.93은 그보다 훨씬 오른쪽에 있다[^s2].
+
 ## 활용
 
 - **중복 속성 찾기.** 데이터를 합칠 때, 한 명목 속성이 다른 명목 속성을 거의 결정하면 중복일 수 있다. [데이터 통합](/Hongs_Blog/studies/data-science/data-integration/)에서 숫자 속성에는 상관계수를, 명목 속성에는 $$\chi^2$$을 쓴다[^2].
@@ -115,4 +119,5 @@ $$\chi^2$$이 클수록 독립이라는 가정에서 멀다. 얼마나 커야 "�
 [^1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.19
 [^2]: 같은 자료, p.39
 [^s1]: 에이전트 보충. 자유도와 임계값 10.828, 기대 빈도 5 미만 규칙, 자료 수에 비례하는 성질, 크라메르 V, 카드 C2·C3은 원본에 없다. 카이제곱 독립성 검정의 표준 내용이다(Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 3.3.2절). 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [02_chi-square-correlation_plot.py](/Hongs_Blog/studies/data-science/code/02_chi-square-correlation_plot/)로 그렸고, $$\chi^2 = 507.93$$(반올림 전 507.937)과 자유도 1에서 10.828을 넘을 확률 0.001을 같은 코드로 확인했다.
 {% endraw %}

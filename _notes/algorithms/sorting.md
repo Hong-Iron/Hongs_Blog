@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sorting", "정렬", "sorted", "sort", "key", "lambda", "안정 정렬", "stable sort", "병합 정렬", "merge sort", "Timsort", "사전순"]
 description: "시험지를 점수 순으로 다시 쌓는 것처럼, 정렬은 정한 기준에 따라 줄을 다시 세운다. 파이썬에서는 \"무엇을 기준으로\"만 알려 주면 sorted가 빠르게 해 준다. 기준이 같은 것끼리는 원래 순서를 그대로 지키는데, 이 성질 덕분에 \"점수 높은 순, 같으면 이름 순\" 같은 여러 기준…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/string-parsing/"
 next_title: "문자열 파싱과 정규 표현식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/sorting/"
 ---
 {% raw %}
@@ -96,6 +96,10 @@ people.sort(key=lambda p: p[1])                 # 숫자 순. 같은 숫자는 �
 
 반으로 나누기는 약 $$\log_2 n$$층이고, 층마다 합치는 비용이 $$n$$이라 모두 $$O(n \log n)$$이다. 크기 비교만으로 정렬하는 방법은 어떤 것이든 최악에 $$n \log n$$에 비례하는 비교가 필요하다는 것이 알려져 있어서[^2], `sorted`보다 빠른 비교 정렬을 직접 짤 일은 없다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/05_sorting_fig1.svg" alt="그림" loading="lazy">
+
+무작위 실수를 정렬하며 비교 횟수를 센 결과다. 가로·세로 모두 로그 눈금이라, 늘어나는 빠르기가 기울기로 보인다. 병합 정렬은 점선 $$n\log_2 n$$ 바로 아래를 따라간다. 하나씩 앞으로 끼워 넣는 정렬(삽입 정렬)은 기울기가 2라서, n이 두 배가 되면 비교가 네 배가 된다. 원소 4,096개에서 둘은 약 96배 차이다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 병합 정렬을 직접 구현해 무작위 리스트 2,000개에서 `sorted`와 결과가 같고, 같은 키끼리 원래 순서를 지키는 것(안정성)을 확인했다. 예시, 표, 두 번 정렬 예, 확인 문제의 결과도 실행해 확인했다 — [05_sorting_impl.py](/Hongs_Blog/studies/algorithms/code/05_sorting_impl/)</div>
 
@@ -148,4 +152,5 @@ people.sort(key=lambda p: p[1])                 # 숫자 순. 같은 숫자는 �
 
 [^1]: Python 3 문서 "Sorting Techniques": `sort()`와 `sorted()`는 안정 정렬이 보장되고, 여러 기준은 덜 중요한 기준부터 여러 번 정렬해 만들 수 있다("Sort Stability and Complex Sorts"). 같은 문서에서 파이썬이 Timsort를 쓴다고 밝힌다.
 [^2]: Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.3 "Designing algorithms"(병합 정렬과 $$\Theta(n \lg n)$$ 분석), 8.1 "Lower bounds for sorting"(비교 정렬은 최악에 $$\Omega(n \lg n)$$ 번 비교한다).
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [05_sorting_plot.py](/Hongs_Blog/studies/algorithms/code/05_sorting_plot/)로 그렸고, 비교 횟수(4,096개에서 병합 정렬 43,928번, 삽입 정렬 4,210,245번), 병합 정렬이 늘 $$n\log_2 n$$ 이하라는 것, 로그-로그 기울기(병합 정렬 1.16, 삽입 정렬 2.01)를 같은 코드로 확인했다. 병합 정렬의 기울기가 1보다 조금 큰 것은 $$\log_2 n$$이 함께 자라기 때문이다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Radian", "rad", "호도법", "도", "degree", "호의 길이", "arc length", "부채꼴 넓이", "각속도", "angular velocity", "동경", "coterminal angle"]
 description: "라디안은 각을 \"호의 길이가 반지름의 몇 배인가\"로 재는 단위다. 도(°)는 한 바퀴를 360으로 나눈 사람이 정한 눈금이지만, 라디안은 원의 크기에서 저절로 나와서 호의 길이·넓이·미분 공식이 가장 간단해진다. 한 바퀴는 약 6.28라디안(2π)이다. 프로그래밍 언어의 삼각함수는…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/trig-functions/"
 next_title: "삼각함수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/radian/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/college-math/radian/"
 | 라디안 | $$\pi/6$$ | $$\pi/4$$ | $$\pi/3$$ | $$\pi/2$$ | $$\pi$$ | $$2\pi$$ |
 
 걸은 거리가 아래 정의의 호의 길이 $$s$$, 반지름이 $$r$$, 각이 $$\theta$$다. 라디안은 "길이 ÷ 길이"라 단위가 없는 수다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/11_radian_fig1.svg" alt="그림" loading="lazy">
+
+주황 호의 길이가 반지름(파란 선)과 같은 2일 때, 두 반지름 사이의 각이 1라디안이다. 원을 여섯으로 나눈 60°보다 조금 작다[^s2].
 
 ## 정의
 
@@ -126,4 +130,5 @@ $$1\ \text{rad} = \frac{180°}{\pi} \approx 57.2958°, \qquad 1° = \frac{\pi}{1
 
 [^1]: OpenStax, *Precalculus 2e*, 5.1절 "Angles"(라디안, 호의 길이, 부채꼴 넓이, 각속도와 선속도)
 [^s1]: 에이전트 보충. $$\sin$$의 도함수가 라디안에서만 $$\cos$$이라는 것은 미분적분학의 [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/)에서 보인다. 파이썬 `%`와 C `fmod`의 부호 차이는 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [11_radian_plot.py](/Hongs_Blog/studies/college-math/code/11_radian_plot/)로 그렸고, 그림에 쓴 값(선분 10만 개로 잰 호의 길이가 2, $$1\ \text{rad} = 57.2958°$$)을 같은 코드로 확인했다.
 {% endraw %}

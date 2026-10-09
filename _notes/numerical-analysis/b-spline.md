@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/surface-patches/"
 next_title: "매개변수 곡면 패치"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/b-spline/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/numerical-analysis/b-spline/"
 | 3 | $$\mathbf p_2..\mathbf p_5$$ | $$\frac16(\mathbf p_2 + 4\mathbf p_3 + \mathbf p_4)$$ |
 
 첫 조각은 $$\mathbf p_1 = (1, 3)$$에서 시작하지 않는다. $$\mathbf p_1$$ 쪽으로 끌려간 $$(\frac76, \frac52)$$에서 시작한다. $$\mathbf p_5$$를 $$(100, 100)$$으로 옮겨도 조각 1, 2는 그대로이고 조각 3만 바뀐다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/16_b-spline_fig1.svg" alt="그림" loading="lazy">
+
+회색 점선이 조절점이고, 색 선이 세 조각이다. 곡선은 조절점을 지나지 않고 안쪽으로 끌려 들어간다. 조각이 바뀌는 점(동그라미)에서도 꺾임 없이 이어진다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 블렌딩 함수와 $$M_S$$, 합 1·0 이상, 예시와 카드 C2, 무작위 200개 곡선의 이음점에서 0·1·2계 도함수 일치, 3계는 다름, 국소 조절 — [16_b-spline_verify.py](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_verify/)</div>
@@ -175,4 +179,5 @@ $$M_S$$로 2계 도함수를 계산하면 $$\mathbf p''(0) = \mathbf p_{i-1} - 2
 [^4]: 같은 자료, p.30
 [^5]: 같은 자료, p.31
 [^s1]: 에이전트 보충. 예시 표와 국소 조절 실험, 볼록 껍질, 스스로 설명해 보기, NURBS·활용, 끝점 겹치기, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [16_b-spline_plot.py](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 조각의 출발점 $$(\frac76, \frac52)$$, 두 이음점에서 0·1·2계 도함수 일치.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Transformations of the Independent Variable", "시간 이동", "Time Shift", "시간 반전", "Time Reversal", "시간 척도 변환", "Time Scaling", "지연", "Delay", "아핀 변환", "Affine Transformation"]
 description: "신호의 값은 그대로 두고 시간축만 밀고(이동), 뒤집고(반전), 늘이거나 줄이는(척도) 조작이다. 녹음 파일을 늦게 틀기, 거꾸로 틀기, 빨리 감기와 같다. 괄호 안에서 일어나는 일이라 방향이 직관과 반대로 보이는 것이 함정이다. x(t - 2)는 왼쪽이 아니라 오른쪽으로 2만큼 …"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/periodic-signals/"
 next_title: "주기 신호"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/independent-variable-transform/"
 ---
 {% raw %}
@@ -71,6 +71,10 @@ permalink: "/studies/signals-and-systems/independent-variable-transform/"
 - 척도: 가로를 $$\frac23$$배로 → $$-\frac23 \le t \le 0$$에서 1, $$0 \le t \le \frac23$$에서 내려감.
 - 다른 순서: $$x(\frac32 t)$$를 먼저 그리면 $$0 \sim \frac23$$에서 1, $$\frac23 \sim \frac43$$에서 내려간다. 여기서 1이 아니라 $$\frac23$$만큼 왼쪽으로 밀어야 같은 답이 나온다.
 - 빠른 확인: $$a = 0$$, $$b = 2$$, $$\alpha = \frac32$$, $$\beta = 1$$이면 $$\frac{0 - 1}{3/2} = -\frac23$$, $$\frac{2 - 1}{3/2} = \frac23$$. 맞다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/05_independent-variable-transform_fig1.svg" alt="그림" loading="lazy">
+
+가운데는 예 1, 아래는 예 2의 결과다. 예 1은 좌우가 뒤집혔고, 예 2는 뒤집히지 않은 채 왼쪽으로 옮겨지고 폭이 $$\frac23$$배로 줄었다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예 1·2의 모양을 점마다 계산해 두 그리는 순서가 같은 답을 내고, 척도 뒤 1만큼 밀면 틀린 답이 됨을 확인 — [05_independent-variable-transform_verify.py](/Hongs_Blog/studies/signals-and-systems/code/05_independent-variable-transform_verify/)</div>
@@ -134,4 +138,5 @@ permalink: "/studies/signals-and-systems/independent-variable-transform/"
 [^5]: 같은 자료, p.35
 [^6]: 같은 자료, p.33~34 (예제 1.1~1.3, 그림 1.13)
 [^s1]: 에이전트 보충. 끝점으로 구간을 구하는 빠른 확인법, 시험 문제 유형에 관한 말, 확인 문제 C1·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [05_independent-variable-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/05_independent-variable-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예 1의 $$-1 \sim 1$$, 예 2의 $$-\frac23 \sim \frac23$$ 구간과 중간값을 점마다 계산.
 {% endraw %}

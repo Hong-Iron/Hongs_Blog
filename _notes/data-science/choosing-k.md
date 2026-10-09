@@ -19,7 +19,7 @@ next_url: "/studies/data-science/gaussian-mixture-model/"
 next_title: "가우스 혼합 모델"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/choosing-k/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ k-평균은 무리 수를 미리 알려 줘야 한다. 무리를 늘리면 점�
 | 평균 실루엣 | | 0.665 | **0.854** | 0.620 | 0.392 |
 
 $$J$$는 $$k$$를 늘릴수록 계속 줄지만, $$k = 3$$ 다음부터 거의 줄지 않는다. 그래프의 팔꿈치(엘보)가 $$k = 3$$이다. 실루엣도 $$k = 3$$에서 가장 높다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/28_choosing-k_fig1.svg" alt="그림" loading="lazy">
+
+위 표의 값이다. 왼쪽 $$J$$는 $$k = 3$$에서 꺾인 뒤 거의 평평하고, 오른쪽 실루엣은 $$k = 3$$에서 가장 높다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 표, 엘보와 실루엣 모두 $$k = 3$$, 카드 C2, 잘못 넣은 점의 $$s < 0$$, 모든 2분할에서 $$-1 \le s \le 1$$ — [28_choosing-k_verify.py](/Hongs_Blog/studies/data-science/code/28_choosing-k_verify/)</div>
@@ -116,4 +120,5 @@ $$s(i)$$는 $$-1$$에서 1 사이다. 1에 가까우면 잘 묶였고, 0에 가�
 [^2]: 같은 자료, p.19
 [^3]: 같은 자료, p.20
 [^s1]: 에이전트 보충. 1차원 예와 표, 카드 C2·C3은 원본에 없다. 검증 코드로 계산했다(가장 좋은 k-평균 답은 모든 나눔을 시험해 찾았다).
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [28_choosing-k_plot.py](/Hongs_Blog/studies/data-science/code/28_choosing-k_plot/)로 그렸고, 표의 $$J$$ 548, 127.5, 6, 4.5, 3과 실루엣 0.665, 0.854, 0.620, 0.392를 모든 나눔을 시험해 다시 계산했다.
 {% endraw %}

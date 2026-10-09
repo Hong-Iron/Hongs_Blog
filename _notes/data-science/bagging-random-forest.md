@@ -19,7 +19,7 @@ next_url: "/studies/data-science/boosting-adaboost/"
 next_title: "부스팅과 AdaBoost"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/bagging-random-forest/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/data-science/bagging-random-forest/"
 | 편향² | 0.0003 | 0.0004 |
 
 분산은 절반으로 줄고 편향은 그대로다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/21_bagging-random-forest_fig1.svg" alt="그림" loading="lazy">
+
+같은 참 함수(굵은 회색)에서 훈련 자료를 다섯 번 새로 뽑아 모델을 만들었다. 왼쪽 1-NN 예측은 자료마다 들쭉날쭉 크게 다르다. 오른쪽 배깅 예측은 다섯 선이 서로 더 가깝게 붙는다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 부트스트랩 표본 속 서로 다른 자료 63.6%(이론 63.7%), 위 표, 속성 조합 수 — [21_bagging_impl.py](/Hongs_Blog/studies/data-science/code/21_bagging_impl/)</div>
@@ -117,4 +121,5 @@ permalink: "/studies/data-science/bagging-random-forest/"
 [^1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.15
 [^2]: 같은 자료, p.16
 [^s1]: 에이전트 보충. 실험 수치, 속성 뽑기가 상관을 낮추는 이유, 마디마다 뽑는 보통의 구현(Breiman, "Random Forests", Machine Learning 2001), 복잡도, 사이킷런, OOB 평가, 카드는 원본에 없다. 검증 코드로 실험했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [21_bagging-random-forest_plot.py](/Hongs_Blog/studies/data-science/code/21_bagging-random-forest_plot/)로 그렸다. 같은 코드에서 다른 난수로 150회 다시 실험해 예측 분산 0.090 → 0.046, 편향² 0.0002 그대로를 확인했다(위 표와 같은 경향).
 {% endraw %}

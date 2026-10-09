@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="389.745312pt" height="251.384pt" viewBox="0 0 389.745312 251.384" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 251.384 
+L 389.745312 251.384 
+L 389.745312 0 
+L 0 0 
+L 0 251.384 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 47.745312 206.784 
+L 382.545313 206.784 
+L 382.545313 7.2 
+L 47.745312 7.2 
+L 47.745312 206.784 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m642d725679" d="M 0 0 
+L 0 3.5 
+" style="stroke: #888888; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m642d725679" x="62.658521" y="206.784" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 0.0 -->
+      <g style="fill: #888888" transform="translate(54.485864 223.684) scale(0.11 -0.11)">
+       <defs>
+        <path id="AppleSDGothicNeo-Regular-11" d="M 2022 192 
+C 2893 192 3558 787 3558 2240 
+L 3558 2630 
+C 3558 4122 2867 4634 2029 4634 
+C 1184 4634 448 4122 448 2605 
+L 448 2246 
+C 448 794 1139 192 2022 192 
+z
+M 2022 614 
+C 1350 614 992 1126 992 2195 
+L 992 2669 
+C 992 3744 1357 4211 2029 4211 
+C 2688 4211 3040 3718 3040 2637 
+L 3040 2163 
+C 3040 1062 2682 614 2022 614 
+z
+" transform="scale(0.015625)"/>
+        <path id="AppleSDGothicNeo-Regular-f" d="M 269 109 
+L 826 109 
+L 826 678 
+L 269 678 
+L 269 109 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m642d725679" x="123.653237" y="206.784" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 0.2 -->
+      <g style="fill: #888888" transform="translate(116.014253 223.684) scale(0.11 -0.11)">
+       <defs>
+        <path id="AppleSDGothicNeo-Regular-13" d="M 397 269 
+L 3066 269 
+L 3066 704 
+L 1107 704 
+L 1779 1382 
+C 2522 2138 2970 2650 2970 3392 
+C 2970 4160 2502 4640 1638 4640 
+C 1152 4640 717 4422 448 4250 
+L 595 3846 
+C 845 4019 1190 4198 1555 4198 
+C 2163 4198 2438 3917 2438 3347 
+C 2438 2733 2029 2266 1421 1632 
+L 397 570 
+L 397 269 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-13" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m642d725679" x="184.647954" y="206.784" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 0.4 -->
+      <g style="fill: #888888" transform="translate(176.887798 223.684) scale(0.11 -0.11)">
+       <defs>
+        <path id="AppleSDGothicNeo-Regular-15" d="M 2214 166 
+L 2682 166 
+L 2682 1171 
+L 3398 1171 
+L 3398 1587 
+L 2682 1587 
+L 2682 4621 
+L 2285 4621 
+L 186 1555 
+L 186 1171 
+L 2214 1171 
+L 2214 166 
+z
+M 730 1587 
+L 2214 3814 
+L 2214 1587 
+L 730 1587 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-15" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m642d725679" x="245.642671" y="206.784" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 0.6 -->
+      <g style="fill: #888888" transform="translate(237.887671 223.684) scale(0.11 -0.11)">
+       <defs>
+        <path id="AppleSDGothicNeo-Regular-17" d="M 1837 192 
+C 2707 192 3232 826 3232 1645 
+C 3232 2464 2656 2957 1939 2957 
+C 1459 2957 1107 2733 877 2496 
+C 941 3834 1350 4205 2080 4205 
+C 2355 4205 2733 4096 2886 4006 
+L 3034 4378 
+C 2854 4486 2458 4634 2029 4634 
+C 1037 4634 365 3968 365 2451 
+L 365 2118 
+C 365 896 877 192 1837 192 
+z
+M 1830 614 
+C 1146 614 877 1139 877 1939 
+L 877 1984 
+C 1056 2240 1427 2528 1837 2528 
+C 2355 2528 2720 2266 2720 1594 
+C 2720 979 2387 614 1830 614 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-17" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m642d725679" x="306.637388" y="206.784" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 0.8 -->
+      <g style="fill: #888888" transform="translate(298.767231 223.684) scale(0.11 -0.11)">
+       <defs>
+        <path id="AppleSDGothicNeo-Regular-19" d="M 1837 186 
+C 2765 186 3341 723 3341 1408 
+C 3341 2054 2829 2362 2298 2534 
+C 2739 2765 3168 3066 3168 3584 
+C 3168 4250 2624 4640 1818 4640 
+C 992 4640 461 4179 461 3558 
+C 461 3008 838 2682 1299 2502 
+C 826 2317 339 1926 339 1363 
+C 339 659 922 186 1837 186 
+z
+M 1830 608 
+C 1261 608 851 909 851 1382 
+C 851 1856 1280 2163 1702 2310 
+C 2445 2074 2797 1882 2797 1357 
+C 2797 915 2381 608 1830 608 
+z
+M 1920 2720 
+C 1350 2867 1005 3130 1005 3571 
+C 1005 3981 1331 4218 1824 4218 
+C 2355 4218 2637 3942 2637 3565 
+C 2637 3155 2323 2899 1920 2720 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-19" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m642d725679" x="367.632104" y="206.784" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 1.0 -->
+      <g style="fill: #888888" transform="translate(360.960776 223.684) scale(0.11 -0.11)">
+       <defs>
+        <path id="AppleSDGothicNeo-Regular-12" d="M 1146 243 
+L 1632 243 
+L 1632 4634 
+L 1363 4634 
+L 352 4160 
+L 352 3866 
+L 1146 4051 
+L 1146 243 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#AppleSDGothicNeo-Regular-12"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(35.703125 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(58.296875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_7">
+     <!-- 앞면 확률 후보 $p$ -->
+     <g style="fill: #888888" transform="translate(178.735312 240.884) scale(0.11 -0.11)">
+      <defs>
+       <path id="AppleSDGothicNeo-Regular-996" d="M 5395 3354 
+L 5395 3763 
+L 4544 3763 
+L 4544 5146 
+L 4058 5146 
+L 4058 2067 
+L 4544 2067 
+L 4544 3354 
+L 5395 3354 
+z
+M 4678 1344 
+L 4678 1747 
+L 928 1747 
+L 928 1344 
+L 4678 1344 
+z
+M 4742 -358 
+L 4742 45 
+L 3878 45 
+L 4090 1062 
+L 3616 1133 
+L 3430 45 
+L 2189 45 
+L 2061 1139 
+L 1574 1075 
+L 1734 45 
+L 864 45 
+L 864 -358 
+L 4742 -358 
+z
+M 1754 4896 
+C 954 4896 301 4365 301 3552 
+C 301 2733 954 2221 1754 2221 
+C 2547 2221 3200 2733 3200 3558 
+C 3200 4365 2547 4896 1754 4896 
+z
+M 1754 4499 
+C 2342 4499 2733 4102 2733 3552 
+C 2733 2995 2336 2618 1754 2618 
+C 1190 2618 774 2995 774 3558 
+C 774 4102 1190 4499 1754 4499 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-776" d="M 4326 3770 
+L 4326 2938 
+L 3283 2938 
+L 3283 2534 
+L 4326 2534 
+L 4326 1082 
+L 4813 1082 
+L 4813 5146 
+L 4326 5146 
+L 4326 4173 
+L 3283 4173 
+L 3283 3770 
+L 4326 3770 
+z
+M 4934 -262 
+L 4934 147 
+L 1696 147 
+L 1696 1453 
+L 1210 1453 
+L 1210 -262 
+L 4934 -262 
+z
+M 3046 2035 
+L 3046 4646 
+L 493 4646 
+L 493 2035 
+L 3046 2035 
+z
+M 2554 2432 
+L 979 2432 
+L 979 4243 
+L 2554 4243 
+L 2554 2432 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-1" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-d1b" d="M 3750 1690 
+L 3706 2067 
+C 3379 2016 2771 1965 2182 1939 
+L 2182 2291 
+C 2784 2342 3251 2579 3251 3034 
+C 3251 3552 2656 3782 1946 3782 
+C 1235 3782 653 3546 653 3027 
+C 653 2573 1101 2349 1690 2291 
+L 1690 1914 
+C 1120 1888 550 1875 147 1875 
+L 224 1472 
+C 614 1472 1382 1504 2016 1542 
+C 2675 1574 3347 1645 3750 1690 
+z
+M 5402 2880 
+L 5402 3290 
+L 4557 3290 
+L 4557 5146 
+L 4064 5146 
+L 4064 1427 
+L 4557 1427 
+L 4557 2880 
+L 5402 2880 
+z
+M 890 1133 
+L 890 730 
+L 4064 730 
+L 4064 -486 
+L 4557 -486 
+L 4557 1133 
+L 890 1133 
+z
+M 3558 3968 
+L 3558 4365 
+L 346 4365 
+L 346 3968 
+L 3558 3968 
+z
+M 2784 3034 
+C 2784 2771 2413 2643 1946 2643 
+C 1472 2643 1114 2765 1114 3034 
+C 1114 3290 1466 3418 1946 3418 
+C 2413 3418 2784 3290 2784 3034 
+z
+M 2720 4672 
+L 2720 5075 
+L 1184 5075 
+L 1184 4672 
+L 2720 4672 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-72b" d="M 4870 -346 
+L 4870 38 
+L 1312 38 
+L 1312 512 
+L 4698 512 
+L 4698 1664 
+L 3949 1664 
+L 3949 2234 
+L 5293 2234 
+L 5293 2624 
+L 243 2624 
+L 243 2234 
+L 1574 2234 
+L 1574 1664 
+L 832 1664 
+L 832 1306 
+L 4211 1306 
+L 4211 864 
+L 826 864 
+L 826 -346 
+L 4870 -346 
+z
+M 4774 2982 
+L 4774 3347 
+L 1370 3347 
+L 1370 3789 
+L 4666 3789 
+L 4666 4960 
+L 877 4960 
+L 877 4576 
+L 4179 4576 
+L 4179 4141 
+L 883 4141 
+L 883 2982 
+L 4774 2982 
+z
+M 2061 2234 
+L 3456 2234 
+L 3456 1664 
+L 2061 1664 
+L 2061 2234 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-d31" d="M 4493 2714 
+C 4493 3302 3763 3571 2771 3571 
+C 1786 3571 1050 3302 1050 2714 
+C 1050 2138 1786 1862 2771 1862 
+C 3763 1862 4493 2138 4493 2714 
+z
+M 3008 -454 
+L 3008 1146 
+L 5293 1146 
+L 5293 1555 
+L 243 1555 
+L 243 1146 
+L 2522 1146 
+L 2522 -454 
+L 3008 -454 
+z
+M 5024 3814 
+L 5024 4224 
+L 531 4224 
+L 531 3814 
+L 5024 3814 
+z
+M 3987 2714 
+C 3987 2387 3334 2266 2771 2266 
+C 2221 2266 1555 2387 1555 2714 
+C 1555 3059 2221 3168 2771 3168 
+C 3334 3168 3987 3059 3987 2714 
+z
+M 3706 4646 
+L 3706 5062 
+L 1837 5062 
+L 1837 4646 
+L 3706 4646 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-801" d="M 4678 1798 
+L 4678 4762 
+L 4192 4762 
+L 4192 3731 
+L 1344 3731 
+L 1344 4762 
+L 851 4762 
+L 851 1798 
+L 2515 1798 
+L 2515 659 
+L 243 659 
+L 243 250 
+L 5293 250 
+L 5293 659 
+L 3002 659 
+L 3002 1798 
+L 4678 1798 
+z
+M 4192 2202 
+L 1344 2202 
+L 1344 3328 
+L 4192 3328 
+L 4192 2202 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-Oblique-53" d="M 3175 2156 
+Q 3175 2616 2975 2859 
+Q 2775 3103 2400 3103 
+Q 2144 3103 1911 2972 
+Q 1678 2841 1497 2591 
+Q 1319 2344 1212 1994 
+Q 1106 1644 1106 1300 
+Q 1106 863 1306 627 
+Q 1506 391 1875 391 
+Q 2147 391 2380 519 
+Q 2613 647 2778 891 
+Q 2956 1147 3065 1494 
+Q 3175 1841 3175 2156 
+z
+M 1394 2969 
+Q 1625 3272 1939 3428 
+Q 2253 3584 2638 3584 
+Q 3175 3584 3472 3232 
+Q 3769 2881 3769 2247 
+Q 3769 1728 3584 1258 
+Q 3400 788 3053 416 
+Q 2822 169 2531 39 
+Q 2241 -91 1919 -91 
+Q 1547 -91 1294 64 
+Q 1041 219 916 525 
+L 556 -1331 
+L -19 -1331 
+L 922 3500 
+L 1497 3500 
+L 1394 2969 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#AppleSDGothicNeo-Regular-996" transform="translate(0 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-776" transform="translate(86.499924 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(172.999847 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-d1b" transform="translate(199.29982 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-72b" transform="translate(285.799744 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(372.299667 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-d31" transform="translate(398.59964 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-801" transform="translate(485.099564 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(571.599487 0.59375)"/>
+      <use xlink:href="#DejaVuSans-Oblique-53" transform="translate(597.89946 0.59375)"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="meb7ab6a76a" d="M 0 0 
+L -3.5 0 
+" style="stroke: #888888; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#meb7ab6a76a" x="47.745312" y="206.784" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 0.0 -->
+      <g style="fill: #888888" transform="translate(24.4 211.734) scale(0.11 -0.11)">
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#meb7ab6a76a" x="47.745312" y="171.144" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 0.2 -->
+      <g style="fill: #888888" transform="translate(25.467344 176.094) scale(0.11 -0.11)">
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-13" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#meb7ab6a76a" x="47.745312" y="135.504" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- 0.4 -->
+      <g style="fill: #888888" transform="translate(25.225 140.454) scale(0.11 -0.11)">
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-15" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#meb7ab6a76a" x="47.745312" y="99.864" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 0.6 -->
+      <g style="fill: #888888" transform="translate(25.235312 104.814) scale(0.11 -0.11)">
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-17" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#meb7ab6a76a" x="47.745312" y="64.224" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- 0.8 -->
+      <g style="fill: #888888" transform="translate(25.005 69.174) scale(0.11 -0.11)">
+       <use xlink:href="#AppleSDGothicNeo-Regular-11"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(63 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-19" transform="translate(85.59375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#meb7ab6a76a" x="47.745312" y="28.584" style="fill: #888888; stroke: #888888; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <!-- 1.0 -->
+      <g style="fill: #888888" transform="translate(27.402656 33.534) scale(0.11 -0.11)">
+       <use xlink:href="#AppleSDGothicNeo-Regular-12"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-f" transform="translate(35.703125 0)"/>
+       <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(58.296875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_14">
+     <!-- $L(p)$ / 최댓값 -->
+     <g style="fill: #888888" transform="translate(17.1 136.912) rotate(-90) scale(0.11 -0.11)">
+      <defs>
+       <path id="DejaVuSans-Oblique-2f" d="M 1075 4666 
+L 1709 4666 
+L 909 525 
+L 3181 525 
+L 3078 0 
+L 172 0 
+L 1075 4666 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-b" d="M 1984 4856 
+Q 1566 4138 1362 3434 
+Q 1159 2731 1159 2009 
+Q 1159 1288 1364 580 
+Q 1569 -128 1984 -844 
+L 1484 -844 
+Q 1016 -109 783 600 
+Q 550 1309 550 2009 
+Q 550 2706 781 3412 
+Q 1013 4119 1484 4856 
+L 1984 4856 
+z
+" transform="scale(0.015625)"/>
+       <path id="DejaVuSans-c" d="M 513 4856 
+L 1013 4856 
+Q 1481 4119 1714 3412 
+Q 1947 2706 1947 2009 
+Q 1947 1309 1714 600 
+Q 1481 -109 1013 -844 
+L 513 -844 
+Q 928 -128 1133 580 
+Q 1338 1288 1338 2009 
+Q 1338 2731 1133 3434 
+Q 928 4138 513 4856 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-10" d="M 58 -384 
+L 499 -384 
+L 2003 4941 
+L 1562 4941 
+L 58 -384 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-b6d" d="M 518 3578 
+L 1837 3578 
+L 1837 3565 
+C 1837 2906 1152 2298 352 2093 
+L 582 1702 
+C 1261 1914 1939 2464 2086 2938 
+C 2310 2451 3014 2003 3610 1862 
+L 3814 2253 
+C 3078 2387 2336 2938 2336 3558 
+L 2336 3578 
+L 3693 3578 
+L 3693 3981 
+L 518 3981 
+L 518 3578 
+z
+M 4864 -448 
+L 4864 5146 
+L 4378 5146 
+L 4378 -448 
+L 4864 -448 
+z
+M 4058 762 
+L 4019 1165 
+C 3661 1114 2970 1069 2342 1043 
+L 2342 2125 
+L 1856 2125 
+L 1856 1018 
+C 1261 992 698 986 269 992 
+L 352 563 
+C 826 563 1453 582 2074 621 
+C 2758 659 3616 717 4058 762 
+z
+M 1299 4512 
+L 2854 4512 
+L 2854 4947 
+L 1299 4947 
+L 1299 4512 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-606" d="M 4960 1523 
+L 4960 5146 
+L 4474 5146 
+L 4474 3731 
+L 3770 3731 
+L 3770 5043 
+L 3302 5043 
+L 3302 1952 
+L 3770 1952 
+L 3770 3328 
+L 4474 3328 
+L 4474 1523 
+L 4960 1523 
+z
+M 998 2586 
+L 998 4230 
+L 2611 4230 
+L 2611 4640 
+L 512 4640 
+L 512 2176 
+L 934 2176 
+C 1619 2176 2445 2253 2957 2355 
+L 2906 2765 
+C 2419 2662 1722 2586 998 2586 
+z
+M 5248 -115 
+C 4422 6 3354 678 3354 1485 
+L 3354 1683 
+L 2842 1683 
+L 2842 1485 
+C 2842 698 1773 0 909 -109 
+C 1005 -243 1094 -365 1184 -499 
+C 1965 -339 2854 230 3078 819 
+C 3354 211 4307 -378 4973 -518 
+L 5248 -115 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-447" d="M 2733 -390 
+L 2733 1792 
+L 2253 1792 
+L 2253 1082 
+L 1344 1082 
+L 1344 1786 
+L 877 1786 
+L 877 -390 
+L 2733 -390 
+z
+M 461 4787 
+L 461 4378 
+L 2483 4378 
+C 2336 3456 1338 2662 211 2438 
+L 461 2029 
+C 1824 2419 2950 3296 3027 4787 
+L 461 4787 
+z
+M 5389 3379 
+L 5389 3789 
+L 4538 3789 
+L 4538 5146 
+L 4051 5146 
+L 4051 2131 
+L 4538 2131 
+L 4538 3379 
+L 5389 3379 
+z
+M 5222 -70 
+C 4602 205 4256 826 4256 1382 
+L 4256 1843 
+L 3776 1843 
+L 3776 1382 
+C 3776 819 3430 166 2797 -122 
+L 3098 -448 
+C 3539 -218 3904 243 4006 582 
+C 4128 262 4518 -186 4928 -416 
+L 5222 -70 
+z
+M 2253 -6 
+L 1344 -6 
+L 1344 710 
+L 2253 710 
+L 2253 -6 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#DejaVuSans-Oblique-2f" transform="translate(0 0.59375)"/>
+      <use xlink:href="#DejaVuSans-b" transform="translate(55.712891 0.59375)"/>
+      <use xlink:href="#DejaVuSans-Oblique-53" transform="translate(94.726562 0.59375)"/>
+      <use xlink:href="#DejaVuSans-c" transform="translate(158.203125 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(197.216797 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-10" transform="translate(223.516769 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(257.316742 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-b6d" transform="translate(283.616714 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-606" transform="translate(370.116638 0.59375)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-447" transform="translate(456.616562 0.59375)"/>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 62.963494 206.784 
+L 110.2344 206.675668 
+L 120.298528 206.415741 
+L 127.617894 206.006968 
+L 133.412392 205.47072 
+L 138.596943 204.769474 
+L 143.171547 203.928261 
+L 147.441177 202.91336 
+L 151.405834 201.736838 
+L 155.065517 200.42111 
+L 158.7252 198.857102 
+L 162.079909 197.182026 
+L 165.434618 195.254578 
+L 168.789328 193.054486 
+L 171.839064 190.801529 
+L 174.888799 188.293714 
+L 177.938535 185.518705 
+L 180.988271 182.465656 
+L 184.342981 178.775404 
+L 187.69769 174.728638 
+L 191.052399 170.319689 
+L 194.407109 165.546826 
+L 198.066792 159.928258 
+L 201.726475 153.889776 
+L 205.691131 146.894441 
+L 209.960762 138.870017 
+L 214.535365 129.769197 
+L 219.719916 118.935677 
+L 226.429335 104.355543 
+L 239.848173 75.039452 
+L 244.422777 65.619476 
+L 248.387433 57.947662 
+L 251.742143 51.920072 
+L 254.791878 46.884659 
+L 257.536641 42.768358 
+L 259.976429 39.477915 
+L 262.416218 36.566565 
+L 264.551033 34.353661 
+L 266.685848 32.473134 
+L 268.51569 31.139665 
+L 270.345531 30.074667 
+L 272.175373 29.288304 
+L 273.700241 28.852653 
+L 275.225108 28.622038 
+L 276.749976 28.601014 
+L 278.274844 28.793668 
+L 279.799712 29.203582 
+L 281.32458 29.833803 
+L 282.849448 30.68681 
+L 284.374316 31.764486 
+L 286.204157 33.355982 
+L 288.033999 35.273684 
+L 289.86384 37.517074 
+L 291.693682 40.084132 
+L 293.828497 43.483245 
+L 295.963312 47.309486 
+L 298.403101 52.190338 
+L 300.842889 57.591416 
+L 303.587652 64.254363 
+L 306.332414 71.491637 
+L 309.38215 80.13627 
+L 313.041833 91.220989 
+L 317.311463 104.897929 
+L 324.630829 129.254472 
+L 330.730301 149.221998 
+L 334.694957 161.422971 
+L 337.744693 170.141791 
+L 340.489455 177.363076 
+L 342.929244 183.205222 
+L 345.369033 188.444632 
+L 347.503848 192.497771 
+L 349.333689 195.558482 
+L 351.163531 198.22788 
+L 352.993372 200.502838 
+L 354.823214 202.386923 
+L 356.348082 203.66621 
+L 357.87295 204.69261 
+L 359.397818 205.481617 
+L 360.922685 206.053706 
+L 362.752527 206.490787 
+L 364.887342 206.72916 
+L 367.327131 206.78392 
+L 367.327131 206.78392 
+" clip-path="url(#p653289551f)" style="fill: none; stroke: #3b82c4; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 62.963494 206.784 
+L 218.195048 206.680199 
+L 223.074626 206.450758 
+L 226.429335 206.082485 
+L 228.869124 205.613142 
+L 231.003939 204.987269 
+L 232.83378 204.228539 
+L 234.358648 203.392139 
+L 235.883516 202.324326 
+L 237.408384 200.975459 
+L 238.933252 199.289728 
+L 240.45812 197.205715 
+L 241.982988 194.657469 
+L 243.507856 191.576141 
+L 245.032724 187.89227 
+L 246.557592 183.538745 
+L 248.08246 178.454441 
+L 249.607327 172.588463 
+L 251.132195 165.904893 
+L 252.962037 156.784705 
+L 254.791878 146.486759 
+L 256.926693 133.101174 
+L 259.366482 116.327897 
+L 267.600769 58.028962 
+L 269.43061 47.503732 
+L 270.955478 40.19958 
+L 272.175373 35.503084 
+L 273.090293 32.725826 
+L 274.005214 30.633068 
+L 274.615161 29.634978 
+L 275.225108 28.964011 
+L 275.835056 28.62637 
+L 276.445003 28.626478 
+L 277.05495 28.966914 
+L 277.664897 29.64837 
+L 278.274844 30.669614 
+L 279.189765 32.831128 
+L 280.104686 35.730782 
+L 281.019607 39.34022 
+L 282.239501 45.19085 
+L 283.459395 52.12352 
+L 284.984263 62.102512 
+L 286.814105 75.595064 
+L 289.558867 97.712395 
+L 294.133471 134.699341 
+L 296.268286 150.173518 
+L 298.098127 161.944198 
+L 299.622995 170.55766 
+L 301.147863 178.038175 
+L 302.672731 184.395416 
+L 304.197599 189.68109 
+L 305.417493 193.193763 
+L 306.637388 196.127705 
+L 307.857282 198.542376 
+L 309.077176 200.499954 
+L 310.297071 202.062665 
+L 311.516965 203.290562 
+L 312.736859 204.239795 
+L 314.261727 205.111658 
+L 315.786595 205.714104 
+L 317.616437 206.181215 
+L 319.751252 206.492038 
+L 322.800987 206.691454 
+L 328.290512 206.776068 
+L 360.312738 206.784 
+L 367.327131 206.784 
+L 367.327131 206.784 
+" clip-path="url(#p653289551f)" style="fill: none; stroke: #d9622b; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_15">
+    <defs>
+     <path id="ma230fd7d04" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #3b82c4"/>
+    </defs>
+    <g clip-path="url(#p653289551f)">
+     <use xlink:href="#ma230fd7d04" x="215.145313" y="128.520782" style="fill: #3b82c4; stroke: #3b82c4"/>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#p653289551f)">
+     <use xlink:href="#ma230fd7d04" x="245.642671" y="63.203196" style="fill: #3b82c4; stroke: #3b82c4"/>
+    </g>
+   </g>
+   <g id="line2d_17">
+    <g clip-path="url(#p653289551f)">
+     <use xlink:href="#ma230fd7d04" x="276.140029" y="28.584" style="fill: #3b82c4; stroke: #3b82c4"/>
+    </g>
+   </g>
+   <g id="line2d_18">
+    <g clip-path="url(#p653289551f)">
+     <use xlink:href="#ma230fd7d04" x="306.637388" y="72.328816" style="fill: #3b82c4; stroke: #3b82c4"/>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <g clip-path="url(#p653289551f)">
+     <use xlink:href="#ma230fd7d04" x="337.134746" y="168.452552" style="fill: #3b82c4; stroke: #3b82c4"/>
+    </g>
+   </g>
+   <g id="line2d_20">
+    <path d="M 276.140029 206.784 
+L 276.140029 7.2 
+" clip-path="url(#p653289551f)" style="fill: none; stroke-dasharray: 0.6,0.99; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.6"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 47.745312 206.784 
+L 47.745312 7.2 
+" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 47.745312 206.784 
+L 382.545313 206.784 
+" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <!-- $\hat p = 0.7$ -->
+    <g style="fill: #888888" transform="translate(279.189765 21.456) scale(0.1 -0.1)">
+     <defs>
+      <path id="DejaVuSans-2b3" d="M -1831 5119 
+L -1369 5119 
+L -603 3944 
+L -1038 3944 
+L -1600 4709 
+L -2163 3944 
+L -2597 3944 
+L -1831 5119 
+z
+M -1600 3584 
+L -1600 3584 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-20" d="M 678 2906 
+L 4684 2906 
+L 4684 2381 
+L 678 2381 
+L 678 2906 
+z
+M 678 1631 
+L 4684 1631 
+L 4684 1100 
+L 678 1100 
+L 678 1631 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-13" d="M 2034 4250 
+Q 1547 4250 1301 3770 
+Q 1056 3291 1056 2328 
+Q 1056 1369 1301 889 
+Q 1547 409 2034 409 
+Q 2525 409 2770 889 
+Q 3016 1369 3016 2328 
+Q 3016 3291 2770 3770 
+Q 2525 4250 2034 4250 
+z
+M 2034 4750 
+Q 2819 4750 3233 4129 
+Q 3647 3509 3647 2328 
+Q 3647 1150 3233 529 
+Q 2819 -91 2034 -91 
+Q 1250 -91 836 529 
+Q 422 1150 422 2328 
+Q 422 3509 836 4129 
+Q 1250 4750 2034 4750 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-11" d="M 684 794 
+L 1344 794 
+L 1344 0 
+L 684 0 
+L 684 794 
+z
+" transform="scale(0.015625)"/>
+      <path id="DejaVuSans-1a" d="M 525 4666 
+L 3525 4666 
+L 3525 4397 
+L 1831 0 
+L 1172 0 
+L 2766 4134 
+L 525 4134 
+L 525 4666 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#DejaVuSans-2b3" transform="translate(62.375 13.015625)"/>
+     <use xlink:href="#DejaVuSans-Oblique-53" transform="translate(0 0.515625)"/>
+     <use xlink:href="#DejaVuSans-20" transform="translate(82.958984 0.515625)"/>
+     <use xlink:href="#DejaVuSans-13" transform="translate(186.230469 0.515625)"/>
+     <use xlink:href="#DejaVuSans-11" transform="translate(249.853516 0.515625)"/>
+     <use xlink:href="#DejaVuSans-1a" transform="translate(281.640625 0.515625)"/>
+    </g>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_21">
+     <path d="M 57.645312 23.15 
+L 68.645312 23.15 
+L 79.645312 23.15 
+" style="fill: none; stroke: #3b82c4; stroke-width: 2; stroke-linecap: square"/>
+    </g>
+    <g id="text_16">
+     <!-- 앞면 7번 / 10번 -->
+     <g style="fill: #888888" transform="translate(88.445312 27) scale(0.11 -0.11)">
+      <defs>
+       <path id="AppleSDGothicNeo-Regular-18" d="M 710 243 
+L 1274 243 
+L 2957 4218 
+L 2957 4544 
+L 218 4544 
+L 218 4115 
+L 2400 4115 
+L 710 243 
+z
+" transform="scale(0.015625)"/>
+       <path id="AppleSDGothicNeo-Regular-7e3" d="M 4326 3136 
+L 4326 1069 
+L 4813 1069 
+L 4813 5146 
+L 4326 5146 
+L 4326 3546 
+L 3347 3546 
+L 3347 3136 
+L 4326 3136 
+z
+M 4954 -262 
+L 4954 141 
+L 1670 141 
+L 1670 1440 
+L 1184 1440 
+L 1184 -262 
+L 4954 -262 
+z
+M 3053 1933 
+L 3053 4774 
+L 2560 4774 
+L 2560 3757 
+L 947 3757 
+L 947 4774 
+L 454 4774 
+L 454 1933 
+L 3053 1933 
+z
+M 2560 2336 
+L 947 2336 
+L 947 3354 
+L 2560 3354 
+L 2560 2336 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#AppleSDGothicNeo-Regular-996"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-776" transform="translate(86.5 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(173 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-18" transform="translate(199.296875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-7e3" transform="translate(248.296875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(334.796875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-10" transform="translate(361.09375 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(394.890625 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-12" transform="translate(421.1875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(456.890625 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-7e3" transform="translate(519.890625 0)"/>
+     </g>
+    </g>
+    <g id="line2d_22">
+     <path d="M 57.645312 41.85 
+L 68.645312 41.85 
+L 79.645312 41.85 
+" style="fill: none; stroke: #d9622b; stroke-width: 2; stroke-linecap: square"/>
+    </g>
+    <g id="text_17">
+     <!-- 앞면 70번 / 100번 -->
+     <g style="fill: #888888" transform="translate(88.445312 45.7) scale(0.11 -0.11)">
+      <use xlink:href="#AppleSDGothicNeo-Regular-996"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-776" transform="translate(86.5 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(173 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-18" transform="translate(199.296875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(247.203125 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-7e3" transform="translate(310.203125 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(396.703125 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-10" transform="translate(423 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-1" transform="translate(456.796875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-12" transform="translate(483.09375 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(518.796875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-11" transform="translate(581.796875 0)"/>
+      <use xlink:href="#AppleSDGothicNeo-Regular-7e3" transform="translate(644.796875 0)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p653289551f">
+   <rect x="47.745312" y="7.2" width="334.8" height="199.584"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -8,7 +8,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 concepts: 31
 practices: 4
-codes: 36
+codes: 66
 description: "미분적분학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true
@@ -52,9 +52,9 @@ permalink: "/studies/calculus/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 01 | [극한](/Hongs_Blog/studies/calculus/limits/) | 한없이 다가갈 때 가까워지는 값. ε-δ 정의 (무거움) | [검증](/Hongs_Blog/studies/calculus/code/01_limits_verify/) | — |
-| 02 | [연속과 사잇값 정리](/Hongs_Blog/studies/calculus/continuity/) | 부호가 바뀌면 그 사이에 근이 있다 | [검증](/Hongs_Blog/studies/calculus/code/02_continuity_verify/) | — |
-| 03 | [수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/) | 수열의 수렴, 단조 유계 수렴, (1 + 1/n)^n → e | [검증](/Hongs_Blog/studies/calculus/code/03_sequence-limits_verify/) | — |
+| 01 | [극한](/Hongs_Blog/studies/calculus/limits/) | 한없이 다가갈 때 가까워지는 값. ε-δ 정의 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/01_limits_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/01_limits_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/01_limits_plot/) · [검증](/Hongs_Blog/studies/calculus/code/01_limits_verify/) | — |
+| 02 | [연속과 사잇값 정리](/Hongs_Blog/studies/calculus/continuity/) | 부호가 바뀌면 그 사이에 근이 있다 | [그림1](/Hongs_Blog/assets/notes/calculus/02_continuity_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/02_continuity_plot/) · [검증](/Hongs_Blog/studies/calculus/code/02_continuity_verify/) | — |
+| 03 | [수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/) | 수열의 수렴, 단조 유계 수렴, (1 + 1/n)^n → e | [그림1](/Hongs_Blog/assets/notes/calculus/03_sequence-limits_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/03_sequence-limits_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/03_sequence-limits_plot/) · [검증](/Hongs_Blog/studies/calculus/code/03_sequence-limits_verify/) | — |
 
 떠올려 보기: 노트를 닫고 함수의 극한과 수열의 극한을 ε으로 쓴 두 정의를 나란히 적고, 연속의 세 조건과 이분법이 사잇값 정리에 기대는 이유를 덧붙인다.
 
@@ -72,13 +72,13 @@ permalink: "/studies/calculus/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 04 | [도함수](/Hongs_Blog/studies/calculus/derivative/) | 순간 변화율 = 접선의 기울기 (무거움) | [검증](/Hongs_Blog/studies/calculus/code/04_derivative_verify/) | — |
-| 05 | [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/) | 합·곱·몫, e^x·ln x·sin x의 도함수 | [검증](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_verify/) | — |
-| 06 | [연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/) | 합성함수의 변화율은 변화율들의 곱. 역함수·음함수 미분 (무거움) | [검증](/Hongs_Blog/studies/calculus/code/06_chain-rule_verify/) | [미분 계산 예제 사다리](/Hongs_Blog/studies/calculus/differentiation-ladder/) |
-| 07 | [도함수의 활용과 최적화](/Hongs_Blog/studies/calculus/curve-analysis/) | 증가·감소, 극값, 볼록성으로 최대·최소를 찾는다 (무거움) | [검증](/Hongs_Blog/studies/calculus/code/07_curve-analysis_verify/) | [최적화 문제 예제 사다리](/Hongs_Blog/studies/calculus/optimization-ladder/) |
-| 08 | [평균값 정리](/Hongs_Blog/studies/calculus/mean-value-theorem/) | 평균 변화율과 같은 순간 변화율이 어딘가에 있다 | [검증](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_verify/) | — |
-| 09 | [로피탈 정리와 증가 속도](/Hongs_Blog/studies/calculus/lhopital-growth/) | 0/0, ∞/∞ 꼴 극한. log ≪ 다항 ≪ 지수 | [검증](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_verify/) | — |
-| 10 | [선형 근사와 뉴턴 방법](/Hongs_Blog/studies/calculus/linear-approx-newton/) | 곡선을 접선으로 근사하고, 접선의 영점으로 근을 빨리 찾는다 | [구현](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_impl/) · [검증](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_verify/) | — |
+| 04 | [도함수](/Hongs_Blog/studies/calculus/derivative/) | 순간 변화율 = 접선의 기울기 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/04_derivative_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/04_derivative_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/04_derivative_plot/) · [검증](/Hongs_Blog/studies/calculus/code/04_derivative_verify/) | — |
+| 05 | [미분 법칙](/Hongs_Blog/studies/calculus/differentiation-rules/) | 합·곱·몫, e^x·ln x·sin x의 도함수 | [그림1](/Hongs_Blog/assets/notes/calculus/05_differentiation-rules_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_plot/) · [검증](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_verify/) | — |
+| 06 | [연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/) | 합성함수의 변화율은 변화율들의 곱. 역함수·음함수 미분 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/06_chain-rule_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/06_chain-rule_plot/) · [검증](/Hongs_Blog/studies/calculus/code/06_chain-rule_verify/) | [미분 계산 예제 사다리](/Hongs_Blog/studies/calculus/differentiation-ladder/) |
+| 07 | [도함수의 활용과 최적화](/Hongs_Blog/studies/calculus/curve-analysis/) | 증가·감소, 극값, 볼록성으로 최대·최소를 찾는다 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/07_curve-analysis_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/07_curve-analysis_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/07_curve-analysis_plot/) · [검증](/Hongs_Blog/studies/calculus/code/07_curve-analysis_verify/) | [최적화 문제 예제 사다리](/Hongs_Blog/studies/calculus/optimization-ladder/) |
+| 08 | [평균값 정리](/Hongs_Blog/studies/calculus/mean-value-theorem/) | 평균 변화율과 같은 순간 변화율이 어딘가에 있다 | [그림1](/Hongs_Blog/assets/notes/calculus/08_mean-value-theorem_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_plot/) · [검증](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_verify/) | — |
+| 09 | [로피탈 정리와 증가 속도](/Hongs_Blog/studies/calculus/lhopital-growth/) | 0/0, ∞/∞ 꼴 극한. log ≪ 다항 ≪ 지수 | [그림1](/Hongs_Blog/assets/notes/calculus/09_lhopital-growth_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_plot/) · [검증](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_verify/) | — |
+| 10 | [선형 근사와 뉴턴 방법](/Hongs_Blog/studies/calculus/linear-approx-newton/) | 곡선을 접선으로 근사하고, 접선의 영점으로 근을 빨리 찾는다 | [그림1](/Hongs_Blog/assets/notes/calculus/10_linear-approx-newton_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/10_linear-approx-newton_fig2.svg) · [구현](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_impl/) · [그림 코드](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_plot/) · [검증](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_verify/) | — |
 
 떠올려 보기: 미분 법칙표를 빈 종이에 다시 쓰고, 연쇄 법칙으로 시그모이드의 도함수를 유도한 뒤, 최적화 문제의 네 하위목표를 적어 본다.
 
@@ -96,12 +96,12 @@ permalink: "/studies/calculus/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 11 | [정적분과 리만 합](/Hongs_Blog/studies/calculus/riemann-integral/) | 잘게 나눈 직사각형 넓이 합의 극한 = 누적량 (무거움) | [구현](/Hongs_Blog/studies/calculus/code/11_riemann-integral_impl/) · [검증](/Hongs_Blog/studies/calculus/code/11_riemann-integral_verify/) | — |
-| 12 | [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) | 적분과 미분은 서로를 되돌린다 (무거움) | [검증](/Hongs_Blog/studies/calculus/code/12_ftc_verify/) | — |
-| 13 | [치환적분](/Hongs_Blog/studies/calculus/substitution/) | 연쇄 법칙을 거꾸로 쓴다 | [검증](/Hongs_Blog/studies/calculus/code/13_substitution_verify/) | — |
-| 14 | [부분적분](/Hongs_Blog/studies/calculus/integration-by-parts/) | 곱의 미분을 거꾸로 쓴다 | [검증](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_verify/) | [적분 계산 예제 사다리](/Hongs_Blog/studies/calculus/integration-ladder/) |
-| 15 | [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/) | 무한 구간과 무한 값을 극한으로 다룬다 | [검증](/Hongs_Blog/studies/calculus/code/15_improper-integrals_verify/) | — |
-| 16 | [합 ↔ 적분](/Hongs_Blog/studies/calculus/sum-integral-bounds/) | 넓이로 합을 위아래에서 끼운다. H_n ≈ ln n, ln n! ≈ n ln n − n | [검증](/Hongs_Blog/studies/calculus/code/16_sum-integral-bounds_verify/) | — |
+| 11 | [정적분과 리만 합](/Hongs_Blog/studies/calculus/riemann-integral/) | 잘게 나눈 직사각형 넓이 합의 극한 = 누적량 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig2.svg) · [구현](/Hongs_Blog/studies/calculus/code/11_riemann-integral_impl/) · [그림 코드](/Hongs_Blog/studies/calculus/code/11_riemann-integral_plot/) · [검증](/Hongs_Blog/studies/calculus/code/11_riemann-integral_verify/) | — |
+| 12 | [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) | 적분과 미분은 서로를 되돌린다 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/12_ftc_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/12_ftc_plot/) · [검증](/Hongs_Blog/studies/calculus/code/12_ftc_verify/) | — |
+| 13 | [치환적분](/Hongs_Blog/studies/calculus/substitution/) | 연쇄 법칙을 거꾸로 쓴다 | [그림1](/Hongs_Blog/assets/notes/calculus/13_substitution_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/13_substitution_plot/) · [검증](/Hongs_Blog/studies/calculus/code/13_substitution_verify/) | — |
+| 14 | [부분적분](/Hongs_Blog/studies/calculus/integration-by-parts/) | 곱의 미분을 거꾸로 쓴다 | [그림1](/Hongs_Blog/assets/notes/calculus/14_integration-by-parts_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_plot/) · [검증](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_verify/) | [적분 계산 예제 사다리](/Hongs_Blog/studies/calculus/integration-ladder/) |
+| 15 | [이상적분](/Hongs_Blog/studies/calculus/improper-integrals/) | 무한 구간과 무한 값을 극한으로 다룬다 | [그림1](/Hongs_Blog/assets/notes/calculus/15_improper-integrals_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/15_improper-integrals_plot/) · [검증](/Hongs_Blog/studies/calculus/code/15_improper-integrals_verify/) | — |
+| 16 | [합 ↔ 적분](/Hongs_Blog/studies/calculus/sum-integral-bounds/) | 넓이로 합을 위아래에서 끼운다. H_n ≈ ln n, ln n! ≈ n ln n − n | [그림1](/Hongs_Blog/assets/notes/calculus/16_sum-integral-bounds_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/16_sum-integral-bounds_plot/) · [검증](/Hongs_Blog/studies/calculus/code/16_sum-integral-bounds_verify/) | — |
 
 떠올려 보기: 노트를 닫고 리만 합의 정의, 기본정리의 두 부분, 치환과 부분적분을 가르는 신호를 적고, 조화수를 적분으로 끼우는 그림을 그려 본다.
 
@@ -118,8 +118,8 @@ permalink: "/studies/calculus/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 17 | [급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/) | 무한히 더해도 유한한 조건. 비교·비·적분 판정 | [검증](/Hongs_Blog/studies/calculus/code/17_series-convergence_verify/) | — |
-| 18 | [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/) | 한 점의 미분 정보로 함수를 다항식으로 근사. 오차 한계 (무거움) | [구현](/Hongs_Blog/studies/calculus/code/18_taylor-series_impl/) · [검증](/Hongs_Blog/studies/calculus/code/18_taylor-series_verify/) | — |
+| 17 | [급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/) | 무한히 더해도 유한한 조건. 비교·비·적분 판정 | [그림1](/Hongs_Blog/assets/notes/calculus/17_series-convergence_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/17_series-convergence_plot/) · [검증](/Hongs_Blog/studies/calculus/code/17_series-convergence_verify/) | — |
+| 18 | [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/) | 한 점의 미분 정보로 함수를 다항식으로 근사. 오차 한계 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/18_taylor-series_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/18_taylor-series_fig2.svg) · [구현](/Hongs_Blog/studies/calculus/code/18_taylor-series_impl/) · [그림 코드](/Hongs_Blog/studies/calculus/code/18_taylor-series_plot/) · [검증](/Hongs_Blog/studies/calculus/code/18_taylor-series_verify/) | — |
 
 떠올려 보기: 판정법 다섯 가지를 언제 쓰는지와 함께 적고, e^x·sin x·cos x·ln(1+x)의 급수와 성립 범위, 테일러 나머지 한계를 써 본다.
 
@@ -137,13 +137,13 @@ permalink: "/studies/calculus/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 19 | [다변수 함수와 편미분](/Hongs_Blog/studies/calculus/partial-derivatives/) | 다른 변수는 고정하고 한 방향으로만 미분 | [검증](/Hongs_Blog/studies/calculus/code/19_partial-derivatives_verify/) | — |
-| 20 | [그래디언트와 방향도함수](/Hongs_Blog/studies/calculus/gradient/) | 가장 가파르게 오르는 방향과 그 기울기 (무거움) | [검증](/Hongs_Blog/studies/calculus/code/20_gradient_verify/) | — |
-| 21 | [다변수 연쇄 법칙과 야코비 행렬](/Hongs_Blog/studies/calculus/multivariable-chain-rule/) | 변환의 미분은 행렬이고, 합성은 야코비의 곱 (무거움) | [검증](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_verify/) | — |
+| 19 | [다변수 함수와 편미분](/Hongs_Blog/studies/calculus/partial-derivatives/) | 다른 변수는 고정하고 한 방향으로만 미분 | [그림1](/Hongs_Blog/assets/notes/calculus/19_partial-derivatives_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/19_partial-derivatives_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/19_partial-derivatives_plot/) · [검증](/Hongs_Blog/studies/calculus/code/19_partial-derivatives_verify/) | — |
+| 20 | [그래디언트와 방향도함수](/Hongs_Blog/studies/calculus/gradient/) | 가장 가파르게 오르는 방향과 그 기울기 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/20_gradient_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/20_gradient_plot/) · [검증](/Hongs_Blog/studies/calculus/code/20_gradient_verify/) | — |
+| 21 | [다변수 연쇄 법칙과 야코비 행렬](/Hongs_Blog/studies/calculus/multivariable-chain-rule/) | 변환의 미분은 행렬이고, 합성은 야코비의 곱 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/21_multivariable-chain-rule_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_plot/) · [검증](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_verify/) | — |
 | 22 | [연쇄 법칙 ↔ 역전파](/Hongs_Blog/studies/calculus/backprop-bridge/) | 계산 그래프를 거꾸로 훑으며 야코비를 곱하는 것이 역전파 | [구현](/Hongs_Blog/studies/calculus/code/22_backprop-bridge_impl/) · [검증](/Hongs_Blog/studies/calculus/code/22_backprop-bridge_verify/) | — |
-| 23 | [헤세 행렬과 극값 판정](/Hongs_Blog/studies/calculus/hessian/) | 2차 도함수 행렬의 부호로 최소·최대·안장점을 가린다 | [검증](/Hongs_Blog/studies/calculus/code/23_hessian_verify/) | — |
-| 24 | [행렬 미분](/Hongs_Blog/studies/calculus/matrix-calculus/) | ∇(xᵀAx) = (A + Aᵀ)x 같은 규칙으로 벡터식을 한 번에 미분 | [검증](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_verify/) | — |
-| 25 | [중적분과 변수변환](/Hongs_Blog/studies/calculus/multiple-integrals/) | 넓이 위의 누적. 좌표를 바꾸면 야코비안만큼 보정. 가우스 적분 | [검증](/Hongs_Blog/studies/calculus/code/25_multiple-integrals_verify/) | — |
+| 23 | [헤세 행렬과 극값 판정](/Hongs_Blog/studies/calculus/hessian/) | 2차 도함수 행렬의 부호로 최소·최대·안장점을 가린다 | [그림1](/Hongs_Blog/assets/notes/calculus/23_hessian_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/23_hessian_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/23_hessian_plot/) · [검증](/Hongs_Blog/studies/calculus/code/23_hessian_verify/) | — |
+| 24 | [행렬 미분](/Hongs_Blog/studies/calculus/matrix-calculus/) | ∇(xᵀAx) = (A + Aᵀ)x 같은 규칙으로 벡터식을 한 번에 미분 | [그림1](/Hongs_Blog/assets/notes/calculus/24_matrix-calculus_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_plot/) · [검증](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_verify/) | — |
+| 25 | [중적분과 변수변환](/Hongs_Blog/studies/calculus/multiple-integrals/) | 넓이 위의 누적. 좌표를 바꾸면 야코비안만큼 보정. 가우스 적분 | [그림1](/Hongs_Blog/assets/notes/calculus/25_multiple-integrals_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/25_multiple-integrals_plot/) · [검증](/Hongs_Blog/studies/calculus/code/25_multiple-integrals_verify/) | — |
 
 떠올려 보기: 노트를 닫고 편미분·그래디언트·야코비 행렬·헤세 행렬이 각각 무엇의 모음인지 적고, 연쇄 법칙이 행렬 곱이 되는 이유와 극좌표 적분에 r이 붙는 이유를 한 줄씩 붙인다.
 
@@ -161,9 +161,9 @@ permalink: "/studies/calculus/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 26 | [경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/) | 기울기 반대로 조금씩 내려간다. 학습률이 성패를 가른다 (무거움) | [구현](/Hongs_Blog/studies/calculus/code/26_gradient-descent_impl/) · [검증](/Hongs_Blog/studies/calculus/code/26_gradient-descent_verify/) | [경사 하강법 예제 사다리](/Hongs_Blog/studies/calculus/gradient-descent-ladder/) |
-| 27 | [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/) | 그릇 모양 함수에서는 지역 최소 = 전역 최소 | [검증](/Hongs_Blog/studies/calculus/code/27_convexity_verify/) | — |
-| 28 | [라그랑주 승수법](/Hongs_Blog/studies/calculus/lagrange-multipliers/) | 제약 위 최적점에서는 두 그래디언트가 평행하다 | [검증](/Hongs_Blog/studies/calculus/code/28_lagrange-multipliers_verify/) | — |
+| 26 | [경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/) | 기울기 반대로 조금씩 내려간다. 학습률이 성패를 가른다 (무거움) | [그림1](/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig2.svg) · [구현](/Hongs_Blog/studies/calculus/code/26_gradient-descent_impl/) · [그림 코드](/Hongs_Blog/studies/calculus/code/26_gradient-descent_plot/) · [검증](/Hongs_Blog/studies/calculus/code/26_gradient-descent_verify/) | [경사 하강법 예제 사다리](/Hongs_Blog/studies/calculus/gradient-descent-ladder/) |
+| 27 | [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/) | 그릇 모양 함수에서는 지역 최소 = 전역 최소 | [그림1](/Hongs_Blog/assets/notes/calculus/27_convexity_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/27_convexity_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/27_convexity_plot/) · [검증](/Hongs_Blog/studies/calculus/code/27_convexity_verify/) | — |
+| 28 | [라그랑주 승수법](/Hongs_Blog/studies/calculus/lagrange-multipliers/) | 제약 위 최적점에서는 두 그래디언트가 평행하다 | [그림1](/Hongs_Blog/assets/notes/calculus/28_lagrange-multipliers_fig1.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/28_lagrange-multipliers_plot/) · [검증](/Hongs_Blog/studies/calculus/code/28_lagrange-multipliers_verify/) | — |
 
 떠올려 보기: 노트를 닫고 경사 하강법의 갱신 식과 학습률의 안정 조건, 볼록 함수의 정의와 판정법, 라그랑주 조건을 적고, 셋이 '기울기가 0인 점' 이야기로 어떻게 이어지는지 한 문단으로 쓴다.
 
@@ -181,9 +181,9 @@ permalink: "/studies/calculus/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 29 | [미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/) | 변화의 규칙에서 미래를 계산한다. 작은 걸음으로 시뮬레이션 | [검증](/Hongs_Blog/studies/calculus/code/29_ode-euler_verify/) | — |
-| 30 | [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/) | 주기 신호 = 사인파들의 합. 계수는 내적(사영)으로 구한다 | [검증](/Hongs_Blog/studies/calculus/code/30_fourier-series_verify/) | — |
-| 31 | [푸리에 변환과 합성곱](/Hongs_Blog/studies/calculus/fourier-transform/) | 신호를 주파수별 세기로. 합성곱은 곱이 된다 | [검증](/Hongs_Blog/studies/calculus/code/31_fourier-transform_verify/) | — |
+| 29 | [미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/) | 변화의 규칙에서 미래를 계산한다. 작은 걸음으로 시뮬레이션 | [그림1](/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/29_ode-euler_plot/) · [검증](/Hongs_Blog/studies/calculus/code/29_ode-euler_verify/) | — |
+| 30 | [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/) | 주기 신호 = 사인파들의 합. 계수는 내적(사영)으로 구한다 | [그림1](/Hongs_Blog/assets/notes/calculus/30_fourier-series_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/30_fourier-series_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/30_fourier-series_plot/) · [검증](/Hongs_Blog/studies/calculus/code/30_fourier-series_verify/) | — |
+| 31 | [푸리에 변환과 합성곱](/Hongs_Blog/studies/calculus/fourier-transform/) | 신호를 주파수별 세기로. 합성곱은 곱이 된다 | [그림1](/Hongs_Blog/assets/notes/calculus/31_fourier-transform_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/calculus/31_fourier-transform_fig2.svg) · [그림 코드](/Hongs_Blog/studies/calculus/code/31_fourier-transform_plot/) · [검증](/Hongs_Blog/studies/calculus/code/31_fourier-transform_verify/) | — |
 
 떠올려 보기: 오일러 방법의 한 걸음과 안정 조건, 푸리에 계수 공식과 그것이 사영인 이유, 합성곱 정리와 변조 성질을 빈 종이에 쓰고, 경사 하강법과 오일러 방법이 같은 식인 이유를 덧붙인다.
 

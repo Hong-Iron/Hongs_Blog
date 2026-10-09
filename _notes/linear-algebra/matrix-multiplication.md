@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Matrix Multiplication", "행렬 곱셈", "행렬곱", "Transpose", "전치", "전치행렬", "대칭행렬", "symmetric matrix", "합성", "composition", "교환법칙", "결합법칙"]
 description: "두 행렬의 곱은 \"먼저 오른쪽 행렬로 바꾸고, 이어서 왼쪽 행렬로 바꾸는\" 두 변환을 하나로 합친 행렬이다. 그래서 여러 단계의 좌표 변환이나 신경망의 층들을 행렬 하나로 미리 합칠 수 있다. 합성이라 순서가 중요해서, 곱하는 순서를 바꾸면 보통 결과가 달라진다. 곱하는 순서를 괄…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/inverse-matrix/"
 next_title: "역행렬"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/matrix-multiplication/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ $$R = \begin{pmatrix}0 & -1\\ 1 & 0\end{pmatrix}, \quad S = \begin{pmatrix}2 & 0
 $$SR = \begin{pmatrix}0 & -2\\ 1 & 0\end{pmatrix}, \qquad RS = \begin{pmatrix}0 & -1\\ 2 & 0\end{pmatrix}$$
 
 이다. $$SR$$이 "먼저 $$R$$, 다음 $$S$$"다. 오른쪽 행렬이 벡터에 먼저 작용한다. $$R$$과 $$S$$가 아래 정의의 $$B$$와 $$A$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/06_matrix-multiplication_fig1.svg" alt="그림" loading="lazy">
+
+같은 글자 F에 두 순서로 했더니 모양이 다르다. $$SR$$에서는 누운 F가 가로로 두 배 늘어나고, $$RS$$에서는 넓어진 F가 눕는다. 점 $$(1, 0)$$도 각각 $$(0, 1)$$과 $$(0, 2)$$로 간다[^s1].
 
 ## 정의
 
@@ -134,4 +138,5 @@ $$\big((AB)^\top\big)_{ij} = (AB)_{ji} = \sum_k a_{jk}b_{ki} = \sum_k (B^\top)_{
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.4절 "Rules for Matrix Operations"(곱의 네 가지 보는 법, 결합법칙, 교환 불가), 2.7절 "Transposes and Permutations"($$(AB)^\top = B^\top A^\top$$, 대칭행렬, $$A^\top A$$).
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [06_matrix-multiplication_plot.py](/Hongs_Blog/studies/linear-algebra/code/06_matrix-multiplication_plot/)로 그렸고, $$SR$$, $$RS$$와 점 $$(1, 0)$$의 도착점을 같은 코드로 확인했다.
 {% endraw %}

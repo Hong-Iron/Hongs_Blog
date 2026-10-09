@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Time Complexity Budget", "시간 복잡도", "시간 제한", "연산 횟수 어림", "Big-O 어림", "estimating efficiency"]
 description: "여행 가기 전에 \"차로 몇 시간 걸리지?\"를 먼저 따져 보는 것과 같다. 문제에는 \"입력이 최대 얼마까지 온다\"는 제한이 적혀 있다. 코드를 짜기 전에 내 방법이 계산을 몇 번쯤 하는지 세어 보면, 시간 안에 끝날지 짜기 전에 알 수 있다. 다만 이 셈은 자릿수만 맞추는 어림이다.…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/list-string/"
 next_title: "리스트와 문자열"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/algorithms/complexity-budget/"
 ---
 {% raw %}
@@ -58,6 +58,10 @@ C++ 기준 교재는 "요즘 컴퓨터는 1초에 수억 번"을 출발점으로
 | $$10^6$$ | $$O(n \log n)$$, $$O(n)$$ | $$10^5$$~$$10^6$$ | 정렬, 한 번 훑기, 해시 |
 | 그보다 큼 | $$O(\log n)$$, $$O(1)$$ | $$10^9$$ 이상 | 이분 탐색, 공식 |
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/02_complexity-budget_fig1.svg" alt="그림" loading="lazy">
+
+가로축과 세로축 모두 10배마다 한 칸인 눈금이다. 점선(1초에 천만 번)과 곡선이 만나는 점이 그 방법이 1초를 넘기 시작하는 n이다. $$n^2$$은 3천 남짓, $$2^n$$은 24, $$n!$$은 11에서 넘친다. 위 표의 오른쪽 칸은 이 값보다 조금 작게 잡은 것이다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 단순 반복 속도(1초에 약 7.3 × 10⁷번), 리스트 `in`과 집합 `in`의 속도 차이(약 1,000배), 실수 100만 개 정렬(약 0.12초), 이중 반복에서 n을 두 배로 늘리면 시간이 약 네 배(로그-로그 기울기 2.16)를 실험으로 확인했다. 컴퓨터마다 값은 다르다 — [02_complexity-budget_bench.py](/Hongs_Blog/studies/algorithms/code/02_complexity-budget_bench/). 문서와 예제 사다리의 계산은 [02_complexity-budget_verify.py](/Hongs_Blog/studies/algorithms/code/02_complexity-budget_verify/)에서 확인했다.</div>
 
@@ -83,6 +87,10 @@ C++ 기준 교재는 "요즘 컴퓨터는 1초에 수억 번"을 출발점으로
 | 딕셔너리·집합에 넣기, 찾기(`in`), 지우기 | 평균 $$O(1)$$ |
 
 표의 두 '평균'은 뜻이 다르다. `append`의 평균은 n번 넣은 총비용을 n으로 나눈 값이라 입력과 상관없이 늘 맞는다. 꽉 찰 때 용량을 일정한 비율로 키우면 옮겨 담는 횟수의 합이 [등비급수](/Hongs_Blog/studies/college-math/geometric-series/)로 묶이기 때문이다. 딕셔너리·집합의 평균은 해시값이 고르게 흩어진다고 볼 때의 기댓값이다. 그래서 키가 한 칸에 몰리는 나쁜 입력에서는 한 번에 $$O(n)$$까지 걸릴 수 있다([해싱과 무작위 알고리즘의 확률](/Hongs_Blog/studies/probability-statistics/randomized-analysis/)).
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/02_complexity-budget_fig2.svg" alt="그림" loading="lazy">
+
+용량을 1에서 시작해 꽉 찰 때마다 두 배로 늘리는 배열이다. 막대가 가끔 높이 솟는 때가 옮겨 담는 순간이다. 33번째에는 32개를 옮기고 1개를 넣는다. 그래도 그때까지의 평균(주황 선)은 3을 넘지 않는다[^s1].
 
 ### 스스로 설명해 보기
 
@@ -212,4 +220,5 @@ def solution(participant, completion):
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 2.3 "Estimating efficiency". 요즘 컴퓨터가 1초에 수억 번 계산한다는 것을 출발점으로 삼고, 1초 제한에서 n ≤ 10 → O(n!), n ≤ 20 → O(2ⁿ), n ≤ 500 → O(n³), n ≤ 5000 → O(n²), n ≤ 10⁶ → O(n log n) 또는 O(n), n이 더 크면 O(1) 또는 O(log n)이라는 표를 준다. 표의 "파이썬에서 편한 n" 칸은 이 교재가 C++ 기준이라는 점과 위 측정값을 바탕으로 한 어림이다.
 [^2]: Python Wiki, "TimeComplexity" (wiki.python.org/moin/TimeComplexity). list의 `x in s`, `insert`, `pop(0)`, `remove`, `min/max`는 O(n), slice는 O(k), sort는 O(n log n), dict·set의 get/set/delete와 `in`은 평균 O(1)이다.
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [02_complexity-budget_plot.py](/Hongs_Blog/studies/algorithms/code/02_complexity-budget_plot/)로 그렸고, 1초 예산 $$10^7$$번을 넘기 시작하는 n($$n^2$$: 3,163, $$n^3$$: 216, $$2^n$$: 24, $$n!$$: 11, $$n\log_2 n$$: 약 52만)과, 두 배로 늘리는 배열에 10만 번 넣는 동안 그때까지의 평균 비용이 늘 3 미만임을 같은 코드로 확인했다.
 {% endraw %}

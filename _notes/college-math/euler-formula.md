@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Euler's Formula", "Polar Form of Complex Numbers", "오일러 공식", "극형식", "편각", "argument", "arg", "드무아브르 공식", "De Moivre's theorem", "1의 거듭제곱근", "roots of unity", "오일러 항등식", "Euler's identity"]
 description: "복소수를 (원점까지의 거리, 방향각)으로 적으면, 곱셈이 \"거리끼리 곱하고 각끼리 더하기\"가 된다. 즉 복소수를 곱하는 것은 평면에서 늘리고 돌리는 것이다. 오일러 공식은 이 회전을 지수함수 모양으로 적어, 삼각함수의 덧셈정리를 지수법칙 하나로 대신하게 한다. 다만 허수 지수는 \"…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/sequences-sigma/"
 next_title: "수열과 합의 기호"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/euler-formula/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/college-math/euler-formula/"
 1에 $$i$$를 거듭 곱하면 $$1 \to i \to -1 \to -i \to 1$$이다. 평면에서 $$(1, 0) \to (0, 1) \to (-1, 0) \to (0, -1)$$로, 매번 90°씩 돈다. $$i$$는 거리 1, 각 $$\pi/2$$인 복소수이고, 곱할 때마다 각 $$\pi/2$$가 더해진다.
 
 $$1 + i$$는 거리 $$\sqrt2$$, 각 $$\pi/4$$다. 여덟 번 곱하면 거리는 $$(\sqrt2)^8 = 16$$, 각은 $$8 \times \pi/4 = 2\pi$$(한 바퀴)다. 그래서 $$(1 + i)^8 = 16$$이다. 전개하면 항이 아홉 개지만, 극형식으로는 한 줄이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig1.svg" alt="그림" loading="lazy">
+
+점이 $$k = 0$$부터 $$k = 8$$까지 한 번에 45°씩 돌면서 원점에서 $$\sqrt2$$배씩 멀어진다. 여덟 번이면 한 바퀴를 돌아 가로축 위의 16에 닿는다[^s2].
 
 복소수의 거리가 아래 정의의 $$r$$, 방향각이 $$\theta$$다. 복소수를 극좌표의 점 $$(r, \theta)$$로 보는 것과 같다.
 
@@ -132,6 +136,10 @@ $$(\omega_1 - 1)S = 0$$이고 $$n \ge 2$$이면 $$\omega_1 \ne 1$$이므로 양�
 
 **1의 세제곱근.** $$\omega_k = e^{2\pi i k/3}$$에서 $$1$$, $$-\frac12 + \frac{\sqrt3}{2}i$$, $$-\frac12 - \frac{\sqrt3}{2}i$$. 단위원을 셋으로 나눈 점이고, 합은 0이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/19_euler-formula_fig2.svg" alt="그림" loading="lazy">
+
+1의 세제곱근은 단위원을 셋으로, 다섯제곱근은 다섯으로 똑같이 나눈 점이다. 원점에서 각 점으로 가는 화살표를 끝과 끝을 이어 모두 붙이면 제자리로 돌아오므로 합이 0이다[^s2].
+
 **삼각함수 공식 끌어내기.** $$(\cos\theta + i\sin\theta)^3 = \cos 3\theta + i\sin 3\theta$$의 왼쪽을 전개해 실수부를 비교하면 $$\cos 3\theta = \cos^3\theta - 3\cos\theta\sin^2\theta = 4\cos^3\theta - 3\cos\theta$$다.
 
 <div class="callout callout-check" markdown="1">
@@ -200,4 +208,5 @@ $$(\omega_1 - 1)S = 0$$이고 $$n \ge 2$$이면 $$\omega_1 \ne 1$$이므로 양�
 [^1]: OpenStax, *Precalculus 2e*, 8.5절 "Polar Form of Complex Numbers"(극형식, 곱과 몫, 드무아브르 정리, $$n$$제곱근)
 [^2]: Strang, *Introduction to Linear Algebra* 5판, 9.1절 "Complex Numbers"(오일러 공식, 1의 거듭제곱근). FFT는 같은 책 9.3절.
 [^s1]: 에이전트 보충. 쿼터니언은 3차원 회전을 나타내는 수 체계로, 복소수 곱이 2차원 회전인 것을 넓힌 것이다. 게임 엔진의 회전 표현에 흔히 쓴다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [19_euler-formula_plot.py](/Hongs_Blog/studies/college-math/code/19_euler-formula_plot/)로 그렸고, 그림에 쓴 값($$(1 + i)^8 = 16$$, 한 번 곱할 때마다 거리가 $$\sqrt2$$배, 1의 세제곱근과 다섯제곱근의 합이 0)을 같은 코드로 확인했다.
 {% endraw %}

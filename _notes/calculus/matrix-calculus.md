@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Matrix Calculus", "행렬 미분", "벡터 미분", "vector calculus identities", "그래디언트 공식", "이차형식의 미분", "로지스틱 회귀의 기울기", "기울기 검사", "gradient check"]
 description: "변수가 수백 개인 식을 성분마다 편미분하지 않고, 벡터와 행렬 채로 한 번에 미분하는 규칙 모음이다. 곱의 미분처럼 몇 가지 공식만 익히면 최소제곱의 정규방정식이나 로지스틱 회귀의 기울기가 한두 줄로 나온다. 기계학습 논문의 유도는 거의 이 언어로 쓰여 있다. 다만 결과의 모양(행…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/multiple-integrals/"
 next_title: "중적분과 변수변환"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/matrix-calculus/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ $$f(\mathbf{x}) = \mathbf{x}^\top A\mathbf{x}$$($$^\top$$는 행과 열을 바�
 $$\frac{\partial f}{\partial x_1} = 2x_1 + 2x_2, \qquad \frac{\partial f}{\partial x_2} = 2x_1 + 6x_2.$$
 
 이것을 모으면 $$\begin{pmatrix}2 & 2\\ 2 & 6\end{pmatrix}\mathbf{x} = (A + A^\top)\mathbf{x}$$다. 한 변수의 $$(ax^2)' = 2ax$$와 닮았지만, $$A$$가 대칭이 아니면 $$2A\mathbf{x}$$가 아니라 $$(A + A^\top)\mathbf{x}$$다. 성분 계산을 행렬 한 줄로 바꾼 것이 아래 규칙표의 한 줄이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/24_matrix-calculus_fig1.svg" alt="그림" loading="lazy">
+
+회색 타원은 이 $$f$$의 등고선이다. 가운데 등고선($$f = 1$$) 위의 여섯 점에서 초록 화살표 $$(A + A^\top)\mathbf{x}$$는 모두 등고선에 수직이다. [그래디언트](/Hongs_Blog/studies/calculus/gradient/)라면 그래야 한다. 주황 점선 $$2A\mathbf{x}$$는 비스듬히 기울어 있어 그래디언트가 아니다[^s1].
 
 ## 정의
 
@@ -119,4 +123,5 @@ $$\frac{\partial f}{\partial x_1} = 2x_1 + 2x_2, \qquad \frac{\partial f}{\parti
 
 [^1]: Petersen, Pedersen, *The Matrix Cookbook*, 2절 "Derivatives"(일차식·이차형식·노름의 미분, 배치 관례).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 4.5절(선형 최소제곱의 기울기), 6.2.2절(시그모이드 출력과 교차 엔트로피의 결합). 공식은 24_matrix-calculus_verify.py에서 수치 미분과 맞춰 확인했다.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [24_matrix-calculus_plot.py](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. $$(A + A^\top)\mathbf{x}$$가 무작위 점 50개에서 중앙 차분과 같은 것, 여섯 점에서 등고선의 접선과 수직인 것, $$2A\mathbf{x}$$는 수직이 아닌 것을 같은 코드로 확인했다.
 {% endraw %}

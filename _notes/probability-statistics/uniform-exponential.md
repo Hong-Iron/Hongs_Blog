@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Uniform Distribution", "균등분포", "연속 균등분포", "Exponential Distribution", "지수분포", "역변환 샘플링", "inverse transform sampling", "균등분포의 보편성", "universality of the uniform", "포아송 과정", "Poisson process", "도착 간격", "interarrival time"]
 description: "균등분포는 구간 안 어디든 똑같이 그럴듯한 값이다. 컴퓨터의 기본 난수가 이 분포이고, 여기에 알맞은 함수를 씌우면 다른 어떤 분포의 난수도 만들 수 있다. 지수분포는 드물게 일어나는 일을 기다리는 시간이다. 요청이 무작위로 오면 다음 요청까지의 간격이 이 분포를 따르고, 평균 발…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/normal-distribution/"
 next_title: "정규분포"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/uniform-exponential/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/probability-statistics/uniform-exponential/"
 버스가 10분 간격으로 오는데 도착 시각을 모르고 정류장에 간다. 대기 시간은 0~10분 사이 균등분포다. 7분 넘게 기다릴 확률은 남은 구간 길이의 비율 $$\frac{3}{10}$$, 평균 대기는 5분이다.
 
 이번에는 서버에 요청이 1초에 평균 3개씩 무작위로(포아송 과정으로) 들어온다. 다음 요청까지 1초 넘게 기다릴 확률은 "1초 동안 요청이 0개일 확률"과 같아 [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)로 $$e^{-3} \approx 0.05$$다. 평균 간격은 $$\frac13$$초다. 첫 사례가 아래의 $$\mathrm{Unif}(0, 10)$$, 둘째가 $$\mathrm{Exp}(3)$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/15_uniform-exponential_fig1.svg" alt="그림" loading="lazy">
+
+색칠한 넓이가 두 예시의 확률이다. 균등분포는 높이가 평평해서 넓이가 구간 길이에 비례한다. 지수분포는 0 근처가 가장 높고, 오른쪽으로 갈수록 빠르게 낮아진다[^s1].
 
 ## 정의
 
@@ -125,4 +129,5 @@ permalink: "/studies/probability-statistics/uniform-exponential/"
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 5.2절 "Uniform", 5.3절 "Universality of the Uniform"(역변환), 5.5절 "Exponential"(무기억성, 최솟값), 5.6절 "Poisson processes"(도착 간격).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [15_uniform-exponential_plot.py](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_plot/)로 그렸고, 그림에 쓴 값($$\frac{3}{10}$$, 수치 적분한 $$P(X > 1) = e^{-3} \approx 0.050$$)을 같은 코드로 확인했다.
 {% endraw %}

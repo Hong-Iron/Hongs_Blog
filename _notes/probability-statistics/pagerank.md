@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/randomized-analysis/"
 next_title: "해싱과 무작위 알고리즘의 확률"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/probability-statistics/pagerank/"
 ---
 {% raw %}
@@ -76,6 +76,10 @@ PAGERANK(out, n, d, ε)
 2. *반복 수의 상한:* 오차를 처음의 $$10^{-8}$$배 이하로 줄이려면 $$0.85^k \le 10^{-8}$$, 곧 $$k \ge \frac{\ln 10^{-8}}{\ln 0.85} \approx 113.3$$이라 114번이면 충분하다.
 3. *실제:* 무작위 링크 그래프(페이지 300개, 페이지당 링크 약 5개)에서는 19번 만에 멈췄다. $$d^k$$는 최악의 상한이고, 실제 수렴은 두 번째로 큰 고윳값이 정한다.
 4. *전체:* $$O((n + m)\log\frac1\varepsilon)$$. 공간은 점수 벡터 두 개와 링크 목록으로 $$O(n + m)$$.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/25_pagerank_fig1.svg" alt="그림" loading="lazy">
+
+세로축은 로그 눈금이다. 점선은 정확성 논증에서 나온 상한 $$2 \cdot 0.85^k$$이다(두 확률분포의 L1 거리는 처음에 2를 넘지 않는다). 실제 오차는 두 그래프 모두 상한보다 훨씬 빨리 준다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시의 반복 1~3회와 수렴값, 무작위 그래프 100개(댕글링 포함)에서 거듭제곱법 = 선형방정식 $$\mathbf{r}(I - dP) = \frac{1 - d}{n}\mathbf{1}$$의 해(가우스 소거), 불변식(합 1, 음수 없음), 오차가 매 반복 $$d$$배 이하로 감소, 반복 수, 순간이동이 없을 때 갇힘과 진동, 카드의 코드 — [25_pagerank_verify.py](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_verify/). 구현과 테스트 — [25_pagerank_impl.py](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_impl/)</div>
@@ -177,4 +181,5 @@ new = [0.15 / n + sum(0.85 * r[i] / len(links[i]) for i in links if j in links[i
 [^d3]: 같은 자료, p.10 (거듭제곱법 예)
 [^d4]: 같은 자료, p.8~9 (무작위 서퍼, 정상분포)
 [^d5]: 같은 자료, p.11~14 (막다른 페이지, 거미줄 함정, 구글 행렬)
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [25_pagerank_plot.py](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_plot/)로 그렸고, 그림에 쓴 값(예시의 1회 반복값과 수렴값, 매 반복 합 1·음수 없음, 모든 반복에서 오차 ≤ $$2 \cdot 0.85^k$$. 무작위 그래프는 같은 크기(페이지 300개, 페이지당 링크 약 5개)로 새로 만든 것이다)을 같은 코드로 확인했다.
 {% endraw %}

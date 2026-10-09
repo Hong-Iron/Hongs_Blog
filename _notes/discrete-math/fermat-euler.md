@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Fermat's Little Theorem", "페르마 소정리", "페르마의 작은 정리", "Euler's Theorem", "오일러 정리", "오일러 피 함수", "Euler's totient function", "φ(n)", "빠른 거듭제곱", "fast exponentiation", "square-and-multiply", "제곱 곱셈", "카마이클 수", "Carmichael number", "페르마 판정법", "Fermat primality test"]
 description: "나머지의 세계에서 같은 수를 계속 곱하면 결국 1로 돌아와 같은 순서가 되풀이된다. 소수로 나눈 나머지에서는 \"그 소수보다 하나 적은 횟수\"만큼 곱하면 반드시 1이 되고(페르마), 일반적인 수로 나눈 나머지에서는 \"그 수와 서로소인 수의 개수\"만큼 곱하면 1이 된다(오일러). 그래…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/rsa/"
 next_title: "RSA 암호"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/fermat-euler/"
 ---
 {% raw %}
@@ -69,6 +69,10 @@ $$a^p \equiv a$$는 $$p \nmid a$$이면 페르마 소정리에 $$a$$를 곱한 �
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/30_fermat-euler_fig1.svg" alt="그림" loading="lazy">
+
+한 줄이 밑 $$a$$의 거듭제곱을 13으로 나눈 나머지이고, 칠한 칸이 1이다. 마지막 열 $$k = 12$$는 모두 1이다(페르마 소정리). 줄마다 처음 1이 나오는 자리(오른쪽 주황 숫자)는 1, 2, 3, 4, 6, 12 중 하나로, 모두 12의 약수다[^s2].
 
 **빠른 거듭제곱.** $$a^e \bmod n$$은 $$e$$를 2진법으로 쓰고, $$a, a^2, a^4, \dots$$를 제곱으로 만들어 필요한 것만 곱한다. 매번 $$\bmod n$$을 취해 수가 커지지 않는다. 곱셈은 $$O(\log e)$$번이다[^2]. $$3^{100}$$이면 $$100 = 64 + 32 + 4$$라 제곱 6번과 곱셈 2번이면 된다.
 
@@ -128,4 +132,5 @@ $$a^p \equiv a$$는 $$p \nmid a$$이면 페르마 소정리에 $$a$$를 곱한 �
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(오일러 피 함수, 오일러 정리, 페르마 소정리).
 [^2]: Cormen et al., *Introduction to Algorithms* 3판, 31.6절 "Powers of an element"(MODULAR-EXPONENTIATION), 31.8절 "Primality testing"(유사소수, 카마이클 수, 밀러–라빈).
 [^s1]: 에이전트 보충. 오일러 정리는 "유한군의 원소의 차수는 군의 크기를 나눈다"(라그랑주 정리)의 특수한 경우다. 서로소인 나머지들이 곱셈에 대해 크기 $$\varphi(n)$$인 군을 이룬다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [30_fermat-euler_plot.py](/Hongs_Blog/studies/discrete-math/code/30_fermat-euler_plot/)로 그렸고, 마지막 열이 모두 1인 것, 주기 1, 12, 3, 6, 4, 12, 12, 4, 3, 6, 12, 2가 모두 12의 약수인 것, 예시의 $$3^{100} \bmod 7 = 4$$을 같은 코드로 확인했다.
 {% endraw %}

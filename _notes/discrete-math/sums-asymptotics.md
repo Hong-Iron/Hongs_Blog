@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sums and Approximations", "합의 계산", "거듭제곱의 합", "조화수", "harmonic number", "교란법", "perturbation method", "스털링 근사", "Stirling's approximation", "계승의 크기", "정렬의 하한"]
 description: "반복문 비용을 더한 합을 닫힌 꼴로 구하거나, 닫힌 꼴이 없으면 위아래에서 끼워 크기를 어림한다. 거듭제곱의 합은 차수가 하나 높은 다항식, 등비급수는 가장 큰 항의 상수배, 조화수는 로그만큼 자란다. 알고리즘 분석은 정확한 값보다 이런 \"크기의 모양\"을 원한다. 다만 끼울 때는 …"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/asymptotic-notation/"
 next_title: "점근 표기"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/sums-asymptotics/"
 ---
 {% raw %}
@@ -52,6 +52,10 @@ $$\underbrace{1}_{1} + \underbrace{\tfrac12 + \tfrac13}_{\le 1} + \underbrace{\t
 </div>
 
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig1.svg" alt="그림" loading="lazy">
+
+굵은 회색 선 $$H_n$$이 두 끼우기 사이에 있고, 초록 점선 $$\ln n + 0.5772$$와는 거의 겹친다. 두 끼우기는 모두 $$\lg n$$의 상수배라 크기의 모양은 맞지만, 실제 값과는 꽤 떨어져 있다[^s1].
+
 **교란법(perturbation).** $$S = \sum_{k=1}^{n} k\,2^k$$처럼 등비급수에 $$k$$가 곱해진 합은, $$2S - S$$를 계산해 항을 한 칸씩 밀면 등비급수가 남는다. 결과는 $$S = (n - 1)2^{n+1} + 2$$다. 같은 방법으로 $$\sum_{k=1}^{n}\frac{k}{2^k} = 2 - \frac{n + 2}{2^n} < 2$$다.
 
 <details class="callout callout-proof" markdown="1">
@@ -72,6 +76,10 @@ $$\lg n! = \Theta(n \lg n)$$이 정렬에 대해 알려 주는 것.
 2. *비교 한 번의 정보:* 비교 결과는 둘 중 하나라, $$k$$번 비교로 구별할 수 있는 경우는 많아야 $$2^k$$가지다.
 3. *부등식:* $$2^k \ge n!$$이어야 하므로 $$k \ge \lg n!$$.
 4. *어림:* 정리 4로 $$\lg n! \ge \frac n2 \lg \frac n2$$라, 어떤 비교 정렬도 최악의 경우 $$n \lg n$$에 비례하는 비교가 필요하다. 병합 정렬은 이 한계에 닿는다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig2.svg" alt="그림" loading="lazy">
+
+비 $$\lg n!/(n\lg n)$$은 $$n = 10^6$$에서도 약 0.93이다. $$\Theta$$는 비가 0보다 큰 일정한 범위 안에 머문다는 뜻이지, 1에 가깝다는 뜻이 아니다. 아래 끼우기의 비는 $$\frac12$$ 밑에 머물지만 $$\Theta(n\lg n)$$을 보이기에는 충분하다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$\sum k^3$$ 공식($$n \le 2000$$), 교란법의 두 결과(유리수로 정확히), 조화수의 끼우기($$n \le 10^5$$), 계승의 끼우기와 $$\lg n!/(n \lg n)$$, 힙 만들기 비용 — [23_sums-asymptotics_verify.py](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_verify/)</div>
@@ -118,4 +126,5 @@ $$\lg n! = \Theta(n \lg n)$$이 정렬에 대해 알려 주는 것.
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14장 "Sums and Asymptotics"(거듭제곱의 합, 합의 어림, 조화수, 스털링 근사). Graham·Knuth·Patashnik, *Concrete Mathematics*, 2장 "Sums"(교란법).
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [23_sums-asymptotics_plot.py](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_plot/)로 그렸고, $$n \le 10^4$$에서 조화수의 끼우기, $$H_{128}$$과 $$\ln 128 + 0.5772$$의 차이 0.005 미만, $$n = 10^6$$에서 $$\lg n!/(n\lg n) \approx 0.93$$을 같은 코드로 확인했다.
 {% endraw %}

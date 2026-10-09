@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Subspace", "부분공간", "Basis", "기저", "Dimension", "차원", "좌표", "coordinates", "표준 기저", "standard basis"]
 description: "원점을 지나는 직선이나 평면처럼, 안에서 더하고 늘여도 밖으로 나가지 않는 \"평평한 공간\"이 부분공간이다. 그 공간의 모든 점을 빠짐없이, 그리고 겹침 없이 만들어 내는 최소한의 벡터 모음이 기저이고, 기저에 든 벡터의 개수가 차원이다. 기저를 정하면 공간의 모든 점에 좌표(계수)…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/four-subspaces/"
 next_title: "랭크와 네 부분공간"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/basis-dimension/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/basis-dimension/"
 $$\mathbb{R}^3$$($$\mathbb{R}$$은 실수 전체, $$\mathbb{R}^n$$은 실수 $$n$$개짜리 목록 전체)에서 세 성분의 합이 0인 벡터들, 곧 평면 $$x + y + z = 0$$을 본다. 두 벡터가 이 평면에 있으면 합과 스칼라배도 성분 합이 0이라 평면을 벗어나지 않는다. 원점도 들어 있다.
 
 평면 위의 벡터 $$(x, y, z)$$는 $$z = -x - y$$라 $$(x, y, -x - y) = x(1, 0, -1) + y(0, 1, -1)$$로 쓸 수 있다. 두 벡터 $$(1, 0, -1)$$, $$(0, 1, -1)$$은 평면을 빠짐없이 만들고(생성), 서로 평행하지 않다(독립). 그래서 이 평면의 기저이고 차원은 2다. 예를 들어 $$(2, 3, -5)$$의 좌표는 $$(2, 3)$$이다. 평면이 아래 정의의 부분공간 $$V$$, 두 벡터가 기저다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/10_basis-dimension_fig1.svg" alt="그림" loading="lazy">
+
+그물은 평면 $$x + y + z = 0$$이다. $$\mathbf{b}_1$$을 2번, $$\mathbf{b}_2$$를 3번 이어 붙이면(점선) $$(2, 3, -5)$$에 닿고, 가는 길 전체가 평면 밖으로 나가지 않는다[^s1].
 
 ## 정의
 
@@ -191,4 +195,5 @@ $$V = \{(x_1, x_2, x_3, x_4) : x_1 + x_2 = 0,\ x_3 = 2x_4\}$$의 기저와 차�
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.1절 "Spaces of Vectors"(부분공간), 3.4절 "Independence, Basis and Dimension"(기저, 차원, 모든 기저의 크기가 같음).
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [10_basis-dimension_plot.py](/Hongs_Blog/studies/linear-algebra/code/10_basis-dimension_plot/)로 그렸고, $$2\mathbf{b}_1 + 3\mathbf{b}_2 = (2, 3, -5)$$와 그 성분 합이 0인 것을 같은 코드로 확인했다.
 {% endraw %}

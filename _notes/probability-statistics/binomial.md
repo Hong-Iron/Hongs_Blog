@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Binomial Distribution", "이항분포", "베르누이 시행", "Bernoulli trial", "베르누이 분포", "Bernoulli distribution", "초기하분포", "hypergeometric distribution", "패킷 손실", "packet loss"]
 description: "성공과 실패 둘 중 하나만 나오는 시도를 같은 성공 확률로 서로 영향 없이 여러 번 할 때, 성공한 횟수의 분포다. 동전 앞면 수, 손실된 패킷 수, 동시에 접속한 사용자 수가 모두 이 모양이다. \"몇 번째 시도가 성공인가\"의 경우의 수에 각 경우의 확률을 곱해 구하고, 평균은 시…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/geometric-distribution/"
 next_title: "기하분포"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/binomial/"
 ---
 {% raw %}
@@ -66,6 +66,10 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 </details>
 
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig1.svg" alt="그림" loading="lazy">
+
+시도 수 $$n = 10$$은 그대로 두고 $$p$$만 바꾼 그림이다. 봉우리는 평균 $$np$$ 근처에 서고, $$p$$가 0.5에서 멀어질수록 한쪽 끝으로 쏠려 좌우가 비대칭이 된다[^s2].
+
 **해당하지 않는 예.** 카드 52장에서 되돌려 놓지 않고 5장을 뽑을 때 에이스 수는 이항분포가 아니다. 앞에서 에이스를 뽑으면 남은 에이스 비율이 바뀌어 시도들이 독립이 아니기 때문이다. 이것은 초기하분포이고, 에이스가 0장일 확률이 $$\frac{\binom{48}{5}}{\binom{52}{5}} \approx 0.659$$로 이항분포 $$\left(\frac{12}{13}\right)^5 \approx 0.670$$과 다르다. 전체가 뽑는 수보다 훨씬 크면 두 분포는 가까워진다.
 
 ## 예제
@@ -76,6 +80,10 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 2. *평균과 흔들림:* 평균 3.5명, 표준편차 $$\sqrt{35 \times 0.1 \times 0.9} \approx 1.77$$명.
 3. *넘침:* 링크는 10명까지 감당하므로 넘칠 확률은 $$P(X \ge 11) = \sum_{k=11}^{35}\binom{35}{k}0.1^k 0.9^{35-k} \approx 0.00042$$.
 4. *결론:* 고정 할당이면 10명만 받는데, 넘칠 확률 0.04%를 받아들이면 35명을 받는다. [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)가 회선 교환보다 많은 사용자를 받는 수학적 근거다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig2.svg" alt="그림" loading="lazy">
+
+막대 대부분이 0~8명에 몰려 있다. 링크 한계(점선) 오른쪽의 막대는 너무 작아 거의 보이지 않는다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: PMF의 합·평균·분산($$n \le 12$$, 세 가지 $$p$$, 분수로 정확히, $$2^6$$개 결과 전수), 패킷 손실 확률, 넘침 확률 0.000424와 표준편차, 초기하분포와의 차이, 카드의 값 — [10_binomial_verify.py](/Hongs_Blog/studies/probability-statistics/code/10_binomial_verify/)</div>
@@ -123,4 +131,5 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.3절 "Bernoulli and Binomial", 3.4절 "Hypergeometric", 4.6절 "Variance"(이항분포의 분산).
 [^s1]: 에이전트 보충. 링크 용량과 사용자 수는 컴퓨터 통신 문서의 예제와 같은 값이다. 넘침 확률은 10_binomial_verify.py로 다시 계산했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [10_binomial_plot.py](/Hongs_Blog/studies/probability-statistics/code/10_binomial_plot/)로 그렸고, 그림에 쓴 값($$P(X = 0) = 0.349$$, $$P(X = 1) = 0.387$$, $$P(X \ge 11) = 0.000424$$)을 같은 코드로 확인했다.
 {% endraw %}

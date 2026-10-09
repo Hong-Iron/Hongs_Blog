@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Convergence of Series", "급수", "series", "부분합", "partial sum", "발산 판정", "divergence test", "적분 판정", "integral test", "비교 판정", "comparison test", "비 판정", "ratio test", "교대급수", "alternating series", "절대수렴", "absolute convergence", "조건수렴", "conditional convergence", "p-급수", "바젤 문제"]
 description: "무한히 많은 수를 더해도 결과가 유한한 값에 머무는지를 따진다. 앞에서부터 더한 합이 어떤 값에 다가가면 수렴이다. 항이 0으로 가는 것은 필요하지만 충분하지 않다. 1, 2분의 1, 3분의 1, …을 차례로 더한 합은 항이 0으로 가도 끝없이 커진다. 그래서 등비급수, 적분, 이…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/taylor-series/"
 next_title: "테일러 급수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/series-convergence/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/calculus/series-convergence/"
 | 극한 | 발산 | $$\frac{\pi^2}{6} \approx 1.644934$$ | $$\ln 2 \approx 0.693147$$ |
 
 첫 열은 로그처럼 느리게 끝없이 자란다([합 ↔ 적분](/Hongs_Blog/studies/calculus/sum-integral-bounds/)). 둘째 열은 항이 더 빨리 줄어 수렴한다. 셋째 열은 첫 열과 크기가 같은 항에 부호만 번갈아 붙였는데 수렴한다. 부분합의 열이 아래 정의의 $$S_n$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/17_series-convergence_fig1.svg" alt="그림" loading="lazy">
+
+가로축이 로그 눈금이라, 파란 선이 곧게 오른다는 것은 항을 10배 더할 때마다 같은 폭씩 커진다는 뜻이다. 주황 선은 점선 $$\frac{\pi^2}{6}$$에 붙는다. 초록 선은 위아래로 번갈아 튀면서 그 폭이 줄어들어 점선 $$\ln 2$$로 모인다[^s3].
 
 ## 정의
 
@@ -134,4 +138,5 @@ $$\sum_{k=1}^{\infty}\frac{k^2}{2^k}$$이 수렴하는지 본다.
 [^1]: OpenStax, *Calculus Volume 2*, 5.2절 "Infinite Series", 5.3절 "The Divergence and Integral Tests", 5.4절 "Comparison Tests", 5.5절 "Alternating Series"(절대·조건수렴, 재배열), 5.6절 "Ratio and Root Tests".
 [^s1]: 에이전트 보충. 부동소수점 덧셈이 결합법칙을 만족하지 않는다는 것과 카한 보정 덧셈은 수치 해석의 표준 내용이다. 17_series-convergence_verify.py에서 같은 항을 큰 것부터와 작은 것부터 더한 결과가 다름을 확인했다.
 [^s2]: 에이전트 보충. $$\sum\frac{1}{k^2} = \frac{\pi^2}{6}$$은 오일러가 구한 값(바젤 문제)이다. 푸리에 급수의 파르스발 등식으로 증명할 수 있어 미분적분학의 [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/)에서 다룬다.
+[^s3]: 에이전트 보충. 그림은 원본에 없다. [17_series-convergence_plot.py](/Hongs_Blog/studies/calculus/code/17_series-convergence_plot/)로 그렸고, 예시 표의 부분합($$n = 10$$, 1,000, $$10^6$$)을 같은 코드로 확인했다.
 {% endraw %}

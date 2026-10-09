@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["GCD", "Greatest Common Divisor", "최대공약수", "Euclidean Algorithm", "유클리드 호제법", "유클리드 알고리즘", "Extended Euclidean Algorithm", "확장 유클리드 호제법", "베주 항등식", "Bézout's identity", "일차 부정방정식", "linear Diophantine equation", "라메의 정리", "Lamé's theorem"]
 description: "두 수의 최대공약수는 \"큰 수를 작은 수로 나눈 나머지\"로 바꿔도 변하지 않는다. 그래서 나머지로 계속 바꿔 나가다 0이 되기 직전의 수가 답이다. 소인수분해 없이 몇십 자리 수도 순식간에 계산하고, 과정을 거꾸로 따라가면 \"최대공약수 = 두 수의 정수 배의 합\"을 만드는 계수까지…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/primes/"
 next_title: "소수와 산술의 기본정리"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/discrete-math/gcd-euclid/"
 ---
 {% raw %}
@@ -107,6 +107,10 @@ $$\gcd(a, b) = as + bt$$인 정수 $$s, t$$가 있다. $$\gcd(a, b)$$는 $$as + 
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/27_gcd-euclid_fig1.svg" alt="그림" loading="lazy">
+
+파란 계단은 작은 수가 $$b$$일 때 가장 오래 걸리는 경우의 나눗셈 횟수다. 증명한 한계 $$2\lg b + 2$$ 아래에 넉넉히 머문다. 초록 점은 이웃한 피보나치 수 쌍이고, 늘 그 자리까지의 최악 기록을 새로 세운다[^s3].
 
 ### 스스로 설명해 보기
 
@@ -229,4 +233,5 @@ def f(a, b):
 [^2]: Rosen, *Discrete Mathematics and Its Applications* 7판, 5장(라메의 정리). 이 문서에서는 더 간단한 한계 $$2\lg b + 2$$를 증명했다.
 [^s1]: 에이전트 보충. 일차 부정방정식의 모든 해의 꼴은 두 해의 차가 $$(b/g, -a/g)$$의 정수배라는 사실에서 나온다. 27_gcd-euclid_verify.py에서 범위 안의 모든 해가 이 꼴임을 전수로 확인했다.
 [^s2]: 에이전트 보충. $$g = \gcd(p, q)$$, $$p = gp'$$, $$q = gq'$$로 두면 $$\gcd(p', q') = 1$$이다. $$gp'q' = pq' = qp'$$는 $$p$$와 $$q$$의 공배수다. 양의 공배수 $$M = pk$$가 $$q$$로 나누어떨어지면 $$q' \mid p'k$$다. $$p'$$와 $$q'$$가 서로소라 베주 항등식으로 $$p's + q't = 1$$인 정수 $$s, t$$가 있고, $$k = (p'k)s + q'(kt)$$의 두 항이 모두 $$q'$$의 배수라 $$q' \mid k$$다. 곧 $$k \ge q'$$이고 $$M \ge pq' = pq/g$$다. 두 주기를 합친 상태가 $$pq/g$$마다 되풀이되고 그보다 일찍 처음 모습으로 돌아오지 않는 것은 [16_brute-force_verify.py](/Hongs_Blog/studies/algorithms/code/16_brute-force_verify/)가 $$p, q \le 20$$의 모든 쌍에서 확인했다.
+[^s3]: 에이전트 보충. 그림 한 장은 원본에 없다. [27_gcd-euclid_plot.py](/Hongs_Blog/studies/discrete-math/code/27_gcd-euclid_plot/)로 그렸고, $$\gcd(89, 55)$$의 9번과 $$\gcd(252, 105)$$의 3번, $$b \le 150$$의 모든 $$b$$에서 최악 횟수가 $$2\lg b + 2$$ 이하인 것, 피보나치 쌍이 그 자리까지의 최악과 같은 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Perceptron", "단층 퍼셉트론", "선형 분류기", "linear classifier", "퍼셉트론 학습 규칙", "XOR 문제", "다층 퍼셉트론", "MLP"]
 description: "여러 증거에 점수를 매겨 합한 뒤, 합이 기준을 넘으면 \"예\", 아니면 \"아니오\"라고 답하는 투표기다. 틀릴 때마다 점수 배분을 고쳐 스스로 배운다. 직선(평면) 하나로 두 무리를 가를 수 있는 문제라면 반드시 끝에 가서 다 맞히지만, XOR처럼 직선 하나로 못 가르는 문제는 아무…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/neuron-convergence/"
 next_title: "뉴런의 수렴"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/perceptron/"
 ---
 {% raw %}
@@ -177,6 +177,10 @@ XOR은 $$(0,0) \to 0$$, $$(0,1) \to 1$$, $$(1,0) \to 1$$, $$(1,1) \to 0$$이다.
 
 첫 층이 입력 공간을 두 직선으로 자르고, 둘째 층이 두 결과를 조합한다. 직선 하나로 못 하는 일을 직선 둘과 그 조합으로 한다. 층 사이의 계단 함수(비선형)가 없으면 두 층이 한 층으로 줄어들어 이 일도 못 한다([뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/)의 증명).
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/08_perceptron_fig1.svg" alt="그림" loading="lazy">
+
+파란 선 위쪽이 $$h_1 = 1$$, 주황 선 아래쪽이 $$h_2 = 1$$이다. 둘 다 1인 곳은 두 선 사이의 띠뿐이고, 꽉 찬 점 $$(0, 1)$$, $$(1, 0)$$만 그 안에 든다[^s7].
+
 ## 신호·머신러닝·인공지능 관점
 
 **신호.** $$\mathbf{w}\cdot\mathbf{x}$$는 입력이 템플릿 $$\mathbf{w}$$와 얼마나 닮았는지 재는 상관이고, 문턱과 비교하는 것은 "그 무늬가 있다/없다"를 가르는 검출이다. 신호처리의 정합 필터(matched filter)와 문턱 판정을 붙인 검출기와 같은 구조다. 같은 퍼셉트론을 이미지의 모든 위치에 옮겨 적용하면 합성곱과 문턱이 되고, 무늬가 있는 곳의 지도가 나온다. 강의 계획표 7주차 "Convolution & Pattern Detection"이 이 계산이다[^1][^s4].
@@ -249,4 +253,5 @@ XOR은 $$(0,0) \to 0$$, $$(0,1) \to 1$$, $$(1,0) \to 1$$, $$(1,1) \to 0$$이다.
 [^s4]: 에이전트 보충. 정합 필터·검출기와의 대응은 원본 밖의 연결이다. 합성곱 신경망의 한 층은 "같은 가중치를 모든 위치에 적용한 퍼셉트론 무리"로 볼 수 있다.
 [^s5]: 에이전트 보충. 확률적 경사 하강과의 관계, 역전파, 보편 근사 정리(Cybenko 1989, Hornik 1991)는 머신러닝 교재의 표준 내용이다.
 [^s6]: 에이전트 보충. 연표와 NAND의 완전성은 인공지능·디지털 논리 교재의 표준 내용이다.
+[^s7]: 에이전트 보충. 그림 1장은 원본에 없다. [08_perceptron_plot.py](/Hongs_Blog/studies/human-interface-media/code/08_perceptron_plot/)로 그렸고, 그림에 쓴 값(두 층 XOR이 네 점을 모두 맞히고, 출력 1인 점이 $$0.5 < x_1 + x_2 < 1.5$$인 띠 안에만 있음)을 같은 코드로 확인했다.
 {% endraw %}

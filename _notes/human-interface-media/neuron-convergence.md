@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Neuron Convergence", "수렴", "신경 수렴", "수렴 구조", "convergence"]
 description: "여러 수용기의 신호를 뉴런 하나로 모으는 배선이다. 깔때기로 빗물을 모으듯 약한 신호도 합쳐지면 발화 문턱을 넘기 쉬워진다. 대신 어느 수용기에서 온 신호인지 섞여 버려서 위치를 구별하는 힘(해상도)을 잃는다. 억제성 연결을 섞으면 단순한 합이 아니라 \"가운데만 자극받은 모양\"처럼…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/center-surround/"
 next_title: "중심-주변 길항"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/neuron-convergence/"
 ---
 {% raw %}
@@ -85,6 +85,10 @@ $$
 
 **신호.** 수렴은 공간에서 이웃한 값을 더하는 필터다. 회로 2처럼 모두 같은 무게로 더하면 평균(박스) 필터, 곧 저역 통과 필터다. 수용기마다 서로 독립인 잡음이 섞여 있으면, $$N$$개를 평균한 값의 잡음은 $$1/\sqrt{N}$$로 줄어든다. 신호는 그대로이므로 신호 대 잡음비가 $$\sqrt{N}$$배 좋아진다. $$N = 7$$이면 약 2.65배다. 어두운 곳에서 수렴이 유리한 수학적 이유다. 회로 3처럼 둘레를 빼면 고른 부분은 지워지고 특정 크기의 무늬만 남는 대역 통과 필터가 된다([중심-주변 길항](/Hongs_Blog/studies/human-interface-media/center-surround/))[^s3].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/09_neuron-convergence_fig1.svg" alt="그림" loading="lazy">
+
+두 분포의 가운데는 똑같이 1이다. 7개를 평균한 쪽(파랑)만 폭이 약 $$1/\sqrt{7}$$로 좁아져서, 참 신호에서 크게 벗어난 값이 드물다[^s5].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 독립 잡음 7개 평균의 잡음 감소 2.61배, 이론값 $$\sqrt{7} = 2.65$$ (몬테카를로 20,000회, 실험으로 확인됨) — [09_neuron-convergence_verify.py](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_verify/)</div>
 
@@ -138,4 +142,5 @@ $$
 [^s2]: 에이전트 보충. 약한 자극 0.3과 문턱 1은 설명용 가상 수치다. 민감도와 해상도의 거래는 표준 지각 교재(예: Goldstein, *Sensation and Perception*)의 설명이다.
 [^s3]: 에이전트 보충. 필터·신호 대 잡음비·풀링과의 대응은 원본 밖의 연결이다. $$1/\sqrt{N}$$은 독립이고 분산이 같은 잡음의 평균에 대한 표준 결과(분산이 $$1/N$$로 줄어듦)다.
 [^s4]: 에이전트 보충. 강의 2 p.12를 확대해 눈금(1과 2 사이 간격)으로 잰 값은 약 0.41이다. 0이 아닌 까닭을 자발 발화로 설명한 것은 해석이다. 그래프 자체가 개략도라 정확한 값에는 의미를 두지 않는다.
+[^s5]: 에이전트 보충. 그림 1장은 원본에 없다. [09_neuron-convergence_plot.py](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_plot/)로 그렸고, 그림에 쓴 값(신호 1에 표준편차 1인 독립 잡음, 20,000회, 폭의 비 2.65(이론값 $$\sqrt{7} \approx 2.65$$))을 같은 코드로 확인했다.
 {% endraw %}

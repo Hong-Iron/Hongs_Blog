@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Confidence Interval", "신뢰구간", "구간추정", "interval estimation", "신뢰수준", "confidence level", "적중률", "coverage", "t분포", "Student's t distribution", "오차 한계", "margin of error"]
 description: "추정값 하나만 말하지 않고, \"참값은 아마 이 범위 안에 있다\"는 구간으로 불확실성을 함께 보고하는 방법이다. 표본이 많을수록 구간이 좁아지는데, 폭은 표본 수의 제곱근에 반비례한다. 95% 신뢰구간이란 같은 방법으로 구간을 여러 번 만들면 그중 95%가 참값을 담는다는 뜻이다. …"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/hypothesis-testing/"
 next_title: "가설검정과 p값"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/confidence-intervals/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/probability-statistics/confidence-intervals/"
 평균 50, 표준편차 8인 정규분포에서 30개씩 표본을 뽑아 "표본평균 ± $$1.96 \times \frac{8}{\sqrt{30}}$$" 구간을 1,000번 만든다. 구간마다 위치가 다르고, 그중 약 950개가 50을 담는다. 50을 놓친 구간도 만든 사람은 그 사실을 모른다.
 
 "± 뒤의 값"이 아래 정의의 오차 한계, 95%가 신뢰수준 $$1 - \alpha$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/31_confidence-intervals_fig1.svg" alt="그림" loading="lazy">
+
+구간 1,000개 중 앞의 60개를 그렸다. 세로선이 참값 50이고, 주황 구간이 50을 놓친 것이다. 놓친 구간도 겉보기에는 다른 구간과 다를 바 없다[^s1].
 
 ## 정의
 
@@ -125,4 +129,5 @@ $$\sigma$$ 대신 표본 표준편차 $$s$$를 쓰면 $$s$$도 흔들리는 만�
 
 [^1]: Wasserman, *All of Statistics*, "Models, Statistical Inference and Learning" 장(신뢰집합의 정의와 해석, 정규 근사 구간).
 [^2]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.4절 "Chi-Square and Student-t"($$t$$분포).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [31_confidence-intervals_plot.py](/Hongs_Blog/studies/probability-statistics/code/31_confidence-intervals_plot/)로 그렸고, 그림에 쓴 값(오차 한계 2.863, 구간 1,000개 중 952개가 50을 담음)을 같은 코드로 확인했다.
 {% endraw %}

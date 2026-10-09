@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Multiple Integral", "중적분", "이중적분", "double integral", "반복적분", "iterated integral", "푸비니 정리", "Fubini's theorem", "변수변환", "change of variables", "극좌표 적분", "polar integral", "가우스 적분", "Gaussian integral", "박스-뮬러 변환", "Box–Muller transform", "몬테카를로 적분", "Monte Carlo integration"]
 description: "땅 위에 쌓인 눈의 총량을 구하려면, 땅을 작은 칸으로 나눠 칸마다 \"넓이 × 눈 높이\"를 더하면 된다. 이것이 이중적분이고, 실제 계산은 한 방향씩 차례로 적분(반복적분)해서 한다. 원이나 부채꼴처럼 둥근 영역은 극좌표로 바꾸면 쉬워지는데, 좌표를 바꾸면 작은 칸의 넓이가 달라지…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/gradient-descent/"
 next_title: "경사 하강법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/multiple-integrals/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ permalink: "/studies/calculus/multiple-integrals/"
 $$\int_0^1\left(\int_0^1 xy\,dx\right)dy = \int_0^1\frac{y}{2}\,dy = \frac14.$$
 
 $$x$$부터 하든 $$y$$부터 하든 같다. 원판 $$x^2 + y^2 \le 1$$처럼 둥근 영역에서는 반지름 $$r$$과 각 $$\theta$$로 나누는 편이 편하다. 이때 작은 칸 "$$r$$ 방향 $$dr$$, 각 방향 $$d\theta$$"의 넓이는 $$dr \times d\theta$$가 아니라 약 $$r\,dr\,d\theta$$다. 바깥쪽 칸일수록 호의 길이 $$r\,d\theta$$가 길기 때문이다. 칸의 넓이가 아래 정리의 $$dA$$, 배율 $$r$$이 야코비 행렬식이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/25_multiple-integrals_fig1.svg" alt="그림" loading="lazy">
+
+반지름 1인 원판을 $$dr = 0.25$$, $$d\theta = \frac{\pi}{8}$$로 나눴다. 칠한 두 칸은 $$dr \times d\theta$$가 똑같지만, 바깥 칸의 넓이가 안쪽 칸의 7배다. 두 칸의 가운데 반지름이 0.875와 0.125라 그 비율 7이 그대로 넓이 비율이 된다. 이것이 배율 $$r$$이다[^s2].
 
 ## 정의
 
@@ -122,4 +126,5 @@ $$\vert \det J_T\vert $$는 [행렬식](/Hongs_Blog/studies/linear-algebra/deter
 
 [^1]: OpenStax, *Calculus Volume 3*, 5.1절 "Double Integrals over Rectangular Regions"(리만 합, 푸비니 정리), 5.2절 "Double Integrals over General Regions", 5.3절 "Double Integrals in Polar Coordinates", 5.7절 "Change of Variables in Multiple Integrals"(야코비 행렬식).
 [^s1]: 에이전트 보충. 박스–뮬러 변환은 Box, Muller, "A note on the generation of random normal deviates", *Annals of Mathematical Statistics* 29 (1958)의 방법이다. 몬테카를로 적분의 오차가 $$1/\sqrt N$$에 비례한다는 것은 중심극한정리에서 나온다(확률과 통계). 경로 추적 렌더링이 렌더링 방정식을 몬테카를로로 푸는 방식은 Kajiya, "The Rendering Equation", *SIGGRAPH* (1986)에서 나왔다. 둘 다 25_multiple-integrals_verify.py에서 실험으로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [25_multiple-integrals_plot.py](/Hongs_Blog/studies/calculus/code/25_multiple-integrals_plot/)로 그렸고, 두 칸의 넓이 0.012와 0.086, 그 비율 7, 칸 64개 넓이의 합이 $$\pi$$인 것, 가운데 반지름 × $$dr$$ × $$d\theta$$가 칸 넓이와 같은 것을 같은 코드로 확인했다.
 {% endraw %}

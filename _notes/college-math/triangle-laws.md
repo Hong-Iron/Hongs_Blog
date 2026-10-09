@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Law of Sines", "Law of Cosines", "사인 법칙", "코사인 법칙", "삼각형의 넓이", "삼각측량", "triangulation", "두 점 사이의 거리", "distance formula", "모호한 경우", "ambiguous case"]
 description: "직각이 아닌 삼각형에서도 변과 각 사이의 관계를 알려 주는 두 공식이다. 코사인 법칙은 피타고라스 정리에 \"직각에서 벗어난 만큼\" 보정하는 항을 붙인 것이라, 세 변을 알면 각을, 두 변과 끼인각을 알면 나머지 변을 구한다. 사인 법칙은 각과 마주 보는 변의 비가 모두 같다는 것이…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/polar-parametric/"
 next_title: "극좌표와 매개변수 곡선"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/triangle-laws/"
 ---
 {% raw %}
@@ -85,6 +85,10 @@ $$C = 90°$$이면 $$\cos C = 0$$이라 코사인 법칙이 피타고라스 정�
 2. *각 두 개:* $$B \approx 41.81°$$ 또는 $$180° - 41.81° = 138.19°$$.
 3. *둘 다 되는지:* $$30° + 138.19° < 180°$$이므로 두 경우 모두 삼각형이 된다. 주어진 정보만으로는 하나로 정해지지 않는다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/16_triangle-laws_fig1.svg" alt="그림" loading="lazy">
+
+C를 중심으로 반지름 6인 원(점선)이 밑변과 $$B_1$$, $$B_2$$ 두 점에서 만난다. 두 점 모두 $$a = 6$$, $$b = 8$$, $$A = 30°$$를 만족하므로 삼각형이 둘 생긴다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 무작위 삼각형 5,000개(각은 좌표에서 따로 측정)에서 세 공식, 예시의 7 km, 삼각측량 12.27 m, 모호한 경우의 두 삼각형 — [16_triangle-laws_verify.py](/Hongs_Blog/studies/college-math/code/16_triangle-laws_verify/)</div>
 
@@ -131,4 +135,5 @@ $$C = 90°$$이면 $$\cos C = 0$$이라 코사인 법칙이 피타고라스 정�
 
 
 [^1]: OpenStax, *Precalculus 2e*, 8.1절 "Non-right Triangles: Law of Sines"(모호한 경우와 넓이 포함), 8.2절 "Non-right Triangles: Law of Cosines"
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [16_triangle-laws_plot.py](/Hongs_Blog/studies/college-math/code/16_triangle-laws_plot/)로 그렸고, 그림에 쓴 값(B에서의 각 138.19°와 41.81°, 두 삼각형 모두 $$BC = 6$$)을 같은 코드로 확인했다.
 {% endraw %}

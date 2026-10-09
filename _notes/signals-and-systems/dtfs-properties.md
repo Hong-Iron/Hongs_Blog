@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Properties of Discrete-Time Fourier Series", "표 3.2", "첫 번째 차 성질", "First Difference Property", "누적 합 성질", "Running Sum Property", "이산 주기 컨벌루션", "Discrete Periodic Convolution", "이산 파스발 관계"]
 description: "이산 시간 푸리에 급수의 성질은 연속 시간 표 3.1과 거의 같다. 옮기면 위상이 돌고, 뒤집으면 k와 -k가 바뀌고, 곱하면 계수끼리 컨벌루션하고, 주기 컨벌루션하면 계수끼리 곱한다. 다른 점은 이산 시간에 맞게 바뀐 몇 가지다. 미분 대신 첫 번째 차(x[n] - x[n-1])…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/fourier-series-lti/"
 next_title: "푸리에 급수와 LTI 시스템"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/dtfs-properties/"
 ---
 {% raw %}
@@ -87,6 +87,10 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 - *계수:* 주기 컨벌루션 성질로 $$c_k = 7d_k^2$$, $$d_k$$는 구형파의 계수 $$\frac17\frac{\sin(3\pi k/7)}{\sin(\pi k/7)}$$. 그래서 $$c_k = \dfrac{\sin^2(3\pi k/7)}{7\sin^2(\pi k/7)}$$.
 - *수열 자체:* 한 주기만 남긴 $$\hat x[r]$$($$-1 \le r \le 1$$에서 1)과 $$x$$의 보통 컨벌루션과 같다. $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$인 삼각형이 7마다 반복된다(그림 3.21). 사각형끼리 컨벌루션하면 삼각형이 되는 연속 시간 결과와 같다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/34_dtfs-properties_fig1.svg" alt="그림" loading="lazy">
+
+위가 구형파 $$x[n]$$, 아래가 주기 컨벌루션 $$w[n]$$이다. 폭 3인 사각형끼리 겹치는 칸 수를 세면 3, 2, 1, 0이 되어 삼각형이 7칸마다 되풀이된다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표 3.2의 시간 이동·반전·곱셈·주기 컨벌루션·첫 번째 차·켤레 대칭·주파수 이동·시간 척도·파스발을 주기 6 수열로 확인, 예제 3.13·3.14·3.15의 값 확인 — [34_dtfs-properties_verify.py](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_verify/)</div>
 
@@ -136,4 +140,5 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 [^5]: 같은 자료, p.27~28 (예제 3.14, 그림 3.20)
 [^6]: 같은 자료, p.29~31 (예제 3.15, 그림 3.21)
 [^s1]: 에이전트 보충. 신호 복원·원형 컨벌루션 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [34_dtfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$과 $$c_k = 7d_k^2$$.
 {% endraw %}

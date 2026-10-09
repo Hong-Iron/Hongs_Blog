@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["거듭제곱 vs 지수", "power vs exponential", "다항 시간 vs 지수 시간", "polynomial vs exponential time"]
 description: "x^2과 2^x는 둘 다 \"제곱\"처럼 보이지만 변수가 있는 자리가 다르다. 가르는 질문은 \"변수가 밑에 있는가, 지수에 있는가\"다. 밑에 있으면 거듭제곱함수, 지수에 있으면 지수함수다. 결국에는 밑이 1보다 큰 지수함수가 어떤 거듭제곱함수보다도 커지지만, 언제 역전하는지는 계수에 …"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/positional-notation/"
 next_title: "진법과 자릿수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/power-vs-exponential/"
 ---
 {% raw %}
@@ -77,6 +77,10 @@ $$x^2$$과 $$2^x$$는 둘 다 "제곱"처럼 보이지만 변수가 있는 자�
 
 마지막 줄이 알고리즘에서 가장 중요한 차이다. 다항 시간 알고리즘은 컴퓨터가 빨라지면 푸는 문제의 크기가 몇 **배**로 커진다. 지수 시간 알고리즘은 몇 **개**만 늘어난다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/09_power-vs-exponential_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽 로그-로그 눈금에서는 $$x^3$$이 직선이고 $$2^x$$는 위로 휘어 오른다. 오른쪽 반로그 눈금에서는 거꾸로 $$2^x$$가 직선이고 $$x^3$$이 점점 평평해진다[^s1].
+
 - 알고리즘에서: C++ 기준 교재의 입력 제한표에서 $$2^n$$ 방법은 $$n \le 20$$까지인데 $$n^2$$ 방법은 $$n \le 5{,}000$$까지 되는 것도 이 차이다([시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/)). [완전탐색](/Hongs_Blog/studies/algorithms/brute-force/)을 짜기 전에 경우의 수를 셀 때도 맨 위의 가르는 질문으로 거듭제곱인지 지수인지 먼저 가른다. 제한의 $$n$$을 보고 지수 방법이 시간 안에 되는지 어림하는 연습은 [시간 복잡도 어림 예제 사다리](/Hongs_Blog/studies/algorithms/complexity-ladder/)의 문제 4다.
 
 ## 둘 다 아닐 때
@@ -91,4 +95,5 @@ $$\lg n \ \ll\ \sqrt{n} \ \ll\ n \ \ll\ n \lg n \ \ll\ n^2 \ \ll\ n^3 \ \ll\ 2^n
 - 이 순서의 증명은 이산수학의 [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/)와 미분적분학의 [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)에서 한다.
 
 [^1]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.2절(밑이 1보다 큰 지수함수는 모든 다항식보다 빨리 자란다: $$n^b = o(a^n)$$). Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14.7절 "Asymptotic Notation".
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [09_power-vs-exponential_plot.py](/Hongs_Blog/studies/college-math/code/09_power-vs-exponential_plot/)로 그렸고, 그림에 쓴 값(로그-로그에서 $$x^3$$의 기울기 3, 반로그에서 $$2^x$$의 기울기 $$\log_{10} 2 \approx 0.30103$$)을 같은 코드로 확인했다.
 {% endraw %}

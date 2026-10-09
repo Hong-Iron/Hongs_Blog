@@ -19,7 +19,7 @@ next_url: "/studies/data-science/dbscan/"
 next_title: "DBSCAN"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/em-algorithm/"
 ---
 {% raw %}
@@ -53,6 +53,10 @@ permalink: "/studies/data-science/em-algorithm/"
 | 무리 2 | 5.405 | 7.076 | 0.694 |
 
 무리 2의 평균이 2에서 5.4로 크게 움직였다. 이를 되풀이하면 평균 1과 7, 비중 $$\frac12$$씩으로 다가간다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/30_em-algorithm_fig1.svg" alt="그림" loading="lazy">
+
+같은 자료로 E 단계와 M 단계를 15번 되풀이했다. 무리 2의 평균은 2 → 5.4 → … → 7로 올라가고, 무리 1은 1 근처에 자리 잡는다. 오른쪽의 로그가능도는 한 번도 줄지 않고, 평균이 자리를 잡으면 함께 멈춘다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 두 표, 수렴값, 자료 2,000개에서 매개변수 되찾기, 무작위 자료 100개에서 로그가능도가 한 번도 줄지 않음 — [30_em-gmm_impl.py](/Hongs_Blog/studies/data-science/code/30_em-gmm_impl/)</div>
@@ -223,4 +227,5 @@ M 단계는 책임도를 무게로 한 평균과 공분산이다. 책임도가 �
 [^3]: 같은 자료, p.29
 [^4]: 같은 자료, p.31
 [^s1]: 에이전트 보충. 1차원 추적 표, 단조성 증명 스케치, 스스로 설명해 보기, 복잡도, k-평균 초기화, 퇴화, 카드 C2·C4·C5는 원본에 없다. 구현 코드로 확인했다(Dempster, Laird, Rubin, 1977).
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [30_em-algorithm_plot.py](/Hongs_Blog/studies/data-science/code/30_em-algorithm_plot/)로 그렸고, 위 두 표의 값(책임도 0.818 … 0.002, 평균 0.809·5.405, 분산 0.885·7.076, 비중 0.306·0.694), 로그가능도가 줄지 않음, 평균 1과 7·비중 $$\frac12$$로 수렴함을 같은 코드로 확인했다.
 {% endraw %}

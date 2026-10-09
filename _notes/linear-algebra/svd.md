@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Singular Value Decomposition", "SVD", "특잇값 분해", "특이값 분해", "특잇값", "singular value", "저랭크 근사", "low-rank approximation", "에카르트-영 정리", "Eckart–Young theorem", "유사역행렬", "pseudoinverse", "주성분 분석", "PCA"]
 description: "어떤 행렬이든(정사각이 아니어도, 대칭이 아니어도) \"돌리기 → 축마다 늘이기 → 돌리기\" 세 단계로 쪼갤 수 있다. 늘이는 배율이 특잇값이고, 큰 것부터 줄 세우면 행렬의 \"중요한 방향\"이 순서대로 드러난다. 큰 특잇값 몇 개만 남기면 그 크기에서 가장 정확한 근사가 되어, 이미…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/abstract-vector-spaces/"
 next_title: "추상 벡터공간과 베지어 곡선"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/svd/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/svd/"
 $$A = \begin{pmatrix}3 & 0\\ 4 & 5\end{pmatrix}$$는 단위원을 타원으로 보낸다. 가장 많이 늘어나는 입력 방향은 $$\mathbf{v}_1 = \frac{1}{\sqrt2}(1, 1)$$이고, 이것이 $$A\mathbf{v}_1 = \frac{1}{\sqrt2}(3, 9)$$, 곧 길이 $$3\sqrt5 \approx 6.71$$인 $$\mathbf{u}_1 = \frac{1}{\sqrt{10}}(1, 3)$$ 방향으로 간다. 그와 수직인 $$\mathbf{v}_2 = \frac{1}{\sqrt2}(-1, 1)$$은 길이 $$\sqrt5 \approx 2.24$$인 $$\mathbf{u}_2 = \frac{1}{\sqrt{10}}(-3, 1)$$ 방향으로 간다. $$\mathbf{u}_1$$과 $$\mathbf{u}_2$$도 서로 수직이다.
 
 타원의 긴 반지름이 $$\sigma_1 = 3\sqrt5$$, 짧은 반지름이 $$\sigma_2 = \sqrt5$$다. 수직인 입력 축 $$\mathbf{v}_i$$가 수직인 출력 축 $$\mathbf{u}_i$$로 $$\sigma_i$$배 늘어 가는 것이 아래 정리의 $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/24_svd_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽 단위원의 수직인 두 반지름 $$\mathbf{v}_1$$, $$\mathbf{v}_2$$가 오른쪽 타원의 긴 반지름과 짧은 반지름이 된다. 출력 쪽 두 축도 여전히 수직이다[^s3].
 
 ## 정의
 
@@ -141,6 +145,10 @@ $$\Vert A\mathbf{v}_i\Vert ^2 = \mathbf{v}_i^\top A^\top A\mathbf{v}_i = \lambda
 - **최소제곱과 유사역행렬.** $$A^+ = V\Sigma^+U^\top$$($$\Sigma^+$$는 0이 아닌 $$\sigma_i$$를 $$1/\sigma_i$$로)로 $$\hat{\mathbf{x}} = A^+\mathbf{b}$$를 구하면, 열이 종속이어도 최소제곱 해 중 길이가 가장 짧은 것을 준다. NumPy의 `lstsq`가 이 방법이다.
 - **비용.** 밀집 행렬의 SVD는 $$O(mn\min(m, n))$$이다. 큰 행렬에서는 필요한 $$k$$개만 반복법으로 구한다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/24_svd_fig2.svg" alt="그림" loading="lazy">
+
+$$100 \times 100$$ 합성 이미지를 랭크 1, 5, 20으로 줄였다. 랭크 20은 저장하는 수가 원본의 40%인데도 원본과 거의 구별되지 않는다(상대 오차 0.2%)[^s3].
+
 ## 연결
 
 - 선수: [대칭행렬과 스펙트럼 정리](/Hongs_Blog/studies/linear-algebra/spectral-theorem/)
@@ -194,4 +202,5 @@ $$\Vert A\mathbf{v}_i\Vert ^2 = \mathbf{v}_i^\top A^\top A\mathbf{v}_i = \lambda
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 7.1절 "Image Processing by Linear Algebra"(저랭크 이미지), 7.2절 "Bases and Matrices in the SVD"(존재 증명, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$, 예 $$\begin{pmatrix}3 & 0\\ 4 & 5\end{pmatrix}$$), 7.3절 "Principal Component Analysis by the SVD", 7.4절 "The Geometry of the SVD".
 [^s1]: 에이전트 보충. 에카르트–영 정리는 C. Eckart, G. Young, "The approximation of one matrix by another of lower rank", *Psychometrika* 1 (1936)의 결과다. 24_svd_verify.py에서 무작위 랭크 $$k$$ 행렬과 비교해 실험으로 확인했다(증명이 아니다).
 [^s2]: 에이전트 보충. 저장량 $$k(m + n + 1)$$은 $$\mathbf{u}_i$$, $$\mathbf{v}_i$$, $$\sigma_i$$의 개수를 센 것이다. 저랭크 행렬 분해로 평점을 예측하는 방법은 넷플릭스 상 대회(2006~2009) 이후 추천 시스템의 표준 기법이 되었다(Koren·Bell·Volinsky, "Matrix factorization techniques for recommender systems", *IEEE Computer* 2009).
+[^s3]: 에이전트 보충. 그림 두 장은 원본에 없다. [24_svd_plot.py](/Hongs_Blog/studies/linear-algebra/code/24_svd_plot/)로 그렸고, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 $$\sigma_1 = 3\sqrt5$$, $$\sigma_2 = \sqrt5$$, 랭크 $$k$$ 근사의 상대 오차가 버린 특잇값으로 정해지는 것(랭크 1, 5, 20에서 약 31%, 9%, 0.2%)을 같은 코드로 확인했다.
 {% endraw %}

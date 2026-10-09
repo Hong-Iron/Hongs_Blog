@@ -19,7 +19,7 @@ next_url: "/studies/data-science/em-algorithm/"
 next_title: "EM 알고리즘"
 math: true
 mermaid: false
-code_count: 0
+code_count: 1
 permalink: "/studies/data-science/gaussian-mixture-model/"
 ---
 {% raw %}
@@ -37,7 +37,15 @@ permalink: "/studies/data-science/gaussian-mixture-model/"
 
 1차원에서 무리 1은 평균 0, 무리 2는 평균 5이고 둘 다 표준편차 1, 비율 반반이라 하자. 가운데 2.5에 있는 점은 두 무리에서 나왔을 가능성이 같아 각각 0.5다. 0.5에 있는 점은 거의 무리 1이다[^s1]. 이렇게 점마다 무리별 확률을 주는 것을 부드러운 배정이라 부른다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/29_gaussian-mixture-model_fig1.svg" alt="그림" loading="lazy">
+
+위는 두 무리가 만드는 밀도, 아래는 점이 무리 1에서 왔을 확률(책임도)이다. 두 종의 가운데 2.5에서 0.5이고, 그 양옆 폭 2쯤에서만 0과 1 사이 값을 가진다. 그 밖에서는 거의 0 또는 1이라 k-평균의 딱 잘라 넣기와 비슷해진다[^s2].
+
 두 차원이 서로 강하게 함께 움직이면(상관이 크면) 무리는 기울어진 타원이 된다. 종 모양 분포의 공분산 행렬이 그 모양을 담는다[^2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/29_gaussian-mixture-model_fig2.svg" alt="그림" loading="lazy">
+
+[k-평균](/Hongs_Blog/studies/data-science/k-means/)이 반으로 잘랐던 길쭉한 두 무리에 성분 2개짜리 GMM을 맞췄다. 실선은 평균에서 표준편차 1개, 점선은 2개만큼 떨어진 타원이다. 무리마다 기울어진 타원을 따로 가져서, 점 300개 중 299개를 실제 무리대로 나눈다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 가운데 점의 확률 0.5, 분산을 0에 가깝게 하면 0/1 배정(k-평균과 같아짐), 평균 0·5와 표준편차 1·1.5, 비율 0.3·0.7로 만든 자료 2,000개에서 매개변수를 되찾음 — [30_em-gmm_impl.py](/Hongs_Blog/studies/data-science/code/30_em-gmm_impl/)</div>
@@ -110,4 +118,5 @@ $$[\mathbf z_i]_\alpha = \frac{\pi_\alpha\,\mathcal N(\mathbf x_i \mid \boldsymb
 [^5]: 같은 자료, p.26
 [^6]: 같은 자료, p.31
 [^s1]: 에이전트 보충. 1차원 수치 예, k-평균이 극한으로 나오는 성질, 사이킷런, 카드 C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [29_gaussian-mixture-model_plot.py](/Hongs_Blog/studies/data-science/code/29_gaussian-mixture-model_plot/)로 그렸고, 2.5에서 책임도 0.5, 0.5에서 0.9999 이상, 2차원 EM(처음 값 8가지 중 로그가능도가 가장 큰 답)의 로그가능도가 줄지 않음과 맞힌 비율 0.997을 같은 코드로 확인했다.
 {% endraw %}

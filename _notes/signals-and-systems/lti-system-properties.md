@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Properties of LTI Systems", "LTI 시스템의 기억", "LTI 시스템의 가역성", "LTI 시스템의 인과성", "LTI 시스템의 안정성", "절대 합 가능", "Absolutely Summable", "절대 적분 가능", "Absolutely Integrable", "역시스템", "Inverse System"]
 description: "LTI 시스템은 임펄스 응답 h 하나로 모든 것이 정해지므로, 1장에서 입력과 출력을 다 시험해야 했던 성질들을 h의 모양만 보고 판정할 수 있다. 0 밖에서 0이면 기억이 없고, 음의 시각에서 0이면 인과적이고, 크기를 모두 더한 값이 유한하면 안정이다. 역시스템은 컨벌루션해서 …"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/step-response/"
 next_title: "단위 계단 응답"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/lti-system-properties/"
 ---
 {% raw %}
@@ -134,6 +134,10 @@ LTI 시스템의 모든 성질은 $$h$$ 안에 들어 있다. 입력 전체를 �
 - 통신의 채널 보정(이퀄라이저)은 채널 $$h$$의 역시스템 $$h_1$$을 근사해 신호를 되살리는 것이다[^s1].
 - 흔한 실수: 안정을 "$$h$$가 유계"로 착각하는 것. $$u[n]$$은 유계지만 절대 합이 무한대라 불안정이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/21_lti-system-properties_fig1.svg" alt="그림" loading="lazy">
+
+두 $$h$$ 모두 값이 1 이하다. 계단을 넣으면 절대 합이 무한대인 $$u[n]$$ 쪽 출력은 $$n + 1$$로 끝없이 커지고, 절대 합이 2인 쪽은 2 아래에 머문다[^s2].
+
 ## 연결
 
 - 선수: [기억과 가역성](/Hongs_Blog/studies/signals-and-systems/memory-invertibility/), [인과성](/Hongs_Blog/studies/signals-and-systems/causality/), [안정성](/Hongs_Blog/studies/signals-and-systems/stability/) (1장의 일반 정의), [컨벌루션의 성질](/Hongs_Blog/studies/signals-and-systems/convolution-properties/)
@@ -191,4 +195,5 @@ LTI 시스템의 모든 성질은 $$h$$ 안에 들어 있다. 입력 전체를 �
 [^6]: 같은 자료, p.18 (예제 2.13)
 [^7]: 같은 자료, p.13~14 (예제 2.12)
 [^s1]: 에이전트 보충. 맨 앞 표, 안정 조건의 필요조건 증명 방법(Oppenheim·Willsky 2판 문제 2.49), 채널 보정 예, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [21_lti-system-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$u * u = n + 1$$, $$(\frac12)^n u * u = 2 - (\frac12)^n < 2$$.
 {% endraw %}

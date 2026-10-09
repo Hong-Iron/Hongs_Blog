@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Pigeonhole Principle", "비둘기집 원리", "서랍 원리", "일반화된 비둘기집 원리", "generalized pigeonhole principle", "충돌", "collision"]
 description: "비둘기가 비둘기집보다 많으면 어떤 집에는 두 마리 이상 들어간다. 너무 당연해 보이지만, 아무것도 직접 찾지 않고 \"겹치는 것이 반드시 있다\"를 증명하는 강력한 도구다. 해시 충돌, 무손실 압축의 한계 같은 필연적인 충돌이 모두 이 원리에서 나온다. 다만 어느 집에서 겹치는지는 알…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/linear-recurrences/"
 next_title: "선형 점화식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/pigeonhole/"
 ---
 {% raw %}
@@ -81,6 +81,11 @@ permalink: "/studies/discrete-math/pigeonhole/"
 - **해시 충돌은 필연이다.** 가능한 키가 해시값보다 많으면 두 키가 같은 해시값을 갖는 일이 반드시 있다. 좋은 해시 함수는 충돌을 없애는 것이 아니라 드물고 고르게 만든다. 해시 테이블은 충돌을 처리하는 방법(체이닝, 열린 주소)을 꼭 갖춰야 한다.
 - **무손실 압축의 한계.** 길이 $$n$$비트 파일은 $$2^n$$개인데 길이 $$n$$ 미만 파일은 $$1 + 2 + \cdots + 2^{n-1} = 2^n - 1$$개뿐이다. 모든 파일을 더 짧게 만드는 압축은 서로 다른 두 파일을 같은 결과로 보낼 수밖에 없어 풀 수 없다.
 - **생일 문제.** 사람이 367명이면 생일이 같은 두 사람이 반드시 있다(윤년 포함 366일). 확률로 보면 23명만 되어도 절반 넘게 겹친다([확률의 공리와 계산](/Hongs_Blog/studies/probability-statistics/probability-axioms/)).
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/20_pigeonhole_fig1.svg" alt="그림" loading="lazy">
+
+1년을 365일로 보고 모든 날이 똑같이 나온다고 하면, 23명에서 확률이 0.507로 절반을 넘고 57명이면 0.99를 넘는다. 비둘기집 원리로 확실히 보장하려면 367명이 필요하지만, 확률로는 훨씬 적은 사람으로도 거의 확실해진다[^s1].
+
 - 알고리즘에서: 충돌을 처리하면서 칸이 차면 칸 수를 늘려 평균 $$O(1)$$을 지키는 파이썬 딕셔너리는 [딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/)에 있다. [재밌는 레이싱 경기장 설계하기](/Hongs_Blog/studies/algorithms/pg214292/)는 '이웃한 두 수'와 같은 칸 나누기로, 한 줄 $$n$$자리에서 서로 이웃하지 않는 자리가 많아야 $$\lceil n/2 \rceil$$개라는 한계를 세운다. [튜브의 소개팅](/Hongs_Blog/studies/algorithms/pg1839/)은 칸이 $$N$$개인 판에서 $$N$$걸음 이상 걸으면 어떤 칸을 두 번 밟는다는 데서, 확인할 층 수를 칸 수 이하로 묶는다.
 
 ## 연결
@@ -116,4 +121,5 @@ permalink: "/studies/discrete-math/pigeonhole/"
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(비둘기집 원리). Rosen, *Discrete Mathematics and Its Applications* 7판, 6장 "Counting"(일반화된 비둘기집 원리).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [20_pigeonhole_plot.py](/Hongs_Blog/studies/discrete-math/code/20_pigeonhole_plot/)로 그렸고, 22명에서 0.5 미만, 23명에서 0.5073, 57명에서 0.99 초과를 같은 코드로 확인했다.
 {% endraw %}

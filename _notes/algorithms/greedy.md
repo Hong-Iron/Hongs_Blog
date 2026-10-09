@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Greedy", "Greedy Algorithm", "탐욕법", "탐욕 알고리즘", "욕심쟁이 방법", "교환 논증", "회의실 배정"]
 description: "갈림길마다 지금 가장 좋아 보이는 길을 고르고, 한 번 고른 것은 되돌리지 않는 방법이다. 정렬 한 번과 반복 한 번으로 끝나서 빠르고 코드도 짧다. 문제는 지금 좋아 보이는 선택이 나중에 손해가 되는 경우가 많다는 것이다. 그래서 \"이렇게 골라도 손해가 없다\"는 이유를 댈 수 있…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/graph-representation/"
 next_title: "그래프 표현"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/greedy/"
 ---
 {% raw %}
@@ -48,6 +48,10 @@ permalink: "/studies/algorithms/greedy/"
 3. E, F, G는 7 전에 시작해서 겹친다. H(8 ~ 11)를 넣는다.
 
 A, D, H로 3개다. 모든 조합을 다 봐도 3개가 최대다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/22_greedy_fig1.svg" alt="그림" loading="lazy">
+
+그림의 회의는 위에서부터 끝나는 시각 순이고, 파란 막대가 고른 A, D, H다. 점선은 앞서 고른 회의가 끝나는 시각이다. 그 점선보다 먼저 시작하는 회색 막대는 모두 건너뛴다[^s1].
 
 ```python
 def max_meetings(meetings):
@@ -138,4 +142,5 @@ def max_meetings(meetings):
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 6.1 "Coin problem": 동전 {1, 3, 4}로 6을 만들 때 그리디는 4 + 1 + 1, 최적은 3 + 3이다.
 [^2]: 같은 책 6.2 "Scheduling"(가장 먼저 끝나는 일부터 고르면 최적), Cormen 외, *Introduction to Algorithms* 3판, 16.1절 "An activity-selection problem"(같은 문제의 증명), 16.3절 "Huffman codes"(허프만 부호화도 그리디이고, 만든 부호는 최적 접두어 부호다).
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [22_greedy_plot.py](/Hongs_Blog/studies/algorithms/code/22_greedy_plot/)로 그렸고, 그리디가 A, D, H를 고른다는 것과 모든 조합을 봐도 최대가 3이라는 것을 같은 코드로 확인했다.
 {% endraw %}

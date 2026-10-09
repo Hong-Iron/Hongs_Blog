@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Metamerism", "메타머리즘", "메타머", "metamer", "조건등색쌍", "점묘법", "pointillism", "가법 혼색"]
 description: "재료가 다른 두 요리가 혀에는 같은 맛으로 느껴지는 것과 같다. 스펙트럼이 전혀 다른 두 빛도 세 추상체에 같은 반응을 만들면 똑같은 색으로 보인다. 덕분에 모니터는 빛 세 가지로 수많은 색을 흉내 낸다. 반대로, 가게 조명에서 같아 보이던 두 옷감이 햇빛 아래서 달라 보이는 문제…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/lateral-inhibition/"
 next_title: "측면 억제"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/metamerism/"
 ---
 {% raw %}
@@ -62,6 +62,10 @@ $$
 
 
 $$C$$의 계수(rank)가 3이면 영공간(null space)은 $$31 - 3 = 28$$차원이다. 스펙트럼의 31가지 방향 가운데 28가지는 눈에 보이지 않는다는 뜻이다. 어떤 빛에 영공간 방향의 변화를 더해도, 세기가 어디서도 음수가 되지 않는 한 같은 색으로 보인다. 칸을 더 잘게 나눌수록 영공간은 더 커진다. 조건등색은 드문 예외가 아니라 흔한 일이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/17_metamerism_fig1.svg" alt="그림" loading="lazy">
+
+주황 선은 흰빛에 영공간 방향의 변화를 더한 빛이다. 네 칸의 세기가 크게 다르지만(최대 2.02 차이), 세 추상체의 반응은 흰빛과 똑같다[^s5].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 가우스 모형의 31칸 행렬에서 흰빛(모든 칸 1)과, 영공간 벡터를 더해 칸마다 최대 2.02까지 다른 스펙트럼이 세 반응이 같음(오차 $$10^{-9}$$ 이내), 530+620 혼합의 M·L 일치와 S 차이 0.007 (실험으로 확인됨) — [17_metamerism_verify.py](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_verify/)</div>
@@ -125,4 +129,5 @@ $$C$$의 계수(rank)가 3이면 영공간(null space)은 $$31 - 3 = 28$$차원�
 [^s2]: 에이전트 보충. 점묘법을 공간적 혼색과 조건등색으로 설명한 것은 해석이다. 슬라이드는 그림과 확대 부분만 보여 준다.
 [^s3]: 에이전트 보충. 행렬 $$C$$와 영공간으로 조건등색을 설명하는 것은 색채학의 표준 관점이며 슬라이드에는 없다.
 [^s4]: 에이전트 보충. 디스플레이, 조명 조건등색, 카메라 사례는 색채 공학의 표준 사례다.
+[^s5]: 에이전트 보충. 그림 1장은 원본에 없다. [17_metamerism_plot.py](/Hongs_Blog/studies/human-interface-media/code/17_metamerism_plot/)로 그렸고, 그림에 쓴 값(두 스펙트럼의 세 반응 차이 $$10^{-9}$$ 이내, 음수 칸 없음, 칸마다 차이 최대 2.02)을 같은 코드로 확인했다.
 {% endraw %}

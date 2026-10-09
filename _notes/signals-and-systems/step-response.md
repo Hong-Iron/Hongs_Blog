@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Unit Step Response", "계단 응답", "Step Response", "s[n]", "s(t)"]
 description: "스위치를 켜는 입력(단위 계단)을 넣었을 때의 출력이 계단 응답이다. 실험실에서는 바늘 같은 임펄스를 만들기 어렵지만 스위치를 켜는 것은 쉬워서, 계단 응답을 재고 거기서 임펄스 응답을 얻는다. 계단이 임펄스를 쌓은 것이므로 계단 응답도 임펄스 응답을 쌓은 것이고, 반대로 계단 응…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/lccde-system/"
 next_title: "미분방정식으로 표현한 LTI 시스템"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/step-response/"
 ---
 {% raw %}
@@ -52,6 +52,10 @@ $$\begin{aligned} s[n] &= \cdots + h[n-1] + h[n] \\ -\;s[n-1] &= \cdots + h[n-1]
 ## 예제
 
 $$h(t) = e^{-2t}u(t)$$이면 $$s(t) = \int_0^t e^{-2\tau}d\tau = \frac12(1 - e^{-2t})u(t)$$다. 이것을 미분하면 $$e^{-2t}$$로 $$h(t)$$가 다시 나온다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/22_step-response_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽의 색칠한 넓이($$0 \sim 0.5$$)가 오른쪽 점의 높이 $$s(0.5)$$이고, 그 점에서 $$s$$의 기울기가 $$h(0.5)$$다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 무작위 $$h[n]$$에서 $$u * h = \sum_{k\le n}h[k]$$와 $$s[n] - s[n-1] = h[n]$$, 연속 시간 예의 적분과 미분 확인 — [22_step-response_verify.py](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_verify/)</div>
@@ -89,4 +93,5 @@ $$h(t) = e^{-2t}u(t)$$이면 $$s(t) = \int_0^t e^{-2\tau}d\tau = \frac12(1 - e^{
 
 [^1]: 3-1학기/신호 및 시스템/1.수업자료/06.Week06_CH02_2_handout.pdf, p.19~20
 [^s1]: 에이전트 보충. 누산기 예, 연속 시간 예, 제어 공학 활용, 확인 문제는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [22_step-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^{0.5}h = s(0.5) = \frac12(1 - e^{-1})$$, $$s'(0.5) = h(0.5) = e^{-1}$$.
 {% endraw %}

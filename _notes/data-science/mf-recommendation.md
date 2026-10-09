@@ -19,7 +19,7 @@ next_url: "/studies/data-science/one-class-cf/"
 next_title: "단일 클래스 협업 필터링"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/mf-recommendation/"
 ---
 {% raw %}
@@ -56,6 +56,10 @@ permalink: "/studies/data-science/mf-recommendation/"
 - $$U$$는 $$RR^\top$$($$= U\Sigma^2U^\top$$)의 고유벡터들이다. $$RR^\top$$의 칸 $$\mathbf r_i \cdot \mathbf r_j$$는 두 사용자의 공동 구매 패턴, 곧 사용자-사용자 유사도다. 그래서 $$U$$는 사용자들의 구매 패턴을 담는 축이다.
 - $$V$$는 $$R^\top R$$($$= V\Sigma^2V^\top$$)의 고유벡터들이다. 아이템-아이템 유사도의 축이다[^4].
 - 사용자와 아이템이 상호작용을 바탕으로 숨은 공간에 잘 놓이기 때문에 추천에 통한다[^5].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/44_mf-recommendation_fig1.svg" alt="그림" loading="lazy">
+
+사용자 5명 × 아이템 4개 평점표(U1 = (5, 3, 0, 1), U2 = (4, 0, 0, 1), U3 = (1, 1, 0, 5), U4 = (1, 0, 0, 4), U5 = (0, 1, 5, 4), 0은 빈칸)를 PureSVD로 2차원에 놓았다. 아이템 1을 좋아한 U1, U2는 I1과 함께 위쪽에, 아이템 3·4를 좋아한 U3, U4, U5는 I3, I4와 함께 아래쪽에 놓인다. 사용자 점과 아이템 점의 내적이 예측 평점이다[^s2].
 
 추천 순서[^6]: ① $$R$$의 빈칸을 모두 0으로 채운다(특잇값 분해는 빈칸 없는 행렬에만 쓸 수 있다) ② 특잇값 분해한다(닫힌 해, 학습 과정 없음) ③ 위 $$d$$개만 남겨 $$\hat R$$을 다시 만든다 ④ $$\hat R$$에서 점수가 높은 아이템을 추천한다.
 
@@ -147,4 +151,5 @@ $$\min\sum_{(u,i) \in \mathcal O}\left(r_{ui} - \mu - b_u - b_i - \mathbf p_u^\t
 [^11]: 같은 자료, p.15
 [^12]: 같은 자료, p.16
 [^s1]: 에이전트 보충. 실험 수치, 넷플릭스 대회, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [44_mf-recommendation_plot.py](/Hongs_Blog/studies/data-science/code/44_mf-recommendation_plot/)로 그렸다. 평점표는 구현 코드의 예이고, 사용자 점 $$\mathbf p_u = U_2\Sigma_2^{1/2}$$의 행, 아이템 점 $$\mathbf q_i = V_2\Sigma_2^{1/2}$$의 행으로 놓았다. 내적이 2차원 재구성과 같음, 재구성 오차 56.428, 17.624, 3.382, U2의 재구성 (3.43, 1.28, −0.46, 1.09)가 구현 코드와 같음을 같은 코드로 확인했다.
 {% endraw %}

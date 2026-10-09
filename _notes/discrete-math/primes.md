@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Prime Numbers", "소수", "소인수분해", "prime factorization", "Fundamental Theorem of Arithmetic", "산술의 기본정리", "유클리드 보조정리", "Euclid's lemma", "에라토스테네스의 체", "Sieve of Eratosthenes", "소수 정리", "prime number theorem"]
 description: "소수는 1과 자기 자신으로만 나누어지는, 더 쪼갤 수 없는 수다. 1보다 큰 모든 정수는 소수의 곱으로 쓸 수 있고, 순서를 무시하면 그 방법은 딱 하나다. 레고 블록처럼 수의 설계도가 유일하다는 이 사실이 정수론 계산의 바탕이다. 하지만 곱하기는 쉬워도 곱을 거꾸로 쪼개는 소인수…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/modular-inverse-crt/"
 next_title: "모듈러 역원과 중국인의 나머지 정리"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/discrete-math/primes/"
 ---
 {% raw %}
@@ -81,6 +81,10 @@ $$360$$을 쪼갠다. $$360 = 2 \times 180 = 2 \times 2 \times 90 = \cdots = 2^3
 
 **소수의 밀도.** $$n$$ 이하 소수의 개수 $$\pi(n)$$은 대략 $$\frac{n}{\ln n}$$이다(소수 정리)[^s1]. $$n = 10^6$$이면 실제 78,498개, 어림 72,382개다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/28_primes_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽에서 두 선은 붙어 보이지만 어림이 실제보다 조금 작다. 오른쪽의 비는 $$n = 10^6$$에서도 약 1.08이라, 1에 아주 천천히 다가간다[^s2].
+
 ## 예제
 
 유클리드의 증명에서 만든 $$N = p_1 \cdots p_k + 1$$이 늘 소수일까?
@@ -135,4 +139,5 @@ $$360$$을 쪼갠다. $$360 = 2 \times 180 = 2 \times 2 \times 90 = \cdots = 2^3
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(소수, 산술의 기본정리). Rosen, *Discrete Mathematics and Its Applications* 7판, 4장(소수의 무한성, 에라토스테네스의 체, 소수 정리 소개).
 [^s1]: 에이전트 보충. 체의 $$O(n\log\log n)$$과 소수 정리는 증명하지 않고 인용했다(소수 정리는 해석적 정수론의 결과). 해시 칸 예와 $$\pi(10^6)$$은 28_primes_verify.py에서 계산했다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [28_primes_plot.py](/Hongs_Blog/studies/discrete-math/code/28_primes_plot/)로 그렸고, $$\pi(10^6) = 78{,}498$$, $$10^6/\ln 10^6$$의 정수 부분 72,382, 비 약 1.08을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Tail Bounds", "확률 부등식", "꼬리 확률", "tail probability", "마르코프 부등식", "Markov's inequality", "체비쇼프 부등식", "Chebyshev's inequality", "체르노프 한계", "Chernoff bound", "집중 부등식", "concentration inequality"]
 description: "분포를 정확히 몰라도 평균이나 분산만 알면 \"평균에서 크게 벗어날 확률\"이 얼마 이하인지 보장할 수 있다. 평균만 쓰는 마르코프, 분산까지 쓰는 체비쇼프, 독립인 것들의 합에 쓰는 체르노프 순으로 가정이 늘고 한계가 급격히 좁아진다. 무작위 알고리즘이 \"높은 확률로\" 잘 동작한다는…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/lln/"
 next_title: "큰 수의 법칙"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/tail-bounds/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/probability-statistics/tail-bounds/"
 | 정확한 값 | 이항분포 전체 | 약 $$2.8 \times 10^{-7}$$ |
 
 정보를 더 쓸수록 한계가 좁아지지만, 가장 좋은 체르노프도 참값보다 5만 배쯤 크다. 표의 세 줄이 아래 정리의 세 부등식이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/20_tail-bounds_fig1.svg" alt="그림" loading="lazy">
+
+세로축은 로그 눈금이다. $$a$$가 커질수록 참값(회색)은 빠르게 떨어진다. 마르코프 한계는 거의 그대로이고, 체비쇼프 한계도 천천히 준다. 체르노프 한계만 참값처럼 휘어 내려가지만, 그래도 간격이 크게 남는다[^s1].
 
 ## 정의
 
@@ -182,4 +186,5 @@ $$\mathbb{E}[e^{tX}] = \mathbb{E}\left[\prod_i e^{tX_i}\right]$$를 $$\prod_i\ma
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.1절 "Inequalities"(마르코프, 체비쇼프, 체르노프 부등식).
 [^2]: Mitzenmacher, Upfal, *Probability and Computing*, 3장(마르코프·체비쇼프 부등식), 4장(체르노프 한계의 유도와 곱셈형 꼴, 무작위 알고리즘에의 응용).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [20_tail-bounds_plot.py](/Hongs_Blog/studies/probability-statistics/code/20_tail-bounds_plot/)로 그렸고, 그림에 쓴 값($$a = 75$$에서 0.667·0.04·0.0155·$$2.8 \times 10^{-7}$$, 모든 $$a$$에서 참값 ≤ 체르노프·체비쇼프)을 같은 코드로 확인했다.
 {% endraw %}

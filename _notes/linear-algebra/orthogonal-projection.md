@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/least-squares/"
 next_title: "최소제곱법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/orthogonal-projection/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ $$\mathbf{b} = (1, 1, 1)$$을 $$\mathbf{a} = (1, 2, 2)$$ 방향의 직선에 사
 $$\mathbf{a}\cdot(\mathbf{b} - \hat{x}\mathbf{a}) = 0 \implies \hat{x} = \frac{\mathbf{a}\cdot\mathbf{b}}{\mathbf{a}\cdot\mathbf{a}} = \frac{5}{9}.$$
 
 사영은 $$\mathbf{p} = \frac59(1, 2, 2)$$, 오차는 $$\mathbf{e} = (\frac49, -\frac19, -\frac19)$$이다. 확인하면 $$\mathbf{a}\cdot\mathbf{e} = \frac49 - \frac29 - \frac29 = 0$$이다. 직선이 아래 정리의 부분공간 $$C(A)$$(열이 $$\mathbf{a}$$ 하나), $$\mathbf{p}$$가 사영이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/16_orthogonal-projection_fig1.svg" alt="그림" loading="lazy">
+
+$$\mathbf{b}$$에서 직선에 수직으로 내린 발이 $$\mathbf{p}$$이고, 그 수선이 오차 $$\mathbf{e}$$다. 직선 위의 다른 점은 모두 $$\mathbf{b}$$에서 이보다 멀다[^s1].
 
 ## 정의
 
@@ -121,6 +125,10 @@ $$\mathbf{x}^\top A^\top = (A\mathbf{x})^\top$$이라 $$(A\mathbf{x})^\top(A\mat
 |---|---|---|
 | $$A$$의 열이 독립 | $$A^\top A$$가 비가역이라 공식을 쓸 수 없다(사영 자체는 있다) | 열이 $$(1, 1)$$, $$(2, 2)$$면 $$A^\top A = \begin{pmatrix}2 & 4\\ 4 & 8\end{pmatrix}$$, 행렬식 0 |
 | $$P^\top = P$$(수직으로 내림) | $$P^2 = P$$여도 가장 가까운 점이 아니다 | $$P = \begin{pmatrix}1 & 1\\ 0 & 0\end{pmatrix}$$은 $$P^2 = P$$인 비스듬한 사영. $$(0, 1) \mapsto (1, 0)$$이지만 $$x$$축에서 가장 가까운 점은 $$(0, 0)$$ |
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/16_orthogonal-projection_fig2.svg" alt="그림" loading="lazy">
+
+$$(0, 1)$$을 $$x$$축으로 내리는 두 방법이다. 비스듬한 사영은 $$(1, 0)$$으로 보내 거리가 $$\sqrt2$$이고, 수직으로 내린 $$(0, 0)$$은 거리가 1이다[^s1].
 
 **역.** $$P^2 = P$$이고 $$P^\top = P$$인 행렬은 모두 자기 열공간으로의 직교 사영이다[^1].
 
@@ -218,4 +226,5 @@ $$\mathbf{b} = (6, 0, 0)$$을 $$(1, 1, 1)$$과 $$(0, 1, 2)$$가 만드는 평면
 [^n4]: 같은 자료, p.5
 [^n5]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.13
 [^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 16_orthogonal-projection_verify.py로 확인했다.
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [16_orthogonal-projection_plot.py](/Hongs_Blog/studies/linear-algebra/code/16_orthogonal-projection_plot/)로 그렸고, $$\hat{x} = \frac59$$, $$\mathbf{e} = (\frac49, -\frac19, -\frac19)$$와 $$\mathbf{a}\cdot\mathbf{e} = 0$$, 비스듬한 사영의 $$P^2 = P$$와 거리 $$\sqrt2$$를 같은 코드로 확인했다.
 {% endraw %}

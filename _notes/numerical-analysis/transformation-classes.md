@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/homogeneous-coordinates/"
 next_title: "동차 좌표"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/transformation-classes/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/numerical-analysis/transformation-classes/"
 | 원근 | 먼 쪽이 좁은 사다리꼴 | 곧은 선 | 평행, 비 |
 
 원근 그림에서 $$x = \pm1$$인 두 평행선은 거리 $$z = 1$$에서 폭 2, $$z = 3$$에서 폭 $$\frac23$$으로 보인다. 평행선이 좁아진다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/03_transformation-classes_fig1.svg" alt="그림" loading="lazy">
+
+점선이 원래 정사각형이다. 오른쪽으로 갈수록 모양이 더 많이 바뀌고, 그대로 남는 성질은 줄어든다. 전단에서는 직각이 34°로 눕고, 원근에서는 평행하던 두 변이 먼 쪽으로 갈수록 좁아진다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 강체·닮음·전단·아핀 변환에서 무작위 점 300세트로 길이·각·중점·평행 판정, 원근의 폭, 카드 C2 — [03_transformation-classes_verify.py](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_verify/)</div>
@@ -125,4 +129,5 @@ $$k$$는 확대 배율이다. 닮음 변환에서 길이는 모두 $$k$$배가 �
 [^12]: 같은 자료, p.20
 [^13]: 같은 자료, p.17~19
 [^s1]: 에이전트 보충. 원근 그림의 폭 계산, 무게중심과 원근 보정 텍스처 매핑, 흔한 실수의 각도, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [03_transformation-classes_plot.py](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 회전·평행이동 뒤 변의 길이 1, 고르게 2배 뒤 직각, 전단 $$k = 1.5$$에서 각 33.7°, 원근의 폭 2와 $$\frac23$$.
 {% endraw %}

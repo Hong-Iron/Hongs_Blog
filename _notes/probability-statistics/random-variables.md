@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Random Variable", "확률변수", "이산 확률변수", "discrete random variable", "확률질량함수", "PMF", "probability mass function", "누적분포함수", "CDF", "cumulative distribution function", "분포", "distribution", "지시 확률변수", "indicator random variable", "확률변수의 독립"]
 description: "확률변수는 실험 결과마다 수를 하나 붙이는 규칙이다. \"동전 열 번 중 앞면 수\", \"요청 처리 시간\"처럼 결과 자체보다 거기서 뽑은 수에 관심이 있을 때 쓴다. 수를 붙이고 나면 \"이 값이 나올 확률\" 표(분포)만 알면 되고, 합·평균·최댓값 같은 계산을 할 수 있다. 이름과 달…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/expectation/"
 next_title: "기댓값과 선형성"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/random-variables/"
 ---
 {% raw %}
@@ -56,6 +56,10 @@ permalink: "/studies/probability-statistics/random-variables/"
 $$\{X = x\}$$는 "$$X$$가 $$x$$를 주는 결과들의 집합" $$\{\omega : X(\omega) = x\}$$를 줄여 쓴 사건이다.
 
 **CDF의 성질.** 감소하지 않고, 오른쪽에서 연속이며, $$x \to -\infty$$에서 0, $$x \to \infty$$에서 1이다. 이산 확률변수의 CDF는 계단 모양이고 점프 크기가 그 점의 PMF다. 구간 확률은 $$P(a < X \le b) = F(b) - F(a)$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/07_random-variables_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 두 주사위 합 $$S$$의 PMF, 오른쪽은 CDF다. CDF는 값이 있는 곳에서만 계단처럼 뛰고, 뛰는 높이가 왼쪽 막대의 높이와 같다. 합 7에서는 $$\frac{6}{36}$$만큼 뛴다[^s1].
 
 **지시 확률변수.** 사건 $$A$$가 일어나면 1, 아니면 0인 $$I_A$$다. $$P(I_A = 1) = P(A)$$이고, "개수"를 지시 확률변수의 합으로 쪼개는 데 쓴다([기댓값과 선형성](/Hongs_Blog/studies/probability-statistics/expectation/)).
 
@@ -113,4 +117,5 @@ $$\{X = x\}$$는 "$$X$$가 $$x$$를 주는 결과들의 집합" $$\{\omega : X(\
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.1절 "Random variables", 3.2절 "Distributions and probability mass functions", 3.6절 "Cumulative distribution functions", 3.7절 "Functions of random variables", 3.8절 "Independence of rvs".
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [07_random-variables_plot.py](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_plot/)로 그렸고, 그림에 쓴 값(PMF의 합 1, $$P(S = 7) = \frac{6}{36}$$, 합 7에서 CDF가 뛰는 높이 $$= P(S = 7)$$)을 같은 코드로 확인했다.
 {% endraw %}

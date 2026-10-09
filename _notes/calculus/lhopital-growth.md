@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["L'Hôpital's Rule", "로피탈 정리", "부정형", "indeterminate form", "증가 속도", "rate of growth", "함수의 증가 속도 비교", "expm1"]
 description: "분자와 분모가 함께 0으로 가거나 함께 한없이 커지는 극한은 모양만 보고는 값을 알 수 없다. 로피탈 정리는 이때 분자와 분모를 각각 미분한 비의 극한을 보면 된다고 알려 준다. 이것으로 \"로그는 어떤 거듭제곱보다도 느리고, 지수는 어떤 거듭제곱보다도 빠르다\"는 알고리즘 분석의 기…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/linear-approx-newton/"
 next_title: "선형 근사와 뉴턴 방법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/lhopital-growth/"
 ---
 {% raw %}
@@ -83,6 +83,10 @@ $$0 \cdot \infty$$나 $$1^\infty$$ 꼴도 바꿔서 쓴다. $$x \ln x = \frac{\l
 ## 활용
 
 - **점근 표기의 근거.** 알고리즘의 비용을 비교할 때 "$$n \lg n$$은 결국 $$n^2$$보다 작다", "다항 시간은 결국 지수 시간보다 빠르다"는 모두 이 극한이다. 다만 "결국"이 늦게 올 수 있다. $$\frac{\ln x}{x^{0.1}}$$은 $$x = 10^{10}$$에서 아직 약 2.3이고, $$x = 10^{100}$$이 되어야 $$2.3 \times 10^{-8}$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/09_lhopital-growth_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽 곡선은 $$x = e^{10} \approx 22{,}000$$까지 오히려 오르다가, $$10^{40}$$ 근처가 되어서야 바닥에 붙는다. 오른쪽 $$x^{10}/1.1^x$$도 $$x \approx 105$$에서 $$10^{16}$$ 가까이 올랐다가, $$x \approx 685$$를 지나야 1 아래로 내려간다(세로축은 로그 눈금)[^s1].
 - **수치 계산.** $$\frac{e^x - 1}{x}$$를 아주 작은 $$x$$에서 그대로 계산하면 $$e^x$$와 1이 거의 같아 유효숫자가 사라진다($$x = 10^{-12}$$에서 오차가 $$10^{-5}$$ 정도). 극한값 1 근처의 이런 식은 `math.expm1(x)`($$e^x - 1$$을 정확히 계산)과 `math.log1p(x)`($$\ln(1 + x)$$)를 쓴다.
 
 ## 연결
@@ -128,4 +132,5 @@ $$0 \cdot \infty$$나 $$1^\infty$$ 꼴도 바꿔서 쓴다. $$x \ln x = \frac{\l
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.8절 "L'Hôpital's Rule"(부정형, 증가 속도 비교)
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [09_lhopital-growth_plot.py](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_plot/)로 그렸고, $$\frac{\ln x}{x^{0.1}}$$의 값(2.3과 $$2.3 \times 10^{-8}$$)과 꼭대기 위치 $$x = e^{10}$$, $$\frac{x^{10}}{1.1^x}$$의 꼭대기 $$x = \frac{10}{\ln 1.1} \approx 105$$와 1 아래로 내려가는 $$x \approx 685$$를 같은 코드로 확인했다.
 {% endraw %}

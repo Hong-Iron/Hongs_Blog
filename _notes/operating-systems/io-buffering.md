@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["I/O Buffering", "단일 버퍼", "Single Buffer", "이중 버퍼", "Double Buffer", "순환 버퍼", "Circular Buffer", "블록 지향", "Block-Oriented", "스트림 지향", "Stream-Oriented", "미리 읽기", "Read Ahead", "버퍼 캐시", "Buffer Cache"]
 description: "버퍼링은 장치와 프로세스 사이에 운영체제의 메모리 칸(버퍼)을 두고, 입력은 필요하기 전에 미리 받아 두고 출력은 요청 뒤에 천천히 내보내는 방법이다. 식당 주방의 배식대처럼, 요리사와 손님이 서로의 속도에 묶이지 않게 해 준다. 버퍼가 둘이면 한쪽을 채우는 동안 다른 쪽을 비울 …"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/disk-scheduling/"
 next_title: "디스크 스케줄링"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/io-buffering/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/operating-systems/io-buffering/"
 | 이중 버퍼 | $$\max(C, T)$$ | 10 ms |
 
 버퍼가 없으면 읽는 동안 처리를 못 하고, 처리하는 동안 읽지 못한다. 단일 버퍼는 지금 블록을 처리하는 동안 다음 블록을 미리 읽어 둔다. 이중 버퍼는 옮기는 시간 $$M$$까지 숨긴다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/52_io-buffering_fig1.svg" alt="그림" loading="lazy">
+
+막대 안의 숫자는 블록 번호다. 버퍼가 없으면 계산하는 동안 장치 줄이 빈다. 단일 버퍼에서는 계산이 다음 읽기와 겹치지만, 옮기는 1 ms(노란 막대) 동안 장치가 다음 읽기를 시작하지 못한다. 이중 버퍼에서는 장치가 쉬지 않고 읽어 블록이 10 ms마다 끝난다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 세 식을 블록 1,000개 시뮬레이션의 평균과 비교, 위 표의 14·11·10 ms — [52_io-buffering_verify.py](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_verify/)</div>
@@ -117,4 +121,5 @@ permalink: "/studies/operating-systems/io-buffering/"
 [^10]: 같은 자료, 슬라이드 75~76
 [^11]: 같은 자료, 슬라이드 77과 슬라이드 75의 발표자 노트
 [^s1]: 에이전트 보충. 블록당 시간 식 $$T + C$$, $$\max(C, T) + M$$, $$\max(C, T)$$는 Stallings 6판 11.4절을 따랐다(슬라이드는 그림만 있다). 수치 예, 그래픽 더블 버퍼링, 확인 문제는 슬라이드에 없다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [52_io-buffering_plot.py](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_plot/)로 그렸고, 세 방식에서 블록이 끝나는 간격 14, 11, 10 ms를 같은 코드로 확인했다.
 {% endraw %}

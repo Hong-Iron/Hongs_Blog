@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Discrete-Time Complex Exponential Signal", "이산 시간 정현파", "Discrete-Time Sinusoid", "이산 시간 주기성", "Periodicity of Discrete-Time Complex Exponentials", "기본 주파수", "Fundamental Frequency", "고조파 집합", "Harmonically Related Exponentials"]
 description: "이산 시간 복소 지수 e^{j\\omega0 n}은 원 위를 도는 점을 정수 시각에만 찍은 것이다. 한 번에 \\omega0만큼씩 건너뛰는데, \\omega0와 \\omega0 + 2\\pi는 한 바퀴 더 돌았을 뿐 같은 자리에 찍히므로 구별되지 않는다. 그래서 주파수는 -\\pi부터 \\pi…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/unit-impulse-step/"
 next_title: "단위 임펄스와 단위 계단"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/dt-complex-exponential/"
 ---
 {% raw %}
@@ -123,6 +123,10 @@ $$n$$이 정수라는 것. 연속 시간에서는 $$t$$가 모든 실수라서 $
 | $$15\pi/8$$ | $$15/16$$ | 16, 15 |
 
 $$15\pi/8 = 2\pi - \pi/8$$이라 $$\cos(15\pi n/8) = \cos(\pi n/8)$$이다. 표에서 아래로 갈수록 주파수 숫자는 크지만 그림은 다시 느려진다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/09_dt-complex-exponential_fig1.svg" alt="그림" loading="lazy">
+
+$$\omega_0$$를 $$\pi/8$$에서 $$\pi$$까지 키우면 진동이 빨라지고, $$15\pi/8$$에서는 $$\pi/8$$과 똑같은 점이 찍힌다. 맨 아래의 회색 곡선은 연속 시간 $$\cos(15\pi t/8)$$이고, 정수 $$n$$에서만 점선 $$\cos(\pi t/8)$$과 만난다[^s2].
 
 **그림 1.25.**[^7] $$\cos(2\pi n/12)$$는 $$N = 12$$, $$\cos(8\pi n/31)$$은 $$\frac{4}{31}$$이므로 $$N = 31$$, $$m = 4$$다. $$\cos(n/6)$$은 $$\frac{\omega_0}{2\pi} = \frac{1}{12\pi}$$가 무리수라 주기가 없다. 모양은 코사인처럼 보이지만 정수 칸이 정확히 출발점에 다시 오지 않는다.
 
@@ -228,4 +232,5 @@ $$15\pi/8 = 2\pi - \pi/8$$이라 $$\cos(15\pi n/8) = \cos(\pi n/8)$$이다. 표�
 [^11]: 같은 자료, p.26~27 (예제 1.6)
 [^12]: 같은 자료, p.24~25
 [^s1]: 에이전트 보충. 초침 사진 비유, 예제 1.6에서 크기의 주기가 24라는 설명, 에일리어싱 활용, 스스로 설명해 보기, 확인 문제 C1·C2·C4는 원본에 없다. 값은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [09_dt-complex-exponential_plot.py](/Hongs_Blog/studies/signals-and-systems/code/09_dt-complex-exponential_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\cos(15\pi n/8) = \cos(\pi n/8)$$, $$\cos 7\pi n = (-1)^n$$, 네 신호의 기본 주기 16, 4, 2, 16.
 {% endraw %}

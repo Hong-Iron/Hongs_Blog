@@ -589,3 +589,13 @@ main {
   font-size: 1.15rem;
   color: var(--ink-muted);
 }
+
+/* SVG figures exported from the vault's 3.개념집 (transparent, grey ink) */
+.article-body img.note-fig {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  margin: 1.4rem auto;
+  border-radius: 0;
+  box-shadow: none;
+}

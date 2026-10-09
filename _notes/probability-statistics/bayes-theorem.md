@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Bayes' Theorem", "Bayes' rule", "베이즈 정리", "베이즈 규칙", "사전확률", "prior", "사후확률", "posterior", "가능도", "likelihood", "기저율", "base rate", "기저율 무시", "base rate fallacy", "오즈", "odds", "가능도비", "likelihood ratio", "나이브 베이즈", "naive Bayes"]
 description: "결과(검사 양성, 스팸 단어)를 보고 원인(병, 스팸)이 있을 확률을 거꾸로 계산하는 규칙이다. 원래 그 원인이 얼마나 흔한지(기저율)에, 이 증거가 그 원인에서 얼마나 더 잘 나오는지를 곱해 믿음을 갱신한다. 새 증거가 들어올 때마다 같은 계산을 되풀이하면 된다. 가장 흔한 실수…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/random-variables/"
 next_title: "확률변수와 분포"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/bayes-theorem/"
 ---
 {% raw %}
@@ -44,6 +44,10 @@ permalink: "/studies/probability-statistics/bayes-theorem/"
 | 합 | **590** | 9,410 | 10,000 |
 
 양성 590명 중 병이 있는 사람은 95명뿐이라 $$\frac{95}{590} \approx 16\%$$다. 병 없는 사람이 99배 많아서, 5%의 위양성이 95명의 진양성보다 많아졌다. 표의 첫 열 비율 계산이 아래 정리의 식이다. "병 있음"이 원인 $$H$$, "양성"이 증거 $$E$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/06_bayes-theorem_fig1.svg" alt="그림" loading="lazy">
+
+가로축은 유병률, 세로축은 양성일 때 실제로 병이 있을 확률이다. 같은 검사라도 유병률이 1%면 0.161, 10%면 0.679로 크게 바뀐다. 양성이 두 번 나오면(주황) 곡선이 왼쪽으로 크게 옮겨 가서, 유병률 1%에서도 0.785가 된다[^s2].
 
 ## 정의
 
@@ -195,4 +199,5 @@ $$P(H \mid E)$$와 $$P(H^c \mid E)$$의 분모가 똑같이 $$P(E)$$라 비를 �
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.3절 "Bayes' rule and the law of total probability"(정리, 오즈 꼴, 검사 예제), 2.6절 "Coherency of Bayes' rule"(증거를 한꺼번에 또는 차례로 반영해도 같다), 2.8절 "Pitfalls and paradoxes"(검사 오류 혼동).
 [^s1]: 에이전트 보충. 나이브 베이즈 스팸 필터는 Paul Graham의 글 "A Plan for Spam"(2002)으로 널리 알려졌다. 조건부 독립 가정이 틀려도 분류 성능이 좋은 이유는 이 과정의 범위 밖이다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [06_bayes-theorem_plot.py](/Hongs_Blog/studies/probability-statistics/code/06_bayes-theorem_plot/)로 그렸고, 그림에 쓴 값(유병률 1%에서 0.161과 0.785, 10%에서 0.679)을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Monte Carlo Method", "몬테카를로 방법", "몬테카를로 시뮬레이션", "Monte Carlo simulation", "몬테카를로 적분", "Monte Carlo integration", "중요도 샘플링", "importance sampling", "드문 사건", "rare event"]
 description: "정확히 계산하기 어려운 값을, 무작위로 뽑은 표본으로 실험해 평균을 내서 어림하는 방법이다. 정사각형에 모래를 뿌려 원 안에 떨어진 비율로 원의 넓이를 재는 식이다. 오차는 표본 수의 제곱근에 반비례하고 차원 수와 상관없어서, 변수가 수십 개인 적분이나 복잡한 시스템의 확률처럼 다…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/descriptive-statistics/"
 next_title: "기술통계"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/monte-carlo/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/probability-statistics/monte-carlo/"
 | 오차의 크기(제곱평균) | 약 0.05 | 약 0.026 | 약 0.013 |
 
 표본을 4배로 늘릴 때마다 오차가 절반이 된다. 점 하나가 "사분원 안이면 4, 밖이면 0"인 확률변수 $$Y$$이고, 비율에 4를 곱한 값이 아래 정의의 표본평균이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/27_monte-carlo_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 점 2,000개를 뿌린 한 번의 실험이다. 오른쪽은 표본 수마다 실험을 400번 되풀이해 오차의 제곱평균을 잰 것이다. 로그 눈금에서 점들이 직선 $$\frac{1.64}{\sqrt n}$$ 위에 놓인다. 1.64는 $$Y$$의 표준편차 $$\sqrt{\pi(4 - \pi)}$$다[^s1].
 
 ## 정의
 
@@ -112,4 +116,5 @@ $$\hat\theta_n = \frac1n\sum_{i=1}^{n}Y_i$$
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.2절(큰 수의 법칙과 몬테카를로), 10.3절(중심극한정리와 오차의 크기).
 [^2]: Owen, *Monte Carlo Theory, Methods and Examples*(온라인 교재), 중요도 샘플링 장. 수치는 27_monte-carlo_verify.py로 확인했다.
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [27_monte-carlo_plot.py](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_plot/)로 그렸고, 그림에 쓴 값($$\frac{1.64}{\sqrt n}$$이 1,000·4,000·16,000에서 0.052·0.026·0.013, 모의실험과 12% 안)을 같은 코드로 확인했다.
 {% endraw %}

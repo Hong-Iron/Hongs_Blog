@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Spectral Theorem", "스펙트럼 정리", "대칭행렬", "symmetric matrix", "직교 대각화", "orthogonal diagonalization", "스펙트럼 분해", "spectral decomposition", "주축 정리", "principal axis theorem", "그래프 라플라시안", "graph Laplacian"]
 description: "대각선을 기준으로 접으면 겹치는 행렬(대칭행렬)은 가장 다루기 좋은 행렬이다. 고윳값이 모두 실수이고, 서로 수직인 고유벡터들로 공간 전체를 덮을 수 있다. 그래서 대칭행렬이 하는 일은 늘 \"서로 수직인 몇 개의 축을 따라 늘이거나 줄이기\"다. 데이터의 공분산 행렬, 곡면의 휘어짐…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/positive-definite/"
 next_title: "양의 정부호 행렬과 이차형식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/spectral-theorem/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ $$S = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$는 대칭이다. 고윳값은 
 $$S = 3\,\mathbf{q}_1\mathbf{q}_1^\top + 1\,\mathbf{q}_2\mathbf{q}_2^\top = \frac32\begin{pmatrix}1 & 1\\ 1 & 1\end{pmatrix} + \frac12\begin{pmatrix}1 & -1\\ -1 & 1\end{pmatrix}.$$
 
 단위원을 $$S$$로 보내면 $$(1, 1)$$ 방향으로 3배, $$(1, -1)$$ 방향으로 1배 늘어난 타원이 된다. 두 축이 수직인 것이 대칭의 선물이다. 반면 대칭이 아닌 $$\begin{pmatrix}1 & 1\\ 0 & 2\end{pmatrix}$$의 고유벡터 $$(1, 0)$$과 $$(1, 1)$$은 45°로 기울어져 있다. $$\mathbf{q}$$들을 열로 세운 것이 아래 정리의 $$Q$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/22_spectral-theorem_fig1.svg" alt="그림" loading="lazy">
+
+점선 단위원이 파란 타원이 된다. 왼쪽(대칭)은 두 고유벡터가 수직이고 타원의 긴 축·짧은 축과 정확히 겹친다. 오른쪽(대칭 아님)은 두 고유벡터가 45°로 벌어져 있고, 타원의 축과도 겹치지 않는다[^s2].
 
 ## 정의
 
@@ -194,4 +198,5 @@ $$(S\mathbf{x}_1)^\top = \mathbf{x}_1^\top S^\top$$이고, 여기서 $$S^\top = 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.4절 "Symmetric Matrices"(실수 고윳값, 직교 고유벡터, $$S = Q\Lambda Q^\top$$, 슈어 분해로 한 증명, 스펙트럼 분해).
 [^s1]: 에이전트 보충. 스펙트럼 군집화는 von Luxburg, "A tutorial on spectral clustering"(*Statistics and Computing*, 2007)에 정리되어 있다. 라플라시안의 영공간 차원과 연결 성분 수의 관계는 22_spectral-theorem_verify.py에서 무작위 그래프로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [22_spectral-theorem_plot.py](/Hongs_Blog/studies/linear-algebra/code/22_spectral-theorem_plot/)로 그렸고, $$S$$의 고윳값 3, 1과 고유벡터의 수직, 타원의 가장 긴 반지름이 $$(1, 1)$$ 방향으로 3인 것, 대칭이 아닌 행렬의 타원 긴 축이 두 고유벡터와 다른 것을 같은 코드로 확인했다.
 {% endraw %}

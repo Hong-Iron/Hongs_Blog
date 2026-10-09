@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Stability", "Stable System", "안정 시스템", "불안정 시스템", "Unstable System", "BIBO 안정", "Bounded-Input Bounded-Output", "유계 입력 유계 출력"]
 description: "안정 시스템은 작게 건드리면 작게 반응한다. 크기가 한계 안에 있는 입력을 넣으면 출력도 어떤 한계 안에 머문다(유계 입력 유계 출력, BIBO). 매달린 진자는 살짝 밀면 조금 흔들리다 돌아오니 안정적이고, 거꾸로 세운 진자는 살짝만 밀어도 넘어지니 불안정하다. 안정성은 \"어떤\"…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/time-invariance/"
 next_title: "시불변성"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/stability/"
 ---
 {% raw %}
@@ -60,12 +60,20 @@ $$\text{불안정} \iff \text{어떤 유계 입력 } x\text{에 대해 } y\text{
 - $$y[n] = \sum_{k=-\infty}^{n}u[k] = (n+1)u[n]$$이므로 $$y[0] = 1, y[1] = 2, y[2] = 3, \dots$$
 - 끝없이 커지므로 불안정이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 이 반례이고, 오른쪽은 아래 오해에서 다루는 $$(-1)^n u[n]$$ 입력이다. 둘 다 크기 1 이하인 유계 입력인데, 출력은 한쪽만 끝없이 커진다[^s2].
+
 **예제 1.13**[^3]
 
 - $$S_1$$: $$y(t) = tx(t)$$. 유계인 상수 입력 $$x(t) = 1$$을 넣으면 $$y(t) = t$$이고, $$\vert y(t)\vert $$는 어느 상수든 언젠가 넘는다. 불안정.
 - $$S_2$$: $$y(t) = e^{x(t)}$$. 임의의 유계 입력 $$-B < x(t) < B$$를 넣으면 $$e^{-B} < y(t) < e^{B}$$다. 출력이 $$e^B$$로 묶이므로 안정.
 
 **1계 미분방정식** $$\dfrac{dy}{dt} + ay = bx$$: 입력이 0일 때의 출력은 $$Ce^{-at}$$다. $$a > 0$$이면 줄어들고, $$a < 0$$이면 시간이 지날수록 무한대로 간다. 그래서 $$a > 0$$이면 안정, $$a < 0$$이면 불안정이다[^2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig2.svg" alt="그림" loading="lazy">
+
+$$b = 1$$이고 상수 입력 1을 넣은 경우다. $$a = 1$$이면 $$b/a = 1$$에 머물고, $$a = -1$$이면 끝없이 커진다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 누산기의 계단 응답 $$n+1$$, 이동 평균의 출력 한계, $$tx(t)$$의 발산, $$e^{x}$$의 범위, 1계 미분방정식에 상수 입력을 넣었을 때 $$a > 0$$이면 $$b/a$$로 수렴하고 $$a < 0$$이면 발산함을 수치로 확인 — [15_stability_verify.py](/Hongs_Blog/studies/signals-and-systems/code/15_stability_verify/)</div>
@@ -123,4 +131,5 @@ $$\text{불안정} \iff \text{어떤 유계 입력 } x\text{에 대해 } y\text{
 [^2]: 같은 자료, p.13
 [^3]: 같은 자료, p.14 (예제 1.13)
 [^s1]: 에이전트 보충. 하울링 예, LTI 안정 판정법 예고, 오해 항목의 $$(-1)^n u[n]$$ 예, 확인 문제 C1·C2는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [15_stability_plot.py](/Hongs_Blog/studies/signals-and-systems/code/15_stability_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 누산기 출력 $$n + 1$$과 1, 0, 1, 0, 미분방정식의 닫힌 꼴 $$(1 - e^{-at})/a$$가 오일러 방법과 같음.
 {% endraw %}

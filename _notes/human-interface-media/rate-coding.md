@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Rate Coding", "Representation of Strength", "자극 세기의 표현", "발화율", "firing rate", "불응기", "refractory period", "전부 아니면 전무", "all-or-none", "자발 발화"]
 description: "공연장의 박수와 같다. 더 열광할수록 박수 한 번의 소리가 커지는 게 아니라 박수가 더 빨라진다. 뉴런도 스파이크 하나의 크기는 늘 같고, 자극이 셀수록 스파이크를 더 자주 낸다. 다만 한 번 발화하면 잠깐 쉬어야 해서(불응기) 빨라지는 데 한계가 있고, 아주 센 자극끼리는 구별하…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/excitatory-inhibitory/"
 next_title: "흥분성과 억제성 시냅스"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/rate-coding/"
 ---
 {% raw %}
@@ -78,6 +78,10 @@ $$
 
 
 $$s$$가 커지면 $$r$$도 커진다. 하지만 $$\theta/s \to 0$$이므로 $$r$$은 $$1/t_{\text{ref}}$$에 다가갈 뿐 넘지 못한다. $$t_{\text{ref}} = 1$$ ms, $$\theta = 1$$일 때 $$s = 0.25, 0.5, 1, 2, 4$$이면 $$r = 200, 333, 500, 667, 800$$회/초다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/05_rate-coding_fig1.svg" alt="그림" loading="lazy">
+
+곡선은 세기가 작을 때 가파르게 오르다가 점점 눕는다. 세기를 10배, 100배로 키워도 점선 1,000회/초 위로는 못 올라간다[^s7].
 
 </details>
 
@@ -140,4 +144,5 @@ $$s$$가 커지면 $$r$$도 커진다. 하지만 $$\theta/s \to 0$$이므로 $$r
 [^s4]: 에이전트 보충. 적분-발화 모형과 그 식은 원본에 없다. 슬라이드의 불응기와 최대 발화율이 어떻게 이어지는지 보이려는 설명용 모형이다. 실제 뉴런의 막전위는 새어 나가기도 하므로(누설) 이 모형보다 복잡하다.
 [^s5]: 에이전트 보충. 펄스 주파수 변조와의 대응, 인공 신경망 활성값을 발화율로 읽는 해석, 스파이킹 신경망은 원본 밖의 연결이다.
 [^s6]: 에이전트 보충. 상한 $$1/t_{\text{ref}}$$는 "불응기마다 많아야 한 번 발화한다"에서 나온 계산이다. 슬라이드의 500~800회가 이 상한보다 낮다는 비교는 원본에 없다.
+[^s7]: 에이전트 보충. 그림 1장은 원본에 없다. [05_rate-coding_plot.py](/Hongs_Blog/studies/human-interface-media/code/05_rate-coding_plot/)로 그렸고, 그림에 쓴 값($$s = 0.25, 0.5, 1, 2, 4$$에서 200, 333, 500, 667, 800회/초, 세기 100에서도 상한 1,000회/초 미만)을 같은 코드로 확인했다.
 {% endraw %}

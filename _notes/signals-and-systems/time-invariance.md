@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Time Invariance", "Time-Invariant System", "시불변 시스템", "시변 시스템", "Time-Varying System", "시간 불변"]
 description: "시불변 시스템은 오늘 실험하든 내일 실험하든 결과가 같다. 같은 입력을 2초 늦게 넣으면 출력도 모양 그대로 2초 늦게 나온다. 회로의 저항과 축전기 값이 시간에 따라 바뀌지 않으면 시불변이다. 식 안에 입력과 별도로 시간 t나 n이 직접 곱해져 있거나, 시간축을 늘이고 줄이는 연…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/linearity/"
 next_title: "선형성"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/time-invariance/"
 ---
 {% raw %}
@@ -41,6 +41,10 @@ $$y(t) = x(2t)$$(빨리 감기)를 시험해 보자(예제 1.16, 그림 1.47)[^1
 4. 비교: 시불변이라면 $$y_2$$가 $$y_1(t - 2)$$, 즉 $$1 \le t \le 3$$에서 1이어야 한다. 실제로는 $$0 \le t \le 2$$이므로 다르다.
 
 실제로는 $$y_2(t) = x_1(2(t-1)) = y_1(t - 1)$$이다. 시스템이 시간을 절반으로 압축하므로 입력의 지연도 절반만 반영된다. 그래서 시변 시스템이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/16_time-invariance_fig1.svg" alt="그림" loading="lazy">
+
+아래 칸에서 실제 출력 $$y_2$$($$0 \sim 2$$)는 시불변이라면 나와야 할 $$y_1(t-2)$$($$1 \sim 3$$)보다 1만큼 앞에 있다[^s2].
 
 ## 정의
 
@@ -193,4 +197,5 @@ $$n_0 \neq 0$$이고 $$x_1[n - n_0] \neq 0$$인 $$n$$에서 두 식이 $$n_0 x_1
 [^3]: 같은 자료, p.17 (예제 1.14, 1.15)
 [^4]: 같은 자료, p.16
 [^s1]: 에이전트 보충. 초기 조건이 남은 시스템에 관한 경계 사례, 부품 노화 예, 스스로 설명해 보기, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 판정은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [16_time-invariance_plot.py](/Hongs_Blog/studies/signals-and-systems/code/16_time-invariance_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$y_1$$, $$y_2$$, $$y_1(t-2)$$의 구간 $$[-1, 1]$$, $$[0, 2]$$, $$[1, 3]$$과 $$y_2(t) = y_1(t - 1)$$.
 {% endraw %}

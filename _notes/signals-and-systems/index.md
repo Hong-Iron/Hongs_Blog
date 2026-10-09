@@ -8,7 +8,7 @@ course_url: "/studies/signals-and-systems/"
 track: "수학"
 concepts: 44
 practices: 6
-codes: 43
+codes: 80
 description: "신호 및 시스템 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -34,8 +34,8 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 01 | [1계 선형 미분방정식](/Hongs_Blog/studies/signals-and-systems/first-order-linear-ode/) | 지금 값으로 변화율이 정해지는 식. 적분인자로 한 번에 푼다 | [verify](/Hongs_Blog/studies/signals-and-systems/code/01_first-order-linear-ode_verify/) | — |
-| 02 | [상수계수 2계 선형 미분방정식](/Hongs_Blog/studies/signals-and-systems/second-order-linear-ode/) | $$e^{\lambda x}$$를 넣어 특성방정식으로. 실근·중근·복소근 | [verify](/Hongs_Blog/studies/signals-and-systems/code/02_second-order-linear-ode_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/ode-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/02_ode-ladder_p1/) |
+| 01 | [1계 선형 미분방정식](/Hongs_Blog/studies/signals-and-systems/first-order-linear-ode/) | 지금 값으로 변화율이 정해지는 식. 적분인자로 한 번에 푼다 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/01_first-order-linear-ode_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/01_first-order-linear-ode_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/01_first-order-linear-ode_verify/) | — |
+| 02 | [상수계수 2계 선형 미분방정식](/Hongs_Blog/studies/signals-and-systems/second-order-linear-ode/) | $$e^{\lambda x}$$를 넣어 특성방정식으로. 실근·중근·복소근 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/02_second-order-linear-ode_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/02_second-order-linear-ode_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/02_second-order-linear-ode_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/ode-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/02_ode-ladder_p1/) |
 
 자료: Week01_1_자연상수와 오일러 등식 · Week01_2_미분방정식
 필기: 아직 없다.
@@ -54,10 +54,10 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 03 | [연속 시간 신호와 이산 시간 신호](/Hongs_Blog/studies/signals-and-systems/ct-dt-signals/) | 모든 순간에 값이 있나, 정해진 순간에만 있나 | — | — |
-| 04 | [신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/) | 크기 제곱의 합(에너지)과 시간 평균(전력) | [verify](/Hongs_Blog/studies/signals-and-systems/code/04_signal-energy-power_verify/) | — |
-| 05 | [독립 변수의 변환](/Hongs_Blog/studies/signals-and-systems/independent-variable-transform/) | 이동, 반전, 척도. 이동 먼저 하고 척도 | [verify](/Hongs_Blog/studies/signals-and-systems/code/05_independent-variable-transform_verify/) | — |
-| 06 | [주기 신호](/Hongs_Blog/studies/signals-and-systems/periodic-signals/) | $$T$$만큼 밀어도 같은 신호. 가장 작은 $$T$$가 기본 주기 | — | — |
+| 03 | [연속 시간 신호와 이산 시간 신호](/Hongs_Blog/studies/signals-and-systems/ct-dt-signals/) | 모든 순간에 값이 있나, 정해진 순간에만 있나 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/03_ct-dt-signals_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/03_ct-dt-signals_plot/) | — |
+| 04 | [신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/) | 크기 제곱의 합(에너지)과 시간 평균(전력) | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/04_signal-energy-power_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/04_signal-energy-power_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/04_signal-energy-power_verify/) | — |
+| 05 | [독립 변수의 변환](/Hongs_Blog/studies/signals-and-systems/independent-variable-transform/) | 이동, 반전, 척도. 이동 먼저 하고 척도 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/05_independent-variable-transform_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/05_independent-variable-transform_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/05_independent-variable-transform_verify/) | — |
+| 06 | [주기 신호](/Hongs_Blog/studies/signals-and-systems/periodic-signals/) | $$T$$만큼 밀어도 같은 신호. 가장 작은 $$T$$가 기본 주기 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/06_periodic-signals_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/06_periodic-signals_plot/) | — |
 | 07 | [짝 신호와 홀 신호](/Hongs_Blog/studies/signals-and-systems/even-odd-signals/) | 뒤집어도 같은 신호와 부호만 바뀌는 신호. 모든 신호는 둘의 합 | [verify](/Hongs_Blog/studies/signals-and-systems/code/07_even-odd-signals_verify/) | — |
 
 자료: Week02_CH01_1_handout
@@ -77,10 +77,10 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 08 | [연속 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/ct-complex-exponential/) | 원 위를 도는 점. 정현파, 페이저, 고조파 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/08_ct-complex-exponential_verify/) | — |
-| 09 | [이산 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/dt-complex-exponential/) | $$\omega_0$$가 $$2\pi$$마다 같고, $$\omega_0/2\pi$$가 유리수일 때만 주기적 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/09_dt-complex-exponential_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/dt-period-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/09_dt-period-ladder_p4/) |
-| 10 | [단위 임펄스와 단위 계단](/Hongs_Blog/studies/signals-and-systems/unit-impulse-step/) | 넓이 1인 바늘과 스위치. 미분·누적 관계와 표본화 성질 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/10_unit-impulse-step_verify/) | — |
-| 11 | [표본화와 양자화](/Hongs_Blog/studies/signals-and-systems/sampling-quantization/) | 시간을 끊고(표본화) 값을 끊는다(양자화) | [verify](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_verify/) | — |
+| 08 | [연속 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/ct-complex-exponential/) | 원 위를 도는 점. 정현파, 페이저, 고조파 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/08_ct-complex-exponential_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/08_ct-complex-exponential_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/08_ct-complex-exponential_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/08_ct-complex-exponential_verify/) | — |
+| 09 | [이산 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/dt-complex-exponential/) | $$\omega_0$$가 $$2\pi$$마다 같고, $$\omega_0/2\pi$$가 유리수일 때만 주기적 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/09_dt-complex-exponential_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/09_dt-complex-exponential_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/09_dt-complex-exponential_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/dt-period-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/09_dt-period-ladder_p4/) |
+| 10 | [단위 임펄스와 단위 계단](/Hongs_Blog/studies/signals-and-systems/unit-impulse-step/) | 넓이 1인 바늘과 스위치. 미분·누적 관계와 표본화 성질 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/10_unit-impulse-step_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/10_unit-impulse-step_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/10_unit-impulse-step_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/10_unit-impulse-step_verify/) | — |
+| 11 | [표본화와 양자화](/Hongs_Blog/studies/signals-and-systems/sampling-quantization/) | 시간을 끊고(표본화) 값을 끊는다(양자화) | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_verify/) | — |
 
 자료: Week03_CH01_2_handout
 필기: 아직 없다.
@@ -101,9 +101,9 @@ permalink: "/studies/signals-and-systems/"
 |---|---|---|---|---|
 | 12 | [시스템과 시스템 연결](/Hongs_Blog/studies/signals-and-systems/systems-interconnection/) | 입력을 출력으로 바꾸는 상자. 직렬·병렬·피드백 | — | — |
 | 13 | [기억과 가역성](/Hongs_Blog/studies/signals-and-systems/memory-invertibility/) | 지금 입력만 쓰는가, 출력으로 입력을 되찾을 수 있는가 | — | — |
-| 14 | [인과성](/Hongs_Blog/studies/signals-and-systems/causality/) | 미래 입력을 쓰지 않는다 | [verify](/Hongs_Blog/studies/signals-and-systems/code/14_causality_verify/) | — |
-| 15 | [안정성](/Hongs_Blog/studies/signals-and-systems/stability/) | 유계 입력에 유계 출력 | [verify](/Hongs_Blog/studies/signals-and-systems/code/15_stability_verify/) | — |
-| 16 | [시불변성](/Hongs_Blog/studies/signals-and-systems/time-invariance/) | 늦게 넣으면 그만큼 늦게 나온다 | [verify](/Hongs_Blog/studies/signals-and-systems/code/16_time-invariance_verify/) | — |
+| 14 | [인과성](/Hongs_Blog/studies/signals-and-systems/causality/) | 미래 입력을 쓰지 않는다 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/14_causality_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/14_causality_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/14_causality_verify/) | — |
+| 15 | [안정성](/Hongs_Blog/studies/signals-and-systems/stability/) | 유계 입력에 유계 출력 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/15_stability_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/15_stability_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/15_stability_verify/) | — |
+| 16 | [시불변성](/Hongs_Blog/studies/signals-and-systems/time-invariance/) | 늦게 넣으면 그만큼 늦게 나온다 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/16_time-invariance_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/16_time-invariance_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/16_time-invariance_verify/) | — |
 | 17 | [선형성](/Hongs_Blog/studies/signals-and-systems/linearity/) | 따로 넣고 더한 것 = 더해서 넣은 것 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/17_linearity_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/system-properties-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/17_system-properties-ladder_p4/) |
 
 자료: Week04_CH01_3_handout
@@ -123,8 +123,8 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 18 | [컨벌루션 합](/Hongs_Blog/studies/signals-and-systems/convolution-sum/) | 입력을 임펄스로 쪼개고, 옮긴 $$h$$를 키워 더한다 (강조)[^강조] | [impl](/Hongs_Blog/studies/signals-and-systems/code/18_convolution-sum_impl/) | — |
-| 19 | [컨벌루션 적분](/Hongs_Blog/studies/signals-and-systems/convolution-integral/) | 계단 근사의 극한. 뒤집고 밀어 겹친 넓이 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/convolution-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-ladder_p4/) |
+| 18 | [컨벌루션 합](/Hongs_Blog/studies/signals-and-systems/convolution-sum/) | 입력을 임펄스로 쪼개고, 옮긴 $$h$$를 키워 더한다 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig2.svg) · [impl](/Hongs_Blog/studies/signals-and-systems/code/18_convolution-sum_impl/) · [plot](/Hongs_Blog/studies/signals-and-systems/code/18_convolution-sum_plot/) | — |
+| 19 | [컨벌루션 적분](/Hongs_Blog/studies/signals-and-systems/convolution-integral/) | 계단 근사의 극한. 뒤집고 밀어 겹친 넓이 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/convolution-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-ladder_p4/) |
 
 자료: Week05_CH02_1_handout
 필기: 아직 없다.
@@ -143,11 +143,11 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 20 | [컨벌루션의 성질](/Hongs_Blog/studies/signals-and-systems/convolution-properties/) | 교환·분배·결합. 직렬은 $$h_1 * h_2$$, 병렬은 $$h_1 + h_2$$ | [verify](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_verify/) | — |
-| 21 | [임펄스 응답으로 본 LTI 시스템의 성질](/Hongs_Blog/studies/signals-and-systems/lti-system-properties/) | $$h$$만 보고 기억·가역·인과·안정을 판정 | [verify](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_verify/) | — |
-| 22 | [단위 계단 응답](/Hongs_Blog/studies/signals-and-systems/step-response/) | 계단을 넣은 출력. $$h$$를 쌓으면 $$s$$, $$s$$의 차이가 $$h$$ | [verify](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_verify/) | — |
-| 23 | [미분방정식으로 표현한 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/lccde-system/) | 초기 휴지 조건을 붙이면 인과 LTI. 자연 응답 + 강제 응답 | [verify](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_verify/) | — |
-| 24 | [차분방정식으로 표현한 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/difference-equation-system/) | 과거 출력을 다시 쓰면 IIR, 안 쓰면 FIR | [verify](/Hongs_Blog/studies/signals-and-systems/code/24_difference-equation-system_verify/) | — |
+| 20 | [컨벌루션의 성질](/Hongs_Blog/studies/signals-and-systems/convolution-properties/) | 교환·분배·결합. 직렬은 $$h_1 * h_2$$, 병렬은 $$h_1 + h_2$$ | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/20_convolution-properties_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_verify/) | — |
+| 21 | [임펄스 응답으로 본 LTI 시스템의 성질](/Hongs_Blog/studies/signals-and-systems/lti-system-properties/) | $$h$$만 보고 기억·가역·인과·안정을 판정 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/21_lti-system-properties_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_verify/) | — |
+| 22 | [단위 계단 응답](/Hongs_Blog/studies/signals-and-systems/step-response/) | 계단을 넣은 출력. $$h$$를 쌓으면 $$s$$, $$s$$의 차이가 $$h$$ | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/22_step-response_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_verify/) | — |
+| 23 | [미분방정식으로 표현한 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/lccde-system/) | 초기 휴지 조건을 붙이면 인과 LTI. 자연 응답 + 강제 응답 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/23_lccde-system_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_verify/) | — |
+| 24 | [차분방정식으로 표현한 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/difference-equation-system/) | 과거 출력을 다시 쓰면 IIR, 안 쓰면 FIR | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/24_difference-equation-system_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/24_difference-equation-system_verify/) | — |
 | 25 | [차분방정식 ↔ 선형 점화식](/Hongs_Blog/studies/signals-and-systems/difference-equation-recurrence-bridge/) | 같은 식, 같은 풀이. 시스템 쪽에만 입력과 임펄스 응답이 있다 | — | — |
 | 26 | [블록 다이어그램](/Hongs_Blog/studies/signals-and-systems/block-diagram/) | 더하기·곱하기·지연(적분) 세 부품으로 그린 식 | — | — |
 
@@ -168,10 +168,10 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 27 | [특이함수](/Hongs_Blog/studies/signals-and-systems/singularity-functions/) | 넓이 1인 짧은 펄스는 모양과 상관없이 임펄스처럼 행동 | [verify](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_verify/) | — |
-| 28 | [LTI 시스템의 고유함수](/Hongs_Blog/studies/signals-and-systems/lti-eigenfunction/) | $$e^{st}$$는 LTI를 지나도 모양 그대로, $$H(s)$$만 곱해진다 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_verify/) | — |
+| 27 | [특이함수](/Hongs_Blog/studies/signals-and-systems/singularity-functions/) | 넓이 1인 짧은 펄스는 모양과 상관없이 임펄스처럼 행동 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/27_singularity-functions_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_verify/) | — |
+| 28 | [LTI 시스템의 고유함수](/Hongs_Blog/studies/signals-and-systems/lti-eigenfunction/) | $$e^{st}$$는 LTI를 지나도 모양 그대로, $$H(s)$$만 곱해진다 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/28_lti-eigenfunction_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_verify/) | — |
 | 29 | [LTI 고유함수 ↔ 행렬 고유벡터](/Hongs_Blog/studies/signals-and-systems/eigenfunction-eigenvector-bridge/) | 고유벡터로 나누면 행렬 곱이 곱셈, 고유함수로 나누면 컨벌루션이 곱셈 | — | — |
-| 30 | [연속 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/ct-fourier-series/) | 주기 신호 = 고조파의 합. 직교성으로 계수를 읽는다 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/30_ct-fourier-series_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/fourier-coefficient-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/30_fourier-coefficient-ladder_p4/) |
+| 30 | [연속 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/ct-fourier-series/) | 주기 신호 = 고조파의 합. 직교성으로 계수를 읽는다 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/30_ct-fourier-series_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/30_ct-fourier-series_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/30_ct-fourier-series_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/30_ct-fourier-series_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/fourier-coefficient-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/30_fourier-coefficient-ladder_p4/) |
 
 자료: Week07_CH03_1_handout
 필기: 아직 없다.
@@ -190,8 +190,8 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 31 | [푸리에 급수의 수렴](/Hongs_Blog/studies/signals-and-systems/fourier-series-convergence/) | 에너지 유한이면 오차 에너지 0, 불연속점은 평균, 깁스 9% | [verify](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_verify/) | — |
-| 32 | [연속 시간 푸리에 급수의 성질](/Hongs_Blog/studies/signals-and-systems/ctfs-properties/) | 이동은 위상, 미분은 $$jk\omega_0$$배, 곱셈은 계수 컨벌루션, 파스발 | [verify](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_verify/) | — |
+| 31 | [푸리에 급수의 수렴](/Hongs_Blog/studies/signals-and-systems/fourier-series-convergence/) | 에너지 유한이면 오차 에너지 0, 불연속점은 평균, 깁스 9% | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_verify/) | — |
+| 32 | [연속 시간 푸리에 급수의 성질](/Hongs_Blog/studies/signals-and-systems/ctfs-properties/) | 이동은 위상, 미분은 $$jk\omega_0$$배, 곱셈은 계수 컨벌루션, 파스발 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/32_ctfs-properties_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_verify/) | — |
 
 자료: Week09_CH03_2_handout
 필기: 아직 없다.
@@ -210,9 +210,9 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 33 | [이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/) | 고조파가 $$N$$개뿐인 유한합. 수렴 문제 없음 | [verify](/Hongs_Blog/studies/signals-and-systems/code/33_dt-fourier-series_verify/) | — |
-| 34 | [이산 시간 푸리에 급수의 성질](/Hongs_Blog/studies/signals-and-systems/dtfs-properties/) | 표 3.2. 첫 번째 차, 누적 합, 주기 컨벌루션 $$Na_kb_k$$ | [verify](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_verify/) | — |
-| 35 | [푸리에 급수와 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/fourier-series-lti/) | 출력 계수 = 입력 계수 × 주파수 응답 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_verify/) | — |
+| 33 | [이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/) | 고조파가 $$N$$개뿐인 유한합. 수렴 문제 없음 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/33_dt-fourier-series_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/33_dt-fourier-series_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/33_dt-fourier-series_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/33_dt-fourier-series_verify/) | — |
+| 34 | [이산 시간 푸리에 급수의 성질](/Hongs_Blog/studies/signals-and-systems/dtfs-properties/) | 표 3.2. 첫 번째 차, 누적 합, 주기 컨벌루션 $$Na_kb_k$$ | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/34_dtfs-properties_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_verify/) | — |
+| 35 | [푸리에 급수와 LTI 시스템](/Hongs_Blog/studies/signals-and-systems/fourier-series-lti/) | 출력 계수 = 입력 계수 × 주파수 응답 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/35_fourier-series-lti_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_verify/) | — |
 
 자료: Week10_CH03_3_handout
 필기: 아직 없다.
@@ -231,8 +231,8 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 36 | [주파수 형성 필터와 주파수 선택 필터](/Hongs_Blog/studies/signals-and-systems/frequency-filters/) | 저역·고역·대역 통과. RC 회로, 1차 재귀, 이동 평균 | [verify](/Hongs_Blog/studies/signals-and-systems/code/36_frequency-filters_verify/) | — |
-| 37 | [영상의 경계 검출과 평활화](/Hongs_Blog/studies/signals-and-systems/edge-detection-smoothing/) | 평활화한 뒤 미분해 경계 찾기. PSNR | [verify](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_verify/) | — |
+| 36 | [주파수 형성 필터와 주파수 선택 필터](/Hongs_Blog/studies/signals-and-systems/frequency-filters/) | 저역·고역·대역 통과. RC 회로, 1차 재귀, 이동 평균 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig2.svg) · [fig3](/Hongs_Blog/assets/notes/signals-and-systems/36_frequency-filters_fig3.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/36_frequency-filters_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/36_frequency-filters_verify/) | — |
+| 37 | [영상의 경계 검출과 평활화](/Hongs_Blog/studies/signals-and-systems/edge-detection-smoothing/) | 평활화한 뒤 미분해 경계 찾기. PSNR | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/37_edge-detection-smoothing_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_verify/) | — |
 
 자료: Week12_CH03_4_handout
 필기: 아직 없다.
@@ -251,10 +251,10 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 38 | [연속 시간 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/ct-fourier-transform/) | 주기를 무한히 늘린 푸리에 급수. 사각형 ↔ sinc (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_verify/) | — |
-| 39 | [주기 신호의 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/periodic-fourier-transform/) | 고조파 자리에 넓이 $$2\pi a_k$$인 임펄스 | [verify](/Hongs_Blog/studies/signals-and-systems/code/39_periodic-fourier-transform_verify/) | — |
-| 40 | [푸리에 변환의 성질](/Hongs_Blog/studies/signals-and-systems/fourier-transform-properties/) | 표 4.1. 이동은 위상, 척도는 반비례, 미분은 $$j\omega$$, 파스발 | [verify](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_verify/) | — |
-| 41 | [푸리에 변환의 쌍대성](/Hongs_Blog/studies/signals-and-systems/fourier-duality/) | 시간과 주파수의 역할을 바꾼 쌍이 늘 있다 | [verify](/Hongs_Blog/studies/signals-and-systems/code/41_duality_verify/) | — |
+| 38 | [연속 시간 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/ct-fourier-transform/) | 주기를 무한히 늘린 푸리에 급수. 사각형 ↔ sinc (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_verify/) | — |
+| 39 | [주기 신호의 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/periodic-fourier-transform/) | 고조파 자리에 넓이 $$2\pi a_k$$인 임펄스 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/39_periodic-fourier-transform_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/39_periodic-fourier-transform_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/39_periodic-fourier-transform_verify/) | — |
+| 40 | [푸리에 변환의 성질](/Hongs_Blog/studies/signals-and-systems/fourier-transform-properties/) | 표 4.1. 이동은 위상, 척도는 반비례, 미분은 $$j\omega$$, 파스발 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/40_fourier-transform-properties_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_verify/) | — |
+| 41 | [푸리에 변환의 쌍대성](/Hongs_Blog/studies/signals-and-systems/fourier-duality/) | 시간과 주파수의 역할을 바꾼 쌍이 늘 있다 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/41_duality_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/41_duality_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/41_duality_verify/) | — |
 
 자료: Week14_CH04_1_handout · Week14_CH04_2_handout
 필기: 아직 없다.
@@ -273,9 +273,9 @@ permalink: "/studies/signals-and-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 42 | [컨벌루션 성질과 주파수 응답](/Hongs_Blog/studies/signals-and-systems/convolution-property/) | $$y = h * x \leftrightarrow Y = HX$$. 이상적 필터는 비인과 (강조)[^강조] | [verify](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_verify/) | — |
-| 43 | [곱셈 성질과 진폭 변조](/Hongs_Blog/studies/signals-and-systems/multiplication-modulation/) | 시간에서 곱하면 스펙트럼 이동. AM 변조와 복조 | [verify](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_verify/) | — |
-| 44 | [미분방정식 시스템의 주파수 응답](/Hongs_Blog/studies/signals-and-systems/lccde-frequency-response/) | $$H$$는 $$j\omega$$의 유리함수. 부분 분수로 역변환 | [verify](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/inverse-transform-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/44_inverse-transform-ladder_p4/) |
+| 42 | [컨벌루션 성질과 주파수 응답](/Hongs_Blog/studies/signals-and-systems/convolution-property/) | $$y = h * x \leftrightarrow Y = HX$$. 이상적 필터는 비인과 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_verify/) | — |
+| 43 | [곱셈 성질과 진폭 변조](/Hongs_Blog/studies/signals-and-systems/multiplication-modulation/) | 시간에서 곱하면 스펙트럼 이동. AM 변조와 복조 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig2.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_verify/) | — |
+| 44 | [미분방정식 시스템의 주파수 응답](/Hongs_Blog/studies/signals-and-systems/lccde-frequency-response/) | $$H$$는 $$j\omega$$의 유리함수. 부분 분수로 역변환 | [fig1](/Hongs_Blog/assets/notes/signals-and-systems/44_lccde-frequency-response_fig1.svg) · [plot](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_plot/) · [verify](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_verify/) | [예제 사다리](/Hongs_Blog/studies/signals-and-systems/inverse-transform-ladder/) · [문제 코드](/Hongs_Blog/studies/signals-and-systems/code/44_inverse-transform-ladder_p4/) |
 
 자료: Week15_CH04_3_handout
 필기: 아직 없다.

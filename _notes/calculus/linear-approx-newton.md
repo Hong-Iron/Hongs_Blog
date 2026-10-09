@@ -19,7 +19,7 @@ next_url: "/studies/calculus/riemann-integral/"
 next_title: "정적분과 리만 합"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/calculus/linear-approx-newton/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ $$\sqrt{4.1} \approx 2 + 0.025 = 2.025 \quad (\text{참값 } 2.02485\ldots,\ \te
 
 
 뉴턴 방법은 이 생각을 근 찾기에 쓴다. $$x^2 = 2$$의 근을 찾을 때 지금의 추측 $$x_n$$에서 접선을 긋고, 접선이 0이 되는 곳을 다음 추측으로 삼는다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/10_linear-approx-newton_fig1.svg" alt="그림" loading="lazy">
+
+$$x_0 = 1$$의 접선(파랑)이 가로축과 만나는 곳이 $$x_1 = 1.5$$이고, $$x_1$$의 접선(주황)이 만나는 곳이 $$x_2 \approx 1.41667$$이다. 두 번 만에 $$\sqrt2$$와 그림에서 구별되지 않을 만큼 붙는다[^s2].
 
 | $$n$$ | $$x_n$$ | 오차 $$\vert x_n - \sqrt2\vert $$ |
 |---|---|---|
@@ -83,6 +87,10 @@ x ← x₀
 
 
 **수렴 속도.** 근 $$r$$에서 $$f'(r) \ne 0$$이고 $$f$$가 두 번 미분 가능하며 출발점이 충분히 가까우면, $$\vert x_{n+1} - r\vert  \approx \frac{\vert f''(r)\vert }{2\vert f'(r)\vert }\,\vert x_n - r\vert ^2$$로 이차 수렴한다. [증명 스케치: $$f$$를 $$x_n$$에서 테일러 전개해 2차 항까지 쓰면 나온다([테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/))] 같은 정밀도 $$10^{-12}$$까지 $$\sqrt2$$를 구할 때 [이분법](/Hongs_Blog/studies/calculus/continuity/)은 40번, 뉴턴 방법은 5번이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/10_linear-approx-newton_fig2.svg" alt="그림" loading="lazy">
+
+세로축이 로그 눈금이라 이분법은 곧은 직선으로 내려간다. 한 번에 같은 비율(절반)씩 줄기 때문이다. 뉴턴 방법은 걸음마다 기울기가 더 가팔라지며 꺾여 내려간다. 맞는 자릿수가 두 배씩 늘어서다[^s2].
 
 **실패하는 경우.**
 - 기울기가 0인 점에 닿으면 나눌 수 없다($$x^2 - 2$$를 $$x_0 = 0$$에서 시작).
@@ -164,4 +172,5 @@ $$\sqrt2$$를 뉴턴 방법으로 구하는 첫 두 걸음을 추적한다. $$f(
 [^n2]: 같은 자료, p.17
 [^n3]: 같은 자료, p.18
 [^sn1]: 에이전트 보충. 카드 C4는 원본에 없다. 10_linear-approx-newton_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [10_linear-approx-newton_plot.py](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_plot/)로 그렸고, 표의 $$x_n$$과 오차($$8.6 \times 10^{-2}$$부터 $$1.6 \times 10^{-12}$$까지), 이분법이 40번에 구간 길이 $$10^{-12}$$ 이하가 되는 것을 같은 코드로 확인했다.
 {% endraw %}

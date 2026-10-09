@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Throughput", "처리속도", "실효 처리량", "effective throughput", "전송 완료 시간", "transfer time", "TransferTime"]
 description: "처리량은 실제로 1초에 몇 비트를 받아 냈는지다. 고속도로의 제한속도가 대역폭이라면, 처리량은 출발 전 준비 시간과 톨게이트 대기까지 합쳐 실제로 낸 평균 속도다. 그래서 대역폭이 아무리 커도 작은 메시지는 소요시간에 묶여 처리량이 낮다. 메시지가 클수록 처리량이 대역폭에 가까워진다."
@@ -19,7 +19,7 @@ next_url: "/studies/computer-communication/bandwidth-delay-product/"
 next_title: "대역폭-지연 곱"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/computer-communication/throughput/"
 ---
 {% raw %}
@@ -41,6 +41,12 @@ permalink: "/studies/computer-communication/throughput/"
 | 25 MB | 약 209.7초 | 약 2.1초 | 약 209.8초 |
 
 1바이트에서는 소요시간 1 ms와 100 ms의 차이(99 ms)가 대역폭 1 Mbps와 100 Mbps의 차이(0.008 ms)를 압도한다. 25 MB에서는 반대로 대역폭이 100배 차이를 만들고, 소요시간 99 ms는 묻힌다. 게임은 소요시간이, 영상은 대역폭이 중요한 이유다[^2].
+
+표의 세 경우를 메시지 크기 1바이트부터 1 GB까지 늘려 가며 처리량으로 그리면 다음과 같다. 두 축 모두 로그 눈금이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/27_throughput_fig1.svg" alt="그림" loading="lazy">
+
+작은 메시지에서는 세 선 모두 대역폭 천장(점선)보다 한참 아래에 있다. 이 구간에서 파란 선과 주황 선은 겹친다. 대역폭이 100배여도 처리량이 같다는 뜻이다. 메시지가 커지면 각 선이 자기 천장에 붙는다. 소요시간이 100배인 초록 선은 메시지가 더 커져야 천장에 닿는다[^s2].
 
 아래 식에서는 메시지 크기를 $$M$$, 왕복 소요시간을 RTT, 대역폭을 $$R$$이라 쓴다. 도로 비유와 달리 통신에서는 대역폭을 늘려도 소요시간 중 전파 지연은 줄지 않는다.
 
@@ -111,4 +117,5 @@ RTT가 0보다 크면 처리량은 늘 $$R$$보다 작다. $$M$$이 커질수록
 [^3]: 4-1학기/pasted_images/Pasted image 20260925230348.png — 슬라이드 "성능 (Performance): 대역폭". 표기 방법 KB = 2¹⁰ bytes, Mbps = 10⁶ bits per second. 필기 03.3주차.md 36~40행도 대역폭을 "이론상 최상의 속도", "링크의 최대속도"로 적는다
 [^4]: 4-1학기/pasted_images/Pasted image 20260926020456.png — 슬라이드 "성능: 기타 사항"
 [^s1]: 에이전트 보충. 슬라이드는 이 식을 누구 기준으로 재는지 적지 않는다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.5절의 같은 식은 파일을 요청한 쪽이 요청을 보낸 때부터 마지막 비트를 받을 때까지를 잰다. 보내는 쪽이 회선 설정을 시작한 때부터 받는 쪽이 마지막 비트를 받을 때까지 재면 한쪽 전파 지연(RTT의 절반)이 더 붙는다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [27_throughput_plot.py](/Hongs_Blog/studies/computer-communication/code/27_throughput_plot/)로 그렸고, 표의 값(1바이트 1.00008, 1.008, 100.008 ms, 25 MB 약 2.1, 209.7, 209.8초)과 처리량이 늘 대역폭보다 작고 크기와 함께 커진다는 것을 같은 코드로 확인했다.
 {% endraw %}

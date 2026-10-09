@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/bezier-subdivision/"
 next_title: "베지어 곡선의 세분화"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/surface-patches/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/numerical-analysis/surface-patches/"
 물체의 겉면을 나타내는 방법은 둘이다. 삼각형·사각형을 잔뜩 이어 붙인 폴리곤 메시와, 식으로 정확히 적는 곡면 패치다[^1]. 메시는 그리기 쉽지만 확대하면 각이 보인다. 패치는 얼마든지 확대해도 매끄럽다.
 
 가장 단순한 패치는 네 꼭짓점 $$\mathbf P_{00} = (0, 0, 0)$$, $$\mathbf P_{10} = (2, 0, 1)$$, $$\mathbf P_{01} = (0, 2, 1)$$, $$\mathbf P_{11} = (2, 2, 0)$$만으로 만든다. 먼저 $$v$$ 방향 두 변에서 각각 비율 $$v$$인 점을 잡고, 그 두 점을 다시 비율 $$u$$로 잇는다. 가운데 $$(u, v) = (\frac12, \frac12)$$는 네 꼭짓점의 평균 $$(1, 1, \frac12)$$이다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/17_surface-patches_fig1.svg" alt="그림" loading="lazy">
+
+파란 선은 $$u$$를, 주황 선은 $$v$$를 고정한 선이다. 이 선들은 모두 곧은 선인데, 면 전체는 말안장처럼 비틀린다. 네 꼭짓점이 한 평면 위에 있지 않기 때문이다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 쌍선형 = 두 번의 선형 보간, 직선 경계, 카드 C2, 쌍3차 패치가 꼭짓점·접선·꼬임 벡터를 재현, 경계가 에르미트 곡선, 베지어 곡면의 꼭짓점·가장자리, 국소 조절 없음, 스플라인 곡면의 합 1 — [17_surface-patches_verify.py](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_verify/)</div>
@@ -141,4 +145,5 @@ $$\mathbf p(u, v) = \mathbf u^\top M_S\,P\,M_S^\top\mathbf v, \qquad \mathbf u =
 [^15]: 같은 자료, p.16
 [^16]: 같은 자료, p.17
 [^s1]: 에이전트 보충. 메시와 패치의 비교, 쌍선형 예와 카드 C2, CAD·유타 찻주전자, 흔한 실수, 카드 C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [17_surface-patches_plot.py](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 가운데 $$(1, 1, \frac12)$$, 꼭짓점 통과, $$u$$를 고정한 선 위의 가운데 점이 양 끝의 평균(곧은 선).
 {% endraw %}

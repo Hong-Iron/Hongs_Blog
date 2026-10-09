@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Properties of Convolution", "교환법칙", "Commutative Property", "분배법칙", "Distributive Property", "결합법칙", "Associative Property", "직렬 연결", "Cascade", "병렬 연결", "Parallel"]
 description: "컨벌루션은 보통의 곱셈처럼 순서를 바꿔도(교환), 덧셈에 나눠 걸어도(분배), 묶는 순서를 바꿔도(결합) 결과가 같다. 그래서 LTI 시스템을 줄줄이 이은 것은 임펄스 응답을 컨벌루션한 시스템 하나로, 나란히 이은 것은 임펄스 응답을 더한 시스템 하나로 바꿔 생각할 수 있다. 줄줄…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/lti-system-properties/"
 next_title: "임펄스 응답으로 본 LTI 시스템의 성질"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/convolution-properties/"
 ---
 {% raw %}
@@ -86,6 +86,10 @@ $$(f * g)(t) = \int_{\infty}^{-\infty}f(t-u)g(u)(-du) = \int_{-\infty}^{\infty}g
 - $$y_2 = x_2 * h$$는 예제 2.5: $$2$$ ($$n \ge 0$$), $$2^{n+1}$$ ($$n < 0$$).
 - 더하면 $$y[n] = 4 - (\frac12)^n$$ ($$n \ge 0$$), $$2^{n+1}$$ ($$n < 0$$). 값은 $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$로 4에 다가간다(그림 2.24).
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/20_convolution-properties_fig1.svg" alt="그림" loading="lazy">
+
+$$y_1$$은 $$n \ge 0$$에서만 값이 있고, $$y_2$$는 음의 $$n$$에서도 값이 있다. 둘을 더한 맨 아래 줄이 4(점선)로 다가간다[^s2].
+
 **비선형 시스템에서는 통하지 않는다.**[^7] $$y[n] = (x[n] + x[n-1])^2$$나 $$y[n] = \max(x[n], x[n-1])$$은 $$x[n] + x[n-1]$$과 비슷한 모양이지만 LTI가 아니라 임펄스 응답으로 나타낼 수 없다. max의 예: 행렬 $$m_1 = \begin{bmatrix}0&1\\2&3\end{bmatrix}$$, $$m_2 = \begin{bmatrix}4&5\\0&1\end{bmatrix}$$에서 $$\max(m_1 - m_2) = 2$$이지만 $$\max m_1 - \max m_2 = -2$$다(딥러닝의 맥스 풀링).
 
 <div class="callout callout-check" markdown="1">
@@ -138,4 +142,5 @@ $$(f * g)(t) = \int_{\infty}^{-\infty}f(t-u)g(u)(-du) = \int_{-\infty}^{\infty}g
 [^6]: 같은 자료, p.5~6 (예제 2.10, 그림 2.24)
 [^7]: 같은 자료, p.2~3
 [^s1]: 에이전트 보충. 마이크 신호 비유, 분배법칙 증명의 한 줄, 하나로 합쳐 계산을 줄이는 활용, 확인 문제는 원본에 없다. 성질은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [20_convolution-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 정의대로 계산한 컨벌루션과 닫힌 꼴이 같고, $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$.
 {% endraw %}

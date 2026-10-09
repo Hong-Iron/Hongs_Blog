@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/secant-method/"
 next_title: "할선법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/bisection-method/"
 ---
 {% raw %}
@@ -50,6 +50,10 @@ $$f(12) > 0$$, $$f(16) < 0$$이라 $$[12, 16]$$에 근이 있다.
 | 6 | 14.75 | 14.875 | 14.8125 | 0.422 | 0.219 |
 
 참값은 14.7802다. 참 오차 $$\epsilon_t$$는 들쭉날쭉하지만 근사 오차 $$\epsilon_a$$는 매번 줄어든다[^1][^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/28_bisection_fig1.svg" alt="그림" loading="lazy">
+
+위는 $$f(c)$$이고, 아래 막대는 회차마다 남은 구간과 그 가운데 점 $$x_r$$(주황 눈금)이다. 구간은 매번 정확히 절반이 되고, 언제나 근(점선)을 품는다. 가운데 점은 근의 양쪽을 오가므로 참 오차가 들쭉날쭉하다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표의 모든 값, 20번 뒤 폭 $$4/2^{19}$$, 필요한 횟수 공식, 카드 C2, $$1/x$$에서 불연속점으로 감, 부호가 같으면 시작 못 함, 증분 탐색의 간격 — [28_bisection_impl.py](/Hongs_Blog/studies/numerical-analysis/code/28_bisection_impl/)</div>
@@ -138,4 +142,5 @@ $$n$$번 뒤 구간의 폭은 $$\frac{x_u - x_l}{2^n}$$이다. 그래서 폭을 
 [^11]: 같은 자료, p.12
 [^12]: 같은 자료, p.13
 [^s1]: 에이전트 보충. 참값 14.7802(이분법 100번으로 계산), 필요한 횟수 공식, 브렌트 방법, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [28_bisection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/28_bisection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 $$x_r$$ = 14, 15, 14.5, 14.75, 14.875, 14.8125, $$f(12) > 0 > f(16)$$, 근 14.7802.
 {% endraw %}

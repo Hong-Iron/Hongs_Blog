@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Probability Axioms", "확률의 공리", "콜모고로프 공리", "Kolmogorov axioms", "확률 측도", "probability measure", "고전적 확률", "naive definition of probability", "여사건 법칙", "complement rule", "합집합 한계", "union bound", "생일 문제", "birthday problem"]
 description: "확률은 사건마다 0에서 1 사이의 수를 붙이는 규칙이다. 지켜야 할 약속은 셋뿐이다. 음수는 없고, 전체의 확률은 1이며, 겹치지 않는 사건들의 확률은 더한다. 결과가 모두 똑같이 그럴듯하면 \"원하는 경우의 수 ÷ 전체 경우의 수\"로 세면 되어 계산이 쉬워진다. 하지만 그 조건이 …"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/conditional-probability/"
 next_title: "조건부 확률"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/probability-axioms/"
 ---
 {% raw %}
@@ -80,6 +80,10 @@ $$\Omega$$가 유한하고 모든 결과가 똑같이 그럴듯하면 $$P(A) = \
 
 직관이 틀리는 이유는 "나와 같은 생일"(22쌍)이 아니라 "누구든 두 사람"($$\binom{23}{2} = 253$$쌍)을 따지기 때문이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/02_probability-axioms_fig1.svg" alt="그림" loading="lazy">
+
+파란 선은 누구든 두 사람의 생일이 겹칠 확률이고, 주황 선은 나와 생일이 같은 사람이 있을 확률이다. 23명에서 파란 선은 절반을 넘지만, 주황 선은 6%에 그친다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 공리에서 나온 네 성질(주사위 두 개의 무작위 사건 쌍 2,000개), 생일 문제의 정확값과 모의실험 2만 회, 카드의 값(4번 던지기 1,296가지 전수), 해시 충돌 절반 지점 — [02_probability-axioms_verify.py](/Hongs_Blog/studies/probability-statistics/code/02_probability-axioms_verify/)</div>
 
@@ -128,4 +132,5 @@ $$\Omega$$가 유한하고 모든 결과가 똑같이 그럴듯하면 $$P(A) = \
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 1.3절 "Naive definition of probability", 1.4절 "How to count"(생일 문제), 1.6절 "Non-naive definition of probability"(공리와 그 성질).
 [^s1]: 에이전트 보충. 절반 지점의 근사 $$\sqrt{2n\ln 2}$$는 $$\prod_{i<k}\left(1 - \frac in\right) \approx e^{-k^2/(2n)}$$에서 나온다. $$n = 2^{32}$$에서 정확한 경계 77,164는 02_probability-axioms_verify.py로 계산했다. 해시 테이블의 충돌 처리는 CLRS 3판 11장에서 다룬다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [02_probability-axioms_plot.py](/Hongs_Blog/studies/probability-statistics/code/02_probability-axioms_plot/)로 그렸고, 그림에 쓴 값(23명 0.5073, 57명에서 처음 0.99를 넘음, 나와 같은 생일 23명 0.059)을 같은 코드로 확인했다.
 {% endraw %}

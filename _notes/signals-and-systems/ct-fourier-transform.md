@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Continuous-Time Fourier Transform", "CTFT", "푸리에 변환", "Fourier Transform", "역푸리에 변환", "Inverse Fourier Transform", "푸리에 변환 쌍", "Fourier Transform Pair", "스펙트럼", "Spectrum", "sinc 함수", "Sinc Function", "비주기 신호", "Aperiodic Signal"]
 description: "푸리에 급수는 되풀이되는 신호만 나눌 수 있다. 한 번 나타났다 사라지는 신호는 \"주기가 무한히 긴 주기 신호\"로 본다. 주기를 늘리면 고조파 사이 간격이 좁아지다가 결국 모든 주파수가 이어진 연속 스펙트럼이 되고, 급수의 합은 적분이 된다. 그것이 푸리에 변환이다. 에너지가 유한…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/periodic-fourier-transform/"
 next_title: "주기 신호의 푸리에 변환"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/ct-fourier-transform/"
 ---
 {% raw %}
@@ -110,6 +110,10 @@ $$x(t)$$는 $$\vert t\vert  > T_1$$에서 0이고 $$\frac T2 > T_1$$이라, 넓�
 - 복소수라 크기와 위상으로 그린다: $$\vert X\vert  = \frac{1}{\sqrt{a^2 + \omega^2}}$$, $$\angle X = -\tan^{-1}\frac\omega a$$ (분모를 실수화 $$\frac{a - j\omega}{a^2 + \omega^2}$$). $$\omega = \pm a$$에서 크기는 $$\frac{\sqrt2}{2a}$$, 위상은 $$\mp\frac\pi4$$(그림 4.5).
 - $$a$$가 복소수여도 $$\mathrm{Re}\{a\} > 0$$이면 같은 식이 맞다. $$a$$가 음수면 적분이 발산한다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig1.svg" alt="그림" loading="lazy">
+
+$$a = 1$$일 때다. 크기는 $$\omega = 0$$에서 가장 큰 짝함수, 위상은 홀함수다. 점은 $$\omega = \pm1$$에서 크기 $$\frac{\sqrt2}{2}$$, 위상 $$\mp\frac\pi4$$다[^s2].
+
 **예제 4.2** $$x(t) = e^{-a\vert t\vert }$$, $$a > 0$$[^7]. 양쪽으로 나눠 적분하면 $$\frac{1}{a - j\omega} + \frac{1}{a + j\omega} = \frac{2a}{a^2 + \omega^2}$$. 실수이고 짝인 종 모양이다(그림 4.7).
 
 **예제 4.3** $$x(t) = \delta(t)$$[^7]. 표본화 성질로 $$X(j\omega) = 1$$. 모든 주파수에서 크기가 같아, 시스템에 임펄스를 넣으면 모든 주파수의 반응을 한 번에 본다. $$\delta(t - a)$$이면 $$e^{-j\omega a}$$다.
@@ -119,6 +123,10 @@ $$x(t)$$는 $$\vert t\vert  > T_1$$에서 0이고 $$\frac T2 > T_1$$이라, 넓�
 **예제 4.5** $$X(j\omega) = 1$$ ($$\vert \omega\vert  < W$$), 0 (그 밖)[^9]. $$x(t) = \frac{1}{2\pi}\int_{-W}^{W}e^{j\omega t}d\omega = \frac{\sin Wt}{\pi t} = \frac W\pi\mathrm{sinc}\left(\frac{Wt}{\pi}\right)$$, $$x(0) = \frac W\pi$$.
 
 예제 4.4와 4.5는 사각형과 sinc가 자리를 바꾼 쌍이다(쌍대성). $$W$$를 키우면 $$X$$가 넓어지고, $$x(t)$$는 꼭대기가 높아지며 첫 봉우리 폭($$\vert t\vert  < \frac\pi W$$)이 좁아진다. $$W \to \infty$$면 $$x(t)$$는 임펄스에 다가간다(그림 4.11). 시간에서 좁으면 주파수에서 넓다[^10].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig2.svg" alt="그림" loading="lazy">
+
+$$W$$를 1, 2, 4로 키우면 왼쪽 사각형은 넓어지고, 오른쪽 $$x(t)$$는 꼭대기 $$\frac{W}{\pi}$$가 높아지며 가운데 봉우리가 좁아진다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예제 4.1(실수·복소수 $$a$$)·4.2·4.4·4.5를 분석식·합성식 수치 적분과 비교, 주기 사각파의 $$Ta_k$$가 포락선 값과 같음, $$X = \frac{1}{1+j\omega}$$를 역변환해 $$t = 1$$에서 $$e^{-1}$$이 나옴 — [38_ct-fourier-transform_verify.py](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_verify/)</div>
@@ -192,4 +200,5 @@ $$x(t)$$는 $$\vert t\vert  > T_1$$에서 0이고 $$\frac T2 > T_1$$이라, 넓�
 [^9]: 같은 자료, p.17 (예제 4.5, 그림 4.9)
 [^10]: 같은 자료, p.17~18 (그림 4.11)
 [^s1]: 에이전트 보충. 통신 대역폭 활용, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [38_ct-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 4.1의 분석식 수치 적분, $$\omega = \pm1$$의 크기·위상, 예제 4.5($$W = 1, 2, 4$$)의 합성식 수치 적분과 $$x(0) = \frac W\pi$$.
 {% endraw %}

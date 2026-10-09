@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/jacobi-gauss-seidel/"
 next_title: "야코비 방법과 가우스-자이델 방법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/bounding-volume/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/numerical-analysis/bounding-volume/"
 비스듬히 길쭉한 점 구름을 감싼다. $$x$$, $$y$$축에 나란한 상자(왼쪽 그림)는 구름 양옆에 빈 공간이 크다. 구름의 방향에 맞춰 돌린 상자(오른쪽 그림)는 꼭 맞는다[^1][^2].
 
 검증 코드에서 35° 기울어진 길이 10, 폭 1, 높이 1의 점 구름 400개를 감쌌다. 축에 나란한 상자의 부피는 52.48, 주성분 방향으로 돌린 상자는 13.72로 약 4분의 1이다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/19_bounding-volume_fig1.svg" alt="그림" loading="lazy">
+
+같은 점 구름을 위에서 내려다본 모습이다. 주황 상자는 구름 양옆에 빈 곳이 넓고, 파란 상자는 구름 방향을 따라 꼭 맞는다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 슬라이드 예의 평균·공분산·특성다항식·고윳값·고유벡터, $$ACA^\top$$가 대각, 상자 부피 비교, 카드 C2 — [19_bounding-volume_verify.py](/Hongs_Blog/studies/numerical-analysis/code/19_bounding-volume_verify/)</div>
@@ -117,4 +121,5 @@ $$C = \begin{pmatrix}\frac32 & \frac12 & \frac34\\ \frac12 & \frac12 & \frac14\\
 [^8]: 같은 자료, p.10
 [^9]: 같은 자료, p.11
 [^s1]: 에이전트 보충. 충돌 판정 동기, 점 구름 실험, 대칭이라 $$A$$가 회전이라는 설명, 사영으로 상자 만들기, 슬라이드 예의 상자 폭·부피, BVH, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [19_bounding-volume_plot.py](/Hongs_Blog/studies/numerical-analysis/code/19_bounding-volume_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 검증 코드와 같은 난수로 만든 점 구름에서 상자 부피 52.48과 13.72, 첫 주성분이 35° 방향.
 {% endraw %}

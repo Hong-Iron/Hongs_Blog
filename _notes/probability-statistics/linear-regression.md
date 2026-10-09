@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Regression", "선형회귀", "단순 선형회귀", "simple linear regression", "다중 선형회귀", "multiple linear regression", "최소제곱 추정", "ordinary least squares", "OLS", "잔차", "residual", "결정계수", "coefficient of determination", "R²", "회귀계수", "regression coefficient"]
 description: "결과를 입력들의 가중합에 잡음이 더해진 것으로 보는 모델이다. 잡음이 종 모양(정규분포)이라고 가정하면, 가장 그럴듯한 가중치를 찾는 것이 곧 오차 제곱합을 최소로 하는 것이라 행렬 계산 한 번으로 답이 나온다. 가중치는 \"다른 입력을 그대로 둘 때 이 입력이 하나 늘면 결과가 얼…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/overfitting-cv/"
 next_title: "과적합과 교차검증"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/linear-regression/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/probability-statistics/linear-regression/"
 광고비 $$x$$(백만 원)와 매출 $$y$$(억 원)가 다섯 달 동안 $$(1, 2.1), (2, 3.9), (3, 6.2), (4, 7.8), (5, 10.1)$$이었다. 오차 제곱합이 가장 작은 직선은 $$\hat y = 0.05 + 1.99x$$이고, 남은 오차(잔차)의 제곱합은 0.107이다. 매출 변화의 99.7%($$R^2 = 0.997$$)를 이 직선이 설명한다.
 
 기울기 1.99가 아래 정의의 $$\beta_1$$, 절편 0.05가 $$\beta_0$$, 잔차가 $$\varepsilon$$의 추정값이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig1.svg" alt="그림" loading="lazy">
+
+주황 선분이 잔차, 곧 점에서 직선까지의 세로 거리다. 다섯 잔차의 제곱을 더한 0.107은 다른 어떤 직선보다 작다[^s2].
 
 ## 정의
 
@@ -79,6 +83,10 @@ $$y_i = \mathbf{x}_i^\top\boldsymbol\beta + \varepsilon_i,\qquad \varepsilon_i \
 - *곡선 관계:* $$y = x^2$$에 직선을 맞추면 잔차가 양 끝에서 양수, 가운데서 음수인 U자를 그린다. 잔차 그림에 패턴이 보이면 모델이 틀린 것이다.
 - *극단값:* $$y = 2x + 1$$을 따르는 점 10개 중 하나를 $$-50$$으로 바꾸면 기울기가 음수로 뒤집힌다. 제곱 오차는 큰 오차를 매우 무겁게 본다.
 - *공선성:* 입력끼리 거의 일차종속이면 $$X^\top X$$의 [조건수](/Hongs_Blog/studies/linear-algebra/conditioning/)가 커져 계수가 불안정해진다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig2.svg" alt="그림" loading="lazy">
+
+왼쪽은 $$y = x^2$$에 직선을 맞춘 뒤의 잔차로, 양 끝은 양수이고 가운데는 음수인 U자다. 오른쪽은 $$y = 2x + 1$$ 위의 점 10개 중 마지막 하나만 $$-50$$으로 바꾼 것이다. 기울기가 2에서 $$-1.76$$으로 뒤집힌다[^s2].
 
 ## 예제
 
@@ -132,4 +140,5 @@ $$y_i = \mathbf{x}_i^\top\boldsymbol\beta + \varepsilon_i,\qquad \varepsilon_i \
 
 
 [^1]: Wasserman, *All of Statistics*, "Linear and Logistic Regression" 장(모델, 최소제곱과 최대가능도, 추정량의 분산, $$R^2$$). Strang, *Introduction to Linear Algebra* 5판, 4.3절 "Least Squares Approximations"(정규방정식).
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [34_linear-regression_plot.py](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_plot/)로 그렸고, 그림에 쓴 값($$\hat y = 0.05 + 1.99x$$, RSS 0.107, $$R^2 = 0.997$$, U자 잔차의 부호, 기울기 2와 $$-1.76$$)을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Computational Geometry", "CCW", "외적", "Cross Product", "선분 교차", "점 위치 판정"]
 description: "길을 걷다 다음 갈림길에서 왼쪽으로 꺾는지 오른쪽으로 꺾는지는 곱셈 두 번과 뺄셈 한 번으로 알 수 있다. 각도나 기울기를 계산하지 않고 정수로만 계산하니 오차가 없고, 세로선에서 0으로 나누는 일도 없다. 이 \"왼쪽인가 오른쪽인가\" 하나로 선분이 엇갈리는지, 점이 삼각형 안에 있…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/grid-rotation-linear/"
 next_title: "격자 회전 ↔ 선형변환"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/geometry-ccw/"
 ---
 {% raw %}
@@ -56,6 +56,10 @@ $$\operatorname{cross}(o, p, q) = (p_x - o_x)(q_y - o_y) - (p_y - o_y)(q_x - o_x
 - **선분 교차:** 선분 p₁p₂와 q₁q₂가 끝점이 아닌 곳에서 엇갈리려면, q₁과 q₂가 직선 p₁p₂의 서로 다른 쪽에 있고, p₁과 p₂도 직선 q₁q₂의 서로 다른 쪽에 있어야 한다. 곧 ccw(p₁, p₂, q₁) · ccw(p₁, p₂, q₂) < 0이고 ccw(q₁, q₂, p₁) · ccw(q₁, q₂, p₂) < 0이다. 값이 0인 쪽이 있으면 그 점이 다른 선분 위에 있는지 좌표 범위로 따로 본다[^2].
 - **점이 삼각형 안에 있는가:** 세 변 ab, bc, ca에 대해 ccw 값의 부호가 서로 엇갈리지 않으면(양수와 음수가 함께 나오지 않으면) 안이나 변 위다.
 - **각도 순 정렬:** 한 점 o에서 본 점들이 모두 반평면(180도 미만의 범위) 안에 있으면, "ccw(o, p, q) > 0이면 p가 q보다 앞"이라는 비교로 정렬한다. 파이썬에서는 `functools.cmp_to_key`로 비교 함수를 넘긴다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/35_geometry-ccw_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 예시의 세 점이다. O에서 P 쪽을 보다가 Q 쪽으로 반시계 방향으로 고개를 돌리고, 색칠한 삼각형의 넓이 5.5가 외적 11의 절반이다. 오른쪽의 두 선분은 엇갈린다. 괄호 속 부호처럼 p₁과 p₂는 직선 q₁q₂의 양쪽에 하나씩, q₁과 q₂는 직선 p₁p₂의 양쪽에 하나씩 있다[^s1].
 
 ```python
 def cross(o, p, q):
@@ -131,4 +135,5 @@ def crosses(p1, p2, q1, q2):               # 끝점이 아닌 곳에서 엇갈�
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018판), 29.2 "Points and lines"는 외적으로 점이 직선의 어느 쪽에 있는지와 선분 교차를 판정한다. 넓이 관계는 29.3 "Polygon area"에 있다.
 [^2]: 한 줄에 놓인 경우까지 다루는 선분 교차 판정은 Cormen 외, *Introduction to Algorithms* 3판, 33.1 "Line-segment properties"에 있다.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [35_geometry-ccw_plot.py](/Hongs_Blog/studies/algorithms/code/35_geometry-ccw_plot/)로 그렸고, cross(O, P, Q) = 11, cross(O, Q, P) = −11, 삼각형 넓이 5.5(헤론 공식으로 따로 계산), 오른쪽 선분 p₁(0, 0)–p₂(4, 2)와 q₁(1, 3)–q₂(3, −1)의 네 부호 값 10, −10, −10, 10을 같은 코드로 확인했다.
 {% endraw %}

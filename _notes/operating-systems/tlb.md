@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Translation Lookaside Buffer", "변환 색인 버퍼", "TLB 적중", "TLB Hit", "TLB 실패", "TLB Miss", "연관 사상", "Associative Mapping", "유효 접근 시간", "Effective Access Time"]
 description: "가상 메모리에서는 메모리를 한 번 쓰려 해도 먼저 페이지 표를 읽어야 해서 메모리 접근이 두 배가 된다. TLB는 최근에 쓴 페이지 표 항목 몇 개를 복사해 둔 작고 빠른 하드웨어 캐시다. 자주 가는 집 주소를 수첩에 적어 두고 매번 주소록 책을 펼치지 않는 것과 같다. 지역성 덕…"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/page-replacement/"
 next_title: "페이지 교체 알고리즘"
 math: true
 mermaid: true
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/tlb/"
 ---
 {% raw %}
@@ -79,6 +79,10 @@ flowchart TB
 $$\text{평균 접근 시간} = h\,(t + m) + (1 - h)\,(t + 2m)$$
 
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/40_tlb_fig1.svg" alt="그림" loading="lazy">
+
+$$t = 20$$, $$m = 100$$ ns로 그린 직선이다. 적중률이 1%포인트 오를 때마다 평균이 1 ns씩 준다. 적중률이 20%보다 낮으면 TLB를 먼저 찾아보는 20 ns가 손해가 되어, TLB가 없을 때보다 오히려 느리다[^s2].
+
 ## 활용
 
 - 프로세스를 바꾸면 TLB의 항목은 앞 프로세스의 것이라 쓸 수 없다. 그래서 TLB를 비우거나, 항목에 프로세스 표시를 붙인다. 프로세스 전환이 비싼 이유 중 하나다[^s1].
@@ -117,4 +121,5 @@ $$\text{평균 접근 시간} = h\,(t + m) + (1 - h)\,(t + 2m)$$
 [^3]: 같은 자료, 슬라이드 29~30 (그림 8.9)
 [^4]: 같은 자료, 슬라이드 31 (그림 8.10)
 [^s1]: 에이전트 보충. 시간 예와 유효 접근 시간 식, 프로세스·스레드 전환과 TLB, 확인 문제 C2·C3은 슬라이드에 없다. Stallings 6판 8.1절과 일반 교재의 유효 접근 시간 계산을 따랐다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [40_tlb_plot.py](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/)로 그렸고, 적중률 98%에서 122 ns, 0%에서 220 ns, 100%에서 120 ns, 20%에서 TLB 없을 때와 같은 200 ns를 같은 코드로 확인했다.
 {% endraw %}

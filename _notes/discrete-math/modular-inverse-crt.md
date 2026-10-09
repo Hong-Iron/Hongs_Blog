@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Modular Inverse", "모듈러 역원", "모듈로 역원", "multiplicative inverse", "Chinese Remainder Theorem", "CRT", "중국인의 나머지 정리", "서로소", "coprime", "relatively prime"]
 description: "나머지 산술에서 \"나누기\"는 역원을 곱하는 것이다. 26으로 나눈 나머지만 보는 세계에서 7에 곱해 1이 되는 수(15)를 찾아 두면, 7로 나누는 대신 15를 곱하면 된다. 이런 역원은 두 수의 공약수가 1뿐(서로소)일 때만 있고, 확장 유클리드 호제법으로 바로 구한다. 또 서로…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/fermat-euler/"
 next_title: "페르마 소정리와 오일러 정리"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/modular-inverse-crt/"
 ---
 {% raw %}
@@ -73,6 +73,10 @@ $$m_1, \dots, m_k$$가 **쌍마다 서로소**이고 $$M = m_1 \cdots m_k$$이�
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/29_modular-inverse-crt_fig1.svg" alt="그림" loading="lazy">
+
+칸 하나는 '3으로 나눈 나머지, 5로 나눈 나머지'의 짝이다. 왼쪽에서는 0부터 14까지가 15칸을 하나씩 빠짐없이 채운다. 그래서 어떤 나머지 짝을 골라도 15보다 작은 답이 딱 하나 있다. 오른쪽처럼 4와 6이 공약수 2를 가지면 0부터 23까지가 절반의 칸에 두 개씩 몰리고 나머지 칸은 빈다. 빈 칸의 짝은 해가 없고, 찬 칸의 짝은 24보다 작은 해가 둘이라 하나로 정해지지 않는다[^s2].
 
 ## 예제
 
@@ -130,4 +134,5 @@ $$m_1, \dots, m_k$$가 **쌍마다 서로소**이고 $$M = m_1 \cdots m_k$$이�
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장. Rosen, *Discrete Mathematics and Its Applications* 7판, 4장(역원, 중국인의 나머지 정리). Cormen et al., *Introduction to Algorithms* 3판, 31.4절 "Solving modular linear equations", 31.5절 "The Chinese remainder theorem".
 [^2]: 손자산경의 문제는 Rosen 7판 4장의 중국인의 나머지 정리 절에 역사적 예로 실려 있다.
 [^s1]: 에이전트 보충. RSA-CRT 복호는 실제 RSA 구현이 쓰는 표준 기법이다. 잉여 수 체계는 큰 정수·다항식 곱셈 알고리즘에서 쓰는 표준 기법이다. 여러 소수로 나눈 나머지로 곱셈을 하고 되살리는 과정과 RSA-CRT 복호 결과가 직접 복호와 같음은 29_modular-inverse-crt_verify.py에서 확인했다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [29_modular-inverse-crt_plot.py](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_plot/)로 그렸고, 법 3, 5에서 15칸이 하나씩 차는 것, 법 4, 6에서 12칸에 두 개씩 몰리는 것, $$x \equiv 1 \pmod 4$$, $$x \equiv 0 \pmod 6$$의 해가 없는 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Eigenfunctions of LTI Systems", "고유함수", "Eigenfunction", "고유값", "Eigenvalue", "시스템 함수", "System Function", "H(s)", "H(z)", "복소 지수 응답", "Response to Complex Exponentials"]
 description: "복소 지수 e^{st}는 어떤 LTI 시스템을 지나도 모양이 그대로이고 크기와 위상만 바뀐다. 거울에 비친 얼굴이 밝기만 달라지고 얼굴 모양은 그대로인 것과 같다. 그래서 입력을 복소 지수들의 합으로 쪼개 두면, 각 조각에 시스템이 정하는 수 H(s)를 곱하기만 하면 출력이 나온다…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/eigenfunction-eigenvector-bridge/"
 next_title: "LTI 고유함수 ↔ 행렬 고유벡터"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/lti-eigenfunction/"
 ---
 {% raw %}
@@ -123,6 +123,10 @@ $$y(t) = \sum_k a_kH(s_k)e^{s_kt}$$
 
 **$$h(t) = e^{-t}u(t)$$**[^s1]. $$H(s) = \int_0^\infty e^{-\tau}e^{-s\tau}d\tau = \dfrac{1}{s + 1}$$ ($$s$$의 실수부가 $$-1$$보다 클 때만 수렴). 입력 $$e^{j2t}$$의 출력은 $$\dfrac{1}{1 + j2}e^{j2t}$$로 크기는 $$\frac{1}{\sqrt5}$$배, 위상은 $$-\tan^{-1}2$$만큼 바뀐다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/28_lti-eigenfunction_fig1.svg" alt="그림" loading="lazy">
+
+실수 입력 $$\cos 2t$$를 넣은 경우다. 출력은 같은 주파수의 코사인이고, 높이는 $$\frac{1}{\sqrt5} \approx 0.447$$배, 봉우리는 $$\frac{\tan^{-1}2}{2} \approx 0.55$$초 늦다(화살표)[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$h = e^{-t}u(t)$$에 $$e^{st}$$ 세 가지를 넣어 수치 컨벌루션이 $$H(s)e^{st}$$와 일치, 예제 3.1의 고유값 분해와 직접 지연 결과 일치, 이산 $$z^n$$ 확인, 행렬 예의 고유값 1, 3 확인 — [28_lti-eigenfunction_verify.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_verify/)</div>
 
@@ -193,4 +197,5 @@ $$y(t) = \sum_k a_kH(s_k)e^{s_kt}$$
 [^6]: 같은 자료, p.22~24
 [^7]: 같은 자료, p.19
 [^s1]: 에이전트 보충. $$h = e^{-t}u(t)$$ 예, 오해 항목, 스스로 설명해 보기의 1·3·4, 확인 문제 C3은 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [28_lti-eigenfunction_plot.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^\infty e^{-\tau}\cos 2(t - \tau)d\tau$$의 수치 적분이 $$\frac{1}{\sqrt5}\cos(2t - \tan^{-1}2)$$와 같음.
 {% endraw %}

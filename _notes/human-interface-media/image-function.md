@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Image Function", "이미지", "image", "단색 이미지", "컬러 이미지", "RGB", "윤곽선", "edge", "기울기", "gradient"]
 description: "흑백 사진은 종이 위 위치마다 밝기 숫자가 하나씩 적힌 지도다. 컬러 사진은 빨강·초록·파랑 세 장의 지도를 겹친 것이다. 이렇게 보면 사진은 위치를 넣으면 밝기를 돌려주는 함수가 되고, 윤곽선은 그 함수가 급하게 변하는 곳이다. 단, 세 장의 지도를 숫자로 더해 한 장으로 합치면…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/luminance-and-illuminance/"
 next_title: "휘도와 조도"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/image-function/"
 ---
 {% raw %}
@@ -67,6 +67,10 @@ $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 **공간 주파수.** 평면 위에서 밝기가 얼마나 촘촘히 바뀌는지를 cycle/m로 잰다[^1]. 한 방향으로 사인 모양으로 바뀌는 줄무늬 $$i(x) = m + a\sin(2\pi u x)$$에서 $$u$$가 공간 주파수다. $$u = 500$$ cycle/m면 1 cm 안에 밝고 어두운 줄 한 쌍이 5번 들어 있다.
 
 디지털 이미지는 $$i(x, y)$$를 격자점에서만 재고(표본화, sampling) 값을 정수로 반올림한(양자화, quantization) 것이다. 강의 계획표 6주차 "Image Representation & Spatial Frequency"가 다룬다[^3][^s2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/12_image-function_fig1.svg" alt="그림" loading="lazy">
+
+위 그림은 1 cm에 5주기인 줄무늬(500 cycle/m)를 0.25 mm마다 잰 점이다. 아래 그림은 그 값을 8단계 중 가장 가까운 단계로 맞춘 결과다. 매끈한 곡선이 계단이 된다[^s3].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 서로 다른 네 색의 스칼라 합이 모두 255, 채널 벡터 합 = 원래 픽셀, 계단 경계의 차분(−80은 경계에서만, 세로 차분 0), 500 cycle/m 줄무늬가 1 cm에 5주기 (실험으로 확인됨) — [12_image-function_verify.py](/Hongs_Blog/studies/human-interface-media/code/12_image-function_verify/)</div>
@@ -123,4 +127,5 @@ $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 [^3]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_2026_Syllabus.pdf, Lecture Calendar 6주차
 [^s1]: 에이전트 보충. 벡터 값 함수 표기와 "채널 사진의 벡터 덧셈"이라는 해석은 슬라이드 그림(원본 = 빨강 + 초록 + 파랑 채널 사진)에 맞춘 것이다.
 [^s2]: 에이전트 보충. 표본화·양자화, 윤곽 검출과 흐리기의 주파수 해석은 영상 처리의 표준 내용이다.
+[^s3]: 에이전트 보충. 그림 1장은 원본에 없다. [12_image-function_plot.py](/Hongs_Blog/studies/human-interface-media/code/12_image-function_plot/)로 그렸고, 그림에 쓴 값(한 주기 2 mm라 1 cm에 5주기, 양자화 오차가 단계 간격의 절반(16) 이하)을 같은 코드로 확인했다.
 {% endraw %}

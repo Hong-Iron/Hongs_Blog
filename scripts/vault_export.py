@@ -32,6 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 NOTES_DIR = ROOT / "_notes"
+FIGURES_DIR = ROOT / "assets" / "notes"   # SVG figures from 3.개념집, copied as-is
 DATA_FILE = ROOT / "_data" / "study_courses.yml"
 STUDIES_PAGE = ROOT / "studies.html"
 
@@ -424,6 +425,7 @@ class Linker:
         self.by_path = {}   # vault path (no .md) -> (url, title)
         self.by_name = {}   # basename -> [(url, title)]
         self.unresolved = {}
+        self.images = {}    # vault path -> site url of a copied figure
 
     def add(self, vault_path, url, title):
         key = vault_path[:-3] if vault_path.endswith(".md") else vault_path
@@ -455,6 +457,11 @@ class Linker:
         hit = self.resolve(target) if target else None
         if display is None:
             display = hit[1] if hit else re.sub(r"^\d+[._]", "", target.rsplit("/", 1)[-1])
+        if embed and target in self.images:
+            alt = display if len(parts) > 1 else "그림"
+            return f'<img class="note-fig" src="{self.images[target]}" alt="{alt}" loading="lazy">'
+        if target in self.images:
+            return f"[{display}]({self.images[target]})"
         if embed or not hit:
             if not embed and not re.search(r"/(1\.수업자료|2\.필기노트)/|^_시스템/|\.(pdf|png|jpe?g|webm)$", target) \
                     and target + ".md" not in EXCLUDE:
@@ -613,6 +620,7 @@ def export(vault):
     baseurl = read_baseurl()
     linker = Linker(baseurl)
     courses = []   # dicts with everything needed to render
+    figures = []   # (svg path, course slug)
 
     # pass 1: collect pages and register every link target
     for track, entries in TRACKS:
@@ -640,6 +648,9 @@ def export(vault):
                                "url": f"/studies/{slug}/{doc_id}/"}
                         course["docs"].append(doc)
                         linker.add(rel, doc["url"], doc["title"])
+                    elif f.suffix == ".svg":
+                        figures.append((f, slug))
+                        linker.images[rel] = f"{baseurl}/assets/notes/{slug}/{f.name}"
                     elif f.suffix in CODE_EXTS:
                         code = {"path": f, "rel": rel, "kind": kind, "num": num_prefix(f.name),
                                 "url": f"/studies/{slug}/code/{f.stem.lower()}/"}
@@ -674,6 +685,11 @@ def export(vault):
 
     if NOTES_DIR.exists():
         shutil.rmtree(NOTES_DIR)
+    if FIGURES_DIR.exists():
+        shutil.rmtree(FIGURES_DIR)
+    for f, slug in figures:
+        (FIGURES_DIR / slug).mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(f, FIGURES_DIR / slug / f.name)
 
     # pass 2: write pages
     for course in courses:

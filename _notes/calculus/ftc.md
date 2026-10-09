@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Fundamental Theorem of Calculus", "FTC", "미적분학의 기본정리", "원시함수", "antiderivative", "부정적분", "indefinite integral", "누적 함수", "accumulation function", "적분의 평균값 정리", "누적합", "prefix sum"]
 description: "물탱크의 물 양이 늘어나는 속도는 지금 수도꼭지에서 들어오는 양 그 자체다. 거꾸로, 한 시간 동안 들어온 물의 총량은 물 양의 처음과 끝 차이다. 이 두 문장이 미적분의 기본정리이고, \"잘게 나눠 더한 극한\"이던 적분을 \"미분하면 그 함수가 되는 함수(원시함수)의 양 끝 값 차이…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/substitution/"
 next_title: "치환적분"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/ftc/"
 ---
 {% raw %}
@@ -55,6 +55,10 @@ $$f$$가 $$[a, b]$$에서 연속이라 하자.
 
 
 $$\int_0^3 t^2\,dt$$는 $$G(t) = \frac{t^3}{3}$$으로 $$9 - 0 = 9$$다. [리만 합](/Hongs_Blog/studies/calculus/riemann-integral/)의 표가 다가가던 값이 한 줄로 나온다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/12_ftc_fig1.svg" alt="그림" loading="lazy">
+
+위 칸은 $$t^2$$ 아래 넓이를 0부터 $$x = 2$$까지 쌓은 것이고, 아래 칸은 그 넓이를 $$x$$마다 찍은 $$F(x) = \frac{x^3}{3}$$이다. $$x = 2$$에서 $$F$$의 접선 기울기 4가 위 칸의 주황 막대 높이 $$f(2) = 4$$와 같다(1부). $$x$$를 조금 밀면 넓이가 "높이 × 폭"만큼 늘기 때문이다[^s2].
 
 ## 증명
 
@@ -198,4 +202,5 @@ $$\frac{\sin t}{t}$$의 원시함수는 기본 함수로 쓸 수 없지만, 1부
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.10절 "Antiderivatives", 5.3절 "The Fundamental Theorem of Calculus"(적분의 평균값 정리, 1부와 2부), 5.4절 "Integration Formulas and the Net Change Theorem".
 [^s1]: 에이전트 보충. 2차원 누적합(합 영역 표, summed-area table)은 비올라–존스 얼굴 검출에서 "integral image"라는 이름으로 쓰였다. 누적합의 $$O(1)$$ 구간 질의와 누적합 예시는 12_ftc_verify.py에서 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [12_ftc_plot.py](/Hongs_Blog/studies/calculus/code/12_ftc_plot/)로 그렸고, 넓이 $$F(2) = \frac83$$(리만 합), $$F'(2) = f(2) = 4$$(수치 미분), $$\int_0^3 t^2\,dt = 9$$를 같은 코드로 확인했다.
 {% endraw %}

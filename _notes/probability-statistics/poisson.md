@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Poisson Distribution", "포아송 분포", "푸아송 분포", "포아송 근사", "Poisson approximation", "소수의 법칙", "law of rare events", "도착률", "arrival rate", "과대산포", "overdispersion"]
 description: "넓은 시간이나 공간에 드문드문 흩어져 일어나는 일이, 정해진 구간에 몇 번 일어나는지의 분포다. 1초 동안 서버에 오는 요청 수, 한 페이지의 오타 수가 예다. 평균 하나로 모양이 정해지고, 평균과 분산이 같다. 시도는 아주 많고 각각의 확률은 아주 작은 이항분포의 극한이라 계산이…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/discrete-distributions-compared/"
 next_title: "이항·기하·포아송 비교"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/poisson/"
 ---
 {% raw %}
@@ -57,6 +57,10 @@ $$P(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}\quad(k = 0, 1, 2, \dots)$$
 
 확률의 합이 1인 것은 $$e^\lambda$$의 [테일러 급수](/Hongs_Blog/studies/calculus/taylor-series/) $$\sum_k\frac{\lambda^k}{k!} = e^\lambda$$($$\sum$$은 차례로 모두 더한다는 기호) 덕분이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/12_poisson_fig1.svg" alt="그림" loading="lazy">
+
+$$\lambda$$가 커지면 봉우리가 오른쪽으로 가고 옆으로 퍼진다. 분산도 $$\lambda$$라서, 평균이 클수록 흔들림도 크다[^s2].
+
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">이항분포의 포아송 극한</div>
 
@@ -75,6 +79,10 @@ $$\lambda$$를 고정하고 $$p = \frac{\lambda}{n}$$으로 두면, 모든 $$k$$
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/12_poisson_fig2.svg" alt="그림" loading="lazy">
+
+회색 막대가 $$\mathrm{Pois}(3)$$이고, 선은 평균을 3으로 맞춘 이항분포 $$\mathrm{Bin}(n, \frac3n)$$이다. $$n = 5$$에서는 꽤 다르지만, $$n$$을 키울수록 막대에 붙는다[^s2].
 
 **독립인 포아송의 합.** $$X \sim \mathrm{Pois}(\lambda_1)$$, $$Y \sim \mathrm{Pois}(\lambda_2)$$가 독립이면 $$X + Y \sim \mathrm{Pois}(\lambda_1 + \lambda_2)$$다. 두 서버로 오는 요청을 합친 것도 포아송이다.
 
@@ -132,4 +140,5 @@ $$\lambda$$를 고정하고 $$p = \frac{\lambda}{n}$$으로 두면, 모든 $$k$$
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 4.7절 "Poisson"(PMF, 평균과 분산, 독립인 포아송의 합), 4.8절 "Connections between Poisson and Binomial"(포아송 극한).
 [^s1]: 에이전트 보충. 광역 네트워크 트래픽이 포아송 모델과 맞지 않는다는 측정 결과는 Paxson, Floyd, "Wide Area Traffic: The Failure of Poisson Modeling", *IEEE/ACM Transactions on Networking* 3(3), 1995에 있다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [12_poisson_plot.py](/Hongs_Blog/studies/probability-statistics/code/12_poisson_plot/)로 그렸고, 그림에 쓴 값(예시 표의 값, $$\mathrm{Bin}(1000, 0.003)$$과의 차이 $$3.4 \times 10^{-4}$$ 미만, $$n = 5, 10, 1000$$으로 갈수록 차이가 줄어듦)을 같은 코드로 확인했다.
 {% endraw %}

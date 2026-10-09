@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/runge-kutta/"
 next_title: "룽게-쿠타 방법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/taylor-method/"
 ---
 {% raw %}
@@ -41,6 +41,10 @@ $$y' = x + y$$, $$y(0) = 1$$을 $$x = 1$$까지 걸음 $$h = 0.1$$로 푼다. �
 | $$h$$를 반으로 줄일 때 오차 | 약 1/2 | 약 1/4 | 약 1/8 | 약 1/16 |
 
 항을 하나 늘릴 때마다 오차가 한 자릿수 이상 준다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/33_taylor-method_fig1.svg" alt="그림" loading="lazy">
+
+가로축과 세로축 모두 한 칸이 10배인 눈금이다. 이런 눈금에서는 오차가 $$h^k$$에 비례하면 기울기 $$k$$인 곧은 선이 된다. 항을 늘릴수록 선이 더 가파르다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$k = 1$$이 오일러, $$k = 1..4$$에서 오차 비율 $$2^k$$, 표의 오차, 카드 C2 — [33_taylor-method_impl.py](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_impl/)</div>
@@ -111,4 +115,5 @@ $$k = 1$$이면 오일러 방법과 같다[^4].
 [^3]: 같은 자료, p.6
 [^4]: 같은 자료, p.7
 [^s1]: 에이전트 보충. 예시 문제와 오차 표, 전미분의 연쇄 법칙 식, 국소·전역 오차 차수, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [33_taylor-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 오차 $$2.5 \times 10^{-1}$$, $$8.4 \times 10^{-3}$$, $$2.1 \times 10^{-4}$$, $$4.2 \times 10^{-6}$$, $$h$$를 반으로 하면 오차가 약 $$2^k$$분의 1.
 {% endraw %}

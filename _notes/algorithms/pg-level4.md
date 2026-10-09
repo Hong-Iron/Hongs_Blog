@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "draft"
 aliases: ["Programmers Level 4"]
 description: "Level 4에서 고른 문제 20개다. 카카오 기출 12개 전부에, 기출이 아닌 문제 가운데 많이 푼 8개를 더했다. 정답률이 높은 문제부터 놓았고, SQL 문제는 넣지 않았다. 풀이가 있는 문제는 제목을 누르면 풀이 문서로 간다. 풀이 문서는 쉬운 단계부터 하나씩 펼쳐 보게 되어…"

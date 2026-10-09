@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Binary Search", "이진 탐색", "이분 탐색", "bisect", "bisect_left", "bisect_right", "lower bound", "upper bound", "루프 불변식"]
 description: "두꺼운 사전에서 단어를 찾을 때 가운데를 펼쳐 앞쪽인지 뒤쪽인지 보고, 절반을 통째로 버리는 것과 같다. 한 번 볼 때마다 찾을 곳이 절반으로 줄어서 100만 개 중에서도 20번이면 찾는다. 대신 정렬된 곳에서만 쓸 수 있다. 그리고 끝을 넣을지 뺄지, 같을 때 어느 쪽으로 갈지를…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/parametric-search/"
 next_title: "매개변수 탐색"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/binary-search/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/algorithms/binary-search/"
 | 끝 | 3 | 3 | | | | lo == hi → 답 3 |
 
 a[3] = 7이다. 8칸짜리를 세 번 만에 찾았다. 7이 없고 6을 찾았다면 같은 과정으로 "6 이상인 첫 위치" 3을 돌려준다. 그러면 "6보다 작은 수가 3개 있다"는 뜻도 된다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/20_binary-search_fig1.svg" alt="그림" loading="lazy">
+
+가로·세로 모두 10배마다 한 칸인 눈금이다. 원소가 10배 늘면 처음부터 훑는 방법은 비교도 10배 늘지만, 이분 탐색은 3~4번만 는다. 100만 개에서 하나씩 보면 100만 번, 이분 탐색은 20번이다[^s1].
 
 ## 정의
 
@@ -224,4 +228,5 @@ def f(a, x):
 
 [^1]: 루프 불변식의 세 단계(초기화·유지·종료)는 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.1절의 방식을 따랐다. 이분 탐색 자체는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search".
 [^2]: Python 3 표준 라이브러리 문서, "bisect — Array bisection algorithm"의 `bisect_left`, `bisect_right`.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [20_binary-search_plot.py](/Hongs_Blog/studies/algorithms/code/20_binary-search_plot/)로 그렸고, n = 1 ~ 2,048에서 답이 될 수 있는 모든 자리를 넣어 본 가장 많은 반복 횟수가 ⌈log₂(n + 1)⌉과 같다는 것, 예시의 8칸에서 3번, 100만 개에서 20번이라는 것을 같은 코드로 확인했다.
 {% endraw %}

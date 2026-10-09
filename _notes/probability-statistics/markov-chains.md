@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Markov Chain", "마르코프 연쇄", "마르코프 체인", "마르코프 성질", "Markov property", "전이행렬", "transition matrix", "확률행렬", "stochastic matrix", "정상분포", "stationary distribution", "기약", "irreducible", "비주기", "aperiodic", "귀환 시간", "return time"]
 description: "다음 상태가 지금 상태에만 달려 있고, 여기까지 어떤 길로 왔는지는 상관없는 무작위 과정이다. 상태끼리 옮겨 갈 확률을 표(전이행렬)로 모으면, 여러 단계 뒤의 분포는 그 행렬을 거듭 곱해 구한다. 오래 돌리면 출발점과 상관없이 일정한 비율(정상분포)로 가라앉는 경우가 많아, 웹 …"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/walks-markov-bridge/"
 next_title: "인접행렬 거듭제곱 ↔ 마르코프 전이"
 math: true
 mermaid: true
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/markov-chains/"
 ---
 {% raw %}
@@ -51,6 +51,10 @@ stateDiagram-v2
 | 비 | 1 | 0.5 | 0.3 | 0.22 | $$\frac16 \approx 0.167$$ |
 
 오늘 맑았어도 결국 같은 $$\left(\frac56, \frac16\right)$$로 간다. 그림의 화살표 확률이 아래 정의의 전이행렬 $$P$$, 마지막 열이 정상분포 $$\boldsymbol\pi$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/23_markov-chains_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 비 온 날과 맑은 날에서 각각 출발해, 맑을 확률을 날마다 계산한 것이다. 두 선 모두 일주일 안에 $$\frac56$$에 붙는다. 오른쪽은 $$\frac56$$과의 차이를 로그 눈금으로 그린 것이다. 매일 정확히 0.4배가 되어 직선으로 내려간다[^s1].
 
 ## 정의
 
@@ -138,4 +142,5 @@ $$P(X_{t+1} = j \mid X_t = i, X_{t-1}, \dots, X_0) = P(X_{t+1} = j \mid X_t = i)
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 11.1절 "Markov property and transition matrix", 11.2절 "Classification of states"(기약, 주기), 11.3절 "Stationary distribution"(존재·유일성·수렴, 평균 귀환 시간 $$\frac{1}{\pi_i}$$).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [23_markov-chains_plot.py](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_plot/)로 그렸고, 그림에 쓴 값(예시 표의 0.5·0.7·0.78, 정상분포 $$\left(\frac56, \frac16\right)$$, 차이의 비 0.4, 고윳값 1과 0.4)을 같은 코드로 확인했다.
 {% endraw %}

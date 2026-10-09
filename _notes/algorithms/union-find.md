@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Union-Find", "Disjoint Set Union", "DSU", "서로소 집합", "분리 집합", "경로 압축", "union by size"]
 description: "반 친구들을 무리로 나눌 때 무리마다 대표 한 명을 정하고, 각자는 \"내 위의 사람\"만 기억한다. 위로 따라가 대표가 같으면 같은 무리다. 두 무리를 합칠 때는 한쪽 대표를 다른 쪽 대표 밑에 넣기만 하면 된다. 작은 무리를 큰 무리 밑에 넣고, 대표를 찾을 때 지나온 사람들을 대…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/brute-force/"
 next_title: "완전탐색"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/union-find/"
 ---
 {% raw %}
@@ -78,6 +78,10 @@ def union(a, b):
 - **작은 무리를 큰 무리 밑에(크기로 합치기):** 어떤 칸의 깊이가 1 늘 때마다 그 칸이 든 무리의 크기가 두 배 이상이 된다. 크기는 n을 넘을 수 없으니 깊이는 log₂ n 이하다. 그래서 find가 $$O(\log n)$$이다[^1].
 - **경로 압축까지 쓰면:** 여러 번 연산의 평균 비용이 거의 상수(역아커만 함수 α(n), 현실의 n에서는 4 이하)가 된다[^2].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/15_union-find_fig1.svg" alt="그림" loading="lazy">
+
+경로 압축 없이 union만 했을 때 가장 깊은 칸의 깊이다(가로·세로 모두 로그 눈금). union(1, 0), union(2, 1), …처럼 새 칸을 계속 첫째 인자로 넣으면, 크기를 안 볼 때는 한 줄로 늘어서 깊이가 n − 1이 된다. 크기로 합치면 같은 순서에서 깊이가 1이다. 크기가 같은 무리끼리만 짝지어 합치는 가장 나쁜 순서에서도 깊이는 $$\log_2 n$$에서 멈춘다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 표의 parent 배열과 find의 경로 압축, 확인 문제 C1·C3의 답을 코드로 확인했다. 무작위 500번에서 크기로 합치기만으로 깊이가 log₂ n 이하였고, 무작위 1,500번에서 "같은 무리인가"가 BFS로 구한 연결 여부와 같았다 — [15_union-find_impl.py](/Hongs_Blog/studies/algorithms/code/15_union-find_impl/)</div>
 
@@ -128,4 +132,5 @@ def union(a, b):
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 15.2 "Union-find structure": 대표로 이어지는 줄, 작은 무리를 큰 무리에 잇는 방법, 연산이 O(log n)이다.
 [^2]: Cormen 외, *Introduction to Algorithms* 3판, 21.3절(순위(rank)로 합치기와 경로 압축), 21.4절(두 방법을 함께 쓰면 m번 연산이 O(m α(n)), α(n)은 실제로 쓰는 n에서 4 이하). 이 문서의 코드는 순위 대신 크기로 합친다. 크기로 합치기도 경로 압축과 함께 쓰면 같은 $$\Theta(m\,\alpha(n))$$이다(Tarjan & van Leeuwen, "Worst-case analysis of set union algorithms", *JACM* 31(2), 1984. 위키백과 "Disjoint-set data structure"가 이 논문을 근거로 "union by size or by rank"를 함께 적는다).
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [15_union-find_plot.py](/Hongs_Blog/studies/algorithms/code/15_union-find_plot/)로 그렸고, n = 2 ~ 4,096에서 크기를 안 보면 깊이 n − 1, 크기로 합치면 같은 순서에서 깊이 1, 가장 나쁜 순서에서 정확히 $$\log_2 n$$이라는 것과, 무작위 union 300묶음에서 깊이가 $$\log_2 n$$ 이하라는 것을 같은 코드로 확인했다.
 {% endraw %}

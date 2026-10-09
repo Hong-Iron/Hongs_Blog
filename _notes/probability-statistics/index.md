@@ -8,7 +8,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 concepts: 38
 practices: 5
-codes: 40
+codes: 69
 description: "확률과 통계 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true
@@ -53,11 +53,11 @@ permalink: "/studies/probability-statistics/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 01 | [표본공간과 사건](/Hongs_Blog/studies/probability-statistics/sample-space/) | 일어날 수 있는 모든 결과의 집합과 그 부분집합 | [검증](/Hongs_Blog/studies/probability-statistics/code/01_sample-space_verify/) | — |
-| 02 | [확률의 공리와 계산](/Hongs_Blog/studies/probability-statistics/probability-axioms/) | 0~1, 전체 1, 겹치지 않으면 더한다. 균등이면 세기 | [검증](/Hongs_Blog/studies/probability-statistics/code/02_probability-axioms_verify/) | — |
+| 02 | [확률의 공리와 계산](/Hongs_Blog/studies/probability-statistics/probability-axioms/) | 0~1, 전체 1, 겹치지 않으면 더한다. 균등이면 세기 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/02_probability-axioms_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/02_probability-axioms_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/02_probability-axioms_verify/) | — |
 | 03 | [조건부 확률](/Hongs_Blog/studies/probability-statistics/conditional-probability/) | 정보가 주어지면 표본공간이 줄어든다. 곱셈 법칙, 전확률 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/03_conditional-probability_verify/) | — |
 | 04 | [독립](/Hongs_Blog/studies/probability-statistics/independence/) | 한 사건이 다른 사건의 확률을 바꾸지 않는다 | [검증](/Hongs_Blog/studies/probability-statistics/code/04_independence_verify/) | — |
 | 05 | [독립과 배반 비교](/Hongs_Blog/studies/probability-statistics/independent-vs-disjoint/) | 가르는 질문: 같이 일어날 수 없는가, 서로 정보를 주지 않는가 | [검증](/Hongs_Blog/studies/probability-statistics/code/05_independent-vs-disjoint_verify/) | — |
-| 06 | [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/) | 결과에서 원인의 확률을 거꾸로 구한다. 기저율을 잊으면 크게 틀린다 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/06_bayes-theorem_verify/) | [베이즈 정리 예제 사다리](/Hongs_Blog/studies/probability-statistics/bayes-ladder/) |
+| 06 | [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/) | 결과에서 원인의 확률을 거꾸로 구한다. 기저율을 잊으면 크게 틀린다 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/06_bayes-theorem_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/06_bayes-theorem_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/06_bayes-theorem_verify/) | [베이즈 정리 예제 사다리](/Hongs_Blog/studies/probability-statistics/bayes-ladder/) |
 
 떠올려 보기: 노트를 닫고 확률의 세 공리, 조건부 확률의 정의와 곱셈 법칙·전확률 공식, 독립의 정의, 베이즈 정리를 차례로 쓰고, 각 식이 앞의 어느 식에서 나오는지 화살표로 잇는다.
 
@@ -75,12 +75,12 @@ permalink: "/studies/probability-statistics/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 07 | [확률변수와 분포](/Hongs_Blog/studies/probability-statistics/random-variables/) | 결과에 수를 붙이는 함수. PMF, CDF, 지시 확률변수 | [검증](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_verify/) | — |
+| 07 | [확률변수와 분포](/Hongs_Blog/studies/probability-statistics/random-variables/) | 결과에 수를 붙이는 함수. PMF, CDF, 지시 확률변수 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/07_random-variables_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_verify/) | — |
 | 08 | [기댓값과 선형성](/Hongs_Blog/studies/probability-statistics/expectation/) | 독립이 아니어도 합의 기댓값 = 기댓값의 합 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/08_expectation_verify/) | [기댓값 선형성 예제 사다리](/Hongs_Blog/studies/probability-statistics/expectation-ladder/) |
 | 09 | [분산과 표준편차](/Hongs_Blog/studies/probability-statistics/variance/) | 평균에서 얼마나 흩어지나. 독립합의 분산은 더해진다 | [검증](/Hongs_Blog/studies/probability-statistics/code/09_variance_verify/) | — |
-| 10 | [베르누이 시행과 이항분포](/Hongs_Blog/studies/probability-statistics/binomial/) | n번 독립 시행 중 성공 횟수 | [검증](/Hongs_Blog/studies/probability-statistics/code/10_binomial_verify/) | — |
-| 11 | [기하분포](/Hongs_Blog/studies/probability-statistics/geometric-distribution/) | 첫 성공까지의 시도 횟수. 무기억성 | [검증](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_verify/) | — |
-| 12 | [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/) | 드문 사건이 일정 시간에 몇 번 일어나나. 이항의 극한 | [검증](/Hongs_Blog/studies/probability-statistics/code/12_poisson_verify/) | — |
+| 10 | [베르누이 시행과 이항분포](/Hongs_Blog/studies/probability-statistics/binomial/) | n번 독립 시행 중 성공 횟수 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/probability-statistics/10_binomial_fig2.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/10_binomial_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/10_binomial_verify/) | — |
+| 11 | [기하분포](/Hongs_Blog/studies/probability-statistics/geometric-distribution/) | 첫 성공까지의 시도 횟수. 무기억성 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/11_geometric-distribution_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_verify/) | — |
+| 12 | [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/) | 드문 사건이 일정 시간에 몇 번 일어나나. 이항의 극한 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/12_poisson_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/probability-statistics/12_poisson_fig2.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/12_poisson_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/12_poisson_verify/) | — |
 | 13 | [이항·기하·포아송 비교](/Hongs_Blog/studies/probability-statistics/discrete-distributions-compared/) | 가르는 질문: 무엇을 세는가 | [검증](/Hongs_Blog/studies/probability-statistics/code/13_discrete-distributions-compared_verify/) | — |
 
 떠올려 보기: 기댓값의 정의와 선형성, 분산의 계산 공식과 독립합의 분산, 이항·기하·포아송의 PMF·평균·분산을 표로 써 보고, 이항에서 포아송이 나오는 극한을 한 줄로 설명한다.
@@ -99,9 +99,9 @@ permalink: "/studies/probability-statistics/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 14 | [연속 확률변수와 확률밀도](/Hongs_Blog/studies/probability-statistics/continuous-rv/) | 한 점의 확률은 0이고 넓이가 확률 | [검증](/Hongs_Blog/studies/probability-statistics/code/14_continuous-rv_verify/) | — |
-| 15 | [균등분포와 지수분포](/Hongs_Blog/studies/probability-statistics/uniform-exponential/) | 어디든 같은 확률 / 기다림의 무기억 분포 | [검증](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_verify/) | — |
-| 16 | [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/) | 종 모양. 평균과 표준편차로 정해지고 68-95-99.7 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/16_normal-distribution_verify/) | — |
+| 14 | [연속 확률변수와 확률밀도](/Hongs_Blog/studies/probability-statistics/continuous-rv/) | 한 점의 확률은 0이고 넓이가 확률 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/14_continuous-rv_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/14_continuous-rv_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/14_continuous-rv_verify/) | — |
+| 15 | [균등분포와 지수분포](/Hongs_Blog/studies/probability-statistics/uniform-exponential/) | 어디든 같은 확률 / 기다림의 무기억 분포 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/15_uniform-exponential_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_verify/) | — |
+| 16 | [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/) | 종 모양. 평균과 표준편차로 정해지고 68-95-99.7 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/16_normal-distribution_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/probability-statistics/16_normal-distribution_fig2.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/16_normal-distribution_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/16_normal-distribution_verify/) | — |
 
 떠올려 보기: PDF와 CDF의 관계, 균등·지수·정규분포의 밀도·평균·분산을 표로 쓰고, 무기억성과 표준화가 각각 어떤 계산을 쉽게 하는지 한 줄씩 붙인다.
 
@@ -120,8 +120,8 @@ permalink: "/studies/probability-statistics/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 17 | [결합분포와 조건부 기댓값](/Hongs_Blog/studies/probability-statistics/joint-distributions/) | 두 확률변수를 함께 본다. 주변화와 조건부 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/17_joint-distributions_verify/) | — |
-| 18 | [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/) | 함께 움직이는 정도. 상관은 인과가 아니다 | [검증](/Hongs_Blog/studies/probability-statistics/code/18_covariance_verify/) | — |
-| 19 | [공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) | 여러 변수의 퍼짐을 행렬 하나로. 등고선은 타원 | [검증](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_verify/) | — |
+| 18 | [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/) | 함께 움직이는 정도. 상관은 인과가 아니다 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/18_covariance_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/18_covariance_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/18_covariance_verify/) | — |
+| 19 | [공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) | 여러 변수의 퍼짐을 행렬 하나로. 등고선은 타원 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/19_multivariate-normal_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_verify/) | — |
 
 떠올려 보기: 주변분포·조건부 분포·아담의 법칙·이브의 법칙, 공분산과 상관계수의 정의와 합의 분산, 공분산 행렬의 성질과 AΣAᵀ를 쓰고, 상관계수가 코사인인 이유를 한 문단으로 설명한다.
 
@@ -139,9 +139,9 @@ permalink: "/studies/probability-statistics/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 20 | [확률 부등식](/Hongs_Blog/studies/probability-statistics/tail-bounds/) | 평균·분산만으로 꼬리 확률의 상한: 마르코프, 체비쇼프, 체르노프 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/20_tail-bounds_verify/) | — |
-| 21 | [큰 수의 법칙](/Hongs_Blog/studies/probability-statistics/lln/) | 표본평균은 기댓값으로 모인다 | [검증](/Hongs_Blog/studies/probability-statistics/code/21_lln_verify/) | — |
-| 22 | [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/) | 독립인 것들의 합은 정규분포에 가까워진다 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/22_clt_verify/) | — |
+| 20 | [확률 부등식](/Hongs_Blog/studies/probability-statistics/tail-bounds/) | 평균·분산만으로 꼬리 확률의 상한: 마르코프, 체비쇼프, 체르노프 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/20_tail-bounds_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/20_tail-bounds_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/20_tail-bounds_verify/) | — |
+| 21 | [큰 수의 법칙](/Hongs_Blog/studies/probability-statistics/lln/) | 표본평균은 기댓값으로 모인다 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/21_lln_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/21_lln_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/21_lln_verify/) | — |
+| 22 | [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/) | 독립인 것들의 합은 정규분포에 가까워진다 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig2.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/22_clt_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/22_clt_verify/) | — |
 
 떠올려 보기: 마르코프·체비쇼프·체르노프를 가정과 함께 쓰고, 체비쇼프로 큰 수의 법칙을 증명하고, 중심극한정리를 표준화 식으로 쓴 뒤 세 결과가 '평균의 오차'에 대해 각각 무엇을 말하는지 비교한다.
 
@@ -159,11 +159,11 @@ permalink: "/studies/probability-statistics/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 23 | [마르코프 연쇄](/Hongs_Blog/studies/probability-statistics/markov-chains/) | 다음 상태가 현재에만 달린 과정. 전이행렬과 정상분포 | [검증](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_verify/) | — |
+| 23 | [마르코프 연쇄](/Hongs_Blog/studies/probability-statistics/markov-chains/) | 다음 상태가 현재에만 달린 과정. 전이행렬과 정상분포 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/23_markov-chains_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/23_markov-chains_verify/) | — |
 | 24 | [인접행렬 거듭제곱 ↔ 마르코프 전이](/Hongs_Blog/studies/probability-statistics/walks-markov-bridge/) | (A^k)_ij는 보행 수, (P^k)_ij는 k단계 확률 | [검증](/Hongs_Blog/studies/probability-statistics/code/24_walks-markov-bridge_verify/) | — |
-| 25 | [PageRank](/Hongs_Blog/studies/probability-statistics/pagerank/) | 무작위 서퍼의 정상분포 = 고유벡터. 거듭제곱법 | [구현](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_impl/) · [검증](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_verify/) | — |
-| 26 | [해싱과 무작위 알고리즘의 확률](/Hongs_Blog/studies/probability-statistics/randomized-analysis/) | 생일 문제, 해시 충돌, 무작위 퀵정렬의 기대 비교 횟수 | [검증](/Hongs_Blog/studies/probability-statistics/code/26_randomized-analysis_verify/) | — |
-| 27 | [몬테카를로 방법](/Hongs_Blog/studies/probability-statistics/monte-carlo/) | 무작위 표본으로 적분·확률을 어림. 오차는 1/√n | [검증](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_verify/) | — |
+| 25 | [PageRank](/Hongs_Blog/studies/probability-statistics/pagerank/) | 무작위 서퍼의 정상분포 = 고유벡터. 거듭제곱법 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/25_pagerank_fig1.svg) · [구현](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_impl/) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/25_pagerank_verify/) | — |
+| 26 | [해싱과 무작위 알고리즘의 확률](/Hongs_Blog/studies/probability-statistics/randomized-analysis/) | 생일 문제, 해시 충돌, 무작위 퀵정렬의 기대 비교 횟수 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/26_randomized-analysis_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/26_randomized-analysis_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/26_randomized-analysis_verify/) | — |
+| 27 | [몬테카를로 방법](/Hongs_Blog/studies/probability-statistics/monte-carlo/) | 무작위 표본으로 적분·확률을 어림. 오차는 1/√n | [그림1](/Hongs_Blog/assets/notes/probability-statistics/27_monte-carlo_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_verify/) | — |
 
 떠올려 보기: 전이행렬과 정상분포의 식, 수렴을 보장하는 조건과 깨지는 두 경우, PageRank의 갱신 식과 순간이동이 필요한 이유, 퀵정렬 쌍의 비교 확률, 몬테카를로 오차 1/√n을 쓰고, 행렬 거듭제곱이 보행 수와 전이 확률을 동시에 세는 이유를 한 문단으로 설명한다.
 
@@ -181,12 +181,12 @@ permalink: "/studies/probability-statistics/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 28 | [기술통계](/Hongs_Blog/studies/probability-statistics/descriptive-statistics/) | 평균·중앙값·분위수·분산, 히스토그램 | [검증](/Hongs_Blog/studies/probability-statistics/code/28_descriptive-statistics_verify/) | — |
-| 29 | [표본분포와 추정량](/Hongs_Blog/studies/probability-statistics/estimators/) | 표본에서 계산한 값도 확률변수다. 불편성, n − 1, MSE | [검증](/Hongs_Blog/studies/probability-statistics/code/29_estimators_verify/) | — |
-| 30 | [최대가능도 추정](/Hongs_Blog/studies/probability-statistics/mle/) | 관측을 가장 그럴듯하게 만드는 모수. 로그를 취해 미분 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/30_mle_verify/) | [최대가능도 예제 사다리](/Hongs_Blog/studies/probability-statistics/mle-ladder/) |
-| 31 | [신뢰구간](/Hongs_Blog/studies/probability-statistics/confidence-intervals/) | 추정의 불확실성을 폭으로 나타낸다. '95%'의 뜻에 주의 | [검증](/Hongs_Blog/studies/probability-statistics/code/31_confidence-intervals_verify/) | — |
-| 32 | [가설검정과 p값](/Hongs_Blog/studies/probability-statistics/hypothesis-testing/) | 우연만으로 이만한 차이가 나올 확률. 가설이 참일 확률이 아니다 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_verify/) | [가설검정 예제 사다리](/Hongs_Blog/studies/probability-statistics/hypothesis-testing-ladder/) |
-| 33 | [베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/) | 사전 믿음 × 가능도 → 사후 믿음. MAP = 정규화된 MLE | [검증](/Hongs_Blog/studies/probability-statistics/code/33_bayesian-inference_verify/) | — |
+| 28 | [기술통계](/Hongs_Blog/studies/probability-statistics/descriptive-statistics/) | 평균·중앙값·분위수·분산, 히스토그램 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/28_descriptive-statistics_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/28_descriptive-statistics_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/28_descriptive-statistics_verify/) | — |
+| 29 | [표본분포와 추정량](/Hongs_Blog/studies/probability-statistics/estimators/) | 표본에서 계산한 값도 확률변수다. 불편성, n − 1, MSE | [그림1](/Hongs_Blog/assets/notes/probability-statistics/29_estimators_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/29_estimators_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/29_estimators_verify/) | — |
+| 30 | [최대가능도 추정](/Hongs_Blog/studies/probability-statistics/mle/) | 관측을 가장 그럴듯하게 만드는 모수. 로그를 취해 미분 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/30_mle_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/30_mle_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/30_mle_verify/) | [최대가능도 예제 사다리](/Hongs_Blog/studies/probability-statistics/mle-ladder/) |
+| 31 | [신뢰구간](/Hongs_Blog/studies/probability-statistics/confidence-intervals/) | 추정의 불확실성을 폭으로 나타낸다. '95%'의 뜻에 주의 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/31_confidence-intervals_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/31_confidence-intervals_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/31_confidence-intervals_verify/) | — |
+| 32 | [가설검정과 p값](/Hongs_Blog/studies/probability-statistics/hypothesis-testing/) | 우연만으로 이만한 차이가 나올 확률. 가설이 참일 확률이 아니다 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig2.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_verify/) | [가설검정 예제 사다리](/Hongs_Blog/studies/probability-statistics/hypothesis-testing-ladder/) |
+| 33 | [베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/) | 사전 믿음 × 가능도 → 사후 믿음. MAP = 정규화된 MLE | [그림1](/Hongs_Blog/assets/notes/probability-statistics/33_bayesian-inference_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/33_bayesian-inference_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/33_bayesian-inference_verify/) | — |
 
 떠올려 보기: 추정량의 편향·분산·MSE, 최대가능도의 네 단계 절차, 95% 신뢰구간의 올바른 해석, p값의 정의와 두 가지 오류, 사후분포 ∝ 가능도 × 사전분포를 쓰고, MLE와 MAP와 신뢰구간·신용구간의 차이를 표로 정리한다.
 
@@ -204,9 +204,9 @@ permalink: "/studies/probability-statistics/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 34 | [선형회귀](/Hongs_Blog/studies/probability-statistics/linear-regression/) | 가우스 잡음의 최대가능도 = 최소제곱 | [검증](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_verify/) | — |
-| 35 | [과적합과 교차검증](/Hongs_Blog/studies/probability-statistics/overfitting-cv/) | 훈련 데이터를 외우면 새 데이터에서 틀린다. 나눠서 검증 | [검증](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_verify/) | — |
-| 36 | [주성분 분석](/Hongs_Blog/studies/probability-statistics/pca/) | 데이터가 가장 퍼진 방향으로 좌표를 다시 잡아 차원을 줄인다 (무거움) | [검증](/Hongs_Blog/studies/probability-statistics/code/36_pca_verify/) | [주성분 분석 예제 사다리](/Hongs_Blog/studies/probability-statistics/pca-ladder/) |
+| 34 | [선형회귀](/Hongs_Blog/studies/probability-statistics/linear-regression/) | 가우스 잡음의 최대가능도 = 최소제곱 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/probability-statistics/34_linear-regression_fig2.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_verify/) | — |
+| 35 | [과적합과 교차검증](/Hongs_Blog/studies/probability-statistics/overfitting-cv/) | 훈련 데이터를 외우면 새 데이터에서 틀린다. 나눠서 검증 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/35_overfitting-cv_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_verify/) | — |
+| 36 | [주성분 분석](/Hongs_Blog/studies/probability-statistics/pca/) | 데이터가 가장 퍼진 방향으로 좌표를 다시 잡아 차원을 줄인다 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/36_pca_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/36_pca_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/36_pca_verify/) | [주성분 분석 예제 사다리](/Hongs_Blog/studies/probability-statistics/pca-ladder/) |
 
 떠올려 보기: 선형회귀 모델과 MLE = 최소제곱의 이유, 훈련·검증·시험 집합의 역할과 k겹 교차검증 절차, PCA의 네 단계와 첫 주성분이 최대 분산 방향인 이유를 쓴다.
 
@@ -223,8 +223,8 @@ permalink: "/studies/probability-statistics/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 37 | [엔트로피](/Hongs_Blog/studies/probability-statistics/entropy/) | 평균 놀라움 = 평균적으로 필요한 비트 수 (무거움) | [구현](/Hongs_Blog/studies/probability-statistics/code/37_entropy_impl/) · [검증](/Hongs_Blog/studies/probability-statistics/code/37_entropy_verify/) | — |
-| 38 | [교차 엔트로피와 KL 발산](/Hongs_Blog/studies/probability-statistics/cross-entropy-kl/) | 잘못된 분포로 부호화할 때 드는 추가 비트 | [검증](/Hongs_Blog/studies/probability-statistics/code/38_cross-entropy-kl_verify/) | — |
+| 37 | [엔트로피](/Hongs_Blog/studies/probability-statistics/entropy/) | 평균 놀라움 = 평균적으로 필요한 비트 수 (무거움) | [그림1](/Hongs_Blog/assets/notes/probability-statistics/37_entropy_fig1.svg) · [구현](/Hongs_Blog/studies/probability-statistics/code/37_entropy_impl/) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/37_entropy_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/37_entropy_verify/) | — |
+| 38 | [교차 엔트로피와 KL 발산](/Hongs_Blog/studies/probability-statistics/cross-entropy-kl/) | 잘못된 분포로 부호화할 때 드는 추가 비트 | [그림1](/Hongs_Blog/assets/notes/probability-statistics/38_cross-entropy-kl_fig1.svg) · [그림 코드](/Hongs_Blog/studies/probability-statistics/code/38_cross-entropy-kl_plot/) · [검증](/Hongs_Blog/studies/probability-statistics/code/38_cross-entropy-kl_verify/) | — |
 
 떠올려 보기: 엔트로피의 정의와 범위, 원천 부호화 정리, 교차 엔트로피 = 엔트로피 + KL, 기브스 부등식을 쓰고, 교차 엔트로피 손실이 최대가능도와 같은 이유를 한 문단으로 설명한다.
 

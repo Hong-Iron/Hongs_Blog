@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/coordinate-frame/"
 next_title: "좌표계 변환"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/normal-transform/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/numerical-analysis/normal-transform/"
 | $$(M^{-1})^\top$$으로 바꾼 법선 | $$(2, -1)$$ | $$(\tfrac12, 1)$$ | $$1 - 1 = 0$$ (수직) |
 
 직선이 옆으로 늘어나 더 눕는다. 그러니 법선은 오히려 더 서야 한다. $$(M^{-1})^\top$$는 $$x$$ 성분을 절반으로 줄여 법선을 세운다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/05_normal-transform_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 원래 직선과 법선이다. 오른쪽에서 주황 화살표 $$M\mathbf n$$은 늘어난 직선에 비스듬하고, 초록 화살표 $$(M^{-1})^\top\mathbf n$$만 수직으로 선다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 표, 무작위 가역 행렬 200개에서 법선의 수직과 평면 변환 공식, 직교 행렬이면 $$(M^{-1})^\top = M$$, 카드 C2 — [05_normal-transform_verify.py](/Hongs_Blog/studies/numerical-analysis/code/05_normal-transform_verify/)</div>
@@ -127,4 +131,5 @@ $$= D - N\cdot M^{-1}T$$ ($$D = -N\cdot P$$)
 [^1]: 2-2학기/수치해석/1.수업자료/05.na05_ortho.pdf, p.6
 [^2]: 2-2학기/수치해석/1.수업자료/06.na06_rotation.pdf, p.43
 [^s1]: 에이전트 보충. 슬라이드 p.6은 직교 행렬일 때 $$G = M$$만 결론으로 적는다. 일반식 $$G = (M^{-1})^\top$$는 같은 식에서 바로 나오고 6회 p.43의 평면 변환에 쓰인다. 예시 표, 셰이더의 법선 행렬, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [05_normal-transform_plot.py](/Hongs_Blog/studies/numerical-analysis/code/05_normal-transform_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$M\mathbf n\cdot M\mathbf t = 3$$, $$(M^{-1})^\top\mathbf n = (\frac12, 1)$$과 $$M\mathbf t$$의 내적 0. 화살표는 방향만 보이도록 길이를 같게 그렸다.
 {% endraw %}

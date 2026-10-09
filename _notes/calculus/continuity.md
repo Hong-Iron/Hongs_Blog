@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Continuity", "Intermediate Value Theorem", "연속", "연속함수", "continuous function", "불연속", "discontinuity", "사잇값 정리", "IVT", "최대·최소 정리", "extreme value theorem", "이분법", "bisection method"]
 description: "연속은 그래프를 펜을 떼지 않고 그릴 수 있다는 뜻으로, 그 점의 극한값과 함숫값이 같다는 것이다. 연속함수가 구간의 양 끝에서 부호가 다르면 그 사이 어딘가에서 반드시 0을 지난다(사잇값 정리). 이것이 \"반씩 줄여 가며 근을 찾는\" 이분법의 근거다. 단, 구간 안에 끊긴 곳이 …"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/sequence-limits/"
 next_title: "수열의 극한과 e"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/continuity/"
 ---
 {% raw %}
@@ -44,6 +44,10 @@ $$f(x) = x^3 - x - 2$$는 $$f(1) = -2 < 0$$, $$f(2) = 4 > 0$$이다. 연속함�
 | 5 | $$[1.5, 1.5625]$$ | 1.53125 | + | $$[1.5, 1.53125]$$ |
 
 구간이 매번 절반이 되어 근 $$x \approx 1.52138$$로 좁혀진다. 구간의 양 끝이 아래 정리의 $$a$$, $$b$$이고, 0이 사잇값 $$y$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/02_continuity_fig1.svg" alt="그림" loading="lazy">
+
+아래 칸의 막대 하나가 표의 한 줄이다. 막대는 단계마다 절반으로 짧아지고, 늘 점선(근)을 품은 채 줄어든다[^s2].
 
 ## 정의
 
@@ -129,4 +133,5 @@ $$f(x) = x^3 - x - 2$$는 $$f(1) = -2 < 0$$, $$f(2) = 4 > 0$$이다. 연속함�
 [^1]: OpenStax, *Calculus Volume 1*, 2.4절 "Continuity"(연속의 세 조건, 사잇값 정리)
 [^2]: OpenStax, *Calculus Volume 1*, 4.3절 "Maxima and Minima"(최대·최소 정리)
 [^s1]: 에이전트 보충. `git bisect`는 커밋 이력을 이분 탐색해 문제를 처음 일으킨 커밋을 찾는 git 명령이다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [02_continuity_plot.py](/Hongs_Blog/studies/calculus/code/02_continuity_plot/)로 그렸고, 표의 중점 1.5, 1.75, 1.625, 1.5625, 1.53125와 마지막 구간 $$[1.5, 1.53125]$$, 근 1.52138을 같은 코드로 확인했다.
 {% endraw %}

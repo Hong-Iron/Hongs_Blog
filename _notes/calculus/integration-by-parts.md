@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Integration by Parts", "부분적분", "부분 적분법", "표 방법", "tabular method", "LIATE", "감마 함수", "Gamma function"]
 description: "곱의 미분 법칙을 거꾸로 쓰는 기법이다. 두 함수의 곱을 적분할 때, 한쪽은 미분하고 다른 쪽은 적분해 더 쉬운 적분으로 바꾼다. 다항식 × 지수함수, 다항식 × 삼각함수, 로그처럼 치환이 통하지 않는 곱에 쓴다. 어느 쪽을 미분할지 잘못 고르면 식이 오히려 복잡해지므로, 미분할수…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/improper-integrals/"
 next_title: "이상적분"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/integration-by-parts/"
 ---
 {% raw %}
@@ -60,6 +60,10 @@ $$\int u\,dv = uv - \int v\,du, \qquad \int_a^b u(x)v'(x)\,dx = \big[u(x)v(x)\bi
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/14_integration-by-parts_fig1.svg" alt="그림" loading="lazy">
+
+$$u = \ln x$$, $$v = x$$로 두고 $$x$$가 1에서 $$e$$까지 가면 점 $$(v, u)$$가 회색 곡선을 그린다. 파란 넓이가 $$\int u\,dv$$, 주황 넓이가 $$\int v\,du$$이고, 둘을 합치면 점선 직사각형 $$\big[uv\big] = e \cdot 1 - 1 \cdot 0 = e$$가 된다. 그래서 $$\int_1^e \ln x\,dx = e - (e - 1) = 1$$이다[^s2].
 
 **$$u$$ 고르는 요령.** 미분하면 단순해지는 쪽을 $$u$$로 둔다. 흔히 로그 → 역삼각 → 다항식 → 삼각 → 지수 순서로 앞쪽을 $$u$$로 고른다(머리글자로 LIATE라 부르는 경험칙)[^s1]. 규칙이 아니라 요령이라 예외가 있다.
 
@@ -133,4 +137,5 @@ $$\int u\,dv = uv - \int v\,du, \qquad \int_a^b u(x)v'(x)\,dx = \big[u(x)v(x)\bi
 
 [^1]: OpenStax, *Calculus Volume 2*, 3.1절 "Integration by Parts"(공식, $$u$$ 고르기, 반복 적용, 정적분).
 [^s1]: 에이전트 보충. LIATE는 여러 미적분 교재와 강의에서 쓰는 경험칙이다. 아벨의 부분합은 Graham·Knuth·Patashnik, *Concrete Mathematics* 2.6절의 "summation by parts"로 확인할 수 있다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [14_integration-by-parts_plot.py](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_plot/)로 그렸고, 두 넓이 1과 $$e - 1$$, 그 합 $$e$$, 원시함수 $$x\ln x - x$$로 계산한 값 1을 같은 코드로 확인했다.
 {% endraw %}

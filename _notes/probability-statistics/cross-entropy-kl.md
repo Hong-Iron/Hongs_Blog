@@ -17,7 +17,7 @@ prev_url: "/studies/probability-statistics/entropy/"
 prev_title: "엔트로피"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/cross-entropy-kl/"
 ---
 {% raw %}
@@ -73,6 +73,10 @@ $$D(p \Vert  q) \ge 0$$이고, 등호는 $$p = q$$일 때만이다. 곧 $$H(p, q
 
 
 **거리가 아니다.** $$p = (0.9, 0.1)$$, $$q = (0.5, 0.5)$$이면 $$D(p\Vert q) \approx 0.531$$, $$D(q\Vert p) \approx 0.737$$비트로 다르다. 삼각부등식도 맞지 않는다. 그래서 "거리"가 아니라 "발산"이라 부른다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/38_cross-entropy-kl_fig1.svg" alt="그림" loading="lazy">
+
+$$p = (0.9, 0.1)$$을 고정하고 $$q = (t, 1 - t)$$를 움직였다. 두 곡선은 $$t = 0.9$$, 곧 $$q = p$$일 때만 함께 0이 되고, 다른 곳에서는 값이 다르다. $$t$$가 0이나 1로 가면 $$D(p \Vert  q)$$만 끝없이 커진다. 실제로 일어나는 값에 $$q$$가 확률을 거의 주지 않기 때문이다[^s1].
 
 ## 예제
 
@@ -137,4 +141,5 @@ $$\mathcal{L}(\theta) = -\frac1n\sum_{i=1}^{n}\ln q_\theta(y_i \mid \mathbf{x}_i
 [^1]: Cover, Thomas, *Elements of Information Theory* 2판, 2장(상대 엔트로피의 정의, 정보 부등식 $$D(p\Vert q) \ge 0$$, 틀린 분포로 부호화할 때의 추가 길이).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 3.13절(KL 발산과 교차 엔트로피), 5.5절(최대가능도와 교차 엔트로피의 관계).
 [^d1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.27 (Measuring Similar Distributions)
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [38_cross-entropy-kl_plot.py](/Hongs_Blog/studies/probability-statistics/code/38_cross-entropy-kl_plot/)로 그렸고, 그림에 쓴 값($$t = 0.5$$에서 0.531과 0.737, $$D(p \Vert  p) = 0$$, 예시의 KL 0.25)을 같은 코드로 확인했다.
 {% endraw %}

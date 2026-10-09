@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Point-to-Point Link", "점대점 연결", "point-to-point", "완전 연결", "full mesh", "직접 링크", "direct link", "링크의 실체", "전송 모드", "transmission mode", "simplex", "단방향", "반이중", "half-duplex", "전이중", "full-duplex"]
 description: "두 기기를 전용선 하나로 바로 잇는 연결이다. 두 사람만 쓰는 직통 전화와 같다. 단순하고 서로 간섭이 없다. 대신 모든 기기를 이렇게 이으면 기기가 늘어날 때 선이 감당할 수 없이 늘어난다."
@@ -17,7 +17,7 @@ next_url: "/studies/computer-communication/multiple-access-link/"
 next_title: "다중 접근 링크"
 math: true
 mermaid: true
-code_count: 1
+code_count: 2
 permalink: "/studies/computer-communication/point-to-point-link/"
 ---
 {% raw %}
@@ -64,6 +64,10 @@ graph LR
 
 
 왜 $$n(n-1)/2$$일까? 노드마다 나머지 $$n-1$$개와 이어지니 포트를 모두 세면 $$n(n-1)$$개다. 그런데 링크 하나는 양 끝 포트에서 한 번씩, 모두 두 번 세어졌다. 그래서 링크 수는 그 절반이다. 숫자로 보면 노드 10개는 45개, 100개는 4,950개다[^s1]. 노드가 10배가 되면 링크는 약 100배가 된다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/01_point-to-point-link_fig1.svg" alt="그림" loading="lazy">
+
+파란 선이 완전 연결의 링크 수, 주황 선이 노드 수다. 노드 수는 곧게 늘지만 링크 수는 위로 휘며 올라가, 노드 30개에서 이미 435개다. 파란 선은 늘 $$n^2/4$$와 $$n^2/2$$ 사이의 띠 안에 있다[^s4].
 
 <details markdown="1"><summary markdown="span">n²/4 ≤ m ≤ n²/2 유도</summary>
 
@@ -159,4 +163,5 @@ graph LR
 [^s1]: 에이전트 보충. 필기 21행은 증가 차수 "$$n^2$$"만 적는다. 정확한 개수 $$n(n-1)/2$$와 부등식의 근거는 두 번 세기 논증과 검증 코드다. 본문의 45, 4,950은 이 공식에 $$n = 10, 100$$을 넣은 값이다.
 [^s2]: 에이전트 보충. 광케이블 예와 PPP는 원본에 없는 실제 사용처다. PPP는 RFC 1661(1994)에 정의되어 있다.
 [^s3]: 에이전트 보충. 전송 모드의 예(TV 방송, 무전기, 전화)는 원본에 없다. 슬라이드는 세 모드의 이름과 화살표 그림만 준다.
+[^s4]: 에이전트 보충. 그림 한 장은 원본에 없다. [01_point-to-point-link_plot.py](/Hongs_Blog/studies/computer-communication/code/01_point-to-point-link_plot/)로 그렸고, $$n = 10, 20, 30$$에서 링크 45, 190, 435개와 $$n = 2, \dots, 30$$에서 $$n^2/4 \le m \le n^2/2$$를 같은 코드로 확인했다.
 {% endraw %}

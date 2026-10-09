@@ -8,7 +8,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 concepts: 36
 practices: 5
-codes: 40
+codes: 53
 description: "이산수학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true
@@ -104,12 +104,12 @@ permalink: "/studies/discrete-math/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 14 | [셈의 기본 법칙](/Hongs_Blog/studies/discrete-math/counting-rules/) | 합의 법칙, 곱의 법칙, 전단사로 세기, 나눗셈 법칙 (무거움) | [검증](/Hongs_Blog/studies/discrete-math/code/14_counting-rules_verify/) | — |
-| 15 | [순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/) | 순서가 중요하면 순열, 아니면 조합 (무거움) | [검증](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_verify/) | — |
+| 15 | [순열과 조합](/Hongs_Blog/studies/discrete-math/permutations-combinations/) | 순서가 중요하면 순열, 아니면 조합 (무거움) | [그림1](/Hongs_Blog/assets/notes/discrete-math/15_permutations-combinations_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_verify/) | — |
 | 16 | [중복을 허용하는 셈](/Hongs_Blog/studies/discrete-math/multiset-counting/) | 별과 막대로 중복조합. 같은 것이 있는 순열 | [검증](/Hongs_Blog/studies/discrete-math/code/16_multiset-counting_verify/) | — |
 | 17 | [순열·조합·중복조합 비교](/Hongs_Blog/studies/discrete-math/counting-formula-choice/) | 가르는 질문: 순서가 중요한가, 중복을 허용하는가 | [검증](/Hongs_Blog/studies/discrete-math/code/17_counting-formula-choice_verify/) | [경우의 수 예제 사다리](/Hongs_Blog/studies/discrete-math/counting-ladder/) |
-| 18 | [이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/) | (x + y)^n의 계수가 조합. 파스칼 항등식 | [검증](/Hongs_Blog/studies/discrete-math/code/18_binomial-theorem_verify/) | — |
-| 19 | [포함-배제 원리](/Hongs_Blog/studies/discrete-math/inclusion-exclusion/) | 겹친 부분을 빼고 다시 더하며 합집합을 센다 | [검증](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_verify/) | — |
-| 20 | [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/) | 칸보다 물건이 많으면 어떤 칸에는 둘 이상 | [검증](/Hongs_Blog/studies/discrete-math/code/20_pigeonhole_verify/) | — |
+| 18 | [이항정리](/Hongs_Blog/studies/discrete-math/binomial-theorem/) | (x + y)^n의 계수가 조합. 파스칼 항등식 | [그림1](/Hongs_Blog/assets/notes/discrete-math/18_binomial-theorem_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/18_binomial-theorem_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/18_binomial-theorem_verify/) | — |
+| 19 | [포함-배제 원리](/Hongs_Blog/studies/discrete-math/inclusion-exclusion/) | 겹친 부분을 빼고 다시 더하며 합집합을 센다 | [그림1](/Hongs_Blog/assets/notes/discrete-math/19_inclusion-exclusion_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_verify/) | — |
+| 20 | [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/) | 칸보다 물건이 많으면 어떤 칸에는 둘 이상 | [그림1](/Hongs_Blog/assets/notes/discrete-math/20_pigeonhole_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/20_pigeonhole_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/20_pigeonhole_verify/) | — |
 
 떠올려 보기: 순서 × 중복 네 칸 표를 빈 종이에 그리고 칸마다 공식과 예를 채운 뒤, 겹침이 있을 때(포함-배제)와 반드시 겹칠 때(비둘기집)를 한 줄씩 덧붙인다.
 
@@ -128,11 +128,11 @@ permalink: "/studies/discrete-math/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 21 | [선형 점화식](/Hongs_Blog/studies/discrete-math/linear-recurrences/) | 특성방정식의 근으로 닫힌 꼴을 찾는다. 피보나치 (무거움) | [검증](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_verify/) | [점화식 풀이 예제 사다리](/Hongs_Blog/studies/discrete-math/recurrence-ladder/) |
-| 22 | [생성함수](/Hongs_Blog/studies/discrete-math/generating-functions/) | 수열을 멱급수의 계수로 싣고 대수로 푼다 | [검증](/Hongs_Blog/studies/discrete-math/code/22_generating-functions_verify/) | — |
-| 23 | [합의 계산과 어림](/Hongs_Blog/studies/discrete-math/sums-asymptotics/) | 망원합, 거듭제곱 합, 조화수 H_n ≈ ln n | [검증](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_verify/) | — |
-| 24 | [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/) | 상수배와 작은 항을 버린 성장 속도 비교: O, Ω, Θ (무거움) | [검증](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_verify/) | — |
-| 25 | [분할 정복 점화식과 마스터 정리](/Hongs_Blog/studies/discrete-math/master-theorem/) | T(n) = aT(n/b) + f(n)을 세 경우로 푼다 (무거움) | [검증](/Hongs_Blog/studies/discrete-math/code/25_master-theorem_verify/) | [마스터 정리 예제 사다리](/Hongs_Blog/studies/discrete-math/master-theorem-ladder/) |
+| 21 | [선형 점화식](/Hongs_Blog/studies/discrete-math/linear-recurrences/) | 특성방정식의 근으로 닫힌 꼴을 찾는다. 피보나치 (무거움) | [그림1](/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig2.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_verify/) | [점화식 풀이 예제 사다리](/Hongs_Blog/studies/discrete-math/recurrence-ladder/) |
+| 22 | [생성함수](/Hongs_Blog/studies/discrete-math/generating-functions/) | 수열을 멱급수의 계수로 싣고 대수로 푼다 | [그림1](/Hongs_Blog/assets/notes/discrete-math/22_generating-functions_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/22_generating-functions_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/22_generating-functions_verify/) | — |
+| 23 | [합의 계산과 어림](/Hongs_Blog/studies/discrete-math/sums-asymptotics/) | 망원합, 거듭제곱 합, 조화수 H_n ≈ ln n | [그림1](/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/discrete-math/23_sums-asymptotics_fig2.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_verify/) | — |
+| 24 | [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/) | 상수배와 작은 항을 버린 성장 속도 비교: O, Ω, Θ (무거움) | [그림1](/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig2.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_verify/) | — |
+| 25 | [분할 정복 점화식과 마스터 정리](/Hongs_Blog/studies/discrete-math/master-theorem/) | T(n) = aT(n/b) + f(n)을 세 경우로 푼다 (무거움) | [그림1](/Hongs_Blog/assets/notes/discrete-math/25_master-theorem_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/25_master-theorem_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/25_master-theorem_verify/) | [마스터 정리 예제 사다리](/Hongs_Blog/studies/discrete-math/master-theorem-ladder/) |
 
 떠올려 보기: 노트를 닫고 특성방정식으로 점화식을 푸는 다섯 단계, O·Ω·Θ의 한정기호 정의, 마스터 정리의 세 경우를 재귀 트리 그림과 함께 적어 본다.
 
@@ -151,10 +151,10 @@ permalink: "/studies/discrete-math/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 26 | [나눗셈과 합동](/Hongs_Blog/studies/discrete-math/modular-arithmetic/) | 나머지만 보는 산술. 시계 산술 (무거움) | [검증](/Hongs_Blog/studies/discrete-math/code/26_modular-arithmetic_verify/) | — |
-| 27 | [최대공약수와 유클리드 호제법](/Hongs_Blog/studies/discrete-math/gcd-euclid/) | gcd(a, b) = gcd(b, a mod b). 확장 유클리드 (무거움) | [구현](/Hongs_Blog/studies/discrete-math/code/27_gcd-euclid_impl/) · [검증](/Hongs_Blog/studies/discrete-math/code/27_gcd-euclid_verify/) | [유클리드 호제법 예제 사다리](/Hongs_Blog/studies/discrete-math/gcd-ladder/) |
-| 28 | [소수와 산술의 기본정리](/Hongs_Blog/studies/discrete-math/primes/) | 소인수분해는 한 가지뿐. 에라토스테네스의 체 | [구현](/Hongs_Blog/studies/discrete-math/code/28_primes_impl/) · [검증](/Hongs_Blog/studies/discrete-math/code/28_primes_verify/) | — |
-| 29 | [모듈러 역원과 중국인의 나머지 정리](/Hongs_Blog/studies/discrete-math/modular-inverse-crt/) | 서로소일 때만 역원이 있다. 나머지들로 수를 복원 | [검증](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_verify/) | — |
-| 30 | [페르마 소정리와 오일러 정리](/Hongs_Blog/studies/discrete-math/fermat-euler/) | a^{φ(n)} ≡ 1 (mod n). 빠른 거듭제곱 | [검증](/Hongs_Blog/studies/discrete-math/code/30_fermat-euler_verify/) | — |
+| 27 | [최대공약수와 유클리드 호제법](/Hongs_Blog/studies/discrete-math/gcd-euclid/) | gcd(a, b) = gcd(b, a mod b). 확장 유클리드 (무거움) | [그림1](/Hongs_Blog/assets/notes/discrete-math/27_gcd-euclid_fig1.svg) · [구현](/Hongs_Blog/studies/discrete-math/code/27_gcd-euclid_impl/) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/27_gcd-euclid_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/27_gcd-euclid_verify/) | [유클리드 호제법 예제 사다리](/Hongs_Blog/studies/discrete-math/gcd-ladder/) |
+| 28 | [소수와 산술의 기본정리](/Hongs_Blog/studies/discrete-math/primes/) | 소인수분해는 한 가지뿐. 에라토스테네스의 체 | [그림1](/Hongs_Blog/assets/notes/discrete-math/28_primes_fig1.svg) · [구현](/Hongs_Blog/studies/discrete-math/code/28_primes_impl/) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/28_primes_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/28_primes_verify/) | — |
+| 29 | [모듈러 역원과 중국인의 나머지 정리](/Hongs_Blog/studies/discrete-math/modular-inverse-crt/) | 서로소일 때만 역원이 있다. 나머지들로 수를 복원 | [그림1](/Hongs_Blog/assets/notes/discrete-math/29_modular-inverse-crt_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_verify/) | — |
+| 30 | [페르마 소정리와 오일러 정리](/Hongs_Blog/studies/discrete-math/fermat-euler/) | a^{φ(n)} ≡ 1 (mod n). 빠른 거듭제곱 | [그림1](/Hongs_Blog/assets/notes/discrete-math/30_fermat-euler_fig1.svg) · [그림 코드](/Hongs_Blog/studies/discrete-math/code/30_fermat-euler_plot/) · [검증](/Hongs_Blog/studies/discrete-math/code/30_fermat-euler_verify/) | — |
 | 31 | [RSA 암호](/Hongs_Blog/studies/discrete-math/rsa/) | 곱하기는 쉽고 인수분해는 어려운 비대칭으로 만든 공개키 암호 | [구현](/Hongs_Blog/studies/discrete-math/code/31_rsa_impl/) · [검증](/Hongs_Blog/studies/discrete-math/code/31_rsa_verify/) | — |
 
 떠올려 보기: 노트를 닫고 나눗셈 정리, 호제법의 원리와 베주 항등식, 역원이 있을 조건, 오일러 정리, RSA 키 생성의 네 줄을 순서대로 적고 서로 어떻게 기대는지 화살표로 잇는다.

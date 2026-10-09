@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Eigenvalue", "고윳값", "고유값", "Eigenvector", "고유벡터", "특성방정식", "characteristic equation", "특성다항식", "characteristic polynomial", "고유공간", "eigenspace", "거듭제곱법", "power iteration", "마르코프 행렬", "Markov matrix", "페이지랭크", "PageRank"]
 description: "행렬을 곱하면 대부분의 벡터는 방향이 바뀐다. 그런데 어떤 특별한 방향의 벡터는 방향은 그대로 두고 길이만 몇 배가 된다. 이 방향이 고유벡터, 그 배율이 고윳값이다. 변환을 여러 번 되풀이할 때 무엇이 남고 무엇이 사라지는지, 시스템이 안정한지 폭발하는지가 모두 고윳값으로 정해진…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/diagonalization/"
 next_title: "대각화와 행렬 거듭제곱"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/eigenvalues/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/eigenvalues/"
 어느 도시의 인구가 매년 도심에서 20%는 교외로, 교외에서 30%는 도심으로 옮긴다. (도심, 교외) 비율 $$\mathbf{u}$$는 매년 $$A = \begin{pmatrix}0.8 & 0.3\\ 0.2 & 0.7\end{pmatrix}$$을 곱해 바뀐다. 처음에 모두 도심 $$(1, 0)$$이면 $$(0.8, 0.2)$$, $$(0.7, 0.3)$$, $$(0.65, 0.35)$$, … 로 $$(0.6, 0.4)$$에 다가간다.
 
 $$(0.6, 0.4)$$에 $$A$$를 곱하면 $$(0.48 + 0.12,\ 0.12 + 0.28) = (0.6, 0.4)$$ 그대로다. 배율 1인 고유벡터다. 또 $$(1, -1)$$에 곱하면 $$(0.5, -0.5)$$로 방향은 같고 길이가 절반이다. 배율 $$\frac12$$인 고유벡터다. 모든 출발점은 이 둘의 결합이라, 해마다 $$(1, -1)$$ 성분이 절반씩 줄어 결국 $$(0.6, 0.4)$$만 남는다. 두 배율 1과 $$\frac12$$가 아래 정의의 $$\lambda$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/19_eigenvalues_fig1.svg" alt="그림" loading="lazy">
+
+점 하나가 한 해다. 어디서 출발하든 점들은 $$(1, -1)$$ 방향 직선을 따라 $$(0.6, 0.4)$$로 다가가고, 남은 거리가 해마다 절반이 된다. 파란 직선은 배율 1인 고유벡터의 방향이다[^s2].
 
 ## 정의
 
@@ -189,4 +193,5 @@ $$A = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$의 고윳값과 고유벡터.
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.1절 "Introduction to Eigenvalues"(마르코프 행렬 예, 특성방정식, 대각합과 행렬식, 사영·반사·회전).
 [^s1]: 에이전트 보충. 페이지랭크를 거듭제곱법으로 구하는 방법은 Brin·Page의 1998년 논문 이후 선형대수 교재의 표준 응용 예다(Strang 5판 10.3절 "Markov Matrices"). 라이브러리가 QR 알고리즘을 쓴다는 것은 LAPACK 문서(`geev`)에 있다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [19_eigenvalues_plot.py](/Hongs_Blog/studies/linear-algebra/code/19_eigenvalues_plot/)로 그렸고, $$(0.8, 0.2)$$, $$(0.7, 0.3)$$, $$(0.65, 0.35)$$의 순서, 두 고유벡터, 남은 차이가 늘 $$(1, -1)$$ 방향이고 해마다 절반이 되는 것을 같은 코드로 확인했다.
 {% endraw %}

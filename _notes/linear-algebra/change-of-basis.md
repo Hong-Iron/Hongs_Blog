@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Change of Basis", "기저 변환", "좌표 변환", "coordinate change", "닮음", "similar matrices", "닮은 행렬", "similarity transformation", "대각합", "trace"]
 description: "같은 점도 어떤 눈금(기저)으로 재느냐에 따라 좌표가 다르고, 같은 변환도 기저에 따라 행렬이 달라진다. 변환이 유난히 단순하게 작용하는 방향들(그대로 두는 방향, 뒤집는 방향, 늘이는 방향)을 기저로 고르면 복잡해 보이던 행렬이 대각행렬처럼 단순해진다. 새 기저의 행렬은 \"새 좌…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/determinant/"
 next_title: "행렬식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/change-of-basis/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/change-of-basis/"
 직선 $$y = x$$에 대한 반사는 표준 기저에서 $$A = \begin{pmatrix}0 & 1\\ 1 & 0\end{pmatrix}$$이다. 그런데 이 반사가 하는 일은 단순하다. 직선 위의 방향 $$\mathbf{b}_1 = (1, 1)$$은 그대로 두고, 직선에 수직인 방향 $$\mathbf{b}_2 = (1, -1)$$은 뒤집는다.
 
 $$\mathbf{b}_1, \mathbf{b}_2$$를 기저로 쓰면 좌표 $$(c_1, c_2)$$인 점은 $$(c_1, -c_2)$$로 간다. 이 기저에서 반사의 행렬은 $$\begin{pmatrix}1 & 0\\ 0 & -1\end{pmatrix}$$이다. 예를 들어 표준 좌표 $$(3, 1) = 2\mathbf{b}_1 + 1\mathbf{b}_2$$는 새 좌표 $$(2, 1)$$이고, 반사하면 새 좌표 $$(2, -1)$$, 곧 $$2\mathbf{b}_1 - \mathbf{b}_2 = (1, 3)$$이다. $$\mathbf{b}_1, \mathbf{b}_2$$를 열로 세운 행렬이 아래의 $$P$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/14_change-of-basis_fig1.svg" alt="그림" loading="lazy">
+
+기울어진 격자가 새 기저의 눈금이다. $$(3, 1)$$은 $$\mathbf{b}_1$$ 방향으로 2칸, $$\mathbf{b}_2$$ 방향으로 1칸 간 점이고, 반사는 $$\mathbf{b}_2$$ 방향 1칸만 반대로 돌려 $$(1, 3)$$으로 보낸다[^s2].
 
 ## 정의
 
@@ -110,4 +114,5 @@ $$B$$를 오른쪽부터 읽으면 과정이 보인다. 새 좌표 $$\mathbf{c}$
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 8.2절 "The Matrix of a Linear Transformation"(기저를 바꾸면 행렬이 바뀜), 8.3절 "The Search for a Good Basis"($$B = M^{-1}AM$$, 닮은 행렬).
 [^s1]: 에이전트 보충. RGB와 YCbCr의 변환 행렬은 ITU-R BT.601 규격에 정의되어 있고, JPEG(JFIF)이 이것을 쓴다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [14_change-of-basis_plot.py](/Hongs_Blog/studies/linear-algebra/code/14_change-of-basis_plot/)로 그렸고, 새 좌표 $$(2, 1)$$, 반사 결과 $$(1, 3)$$, $$P^{-1}AP = \operatorname{diag}(1, -1)$$을 같은 코드로 확인했다.
 {% endraw %}

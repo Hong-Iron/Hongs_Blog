@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Series and LTI Systems", "주파수 응답", "Frequency Response", "H(jω)", "H(e^jω)", "시스템 함수", "System Function", "출력 계수", "Output Coefficients"]
 description: "주기 신호를 LTI 시스템에 넣으면, 출력도 같은 주기의 주기 신호이고 출력의 각 푸리에 계수는 입력 계수에 그 주파수의 주파수 응답 값을 곱한 것이다. 오디오 이퀄라이저가 저음은 그대로, 고음은 절반으로 줄이는 것과 같다. 그래서 출력을 구할 때 컨벌루션 적분 대신 \"주파수마다 …"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/frequency-filters/"
 next_title: "주파수 형성 필터와 주파수 선택 필터"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/fourier-series-lti/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/signals-and-systems/fourier-series-lti/"
 3. *출력:* $$y(t) = \sum_{k=-3}^{3}b_ke^{jk2\pi t}$$.
 
 직류 성분은 그대로 통과하고, 주파수가 높을수록 $$\vert H\vert $$가 작아져 크게 줄어든다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/35_fourier-series-lti_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽에서 회색 곡선 $$\vert H(j\omega)\vert $$가 고조파마다 곱해져, 파란 막대 $$\vert a_k\vert $$가 주황 막대 $$\vert b_k\vert $$로 줄어든다. 그래서 오른쪽의 출력은 직류 1 근처에서 조금만 흔들린다[^s2].
 
 ## 정의
 
@@ -175,4 +179,5 @@ $$b_k = D_ke^{j\theta_k}$$로 쓰면 각 항은 $$2D_k\cos(k\omega_0t + \theta_k
 [^6]: 같은 자료, p.35~36
 [^7]: 같은 자료, p.37~38 (예제 3.17)
 [^s1]: 에이전트 보충. 페이저 해석 연결, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [35_fourier-series-lti_plot.py](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$b_0 = 1$$, $$\vert b_1\vert  = \frac{1}{4\sqrt{1 + 4\pi^2}}$$, 출력 $$y(t)$$가 $$h = e^{-t}u(t)$$와의 수치 컨벌루션과 같음.
 {% endraw %}

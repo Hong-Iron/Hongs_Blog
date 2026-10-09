@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Convolution Property", "컨벌루션 성질", "Y = HX", "주파수 응답", "Frequency Response", "이상적 저역 통과 필터", "Ideal Lowpass Filter", "부분 분수", "Partial Fraction", "역변환", "Inverse Transform"]
 description: "시간 영역에서 컨벌루션한 것은 주파수 영역에서 곱한 것과 같다: y = h x이면 Y = HX. 그래서 LTI 시스템의 출력을 구할 때 복잡한 컨벌루션 적분 대신 변환해서 곱하고 다시 역변환하면 된다. 임펄스 응답의 변환 H(j\\omega)가 곧 주파수 응답이고, 주파수마다 입력을…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/multiplication-modulation/"
 next_title: "곱셈 성질과 진폭 변조"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/convolution-property/"
 ---
 {% raw %}
@@ -41,6 +41,10 @@ $$h(t) = e^{-at}u(t)$$인 시스템에 $$x(t) = e^{-bt}u(t)$$를 넣는다($$a, 
 4. *역변환:* $$y(t) = \dfrac{1}{b - a}\left[e^{-at} - e^{-bt}\right]u(t)$$.
 
 시간 영역 컨벌루션 $$\int_0^te^{-b\tau}e^{-a(t-\tau)}d\tau$$를 직접 해도 같은 답이 나온다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig1.svg" alt="그림" loading="lazy">
+
+$$a = 1$$, $$b = 2$$일 때다. 왼쪽 시간에서는 두 신호를 컨벌루션해 $$y = e^{-t} - e^{-2t}$$를 얻고, 오른쪽 주파수에서는 같은 결과가 크기끼리의 곱 $$\vert Y\vert  = \vert H\vert \vert X\vert $$로 나온다[^s2].
 
 ## 정의
 
@@ -84,6 +88,10 @@ $$H(j\omega)$$를 주파수 응답이라 한다. 입력 스펙트럼이 주파�
 - 예제 4.5로 $$h(t) = \dfrac{\sin\omega_ct}{\pi t} = \dfrac{\omega_c}{\pi}\mathrm{sinc}\left(\dfrac{\omega_ct}{\pi}\right)$$, $$h(0) = \frac{\omega_c}{\pi}$$(그림 4.21).
 - $$t < 0$$에서 $$h(t) \ne 0$$이라 인과적이지 않다. 출력이 미래 입력에 영향을 받으므로, 실시간 시스템에는 이상적 필터를 쓸 수 없다.
 - 그래서 실제로는 $$h(t) = e^{-t}u(t)$$, $$H = \frac{1}{j\omega + 1}$$(RC 회로) 같은 비이상적 필터를 쓴다. 날카로운 선택성은 없지만 인과적이고, 임펄스 응답이 진동 없이 줄어든다(그림 4.22). 더 높은 차수의 미분방정식에 해당하는 필터를 쓰면 인과성, 구현의 쉬움, 주파수 선택성, 시간 영역 진동 사이에서 균형을 맞출 수 있다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/42_convolution-property_fig2.svg" alt="그림" loading="lazy">
+
+$$\omega_c = 3$$인 이상적 저역 통과 필터의 임펄스 응답은 색칠한 $$t < 0$$ 쪽에서도 출렁인다. RC 필터 $$e^{-t}u(t)$$는 $$t < 0$$에서 0이고 진동 없이 줄어든다[^s2].
 
 **예제 4.19 ($$a = b$$)**[^9]. $$Y = \frac{1}{(a + j\omega)^2} = j\frac{d}{d\omega}\left[\frac{1}{a + j\omega}\right]$$. 주파수 미분 성질 $$tx(t) \leftrightarrow j\frac{dX}{d\omega}$$로 $$y(t) = te^{-at}u(t)$$.
 
@@ -188,4 +196,5 @@ $$h(t - \tau)$$는 $$h$$를 $$\tau$$만큼 늦춘 신호이고, 시간 이동 �
 [^9]: 같은 자료, p.13
 [^10]: 같은 자료, p.14 (예제 4.20)
 [^s1]: 에이전트 보충. FFT 활용, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [42_convolution-property_plot.py](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 수치 컨벌루션과 $$(e^{-t} - e^{-2t})u(t)$$가 같음, 이상적 필터의 $$h(-0.4) \approx 0.74$$.
 {% endraw %}

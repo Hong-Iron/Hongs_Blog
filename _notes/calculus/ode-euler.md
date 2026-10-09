@@ -19,7 +19,7 @@ next_url: "/studies/calculus/fourier-series/"
 next_title: "푸리에 급수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/ode-euler/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/calculus/ode-euler/"
 | 0.01 | 100 | $$1.01^{100} \approx 2.7048$$ | 0.0135 |
 
 $$h$$를 10분의 1로 줄이면 오차도 약 10분의 1이 된다. $$h = \frac1n$$이면 값이 정확히 $$\left(1 + \frac1n\right)^n$$이라, [수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/)에서 본 $$e$$의 정의가 곧 오일러 방법의 극한이다. 표의 한 줄 한 줄이 아래 정의의 $$y_k$$이고, 규칙 "변화율 = 잔액"이 $$f(t, y) = y$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig1.svg" alt="그림" loading="lazy">
+
+꺾은선의 각 마디가 한 걸음이다. 마디마다 그 점의 기울기로 곧게 나아가는데, 참값 곡선은 그사이에 더 가파르게 휘어 오른다. 그래서 꺾은선이 늘 곡선 아래에 남고, 걸음이 짧을수록 덜 처진다[^s2].
 
 ## 정의
 
@@ -80,6 +84,10 @@ $$\vert y_k - y(t_k)\vert  \le \frac{hM}{2K}\left(e^{K(t_k - t_0)} - 1\right).$$
 3. *$$h = 0.15$$:* 인수 $$-0.5$$. 부호가 바뀌며 줄어든다. 참값에는 없는 진동이지만 0으로는 간다.
 4. *$$h = 0.25$$:* 인수 $$-1.5$$. 부호를 바꾸며 커져 40걸음이면 $$10^6$$을 넘는다.
 5. *결론:* 줄어들려면 $$\vert 1 - 10h\vert  < 1$$, 곧 $$h < \frac{2}{10} = 0.2$$. 일반적으로 $$y' = -\lambda y$$($$\lambda > 0$$)에서 $$h < \frac{2}{\lambda}$$가 안정 조건이다. 빨리 변하는 성분(큰 $$\lambda$$)이 걸음 크기를 제한한다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/29_ode-euler_fig2.svg" alt="그림" loading="lazy">
+
+파랑($$h = 0.05$$)은 참값 곡선을 따라 내려간다. 주황($$h = 0.15$$)은 0 위아래를 오가지만 폭이 줄어 0으로 간다. 초록($$h = 0.25$$)은 오갈 때마다 폭이 1.5배씩 커져 그림 밖으로 나간다[^s2].
 
 이 조건은 [경사 하강법](/Hongs_Blog/studies/calculus/gradient-descent/)의 학습률 조건 $$\eta < \frac2L$$과 같은 식이다. 경사 하강법은 미분방정식 $$\mathbf{x}' = -\nabla f(\mathbf{x})$$(기울기 흐름)에 걸음 크기 $$\eta$$로 오일러 방법을 쓴 것이기 때문이다.
 
@@ -146,4 +154,5 @@ $$\vert y_k - y(t_k)\vert  \le \frac{hM}{2K}\left(e^{K(t_k - t_0)} - 1\right).$$
 [^n1]: 2-2학기/수치해석/1.수업자료/18.na18_diff_eq.pdf, p.2
 [^n2]: 같은 자료, p.3
 [^sn1]: 에이전트 보충. 참 곡선보다 위에 놓이는 이유와 카드는 원본에 없다. 29_ode-euler_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [29_ode-euler_plot.py](/Hongs_Blog/studies/calculus/code/29_ode-euler_plot/)로 그렸고, 표의 값 2.25, 2.5937, 2.7048, 세 걸음 크기의 인수 0.5, $$-0.5$$, $$-1.5$$, $$h = 0.25$$로 40걸음이면 $$10^6$$을 넘는 것을 같은 코드로 확인했다.
 {% endraw %}

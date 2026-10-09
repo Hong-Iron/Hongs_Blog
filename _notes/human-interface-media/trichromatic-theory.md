@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Trichromatic Theory", "삼원색설", "영-헬름홀츠 이론", "색채 인식", "단일 변수 원리", "principle of univariance", "색 맞추기", "color matching", "원색", "primary"]
 description: "색은 세 개의 음량계가 가리키는 눈금의 조합이다. 눈에는 짧은·중간·긴 파장에 각각 잘 반응하는 세 종류의 추상체가 있고, 뇌는 빛의 스펙트럼 전체가 아니라 세 반응의 크기만 받는다. 그래서 빨강·초록·파랑 세 빛만 섞어도 대부분의 색을 흉내 낼 수 있다. 대신 서로 다른 빛이 똑…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/metamerism/"
 next_title: "조건등색"
 math: true
 mermaid: true
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/trichromatic-theory/"
 ---
 {% raw %}
@@ -125,6 +125,10 @@ graph LR
 
 추상체 민감도를 봉우리 1인 가우스 곡선으로 두고(봉우리 S 445, M 535, L 575 nm, 폭 30·45·45 nm로 가정), 색 맞추기를 계산했다[^s3].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig1.svg" alt="그림" loading="lazy">
+
+L과 M 곡선은 대부분 겹치고, S 곡선만 짧은 파장 쪽에 따로 떨어져 있다[^s5].
+
 | 목표 | 원색 | 결과 | 뜻 |
 |---|---|---|---|
 | 580 nm 노랑 | 530, 620 nm 둘 | M·L은 딱 맞지만 S가 0.007 어긋남 | 원색 둘로는 세 반응을 다 못 맞춘다. 이 경우 S가 거의 0이라 차이가 작을 뿐이다 |
@@ -132,6 +136,10 @@ graph LR
 | 535 nm 초록 (M이 없는 사람) | 450, 620 nm 둘 | 450 × 0.011 + 620 × 1.11로 S·L이 딱 맞음 | 이 사람에게 초록과 빨강+약간의 파랑이 같아 보인다. 세 추상체를 가진 사람에게는 M 반응이 1.00 대 0.19로 다르다 |
 
 400~700 nm를 5 nm 간격으로 본 61개 단색광 가운데 58개가 이 모형에서 어느 한 원색을 음수로 요구했다. 실제 원색 셋이 만드는 색의 범위(색역, gamut)는 사람이 볼 수 있는 모든 색을 덮지 못한다[^s4].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/16_trichromatic-theory_fig2.svg" alt="그림" loading="lazy">
+
+0 아래 회색 구역으로 내려간 선은 그 원색을 섞는 게 아니라 목표 쪽에 더해야 맞는다는 뜻이다. 청록(480~510 nm)에서 빨강 선이 가장 깊이 내려간다[^s5].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 단일 변수(500 nm × 1.353 = 535 nm × 1의 M 반응), 원색 둘의 S 어긋남 0.0072, 청록 480~510 nm의 음수 빨강, 61개 중 58개 음수, M 없는 경우의 초록 = 파랑 0.0113 + 빨강 1.110 (가우스 모형에서 실험으로 확인됨) — [16_trichromatic-theory_verify.py](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_verify/)</div>
@@ -211,4 +219,5 @@ graph LR
 [^s2]: 에이전트 보충. 반응 적분식, 선형성(그라스만 법칙), 행렬식 색 맞추기와 증명은 색채학의 표준 내용이며 슬라이드에는 없다.
 [^s3]: 에이전트 보충. 가우스 민감도 모형은 설명용 가정이다. 봉우리는 슬라이드 p.8 값, 폭은 슬라이드 그래프의 모양에 맞춰 가정했다. 실제 민감도 곡선은 가우스가 아니므로 수치는 경향만 보여 준다.
 [^s4]: 에이전트 보충. 실제 색 맞추기 실험(CIE 1931 RGB 등색 함수)에서도 약 440~550 nm 구간에서 빨강 원색이 음수가 된다. XYZ가 가상 원색으로 이를 피한다는 것은 색채학의 표준 내용이다.
+[^s5]: 에이전트 보충. 그림 두 장은 원본에 없다. [16_trichromatic-theory_plot.py](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_plot/)로 그렸고, 그림에 쓴 값(480~510 nm의 빨강 세기 −0.37 ~ −0.28, 5 nm 간격 61개 중 58개가 음수 원색을 요구)을 같은 코드로 확인했다.
 {% endraw %}

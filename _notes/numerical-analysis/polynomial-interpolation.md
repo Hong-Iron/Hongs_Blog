@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/newton-divided-difference/"
 next_title: "뉴턴 다항식과 분할 차분"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/polynomial-interpolation/"
 ---
 {% raw %}
@@ -46,6 +46,10 @@ permalink: "/studies/numerical-analysis/polynomial-interpolation/"
 | 넷 다 | 3차 | 2.2296 | 0.0049 |
 
 참값은 $$\tan1.15 \approx 2.2345$$다. 점을 늘릴수록 오차가 준다. 같은 3차식으로 범위 밖의 $$\tan1.5$$를 짐작하면 참값 14.1과 5 넘게 틀린다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/21_polynomial-interpolation_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 1.15 근처를 확대한 것이다. 쓰는 점이 늘수록 색 선이 굵은 회색 선($$\tan x$$)에 붙는다. 오른쪽은 자료 범위 밖까지 그린 것이다. 1.3을 넘으면 $$\tan x$$는 가파르게 솟는데 3차식은 따라가지 못해, 1.5에서 14.1과 7.8로 벌어진다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: tan 표와 세 보간값·오차, cos 보간, 무작위 100개에서 라그랑주 = 방데르몽드 연립방정식(유일성), 카드 C2, 외삽 오차 — [21_polynomial-interpolation_verify.py](/Hongs_Blog/studies/numerical-analysis/code/21_polynomial-interpolation_verify/)</div>
@@ -140,4 +144,5 @@ $$Q$$도 세 점을 지나는 2차 이하 다항식이라 하자. $$R = P_2 - Q$
 [^9]: 같은 자료, p.13~14
 [^10]: 같은 자료, p.12
 [^s1]: 에이전트 보충. 2차 보간이 1, 1.1, 1.2 세 점이라는 것(계산으로 확인), 참값과 외삽 실험, "서로 다르다" 조건의 필요성, 활용, 룽게 현상, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [21_polynomial-interpolation_plot.py](/Hongs_Blog/studies/numerical-analysis/code/21_polynomial-interpolation_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$P_n(1.15)$$ = 2.2685, 2.2435, 2.2296, $$\tan1.15 = 2.2345$$, $$x = 1.5$$에서 3차식 7.8과 참값 14.1.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Vector", "벡터", "스칼라", "scalar", "벡터 덧셈", "vector addition", "스칼라배", "scalar multiplication", "성분", "component", "영벡터", "zero vector", "위치 벡터", "변위"]
 description: "벡터는 \"어느 쪽으로 얼마나\"를 나타내는 화살표이자, 숫자 몇 개를 순서대로 늘어놓은 목록이다. 할 수 있는 연산은 두 가지뿐이다. 화살표를 이어 붙이는 덧셈과, 길이를 늘이거나 줄이는 수배(스칼라배)다. 게임 캐릭터의 속도, 데이터 한 행(키, 몸무게, 나이), 단어의 임베딩이 …"
@@ -17,7 +17,7 @@ next_url: "/studies/linear-algebra/dot-product/"
 next_title: "내적과 노름"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/vectors/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/vectors/"
 - 1초 뒤 위치: $$(1, 2) + (3, 4) = (4, 6)$$. 이동(화살표)을 위치에 이어 붙였다.
 - 달리기 버튼으로 속도가 두 배: $$2\mathbf{v} = (6, 8)$$. 방향은 같고 길이만 두 배다.
 - 바람 $$\mathbf{w} = (-1, 0)$$이 더해지면 실제 속도는 $$\mathbf{v} + \mathbf{w} = (2, 4)$$. 두 화살표를 이어 붙인 결과다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/01_vectors_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 위치 (1, 2)에 이동 $$\mathbf{v}$$를 이어 붙인 모습이다. 오른쪽에서 $$2\mathbf{v}$$(연한 초록 띠)는 $$\mathbf{v}$$와 같은 직선 위에서 길이만 두 배이고, $$\mathbf{v}$$ 끝에 $$\mathbf{w}$$를 이어 붙인 곳이 $$\mathbf{v} + \mathbf{w}$$다[^s2].
 
 같은 $$\mathbf{v}$$를 "길이 5, 오른쪽 위로 약 53°"로도 쓸 수 있다. $$(5\cos 53.13°, 5\sin 53.13°) \approx (3, 4)$$이다([삼각함수](/Hongs_Blog/studies/college-math/trig-functions/)). 숫자 목록 $$(3, 4)$$가 아래 정의의 성분, 2가 스칼라다.
 
@@ -108,4 +112,5 @@ $$\mathbf{u} = (2, -1, 3)$$, $$\mathbf{v} = (1, 4, 0)$$일 때 $$2\mathbf{u} - 3
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.1절 "Vectors and Linear Combinations"(벡터의 덧셈, 스칼라배, 세로 벡터 표기).
 [^s1]: 에이전트 보충. 점과 벡터를 구별하고 계수 합이 1인 결합(아핀 결합)만 점으로 보는 관점은 컴퓨터 그래픽스 교재의 표준 내용이다. 01_vectors_verify.py에서 원점을 옮겨 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [01_vectors_plot.py](/Hongs_Blog/studies/linear-algebra/code/01_vectors_plot/)로 그렸고, $$(1, 2) + (3, 4) = (4, 6)$$, $$2\mathbf{v} = (6, 8)$$, $$\mathbf{v} + \mathbf{w} = (2, 4)$$를 같은 코드로 확인했다.
 {% endraw %}

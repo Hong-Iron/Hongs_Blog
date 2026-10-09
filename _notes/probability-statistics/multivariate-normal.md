@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Multivariate Normal Distribution", "다변량 정규분포", "다변수 정규분포", "공분산 행렬", "covariance matrix", "마할라노비스 거리", "Mahalanobis distance", "신뢰 타원", "confidence ellipse", "숄레스키 분해로 표본 만들기"]
 description: "변수가 여럿이면 각자의 흩어짐과 둘씩의 공분산을 한 행렬에 모은다. 다변량 정규분포는 평균 벡터와 이 공분산 행렬만으로 정해지는 여러 차원의 종 모양이다. 밀도가 같은 점들은 타원을 그리는데, 타원의 축 방향과 길이가 공분산 행렬의 고유벡터와 고윳값에서 나온다. 한 변수가 다른 변…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/tail-bounds/"
 next_title: "확률 부등식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/multivariate-normal/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ permalink: "/studies/probability-statistics/multivariate-normal/"
 $$\Sigma = \begin{pmatrix}4 & 2\\ 2 & 3\end{pmatrix}$$
 
 인 다변량 정규분포를 따른다. 대각선 4와 3은 각자의 분산, 2는 둘의 공분산이다(상관계수 $$\frac{2}{2\sqrt3} \approx 0.58$$). 표본을 20만 개 뽑아 찍으면 점들이 오른쪽 위로 기운 타원 모양 구름을 이룬다. 타원의 긴 축은 $$\Sigma$$의 큰 고윳값 $$\frac{7 + \sqrt{17}}{2} \approx 5.56$$의 고유벡터 방향, 짧은 축은 작은 고윳값 $$\approx 1.44$$의 방향이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/19_multivariate-normal_fig1.svg" alt="그림" loading="lazy">
+
+점은 이 분포에서 뽑은 표본 800개다. 주황 타원 안에 약 95%가 들어가고, 초록과 보라 선분이 타원의 긴 축과 짧은 축이다. 두 축의 길이 비는 $$\sqrt{5.56 / 1.44} \approx 2$$다[^s1].
 
 ## 정의
 
@@ -115,4 +119,5 @@ $$f(\mathbf{x}) = \frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}}\exp\left(-\frac12(\mat
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.5절 "Multivariate Normal"(정의, 일차 변환, 결합 정규에서 무상관 = 독립, 각자 정규여도 결합이 정규가 아닌 예).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [19_multivariate-normal_plot.py](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_plot/)로 그렸고, 그림에 쓴 값(고윳값 $$\frac{7 \pm \sqrt{17}}{2}$$, 숄레스키 인수 $$L$$, 타원 안 비율 95%(±1.5%p))을 같은 코드로 확인했다.
 {% endraw %}

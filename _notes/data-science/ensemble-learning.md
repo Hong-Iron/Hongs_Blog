@@ -19,7 +19,7 @@ next_url: "/studies/data-science/bagging-random-forest/"
 next_title: "배깅과 랜덤 포레스트"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/ensemble-learning/"
 ---
 {% raw %}
@@ -70,6 +70,10 @@ $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2
 - $$\rho = 0$$(서로 독립): $$\frac{\sigma^2}{k}$$. $$k$$가 커질수록 0으로 간다[^5].
 - $$\rho = 1$$(모두 같은 모델): $$\sigma^2$$. 평균 내도 줄지 않는다[^4].
 - $$k \to \infty$$: $$\rho\sigma^2$$로 다가간다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/20_ensemble-learning_fig1.svg" alt="그림" loading="lazy">
+
+모델 하나의 분산을 예시의 0.16으로 두고 모델 수 $$k$$를 늘렸다. 점선은 $$\rho\sigma^2$$, 곧 아무리 모아도 남는 몫이다. 서로 독립($$\rho = 0$$)이면 0까지 내려가지만, $$\rho = 0.9$$면 처음부터 거의 줄지 않는다[^s2].
 
 ## 증명
 
@@ -190,4 +194,5 @@ $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2
 [^4]: 같은 자료, p.14
 [^5]: 같은 자료, p.13
 [^s1]: 에이전트 보충. 수치 예, 일반식의 증명, 교차항이 사라지는 이유, 스스로 설명해 보기, 오해 항목, 카드 C2~C4는 원본에 없다. 검증 코드로 몬테카를로 확인을 했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [20_ensemble-learning_plot.py](/Hongs_Blog/studies/data-science/code/20_ensemble-learning_plot/)로 그렸고, $$k = 10$$에서 0.016($$\rho = 0$$)과 0.088($$\rho = 0.5$$)을 식과 몬테카를로 20만 회로 확인했다.
 {% endraw %}

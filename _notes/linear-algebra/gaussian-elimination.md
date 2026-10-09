@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Gaussian Elimination", "가우스 소거법", "소거법", "elimination", "행 연산", "elementary row operation", "기본 행 연산", "피벗", "pivot", "부분 피벗팅", "partial pivoting", "후진 대입", "back substitution", "행 사다리꼴", "row echelon form", "기약 행 사다리꼴", "RREF", "첨가행렬", "augmented matrix", "자유변수", "free variable"]
 description: "중학교 때 배운 가감법 그대로다. 한 식의 몇 배를 다른 식에서 빼서 x를 없애고, 그다음 y를 없앤다. 그러면 맨 아래 식에는 미지수가 하나만 남아 바로 풀리고, 위로 올라가며 하나씩 대입하면 답이 다 나온다. 식이 수천 개여도 똑같이 기계적으로 할 수 있어서 컴퓨터가 연립방정식…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/matrix-multiplication/"
 next_title: "행렬 곱셈과 전치"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/linear-algebra/gaussian-elimination/"
 ---
 {% raw %}
@@ -147,6 +147,10 @@ GAUSS(A, b)                      # 첨가행렬 M = [A | b], 인덱스는 1부�
 2. *큰 수를 골라 나누면:* $$x$$ 열에서 더 큰 1이 있는 둘째 식을 위로 올린다. 곱수가 $$10^{-20}$$이라 오차가 불어나지 않는다. $$y = 1$$, $$x = 2 - y = 1$$로 맞게 나온다.
 3. *원인:* 작은 수로 나누면 곱수가 엄청 커진다. 그러면 원래 계수가 반올림에 묻혀 지워진다. 매번 그 열에서 절댓값이 가장 큰 수를 피벗으로 골라 곱수를 1 이하로 묶는 방법을 부분 피벗팅이라 한다[^1].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/05_gaussian-elimination_fig1.svg" alt="그림" loading="lazy">
+
+같은 문제에서 첫 계수 $$\varepsilon$$을 $$10^{-1}$$부터 $$10^{-20}$$까지 줄여 가며 $$x$$의 오차를 쟀다. 그냥 위에서부터 하면 $$\varepsilon$$이 작을수록 오차가 커지고, $$10^{-16}$$부터는 오차가 1 정도라 답이 통째로 틀린다. 큰 수를 골라 나누면 오차가 늘 반올림 한 번 크기 이하다[^s3].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시의 각 단계 행렬과 해 $$(2, 1, -2)$$, 무작위 정수 행렬 500개에서 유리수 소거의 해를 대입해 확인, 부동소수점 해와 비교, 해의 종류 판정(무작위 특이·비특이 행렬), 행 연산이 해 집합을 보존함(작은 정수 범위 전수), 피벗팅 예제, 연산 수가 $$\frac23 n^3$$에 가까움 — [05_gaussian-elimination_impl.py](/Hongs_Blog/studies/linear-algebra/code/05_gaussian-elimination_impl/), [05_gaussian-elimination_verify.py](/Hongs_Blog/studies/linear-algebra/code/05_gaussian-elimination_verify/)</div>
 
@@ -218,4 +222,5 @@ for i in range(n - 1, -1, -1):
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.2절 "The Idea of Elimination", 2.3절 "Elimination Using Matrices", 3.3절 "The Complete Solution to Ax = b"(해의 종류), 11.1절 "Gaussian Elimination in Practice"(피벗팅과 연산 수).
 [^s1]: 에이전트 보충. NumPy 문서는 `numpy.linalg.solve`가 LAPACK의 `gesv`(부분 피벗팅 LU)를 부른다고 밝힌다. 연산 수와 피벗팅 예는 05_gaussian-elimination_verify.py에서 확인했다.
 [^s2]: 에이전트 보충. IEEE 754 배정밀도의 유효숫자는 10진수로 약 15~17자리다(가수 53비트, $$2^{-53} \approx 1.1 \times 10^{-16}$$).
+[^s3]: 에이전트 보충. 그림은 원본에 없다. [05_gaussian-elimination_plot.py](/Hongs_Blog/studies/linear-algebra/code/05_gaussian-elimination_plot/)로 그렸고, $$\varepsilon = 10^{-20}$$에서 그냥 풀면 $$x = 0$$, 행을 바꾸면 $$x = 1$$이 나오는 것, $$\varepsilon \le 10^{-16}$$에서 오차가 1 정도인 것, 행을 바꾼 풀이의 오차가 $$2.2 \times 10^{-16}$$ 이하인 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Disk Scheduling", "탐색 시간", "Seek Time", "회전 지연", "Rotational Delay", "전송 시간", "Transfer Time", "접근 시간", "Access Time", "SSTF", "Shortest Service Time First", "SCAN", "엘리베이터 알고리즘", "Elevator Algorithm", "C-SCAN", "LOOK", "C-LOOK", "N-step-SCAN", "FSCAN"]
 description: "하드 디스크에서 데이터를 읽으려면 읽기 머리(헤드)를 원하는 트랙까지 팔로 옮겨야 하는데, 이 팔 움직임이 가장 느리다. 그래서 요청이 여러 개 쌓이면 어떤 순서로 처리하느냐에 따라 팔이 움직이는 거리가 크게 달라진다. 엘리베이터가 층 버튼이 눌린 순서가 아니라 한 방향으로 쭉 가…"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/raid/"
 next_title: "RAID"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/disk-scheduling/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/operating-systems/disk-scheduling/"
 | C-SCAN (트랙이 커지는 방향으로만) | 150 160 184 18 38 39 55 58 90 | 322 | 35.8 |
 
 FIFO는 55 → 18 → 90 → 160 → 38 → 184처럼 디스크를 오락가락한다. SSTF는 늘 가장 가까운 요청으로 가서 이동이 절반 이하로 준다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/53_disk-scheduling_fig1.svg" alt="그림" loading="lazy">
+
+가로축은 헤드가 있는 트랙, 세로축은 처리한 순서다(네모가 출발점 100). FIFO는 좌우로 크게 오가고, SCAN은 방향을 한 번만 바꾼다. C-SCAN의 점선은 184에서 18까지 요청을 처리하지 않고 건너가는 구간이고, 이 거리도 이동 합 322에 들어간다[^s2].
 
 SSTF 평균은 $$248/9 = 27.56$$인데 슬라이드 표 11.2에는 27.5로 적혀 있다. 다른 칸은 반올림했고 이 칸만 버림한 것이라 결과 비교에는 영향이 없다[^s1].
 
@@ -234,4 +238,5 @@ SCAN은 가장 안쪽과 바깥쪽 트랙의 요청, 그리고 가장 늦게 도
 [^13]: 같은 자료, 슬라이드 55 (표 11.3)
 [^14]: 같은 자료, 슬라이드 81~83
 [^s1]: 에이전트 보충. 접근 시간 식과 4 ms·15,000 rpm 예는 Stallings 6판 11.5절을 따랐다(슬라이드는 정의만 있다). 표 11.2 평균값의 반올림 차이, SCAN/LOOK 정의 비교와 끝까지 가는 SCAN의 이동 합, 팔 붙잡힘, 복잡도, SSD 이야기, 확인 문제 C2·C4·C5는 슬라이드에 없다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [53_disk-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_plot/)로 그렸고, 네 정책의 처리 순서와 이동 합 498, 248, 250, 322를 같은 코드로 확인했다.
 {% endraw %}

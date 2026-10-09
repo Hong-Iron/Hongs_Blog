@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/b-spline/"
 next_title: "B-스플라인"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/curve-continuity/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/numerical-analysis/curve-continuity/"
 | $$(4, 0), (6, 3), (7, 1), (8, 0)$$ | $$(6, 9)$$ | $$C^0$$만 (꺾임) |
 | $$(4, 0), (6, -4), (7, 1), (8, 0)$$ | $$(6, -12)$$ | $$G^1$$ (같은 방향, 두 배 빠르기) |
 | $$(4, 0), (5, -2), (7, 1), (8, 0)$$ | $$(3, -6)$$ | $$C^1$$ |
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/15_curve-continuity_fig1.svg" alt="그림" loading="lazy">
+
+파란 조각이 $$A$$, 주황 조각이 $$B$$이고, 점선은 조절점을 이은 선이다. 왼쪽은 이음점에서 뾰족하게 꺾인다. 가운데와 오른쪽은 $$A$$의 셋째 조절점, 이음점, $$B$$의 둘째 조절점이 한 직선 위에 있어 꺾이지 않는다. 오른쪽은 이음점 양쪽 간격까지 같아 $$C^1$$이다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표의 세 경우, $$C^1$$ 경우의 2계 도함수가 다름, 카드 C2 — [15_curve-continuity_verify.py](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_verify/)</div>
@@ -120,4 +124,5 @@ $$C^1$$이면 $$G^1$$이지만 거꾸로는 아니다[^s1].
 [^1]: 2-2학기/수치해석/1.수업자료/07.na07_curves.pdf, p.25
 [^2]: 같은 자료, p.26
 [^s1]: 에이전트 보충. 트랙 비유, 표의 세 경우, $$C^1 \Rightarrow G^1$$, 표의 "이유" 칸, 베지어의 $$C^1$$ 조건, 그림 도구, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [15_curve-continuity_plot.py](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$A$$의 끝 속도 $$(3, -6)$$, $$B$$의 출발 속도 $$(6, 9)$$, $$(6, -12)$$, $$(3, -6)$$.
 {% endraw %}

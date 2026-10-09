@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Derivative", "미분", "미분계수", "도함수", "순간 변화율", "instantaneous rate of change", "접선의 기울기", "slope of tangent", "평균 변화율", "average rate of change", "미분 가능", "differentiable", "수치 미분", "numerical differentiation", "유한 차분", "finite difference"]
 description: "도함수는 \"지금 이 순간 얼마나 빨리 변하는가\"를 재는 함수다. 짧은 구간의 평균 변화율에서 구간을 한없이 줄인 극한이고, 그래프에서는 그 점의 접선의 기울기다. 기울기를 알면 함수를 가장 빨리 줄이는 방향을 알 수 있어서, 머신러닝의 학습이 모두 도함수 위에 선다. 다만 뾰족하거…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/differentiation-rules/"
 next_title: "미분 법칙"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/derivative/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/calculus/derivative/"
 | 평균 속도 $$\frac{f(3+h) - f(3)}{h}$$ | 7 | 6.1 | 6.01 | 6.001 |
 
 평균 속도는 정확히 $$6 + h$$이고, 구간을 줄이면 6에 다가간다. 그래서 $$t = 3$$의 순간 속도는 6 m/s다. 그래프에서 두 점을 잇는 할선이 구간이 줄면서 접선으로 바뀌고, 그 기울기가 6이다. 구간 길이가 아래 정의의 $$h$$, 평균 속도가 차분몫이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/04_derivative_fig1.svg" alt="그림" loading="lazy">
+
+세 할선은 모두 점 $$(3, 9)$$를 지난다. $$h$$가 1, 0.5, 0.1로 줄면 할선의 기울기가 7, 6.5, 6.1로 줄며 보라색 점선(접선)에 겹쳐 간다[^s2].
 
 ## 정의
 
@@ -142,6 +146,10 @@ $$f(x) = 1/x$$의 $$x = 2$$에서의 접선을 구한다.
 
 $$h$$가 크면 극한에서 먼 오차(절단 오차)가, 작으면 거의 같은 두 수를 빼는 반올림 오차가 커진다. 전진 차분은 $$h \approx 10^{-8}$$, 중앙 차분은 $$h \approx 10^{-5}$$(오차 $$1.2 \times 10^{-11}$$)에서 가장 정확하다[^s1]. 그래서 신경망은 수치 미분 대신 자동미분을 쓴다([연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/)).
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/04_derivative_fig2.svg" alt="그림" loading="lazy">
+
+두 눈금 모두 로그다. 오른쪽에서 왼쪽으로 $$h$$를 줄이면 오차가 처음엔 곧게 내려가다가, 점선 근처의 바닥을 지나면 들쭉날쭉하게 다시 오른다. 중앙 차분은 더 가파르게 내려가서 바닥이 더 깊다[^s2].
+
 ## 연결
 
 - 선수: [극한](/Hongs_Blog/studies/calculus/limits/)
@@ -195,4 +203,5 @@ $$h$$가 크면 극한에서 먼 오차(절단 오차)가, 작으면 거의 같�
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.1절 "Defining the Derivative", 3.2절 "The Derivative as a Function"(미분 가능성과 연속성)
 [^s1]: 에이전트 보충. 수치 미분의 최적 $$h$$가 기계 엡실론 $$\epsilon \approx 2.2 \times 10^{-16}$$의 제곱근(전진 차분), 세제곱근(중앙 차분) 정도라는 것은 수치 해석의 표준 결과다. 표의 값은 검증 코드로 계산했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [04_derivative_plot.py](/Hongs_Blog/studies/calculus/code/04_derivative_plot/)로 그렸고, 할선 기울기가 $$6 + h$$인 것과 오차표의 값(전진 차분 $$h = 10^{-1}, 10^{-4}, 10^{-8}, 10^{-15}$$, 중앙 차분 $$h = 10^{-1}, 10^{-4}, 10^{-5}$$)을 같은 코드로 확인했다.
 {% endraw %}

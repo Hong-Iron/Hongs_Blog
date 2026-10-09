@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Wave", "파동", "진폭", "amplitude", "주파수", "frequency", "위상", "phase", "파장", "wavelength", "가시광", "visible light", "공간 주파수", "spatial frequency"]
 description: "빛과 소리는 모두 물결(파동)이다. 물결은 높이(진폭), 빠르기(주파수), 출발 시점(위상) 세 가지로 적는다. 같은 물결이지만 귀는 진폭을 소리 크기로, 주파수를 음높이로 읽고, 눈은 진폭을 밝기로, 주파수를 색으로 읽는다. 귀는 시간에 따른 1차원 변화를, 눈은 평면 위 2차원…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/image-function/"
 next_title: "이미지 함수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/wave-and-light/"
 ---
 {% raw %}
@@ -77,6 +77,10 @@ $$ c = f\lambda, \qquad \lambda = \frac{c}{f} $$
 색깔은 파장의 함수 $$i(\lambda)$$, 곧 파장마다 빛이 얼마나 센지의 분포로 표현한다[^3]. 한 파장만 있는 빛(단색광)은 드물고, 햇빛·전등 빛은 여러 파장이 섞인 분포다.
 
 위상 $$\phi$$는 파동이 언제 시작하는지를 정한다. $$\phi = \pi/2$$만큼 밀린 사인은 코사인이다. 파동 하나만 볼 때는 눈에 띄지 않지만, 여러 파동을 더할 때 서로 보강하는지 상쇄하는지를 정한다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/11_wave-and-light_fig1.svg" alt="그림" loading="lazy">
+
+회색 선이 기준 파동 $$\sin(2\pi t)$$다. 진폭을 바꾸면 높이만, 주파수를 바꾸면 촘촘함만, 위상을 바꾸면 옆으로 놓인 자리만 바뀐다. $$\phi = \pi/2$$인 초록 선은 코사인과 같다[^s7].
 
 진폭과 세기(에너지)는 비례하지 않는다. 한 주기 동안 $$s(t)^2$$의 평균은 $$A^2/2$$이므로, 진폭이 2배면 세기는 4배다[^s3].
 
@@ -150,4 +154,5 @@ $$ c = f\lambda, \qquad \lambda = \frac{c}{f} $$
 [^s4]: 에이전트 보충. 푸리에 분해와의 연결은 강의 계획표 11~14주차 주제에 비춘 해석이다.
 [^s5]: 에이전트 보충. 자홍색이 스펙트럼에 없는 색(비스펙트럼색)이라는 것은 색채학의 표준 사실이다.
 [^s6]: 에이전트 보충. 와이파이 예는 원본에 없다. 컴퓨터 통신의 [신호와 변조](/Hongs_Blog/studies/computer-communication/signal-and-modulation/) 표와 같은 계산이다.
+[^s7]: 에이전트 보충. 그림 1장은 원본에 없다. [11_wave-and-light_plot.py](/Hongs_Blog/studies/human-interface-media/code/11_wave-and-light_plot/)로 그렸고, 그림에 쓴 값(위상 $$\pi/2$$인 사인 = 코사인, 진폭 2인 파동의 평균 제곱 2)을 같은 코드로 확인했다.
 {% endraw %}

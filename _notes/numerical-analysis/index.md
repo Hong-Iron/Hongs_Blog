@@ -8,7 +8,7 @@ course_url: "/studies/numerical-analysis/"
 track: "수학"
 concepts: 37
 practices: 5
-codes: 42
+codes: 72
 description: "수치해석 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -71,8 +71,8 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 03 | [기하 변환의 종류](/Hongs_Blog/studies/numerical-analysis/transformation-classes/) | 무엇을 지키나: 강체(거리) ⊂ 닮음(각) ⊂ 아핀(평행) ⊂ 사영(곧은 선) | [verify](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_verify/) | — |
-| 04 | [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) | 끝에 1을 붙여 평행이동도 행렬 곱. 오른쪽 행렬이 먼저 (강조)[^강조] | [verify](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_verify/) | [동차 좌표 예제 사다리](/Hongs_Blog/studies/numerical-analysis/homogeneous-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-ladder_p4/) |
+| 03 | [기하 변환의 종류](/Hongs_Blog/studies/numerical-analysis/transformation-classes/) | 무엇을 지키나: 강체(거리) ⊂ 닮음(각) ⊂ 아핀(평행) ⊂ 사영(곧은 선) | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/03_transformation-classes_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_verify/) | — |
+| 04 | [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) | 끝에 1을 붙여 평행이동도 행렬 곱. 오른쪽 행렬이 먼저 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/04_homogeneous-coordinates_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_verify/) | [동차 좌표 예제 사다리](/Hongs_Blog/studies/numerical-analysis/homogeneous-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-ladder_p4/) |
 
 자료: na04_transformation
 필기: 아직 없다.
@@ -91,7 +91,7 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 05 | [법선 벡터의 변환](/Hongs_Blog/studies/numerical-analysis/normal-transform/) | 법선은 $$(M^{-1})^\top$$로. 직교 행렬이면 $$M$$ 그대로 | [verify](/Hongs_Blog/studies/numerical-analysis/code/05_normal-transform_verify/) | — |
+| 05 | [법선 벡터의 변환](/Hongs_Blog/studies/numerical-analysis/normal-transform/) | 법선은 $$(M^{-1})^\top$$로. 직교 행렬이면 $$M$$ 그대로 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/05_normal-transform_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/05_normal-transform_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/05_normal-transform_verify/) | — |
 | 06 | [좌표계 변환](/Hongs_Blog/studies/numerical-analysis/coordinate-frame/) | 원점을 빼고 새 축마다 내적: $$X' = R^{-1}T^{-1}X$$ | [verify](/Hongs_Blog/studies/numerical-analysis/code/06_coordinate-frame_verify/) | — |
 
 자료: na05_ortho
@@ -112,11 +112,11 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 07 | [반사와 반전](/Hongs_Blog/studies/numerical-analysis/reflection/) | 축으로 옮기기 → 축에 대해 부호 뒤집기 → 되돌리기 | [verify](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_verify/) | — |
+| 07 | [반사와 반전](/Hongs_Blog/studies/numerical-analysis/reflection/) | 축으로 옮기기 → 축에 대해 부호 뒤집기 → 되돌리기 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/07_reflection_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_verify/) | — |
 | 08 | [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/) | 다섯 단계로 축을 $$x$$축에 맞추거나 로드리게스 공식 하나로 (강조)[^강조] | [verify](/Hongs_Blog/studies/numerical-analysis/code/08_axis-rotation_verify/) | [임의 축 회전 예제 사다리](/Hongs_Blog/studies/numerical-analysis/axis-rotation-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/08_axis-rotation-ladder_p4/) |
 | 09 | [오일러 각과 짐벌 잠금](/Hongs_Blog/studies/numerical-analysis/euler-angles/) | 기본 회전 세 번. 가운데가 90°이면 자유도 하나를 잃는다 | [verify](/Hongs_Blog/studies/numerical-analysis/code/09_euler-angles_verify/) | — |
 | 10 | [쿼터니언](/Hongs_Blog/studies/numerical-analysis/quaternion/) | $$q = (\cos\frac\theta2, \sin\frac\theta2\mathbf n)$$, $$q\mathbf v\bar q$$. 짐벌 잠금 없음, 매끄러운 보간 | [verify](/Hongs_Blog/studies/numerical-analysis/code/10_quaternion_verify/) | — |
-| 11 | [평행 투영과 원근 투영](/Hongs_Blog/studies/numerical-analysis/projection/) | 평행은 크기 그대로, 원근은 $$z$$로 나눠 먼 것이 작게 | [verify](/Hongs_Blog/studies/numerical-analysis/code/11_projection_verify/) | — |
+| 11 | [평행 투영과 원근 투영](/Hongs_Blog/studies/numerical-analysis/projection/) | 평행은 크기 그대로, 원근은 $$z$$로 나눠 먼 것이 작게 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/11_projection_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/11_projection_verify/) | — |
 | 12 | [점·직선·평면 사이의 거리와 교점](/Hongs_Blog/studies/numerical-analysis/distance-intersection/) | 사영을 빼고 남은 수직 부분, 편미분 0, 법선과의 내적 | [verify](/Hongs_Blog/studies/numerical-analysis/code/12_distance-intersection_verify/) | — |
 
 자료: na06_rotation
@@ -137,10 +137,10 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 13 | [3차 보간 곡선](/Hongs_Blog/studies/numerical-analysis/cubic-interpolation-curve/) | 네 점을 $$u = 0, \frac13, \frac23, 1$$에서 지나게. $$\mathbf p(u) = \mathbf u^\top M_I\mathbf p$$ | [verify](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_verify/) | — |
-| 14 | [에르미트 곡선](/Hongs_Blog/studies/numerical-analysis/hermite-curve/) | 끝점 둘과 끝 접선 둘로. 이음점 기울기를 맞출 수 있다 | [verify](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_verify/) | — |
-| 15 | [곡선의 연속성](/Hongs_Blog/studies/numerical-analysis/curve-continuity/) | $$C^0$$ 이어짐, $$C^1$$ 속도, $$C^2$$ 가속도, $$G^1$$ 방향만 | [verify](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_verify/) | — |
-| 16 | [B-스플라인](/Hongs_Blog/studies/numerical-analysis/b-spline/) | 점을 지나지 않고 근처를 지나며 $$C^2$$, 점 하나는 조각 넷에만 (강조)[^강조] | [verify](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_verify/) | [B-스플라인 예제 사다리](/Hongs_Blog/studies/numerical-analysis/b-spline-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline-ladder_p4/) |
+| 13 | [3차 보간 곡선](/Hongs_Blog/studies/numerical-analysis/cubic-interpolation-curve/) | 네 점을 $$u = 0, \frac13, \frac23, 1$$에서 지나게. $$\mathbf p(u) = \mathbf u^\top M_I\mathbf p$$ | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig2.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_verify/) | — |
+| 14 | [에르미트 곡선](/Hongs_Blog/studies/numerical-analysis/hermite-curve/) | 끝점 둘과 끝 접선 둘로. 이음점 기울기를 맞출 수 있다 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/14_hermite-curve_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_verify/) | — |
+| 15 | [곡선의 연속성](/Hongs_Blog/studies/numerical-analysis/curve-continuity/) | $$C^0$$ 이어짐, $$C^1$$ 속도, $$C^2$$ 가속도, $$G^1$$ 방향만 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/15_curve-continuity_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_verify/) | — |
+| 16 | [B-스플라인](/Hongs_Blog/studies/numerical-analysis/b-spline/) | 점을 지나지 않고 근처를 지나며 $$C^2$$, 점 하나는 조각 넷에만 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/16_b-spline_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_verify/) | [B-스플라인 예제 사다리](/Hongs_Blog/studies/numerical-analysis/b-spline-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline-ladder_p4/) |
 
 자료: na07_curves
 필기: 아직 없다.
@@ -159,8 +159,8 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 17 | [매개변수 곡면 패치](/Hongs_Blog/studies/numerical-analysis/surface-patches/) | $$u$$, $$v$$ 두 방향: 쌍선형, 쌍3차(꼬임 벡터), 베지어, 스플라인 | [verify](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_verify/) | — |
-| 18 | [베지어 곡선의 세분화](/Hongs_Blog/studies/numerical-analysis/bezier-subdivision/) | 중점만으로 반씩 나눠 평평할 때까지. 다른 곡선은 $$M_B^{-1}M$$으로 바꿔서 | [verify](/Hongs_Blog/studies/numerical-analysis/code/18_bezier-subdivision_verify/) | — |
+| 17 | [매개변수 곡면 패치](/Hongs_Blog/studies/numerical-analysis/surface-patches/) | $$u$$, $$v$$ 두 방향: 쌍선형, 쌍3차(꼬임 벡터), 베지어, 스플라인 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/17_surface-patches_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/17_surface-patches_verify/) | — |
+| 18 | [베지어 곡선의 세분화](/Hongs_Blog/studies/numerical-analysis/bezier-subdivision/) | 중점만으로 반씩 나눠 평평할 때까지. 다른 곡선은 $$M_B^{-1}M$$으로 바꿔서 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/18_bezier-subdivision_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/18_bezier-subdivision_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/18_bezier-subdivision_verify/) | — |
 
 자료: na08_surfaces
 필기: 아직 없다.
@@ -178,7 +178,7 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 19 | [경계 볼륨](/Hongs_Blog/studies/numerical-analysis/bounding-volume/) | 물체를 감싸는 상자. PCA 방향으로 돌리면 꼭 맞는다 | [verify](/Hongs_Blog/studies/numerical-analysis/code/19_bounding-volume_verify/) | — |
+| 19 | [경계 볼륨](/Hongs_Blog/studies/numerical-analysis/bounding-volume/) | 물체를 감싸는 상자. PCA 방향으로 돌리면 꼭 맞는다 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/19_bounding-volume_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/19_bounding-volume_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/19_bounding-volume_verify/) | — |
 
 자료: na09_PCA
 필기: 아직 없다.
@@ -202,7 +202,7 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 20 | [야코비 방법과 가우스-자이델 방법](/Hongs_Blog/studies/numerical-analysis/jacobi-gauss-seidel/) | 식마다 자기 변수로 풀어 되풀이. 대각 우세면 수렴, 가우스-자이델이 더 빠름 (강조)[^강조] | [impl](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_impl/) | [야코비와 가우스-자이델 예제 사다리](/Hongs_Blog/studies/numerical-analysis/jacobi-gs-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gs-ladder_p4/) |
+| 20 | [야코비 방법과 가우스-자이델 방법](/Hongs_Blog/studies/numerical-analysis/jacobi-gauss-seidel/) | 식마다 자기 변수로 풀어 되풀이. 대각 우세면 수렴, 가우스-자이델이 더 빠름 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/20_jacobi-gauss-seidel_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_plot/) | [야코비와 가우스-자이델 예제 사다리](/Hongs_Blog/studies/numerical-analysis/jacobi-gs-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gs-ladder_p4/) |
 
 자료: na11_iterative
 필기: 아직 없다.
@@ -222,9 +222,9 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 21 | [다항식 보간](/Hongs_Blog/studies/numerical-analysis/polynomial-interpolation/) | $$n + 1$$개 점을 지나는 $$n$$차 이하 다항식은 하나. 라그랑주 $$\sum y_iL_i$$ | [verify](/Hongs_Blog/studies/numerical-analysis/code/21_polynomial-interpolation_verify/) | — |
-| 22 | [뉴턴 다항식과 분할 차분](/Hongs_Blog/studies/numerical-analysis/newton-divided-difference/) | 항 하나씩 덧붙이는 꼴. 계수는 분할 차분표의 대각선 | [impl](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_impl/) | — |
-| 23 | [구면 선형 보간](/Hongs_Blog/studies/numerical-analysis/slerp/) | 사잇각을 $$\theta t$$로 고르게. 쌍선형·삼선형은 축마다 선형 보간 | [verify](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_verify/) | — |
+| 21 | [다항식 보간](/Hongs_Blog/studies/numerical-analysis/polynomial-interpolation/) | $$n + 1$$개 점을 지나는 $$n$$차 이하 다항식은 하나. 라그랑주 $$\sum y_iL_i$$ | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/21_polynomial-interpolation_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/21_polynomial-interpolation_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/21_polynomial-interpolation_verify/) | — |
+| 22 | [뉴턴 다항식과 분할 차분](/Hongs_Blog/studies/numerical-analysis/newton-divided-difference/) | 항 하나씩 덧붙이는 꼴. 계수는 분할 차분표의 대각선 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/22_newton-divided-difference_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_plot/) | — |
+| 23 | [구면 선형 보간](/Hongs_Blog/studies/numerical-analysis/slerp/) | 사잇각을 $$\theta t$$로 고르게. 쌍선형·삼선형은 축마다 선형 보간 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/23_slerp_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_verify/) | — |
 
 자료: na12_interpolation
 필기: 아직 없다.
@@ -242,7 +242,7 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 24 | [자료 선형화](/Hongs_Blog/studies/numerical-analysis/data-linearization/) | 축을 바꿔 직선으로 편 뒤 최소제곱. 원래 오차의 최소는 아니다 | [verify](/Hongs_Blog/studies/numerical-analysis/code/24_data-linearization_verify/) | — |
+| 24 | [자료 선형화](/Hongs_Blog/studies/numerical-analysis/data-linearization/) | 축을 바꿔 직선으로 편 뒤 최소제곱. 원래 오차의 최소는 아니다 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/24_data-linearization_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/24_data-linearization_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/24_data-linearization_verify/) | — |
 
 자료: na13_least-squares
 필기: 아직 없다.
@@ -261,8 +261,8 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 25 | [황금분할 탐색](/Hongs_Blog/studies/numerical-analysis/golden-section-search/) | 단봉 함수에서 두 점 비교로 구간을 0.618배씩. 회차당 계산 한 번 | [impl](/Hongs_Blog/studies/numerical-analysis/code/25_golden-section_impl/) | — |
-| 26 | [피보나치 탐색](/Hongs_Blog/studies/numerical-analysis/fibonacci-search/) | 비율을 $$F_{n-k-1}/F_{n-k}$$로 바꿔 회차 수를 미리 정함. 마지막 폭 $$(b - a)/F_n$$ | [impl](/Hongs_Blog/studies/numerical-analysis/code/26_fibonacci-search_impl/) | — |
+| 25 | [황금분할 탐색](/Hongs_Blog/studies/numerical-analysis/golden-section-search/) | 단봉 함수에서 두 점 비교로 구간을 0.618배씩. 회차당 계산 한 번 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/25_golden-section_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/25_golden-section_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/25_golden-section_plot/) | — |
+| 26 | [피보나치 탐색](/Hongs_Blog/studies/numerical-analysis/fibonacci-search/) | 비율을 $$F_{n-k-1}/F_{n-k}$$로 바꿔 회차 수를 미리 정함. 마지막 폭 $$(b - a)/F_n$$ | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/26_fibonacci-search_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/26_fibonacci-search_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/26_fibonacci-search_plot/) | — |
 
 자료: na14_optimization
 필기: 아직 없다.
@@ -280,7 +280,7 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 27 | [직접 탐색법](/Hongs_Blog/studies/numerical-analysis/direct-search/) | 도함수 없이: 무작위로 찍기, 한 변수씩, 지나온 방향으로 한 번 더 | [impl](/Hongs_Blog/studies/numerical-analysis/code/27_direct-search_impl/) | — |
+| 27 | [직접 탐색법](/Hongs_Blog/studies/numerical-analysis/direct-search/) | 도함수 없이: 무작위로 찍기, 한 변수씩, 지나온 방향으로 한 번 더 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/27_direct-search_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/27_direct-search_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/27_direct-search_plot/) | — |
 
 자료: na15_multiop
 필기: 아직 없다.
@@ -299,8 +299,8 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 28 | [이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/) | 부호가 다른 구간을 반씩. 늘 수렴하지만 느림 | [impl](/Hongs_Blog/studies/numerical-analysis/code/28_bisection_impl/) | — |
-| 29 | [할선법](/Hongs_Blog/studies/numerical-analysis/secant-method/) | 뉴턴의 도함수를 두 점의 기울기로. 근을 사이에 둘 필요 없음 | [impl](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_impl/) | — |
+| 28 | [이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/) | 부호가 다른 구간을 반씩. 늘 수렴하지만 느림 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/28_bisection_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/28_bisection_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/28_bisection_plot/) | — |
+| 29 | [할선법](/Hongs_Blog/studies/numerical-analysis/secant-method/) | 뉴턴의 도함수를 두 점의 기울기로. 근을 사이에 둘 필요 없음 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/29_secant-method_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_plot/) | — |
 
 자료: na16_nonlinear
 필기: 아직 없다.
@@ -320,9 +320,9 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 30 | [고정점 반복](/Hongs_Blog/studies/numerical-analysis/fixed-point-iteration/) | $$x = g(x)$$를 되풀이. 근 근처에서 $$\lvert g'\rvert < 1$$이면 선형 수렴 | [impl](/Hongs_Blog/studies/numerical-analysis/code/30_fixed-point-iteration_impl/) | — |
-| 31 | [다변수 뉴턴 방법](/Hongs_Blog/studies/numerical-analysis/multivariate-newton/) | 각 식을 평면으로 근사해 연립 일차방정식을 풀며 이동. 이차 수렴 | [impl](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_impl/) | — |
-| 32 | [근 찾기 방법 비교](/Hongs_Blog/studies/numerical-analysis/root-finding-compared/) | 가르는 질문: 근이 있는 구간을 아는가, 도함수를 아는가 | [verify](/Hongs_Blog/studies/numerical-analysis/code/32_root-finding-compared_verify/) | — |
+| 30 | [고정점 반복](/Hongs_Blog/studies/numerical-analysis/fixed-point-iteration/) | $$x = g(x)$$를 되풀이. 근 근처에서 $$\lvert g'\rvert < 1$$이면 선형 수렴 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/30_fixed-point-iteration_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/numerical-analysis/30_fixed-point-iteration_fig2.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/30_fixed-point-iteration_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/30_fixed-point-iteration_plot/) | — |
+| 31 | [다변수 뉴턴 방법](/Hongs_Blog/studies/numerical-analysis/multivariate-newton/) | 각 식을 평면으로 근사해 연립 일차방정식을 풀며 이동. 이차 수렴 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/31_multivariate-newton_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_plot/) | — |
+| 32 | [근 찾기 방법 비교](/Hongs_Blog/studies/numerical-analysis/root-finding-compared/) | 가르는 질문: 근이 있는 구간을 아는가, 도함수를 아는가 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/32_root-finding-compared_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/32_root-finding-compared_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/32_root-finding-compared_verify/) | — |
 
 자료: na17_nonlinear2
 필기: 아직 없다.
@@ -341,8 +341,8 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 33 | [테일러 급수 방법](/Hongs_Blog/studies/numerical-analysis/taylor-method/) | 한 걸음을 고계 도함수까지 넣은 테일러 급수로. $$k = 1$$이면 오일러 | [impl](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_impl/) | — |
-| 34 | [룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/) | 미분 대신 여러 곳의 기울기를 무게 평균. RK4는 4번 재서 4차 (강조)[^강조] | [impl](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_impl/) | [룽게-쿠타 예제 사다리](/Hongs_Blog/studies/numerical-analysis/runge-kutta-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta-ladder_p4/) |
+| 33 | [테일러 급수 방법](/Hongs_Blog/studies/numerical-analysis/taylor-method/) | 한 걸음을 고계 도함수까지 넣은 테일러 급수로. $$k = 1$$이면 오일러 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/33_taylor-method_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_plot/) | — |
+| 34 | [룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/) | 미분 대신 여러 곳의 기울기를 무게 평균. RK4는 4번 재서 4차 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/34_runge-kutta_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_plot/) | [룽게-쿠타 예제 사다리](/Hongs_Blog/studies/numerical-analysis/runge-kutta-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta-ladder_p4/) |
 
 자료: na18_diff_eq
 필기: 아직 없다.
@@ -362,9 +362,9 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 35 | [연립 상미분방정식](/Hongs_Blog/studies/numerical-analysis/ode-systems/) | 미지 함수를 벡터로 묶어 같은 공식. 고계는 $$z = y'$$로 1계 연립 | [impl](/Hongs_Blog/studies/numerical-analysis/code/35_ode-systems_impl/) | — |
-| 36 | [사격법](/Hongs_Blog/studies/numerical-analysis/shooting-method/) | 모르는 처음 기울기를 짐작해 쏘고 끝점에 맞게 고치기 | [impl](/Hongs_Blog/studies/numerical-analysis/code/36_shooting-method_impl/) | — |
-| 37 | [유한 차분법](/Hongs_Blog/studies/numerical-analysis/finite-difference-bvp/) | 미분을 이웃 점 차이로 바꿔 삼중대각 연립방정식 하나로 | [impl](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_impl/) | — |
+| 35 | [연립 상미분방정식](/Hongs_Blog/studies/numerical-analysis/ode-systems/) | 미지 함수를 벡터로 묶어 같은 공식. 고계는 $$z = y'$$로 1계 연립 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/35_ode-systems_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/35_ode-systems_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/35_ode-systems_plot/) | — |
+| 36 | [사격법](/Hongs_Blog/studies/numerical-analysis/shooting-method/) | 모르는 처음 기울기를 짐작해 쏘고 끝점에 맞게 고치기 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/36_shooting-method_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/36_shooting-method_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/36_shooting-method_plot/) | — |
+| 37 | [유한 차분법](/Hongs_Blog/studies/numerical-analysis/finite-difference-bvp/) | 미분을 이웃 점 차이로 바꿔 삼중대각 연립방정식 하나로 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/37_finite-difference-bvp_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_plot/) | — |
 
 자료: na19_diff_eq2
 필기: 아직 없다.

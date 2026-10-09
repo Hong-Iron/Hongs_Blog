@@ -19,7 +19,7 @@ next_url: "/studies/computer-communication/digital-modulation/"
 next_title: "진폭·주파수·위상 변조"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/computer-communication/pcm/"
 ---
 {% raw %}
@@ -46,6 +46,10 @@ permalink: "/studies/computer-communication/pcm/"
 마지막 줄을 이어 붙인 `011001110001011110100`이 보낼 비트열이다. 1단계에서 잰 높이를 막대(펄스)로 그린 것을 PAM 펄스, 3단계까지 거친 것을 PCM 펄스라 부른다[^1].
 
 2단계에서 1.4가 1이 되면서 0.4만큼 틀어진다. 이 차이(양자화 오차)는 받는 쪽이 되돌릴 수 없다. 단계를 반올림하므로 오차는 한 단계 폭의 절반을 넘지 않는다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig1.svg" alt="그림" loading="lazy">
+
+주황 점과 파란 막대 끝 사이가 반올림 오차다. 점이 막대 끝에서 반 칸 넘게 벗어난 곳은 없다. 점과 점 사이에서 파형이 어떻게 움직였는지는 막대에 남지 않는다. 그 정보는 재는 순간에 이미 사라진다[^s4].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 슬라이드 표본 7개 → 3비트 21개, 4 kHz × 2 × 8비트 = 64 kbps, 카드 C2·C3 — [38_pcm_verify.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_verify/)</div>
@@ -80,6 +84,10 @@ $$8{,}000 \ \text{표본/초} \times 8 \ \text{비트/표본} = 64{,}000 \ \text
 
 
 슬라이드는 "약 2배"라고 쓰고, 4 kHz 음성에 8 kHz라는 정확히 2배의 예를 든다. 실제 전화망은 음성을 미리 약 3.4 kHz 아래로 걸러 두므로, 8 kHz는 $$2f_{\max}$$보다 크다[^s2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig2.svg" alt="그림" loading="lazy">
+
+4 kHz로 떨리는 소리를 1초에 정확히 8,000번 재면, 재는 순간이 매번 파형이 0을 지나는 자리에 걸릴 수 있다(위). 잰 값만 보면 소리가 없는 것과 같다. 1초에 10,000번 재면(아래) 오르내림이 점에 남는다. "2배"가 아니라 "2배보다 많이"여야 하는 이유다[^s4].
 
 ## 활용
 
@@ -123,4 +131,5 @@ $$8{,}000 \ \text{표본/초} \times 8 \ \text{비트/표본} = 64{,}000 \ \text
 [^s1]: 에이전트 보충. 양자화 오차가 단계 폭의 절반 이하라는 것과 카드 C2·C3의 수치는 원본에 없다. 검증 코드로 계산했다.
 [^s2]: 에이전트 보충. 슬라이드 26은 "Sampling rate ≈ 2 × Highest signal frequency"다(pptx 원본의 Symbol 글꼴 문자 0xBB가 ≈, 0xB4가 ×). 필기 40행도 "≈ 2×"로 적는다. 표본화 정리의 정확한 조건은 $$f_s > 2f_{\max}$$다(Oppenheim & Willsky, *Signals and Systems*, 7.1절). 정확히 2배에서는 $$f_{\max}$$인 사인파를 매번 0인 지점에서 잴 수 있어 되살릴 수 없다. 전화 음성 대역 300~3,400 Hz는 ITU-T G.711(PCM 64 kbps)의 대역이다.
 [^s3]: 에이전트 보충. T1의 24채널(1.544 Mbps = 24 × 64 kbps + 8 kbps 동기), CD의 44.1 kHz·16비트는 원본에 없다. 표준 값이다(ANSI T1.403, IEC 60908).
+[^s4]: 에이전트 보충. 그림 두 장은 원본에 없다. 그림 1의 곡선은 슬라이드의 표본 일곱 개를 지나도록 그린 매끄러운 곡선(3차 스플라인)이라, 표본 사이의 모양은 슬라이드의 원래 파형과 다를 수 있다. [38_pcm_plot.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_plot/)로 그렸고, 반올림 결과 3, 1, 6, 1, 3, 6, 4와 비트열 `011001110001011110100`, 반올림 오차가 0.5 이하인 것, 8 kHz로 잰 4 kHz 사인파의 값이 모두 0인 것을 같은 코드로 확인했다.
 {% endraw %}

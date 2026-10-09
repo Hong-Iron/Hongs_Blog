@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sequences", "Summation Notation", "수열", "시그마", "sigma notation", "Σ", "등차수열", "arithmetic sequence", "등비수열", "geometric sequence", "등차급수", "망원합", "telescoping sum", "가우스 합"]
 description: "수열은 번호를 붙여 줄 세운 수이고, 시그마(Σ)는 그 수들을 \"여기부터 저기까지 더하라\"는 약속이다. 반복문이 한 바퀴 돌 때마다 드는 비용을 더하는 것이 곧 Σ 계산이라, 알고리즘 분석의 기본 언어가 된다. 같은 수를 더해 가면 등차수열, 같은 수를 곱해 가면 등비수열이다. 다…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/geometric-series/"
 next_title: "등비급수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/sequences-sigma/"
 ---
 {% raw %}
@@ -88,6 +88,10 @@ for i in range(n):        # i = 0, 1, ..., n-1
 </details>
 
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/20_sequences-sigma_fig1.svg" alt="그림" loading="lazy">
+
+파란 막대 1, 2, …, 6 위에 거꾸로 6, 5, …, 1(주황)을 얹으면 모든 막대의 높이가 7이 된다. 직사각형 넓이 $$6 \times 7 = 42$$가 합의 두 배이므로 합은 21이다[^s1].
+
 ## 예제
 
 $$\sum_{k=3}^{10}(2k + 1)$$을 구한다.
@@ -145,4 +149,5 @@ $$\sum_{k=3}^{10}(2k + 1)$$을 구한다.
 
 [^1]: OpenStax, *Precalculus 2e*, 11.1절 "Sequences and Their Notations", 11.2절 "Arithmetic Sequences", 11.3절 "Geometric Sequences"
 [^2]: OpenStax, *Precalculus 2e*, 11.4절 "Series and Their Notations". Σ의 조작 규칙과 망원합은 Graham·Knuth·Patashnik, *Concrete Mathematics*, 2장 "Sums"의 방식이다.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [20_sequences-sigma_plot.py](/Hongs_Blog/studies/college-math/code/20_sequences-sigma_plot/)로 그렸고, 그림에 쓴 값($$1 + 2 + \cdots + 6 = 21$$, $$2 \times 21 = 6 \times 7$$, $$n \le 2{,}000$$에서 공식 일치)을 같은 코드로 확인했다.
 {% endraw %}

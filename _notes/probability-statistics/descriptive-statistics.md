@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/estimators/"
 next_title: "표본분포와 추정량"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/descriptive-statistics/"
 ---
 {% raw %}
@@ -70,6 +70,10 @@ API 응답 시간 10개(ms)가 $$12, 13, 13, 14, 15, 15, 16, 18, 20, 250$$이다
 2. *가운데:* 꼬리 때문에 평균이 중앙값보다 크다. "보통 요청"은 중앙값(p50)으로 말한다.
 3. *꼬리:* 사용자가 느끼는 최악은 p99, p99.9로 말한다. 요청 100개를 여는 페이지라면 그중 하나쯤은 p99보다 느리다.
 4. *흩어짐:* 표준편차는 꼬리에 크게 흔들리므로 IQR을 함께 본다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/28_descriptive-statistics_fig1.svg" alt="그림" loading="lazy">
+
+오른쪽 꼬리가 긴 지연 시간 자료 10만 건의 히스토그램이다. 꼬리가 평균을 중앙값보다 오른쪽으로 끌고, p99는 중앙값의 세 배 가까이 떨어져 있다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 표의 평균·중앙값·표준편차, 분위수 규약 세 가지의 값(20·43·227), 극단값을 넣었을 때 IQR과 평균의 변화(무작위 자료 100개), 경험적 CDF가 참 CDF에 가까워짐 — [28_descriptive-statistics_verify.py](/Hongs_Blog/studies/probability-statistics/code/28_descriptive-statistics_verify/)</div>
@@ -145,4 +149,5 @@ API 응답 시간 10개(ms)가 $$12, 13, 13, 14, 15, 15, 16, 18, 20, 250$$이다
 [^d2]: 같은 자료, p.13 (중앙값, 최빈값, 대칭·비대칭 분포에서 세 값의 순서)
 [^d3]: 같은 자료, p.14~15 (범위, 사분위수, IQR, 다섯 수 요약, 상자 그림)
 [^d4]: 같은 자료, p.16 (분산과 표준편차)
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [28_descriptive-statistics_plot.py](/Hongs_Blog/studies/probability-statistics/code/28_descriptive-statistics_plot/)로 그렸고, 그림에 쓴 값(예시 표의 38.6·15·74.3, 중앙값 < 평균 < p99. 그림의 자료는 로그정규분포로 만든 모의 자료다)을 같은 코드로 확인했다.
 {% endraw %}

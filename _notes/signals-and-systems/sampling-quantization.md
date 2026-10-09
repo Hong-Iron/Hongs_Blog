@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sampling", "Quantization", "샘플링", "표본 간격", "Sampling Interval", "양자화 단계", "Quantization Level", "화소", "Pixel", "격자", "Grid", "A/D 변환", "Analog-to-Digital Conversion"]
 description: "연속 신호를 컴퓨터에 넣으려면 두 번 끊는다. 시간을 일정한 간격으로 끊어 그 순간의 값만 남기는 것이 표본화, 남긴 값을 정해진 몇 단계 중 가장 가까운 것으로 반올림하는 것이 양자화다. 표본을 촘촘히, 단계를 잘게 할수록 원래 신호에 가까워지지만 저장할 데이터가 늘어난다. 양자…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/systems-interconnection/"
 next_title: "시스템과 시스템 연결"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/sampling-quantization/"
 ---
 {% raw %}
@@ -61,6 +61,10 @@ $$f_s(x, y) = f(x, y)\sum_{j=1}^{M}\sum_{k=1}^{N}\delta(x - j\Delta x,\ y - k\De
 
 **정현파 표본화.**[^s1] 2Hz 코사인 $$\cos(2\pi \cdot 2t)$$를 $$T_s = 0.05$$초(초당 20번)로 읽으면 $$x[n] = \cos(2\pi \cdot 0.1\,n)$$이다. $$\frac{\omega_0}{2\pi} = 0.1 = \frac{1}{10}$$이므로 10개마다 되풀이된다. 연속 신호의 한 주기(0.5초) 동안 정확히 10개를 뽑기 때문이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig1.svg" alt="그림" loading="lazy">
+
+동그라미가 $$T_s = 0.05$$초마다 뽑은 표본이고, 네모가 그 값을 3비트 8단계(점선) 중 가운데 값으로 반올림한 것이다. 아래의 오차는 칸 폭의 절반인 $$\pm 0.125$$를 넘지 않는다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$x[n] = x(nT_s)$$와 10개 주기, $$b$$비트 양자화의 단계 수 $$2^b$$, 최대 오차 $$\Delta_q/2$$를 계산해 확인 — [11_sampling-quantization_verify.py](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_verify/)</div>
 
@@ -72,6 +76,10 @@ $$f_s(x, y) = f(x, y)\sum_{j=1}^{M}\sum_{k=1}^{N}\delta(x - j\Delta x,\ y - k\De
 - 음악 CD는 초당 44,100번 표본화하고 16비트로 양자화한다[^s1].
 - 표본 간격이 너무 넓으면 빠른 신호가 느린 신호로 잘못 보인다. 12주차 자료는 주파수 $$f$$인 정현파를 서로 다른 표본화율 $$f_s$$로 뽑은 그림으로 이를 보인다[^4]. 정확한 조건(표본화 정리)은 4장 뒤에서 다룬다.
 - 그림 (A)~(D)처럼 표본화율과 양자화 단계를 함께 늘려야 원래 곡선에 가까워진다[^2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/11_sampling-quantization_fig2.svg" alt="그림" loading="lazy">
+
+표본 간격이 너무 넓은 예다. 2Hz 코사인을 초당 2.5번만 뽑으면, 그 점들이 0.5Hz 코사인 위에 그대로 놓여 느린 신호로 보인다[^s2].
 
 ## 연결
 
@@ -101,4 +109,5 @@ $$f_s(x, y) = f(x, y)\sum_{j=1}^{M}\sum_{k=1}^{N}\delta(x - j\Delta x,\ y - k\De
 [^3]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.4, p.13
 [^4]: 3-1학기/신호 및 시스템/1.수업자료/12.Week12_CH03_4_handout.pdf, p.3
 [^s1]: 에이전트 보충. 양자화 오차의 한계 $$\Delta_q/2$$와 4비트 예, 2Hz 코사인 표본화 예, 음악 CD의 수치, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [11_sampling-quantization_plot.py](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 10개마다 되풀이, 3비트 양자화의 8단계와 최대 오차 0.125, 2Hz와 0.5Hz 코사인이 초당 2.5번 뽑은 표본에서 같음. 3비트와 2.5Hz 표본화는 설명을 위해 고른 값이다.
 {% endraw %}

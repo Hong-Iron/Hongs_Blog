@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-09-26"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Central Limit Theorem", "중심극한정리", "CLT", "정규 근사", "normal approximation", "연속성 보정", "continuity correction", "표준오차", "standard error"]
 description: "서로 독립인 값을 많이 더하거나 평균 내면, 원래 값들이 어떤 모양의 분포를 따르든 합의 분포는 종 모양(정규분포)에 가까워진다. 주사위 하나는 납작한 모양이지만 100개의 합은 거의 완벽한 종이다. 그래서 평균의 오차를 정규분포로 계산할 수 있고, 오차 막대·신뢰구간·A/B 테스…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/markov-chains/"
 next_title: "마르코프 연쇄"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/clt/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/probability-statistics/clt/"
 | 정규분포와의 최대 CDF 차이 | 0.054 | 0.016 | 0.0026 | 0.0003 |
 
 주사위 하나는 1~6이 균등한 납작한 모양인데, 합은 금방 종 모양이 된다. 주사위 하나가 아래 정리의 $$X_i$$, 합을 표준화한 것이 $$Z_n$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig1.svg" alt="그림" loading="lazy">
+
+막대는 합을 표준화한 정확한 분포(막대 넓이 = 확률)이고, 주황 곡선은 표준정규분포다. 주사위 2개만 더해도 삼각형 모양이 되고, 10개면 곡선과 거의 겹친다[^s2].
 
 ## 정의
 
@@ -68,6 +72,10 @@ $$Z_n = \frac{\bar X_n - \mu}{\sigma/\sqrt n} = \frac{X_1 + \cdots + X_n - n\mu}
 | 같은 분포 | 완화할 수 있다. 분포가 달라도 어느 하나가 합을 좌우하지만 않으면 정규분포로 간다(린데베르크 조건)[^s1] |
 
 **수렴 속도.** 치우친 분포일수록 느리다. 지수분포 $$n$$개의 평균이 "표준편차 2개 위"를 넘을 확률의 참값은 $$n = 5, 50, 500$$에서 0.041, 0.030, 0.025로, 정규분포의 0.0228에 천천히 다가간다. 주사위(대칭)보다 훨씬 느리다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/22_clt_fig2.svg" alt="그림" loading="lazy">
+
+지수분포 하나(파랑)는 오른쪽으로 꼬리가 길게 치우쳐 있다. 5개를 평균 내도 봉우리가 왼쪽으로 쏠려 있고, 50개쯤 되어야 회색 정규 곡선에 가까워진다[^s2].
 
 ### 스스로 설명해 보기
 
@@ -176,4 +184,5 @@ $$\bar X_n - \mu = \frac{(X_1 + \cdots + X_n) - n\mu}{n}$$이다. 이것을 $$\f
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.3절 "Central limit theorem"(진술, 적률생성함수를 이용한 증명, 이항분포의 정규 근사와 연속성 보정).
 [^s1]: 에이전트 보충. 분포가 같지 않은 독립 합의 중심극한정리(린데베르크–펠러 정리)는 측도론적 확률 교재, 예를 들어 Billingsley, *Probability and Measure*의 중심극한정리 절에서 다룬다. 이 과정에서는 진술만 소개한다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [22_clt_plot.py](/Hongs_Blog/studies/probability-statistics/code/22_clt_plot/)로 그렸고, 그림에 쓴 값(예시 표의 최대 CDF 차이, 지수분포 평균의 꼬리 확률 0.041·0.030·0.025)을 같은 코드로 확인했다.
 {% endraw %}

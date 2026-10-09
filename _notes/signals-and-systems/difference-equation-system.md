@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Constant-Coefficient Difference Equation", "선형 상수계수 차분방정식", "차분방정식", "Difference Equation", "재귀 방정식", "Recursive Equation", "비재귀 방정식", "Nonrecursive Equation", "FIR", "Finite Impulse Response", "IIR", "Infinite Impulse Response"]
 description: "이산 시간 시스템은 \"지금 출력 = 지금과 과거 입력의 가중합 − 과거 출력의 가중합\"이라는 규칙(차분방정식)으로 적는다. 은행 잔액, 이동 평균, 디지털 필터가 모두 이 꼴이다. 과거 출력을 쓰지 않으면 임펄스 응답이 몇 칸 뒤 끝나고(FIR), 과거 출력을 다시 쓰면 메아리가 …"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/difference-equation-recurrence-bridge/"
 next_title: "차분방정식 ↔ 선형 점화식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/difference-equation-system/"
 ---
 {% raw %}
@@ -67,6 +67,10 @@ $$y[n] = \frac{1}{a_0}\left\{\sum_{k=0}^{M}b_kx[n-k] - \sum_{k=1}^{N}a_ky[n-k]\r
 
 비재귀식은 그 자체가 컨벌루션 합이다. 임펄스 응답의 0 아닌 값이 $$M + 1$$개뿐이다[^3].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig1.svg" alt="그림" loading="lazy">
+
+3점 평균(FIR)은 3칸 뒤에 응답이 끝나고, $$y[n] = x[n] + \frac12y[n-1]$$(IIR)은 반씩 줄며 끝없이 이어진다[^s2].
+
 IIR의 예 $$y[n] = ay[n-1] + bx[n]$$을 계속 펼치면[^4]
 
 $$y[n] = a^2y[n-2] + abx[n-1] + bx[n] = a^3y[n-3] + a^2bx[n-2] + abx[n-1] + bx[n] = \cdots$$
@@ -91,6 +95,10 @@ $$y[n] = a^2y[n-2] + abx[n-1] + bx[n] = a^3y[n-3] + a^2bx[n-2] + abx[n-1] + bx[n
 
 - 제차해 $$C(0.6)^n$$, 특수해 $$A - 0.6A = 1$$에서 $$A = \frac52$$.
 - $$y[1] = 0.6C + \frac52 = 2.68$$에서 $$C = 0.3$$, 그래서 $$y[n] = 0.3(0.6)^n + \frac52$$ ($$n \ge 0$$).
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/24_difference-equation-system_fig2.svg" alt="그림" loading="lazy">
+
+같은 식이라도 출발값이 다르면 $$y[0]$$이 1과 2.8로 다르다. 두 출력 모두 특수해 2.5로 다가간다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예제 2.15를 재귀로 계산해 $$K(\frac12)^n$$과 일치, 계단 응답 $$\frac{b}{1-a}(1 - a^{n+1})$$, 임펄스 응답 $$ba^n$$, $$h = s[n] - s[n-1]$$, FIR 임펄스 응답 $$b_n/a_0$$, 0.6 예의 해가 식과 $$y[1] = 2.68$$을 만족함 — [24_difference-equation-system_verify.py](/Hongs_Blog/studies/signals-and-systems/code/24_difference-equation-system_verify/)</div>
@@ -189,4 +197,5 @@ $$x = \delta$$를 넣으면 $$a_0h[n] = b_0\delta[n] + b_1\delta[n-1] + \cdots +
 [^7]: 같은 자료, p.39
 [^8]: 같은 자료, p.42
 [^s1]: 에이전트 보충. 지수 이동 평균 예, FIR·IIR의 안정성, 오해 항목의 계산, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [24_difference-equation-system_plot.py](/Hongs_Blog/studies/signals-and-systems/code/24_difference-equation-system_plot/)로 그렸고, 같은 코드로 다음을 확인했다: FIR $$h = \frac13, \frac13, \frac13$$, IIR $$h = (\frac12)^n$$, 초기 휴지 해 $$(1 - 0.6^{n+1})/0.4$$, 다른 보조 조건의 $$y[0] = 2.8$$, $$y[1] = 2.68$$.
 {% endraw %}

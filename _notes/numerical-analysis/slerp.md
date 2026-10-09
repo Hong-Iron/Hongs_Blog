@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/data-linearization/"
 next_title: "자료 선형화"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/slerp/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ permalink: "/studies/numerical-analysis/slerp/"
 - **선형 보간** $$(1 - t)\mathbf q_1 + t\mathbf q_2$$: 0.5초에 $$(0.5, 0.5)$$로 길이가 $$\frac{1}{\sqrt2} \approx 0.71$$로 줄어든다.
 - **정규화한 선형 보간**: 길이는 1로 되돌리지만, 0.25초 간격마다 돈 각도가 고르지 않다. 가운데에서 빨리 돈다[^1][^2].
 - **구면 선형 보간**: $$t$$초에 정확히 $$90° \times t$$만큼 돈다. $$t = \frac13$$이면 30° 방향 $$(\frac{\sqrt3}{2}, \frac12)$$다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/23_slerp_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 $$t$$를 $$\frac18$$씩 늘린 점들이다. 선형 보간(초록)은 원 안쪽으로 들어가고, 정규화한 선형 보간(주황)은 원 위에 있지만 가운데로 갈수록 간격이 넓다. 구면 선형 보간(파랑)은 간격이 고르다. 오른쪽은 돈 각도로, 구면 선형 보간만 곧은 선이다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 선형 보간의 길이 줄어듦, 정규화한 선형 보간의 고르지 않은 각, 구면 선형 보간의 길이 1과 각 $$\theta t$$, 4차원 무작위 쿼터니언 100쌍, 쌍선형·삼선형 보간, 카드 C2·C3 — [23_slerp_verify.py](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_verify/)</div>
@@ -133,4 +137,5 @@ $$y$$ 방향을 먼저 해도 결과가 같다[^s1]. **삼선형 보간**은 정
 [^6]: 같은 자료, p.35
 [^7]: 같은 자료, p.36
 [^s1]: 에이전트 보충. 카메라 예와 수치, 각이 $$\theta t$$인 확인, 쿼터니언 부호 뒤집기, 순서를 바꿔도 같은 쌍선형 보간, 쓰는 곳, 흔한 실수, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [23_slerp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 선형 보간의 가운데 길이 $$\frac{1}{\sqrt2}$$, 구면 선형 보간의 $$t = \frac13$$이 $$(\frac{\sqrt3}{2}, \frac12)$$, 각이 $$90° \times t$$, 정규화한 선형 보간의 $$t = \frac14$$가 22.5°에서 3° 넘게 벗어남.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Polar Coordinates", "Parametric Equations", "극좌표", "매개변수 방정식", "매개변수 곡선", "parametric curve", "선형 보간", "linear interpolation", "lerp", "궤적", "trajectory"]
 description: "점을 (가로, 세로) 대신 \"원점에서 얼마나 멀리, 어느 방향으로\"로 적는 것이 극좌표이고, 곡선을 \"시각 t에 점이 어디 있는가\"로 적는 것이 매개변수 표현이다. 원·나선·회전처럼 중심을 도는 모양은 극좌표로, 움직임과 궤적은 매개변수로 적으면 식이 훨씬 단순해진다. 다만 극좌표…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/complex-numbers/"
 next_title: "복소수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/polar-parametric/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/college-math/polar-parametric/"
 | 직교좌표 | $$x^2 + y^2 = 4$$ | 간단한 식이 없다 |
 | 극좌표 | $$r = 2$$ | $$r = \theta$$ |
 | 매개변수 | $$(2\cos t, 2\sin t)$$, $$0 \le t < 2\pi$$ | $$(t\cos t,\ t\sin t)$$, $$t \ge 0$$ |
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig1.svg" alt="그림" loading="lazy">
+
+원 $$r = 2$$는 방향이 바뀌어도 거리가 그대로다. 나선 $$r = \theta$$는 한 바퀴 돌 때마다 원점에서 $$2\pi$$(약 6.28)씩 멀어진다. 주황 점은 $$\theta$$가 $$\pi/2$$씩 늘 때의 위치다[^s1].
 
 매개변수 표현은 곡선의 모양뿐 아니라 **움직임**까지 담는다. $$(2\cos t, 2\sin t)$$와 $$(2\cos 2t, 2\sin 2t)$$는 같은 원이지만 둘째는 두 배 빠르게 돈다.
 
@@ -76,6 +80,10 @@ $$x = r\cos\theta,\quad y = r\sin\theta; \qquad r = \sqrt{x^2 + y^2},\quad \thet
 **선형 보간.** 점 $$P$$에서 $$Q$$로 가는 선분은 $$L(t) = P + t(Q - P)$$, $$0 \le t \le 1$$이다. $$P = (0, 0)$$, $$Q = (4, 2)$$이면 $$L(0.25) = (1, 0.5)$$, $$L(0.5) = (2, 1)$$이다. $$t$$가 0이면 출발점, 1이면 도착점이다.
 
 **포물선 운동.** 속력 $$v$$, 발사각 $$\alpha$$로 던진 공은 $$(vt\cos\alpha,\ vt\sin\alpha - \frac12 g t^2)$$을 따라간다. $$v = 20$$ m/s, $$\alpha = 45°$$, $$g = 9.8$$ m/s²이면 $$y = 0$$으로 돌아오는 $$t = 2v\sin\alpha / g$$에서 약 40.8 m 떨어진 곳에 떨어진다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/17_polar-parametric_fig2.svg" alt="그림" loading="lazy">
+
+주황 점은 0.25초마다 찍은 공의 위치다. 가로 간격은 늘 같다. 가로 속도 $$v\cos\alpha$$가 바뀌지 않기 때문이다. 세로 간격은 꼭대기에 가까울수록 줄어든다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 좌표 변환, 각에 $$2\pi k$$ 더하기, 두 원의 속력 2와 4, 선형 보간, 포물선 사거리 40.82 m — [17_polar-parametric_verify.py](/Hongs_Blog/studies/college-math/code/17_polar-parametric_verify/)</div>
@@ -127,4 +135,5 @@ $$x = r\cos\theta,\quad y = r\sin\theta; \qquad r = \sqrt{x^2 + y^2},\quad \thet
 
 [^1]: OpenStax, *Precalculus 2e*, 8.3절 "Polar Coordinates", 8.4절 "Polar Coordinates: Graphs"
 [^2]: OpenStax, *Precalculus 2e*, 8.6절 "Parametric Equations", 8.7절 "Parametric Equations: Graphs"(포물선 운동 포함)
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [17_polar-parametric_plot.py](/Hongs_Blog/studies/college-math/code/17_polar-parametric_plot/)로 그렸고, 그림에 쓴 값(나선의 $$\theta = \pi$$ 점이 $$(-\pi, 0)$$, 사거리 40.82 m, 비행 시간 2.886초)을 같은 코드로 확인했다.
 {% endraw %}

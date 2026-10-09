@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Asymptotic Notation", "Big-O", "빅오", "대문자 O", "Big-Omega", "빅오메가", "Big-Theta", "빅세타", "little-o", "소문자 o", "little-omega", "시간 복잡도", "time complexity", "증가 차수", "order of growth"]
 description: "알고리즘의 비용을 \"입력이 커질 때 얼마나 빨리 커지는가\"로만 비교하려고, 상수배와 작은 항을 버린 표기다. O는 \"많아야 이 정도로\", Ω는 \"적어도 이 정도로\", Θ는 \"딱 이 정도로\" 자란다는 뜻이다. 그래서 컴퓨터가 몇 배 빠른지와 상관없이 알고리즘끼리 비교할 수 있다. 다…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/master-theorem/"
 next_title: "분할 정복 점화식과 마스터 정리"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/asymptotic-notation/"
 ---
 {% raw %}
@@ -41,6 +41,10 @@ permalink: "/studies/discrete-math/asymptotic-notation/"
 | $$B(n)$$ | 1,661 | 33,219 | 498,289 | 6,643,856 |
 
 작은 $$n$$에서는 $$A$$가 빠르지만 $$n$$이 커지면 $$B$$가 크게 앞선다. $$A$$에서 $$5n + 7$$은 $$n$$이 커지면 $$3n^2$$에 비해 무시할 만하고, 3이나 50 같은 상수는 컴퓨터를 바꾸면 달라진다. 그래서 $$A$$를 $$\Theta(n^2)$$, $$B$$를 $$\Theta(n\lg n)$$으로 요약한다. $$3n^2$$의 3이 아래 정의의 상수 $$c$$, "충분히 큰 $$n$$"의 경계가 $$n_0$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig1.svg" alt="그림" loading="lazy">
+
+두 축이 모두 로그 눈금이라, 차수가 큰 $$A$$가 더 가파르게 오른다. 두 선은 $$n = 112$$에서 엇갈린다. $$c = 1$$로 잡으면 $$B(n) \le A(n)$$이 $$n_0 = 112$$부터 계속 맞는다[^s1].
 
 ## 정의
 
@@ -121,6 +125,10 @@ $$a$$, $$b$$는 고정된 밑이라 $$n$$에 따라 변하지 않는다. $$O$$�
 3. *지수와 계승:* $$n^2 = o(2^n)$$, $$2^n = o(n!)$$.
 4. *결과:* $$\lg n \prec \sqrt n \prec n \prec n\lg n \prec n^{1.5} \prec n^2 \prec 2^n \prec n!$$.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/24_asymptotic-notation_fig2.svg" alt="그림" loading="lazy">
+
+두 축 모두 로그 눈금이다. 점선 $$n = 16$$ 왼쪽에서는 선들이 엉켜 있다. 예를 들어 $$4 < n < 16$$에서는 $$\lg n$$이 $$\sqrt n$$보다 크다. $$n$$이 커지면 여덟 선이 서열대로 갈라지고, $$2^n$$과 $$n!$$은 곧 그림 위로 빠져나간다[^s1].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$3n^2 \le 3n^2 + 5n + 7 \le 15n^2$$($$n \le 10^5$$), 밑이 다른 로그의 비가 일정, $$n = 64$$에서 서열, 카드 C4의 반례, 오해의 수치, 예시 표의 값 — [24_asymptotic-notation_verify.py](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_verify/)</div>
 
@@ -187,4 +195,5 @@ $$a$$, $$b$$는 고정된 밑이라 $$n$$에 따라 변하지 않는다. $$O$$�
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14.7절 "Asymptotic Notation". Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.1절 "Asymptotic notation".
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [24_asymptotic-notation_plot.py](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_plot/)로 그렸고, 예시 표의 값, $$n \ge 112$$에서 $$A(n) > B(n)$$(그 아래에서는 $$A(n) \le B(n)$$), $$n = 40$$과 $$64$$에서 여덟 함수의 서열, $$\lg 8 > \sqrt 8$$을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Discrete-Time Fourier Series", "DTFS", "이산 푸리에 급수", "이산 시간 푸리에 계수", "Discrete-Time Fourier Coefficients", "유한 급수", "Finite Series"]
 description: "주기 N인 수열도 고조파 e^{jk(2\\pi/N)n}의 합으로 나눌 수 있다. 연속 시간과 다른 점은, 이산 시간에서는 서로 다른 고조파가 딱 N개뿐이라 급수가 무한합이 아니라 N개 항의 유한합이라는 것이다. 그래서 수렴 걱정이 없고, N개의 값을 N개의 계수로 정확히 바꿨다가 정…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/dtfs-properties/"
 next_title: "이산 시간 푸리에 급수의 성질"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/dt-fourier-series/"
 ---
 {% raw %}
@@ -80,6 +80,10 @@ $$k$$가 $$N$$의 배수면 모든 항이 $$e^{j2\pi(\text{정수})} = 1$$이라
 
 **수렴 문제가 없다.** 분석식은 $$N$$개의 수를 $$N$$개의 계수로 바꾸고, 합성식은 유한한 $$N$$개 항이라 그대로 되돌린다. 부분합 $$\hat x[n] = \sum_{k=-M}^{M}a_ke^{jk(2\pi/N)n}$$은 항이 $$N$$개가 되는 순간($$N$$이 홀수면 $$M = \frac{N-1}{2}$$) 원래 수열과 정확히 같다. 깁스 현상이 없다(그림 3.18)[^8]. 연속 시간 주기 신호는 한 주기에 값이 무한히 많아 무한히 많은 계수가 필요한 것과 다르다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/33_dt-fourier-series_fig1.svg" alt="그림" loading="lazy">
+
+$$N = 9$$, $$N_1 = 1$$인 구형파(회색 가로 막대)의 부분합이다. $$a_3 = 0$$이라 $$M = 3$$은 $$M = 2$$와 같고, 항이 9개가 되는 $$M = 4$$에서 원래 수열과 정확히 같아진다[^s2].
+
 ### 스스로 설명해 보기
 
 <details class="callout callout-question" markdown="1">
@@ -128,6 +132,10 @@ $$a = e^{jk(2\pi/N)}$$이므로 $$a^N = e^{jk2\pi} = 1$$이다. 분모는 $$k$$�
 5. *$$k$$가 $$N$$의 배수:* 모든 항이 1이라 $$a_k = \frac{2N_1+1}{N}$$.
 
 $$2N_1 + 1 = 5$$, $$N = 10$$이면 $$a_0 = \frac12$$, $$a_1 = \frac{1}{10}\cdot\frac{\sin(\pi/2)}{\sin(\pi/10)} \approx 0.3236$$, $$a_2 = 0$$, $$a_3 = \frac{1}{10}\cdot\frac{\sin(3\pi/2)}{\sin(3\pi/10)} \approx -0.1236$$, $$a_4 = 0$$이다. $$N$$을 20, 40으로 키우면 $$Na_k$$가 같은 sinc 꼴 포락선을 더 촘촘히 찍는다(그림 3.17).
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/33_dt-fourier-series_fig2.svg" alt="그림" loading="lazy">
+
+$$N = 10$$, $$2N_1 + 1 = 5$$인 구형파와 그 계수다. 계수도 10칸마다 똑같이 되풀이되므로 색칠한 한 주기만 알면 된다[^s2].
 
 <div class="callout callout-warning" markdown="1">
 <div class="callout-title" markdown="span">원본 오류 의심</div>
@@ -210,4 +218,5 @@ $$2N_1 + 1 = 5$$, $$N = 10$$이면 $$a_0 = \frac12$$, $$a_1 = \frac{1}{10}\cdot\
 [^11]: 같은 자료, p.16~17 (그림 3.15)
 [^12]: 같은 자료, p.18~19 (예제 3.12, 그림 3.16, 3.17)
 [^s1]: 에이전트 보충. DFT·FFT 연결, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [33_dt-fourier-series_plot.py](/Hongs_Blog/studies/signals-and-systems/code/33_dt-fourier-series_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$a_0 = \frac12$$, $$a_1 \approx 0.3236$$, $$a_3 \approx -0.1236$$과 닫힌 꼴, $$N = 9$$ 구형파의 $$a_3 = 0$$과 $$M = 4$$ 부분합의 일치.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Duality", "쌍대성", "쌍대성 정리", "Duality Theorem", "사각 펄스와 sinc"]
 description: "푸리에 변환식과 역변환식은 부호와 2\\pi만 빼면 모양이 같다. 그래서 시간과 주파수의 역할을 바꾼 쌍이 늘 함께 있다. 사각 펄스의 변환이 sinc이면, sinc의 변환은 사각 펄스다. 한쪽 쌍만 알면 다른 쪽 쌍을 공짜로 얻는다. 다만 바꿀 때 2\\pi와 \\omega의 부호(-…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/convolution-property/"
 next_title: "컨벌루션 성질과 주파수 응답"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/fourier-duality/"
 ---
 {% raw %}
@@ -70,6 +70,10 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 2. 역변환식: $$e^{-\vert t\vert } = \frac{1}{2\pi}\int\frac{2}{1+\omega^2}e^{j\omega t}d\omega$$.
 3. $$2\pi$$를 곱하고 $$t$$를 $$-t$$로: $$2\pi e^{-\vert t\vert } = \int\frac{2}{1+\omega^2}e^{-j\omega t}d\omega$$.
 4. $$t$$와 $$\omega$$를 바꾸면 $$2\pi e^{-\vert \omega\vert } = \int\frac{2}{1+t^2}e^{-j\omega t}dt$$, 곧 $$G(j\omega) = 2\pi e^{-\vert \omega\vert }$$.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/41_duality_fig1.svg" alt="그림" loading="lazy">
+
+위 줄 쌍의 시간 쪽 모양과 주파수 쪽 모양을 맞바꾸면 아래 줄 쌍이 된다. 주파수 쪽 높이에는 $$2\pi$$가 곱해진다[^s2].
 
 **다른 예**[^2]
 
@@ -122,4 +126,5 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 [^3]: 같은 자료, p.26
 [^4]: 같은 자료, p.27 (예제 4.13)
 [^s1]: 에이전트 보충. 쌍대성 정리의 한 줄 유도와 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [41_duality_plot.py](/Hongs_Blog/studies/signals-and-systems/code/41_duality_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\frac{2}{1 + t^2}$$의 변환과 $$e^{-\vert t\vert }$$의 변환을 수치 적분해 $$2\pi e^{-\vert \omega\vert }$$, $$\frac{2}{1 + \omega^2}$$와 비교.
 {% endraw %}

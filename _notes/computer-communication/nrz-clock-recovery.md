@@ -19,7 +19,7 @@ next_url: "/studies/computer-communication/nrzi-manchester/"
 next_title: "NRZI와 맨체스터"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/computer-communication/nrz-clock-recovery/"
 ---
 {% raw %}
@@ -51,6 +51,10 @@ NRZ        _ _ ‾ _ ‾ ‾ ‾ ‾ _ ‾ _ _ _ _ ‾ _
 | 읽은 비트 | 0 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | **1** | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
 
 읽는 시각이 칸마다 $$1/16$$씩 앞당겨진다. 9번째 읽기에서 앞당김이 반 칸을 넘어, 8번째 칸(1)을 한 번 더 읽는다. 그 뒤로는 모든 비트가 한 칸씩 밀린다. 받는 쪽은 `0010111110100001`을 받았다고 믿는다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/40_nrz-clock-recovery_fig1.svg" alt="그림" loading="lazy">
+
+파란 선이 보낸 NRZ 신호이고, 주황 세로선이 받는 쪽이 읽는 순간이다. 주황 선은 처음에는 칸 한가운데에 있다가 조금씩 왼쪽으로 밀린다. 8번째 칸(1)을 두 번 읽은 뒤로는 읽은 비트가 보낸 비트보다 한 칸씩 늦다[^s5].
 
 이 오류는 1이 네 개 이어진 구간에서 생겼다. 신호가 평평하니 받는 쪽은 "1이 네 개인지 다섯 개인지"를 신호에서 알아낼 단서가 없다. 반대로 신호가 바뀌는 순간마다 받는 쪽이 칸 경계를 그 순간으로 다시 맞추면, 시계가 10% 틀려도 이 비트열을 그대로 읽는다[^s2]. 이렇게 신호의 변화를 보고 박자를 맞추는 일이 클럭 복구다[^2].
 
@@ -207,4 +211,5 @@ $$w < 1$$일 때 받는 쪽은 칸을 건너뛰지 않고, 앞당김이 반 칸�
 [^s2]: 에이전트 보충. 비트 폭 15/16의 수신 표, 칸 번호 식 $$i_k$$, 첫 오류 조건과 증명, 다시 맞추기 실험, 1% 예, 백만분의 1 예, 카드 C3·C4·C5는 원본에 없다. 슬라이드 36 그림(4-1학기/pasted_images/Pasted image 20261006181146.png, Pasted image 20261006181416.png)의 "빠른 clock ⇒ 비트폭↓"를 수로 옮긴 것이다. 검증 코드로 확인했다.
 [^s3]: 에이전트 보충. NRZ 이름의 뜻과 기준 전압이 흔들리는 원리(기저선 변동, baseline wander)는 Peterson & Davie, *Computer Networks: A Systems Approach*, 2.2절의 설명이다.
 [^s4]: 에이전트 보충. SPI의 별도 클럭 선과 UART의 시작 비트는 원본에 없다. SPI는 클럭 선(SCLK)을 데이터 선과 함께 쓰고, UART는 프레임마다 시작 비트의 하강 모서리에서 박자를 다시 맞춘다.
+[^s5]: 에이전트 보충. 그림 한 장은 원본에 없다. [40_nrz-clock-recovery_plot.py](/Hongs_Blog/studies/computer-communication/code/40_nrz-clock-recovery_plot/)로 그렸고, 9번째 읽기 시각 7.97(8번째 칸), 받은 열 `0010111110100001`, 식 $$k > 1/(2\varepsilon) - 1/2$$이 $$\varepsilon = 1/16$$에서 주는 첫 중복 $$k = 8$$을 같은 코드로 확인했다.
 {% endraw %}

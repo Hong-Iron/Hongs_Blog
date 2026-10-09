@@ -8,7 +8,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "심리학"
 concepts: 172
 practices: 17
-codes: 4
+codes: 6
 description: "이상 심리학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true
@@ -39,7 +39,7 @@ permalink: "/studies/abnormal-psychology/"
 |---|---|---|---|---|
 | 001 | [이상심리학](/Hongs_Blog/studies/abnormal-psychology/abnormal-psychology/) | 이상행동과 정신장애를 기술하고, 원인을 밝히고, 치료·예방하는 심리학 분야 | — | — |
 | 002 | [이상행동의 기준](/Hongs_Blog/studies/abnormal-psychology/abnormality-criteria/) | 고통·통계적 일탈·규범 일탈·기능 저하. 하나만으로는 늘 틀리는 사례가 있어 함께 본다 (강조)[^1] | — | — |
-| 003 | [통계적 일탈 기준 ↔ 정규분포](/Hongs_Blog/studies/abnormal-psychology/statistical-deviation--normal-distribution/) | 절단점은 꼬리 확률이다. 평균 − 2 표준편차면 약 2.3%가 이상으로 분류된다 | [검증](/Hongs_Blog/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_verify/) | — |
+| 003 | [통계적 일탈 기준 ↔ 정규분포](/Hongs_Blog/studies/abnormal-psychology/statistical-deviation--normal-distribution/) | 절단점은 꼬리 확률이다. 평균 − 2 표준편차면 약 2.3%가 이상으로 분류된다 | [검증](/Hongs_Blog/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_verify/) · [그림 코드](/Hongs_Blog/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_plot/) · [그림1](/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/abnormal-psychology/003_statistical-deviation--normal-distribution_fig2.svg) | — |
 | 004 | [정신장애와 DSM](/Hongs_Blog/studies/abnormal-psychology/mental-disorder-dsm/) | 정신장애는 증상이 묶인 증후군. DSM-5-TR은 22개 범주로 나눈 진단 목록 (강조)[^2] | — | — |
 | 005 | [범주적 분류와 차원적 분류 비교](/Hongs_Blog/studies/abnormal-psychology/categorical-vs-dimensional/) | 가르는 질문: 있다/없다로 나누는가, 얼마나 심한지 재는가 | — | — |
 | 006 | [진단 분류의 장단점](/Hongs_Blog/studies/abnormal-psychology/diagnostic-classification-evaluation/) | 소통·연구·치료 선택에 쓸모 있지만 낙인과 과잉 진단의 위험. 버리지 말고 한계를 알고 쓴다 | — | — |
@@ -348,7 +348,7 @@ permalink: "/studies/abnormal-psychology/"
 | 134 | [물질관련 및 중독 장애](/Hongs_Blog/studies/abnormal-psychology/substance-related-addictive/) | 열 가지 물질의 사용장애·중독·금단·유도성 장애와, 도박 같은 비물질 중독을 묶은 범주 | — | — |
 | 135 | [알코올 관련 장애](/Hongs_Blog/studies/abnormal-psychology/alcohol-related-disorders/) | 문제가 생기는데도 술을 계속 마신다. 11개 기준 가운데 2개 이상, 개수로 심각도를 나눈다 | — | — |
 | 136 | [도박장애](/Hongs_Blog/studies/abnormal-psychology/gambling-disorder/) | 손실을 만회하려 더 걸고, 숨기고, 빌리는 문제성 도박이 12개월 동안 9개 가운데 4개 이상 | — | — |
-| 137 | [도박사의 오류 ↔ 독립](/Hongs_Blog/studies/abnormal-psychology/gamblers-fallacy--independence/) | "계속 잃었으니 이제 딸 차례"는 독립 시행에 기억이 있다고 믿는 오류다. 다음 판의 확률은 그대로다 | [검증](/Hongs_Blog/studies/abnormal-psychology/code/137_gamblers-fallacy--independence_verify/) | — |
+| 137 | [도박사의 오류 ↔ 독립](/Hongs_Blog/studies/abnormal-psychology/gamblers-fallacy--independence/) | "계속 잃었으니 이제 딸 차례"는 독립 시행에 기억이 있다고 믿는 오류다. 다음 판의 확률은 그대로다 | [검증](/Hongs_Blog/studies/abnormal-psychology/code/137_gamblers-fallacy--independence_verify/) · [그림 코드](/Hongs_Blog/studies/abnormal-psychology/code/137_gamblers-fallacy--independence_plot/) · [그림1](/Hongs_Blog/assets/notes/abnormal-psychology/137_gamblers-fallacy--independence_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/abnormal-psychology/137_gamblers-fallacy--independence_fig2.svg) | — |
 | 138 | [인터넷 게임 장애](/Hongs_Blog/studies/abnormal-psychology/internet-gaming-disorder/) | 게임에 몰두하고 조절하지 못해 12개월 동안 9개 가운데 5개 이상. DSM-5-TR의 추가 연구가 필요한 진단 | — | [중독 사례 연습](/Hongs_Blog/studies/abnormal-psychology/addiction-practice/) |
 
 자료: 슬라이드

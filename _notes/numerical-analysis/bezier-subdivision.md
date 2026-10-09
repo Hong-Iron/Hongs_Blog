@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/bounding-volume/"
 next_title: "경계 볼륨"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/bezier-subdivision/"
 ---
 {% raw %}
@@ -44,6 +44,10 @@ permalink: "/studies/numerical-analysis/bezier-subdivision/"
 | 3 | $$\mathbf l_3 = \mathbf r_0 = \frac{\mathbf l_2 + \mathbf r_1}{2}$$ | $$(2, 3)$$ |
 
 왼쪽 반의 조절점은 $$(0, 0), (0, 2), (1, 3), (2, 3)$$, 오른쪽 반은 $$(2, 3), (3, 3), (4, 2), (4, 0)$$이다. $$(2, 3)$$은 원래 곡선의 한가운데 점 $$\mathbf p(\frac12)$$다[^2][^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/18_bezier-subdivision_fig1.svg" alt="그림" loading="lazy">
+
+회색 점선이 원래 조절점이고, 점으로 찍은 옅은 선이 중점을 잡는 단계다. 파란 선과 주황 선이 두 반쪽 곡선과 그 조절점이다. 두 반쪽은 $$(2, 3)$$에서 만나고, 이어 붙이면 원래 곡선과 똑같다. 새 조절점은 원래 조절점보다 곡선에 훨씬 가깝다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 표와 카드 C2, 무작위 100개 곡선에서 $$\mathbf l(u) = \mathbf p(u/2)$$, $$\mathbf r(u) = \mathbf p((1 + u)/2)$$, 가운데 점과 도함수 공식, 슬라이드 p.25의 두 변환 행렬, 기준을 줄이면 조각이 늘어남(4 → 8 → 32) — [18_bezier-subdivision_verify.py](/Hongs_Blog/studies/numerical-analysis/code/18_bezier-subdivision_verify/)</div>
@@ -140,4 +144,5 @@ $$M_B^{-1}M_I = \begin{pmatrix}1 & 0 & 0 & 0\\ -\frac56 & 3 & -\frac32 & \frac13
 [^9]: 같은 자료, p.25
 [^10]: 같은 자료, p.26
 [^s1]: 에이전트 보충. 예시 수치, $$\mathbf l(u) = \mathbf p(u/2)$$의 설명, 폰트 렌더러·드 카스텔조, 연산 수, 흔한 실수, 카드는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [18_bezier-subdivision_plot.py](/Hongs_Blog/studies/numerical-analysis/code/18_bezier-subdivision_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 중점 $$(0, 2)$$, $$(2, 4)$$, $$(4, 2)$$, $$(1, 3)$$, $$(3, 3)$$, $$(2, 3)$$과, 왼쪽 반이 $$\mathbf p(u/2)$$, 오른쪽 반이 $$\mathbf p((1 + u)/2)$$와 같음.
 {% endraw %}

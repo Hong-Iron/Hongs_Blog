@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Transformation of Functions", "평행이동", "대칭이동", "확대", "축소", "합성함수", "Composition of Functions", "composite function"]
 description: "그래프를 통째로 옮기고, 늘이고, 뒤집는 조작과, 한 함수의 출력을 다른 함수의 입력으로 넣는 합성이다. 출력 쪽을 바꾸면 그래프가 바꾼 대로 움직이지만, 입력 쪽을 바꾸면 거꾸로 움직이는 것처럼 보인다. 합성은 양말과 신발처럼 순서를 바꾸면 결과가 달라진다."
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/inverse-function/"
 next_title: "역함수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/function-transformation/"
 ---
 {% raw %}
@@ -45,6 +45,10 @@ $$f(x) = x^2$$의 그래프 위의 점 $$(1, 1)$$이 각 조작에서 어디로 
 | $$f(-x)$$ | $$y$$축에 대칭 | $$(-1, 1)$$ |
 
 입력 쪽이 거꾸로인 이유는 이렇다. $$g(x) = f(x - 3)$$이 원래의 $$f(0)$$을 내려면 $$x - 3 = 0$$, 즉 $$x = 3$$이어야 한다. 원래 $$x = 0$$에서 일어나던 일이 $$x = 3$$에서 일어나니 오른쪽 이동이다. 거꾸로 움직이는 것이 아니라, 같은 일이 일어나는 새 위치를 푼 결과다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/02_function-transformation_fig1.svg" alt="그림" loading="lazy">
+
+회색 $$x^2$$의 점을 모두 오른쪽으로 3 옮기면 파란 $$(x - 3)^2$$이 된다. 꼭짓점 $$(0, 0)$$은 $$(3, 0)$$으로, $$(1, 1)$$은 $$(4, 1)$$로 간다[^s2].
 
 합성은 함수를 이어 붙이는 것이다. $$f(x) = x + 1$$(1 더하기)과 $$g(x) = 2x$$(2배 하기)로 두 순서를 비교한다.
 
@@ -84,6 +88,10 @@ $$y = -2(x - 1)^2 + 3$$의 그래프를 $$y = x^2$$에서 얻는다.
 2. *기준점 옮기기:* 꼭짓점 $$(0, 0)$$은 $$(0/1 + 1,\ -2 \cdot 0 + 3) = (1, 3)$$으로 간다.
 3. *모양 읽기:* $$a < 0$$이라 아래로 열리고, $$\vert a\vert  = 2$$라 원래보다 세로로 2배 가파르다.
 4. *확인:* $$x = 0$$과 $$x = 2$$에서 모두 $$y = 1$$이다. 꼭짓점 $$x = 1$$에 대해 대칭이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/02_function-transformation_fig2.svg" alt="그림" loading="lazy">
+
+꼭짓점이 $$(0, 0)$$에서 $$(1, 3)$$으로 옮겨 가고, 그래프는 아래로 열리며 더 가파르다. 속이 빈 두 점 $$(0, 1)$$과 $$(2, 1)$$이 꼭짓점을 사이에 두고 같은 높이에 있다[^s2].
 
 합성의 정의역은 안쪽 함수의 출력이 바깥 함수의 정의역에 들어야 한다. $$u(x) = x - 1$$, $$v(x) = \sqrt{x}$$이면 $$v \circ u$$는 $$x - 1 \ge 0$$, 즉 $$x \ge 1$$에서만 정의된다.
 
@@ -150,4 +158,5 @@ $$y = -2(x - 1)^2 + 3$$의 그래프를 $$y = x^2$$에서 얻는다.
 [^1]: OpenStax, *Precalculus 2e*, 1.5절 "Transformation of Functions". 교재는 이동·대칭·확대를 하나씩 다룬다. 한 식으로 묶은 점 대응은 그 결과를 합친 것이다.
 [^2]: OpenStax, *Precalculus 2e*, 1.4절 "Composition of Functions"
 [^s1]: 에이전트 보충. 신호 지연·화면 좌표·셸 파이프라인은 컴퓨터공학에서 변환과 합성이 쓰이는 곳을 보이려고 넣었다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [02_function-transformation_plot.py](/Hongs_Blog/studies/college-math/code/02_function-transformation_plot/)로 그렸고, 그림에 쓴 값(점 대응 $$(1, 1) \to (4, 1)$$, 예제의 $$g(1) = 3$$, $$g(0) = g(2) = 1$$)을 같은 코드로 확인했다.
 {% endraw %}

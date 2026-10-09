@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Recurrence", "Recurrence Relation", "점화식", "선형 점화식", "특성방정식", "characteristic equation", "비네 공식", "Binet's formula", "피보나치 수", "Fibonacci numbers", "하노이의 탑", "Tower of Hanoi", "동차", "homogeneous"]
 description: "점화식은 \"다음 항을 앞의 항들로 만드는 규칙\"이다. 피보나치처럼 앞 항들에 상수를 곱해 더하는 선형 점화식은, 거듭제곱 꼴 해를 넣어 얻는 방정식(특성방정식)의 근으로 닫힌 꼴을 찾는다. 재귀 알고리즘의 비용과 동적 계획법의 경우의 수가 점화식으로 나오므로, 닫힌 꼴을 알면 얼마…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/generating-functions/"
 next_title: "생성함수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/linear-recurrences/"
 ---
 {% raw %}
@@ -124,6 +124,14 @@ $$r \ne 0$$이어야 한다. $$c_k \ne 0$$이면 0은 특성근이 아니므로 
 3. *초기값:* $$\alpha + \beta = 0$$, $$\alpha\varphi + \beta\psi = 1$$에서 $$\alpha = \frac{1}{\sqrt5}$$, $$\beta = -\frac{1}{\sqrt5}$$.
 4. *결과:* $$F_n = \dfrac{\varphi^n - \psi^n}{\sqrt5}$$(비네 공식). $$\vert \psi\vert  < 1$$이라 $$F_n$$은 $$\frac{\varphi^n}{\sqrt5}$$을 반올림한 수이고, 약 $$1.618^n$$배로 자란다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig1.svg" alt="그림" loading="lazy">
+
+세로축이 로그 눈금이라, 일정한 비율로 곱해지며 자라는 수열은 직선이 된다. 기울기가 그 비율이어서 하노이(2배씩)가 피보나치(약 1.618배씩)보다 가파르다. 피보나치 점은 처음부터 $$\varphi^n/\sqrt5$$ 점선 위에 놓인다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/21_linear-recurrences_fig2.svg" alt="그림" loading="lazy">
+
+이웃한 두 항의 비는 2, 1.5, 1.667, 1.6처럼 $$\varphi$$ 위아래를 번갈아 넘으며 다가간다. 비네 공식의 $$\psi^n$$이 부호를 바꾸며 0으로 줄어들기 때문이다[^s1].
+
 연습: [점화식 풀이 예제 사다리](/Hongs_Blog/studies/discrete-math/recurrence-ladder/)
 
 <div class="callout callout-check" markdown="1">
@@ -189,4 +197,5 @@ $$r \ne 0$$이어야 한다. $$c_k \ne 0$$이면 0은 특성근이 아니므로 
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 22장 "Recurrences"(하노이의 탑, 선형 점화식). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장(선형 점화식의 풀이).
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [21_linear-recurrences_plot.py](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_plot/)로 그렸고, $$n \le 30$$에서 $$F_n = \operatorname{round}(\varphi^n/\sqrt5)$$와 $$T_n = 2^n - 1$$, 비 $$F_{n+1}/F_n$$이 $$\varphi$$ 위아래를 번갈아 오가는 것, $$\vert F_{16}/F_{15} - \varphi\vert  < 10^{-5}$$을 같은 코드로 확인했다.
 {% endraw %}

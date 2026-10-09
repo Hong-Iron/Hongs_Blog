@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/gram-schmidt-qr/"
 next_title: "그람-슈미트와 QR 분해"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/least-squares/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ permalink: "/studies/linear-algebra/least-squares/"
 $$\begin{pmatrix}1 & 1\\ 1 & 2\\ 1 & 3\\ 1 & 4\end{pmatrix}\begin{pmatrix}C\\ D\end{pmatrix} = \begin{pmatrix}2\\ 3\\ 5\\ 6\end{pmatrix}$$
 
 이어야 하는데, 식 4개에 미지수 2개라 해가 없다. 정규방정식 $$A^\top A\hat{\mathbf{x}} = A^\top\mathbf{b}$$($$^\top$$는 행과 열을 바꾸는 전치)는 $$\begin{pmatrix}4 & 10\\ 10 & 30\end{pmatrix}\begin{pmatrix}C\\ D\end{pmatrix} = \begin{pmatrix}16\\ 47\end{pmatrix}$$이고, 풀면 $$C = 0.5$$, $$D = 1.4$$다. 잔차는 $$0.1, -0.3, 0.3, -0.1$$이고 제곱합 0.2가 어떤 직선보다도 작다. 데이터 행렬이 아래의 $$A$$, 점수가 $$\mathbf{b}$$, 기울기와 절편이 $$\hat{\mathbf{x}}$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/17_least-squares_fig1.svg" alt="그림" loading="lazy">
+
+주황 막대가 잔차다. 위아래로 엇갈려 합이 0이고, 직선을 조금이라도 돌리거나 옮기면 어느 쪽 막대가 길어져 제곱합이 0.2보다 커진다[^s2].
 
 ## 정의
 
@@ -220,4 +224,5 @@ $$\left(\sum x_k^2\right)A + \left(\sum x_k\right)B = \sum x_ky_k, \qquad \left(
 [^n5]: 같은 자료, p.12~13
 [^n6]: 같은 자료, p.32~36
 [^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 17_least-squares_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [17_least-squares_plot.py](/Hongs_Blog/studies/linear-algebra/code/17_least-squares_plot/)로 그렸고, $$C = 0.5$$, $$D = 1.4$$, 잔차 $$0.1, -0.3, 0.3, -0.1$$과 그 합 0, 제곱합 0.2를 같은 코드로 확인했다.
 {% endraw %}

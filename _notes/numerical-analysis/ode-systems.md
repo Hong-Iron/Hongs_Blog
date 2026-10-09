@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/shooting-method/"
 next_title: "사격법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/ode-systems/"
 ---
 {% raw %}
@@ -46,6 +46,10 @@ $$\frac{dy_1}{dx} = -0.5y_1, \qquad \frac{dy_2}{dx} = 4 - 0.3y_2 - 0.1y_1, \qqua
 | $$y_2$$ | 6 | 6.9 | 7.715 | 8.44525 | 9.094087 |
 
 $$y_2$$를 고칠 때 같은 걸음의 옛 $$y_1$$을 쓴다. $$y_1$$의 참값 $$4e^{-x/2}$$와 비교하면 $$x = 2$$에서 오일러는 1.27, 참값은 1.47이다. RK4로 같은 걸음을 가면 오차가 $$10^{-4}$$ 아래다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/35_ode-systems_fig1.svg" alt="그림" loading="lazy">
+
+실선이 참값, 빈 동그라미가 오일러($$h = 0.5$$), ×가 같은 걸음의 RK4다. 오일러는 $$x$$가 커질수록 참값에서 조금씩 벗어나고, RK4는 참값 위에 그대로 놓인다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 오일러 표, RK4와 참값, $$y'' = -y$$를 연립으로 바꿔 $$\sin x$$ 재현, 카드 C2 — [35_ode-systems_impl.py](/Hongs_Blog/studies/numerical-analysis/code/35_ode-systems_impl/)</div>
@@ -113,4 +117,5 @@ $$y' = z, \qquad z' = g(x, y, z)$$
 [^3]: 같은 자료, p.4
 [^4]: 같은 자료, p.3
 [^s1]: 에이전트 보충. 참값과 RK4 비교, 벡터 RK4의 설명, 고계 방정식 바꾸기, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [35_ode-systems_plot.py](/Hongs_Blog/studies/numerical-analysis/code/35_ode-systems_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 오일러 표의 값, RK4 오차 $$10^{-4}$$ 아래. $$y_2$$의 참값 $$\frac{40}{3} + 2e^{-x/2} - \frac{28}{3}e^{-0.3x}$$는 일차 방정식을 손으로 풀어 얻었고, 같은 코드에서 방정식을 만족하는지 확인했다.
 {% endraw %}

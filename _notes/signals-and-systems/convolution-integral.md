@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Convolution Integral", "컨볼루션 적분", "중첩 적분", "Superposition Integral", "연속 시간 LTI 시스템", "Continuous-Time LTI System", "계단 근사", "Staircase Approximation"]
 description: "컨벌루션 합의 연속 시간판이다. 매끄러운 입력을 아주 가는 막대(펄스)들로 잘라 계단 모양으로 근사하고, 막대마다의 반응을 더한 뒤, 막대 폭을 0으로 줄이면 합이 적분이 된다. 그래서 연속 시간 LTI 시스템도 임펄스 응답 h(t) 하나로 모든 출력이 정해진다. 계산은 \"h를 뒤…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/convolution-properties/"
 next_title: "컨벌루션의 성질"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/convolution-integral/"
 ---
 {% raw %}
@@ -109,6 +109,10 @@ $$x(\tau)$$는 $$\tau > 0$$에서만 0이 아니고, $$h(t - \tau) = u(t - \tau)
 - $$2T < t < 3T$$: $$\int_{t-2T}^{T}(t - \tau)d\tau = -\frac12t^2 + Tt + \frac32T^2$$.
 - 구간 경계 $$t = T, 2T, 3T$$에서 값이 이어진다(그림 2.21). 이어지는지 확인하는 것이 계산 실수를 잡는 좋은 방법이다[^s1].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig1.svg" alt="그림" loading="lazy">
+
+$$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아래의 점 세 개가 위 세 장면의 넓이다. 점선 $$t = 1, 2, 3$$에서 겹치는 모양이 바뀌어 식도 바뀐다[^s2].
+
 **예제 2.8** $$x(t) = e^{2t}u(-t)$$, $$h(t) = u(t - 3)$$[^8]
 
 - $$h(t - \tau) = u(t - 3 - \tau)$$는 $$\tau < t - 3$$에서 1이다.
@@ -116,6 +120,10 @@ $$x(\tau)$$는 $$\tau > 0$$에서만 0이 아니고, $$h(t - \tau) = u(t - \tau)
 - $$t - 3 \ge 0$$: $$x$$가 $$\tau < 0$$에서만 0이 아니므로 $$\int_{-\infty}^{0}e^{2\tau}d\tau = \frac12$$.
 
 **사각 펄스 두 개** 높이 1, 폭 $$a$$와 $$b$$($$b > a$$)인 펄스를 컨벌루션하면 사다리꼴이 나온다[^9]. $$0 \le t < a$$에서 $$t$$, $$a \le t < b$$에서 $$a$$, $$b \le t < a + b$$에서 $$a + b - t$$, 나머지 0. 폭이 같으면($$a = b$$) 삼각형이 된다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig2.svg" alt="그림" loading="lazy">
+
+폭 1과 폭 2이면 꼭대기가 평평한 사다리꼴, 둘 다 폭 1이면 삼각형이다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예제 2.6·2.7·2.8과 사다리꼴 결과를 중점 규칙 수치 적분과 비교해 오차 $$10^{-3}$$ 이내, 예제 2.7의 구간 경계 연속성 확인 — [19_convolution-integral_verify.py](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_verify/)</div>
@@ -190,4 +198,5 @@ $$x(\tau)$$는 $$\tau > 0$$에서만 0이 아니고, $$h(t - \tau) = u(t - \tau)
 [^8]: 같은 자료, p.45~47 (예제 2.8, 그림 2.22)
 [^9]: 3-1학기/신호 및 시스템/1.수업자료/07.Week07_CH03_1_handout.pdf, p.3~4
 [^s1]: 에이전트 보충. 축전기 비유, 구간 경계 연속성으로 실수를 잡는 방법, 폭이 같으면 삼각형이라는 점, 흐림·확률 활용, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [19_convolution-integral_plot.py](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.7($$T = 1$$)의 겹친 넓이를 수치 적분해 네 구간 답과 비교, 경계 $$t = 1, 2$$에서의 연속성, 사다리꼴 값.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Opponent-process Theory", "반대색설", "대립 과정", "보색", "반대색 세포", "opponent cell", "잔상", "afterimage", "동시 대비", "simultaneous contrast"]
 description: "색 신호를 뇌로 보내기 전에 한 번 더 번역하는 단계다. 추상체 뒤의 세포들은 \"빨강 대 초록\", \"파랑 대 노랑\", \"흰색 대 검정\"처럼 짝을 지어, 한쪽 색이면 발화를 늘리고 반대쪽 색이면 줄인다. 그래서 \"붉은 초록\"은 한 번에 느낄 수 없고, 빨강을 오래 보면 초록 잔상이 …"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/contrast--trichromatic--opponent-proce
 next_title: "삼색 이론과 반대색 과정 비교"
 math: true
 mermaid: true
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/opponent-process/"
 ---
 {% raw %}
@@ -74,6 +74,10 @@ $$
 
 
 세 추상체 반응을 세 개의 "차이 신호"로 바꾸는 것이다. 흥분과 억제를 조합해 빼기를 만드는 구조는 [흥분성과 억제성 시냅스](/Hongs_Blog/studies/human-interface-media/excitatory-inhibitory/), [측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/)와 같다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/19_opponent-process_fig1.svg" alt="그림" loading="lazy">
+
+주황 선(RG)은 555 nm에서 0을 지나, 그보다 짧은 파장에는 음수(초록 쪽), 긴 파장에는 양수(빨강 쪽)를 낸다. 파랑 선(BY)은 약 488 nm에서 부호가 바뀐다. 두 선이 0을 지나는 자리가 달라서, 두 부호의 조합만으로도 파장대를 셋(약 488 nm 아래, 488~555 nm, 555 nm 위)으로 가를 수 있다[^s4].
 
 ```mermaid
 graph LR
@@ -136,4 +140,5 @@ graph LR
 [^s1]: 에이전트 보충. 반대색 신호의 식은 여러 교재가 쓰는 단순화이며 실제 가중치는 연구마다 다르다. 슬라이드에는 식이 없다.
 [^s2]: 에이전트 보충. 잔상의 적응 설명과 네 칸 그림의 용도는 표준 지각 교재의 설명에 따른 해석이다.
 [^s3]: 에이전트 보충. CIELAB의 $$a^*$$, $$b^*$$ 축과 YCbCr의 밝기·색차 분리는 색채·영상 공학의 표준 내용이다.
+[^s4]: 에이전트 보충. 그림 1장은 원본에 없다. [19_opponent-process_plot.py](/Hongs_Blog/studies/human-interface-media/code/19_opponent-process_plot/)로 그렸고, 그림에 쓴 값(가우스 추상체 모형에서 535 nm $$-0.326$$, 575 nm $$+0.326$$, 450 nm $$+0.892$$, 580 nm $$-0.800$$, 0을 지나는 곳 RG 555 nm·BY 약 488 nm)을 같은 코드로 확인했다.
 {% endraw %}

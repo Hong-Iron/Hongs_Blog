@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Logarithmic Function", "Log Scale", "로그 눈금", "로그-로그 그래프", "log-log plot", "반로그 그래프", "semi-log plot", "데시벨", "decibel", "dB", "거듭제곱 법칙", "power law"]
 description: "로그함수의 그래프는 끝없이 올라가지만 아주 느리게 올라간다. 로그 눈금은 같은 간격이 같은 \"배율\"을 뜻하는 자라서, 1, 10, 100, 1000이 같은 간격에 놓인다. 그래서 수천 배 차이 나는 값을 한 그림에 담고, 측정값이 입력의 몇 제곱으로 느는지를 기울기로 읽는다. 단,…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/power-vs-exponential/"
 next_title: "거듭제곱함수와 지수함수 비교"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/log-scale/"
 ---
 {% raw %}
@@ -47,6 +47,10 @@ permalink: "/studies/college-math/log-scale/"
 
 로그-로그 그래프의 가로 위치가 $$\log_{10} n$$, 세로 위치가 $$\log_{10}(\text{비교 횟수})$$이고, 기울기가 아래 정리의 $$k$$다. 곱셈 관계가 로그 눈금에서 덧셈 관계, 즉 직선이 된다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/08_log-scale_fig1.svg" alt="그림" loading="lazy">
+
+보통 눈금(왼쪽)에서는 병합 정렬이 바닥에 깔려 보이지 않는다. 로그-로그 눈금(오른쪽)에서는 둘 다 직선이 되고, 삽입 정렬의 선이 더 가파르다[^s2].
+
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
@@ -58,6 +62,10 @@ $$b > 1$$일 때 로그함수 $$y = \log_b x$$는 정의역 $$(0, \infty)$$, 치
 
 </div>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/08_log-scale_fig2.svg" alt="그림" loading="lazy">
+
+네 곡선이 모두 $$(1, 0)$$을 지난다. 밑이 1보다 큰 세 곡선은 오른쪽으로 갈수록 느리게 오르고, 밑이 클수록 더 느리다. $$x$$가 0에 다가가면 이 세 곡선은 $$y$$축을 따라 한없이 내려간다. $$\log_{1/2} x$$는 위아래를 뒤집은 모양이다[^s2].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
@@ -152,4 +160,5 @@ $$c, a, x > 0$$일 때
 
 [^1]: OpenStax, *Precalculus 2e*, 4.4절 "Graphs of Logarithmic Functions". 로그 눈금을 쓰는 모형은 4.7절 "Exponential and Logarithmic Models".
 [^s1]: 에이전트 보충. 데시벨로 이득과 손실을 더하는 방식은 통신 공학의 표준 관례다. 웨버의 법칙(자극의 변별 문턱이 자극 세기에 비례)과, 이로부터 감각이 자극의 로그에 비례한다는 페히너의 법칙은 정신물리학의 고전적 결과다. 페히너의 법칙은 근사이며 모든 감각과 범위에서 성립하지는 않는다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [08_log-scale_plot.py](/Hongs_Blog/studies/college-math/code/08_log-scale_plot/)로 그렸고, 그림에 쓴 값(삽입 정렬 비교 횟수가 정확히 $$n(n-1)/2$$, 로그-로그 기울기 2.00과 1.14, 네 로그가 모두 $$(1, 0)$$을 지남)을 같은 코드로 확인했다.
 {% endraw %}

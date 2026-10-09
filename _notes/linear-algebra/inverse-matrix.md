@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/lu-decomposition/"
 next_title: "LU 분해"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/inverse-matrix/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/inverse-matrix/"
 좌표 $$(x, y)$$를 $$A = \begin{pmatrix}2 & 1\\ 5 & 3\end{pmatrix}$$로 암호화해 보낸다. $$(1, 2)$$는 $$(4, 11)$$이 된다. 받는 쪽은 $$A^{-1} = \begin{pmatrix}3 & -1\\ -5 & 2\end{pmatrix}$$를 곱해 $$(3 \cdot 4 - 11,\ -5 \cdot 4 + 2 \cdot 11) = (1, 2)$$로 되살린다. 확인해 보면 $$A^{-1}A = I$$다.
 
 반면 $$B = \begin{pmatrix}1 & 2\\ 2 & 4\end{pmatrix}$$는 $$(2, -1)$$과 $$(0, 0)$$을 모두 $$(0, 0)$$으로 보낸다. $$(0, 0)$$을 받은 쪽은 원래 무엇이었는지 알 수 없다. $$A$$는 아래 정리의 가역 행렬, $$B$$는 특이 행렬이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/07_inverse-matrix_fig1.svg" alt="그림" loading="lazy">
+
+$$B$$는 평면의 모든 점을 직선 $$y = 2x$$ 위로 누른다. 왼쪽 주황 직선 $$x + 2y = 0$$ 위의 점은 모두 $$(0, 0)$$ 한 점으로 간다. 여러 입력이 한 출력으로 모이니 되돌릴 방법이 없다[^s2].
 
 ## 정의
 
@@ -161,4 +165,5 @@ $$\vert A\vert  = 0$$이면 $$x - 3y = 5$$, $$-2x + 6y = 1$$처럼 두 직선이
 [^n5]: 같은 자료, p.32~33
 [^n6]: 같은 자료, p.24
 [^sn1]: 에이전트 보충. "부분 피벗팅"이라는 이름과 오차를 줄이는 이유는 원본에 없다. 슬라이드 예의 역행렬과 해, 카드 C4는 07_inverse-matrix_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [07_inverse-matrix_plot.py](/Hongs_Blog/studies/linear-algebra/code/07_inverse-matrix_plot/)로 그렸고, $$B(2, -1) = B(0, 0) = (0, 0)$$, 무작위 점 400개의 상이 모두 $$y = 2x$$ 위에 있다는 것, $$\det B = 0$$을 같은 코드로 확인했다.
 {% endraw %}

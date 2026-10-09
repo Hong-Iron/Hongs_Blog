@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Bayesian Inference", "베이즈 추론", "베이지안 추론", "사전분포", "prior distribution", "사후분포", "posterior distribution", "MAP", "최대 사후 추정", "maximum a posteriori", "켤레 사전분포", "conjugate prior", "베타분포", "Beta distribution", "신용구간", "credible interval", "라플라스 평활", "Laplace smoothing"]
 description: "모르는 모수를 하나의 정해진 값이 아니라 \"얼마나 그럴듯한가\"의 분포로 보고, 데이터를 볼 때마다 베이즈 정리로 그 분포를 갱신한다. 원래 믿음(사전분포)에 데이터의 가능도를 곱하면 새 믿음(사후분포)이 된다. 사후분포의 봉우리(MAP)는 가능도에 벌점 항을 더해 최대화한 것이라,…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/linear-regression/"
 next_title: "선형회귀"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/bayesian-inference/"
 ---
 {% raw %}
@@ -62,6 +62,10 @@ $$\pi(\theta \mid \text{자료}) = \frac{L(\theta)\,\pi(\theta)}{\int L(t)\,\pi(
 | MLE(비교) | $$\frac kn$$ |
 
 $$a, b$$는 "미리 본 가상의 성공·실패 수"처럼 작동한다. $$n$$이 커지면 $$k$$와 $$n$$이 압도해 사후 평균이 MLE로 다가간다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/33_bayesian-inference_fig1.svg" alt="그림" loading="lazy">
+
+같은 자료(세 번 모두 앞면)를 두 사전분포로 갱신한 결과다. 균등 사전(왼쪽)이면 사후분포의 봉우리는 1이지만 평균은 0.8이다. $$\mathrm{Beta}(2, 2)$$ 사전(오른쪽)은 가운데를 더 믿어서, 사후 봉우리(MAP)가 0.8, 평균이 0.71로 1에서 더 멀다[^s1].
 
 **신용구간.** 사후분포에서 확률 95%를 담는 구간이다. "모수가 이 구간에 있을 확률이 95%"라고 읽어도 된다. 이것이 [신뢰구간](/Hongs_Blog/studies/probability-statistics/confidence-intervals/)과의 차이다.
 
@@ -120,4 +124,5 @@ $$a, b$$는 "미리 본 가상의 성공·실패 수"처럼 작동한다. $$n$$�
 
 [^1]: Wasserman, *All of Statistics*, "Bayesian Inference" 장(사전·사후분포, 사후 평균, 신용구간, 빈도주의와의 비교).
 [^2]: Blitzstein, Hwang, *Introduction to Probability* 2판, 8.3절 "Beta"(베타–이항 켤레, 사전분포의 가상 관측 해석).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [33_bayesian-inference_plot.py](/Hongs_Blog/studies/probability-statistics/code/33_bayesian-inference_plot/)로 그렸고, 그림에 쓴 값(사후 평균 0.8과 $$\frac57 \approx 0.71$$, MAP 0.8, 네 밀도의 넓이 1)을 같은 코드로 확인했다.
 {% endraw %}

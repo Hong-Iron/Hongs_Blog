@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/conditioning/"
 next_title: "노름과 조건수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/abstract-vector-spaces/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ $$\mathbf{P}(t) = (1 - t)^2P_0 + 2t(1 - t)P_1 + t^2P_2, \qquad 0 \le t \le 1.$$
 $$t = \frac12$$이면 계수가 $$\frac14, \frac12, \frac14$$라 $$\mathbf{P}(\frac12) = \frac14(0, 0) + \frac12(1, 2) + \frac14(2, 0) = (1, 1)$$이다. 같은 점을 선분의 중점을 되풀이해 얻을 수도 있다. $$P_0P_1$$의 중점 $$(\frac12, 1)$$과 $$P_1P_2$$의 중점 $$(\frac32, 1)$$을 잇고, 다시 중점을 잡으면 $$(1, 1)$$이다(드 카스텔조 알고리즘).
 
 계수 $$(1 - t)^2$$, $$2t(1 - t)$$, $$t^2$$은 2차 이하 다항식들의 공간에서 하나의 기저를 이룬다. 곡선은 조절점을 이 기저 함수들로 섞은 선형결합이다. 다항식이 아래 정의의 벡터, 세 계수 함수가 베른슈타인 기저다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/25_abstract-vector-spaces_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽 세 기저 함수는 어느 $$t$$에서나 0 이상이고 합이 1이다. $$t$$가 0에서 1로 가면서 무게가 $$P_0$$에서 $$P_1$$을 거쳐 $$P_2$$로 옮겨 가, 곡선은 $$P_1$$ 쪽으로 끌리기만 하고 $$P_1$$을 지나지는 않는다. 오른쪽 주황 선분이 $$t = \frac12$$의 드 카스텔조 작도다[^s2].
 
 ## 정의
 
@@ -146,4 +150,5 @@ $$A = \begin{pmatrix}1 & 0 & 0 & 0\\ 1 & \frac13 & 0 & 0\\ 1 & \frac23 & \frac13
 [^n2]: 같은 자료, p.22
 [^n3]: 같은 자료, p.23~24
 [^sn1]: 에이전트 보충. 카드 C4는 원본에 없다. 25_abstract-vector-spaces_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [25_abstract-vector-spaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/25_abstract-vector-spaces_plot/)로 그렸고, 기저 함수의 합이 1이고 0 이상인 것, 중점 $$(\frac12, 1)$$, $$(\frac32, 1)$$과 $$\mathbf{P}(\frac12) = (1, 1)$$을 같은 코드로 확인했다.
 {% endraw %}

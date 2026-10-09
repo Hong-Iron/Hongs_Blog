@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Causality", "Causal System", "인과 시스템", "비인과 시스템", "Noncausal System", "이동 평균", "Moving Average"]
 description: "인과 시스템은 미래를 내다보지 않는다. 어느 순간의 출력이 그때까지(지금과 과거)의 입력만으로 정해진다. 자동차는 운전자가 나중에 밟을 페달을 미리 알 수 없으니 인과적이다. 실시간으로 돌아가는 물리 시스템은 모두 인과적이어야 한다. 하지만 녹음을 다 끝낸 뒤 편집하거나, 시간이 …"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/stability/"
 next_title: "안정성"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/causality/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ $$y[n] = \frac{1}{2M+1}\sum_{k=-M}^{M}x[n-k]$$
 
 
 $$k = -M$$일 때 $$x[n + M]$$, 즉 $$M$$칸 뒤의 미래 입력이 들어간다. 그래서 이 시스템은 비인과적이다. 장 마감 후에 그날 그래프를 다듬는 것은 괜찮지만, 실시간 주문에는 쓸 수 없다. 과거 $$M$$개만 평균하면 인과적이 된다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/14_causality_fig1.svg" alt="그림" loading="lazy">
+
+$$M = 5$$로 같은 잡음 섞인 데이터를 평균했다. 과거 11개만 쓴 평균은 앞뒤 평균과 모양이 같지만 정확히 5칸 늦게 따라온다. 미래를 쓰지 않는 대가다[^s2].
 
 ## 정의
 
@@ -112,4 +116,5 @@ $$k = -M$$일 때 $$x[n + M]$$, 즉 $$M$$칸 뒤의 미래 입력이 들어간�
 [^2]: 같은 자료, p.10 ("독립변수가 시간이 아닌 경우(영상처리), 인과성은 필수 조건이 아님")
 [^3]: 같은 자료, p.11 (예제 1.12)
 [^s1]: 에이전트 보충. 장 마감 후 그래프 비유, 과거만 평균하면 인과적이 된다는 설명, 오해 항목, 확인 문제는 원본에 없다. 판정은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [14_causality_plot.py](/Hongs_Blog/studies/signals-and-systems/code/14_causality_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 과거 $$2M + 1$$개 평균이 앞뒤 평균을 정확히 $$M$$칸 늦춘 것임. 데이터는 사인 곡선에 무작위 잡음을 더해 만들었다.
 {% endraw %}

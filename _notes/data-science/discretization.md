@@ -19,7 +19,7 @@ next_url: "/studies/data-science/sampling/"
 next_title: "표본 추출"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/discretization/"
 ---
 {% raw %}
@@ -63,6 +63,10 @@ permalink: "/studies/data-science/discretization/"
 | 장점 | 간단하고 칸의 뜻이 분명 | 칸마다 자료가 고르게 든다 |
 | 약점 | 치우친 자료면 거의 빈 칸과 꽉 찬 칸이 생긴다 | 같은 값이 다른 칸으로 갈라질 수 있다 |
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/08_discretization_fig1.svg" alt="그림" loading="lazy">
+
+같은 가격 9개를 두 방법으로 나눴다. 같은 폭은 경계가 14, 24로 고정이라 칸마다 2, 3, 4개가 든다. 같은 개수는 경계가 자료를 따라 움직여 칸마다 3개씩 든다[^s2].
+
 ## 연결
 
 - 선수: [데이터 정제](/Hongs_Blog/studies/data-science/data-cleaning/)(같은 개수 칸 나누기와 칸 평균)
@@ -89,4 +93,5 @@ permalink: "/studies/data-science/discretization/"
 
 [^1]: 3-2학기/데이터 과학/1.수업자료/02.2-1_data-measure-preprocess.pdf, p.43
 [^s1]: 에이전트 보충. 가격 예의 같은 폭 칸 나누기, 같은 폭과 같은 개수의 비교, 카드 C2는 원본에 없다. 수치는 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [08_discretization_plot.py](/Hongs_Blog/studies/data-science/code/08_discretization_plot/)로 그렸고, 같은 폭 칸의 경계 4, 14, 24, 34와 개수 2, 3, 4, 칸 평균 6, 19, 27.75를 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Signal Energy", "Signal Power", "에너지 신호", "Energy Signal", "전력 신호", "Power Signal", "평균 전력", "Average Power", "순시 전력", "Instantaneous Power", "실효값", "RMS", "Root Mean Square"]
 description: "신호가 얼마나 \"센지\"를 하나의 숫자로 재는 방법이다. 저항에 걸린 전압이 쓰는 에너지를 본떠, 신호 크기의 제곱을 시간에 걸쳐 모두 더한 것을 에너지, 그것을 시간으로 나눈 평균을 전력이라 한다. 잠깐 나타났다 사라지는 신호는 에너지가 유한하고(에너지 신호), 영원히 계속되는 주…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/independent-variable-transform/"
 next_title: "독립 변수의 변환"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/signal-energy-power/"
 ---
 {% raw %}
@@ -49,6 +49,10 @@ $$\int_{t_1}^{t_2} p(t)\,dt = \int_{t_1}^{t_2}\frac1R v^2(t)\,dt$$
 | $$x(t) = t$$ | $$\infty$$ | $$\infty$$ | 둘 다 아님 |
 
 펄스는 1초 동안만 크기 1이니 에너지가 $$1^2 \times 1 = 1$$이다. 상수 4는 매초 16씩 영원히 쌓여 에너지는 끝이 없지만, 1초당 평균은 늘 16이다[^3].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/04_signal-energy-power_fig1.svg" alt="그림" loading="lazy">
+
+구간 $$[-T, T]$$를 넓혀 가면 펄스의 에너지는 1에서 멈추고 평균 전력은 0으로 내려간다. 아래 예제의 $$\cos 2\pi t$$는 에너지가 끝없이 쌓이지만 평균 전력은 $$\frac12$$에 머문다[^s2].
 
 ## 정의
 
@@ -147,4 +151,5 @@ $$P_\infty \triangleq \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert 
 [^8]: 같은 자료, p.25
 [^9]: 3-1학기/신호 및 시스템/1.수업자료/03.Week03_CH01_2_handout.pdf, p.32
 [^s1]: 에이전트 보충. 사인파 실효값 $$A/\sqrt2$$, 신호 대 잡음비, 220V 예, 확인 문제 C1의 ②·③과 C3는 원본에 없다. 값은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [04_signal-energy-power_plot.py](/Hongs_Blog/studies/signals-and-systems/code/04_signal-energy-power_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 펄스의 $$E_T \to 1$$, $$\cos 2\pi t$$의 $$E_T = T + \frac{\sin 4\pi T}{4\pi}$$(수치 적분과 비교)와 $$P_T \to \frac12$$.
 {% endraw %}

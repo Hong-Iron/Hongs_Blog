@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/recurrence-matrix-bridge/"
 next_title: "선형 점화식 ↔ 행렬 거듭제곱"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/diagonalization/"
 ---
 {% raw %}
@@ -60,6 +60,10 @@ $$A = X\Lambda X^{-1}, \qquad A^k = X\Lambda^k X^{-1}.$$
 $$\mathbf{u}_k = c_1\lambda_1^k\mathbf{x}_1 + \cdots + c_n\lambda_n^k\mathbf{x}_n.$$
 
 $$\vert \lambda_i\vert  < 1$$인 성분은 사라지고, $$\vert \lambda_i\vert  > 1$$인 성분은 폭발하며, $$\lambda_i = 1$$인 성분은 남는다. 계수는 $$\mathbf{c} = X^{-1}\mathbf{u}_0$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/20_diagonalization_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 세 출발점의 도심 비율이 0.6으로 모이는 모습이다. 오른쪽은 각 출발점의 $$\lambda = \frac12$$ 성분 크기 $$\vert c_2\vert (\frac12)^k$$를 로그 눈금으로 그렸다. 세 직선의 기울기가 같아, 어디서 출발하든 그 성분이 해마다 절반이 된다[^s1].
 
 ## 증명
 
@@ -208,4 +212,5 @@ $$2 \times 2$$ 행렬 $$\begin{pmatrix}a & b\\ c & d\end{pmatrix}$$의 특성방
 [^n2]: 같은 자료, p.40
 [^n3]: 같은 자료, p.39~40, p.46
 [^sn1]: 에이전트 보충. 카드 C5는 원본에 없다. 20_diagonalization_verify.py로 확인했다.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [20_diagonalization_plot.py](/Hongs_Blog/studies/linear-algebra/code/20_diagonalization_plot/)로 그렸고, $$(1, 0) = 1\cdot(0.6, 0.4) + 0.4\cdot(1, -1)$$, $$k \le 12$$에서 $$A^k\mathbf{u}_0 = X\Lambda^kX^{-1}\mathbf{u}_0$$, $$A^{60}$$이 극한 행렬과 같은 것을 같은 코드로 확인했다.
 {% endraw %}

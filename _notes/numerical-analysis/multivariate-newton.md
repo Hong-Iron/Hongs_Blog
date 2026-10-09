@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/root-finding-compared/"
 next_title: "근 찾기 방법 비교"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/multivariate-newton/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ $$u(x, y) = x^2 + xy - 10 = 0$$, $$v(x, y) = y + 3xy^2 - 57 = 0$$을 $$(x_0, y_0
 | $$(2, 3)$$까지 거리 | $$7.1 \times 10^{-1}$$ | $$1.6 \times 10^{-1}$$ | $$2.6 \times 10^{-3}$$ | $$5.9 \times 10^{-7}$$ | $$7.8 \times 10^{-14}$$ |
 
 오차의 자릿수가 매번 대략 두 배가 된다. 같은 문제의 고정점 반복(방법 ii)은 훨씬 천천히 다가간다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/31_multivariate-newton_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽에서 파란 곡선($$u = 0$$)과 초록 곡선($$v = 0$$)이 만나는 곳이 근 $$(2, 3)$$이다. 뉴턴(주황)은 두 걸음 만에 근에 닿고, 고정점 반복(보라 점선)은 근 둘레를 맴돌며 다가간다. 오른쪽은 근까지 거리를 한 칸이 10배인 눈금으로 그렸다. 뉴턴은 아래로 꺾여 떨어지고, 고정점은 일정한 기울기로 천천히 내려간다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 편미분 값, 첫 반복 $$(2.03603, 2.84388)$$, 이차 수렴, $$J\Delta = -F$$와 같음, 먼 시작점의 다른 근, 카드 C2 — [31_multivariate-newton_impl.py](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_impl/)</div>
@@ -114,4 +118,5 @@ $$x_{i+1} = x_i - \frac{u_i\frac{\partial v_i}{\partial y} - v_i\frac{\partial u
 [^4]: 같은 자료, p.11
 [^5]: 같은 자료, p.12
 [^s1]: 에이전트 보충. 오차 표, 행렬 꼴 $$J\Delta\mathbf x = -\mathbf F$$, 활용과 복잡도, 다른 근 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [31_multivariate-newton_plot.py](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 반복 $$(2.03603, 2.84388)$$, 거리 표의 값, 고정점 방법 ii의 첫 값 $$(2.17945, 2.86051)$$.
 {% endraw %}

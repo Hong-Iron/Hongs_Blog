@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Fair-Share Scheduling", "Traditional UNIX Scheduling", "공정 분배 스케줄링", "전통 UNIX 스케줄링", "nice", "기본 우선순위", "Base Priority", "우선순위 대역", "Priority Bands"]
 description: "전통 UNIX는 프로세서를 최근에 많이 쓴 프로세스의 우선순위를 낮추고, 시간이 지나면 그 기록을 반씩 잊어 다시 올려 준다. 그래서 대화형 프로그램은 빨리 응답받고, 계산만 하는 배경 작업도 굶지 않는다. 공정 분배는 여기에 \"사용자나 그룹 단위로도 공평하게\"를 더한다. 프로세스…"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/multiprocessor-scheduling/"
 next_title: "다중 프로세서 스케줄링"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/fair-share-unix-scheduling/"
 ---
 {% raw %}
@@ -100,6 +100,10 @@ $$GCPU_k(i)$$는 프로세스 $$j$$가 속한 그룹 $$k$$의 프로세서 사�
 
 예: 시각 1에 A는 CPU 30, 그룹 CPU 30이므로 $$60 + 15 + 30/(4 \times 0.5) = 90$$이다. 실행 순서가 A, B, A, C, A로, A가 시간의 절반, B와 C가 나머지 절반을 나눠 쓴다. 그룹 두 개가 몫 0.5씩을 받는 셈이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/46_fair-share-unix-scheduling_fig1.svg" alt="그림" loading="lazy">
+
+같은 규칙을 30초까지 계속 돌린 누적 실행 시간이다. 전통 UNIX에서는 셋이 10초씩 똑같이 나눈다. 공정 분배에서는 그룹 1의 A 혼자 15초를, 그룹 2의 B와 C가 합쳐 15초를 받는다. 프로세스 수가 아니라 그룹 수로 프로세서가 나뉜다[^s2].
+
 ## 활용
 
 - 리눅스의 `nice` 명령이 위 식의 $$nice_j$$를 바꾼다. `nice -n 10 명령`으로 실행하면 우선순위 값이 커져(낮아져) 다른 작업에 양보한다[^s1].
@@ -141,4 +145,5 @@ $$GCPU_k(i)$$는 프로세스 $$j$$가 속한 그룹 $$k$$의 프로세서 사�
 [^6]: 같은 자료, 슬라이드 52. 공정 분배 식은 Stallings 6판 9.3절의 식이다(슬라이드는 그림만 있다).
 [^7]: 같은 자료, 슬라이드 53 (그림 9.16)과 슬라이드 52의 발표자 노트
 [^s1]: 에이전트 보충. nice 명령과 다중 사용자 서버 예, 확인 문제 C3은 슬라이드에 없다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [46_fair-share-unix-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/46_fair-share-unix-scheduling_plot/)로 그렸고, 처음 5초의 실행 순서가 위 두 표와 같다는 것, 30초 동안 받은 시간 10·10·10초와 15·8·7초를 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Timing Analysis", "시간 흐름 그림", "시간-공간 그림", "time-space diagram", "타이밍 다이어그램", "timing diagram", "소요시간 계산", "전송 완료 시간", "파이프라이닝", "pipelining", "패킷 분할", "packet segmentation"]
 description: "가로축에 노드를, 세로축에 시간을 놓고 데이터가 언제 어디에 있는지 그려서 총 걸리는 시간을 구하는 방법이다. 기차 시간표를 그리듯 구간마다 싣는 시간, 달리는 시간, 역에서 머무는 시간을 쌓으면 답이 나온다. 회선 스위칭은 처음 설정에 시간을 쓰고 그 뒤로는 멈춤 없이 흐른다. …"
@@ -19,7 +19,7 @@ next_url: "/studies/computer-communication/throughput/"
 next_title: "처리량"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/computer-communication/timing-analysis/"
 ---
 {% raw %}
@@ -45,6 +45,10 @@ permalink: "/studies/computer-communication/timing-analysis/"
 | Host 2에 다 도착 (+ 전파 1) | **10** | **12** | **14** |
 
 패킷 1 하나만 보면 링크마다 "싣기 2 + 전파 1"이, 노드마다 처리 0.5가 쌓여 $$3 \times 3 + 2 \times 0.5 = 10$$ ms다. 노드가 패킷을 끝까지 받은 뒤에야 내보내므로(저장 후 전달) 싣는 시간이 링크마다 다시 들어간다[^2]. 뒤 패킷들은 앞 패킷이 비운 링크에 곧바로 실려 2 ms 간격으로 따라온다. Host 1이 패킷 2를 싣는 동안 Node 1은 패킷 1을 내보낸다. 슬라이드가 "Pipelining"이라 부르는 모습이다[^3].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/26_timing-analysis_fig1.svg" alt="그림" loading="lazy">
+
+띠 하나가 패킷 하나가 링크 하나를 건너는 모습이다. 띠의 세로 두께가 싣는 시간 2 ms, 비스듬히 내려가는 만큼이 전파 1 ms, 노드 위의 짧고 굵은 막대가 처리 0.5 ms다. 4~5.5 ms 사이에는 Host 1이 패킷 3을, Node 1이 패킷 1을 동시에 싣는다. 이렇게 띠들이 시간상 겹치는 것이 파이프라인이다[^s2].
 
 기차 시간표로 읽으면 역이 노드, 기차 한 량이 패킷, 싣는 시간이 $$L/R$$, 달리는 시간이 $$d_{\text{prop}}$$, 역에 머무는 시간이 $$d_{\text{proc}}$$다. 다른 기차를 기다리는 시간(큐잉 지연)은 0으로 친다.
 
@@ -233,4 +237,5 @@ $$T_{\text{pkt}} = (H + P - 1)\frac{L}{R} + H\,d_{\text{prop}} + (H - 1)\,d_{\te
 [^4]: 4-1학기/컴퓨터 통신/2.필기노트/03.3주차.md, 62~82행. "교수님은 그림으로 성능을 분석하기를 원하신다"(63행)
 [^5]: 4-1학기/pasted_images/Pasted image 20260926012124.png — 슬라이드 "성능 (Performance) (3)", "회선 스위칭: TransferTime = RTT + (1/Bandwidth) x TransferSize", "패킷 스위칭: 여러 요소에 영향. 과제로."
 [^s1]: 에이전트 보충. 두 정리의 식과 증명, 가정의 반례는 원본에 없다. 원본은 시간 흐름 그림과 "패킷 스위칭은 과제로"까지만 준다. 회선 식의 해석(보내는 쪽 기준)은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.5절의 전송 시간 식과 같은 꼴이다. 받는 쪽 기준이면 한쪽 전파 지연을 더한다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [26_timing-analysis_plot.py](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_plot/)로 그렸고, 위 표의 도착 시각 10, 12, 14 ms, Node 1과 Node 2가 패킷 1을 싣기 시작하는 3.5 ms와 7 ms, 정리의 식 $$(H + P - 1)L/R + H\,d_{\text{prop}} + (H - 1)\,d_{\text{proc}} = 14$$ ms를 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Binocular Disparity", "양안 인식", "양안 시각", "입체시", "stereopsis", "호롭터", "horopter", "대응점", "시야", "field of view", "두눈과 시야"]
 description: "두 눈은 몇 센티미터 떨어진 두 대의 카메라다. 같은 장면을 조금 다른 각도에서 찍으므로 두 상이 어긋나고, 뇌는 이 어긋남(시차)의 크기로 거리를 가늠한다. 가까운 물체일수록 어긋남이 크고, 멀어지면 빠르게 작아져서 먼 거리에서는 다른 단서에 기대야 한다. 두 눈의 시야가 많이 …"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/visual-pathway/"
 next_title: "시각 경로"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/binocular-disparity/"
 ---
 {% raw %}
@@ -64,6 +64,10 @@ $$
 
 
 이다. $$B$$는 두 눈 사이 거리(기선, baseline)다. 시차는 거리의 역수 차이에 비례하므로 멀어질수록 빠르게 줄어든다[^s2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/21_binocular-disparity_fig1.svg" alt="그림" loading="lazy">
+
+곡선은 1 m 안쪽에서 가파르게 떨어지고, 몇 m만 넘어가도 바닥에 붙는다. 바닥에 붙은 구간에서는 거리가 1 m 달라져도 높이 차이가 눈에 보이지 않는다[^s6].
 
 **두 눈과 시야.** 슬라이드 p.15는 동물마다 두 눈의 시야를 비교한다[^2]. 전체 시야 = 왼눈 시야 + 오른눈 시야 − 겹친 양안 시야, 사각(보이지 않는 각도) = 360° − 전체 시야다.
 
@@ -140,4 +144,5 @@ $$
 [^s3]: 에이전트 보충. 눈의 위치와 포식·피식 관계, 입체 영상과 VR의 원리는 표준 설명이다. 시야 그림에는 동물 이름이 없어서 머리 모양과 그림 속 설명으로만 구별했다.
 [^s4]: 에이전트 보충. 한 눈 깊이 단서(단안 단서)는 표준 지각 교재의 내용이며 슬라이드에는 없다.
 [^s5]: 에이전트 보충. 사람 시야의 대표값: 한 눈 수평 시야는 귀 쪽 약 100°, 코 쪽 약 60°(안과 시야 검사의 표준값), 두 눈을 뜬 전체 수평 시야는 약 190°(IEC 국제전기기술용어 IEV의 field of view 정의), 겹치는 양안 시야는 약 120°. 그림 원래 출처는 찾지 못했다.
+[^s6]: 에이전트 보충. 그림 1장은 원본에 없다. [21_binocular-disparity_plot.py](/Hongs_Blog/studies/human-interface-media/code/21_binocular-disparity_plot/)로 그렸고, 그림에 쓴 값($$B = 6.5$$ cm에서 30 cm 대 3 m 시차 11.12°, 10 m 대 11 m 시차 0.034°)을 같은 코드로 확인했다.
 {% endraw %}

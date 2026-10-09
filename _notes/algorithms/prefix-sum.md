@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Prefix Sum", "Difference Array", "누적 합", "구간 합", "부분 합", "차분 배열", "imos", "accumulate", "2차원 누적 합"]
 description: "통장에 매일 잔고를 적어 두면 \"3일부터 7일까지 들어온 돈\"은 두 날의 잔고를 빼기만 하면 나온다. 이처럼 앞에서부터 더한 합을 한 번 만들어 두면, 어떤 구간의 합도 뺄셈 한 번으로 구한다. 거꾸로 \"이 구간에 모두 x를 더하라\"는 일이 많으면, 구간의 양 끝에만 표시해 두었다…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/binary-search/"
 next_title: "이분 탐색"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/prefix-sum/"
 ---
 {% raw %}
@@ -54,6 +54,10 @@ P[i]는 "a의 앞 i개의 합"이다. a[2] + a[3] + a[4]를 구하려면 앞 5�
 | 앞에서부터 더하면 | 0 | 2 | 7 | 7 | 5 | 5 | |
 
 앞에서부터 더해 나가면 +2는 1번부터 계속 따라오다가 4번의 −2에서 사라진다. 그래서 1 ~ 3번에만 2가 더해진다. 표시는 구간 하나당 두 칸이라, 구간이 아무리 길어도 적는 일은 두 번이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/19_prefix-sum_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 a의 값을 막대로 차곡차곡 쌓은 모습이고, 막대 사이 점의 높이가 P다. 초록 막대 세 개(a[2] ~ a[4])의 합은 두 점의 높이 차 P[5] − P[2] = 10이다. 오른쪽의 주황 막대는 표시판 D이고, 파란 선은 D를 앞에서부터 더한 값이다. +2와 +5에서 올라가고 −2와 −5에서 내려가서, 구간마다 더한 값이 계단으로 나온다[^s1].
 
 ```python
 from itertools import accumulate
@@ -158,4 +162,5 @@ a = list(accumulate(D[:n]))             # 마지막에 한 번 누적
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 9.1 "Static array queries"의 Sum queries(누적 합과 2차원 누적 합), 9.4 "Additional techniques"의 Range updates(차분 배열: 원래 배열은 차분 배열의 누적 합이고, 구간 [a, b]에 x를 더하려면 a에 x, b + 1에 −x를 더한다).
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [19_prefix-sum_plot.py](/Hongs_Blog/studies/algorithms/code/19_prefix-sum_plot/)로 그렸고, 두 예시의 값(P = [0, 3, 4, 8, 9, 14, 23], P[5] − P[2] = 10, D = [0, 2, 5, 0, −2, 0, −5], 누적 결과 [0, 2, 7, 7, 5, 5])을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sums and Integrals", "합과 적분", "적분으로 합 어림하기", "integral bounds for sums", "차분", "finite difference", "유한 미적분", "finite calculus", "하강 거듭제곱", "falling power", "오일러-마스케로니 상수", "Euler–Mascheroni constant"]
 description: "합은 폭이 1인 막대들의 넓이이고, 적분은 곡선 아래의 넓이다. 그래서 줄어들거나 늘어나기만 하는 함수라면, 닫힌 꼴이 없는 합도 적분 두 개 사이에 끼워 크기를 정확히 어림할 수 있다. 조화수가 로그만큼 자라는 이유와, 정렬에 필요한 비교 횟수의 크기가 이렇게 나온다. 더 나아가…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/series-convergence/"
 next_title: "급수의 수렴"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/sum-integral-bounds/"
 ---
 {% raw %}
@@ -90,6 +90,10 @@ $$\int_1^{n+1} f(x)\,dx \le \sum_{k=1}^{n} f(k) \le f(1) + \int_1^{n} f(x)\,dx.$
 </details>
 
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/16_sum-integral-bounds_fig1.svg" alt="그림" loading="lazy">
+
+막대 하나가 합의 한 항 $$\frac1k$$이다. 왼쪽처럼 막대를 $$[k, k+1]$$에 세우면 막대 꼭대기가 곡선 위로 나와서 합이 넓이보다 크다. 오른쪽처럼 $$[k-1, k]$$로 한 칸 당기면 막대가 곡선 아래로 들어가서 합이 넓이보다 작다. 첫 항 1은 오른쪽에서 빠지므로 위쪽 한계에 따로 더한다[^s1].
+
 이 정리로 이산수학의 어림들을 로그와 거듭제곱의 정확한 상수까지 끌어올린다.
 
 | 합 | 끼운 결과 | 뜻 |
@@ -152,4 +156,5 @@ $$\sqrt x$$는 늘어나기만 하므로 $$\int_0^n\sqrt x\,dx \le \sum \le \int
 
 [^1]: Graham·Knuth·Patashnik, *Concrete Mathematics*, 2.6절 "Finite and Infinite Calculus"(차분 $$\Delta$$, 하강 거듭제곱, 부분합).
 [^2]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14장 "Sums and Asymptotics"(적분으로 합 끼우기, 조화수, 스털링 근사). 같은 부등식이 OpenStax, *Calculus Volume 2*, 5.3절 "The Divergence and Integral Tests"의 적분 판정 증명에 쓰인다.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [16_sum-integral-bounds_plot.py](/Hongs_Blog/studies/calculus/code/16_sum-integral-bounds_plot/)로 그렸고, $$\ln 9 \le H_8 \le 1 + \ln 8$$과 $$n \le 10^4$$에서 $$\ln(n + 1) \le H_n \le 1 + \ln n$$을 같은 코드로 확인했다.
 {% endraw %}

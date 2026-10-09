@@ -7,7 +7,7 @@
       url: "/studies/college-math/"
       concepts: 21
       practices: 2
-      codes: 21
+      codes: 40
       heavy: 5
       units: "함수 · 지수와 로그 · 삼각함수 · 평면과 복소수 …"
     - name: "이산수학"
@@ -15,7 +15,7 @@
       url: "/studies/discrete-math/"
       concepts: 36
       practices: 5
-      codes: 40
+      codes: 53
       heavy: 13
       units: "논리와 증명 · 집합, 함수, 관계 · 귀납과 재귀 · 셈 …"
     - name: "미분적분학"
@@ -23,7 +23,7 @@
       url: "/studies/calculus/"
       concepts: 31
       practices: 4
-      codes: 36
+      codes: 66
       heavy: 10
       units: "극한과 연속 · 미분 · 적분 · 급수 …"
     - name: "선형대수학"
@@ -31,7 +31,7 @@
       url: "/studies/linear-algebra/"
       concepts: 28
       practices: 3
-      codes: 32
+      codes: 57
       heavy: 13
       units: "벡터 · 행렬과 연립방정식 · 벡터공간과 선형변환 · 직교성 …"
     - name: "확률과 통계"
@@ -39,7 +39,7 @@
       url: "/studies/probability-statistics/"
       concepts: 38
       practices: 5
-      codes: 40
+      codes: 69
       heavy: 11
       units: "확률의 기초 · 이산 확률변수 · 연속 확률변수 · 여러 확률변수 …"
     - name: "신호 및 시스템"
@@ -47,7 +47,7 @@
       url: "/studies/signals-and-systems/"
       concepts: 44
       practices: 6
-      codes: 43
+      codes: 80
       heavy: 20
       units: "복습: 자연상수, 오일러 등식, 미분방정식 · 1장 신호의 종류, 에너지, 시간축 변환 · 1장 지수·정현파 신호, 임펄스와 계단 · 1장 시스템과 시스템의 성질 …"
     - name: "수치해석"
@@ -55,7 +55,7 @@
       url: "/studies/numerical-analysis/"
       concepts: 37
       practices: 5
-      codes: 42
+      codes: 72
       heavy: 6
       units: "벡터, 직선과 평면 · 행렬 · 기하 변환 · 직교 행렬과 좌표계 …"
 - track: "컴퓨터 과학"
@@ -65,7 +65,7 @@
       url: "/studies/algorithms/"
       concepts: 42
       practices: 99
-      codes: 133
+      codes: 146
       heavy: 8
       units: "파이썬으로 문제 풀기 · 구현의 기본기 · 기본 자료구조 · 탐색 기법 …"
     - name: "운영체제"
@@ -73,7 +73,7 @@
       url: "/studies/operating-systems/"
       concepts: 68
       practices: 8
-      codes: 31
+      codes: 40
       heavy: 17
       units: "컴퓨터 시스템 개요 · 운영체제 개요 · 프로세스 설명과 제어 · 스레드, SMP, 마이크로커널 …"
     - name: "컴퓨터 통신"
@@ -81,7 +81,7 @@
       url: "/studies/computer-communication/"
       concepts: 53
       practices: 4
-      codes: 34
+      codes: 45
       heavy: 6
       units: "연결과 자원 공유 · 패킷 스위칭과 네트워크 구조 · 인터넷 구조와 성능 · 데이터 링크 네트워크: 링크의 실체 …"
     - name: "휴먼 인터페이스 미디어"
@@ -89,7 +89,7 @@
       url: "/studies/human-interface-media/"
       concepts: 22
       practices: 3
-      codes: 14
+      codes: 27
       heavy: 2
       units: "사람의 지각 · 사람의 시각"
     - name: "데이터 과학"
@@ -97,7 +97,7 @@
       url: "/studies/data-science/"
       concepts: 46
       practices: 3
-      codes: 36
+      codes: 58
       heavy: 5
       units: "데이터, 측정, 전처리 · 빈발 패턴 · 앙상블 · 군집화 기초와 밀도 기반 군집화 …"
 - track: "심리학"
@@ -107,6 +107,6 @@
       url: "/studies/abnormal-psychology/"
       concepts: 172
       practices: 17
-      codes: 4
+      codes: 6
       heavy: 25
       units: "이상심리학의 기본적 이해 · 조현병 스펙트럼 장애 · 양극성장애와 우울장애 · 불안장애 …"

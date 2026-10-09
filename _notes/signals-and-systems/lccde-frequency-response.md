@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Frequency Response of LCCDE Systems", "유리함수", "Rational Function", "부분 분수 전개", "Partial Fraction Expansion", "역변환", "Inverse Fourier Transform"]
 description: "미분방정식으로 적힌 LTI 시스템은 양변을 푸리에 변환하면 미분이 j\\omega 곱셈으로 바뀌어 대수식이 된다. 그러면 주파수 응답은 j\\omega에 대한 다항식 두 개의 비(유리함수)로 바로 읽힌다. 출력을 구할 때는 Y = HX를 부분 분수로 쪼개 이미 아는 변환쌍(\\frac{…"
@@ -17,7 +17,7 @@ prev_url: "/studies/signals-and-systems/multiplication-modulation/"
 prev_title: "곱셈 성질과 진폭 변조"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/lccde-frequency-response/"
 ---
 {% raw %}
@@ -74,6 +74,10 @@ $$j\omega$$에 대한 다항식 두 개의 비(유리함수)다[^2].
 2. *부분 분수:* $$\dfrac{A_{11}}{j\omega + 1} + \dfrac{A_{12}}{(j\omega + 1)^2} + \dfrac{A_{21}}{j\omega + 3}$$. 분자를 맞추면 $$A_{11} + A_{21} = 0$$, $$4A_{11} + A_{12} + 2A_{21} = 1$$, $$3A_{11} + 3A_{12} + A_{21} = 2$$에서 $$A_{11} = \frac14$$, $$A_{12} = \frac12$$, $$A_{21} = -\frac14$$.
 3. *역변환:* $$te^{-at}u(t) \leftrightarrow \frac{1}{(a + j\omega)^2}$$(예제 4.19)를 쓰면 $$y(t) = \left[\frac14e^{-t} + \frac12te^{-t} - \frac14e^{-3t}\right]u(t)$$.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/44_lccde-frequency-response_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 예제 4.25의 $$\vert H(j\omega)\vert $$로, $$\omega = 0$$에서 $$\frac23$$이고 주파수가 높을수록 작아진다. 오른쪽의 굵은 선이 예제 4.26의 출력이고, 점선 세 조각을 더한 것이다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예제 4.25·4.26의 부분 분수와 계수 연립식, 구한 $$y(t)$$와 $$h(t)$$를 미분방정식에 넣어 양변이 같음, $$y(0) = 0$$, 참조 슬라이드의 부분 분수 두 예 확인 — [44_lccde-frequency-response_verify.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_verify/)</div>
 
@@ -123,4 +127,5 @@ $$j\omega$$에 대한 다항식 두 개의 비(유리함수)다[^2].
 [^4]: 같은 자료, p.29 (예제 4.25)
 [^5]: 같은 자료, p.30 (예제 4.26)
 [^s1]: 에이전트 보충. 보드 선도 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [44_lccde-frequency-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$H(0) = \frac23$$, $$y(0) = 0$$, $$y(t)$$가 미분방정식을 만족하고 $$h * x$$의 수치 컨벌루션과 같음.
 {% endraw %}

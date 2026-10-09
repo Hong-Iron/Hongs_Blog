@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Continuous-Time Complex Exponential Signal", "복소 지수 신호", "Complex Exponential", "실수 지수 신호", "Real Exponential", "정현파 신호", "Sinusoidal Signal", "각주파수", "Angular Frequency", "위상", "Phase", "페이저", "Phasor", "고조파", "Harmonic", "감쇠 정현파", "Damped Sinusoid"]
 description: "e^{j\\omega0 t}는 복소평면에서 반지름 1인 원 위를 일정한 속도로 도는 점이다. 그 그림자를 실수축에 비추면 \\cos\\omega0 t, 허수축에 비추면 \\sin\\omega0 t가 된다. 그래서 모든 정현파는 회전하는 화살표로 바꿔 쓸 수 있고, 삼각함수의 복잡한 덧셈정리…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/dt-complex-exponential/"
 next_title: "이산 시간 복소 지수 신호"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/ct-complex-exponential/"
 ---
 {% raw %}
@@ -107,6 +107,10 @@ $$Ce^{at} = \vert C\vert e^{rt}e^{j(\omega_0 t + \theta)} = \vert C\vert e^{rt}\
 
 $$e^{st}$$로 쓰면 $$s$$ 하나가 성장·감쇠($$s$$의 실수부)와 진동($$s$$의 허수부)을 함께 담는다[^4].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/08_ct-complex-exponential_fig1.svg" alt="그림" loading="lazy">
+
+두 그래프 모두 $$\omega_0 = 3$$이라 진동의 빠르기는 같다. 점선 $$\pm e^{rt}$$가 정하는 폭만 $$r$$의 부호에 따라 커지거나 줄어든다[^s2].
+
 ### 스스로 설명해 보기
 
 <details class="callout callout-question" markdown="1">
@@ -141,6 +145,10 @@ $$\cos\theta = \frac12(e^{j\theta} + e^{-j\theta})$$에 $$\theta = \omega_0 t + 
 - 평균 주파수를 빼낸다: $$\frac{2 + 3}{2} = 2.5$$이므로 $$x(t) = e^{j2.5t}(e^{-j0.5t} + e^{j0.5t})$$.
 - 괄호를 오일러 관계로: $$e^{-j0.5t} + e^{j0.5t} = 2\cos(0.5t)$$. 그래서 $$x(t) = 2e^{j2.5t}\cos(0.5t)$$.
 - 크기: $$\vert e^{j2.5t}\vert  = 1$$이므로 $$\vert x(t)\vert  = 2\vert \cos(0.5t)\vert $$. 크기가 전파 정류된 정현파 모양이다. $$2\cos(0.5t)$$의 주기는 $$4\pi \approx 12.566$$이고, 절댓값을 씌운 $$\vert x(t)\vert $$는 그 절반인 $$2\pi$$마다 되풀이된다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/08_ct-complex-exponential_fig2.svg" alt="그림" loading="lazy">
+
+가는 선이 실수부, 굵은 선이 크기 $$\vert x(t)\vert $$다. 점선 $$2\cos 0.5t$$는 $$4\pi$$마다 되풀이되지만, 음수 쪽이 뒤집힌 크기는 $$2\pi$$마다 되풀이된다[^s2].
 
 **페이저 덧셈** 같은 주파수의 두 정현파 $$2\cos(3t + 0.4) + \cos(3t - 1.1)$$은 페이저 $$2e^{j0.4} + e^{-j1.1}$$의 크기와 위상을 가진 정현파 하나다[^s1].
 
@@ -219,4 +227,5 @@ $$\cos\theta = \frac12(e^{j\theta} + e^{-j\theta})$$에 $$\theta = \omega_0 t + 
 [^10]: 같은 자료, p.11~12 (그림 1.23)
 [^11]: 같은 자료, p.10
 [^s1]: 에이전트 보충. 자전거 바퀴 비유, $$\vert x(t)\vert $$의 주기가 $$2\pi$$라는 설명, 페이저 덧셈 예, 교류 회로 해석에 쓰인다는 활용, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 값은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [08_ct-complex-exponential_plot.py](/Hongs_Blog/studies/signals-and-systems/code/08_ct-complex-exponential_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$r = 0.2, -0.3$$에서 실수부가 포락선 안에 있음, 예제 1.5의 $$x = 2e^{j2.5t}\cos 0.5t$$, $$\vert x\vert $$의 주기 $$2\pi$$와 $$2\cos 0.5t$$의 주기 $$4\pi$$.
 {% endraw %}

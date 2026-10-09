@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Master Theorem", "마스터 정리", "마스터 방법", "master method", "분할 정복 점화식", "divide-and-conquer recurrence", "재귀 트리", "recursion tree", "임계 지수", "critical exponent"]
 description: "문제를 같은 크기의 조각 여러 개로 나눠 풀고 합치는 알고리즘의 비용을, 층마다 드는 일의 합으로 본다. 아래층으로 갈수록 일이 줄면 맨 위(나누고 합치는 일)가, 늘면 맨 아래(조각의 개수)가 전체를 정하고, 같으면 층 수만큼 곱해진다. 이 세 갈래를 공식으로 만든 것이 마스터 …"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/modular-arithmetic/"
 next_title: "나눗셈과 합동"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/master-theorem/"
 ---
 {% raw %}
@@ -69,6 +69,10 @@ $$n = 16$$에서 세 점화식을 층별로 펼친다. $$T(1) = 1$$이다. 0층�
 | $$a > b^d$$ ($$d < p$$) | 층마다 일이 늘어난다 | $$\Theta(n^{\log_b a})$$ |
 
 $$f$$가 다항식이면 정칙 조건은 저절로 맞는다. $$a f(n/b) = \frac{a}{b^d} n^d$$이고 $$\frac{a}{b^d} < 1$$이 곧 $$c$$가 되기 때문이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/25_master-theorem_fig1.svg" alt="그림" loading="lazy">
+
+각 선은 $$n = 2^k$$에서 정확히 계산한 $$T(n)$$을 정리가 말하는 $$g(n)$$으로 나눈 비다. 네 비가 각각 1, 2, 2, 3이라는 상수로 모인다. 이것이 $$T(n) = \Theta(g(n))$$의 뜻이다. $$4T(n/2) + n$$과 $$T(n/2) + n$$은 비가 똑같이 $$2 - 1/n$$이라 선이 겹친다[^s2].
 
 ## 증명
 
@@ -226,4 +230,5 @@ $$f$$가 다항식이면 정칙 조건은 저절로 맞는다. $$a f(n/b) = \fra
 [^1]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 4.4절(재귀 트리), 4.5절(마스터 방법), 4.6절(증명). 아크라–바치 정리는 Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 22장 "Recurrences".
 [^2]: 카라츠바 곱셈은 Kleinberg·Tardos, *Algorithm Design*, 5장. 슈트라센 알고리즘은 Cormen et al. 3판, 4.2절.
 [^s1]: 에이전트 보충. 정칙 조건의 반례, 역의 반례, $$2T(n/2) + n\lg n$$의 답은 재귀 트리의 층별 합으로 유도했고 $$n = 2^k$$에서 정확히 계산해 확인했다(25_master-theorem_verify.py).
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [25_master-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/25_master-theorem_plot/)로 그렸고, $$n = 2^k$$($$k \le 20$$)에서 닫힌 꼴 $$n\lg n + n$$, $$2n^2 - n$$, $$2n - 1$$, $$3n^{\lg 3} - 2n$$과 예시 표의 합 80, 496, 31을 같은 코드로 확인했다.
 {% endraw %}

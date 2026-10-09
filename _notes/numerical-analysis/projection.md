@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/distance-intersection/"
 next_title: "점·직선·평면 사이의 거리와 교점"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/projection/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/numerical-analysis/projection/"
 눈이 원점에 있고 화면이 $$z = 1$$에 있다. 높이 4인 막대가 거리 4에 있으면 화면에서 높이 1로 보인다. 같은 막대가 거리 8로 물러나면 높이 0.5로 보인다. 두 배 멀면 절반 크기다(원근 단축)[^s1].
 
 철길처럼 $$z$$ 방향으로 뻗은 두 평행선 $$x = \pm1$$은 거리 1에서 폭 2, 거리 10에서 폭 0.2, 거리 1000에서 0.002로 보인다. 멀어질수록 한 점(소실점)으로 모인다. 평행 투영이었다면 폭이 늘 2다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/11_projection_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 옆에서 본 모습이다. 눈에서 막대 끝으로 그은 선이 화면을 지나는 높이가 화면 속 크기다. 거리 4의 막대는 1, 거리 8의 막대는 0.5로 보인다. 오른쪽은 철길이 화면에 비친 모습이고, 가로선은 깊이 1, 2, 3, 5, 10의 자리다. 두 레일이 멀어질수록 좁아져 소실점 한 점으로 모인다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 평행 투영의 평행 유지, 원근 투영의 예시 값, 화면 깊이가 늘 $$d$$, 소실점, 중점이 깨짐, 직선이 직선으로 감, 카드 C2 — [11_projection_verify.py](/Hongs_Blog/studies/numerical-analysis/code/11_projection_verify/)</div>
@@ -115,4 +119,5 @@ $$\begin{pmatrix}x'\\ y'\\ z'\\ w'\end{pmatrix} = \begin{pmatrix}1 & 0 & 0 & 0\\
 [^4]: 같은 자료, p.32
 [^5]: 같은 자료, p.33
 [^s1]: 에이전트 보충. 막대와 철길 예시, 쓰이는 곳, 중점과 텍스처 보간, 흔한 실수, 직교 사영과의 관계, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [11_projection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 막대 높이 1과 0.5, 폭 2가 거리 10에서 0.2, 거리 1000에서 0.002.
 {% endraw %}

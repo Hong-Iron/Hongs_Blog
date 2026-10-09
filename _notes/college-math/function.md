@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Function", "정의역", "domain", "공역", "codomain", "치역", "range", "image", "자연 정의역", "수직선 판정", "vertical line test"]
 description: "함수는 자판기와 같다. 버튼 하나를 누르면 음료가 정확히 하나 나온다. 여러 버튼이 같은 음료를 내는 것은 괜찮지만, 같은 버튼에서 매번 다른 음료가 나오면 함수가 아니다. 그리고 함수를 말할 때는 어떤 입력을 받는지도 함께 정해야 한다."
@@ -17,7 +17,7 @@ next_url: "/studies/college-math/function-transformation/"
 next_title: "함수의 변환과 합성"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/function/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ $$f(x) = x^2$$에서는 $$-2$$와 $$2$$가 모두 $$4$$로 간다. 서로 다른
 자판기의 버튼 전체가 아래 정의의 정의역, 자판기에 넣을 수 있게 정해 둔 음료 종류가 공역, 실제로 나오는 음료가 치역이다. 자판기에는 품절이 있지만 함수에는 없다. 정의역의 모든 입력에는 반드시 출력이 있다.
 
 그래프로는 세로선을 그어 판정한다. 어디에 그어도 그래프와 두 번 이상 만나지 않으면 함수의 그래프다(수직선 판정). 원 $$x^2 + y^2 = 1$$은 세로선 $$x = 0$$과 $$(0, 1)$$, $$(0, -1)$$ 두 점에서 만난다. 그래서 원 전체는 $$y$$를 $$x$$의 함수로 나타내지 않는다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/01_function_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽 원은 세로선 $$x = 0$$과 두 점에서 만나서 함수의 그래프가 아니다. 오른쪽 포물선은 어디에 세로선을 그어도 한 점에서만 만난다[^s2].
 
 ## 정의
 
@@ -68,6 +72,10 @@ $$f(x) = \dfrac{\sqrt{x - 1}}{x - 3}$$의 자연 정의역을 구한다.
 1. *제곱근 조건:* $$x - 1 \ge 0$$이므로 $$x \ge 1$$.
 2. *분모 조건:* $$x - 3 \ne 0$$이므로 $$x \ne 3$$.
 3. *합치기:* $$[1, 3) \cup (3, \infty)$$. 구간 $$[1, 3)$$은 $$1 \le x < 3$$을 뜻한다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/01_function_fig2.svg" alt="그림" loading="lazy">
+
+그래프는 $$x = 1$$에서 값 0으로 시작하고, 그 왼쪽(회색)에는 없다. $$x = 3$$에서는 분모가 0이라 그래프가 끊기고, 3에 다가갈수록 위아래로 한없이 뻗는다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$-5 \le x \le 10$$을 0.01 간격으로 나눈 1,501점에서 파이썬으로 실제 계산되는 점이 정확히 $$[1, 3) \cup (3, \infty)$$. 카드 C2의 판정과 오해의 $$x^2$$ 예도 확인 — [01_function_verify.py](/Hongs_Blog/studies/college-math/code/01_function_verify/)</div>
@@ -133,4 +141,5 @@ $$f(x) = \dfrac{\sqrt{x - 1}}{x - 3}$$의 자연 정의역을 구한다.
 [^1]: OpenStax, *Precalculus 2e*, 1.1절 "Functions and Function Notation"
 [^2]: OpenStax, *Precalculus 2e*, 1.2절 "Domain and Range"
 [^s1]: 에이전트 보충. 순수 함수는 함수형 프로그래밍의 용어다. 수학의 함수와 코드의 함수가 어디서 갈리는지 보이려고 넣었다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [01_function_plot.py](/Hongs_Blog/studies/college-math/code/01_function_plot/)로 그렸고, 그림에 쓴 값(원 위 $$x = 0$$의 두 점 $$(0, \pm 1)$$, $$f(1) = 0$$, $$f(2) = -1$$, $$f(5) = 1$$, $$x = 0.5$$와 $$x = 3$$에서 계산이 안 됨)을 같은 코드로 확인했다.
 {% endraw %}

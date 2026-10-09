@@ -8,7 +8,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 concepts: 53
 practices: 4
-codes: 34
+codes: 45
 description: "컴퓨터 통신 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -33,11 +33,11 @@ permalink: "/studies/computer-communication/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 01 | [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/) | 두 기기를 전용선 하나로 바로 잇는 연결. 모두 이으면 선이 $$n(n-1)/2$$개 (강조)[^1] | [검증](/Hongs_Blog/studies/computer-communication/code/01_point-to-point-link_verify/) | — |
+| 01 | [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/) | 두 기기를 전용선 하나로 바로 잇는 연결. 모두 이으면 선이 $$n(n-1)/2$$개 (강조)[^1] | [검증](/Hongs_Blog/studies/computer-communication/code/01_point-to-point-link_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/01_point-to-point-link_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/01_point-to-point-link_fig1.svg) | — |
 | 02 | [다중 접근 링크](/Hongs_Blog/studies/computer-communication/multiple-access-link/) | 여러 기기가 선 하나를 함께 씀. 동시에 보내면 충돌 | — | — |
 | 03 | [스위칭 네트워크](/Hongs_Blog/studies/computer-communication/switched-network/) | 중계 장치(스위치)를 거쳐 잇는 간접 연결 | — | — |
 | 04 | [인터네트워크](/Hongs_Blog/studies/computer-communication/internetwork/) | 네트워크들을 라우터로 이은 네트워크들의 네트워크 | — | — |
-| 05 | [전송 속도와 대역폭](/Hongs_Blog/studies/computer-communication/rate-and-bandwidth/) | 싣는 시간 $$L/R$$과 선을 건너는 시간은 다르다. 대역폭의 두 뜻, 비트 폭 | [검증](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_verify/) | — |
+| 05 | [전송 속도와 대역폭](/Hongs_Blog/studies/computer-communication/rate-and-bandwidth/) | 싣는 시간 $$L/R$$과 선을 건너는 시간은 다르다. 대역폭의 두 뜻, 비트 폭 | [검증](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/05_rate-and-bandwidth_fig1.svg) | — |
 | 06 | [회선 스위칭](/Hongs_Blog/studies/computer-communication/circuit-switching/) | 통신 전에 경로의 용량을 전용으로 잡아 둠. 쉬는 동안 낭비 (강조)[^2] | [검증](/Hongs_Blog/studies/computer-communication/code/06_circuit-switching_verify/) | — |
 | 07 | [버스티 트래픽](/Hongs_Blog/studies/computer-communication/bursty-traffic/) | 짧게 몰리고 오래 쉬는 트래픽. 최대가 평균보다 훨씬 큼 | [검증](/Hongs_Blog/studies/computer-communication/code/07_bursty-traffic_verify/) | — |
 | 08 | [패킷 스위칭](/Hongs_Blog/studies/computer-communication/packet-switching/) | 잡아 두지 않고 패킷마다 저장 후 전달. 지연 $$(H+P-1)L/R$$, 버퍼가 넘치면 혼잡 (강조)[^3] | [검증](/Hongs_Blog/studies/computer-communication/code/08_packet-switching_verify/) | [패킷 스위칭 예제 사다리](/Hongs_Blog/studies/computer-communication/packet-switching-ladder/) |
@@ -47,7 +47,7 @@ permalink: "/studies/computer-communication/"
 | 12 | [다중화](/Hongs_Blog/studies/computer-communication/multiplexing/) | 여러 연결이 링크 하나를 나눠 씀. DEMUX 키가 반드시 있어야 함. 반대 방향은 다채널 분할 (강조)[^4] | [검증](/Hongs_Blog/studies/computer-communication/code/12_multiplexing_verify/) | — |
 | 13 | [시분할 다중화](/Hongs_Blog/studies/computer-communication/time-division-multiplexing/) | 시간 칸을 정해진 순서로 돌아가며 씀. 칸 위치가 키 (강조)[^5] | [검증](/Hongs_Blog/studies/computer-communication/code/13_time-division-multiplexing_verify/) | — |
 | 14 | [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/) | 주파수 구간을 나눠 동시에 씀. 보호 대역 낭비. DSL이 이 방식 | [검증](/Hongs_Blog/studies/computer-communication/code/14_frequency-division-multiplexing_verify/) | — |
-| 15 | [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/) | 보낼 것이 있는 입력에만 링크를 줌. 주소 오버헤드 (강조)[^6] | [검증](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_verify/) | — |
+| 15 | [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/) | 보낼 것이 있는 입력에만 링크를 줌. 주소 오버헤드 (강조)[^6] | [검증](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/15_statistical-multiplexing_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/computer-communication/15_statistical-multiplexing_fig2.svg) | — |
 | 16 | [시분할 다중화와 통계적 다중화 비교](/Hongs_Blog/studies/computer-communication/contrast--tdm--statistical-multiplexing/) | 가르는 질문: 칸을 미리 정해 두는가 | — | — |
 
 자료: 0장 슬라이드 · 1장 슬라이드 (1~3회) · 직접 링크 · 간접 연결 · 인터네트워킹 · 스위칭 정책 · 스위칭 정책(같은 파일) · 패킷 스위칭 · 자원 공유 · 다중화 · 시분할 다중화 · TDM 그림 · 주파수 분할 스펙트럼 · FDM 그림 · 통계적 다중화 · 다채널 분할
@@ -96,9 +96,9 @@ permalink: "/studies/computer-communication/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 24 | [인터넷 구조](/Hongs_Blog/studies/computer-communication/internet-architecture/) | IP 하나로 좁은 모래시계. 계층을 엄격히 따르지 않음 (강조)[^11] | — | — |
-| 25 | [소요시간](/Hongs_Blog/studies/computer-communication/latency/) | 전파 + 전송 + 큐잉 (+ 처리). RTT와 지터 | [검증](/Hongs_Blog/studies/computer-communication/code/25_latency_verify/) | — |
-| 26 | [소요시간 분석](/Hongs_Blog/studies/computer-communication/timing-analysis/) | 시간 흐름 그림으로 회선·패킷의 소요시간 계산. 패킷은 파이프라인으로 겹침 (강조)[^12] | [검증](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_verify/) | 과제 2 · [소요시간 분석 예제 사다리](/Hongs_Blog/studies/computer-communication/timing-analysis-ladder/) |
-| 27 | [처리량](/Hongs_Blog/studies/computer-communication/throughput/) | 실제로 낸 속도 = 크기 ÷ 전송 완료 시간. 작은 메시지는 소요시간이 지배 | [검증](/Hongs_Blog/studies/computer-communication/code/27_throughput_verify/) | — |
+| 25 | [소요시간](/Hongs_Blog/studies/computer-communication/latency/) | 전파 + 전송 + 큐잉 (+ 처리). RTT와 지터 | [검증](/Hongs_Blog/studies/computer-communication/code/25_latency_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/25_latency_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/25_latency_fig1.svg) | — |
+| 26 | [소요시간 분석](/Hongs_Blog/studies/computer-communication/timing-analysis/) | 시간 흐름 그림으로 회선·패킷의 소요시간 계산. 패킷은 파이프라인으로 겹침 (강조)[^12] | [검증](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/26_timing-analysis_fig1.svg) | 과제 2 · [소요시간 분석 예제 사다리](/Hongs_Blog/studies/computer-communication/timing-analysis-ladder/) |
+| 27 | [처리량](/Hongs_Blog/studies/computer-communication/throughput/) | 실제로 낸 속도 = 크기 ÷ 전송 완료 시간. 작은 메시지는 소요시간이 지배 | [검증](/Hongs_Blog/studies/computer-communication/code/27_throughput_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/27_throughput_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/27_throughput_fig1.svg) | — |
 | 28 | [대역폭-지연 곱](/Hongs_Blog/studies/computer-communication/bandwidth-delay-product/) | 파이프의 부피 = 대역폭 × 지연. 빠른 링크일수록 채우기 어려움 | [검증](/Hongs_Blog/studies/computer-communication/code/28_bandwidth-delay-product_verify/) | — |
 
 자료: 인터넷 구조 · 대역폭 · 소요시간 · Timing in Circuit Switching · Timing in Circuit Switching(표시 없음) · Timing of Packet Switching · Timing of Packet Switching(다른 캡처) · Pipelining · 성능 (3) · Frames 전송 · Frames 전송(같은 캡처) · 성능 기타
@@ -124,7 +124,7 @@ permalink: "/studies/computer-communication/"
 | 31 | [신호와 변조](/Hongs_Blog/studies/computer-communication/signal-and-modulation/) | 데이터를 신호로 바꾸고 되돌림(모뎀). 저주파는 멀리, 고주파는 빠르게 | [검증](/Hongs_Blog/studies/computer-communication/code/31_signal-and-modulation_verify/) | — |
 | 32 | [유선 링크](/Hongs_Blog/studies/computer-communication/wired-links/) | UTP·동축·광케이블의 거리와 속도. 전반사, 멀티모드와 싱글모드 | [검증](/Hongs_Blog/studies/computer-communication/code/32_wired-links_verify/) | — |
 | 33 | [가입자 선로](/Hongs_Blog/studies/computer-communication/last-mile-links/) | 집과 인터넷 회사 사이의 마지막 링크. DSL은 전화선에 FDM (강조)[^13] | — | — |
-| 34 | [무선 링크](/Hongs_Blog/studies/computer-communication/wireless-links/) | 선 없이 이동성과 즉시성. 간섭·다중 경로·라이선스 | [검증](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_verify/) | — |
+| 34 | [무선 링크](/Hongs_Blog/studies/computer-communication/wireless-links/) | 선 없이 이동성과 즉시성. 간섭·다중 경로·라이선스 | [검증](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/34_wireless-links_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/34_wireless-links_fig1.svg) | — |
 | 35 | [이동통신](/Hongs_Blog/studies/computer-communication/cellular-networks/) | 셀과 기지국. 핸드오프, 공간 분할로 주파수 재사용 | — | — |
 | 36 | [위성통신](/Hongs_Blog/studies/computer-communication/satellite-systems/) | 높이 띄울수록 넓게, 늦게. 휴대 기기의 양방향 통신은 저궤도 | [검증](/Hongs_Blog/studies/computer-communication/code/36_satellite-systems_verify/) | — |
 
@@ -146,10 +146,10 @@ permalink: "/studies/computer-communication/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 37 | [디지털 전송](/Hongs_Blog/studies/computer-communication/digital-transmission/) | 중계할 때 신호를 키우지 않고 0과 1을 되살려 다시 만듦(리피터). 잡음이 쌓이지 않음 | — | — |
-| 38 | [PCM](/Hongs_Blog/studies/computer-communication/pcm/) | 값을 재고(표본화) 반올림해(양자화) 2진수로. 4 kHz 음성 → 64 kbps | [검증](/Hongs_Blog/studies/computer-communication/code/38_pcm_verify/) | — |
-| 39 | [진폭·주파수·위상 변조](/Hongs_Blog/studies/computer-communication/digital-modulation/) | 반송파의 높이·빠르기·시작 시점을 비트에 따라 바꿈. 심볼이 $$M$$가지면 $$\lg M$$비트 | [검증](/Hongs_Blog/studies/computer-communication/code/39_digital-modulation_verify/) | — |
-| 40 | [NRZ와 클럭 복구](/Hongs_Blog/studies/computer-communication/nrz-clock-recovery/) | 1은 높게, 0은 낮게. 같은 값이 이어지면 받는 쪽이 박자를 잃음 (강조)[^14] | [검증](/Hongs_Blog/studies/computer-communication/code/40_nrz-clock-recovery_verify/) | — |
+| 37 | [디지털 전송](/Hongs_Blog/studies/computer-communication/digital-transmission/) | 중계할 때 신호를 키우지 않고 0과 1을 되살려 다시 만듦(리피터). 잡음이 쌓이지 않음 | [그림 코드](/Hongs_Blog/studies/computer-communication/code/37_digital-transmission_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/37_digital-transmission_fig1.svg) | — |
+| 38 | [PCM](/Hongs_Blog/studies/computer-communication/pcm/) | 값을 재고(표본화) 반올림해(양자화) 2진수로. 4 kHz 음성 → 64 kbps | [검증](/Hongs_Blog/studies/computer-communication/code/38_pcm_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/38_pcm_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig2.svg) | — |
+| 39 | [진폭·주파수·위상 변조](/Hongs_Blog/studies/computer-communication/digital-modulation/) | 반송파의 높이·빠르기·시작 시점을 비트에 따라 바꿈. 심볼이 $$M$$가지면 $$\lg M$$비트 | [검증](/Hongs_Blog/studies/computer-communication/code/39_digital-modulation_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/39_digital-modulation_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/39_digital-modulation_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/computer-communication/39_digital-modulation_fig2.svg) | — |
+| 40 | [NRZ와 클럭 복구](/Hongs_Blog/studies/computer-communication/nrz-clock-recovery/) | 1은 높게, 0은 낮게. 같은 값이 이어지면 받는 쪽이 박자를 잃음 (강조)[^14] | [검증](/Hongs_Blog/studies/computer-communication/code/40_nrz-clock-recovery_verify/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/40_nrz-clock-recovery_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/40_nrz-clock-recovery_fig1.svg) | — |
 | 41 | [NRZI와 맨체스터](/Hongs_Blog/studies/computer-communication/nrzi-manchester/) | 1마다 뒤집기 / 비트마다 한가운데서 전이(데이터 ⊕ 클럭), 효율 50% (강조)[^15] | [구현](/Hongs_Blog/studies/computer-communication/code/41_nrzi-manchester_impl/) | — |
 | 42 | [4B/5B](/Hongs_Blog/studies/computer-communication/4b5b/) | 4비트를 5비트 부호로 바꿔 0은 최대 3개, NRZI로 보냄. 효율 80% (강조)[^16] | [검증](/Hongs_Blog/studies/computer-communication/code/42_4b5b_verify/) | — |
 | 43 | [인코딩 방식 비교](/Hongs_Blog/studies/computer-communication/contrast--line-coding/) | 가르는 질문: 어떤 비트열에서 평평해지나, 효율은 얼마인가 | — | [인코딩 예제 사다리](/Hongs_Blog/studies/computer-communication/line-coding-ladder/) · [문제 4 코드](/Hongs_Blog/studies/computer-communication/code/43_line-coding-ladder_p4/) |

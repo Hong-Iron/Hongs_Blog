@@ -19,7 +19,7 @@ next_url: "/studies/data-science/discretization/"
 next_title: "이산화"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/normalization/"
 ---
 {% raw %}
@@ -62,6 +62,10 @@ $$v'_i = \frac{v_i - \bar A}{\sigma_A}$$
 
 
 결과는 "평균에서 표준편차 몇 개만큼 떨어졌나"다. 바꾼 값들은 평균 0, 표준편차 1이 된다. 실제 최솟값·최댓값을 모르거나 이상치가 있을 때 쓸모 있다[^2]. 예: 평균 54,000, 표준편차 16,000이면 73,600은 $$\frac{19{,}600}{16{,}000} = 1.225$$다[^s2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/07_normalization_fig1.svg" alt="그림" loading="lazy">
+
+꼬리가 긴 자료 10개를 두 방법으로 바꿨다. 눈금 숫자만 바뀌고 점들의 배치는 세 줄 모두 똑같다. 두 방법 모두 모든 값에서 같은 수를 빼고 같은 수로 나누기 때문이다[^s3].
 
 ## 연결
 
@@ -109,4 +113,5 @@ $$v'_i = \frac{v_i - \bar A}{\sigma_A}$$
 [^2]: 같은 자료, p.42
 [^s1]: 에이전트 보충. 세 사람 예, 이상치 예, 중앙값·IQR로 나누는 견고한 정규화, 오해 항목, 카드 C1~C3은 원본에 없다. 수치는 검증 코드로 확인했다.
 [^s2]: 에이전트 보충. 소득 73,600의 두 정규화 예는 Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 3.5.2절의 예다.
+[^s3]: 에이전트 보충. 그림 1장은 원본에 없다. [07_normalization_plot.py](/Hongs_Blog/studies/data-science/code/07_normalization_plot/)로 그렸다. 자료는 검증 코드의 1, 2, 2, 3, 3, 3, 4, 10, 20, 40이고, z-점수 뒤 평균 0·표준편차 1, 왜도 1.85가 그대로인 것을 같은 코드로 확인했다.
 {% endraw %}

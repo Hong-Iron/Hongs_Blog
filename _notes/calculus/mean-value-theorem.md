@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Mean Value Theorem", "MVT", "평균값 정리", "롤의 정리", "Rolle's theorem", "립시츠 조건", "Lipschitz condition", "구간단속"]
 description: "10 km 구간을 5분에 지났다면 평균 시속이 120 km이고, 그렇다면 어느 한 순간 속도계는 정확히 120을 가리켰다. 매끄러운 함수에서는 평균 변화율과 똑같은 순간 변화율을 갖는 점이 반드시 있다는 정리다. \"도함수가 양수면 증가한다\", \"도함수가 0이면 상수다\" 같은 당연해…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/lhopital-growth/"
 next_title: "로피탈 정리와 증가 속도"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/mean-value-theorem/"
 ---
 {% raw %}
@@ -52,6 +52,10 @@ $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
 
 
 그래프로는 두 끝점을 잇는 할선과 평행한 접선이 구간 안 어딘가에 있다는 뜻이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/08_mean-value-theorem_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽에서 $$x^2$$의 $$c = 1$$ 접선(주황 점선)은 할선(파랑)과 기울기가 2로 같다. 오른쪽 $$\vert x\vert $$는 할선이 수평인데, 그래프의 기울기는 꺾인 점 양쪽에서 $$-1$$과 1뿐이라 수평인 접선이 없다(아래 가정의 필요성)[^s2].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명</summary>
@@ -130,4 +134,5 @@ $$f(x) = x^2$$을 $$[0, 2]$$에서 볼 때 정리의 $$c$$를 구한다.
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.4절 "The Mean Value Theorem"(롤의 정리, 평균값 정리, 따름정리)
 [^s1]: 에이전트 보충. 립시츠 연속성은 학습의 안정성과 적대적 견고성 연구에서 쓰는 조건이다. 기울기 자르기는 순환 신경망 학습의 표준 기법이다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [08_mean-value-theorem_plot.py](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_plot/)로 그렸고, $$x^2$$의 평균 변화율 2와 $$c = 1$$, $$\vert x\vert $$의 평균 변화율 0과 도함수 $$\pm 1$$을 같은 코드로 확인했다.
 {% endraw %}

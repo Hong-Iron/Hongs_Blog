@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Entropy", "엔트로피", "섀넌 엔트로피", "Shannon entropy", "정보량", "information content", "놀라움", "surprisal", "비트", "bit", "이진 엔트로피", "binary entropy", "원천 부호화 정리", "source coding theorem", "허프만 부호", "Huffman coding", "크래프트 부등식", "Kraft inequality", "접두어 부호", "prefix code", "정보 이득", "information gain"]
 description: "결과를 알게 되었을 때 평균적으로 얼마나 놀라는지를 재는 수이고, 그 결과를 전하는 데 평균적으로 꼭 필요한 비트 수와 같다. 공정한 동전 하나는 1비트, 거의 늘 앞면이 나오는 동전은 1비트보다 훨씬 적다. 확률이 고르게 퍼질수록 크고 한쪽에 몰릴수록 작아서, 데이터를 얼마나 압…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/cross-entropy-kl/"
 next_title: "교차 엔트로피와 KL 발산"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/probability-statistics/entropy/"
 ---
 {% raw %}
@@ -62,6 +62,10 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 1. $$0 \le H(X) \le \log_2 n$$($$n$$은 가능한 값의 수). 0은 한 값만 나올 때, 최댓값은 균등분포일 때다.
 2. $$X$$, $$Y$$가 독립이면 $$H(X, Y) = H(X) + H(Y)$$.
 3. 확률 $$p$$인 사건 하나의 **이진 엔트로피** $$h(p) = -p\log_2 p - (1 - p)\log_2(1 - p)$$는 $$p = \frac12$$에서 1, $$p = 0.9$$에서 약 0.469다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/37_entropy_fig1.svg" alt="그림" loading="lazy">
+
+반반($$p = 0.5$$)일 때 1비트로 가장 크고, 한쪽으로 몰릴수록 0으로 내려간다. $$p = 0.9$$인 동전은 던질 때마다 평균 0.469비트의 정보만 준다[^s2].
 
 **설계 이유.** 놀라움을 $$-\log_2 p$$로 잡는 이유는 세 가지다. 확실한 일($$p = 1$$)은 놀랍지 않아 0이다. 드문 일일수록 크다. 독립인 두 사건이 함께 일어날 때의 놀라움은 각각의 합이어야 하는데, $$-\log_2(pq) = -\log_2 p - \log_2 q$$를 만족하는 함수가 로그다. 밑 2는 단위를 비트로 맞춘다.
 
@@ -187,4 +191,5 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 [^1]: Cover, Thomas, *Elements of Information Theory* 2판, 2장 "Entropy, Relative Entropy, and Mutual Information"(정의, 성질, 옌센 부등식을 이용한 상한).
 [^2]: Cover, Thomas, *Elements of Information Theory* 2판, 5장 "Data Compression"(크래프트 부등식, 최적 부호의 한계 $$H \le L < H + 1$$, 허프만 부호).
 [^s1]: 에이전트 보충. DEFLATE가 LZ77과 허프만 부호를 함께 쓴다는 것은 RFC 1951에 정의되어 있다. 묶음 부호화 수치와 허프만의 한계는 37_entropy_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [37_entropy_plot.py](/Hongs_Blog/studies/probability-statistics/code/37_entropy_plot/)로 그렸고, 그림에 쓴 값($$h(0.5) = 1$$, $$h(0.9) = 0.469$$, $$h(0) = h(1) = 0$$)을 같은 코드로 확인했다.
 {% endraw %}

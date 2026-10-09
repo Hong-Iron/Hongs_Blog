@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Limit", "극한", "극한값", "입실론-델타", "epsilon-delta", "한쪽 극한", "one-sided limit", "좌극한", "우극한", "극한 법칙", "limit laws", "조임 정리", "squeeze theorem"]
 description: "극한은 입력이 어떤 값에 한없이 다가갈 때 출력이 다가가는 값이다. 그 점에서의 함숫값과는 상관이 없어서, 0 나누기 0처럼 계산이 안 되는 곳에서도 \"다가가는 값\"은 말할 수 있다. 미분과 적분이 모두 극한으로 정의된다. 다만 왼쪽과 오른쪽에서 다가가는 값이 다르거나, 출력이 한…"
@@ -17,7 +17,7 @@ next_url: "/studies/calculus/continuity/"
 next_title: "연속과 사잇값 정리"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/limits/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ $$f(x) = \dfrac{x^2 - 1}{x - 1}$$은 $$x = 1$$에서 $$0/0$$이라 값이 없다
 
 양쪽 어디서 다가가도 2에 가까워진다. $$x \ne 1$$이면 $$f(x) = \frac{(x-1)(x+1)}{x-1} = x + 1$$이라 그래프는 직선 $$y = x + 1$$에서 점 $$(1, 2)$$ 하나만 뚫린 모양이다. 뚫린 점의 높이 2가 극한이다. 여기서 1이 아래 정의의 $$a$$, 2가 $$L$$이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/01_limits_fig1.svg" alt="그림" loading="lazy">
+
+빈 동그라미가 값이 없는 자리다. 주황 점($$x = 0.9$$, $$1.1$$)처럼 양쪽 어디서 다가가도 높이가 2로 모인다[^s2].
+
 ## 정의
 
 직관적으로 $$\lim_{x \to a} f(x) = L$$은 "$$x$$를 $$a$$에 충분히 가깝게(단, $$a$$는 아니게) 하면 $$f(x)$$를 $$L$$에 원하는 만큼 가깝게 할 수 있다"는 뜻이다[^1].
@@ -59,6 +63,10 @@ $$\lim_{x \to a} f(x) = L \iff \forall \varepsilon > 0\ \exists \delta > 0\ \for
 **동치인 다른 정의.** $$\lim_{x \to a} f(x) = L$$은 "$$a$$로 다가가는($$a$$와 다른) 모든 수열 $$x_n$$에 대해 $$f(x_n) \to L$$"과 같다. [증명 생략: OpenStax *Calculus Volume 1* 2.5절의 범위를 넘는 해석학의 결과. 수열의 극한은 [수열의 극한과 e](/Hongs_Blog/studies/calculus/sequence-limits/)]
 
 **해당하는 예:** $$\lim_{x \to 2}(x^2 + 1) = 5$$, $$\lim_{x \to 1}\frac{x^2 - 1}{x - 1} = 2$$, $$\lim_{x \to 0}\frac{\sin x}{x} = 1$$. **해당하지 않는 예:** $$\lim_{x \to 0}\frac{1}{x}$$(양쪽에서 $$+\infty$$와 $$-\infty$$로 달아남), $$\lim_{x \to 0}\sin\frac1x$$(0 근처에서 $$-1$$과 $$1$$ 사이를 끝없이 오감).
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/01_limits_fig2.svg" alt="그림" loading="lazy">
+
+왼쪽은 0의 양옆에서 다가가는 높이가 $$-1$$과 $$1$$로 갈린다. 오른쪽은 0에 다가갈수록 흔들림이 더 촘촘해져서, 어느 한 높이로 모이지 않는다[^s2].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">극한 법칙과 조임 정리</div>
@@ -193,4 +201,5 @@ $$\lim_{x \to 0}\frac{\sin 3x}{x}$$를 구한다.
 [^1]: OpenStax, *Calculus Volume 1*, 2.2절 "The Limit of a Function", 2.3절 "The Limit Laws"(조임 정리, $$\sin x / x$$)
 [^2]: OpenStax, *Calculus Volume 1*, 2.5절 "The Precise Definition of a Limit"
 [^s1]: 에이전트 보충. 싱크 함수와 표본화 정리(휘태커-섀넌 보간)는 신호 처리의 표준 내용이다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [01_limits_plot.py](/Hongs_Blog/studies/calculus/code/01_limits_plot/)로 그렸고, 예시 표의 값($$f(0.9) = 1.9$$, $$f(1.1) = 2.1$$ 등)과 0에 아무리 가까워도 $$\sin(1/x)$$가 1과 $$-1$$을 모두 지나는 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/fixed-point-iteration/"
 next_title: "고정점 반복"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/secant-method/"
 ---
 {% raw %}
@@ -41,6 +41,10 @@ $$f(x) = e^{-x} - x$$의 근(참값 0.56714329…)을 $$x_{-1} = 0$$, $$x_0 = 1$
 | 2 | $$x_0 = 1$$, $$x_1 = 0.61270$$ | $$-0.63212$$, $$-0.07081$$ | $$x_2 = 0.61270 - \frac{-0.07081(1 - 0.61270)}{-0.63212 - (-0.07081)} = 0.56384$$ | 0.58% |
 
 둘째 반복의 두 점은 모두 근의 오른쪽에 있다(함수 값이 둘 다 음수). 이분법이었다면 이렇게 할 수 없다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/29_secant-method_fig1.svg" alt="그림" loading="lazy">
+
+할선은 곡선 위 두 점을 잇는 직선이고, 이 직선이 $$x$$축과 만나는 곳(×)이 다음 점이다. 둘째 할선(주황)은 근 오른쪽의 두 점으로 그었는데도 근 바로 옆에 떨어진다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시 표, 뉴턴 방법 표, 수렴 차수(뉴턴 약 2.0, 할선 약 1.65), 근을 사이에 두지 않은 시작점, 분모 0의 실패, 카드 C2 — [29_secant-method_impl.py](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_impl/)</div>
@@ -110,4 +114,5 @@ $$x_{i+1} = x_i - \frac{f(x_i)(x_i - x_{i-1})}{f(x_i) - f(x_{i-1})}$$
 [^2]: 같은 자료, p.19
 [^3]: 같은 자료, p.21
 [^s1]: 에이전트 보충. 수렴 차수(황금비 1.618, 실험값 1.65), 가위치법과 브렌트 방법, 흔한 실수의 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [29_secant-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$x_1 = 0.61270$$, $$x_2 = 0.56384$$, 둘째 반복의 두 점에서 함수 값이 모두 음수.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Differentiation Rules", "거듭제곱 법칙", "power rule", "곱의 미분법", "product rule", "몫의 미분법", "quotient rule", "선형성", "linearity", "지수함수의 도함수", "로그함수의 도함수", "삼각함수의 도함수"]
 description: "모든 함수를 극한의 정의로 미분할 필요는 없다. 거듭제곱·지수·로그·삼각함수 몇 가지의 도함수와, 합·곱·몫을 미분하는 규칙만 있으면 대부분의 식을 기계적으로 미분한다. 이 규칙들이 컴퓨터가 식을 자동으로 미분하는 방법의 기본 부품이다. 다만 곱의 미분은 각 도함수의 곱이 아니다."
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/chain-rule/"
 next_title: "연쇄 법칙"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/differentiation-rules/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ $$(x^2 e^x)' = (x^2)'\,e^x + x^2\,(e^x)' = 2x e^x + x^2 e^x = (2x + x^2)e^x$$
 
 
 넓이로 보면 이해가 쉽다. 가로 $$f$$, 세로 $$g$$인 직사각형의 넓이 $$fg$$가 조금 변할 때, 가로가 늘어 생긴 띠 $$f'g$$와 세로가 늘어 생긴 띠 $$fg'$$가 더해진다. 모서리의 작은 조각은 $$h^2$$ 크기라 극한에서 사라진다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/05_differentiation-rules_fig1.svg" alt="그림" loading="lazy">
+
+입력이 $$h$$만큼 늘면 가로는 $$\Delta f \approx f'h$$, 세로는 $$\Delta g \approx g'h$$만큼 는다. 늘어난 넓이를 $$h$$로 나누면 주황 띠는 $$f'g$$, 초록 띠는 $$fg'$$로 남고, 보라 모서리만 0으로 줄어든다[^s1].
 
 ## 정의
 
@@ -137,4 +141,5 @@ $$\left(\dfrac{x + 1}{x - 1}\right)'$$을 구한다.
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.3절 "Differentiation Rules", 3.5절 "Derivatives of Trigonometric Functions", 3.9절 "Derivatives of Exponential and Logarithmic Functions"
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [05_differentiation-rules_plot.py](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_plot/)로 그렸다. 늘어난 양은 잘 보이게 크게 잡았다. 늘어난 넓이가 두 띠와 모서리의 합인 것, $$f = x^2$$, $$g = e^x$$, $$x = 1$$에서 모서리를 $$h$$로 나눈 값이 0으로 가는 것, $$(x^2e^x)' = (2x + x^2)e^x$$를 같은 코드로 확인했다.
 {% endraw %}

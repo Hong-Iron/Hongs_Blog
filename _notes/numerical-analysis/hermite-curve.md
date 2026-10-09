@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/curve-continuity/"
 next_title: "곡선의 연속성"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/hermite-curve/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/numerical-analysis/hermite-curve/"
 [3차 보간 곡선](/Hongs_Blog/studies/numerical-analysis/cubic-interpolation-curve/)을 이어 붙이면 이음점에서 기울기가 어긋난다. 검증 코드의 예에서 앞 조각은 이음점에서 $$(3, -9)$$ 방향으로 들어오고, 뒤 조각은 $$(3, -15)$$ 방향으로 나간다. 그래서 이음점이 꺾인다[^1].
 
 에르미트 곡선은 끝점의 접선을 직접 준다. $$\mathbf p(0) = (0, 0)$$, $$\mathbf p(1) = (4, 0)$$, $$\mathbf p'(0) = (0, 6)$$(위로 출발), $$\mathbf p'(1) = (0, -6)$$(아래로 도착)이면 아치 모양이 되고 가운데 $$u = \frac12$$에서 $$(2, 1.5)$$를 지난다. 다음 조각을 $$\mathbf p'(0) = (0, -6)$$으로 시작하면 이음점이 매끄럽다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/14_hermite-curve_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 두 조각이 이음점 $$(4, 0)$$에서 같은 접선 $$(0, -6)$$을 써서 꺾이지 않고 이어지는 모습이다. 오른쪽은 접선 방향은 그대로 두고 길이만 6에서 12로 늘린 것이다. 가운데 높이가 1.5에서 3으로 두 배가 된다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$M_H = A^{-1}$$, 블렌딩 함수, 끝점과 접선 재현, 예시와 카드 C2, 이음점의 C¹, 접선 길이에 따른 모양 — [14_hermite-curve_verify.py](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_verify/)</div>
@@ -101,4 +105,5 @@ $$\mathbf b(u) = \begin{pmatrix}2u^3 - 3u^2 + 1\\ -2u^3 + 3u^2\\ u^3 - 2u^2 + u\
 [^2]: 같은 자료, p.18~19
 [^3]: 같은 자료, p.19
 [^s1]: 에이전트 보충. 이음점 기울기 수치, 아치 예와 카드 C2, 블렌딩 함수의 역할 설명, 캣멀-롬 스플라인, 흔한 실수, 카드 C3은 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [14_hermite-curve_plot.py](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 가운데 점 $$(2, 1.5)$$와 $$(2, 3)$$, 이음점에서 두 조각의 도함수가 모두 $$(0, -6)$$. 화살표는 접선 벡터를 $$\frac13$$ 길이로 줄여 그렸다.
 {% endraw %}

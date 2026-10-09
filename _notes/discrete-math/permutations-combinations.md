@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Permutations", "Combinations", "순열", "조합", "이항계수", "binomial coefficient", "nCk", "nPk", "계승", "factorial", "파스칼 항등식", "Pascal's identity", "격자 경로", "lattice path"]
 description: "여러 개 중 몇 개를 뽑을 때, 뽑은 순서가 중요하면 순열이고 중요하지 않으면 조합이다. 순열은 자리마다 남은 것 중 하나를 고르는 곱이고, 조합은 그 순열을 \"같은 묶음을 늘어놓는 방법의 수\"로 나눈 것이다. 조합은 부분집합의 수, 길찾기의 경로 수, 확률 계산 어디에나 나온다.…"
@@ -19,7 +19,7 @@ next_url: "/studies/discrete-math/multiset-counting/"
 next_title: "중복을 허용하는 셈"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/discrete-math/permutations-combinations/"
 ---
 {% raw %}
@@ -142,6 +142,11 @@ permalink: "/studies/discrete-math/permutations-combinations/"
 
 - **네트워크.** 노드 $$n$$개를 모두 직접 잇는 링크 수는 두 노드의 짝 $$\binom{n}{2} = \frac{n(n-1)}{2}$$이다([점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/)).
 - **알고리즘 비용.** 크기 $$k$$인 부분집합을 모두 검사하는 알고리즘은 $$\binom{n}{k}$$번 돈다. $$k$$가 고정이면 $$n^k$$ 정도, $$k = n/2$$이면 $$\binom{n}{n/2} \approx \frac{4^{n/2}}{\sqrt{\pi n/2}}$$로 지수적이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/discrete-math/15_permutations-combinations_fig1.svg" alt="그림" loading="lazy">
+
+세로축이 로그 눈금이다. $$k$$를 2나 3으로 고정한 선은 점점 눕지만, $$k = n/2$$인 선은 곧은 직선으로 올라간다. 직선은 일정한 비율로 곱해지며 자란다는 뜻이라 지수적이다. 점선 어림은 $$n = 40$$에서 실제 값과 1% 안쪽으로 겹친다[^s1].
+
 - **계산.** 파이썬 `math.comb(n, k)`, `math.perm(n, k)`. 고정 폭 정수로 $$n!$$을 먼저 계산하면 금방 넘치므로, 파스칼 삼각형을 채우거나 곱하고 나누기를 번갈아 한다.
 - 알고리즘에서: `combinations`·`permutations`·`product`로 경우를 모두 만들어 보는 방법은 [완전탐색](/Hongs_Blog/studies/algorithms/brute-force/)에 있다. 순서만 다른 뽑기를 한 번만 세려고 [메뉴 리뉴얼](/Hongs_Blog/studies/algorithms/pg72411/)은 글자를 정렬한 문자열을 키로 쓰고, [불량 사용자](/Hongs_Blog/studies/algorithms/pg64064/)는 묶음마다 배정 수가 달라 $$k!$$로 나눌 수 없어서 고른 사람들을 `frozenset`으로 묶어 센다. 길이 $$n$$인 문자열의 모든 부분 문자열에서 (길이 − 1)을 더한 값은 글자 사이 경계 $$n + 1$$개 중 셋을 고르는 수 $$\binom{n+1}{3}$$이고, [문자열의 아름다움](/Hongs_Blog/studies/algorithms/pg68938/)이 여기서 출발한다. 그 밖에 [가장 많이 받은 선물](/Hongs_Blog/studies/algorithms/pg258712/), [재귀와 백트래킹 예제 사다리](/Hongs_Blog/studies/algorithms/backtracking-ladder/), [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/), [거리두기 확인하기](/Hongs_Blog/studies/algorithms/pg81302/), [시험장 나누기](/Hongs_Blog/studies/algorithms/pg81305/), [동적 계획법 예제 사다리](/Hongs_Blog/studies/algorithms/dp-ladder/)에서도 쓴다.
 
@@ -198,4 +203,5 @@ permalink: "/studies/discrete-math/permutations-combinations/"
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(순열, 부분집합 세기, 포커 패, 조합적 증명). OpenStax, *Precalculus 2e*, 11.5절 "Counting Principles".
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [15_permutations-combinations_plot.py](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_plot/)로 그렸고, $$\binom{40}{20} = 137{,}846{,}528{,}820$$과 어림 $$2^{40}/\sqrt{20\pi}$$의 차이가 1% 미만인 것, $$\binom{40}{3} = 9{,}880$$을 같은 코드로 확인했다.
 {% endraw %}

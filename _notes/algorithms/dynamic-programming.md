@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Dynamic Programming", "DP", "다이나믹 프로그래밍", "메모이제이션", "memoization", "점화식", "최적 부분 구조", "겹치는 부분 문제", "타뷸레이션"]
 description: "큰 문제를 작은 문제로 쪼갰는데 같은 작은 문제가 자꾸 다시 나오면, 한 번 푼 답을 표에 적어 두고 꺼내 쓴다. 피보나치 수를 그대로 재귀로 구하면 같은 값을 수백만 번 다시 구하지만, 표에 적으면 값마다 한 번씩만 구한다. 대신 \"작은 문제의 가장 좋은 답을 이어 붙이면 큰 문…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/interval-dp/"
 next_title: "구간 DP"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/dynamic-programming/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/algorithms/dynamic-programming/"
 ### 같은 계산의 반복
 
 피보나치 수 f(n) = f(n − 1) + f(n − 2)를 그대로 재귀로 구하면 f(30)을 구하는 데 함수를 2,692,537번 부른다. f(28)은 f(30)에서도, f(29)에서도 구하는 식으로 같은 값을 계속 다시 구하기 때문이다. 한 번 구한 값을 딕셔너리에 적어 두면 함수를 59번 부르고, 실제 계산은 f(0) ~ f(30)의 31번뿐이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/30_dynamic-programming_fig1.svg" alt="그림" loading="lazy">
+
+세로축은 10배마다 한 칸이다. 그대로 재귀로 구하면 n이 1 늘 때마다 부르는 횟수가 약 1.6배씩 늘어 곧은 선으로 올라간다. 표에 적어 두면 2n − 1번이라 n = 30에서도 59번이다[^s1].
 
 ### 그리디가 틀린 동전 문제
 
@@ -215,4 +219,5 @@ dp[x]를 구할 때 dp[x − c]를 읽는다. x − c < x이니 작은 금액부
 
 [^1]: 최적 부분 구조와 겹치는 부분 문제, 잘라 붙이기 논증은 Cormen 외, *Introduction to Algorithms* 3판, 15.3절 "Elements of dynamic programming". 동전 문제의 점화식과 기억하기는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 7.1 "Coin problem".
 [^2]: 편집 거리는 같은 책 7.5 "Edit distance", 벨만–포드와 플로이드–워셜은 13.1·13.3절. 맞춤법 교정과 DNA 서열 비교에 편집 거리를 쓰는 것은 위키백과 "Edit distance" 항목(Wagner–Fischer 동적 계획법)에, 문서 비교 도구 diff가 최장 공통 부분 수열 문제를 푼다는 것은 Hunt & McIlroy(1976) "An Algorithm for Differential File Comparison"과 위키백과 "Diff" 항목에 있다.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [30_dynamic-programming_plot.py](/Hongs_Blog/studies/algorithms/code/30_dynamic-programming_plot/)로 그렸고, f(30)에서 2,692,537번과 59번, 부르는 횟수를 점화식(횟수 = 1 + 앞 두 횟수의 합)으로 센 값이 실제로 센 값과 같다는 것(n ≤ 20), 표에 적으면 2n − 1번이라는 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["연산 모형", "뉴런 모델링", "인공 뉴런", "artificial neuron", "활성 함수", "activation function", "바이어스", "bias", "변환 행렬", "transform matrix", "선형-비선형 모형", "LN model"]
 description: "뉴런을 계산기로 보면, 여러 입력에 각각 무게를 곱해 더하고 그 결과를 정해진 범위 안으로 눌러 담는 장치다. 무게가 양수면 흥분, 음수면 억제다. 이 단순한 식 하나로 수렴·억제 같은 신경 회로를 계산할 수 있고, 인공 신경망의 기본 단위가 된다. 대신 시간에 따른 스파이크 하나…"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/perceptron/"
 next_title: "퍼셉트론"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/neuron-computational-model/"
 ---
 {% raw %}
@@ -89,6 +89,10 @@ $$
 | 자르기 | $$\min(\max(o, 0), r_{\max})$$ | $$[0, r_{\max}]$$ | 발화율의 하한 0과 상한 |
 | ReLU | $$\max(0, o)$$ | $$[0, \infty)$$ | 하한 0만 반영 |
 | 시그모이드 | $$1 / (1 + e^{-o})$$ | $$(0, 1)$$ | 부드럽게 포화하는 발화율 곡선 |
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/07_neuron-computational-model_fig1.svg" alt="그림" loading="lazy">
+
+네 함수 모두 합이 0보다 작으면 출력을 낮게 누른다. 위쪽은 서로 다르다. 계단·자르기·시그모이드는 1에서 멈추고, ReLU만 끝없이 올라간다[^s5].
 
 ## 증명
 
@@ -176,4 +180,5 @@ $$k$$층이면 같은 논리를 $$k - 1$$번 되풀이한다(수학적 귀납법
 [^s2]: 에이전트 보충. 활성 함수 표와 "층 쌓기" 논의는 원본 밖이다. 증명은 선형대수의 분배·결합법칙만 쓴다.
 [^s3]: 에이전트 보충. 템플릿·상관·합성곱 해석은 코시-슈바르츠 부등식에서 나온다. 선형-비선형(LN) 모형은 망막 신경절 세포 같은 뉴런의 반응을 설명하는 계산 신경과학의 표준 모형이다.
 [^s4]: 에이전트 보충. 기호주의와 연결주의의 구분은 인공지능 교과서(예: Russell & Norvig, *Artificial Intelligence: A Modern Approach*)의 표준 구분이다.
+[^s5]: 에이전트 보충. 그림 1장은 원본에 없다. [07_neuron-computational-model_plot.py](/Hongs_Blog/studies/human-interface-media/code/07_neuron-computational-model_plot/)로 그렸고, 그림에 쓴 값(계단 출력 $$\{0, 1\}$$, 자르기 $$[0, 1]$$, ReLU 하한 0, 시그모이드$$(0) = 0.5$$)을 같은 코드로 확인했다.
 {% endraw %}

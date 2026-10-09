@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Lagrange Multipliers", "라그랑주 승수법", "라그랑주 승수", "Lagrange multiplier", "라그랑지안", "Lagrangian", "제약 최적화", "constrained optimization", "잠재 가격", "shadow price", "KKT 조건", "KKT conditions", "레일리 몫", "Rayleigh quotient", "최대 엔트로피", "maximum entropy"]
 description: "산에 난 등산로(제약) 위로만 걸으면서 가장 높은 곳을 찾는다고 하자. 그 지점에서는 등고선이 등산로에 딱 스치듯 닿는다. 더 가면 내려가고, 덜 가도 내려가기 때문이다. 이 \"스치는\" 조건을 두 그래디언트가 같은 방향이라는 식으로 쓰고, 미지수 하나(승수)를 더해 연립방정식으로 …"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/ode-euler/"
 next_title: "미분방정식과 오일러 방법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/lagrange-multipliers/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/calculus/lagrange-multipliers/"
 둘레가 20인 직사각형 울타리의 넓이를 최대로 하려 한다. 가로 $$x$$, 세로 $$y$$로 두면 제약은 $$x + y = 10$$, 목표는 $$f(x, y) = xy$$다. 제약 직선 위를 움직이면 넓이는 $$x(10 - x)$$라 $$x = y = 5$$에서 25로 가장 크다.
 
 이 점에서 두 그래디언트를 비교한다. 목표의 그래디언트 $$\nabla f = (y, x) = (5, 5)$$($$\nabla f$$는 편미분을 모은 벡터(그래디언트)), 제약식 $$g(x, y) = x + y$$의 그래디언트 $$\nabla g = (1, 1)$$. 방향이 같고 $$\nabla f = 5\,\nabla g$$다. 등고선 $$xy = 25$$가 직선 $$x + y = 10$$에 접하는 점이다. 여기서 5가 아래 정리의 승수 $$\lambda$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/28_lagrange-multipliers_fig1.svg" alt="그림" loading="lazy">
+
+파란 직선을 따라 걸으면 회색 등고선 9, 16을 지나 초록 등고선 25에 스치듯 닿고, 다시 16, 9로 내려간다. 닿는 점 $$(5, 5)$$에서 두 화살표가 같은 방향을 가리킨다. 길이만 5배 다르다[^s2].
 
 ## 정의
 
@@ -129,4 +133,5 @@ $$\nabla f(\mathbf{x}^*) = \lambda\,\nabla g(\mathbf{x}^*)$$
 [^1]: OpenStax, *Calculus Volume 3*, 4.8절 "Lagrange Multipliers"(정리, 풀이 절차, 제약이 둘일 때).
 [^2]: Boyd, Vandenberghe, *Convex Optimization*, 5장 "Duality"(라그랑지안, 쌍대 문제, KKT 최적 조건, 승수의 민감도 해석).
 [^s1]: 에이전트 보충. 승수를 최적값의 민감도로 읽는 해석은 Boyd·Vandenberghe 5장에 있다. PCA가 공분산 행렬의 최대 고윳값 방향을 찾는다는 것은 [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/)에서 다룬다. 수치는 28_lagrange-multipliers_verify.py에서 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [28_lagrange-multipliers_plot.py](/Hongs_Blog/studies/calculus/code/28_lagrange-multipliers_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. 직선 위 최댓값 25가 $$x = 5$$에서 나오는 것, $$\nabla f = 5\nabla g$$, 등고선 $$xy = 25$$의 $$(5, 5)$$ 접선 기울기가 직선과 같은 $$-1$$인 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Parametric Search", "Binary Search on Answer", "결정 문제", "답 이분 탐색", "이분 탐색으로 답 찾기"]
 description: "\"가장 길게 자르면 몇 cm?\"처럼 가장 좋은 값을 바로 구하기 어려우면, \"7cm로 자르면 되나?\"라는 예·아니오 질문으로 바꿔 묻는다. 길이를 늘리면 대답이 \"된다, 된다, …, 안 된다, 안 된다\"처럼 딱 한 번만 바뀌니, 바뀌는 경계를 이분 탐색으로 찾는다. 답이 1부터 1…"
@@ -19,7 +19,7 @@ next_url: "/studies/algorithms/greedy/"
 next_title: "그리디"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/algorithms/parametric-search/"
 ---
 {% raw %}
@@ -55,6 +55,10 @@ L이 커지면 토막 수는 줄기만 한다. 그래서 대답은 "예"가 이�
 | 4 | 4 | | | | lo == hi → 답 4 |
 
 11가지 L 중 네 개만 물었다. [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)과 같은 일을 하는데, 정렬된 리스트 대신 "예·아니오의 줄"에서 경계를 찾는다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/algorithms/21_parametric-search_fig1.svg" alt="그림" loading="lazy">
+
+L이 커지면 토막 수가 줄기만 한다. 그래서 5개 점선에 닿는 초록 막대와 못 닿는 주황 막대가 L = 4와 5 사이에서 딱 한 번 갈린다. 동그라미 숫자는 이분 탐색이 물은 순서이고, L = 6, 3, 4, 5 차례다[^s1].
 
 ## 정의
 
@@ -229,4 +233,5 @@ def max_true(lo, hi, ok):          # 참…참 거짓…거짓, ok(lo)는 참
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search"의 Finding the smallest solution: ok(x)가 x < k에서 거짓, x ≥ k에서 참이면 k를 이분 탐색으로 찾고, ok를 O(log z)번 부른다. 불변식 증명의 형식은 Cormen 외, *Introduction to Algorithms* 3판 2.1절을 따랐다.
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [21_parametric-search_plot.py](/Hongs_Blog/studies/algorithms/code/21_parametric-search_plot/)로 그렸고, 토막 수(L = 1 ~ 6에서 24, 11, 6, 5, 4, 2), 토막 수가 L에 따라 늘지 않는다는 것, max_true 틀이 6, 3, 4, 5를 묻고 4를 돌려준다는 것을 같은 코드로 확인했다.
 {% endraw %}

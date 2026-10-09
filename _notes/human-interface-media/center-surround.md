@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Center-surround Antagonism", "중심-주변", "길항 작용", "Antagonism", "수용장", "receptive field", "흥분성 중심", "억제성 주변"]
 description: "과녁 모양의 감지 구역을 가진 뉴런이다. 과녁 가운데에 자극이 오면 신나게 발화하고, 둘레에 오면 오히려 발화를 줄인다. 그래서 넓고 고른 자극에는 둔하고, 가운데와 둘레의 차이, 곧 경계나 작은 점에 민감하다. 가운데를 딱 채우는 크기의 자극에 가장 세게 반응한다."
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/wave-and-light/"
 next_title: "파동과 빛"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/center-surround/"
 ---
 {% raw %}
@@ -67,6 +67,10 @@ $$
 
 $$S_{\text{중심}}$$과 $$S_{\text{주변}}$$은 자극이 가운데와 둘레를 덮은 넓이, $$r_0$$는 자발 발화, $$g > 0$$은 민감도, $$k > 0$$은 둘레 억제의 세기다. 반지름 $$\rho$$인 둥근 자극을 가운데에 놓으면, $$\rho$$가 1이 될 때까지는 $$S_{\text{중심}}$$만 늘어 반응이 커진다. $$\rho$$가 1을 넘으면 $$S_{\text{주변}}$$만 늘어 반응이 작아진다. 그래서 $$k$$가 얼마든 반응은 $$\rho = 1$$에서 가장 크다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/10_center-surround_fig1.svg" alt="그림" loading="lazy">
+
+네 곡선은 $$\rho = 1$$까지 한 줄로 겹쳐 오르다가, 둘레로 넘어가는 순간 꺾여 내려간다. $$k$$가 클수록 더 빨리 떨어지고, $$k = 1$$이면 $$\rho \approx 1.52$$에서 0에 닿는다[^s5].
+
 가운데와 둘레의 억제 총량이 같게 맞춰져 있으면($$k \cdot 3\pi = \pi$$, 곧 $$k = 1/3$$) 수용장 전체를 고르게 비출 때 반응은 자발 발화 그대로다. 빛의 경계가 수용장을 지나면 반응이 오르거나 내린다. 이 뉴런은 밝기 자체가 아니라 밝기의 차이를 보고한다.
 
 <div class="callout callout-check" markdown="1">
@@ -85,6 +89,10 @@ $$
 
 
 이다. $$R(0) = 0$$이라 고른 빛(공간 주파수 0)은 통과하지 못한다. 약 $$u = 0.29$$ 사이클/단위에서 가장 크고, 촘촘한 줄무늬($$u \ge 3$$)에서는 최대의 20%도 안 된다. 너무 성기지도, 너무 촘촘하지도 않은 무늬만 통과시키는 대역 통과 필터다. 줄무늬 한 줄의 폭이 가운데 크기와 비슷할 때 가장 세게 반응한다는 뜻이다. 영상 처리에서는 가우스 두 개의 차(DoG)나 가우스의 라플라시안(LoG)이 같은 모양의 필터로, 경계 검출에 쓴다. 강의 계획표 6주차 "Spatial Frequency"와 7주차 "Convolution"의 대상이다[^2][^s3].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/10_center-surround_fig2.svg" alt="그림" loading="lazy">
+
+큰 봉우리 뒤로 작은 봉우리가 줄지어 있다. 그 사이에는 $$u = 0.5, 1, 1.5, \dots$$처럼 $$u$$가 0.5 늘 때마다 반응이 0으로 떨어지는 자리가 있다[^s5].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 공식과 수치 적분이 $$u = 0.1, 0.29, 0.5, 1.3, 3.2$$에서 일치, $$R(0) = 0$$, 최대 $$u \approx 0.287$$, $$u \ge 3$$에서 최대의 20% 미만 (실험으로 확인됨) — [10_center-surround_verify.py](/Hongs_Blog/studies/human-interface-media/code/10_center-surround_verify/)</div>
@@ -142,4 +150,5 @@ $$
 [^s2]: 에이전트 보충. 넓이 모형과 그 식은 원본에 없다. 슬라이드 (a)~(d)의 순서를 설명하려는 설명용 모형이다. (a)와 (c)의 크기 순서는 $$k$$에 따라 달라지므로 모형에서 주장하지 않는다.
 [^s3]: 에이전트 보충. 1차원 줄무늬 응답 공식은 가중치 함수 $$w(x)$$(가운데 +1, 둘레 −1)와 $$\cos(2\pi ux)$$의 적분에서 나온다. $$\int_{-1}^{1}\cos(2\pi ux)\,dx - 2\int_{1}^{2}\cos(2\pi ux)\,dx = \frac{2\sin 2\pi u - \sin 4\pi u}{\pi u}$$이고, $$\sin 4\pi u = 2\sin 2\pi u\cos 2\pi u$$로 정리했다. DoG·LoG 필터는 Marr와 Hildreth(1980)의 경계 검출 이론에서 널리 알려졌다.
 [^s4]: 에이전트 보충. 학습된 첫 층 필터의 모양은 Krizhevsky, Sutskever & Hinton(2012, AlexNet) 논문의 그림 등에서 보고되었다. Hubel & Wiesel(1959~1962)의 수용장 연구와 Fukushima(1980)의 네오코그니트론은 신경망 교과서의 표준 역사다.
+[^s5]: 에이전트 보충. 그림 두 장은 원본에 없다. [10_center-surround_plot.py](/Hongs_Blog/studies/human-interface-media/code/10_center-surround_plot/)로 그렸고, 그림에 쓴 값($$r_0 = 10$$, $$g = 10$$, $$k = 0.2, 1/3, 0.5, 1$$에서 최대가 $$\rho = 1$$, $$k = 1$$일 때 0이 되는 $$\rho = \sqrt{2 + 1/\pi} \approx 1.52$$, 줄무늬 반응의 최대 $$u \approx 0.287$$, $$u = 0.5, 1, 1.5, 2$$에서 반응 0, $$u \ge 3$$에서 최대의 20% 미만)을 같은 코드로 확인했다.
 {% endraw %}

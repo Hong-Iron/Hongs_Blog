@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Periodic Signal", "주기", "Period", "기본 주기", "Fundamental Period", "비주기 신호", "Aperiodic Signal"]
 description: "일정한 시간마다 똑같은 모양이 끝없이 되풀이되는 신호다. 시계 초침처럼, 한 바퀴 시간만큼 밀어도 그림이 그대로다. 되풀이 간격 중 가장 짧은 것을 기본 주기라 한다. 한 구간만 반복처럼 보여서는 안 되고, 모든 시간에서 맞아야 한다. 그래서 한쪽은 \\cos, 다른 쪽은 \\sin으…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/even-odd-signals/"
 next_title: "짝 신호와 홀 신호"
 math: true
 mermaid: false
-code_count: 0
+code_count: 1
 permalink: "/studies/signals-and-systems/periodic-signals/"
 ---
 {% raw %}
@@ -63,6 +63,10 @@ $$x(t) = \begin{cases}\cos t & t < 0\\ \sin t & t \ge 0\end{cases}$$
 - 그런데 $$t = 0$$에서 $$\cos 0 = 1$$이 $$\sin 0 = 0$$으로 갑자기 바뀐다. 이 끊김은 $$t = 0$$ 한 곳에만 있고 $$2\pi$$나 $$-2\pi$$에는 없다.
 - 그래서 $$2\pi$$만큼 밀면 끊김의 위치가 달라지고, 신호는 주기적이지 않다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/06_periodic-signals_fig1.svg" alt="그림" loading="lazy">
+
+$$x(t)$$를 $$2\pi$$만큼 왼쪽으로 민 점선은 색칠한 $$-2\pi \le t < 0$$에서만 원래 신호와 어긋난다. 그 구간에서 한쪽은 코사인, 다른 쪽은 사인이다[^s2].
+
 ## 활용
 
 - 교류 전기, 음의 높이, 시계 신호는 주기 신호다. 3장의 푸리에 급수는 주기 신호를 정현파들의 합으로 나눈다.
@@ -95,4 +99,5 @@ $$x(t) = \begin{cases}\cos t & t < 0\\ \sin t & t \ge 0\end{cases}$$
 [^1]: 3-1학기/신호 및 시스템/1.수업자료/02.Week02_CH01_1_handout.pdf, p.36
 [^2]: 같은 자료, p.37 (예제 1.4, 그림 1.16)
 [^s1]: 에이전트 보충. 상수 신호의 기본 주기가 정의되지 않는다는 설명(3주차 자료 p.4의 "$$\omega_0 = 0$$이면 기본 주기 정의 안 됨"과 같은 내용), 확인 문제 C1, C2의 $$\sin t \cdot u(t)$$ 예는 원본에 없다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [06_periodic-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/06_periodic-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$t = -\frac\pi2$$에서 $$x(t) = 0$$, $$x(t + 2\pi) = -1$$로 다르고, $$t = 1$$과 $$t = -7$$에서는 같음.
 {% endraw %}

@@ -19,7 +19,7 @@ next_url: "/studies/calculus/convexity/"
 next_title: "볼록 함수와 볼록 최적화"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/calculus/gradient-descent/"
 ---
 {% raw %}
@@ -145,6 +145,10 @@ $$f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot\mathbf{d} + \frac{
 3. *$$\eta = 0.09$$:* $$x$$는 0.82배씩, $$y$$는 $$-0.8$$배씩 준다. $$y$$가 매 걸음 부호를 바꾸며 골짜기 벽을 오가는 지그재그를 그리면서 수렴한다.
 4. *$$\eta = 0.1$$이나 $$0.11$$:* $$y$$ 쪽 인수가 $$-1$$이 되어 제자리에서 진동하거나, $$-1.2$$가 되어 발산한다. 완만한 $$x$$ 방향은 멀쩡한데도 가파른 방향 하나가 학습률의 상한을 정한다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig1.svg" alt="그림" loading="lazy">
+
+$$\eta = 0.09$$로 25걸음 간 길이다. 가파른 $$y$$ 방향으로는 골짜기 벽을 넘나들며 위아래로 튀고, 완만한 $$x$$ 방향으로는 조금씩만 다가간다. 그래서 바닥(+)으로 곧장 가지 못하고 톱니 모양으로 간다[^s2].
+
 이 상황을 [조건수](/Hongs_Blog/studies/linear-algebra/conditioning/) $$\kappa = \frac{L}{\mu} = 10$$으로 요약한다. $$\kappa$$가 클수록 골짜기가 좁고 길어 느리다.
 
 <div class="callout callout-check" markdown="1">
@@ -165,6 +169,10 @@ $$f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})\cdot\mathbf{d} + \frac{
 
 - **뉴턴 방법과 비교.** [뉴턴 방법](/Hongs_Blog/studies/calculus/linear-approx-newton/)은 $$\mathbf{x} \leftarrow \mathbf{x} - H^{-1}\nabla f$$로 곡률까지 써서 이차함수라면 한 걸음에 끝난다. 대신 헤세 행렬을 저장하는 데 $$n^2$$, 풀어 쓰는 데 $$O(n^3)$$이 든다. 변수가 $$10^6$$개면 헤세 행렬 원소만 $$10^{12}$$개라, 대규모 학습은 경사 하강법 계열을 쓴다.
 - **모멘텀.** 이전 걸음의 방향을 일정 비율 이어 가면 지그재그가 서로 상쇄된다. 조건수 100인 이차함수에서 오차를 $$10^{-6}$$배로 줄이는 데, $$\eta = \frac1L$$이면 약 1,340걸음, 가장 좋은 고정 학습률 $$\frac{2}{L + \mu}$$이면 약 690걸음, 모멘텀(헤비볼)이면 약 90걸음이 걸렸다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/26_gradient-descent_fig2.svg" alt="그림" loading="lazy">
+
+세로축이 로그 눈금이라 세 방법 모두 곧은 선으로 줄어든다. 선이 가파를수록 한 걸음에 더 많이 줄인다. 점선 $$10^{-6}$$에 닿는 걸음 수가 위 문장의 세 숫자다[^s2].
 - **확률적 경사 하강법(SGD).** 데이터가 수백만 개면 전체 기울기 대신 작은 묶음(미니배치)으로 어림한 기울기를 쓴다. Adam 같은 방법은 좌표마다 학습률을 따로 맞춘다[^2].
 - **흔한 실수.** 입력 특성의 크기가 제각각이면(예: 나이는 수십, 소득은 수천만) 조건수가 커져 느려진다. 특성을 표준화하면 골짜기가 둥글어진다.
 - 연습: [경사 하강법 예제 사다리](/Hongs_Blog/studies/calculus/gradient-descent-ladder/)
@@ -260,4 +268,5 @@ def step(w, X, y, lr):
 [^n2]: 같은 자료, p.18~19
 [^n3]: 같은 자료, p.20~21
 [^sn1]: 에이전트 보충. 슬라이드 p.21은 $$(0.2, -0.2)$$를 "최적점"이라 부르는데, 이것은 직선 위의 최적점이라는 뜻이다. 둘째 걸음, 참 최대점 $$(2, 1)$$, 수직인 이웃 방향, 카드 C5는 원본에 없다. 26_gradient-descent_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [26_gradient-descent_plot.py](/Hongs_Blog/studies/calculus/code/26_gradient-descent_plot/)로 그렸고, $$\eta = 0.09$$에서 $$x$$는 0.82배, $$y$$는 $$-0.8$$배씩 줄며 부호가 바뀌는 것, 오차를 $$10^{-6}$$배로 줄이는 걸음 수 1,341, 691, 93(문서의 약 1,340, 690, 90)을 같은 코드로 확인했다.
 {% endraw %}

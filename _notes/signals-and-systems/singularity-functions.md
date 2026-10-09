@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Singularity Functions", "이상화된 짧은 펄스", "Idealized Short Pulse", "단위 램프", "Unit Ramp", "컨벌루션으로 정의한 임펄스", "Defining the Unit Impulse through Convolution"]
 description: "특이함수는 값이 갑자기 뛰거나(불연속) 기울기가 갑자기 바뀌는 함수로, 단위 계단·단위 임펄스·단위 램프가 대표다. 그중 단위 임펄스는 \"충분히 짧고 넓이가 1인 펄스\"를 이상화한 것이다. 실제 시스템은 아주 짧은 시간의 모양 차이를 구별하지 못해서, 짧은 펄스가 사각형이든 삼각형…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/lti-eigenfunction/"
 next_title: "LTI 시스템의 고유함수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/singularity-functions/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ $$\frac{dy}{dt} + 2y = x$$ 시스템(임펄스 응답 $$h(t) = e^{-2t}u(t)$$)에
 - $$r_\Delta(t) = \delta_\Delta(t) * \delta_\Delta(t)$$: 폭 $$2\Delta$$, 꼭대기 높이 $$\frac1\Delta$$인 삼각 펄스.
 
 $$\Delta = 0.25$$이면 두 응답의 모양이 눈에 띄게 다르다. $$\Delta = 0.1$$, $$0.0025$$로 줄이면 차이가 줄고, 모두 $$h(t) = e^{-2t}u(t)$$로 모인다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/27_singularity-functions_fig1.svg" alt="그림" loading="lazy">
+
+굵은 회색 선이 $$h(t) = e^{-2t}$$다. $$\Delta = 0.25$$에서는 사각 펄스와 삼각 펄스의 응답이 서로 다르고 $$h$$와도 다르지만, $$\Delta = 0.1$$에서는 셋이 거의 겹친다[^s2].
 
 ## 정의
 
@@ -100,4 +104,5 @@ $$x(t) = x(t) * \delta(t)$$
 [^4]: 같은 자료, p.1~4
 [^5]: 같은 자료, p.1, p.7
 [^s1]: 에이전트 보충. 충격 시험 예와 시간 상수 비교, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [27_singularity-functions_plot.py](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 두 펄스의 넓이 1, 사각 펄스 응답의 닫힌 꼴, $$\Delta = 0.25 \to 0.1 \to 0.0025$$로 갈수록 $$h$$와의 차이가 줄어듦.
 {% endraw %}

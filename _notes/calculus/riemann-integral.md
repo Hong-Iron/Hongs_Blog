@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Definite Integral", "정적분", "Riemann Sum", "리만 합", "리만 적분", "Riemann integral", "적분 가능", "integrable", "상합", "하합", "Darboux sum", "수치 적분", "numerical integration", "사다리꼴 규칙", "trapezoidal rule", "심프슨 규칙", "Simpson's rule"]
 description: "속도계 기록만으로 이동 거리를 구하려면, 짧은 시간마다 \"그때 속도 × 시간\"을 더하면 된다. 시간을 잘게 나눌수록 이 합은 참값에 다가가고, 그 극한이 정적분이다. 거리, 넓이, 누적 사용량처럼 \"변하는 양을 쌓은 것\"을 모두 이 방법으로 정의한다. 다만 값이 아래로 내려가면 음…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/ftc/"
 next_title: "미적분의 기본정리"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/calculus/riemann-integral/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/calculus/riemann-integral/"
 | 300 | 8.95505 | 9.04505 |
 
 속도가 계속 커지므로 왼쪽 끝 합은 모자라고 오른쪽 끝 합은 넘친다. 두 합이 함께 9로 모이므로 거리는 9 m다. 그래프로 보면 곡선 $$y = t^2$$ 아래 $$[0, 3]$$ 구간의 넓이다. 속도 함수가 아래 정의의 $$f$$, 칸의 폭이 $$\Delta x$$, 칸마다 고른 시각이 $$x_i^*$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig1.svg" alt="그림" loading="lazy">
+
+표의 $$n = 6$$ 줄이다. 왼쪽은 막대마다 곡선 아래에 틈이 남고, 오른쪽은 막대가 곡선 위로 삐져나온다. 두 그림에서 막대와 곡선이 어긋난 부분이 칸을 잘게 할수록 함께 줄어든다[^s1].
 
 ## 정의
 
@@ -140,6 +144,10 @@ $$\int_0^1 x\,dx$$를 정의대로 구한다.
 ## 활용
 
 - **수치 적분.** 원시함수를 모르는 함수(예: $$e^{-x^2}$$)는 리만 합으로 계산한다. 칸 수 $$n$$을 두 배로 할 때 오차가 왼쪽 끝 합은 약 절반, 사다리꼴 규칙은 약 $$\frac14$$, 심프슨 규칙은 약 $$\frac{1}{16}$$로 준다(매끄러운 함수)[^3]. 구현: [11_riemann-integral_impl.py](/Hongs_Blog/studies/calculus/code/11_riemann-integral_impl/).
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/11_riemann-integral_fig2.svg" alt="그림" loading="lazy">
+
+$$\int_0^1 e^x\,dx$$를 세 방법으로 계산한 오차다. 두 눈금이 모두 로그라 세 선이 곧게 내려가고, 기울기가 가파를수록 칸을 늘릴 때 오차가 빨리 준다. 심프슨 규칙은 칸 512개면 오차가 $$10^{-12}$$ 아래다[^s1].
 - **누적량.** 전력(W)을 시간에 대해 적분하면 에너지(J), 네트워크 전송률을 적분하면 보낸 데이터 양이다. 로그가 일정 간격으로 찍힌 측정값이면 그 자체가 리만 합이다.
 - **확률.** 연속 확률변수의 확률은 확률밀도 함수 아래 넓이다([연속 확률변수와 확률밀도](/Hongs_Blog/studies/probability-statistics/continuous-rv/)).
 - **흔한 실수.** 넓이를 구하면서 $$x$$축 아래 부분을 음수로 더하는 것. 넓이는 $$\int \vert f\vert $$다.
@@ -199,4 +207,5 @@ $$\int_0^1 x\,dx$$를 정의대로 구한다.
 [^1]: OpenStax, *Calculus Volume 1*, 5.1절 "Approximating Areas"(왼쪽·오른쪽 끝 합, 상합·하합), 5.2절 "The Definite Integral"(정의, 적분 가능성, 성질).
 [^2]: 에이전트 보충. 다르부 판정과 "불연속점이 유한 개인 유계 함수는 적분 가능"은 해석학 교재의 리만 적분 장에 있는 표준 결과다. 이 문서에서는 증가함수의 경우만 증명했다. 계단 함수의 값 3은 11_riemann-integral_verify.py에서 확인했다.
 [^3]: OpenStax, *Calculus Volume 2*, 3.6절 "Numerical Integration"(중점·사다리꼴·심프슨 규칙과 오차 한계). 오차 비율은 11_riemann-integral_verify.py에서 실험으로 확인했다.
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [11_riemann-integral_plot.py](/Hongs_Blog/studies/calculus/code/11_riemann-integral_plot/)로 그렸고, 표의 $$L_6 = 6.875$$, $$R_6 = 11.375$$와, $$n$$을 64에서 128로 늘릴 때 오차 비율이 왼쪽 끝 합 약 2, 사다리꼴 약 4, 심프슨 약 16인 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/finite-difference-bvp/"
 next_title: "유한 차분법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/shooting-method/"
 ---
 {% raw %}
@@ -51,6 +51,10 @@ $$z(0) = 10 + \frac{20 - 10}{285.8980 - 168.3797}(200 - 168.3797) = 12.6907$$
 
 
 이 기울기로 다시 쏘면 $$T(10) = 200$$이 정확히 나온다. 첫 번째는 끝에서 모자라고(168), 두 번째는 넘쳤던(286) 것을 그림으로 보면 사이에서 과녁을 맞힌다[^3].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/36_shooting-method_fig1.svg" alt="그림" loading="lazy">
+
+점선 두 개가 짐작한 두 기울기로 쏜 결과다. 하나는 끝에서 168로 모자라고, 하나는 286으로 넘친다. 두 결과를 직선으로 보간한 기울기 12.69로 쏘면 초록 선처럼 과녁 200을 맞힌다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 슬라이드의 두 $$T(10)$$(RK4, 걸음 2)과 $$z(0) = 12.6907$$, 보간한 기울기로 정확히 200, 참값과 비교, 비선형 문제를 할선법으로, 선형 보간 한 번으로는 비선형 실패, 카드 C2 — [36_shooting-method_impl.py](/Hongs_Blog/studies/numerical-analysis/code/36_shooting-method_impl/)</div>
@@ -122,4 +126,5 @@ $$g$$를 계산할 때마다 미분방정식을 끝까지 푸는 셈이다. [할
 [^5]: 같은 자료, p.5
 [^6]: 같은 자료, p.9
 [^s1]: 에이전트 보충. 선형이면 보간이 정확한 이유, 쓰는 곳, 비선형 예($$y'' = 1.5y^2$$)와 두 번째 답, 흔한 실수, 카드 C2·C3은 원본에 없다. 슬라이드의 168.3797, 285.8980은 RK4 걸음 2로 계산한 값이다. 참값은 168.3817, 285.9019다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [36_shooting-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/36_shooting-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 걸음 2의 RK4로 $$T(10)$$ = 168.3797과 285.8980, 보간한 기울기 12.6907로 정확히 200. 곡선은 걸음 0.05로 그렸다.
 {% endraw %}

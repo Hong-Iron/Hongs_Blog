@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Transform for Periodic Signals", "주기 신호의 스펙트럼", "임펄스 열", "Impulse Train", "선 스펙트럼", "Line Spectrum"]
 description: "주기 신호는 에너지가 무한대라 보통의 적분으로는 변환이 나오지 않는다. 대신 임펄스를 쓰면 된다. 주기 신호는 고조파 주파수에만 성분이 있으므로, 그 변환은 고조파 자리에 세운 임펄스들의 줄이다. k번째 임펄스의 넓이는 푸리에 급수 계수의 2\\pi배다. 그래서 주기 신호와 비주기 …"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/fourier-transform-properties/"
 next_title: "푸리에 변환의 성질"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/periodic-fourier-transform/"
 ---
 {% raw %}
@@ -54,6 +54,10 @@ $$X(j\omega) = \sum_{k=-\infty}^{\infty}2\pi a_k\,\delta(\omega - k\omega_0)$$
 ## 예제
 
 **예제 4.6 주기 사각파**[^2]. 계수 $$a_k = \frac{2\sin(k\omega_0T_1)}{k\omega_0T}$$(예제 3.5)이므로 $$X(j\omega) = \sum_k\frac{2\sin(k\omega_0T_1)}{k}\delta(\omega - k\omega_0)$$. $$T = 4T_1$$이면 $$k\omega_0T_1 = \frac{k\pi}{2}$$라 넓이는 $$\pi\,\mathrm{sinc}(\frac k2)$$: $$k = 0$$에서 $$\pi$$, $$k = \pm1$$에서 2, $$k = \pm2$$에서 0, $$k = \pm3$$에서 $$-\frac23$$(그림 4.12). 계수 막대그래프를 $$2\pi$$배 한 모양이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/39_periodic-fourier-transform_fig1.svg" alt="그림" loading="lazy">
+
+화살표 길이가 임펄스의 넓이 $$\pi, 2, 0, -\frac23, \dots$$이다. 화살표 끝은 모두 펄스 하나의 변환 $$\frac{2\sin\omega T_1}{\omega}$$에 $$\omega_0$$를 곱한 점선 위에 있다[^s2].
 
 **예제 4.7 정현파**[^3]
 
@@ -113,4 +117,5 @@ $$X(j\omega) = \frac{2\pi}{T}\sum_{k=-\infty}^{\infty}\delta\left(\omega - \frac
 [^3]: 같은 자료, p.4 (예제 4.7, 그림 4.13)
 [^4]: 같은 자료, p.5 (예제 4.8, 그림 4.14)
 [^s1]: 에이전트 보충. 스펙트럼 분석기 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [39_periodic-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/39_periodic-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$T_1 = 1$$, $$T = 4$$에서 넓이 $$\pi, 2, 0, -\frac23$$이 $$2\pi a_k$$와 같고, 합성식으로 사각파 값 1과 0이 되돌아옴.
 {% endraw %}

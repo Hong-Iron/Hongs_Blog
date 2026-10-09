@@ -19,7 +19,7 @@ next_url: "/studies/data-science/contrast--kmeans-kmedoids/"
 next_title: "k-평균과 k-메도이드 비교"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/k-medoids/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ k-평균과 같은 방식으로 무리를 나누지만, 무리의 대표를 평�
 | 3 | 2, 9 | 그대로 | 20 → 멈춤 |
 
 3단계에서 둘째 무리 {8, 9, 10, 25}의 대표를 고른다. 8은 다른 점들까지 거리 합이 $$1 + 2 + 17 = 20$$, 9는 $$1 + 1 + 16 = 18$$이다. 9가 대표가 된다. 25가 아무리 멀어도 대표는 실제 점 중에서 고르므로 8~10 근처를 벗어나지 않는다. 중앙값이 평균보다 이상치에 덜 흔들리는 것과 같은 이유다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/26_k-medoids_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 같은 점 일곱 개에서 k-평균의 중심(2, 13)과 k-메도이드의 대표(2, 9)다. 오른쪽은 둘째 무리 {8, 9, 10, 튀는 점}에서 튀는 점을 10부터 60까지 멀리 보낸 결과다. 평균은 따라서 계속 커지고, 메도이드는 9에 머문다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 추적, 편집 거리로 단어 묶기, 무작위 200회에서 비용 단조 감소(맨해튼 거리), 거리 계산 횟수 — [26_k-medoids_impl.py](/Hongs_Blog/studies/data-science/code/26_k-medoids_impl/)</div>
@@ -121,4 +125,5 @@ k개 점을 무작위로 골라 메도이드로 정한다
 [^2]: 같은 자료, p.15
 [^3]: 같은 자료, p.16
 [^s1]: 에이전트 보충. 1차원 추적, 거리 계산 횟수, 단어 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다. 원래 PAM(Kaufman & Rousseeuw, 1990)은 메도이드와 다른 점을 맞바꾸는 방식이고, 슬라이드의 갱신은 군집마다 메도이드를 다시 고르는 간단한 방식이다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [26_k-medoids_plot.py](/Hongs_Blog/studies/data-science/code/26_k-medoids_plot/)로 그렸고, k-평균의 중심 2, 13과 메도이드 2, 9, 튀는 점이 10~60일 때 메도이드가 늘 9인 것을 같은 코드로 확인했다. 10도 다른 점들까지 거리 합이 $$2 + 1 + 15 = 18$$로 9와 같다. 거리 합이 같으면 앞에 있는 9를 고른다.
 {% endraw %}

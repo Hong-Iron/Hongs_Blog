@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Inverse Trigonometric Functions", "아크사인", "arcsin", "asin", "아크코사인", "arccos", "acos", "아크탄젠트", "arctan", "atan", "atan2", "주치", "principal value"]
 description: "역삼각함수는 삼각함수의 값을 보고 각을 되찾는 함수다. 사인은 한 바퀴 안에서도 같은 값을 두 번 내므로 그대로는 되돌릴 수 없고, 입력 범위를 반 바퀴로 잘라야 되돌릴 수 있다. 그래서 역삼각함수가 돌려주는 각은 가능한 답 가운데 하나뿐이다. 방향각을 구할 때는 어느 사분면인지 …"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/triangle-laws/"
 next_title: "사인 법칙과 코사인 법칙"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/inverse-trig/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ $$\sin\theta = \frac12$$인 각은 $$\frac{\pi}{6}$$과 $$\frac{5\pi}{6}$$이 �
 ## 정의
 
 [역함수](/Hongs_Blog/studies/college-math/inverse-function/)는 일대일 함수에만 있으므로, 삼각함수의 정의역을 값이 한 번씩만 나오는 구간으로 자른다[^1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/15_inverse-trig_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽에서 가로선 $$y = 1/2$$은 사인 그래프와 끝없이 많이 만난다. 굵게 칠한 $$[-\pi/2, \pi/2]$$ 부분과는 $$\pi/6$$에서 한 번만 만난다. 그 굵은 부분을 직선 $$y = x$$에 대해 뒤집은 것이 오른쪽의 $$\arcsin x$$다[^s2].
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -99,6 +103,10 @@ $$[0, 2\pi)$$에서 $$\sin\theta = \frac12$$을 푼다.
 </div>
 
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/15_inverse-trig_fig2.svg" alt="그림" loading="lazy">
+
+회색 띠 $$[-\pi/2, \pi/2]$$ 안에서만 $$\arcsin(\sin x)$$가 점선 $$y = x$$와 겹친다. 띠 밖에서는 $$-\pi/2$$와 $$\pi/2$$ 사이를 지그재그로 오갈 뿐이라 $$x$$로 돌아오지 않는다[^s2].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -129,4 +137,5 @@ $$[0, 2\pi)$$에서 $$\sin\theta = \frac12$$을 푼다.
 
 [^1]: OpenStax, *Precalculus 2e*, 6.3절 "Inverse Trigonometric Functions", 일반해는 7.5절 "Solving Trigonometric Equations"
 [^s1]: 에이전트 보충. atan2는 C·파이썬·자바스크립트 등 대부분의 수학 라이브러리에 있는 함수로, 인자 순서가 $$(y, x)$$다. 코사인 유사도가 1을 넘는 벡터 $$(-0.4, 0.5, 0.2)$$는 검증 코드로 찾아 확인했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [15_inverse-trig_plot.py](/Hongs_Blog/studies/college-math/code/15_inverse-trig_plot/)로 그렸고, 그림에 쓴 값($$\arcsin(1/2) = \pi/6$$, 그림에 찍은 해에서 모두 $$\sin\theta = 1/2$$, $$\arcsin(\sin\frac{2\pi}{3}) = \frac{\pi}{3}$$)을 같은 코드로 확인했다.
 {% endraw %}

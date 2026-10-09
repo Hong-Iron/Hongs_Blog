@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/orthogonal-projection/"
 next_title: "직교성과 직교 사영"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/determinant/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/determinant/"
 $$A = \begin{pmatrix}3 & 1\\ 1 & 2\end{pmatrix}$$는 $$\mathbf{e}_1$$을 $$(3, 1)$$로, $$\mathbf{e}_2$$를 $$(1, 2)$$로 보낸다. 넓이 1인 단위 정사각형이 두 열로 만든 평행사변형이 된다. 그 넓이는 $$3 \cdot 2 - 1 \cdot 1 = 5$$다.
 
 두 열의 순서를 바꾼 $$\begin{pmatrix}1 & 3\\ 2 & 1\end{pmatrix}$$은 넓이는 같지만 방향이 뒤집혀 행렬식이 $$-5$$다. 열이 평행한 $$\begin{pmatrix}1 & 2\\ 2 & 4\end{pmatrix}$$는 평행사변형이 선분으로 납작해져 행렬식이 0이다. 넓이의 배율 5가 아래 정의의 $$\det A$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/15_determinant_fig1.svg" alt="그림" loading="lazy">
+
+점선 정사각형(넓이 1)이 칠한 평행사변형으로 간다. 왼쪽과 가운데는 넓이가 5로 같지만, 첫 열(주황)에서 둘째 열(초록)로 도는 방향이 왼쪽은 시계 반대 방향, 가운데는 시계 방향이라 부호가 다르다. 오른쪽은 두 열이 한 직선 위에 있어 넓이가 0이다[^s2].
 
 ## 정의
 
@@ -151,4 +155,5 @@ $$A = \begin{pmatrix}1 & 2 & 1\\ 3 & 8 & 1\\ 0 & 4 & 1\end{pmatrix}$$의 행렬�
 [^n1]: 2-2학기/수치해석/1.수업자료/03.na03_matrix.pdf, p.16~18
 [^n2]: 같은 자료, p.19~20
 [^n3]: 같은 자료, p.25
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [15_determinant_plot.py](/Hongs_Blog/studies/linear-algebra/code/15_determinant_plot/)로 그렸고, 세 행렬식 $$5$$, $$-5$$, $$0$$과 도는 방향의 부호를 같은 코드로 확인했다.
 {% endraw %}

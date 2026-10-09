@@ -9,7 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Transmission Rate", "Bandwidth", "전송률", "데이터 전송률", "bit rate", "bps", "대역폭", "전송 지연", "전송 시간", "transmission delay", "전파 지연", "전파지연시간", "propagation delay", "비트 폭", "bit width"]
 description: "링크의 전송 속도(대역폭)는 1초에 선에 밀어 넣을 수 있는 데이터 양의 최댓값이다. 기차에 비유하면 객차를 선로에 올리는 빠르기가 전송 속도이고, 다 올린 기차가 다음 역까지 달리는 시간은 따로 있다. 속도를 올리면 올리는 시간만 줄고 달리는 시간은 그대로다. \"대역폭\"이라는 말…"
@@ -19,7 +19,7 @@ next_url: "/studies/computer-communication/circuit-switching/"
 next_title: "회선 스위칭"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/computer-communication/rate-and-bandwidth/"
 ---
 {% raw %}
@@ -43,6 +43,12 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 | 1 Gbps | $$12{,}000 / 10^9 = 12\ \mu\text{s}$$ | 2 ms (그대로) |
 
 기차로 치면 객차 수가 패킷의 비트 수 $$L$$이고, 객차를 올리는 빠르기가 전송률 $$R$$이다. 다 올리는 데 걸리는 시간을 전송 지연 $$d_{\text{trans}}$$, 다음 역까지 달리는 시간을 전파 지연 $$d_{\text{prop}}$$이라 부른다. 표에서 속도를 10배로 올리자 전송 지연(120 μs → 12 μs)만 줄고, 전파 지연(2 ms)은 그대로였다. 기차와 달리 실제 신호는 첫 비트가 올라가자마자 나아간다. 그래도 마지막 비트가 도착하는 시각은 두 시간의 합으로 같다[^s1].
+
+같은 패킷과 400 km 링크에서 전송률만 1 Mbps부터 10 Gbps까지 바꾸면 다음과 같다. 두 축 모두 한 칸이 10배다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/05_rate-and-bandwidth_fig1.svg" alt="그림" loading="lazy">
+
+파란 선(전송 지연)은 전송률이 10배가 될 때마다 10분의 1로 준다. 주황 선(전파 지연)은 2 ms에서 움직이지 않는다. 그래서 둘의 합(회색)은 100 Mbps쯤부터 2 ms에 거의 붙고, 속도를 더 올려도 도착 시각이 별로 당겨지지 않는다[^s3].
 
 속도를 올리면 비트 하나가 선 위에서 차지하는 시간(비트 폭)이 줄어든다. 1 Mbps에서는 비트 하나가 1 μs, 2 Mbps에서는 0.5 μs다. 비트 사이가 좁아지는 것이다[^3]. 비트 폭이 좁아지면 간섭이나 잡음에 약해진다[^5].
 
@@ -145,4 +151,5 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 [^6]: 4-1학기/pasted_images/Pasted image 20260927203919.png — 슬라이드 "위성통신", 정지궤도 약 36,000 km
 [^s1]: 에이전트 보충. 기차 비유와 그 한계(실제 신호는 첫 비트가 실리자마자 나아가지만 마지막 비트의 도착 시각은 같음)는 원본에 없다. Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.4절의 비유와 같다.
 [^s2]: 에이전트 보충. 주파수 대역폭과 최대 전송률의 관계는 섀넌 용량 공식 $$C = B \log_2(1 + S/N)$$이 준다. 1주차 자료에는 나오지 않는다.
+[^s3]: 에이전트 보충. 그림 한 장은 원본에 없다. [05_rate-and-bandwidth_plot.py](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_plot/)로 그렸고, 표의 값(100 Mbps에서 120 μs, 1 Gbps에서 12 μs, 전파 지연 2 ms)과 1 Gbps에서의 합 2.012 ms를 같은 코드로 확인했다.
 {% endraw %}

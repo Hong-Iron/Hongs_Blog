@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Properties of Continuous-Time Fourier Series", "푸리에 급수의 성질", "시간 이동 성질", "Time Shifting Property", "시간 반전 성질", "시간 척도 성질", "곱셈 성질", "Multiplication Property", "주기 컨벌루션", "Periodic Convolution", "미분 성질", "Differentiation Property", "켤레 대칭", "Conjugate Symmetry", "파스발 관계", "Parseval's Relation"]
 description: "신호를 옮기거나, 뒤집거나, 미분하거나, 곱하면 푸리에 계수가 정해진 규칙대로 바뀐다. 이 규칙표(표 3.1)를 알면 매번 적분하지 않고 이미 아는 신호의 계수에서 새 신호의 계수를 얻는다. 예를 들어 신호를 늦추면 계수의 크기는 그대로이고 위상만 돈다. 미분하면 높은 고조파일수록…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/dt-fourier-series/"
 next_title: "이산 시간 푸리에 급수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/ctfs-properties/"
 ---
 {% raw %}
@@ -127,6 +127,10 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 - *미분 성질:* $$d_k = jk\frac\pi2e_k$$이므로 $$e_k = \frac{2d_k}{jk\pi} = \frac{2\sin(\pi k/2)}{j(k\pi)^2}e^{-jk\pi/2}$$ ($$k \ne 0$$).
 - *$$k = 0$$은 따로:* 미분 성질로는 $$e_0$$를 알 수 없다(0을 곱했기 때문). 한 주기의 평균을 직접 구한다: $$e_0 = \frac14\left[\int_0^2\frac t2dt + \int_2^4\left(2 - \frac t2\right)dt\right] = \frac14(1 + 1) = \frac12$$.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/32_ctfs-properties_fig1.svg" alt="그림" loading="lazy">
+
+오른쪽은 로그 눈금이다. 끊긴 사각파의 계수는 $$\frac1k$$로, 꺾이기만 하는 삼각파의 계수는 $$\frac{1}{k^2}$$로 줄어든다. 미분하면 계수에 $$k$$가 곱해진다는 성질을 거꾸로 본 것이다[^s2].
+
 **예제 3.8 임펄스 열**[^11]. $$x(t) = \sum_k\delta(t - kT)$$. 적분 경계에 임펄스가 걸리지 않게 $$-\frac T2 \sim \frac T2$$에서 적분하면 $$a_k = \frac1T\int\delta(t)e^{-jk\omega_0t}dt = \frac1T$$. 모든 계수가 같다. 그래서 임펄스는 모든 주파수를 똑같은 크기로 담고 있고, 시스템에 임펄스를 넣어 보면 모든 주파수의 반응을 한꺼번에 본다.
 
 사각파의 도함수는 임펄스 열 두 개의 차 $$q(t) = \delta(t + T_1) - \delta(t - T_1)$$(주기적)이다. 시간 이동으로 $$b_k = \frac1T(e^{jk\omega_0T_1} - e^{-jk\omega_0T_1}) = \frac{2j\sin(k\omega_0T_1)}{T}$$이고, 미분 성질 $$b_k = jk\omega_0c_k$$로 사각파 계수 $$c_k = \frac{\sin(k\omega_0T_1)}{k\pi}$$가 다시 나온다[^12].
@@ -222,4 +226,5 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 [^12]: 같은 자료, p.26~27
 [^13]: 같은 자료, p.28~31 (예제 3.9)
 [^s1]: 에이전트 보충. 오해 항목과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [32_ctfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$jk\omega_0e_k = d_k$$(미분 성질), 삼각파 계수 $$e_1$$, $$e_3$$과 $$e_0 = \frac12$$를 분석식 수치 적분과 비교.
 {% endraw %}

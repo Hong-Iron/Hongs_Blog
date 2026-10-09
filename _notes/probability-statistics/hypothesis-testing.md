@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/bayesian-inference/"
 next_title: "베이즈 추론과 MAP"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/hypothesis-testing/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/probability-statistics/hypothesis-testing/"
 - 관측한 차이 0.03은 표준오차의 약 2.1배이고, 이 정도 이상(양쪽 방향) 벌어질 확률은 약 3.5%다.
 
 3.5%는 흔하지 않으니 "차이가 없다"를 버린다(유의수준 5% 기준). "차이가 없다"가 아래 정의의 귀무가설 $$H_0$$, 2.1이 검정통계량, 3.5%가 p값이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig1.svg" alt="그림" loading="lazy">
+
+회색 곡선은 차이가 없을 때 두 가입률의 차이가 흔들리는 분포다. 관측한 0.03보다 바깥쪽(양쪽) 넓이를 더한 것이 p값 0.035다. 0.03이 파란 기각 경계보다 바깥이라 5% 수준에서 기각한다[^s2].
 
 ## 정의
 
@@ -110,6 +114,10 @@ permalink: "/studies/probability-statistics/hypothesis-testing/"
 4. *결론과 한계:* 5% 수준에서 기각. 하지만 차이의 크기는 신뢰구간 $$0.03 \pm 1.96 \times 0.0143$$, 곧 약 0.2%p에서 5.8%p로 불확실성이 크다.
 
 **대표 문제 2: 검정력과 표본 크기.** 참 전환율이 정말 10%와 13%라면, 1,000명씩으로는 5% 수준에서 차이를 잡아낼 확률(검정력)이 약 56%에 불과하다. 2,000명씩이면 80%를 넘는다. 실험 전에 원하는 검정력으로 표본 크기를 정해야, 효과가 있는데도 "유의하지 않음"으로 놓치는 일을 줄인다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/32_hypothesis-testing_fig2.svg" alt="그림" loading="lazy">
+
+초록 곡선은 참 차이가 0.03일 때 관측한 차이의 분포다. 파란 기각 경계 오른쪽의 넓이가 검정력 0.56이고, 왼쪽 보라 부분에서는 효과가 있어도 놓친다. 표본을 늘리면 두 곡선이 좁아져 겹치는 부분이 준다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: A/B의 합동 비율·표준오차·z·p값과 순열 검정, $$H_0$$ 아래 p < 0.05 비율 약 5%(A/A 테스트 3,000회), 다중 검정 0.64(식과 모의실험), 검정력 1,000명 약 0.56과 2,000명에서의 증가, 예제 사다리의 값 — [32_hypothesis-testing_verify.py](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_verify/)</div>
@@ -196,4 +204,5 @@ $$t = \frac{\bar d}{s_d / \sqrt k}, \qquad \bar d = \frac1k\sum_{i=1}^{k} d_i, \
 [^2]: Wasserstein, Lazar, "The ASA Statement on p-Values: Context, Process, and Purpose", *The American Statistician* 70(2), 2016.
 [^d1]: 3-2학기/데이터 과학/1.수업자료/06.6-2_ensemble.pdf, p.6 (6-1 복습: T-Test와 P-value)
 [^sd1]: 에이전트 보충. $$k - 1$$로 나누는 표준 방법, 5겹 예와 카드 C5는 원본에 없다. 슬라이드처럼 $$k$$로 나누는 식은 Han, Kamber, Pei, *Data Mining* 3판 8.5.5절의 식이다. 32_hypothesis-testing_verify.py로 계산했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [32_hypothesis-testing_plot.py](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_plot/)로 그렸고, 그림에 쓴 값(표준오차 0.01427, $$z = 2.10$$, p값 0.035, 1,000명씩의 검정력 0.56, 2,000명씩 0.8 초과)을 같은 코드로 확인했다.
 {% endraw %}

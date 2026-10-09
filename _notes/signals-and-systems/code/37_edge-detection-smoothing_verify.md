@@ -36,7 +36,7 @@ assert all(d1[i] == f[i] - f[i - 1] for i in range(1, 10))
 assert all(d2[i + 1] == f[i + 1] - 2 * f[i] + f[i - 1] for i in range(1, 9)) and all(d2[i + 1] == 2 for i in range(1, 9))
 # 잡음 있는 계단: 미분만 하면 경계를 못 찾고, 가우시안으로 평활화한 뒤 미분하면 경계(1000)에서 최대
 n = 2000
-sig = [(1.0 if i >= 1000 else 0.0) + random.gauss(0, 0.1) for i in range(n)]
+sig = [(1.0 if i >= 1000 else 0.0) + random.gauss(0, 0.3) for i in range(n)]   # 잡음 표준편차 0.3 (문서 예제와 그림)
 raw = [sig[i] - sig[i - 1] for i in range(1, n)]
 peak_raw = max(range(len(raw)), key=lambda i: abs(raw[i]))
 sigma = 50
@@ -46,7 +46,7 @@ dsm = [sm[i] - sm[i - 1] for i in range(1, n)]
 peak_sm = max(range(250, n - 250), key=lambda i: dsm[i]) + 1
 assert abs(peak_sm - 1000) <= 15
 noise_ratio_raw = max(abs(v) for v in raw) / abs(raw[999])
-assert noise_ratio_raw > 0.4                                   # 경계의 점프가 잡음 봉우리와 크기가 비슷하다
+assert noise_ratio_raw > 1                                     # 잡음 봉우리가 경계의 점프보다 크다
 # 미분 정리: d/dx(f*g) = f * (dg/dx)  (이산: 차분과 컨벌루션의 결합법칙)
 dg = conv(g, [1, -1])
 lhs = conv(conv(sig, g), [1, -1]); rhs = conv(sig, dg)

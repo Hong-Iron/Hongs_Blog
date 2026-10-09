@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/normal-transform/"
 next_title: "법선 벡터의 변환"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/homogeneous-coordinates/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/numerical-analysis/homogeneous-coordinates/"
 | 1 | $$P$$를 원점으로 옮김 | $$X - P$$ | $$(1, 0)$$ |
 | 2 | 원점 중심 90° 회전 | $$R(X - P)$$ | $$(0, 1)$$ |
 | 3 | 원점을 다시 $$P$$로 | $$R(X - P) + P$$ | $$(1, 2)$$ |
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/04_homogeneous-coordinates_fig1.svg" alt="그림" loading="lazy">
+
+파란 깃발이 처음 자리이고, 동그라미가 점 $$(2, 1)$$이다. 주황(1단계), 초록(2단계), 보라(3단계) 순서로 움직인다. 세 단계를 거치면 $$P$$를 중심으로 90° 돈 자리에 간다[^s2].
 
 점이 1만 개라면 점마다 빼기, 곱하기, 더하기를 해야 한다. 동차 좌표에서는 세 단계를 $$3 \times 3$$ 행렬 하나 $$H = T(P)\,R\,T(-P)$$로 미리 곱해 둔다. 그 뒤로는 점마다 행렬 곱 한 번이다[^2].
 
@@ -200,4 +204,5 @@ $$(AB)^{-1} = B^{-1}A^{-1}$$이다. 양말을 신고 신발을 신었으면 신�
 [^7]: 같은 자료, p.43
 [^8]: 같은 자료, p.28~31
 [^s1]: 에이전트 보충. 예시의 수치, 확대·평행이동 예제, 방향 벡터($$w = 0$$), 그래픽스 파이프라인, 스스로 설명해 보기, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [04_homogeneous-coordinates_plot.py](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$(2, 1) \to (1, 0) \to (0, 1) \to (1, 2)$$와 $$H = T(P)\,R\,T(-P)$$가 세 단계와 같음.
 {% endraw %}

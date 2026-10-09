@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Edge Detection", "Image Smoothing", "경계 검출", "에지 검출", "평활화", "Smoothing", "영상 기울기", "Image Gradient", "유한 차분", "Finite Difference", "평균 필터", "Mean Filter", "상자 필터", "Box Filter", "가우시안 필터", "Gaussian Filter", "컨벌루션의 미분 정리", "Derivative Theorem of Convolution", "PSNR", "Peak Signal-to-Noise Ratio", "신호 대 잡음비", "SNR"]
 description: "사진에서 물체의 테두리(경계)는 밝기가 갑자기 바뀌는 곳이다. 그래서 밝기를 위치로 미분하면 경계에서 값이 크게 튀어 경계를 찾을 수 있다. 문제는 미분이 높은 주파수를 키우는 필터라 잡음까지 키운다는 것이다. 그래서 먼저 주변 화소와 평균 내어 잡음을 줄이고(평활화, 저역 통과)…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/ct-fourier-transform/"
 next_title: "연속 시간 푸리에 변환"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/edge-detection-smoothing/"
 ---
 {% raw %}
@@ -76,12 +76,16 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 
 ## 예제
 
-잡음 섞인 1차원 계단(2000개 화소, 경계 1000번째)을 생각하자[^s1].
+잡음 섞인 1차원 계단(2000개 화소, 경계 1000번째, 계단 높이 1, 잡음 표준편차 0.3)을 생각하자[^s1].
 
-1. 그대로 차분하면 경계의 점프와 잡음의 떨림이 비슷한 크기라 경계를 고를 수 없다.
+1. 그대로 차분하면 잡음의 떨림이 경계의 점프(1)보다 더 큰 봉우리를 만들어, 가장 큰 값을 골라도 경계가 아니다.
 2. 폭 $$\sigma = 50$$인 가우시안으로 평활화하면 계단이 매끄러운 언덕이 된다.
 3. 그것을 차분하면 1000번째 근처에 봉우리 하나가 선다.
 4. 가우시안을 먼저 미분한 커널 $$\frac{dg}{dx}$$와 한 번만 컨벌루션해도 같은 결과다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/37_edge-detection-smoothing_fig1.svg" alt="그림" loading="lazy">
+
+위 예제의 1단계(그대로 차분)와 4단계(가우시안 미분 커널과 컨벌루션) 결과를 나란히 그렸다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: $$[-1, 1]$$, $$[1, -2, 1]$$ 커널이 차분 공식과 같음, 잡음 섞인 계단에서 평활화 후 미분의 봉우리가 경계 ±15 안, 미분 정리 $$\frac{d}{dx}(f*g) = f*\frac{dg}{dx}$$가 $$10^{-9}$$ 안에서 같음, 평균 필터의 합 1, 상자 커널의 변환 $$\frac{2\sin\omega W}{\omega}$$, PSNR 두 식의 일치 확인 — [37_edge-detection-smoothing_verify.py](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_verify/)</div>
@@ -139,4 +143,5 @@ $$\mathrm{MAX}$$는 화소가 가질 수 있는 최댓값(8비트면 255)이다.
 [^10]: 같은 자료, p.34~35
 [^11]: 같은 자료, p.4
 [^s1]: 에이전트 보충. 2000개 화소 계단 예(원본 그림 13~14와 같은 설정을 숫자로 재현), 소벨·캐니 필터, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [37_edge-detection-smoothing_plot.py](/Hongs_Blog/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 봉우리가 경계 ±15 안, 그대로 차분한 잡음 봉우리가 경계 값보다 큼, $$\frac{d}{dx}(f * g) = f * \frac{dg}{dx}$$.
 {% endraw %}

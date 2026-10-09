@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Convolution Sum", "컨볼루션 합", "합성곱", "이산 시간 LTI 시스템", "Discrete-Time LTI System", "단위 임펄스 응답", "Unit Impulse Response", "임펄스 응답", "Impulse Response", "중첩 합", "Superposition Sum", "LTI"]
 description: "선형이고 시불변인 시스템(LTI)은 \"입력 한 방울에 어떻게 반응하는가\" 하나만 알면 모든 입력의 출력을 계산할 수 있다. 입력을 시각마다의 바늘(임펄스) 여러 개로 쪼개면, 각 바늘의 반응은 그 한 방울 반응을 그 시각으로 옮기고 바늘 높이만큼 키운 것이다. 이 반응들을 모두 더…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/convolution-integral/"
 next_title: "컨벌루션 적분"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/convolution-sum/"
 ---
 {% raw %}
@@ -46,6 +46,10 @@ permalink: "/studies/signals-and-systems/convolution-sum/"
 | $$y[n]$$ | 0.5 | 2.5 | 2.5 | 2 | 0 |
 
 여기서 $$h[n]$$을 단위 임펄스 응답이라 부른다. 시스템에 $$\delta[n]$$을 넣었을 때의 출력이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig1.svg" alt="그림" loading="lazy">
+
+위 두 줄이 입력 조각 각각의 메아리이고, 맨 아래가 그 합이다. 같은 $$n$$의 막대 높이를 더하면 아래 줄이 된다[^s2].
 
 ## 정의
 
@@ -137,6 +141,10 @@ $$h[n-k]$$가 미끄러지며 $$x[k]$$와 겹치는 정도에 따라 다섯 구�
 | $$4 < n \le 6$$ | $$0 \le k \le 4$$ (늘 5개) | $$\dfrac{\alpha^{n-4} - \alpha^{n+1}}{1 - \alpha}$$ |
 | $$6 < n \le 10$$ | $$n - 6 \le k \le 4$$ | $$\dfrac{\alpha^{n-4} - \alpha^{7}}{1 - \alpha}$$ |
 | $$n > 10$$ | 없음 | 0 |
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/18_convolution-sum_fig2.svg" alt="그림" loading="lazy">
+
+$$\alpha = 1.2$$로 계산한 예다. 뒤집힌 $$h[n-k]$$가 오른쪽으로 미끄러지며 $$x[k]$$와 겹치는 칸(색칠)이 늘었다가 줄어든다. 맨 아래에서 동그라미 친 $$y[2]$$, $$y[5]$$, $$y[8]$$이 위 세 줄의 겹친 곱을 더한 값이다[^s2].
 
 **예제 2.5** $$x[n] = 2^n u[-n]$$, $$h[n] = u[n]$$[^9]
 
@@ -238,4 +246,5 @@ $$h[n-k]$$가 미끄러지며 $$x[k]$$와 겹치는 정도에 따라 다섯 구�
 [^9]: 같은 자료, p.25~26 (예제 2.5, 그림 2.11)
 [^10]: 같은 자료, p.15~16
 [^s1]: 에이전트 보충. 계산 복잡도와 FFT, NumPy·CNN 예, 오해 항목의 $$x^2$$ 반례, 확인 문제 C2~C5는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [18_convolution-sum_plot.py](/Hongs_Blog/studies/signals-and-systems/code/18_convolution-sum_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.1의 0.5, 2.5, 2.5, 2와 예제 2.4($$\alpha = 1.2$$)의 다섯 구간 닫힌 꼴, 세 장면의 겹친 곱의 합.
 {% endraw %}

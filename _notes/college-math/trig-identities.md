@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Trigonometric Identities", "덧셈정리", "sum and difference formulas", "배각 공식", "double-angle formula", "반각 공식", "half-angle formula", "차수 내림", "곱을 합으로", "product-to-sum", "합을 곱으로", "sum-to-product", "삼각함수의 합성", "harmonic addition", "맥놀이", "beats"]
 description: "삼각함수 공식은 외울 것이 많아 보이지만, 사실은 덧셈정리 두 개에서 배각·반각·곱을 합으로 바꾸는 공식이 모두 나온다. 덧셈정리는 \"두 번 돌린 것 = 두 각을 더해 한 번 돌린 것\"을 좌표로 적은 것이다. 이 공식들 덕분에 신호를 곱해 주파수를 옮기는 변조, 사인파의 합성, 회…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/inverse-trig/"
 next_title: "역삼각함수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/trig-identities/"
 ---
 {% raw %}
@@ -126,6 +126,10 @@ $$\sin\alpha\sin(-\beta) = -\sin\alpha\sin\beta$$라서 가운데 부호가 $$+$
 2. *평균 내기:* $$\cos 2\omega t$$는 한 주기 동안 위아래가 같아 평균이 0이다. 그래서 평균은 $$\frac12$$이다.
 3. *해석:* 진폭 $$A$$인 교류는 크기 $$A/\sqrt2$$인 직류와 같은 일을 한다(실효값). 가정용 220 V가 실효값이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/14_trig-identities_fig1.svg" alt="그림" loading="lazy">
+
+$$\sin^2\omega t$$(파랑)는 $$\sin\omega t$$보다 두 배 빠르게 0과 1 사이를 오간다. 1/2 위로 솟은 부분과 아래로 꺼진 부분의 넓이가 같아서 평균이 1/2이다[^s2].
+
 **변조.** 64 kHz 반송파 $$\cos(2\pi \cdot 64000\,t)$$에 1 kHz 음성 $$\cos(2\pi \cdot 1000\,t)$$을 곱하면 무엇이 나오는가?
 
 1. *곱 → 합:* $$\cos\alpha\cos\beta = \frac12[\cos(\alpha - \beta) + \cos(\alpha + \beta)]$$.
@@ -146,6 +150,11 @@ $$\sin\alpha\sin(-\beta) = -\sin\alpha\sin\beta$$라서 가운데 부호가 $$+$
 
 - **통신.** 변조(곱 → 합)와 복조가 곱셈으로 주파수를 옮긴다.
 - **소리.** 주파수가 조금 다른 두 음을 함께 울리면 $$\sin\alpha + \sin\beta = 2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}$$에 따라 소리가 주기적으로 커졌다 작아진다(맥놀이). 조율할 때 맥놀이가 사라지면 두 음의 주파수가 같다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/14_trig-identities_fig2.svg" alt="그림" loading="lazy">
+
+주파수가 20 Hz와 22 Hz인 두 사인파를 더한 것이다. 21 Hz로 빠르게 떨리면서, 그 떨림의 크기가 점선을 따라 1초에 두 번 커졌다 작아진다[^s2].
+
 - **그래픽.** 점을 $$\alpha$$ 돌린 뒤 $$\beta$$ 돌리는 것이 $$\alpha + \beta$$ 한 번 돌리는 것과 같다는 사실이 회전을 누적하는 코드의 근거다.
 - **빠른 푸리에 변환.** FFT는 덧셈정리로 $$\cos$$, $$\sin$$ 값을 서로에게서 만들어 계산을 아낀다([이산 푸리에 변환과 FFT](/Hongs_Blog/studies/linear-algebra/dft/)).
 - 알고리즘에서: 길이가 $$r_1$$, $$r_2$$인 두 벡터 $$p = r_1(\cos\alpha, \sin\alpha)$$, $$q = r_2(\cos\beta, \sin\beta)$$로 $$p_x q_y - p_y q_x$$(외적)를 계산하면, 덧셈정리로 $$r_1 r_2 \sin(\beta - \alpha)$$가 나온다. 그래서 각을 구하지 않고 이 값의 부호만 보고 $$q$$가 $$p$$의 왼쪽인지 오른쪽인지 안다([계산 기하 기초](/Hongs_Blog/studies/algorithms/geometry-ccw/)).
@@ -203,4 +212,5 @@ $$\sin\alpha\sin(-\beta) = -\sin\alpha\sin\beta$$라서 가운데 부호가 $$+$
 
 [^1]: OpenStax, *Precalculus 2e*, 7.1절 "Simplifying and Verifying Trigonometric Identities", 7.2절 "Sum and Difference Identities", 7.3절 "Double-Angle, Half-Angle, and Reduction Formulas", 7.4절 "Sum-to-Product and Product-to-Sum Formulas". 단위원 위 두 점의 거리를 두 번 재는 덧셈정리 증명은 표준적인 증명 방법 중 하나다.
 [^s1]: 에이전트 보충. 반송파를 곱하는 진폭 변조와 실효값 $$A/\sqrt2$$은 통신·전기 공학의 표준 내용이다. 실제 주파수 분할 다중화는 한쪽 옆띠만 남기는 등 더 다듬은 변조를 쓴다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [14_trig-identities_plot.py](/Hongs_Blog/studies/college-math/code/14_trig-identities_plot/)로 그렸고, 그림에 쓴 값($$\sin^2$$의 한 주기 평균 0.5, 합 → 곱 공식으로 두 사인파의 합이 $$2\sin(2\pi \cdot 21t)\cos(2\pi \cdot 1 \cdot t)$$)을 같은 코드로 확인했다.
 {% endraw %}

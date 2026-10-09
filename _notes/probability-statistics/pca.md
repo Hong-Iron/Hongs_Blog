@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/entropy/"
 next_title: "엔트로피"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/pca/"
 ---
 {% raw %}
@@ -74,6 +74,10 @@ permalink: "/studies/probability-statistics/pca/"
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/36_pca_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 예시의 $$\Sigma$$에서 뽑은 점 300개와 첫 주성분 직선이다. 회색 선분은 점을 그 직선에 수직으로 내린 것이다. 오른쪽은 단위벡터의 방향을 0°에서 180°까지 돌리며, 그 방향으로 투영한 값의 분산 $$\mathbf{v}^\top\Sigma\mathbf{v}$$를 그린 것이다. 최대 5.56과 최소 1.44가 두 고윳값이고, 두 방향은 90° 떨어져 있다[^s1].
 
 ### 스스로 설명해 보기
 
@@ -199,4 +203,5 @@ $$\frac1n\sum(\mathbf{x}_i^\top\mathbf{v})^2$$는 분산이 아니라 원점에�
 [^d3]: 같은 자료, p.16 (라그랑주 승수법, 고유분해, 상위 k개 고유벡터)
 [^d4]: 같은 자료, p.17 (군집화를 위한 PCA의 장단점)
 [^sd1]: 에이전트 보충. 카드 C5의 예는 원본에 없다. 36_pca_verify.py로 확인했다.
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [36_pca_plot.py](/Hongs_Blog/studies/probability-statistics/code/36_pca_plot/)로 그렸고, 그림에 쓴 값(고윳값 5.56과 1.44, 각도별 분산의 최대·최소, 설명된 분산 비율 0.795)을 같은 코드로 확인했다.
 {% endraw %}

@@ -19,7 +19,7 @@ next_url: "/studies/data-science/minkowski-distance/"
 next_title: "민코프스키 거리"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/categorical-dissimilarity/"
 ---
 {% raw %}
@@ -86,6 +86,10 @@ $$d(i, j) = \frac{r + s}{q + r + s}, \qquad \operatorname{sim}(i, j) = \frac{q}{
 
 뒤의 유사도를 자카드 계수라 부른다. 1인 칸을 집합으로 보면 "둘 다 가진 것 ÷ 둘 중 하나라도 가진 것", 즉 $$\frac{\vert X \cap Y\vert }{\vert X \cup Y\vert }$$다[^s1].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/03_categorical-dissimilarity_fig1.svg" alt="그림" loading="lazy">
+
+Jack과 Jim에게 '둘 다 음성'인 검사를 계속 더했다. 대칭 비유사도는 0으로 내려가 두 사람이 점점 똑같아 보인다. 비대칭 비유사도는 $$\frac23$$에서 움직이지 않는다[^s2].
+
 ## 활용
 
 - 장바구니처럼 "산 것"만 의미가 있는 자료는 비대칭 이진이다. 상품 수만 개 중 두 사람이 둘 다 안 산 상품은 수만 개라, 대칭 방식이면 모든 사람이 거의 같아 보인다. 추천과 문서 비교에서 자카드 계수를 쓰는 이유다[^s1].
@@ -127,4 +131,5 @@ $$d(i, j) = \frac{r + s}{q + r + s}, \qquad \operatorname{sim}(i, j) = \frac{q}{
 [^2]: 같은 자료, p.23
 [^3]: 같은 자료, p.24
 [^s1]: 에이전트 보충. 환자 예(Jack·Mary·Jim)는 Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.3절의 예다. 자카드 계수의 집합 표현, 장바구니 활용, 섞인 속성의 합치기, 카드 C2·C3은 원본에 없다. 수치는 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [03_categorical-dissimilarity_plot.py](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_plot/)로 그렸고, 둘 다 0인 칸이 3개일 때 $$\frac13$$과 $$\frac23$$, 10,000개일 때 대칭 비유사도가 0.001 미만임을 같은 코드로 확인했다.
 {% endraw %}

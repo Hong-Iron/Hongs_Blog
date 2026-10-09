@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/taylor-method/"
 next_title: "테일러 급수 방법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/root-finding-compared/"
 ---
 {% raw %}
@@ -77,6 +77,10 @@ $$f(x) = e^{-x} - x$$, 오차 $$10^{-10}$$까지의 반복 횟수는 검증 코�
 | 반복 횟수 | 33 | 4 | 5 | 40 |
 | 실패하는 경우 | 불연속(1/x)[^1] | $$f' = 0$$, 맴돌기, 발산[^2] | 두 점 값이 같음[^3] | $$\lvert g'\rvert > 1$$ |
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/32_root-finding-compared_fig1.svg" alt="그림" loading="lazy">
+
+세로축은 한 칸이 10배인 눈금이다. 이분법(파랑)은 들쭉날쭉하면서 일정한 빠르기로, 고정점(보라)은 곧은 선으로 천천히 내려간다. 뉴턴(주황)과 할선(초록)은 아래로 꺾이며 몇 번 만에 목표 오차 아래로 떨어진다[^s2].
+
 가르는 질문은 두 가지다. 근을 사이에 둔 구간을 아는가(구간법 대 열린 방법), 도함수를 쉽게 계산할 수 있는가(뉴턴 대 할선).
 
 <div class="callout callout-check" markdown="1">
@@ -121,4 +125,5 @@ $$f(x) = e^{-x} - x$$, 오차 $$10^{-10}$$까지의 반복 횟수는 검증 코�
 [^2]: 같은 자료, p.18
 [^3]: 같은 자료, p.21
 [^s1]: 에이전트 보충. 네 상황 문제, 반복 횟수 비교와 맴도는 예, 수렴 차수 정리, 브렌트 방법과 라이브러리, 카드는 원본에 없다. 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [32_root-finding-compared_plot.py](/Hongs_Blog/studies/numerical-analysis/code/32_root-finding-compared_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 검증 코드와 같은 시작값에서 반복 횟수 33, 4, 5, 40.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-02"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Positional Notation", "진법", "radix", "기수법", "2진법", "binary", "8진법", "octal", "16진법", "hexadecimal", "자릿수", "비트 수", "bit length", "진법 변환"]
 description: "우리가 쓰는 수는 자리마다 10의 거듭제곱을 곱해 더한 것이고, 10 대신 2를 쓰면 컴퓨터의 2진법이 된다. 자리 하나를 늘릴 때마다 적을 수 있는 수가 밑의 배수로 늘어나므로, 어떤 수를 적는 데 드는 자릿수는 로그로 정해진다. 16진법은 2진수 네 자리를 한 글자로 줄여 쓴 …"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/radian/"
 next_title: "각과 라디안"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/positional-notation/"
 ---
 {% raw %}
@@ -84,6 +84,10 @@ $$n = \sum_{i=0}^{m-1} d_i\, b^i = d_{m-1} b^{m-1} + \dots + d_1 b + d_0, \qquad
 
 
 표현이 있고 하나뿐이라는 사실은 위의 반복 나눗셈이 늘 끝나고 나머지가 하나로 정해진다는 데서 나온다. [증명 스케치] 엄밀한 증명은 이산수학의 [나눗셈 정리](/Hongs_Blog/studies/discrete-math/modular-arithmetic/)를 쓴다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/10_positional-notation_fig1.svg" alt="그림" loading="lazy">
+
+계단(2진 자릿수)은 $$n$$이 2의 거듭제곱 1, 2, 4, 8, …에 닿을 때마다 한 칸 오른다. 곡선 $$\lg n$$은 늘 계단보다 아래에 있고, 2의 거듭제곱에서는 정확히 1 모자란다[^s1].
 
 ## 예제
 
@@ -154,4 +158,5 @@ $$n = \sum_{i=0}^{m-1} d_i\, b^i = d_{m-1} b^{m-1} + \dots + d_1 b + d_0, \qquad
 
 
 [^1]: Knuth, *The Art of Computer Programming*, Vol. 2 *Seminumerical Algorithms*, 4.1절 "Positional Number Systems"
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [10_positional-notation_plot.py](/Hongs_Blog/studies/college-math/code/10_positional-notation_plot/)로 그렸고, 그림에 쓴 값($$n < 5{,}000$$에서 $$2^{m-1} \le n < 2^m$$($$m$$은 2진 자릿수), $$8$$은 4비트이고 $$\lg 8 = 3$$)을 같은 코드로 확인했다.
 {% endraw %}

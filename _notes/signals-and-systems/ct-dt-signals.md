@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Continuous-Time Signal", "Discrete-Time Signal", "신호", "Signal", "연속 신호", "이산 신호", "아날로그 신호", "Analog Signal", "디지털 신호", "Digital Signal", "결정론적 신호", "Deterministic Signal", "랜덤 신호", "Random Signal", "독립 변수", "Independent Variable", "C-T", "D-T"]
 description: "신호는 시간에 따라 변하는 값, 곧 정보를 실어 나르는 함수다. 마이크의 전압이나 자동차의 속도처럼 모든 순간에 값이 있으면 연속 시간 신호이고, 매일 종가처럼 정해진 순간에만 값이 있으면 이산 시간 신호다. 컴퓨터는 이산 시간 신호만 다룰 수 있어서, 연속 신호를 일정한 간격으로…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/signal-energy-power/"
 next_title: "신호의 에너지와 전력"
 math: true
 mermaid: false
-code_count: 0
+code_count: 1
 permalink: "/studies/signals-and-systems/ct-dt-signals/"
 ---
 {% raw %}
@@ -39,6 +39,10 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 - 한 시간마다 한 번 적으면 $$x[1], x[2], x[3], \dots$$만 남는다. 괄호 안의 $$n$$은 "몇 번째 기록"인지를 뜻하는 정수다.
 
 두 번째 기록은 첫 번째 신호를 $$T_s$$(표본 간격)마다 뽑은 것이다. 그래서 $$x[n] = x(nT_s)$$로 적는다[^1]. 둘을 구별하려고 연속 시간은 둥근 괄호 $$x(t)$$, 이산 시간은 대괄호 $$x[n]$$을 쓴다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/03_ct-dt-signals_fig1.svg" alt="그림" loading="lazy">
+
+위는 모든 실수 $$t$$에 값이 있는 $$x(t)$$, 아래는 $$T_s = 0.5$$마다 뽑은 $$x[n]$$이다. 아래 그래프에는 정수 $$n$$ 사이에 값이 없다[^s1].
 
 신호의 예는 다양하다[^2].
 
@@ -108,4 +112,5 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 [^4]: 같은 자료, p.6 (정보통신기술용어해설 인용)
 [^5]: 같은 자료, p.8~9
 [^6]: 3-1학기/신호 및 시스템/1.수업자료/04.Week04_CH01_3_handout.pdf, p.2
+[^s1]: 에이전트 보충. 그림 1장은 원본에 없다. [03_ct-dt-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/03_ct-dt-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 신호 $$x(t) = \sin 0.6t + 0.5\cos 1.7t$$는 설명을 위해 고른 것이고, $$x[4] = x(2)$$를 확인.
 {% endraw %}

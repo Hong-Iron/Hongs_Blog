@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/bisection-method/"
 next_title: "이분법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/direct-search/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ $$f(x, y) = y - x - 2x^2 - 2xy - y^2$$의 최댓값을 찾는다. 참값은 $$(-
 - **무작위 탐색**: $$-2 \le x \le 2$$, $$1 \le y \le 3$$에서 점을 100개, 1,000개, 10,000개 찍으니 가장 좋은 값이 1.2302, 1.2458, 1.2496이었다. 점을 늘리면 다가가지만 느리다[^s1].
 - **단변수 탐색**: $$(0, 0)$$에서 $$y$$를 고정하고 $$x$$만 움직여 최대인 곳 $$x = -0.25$$로, 다음에 $$x$$를 고정하고 $$y$$만 움직인다. 등고선이 비스듬한 타원이라 계단처럼 지그재그로 다가가고, 갈수록 걸음이 작아진다[^2].
 - **패턴 탐색**: 두 번 움직인 뒤 처음 점과 지금 점을 잇는 방향으로 한 번 더 찾는다. 오차 $$10^{-6}$$에 도달하는 데 단변수는 21회차, 패턴은 10회차였다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/27_direct-search_fig1.svg" alt="그림" loading="lazy">
+
+회색 곡선은 함숫값이 같은 점을 이은 등고선이다. 단변수 탐색(파랑)은 축 방향으로만 움직여 계단 모양으로 다가가고, 걸음이 점점 짧아진다. 패턴 탐색(주황 점선)은 지나온 방향으로 한 번 더 뛰어 두 회차 만에 최댓값 가까이 간다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 무작위 탐색이 점을 늘릴수록 다가감, 단변수 탐색의 걸음이 줄고 참값에 도달, 패턴 탐색이 회차가 적음, 카드 C2, 미분할 수 없는 함수 — [27_direct-search_impl.py](/Hongs_Blog/studies/numerical-analysis/code/27_direct-search_impl/)</div>
@@ -100,4 +104,5 @@ $$f(x, y) = y - x - 2x^2 - 2xy - y^2$$의 최댓값을 찾는다. 참값은 $$(-
 [^5]: 같은 자료, p.5
 [^6]: 같은 자료, p.7
 [^s1]: 에이전트 보충. 무작위 탐색과 단변수·패턴 탐색의 실험 수치(슬라이드의 표와는 무작위 표본이 다르다), 패턴 방향의 정의, 활용, 넬더-미드, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [27_direct-search_plot.py](/Hongs_Blog/studies/numerical-analysis/code/27_direct-search_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 걸음 $$x = -0.25$$, 최댓값 1.25, 오차 $$10^{-6}$$까지 단변수 21회차와 패턴 10회차.
 {% endraw %}

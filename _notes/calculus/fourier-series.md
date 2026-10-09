@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Series", "푸리에 급수", "푸리에 계수", "Fourier coefficient", "삼각급수", "trigonometric series", "직교 함수", "orthogonal functions", "파스발 항등식", "Parseval's identity", "깁스 현상", "Gibbs phenomenon", "디리클레 정리", "Dirichlet's theorem", "사각파", "square wave", "톱니파", "sawtooth wave", "바젤 문제", "Basel problem"]
 description: "반복되는 신호는 아무리 모양이 복잡해도, 기본 주파수와 그 정수배 주파수 사인파들을 알맞은 세기로 더해 만들 수 있다. 각 사인파의 세기는 신호가 그 사인파와 \"얼마나 닮았는가\"로 구하는데, 벡터를 서로 수직인 축들로 분해할 때 축마다 그림자 길이를 재는 것과 똑같은 계산이다. 신…"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/fourier-transform/"
 next_title: "푸리에 변환과 합성곱"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/fourier-series/"
 ---
 {% raw %}
@@ -45,6 +45,10 @@ $$\text{사각파} = \frac{4}{\pi}\left(\sin x + \frac{\sin 3x}{3} + \frac{\sin 
 | 홀수 항 수십 개 | 거의 사각형. 모서리 옆에 작은 뿔이 남는다 |
 
 사인파 $$\sin kx$$가 아래 정의의 기저 함수, 앞의 수 $$\frac{4}{\pi k}$$가 푸리에 계수 $$b_k$$다. 짝수 번째 계수는 모두 0이다. 사각파는 $$x$$를 $$\pi$$만큼 옮기면 부호만 바뀌는데, 짝수 주파수 사인파는 그렇지 않아 닮은 정도가 0이기 때문이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/30_fourier-series_fig1.svg" alt="그림" loading="lazy">
+
+파랑(첫 항 하나)은 둥근 물결로 높이 1.27까지 넘친다. 주황(두 항)은 꼭대기가 눌려 두 봉우리로 갈라진다. 초록(26항)은 거의 사각형인데, 뛰는 점 0과 $$\pm\pi$$ 바로 옆에 작은 뿔이 남는다[^s2].
 
 ## 정의
 
@@ -83,7 +87,11 @@ $$a_0 = \frac{1}{2\pi}\int_{-\pi}^{\pi}f\,dx,\qquad a_k = \frac1\pi\int_{-\pi}^{
 3. *파스발:* 좌변 $$\frac1\pi\int_{-\pi}^{\pi}x^2dx = \frac{2\pi^2}{3}$$, 우변 $$\sum_k\frac{4}{k^2}$$.
 4. *결론:* $$\sum_{k=1}^{\infty}\frac{1}{k^2} = \frac{\pi^2}{6}$$. [급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/)에서 값만 소개한 바젤 문제의 답이다.
 
-**깁스 현상.** 사각파의 부분합은 뛰는 점 바로 옆에서 최댓값이 약 $$1.179$$다. 항을 51개, 201개, 801개로 늘려도 봉우리 높이는 그대로이고 폭만 좁아진다. 뛰는 폭 2의 약 9%를 넘어서는 셈이다[^s1]. 점별로는 수렴하지만(각 점을 고정하면 봉우리가 결국 지나간다), 모든 점에서 한꺼번에 가까워지지는 않는다.
+**깁스 현상.** 사각파의 부분합은 뛰는 점 바로 옆에서 최댓값이 약 $$1.179$$다. $$\sin kx$$를 $$k = 51, 201, 801$$까지(0이 아닌 항 26개, 101개, 401개) 더해도 봉우리 높이는 그대로이고 폭만 좁아진다. 뛰는 폭 2의 약 9%를 넘어서는 셈이다[^s1]. 점별로는 수렴하지만(각 점을 고정하면 봉우리가 결국 지나간다), 모든 점에서 한꺼번에 가까워지지는 않는다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/30_fourier-series_fig2.svg" alt="그림" loading="lazy">
+
+뛰는 점 0의 오른쪽을 크게 확대했다. $$k$$를 51, 201, 801까지 더한 세 부분합의 첫 봉우리가 모두 점선 1.179에 닿는다. 차수를 올리면 봉우리가 0 쪽으로 좁게 밀려날 뿐 낮아지지 않는다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 삼각함수의 직교성($$m, n \le 6$$), 사각파와 톱니파의 계수, 연속점과 뛰는 점에서의 부분합, 깁스 봉우리 $$\approx 1.179$$(항 51·201·801개), 파스발에서 바젤 값, 라이프니츠 급수, 잘라낸 급수가 최선 제곱 근사임(계수를 흔들면 오차 증가) — [30_fourier-series_verify.py](/Hongs_Blog/studies/calculus/code/30_fourier-series_verify/)</div>
@@ -133,4 +141,5 @@ $$a_0 = \frac{1}{2\pi}\int_{-\pi}^{\pi}f\,dx,\qquad a_k = \frac1\pi\int_{-\pi}^{
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 10.5절 "Fourier Series: Linear Algebra for Functions"(함수의 내적, 직교성, 계수 = 사영).
 [^2]: Stein, Shakarchi, *Fourier Analysis: An Introduction*, 2장 "Basic Properties of Fourier Series", 3장 "Convergence of Fourier Series"(평균제곱 수렴, 파스발 항등식, 최선 근사).
 [^s1]: 에이전트 보충. 깁스 봉우리의 극한은 $$\frac2\pi\int_0^\pi\frac{\sin t}{t}dt \approx 1.17898$$이고, 30_fourier-series_verify.py로 부분합의 최댓값과 함께 계산했다. JPEG의 $$8 \times 8$$ 이산 코사인 변환은 JPEG 표준(ITU-T T.81)에, MP3의 MDCT는 MPEG-1 Audio Layer III 표준에 정의되어 있다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [30_fourier-series_plot.py](/Hongs_Blog/studies/calculus/code/30_fourier-series_plot/)로 그렸고, 첫 항의 높이 $$\frac4\pi \approx 1.27$$, 깁스 상수 1.17898, $$k \le 51, 201, 801$$인 부분합의 봉우리가 모두 그 값에서 0.005 안인 것, $$x = \frac\pi2$$에서 부분합이 1로 가는 것을 같은 코드로 확인했다.
 {% endraw %}

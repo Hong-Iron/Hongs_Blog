@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Law of Large Numbers", "큰 수의 법칙", "대수의 법칙", "LLN", "약한 큰 수의 법칙", "weak law of large numbers", "강한 큰 수의 법칙", "strong law of large numbers", "표본평균", "sample mean"]
 description: "같은 실험을 서로 독립으로 많이 되풀이하면, 결과들의 평균이 기댓값에 점점 가까워진다. \"앞면이 나올 확률이 절반\"을 \"오래 던지면 절반쯤 앞면\"으로 읽어도 되는 근거이고, 무작위 표본의 평균으로 적분이나 확률을 어림하는 몬테카를로 방법의 근거다. 하지만 얼마나 빨리 가까워지는지는…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/clt/"
 next_title: "중심극한정리"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/lln/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/probability-statistics/lln/"
 동전을 던져 앞면 비율을 기록한다. 100번이면 비율이 0.5에서 평균 0.04쯤 벗어나고, 1만 번이면 0.004쯤으로 줄어든다. 비율은 0.5로 모인다.
 
 그런데 앞면 **수**와 "던진 횟수의 절반"의 차이는 오히려 커진다. 100번에서 평균 약 4개, 1,600번에서 약 16개 차이다(횟수를 16배로 늘리면 차이는 약 $$\sqrt{16} = 4$$배). 차이가 커져도 횟수가 더 빨리 커지니 비율은 모인다. 비율이 아래 정리의 표본평균 $$\bar X_n$$, 0.5가 $$\mu$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/21_lln_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 동전 1만 번을 세 번 따로 던진 앞면 비율이다. 세 선 모두 회색 띠($$0.5 \pm \frac{0.5}{\sqrt n}$$) 안으로 모여 0.5에 붙는다. 오른쪽은 앞면 수와 $$\frac n2$$의 차이를 2,000번 평균 낸 것이다. 로그 눈금에서 기울기 $$\frac12$$인 직선이라, 차이가 $$\sqrt n$$에 비례해 커진다[^s1].
 
 ## 정의
 
@@ -114,4 +118,5 @@ $$P(\vert \bar X_n - \mu\vert  \ge \varepsilon) \le \frac{\sigma^2}{n\varepsilon
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.2절 "Law of large numbers"(약한·강한 법칙, 체비쇼프를 이용한 증명, 도박사의 오류와의 구별).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [21_lln_plot.py](/Hongs_Blog/studies/probability-statistics/code/21_lln_plot/)로 그렸고, 그림에 쓴 값(100번에서 차이 약 4개, 1만 번에서 약 40개, 기울기 0.5)을 같은 코드로 확인했다.
 {% endraw %}

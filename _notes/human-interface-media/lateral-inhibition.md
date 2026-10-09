@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Lateral Inhibition", "측억제", "헤르만 격자", "Hermann Grid", "마하 띠", "Mach Band", "마하 밴드", "경계 강조", "edge enhancement"]
 description: "옆 사람이 크게 부를수록 내 목소리를 줄이는 합창단과 같다. 망막의 각 세포는 이웃 세포가 받은 빛에 비례해 자기 신호를 줄인다. 고른 영역에서는 모두가 비슷하게 줄어 차이가 그대로지만, 밝은 곳과 어두운 곳의 경계에서는 차이가 부풀려진다. 그래서 윤곽이 또렷해지는 대신, 헤르만 …"
@@ -19,7 +19,7 @@ next_url: "/studies/human-interface-media/opponent-process/"
 next_title: "반대색 과정"
 math: true
 mermaid: true
-code_count: 1
+code_count: 2
 permalink: "/studies/human-interface-media/lateral-inhibition/"
 ---
 {% raw %}
@@ -169,6 +169,10 @@ graph TD
 | 중간 줄무늬 | $$\pi/2$$ | 1.0 |
 | 가장 촘촘한 줄무늬 | $$\pi$$ | 1.2 |
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/18_lateral-inhibition_fig1.svg" alt="그림" loading="lazy">
+
+이득이 정확히 1인 경계는 $$\omega = \pi/2$$다. 곡선이 양 끝에서 평평해서, 고른 빛 근처와 가장 촘촘한 무늬 근처에서는 이득이 거의 바뀌지 않는다[^s9].
+
 낮은 주파수를 줄이고 높은 주파수를 살리는 고주파 강조 필터다. 식을 다시 쓰면
 
 $$
@@ -256,4 +260,5 @@ $$
 [^s6]: 에이전트 보충. Krizhevsky, Sutskever & Hinton(2012)의 "local response normalization" 설명과, Carandini & Heeger(2012, *Nature Reviews Neuroscience*)의 분할 정규화 개관에 근거한다.
 [^s7]: 에이전트 보충. 그라데이션의 색 띠가 마하 띠 때문에 더 눈에 띈다는 것은 영상 공학에서 흔히 드는 설명이다.
 [^s8]: 에이전트 보충. 숫자 예(10 → 8)는 위 식에 $$k = 0.1$$을 넣은 계산이다.
+[^s9]: 에이전트 보충. 그림 1장은 원본에 없다. [18_lateral-inhibition_plot.py](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_plot/)로 그렸고, 그림에 쓴 값($$\omega = 0, \pi/3, \pi/2, \pi$$에서 이득 0.8, 0.9, 1.0, 1.2, 각각 커널 $$(-0.1, 1, -0.1)$$ 합성곱 결과와 일치)을 같은 코드로 확인했다.
 {% endraw %}

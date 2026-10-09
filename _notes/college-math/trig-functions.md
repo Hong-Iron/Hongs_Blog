@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Trigonometric Functions", "사인", "sine", "sin", "코사인", "cosine", "cos", "탄젠트", "tangent", "tan", "단위원", "unit circle", "기준각", "reference angle", "피타고라스 항등식"]
 description: "반지름이 1인 원 위를 도는 점을 떠올린다. 점의 가로 위치가 코사인, 세로 위치가 사인이다. 각이 한 바퀴 돌 때마다 값이 되풀이되므로 모든 주기 현상의 기본 재료가 된다. 삼각형에서 배우는 \"빗변 분의 높이\"는 90°보다 작은 각에서만 통하지만, 원 위의 점으로 정하면 어떤 각…"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/sinusoid/"
 next_title: "사인파"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/trig-functions/"
 ---
 {% raw %}
@@ -41,6 +41,10 @@ permalink: "/studies/college-math/trig-functions/"
 | $$\sin\theta$$ (세로) | $$0$$ | $$\frac12$$ | $$\frac{\sqrt2}{2}$$ | $$\frac{\sqrt3}{2}$$ | $$1$$ | $$0$$ | $$-1$$ |
 
 점이 원을 따라 도는 동안 세로 좌표만 시간축에 펼쳐 그리면 사인 그래프, 가로 좌표만 펼치면 코사인 그래프다. 두 그래프는 모양이 같고 $$\pi/2$$만큼 어긋나 있다. 점이 $$\pi/2$$에서 $$\pi$$로 가는 동안 원에서는 왼쪽 위로 내려오고, 그래프에서는 사인이 1에서 0으로, 코사인이 0에서 −1로 내려간다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/12_trig-functions_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽 단위원에서 $$P(\pi/6)$$의 가로 길이(파랑)가 $$\cos(\pi/6)$$, 세로 길이(주황)가 $$\sin(\pi/6)$$이다. 오른쪽 그래프에서 점선 $$\theta = \pi/6$$ 위의 두 점이 같은 두 값이다[^s1].
 
 ## 정의
 
@@ -199,4 +203,5 @@ $$\sin\frac{5\pi}{6}$$, $$\cos\frac{5\pi}{6}$$을 구한다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 5.2절 "Unit Circle: Sine and Cosine Functions", 5.3절 "The Other Trigonometric Functions", 5.4절 "Right Triangle Trigonometry". 그래프는 6.1절 "Graphs of the Sine and Cosine Functions".
+[^s1]: 에이전트 보충. 그림은 원본에 없다. [12_trig-functions_plot.py](/Hongs_Blog/studies/college-math/code/12_trig-functions_plot/)로 그렸고, 그림에 쓴 값($$P(\pi/6) = (\sqrt3/2,\ 1/2)$$, $$\sin(\theta + \pi/2) = \cos\theta$$)을 같은 코드로 확인했다.
 {% endraw %}

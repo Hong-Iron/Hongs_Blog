@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["First-Order Linear ODE", "미분방정식", "Differential Equation", "상미분방정식", "Ordinary Differential Equation", "ODE", "편미분방정식", "Partial Differential Equation", "계수", "Order", "차수", "Degree", "변수분리형", "Separable Equation", "적분인자", "Integrating Factor"]
 description: "미분방정식은 \"지금 값이 이렇다면 이만큼 변한다\"는 규칙으로 함수를 찾는 식이다. 전기 회로나 자동차처럼 시간에 따라 변하는 시스템은 대부분 이런 식으로 적힌다. 미분이 한 번만 들어 있고 y가 곱셈이나 제곱 없이 1차로만 나오면, 양변에 알맞은 지수함수를 곱해 한 번에 적분할 수…"
@@ -17,7 +17,7 @@ next_url: "/studies/signals-and-systems/second-order-linear-ode/"
 next_title: "상수계수 2계 선형 미분방정식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/first-order-linear-ode/"
 ---
 {% raw %}
@@ -37,6 +37,10 @@ $$\frac{dv_c(t)}{dt} + \frac{1}{RC}v_c(t) = \frac{1}{RC}v_s(t)$$
 
 
 전원을 $$t = 0$$에 켜서 $$v_s = 1$$로 두면, 축전기는 처음엔 빨리 차다가 점점 느리게 찬다. 풀면 $$v_c(t) = 1 - e^{-t/RC}$$이다[^s1]. $$RC$$만큼 시간이 지나면 최종값의 약 63%까지 찬다. 이 식을 왜, 어떻게 이렇게 푸는지가 이 문서의 내용이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/01_first-order-linear-ode_fig1.svg" alt="그림" loading="lazy">
+
+세 곡선 모두 $$t = RC$$에서 최종값의 63%를 지난다. $$RC$$가 클수록 같은 높이에 늦게 닿는다[^s2].
 
 ## 정의
 
@@ -148,4 +152,5 @@ $$y = \frac{1}{u(x)}\int g(x)u(x)\,dx = e^{-\int p\,dx}\left[\int g(x)e^{\int p\
 [^6]: 같은 자료, p.7
 [^7]: 3-1학기/신호 및 시스템/1.수업자료/04.Week04_CH01_3_handout.pdf, p.3~4 (예제 1.8, 1.9)
 [^s1]: 에이전트 보충. RC 회로의 계단 응답 $$1 - e^{-t/RC}$$와 63% 값, 적분상수에 관한 설명, 확인 문제 C1은 원본에 없다. 해는 식에 넣어 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [01_first-order-linear-ode_plot.py](/Hongs_Blog/studies/signals-and-systems/code/01_first-order-linear-ode_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$RC = 0.5, 1, 2$$에서 $$v_c(RC) = 1 - e^{-1} \approx 0.632$$이고 오일러 방법으로 푼 값과 같음.
 {% endraw %}

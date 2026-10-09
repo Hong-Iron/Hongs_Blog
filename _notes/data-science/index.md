@@ -8,7 +8,7 @@ course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
 concepts: 46
 practices: 3
-codes: 36
+codes: 58
 description: "데이터 과학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -46,13 +46,13 @@ permalink: "/studies/data-science/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 01 | [속성의 종류](/Hongs_Blog/studies/data-science/attribute-types/) | 칸에 든 값으로 할 수 있는 계산: 같다/다르다, 순서, 차이, 비율 | — | — |
-| 02 | [카이제곱 상관 분석](/Hongs_Blog/studies/data-science/chi-square-correlation/) | 이름표 속성 둘의 관련. 독립일 때의 기대 인원과 실제 인원의 차이 | [verify](/Hongs_Blog/studies/data-science/code/02_chi-square-correlation_verify/) | — |
-| 03 | [범주형 속성의 비유사도](/Hongs_Blog/studies/data-science/categorical-dissimilarity/) | 같은 칸의 비율. 비대칭 이진은 둘 다 0인 칸을 뺀다(자카드) | [verify](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_verify/) | — |
-| 04 | [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/) | 좌표 차이의 $$h$$제곱 합. $$h = 1$$ 맨해튼, $$h = 2$$ 유클리드 | [verify](/Hongs_Blog/studies/data-science/code/04_minkowski-distance_verify/) | — |
+| 02 | [카이제곱 상관 분석](/Hongs_Blog/studies/data-science/chi-square-correlation/) | 이름표 속성 둘의 관련. 독립일 때의 기대 인원과 실제 인원의 차이 | [fig1](/Hongs_Blog/assets/notes/data-science/02_chi-square-correlation_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/02_chi-square-correlation_plot/) · [verify](/Hongs_Blog/studies/data-science/code/02_chi-square-correlation_verify/) | — |
+| 03 | [범주형 속성의 비유사도](/Hongs_Blog/studies/data-science/categorical-dissimilarity/) | 같은 칸의 비율. 비대칭 이진은 둘 다 0인 칸을 뺀다(자카드) | [fig1](/Hongs_Blog/assets/notes/data-science/03_categorical-dissimilarity_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_plot/) · [verify](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_verify/) | — |
+| 04 | [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/) | 좌표 차이의 $$h$$제곱 합. $$h = 1$$ 맨해튼, $$h = 2$$ 유클리드 | [fig1](/Hongs_Blog/assets/notes/data-science/04_minkowski-distance_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/04_minkowski-distance_plot/) · [verify](/Hongs_Blog/studies/data-science/code/04_minkowski-distance_verify/) | — |
 | 05 | [데이터 정제](/Hongs_Blog/studies/data-science/data-cleaning/) | 빈칸 채우기, 비닝·회귀·이상치로 잡음 다듬기 | [verify](/Hongs_Blog/studies/data-science/code/05_data-cleaning_verify/) | — |
 | 06 | [데이터 통합](/Hongs_Blog/studies/data-science/data-integration/) | 같은 대상 맞추기, 상관 분석으로 중복 속성 찾기 | — | — |
-| 07 | [정규화](/Hongs_Blog/studies/data-science/normalization/) | 최소-최대(0~1)와 z-점수(평균 0, 표준편차 1) | [verify](/Hongs_Blog/studies/data-science/code/07_normalization_verify/) | — |
-| 08 | [이산화](/Hongs_Blog/studies/data-science/discretization/) | 수치를 구간 이름으로. 같은 폭 칸 나누기, 개념 계층 | [verify](/Hongs_Blog/studies/data-science/code/08_discretization_verify/) | — |
+| 07 | [정규화](/Hongs_Blog/studies/data-science/normalization/) | 최소-최대(0~1)와 z-점수(평균 0, 표준편차 1) | [fig1](/Hongs_Blog/assets/notes/data-science/07_normalization_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/07_normalization_plot/) · [verify](/Hongs_Blog/studies/data-science/code/07_normalization_verify/) | — |
+| 08 | [이산화](/Hongs_Blog/studies/data-science/discretization/) | 수치를 구간 이름으로. 같은 폭 칸 나누기, 개념 계층 | [fig1](/Hongs_Blog/assets/notes/data-science/08_discretization_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/08_discretization_plot/) · [verify](/Hongs_Blog/studies/data-science/code/08_discretization_verify/) | — |
 | 09 | [표본 추출](/Hongs_Blog/studies/data-science/sampling/) | 비복원, 복원, 층화 추출 | [verify](/Hongs_Blog/studies/data-science/code/09_sampling_verify/) | — |
 
 자료: 2-1_data-measure-preprocess
@@ -81,7 +81,7 @@ permalink: "/studies/data-science/"
 | 15 | [FP-Growth](/Hongs_Blog/studies/data-science/fp-growth/) | 빈도순 앞부분 트리로 압축, 조건부 패턴 베이스로 재귀. 후보 없음, DB 두 번 (강조)[^강조] | [impl](/Hongs_Blog/studies/data-science/code/15_fp-growth_impl/) | [FP-Growth 예제 사다리](/Hongs_Blog/studies/data-science/fp-growth-ladder/) · [문제 코드](/Hongs_Blog/studies/data-science/code/15_fp-growth-ladder_p4/) |
 | 16 | [빈발 패턴 마이닝 방법 비교](/Hongs_Blog/studies/data-science/contrast--fp-mining-methods/) | 가르는 질문: DB를 몇 번 훑나, 메모리에 무엇을 드나 | — | — |
 | 17 | [리프트](/Hongs_Blog/studies/data-science/lift/) | 신뢰도 ÷ 뒤쪽의 원래 비율. 1보다 작으면 음의 상관 | [verify](/Hongs_Blog/studies/data-science/code/17_lift_verify/) | — |
-| 18 | [널 불변 측정](/Hongs_Blog/studies/data-science/null-invariant-measures/) | 널 거래에 흔들리지 않는 Kulc와 불균형 비율 IR | [verify](/Hongs_Blog/studies/data-science/code/18_null-invariant_verify/) | — |
+| 18 | [널 불변 측정](/Hongs_Blog/studies/data-science/null-invariant-measures/) | 널 거래에 흔들리지 않는 Kulc와 불균형 비율 IR | [fig1](/Hongs_Blog/assets/notes/data-science/18_null-invariant-measures_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/18_null-invariant-measures_plot/) · [verify](/Hongs_Blog/studies/data-science/code/18_null-invariant_verify/) | — |
 
 자료: 3-1_FP · 3-2_FP-eval · 3-4-solutions
 필기: 아직 없다.
@@ -101,10 +101,10 @@ permalink: "/studies/data-science/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 19 | [분류 평가 지표](/Hongs_Blog/studies/data-science/classification-metrics/) | 정확도, 정밀도, 재현율, F1. 어떤 실수가 비싼지로 고른다 | [verify](/Hongs_Blog/studies/data-science/code/19_classification-metrics_verify/) | — |
-| 20 | [앙상블 학습](/Hongs_Blog/studies/data-science/ensemble-learning/) | 평균의 분산 $$\sigma^2/k + \frac{k-1}{k}\rho\sigma^2$$. 서로 다를수록 효과가 크다 | [verify](/Hongs_Blog/studies/data-science/code/20_ensemble-learning_verify/) | — |
-| 21 | [배깅과 랜덤 포레스트](/Hongs_Blog/studies/data-science/bagging-random-forest/) | 부트스트랩 표본마다 모델, 투표·평균. 랜덤 포레스트는 속성도 뽑는다 | [impl](/Hongs_Blog/studies/data-science/code/21_bagging_impl/) | — |
-| 22 | [부스팅과 AdaBoost](/Hongs_Blog/studies/data-science/boosting-adaboost/) | 틀린 자료의 무게를 키우며 차례로 훈련, 가중 투표 | [impl](/Hongs_Blog/studies/data-science/code/22_adaboost_impl/) | — |
+| 19 | [분류 평가 지표](/Hongs_Blog/studies/data-science/classification-metrics/) | 정확도, 정밀도, 재현율, F1. 어떤 실수가 비싼지로 고른다 | [fig1](/Hongs_Blog/assets/notes/data-science/19_classification-metrics_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/19_classification-metrics_plot/) · [verify](/Hongs_Blog/studies/data-science/code/19_classification-metrics_verify/) | — |
+| 20 | [앙상블 학습](/Hongs_Blog/studies/data-science/ensemble-learning/) | 평균의 분산 $$\sigma^2/k + \frac{k-1}{k}\rho\sigma^2$$. 서로 다를수록 효과가 크다 | [fig1](/Hongs_Blog/assets/notes/data-science/20_ensemble-learning_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/20_ensemble-learning_plot/) · [verify](/Hongs_Blog/studies/data-science/code/20_ensemble-learning_verify/) | — |
+| 21 | [배깅과 랜덤 포레스트](/Hongs_Blog/studies/data-science/bagging-random-forest/) | 부트스트랩 표본마다 모델, 투표·평균. 랜덤 포레스트는 속성도 뽑는다 | [fig1](/Hongs_Blog/assets/notes/data-science/21_bagging-random-forest_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/21_bagging-random-forest_plot/) · [impl](/Hongs_Blog/studies/data-science/code/21_bagging_impl/) | — |
+| 22 | [부스팅과 AdaBoost](/Hongs_Blog/studies/data-science/boosting-adaboost/) | 틀린 자료의 무게를 키우며 차례로 훈련, 가중 투표 | [impl](/Hongs_Blog/studies/data-science/code/22_adaboost_impl/) · [fig1](/Hongs_Blog/assets/notes/data-science/22_boosting-adaboost_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/22_boosting-adaboost_plot/) | — |
 | 23 | [배깅과 부스팅 비교](/Hongs_Blog/studies/data-science/contrast--bagging-boosting/) | 가르는 질문: 모델들이 서로를 보며 만들어지는가 | — | — |
 
 자료: 6-2_ensemble
@@ -126,14 +126,14 @@ permalink: "/studies/data-science/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 24 | [군집 분석](/Hongs_Blog/studies/data-science/cluster-analysis/) | 정답 없이 비슷한 것끼리 묶기. 안쪽은 닮고 서로는 다르게 | — | — |
-| 25 | [k-평균](/Hongs_Blog/studies/data-science/k-means/) | 가까운 중심에 배정 → 평균으로 갱신. 반드시 멈추지만 국소 최적 (강조)[^강조] | [impl](/Hongs_Blog/studies/data-science/code/25_k-means_impl/) | [k-평균 예제 사다리](/Hongs_Blog/studies/data-science/k-means-ladder/) · [문제 코드](/Hongs_Blog/studies/data-science/code/25_k-means-ladder_p4/) |
-| 26 | [k-메도이드](/Hongs_Blog/studies/data-science/k-medoids/) | 대표를 실제 점으로. 이상치에 견고, 아무 비유사도, 대신 느림 | [impl](/Hongs_Blog/studies/data-science/code/26_k-medoids_impl/) | — |
+| 25 | [k-평균](/Hongs_Blog/studies/data-science/k-means/) | 가까운 중심에 배정 → 평균으로 갱신. 반드시 멈추지만 국소 최적 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/data-science/25_k-means_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/data-science/25_k-means_fig2.svg) · [impl](/Hongs_Blog/studies/data-science/code/25_k-means_impl/) · [plot](/Hongs_Blog/studies/data-science/code/25_k-means_plot/) | [k-평균 예제 사다리](/Hongs_Blog/studies/data-science/k-means-ladder/) · [문제 코드](/Hongs_Blog/studies/data-science/code/25_k-means-ladder_p4/) |
+| 26 | [k-메도이드](/Hongs_Blog/studies/data-science/k-medoids/) | 대표를 실제 점으로. 이상치에 견고, 아무 비유사도, 대신 느림 | [fig1](/Hongs_Blog/assets/notes/data-science/26_k-medoids_fig1.svg) · [impl](/Hongs_Blog/studies/data-science/code/26_k-medoids_impl/) · [plot](/Hongs_Blog/studies/data-science/code/26_k-medoids_plot/) | — |
 | 27 | [k-평균과 k-메도이드 비교](/Hongs_Blog/studies/data-science/contrast--kmeans-kmedoids/) | 가르는 질문: 대표가 실제 점이어야 하는가 | — | — |
-| 28 | [군집 수 고르기](/Hongs_Blog/studies/data-science/choosing-k/) | 엘보(개선이 꺾이는 곳)와 실루엣 $$s = (b-a)/\max(a,b)$$ | [verify](/Hongs_Blog/studies/data-science/code/28_choosing-k_verify/) | — |
-| 29 | [가우스 혼합 모델](/Hongs_Blog/studies/data-science/gaussian-mixture-model/) | 가우스 분포의 혼합. 점마다 군집별 확률(부드러운 배정) | — | — |
-| 30 | [EM 알고리즘](/Hongs_Blog/studies/data-science/em-algorithm/) | 책임도(E)와 가중 평균·공분산·비중(M)을 번갈아. 가능도는 줄지 않는다 (강조)[^강조] | [impl](/Hongs_Blog/studies/data-science/code/30_em-gmm_impl/) | — |
-| 31 | [DBSCAN](/Hongs_Blog/studies/data-science/dbscan/) | 반지름 안 이웃이 많은 핵심점에서 퍼져 나가 묶기. $$k$$ 불필요, 잡음 분리 | [impl](/Hongs_Blog/studies/data-science/code/31_dbscan_impl/) | — |
-| 32 | [CLIQUE](/Hongs_Blog/studies/data-science/clique/) | 격자 칸의 밀도, 아프리오리 성질로 부분공간 찾기 | [impl](/Hongs_Blog/studies/data-science/code/32_clique_impl/) | — |
+| 28 | [군집 수 고르기](/Hongs_Blog/studies/data-science/choosing-k/) | 엘보(개선이 꺾이는 곳)와 실루엣 $$s = (b-a)/\max(a,b)$$ | [fig1](/Hongs_Blog/assets/notes/data-science/28_choosing-k_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/28_choosing-k_plot/) · [verify](/Hongs_Blog/studies/data-science/code/28_choosing-k_verify/) | — |
+| 29 | [가우스 혼합 모델](/Hongs_Blog/studies/data-science/gaussian-mixture-model/) | 가우스 분포의 혼합. 점마다 군집별 확률(부드러운 배정) | [fig1](/Hongs_Blog/assets/notes/data-science/29_gaussian-mixture-model_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/data-science/29_gaussian-mixture-model_fig2.svg) · [plot](/Hongs_Blog/studies/data-science/code/29_gaussian-mixture-model_plot/) | — |
+| 30 | [EM 알고리즘](/Hongs_Blog/studies/data-science/em-algorithm/) | 책임도(E)와 가중 평균·공분산·비중(M)을 번갈아. 가능도는 줄지 않는다 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/data-science/30_em-algorithm_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/30_em-algorithm_plot/) · [impl](/Hongs_Blog/studies/data-science/code/30_em-gmm_impl/) | — |
+| 31 | [DBSCAN](/Hongs_Blog/studies/data-science/dbscan/) | 반지름 안 이웃이 많은 핵심점에서 퍼져 나가 묶기. $$k$$ 불필요, 잡음 분리 | [fig1](/Hongs_Blog/assets/notes/data-science/31_dbscan_fig1.svg) · [impl](/Hongs_Blog/studies/data-science/code/31_dbscan_impl/) · [plot](/Hongs_Blog/studies/data-science/code/31_dbscan_plot/) | — |
+| 32 | [CLIQUE](/Hongs_Blog/studies/data-science/clique/) | 격자 칸의 밀도, 아프리오리 성질로 부분공간 찾기 | [fig1](/Hongs_Blog/assets/notes/data-science/32_clique_fig1.svg) · [impl](/Hongs_Blog/studies/data-science/code/32_clique_impl/) · [plot](/Hongs_Blog/studies/data-science/code/32_clique_plot/) | — |
 | 33 | [군집화 알고리즘 비교](/Hongs_Blog/studies/data-science/contrast--clustering-algorithms/) | 가르는 질문: $$k$$를 아는가, 모양을 가정할 수 있는가 | — | — |
 
 자료: 7-1_basic-clustering · 7-2_density-clustering
@@ -154,11 +154,11 @@ permalink: "/studies/data-science/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 34 | [차원의 저주](/Hongs_Blog/studies/data-science/curse-of-dimensionality/) | 차원이 늘면 가까운 이웃도 멀고 모든 거리가 비슷해진다 | [verify](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_verify/) | — |
-| 35 | [행렬 분해 군집화](/Hongs_Blog/studies/data-science/nmf-clustering/) | $$X \approx WH$$, $$W, H \ge 0$$. 더하기만 하는 부분이 군집, L1로 뚜렷하게 | [impl](/Hongs_Blog/studies/data-science/code/35_nmf-clustering_impl/) | — |
-| 36 | [PCA와 NMF 비교](/Hongs_Blog/studies/data-science/contrast--pca-nmf/) | 가르는 질문: 성분을 빼서 써도 되는가 | — | — |
+| 34 | [차원의 저주](/Hongs_Blog/studies/data-science/curse-of-dimensionality/) | 차원이 늘면 가까운 이웃도 멀고 모든 거리가 비슷해진다 | [fig1](/Hongs_Blog/assets/notes/data-science/34_curse-of-dimensionality_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_plot/) · [verify](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_verify/) | — |
+| 35 | [행렬 분해 군집화](/Hongs_Blog/studies/data-science/nmf-clustering/) | $$X \approx WH$$, $$W, H \ge 0$$. 더하기만 하는 부분이 군집, L1로 뚜렷하게 | [fig1](/Hongs_Blog/assets/notes/data-science/35_nmf-clustering_fig1.svg) · [impl](/Hongs_Blog/studies/data-science/code/35_nmf-clustering_impl/) · [plot](/Hongs_Blog/studies/data-science/code/35_nmf-clustering_plot/) | — |
+| 36 | [PCA와 NMF 비교](/Hongs_Blog/studies/data-science/contrast--pca-nmf/) | 가르는 질문: 성분을 빼서 써도 되는가 | [fig1](/Hongs_Blog/assets/notes/data-science/36_contrast--pca-nmf_fig1.svg) · [plot](/Hongs_Blog/studies/data-science/code/36_contrast--pca-nmf_plot/) | — |
 | 37 | [그래프 분할과 정규화 컷](/Hongs_Blog/studies/data-science/graph-partitioning/) | 유사도 그래프를 자르기. 컷만 줄이면 외딴 점 하나, 정규화 컷으로 균형 | — | — |
-| 38 | [스펙트럼 군집화](/Hongs_Blog/studies/data-science/spectral-clustering/) | 라플라시안 $$L = D - W$$의 둘째 고유벡터 부호로 2-분할, 여러 개로 k-분할 | [impl](/Hongs_Blog/studies/data-science/code/38_spectral-clustering_impl/) | — |
+| 38 | [스펙트럼 군집화](/Hongs_Blog/studies/data-science/spectral-clustering/) | 라플라시안 $$L = D - W$$의 둘째 고유벡터 부호로 2-분할, 여러 개로 k-분할 | [fig1](/Hongs_Blog/assets/notes/data-science/38_spectral-clustering_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/data-science/38_spectral-clustering_fig2.svg) · [impl](/Hongs_Blog/studies/data-science/code/38_spectral-clustering_impl/) · [plot](/Hongs_Blog/studies/data-science/code/38_spectral-clustering_plot/) | — |
 
 자료: 10-1_high-dim-clustering · 10-2_graph-clustering
 필기: 아직 없다.
@@ -202,7 +202,7 @@ permalink: "/studies/data-science/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 44 | [행렬 분해 추천](/Hongs_Blog/studies/data-science/mf-recommendation/) | $$R \approx PQ^\top$$. PureSVD, 편향 $$\mu + b_u + b_i + p_u^\top q_i$$, SVD++ | [impl](/Hongs_Blog/studies/data-science/code/44_mf-recommendation_impl/) | — |
+| 44 | [행렬 분해 추천](/Hongs_Blog/studies/data-science/mf-recommendation/) | $$R \approx PQ^\top$$. PureSVD, 편향 $$\mu + b_u + b_i + p_u^\top q_i$$, SVD++ | [fig1](/Hongs_Blog/assets/notes/data-science/44_mf-recommendation_fig1.svg) · [impl](/Hongs_Blog/studies/data-science/code/44_mf-recommendation_impl/) · [plot](/Hongs_Blog/studies/data-science/code/44_mf-recommendation_plot/) | — |
 | 45 | [단일 클래스 협업 필터링](/Hongs_Blog/studies/data-science/one-class-cf/) | 1과 빈칸만으로. WRMF는 빈칸에 작은 무게, BPR은 순서를 배운다 | [impl](/Hongs_Blog/studies/data-science/code/45_one-class-cf_impl/) | — |
 | 46 | [0 주입](/Hongs_Blog/studies/data-science/zero-injection/) | 사용 전 선호가 가장 낮은 빈칸에만 0을 넣어 행렬을 빽빽하게 | [verify](/Hongs_Blog/studies/data-science/code/46_zero-injection_verify/) | — |
 

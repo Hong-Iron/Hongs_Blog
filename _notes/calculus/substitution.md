@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Integration by Substitution", "치환적분", "u-치환", "u-substitution", "변수 바꾸기", "change of variables"]
 description: "연쇄 법칙을 거꾸로 쓰는 기법이다. 적분할 식 안에 \"안쪽 함수\"와 \"그 안쪽 함수의 도함수\"가 함께 보이면, 안쪽 함수를 새 변수 하나로 묶어 식을 단순하게 만든다. 모양만 맞으면 복잡한 식이 기본 공식 하나로 줄어든다. 다만 도함수가 곱해져 있지 않으면(상수배 차이는 괜찮다) …"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/integration-by-parts/"
 next_title: "부분적분"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/substitution/"
 ---
 {% raw %}
@@ -75,6 +75,10 @@ $$F$$를 $$f$$의 원시함수라 하자. 연쇄 법칙으로 $$\big(F(g(x))\big
 2. *치환:* $$u = x^2$$, $$du = 2x\,dx$$라 $$x\,dx = \frac12 du$$. 끝값은 $$x = 0 \to u = 0$$, $$x = 1 \to u = 1$$.
 3. *계산:* $$\frac12\int_0^1 e^u du = \frac12(e - 1) \approx 0.859$$.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/13_substitution_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 치환 전, 오른쪽은 치환 후의 피적분함수다. 가로축이 $$x$$에서 $$u = x^2$$으로 바뀌면서 곡선 모양이 달라졌지만, 칠한 넓이는 둘 다 0.859다. $$du = 2x\,dx$$가 가로 폭이 늘고 주는 비율을 맞춰 주기 때문이다[^s2].
+
 **탄젠트.** $$\int \tan x\,dx = \int\frac{\sin x}{\cos x}dx$$. $$u = \cos x$$, $$du = -\sin x\,dx$$로 $$-\int\frac{du}{u} = -\ln\vert \cos x\vert  + C$$.
 
 <div class="callout callout-check" markdown="1">
@@ -123,4 +127,5 @@ $$F$$를 $$f$$의 원시함수라 하자. 연쇄 법칙으로 $$\big(F(g(x))\big
 
 [^1]: OpenStax, *Calculus Volume 1*, 5.5절 "Substitution", 5.6절 "Integrals Involving Exponential and Logarithmic Functions", 5.7절 "Integrals Resulting in Inverse Trigonometric Functions".
 [^s1]: 에이전트 보충. 단조 변환의 확률밀도 공식은 확률론 교재의 "확률변수의 함수" 절에 있는 표준 결과다. 확률과 통계 과목에서 증명과 함께 다룬다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [13_substitution_plot.py](/Hongs_Blog/studies/calculus/code/13_substitution_plot/)로 그렸고, 두 넓이가 모두 $$\frac{e - 1}{2} \approx 0.859$$인 것을 같은 코드로(중점 합) 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Scheduling Algorithms", "선입선출", "FCFS", "First-Come-First-Served", "라운드 로빈", "Round Robin", "RR", "최단 프로세스 우선", "SPN", "Shortest Process Next", "SJF", "최단 잔여 시간", "SRT", "Shortest Remaining Time", "최고 응답률 우선", "HRRN", "Highest Response Ratio Next", "피드백", "Feedback", "다단계 피드백 큐", "선점", "Preemptive", "비선점", "Nonpreemptive", "정규화 반환 시간", "Normalized Turnaround Time", "가상 라운드 로빈"]
 description: "단기 스케줄러가 다음 프로세스를 고르는 규칙은 두 가지로 갈린다. 무엇을 보고 고르나(먼저 온 순서, 짧은 작업, 기다린 시간), 그리고 실행 중인 프로세스를 중간에 끊을 수 있나(선점)다. 은행 창구에서 번호표 순서대로만 받으면 공평하지만 짧은 용무의 손님이 오래 기다리고, 짧은…"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/burst-prediction/"
 next_title: "실행 시간 예측"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/scheduling-algorithms/"
 ---
 {% raw %}
@@ -54,6 +54,10 @@ permalink: "/studies/operating-systems/scheduling-algorithms/"
 | 피드백, q = 2ⁱ | AABACBBDECCDDEBBBCDD | 4 17 18 20 14 | 10.60 | 2.63 |
 
 **반환 시간** $$T_r$$은 끝난 시각 − 도착 시각이다. **정규화 반환 시간** $$T_r / T_s$$는 반환 시간을 서비스 시간 $$T_s$$로 나눈 값으로, "일한 시간에 비해 얼마나 오래 시스템에 있었나"다. 1이면 기다리지 않은 것이다[^2]. 예: FCFS에서 E는 2만큼 일하려고 8에 도착해 20에 끝났다. $$T_r = 12$$, $$T_r/T_s = 6$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/44_scheduling-algorithms_fig1.svg" alt="그림" loading="lazy">
+
+막대 색이 프로세스이고, 오른쪽 숫자가 평균 반환 시간이다. 가장 짧은 E(노란 막대)는 FCFS에서 맨 끝으로 밀리고, SPN과 SRT에서는 훨씬 앞으로 당겨진다. RR과 피드백은 막대가 잘게 쪼개져 모두가 일찍 차례를 받지만, 그 대신 다들 늦게 끝난다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 표의 실행 순서, 끝나는 시각, 평균값을 시뮬레이터로 재현해 Stallings 표 9.5와 모두 일치. 예제 사다리의 답 — [44_scheduling_impl.py](/Hongs_Blog/studies/operating-systems/code/44_scheduling_impl/)</div>
@@ -224,4 +228,5 @@ RR은 프로세서 위주 프로세스에게 유리하다. 입출력 위주 프�
 [^16]: 같은 자료, 슬라이드 34 (그림 9.7)와 슬라이드 33의 발표자 노트
 [^17]: 같은 자료, 슬라이드 46~51과 슬라이드 45~46의 발표자 노트
 [^s1]: 에이전트 보충. 은행 창구 비유, HRRN 시각 9 계산, "할당량이 너무 크면 FCFS", 스스로 설명해 보기의 근거, 디스크 스케줄링 연결, 확인 문제 C2~C5는 슬라이드에 없다. 실행 순서는 Stallings 6판 그림 9.5와 같은 규칙(같은 시각에는 새로 도착한 프로세스가 선점된 프로세스보다 먼저 큐에 섬)으로 계산했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [44_scheduling-algorithms_plot.py](/Hongs_Blog/studies/operating-systems/code/44_scheduling-algorithms_plot/)로 그렸고, 여덟 정책의 실행 순서와 평균 반환 시간이 위 표와 같음을 같은 코드로 확인했다.
 {% endraw %}

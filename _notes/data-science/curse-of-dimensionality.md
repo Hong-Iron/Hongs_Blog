@@ -19,7 +19,7 @@ next_url: "/studies/data-science/nmf-clustering/"
 next_title: "행렬 분해 군집화"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/curse-of-dimensionality/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/data-science/curse-of-dimensionality/"
 1차원에서는 길이 0.01이면 충분하지만, 1000차원에서는 한 변이 0.9954, 거의 공간 전체다. "가장 가까운 10개"가 사실상 공간 곳곳에 흩어져 있다는 뜻이다[^1].
 
 무작위 점 60개의 모든 쌍 거리에서 가장 먼 것과 가장 가까운 것의 차이를 가장 가까운 거리로 나누면, 2차원에서 94.6, 1000차원에서 0.14다[^s1]. 고차원에서는 거리가 좁은 범위에 몰린다[^2].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/34_curse-of-dimensionality_fig1.svg" alt="그림" loading="lazy">
+
+같은 실험의 쌍 거리 1,770개를 평균 거리로 나눠 분포를 그렸다. 2차원에서는 평균의 0.02배부터 2.3배까지 넓게 퍼진다. 1000차원에서는 모든 쌍이 평균의 0.93~1.06배 안에 몰린다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 표의 $$l$$ 값, 차원별 거리 퍼짐, 카드 C2 — [34_curse-of-dimensionality_verify.py](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_verify/)</div>
@@ -96,4 +100,5 @@ permalink: "/studies/data-science/curse-of-dimensionality/"
 [^3]: 같은 자료, p.9
 [^4]: 같은 자료, p.12
 [^s1]: 에이전트 보충. 점 60개 실험과 카드 C2는 원본에 없다. 검증 코드로 계산했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [34_curse-of-dimensionality_plot.py](/Hongs_Blog/studies/data-science/code/34_curse-of-dimensionality_plot/)로 그렸다. 검증 코드와 같은 난수로 같은 점을 만들었고, (최대 − 최소)/최소 94.6과 0.14, 1000차원에서 0.93~1.06배 범위를 같은 코드로 확인했다.
 {% endraw %}

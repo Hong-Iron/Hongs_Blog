@@ -19,7 +19,7 @@ next_url: "/studies/calculus/matrix-calculus/"
 next_title: "행렬 미분"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/hessian/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/calculus/hessian/"
 | $$x^2 - y^2$$ | $$\begin{pmatrix}2 & 0\\ 0 & -2\end{pmatrix}$$ | 말안장 | 안장점 |
 
 셋째는 $$x$$ 방향으로는 오르고 $$y$$ 방향으로는 내린다. 기울기만 보면 셋이 똑같이 평지지만, 휘는 방향이 다르다. 2계 편미분 행렬이 아래 정의의 $$H$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/23_hessian_fig1.svg" alt="그림" loading="lazy">
+
+주황 실선은 원점보다 높은 곳, 파란 점선은 낮은 곳의 등고선이다. 극소는 사방이 주황, 극대는 사방이 파랑이다. 안장점은 좌우(가로축 방향)로 가면 주황, 위아래로 가면 파랑이라, 원점에서 등고선이 X자로 갈린다[^s2].
 
 ## 정의
 
@@ -86,6 +90,10 @@ $$f(x, y) = x^3 - 3x + y^2$$의 임계점을 분류한다.
 2. *헤세 행렬:* $$f_{xx} = 6x$$, $$f_{yy} = 2$$, $$f_{xy} = 0$$.
 3. *$$(1, 0)$$:* $$H = \operatorname{diag}(6, 2)$$, 양의 정부호라 극소. 값은 $$-2$$.
 4. *$$(-1, 0)$$:* $$H = \operatorname{diag}(-6, 2)$$, 부호가 섞여 안장점. $$x$$ 방향으로는 꼭대기, $$y$$ 방향으로는 바닥이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/23_hessian_fig2.svg" alt="그림" loading="lazy">
+
+초록 점 둘레는 닫힌 고리가 겹겹이 감싼 골짜기 바닥이다. 주황 네모에서는 높이 2인 등고선이 X자로 엇갈린다. 같은 "기울기 0"이라도 둘레의 등고선 모양이 전혀 다르다[^s2].
 
 **판정 불가의 예.** $$x^4 + y^4$$와 $$x^4 - y^4$$는 원점에서 헤세 행렬이 모두 영행렬이다. 앞의 것은 극소, 뒤의 것은 안장점이다. 2차 근사만으로는 둘을 구별할 수 없다.
 
@@ -161,4 +169,5 @@ $$\frac{\partial^2 f}{\partial x\,\partial y} \approx \frac{f(x + \delta x, y + 
 [^n2]: 같은 자료, p.12~14
 [^n3]: 같은 자료, p.17
 [^sn1]: 에이전트 보충. 카드 C4는 원본에 없다. 23_hessian_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [23_hessian_plot.py](/Hongs_Blog/studies/calculus/code/23_hessian_plot/)로 그렸고, 예제의 값 $$f(1, 0) = -2$$, $$f(-1, 0) = 2$$, $$(1, 0)$$ 둘레 무작위 점 1,000개가 모두 $$-2$$보다 높은 것, $$(-1, 0)$$에서 $$x$$ 방향은 내려가고 $$y$$ 방향은 올라가는 것, 예시 세 함수의 원점 둘레 부호를 같은 코드로 확인했다.
 {% endraw %}

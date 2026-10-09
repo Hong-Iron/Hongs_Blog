@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Discrete Fourier Transform", "DFT", "이산 푸리에 변환", "Fast Fourier Transform", "FFT", "고속 푸리에 변환", "쿨리-튜키", "Cooley–Tukey", "푸리에 행렬", "Fourier matrix", "단위근", "roots of unity", "합성곱 정리", "convolution theorem", "회전 인자", "twiddle factor"]
 description: "소리 한 조각을 \"어떤 높이의 음이 얼마나 섞였는가\"로 바꾸는 것이 이산 푸리에 변환이다. 선형대수로 보면 신호 벡터를 서로 수직인 회전 파동(단위근) 기저로 바꾸는 기저 변환이라, 되돌리기도 쉽다. 정의대로 하면 곱셈 횟수가 신호 길이의 제곱으로 늘지만, 짝수 번째와 홀수 번째로…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/decompositions-compared/"
 next_title: "LU·QR·고윳값·SVD 비교"
 math: true
 mermaid: false
-code_count: 2
+code_count: 3
 permalink: "/studies/linear-algebra/dft/"
 ---
 {% raw %}
@@ -66,6 +66,10 @@ FFT(x)                              # n = 2^m, 인덱스 0부터
 
 **복잡도.** $$T(n) = 2T(n/2) + O(n)$$이라 [마스터 정리](/Hongs_Blog/studies/discrete-math/master-theorem/)의 경우 2로 $$O(n\log n)$$이다. 정의대로 하면 곱셈이 $$n^2$$번, FFT는 회전 인자 곱셈이 $$\frac n2\log_2 n$$번이라 $$n = 2^{20}$$(약 백만)에서 곱셈이 약 10만 배 적다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/27_dft_fig2.svg" alt="그림" loading="lazy">
+
+로그 눈금이라 기울기가 증가 속도다. 두 선의 간격이 계속 벌어져 $$n = 2^{20}$$에서 약 10만 배가 된다[^s2].
+
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">합성곱 정리</div>
 
@@ -96,6 +100,10 @@ FFT(x)                              # n = 2^m, 인덱스 0부터
 - **신호와 이미지.** 오디오 스펙트럼 분석, 잡음 제거(특정 주파수 성분 지우기), 이미지의 흐림·선명화 필터가 주파수 영역에서 성분별 곱이 된다. JPEG는 푸리에 변환의 친척인 이산 코사인 변환(DCT)을 쓴다[^s1].
 - **큰 수와 다항식의 곱.** 수십만 자리 정수의 곱, 다항식 곱은 FFT로 $$O(n\log n)$$에 한다. 합성곱 신경망의 큰 필터도 FFT로 계산하기도 한다.
 - **통신.** 여러 주파수에 데이터를 나눠 싣는 방식(OFDM)은 송신에 역 FFT, 수신에 FFT를 쓴다[^s1]. 주파수를 나눠 쓰는 생각은 [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/)와 이어진다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/27_dft_fig1.svg" alt="그림" loading="lazy">
+
+길이 64인 신호에 주파수 번호 5와 12인 사인파 두 개와 잡음을 섞었다. 위의 신호에서는 잘 안 보이던 두 파동이 아래 $$\vert X_k\vert $$에서 $$k = 5, 12$$의 막대로 솟는다. 실수 신호라 $$k = 59, 52$$에 같은 높이의 짝이 있다[^s2].
 
 ## 연결
 
@@ -138,4 +146,5 @@ for k in range(n // 2):
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 9.3절 "The Fast Fourier Transform"(푸리에 행렬, $$\bar{F}^\top F = nI$$, FFT의 분해). Cormen et al., *Introduction to Algorithms* 3판, 30장 "Polynomials and the FFT"(합성곱 정리와 다항식 곱셈, 재귀 FFT).
 [^s1]: 에이전트 보충. JPEG의 DCT와 OFDM의 IFFT/FFT는 각각 JPEG(ITU-T T.81)과 Wi-Fi·LTE 표준의 내용이다. 속도 비교(백만 점에서 약 10만 배)는 $$n^2$$ 대 $$\frac n2\log_2 n$$ 곱셈 수로 센 값이고, 실제 실행 시간의 비는 덧셈·메모리 접근 때문에 이와 다르다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [27_dft_plot.py](/Hongs_Blog/studies/linear-algebra/code/27_dft_plot/)로 그렸고, 정의대로 한 DFT가 `numpy.fft.fft`와 같은 것, 가장 큰 네 막대가 $$k = 5, 12, 52, 59$$인 것, $$n = 2^{20}$$에서 곱셈 수의 비가 약 10만 배(104,858)인 것을 같은 코드로 확인했다.
 {% endraw %}

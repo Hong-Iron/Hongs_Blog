@@ -19,7 +19,7 @@ next_url: "/studies/data-science/clique/"
 next_title: "CLIQUE"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/dbscan/"
 ---
 {% raw %}
@@ -34,6 +34,10 @@ permalink: "/studies/data-science/dbscan/"
 ## 예시로 보기
 
 [k-평균](/Hongs_Blog/studies/data-science/k-means/)과 [GMM](/Hongs_Blog/studies/data-science/gaussian-mixture-model/)은 무리 수를 정해야 하고, 둥근 모양이나 종 모양을 가정하며, 이상치에 흔들리고, 고리처럼 생긴 무리를 찾지 못한다[^1]. 고리 하나 안에 덩어리 하나가 있는 자료를 k-평균($$k = 2$$)에 넣으면 고리를 반으로 자른다. DBSCAN은 고리와 덩어리를 따로 묶는다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/31_dbscan_fig1.svg" alt="그림" loading="lazy">
+
+고리 점 40개와 가운데 덩어리 15개에, 고리 바깥에 살짝 붙은 점 2개와 멀리 떨어진 점 3개를 더했다. k-평균은 고리와 덩어리를 섞어 둘로 자른다. DBSCAN(Eps 1, MinPts 3)은 고리와 덩어리를 따로 묶고, 붙은 점 2개는 경계점, 먼 점 3개는 잡음으로 남긴다[^s2].
 
 1차원 점 1, 2, 3, 4, 10, 11, 12, 20을 반지름 Eps = 1, 최소 이웃 수 MinPts = 3(자기 자신 포함)으로 묶는다[^s1].
 
@@ -147,4 +151,5 @@ permalink: "/studies/data-science/dbscan/"
 [^5]: 같은 자료, p.12
 [^6]: 같은 자료, p.13
 [^s1]: 에이전트 보충. 1차원 예, 고리 예, 공간 색인, 쓰임 예, 흔한 실수, 카드 C2는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [31_dbscan_plot.py](/Hongs_Blog/studies/data-science/code/31_dbscan_plot/)로 그렸고, 고리와 덩어리가 서로 다른 군집이 되는 것, 붙은 점 2개가 핵심점이 아닌 경계점이고 먼 점 3개가 잡음인 것, k-평균($$k = 2$$, 열 번 다시 시작)이 고리와 덩어리를 가르지 못하는 것을 같은 코드로 확인했다.
 {% endraw %}

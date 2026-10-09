@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Multiplication Property", "곱셈 성질", "Product Property", "진폭 변조", "Amplitude Modulation", "AM", "변조", "Modulation", "복조", "Demodulation", "반송파", "Carrier", "반송 주파수", "Carrier Frequency", "가변 중심 주파수 대역 통과 필터"]
 description: "컨벌루션 성질의 쌍대로, 시간 영역에서 두 신호를 곱하면 주파수 영역에서는 두 스펙트럼을 컨벌루션한 것(\\frac{1}{2\\pi}배)이 된다. 특히 신호에 정현파 \\cos\\omega0t를 곱하면 스펙트럼이 통째로 \\pm\\omega0로 옮겨진다. 라디오는 이렇게 목소리를 높은 주파수…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/lccde-frequency-response/"
 next_title: "미분방정식 시스템의 주파수 응답"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/multiplication-modulation/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ permalink: "/studies/signals-and-systems/multiplication-modulation/"
 - 반송파의 변환: $$P(j\omega) = \pi\delta(\omega - \omega_0) + \pi\delta(\omega + \omega_0)$$(예제 4.7).
 - 곱셈 성질과 $$X * \delta(\omega - \omega_0) = X(\omega - \omega_0)$$로 $$R(j\omega) = \frac12S(j(\omega - \omega_0)) + \frac12S(j(\omega + \omega_0))$$.
 - $$\omega_0 > \omega_1$$이면 옮겨진 두 덩어리가 겹치지 않는다(그림 4.23). 메시지의 정보가 그대로 높은 주파수로 옮겨졌다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig1.svg" alt="그림" loading="lazy">
+
+같은 메시지를 시간에서 본 모습이다. $$r(t)$$는 $$\cos\omega_0 t$$로 빠르게 진동하고, 그 진폭이 메시지 $$s(t)$$(파란 선)를 따라 오르내린다[^s2].
 
 ## 정의
 
@@ -60,6 +64,10 @@ $$r(t) = s(t)p(t) \overset{\mathcal{F}}{\longleftrightarrow} R(j\omega) = \frac{
 - $$G(j\omega) = \frac12[R(j(\omega - \omega_0)) + R(j(\omega + \omega_0))] = \frac14S(j(\omega - 2\omega_0)) + \frac12S(j\omega) + \frac14S(j(\omega + 2\omega_0))$$(그림 4.24).
 - 가운데 $$\frac12S(j\omega)$$가 원래 메시지이고, $$\pm2\omega_0$$ 근처에 고주파 성분이 붙었다.
 - $$\vert \omega\vert  < \omega_1$$을 통과시키는 저역 통과 필터로 거르면 $$\frac12s(t)$$, 곧 크기만 바뀐 메시지가 복원된다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/43_multiplication-modulation_fig2.svg" alt="그림" loading="lazy">
+
+삼각형 메시지 스펙트럼($$\omega_1 = 1$$)과 $$\omega_0 = 5$$로 그린 예다. 반송파를 곱하면 높이 $$\frac12$$인 두 덩어리가 $$\pm\omega_0$$로 옮겨지고, 한 번 더 곱하면 가운데 $$\frac12S$$와 $$\pm2\omega_0$$의 $$\frac14$$ 덩어리가 생긴다. 점선 필터가 가운데만 남긴다[^s2].
 
 **예제 4.23 sinc 두 개의 곱**[^4]. $$x(t) = \frac{\sin t\sin(t/2)}{\pi t^2} = \pi\left(\frac{\sin t}{\pi t}\right)\left(\frac{\sin(t/2)}{\pi t}\right)$$.
 
@@ -122,4 +130,5 @@ $$r(t) = s(t)p(t) \overset{\mathcal{F}}{\longleftrightarrow} R(j\omega) = \frac{
 [^5]: 같은 자료, p.21~22 (그림 4.26~4.30)
 [^6]: 같은 자료, p.32, p.33
 [^s1]: 에이전트 보충. 반송 주파수 조건의 설명과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [43_multiplication-modulation_plot.py](/Hongs_Blog/studies/signals-and-systems/code/43_multiplication-modulation_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 메시지 $$s(t) = \mathrm{sinc}^2(\frac{t}{2\pi})$$의 변환이 삼각형 꼴임(수치 적분), $$R$$의 두 덩어리가 겹치지 않음, $$G$$의 가운데가 $$\frac12S$$. 메시지 모양과 $$\omega_0 = 5$$는 설명을 위해 고른 값이다.
 {% endraw %}

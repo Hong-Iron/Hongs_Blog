@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Multivariable Chain Rule", "다변수 연쇄 법칙", "Jacobian", "야코비 행렬", "야코비안", "Jacobian matrix", "야코비 행렬식", "Jacobian determinant", "전미분", "total derivative", "합성 함수의 미분"]
 description: "여러 입력, 여러 출력의 함수도 아주 가까이서 보면 선형 변환이고, 그 변환의 행렬이 야코비 행렬이다. 함수를 이어 붙이면 가까이서 본 선형 변환도 이어 붙여지므로, 합성 함수의 미분은 야코비 행렬의 곱이다. 한 변수 연쇄 법칙을 \"영향이 흐르는 모든 길을 따라 곱하고 더한다\"로 …"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/backprop-bridge/"
 next_title: "연쇄 법칙 ↔ 역전파"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/multivariable-chain-rule/"
 ---
 {% raw %}
@@ -135,6 +135,10 @@ $$\mathbf{r}_2$$는 $$\Vert \mathbf{k}\Vert $$에 비해 작다는 것만 알려
 3. *행렬식:* $$r\cos^2\theta + r\sin^2\theta = r$$. 작은 극좌표 사각형 $$dr \times d\theta$$가 넓이 약 $$r\,dr\,d\theta$$인 조각이 된다([중적분과 변수변환](/Hongs_Blog/studies/calculus/multiple-integrals/)).
 4. *연쇄 법칙으로 확인:* 원 위를 도는 $$r = 2$$, $$\theta = t$$에서 속도는 $$J\begin{pmatrix}0\\ 1\end{pmatrix} = (-2\sin t, 2\cos t)$$로, 직접 미분한 $$(2\cos t, 2\sin t)' $$와 같다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/21_multivariable-chain-rule_fig1.svg" alt="그림" loading="lazy">
+
+점 $$(r, \theta) = (2, \frac{\pi}{6})$$ 둘레의 작은 사각형(왼쪽)을 극좌표 함수로 보내면, 오른쪽의 살짝 휜 조각(파랑)이 된다. 야코비 행렬이 보낸 평행사변형(주황 점선)이 그 조각과 거의 겹친다. 사각형을 작게 잡을수록 둘의 어긋남은 사각형 크기보다 더 빨리 줄어든다. 두 넓이는 모두 $$r \cdot dr \cdot d\theta = 2 \times 0.4 \times 0.3 = 0.24$$다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시의 두 길의 합 = 곱의 미분, 무작위 합성 함수($$\mathbb{R}^2 \to \mathbb{R}^3 \to \mathbb{R}^2$$ 등)에서 $$J_{\mathbf{g}\circ\mathbf{f}} = J_{\mathbf{g}}J_{\mathbf{f}}$$(수치 야코비), 선형 근사 오차가 $$\Vert \mathbf{h}\Vert $$보다 빨리 줄어듦, 가정의 반례($$\frac12$$ 대 0), 극좌표 야코비와 행렬식 $$r$$, 신경망 한 층의 야코비 $$\operatorname{diag}(\sigma')W$$, 카드의 값 — [21_multivariable-chain-rule_verify.py](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_verify/)</div>
 
@@ -199,4 +203,5 @@ $$\mathbf{r}_2$$는 $$\Vert \mathbf{k}\Vert $$에 비해 작다는 것만 알려
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.5절 "The Chain Rule"(여러 변수의 연쇄 법칙, 나무 그림으로 길 세기). Strang, *Introduction to Linear Algebra* 5판, 8.1절(선형 변환의 합성과 행렬 곱).
 [^s1]: 에이전트 보충. 야코비 행렬을 이용한 역기구학은 로봇공학 교재(예: Craig, *Introduction to Robotics*)의 표준 내용이다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [21_multivariable-chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_plot/)로 그렸다. 사각형은 $$dr = 0.4$$, $$d\theta = 0.3$$으로 잘 보이게 크게 잡았다. $$\det J = 2$$, 평행사변형 넓이 0.24, 실제 조각의 넓이 $$\int\!\!\int r\,dr\,d\theta = 0.24$$(신발끈 공식으로도)를 같은 코드로 확인했다.
 {% endraw %}

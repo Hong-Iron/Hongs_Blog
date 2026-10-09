@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Maximum Likelihood Estimation", "최대가능도 추정", "최대우도 추정", "MLE", "가능도 함수", "likelihood function", "로그 가능도", "log-likelihood", "음의 로그 가능도", "negative log-likelihood", "점수 함수", "score function", "피셔 정보량", "Fisher information", "불변성", "invariance"]
 description: "여러 후보 설명 중에서 지금 본 데이터가 나올 가능성을 가장 크게 만드는 것을 고르는 방법이다. 동전을 10번 던져 앞면이 7번이면, 앞면 확률 0.7이 이 결과를 가장 그럴듯하게 만든다. 확률을 곱한 식에 로그를 씌워 합으로 바꾸고 미분해 0으로 놓는 기계적인 절차라, 거의 모든…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/confidence-intervals/"
 next_title: "신뢰구간"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/mle/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/probability-statistics/mle/"
 | $$p^7(1 - p)^3$$ ($$\times 10^{-3}$$) | 0.98 | 1.79 | 2.22 | 1.68 | 0.48 |
 
 0.7에서 가장 크다. 데이터를 고정하고 $$p$$를 움직이며 본 이 함수가 아래의 가능도 $$L(p)$$이고, 가장 높은 곳이 최대가능도 추정값 $$\hat p = 0.7$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/30_mle_fig1.svg" alt="그림" loading="lazy">
+
+파란 곡선은 위 표의 $$p^7(1 - p)^3$$을 꼭대기가 1이 되게 나눈 것이고, 점이 표의 다섯 값이다. 같은 비율 70/100이면 봉우리는 같은 0.7인데 훨씬 좁다. 자료가 많을수록 그럴듯한 $$p$$의 범위가 줄어든다[^s1].
 
 ## 정의
 
@@ -189,4 +193,5 @@ permalink: "/studies/probability-statistics/mle/"
 
 
 [^1]: Wasserman, *All of Statistics*, "Parametric Inference" 장(최대가능도, 일치성, 점근 정규성, 피셔 정보량, 불변성).
+[^s1]: 에이전트 보충. 그림 한 장은 원본에 없다. [30_mle_plot.py](/Hongs_Blog/studies/probability-statistics/code/30_mle_plot/)로 그렸고, 그림에 쓴 값(예시 표의 다섯 값, 두 곡선의 최댓점 0.7)을 같은 코드로 확인했다.
 {% endraw %}

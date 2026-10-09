@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Matrix", "행렬", "Matrix-Vector Product", "행렬-벡터 곱", "열 관점", "column picture", "행 관점", "row picture", "연립일차방정식", "system of linear equations", "선형 함수", "linear map", "단위행렬", "identity matrix", "표준 기저", "standard basis"]
 description: "행렬은 숫자를 직사각형으로 늘어놓은 표이자, 벡터를 받아 벡터를 내놓는 기계다. 행렬에 벡터를 곱하면 행렬의 열들을 벡터의 성분만큼씩 섞은 것이 나온다. 같은 계산을 각 행과의 내적으로 볼 수도 있다. 이 한 가지 연산으로 연립방정식, 신경망의 한 층, 그래픽스의 좌표 변환을 모두…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/gaussian-elimination/"
 next_title: "가우스 소거법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/matrix-vector/"
 ---
 {% raw %}
@@ -46,6 +46,10 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 - **행 관점(재료별로 합산):** 재료 1은 $$(2, 1)\cdot(4, 5) = 13$$, 재료 2는 $$(1, 3)\cdot(4, 5) = 19$$.
 
 거꾸로 "재료가 13, 19만큼 있을 때 몇 개씩 만들면 딱 맞게 쓰나"는 연립방정식 $$2x_1 + x_2 = 13$$, $$x_1 + 3x_2 = 19$$이다. 표가 아래 정의의 행렬 $$A$$, 개수가 $$\mathbf{x}$$, 재료량이 $$\mathbf{b}$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/04_matrix-vector_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 열 관점이다. 열 $$(2, 1)$$을 4번, 열 $$(1, 3)$$을 5번 이어 붙이면 $$(13, 19)$$에 닿는다. 오른쪽은 행 관점이다. 식 하나가 직선 하나이고, 두 직선이 만나는 $$(4, 5)$$가 답이다[^s2].
 
 ## 정의
 
@@ -192,4 +196,5 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.3절 "Matrices"(열들의 결합으로 본 $$A\mathbf{x}$$), 2.1절 "Vectors and Linear Equations"(행 그림과 열 그림, 성분별 계산).
 [^s1]: 에이전트 보충. 동차 좌표로 평행이동을 행렬 곱으로 쓰는 방법은 컴퓨터 그래픽스 교재의 표준 내용이다. 04_matrix-vector_verify.py에서 $$3 \times 3$$ 행렬로 평행이동이 되는 것을 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [04_matrix-vector_plot.py](/Hongs_Blog/studies/linear-algebra/code/04_matrix-vector_plot/)로 그렸고, $$4(2, 1) + 5(1, 3) = (13, 19)$$와 두 직선의 교점 $$(4, 5)$$를 같은 코드로 확인했다.
 {% endraw %}

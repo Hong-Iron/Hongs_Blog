@@ -17,7 +17,7 @@ prev_url: "/studies/numerical-analysis/shooting-method/"
 prev_title: "사격법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/finite-difference-bvp/"
 ---
 {% raw %}
@@ -44,6 +44,10 @@ $$\begin{pmatrix}2.04 & -1 & 0 & 0\\ -1 & 2.04 & -1 & 0\\ 0 & -1 & 2.04 & -1\\ 0
 | 참값 | 65.9518 | 93.7478 | 124.5035 | 159.4534 |
 
 가장 큰 오차는 0.035다. $$\Delta x = 1$$로 줄이면 0.0087로 약 4분의 1이 된다[^1][^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/37_finite-difference-bvp_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽은 $$\Delta x = 2$$의 점들이 참값 곡선 위에 거의 그대로 놓이는 모습이다. 오른쪽은 간격을 반씩 줄일 때 가장 큰 오차가 0.035, 0.0087, 0.0022, 0.00055로 매번 약 4분의 1이 되는 것을 보인다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 슬라이드의 행렬·우변·해, 참값(지수함수 풀이)과 비교, 간격을 반으로 하면 오차 1/4, 토마스 알고리즘 = 직접 대입 확인(무작위 50개), 카드 C2 — [37_finite-difference-bvp_impl.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_impl/)</div>
@@ -115,4 +119,5 @@ $$\begin{pmatrix}2 + h'\Delta x^2 & -1 & & \\ -1 & 2 + h'\Delta x^2 & -1 & \\ & 
 [^3]: 같은 자료, p.11
 [^4]: 같은 자료, p.12
 [^s1]: 에이전트 보충. 참값 비교와 간격 실험, 토마스 알고리즘, 대각 우세, 오차 차수, 활용, 사격법과의 비교, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [37_finite-difference-bvp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 유한 차분 값과 참값, 가장 큰 오차가 간격을 반으로 할 때마다 약 $$\frac14$$.
 {% endraw %}

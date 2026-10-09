@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-09-25"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Sinusoid", "Sine Wave", "정현파", "진폭", "amplitude", "주파수", "frequency", "주기", "period", "위상", "phase", "각주파수", "angular frequency", "에일리어싱", "aliasing", "표본화", "sampling"]
 description: "사인파는 \"얼마나 크게, 1초에 몇 번, 언제부터\" 흔들리는지 세 수로 정해지는 가장 순수한 진동이다. 소리의 크기와 음정, 전파의 반송파, 교류 전기가 모두 이 모양이다. 같은 빠르기의 사인파끼리 더하면 여전히 같은 빠르기의 사인파가 되어 다루기 쉽다. 다만 실제 소리와 신호는 …"
@@ -19,7 +19,7 @@ next_url: "/studies/college-math/trig-identities/"
 next_title: "삼각함수 항등식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/college-math/sinusoid/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/college-math/sinusoid/"
 | 위상 $$\pi/2$$ | $$\sin(2\pi \cdot 440 t + \pi/2)$$ | 같은 소리, $$1/1760$$초 먼저 시작 |
 
 표의 세 조작은 [함수의 변환](/Hongs_Blog/studies/college-math/function-transformation/)과 짝을 이룬다. 진폭은 세로 배율, 주파수는 가로 배율, 위상은 가로 이동이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/13_sinusoid_fig1.svg" alt="그림" loading="lazy">
+
+회색이 원래의 440 Hz 사인파다. 진폭을 키우면 위아래로 늘어나고, 주파수를 키우면 가로로 줄어들고, 위상을 바꾸면 모양은 그대로 왼쪽으로 옮겨 간다[^s2].
 
 ## 정의
 
@@ -76,6 +80,10 @@ $$s(t) = A \sin(2\pi f t + \varphi) + C = A\sin(\omega t + \varphi) + C$$
 4. *해석:* 저장된 값은 1 kHz 사인파(부호만 반대)와 똑같다. 7 kHz는 1 kHz로 둔갑한다.
 
 표본화 주파수의 절반보다 높은 주파수는 이렇게 낮은 주파수로 보인다(에일리어싱). 그래서 음성 전화처럼 8 kHz로 표본화하는 장치는 먼저 4 kHz보다 높은 성분을 걸러 낸다[^s1].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/college-math/13_sinusoid_fig2.svg" alt="그림" loading="lazy">
+
+회색 점이 8 kHz로 잰 값이다. 빠르게 떨리는 7 kHz 파형(파랑)과 느린 1 kHz 파형(주황)이 모든 점을 똑같이 지나서, 점만 보고는 둘을 가릴 수 없다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 440 Hz의 주기, 변환 계수 대응, 카드 C2의 값, 7 kHz와 1 kHz 표본 2,000개 일치, 합성 $$3\sin + 4\cos = 5\sin(\cdot + 0.927)$$ — [13_sinusoid_verify.py](/Hongs_Blog/studies/college-math/code/13_sinusoid_verify/)</div>
@@ -126,4 +134,5 @@ $$s(t) = A \sin(2\pi f t + \varphi) + C = A\sin(\omega t + \varphi) + C$$
 
 [^1]: OpenStax, *Precalculus 2e*, 6.1절 "Graphs of the Sine and Cosine Functions"(진폭, 주기, 위상 이동), 7.6절 "Modeling with Trigonometric Functions"
 [^s1]: 에이전트 보충. 표본화 주파수의 절반보다 높은 성분이 낮은 주파수로 겹친다는 것은 표본화 정리(나이퀴스트-섀넌)의 내용이다. 전화 음성의 8 kHz 표본화는 PCM 음성 부호화의 표준 값이다. 이 문서의 예제는 삼각함수의 주기성과 홀함수 성질만으로 한 경우를 보였다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [13_sinusoid_plot.py](/Hongs_Blog/studies/college-math/code/13_sinusoid_plot/)로 그렸고, 그림에 쓴 값(주기 $$1/440$$초 ≈ 2.27 ms, 위상 $$\pi/2$$가 $$1/1760$$초 앞섬, 7 kHz와 −1 kHz 사인파의 표본 2,000개 일치)을 같은 코드로 확인했다.
 {% endraw %}

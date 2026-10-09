@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Page Replacement Algorithms", "교체 정책", "Replacement Policy", "최적 교체", "OPT", "Optimal", "LRU", "FIFO", "클록", "Clock", "사용 비트", "Use Bit", "프레임 잠금", "Frame Locking", "페이지 버퍼링", "Page Buffering", "벨레이디의 이상 현상", "Belady's Anomaly"]
 description: "메모리 프레임이 다 찼는데 새 페이지를 들여와야 하면, 지금 있는 페이지 하나를 내보내야 한다. 가장 좋은 선택은 앞으로 가장 늦게 쓰일 페이지지만 미래는 알 수 없다. 그래서 최근 기록으로 미래를 짐작한다. 가장 오래 안 쓴 페이지(LRU), 가장 먼저 들어온 페이지(FIFO),…"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/resident-set-load-control/"
 next_title: "상주 집합 관리와 적재 제어"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/page-replacement/"
 ---
 {% raw %}
@@ -93,6 +93,10 @@ permalink: "/studies/operating-systems/page-replacement/"
 ### 성능 비교
 
 슬라이드 그림 8.17은 프로세스에 줄 프레임 수를 6~14개로 바꿔 가며 1000번 참조당 부재 수를 비교한다. 프레임이 6개일 때 그래프를 읽으면 FIFO 약 37, 클록 약 31, LRU 약 24, OPT 약 16이다. 프레임이 늘수록 네 알고리즘의 차이가 줄어든다[^12].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/41_page-replacement_fig1.svg" alt="그림" loading="lazy">
+
+벨레이디의 참조열 1 2 3 4 1 2 5 1 2 3 4 5에서 프레임 수를 1개부터 7개까지 바꿔 센 부재 수다(처음 채우는 부재 포함). LRU와 OPT의 선은 오른쪽으로 갈수록 내려가거나 그대로인데, FIFO 선만 프레임 3개에서 4개로 갈 때 위로 꺾인다. 프레임이 5개 이상이면 다섯 페이지가 다 들어가 세 알고리즘 모두 처음 채우는 부재 5번만 낸다[^s2].
 
 ### 페이지 버퍼링
 
@@ -220,4 +224,5 @@ LRU와 클록은 복잡하고 부담이 있다. 또 바뀐 페이지를 내보�
 [^14]: 같은 자료, 슬라이드 94~95 (그림 8.23)
 [^15]: 같은 자료, 슬라이드 105
 [^s1]: 에이전트 보충. CLOCK 실행 추적표(그림 8.15를 단계별로 풀어 씀), 정확성·복잡도 표, 벨레이디의 이상 현상과 LRU에 그것이 없는 이유(포함 성질), 확인 문제 C2·C4·C5는 슬라이드에 없다. Stallings 6판 8.2절과 Silberschatz, *Operating System Concepts* 9장을 바탕으로 보탰다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [41_page-replacement_plot.py](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_plot/)로 그렸고, FIFO 9번 → 10번, LRU 10번 → 8번, LRU·OPT의 부재 수가 프레임을 늘릴 때 늘지 않음을 같은 코드로 확인했다.
 {% endraw %}

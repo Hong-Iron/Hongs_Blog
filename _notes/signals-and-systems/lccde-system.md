@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Constant-Coefficient Differential Equation", "LCCDE", "선형 상수계수 미분방정식", "초기 휴지 조건", "Initial Rest", "자연 응답", "Natural Response", "강제 응답", "Forced Response", "입력 0 응답", "영상태 응답", "보조 조건", "Auxiliary Condition"]
 description: "회로나 자동차처럼 물리 법칙으로 만든 시스템은 입력과 출력의 관계가 상수계수 미분방정식으로 적힌다. 그런데 미분방정식만으로는 답이 하나로 정해지지 않는다. 그래서 \"입력이 들어오기 전에는 시스템이 완전히 조용했다\"(초기 휴지 조건)를 덧붙인다. 그러면 시스템이 인과적인 LTI가 되…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/difference-equation-system/"
 next_title: "차분방정식으로 표현한 LTI 시스템"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/lccde-system/"
 ---
 {% raw %}
@@ -91,6 +91,10 @@ $$t \le t_0 \text{에서 } x(t) = 0 \;\Rightarrow\; t \le t_0 \text{에서 } y(t
 - 계단 응답 $$\dot s + as = bu$$, $$s(0) = 0$$: 제차해 $$Ce^{-at}$$, 입력이 상수 $$b$$라 특수해 $$A$$를 넣으면 $$aA = b$$, $$A = \frac ba$$. $$s(0) = \frac ba + C = 0$$이므로 $$s(t) = \frac ba(1 - e^{-at})u(t)$$.
 - 임펄스 응답 $$\dot h + ah = b\delta$$, $$h(0) = 0$$: $$t > 0$$에서는 오른쪽이 0이라 $$h = ce^{-at}u(t)$$. 이것을 식에 넣으면 $$-ace^{-at}u + ce^{-at}\delta + ace^{-at}u = ce^{-at}\delta(t) = c\delta(t)$$ (표본화 성질 $$f(t)\delta(t) = f(0)\delta(t)$$). 오른쪽 $$b\delta$$와 맞추면 $$c = b$$.
 - 결과 $$h(t) = be^{-at}u(t)$$. $$h(0^-) = 0$$이던 값이 임펄스 때문에 $$h(0^+) = b$$로 뛴다. 계단 응답을 미분한 것과 같다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/23_lccde-system_fig1.svg" alt="그림" loading="lazy">
+
+예시의 자동차 식 $$\frac{dy}{dt} + 2y = x$$($$a = 2$$, $$b = 1$$)에 계단을 넣은 경우다. 입력을 닮은 강제 응답 $$\frac12$$과 저절로 사라지는 자연 응답 $$-\frac12e^{-2t}$$를 더하면, $$t = 0$$에서 0으로 출발하는 계단 응답이 된다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예제 2.14의 해, $$\dot y + ay = bx$$의 계단 응답, 폭 $$10^{-3}$$ 펄스 입력 응답이 $$be^{-at}$$에 다가감, $$h = s'$$를 오일러 방법으로 확인 — [23_lccde-system_verify.py](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_verify/)</div>
@@ -188,4 +192,5 @@ $$t \le t_0 \text{에서 } x(t) = 0 \;\Rightarrow\; t \le t_0 \text{에서 } y(t
 [^7]: 같은 자료, p.36~37
 [^8]: 같은 자료, p.20
 [^s1]: 에이전트 보충. 오해 항목의 반례와 확인 문제는 원본에 없다. 해는 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [23_lccde-system_plot.py](/Hongs_Blog/studies/signals-and-systems/code/23_lccde-system_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$y = \frac12(1 - e^{-2t})$$가 식과 $$y(0) = 0$$을 만족하고 오일러 방법과 같음.
 {% endraw %}

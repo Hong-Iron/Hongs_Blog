@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Norm", "노름", "벡터 노름", "vector norm", "행렬 노름", "matrix norm", "연산자 노름", "operator norm", "Condition Number", "조건수", "불량 조건", "ill-conditioned", "기계 엡실론", "machine epsilon", "힐베르트 행렬", "Hilbert matrix", "수치 안정성", "numerical stability"]
 description: "조건수는 \"입력의 작은 오차가 답에서 몇 배로 커질 수 있는가\"를 재는 수다. 측정값이나 컴퓨터의 반올림 오차는 피할 수 없으므로, 조건수가 백만인 문제는 답에서 유효숫자 여섯 자리 정도를 잃는다고 각오해야 한다(조건수의 자릿수만큼). 조건수는 문제(행렬) 자체의 성질이라, 좋은 …"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/dft/"
 next_title: "이산 푸리에 변환과 FFT"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/conditioning/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/conditioning/"
 $$\begin{pmatrix}1 & 1\\ 1 & 1.0001\end{pmatrix}\mathbf{x} = \begin{pmatrix}2\\ 2.0001\end{pmatrix}$$의 해는 $$\mathbf{x} = (1, 1)$$이다. 우변의 둘째 값을 $$0.0001$$만 바꿔 $$2.0002$$로 하면(상대 변화 약 0.005%) 해는 $$(0, 2)$$가 된다. 답이 통째로 바뀌었다.
 
 두 식이 거의 같은 직선이라, 교점이 직선의 작은 흔들림에 크게 움직인다. 이 행렬의 조건수는 약 $$4 \times 10^4$$이다. 우변의 상대 오차가 최대 $$4 \times 10^4$$배로 커질 수 있다는 뜻이다. 행렬이 아래 정의의 $$A$$, 흔들림이 $$\delta\mathbf{b}$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/26_conditioning_fig1.svg" alt="그림" loading="lazy">
+
+두 직선을 그대로 그리면 겹쳐 보여서, 첫째 직선을 0에 두고 둘째 직선이 그보다 얼마나 위에 있는지를 1만 배 키워 그렸다. 우변을 0.0001 바꾸면 둘째 직선이 살짝 올라갈 뿐인데, 교점은 $$x = 1$$에서 $$x = 0$$으로 크게 미끄러진다[^s1].
 
 ## 정의
 
@@ -80,6 +84,10 @@ $$\frac{\Vert \delta\mathbf{x}\Vert }{\Vert \mathbf{x}\Vert } \le \kappa(A)\,\fr
 1. *조건수:* $$n = 10$$이면 $$\kappa_2(H) \approx 1.6 \times 10^{13}$$이다.
 2. *예상:* 배정밀도로 풀면 $$10^{13} \times 10^{-16} = 10^{-3}$$ 정도의 상대 오차가 생길 수 있다. 유효숫자 16자리 중 13자리를 잃는다.
 3. *실험:* 참 해가 $$(1, \dots, 1)$$이 되도록 $$\mathbf{b} = H\mathbf{1}$$을 만들고 부분 피벗팅 소거로 풀면, $$n = 10$$에서 최대 오차가 약 $$6 \times 10^{-4}$$이다. $$n = 4$$에서는 $$10^{-13}$$ 수준이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/26_conditioning_fig2.svg" alt="그림" loading="lazy">
+
+$$n$$이 하나 늘 때마다 조건수가 약 30배씩 커진다. 실제 오차(주황)는 예상 크기 $$\kappa\varepsilon$$(점선)을 넘지 않고 그와 함께 자란다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시의 두 해와 $$\kappa \approx 4.0 \times 10^4$$, 세 벡터 노름의 성질과 행렬 노름 공식(1-노름 = 열 절댓값 합의 최대, $$\infty$$-노름 = 행 합의 최대, 2-노름 = $$\sigma_1$$), 무작위 행렬에서 오차 증폭 부등식, 힐베르트 행렬의 조건수와 풀이 오차($$n = 4 \dots 12$$), 카드의 값, 릿지로 조건수가 줄어듦 — [26_conditioning_verify.py](/Hongs_Blog/studies/linear-algebra/code/26_conditioning_verify/)</div>
@@ -137,4 +145,5 @@ $$\frac{\Vert \delta\mathbf{x}\Vert }{\Vert \mathbf{x}\Vert } \le \kappa(A)\,\fr
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 11.2절 "Norms and Condition Numbers"(벡터·행렬 노름, $$\kappa = \sigma_{\max}/\sigma_{\min}$$, 오차 한계).
 [^2]: Trefethen·Bau, *Numerical Linear Algebra*, 12장 "Conditioning and Condition Numbers", 13장 "Floating Point Arithmetic"(기계 엡실론, 역방향 안정성과 $$\kappa\varepsilon$$ 크기의 오차).
+[^s1]: 에이전트 보충. 그림 두 장은 원본에 없다. [26_conditioning_plot.py](/Hongs_Blog/studies/linear-algebra/code/26_conditioning_plot/)로 그렸고, 두 해 $$(1, 1)$$과 $$(0, 2)$$, $$\kappa \approx 4 \times 10^4$$, 힐베르트 행렬의 $$\kappa_2(H_{10}) \approx 1.6 \times 10^{13}$$, 조건수가 한 단계에 25~35배 커지는 것, 실제 오차가 $$\kappa\varepsilon$$ 이하인 것을 같은 코드로 확인했다.
 {% endraw %}

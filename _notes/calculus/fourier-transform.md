@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Transform", "푸리에 변환", "역푸리에 변환", "inverse Fourier transform", "스펙트럼", "spectrum", "합성곱", "convolution", "합성곱 정리", "convolution theorem", "변조", "modulation", "sinc 함수", "불확정성 원리", "uncertainty principle", "저역 통과 필터", "low-pass filter"]
 description: "되풀이되지 않는 신호도 모든 주파수의 사인파로 나눌 수 있고, 주파수마다의 세기를 모은 것이 스펙트럼이다. 프리즘이 빛을 색깔별로 펼치는 것과 같다. 가장 큰 장점은, 두 신호를 겹쳐 미끄러뜨리며 곱해 더하는 번거로운 연산(합성곱)이 주파수 쪽에서는 그냥 곱셈이 된다는 것이다. 그…"
@@ -17,7 +17,7 @@ prev_url: "/studies/calculus/fourier-series/"
 prev_title: "푸리에 급수"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/fourier-transform/"
 ---
 {% raw %}
@@ -38,6 +38,10 @@ $$\hat f(\xi) = \frac{\sin\pi\xi}{\pi\xi}\quad(\xi = 0\text{에서는 }1)$$
 인 sinc 함수가 나온다. 주파수 0(평균)에서 가장 크고, $$\xi = \frac12$$에서 $$\frac2\pi \approx 0.64$$, 정수 주파수에서 0이다. 뚝 끊기는 모서리를 만들려면 높은 주파수가 끝없이 필요해서 꼬리가 길게 이어진다.
 
 펄스 폭을 2로 늘이면 첫 0점이 $$\xi = 1$$에서 $$\frac12$$로 당겨진다. 시간에서 넓어지면 주파수에서 좁아진다. 여기서 $$x$$는 시간(또는 위치), $$\xi$$는 1초당 진동 수이고, 아래 정의의 적분이 이 계산이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/31_fourier-transform_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽 상자가 넓어지면(주황), 오른쪽 스펙트럼은 가운데 봉우리가 높고 좁아진다. 점은 각 스펙트럼이 처음 0이 되는 곳으로, 파랑은 $$\xi = 1$$, 주황은 $$\xi = \frac12$$이다[^s2].
 
 ## 정의
 
@@ -83,6 +87,10 @@ $$(f * g)(x) = \int_{-\infty}^{\infty}f(y)\,g(x - y)\,dy$$
 
 </details>
 
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/31_fourier-transform_fig2.svg" alt="그림" loading="lazy">
+
+왼쪽은 상자 $$f$$와, 같은 상자를 뒤집어 $$x = 0.4$$만큼 민 $$g(0.4 - y)$$다. 둘이 겹친 초록 칸의 넓이 0.6이 합성곱 $$(f * g)(0.4)$$, 곧 초록 삼각형 위의 점이다. $$x$$를 옮겨 가며 이 넓이를 찍으면 삼각형이 된다. 오른쪽은 그 삼각형의 스펙트럼으로, 상자의 스펙트럼 sinc를 제곱한 모양이다[^s2].
 
 ## 예제
 
@@ -142,4 +150,5 @@ $$(f * g)(x) = \int_{-\infty}^{\infty}f(y)\,g(x - y)\,dy$$
 [^1]: Stein, Shakarchi, *Fourier Analysis: An Introduction*, 5장 "The Fourier Transform on R"($$e^{-2\pi ix\xi}$$ 규약, 가우스 함수, 합성곱, 역변환 공식, 하이젠베르크 불확정성 원리).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 9.1절 "The Convolution Operation"(많은 라이브러리가 상호상관을 합성곱이라 부른다).
 [^s1]: 에이전트 보충. 반송파를 곱하면 양쪽 측파대가 생기고, 한쪽 측파대만 남기는 방식(SSB)이 대역을 절반만 쓴다는 것은 변조 성질에서 바로 나온다. 연결된 컴퓨터 통신 문서의 60~64 kHz 채널(반송파 64 kHz)이 한쪽 측파대를 쓴 배치다. 대역 수치는 31_fourier-transform_verify.py에서 DFT로 확인했다.
+[^s2]: 에이전트 보충. 그림 두 장은 원본에 없다. [31_fourier-transform_plot.py](/Hongs_Blog/studies/calculus/code/31_fourier-transform_plot/)로 그렸고, $$\hat f(\frac12) = \frac2\pi$$, 정수 주파수와 폭 2의 $$\xi = \frac12$$에서 0, 겹친 넓이 0.6과 삼각형 값, 삼각형을 수치로 변환한 값이 $$\mathrm{sinc}^2$$와 같은 것을 같은 코드로 확인했다.
 {% endraw %}

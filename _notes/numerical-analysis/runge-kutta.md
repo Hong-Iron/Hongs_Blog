@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/ode-systems/"
 next_title: "연립 상미분방정식"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/runge-kutta/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ $$y' = x + y$$, $$y(0) = 1$$을 $$x = 1$$까지 $$h = 0.1$$로 풀면 오차가 
 | RK4 | 4 | $$4.2 \times 10^{-6}$$ | 1/16 |
 
 호인 방법의 한 걸음은 이렇다. 시작점의 기울기 $$k_1 = f(0, 1) = 1$$로 끝점을 짐작해 $$(0.1, 1.1)$$에서 기울기 $$k_2 = 1.2$$를 잰다. 두 기울기의 평균 1.1로 가서 $$y_1 = 1 + 0.1 \times 1.1 = 1.11$$이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/34_runge-kutta_fig1.svg" alt="그림" loading="lazy">
+
+가로축은 $$x = 1$$까지 기울기 $$f$$를 계산한 총횟수다. 같은 40번이라도 오일러($$h = 0.025$$)보다 RK4($$h = 0.1$$)의 오차가 만 배 넘게 작다. 계산 횟수보다 기울기에 붙이는 무게가 정확도를 더 크게 가른다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 2차 RK 세 가지의 전역 차수 2와 한 걸음 차수 3, 조건을 어기면 차수 1, RK4 차수 4, 표의 오차, 카드 C2, 적분이면 RK4 = 심프슨 공식 — [34_runge-kutta_impl.py](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_impl/)</div>
@@ -195,4 +199,5 @@ $$F$$의 $$h^1$$ 항 $$w_2ahf'$$이 테일러의 $$\frac h2f'$$과 같아야 2�
 [^3]: 같은 자료, p.9
 [^4]: 같은 자료, p.10
 [^s1]: 에이전트 보충. 오차 표와 호인 걸음, 세 2차 방법의 이름, RK4 공식(슬라이드는 2차 유도까지만 있다), 스스로 설명해 보기, 활용·RK45, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [34_runge-kutta_plot.py](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$h = 0.1$$에서 세 방법의 오차, 호인 첫 걸음 $$y_1 = 1.11$$, 계산 40번에서 오일러 오차 0.066과 RK4 오차 $$4.2 \times 10^{-6}$$의 비가 1만 이상.
 {% endraw %}

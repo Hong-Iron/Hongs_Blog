@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Gradient", "그래디언트", "기울기 벡터", "경사", "nabla", "델", "Directional Derivative", "방향도함수", "미분 가능성", "differentiability", "가장 가파른 방향", "steepest ascent", "접평면", "tangent plane", "소벨 필터", "Sobel filter"]
 description: "편미분들을 한데 모은 화살표가 그래디언트다. 이 화살표는 산에서 가장 가파르게 오르는 방향을 가리키고, 그 길이가 그 방향의 기울기다. 다른 방향으로 갈 때의 기울기는 그 방향과 그래디언트의 내적으로 바로 계산되고, 그래디언트는 늘 등고선과 수직이다. 그래서 반대 방향으로 조금씩 …"
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/multivariable-chain-rule/"
 next_title: "다변수 연쇄 법칙과 야코비 행렬"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/gradient/"
 ---
 {% raw %}
@@ -43,6 +43,10 @@ permalink: "/studies/calculus/gradient/"
 | 등고선 방향 $$\frac{1}{\sqrt5}(2, -1)$$ | $$0$$ (높이 그대로) |
 
 그래디언트 방향이 정상(원점) 쪽을 가리키고, 그와 수직인 방향은 등고선 $$x^2 + 2y^2 = 3$$을 따라간다. 방향 $$\mathbf{u}$$가 아래 정의의 방향도함수의 방향이다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/20_gradient_fig1.svg" alt="그림" loading="lazy">
+
+초록 굵은 선이 $$(1, 1)$$이 놓인 높이 7의 등고선이다. 주황 화살표($$\nabla f$$ 방향)는 그 선에 수직으로 안쪽을 향한다. 정상을 곧장 겨누지는 않고, 등고선이 더 촘촘한 $$y$$ 쪽으로 더 기운다. 초록 화살표 두 개(등고선 방향)로 걸으면 높이가 그대로다[^s2].
 
 ## 정의
 
@@ -197,4 +201,5 @@ $$f$$가 $$\mathbf{a}$$에서 미분 가능하면
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.4절 "Tangent Planes and Linear Approximations"(미분 가능성, 편미분이 연속이면 미분 가능), 4.6절 "Directional Derivatives and the Gradient"(방향도함수 = 그래디언트와의 내적, 가장 가파른 방향, 등고선과 수직).
 [^s1]: 에이전트 보충. 캐니 윤곽 검출기(Canny, 1986)는 그래디언트의 크기와 방향으로 윤곽을 찾는 표준 알고리즘이다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [20_gradient_plot.py](/Hongs_Blog/studies/calculus/code/20_gradient_plot/)로 그렸다. 화살표 길이는 같게 줄였다. 표의 네 방향도함수($$-2$$, $$-4$$, $$\sqrt{20}$$, 0)를 중앙 차분으로, 그래디언트와 등고선 방향이 수직인 것을 같은 코드로 확인했다.
 {% endraw %}

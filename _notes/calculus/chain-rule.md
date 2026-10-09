@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Chain Rule", "연쇄 법칙", "합성함수의 미분", "역함수의 미분", "derivative of inverse function", "음함수 미분", "implicit differentiation", "로그 미분법", "logarithmic differentiation", "시그모이드", "sigmoid", "소프트플러스", "softplus", "역전파", "backpropagation"]
 description: "함수 안에 함수가 든 합성함수는 안쪽과 바깥쪽의 변화율을 곱해서 미분한다. 맞물린 톱니바퀴에서 전체 회전 비가 각 톱니 쌍의 비를 곱한 것과 같다. 신경망의 학습(역전파)과 자동미분은 이 규칙을 수백만 번 적용하는 일이다. 다만 바깥 함수의 도함수는 안쪽 함수의 값에서 계산해야 한다."
@@ -19,7 +19,7 @@ next_url: "/studies/calculus/curve-analysis/"
 next_title: "도함수의 활용과 최적화"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/calculus/chain-rule/"
 ---
 {% raw %}
@@ -125,6 +125,10 @@ $$k = g'(x)h + r_1(h)$$이고 $$r_1(h)/h \to 0$$이므로, $$h$$가 충분히 �
 3. *안쪽의 도함수를 곱하기:* $$\frac{1}{1 + e^x} \cdot e^x = \frac{e^x}{1 + e^x} = \frac{1}{1 + e^{-x}} = \sigma(x)$$.
 4. *해석:* 소프트플러스의 도함수가 시그모이드 $$\sigma$$다. $$\sigma$$ 자신의 도함수는 $$\sigma(1 - \sigma)$$다(같은 방법으로 확인).
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/calculus/06_chain-rule_fig1.svg" alt="그림" loading="lazy">
+
+파란 곡선의 기울기를 점마다 재면 주황 곡선의 높이가 되고, 주황 곡선의 기울기는 초록 곡선의 높이가 된다. 초록 곡선은 $$x = 0$$에서 가장 높아도 $$\frac14$$이고, $$x$$가 0에서 멀어지면 거의 0이다(아래 기울기 소실)[^s2].
+
 **뉴런 하나의 학습 기울기.** 출력 $$y = \sigma(wx + b)$$, 손실 $$L = (y - t)^2$$일 때 가중치 $$w$$에 대한 기울기는 바깥에서부터 곱해 나간다.
 
 $$\frac{\partial L}{\partial w} = \underbrace{2(y - t)}_{dL/dy}\cdot\underbrace{\sigma(1 - \sigma)}_{dy/dz}\cdot\underbrace{x}_{dz/dw}, \qquad z = wx + b$$
@@ -195,4 +199,5 @@ $$\frac{\partial L}{\partial w} = \underbrace{2(y - t)}_{dL/dy}\cdot\underbrace{
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.6절 "The Chain Rule", 3.7절 "Derivatives of Inverse Functions", 3.8절 "Implicit Differentiation", 3.9절 "Derivatives of Exponential and Logarithmic Functions"(로그 미분법)
 [^s1]: 에이전트 보충. 기울기 소실 문제와 ReLU의 도입은 딥러닝의 표준 서술이다(Goodfellow·Bengio·Courville, *Deep Learning*, 6장).
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [06_chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/06_chain-rule_plot/)로 그렸고, 세 곡선이 차례로 도함수 관계인 것(중앙 차분, $$-5 \le x \le 5$$)과 $$\sigma(1 - \sigma)$$의 최댓값이 $$x = 0$$의 $$\frac14$$인 것을 같은 코드로 확인했다.
 {% endraw %}

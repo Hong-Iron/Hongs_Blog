@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Estimator", "추정량", "점추정", "point estimation", "표본분포", "sampling distribution", "편향", "bias", "불편추정량", "unbiased estimator", "평균제곱오차", "MSE", "mean squared error", "편향-분산 분해", "bias-variance decomposition", "일치성", "consistency", "베셀 보정", "Bessel's correction"]
 description: "표본에서 계산한 평균 같은 값은 표본을 다시 뽑으면 달라지는 확률변수다. 그래서 \"이 계산법이 얼마나 좋은가\"를 과녁 맞히기처럼 따진다. 평균적으로 과녁 중심에서 비껴 있는가(편향), 화살이 얼마나 흩어지는가(분산), 둘을 합쳐 중심에서 평균적으로 얼마나 먼가(평균제곱오차). 표본…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/mle/"
 next_title: "최대가능도 추정"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/estimators/"
 ---
 {% raw %}
@@ -90,6 +90,10 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 3. *편향된 추정량의 MSE:* 편향 $$-\frac{\sigma^2}{5}$$, 분산이 더 작아 합이 $$\frac{2n - 1}{n^2}\sigma^4 = 0.36\sigma^4$$.
 4. *결론:* 조금 치우쳐도 덜 흩어지는 쪽이 평균적으로 더 정확하다. 이 편향-분산 줄다리기가 [과적합](/Hongs_Blog/studies/probability-statistics/overfitting-cv/)과 정칙화의 핵심이다[^s1].
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/29_estimators_fig1.svg" alt="그림" loading="lazy">
+
+참 분산이 1인 정규분포에서 표본 5개로 두 추정량을 계산한 값의 분포다. 파랑($$n - 1$$로 나눔)은 평균이 정확히 1이지만 오른쪽으로 넓게 퍼진다. 주황($$n$$으로 나눔)은 평균이 0.8로 비껴 있지만 덜 퍼져서, 평균제곱오차가 더 작다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 주사위 4개 평균의 표본분포(모의실험 10만 회), 편향-분산 분해(무작위 이산 분포 100개로 정확히), $$(n - 1)\sigma^2$$(주사위 2·3개 전수로 분수 확인), 두 분산 추정량의 MSE 0.5와 0.36(식과 모의실험 10만 회), 카드의 값 — [29_estimators_verify.py](/Hongs_Blog/studies/probability-statistics/code/29_estimators_verify/)</div>
 
@@ -134,4 +138,5 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 
 [^1]: Wasserman, *All of Statistics*, "Models, Statistical Inference and Learning" 장(점추정, 편향, 표준오차, MSE의 편향-분산 분해, 일치성). Blitzstein, Hwang, *Introduction to Probability* 2판, 6.3절 "Sample moments"(표본분산의 기댓값).
 [^s1]: 에이전트 보충. 정규분포에서 $$\operatorname{Var}(S^2_{n-1}) = \frac{2\sigma^4}{n - 1}$$은 $$\frac{(n-1)S^2}{\sigma^2}$$이 자유도 $$n - 1$$인 카이제곱분포를 따른다는 데서 나온다(Blitzstein·Hwang 10.4절). 두 MSE는 29_estimators_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [29_estimators_plot.py](/Hongs_Blog/studies/probability-statistics/code/29_estimators_plot/)로 그렸고, 그림에 쓴 값(모의실험 20만 회의 평균 1과 0.8, MSE 0.50과 0.36)을 같은 코드로 확인했다.
 {% endraw %}

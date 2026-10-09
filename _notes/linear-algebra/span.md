@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Combination", "선형결합", "일차결합", "Span", "생성", "생성하는 공간", "spanned subspace"]
 description: "벡터 몇 개를 각각 늘이거나 줄여서 더한 것이 선형결합이고, 그렇게 만들 수 있는 모든 벡터의 모임이 생성(span)이다. 물감 세 가지를 비율만 바꿔 섞어 만들 수 있는 모든 색을 떠올리면 된다. \"이 목표에 닿을 수 있는가\"가 곧 \"연립방정식에 해가 있는가\"라서 선형대수의 거의…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/matrix-vector/"
 next_title: "행렬과 행렬-벡터 곱"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/span/"
 ---
 {% raw %}
@@ -36,6 +36,10 @@ permalink: "/studies/linear-algebra/span/"
 오른쪽으로 1·위로 1 가는 버튼 $$\mathbf{a} = (1, 1)$$과 오른쪽으로 1·위로 2 가는 버튼 $$\mathbf{b} = (1, 2)$$가 있다. 버튼을 원하는 만큼(음수·소수 허용) 눌러 $$(3, 5)$$에 갈 수 있을까?
 
 $$c\,\mathbf{a} + d\,\mathbf{b} = (c + d,\ c + 2d) = (3, 5)$$에서 $$d = 2$$, $$c = 1$$이다. 갈 수 있다. 사실 두 버튼은 방향이 달라 평면의 어디든 갈 수 있다. 반면 $$\mathbf{a} = (1, 2)$$, $$\mathbf{b} = (2, 4)$$라면 $$\mathbf{b} = 2\mathbf{a}$$라서, 아무리 눌러도 직선 $$y = 2x$$ 위만 다닌다. 버튼이 아래 정의의 $$\mathbf{v}_i$$, 누르는 횟수가 계수 $$c_i$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/03_span_fig1.svg" alt="그림" loading="lazy">
+
+왼쪽의 비스듬한 격자선은 $$\mathbf{a}$$, $$\mathbf{b}$$를 정수 번 누른 자리를 이은 것으로, 평면 전체를 덮는다. 오른쪽 점들은 두 버튼을 아무렇게나 300번 섞은 결과인데, 모두 직선 $$y = 2x$$ 위에 있고 (3, 5)에는 닿지 않는다[^s2].
 
 ## 정의
 
@@ -113,4 +117,5 @@ $$\mathbf{b} = (1, 3, 5)$$가 $$\mathbf{v}_1 = (1, 1, 1)$$, $$\mathbf{v}_2 = (0,
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.1절 "Vectors and Linear Combinations", 3.1절 "Spaces of Vectors"(열들의 모든 결합).
 [^s1]: 에이전트 보충. 음이 아닌 계수만 허용한 결합은 원뿔(원점에서 뻗는 부채꼴 모양)을 이룬다. 선형대수의 생성과 달리 모니터의 색 영역은 이 제약 때문에 모든 색을 포함하지 못한다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [03_span_plot.py](/Hongs_Blog/studies/linear-algebra/code/03_span_plot/)로 그렸고, $$(3, 5) = 1\cdot(1, 1) + 2\cdot(1, 2)$$와 $$(1, 2)$$, $$(2, 4)$$의 결합이 모두 $$y = 2x$$ 위에 있다는 것을 같은 코드로 확인했다.
 {% endraw %}

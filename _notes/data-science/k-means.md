@@ -19,7 +19,7 @@ next_url: "/studies/data-science/k-medoids/"
 next_title: "k-메도이드"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/data-science/k-means/"
 ---
 {% raw %}
@@ -78,6 +78,10 @@ $$\mathbf z_i \in \mathbb{R}^k$$는 점 $$i$$의 소속을 적은 벡터로, 소
 ```
 
 슬라이드의 그림처럼 이 두 단계를 중심이 바뀌지 않을 때까지 되풀이한다[^3].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/25_k-means_fig1.svg" alt="그림" loading="lazy">
+
+둥근 세 무리(점 90개)에서 처음 중심(×)을 한쪽 구석에 몰아 두고 시작했다. 한 번 갱신하자 중심이 각 무리로 흩어지고, $$J$$는 709 → 126 → 70으로 줄다가 멈춘다. 오른쪽 그림의 선은 중심이 지나온 길이다[^s2].
 
 ### 정확성: 반드시 멈춘다
 
@@ -150,6 +154,10 @@ $$\sum\Vert \mathbf x_i - \boldsymbol\mu\Vert ^2 = \sum\Vert \mathbf x_i - \bar{
     - 각 점을 군집 하나에만 넣어(하드 배정) 겹치는 군집이나 경계의 점을 표현하지 못한다.
     - 군집 수 $$k$$를 미리 정해야 한다 → [군집 수 고르기](/Hongs_Blog/studies/data-science/choosing-k/)
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/25_k-means_fig2.svg" alt="그림" loading="lazy">
+
+비스듬하고 길쭉한 두 무리다. k-평균은 열 번 다시 시작한 가장 좋은 답에서도 무리를 길이 방향으로 반씩 자른다. 그렇게 자른 쪽의 $$J$$(1194)가 실제 나눔의 $$J$$(2430)보다 작다. 알고리즘이 실수한 것이 아니라, 목적 함수 자체가 둥근 무리를 원한다[^s2].
+
 ## 연결
 
 - 선수: [군집 분석](/Hongs_Blog/studies/data-science/cluster-analysis/), [정규화](/Hongs_Blog/studies/data-science/normalization/)
@@ -215,4 +223,5 @@ $$\sum\Vert \mathbf x_i - \boldsymbol\mu\Vert ^2 = \sum\Vert \mathbf x_i - \bar{
 [^5]: 같은 자료, p.13
 [^6]: 같은 자료, p.17
 [^s1]: 에이전트 보충. 1차원 추적, 수렴 증명, 스스로 설명해 보기, 복잡도 식, k-means++, 오해 항목의 정사각형 예, 카드 C2·C4는 원본에 없다. 구현 코드로 확인했다(Lloyd, 1982. Arthur & Vassilvitskii, 2007).
+[^s2]: 에이전트 보충. 그림 2장은 원본에 없다. [25_k-means_plot.py](/Hongs_Blog/studies/data-science/code/25_k-means_plot/)로 그렸고, 그림 1에서 $$J$$가 줄기만 하고 세 무리를 정확히 나누는 것, 그림 2에서 k-평균의 $$J$$ 1194 < 실제 나눔의 $$J$$ 2430, 맞힌 비율 0.54를 같은 코드로 확인했다.
 {% endraw %}

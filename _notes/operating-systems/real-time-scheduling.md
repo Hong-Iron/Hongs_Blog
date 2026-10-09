@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Real-Time Scheduling", "마감 시간 스케줄링", "Deadline Scheduling", "가장 이른 마감 우선", "Earliest Deadline First", "EDF", "비율 단조 스케줄링", "Rate Monotonic Scheduling", "RMS", "정적 테이블 기반", "정적 우선순위 기반", "동적 계획 기반", "동적 최선 노력", "시작 마감", "Starting Deadline", "완료 마감", "Completion Deadline"]
 description: "실시간 작업은 빨리 끝나는 것이 아니라 마감 전에 끝나는 것이 목표다. 그래서 \"중요한 작업 먼저\"라는 고정된 우선순위보다 \"마감이 가장 가까운 작업 먼저\"가 더 많은 마감을 지킨다. 숙제 여러 개를 과목 중요도가 아니라 제출 기한 순으로 하는 것과 같다. 대신 마감 정보를 미리 …"
@@ -19,7 +19,7 @@ next_url: "/studies/operating-systems/priority-inversion/"
 next_title: "우선순위 역전"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/operating-systems/real-time-scheduling/"
 ---
 {% raw %}
@@ -42,6 +42,10 @@ permalink: "/studies/operating-systems/real-time-scheduling/"
 | 가장 이른 마감 우선 (EDF) | A1 0~10, B1 10~20, A2 20~30, B1 30~45, A3 45~55, B2 55~60, A4 60~70, B2 70~90, A5 90~100 | 없음 |
 
 EDF는 시각 30에 A3(마감 60)보다 B1(마감 50)을 먼저 해서 B1을 지킨다. 시각 80에는 A5와 B2의 마감이 둘 다 100이라, 먼저 와 있던 B2를 계속한다. 두 작업이 프로세서를 쓰는 비율은 $$10/20 + 25/50 = 1$$, 곧 100%인데도 EDF는 모든 마감을 지킨다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/49_real-time-scheduling_fig1.svg" alt="그림" loading="lazy">
+
+보라색 삼각형이 놓친 마감이다. 고정 우선순위에서는 어느 쪽을 앞세우든 한 작업이 마감을 넘긴다. EDF 줄은 0부터 100까지 빈틈 없이 차 있으면서도 삼각형이 하나도 없다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 세 정책의 실행 순서와 놓친 마감(그림 10.6), 비주기 예(그림 10.7), 비율 단조 한계값 — [49_real-time-scheduling_impl.py](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_impl/)</div>
@@ -216,4 +220,5 @@ EDF가 사용률 합 1 이하에서 최적이라는 것은 교환 논증으로 �
 [^8]: 같은 자료, 슬라이드 53과 발표자 노트
 [^9]: 같은 자료, 슬라이드 55 (그림 10.9)의 발표자 노트
 [^s1]: 에이전트 보충. 사용률 조건, RMS 한계 $$n(2^{1/n} - 1)$$과 교재의 세 작업 예, RMS의 장점, EDF 최적성의 증명 스케치는 Stallings 6판 10.2절(식 10.1~10.2, Liu & Layland 1973 인용)을 따랐다. 슬라이드는 RMS의 정의와 그림만 있다. 리눅스 SCHED_DEADLINE과 확인 문제 C2~C5는 슬라이드에 없다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [49_real-time-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_plot/)로 그렸고, 세 정책의 놓친 마감(B1 / A1, A4 / 없음)과 EDF의 B1 30~45, B2 55~60·70~90 구간을 같은 코드로 확인했다.
 {% endraw %}

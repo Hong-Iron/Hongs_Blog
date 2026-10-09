@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Geometric Distribution", "기하분포", "무기억성", "memorylessness", "memoryless property", "도박사의 오류", "gambler's fallacy", "쿠폰 수집 문제", "coupon collector problem", "재전송", "retransmission"]
 description: "성공할 때까지 몇 번 시도해야 하는지의 분포다. 평균 횟수는 성공 확률의 역수라, 주사위로 6이 나올 때까지는 평균 6번이 걸린다. 가장 특이한 성질은 무기억성이다. 이미 여러 번 실패했어도 앞으로 더 기다릴 횟수의 분포는 처음과 똑같아서, \"이제 나올 때가 됐다\"는 느낌은 틀렸다…"
@@ -19,7 +19,7 @@ next_url: "/studies/probability-statistics/poisson/"
 next_title: "포아송 분포"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/probability-statistics/geometric-distribution/"
 ---
 {% raw %}
@@ -40,6 +40,10 @@ permalink: "/studies/probability-statistics/geometric-distribution/"
 | 확률 | $$\frac16$$ | $$\frac56 \cdot \frac16$$ | $$\left(\frac56\right)^2\frac16$$ | $$\left(\frac56\right)^{k-1}\frac16$$ |
 
 확률이 공비 $$\frac56$$로 줄어드는 [등비수열](/Hongs_Blog/studies/college-math/geometric-series/)이라 "기하"분포다. 여섯 번 넘게 걸릴 확률은 처음 여섯 번이 모두 실패할 확률 $$\left(\frac56\right)^6 \approx 0.335$$라, 평균 6번이라도 세 번에 한 번은 그보다 오래 걸린다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/probability-statistics/11_geometric-distribution_fig1.svg" alt="그림" loading="lazy">
+
+막대 높이가 한 칸마다 $$\frac56$$배로 줄어든다. 평균(점선)은 6번이지만, 주황 막대를 모두 더한 0.335만큼은 6번보다 오래 걸린다[^s2].
 
 ## 정의
 
@@ -148,4 +152,5 @@ $$P(X = k) = (1 - p)^{k-1}p\quad(k = 1, 2, \dots),\qquad \mathbb{E}[X] = \frac1p
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 4.3절 "Geometric and Negative Binomial"(실패 수 규약의 기하분포, 첫 성공 분포, 쿠폰 수집 문제).
 [^2]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 11.4절 "Open addressing"(정리 11.6, 실패한 탐색의 기대 탐사 수 $$\frac{1}{1 - \alpha}$$ 이하).
 [^s1]: 에이전트 보충. SciPy의 `scipy.stats.geom`은 PMF를 $$(1-p)^{k-1}p$$($$k \ge 1$$)로 정의해 시행 수 규약을 쓴다(SciPy 문서). 두 규약의 평균과 분산은 11_geometric-distribution_verify.py로 확인했다.
+[^s2]: 에이전트 보충. 그림 한 장은 원본에 없다. [11_geometric-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_plot/)로 그렸고, 그림에 쓴 값(평균 6, $$\left(\frac56\right)^6 = 0.335$$)을 같은 코드로 확인했다.
 {% endraw %}

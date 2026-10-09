@@ -9,7 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "수학"
-updated: "2026-10-08"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Properties of the Fourier Transform", "표 4.1", "시간 이동", "주파수 이동", "Frequency Shifting", "켤레 대칭", "Conjugate Symmetry", "시간 척도", "Time Scaling", "미분 성질", "적분 성질", "주파수 미분", "Differentiation in Frequency", "파스발 관계", "Parseval's Relation", "에너지 밀도 스펙트럼", "Energy-Density Spectrum"]
 description: "푸리에 급수에서 본 성질표(표 3.1)가 푸리에 변환에도 거의 그대로 있다(표 4.1). 늦추면 위상만 돌고, 빨리 감으면 스펙트럼이 넓어지고, 미분하면 j\\omega가 곱해지고, 실수 신호의 스펙트럼은 좌우 켤레 대칭이다. 이 표를 쓰면 적분을 직접 하지 않고 아는 변환 몇 개에…"
@@ -19,7 +19,7 @@ next_url: "/studies/signals-and-systems/fourier-duality/"
 next_title: "푸리에 변환의 쌍대성"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/signals-and-systems/fourier-transform-properties/"
 ---
 {% raw %}
@@ -76,6 +76,10 @@ $$x(t) \leftrightarrow X(j\omega)$$, $$y(t) \leftrightarrow Y(j\omega)$$[^2].
 **미분과 적분.** 합성식을 $$t$$로 미분하면 $$\frac{dx}{dt} = \frac{1}{2\pi}\int j\omega X e^{j\omega t}d\omega$$, 곧 시간 미분은 주파수에서 $$j\omega$$ 곱셈이다. 미분방정식 시스템을 해석할 때 미분이 곱셈으로 바뀐다. 적분은 $$\frac{1}{j\omega}$$ 곱셈에, 직류 성분(평균값) 때문에 $$\omega = 0$$에 임펄스 $$\pi X(0)\delta(\omega)$$가 더해진다[^6].
 
 **척도.** $$\tau = at$$로 바꾸면 $$a > 0$$이면 $$\frac1aX(\frac{j\omega}{a})$$, $$a < 0$$이면 적분 범위가 뒤집혀 $$-\frac1aX(\frac{j\omega}{a})$$다. 합쳐서 $$\frac{1}{\vert a\vert }X(\frac{j\omega}{a})$$[^7]. 시간에서 $$a$$배 압축하면 주파수에서 $$\frac1a$$배 압축, 곧 $$a$$배 넓어진다. 녹음을 빨리 틀면($$\vert a\vert  > 1$$) 소리가 높아지고(스펙트럼 확장), 느리게 틀면 낮아진다[^8]. $$a = -1$$이면 시간 반전 $$x(-t) \leftrightarrow X(-j\omega)$$다.
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/40_fourier-transform-properties_fig1.svg" alt="그림" loading="lazy">
+
+$$\vert t\vert  < 1$$인 펄스 $$x(t)$$와 두 배 빨리 감은 $$x(2t)$$다. 시간 폭이 절반이 되면 스펙트럼은 첫 영점이 $$\pi$$에서 $$2\pi$$로 옮겨 가 두 배 넓어지고, 높이는 2에서 1로 절반이 된다[^s2].
 
 **파스발 관계.** $$\int\vert x\vert ^2dt = \int x\left[\frac{1}{2\pi}\int X^*e^{-j\omega t}d\omega\right]dt$$에서 적분 순서를 바꾸면 $$\frac{1}{2\pi}\int X^*\left[\int xe^{-j\omega t}dt\right]d\omega = \frac{1}{2\pi}\int\vert X\vert ^2d\omega$$. 전체 에너지는 시간에서 $$\vert x\vert ^2$$를 적분해도, 주파수에서 $$\frac{\vert X\vert ^2}{2\pi}$$를 적분해도 같다. 그래서 $$\vert X(j\omega)\vert ^2$$를 에너지 밀도 스펙트럼이라 한다. 주기 신호의 파스발 관계 $$\frac1T\int_T\vert x\vert ^2dt = \sum\vert a_k\vert ^2$$와 짝이다[^9].
 
@@ -198,4 +202,5 @@ $$X$$가 실수·짝이라 $$x$$도 실수·짝이다. 짝함수의 도함수는
 [^12]: 같은 자료, p.19~20 (예제 4.12, 그림 4.16)
 [^13]: 같은 자료, p.31~32 (예제 4.14, 그림 4.18)
 [^s1]: 에이전트 보충. 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림 1장은 원본에 없다. [40_fourier-transform-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$x(2t)$$의 변환을 수치 적분해 $$\frac12X(\frac{j\omega}{2})$$와 비교, 첫 영점 $$\pi$$와 $$2\pi$$.
 {% endraw %}

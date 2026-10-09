@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Independence", "선형독립", "일차독립", "Linear Dependence", "선형종속", "일차종속", "다중공선성", "multicollinearity", "해밍 부호", "Hamming code"]
 description: "벡터 몇 개가 선형독립이라는 것은 그중 어느 것도 나머지를 섞어서 만들 수 없다는 뜻이다. 즉 모두가 새로운 방향을 하나씩 보태고, 쓸데없이 겹치는 정보가 없다. 독립인 벡터로 만든 결합은 계수가 하나로 정해져서 \"몇 개씩 섞었는지\"를 되짚을 수 있다. 반대로 겹치는 벡터가 있으면…"
@@ -19,7 +19,7 @@ next_url: "/studies/linear-algebra/basis-dimension/"
 next_title: "부분공간, 기저와 차원"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/linear-algebra/linear-independence/"
 ---
 {% raw %}
@@ -127,6 +127,10 @@ $$(1, 1, 0)$$, $$(0, 1, 1)$$, $$(1, 0, 1)$$이 독립인지 판정한다.
 2. *소거:* 2행 $$-$$ 1행 → $$(0, 1, -1)$$. 3행 $$-$$ 2행 → $$(0, 0, 2)$$.
 3. *판정:* 피벗 1, 1, 2가 세 열 모두에 있어 독립이다. 같은 벡터에서 $$(1, 0, 1)$$을 $$(1, 2, 1)$$로 바꾸면 $$(1, 1, 0) + (0, 1, 1)$$이라 종속이다.
 
+<img class="note-fig" src="/Hongs_Blog/assets/notes/linear-algebra/09_linear-independence_fig1.svg" alt="그림" loading="lazy">
+
+파란 면은 앞의 두 벡터 $$(1, 1, 0)$$, $$(0, 1, 1)$$이 만드는 평면이다. 왼쪽의 $$(1, 0, 1)$$은 이 평면 밖으로 나가 새 방향을 보탠다. 오른쪽의 $$(1, 2, 1)$$은 평면 안에 있어 보탤 방향이 없다[^s2].
+
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시의 두 계수 표현, 해당하는 예·않는 예, 동치 조건 1~4가 무작위 벡터 모임(정수, 유리수 소거)에서 같은 판정, $$n + 1$$개 벡터가 늘 종속, 예제와 카드의 판정, 해밍(7, 4) 부호의 최소 거리 3(전수) — [09_linear-independence_verify.py](/Hongs_Blog/studies/linear-algebra/code/09_linear-independence_verify/)</div>
 
@@ -190,4 +194,5 @@ $$(1, 1, 0)$$, $$(0, 1, 1)$$, $$(1, 0, 1)$$이 독립인지 판정한다.
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.4절 "Independence, Basis and Dimension"(독립의 정의, 영공간과의 관계, $$n$$개보다 많은 벡터는 종속).
 [^s1]: 에이전트 보충. "검사 행렬의 어떤 $$d - 1$$개 열도 독립이면 최소 거리 $$\ge d$$"는 부호 이론 교재의 표준 결과이고, 여기서는 2진수(법 2) 위의 선형대수다. 해밍(7, 4) 부호의 모든 부호어 16개의 최소 무게가 3임을 09_linear-independence_verify.py에서 전수로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [09_linear-independence_plot.py](/Hongs_Blog/studies/linear-algebra/code/09_linear-independence_plot/)로 그렸고, 두 모임의 랭크(3과 2)와 $$(1, 2, 1) = (1, 1, 0) + (0, 1, 1)$$을 같은 코드로 확인했다.
 {% endraw %}

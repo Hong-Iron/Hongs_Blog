@@ -19,7 +19,7 @@ next_url: "/studies/numerical-analysis/direct-search/"
 next_title: "직접 탐색법"
 math: true
 mermaid: false
-code_count: 1
+code_count: 2
 permalink: "/studies/numerical-analysis/fibonacci-search/"
 ---
 {% raw %}
@@ -47,6 +47,10 @@ $$f(x) = x^2 - \sin x$$를 $$[0, 1]$$에서 허용 오차 $$\epsilon = 10^{-4}$$
 | 18 | 0.4501188 | 0.4502083 | 0.4502101 | 0.4503015 |
 
 마지막 18회차에서 비율이 $$\frac12$$이라 두 점이 겹치므로 $$c_{18}$$을 $$0.5 - 0.01$$ 자리에 둔다[^2][^3].
+
+<img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/26_fibonacci-search_fig1.svg" alt="그림" loading="lazy">
+
+회차마다 남기는 비율 $$r_k$$다. 열몇 회차까지는 황금비 0.618과 거의 같다. 끝으로 가면 작은 피보나치 수의 비(5/8, 3/5, 2/3)가 되어 출렁이고, 마지막에 $$\frac12$$이 된다[^s2].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 피보나치 수, $$n = 21$$, 표의 0~4·16~18행, 단계 수 $$n - 2 = 19$$, 마지막 폭 $$\approx 2/F_{21}$$, $$c_{18}$$ 계산, 황금분할과 폭 비교, 카드 C2 — [26_fibonacci-search_impl.py](/Hongs_Blog/studies/numerical-analysis/code/26_fibonacci-search_impl/)</div>
@@ -137,4 +141,5 @@ $$c_k = a_k + \left(1 - \frac{F_{n-k-1}}{F_{n-k}}\right)(b_k - a_k), \qquad d_k 
 [^9]: 같은 자료, p.25
 [^10]: 같은 자료, p.26
 [^s1]: 에이전트 보충. 황금비와의 관계, 두 방법의 폭 비교, 장단점, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
+[^s2]: 에이전트 보충. 그림은 원본에 없다. [26_fibonacci-search_plot.py](/Hongs_Blog/studies/numerical-analysis/code/26_fibonacci-search_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$F_{21} = 10{,}946$$, $$r_0 \approx 0.6180340$$, $$r_{18} = \frac12$$, 비율을 모두 곱하면 $$\frac{1}{F_{21}}$$.
 {% endraw %}
