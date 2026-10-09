@@ -1,6 +1,12 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-09
+  title: 카드 풀기와 복습 페이지 정리
+  items:
+    - 카드 풀기, 복습 페이지, 진도 점과 진도 막대를 없앴어요. 확인 문제는 예전처럼 눌러서 답을 펼쳐 봐요.
+    - 시험 일정(중간·기말 날짜, 남은 날 표시)을 사이트에서 뺐어요.
+    - 움직여 보는 그림 6개는 그대로예요.
+- date: 2026-10-09
   title: 다이어그램 보충
   items:
     - 13과목 노트에 흐름도, 상태도, 순서도, 분류 트리, 배치도 등 다이어그램 300여 개를 더했어요. 절차와 구조를 글로만 따라가지 않아도 돼요.

@@ -191,7 +191,4 @@ graph TD
   n05 --> n21
   classDef todo stroke-dasharray: 4 3
 ```
-
-## 시험 대비
-- 아직 없다.
 {% endraw %}

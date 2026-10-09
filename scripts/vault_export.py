@@ -33,7 +33,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 NOTES_DIR = ROOT / "_notes"
-STUDY_INDEX = ROOT / "assets" / "study-index.json"   # cards, prerequisites, exam dates (assets/js/study.js)
 TOC_DIR = ROOT / "_data" / "toc"          # per-course contents for the note sidebar (_layouts/note.html)
 FIGURES_DIR = ROOT / "assets" / "notes"   # SVG figures from 3.개념집, copied as-is
 DATA_FILE = ROOT / "_data" / "study_courses.yml"
@@ -553,6 +552,8 @@ def clean_body(body, is_roadmap):
         body = re.sub(r"^> (시험|진도):.*\n", "", body, flags=re.M)
         # drop the open-questions section but keep footnote definitions that sit after it
         body = re.sub(r"^## 확인할 것\n.*?(?=^## |^\[\^[^\]]+\]:|\Z)", "", body, flags=re.M | re.S)
+        # exam schedules stay private
+        body = re.sub(r"^## 시험 대비\n.*?(?=^## |^\[\^[^\]]+\]:|\Z)", "", body, flags=re.M | re.S)
         body = drop_status_column(body)
     return title, body
 
@@ -624,39 +625,6 @@ def build_toc(course):
     if rest:
         parts.append({"title": "그 밖의 문서", "items": rest})
     return parts
-
-
-CARD_RE = re.compile(r"^(?:<details[^>]*>\s*<summary[^>]*>\s*<b>C(\d+)</b>|>\s*\[!question\]-\s*\*\*C(\d+)\*\*)", re.M)
-EXAM_RE = re.compile(r"(중간|기말)\s*(\d{4}-\d{2}-\d{2})")
-
-
-def write_study_index(courses, linker, baseurl):
-    """One JSON file for the study features: which cards each note has, which
-    notes of the same course it needs first, and each course's exam dates."""
-    out = {"courses": {}, "docs": []}
-    for course in courses:
-        exams = []
-        if course.get("roadmap"):
-            head = course["roadmap"].read_text(encoding="utf-8").split("\n")[:6]
-            line = next((l for l in head if l.startswith("> 시험")), "")
-            exams = [{"label": a, "date": d} for a, d in EXAM_RE.findall(line)]
-        out["courses"][course["slug"]] = {"name": course["name"], "url": course["url"], "exams": exams}
-        urls = {d["url"] for d in course["docs"]}
-        for d in course["docs"]:
-            text = d["path"].read_text(encoding="utf-8")
-            cards = sorted({int(a or b) for a, b in CARD_RE.findall(text)})
-            pre = []
-            for link in d["meta"].get("prerequisites") or []:
-                m = re.search(r"\[\[([^\]|]+)", str(link))
-                hit = m and linker.resolve(m.group(1))
-                if hit:
-                    u = hit[0][len(baseurl):]
-                    if u in urls and u not in pre:
-                        pre.append(u)
-            out["docs"].append({"u": d["url"], "c": course["slug"], "t": d["title"], "n": d["num"] or "",
-                                "k": d["kind"], "cards": cards, "pre": pre})
-    STUDY_INDEX.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    return sum(len(d["cards"]) for d in out["docs"])
 
 
 def write_toc(course, parts):
@@ -767,9 +735,6 @@ def export(vault):
     for f, slug in figures:
         (FIGURES_DIR / slug).mkdir(parents=True, exist_ok=True)
         shutil.copyfile(f, FIGURES_DIR / slug / f.name)
-
-    n_cards = write_study_index(courses, linker, baseurl)
-    print(f"study index: {n_cards} cards")
 
     # pass 2: write pages
     for course in courses:

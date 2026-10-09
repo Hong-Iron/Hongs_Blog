@@ -253,31 +253,6 @@ graph TD
   n30 --> n31
 ```
 
-## 시험 대비
-- 시험 대비 세트는 아직 없다. `시험대비 휴먼 인터페이스 미디어`로 만든다.
-- 강의 계획표와 이 지식베이스의 대응[^10]:
-
-| 주 | 주제 | 날짜 | 문서 |
-|---|---|---|---|
-| 1 | Course Introduction & Human Perception System | 9/1, 3 | 01~10 |
-| 2 | Human Visual System | 9/8, 10 | 11~22 |
-| 3 | Light, Electromagnetic Wave & Signal Representation | 9/15, 17 | 11 일부, 23~24 (강의 4) |
-| 4 | Color Perception & Representation Parameters | 9/22, (9/24 추석) | 16~20 일부. 자료 없음 |
-| 5 | Color Space - CIE XYZ, CIE Lab | 9/29, 10/1 | — |
-| 6 | Image Representation & Spatial Frequency | 10/6, 8 | 25~27 (강의 5) |
-| 7 | Convolution & Pattern Detection | 10/13, 15 | 28~31 (강의 6) |
-| 8 | **중간고사** | 10/22 | 1~7주 |
-| 9 | Sound & Human Auditory Perception | 10/27, 29 | — |
-| 10 | Representation of Audio Signal | 11/3, 5 | — |
-| 11 | Spectral Decomposition – Fourier Series | 11/10, 12 | — |
-| 12 | Spectral Decomposition – Fourier Transform | 11/17, 19 | — |
-| 13 | Spectral Decomposition – Discrete Fourier Transform | 11/24, 26 | — |
-| 14 | Spectral Decomposition of 2-D signal – Discrete Cosine Transform | 12/1, 3 | — |
-| 15 | Review and Summary | 12/8, 10 | — |
-| 16 | **기말고사** | 12/17 | 9~15주 |
-
-- 평가: 중간 50%, 기말 50%. 시험에 빠지거나 강의의 1/4 이상 결석하면 F다. 두 번째 결석부터 1시간당 1점 감점[^10].
-
 [^1]: 4-1학기/휴먼 인터페이스 미디어/1.수업자료/00. HIM_강의00-강의소개.pdf, p.8, p.11. 강의 계획서의 Pre-requisites도 같다.
 [^2]: 같은 그림이 00. HIM_강의00-강의소개.pdf p.4와 01.HIM_강의01-들어가기.pdf p.6에 반복되고, 사람의 정보 처리 슬라이드가 강의 1 p.4와 강의 2 p.3, p.16에 반복된다.
 [^3]: 02.HIM_강의02_사람의지각.pdf, p.2, p.5, p.6과 요약 p.16의 "감각과 지각"

@@ -1,0 +1,121 @@
+/* Hands-on figures (assets/js/widgets.js). */
+/* ---- hands-on figures (assets/js/widgets.js) ---- */
+.widget {
+  margin: 0.8rem 0 1.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--card) 80%, transparent);
+  font-family: var(--font-sans);
+}
+
+.widget__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.6rem;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.widget__summary::-webkit-details-marker {
+  display: none;
+}
+
+.widget__badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--course, var(--accent));
+}
+
+.widget__badge::before {
+  content: "▸ ";
+}
+
+.widget[open] .widget__badge::before {
+  content: "▾ ";
+}
+
+.widget__hint {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.widget__box {
+  padding: 0.2rem 0.9rem 0.9rem;
+}
+
+.widget-ctls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.widget-ctl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.widget-ctl input[type="range"] {
+  width: 9rem;
+  accent-color: var(--course, var(--accent));
+}
+
+.widget-ctl select {
+  padding: 0.2rem 0.3rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+.widget-ctl__val {
+  min-width: 2.6rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.widget-canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.widget-note {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.widget [hidden] {
+  display: none !important;
+}
+
+.widget__summary::marker {
+  content: "";
+}
+
+.study-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  font: 600 0.85rem var(--font-sans);
+  text-decoration: none;
+  background-image: none !important;
+  cursor: pointer;
+}
+
+.study-btn:hover {
+  border-color: var(--ink-muted);
+}
+
