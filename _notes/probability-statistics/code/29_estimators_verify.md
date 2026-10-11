@@ -26,6 +26,8 @@ permalink: "/studies/probability-statistics/code/29_estimators_verify/"
 주장 3: 증명 — E[Σ(X_i - X̄)²] = (n - 1)σ²(주사위 n = 2, 3 전수로 분수 확인).
 주장 4: 예제·카드 C3 — 정규 자료 n = 5: 불편 표본분산(n-1)의 MSE 2σ⁴/4 = 0.5σ⁴, n으로 나눈 것의 MSE 9/25 = 0.36σ⁴(식과 모의실험).
 주장 5: 카드 C1 — 편향 2, 분산 5면 MSE 9.
+주장 6: 자료와 정보 11회(과목별 관점·카드 C4) — N으로 나눈 분산 추정량의 기댓값은 (N - 1)/N · σ²(주사위 N = 2, 3, 4 전수),
+        N = 4면 3/4, N = 10이면 0.9, N = 100이면 0.99. N/(N - 1)을 곱하면 불편.
 """
 from fractions import Fraction
 from itertools import product
@@ -75,6 +77,16 @@ def main():
 
     assert 2 ** 2 + 5 == 9
     print("[OK] 주장 5·카드 C1")
+    for n in (2, 3, 4):
+        tot = Fraction(0)
+        for w in product(range(1, 7), repeat=n):
+            xb = Fraction(sum(w), n)
+            tot += sum((x - xb) ** 2 for x in w) / n
+        e = tot / 6 ** n
+        assert e == Fraction(n - 1, n) * s2 and e * Fraction(n, n - 1) == s2
+    assert [Fraction(n - 1, n) for n in (4, 10, 100)] == [Fraction(3, 4), Fraction(9, 10), Fraction(99, 100)]
+    assert Fraction(10, 9) * Fraction(9, 10) == 1
+    print("[OK] 주장 6·카드 C4: N으로 나누면 기댓값이 (N - 1)/N 배")
     print("ALL CHECKS PASSED")
 
 

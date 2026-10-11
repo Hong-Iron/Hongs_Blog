@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Dot Product", "내적", "점곱", "inner product", "Norm", "노름", "길이", "length", "단위벡터", "unit vector", "직교", "orthogonal", "수직", "코사인 유사도", "cosine similarity", "코시-슈바르츠 부등식", "Cauchy–Schwarz inequality", "삼각부등식", "triangle inequality"]
 description: "두 벡터의 성분끼리 곱해 더한 수가 내적이다. 이 수는 \"두 화살표가 얼마나 같은 쪽을 향하는가\"를 재며, 같은 방향이면 크고, 수직이면 0, 반대면 음수다. 자기 자신과의 내적은 길이의 제곱이라, 길이·각도·수직을 모두 이것 하나로 계산한다. 추천 시스템의 유사도, 뉴런의 가중합…"
@@ -172,6 +172,19 @@ $$\mathbf{a} = (1, 1, 0)$$과 $$\mathbf{b} = (1, 0, 1)$$의 사잇각.
 
 코사인 유사도가 늘 알맞은 척도는 아니다. 슬라이드의 토론 예에서는 두 언어 모델의 LayerNorm 가중치 코사인 유사도가 96.8%를 넘어 "베꼈다"는 주장이 나왔다. 하지만 서로 무관한 모델들도 그 가중치의 방향이 비슷해 높은 코사인을 보였고, 평균을 빼고 잰 피어슨 상관계수는 약 −0.01이었다[^d2]. 코사인은 모든 성분이 공통으로 큰 값을 가지면(평균이 0에서 멀면) 그것만으로 1에 가까워진다. 피어슨 상관계수는 각 벡터에서 평균을 뺀 뒤 잰 코사인이라 그 공통 부분을 지운다[^sd1].
 
+**자료와 정보 (2-1학기).** 코사인 유사도를 여러 거리·유사도 척도 가운데 하나로 놓고, 언제 쓰고 값이 어디까지 나오는지를 정리한다[^di1].
+
+$$\cos(\mathbf x, \mathbf y) = \frac{\mathbf x \cdot \mathbf y}{\Vert \mathbf x\Vert \,\Vert \mathbf y\Vert }$$
+
+
+- 숫자 자료(실수든 정수든)와 0·1로 된 이진 자료에 알맞다. 글을 숫자 벡터로 바꾼 뒤 비교할 때 많이 쓴다.
+- 값은 $$-1$$부터 1까지이고, 1일 때 가장 닮았다.
+- 1에서 뺀 $$1 - \cos(\mathbf x, \mathbf y)$$를 코사인 거리라 한다. 모든 성분이 0 이상이면 코사인이 0~1이라 코사인 거리도 0~1이다[^di1].
+
+코사인 거리는 이름과 달리 거리의 조건을 다 지키지 못한다. 방향이 같은 두 벡터는 달라도 0이고, 삼각부등식도 깨진다: [거리와 유사도](/Hongs_Blog/studies/data-and-information/distance-similarity/).
+
+두 글을 낱말의 집합 $$r$$, $$s$$로 보면 코사인 유사도는 $$\frac{\vert r \cap s\vert }{\sqrt{\vert r\vert  \cdot \vert s\vert }}$$가 된다[^di2]. 낱말마다 "있으면 1, 없으면 0"을 적은 벡터에서 내적은 함께 든 낱말 수, 길이는 낱말 수의 제곱근이기 때문이다[^sdi1]. 자세한 것은 [문자열 유사도](/Hongs_Blog/studies/data-and-information/string-similarity/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -214,10 +227,22 @@ $$\mathbf{a} = (1, 1, 0)$$과 $$\mathbf{b} = (1, 0, 1)$$의 사잇각.
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C6** 두 집합 $$r = \{a, b, c, d\}$$, $$s = \{c, d, e\}$$를 원소 $$a$$~$$e$$의 0/1 벡터로 적고, 벡터의 코사인 유사도가 $$\frac{\vert r \cap s\vert }{\sqrt{\vert r\vert  \cdot \vert s\vert }}$$와 같음을 확인하라.</summary>
+
+**답:** $$\mathbf r = (1, 1, 1, 1, 0)$$, $$\mathbf s = (0, 0, 1, 1, 1)$$. 내적 2, 길이 $$\sqrt4$$와 $$\sqrt3$$. 코사인 $$\frac{2}{\sqrt{12}} \approx 0.577$$. 집합 식으로도 $$\frac{2}{\sqrt{4 \cdot 3}}$$이다.<br>
+**이유:** 0/1 벡터의 내적은 둘 다 1인 자리의 수, 곧 교집합의 크기다. 자기 자신과의 내적은 1의 개수라 길이가 원소 수의 제곱근이다[^sdi1].
+
+</details>
+
+
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.2절 "Lengths and Dot Products"(내적, 길이, 단위벡터, 코사인 공식, 코시–슈바르츠와 삼각부등식).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 램버트 조명과 뒷면 제거는 컴퓨터 그래픽스 교재의 표준 내용이다. 고차원 무작위 벡터의 코사인이 0 근처에 모이는 것(1000차원에서 표준편차 약 $$1/\sqrt{1000} \approx 0.03$$)은 02_dot-product_verify.py에서 실험으로 확인했다.
 [^d1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.26 (문서의 단어 빈도 벡터와 코사인 유사도, sim = 0.94)
 [^d2]: 같은 자료, p.28 (Discussion: Cosine Similarity vs PCC)
 [^sd1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "상관계수는 평균을 뺀 코사인"이라는 설명과 카드 C5의 수치는 원본에 없다. 02_dot-product_verify.py로 계산했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [02_dot-product_plot.py](/Hongs_Blog/studies/linear-algebra/code/02_dot-product_plot/)로 그렸고, 코사인의 표준편차가 약 $$1/\sqrt{n}$$($$n$$은 차원, 2차원 0.71, 10차원 0.32, 1000차원 0.032)인 것을 같은 코드로 확인했다.
+[^di1]: 자료와 정보 4회 강의 자료 「D&I_강의04-1-유사도와거리」, p.12 (Cosine Similarity: 식, 숫자·이진 자료에 알맞음, $$[-1, 1]$$, 글 문서에 많이 씀, Cosine distance $$1 - \cos$$, 성분이 0 이상이면 $$[0, 1]$$)
+[^di2]: 자료와 정보 4회 강의 자료 「D&I_강의04-2-유사도와거리」, p.9 (Similarity Metric – Token: Cosine Similarity $$\vert r \cap s\vert  / \sqrt{\vert r\vert  \cdot \vert s\vert }$$)
+[^sdi1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 집합의 코사인이 0/1 벡터의 코사인과 같다는 설명과 카드 C6은 슬라이드에 없다. [10_string-similarity_verify.py](/Hongs_Blog/studies/data-and-information/code/10_string-similarity_verify/)로 확인했다.
 {% endraw %}

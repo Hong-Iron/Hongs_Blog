@@ -9,7 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Proximity Measures", "근접도", "비유사도", "Dissimilarity", "유사도", "Similarity", "비유사도 행렬", "Dissimilarity Matrix", "데이터 행렬", "Data Matrix", "단순 일치", "Simple Matching", "자카드 계수", "Jaccard Coefficient", "비대칭 이진 비유사도"]
 description: "이름표로 된 속성끼리는 빼기를 할 수 없으니, 두 대상이 몇 칸에서 같은 값을 가졌는지 세어 비슷함을 잰다. 다른 칸이 많을수록 덜 비슷하다. 그런데 \"둘 다 없음\"까지 같다고 세면 문제가 생긴다. 드문 병의 검사처럼 0이 대부분인 자료에서는 거의 모든 사람이 서로 비슷하게 나오므…"
@@ -113,6 +113,30 @@ Jack과 Jim에게 '둘 다 음성'인 검사를 계속 더했다. 대칭 비유�
 - 수치 속성의 비유사도: [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/)
 - 자카드 계수의 집합 표현: [집합](/Hongs_Blog/studies/discrete-math/sets/)의 교집합과 합집합
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** 같은 것을 비유사도 대신 유사도로, "부호 공간의 유사도"라는 이름으로 다룬다. 속성 $$k$$개마다 유사도 $$s(x_i, y_i)$$를 매기고 무게 $$w_i = \frac1k$$로 평균 낸다[^di1].
+
+$$\mathrm{sim}(\mathbf x, \mathbf y) = \sum_{i=1}^{k} w_i\, s(x_i, y_i)$$
+
+
+- **겹침 유사도.** 값이 같으면 $$s = 1$$, 다르면 0이다. 같은 속성의 비율이 되어, 위 명목 속성의 식으로는 $$\frac{m}{p} = 1 - d(i, j)$$다[^di1].
+- **빈도를 넣은 유사도.** 같은 값이라도 흔한 값이 같은 것보다 드문 값이 같은 것이 더 닮았다고 본다. 값 $$x_i$$가 자료 $$n$$개 중 나온 비율을 $$p_i(x_i)$$라 할 때, 같으면 $$s = 1 - p_i^2(x_i)$$, 다르면 0이다[^di1].
+
+슬라이드의 예는 반려동물 여섯 마리(성별, 색, 성격)다. 암컷이 6마리 중 4마리라 $$p(\text{F}) = \frac23$$, 빨강도 $$\frac23$$, 얌전함(tame)은 $$\frac13$$이다. Bella–Molly는 성별과 색이 같고, Bella–Teddy는 색과 성격이 같다. 겹침 유사도는 둘 다 $$\frac23$$이다. 빈도를 넣으면 Bella–Molly는 $$\frac13\left(\frac59 + \frac59\right) = \frac{10}{27}$$, Bella–Teddy는 $$\frac13\left(\frac59 + \frac89\right) = \frac{13}{27}$$이다. 드문 성격이 같은 쪽이 더 닮았다고 나온다[^di2].
+
+**이진 부호의 거리.** 길이 $$n$$의 두 이진 부호에서는 다른 자리의 수를 센다. 이것이 [해밍 거리](/Hongs_Blog/studies/data-and-information/hamming-distance/)이고, 0과 1에 대한 $$L_1$$ 거리 $$\sum_i \vert x_i - y_i\vert $$와 같다. 위 표의 기호로는 $$r + s$$다. 슬라이드의 `010010010`과 `100001011`은 다섯 자리가 달라 5다[^di3].
+
+**자카드 지수.** 두 집합 $$\mathbf x, \mathbf y$$에서 $$J(\mathbf x, \mathbf y) = \frac{\vert \mathbf x \cap \mathbf y\vert }{\vert \mathbf x \cup \mathbf y\vert }$$이다. 위의 $$\frac{q}{q + r + s}$$와 같은 식이다. 슬라이드는 해밍 거리가 못 가르는 두 경우를 든다[^di4].
+
+| | 경우 1 | 경우 2 |
+|---|---|---|
+| 두 집합 | 원소 1,000개씩, 995개가 같다 | 원소 5개씩, 같은 것이 없다 |
+| 해밍 거리 | 10 | 10 |
+| 자카드 | $$\frac{995}{1005} \approx 0.99$$ | 0 |
+
+해밍 거리는 다른 것의 수만 세고 같은 것이 얼마나 많은지는 보지 않는다. 그래서 거의 똑같은 두 집합과 완전히 다른 두 집합에 같은 값을 준다. 자카드는 합친 크기로 나누어 둘을 가른다. 문자열의 낱말 집합에 쓰는 같은 식은 [문자열 유사도](/Hongs_Blog/studies/data-and-information/string-similarity/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -139,10 +163,24 @@ Jack과 Jim에게 '둘 다 음성'인 검사를 계속 더했다. 대칭 비유�
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 성별·색·성격 세 속성으로 적은 여섯 마리 가운데 암컷 4마리, 은색 2마리가 있다. Coco(F, silver, cool)와 Max(M, silver, brave)의 겹침 유사도와 빈도를 넣은 유사도를 구하라. 암컷과 빨강이 같은 Bella–Molly($$\frac{10}{27}$$)와 비교하면?</summary>
+
+**답:** 색만 같아 겹침 유사도 $$\frac13$$. 은색의 비율이 $$\frac26 = \frac13$$이라 빈도 유사도는 $$\frac13\left(1 - \frac19\right) = \frac{8}{27}$$.<br>
+**이유:** 같은 속성은 하나뿐인데 Bella–Molly(둘이 같음)의 $$\frac{10}{27}$$에 바짝 붙는다. 은색이 드문 값이라 한 번 같은 것이 $$\frac89$$로 크게 쳐지고, Bella–Molly의 흔한 값 둘은 각각 $$\frac59$$밖에 못 받기 때문이다[^sdi1].
+
+</details>
+
+
 [^1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.21~22
 [^2]: 같은 자료, p.23
 [^3]: 같은 자료, p.24
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 환자 예(Jack·Mary·Jim)는 Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.3절의 예다. 자카드 계수의 집합 표현, 장바구니 활용, 섞인 속성의 합치기, 카드 C2·C3은 원본에 없다. 수치는 검증 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [03_categorical-dissimilarity_plot.py](/Hongs_Blog/studies/data-science/code/03_categorical-dissimilarity_plot/)로 그렸고, 둘 다 0인 칸이 3개일 때 $$\frac13$$과 $$\frac23$$, 10,000개일 때 대칭 비유사도가 0.001 미만임을 같은 코드로 확인했다.
 [^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 명목·대칭 이진·비대칭 이진 식을 근거로 그렸다.
+[^di1]: 자료와 정보 4회 강의 자료 「D&I_강의04-1-유사도와거리」, p.13 (Similarity in code space: 일반 유사도 함수, $$w_i = 1/k$$, overlap similarity, 빈도를 넣은 $$1 - p_i^2(x_i)$$, $$p_i(x_i) = fr(A_i = x_i)/n$$)
+[^di2]: 같은 자료, p.14 (예: 여섯 마리 표, sim overlap과 sim frequency의 식, Bella–Molly 10/27, Bella–Teddy 13/27)
+[^di3]: 자료와 정보 4회 강의 자료 「D&I_강의04-2-유사도와거리」, p.4 (Distance in Binary Code: Hamming Distance는 이진 자료의 $$L_1$$ 노름, 9비트 예와 장바구니 표)
+[^di4]: 같은 자료, p.5 (Jaccard Index: 경우 1과 2, 해밍 거리는 둘 다 10, 자카드는 0.99와 0)
+[^sdi1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 겹침 유사도와 명목 속성 식의 관계, $$q, r, s$$로 다시 적은 것, 9비트 예의 값 5, 카드 C4는 슬라이드에 없다. [08_distance-similarity_verify.py](/Hongs_Blog/studies/data-and-information/code/08_distance-similarity_verify/)로 확인했다.
 {% endraw %}

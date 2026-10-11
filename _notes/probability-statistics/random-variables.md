@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Random Variable", "확률변수", "이산 확률변수", "discrete random variable", "확률질량함수", "PMF", "probability mass function", "누적분포함수", "CDF", "cumulative distribution function", "분포", "distribution", "지시 확률변수", "indicator random variable", "확률변수의 독립"]
 description: "확률변수는 실험 결과마다 수를 하나 붙이는 규칙이다. \"동전 열 번 중 앞면 수\", \"요청 처리 시간\"처럼 결과 자체보다 거기서 뽑은 수에 관심이 있을 때 쓴다. 수를 붙이고 나면 \"이 값이 나올 확률\" 표(분포)만 알면 되고, 합·평균·최댓값 같은 계산을 할 수 있다. 이름과 달…"
@@ -111,6 +111,14 @@ $$\{X = x\}$$는 "$$X$$가 $$x$$를 주는 결과들의 집합" $$\{\omega : X(\
 - 선수: [확률의 공리와 계산](/Hongs_Blog/studies/probability-statistics/probability-axioms/), [함수](/Hongs_Blog/studies/college-math/function/)
 - 이어지는 개념: [기댓값과 선형성](/Hongs_Blog/studies/probability-statistics/expectation/), [이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** 이 문서는 실험 결과에 수를 붙이는 함수에서 출발한다. 강의는 반대쪽에서 온다. 손에 든 것은 자료 $$N$$개뿐이고, 그 자료를 "어떤 확률변수가 내놓은 값들"로 보기로 정한다[^i1]. 그렇게 보면 자료 묶음은 표본 묶음이 되고, 표본이 나온 분포를 함수 하나로 적을 수 있다. 분포 함수는 어떤 값이 얼마나 자주 나오는지를 적은 것이다. 그 함수의 모양을 정하는 수 몇 개(파라미터)가 자료에서 뽑아낸 정보가 된다. 정규분포라면 평균과 분산 두 수다[^i2].
+
+- **자료를 보는 두 가지 눈.** 자료를 점으로 보면 거리와 모양을 따지는 기하가 된다. 확률변수로 보면 분포를 따지는 통계가 된다. 강의는 뒤쪽을 전통적인 자료 분석 방법이라고 부른다[^i3].
+- **자료를 적는 법.** 키 자료는 $$x = \{x_1, \dots, x_N\}$$, 몸무게 자료는 $$y = \{y_1, \dots, y_N\}$$, 둘을 묶으면 $$(x_i, y_i)$$의 모임이다. 속성이 $$D$$개면 한 사람의 자료를 $$\mathbf X_i = [x_1, \dots, x_D]^\top$$로 세워 적고, 전체를 $$\mathbf X = \{\mathbf X_1, \dots, \mathbf X_N\}$$으로 쓴다[^i4]. 속성이 여럿일 때의 분포는 [공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/)에서 다룬다.
+- **낱말.** 슬라이드의 "분절(discrete) 변수"는 이 문서의 이산 확률변수다. 값이 이어져 있는 쪽은 연속(continuous) 변수라 부른다[^i5].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -140,4 +148,9 @@ $$\{X = x\}$$는 "$$X$$가 $$x$$를 주는 결과들의 집합" $$\{\omega : X(\
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.1절 "Random variables", 3.2절 "Distributions and probability mass functions", 3.6절 "Cumulative distribution functions", 3.7절 "Functions of random variables", 3.8절 "Independence of rvs".
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [07_random-variables_plot.py](/Hongs_Blog/studies/probability-statistics/code/07_random-variables_plot/)로 그렸고, 그림에 쓴 값(PMF의 합 1, $$P(S = 7) = \frac{6}{36}$$, 합 7에서 CDF가 뛰는 높이 $$= P(S = 7)$$)을 같은 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시 표(동전 두 번, 앞면 수)의 결과 → 값 대응을 그렸다.
+[^i1]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.2 (데이터를 보는 관점)
+[^i2]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.5 (데이터를 확률변수로 취급하면: 데이터 세트, 표본 세트, 확률 분포의 모델)
+[^i3]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.14 (요약: point와 geometry, random variable과 statistics)
+[^i4]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.8 (데이터의 표현, 벡터화)
+[^i5]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.2 (확률과 통계: 연속 변수와 분절 변수)
 {% endraw %}

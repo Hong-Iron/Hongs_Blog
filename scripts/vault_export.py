@@ -49,6 +49,7 @@ TRACKS = [
         ("공학수학/확률과 통계", "확률과 통계", "probability-statistics"),
         ("3-1학기/신호 및 시스템", "신호 및 시스템", "signals-and-systems"),
         ("2-2학기/수치해석", "수치해석", "numerical-analysis"),
+        ("2-1학기/자료와 정보", "자료와 정보", "data-and-information"),
     ]),
     ("컴퓨터 과학", [
         ("알고리즘", "알고리즘", "algorithms"),
@@ -56,6 +57,7 @@ TRACKS = [
         ("4-1학기/컴퓨터 통신", "컴퓨터 통신", "computer-communication"),
         ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
         ("3-2학기/데이터 과학", "데이터 과학", "data-science"),
+        ("2-1학기/소프트웨어 프로젝트", "소프트웨어 프로젝트", "software-project"),
     ]),
     ("심리학", [
         ("4-1학기/이상 심리학", "이상 심리학", "abnormal-psychology"),
@@ -68,7 +70,7 @@ EXCLUDE = {
     "4-1학기/컴퓨터 통신/4.연습문제/26.과제 2.md",  # graded assignment solution
 }
 
-CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript"}
+CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript", ".java": "java"}
 
 DOC_TYPE_LABELS = {
     "definition": "정의", "theorem": "정리", "algorithm": "알고리즘",

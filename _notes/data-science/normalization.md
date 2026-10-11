@@ -9,7 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Normalization", "데이터 정규화", "데이터 변환", "Data Transformation", "최소-최대 정규화", "Min-max Normalization", "z-점수 정규화", "Z-score Normalization", "표준화", "Standardization", "스케일링", "Feature Scaling"]
 description: "키를 cm로 적느냐 m로 적느냐에 따라 거리 계산 결과가 뒤집힌다. 정규화는 속성마다 값을 같은 크기의 범위로 옮겨서 단위의 영향을 없앤다. 가장 작은 값을 0, 가장 큰 값을 1로 맞추는 방법은 간단하지만, 튀는 값 하나가 나머지를 한쪽 구석에 몰아넣는다. 평균을 0, 표준편차를…"
@@ -83,6 +83,18 @@ $$v'_i = \frac{v_i - \bar A}{\sigma_A}$$
 </div>
 
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** 정규화를 "속성이 여럿인 자료에서 속성끼리 크기를 맞추는 법"으로 소개하고, 우리말로는 모두 '정규화'로 옮기기 쉬운 영어 낱말 셋을 가른다[^i1].
+
+| 낱말 | 무엇을 다루나 | 하는 일 | 이 문서에서 |
+|---|---|---|---|
+| Normalization | 자료 | 값의 범위를 0~1로 옮긴다 | 최소-최대 정규화 |
+| Standardization | 확률 분포 | 평균 0, 분산 1이 되게 값을 바꾼다 | z-점수 정규화 |
+| Regularization | 머신 러닝 | 모델이 가진 자료에만 지나치게 맞춰지는 일(과적합)을 막으려고 벌점을 매긴다 | 다루지 않는다 |
+
+슬라이드는 standardization을 "자료를 정규분포의 확률변수로 보고" 하는 일이라고 적는다[^i1]. 식 $$z = \frac{x - \mu}{\sigma}$$는 자료가 어떤 분포든 쓸 수 있고, 바꾼 값의 평균은 0, 표준편차는 1이 된다[^i2]. 바꾼 값이 표준정규분포를 따르려면 원래 자료가 정규분포여야 한다. 위 오해 항목과 같은 이야기다[^is1]. 표준정규분포는 [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -109,9 +121,21 @@ $$v'_i = \frac{v_i - \bar A}{\sigma_A}$$
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 다음은 각각 normalization, standardization, regularization 가운데 무엇인가? ① 시험 점수에서 평균을 빼고 표준편차로 나눈다 ② 예측 모델이 훈련 자료에만 지나치게 맞지 않도록, 모델이 복잡해질수록 벌점을 준다 ③ 센서 값 0~1,023을 0~1로 옮긴다</summary>
+
+**답:** ① standardization ② regularization ③ normalization.<br>
+**이유:** ①과 ③은 자료의 값을 바꾼다. ①은 평균 0, 분산 1로, ③은 범위 0~1로 맞춘다. ②는 자료를 건드리지 않고 모델을 배우는 방법을 바꾼다. 셋 다 '정규화'로 옮기는 일이 있어 낱말만 보고는 가를 수 없다[^is1].
+
+</details>
+
+
 [^1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.41
 [^2]: 같은 자료, p.42
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 사람 예, 이상치 예, 중앙값·IQR로 나누는 견고한 정규화, 오해 항목, 카드 C1~C3은 원본에 없다. 수치는 검증 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 소득 73,600의 두 정규화 예는 Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 3.5.2절의 예다.
 [^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [07_normalization_plot.py](/Hongs_Blog/studies/data-science/code/07_normalization_plot/)로 그렸다. 자료는 검증 코드의 1, 2, 2, 3, 3, 3, 4, 10, 20, 40이고, z-점수 뒤 평균 0·표준편차 1, 왜도 1.85가 그대로인 것을 같은 코드로 확인했다.
+[^i1]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.12 (정규화: Normalization, Standardization, Regularization)
+[^i2]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.13 (표준 정규분포와 z-score)
+[^is1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표의 "이 문서에서" 칸, 식을 어떤 분포에도 쓸 수 있다는 단서, 카드 C4의 세 상황은 원본에 없다. z-점수 뒤에도 분포의 모양이 그대로라는 것은 이 문서의 검증 코드(왜도 1.85 그대로)가 확인한 내용이다.
 {% endraw %}

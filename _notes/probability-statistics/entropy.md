@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Entropy", "엔트로피", "섀넌 엔트로피", "Shannon entropy", "정보량", "information content", "놀라움", "surprisal", "비트", "bit", "이진 엔트로피", "binary entropy", "원천 부호화 정리", "source coding theorem", "허프만 부호", "Huffman coding", "크래프트 부등식", "Kraft inequality", "접두어 부호", "prefix code", "정보 이득", "information gain"]
 description: "결과를 알게 되었을 때 평균적으로 얼마나 놀라는지를 재는 수이고, 그 결과를 전하는 데 평균적으로 꼭 필요한 비트 수와 같다. 공정한 동전 하나는 1비트, 거의 늘 앞면이 나오는 동전은 1비트보다 훨씬 적다. 확률이 고르게 퍼질수록 크고 한쪽에 몰릴수록 작아서, 데이터를 얼마나 압…"
@@ -166,6 +166,14 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 </div>
 
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** [부호](/Hongs_Blog/studies/data-and-information/code-encoding/)를 다루는 3회에서 엔트로피는 "기호 하나에 줄 가장 알맞은 부호 길이"로 나온다. 예상 밖의 기호일수록 전하는 정보가 많고, 뻔히 예상한 일이 일어나면 배운 것이 별로 없다는 직관에서 출발한다[^di1]. 확률 $$p$$인 기호의 정보량을 $$I = \log_2\frac1p$$비트로 두고, 이것이 그 기호에 줄 가장 알맞은 부호 길이라고 말한다. 엔트로피 $$H = \sum_s p(s)\log_2\frac{1}{p(s)}$$는 기호 하나의 평균 정보량이다[^di2]. 위 정의의 $$-\log_2 p$$와 같은 식이다.
+
+슬라이드의 예는 날씨 넷(맑음, 흐림, 비, 눈)을 전송하는 것이다. 넷이 똑같이 $$0.25$$씩이면 $$H = 2$$라 기호마다 적어도 2비트가 든다. 확률이 $$0.5, 0.25, 0.125, 0.125$$면 $$H = 0.5 \cdot 1 + 0.25 \cdot 2 + 2 \cdot 0.125 \cdot 3 = 1.75$$다[^di3]. 이 문서 맨 위의 서버 로그 예와 숫자가 같다. 부호 `0`, `10`, `110`, `111`을 주면 평균 길이가 꼭 1.75비트가 된다[^di4].
+
+기호마다 길이가 다른 부호(가변 길이 부호)로 슬라이드는 둘을 든다. 허프만 부호는 부호 길이가 정수이고, 산술 부호는 정수가 아닌 길이까지 쓴다[^di4]. 확률이 $$\frac12$$의 거듭제곱이 아니면 $$\log_2\frac1p$$가 정수가 아니라서 허프만 부호는 엔트로피에 딱 닿지 못한다(위 정리의 $$H \le L < H + 1$$). 산술 부호는 기호열 전체를 수 하나로 적어 그 틈을 줄인다[^sdi1]. 둘 다 원래 내용을 그대로 되찾는 무손실 부호다[^di4].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -205,4 +213,9 @@ $$H(X) = -\sum_x p(x)\log_2 p(x) = \mathbb{E}\left[-\log_2 p(X)\right]$$
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DEFLATE가 LZ77과 허프만 부호를 함께 쓴다는 것은 RFC 1951에 정의되어 있다. 묶음 부호화 수치와 허프만의 한계는 37_entropy_verify.py로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [37_entropy_plot.py](/Hongs_Blog/studies/probability-statistics/code/37_entropy_plot/)로 그렸고, 그림에 쓴 값($$h(0.5) = 1$$, $$h(0.9) = 0.469$$, $$h(0) = h(1) = 0$$)을 같은 코드로 확인했다.
 [^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 부호 네 개를 부호 나무로 그렸다. 부호 길이 = 깊이라는 설명은 활용 절(트라이)에 있다.
+[^di1]: 자료와 정보 3회 강의 자료 「D&I_강의03-부호」, p.6 (정보 이론: 기호가 전하는 정보의 양, 예측하기 어려울수록 정보가 많다)
+[^di2]: 같은 자료, p.7 (엔트로피: $$I = \log_2(1/p)$$, 비트 단위, 최적 부호 길이, $$H = \sum_s p(s)\log_2(1/p(s))$$)
+[^di3]: 같은 자료, p.8~9 (예: 날씨 넷, 균등하면 $$H = 2$$, 0.5·0.25·0.125·0.125면 $$H = 1.75$$)
+[^di4]: 같은 자료, p.10~11 (가변 길이 부호: Huffman code – integer code lengths, Arithmetic codes – non-integer code lengths, 후프만 코드 표, lossless code)
+[^sdi1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 허프만 부호가 엔트로피에 닿지 못하는 까닭과 산술 부호가 틈을 줄이는 방식은 슬라이드에 없다. Cover, Thomas, *Elements of Information Theory* 2판, 5장과 13.3절에 있다.
 {% endraw %}

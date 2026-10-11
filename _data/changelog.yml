@@ -1,5 +1,10 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
+- date: 2026-10-11
+  title: 자료와 정보, 소프트웨어 프로젝트
+  items:
+    - Studies에 자료와 정보(수학)를 더했어요. 2진 표현과 부동소수점, 해밍 부호, 거리와 유사도, 편집 거리, 확률 과정, 파젠 창까지 개념 17개와 예제 사다리 2개예요. 군집화와 확률 부분은 데이터 과학, 확률과 통계 문서의 '과목별 관점'에 합쳤어요.
+    - 소프트웨어 프로젝트(컴퓨터 과학)를 더했어요. Java 기초부터 클래스, 상속, 인터페이스, 예외, 제네릭까지 개념 39개예요. 문서에 실은 출력은 모두 JDK 21에서 돌려 확인했고, Java 코드 페이지도 볼 수 있어요.
 - date: 2026-10-09
   title: 읽기 편하게 다듬기
   items:

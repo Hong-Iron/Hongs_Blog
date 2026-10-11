@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Estimator", "추정량", "점추정", "point estimation", "표본분포", "sampling distribution", "편향", "bias", "불편추정량", "unbiased estimator", "평균제곱오차", "MSE", "mean squared error", "편향-분산 분해", "bias-variance decomposition", "일치성", "consistency", "베셀 보정", "Bessel's correction"]
 description: "표본에서 계산한 평균 같은 값은 표본을 다시 뽑으면 달라지는 확률변수다. 그래서 \"이 계산법이 얼마나 좋은가\"를 과녁 맞히기처럼 따진다. 평균적으로 과녁 중심에서 비껴 있는가(편향), 화살이 얼마나 흩어지는가(분산), 둘을 합쳐 중심에서 평균적으로 얼마나 먼가(평균제곱오차). 표본…"
@@ -121,6 +121,18 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 - 선수: [기술통계](/Hongs_Blog/studies/probability-statistics/descriptive-statistics/), [중심극한정리](/Hongs_Blog/studies/probability-statistics/clt/)
 - 이어지는 개념: [최대가능도 추정](/Hongs_Blog/studies/probability-statistics/mle/)(추정량을 만드는 일반적 방법), [신뢰구간](/Hongs_Blog/studies/probability-statistics/confidence-intervals/)
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** 11회 "MLE 바이어스"에서 $$n - 1$$ 이야기를 [최대가능도 추정](/Hongs_Blog/studies/probability-statistics/mle/) 쪽에서 다시 만난다. 정규분포의 분산을 최대가능도로 구하면 편차 제곱의 합을 표본 수 $$N$$으로 나눈 $$\hat\theta_2 = \frac1N \sum_{k=0}^{N-1} (x_k - \hat\theta_1)^2$$이 나온다($$\hat\theta_1$$은 표본평균). 슬라이드는 이 식을 $$N - 1$$로 나눈 식과 나란히 놓고 "MLE는 편향된 값을 추정한다?", "해결책은?"을 묻는다[^i1].
+
+위의 $$(n - 1)\sigma^2$$ 유도가 그 답이다. 편차 제곱합의 평균이 $$(N - 1)\sigma^2$$이므로 $$N$$으로 나눈 값은 평균적으로 참 분산의 $$\frac{N - 1}{N}$$배다. 표본이 4개면 $$\frac34$$, 10개면 0.9, 100개면 0.99다. 늘 작은 쪽으로 치우치지만 표본이 많아지면 치우침이 사라진다. $$N - 1$$로 나누면(같은 말로, $$\frac{N}{N - 1}$$을 곱하면) 평균이 정확히 $$\sigma^2$$이 된다[^is1]. 평균의 추정값 $$\hat\theta_1$$은 표본평균 그대로라 치우침이 없다.
+
+<div class="callout callout-check" markdown="1">
+<div class="callout-title" markdown="span">검증: 주사위 2·3·4개 전수에서 $$N$$으로 나눈 값의 평균이 참 분산의 $$\frac{N-1}{N}$$배이고 $$\frac{N}{N-1}$$을 곱하면 참 분산인 것(분수로 정확히), 카드 C4 — [29_estimators_verify.py](/Hongs_Blog/studies/probability-statistics/code/29_estimators_verify/)</div>
+
+</div>
+
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -147,8 +159,19 @@ $$\mu = \mathbb{E}[\hat\theta]$$로 두고 $$\hat\theta - \theta = (\hat\theta -
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 표본 10개로 정규분포의 분산을 최대가능도 추정하면, 그 값은 평균적으로 참 분산의 몇 배인가? 치우침을 없애려면 무엇을 곱하는가?</summary>
+
+**답:** $$\frac{10 - 1}{10} = 0.9$$배. $$\frac{10}{9}$$를 곱한다. 곧 10 대신 9로 나눈다.<br>
+**이유:** 최대가능도 추정값은 편차 제곱합을 $$N$$으로 나눈 것이고, 편차 제곱합의 평균은 $$(N - 1)\sigma^2$$이다. 표본평균이 자료에 가장 가깝게 맞춘 값이라 제곱합이 조금 작게 나온다[^is1].
+
+</details>
+
+
 [^1]: Wasserman, *All of Statistics*, "Models, Statistical Inference and Learning" 장(점추정, 편향, 표준오차, MSE의 편향-분산 분해, 일치성). Blitzstein, Hwang, *Introduction to Probability* 2판, 6.3절 "Sample moments"(표본분산의 기댓값).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 정규분포에서 $$\operatorname{Var}(S^2_{n-1}) = \frac{2\sigma^4}{n - 1}$$은 $$\frac{(n-1)S^2}{\sigma^2}$$이 자유도 $$n - 1$$인 카이제곱분포를 따른다는 데서 나온다(Blitzstein·Hwang 10.4절). 두 MSE는 29_estimators_verify.py로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [29_estimators_plot.py](/Hongs_Blog/studies/probability-statistics/code/29_estimators_plot/)로 그렸고, 그림에 쓴 값(모의실험 20만 회의 평균 1과 0.8, MSE 0.50과 0.36)을 같은 코드로 확인했다.
 [^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시(주사위 4번의 평균을 10만 번 되풀이)와 정의를 순서대로 그렸다.
+[^i1]: 자료와 정보 11회 강의 자료 「D&I_강의11_확률 분포 찾기」, p.15 (MLE 바이어스: 추정한 매개변수와 $$N - 1$$로 나눈 식, 해결책은?). 같은 자료 p.14가 $$\hat\theta_2$$를 구한다.
+[^is1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 물음만 던지고 답을 적지 않았다. $$\frac{N-1}{N}$$배라는 값과 표본 수별 숫자, 카드 C4는 이 문서의 $$(n - 1)\sigma^2$$ 유도에서 바로 나오고, 검증 코드로 확인했다.
 {% endraw %}

@@ -353,7 +353,9 @@
     "operating-systems": ["tile", "squareOutline", "capsule"],
     "signals-and-systems": ["wave", "bell", "tallbar"],
     "numerical-analysis": ["arch", "wedge", "dot"],
-    "data-science": ["dot", "circle", "hexagon"]
+    "data-science": ["dot", "circle", "hexagon"],
+    "data-and-information": ["dot", "squareOutline", "bell"],
+    "software-project": ["tile", "capsule", "chevron"]
   };
 
   function mixHex(a, b, f) {
@@ -1122,6 +1124,78 @@
         line(ctx, q[0] - 7, q[1] + 7, q[0] + 7, q[1] - 7);
       });
       label(ctx, "iter " + a, 14, Rg.y0 + h * 0.95, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 자료와 정보: a Parzen-window density estimate; the window widens as you scroll.
+  MOTIFS["data-and-information"] = {
+    setup: function (L, rand) {
+      var xs = [], i, cs = [0.2, 0.34, 0.72], n = [9, 6, 12];
+      for (var c = 0; c < 3; c++) for (i = 0; i < n[c]; i++) {
+        xs.push(clamp(cs[c] + Math.sqrt(-2 * Math.log(rand() + 1e-9)) * Math.cos(rand() * TAU) * 0.045, 0.03, 0.97));
+      }
+      return { xs: xs };
+    },
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), hgt = Rg.y1 - Rg.y0, base = Rg.y0 + hgt * 0.8;
+      var w = lerp(0.012, 0.22, ease(F.p)), n = S.xs.length, i, k, peak = 0, ys = [], N = 160;
+      for (i = 0; i <= N; i++) {
+        var x = i / N, cnt = 0;
+        for (k = 0; k < n; k++) if (Math.abs(S.xs[k] - x) <= w / 2) cnt++;
+        ys.push(cnt / (n * w));
+        if (ys[i] > peak) peak = ys[i];
+      }
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = rgba(F.pal.ink, 0.18);
+      line(ctx, 0, base, L.W, base);
+      ctx.beginPath();
+      for (i = 0; i <= N; i++) {
+        var px = i / N * L.W, py = base - ys[i] / (peak || 1) * hgt * 0.6;
+        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.strokeStyle = rgba(F.pal.a, 0.85);
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      S.xs.forEach(function (x) {
+        ctx.fillStyle = rgba(F.pal.ink, 0.5);
+        ctx.beginPath(); ctx.arc(x * L.W, base + 9, 2.6, 0, TAU); ctx.fill();
+      });
+      var cx = 0.72 * L.W;
+      ctx.strokeStyle = rgba(F.pal.b, 0.9);
+      ctx.lineWidth = 1.6;
+      ctx.strokeRect(cx - w * L.W / 2, base + 2, w * L.W, 14);
+      label(ctx, "h = " + w.toFixed(2), 14, Rg.y0 + hgt * 0.12, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 소프트웨어 프로젝트: a class tree; scrolling walks the call down to the object's own method.
+  MOTIFS["software-project"] = {
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), hgt = Rg.y1 - Rg.y0;
+      var nodes = [[0.5, 0.14, "Unit"], [0.24, 0.47, "Marine"], [0.76, 0.47, "Scv"], [0.12, 0.8, "Firebat"], [0.36, 0.8, "Medic"]];
+      var edges = [[0, 1], [0, 2], [1, 3], [1, 4]], path = [0, 1, 4];
+      var bw = clamp(L.W * 0.13, 46, 120), bh = clamp(hgt * 0.13, 16, 34);
+      function P(n) { return [nodes[n][0] * L.W, Rg.y0 + nodes[n][1] * hgt]; }
+      var t = F.p * (path.length - 1), a = Math.floor(t), b = Math.min(a + 1, path.length - 1), u = t - a;
+      ctx.lineWidth = 1.2;
+      edges.forEach(function (e) {
+        var p = P(e[0]), q = P(e[1]);
+        ctx.strokeStyle = rgba(F.pal.ink, 0.3);
+        line(ctx, p[0], p[1] + bh / 2, q[0], q[1] - bh / 2);
+      });
+      nodes.forEach(function (nd, i) {
+        var p = P(i), on = i === path[a] || (i === path[b] && u > 0.5);
+        ctx.fillStyle = rgba(on ? F.pal.b : F.pal.a, on ? 0.3 : 0.12);
+        ctx.strokeStyle = rgba(on ? F.pal.b : F.pal.a, 0.85);
+        ctx.lineWidth = on ? 2 : 1.2;
+        ctx.fillRect(p[0] - bw / 2, p[1] - bh / 2, bw, bh);
+        ctx.strokeRect(p[0] - bw / 2, p[1] - bh / 2, bw, bh);
+        if (bw > 60) label(ctx, nd[2], p[0] - bw / 2 + 6, p[1] + 4, rgba(F.pal.ink, 0.6));
+      });
+      var p0 = P(path[a]), p1 = P(path[b]);
+      ctx.fillStyle = rgba(F.pal.b, 0.95);
+      ctx.beginPath(); ctx.arc(lerp(p0[0], p1[0], u), lerp(p0[1] + bh / 2, p1[1] - bh / 2, u), 4, 0, TAU); ctx.fill();
+      label(ctx, "attack() → " + nodes[path[u > 0.5 ? b : a]][2], 14, Rg.y0 + hgt * 0.97, rgba(F.pal.ink, 0.5));
     }
   };
 

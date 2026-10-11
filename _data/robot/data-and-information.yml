@@ -1,0 +1,60 @@
+# 홍철's lines for the data-and-information course pages. Format: _data/robot/README.md
+greeting:
+- "자료와 정보예요. 2-1학기에 들었고, 0과 1을 어떻게 읽느냐부터 시작해요."
+- "자료와 정보 페이지예요. 내릴수록 배경의 창이 넓어지면서 곡선이 뭉툭해져요."
+- "여긴 자료와 정보예요. 부호, 거리, 확률 추정 순서로 가요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "데이터와 메타데이터부터요. 같은 0과 1의 줄이 읽는 법에 따라 수도 되고 글자도 돼요."
+  link: /studies/data-and-information/data-metadata/
+  link_label: "데이터와 메타데이터"
+- q: 어려워요?
+  a: "해밍 부호에서 몇 번 칸이 틀렸는지 찾는 게 처음엔 헷갈려요. 예제 사다리로 한 단계씩 해 보세요."
+  link: /studies/data-and-information/hamming-code-ladder/
+  link_label: "해밍 부호 예제 사다리"
+- q: "배워서 어디에 써요?"
+  a: "오타가 있어도 비슷한 낱말을 찾는 검색, 오류를 스스로 고치는 통신이 다 여기서 나와요."
+  link: /studies/data-and-information/edit-distance/
+  link_label: "편집 거리"
+- q: "다른 과목이랑도 이어져요?"
+  a: "군집화랑 확률 부분은 데이터 과학과 확률과 통계 문서에 이 과목 관점을 붙여 놨어요. 로드맵에 어디에 있는지 적혀 있어요."
+  link: /studies/data-and-information/
+  link_label: 로드맵
+chats:
+- q: "0.1 + 0.2가 0.3이 아니라면서요?"
+  a: "컴퓨터는 소수를 2진수 몇 칸에 잘라 넣어요. 0.1은 2진수로 끝없이 이어져서 조금 잘린 값이 들어가요."
+  link: /studies/data-and-information/floating-point/
+  link_label: 부동소수점
+  next:
+  - q: "음수는 어떻게 적어요?"
+    a: "맨 앞 칸에만 음수 무게를 줘요. 그러면 뺄셈도 덧셈 회로 하나로 돼요."
+    link: /studies/data-and-information/twos-complement/
+    link_label: "2의 보수"
+- q: "틀린 비트를 어떻게 고쳐요?"
+  a: "검사 칸을 몇 개 붙여 보내요. 받는 쪽에서 검사를 다시 하면 깨진 검사들의 무늬가 틀린 칸 번호를 알려 줘요."
+  link: /studies/data-and-information/hamming-code/
+  link_label: "해밍 부호"
+  next:
+  - q: "몇 칸까지 고쳐요?"
+    a: "부호어끼리 가장 가까운 거리가 d면 d-1칸까지 알아채고, 그 절반쯤까지 고쳐요. 7칸 해밍 부호는 한 칸이에요."
+    link: /studies/data-and-information/hamming-distance/
+    link_label: "해밍 거리와 부호 거리"
+- q: "자료만 가지고 확률을 알 수 있어요?"
+  a: "물어보는 값 둘레에 창을 놓고 그 안에 자료가 몇 개 드는지 세요. 그걸 창 크기로 나누면 흔한 정도가 나와요."
+  link: /studies/data-and-information/parzen-window/
+  link_label: "파젠 창"
+  next:
+  - q: "창 크기는 어떻게 정해요?"
+    a: "작으면 삐죽삐죽하고 크면 뭉개져요. 크기 대신 '가까운 자료 몇 개'를 정해 두는 방법도 있어요."
+    link: /studies/data-and-information/parzen-vs-knn/
+    link_label: "파젠 창과 k-이웃 비교"
+talk:
+- text: "같은 거리 2라도 자료가 길게 퍼진 쪽으로 2면 평범하고, 좁은 쪽으로 2면 튀는 점이에요."
+  link: /studies/data-and-information/mahalanobis-distance/
+  link_label: "마할라노비스 거리"
+- text: "'차이의 제곱'은 거리처럼 보여도 삼각부등식을 못 지켜요. 그래서 거리의 척도가 아니에요."
+  link: /studies/data-and-information/distance-similarity/
+  link_label: "거리와 유사도"
+- text: "동전 던지기를 끝없이 이어 붙인 줄이 베르누이 과정이에요. 처음 n칸의 앞면 수가 이항분포예요."
+  link: /studies/data-and-information/bernoulli-process/
+  link_label: "베르누이 과정"

@@ -28,6 +28,9 @@ permalink: "/studies/probability-statistics/code/30_mle_verify/"
 주장 5: 오해 — 가능도를 θ에 대해 적분하면 1이 아니다(동전 7/10: ∫ p^7(1-p)^3 dp = 1/1320).
 주장 6: 사다리 — 포아송 [2,3,1,4,0] → 2, 지수 [1,3,2,2] → 0.5(2계 도함수 음수), 정규 [4,6,5,9] → 6,
         기하 [1,3,2,4] → 0.4, 균등(0, θ) [0.3, 0.9, 0.5] → 최댓값 0.9(도함수 0이 없음).
+주장 7: 자료와 정보 11회(과목별 관점·카드 C5) — 예 1: 공분산을 아는 2차원 정규분포에서 기울기 합 Σ⁻¹(x_k - μ)가 표본평균에서 0,
+        예 2: 1차원 자료 [2,4,4,6] → μ̂ = 4, σ̂² = 2(두 편미분이 0, 격자 탐색과 일치), N - 1로 나누면 8/3,
+        주사위 4개 전수로 E[σ̂²] = (N - 1)/N · σ².
 """
 import math
 import random
@@ -94,6 +97,60 @@ def main():
     Lu = lambda th: th ** -3 if th >= max(xs) else 0.0
     assert abs(argmax(Lu, 0.01, 3, 300000) - 0.9) < 1e-4
     print("[OK] 주장 6: 예제 사다리")
+    # 주장 7: 자료와 정보 11회 슬라이드 13~15
+    from fractions import Fraction as Fr
+    from itertools import product
+    pts = [(Fr(1), Fr(2)), (Fr(3), Fr(0)), (Fr(2), Fr(4))]
+    mu = (sum(q[0] for q in pts) / 3, sum(q[1] for q in pts) / 3)
+    assert mu == (2, 2)
+
+    def inv2(S):
+        (a, b), (c, d) = S
+        det = a * d - b * c
+        return ((d / det, -b / det), (-c / det, a / det))
+
+    def loglik2(m, S):
+        Si = inv2(S)
+        det = S[0][0] * S[1][1] - S[0][1] * S[1][0]
+        tot = 0.0
+        for q in pts:
+            dx, dy = float(q[0] - m[0]), float(q[1] - m[1])
+            quad = dx * (float(Si[0][0]) * dx + float(Si[0][1]) * dy) + dy * (float(Si[1][0]) * dx + float(Si[1][1]) * dy)
+            tot += -0.5 * math.log((2 * math.pi) ** 2 * float(det)) - 0.5 * quad
+        return tot
+
+    for S in (((Fr(2), Fr(1)), (Fr(1), Fr(3))), ((Fr(1), Fr(0)), (Fr(0), Fr(1))), ((Fr(5), Fr(-2)), (Fr(-2), Fr(1)))):
+        Si = inv2(S)
+        g = [sum(Si[r][0] * (q[0] - mu[0]) + Si[r][1] * (q[1] - mu[1]) for q in pts) for r in (0, 1)]
+        assert g == [0, 0]                                   # 기울기의 합이 표본평균에서 정확히 0
+        best = loglik2(mu, S)
+        for _ in range(200):
+            m = (mu[0] + Fr(rng.randint(-30, 30), 10), mu[1] + Fr(rng.randint(-30, 30), 10))
+            assert loglik2(m, S) <= best + 1e-12             # 어느 공분산에서도 표본평균이 최대
+    print("[OK] 주장 7 예 1: 2차원, 공분산 세 가지에서 평균의 MLE는 표본평균 (2, 2)")
+
+    xs = [Fr(2), Fr(4), Fr(4), Fr(6)]
+    N = len(xs)
+    t1 = sum(xs) / N
+    t2 = sum((x - t1) ** 2 for x in xs) / N
+    assert (t1, t2) == (4, 2)
+    assert sum((x - t1) / t2 for x in xs) == 0                                   # 평균 쪽 편미분의 합
+    assert sum(-1 / (2 * t2) + (x - t1) ** 2 / (2 * t2 ** 2) for x in xs) == 0    # 분산 쪽 편미분의 합
+    assert -sum(1 / t2 for x in xs) + sum((x - t1) ** 2 / t2 ** 2 for x in xs) == 0   # 슬라이드 14의 꼴(2배)
+    ll = lambda a, b: sum(-0.5 * math.log(2 * math.pi * b) - (float(x) - a) ** 2 / (2 * b) for x in xs)
+    grid = [(ll(a / 100, b / 100), a / 100, b / 100) for a in range(300, 501, 2) for b in range(50, 401, 2)]
+    _, ga, gb = max(grid)
+    assert (ga, gb) == (4.0, 2.0)
+    assert sum((x - t1) ** 2 for x in xs) / (N - 1) == Fr(8, 3)
+    print("[OK] 주장 7 예 2·카드 C5: [2,4,4,6] → 평균 4, 분산의 MLE 2, N - 1로 나누면 8/3")
+
+    s2 = Fr(35, 12)
+    tot = Fr(0)
+    for w in product(range(1, 7), repeat=4):
+        xb = Fr(sum(w), 4)
+        tot += sum((x - xb) ** 2 for x in w) / 4
+    assert tot / 6 ** 4 == Fr(3, 4) * s2
+    print("[OK] 주장 7 바이어스: 주사위 4개 전수에서 E[σ̂²] = 3/4 · σ²")
     print("ALL CHECKS PASSED")
 
 

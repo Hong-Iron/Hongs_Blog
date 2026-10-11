@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Conditional Probability", "조건부 확률", "곱셈 법칙", "multiplication rule", "연쇄 법칙", "chain rule of probability", "전확률 공식", "law of total probability", "LOTP", "몬티 홀 문제", "Monty Hall problem"]
 description: "\"이미 이런 일이 일어났다\"는 정보를 받으면, 가능한 세계가 그 정보와 맞는 결과들로 줄어든다. 줄어든 세계 안에서 관심 사건이 차지하는 몫이 조건부 확률이다. 이것으로 복잡한 확률을 \"먼저 이것, 그다음 저것\"의 단계로 쪼개 곱하거나, 경우를 나눠 더해 계산할 수 있다. 가장 흔…"
@@ -174,6 +174,35 @@ flowchart LR
 </div>
 
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** 사건 $$A$$, $$B$$ 대신 확률변수와 그 값으로 적는다. $$P(F = o \mid B = b)$$는 "상자($$B$$)가 파랑($$b$$)일 때 과일($$F$$)이 오렌지($$o$$)일 확률"이다. 이 문서의 $$P(A \mid B)$$에서 $$A$$를 "과일이 오렌지", $$B$$를 "상자가 파랑"으로 둔 것이다[^i1].
+
+- **동전과 주사위.** 동전 $$C$$(앞 $$h$$, 뒤 $$t$$)와 주사위 $$D$$(1~6)를 함께 던지고 다섯 값을 묻는다. $$P(C = h)$$, $$P(D = 1)$$, $$P(C = h \mid D = 4)$$, $$P(D = 4 \mid C = h)$$, $$P(D = 4, C = h)$$다[^i2]. 답은 차례로 $$\frac12$$, $$\frac16$$, $$\frac12$$, $$\frac16$$, $$\frac1{12}$$이다. 주사위 눈을 알아도 동전의 확률이 그대로이므로 조건을 걸어도 값이 바뀌지 않는다[^is1]. "둘 다"의 확률은 $$P(D = 4 \wedge C = h)$$로도, 쉼표를 써서 $$P(D = 4, C = h)$$로도 적는다[^i2].
+- **과일 상자.** 빨간 상자에 사과 2개와 오렌지 6개, 파란 상자에 사과 3개와 오렌지 1개가 있다. 빨간 상자를 고를 확률은 $$\frac{4}{10}$$, 파란 상자는 $$\frac{6}{10}$$이다. 상자를 고른 뒤 그 안에서 과일 하나를 집는다[^i3].
+    1. 상자를 알 때 과일의 확률은 상자 안을 세면 나온다. $$p(F = o \mid B = r) = \frac34$$, $$p(F = a \mid B = r) = \frac14$$, $$p(F = o \mid B = b) = \frac14$$, $$p(F = a \mid B = b) = \frac34$$.
+    2. 사과를 집을 확률은 상자별로 나눠 더한다. $$p(F = a) = \frac14 \cdot \frac{4}{10} + \frac34 \cdot \frac{6}{10} = \frac{11}{20}$$. 오렌지는 나머지인 $$p(F = o) = 1 - \frac{11}{20} = \frac{9}{20}$$이다.
+    3. 오렌지를 집었을 때 그 상자가 빨강이었을 확률은 방향을 뒤집어 구한다. $$p(B = r \mid F = o) = \frac{p(F = o \mid B = r)\,p(B = r)}{p(F = o)} = \frac34 \times \frac{4}{10} \times \frac{20}{9} = \frac23$$.
+
+    슬라이드는 이 예의 열쇠로 "상자를 고르기 전에 과일을 집을 수 있는가?"를 묻는다[^i1]. 집을 수 없다. 과일의 확률은 늘 어느 상자인지를 거쳐서 정해진다. 3번의 뒤집기는 [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/)다.
+- **규칙의 이름.** 슬라이드는 두 규칙으로 정리한다[^i4].
+
+    | 슬라이드 | 식 | 이 문서에서 |
+    |---|---|---|
+    | 합 규칙(Sum Rule) | $$p(X) = \sum_Y p(X, Y)$$ | 전확률 공식 증명의 2단계. $$Y$$의 값마다 나눠 더한다 |
+    | 곱 규칙(Product Rule) | $$p(X, Y) = p(Y \mid X)\,p(X) = p(X \mid Y)\,p(Y)$$ | 곱셈 법칙 |
+
+    합 규칙의 각 항에 곱 규칙을 넣으면 전확률 공식 $$p(X) = \sum_Y p(X \mid Y)\,p(Y)$$가 된다. 위 2번 계산이 이것이다. 표로 본 합 규칙은 [결합분포와 조건부 기댓값](/Hongs_Blog/studies/probability-statistics/joint-distributions/)의 주변분포다.
+- **독립.** $$P(A \cap B) = P(A)P(B)$$를 $$P(B)$$로 나누면 $$P(A) = P(A \mid B)$$가 된다고 적는다[^i4]. 나누려면 $$P(B) > 0$$이어야 한다[^is1]. 동전과 주사위가 이 경우다. 자세한 것은 [독립](/Hongs_Blog/studies/probability-statistics/independence/)에 있다.
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 자료와 정보 8회 슬라이드 p.6의 "Bayer's Theorem", p.4의 "P(F=0\|B=b)" / 문제점: 사람 이름의 철자가 틀렸고, 오렌지를 뜻하는 글자 o 자리에 숫자 0이 적혀 있다 / 수정안: "Bayes' Theorem", "P(F=o\|B=b)" / 근거: 같은 쪽의 다른 줄은 모두 $$F = o$$로 적는다
+
+</div>
+
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -208,6 +237,20 @@ flowchart LR
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 빨간 상자에 사과 2개와 오렌지 6개, 파란 상자에 사과 3개와 오렌지 1개가 있다. 빨간 상자를 $$\frac{4}{10}$$, 파란 상자를 $$\frac{6}{10}$$의 확률로 고른 뒤 과일 하나를 집는다. 과일 12개 가운데 오렌지가 7개인데, 오렌지를 집을 확률이 $$\frac{7}{12}$$가 아닌 이유를 설명하고 맞는 값을 구하라.</summary>
+
+**답:** $$\frac34 \cdot \frac{4}{10} + \frac14 \cdot \frac{6}{10} = \frac{9}{20}$$이다.<br>
+**이유:** $$\frac{7}{12}$$는 과일 12개를 한 통에 쏟아 놓고 하나를 고를 때의 값이다. 여기서는 상자를 먼저 고르고, 과일은 그 상자 안에서만 집는다. 오렌지가 1개뿐인 파란 상자를 더 자주 고르므로 오렌지가 덜 나온다. 상자마다 "그 상자를 고를 확률 × 그 상자에서 오렌지를 집을 확률"을 구해 더해야 한다[^is1].
+
+</details>
+
+
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.2절 "Definition and intuition", 2.3절 "Bayes' rule and the law of total probability", 2.4절 "Conditional probabilities are probabilities", 2.7절 "Conditioning as a problem-solving tool"(몬티 홀), 2.8절 "Pitfalls and paradoxes".
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예제(몬티 홀 문제)의 1~3단계를 확률 나무로 옮겼다. 근거는 Blitzstein·Hwang 2판 2.7절이다.
+[^i1]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.4 (Conditional Probability: 과일 상자와 다섯 가지 질문)
+[^i2]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.3 (Joint Probability: 동전과 주사위)
+[^i3]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.4, p.6 (과일 상자 그림, $$p(B = r) = 4/10$$일 때의 계산)
+[^i4]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.5 (Rules: Sum Rule, Product Rule, Independent)
+[^is1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 동전과 주사위의 다섯 답(슬라이드는 빈칸이다), "상자를 고르기 전에는 집을 수 없다"는 풀이, $$P(B) > 0$$ 조건, 카드 C5의 $$\frac{7}{12}$$과의 비교는 원본에 없다. 과일 상자의 $$\frac{11}{20}$$, $$\frac{9}{20}$$, $$\frac23$$은 슬라이드의 값이고 파이썬 분수 계산으로 다시 확인했다.
 {% endraw %}

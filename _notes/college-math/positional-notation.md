@@ -9,7 +9,7 @@ course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Positional Notation", "진법", "radix", "기수법", "2진법", "binary", "8진법", "octal", "16진법", "hexadecimal", "자릿수", "비트 수", "bit length", "진법 변환"]
 description: "우리가 쓰는 수는 자리마다 10의 거듭제곱을 곱해 더한 것이고, 10 대신 2를 쓰면 컴퓨터의 2진법이 된다. 자리 하나를 늘릴 때마다 적을 수 있는 수가 밑의 배수로 늘어나므로, 어떤 수를 적는 데 드는 자릿수는 로그로 정해진다. 16진법은 2진수 네 자리를 한 글자로 줄여 쓴 …"
@@ -153,6 +153,12 @@ $$n = \sum_{i=0}^{m-1} d_i\, b^i = d_{m-1} b^{m-1} + \dots + d_1 b + d_0, \qquad
 </div>
 
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** 수를 "컴퓨터에 담는 데이터"로 본다. 슬라이드는 수 자체(자연수, 정수, 유리수, 실수, 복소수)와 그것을 적는 표기법(2진수·10진수·16진수, 고정소수점·부동소수점)을 갈라 놓는다[^di1]. 같은 수 13을 `1101`로 적든 `D`로 적든 수는 하나이고, 적는 방법만 다르다.
+
+이 과목이 힘주어 말하는 것은 비트 수가 유한하다는 점이다. $$N$$비트로 만들 수 있는 줄은 $$2^N$$가지(정리 2)뿐이라, 적을 수 있는 수는 범위도 촘촘함도 끝이 있다. 8비트의 256가지 줄에 어떤 수를 짝지을지는 "정하기 나름"이고 "필요에 따라" 정한다[^di2]. 0부터 255까지로 쓰면 부호 없는 정수이고, 절반을 음수에 주면 [2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)다. 소수점 아래로도 자리를 이어 가면 자리 무게가 $$2^{-1}, 2^{-2}, \dots$$이 되어 $$0.1011_2 = \frac12 + \frac18 + \frac1{16} = 0.6875$$처럼 소수를 적는다[^di3]. 소수점 자리를 띄워 범위를 넓힌 것이 [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/)이다. 어느 약속으로 읽을지는 비트 줄 밖에 따로 적어 둔다: [데이터와 메타데이터](/Hongs_Blog/studies/data-and-information/data-metadata/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -181,7 +187,20 @@ $$n = \sum_{i=0}^{m-1} d_i\, b^i = d_{m-1} b^{m-1} + \dots + d_1 b + d_0, \qquad
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 같은 8비트 `1000 0001`을 (가) 부호 없는 정수 (나) 2의 보수 (다) 소수점이 맨 앞에 있는 2진 소수 $$0.10000001_2$$로 각각 읽어라. 세 값이 다른 까닭은?</summary>
+
+**답:** (가) $$128 + 1 = 129$$. (나) $$-128 + 1 = -127$$. (다) $$\frac12 + \frac1{256} = 0.50390625$$.<br>
+**이유:** 8비트로 만들 수 있는 줄은 256가지뿐이고, 그 줄에 어떤 수를 짝지을지는 약속이다. 자리 무게를 $$2^7, \dots, 2^0$$으로 두느냐, 맨 앞만 $$-2^7$$로 두느냐, $$2^{-1}, \dots, 2^{-8}$$로 두느냐에 따라 같은 줄이 다른 수가 된다[^sdi1].
+
+</details>
+
+
 [^1]: Knuth, *The Art of Computer Programming*, Vol. 2 *Seminumerical Algorithms*, 4.1절 "Positional Number Systems"
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [10_positional-notation_plot.py](/Hongs_Blog/studies/college-math/code/10_positional-notation_plot/)로 그렸고, 그림에 쓴 값($$n < 5{,}000$$에서 $$2^{m-1} \le n < 2^m$$($$m$$은 2진 자릿수), $$8$$은 4비트이고 $$\lg 8 = 3$$)을 같은 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. `예시로 보기`의 반복 나눗셈과 16진수 묶기, `활용`의 8진수 한 자리 = 2진수 세 자리, `정의`의 자릿값 합 $$\sum d_i b^i$$를 근거로 그렸다. 진법 표현의 출처는 Knuth, *The Art of Computer Programming*, Vol. 2, 4.1절이다.
+[^di1]: 자료와 정보 2회 강의 자료 「D&I_강의02-데이터」, p.4 (수와 수치, 우리가 다루는 수, 진법과 표기법, 고정소수점과 부동소수점)
+[^di2]: 같은 자료, p.5 (유한한 비트 수, 한정된 범위와 제한된 정밀도, "8비트라면? 정하기 나름, 필요에 따라")
+[^di3]: 같은 자료, p.7 (실수형 2진수: 0.1011 = 0.6875)
+[^sdi1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C4는 슬라이드에 없다. 값은 [02_twos-complement_verify.py](/Hongs_Blog/studies/data-and-information/code/02_twos-complement_verify/)(129, −127)와 [03_floating-point_verify.py](/Hongs_Blog/studies/data-and-information/code/03_floating-point_verify/)(0.50390625)로 확인했다.
 {% endraw %}

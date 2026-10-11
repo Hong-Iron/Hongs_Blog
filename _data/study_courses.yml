@@ -58,6 +58,14 @@
       codes: 72
       heavy: 6
       units: "벡터, 직선과 평면 · 행렬 · 기하 변환 · 직교 행렬과 좌표계 …"
+    - name: "자료와 정보"
+      slug: "data-and-information"
+      url: "/studies/data-and-information/"
+      concepts: 17
+      practices: 2
+      codes: 18
+      heavy: 2
+      units: "데이터와 메타데이터 · 부호 · 유사도와 거리 · 군집화 …"
 - track: "컴퓨터 과학"
   courses:
     - name: "알고리즘"
@@ -100,6 +108,14 @@
       codes: 58
       heavy: 5
       units: "데이터, 측정, 전처리 · 빈발 패턴 · 앙상블 · 군집화 기초와 밀도 기반 군집화 …"
+    - name: "소프트웨어 프로젝트"
+      slug: "software-project"
+      url: "/studies/software-project/"
+      concepts: 39
+      practices: 0
+      codes: 37
+      heavy: 10
+      units: "Java 기초 (1): 실행 과정, 변수, 타입 변환 · Java 기초 (2): 연산자와 제어문 · 참조 타입 · 객체 지향 프로그래밍 …"
 - track: "심리학"
   courses:
     - name: "이상 심리학"

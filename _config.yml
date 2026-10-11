@@ -85,6 +85,14 @@ defaults:
     values:
       image: /assets/img/og/data-science.png
   - scope:
+      path: "_notes/data-and-information"
+    values:
+      image: /assets/img/og/data-and-information.png
+  - scope:
+      path: "_notes/software-project"
+    values:
+      image: /assets/img/og/software-project.png
+  - scope:
       path: "_notes/calculus"
     values:
       image: /assets/img/og/calculus.png

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-11"
 status: "verified"
 aliases: ["Binomial Distribution", "이항분포", "베르누이 시행", "Bernoulli trial", "베르누이 분포", "Bernoulli distribution", "초기하분포", "hypergeometric distribution", "패킷 손실", "packet loss"]
 description: "성공과 실패 둘 중 하나만 나오는 시도를 같은 성공 확률로 서로 영향 없이 여러 번 할 때, 성공한 횟수의 분포다. 동전 앞면 수, 손실된 패킷 수, 동시에 접속한 사용자 수가 모두 이 모양이다. \"몇 번째 시도가 성공인가\"의 경우의 수에 각 경우의 확률을 곱해 구하고, 평균은 시…"
@@ -103,6 +103,37 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 - 다른 과목에서: [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)의 넘칠 확률
 - 이어지는 개념: [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)(시도가 많고 확률이 작을 때의 극한)
 
+## 과목별 관점
+
+**자료와 정보 (2-1학기).** 이항분포를 [베르누이 과정](/Hongs_Blog/studies/data-and-information/bernoulli-process/)에서 "처음 $$n$$칸에 1이 몇 개 들었는가"의 분포로 만난다. 슬라이드는 $$X \sim \mathrm{Bin}(n, p)$$를 "$$X$$는 시행 횟수 $$n$$, 한 번의 성공 확률 $$p$$인 이항분포를 따른다"로 읽고, 예제 넷으로 식을 쓴다[^i1].
+
+- **동전 세 개.** 공정한 동전 3개를 던져 나온 앞면 수는 $$X \sim \mathrm{Bin}(3, 0.5)$$다. $$P(X = 0), \dots, P(X = 3)$$은 차례로 $$\frac18, \frac38, \frac38, \frac18$$이다. 여덟 가지 결과가 모두 $$\frac18$$이고, 앞면이 1개인 결과와 2개인 결과가 3가지씩이기 때문이다[^i2].
+- **해밍 부호가 메시지를 지켜 낼 확률.** 비트 하나가 가는 길에 깨질 확률이 0.1이고 비트끼리 독립이다. 4비트를 그대로 보내면 하나도 안 깨져야 하므로 $$X \sim \mathrm{Bin}(4, 0.1)$$에서 $$P(X = 0) = 0.9^4 \approx 0.656$$이다. 4비트를 7비트로 늘려 보내는 [해밍 부호](/Hongs_Blog/studies/data-and-information/hamming-code/)는 7비트 가운데 깨진 것이 0개나 1개면 원래 메시지를 되찾는다. $$X \sim \mathrm{Bin}(7, 0.1)$$에서 $$P(X = 0) + P(X = 1) = 0.9^7 + 7 \times 0.1 \times 0.9^6 \approx 0.478 + 0.372 = 0.850$$이다. 온전히 받을 확률이 0.656에서 0.850으로 오른다. 비로는 약 1.3배(슬라이드의 "약 30%")이고, 차로는 19.4%포인트다[^i3].
+- **$$n = 20$$인 두 그림.** $$p = 0.6$$이면 막대가 평균 $$20 \times 0.6 = 12$$ 근처에 좌우 고르게 몰리고 $$P(X = 16) = 0.03499$$다. $$p = 0.1$$이면 평균 2 근처로 쏠려 오른쪽 꼬리가 길고 $$P(X = 7) = 0.00197$$이다[^i4].
+- **광고 클릭.** 광고를 1,000번 내보내고 한 번마다 0.01의 확률로 클릭된다. 클릭 수는 $$H \sim \mathrm{Bin}(1000, 0.01)$$이고 정확히 10번 클릭될 확률은 $$\binom{1000}{10} \times 0.01^{10} \times 0.99^{990} \approx 0.126$$이다[^i5]. 시행이 많고 확률이 작은 경우라 평균 10인 [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)의 값 0.125와 거의 같다[^is1].
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 슬라이드 p.12의 "$$P(X = 0) = \binom70(0.1)^0(0.9)^7 \approx 0.468$$". / 문제점: $$0.9^7 = 0.4783$$이다. 0.468을 쓰면 바로 아랫줄의 합 $$0.468 + 0.372$$가 0.840이 되어 슬라이드의 0.850과 어긋난다. / 수정안: 0.478. / 근거: 13_bernoulli-process_verify.py.
+
+</div>
+
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 슬라이드 p.14의 "$$P(H = 10) = \binom{1000}{10}(0.01)^{10}(0.99)^{998} \approx 0.125$$". / 문제점: 1,000번 가운데 10번이 클릭이면 나머지는 990번이다. 바로 윗줄의 일반식도 지수가 $$1000 - k$$다. / 수정안: 지수 990. 이때 값은 0.1257이다. 지수를 998로 두고 계산하면 0.1160이 나와 슬라이드의 0.125와도 맞지 않는다. / 근거: 13_bernoulli-process_verify.py.
+
+</div>
+
+
+<div class="callout callout-check" markdown="1">
+<div class="callout-title" markdown="span">검증: 동전 세 개의 네 값, 해밍 부호의 0.478·0.372·0.850·0.656과 비 1.296, $$n = 20$$의 두 값과 봉우리 자리, 광고 클릭의 0.1257(지수 990)과 0.1160(지수 998), 포아송 값 0.1251, 카드 C4 — [13_bernoulli-process_verify.py](/Hongs_Blog/studies/data-and-information/code/13_bernoulli-process_verify/)</div>
+
+</div>
+
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -129,7 +160,22 @@ $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n - k}\quad(k = 0, 1, \dots, n).$$
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 비트 하나가 깨질 확률이 0.1이고 비트끼리 독립이다. 4비트 메시지를 그대로 보낼 때와, 7비트로 늘려 1비트 오류까지 고치는 부호로 보낼 때 메시지를 온전히 받을 확률을 각각 구하라.</summary>
+
+**답:** 그대로: $$0.9^4 \approx 0.656$$. 부호: 7비트 가운데 깨진 것이 0개 또는 1개여야 하므로 $$0.9^7 + 7 \times 0.1 \times 0.9^6 \approx 0.478 + 0.372 = 0.850$$.<br>
+**이유:** 깨진 비트 수가 $$\mathrm{Bin}(7, 0.1)$$이고 "0개 또는 1개"는 두 경우를 더한다. 보내는 비트가 4개에서 7개로 늘어 하나도 안 깨질 확률은 0.656에서 0.478로 오히려 줄지만, 1개 깨진 경우까지 살려 내어 전체로는 오른다[^i3].
+
+</details>
+
+
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 3.3절 "Bernoulli and Binomial", 3.4절 "Hypergeometric", 4.6절 "Variance"(이항분포의 분산).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 링크 용량과 사용자 수는 컴퓨터 통신 문서의 예제와 같은 값이다. 넘침 확률은 10_binomial_verify.py로 다시 계산했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [10_binomial_plot.py](/Hongs_Blog/studies/probability-statistics/code/10_binomial_plot/)로 그렸고, 그림에 쓴 값($$P(X = 0) = 0.349$$, $$P(X = 1) = 0.387$$, $$P(X \ge 11) = 0.000424$$)을 같은 코드로 확인했다.
+[^i1]: 자료와 정보 9회 강의 자료 「D&I_강의09-랜덤프로세스」, p.9~10 ($$X \sim \mathrm{Bin}(n, p)$$ 읽는 법, 확률 식, 평균과 분산)
+[^i2]: 같은 자료, p.11 (공정한 동전 3개)
+[^i3]: 같은 자료, p.12 (보이저 탐사선과 해밍 부호, 비트 손실 확률 0.1)
+[^i4]: 같은 자료, p.13 ($$n = 20$$, $$p = 0.6$$과 $$p = 0.1$$의 막대그림)
+[^i5]: 같은 자료, p.14 (광고 1,000번, 클릭 확률 0.01, 10번 클릭될 확률)
+[^is1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 포아송 분포와 견준 것은 원본에 없다. 평균 $$np = 10$$인 포아송 분포에서 $$e^{-10}\frac{10^{10}}{10!} \approx 0.1251$$이고, 검증 코드로 확인했다.
 {% endraw %}
