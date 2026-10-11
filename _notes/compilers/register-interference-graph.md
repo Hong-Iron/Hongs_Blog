@@ -8,7 +8,7 @@ num: "54"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Register Interference Graph", "RIG", "레지스터 간섭 그래프", "간섭 그래프", "Interference Graph", "레지스터 할당", "Register Allocation", "간섭", "Interference"]

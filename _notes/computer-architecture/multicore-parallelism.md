@@ -8,7 +8,7 @@ num: "44"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Multicore", "다중 코어", "병렬 프로세서", "Parallel Processor", "멀티프로세서", "Multiprocessor", "플린 분류", "Flynn's Taxonomy", "SISD", "SIMD", "MISD", "MIMD", "공유 메모리 멀티프로세서", "Shared Memory Multiprocessor", "SMP", "캐시 일관성", "Cache Coherence", "거짓 공유", "False Sharing"]

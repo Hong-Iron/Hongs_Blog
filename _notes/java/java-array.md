@@ -8,7 +8,7 @@ num: "10"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Array", "배열", "인덱스", "Index", "배열 길이", "length", "다차원 배열", "Multidimensional Array", "2차원 배열", "배열 복사", "System.arraycopy", "Arrays.copyOf", "얕은 복사", "Shallow Copy", "향상된 for", "Enhanced for", "for-each", "ArrayIndexOutOfBoundsException", "String[] args"]

@@ -8,7 +8,7 @@ num: "52"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Code Generation for Simple Operations", "코드 생성", "Code Generation", "Code Generation for Conditional Jumps", "조건 분기의 코드 생성", "적재-연산-저장", "Load-Compute-Store"]

@@ -8,7 +8,7 @@ num: "28"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "미적분과 선형대수"
+track: "수학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["행렬 분해 비교", "matrix decompositions compared", "분해 고르기", "LU vs QR", "고윳값 분해 vs SVD"]

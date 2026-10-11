@@ -8,7 +8,7 @@ num: "38"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Pulse Code Modulation", "펄스 부호 변조", "펄스 코드 변조", "PAM", "Pulse Amplitude Modulation", "표본화 정리", "Sampling Theorem", "나이퀴스트 표본화 정리", "샘플링", "양자화", "Quantization"]

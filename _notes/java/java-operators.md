@@ -8,7 +8,7 @@ num: "04"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Operator", "연산자", "부호 연산자", "증감 연산자", "Increment", "Decrement", "산술 연산자", "Arithmetic Operator", "오버플로", "Overflow", "언더플로", "Underflow", "NaN", "Infinity", "ArithmeticException", "비교 연산자", "Comparison Operator", "논리 연산자", "Logical Operator", "대입 연산자", "Assignment Operator", "삼항 연산자", "Ternary Operator", "연산자 우선순위", "Operator Precedence"]

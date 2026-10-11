@@ -8,7 +8,7 @@ num: "49"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Internet Checksum", "체크섬", "Checksum", "1의 보수 합", "One's Complement Sum", "자리올림 되돌리기", "End-around Carry"]

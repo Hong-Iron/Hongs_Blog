@@ -8,7 +8,7 @@ num: "07"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Reference Type", "참조 타입", "참조 변수", "Reference Variable", "Runtime Data Area", "런타임 데이터 영역", "메모리 영역", "Method Area", "메서드 영역", "Heap", "힙 영역", "Stack", "스택 영역", "Frame", "프레임", "Garbage Collection", "가비지 컬렉션", "StackOverflowError"]

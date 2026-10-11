@@ -8,7 +8,7 @@ num: "02"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Chi-square Test", "카이제곱 검정", "χ² 검정", "독립성 검정", "분할표", "Contingency Table", "기대 빈도", "Expected Frequency", "관측 빈도", "Observed Frequency"]

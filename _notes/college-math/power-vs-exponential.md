@@ -8,7 +8,7 @@ num: "09"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "기초 수학"
+track: "수학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["거듭제곱 vs 지수", "power vs exponential", "다항 시간 vs 지수 시간", "polynomial vs exponential time"]

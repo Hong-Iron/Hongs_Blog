@@ -8,7 +8,7 @@ num: "37"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Graph Partitioning", "그래프 군집화", "Graph Clustering", "유사도 그래프", "Similarity Graph", "가우스 커널", "Gaussian Kernel", "ε-이웃 그래프", "ε-neighborhood Graph", "k-최근접 이웃 그래프", "k-NN Graph", "컷", "Cut", "정규화 컷", "Normalized Cut", "NCut", "부피", "Volume"]

@@ -8,7 +8,7 @@ num: "15"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Union-Find", "Disjoint Set Union", "DSU", "서로소 집합", "분리 집합", "경로 압축", "union by size"]

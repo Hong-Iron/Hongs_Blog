@@ -5,7 +5,7 @@ display_title: "확률과 통계 로드맵"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "확률과 데이터"
+track: "수학"
 concepts: 38
 practices: 5
 codes: 69

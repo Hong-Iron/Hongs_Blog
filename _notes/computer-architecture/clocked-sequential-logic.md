@@ -8,7 +8,7 @@ num: "11"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Clock", "Sequential Logic", "Sequential Circuit", "순차 논리", "동기 회로", "Synchronous System", "에지 트리거 클로킹", "Edge-Triggered Clocking", "클록 주기", "Clock Period", "클록 어긋남", "Clock Skew", "임계 경로", "Critical Path", "경주", "Race", "유한 상태 기계", "Finite State Machine"]

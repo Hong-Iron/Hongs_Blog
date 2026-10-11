@@ -8,7 +8,7 @@ num: "15"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Parzen Window", "파젠 윈도우", "Parzen-window Density Estimation", "창 함수", "윈도우 함수", "Window Function", "커널 밀도 추정", "Kernel Density Estimation", "KDE", "창 폭", "Window Width", "Bandwidth"]

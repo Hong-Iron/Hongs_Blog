@@ -8,7 +8,7 @@ num: "19"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Status Flags", "상태 플래그", "Flags Affected by Arithmetic", "제로 플래그", "Zero Flag", "ZF", "부호 플래그", "Sign Flag", "SF", "올림 플래그", "캐리 플래그", "Carry Flag", "CF", "넘침 플래그", "오버플로 플래그", "Overflow Flag", "OF", "패리티 플래그", "Parity Flag", "보조 올림 플래그", "Auxiliary Carry Flag", "ALU"]

@@ -8,7 +8,7 @@ num: "11"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Edit Distance", "레벤슈타인 거리", "Levenshtein Distance", "변환 거리", "Transformation Distance", "최소 편집 거리", "Minimum Edit Distance", "정규화 편집 거리", "Normalized Edit Distance", "편집 유사도", "Edit Similarity", "되짚기", "Backtrace", "편집 가중치"]

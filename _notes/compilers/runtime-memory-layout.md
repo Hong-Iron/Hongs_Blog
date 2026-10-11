@@ -8,7 +8,7 @@ num: "50"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Runtime Memory Layout", "Memory Layout", "메모리 배치", "메모리 레이아웃", "코드 영역", "Code Segment", "정적 할당", "Static Allocation", "전역 데이터 영역", "스택 영역", "힙 영역", "Heap", "동적 할당", "Dynamic Allocation", "malloc", "free"]

@@ -8,7 +8,7 @@ num: "38"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Direct-Mapped vs Set-Associative", "캐시 사상 방식 비교", "캐시 배치 정책", "Cache Placement Policy"]

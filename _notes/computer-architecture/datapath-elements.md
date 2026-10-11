@@ -8,7 +8,7 @@ num: "23"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Datapath Elements", "데이터패스", "Datapath", "데이터 경로", "프로그램 카운터", "Program Counter", "PC", "명령어 메모리", "Instruction Memory", "데이터 메모리", "Data Memory", "부호 확장기", "Sign Extension Unit", "상태 소자", "State Element", "조합 소자", "Combinational Element"]

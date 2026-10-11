@@ -8,7 +8,7 @@ num: "48"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Two-Dimensional Parity", "2D Parity", "가로 패리티", "세로 패리티", "VRC", "Vertical Redundancy Check", "LRC", "Longitudinal Redundancy Check", "패리티 바이트", "Parity Byte"]

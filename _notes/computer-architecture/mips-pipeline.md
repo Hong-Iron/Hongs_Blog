@@ -8,7 +8,7 @@ num: "27"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Pipeline", "5-Stage Pipeline", "파이프라이닝", "Pipelining", "IF", "ID", "EX", "MEM", "WB", "Instruction Fetch", "Instruction Decode", "Execute", "Memory Access", "Write Back", "처리량", "Throughput", "해저드", "Hazard", "구조 해저드", "Structural Hazard"]

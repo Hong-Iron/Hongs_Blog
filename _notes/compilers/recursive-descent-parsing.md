@@ -8,7 +8,7 @@ num: "17"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Recursive Descent Parsing", "Recursive Descent", "재귀 하강 파서", "재귀적 하강 파싱", "Top-down Parsing", "하향식 파싱", "LL 파싱", "Backtracking Parser"]

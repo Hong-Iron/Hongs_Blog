@@ -8,7 +8,7 @@ num: "26"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Procedure", "프로시저", "CALL", "RET", "PROC", "ENDP", "복귀 주소", "Return Address", "중첩 호출", "Nested Procedure Call", "사전 조건", "Precondition", "서브루틴"]

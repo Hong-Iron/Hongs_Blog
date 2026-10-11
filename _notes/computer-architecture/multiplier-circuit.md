@@ -8,7 +8,7 @@ num: "20"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Multiplier", "Multiplier Circuit", "시프트-덧셈 곱셈기", "Shift-and-Add Multiplier", "순차 곱셈기", "Sequential Multiplier", "피승수", "Multiplicand", "승수", "Multiplier", "mult", "multu", "mfhi", "mflo", "Hi", "Lo"]

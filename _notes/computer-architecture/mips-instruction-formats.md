@@ -8,7 +8,7 @@ num: "16"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Instruction Formats", "R형식", "R-type", "I형식", "I-type", "J형식", "J-type", "opcode", "연산 코드", "funct", "shamt", "rs", "rt", "rd", "기계어", "Machine Code", "명령어 인코딩", "Instruction Encoding", "필드"]

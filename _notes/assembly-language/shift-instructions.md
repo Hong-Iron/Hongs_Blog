@@ -8,7 +8,7 @@ num: "37"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Shift Instructions", "SHL", "SHR", "SAL", "SAR", "Shift Left", "Shift Right", "자리 이동", "비트 시프트", "빠른 곱셈", "Fast Multiplication"]

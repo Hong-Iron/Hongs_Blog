@@ -8,7 +8,7 @@ num: "23"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Indirect Addressing", "간접 주소 지정", "Indirect Operand", "간접 피연산자", "Indexed Operand", "인덱스 피연산자", "Index Scaling", "인덱스 스케일링", "역참조", "Dereference", "포인터 변수", "Pointer Variable"]

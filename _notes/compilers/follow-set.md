@@ -8,7 +8,7 @@ num: "19"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Follow Set", "FOLLOW", "Follow 집합", "팔로우 집합", "후속 기호 집합", "Endmarker", "끝 표시", "입력 끝 기호"]

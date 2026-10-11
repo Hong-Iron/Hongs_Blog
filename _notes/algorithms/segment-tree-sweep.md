@@ -8,7 +8,7 @@ num: "33"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Segment Tree", "구간 트리", "Sweep Line", "스위핑", "평면 쓸기"]

@@ -8,7 +8,7 @@ num: "15"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Stability", "Stable System", "안정 시스템", "불안정 시스템", "Unstable System", "BIBO 안정", "Bounded-Input Bounded-Output", "유계 입력 유계 출력"]

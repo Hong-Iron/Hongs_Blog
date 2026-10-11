@@ -8,7 +8,7 @@ num: "26"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Single-Cycle Clock Period", "클록 주기", "Clock Cycle Time", "임계 경로", "Critical Path", "가장 긴 경로", "Longest Path", "사이클 시간"]

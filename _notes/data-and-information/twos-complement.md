@@ -8,7 +8,7 @@ num: "02"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Two's Complement", "2의 보수", "부호 없는 정수", "Unsigned Integer", "부호 있는 정수", "Signed Integer", "오버플로", "Overflow", "표현 범위"]

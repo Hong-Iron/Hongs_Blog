@@ -8,7 +8,7 @@ num: "01"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Attribute Types", "데이터 객체", "Data Object", "속성", "Attribute", "특징", "Feature", "명목 속성", "Nominal", "범주형", "Categorical", "이진 속성", "Binary", "대칭 이진", "비대칭 이진", "순서 속성", "Ordinal", "수치 속성", "Numeric", "구간 척도", "Interval-scaled", "비율 척도", "Ratio-scaled"]

@@ -8,7 +8,7 @@ num: "02"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Virtual Machine Concept", "가상 기계", "Virtual Machine", "기계 단계", "Machine Levels", "해석", "Interpretation", "번역", "Translation", "명령어 집합 구조", "Instruction Set Architecture", "ISA", "디지털 논리", "Digital Logic"]

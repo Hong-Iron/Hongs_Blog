@@ -8,7 +8,7 @@ num: "08"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Arithmetic Logic Unit", "산술 논리 장치", "산술 논리 연산 장치", "1비트 ALU", "ALU 제어선", "Ainvert", "Binvert", "Bnegate", "set on less than", "slt", "Zero 출력"]

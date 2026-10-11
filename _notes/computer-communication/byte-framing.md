@@ -8,7 +8,7 @@ num: "44"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Framing", "프레이밍", "Byte-Oriented Protocol", "바이트 중심 프로토콜", "보초 방법", "Sentinel Approach", "BISYNC", "바이트 채우기", "Byte Stuffing", "확장 문자", "Escape Character", "DLE", "바이트 수 방법", "Byte Counting", "DDCMP", "PDU", "Protocol Data Unit"]

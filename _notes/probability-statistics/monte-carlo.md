@@ -8,7 +8,7 @@ num: "27"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "확률과 데이터"
+track: "수학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Monte Carlo Method", "몬테카를로 방법", "몬테카를로 시뮬레이션", "Monte Carlo simulation", "몬테카를로 적분", "Monte Carlo integration", "중요도 샘플링", "importance sampling", "드문 사건", "rare event"]

@@ -8,7 +8,7 @@ num: "08"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Thompson's Construction", "McNaughton-Yamada-Thompson Algorithm", "맥노튼-야마다-톰슨 알고리즘", "톰슨 알고리즘", "정규 표현식을 NFA로", "Regular Expression to NFA", "ε-NFA"]

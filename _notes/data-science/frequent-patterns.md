@@ -8,7 +8,7 @@ num: "10"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Frequent Pattern", "빈발 패턴 마이닝", "Frequent Pattern Mining", "빈발 항목 집합", "Frequent Itemset", "항목 집합", "Itemset", "k-항목 집합", "k-itemset", "거래", "Transaction", "지지도", "Support", "상대 지지도", "Relative Support", "최소 지지도", "min_sup", "장바구니 분석", "Market Basket Analysis"]

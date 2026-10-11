@@ -8,7 +8,7 @@ num: "26"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Fibonacci Search", "피보나치 수", "Fibonacci Numbers", "구별 상수", "Distinguishability Constant"]

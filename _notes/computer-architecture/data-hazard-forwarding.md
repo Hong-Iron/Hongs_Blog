@@ -8,7 +8,7 @@ num: "29"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Data Hazard", "데이터 해저드", "데이터 위험", "Forwarding", "전방 전달", "포워딩", "Bypassing", "바이패싱", "전방 전달 유닛", "Forwarding Unit", "ForwardA", "ForwardB", "EX 해저드", "MEM 해저드", "이중 데이터 해저드", "Double Data Hazard"]

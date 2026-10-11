@@ -8,7 +8,7 @@ num: "27"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Implementing Multiple Interfaces", "Interface Inheritance", "다중 인터페이스 구현", "인터페이스 다중 상속", "부모 인터페이스", "자식 인터페이스"]

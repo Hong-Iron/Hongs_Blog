@@ -8,7 +8,7 @@ num: "52"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Error Recovery", "오류 복구", "Forward Error Correction", "FEC", "순방향 오류 수정", "오류 수정 코드", "Error Correcting Code", "ECC", "역방향 수정", "Backward Error Correction", "프레이밍 오류", "Framing Error", "프레임 분실", "Frame Loss"]

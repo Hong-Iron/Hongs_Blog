@@ -8,7 +8,7 @@ num: "20"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Binary Search", "이진 탐색", "이분 탐색", "bisect", "bisect_left", "bisect_right", "lower bound", "upper bound", "루프 불변식"]

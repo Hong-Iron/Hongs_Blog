@@ -8,7 +8,7 @@ num: "03"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Multi-Stage Pipeline", "다단계 파이프라인", "파이프라이닝", "Pipelining", "Pipelined Execution", "슈퍼스칼라", "Superscalar", "낭비되는 사이클", "Wasted Cycles"]

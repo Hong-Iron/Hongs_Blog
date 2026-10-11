@@ -8,7 +8,7 @@ num: "32"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Signed vs Unsigned Jumps", "JA와 JG", "JB와 JL", "above below", "greater less", "부호 없는 비교", "부호 있는 비교"]

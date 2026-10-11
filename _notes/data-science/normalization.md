@@ -8,7 +8,7 @@ num: "07"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Normalization", "데이터 정규화", "데이터 변환", "Data Transformation", "최소-최대 정규화", "Min-max Normalization", "z-점수 정규화", "Z-score Normalization", "표준화", "Standardization", "스케일링", "Feature Scaling"]

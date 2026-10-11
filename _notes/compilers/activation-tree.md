@@ -8,7 +8,7 @@ num: "48"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Activation Tree", "활성 트리", "활성화 트리", "Activation", "활성", "함수 활성", "Call Stack", "호출 스택", "제어 스택", "Control Stack"]

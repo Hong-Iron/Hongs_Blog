@@ -8,7 +8,7 @@ num: "39"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["AST to TAC", "TAC Construction Rules", "3주소 코드 생성", "중간 코드 생성", "Intermediate Code Generation", "코드 생성 규칙"]

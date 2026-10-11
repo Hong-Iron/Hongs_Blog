@@ -8,7 +8,7 @@ num: "18"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Procedure Call", "jal", "jr", "jump and link", "$ra", "복귀 주소", "Return Address", "호출 규약", "Calling Convention", "호출자 저장", "Caller-Saved", "피호출자 저장", "Callee-Saved", "스택 프레임", "Stack Frame", "말단 프로시저", "Leaf Procedure", "재귀"]

@@ -8,7 +8,7 @@ num: "40"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Content-based Recommendation", "아이템 프로필", "Item Profile", "사용자 프로필", "User Profile", "TF-IDF", "단어 빈도", "Term Frequency", "역문서 빈도", "Inverse Document Frequency", "효용 함수", "Utility Function", "과잉 특화", "Overspecialization", "차가운 시작", "Cold Start"]

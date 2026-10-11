@@ -8,7 +8,7 @@ num: "40"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Basic Block", "Control Flow Graph", "CFG", "기본 블록", "제어 흐름 그래프", "흐름 그래프", "Flow Graph", "지역 최적화", "Local Optimization", "전역 최적화", "Global Optimization", "리더", "Leader"]

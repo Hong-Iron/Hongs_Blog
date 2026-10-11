@@ -8,7 +8,7 @@ num: "39"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Rotate Instructions", "ROL", "ROR", "RCL", "RCR", "Rotate Left", "Rotate Right", "Rotate Carry Left", "Rotate Carry Right", "비트 회전", "순환 시프트"]

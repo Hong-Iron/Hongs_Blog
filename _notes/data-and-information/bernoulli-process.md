@@ -8,7 +8,7 @@ num: "13"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Bernoulli Process", "베르누이 프로세스", "베르누이 시행", "Bernoulli Trial", "베르누이 확률변수", "Bernoulli Random Variable", "지시 확률변수", "Indicator Variable", "시간 칸", "Time Slot", "도착 과정", "Arrival Process", "이항 과정", "Binomial Process"]

@@ -8,7 +8,7 @@ num: "13"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Procedural Programming vs Object-Oriented Programming", "절차 지향 프로그래밍", "Procedural Programming"]

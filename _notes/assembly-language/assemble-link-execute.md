@@ -8,7 +8,7 @@ num: "11"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Assemble-Link-Execute Cycle", "어셈블 링크 실행 사이클", "원본 파일", "Source File", "목적 파일", "Object File", "리스팅 파일", "Listing File", "링커", "Linker", "링크 라이브러리", "Link Library", "실행 파일", "Executable File", "맵 파일", "Map File", "로더", "OS Loader"]

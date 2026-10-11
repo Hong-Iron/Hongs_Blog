@@ -8,7 +8,7 @@ num: "28"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Pipeline Registers", "파이프라인 레지스터", "IF/ID", "ID/EX", "EX/MEM", "MEM/WB", "파이프라인 제어", "Pipelined Control", "단계 레지스터"]

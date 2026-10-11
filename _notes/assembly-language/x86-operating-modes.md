@@ -8,7 +8,7 @@ num: "05"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Modes of Operation", "동작 모드", "실주소 모드", "Real-Address Mode", "Real Mode", "보호 모드", "Protected Mode", "가상 8086 모드", "Virtual-8086 Mode", "주소 지정 가능 메모리", "Addressable Memory"]

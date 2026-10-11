@@ -8,7 +8,7 @@ num: "34"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Superscalar and Out-of-Order Execution", "슈퍼스칼라", "Superscalar", "다중 내보내기", "Multiple Issue", "정적 다중 내보내기", "Static Multiple Issue", "동적 다중 내보내기", "Dynamic Multiple Issue", "비순차 실행", "Out-of-Order Execution", "동적 스케줄링", "Dynamic Scheduling", "추측 실행", "Speculation", "레지스터 이름 바꾸기", "Register Renaming", "IPC", "명령어 수준 병렬성", "Instruction-Level Parallelism", "ILP"]

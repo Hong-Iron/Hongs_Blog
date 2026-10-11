@@ -8,7 +8,7 @@ num: "45"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Bit Stuffing", "비트 삽입", "Bit-Oriented Protocol", "비트 중심 프로토콜", "HDLC", "High-Level Data Link Control", "SDLC", "깃발", "Flag", "01111110"]

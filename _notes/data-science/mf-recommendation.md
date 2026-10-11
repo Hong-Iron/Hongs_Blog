@@ -8,7 +8,7 @@ num: "44"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Matrix Factorization Recommendation", "MF 추천", "PureSVD", "Biased MF", "편향 행렬 분해", "SVD++", "잠재 요인", "Latent Factor", "사용자 편향", "User Bias", "아이템 편향", "Item Bias", "암묵적 피드백", "Implicit Feedback"]

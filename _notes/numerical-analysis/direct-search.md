@@ -8,7 +8,7 @@ num: "27"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Direct Search Methods", "무작위 탐색", "Random Search", "단변수 탐색", "Univariate Search", "패턴 탐색", "Pattern Search", "다차원 최적화", "Multidimensional Optimization"]

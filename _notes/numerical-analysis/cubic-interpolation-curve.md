@@ -8,7 +8,7 @@ num: "13"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Cubic Interpolation Curve", "3차 곡선", "Cubic Curve", "블렌딩 함수", "Blending Function", "보간 기하 행렬", "Interpolating Geometry Matrix", "음함수 표현", "Implicit Representation", "매개변수 곡선", "Parametric Curve"]

@@ -8,7 +8,7 @@ num: "08"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Reference Equality", "참조 비교", "동일성", "Identity", "동등성", "Equality", "null", "널", "NullPointerException", "NPE", "널 포인터 예외"]

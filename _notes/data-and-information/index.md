@@ -5,7 +5,7 @@ display_title: "자료와 정보 로드맵"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 concepts: 17
 practices: 2
 codes: 18

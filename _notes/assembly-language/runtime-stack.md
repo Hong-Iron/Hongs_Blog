@@ -8,7 +8,7 @@ num: "25"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Runtime Stack", "런타임 스택", "실행 스택", "PUSH", "POP", "스택 포인터", "Stack Pointer", "ESP", "SS", "PUSHFD", "POPFD", "PUSHAD", "POPAD", "PUSHA", "POPA", "LIFO"]

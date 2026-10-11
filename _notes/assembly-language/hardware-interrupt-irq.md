@@ -8,7 +8,7 @@ num: "55"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Hardware Interrupt", "IRQ", "Interrupt Request Level", "인터럽트 요청 수준", "8259", "Programmable Interrupt Controller", "PIC", "STI", "CLI", "인터럽트 플래그", "Interrupt Flag"]

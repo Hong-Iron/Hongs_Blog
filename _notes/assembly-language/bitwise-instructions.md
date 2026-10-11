@@ -8,7 +8,7 @@ num: "29"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["AND 명령", "OR 명령", "XOR 명령", "NOT 명령", "Boolean Instructions", "비트 마스크", "Bit Mask", "비트 끄기", "비트 켜기", "비트 뒤집기", "XOR 암호", "대문자 변환"]

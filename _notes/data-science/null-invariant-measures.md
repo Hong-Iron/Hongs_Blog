@@ -8,7 +8,7 @@ num: "18"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Null-Invariant Measure", "널 불변성", "Null Invariance", "널 거래", "Null Transaction", "쿨친스키", "Kulczynski", "Kulc", "불균형 비율", "Imbalance Ratio", "IR"]

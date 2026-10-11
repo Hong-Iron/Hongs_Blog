@@ -8,7 +8,7 @@ num: "04"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["x86 Registers", "범용 레지스터", "General-Purpose Registers", "EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP", "세그먼트 레지스터", "Segment Registers", "EIP", "명령어 포인터", "Instruction Pointer", "EFLAGS", "상태 플래그", "Status Flags", "누산기", "Accumulator"]

@@ -8,7 +8,7 @@ num: "15"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Arithmetic and Logical Instructions", "add", "sub", "addi", "addu", "and", "or", "nor", "andi", "ori", "sll", "srl", "sra", "slt", "slti", "sltu", "lui", "즉시값", "Immediate", "부호 확장", "Sign Extension", "제로 확장", "Zero Extension", "set on less than"]

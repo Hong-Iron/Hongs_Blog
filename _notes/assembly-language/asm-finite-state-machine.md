@@ -8,7 +8,7 @@ num: "36"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Finite-State Machine", "FSM", "상태 전이도", "State-Transition Diagram", "시작 상태", "Start State", "종료 상태", "Terminal State", "받아들이는 상태", "Accepting State", "IsDigit"]

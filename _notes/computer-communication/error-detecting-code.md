@@ -8,7 +8,7 @@ num: "47"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Error Detecting Code", "EDC", "오류 검출", "Error Detection", "패리티", "Parity", "검출율", "Detection Rate", "미검출 오류", "Undetected Error"]

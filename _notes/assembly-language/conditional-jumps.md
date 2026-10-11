@@ -8,7 +8,7 @@ num: "31"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Conditional Jump", "Jcond", "Jcc", "조건 분기", "JZ", "JNZ", "JE", "JNE", "JC", "JNC", "JO", "JNO", "JS", "JNS", "JP", "JNP", "JA", "JAE", "JB", "JBE", "JG", "JGE", "JL", "JLE", "JCXZ", "JECXZ"]

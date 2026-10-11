@@ -8,7 +8,7 @@ num: "05"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Regular Expression", "정규식", "regex", "정규 언어", "Regular Language", "기본 정규 표현식", "Basic Regular Expression", "클레이니 스타", "Kleene Star", "정규 표현식의 대수 법칙", "형식 언어의 포함 관계", "촘스키 위계", "Chomsky Hierarchy"]

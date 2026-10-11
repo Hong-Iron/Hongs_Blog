@@ -8,7 +8,7 @@ num: "37"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["User-Defined Exception", "Custom Exception", "커스텀 예외", "InsufficientException"]

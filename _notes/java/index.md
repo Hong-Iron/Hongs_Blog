@@ -5,7 +5,7 @@ display_title: "소프트웨어 프로젝트 로드맵"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 concepts: 39
 practices: 0
 codes: 37

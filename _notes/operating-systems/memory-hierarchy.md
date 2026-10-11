@@ -8,7 +8,7 @@ num: "05"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Memory Hierarchy", "기억장치 계층", "2차 기억장치", "Secondary Memory", "Auxiliary Memory"]

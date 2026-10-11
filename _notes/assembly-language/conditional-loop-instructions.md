@@ -8,7 +8,7 @@ num: "33"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Conditional Loop Instructions", "LOOPZ", "LOOPE", "LOOPNZ", "LOOPNE", "조건부 루프", "보초값", "Sentinel", "배열 훑기"]

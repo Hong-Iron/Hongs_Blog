@@ -8,7 +8,7 @@ num: "08"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Basic Elements of Assembly Language", "정수 상수", "Integer Constant", "진법 꼬리표", "Radix", "정수 식", "Integer Expression", "문자 상수", "문자열 상수", "예약어", "Reserved Word", "식별자", "Identifier", "레이블", "Label", "니모닉", "Mnemonic", "피연산자", "Operand", "즉시값", "Immediate Value", "주석", "Comment"]

@@ -8,7 +8,7 @@ num: "08"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Discretization", "데이터 이산화", "구간화", "같은 폭 칸 나누기", "Equal-width Binning", "같은 개수 칸 나누기", "Equal-frequency Binning", "개념 계층", "Concept Hierarchy"]

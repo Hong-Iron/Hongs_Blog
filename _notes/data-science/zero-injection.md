@@ -8,7 +8,7 @@ num: "46"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Zero-Injection", "제로 인젝션", "관심 없는 아이템", "Uninteresting Item", "사용 전 선호", "Pre-use Preference", "사용 후 선호", "Post-use Preference", "희소성 문제", "Data Sparsity"]

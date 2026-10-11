@@ -8,7 +8,7 @@ num: "15"
 course: "대학수학"
 course_slug: "college-math"
 course_url: "/studies/college-math/"
-track: "기초 수학"
+track: "수학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Inverse Trigonometric Functions", "아크사인", "arcsin", "asin", "아크코사인", "arccos", "acos", "아크탄젠트", "arctan", "atan", "atan2", "주치", "principal value"]

@@ -8,7 +8,7 @@ num: "40"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Cache Replacement Policy", "블록 교체", "LRU", "Least Recently Used", "무작위 교체", "Random Replacement", "FIFO", "희생 블록", "Victim"]

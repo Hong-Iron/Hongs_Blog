@@ -8,7 +8,7 @@ num: "01"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Cross Product", "벡터곱", "Vector Product", "오른손 법칙", "Right-hand Rule"]

@@ -8,7 +8,7 @@ num: "31"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Multi-dimensional Newton-Raphson Method", "다변수 뉴턴-랩슨", "Newton's Method for Systems", "연립 비선형 방정식", "야코비 행렬", "Jacobian"]

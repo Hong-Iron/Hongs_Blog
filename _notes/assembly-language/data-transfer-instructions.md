@@ -8,7 +8,7 @@ num: "16"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Data Transfer Instructions", "MOV", "MOV 명령", "MOV Instruction", "XCHG", "XCHG 명령", "XCHG Instruction", "목적지 피연산자", "Destination Operand", "원본 피연산자", "Source Operand", "크기 불일치", "Size Mismatch"]

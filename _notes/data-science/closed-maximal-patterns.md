@@ -8,7 +8,7 @@ num: "12"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Closed Pattern", "Closed Frequent Itemset", "닫힌 빈발 패턴", "Maximal Pattern", "Max Pattern", "Maximal Frequent Itemset", "최대 빈발 패턴", "패턴 압축"]

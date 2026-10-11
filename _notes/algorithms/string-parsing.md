@@ -8,7 +8,7 @@ num: "06"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["String Parsing", "Regular Expression", "파싱", "정규식", "정규 표현식", "regex", "re", "split", "토큰"]

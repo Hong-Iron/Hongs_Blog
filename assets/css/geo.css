@@ -566,7 +566,14 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   top: 0;
   z-index: 20;
   height: 100vh;
-  padding: 2rem 1rem 1rem clamp(1.25rem, 2.4vw, 2.5rem);
+  /* --u: the slack left by the window height, shared out between the rows
+     and the gaps, so the whole list is on screen at once on a laptop and
+     breathes on a tall monitor. --parts and --rows come from studies.html:
+     the text takes --fixed, and the gaps add up to --slots units. */
+  --fixed: calc(5.8rem + (var(--parts, 4) + var(--rows, 18)) * 1.3rem);
+  --slots: calc(7 * var(--parts, 4) + 2 * var(--rows, 18) - 2);
+  --u: clamp(0.06rem, calc((100vh - var(--fixed)) / var(--slots)), 0.5rem);
+  padding: 1.25rem 1rem 0.75rem clamp(1.25rem, 2.4vw, 2.5rem);
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: none;
@@ -602,9 +609,9 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 }
 
 .study-toc__head {
-  margin: 0 0 1.1rem;
+  margin: 0 0 calc(4 * var(--u));
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.1;
 }
@@ -612,126 +619,105 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 .study-toc__head::after {
   content: "";
   display: block;
-  width: 2.5rem;
+  width: 2.25rem;
   height: 2px;
-  margin-top: 0.7rem;
+  margin-top: 0.5rem;
   background: var(--ink);
   opacity: 0.6;
 }
 
-/* seven small parts: tight enough that the whole list fits a laptop screen */
+/* each part is a block of its own: a hairline and a gap above it */
 .study-toc__part + .study-toc__part {
-  margin-top: 0.7rem;
+  margin-top: calc(3 * var(--u));
+  padding-top: calc(3 * var(--u));
+  border-top: 1px solid color-mix(in srgb, var(--ink) 13%, transparent);
 }
 
+/* the part name is what the eye lands on first: dark and bold */
 .study-toc__part-name {
   display: flex;
   align-items: baseline;
   gap: 0.55rem;
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--ink-muted);
-  transition: color 0.25s ease;
-}
-
-.study-toc__numeral {
-  min-width: 1.8rem;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
-.study-toc__part.is-current .study-toc__part-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
   color: var(--ink);
 }
 
-/* chapters sit one indent in, on a thin rail */
+.study-toc__numeral {
+  flex: none;
+  width: 1.8rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink-muted);
+  transition: color 0.25s ease;
+}
+
+.study-toc__part.is-current .study-toc__numeral {
+  color: var(--accent);
+}
+
+/* courses line up under the part name, each with its own colour */
 .study-toc .study-toc__chapters {
-  margin: 0.3rem 0 0 0.85rem;
-  padding-left: 1rem;
-  border-left: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  margin: var(--u) 0 0 1.85rem;
 }
 
 .study-toc__link {
-  position: relative;
   display: flex;
-  align-items: baseline;
-  align-items: last baseline;
-  gap: 0.5rem;
-  padding: 0.15rem 0;
-  color: var(--ink-muted);
-  line-height: 1.25;
+  align-items: center;
+  gap: 0.55rem;
+  padding: var(--u) 0.5rem;
+  border-radius: 6px;
+  color: color-mix(in srgb, var(--ink) 74%, transparent);
+  line-height: 1.3rem;
   text-decoration: none;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 body[data-fx-underline="true"] .article-body .study-toc__link {
   background-image: none;
 }
 
-/* the marker that slides along the rail */
-.study-toc__link::before {
-  content: "";
-  position: absolute;
-  top: 0.35rem;
-  bottom: 0.35rem;
-  left: calc(-1rem - 2px);
-  width: 3px;
+.study-toc__dot {
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
   border-radius: 2px;
   background: var(--course);
-  transform: scaleY(0);
-  transition: transform 0.25s ease;
-}
-
-.study-toc__no {
-  flex: none;
-  align-self: baseline;   /* first line, when a long name wraps */
-  min-width: 1.5rem;
-  font-size: 0.8rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--course);
 }
 
 .study-toc__name {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   min-width: 0;
-  font-size: 1rem;
-  word-break: keep-all;
-  transition: font-size 0.25s ease;
-}
-
-.study-toc__leader {
-  flex: 1 1 0.6rem;
-  min-width: 0.6rem;
-  border-bottom: 1.5px dotted currentColor;
-  opacity: 0.4;
-  transform: translateY(-0.3em);
+  overflow: hidden;
+  font-size: 0.98rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .study-toc__count {
   flex: none;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+  opacity: 0.8;
 }
 
 .study-toc__link:hover,
 .study-toc__link:focus-visible {
   color: var(--ink);
+  background-color: color-mix(in srgb, var(--ink) 6%, transparent);
 }
 
+/* where you are: a wash of the course colour, no change of size */
 .study-toc__link.is-active {
   color: var(--ink);
-}
-
-.study-toc__link.is-active::before {
-  transform: scaleY(1);
+  background-color: color-mix(in srgb, var(--course) 16%, transparent);
 }
 
 .study-toc__link.is-active .study-toc__name {
-  font-size: 1.42rem;
   font-weight: 700;
 }
 
@@ -767,10 +753,7 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 
   .study-toc::before,
   .study-toc__head,
-  .study-toc__no,
-  .study-toc__leader,
-  .study-toc__count,
-  .study-toc__link::before {
+  .study-toc__count {
     display: none;
   }
 
@@ -788,7 +771,9 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
   .study-toc__part + .study-toc__part {
     margin-top: 0;
     margin-left: 0.6rem;
+    padding-top: 0;
     padding-left: 0.9rem;
+    border-top: 0;
     border-left: 1px solid var(--rule);
   }
 
@@ -799,7 +784,7 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
   }
 
   .study-toc__numeral {
-    min-width: 0;
+    width: auto;
     font-size: 0.95rem;
   }
 
@@ -811,30 +796,21 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
   }
 
   .study-toc__link {
-    align-items: center;
+    gap: 0.4rem;
     padding: 0.3rem 0.65rem;
     border-radius: 999px;
     white-space: nowrap;
   }
 
   .study-toc__name {
+    overflow: visible;
     font-size: 0.95rem;
-  }
-
-  .study-toc__link.is-active {
-    background: color-mix(in srgb, var(--course) 16%, transparent);
-  }
-
-  .study-toc__link.is-active .study-toc__name {
-    font-size: 1.05rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .study-toc__link,
-  .study-toc__link::before,
-  .study-toc__name,
-  .study-toc__part-name {
+  .study-toc__numeral {
     transition: none;
   }
 }

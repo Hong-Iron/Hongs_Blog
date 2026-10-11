@@ -8,7 +8,7 @@ num: "16"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Static Member", "정적 멤버", "정적 필드", "Static Field", "정적 메서드", "Static Method", "정적 블록", "Static Block", "인스턴스 멤버", "Instance Member", "메서드 영역", "Method Area"]

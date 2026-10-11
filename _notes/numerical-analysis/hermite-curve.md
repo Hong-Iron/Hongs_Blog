@@ -8,7 +8,7 @@ num: "14"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Hermite Curve", "에르미트 보간", "Hermite Interpolation", "에르미트 기하 행렬", "Hermite Geometry Matrix", "접선 벡터", "Tangent Vector"]

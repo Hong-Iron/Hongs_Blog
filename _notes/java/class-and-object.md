@@ -8,7 +8,7 @@ num: "11"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Class and Object", "Class", "Object", "Instance", "인스턴스", "객체 모델링", "Object Modeling", "객체 지향 프로그래밍", "Object-Oriented Programming", "OOP"]

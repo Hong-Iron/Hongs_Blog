@@ -8,7 +8,7 @@ num: "12"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Data Definition", "Data Definition Statement", "데이터 정의문", "내장 자료형", "Intrinsic Data Types", "BYTE", "SBYTE", "WORD", "SWORD", "DWORD", "SDWORD", "QWORD", "TBYTE", "REAL4", "REAL8", "REAL10", "초깃값", "Initializer", "DUP 연산자", "DUP Operator", "널 종료 문자열", "Null-terminated String", "초기화하지 않은 데이터", "Uninitialized Data"]

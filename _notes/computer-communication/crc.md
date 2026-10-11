@@ -8,7 +8,7 @@ num: "50"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Cyclic Redundancy Check", "순회 중복 검사", "순환 중복 검사", "CRC-32", "CRC-16", "젯수", "Generator Polynomial", "생성 다항식", "XOR 나눗셈", "다항식 나눗셈", "Polynomial Division"]

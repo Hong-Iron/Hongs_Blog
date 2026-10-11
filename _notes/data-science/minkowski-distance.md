@@ -8,7 +8,7 @@ num: "04"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "확률과 데이터"
+track: "데이터와 계산"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Minkowski Distance", "Lp 거리", "Lp Norm", "유클리드 거리", "Euclidean Distance", "맨해튼 거리", "Manhattan Distance", "시가지 거리", "City Block Distance", "최대 거리", "Supremum Distance", "체비셰프 거리", "거리 공리", "삼각부등식"]

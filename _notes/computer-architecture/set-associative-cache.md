@@ -8,7 +8,7 @@ num: "37"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Set-Associative Cache", "N-way Set-Associative", "집합 연관 사상", "완전 연관 캐시", "Fully Associative Cache", "연관도", "Associativity", "집합", "Set", "웨이", "Way"]

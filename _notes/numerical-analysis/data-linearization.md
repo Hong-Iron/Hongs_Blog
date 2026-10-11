@@ -8,7 +8,7 @@ num: "24"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "신호와 수치 계산"
+track: "데이터와 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Data Linearization", "선형화", "Linearization", "거듭제곱 맞춤", "Power Fit", "지수 맞춤", "Exponential Fit", "비선형 최소제곱", "Nonlinear Least Squares", "오차 노름", "RMS Error"]

@@ -8,7 +8,7 @@ num: "43"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 시스템"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Cache TLB Interaction", "TLB와 캐시", "주소 변환과 캐시", "Virtually Indexed Physically Tagged", "VIPT", "물리 주소 캐시", "메모리 접근 경로"]

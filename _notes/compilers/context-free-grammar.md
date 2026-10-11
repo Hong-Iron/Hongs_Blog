@@ -8,7 +8,7 @@ num: "11"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "프로그래밍과 알고리즘"
+track: "컴퓨터 과학"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Context Free Grammar", "Context-Free Grammar", "CFG", "문맥 자유 언어", "Context-Free Language", "단말 기호", "Terminal", "비단말 기호", "Non-terminal", "시작 기호", "Start Symbol", "생성 규칙", "Production", "구문 분석기", "Syntax Analyzer", "Parser", "파서"]
