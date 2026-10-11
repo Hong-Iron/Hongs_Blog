@@ -112,7 +112,7 @@ while (foo(x + 5) <= 10) {
 
 - 선수: [의미 분석](/Hongs_Blog/studies/compilers/semantic-analysis/), [추상 구문 트리](/Hongs_Blog/studies/compilers/abstract-syntax-tree/)
 - 검사를 언제 하느냐: [정적 타입과 동적 타입 비교](/Hongs_Blog/studies/compilers/static-vs-dynamic-typing/)
-- Java의 타입과 변환 규칙: [변수와 기본 타입](/Hongs_Blog/studies/software-project/java-primitive-types/), [타입 변환](/Hongs_Blog/studies/software-project/java-type-conversion/). Java는 int를 double로 알아서 넓혀 준다. 위의 `inttofloat`과 같은 일이다.
+- Java의 타입과 변환 규칙: [변수와 기본 타입](/Hongs_Blog/studies/java/java-primitive-types/), [타입 변환](/Hongs_Blog/studies/java/java-type-conversion/). Java는 int를 double로 알아서 넓혀 준다. 위의 `inttofloat`과 같은 일이다.
 - 어셈블리에서는 타입 대신 크기만 정한다: [데이터 정의](/Hongs_Blog/studies/assembly-language/asm-data-definition/)
 
 ## 확인 문제

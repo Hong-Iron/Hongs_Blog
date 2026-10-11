@@ -135,7 +135,7 @@ sar dl,2        ; DL = -10
     - 음수에 `SHR`을 쓴다. −80에 `shr dl,1`을 하면 88이 나온다. 부호 있는 수는 `SAR`을 쓴다.
     - 왼쪽으로 밀어 넘친 것을 놓친다. 넘쳤는지는 CF(부호 없는 수)를 봐야 안다.
     - 칸 수를 EAX나 변수로 주려 한다. 칸 수는 즉시값이나 CL뿐이다.
-- Java의 `<<`, `>>`, `>>>`가 각각 `SHL`, `SAR`, `SHR`과 같은 일을 한다[^s1]. [비트 연산](/Hongs_Blog/studies/software-project/java-bitwise/)
+- Java의 `<<`, `>>`, `>>>`가 각각 `SHL`, `SAR`, `SHR`과 같은 일을 한다[^s1]. [비트 연산](/Hongs_Blog/studies/java/java-bitwise/)
 - 연습: [시프트와 회전 예제 사다리](/Hongs_Blog/studies/assembly-language/shift-rotate-ladder/)
 
 ## 연결

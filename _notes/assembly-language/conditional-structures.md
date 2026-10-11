@@ -346,7 +346,7 @@ EBX = 0, `val1` = 10으로 시작하면 (5, 9), (10, 8)을 거쳐 EBX = 10, `val
 ## 연결
 
 - 선수: [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/), [부호 있는 비교 점프와 부호 없는 비교 점프](/Hongs_Blog/studies/assembly-language/signed-vs-unsigned-jumps/)
-- 고급 언어 쪽의 `if`, `while`, `&&`, <code>&#124;&#124;</code>: [제어문](/Hongs_Blog/studies/software-project/java-control-flow/)
+- 고급 언어 쪽의 `if`, `while`, `&&`, <code>&#124;&#124;</code>: [제어문](/Hongs_Blog/studies/java/java-control-flow/)
 - 횟수와 조건을 한 줄로 보는 반복: [조건부 반복 명령](/Hongs_Blog/studies/assembly-language/conditional-loop-instructions/)
 - 갈림을 상태마다 늘어놓은 프로그램: [유한 상태 기계](/Hongs_Blog/studies/assembly-language/asm-finite-state-machine/)
 - 연습: [조건 구조를 점프로 옮기기 예제 사다리](/Hongs_Blog/studies/assembly-language/conditional-structures-ladder/)

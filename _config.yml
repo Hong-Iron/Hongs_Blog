@@ -89,9 +89,9 @@ defaults:
     values:
       image: /assets/img/og/data-and-information.png
   - scope:
-      path: "_notes/software-project"
+      path: "_notes/java"
     values:
-      image: /assets/img/og/software-project.png
+      image: /assets/img/og/java.png
   - scope:
       path: "_notes/assembly-language"
     values:

@@ -135,7 +135,7 @@ Java 방식:   | m | A[0] | A[1] | ... | A[m-1] |
 
 - 선수: [3주소 코드](/Hongs_Blog/studies/compilers/three-address-code/)(번지가 없는 이름들), [컴파일러의 구조](/Hongs_Blog/studies/compilers/compiler-structure/)(코드 생성기의 자리)
 - 런타임 환경의 나머지 두 물음: 함수는 어떤 모양인가 → [활성 트리와 호출 스택](/Hongs_Blog/studies/compilers/activation-tree/), [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/). 어디에 놓는가 → [실행 시 메모리 배치](/Hongs_Blog/studies/compilers/runtime-memory-layout/)
-- Java 쪽에서 본 같은 그림(`length`, 안쪽 배열의 길이가 달라도 되는 까닭): [배열](/Hongs_Blog/studies/software-project/java-array/)
+- Java 쪽에서 본 같은 그림(`length`, 안쪽 배열의 길이가 달라도 되는 까닭): [배열](/Hongs_Blog/studies/java/java-array/)
 - 타입이 크기와 정렬을 정한다: [타입과 타입 시스템](/Hongs_Blog/studies/compilers/type-system/)
 
 ## 확인 문제
@@ -175,5 +175,5 @@ Java 방식:   | m | A[0] | A[1] | ... | A[m-1] |
 [^6]: 컴파일러 15회 강의 자료 「Lecture15 Code generation part 2」, p.7 (모든 객체를 4바이트 정렬로 가정), p.10 (변수의 위치는 심벌 테이블에 둔다)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 올림을 쓴 식, `A[i]`의 번지 식, 칸 번호 $$i \times n + j$$는 원본에 없다. 식은 슬라이드 p.6의 "시작 번지는 N의 배수"와 p.7의 그림에서, 칸 번호는 p.9의 C 방식 그림(A[0][0], A[0][1], …, A[0][n-1], A[1][0], … 순서)에서 읽었다. 검증 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 정렬하는 까닭은 원본에 없다. 정렬되지 않은 값을 읽을 때의 손해는 기계마다 다르다(Bryant·O'Hallaron, Computer Systems: A Programmer's Perspective 3판, 3.9.3절).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 선언 순서를 바꾼 예, 길이 칸과 범위 검사 이야기, 카드 C1~C3은 원본에 없다. 수치는 검증 코드로 확인했다. Java가 실행 중에 인덱스 범위를 검사한다는 것은 [배열](/Hongs_Blog/studies/software-project/java-array/)의 `ArrayIndexOutOfBoundsException`과 같은 이야기다.
+[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 선언 순서를 바꾼 예, 길이 칸과 범위 검사 이야기, 카드 C1~C3은 원본에 없다. 수치는 검증 코드로 확인했다. Java가 실행 중에 인덱스 범위를 검사한다는 것은 [배열](/Hongs_Blog/studies/java/java-array/)의 `ArrayIndexOutOfBoundsException`과 같은 이야기다.
 {% endraw %}

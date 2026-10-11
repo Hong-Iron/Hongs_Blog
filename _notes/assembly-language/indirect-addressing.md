@@ -182,8 +182,8 @@ mov edx,arrayD[esi*TYPE arrayD]     ; 00000004
 ## 활용
 
 - 되풀이 명령과 묶으면 배열 전체를 몇 줄로 훑는다: [JMP와 LOOP](/Hongs_Blog/studies/assembly-language/jmp-loop/).
-- 자바의 `arr[i]`가 하는 일이 "배열 시작 주소 + i × 원소 크기"의 자리를 읽는 것이다. 자바는 `i`가 범위 안인지 확인해 주지만 여기서는 아무도 확인하지 않는다: [배열](/Hongs_Blog/studies/software-project/java-array/)[^s1].
-- 포인터 변수는 자바의 참조 변수가 실제로 담고 있는 것, 곧 다른 것이 놓인 자리다: [참조 타입과 메모리 영역](/Hongs_Blog/studies/software-project/java-reference-types/)[^s1].
+- 자바의 `arr[i]`가 하는 일이 "배열 시작 주소 + i × 원소 크기"의 자리를 읽는 것이다. 자바는 `i`가 범위 안인지 확인해 주지만 여기서는 아무도 확인하지 않는다: [배열](/Hongs_Blog/studies/java/java-array/)[^s1].
+- 포인터 변수는 자바의 참조 변수가 실제로 담고 있는 것, 곧 다른 것이 놓인 자리다: [참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/)[^s1].
 - 흔한 실수: 워드 배열에서 `inc esi`로 한 걸음을 간다. 오류 없이 원소 가운데를 읽는다(카드 C3).
 - 흔한 실수: `mov [esi],5`처럼 크기를 밝히지 않고 즉시값을 쓴다.
 

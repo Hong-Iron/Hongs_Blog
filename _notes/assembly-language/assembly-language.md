@@ -82,7 +82,7 @@ C++이나 Java 같은 고급 언어는 한 줄이 기계어 여러 개로 바뀐
 - 선수: [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/). 기계어와 주소는 늘 16진수로 적는다.
 - 어셈블리어가 컴퓨터의 여러 층 가운데 어디에 있는가: [가상 기계 계층](/Hongs_Blog/studies/assembly-language/virtual-machine-levels/)
 - 한 줄을 이루는 조각들: [어셈블리 문장의 구성](/Hongs_Blog/studies/assembly-language/asm-statement-elements/). 글자가 실행 파일이 되는 길: [어셈블·링크·실행 과정](/Hongs_Blog/studies/assembly-language/assemble-link-execute/)
-- 고급 언어를 기계어로 바꾸는 프로그램: [컴파일과 인터프리트 비교](/Hongs_Blog/studies/compilers/compilation-vs-interpretation/). Java는 실제 프로세서가 아니라 가상의 기계를 위한 명령으로 바뀐다: [JVM과 바이트코드](/Hongs_Blog/studies/software-project/jvm-bytecode/)
+- 고급 언어를 기계어로 바꾸는 프로그램: [컴파일과 인터프리트 비교](/Hongs_Blog/studies/compilers/compilation-vs-interpretation/). Java는 실제 프로세서가 아니라 가상의 기계를 위한 명령으로 바뀐다: [JVM과 바이트코드](/Hongs_Blog/studies/java/jvm-bytecode/)
 
 ## 확인 문제
 

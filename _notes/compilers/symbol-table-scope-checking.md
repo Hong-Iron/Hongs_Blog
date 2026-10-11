@@ -256,7 +256,7 @@ public:
 
 - 선수: [스코프](/Hongs_Blog/studies/compilers/identifier-scope/), [추상 구문 트리](/Hongs_Blog/studies/compilers/abstract-syntax-tree/)
 - 검사하는 규칙: [의미 분석](/Hongs_Blog/studies/compilers/semantic-analysis/)의 규칙 1~3
-- 물려받은 이름: [상속](/Hongs_Blog/studies/software-project/java-inheritance/)
+- 물려받은 이름: [상속](/Hongs_Blog/studies/java/java-inheritance/)
 
 ## 자주 하는 오해
 

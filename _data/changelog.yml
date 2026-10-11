@@ -1,6 +1,11 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: 자바로 이름 바꾸기, 표지 새로 그리기
+  items:
+    - '소프트웨어 프로젝트'를 '자바'로 이름을 바꿨어요. 주소도 /studies/java/로 바뀌었어요.
+    - 자바, 어셈블리어, 컴파일러의 표지를 새로 그렸어요. 자바는 클래스 틀이 객체를 찍어 내고, 어셈블리어는 실행 위치가 내려가며 레지스터 비트와 플래그가 바뀌고, 컴파일러는 토큰 아래로 구문 트리가 자라 코드가 나와요.
+- date: 2026-10-12
   title: 어셈블리어, 컴파일러
   items:
     - Studies에 어셈블리어(컴퓨터 과학)를 더했어요. x86 레지스터와 플래그, 스택과 프로시저, 조건 점프, 시프트, 스택 프레임, MS-DOS·BIOS 인터럽트까지 개념 56개와 연습 11개예요. 실행 결과는 파이썬으로 레지스터와 스택을 흉내 내 확인했어요.

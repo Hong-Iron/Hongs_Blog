@@ -355,7 +355,7 @@
     "numerical-analysis": ["arch", "wedge", "dot"],
     "data-science": ["dot", "circle", "hexagon"],
     "data-and-information": ["dot", "squareOutline", "bell"],
-    "software-project": ["tile", "capsule", "chevron"],
+    "java": ["tile", "capsule", "chevron"],
     "assembly-language": ["tile", "tallbar", "squareOutline"],
     "compilers": ["circle", "arrow", "ring"]
   };
@@ -1170,87 +1170,164 @@
     }
   };
 
-  // 소프트웨어 프로젝트: a class tree; scrolling walks the call down to the object's own method.
-  MOTIFS["software-project"] = {
+  // Where a "cover" motif draws: the whole tile, or the right half of the header band.
+  function coverBox(L) {
+    if (L.mode === "thumb" || L.mode === "full") return { x: L.W * 0.06, y: L.H * 0.08, w: L.W * 0.88, h: L.H * 0.84 };
+    // below the site header (about 80px), inside the header band
+    var h = Math.max(130, Math.min(L.band, 340) - 104);
+    return { x: L.W * 0.56, y: 90, w: Math.min(L.W * 0.4, h * 1.9), h: h };
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  // 자바: a class card (the mould) stamps out objects; each object keeps its own field values.
+  MOTIFS.java = {
     draw: function (ctx, L, S, F) {
-      var Rg = region(L), hgt = Rg.y1 - Rg.y0;
-      var nodes = [[0.5, 0.14, "Unit"], [0.24, 0.47, "Marine"], [0.76, 0.47, "Scv"], [0.12, 0.8, "Firebat"], [0.36, 0.8, "Medic"]];
-      var edges = [[0, 1], [0, 2], [1, 3], [1, 4]], path = [0, 1, 4];
-      var bw = clamp(L.W * 0.13, 46, 120), bh = clamp(hgt * 0.13, 16, 34);
-      function P(n) { return [nodes[n][0] * L.W, Rg.y0 + nodes[n][1] * hgt]; }
-      var t = F.p * (path.length - 1), a = Math.floor(t), b = Math.min(a + 1, path.length - 1), u = t - a;
-      ctx.lineWidth = 1.2;
-      edges.forEach(function (e) {
-        var p = P(e[0]), q = P(e[1]);
-        ctx.strokeStyle = rgba(F.pal.ink, 0.3);
-        line(ctx, p[0], p[1] + bh / 2, q[0], q[1] - bh / 2);
-      });
-      nodes.forEach(function (nd, i) {
-        var p = P(i), on = i === path[a] || (i === path[b] && u > 0.5);
-        ctx.fillStyle = rgba(on ? F.pal.b : F.pal.a, on ? 0.3 : 0.12);
-        ctx.strokeStyle = rgba(on ? F.pal.b : F.pal.a, 0.85);
-        ctx.lineWidth = on ? 2 : 1.2;
-        ctx.fillRect(p[0] - bw / 2, p[1] - bh / 2, bw, bh);
-        ctx.strokeRect(p[0] - bw / 2, p[1] - bh / 2, bw, bh);
-        if (bw > 60) label(ctx, nd[2], p[0] - bw / 2 + 6, p[1] + 4, rgba(F.pal.ink, 0.6));
-      });
-      var p0 = P(path[a]), p1 = P(path[b]);
-      ctx.fillStyle = rgba(F.pal.b, 0.95);
-      ctx.beginPath(); ctx.arc(lerp(p0[0], p1[0], u), lerp(p0[1] + bh / 2, p1[1] - bh / 2, u), 4, 0, TAU); ctx.fill();
-      label(ctx, "attack() → " + nodes[path[u > 0.5 ? b : a]][2], 14, Rg.y0 + hgt * 0.97, rgba(F.pal.ink, 0.5));
+      var B = coverBox(L), u = B.w / 100, v = B.h / 100, k, i;
+      function card(x, y, w, h, title, rows, col, strong) {
+        roundRect(ctx, x, y, w, h, 5);
+        ctx.fillStyle = rgba(col, strong ? 0.16 : 0.07); ctx.fill();
+        ctx.strokeStyle = rgba(col, 0.85); ctx.lineWidth = strong ? 2 : 1.3; ctx.stroke();
+        var hh = Math.max(13, h * 0.24);
+        ctx.fillStyle = rgba(col, strong ? 0.5 : 0.28);
+        roundRect(ctx, x, y, w, hh, 5); ctx.fill();
+        if (w > 58) label(ctx, title, x + 6, y + hh * 0.72, rgba(F.pal.ink, 0.8), Math.max(9, Math.min(12, hh * 0.6)));
+        var gap = (h - hh) / (rows.length + 1);
+        for (var r = 0; r < rows.length; r++) {
+          ctx.fillStyle = rgba(F.pal.ink, 0.28);
+          ctx.fillRect(x + 7, y + hh + gap * (r + 1) - 2, (w - 14) * rows[r], 3.5);
+        }
+      }
+      // class cards on the left, joined by a hollow inheritance arrow
+      var cx = B.x + 2 * u, cw = 34 * u, py = B.y + 4 * v, ph = 38 * v, sy = B.y + 62 * v, sh = 32 * v;
+      card(cx, py, cw, ph, "class Unit", [0.7, 0.5, 0.85], F.pal.a, false);
+      card(cx, sy, cw, sh, "Marine", [0.6, 0.8], F.pal.a, false);
+      var mx = cx + cw / 2, ty = py + ph;
+      ctx.strokeStyle = rgba(F.pal.ink, 0.55); ctx.lineWidth = 1.3;
+      line(ctx, mx, sy, mx, ty + 9);
+      ctx.beginPath(); ctx.moveTo(mx, ty); ctx.lineTo(mx - 6, ty + 9); ctx.lineTo(mx + 6, ty + 9); ctx.closePath();
+      ctx.fillStyle = rgba(F.pal.bg || [245, 239, 228], 1); ctx.fill(); ctx.stroke();
+      // objects on the right: one more appears as you scroll
+      var n = 6, shown = 1 + Math.min(n - 1, Math.floor(F.p * n)), ow = 17 * u, oh = 26 * v;
+      for (k = 0; k < n; k++) {
+        var col = k % 3, row = (k / 3) | 0;
+        var ox = B.x + 44 * u + col * 19.5 * u, oy = B.y + 8 * v + row * 44 * v;
+        if (k >= shown) {
+          ctx.setLineDash([3, 4]); ctx.strokeStyle = rgba(F.pal.ink, 0.18); ctx.lineWidth = 1;
+          roundRect(ctx, ox, oy, ow, oh, 8); ctx.stroke(); ctx.setLineDash([]);
+          continue;
+        }
+        var last = k === shown - 1;
+        roundRect(ctx, ox, oy, ow, oh, 8);
+        ctx.fillStyle = rgba(last ? F.pal.b : F.pal.a, last ? 0.26 : 0.1); ctx.fill();
+        ctx.strokeStyle = rgba(last ? F.pal.b : F.pal.a, 0.9); ctx.lineWidth = last ? 2.2 : 1.2; ctx.stroke();
+        for (i = 0; i < 3; i++) {
+          var len = 0.25 + 0.6 * frac(Math.sin((k + 1) * 12.9898 + i * 78.233) * 43758.5453);
+          ctx.fillStyle = rgba(last ? F.pal.b : F.pal.ink, last ? 0.75 : 0.32);
+          ctx.fillRect(ox + 5, oy + oh * (0.3 + 0.22 * i), (ow - 10) * len, 3.5);
+        }
+        if (last) {
+          ctx.setLineDash([4, 4]); ctx.strokeStyle = rgba(F.pal.b, 0.7); ctx.lineWidth = 1.3;
+          line(ctx, cx + cw, sy + sh / 2, ox, oy + oh / 2); ctx.setLineDash([]);
+        }
+      }
+      label(ctx, "new Marine()  × " + shown, B.x + 44 * u, B.y + 98 * v, rgba(F.pal.ink, 0.55), 11);
     }
   };
 
-  // 어셈블리어: a runtime stack; scrolling pushes values and ESP walks down, then pops back.
+  // 어셈블리어: a memory listing with the instruction pointer walking down, and a register whose bits and flags change.
   MOTIFS["assembly-language"] = {
     draw: function (ctx, L, S, F) {
-      var Rg = region(L), hgt = Rg.y1 - Rg.y0, n = 7;
-      var cw = clamp(L.W * 0.12, 54, 130), ch = clamp(hgt * 0.085, 14, 30);
-      var x0 = L.mode === "margins" ? (L.right[0] + L.right[1]) / 2 - cw / 2 : L.W * 0.8 - cw / 2;
-      var y0 = Rg.y0 + hgt * 0.18;
-      var t = F.p < 0.6 ? F.p / 0.6 * (n - 1) : (1 - (F.p - 0.6) / 0.4) * (n - 1) * 0.6 + (n - 1) * 0.4;
-      var filled = Math.floor(t) + 1, i;
-      ctx.lineWidth = 1.2;
-      for (i = 0; i < n; i++) {
-        var y = y0 + i * ch, on = i < filled;
-        ctx.fillStyle = rgba(on ? F.pal.a : F.pal.ink, on ? 0.22 : 0.04);
-        ctx.strokeStyle = rgba(F.pal.a, on ? 0.8 : 0.3);
-        ctx.fillRect(x0, y, cw, ch);
-        ctx.strokeRect(x0, y, cw, ch);
+      var B = coverBox(L), u = B.w / 100, v = B.h / 100, i, j;
+      var code = [["B8", "05", "00", "00"], ["83", "C0", "7B", "90"], ["50", "E8", "12", "00"], ["03", "C3", "74", "06"], ["D1", "E0", "E2", "F8"], ["5B", "C3", "CC", "CC"]];
+      var rows = code.length, step = Math.min(rows - 1, Math.floor(F.p * rows));
+      var rh = 13.5 * v, x0 = B.x + 1 * u, bw = 9.2 * u, fs = Math.max(9, Math.min(12, rh * 0.5));
+      for (i = 0; i < rows; i++) {
+        var y = B.y + 3 * v + i * rh, on = i === step;
+        if (on) { ctx.fillStyle = rgba(F.pal.b, 0.16); roundRect(ctx, x0 - 3, y - 1, 57 * u, rh - 3, 4); ctx.fill(); }
+        label(ctx, (0x401000 + i * 4).toString(16).toUpperCase(), x0, y + rh * 0.55, rgba(F.pal.ink, on ? 0.8 : 0.4), fs);
+        for (j = 0; j < 4; j++) {
+          var bx = x0 + 18 * u + j * (bw + 0.6 * u);
+          ctx.strokeStyle = rgba(on ? F.pal.b : F.pal.a, on ? 0.9 : 0.45); ctx.lineWidth = on ? 1.6 : 1;
+          ctx.fillStyle = rgba(on ? F.pal.b : F.pal.a, on ? 0.14 : 0.06);
+          ctx.fillRect(bx, y, bw, rh - 5); ctx.strokeRect(bx, y, bw, rh - 5);
+          label(ctx, code[i][j], bx + bw * 0.22, y + rh * 0.52, rgba(F.pal.ink, on ? 0.85 : 0.5), fs);
+        }
       }
-      var ey = y0 + (filled - 1) * ch + ch / 2;
-      ctx.strokeStyle = rgba(F.pal.b, 0.9);
-      ctx.fillStyle = rgba(F.pal.b, 0.9);
-      ctx.lineWidth = 1.8;
-      arrow(ctx, x0 - 34, ey, x0 - 6, ey, 6);
-      label(ctx, "ESP = " + (0x1000 - 4 * filled).toString(16).toUpperCase() + "h", 14, Rg.y0 + hgt * 0.95, rgba(F.pal.ink, 0.5));
+      // EIP arrow
+      var ay = B.y + 3 * v + step * rh + (rh - 5) / 2;
+      ctx.strokeStyle = rgba(F.pal.b, 0.95); ctx.fillStyle = rgba(F.pal.b, 0.95); ctx.lineWidth = 1.8;
+      arrow(ctx, x0 + 66 * u, ay, x0 + 59 * u, ay, 6);
+      label(ctx, "EIP", x0 + 67.5 * u, ay + 4, rgba(F.pal.ink, 0.7), fs);
+      // AL register bits and flags on the right
+      var prev = (11 + 91 * step) & 255, raw = prev + 91, val = raw & 255;
+      var cf = raw > 255, zf = val === 0, sf = val > 127, of = ((prev ^ val) & (91 ^ val) & 128) !== 0;
+      var rx = B.x + 64 * u, ry = B.y + 56 * v, cw = 4.4 * u, chh = 11 * v;
+      label(ctx, "AL", rx, ry - 4, rgba(F.pal.ink, 0.7), fs);
+      for (i = 0; i < 8; i++) {
+        var bit = (val >> (7 - i)) & 1;
+        ctx.fillStyle = rgba(F.pal.a, bit ? 0.75 : 0.07); ctx.strokeStyle = rgba(F.pal.a, 0.8); ctx.lineWidth = 1;
+        ctx.fillRect(rx + i * cw, ry, cw - 1.5, chh); ctx.strokeRect(rx + i * cw, ry, cw - 1.5, chh);
+      }
+      label(ctx, ("0" + val.toString(16).toUpperCase()).slice(-2) + "h", rx + 8 * cw + 3, ry + chh * 0.75, rgba(F.pal.ink, 0.6), fs);
+      var flags = [["ZF", zf], ["SF", sf], ["CF", cf], ["OF", of]];
+      for (i = 0; i < 4; i++) {
+        var fx = rx + i * 9 * u, fy = ry + 26 * v;
+        circle(ctx, fx + 6, fy, 6);
+        ctx.fillStyle = rgba(F.pal.b, flags[i][1] ? 0.9 : 0.08); ctx.fill();
+        ctx.strokeStyle = rgba(F.pal.b, 0.8); ctx.lineWidth = 1.2; ctx.stroke();
+        label(ctx, flags[i][0], fx - 1, fy + 17, rgba(F.pal.ink, 0.6), Math.max(8, fs - 1));
+      }
     }
   };
 
-  // 컴파일러: a small DFA for (a|b)*abb; scrolling feeds the input one symbol at a time.
+  // 컴파일러: tokens at the top, the syntax tree growing under them, three-address code coming out at the end.
   MOTIFS.compilers = {
     draw: function (ctx, L, S, F) {
-      var Rg = region(L), hgt = Rg.y1 - Rg.y0;
-      var input = "abaabb", trans = { 0: { a: 1, b: 0 }, 1: { a: 1, b: 2 }, 2: { a: 1, b: 3 }, 3: { a: 1, b: 0 } };
-      var step = Math.min(input.length, Math.floor(F.p * (input.length + 1))), st = 0, i;
-      for (i = 0; i < step; i++) st = trans[st][input[i]];
-      var r = clamp(Math.min(L.W * 0.035, hgt * 0.07), 12, 26), cy = Rg.y0 + hgt * 0.3;
-      function X(k) { return L.W * (0.14 + 0.24 * k); }
-      for (i = 0; i < 4; i++) {
-        if (i < 3) {
-          ctx.strokeStyle = rgba(F.pal.ink, 0.3);
-          ctx.fillStyle = rgba(F.pal.ink, 0.3);
-          ctx.lineWidth = 1.2;
-          arrow(ctx, X(i) + r + 3, cy, X(i + 1) - r - 3, cy, 6);
-        }
-        var on = i === st;
-        ctx.fillStyle = rgba(on ? F.pal.b : F.pal.a, on ? 0.3 : 0.1);
-        ctx.strokeStyle = rgba(on ? F.pal.b : F.pal.a, 0.85);
-        ctx.lineWidth = on ? 2.2 : 1.2;
-        circle(ctx, X(i), cy, r); ctx.fill(); ctx.stroke();
-        if (i === 3) { circle(ctx, X(i), cy, r - 4); ctx.stroke(); }
+      var B = coverBox(L), u = B.w / 100, v = B.h / 100, i;
+      var toks = ["a", "=", "b", "+", "c", "*", "2"], tw = 9.5 * u, th = 13 * v, fs = Math.max(10, Math.min(14, th * 0.55));
+      function tx(i) { return B.x + 4 * u + i * 13.4 * u; }
+      // tree nodes: [label, x, y, token index or -1, children]
+      var N = [["a", 12, 62, 0, []], ["b", 34, 80, 2, []], ["c", 58, 96, 4, []], ["2", 82, 96, 6, []],
+               ["*", 70, 78, 5, [2, 3]], ["+", 52, 60, 3, [1, 4]], ["=", 32, 40, 1, [0, 5]]];
+      var shown = Math.min(N.length, Math.floor(F.p * (N.length + 2.2)));
+      for (i = 0; i < toks.length; i++) {
+        var used = false;
+        for (var q = 0; q < shown; q++) if (N[q][3] === i) used = true;
+        roundRect(ctx, tx(i), B.y + 2 * v, tw, th, 4);
+        ctx.fillStyle = rgba(F.pal.a, used ? 0.28 : 0.08); ctx.fill();
+        ctx.strokeStyle = rgba(F.pal.a, 0.8); ctx.lineWidth = 1.2; ctx.stroke();
+        label(ctx, toks[i], tx(i) + tw * 0.36, B.y + 2 * v + th * 0.68, rgba(F.pal.ink, 0.8), fs);
       }
-      label(ctx, input.slice(0, step) + "|" + input.slice(step) + "  → q" + st, 14, Rg.y0 + hgt * 0.95, rgba(F.pal.ink, 0.5));
+      function P(n) { return [B.x + (N[n][1] + 6) * u, B.y + N[n][2] * v * 0.86 + 3 * v]; }
+      var r = Math.max(11, Math.min(20, 7 * v));
+      for (i = 0; i < shown; i++) {
+        var p = P(i), last = i === shown - 1;
+        N[i][4].forEach(function (c) {
+          var q = P(c);
+          ctx.strokeStyle = rgba(F.pal.ink, 0.4); ctx.lineWidth = 1.3;
+          line(ctx, p[0], p[1] + r, q[0], q[1] - r);
+        });
+      }
+      for (i = 0; i < shown; i++) {
+        var p2 = P(i), last2 = i === shown - 1, op = N[i][4].length > 0;
+        circle(ctx, p2[0], p2[1], r);
+        ctx.fillStyle = rgba(last2 ? F.pal.b : F.pal.a, last2 ? 0.3 : (op ? 0.2 : 0.08)); ctx.fill();
+        ctx.strokeStyle = rgba(last2 ? F.pal.b : F.pal.a, 0.9); ctx.lineWidth = last2 ? 2.2 : 1.3; ctx.stroke();
+        label(ctx, N[i][0], p2[0] - fs * 0.3, p2[1] + fs * 0.35, rgba(F.pal.ink, 0.85), fs);
+      }
+      // emitted code, once the tree is whole
+      var tac = ["t1 = c * 2", "t2 = b + t1", "a = t2"], lines = Math.max(0, Math.min(3, Math.floor(F.p * (N.length + 2.2)) - N.length + 1));
+      if (shown < N.length) lines = 0;
+      for (i = 0; i < lines; i++) label(ctx, tac[i], B.x + 2 * u, B.y + (78 + i * 8.5) * v, rgba(F.pal.ink, 0.6), Math.max(9, fs - 2));
     }
   };
 

@@ -107,7 +107,7 @@ $$-2^{15} + (2^{14} + 2^{13} + \cdots + 2^{7}) = -2^{15} + (2^{15} - 2^{7}) = -2
 
 - `MOVZX`가 없으면 두 줄이 든다. 큰 레지스터를 먼저 0으로 만들고 아랫부분만 채운다: `mov eax,0` 다음에 `mov al,bl`[^s1].
 - 부호 비트가 0인 값(0~127)은 어느 쪽으로 넓혀도 결과가 같다. 차이는 부호 비트가 1일 때만 난다.
-- 자바가 `byte`를 `int`로 넓힐 때 하는 일이 부호 확장이다: [타입 변환](/Hongs_Blog/studies/software-project/java-type-conversion/)[^s1].
+- 자바가 `byte`를 `int`로 넓힐 때 하는 일이 부호 확장이다: [타입 변환](/Hongs_Blog/studies/java/java-type-conversion/)[^s1].
 - 오른쪽으로 밀 때 빈 윗자리를 0으로 채우느냐 부호 비트로 채우느냐도 같은 갈림이다: [논리 시프트와 산술 시프트 비교](/Hongs_Blog/studies/assembly-language/logical-vs-arithmetic-shift/).
 
 ## 연결

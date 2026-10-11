@@ -249,7 +249,7 @@ L1:
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">같은 생각을 쓰는 다른 곳은?</summary>
 
-어셈블리어에서 if와 while을 비교 명령과 점프로 옮기는 것([조건 구조를 점프로 옮기기](/Hongs_Blog/studies/assembly-language/conditional-structures/)). Java 컴파일러가 소스를 바로 기계어로 바꾸지 않고 바이트코드로 먼저 바꾸는 것([JVM과 바이트코드](/Hongs_Blog/studies/software-project/jvm-bytecode/)).
+어셈블리어에서 if와 while을 비교 명령과 점프로 옮기는 것([조건 구조를 점프로 옮기기](/Hongs_Blog/studies/assembly-language/conditional-structures/)). Java 컴파일러가 소스를 바로 기계어로 바꾸지 않고 바이트코드로 먼저 바꾸는 것([JVM과 바이트코드](/Hongs_Blog/studies/java/jvm-bytecode/)).
 
 </details>
 

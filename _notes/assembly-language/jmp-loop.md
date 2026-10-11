@@ -201,7 +201,7 @@ L2: .
 - 흔한 실수: ECX가 0일 수 있는데 그대로 `LOOP`에 들어간다. 빈 배열에서 40억 번을 돈다. 들어가기 전에 ECX가 0이면 건너뛰는 `JECXZ`가 [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/)에 있다.
 - 흔한 실수: 몸통 안에서 ECX를 다른 일에 쓴다. 횟수가 망가진다.
 - 흔한 실수: 다음 원소로 갈 때 원소 크기를 틀린다. WORD 배열에서 `inc edi`를 쓰면 1바이트만 움직여 두 원소에 걸친 값을 읽는다.
-- Java의 `for (int i = 5; i > 0; i--)`가 하는 일을 `LOOP` 한 줄이 한다. 다만 `for`는 돌기 전에 조건을 보고, `LOOP`는 몸통을 한 번 돈 뒤에 본다([제어문](/Hongs_Blog/studies/software-project/java-control-flow/)의 `do-while`과 같은 꼴이다)[^s1].
+- Java의 `for (int i = 5; i > 0; i--)`가 하는 일을 `LOOP` 한 줄이 한다. 다만 `for`는 돌기 전에 조건을 보고, `LOOP`는 몸통을 한 번 돈 뒤에 본다([제어문](/Hongs_Blog/studies/java/java-control-flow/)의 `do-while`과 같은 꼴이다)[^s1].
 
 ## 연결
 

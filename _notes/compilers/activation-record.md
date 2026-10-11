@@ -186,7 +186,7 @@ int main() {                               param t1             end main
 
 - 선수: [활성 트리와 호출 스택](/Hongs_Blog/studies/compilers/activation-tree/), [3주소 코드](/Hongs_Blog/studies/compilers/three-address-code/)
 - 어셈블리어에서 본 같은 것: [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/). x86에서는 인자, 돌아갈 주소, 저장한 EBP, 지역 변수가 한 프레임을 이룬다. 저장한 EBP가 여기의 제어 링크 구실을 한다. 돌아갈 주소를 쌓고 꺼내는 명령은 [프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/), 인자를 누가 치우는지 같은 약속은 [호출 규약](/Hongs_Blog/studies/assembly-language/calling-convention/)에 있다[^s3].
-- Java에서 메서드를 부를 때마다 스택 영역에 생기는 프레임도 같은 것이다: [참조 타입과 메모리 영역](/Hongs_Blog/studies/software-project/java-reference-types/)
+- Java에서 메서드를 부를 때마다 스택 영역에 생기는 프레임도 같은 것이다: [참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/)
 
 ## 자주 하는 오해
 

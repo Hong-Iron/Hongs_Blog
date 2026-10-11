@@ -103,7 +103,7 @@ array WORD 10,20
 
 - 반복 횟수는 `mov ecx,LENGTHOF array`, 다음 칸으로 가는 걸음은 `add esi,TYPE array`로 쓴다: [간접 피연산자와 인덱스 피연산자](/Hongs_Blog/studies/assembly-language/indirect-addressing/), [JMP와 LOOP](/Hongs_Blog/studies/assembly-language/jmp-loop/).
 - 위치 카운터로 세던 것과 같은 값이다. `($ - list) / 2`가 `LENGTHOF list`이고 `($ - list)`가 `SIZEOF list`다. 연산자 쪽은 세는 줄을 배열 바로 뒤에 두지 않아도 된다: [기호 상수와 위치 카운터](/Hongs_Blog/studies/assembly-language/symbolic-constants/)[^s1].
-- 자바의 `array.length`는 실행 중에 배열에서 읽는 값이다. `LENGTHOF`는 어셈블할 때 정의문을 보고 세는 수라, 실행 중에 주소만 건네받은 배열에는 쓸 수 없다: [배열](/Hongs_Blog/studies/software-project/java-array/)[^s1].
+- 자바의 `array.length`는 실행 중에 배열에서 읽는 값이다. `LENGTHOF`는 어셈블할 때 정의문을 보고 세는 수라, 실행 중에 주소만 건네받은 배열에는 쓸 수 없다: [배열](/Hongs_Blog/studies/java/java-array/)[^s1].
 
 ## 연결
 

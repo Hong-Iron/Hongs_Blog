@@ -108,9 +108,9 @@
       codes: 58
       heavy: 5
       units: "데이터, 측정, 전처리 · 빈발 패턴 · 앙상블 · 군집화 기초와 밀도 기반 군집화 …"
-    - name: "소프트웨어 프로젝트"
-      slug: "software-project"
-      url: "/studies/software-project/"
+    - name: "자바"
+      slug: "java"
+      url: "/studies/java/"
       concepts: 39
       practices: 0
       codes: 37

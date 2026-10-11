@@ -155,7 +155,7 @@ mov dl,intList       ; 00h
 ## 활용
 
 - 풀이 순서는 늘 같다. 변수를 메모리 바이트로 펼치고, 시작 자리를 찾고, 크기만큼 집어서, 높은 주소 쪽이 윗자리가 되게 붙인다. 연습: [PTR과 리틀 엔디언 예제 사다리](/Hongs_Blog/studies/assembly-language/ptr-little-endian-ladder/).
-- `PTR`은 메모리의 값을 바꾸지 않는다. 같은 바이트를 몇 개씩 묶어 읽을지만 바꾼다. 자바의 타입 변환이 값을 새 크기로 고쳐 만드는 것과 다르다: [타입 변환](/Hongs_Blog/studies/software-project/java-type-conversion/)[^s1].
+- `PTR`은 메모리의 값을 바꾸지 않는다. 같은 바이트를 몇 개씩 묶어 읽을지만 바꾼다. 자바의 타입 변환이 값을 새 크기로 고쳐 만드는 것과 다르다: [타입 변환](/Hongs_Blog/studies/java/java-type-conversion/)[^s1].
 - 흔한 실수: `mov eax,DWORD PTR varW`가 `varW` 한 원소(2바이트)만 읽는다고 생각한다. 4바이트를 읽으므로 뒤의 원소나 다음 변수까지 따라 들어온다.
 - 실행 중에 정해지는 주소는 `OFFSET`으로 얻을 수 없다: [OFFSET과 LEA 비교](/Hongs_Blog/studies/assembly-language/offset-vs-lea/).
 

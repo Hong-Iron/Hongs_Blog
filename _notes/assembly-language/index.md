@@ -330,7 +330,7 @@ permalink: "/studies/assembly-language/"
 - [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/), [호출 규약](/Hongs_Blog/studies/assembly-language/calling-convention/) ↔ [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/), [함수 호출의 코드 생성](/Hongs_Blog/studies/compilers/codegen-function-call/) (3-2학기 컴파일러): 사람이 손으로 짜는 호출 코드와 컴파일러가 만들어 내는 호출 코드
 - [유한 상태 기계](/Hongs_Blog/studies/assembly-language/asm-finite-state-machine/) ↔ [유한 오토마타](/Hongs_Blog/studies/compilers/finite-automata/) (3-2학기 컴파일러): 같은 상태 그림을 점프로 옮기느냐 표로 돌리느냐
 - [조건 구조를 점프로 옮기기](/Hongs_Blog/studies/assembly-language/conditional-structures/) ↔ [3주소 코드](/Hongs_Blog/studies/compilers/three-address-code/) (3-2학기 컴파일러): if와 while을 레이블과 점프로 편다
-- [산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/) ↔ [연산자와 오버플로](/Hongs_Blog/studies/software-project/java-operators/) (2-1학기 소프트웨어 프로젝트): Java는 넘쳐도 말이 없고 CPU는 CF·OF로 남긴다
+- [산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/) ↔ [연산자와 오버플로](/Hongs_Blog/studies/java/java-operators/) (2-1학기 소프트웨어 프로젝트): Java는 넘쳐도 말이 없고 CPU는 CF·OF로 남긴다
 - [INT 명령과 인터럽트 벡터 표](/Hongs_Blog/studies/assembly-language/interrupt-vector-table/), [클러스터와 FAT](/Hongs_Blog/studies/assembly-language/fat-file-system/) ↔ [인터럽트](/Hongs_Blog/studies/operating-systems/interrupt/), [파일 할당](/Hongs_Blog/studies/operating-systems/file-allocation/) (3-1학기 운영체제): 운영체제 원리의 x86·MS-DOS 사례
 
 ## 흐름

@@ -371,9 +371,9 @@ permalink: "/studies/compilers/"
 ## 다른 과목과의 연결
 - [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/), [함수 호출의 코드 생성](/Hongs_Blog/studies/compilers/codegen-function-call/) ↔ [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/), [호출 규약](/Hongs_Blog/studies/assembly-language/calling-convention/) (2-1학기 어셈블리어): 컴파일러가 만드는 호출 코드와 손으로 짜는 호출 코드
 - [유한 오토마타](/Hongs_Blog/studies/compilers/finite-automata/) ↔ [유한 상태 기계](/Hongs_Blog/studies/assembly-language/asm-finite-state-machine/) (2-1학기 어셈블리어): 표로 돌리는 기계와 점프로 옮긴 기계
-- [컴파일과 인터프리트 비교](/Hongs_Blog/studies/compilers/compilation-vs-interpretation/) ↔ [JVM과 바이트코드](/Hongs_Blog/studies/software-project/jvm-bytecode/) (2-1학기 소프트웨어 프로젝트): Java는 둘을 섞은 방식이다
+- [컴파일과 인터프리트 비교](/Hongs_Blog/studies/compilers/compilation-vs-interpretation/) ↔ [JVM과 바이트코드](/Hongs_Blog/studies/java/jvm-bytecode/) (2-1학기 소프트웨어 프로젝트): Java는 둘을 섞은 방식이다
 - [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/) ↔ [LR(0) 항목과 항목 오토마타](/Hongs_Blog/studies/compilers/lr0-item-automaton/) (같은 과목): 같은 NFA → DFA 구성이 어휘 분석과 구문 분석에 두 번 쓰인다
-- [실행 시 메모리 배치](/Hongs_Blog/studies/compilers/runtime-memory-layout/) ↔ [참조 타입과 메모리 영역](/Hongs_Blog/studies/software-project/java-reference-types/) (2-1학기 소프트웨어 프로젝트): C의 네 구역과 JVM의 세 영역
+- [실행 시 메모리 배치](/Hongs_Blog/studies/compilers/runtime-memory-layout/) ↔ [참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/) (2-1학기 소프트웨어 프로젝트): C의 네 구역과 JVM의 세 영역
 
 ## 흐름
 ```mermaid

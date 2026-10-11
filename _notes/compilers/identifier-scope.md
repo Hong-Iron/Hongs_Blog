@@ -123,7 +123,7 @@ foo();
 - 선수: [의미 분석](/Hongs_Blog/studies/compilers/semantic-analysis/)
 - 컴파일러가 이 규칙을 검사하는 법: [심벌 테이블과 스코프 검사](/Hongs_Blog/studies/compilers/symbol-table-scope-checking/)
 - 스코프는 "이름이 어디서 보이는가"이고, 그 변수가 실행 중 메모리 어디에 얼마 동안 있는가는 다른 물음이다: [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/), [지역 변수](/Hongs_Blog/studies/assembly-language/local-variables/)
-- 물려받은 이름: [상속](/Hongs_Blog/studies/software-project/java-inheritance/)
+- 물려받은 이름: [상속](/Hongs_Blog/studies/java/java-inheritance/)
 
 ## 확인 문제
 

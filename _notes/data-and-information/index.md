@@ -222,7 +222,7 @@ permalink: "/studies/data-and-information/"
 - [편집 거리](/Hongs_Blog/studies/data-and-information/edit-distance/) ↔ [동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/) (알고리즘): 작은 문제의 답을 표에 채워 큰 문제를 푼다
 - [마할라노비스 거리](/Hongs_Blog/studies/data-and-information/mahalanobis-distance/) ↔ [공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) (공학수학): 정규분포 밀도의 지수가 이 거리의 제곱이다
 - [확률 과정](/Hongs_Blog/studies/data-and-information/random-process/) ↔ [마르코프 연쇄](/Hongs_Blog/studies/probability-statistics/markov-chains/) (공학수학): 바로 앞 값에만 기대는 확률 과정
-- [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/), [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/) ↔ [연산자와 오버플로](/Hongs_Blog/studies/software-project/java-operators/) (2-1학기 소프트웨어 프로젝트): Java 정수의 넘침과 실수 오차
+- [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/), [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/) ↔ [연산자와 오버플로](/Hongs_Blog/studies/java/java-operators/) (2-1학기 소프트웨어 프로젝트): Java 정수의 넘침과 실수 오차
 
 ## 흐름
 ```mermaid

@@ -1,0 +1,55 @@
+# 홍철's lines for the java course pages. Format: _data/robot/README.md
+greeting:
+- "자바예요. 2-1학기 소프트웨어 프로젝트 수업에서 객체 지향을 배운 내용이에요."
+- "자바 페이지예요. 내릴수록 배경에서 클래스 틀이 객체를 하나씩 찍어 내요."
+- "여긴 자바예요. 기초 문법, 클래스, 상속, 인터페이스, 예외, 제네릭 순서예요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "JVM과 바이트코드부터요. 자바 코드가 어떻게 실행까지 가는지 알고 시작하면 뒤가 편해요."
+  link: /studies/java/jvm-bytecode/
+  link_label: "JVM과 바이트코드"
+- q: 어려워요?
+  a: "변수 타입이랑 실제 객체가 다를 때 어느 메서드가 도는지가 제일 헷갈려요. 다형성 문서에 추적 표가 있어요."
+  link: /studies/java/java-polymorphism/
+  link_label: 다형성
+- q: "코드는 믿어도 돼요?"
+  a: "문서에 실은 출력은 전부 JDK 21에서 직접 돌려 본 거예요. 컴파일 오류 문구도 실제로 낸 거고요."
+  link: /studies/java/
+  link_label: 로드맵
+- q: "슬라이드에 틀린 데도 있었어요?"
+  a: "네. 일반 예외 예제와 실행 예외 예제의 제목이 서로 바뀌어 있었어요. 문서에 흔적을 남기고 바로잡았어요."
+  link: /studies/java/java-exception/
+  link_label: "예외와 예외 클래스"
+chats:
+- q: "문자열은 왜 ==로 비교하면 안 돼요?"
+  a: "==는 같은 객체인지를 물어요. 글자가 같아도 new로 따로 만들면 다른 객체라 false가 나와요. equals를 써요."
+  link: /studies/java/java-string/
+  link_label: String
+  next:
+  - q: "그럼 변수에는 뭐가 들어 있어요?"
+    a: "객체가 있는 곳의 주소요. 그래서 변수를 다른 변수에 넣으면 객체가 복사되는 게 아니라 둘이 같은 객체를 봐요."
+    link: /studies/java/java-reference-types/
+    link_label: "참조 타입과 메모리 영역"
+- q: "인터페이스랑 추상 클래스는 뭐가 달라요?"
+  a: "둘 다 new가 안 돼요. 객체마다 다른 값을 물려줘야 하면 추상 클래스, 여러 개를 함께 맡겨야 하면 인터페이스예요."
+  link: /studies/java/abstract-class-vs-interface/
+  link_label: "추상 클래스와 인터페이스 비교"
+  next:
+  - q: "인터페이스는 왜 써요?"
+    a: "쓰는 쪽은 메서드 목록만 알면 되니까, 뒤에서 일하는 객체를 바꿔도 쓰는 코드를 안 고쳐요."
+    link: /studies/java/java-interface/
+    link_label: 인터페이스
+- q: "finally는 언제 돌아요?"
+  a: "예외가 나든 안 나든 늘 돌아요. catch는 맞는 것 하나만 돌고, 자식 예외를 먼저 적어야 해요."
+  link: /studies/java/java-try-catch/
+  link_label: try-catch-finally
+talk:
+- text: "int의 가장 큰 값에 1을 더하면 오류 없이 가장 작은 값이 돼요. 자바는 넘쳐도 알려 주지 않아요."
+  link: /studies/java/java-operators/
+  link_label: "연산자와 오버플로"
+- text: "자식 객체를 만들면 부모 생성자가 먼저 돌아요. 자식 생성자 첫 줄에 super()가 숨어 있어서예요."
+  link: /studies/java/java-super-constructor/
+  link_label: "부모 생성자 호출"
+- text: "static 필드는 객체를 몇 개 만들든 클래스에 하나뿐이에요."
+  link: /studies/java/java-static/
+  link_label: "static 멤버"

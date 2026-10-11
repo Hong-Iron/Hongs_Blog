@@ -274,7 +274,7 @@ flowchart TD
 - 선수: [덧셈·뺄셈 명령](/Hongs_Blog/studies/assembly-language/add-sub-instructions/), [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)
 - 플래그가 모여 있는 레지스터: [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)
 - 한 자리 덧셈의 올림과 XOR: [불 대수와 논리 회로](/Hongs_Blog/studies/discrete-math/boolean-algebra/)
-- 자바는 정수가 넘쳐도 아무 표시를 주지 않는다. CPU가 남긴 이 플래그를 언어가 프로그램에 보여 주지 않는 것이다: [연산자와 오버플로](/Hongs_Blog/studies/software-project/java-operators/)
+- 자바는 정수가 넘쳐도 아무 표시를 주지 않는다. CPU가 남긴 이 플래그를 언어가 프로그램에 보여 주지 않는 것이다: [연산자와 오버플로](/Hongs_Blog/studies/java/java-operators/)
 
 ## 자주 하는 오해
 

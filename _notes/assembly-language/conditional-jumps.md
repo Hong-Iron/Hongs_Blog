@@ -255,7 +255,7 @@ Done:
 - 횟수와 조건을 한꺼번에 보는 반복: [조건부 반복 명령](/Hongs_Blog/studies/assembly-language/conditional-loop-instructions/)
 - 상태마다 글자를 보고 갈라 가는 프로그램: [유한 상태 기계](/Hongs_Blog/studies/assembly-language/asm-finite-state-machine/)
 - 다른 기계의 조건 분기 명령: [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)
-- Java의 `if`와 비교 연산자: [제어문](/Hongs_Blog/studies/software-project/java-control-flow/)
+- Java의 `if`와 비교 연산자: [제어문](/Hongs_Blog/studies/java/java-control-flow/)
 
 ## 자주 하는 오해
 

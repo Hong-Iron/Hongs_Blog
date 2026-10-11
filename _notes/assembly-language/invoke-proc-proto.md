@@ -166,7 +166,7 @@ FillArray ENDP
 
 - 손으로 쓴 `push`·`call`·`[ebp+8]`과 지시어로 쓴 코드는 같은 기계어가 된다. 지시어는 번역할 때 풀려서 사라진다[^s1]. [지시어와 명령어 비교](/Hongs_Blog/studies/assembly-language/directive-vs-instruction/)
 - 지역 변수를 이름으로 쓰게 해 주는 `LOCAL`도 같은 종류다. 매개변수는 `PROC`의 목록으로, 지역 변수는 `LOCAL`로 이름을 붙이면 `[ebp±n]`을 한 번도 직접 쓰지 않고 프로시저를 짤 수 있다. [지역 변수](/Hongs_Blog/studies/assembly-language/local-variables/)
-- Java의 메서드 선언 `int addTwo(int val1, int val2)`와 호출 `addTwo(5, 6)`이 각각 `PROC`의 매개변수목록, `INVOKE`와 같은 자리다[^s1]. [필드와 메서드](/Hongs_Blog/studies/software-project/java-fields-methods/)
+- Java의 메서드 선언 `int addTwo(int val1, int val2)`와 호출 `addTwo(5, 6)`이 각각 `PROC`의 매개변수목록, `INVOKE`와 같은 자리다[^s1]. [필드와 메서드](/Hongs_Blog/studies/java/java-fields-methods/)
 - 흔한 실수.
     - `INVOKE`가 인수를 넣을 때 EAX와 EDX를 임시로 쓸 수 있다. 32비트보다 작은 인수를 넓혀 넣을 때 그렇다. 그 레지스터에 든 값을 다음 인수로 넘기면 덮인 값이 넘어간다[^s2].
     - 매개변수 이름이 붙은 주소를 `OFFSET`으로 구하려 한다. `LEA`나 `ADDR`을 쓴다. [OFFSET과 LEA 비교](/Hongs_Blog/studies/assembly-language/offset-vs-lea/)

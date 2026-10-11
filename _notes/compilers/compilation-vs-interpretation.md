@@ -77,7 +77,7 @@ permalink: "/studies/compilers/compilation-vs-interpretation/"
 <summary class="callout-title" markdown="span">**C3** Java와 파이썬은 둘을 섞는다. 앞쪽에서 컴파일하고 뒤쪽에서 인터프리트한다. 앞쪽과 뒤쪽은 각각 무엇을 얻으려고 있는가?</summary>
 
 **답:** 앞쪽의 컴파일러가 원시 프로그램을 중간 프로그램(바이트코드 등)으로 한 번 옮긴다. 이것은 실행 시간을 줄이려는 것이다. 뒤쪽의 인터프리터가 중간 프로그램과 입력을 받아 실행한다. 이것은 여러 기계에서 그대로 돌게 하려는 것이다[^3].<br>
-**이유:** 글자를 끊고 문법을 검사하는 무거운 일은 앞에서 한 번만 한다. 기계마다 다른 부분은 뒤의 인터프리터가 떠안는다. 이런 방식을 하이브리드 컴파일러라 부른다. Java에서 이 인터프리터가 [JVM](/Hongs_Blog/studies/software-project/jvm-bytecode/)이다.
+**이유:** 글자를 끊고 문법을 검사하는 무거운 일은 앞에서 한 번만 한다. 기계마다 다른 부분은 뒤의 인터프리터가 떠안는다. 이런 방식을 하이브리드 컴파일러라 부른다. Java에서 이 인터프리터가 [JVM](/Hongs_Blog/studies/java/jvm-bytecode/)이다.
 
 </details>
 

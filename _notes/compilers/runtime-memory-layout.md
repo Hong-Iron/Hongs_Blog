@@ -118,7 +118,7 @@ int main() {
 
 - 선수: [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)(스택에 쌓이는 것), [데이터 정렬과 패딩](/Hongs_Blog/studies/compilers/data-alignment/)(한 구역 안에서 변수가 놓이는 번지)
 - 스택에 넣고 빼는 기계 명령과 꼭대기 번지가 줄어드는 모습: [런타임 스택과 PUSH·POP](/Hongs_Blog/studies/assembly-language/runtime-stack/)
-- Java 가상 기계가 나눈 세 영역(메서드, 힙, 스택)과 견주기: [참조 타입과 메모리 영역](/Hongs_Blog/studies/software-project/java-reference-types/). Java에서는 `free` 대신 가상 기계가 안 쓰는 객체를 치운다.
+- Java 가상 기계가 나눈 세 영역(메서드, 힙, 스택)과 견주기: [참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/). Java에서는 `free` 대신 가상 기계가 안 쓰는 객체를 치운다.
 - 운영체제가 프로세스 하나에 주는 메모리의 모습: [프로세스 제어 블록](/Hongs_Blog/studies/operating-systems/process-control-block/)
 
 ## 확인 문제
