@@ -918,6 +918,53 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
   color: var(--ink-muted);
 }
 
+/* a longer piece of the About page: a title, a lead-in line, a short list */
+.about-section {
+  margin-top: 2.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.about-section__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.about-section__lede,
+.about-section__note {
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+.about-list {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+
+.about-list li {
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--rule);
+  color: var(--ink-muted);
+}
+
+.about-list li + li {
+  margin-top: 0.85rem;
+}
+
+.about-list strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.about-section__note {
+  margin-top: 1.3rem;
+}
+
 @media (max-width: 560px) {
   .about-hero {
     grid-template-columns: 1fr;
