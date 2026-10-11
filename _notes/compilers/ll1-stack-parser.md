@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["LL(1) Parser", "LL(1) 파서", "표 구동 파서", "Table-driven Parser", "예측 파서의 구현", "Nonrecursive Predictive Parser", "파싱 스택"]

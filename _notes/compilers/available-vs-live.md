@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Available Expressions vs Live Variables", "전방 분석과 후방 분석", "Forward Analysis", "Backward Analysis", "데이터 흐름 분석", "Data-flow Analysis"]

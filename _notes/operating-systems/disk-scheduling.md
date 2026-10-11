@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Disk Scheduling", "탐색 시간", "Seek Time", "회전 지연", "Rotational Delay", "전송 시간", "Transfer Time", "접근 시간", "Access Time", "SSTF", "Shortest Service Time First", "SCAN", "엘리베이터 알고리즘", "Elevator Algorithm", "C-SCAN", "LOOK", "C-LOOK", "N-step-SCAN", "FSCAN"]

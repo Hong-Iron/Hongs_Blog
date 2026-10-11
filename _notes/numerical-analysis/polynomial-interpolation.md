@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Polynomial Interpolation", "보간", "Interpolation", "외삽", "Extrapolation", "선형 보간", "Linear Interpolation", "2차 보간", "Quadratic Interpolation", "라그랑주 보간", "Lagrange Interpolation", "라그랑주 기저 함수", "Lagrange Basis Function"]

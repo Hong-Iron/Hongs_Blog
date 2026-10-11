@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Scope", "유효 범위", "식별자의 스코프", "정적 스코프", "Static Scope", "Lexical Scope", "동적 스코프", "Dynamic Scope", "가장 가까운 안쪽 스코프 규칙", "Most-Closely Nested Scope Rule"]

@@ -9,6 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["String Similarity", "토큰 기반 유사도", "Token-based Similarity", "문자 기반 유사도", "Character-based Similarity", "겹침 유사도", "Overlap Similarity", "자카드 유사도", "Jaccard Similarity", "다이스 유사도", "Dice Similarity", "토큰 코사인 유사도", "토큰", "Token"]

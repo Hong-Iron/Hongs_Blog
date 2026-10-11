@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Computer Architecture", "Abstraction Layers", "Levels of Abstraction", "추상화", "Abstraction", "하드웨어·소프트웨어 인터페이스", "Hardware/Software Interface", "컴퓨터의 다섯 구성 요소", "구조와 구현", "Architecture vs Implementation"]

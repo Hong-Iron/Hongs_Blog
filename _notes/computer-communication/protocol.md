@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Protocol", "통신 규약", "프로토콜 개체", "protocol object", "프로토콜 계층", "서비스 인터페이스", "service interface", "동료 인터페이스", "peer-to-peer interface", "동료", "peer"]

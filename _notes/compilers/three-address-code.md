@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Three Address Code", "TAC", "Three-address Code", "3-주소 코드", "중간 코드", "Intermediate Code", "중간 표현", "Intermediate Representation", "IR", "임시 변수", "Temporary Variable", "중간 코드 생성기", "Intermediate Code Generator"]

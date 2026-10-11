@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Rotation around an Arbitrary Axis", "3차원 회전", "3D Rotation", "축 회전", "로드리게스 회전 공식", "Rodrigues' Rotation Formula", "기본 회전", "Elemental Rotation"]

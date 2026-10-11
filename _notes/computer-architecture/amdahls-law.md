@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Amdahl's Law", "암달", "속도 향상", "Speedup", "자주 생기는 경우를 빠르게", "Make the Common Case Fast"]

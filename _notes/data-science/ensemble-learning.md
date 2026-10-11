@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Ensemble Learning", "앙상블", "Ensemble", "약한 모델", "Weak Learner", "기본 모델", "Base Model", "투표", "Voting", "평균", "Averaging", "편향-분산 분해", "Bias-Variance Decomposition", "분산 감소"]

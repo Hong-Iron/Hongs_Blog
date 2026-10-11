@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Classification Metrics", "혼동 행렬", "Confusion Matrix", "정확도", "Accuracy", "정밀도", "Precision", "재현율", "Recall", "민감도", "Sensitivity", "F1 점수", "F1 Score", "참 양성", "TP", "거짓 양성", "FP", "제1종 오류", "거짓 음성", "FN", "제2종 오류", "참 음성", "TN"]

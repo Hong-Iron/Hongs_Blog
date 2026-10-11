@@ -9,6 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Histogram Density Estimation", "히스토그램", "Histogram", "도수 분포표", "Frequency Table", "확률 밀도 추정", "Density Estimation", "비모수 밀도 추정", "Nonparametric Density Estimation", "인스턴트 확률", "칸 폭", "Bin Width"]

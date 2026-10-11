@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Curse of Dimensionality", "고차원 자료", "High-dimensional Data", "거리 집중", "Distance Concentration", "희소성", "Sparsity"]

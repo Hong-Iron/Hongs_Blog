@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["DBSCAN", "Density-Based Spatial Clustering of Applications with Noise", "밀도 기반 군집화", "Density-based Clustering", "Eps", "MinPts", "핵심점", "Core Point", "경계점", "Border Point", "잡음점", "Noise Point", "직접 밀도 도달", "Directly Density-reachable", "밀도 도달", "Density-reachable", "밀도 연결", "Density-connected"]

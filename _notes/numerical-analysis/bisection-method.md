@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Bisection Method", "구간 반분법", "구간법", "Bracketing Method", "증분 탐색", "Incremental Search", "근 찾기", "Root Finding", "상대 오차", "Relative Approximate Error"]

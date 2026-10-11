@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Activation Record", "활성 레코드", "활성화 레코드", "Stack Frame", "스택 프레임", "Control Link", "제어 링크", "Return Address", "반환 주소", "복귀 주소", "Saved Machine Status", "저장된 기계 상태"]

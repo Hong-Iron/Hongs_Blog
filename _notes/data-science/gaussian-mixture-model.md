@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Gaussian Mixture Model", "GMM", "가우시안 혼합 모델", "혼합 계수", "Mixing Coefficient", "부드러운 배정", "Soft Assignment", "확률적 군집화", "Probabilistic Clustering", "생성 모델", "Generative Model", "책임도", "Responsibility"]

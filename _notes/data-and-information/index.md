@@ -6,6 +6,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 concepts: 17
 practices: 2
 codes: 18

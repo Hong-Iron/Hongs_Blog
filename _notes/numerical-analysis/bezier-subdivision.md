@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Subdivision of Bezier Curves", "세분화", "Subdivision", "곡선 렌더링", "Rendering Curves", "평평함 판정", "Flatness Test", "곡면 세분화", "Subdivision of Surfaces", "기저 변환 행렬"]

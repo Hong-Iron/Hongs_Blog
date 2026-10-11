@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["CLIQUE", "CLustering In QUEst", "격자 기반 군집화", "Grid-based Clustering", "부분공간 군집화", "Subspace Clustering", "밀집 단위", "Dense Unit", "차원의 저주", "Curse of Dimensionality"]

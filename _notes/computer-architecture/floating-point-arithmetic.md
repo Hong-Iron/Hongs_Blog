@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Floating-Point Arithmetic", "부동소수점 덧셈", "Floating-Point Addition", "부동소수점 곱셈", "Floating-Point Multiplication", "지수 맞추기", "Alignment", "정규화", "Normalization", "반올림", "Rounding", "가까운 짝수로 반올림", "Round to Nearest Even", "보호 비트", "Guard Bit", "add.s", "mul.s", "lwc1", "swc1"]

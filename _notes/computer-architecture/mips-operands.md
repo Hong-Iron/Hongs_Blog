@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Operands", "MIPS 레지스터", "MIPS Registers", "$zero", "$t0", "$s0", "lw", "sw", "load word", "store word", "워드", "Word", "바이트 주소", "Byte Addressing", "워드 정렬", "Alignment", "빅 엔디언", "Big-Endian", "엔디언", "Endianness", "베이스 레지스터", "오프셋"]

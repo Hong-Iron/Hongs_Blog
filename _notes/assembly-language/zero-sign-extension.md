@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Zero Extension", "Sign Extension", "제로 확장", "부호 확장", "MOVZX", "MOVSX", "MOVZX 명령", "MOVSX 명령", "부호 비트", "Sign Bit"]

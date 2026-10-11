@@ -9,6 +9,7 @@ course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Control Flow Statement", "Control Statement", "조건문", "Conditional Statement", "반복문", "Loop", "if", "if-else", "switch", "case", "default", "for", "while", "do-while", "break", "continue", "fall-through"]

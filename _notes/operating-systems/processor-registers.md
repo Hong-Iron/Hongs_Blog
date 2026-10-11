@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Processor Registers", "레지스터", "프로그램 카운터", "명령어 레지스터", "PSW", "조건 코드", "Program Counter", "Instruction Register", "Program Status Word", "Condition Codes", "Flags"]

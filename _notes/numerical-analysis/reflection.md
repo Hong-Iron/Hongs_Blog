@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Reflection and Inversion", "반사", "Reflection", "대칭 이동", "반전", "Inversion", "점대칭", "거울 변환"]

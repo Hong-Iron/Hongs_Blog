@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["User Mode", "Kernel Mode", "시스템 모드", "System Mode", "특권 명령어", "Privileged Instructions", "메모리 보호", "Memory Protection", "타이머", "Timer", "모드 전환", "Mode Switch"]

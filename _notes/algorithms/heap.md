@@ -9,6 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Heap", "Priority Queue", "Binary Heap", "힙", "우선순위 큐", "최소 힙", "최대 힙", "heapq", "heappush", "heappop", "heapify"]

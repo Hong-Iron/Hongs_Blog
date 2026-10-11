@@ -9,6 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Discrete-Time Fourier Series", "DTFS", "이산 푸리에 급수", "이산 시간 푸리에 계수", "Discrete-Time Fourier Coefficients", "유한 급수", "Finite Series"]

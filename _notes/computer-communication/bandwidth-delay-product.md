@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Bandwidth-Delay Product", "BDP", "대역폭 지연 곱", "링크의 부피", "파이프", "pipe"]

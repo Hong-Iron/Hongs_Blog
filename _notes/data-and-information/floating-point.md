@@ -9,6 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Floating Point", "IEEE 754", "고정소수점", "Fixed Point", "단정도", "Single Precision", "배정도", "Double Precision", "float", "double", "지수", "Exponent", "가수", "Significand", "정밀도", "Precision", "표현 범위"]

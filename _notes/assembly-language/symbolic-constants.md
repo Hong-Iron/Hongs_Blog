@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Symbolic Constant", "기호 상수", "등호 지시어", "Equal-Sign Directive", "EQU", "EQU 지시어", "TEXTEQU", "위치 카운터", "현재 위치 카운터", "Current Location Counter", "배열 크기 계산"]

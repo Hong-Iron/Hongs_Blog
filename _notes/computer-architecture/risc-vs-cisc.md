@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["RISC vs CISC", "RISC", "Reduced Instruction Set Computer", "CISC", "Complex Instruction Set Computer", "적재-저장 구조", "Load-Store Architecture", "고정 길이 명령", "가변 길이 명령"]

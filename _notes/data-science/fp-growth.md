@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["FP-Growth", "Frequent Pattern Growth", "빈발 패턴 성장", "FP-tree", "FP 트리", "조건부 패턴 베이스", "Conditional Pattern Base", "조건부 FP 트리", "Conditional FP-tree", "헤더 테이블", "Header Table", "패턴 성장"]

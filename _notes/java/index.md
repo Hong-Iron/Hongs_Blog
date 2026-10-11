@@ -6,6 +6,7 @@ course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 concepts: 39
 practices: 0
 codes: 37

@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Structure of Compilers", "Compiler", "컴파일러", "언어 처리기", "Language Processor", "분석부", "Analysis Part", "합성부", "Synthesis Part", "프런트엔드", "백엔드", "어휘 분석기", "Lexical Analyzer", "Scanner", "구문 분석기", "Syntax Analyzer", "Parser", "의미 분석기", "Semantic Analyzer", "중간 코드 생성기", "Intermediate Code Generator", "코드 최적화기", "Code Optimizer", "코드 생성기", "Code Generator", "전처리기", "Preprocessor", "링커", "Linker"]

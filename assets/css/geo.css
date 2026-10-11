@@ -536,6 +536,29 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   border-top: 1px solid var(--rule);
 }
 
+/* a sub-group of courses inside a category */
+.study-sub__title {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 2.5rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.study-sub__title::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--rule);
+}
+
+.study-track__title + .study-sub__title {
+  margin-top: 1.5rem;
+}
+
 .course-row {
   scroll-margin-top: 1.25rem;
 }
@@ -570,8 +593,8 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
      and the gaps, so the whole list is on screen at once on a laptop and
      breathes on a tall monitor. --parts and --rows come from studies.html:
      the text takes --fixed, and the gaps add up to --slots units. */
-  --fixed: calc(5.8rem + (var(--parts, 4) + var(--rows, 18)) * 1.3rem);
-  --slots: calc(7 * var(--parts, 4) + 2 * var(--rows, 18) - 2);
+  --fixed: calc(5.8rem + (var(--parts, 4) + var(--rows, 18)) * 1.3rem + var(--subs, 0) * 1.15rem);
+  --slots: calc(7 * var(--parts, 4) + 2 * var(--rows, 18) - 2 + 1.5 * var(--subs, 0));
   --u: clamp(0.06rem, calc((100vh - var(--fixed)) / var(--slots)), 0.5rem);
   padding: 1.25rem 1rem 0.75rem clamp(1.25rem, 2.4vw, 2.5rem);
   overflow-y: auto;
@@ -662,6 +685,26 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 /* courses line up under the part name, each with its own colour */
 .study-toc .study-toc__chapters {
   margin: var(--u) 0 0 1.85rem;
+}
+
+/* a sub-group inside a part: a small label with a hairline running on */
+.study-toc__sub {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: calc(1.5 * var(--u));
+  padding: 0 0 0 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.15rem;
+  color: var(--ink-muted);
+}
+
+.study-toc__sub::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 13%, transparent);
 }
 
 .study-toc__link {
@@ -793,6 +836,16 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
     margin: 0;
     padding: 0;
     border: 0;
+  }
+
+  .study-toc__sub {
+    margin: 0 0.1rem 0 0.55rem;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  .study-toc__sub::after {
+    display: none;
   }
 
   .study-toc__link {

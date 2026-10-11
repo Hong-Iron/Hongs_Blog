@@ -9,6 +9,7 @@ course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["try-catch-finally", "예외 처리", "Exception Handling", "try 블록", "catch 블록", "finally 블록", "다중 catch", "Multiple Catch Blocks", "getMessage", "printStackTrace"]

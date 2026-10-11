@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Lift", "향상도", "흥미도 측정", "Interestingness Measure", "패턴 평가", "Pattern Evaluation", "상관 규칙", "Correlation Rule", "지지도-신뢰도 틀의 한계"]

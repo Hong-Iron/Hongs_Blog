@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Recommender Evaluation Metrics", "MAE", "MSE", "RMSE", "Precision@K", "Recall@K", "HR@K", "Hit Ratio", "MR", "Mean Rank", "MRR", "Mean Reciprocal Rank", "nDCG", "Normalized Discounted Cumulative Gain", "DCG", "IDCG"]

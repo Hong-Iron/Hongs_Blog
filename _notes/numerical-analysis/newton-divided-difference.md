@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Newton Polynomial", "Newton Interpolation", "뉴턴 보간", "분할 차분", "Divided Difference", "분할 차분표", "Divided Difference Table", "중첩 곱셈", "Nested Multiplication"]

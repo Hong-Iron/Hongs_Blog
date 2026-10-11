@@ -9,6 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Code", "Encoding", "부호", "코드", "부호화", "인코딩", "복호화", "Decoding", "디코딩", "코덱", "Codec", "문자 부호", "ASCII", "유니코드", "Unicode", "UTF-8", "UTF-16", "부호어", "Codeword", "블록 부호", "Block Code", "부호 비율", "Code Rate", "부호 이론", "Coding Theory"]

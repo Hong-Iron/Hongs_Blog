@@ -9,6 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Distance and Similarity", "거리", "Distance", "유사도", "Similarity", "거리 함수", "거리 척도", "Metric", "거리의 조건", "삼각부등식", "Triangle Inequality", "대소 비교", "코사인 거리", "Cosine Distance"]

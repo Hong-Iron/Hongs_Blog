@@ -9,6 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-02"
 status: "verified"
 aliases: ["Bit Operations", "Bitmask", "비트 연산", "비트마스크", "AND", "OR", "XOR", "시프트", "shift", "부분집합"]

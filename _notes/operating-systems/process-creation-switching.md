@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Process Creation", "Process Termination", "Process Switching", "프로세스 생성", "프로세스 종료", "프로세스 전환", "문맥 교환", "Context Switch", "모드 전환", "Mode Switch", "트랩", "Trap", "시스템 호출", "Supervisor Call"]

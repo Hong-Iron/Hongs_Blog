@@ -9,6 +9,7 @@ course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Generics", "Generic", "제네릭 타입", "Generic Type", "제네릭 메서드", "Generic Method", "타입 파라미터", "Type Parameter", "타입 매개변수"]

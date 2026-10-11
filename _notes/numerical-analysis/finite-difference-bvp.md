@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Finite-Difference Method", "유한 차분", "Finite Difference", "중심 차분", "Centered Difference", "삼중대각 행렬", "Tridiagonal Matrix", "토마스 알고리즘", "Thomas Algorithm"]

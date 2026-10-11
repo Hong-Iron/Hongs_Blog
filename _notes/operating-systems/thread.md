@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Thread", "경량 프로세스", "Lightweight Process", "다중 스레딩", "Multithreading", "스레드 상태", "Thread States"]

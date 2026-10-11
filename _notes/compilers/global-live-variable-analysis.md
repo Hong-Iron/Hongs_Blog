@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Global Live Variable Analysis", "전역 생존 변수 분석", "Global Dead Code Elimination", "전역 죽은 코드 제거", "전역 최적화", "Global Optimization", "고정점 반복", "Fixed-point Iteration", "생존 변수", "Live Variable"]

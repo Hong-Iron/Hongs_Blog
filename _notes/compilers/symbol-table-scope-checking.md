@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Symbol Table", "심벌 테이블", "기호표", "Scope Checking", "스코프 검사", "다중 패스 스코프 검사", "Multi-pass Scope Checking", "스코프별 심벌 테이블"]

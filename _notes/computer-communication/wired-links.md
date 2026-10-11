@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Wired Links", "유선 링크의 종류", "트위스티드 페어", "twisted pair", "UTP", "Cat 5", "동축 케이블", "coax", "coaxial cable", "광케이블", "optical fiber", "멀티모드", "multimode", "싱글모드", "single-mode", "굴절률", "index of refraction", "코어", "core", "클래딩", "cladding", "전반사", "전용선", "leased line", "T1", "T3", "STS", "SONET", "ISDN"]

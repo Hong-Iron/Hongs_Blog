@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Golden Ratio Search", "Golden Section Search", "황금비 탐색", "구간 탐색", "Bracketing Search", "단봉 함수", "Unimodal Function", "황금비", "Golden Ratio"]

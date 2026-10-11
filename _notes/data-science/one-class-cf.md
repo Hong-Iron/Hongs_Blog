@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["One-Class Collaborative Filtering", "OCCF", "암묵적 피드백", "Implicit Feedback", "WRMF", "Weighted Regularized Matrix Factorization", "가중 정칙화 행렬 분해", "BPR", "Bayesian Personalized Ranking", "쌍별 학습", "Pair-wise Training", "점별 학습", "Point-wise Training"]

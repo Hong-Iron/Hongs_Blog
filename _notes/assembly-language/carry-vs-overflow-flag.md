@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Carry Flag vs Overflow Flag", "CF vs OF", "CF와 OF 비교", "캐리와 오버플로 비교"]

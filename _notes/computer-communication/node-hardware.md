@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Node", "노드의 실체", "하드웨어 구성요소", "단말", "terminal", "호스트", "host", "네트워크 어댑터", "network adaptor", "NIC", "Network Interface Card", "병목", "bottleneck"]

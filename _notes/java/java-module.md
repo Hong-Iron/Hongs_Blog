@@ -9,6 +9,7 @@ course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Module", "Java Module", "모듈 기술자", "Module Descriptor", "module-info.java", "requires", "exports", "패키지 은닉", "Package Encapsulation", "전이 의존", "Transitive Dependency", "requires transitive", "집합 모듈", "Aggregate Module", "리플렉션", "Reflection", "opens", "java.base", "API 문서", "API Document", "JFC", "AWT", "Swing"]

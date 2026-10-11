@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Principle of Locality", "Locality of Reference", "참조 지역성", "시간 지역성", "Temporal Locality", "공간 지역성", "Spatial Locality"]

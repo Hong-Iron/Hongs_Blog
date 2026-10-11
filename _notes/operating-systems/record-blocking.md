@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Record Blocking", "고정 블로킹", "Fixed Blocking", "가변 길이 걸침 블로킹", "Variable-Length Spanned Blocking", "가변 길이 비걸침 블로킹", "Variable-Length Unspanned Blocking", "블로킹 인수", "Blocking Factor"]

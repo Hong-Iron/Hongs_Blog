@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Global Available Expression Analysis", "전역 사용 가능한 식 분석", "Global Copy Propagation", "전역 복사 전파", "Global Common Subexpression Elimination", "전역 공통 부분식 제거", "Global Constant Propagation", "전역 상수 전파", "Code Motion", "코드 이동"]

@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Cache Memory", "캐시", "지역성", "Principle of Locality", "LRU", "Least Recently Used", "교체 알고리즘", "쓰기 정책", "Write Policy"]

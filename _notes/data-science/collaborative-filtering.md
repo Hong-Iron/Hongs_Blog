@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Collaborative Filtering", "CF", "사용자 기반 협업 필터링", "User-based CF", "아이템 기반 협업 필터링", "Item-based CF", "이웃", "Neighbors", "평점 행렬", "Rating Matrix", "희소성", "Sparsity"]

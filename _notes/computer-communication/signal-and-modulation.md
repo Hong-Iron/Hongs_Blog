@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Modulation", "변조", "모듈레이션", "복조", "demodulation", "모뎀", "modem", "신호", "signal", "신호화", "인코딩", "encoding", "전자기 스펙트럼", "electromagnetic spectrum", "아날로그 신호", "analog signal", "디지털 신호", "digital signal"]

@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Content-based vs Collaborative Filtering", "내용 기반 대 협업 필터링", "하이브리드 추천", "Hybrid Recommendation", "내용을 통한 협업", "Collaboration via Content"]

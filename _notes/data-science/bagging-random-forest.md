@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Bagging", "Bootstrap Aggregating", "부트스트랩 집계", "부트스트랩", "Bootstrap", "랜덤 포레스트", "Random Forest", "속성 뽑기", "Feature Subsampling", "다수결 투표", "Majority Voting", "OOB", "Out-of-Bag"]

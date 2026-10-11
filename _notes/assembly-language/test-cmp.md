@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["TEST 명령", "CMP 명령", "TEST Instruction", "CMP Instruction", "비교 명령", "Comparison Instructions", "비파괴 연산", "Nondestructive"]

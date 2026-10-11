@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Continuity of Curves", "매개변수 연속성", "Parametric Continuity", "기하 연속성", "Geometric Continuity", "C0", "C1", "C2", "G1", "이음점", "Join Point"]

@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["LL vs LR", "Top-down vs Bottom-up Parsing", "하향식 파싱과 상향식 파싱", "LL(1)과 SLR 비교"]

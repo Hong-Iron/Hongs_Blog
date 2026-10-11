@@ -9,6 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["k-Nearest Neighbor Density Estimation", "kn-이웃 찾기", "k-이웃 찾기", "kn-nearest neighbor", "k-NN 밀도 추정", "k-최근접 이웃", "k-Nearest Neighbors", "최근접 이웃 규칙", "Nearest Neighbor Rule"]

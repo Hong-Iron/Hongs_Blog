@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Live Variable Analysis", "Liveness Analysis", "Live Variable", "생존 변수", "살아 있는 변수", "활성 변수", "죽은 코드 제거", "Dead Code Elimination", "후방 분석", "Backward Analysis"]

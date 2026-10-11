@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Quaternion", "사원수", "해밀턴 곱", "Hamilton Product", "단위 쿼터니언", "Unit Quaternion", "켤레 쿼터니언", "Quaternion Conjugate"]

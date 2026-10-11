@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MS-DOS File I/O Services", "함수 716Ch", "함수 7305h", "파일 핸들", "File Handle", "DISKIO", "절대 디스크 읽기", "Absolute Disk Read", "Create Subdirectory", "Remove Subdirectory"]

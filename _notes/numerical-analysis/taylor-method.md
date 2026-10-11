@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Taylor Series Method", "테일러 방법", "상미분방정식", "Ordinary Differential Equation", "국소 절단 오차", "Local Truncation Error", "전역 오차", "Global Error"]

@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Assembly", "MIPS 어셈블리", "MIPS", "레지스터", "Register", "스택 포인터", "Stack Pointer", "$sp", "$ra", "lw", "sw", "li", "addi", "subi", "slt", "slti", "beq", "beqz", "bnez", "즉시값", "Immediate", "코드 생성기", "Code Generator"]

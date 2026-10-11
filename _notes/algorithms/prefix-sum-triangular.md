@@ -9,6 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Prefix Sums as Matrices", "합 행렬", "sum matrix", "차분 행렬", "difference matrix", "누적 합의 행렬 표현", "2차원 차분과 바깥곱"]

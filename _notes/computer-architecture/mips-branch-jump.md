@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Branch and Jump", "beq", "bne", "j", "조건 분기", "Conditional Branch", "무조건 점프", "Unconditional Jump", "라벨", "Label", "blt", "bge", "의사 명령", "Pseudoinstruction", "if 옮기기", "while 옮기기"]

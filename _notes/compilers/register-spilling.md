@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Spilling", "Register Spilling", "스필링", "스필", "Spill", "레지스터 스필", "스필 후보", "Spill Candidate", "load", "store"]

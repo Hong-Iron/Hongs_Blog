@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["ECLAT", "Equivalence Class Transformation", "수직 데이터 형식", "Vertical Data Format", "수평 데이터 형식", "Horizontal Data Format", "TID 목록", "TID-list", "거래 번호 목록"]

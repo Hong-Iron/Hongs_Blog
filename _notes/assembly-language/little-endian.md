@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Little Endian", "Little Endian Order", "리틀 엔디언 순서", "바이트 순서", "Byte Order", "빅 엔디언", "Big Endian", "최하위 바이트", "Least Significant Byte"]

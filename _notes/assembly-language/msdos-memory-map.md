@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MS-DOS Memory Map", "MS-DOS Memory Organization", "메모리 맵", "BIOS 데이터 영역", "BIOS Data Area", "VRAM", "640K", "Transient Program Area", "ROM BIOS"]

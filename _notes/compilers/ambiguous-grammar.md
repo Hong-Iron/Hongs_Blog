@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Ambiguous Grammar", "Ambiguity", "모호성", "문법의 모호함", "Dangling Else", "매달린 else", "Disambiguating Rule", "모호함 해소 규칙", "연산자 우선순위", "Operator Precedence"]

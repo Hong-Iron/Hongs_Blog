@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Single-Cycle Datapath", "단일 사이클 구현", "Single-Cycle Implementation", "단일 사이클 프로세서", "분기 목표 주소", "Branch Target Address"]

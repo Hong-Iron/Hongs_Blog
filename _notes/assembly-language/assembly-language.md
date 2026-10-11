@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Assembly Language", "어셈블리 언어", "기계어", "Machine Language", "어셈블러", "Assembler", "니모닉", "Mnemonic", "일대일 대응", "이식성", "Portability"]

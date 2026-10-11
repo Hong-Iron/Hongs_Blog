@@ -9,6 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Convolution Integral", "컨볼루션 적분", "중첩 적분", "Superposition Integral", "연속 시간 LTI 시스템", "Continuous-Time LTI System", "계단 근사", "Staircase Approximation"]

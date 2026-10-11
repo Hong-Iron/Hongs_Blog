@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["CPU Time Equation", "CPU Performance Equation", "성능 방정식", "Iron Law of Performance", "명령어 수", "Instruction Count", "CPI", "Cycles Per Instruction", "명령어당 사이클 수", "클록 주기", "Clock Cycle Time", "Clock Period", "클록 속도", "Clock Rate", "평균 CPI", "MIPS 값", "Million Instructions Per Second"]

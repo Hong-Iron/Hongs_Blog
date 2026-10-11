@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Recommender System", "추천 시스템", "정보 과부하", "Information Overload", "내용 정보", "Content Information", "협업 정보", "Collaborative Information", "다양성", "Diversity", "공정성", "Fairness", "설명 가능성", "Explainability"]

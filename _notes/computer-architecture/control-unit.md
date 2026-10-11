@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Control Unit", "제어 유닛", "제어 신호", "Control Signals", "주 제어", "Main Control", "ALU 제어", "ALU Control", "RegDst", "ALUSrc", "MemtoReg", "RegWrite", "MemRead", "MemWrite", "Branch", "ALUOp", "PCSrc", "돈 케어", "Don't Care"]

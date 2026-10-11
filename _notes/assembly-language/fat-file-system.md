@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Cluster", "File Allocation Table", "FAT", "파일 할당 표", "클러스터 사슬", "Cluster Chain", "FAT-12", "FAT-16", "FAT-32", "섹터", "Sector"]

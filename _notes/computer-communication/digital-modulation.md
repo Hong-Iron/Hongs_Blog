@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Amplitude Modulation", "Frequency Modulation", "Phase Modulation", "AM", "FM", "PM", "ASK", "FSK", "PSK", "진폭 변조", "주파수 변조", "위상 변조", "반송파", "Carrier", "심볼", "Symbol", "QAM", "Quadrature Amplitude Modulation"]

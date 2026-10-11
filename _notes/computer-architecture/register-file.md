@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Register File", "레지스터", "Register", "읽기 포트", "Read Port", "쓰기 포트", "Write Port", "RegWrite", "쓰기 허용 신호", "Write Enable", "SRAM", "DRAM", "정적 램", "동적 램", "리프레시", "Refresh"]

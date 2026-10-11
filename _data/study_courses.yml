@@ -3,6 +3,7 @@
 - track: "수학"
   courses:
     - name: "대학수학"
+      sub: ""
       slug: "college-math"
       url: "/studies/college-math/"
       concepts: 21
@@ -11,6 +12,7 @@
       heavy: 5
       units: "함수 · 지수와 로그 · 삼각함수 · 평면과 복소수 …"
     - name: "이산수학"
+      sub: ""
       slug: "discrete-math"
       url: "/studies/discrete-math/"
       concepts: 36
@@ -19,6 +21,7 @@
       heavy: 13
       units: "논리와 증명 · 집합, 함수, 관계 · 귀납과 재귀 · 셈 …"
     - name: "미분적분학"
+      sub: ""
       slug: "calculus"
       url: "/studies/calculus/"
       concepts: 31
@@ -27,6 +30,7 @@
       heavy: 10
       units: "극한과 연속 · 미분 · 적분 · 급수 …"
     - name: "선형대수학"
+      sub: ""
       slug: "linear-algebra"
       url: "/studies/linear-algebra/"
       concepts: 28
@@ -35,6 +39,7 @@
       heavy: 13
       units: "벡터 · 행렬과 연립방정식 · 벡터공간과 선형변환 · 직교성 …"
     - name: "확률과 통계"
+      sub: ""
       slug: "probability-statistics"
       url: "/studies/probability-statistics/"
       concepts: 38
@@ -45,6 +50,7 @@
 - track: "데이터와 계산"
   courses:
     - name: "자료와 정보"
+      sub: "데이터"
       slug: "data-and-information"
       url: "/studies/data-and-information/"
       concepts: 17
@@ -53,6 +59,7 @@
       heavy: 2
       units: "데이터와 메타데이터 · 부호 · 유사도와 거리 · 군집화 …"
     - name: "데이터 과학"
+      sub: "데이터"
       slug: "data-science"
       url: "/studies/data-science/"
       concepts: 46
@@ -61,6 +68,7 @@
       heavy: 5
       units: "데이터, 측정, 전처리 · 빈발 패턴 · 앙상블 · 군집화 기초와 밀도 기반 군집화 …"
     - name: "신호 및 시스템"
+      sub: "신호와 수치 계산"
       slug: "signals-and-systems"
       url: "/studies/signals-and-systems/"
       concepts: 44
@@ -69,6 +77,7 @@
       heavy: 20
       units: "복습: 자연상수, 오일러 등식, 미분방정식 · 1장 신호의 종류, 에너지, 시간축 변환 · 1장 지수·정현파 신호, 임펄스와 계단 · 1장 시스템과 시스템의 성질 …"
     - name: "수치해석"
+      sub: "신호와 수치 계산"
       slug: "numerical-analysis"
       url: "/studies/numerical-analysis/"
       concepts: 37
@@ -79,6 +88,7 @@
 - track: "컴퓨터 과학"
   courses:
     - name: "자바 프로그래밍"
+      sub: "소프트웨어"
       slug: "java"
       url: "/studies/java/"
       concepts: 39
@@ -87,6 +97,7 @@
       heavy: 10
       units: "Java 기초 (1): 실행 과정, 변수, 타입 변환 · Java 기초 (2): 연산자와 제어문 · 참조 타입 · 객체 지향 프로그래밍 …"
     - name: "알고리즘"
+      sub: "소프트웨어"
       slug: "algorithms"
       url: "/studies/algorithms/"
       concepts: 42
@@ -95,6 +106,7 @@
       heavy: 8
       units: "파이썬으로 문제 풀기 · 구현의 기본기 · 기본 자료구조 · 탐색 기법 …"
     - name: "컴파일러"
+      sub: "소프트웨어"
       slug: "compilers"
       url: "/studies/compilers/"
       concepts: 56
@@ -103,6 +115,7 @@
       heavy: 22
       units: "컴파일러 개요: 번역 방식과 여섯 단계 · 어휘 분석 (1): 토큰과 정규 표현식 · 어휘 분석 (2): 유한 오토마타로 토큰 알아보기 · 구문 분석 (1): 문맥 자유 문법과 AST …"
     - name: "어셈블리어"
+      sub: "컴퓨터 시스템"
       slug: "assembly-language"
       url: "/studies/assembly-language/"
       concepts: 56
@@ -111,6 +124,7 @@
       heavy: 7
       units: "어셈블리어 소개와 가상 기계 · 기계 단계, 수와 문자 표현, 불 연산 · x86 프로세서 구조 · 어셈블리 문법, 데이터 정의, 데이터 전송 …"
     - name: "컴퓨터 구조"
+      sub: "컴퓨터 시스템"
       slug: "computer-architecture"
       url: "/studies/computer-architecture/"
       concepts: 44
@@ -119,6 +133,7 @@
       heavy: 11
       units: "성능과 논리 회로 · 명령어 집합과 산술 · 프로세서 · 메모리 계층과 병렬"
     - name: "운영체제"
+      sub: "컴퓨터 시스템"
       slug: "operating-systems"
       url: "/studies/operating-systems/"
       concepts: 68
@@ -127,6 +142,7 @@
       heavy: 17
       units: "컴퓨터 시스템 개요 · 운영체제 개요 · 프로세스 설명과 제어 · 스레드, SMP, 마이크로커널 …"
     - name: "컴퓨터 통신"
+      sub: "컴퓨터 시스템"
       slug: "computer-communication"
       url: "/studies/computer-communication/"
       concepts: 53
@@ -137,6 +153,7 @@
 - track: "사람과 심리"
   courses:
     - name: "휴먼 인터페이스 미디어"
+      sub: ""
       slug: "human-interface-media"
       url: "/studies/human-interface-media/"
       concepts: 31
@@ -145,6 +162,7 @@
       heavy: 4
       units: "사람의 지각 · 사람의 시각 · 파동의 표현 · 이미지의 표현 …"
     - name: "이상 심리학"
+      sub: ""
       slug: "abnormal-psychology"
       url: "/studies/abnormal-psychology/"
       concepts: 172

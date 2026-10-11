@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["SLR Parser with Stack", "LR 파서 구동기", "LR Driver", "상태 스택", "State Stack", "스택 기반 SLR 파서"]

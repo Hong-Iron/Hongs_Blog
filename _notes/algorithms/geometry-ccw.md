@@ -9,6 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Computational Geometry", "CCW", "외적", "Cross Product", "선분 교차", "점 위치 판정"]

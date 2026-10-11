@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Performance", "Execution Time", "응답 시간", "Response Time", "처리량", "Throughput", "상대 성능", "Relative Performance", "경과 시간", "Elapsed Time", "CPU 시간", "CPU Time", "사용자 CPU 시간", "시스템 CPU 시간"]

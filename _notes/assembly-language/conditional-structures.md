@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Conditional Structures", "조건 구조", "IF 문 번역", "Block-Structured IF", "복합 조건식", "Compound Expression", "단락 평가", "Short-Circuit Evaluation", "WHILE 루프 번역", "폴스루", "Fall Through"]

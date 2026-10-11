@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Average Memory Access Time", "AMAT", "평균 메모리 접근 시간", "실패율", "Miss Rate", "적중률", "Hit Rate", "적중 시간", "Hit Time", "실패 손실", "Miss Penalty", "3C", "강제 실패", "Compulsory Miss", "용량 실패", "Capacity Miss", "충돌 실패", "Conflict Miss"]

@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Point-to-Point Link", "점대점 연결", "point-to-point", "완전 연결", "full mesh", "직접 링크", "direct link", "링크의 실체", "전송 모드", "transmission mode", "simplex", "단방향", "반이중", "half-duplex", "전이중", "full-duplex"]

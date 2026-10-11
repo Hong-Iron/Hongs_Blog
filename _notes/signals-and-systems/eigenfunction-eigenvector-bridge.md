@@ -9,6 +9,7 @@ course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Eigenfunctions and Eigenvectors", "고유함수와 고유벡터", "고윳값 분해와 푸리에 해석", "Eigendecomposition and Fourier Analysis"]

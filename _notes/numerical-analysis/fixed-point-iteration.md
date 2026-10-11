@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Fixed-Point Iteration", "단순 고정점 반복", "Simple Fixed-Point Iteration", "고정점", "Fixed Point", "선형 수렴", "Linear Convergence", "연립 비선형 방정식", "System of Nonlinear Equations"]

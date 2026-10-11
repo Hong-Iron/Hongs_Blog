@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Static vs Dynamic Typing", "Statically-typed Language", "Dynamically-typed Language", "정적 타입 언어", "동적 타입 언어", "정적 타이핑", "동적 타이핑"]

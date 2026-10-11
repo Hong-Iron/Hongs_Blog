@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Subset Construction", "Powerset Construction", "멱집합 구성법", "NFA를 DFA로", "NFA to DFA", "엡실론 닫힘", "ε-closure", "epsilon closure", "결정화", "Determinization"]

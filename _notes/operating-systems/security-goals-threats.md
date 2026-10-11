@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-08"
 status: "verified"
 aliases: ["Computer Security", "CIA Triad", "기밀성", "Confidentiality", "무결성", "Integrity", "가용성", "Availability", "진정성", "Authenticity", "책임 추적성", "Accountability", "위협 결과", "Threat Consequences", "무단 공개", "Unauthorized Disclosure", "기만", "Deception", "방해", "Disruption", "강탈", "Usurpation", "자산", "Assets", "침입자", "Intruders", "위장자", "Masquerader", "부정 사용자", "Misfeasor", "은밀한 사용자", "Clandestine User"]

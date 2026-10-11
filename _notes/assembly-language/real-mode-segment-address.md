@@ -9,6 +9,7 @@ course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Segmented Memory", "세그먼트 메모리", "세그먼트 오프셋 주소", "Segment-Offset Address", "선형 주소", "Linear Address", "절대 주소", "Absolute Address", "Calculating Linear Addresses"]

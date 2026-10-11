@@ -9,6 +9,7 @@ course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Circuit Switching", "회선 교환", "서킷 스위칭", "스위칭 정책"]

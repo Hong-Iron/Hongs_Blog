@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Monitor", "조건 변수", "Condition Variable", "cwait", "csignal", "호어 모니터", "Hoare Monitor", "메사 모니터", "Mesa Monitor", "cnotify", "cbroadcast"]

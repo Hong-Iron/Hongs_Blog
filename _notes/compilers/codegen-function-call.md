@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Code Generation for Function Calls", "함수 호출 코드 생성", "호출 시퀀스", "Calling Sequence", "반환 시퀀스", "Return Sequence", "프롤로그", "Prologue", "에필로그", "Epilogue", "jr", "$ra"]

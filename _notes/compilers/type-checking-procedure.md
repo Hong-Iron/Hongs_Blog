@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Type Checking Procedure", "Implementation of Type Checking", "Well-formedness Rules", "WF 규칙", "의미에 맞게 짜인 문장", "Semantically Well-formed Statement", "타입 검사기", "Type Checker"]

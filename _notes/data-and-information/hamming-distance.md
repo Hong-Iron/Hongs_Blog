@@ -9,6 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Hamming Distance", "해밍 거리", "해밍 무게", "Hamming Weight", "해밍 공", "Hamming Ball", "부호 거리", "Code Distance", "최소 거리", "Minimum Distance", "상대 거리", "오류 정정 부호", "Error-correcting Code", "오류 검출", "오류 정정", "지워짐", "Erasure"]

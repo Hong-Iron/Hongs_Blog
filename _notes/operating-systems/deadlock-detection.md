@@ -9,6 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Deadlock Detection", "Deadlock Recovery", "교착상태 탐지", "교착상태 복구", "요청 행렬", "Request Matrix", "체크포인트", "Checkpoint"]

@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Single-Cycle vs Pipelined", "단일 사이클 대 파이프라인", "다중 사이클", "Multicycle", "다중 사이클 구현", "Multicycle Implementation"]

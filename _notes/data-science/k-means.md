@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["K-means", "k-means", "K-평균", "로이드 알고리즘", "Lloyd's Algorithm", "중심 기반 군집화", "Centroid-based Clustering", "군집 중심", "Centroid", "배정 단계", "Assignment Step", "갱신 단계", "Refitting Step", "하드 배정", "Hard Assignment"]

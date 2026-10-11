@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Matrix Factorization for Clustering", "행렬 분해", "Matrix Factorization", "MF", "비음수 행렬 분해", "Non-negative Matrix Factorization", "NMF", "잠재 성분", "Latent Component", "L1 정칙화", "L1 Regularization", "라쏘", "Lasso", "희소성", "부분 기반 표현", "Parts-based Representation"]

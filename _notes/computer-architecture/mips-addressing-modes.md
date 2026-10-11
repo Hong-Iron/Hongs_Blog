@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Addressing Modes", "주소 지정 방식", "Addressing Mode", "즉시 주소 지정", "Immediate Addressing", "레지스터 주소 지정", "Register Addressing", "베이스 주소 지정", "Base Addressing", "변위 주소 지정", "PC 상대 주소 지정", "PC-Relative Addressing", "의사 직접 주소 지정", "Pseudo-Direct Addressing", "분기 주소", "Branch Address", "점프 주소", "Jump Address"]

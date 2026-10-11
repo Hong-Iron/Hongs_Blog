@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Sampling", "데이터 샘플링", "데이터 축소", "Data Reduction", "비복원 추출", "Sampling without Replacement", "복원 추출", "Sampling with Replacement", "층화 추출", "Stratified Sampling", "층", "Stratum"]

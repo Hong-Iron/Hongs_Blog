@@ -9,6 +9,7 @@ course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
+track_sub: "데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Spectral Clustering", "스펙트럼 완화", "Spectral Relaxation", "그래프 라플라시안", "Graph Laplacian", "차수 행렬", "Degree Matrix", "피들러 벡터", "Fiedler Vector", "일반화 고유값 문제", "Generalized Eigenvalue Problem", "재귀 이분할", "Recursive Bi-partitioning"]

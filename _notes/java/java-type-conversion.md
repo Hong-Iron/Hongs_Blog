@@ -9,6 +9,7 @@ course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Type Conversion", "Type Casting", "형 변환", "자동 타입 변환", "Implicit Casting", "Promotion", "Widening Conversion", "강제 타입 변환", "Explicit Casting", "Narrowing Conversion", "캐스팅", "문자열 결합", "String Concatenation", "parseInt", "valueOf"]

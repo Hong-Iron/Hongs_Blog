@@ -9,6 +9,7 @@ course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
+track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Euler Angles", "오일러 각", "짐벌 잠금", "짐벌 락", "Gimbal Lock", "ZXZ", "ZXY", "요 피치 롤", "Yaw Pitch Roll"]

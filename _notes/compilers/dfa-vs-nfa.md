@@ -9,6 +9,7 @@ course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
+track_sub: "소프트웨어"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["DFA vs NFA", "DFA", "Deterministic Finite Automata", "결정적 유한 오토마타", "NFA", "Non-deterministic Finite Automata", "비결정적 유한 오토마타", "결정성", "비결정성"]

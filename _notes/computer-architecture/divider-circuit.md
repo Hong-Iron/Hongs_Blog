@@ -9,6 +9,7 @@ course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
+track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Divider", "Divider Circuit", "복원 나눗셈", "Restoring Division", "순차 나눗셈기", "피제수", "Dividend", "제수", "Divisor", "몫", "Quotient", "나머지", "Remainder", "div", "divu"]
