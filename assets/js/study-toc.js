@@ -1,8 +1,9 @@
 /* Studies table of contents (studies.html).
-   Marks the course whose section is in view, so its entry grows like the
-   current chapter in a book, and scrolls to a course when its entry is
-   clicked. On narrow screens the contents are a horizontal strip, and the
-   active entry is kept in view inside it. */
+   The courses are a grid of tiles, so there is no single course "in view":
+   scrolling marks the part (category) you are in, pointing at a tile marks its
+   entry, and pointing at an entry marks its tile. Clicking an entry scrolls
+   to the tile. On narrow screens the contents are a horizontal strip, and the
+   current part is kept in view inside it. */
 (function () {
   var toc = document.querySelector(".study-toc");
   if (!toc) return;
@@ -27,6 +28,8 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   var strip = window.matchMedia("(max-width: 960px)");
   var current = null;
+  var curPart = null;
+  var pointed = null;     // the tile under the pointer or holding focus
   var pinned = null;      // the clicked entry, held while the page scrolls to it
   var pinTimer = 0;
   var ticking = false;
@@ -46,32 +49,40 @@
     }
   }
 
+  function setPart(part) {
+    if (part === curPart) return;
+    if (curPart) curPart.classList.remove("is-current");
+    curPart = part;
+    if (!part) return;
+    part.classList.add("is-current");
+    if (strip.matches) keepVisible(part.querySelector(".study-toc__part-name") || part);
+  }
+
   function setActive(it) {
     if (it === current) return;
     if (current) {
       current.link.classList.remove("is-active");
       current.link.removeAttribute("aria-current");
-      current.part.classList.remove("is-current");
     }
     current = it;
     if (!it) return;
     it.link.classList.add("is-active");
     it.link.setAttribute("aria-current", "location");
-    it.part.classList.add("is-current");
-    keepVisible(it.link);
+    if (!strip.matches) keepVisible(it.link);
   }
 
   function update() {
     ticking = false;
     if (pinned) return;
-    // the course whose section has crossed 40% of the viewport
+    // the part whose first tiles have crossed 40% of the viewport
     var line = window.innerHeight * 0.4;
     var found = null;
     for (var i = 0; i < items.length; i++) {
       if (items[i].row.getBoundingClientRect().top <= line) found = items[i];
       else break;
     }
-    setActive(found);
+    setPart(found ? found.part : null);
+    setActive(pointed);
   }
 
   function onScroll() {
@@ -87,13 +98,29 @@
     update();
   }
 
+  // show which tile an entry led to, for a moment
+  function flash(row) {
+    row.classList.add("is-pointed");
+    setTimeout(function () { row.classList.remove("is-pointed"); }, 1800);
+  }
+
   items.forEach(function (it) {
+    function enter() { pointed = it; if (!pinned) setActive(it); }
+    function leave() { if (pointed === it) { pointed = null; if (!pinned) setActive(null); } }
+    it.row.addEventListener("pointerenter", enter);
+    it.row.addEventListener("pointerleave", leave);
+    it.row.addEventListener("focus", enter);
+    it.row.addEventListener("blur", leave);
+    it.link.addEventListener("pointerenter", function () { it.row.classList.add("is-pointed"); });
+    it.link.addEventListener("pointerleave", function () { it.row.classList.remove("is-pointed"); });
     it.link.addEventListener("click", function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
       e.preventDefault();
       pinned = it;
+      setPart(it.part);
       setActive(it);
-      it.row.scrollIntoView({ behavior: behavior(), block: "start" });
+      flash(it.row);
+      it.row.scrollIntoView({ behavior: behavior(), block: "center" });
       if (history.replaceState) history.replaceState(null, "", "#" + it.row.id);
       clearTimeout(pinTimer);
       pinTimer = setTimeout(unpin, 1200);

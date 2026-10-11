@@ -1,5 +1,5 @@
 {%- assign c = include.course -%}
-<a class="course-tile reveal" href="{{ c.url | relative_url }}" data-course="{{ c.slug }}">
+<a class="course-tile reveal"{% if include.anchor %} id="{{ c.slug }}"{% endif %} href="{{ c.url | relative_url }}" data-course="{{ c.slug }}">
   <span class="course-tile__art"><canvas data-motif="{{ c.slug }}" aria-hidden="true"></canvas></span>
   <span class="course-tile__body">
     <span class="course-tile__name">{{ c.name }}</span>

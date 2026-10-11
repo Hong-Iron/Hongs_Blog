@@ -990,20 +990,20 @@ eyebrow: "{len(courses)} courses · {total} notes"
   <div class="study-hub">
   {{% for track in site.data.study_courses %}}
     <h2 class="study-track__title" id="part-{{{{ forloop.index }}}}">{{{{ track.track }}}}</h2>
-    {{% assign prev = "" %}}
+    <div class="study-part">
+    {{% assign prev = "" %}}{{% assign grid_open = false %}}
     {{% for c in track.courses %}}
-    {{% if c.sub != "" and c.sub != prev %}}<h3 class="study-sub__title">{{{{ c.sub }}}}</h3>{{% endif %}}{{% assign prev = c.sub %}}
-    <a class="course-row" id="{{{{ c.slug }}}}" href="{{{{ c.url | relative_url }}}}" data-course="{{{{ c.slug }}}}" data-scene="{{{{ c.slug }}}}">
-      <span class="course-row__art"><canvas data-motif="{{{{ c.slug }}}}" aria-hidden="true"></canvas></span>
-      <span class="course-row__text">
-        <span class="course-row__kicker">{{{{ track.track }}}}{{% if c.sub != "" %}} · {{{{ c.sub }}}}{{% endif %}}</span>
-        <span class="course-row__name">{{{{ c.name }}}}</span>
-        {{% if c.units != "" %}}<span class="course-row__units">{{{{ c.units }}}}</span>{{% endif %}}
-        <span class="course-row__meta"><span>개념 <b>{{{{ c.concepts }}}}</b></span><span>연습 <b>{{{{ c.practices }}}}</b></span><span>코드 <b>{{{{ c.codes }}}}</b></span></span>
-        <span class="course-row__go">로드맵 보기 &rarr;</span>
-      </span>
-    </a>
+      {{% if forloop.first or c.sub != prev %}}
+        {{% if grid_open %}}</div></section>{{% endif %}}
+        {{% if c.sub == "" %}}{{% assign n = track.courses.size %}}{{% else %}}{{% assign n = track.courses | where: "sub", c.sub | size %}}{{% endif %}}
+        <section class="study-sub" style="--n: {{{{ n }}}}">
+        {{% if c.sub != "" %}}<h3 class="study-sub__title">{{{{ c.sub }}}}</h3>{{% endif %}}
+        <div class="course-grid study-grid">{{% assign grid_open = true %}}
+      {{% endif %}}{{% assign prev = c.sub %}}
+      {{% include course-tile.html course=c units=true anchor=true %}}
     {{% endfor %}}
+    {{% if grid_open %}}</div></section>{{% endif %}}
+    </div>
   {{% endfor %}}
   </div>
 </div>

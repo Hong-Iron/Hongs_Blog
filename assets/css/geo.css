@@ -424,116 +424,93 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   }
 }
 
-/* -- Studies hub: one section per course ------------------------------------- */
-
-.course-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  align-items: center;
-  min-height: 62vh;
-  padding: 3rem 0;
-  text-decoration: none;
-  color: inherit;
-}
-
-.course-row:nth-of-type(even) .course-row__art {
-  order: 2;
-}
-
-.course-row__art {
-  display: block;
-  aspect-ratio: 16 / 10;
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--course) 6%, var(--card));
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-row:hover .course-row__art,
-.course-row:focus-visible .course-row__art {
-  transform: translateY(-4px) rotate(-0.6deg);
-  box-shadow: 0 18px 36px -22px var(--course);
-}
-
-.course-row__art canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.course-row__kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--course);
-}
-
-.course-row__kicker::before {
-  content: "";
-  width: 0.7rem;
-  height: 0.7rem;
-  background: var(--course);
-  border-radius: 2px;
-}
-
-.course-row__name {
-  display: block;
-  margin-top: 0.5rem;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 600;
-  line-height: 1.15;
-}
-
-.course-row__units {
-  display: block;
-  margin-top: 0.9rem;
-  font-family: var(--font-serif);
-  font-size: 1.08rem;
-  line-height: 1.6;
-  color: var(--ink-muted);
-}
-
-.course-row__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.2rem;
-  margin-top: 1.1rem;
-  font-size: 0.85rem;
-  color: var(--ink-muted);
-}
-
-.course-row__meta b {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.course-row__go {
-  display: inline-block;
-  margin-top: 1.3rem;
-  padding: 0.55rem 1.1rem;
-  border: 2px solid var(--course);
-  border-radius: 999px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--course);
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.course-row:hover .course-row__go {
-  background: var(--course);
-  color: #fff;
-}
-
 .study-track__title {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--rule);
+}
+
+/* Studies: each category (and each sub-group inside it) is a grid of course
+   tiles, the same tile as on the home page: four to a row on a desktop,
+   three on a small window or tablet, two on a phone. The hub is a size
+   container, so --tile is the width of one tile in the current column count
+   and a sub-group is exactly as wide as its own tiles. Two small sub-groups
+   then share a row (데이터 beside 신호와 수치 계산). */
+.study-hub {
+  container-type: inline-size;
+}
+
+.study-part {
+  --gap: 1.1rem;
+  --cols: 2;
+  --tile: calc((100cqi - (var(--cols) - 1) * var(--gap)) / var(--cols));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.1rem var(--gap);
+}
+
+@container (min-width: 40rem) {
+  .study-part {
+    --cols: 3;
+  }
+}
+
+@container (min-width: 54rem) {
+  .study-part {
+    --cols: 4;
+  }
+}
+
+.study-sub {
+  width: calc(var(--n) * var(--tile) + (var(--n) - 1) * var(--gap) - 0.5px);
+  max-width: 100%;
+  min-width: 0;
+}
+
+.study-grid {
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--tile) - 1px), 1fr));
+  gap: var(--gap);
+  margin-top: 1.1rem;
+}
+
+.study-grid .course-tile__name {
+  font-size: 1.2rem;
+  word-break: keep-all;
+}
+
+.study-grid .course-tile {
+  scroll-margin-top: 5rem;
+}
+
+.study-grid .course-tile__units {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 0.9rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+@media (max-width: 640px) {
+  .study-part {
+    --gap: 0.7rem;
+  }
+
+  .study-grid .course-tile__name {
+    font-size: 1.05rem;
+  }
+
+  .study-grid .course-tile__units {
+    display: none;
+  }
+}
+
+/* pointed at from the contents list */
+.course-tile.is-pointed {
+  transform: translateY(-4px);
+  border-color: var(--course);
+  box-shadow: 0 16px 32px -20px var(--course);
 }
 
 /* a sub-group of courses inside a category */
@@ -541,7 +518,7 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  margin: 2.5rem 0 0;
+  margin: 1.1rem 0 0;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 700;
@@ -555,21 +532,14 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   border-top: 1px solid var(--rule);
 }
 
-.study-track__title + .study-sub__title {
-  margin-top: 1.5rem;
-}
-
-.course-row {
-  scroll-margin-top: 1.25rem;
-}
-
 /* -- Studies: a book-style table of contents (assets/js/study-toc.js) --------- */
 
 /* On wide screens the hub breaks out of the page column: the contents sit
    flush against the left edge of the screen, the courses fill the rest.
    --sbw (scrollbar width) is set by study-toc.js so 100vw never overflows. */
 .study-layout {
-  --toc-w: clamp(17.5rem, 22vw, 23rem);
+  /* just wide enough for the longest course name and its count */
+  --toc-w: clamp(17.5rem, 20vw, 18.5rem);
   display: grid;
   grid-template-columns: var(--toc-w) minmax(0, 1fr);
   align-items: start;
@@ -577,11 +547,12 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   margin-left: calc(50% - 50vw + var(--sbw, 0px) / 2);
 }
 
+/* the tiles start right beside the contents, not centred in what is left */
 .study-hub {
   width: 100%;
-  max-width: 62rem;
-  margin: 0 auto;
-  padding: 0 clamp(1.5rem, 3vw, 3rem);
+  max-width: 78rem;
+  margin: 0;
+  padding: 0 clamp(1.5rem, 3vw, 3rem) 0 1.25rem;
 }
 
 .study-toc {
@@ -596,7 +567,7 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   --fixed: calc(5.8rem + (var(--parts, 4) + var(--rows, 18)) * 1.3rem + var(--subs, 0) * 1.15rem);
   --slots: calc(7 * var(--parts, 4) + 2 * var(--rows, 18) - 2 + 1.5 * var(--subs, 0));
   --u: clamp(0.06rem, calc((100vh - var(--fixed)) / var(--slots)), 0.5rem);
-  padding: 1.25rem 1rem 0.75rem clamp(1.25rem, 2.4vw, 2.5rem);
+  padding: 1.25rem 0.5rem 0.75rem clamp(1.25rem, 1.6vw, 1.75rem);
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: none;
@@ -777,10 +748,6 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
     padding: 0;
   }
 
-  .course-row {
-    scroll-margin-top: 4rem;
-  }
-
   .study-toc {
     top: 0;
     height: auto;
@@ -865,18 +832,6 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
   .study-toc__link,
   .study-toc__numeral {
     transition: none;
-  }
-}
-
-@media (max-width: 720px) {
-  .course-row {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    padding: 2rem 0;
-  }
-
-  .course-row:nth-of-type(even) .course-row__art {
-    order: 0;
   }
 }
 
@@ -978,7 +933,6 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 }
 
 /* whole-card links don't get the article underline-draw effect */
-body[data-fx-underline="true"] .article-body .course-row,
 body[data-fx-underline="true"] .article-body .course-tile {
   background-image: none;
 }
