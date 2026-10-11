@@ -124,6 +124,14 @@
       codes: 63
       heavy: 7
       units: "어셈블리어 소개와 가상 기계 · 기계 단계, 수와 문자 표현, 불 연산 · x86 프로세서 구조 · 어셈블리 문법, 데이터 정의, 데이터 전송 …"
+    - name: "컴퓨터 구조"
+      slug: "computer-architecture"
+      url: "/studies/computer-architecture/"
+      concepts: 44
+      practices: 5
+      codes: 42
+      heavy: 11
+      units: "성능과 논리 회로 · 명령어 집합과 산술 · 프로세서 · 메모리 계층과 병렬"
     - name: "컴파일러"
       slug: "compilers"
       url: "/studies/compilers/"

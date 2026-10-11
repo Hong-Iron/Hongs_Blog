@@ -357,7 +357,8 @@
     "data-and-information": ["dot", "squareOutline", "bell"],
     "java": ["tile", "capsule", "chevron"],
     "assembly-language": ["tile", "tallbar", "squareOutline"],
-    "compilers": ["circle", "arrow", "ring"]
+    "compilers": ["circle", "arrow", "ring"],
+    "computer-architecture": ["tile", "tallbar", "ring"]
   };
 
   function mixHex(a, b, f) {
@@ -1328,6 +1329,41 @@
       var tac = ["t1 = c * 2", "t2 = b + t1", "a = t2"], lines = Math.max(0, Math.min(3, Math.floor(F.p * (N.length + 2.2)) - N.length + 1));
       if (shown < N.length) lines = 0;
       for (i = 0; i < lines; i++) label(ctx, tac[i], B.x + 2 * u, B.y + (78 + i * 8.5) * v, rgba(F.pal.ink, 0.6), Math.max(9, fs - 2));
+    }
+  };
+
+  // 컴퓨터 구조: five instructions march through IF ID EX MEM WB, one stage per cycle.
+  MOTIFS["computer-architecture"] = {
+    draw: function (ctx, L, S, F) {
+      var B = coverBox(L), u = B.w / 100, v = B.h / 100, i, s;
+      var st = ["IF", "ID", "EX", "MEM", "WB"], ins = ["lw", "add", "sub", "beq", "or"];
+      var fs = Math.max(9, Math.min(13, 9 * v)), x0 = B.x + 13 * u, cw = 17 * u, y0 = B.y + 20 * v, rh = 14.5 * v;
+      var cyc = Math.min(9, Math.floor(F.p * 10));
+      function cx(k) { return x0 + k * cw; }
+      // the datapath: five stage boxes with a register bar between neighbours
+      for (s = 0; s < 5; s++) {
+        var busy = cyc - s >= 0 && cyc - s < 5;
+        roundRect(ctx, cx(s) + 1.5 * u, B.y + 1 * v, cw - 4.5 * u, 13 * v, 4);
+        ctx.fillStyle = rgba(F.pal.a, busy ? 0.26 : 0.07); ctx.fill();
+        ctx.strokeStyle = rgba(F.pal.a, 0.85); ctx.lineWidth = 1.2; ctx.stroke();
+        label(ctx, st[s], cx(s) + 3.2 * u, B.y + 10 * v, rgba(F.pal.ink, 0.8), fs);
+        if (s < 4) { ctx.fillStyle = rgba(F.pal.ink, 0.45); ctx.fillRect(cx(s + 1) - 1.9 * u, B.y - 0.5 * v, 1.3 * u, 16 * v); }
+      }
+      // instructions: row i sits in stage (cycle - i); cells it has left stay as a faint trail
+      for (i = 0; i < 5; i++) {
+        var y = y0 + i * rh + 3 * v, at = cyc - i;
+        label(ctx, ins[i], B.x, y + rh * 0.55, rgba(F.pal.ink, at >= 0 && at < 5 ? 0.85 : 0.4), fs);
+        ctx.strokeStyle = rgba(F.pal.ink, 0.12); ctx.lineWidth = 1;
+        line(ctx, x0, y + rh * 0.38, x0 + 5 * cw - 3 * u, y + rh * 0.38);
+        for (s = 0; s < 5; s++) {
+          if (s > at) continue;
+          var here = s === at;
+          roundRect(ctx, cx(s) + 1.5 * u, y, cw - 4.5 * u, rh * 0.72, 3);
+          ctx.fillStyle = rgba(here ? F.pal.b : F.pal.a, here ? 0.85 : 0.14); ctx.fill();
+          if (here) { ctx.strokeStyle = rgba(F.pal.b, 1); ctx.lineWidth = 1.2; ctx.stroke(); }
+        }
+      }
+      label(ctx, "cycle " + (cyc + 1), x0 + 1.5 * u, B.y + 99 * v, rgba(F.pal.ink, 0.5), Math.max(9, fs - 2));
     }
   };
 

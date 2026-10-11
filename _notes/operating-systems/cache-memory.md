@@ -131,6 +131,14 @@ flowchart LR
 
 **어셈블리어 (2-1학기).** 캐시를 빠르고 비싼 정적 RAM으로 만든 메모리라고 소개하고 두 단계로 나눈다. 1단계 캐시(Level-1)는 프로세서 안에, 2단계 캐시(Level-2)는 프로세서 밖에 있다. 읽으려는 값이 이미 캐시에 있으면 캐시 적중(cache hit), 없으면 캐시 실패(cache miss)라 부른다[^a1]. 캐시에 없는 값은 느린 메모리까지 가서 읽어야 하고, 그 읽기에는 클록이 여러 박자 든다: [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/).
 
+**컴퓨터 구조 (2-1학기).** 이 문서가 "매핑 함수", "교체 알고리즘", "쓰기 정책"이라고 이름만 든 것을 하드웨어가 실제로 어떻게 하는지까지 내려간다. 프로세서가 낸 주소의 비트를 태그, 인덱스, 오프셋 세 토막으로 잘라서, 인덱스로 볼 줄을 고르고 태그로 맞는 블록인지 확인한다[^k1]. 위의 16비트 주소 예(블록이 워드 4개, 칸 128개)를 워드 주소로 자르면 오프셋 2비트, 인덱스 7비트, 태그 7비트다[^k2].
+
+- 블록이 갈 칸을 하나로 정해 두는 방식: [직접 사상 캐시](/Hongs_Blog/studies/computer-architecture/direct-mapped-cache/). 몇 칸 묶음 안에서 고르게 하는 방식: [집합 연관 캐시](/Hongs_Blog/studies/computer-architecture/set-associative-cache/). 둘을 견준 것: [직접 사상과 집합 연관 비교](/Hongs_Blog/studies/computer-architecture/direct-vs-associative-cache/)
+- 고친 내용을 언제 주기억장치에 쓰는지, 더티 비트와 쓰기 버퍼: [캐시 쓰기 정책](/Hongs_Blog/studies/computer-architecture/cache-write-policy/)
+- LRU를 회로로 만들 때 드는 비트 수와 무작위 교체: [캐시 교체 정책](/Hongs_Blog/studies/computer-architecture/cache-replacement/)
+- 실패가 실행 시간을 얼마나 늘리는지 재는 식과 실패의 세 가지 원인: [캐시 성능과 평균 접근 시간](/Hongs_Blog/studies/computer-architecture/cache-performance-amat/)
+- 1단계·2단계 캐시를 함께 둘 때의 계산: [다단계 캐시](/Hongs_Blog/studies/computer-architecture/multilevel-cache/)
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 작은 캐시로도 성능이 크게 좋아지는 이유를 지역성으로 설명하라.</summary>
@@ -165,4 +173,6 @@ flowchart LR
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 배열 합 예시, 16비트 주소의 숫자 예, 알고리즘 과목과의 연결, 확인 문제 C2는 원본에 없다. 숫자는 원본의 $$M = 2^n/K$$에 대입한 것이다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "정확히 말하면"의 구조 설명(각주 3: 슬라이드 47, 그림 1.17)을 ASCII로 그렸다.
 [^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.9 (Cache Memory: High-speed expensive static RAM both inside and outside the CPU, Level-1 cache, Level-2 cache, Cache hit, Cache miss)
+[^k1]: MIT 6.004 Computation Structures, Fall 2023, L13 "Caches", 슬라이드 8~9 (Direct-Mapped Caches), https://shd.mit.edu/2024/lectures/readings/6191-fall2023/L13.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 5장 "Large and Fast: Exploiting Memory Hierarchy"
+[^k2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 직접 사상으로 가정하고 16 = 7 + 7 + 2로 나눈 값이다. 식은 [직접 사상 캐시](/Hongs_Blog/studies/computer-architecture/direct-mapped-cache/)의 것이고 [36_direct-mapped-cache_impl.py](/Hongs_Blog/studies/computer-architecture/code/36_direct-mapped-cache_impl/)로 확인했다.
 {% endraw %}

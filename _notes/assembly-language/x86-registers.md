@@ -17,7 +17,7 @@ prev_url: "/studies/assembly-language/instruction-pipeline/"
 prev_title: "파이프라인과 슈퍼스칼라"
 next_url: "/studies/assembly-language/x86-operating-modes/"
 next_title: "x86 동작 모드"
-math: false
+math: true
 mermaid: false
 code_count: 1
 permalink: "/studies/assembly-language/x86-registers/"
@@ -135,6 +135,25 @@ EIP=00401024  EFL=00000206  CF=0  SF=0  ZF=0  OF=0
 - 프로세서 종류와 상관없는 레지스터 일반 이야기: [프로세서 레지스터](/Hongs_Blog/studies/operating-systems/processor-registers/). 그 문서의 프로그램 카운터가 x86의 EIP, 조건 코드가 EFLAGS의 상태 플래그, 스택 포인터가 ESP다.
 - 칸이 여덟 개뿐이라 생기는 문제(변수는 많은데 어느 것을 레지스터에 둘까): [그래프 색칠 레지스터 할당](/Hongs_Blog/studies/compilers/graph-coloring-register-allocation/)
 
+## 과목별 관점
+
+**컴퓨터 구조 (2-1학기).** 컴퓨터 구조 과목의 MIPS는 레지스터를 다르게 짰다. [MIPS 레지스터와 메모리 피연산자](/Hongs_Blog/studies/computer-architecture/mips-operands/)와 견주면 이렇다[^k1].
+
+| | x86 (32비트) | MIPS |
+|---|---|---|
+| 범용 레지스터 수 | 8개 | 32개 |
+| 칸의 일부를 부르는 이름 | AL, AH, AX처럼 있다 | 없다. 늘 32비트 통째로 쓰고, 한 바이트는 메모리에서 꺼낼 때 `lb`로 고른다 |
+| 정해진 쓰임 | 몇몇 명령이 특정 칸을 몰래 쓴다(`LOOP`은 ECX, 곱셈은 EAX) | 명령이 쓰는 칸이 모두 명령에 적혀 있다. `$t0`, `$s0` 같은 이름은 프로그래머끼리의 약속이다 |
+| 늘 0인 칸 | 없다 | `$zero` (0번) |
+| 다음 명령의 주소 | EIP | PC. 번호가 없어 보통 명령으로는 읽고 쓰지 못한다 |
+| 스택 꼭대기 | ESP. `PUSH`·`POP`이 알아서 바꾼다 | `$sp` (29번). `addi`로 직접 내리고 올린다 |
+| 프레임의 기준점 | EBP | `$fp` (30번) |
+| 돌아갈 주소 | `CALL`이 스택에 넣는다 | `jal`이 `$ra` (31번)에 넣는다 |
+| 계산 결과의 표시 | EFLAGS의 상태 플래그 | 없다. 크기 비교의 답을 `slt`가 보통 레지스터에 0이나 1로 적는다 |
+| 곱셈·나눗셈의 결과 | 범용 레지스터인 EAX에 둔다 | Hi, Lo라는 전용 칸 둘에 둔다 |
+
+칸이 32개라 변수를 메모리 대신 레지스터에 두기 쉽다. 그 대신 명령마다 레지스터 번호 하나에 5비트씩 든다. 두 설계의 큰 그림은 [RISC와 CISC 비교](/Hongs_Blog/studies/computer-architecture/risc-vs-cisc/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -164,6 +183,15 @@ EIP=00401024  EFL=00000206  CF=0  SF=0  ZF=0  OF=0
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** x86의 EIP, ESP, EBP, EFLAGS가 하는 일을 MIPS에서는 각각 무엇이 맡는가? MIPS에만 있고 x86에 없는 칸 하나를 들어라.</summary>
+
+**답:** EIP → PC(번호 없는 칸). ESP → `$sp`(29번). EBP → `$fp`(30번). EFLAGS → 맡는 칸이 없다. 크기 비교의 답은 `slt`가 보통 레지스터에 적고, 넘침은 예외로 알린다. MIPS에만 있는 칸: 늘 0인 `$zero`, 돌아갈 주소를 담는 `$ra`.<br>
+**이유:** x86은 돌아갈 주소를 스택에 두므로 `$ra` 같은 칸이 필요 없다. MIPS는 플래그를 두지 않아 한 명령의 결과가 다음 명령에 몰래 넘어가는 일이 없다[^k1].
+
+</details>
+
+
 [^1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.9 (Accessing Parts of Registers: AH·AL·AX·EAX 그림과 표), p.10 (Index and Base Registers 표)
 [^2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.8 (General-Purpose Registers: Named storage locations inside the CPU, optimized for speed. 그림)
 [^3]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.11~12 (Some Specialized Register Uses)
@@ -172,4 +200,5 @@ EIP=00401024  EFL=00000206  CF=0  SF=0  ZF=0  OF=0
 [^6]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-1」, p.1 (RET Instruction: Pops stack into the instruction pointer (EIP or IP))
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `12345678h`의 예, 비트 번호를 적은 그림, 이름 글자의 뜻은 슬라이드에 없다. 슬라이드 p.9의 그림(8 + 8비트, 16비트, 32비트)을 수로 옮겼다. 검증 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표의 "풀이" 칸, 짝수 플래그가 아래 8비트만 센다는 것, EFLAGS의 비트 번호(올림 0, 짝수 2, 영 6, 부호 7, 넘침 11), 예제의 3단계는 슬라이드에 없다. Intel 64 and IA-32 Architectures Software Developer's Manual, Vol. 1, 3.4.3절을 따랐다. 9번 비트는 인터럽트를 받을지 정하는 비트, 1번 비트는 늘 1인 비트다.
+[^k1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MIPS와의 비교는 어셈블리어 슬라이드에 없다. MIPS 쪽 내용(레지스터 32개와 번호, `jal`이 31번 레지스터에 주소를 넣는 것, Hi·Lo)은 MIPS Reference Data(Green Sheet, https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf)와 Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장을 따랐다. 레지스터 번호는 [14_mips-operands_verify.py](/Hongs_Blog/studies/computer-architecture/code/14_mips-operands_verify/)로 확인했다.
 {% endraw %}

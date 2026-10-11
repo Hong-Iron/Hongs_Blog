@@ -1,6 +1,12 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: 컴퓨터 구조
+  items:
+    - Studies에 컴퓨터 구조(컴퓨터 과학)를 더했어요. 성능과 논리 회로, MIPS 명령어와 산술, 단일 사이클과 5단계 파이프라인, 캐시와 멀티코어까지 개념 44개와 예제 사다리 5개예요.
+    - 이 과목은 강의 자료가 없어서 교재 목차를 따라 공개 강의 자료를 보고 새로 썼어요. 회로, 파이프라인, 캐시의 동작은 파이썬으로 흉내 내 확인했어요.
+    - "'자바'를 '자바 프로그래밍'으로 이름을 바꿨어요. 주소는 그대로예요."
+- date: 2026-10-12
   title: 자바 프로그래밍으로 이름 바꾸기, 표지 새로 그리기
   items:
     - "'소프트웨어 프로젝트'를 '자바 프로그래밍'으로 이름을 바꿨어요. 주소도 /studies/java/로 바뀌었어요."

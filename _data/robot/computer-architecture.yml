@@ -1,0 +1,54 @@
+# 홍철's lines for the computer architecture course pages. Format: _data/robot/README.md
+greeting:
+- "컴퓨터 구조예요. 게이트에서 시작해 프로세서와 캐시까지 한 층씩 올라가요."
+- "컴퓨터 구조 페이지예요. 내릴수록 배경에서 명령어 다섯 개가 파이프라인을 한 칸씩 지나가요."
+- "여긴 컴퓨터 구조예요. 강의 자료가 없어서 교재 목차와 공개 강의를 보고 새로 썼어요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "CPU 시간 식부터요. 명령어 수, 명령어당 사이클 수, 클록 주기 세 수가 뒤의 모든 단원에서 다시 나와요."
+  link: /studies/computer-architecture/cpu-time-equation/
+  link_label: "CPU 시간 식"
+- q: 어려워요?
+  a: "파이프라인에서 값이 아직 안 나왔는데 뒤 명령어가 쓰려는 경우가 헷갈려요. 예제 사다리로 표를 직접 채워 보세요."
+  link: /studies/computer-architecture/pipeline-hazard-ladder/
+  link_label: "파이프라인 해저드 예제 사다리"
+- q: "답은 믿어도 돼요?"
+  a: "회로, 파이프라인, 캐시를 파이썬으로 흉내 내서 표를 전부 다시 만들어 봤어요. 진짜 칩으로 돌린 건 아니에요."
+  link: /studies/computer-architecture/
+  link_label: 로드맵
+- q: "다른 과목이랑도 이어져요?"
+  a: "캐시는 운영체제의 메모리 계층과 맞물리고, MIPS 명령은 컴파일러가 마지막에 만들어 내는 바로 그 코드예요."
+  link: /studies/computer-architecture/cache-tlb-interaction/
+  link_label: "캐시와 TLB와 페이지 테이블의 상호작용"
+chats:
+- q: "클록이 빠르면 무조건 빠른 컴퓨터예요?"
+  a: "아니에요. 같은 일을 하는 데 명령어가 더 많이 들거나 명령어 하나에 사이클이 더 들면 느려요."
+  link: /studies/computer-architecture/cpu-time-equation/
+  link_label: "CPU 시간 식"
+  next:
+  - q: "일부만 빠르게 하면요?"
+    a: "빨라지지 않는 부분이 천장을 정해요. 전체의 4분의 3을 끝없이 빠르게 해도 4배가 한계예요."
+    link: /studies/computer-architecture/amdahls-law/
+    link_label: "암달의 법칙"
+  - q: "파이프라인은 왜 빨라요?"
+    a: "명령어 하나가 빨리 끝나는 게 아니에요. 다섯 단계로 잘라 겹쳐 흘려서 같은 시간에 더 많이 끝내요."
+    link: /studies/computer-architecture/mips-pipeline/
+    link_label: "5단계 파이프라인"
+- q: "add 한 줄은 어떻게 숫자가 돼요?"
+  a: "32비트를 여섯 칸으로 잘라요. 맨 앞 칸이 형식을, 맨 뒤 칸이 덧셈인지 뺄셈인지를 정해요."
+  link: /studies/computer-architecture/mips-instruction-formats/
+  link_label: "MIPS 명령어 형식"
+- q: "캐시가 반쯤 비었는데 왜 실패해요?"
+  a: "블록마다 들어갈 줄이 하나로 정해져 있으면 같은 줄을 쓰는 둘이 서로 쫓아내요. 자리를 여럿으로 묶으면 풀려요."
+  link: /studies/computer-architecture/direct-vs-associative-cache/
+  link_label: "직접 사상과 집합 연관 비교"
+talk:
+- text: "앞 명령어의 결과가 레지스터에 적히기 전에 뒤 명령어가 필요로 하면, 중간에서 값을 당겨 써요."
+  link: /studies/computer-architecture/data-hazard-forwarding/
+  link_label: "데이터 해저드와 전방 전달"
+- text: "분기 예측기는 두 번 잇달아 틀려야 마음을 바꿔요. 반복문 끝에서 한 번 틀리는 걸로는 안 흔들려요."
+  link: /studies/computer-architecture/control-hazard-branch-prediction/
+  link_label: "제어 해저드와 분기 예측"
+- text: "배열을 행 순서로 읽으면 옆 칸이 이미 캐시에 와 있어요. 열 순서로 읽으면 매번 새로 가져와요."
+  link: /studies/computer-architecture/locality-principle/
+  link_label: "지역성의 원리"

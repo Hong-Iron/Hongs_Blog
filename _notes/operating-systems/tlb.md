@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Translation Lookaside Buffer", "변환 색인 버퍼", "TLB 적중", "TLB Hit", "TLB 실패", "TLB Miss", "연관 사상", "Associative Mapping", "유효 접근 시간", "Effective Access Time"]
 description: "가상 메모리에서는 메모리를 한 번 쓰려 해도 먼저 페이지 표를 읽어야 해서 메모리 접근이 두 배가 된다. TLB는 최근에 쓴 페이지 표 항목 몇 개를 복사해 둔 작고 빠른 하드웨어 캐시다. 자주 가는 집 주소를 수첩에 적어 두고 매번 주소록 책을 펼치지 않는 것과 같다. 지역성 덕…"
@@ -92,6 +92,10 @@ $$t = 20$$, $$m = 100$$ ns로 그린 직선이다. 적중률이 1%포인트 오�
 
 - 선수: [페이지 표 구조](/Hongs_Blog/studies/operating-systems/page-table-structure/), [캐시 메모리](/Hongs_Blog/studies/operating-systems/cache-memory/) (같은 지역성)
 
+## 과목별 관점
+
+**컴퓨터 구조 (2-1학기).** TLB와 메모리 캐시를 한 번의 접근 안에서 함께 본다. 두 장치는 서로 다른 것을 기억한다. TLB는 "이 페이지가 어느 프레임에 있는지"를, 캐시는 "이 물리 주소에 무슨 값이 있는지"를 기억한다. 그래서 TLB는 실패했는데 캐시는 적중하는 일도, 그 반대도 일어난다. TLB 적중·실패, 페이지가 메모리에 있음·부재, 캐시 적중·실패를 짝지은 여덟 가지 가운데 다섯 가지만 일어난다. 메모리에 없는 페이지의 변환이 TLB에 있거나 그 데이터가 캐시에 있을 수는 없기 때문이다[^k1]. 물리 주소로 캐시를 찾으면 TLB를 먼저 거쳐야 해서 느리다. 캐시의 줄을 고르는 비트가 모두 페이지 안 위치 비트에 들어가면(캐시 크기 ÷ way 수 ≤ 페이지 크기) 변환과 캐시 줄 읽기를 동시에 시작할 수 있다[^k2]. 추적 표와 조건식은 [캐시와 TLB와 페이지 테이블의 상호작용](/Hongs_Blog/studies/computer-architecture/cache-tlb-interaction/)에 있다. 위 유효 접근 시간과 같은 꼴의 식을 캐시에 쓴 것은 [캐시 성능과 평균 접근 시간](/Hongs_Blog/studies/computer-architecture/cache-performance-amat/)이다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> TLB는 페이지 번호로 칸을 바로 찾지 않고 모든 칸을 동시에 비교한다. 왜인가?</summary>
@@ -122,4 +126,6 @@ $$t = 20$$, $$m = 100$$ ns로 그린 직선이다. 적중률이 1%포인트 오�
 [^4]: 같은 자료, 슬라이드 31 (그림 8.10)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 시간 예와 유효 접근 시간 식, 프로세스·스레드 전환과 TLB, 확인 문제 C2·C3은 슬라이드에 없다. Stallings 6판 8.1절과 일반 교재의 유효 접근 시간 계산을 따랐다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [40_tlb_plot.py](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/)로 그렸고, 적중률 98%에서 122 ns, 0%에서 220 ns, 100%에서 120 ns, 20%에서 TLB 없을 때와 같은 200 ns를 같은 코드로 확인했다.
+[^k1]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 5장 "Large and Fast: Exploiting Memory Hierarchy". 다섯 조합만 나오는 것은 무작위 접근 2만 번의 흉내로 확인했다 — [43_cache-tlb-interaction_verify.py](/Hongs_Blog/studies/computer-architecture/code/43_cache-tlb-interaction_verify/)
+[^k2]: University of Utah CS 3810, Lecture 20 "Cache Hierarchies, Virtual Memory", 슬라이드 14~15 (TLB and Cache, Virtually Indexed; Physically Tagged Cache), https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-20.pdf
 {% endraw %}

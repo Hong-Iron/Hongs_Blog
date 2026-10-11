@@ -136,6 +136,12 @@ S4 한 줄은 여전히 2사이클을 쓰지만, 두 줄이 한 사이클씩 엇
 - 걸음으로 나누기 전의 기본 고리(가져오기 → 실행하기): [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/)
 - 걸음 사이에서 값을 들고 있는 저장 칸: [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)
 
+## 과목별 관점
+
+**컴퓨터 구조 (2-1학기).** 이 문서의 걸음 수 $$k$$가 5인 경우를 실제 회로로 만든다. MIPS 프로세서의 다섯 걸음은 가져오기(IF), 해독(ID), 실행(EX), 메모리(MEM), 되쓰기(WB)이고, 걸음마다 명령어 메모리, 레지스터 파일, ALU, 데이터 메모리, 다시 레지스터 파일을 쓴다[^k1]. 둘째 식 $$k + (n - 1)$$에 $$k = 5$$를 넣으면 $$n + 4$$사이클이다: [5단계 파이프라인](/Hongs_Blog/studies/computer-architecture/mips-pipeline/).
+
+이 문서가 "없다고 놓은 기다림"이 그 과목의 중심 주제다. 뒤 명령어가 앞 명령어의 결과를 읽어야 할 때는 계산이 끝난 값을 지름길로 당겨 쓰고([데이터 해저드와 전방 전달](/Hongs_Blog/studies/computer-architecture/data-hazard-forwarding/)), 그래도 안 되면 한 사이클을 쉰다([적재-사용 해저드와 스톨](/Hongs_Blog/studies/computer-architecture/load-use-stall/)). 분기 명령 뒤에 미리 가져온 명령어가 틀렸으면 버린다([제어 해저드와 분기 예측](/Hongs_Blog/studies/computer-architecture/control-hazard-branch-prediction/)). 그래서 실제 사이클 수는 $$n + 4$$에 쉰 사이클과 버린 명령어 수를 더한 값이다[^ks1]. 여러 줄로 놓는 생각을 더 밀고 나간 설계는 [슈퍼스칼라와 비순차 실행](/Hongs_Blog/studies/computer-architecture/superscalar-out-of-order/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -165,9 +171,20 @@ S4 한 줄은 여전히 2사이클을 쓰지만, 두 줄이 한 사이클씩 엇
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 걸음이 5개인 MIPS 파이프라인으로 명령어 100개를 처리한다. 기다림이 전혀 없을 때의 사이클 수는? 도중에 한 사이클씩 쉬는 일이 10번, 분기 때문에 명령어 하나를 버리는 일이 6번 있었다면?</summary>
+
+**답:** 104사이클과 120사이클.<br>
+**이유:** $$k + (n - 1) = 5 + 99 = 104$$. 쉬는 사이클과 버린 명령어는 하나에 한 사이클씩 더 든다. $$104 + 10 + 6 = 120$$[^ks1].
+
+</details>
+
+
 [^1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.2 (Multi-Stage Pipeline: Example of a non-pipelined processor. Many wasted cycles. 12사이클 표)
 [^2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.3 (Pipelined Execution: k + (n – 1), 7사이클 표)
 [^3]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.4 (Wasted Cycles (pipelined): k + (2n – 1), S4에 exe 표시, 11사이클 표)
 [^4]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.5 (Superscalar: Stage S4 has left and right pipelines (u and v), k + n, 10사이클 표)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 빨래방 비유와 그 한계, $$n \times k$$ 식, 명령어 100개의 값, 네 식이 나오는 과정, 카드는 슬라이드에 없다. 슬라이드에는 표 네 장과 식 세 개가 있다. $$n \times k$$는 p.2의 표(12 = 2 × 6)에서 읽었다. 흉내 프로그램으로 표의 칸과 식을 확인했다.
+[^k1]: 교재 출판사 강의 슬라이드 "Chapter 4 — The Processor" (Cooper Union 게시본), 슬라이드 1 (MIPS Pipeline: 다섯 단계), https://ee.cooper.edu/~curro/comparch/pipeline/chapter4_pipelining_END_FA11.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor"
+[^ks1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "$$n + 4$$에 쉰 사이클과 버린 명령어 수를 더한다"와 카드 C4의 수치는 슬라이드에 없다. 5단계 파이프라인 흉내기([27_mips-pipeline_impl.py](/Hongs_Blog/studies/computer-architecture/code/27_mips-pipeline_impl/))의 예제들에서 이 셈이 맞는 것을 확인했다.
 {% endraw %}

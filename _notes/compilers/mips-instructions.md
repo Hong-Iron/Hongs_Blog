@@ -145,6 +145,23 @@ sw  $r2 12($sp)      # $r2를 메모리의 a 자리에 넣는다
 - 이 명령들로 옮기는 법: [단순 연산과 분기의 코드 생성](/Hongs_Blog/studies/compilers/codegen-simple-operations/), [함수 호출의 코드 생성](/Hongs_Blog/studies/compilers/codegen-function-call/)
 - x86과 견주기: 레지스터의 종류와 이름은 [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/). x86은 비교 결과를 플래그에 남기고 그 플래그를 보고 뛰는데([조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/)), 여기서는 비교 결과를 레지스터에 0이나 1로 받거나, 비교와 분기를 `beq` 한 명령으로 한다[^s2].
 
+## 과목별 관점
+
+**컴퓨터 구조 (2-1학기).** 컴퓨터 구조 과목은 실제 MIPS 표기와 기계어를 쓴다. 이 문서의 수업용 명령을 실제 MIPS로 옮기면 아래와 같다[^k1].
+
+| 수업용 표기 | 실제 MIPS | 달라지는 점 |
+|---|---|---|
+| `lw $r0 8($sp)` | `lw $t0, 8($sp)` | 레지스터 이름과 쉼표만 다르다: [MIPS 레지스터와 메모리 피연산자](/Hongs_Blog/studies/computer-architecture/mips-operands/) |
+| `add $r2 $r0 $r1` | `add $t2, $t0, $t1` | 같다 |
+| `subi $r1 $r0 2` | `addi $t1, $t0, -2` | 기계어에 `subi`가 없다: [MIPS 산술·논리 명령](/Hongs_Blog/studies/computer-architecture/mips-arithmetic-logic/) |
+| `li $r0 5` | `addi $t0, $zero, 5` | `li`는 어셈블러가 다른 명령으로 바꿔 주는 의사 명령이다 |
+| `sgt $r3 $r0 $r1` | `slt $t3, $t1, $t0` | 기계어의 비교는 "작다"(`slt`)뿐이라 재료 순서를 바꾼다 |
+| `bnez $r3 L` | `bne $t3, $zero, L` | 0과 견줄 때 `$zero`를 쓴다: [MIPS 분기와 점프](/Hongs_Blog/studies/computer-architecture/mips-branch-jump/) |
+| `blt $r0 $r1 L` | `slt $t2, $t0, $t1` / `bne $t2, $zero, L` | 기계어의 조건 분기는 `beq`와 `bne`뿐이다. `blt`·`bgt`·`ble`·`bge`는 의사 명령이다 |
+| `mul $r2 $r0 $r1` | `mult $t0, $t1` / `mflo $t2` | 곱은 64비트라 Hi·Lo라는 전용 칸에 나오고 `mflo`로 꺼낸다 |
+
+이 과목은 레지스터가 끝없이 많다고 쳤지만 실제로는 32개이고 번호마다 쓰임이 정해져 있다. 함수 호출도 다르다. [함수 호출의 코드 생성](/Hongs_Blog/studies/compilers/codegen-function-call/)은 인수와 돌아갈 주소를 모두 스택에 쌓지만, 실제 MIPS 약속은 인수를 `$a0`~`$a3`에, 돌아갈 주소를 `$ra`에 먼저 담는다: [MIPS 프로시저 호출](/Hongs_Blog/studies/computer-architecture/mips-procedure-call/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -174,6 +191,15 @@ sw  $r2 12($sp)      # $r2를 메모리의 a 자리에 넣는다
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 카드 C2의 뒤 세 줄 가운데 `subi $r1 $r0 2`와 `sgt $r3 $r0 $r1`, 그리고 `bnez $r3 L`을 실제 MIPS 명령으로 옮겨라. `$r0`~`$r3`은 `$t0`~`$t3`으로 적는다.</summary>
+
+**답:** `addi $t1, $t0, -2` / `slt $t3, $t1, $t0` / `bne $t3, $zero, L`.<br>
+**이유:** 실제 기계어에는 `subi`가 없어 `addi`에 음수를 적는다. "크다"를 묻는 명령이 없어 `$t0 > $t1`을 `$t1 < $t0`으로 바꿔 `slt`에 넣는다. `bnez`는 `bne`에 `$zero`를 넣은 것이다. `$t0` = 5에서 돌리면 `$t1` = 3, `$t3` = 1이고 `L`로 간다[^k1].
+
+</details>
+
+
 [^1]: 컴파일러 15회 강의 자료 「Lecture15 Code generation part 2」, p.3~4 (코드 생성기가 하는 일과 목표)
 [^2]: 같은 자료, p.5 (어셈블리어, 수업의 목표 기계 MIPS)
 [^3]: 같은 자료, p.10~13 (a = b + c를 옮긴 네 줄)
@@ -186,4 +212,5 @@ sw  $r2 12($sp)      # $r2를 메모리의 a 자리에 넣는다
 [^10]: 같은 자료, p.15 (흐름 제어 명령)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 비교 결과가 1과 0이라는 것, 명령 이름을 읽는 법(set if …, branch, zero, load word)은 원본에 없다. 슬라이드 p.16은 비교 결과를 `bnez`로 받아 0이 아니면 뛰게 하므로 참을 0이 아닌 값으로 쓴다. 흉내기는 참을 1로 두었다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실제 MIPS와의 차이, x86과의 비교는 원본에 없다. 레지스터 이름과 쉼표 표기, `addi`만 있고 `subi` 기계 명령이 없는 것, `jal`이 `$ra`에 돌아올 주소를 넣는 것은 MIPS32 명령 집합과 표준 어셈블러 표기에 따른 것이다(Patterson·Hennessy, Computer Organization and Design, MIPS판 2장).
+[^k1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실제 MIPS와의 짝은 컴파일러 슬라이드에 없다. 명령의 유무와 의사 명령(blt, bgt, ble, bge, li, move)은 MIPS Reference Data(Green Sheet, https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf)의 CORE INSTRUCTION SET과 PSEUDOINSTRUCTION SET 표를 따랐다. 카드 C4의 값은 [17_mips-branch-jump_verify.py](/Hongs_Blog/studies/computer-architecture/code/17_mips-branch-jump_verify/)의 MIPS 흉내기로 확인했다.
 {% endraw %}

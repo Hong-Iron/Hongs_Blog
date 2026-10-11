@@ -86,6 +86,8 @@ flowchart TB
 
 **어셈블리어 (2-1학기).** 층을 나누는 까닭을 메모리 칩의 종류로 보인다. 정적 RAM(SRAM)은 비싸고 내용을 새로 써 줄 필요가 없어서 캐시에 쓴다. 동적 RAM(DRAM)은 싸지만 계속 새로 써 주어야 한다[^a1]. 빠르고 비싼 것을 조금, 느리고 싼 것을 많이 두는 계층이 칩의 종류에서부터 시작한다. 맨 위층인 레지스터의 x86 이름은 [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)에 있다.
 
+**컴퓨터 구조 (2-1학기).** 층을 쌓는 방식이 통하는 까닭을 프로그램의 버릇에서 찾는다. 프로그램은 방금 쓴 곳을 곧 다시 쓰고, 그 바로 옆을 곧 쓴다. 16 × 16 배열을 메모리에 놓인 순서대로 읽으면 작은 캐시에서 네 번에 한 번만 실패하는데, 같은 배열을 한 행씩 건너뛰며 읽으면 매번 실패한다[^k1]. 이 버릇의 두 갈래와 캐시가 각각을 쓰는 법은 [지역성의 원리](/Hongs_Blog/studies/computer-architecture/locality-principle/)에 있다. 층 사이를 오가는 값을 숫자로 재는 법은 [캐시 성능과 평균 접근 시간](/Hongs_Blog/studies/computer-architecture/cache-performance-amat/), 캐시를 다시 여러 층으로 쌓는 것은 [다단계 캐시](/Hongs_Blog/studies/computer-architecture/multilevel-cache/)에서 다룬다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 메모리 계층을 아래로 내려갈 때 바뀌는 네 가지를 방향과 함께 쓰라.</summary>
@@ -107,4 +109,5 @@ flowchart TB
 [^3]: 같은 자료, 슬라이드 42와 발표자 노트
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 책상·책장·도서관 비유와 그 한계는 원본에 없다. 계층 그림은 원본 그림 1.14의 층을 옮긴 것이다.
 [^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.14 (Memory: Dynamic RAM – inexpensive; must be refreshed constantly, Static RAM – expensive; used for cache memory; no refresh required)
+[^k1]: 수치는 2-1학기 컴퓨터 구조의 캐시 흉내기(직접 사상 8줄, 블록 16바이트)로 낸 것이다 — [35_locality-principle_verify.py](/Hongs_Blog/studies/computer-architecture/code/35_locality-principle_verify/). 지역성의 두 갈래는 MIT 6.004 Fall 2023 L13 "Caches", 슬라이드 6, https://shd.mit.edu/2024/lectures/readings/6191-fall2023/L13.pdf
 {% endraw %}

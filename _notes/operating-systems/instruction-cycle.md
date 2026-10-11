@@ -99,6 +99,13 @@ flowchart LR
 
 걸음을 나눠 놓으면 앞 명령어가 다음 걸음으로 넘어가는 대로 뒤 명령어를 받을 수 있다: [파이프라인과 슈퍼스칼라](/Hongs_Blog/studies/assembly-language/instruction-pipeline/).
 
+**컴퓨터 구조 (2-1학기).** 같은 고리를 회로의 부품과 도선으로 그린다. 인출은 "PC의 주소를 명령어 메모리에 넣어 32비트 명령어를 꺼내고, 그 옆의 가산기가 PC + 4를 구해 두는 일"이다. 실행은 그 명령어의 비트가 여러 갈래로 갈라져 레지스터 파일, ALU, 데이터 메모리를 지나는 일이다[^k1]. 이 문서의 가상 기계와 다른 점이 둘 있다.
+
+- **PC가 4씩 는다.** 가상 기계는 주소 한 칸에 명령어 하나가 들어가 1씩 늘렸다. MIPS는 주소를 바이트로 세고 명령어 하나가 4바이트라서 4씩 늘린다[^k1].
+- **한 사이클에 끝내는 설계에는 IR이 없다.** 명령어 메모리의 출력이 그 사이클 내내 그대로 나와 있어서 따로 담아 둘 필요가 없다. 명령어를 여러 사이클에 걸쳐 실행하는 설계에서는 꺼낸 명령어를 담아 둘 칸이 다시 필요하다. 다중 사이클 설계의 IR, 파이프라인의 단계 사이 레지스터가 그것이다[^ks1].
+
+부품을 잇는 그림과 명령어 종류마다 지나는 길은 [단일 사이클 데이터패스](/Hongs_Blog/studies/computer-architecture/single-cycle-datapath/)에 있다. 다섯 걸음으로 나눠 겹쳐 흘리는 설계는 [5단계 파이프라인](/Hongs_Blog/studies/computer-architecture/mips-pipeline/)이다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 인출 단계에서 일어나는 일 두 가지를 레지스터 이름을 넣어 쓰라.</summary>
@@ -140,6 +147,15 @@ flowchart LR
 
 </details>
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C6** 이 문서의 가상 기계는 인출할 때 PC를 1 늘리고, MIPS 프로세서는 4 늘린다. 왜 다른가? 301번지의 명령어 다음 명령어는 두 기계에서 각각 몇 번지에 있는가?</summary>
+
+**답:** 가상 기계는 주소 한 칸에 16비트 명령어 하나가 통째로 들어가서 다음 명령어가 바로 다음 주소(302)에 있다. MIPS는 주소를 바이트 단위로 세고 명령어 하나가 32비트 = 4바이트라서, 다음 명령어는 4만큼 뒤에 있다. 다만 MIPS에서 명령어의 주소는 늘 4의 배수여야 하므로 301번지에는 명령어가 올 수 없다. 300번지의 명령어라면 다음은 304번지다.<br>
+**흔한 오답:** MIPS에서도 302번지라고 답하는 것. "명령어 하나만큼"과 "주소 1만큼"은 주소를 세는 단위에 따라 다르다.
+
+</details>
+
+
 [^1]: 운영체제 1회 강의 자료 「Chapter01-new」, 슬라이드 21 (그림 1.3)과 발표자 노트
 [^2]: 같은 자료, 슬라이드 22 (그림 1.4)와 발표자 노트
 [^3]: 같은 자료, 슬라이드 17~18과 발표자 노트
@@ -149,4 +165,6 @@ flowchart LR
 [^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.7 (Instruction Execution Cycle: Fetch, Decode, Fetch operands, Execute, Store output, 그림)
 [^a2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.8 (Reading from Memory: 네 단계와 CLK·ADDR·RD·DATA 타이밍 그림)
 [^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다섯 걸음을 이 문서의 두 단계에 짝지은 것은 슬라이드에 없다. 이 문서의 인출 단계가 "명령어를 읽어 IR에 넣는 일"이라는 정의에 맞춰 나눴다.
+[^k1]: Princeton COS/ELE 375 (Fall 2015, David August), Lecture 8 "Control", 슬라이드 8, 41 (PC = PC + 4, 명령어 인출의 레지스터 전송 식 IR = Memory[PC]; PC = PC + 4), https://www.cs.princeton.edu/courses/archive/fall15/cos375/lectures/08-Control.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor"
+[^ks1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "한 사이클에 끝내는 설계에는 IR이 없다"는 설명과 카드 C6은 원본 슬라이드에 없다. 단일 사이클 흉내기([24_single-cycle-datapath_impl.py](/Hongs_Blog/studies/computer-architecture/code/24_single-cycle-datapath_impl/))가 명령어를 담아 두는 칸 없이 동작하는 것으로 확인했다. 다중 사이클 설계의 IR은 위 Princeton 강의 슬라이드 41에 나온다.
 {% endraw %}

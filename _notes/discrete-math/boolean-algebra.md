@@ -165,6 +165,13 @@ flowchart LR
 
 같은 세 연산을 레지스터의 비트 32개에 한꺼번에 하는 명령이 [비트 논리 명령](/Hongs_Blog/studies/assembly-language/bitwise-instructions/)이다. 논리 게이트로 만든 회로가 컴퓨터의 여러 층 가운데 맨 아래층이라는 이야기는 [가상 기계 계층](/Hongs_Blog/studies/assembly-language/virtual-machine-levels/)에 있다.
 
+**컴퓨터 구조 (2-1학기).** 이 문서의 게이트와 가산기를 프로세서의 부품으로 키운다[^k1].
+
+- **표에서 회로로, 그리고 지연.** 진리표에서 출력이 1인 줄마다 AND 항을 만들고 OR로 묶으면 어떤 표든 회로가 된다. 입력이 바뀐 뒤 출력이 자리 잡는 시간은 게이트를 가장 많이 거치는 길이 정한다: [논리 게이트와 조합 회로](/Hongs_Blog/studies/computer-architecture/combinational-logic/).
+- **고르는 회로.** 위 어셈블리어 단락의 2입력 멀티플렉서를 32비트 너비로, 입력 32개짜리로 키우고, 번호를 선 하나로 바꾸는 디코더와 짝지어 쓴다: [멀티플렉서와 디코더](/Hongs_Blog/studies/computer-architecture/mux-decoder/).
+- **가산기.** 예제의 4비트 리플 캐리 가산기를 32비트로 늘리고, 같은 회로로 뺄셈을 하고, 결과가 넘쳤는지 알아내고, 올림을 기다리지 않고 미리 구한다: [가산기](/Hongs_Blog/studies/computer-architecture/adder-circuit/). 그 문서는 전가산기의 올림을 "세 입력 가운데 둘 이상이 1"로 읽어 $$c_{\text{out}} = ab + a c_{\text{in}} + b c_{\text{in}}$$으로 쓴다. 위 예제의 $$ab + c_{\text{in}}(a \oplus b)$$와 입력 여덟 가지 모두에서 같은 값이다[^ks1].
+- **기억하는 회로.** "모형이 보장하지 않는 것"에서 말한 플립플롭은 [래치와 플립플롭](/Hongs_Blog/studies/computer-architecture/latch-flip-flop/)에서 게이트 두 개를 맞물려 만든다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -203,6 +210,15 @@ flowchart LR
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 전가산기의 올림을 $$ab + c_{\text{in}}(a \oplus b)$$로 쓴 식과 $$ab + a c_{\text{in}} + b c_{\text{in}}$$으로 쓴 식은 모양이 다르다. 두 식이 늘 같은 값인 이유를 대라.</summary>
+
+**답:** 두 식이 다를 수 있는 것은 $$c_{\text{in}}(a \oplus b)$$와 $$c_{\text{in}}(a + b)$$가 다를 때, 곧 $$c_{\text{in}} = 1$$이고 $$a = b = 1$$일 때뿐이다. 그때는 앞의 $$ab$$가 이미 1이라 두 식 모두 1이다.<br>
+**이유:** $$a \oplus b$$와 $$a + b$$는 $$a = b = 1$$인 한 줄에서만 다르다. 둘째 식은 "셋 가운데 둘 이상이 1"이라는 뜻이 바로 읽힌다[^ks1].
+
+</details>
+
+
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 12장 "Boolean Algebra"(불 함수, 불 함수의 표현, 논리 게이트, 회로의 최소화). 불 함수의 개수와 기능적 완전성 포함.
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전파 지연·글리치·순차 회로는 디지털 논리 설계 과목의 내용이다. 올림을 미리 계산하는 회로는 캐리 예측 가산기(carry-lookahead adder)다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제'의 4비트 리플 캐리 가산기 설명과 전가산기 식을 연결 그림으로 그렸다.
@@ -212,4 +228,6 @@ flowchart LR
 [^a4]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.19 (Truth Tables 1 of 3: Boolean function, truth table)
 [^a5]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.21 (Truth Tables 3 of 3: (Y ∧ S) ∨ (X ∧ ¬S), Two-input multiplexer)
 [^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 표기를 나란히 놓은 표, "NOT, AND, OR 순서"라는 한 줄 정리, 멀티플렉서 표를 위아래 네 줄로 나눠 읽는 설명, 카드 C4는 슬라이드에 없다. 슬라이드의 순서 표에는 예 세 개만 있다. 진리표 여덟 줄과 "S가 거짓이면 X, 참이면 Y"는 [02_virtual-machine-levels_verify.py](/Hongs_Blog/studies/assembly-language/code/02_virtual-machine-levels_verify/)로 확인했다.
+[^k1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 컴퓨터 구조 과목은 강의 자료 없이 Patterson & Hennessy, *Computer Organization and Design*의 부록 "The Basics of Logic Design"과 공개 강의 노트를 근거로 정리했다. 근거는 링크한 각 문서의 각주에 있다.
+[^ks1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 올림 식이 여덟 줄 모두 같다는 것과 카드 C5는 [07_adder-circuit_verify.py](/Hongs_Blog/studies/computer-architecture/code/07_adder-circuit_verify/)로 확인했다. 다수결 꼴의 식은 UC Berkeley CS61C 강의 노트 "Adder/Subtractor"(https://notes.cs61c.org/content/sds-blocks/adder-subtractor)에 있다.
 {% endraw %}
