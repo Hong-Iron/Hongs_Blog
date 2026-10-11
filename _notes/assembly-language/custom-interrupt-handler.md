@@ -8,7 +8,7 @@ num: "56"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Writing a Custom Interrupt Handler", "사용자 인터럽트 핸들러", "인터럽트 벡터 바꾸기", "Get Interrupt Vector", "Set Interrupt Vector", "함수 35h", "함수 25h", "Chaining", "TSR", "Terminate and Stay Resident", "상주 프로그램", "No_Reset", "Ctrl-Break Handler"]

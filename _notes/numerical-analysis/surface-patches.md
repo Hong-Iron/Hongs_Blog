@@ -8,7 +8,7 @@ num: "17"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Parametric Surface Patches", "매개변수 곡면", "Parametric Surface", "쌍선형 곡면", "Bilinear Surface", "쌍3차 패치", "Bicubic Patch", "꼬임 벡터", "Twist Vector", "베지어 곡면", "Bezier Surface", "스플라인 곡면", "Spline Surface", "폴리곤 메시", "Polygonal Mesh"]

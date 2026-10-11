@@ -8,7 +8,7 @@ num: "15"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Operand Types", "피연산자", "Operand", "즉시값", "Immediate Operand", "레지스터 피연산자", "Register Operand", "메모리 피연산자", "Memory Operand", "직접 메모리 피연산자", "Direct Memory Operand", "직접 오프셋 피연산자", "Direct-Offset Operand", "유효 주소", "Effective Address", "피연산자 표기법", "Instruction Operand Notation"]

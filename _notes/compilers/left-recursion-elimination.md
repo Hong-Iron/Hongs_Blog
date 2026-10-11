@@ -8,7 +8,7 @@ num: "14"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Left Recursion", "좌재귀", "왼쪽 재귀", "Left Recursion Elimination", "좌재귀 제거", "Right Recursion", "우재귀", "간접 좌재귀", "Indirect Left Recursion"]

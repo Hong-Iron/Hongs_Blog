@@ -8,7 +8,7 @@ num: "07"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Hamming Code", "해밍 코드", "Hamming(7", "4)", "해밍 (7", "4", "3) 부호", "패리티 비트", "신드롬", "Syndrome", "단일 오류 정정", "Single Error Correction", "완전 부호", "Perfect Code"]

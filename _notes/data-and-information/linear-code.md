@@ -8,7 +8,7 @@ num: "06"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Linear Code", "선형 부호", "선형 블록 부호", "Linear Block Code", "생성 행렬", "Generator Matrix", "패리티 검사 행렬", "Parity Check Matrix", "패리티 비트", "Parity Bit", "패리티 검사", "짝수 패리티", "홀수 패리티", "신드롬", "Syndrome", "체계형", "Systematic Form"]

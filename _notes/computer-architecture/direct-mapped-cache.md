@@ -8,7 +8,7 @@ num: "36"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Direct-Mapped Cache", "직접 매핑 캐시", "태그", "Tag", "인덱스", "Index", "블록 오프셋", "Block Offset", "유효 비트", "Valid Bit", "캐시 적중", "Cache Hit", "캐시 실패", "Cache Miss", "캐시 블록", "캐시 라인", "Cache Line"]

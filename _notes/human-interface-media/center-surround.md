@@ -8,7 +8,7 @@ num: "10"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Center-surround Antagonism", "중심-주변", "길항 작용", "Antagonism", "수용장", "receptive field", "흥분성 중심", "억제성 주변"]

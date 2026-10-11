@@ -8,7 +8,7 @@ num: "54"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["INT 10h", "VIDEO Programming with INT 10h", "속성 바이트", "Attribute Byte", "비디오 접근 수준", "Three Levels of Video Access", "Clrscr", "비디오 메모리 직접 쓰기", "Memory-Mapped Video"]

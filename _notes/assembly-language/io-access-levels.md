@@ -8,7 +8,7 @@ num: "07"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Levels of Input-Output", "입출력 수준", "I/O Access Levels", "Programming Levels", "BIOS", "Basic Input-Output System", "API", "Application Programming Interface", "장치 드라이버", "직접 하드웨어 접근"]

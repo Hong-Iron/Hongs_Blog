@@ -8,7 +8,7 @@ num: "39"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Cache Write Policy", "즉시 쓰기", "Write-Through", "나중 쓰기", "Write-Back", "더티 비트", "Dirty Bit", "쓰기 버퍼", "Write Buffer", "Write-Allocate", "No-Write-Allocate", "쓰기 실패", "Write Miss"]

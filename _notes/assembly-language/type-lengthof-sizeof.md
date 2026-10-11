@@ -8,7 +8,7 @@ num: "22"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["TYPE Operator", "LENGTHOF Operator", "SIZEOF Operator", "TYPE 연산자", "LENGTHOF 연산자", "SIZEOF 연산자", "원소 크기", "원소 개수", "여러 줄에 걸친 데이터 정의", "Spanning Multiple Lines"]

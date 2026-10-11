@@ -8,7 +8,7 @@ num: "27"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["K-means vs K-medoids"]

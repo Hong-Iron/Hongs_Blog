@@ -8,7 +8,7 @@ num: "165"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Narcissistic Personality Disorder", "NPD", "자기애성", "나르시시즘", "narcissism", "자기애적 손상", "narcissistic injury", "웅대성", "grandiosity", "일차적 자기애"]

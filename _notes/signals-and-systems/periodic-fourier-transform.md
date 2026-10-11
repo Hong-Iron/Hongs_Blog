@@ -8,7 +8,7 @@ num: "39"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Transform for Periodic Signals", "주기 신호의 스펙트럼", "임펄스 열", "Impulse Train", "선 스펙트럼", "Line Spectrum"]

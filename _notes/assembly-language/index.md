@@ -5,7 +5,7 @@ display_title: "어셈블리어 로드맵"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 concepts: 56
 practices: 11
 codes: 63

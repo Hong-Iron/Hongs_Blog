@@ -8,7 +8,7 @@ num: "43"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Calling Convention", "C 호출 규약", "cdecl", "STDCALL", "stdcall", "RET n", "스택 정리", "Stack Cleanup", "호출자 정리", "피호출자 정리"]

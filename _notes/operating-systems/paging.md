@@ -8,7 +8,7 @@ num: "36"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Paging", "페이지", "Page", "프레임", "Frame", "페이지 표", "Page Table", "빈 프레임 목록", "Free Frame List", "페이지 번호", "오프셋", "Offset"]

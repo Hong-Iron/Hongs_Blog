@@ -8,7 +8,7 @@ num: "28"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Irvine32", "Irvine32 Library", "Irvine32.inc", "INCLUDE 지시어", "WriteString", "WriteHex", "WriteDec", "WriteInt", "WriteBin", "ReadString", "DumpRegs", "DumpMem", "Crlf", "Clrscr", "RandomRange", "SetTextColor", "링크 라이브러리", "Link Library"]

@@ -8,7 +8,7 @@ num: "03"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Token and Lexeme", "토큰", "Token", "렉심", "Lexeme", "어휘항목", "패턴", "Pattern", "토큰 이름", "Token Name", "토큰 값", "Token Value", "어휘 분석", "Lexical Analysis", "어휘 분석기", "Lexical Analyzer", "스캐너", "Scanner", "예약어", "Keyword", "식별자", "Identifier"]

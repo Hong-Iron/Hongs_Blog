@@ -8,7 +8,7 @@ num: "35"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Buddy System", "버디 할당", "Buddy Allocation", "짝 블록", "Buddy"]

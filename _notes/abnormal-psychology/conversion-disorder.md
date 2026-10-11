@@ -8,7 +8,7 @@ num: "082"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Functional Neurological Symptom Disorder", "FND", "전환장애", "Conversion Disorder", "히스테리", "hysteria", "만족스러운 무관심", "la belle indifference", "안나 O", "Anna O", "장갑 마비", "glove anesthesia"]

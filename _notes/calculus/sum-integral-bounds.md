@@ -8,7 +8,7 @@ num: "16"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Sums and Integrals", "합과 적분", "적분으로 합 어림하기", "integral bounds for sums", "차분", "finite difference", "유한 미적분", "finite calculus", "하강 거듭제곱", "falling power", "오일러-마스케로니 상수", "Euler–Mascheroni constant"]

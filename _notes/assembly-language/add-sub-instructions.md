@@ -8,7 +8,7 @@ num: "18"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Addition and Subtraction", "INC", "DEC", "ADD", "SUB", "NEG", "INC 명령", "DEC 명령", "ADD 명령", "SUB 명령", "NEG 명령", "산술식 구현", "Implementing Arithmetic Expressions"]

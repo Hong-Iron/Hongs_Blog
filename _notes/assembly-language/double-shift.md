@@ -8,7 +8,7 @@ num: "40"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Double Shift", "SHLD", "SHRD", "Shift Left Double", "Shift Right Double", "이중 정밀도 시프트", "Double-Precision Shift"]

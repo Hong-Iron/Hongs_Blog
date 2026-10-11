@@ -8,7 +8,7 @@ num: "06"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Data Integration", "개체 식별 문제", "Entity Identification", "스키마 통합", "Schema Integration", "객체 매칭", "Object Matching", "메타데이터", "Metadata", "중복", "Redundancy", "상관 분석", "Correlation Analysis"]

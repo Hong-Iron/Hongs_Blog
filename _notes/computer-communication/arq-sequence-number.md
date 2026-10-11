@@ -8,7 +8,7 @@ num: "53"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["ARQ", "Automatic Repeat Request", "자동 반복 요청", "정지 대기", "Stop-and-Wait", "ACK", "Acknowledgement", "응답", "타임아웃", "Timeout", "순서 번호", "Sequence Number", "NAK", "Negative Acknowledgement", "재전송", "Retransmission"]

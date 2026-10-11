@@ -8,7 +8,7 @@ num: "12"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Fundamental Theorem of Calculus", "FTC", "미적분학의 기본정리", "원시함수", "antiderivative", "부정적분", "indefinite integral", "누적 함수", "accumulation function", "적분의 평균값 정리", "누적합", "prefix sum"]

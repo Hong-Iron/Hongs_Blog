@@ -5,7 +5,7 @@ display_title: "이상 심리학 로드맵"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 concepts: 172
 practices: 17
 codes: 6

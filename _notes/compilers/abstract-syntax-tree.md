@@ -8,7 +8,7 @@ num: "16"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Abstract Syntax Tree", "AST", "추상 구문 트리", "추상 구문 나무", "구문 트리", "Syntax Tree", "Semantic Action", "의미 동작", "의미 규칙"]

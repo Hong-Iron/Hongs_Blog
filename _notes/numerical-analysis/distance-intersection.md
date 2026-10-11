@@ -8,7 +8,7 @@ num: "12"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Distance and Intersection", "점과 직선의 거리", "Point-Line Distance", "두 직선 사이의 거리", "Line-Line Distance", "점과 평면의 거리", "Point-Plane Distance", "평면의 교선", "Plane-Plane Intersection", "꼬인 위치", "Skew Lines"]

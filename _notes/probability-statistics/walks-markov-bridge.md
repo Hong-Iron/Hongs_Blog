@@ -8,7 +8,7 @@ num: "24"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Walks and Markov Chains", "보행 수와 전이 확률", "무작위 보행", "random walk on a graph", "그래프 위의 무작위 보행", "인접행렬 거듭제곱"]

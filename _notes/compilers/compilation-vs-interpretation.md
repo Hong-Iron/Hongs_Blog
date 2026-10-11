@@ -8,7 +8,7 @@ num: "02"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Compilation vs Interpretation", "컴파일", "Compilation", "인터프리트", "Interpretation", "인터프리터", "Interpreter", "하이브리드 컴파일러", "Hybrid Compiler", "바이트코드", "Bytecode"]

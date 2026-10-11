@@ -8,7 +8,7 @@ num: "47"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Recursive Procedure", "Recursion", "재귀", "재귀 호출", "Recursive Call", "CalcSum", "Factorial", "팩토리얼", "바닥 조건", "Base Case", "스택 넘침", "Stack Overflow"]

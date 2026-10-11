@@ -1,6 +1,11 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: 과목 묶음을 일곱 개로
+  items:
+    - Studies의 과목을 수학, 컴퓨터 과학, 심리학 세 묶음에서 일곱 묶음으로 잘게 나눴어요. 기초 수학, 미적분과 선형대수, 확률과 데이터, 신호와 수치 계산, 프로그래밍과 알고리즘, 컴퓨터 시스템, 사람과 심리예요. 한 묶음에 과목이 둘에서 넷이에요.
+    - 과목 주소와 노트는 그대로예요. 목차는 일곱 묶음이 한 화면에 들어오게 줄 간격을 조금 줄였어요.
+- date: 2026-10-12
   title: 검색 단추를 검색 바로
   items:
     - 위쪽의 검색 단추를 로고와 메뉴 사이를 채우는 긴 검색 바로 바꿨어요. 누르면 전처럼 검색 창이 열려요.

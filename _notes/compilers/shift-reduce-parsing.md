@@ -8,7 +8,7 @@ num: "22"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Shift-Reduce Parsing", "Bottom-up Parsing", "상향식 파싱", "이동", "Shift", "환원", "Reduce", "Reduction", "이동-환원 충돌", "Shift-Reduce Conflict", "환원-환원 충돌", "Reduce-Reduce Conflict"]

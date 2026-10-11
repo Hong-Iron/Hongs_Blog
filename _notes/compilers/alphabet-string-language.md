@@ -8,7 +8,7 @@ num: "04"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Alphabet String and Language", "알파벳", "Alphabet", "문자열", "String", "언어", "Language", "형식 언어", "Formal Language", "빈 문자열", "Empty String", "엡실론", "Epsilon", "접합", "연결", "Concatenation", "클레이니 닫힘", "Kleene Closure", "클레이니 스타", "양의 닫힘", "Positive Closure"]

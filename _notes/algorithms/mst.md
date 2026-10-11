@@ -8,7 +8,7 @@ num: "28"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Minimum Spanning Tree", "MST", "최소 스패닝 트리", "크루스칼", "Kruskal", "프림", "Prim", "자르기 성질"]

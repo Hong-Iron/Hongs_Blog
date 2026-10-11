@@ -8,7 +8,7 @@ num: "03"
 course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
-track: "수학"
+track: "기초 수학"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Predicate Logic", "Quantifiers", "술어", "predicate", "전칭 한정기호", "universal quantifier", "존재 한정기호", "existential quantifier", "∀", "∃", "정의역", "domain of discourse", "중첩 한정기호", "nested quantifiers", "1차 논리", "first-order logic"]

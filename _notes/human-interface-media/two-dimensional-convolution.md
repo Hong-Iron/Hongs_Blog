@@ -8,7 +8,7 @@ num: "31"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["2-D Convolution", "2차원 합성곱", "2차원 컨벌루션", "이동 창", "moving window", "커널", "kernel", "마스크", "필터", "평균 필터", "average filter", "가중 평균 필터", "미분 필터", "임펄스 합성곱"]

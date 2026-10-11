@@ -8,7 +8,7 @@ num: "12"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Derivation", "유도", "Leftmost Derivation", "좌측 유도", "Rightmost Derivation", "우측 유도", "Sentential Form", "문장 형식", "Sentence", "문장", "Parse Tree", "파스 트리", "구문 트리", "문법의 언어"]

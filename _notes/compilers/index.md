@@ -5,7 +5,7 @@ display_title: "컴파일러 로드맵"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 concepts: 56
 practices: 13
 codes: 69

@@ -566,7 +566,7 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   top: 0;
   z-index: 20;
   height: 100vh;
-  padding: 3rem 1rem 2rem clamp(1.25rem, 2.4vw, 2.5rem);
+  padding: 2rem 1rem 1rem clamp(1.25rem, 2.4vw, 2.5rem);
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: none;
@@ -602,9 +602,9 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 }
 
 .study-toc__head {
-  margin: 0 0 1.4rem;
+  margin: 0 0 1.1rem;
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.1;
 }
@@ -619,8 +619,9 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   opacity: 0.6;
 }
 
+/* seven small parts: tight enough that the whole list fits a laptop screen */
 .study-toc__part + .study-toc__part {
-  margin-top: 1.5rem;
+  margin-top: 0.7rem;
 }
 
 .study-toc__part-name {
@@ -649,7 +650,7 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
 
 /* chapters sit one indent in, on a thin rail */
 .study-toc .study-toc__chapters {
-  margin: 0.45rem 0 0 0.85rem;
+  margin: 0.3rem 0 0 0.85rem;
   padding-left: 1rem;
   border-left: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
 }
@@ -660,9 +661,9 @@ body[data-tone="dark"] .course-tile:hover .course-tile__name {
   align-items: baseline;
   align-items: last baseline;
   gap: 0.5rem;
-  padding: 0.38rem 0;
+  padding: 0.15rem 0;
   color: var(--ink-muted);
-  line-height: 1.3;
+  line-height: 1.25;
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -697,7 +698,7 @@ body[data-fx-underline="true"] .article-body .study-toc__link {
 .study-toc__name {
   flex: 0 1 auto;
   min-width: 0;
-  font-size: 1.08rem;
+  font-size: 1rem;
   word-break: keep-all;
   transition: font-size 0.25s ease;
 }

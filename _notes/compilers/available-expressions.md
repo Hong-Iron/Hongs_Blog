@@ -8,7 +8,7 @@ num: "42"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Available Expression Analysis", "Available Expressions", "사용 가능한 식", "가용 식", "가용 식 분석", "전방 분석", "Forward Analysis"]

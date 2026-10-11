@@ -8,7 +8,7 @@ num: "53"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["INT 16h", "Keyboard Input with INT 16h", "스캔 코드", "Scan Code", "자판 미리 입력 버퍼", "Typeahead Buffer", "키보드 플래그", "Keyboard Flags", "INT 9h", "PC-BIOS"]

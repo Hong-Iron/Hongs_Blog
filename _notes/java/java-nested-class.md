@@ -8,7 +8,7 @@ num: "30"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Nested Class", "Nested Declarations", "멤버 클래스", "Member Class", "인스턴스 멤버 클래스", "Instance Member Class", "내부 클래스", "Inner Class", "정적 멤버 클래스", "Static Member Class", "로컬 클래스", "Local Class", "바깥 클래스", "Outer Class", "중첩 인터페이스", "Nested Interface"]

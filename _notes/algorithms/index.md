@@ -5,7 +5,7 @@ display_title: "알고리즘 로드맵"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 concepts: 42
 practices: 99
 codes: 146

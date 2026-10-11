@@ -8,7 +8,7 @@ num: "36"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Shooting Method", "슈팅 방법", "경계값 문제", "Boundary-Value Problem", "BVP"]

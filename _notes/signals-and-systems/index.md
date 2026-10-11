@@ -5,7 +5,7 @@ display_title: "신호 및 시스템 로드맵"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "수학"
+track: "신호와 수치 계산"
 concepts: 44
 practices: 6
 codes: 80

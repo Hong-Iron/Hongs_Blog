@@ -8,7 +8,7 @@ num: "17"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Metamerism", "메타머리즘", "메타머", "metamer", "조건등색쌍", "점묘법", "pointillism", "가법 혼색"]

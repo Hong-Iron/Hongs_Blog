@@ -8,7 +8,7 @@ num: "34"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Runge-Kutta Method", "RK 방법", "RK2", "RK4", "4차 룽게-쿠타", "호인 방법", "Heun's Method", "중점 방법", "Midpoint Method", "랄스턴 방법", "Ralston's Method"]

@@ -8,7 +8,7 @@ num: "25"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["LR(0) Item", "LR(0) 항목", "항목", "Item", "항목 오토마타", "LR(0) Automaton", "유효 접두사를 알아보는 DFA", "덧붙인 문법", "Augmented Grammar", "closure", "goto"]

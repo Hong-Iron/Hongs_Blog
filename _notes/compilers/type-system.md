@@ -8,7 +8,7 @@ num: "33"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Type", "Data Type", "Type System", "Type Checking", "타입", "자료형", "타입 시스템", "타입 검사", "타입 오류", "Type Error"]

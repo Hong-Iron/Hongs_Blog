@@ -8,7 +8,7 @@ num: "41"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Stack Frame", "활성 레코드", "Activation Record", "프레임 포인터", "Frame Pointer", "베이스 포인터", "Base Pointer", "EBP", "프롤로그", "Prologue", "에필로그", "Epilogue"]

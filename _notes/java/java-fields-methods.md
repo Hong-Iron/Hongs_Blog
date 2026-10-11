@@ -8,7 +8,7 @@ num: "14"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Field", "Method", "Class Members", "클래스 멤버", "라이브러리 클래스", "Library Class", "실행 클래스", "Executable Class", "지역 변수", "Local Variable", "메서드 오버로딩", "Method Overloading"]

@@ -8,7 +8,7 @@ num: "18"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Gram-Schmidt", "그람-슈미트", "그람-슈미트 직교화", "Gram–Schmidt process", "QR Decomposition", "QR 분해", "정규직교 기저", "orthonormal basis", "직교 행렬", "orthogonal matrix", "수정 그람-슈미트", "modified Gram–Schmidt"]

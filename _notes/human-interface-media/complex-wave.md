@@ -8,7 +8,7 @@ num: "24"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Complex Representation of Waves", "복소 지수 표현", "complex exponential", "오일러 공식", "Euler's formula", "페이저", "phasor", "주기의 정규화"]

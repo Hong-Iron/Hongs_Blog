@@ -8,7 +8,7 @@ num: "22"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Chain Rule and Backpropagation", "역전파", "backpropagation", "오차 역전파", "자동미분", "automatic differentiation", "역방향 모드", "reverse mode", "순방향 모드", "forward mode", "계산 그래프", "computational graph"]

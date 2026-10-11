@@ -8,7 +8,7 @@ num: "38"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Quadruples", "Quadruple", "4-튜플", "사중쌍", "op arg1 arg2 result"]

@@ -8,7 +8,7 @@ num: "098"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Sleep-Wake Disorders", "수면장애", "sleep disorders", "수면-각성 장애"]

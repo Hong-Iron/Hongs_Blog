@@ -8,7 +8,7 @@ num: "07"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Adder", "덧셈기", "반가산기", "Half Adder", "전가산기", "Full Adder", "리플 캐리 가산기", "Ripple-Carry Adder", "올림", "Carry", "올림 예측 가산기", "캐리 예측 가산기", "Carry-Lookahead Adder", "생성과 전파", "Generate and Propagate", "넘침", "오버플로", "Overflow", "가감산기", "Adder/Subtractor"]

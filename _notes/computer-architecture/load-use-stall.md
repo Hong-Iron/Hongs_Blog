@@ -8,7 +8,7 @@ num: "30"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Load-Use Hazard", "적재-사용 해저드", "로드-유즈 해저드", "Load-Use Data Hazard", "스톨", "Stall", "파이프라인 지연", "거품", "Bubble", "버블", "해저드 검출 유닛", "Hazard Detection Unit", "nop"]

@@ -8,7 +8,7 @@ num: "19"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Opponent-process Theory", "반대색설", "대립 과정", "보색", "반대색 세포", "opponent cell", "잔상", "afterimage", "동시 대비", "simultaneous contrast"]

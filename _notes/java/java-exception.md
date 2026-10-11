@@ -8,7 +8,7 @@ num: "34"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Exception", "Error", "오류", "에러", "일반 예외", "Checked Exception", "실행 예외", "Runtime Exception", "Unchecked Exception", "Throwable", "RuntimeException", "NullPointerException", "ClassNotFoundException"]

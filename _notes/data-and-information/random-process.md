@@ -8,7 +8,7 @@ num: "12"
 course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Random Process", "랜덤 프로세스", "Stochastic Process", "확률 과정", "이산 시간 확률 과정", "Discrete-time Random Process", "연속 시간 확률 과정", "Continuous-time Random Process", "표본 경로", "Sample Path", "포아송 과정", "Poisson Process"]

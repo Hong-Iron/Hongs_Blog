@@ -8,7 +8,7 @@ num: "03"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Proximity Measures", "근접도", "비유사도", "Dissimilarity", "유사도", "Similarity", "비유사도 행렬", "Dissimilarity Matrix", "데이터 행렬", "Data Matrix", "단순 일치", "Simple Matching", "자카드 계수", "Jaccard Coefficient", "비대칭 이진 비유사도"]

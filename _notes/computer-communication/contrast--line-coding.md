@@ -8,7 +8,7 @@ num: "43"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["NRZ vs NRZI vs Manchester vs 4B/5B", "선 부호화 비교", "Line Coding Comparison"]

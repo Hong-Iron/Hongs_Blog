@@ -8,7 +8,7 @@ num: "06"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Multiplexer", "Multiplexor", "Mux", "Decoder", "멀티플렉서", "먹스", "디코더", "해독기", "선택 신호", "Select Input", "원-핫", "One-hot"]

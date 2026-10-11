@@ -8,7 +8,7 @@ num: "12"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Image Function", "이미지", "image", "단색 이미지", "컬러 이미지", "RGB", "윤곽선", "edge", "기울기", "gradient"]

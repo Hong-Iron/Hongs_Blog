@@ -8,7 +8,7 @@ num: "18"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Taylor Series", "테일러 급수", "테일러 다항식", "Taylor polynomial", "매클로린 급수", "Maclaurin series", "테일러 정리", "Taylor's theorem", "나머지 항", "remainder", "거듭제곱 급수", "power series", "수렴 반지름", "radius of convergence"]

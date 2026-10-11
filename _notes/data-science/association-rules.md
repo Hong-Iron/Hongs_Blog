@@ -8,7 +8,7 @@ num: "11"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Association Rule", "연관 규칙 마이닝", "Association Rule Mining", "신뢰도", "Confidence", "강한 규칙", "Strong Rule", "최소 신뢰도", "min_conf", "지지도-신뢰도 틀", "Support-Confidence Framework"]

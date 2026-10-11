@@ -8,7 +8,7 @@ num: "28"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Shape Similarity", "유사도", "similarity", "평균 제곱 차이", "mean squared difference", "MSE", "정규화 교차 상관", "normalized cross-correlation", "NCC", "상관계수", "correlation coefficient"]

@@ -8,7 +8,7 @@ num: "39"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Bounded Type Parameter", "제한된 타입 파라미터", "상한", "Upper Bound", "와일드카드", "Wildcard", "Wildcard Type Parameter", "? extends", "? super", "하한", "Lower Bound"]

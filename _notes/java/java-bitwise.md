@@ -8,7 +8,7 @@ num: "05"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Bitwise Operator", "비트 연산자", "비트 논리 연산자", "Bitwise Logical Operator", "비트 AND", "비트 OR", "비트 XOR", "비트 NOT", "시프트 연산자", "비트 이동 연산자", "Shift Operator", "산술 시프트", "Arithmetic Shift", "논리 시프트", "Logical Shift", "비트 마스크", "Bit Mask"]

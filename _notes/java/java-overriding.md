@@ -8,7 +8,7 @@ num: "22"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Method Overriding", "오버라이딩", "재정의", "@Override", "super.method", "동적 다형성", "Dynamic Polymorphism", "메서드 시그니처", "Method Signature"]

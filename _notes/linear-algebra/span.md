@@ -8,7 +8,7 @@ num: "03"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Combination", "선형결합", "일차결합", "Span", "생성", "생성하는 공간", "spanned subspace"]

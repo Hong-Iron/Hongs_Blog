@@ -8,7 +8,7 @@ num: "42"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Multilevel Cache", "Multi-level Cache", "2단계 캐시", "L1 캐시", "L2 캐시", "L3 캐시", "지역 실패율", "Local Miss Rate", "전역 실패율", "Global Miss Rate", "캐시 계층", "Cache Hierarchy"]

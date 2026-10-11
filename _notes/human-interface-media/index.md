@@ -5,7 +5,7 @@ display_title: "휴먼 인터페이스 미디어 로드맵"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 concepts: 31
 practices: 4
 codes: 44

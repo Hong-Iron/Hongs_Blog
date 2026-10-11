@@ -8,7 +8,7 @@ num: "29"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Secant Method", "시컨트 방법", "할선", "Secant Line", "열린 방법", "Open Method", "수렴 차수", "Order of Convergence"]

@@ -8,7 +8,7 @@ num: "51"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["INT 21h", "MS-DOS Function Calls", "MS-DOS 함수 호출", "MS-DOS Services", "함수 4Ch", "Terminate Process", "표준 입력", "표준 출력", "Irvine16", "ReadString"]

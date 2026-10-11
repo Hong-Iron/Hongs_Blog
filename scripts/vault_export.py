@@ -39,30 +39,39 @@ DATA_FILE = ROOT / "_data" / "study_courses.yml"
 STUDIES_PAGE = ROOT / "studies.html"
 
 # (category, [(vault folder, course name, url slug), ...]) in display order.
-# Courses are grouped by subject category, not by semester.
+# Courses are grouped by subject category, not by semester: small groups of
+# two to four, so no heading on the Studies page fronts a long list.
 TRACKS = [
-    ("수학", [
+    ("기초 수학", [
         ("공학수학/대학수학", "대학수학", "college-math"),
         ("공학수학/이산수학", "이산수학", "discrete-math"),
+    ]),
+    ("미적분과 선형대수", [
         ("공학수학/미분적분학", "미분적분학", "calculus"),
         ("공학수학/선형대수학", "선형대수학", "linear-algebra"),
+    ]),
+    ("확률과 데이터", [
         ("공학수학/확률과 통계", "확률과 통계", "probability-statistics"),
+        ("2-1학기/자료와 정보", "자료와 정보", "data-and-information"),
+        ("3-2학기/데이터 과학", "데이터 과학", "data-science"),
+    ]),
+    ("신호와 수치 계산", [
         ("3-1학기/신호 및 시스템", "신호 및 시스템", "signals-and-systems"),
         ("2-2학기/수치해석", "수치해석", "numerical-analysis"),
-        ("2-1학기/자료와 정보", "자료와 정보", "data-and-information"),
     ]),
-    ("컴퓨터 과학", [
-        ("알고리즘", "알고리즘", "algorithms"),
-        ("3-1학기/운영체제", "운영체제", "operating-systems"),
-        ("4-1학기/컴퓨터 통신", "컴퓨터 통신", "computer-communication"),
-        ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
-        ("3-2학기/데이터 과학", "데이터 과학", "data-science"),
+    ("프로그래밍과 알고리즘", [
         ("2-1학기/소프트웨어 프로젝트", "자바 프로그래밍", "java"),
-        ("2-1학기/어셈블리어", "어셈블리어", "assembly-language"),
-        ("2-1학기/컴퓨터 구조", "컴퓨터 구조", "computer-architecture"),
+        ("알고리즘", "알고리즘", "algorithms"),
         ("3-2학기/컴파일러", "컴파일러", "compilers"),
     ]),
-    ("심리학", [
+    ("컴퓨터 시스템", [
+        ("2-1학기/어셈블리어", "어셈블리어", "assembly-language"),
+        ("2-1학기/컴퓨터 구조", "컴퓨터 구조", "computer-architecture"),
+        ("3-1학기/운영체제", "운영체제", "operating-systems"),
+        ("4-1학기/컴퓨터 통신", "컴퓨터 통신", "computer-communication"),
+    ]),
+    ("사람과 심리", [
+        ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
         ("4-1학기/이상 심리학", "이상 심리학", "abnormal-psychology"),
     ]),
 ]

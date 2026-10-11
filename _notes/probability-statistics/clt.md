@@ -8,7 +8,7 @@ num: "22"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Central Limit Theorem", "중심극한정리", "CLT", "정규 근사", "normal approximation", "연속성 보정", "continuity correction", "표준오차", "standard error"]

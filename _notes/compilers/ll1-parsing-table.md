@@ -8,7 +8,7 @@ num: "20"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["LL(1) Parsing Table", "LL(1) 파싱 테이블", "예측 파싱", "Predictive Parsing", "예측 파서", "LL(k)", "LL(1) 문법", "Lookahead", "미리보기 기호"]

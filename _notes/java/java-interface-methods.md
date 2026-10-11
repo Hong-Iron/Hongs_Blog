@@ -8,7 +8,7 @@ num: "26"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Default Method", "Static Method", "Private Method", "Private Static Method", "디폴트 메서드", "인터페이스 정적 메서드", "인터페이스 private 메서드", "인터페이스의 메서드 종류"]

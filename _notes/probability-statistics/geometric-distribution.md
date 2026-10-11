@@ -8,7 +8,7 @@ num: "11"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Geometric Distribution", "기하분포", "무기억성", "memorylessness", "memoryless property", "도박사의 오류", "gambler's fallacy", "쿠폰 수집 문제", "coupon collector problem", "재전송", "retransmission"]

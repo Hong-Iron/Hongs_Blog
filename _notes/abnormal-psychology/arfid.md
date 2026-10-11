@@ -8,7 +8,7 @@ num: "096"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Avoidant/Restrictive Food Intake Disorder", "ARFID", "회피적/제한적 음식섭취 장애", "편식", "picky eating", "감각통합치료", "sensory integration therapy"]

@@ -8,7 +8,7 @@ num: "05"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Data Cleaning", "데이터 클리닝", "데이터 전처리", "Data Preprocessing", "데이터 품질", "Data Quality", "결측값", "Missing Value", "결측치", "잡음", "Noise", "비닝", "Binning", "구간화 평활", "Smoothing by Bin Means", "이상치", "Outlier"]

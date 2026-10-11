@@ -8,7 +8,7 @@ num: "09"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Linear Independence", "선형독립", "일차독립", "Linear Dependence", "선형종속", "일차종속", "다중공선성", "multicollinearity", "해밍 부호", "Hamming code"]

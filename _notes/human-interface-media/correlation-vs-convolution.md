@@ -8,7 +8,7 @@ num: "30"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Cross-correlation vs Convolution", "교차 상관과 합성곱", "상관과 컨벌루션 차이"]

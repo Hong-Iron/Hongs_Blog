@@ -8,7 +8,7 @@ num: "37"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Digital Transmission", "아날로그 전송", "Analog Transmission", "리피터", "Repeater", "재생 중계기", "Regenerative Repeater", "앰프", "Amplifier", "증폭기", "중계"]

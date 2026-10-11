@@ -8,7 +8,7 @@ num: "014"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Biopsychosocial Model", "생물-심리-사회 모델", "BPS 모델", "통합적 입장", "integrative perspective", "엥겔", "Engel"]

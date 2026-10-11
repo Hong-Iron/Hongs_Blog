@@ -8,7 +8,7 @@ num: "27"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["SLR Parsing Table", "SLR-parsing table", "ACTION 표", "GOTO 표", "ACTION table", "GOTO table", "파싱 표"]

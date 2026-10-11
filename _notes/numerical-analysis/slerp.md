@@ -8,7 +8,7 @@ num: "23"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Spherical Linear Interpolation", "Slerp", "선형 보간", "Lerp", "Linear Interpolation", "정규화 선형 보간", "Nlerp", "쌍선형 보간", "Bilinear Interpolation", "삼선형 보간", "Trilinear Interpolation"]

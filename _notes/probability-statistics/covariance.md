@@ -8,7 +8,7 @@ num: "18"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Covariance", "공분산", "상관계수", "correlation coefficient", "피어슨 상관계수", "Pearson correlation", "무상관", "uncorrelated", "상관과 인과", "correlation vs causation"]

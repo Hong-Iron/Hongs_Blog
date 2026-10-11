@@ -8,7 +8,7 @@ num: "47"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Data Alignment", "데이터 정렬", "메모리 정렬", "Padding", "패딩", "N-byte Alignment", "런타임 환경", "Runtime Environment", "객체 표현", "Object Representation", "C 방식 배열", "Java 방식 배열", "다차원 배열 표현"]

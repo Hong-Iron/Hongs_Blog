@@ -8,7 +8,7 @@ num: "35"
 course: "신호 및 시스템"
 course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Series and LTI Systems", "주파수 응답", "Frequency Response", "H(jω)", "H(e^jω)", "시스템 함수", "System Function", "출력 계수", "Output Coefficients"]

@@ -8,7 +8,7 @@ num: "24"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Cluster Analysis", "군집화", "Clustering", "군집", "Cluster", "비지도 학습", "Unsupervised Learning", "군집 내 유사도", "Intra-cluster Similarity", "군집 간 유사도", "Inter-cluster Similarity"]

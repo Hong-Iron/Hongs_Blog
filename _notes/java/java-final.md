@@ -8,7 +8,7 @@ num: "17"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["final", "Final Field", "final 필드", "상수", "Constant", "static final", "불변", "Immutable"]

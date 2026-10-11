@@ -8,7 +8,7 @@ num: "12"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Instruction Set Architecture", "ISA", "명령어 집합", "Instruction Set", "저장 프로그램 개념", "Stored-Program Concept", "폰 노이만 구조", "마이크로아키텍처", "Microarchitecture", "설계 원칙"]

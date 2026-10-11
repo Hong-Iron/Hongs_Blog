@@ -8,7 +8,7 @@ num: "07"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Inverse Matrix", "역행렬", "가역", "invertible", "비특이", "nonsingular", "특이 행렬", "singular matrix", "가우스-조르당", "Gauss–Jordan", "기본 행렬", "elementary matrix", "가역 행렬 정리", "invertible matrix theorem"]

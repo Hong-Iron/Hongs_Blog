@@ -8,7 +8,7 @@ num: "129"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Intermittent Explosive Disorder", "IED", "분노조절장애", "분노 폭발", "분노조절 프로그램", "anger management"]

@@ -8,7 +8,7 @@ num: "41"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Local Optimizations", "Code Optimization", "코드 최적화", "중간 코드 최적화기", "Intermediate Code Optimizer", "공통 부분식 제거", "Common Subexpression Elimination", "CSE", "복사 전파", "Copy Propagation", "죽은 코드 제거", "Dead Code Elimination", "산술 단순화", "Arithmetic Simplification", "상수 접기", "Constant Folding"]

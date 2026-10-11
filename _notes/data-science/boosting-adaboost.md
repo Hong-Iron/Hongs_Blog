@@ -8,7 +8,7 @@ num: "22"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Boosting", "부스팅", "AdaBoost", "Adaptive Boosting", "적응형 부스팅", "결정 그루터기", "Decision Stump", "가중 오류", "Weighted Error", "모델 가중치", "강한 학습기", "Strong Learner"]

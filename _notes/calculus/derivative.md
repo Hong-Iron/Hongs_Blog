@@ -8,7 +8,7 @@ num: "04"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Derivative", "미분", "미분계수", "도함수", "순간 변화율", "instantaneous rate of change", "접선의 기울기", "slope of tangent", "평균 변화율", "average rate of change", "미분 가능", "differentiable", "수치 미분", "numerical differentiation", "유한 차분", "finite difference"]

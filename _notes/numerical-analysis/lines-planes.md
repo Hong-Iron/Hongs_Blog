@@ -8,7 +8,7 @@ num: "02"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Lines and Planes", "매개변수 방정식", "Parametric Equation", "매개변수", "Parametric Variable", "선분", "Line Segment", "법선 벡터", "Normal Vector", "평면의 방정식", "Plane Equation"]

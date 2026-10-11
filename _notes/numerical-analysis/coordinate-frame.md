@@ -8,7 +8,7 @@ num: "06"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Transformation of Coordinate System", "좌표계 바꾸기", "Change of Frame", "뷰 변환", "View Transformation", "로컬 좌표", "Local Coordinates", "월드 좌표", "World Coordinates"]

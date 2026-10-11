@@ -8,7 +8,7 @@ num: "03"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Classes of Transformations", "강체 변환", "Rigid-body Transformation", "등거리 변환", "Isometry", "닮음 변환", "Similarity Transformation", "전단", "Shear", "아핀 변환", "Affine Transformation", "사영 변환", "Projective Transformation", "불변량", "Invariant"]

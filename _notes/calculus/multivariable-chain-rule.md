@@ -8,7 +8,7 @@ num: "21"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Multivariable Chain Rule", "다변수 연쇄 법칙", "Jacobian", "야코비 행렬", "야코비안", "Jacobian matrix", "야코비 행렬식", "Jacobian determinant", "전미분", "total derivative", "합성 함수의 미분"]

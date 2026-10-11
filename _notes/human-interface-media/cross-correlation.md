@@ -8,7 +8,7 @@ num: "29"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Cross-correlation", "교차 상관", "자기 상관", "autocorrelation", "패턴 찾기", "template matching", "틀 맞추기", "상관 그래프"]

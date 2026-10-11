@@ -8,7 +8,7 @@ num: "12"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Time Sharing", "시분할 시스템", "Time-Sharing System", "시간 할당", "Time Slicing", "CTSS", "Compatible Time-Sharing System"]

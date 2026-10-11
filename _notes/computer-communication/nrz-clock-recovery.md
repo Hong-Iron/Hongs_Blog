@@ -8,7 +8,7 @@ num: "40"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["NRZ", "Non-Return to Zero", "클럭 복구", "Clock Recovery", "클락 복구", "비트 동기", "Bit Synchronization", "기저선 변동", "Baseline Wander", "인코딩", "Encoding", "디코딩", "Decoding"]

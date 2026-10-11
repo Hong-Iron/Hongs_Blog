@@ -8,7 +8,7 @@ num: "09"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Directive vs Instruction", "지시어", "Directive", "어셈블러 지시어", "명령어", "Instruction", "실행 시간", "Runtime", "어셈블 시간"]

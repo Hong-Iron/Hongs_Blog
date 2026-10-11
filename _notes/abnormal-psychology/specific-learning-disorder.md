@@ -8,7 +8,7 @@ num: "149"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Specific Learning Disorder", "학습장애", "learning disability", "읽기 곤란", "난독증", "dyslexia", "쓰기 곤란", "산술 곤란", "난산증", "dyscalculia", "음운처리", "phonological processing"]

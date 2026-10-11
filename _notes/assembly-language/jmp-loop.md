@@ -8,7 +8,7 @@ num: "24"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["JMP", "LOOP", "무조건 점프", "Unconditional Jump", "횟수 반복", "Counting Loop", "상대 오프셋", "Relative Offset", "중첩 루프", "Nested Loop"]

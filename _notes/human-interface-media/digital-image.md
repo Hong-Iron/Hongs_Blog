@@ -8,7 +8,7 @@ num: "25"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Digital Image", "디지털 이미지", "픽셀", "pixel", "화소", "양자화", "quantization", "부호화", "encoding", "비트 깊이", "bit depth", "트루컬러", "TrueColor", "컬러 코드", "color code"]

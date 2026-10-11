@@ -8,7 +8,7 @@ num: "10"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Longest Match", "Maximal Munch", "최장 일치 원칙", "최대 뭉크", "토큰 인식", "Token Recognition", "토큰 인식기", "Token Recognizer", "어휘 분석기 구현", "토큰 우선순위", "Token Priority"]

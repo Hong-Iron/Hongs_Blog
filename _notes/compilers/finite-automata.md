@@ -8,7 +8,7 @@ num: "06"
 course: "컴파일러"
 course_slug: "compilers"
 course_url: "/studies/compilers/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Finite Automata", "Finite Automaton", "FA", "유한 상태 오토마타", "유한 상태 기계", "Finite State Machine", "전이 그래프", "Transition Graph", "전이 표", "Transition Table", "상태 전이 함수", "시작 상태", "Start State", "받아들이는 상태", "Accepting State", "Final State", "엡실론 전이", "ε-move", "인식기", "Recognizer"]

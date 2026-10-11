@@ -8,7 +8,7 @@ num: "20"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Inheritance", "Class Inheritance", "extends", "부모 클래스", "Parent Class", "Superclass", "자식 클래스", "Child Class", "Subclass", "다중 상속", "Multiple Inheritance"]

@@ -8,7 +8,7 @@ num: "01"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["JVM", "Java Virtual Machine", "자바 가상 머신", "Bytecode", "바이트코드", "JDK", "Java Development Kit", "JRE", "Java Runtime Environment", "javac", "컴파일러", "Compiler", "인터프리터", "Interpreter", "클래스 로더", "Class Loader", "패키지", "Package"]

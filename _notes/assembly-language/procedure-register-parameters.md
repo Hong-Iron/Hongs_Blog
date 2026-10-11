@@ -8,7 +8,7 @@ num: "27"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Procedure Parameters", "프로시저 매개변수", "레지스터 매개변수", "Register Parameters", "USES", "USES 연산자", "레지스터 보존", "지역 레이블", "Local Label", "전역 레이블", "Global Label"]

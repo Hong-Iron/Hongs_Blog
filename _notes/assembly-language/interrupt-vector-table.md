@@ -8,7 +8,7 @@ num: "50"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["INT Instruction", "Interrupt Vector Table", "IVT", "소프트웨어 인터럽트", "Software Interrupt", "인터럽트 핸들러", "Interrupt Handler", "인터럽트 서비스 루틴", "ISR", "IRET", "인터럽트 벡터"]

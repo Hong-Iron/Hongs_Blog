@@ -8,7 +8,7 @@ num: "07"
 course: "컴퓨터 통신"
 course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Bursty Traffic", "버스트", "burst", "BURSTY", "최대 대 평균 비", "peak-to-average ratio"]

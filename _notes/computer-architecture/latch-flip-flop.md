@@ -8,7 +8,7 @@ num: "09"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Latch", "Flip-Flop", "SR 래치", "SR Latch", "D 래치", "D Latch", "투명 래치", "Transparent Latch", "D 플립플롭", "D Flip-Flop", "에지 트리거", "Edge-Triggered", "주종 플립플롭", "Master-Slave", "준비 시간", "Setup Time", "유지 시간", "Hold Time", "준안정 상태", "Metastability", "상태 소자", "State Element"]

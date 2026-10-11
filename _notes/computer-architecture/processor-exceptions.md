@@ -8,7 +8,7 @@ num: "32"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Exceptions", "예외", "Exception", "인터럽트", "Interrupt", "EPC", "Exception Program Counter", "Cause 레지스터", "Cause Register", "예외 처리기", "Exception Handler", "산술 넘침", "Arithmetic Overflow", "정의되지 않은 명령어", "Undefined Instruction", "정밀한 예외", "Precise Exception"]

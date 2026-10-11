@@ -8,7 +8,7 @@ num: "071"
 course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
-track: "심리학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Adjustment Disorder", "적응 장애", "심리사회적 스트레스", "psychosocial stressor", "좌절 인내력", "심리적 탄력성", "resilience"]

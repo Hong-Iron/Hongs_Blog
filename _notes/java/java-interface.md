@@ -8,7 +8,7 @@ num: "23"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Interface", "Java Interface", "구현 클래스", "Implementing Class", "implements", "구현 객체", "상수 필드", "Constant Field", "추상 메서드", "Abstract Method", "인터페이스 변수"]

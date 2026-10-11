@@ -8,7 +8,7 @@ num: "28"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["Promotion", "Casting", "Type Casting", "자동 타입 변환", "강제 타입 변환", "업캐스팅", "Upcasting", "다운캐스팅", "Downcasting", "instanceof", "ClassCastException"]

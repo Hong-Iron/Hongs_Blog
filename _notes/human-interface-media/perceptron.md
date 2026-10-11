@@ -8,7 +8,7 @@ num: "08"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Perceptron", "단층 퍼셉트론", "선형 분류기", "linear classifier", "퍼셉트론 학습 규칙", "XOR 문제", "다층 퍼셉트론", "MLP"]

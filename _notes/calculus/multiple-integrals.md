@@ -8,7 +8,7 @@ num: "25"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Multiple Integral", "중적분", "이중적분", "double integral", "반복적분", "iterated integral", "푸비니 정리", "Fubini's theorem", "변수변환", "change of variables", "극좌표 적분", "polar integral", "가우스 적분", "Gaussian integral", "박스-뮬러 변환", "Box–Muller transform", "몬테카를로 적분", "Monte Carlo integration"]

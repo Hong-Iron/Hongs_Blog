@@ -8,7 +8,7 @@ num: "05"
 course: "컴퓨터 구조"
 course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Logic Gates", "Combinational Logic", "Combinational Circuit", "조합 논리", "곱의 합", "Sum of Products", "SOP", "최소항", "전파 지연", "Propagation Delay", "오염 지연", "Contamination Delay", "임계 경로", "Critical Path"]

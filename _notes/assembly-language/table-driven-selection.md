@@ -8,7 +8,7 @@ num: "35"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Table-Driven Selection", "표 기반 선택", "테이블 기반 선택", "조회표", "Lookup Table", "다중 선택", "Multiway Selection", "프로시저 오프셋 표", "NEAR PTR", "간접 호출", "Indirect Call"]

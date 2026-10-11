@@ -8,7 +8,7 @@ num: "26"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Resolution", "해상도", "dpi", "dots per inch", "공간 주파수", "Spatial Frequency", "최대 공간 주파수", "저주파", "고주파", "윤곽선", "질감", "texture"]

@@ -8,7 +8,7 @@ num: "30"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["EM", "Expectation-Maximization", "기댓값 최대화", "E 단계", "E-step", "M 단계", "M-step", "로그가능도", "Log-likelihood"]

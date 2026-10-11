@@ -8,7 +8,7 @@ num: "09"
 course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-11"
 status: "verified"
 aliases: ["String", "문자열", "문자열 리터럴", "String Literal", "문자열 풀", "String Pool", "String Constant Pool", "equals", "불변", "Immutable", "charAt", "length", "replace", "substring", "indexOf", "split", "intern"]

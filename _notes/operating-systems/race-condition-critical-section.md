@@ -8,7 +8,7 @@ num: "21"
 course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-07"
 status: "verified"
 aliases: ["Race Condition", "Critical Section", "경쟁 조건", "임계 구역", "상호 배제", "Mutual Exclusion", "기아", "Starvation", "병행성", "Concurrency", "원자적 연산", "Atomic Operation"]

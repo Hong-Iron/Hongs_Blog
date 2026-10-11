@@ -8,7 +8,7 @@ num: "13"
 course: "데이터 과학"
 course_slug: "data-science"
 course_url: "/studies/data-science/"
-track: "컴퓨터 과학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Apriori", "아프리오리", "Apriori Algorithm", "아프리오리 성질", "Apriori Property", "후보 생성", "Candidate Generation", "결합 단계", "Join Step", "가지치기 단계", "Prune Step", "너비 우선 탐색", "수준별 탐색", "Level-wise Search"]

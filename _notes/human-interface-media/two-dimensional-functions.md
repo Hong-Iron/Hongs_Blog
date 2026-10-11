@@ -8,7 +8,7 @@ num: "27"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["2-D Function", "2차원 함수", "분리 가능 함수", "separable function", "사각 함수", "rectangular function", "rect", "원판 함수", "disk function", "델타 시트", "delta sheet", "2차원 델타 함수", "2-D delta function", "blade", "grill", "grid", "comb", "극좌표", "polar coordinates"]

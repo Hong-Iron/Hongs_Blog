@@ -8,7 +8,7 @@ num: "16"
 course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
-track: "컴퓨터 과학"
+track: "프로그래밍과 알고리즘"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Brute Force", "Complete Search", "완전탐색", "브루트포스", "전수 조사", "itertools", "순열", "조합", "product", "permutations", "combinations"]

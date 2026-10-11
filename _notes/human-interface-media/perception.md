@@ -8,7 +8,7 @@ num: "02"
 course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
-track: "컴퓨터 과학"
+track: "사람과 심리"
 updated: "2026-10-06"
 status: "verified"
 aliases: ["Perception", "감각과 지각", "감각", "Sensation", "사람의 정보 처리 수준", "지각 과정"]

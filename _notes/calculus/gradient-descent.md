@@ -8,7 +8,7 @@ num: "26"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Gradient Descent", "경사 하강법", "경사하강법", "학습률", "learning rate", "스텝 크기", "step size", "하강 보조정리", "descent lemma", "L-매끄러움", "L-smooth", "모멘텀", "momentum", "헤비볼", "heavy ball", "확률적 경사 하강법", "SGD", "stochastic gradient descent"]

@@ -5,7 +5,7 @@ display_title: "수치해석 로드맵"
 course: "수치해석"
 course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
-track: "수학"
+track: "신호와 수치 계산"
 concepts: 37
 practices: 5
 codes: 72

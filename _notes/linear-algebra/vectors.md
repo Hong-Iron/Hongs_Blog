@@ -8,7 +8,7 @@ num: "01"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Vector", "벡터", "스칼라", "scalar", "벡터 덧셈", "vector addition", "스칼라배", "scalar multiplication", "성분", "component", "영벡터", "zero vector", "위치 벡터", "변위"]

@@ -8,7 +8,7 @@ num: "19"
 course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Partial Derivative", "편미분", "편도함수", "다변수 함수", "multivariable function", "등고선", "level curve", "등위곡선", "클레로 정리", "Clairaut's theorem", "혼합 편미분", "mixed partial derivative", "유한 차분", "finite difference"]

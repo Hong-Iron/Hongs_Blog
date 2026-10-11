@@ -8,7 +8,7 @@ num: "14"
 course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
-track: "수학"
+track: "미적분과 선형대수"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Change of Basis", "기저 변환", "좌표 변환", "coordinate change", "닮음", "similar matrices", "닮은 행렬", "similarity transformation", "대각합", "trace"]

@@ -8,7 +8,7 @@ num: "04"
 course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
-track: "수학"
+track: "확률과 데이터"
 updated: "2026-10-09"
 status: "verified"
 aliases: ["Independence", "독립", "독립 사건", "independent events", "상호 독립", "mutual independence", "쌍마다 독립", "pairwise independence", "공통 원인 고장", "common-cause failure"]

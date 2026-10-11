@@ -8,7 +8,7 @@ num: "10"
 course: "어셈블리어"
 course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
-track: "컴퓨터 과학"
+track: "컴퓨터 시스템"
 updated: "2026-10-12"
 status: "verified"
 aliases: ["Program Template", "프로그램 템플릿", "AddTwo", "AddSub", ".386", ".model", ".stack", ".data", ".code", "PROC", "ENDP", "END", "ExitProcess", "코딩 규칙", "Coding Standards"]
