@@ -1,31 +1,52 @@
 /* Site search (assets/js/search.js): a spotlight-style panel over a dimmed page. */
 .site-search-btn {
+  /* a search bar: takes the room between the logo and the menu, up to 34rem,
+     and sits in the middle of whatever is left over */
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.5rem;
-  width: clamp(10rem, 24vw, 17rem);
-  margin-left: auto;
-  margin-right: 0.75rem;
-  padding: 0.4rem 0.5rem 0.4rem 0.85rem;
+  gap: 0.6rem;
+  flex: 1 1 8rem;
+  min-width: 8rem;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 0.55rem 0.6rem 0.55rem 1rem;
   border: 1px solid var(--rule);
   border-radius: 999px;
   background: color-mix(in srgb, var(--card) 80%, transparent);
   color: var(--ink-muted);
-  font: 500 0.85rem var(--font-sans);
-  cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  font: 500 0.9rem var(--font-sans);
+  text-align: left;
+  cursor: text;
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .site-search-btn:hover,
 .site-search-btn:focus-visible {
   color: var(--ink);
   border-color: var(--ink-muted);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+.site-search-btn svg {
+  flex: none;
+}
+
+.site-search-btn__label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.site-search-btn__short {
+  display: none;
 }
 
 .site-search-btn__kbd {
-  margin-left: auto;
-  padding: 0.05rem 0.35rem;
+  flex: none;
+  padding: 0.05rem 0.4rem;
   border: 1px solid var(--rule);
   border-radius: 4px;
   font: 500 0.72rem var(--font-sans);
@@ -40,17 +61,21 @@
   }
   /* fill the room between the logo and the menu button */
   .site-search-btn {
-    flex: 1 1 auto;
-    width: auto;
+    flex-basis: 6rem;
     min-width: 0;
-    max-width: 16rem;
-    margin-right: 0;
+    max-width: none;
     padding: 0.55rem 0.8rem;
   }
-  .site-search-btn__label {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+}
+
+/* too narrow for the long hint (a phone, or a small window where the menu
+   shares the row): say just "검색" */
+@media (max-width: 520px), (min-width: 720.02px) and (max-width: 880px) {
+  .site-search-btn__long {
+    display: none;
+  }
+  .site-search-btn__short {
+    display: inline;
   }
 }
 

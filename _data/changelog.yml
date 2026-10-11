@@ -1,6 +1,10 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: 검색 단추를 검색 바로
+  items:
+    - 위쪽의 검색 단추를 로고와 메뉴 사이를 채우는 긴 검색 바로 바꿨어요. 누르면 전처럼 검색 창이 열려요.
+- date: 2026-10-12
   title: 목차 접기, 본문을 화면 가운데로
   items:
     - 노트 왼쪽의 목차를 접을 수 있어요. 목차 위의 « 단추를 누르면 사라지고, 왼쪽 위의 '목차' 단추로 다시 펼쳐요. 접어 둔 상태는 다른 노트로 넘어가도 그대로예요.
