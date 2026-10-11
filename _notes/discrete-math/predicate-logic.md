@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Predicate Logic", "Quantifiers", "술어", "predicate", "전칭 한정기호", "universal quantifier", "존재 한정기호", "existential quantifier", "∀", "∃", "정의역", "domain of discourse", "중첩 한정기호", "nested quantifiers", "1차 논리", "first-order logic"]
 description: "\"x는 짝수다\"처럼 변수가 들어가 값에 따라 참·거짓이 바뀌는 문장을 술어라 하고, \"모든 x에 대해\"(∀)와 \"어떤 x가 있어\"(∃)로 변수를 묶어 명제로 만든다. 알고리즘의 명세, 데이터베이스 질의, 수학의 정의가 모두 이 말로 쓰인다. 부정할 때는 \"모든\"과 \"어떤\"이 서로 …"
@@ -169,6 +169,23 @@ $$\neg\forall x\, P(x) \equiv \exists x\, \neg P(x), \qquad \neg\exists x\, P(x)
 </div>
 
 
+## 과목별 관점
+
+**데이터베이스 설계 (2-2학기).** SQL의 조건이 한정기호를 그대로 쓴다. 안쪽 질의가 돌려준 값의 모음을 $$V$$, 안쪽 질의의 결과 표를 $$Q$$라 하면 다음과 같다[^b1].
+
+| SQL | 한정기호로 | 뜻 |
+|---|---|---|
+| `v IN V`, `v = ANY V` | $$\exists x \in V\ (v = x)$$ | $$V$$에 $$v$$와 같은 값이 있다 |
+| `v > ALL V` | $$\forall x \in V\ (v > x)$$ | $$v$$가 $$V$$의 모든 값보다 크다 |
+| `EXISTS ( Q )` | $$\exists t\ (t \in Q)$$ | $$Q$$에 행이 하나라도 있다 |
+| `NOT EXISTS ( Q )` | $$\neg\exists t\ (t \in Q)$$ | $$Q$$에 행이 하나도 없다 |
+
+자세한 것은 [중첩 질의와 IN](/Hongs_Blog/studies/database-design/nested-query-in/), [ANY와 ALL](/Hongs_Blog/studies/database-design/sql-any-all/), [EXISTS와 NOT EXISTS](/Hongs_Blog/studies/database-design/sql-exists/)에 있다.
+
+- **$$\forall$$은 부정 규칙으로 돌려 쓴다.** `EXISTS`에는 "모든 행이 조건을 지킨다"를 묻는 짝이 없다. 그래서 "학생 $$s$$의 성적이 모두 A다" $$\forall g \in G_s\ (g = \text{A})$$를 "A가 아닌 성적이 없다" $$\neg\exists g \in G_s\ (g \ne \text{A})$$로 바꾼다. $$G_s$$는 학생 $$s$$의 성적 모음이다. 뒤의 꼴이 `NOT EXISTS ( … G.Grade <> 'A' )`이고, 12주차 풀이가 이렇게 풀었다[^b2].
+- **견줄 것이 없으면 참이다.** 성적이 한 줄도 없는 학생은 $$G_s$$가 비어 있어 $$\forall$$ 명제가 참이다. 실제로 그런 학생을 넣고 돌리면 `NOT EXISTS` 질의가 그 학생을 뽑는다. `ALL`도 같다. 안쪽 결과가 비어 있으면 `Salary > ALL ( … )`은 모든 직원에게 참이라 8명이 다 나온다[^bs1].
+- **제약도 같은 꼴이다.** "자기 부서 관리자보다 급여가 많은 직원은 없다"는 "그런 직원을 고르는 질의의 결과가 비어 있다"로 적는다. 어기는 행을 고르는 질의를 `NOT EXISTS` 안에 넣는 것이다: [주장 CREATE ASSERTION](/Hongs_Blog/studies/database-design/sql-assertion/)[^b3].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -205,6 +222,20 @@ $$\neg\forall x\, P(x) \equiv \exists x\, \neg P(x), \qquad \neg\exists x\, P(x)
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** "학생 s의 성적이 모두 A다"를 한정기호로 쓰고, SQL의 NOT EXISTS로 옮길 수 있는 꼴로 바꿔라. 성적이 하나도 없는 학생에게 이 명제는 참인가?</summary>
+
+**답:** $$\forall g \in G_s\ (g = \text{A})$$. $$G_s$$는 학생 $$s$$의 성적 모음이다. 부정 규칙으로 $$\neg\exists g \in G_s\ (g \ne \text{A})$$로 바꾸면 `NOT EXISTS ( SELECT * FROM GRADE_REPORT AS G WHERE G.Student_number = S.Student_number AND G.Grade <> 'A' )`가 된다. 성적이 없으면 $$G_s$$가 비어 있어 참이다.
+
+**흔한 오답:** 조건을 `G.Grade = 'A'`로 두고 `EXISTS`를 쓰는 것. 그것은 $$\exists g \in G_s\ (g = \text{A})$$, 곧 "A가 하나라도 있다"이다[^bs1].
+
+</details>
+
+
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 3장 "Logical Formulas"(술어 식). Rosen, *Discrete Mathematics and Its Applications* 7판, 1장(술어와 한정기호, 중첩 한정기호).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 세 사람과 좋아함 관계를 화살표로 그렸다.
+[^b1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.12~13 (IN, = ANY, = ALL과 > ALL), p.15~16 (EXISTS와 NOT EXISTS)
+[^b2]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.3 (Q2-1의 풀이: 성적이 A가 아닌 행이 없는 학생)
+[^b3]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.7~8 (CREATE ASSERTION: 제약을 어기는 튜플을 고르는 질의를 NOT EXISTS 안에 넣는다)
+[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 한정기호로 옮긴 표, 성적이 없는 학생과 빈 결과에 대한 `ALL`의 동작, 카드 C5는 슬라이드에 없다. 성적이 없는 학생을 넣은 실험은 [70_complex-retrieval-practice_p2.sql](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p2-sql/)과 [70_complex-retrieval-practice_p2.py](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p2/)로, 빈 결과에 대한 `> ALL`의 8명은 [61_sql-any-all_verify.sql](/Hongs_Blog/studies/database-design/code/61_sql-any-all_verify-sql/)로 PostgreSQL 16에서 확인했다.
 {% endraw %}

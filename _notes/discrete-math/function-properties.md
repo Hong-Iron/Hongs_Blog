@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Injective", "Surjective", "Bijective", "단사", "일대일 함수", "injection", "전사", "위로의 함수", "surjection", "전단사", "일대일 대응", "bijection", "기수", "cardinality", "집합의 크기"]
 description: "함수를 두 질문으로 나눈다. 출력이 서로 겹치지 않는가(단사), 도착 쪽을 빠짐없이 덮는가(전사). 둘 다이면 전단사로, 두 집합의 원소를 하나씩 짝지을 수 있어 크기가 같다. 끝없이 큰 집합의 크기도 이 짝짓기로 비교한다. 해시 함수처럼 큰 집합에서 작은 집합으로 가는 함수는 단…"
@@ -125,6 +125,25 @@ $$A$$, $$B$$가 유한할 때
 - 선수: [집합](/Hongs_Blog/studies/discrete-math/sets/), [역함수](/Hongs_Blog/studies/college-math/inverse-function/)(일대일 함수의 뜻)
 - 이어지는 개념: [가산 집합과 대각선 논법](/Hongs_Blog/studies/discrete-math/countability/)(무한 집합의 크기), [셈의 기본 법칙](/Hongs_Blog/studies/discrete-math/counting-rules/)과 [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/)
 
+## 과목별 관점
+
+**데이터베이스 설계 (2-2학기).** 표를 설계할 때 쓰는 말 가운데 여럿이 함수의 성질을 다른 이름으로 부른 것이다.
+
+- **키는 단사 함수다.** 표의 줄(튜플) $$t$$를 그 줄의 키 값 $$t[K]$$로 보내는 함수를 생각한다. $$K$$가 키라는 것은 서로 다른 두 줄 $$t_1$$, $$t_2$$에 대해 늘 $$t_1[K] \ne t_2[K]$$라는 뜻이다[^b1]. 서로 다른 입력이 서로 다른 출력으로 가므로 단사다. 학생 표에서 학생을 사회보장번호로 보내는 함수는 단사이고, 나이로 보내는 함수는 두 학생이 19로 가서 단사가 아니다. 나이는 키가 아니다: [슈퍼키·후보 키·기본 키](/Hongs_Blog/studies/database-design/relational-keys/)
+- **일대다 연결은 함수다.** "직원은 부서 하나에만 속한다"(부서 1 : 직원 N)는 직원마다 부서가 많아야 하나 정해진다는 말이다[^b2]. 직원에서 부서로 가는 함수다. 표에서는 직원 줄의 부서 번호 칸이 이 함수의 값을 적는 자리다. 5번 부서로 직원 넷이 가므로 단사는 아니다: [카디널리티 비율](/Hongs_Blog/studies/database-design/cardinality-ratio/)
+- **참여 제약은 "빠짐없이"를 묻는다.** 모든 직원이 부서에 속해야 한다(전체 참여)면 함수가 직원 전체에서 정해진다. 일부만 참여해도 되면(부분 참여) 값이 없는 입력이 있다. 사장은 상사가 없어서 "직원 → 상사"에는 값이 없는 직원이 있다[^b3]. 자세한 것은 [참여 제약](/Hongs_Blog/studies/database-design/participation-constraint/)에 있다.
+
+| 표를 설계할 때의 말 | 함수의 말 |
+|---|---|
+| 키 | 줄에서 키 값으로 가는 함수가 단사 |
+| 1:N 연결 (N쪽은 상대가 많아야 하나) | N쪽에서 1쪽으로 가는 함수 |
+| N쪽의 전체 참여 | 그 함수가 N쪽 전체에서 정해진다 |
+| 1:1 연결 | 그 함수가 단사 |
+| 1쪽의 전체 참여 | 그 함수가 전사 |
+| M:N 연결 | 함수가 아니다. 한 입력에 출력이 여럿이다 |
+
+표의 아래 네 줄은 슬라이드의 정의를 함수의 말로 옮긴 것이다[^bs1]. 함수인 연결은 칸 하나로 적을 수 있고, 함수가 아닌 연결은 짝마다 줄 하나를 쓰는 표가 따로 필요하다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -151,7 +170,20 @@ $$A$$, $$B$$가 유한할 때
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 어느 회사에 직원 8명, 부서 3개, 프로젝트 6개가 있다. (가) 직원 → 일하는 부서: 직원마다 부서가 하나이고 세 부서에 1명, 3명, 4명이 있다. (나) 부서 → 관리자: 부서마다 관리자가 한 명이고 세 관리자는 서로 다른 직원이다. (다) 직원 → 일하는 프로젝트: 한 직원이 프로젝트 넷에서 일하기도 한다. 셋 가운데 함수인 것은? 그중 단사인 것, 전사인 것은?</summary>
+
+**답:** (가)는 함수다. 단사는 아니고(한 부서로 여럿이 간다) 전사다(세 부서 모두 직원이 있다). (나)는 함수이고 단사다(관리자가 겹치지 않는다). 전사는 아니다(직원 8명 가운데 3명에게만 닿는다). (다)는 함수가 아니다(한 입력에 출력이 넷이다).<br>
+**이유:** 데이터베이스의 말로는 (가)가 1:N, (나)가 1:1, (다)가 M:N 연결이다. (가)와 (나)는 칸 하나로 적고 (다)는 표를 따로 만든다[^bs1].
+
+</details>
+
+
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장 "Mathematical Data Types"(함수, 이항 관계, 유한 집합의 크기). Rosen, *Discrete Mathematics and Its Applications* 7판, 2장(함수, 집합의 크기).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 무손실 압축의 한계는 "길이 $$n$$ 비트 파일은 $$2^n$$개인데 길이 $$n$$ 미만 파일은 $$2^n - 1$$개"라는 셈에서 나온다. [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/)의 대표 예다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 세 상황을 학생과 좌석 2~3개로 줄여 그렸다.
+[^b1]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.17~19 (슈퍼키: 서로 다른 두 튜플 $$t_1$$, $$t_2$$에 대해 $$t_1[SK] \ne t_2[SK]$$, 후보 키, 기본 키)
+[^b2]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.12~15 (Cardinality Ratio: 1:1, 1:N, M:N)
+[^b3]: 같은 자료, p.12, p.16 (Participation Constraint: total, partial)
+[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 키와 연결을 함수의 말로 옮긴 표, 카드 C4는 슬라이드에 없다. 슬라이드의 정의(각주 b1~b3)를 이 문서의 정의에 맞춰 옮긴 것이다. 카드의 수는 COMPANY 상태(6-2 p.21)의 것이고 [41_mapping-one-to-one-relationship_verify.py](/Hongs_Blog/studies/database-design/code/41_mapping-one-to-one-relationship_verify/), [42_mapping-one-to-many-relationship_verify.py](/Hongs_Blog/studies/database-design/code/42_mapping-one-to-many-relationship_verify/), [43_mapping-many-to-many-relationship_verify.py](/Hongs_Blog/studies/database-design/code/43_mapping-many-to-many-relationship_verify/)로 확인했다.
 {% endraw %}

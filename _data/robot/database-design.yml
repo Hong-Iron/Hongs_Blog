@@ -1,0 +1,65 @@
+# 홍철's lines for the database design course pages. Format: _data/robot/README.md
+greeting:
+- "데이터베이스 설계예요. B-트리, ER 그림, 표, SQL 순서로 가요."
+- "데이터베이스 설계 페이지예요. 내릴수록 배경에서 직원 표의 줄이 부서 표의 줄을 하나씩 찾아가요."
+- "여긴 데이터베이스 설계예요. 질의는 전부 진짜 데이터베이스에서 돌려 보고 결과 표를 실었어요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "SQL만 급하면 SELECT-FROM-WHERE부터 봐도 돼요. 처음부터 볼 거면 '데이터베이스와 DBMS'에서 시작해 B-트리, ER 그림, 표로 옮기기 순서로 가요."
+  link: /studies/database-design/select-from-where/
+  link_label: "SELECT-FROM-WHERE"
+- q: 어려워요?
+  a: "'모두 ~인 것'을 찾는 질의가 제일 헷갈려요. '~가 아닌 것이 없다'로 뒤집어 써야 하고, 견줄 것이 아예 없는 줄도 같이 뽑혀요."
+  link: /studies/database-design/sql-exists/
+  link_label: "EXISTS와 NOT EXISTS"
+- q: "답은 믿어도 돼요?"
+  a: "질의를 SQLite에서 돌리고, SQLite가 못 받는 문장은 PostgreSQL에서 돌렸어요. 두 제품이 다르게 도는 곳과 슬라이드 질의가 그대로는 안 도는 곳도 적어 뒀어요."
+  link: /studies/database-design/
+  link_label: 로드맵
+- q: "제일 중요한 건 뭐예요?"
+  a: "'무거움' 표시가 붙은 문서 {heavy}개요. B-트리 삽입과 삭제, 키와 외래 키, 그림을 표로 옮기는 절차, GROUP BY, 외부 조인이 들어 있어요."
+  link: /studies/database-design/
+  link_label: 로드맵
+- q: "다른 과목이랑도 이어져요?"
+  a: "B-트리는 자료구조의 이진 탐색 트리에서 갈림길을 늘린 거예요. EXISTS와 ALL은 이산수학의 '어떤'과 '모든'이고요."
+  link: /studies/database-design/b-tree-vs-bst/
+  link_label: "B-트리와 이진 탐색 트리 비교"
+chats:
+- q: "표 두 개는 어떻게 이어요?"
+  a: "한 표의 칸이 다른 표의 줄을 가리키게 해요. 직원 표에 부서 번호를 적어 두고, 그 번호가 같은 부서 줄을 찾아 옆에 붙여요."
+  link: /studies/database-design/referential-integrity-foreign-key/
+  link_label: "참조 무결성 제약과 외래 키"
+  next:
+  - q: "잇는 조건을 빼먹으면요?"
+    a: "모든 줄이 모든 줄과 짝지어져요. 직원 8명과 부서 3개면 24줄이 나와요."
+    link: /studies/database-design/missing-where-cross-product/
+    link_label: "WHERE 없는 질의와 카티션 곱"
+  - q: "짝이 없는 줄은요?"
+    a: "그냥 이으면 통째로 빠져요. 직원 옆에 상사를 붙이면 상사가 없는 사장이 빠져서 8명이 7명이 돼요. 외부 조인이면 빈칸을 채워 남겨요."
+    link: /studies/database-design/outer-join/
+    link_label: "외부 조인"
+- q: "빈칸은 0이랑 같아요?"
+  a: "아니에요. '값이 없다'는 표시예요. 무엇인지 몰라서 = 로 견줘도 참이 안 돼요. 빈칸인지는 IS NULL로 물어요."
+  link: /studies/database-design/sql-null/
+  link_label: "NULL 값과 IS NULL"
+- q: "WHERE랑 HAVING은 뭐가 달라요?"
+  a: "WHERE는 묶기 전에 줄을 거르고, HAVING은 묶은 뒤에 묶음을 통째로 걸러요. 조건을 어디에 두느냐에 따라 평균을 내는 대상이 달라져요."
+  link: /studies/database-design/where-vs-having/
+  link_label: "WHERE와 HAVING 비교"
+- q: "색인은 왜 B-트리로 만들어요?"
+  a: "디스크는 한 번 읽는 데 오래 걸려요. 칸 하나에 값을 많이 담아 나무를 낮게 만들면 디스크를 두세 번만 읽고도 찾아요."
+  link: /studies/database-design/b-tree/
+  link_label: "B-트리"
+talk:
+- text: "지금 표에서 우연히 값이 안 겹친다고 키가 되는 건 아니에요. 앞으로 들어올 어떤 줄에서도 안 겹쳐야 해요."
+  link: /studies/database-design/relational-keys/
+  link_label: "슈퍼키·후보 키·기본 키"
+- text: "ER 그림을 표로 옮기면 그림에 적어 둔 규칙 가운데 일부는 사라져요. 일대일과 일대다 연결은 칸 하나가 되고, 다대다 연결은 새 표가 돼요."
+  link: /studies/database-design/er-to-relational-mapping/
+  link_label: "ER-관계형 사상 절차"
+- text: "여러 표를 이어 붙인 뷰는 읽을 수는 있어도 보통 고칠 수는 없어요. 원래 표를 고치는 길이 여럿이라서요."
+  link: /studies/database-design/view-update-problem/
+  link_label: "뷰 갱신 문제"
+- text: "부서마다 평균을 내면 묶음 하나가 한 줄이 돼요. 그래서 결과에는 묶는 데 쓴 열과 묶음마다 하나로 정해지는 계산만 적을 수 있어요."
+  link: /studies/database-design/group-by/
+  link_label: "GROUP BY"

@@ -10,7 +10,7 @@ course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-11"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Data and Metadata", "데이터", "Data", "메타데이터", "메타 데이터", "Metadata", "정보", "Information", "모델", "Model"]
 description: "컴퓨터에 저장된 것은 0과 1의 줄일 뿐이고, 그 줄만 봐서는 몸무게인지 글자인지 알 수 없다. 암호문과 해독표처럼, 0과 1의 줄에 \"이건 킬로그램 단위의 몸무게다\"라는 설명이 붙어야 뜻을 가진 값이 된다. 그 값들이 어떤 모양으로 퍼져 있다고 볼지까지 정하면 \"평균은 얼마\"라는…"
@@ -95,6 +95,14 @@ flowchart LR
 - 이어지는 개념: [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/), [부호와 부호화](/Hongs_Blog/studies/data-and-information/code-encoding/)
 - 모델의 예: [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/)
 
+## 과목별 관점
+
+**데이터베이스 설계 (2-2학기).** 데이터베이스는 메타데이터를 프로그램 안이 아니라 데이터 곁에 따로 모아 둔다. 그 자리를 카탈로그(catalog)라 부른다[^b1]. 대학 데이터베이스의 카탈로그에는 표가 둘 그려져 있다. 하나는 표 이름과 칸의 수를 적는다(STUDENT 4, COURSE 4, SECTION 5, GRADE_REPORT 3, PREREQUISITE 2). 다른 하나는 칸마다 이름, 자료형, 어느 표의 칸인지를 적는다(Name은 Character (30)이고 STUDENT의 칸)[^b1]. 이 문서의 "16비트 정수, 무게, kg"과 같은 일을 하는 설명이다.
+
+저장된 레코드를 끊어 읽는 데 쓰는 메타데이터도 나온다. 학생 레코드 하나에서 1번째부터 30글자가 이름, 31번째부터 4글자가 학번, 35번째 1글자가 학년, 36번째부터 4글자가 전공이다[^b2]. 모두 더하면 39글자다. 이 자리표가 없으면 39글자가 어디서 끊기는지 알 수 없다[^bs1].
+
+강의가 여기에 더하는 것은 메타데이터를 어디에 두느냐다. 자리표를 프로그램마다 코드에 적어 두면 레코드의 모양이 바뀔 때 프로그램을 모두 고쳐야 한다. 카탈로그 한곳에 두고 프로그램이 그것을 거쳐 읽게 하면, 모양이 바뀌어도 프로그램은 그대로다[^bs1]. 슬라이드는 데이터베이스가 자기 구조의 설명을 함께 품는 이 성질 덕분에 프로그램과 데이터가 서로 매이지 않는다고 적는다[^b2]. 레코드 끝에 생일 8글자를 붙이는 예는 [데이터베이스 방식의 네 가지 특징](/Hongs_Blog/studies/database-design/database-approach-characteristics/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -127,4 +135,7 @@ flowchart LR
 [^3]: 자료와 정보 2회 강의 자료 「D&I_강의02-데이터」, p.2 (데이터의 기본형)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에는 네 낱말과 그림만 있고 낱말의 풀이는 없다. 암호문 비유, 다섯 줄을 수로 읽은 값, 파일 확장자·타입·열 이름·깨진 글자의 예, 카드 C3은 보탠 것이다. 슬라이드의 "평균 67, 분산 3"은 그림에 적힌 값이고, 보이는 다섯 줄만으로 계산한 값이 아니다(다섯 줄의 평균은 68.4다). 값은 검증 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 슬라이드 p.3의 그림을 네 낱말의 자리가 보이게 다시 그린 것이다.
+[^b1]: 데이터베이스 설계 2회 강의 자료 「2-1_DB-users」, p.8 (Self-describing Nature of a Database System, 메타데이터는 DBMS catalog에 저장, 카탈로그 예: RELATIONS와 COLUMNS)
+[^b2]: 데이터베이스 설계 2회 강의 자료 「2-1_DB-users」, p.9 (program-data independence, "Thanks to the self-describing nature!", STUDENT 레코드의 내부 저장 형식 표: 시작 자리 1, 31, 35, 36과 길이 30, 4, 1, 4)
+[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 39글자라는 합과 "자리표를 프로그램마다 적어 두면 모두 고쳐야 한다"는 풀이는 슬라이드에 없다. 슬라이드에는 "데이터 구조가 바뀌어도 프로그램에 영향이 없다"는 결론만 있다. 39글자와, 생일을 붙였을 때 자리 번호를 코드에 적어 둔 프로그램이 둘째 학생부터 틀리게 읽는 것은 [02_database-approach-characteristics_verify.py](/Hongs_Blog/studies/database-design/code/02_database-approach-characteristics_verify/)로 확인했다.
 {% endraw %}

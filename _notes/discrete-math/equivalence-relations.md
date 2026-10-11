@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-06"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Equivalence Relation", "Partition", "동치관계", "동치류", "equivalence class", "분할", "몫집합", "quotient set", "유니온-파인드", "union-find", "서로소 집합", "disjoint set"]
 description: "반사·대칭·추이를 모두 갖춘 관계는 \"같은 무리로 본다\"는 뜻의 동치관계다. 동치관계가 있으면 집합이 서로 겹치지 않는 무리로 깔끔하게 나뉘고, 거꾸로 집합을 무리로 나누면 동치관계가 생긴다. 나머지가 같은 정수, 서로 연결된 네트워크 노드, 같은 동작을 하는 상태들이 모두 이 구…"
@@ -104,6 +104,14 @@ $$A$$의 **분할**은 공집합이 아닌 부분집합들의 모음으로, 서�
 - 이어지는 개념: [나눗셈과 합동](/Hongs_Blog/studies/discrete-math/modular-arithmetic/)(mod $$n$$의 동치류), 그래프의 [연결 성분](/Hongs_Blog/studies/discrete-math/connectivity/)
 - 대조: [부분순서](/Hongs_Blog/studies/discrete-math/partial-orders/)는 대칭 대신 반대칭을 요구해 "무리 짓기"가 아니라 "줄 세우기"가 된다.
 
+## 과목별 관점
+
+**데이터베이스 설계 (2-2학기).** SQL의 `GROUP BY`가 분할을 만든다. 슬라이드는 묶기를 "표의 행을 서로 겹치지 않는 부분집합(묶음)으로 나누는 일"이라고 적는다[^b1]. `GROUP BY Dno`는 직원 표의 행에 "`Dno`의 값이 같다"는 관계를 주고, 그 동치류 하나하나를 묶음으로 삼는다. 위 정리의 1번이 말하는 대로 묶음은 서로 겹치지 않고 합치면 표 전체다.
+
+- **묶음이 곧 동치류다.** COMPANY의 직원 8명은 5번 부서 {Smith, Wong, Narayan, English}, 4번 부서 {Zelaya, Wallace, Jabbar}, 1번 부서 {Borg}로 나뉜다. 묶음마다 직원 수와 평균 급여를 하나씩 계산해 묶음 하나가 결과의 한 줄이 된다: [GROUP BY](/Hongs_Blog/studies/database-design/group-by/).
+- **묶는 열을 늘리면 분할이 잘게 쪼개진다.** `GROUP BY Dno, Sex`는 두 값이 모두 같아야 같은 묶음이라, 세 묶음이 다섯 묶음이 된다[^bs1].
+- **"같다"로만 묶는 까닭.** `GROUP BY`에 적을 수 있는 것은 "이 열의 값이 같다"뿐이다. "급여 차이가 3000 이하"처럼 추이가 깨지는 관계로는 겹치지 않는 묶음을 만들 수 없다[^bs1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -130,6 +138,16 @@ $$A$$의 **분할**은 공집합이 아닌 부분집합들의 모음으로, 서�
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** SQL의 GROUP BY Dno가 직원 표의 행을 겹치지 않게 빠짐없이 나누는 까닭을 동치관계로 설명하라. "급여 차이가 3000 이하인 직원끼리"로는 왜 그렇게 나눌 수 없는가? 급여는 Narayan 38000, Wong 40000, Wallace 43000이다.</summary>
+
+**답:** "Dno가 같다"는 반사·대칭·추이를 모두 지키는 동치관계다. 동치류는 서로 같거나 겹치지 않고 합치면 전체이므로, 부서 번호마다 한 묶음씩 나뉜다. "차이가 3000 이하"는 추이가 깨진다. Narayan과 Wong(차이 2000), Wong과 Wallace(차이 3000)는 관계가 있지만 Narayan과 Wallace(차이 5000)는 없다. Wong이 두 묶음에 걸쳐 묶음이 겹친다[^bs1].
+
+</details>
+
+
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장(동치관계). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장 "Relations"(동치관계와 분할).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 유니온-파인드의 경로 압축과 랭크 합치기를 함께 쓰면 연산당 비용이 역아커만 함수 $$\alpha(n)$$로 사실상 상수다(Cormen et al., *Introduction to Algorithms* 3판, 21장).
+[^b1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.31 (Grouping in SQL: 겹치지 않는 부분집합으로 나누기, 묶는 속성의 값이 같은 튜플끼리 한 묶음, Query 24의 묶음 그림)
+[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 묶음을 동치류로 읽는 설명, 두 열로 묶은 다섯 묶음, 추이가 깨지는 예, 카드 C4는 슬라이드에 없다. 세 묶음이 겹치지 않고 8명을 다 덮는 것, 다섯 묶음, Narayan·Wong·Wallace의 급여 차이는 [69_group-by_verify.py](/Hongs_Blog/studies/database-design/code/69_group-by_verify/)로 확인했다.
 {% endraw %}

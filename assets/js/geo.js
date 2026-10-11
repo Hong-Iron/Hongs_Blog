@@ -359,7 +359,8 @@
     "assembly-language": ["tile", "tallbar", "squareOutline"],
     "compilers": ["circle", "arrow", "ring"],
     "computer-architecture": ["tile", "tallbar", "ring"],
-    "data-structures": ["circle", "tile", "arrow"]
+    "data-structures": ["circle", "tile", "arrow"],
+    "database-design": ["diamond", "tile", "capsule"]
   };
 
   function mixHex(a, b, f) {
@@ -1411,6 +1412,62 @@
         ctx.strokeStyle = rgba(hot2 ? F.pal.b : F.pal.a, on2 ? 0.85 : 0.25); ctx.lineWidth = hot2 ? 2 : 1.2; ctx.stroke();
         if (on2) label(ctx, String(st.arr[i]), x0 + i * cw + 2.4 * u, y0 + ch * 0.68, rgba(F.pal.ink, 0.85), fs);
         label(ctx, String(i), x0 + i * cw + 4 * u, y0 + ch + 6.5 * v, rgba(F.pal.ink, 0.4), Math.max(8, fs - 3));
+      }
+    }
+  };
+
+  // 데이터베이스 설계: each EMPLOYEE row follows its foreign key to a DEPARTMENT row, and the pair lands in the result.
+  MOTIFS["database-design"] = {
+    draw: function (ctx, L, S, F) {
+      var B = coverBox(L), u = B.w / 100, v = B.h / 100, i;
+      var emp = [["Smith", 5], ["Wong", 5], ["Zelaya", 4], ["Wallace", 4], ["Borg", 1]];
+      var dep = [[5, "Research"], [4, "Admin"], [1, "HQ"]];
+      var fs = Math.max(8, Math.min(12, 6.2 * v)), rh = 9 * v, ch = rh - 1.6 * v;
+      var step = Math.floor(F.p * (emp.length + 1.4)), cur = step < emp.length ? step : -1;
+      var shown = Math.min(emp.length, step + 1);
+      var x0 = B.x, x1 = B.x + 60 * u, y0 = B.y + 9 * v, y2 = B.y + 53 * v;
+      function cell(x, y, w, t, hot, on) {
+        roundRect(ctx, x, y, w, ch, 2);
+        ctx.fillStyle = rgba(hot ? F.pal.b : F.pal.a, hot ? 0.3 : (on ? 0.14 : 0.04)); ctx.fill();
+        ctx.strokeStyle = rgba(hot ? F.pal.b : F.pal.a, on ? 0.75 : 0.25); ctx.lineWidth = hot ? 1.8 : 1; ctx.stroke();
+        if (!on) return;
+        ctx.save(); ctx.beginPath(); ctx.rect(x, y, w, ch); ctx.clip();
+        label(ctx, String(t), x + 1.4 * u, y + ch * 0.72, rgba(F.pal.ink, 0.85), fs);
+        ctx.restore();
+      }
+      function title(t, x, y, w) {
+        ctx.save(); ctx.beginPath(); ctx.rect(x, y - fs, w, fs * 1.5); ctx.clip();
+        label(ctx, t, x, y, rgba(F.pal.ink, 0.5), Math.max(8, fs - 1));
+        ctx.restore();
+      }
+      function depRow(d) { for (var j = 0; j < dep.length; j++) if (dep[j][0] === d) return j; return 0; }
+      title("EMPLOYEE", x0, B.y + 5 * v, 40 * u);
+      title("DEPARTMENT", x1, B.y + 5 * v, 40 * u);
+      title("JOIN ON Dno", x1, B.y + 50 * v, 40 * u);
+      // the foreign key of every row joined so far; the one being followed now is drawn strong
+      for (i = 0; i < shown; i++) {
+        var hotLine = i === cur, j = depRow(emp[i][1]);
+        ctx.strokeStyle = rgba(hotLine ? F.pal.b : F.pal.ink, hotLine ? 0.95 : 0.24); ctx.lineWidth = hotLine ? 2 : 1;
+        line(ctx, x0 + 38 * u, y0 + i * rh + ch / 2, x1 - 1 * u, y0 + j * rh + ch / 2);
+      }
+      for (i = 0; i < emp.length; i++) {
+        cell(x0, y0 + i * rh, 26 * u, emp[i][0], i === cur, true);
+        cell(x0 + 27.5 * u, y0 + i * rh, 10 * u, emp[i][1], i === cur, true);
+      }
+      for (i = 0; i < dep.length; i++) {
+        var hotDep = cur >= 0 && dep[i][0] === emp[cur][1];
+        cell(x1, y0 + i * rh, 10 * u, dep[i][0], hotDep, true);
+        cell(x1 + 11.5 * u, y0 + i * rh, 28.5 * u, dep[i][1], hotDep, true);
+      }
+      for (i = 0; i < emp.length; i++) {
+        var on = i < shown;
+        cell(x1, y2 + i * rh, 19 * u, emp[i][0], i === cur, on);
+        cell(x1 + 20.5 * u, y2 + i * rh, 19.5 * u, dep[depRow(emp[i][1])][1], i === cur, on);
+      }
+      // the query itself, where there is room for it (behind a page title it would only be clutter)
+      if (L.mode === "thumb" || L.mode === "full" || B.w >= 380) {
+        var q = ["SELECT Lname, Dname", "FROM EMPLOYEE, DEPARTMENT", "WHERE Dno = Dnumber"];
+        for (i = 0; i < q.length; i++) title(q[i], x0, B.y + (68 + i * 9) * v, 56 * u);
       }
     }
   };

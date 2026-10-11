@@ -109,6 +109,10 @@ defaults:
     values:
       image: /assets/img/og/data-structures.png
   - scope:
+      path: "_notes/database-design"
+    values:
+      image: /assets/img/og/database-design.png
+  - scope:
       path: "_notes/calculus"
     values:
       image: /assets/img/og/calculus.png

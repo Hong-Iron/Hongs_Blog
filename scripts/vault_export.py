@@ -54,6 +54,7 @@ TRACKS = [
     ("데이터와 계산", [
         ("데이터", [
             ("2-1학기/자료와 정보", "자료와 정보", "data-and-information"),
+            ("2-2학기/데이터베이스 설계", "데이터베이스 설계", "database-design"),
             ("3-2학기/데이터 과학", "데이터 과학", "data-science"),
         ]),
         ("신호와 수치 계산", [
@@ -82,6 +83,12 @@ TRACKS = [
 ]
 
 
+def code_slug(path):
+    """URL slug of a code page. A .sql file sits beside a .py file of the same
+    name (the same check run on PostgreSQL and on SQLite), so it gets a suffix."""
+    return path.stem.lower() + ("-sql" if path.suffix == ".sql" else "")
+
+
 def track_courses(entries):
     """Flatten a category's entries to (sub-group name or "", folder, name, slug)."""
     for entry in entries:
@@ -102,7 +109,7 @@ EXCLUDE = {
 # they contain other students' reconstructions of exam questions.
 PRIVATE_NAME = re.compile(r"기출|_past-(?:mid|type)-")
 
-CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript", ".java": "java"}
+CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript", ".java": "java", ".sql": "sql"}
 
 DOC_TYPE_LABELS = {
     "definition": "정의", "theorem": "정리", "algorithm": "알고리즘",
@@ -810,7 +817,7 @@ def export(vault):
                             linker.sizes[rel] = tuple(round(float(v) * 4 / 3) for v in vb.groups())
                     elif f.suffix in CODE_EXTS:
                         code = {"path": f, "rel": rel, "kind": kind, "num": num_prefix(f.name),
-                                "url": f"/studies/{slug}/code/{f.stem.lower()}/"}
+                                "url": f"/studies/{slug}/code/{code_slug(f)}/"}
                         course["code"].append(code)
                         linker.add(rel, code["url"], f.name)
             courses.append(course)
@@ -913,7 +920,7 @@ def export(vault):
                 description=f"{course['name']} · {parent['title'] if parent else ''} {role_label} 코드".strip(),
                 permalink=code["url"]
             )
-            write_page(NOTES_DIR / course["slug"] / "code" / f"{code['path'].stem.lower()}.md", front, lines)
+            write_page(NOTES_DIR / course["slug"] / "code" / f"{code_slug(code['path'])}.md", front, lines)
 
         if course.get("roadmap"):
             text = course["roadmap"].read_text(encoding="utf-8")

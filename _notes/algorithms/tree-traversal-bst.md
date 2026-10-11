@@ -150,6 +150,10 @@ void inOrder(treePointer ptr)
 
 이 과목은 찾기와 넣기를 C 포인터로 쓰고, 이 문서에 없는 지우기와 순위로 찾기를 더 다룬다: [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/), [이진 탐색 트리의 삭제](/Hongs_Blog/studies/data-structures/bst-delete/), [색인 이진 탐색 트리](/Hongs_Blog/studies/data-structures/indexed-bst/). 힙과 헷갈릴 때는 [최대 힙과 이진 탐색 트리 비교](/Hongs_Blog/studies/data-structures/heap-vs-bst/)를 본다.
 
+**데이터베이스 설계 (2-2학기).** 데이터베이스의 찾아보기(색인)는 디스크에 있다. 디스크는 한 번 읽는 데 오래 걸려서, 걸리는 시간을 비교 횟수가 아니라 디스크를 읽는 횟수로 센다. 이진 탐색 트리는 노드 하나에 키가 하나라 한 층 내려갈 때마다 디스크를 한 번 읽는다. 그래서 노드 하나에 키를 여럿 담아 갈림길을 늘리고 높이를 낮춘 B-트리를 쓴다[^b1]. 키 100만 개를 담으면 가장 고른 이진 탐색 트리도 높이가 19인데, 노드마다 키를 99개에서 199개까지 담는 B-트리는 높이가 2다[^bs1].
+
+넣는 방식은 반대다. 이진 탐색 트리는 잎 밑에 새 잎을 달아 아래로 자란다. B-트리는 가득 찬 노드를 쪼개 가운데 키를 위로 올리므로, 뿌리가 쪼개질 때만 높아진다[^b2]. 두 트리를 줄마다 견준 표는 [B-트리와 이진 탐색 트리 비교](/Hongs_Blog/studies/database-design/b-tree-vs-bst/)에 있다. 지우는 방식은 닮았다. 안쪽 노드의 키는 왼쪽 아래에서 가장 큰 키로 바꿔 적은 뒤 잎에서 지운다: [B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -205,4 +209,7 @@ void inOrder(treePointer ptr)
 [^d4]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_BST_2024」, p.6 (Definition Of Binary Search Tree: 노드마다 (key, value) 쌍. 왼쪽 부분 트리의 키는 모두 더 작고 오른쪽 부분 트리의 키는 모두 더 크다)
 [^d5]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_BST_2024」, p.5 (Search, Insert, Delete: 이진 탐색 트리는 가장 나쁠 때 O(n), 기대 O(log n)), p.10 (Search와 Insert의 복잡도는 O(height))
 [^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 파이썬 코드와의 줄 맞춤, 아래로 눌러 읽기가 맞는 조건, 정의 비교표, 카드 C5는 원본에 없다. 5, 3, 5를 넣은 모양과 1 ~ 5를 넣은 한 줄짜리의 간선 수는 [26_tree-from-traversals_verify.py](/Hongs_Blog/studies/data-structures/code/26_tree-from-traversals_verify/)로 확인했다.
+[^b1]: 데이터베이스 설계 3회 강의 자료 「3_B-tree」, p.10~14 (비용을 디스크 접근 횟수로 센다. 이진 탐색 트리는 디스크를 5번, B-트리는 2번 읽는 그림. 노드의 키 수와 "(x.n + 1)-way decision")
+[^b2]: 데이터베이스 설계 3회 강의 자료 「3-2_B-tree-insertion」, p.18, p.26 ("B-trees grow in height at the top … instead of at the bottom")
+[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 키 100만 개일 때의 두 높이와, 지우는 방식이 닮았다는 견줌은 슬라이드에 없다. 높이는 [B-트리의 높이](/Hongs_Blog/studies/database-design/b-tree-height/)의 식에 최소 차수 $$t = 100$$을 넣은 값이고 [12_b-tree-height_verify.py](/Hongs_Blog/studies/database-design/code/12_b-tree-height_verify/)로 확인했다.
 {% endraw %}

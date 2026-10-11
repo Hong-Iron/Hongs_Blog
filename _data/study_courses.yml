@@ -58,6 +58,15 @@
       codes: 18
       heavy: 2
       units: "데이터와 메타데이터 · 부호 · 유사도와 거리 · 군집화 …"
+    - name: "데이터베이스 설계"
+      sub: "데이터"
+      slug: "database-design"
+      url: "/studies/database-design/"
+      concepts: 78
+      practices: 18
+      codes: 134
+      heavy: 18
+      units: "데이터베이스와 사용자, 데이터베이스 시스템의 개념과 구조 · B-트리의 뜻과 높이, 검색과 삽입 · B-트리 삭제, ER 모델 1: 개체·속성·관계 · ER 모델 2: 제약, 약한 개체, ER 다이어그램 …"
     - name: "데이터 과학"
       sub: "데이터"
       slug: "data-science"
