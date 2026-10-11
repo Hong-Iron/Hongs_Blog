@@ -5,13 +5,19 @@ geo_clear: 26rem
 {%- comment -%} Contents from the course roadmap (_data/toc/<course>.yml, written by
      scripts/vault_export.py). The part holding this note is open; code pages
      mark their parent note. assets/js/note-toc.js fills in this note's own
-     headings and runs the drawer on narrow screens. {%- endcomment -%}
+     headings, folds the sidebar away, and runs the drawer on narrow screens. {%- endcomment -%}
 {%- assign toc = site.data.toc[page.course_slug] -%}
 {%- assign here = page.url -%}
 {%- if page.parent_url -%}{%- assign here = page.parent_url -%}{%- endif -%}
 {%- if toc -%}
+{%- comment -%} Folded state is applied before the sidebar paints, so a folded
+     sidebar never flashes open on load (the rest is in note-toc.js). {%- endcomment -%}
+<script>try{if(localStorage.getItem("note-toc")==="closed")document.documentElement.classList.add("note-toc-collapsed")}catch(e){}</script>
 <aside class="note-toc" id="note-toc" aria-label="{{ page.course }} 목차">
-  <a class="note-toc__course" href="{{ page.course_url | relative_url }}">{{ page.course }}</a>
+  <div class="note-toc__top">
+    <a class="note-toc__course" href="{{ page.course_url | relative_url }}">{{ page.course }}</a>
+    <button type="button" class="note-toc__hide" aria-label="목차 접기" title="목차 접기"><span aria-hidden="true">«</span></button>
+  </div>
   <ol class="note-toc__parts">
   {%- for part in toc -%}
     {%- assign open = false -%}
@@ -32,7 +38,7 @@ geo_clear: 26rem
   {%- endfor -%}
   </ol>
 </aside>
-<button type="button" class="note-toc-toggle" aria-controls="note-toc" aria-expanded="false"><span aria-hidden="true">≡</span> 목차</button>
+<button type="button" class="note-toc-toggle" aria-controls="note-toc" aria-expanded="false" title="목차 펼치기"><span aria-hidden="true">≡</span> 목차</button>
 <div class="note-toc-scrim" hidden></div>
 {%- endif -%}
 <div class="note-shell{% if toc %} has-toc{% endif %}">

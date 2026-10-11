@@ -508,9 +508,38 @@ body[data-bg="midnight"] .highlight {
   text-decoration: none;
 }
 
+.note-toc__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+
+/* folds the whole sidebar away (wide screens) or closes the drawer (narrow) */
+.note-toc__hide {
+  flex: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0 0.1rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-muted);
+  font: 600 0.95rem/1 var(--font-sans);
+  cursor: pointer;
+}
+
+.note-toc__hide:hover,
+.note-toc__hide:focus-visible {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+
 .note-toc__course {
   display: block;
-  margin: 0 0 1rem;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 600;
@@ -672,14 +701,81 @@ body[data-bg="midnight"] .highlight {
   color: var(--course, var(--accent));
 }
 
-.note-toc-toggle,
+/* The 목차 pill: opens the drawer on narrow screens, and brings a folded
+   sidebar back on wide ones. */
+.note-toc-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  position: fixed;
+  left: 1rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font: 600 0.9rem var(--font-sans);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
 .note-toc-scrim {
   display: none;
 }
 
+/* The note column: header, text and prev/next share one left edge. */
+.note-shell {
+  --note-w: 50rem;
+  --note-pad-r: 0px;
+}
+
+.note-shell .note-header {
+  width: auto;
+  max-width: none;
+  /* the rule under the header runs on to the right edge of the page */
+  margin-right: calc(-1 * var(--note-pad-r));
+  padding-left: max(var(--gutter), calc((100% - var(--note-w)) / 2 + var(--gutter)));
+  padding-right: calc(var(--gutter) + var(--note-pad-r));
+}
+
+.note-shell .note-title {
+  max-width: calc(var(--note-w) - 2 * var(--gutter));
+}
+
+.note-shell .note-nav {
+  max-width: var(--note-w);
+}
+
 @media (min-width: 1100px) {
+  /* The sidebar's width is mirrored on the right while there is room, so the
+     text column sits on the page's centre line (where the background is
+     cleared for it) instead of being pushed right by the sidebar. */
   .note-shell.has-toc {
-    padding-left: var(--note-toc-w, clamp(15rem, 19vw, 19.5rem));
+    --note-toc-w: clamp(15rem, 19vw, 19.5rem);
+    --note-pad-r: clamp(0px, calc(100vw - var(--note-toc-w) - var(--note-w) - 2rem), var(--note-toc-w));
+    padding-left: var(--note-toc-w);
+    padding-right: var(--note-pad-r);
+  }
+
+  .note-toc {
+    transition: opacity 0.2s ease, visibility 0s;
+  }
+
+  .note-toc-collapsed .note-toc {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0s 0.2s;
+  }
+
+  .note-toc-collapsed .note-shell.has-toc {
+    --note-pad-r: 0px;
+    padding-left: 0;
+  }
+
+  .note-toc-collapsed .note-toc-toggle {
+    display: inline-flex;
+    top: calc(var(--toc-top, 0px) + 1rem);
+    z-index: 30;
   }
 }
 
@@ -707,20 +803,8 @@ body[data-bg="midnight"] .highlight {
 
   .note-toc-toggle {
     display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    position: fixed;
-    left: 1rem;
     bottom: 1rem;
     z-index: 940;
-    padding: 0.5rem 0.9rem;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    background: var(--card);
-    color: var(--ink);
-    font: 600 0.9rem var(--font-sans);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-    cursor: pointer;
   }
 
   .note-toc-scrim {

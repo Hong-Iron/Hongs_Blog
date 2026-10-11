@@ -1,6 +1,11 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: 목차 접기, 본문을 화면 가운데로
+  items:
+    - 노트 왼쪽의 목차를 접을 수 있어요. 목차 위의 « 단추를 누르면 사라지고, 왼쪽 위의 '목차' 단추로 다시 펼쳐요. 접어 둔 상태는 다른 노트로 넘어가도 그대로예요.
+    - 노트 본문이 목차만큼 오른쪽으로 밀려 있던 것을 화면 가운데로 옮겼어요. 제목과 본문, 이전·다음 링크의 왼쪽 선도 맞췄어요.
+- date: 2026-10-12
   title: 컴퓨터 구조
   items:
     - Studies에 컴퓨터 구조(컴퓨터 과학)를 더했어요. 성능과 논리 회로, MIPS 명령어와 산술, 단일 사이클과 5단계 파이프라인, 캐시와 멀티코어까지 개념 44개와 예제 사다리 5개예요.
