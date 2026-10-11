@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Set", "집합", "원소", "element", "부분집합", "subset", "공집합", "empty set", "합집합", "union", "교집합", "intersection", "차집합", "difference", "여집합", "complement", "멱집합", "power set", "곱집합", "Cartesian product", "벤 다이어그램", "Venn diagram", "러셀의 역설", "Russell's paradox"]
 description: "집합은 순서와 중복을 따지지 않는 \"원소의 모음\"이다. 합집합·교집합·차집합으로 모음을 조합하고, 부분집합을 모두 모은 멱집합, 순서쌍을 모은 곱집합으로 새 집합을 만든다. 데이터베이스의 표, 타입, 권한 그룹이 모두 집합이다. 다만 \"자기 자신을 원소로 갖지 않는 모든 집합의 집…"
@@ -127,6 +127,10 @@ flowchart TD
 </div>
 
 
+## 과목별 관점
+
+**컴파일러 (3-2학기).** 멱집합이 기계를 바꾸는 데 쓰인다. 글자를 읽으며 칸을 옮겨 다니는 기계(유한 오토마타) 가운데 갈림길이 있는 것을 갈림길 없는 것으로 바꿀 때, 원래 기계의 상태 집합 $$Q$$의 부분집합 하나를 새 기계의 상태 하나로 삼는다. 그래서 이 방법을 부분집합 구성법 또는 멱집합 구성법이라 부른다[^c1]. 원래 상태가 $$n$$개면 새 기계의 상태는 많아야 $$\vert \mathcal{P}(Q)\vert  = 2^n$$개다. 빈 집합은 상태로 삼지 않으므로 정확히는 $$2^n - 1$$개 이하다. 실제로는 시작 상태에서 닿는 부분집합만 쓰여 대개 훨씬 적다: [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/)[^cs1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -156,4 +160,6 @@ flowchart TD
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장 "Mathematical Data Types"(집합). Rosen, *Discrete Mathematics and Its Applications* 7판, 2장(집합, 집합 연산).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 러셀의 역설과 이를 피하는 분리 공리는 공리적 집합론(ZFC)의 내용이다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제' 2단계의 '원소마다 넣을지 뺄지 두 가지씩'을 갈림길로 그렸다.
+[^c1]: 컴파일러 3회 강의 자료 「Lecture03 Lexical analysis part 2」, p.29 (Subset (powerset) construction algorithm), p.15 (DFA는 NFA보다 지수적으로 커질 수 있다)
+[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$2^n$$이라는 위쪽 끝과 "대개 훨씬 적다"는 슬라이드에 없다. 무작위 기계 300개에서 $$2^n - 1$$개를 넘지 않는 것, 상태 10개짜리가 4개로 바뀌는 예, 정확히 $$2^n$$개가 되는 예를 [09_subset-construction_impl.py](/Hongs_Blog/studies/compilers/code/09_subset-construction_impl/)로 확인했다.
 {% endraw %}

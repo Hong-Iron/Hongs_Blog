@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Paging", "페이지", "Page", "프레임", "Frame", "페이지 표", "Page Table", "빈 프레임 목록", "Free Frame List", "페이지 번호", "오프셋", "Offset"]
 description: "페이징은 메모리와 프로세스를 모두 같은 크기의 작은 조각으로 잘라, 프로세스의 조각을 메모리의 빈 조각 아무 곳에나 넣는 방법이다. 책을 낱장으로 뜯어 빈 서랍 아무 데나 넣고, 몇 쪽이 몇 번 서랍에 있는지 적은 목차를 들고 다니는 것과 같다. 연속된 덩어리가 필요 없으니 외부 …"
@@ -146,6 +146,10 @@ D는 연속된 빈칸이 5개 없는데도 들어간다. 4, 5, 6과 11, 12로 �
 </div>
 
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** x86 프로세서의 보호 모드가 페이징을 직접 도와준다는 것을 짚는다. 조각(페이지) 하나의 크기는 4,096바이트다[^a1]. 4,096은 $$2^{12}$$이라 32비트 주소의 아래 12비트가 페이지 안의 위치가 된다[^as1]. 보호 모드가 무엇인지는 [x86 동작 모드](/Hongs_Blog/studies/assembly-language/x86-operating-modes/)에 있다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 페이지, 프레임, 페이지 표를 각각 한 문장으로 정의하라.</summary>
@@ -181,4 +185,6 @@ D는 연속된 빈칸이 5개 없는데도 들어간다. 4, 5, 6과 11, 12로 �
 [^3]: 같은 자료, p.32 (그림 7.10)
 [^4]: 같은 자료, p.29
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 주소 변환 단계와 식, 1502 → 6622 예(Stallings 6판 그림 7.11), 2의 거듭제곱 이유, 분할과의 비교표, x86-64 페이지 크기, 확인 문제 C2~C4는 교재 7.3절을 바탕으로 보탰다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.12 (Paging: Supported directly by the CPU, Divides each segment into 4096-byte blocks called pages)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 아래 12비트가 페이지 안의 위치라는 것은 슬라이드에 없다. 이 문서의 주소 나누기를 4,096 = $$2^{12}$$에 댄 것이다.
 {% endraw %}

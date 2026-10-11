@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Segmentation", "세그먼트", "Segment", "세그먼트 표", "Segment Table", "세그먼트 번호"]
 description: "세그먼테이션은 프로그램을 코드, 데이터, 스택처럼 뜻이 있는 덩어리(세그먼트)로 나누고, 덩어리마다 길이를 다르게 둔다. 책을 낱장이 아니라 장(chapter) 단위로 나누는 것과 같다. 프로그래머가 보는 구조와 맞아서, 세그먼트마다 읽기 전용·실행 전용 같은 보호를 주고 통째로 …"
@@ -101,6 +101,10 @@ permalink: "/studies/operating-systems/segmentation/"
 - 선수: [페이징](/Hongs_Blog/studies/operating-systems/paging/)
 - 둘을 함께 쓰는 가상 메모리: [가상 메모리](/Hongs_Blog/studies/operating-systems/virtual-memory/)
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** x86의 실주소 모드도 주소를 "세그먼트 값 : 오프셋"으로 적지만 계산 방법이 이 문서와 다르다. 세그먼트 표를 찾지 않고, 16비트 세그먼트 값에 16을 곱해 16비트 오프셋을 더한다. `08F1:0100`은 `08F10h + 0100h = 09010h`다[^a1]. 길이 검사가 없어서 응용 프로그램이 메모리 어디든 손댈 수 있다[^a2]. 이 문서의 3단계(길이 초과 검사)가 주는 보호가 빠진 꼴이다. 자세한 것은 [실주소 모드의 세그먼트 주소](/Hongs_Blog/studies/assembly-language/real-mode-segment-address/)에 있다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 슬라이드 세그먼트 표(1: base 12, 길이 12 / 2: base 0, 길이 10 / 3: base 26, 길이 4)에서 (세그먼트 2, 오프셋 9)와 (세그먼트 1, 오프셋 12)는 각각 어떻게 되는가?</summary>
@@ -131,4 +135,6 @@ permalink: "/studies/operating-systems/segmentation/"
 [^4]: 같은 자료, p.34
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 표로 계산한 예, 변환 단계, 그림 7.12b 예, 페이징과의 비교표, 실행 파일·segmentation fault 연결, 확인 문제는 Stallings 6판 7.4절을 바탕으로 보탰다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "예시로 보기"의 세그먼트 표(p.35)에서 시작 주소와 길이로 계산한 메모리 배치를 그렸다. 칸 너비는 크기에 비례하지 않는다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.9~10 (Segmented Memory, Calculating Linear Addresses: 08F1:0100 → 09010)
+[^a2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.8 (Real-Address mode: Application programs can access any area of memory)
 {% endraw %}

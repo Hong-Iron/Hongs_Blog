@@ -9,7 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "수학"
-updated: "2026-10-11"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Two's Complement", "2의 보수", "부호 없는 정수", "Unsigned Integer", "부호 있는 정수", "Signed Integer", "오버플로", "Overflow", "표현 범위"]
 description: "칸 수가 정해진 0과 1의 줄로는 정해진 개수의 수만 적을 수 있고, 그 개수를 0부터 위로만 쓸지 반을 잘라 음수에 줄지는 정하기 나름이다. 컴퓨터는 맨 앞 칸 하나만 음수 무게를 갖게 하는 방식으로 음수를 적는다. 자동차 주행 기록계가 999에서 한 칸 더 가면 000으로 도는…"
@@ -127,6 +127,32 @@ $$w = -a_{N-1} 2^{N-1} + \sum_{i=0}^{N-2} a_i 2^i$$
 - 한 바퀴 돌면 같은 수로 본다는 생각: [나눗셈과 합동](/Hongs_Blog/studies/discrete-math/modular-arithmetic/). 2의 보수 덧셈은 $$2^N$$으로 나눈 나머지끼리의 덧셈이다[^s1].
 - 소수점이 있는 수: [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/)
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 같은 2의 보수를 프로세서가 음수를 담는 실제 방식으로 다룬다. 강의가 더하는 것은 만드는 절차, 뺄셈을 덧셈으로 바꾸는 법, 16진수로 적힌 값의 부호 읽기, 칸의 크기별 범위다.
+
+- **만드는 절차.** 위의 "뒤집고 1을 더하기"를 슬라이드는 두 단계 표로 적는다. `00000001` → 비트를 뒤집어 `11111110` → 1을 더해 `11111111`. 그리고 `00000001 + 11111111 = 00000000`임을 덧붙인다[^a1]. 2의 보수는 원래 수와 더해서 0이 되는 짝(덧셈의 역원, additive inverse)이다.
+- **뺄셈은 덧셈이다.** $$A - B$$를 계산할 때는 $$B$$를 2의 보수로 바꿔 $$A$$에 더한다[^a2].
+
+```
+   0 0 0 0 1 1 0 0   (12)            0 0 0 0 1 1 0 0   (12)
+ − 0 0 0 0 0 0 1 1   (3)     →     + 1 1 1 1 1 1 0 1   (−3)
+                                    -----------------
+                                     0 0 0 0 1 0 0 1   (9)   맨 위로 넘친 올림은 버린다
+```
+
+- **16진수에서 부호 읽기.** 맨 윗글자가 7보다 크면 음수다. `8A`, `C5`, `A2`, `9D`는 모두 음수다[^a3]. 16진수 한 글자는 비트 네 개이고, 8 이상인 글자(8~F)는 그 네 비트의 맨 앞이 1이기 때문이다[^as1]. 값은 차례로 −118, −59, −94, −99다.
+- **칸의 크기별 범위.** 맨 윗비트를 부호에 쓰므로 범위가 이렇게 정해진다[^a4].
+
+| 이름 | 비트 수 | 범위 | 2의 거듭제곱으로 |
+|---|---|---|---|
+| 부호 있는 바이트 | 8 | −128 ~ +127 | $$-2^7 \sim 2^7 - 1$$ |
+| 부호 있는 워드 | 16 | −32,768 ~ +32,767 | $$-2^{15} \sim 2^{15} - 1$$ |
+| 부호 있는 더블워드 | 32 | −2,147,483,648 ~ +2,147,483,647 | $$-2^{31} \sim 2^{31} - 1$$ |
+| 부호 있는 쿼드워드 | 64 | −9,223,372,036,854,775,808 ~ +9,223,372,036,854,775,807 | $$-2^{63} \sim 2^{63} - 1$$ |
+
+슬라이드는 다섯 가지를 할 줄 알아야 한다고 적는다. 16진수의 2의 보수 구하기, 부호 있는 2진수를 10진수로, 부호 있는 10진수를 2진수로, 부호 있는 10진수를 16진수로, 부호 있는 16진수를 10진수로 바꾸기다[^a5]. 연습은 [16진 계산과 2의 보수 연습](/Hongs_Blog/studies/assembly-language/asm-hex-practice/)의 p4와 p5에 있다. 계산 결과가 범위를 넘었는지를 프로세서가 어떻게 표시하는지는 [산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/)와 [올림 플래그와 넘침 플래그 비교](/Hongs_Blog/studies/assembly-language/carry-vs-overflow-flag/)에서 다룬다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -155,7 +181,22 @@ $$w = -a_{N-1} 2^{N-1} + \sum_{i=0}^{N-2} a_i 2^i$$
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 부호 있는 8비트 값이 16진수로 `9D`라고 적혀 있다. 양수인가 음수인가? 10진수로 얼마인가? 또 `00001100 − 00000011`을 뺄셈 없이 덧셈으로 계산하라.</summary>
+
+**답:** 음수다. 값은 −99다. 뺄셈은 `00001100 + 11111101 = 00001001`(9)이다.<br>
+**이유:** 맨 윗글자 9가 7보다 크므로 맨 윗비트가 1이다. `9D`를 뒤집으면 `62`, 1을 더하면 `63h` = 99이므로 값은 −99다. `00000011`을 뒤집고 1을 더하면 `11111101`이고, 더한 뒤 9번째 비트로 넘친 올림은 버린다[^as1].
+
+</details>
+
+
 [^1]: 자료와 정보 2회 강의 자료 「D&I_강의02-데이터」, p.6 (2진수, Two's complement 식 $$w = -a_{N-1}2^{N-1} + \sum_{i=0}^{N-2} a_i 2^i$$, `1010` 표, Eight-bit integers 표)
 [^2]: 같은 자료, p.5 (유한한 비트 수, 한정된 범위와 제한된 정밀도, "8비트라면? 표현 가능한 수는 정하기 나름, 필요에 따라")
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 주행 기록계 비유, 뒤집고 1 더하기와 그 이유, $$5 + (-6)$$ 예제, 오버플로, 언어별 정수 범위, 합동과의 연결, 카드는 슬라이드에 없다. 슬라이드에는 식과 두 표만 있다. 8비트 전수 검사로 확인했다. 내용은 Bryant, O'Hallaron, *Computer Systems: A Programmer's Perspective* 3판, 2.2~2.3절에 있다.
+[^a1]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.1 (Forming the Two's Complement: Step 1 reverse the bits, Step 2 add 1, additive inverse, "Note that 00000001 + 11111111 = 00000000")
+[^a2]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.2 (Binary Subtraction: convert B to its two's complement, Add A to (–B), 00001100 − 00000011)
+[^a3]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-1」, p.21 (Signed Integers: The highest bit indicates the sign, "If the highest digit of a hexadecimal integer is > 7, the value is negative. Examples: 8A, C5, A2, 9D")
+[^a4]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.4 (Ranges of Signed Integers 표)
+[^a5]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.3 (Learn How To Do the Following)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 뺄셈 그림의 10진수 값과 "넘친 올림은 버린다"는 말, 8 이상인 글자가 음수인 까닭, 네 예의 10진수 값, 카드 C4는 슬라이드에 없다. [01_asm-hex-practice_p1.py](/Hongs_Blog/studies/assembly-language/code/01_asm-hex-practice_p1/)로 확인했다(8비트 65,536쌍 모두에서 뺄셈과 2의 보수 덧셈이 같다).
 {% endraw %}

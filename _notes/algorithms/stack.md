@@ -9,7 +9,7 @@ course: "알고리즘"
 course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
-updated: "2026-10-06"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Stack", "스택", "LIFO", "후입선출", "push", "pop", "괄호 검사"]
 description: "접시를 쌓으면 맨 위에 놓은 접시를 가장 먼저 꺼낸다. 스택은 이렇게 마지막에 넣은 것을 먼저 꺼내는 자료구조다. 이 규칙을 후입선출(LIFO)이라 부른다. \"가장 최근 것과 짝 맞추기\"나 \"방금 한 일 되돌리기\"에 딱 맞고, 넣기와 꺼내기가 한 번에 끝난다. 대신 맨 위만 볼 수…"
@@ -96,6 +96,15 @@ def balanced(s):
 - `balanced`가 무엇을 확인하는지는 반복마다 늘 지켜지는 성질(루프 불변식)로 보인다. "i글자를 읽은 뒤 스택 크기는 앞 i글자의 여는 괄호 수 − 닫는 괄호 수다"가 매 바퀴 지켜진다는 것을 [수학적 귀납법](/Hongs_Blog/studies/discrete-math/induction/)으로 증명한다. 그래서 이 함수는 "어느 앞부분에서도 닫는 괄호가 더 많지 않고, 끝에서 두 수가 같은가"를 검사한다.
 - `(`와 `)`만으로 된 문자열 가운데 `balanced`를 통과하는 것은 [재귀적 정의와 구조적 귀납법](/Hongs_Blog/studies/discrete-math/recursive-definitions/)에서 세 규칙(빈 문자열, (s), st)으로 만든 균형 괄호와 정확히 같다. 규칙으로 만든 문자열이 통과한다는 것은 구조적 귀납법으로 보인다. 거꾸로 통과한 문자열은 맨 앞 `(`와 그 짝으로 (A)B로 쪼갠 뒤, 길이에 대한 강한 귀납법으로 규칙에서 나온다는 것을 보인다.
 
+## 과목별 관점
+
+**컴파일러 (3-2학기).** 구문 분석기는 스택 하나로 돈다. 같은 스택인데 두 방식이 담는 것이 다르다.
+
+- 위에서 내려오는 [LL(1) 파서](/Hongs_Blog/studies/compilers/ll1-stack-parser/)는 **앞으로 봐야 할 기호**를 쌓는다. 처음에 입력 끝 표시 `$`와 시작 기호를 넣는다. 맨 위를 꺼내 그것이 논터미널이면 표에서 고른 규칙의 오른쪽을 넣고, 터미널이면 입력의 다음 토큰과 맞춰 본다[^c1].
+- 아래에서 올라가는 [SLR 파서](/Hongs_Blog/studies/compilers/slr-stack-parser/)는 **지금까지 본 것을 읽은 상태 번호**를 쌓는다. 토큰을 읽으면 상태 하나를 넣는다. 규칙 $$A \to \alpha$$로 묶을 때는 $$\alpha$$의 기호 수만큼 꺼내고, 드러난 상태에서 $$A$$를 읽어 가는 상태 하나를 넣는다[^c2].
+
+두 파서 모두 "가장 최근 것부터 처리한다"는 스택의 성질에 기댄다. 괄호 검사에서 닫는 괄호가 가장 최근에 열린 괄호와 짝을 이루듯, SLR 파서에서 묶이는 것은 늘 가장 최근에 쌓인 몇 칸이다. 강의의 표로 `id * id`를 파싱하면 스택이 [1] → [1, 5] → [1, 3] → [1, 3, 6] → [1, 3, 6, 5] → [1, 3, 6, 3] → [1, 3, 6, 8] → [1, 2]로 바뀐다[^c2]. 일곱째에서 여덟째로 갈 때 $$E \to T * E$$의 기호 수 3만큼 8, 6, 3을 꺼내고 2를 넣었다[^cs1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -122,5 +131,16 @@ def balanced(s):
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 어떤 파서의 스택이 [1, 3, 6, 8](8이 맨 위)이다. 기호 3개짜리 규칙으로 묶으면서 "셋을 꺼내고, 드러난 맨 위 상태에서 갈 상태 2를 넣는다"를 했다. 스택은 어떻게 되는가? 꺼낸 값은 어떤 차례로 나오는가?</summary>
+
+**답:** 8, 6, 3이 이 차례로 나오고 맨 위가 1이 된다. 거기에 2를 넣어 [1, 2]가 된다. 가장 나중에 넣은 8이 가장 먼저 나온다.
+
+</details>
+
+
 [^1]: Python 3 공식 튜토리얼 5.1.1 "Using Lists as Stacks"(append와 인자 없는 pop으로 스택을 쓴다). 스택의 정의와 연산은 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.1 "Stacks and queues".
+[^c1]: 컴파일러 5회 강의 자료 「Lecture05 Syntax analysis part 2」, p.33~45 (LL(1) 파서의 스택: `$`와 시작 기호를 넣고, 꺼낸 것이 논터미널이면 표의 규칙을 넣는다)
+[^c2]: 컴파일러 8회 강의 자료 「Lecture08 Syntax analysis part 5」, p.22~34 (SLR 파서의 스택: 상태를 넣고, 환원할 때 규칙 오른쪽의 기호 수만큼 꺼낸 뒤 GOTO를 넣는다. `id * id $`의 스택 변화)
+[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 파서의 스택을 "앞으로 볼 것"과 "지금까지 본 것"으로 견준 말과 괄호 검사에 빗댄 말, 카드 C4는 원본에 없다. 스택 변화는 [28_slr-stack-parser_impl.py](/Hongs_Blog/studies/compilers/code/28_slr-stack-parser_impl/)로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Cache Memory", "캐시", "지역성", "Principle of Locality", "LRU", "Least Recently Used", "교체 알고리즘", "쓰기 정책", "Write Policy"]
 description: "캐시는 프로세서와 주기억장치 사이에 둔 작고 빠른 메모리다. 주기억장치 내용 일부를 복사해 두었다가, 프로세서가 찾으면 먼저 여기서 꺼내 준다. 프로그램은 방금 쓴 곳과 그 근처를 곧 다시 쓰는 경향이 있어서, 작은 캐시로도 대부분의 요청을 빠르게 처리한다. 하지만 캐시가 가득 차…"
@@ -127,6 +127,10 @@ flowchart LR
 </div>
 
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 캐시를 빠르고 비싼 정적 RAM으로 만든 메모리라고 소개하고 두 단계로 나눈다. 1단계 캐시(Level-1)는 프로세서 안에, 2단계 캐시(Level-2)는 프로세서 밖에 있다. 읽으려는 값이 이미 캐시에 있으면 캐시 적중(cache hit), 없으면 캐시 실패(cache miss)라 부른다[^a1]. 캐시에 없는 값은 느린 메모리까지 가서 읽어야 하고, 그 읽기에는 클록이 여러 박자 든다: [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/).
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 작은 캐시로도 성능이 크게 좋아지는 이유를 지역성으로 설명하라.</summary>
@@ -160,4 +164,5 @@ flowchart LR
 [^7]: 같은 자료, 슬라이드 54와 슬라이드 53의 발표자 노트
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 배열 합 예시, 16비트 주소의 숫자 예, 알고리즘 과목과의 연결, 확인 문제 C2는 원본에 없다. 숫자는 원본의 $$M = 2^n/K$$에 대입한 것이다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "정확히 말하면"의 구조 설명(각주 3: 슬라이드 47, 그림 1.17)을 ASCII로 그렸다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.9 (Cache Memory: High-speed expensive static RAM both inside and outside the CPU, Level-1 cache, Level-2 cache, Cache hit, Cache miss)
 {% endraw %}

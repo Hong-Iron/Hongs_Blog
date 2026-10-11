@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Boolean Algebra", "Logic Gates", "불 대수", "불 함수", "Boolean function", "논리 게이트", "AND 게이트", "OR 게이트", "NOT 게이트", "NAND", "NOR", "XOR 게이트", "반가산기", "half adder", "전가산기", "full adder", "기능적 완전성", "functional completeness", "비트마스크", "bitmask"]
 description: "참·거짓을 1·0으로 쓰면 논리식이 덧셈·곱셈 같은 계산이 되고, 그 식은 그대로 전자 회로(논리 게이트)로 만들 수 있다. 식을 간단히 하면 게이트 수가 줄어 회로가 작고 빨라진다. 놀랍게도 NAND 게이트 한 종류만으로 모든 회로를 만들 수 있다. 다만 불 대수에서는 1 + 1…"
@@ -130,6 +130,41 @@ flowchart LR
 - 선수: [논리적 동치와 정규형](/Hongs_Blog/studies/discrete-math/logical-equivalence/)
 - 같은 구조: [집합](/Hongs_Blog/studies/discrete-math/sets/)의 합·교·여집합과 불 대수의 $$+$$, $$\cdot$$, 보수는 법칙이 같다. [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/)의 2진수가 회로의 입력이다.
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 불 연산을 프로세서가 비트에 하는 기본 동작으로 소개한다. 값은 참(T)과 거짓(F)으로 적고, 비트로는 1이 참, 0이 거짓이다[^a1]. 연산은 NOT, AND, OR 셋이고 기호는 논리식의 것을 쓴다[^a2].
+
+| 이 문서의 표기 | 슬라이드의 표기 | 읽기 |
+|---|---|---|
+| $$\bar x$$ | $$\neg X$$ | NOT X |
+| $$x \cdot y$$ | $$X \wedge Y$$ | X AND Y |
+| $$x + y$$ | $$X \vee Y$$ | X OR Y |
+
+**계산 순서.** 괄호가 없으면 NOT을 가장 먼저, 그다음 AND, 마지막에 OR를 한다[^a3][^as1].
+
+| 식 | 순서 |
+|---|---|
+| $$\neg X \vee Y$$ | NOT 다음 OR |
+| $$\neg (X \vee Y)$$ | OR 다음 NOT |
+| $$X \vee (Y \wedge Z)$$ | AND 다음 OR |
+
+**진리표.** 불 함수는 불 값을 하나 이상 받아 불 값 하나를 내놓고, 진리표는 모든 입력과 그때의 출력을 적은 표다[^a4]. 슬라이드의 마지막 예는 입력이 셋인 $$(Y \wedge S) \vee (X \wedge \neg S)$$다.
+
+| $$X$$ | $$Y$$ | $$S$$ | $$Y \wedge S$$ | $$\neg S$$ | $$X \wedge \neg S$$ | 출력 |
+|---|---|---|---|---|---|---|
+| F | F | F | F | T | F | F |
+| F | T | F | F | T | F | F |
+| T | F | F | F | T | T | T |
+| T | T | F | F | T | T | T |
+| F | F | T | F | F | F | F |
+| F | T | T | T | F | F | T |
+| T | F | T | F | F | F | F |
+| T | T | T | T | F | F | T |
+
+위 네 줄($$S$$ = F)의 출력은 $$X$$와 같고, 아래 네 줄($$S$$ = T)의 출력은 $$Y$$와 같다. $$S$$가 두 입력 가운데 하나를 골라 내보낸다. 이 회로가 2입력 멀티플렉서다[^a5].
+
+같은 세 연산을 레지스터의 비트 32개에 한꺼번에 하는 명령이 [비트 논리 명령](/Hongs_Blog/studies/assembly-language/bitwise-instructions/)이다. 논리 게이트로 만든 회로가 컴퓨터의 여러 층 가운데 맨 아래층이라는 이야기는 [가상 기계 계층](/Hongs_Blog/studies/assembly-language/virtual-machine-levels/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -158,7 +193,23 @@ flowchart LR
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 불 식 $$(Y \wedge S) \vee (X \wedge \neg S)$$에서 $$X$$ = T, $$Y$$ = F일 때 $$S$$ = F와 $$S$$ = T의 출력을 각각 구하라. 이 식이 하는 일을 한 문장으로 쓰라.</summary>
+
+**답:** $$S$$ = F이면 T, $$S$$ = T이면 F. 이 식은 $$S$$가 거짓이면 $$X$$를, 참이면 $$Y$$를 그대로 내보낸다(2입력 멀티플렉서).<br>
+**이유:** $$S$$ = F이면 $$Y \wedge S$$는 늘 F이고 $$X \wedge \neg S$$는 $$X$$와 같다. $$S$$ = T이면 반대로 $$Y \wedge S$$가 $$Y$$와 같고 $$X \wedge \neg S$$는 늘 F다.<br>
+**흔한 오답:** $$\neg S$$를 $$X \wedge$$보다 나중에 계산하는 것. NOT이 가장 먼저다[^as1].
+
+</details>
+
+
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 12장 "Boolean Algebra"(불 함수, 불 함수의 표현, 논리 게이트, 회로의 최소화). 불 함수의 개수와 기능적 완전성 포함.
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전파 지연·글리치·순차 회로는 디지털 논리 설계 과목의 내용이다. 올림을 미리 계산하는 회로는 캐리 예측 가산기(carry-lookahead adder)다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제'의 4비트 리플 캐리 가산기 설명과 전가산기 식을 연결 그림으로 그렸다.
+[^a1]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-1」, p.8 (Binary Numbers: 1 = true, 0 = false)
+[^a2]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.14 (Boolean Algebra: 식과 읽기 표), p.15~17 (NOT, AND, OR의 진리표와 게이트 그림)
+[^a3]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.18 (Operator Precedence)
+[^a4]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.19 (Truth Tables 1 of 3: Boolean function, truth table)
+[^a5]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.21 (Truth Tables 3 of 3: (Y ∧ S) ∨ (X ∧ ¬S), Two-input multiplexer)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 표기를 나란히 놓은 표, "NOT, AND, OR 순서"라는 한 줄 정리, 멀티플렉서 표를 위아래 네 줄로 나눠 읽는 설명, 카드 C4는 슬라이드에 없다. 슬라이드의 순서 표에는 예 세 개만 있다. 진리표 여덟 줄과 "S가 거짓이면 X, 참이면 Y"는 [02_virtual-machine-levels_verify.py](/Hongs_Blog/studies/assembly-language/code/02_virtual-machine-levels_verify/)로 확인했다.
 {% endraw %}

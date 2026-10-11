@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Memory Hierarchy", "기억장치 계층", "2차 기억장치", "Secondary Memory", "Auxiliary Memory"]
 description: "빠른 메모리는 비싸고, 싸고 큰 메모리는 느리다. 그래서 한 종류로 다 만들지 않고, 작고 빠른 것부터 크고 느린 것까지 층층이 쌓는다. 자주 쓰는 것은 위층에, 가끔 쓰는 것은 아래층에 둔다. 이 방식은 아래층으로 갈수록 프로세서가 덜 찾아갈 때만 효과가 있다."
@@ -82,6 +82,10 @@ flowchart TB
 - 선수: [컴퓨터의 기본 구성 요소](/Hongs_Blog/studies/operating-systems/computer-basic-elements/)
 - 맨 위층: [프로세서 레지스터](/Hongs_Blog/studies/operating-systems/processor-registers/)
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 층을 나누는 까닭을 메모리 칩의 종류로 보인다. 정적 RAM(SRAM)은 비싸고 내용을 새로 써 줄 필요가 없어서 캐시에 쓴다. 동적 RAM(DRAM)은 싸지만 계속 새로 써 주어야 한다[^a1]. 빠르고 비싼 것을 조금, 느리고 싼 것을 많이 두는 계층이 칩의 종류에서부터 시작한다. 맨 위층인 레지스터의 x86 이름은 [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)에 있다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 메모리 계층을 아래로 내려갈 때 바뀌는 네 가지를 방향과 함께 쓰라.</summary>
@@ -102,4 +106,5 @@ flowchart TB
 [^2]: 같은 자료, 슬라이드 41 (그림 1.14)과 발표자 노트
 [^3]: 같은 자료, 슬라이드 42와 발표자 노트
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 책상·책장·도서관 비유와 그 한계는 원본에 없다. 계층 그림은 원본 그림 1.14의 층을 옮긴 것이다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.14 (Memory: Dynamic RAM – inexpensive; must be refreshed constantly, Static RAM – expensive; used for cache memory; no refresh required)
 {% endraw %}

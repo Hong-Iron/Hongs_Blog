@@ -9,7 +9,7 @@ course: "소프트웨어 프로젝트"
 course_slug: "software-project"
 course_url: "/studies/software-project/"
 track: "컴퓨터 과학"
-updated: "2026-10-11"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Operator", "연산자", "부호 연산자", "증감 연산자", "Increment", "Decrement", "산술 연산자", "Arithmetic Operator", "오버플로", "Overflow", "언더플로", "Underflow", "NaN", "Infinity", "ArithmeticException", "비교 연산자", "Comparison Operator", "논리 연산자", "Logical Operator", "대입 연산자", "Assignment Operator", "삼항 연산자", "Ternary Operator", "연산자 우선순위", "Operator Precedence"]
 description: "자동차 주행 거리계가 999999에서 1킬로미터를 더 가면 000000으로 돌아간다. 자바의 정수도 칸이 정해져 있어서, 가장 큰 값에 1을 더하면 오류 없이 가장 작은 값으로 돌아간다. 더하기·비교·대입 같은 연산 기호는 수학과 거의 같게 읽히지만, 이렇게 수학과 어긋나는 곳이 …"
@@ -265,6 +265,15 @@ true || false && false   // true   &&가 먼저: true || (false && false)
 </div>
 
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 자바에서 `byte` 127에 1을 더하면 아무 표시 없이 −128이 된다. 같은 덧셈을 CPU 명령으로 쓰면 `mov al,7Fh` 다음에 `add al,1`이고, 8비트 레지스터 AL은 80h(−128)가 된다. 결과는 자바와 같다. 다른 점은 CPU가 덧셈을 할 때마다 1비트짜리 표시(플래그) 둘을 함께 남긴다는 것이다.
+
+- **올림 플래그(CF).** 같은 비트를 부호 없는 수로 볼 때 결과가 범위를 벗어났으면 1이 된다[^a1].
+- **넘침 플래그(OF).** 부호 있는 수로 볼 때 결과가 범위를 벗어났으면 1이 된다. 127 + 1에서는 OF가 1이다[^a2].
+
+CPU는 그 비트를 프로그래머가 부호 있는 수로 쓰는지 없는 수로 쓰는지 구별하지 못해 두 표시를 늘 다 남긴다[^a3]. 그러니 "넘쳤다"는 사실은 기계에 남아 있다. 자바 언어가 그 표시를 프로그램에 보여 주지 않을 뿐이다. 위의 `Math.addExact`는 넘쳤는지를 대신 확인해 예외로 알려 준다[^as1]. 두 플래그가 정해지는 규칙은 [산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/)에, 어느 쪽을 읽어야 하는지는 [올림 플래그와 넘침 플래그 비교](/Hongs_Blog/studies/assembly-language/carry-vs-overflow-flag/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -303,6 +312,15 @@ true || false && false   // true   &&가 먼저: true || (false && false)
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** `byte b = 127; b++;`와 같은 계산을 CPU 명령 `mov al,7Fh` / `add al,1`로 했다. 올림 플래그(CF)와 넘침 플래그(OF)는 각각 얼마인가? AL에 FFh를 넣고 1을 더하면 두 플래그는 어떻게 되는가? 자바의 `byte` 계산이 넘쳤는지를 말해 주는 쪽은 어느 플래그인가?</summary>
+
+**답:** 7Fh + 1: CF = 0, OF = 1. FFh + 1: CF = 1, OF = 0. `byte`의 넘침을 말해 주는 쪽은 OF다.<br>
+**이유:** `byte`는 부호 있는 수다. 127 + 1 = 128은 −128~127 밖이라 OF가 켜진다. FFh는 `byte`로 −1이고 −1 + 1 = 0은 범위 안이라 OF가 꺼져 있다. 이때 켜지는 CF는 FFh를 255로 읽었을 때의 판정이라 `byte` 계산과는 상관없다[^as1].
+
+</details>
+
+
 [^1]: 소프트웨어 프로젝트 3회 강의 자료 「Software Project 03. Java Language Basics (2)」, p.5 (오버플로와 언더플로, byte 고리 그림)
 [^2]: 같은 자료, p.3 (부호 연산자, 증감 연산자 표)
 [^3]: 같은 자료, p.4 (산술 연산자 표)
@@ -314,4 +332,8 @@ true || false && false   // true   &&가 먼저: true || (false && false)
 [^9]: 같은 자료, p.14 (삼항 연산자 그림)
 [^10]: 같은 자료, p.15 (연산 방향과 우선순위 표)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `a++ + ++a` 추적, 음수의 나눗셈과 나머지, 정수로 바꿔 0.3을 얻는 코드, `NaN == NaN`, `0.1 == 0.1f`, `&&`와 `&`의 차이, 복합 대입에 숨은 변환, 우선순위 예 다섯 줄, 활용 항목, 오해 항목, 카드 C1~C4는 원본에 없다. 값은 모두 구현 코드로 확인했다. 규칙은 Java Language Specification §15.17(나눗셈과 나머지), §15.23(`&&`), §15.26.2(복합 대입)에 있다. 원본은 정수가 최솟값 아래로 내려가는 것을 언더플로라 부른다. 실수에서는 같은 말이 0에 너무 가까워 적지 못하는 경우를 가리키기도 한다.
+[^a1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.3 (Carry Flag: 부호 없는 값이 범위를 벗어나면 켜진다)
+[^a2]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.5 (Overflow Flag: `mov al,+127` / `add al,1`에서 OF = 1, AL = 80h)
+[^a3]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.1 (CPU는 부호 있는 정수와 없는 정수를 구별하지 못한다)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 자바의 덧셈을 CPU 명령에 견준 설명, 자바가 플래그를 보여 주지 않는다는 해석, 카드 C5는 원본에 없다. 플래그 값은 [19_x86-status-flags_verify.py](/Hongs_Blog/studies/assembly-language/code/19_x86-status-flags_verify/)의 파이썬 흉내로 확인했다. 실제 CPU로 돌린 결과가 아니다.
 {% endraw %}

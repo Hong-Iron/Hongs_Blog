@@ -1,0 +1,55 @@
+# 홍철's lines for the assembly-language course pages. Format: _data/robot/README.md
+greeting:
+- "어셈블리어예요. 2-1학기에 들었고, x86 프로세서한테 한 줄씩 직접 시키는 과목이에요."
+- "어셈블리어 페이지예요. 내릴수록 배경의 스택에 값이 쌓이고 ESP가 내려가요."
+- "여긴 어셈블리어예요. 레지스터, 플래그, 스택, 프로시저 순서로 가요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "어셈블리어와 기계어부터요. 어셈블리 한 줄이 기계어 명령 하나라는 것만 잡으면 뒤가 편해요."
+  link: /studies/assembly-language/assembly-language/
+  link_label: "어셈블리어와 기계어"
+- q: 어려워요?
+  a: "플래그가 제일 헷갈려요. 같은 덧셈인데 부호 없이 넘쳤는지와 부호 있게 넘쳤는지를 따로 남겨요. 예제 사다리로 추적해 보세요."
+  link: /studies/assembly-language/flag-tracing-ladder/
+  link_label: "플래그 추적 예제 사다리"
+- q: "코드는 진짜 돌려 본 거예요?"
+  a: "윈도우용 어셈블러가 없어서 파이썬으로 레지스터, 플래그, 스택을 흉내 내서 슬라이드 값과 맞춰 봤어요. 문서마다 그렇게 적어 뒀어요."
+  link: /studies/assembly-language/
+  link_label: 로드맵
+- q: "슬라이드에 틀린 데도 있었어요?"
+  a: "네. 넘침 플래그 규칙 하나가 8비트 덧셈을 전부 돌려 보니 절반에서 틀렸어요. 맞는 규칙은 다른 주차 슬라이드에 있었어요."
+  link: /studies/assembly-language/x86-status-flags/
+  link_label: "산술 연산과 상태 플래그"
+chats:
+- q: "함수를 부르면 무슨 일이 생겨요?"
+  a: "CALL이 돌아올 주소를 스택에 올리고 프로시저로 뛰어요. RET이 그 주소를 꺼내서 돌아와요."
+  link: /studies/assembly-language/call-ret/
+  link_label: "프로시저와 CALL·RET"
+  next:
+  - q: "인자랑 지역 변수는 어디 있어요?"
+    a: "전부 스택에 있어요. EBP를 기준으로 위쪽에 인자, 아래쪽에 지역 변수가 놓여요. 그 구역이 스택 프레임이에요."
+    link: /studies/assembly-language/stack-frame/
+    link_label: "스택 프레임"
+  - q: "쌓은 인자는 누가 치워요?"
+    a: "약속하기 나름이에요. C 방식은 부른 쪽이, STDCALL은 불린 쪽이 치워요."
+    link: /studies/assembly-language/calling-convention/
+    link_label: "호출 규약"
+- q: "if문은 어떻게 써요?"
+  a: "CMP로 비교하고 조건을 뒤집어서 '거짓이면 건너뛰어라'로 써요."
+  link: /studies/assembly-language/conditional-structures/
+  link_label: "조건 구조를 점프로 옮기기"
+  next:
+  - q: "JA랑 JG는 뭐가 달라요?"
+    a: "둘 다 '크면 점프'인데 JA는 부호 없는 수로, JG는 부호 있는 수로 읽어요. FFh는 한쪽에서는 255, 다른 쪽에서는 -1이에요."
+    link: /studies/assembly-language/signed-vs-unsigned-jumps/
+    link_label: "부호 있는 비교 점프와 부호 없는 비교 점프"
+talk:
+- text: "12345678h를 메모리에 넣으면 낮은 주소부터 78, 56, 34, 12 순서로 들어가요."
+  link: /studies/assembly-language/little-endian/
+  link_label: "리틀 엔디언"
+- text: "왼쪽으로 한 칸 밀면 2배, 오른쪽으로 한 칸 밀면 반이에요. 음수를 반으로 하려면 빈칸을 부호 비트로 채워야 해요."
+  link: /studies/assembly-language/logical-vs-arithmetic-shift/
+  link_label: "논리 시프트와 산술 시프트 비교"
+- text: "ECX가 0일 때 LOOP를 만나면 0번이 아니라 2의 32제곱 번 돌아요. 먼저 줄이고 나서 0인지 보거든요."
+  link: /studies/assembly-language/jmp-loop/
+  link_label: "JMP와 LOOP"

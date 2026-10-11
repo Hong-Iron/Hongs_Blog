@@ -355,7 +355,9 @@
     "numerical-analysis": ["arch", "wedge", "dot"],
     "data-science": ["dot", "circle", "hexagon"],
     "data-and-information": ["dot", "squareOutline", "bell"],
-    "software-project": ["tile", "capsule", "chevron"]
+    "software-project": ["tile", "capsule", "chevron"],
+    "assembly-language": ["tile", "tallbar", "squareOutline"],
+    "compilers": ["circle", "arrow", "ring"]
   };
 
   function mixHex(a, b, f) {
@@ -1196,6 +1198,59 @@
       ctx.fillStyle = rgba(F.pal.b, 0.95);
       ctx.beginPath(); ctx.arc(lerp(p0[0], p1[0], u), lerp(p0[1] + bh / 2, p1[1] - bh / 2, u), 4, 0, TAU); ctx.fill();
       label(ctx, "attack() → " + nodes[path[u > 0.5 ? b : a]][2], 14, Rg.y0 + hgt * 0.97, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 어셈블리어: a runtime stack; scrolling pushes values and ESP walks down, then pops back.
+  MOTIFS["assembly-language"] = {
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), hgt = Rg.y1 - Rg.y0, n = 7;
+      var cw = clamp(L.W * 0.12, 54, 130), ch = clamp(hgt * 0.085, 14, 30);
+      var x0 = L.mode === "margins" ? (L.right[0] + L.right[1]) / 2 - cw / 2 : L.W * 0.8 - cw / 2;
+      var y0 = Rg.y0 + hgt * 0.18;
+      var t = F.p < 0.6 ? F.p / 0.6 * (n - 1) : (1 - (F.p - 0.6) / 0.4) * (n - 1) * 0.6 + (n - 1) * 0.4;
+      var filled = Math.floor(t) + 1, i;
+      ctx.lineWidth = 1.2;
+      for (i = 0; i < n; i++) {
+        var y = y0 + i * ch, on = i < filled;
+        ctx.fillStyle = rgba(on ? F.pal.a : F.pal.ink, on ? 0.22 : 0.04);
+        ctx.strokeStyle = rgba(F.pal.a, on ? 0.8 : 0.3);
+        ctx.fillRect(x0, y, cw, ch);
+        ctx.strokeRect(x0, y, cw, ch);
+      }
+      var ey = y0 + (filled - 1) * ch + ch / 2;
+      ctx.strokeStyle = rgba(F.pal.b, 0.9);
+      ctx.fillStyle = rgba(F.pal.b, 0.9);
+      ctx.lineWidth = 1.8;
+      arrow(ctx, x0 - 34, ey, x0 - 6, ey, 6);
+      label(ctx, "ESP = " + (0x1000 - 4 * filled).toString(16).toUpperCase() + "h", 14, Rg.y0 + hgt * 0.95, rgba(F.pal.ink, 0.5));
+    }
+  };
+
+  // 컴파일러: a small DFA for (a|b)*abb; scrolling feeds the input one symbol at a time.
+  MOTIFS.compilers = {
+    draw: function (ctx, L, S, F) {
+      var Rg = region(L), hgt = Rg.y1 - Rg.y0;
+      var input = "abaabb", trans = { 0: { a: 1, b: 0 }, 1: { a: 1, b: 2 }, 2: { a: 1, b: 3 }, 3: { a: 1, b: 0 } };
+      var step = Math.min(input.length, Math.floor(F.p * (input.length + 1))), st = 0, i;
+      for (i = 0; i < step; i++) st = trans[st][input[i]];
+      var r = clamp(Math.min(L.W * 0.035, hgt * 0.07), 12, 26), cy = Rg.y0 + hgt * 0.3;
+      function X(k) { return L.W * (0.14 + 0.24 * k); }
+      for (i = 0; i < 4; i++) {
+        if (i < 3) {
+          ctx.strokeStyle = rgba(F.pal.ink, 0.3);
+          ctx.fillStyle = rgba(F.pal.ink, 0.3);
+          ctx.lineWidth = 1.2;
+          arrow(ctx, X(i) + r + 3, cy, X(i + 1) - r - 3, cy, 6);
+        }
+        var on = i === st;
+        ctx.fillStyle = rgba(on ? F.pal.b : F.pal.a, on ? 0.3 : 0.1);
+        ctx.strokeStyle = rgba(on ? F.pal.b : F.pal.a, 0.85);
+        ctx.lineWidth = on ? 2.2 : 1.2;
+        circle(ctx, X(i), cy, r); ctx.fill(); ctx.stroke();
+        if (i === 3) { circle(ctx, X(i), cy, r - 4); ctx.stroke(); }
+      }
+      label(ctx, input.slice(0, step) + "|" + input.slice(step) + "  → q" + st, 14, Rg.y0 + hgt * 0.95, rgba(F.pal.ink, 0.5));
     }
   };
 

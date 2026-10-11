@@ -58,6 +58,8 @@ TRACKS = [
         ("4-1학기/휴먼 인터페이스 미디어", "휴먼 인터페이스 미디어", "human-interface-media"),
         ("3-2학기/데이터 과학", "데이터 과학", "data-science"),
         ("2-1학기/소프트웨어 프로젝트", "소프트웨어 프로젝트", "software-project"),
+        ("2-1학기/어셈블리어", "어셈블리어", "assembly-language"),
+        ("3-2학기/컴파일러", "컴파일러", "compilers"),
     ]),
     ("심리학", [
         ("4-1학기/이상 심리학", "이상 심리학", "abnormal-psychology"),
@@ -69,6 +71,10 @@ TRACKS = [
 EXCLUDE = {
     "4-1학기/컴퓨터 통신/4.연습문제/26.과제 2.md",  # graded assignment solution
 }
+
+# Past-exam write-ups (기출 풀이, 기출 유형 연습 and their code) stay private:
+# they contain other students' reconstructions of exam questions.
+PRIVATE_NAME = re.compile(r"기출|_past-(?:mid|type)-")
 
 CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript", ".java": "java"}
 
@@ -746,7 +752,7 @@ def export(vault):
             for sub, kind in (("3.개념집", "concept"), ("4.연습문제", "practice")):
                 for f in sorted((cdir / sub).glob("*")):
                     rel = f"{folder}/{sub}/{f.name}"
-                    if rel in EXCLUDE or f.name.startswith("."):
+                    if rel in EXCLUDE or f.name.startswith(".") or PRIVATE_NAME.search(f.name):
                         continue
                     if f.suffix == ".md":
                         meta = parse_front_matter(split_front_matter(f.read_text(encoding="utf-8"))[0])

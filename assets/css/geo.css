@@ -98,6 +98,8 @@ body[data-tone="dark"] .btn--primary {
 [data-course="data-science"]           { --course: #1f6f7a; --course-2: #b0432c; }
 [data-course="data-and-information"]   { --course: #3d6b63; --course-2: #c9952e; }
 [data-course="software-project"]       { --course: #a8541c; --course-2: #2f4858; }
+[data-course="assembly-language"]      { --course: #5a5f6e; --course-2: #b0432c; }
+[data-course="compilers"]              { --course: #7a3f55; --course-2: #c9952e; }
 
 [data-course] {
   --geo-1: var(--course);

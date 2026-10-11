@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Proof Methods", "Rules of Inference", "추론 규칙", "전건 긍정", "modus ponens", "후건 부정", "modus tollens", "직접 증명", "direct proof", "대우 증명", "proof by contrapositive", "귀류법", "proof by contradiction", "경우 나누기", "proof by cases", "반례", "counterexample", "존재 증명", "후건 긍정의 오류", "affirming the consequent"]
 description: "증명은 이미 참이라고 인정된 것에서 출발해, 한 걸음마다 정당한 규칙만 써서 결론까지 가는 글이다. 직접 증명, 대우 증명, 귀류법, 경우 나누기, 반례 들기 다섯 가지면 대부분의 명제를 다룬다. 어떤 방법을 쓸지는 결론의 모양이 알려 준다. 다만 예를 아무리 많이 확인해도 \"모든…"
@@ -163,6 +163,19 @@ flowchart TD
 </div>
 
 
+## 과목별 관점
+
+**컴파일러 (3-2학기).** 컴파일러는 식의 타입을 정할 때 이 문서의 규칙과 같은 꼴의 규칙을 쓴다. 전제를 가로선 위에, 결론을 아래에 적는다[^c1].
+
+$$\frac{\vdash e_1 : int \qquad \vdash e_2 : int}{\vdash e_1 + e_2 : int}$$
+
+
+$$e : T$$는 "식 $$e$$의 타입은 $$T$$다", $$\vdash$$는 "추론할 수 있다"로 읽는다. 위 규칙은 "$$e_1$$이 int이고 $$e_2$$가 int라고 추론할 수 있으면, $$e_1 + e_2$$가 int라고 추론할 수 있다"이다. 위의 표로 옮기면 전제가 "$$e_1$$은 int", "$$e_2$$는 int"이고 결론이 "$$e_1 + e_2$$는 int"인 규칙 하나다. 전제가 없는 규칙(가로선 위가 빈 것)은 공리라 부르고, `true`는 bool, `1`은 int 같은 것이 여기에 들어간다[^c1].
+
+컴파일러가 `x + 3`의 타입을 정하는 과정은 이 규칙들로 쓰는 작은 직접 증명이다. 잎(변수, 상수)에서 시작해 한 걸음마다 규칙 하나로 더 큰 식의 타입을 끌어낸다. 변수는 이름만으로는 타입을 알 수 없어서, 어디에 선언됐는지(스코프 $$S$$)를 $$\vdash$$의 왼쪽에 적어 $$S \vdash e : T$$로 쓴다[^c2]. 자세한 규칙은 [타입 추론 규칙](/Hongs_Blog/studies/compilers/type-inference-rules/)에 있다.
+
+위의 '흔한 오류'가 여기서도 그대로 나온다. "int 덧셈 규칙의 전제가 안 맞으니 이 식은 타입 오류다"는 전건 부정과 같은 꼴의 잘못이다. `2.5 + 1.5`는 int 덧셈 규칙의 전제가 거짓이지만 double 덧셈 규칙으로 타입이 정해진다. 타입 오류라고 하려면 그 식에 쓸 수 있는 규칙을 하나씩 모두 대 보고(경우 나누기) 어느 것도 전제가 채워지지 않음을 보여야 한다[^cs1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -197,7 +210,19 @@ flowchart TD
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 컴파일러의 타입 규칙 "$$e_1$$이 bool이고 $$e_2$$가 bool이면 $$e_1$$ `&&` $$e_2$$는 bool이다"를 전제와 결론으로 나눠 가로선 꼴로 쓰라. A가 bool, B가 int일 때 "A `&&` B는 타입 오류다"라고 결론 내리려면 무엇을 더 확인해야 하는가?</summary>
+
+**답:** $$\dfrac{\vdash e_1 : bool \qquad \vdash e_2 : bool}{\vdash e_1 \,\&\&\, e_2 : bool}$$. 전제는 둘이고 결론은 하나다. B가 int라 둘째 전제가 거짓이므로 이 규칙은 쓸 수 없다. 여기서 바로 오류라고 하면 전건 부정의 오류와 같은 꼴이다. `&&`에 쓸 수 있는 규칙이 이것 하나뿐임을 확인해야 "맞는 규칙이 없다 = 타입 오류"가 된다.<br>
+**이유:** 규칙은 "전제가 참이면 결론이 참"만 말한다. 전제가 거짓일 때는 아무것도 말하지 않는다[^cs1].
+
+</details>
+
+
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 1장(추론 규칙, 증명 방법과 전략)
 [^2]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 1장 "What is a Proof?"(직접 증명, 대우, 필요충분, 경우 나누기, 귀류법, $$\sqrt2$$의 무리수성)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 섹션의 증명 방법 표('이럴 때 떠올린다' 열)와 존재 명제 문단을 갈림길로 그렸다.
+[^c1]: 컴파일러 10회 강의 자료 「Lecture10 Semantic analysis part 2」, p.13~17 (추론 규칙은 if-then 꼴, 가로선·⊢·x : T 표기, 공리와 덧셈 규칙)
+[^c2]: 컴파일러 10회 강의 자료 「Lecture10 Semantic analysis part 2」, p.19~22 (자유 변수의 문제와 S ⊢ e : T)
+[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 타입 규칙을 이 문서의 표와 증명 방법에 맞대어 읽은 설명, 전건 부정과의 비교, 카드 C5는 슬라이드에 없다. `2.5 + 1.5`가 double로 정해지고 bool과 int의 `&&`에 맞는 규칙이 없다는 것은 [35_type-inference-rules_verify.py](/Hongs_Blog/studies/compilers/code/35_type-inference-rules_verify/)로 확인했다.
 {% endraw %}

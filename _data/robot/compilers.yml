@@ -1,0 +1,54 @@
+# 홍철's lines for the compilers course pages. Format: _data/robot/README.md
+greeting:
+- "컴파일러예요. 3-2학기에 들었고, 글자가 기계 코드가 되기까지 여섯 단계를 따라가요."
+- "컴파일러 페이지예요. 내릴수록 배경의 오토마타가 글자를 하나씩 읽고 상태를 옮겨요."
+- "여긴 컴파일러예요. 어휘 분석, 구문 분석, 의미 분석, 최적화, 코드 생성 순서예요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "컴파일러의 구조부터요. 여섯 단계 그림이 모든 강의 첫 쪽에 다시 나와요."
+  link: /studies/compilers/compiler-structure/
+  link_label: "컴파일러의 구조"
+- q: 어려워요?
+  a: "파싱 표 만드는 게 손이 많이 가요. FIRST, FOLLOW부터 예제 사다리로 한 단계씩 해 보세요."
+  link: /studies/compilers/first-follow-ladder/
+  link_label: "FIRST·FOLLOW 예제 사다리"
+- q: "답은 믿어도 돼요?"
+  a: "알고리즘을 전부 파이썬으로 짜서 슬라이드의 표랑 추적을 그대로 다시 만들어 봤어요. 코드 페이지도 같이 있어요."
+  link: /studies/compilers/
+  link_label: 로드맵
+- q: "다른 과목이랑도 이어져요?"
+  a: "함수 호출 코드는 어셈블리어의 스택 프레임이랑 맞물리고, 레지스터 할당은 이산수학의 그래프 색칠 그대로예요."
+  link: /studies/compilers/graph-coloring-register-allocation/
+  link_label: "그래프 색칠 레지스터 할당"
+chats:
+- q: "컴파일러는 코드를 어떻게 읽어요?"
+  a: "먼저 글자를 토큰으로 끊어요. 토큰 모양은 정규 표현식으로 적고, 그걸 오토마타로 바꿔서 돌려요."
+  link: /studies/compilers/regular-expression/
+  link_label: "정규 표현식"
+  next:
+  - q: "괄호 짝도 정규 표현식으로 돼요?"
+    a: "안 돼요. 여는 괄호를 몇 개 봤는지 끝없이 세야 하는데 상태 수가 정해진 기계는 못 세요. 그래서 문법이 필요해요."
+    link: /studies/compilers/context-free-grammar/
+    link_label: "문맥 자유 문법"
+  - q: "ifx는 if랑 x예요, 이름 하나예요?"
+    a: "이름 하나예요. 토큰이 되는 가장 긴 앞부분을 잘라요. 길이가 같을 때만 우선순위를 봐요."
+    link: /studies/compilers/longest-match-tokenizing/
+    link_label: "최장 일치와 토큰 인식"
+- q: "LL이랑 LR은 뭐가 달라요?"
+  a: "LL은 위에서부터 쓸 규칙을 미리 찍고, LR은 토큰을 쌓아 두다가 다 본 뒤에 묶어요."
+  link: /studies/compilers/ll-vs-lr/
+  link_label: "LL 파싱과 LR 파싱 비교"
+- q: "최적화는 뭘 봐요?"
+  a: "앞으로 안 쓰일 값을 넣는 줄은 지워요. 그걸 알려고 코드 끝에서부터 거꾸로 '앞으로 쓰일 변수'를 따져요."
+  link: /studies/compilers/live-variable-analysis/
+  link_label: "생존 변수 분석"
+talk:
+- text: "변수가 여섯 개여도 동시에 살아 있지 않으면 레지스터를 같이 써요. 겹치는 변수끼리 선을 긋고 색을 칠하면 돼요."
+  link: /studies/compilers/register-interference-graph/
+  link_label: "레지스터 간섭 그래프"
+- text: "문장 하나에 나무가 두 개 그려지는 문법은 모호한 문법이에요. 우선순위를 규칙에 새겨서 고쳐 써요."
+  link: /studies/compilers/ambiguous-grammar/
+  link_label: "모호한 문법"
+- text: "함수를 한 번 부를 때마다 스택에 칸 묶음이 하나 올라가요. 그게 활성 레코드예요."
+  link: /studies/compilers/activation-record/
+  link_label: "활성 레코드"

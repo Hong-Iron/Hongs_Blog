@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Instruction Cycle", "인출-실행 사이클", "Fetch-Execute Cycle", "인출 단계", "실행 단계"]
 description: "프로세서는 요리책을 한 줄씩 읽고 그대로 하는 요리사와 같다. 다음 줄을 읽어 오고(인출), 읽은 대로 한다(실행). 이 두 걸음을 전원이 꺼지거나, 고칠 수 없는 오류가 나거나, \"멈춰라\" 명령어를 만날 때까지 되풀이한다. 단순해서 빠르지만, 요리사가 혼자 순서대로만 움직이기 때…"
@@ -84,12 +84,20 @@ flowchart LR
 ## 활용
 
 - 이 사이클에 "인터럽트가 왔는지 확인하는 단계"를 하나 더 끼우면 [인터럽트](/Hongs_Blog/studies/operating-systems/interrupt/)가 된다. 운영체제가 끼어들 수 있는 근거가 이것이다.
-- 제어 명령어가 PC를 바꾸는 방식은 2-1학기 어셈블리어의 점프·호출 명령어(JMP, CALL)와 같다[^s1].
+- 제어 명령어가 PC를 바꾸는 방식은 2-1학기 [어셈블리어](/Hongs_Blog/studies/assembly-language/)의 점프·호출 명령어(JMP, CALL)와 같다[^s1].
 
 ## 연결
 
 - 선수: [프로세서 레지스터](/Hongs_Blog/studies/operating-systems/processor-registers/)
 - 다음: [인터럽트](/Hongs_Blog/studies/operating-systems/interrupt/)
+
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 같은 고리를 다섯 걸음으로 잘게 나눈다. 가져오기(fetch), 뜻 알아내기(decode), 재료 가져오기(fetch operands), 실행하기(execute), 결과 저장하기(store output)다[^a1]. 첫 걸음이 이 문서의 인출 단계이고 나머지 넷이 실행 단계를 나눈 것이다[^as1]. 슬라이드의 그림에서는 프로그램 카운터(PC)가 가리키는 명령어가 명령어 레지스터로 들어가고, 재료는 메모리와 레지스터에서 ALU로 가며, 결과는 레지스터나 메모리로 돌아가고 플래그가 바뀐다[^a1].
+
+메모리에서 값을 읽는 일은 클록 한 박자에 끝나지 않는다. 메모리가 프로세서보다 훨씬 느리게 답하기 때문이다. ① 주소 버스에 주소를 올린다. ② 읽기 선(RD)을 0으로 내린다. ③ 메모리가 답할 때까지 한 사이클을 기다린다. ④ 읽기 선이 1로 돌아가면 데이터 버스에 값이 올라와 있다[^a2].
+
+걸음을 나눠 놓으면 앞 명령어가 다음 걸음으로 넘어가는 대로 뒤 명령어를 받을 수 있다: [파이프라인과 슈퍼스칼라](/Hongs_Blog/studies/assembly-language/instruction-pipeline/).
 
 ## 확인 문제
 
@@ -124,10 +132,21 @@ flowchart LR
 
 </details>
 
+<details markdown="1"><summary markdown="span"><b>C5</b> 명령어 실행을 다섯 걸음으로 나눠 차례로 쓰라. 메모리에서 값을 읽을 때 왜 클록이 여러 박자 드는가?</summary>
+
+
+**답:** 가져오기(fetch) → 뜻 알아내기(decode) → 재료 가져오기(fetch operands) → 실행하기(execute) → 결과 저장하기(store output). 메모리가 프로세서보다 훨씬 느리게 답해서, 주소를 올리고 읽기 선을 내린 뒤 값이 올 때까지 한 사이클을 기다려야 한다.<br>
+**흔한 오답:** "재료 가져오기"를 빼는 것. 명령어를 가져오는 일과 그 명령어가 쓸 값을 가져오는 일은 다른 걸음이다.
+
+</details>
+
 [^1]: 운영체제 1회 강의 자료 「Chapter01-new」, 슬라이드 21 (그림 1.3)과 발표자 노트
 [^2]: 같은 자료, 슬라이드 22 (그림 1.4)와 발표자 노트
 [^3]: 같은 자료, 슬라이드 17~18과 발표자 노트
 [^4]: 같은 자료, 슬라이드 19
 [^5]: 같은 자료, 슬라이드 20과 발표자 노트
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 확인 문제 C4와, 제어 명령어가 PC 값을 바꾸는 방식으로 순서를 바꾼다는 설명과 x86의 JMP·CALL 연결은 원본에 없다. 슬라이드 19의 "따로 지시가 없으면 PC를 1 늘린다"에서 이어지는 내용이다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.7 (Instruction Execution Cycle: Fetch, Decode, Fetch operands, Execute, Store output, 그림)
+[^a2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.8 (Reading from Memory: 네 단계와 CLK·ADDR·RD·DATA 타이밍 그림)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다섯 걸음을 이 문서의 두 단계에 짝지은 것은 슬라이드에 없다. 이 문서의 인출 단계가 "명령어를 읽어 IR에 넣는 일"이라는 정의에 맞춰 나눴다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Bipartite Graph", "이분 그래프", "두 부분 그래프", "Graph Coloring", "그래프 색칠", "정점 색칠", "vertex coloring", "채색수", "chromatic number", "탐욕 색칠", "greedy coloring", "4색 정리", "four color theorem", "레지스터 할당", "register allocation"]
 description: "이웃한 정점끼리는 다른 색이 되도록 정점에 색을 칠하는 문제다. 시험 시간표(같은 학생이 듣는 과목은 다른 시간), 레지스터 할당(동시에 살아 있는 변수는 다른 레지스터)이 모두 이 모양이다. 두 색으로 충분한지는 \"홀수 길이 사이클이 있는가\"만 보면 되고 빠르게 판정된다. 그런데…"
@@ -129,6 +129,15 @@ flowchart LR
 - 특수한 경우: [트리](/Hongs_Blog/studies/discrete-math/trees/)는 늘 이분 그래프다.
 - 어려운 문제의 친척: [해밀턴 사이클](/Hongs_Blog/studies/discrete-math/euler-hamilton/)도 NP-완전이다.
 
+## 과목별 관점
+
+**컴파일러 (3-2학기).** 레지스터를 나눠 주는 일이 그대로 $$k$$-색칠이다. 변수가 정점이고, 프로그램의 어느 지점에서든 함께 살아 있는 두 변수 사이에 간선을 긋는다([레지스터 간섭 그래프](/Hongs_Blog/studies/compilers/register-interference-graph/)). 색은 레지스터다. 레지스터가 $$K$$개일 때 "모든 변수를 레지스터에 담을 수 있는가"는 "이 그래프가 $$K$$-색칠 가능한가"와 같은 물음이다[^c1]. 강의가 더하는 것은 색칠을 찾는 어림 방법과, 못 칠할 때 그래프 쪽을 고치는 길이다.
+
+- **칠하는 순서를 정해 주는 방법.** 위의 탐욕 색칠은 정점을 아무 순서로 본다. 컴파일러는 순서를 이렇게 정한다. 이웃이 $$K$$개보다 적은 정점을 하나씩 그래프에서 빼서 스택에 쌓고, 다 빼면 스택에서 꺼내는 순서(뺀 순서의 거꾸로)로 칠한다. 정점을 칠할 때 이미 칠한 이웃은 그 정점을 빼던 순간의 이웃뿐이라 $$K$$개보다 적고, 색이 하나는 남는다[^c2]. 위 탐욕 색칠의 "이미 칠한 이웃이 많아야 $$\Delta$$개"와 같은 논법인데, $$\Delta$$ 대신 "빼던 순간의 이웃 수"를 쓴다([그래프 색칠 레지스터 할당](/Hongs_Blog/studies/compilers/graph-coloring-register-allocation/)).
+- **막혀도 칠할 수 있는 그래프가 있다.** 이웃이 $$K$$보다 적은 정점이 없으면 이 방법은 멈춘다. 그렇다고 $$K$$-색칠이 불가능한 것은 아니다. 사이클 $$C_4$$는 이분 그래프라 두 색으로 칠해지지만, 네 정점 모두 이웃이 둘이라 $$K = 2$$에서는 하나도 빼지 못한다[^cs1].
+- **서로 모두 이어진 정점들.** 강의의 예에서는 네 변수 c, d, e, f가 한 지점에서 함께 살아 있어 서로 모두 이어진다. 이런 네 정점은 네 색이 있어야 하므로 레지스터가 셋이면 칠할 수 없다[^c3].
+- **못 칠하면 그래프를 바꾼다.** 수학 문제에서는 그래프가 주어진 것이지만, 컴파일러는 코드를 고쳐 그래프를 바꿀 수 있다. 변수 하나를 메모리에 두고 쓸 때만 잠깐 꺼내게 고치면, 그 변수의 정점이 이웃이 적은 정점 여럿으로 갈라진다. 강의의 예에서 이웃이 다섯이던 c가 이웃이 한둘인 c0~c3으로 갈라지고, 세 색으로 칠해진다([스필링](/Hongs_Blog/studies/compilers/register-spilling/))[^c4].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -155,8 +164,22 @@ flowchart LR
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 컴파일러의 색칠 방법은 "이웃이 $$K$$개보다 적은 정점을 빼서 스택에 쌓고, 거꾸로 꺼내며 칠한다"이다. 이 방법이 멈췄다고 해서 $$K$$-색칠이 불가능한 것은 아님을 이분 그래프 하나로 보여라.</summary>
+
+**답:** 사이클 $$C_4$$($$w$$–$$x$$–$$y$$–$$z$$–$$w$$), $$K = 2$$. 네 정점 모두 이웃이 둘이라 2보다 적은 정점이 없어 하나도 빼지 못한다. 그런데 $$C_4$$는 길이가 짝수인 사이클이라 이분 그래프이고, $$w, y$$에 색 1, $$x, z$$에 색 2를 주면 칠해진다.<br>
+**이유:** "이웃이 $$K$$보다 적다"는 색이 남는다는 충분조건일 뿐이다. 이웃이 $$K$$개여도 그 이웃들이 같은 색을 나눠 쓰면 색이 남는다. 반대로 $$C_5$$는 같은 조건에서 멈추고 실제로도 두 색으로 칠할 수 없다(홀수 사이클).
+
+</details>
+
+
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 12장 "Simple Graphs"(색칠, 이분 그래프와 홀수 사이클).
 [^2]: Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(그래프 색칠, 4색 정리의 역사, 색칠 문제의 어려움). 3-색칠의 NP-완전성은 Cormen et al., *Introduction to Algorithms* 3판, 34장 문제 34-3. 4색 정리는 Appel과 Haken(1976)이 컴퓨터를 써서 증명했다.
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그래프 색칠로 레지스터를 배정하는 방법은 Chaitin의 연구(1982)에서 시작된 표준 기법으로, 컴파일러 교재의 레지스터 할당 장에서 다룬다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 시험 시간표 그래프와 두 교시 배정을 그렸다.
+[^c1]: 컴파일러 16회 강의 자료 「Lecture16 Code generation part 3」, p.7 (레지스터 간섭 그래프), p.9~10 (그래프 색칠 = 레지스터 할당, K-색칠 가능)
+[^c2]: 컴파일러 16회 강의 자료 「Lecture16 Code generation part 3」, p.12 (핵심 생각), p.13~24 (빼서 스택에 쌓고 꺼내며 칠하기)
+[^c3]: 컴파일러 16회 강의 자료 「Lecture16 Code generation part 3」, p.27~28 (K = 3이면 c, d, e, f가 모두 이웃 3개라 막힌다)
+[^c4]: 컴파일러 16회 강의 자료 「Lecture16 Code generation part 3」, p.29~35 (스필링과 새 간섭 그래프)
+[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$C_4$$의 예와 카드 C4는 원본에 없다. $$C_4$$가 $$K = 2$$에서 하나도 빠지지 않지만 두 색으로 칠해지는 것, $$C_5$$가 멈추고 실제로도 두 색으로 안 되는 것을 [55_graph-coloring-register-allocation_impl.py](/Hongs_Blog/studies/compilers/code/55_graph-coloring-register-allocation_impl/)로 확인했다.
 {% endraw %}

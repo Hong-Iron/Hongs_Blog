@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Basic Elements of a Computer", "프로세서", "주기억장치", "입출력 모듈", "시스템 버스", "Main Memory", "I/O Module", "System Bus"]
 description: "컴퓨터는 네 부분으로 이루어진다. 일을 하는 일꾼(프로세서), 일감과 작업 지시서를 펼쳐 두는 책상(주기억장치), 바깥 세상과 물건을 주고받는 창구(입출력 모듈), 이 셋을 잇는 복도(시스템 버스)다. 운영체제는 이 하드웨어를 대신 관리하는 프로그램이라서, 하드웨어가 어떻게 생겼는…"
@@ -65,7 +65,18 @@ flowchart LR
 ## 연결
 
 - 다음: 프로세서 안의 저장 칸은 [프로세서 레지스터](/Hongs_Blog/studies/operating-systems/processor-registers/), 프로세서가 일하는 순서는 [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/)
-- 2-1학기 어셈블리어의 1~2장(x86 프로세서 구조)이 같은 내용을 x86 기준으로 다룬다.
+- 2-1학기 [어셈블리어](/Hongs_Blog/studies/assembly-language/)의 1~2장(x86 프로세서 구조)이 같은 내용을 x86 기준으로 다룬다.
+
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 같은 네 부분을 x86 마이크로컴퓨터의 그림으로 본다. 강의가 더하는 것은 프로세서 안의 부품 이름, 버스가 셋으로 나뉜다는 것, 실제 메인보드의 부품이다.
+
+- **프로세서 안.** 레지스터, 산술 논리 장치(ALU), 제어 장치(CU), 클록이 있다. ALU는 산술 계산과 비트 연산을 한다. 제어 장치는 실행 단계의 순서를 맞춘다. 클록은 0과 1을 일정하게 오가는 신호로, 프로세서와 버스의 모든 동작이 이 박자에 맞춰 일어난다. 박자 한 번(기계 사이클)이 동작 하나에 드는 시간의 단위다[^a1].
+- **버스 셋.** 시스템 버스가 데이터 버스, 제어 버스, 주소 버스로 나뉘어 프로세서, 메모리, 입출력 장치를 잇는다[^a1].
+- **메모리의 종류.** ROM은 읽기만 하는 메모리, EPROM은 지우고 다시 써넣을 수 있는 ROM이다. 동적 RAM(DRAM)은 싸지만 내용을 계속 새로 써 주어야 한다. 정적 RAM(SRAM)은 비싸고 새로 써 줄 필요가 없으며 캐시에 쓴다. 비디오 RAM(VRAM)은 화면을 계속 다시 그리는 데 맞춘 것이고, CMOS RAM은 시스템 설정 정보를 담는다[^a2].
+- **메인보드와 포트.** 메인보드에는 CPU 소켓, 주기억장치와 외부 캐시의 슬롯, BIOS 칩, 확장 카드를 꽂는 PCI 슬롯, 여러 장치의 커넥터가 있다[^a3]. 바깥 장치는 USB, 병렬 포트, 직렬 포트(RS-232), SATA, 블루투스, 와이파이로 잇는다[^a4].
+
+프로세서 안의 저장 칸을 x86 기준으로 하나씩 본 것이 [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)다. 클록의 박자를 아껴 쓰는 방법은 [파이프라인과 슈퍼스칼라](/Hongs_Blog/studies/assembly-language/instruction-pipeline/)에 있다.
 
 ## 확인 문제
 
@@ -85,9 +96,22 @@ flowchart LR
 
 </details>
 
+<details markdown="1"><summary markdown="span"><b>C3</b> 동적 RAM(DRAM)과 정적 RAM(SRAM)은 값과 관리 방법이 어떻게 다른가? 주기억장치와 캐시에는 각각 어느 쪽을 쓰는가?</summary>
+
+
+**답:** DRAM은 싸지만 내용을 계속 새로 써 주어야 한다. SRAM은 비싸고 새로 써 줄 필요가 없다. 용량이 큰 주기억장치에는 DRAM을, 작고 빨라야 하는 캐시에는 SRAM을 쓴다.<br>
+**이유:** 캐시는 용량이 작아서 비싼 SRAM을 써도 감당이 된다. 주기억장치는 용량이 커서 싼 쪽을 쓴다.[^as1]
+
+</details>
+
 [^1]: 운영체제 1회 강의 자료 「Chapter01-new」, 슬라이드 5와 발표자 노트
 [^2]: 같은 자료, 슬라이드 6과 발표자 노트
 [^3]: 같은 자료, 슬라이드 7과 발표자 노트
 [^4]: 같은 자료, 슬라이드 8
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 엑셀 예시와 표, 그림은 원본에 없다. 슬라이드 4의 네 구성 요소를 일상 작업에 대어 본 것이다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.4 (Basic Microcomputer Design: clock, control unit, ALU, data bus·control bus·address bus 그림), p.5 (Clock: machine (clock) cycle)
+[^a2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.14 (Memory: ROM, EPROM, DRAM, SRAM, VRAM, CMOS RAM)
+[^a3]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.12~13 (Motherboard, Intel D850MD Motherboard 사진)
+[^a4]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.15~17 (Input-Output Ports, Device Interfaces)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C3의 "주기억장치에는 DRAM"과 이유는 슬라이드에 없다. 슬라이드 p.14는 SRAM이 캐시에 쓰인다는 것과 두 메모리의 값·새로 고침 차이만 적고, p.13의 메인보드 사진이 주기억장치 슬롯에 "dynamic RAM"이라고 적는다.
 {% endraw %}

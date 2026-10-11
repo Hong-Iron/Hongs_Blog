@@ -9,7 +9,7 @@ course: "소프트웨어 프로젝트"
 course_slug: "software-project"
 course_url: "/studies/software-project/"
 track: "컴퓨터 과학"
-updated: "2026-10-11"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Bitwise Operator", "비트 연산자", "비트 논리 연산자", "Bitwise Logical Operator", "비트 AND", "비트 OR", "비트 XOR", "비트 NOT", "시프트 연산자", "비트 이동 연산자", "Shift Operator", "산술 시프트", "Arithmetic Shift", "논리 시프트", "Logical Shift", "비트 마스크", "Bit Mask"]
 description: "컴퓨터 속의 정수는 켜짐과 꺼짐을 나타내는 스위치가 한 줄로 늘어선 것이다. 비트 연산은 수를 크기로 보지 않고 이 스위치 줄로 보아, 같은 자리의 스위치끼리 짝지어 계산하거나 줄 전체를 옆으로 민다. 스위치 하나하나를 따로 켜고 끄고 확인할 수 있고, 2를 곱하거나 나누는 일을 …"
@@ -151,6 +151,26 @@ int green = (color >> 8) & 0xFF;   // 0x82 = 130
 - 음수의 비트 모양과 부호 비트: [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)
 - AND, OR, XOR, NOT을 회로로 만든 것: [불 대수와 논리 회로](/Hongs_Blog/studies/discrete-math/boolean-algebra/)
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** Java의 비트 연산자 일곱 개는 x86 CPU의 명령 하나씩과 짝이 맞는다[^as1].
+
+| Java | x86 명령 | 빈자리를 채우는 것 |
+|---|---|---|
+| `&`, `\|`, `^`, `~` | `AND`, `OR`, `XOR`, `NOT` | |
+| `<<` | `SHL` (`SAL`도 같은 명령이다) | 오른쪽을 0으로 |
+| `>>` | `SAR` | 왼쪽을 부호 비트로 |
+| `>>>` | `SHR` | 왼쪽을 0으로 |
+
+강의는 빈자리를 0으로 채우는 밀기를 논리 시프트, 부호 비트를 베껴 채우는 밀기를 산술 시프트라 부른다. 산술 시프트는 수의 부호를 지킨다[^a1]. 슬라이드의 예로 `mov dl,-80` 뒤에 `sar dl,1`을 하면 −40, 이어서 `sar dl,2`를 하면 −10이다. `mov dl,80` 뒤의 `shr dl,1`은 40이다[^a2]. 자세한 것은 [시프트 명령](/Hongs_Blog/studies/assembly-language/shift-instructions/)과 [논리 시프트와 산술 시프트 비교](/Hongs_Blog/studies/assembly-language/logical-vs-arithmetic-shift/)에 있다.
+
+어셈블리어 쪽에만 있는 것이 둘 있다.
+
+- **밀려 나간 비트가 남는다.** Java에서는 밖으로 밀려난 비트가 그냥 사라진다. CPU에서는 마지막으로 밀려난 비트가 올림 플래그 CF에 들어간다[^a1].
+- **결과가 0인지가 따로 남는다.** `AND`, `OR`, `XOR`은 결과가 0이면 ZF라는 표시를 켠다. 그래서 위의 `(flags & WRITE) != 0`을 어셈블리어로는 값을 바꾸지 않고 AND만 해 보는 `test` 한 줄과 "0이 아니면 가라"는 `jnz` 한 줄로 쓴다[^a3]. 명령마다의 쓰임은 [비트 논리 명령](/Hongs_Blog/studies/assembly-language/bitwise-instructions/)과 [TEST와 CMP](/Hongs_Blog/studies/assembly-language/test-cmp/)에 있다.
+
+위 경계 사례의 "`int`를 32칸 이상 밀면 칸 수를 32로 나눈 나머지만 쓴다"도 CPU에서 온 것이다. x86의 시프트 명령은 32비트 값을 밀 때 칸 수의 아래 5비트만 본다[^as1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -189,9 +209,22 @@ int green = (color >> 8) & 0xFF;   // 0x82 = 130
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** Java의 `x >> 2`와 `x >>> 2`를 x86 명령으로 옮기면 각각 무엇인가? 8비트 레지스터 AL에 F0h(부호 있게 읽으면 −16)가 있을 때 두 명령의 결과를 16진수로 쓰라.</summary>
+
+**답:** `>>`는 `sar al,2`, `>>>`는 `shr al,2`. `SAR`의 결과는 FCh(−4), `SHR`의 결과는 3Ch(60).<br>
+**이유:** F0h는 `1111 0000`이다. `SAR`은 왼쪽 빈자리 둘을 부호 비트 1로 채워 `1111 1100`, `SHR`은 0으로 채워 `0011 1100`이 된다. 부호를 지키려면 `SAR`, 비트 줄을 그대로 옮기려면 `SHR`이다[^as1].
+
+</details>
+
+
 [^1]: 소프트웨어 프로젝트 3회 강의 자료 「Software Project 03. Java Language Basics (2)」, p.11 (45 & 25 = ?)
 [^2]: 같은 자료, p.10 (비트 논리 연산자 표, 피연산자 제한)
 [^3]: 같은 자료, p.12 (시프트 연산자 표, 1 << 3 그림)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `45 & 25`의 풀이, 45와 25의 OR·XOR·NOT 값, `~x`가 $$-x - 1$$인 이유, −8을 미는 그림, 경계 사례, 활용 항목, 카드 C1~C4는 원본에 없다. 값은 구현 코드로, 컴파일 오류 메시지는 JDK 21에서 직접 컴파일해 확인했다. 원본은 피연산자를 `byte`, `short`, `int`, `long`으로 적는데 `char`도 된다. 규칙은 Java Language Specification §15.19(시프트), §15.22(비트 논리)에 있다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 파일 권한 예와 색 예는 원본에 없다. 구현 코드로 확인했다.
+[^a1]: 어셈블리어 10회 강의 자료 「wk10-chapt_07-3-1」, p.4~5 (논리 시프트와 산술 시프트, 밀려난 비트가 CF로 가는 그림); p.6, p.8~9 (SHL, SHR, SAL·SAR)
+[^a2]: 같은 자료, p.8~9 (80을 SHR, −80을 SAR 하는 예)
+[^a3]: 어셈블리어 7회 강의 자료 「wk07-chapt_06-3-2」, p.5~8 (AND, OR, XOR, NOT 명령); p.14 (TEST 뒤 JNZ)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Java 연산자와 x86 명령을 짝지은 표, 칸 수의 아래 5비트만 본다는 점, 카드 C5는 원본에 없다. 표의 짝은 −16, −8, −7, −1, 0, 1, 7, 45, `int`의 최댓값·최솟값을 0~31칸 밀어 Java의 정의(Java Language Specification §15.19)와 x86 명령의 흉내가 같은 값을 내는지 [29_bitwise-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/29_bitwise-instructions_verify/)로 확인했다(파이썬 흉내. 실제 CPU 명령을 돌린 것이 아니다). 칸 수를 5비트로 자르는 것은 Intel 64 and IA-32 Architectures Software Developer's Manual 2권의 SAL/SAR/SHL/SHR 항목에 있다.
 {% endraw %}

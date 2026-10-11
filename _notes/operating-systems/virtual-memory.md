@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Virtual Memory", "가상 주소", "Virtual Address", "실제 주소", "Real Address", "메모리 관리 장치", "MMU", "상주 집합", "Resident Set", "페이지 부재", "Page Fault", "스래싱", "Thrashing", "페이지 크기", "Page Size", "페이징과 세그먼테이션 결합"]
 description: "가상 메모리는 프로세스의 일부만 주기억장치에 올려 두고 나머지는 디스크에 둔 채 실행하는 방법이다. 두꺼운 요리책 전체를 조리대에 펼치지 않고 지금 만드는 요리의 몇 쪽만 펼쳐 두는 것과 같다. 그래서 주기억장치보다 큰 프로그램을 돌릴 수 있고, 더 많은 프로세스를 함께 올릴 수 …"
@@ -179,6 +179,10 @@ flowchart LR
 </div>
 
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** x86 보호 모드에서 같은 일이 어떻게 벌어지는지를 네 줄로 적는다. 모든 프로그램이 쓰는 메모리의 합이 실제 메모리보다 커도 된다. 돌고 있는 프로그램의 일부는 메모리에, 나머지는 디스크에 있다. 페이지를 올리고 내리는 일은 운영체제의 가상 메모리 관리자(VMM)가 맡는다. 디스크에서 올려야 할 페이지를 프로그램이 건드리면 프로세서가 페이지 부재(page fault)를 알린다[^a1]. 프로세서가 알리고 운영체제가 처리한다는 역할 나눔이다. 보호 모드는 [x86 동작 모드](/Hongs_Blog/studies/assembly-language/x86-operating-modes/)에 있다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 페이지 크기가 512워드다. 가상 주소 1,300은 몇 번 페이지의 몇 번째 워드인가? 그 페이지가 실제 메모리 4번 칸에 있다면 실제 주소는?</summary>
@@ -232,4 +236,5 @@ flowchart LR
 [^20]: 운영체제 2회 강의 자료 「Chapter02-new」, 슬라이드 10의 발표자 노트
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 캐시와의 연결, 스스로 설명해 보기의 근거, 확인 문제 C1·C3·C4는 원본에 없다. C1의 계산은 2장 슬라이드의 "가상 주소 = 페이지 번호 + 오프셋"을 숫자로 옮긴 것이고, C3·C4는 8장 슬라이드 6~7, 11을 바탕으로 만들었다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "세그먼테이션과 결합" 문단(슬라이드 41~45, 그림 8.13)을 주소 변환 흐름으로 그렸다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.12 (Paging: Sum of all programs can be larger than physical memory, Virtual memory manager (VMM), Page fault – issued by CPU when a page must be loaded from disk)
 {% endraw %}

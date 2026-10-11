@@ -94,3 +94,19 @@
     if (e.key === "Escape" && document.body.classList.contains("note-toc-open")) setOpen(false);
   });
 })();
+
+/* Keep the sidebar below the site header while the header is on screen. */
+(function () {
+  var toc = document.querySelector(".note-toc"), header = document.querySelector(".site-header");
+  if (!toc || !header) return;
+  var ticking = false;
+  function place() {
+    ticking = false;
+    var b = Math.max(0, Math.round(header.getBoundingClientRect().bottom));
+    toc.style.setProperty("--toc-top", b + "px");
+  }
+  function ask() { if (!ticking) { ticking = true; requestAnimationFrame(place); } }
+  window.addEventListener("scroll", ask, { passive: true });
+  window.addEventListener("resize", ask);
+  place();
+})();

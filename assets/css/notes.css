@@ -466,12 +466,14 @@ body[data-bg="midnight"] .highlight {
 .note-toc {
   --toc-w: clamp(15rem, 19vw, 19.5rem);
   position: fixed;
-  top: 0;
+  /* --toc-top: how much of the site header is still on screen (note-toc.js),
+     so a long, scrolled list never slides under the logo */
+  top: var(--toc-top, 0px);
   left: 0;
   z-index: 30;
   width: var(--toc-w);
-  height: 100vh;
-  padding: 5.5rem 1rem 2rem clamp(1rem, 1.8vw, 2rem);
+  height: calc(100vh - var(--toc-top, 0px));
+  padding: 1.5rem 1rem 2rem clamp(1rem, 1.8vw, 2rem);
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
@@ -683,6 +685,8 @@ body[data-bg="midnight"] .highlight {
 
 @media (max-width: 1099.98px) {
   .note-toc {
+    top: 0;
+    height: 100vh;
     width: min(20rem, 86vw);
     padding-top: 1.5rem;
     background: var(--bg);

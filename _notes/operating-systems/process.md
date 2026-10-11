@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Process", "작업", "Job", "태스크", "Task", "실행 문맥", "Execution Context", "프로세스 상태", "Process State", "프로세스 목록", "Process List", "프로세스 전환", "Process Switch"]
 description: "프로세스는 실행 중인 프로그램이다. 프로그램이 요리책이라면 프로세스는 그 요리책으로 지금 요리하는 중인 상태다. 몇 쪽까지 했는지, 어떤 재료를 썰어 두었는지까지 포함한다. 운영체제는 이 \"어디까지 했나\" 기록(실행 문맥)을 따로 챙겨 두기 때문에, 여러 프로그램을 번갈아 돌려도 …"
@@ -128,6 +128,12 @@ flowchart LR
 - 다음: [스레드](/Hongs_Blog/studies/operating-systems/thread/)
 - 상호 배제와 교착상태는 5~6장(병행성)의 주제다.
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 프로그램이 프로세스가 되기까지를 운영체제의 일로 그린다. ① 사용자가 프로그램 이름을 운영체제에 넘긴다. ② 운영체제가 지금 폴더에서, 없으면 시스템 경로에서 그 이름의 파일을 찾는다. ③ 파일의 디렉터리 항목에서 파일이 디스크의 어디서 시작하는지(시작 클러스터)를 알아낸다. ④ 프로그램을 메모리에 올리고 시작시킨다. ⑤ 프로그램이 끝나면 운영체제로 돌아온다[^a1]. 돌고 있는 프로세스의 번호(PID)는 윈도우의 작업 관리자에서 볼 수 있다[^a2].
+
+④에서 프로그램을 메모리에 올리는 일이 [어셈블·링크·실행 과정](/Hongs_Blog/studies/assembly-language/assemble-link-execute/)의 마지막 단계다. ③의 클러스터는 [클러스터와 FAT](/Hongs_Blog/studies/assembly-language/fat-file-system/)에서 다룬다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 프로세스의 세 구성 요소를 쓰고, 그중 운영체제가 프로세스를 관리하는 데 꼭 필요한 것은 무엇인지 쓰라.</summary>
@@ -162,4 +168,6 @@ flowchart LR
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 크롬 창 예시와 ASCII 그림은 원본에 없다. 그림은 원본 그림 2.8의 요소를 옮긴 것이다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 가지 오류 원인과 프로세스 개념을 잇는 문장은 원본 순서(오류 원인 → 프로세스 구성 요소)를 해석한 것이다. 확인 문제 C3의 상황은 원본에 없다.
 [^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "운영체제가 프로세스를 줄 세우는 방법"의 큐 표(슬라이드 43~44, 그림 2.11)를 흐름도로 옮겼다. "시간 조각을 다 씀" 화살표는 표의 라운드 로빈 설명을 나타낸 것이다.
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.1 (How a Program Runs 그림: User, Operating system, Current directory, System path, Directory entry, Program)
+[^a2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.2~3 (How to get PID, Process ID in Task Manager)
 {% endraw %}

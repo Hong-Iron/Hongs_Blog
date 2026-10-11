@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-07"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Processor Registers", "레지스터", "프로그램 카운터", "명령어 레지스터", "PSW", "조건 코드", "Program Counter", "Instruction Register", "Program Status Word", "Condition Codes", "Flags"]
 description: "레지스터는 프로세서 안에 있는 아주 작고 아주 빠른 저장 칸이다. 일꾼이 손에 쥐고 있는 메모지와 같아서, 책상(주기억장치)까지 손을 뻗지 않고 바로 쓸 수 있다. 두 무리로 나뉜다. 하나는 프로그램이 직접 쓰는 칸이고, 다른 하나는 프로세서와 운영체제가 실행을 지휘하려고 쓰는 칸…"
@@ -70,6 +70,12 @@ permalink: "/studies/operating-systems/processor-registers/"
 - 선수: [컴퓨터의 기본 구성 요소](/Hongs_Blog/studies/operating-systems/computer-basic-elements/)
 - PC와 IR이 실제로 움직이는 모습: [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/)
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 위의 일반 이야기를 32비트 x86 프로세서에 대면 이렇다. 프로그램이 직접 쓰는 칸은 범용 레지스터 여덟 개(EAX, EBX, ECX, EDX, EBP, ESP, ESI, EDI)다. 세그먼트 포인터는 세그먼트 레지스터 여섯 개(CS, SS, DS, ES, FS, GS), 스택 포인터는 ESP, 인덱스 레지스터는 ESI와 EDI다. 프로그램 카운터는 EIP라는 이름이고, 조건 코드는 EFLAGS 레지스터 안의 상태 플래그(올림, 넘침, 부호, 영 등)다[^a1]. 자세한 것은 [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)에 있다.
+
+위에서 "조건 코드는 읽을 수만 있다"고 한 것과 달리, x86에는 올림 플래그를 직접 켜는 `stc` 같은 명령이 있다[^a2]. 프로세서마다 사정이 다른 부분이다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> PC, IR, PSW에는 각각 무엇이 들어 있는가?</summary>
@@ -92,4 +98,6 @@ permalink: "/studies/operating-systems/processor-registers/"
 [^3]: 같은 자료, 슬라이드 12~13과 발표자 노트
 [^4]: 같은 자료, 슬라이드 11
 [^5]: 같은 자료, 슬라이드 14 발표자 노트
+[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.8 (General-Purpose Registers 그림), p.11~13 (Some Specialized Register Uses, Status Flags)
+[^a2]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-1」, p.13 (Instruction Format Examples: "stc ; set Carry flag")
 {% endraw %}

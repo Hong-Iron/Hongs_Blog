@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Interrupt", "인터럽트 처리기", "Interrupt Handler", "인터럽트 서비스 루틴", "ISR", "중첩 인터럽트", "Nested Interrupt"]
 description: "인터럽트는 \"다 됐어요\" 하고 어깨를 두드리는 신호다. 요리사가 오븐 앞에 서서 빵이 다 구워지기를 지켜보는 대신, 다른 요리를 하다가 타이머가 울리면 그때 오븐으로 간다. 덕분에 느린 장치를 기다리는 동안 프로세서가 놀지 않는다. 대신 언제 끊길지 모르므로, 끊긴 프로그램의 상태…"
@@ -205,6 +205,15 @@ sequenceDiagram
 </div>
 
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 위의 일반 원리가 16비트 x86 PC(MS-DOS)에서는 이렇게 생겼다.
+
+- **처리 루틴의 주소를 찾는 표.** 처리 순서 5단계의 "처리 루틴의 시작 주소"는 메모리 맨 앞의 인터럽트 벡터 표에서 나온다. 인터럽트마다 번호가 있고, 번호에 4를 곱한 주소에 그 처리 루틴의 주소 4바이트가 적혀 있다[^a1]: [INT 명령과 인터럽트 벡터 표](/Hongs_Blog/studies/assembly-language/interrupt-vector-table/).
+- **프로그램이 스스로 거는 인터럽트.** `INT 21h`처럼 명령으로 같은 표를 거쳐 처리 루틴을 부를 수 있다. MS-DOS와 BIOS에 일을 시키는 창구가 이것이다[^a2].
+- **우선순위를 정하는 칩.** 장치의 신호는 8259라는 칩이 먼저 받아, 우선순위가 낮은 요청이 높은 요청의 처리를 끊지 못하게 막는다. 장치마다 정해진 선 번호가 IRQ다. 타이머가 IRQ 0, 키보드가 IRQ 1이다[^a3]: [하드웨어 인터럽트와 IRQ](/Hongs_Blog/studies/assembly-language/hardware-interrupt-irq/).
+- **막고 여는 명령.** 위 표의 "인터럽트를 막는다"는 `CLI` 명령, 다시 받는 것은 `STI` 명령이다. 처리 루틴은 `IRET` 명령으로 끝난다[^a4].
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 인터럽트의 네 가지 종류와 각각의 예를 하나씩 쓰라.</summary>
@@ -245,6 +254,14 @@ sequenceDiagram
 
 </details>
 
+<details markdown="1"><summary markdown="span"><b>C6</b> 16비트 x86 PC에서 키보드 인터럽트의 번호는 9다. 프로세서는 처리 루틴의 시작 주소를 메모리 몇 번지에서 읽는가? 처리하는 동안 다른 장치의 인터럽트를 막는 명령과 다시 받는 명령은?</summary>
+
+
+**답:** 0024h번지에서 4바이트를 읽는다. 막는 명령은 `CLI`, 다시 받는 명령은 `STI`다.<br>
+**이유:** 인터럽트 벡터 표에서 칸의 주소는 번호 × 4다. 9 × 4 = 36 = 24h. 계산은 [50_interrupt-vector-table_verify.py](/Hongs_Blog/studies/assembly-language/code/50_interrupt-vector-table_verify/)로 확인했다.
+
+</details>
+
 [^1]: 운영체제 1회 강의 자료 「Chapter01-new」, 슬라이드 24와 발표자 노트
 [^2]: 같은 자료, 슬라이드 27 (그림 1.5)과 발표자 노트
 [^3]: 같은 자료, 슬라이드 28 발표자 노트
@@ -258,4 +275,8 @@ sequenceDiagram
 [^11]: 같은 자료, 슬라이드 38
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 함수 호출과의 비교, 중첩 처리의 좋은 점으로 든 통신선 예, 콜백 함수와의 비교, 레지스터를 빠뜨렸을 때 생기는 일, "보장하지 않는 것" 표의 두 번째 줄은 원본의 "인터럽트는 프로그램이 부르는 루틴이 아니다"(슬라이드 32 노트)를 풀어 쓴 것이다. 확인 문제 C4·C5는 원본 예를 바꾼 문항이다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "처리 순서" 절의 1~9단계(슬라이드 32, 그림 1.10)를 순서도로 옮겨 그렸다.
+[^a1]: 어셈블리어 14회 강의 자료 「wk14-chapt_17-2-2」, p.5 (Interrupt Vector Table: 칸마다 32비트 세그먼트/오프셋 주소, Offset = interruptNumber * 4)
+[^a2]: 어셈블리어 13회 강의 자료 「wk13-chapt_14-2-1」, p.10~12 (INT Instruction, Interrupt Vectoring Process, Common Interrupts)
+[^a3]: 어셈블리어 14회 강의 자료 「wk14-chapt_17-2-2」, p.6, 16 (Hardware Interrupts: Intel 8259, IRQ, Common IRQ Assignments)
+[^a4]: 같은 자료, p.18 (Interrupt Control Instructions: STI, CLI), p.22 (그림의 IRET)
 {% endraw %}

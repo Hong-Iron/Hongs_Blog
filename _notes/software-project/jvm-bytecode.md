@@ -9,7 +9,7 @@ course: "소프트웨어 프로젝트"
 course_slug: "software-project"
 course_url: "/studies/software-project/"
 track: "컴퓨터 과학"
-updated: "2026-10-11"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["JVM", "Java Virtual Machine", "자바 가상 머신", "Bytecode", "바이트코드", "JDK", "Java Development Kit", "JRE", "Java Runtime Environment", "javac", "컴파일러", "Compiler", "인터프리터", "Interpreter", "클래스 로더", "Class Loader", "패키지", "Package"]
 description: "자바 프로그램은 컴퓨터가 바로 읽는 말로 번역되지 않는다. 먼저 어느 컴퓨터의 말도 아닌 중간 말로 한 번 번역해 두고, 실행할 때 각 컴퓨터에 깔린 통역 프로그램이 그 중간 말을 자기 컴퓨터의 말로 옮겨 가며 돌린다. 그래서 한 번 번역한 파일을 윈도우에서도 맥에서도 그대로 쓸 …"
@@ -155,6 +155,15 @@ flowchart TD
 - 패키지 선언과 import: [패키지](/Hongs_Blog/studies/software-project/java-package/)
 - JVM도 운영체제 위에서 도는 프로그램 하나다: [프로세스](/Hongs_Blog/studies/operating-systems/process/)
 
+## 과목별 관점
+
+**컴파일러 (3-2학기).** 이 강의는 자바처럼 컴파일과 인터프리트를 이어 붙인 방식을 하이브리드 컴파일러(hybrid compiler)라 부르고, 예로 Java와 파이썬을 든다[^c2]. 강의가 더하는 것은 둘이다.
+
+- **두 방식을 가르는 세 물음.** 무엇을 옮기나(원시 프로그램 전체 / 문장 하나), 언제 옮기나(프로그램이 돌기 전에 한 번 / 그 문장을 실행할 때마다), 무엇이 나오나(목적 프로그램 / 그 문장의 목적 코드)[^c1]. 위 표의 '하는 일' 칸을 셋으로 나눠 본 것이다.
+- **두 토막이 각각 맡은 것.** 강의 그림은 컴파일러 쪽 상자에 "높은 효율(짧은 실행 시간)을 위해", 인터프리터 쪽 상자에 "여러 기계에서 그대로 돌게(이식성) 하려고"라고 적는다[^c2]. `javac`가 바이트코드를 미리 만들어 두는 것은 오류를 미리 잡는 데 더해 실행을 빠르게 하려는 것이기도 하다. 글자를 낱말로 끊고 문법을 따지는 일을 실행할 때마다 되풀이하지 않아도 되기 때문이다[^cs1].
+
+두 방식의 장단점은 [컴파일과 인터프리트 비교](/Hongs_Blog/studies/compilers/compilation-vs-interpretation/)에, `javac` 같은 컴파일러 안에서 일어나는 여섯 단계는 [컴파일러의 구조](/Hongs_Blog/studies/compilers/compiler-structure/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -193,6 +202,15 @@ flowchart TD
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 자바의 두 토막 가운데 하나씩을 없앤다고 하자. (가) 바이트코드를 만들지 않고 JVM이 `.java` 소스를 한 문장씩 읽어 바로 실행한다. (나) JVM 없이 `javac`가 곧장 윈도우의 기계어를 낸다. 각각 무엇을 잃는가?</summary>
+
+**답:** (가) 실행 속도와 실행 전 오류 검사를 잃는다. 문장을 실행할 때마다 글자를 끊고 문법을 따져야 하고, 틀린 문장은 그 문장에 닿아야 드러난다. (나) 다른 운영체제에서 그대로 도는 성질을 잃는다. 맥에서 쓰려면 맥용으로 다시 번역해야 한다.<br>
+**이유:** 앞 토막(컴파일)은 짧은 실행 시간을, 뒤 토막(인터프리트)은 여러 기계에서 그대로 도는 것을 맡는다. 둘을 이어 붙여 두 가지를 함께 얻는다.
+
+</details>
+
+
 [^1]: 소프트웨어 프로젝트 2회 강의 자료 「Software Project 02. Java Language Basics (1)」, p.8~12 (소스 → 바이트코드 → 운영체제별 JVM, JVM 안의 네 단계)
 [^2]: 같은 자료, p.13~14 (Hello.java)
 [^3]: 같은 자료, p.17 (javac -d, java -cp)
@@ -203,4 +221,7 @@ flowchart TD
 [^8]: 같은 자료, p.4 (자바의 특징)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 바이트코드 네 줄(`javap -c` 출력), `java -cp bin Hello`의 오류 메시지, 카드 C4는 원본에 없다. JDK 21에서 직접 실행해 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> JRE와 JDK의 차이 설명, 다이어그램 1개와 상자 그림 1개는 원본에 없다. 원본 p.5의 포함 관계 그림과 p.11~12의 흐름 그림을 근거로 그렸다. JVM이 바이트코드를 한 줄씩 옮기기만 하지 않고 자주 도는 부분을 통째로 기계어로 바꿔 두기도 한다는 것(JIT 컴파일)은 다루지 않았다.
+[^c1]: 컴파일러 1회 강의 자료 「Lecture01 Compilers overview」, p.5 (컴파일과 인터프리트의 비교 표: What to translate, When to translate, Translation result)
+[^c2]: 컴파일러 1회 강의 자료 「Lecture01 Compilers overview」, p.7 (Variation: Hybrid compilers. "For high efficiency (low execution time)", "For high portability". 예: Java, Python)
+[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 미리 옮겨 두면 왜 빨라지는지의 설명과 카드 C5는 컴파일러 강의 슬라이드에 없다. 문장을 되풀이할 때 옮기는 횟수의 차이는 [02_compilation-vs-interpretation_verify.py](/Hongs_Blog/studies/compilers/code/02_compilation-vs-interpretation_verify/)의 장난감 언어로 확인했다.
 {% endraw %}

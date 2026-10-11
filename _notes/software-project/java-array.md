@@ -9,7 +9,7 @@ course: "소프트웨어 프로젝트"
 course_slug: "software-project"
 course_url: "/studies/software-project/"
 track: "컴퓨터 과학"
-updated: "2026-10-11"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Array", "배열", "인덱스", "Index", "배열 길이", "length", "다차원 배열", "Multidimensional Array", "2차원 배열", "배열 복사", "System.arraycopy", "Arrays.copyOf", "얕은 복사", "Shallow Copy", "향상된 for", "Enhanced for", "for-each", "ArrayIndexOutOfBoundsException", "String[] args"]
 description: "배열은 같은 종류의 값을 번호 붙은 칸에 줄지어 넣어 둔 것이다. 아파트 한 동의 우편함처럼, 이름 하나와 번호만 있으면 어느 칸이든 바로 열 수 있다. 값이 백 개든 만 개든 변수 하나와 반복문으로 다룰 수 있다. 대신 칸 수는 만들 때 정해져 나중에 늘릴 수 없고, 번호는 0부…"
@@ -17,7 +17,7 @@ prev_url: "/studies/software-project/java-string/"
 prev_title: "String"
 next_url: "/studies/software-project/class-and-object/"
 next_title: "클래스와 객체"
-math: false
+math: true
 mermaid: false
 code_count: 1
 permalink: "/studies/software-project/java-array/"
@@ -215,6 +215,15 @@ for (int i = 0; i < twice.length; i++) { twice[i] *= 2; }        // [2, 4, 6]
 - 문자열 배열의 칸에 든 것, `split`이 돌려주는 배열: [String](/Hongs_Blog/studies/software-project/java-string/)
 - 클래스로 만든 객체를 배열에 담기: [클래스와 객체](/Hongs_Blog/studies/software-project/class-and-object/)
 
+## 과목별 관점
+
+**컴파일러 (3-2학기).** 컴파일러 강의는 같은 배열을 "메모리에 어떤 모양으로 놓이는가"로 본다. 언어마다 놓는 법이 다르고, 강의는 C 방식과 Java 방식을 나란히 그린다[^c1]. 강의가 이 문서에 더하는 것은 두 가지다.
+
+- **길이는 원소 앞에 적혀 있다.** C 방식 배열은 원소만 메모리에 연달아 놓는다. Java 방식 배열은 원소를 연달아 놓는 것은 같고, 맨 앞에 길이를 적은 칸이 하나 더 붙는다. 위에서 `score.length`로 길이를 읽을 수 있고 범위 밖 인덱스를 실행 중에 잡아낼 수 있는 것은 이 칸이 있어서다[^cs1]. C 방식에는 그 칸이 없어 배열만 보고는 길이를 알 수 없다.
+- **2차원 배열은 덩어리가 여럿이다.** `A[m][n]`을 C 방식으로 놓으면 0번 줄, 1번 줄, …의 원소를 한 덩어리로 잇는다. Java 방식은 위의 `scores` 그림 그대로다. 바깥 배열에 길이 $$m$$과 안쪽 배열의 주소 $$m$$개가 있고, 안쪽 배열은 저마다 따로 떨어진 덩어리이며 각자 맨 앞에 자기 길이를 갖는다[^c2]. 안쪽 배열마다 길이 칸이 따로 있으니 `scores[0].length`와 `scores[1].length`가 달라도 된다.
+
+원소를 놓을 번지를 타입마다 정해진 눈금에 맞추는 이야기는 [데이터 정렬과 패딩](/Hongs_Blog/studies/compilers/data-alignment/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -253,6 +262,15 @@ for (int i = 0; i < twice.length; i++) { twice[i] *= 2; }        // [2, 4, 6]
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** `int[][] scores = {{80, 92, 96}, {76, 88}};`가 Java 방식으로 메모리에 놓일 때 덩어리는 몇 개이고 길이를 적은 칸은 몇 개인가? 2줄 3칸짜리 배열을 C 방식으로 놓으면 덩어리는 몇 개이고 길이 칸은 몇 개인가?</summary>
+
+**답:** Java 방식: 덩어리 셋(바깥 배열 하나, 안쪽 배열 둘), 길이 칸 셋(바깥 2, 안쪽 3과 2). C 방식: 덩어리 하나(원소 여섯이 줄 순서로 이어진다), 길이 칸은 없다.<br>
+**이유:** Java 방식은 배열마다 맨 앞에 자기 길이를 적는다. 바깥 배열의 칸에는 원소가 아니라 안쪽 배열의 주소가 든다. C 방식은 한 덩어리라서 줄마다 길이가 다른 배열을 이 모양으로는 만들 수 없다.
+
+</details>
+
+
 [^1]: 소프트웨어 프로젝트 4회 강의 자료 「Software Project 04. Reference Types」, p.13 (배열의 뜻, score 배열 그림)
 [^2]: 같은 자료, p.14 (배열 변수 선언 두 모양, 힙과 null)
 [^3]: 같은 자료, p.15 (값 목록으로 만들기, new 타입[])
@@ -264,4 +282,7 @@ for (int i = 0; i < twice.length; i++) { twice[i] *= 2; }        // [2, 4, 6]
 [^9]: 같은 자료, p.21 (String[] args, java Sum 10 20)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `length`로 길이 읽기, 범위 밖 인덱스의 예외와 메시지, 길이를 못 바꾼다는 것, `score = {…}`의 컴파일 오류, 인자 없이 실행한 `args`, `ArrayList` 언급은 원본에 없다(원본은 p.19 그림에 "배열 길이: 3"이라고만 적는다). 예외 메시지와 값은 구현 코드로, 컴파일 오류는 JDK 21에서 직접 컴파일해 확인했다. Java Language Specification §10.3, §10.7에 있다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 배열 복사 세 방법, 얕은 복사, 향상된 `for`, 카드 C1~C4는 원본 4회 슬라이드에 없다. 값은 구현 코드로 확인했다. Java Language Specification §14.14.2(향상된 for), `System.arraycopy`와 `Arrays.copyOf`의 API 문서에 있다.
+[^c1]: 컴파일러 14회 강의 자료 「Lecture14 Code generation part 1」, p.8 (C 방식 배열과 Java 방식 배열: Java 방식은 크기 정보가 앞에 붙는다)
+[^c2]: 컴파일러 14회 강의 자료 「Lecture14 Code generation part 1」, p.9 (다차원 배열: C 방식은 한 덩어리, Java 방식은 배열의 배열)
+[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 길이 칸을 `length`와 범위 검사에 이은 설명, 카드 C5는 원본에 없다. 슬라이드는 "크기 정보가 앞에 붙는다"까지만 적는다. 덩어리와 길이 칸의 수는 슬라이드 p.9의 그림을 $$m = 2$$인 경우로 센 것이다.
 {% endraw %}

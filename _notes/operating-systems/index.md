@@ -16,7 +16,7 @@ permalink: "/studies/operating-systems/"
 ---
 {% raw %}
 ## 먼저 알아야 할 것
-- 어셈블리어 (2-1학기) 1~2장의 x86 프로세서 구조가 1장과 겹친다. 아직 개념 문서는 없다.
+- [어셈블리어](/Hongs_Blog/studies/assembly-language/) (2-1학기) 1~2장의 x86 프로세서 구조가 1장과 겹친다. 아직 개념 문서는 없다.
 - 교재: Stallings, *Operating Systems: Internals and Design Principles* 6판 슬라이드. 교수 자료에 없던 3·5·6·7장은 공개 강의자료로 채웠다(각 장 안내 참고).
 
 ## 1장 · 컴퓨터 시스템 개요

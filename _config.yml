@@ -93,6 +93,14 @@ defaults:
     values:
       image: /assets/img/og/software-project.png
   - scope:
+      path: "_notes/assembly-language"
+    values:
+      image: /assets/img/og/assembly-language.png
+  - scope:
+      path: "_notes/compilers"
+    values:
+      image: /assets/img/og/compilers.png
+  - scope:
       path: "_notes/calculus"
     values:
       image: /assets/img/og/calculus.png

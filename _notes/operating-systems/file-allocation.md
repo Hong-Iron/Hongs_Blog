@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["File Allocation", "연속 할당", "Contiguous Allocation", "연결 할당", "Chained Allocation", "색인 할당", "Indexed Allocation", "파일 할당 표", "File Allocation Table", "FAT", "선할당", "Preallocation", "동적 할당", "빈 공간 관리", "Free Space Management", "비트 표", "Bit Table", "비트맵", "볼륨", "Volume"]
 description: "운영체제는 파일을 디스크의 어느 블록들에 놓을지, 그리고 아직 비어 있는 블록이 어디인지를 관리한다. 블록을 붙여서 한 줄로 주면(연속) 읽기는 빠르지만 빈틈이 쪼개져 큰 파일을 못 넣게 되고, 흩어진 블록을 사슬로 이으면(연결) 빈틈 문제는 없지만 중간 블록을 찾으려면 앞에서부터…"
@@ -145,6 +145,10 @@ permalink: "/studies/operating-systems/file-allocation/"
 </div>
 
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 연결 할당을 MS-DOS의 FAT로 배운다. 위의 "블록"을 이 과목은 클러스터라 부른다. 클러스터는 붙어 있는 섹터 한 개 이상을 묶은 것이고, 파일이 쓰는 공간의 가장 작은 단위다[^a1]. 다음 블록의 번호를 블록 안에 적지 않고, 디스크의 모든 클러스터마다 칸이 하나씩 있는 표(FAT)에 모아 적는다. 한 파일의 번호들이 이어진 줄을 클러스터 사슬이라 부르고, 칸의 비트 수(12, 16, 32)에 따라 FAT-12, FAT-16, FAT-32로 나눈다[^a2]. 슬라이드의 16칸 표를 따라가는 예와 클러스터 크기 때문에 버려지는 자리 계산은 [클러스터와 FAT](/Hongs_Blog/studies/assembly-language/fat-file-system/)에 있다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 세 할당 방식에서 파일 할당 표에 무엇을 적는지 쓰라.</summary>
@@ -191,4 +195,6 @@ permalink: "/studies/operating-systems/file-allocation/"
 [^14]: 같은 자료, 슬라이드 101~102
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 16블록 예시와 읽기 횟수 비교, 비트 표 크기 계산, 포인터 손상 위험, FAT 파일 시스템 설명, 스스로 설명해 보기의 연결, 확인 문제 C2~C4는 슬라이드에 없다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "예시로 보기"의 블록 16개 예(문서의 보충 예, 각주 s1)를 ASCII로 그렸다.
+[^a1]: 어셈블리어 12회 강의 자료 「wk12-chapt_15-1-1」, p.10 (Cluster: 파일이 쓰는 가장 작은 공간 단위, 붙어 있는 섹터들)
+[^a2]: 같은 자료, p.13~14 (File Allocation Table: 모든 클러스터의 지도, cluster chain, FAT-12·16·32, 칸마다 다음 칸을 가리키는 n비트 정수)
 {% endraw %}

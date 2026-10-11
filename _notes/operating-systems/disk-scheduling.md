@@ -9,7 +9,7 @@ course: "운영체제"
 course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Disk Scheduling", "탐색 시간", "Seek Time", "회전 지연", "Rotational Delay", "전송 시간", "Transfer Time", "접근 시간", "Access Time", "SSTF", "Shortest Service Time First", "SCAN", "엘리베이터 알고리즘", "Elevator Algorithm", "C-SCAN", "LOOK", "C-LOOK", "N-step-SCAN", "FSCAN"]
 description: "하드 디스크에서 데이터를 읽으려면 읽기 머리(헤드)를 원하는 트랙까지 팔로 옮겨야 하는데, 이 팔 움직임이 가장 느리다. 그래서 요청이 여러 개 쌓이면 어떤 순서로 처리하느냐에 따라 팔이 움직이는 거리가 크게 달라진다. 엘리베이터가 층 버튼이 눌린 순서가 아니라 한 방향으로 쭉 가…"
@@ -186,6 +186,16 @@ SCAN은 가장 안쪽과 바깥쪽 트랙의 요청, 그리고 가장 늦게 도
 </div>
 
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 디스크의 생김새를 이름 붙여 설명한다[^a1].
+
+- **트랙과 섹터.** 트랙은 자료가 놓이는 동심원 하나다. 섹터는 트랙을 자른 한 조각이다.
+- **실린더.** 디스크는 원판(플래터) 여러 장이 한 축에 꽂혀 돌고, 판의 면마다 읽기 머리가 하나씩 있다. 머리들은 한 팔에 묶여 같이 움직인다. 머리를 한 자리에 둔 채로 읽을 수 있는 트랙 전부, 곧 모든 면의 같은 번호 트랙을 묶어 실린더라 부른다[^sa1].
+- **탐색.** 머리를 다른 트랙으로 옮기는 일이다. 위 정의의 탐색 시간이 이 움직임에 드는 시간이다.
+
+이 과목은 스케줄링 정책 대신 파일이 놓인 모양이 탐색을 얼마나 늘리는지를 본다. 한 파일의 섹터가 디스크의 붙어 있는 자리에 있지 않으면 조각난 파일이라 부른다. 조각난 파일을 읽으면 머리가 건너뛰어야 해서 읽기가 느려지고, 읽기·쓰기 오류가 날 수도 있다[^a2]. 파일이 어떻게 조각나는지는 [클러스터와 FAT](/Hongs_Blog/studies/assembly-language/fat-file-system/)의 사슬 그림에 있다.
+
 ## 확인 문제
 
 <details markdown="1"><summary markdown="span"><b>C1</b> 디스크 접근 시간의 두 부분과, 그 뒤에 오는 시간을 쓰라. 셋 중 보통 가장 큰 것은?</summary>
@@ -223,6 +233,14 @@ SCAN은 가장 안쪽과 바깥쪽 트랙의 요청, 그리고 가장 늦게 도
 
 </details>
 
+<details markdown="1"><summary markdown="span"><b>C6</b> 같은 실린더에 있는 섹터들을 이어서 읽으면 왜 빠른가? 조각난 파일은 왜 느린가?</summary>
+
+
+**답:** 실린더는 머리를 한 자리에 둔 채 읽을 수 있는 트랙의 묶음이라, 그 안에서는 팔을 옮기지 않아 탐색 시간이 들지 않는다. 조각난 파일은 섹터가 떨어진 트랙에 흩어져 있어서 조각마다 팔을 옮겨야 하고, 그때마다 탐색 시간이 든다.<br>
+**이유:** 접근 시간에서 가장 큰 것이 탐색 시간이다. 탐색 횟수가 읽기 시간을 좌우한다.[^sa1]
+
+</details>
+
 [^1]: 운영체제 11회 강의 자료 「Chapter11-new」, 슬라이드 45, 54 (표 11.2)
 [^2]: 같은 자료, 슬라이드 43과 슬라이드 42의 발표자 노트
 [^3]: 같은 자료, 슬라이드 44와 슬라이드 43의 발표자 노트
@@ -239,4 +257,7 @@ SCAN은 가장 안쪽과 바깥쪽 트랙의 요청, 그리고 가장 늦게 도
 [^14]: 같은 자료, 슬라이드 81~83
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 접근 시간 식과 4 ms·15,000 rpm 예는 Stallings 6판 11.5절을 따랐다(슬라이드는 정의만 있다). 표 11.2 평균값의 반올림 차이, SCAN/LOOK 정의 비교와 끝까지 가는 SCAN의 이동 합, 팔 붙잡힘, 복잡도, SSD 이야기, 확인 문제 C2·C4·C5는 슬라이드에 없다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [53_disk-scheduling_plot.py](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_plot/)로 그렸고, 네 정책의 처리 순서와 이동 합 498, 248, 250, 322를 같은 코드로 확인했다.
+[^a1]: 어셈블리어 12회 강의 자료 「wk12-chapt_15-1-1」, p.4~5 (Tracks and Sectors, Cylinders and Seeking: track, sector, cylinder, seek 정의와 platter·head 그림)
+[^a2]: 같은 자료, p.6 (Fragmentation: 섹터가 붙어 있지 않은 파일, 머리가 건너뜀, 느린 접근, 읽기·쓰기 오류 가능)
+[^sa1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 실린더를 "한 머리 위치에서 읽을 수 있는 모든 트랙"이라고만 적는다. "모든 면의 같은 번호 트랙"이라는 풀이와 카드 C6은 슬라이드 p.5의 그림(판 여러 장, 한 팔에 묶인 머리)에서 끌어낸 것이다.
 {% endraw %}

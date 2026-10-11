@@ -9,7 +9,7 @@ course: "자료와 정보"
 course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "수학"
-updated: "2026-10-11"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Code", "Encoding", "부호", "코드", "부호화", "인코딩", "복호화", "Decoding", "디코딩", "코덱", "Codec", "문자 부호", "ASCII", "유니코드", "Unicode", "UTF-8", "UTF-16", "부호어", "Codeword", "블록 부호", "Block Code", "부호 비율", "Code Rate", "부호 이론", "Coding Theory"]
 description: "어떤 대상을 가리키려고 정해 둔 기호가 부호다. 모스 부호에서 점 하나와 선 하나가 글자 A를 뜻하는 것과 같다. 대상을 기호로 바꾸는 일과 기호를 대상으로 되돌리는 일이 짝을 이루고, 한 기호가 두 대상을 가리키지 않아야 되돌릴 수 있다. 기호를 길게 쓰면 틀린 곳을 찾아낼 여유…"
@@ -135,6 +135,41 @@ $$R(C) = \frac{\log \vert C\vert }{n \log \vert \Sigma\vert }$$
 - "하나에 하나씩"의 정확한 뜻: [함수의 성질과 집합의 크기](/Hongs_Blog/studies/discrete-math/function-properties/)(단사 함수여야 되돌릴 수 있다)
 - 이어지는 개념: [해밍 거리와 부호 거리](/Hongs_Blog/studies/data-and-information/hamming-distance/)
 
+## 과목별 관점
+
+**어셈블리어 (2-1학기).** 글자를 "메모리의 한 바이트에 들어 있는 수"로 본다. 강의가 더하는 것은 글자열의 끝을 알리는 법과, 같은 수를 담는 서로 다른 방법이다.
+
+- **문자 집합의 크기.** 표준 ASCII는 0~127, 확장 ASCII는 0~255다. 확장 ASCII는 한 바이트(8비트)를 다 써서 선 그리기 기호와 악센트 붙은 글자를 더한 것이다[^a1]. 0~31(`00h`~`1Fh`)은 화면에 찍히는 글자가 아니라 제어 문자다. 줄을 바꾸는 `0Ah`(LF)와 줄 맨 앞으로 가는 `0Dh`(CR)가 여기에 있다[^a2].
+- **널 종료 문자열.** 글자들을 차례로 늘어놓고 맨 끝에 값이 0인 바이트(null byte)를 하나 붙인 것이다[^a1]. 길이를 따로 적지 않고 0이 나올 때까지 읽는다. "ABC"는 `41 42 43 00`의 4바이트가 된다[^as1].
+- **수를 담는 네 가지 방법.** 같은 수라도 담는 방법이 다르다[^a3].
+
+| 방법 | 담긴 모습 | 특징 |
+|---|---|---|
+| 순수 2진수 (pure binary) | 수 자체 | 바로 계산할 수 있다 |
+| ASCII 2진 | 숫자 글자열 `"01010101"` | 글자다 |
+| ASCII 10진 | 숫자 글자열 `"65"` | 글자다 |
+| ASCII 16진 | 숫자 글자열 `"9C"` | 글자다 |
+
+수 65를 순수 2진수로 담으면 `41h` 한 바이트다. ASCII 10진으로 담으면 글자 '6'과 '5', 곧 `36h 35h` 두 바이트다. 앞의 것은 덧셈 명령에 바로 넣을 수 있고, 뒤의 것은 화면에 바로 찍을 수 있다. 키보드로 받은 수는 글자열이라 계산하려면 순수 2진수로 바꿔야 하고, 계산 결과를 보여 주려면 다시 글자열로 바꿔야 한다[^as1]. 이 일을 해 주는 프로시저가 [Irvine32 라이브러리](/Hongs_Blog/studies/assembly-language/irvine32-library/)에 있다.
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: "Unicode (0 – 65,535)" (어셈블리어 2주차 2-2, p.5와 p.10) / 문제점: 유니코드의 글자 번호는 `U+10FFFF`(1,114,111)까지 있다. 위 UTF-8 표의 넷째 줄이 그 범위다. / 수정안: 0~65,535는 16비트 한 단위로 적을 수 있는 범위다. / 근거: 이 문서의 UTF-8 표(자료와 정보 3회 슬라이드 p.4).
+
+</div>
+
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: ASCII 표(어셈블리어 2주차 2-2, p.6과 p.8)의 맨 윗줄 10진수가 "1, 16, 32, 46, 64, 80, 96, 112"로 찍혀 있다. / 문제점: 열이 하나 넘어갈 때마다 16씩 늘어야 한다. / 수정안: 0, 16, 32, 48, 64, 80, 96, 112. / 근거: 바로 아랫줄의 16진 글자 0~7에 16을 곱한 값이다. 넷째 열 맨 위의 글자 '0'은 `30h` = 48이다.
+
+</div>
+
+
+16진수로 적힌 바이트를 글자로 읽는 연습은 [16진 계산과 2의 보수 연습](/Hongs_Blog/studies/assembly-language/asm-hex-practice/)의 p6에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -162,6 +197,16 @@ $$R(C) = \frac{\log \vert C\vert }{n \log \vert \Sigma\vert }$$
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 수 65를 (가) 순수 2진수 한 바이트로 (나) ASCII 10진 글자열로 담으면 각각 어떤 바이트가 되는가? 덧셈 명령에 바로 넣을 수 있는 쪽은? 또 문자열 "ABC"를 널 종료 문자열로 담으면 몇 바이트인가?</summary>
+
+**답:** (가) `41h` 한 바이트. (나) `36h 35h` 두 바이트. 바로 계산할 수 있는 쪽은 (가)다. "ABC"는 `41 42 43 00`으로 4바이트다.<br>
+**이유:** (나)는 글자 '6'과 '5'의 번호다. 그대로 더하면 `36h + 35h`처럼 글자 번호끼리 더해져 뜻이 없다. 널 종료 문자열은 끝을 알리는 0 한 바이트가 더 든다.<br>
+**흔한 오답:** `41h`를 보고 "이것은 글자 A다"라고만 답하는 것. 같은 바이트가 수 65이기도 하다. 어느 쪽으로 읽을지는 바이트 밖에서 정한다[^as1].
+
+</details>
+
+
 [^1]: 자료와 정보 3회 강의 자료 「D&I_강의03-부호」, p.2 (부호의 뜻, 1:1 대응, 1010110000000000 → 가 / 44032)
 [^2]: 같은 자료, p.3 (부호화·복호화·코덱, 항공사 부호, 한글 전신 부호, 모스 부호)
 [^3]: 같은 자료, p.4 (문자 부호: ISO 646, ISO 10646, UTF-32·UTF-16·UTF-8, UTF-8 변환 표, 웹 페이지 인코딩 비율 그래프). 슬라이드에는 "USC-4", "USC-2"로 적혀 있고 같은 강의 3-2의 p.16에는 "UCS-2"로 적혀 있다. UCS(Universal Coded Character Set)가 맞는 이름이다.
@@ -170,4 +215,8 @@ $$R(C) = \frac{\log \vert C\vert }{n \log \vert \Sigma\vert }$$
 [^6]: 같은 자료, p.15 (부호 비율과 부호의 차원)
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모스 부호 비유, '가'의 UTF-8 바이트, 세 번 되풀이 부호와 비율 표, 비율 1이면 오류를 못 찾는다는 설명, "가A"의 바이트 수, 카드 C2·C3은 슬라이드에 없다. 검증 코드로 확인했다. UTF-8의 틀은 RFC 3629에 있다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 슬라이드에 없다. p.3의 "부호화 : encoding <-> 복호화 : decoding"을 그렸다.
+[^a1]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.5 (Character Storage: Standard ASCII (0 – 127), Extended ASCII (0 – 255), Unicode (0 – 65,535), Null-terminated String: Array of characters followed by a null byte), p.6~7 (ASCII 표 두 장)
+[^a2]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.9 (ASCII CONTROL CHARACTERS 표: 0A LF Line feed, 0D CR Carriage return)
+[^a3]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.11 (Numeric Data Representation: pure binary, ASCII binary, ASCII decimal, ASCII hexadecimal)
+[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "ABC"의 바이트, 수 65를 두 방법으로 담은 바이트, 글자열과 순수 2진수를 서로 바꿔야 하는 까닭, 표의 "특징" 칸 가운데 "글자다", 카드 C4는 슬라이드에 없다. [01_asm-hex-practice_p1.py](/Hongs_Blog/studies/assembly-language/code/01_asm-hex-practice_p1/)로 확인했다.
 {% endraw %}
