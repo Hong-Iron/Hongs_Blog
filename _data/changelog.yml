@@ -1,6 +1,12 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: Projects와 Pensées 새 단장
+  items:
+    - Projects는 지금 운영 중인 G2B Masters를 화면 사진, 역할, 기술과 함께 맨 위에 크게 두었어요. 나머지 프로젝트는 같은 크기 카드로 놓고, 카드마다 쓴 기술을 한 줄 달았어요.
+    - Pensées는 최신 글 한 편을 맨 위에 크게 보여 줘요. 지난 글은 카드로 놓였고, 사진이 없는 글은 발췌 한 문장을 인용문처럼 얹었어요.
+    - Pensées 오른쪽 위 단추로 카드와 목록을 바꿀 수 있어요. 목록은 연도별로 묶은 한 줄짜리예요. 휴대폰에서는 처음에 목록으로 열려요.
+- date: 2026-10-12
   title: G2B Masters 화면 사진
   items:
     - G2B Masters 프로젝트 글에 실제 검색 화면 사진을 넣었어요.

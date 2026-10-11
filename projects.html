@@ -4,20 +4,48 @@ title: Projects
 permalink: /projects/
 geo: blueprint
 ---
+{%- comment -%} The project that is live (else the newest) leads the page with its
+     screenshot, role and stack; the rest follow as an even grid of cards. {%- endcomment -%}
+{% assign all_projects = site.projects | sort: "date" | reverse %}
+{% assign featured = all_projects | where: "status", "Live" | first %}
+{% unless featured %}{% assign featured = all_projects | first %}{% endunless %}
 <div class="page-intro container reveal" data-geo-band>
   <span class="eyebrow tag" style="--tag-color: var(--accent-rust)">프로젝트 · {{ site.projects.size }}개</span>
   <h1 class="page-intro__title">Projects</h1>
-  <p class="page-intro__desc">직접 만든 것들. 최근 것부터 놓았습니다.</p>
+  <p class="page-intro__desc">직접 만든 것들. 지금 운영 중인 것을 맨 위에, 나머지는 최근 것부터 놓았습니다.</p>
 </div>
 
 <div class="container section">
-  {% assign all_projects = site.projects | sort: "date" | reverse %}
-  {% if all_projects.size > 0 %}
-    <div class="grid grid--projects">
-      {% for project in all_projects %}
-        {% include project-card.html project=project %}
-      {% endfor %}
-    </div>
+  {% if featured %}
+    {% assign shot = featured.shot | default: featured.cover %}
+    <article class="project-feature reveal">
+      <a class="project-feature__media" href="{{ featured.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        {% if shot %}<img src="{{ shot | relative_url }}" alt="">{% endif %}
+      </a>
+      <div class="project-feature__body">
+        <span class="tag" style="--tag-color: var(--accent-rust)">{{ featured.status | default: "Project" }}</span>
+        <h2 class="project-feature__title"><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h2>
+        <p class="project-feature__desc">{{ featured.summary }}</p>
+        <dl class="project-feature__meta">
+          {% if featured.role %}<div><dt>Role</dt><dd>{{ featured.role }}</dd></div>{% endif %}
+          {% if featured.stack %}<div><dt>Stack</dt><dd>{{ featured.stack | join: " · " }}</dd></div>{% endif %}
+        </dl>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="{{ featured.url | relative_url }}">Read more</a>
+          {% if featured.demo %}<a class="btn btn--ghost" href="{{ featured.demo }}">View live</a>{% endif %}
+        </div>
+      </div>
+    </article>
+
+    {% assign rest_count = all_projects.size | minus: 1 %}
+    {% if rest_count > 0 %}
+      <p class="eyebrow project-rest">다른 프로젝트 · {{ rest_count }}개</p>
+      <div class="project-grid">
+        {% for project in all_projects %}
+          {% unless project.url == featured.url %}{% include project-card.html project=project meta=true %}{% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
   {% else %}
     <p class="lede" style="padding: 3rem 0;">아직 올린 프로젝트가 없습니다.</p>
   {% endif %}

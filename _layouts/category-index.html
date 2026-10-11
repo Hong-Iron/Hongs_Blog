@@ -20,9 +20,40 @@ geo_clear: 37rem
   {% endif %}
 
   {% if posts.size > 0 %}
-    <div class="index-list">
-      {% for post in posts %}
-        {%- comment -%} thumbnail: the cover, else the first uploaded image in the post {%- endcomment -%}
+    {%- comment -%} The newest post leads. Below it the earlier posts are cards, or,
+         by the view switch, short rows grouped by year. assets/js/post-index.js
+         runs the switch; without it the cards simply show. There is no topic
+         filter: the tags are too scattered to group by (the user dropped it). A post's thumbnail is its cover, else the first uploaded
+         image in it; a post with no image shows its excerpt as a quote. {%- endcomment -%}
+    {% assign latest = posts | first %}
+    {% assign thumb = latest.cover | strip %}
+    {% if thumb == "" %}
+      {% assign img_parts = latest.content | split: "/assets/img/uploads/" %}
+      {% if img_parts.size > 1 %}
+        {% assign img_file = img_parts[1] | split: '"' | first | split: "'" | first | split: ")" | first | split: " " | first %}
+        {% assign thumb = "/assets/img/uploads/" | append: img_file %}
+      {% endif %}
+    {% endif %}
+    <a class="post-feature reveal{% if thumb != "" %} post-feature--thumb{% endif %}" href="{{ latest.url | relative_url }}">
+      <div class="post-feature__body">
+        <span class="eyebrow">최신 글 · {{ latest.date | date: "%Y.%m.%d" }}</span>
+        <h2 class="post-feature__title">{{ latest.title }}</h2>
+        <p class="post-feature__excerpt">{{ latest.excerpt | strip_html | truncatewords: 48 }}</p>
+        <span class="post-feature__go">읽기 &rarr;</span>
+      </div>
+      {% if thumb != "" %}<span class="post-feature__media"><img src="{{ thumb | relative_url }}" alt=""></span>{% endif %}
+    </a>
+
+    <div class="post-tools" data-post-tools>
+      <p class="post-tools__count">지난 글 · {{ posts.size | minus: 1 }}편</p>
+      <div class="post-tools__view" role="group" aria-label="보기 방식">
+        <button type="button" class="is-on" data-view="cards" aria-pressed="true">카드</button>
+        <button type="button" data-view="list" aria-pressed="false">목록</button>
+      </div>
+    </div>
+
+    <div class="post-cards" data-view-panel="cards">
+      {% for post in posts offset: 1 %}
         {% assign thumb = post.cover | strip %}
         {% if thumb == "" %}
           {% assign img_parts = post.content | split: "/assets/img/uploads/" %}
@@ -31,16 +62,38 @@ geo_clear: 37rem
             {% assign thumb = "/assets/img/uploads/" | append: img_file %}
           {% endif %}
         {% endif %}
-        <a class="index-list__item reveal{% if thumb != "" %} index-list__item--thumb{% endif %}" href="{{ post.url | relative_url }}">
-          <span class="index-list__date">{{ post.date | date: "%Y.%m.%d" }}</span>
-          <div class="index-list__body">
-            <span class="index-list__title">{{ post.title }}</span>
-            <p class="index-list__excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
-          </div>
-          {% if thumb != "" %}<span class="index-list__thumb"><img src="{{ thumb | relative_url }}" alt="" loading="lazy"></span>{% endif %}
+        <a class="post-card" href="{{ post.url | relative_url }}">
+          {% if thumb != "" %}
+            <span class="post-card__media"><img src="{{ thumb | relative_url }}" alt="" loading="lazy"></span>
+          {% else %}
+            <span class="post-card__media post-card__media--quote"><span class="post-card__quote">{{ post.excerpt | strip_html | truncate: 78 }}</span></span>
+          {% endif %}
+          <span class="post-card__date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          <span class="post-card__title">{{ post.title }}</span>
+          {% if thumb != "" %}<span class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 78 }}</span>{% endif %}
         </a>
       {% endfor %}
     </div>
+
+    {% assign rest = posts | slice: 1, 9999 %}
+    {% assign years = rest | group_by_exp: "p", "p.date | date: '%Y'" %}
+    <div class="year-list" data-view-panel="list" hidden>
+      {% for year in years %}
+        <section class="year-list__group">
+          <h2 class="year-list__year">{{ year.name }}<span>{{ year.items.size }}편</span></h2>
+          <ol class="year-list__items">
+            {% for post in year.items %}
+              <li><a class="year-list__item" href="{{ post.url | relative_url }}">
+                <span class="year-list__title">{{ post.title }}</span>
+                <span class="year-list__excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</span>
+                <time class="year-list__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%m.%d" }}</time>
+              </a></li>
+            {% endfor %}
+          </ol>
+        </section>
+      {% endfor %}
+    </div>
+    <script src="{{ '/assets/js/post-index.js' | relative_url }}" defer></script>
   {% elsif trimmed_content.size == 0 %}
     <p class="lede" style="padding: 3rem 0;">아직 올린 글이 없습니다.</p>
   {% endif %}

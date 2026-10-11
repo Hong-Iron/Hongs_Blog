@@ -15,6 +15,7 @@ demo: https://electerior.co.kr
 summary: A public procurement platform that brings bids from 나라장터 (KONEPS) and 국방전자조달 (D2B) into one search, and uses AI to summarize the notices behind them.
 cover: /assets/img/uploads/g2b-masters-cover.png
 image: /assets/img/uploads/g2b-masters-cover.png
+shot: /assets/img/uploads/g2b-masters-search.webp
 cover_alt: "Diagram: tenders from 나라장터 and 국방전자조달 flow into one database, are summarized by several AI models that are checked against each other, and come out as one search."
 tags:
   - procurement
