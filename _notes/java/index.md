@@ -1,15 +1,15 @@
 ---
 layout: "course"
-title: "자바"
+title: "자바 프로그래밍"
 display_title: "소프트웨어 프로젝트 로드맵"
-course: "자바"
+course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 concepts: 39
 practices: 0
 codes: 37
-description: "자바 공부 노트: 개념 문서, 연습 문제, 코드"
+description: "자바 프로그래밍 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
 permalink: "/studies/java/"

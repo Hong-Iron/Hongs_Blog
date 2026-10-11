@@ -5,7 +5,7 @@ display_title: "참조 타입과 메모리 영역 (Reference Types and Runtime D
 kind: "concept"
 kind_label: "모델"
 num: "07"
-course: "자바"
+course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"

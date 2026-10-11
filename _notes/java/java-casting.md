@@ -5,7 +5,7 @@ display_title: "참조 타입 변환과 instanceof (Promotion, Casting, instance
 kind: "concept"
 kind_label: "정의"
 num: "28"
-course: "자바"
+course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"

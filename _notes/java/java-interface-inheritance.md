@@ -5,7 +5,7 @@ display_title: "다중 구현과 인터페이스 상속 (Multiple Implementation
 kind: "concept"
 kind_label: "정의"
 num: "27"
-course: "자바"
+course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"

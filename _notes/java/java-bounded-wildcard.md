@@ -5,7 +5,7 @@ display_title: "제한된 타입 파라미터와 와일드카드 (Bounded Type P
 kind: "concept"
 kind_label: "정의"
 num: "39"
-course: "자바"
+course: "자바 프로그래밍"
 course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
