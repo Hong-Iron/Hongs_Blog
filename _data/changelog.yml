@@ -1,6 +1,10 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: G2B Masters 화면 사진
+  items:
+    - G2B Masters 프로젝트 글에 실제 검색 화면 사진을 넣었어요.
+- date: 2026-10-12
   title: Studies를 카드 격자로
   items:
     - Studies의 과목을 한 줄에 하나씩 크게 보여 주던 것을 카드 격자로 바꿨어요. PC에서는 네 장, 작은 창에서는 세 장, 휴대폰에서는 두 장씩 놓여요. 페이지 길이가 3분의 1로 줄었어요.

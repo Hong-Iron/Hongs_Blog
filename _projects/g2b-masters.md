@@ -26,6 +26,11 @@ Companies that sell goods, services, and construction to public agencies have to
 
 G2B Masters puts both systems in one search, and AI pulls the key points out of each document. It is running at [electerior.co.kr](https://electerior.co.kr).
 
+<figure>
+  <img src="{{ '/assets/img/uploads/g2b-masters-search.webp' | relative_url }}" alt="The G2B Masters search screen: tabs for keyword, item, and agency search, three keyword rows (all of, any of, exclude), a date range, and a result list of 38,073 notices filtered by stage, type, and status." loading="lazy">
+  <figcaption>The search screen in production. One month of notices, 38,073 of them, filtered by stage, type, status, region, deadline, and price.</figcaption>
+</figure>
+
 ## My role
 
 Everything except the frontend and deployment: the server and data pipeline, the logic that collects and analyzes bids, and the AI summary feature, including how its output is compared and validated across models.
