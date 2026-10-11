@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Matrix Multiplication", "행렬 곱셈", "행렬곱", "Transpose", "전치", "전치행렬", "대칭행렬", "symmetric matrix", "합성", "composition", "교환법칙", "결합법칙"]
 description: "두 행렬의 곱은 \"먼저 오른쪽 행렬로 바꾸고, 이어서 왼쪽 행렬로 바꾸는\" 두 변환을 하나로 합친 행렬이다. 그래서 여러 단계의 좌표 변환이나 신경망의 층들을 행렬 하나로 미리 합칠 수 있다. 합성이라 순서가 중요해서, 곱하는 순서를 바꾸면 보통 결과가 달라진다. 곱하는 순서를 괄…"
@@ -124,6 +124,10 @@ $$\big((AB)^\top\big)_{ij} = (AB)_{ji} = \sum_k a_{jk}b_{ki} = \sum_k (B^\top)_{
 - 같은 구조: [함수의 합성](/Hongs_Blog/studies/college-math/function-transformation/)(교환되지 않는 합성)
 - 이어지는 개념: [역행렬](/Hongs_Blog/studies/linear-algebra/inverse-matrix/), [LU 분해](/Hongs_Blog/studies/linear-algebra/lu-decomposition/)
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 0이 아닌 칸만 (행, 열, 값) 묶음으로 적은 목록에서 전치를 만든다. 정의 $$(A^\top)_{ij} = a_{ji}$$대로 묶음마다 행 번호와 열 번호를 맞바꾸면 값은 맞다. 하지만 목록은 "윗줄부터, 줄 안에서는 왼쪽부터" 서 있어야 하는데 그 순서가 깨진다. 그래서 이 목록의 전치는 번호를 바꾸는 일에 줄을 다시 세우는 일이 더해진 것이다[^d1]. 강의의 방법은 정렬하지 않고 세 단계로 한다. 원래 행렬의 열마다 0이 아닌 칸을 세고, 그 수를 앞에서부터 더해 새 행마다 목록의 몇 번 칸에서 시작하는지 정하고, 원래 목록을 앞에서부터 읽어 제자리에 꽂는다. $$m \times n$$ 행렬에 0이 아닌 칸이 $$t$$개면 $$O(n + t)$$ 시간이다[^d2]. 2차원 배열에서 칸마다 옮기면 $$mn$$칸을 모두 건드린다. 두 번 전치하면 원래 목록으로 돌아오는 것($$(A^\top)^\top = A$$)도 이 방법으로 확인된다[^ds1]. 자세한 것은 [희소 행렬의 전치](/Hongs_Blog/studies/data-structures/sparse-matrix-transpose/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -153,4 +157,7 @@ $$\big((AB)^\top\big)_{ij} = (AB)_{ji} = \sum_k a_{jk}b_{ki} = \sum_k (B^\top)_{
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.4절 "Rules for Matrix Operations"(곱의 네 가지 보는 법, 결합법칙, 교환 불가), 2.7절 "Transposes and Permutations"($$(AB)^\top = B^\top A^\top$$, 대칭행렬, $$A^\top A$$).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [06_matrix-multiplication_plot.py](/Hongs_Blog/studies/linear-algebra/code/06_matrix-multiplication_plot/)로 그렸고, $$SR$$, $$RS$$와 점 $$(1, 0)$$의 도착점을 같은 코드로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 성분 공식 $$(AB)_{ij} = (A\text{의 } i\text{행}) \cdot (B\text{의 } j\text{열})$$과 크기 조건을 ASCII로 그렸다(Strang 5판 2.4절).
+[^d1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.16~17 (4 × 5 행렬과 전치, 원래 목록과 전치한 목록)
+[^d2]: 같은 자료, p.18~19 (Step 1 열별 개수, Step 2 시작 위치, Step 3 옮기기. Overall $$O(n + t)$$)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "번호만 바꾸면 순서가 깨진다"는 설명과 $$mn$$칸과의 견줌, 두 번 전치하면 원래 목록이라는 확인은 슬라이드에 없다. [12_sparse-matrix-transpose_impl.c](/Hongs_Blog/studies/data-structures/code/12_sparse-matrix-transpose_impl/)에서 무작위 행렬 1,000개로 확인했다.
 {% endraw %}

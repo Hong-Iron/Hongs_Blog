@@ -36,7 +36,7 @@ permalink: "/studies/operating-systems/"
 | 01 | [컴퓨터의 기본 구성 요소](/Hongs_Blog/studies/operating-systems/computer-basic-elements/) | 프로세서, 주기억장치, 입출력 모듈, 버스의 네 부분 | — | — |
 | 02 | [프로세서 레지스터](/Hongs_Blog/studies/operating-systems/processor-registers/) | 프로세서 안의 빠른 칸. PC, IR, PSW, 조건 코드 | — | — |
 | 03 | [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/) | 명령어를 가져오고(인출) 실행하기를 되풀이 | [impl](/Hongs_Blog/studies/operating-systems/code/03_instruction-cycle_impl/) | — |
-| 04 | [인터럽트](/Hongs_Blog/studies/operating-systems/interrupt/) | 장치가 끝났다고 알려 프로세서를 끊는 장치. 상태를 저장하고 되살린다 (강조)[^강조] | [verify](/Hongs_Blog/studies/operating-systems/code/04_interrupt_verify/) | — |
+| 04 | [인터럽트](/Hongs_Blog/studies/operating-systems/interrupt/) | 장치가 끝났다고 알려 프로세서를 끊는 장치. 상태를 저장하고 되살린다 (강조)[^n1] | [verify](/Hongs_Blog/studies/operating-systems/code/04_interrupt_verify/) | — |
 | 05 | [메모리 계층](/Hongs_Blog/studies/operating-systems/memory-hierarchy/) | 작고 빠른 메모리부터 크고 느린 메모리까지 층층이 | — | — |
 | 06 | [캐시 메모리](/Hongs_Blog/studies/operating-systems/cache-memory/) | 지역성을 이용해 자주 쓰는 블록을 복사해 두는 작은 메모리 | [verify](/Hongs_Blog/studies/operating-systems/code/06_cache-memory_verify/) | — |
 | 07 | [입출력 기법](/Hongs_Blog/studies/operating-systems/io-techniques/) | 프로그램 입출력, 인터럽트 구동, DMA | — | — |
@@ -61,7 +61,7 @@ permalink: "/studies/operating-systems/"
 | 08 | [운영체제의 역할](/Hongs_Blog/studies/operating-systems/os-role/) | 응용의 실행을 지휘하고 하드웨어를 대신 관리하는 프로그램 | — | — |
 | 09 | [운영체제의 발전](/Hongs_Blog/studies/operating-systems/os-evolution/) | 직렬 처리 → 단순 배치 → 다중 프로그래밍 배치 → 시분할 | — | — |
 | 10 | [사용자 모드와 커널 모드](/Hongs_Blog/studies/operating-systems/user-kernel-mode/) | 사용자 프로그램은 제한된 모드, 운영체제는 모든 권한 | — | — |
-| 11 | [다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/) | 입출력을 기다리는 동안 다른 프로그램을 실행 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/11_multiprogramming_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_verify/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/multiprogramming-ladder/) |
+| 11 | [다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/) | 입출력을 기다리는 동안 다른 프로그램을 실행 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/operating-systems/11_multiprogramming_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_verify/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/multiprogramming-ladder/) |
 | 12 | [시분할](/Hongs_Blog/studies/operating-systems/time-sharing/) | 프로세서 시간을 잘게 나눠 여러 사용자에게 번갈아 | — | — |
 | 13 | [프로세스](/Hongs_Blog/studies/operating-systems/process/) | 실행 중인 프로그램. 프로그램, 데이터, 실행 문맥 | — | — |
 
@@ -106,7 +106,7 @@ permalink: "/studies/operating-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 17 | [스레드](/Hongs_Blog/studies/operating-systems/thread/) | 프로세스의 자원을 함께 쓰는 실행 흐름 (강조)[^강조] | [verify](/Hongs_Blog/studies/operating-systems/code/17_thread_verify/) | — |
+| 17 | [스레드](/Hongs_Blog/studies/operating-systems/thread/) | 프로세스의 자원을 함께 쓰는 실행 흐름 (강조)[^n1] | [verify](/Hongs_Blog/studies/operating-systems/code/17_thread_verify/) | — |
 | 18 | [사용자 수준 스레드와 커널 수준 스레드](/Hongs_Blog/studies/operating-systems/ult-klt/) | 스레드를 라이브러리가 관리하나, 커널이 관리하나 | — | — |
 | 19 | [대칭형 다중 처리](/Hongs_Blog/studies/operating-systems/smp/) | 같은 기능의 프로세서 여럿이 메모리를 함께 쓰는 구조 | — | — |
 | 20 | [마이크로커널](/Hongs_Blog/studies/operating-systems/microkernel/) | 핵심만 커널에, 나머지 서비스는 사용자 모드 서버로 | — | — |
@@ -208,10 +208,10 @@ permalink: "/studies/operating-systems/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 38 | [가상 메모리](/Hongs_Blog/studies/operating-systems/virtual-memory/) | 프로세스의 일부만 메모리에 두고 실행. 지역성, 스래싱, 페이지 크기 (강조)[^강조] | [verify](/Hongs_Blog/studies/operating-systems/code/38_virtual-memory_verify/) | — |
+| 38 | [가상 메모리](/Hongs_Blog/studies/operating-systems/virtual-memory/) | 프로세스의 일부만 메모리에 두고 실행. 지역성, 스래싱, 페이지 크기 (강조)[^n1] | [verify](/Hongs_Blog/studies/operating-systems/code/38_virtual-memory_verify/) | — |
 | 39 | [페이지 표 구조](/Hongs_Blog/studies/operating-systems/page-table-structure/) | P·M 비트, 다단계 페이지 표, 역 페이지 표 | [verify](/Hongs_Blog/studies/operating-systems/code/39_page-table_verify/) | — |
 | 40 | [TLB](/Hongs_Blog/studies/operating-systems/tlb/) | 최근 페이지 표 항목을 담은 하드웨어 캐시 | [fig1](/Hongs_Blog/assets/notes/operating-systems/40_tlb_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/40_tlb_verify/) | — |
-| 41 | [페이지 교체 알고리즘](/Hongs_Blog/studies/operating-systems/page-replacement/) | OPT, LRU, FIFO, CLOCK. 무엇을 내보낼까 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/41_page-replacement_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/page-replacement-ladder/) |
+| 41 | [페이지 교체 알고리즘](/Hongs_Blog/studies/operating-systems/page-replacement/) | OPT, LRU, FIFO, CLOCK. 무엇을 내보낼까 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/operating-systems/41_page-replacement_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/41_page-replacement_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/page-replacement-ladder/) |
 | 42 | [상주 집합 관리와 적재 제어](/Hongs_Blog/studies/operating-systems/resident-set-load-control/) | 반입·배치·상주 집합·정리 정책과 다중 프로그래밍 수준 | — | — |
 
 자료: Chapter08-new.pdf · Chapter08-new.pptx
@@ -232,7 +232,7 @@ permalink: "/studies/operating-systems/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 43 | [스케줄링의 종류와 기준](/Hongs_Blog/studies/operating-systems/scheduling-types-criteria/) | 장기·중기·단기 스케줄링과 평가 기준, 우선순위 | — | — |
-| 44 | [스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/) | FCFS, RR, SPN, SRT, HRRN, 피드백 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/44_scheduling-algorithms_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/44_scheduling-algorithms_plot/) · [impl](/Hongs_Blog/studies/operating-systems/code/44_scheduling_impl/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/scheduling-ladder/) |
+| 44 | [스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/) | FCFS, RR, SPN, SRT, HRRN, 피드백 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/operating-systems/44_scheduling-algorithms_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/44_scheduling-algorithms_plot/) · [impl](/Hongs_Blog/studies/operating-systems/code/44_scheduling_impl/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/scheduling-ladder/) |
 | 45 | [실행 시간 예측](/Hongs_Blog/studies/operating-systems/burst-prediction/) | 지난 실행 시간으로 다음 버스트를 지수 평균으로 짐작 | [fig1](/Hongs_Blog/assets/notes/operating-systems/45_burst-prediction_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_verify/) | — |
 | 46 | [공정 분배와 UNIX 스케줄링](/Hongs_Blog/studies/operating-systems/fair-share-unix-scheduling/) | 사용량을 반씩 잊는 UNIX 우선순위와 그룹 단위 공정 분배 | [fig1](/Hongs_Blog/assets/notes/operating-systems/46_fair-share-unix-scheduling_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/46_fair-share-unix-scheduling_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/46_unix-fair-share_verify/) | — |
 
@@ -255,7 +255,7 @@ permalink: "/studies/operating-systems/"
 |---|---|---|---|---|
 | 47 | [다중 프로세서 스케줄링](/Hongs_Blog/studies/operating-systems/multiprocessor-scheduling/) | 어느 프로세서에서 돌릴까. 부하 공유, 갱 스케줄링, 전용 배정 | — | — |
 | 48 | [실시간 시스템](/Hongs_Blog/studies/operating-systems/real-time-systems/) | 늦으면 틀린 시스템. 경성·연성, 결정성과 응답성 | — | — |
-| 49 | [실시간 스케줄링](/Hongs_Blog/studies/operating-systems/real-time-scheduling/) | 마감이 가장 이른 것 먼저(EDF)와 비율 단조(RMS) (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/49_real-time-scheduling_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/real-time-scheduling-ladder/) |
+| 49 | [실시간 스케줄링](/Hongs_Blog/studies/operating-systems/real-time-scheduling/) | 마감이 가장 이른 것 먼저(EDF)와 비율 단조(RMS) (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/operating-systems/49_real-time-scheduling_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/real-time-scheduling-ladder/) |
 | 50 | [우선순위 역전](/Hongs_Blog/studies/operating-systems/priority-inversion/) | 높은 작업이 낮은 작업을 기다리는 함정과 우선순위 상속 | — | — |
 
 자료: Chapter10-new.pdf · Chapter10-new.pptx
@@ -277,7 +277,7 @@ permalink: "/studies/operating-systems/"
 |---|---|---|---|---|
 | 51 | [입출력 장치와 입출력 설계](/Hongs_Blog/studies/operating-systems/io-devices-design/) | 장치 종류와 차이, 입출력 기능의 발전, 층 구조 | — | — |
 | 52 | [입출력 버퍼링](/Hongs_Blog/studies/operating-systems/io-buffering/) | 단일·이중·순환 버퍼로 장치와 프로세스의 속도 차이를 흡수 | [fig1](/Hongs_Blog/assets/notes/operating-systems/52_io-buffering_fig1.svg) · [plot](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_plot/) · [verify](/Hongs_Blog/studies/operating-systems/code/52_io-buffering_verify/) | — |
-| 53 | [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) | FIFO, SSTF, SCAN, C-SCAN. 팔 이동을 줄이는 순서 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/operating-systems/53_disk-scheduling_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/disk-scheduling-ladder/) |
+| 53 | [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) | FIFO, SSTF, SCAN, C-SCAN. 팔 이동을 줄이는 순서 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/operating-systems/53_disk-scheduling_fig1.svg) · [impl](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_impl/) · [plot](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_plot/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/disk-scheduling-ladder/) |
 | 54 | [RAID](/Hongs_Blog/studies/operating-systems/raid/) | 디스크 여러 개를 하나처럼. 스트라이핑, 미러링, 패리티 | [verify](/Hongs_Blog/studies/operating-systems/code/54_raid_verify/) | — |
 | 55 | [디스크 캐시](/Hongs_Blog/studies/operating-systems/disk-cache/) | 디스크 섹터를 메모리에. LRU, LFU, 빈도 기반 교체 | — | — |
 
@@ -302,7 +302,7 @@ permalink: "/studies/operating-systems/"
 | 57 | [파일 조직](/Hongs_Blog/studies/operating-systems/file-organization/) | 더미, 순차, 색인 순차, 색인, 직접 파일 | — | — |
 | 58 | [디렉터리와 파일 공유](/Hongs_Blog/studies/operating-systems/directories-file-sharing/) | 이름으로 파일을 찾는 표. 트리 구조와 공유 권한 | — | — |
 | 59 | [레코드 블로킹](/Hongs_Blog/studies/operating-systems/record-blocking/) | 레코드를 블록에 담는 세 방법. 고정, 걸침, 안 걸침 | [verify](/Hongs_Blog/studies/operating-systems/code/59_record-blocking_verify/) | — |
-| 60 | [파일 할당](/Hongs_Blog/studies/operating-systems/file-allocation/) | 디스크 블록을 파일에. 연속, 연결, 색인 할당 (강조)[^강조] | [impl](/Hongs_Blog/studies/operating-systems/code/60_file-allocation_impl/) | — |
+| 60 | [파일 할당](/Hongs_Blog/studies/operating-systems/file-allocation/) | 디스크 블록을 파일에. 연속, 연결, 색인 할당 (강조)[^n1] | [impl](/Hongs_Blog/studies/operating-systems/code/60_file-allocation_impl/) | — |
 | 61 | [UNIX 아이노드](/Hongs_Blog/studies/operating-systems/unix-inode/) | 직접·간접 포인터로 작은 파일도 큰 파일도 | [verify](/Hongs_Blog/studies/operating-systems/code/61_inode_verify/) | [예제 사다리](/Hongs_Blog/studies/operating-systems/file-allocation-inode-ladder/) |
 | 62 | [접근 제어](/Hongs_Blog/studies/operating-systems/access-control/) | 누가 무엇에 어떤 일을. 접근 행렬, ACL, 권한 목록 | — | — |
 
@@ -539,5 +539,5 @@ graph TD
   C38 --> C68
 ```
 
-[^강조]: 원본에서 여러 장에 반복해 나오거나 그림·예제가 여러 장인 개념. 인터럽트: 1장 슬라이드 24~38. 다중 프로그래밍: 1장 슬라이드 38, 2장 슬라이드 20~25, 53. 스레드: 2장 슬라이드 50, 4장 슬라이드 3~29. 가상 메모리: 2장 슬라이드 38~41, 8장 슬라이드 3~45. 페이지 교체: 8장 슬라이드 52~71. 스케줄링 알고리즘: 9장 슬라이드 23~51. 실시간 스케줄링: 10장 슬라이드 45~58. 디스크 스케줄링: 11장 슬라이드 42~55. 파일 할당: 12장 슬라이드 59~79.
+[^n1]: 원본에서 여러 장에 반복해 나오거나 그림·예제가 여러 장인 개념. 인터럽트: 1장 슬라이드 24~38. 다중 프로그래밍: 1장 슬라이드 38, 2장 슬라이드 20~25, 53. 스레드: 2장 슬라이드 50, 4장 슬라이드 3~29. 가상 메모리: 2장 슬라이드 38~41, 8장 슬라이드 3~45. 페이지 교체: 8장 슬라이드 52~71. 스케줄링 알고리즘: 9장 슬라이드 23~51. 실시간 스케줄링: 10장 슬라이드 45~58. 디스크 스케줄링: 11장 슬라이드 42~55. 파일 할당: 12장 슬라이드 59~79.
 {% endraw %}

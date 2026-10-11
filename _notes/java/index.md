@@ -106,7 +106,7 @@ permalink: "/studies/java/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 11 | [클래스와 객체](/Hongs_Blog/studies/java/class-and-object/) | 클래스는 틀, 객체는 그 틀로 찍어 낸 실물 | [impl](/Hongs_Blog/studies/java/code/11_class-and-object_impl/) | — |
-| 12 | [객체 지향의 세 원칙](/Hongs_Blog/studies/java/oop-principles/) | 감추기(캡슐화)·물려받기(상속)·같은 이름 다른 동작(다형성) (강조)[^강조] | [impl](/Hongs_Blog/studies/java/code/12_oop-principles_impl/) | — |
+| 12 | [객체 지향의 세 원칙](/Hongs_Blog/studies/java/oop-principles/) | 감추기(캡슐화)·물려받기(상속)·같은 이름 다른 동작(다형성) (강조)[^n1] | [impl](/Hongs_Blog/studies/java/code/12_oop-principles_impl/) | — |
 | 13 | [절차 지향과 객체 지향 비교](/Hongs_Blog/studies/java/procedural-vs-oop/) | 자료와 그 자료를 다루는 코드를 한 객체에 묶느냐로 갈린다 | [impl](/Hongs_Blog/studies/java/code/13_procedural-vs-oop_impl/) | — |
 
 자료: Software Project 05. Object-Oriented Programming
@@ -456,5 +456,5 @@ graph TD
   C28 --> C39
 ```
 
-[^강조]: 원본에서 강조된 개념. 객체 지향의 세 원칙: 5회 슬라이드 p.19~32(14쪽).
+[^n1]: 원본에서 강조된 개념. 객체 지향의 세 원칙: 5회 슬라이드 p.19~32(14쪽).
 {% endraw %}

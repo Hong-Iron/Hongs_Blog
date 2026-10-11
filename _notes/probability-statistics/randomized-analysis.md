@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Probabilistic Analysis of Algorithms", "확률적 분석", "무작위 알고리즘", "randomized algorithm", "해시 충돌", "hash collision", "체이닝", "chaining", "적재율", "load factor", "무작위 퀵정렬", "randomized quicksort", "공과 통", "balls into bins", "두 선택의 힘", "power of two choices", "블룸 필터", "Bloom filter"]
 description: "해시 테이블, 무작위 퀵정렬, 부하 분산처럼 무작위성을 쓰는 알고리즘의 성능을 확률로 따지는 기법 묶음이다. 도구는 셋이다. 세고 싶은 것을 \"있다/없다\" 조각으로 쪼개 기댓값을 더하기, 생일 문제식 충돌 계산, 나쁜 일의 확률을 부등식으로 위에서 막기. 이렇게 하면 입력이 아무리…"
@@ -86,6 +86,15 @@ permalink: "/studies/probability-statistics/randomized-analysis/"
 - 선수: [기댓값과 선형성](/Hongs_Blog/studies/probability-statistics/expectation/), [확률 부등식](/Hongs_Blog/studies/probability-statistics/tail-bounds/), [비둘기집 원리](/Hongs_Blog/studies/discrete-math/pigeonhole/)(칸보다 키가 많으면 충돌은 확실하다. 확률은 그 전 단계를 다룬다)
 - 같은 계산: [생일 문제](/Hongs_Blog/studies/probability-statistics/probability-axioms/), [기댓값 선형성 예제 사다리](/Hongs_Blog/studies/probability-statistics/expectation-ladder/)(빈 칸 수)
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 위의 체이닝 결과에 더해, 강의는 넘친 키를 표 안의 다음 빈칸에 넣는 선형 탐사의 기댓값을 식으로 준다[^d1]. 적재율 $$\alpha$$는 키 수를 칸 수로 나눈 값이고 선형 탐사에서는 $$0 \le \alpha \le 1$$이다. 표에 있는 키를 찾을 때 보는 칸 수의 기댓값을 $$S_n$$, 없는 키를 찾을 때를 $$U_n$$이라 하면 $$n$$이 클 때
+
+$$S_n \approx \frac12\left(1 + \frac{1}{1 - \alpha}\right), \qquad U_n \approx \frac12\left(1 + \frac{1}{(1 - \alpha)^2}\right)$$
+
+
+이다 [증명 생략: 슬라이드는 식만 싣는다]. $$\alpha$$ = 0.5, 0.75, 0.9에서 $$(S_n, U_n)$$은 (1.5, 2.5), (2.5, 8.5), (5.5, 50.5)다[^d1]. 살피는 칸이 고르게 무작위라고 볼 때의 한계 $$\frac{1}{1 - \alpha}$$([딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/)의 값, 0.9에서 10칸)보다 $$U_n$$이 훨씬 큰 것은, 선형 탐사에서는 찬 칸들이 이어 붙어 뭉치를 이루기 때문이다[^ds1]. 체이닝은 같은 강의에서 $$S_n \approx 1 + \frac\alpha2$$, $$U_n \approx \alpha$$로 적고, 아래 C1의 답 3이 이 $$U_n$$이다[^d1]. 식을 쓰는 법은 [선형 탐사](/Hongs_Blog/studies/data-structures/linear-probing/)와 [적재율로 해시 테이블 크기 정하기](/Hongs_Blog/studies/data-structures/load-factor-design/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -116,4 +125,6 @@ permalink: "/studies/probability-statistics/randomized-analysis/"
 [^2]: Mitzenmacher, Upfal, *Probability and Computing*, 5장(공과 통의 최대 부하, 블룸 필터).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 선택 중 덜 찬 곳에 넣으면 최대 부하가 $$\frac{\ln\ln n}{\ln 2} + O(1)$$로 준다는 결과는 Azar, Broder, Karlin, Upfal, "Balanced Allocations", *SIAM Journal on Computing* 29(1), 1999에 있다. 부하 7과 3, 블룸 필터 0.8%, 퀵정렬 수치는 26_randomized-analysis_verify.py로 확인했다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [26_randomized-analysis_plot.py](/Hongs_Blog/studies/probability-statistics/code/26_randomized-analysis_plot/)로 그렸고, 그림에 쓴 값(칸당 평균 4, 충돌 쌍의 평균이 $$\binom{2000}{2}\frac{1}{500}$$과 2% 안, 빈 칸 비율 $$e^{-4} \approx 0.018$$, 포아송과의 차이 0.01 미만)을 같은 코드로 확인했다.
+[^d1]: 자료구조 15회 강의 자료 「DS_Week15_Lecture_2024」, p.26~27 (선형 탐사의 $$\alpha$$, $$S_n$$, $$U_n$$과 표), p.32 (체이닝의 $$S_n \sim 1 + \alpha/2$$, $$U_n \sim \alpha$$)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 값을 견준 설명은 슬라이드에 없다. 고르게 무작위일 때의 한계 $$\frac{1}{1 - \alpha}$$는 Cormen 외, *Introduction to Algorithms* 3판 정리 11.6이다. 칸 20,011개짜리 선형 탐사 표의 모의실험에서 $$\alpha = 0.9$$일 때 없는 키는 평균 47.8칸으로 식의 50.5와 가까웠다([49_linear-probing_verify.py](/Hongs_Blog/studies/data-structures/code/49_linear-probing_verify/)). 실험으로 확인한 값이고 증명이 아니다.
 {% endraw %}

@@ -112,6 +112,44 @@ def preorder(n, out):              # 뿌리 → 왼쪽 → 오른쪽
 
 타입이 맞는지 검사할 때도 같은 순서를 쓴다. 잎(변수와 상수)의 타입을 먼저 정하고, 자식의 타입으로 부모의 타입을 정한다[^c2]. 순서는 [타입 검사 절차](/Hongs_Blog/studies/compilers/type-checking-procedure/)에 있다. 위 '쓰는 곳'의 폴더 크기 계산과 같은 까닭이다. 아래를 다 알아야 자신을 계산할 수 있는 일은 후위로 돈다[^cs1].
 
+**자료구조 (1-2학기).** 같은 세 순회를 C의 포인터로 쓴다. 나무의 칸 하나(노드)는 값과 두 자식의 주소를 담은 구조체이고 `treePointer`는 그 주소의 형이다([이진 트리의 배열 표현과 연결 표현](/Hongs_Blog/studies/data-structures/binary-tree-representation/)). 빈 나무는 `NULL`이다[^d1].
+
+```c
+void inOrder(treePointer ptr)
+{
+    if (ptr != NULL) {
+        inOrder(ptr->leftChild);
+        visit(ptr);                  /* 전위는 이 줄을 맨 앞에, 후위는 맨 뒤에 둔다 */
+        inOrder(ptr->rightChild);
+    }
+}
+```
+
+위 파이썬 코드의 `if n:`이 `if (ptr != NULL)`이고 `out.append`가 `visit`다. `visit`는 그 노드에서 할 일(출력, 복사, 계산)을 맡은 함수다.
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 전위 순회와 후위 순회 코드의 `visit(t);`[^d2]<br>
+문제점: `t`라는 변수는 어디에도 없다. 매개변수의 이름은 `ptr`이다. 컴파일하면 "use of undeclared identifier 't'" 오류가 난다. 같은 자료의 중위 순회 코드는 `visit(ptr);`로 바르게 적혀 있다.<br>
+수정안: `visit(ptr);`<br>
+근거: 슬라이드대로 쓴 전위 순회 코드를 컴파일해 오류를 확인했다.
+
+</div>
+
+
+- **아래로 눌러 중위 읽기.** 나무 그림에서 모든 노드를 좌우 자리는 그대로 둔 채 바닥으로 떨어뜨리면, 바닥에 왼쪽부터 놓인 차례가 중위 순회 결과다[^d3]. 왼쪽 아래 나무의 노드를 모두 뿌리보다 왼쪽에, 오른쪽 아래 나무의 노드를 모두 오른쪽에 그렸을 때 맞는 방법이다[^ds1].
+- **순회가 하나 더 있다.** 위층부터 한 층씩 도는 순서다: [레벨 순서 순회](/Hongs_Blog/studies/data-structures/level-order-traversal/). 식을 나무로 그렸을 때 세 순회가 식을 적는 세 가지 방법이 되는 것은 [수식 트리와 전위·중위·후위 표기](/Hongs_Blog/studies/data-structures/expression-tree/)에, 순회 결과에서 나무를 되살리는 것(확인 문제 C3의 뒷이야기)은 [순회 결과로 이진 트리 되살리기](/Hongs_Blog/studies/data-structures/tree-from-traversals/)에 있다.
+- **이진 탐색 트리의 정의가 조금 다르다.**
+
+| | 이 문서 | 자료구조 강의 |
+|---|---|---|
+| 같은 키 | 오른쪽에 둔다(오른쪽 아래 나무는 "이상") | 두지 않는다. 왼쪽 아래는 모두 더 작고 오른쪽 아래는 모두 더 크다. 노드는 (키, 값) 쌍을 담는다[^d4] |
+| 높이 | 간선 수. 1 ~ 5를 차례로 넣은 한 줄짜리는 높이 4 | 층 수. 같은 나무가 높이 5 |
+| 찾기·넣기의 비용 | $$O(h)$$ | $$O(\text{height})$$. 가장 나쁠 때 $$O(n)$$, 기댓값은 $$O(\log n)$$[^d5] |
+
+이 과목은 찾기와 넣기를 C 포인터로 쓰고, 이 문서에 없는 지우기와 순위로 찾기를 더 다룬다: [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/), [이진 탐색 트리의 삭제](/Hongs_Blog/studies/data-structures/bst-delete/), [색인 이진 탐색 트리](/Hongs_Blog/studies/data-structures/indexed-bst/). 힙과 헷갈릴 때는 [최대 힙과 이진 탐색 트리 비교](/Hongs_Blog/studies/data-structures/heap-vs-bst/)를 본다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -147,9 +185,24 @@ def preorder(n, out):              # 뿌리 → 왼쪽 → 오른쪽
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 빈 이진 탐색 트리에 5, 3, 5를 차례로 넣으려 한다. 둘째 5는 이 문서의 규칙으로는 어디에 놓이는가? 자료구조 강의의 정의로는 왜 그런 나무가 있을 수 없는가?</summary>
+
+**답:** 이 문서의 규칙은 "작으면 왼쪽, 크거나 같으면 오른쪽"이라 둘째 5는 뿌리 5의 오른쪽 자식이 된다. 강의의 정의는 "왼쪽 아래의 키는 모두 더 작고 오른쪽 아래의 키는 모두 더 크다"라서, 5가 5의 오른쪽 아래에 있으면 "더 크다"를 어긴다. 그 정의에서는 한 나무의 키가 모두 다르다.<br>
+**이유:** 키가 모두 다르면 두 정의는 같은 나무를 만든다. 같은 키가 들어올 때만 갈린다. 코드를 가져다 쓸 때는 같은 키를 어느 쪽으로 보내는지, 아예 받지 않는지를 확인한다[^ds1].
+
+</details>
+
+
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 14.4 "Binary trees"(전위·중위·후위의 정의, 전위와 중위로 나무가 정해지지만 전위와 후위만으로는 정해지지 않는 예 [1, 2]), Cormen 외, *Introduction to Algorithms* 3판, 12장(이진 탐색 트리 성질, 중위 순회가 정렬된 순서를 냄, 찾기·넣기 O(h)).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `std::map`은 C++ 표준이 구현 방식을 정하지 않지만 주요 표준 라이브러리(libstdc++, libc++, MSVC)는 레드-블랙 트리를 쓴다. B-트리는 Bayer & McCreight(1972)가 제안한 다진(多進) 균형 탐색 트리다(Cormen 외, *Introduction to Algorithms* 18장).
 [^c1]: 컴파일러 11회 강의 자료 「Lecture11 Intermediate code generation」, p.10~12, p.22~31 (A + A * B − 1의 나무를 돌며 3주소 코드 세 줄을 만드는 과정)
 [^c2]: 컴파일러 10회 강의 자료 「Lecture10 Semantic analysis part 2」, p.28~37 (추상 구문 트리를 재귀로 돌며 잎부터 타입을 붙이는 그림)
 [^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 "후위 순회"라는 말을 쓰지 않고 "왼쪽 자식의 계산 결과, 오른쪽 자식의 계산 결과, 그다음 자기 쿼드러플"이라는 규칙으로 적었다. 그 순서가 후위 순회와 같다는 것, 폴더 크기 계산과의 비교, 카드 C4는 보탠 것이다. 무작위 식 2,000개에서 만든 코드의 연산자 순서가 후위 순회의 연산자 순서와 같음을 [39_ast-to-tac_impl.py](/Hongs_Blog/studies/compilers/code/39_ast-to-tac_impl/)로 확인했다.
+[^d1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.31 (preOrder), p.35 (inOrder), p.40 (postOrder), p.27 ~ 28 (방문할 때 하는 일)
+[^d2]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.31, p.40. 자료구조 9회 강의 자료 「DS_Week9_Lecture_2024 (BST, Heap 수정)」, 슬라이드 4에도 같은 코드가 있고 거기서는 세 순회 모두 `visit(t);`다.
+[^d3]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.38 (Inorder By Projection (Squishing): 노드마다 아래로 화살표를 내려 g d h b e i a f j c를 읽는 그림)
+[^d4]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_BST_2024」, p.6 (Definition Of Binary Search Tree: 노드마다 (key, value) 쌍. 왼쪽 부분 트리의 키는 모두 더 작고 오른쪽 부분 트리의 키는 모두 더 크다)
+[^d5]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_BST_2024」, p.5 (Search, Insert, Delete: 이진 탐색 트리는 가장 나쁠 때 O(n), 기대 O(log n)), p.10 (Search와 Insert의 복잡도는 O(height))
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 파이썬 코드와의 줄 맞춤, 아래로 눌러 읽기가 맞는 조건, 정의 비교표, 카드 C5는 원본에 없다. 5, 3, 5를 넣은 모양과 1 ~ 5를 넣은 한 줄짜리의 간선 수는 [26_tree-from-traversals_verify.py](/Hongs_Blog/studies/data-structures/code/26_tree-from-traversals_verify/)로 확인했다.
 {% endraw %}

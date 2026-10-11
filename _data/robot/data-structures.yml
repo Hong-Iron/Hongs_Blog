@@ -1,0 +1,66 @@
+# 홍철's lines for the data structures course pages. Format: _data/robot/README.md
+greeting:
+- "자료구조예요. 포인터에서 시작해 스택, 큐, 트리, 힙, 해시 테이블까지 가요."
+- "자료구조 페이지예요. 내릴수록 배경에서 힙에 값이 하나씩 들어가요. 위의 나무와 아래 배열이 같은 힙이에요."
+- "여긴 자료구조예요. 코드는 C로 써서 전부 컴파일하고 돌려 봤어요."
+questions:
+- q: "뭐부터 보면 돼요?"
+  a: "포인터부터요. 연결 리스트도 트리도 결국 '다음 칸이 어디 있는지 적어 둔 칸'이라서, 여기서 막히면 뒤가 다 막혀요."
+  link: /studies/data-structures/c-pointer/
+  link_label: "포인터"
+- q: 어려워요?
+  a: "쪽지를 고치는 차례가 헷갈려요. 연결 리스트에서 순서를 바꿔 적으면 뒤쪽 줄을 통째로 잃어버려요. 그림을 그리면서 한 줄씩 따라가 보세요."
+  link: /studies/data-structures/singly-linked-list/
+  link_label: "단순 연결 리스트"
+- q: "답은 믿어도 돼요?"
+  a: "C 파일 53개를 메모리 오류 검사를 켜고 컴파일해서 돌렸어요. 문서에 실린 표와 출력은 그 실행 결과예요."
+  link: /studies/data-structures/
+  link_label: 로드맵
+- q: "제일 중요한 건 뭐예요?"
+  a: "'무거움' 표시가 붙은 문서 {heavy}개요. 포인터, 원형 큐, 이진 탐색 트리의 삭제, 힙, 퀵 정렬, 선형 탐사가 들어 있어요."
+  link: /studies/data-structures/
+  link_label: 로드맵
+- q: "다른 과목이랑도 이어져요?"
+  a: "알고리즘 노트에서 파이썬 내장 기능으로 쓰던 스택, 큐, 힙을 여기서는 C로 직접 만들어요. 같은 문서에 두 과목의 시각이 나란히 있어요."
+  link: /studies/algorithms/heap/
+  link_label: "힙과 우선순위 큐"
+chats:
+- q: "배열이면 다 되지 않아요?"
+  a: "가운데에 하나 끼우려면 뒤를 전부 한 칸씩 밀어야 해요. 연결 리스트는 쪽지 한두 장만 고치면 돼요. 대신 몇 번째 원소를 바로 볼 수는 없어요."
+  link: /studies/data-structures/array-vs-linked-list/
+  link_label: "배열과 연결 리스트 비교"
+  next:
+  - q: "배열이 꽉 차면요?"
+    a: "두 배 큰 배열로 이사해요. 이사는 오래 걸리지만 갈수록 드물어져서, 다 합쳐 나누면 하나 넣는 수고는 일정해요."
+    link: /studies/data-structures/array-doubling/
+    link_label: "배열 두 배 늘리기"
+  - q: "큐도 배열로 만들 수 있어요?"
+    a: "끝과 처음을 이어 고리처럼 쓰면 돼요. 텅 빈 것과 꽉 찬 것이 똑같아 보이지 않게 한 칸은 늘 비워 둬요."
+    link: /studies/data-structures/circular-queue/
+    link_label: "원형 큐"
+- q: "힙은 정렬된 거예요?"
+  a: "아니에요. 부모가 자식보다 작지 않다는 규칙 하나뿐이라 형제끼리는 순서가 없어요. 맨 위 값만 믿을 수 있어요."
+  link: /studies/data-structures/max-heap/
+  link_label: "최대 힙과 최소 힙"
+  next:
+  - q: "그럼 이진 탐색 트리랑 뭐가 달라요?"
+    a: "이진 탐색 트리는 왼쪽이 작고 오른쪽이 커서 아무 값이나 찾을 수 있어요. 힙은 가장 큰 값 하나를 빨리 꺼내는 데만 써요."
+    link: /studies/data-structures/heap-vs-bst/
+    link_label: "최대 힙과 이진 탐색 트리 비교"
+- q: "해시 테이블에서 자리가 겹치면요?"
+  a: "옆자리로 가서 처음 나오는 빈자리에 앉는 방법과, 자리마다 줄을 세우는 방법이 있어요. 표가 찰수록 앞의 방법은 급하게 느려져요."
+  link: /studies/data-structures/probing-vs-chaining/
+  link_label: "선형 탐사와 체이닝 비교"
+talk:
+- text: "이진 탐색 트리에서 자식이 둘인 값을 지울 때는 자리를 그대로 두고, 왼쪽 아래에서 가장 큰 값을 옮겨 적어요."
+  link: /studies/data-structures/bst-delete/
+  link_label: "이진 탐색 트리의 삭제"
+- text: "퀵 정렬은 이미 정렬된 배열에서 늘 맨 앞을 기준으로 삼으면 가장 단순한 정렬만큼 느려져요."
+  link: /studies/data-structures/quick-sort/
+  link_label: "퀵 정렬"
+- text: "순회 결과 두 줄로 트리를 되살리려면 '왼쪽, 뿌리, 오른쪽' 순서로 적은 줄이 꼭 끼어 있어야 해요."
+  link: /studies/data-structures/tree-from-traversals/
+  link_label: "순회 결과로 이진 트리 되살리기"
+- text: "선형 탐사에서 값을 지울 때 그 자리만 비우면, 뒤에 밀려 앉은 값을 못 찾게 돼요."
+  link: /studies/data-structures/linear-probing/
+  link_label: "선형 탐사"

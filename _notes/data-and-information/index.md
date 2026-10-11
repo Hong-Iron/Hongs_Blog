@@ -65,7 +65,7 @@ permalink: "/studies/data-and-information/"
 | 04 | [부호와 부호화](/Hongs_Blog/studies/data-and-information/code-encoding/) | 대상과 기호의 1:1 약속. 부호 비율 $$R = \frac{\log\lvert C\rvert}{n\log\lvert\Sigma\rvert}$$로 알뜰함을 잰다 | [verify](/Hongs_Blog/studies/data-and-information/code/04_code-encoding_verify/) | — |
 | 05 | [해밍 거리와 부호 거리](/Hongs_Blog/studies/data-and-information/hamming-distance/) | 부호 거리 $$d$$이면 $$d - 1$$개를 알아채고 $$\lfloor\frac{d-1}{2}\rfloor$$개를 고친다 | [verify](/Hongs_Blog/studies/data-and-information/code/05_hamming-distance_verify/) | — |
 | 06 | [선형 부호와 패리티 검사 행렬](/Hongs_Blog/studies/data-and-information/linear-code/) | $$\mathbf c = \mathbf xG$$로 만들고 $$H\mathbf c = \mathbf 0$$으로 검사한다. 신드롬이 바뀐 자리를 짚는다 | [verify](/Hongs_Blog/studies/data-and-information/code/06_linear-code_verify/) | — |
-| 07 | [해밍 부호](/Hongs_Blog/studies/data-and-information/hamming-code/) | 검사 칸을 1, 2, 4, 8번에 두면 깨진 검사의 무늬가 바뀐 칸의 번호다 (한 칸만 고친다) (강조)[^강조] | [impl](/Hongs_Blog/studies/data-and-information/code/07_hamming-code_impl/) | [해밍 부호 예제 사다리](/Hongs_Blog/studies/data-and-information/hamming-code-ladder/) |
+| 07 | [해밍 부호](/Hongs_Blog/studies/data-and-information/hamming-code/) | 검사 칸을 1, 2, 4, 8번에 두면 깨진 검사의 무늬가 바뀐 칸의 번호다 (한 칸만 고친다) (강조)[^n1] | [impl](/Hongs_Blog/studies/data-and-information/code/07_hamming-code_impl/) | [해밍 부호 예제 사다리](/Hongs_Blog/studies/data-and-information/hamming-code-ladder/) |
 
 자료: D&I_강의03-2-부호2 · D&I_강의03-부호
 필기: 아직 없다.
@@ -88,7 +88,7 @@ permalink: "/studies/data-and-information/"
 | 08 | [거리와 유사도](/Hongs_Blog/studies/data-and-information/distance-similarity/) | 거리는 작을수록 가깝고 유사도는 클수록 닮았다. 척도가 되려면 네 조건을 지켜야 한다 | [verify](/Hongs_Blog/studies/data-and-information/code/08_distance-similarity_verify/) | — |
 | 09 | [마할라노비스 거리](/Hongs_Blog/studies/data-and-information/mahalanobis-distance/) | 자료가 흩어진 정도로 나눠 재는 거리 $$\sqrt{(\mathbf x - \mathbf y)^\top\Sigma^{-1}(\mathbf x - \mathbf y)}$$ | [verify](/Hongs_Blog/studies/data-and-information/code/09_mahalanobis-distance_verify/) | — |
 | 10 | [문자열 유사도](/Hongs_Blog/studies/data-and-information/string-similarity/) | 낱말 집합의 겹침(자카드·코사인·다이스)과 글자 손질 횟수, 두 갈래로 글의 닮음을 잰다 | [verify](/Hongs_Blog/studies/data-and-information/code/10_string-similarity_verify/) | — |
-| 11 | [편집 거리](/Hongs_Blog/studies/data-and-information/edit-distance/) | 넣기·지우기·바꾸기의 가장 싼 비용을 $$O(nm)$$ 표로 구한다 (강조)[^강조] | [impl](/Hongs_Blog/studies/data-and-information/code/11_edit-distance_impl/) | [편집 거리 예제 사다리](/Hongs_Blog/studies/data-and-information/edit-distance-ladder/) |
+| 11 | [편집 거리](/Hongs_Blog/studies/data-and-information/edit-distance/) | 넣기·지우기·바꾸기의 가장 싼 비용을 $$O(nm)$$ 표로 구한다 (강조)[^n1] | [impl](/Hongs_Blog/studies/data-and-information/code/11_edit-distance_impl/) | [편집 거리 예제 사다리](/Hongs_Blog/studies/data-and-information/edit-distance-ladder/) |
 
 자료: D&I_강의04-1-유사도와거리 · D&I_강의04-2-유사도와거리
 필기: 아직 없다.
@@ -194,7 +194,7 @@ permalink: "/studies/data-and-information/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 14 | [히스토그램 밀도 추정](/Hongs_Blog/studies/data-and-information/histogram-density/) | 칸을 잘라 세어 흔한 정도를 어림한다, $$p(x) \approx \frac{k/n}{V}$$, 칸 폭과 경계가 문제 | [verify](/Hongs_Blog/studies/data-and-information/code/14_histogram-density_verify/) | — |
-| 15 | [파젠 창](/Hongs_Blog/studies/data-and-information/parzen-window/) | 물어보는 값을 가운데 둔 정해진 크기 $$V_n$$의 창 안 표본을 센다, 창 크기가 결과를 좌우한다 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/data-and-information/15_parzen-window_fig1.svg) · [plot](/Hongs_Blog/studies/data-and-information/code/15_parzen-window_plot/) · [verify](/Hongs_Blog/studies/data-and-information/code/15_parzen-window_verify/) | — |
+| 15 | [파젠 창](/Hongs_Blog/studies/data-and-information/parzen-window/) | 물어보는 값을 가운데 둔 정해진 크기 $$V_n$$의 창 안 표본을 센다, 창 크기가 결과를 좌우한다 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/data-and-information/15_parzen-window_fig1.svg) · [plot](/Hongs_Blog/studies/data-and-information/code/15_parzen-window_plot/) · [verify](/Hongs_Blog/studies/data-and-information/code/15_parzen-window_verify/) | — |
 | 16 | [k-이웃 밀도 추정](/Hongs_Blog/studies/data-and-information/knn-density/) | 가까운 표본 $$k_n$$개가 잡힐 때까지 구역을 넓힌다, 0이 안 나오지만 넓이가 1이 아니다 | [fig1](/Hongs_Blog/assets/notes/data-and-information/16_knn-density_fig1.svg) · [plot](/Hongs_Blog/studies/data-and-information/code/16_knn-density_plot/) · [verify](/Hongs_Blog/studies/data-and-information/code/16_knn-density_verify/) | — |
 | 17 | [파젠 창과 k-이웃 비교](/Hongs_Blog/studies/data-and-information/parzen-vs-knn/) | 크기를 정해 두고 개수를 세는가, 개수를 정해 두고 크기를 재는가 | — | — |
 
@@ -263,5 +263,5 @@ graph TD
   C16 --> C17
 ```
 
-[^강조]: 원본에서 강조된 개념. 해밍 부호: 3-2 강의 p.8~15(예제 8쪽). 편집 거리: 4-2 강의 p.12~18(표 계산 7쪽). 파젠 창: 10회 p.11의 빨간 상자 "The choice of $$h_n$$ has an important effect".
+[^n1]: 원본에서 강조된 개념. 해밍 부호: 3-2 강의 p.8~15(예제 8쪽). 편집 거리: 4-2 강의 p.12~18(표 계산 7쪽). 파젠 창: 10회 p.11의 빨간 상자 "The choice of $$h_n$$ has an important effect".
 {% endraw %}

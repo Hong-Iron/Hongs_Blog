@@ -106,7 +106,7 @@ permalink: "/studies/assembly-language/"
 | 10 | [프로그램 틀](/Hongs_Blog/studies/assembly-language/asm-program-template/) | 모든 프로그램이 올라타는 뼈대. `.data`, `.code`, `main PROC`, `END main` | [verify](/Hongs_Blog/studies/assembly-language/code/10_asm-program-template_verify/) | — |
 | 11 | [어셈블·링크·실행 과정](/Hongs_Blog/studies/assembly-language/assemble-link-execute/) | 원본 → 목적 파일 → 실행 파일 → 메모리. 어셈블러, 링커, 로더 | [verify](/Hongs_Blog/studies/assembly-language/code/11_assemble-link-execute_verify/) | — |
 | 12 | [데이터 정의](/Hongs_Blog/studies/assembly-language/asm-data-definition/) | 이름, 칸 크기, 처음 값을 적어 메모리에 변수를 잡는다 | [verify](/Hongs_Blog/studies/assembly-language/code/12_asm-data-definition_verify/) | — |
-| 13 | [리틀 엔디언](/Hongs_Blog/studies/assembly-language/little-endian/) | 여러 바이트 값은 아랫자리 바이트가 낮은 주소에 온다 (강조)[^강조] | [verify](/Hongs_Blog/studies/assembly-language/code/13_little-endian_verify/) | — |
+| 13 | [리틀 엔디언](/Hongs_Blog/studies/assembly-language/little-endian/) | 여러 바이트 값은 아랫자리 바이트가 낮은 주소에 온다 (강조)[^n1] | [verify](/Hongs_Blog/studies/assembly-language/code/13_little-endian_verify/) | — |
 | 14 | [기호 상수와 위치 카운터](/Hongs_Blog/studies/assembly-language/symbolic-constants/) | 수에 이름을 붙이고, `$`로 배열 크기를 어셈블러가 세게 한다 | [verify](/Hongs_Blog/studies/assembly-language/code/14_symbolic-constants_verify/) | — |
 | 15 | [피연산자의 종류](/Hongs_Blog/studies/assembly-language/operand-types/) | 명령의 재료는 즉시값, 레지스터, 메모리 셋이고 이름+수는 주소를 옮긴다 | [verify](/Hongs_Blog/studies/assembly-language/code/15_operand-types_verify/) | — |
 | 16 | [데이터 전송 명령](/Hongs_Blog/studies/assembly-language/data-transfer-instructions/) | MOV는 복사, XCHG는 맞바꾸기. 크기가 같아야 하고 메모리끼리는 안 된다 | [verify](/Hongs_Blog/studies/assembly-language/code/16_data-transfer-instructions_verify/) | — |
@@ -131,7 +131,7 @@ permalink: "/studies/assembly-language/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 18 | [덧셈·뺄셈 명령](/Hongs_Blog/studies/assembly-language/add-sub-instructions/) | INC·DEC·ADD·SUB·NEG. 계산은 적은 칸의 크기 안에서만 일어난다 | [verify](/Hongs_Blog/studies/assembly-language/code/18_add-sub-instructions_verify/) | [산술식을 어셈블리로 옮기기 연습](/Hongs_Blog/studies/assembly-language/arithmetic-expression-practice/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/18_arithmetic-expression-practice_p3/) |
-| 19 | [산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/) | 계산마다 결과가 0인지, 음수인지, 넘쳤는지를 ZF·SF·CF·OF로 남긴다 (강조)[^강조] | [verify](/Hongs_Blog/studies/assembly-language/code/19_x86-status-flags_verify/) | [플래그 추적 예제 사다리](/Hongs_Blog/studies/assembly-language/flag-tracing-ladder/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/19_flag-tracing-ladder_p4/) |
+| 19 | [산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/) | 계산마다 결과가 0인지, 음수인지, 넘쳤는지를 ZF·SF·CF·OF로 남긴다 (강조)[^n1] | [verify](/Hongs_Blog/studies/assembly-language/code/19_x86-status-flags_verify/) | [플래그 추적 예제 사다리](/Hongs_Blog/studies/assembly-language/flag-tracing-ladder/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/19_flag-tracing-ladder_p4/) |
 | 20 | [올림 플래그와 넘침 플래그 비교](/Hongs_Blog/studies/assembly-language/carry-vs-overflow-flag/) | 부호 없는 수의 넘침은 CF, 부호 있는 수의 넘침은 OF로 본다 | — | — |
 | 21 | [OFFSET과 PTR 연산자](/Hongs_Blog/studies/assembly-language/offset-ptr-operators/) | OFFSET은 변수의 주소를 주고, PTR은 정의와 다른 크기로 읽게 한다 | [verify](/Hongs_Blog/studies/assembly-language/code/21_offset-ptr-operators_verify/) | [PTR과 리틀 엔디언 예제 사다리](/Hongs_Blog/studies/assembly-language/ptr-little-endian-ladder/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/21_ptr-little-endian-ladder_p4/) |
 | 22 | [TYPE·LENGTHOF·SIZEOF 연산자](/Hongs_Blog/studies/assembly-language/type-lengthof-sizeof/) | 원소 크기, 원소 개수, 전체 바이트 수. $$\text{SIZEOF} = \text{LENGTHOF} \times \text{TYPE}$$ | [verify](/Hongs_Blog/studies/assembly-language/code/22_type-lengthof-sizeof_verify/) | — |
@@ -156,7 +156,7 @@ permalink: "/studies/assembly-language/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 25 | [런타임 스택과 PUSH·POP](/Hongs_Blog/studies/assembly-language/runtime-stack/) | 올리면 ESP가 4 줄고 내리면 4 는다. 거꾸로 꺼내야 제자리 (강조)[^강조] | [verify](/Hongs_Blog/studies/assembly-language/code/25_runtime-stack_verify/) | — |
+| 25 | [런타임 스택과 PUSH·POP](/Hongs_Blog/studies/assembly-language/runtime-stack/) | 올리면 ESP가 4 줄고 내리면 4 는다. 거꾸로 꺼내야 제자리 (강조)[^n1] | [verify](/Hongs_Blog/studies/assembly-language/code/25_runtime-stack_verify/) | — |
 | 26 | [프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/) | `CALL`은 돌아올 주소를 스택에 올리고 `RET`은 맨 위 값을 EIP로 내린다 | [verify](/Hongs_Blog/studies/assembly-language/code/26_call-ret_verify/) | [스택 추적 예제 사다리](/Hongs_Blog/studies/assembly-language/stack-tracing-ladder/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/26_stack-tracing-ladder_p4/) |
 | 27 | [레지스터 매개변수와 USES](/Hongs_Blog/studies/assembly-language/procedure-register-parameters/) | 자료 위치를 레지스터로 받고, 지킬 레지스터는 `USES`로 치웠다 되돌린다 | [verify](/Hongs_Blog/studies/assembly-language/code/27_procedure-register-parameters_verify/) | — |
 
@@ -181,7 +181,7 @@ permalink: "/studies/assembly-language/"
 | 28 | [Irvine32 라이브러리](/Hongs_Blog/studies/assembly-language/irvine32-library/) | 약속된 레지스터에 값을 넣고 `call`로 부르는 입출력 도구 48개 | [verify](/Hongs_Blog/studies/assembly-language/code/28_irvine32-library_verify/) | — |
 | 29 | [비트 논리 명령](/Hongs_Blog/studies/assembly-language/bitwise-instructions/) | `AND`로 끄고 `OR`로 켜고 `XOR`로 뒤집는다 | [verify](/Hongs_Blog/studies/assembly-language/code/29_bitwise-instructions_verify/) | — |
 | 30 | [TEST와 CMP](/Hongs_Blog/studies/assembly-language/test-cmp/) | 값은 그대로 두고 플래그만 남기는 뺄셈(`CMP`)과 AND(`TEST`) | [verify](/Hongs_Blog/studies/assembly-language/code/30_test-cmp_verify/) | — |
-| 31 | [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/) | 플래그를 보고 갈라 가는 점프. 부호 있는 "작다"는 $$\text{SF} \ne \text{OF}$$ (강조)[^강조] | [verify](/Hongs_Blog/studies/assembly-language/code/31_conditional-jumps_verify/) | — |
+| 31 | [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/) | 플래그를 보고 갈라 가는 점프. 부호 있는 "작다"는 $$\text{SF} \ne \text{OF}$$ (강조)[^n1] | [verify](/Hongs_Blog/studies/assembly-language/code/31_conditional-jumps_verify/) | — |
 | 32 | [부호 있는 비교 점프와 부호 없는 비교 점프](/Hongs_Blog/studies/assembly-language/signed-vs-unsigned-jumps/) | 같은 비트를 above·below는 부호 없이, greater·less는 부호 있게 읽는다 | [verify](/Hongs_Blog/studies/assembly-language/code/32_signed-vs-unsigned-jumps_verify/) | — |
 
 자료: wk07-chapt_05-3-1 · wk07-chapt_06-3-2 · wk07-chapt_06-3-3
@@ -229,7 +229,7 @@ permalink: "/studies/assembly-language/"
 | 38 | [논리 시프트와 산술 시프트 비교](/Hongs_Blog/studies/assembly-language/logical-vs-arithmetic-shift/) | 오른쪽으로 밀 때 빈칸을 0으로 채우면 부호 없는 수, 부호 비트로 채우면 부호 있는 수 | — | — |
 | 39 | [회전 명령](/Hongs_Blog/studies/assembly-language/rotate-instructions/) | 밀려난 비트가 반대쪽으로 돌아오는 밀기, RCL·RCR은 CF까지 한 고리 | [verify](/Hongs_Blog/studies/assembly-language/code/39_rotate-instructions_verify/) | — |
 | 40 | [이중 시프트 SHLD·SHRD](/Hongs_Blog/studies/assembly-language/double-shift/) | 빈칸을 다른 레지스터의 비트로 채워 두 레지스터에 걸친 수를 민다 | [verify](/Hongs_Blog/studies/assembly-language/code/40_double-shift_verify/) | [시프트와 회전 예제 사다리](/Hongs_Blog/studies/assembly-language/shift-rotate-ladder/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/40_shift-rotate-ladder_p4/) |
-| 41 | [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/) | 호출 하나가 스택에 차지하는 구역, EBP를 고정해 $$[\mathrm{EBP}+8]$$부터 매개변수를 읽는다 (강조)[^강조] | [verify](/Hongs_Blog/studies/assembly-language/code/41_stack-frame_verify/) | — |
+| 41 | [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/) | 호출 하나가 스택에 차지하는 구역, EBP를 고정해 $$[\mathrm{EBP}+8]$$부터 매개변수를 읽는다 (강조)[^n1] | [verify](/Hongs_Blog/studies/assembly-language/code/41_stack-frame_verify/) | — |
 | 42 | [스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/) | 인수를 스택에 넣어 넘긴다. 값을 넣으면 사본, 주소를 넣으면 원본을 고친다 | [verify](/Hongs_Blog/studies/assembly-language/code/42_stack-parameters_verify/) | — |
 
 자료: wk10-chapt_07-3-1 · wk10-chapt_07-3-2 · wk10-chapt_08-3-3
@@ -254,7 +254,7 @@ permalink: "/studies/assembly-language/"
 | 44 | [지역 변수](/Hongs_Blog/studies/assembly-language/local-variables/) | `sub esp,n`으로 만들고 `mov esp,ebp`로 없애는 $$[\mathrm{EBP}-4]$$ 아래의 임시 칸 | [verify](/Hongs_Blog/studies/assembly-language/code/44_local-variables_verify/) | [스택 프레임 그리기 예제 사다리](/Hongs_Blog/studies/assembly-language/stack-frame-ladder/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/44_stack-frame-ladder_p4/) |
 | 45 | [OFFSET과 LEA 비교](/Hongs_Blog/studies/assembly-language/offset-vs-lea/) | 번역할 때 정해지는 주소는 OFFSET, 실행해 봐야 아는 주소는 LEA | [verify](/Hongs_Blog/studies/assembly-language/code/45_offset-vs-lea_verify/) | — |
 | 46 | [INVOKE·PROC·PROTO 지시어](/Hongs_Blog/studies/assembly-language/invoke-proc-proto/) | push·call·$$[\mathrm{EBP}+8]$$을 어셈블러가 대신 써 주는 지시어 | [verify](/Hongs_Blog/studies/assembly-language/code/46_invoke-proc-proto_verify/) | — |
-| 47 | [재귀 프로시저](/Hongs_Blog/studies/assembly-language/recursive-procedure/) | 자기를 다시 부르는 프로시저, 호출마다 12바이트 프레임에 $$n$$을 따로 둔다 (강조)[^강조] | [impl](/Hongs_Blog/studies/assembly-language/code/47_recursive-procedure_impl/) | [재귀 호출 스택 추적 연습](/Hongs_Blog/studies/assembly-language/recursion-stack-practice/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/47_recursion-stack-practice_p3/) |
+| 47 | [재귀 프로시저](/Hongs_Blog/studies/assembly-language/recursive-procedure/) | 자기를 다시 부르는 프로시저, 호출마다 12바이트 프레임에 $$n$$을 따로 둔다 (강조)[^n1] | [impl](/Hongs_Blog/studies/assembly-language/code/47_recursive-procedure_impl/) | [재귀 호출 스택 추적 연습](/Hongs_Blog/studies/assembly-language/recursion-stack-practice/) · [문제 코드](/Hongs_Blog/studies/assembly-language/code/47_recursion-stack-practice_p3/) |
 
 자료: wk11-chapt_08-2-1 · wk11-chapt_08-2-2
 필기: 아직 없다.
@@ -503,5 +503,5 @@ graph TD
   C53 --> C56
 ```
 
-[^강조]: 원본에서 강조된 개념. 리틀 엔디언: 4주차와 5주차에 두 번 나온다. 상태 플래그: 3·5·7주차에 되풀이되고 "YOU, the programmer"로 부호 구분의 책임을 짚는다. 런타임 스택: 6주차 스택 그림 네 쪽. 조건 점프: 7주차 표 네 장. 스택 프레임과 재귀 프로시저: 10~11주차의 스택 그림.
+[^n1]: 원본에서 강조된 개념. 리틀 엔디언: 4주차와 5주차에 두 번 나온다. 상태 플래그: 3·5·7주차에 되풀이되고 "YOU, the programmer"로 부호 구분의 책임을 짚는다. 런타임 스택: 6주차 스택 그림 네 쪽. 조건 점프: 7주차 표 네 장. 스택 프레임과 재귀 프로시저: 10~11주차의 스택 그림.
 {% endraw %}

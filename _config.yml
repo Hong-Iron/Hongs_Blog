@@ -105,6 +105,10 @@ defaults:
     values:
       image: /assets/img/og/computer-architecture.png
   - scope:
+      path: "_notes/data-structures"
+    values:
+      image: /assets/img/og/data-structures.png
+  - scope:
       path: "_notes/calculus"
     values:
       image: /assets/img/og/calculus.png

@@ -64,6 +64,7 @@ TRACKS = [
     ("컴퓨터 과학", [
         ("소프트웨어", [
             ("2-1학기/소프트웨어 프로젝트", "자바 프로그래밍", "java"),
+            ("1-2학기/자료구조", "자료구조", "data-structures"),
             ("알고리즘", "알고리즘", "algorithms"),
             ("3-2학기/컴파일러", "컴파일러", "compilers"),
         ]),
@@ -597,7 +598,20 @@ def source_label(m):
     return f"{course} {kind} 「{title}」"
 
 
+def ascii_footnote_labels(body):
+    """kramdown only reads footnote labels made of ASCII word characters, so a
+    label like [^강조] would show up as plain text. Rename the ones this note
+    defines (a regex such as [^\\n] in a code sample is left alone)."""
+    n = 0
+    for label in dict.fromkeys(re.findall(r"^\[\^([^\]\s]+)\]:", body, flags=re.M)):
+        if not re.fullmatch(r"[A-Za-z0-9_-]+", label):
+            n += 1
+            body = body.replace(f"[^{label}]", f"[^n{n}]")
+    return body
+
+
 def tidy_footnotes(body):
+    body = ascii_footnote_labels(body)
     def fix(m):
         line = re.sub(r"^(\[\^[^\]]+\]:\s*)에이전트 보충\.\s*", r'\1<span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> ', m.group(0))
         line = SOURCE_RE.sub(source_label, line)
@@ -611,8 +625,9 @@ def tidy_oneliners(body):
         out = []
         for k, part in enumerate(re.split(r"(\$[^$]*\$)", text)):
             if k % 2 == 0:
-                part = re.sub(r"\^\{([^{}]+)\}", r"<sup>\1</sup>", part)
-                part = re.sub(r"\^([A-Za-z0-9]+)", r"<sup>\1</sup>", part)
+                # (?<!\[) keeps footnote references such as [^12] intact
+                part = re.sub(r"(?<!\[)\^\{([^{}]+)\}", r"<sup>\1</sup>", part)
+                part = re.sub(r"(?<!\[)\^([A-Za-z0-9]+)", r"<sup>\1</sup>", part)
                 part = re.sub(r"(?<=[A-Za-z0-9)])_\{([^{}]+)\}", r"<sub>\1</sub>", part)
                 part = re.sub(r"(?<=[A-Za-z)])_([A-Za-z0-9])(?![A-Za-z0-9])", r"<sub>\1</sub>", part)
             out.append(part)

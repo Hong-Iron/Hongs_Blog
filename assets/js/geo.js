@@ -358,7 +358,8 @@
     "java": ["tile", "capsule", "chevron"],
     "assembly-language": ["tile", "tallbar", "squareOutline"],
     "compilers": ["circle", "arrow", "ring"],
-    "computer-architecture": ["tile", "tallbar", "ring"]
+    "computer-architecture": ["tile", "tallbar", "ring"],
+    "data-structures": ["circle", "tile", "arrow"]
   };
 
   function mixHex(a, b, f) {
@@ -1364,6 +1365,53 @@
         }
       }
       label(ctx, "cycle " + (cyc + 1), x0 + 1.5 * u, B.y + 99 * v, rgba(F.pal.ink, 0.5), Math.max(9, fs - 2));
+    }
+  };
+
+  // 자료구조: keys go into a max heap one at a time. The tree and the array under it are the same heap.
+  MOTIFS["data-structures"] = {
+    setup: function () {
+      var keys = [12, 30, 8, 45, 27, 60, 19], a = [], steps = [{ arr: [], hot: -1 }], i, k;
+      for (k = 0; k < keys.length; k++) {
+        a.push(keys[k]); i = a.length - 1;
+        steps.push({ arr: a.slice(), hot: i });
+        while (i > 0 && a[(i - 1) >> 1] < a[i]) {
+          var par = (i - 1) >> 1, t = a[par]; a[par] = a[i]; a[i] = t; i = par;
+          steps.push({ arr: a.slice(), hot: i });
+        }
+      }
+      steps.push({ arr: a.slice(), hot: -1 });
+      return { steps: steps, n: keys.length };
+    },
+    draw: function (ctx, L, S, F) {
+      var B = coverBox(L), u = B.w / 100, v = B.h / 100, i;
+      var st = S.steps[Math.min(S.steps.length - 1, Math.floor(F.p * S.steps.length))];
+      var fs = Math.max(9, Math.min(13, 8.5 * v)), r = Math.max(9, Math.min(17, 7.5 * v));
+      var X = [50, 26, 74, 14, 38, 62, 86], Y = [10, 36, 36, 62, 62, 62, 62];
+      function P(k) { return [B.x + X[k] * u, B.y + Y[k] * v]; }
+      // slots the heap has not reached yet stay as faint outlines
+      for (i = 1; i < S.n; i++) {
+        var c = P(i), q = P((i - 1) >> 1), has = i < st.arr.length;
+        ctx.strokeStyle = rgba(F.pal.ink, has ? 0.4 : 0.1); ctx.lineWidth = 1.3;
+        line(ctx, q[0], q[1] + r * 0.8, c[0], c[1] - r * 0.8);
+      }
+      for (i = 0; i < S.n; i++) {
+        var p = P(i), on = i < st.arr.length, hot = i === st.hot;
+        circle(ctx, p[0], p[1], r);
+        ctx.fillStyle = rgba(hot ? F.pal.b : F.pal.a, hot ? 0.3 : (on ? 0.16 : 0.03)); ctx.fill();
+        ctx.strokeStyle = rgba(hot ? F.pal.b : F.pal.a, on ? 0.9 : 0.25); ctx.lineWidth = hot ? 2.2 : 1.3; ctx.stroke();
+        if (on) label(ctx, String(st.arr[i]), p[0] - fs * 0.6, p[1] + fs * 0.35, rgba(F.pal.ink, 0.85), fs);
+      }
+      // the same heap as an array: slot i's children sit at 2i+1 and 2i+2
+      var cw = 12.4 * u, x0 = B.x + 6.6 * u, y0 = B.y + 80 * v, ch = 13 * v;
+      for (i = 0; i < S.n; i++) {
+        var on2 = i < st.arr.length, hot2 = i === st.hot;
+        roundRect(ctx, x0 + i * cw, y0, cw - 1.6 * u, ch, 3);
+        ctx.fillStyle = rgba(hot2 ? F.pal.b : F.pal.a, hot2 ? 0.3 : (on2 ? 0.16 : 0.03)); ctx.fill();
+        ctx.strokeStyle = rgba(hot2 ? F.pal.b : F.pal.a, on2 ? 0.85 : 0.25); ctx.lineWidth = hot2 ? 2 : 1.2; ctx.stroke();
+        if (on2) label(ctx, String(st.arr[i]), x0 + i * cw + 2.4 * u, y0 + ch * 0.68, rgba(F.pal.ink, 0.85), fs);
+        label(ctx, String(i), x0 + i * cw + 4 * u, y0 + ch + 6.5 * v, rgba(F.pal.ink, 0.4), Math.max(8, fs - 3));
+      }
     }
   };
 

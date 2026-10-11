@@ -73,7 +73,7 @@ permalink: "/studies/numerical-analysis/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 03 | [기하 변환의 종류](/Hongs_Blog/studies/numerical-analysis/transformation-classes/) | 무엇을 지키나: 강체(거리) ⊂ 닮음(각) ⊂ 아핀(평행) ⊂ 사영(곧은 선) | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/03_transformation-classes_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_verify/) | — |
-| 04 | [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) | 끝에 1을 붙여 평행이동도 행렬 곱. 오른쪽 행렬이 먼저 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/04_homogeneous-coordinates_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_verify/) | [동차 좌표 예제 사다리](/Hongs_Blog/studies/numerical-analysis/homogeneous-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-ladder_p4/) |
+| 04 | [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) | 끝에 1을 붙여 평행이동도 행렬 곱. 오른쪽 행렬이 먼저 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/04_homogeneous-coordinates_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_verify/) | [동차 좌표 예제 사다리](/Hongs_Blog/studies/numerical-analysis/homogeneous-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-ladder_p4/) |
 
 자료: na04_transformation
 필기: 아직 없다.
@@ -114,7 +114,7 @@ permalink: "/studies/numerical-analysis/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 07 | [반사와 반전](/Hongs_Blog/studies/numerical-analysis/reflection/) | 축으로 옮기기 → 축에 대해 부호 뒤집기 → 되돌리기 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/07_reflection_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/07_reflection_verify/) | — |
-| 08 | [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/) | 다섯 단계로 축을 $$x$$축에 맞추거나 로드리게스 공식 하나로 (강조)[^강조] | [verify](/Hongs_Blog/studies/numerical-analysis/code/08_axis-rotation_verify/) | [임의 축 회전 예제 사다리](/Hongs_Blog/studies/numerical-analysis/axis-rotation-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/08_axis-rotation-ladder_p4/) |
+| 08 | [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/) | 다섯 단계로 축을 $$x$$축에 맞추거나 로드리게스 공식 하나로 (강조)[^n1] | [verify](/Hongs_Blog/studies/numerical-analysis/code/08_axis-rotation_verify/) | [임의 축 회전 예제 사다리](/Hongs_Blog/studies/numerical-analysis/axis-rotation-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/08_axis-rotation-ladder_p4/) |
 | 09 | [오일러 각과 짐벌 잠금](/Hongs_Blog/studies/numerical-analysis/euler-angles/) | 기본 회전 세 번. 가운데가 90°이면 자유도 하나를 잃는다 | [verify](/Hongs_Blog/studies/numerical-analysis/code/09_euler-angles_verify/) | — |
 | 10 | [쿼터니언](/Hongs_Blog/studies/numerical-analysis/quaternion/) | $$q = (\cos\frac\theta2, \sin\frac\theta2\mathbf n)$$, $$q\mathbf v\bar q$$. 짐벌 잠금 없음, 매끄러운 보간 | [verify](/Hongs_Blog/studies/numerical-analysis/code/10_quaternion_verify/) | — |
 | 11 | [평행 투영과 원근 투영](/Hongs_Blog/studies/numerical-analysis/projection/) | 평행은 크기 그대로, 원근은 $$z$$로 나눠 먼 것이 작게 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/11_projection_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/11_projection_verify/) | — |
@@ -141,7 +141,7 @@ permalink: "/studies/numerical-analysis/"
 | 13 | [3차 보간 곡선](/Hongs_Blog/studies/numerical-analysis/cubic-interpolation-curve/) | 네 점을 $$u = 0, \frac13, \frac23, 1$$에서 지나게. $$\mathbf p(u) = \mathbf u^\top M_I\mathbf p$$ | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig1.svg) · [fig2](/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig2.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_verify/) | — |
 | 14 | [에르미트 곡선](/Hongs_Blog/studies/numerical-analysis/hermite-curve/) | 끝점 둘과 끝 접선 둘로. 이음점 기울기를 맞출 수 있다 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/14_hermite-curve_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_verify/) | — |
 | 15 | [곡선의 연속성](/Hongs_Blog/studies/numerical-analysis/curve-continuity/) | $$C^0$$ 이어짐, $$C^1$$ 속도, $$C^2$$ 가속도, $$G^1$$ 방향만 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/15_curve-continuity_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_verify/) | — |
-| 16 | [B-스플라인](/Hongs_Blog/studies/numerical-analysis/b-spline/) | 점을 지나지 않고 근처를 지나며 $$C^2$$, 점 하나는 조각 넷에만 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/16_b-spline_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_verify/) | [B-스플라인 예제 사다리](/Hongs_Blog/studies/numerical-analysis/b-spline-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline-ladder_p4/) |
+| 16 | [B-스플라인](/Hongs_Blog/studies/numerical-analysis/b-spline/) | 점을 지나지 않고 근처를 지나며 $$C^2$$, 점 하나는 조각 넷에만 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/16_b-spline_fig1.svg) · [plot](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_plot/) · [verify](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline_verify/) | [B-스플라인 예제 사다리](/Hongs_Blog/studies/numerical-analysis/b-spline-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline-ladder_p4/) |
 
 자료: na07_curves
 필기: 아직 없다.
@@ -203,7 +203,7 @@ permalink: "/studies/numerical-analysis/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 20 | [야코비 방법과 가우스-자이델 방법](/Hongs_Blog/studies/numerical-analysis/jacobi-gauss-seidel/) | 식마다 자기 변수로 풀어 되풀이. 대각 우세면 수렴, 가우스-자이델이 더 빠름 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/20_jacobi-gauss-seidel_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_plot/) | [야코비와 가우스-자이델 예제 사다리](/Hongs_Blog/studies/numerical-analysis/jacobi-gs-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gs-ladder_p4/) |
+| 20 | [야코비 방법과 가우스-자이델 방법](/Hongs_Blog/studies/numerical-analysis/jacobi-gauss-seidel/) | 식마다 자기 변수로 풀어 되풀이. 대각 우세면 수렴, 가우스-자이델이 더 빠름 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/20_jacobi-gauss-seidel_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gauss-seidel_plot/) | [야코비와 가우스-자이델 예제 사다리](/Hongs_Blog/studies/numerical-analysis/jacobi-gs-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gs-ladder_p4/) |
 
 자료: na11_iterative
 필기: 아직 없다.
@@ -343,7 +343,7 @@ permalink: "/studies/numerical-analysis/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 33 | [테일러 급수 방법](/Hongs_Blog/studies/numerical-analysis/taylor-method/) | 한 걸음을 고계 도함수까지 넣은 테일러 급수로. $$k = 1$$이면 오일러 | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/33_taylor-method_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/33_taylor-method_plot/) | — |
-| 34 | [룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/) | 미분 대신 여러 곳의 기울기를 무게 평균. RK4는 4번 재서 4차 (강조)[^강조] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/34_runge-kutta_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_plot/) | [룽게-쿠타 예제 사다리](/Hongs_Blog/studies/numerical-analysis/runge-kutta-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta-ladder_p4/) |
+| 34 | [룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/) | 미분 대신 여러 곳의 기울기를 무게 평균. RK4는 4번 재서 4차 (강조)[^n1] | [fig1](/Hongs_Blog/assets/notes/numerical-analysis/34_runge-kutta_fig1.svg) · [impl](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_impl/) · [plot](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta_plot/) | [룽게-쿠타 예제 사다리](/Hongs_Blog/studies/numerical-analysis/runge-kutta-ladder/) · [문제 코드](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta-ladder_p4/) |
 
 자료: na18_diff_eq
 필기: 아직 없다.
@@ -464,5 +464,5 @@ graph TD
   C36 --> C37
 ```
 
-[^강조]: 원본에서 여러 쪽에 걸쳐 다룬 개념. 동차 좌표: 4회 p.33~43(11쪽, 블록 행렬과 역행렬까지). 임의 축 회전: 6회 p.11~18(8쪽, 다섯 단계를 한 쪽씩 쌓아 보임). 룽게-쿠타: 18회 p.8~10에서 2차 방법을 유도하고 19회의 사격법 예가 RK4를 쓴다. 야코비·가우스-자이델: 11회 13쪽 전체가 이 방법(표 2개, 수렴 그래프, 수렴 조건, 이완). B-스플라인: 7회 p.26~31에서 앞의 세 곡선의 한계를 모두 푸는 방법으로 소개하고, 8회 p.16~17·25에서 곡면과 베지어 변환으로 다시 쓴다.
+[^n1]: 원본에서 여러 쪽에 걸쳐 다룬 개념. 동차 좌표: 4회 p.33~43(11쪽, 블록 행렬과 역행렬까지). 임의 축 회전: 6회 p.11~18(8쪽, 다섯 단계를 한 쪽씩 쌓아 보임). 룽게-쿠타: 18회 p.8~10에서 2차 방법을 유도하고 19회의 사격법 예가 RK4를 쓴다. 야코비·가우스-자이델: 11회 13쪽 전체가 이 방법(표 2개, 수렴 그래프, 수렴 조건, 이완). B-스플라인: 7회 p.26~31에서 앞의 세 곡선의 한계를 모두 푸는 방법으로 소개하고, 8회 p.16~17·25에서 곡면과 베지어 변환으로 다시 쓴다.
 {% endraw %}

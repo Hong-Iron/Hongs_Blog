@@ -225,6 +225,14 @@ for (int i = 0; i < twice.length; i++) { twice[i] *= 2; }        // [2, 4, 6]
 
 원소를 놓을 번지를 타입마다 정해진 눈금에 맞추는 이야기는 [데이터 정렬과 패딩](/Hongs_Blog/studies/compilers/data-alignment/)에 있다.
 
+**자료구조 (1-2학기).** 자료구조 강의는 위의 두 놓는 법에 이름을 붙이고 드는 메모리를 센다. 자바 방식은 배열의 배열(array of arrays)이고, C의 `int a[3][4]`는 가로줄을 차례로 이어 붙인 행 우선 배치(row-major mapping)다[^d1]. 강의가 이 문서에 더하는 것은 셋이다.
+
+- **덤으로 드는 자리.** 3줄 4칸을 배열의 배열로 놓으면 메모리 덩어리가 넷(길이 3, 4, 4, 4)이고, 줄 주소를 담는 배열만큼 자리가 더 든다. 주소 하나를 4바이트로 치면 줄 수 × 4 = 12바이트다. 한 덩어리로 놓으면 시작 주소와 한 줄의 칸 수만 적어 두면 되어 8바이트다[^d2]. 이 셈에는 위에서 말한 길이 칸은 들어 있지 않다.
+- **위치 식.** 한 덩어리에서는 `x[i][j]`가 $$ic + j$$번 칸이다. $$c$$는 한 줄의 칸 수다. 3줄 4칸에서 `x[2][1]`은 $$2 \times 4 + 1 = 9$$번 칸이다[^ds1]. 배열의 배열에서는 이 식을 쓰지 않고 `x[i]`에 적힌 주소를 한 번 따라간다. 대신 한 덩어리는 표 전체만큼 긴 빈자리가 통째로 있어야 한다[^d3].
+- **언어별 목록.** 강의는 Java를 C#, Scala, Swift와 함께 줄 주소의 배열을 쓰는 언어로 든다. C, C++, Pascal은 행 우선 한 덩어리이고, Fortran, MATLAB, R은 세로줄부터 놓는 열 우선 한 덩어리다[^d4]. C에서도 포인터의 배열을 직접 만들면 자바와 같은 모양이 된다[^ds1].
+
+두 놓는 법의 코드와 위치 식의 확인은 [행 우선 배치와 열 우선 배치](/Hongs_Blog/studies/data-structures/row-major-mapping/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -286,4 +294,9 @@ for (int i = 0; i < twice.length; i++) { twice[i] *= 2; }        // [2, 4, 6]
 [^c1]: 컴파일러 14회 강의 자료 「Lecture14 Code generation part 1」, p.8 (C 방식 배열과 Java 방식 배열: Java 방식은 크기 정보가 앞에 붙는다)
 [^c2]: 컴파일러 14회 강의 자료 「Lecture14 Code generation part 1」, p.9 (다차원 배열: C 방식은 한 덩어리, Java 방식은 배열의 배열)
 [^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 길이 칸을 `length`와 범위 검사에 이은 설명, 카드 C5는 원본에 없다. 슬라이드는 "크기 정보가 앞에 붙는다"까지만 적는다. 덩어리와 길이 칸의 수는 슬라이드 p.9의 그림을 $$m = 2$$인 경우로 센 것이다.
+[^d1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.27~29 (2D Array Representation In C: array-of-arrays representation, Row-Major Mapping)
+[^d2]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.27~28, p.31 (덤 = 행 수 × 4바이트, 길이 3, 4, 4, 4인 배열 넷, 한 덩어리의 덤은 4 + 4 = 8바이트)
+[^d3]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.30, p.32 (x[i][j]의 위치 ic + j, 크기 rc인 이어진 메모리가 필요하다)
+[^d4]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.34 (Arrays in Programming Languages)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `x[2][1]`의 수치 예와 C에서 포인터의 배열로 자바와 같은 모양을 만든다는 문장은 원본에 없다. [09_row-major-mapping_impl.c](/Hongs_Blog/studies/data-structures/code/09_row-major-mapping_impl/)로 확인했다.
 {% endraw %}

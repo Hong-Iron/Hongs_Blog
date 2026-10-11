@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Queue", "Deque", "큐", "덱", "데크", "FIFO", "선입선출", "collections.deque", "popleft", "LRU"]
 description: "매표소 줄처럼 먼저 온 사람이 먼저 나가는 것이 큐다. 이 규칙을 선입선출(FIFO)이라 부른다. 파이썬의 deque는 줄의 양쪽 끝에서 넣고 빼는 일이 모두 한 번에 끝나서, 큐로도 스택으로도 양쪽을 다 쓰는 줄(덱)로도 쓴다. 리스트로 큐를 만들면 앞에서 뺄 때마다 나머지를 한…"
@@ -106,6 +106,10 @@ flowchart TD
 - 대조: [스택](/Hongs_Blog/studies/algorithms/stack/)은 마지막에 넣은 것을 먼저 꺼낸다.
 - 연습: [캐시](/Hongs_Blog/studies/algorithms/pg17680/), [행렬과 연산](/Hongs_Blog/studies/algorithms/pg118670/)
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** C에는 `deque`가 없어서 큐를 직접 만든다. 강의는 큐를 "한쪽 끝(rear)으로만 넣고 반대쪽 끝(front)에서만 빼는 줄"로 정한다. 넣기를 AddQ, 빼기를 DeleteQ라 부르고, 5주차부터는 enqueue, dequeue라 부른다[^d1]. 위에서 리스트의 `pop(0)`이 느렸던 것과 같은 일이 C 배열에서도 생긴다. 맨 앞 원소를 늘 0번 칸에 두면 뺄 때마다 나머지를 한 칸씩 당겨야 한다[^d2]. 푸는 길은 둘이다. 배열의 끝과 처음을 이어 고리로 쓰는 [원형 큐](/Hongs_Blog/studies/data-structures/circular-queue/)는 맨 앞과 맨 뒤의 칸 번호만 옮긴다. 대신 칸 하나를 비워 두어 $$n$$칸에 $$n - 1$$개까지만 담는다[^d3]. 노드를 이어서 만드는 [연결 리스트로 만든 큐](/Hongs_Blog/studies/data-structures/linked-queue/)는 맨 앞 노드와 맨 뒤 노드의 주소를 들고 있고, 개수를 미리 정하지 않는다[^d4]. 두 구현과 "뺄 때마다 당기는 배열"은 무작위 연산 10,000번에서 같은 값을 같은 순서로 낸다[^ds1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -135,4 +139,9 @@ flowchart TD
 [^1]: Python 3 표준 라이브러리 문서, `collections.deque`: 양쪽 끝의 append·pop이 어느 방향이든 대략 O(1)이고, 번호로 꺼내기는 양 끝에서 O(1)이지만 가운데로 갈수록 O(n)으로 느려진다고 적혀 있다. `rotate`, `maxlen`도 같은 문서. `OrderedDict`의 `move_to_end`와 `popitem(last=False)`도 같은 모듈 문서. 큐의 정의는 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.1 "Stacks and queues".
 [^2]: Python 3 공식 튜토리얼 5.1.2 "Using Lists as Queues": 리스트는 앞에서 넣고 빼는 것이 느리므로 큐에는 `collections.deque`를 쓰라고 한다.
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '가장 오래 안 쓴 것 버리기 (LRU)' 절의 세 규칙(이미 있으면 remove 후 append, 없고 가득 찼으면 popleft, 그 뒤 append)을 순서도로 옮겼다.
+[^d1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.78~81 (큐의 뜻, front와 rear, FIFO, 추상 자료형의 IsFullQ·IsEmptyQ·AddQ·DeleteQ). 자료구조 5회 강의 자료 「DS_Week5_Lecture_2024」, p.35~36 (enqueue, dequeue)
+[^d2]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.82~83 (맨 앞 원소를 queue[0]에 두면 DeleteQ가 $$O(\text{queue size})$$)
+[^d3]: 같은 자료, p.84, p.91~92 (원형 배열. Empty <=> front == rear, "use only n-1 element")
+[^d4]: 자료구조 5회 강의 자료 「DS_Week5_Lecture_2024」, p.32~34 (연결 리스트로 만든 큐는 개수 제한이 없다. front, rear, count)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 구현을 견준 실험은 슬라이드에 없다. [19_linked-queue_impl.c](/Hongs_Blog/studies/data-structures/code/19_linked-queue_impl/)에서 확인했다.
 {% endraw %}

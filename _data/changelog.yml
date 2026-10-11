@@ -1,6 +1,11 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-12
+  title: 자료구조
+  items:
+    - Studies에 자료구조를 더했어요. 개념 52개, 연습 18개, C와 파이썬 코드 85개예요.
+    - 과목 표지에서 최대 힙에 값이 하나씩 들어가요. 위의 나무와 아래 배열이 같은 힙이에요.
+- date: 2026-10-12
   title: About에 지금 하는 일과 활동
   items:
     - About에 지금 하는 일(DOOH-BU 백엔드 개발)과 활동(중앙대 CCC 대표 순장, 2025년 2학기부터 2026년 1학기까지)을 적었어요.

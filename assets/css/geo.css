@@ -101,6 +101,7 @@ body[data-tone="dark"] .btn--primary {
 [data-course="assembly-language"]      { --course: #5a5f6e; --course-2: #b0432c; }
 [data-course="compilers"]              { --course: #7a3f55; --course-2: #c9952e; }
 [data-course="computer-architecture"]  { --course: #2f5f7d; --course-2: #c9652e; }
+[data-course="data-structures"]        { --course: #2e6a4f; --course-2: #c9652e; }
 
 [data-course] {
   --geo-1: var(--course);

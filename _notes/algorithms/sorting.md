@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Sorting", "정렬", "sorted", "sort", "key", "lambda", "안정 정렬", "stable sort", "병합 정렬", "merge sort", "Timsort", "사전순"]
 description: "시험지를 점수 순으로 다시 쌓는 것처럼, 정렬은 정한 기준에 따라 줄을 다시 세운다. 파이썬에서는 \"무엇을 기준으로\"만 알려 주면 sorted가 빠르게 해 준다. 기준이 같은 것끼리는 원래 순서를 그대로 지키는데, 이 성질 덕분에 \"점수 높은 순, 같으면 이름 순\" 같은 여러 기준…"
@@ -139,6 +139,19 @@ flowchart TD
 - 병합 정렬이 맞다는 것은 강한 귀납법으로 증명한다([수학적 귀납법](/Hongs_Blog/studies/discrete-math/induction/)). 길이 0이나 1인 배열은 이미 정렬되어 있다. 길이가 2 이상이면 두 절반은 더 짧아서, 귀납 가정으로 정렬되어 돌아온다. 정렬된 두 줄을 맨 앞끼리 비교하며 합치면 정렬된 한 줄이 된다.
 - 연습: [K번째수](/Hongs_Blog/studies/algorithms/pg42748/), [실패율](/Hongs_Blog/studies/algorithms/pg42889/), [무지의 먹방 라이브](/Hongs_Blog/studies/algorithms/pg42891/)
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 이 문서는 정렬을 "쓰는 법"에서 출발한다. 자료구조 강의는 정렬을 C 배열로 직접 짜고, 방법마다 가장 좋을 때와 가장 나쁠 때를 따로 따진다[^d1].
+
+| 정렬 | 가장 좋을 때 | 가장 나쁠 때 | 하는 일 |
+|---|---|---|---|
+| [삽입 정렬](/Hongs_Blog/studies/data-structures/insertion-sort/) | $$\Theta(n)$$ | $$\Theta(n^2)$$ | 정렬된 앞부분에 다음 값을 하나씩 끼운다 |
+| [선택 정렬](/Hongs_Blog/studies/data-structures/selection-sort/) | $$O(n^2)$$ | $$O(n^2)$$ | 가장 큰 값을 골라 맨 뒤로 보내기를 되풀이한다 |
+| [퀵 정렬](/Hongs_Blog/studies/data-structures/quick-sort/) | $$O(n \log n)$$ | $$O(n^2)$$ | 기준 값보다 작은 쪽과 큰 쪽으로 가른 뒤 따로 정렬한다. 평균도 $$O(n \log n)$$ |
+| [병합 정렬](/Hongs_Blog/studies/data-structures/merge-sort/) | $$O(n \log n)$$ | $$O(n \log n)$$ | 반으로 나눠 따로 정렬한 뒤 합친다 |
+
+선택 정렬은 입력이 이미 정렬되어 있어도 비교 횟수가 줄지 않고, 병합 정렬은 입력과 상관없이 늘 반씩 나뉜다[^ds1]. 위 '속에서 일어나는 일'의 병합 정렬과 그림 속 삽입 정렬이 이 표의 넷째 줄과 첫째 줄이다. 강의는 평균 실행 시간이 가장 좋은 것으로 퀵 정렬을, 가장 나쁜 경우가 가장 좋은 것으로 병합 정렬을 꼽는다([퀵 정렬과 병합 정렬 비교](/Hongs_Blog/studies/data-structures/quick-vs-merge-sort/)). 메모리에 다 들어가지 않는 자료는 병합 정렬을 고쳐 디스크에서 정렬한다([외부 병합 정렬](/Hongs_Blog/studies/data-structures/external-merge-sort/), [k-way 병합과 선택 트리](/Hongs_Blog/studies/data-structures/k-way-merge/)).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -169,4 +182,6 @@ flowchart TD
 [^2]: Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.3 "Designing algorithms"(병합 정렬과 $$\Theta(n \lg n)$$ 분석), 8.1 "Lower bounds for sorting"(비교 정렬은 최악에 $$\Omega(n \lg n)$$ 번 비교한다).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [05_sorting_plot.py](/Hongs_Blog/studies/algorithms/code/05_sorting_plot/)로 그렸고, 비교 횟수(4,096개에서 병합 정렬 43,928번, 삽입 정렬 4,210,245번), 병합 정렬이 늘 $$n\log_2 n$$ 이하라는 것, 로그-로그 기울기(병합 정렬 1.16, 삽입 정렬 2.01)를 같은 코드로 확인했다. 병합 정렬의 기울기가 1보다 조금 큰 것은 $$\log_2 n$$이 함께 자라기 때문이다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '속에서 일어나는 일' 절의 [5, 2, 4, 1, 3] 병합 정렬 단계 표를 나누기·합치기 나무로 옮겼다(Cormen 외 3판 2.3.1의 병합 정렬 재귀 트리 그림과 같은 모양).
+[^d1]: 자료구조 14회 강의 자료 「DS_Week14_Lecture_2024」, p.3~27 (삽입·선택·퀵·병합 정렬의 설명과 복잡도, p.27의 "Quick sort … best average run time", "Merge sort … best worst-case run time"). 삽입 정렬의 가장 좋을 때와 가장 나쁠 때는 자료구조 2회 강의 자료 「DS_Week2_2024」, p.18
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 선택 정렬과 병합 정렬의 "가장 좋을 때" 칸은 슬라이드에 따로 적혀 있지 않다. 슬라이드는 두 정렬을 $$O(n^2)$$, $$O(n \log n)$$으로만 적는다. 선택 정렬의 비교 횟수가 모든 순열($$n \le 7$$)에서 같다는 것은 [41_selection-sort_verify.py](/Hongs_Blog/studies/data-structures/code/41_selection-sort_verify/)로, 병합 정렬의 비교가 정렬된 입력·역순·무작위 입력 모두에서 $$n\lceil \lg n \rceil$$ 이하라는 것은 [43_merge-sort_verify.py](/Hongs_Blog/studies/data-structures/code/43_merge-sort_verify/)로 확인했다.
 {% endraw %}

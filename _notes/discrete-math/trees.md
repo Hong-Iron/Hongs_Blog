@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Tree", "트리", "나무", "루트 트리", "rooted tree", "이진 트리", "binary tree", "잎", "leaf", "높이", "height", "깊이", "depth", "신장 트리", "spanning tree", "포리스트", "forest", "케일리 공식", "Cayley's formula"]
 description: "트리는 모두 이어져 있으면서 빙 돌아오는 고리(사이클)가 하나도 없는 그래프다. 이어져 있기에 딱 필요한 만큼의 간선만 있어, 간선은 늘 정점보다 하나 적고 두 정점 사이의 길은 하나뿐이다. 그래서 폴더 구조, 조직도, 탐색 트리처럼 \"어디서 어디로 가는 길이 하나\"인 구조를 모두…"
@@ -177,6 +177,19 @@ flowchart LR
 </div>
 
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 이 과목의 강의는 높이를 층의 수로 센다. 뿌리가 1층이고, 노드 하나짜리 트리의 높이가 1이다[^d1]. 이 문서는 뿌리에서 가장 먼 잎까지의 간선 수로 세어 노드 하나짜리가 0이다. 같은 트리를 두 가지로 재면 늘 1 차이가 나고, 식의 지수가 하나씩 어긋난다.
+
+| | 이 문서 (간선 수 $$h$$) | 자료구조 강의 (층 수 $$L = h + 1$$) |
+|---|---|---|
+| 노드 하나짜리 트리의 높이 | 0 | 1 |
+| 이진 트리의 노드 수 $$n$$ | $$h + 1 \le n \le 2^{h+1} - 1$$ | $$L \le n \le 2^{L} - 1$$ |
+| 노드 $$n$$개인 이진 트리의 높이 | $$\lceil \lg(n+1) \rceil - 1 \le h \le n - 1$$ | $$\lceil \lg(n+1) \rceil \le L \le n$$ |
+| 노드 $$n$$개인 힙의 높이 | $$\lfloor \lg n \rfloor$$ | $$\lceil \lg(n+1) \rceil$$ |
+
+강의가 이 문서에 더하는 것은 아래쪽 한계다. 층마다 노드가 적어도 하나는 있어야 하니 노드는 층 수만큼은 있어야 하고, 그 끝값은 한 줄로 늘어선 트리에서 나온다[^d1]. 강의 슬라이드는 힙의 높이를 올림 기호 없이 $$\log_2(n+1)$$로 적었는데, $$n = 9$$면 3.32라서 실제 층 수 4와 맞지 않는다[^d2]. 증명과 예는 [이진 트리](/Hongs_Blog/studies/data-structures/binary-tree/), [포화 이진 트리와 완전 이진 트리](/Hongs_Blog/studies/data-structures/full-complete-binary-tree/)에 있다[^ds1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -211,8 +224,20 @@ flowchart LR
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C5** 어떤 자료에 "높이 $$h$$인 이진 트리의 노드는 많아야 $$2^h - 1$$개"라고 적혀 있다. 이 문서의 "많아야 $$2^{h+1} - 1$$개"와 어긋나는가? 노드 15개가 꽉 찬 이진 트리의 높이를 두 자료는 각각 얼마라 하는가?</summary>
+
+**답:** 어긋나지 않는다. 그 자료는 높이를 층의 수로 세고(노드 하나짜리가 1), 이 문서는 간선의 수로 센다(노드 하나짜리가 0). 15개가 꽉 찬 트리는 층이 4개라서 그 자료로는 높이 4($$2^4 - 1 = 15$$), 이 문서로는 높이 3($$2^{3+1} - 1 = 15$$)이다.<br>
+**이유:** 식을 옮겨 올 때는 그 자료가 노드 하나짜리 트리의 높이를 0이라 하는지 1이라 하는지부터 본다. 자료구조 강의가 층 수 쪽이다[^d1].
+
+</details>
+
+
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 12장 "Simple Graphs"(트리의 성질, 신장 트리). Rosen, *Discrete Mathematics and Its Applications* 7판, 11장(트리, 루트 트리, $$m$$진 트리의 높이).
 [^2]: 케일리 공식의 증명은 Aigner·Ziegler, *Proofs from THE BOOK*, "Cayley's formula for the number of trees" 장에 네 가지가 실려 있다. 이 문서에서는 $$n \le 6$$에서 전수로 확인만 했다.
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 신장 트리 프로토콜은 IEEE 802.1D 표준의 내용이다.
 [^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제' 1·2단계의 신장 트리 만들기(사이클의 간선을 빼기)를 작은 그래프로 그렸다.
+[^d1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.9 ~ 11 (높이 h인 이진 트리의 노드는 적어도 h개(한쪽으로 치우친 트리), 많아야 $$2^h - 1$$개. $$h \le n \le 2^h - 1$$, $$\log_2(n+1) \le h \le n$$. 그림은 뿌리를 Level 1로 적는다)
+[^d2]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.75 ("the height of an n node heap is log₂(n+1)"), p.77 (노드 9개인 힙의 그림: 4층)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 표기의 비교표와 카드 C5는 원본에 없다. 노드 10개까지의 모든 이진 트리 모양에서 두 표기의 식을 [21_binary-tree_verify.py](/Hongs_Blog/studies/data-structures/code/21_binary-tree_verify/)로, 완전 이진 트리의 층 수를 [22_full-complete-binary-tree_verify.py](/Hongs_Blog/studies/data-structures/code/22_full-complete-binary-tree_verify/)로 확인했다.
 {% endraw %}

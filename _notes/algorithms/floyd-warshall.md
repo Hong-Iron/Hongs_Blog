@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Floyd-Warshall", "Floyd–Warshall", "플로이드 워셜", "플로이드", "모든 쌍 최단 경로", "All-Pairs Shortest Paths"]
 description: "모든 도시 쌍 사이의 최단 거리표를 한 번에 채운다. 처음에는 바로 이어진 길만 적고, \"1번 도시를 거쳐도 되면?\", \"1·2번까지 거쳐도 되면?\"처럼 거쳐 갈 도시를 하나씩 늘리며 표를 고친다. 코드는 반복문 세 겹으로 아주 짧지만, 도시 수의 세제곱만큼 걸려 도시가 수백 개일…"
@@ -109,6 +109,14 @@ for k in range(1, n + 1):          # 거쳐 가도 되는 점을 하나씩 늘�
 - 함께 보면 좋은 수학: [가우스 소거법](/Hongs_Blog/studies/linear-algebra/gaussian-elimination/)(피벗 k를 바깥에 두고 행렬 칸 M[i][j]를 M[i][k], M[k][j]로 고치는 세 겹 반복이 같은 모양이다)
 - 브리지: [추이 폐포 ↔ 플로이드–워셜](/Hongs_Blog/studies/algorithms/warshall-floyd/)
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 같은 알고리즘이고 표기만 다르다. 강의는 "$$i$$에서 $$j$$로 가되 중간 점의 번호가 $$k$$ 이하인 가장 짧은 길이"를 $$c(i, j, k)$$로 적는다. 위의 $$D_k[i][j]$$다. $$c(i, j, 0)$$은 간선 하나짜리 길의 길이이고 $$c(i, j, n)$$이 구하려는 답이며, 점화식은 $$c(i, j, k) = \min\{c(i, j, k-1),\ c(i, k, k-1) + c(k, j, k-1)\}$$이다[^d1]. 강의는 이 식을 "정하는 순서"로 끌어낸다. 가장 짧은 길에서 번호가 가장 큰 중간 점을 먼저 정하고, 그 점의 앞 토막과 뒤 토막에서 다시 가장 큰 중간 점을 정한다[^d2]. 이 순서를 그대로 밟아 길을 찍어 내는 것이 [플로이드 알고리즘의 경로 출력](/Hongs_Blog/studies/data-structures/floyd-path-output/)이다.
+
+표를 $$c(i, j, k)$$ 그대로 두면 자리가 $$\Theta(n^3)$$이고, 표 하나를 제자리에서 고치면 $$\Theta(n^2)$$이다. 제자리로 고쳐도 되는 까닭으로 강의는 $$i = k$$일 때 $$c(k, j, k) = \min\{c(k, j, k-1),\ 0 + c(k, j, k-1)\} = c(k, j, k-1)$$을 든다. $$k$$번 줄과 $$k$$번 칸은 $$k$$번째 바퀴에서 바뀌지 않는다는 뜻이고, 위 "정의" 아래의 설명과 같은 내용이다[^d3].
+
+모든 쌍을 구하는 다른 길은 [다익스트라](/Hongs_Blog/studies/algorithms/dijkstra/)를 출발점마다 한 번씩, $$n$$번 돌리는 것이다. 배열 판으로 $$O(n^3)$$이라 걸리는 시간의 차수는 같지만, 음수 간선이 하나도 없어야 한다. 플로이드는 음수 사이클만 없으면 되고, 코드가 짧고 반복마다 딸린 일이 적다는 것이 강의의 정리다. 음수 사이클이 있으면 그 사이클을 돌 때마다 길이가 줄어 가장 짧은 길이 정해지지 않는다[^d4].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -140,4 +148,8 @@ any(D[i][i] < 0 for i in range(1, n + 1))
 
 [^1]: Cormen 외, *Introduction to Algorithms* 3판, 25.2절 "The Floyd-Warshall algorithm"(중간 점을 {1, …, k}로 제한한 점화식과 O(n³)), Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 13.3 "Floyd–Warshall algorithm".
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 양방향 도로 1–2(5), 1–4(9), 2–3(2), 3–4(1)을 그대로 그렸다.
+[^d1]: 자료구조 12회 강의 자료 「DS_Week12_Lecture_ShortestPath_2024」, p.47~50 (세 수의 묶음 (i, j, k)와 비용 함수 c(i, j, k), c(i, j, n)과 c(i, j, 0)의 뜻), p.51~56 (점화식과 세 겹 반복)
+[^d2]: 같은 자료, p.46 (Decisions Sequence: 가장 큰 중간 점부터 정한다)
+[^d3]: 같은 자료, p.56~60 (자리 Θ(n³)과 Θ(n²), 제자리에서 고쳐도 되는 까닭)
+[^d4]: 같은 자료, p.43~45 (다익스트라를 n번 돌리기: O(n³), 음수 간선이 없어야 함. 플로이드: 음수 사이클이 없으면 됨, "Simpler to code, smaller overheads.")
 {% endraw %}

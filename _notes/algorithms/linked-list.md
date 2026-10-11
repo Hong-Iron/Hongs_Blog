@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Linked List", "Doubly Linked List", "이중 연결 리스트", "연결 목록", "prev", "next"]
 description: "손을 잡고 한 줄로 선 사람들처럼, 각 칸이 바로 앞과 바로 뒤 칸만 기억하는 줄이다. 가운데 한 명이 빠지면 양옆 사람이 서로 손을 잡으면 끝이라, 위치만 알면 지우기와 끼워 넣기가 한 번에 된다. 대신 \"앞에서 k번째\"를 찾으려면 맨 앞부터 k번 따라가야 한다. 파이썬 리스트는…"
@@ -119,6 +119,20 @@ def restore():
 - 연습: [표 편집](/Hongs_Blog/studies/algorithms/pg81303/)
 - 지운 역순으로 되살리는 것은 [역함수](/Hongs_Blog/studies/college-math/inverse-function/)로 여러 단계를 되돌리는 방법과 같다. "1.8배 하고 32 더하기"를 "32 빼고 1.8로 나누기"로 되돌리듯, 마지막 단계부터 거꾸로 푼다. 순서가 중요한 까닭도 같다. 되살리기 하나는 그 칸을 지운 직후의 줄에서만 그 지우기를 정확히 되돌린다.
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 위의 `prev`, `nxt` 두 배열과 C의 구조체·포인터는 같은 것을 다르게 적은 것이다. 이 문서는 칸마다 "다음 칸의 번호"를 적었다. C에서는 원소와 "다음 노드의 메모리 주소"를 한 구조체(노드)에 묶고, 노드를 필요할 때마다 `malloc`으로 얻는다. 칸 번호가 주소로, "없음"을 뜻하는 수가 NULL로 바뀐 것뿐이다[^d1].
+
+| 이 문서 | 자료구조 강의의 C 코드 |
+|---|---|
+| 칸 번호 `x` | 노드의 주소 |
+| `nxt[x]` | `x->link` |
+| 뒤 이웃이 없으면 `n` | 마지막 노드의 `link`가 NULL |
+| 맨 앞 칸의 번호 | 첫 노드를 가리키는 변수 `first` |
+| 칸 n개가 처음부터 다 있다 | 끼울 때 `malloc`으로 얻고 지울 때 `free`로 돌려준다 |
+
+강의는 링크가 한 방향으로 하나뿐인 목록을 체인(chain)이라 부르고 여기서 시작한다[^d2]. 체인은 앞 이웃을 적지 않으므로, 노드를 지우려면 그 앞 노드를 처음부터 찾아야 한다([단순 연결 리스트](/Hongs_Blog/studies/data-structures/singly-linked-list/)). 이 문서처럼 앞뒤를 모두 적는 것이 이중 연결 리스트다. 맨 앞에 값 없는 노드(헤더 노드)를 세우고 양 끝을 고리로 이으면, 위 코드의 `if p != -1`, `if q != n`처럼 맨 앞과 맨 뒤를 따로 다루는 줄이 없어진다([연결 리스트의 변형](/Hongs_Blog/studies/data-structures/linked-list-variants/))[^d3]. C에서는 지운 노드를 `free`로 돌려주므로, 이 문서의 "지운 칸이 이웃을 기억하고 있다가 되살아나기"는 노드를 돌려주지 않고 따로 쥐고 있을 때만 된다[^ds1].
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -145,7 +159,20 @@ def restore():
 </details>
 
 
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">**C4** 다섯 칸에 원소가 `data = [c, a, e, d, b]`로 들어 있고 `nxt = [3, 4, 5, 2, 0]`이다. 맨 앞은 1번 칸이고, 뒤 이웃이 없으면 5라고 적는다. 이 줄을 C의 노드와 포인터 그림으로 옮겨 그려라. `first->link->link->data`는 무엇인가?</summary>
+
+**답:** `first → [a] → [b] → [c] → [d] → [e] → NULL`이다. 1번 칸(a)에서 nxt를 따라 4번(b), 0번(c), 3번(d), 2번(e)으로 가고, `nxt[2] = 5`가 NULL이 된다. `first->link->link->data`는 c다.<br>
+**이유:** 칸 번호가 노드의 주소, `nxt[x]`가 `x->link`, 칸 수 5가 NULL이다. 메모리에 놓인 순서(c, a, e, d, b)와 목록의 순서(a, b, c, d, e)는 다르다[^ds1].
+
+</details>
+
+
 [^1]: Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.2절 "Linked lists": 이중 연결 리스트의 삽입·삭제가 O(1)이고 탐색이 O(n)이다.
 [^2]: CPython 소스 `Modules/_collectionsmodule.c`: deque의 데이터를 고정 길이 블록의 이중 연결 리스트에 담는다[확인필요: 블록 크기 등 세부는 버전마다 다를 수 있다].
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시 표의 '처음'과 '2 지우기' 줄(next[1] = 3, prev[3] = 1)과 '지워진 칸 자신의 prev, next는 그대로 둔다'는 설명을 포인터 그림으로 옮겼다.
+[^d1]: 자료구조 5회 강의 자료 「DS_Week5_Lecture_2024」, p.4~5, p.9 (L = (a, b, c, d, e)의 배열 배치와 연결 배치, first, 마지막 링크는 NULL. 노드의 data와 link)
+[^d2]: 같은 자료, p.7~8 (연결 리스트를 그리는 보통 방법, chain의 뜻)
+[^d3]: 같은 자료, p.19~25 (헤더 노드가 있는 체인, 원형 리스트, 이중 연결 리스트, 헤더 노드가 있는 이중 원형 리스트의 그림)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 표기를 짝지은 표, 되살리기에 대한 말, 카드 C4는 슬라이드에 없다. 카드의 배치는 슬라이드 p.4~5 그림(c, a, e, d, b 순으로 놓인 메모리)을 다섯 칸으로 줄인 것이고, nxt를 따라가 a, b, c, d, e가 나오는 것을 파이썬으로 확인했다. 헤더 노드로 `if`가 없어지는 것은 [17_linked-list-variants_impl.c](/Hongs_Blog/studies/data-structures/code/17_linked-list-variants_impl/)에서 확인했다.
 {% endraw %}

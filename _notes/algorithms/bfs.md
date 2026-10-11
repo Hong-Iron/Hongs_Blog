@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["BFS", "Breadth-First Search", "너비 우선 탐색", "넓이 우선 탐색", "최단 거리", "여러 출발점 BFS", "상태 BFS"]
 description: "연못에 돌을 던지면 물결이 가까운 곳부터 둥글게 퍼진다. BFS도 출발점에서 한 걸음 거리인 곳을 모두 본 다음, 두 걸음 거리인 곳을 보는 식으로 퍼진다. 그래서 어떤 곳에 처음 닿는 순간의 걸음 수가 곧 최단 거리다. 단, 모든 한 걸음의 비용이 같을 때만 그렇다. 길마다 비용…"
@@ -207,6 +207,23 @@ flowchart LR
 
 반례 그래프다. s에서 u까지는 b를 거치는 두 걸음 길과 a, w를 거치는 세 걸음 길이 있다. 꺼낼 때 표시하면 늦게 꺼낸 w가 u에 3을 덮어쓴다[^s1].
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 강의는 점 11개 그래프를 1에서 탐색하며 큐가 1 → 2 4 → 4 5 3 6 → 5 3 6 → 3 6 9 7 → 6 9 7 → 9 7 → 7 8 → 8 → (빔)으로 바뀌는 것을 스무 장에 걸쳐 그린다. 1에서 닿지 않는 10과 11은 끝까지 방문하지 않는다[^d1]. 순서는 위 코드와 같다. 강의가 더하는 것은 둘이다.
+
+- **너비 우선 신장 트리.** 아직 표시하지 않은 점에 처음 닿을 때 쓴 간선들은, 그래프가 연결이면 모든 점을 잇는 나무가 된다[^d2]. [깊이 우선 탐색](/Hongs_Blog/studies/algorithms/dfs/)이 남기는 나무와는 보통 모양이 다르다. 너비 우선 쪽에서는 뿌리에서 각 점까지의 간선 수가 곧 그 점까지의 최단 걸음 수다[^ds1].
+- **표현에 따른 비용.** 방문한 점은 큐에 꼭 한 번 들어갔다 나오고, 나올 때 이웃을 살핀다. 이웃 살피기는 인접 행렬이면 $$O(n)$$, 인접 리스트면 그 점의 차수만큼이다. 그래서 행렬로는 전체가 $$O(mn)$$이다. 이 식의 $$m$$은 간선 수가 아니라 탐색한 덩어리에 든 점의 수다(슬라이드의 표기)[^d3]. 리스트로는 위 "활용"의 $$O(n + m)$$이고, 거기서 $$m$$은 간선 수다.
+
+슬라이드는 "깊이 우선 탐색과 복잡도가 같고, 길 찾기·연결 덩어리·신장 트리에 똑같이 쓸 수 있으며, 문제에 따라 어느 한쪽이 낫다"고 정리한다[^d2]. 손으로 따라가는 문제는 [그래프 탐색과 신장 트리 연습](/Hongs_Blog/studies/data-structures/graph-spanning-practice/)에 있다.
+
+<div class="callout callout-warning" markdown="1">
+<div class="callout-title" markdown="span">원본 오류 의심</div>
+
+원문: 11주차 슬라이드 p.28 "Edges used to reach unlabeled vertices define a depth-first spanning tree when the graph is connected." / 문제점: 너비 우선 탐색의 성질을 적은 쪽인데 depth-first라고 적혀 있다. / 수정안: breadth-first spanning tree. / 근거: 같은 그래프(슬라이드 p.3, 점 9개)에서 1부터 두 탐색을 돌리면 나무가 다르다. 간선 여덟 개 가운데 넷만 같고, 뿌리에서 가장 먼 점까지의 간선 수가 깊이 우선은 5, 너비 우선은 4다 — [37_graph-spanning-practice_p5.py](/Hongs_Blog/studies/data-structures/code/37_graph-spanning-practice_p5/)
+
+</div>
+
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -259,4 +276,8 @@ def f(maze, sources):
 
 [^1]: 층 순서 증명의 구성은 Cormen 외, *Introduction to Algorithms* 3판, 22.2절 "Breadth-first search"의 정확성 증명(큐 안의 거리는 줄지 않고 차이가 1 이하)을 층 단위로 다시 쓴 것이다. 구현과 O(n + m)은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 12.2 "Breadth-first search".
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '자주 하는 오해'의 반례 그래프(s–a, s–b, a–w, b–u, w–u)를 그대로 그렸다.
+[^d1]: 자료구조 11회 강의 자료 「DS_Week11_Lecture_GraphTraversal_2024」, p.5~26 (너비 우선 탐색의 설명, 의사코드, 큐가 변하는 예제)
+[^d2]: 같은 자료, p.28 (너비 우선 탐색의 성질)
+[^d3]: 같은 자료, p.27 (시간 복잡도)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 탐색의 나무가 다르다는 것과 "뿌리에서의 간선 수 = 최단 걸음 수"는 슬라이드에 없다. 뒤쪽은 이 문서의 증명에서 나오고, 앞쪽은 슬라이드의 그래프로 두 나무를 만들어 확인했다 — [37_graph-spanning-practice_p5.py](/Hongs_Blog/studies/data-structures/code/37_graph-spanning-practice_p5/)
 {% endraw %}

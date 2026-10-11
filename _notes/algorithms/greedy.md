@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-09"
+updated: "2026-10-12"
 status: "verified"
 aliases: ["Greedy", "Greedy Algorithm", "탐욕법", "탐욕 알고리즘", "욕심쟁이 방법", "교환 논증", "회의실 배정"]
 description: "갈림길마다 지금 가장 좋아 보이는 길을 고르고, 한 번 고른 것은 되돌리지 않는 방법이다. 정렬 한 번과 반복 한 번으로 끝나서 빠르고 코드도 짧다. 문제는 지금 좋아 보이는 선택이 나중에 손해가 되는 경우가 많다는 것이다. 그래서 \"이렇게 골라도 손해가 없다\"는 이유를 댈 수 있…"
@@ -115,6 +115,12 @@ def max_meetings(meetings):
 </div>
 
 
+## 과목별 관점
+
+**자료구조 (1-2학기).** 강의에는 가장 좋은 답을 보장하지 못하는데도 쓰는 그리디가 나온다. 똑같은 기계 $$m$$대에 작업 $$n$$개를 나눠 맡겨 마지막 작업이 끝나는 시각을 가장 이르게 하는 문제다. 오래 걸리는 작업부터, 그때 가장 먼저 비는 기계에 맡긴다(LPT)[^d1]. 기계 3대에 걸리는 시간이 6, 2, 3, 5, 10, 7, 14인 작업을 이렇게 맡기면 16에 끝나고, 이것은 가장 좋은 답이다. 하지만 늘 그렇지는 않다. 기계 2대에 3, 3, 2, 2, 2를 맡기면 LPT는 7에 끝나는데 가장 좋은 일정은 6에 끝난다[^ds1].
+
+요약의 "손해가 없다는 이유를 댈 수 있을 때만 믿는다"와 어긋나 보이지만 사정이 다르다. 이 문제는 가장 좋은 답을 빨리 찾는 방법이 알려져 있지 않다(NP-hard). 그래서 "정답인가" 대신 "정답에서 얼마나 벗어날 수 있는가"를 따진다. LPT의 답은 가장 좋은 답의 $$\frac43 - \frac{1}{3m}$$배를 넘지 않는다[^d2]. 바꿔치기로 "손해가 없다"를 보이는 대신 "손해가 이만큼을 넘지 않는다"를 보인 것이다. 가장 먼저 비는 기계는 최소 힙으로 찾는다: [LPT 스케줄링](/Hongs_Blog/studies/data-structures/lpt-scheduling/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -144,4 +150,7 @@ def max_meetings(meetings):
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 6.1 "Coin problem": 동전 {1, 3, 4}로 6을 만들 때 그리디는 4 + 1 + 1, 최적은 3 + 3이다.
 [^2]: 같은 책 6.2 "Scheduling"(가장 먼저 끝나는 일부터 고르면 최적), Cormen 외, *Introduction to Algorithms* 3판, 16.1절 "An activity-selection problem"(같은 문제의 증명), 16.3절 "Huffman codes"(허프만 부호화도 그리디이고, 만든 부호는 최적 접두어 부호다).
 [^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [22_greedy_plot.py](/Hongs_Blog/studies/algorithms/code/22_greedy_plot/)로 그렸고, 그리디가 A, D, H를 고른다는 것과 모든 조합을 봐도 최대가 3이라는 것을 같은 코드로 확인했다.
+[^d1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.66 ~ 68 (Machine scheduling, 기계 3대와 작업 7개의 예, LPT 일정의 Finish time 16)
+[^d2]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.69 ~ 70 (LPT는 최소 종료 시각을 보장하지 않는다. 비율은 4/3 − 1/(3m) 이하. 최소 종료 시각 스케줄링은 NP-hard이고 LPT는 좋은 휴리스틱이다)
+[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 16이 가장 좋은 답이라는 것과 3, 3, 2, 2, 2의 예, 바꿔치기와의 비교는 원본에 없다. 수치는 모든 맡기는 방법을 다 해 보는 코드와 견줘 확인했다: [29_lpt-scheduling_verify.py](/Hongs_Blog/studies/data-structures/code/29_lpt-scheduling_verify/).
 {% endraw %}
