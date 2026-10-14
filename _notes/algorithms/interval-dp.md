@@ -130,7 +130,7 @@ for length in range(2, k + 1):                 # 짧은 구간부터
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C2** 표를 구간 길이가 짧은 것부터 채워야 하는 까닭은?</summary>
 
-**답:** dp[i][j]는 나누는 자리마다 dp[i][m]과 dp[m+1][j]를 읽는다. 두 구간 모두 [i, j]보다 짧다. 짧은 구간을 먼저 채워 두면 읽을 칸이 늘 준비되어 있다. i를 작은 것부터 도는 순서로는 dp[m+1][j](i보다 큰 시작점)가 아직 비어 있다.
+**답:** dp[i][j]는 나누는 자리마다 dp[i][m]과 dp[m+1][j]를 읽는다. 두 구간 모두 [i, j]보다 짧다. 짧은 구간을 먼저 채워 두면 읽을 칸이 늘 준비되어 있다. i를 작은 것부터 도는 순서로는 dp[m+1][j]\(i보다 큰 시작점)가 아직 비어 있다.
 
 </details>
 

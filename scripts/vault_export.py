@@ -461,6 +461,13 @@ def add_hard_breaks(lines, nested=False):
 WIKILINK_RE = re.compile(r"(!?)\[\[([^\[\]]+?)\]\]")
 INLINE_MATH_RE = re.compile(r"(?<![\\$])\$(?=[^\s$])((?:\\.|[^$\\\n])+?)(?<!\\)\$(?![$\d])")
 CODE_SPAN_RE = re.compile(r"(`+)(.+?)\1")
+SITE_LINK_RE = re.compile(r"\[(.*)\]\(([^()\s]*)\)", re.S)
+# Vault prose such as R[i][k](흡수 법칙) or [9](2~3) is not a link, but kramdown
+# reads it as one. Only footnote refs and links to a full URL keep their "](".
+BRACKET_PAREN_RE = re.compile(r"(\[\^[^\]\s]+)?(?<!\\)\]\((?!https?://|mailto:)")
+# "- [1, 5, 8]: [5, 1, 8]로 놓으면 …" would be a link definition, turning every
+# later [1, 5, 8] on the page into a link. Footnote definitions stay.
+LINK_DEF_RE = re.compile(r"^(\s*(?:>\s*)*(?:(?:[-*+]|\d+\.)\s+)?)\[(?!\^)([^\]\n]+)\]:")
 
 
 class Linker:
@@ -556,13 +563,22 @@ def convert_spans(lines, linker, source):
             maths.append((f"$${tex}$$", converted))
             return f"\x01{len(maths) - 1}\x01"
 
+        def site_link(mm):
+            # the brackets of a link made here are hidden from the escapes below
+            res = linker.replace(mm, source)
+            sm = SITE_LINK_RE.fullmatch(res)
+            return f"\x02{sm.group(1)}\x03{sm.group(2)}\x04" if sm else res
+
         work = CODE_SPAN_RE.sub(stash_code, line)
-        work = WIKILINK_RE.sub(lambda mm: linker.replace(mm, source), work)
+        work = WIKILINK_RE.sub(site_link, work)
         work = re.sub(r"==([^=\s][^=]*?)==", r"<mark>\1</mark>", work)
         work = re.sub(r"\$\$(.+?)\$\$", lambda mm: stash_math(mm.group(1), False), work)
         work = INLINE_MATH_RE.sub(lambda mm: stash_math(mm.group(1), True), work)
         if not table_row:
             work = re.sub(r"(?<!\\)\|", r"\\|", work)
+        work = BRACKET_PAREN_RE.sub(lambda mm: mm.group(0) if mm.group(1) else "]\\(", work)
+        work = LINK_DEF_RE.sub(r"\1\\[\2]:", work)
+        work = work.replace("\x02", "[").replace("\x03", "](").replace("\x04", ")")
 
         # A line holding nothing but one inline formula would become display
         # math in kramdown; a leading backslash keeps it inline.

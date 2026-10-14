@@ -127,7 +127,7 @@ C에는 `append`와 `pop`을 해 주는 리스트가 없어서 스택을 직접 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C1** 빈 스택에 넣기 1, 넣기 2, 꺼내기, 넣기 3, 넣기 4, 꺼내기를 차례로 했다. 꺼낸 값들과 남은 스택은?</summary>
 
-**답:** 꺼낸 값은 2, 4이고, 남은 스택은 [1, 3](3이 맨 위)이다. 꺼낼 때마다 그때 맨 위의 것이 나온다.
+**답:** 꺼낸 값은 2, 4이고, 남은 스택은 [1, 3]\(3이 맨 위)이다. 꺼낼 때마다 그때 맨 위의 것이 나온다.
 
 </details>
 
@@ -149,7 +149,7 @@ C에는 `append`와 `pop`을 해 주는 리스트가 없어서 스택을 직접 
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C4** 어떤 파서의 스택이 [1, 3, 6, 8](8이 맨 위)이다. 기호 3개짜리 규칙으로 묶으면서 "셋을 꺼내고, 드러난 맨 위 상태에서 갈 상태 2를 넣는다"를 했다. 스택은 어떻게 되는가? 꺼낸 값은 어떤 차례로 나오는가?</summary>
+<summary class="callout-title" markdown="span">**C4** 어떤 파서의 스택이 [1, 3, 6, 8]\(8이 맨 위)이다. 기호 3개짜리 규칙으로 묶으면서 "셋을 꺼내고, 드러난 맨 위 상태에서 갈 상태 2를 넣는다"를 했다. 스택은 어떻게 되는가? 꺼낸 값은 어떤 차례로 나오는가?</summary>
 
 **답:** 8, 6, 3이 이 차례로 나오고 맨 위가 1이 된다. 거기에 2를 넣어 [1, 2]가 된다. 가장 나중에 넣은 8이 가장 먼저 나온다.
 
