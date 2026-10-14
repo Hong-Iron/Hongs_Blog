@@ -1,5 +1,11 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
+- date: 2026-10-15
+  title: Rust
+  items:
+    - Studies에 Rust를 더했어요. 수업이 아니라 공식 문서로 혼자 공부한 과목이에요. 개념 50개, 연습 9개, 캡스톤 6단계, 코드 96개예요.
+    - 코드는 모두 서식 검사, clippy 경고 0, 테스트, 실행을 거쳤어요. 마지막 단원에서 단축 URL 서비스를 여섯 단계로 키워요.
+    - 과목 표지에서 String 하나가 주인을 옮기고, 빌려졌다가, 범위 끝에서 치워져요.
 - date: 2026-10-12
   title: 데이터베이스 설계
   items:

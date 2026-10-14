@@ -283,6 +283,7 @@ permalink: "/studies/data-structures/"
 - [해시 테이블의 홈 버킷과 충돌](/Hongs_Blog/studies/data-structures/hash-table-terms/) ↔ [심벌 테이블과 스코프 검사](/Hongs_Blog/studies/compilers/symbol-table-scope-checking/) (3-2학기 컴파일러): 이름으로 바로 찾는 표
 - [외부 병합 정렬](/Hongs_Blog/studies/data-structures/external-merge-sort/) ↔ [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) (3-1학기 운영체제): 디스크를 읽고 쓰는 횟수가 시간을 정한다
 - [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/) ↔ [B-트리와 이진 탐색 트리 비교](/Hongs_Blog/studies/database-design/b-tree-vs-bst/) (2-2학기 데이터베이스 설계): 노드 하나에 키를 여럿 담으면 디스크에 맞는 탐색 트리가 된다
+- [malloc·free ↔ 소유권과 Drop](/Hongs_Blog/studies/rust/malloc-free-vs-ownership/) ↔ [동적 메모리 할당](/Hongs_Blog/studies/data-structures/dynamic-memory-allocation/), [포인터 인자와 값 전달](/Hongs_Blog/studies/data-structures/pointer-parameters/) (Rust): C에서 사람이 기억하던 `free`를 주인의 범위 끝이 대신한다
 
 ## 흐름
 ```mermaid

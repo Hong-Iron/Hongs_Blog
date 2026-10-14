@@ -132,6 +132,15 @@
       codes: 69
       heavy: 22
       units: "컴파일러 개요: 번역 방식과 여섯 단계 · 어휘 분석 (1): 토큰과 정규 표현식 · 어휘 분석 (2): 유한 오토마타로 토큰 알아보기 · 구문 분석 (1): 문맥 자유 문법과 AST …"
+    - name: "Rust"
+      sub: "소프트웨어"
+      slug: "rust"
+      url: "/studies/rust/"
+      concepts: 50
+      practices: 15
+      codes: 96
+      heavy: 11
+      units: "시작과 도구 · 소유권과 빌림 · 데이터 모델링 · 트레이트와 제네릭 …"
     - name: "어셈블리어"
       sub: "컴퓨터 시스템"
       slug: "assembly-language"

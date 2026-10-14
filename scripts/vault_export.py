@@ -68,6 +68,7 @@ TRACKS = [
             ("1-2학기/자료구조", "자료구조", "data-structures"),
             ("알고리즘", "알고리즘", "algorithms"),
             ("3-2학기/컴파일러", "컴파일러", "compilers"),
+            ("Rust", "Rust", "rust"),
         ]),
         ("컴퓨터 시스템", [
             ("2-1학기/어셈블리어", "어셈블리어", "assembly-language"),
@@ -109,7 +110,7 @@ EXCLUDE = {
 # they contain other students' reconstructions of exam questions.
 PRIVATE_NAME = re.compile(r"기출|_past-(?:mid|type)-")
 
-CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript", ".java": "java", ".sql": "sql"}
+CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript", ".java": "java", ".sql": "sql", ".rs": "rust"}
 
 DOC_TYPE_LABELS = {
     "definition": "정의", "theorem": "정리", "algorithm": "알고리즘",

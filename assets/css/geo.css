@@ -103,6 +103,7 @@ body[data-tone="dark"] .btn--primary {
 [data-course="computer-architecture"]  { --course: #2f5f7d; --course-2: #c9652e; }
 [data-course="data-structures"]        { --course: #2e6a4f; --course-2: #c9652e; }
 [data-course="database-design"]        { --course: #7b5a34; --course-2: #1f6874; }
+[data-course="rust"]                   { --course: #9c3b25; --course-2: #3a6b8c; }
 
 [data-course] {
   --geo-1: var(--course);

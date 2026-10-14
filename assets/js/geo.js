@@ -360,7 +360,8 @@
     "compilers": ["circle", "arrow", "ring"],
     "computer-architecture": ["tile", "tallbar", "ring"],
     "data-structures": ["circle", "tile", "arrow"],
-    "database-design": ["diamond", "tile", "capsule"]
+    "database-design": ["diamond", "tile", "capsule"],
+    "rust": ["squareOutline", "arrow", "capsule"]
   };
 
   function mixHex(a, b, f) {
@@ -1469,6 +1470,68 @@
         var q = ["SELECT Lname, Dname", "FROM EMPLOYEE, DEPARTMENT", "WHERE Dno = Dnumber"];
         for (i = 0; i < q.length; i++) title(q[i], x0, B.y + (68 + i * 9) * v, 56 * u);
       }
+    }
+  };
+
+  // Rust: one String on the heap. Ownership moves from a to b, two shared borrows read it,
+  // then one &mut borrow has it alone, and at the closing brace the owner drops it.
+  MOTIFS.rust = {
+    draw: function (ctx, L, S, F) {
+      var B = coverBox(L), u = B.w / 100, v = B.h / 100, i;
+      var code = ["let a = String::from(\"hi\");", "let mut b = a;", "let r1 = &b;", "let r2 = &b;", "let m = &mut b;", "}"];
+      var step = Math.min(code.length - 1, Math.floor(F.p * (code.length + 0.6)));
+      var wide = L.mode === "thumb" || L.mode === "full" || B.w >= 380;
+      var fs = Math.max(9, Math.min(13, 6.4 * v)), sx = wide ? 54 : 6, hx = wide ? 80 : 58;
+      if (wide) {
+        for (i = 0; i < code.length; i++) {
+          var cur = i === step, done = i < step;
+          if (cur) {
+            roundRect(ctx, B.x, B.y + (8 + i * 14) * v - fs, 49 * u, fs * 1.45, 3);
+            ctx.fillStyle = rgba(F.pal.b, 0.16); ctx.fill();
+          }
+          ctx.save(); ctx.beginPath(); ctx.rect(B.x, B.y, 49 * u, B.h); ctx.clip();
+          label(ctx, code[i], B.x + 1.5 * u, B.y + (8 + i * 14) * v, rgba(F.pal.ink, cur ? 0.9 : (done ? 0.5 : 0.22)), fs);
+          ctx.restore();
+        }
+      }
+      // stack slots on the left, the heap value on the right
+      var names = ["a", "b", "r1", "r2", "m"], sw = 16 * u, sh = 11 * v, gap = 15 * v, top = B.y + 4 * v;
+      function slotY(k) { return top + k * gap; }
+      var dropped = step === 5, hy = top + 1.5 * gap, hw = 18 * u, hh = 2 * sh;
+      // which slots exist at this line: a and b stay until the brace, borrows end before &mut starts
+      var on = [true, step >= 1, step === 2 || step === 3, step === 3, step === 4];
+      label(ctx, "stack", B.x + sx * u, top - 1.2 * v, rgba(F.pal.ink, 0.4), Math.max(8, fs - 2));
+      label(ctx, "heap", B.x + hx * u, hy - 2.4 * v, rgba(F.pal.ink, 0.4), Math.max(8, fs - 2));
+      for (i = 0; i < names.length; i++) {
+        var moved = i === 0 && step >= 1, dim = moved || dropped;
+        roundRect(ctx, B.x + sx * u, slotY(i), sw, sh, 3);
+        ctx.fillStyle = rgba(F.pal.a, on[i] && !dim ? 0.16 : 0.03); ctx.fill();
+        ctx.strokeStyle = rgba(F.pal.a, on[i] ? (dim ? 0.3 : 0.85) : 0.12); ctx.lineWidth = 1.2; ctx.stroke();
+        if (on[i]) label(ctx, names[i], B.x + sx * u + 1.6 * u, slotY(i) + sh * 0.7, rgba(F.pal.ink, dim ? 0.3 : 0.85), fs);
+        if (moved && !dropped) label(ctx, "moved", B.x + sx * u + 6.5 * u, slotY(i) + sh * 0.7, rgba(F.pal.b, 0.75), Math.max(8, fs - 3));
+      }
+      // the heap block: alive until the owner's scope ends
+      roundRect(ctx, B.x + hx * u, hy, hw, hh, 4);
+      ctx.fillStyle = rgba(F.pal.a, dropped ? 0.02 : 0.2); ctx.fill();
+      ctx.strokeStyle = rgba(F.pal.a, dropped ? 0.15 : 0.9); ctx.lineWidth = 1.4; ctx.stroke();
+      label(ctx, dropped ? "drop" : "\"hi\"", B.x + hx * u + 3 * u, hy + hh * 0.6, rgba(dropped ? F.pal.b : F.pal.ink, dropped ? 0.8 : 0.85), fs);
+      if (dropped) return;
+      // owner arrow: a before the move, b after it
+      var owner = step >= 1 ? 1 : 0, ex = B.x + hx * u - 0.6 * u, ey = hy + hh / 2;
+      ctx.strokeStyle = ctx.fillStyle = rgba(F.pal.a, 0.9); ctx.lineWidth = 2;
+      arrow(ctx, B.x + sx * u + sw, slotY(owner) + sh / 2, ex, ey, 7);
+      // borrows point at b, not at the heap
+      var bx = B.x + sx * u + sw * 0.55, by = slotY(1) + sh;
+      function borrow(k, mut) {
+        ctx.save();
+        if (!mut) ctx.setLineDash([4, 3]);
+        ctx.strokeStyle = ctx.fillStyle = rgba(mut ? F.pal.b : F.pal.ink, mut ? 0.95 : 0.5); ctx.lineWidth = mut ? 2 : 1.3;
+        arrow(ctx, B.x + sx * u + sw * (mut ? 0.55 : 0.3 + 0.2 * (k - 2)), slotY(k), bx + (mut ? 0 : (k - 2.5) * 3 * u), by + 1, 6);
+        ctx.restore();
+      }
+      if (step === 2 || step === 3) borrow(2, false);
+      if (step === 3) borrow(3, false);
+      if (step === 4) borrow(4, true);
     }
   };
 

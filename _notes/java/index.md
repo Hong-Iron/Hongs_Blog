@@ -320,6 +320,7 @@ permalink: "/studies/java/"
 - [참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/) ↔ [프로세스](/Hongs_Blog/studies/operating-systems/process/), [스레드](/Hongs_Blog/studies/operating-systems/thread/) (3-1학기 운영체제): JVM의 스택·힙과 프로세스의 스택·힙
 - [연산자와 오버플로](/Hongs_Blog/studies/java/java-operators/) ↔ [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/) (2-1학기 자료와 정보): 범위를 넘으면 반대쪽 끝으로 도는 까닭
 - [비트 연산](/Hongs_Blog/studies/java/java-bitwise/) ↔ [불 대수와 논리 회로](/Hongs_Blog/studies/discrete-math/boolean-algebra/) (공학수학 이산수학): 자리마다 하는 AND·OR·XOR
+- [Java 인터페이스 ↔ 트레이트](/Hongs_Blog/studies/rust/java-interface-vs-trait/) ↔ [인터페이스](/Hongs_Blog/studies/java/java-interface/), [디폴트·정적·private 메서드](/Hongs_Blog/studies/java/java-interface-methods/) (Rust): 둘 다 메서드 목록 약속이고, 트레이트는 남의 타입에도 붙고 필드를 갖지 않는다
 
 ## 흐름
 ```mermaid

@@ -353,7 +353,8 @@ permalink: "/studies/operating-systems/"
 떠올려 보기: 노트를 닫고 인증, 접근 제어, 침입 탐지, 악성 코드 대응이 각각 어느 단계에서 막는지 순서대로 써 본다.
 
 ## 다른 과목과의 연결
-- 아직 없다. 후보: 4-1학기 컴퓨터 통신의 패킷 스위칭(쉬는 시간에 남이 링크를 씀) ↔ 다중 프로그래밍(입출력 대기 동안 남이 프로세서를 씀).
+- [모니터 ↔ Mutex](/Hongs_Blog/studies/rust/monitor-vs-mutex/) ↔ [모니터](/Hongs_Blog/studies/operating-systems/monitor/), [생산자-소비자 문제](/Hongs_Blog/studies/operating-systems/producer-consumer/) (Rust): 모니터의 공유 데이터와 조건 변수가 Rust에서는 `Mutex` 안의 데이터와 `Condvar`가 된다.
+- 후보: 4-1학기 컴퓨터 통신의 패킷 스위칭(쉬는 시간에 남이 링크를 씀) ↔ 다중 프로그래밍(입출력 대기 동안 남이 프로세서를 씀).
 
 ## 흐름
 ```mermaid
