@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-interface-inheritance/"
 parent_title: "다중 구현과 인터페이스 상속"
 description: "자바 프로그래밍 · 다중 구현과 인터페이스 상속 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/27_java-interface-inheritance_impl/"
 ---
 {% raw %}

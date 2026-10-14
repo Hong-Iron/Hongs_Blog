@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/ensemble-learning/"
 parent_title: "앙상블 학습"
 description: "데이터 과학 · 앙상블 학습 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/20_ensemble-learning_verify/"
 ---
 {% raw %}

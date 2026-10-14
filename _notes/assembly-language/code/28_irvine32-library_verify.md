@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/irvine32-library/"
 parent_title: "Irvine32 라이브러리"
 description: "어셈블리어 · Irvine32 라이브러리 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/28_irvine32-library_verify/"
 ---
 {% raw %}

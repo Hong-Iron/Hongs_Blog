@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/hardware-interrupt-irq/"
 parent_title: "하드웨어 인터럽트와 IRQ"
 description: "어셈블리어 · 하드웨어 인터럽트와 IRQ 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/55_hardware-interrupt-irq_verify/"
 ---
 {% raw %}

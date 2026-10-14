@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-trigger/"
 parent_title: "트리거와 ECA 규칙"
 description: "데이터베이스 설계 · 트리거와 ECA 규칙 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/74_sql-trigger_verify-sql/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/polynomial/"
 parent_title: "다항식과 방정식"
 description: "대학수학 · 다항식과 방정식 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/04_polynomial_plot/"
 ---
 {% raw %}

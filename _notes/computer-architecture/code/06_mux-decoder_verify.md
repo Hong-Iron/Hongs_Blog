@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mux-decoder/"
 parent_title: "멀티플렉서와 디코더"
 description: "컴퓨터 구조 · 멀티플렉서와 디코더 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/06_mux-decoder_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/change-of-basis/"
 parent_title: "기저 변환"
 description: "선형대수학 · 기저 변환 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/14_change-of-basis_plot/"
 ---
 {% raw %}

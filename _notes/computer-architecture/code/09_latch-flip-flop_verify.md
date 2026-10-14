@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/latch-flip-flop/"
 parent_title: "래치와 플립플롭"
 description: "컴퓨터 구조 · 래치와 플립플롭 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/09_latch-flip-flop_verify/"
 ---
 {% raw %}

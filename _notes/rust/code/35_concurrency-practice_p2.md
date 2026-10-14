@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/concurrency-practice/"
 parent_title: "동시성 연습"
 description: "Rust · 동시성 연습 문제 2 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/35_concurrency-practice_p2/"
 ---
 {% raw %}

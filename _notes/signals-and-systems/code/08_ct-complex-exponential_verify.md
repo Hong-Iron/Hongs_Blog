@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/ct-complex-exponential/"
 parent_title: "연속 시간 복소 지수 신호"
 description: "신호 및 시스템 · 연속 시간 복소 지수 신호 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/08_ct-complex-exponential_verify/"
 ---
 {% raw %}

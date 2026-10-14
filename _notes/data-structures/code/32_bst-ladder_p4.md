@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/bst-ladder/"
 parent_title: "이진 탐색 트리 삽입·삭제 예제 사다리"
 description: "자료구조 · 이진 탐색 트리 삽입·삭제 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/32_bst-ladder_p4/"
 ---
 {% raw %}

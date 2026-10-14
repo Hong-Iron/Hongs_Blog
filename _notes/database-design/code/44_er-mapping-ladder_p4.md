@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/er-mapping-ladder/"
 parent_title: "ER-관계형 사상 예제 사다리"
 description: "데이터베이스 설계 · ER-관계형 사상 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/44_er-mapping-ladder_p4/"
 ---
 {% raw %}

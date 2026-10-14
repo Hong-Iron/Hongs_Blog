@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/dft/"
 parent_title: "이산 푸리에 변환과 FFT"
 description: "선형대수학 · 이산 푸리에 변환과 FFT 구현 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/27_dft_impl/"
 ---
 {% raw %}

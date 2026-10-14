@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/bitwise-instructions/"
 parent_title: "비트 논리 명령"
 description: "어셈블리어 · 비트 논리 명령 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/29_bitwise-instructions_verify/"
 ---
 {% raw %}

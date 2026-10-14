@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/image-function/"
 parent_title: "이미지 함수"
 description: "휴먼 인터페이스 미디어 · 이미지 함수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/12_image-function_plot/"
 ---
 {% raw %}

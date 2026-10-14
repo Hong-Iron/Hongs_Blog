@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/function-properties/"
 parent_title: "함수의 성질과 집합의 크기"
 description: "이산수학 · 함수의 성질과 집합의 크기 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/07_function-properties_verify/"
 ---
 {% raw %}

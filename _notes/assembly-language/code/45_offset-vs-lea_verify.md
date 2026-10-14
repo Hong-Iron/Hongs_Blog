@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/offset-vs-lea/"
 parent_title: "OFFSET과 LEA 비교"
 description: "어셈블리어 · OFFSET과 LEA 비교 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/45_offset-vs-lea_verify/"
 ---
 {% raw %}

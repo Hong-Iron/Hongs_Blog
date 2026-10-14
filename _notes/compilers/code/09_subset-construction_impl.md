@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/subset-construction/"
 parent_title: "부분집합 구성법"
 description: "컴파일러 · 부분집합 구성법 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/09_subset-construction_impl/"
 ---
 {% raw %}

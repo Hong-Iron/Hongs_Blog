@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/trig-identities/"
 parent_title: "삼각함수 항등식"
 description: "대학수학 · 삼각함수 항등식 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/14_trig-identities_verify/"
 ---
 {% raw %}

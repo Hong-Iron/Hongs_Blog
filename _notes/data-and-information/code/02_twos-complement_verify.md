@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/twos-complement/"
 parent_title: "정수의 2진 표현과 2의 보수"
 description: "자료와 정보 · 정수의 2진 표현과 2의 보수 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/02_twos-complement_verify/"
 ---
 {% raw %}

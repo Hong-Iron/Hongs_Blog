@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/distance-similarity/"
 parent_title: "거리와 유사도"
 description: "자료와 정보 · 거리와 유사도 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/08_distance-similarity_verify/"
 ---
 {% raw %}

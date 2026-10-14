@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/capstone-1/"
 parent_title: "캡스톤 1 도메인 타입과 에러"
 description: "Rust · 캡스톤 1 도메인 타입과 에러 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/24_capstone-1_p1/"
 ---
 {% raw %}

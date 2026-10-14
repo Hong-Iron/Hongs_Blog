@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/sparse-matrix-triples/"
 parent_title: "희소 행렬의 3원소 표현"
 description: "자료구조 · 희소 행렬의 3원소 표현 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/11_sparse-matrix-triples_impl/"
 ---
 {% raw %}

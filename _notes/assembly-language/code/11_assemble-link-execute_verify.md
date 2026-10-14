@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/assemble-link-execute/"
 parent_title: "어셈블·링크·실행 과정"
 description: "어셈블리어 · 어셈블·링크·실행 과정 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/11_assemble-link-execute_verify/"
 ---
 {% raw %}

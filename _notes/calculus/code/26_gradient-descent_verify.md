@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/gradient-descent/"
 parent_title: "경사 하강법"
 description: "미분적분학 · 경사 하강법 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/26_gradient-descent_verify/"
 ---
 {% raw %}

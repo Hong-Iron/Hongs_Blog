@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/database-approach-characteristics/"
 parent_title: "데이터베이스 방식의 네 가지 특징"
 description: "데이터베이스 설계 · 데이터베이스 방식의 네 가지 특징 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/02_database-approach-characteristics_verify/"
 ---
 {% raw %}

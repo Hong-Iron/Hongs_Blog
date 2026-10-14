@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/sequence-limits/"
 parent_title: "수열의 극한과 e"
 description: "미분적분학 · 수열의 극한과 e 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/03_sequence-limits_verify/"
 ---
 {% raw %}

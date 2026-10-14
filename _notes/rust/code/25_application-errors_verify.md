@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/application-errors/"
 parent_title: "애플리케이션 에러 처리"
 description: "Rust · 애플리케이션 에러 처리 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/25_application-errors_verify/"
 ---
 {% raw %}

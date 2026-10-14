@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-attribute-constraints/"
 parent_title: "속성 제약 NOT NULL·DEFAULT·CHECK"
 description: "데이터베이스 설계 · 속성 제약 NOT NULL·DEFAULT·CHECK 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/48_sql-attribute-constraints_verify-sql/"
 ---
 {% raw %}

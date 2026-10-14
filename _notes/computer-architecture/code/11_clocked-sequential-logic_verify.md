@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/clocked-sequential-logic/"
 parent_title: "클록과 순차 회로"
 description: "컴퓨터 구조 · 클록과 순차 회로 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/11_clocked-sequential-logic_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/singly-linked-list/"
 parent_title: "단순 연결 리스트"
 description: "자료구조 · 단순 연결 리스트 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/15_singly-linked-list_impl/"
 ---
 {% raw %}

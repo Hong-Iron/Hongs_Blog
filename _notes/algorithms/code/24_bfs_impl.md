@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/bfs/"
 parent_title: "너비 우선 탐색(BFS)"
 description: "알고리즘 · 너비 우선 탐색(BFS) 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/24_bfs_impl/"
 ---
 {% raw %}

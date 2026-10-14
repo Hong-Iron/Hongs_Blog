@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/release-readiness-practice/"
 parent_title: "배포 준비 연습"
 description: "Rust · 배포 준비 연습 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/50_release-readiness-practice_p3/"
 ---
 {% raw %}

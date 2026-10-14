@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/graph-basics/"
 parent_title: "그래프의 기초"
 description: "이산수학 · 그래프의 기초 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/32_graph-basics_verify/"
 ---
 {% raw %}

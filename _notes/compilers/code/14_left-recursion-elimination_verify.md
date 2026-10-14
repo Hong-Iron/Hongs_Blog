@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/left-recursion-elimination/"
 parent_title: "좌재귀 없애기"
 description: "컴파일러 · 좌재귀 없애기 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/14_left-recursion-elimination_verify/"
 ---
 {% raw %}

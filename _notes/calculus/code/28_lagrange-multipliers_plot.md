@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/lagrange-multipliers/"
 parent_title: "라그랑주 승수법"
 description: "미분적분학 · 라그랑주 승수법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/28_lagrange-multipliers_plot/"
 ---
 {% raw %}

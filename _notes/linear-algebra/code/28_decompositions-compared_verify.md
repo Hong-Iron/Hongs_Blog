@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/decompositions-compared/"
 parent_title: "LU·QR·고윳값·SVD 비교"
 description: "선형대수학 · LU·QR·고윳값·SVD 비교 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/28_decompositions-compared_verify/"
 ---
 {% raw %}

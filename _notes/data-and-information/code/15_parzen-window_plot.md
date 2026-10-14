@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/parzen-window/"
 parent_title: "파젠 창"
 description: "자료와 정보 · 파젠 창 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/15_parzen-window_plot/"
 ---
 {% raw %}

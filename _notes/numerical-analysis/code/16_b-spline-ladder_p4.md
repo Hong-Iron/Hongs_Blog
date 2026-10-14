@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/b-spline-ladder/"
 parent_title: "B-스플라인 예제 사다리"
 description: "수치해석 · B-스플라인 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/16_b-spline-ladder_p4/"
 ---
 {% raw %}

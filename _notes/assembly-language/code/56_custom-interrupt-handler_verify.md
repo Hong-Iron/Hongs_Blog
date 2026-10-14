@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/custom-interrupt-handler/"
 parent_title: "인터럽트 핸들러 바꿔 끼우기"
 description: "어셈블리어 · 인터럽트 핸들러 바꿔 끼우기 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/56_custom-interrupt-handler_verify/"
 ---
 {% raw %}

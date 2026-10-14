@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-control-flow/"
 parent_title: "제어문"
 description: "자바 프로그래밍 · 제어문 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/06_java-control-flow_impl/"
 ---
 {% raw %}

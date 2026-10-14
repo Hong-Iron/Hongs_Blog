@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/readers-writers/"
 parent_title: "독자-저자 문제"
 description: "운영체제 · 독자-저자 문제 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/27_readers-writers_verify/"
 ---
 {% raw %}

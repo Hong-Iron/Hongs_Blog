@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/binocular-disparity/"
 parent_title: "양안 시차"
 description: "휴먼 인터페이스 미디어 · 양안 시차 그림 생성 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/21_binocular-disparity_plot/"
 ---
 {% raw %}

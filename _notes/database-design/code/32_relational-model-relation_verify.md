@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/relational-model-relation/"
 parent_title: "릴레이션과 도메인·속성·튜플"
 description: "데이터베이스 설계 · 릴레이션과 도메인·속성·튜플 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/32_relational-model-relation_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/linked-list-variants/"
 parent_title: "연결 리스트의 변형"
 description: "자료구조 · 연결 리스트의 변형 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/17_linked-list-variants_impl/"
 ---
 {% raw %}

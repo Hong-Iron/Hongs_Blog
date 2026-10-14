@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/basis-dimension/"
 parent_title: "부분공간, 기저와 차원"
 description: "선형대수학 · 부분공간, 기저와 차원 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/10_basis-dimension_verify/"
 ---
 {% raw %}

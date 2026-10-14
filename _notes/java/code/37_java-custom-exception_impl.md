@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-custom-exception/"
 parent_title: "사용자 정의 예외"
 description: "자바 프로그래밍 · 사용자 정의 예외 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/37_java-custom-exception_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/data-model-categories/"
 parent_title: "데이터 모델의 종류"
 description: "데이터베이스 설계 · 데이터 모델의 종류 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/05_data-model-categories_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/offset-ptr-operators/"
 parent_title: "OFFSET과 PTR 연산자"
 description: "어셈블리어 · OFFSET과 PTR 연산자 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/21_offset-ptr-operators_verify/"
 ---
 {% raw %}

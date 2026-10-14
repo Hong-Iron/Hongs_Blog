@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/binary-tree-representation/"
 parent_title: "이진 트리의 배열 표현과 연결 표현"
 description: "자료구조 · 이진 트리의 배열 표현과 연결 표현 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/23_binary-tree-representation_impl/"
 ---
 {% raw %}

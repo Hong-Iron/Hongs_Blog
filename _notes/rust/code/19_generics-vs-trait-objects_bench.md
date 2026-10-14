@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/generics-vs-trait-objects/"
 parent_title: "제네릭과 트레이트 객체 비교"
 description: "Rust · 제네릭과 트레이트 객체 비교 실험 코드"
+sitemap: false
 permalink: "/studies/rust/code/19_generics-vs-trait-objects_bench/"
 ---
 {% raw %}

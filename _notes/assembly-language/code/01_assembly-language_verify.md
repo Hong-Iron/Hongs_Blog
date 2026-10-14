@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/assembly-language/"
 parent_title: "어셈블리어와 기계어"
 description: "어셈블리어 · 어셈블리어와 기계어 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/01_assembly-language_verify/"
 ---
 {% raw %}

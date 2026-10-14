@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/box-heap/"
 parent_title: "Box와 힙"
 description: "Rust · Box와 힙 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/27_box-heap_verify/"
 ---
 {% raw %}

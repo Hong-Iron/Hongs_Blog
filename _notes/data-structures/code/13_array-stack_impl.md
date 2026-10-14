@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/array-stack/"
 parent_title: "배열로 만든 스택"
 description: "자료구조 · 배열로 만든 스택 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/13_array-stack_impl/"
 ---
 {% raw %}

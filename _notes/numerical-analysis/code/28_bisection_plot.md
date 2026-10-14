@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/bisection-method/"
 parent_title: "이분법"
 description: "수치해석 · 이분법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/28_bisection_plot/"
 ---
 {% raw %}

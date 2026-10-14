@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/linear-transformations/"
 parent_title: "선형변환"
 description: "선형대수학 · 선형변환 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/12_linear-transformations_verify/"
 ---
 {% raw %}

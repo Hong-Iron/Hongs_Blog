@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/independent-variable-transform/"
 parent_title: "독립 변수의 변환"
 description: "신호 및 시스템 · 독립 변수의 변환 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/05_independent-variable-transform_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/type-checking-practice/"
 parent_title: "타입 검사 연습"
 description: "컴파일러 · 타입 검사 연습 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/36_type-checking-practice_p4/"
 ---
 {% raw %}

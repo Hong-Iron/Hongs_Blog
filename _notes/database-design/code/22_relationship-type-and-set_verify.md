@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/relationship-type-and-set/"
 parent_title: "관계 타입과 관계 집합"
 description: "데이터베이스 설계 · 관계 타입과 관계 집합 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/22_relationship-type-and-set_verify/"
 ---
 {% raw %}

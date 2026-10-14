@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/tac-translation-practice/"
 parent_title: "3주소 코드 변환 연습"
 description: "컴파일러 · 3주소 코드 변환 연습 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/39_tac-translation-practice_p4/"
 ---
 {% raw %}

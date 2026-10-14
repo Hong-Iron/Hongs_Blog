@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/satellite-systems/"
 parent_title: "위성통신"
 description: "컴퓨터 통신 · 위성통신 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/36_satellite-systems_verify/"
 ---
 {% raw %}

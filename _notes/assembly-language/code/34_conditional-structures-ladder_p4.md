@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/conditional-structures-ladder/"
 parent_title: "조건 구조를 점프로 옮기기 예제 사다리"
 description: "어셈블리어 · 조건 구조를 점프로 옮기기 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/34_conditional-structures-ladder_p4/"
 ---
 {% raw %}

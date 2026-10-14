@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/capstone-4/"
 parent_title: "캡스톤 4 관측성과 설정"
 description: "Rust · 캡스톤 4 관측성과 설정 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/46_capstone-4_p1/"
 ---
 {% raw %}

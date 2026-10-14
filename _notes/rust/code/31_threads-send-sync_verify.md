@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/threads-send-sync/"
 parent_title: "스레드와 Send·Sync"
 description: "Rust · 스레드와 Send·Sync 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/31_threads-send-sync_verify/"
 ---
 {% raw %}

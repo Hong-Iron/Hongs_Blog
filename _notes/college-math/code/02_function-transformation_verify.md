@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/function-transformation/"
 parent_title: "함수의 변환과 합성"
 description: "대학수학 · 함수의 변환과 합성 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/02_function-transformation_verify/"
 ---
 {% raw %}

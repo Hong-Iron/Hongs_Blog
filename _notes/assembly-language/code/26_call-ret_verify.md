@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/call-ret/"
 parent_title: "프로시저와 CALL·RET"
 description: "어셈블리어 · 프로시저와 CALL·RET 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/26_call-ret_verify/"
 ---
 {% raw %}

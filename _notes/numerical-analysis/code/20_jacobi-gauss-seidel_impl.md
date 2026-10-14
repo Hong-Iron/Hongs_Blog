@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/jacobi-gauss-seidel/"
 parent_title: "야코비 방법과 가우스-자이델 방법"
 description: "수치해석 · 야코비 방법과 가우스-자이델 방법 구현 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/20_jacobi-gauss-seidel_impl/"
 ---
 {% raw %}

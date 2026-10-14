@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/root-finding-compared/"
 parent_title: "근 찾기 방법 비교"
 description: "수치해석 · 근 찾기 방법 비교 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/32_root-finding-compared_plot/"
 ---
 {% raw %}

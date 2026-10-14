@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/logarithm/"
 parent_title: "로그"
 description: "대학수학 · 로그 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/07_logarithm_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/backpressure/"
 parent_title: "백프레셔와 큐 제한"
 description: "Rust · 백프레셔와 큐 제한 구현 코드"
+sitemap: false
 permalink: "/studies/rust/code/39_backpressure_impl/"
 ---
 {% raw %}

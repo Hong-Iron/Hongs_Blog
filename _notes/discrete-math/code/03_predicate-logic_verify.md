@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/predicate-logic/"
 parent_title: "술어와 한정기호"
 description: "이산수학 · 술어와 한정기호 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/03_predicate-logic_verify/"
 ---
 {% raw %}

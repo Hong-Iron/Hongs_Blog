@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/ftc/"
 parent_title: "미적분의 기본정리"
 description: "미분적분학 · 미적분의 기본정리 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/12_ftc_verify/"
 ---
 {% raw %}

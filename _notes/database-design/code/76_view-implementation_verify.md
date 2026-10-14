@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/view-implementation/"
 parent_title: "질의 수정과 뷰 실체화"
 description: "데이터베이스 설계 · 질의 수정과 뷰 실체화 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/76_view-implementation_verify/"
 ---
 {% raw %}

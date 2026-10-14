@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/polar-parametric/"
 parent_title: "극좌표와 매개변수 곡선"
 description: "대학수학 · 극좌표와 매개변수 곡선 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/17_polar-parametric_verify/"
 ---
 {% raw %}

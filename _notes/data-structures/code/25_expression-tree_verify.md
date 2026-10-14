@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/expression-tree/"
 parent_title: "수식 트리와 전위·중위·후위 표기"
 description: "자료구조 · 수식 트리와 전위·중위·후위 표기 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/25_expression-tree_verify/"
 ---
 {% raw %}

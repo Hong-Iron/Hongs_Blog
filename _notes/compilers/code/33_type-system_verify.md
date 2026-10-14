@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/type-system/"
 parent_title: "타입과 타입 시스템"
 description: "컴파일러 · 타입과 타입 시스템 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/33_type-system_verify/"
 ---
 {% raw %}

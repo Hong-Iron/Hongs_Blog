@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/error-detection-compared/"
 parent_title: "오류 검출 방식 비교"
 description: "컴퓨터 통신 · 오류 검출 방식 비교 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/51_error-detection-compared_verify/"
 ---
 {% raw %}

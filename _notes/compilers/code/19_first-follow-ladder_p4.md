@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/first-follow-ladder/"
 parent_title: "FIRST·FOLLOW 예제 사다리"
 description: "컴파일러 · FIRST·FOLLOW 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/19_first-follow-ladder_p4/"
 ---
 {% raw %}

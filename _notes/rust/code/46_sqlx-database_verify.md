@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/sqlx-database/"
 parent_title: "sqlx로 데이터베이스 쓰기"
 description: "Rust · sqlx로 데이터베이스 쓰기 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/46_sqlx-database_verify/"
 ---
 {% raw %}

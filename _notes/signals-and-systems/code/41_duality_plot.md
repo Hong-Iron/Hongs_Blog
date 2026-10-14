@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/fourier-duality/"
 parent_title: "푸리에 변환의 쌍대성"
 description: "신호 및 시스템 · 푸리에 변환의 쌍대성 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/41_duality_plot/"
 ---
 {% raw %}

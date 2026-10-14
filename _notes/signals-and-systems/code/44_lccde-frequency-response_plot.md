@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/lccde-frequency-response/"
 parent_title: "미분방정식 시스템의 주파수 응답"
 description: "신호 및 시스템 · 미분방정식 시스템의 주파수 응답 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/44_lccde-frequency-response_plot/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/random-variables/"
 parent_title: "확률변수와 분포"
 description: "확률과 통계 · 확률변수와 분포 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/07_random-variables_plot/"
 ---
 {% raw %}

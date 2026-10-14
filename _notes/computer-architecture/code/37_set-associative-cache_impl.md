@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/set-associative-cache/"
 parent_title: "집합 연관 캐시"
 description: "컴퓨터 구조 · 집합 연관 캐시 구현 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/37_set-associative-cache_impl/"
 ---
 {% raw %}

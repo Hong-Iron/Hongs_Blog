@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/knn-density/"
 parent_title: "k-이웃 밀도 추정"
 description: "자료와 정보 · k-이웃 밀도 추정 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/16_knn-density_plot/"
 ---
 {% raw %}

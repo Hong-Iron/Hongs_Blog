@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/conditioning/"
 parent_title: "노름과 조건수"
 description: "선형대수학 · 노름과 조건수 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/26_conditioning_verify/"
 ---
 {% raw %}

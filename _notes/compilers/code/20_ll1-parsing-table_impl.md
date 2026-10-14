@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/ll1-parsing-table/"
 parent_title: "LL(1) 파싱 표"
 description: "컴파일러 · LL(1) 파싱 표 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/20_ll1-parsing-table_impl/"
 ---
 {% raw %}

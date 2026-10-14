@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/rust-basics-practice/"
 parent_title: "Rust 첫걸음 연습"
 description: "Rust · Rust 첫걸음 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/04_rust-basics-practice_p1/"
 ---
 {% raw %}

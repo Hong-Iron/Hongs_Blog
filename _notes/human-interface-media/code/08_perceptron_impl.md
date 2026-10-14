@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/perceptron/"
 parent_title: "퍼셉트론"
 description: "휴먼 인터페이스 미디어 · 퍼셉트론 구현 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/08_perceptron_impl/"
 ---
 {% raw %}

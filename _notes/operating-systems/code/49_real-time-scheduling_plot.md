@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/real-time-scheduling/"
 parent_title: "실시간 스케줄링"
 description: "운영체제 · 실시간 스케줄링 그림 생성 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/49_real-time-scheduling_plot/"
 ---
 {% raw %}

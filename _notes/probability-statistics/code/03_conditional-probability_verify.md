@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/conditional-probability/"
 parent_title: "조건부 확률"
 description: "확률과 통계 · 조건부 확률 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/03_conditional-probability_verify/"
 ---
 {% raw %}

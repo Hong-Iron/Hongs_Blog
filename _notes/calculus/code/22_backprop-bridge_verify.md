@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/backprop-bridge/"
 parent_title: "연쇄 법칙 ↔ 역전파"
 description: "미분적분학 · 연쇄 법칙 ↔ 역전파 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/22_backprop-bridge_verify/"
 ---
 {% raw %}

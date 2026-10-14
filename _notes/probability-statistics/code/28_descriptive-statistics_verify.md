@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/descriptive-statistics/"
 parent_title: "기술통계"
 description: "확률과 통계 · 기술통계 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/28_descriptive-statistics_verify/"
 ---
 {% raw %}

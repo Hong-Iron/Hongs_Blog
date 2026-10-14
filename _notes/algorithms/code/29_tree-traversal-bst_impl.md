@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/tree-traversal-bst/"
 parent_title: "트리 순회와 이진 탐색 트리"
 description: "알고리즘 · 트리 순회와 이진 탐색 트리 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/29_tree-traversal-bst_impl/"
 ---
 {% raw %}

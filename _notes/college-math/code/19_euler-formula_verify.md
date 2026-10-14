@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/euler-formula/"
 parent_title: "복소수의 극형식과 오일러 공식"
 description: "대학수학 · 복소수의 극형식과 오일러 공식 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/19_euler-formula_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/modular-inverse-crt/"
 parent_title: "모듈러 역원과 중국인의 나머지 정리"
 description: "이산수학 · 모듈러 역원과 중국인의 나머지 정리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/29_modular-inverse-crt_plot/"
 ---
 {% raw %}

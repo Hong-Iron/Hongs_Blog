@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/register-allocation-ladder/"
 parent_title: "레지스터 할당 예제 사다리"
 description: "컴파일러 · 레지스터 할당 예제 사다리 문제 2 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/56_register-allocation-ladder_p2/"
 ---
 {% raw %}

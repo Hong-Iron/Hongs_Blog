@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/identifier-scope/"
 parent_title: "스코프"
 description: "컴파일러 · 스코프 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/31_identifier-scope_verify/"
 ---
 {% raw %}

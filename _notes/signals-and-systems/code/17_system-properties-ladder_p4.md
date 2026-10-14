@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/system-properties-ladder/"
 parent_title: "시스템 성질 판별 예제 사다리"
 description: "신호 및 시스템 · 시스템 성질 판별 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/17_system-properties-ladder_p4/"
 ---
 {% raw %}

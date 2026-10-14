@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/raid/"
 parent_title: "RAID"
 description: "운영체제 · RAID 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/54_raid_verify/"
 ---
 {% raw %}

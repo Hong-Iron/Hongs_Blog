@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/fixed-point-iteration/"
 parent_title: "고정점 반복"
 description: "수치해석 · 고정점 반복 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/30_fixed-point-iteration_plot/"
 ---
 {% raw %}

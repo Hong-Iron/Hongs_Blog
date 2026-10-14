@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/selection-sort/"
 parent_title: "선택 정렬"
 description: "자료구조 · 선택 정렬 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/41_selection-sort_impl/"
 ---
 {% raw %}

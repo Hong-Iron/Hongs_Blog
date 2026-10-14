@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/primes/"
 parent_title: "소수와 산술의 기본정리"
 description: "이산수학 · 소수와 산술의 기본정리 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/28_primes_verify/"
 ---
 {% raw %}

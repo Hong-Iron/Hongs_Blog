@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/graceful-shutdown/"
 parent_title: "안전한 종료"
 description: "Rust · 안전한 종료 구현 코드"
+sitemap: false
 permalink: "/studies/rust/code/40_graceful-shutdown_impl/"
 ---
 {% raw %}

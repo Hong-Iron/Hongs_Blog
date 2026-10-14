@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/dynamic-programming/"
 parent_title: "동적 계획법"
 description: "알고리즘 · 동적 계획법 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/30_dynamic-programming_verify/"
 ---
 {% raw %}

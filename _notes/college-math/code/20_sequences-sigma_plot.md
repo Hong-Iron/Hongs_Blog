@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/sequences-sigma/"
 parent_title: "수열과 합의 기호"
 description: "대학수학 · 수열과 합의 기호 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/20_sequences-sigma_plot/"
 ---
 {% raw %}

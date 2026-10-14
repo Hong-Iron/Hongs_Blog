@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/b-tree-insert/"
 parent_title: "B-트리 삽입"
 description: "데이터베이스 설계 · B-트리 삽입 구현 코드"
+sitemap: false
 permalink: "/studies/database-design/code/15_b-tree-insert_impl/"
 ---
 {% raw %}

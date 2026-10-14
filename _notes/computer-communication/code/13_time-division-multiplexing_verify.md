@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/time-division-multiplexing/"
 parent_title: "시분할 다중화"
 description: "컴퓨터 통신 · 시분할 다중화 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/13_time-division-multiplexing_verify/"
 ---
 {% raw %}

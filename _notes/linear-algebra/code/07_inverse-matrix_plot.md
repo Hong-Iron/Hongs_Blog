@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/inverse-matrix/"
 parent_title: "역행렬"
 description: "선형대수학 · 역행렬 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/07_inverse-matrix_plot/"
 ---
 {% raw %}

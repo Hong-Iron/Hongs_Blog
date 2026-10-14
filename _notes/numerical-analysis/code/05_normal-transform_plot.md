@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/normal-transform/"
 parent_title: "법선 벡터의 변환"
 description: "수치해석 · 법선 벡터의 변환 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/05_normal-transform_plot/"
 ---
 {% raw %}

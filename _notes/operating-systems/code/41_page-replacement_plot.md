@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/page-replacement/"
 parent_title: "페이지 교체 알고리즘"
 description: "운영체제 · 페이지 교체 알고리즘 그림 생성 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/41_page-replacement_plot/"
 ---
 {% raw %}

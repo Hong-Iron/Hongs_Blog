@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/convolution-practice/"
 parent_title: "합성곱 연습"
 description: "휴먼 인터페이스 미디어 · 합성곱 연습 문제 7 풀이 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/31_convolution-practice_p7/"
 ---
 {% raw %}

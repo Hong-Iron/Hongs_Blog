@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-data-types/"
 parent_title: "SQL 자료형"
 description: "데이터베이스 설계 · SQL 자료형 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/47_sql-data-types_verify/"
 ---
 {% raw %}

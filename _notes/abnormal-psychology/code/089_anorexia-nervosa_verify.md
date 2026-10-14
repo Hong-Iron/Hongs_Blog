@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/abnormal-psychology/anorexia-nervosa/"
 parent_title: "신경성 식욕부진증"
 description: "이상 심리학 · 신경성 식욕부진증 검증 코드"
+sitemap: false
 permalink: "/studies/abnormal-psychology/code/089_anorexia-nervosa_verify/"
 ---
 {% raw %}

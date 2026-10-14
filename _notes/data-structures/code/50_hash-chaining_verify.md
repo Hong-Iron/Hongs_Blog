@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/hash-chaining/"
 parent_title: "체이닝"
 description: "자료구조 · 체이닝 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/50_hash-chaining_verify/"
 ---
 {% raw %}

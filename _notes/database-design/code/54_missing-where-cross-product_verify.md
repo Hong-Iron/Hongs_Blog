@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/missing-where-cross-product/"
 parent_title: "WHERE 없는 질의와 카티션 곱"
 description: "데이터베이스 설계 · WHERE 없는 질의와 카티션 곱 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/54_missing-where-cross-product_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/linear-regression/"
 parent_title: "선형회귀"
 description: "확률과 통계 · 선형회귀 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/34_linear-regression_plot/"
 ---
 {% raw %}

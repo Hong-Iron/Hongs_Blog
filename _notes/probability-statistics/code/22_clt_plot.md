@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/clt/"
 parent_title: "중심극한정리"
 description: "확률과 통계 · 중심극한정리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/22_clt_plot/"
 ---
 {% raw %}

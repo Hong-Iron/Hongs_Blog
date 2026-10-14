@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/traits-iterators-practice/"
 parent_title: "트레이트와 반복자 연습"
 description: "Rust · 트레이트와 반복자 연습 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/22_traits-iterators-practice_p3/"
 ---
 {% raw %}

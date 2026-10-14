@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/modules-workspaces/"
 parent_title: "모듈과 워크스페이스"
 description: "Rust · 모듈과 워크스페이스 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/41_modules-workspaces_verify/"
 ---
 {% raw %}

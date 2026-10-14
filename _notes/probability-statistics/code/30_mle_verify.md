@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/mle/"
 parent_title: "최대가능도 추정"
 description: "확률과 통계 · 최대가능도 추정 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/30_mle_verify/"
 ---
 {% raw %}

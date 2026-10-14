@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/dtfs-properties/"
 parent_title: "이산 시간 푸리에 급수의 성질"
 description: "신호 및 시스템 · 이산 시간 푸리에 급수의 성질 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/34_dtfs-properties_plot/"
 ---
 {% raw %}

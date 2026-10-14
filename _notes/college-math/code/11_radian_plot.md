@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/radian/"
 parent_title: "각과 라디안"
 description: "대학수학 · 각과 라디안 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/11_radian_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-procedure-call/"
 parent_title: "MIPS 프로시저 호출"
 description: "컴퓨터 구조 · MIPS 프로시저 호출 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/18_mips-procedure-call_verify/"
 ---
 {% raw %}

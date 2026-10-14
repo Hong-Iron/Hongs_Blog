@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/ll1-table-ladder/"
 parent_title: "LL(1) 파싱 표 예제 사다리"
 description: "컴파일러 · LL(1) 파싱 표 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/20_ll1-table-ladder_p4/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/linear-approx-newton/"
 parent_title: "선형 근사와 뉴턴 방법"
 description: "미분적분학 · 선형 근사와 뉴턴 방법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/10_linear-approx-newton_plot/"
 ---
 {% raw %}

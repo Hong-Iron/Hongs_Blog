@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/triangle-laws/"
 parent_title: "사인 법칙과 코사인 법칙"
 description: "대학수학 · 사인 법칙과 코사인 법칙 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/16_triangle-laws_verify/"
 ---
 {% raw %}

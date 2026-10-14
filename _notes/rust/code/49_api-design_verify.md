@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/api-design/"
 parent_title: "API 설계 원칙"
 description: "Rust · API 설계 원칙 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/49_api-design_verify/"
 ---
 {% raw %}

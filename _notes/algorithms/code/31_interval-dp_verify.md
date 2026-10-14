@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/interval-dp/"
 parent_title: "구간 DP"
 description: "알고리즘 · 구간 DP 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/31_interval-dp_verify/"
 ---
 {% raw %}

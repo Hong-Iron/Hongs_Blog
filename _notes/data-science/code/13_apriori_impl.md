@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/apriori/"
 parent_title: "Apriori 알고리즘"
 description: "데이터 과학 · Apriori 알고리즘 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/13_apriori_impl/"
 ---
 {% raw %}

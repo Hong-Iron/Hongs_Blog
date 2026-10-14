@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/nrzi-manchester/"
 parent_title: "NRZI와 맨체스터"
 description: "컴퓨터 통신 · NRZI와 맨체스터 구현 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/41_nrzi-manchester_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/runtime-stack/"
 parent_title: "런타임 스택과 PUSH·POP"
 description: "어셈블리어 · 런타임 스택과 PUSH·POP 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/25_runtime-stack_verify/"
 ---
 {% raw %}

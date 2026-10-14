@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/log-scale/"
 parent_title: "로그함수와 로그 스케일"
 description: "대학수학 · 로그함수와 로그 스케일 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/08_log-scale_verify/"
 ---
 {% raw %}

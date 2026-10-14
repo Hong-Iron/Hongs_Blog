@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/monte-carlo/"
 parent_title: "몬테카를로 방법"
 description: "확률과 통계 · 몬테카를로 방법 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/27_monte-carlo_verify/"
 ---
 {% raw %}

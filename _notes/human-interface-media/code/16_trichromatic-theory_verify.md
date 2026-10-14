@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/trichromatic-theory/"
 parent_title: "삼색 이론"
 description: "휴먼 인터페이스 미디어 · 삼색 이론 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/16_trichromatic-theory_verify/"
 ---
 {% raw %}

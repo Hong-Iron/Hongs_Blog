@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/ll-vs-lr/"
 parent_title: "LL 파싱과 LR 파싱 비교"
 description: "컴파일러 · LL 파싱과 LR 파싱 비교 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/29_ll-vs-lr_verify/"
 ---
 {% raw %}

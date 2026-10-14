@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/partial-derivatives/"
 parent_title: "다변수 함수와 편미분"
 description: "미분적분학 · 다변수 함수와 편미분 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/19_partial-derivatives_plot/"
 ---
 {% raw %}

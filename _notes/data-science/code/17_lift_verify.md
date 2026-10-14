@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/lift/"
 parent_title: "리프트"
 description: "데이터 과학 · 리프트 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/17_lift_verify/"
 ---
 {% raw %}

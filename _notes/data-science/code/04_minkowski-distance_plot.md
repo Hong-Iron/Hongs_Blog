@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/minkowski-distance/"
 parent_title: "민코프스키 거리"
 description: "데이터 과학 · 민코프스키 거리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/04_minkowski-distance_plot/"
 ---
 {% raw %}

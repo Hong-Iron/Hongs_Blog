@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/compiler-structure/"
 parent_title: "컴파일러의 구조"
 description: "컴파일러 · 컴파일러의 구조 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/01_compiler-structure_verify/"
 ---
 {% raw %}

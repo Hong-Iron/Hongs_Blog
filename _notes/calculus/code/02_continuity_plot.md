@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/continuity/"
 parent_title: "연속과 사잇값 정리"
 description: "미분적분학 · 연속과 사잇값 정리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/02_continuity_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/induction-loop-invariant/"
 parent_title: "수학적 귀납법 ↔ 루프 불변식"
 description: "알고리즘 · 수학적 귀납법 ↔ 루프 불변식 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/38_induction-loop-invariant_verify/"
 ---
 {% raw %}

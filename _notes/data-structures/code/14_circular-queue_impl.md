@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/circular-queue/"
 parent_title: "원형 큐"
 description: "자료구조 · 원형 큐 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/14_circular-queue_impl/"
 ---
 {% raw %}

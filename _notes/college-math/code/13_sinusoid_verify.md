@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/sinusoid/"
 parent_title: "사인파"
 description: "대학수학 · 사인파 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/13_sinusoid_verify/"
 ---
 {% raw %}

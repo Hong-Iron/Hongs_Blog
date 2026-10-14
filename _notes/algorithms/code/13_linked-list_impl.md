@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/linked-list/"
 parent_title: "연결 리스트"
 description: "알고리즘 · 연결 리스트 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/13_linked-list_impl/"
 ---
 {% raw %}

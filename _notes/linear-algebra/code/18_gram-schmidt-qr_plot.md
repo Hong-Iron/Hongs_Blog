@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/gram-schmidt-qr/"
 parent_title: "그람-슈미트와 QR 분해"
 description: "선형대수학 · 그람-슈미트와 QR 분해 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/18_gram-schmidt-qr_plot/"
 ---
 {% raw %}

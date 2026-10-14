@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/update-constraint-violations/"
 parent_title: "갱신 연산과 제약 위반"
 description: "데이터베이스 설계 · 갱신 연산과 제약 위반 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/52_update-constraint-violations_verify/"
 ---
 {% raw %}

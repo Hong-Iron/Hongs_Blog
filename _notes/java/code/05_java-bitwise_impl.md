@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-bitwise/"
 parent_title: "비트 연산"
 description: "자바 프로그래밍 · 비트 연산 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/05_java-bitwise_impl/"
 ---
 {% raw %}

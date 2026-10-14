@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/stack-frame-ladder/"
 parent_title: "스택 프레임 그리기 예제 사다리"
 description: "어셈블리어 · 스택 프레임 그리기 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/44_stack-frame-ladder_p4/"
 ---
 {% raw %}

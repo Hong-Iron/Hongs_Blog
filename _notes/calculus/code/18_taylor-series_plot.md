@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/taylor-series/"
 parent_title: "테일러 급수"
 description: "미분적분학 · 테일러 급수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/18_taylor-series_plot/"
 ---
 {% raw %}

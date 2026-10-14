@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/byte-framing/"
 parent_title: "바이트 중심 프레이밍"
 description: "컴퓨터 통신 · 바이트 중심 프레이밍 구현 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/44_framing_impl/"
 ---
 {% raw %}

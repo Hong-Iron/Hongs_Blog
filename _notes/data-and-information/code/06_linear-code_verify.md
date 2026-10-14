@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/linear-code/"
 parent_title: "선형 부호와 패리티 검사 행렬"
 description: "자료와 정보 · 선형 부호와 패리티 검사 행렬 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/06_linear-code_verify/"
 ---
 {% raw %}

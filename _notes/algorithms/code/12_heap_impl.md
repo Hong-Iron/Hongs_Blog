@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/heap/"
 parent_title: "힙과 우선순위 큐"
 description: "알고리즘 · 힙과 우선순위 큐 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/12_heap_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/unsafe-abstractions/"
 parent_title: "unsafe와 안전한 감싸기"
 description: "Rust · unsafe와 안전한 감싸기 구현 코드"
+sitemap: false
 permalink: "/studies/rust/code/30_unsafe-abstractions_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/database-and-dbms/"
 parent_title: "데이터베이스와 DBMS"
 description: "데이터베이스 설계 · 데이터베이스와 DBMS 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/01_database-and-dbms_verify/"
 ---
 {% raw %}

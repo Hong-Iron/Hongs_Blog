@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/ct-dt-signals/"
 parent_title: "연속 시간 신호와 이산 시간 신호"
 description: "신호 및 시스템 · 연속 시간 신호와 이산 시간 신호 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/03_ct-dt-signals_plot/"
 ---
 {% raw %}

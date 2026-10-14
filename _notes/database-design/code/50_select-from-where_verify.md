@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/select-from-where/"
 parent_title: "SELECT-FROM-WHERE"
 description: "데이터베이스 설계 · SELECT-FROM-WHERE 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/50_select-from-where_verify/"
 ---
 {% raw %}

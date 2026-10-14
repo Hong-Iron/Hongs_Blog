@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/bipartite-matching/"
 parent_title: "이분 매칭"
 description: "알고리즘 · 이분 매칭 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/34_bipartite-matching_verify/"
 ---
 {% raw %}

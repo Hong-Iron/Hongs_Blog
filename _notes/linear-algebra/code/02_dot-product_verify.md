@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/dot-product/"
 parent_title: "내적과 노름"
 description: "선형대수학 · 내적과 노름 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/02_dot-product_verify/"
 ---
 {% raw %}

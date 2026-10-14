@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/derivation-parse-tree/"
 parent_title: "유도와 파스 트리"
 description: "컴파일러 · 유도와 파스 트리 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/12_derivation-parse-tree_verify/"
 ---
 {% raw %}

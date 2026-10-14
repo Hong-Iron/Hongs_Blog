@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/stability/"
 parent_title: "안정성"
 description: "신호 및 시스템 · 안정성 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/15_stability_verify/"
 ---
 {% raw %}

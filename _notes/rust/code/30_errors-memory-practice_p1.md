@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/errors-memory-practice/"
 parent_title: "에러와 메모리 연습"
 description: "Rust · 에러와 메모리 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/30_errors-memory-practice_p1/"
 ---
 {% raw %}

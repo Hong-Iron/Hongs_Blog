@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/single-cycle-datapath/"
 parent_title: "단일 사이클 데이터패스"
 description: "컴퓨터 구조 · 단일 사이클 데이터패스 구현 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/24_single-cycle-datapath_impl/"
 ---
 {% raw %}

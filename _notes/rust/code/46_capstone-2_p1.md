@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/capstone-2/"
 parent_title: "캡스톤 2 SQLite 저장소"
 description: "Rust · 캡스톤 2 SQLite 저장소 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/46_capstone-2_p1/"
 ---
 {% raw %}

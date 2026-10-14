@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/dbms-component-modules/"
 parent_title: "DBMS 구성 모듈"
 description: "데이터베이스 설계 · DBMS 구성 모듈 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/10_dbms-component-modules_verify/"
 ---
 {% raw %}

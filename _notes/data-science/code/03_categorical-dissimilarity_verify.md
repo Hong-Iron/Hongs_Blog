@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/categorical-dissimilarity/"
 parent_title: "범주형 속성의 비유사도"
 description: "데이터 과학 · 범주형 속성의 비유사도 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/03_categorical-dissimilarity_verify/"
 ---
 {% raw %}

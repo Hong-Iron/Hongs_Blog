@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/uniform-exponential/"
 parent_title: "균등분포와 지수분포"
 description: "확률과 통계 · 균등분포와 지수분포 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/15_uniform-exponential_verify/"
 ---
 {% raw %}

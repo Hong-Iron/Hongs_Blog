@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/longest-match-tokenizing/"
 parent_title: "최장 일치와 토큰 인식"
 description: "컴파일러 · 최장 일치와 토큰 인식 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/10_longest-match-tokenizing_impl/"
 ---
 {% raw %}

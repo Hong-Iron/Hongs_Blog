@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/build-deploy/"
 parent_title: "빌드와 배포"
 description: "Rust · 빌드와 배포 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/50_build-deploy_verify/"
 ---
 {% raw %}

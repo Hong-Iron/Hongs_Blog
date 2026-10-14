@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/lti-system-properties/"
 parent_title: "임펄스 응답으로 본 LTI 시스템의 성질"
 description: "신호 및 시스템 · 임펄스 응답으로 본 LTI 시스템의 성질 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/21_lti-system-properties_plot/"
 ---
 {% raw %}

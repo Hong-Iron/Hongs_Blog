@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/ll1-stack-parser/"
 parent_title: "LL(1) 파서의 스택 동작"
 description: "컴파일러 · LL(1) 파서의 스택 동작 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/21_ll1-stack-parser_impl/"
 ---
 {% raw %}

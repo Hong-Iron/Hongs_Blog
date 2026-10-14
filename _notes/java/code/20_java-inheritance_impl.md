@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-inheritance/"
 parent_title: "상속"
 description: "자바 프로그래밍 · 상속 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/20_java-inheritance_impl/"
 ---
 {% raw %}

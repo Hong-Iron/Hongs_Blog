@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/hamming-code/"
 parent_title: "해밍 부호"
 description: "자료와 정보 · 해밍 부호 구현 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/07_hamming-code_impl/"
 ---
 {% raw %}

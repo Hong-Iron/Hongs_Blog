@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/bipartite-coloring/"
 parent_title: "이분 그래프와 그래프 색칠"
 description: "이산수학 · 이분 그래프와 그래프 색칠 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/36_bipartite-coloring_verify/"
 ---
 {% raw %}

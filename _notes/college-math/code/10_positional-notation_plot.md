@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/positional-notation/"
 parent_title: "진법과 자릿수"
 description: "대학수학 · 진법과 자릿수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/10_positional-notation_plot/"
 ---
 {% raw %}

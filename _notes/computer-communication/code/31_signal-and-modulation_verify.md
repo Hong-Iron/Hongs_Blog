@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/signal-and-modulation/"
 parent_title: "신호와 변조"
 description: "컴퓨터 통신 · 신호와 변조 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/31_signal-and-modulation_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/content-based-recommendation/"
 parent_title: "내용 기반 추천"
 description: "데이터 과학 · 내용 기반 추천 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/40_content-based_verify/"
 ---
 {% raw %}

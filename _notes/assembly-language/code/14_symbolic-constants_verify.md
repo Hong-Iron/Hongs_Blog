@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/symbolic-constants/"
 parent_title: "기호 상수와 위치 카운터"
 description: "어셈블리어 · 기호 상수와 위치 카운터 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/14_symbolic-constants_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/referential-triggered-actions/"
 parent_title: "참조 동작 SET NULL·CASCADE·SET DEFAULT"
 description: "데이터베이스 설계 · 참조 동작 SET NULL·CASCADE·SET DEFAULT 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/53_referential-triggered-actions_verify/"
 ---
 {% raw %}

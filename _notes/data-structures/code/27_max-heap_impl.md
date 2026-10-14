@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/max-heap/"
 parent_title: "최대 힙과 최소 힙"
 description: "자료구조 · 최대 힙과 최소 힙 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/27_max-heap_impl/"
 ---
 {% raw %}

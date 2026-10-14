@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/one-class-cf/"
 parent_title: "단일 클래스 협업 필터링"
 description: "데이터 과학 · 단일 클래스 협업 필터링 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/45_one-class-cf_impl/"
 ---
 {% raw %}

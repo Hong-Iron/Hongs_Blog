@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/row-major-mapping/"
 parent_title: "행 우선 배치와 열 우선 배치"
 description: "자료구조 · 행 우선 배치와 열 우선 배치 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/09_row-major-mapping_impl/"
 ---
 {% raw %}

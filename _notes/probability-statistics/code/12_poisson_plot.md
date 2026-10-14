@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/poisson/"
 parent_title: "포아송 분포"
 description: "확률과 통계 · 포아송 분포 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/12_poisson_plot/"
 ---
 {% raw %}

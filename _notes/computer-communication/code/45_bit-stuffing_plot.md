@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/bit-stuffing/"
 parent_title: "비트 채우기"
 description: "컴퓨터 통신 · 비트 채우기 그림 생성 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/45_bit-stuffing_plot/"
 ---
 {% raw %}

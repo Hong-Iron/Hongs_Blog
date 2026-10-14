@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/atomics-memory-ordering/"
 parent_title: "원자적 연산과 메모리 순서"
 description: "Rust · 원자적 연산과 메모리 순서 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/34_atomics-memory-ordering_verify/"
 ---
 {% raw %}

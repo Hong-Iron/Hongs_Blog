@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/tree-from-traversals/"
 parent_title: "순회 결과로 이진 트리 되살리기"
 description: "자료구조 · 순회 결과로 이진 트리 되살리기 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/26_tree-from-traversals_impl/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/power-vs-exponential/"
 parent_title: "거듭제곱함수와 지수함수 비교"
 description: "대학수학 · 거듭제곱함수와 지수함수 비교 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/09_power-vs-exponential_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/array-vs-linked-list/"
 parent_title: "배열과 연결 리스트 비교"
 description: "자료구조 · 배열과 연결 리스트 비교 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/16_array-vs-linked-list_impl/"
 ---
 {% raw %}

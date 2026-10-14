@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/chain-rule/"
 parent_title: "연쇄 법칙"
 description: "미분적분학 · 연쇄 법칙 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/06_chain-rule_verify/"
 ---
 {% raw %}

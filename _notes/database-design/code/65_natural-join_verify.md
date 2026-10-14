@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/natural-join/"
 parent_title: "자연 조인 NATURAL JOIN"
 description: "데이터베이스 설계 · 자연 조인 NATURAL JOIN 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/65_natural-join_verify/"
 ---
 {% raw %}

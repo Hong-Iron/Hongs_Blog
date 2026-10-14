@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/multiplier-circuit/"
 parent_title: "곱셈 회로"
 description: "컴퓨터 구조 · 곱셈 회로 구현 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/20_multiplier-circuit_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/jmp-loop/"
 parent_title: "JMP와 LOOP"
 description: "어셈블리어 · JMP와 LOOP 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/24_jmp-loop_verify/"
 ---
 {% raw %}

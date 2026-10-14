@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/risc-vs-cisc/"
 parent_title: "RISC와 CISC 비교"
 description: "컴퓨터 구조 · RISC와 CISC 비교 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/13_risc-vs-cisc_verify/"
 ---
 {% raw %}

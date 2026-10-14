@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/lr0-item-automaton/"
 parent_title: "LR(0) 항목과 항목 오토마타"
 description: "컴파일러 · LR(0) 항목과 항목 오토마타 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/25_lr0-item-automaton_impl/"
 ---
 {% raw %}

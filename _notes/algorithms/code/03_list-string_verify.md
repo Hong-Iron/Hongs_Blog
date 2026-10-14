@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/list-string/"
 parent_title: "리스트와 문자열"
 description: "알고리즘 · 리스트와 문자열 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/03_list-string_verify/"
 ---
 {% raw %}

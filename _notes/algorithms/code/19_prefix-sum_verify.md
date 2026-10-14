@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/prefix-sum/"
 parent_title: "누적 합과 차분 배열"
 description: "알고리즘 · 누적 합과 차분 배열 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/19_prefix-sum_verify/"
 ---
 {% raw %}

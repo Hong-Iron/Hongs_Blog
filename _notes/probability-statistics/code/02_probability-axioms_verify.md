@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/probability-axioms/"
 parent_title: "확률의 공리와 계산"
 description: "확률과 통계 · 확률의 공리와 계산 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/02_probability-axioms_verify/"
 ---
 {% raw %}

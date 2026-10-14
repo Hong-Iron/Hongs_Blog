@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/participation-constraint/"
 parent_title: "참여 제약"
 description: "데이터베이스 설계 · 참여 제약 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/25_participation-constraint_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/stack-frame/"
 parent_title: "스택 프레임"
 description: "어셈블리어 · 스택 프레임 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/41_stack-frame_verify/"
 ---
 {% raw %}

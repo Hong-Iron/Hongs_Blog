@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/span/"
 parent_title: "선형결합과 생성"
 description: "선형대수학 · 선형결합과 생성 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/03_span_verify/"
 ---
 {% raw %}

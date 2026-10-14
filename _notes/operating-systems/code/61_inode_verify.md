@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/unix-inode/"
 parent_title: "UNIX 아이노드"
 description: "운영체제 · UNIX 아이노드 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/61_inode_verify/"
 ---
 {% raw %}

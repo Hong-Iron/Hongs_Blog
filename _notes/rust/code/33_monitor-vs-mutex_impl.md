@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/monitor-vs-mutex/"
 parent_title: "모니터 ↔ Mutex"
 description: "Rust · 모니터 ↔ Mutex 구현 코드"
+sitemap: false
 permalink: "/studies/rust/code/33_monitor-vs-mutex_impl/"
 ---
 {% raw %}

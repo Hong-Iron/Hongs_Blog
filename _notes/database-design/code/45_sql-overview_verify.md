@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-overview/"
 parent_title: "SQL 한눈에 보기"
 description: "데이터베이스 설계 · SQL 한눈에 보기 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/45_sql-overview_verify/"
 ---
 {% raw %}

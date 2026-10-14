@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/pipeline-registers/"
 parent_title: "파이프라인 레지스터와 제어"
 description: "컴퓨터 구조 · 파이프라인 레지스터와 제어 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/28_pipeline-registers_verify/"
 ---
 {% raw %}

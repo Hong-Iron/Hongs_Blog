@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/collaborative-filtering/"
 parent_title: "협업 필터링"
 description: "데이터 과학 · 협업 필터링 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/41_collaborative-filtering_impl/"
 ---
 {% raw %}

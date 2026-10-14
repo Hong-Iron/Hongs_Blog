@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/recursive-descent-parsing/"
 parent_title: "재귀 하강 파싱"
 description: "컴파일러 · 재귀 하강 파싱 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/17_recursive-descent-parsing_impl/"
 ---
 {% raw %}

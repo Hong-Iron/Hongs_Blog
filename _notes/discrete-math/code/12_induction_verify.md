@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/induction/"
 parent_title: "수학적 귀납법"
 description: "이산수학 · 수학적 귀납법 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/12_induction_verify/"
 ---
 {% raw %}

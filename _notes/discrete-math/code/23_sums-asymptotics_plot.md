@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/sums-asymptotics/"
 parent_title: "합의 계산과 어림"
 description: "이산수학 · 합의 계산과 어림 그림 생성 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/23_sums-asymptotics_plot/"
 ---
 {% raw %}

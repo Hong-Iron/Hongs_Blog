@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/propositional-logic/"
 parent_title: "명제와 논리 연산"
 description: "이산수학 · 명제와 논리 연산 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/01_propositional-logic_verify/"
 ---
 {% raw %}

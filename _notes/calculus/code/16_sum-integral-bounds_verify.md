@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/sum-integral-bounds/"
 parent_title: "합 ↔ 적분"
 description: "미분적분학 · 합 ↔ 적분 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/16_sum-integral-bounds_verify/"
 ---
 {% raw %}

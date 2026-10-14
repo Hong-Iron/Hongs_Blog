@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/library-errors/"
 parent_title: "라이브러리 에러 설계"
 description: "Rust · 라이브러리 에러 설계 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/24_library-errors_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/lpt-scheduling/"
 parent_title: "LPT 스케줄링"
 description: "자료구조 · LPT 스케줄링 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/29_lpt-scheduling_verify/"
 ---
 {% raw %}

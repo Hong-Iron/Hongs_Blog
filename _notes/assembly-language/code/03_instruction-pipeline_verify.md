@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/instruction-pipeline/"
 parent_title: "파이프라인과 슈퍼스칼라"
 description: "어셈블리어 · 파이프라인과 슈퍼스칼라 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/03_instruction-pipeline_verify/"
 ---
 {% raw %}

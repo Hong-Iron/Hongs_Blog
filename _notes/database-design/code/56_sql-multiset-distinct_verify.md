@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-multiset-distinct/"
 parent_title: "다중집합인 표와 DISTINCT"
 description: "데이터베이스 설계 · 다중집합인 표와 DISTINCT 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/56_sql-multiset-distinct_verify/"
 ---
 {% raw %}

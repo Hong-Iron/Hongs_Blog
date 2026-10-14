@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/prefix-sum-triangular/"
 parent_title: "누적 합 ↔ 아래삼각행렬"
 description: "알고리즘 · 누적 합 ↔ 아래삼각행렬 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/37_prefix-sum-triangular_verify/"
 ---
 {% raw %}

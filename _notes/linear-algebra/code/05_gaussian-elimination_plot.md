@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/gaussian-elimination/"
 parent_title: "가우스 소거법"
 description: "선형대수학 · 가우스 소거법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/05_gaussian-elimination_plot/"
 ---
 {% raw %}

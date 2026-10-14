@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-branch-jump/"
 parent_title: "MIPS 분기와 점프"
 description: "컴퓨터 구조 · MIPS 분기와 점프 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/17_mips-branch-jump_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/sampling/"
 parent_title: "표본 추출"
 description: "데이터 과학 · 표본 추출 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/09_sampling_verify/"
 ---
 {% raw %}

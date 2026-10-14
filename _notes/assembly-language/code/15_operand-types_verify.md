@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/operand-types/"
 parent_title: "피연산자의 종류"
 description: "어셈블리어 · 피연산자의 종류 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/15_operand-types_verify/"
 ---
 {% raw %}

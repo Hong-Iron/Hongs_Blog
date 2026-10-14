@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/signal-energy-power/"
 parent_title: "신호의 에너지와 전력"
 description: "신호 및 시스템 · 신호의 에너지와 전력 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/04_signal-energy-power_verify/"
 ---
 {% raw %}

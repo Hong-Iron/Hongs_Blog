@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/zero-injection/"
 parent_title: "0 주입"
 description: "데이터 과학 · 0 주입 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/46_zero-injection_verify/"
 ---
 {% raw %}

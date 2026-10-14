@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/er-to-relational-mapping/"
 parent_title: "ER-관계형 사상 절차"
 description: "데이터베이스 설계 · ER-관계형 사상 절차 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/44_er-to-relational-mapping_verify/"
 ---
 {% raw %}

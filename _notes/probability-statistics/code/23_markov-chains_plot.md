@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/markov-chains/"
 parent_title: "마르코프 연쇄"
 description: "확률과 통계 · 마르코프 연쇄 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/23_markov-chains_plot/"
 ---
 {% raw %}

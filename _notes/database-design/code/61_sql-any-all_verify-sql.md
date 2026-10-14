@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-any-all/"
 parent_title: "ANY와 ALL"
 description: "데이터베이스 설계 · ANY와 ALL 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/61_sql-any-all_verify-sql/"
 ---
 {% raw %}

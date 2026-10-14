@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/computer-abstraction-layers/"
 parent_title: "컴퓨터 구조와 추상화 계층"
 description: "컴퓨터 구조 · 컴퓨터 구조와 추상화 계층 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/01_computer-abstraction-layers_verify/"
 ---
 {% raw %}

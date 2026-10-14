@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/rate-coding/"
 parent_title: "발화율 부호화"
 description: "휴먼 인터페이스 미디어 · 발화율 부호화 그림 생성 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/05_rate-coding_plot/"
 ---
 {% raw %}

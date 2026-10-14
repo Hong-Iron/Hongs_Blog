@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/graph-representation/"
 parent_title: "그래프 표현"
 description: "알고리즘 · 그래프 표현 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/23_graph-representation_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/generics-trait-bounds/"
 parent_title: "제네릭과 트레이트 경계"
 description: "Rust · 제네릭과 트레이트 경계 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/17_generics-trait-bounds_verify/"
 ---
 {% raw %}

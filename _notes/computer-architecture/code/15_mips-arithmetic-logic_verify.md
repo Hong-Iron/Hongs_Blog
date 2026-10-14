@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-arithmetic-logic/"
 parent_title: "MIPS 산술·논리 명령"
 description: "컴퓨터 구조 · MIPS 산술·논리 명령 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/15_mips-arithmetic-logic_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/symbol-table-scope-checking/"
 parent_title: "심벌 테이블과 스코프 검사"
 description: "컴파일러 · 심벌 테이블과 스코프 검사 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/32_symbol-table-scope-checking_impl/"
 ---
 {% raw %}

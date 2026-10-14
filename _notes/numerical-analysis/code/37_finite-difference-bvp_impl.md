@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/finite-difference-bvp/"
 parent_title: "유한 차분법"
 description: "수치해석 · 유한 차분법 구현 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/37_finite-difference-bvp_impl/"
 ---
 {% raw %}

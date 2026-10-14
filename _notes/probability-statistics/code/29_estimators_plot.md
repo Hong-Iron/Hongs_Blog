@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/estimators/"
 parent_title: "표본분포와 추정량"
 description: "확률과 통계 · 표본분포와 추정량 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/29_estimators_plot/"
 ---
 {% raw %}

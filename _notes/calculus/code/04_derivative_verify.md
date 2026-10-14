@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/derivative/"
 parent_title: "도함수"
 description: "미분적분학 · 도함수 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/04_derivative_verify/"
 ---
 {% raw %}

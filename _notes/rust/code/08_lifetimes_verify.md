@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/lifetimes/"
 parent_title: "수명"
 description: "Rust · 수명 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/08_lifetimes_verify/"
 ---
 {% raw %}

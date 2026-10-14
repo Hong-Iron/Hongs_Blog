@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/generating-functions/"
 parent_title: "생성함수"
 description: "이산수학 · 생성함수 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/22_generating-functions_verify/"
 ---
 {% raw %}

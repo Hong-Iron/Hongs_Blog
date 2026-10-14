@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/direct-search/"
 parent_title: "직접 탐색법"
 description: "수치해석 · 직접 탐색법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/27_direct-search_plot/"
 ---
 {% raw %}

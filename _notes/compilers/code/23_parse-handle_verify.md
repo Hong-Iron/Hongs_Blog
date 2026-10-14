@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/parse-handle/"
 parent_title: "핸들"
 description: "컴파일러 · 핸들 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/23_parse-handle_verify/"
 ---
 {% raw %}

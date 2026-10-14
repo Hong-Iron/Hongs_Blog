@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-operands/"
 parent_title: "MIPS 레지스터와 메모리 피연산자"
 description: "컴퓨터 구조 · MIPS 레지스터와 메모리 피연산자 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/14_mips-operands_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/alphabet-string-language/"
 parent_title: "알파벳·문자열·언어"
 description: "컴파일러 · 알파벳·문자열·언어 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/04_alphabet-string-language_verify/"
 ---
 {% raw %}

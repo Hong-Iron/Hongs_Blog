@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/file-allocation/"
 parent_title: "파일 할당"
 description: "운영체제 · 파일 할당 구현 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/60_file-allocation_impl/"
 ---
 {% raw %}

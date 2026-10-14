@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/even-odd-signals/"
 parent_title: "짝 신호와 홀 신호"
 description: "신호 및 시스템 · 짝 신호와 홀 신호 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/07_even-odd-signals_verify/"
 ---
 {% raw %}

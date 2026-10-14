@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/stack-tracing-ladder/"
 parent_title: "스택 추적 예제 사다리"
 description: "어셈블리어 · 스택 추적 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/26_stack-tracing-ladder_p4/"
 ---
 {% raw %}

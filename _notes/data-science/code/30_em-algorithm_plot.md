@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/em-algorithm/"
 parent_title: "EM 알고리즘"
 description: "데이터 과학 · EM 알고리즘 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/30_em-algorithm_plot/"
 ---
 {% raw %}

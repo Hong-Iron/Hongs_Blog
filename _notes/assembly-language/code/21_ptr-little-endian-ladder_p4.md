@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/ptr-little-endian-ladder/"
 parent_title: "PTR과 리틀 엔디언 예제 사다리"
 description: "어셈블리어 · PTR과 리틀 엔디언 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/21_ptr-little-endian-ladder_p4/"
 ---
 {% raw %}

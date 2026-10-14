@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/stack-parameters/"
 parent_title: "스택 매개변수"
 description: "어셈블리어 · 스택 매개변수 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/42_stack-parameters_verify/"
 ---
 {% raw %}

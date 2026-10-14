@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/rsa/"
 parent_title: "RSA 암호"
 description: "이산수학 · RSA 암호 구현 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/31_rsa_impl/"
 ---
 {% raw %}

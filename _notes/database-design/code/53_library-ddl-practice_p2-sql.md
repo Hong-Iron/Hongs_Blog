@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/library-ddl-practice/"
 parent_title: "LIBRARY 스키마 DDL 연습"
 description: "데이터베이스 설계 · LIBRARY 스키마 DDL 연습 문제 2 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/53_library-ddl-practice_p2-sql/"
 ---
 {% raw %}

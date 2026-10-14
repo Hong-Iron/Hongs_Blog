@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-null/"
 parent_title: "NULL 값과 IS NULL"
 description: "데이터베이스 설계 · NULL 값과 IS NULL 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/63_sql-null_verify-sql/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/graph-spanning-practice/"
 parent_title: "그래프 탐색과 신장 트리 연습"
 description: "자료구조 · 그래프 탐색과 신장 트리 연습 문제 5 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/37_graph-spanning-practice_p5/"
 ---
 {% raw %}

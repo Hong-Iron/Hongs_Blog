@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/little-endian/"
 parent_title: "리틀 엔디언"
 description: "어셈블리어 · 리틀 엔디언 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/13_little-endian_verify/"
 ---
 {% raw %}

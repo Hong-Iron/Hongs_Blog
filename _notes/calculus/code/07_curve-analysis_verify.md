@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/curve-analysis/"
 parent_title: "도함수의 활용과 최적화"
 description: "미분적분학 · 도함수의 활용과 최적화 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/07_curve-analysis_verify/"
 ---
 {% raw %}

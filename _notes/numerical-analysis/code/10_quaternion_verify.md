@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/quaternion/"
 parent_title: "쿼터니언"
 description: "수치해석 · 쿼터니언 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/10_quaternion_verify/"
 ---
 {% raw %}

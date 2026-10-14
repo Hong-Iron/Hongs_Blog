@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/inner-vs-outer-join/"
 parent_title: "내부 조인과 외부 조인 비교"
 description: "데이터베이스 설계 · 내부 조인과 외부 조인 비교 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/67_inner-vs-outer-join_verify/"
 ---
 {% raw %}

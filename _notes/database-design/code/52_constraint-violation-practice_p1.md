@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/constraint-violation-practice/"
 parent_title: "제약 위반 찾기 연습"
 description: "데이터베이스 설계 · 제약 위반 찾기 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/52_constraint-violation-practice_p1/"
 ---
 {% raw %}

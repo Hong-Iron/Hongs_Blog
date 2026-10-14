@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/bounding-volume/"
 parent_title: "경계 볼륨"
 description: "수치해석 · 경계 볼륨 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/19_bounding-volume_verify/"
 ---
 {% raw %}

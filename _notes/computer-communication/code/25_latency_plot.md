@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/latency/"
 parent_title: "소요시간"
 description: "컴퓨터 통신 · 소요시간 그림 생성 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/25_latency_plot/"
 ---
 {% raw %}

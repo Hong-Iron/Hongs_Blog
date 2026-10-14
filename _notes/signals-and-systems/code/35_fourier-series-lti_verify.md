@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/fourier-series-lti/"
 parent_title: "푸리에 급수와 LTI 시스템"
 description: "신호 및 시스템 · 푸리에 급수와 LTI 시스템 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/35_fourier-series-lti_verify/"
 ---
 {% raw %}

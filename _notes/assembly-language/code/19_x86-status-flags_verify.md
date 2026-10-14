@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/x86-status-flags/"
 parent_title: "산술 연산과 상태 플래그"
 description: "어셈블리어 · 산술 연산과 상태 플래그 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/19_x86-status-flags_verify/"
 ---
 {% raw %}

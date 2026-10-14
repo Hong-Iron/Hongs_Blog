@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/control-hazard-branch-prediction/"
 parent_title: "제어 해저드와 분기 예측"
 description: "컴퓨터 구조 · 제어 해저드와 분기 예측 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/31_control-hazard-branch-prediction_verify/"
 ---
 {% raw %}

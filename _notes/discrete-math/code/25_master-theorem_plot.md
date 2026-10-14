@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/master-theorem/"
 parent_title: "분할 정복 점화식과 마스터 정리"
 description: "이산수학 · 분할 정복 점화식과 마스터 정리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/25_master-theorem_plot/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/trees/"
 parent_title: "트리"
 description: "이산수학 · 트리 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/35_trees_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/data-independence/"
 parent_title: "데이터 독립성"
 description: "데이터베이스 설계 · 데이터 독립성 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/08_data-independence_verify/"
 ---
 {% raw %}

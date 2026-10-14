@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/continuous-rv/"
 parent_title: "연속 확률변수와 확률밀도"
 description: "확률과 통계 · 연속 확률변수와 확률밀도 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/14_continuous-rv_plot/"
 ---
 {% raw %}

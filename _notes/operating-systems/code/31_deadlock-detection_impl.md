@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/deadlock-detection/"
 parent_title: "교착상태 탐지와 복구"
 description: "운영체제 · 교착상태 탐지와 복구 구현 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/31_deadlock-detection_impl/"
 ---
 {% raw %}

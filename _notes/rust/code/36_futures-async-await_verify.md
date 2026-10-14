@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/futures-async-await/"
 parent_title: "Future와 async·await"
 description: "Rust · Future와 async·await 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/36_futures-async-await_verify/"
 ---
 {% raw %}

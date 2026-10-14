@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/time-invariance/"
 parent_title: "시불변성"
 description: "신호 및 시스템 · 시불변성 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/16_time-invariance_verify/"
 ---
 {% raw %}

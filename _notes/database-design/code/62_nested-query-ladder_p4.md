@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/nested-query-ladder/"
 parent_title: "중첩 질의 쓰기 예제 사다리"
 description: "데이터베이스 설계 · 중첩 질의 쓰기 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/62_nested-query-ladder_p4/"
 ---
 {% raw %}

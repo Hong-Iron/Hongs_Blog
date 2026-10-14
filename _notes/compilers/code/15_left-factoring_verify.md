@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/left-factoring/"
 parent_title: "좌인수분해"
 description: "컴파일러 · 좌인수분해 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/15_left-factoring_verify/"
 ---
 {% raw %}

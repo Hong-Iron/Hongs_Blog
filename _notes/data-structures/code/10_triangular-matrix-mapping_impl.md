@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/triangular-matrix-mapping/"
 parent_title: "특수 행렬을 1차원 배열에 담기"
 description: "자료구조 · 특수 행렬을 1차원 배열에 담기 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/10_triangular-matrix-mapping_impl/"
 ---
 {% raw %}

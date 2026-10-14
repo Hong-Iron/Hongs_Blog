@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/interior-mutability/"
 parent_title: "내부 가변성"
 description: "Rust · 내부 가변성 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/29_interior-mutability_verify/"
 ---
 {% raw %}

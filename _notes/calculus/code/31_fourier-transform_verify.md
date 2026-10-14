@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/fourier-transform/"
 parent_title: "푸리에 변환과 합성곱"
 description: "미분적분학 · 푸리에 변환과 합성곱 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/31_fourier-transform_verify/"
 ---
 {% raw %}

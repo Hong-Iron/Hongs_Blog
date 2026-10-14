@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/normalization/"
 parent_title: "정규화"
 description: "데이터 과학 · 정규화 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/07_normalization_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/hessian/"
 parent_title: "헤세 행렬과 극값 판정"
 description: "미분적분학 · 헤세 행렬과 극값 판정 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/23_hessian_verify/"
 ---
 {% raw %}

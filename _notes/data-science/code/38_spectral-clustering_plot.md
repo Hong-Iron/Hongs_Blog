@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/spectral-clustering/"
 parent_title: "스펙트럼 군집화"
 description: "데이터 과학 · 스펙트럼 군집화 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/38_spectral-clustering_plot/"
 ---
 {% raw %}

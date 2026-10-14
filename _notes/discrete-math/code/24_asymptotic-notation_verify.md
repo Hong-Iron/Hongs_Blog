@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/asymptotic-notation/"
 parent_title: "점근 표기"
 description: "이산수학 · 점근 표기 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/24_asymptotic-notation_verify/"
 ---
 {% raw %}

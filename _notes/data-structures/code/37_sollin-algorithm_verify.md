@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/sollin-algorithm/"
 parent_title: "솔린 알고리즘"
 description: "자료구조 · 솔린 알고리즘 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/37_sollin-algorithm_verify/"
 ---
 {% raw %}

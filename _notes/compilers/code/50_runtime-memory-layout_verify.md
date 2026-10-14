@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/runtime-memory-layout/"
 parent_title: "실행 시 메모리 배치"
 description: "컴파일러 · 실행 시 메모리 배치 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/50_runtime-memory-layout_verify/"
 ---
 {% raw %}

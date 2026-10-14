@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/hash-dict-set/"
 parent_title: "딕셔너리와 집합"
 description: "알고리즘 · 딕셔너리와 집합 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/04_hash-dict-set_impl/"
 ---
 {% raw %}

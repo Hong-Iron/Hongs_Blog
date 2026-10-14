@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/frequent-patterns/"
 parent_title: "빈발 패턴"
 description: "데이터 과학 · 빈발 패턴 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/10_frequent-patterns_verify/"
 ---
 {% raw %}

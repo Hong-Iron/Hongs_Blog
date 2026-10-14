@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/modular-arithmetic/"
 parent_title: "나눗셈과 합동"
 description: "이산수학 · 나눗셈과 합동 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/26_modular-arithmetic_verify/"
 ---
 {% raw %}

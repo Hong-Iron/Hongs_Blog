@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/relationship-attributes/"
 parent_title: "관계 타입의 속성"
 description: "데이터베이스 설계 · 관계 타입의 속성 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/26_relationship-attributes_verify/"
 ---
 {% raw %}

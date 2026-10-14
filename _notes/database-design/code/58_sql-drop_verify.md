@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-drop/"
 parent_title: "DROP 명령과 CASCADE·RESTRICT"
 description: "데이터베이스 설계 · DROP 명령과 CASCADE·RESTRICT 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/58_sql-drop_verify/"
 ---
 {% raw %}

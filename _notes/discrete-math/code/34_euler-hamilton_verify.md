@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/euler-hamilton/"
 parent_title: "오일러 경로와 해밀턴 경로"
 description: "이산수학 · 오일러 경로와 해밀턴 경로 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/34_euler-hamilton_verify/"
 ---
 {% raw %}

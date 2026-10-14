@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/dbscan/"
 parent_title: "DBSCAN"
 description: "데이터 과학 · DBSCAN 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/31_dbscan_impl/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/diagonalization/"
 parent_title: "대각화와 행렬 거듭제곱"
 description: "선형대수학 · 대각화와 행렬 거듭제곱 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/20_diagonalization_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/asm-hex-practice/"
 parent_title: "16진 계산과 2의 보수 연습"
 description: "어셈블리어 · 16진 계산과 2의 보수 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/01_asm-hex-practice_p1/"
 ---
 {% raw %}

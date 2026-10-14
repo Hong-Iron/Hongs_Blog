@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/regular-expression-practice/"
 parent_title: "정규 표현식 연습"
 description: "컴파일러 · 정규 표현식 연습 문제 6 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/05_regular-expression-practice_p6/"
 ---
 {% raw %}

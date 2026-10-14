@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cache-performance-amat/"
 parent_title: "캐시 성능과 평균 접근 시간"
 description: "컴퓨터 구조 · 캐시 성능과 평균 접근 시간 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/41_cache-performance-amat_verify/"
 ---
 {% raw %}

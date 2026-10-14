@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-set-operations/"
 parent_title: "집합 연산 UNION·EXCEPT·INTERSECT"
 description: "데이터베이스 설계 · 집합 연산 UNION·EXCEPT·INTERSECT 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/57_sql-set-operations_verify-sql/"
 ---
 {% raw %}

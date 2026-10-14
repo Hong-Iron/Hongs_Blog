@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/center-surround/"
 parent_title: "중심-주변 길항"
 description: "휴먼 인터페이스 미디어 · 중심-주변 길항 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/10_center-surround_verify/"
 ---
 {% raw %}

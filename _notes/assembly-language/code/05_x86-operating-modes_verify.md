@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/x86-operating-modes/"
 parent_title: "x86 동작 모드"
 description: "어셈블리어 · x86 동작 모드 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/05_x86-operating-modes_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/data-linearization/"
 parent_title: "자료 선형화"
 description: "수치해석 · 자료 선형화 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/24_data-linearization_verify/"
 ---
 {% raw %}

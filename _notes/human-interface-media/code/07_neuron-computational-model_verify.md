@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/neuron-computational-model/"
 parent_title: "뉴런의 연산 모형"
 description: "휴먼 인터페이스 미디어 · 뉴런의 연산 모형 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/07_neuron-computational-model_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/convolution-property/"
 parent_title: "컨벌루션 성질과 주파수 응답"
 description: "신호 및 시스템 · 컨벌루션 성질과 주파수 응답 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/42_convolution-property_verify/"
 ---
 {% raw %}

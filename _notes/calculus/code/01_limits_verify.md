@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/limits/"
 parent_title: "극한"
 description: "미분적분학 · 극한 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/01_limits_verify/"
 ---
 {% raw %}

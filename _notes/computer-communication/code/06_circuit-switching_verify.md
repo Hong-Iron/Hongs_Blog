@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/circuit-switching/"
 parent_title: "회선 스위칭"
 description: "컴퓨터 통신 · 회선 스위칭 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/06_circuit-switching_verify/"
 ---
 {% raw %}

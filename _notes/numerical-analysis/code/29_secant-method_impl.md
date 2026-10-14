@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/secant-method/"
 parent_title: "할선법"
 description: "수치해석 · 할선법 구현 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/29_secant-method_impl/"
 ---
 {% raw %}

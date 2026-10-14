@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/grammar-rewriting-ladder/"
 parent_title: "문법 고치기 예제 사다리"
 description: "컴파일러 · 문법 고치기 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/15_grammar-rewriting-ladder_p4/"
 ---
 {% raw %}

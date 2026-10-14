@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/fair-share-unix-scheduling/"
 parent_title: "공정 분배와 UNIX 스케줄링"
 description: "운영체제 · 공정 분배와 UNIX 스케줄링 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/46_unix-fair-share_verify/"
 ---
 {% raw %}

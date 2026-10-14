@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/abnormal-psychology/statistical-deviation--normal-distribution/"
 parent_title: "통계적 일탈 기준 ↔ 정규분포"
 description: "이상 심리학 · 통계적 일탈 기준 ↔ 정규분포 검증 코드"
+sitemap: false
 permalink: "/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_verify/"
 ---
 {% raw %}

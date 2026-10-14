@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/multiprogramming/"
 parent_title: "다중 프로그래밍"
 description: "운영체제 · 다중 프로그래밍 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/11_multiprogramming_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/expectation/"
 parent_title: "기댓값과 선형성"
 description: "확률과 통계 · 기댓값과 선형성 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/08_expectation_verify/"
 ---
 {% raw %}

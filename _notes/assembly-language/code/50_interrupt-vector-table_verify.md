@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/interrupt-vector-table/"
 parent_title: "INT 명령과 인터럽트 벡터 표"
 description: "어셈블리어 · INT 명령과 인터럽트 벡터 표 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/50_interrupt-vector-table_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/two-dimensional-convolution/"
 parent_title: "2차원 합성곱"
 description: "휴먼 인터페이스 미디어 · 2차원 합성곱 구현 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/31_two-dimensional-convolution_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/lines-planes/"
 parent_title: "직선과 평면의 방정식"
 description: "수치해석 · 직선과 평면의 방정식 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/02_lines-planes_verify/"
 ---
 {% raw %}

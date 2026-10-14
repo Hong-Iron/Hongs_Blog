@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/curve-continuity/"
 parent_title: "곡선의 연속성"
 description: "수치해석 · 곡선의 연속성 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/15_curve-continuity_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/pointer-address-practice/"
 parent_title: "포인터와 주소 계산 연습"
 description: "자료구조 · 포인터와 주소 계산 연습 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/05_pointer-address-practice_p4/"
 ---
 {% raw %}

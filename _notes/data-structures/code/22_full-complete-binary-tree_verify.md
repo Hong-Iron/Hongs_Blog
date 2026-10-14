@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/full-complete-binary-tree/"
 parent_title: "포화 이진 트리와 완전 이진 트리"
 description: "자료구조 · 포화 이진 트리와 완전 이진 트리 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/22_full-complete-binary-tree_verify/"
 ---
 {% raw %}

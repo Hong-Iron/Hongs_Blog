@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-overriding/"
 parent_title: "메서드 오버라이딩"
 description: "자바 프로그래밍 · 메서드 오버라이딩 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/22_java-overriding_impl/"
 ---
 {% raw %}

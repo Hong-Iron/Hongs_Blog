@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/multicore-parallelism/"
 parent_title: "멀티코어와 병렬 처리"
 description: "컴퓨터 구조 · 멀티코어와 병렬 처리 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/44_multicore-parallelism_verify/"
 ---
 {% raw %}

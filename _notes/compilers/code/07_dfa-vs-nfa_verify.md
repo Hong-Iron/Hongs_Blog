@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/dfa-vs-nfa/"
 parent_title: "DFA와 NFA 비교"
 description: "컴파일러 · DFA와 NFA 비교 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/07_dfa-vs-nfa_verify/"
 ---
 {% raw %}

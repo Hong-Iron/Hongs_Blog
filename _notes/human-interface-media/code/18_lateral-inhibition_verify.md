@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/lateral-inhibition/"
 parent_title: "측면 억제"
 description: "휴먼 인터페이스 미디어 · 측면 억제 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/18_lateral-inhibition_verify/"
 ---
 {% raw %}

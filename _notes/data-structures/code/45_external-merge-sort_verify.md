@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/external-merge-sort/"
 parent_title: "외부 병합 정렬"
 description: "자료구조 · 외부 병합 정렬 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/45_external-merge-sort_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/golden-section-search/"
 parent_title: "황금분할 탐색"
 description: "수치해석 · 황금분할 탐색 구현 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/25_golden-section_impl/"
 ---
 {% raw %}

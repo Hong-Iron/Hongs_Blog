@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/university-mapping-practice/"
 parent_title: "UNIVERSITY 사상 연습"
 description: "데이터베이스 설계 · UNIVERSITY 사상 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/44_university-mapping-practice_p1/"
 ---
 {% raw %}

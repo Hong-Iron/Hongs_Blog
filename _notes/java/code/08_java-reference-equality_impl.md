@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-reference-equality/"
 parent_title: "참조 비교와 null"
 description: "자바 프로그래밍 · 참조 비교와 null 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/08_java-reference-equality_impl/"
 ---
 {% raw %}

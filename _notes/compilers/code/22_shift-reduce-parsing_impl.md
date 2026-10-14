@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/shift-reduce-parsing/"
 parent_title: "이동-환원 파싱"
 description: "컴파일러 · 이동-환원 파싱 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/22_shift-reduce-parsing_impl/"
 ---
 {% raw %}

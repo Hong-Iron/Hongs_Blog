@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/opponent-process/"
 parent_title: "반대색 과정"
 description: "휴먼 인터페이스 미디어 · 반대색 과정 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/19_opponent-process_verify/"
 ---
 {% raw %}

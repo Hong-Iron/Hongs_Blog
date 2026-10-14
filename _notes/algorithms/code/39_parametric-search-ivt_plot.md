@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/parametric-search-ivt/"
 parent_title: "매개변수 탐색 ↔ 사잇값 정리"
 description: "알고리즘 · 매개변수 탐색 ↔ 사잇값 정리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/39_parametric-search-ivt_plot/"
 ---
 {% raw %}

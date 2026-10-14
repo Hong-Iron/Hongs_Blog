@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/euler-angles/"
 parent_title: "오일러 각과 짐벌 잠금"
 description: "수치해석 · 오일러 각과 짐벌 잠금 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/09_euler-angles_verify/"
 ---
 {% raw %}

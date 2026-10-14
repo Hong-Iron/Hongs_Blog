@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/cross-correlation/"
 parent_title: "교차 상관"
 description: "휴먼 인터페이스 미디어 · 교차 상관 그림 생성 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/29_cross-correlation_plot/"
 ---
 {% raw %}

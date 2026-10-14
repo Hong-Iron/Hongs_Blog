@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/direct-mapped-cache/"
 parent_title: "직접 사상 캐시"
 description: "컴퓨터 구조 · 직접 사상 캐시 구현 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/36_direct-mapped-cache_impl/"
 ---
 {% raw %}

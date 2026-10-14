@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/borrowing-references/"
 parent_title: "빌림과 참조"
 description: "Rust · 빌림과 참조 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/07_borrowing-references_verify/"
 ---
 {% raw %}

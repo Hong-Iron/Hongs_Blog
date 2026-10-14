@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/available-expressions/"
 parent_title: "사용 가능한 식 분석"
 description: "컴파일러 · 사용 가능한 식 분석 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/42_available-expressions_impl/"
 ---
 {% raw %}

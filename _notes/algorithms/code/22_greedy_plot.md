@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/greedy/"
 parent_title: "그리디"
 description: "알고리즘 · 그리디 그림 생성 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/22_greedy_plot/"
 ---
 {% raw %}

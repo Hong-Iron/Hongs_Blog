@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/local-optimization-ladder/"
 parent_title: "지역 최적화 예제 사다리"
 description: "컴파일러 · 지역 최적화 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/43_local-optimization-ladder_p4/"
 ---
 {% raw %}

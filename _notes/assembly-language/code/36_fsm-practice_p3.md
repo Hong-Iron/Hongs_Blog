@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/fsm-practice/"
 parent_title: "유한 상태 기계 연습"
 description: "어셈블리어 · 유한 상태 기계 연습 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/36_fsm-practice_p3/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/least-squares/"
 parent_title: "최소제곱법"
 description: "선형대수학 · 최소제곱법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/17_least-squares_plot/"
 ---
 {% raw %}

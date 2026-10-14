@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/fp-growth/"
 parent_title: "FP-Growth"
 description: "데이터 과학 · FP-Growth 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/15_fp-growth_impl/"
 ---
 {% raw %}

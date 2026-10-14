@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/abstract-class-vs-interface/"
 parent_title: "추상 클래스와 인터페이스 비교"
 description: "자바 프로그래밍 · 추상 클래스와 인터페이스 비교 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/25_abstract-class-vs-interface_impl/"
 ---
 {% raw %}

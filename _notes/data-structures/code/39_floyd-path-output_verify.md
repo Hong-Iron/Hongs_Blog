@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/floyd-path-output/"
 parent_title: "플로이드 알고리즘의 경로 출력"
 description: "자료구조 · 플로이드 알고리즘의 경로 출력 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/39_floyd-path-output_verify/"
 ---
 {% raw %}

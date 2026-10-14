@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/series-convergence/"
 parent_title: "급수의 수렴"
 description: "미분적분학 · 급수의 수렴 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/17_series-convergence_verify/"
 ---
 {% raw %}

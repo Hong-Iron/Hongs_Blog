@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/thompson-construction/"
 parent_title: "톰슨 구성법"
 description: "컴파일러 · 톰슨 구성법 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/08_thompson-construction_impl/"
 ---
 {% raw %}

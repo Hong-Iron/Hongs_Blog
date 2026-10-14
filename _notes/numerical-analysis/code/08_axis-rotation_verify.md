@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/axis-rotation/"
 parent_title: "임의 축 회전"
 description: "수치해석 · 임의 축 회전 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/08_axis-rotation_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/local-optimizations/"
 parent_title: "지역 최적화 기법"
 description: "컴파일러 · 지역 최적화 기법 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/41_local-optimizations_verify/"
 ---
 {% raw %}

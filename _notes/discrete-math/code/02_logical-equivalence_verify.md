@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/logical-equivalence/"
 parent_title: "논리적 동치와 정규형"
 description: "이산수학 · 논리적 동치와 정규형 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/02_logical-equivalence_verify/"
 ---
 {% raw %}

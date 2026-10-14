@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/token-lexeme/"
 parent_title: "토큰과 렉심"
 description: "컴파일러 · 토큰과 렉심 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/03_token-lexeme_verify/"
 ---
 {% raw %}

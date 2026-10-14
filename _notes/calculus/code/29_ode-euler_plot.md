@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/ode-euler/"
 parent_title: "미분방정식과 오일러 방법"
 description: "미분적분학 · 미분방정식과 오일러 방법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/29_ode-euler_plot/"
 ---
 {% raw %}

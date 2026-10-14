@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/msdos-memory-map/"
 parent_title: "MS-DOS 메모리 배치"
 description: "어셈블리어 · MS-DOS 메모리 배치 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/49_msdos-memory-map_verify/"
 ---
 {% raw %}

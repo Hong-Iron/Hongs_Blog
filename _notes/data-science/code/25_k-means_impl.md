@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/k-means/"
 parent_title: "k-평균"
 description: "데이터 과학 · k-평균 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/25_k-means_impl/"
 ---
 {% raw %}

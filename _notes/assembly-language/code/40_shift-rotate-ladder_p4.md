@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/shift-rotate-ladder/"
 parent_title: "시프트와 회전 예제 사다리"
 description: "어셈블리어 · 시프트와 회전 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/40_shift-rotate-ladder_p4/"
 ---
 {% raw %}

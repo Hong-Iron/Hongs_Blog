@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/capstone-5/"
 parent_title: "캡스톤 5 안전한 종료와 부하 조절"
 description: "Rust · 캡스톤 5 안전한 종료와 부하 조절 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/46_capstone-5_p1/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/hash-function-division/"
 parent_title: "나눗셈 해시 함수"
 description: "자료구조 · 나눗셈 해시 함수 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/48_hash-function-division_verify/"
 ---
 {% raw %}

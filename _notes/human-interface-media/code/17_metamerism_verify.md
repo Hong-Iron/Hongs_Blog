@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/metamerism/"
 parent_title: "조건등색"
 description: "휴먼 인터페이스 미디어 · 조건등색 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/17_metamerism_verify/"
 ---
 {% raw %}

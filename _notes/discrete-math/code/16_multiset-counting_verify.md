@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/multiset-counting/"
 parent_title: "중복을 허용하는 셈"
 description: "이산수학 · 중복을 허용하는 셈 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/16_multiset-counting_verify/"
 ---
 {% raw %}

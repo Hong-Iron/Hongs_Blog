@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/stack/"
 parent_title: "스택"
 description: "알고리즘 · 스택 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/10_stack_impl/"
 ---
 {% raw %}

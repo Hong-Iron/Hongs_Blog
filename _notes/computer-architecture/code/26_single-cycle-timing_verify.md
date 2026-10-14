@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/single-cycle-timing/"
 parent_title: "단일 사이클의 클록 주기"
 description: "컴퓨터 구조 · 단일 사이클의 클록 주기 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/26_single-cycle-timing_verify/"
 ---
 {% raw %}

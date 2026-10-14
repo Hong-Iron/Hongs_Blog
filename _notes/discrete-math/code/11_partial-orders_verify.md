@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/partial-orders/"
 parent_title: "부분순서와 위상 정렬"
 description: "이산수학 · 부분순서와 위상 정렬 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/11_partial-orders_verify/"
 ---
 {% raw %}

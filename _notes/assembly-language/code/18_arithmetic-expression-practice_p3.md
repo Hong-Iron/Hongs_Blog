@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/arithmetic-expression-practice/"
 parent_title: "산술식을 어셈블리로 옮기기 연습"
 description: "어셈블리어 · 산술식을 어셈블리로 옮기기 연습 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/18_arithmetic-expression-practice_p3/"
 ---
 {% raw %}

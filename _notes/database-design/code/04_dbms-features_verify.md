@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/dbms-features/"
 parent_title: "DBMS의 기능과 쓰지 않을 때"
 description: "데이터베이스 설계 · DBMS의 기능과 쓰지 않을 때 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/04_dbms-features_verify/"
 ---
 {% raw %}

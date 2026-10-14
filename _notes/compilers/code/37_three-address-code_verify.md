@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/three-address-code/"
 parent_title: "3주소 코드"
 description: "컴파일러 · 3주소 코드 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/37_three-address-code_verify/"
 ---
 {% raw %}

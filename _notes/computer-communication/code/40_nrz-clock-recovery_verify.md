@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/nrz-clock-recovery/"
 parent_title: "NRZ와 클럭 복구"
 description: "컴퓨터 통신 · NRZ와 클럭 복구 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/40_nrz-clock-recovery_verify/"
 ---
 {% raw %}

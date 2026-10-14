@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/convolution-sum/"
 parent_title: "컨벌루션 합"
 description: "신호 및 시스템 · 컨벌루션 합 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/18_convolution-sum_plot/"
 ---
 {% raw %}

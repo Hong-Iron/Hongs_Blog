@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/contrast--pca-nmf/"
 parent_title: "PCA와 NMF 비교"
 description: "데이터 과학 · PCA와 NMF 비교 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/36_contrast--pca-nmf_plot/"
 ---
 {% raw %}

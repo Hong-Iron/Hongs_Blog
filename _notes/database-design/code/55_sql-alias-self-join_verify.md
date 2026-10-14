@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-alias-self-join/"
 parent_title: "별칭과 자기 조인"
 description: "데이터베이스 설계 · 별칭과 자기 조인 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/55_sql-alias-self-join_verify/"
 ---
 {% raw %}

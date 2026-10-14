@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/reflection/"
 parent_title: "반사와 반전"
 description: "수치해석 · 반사와 반전 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/07_reflection_verify/"
 ---
 {% raw %}

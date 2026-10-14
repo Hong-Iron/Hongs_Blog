@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/encapsulation/"
 parent_title: "캡슐화"
 description: "컴퓨터 통신 · 캡슐화 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/22_encapsulation_verify/"
 ---
 {% raw %}

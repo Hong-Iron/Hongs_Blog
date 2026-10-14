@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/finite-automata/"
 parent_title: "유한 오토마타"
 description: "컴파일러 · 유한 오토마타 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/06_finite-automata_impl/"
 ---
 {% raw %}

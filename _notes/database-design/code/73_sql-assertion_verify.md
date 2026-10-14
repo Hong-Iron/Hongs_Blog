@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-assertion/"
 parent_title: "주장 CREATE ASSERTION"
 description: "데이터베이스 설계 · 주장 CREATE ASSERTION 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/73_sql-assertion_verify/"
 ---
 {% raw %}

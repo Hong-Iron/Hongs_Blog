@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/throughput/"
 parent_title: "처리량"
 description: "컴퓨터 통신 · 처리량 그림 생성 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/27_throughput_plot/"
 ---
 {% raw %}

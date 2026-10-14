@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/join-query-ladder/"
 parent_title: "조인 질의 쓰기 예제 사다리"
 description: "데이터베이스 설계 · 조인 질의 쓰기 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/66_join-query-ladder_p4/"
 ---
 {% raw %}

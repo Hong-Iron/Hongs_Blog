@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/asm-program-template/"
 parent_title: "프로그램 틀"
 description: "어셈블리어 · 프로그램 틀 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/10_asm-program-template_verify/"
 ---
 {% raw %}

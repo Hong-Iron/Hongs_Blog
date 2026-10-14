@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/mutex-rwlock/"
 parent_title: "Mutex와 RwLock"
 description: "Rust · Mutex와 RwLock 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/32_mutex-rwlock_verify/"
 ---
 {% raw %}

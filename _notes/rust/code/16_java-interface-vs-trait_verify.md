@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/java-interface-vs-trait/"
 parent_title: "Java 인터페이스 ↔ 트레이트"
 description: "Rust · Java 인터페이스 ↔ 트레이트 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/16_java-interface-vs-trait_verify/"
 ---
 {% raw %}

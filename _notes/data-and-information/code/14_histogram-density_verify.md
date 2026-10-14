@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/histogram-density/"
 parent_title: "히스토그램 밀도 추정"
 description: "자료와 정보 · 히스토그램 밀도 추정 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/14_histogram-density_verify/"
 ---
 {% raw %}

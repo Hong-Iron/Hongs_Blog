@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/code-encoding/"
 parent_title: "부호와 부호화"
 description: "자료와 정보 · 부호와 부호화 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/04_code-encoding_verify/"
 ---
 {% raw %}

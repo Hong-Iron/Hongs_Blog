@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/capstone-6/"
 parent_title: "캡스톤 6 테스트·CI·배포"
 description: "Rust · 캡스톤 6 테스트·CI·배포 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/50_capstone-6_p1/"
 ---
 {% raw %}

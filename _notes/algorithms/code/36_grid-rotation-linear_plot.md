@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/grid-rotation-linear/"
 parent_title: "격자 회전 ↔ 선형변환"
 description: "알고리즘 · 격자 회전 ↔ 선형변환 그림 생성 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/36_grid-rotation-linear_plot/"
 ---
 {% raw %}

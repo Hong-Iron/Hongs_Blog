@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/selection-tree-ladder/"
 parent_title: "승자 트리와 패자 트리 재경기 예제 사다리"
 description: "자료구조 · 승자 트리와 패자 트리 재경기 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/35_selection-tree-ladder_p4/"
 ---
 {% raw %}

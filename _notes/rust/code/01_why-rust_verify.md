@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/why-rust/"
 parent_title: "Rust가 푸는 문제"
 description: "Rust · Rust가 푸는 문제 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/01_why-rust_verify/"
 ---
 {% raw %}

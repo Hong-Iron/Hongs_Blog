@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/weak-entity-type/"
 parent_title: "약한 개체 타입"
 description: "데이터베이스 설계 · 약한 개체 타입 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/27_weak-entity-type_verify/"
 ---
 {% raw %}

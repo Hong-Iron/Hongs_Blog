@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/hypothesis-testing/"
 parent_title: "가설검정과 p값"
 description: "확률과 통계 · 가설검정과 p값 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/32_hypothesis-testing_plot/"
 ---
 {% raw %}

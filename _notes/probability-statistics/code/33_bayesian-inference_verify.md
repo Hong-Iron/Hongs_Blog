@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/bayesian-inference/"
 parent_title: "베이즈 추론과 MAP"
 description: "확률과 통계 · 베이즈 추론과 MAP 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/33_bayesian-inference_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/matrix-multiplication/"
 parent_title: "행렬 곱셈과 전치"
 description: "선형대수학 · 행렬 곱셈과 전치 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/06_matrix-multiplication_plot/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/tail-bounds/"
 parent_title: "확률 부등식"
 description: "확률과 통계 · 확률 부등식 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/20_tail-bounds_plot/"
 ---
 {% raw %}

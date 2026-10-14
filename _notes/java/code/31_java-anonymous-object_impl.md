@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-anonymous-object/"
 parent_title: "익명 객체"
 description: "자바 프로그래밍 · 익명 객체 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/31_java-anonymous-object_impl/"
 ---
 {% raw %}

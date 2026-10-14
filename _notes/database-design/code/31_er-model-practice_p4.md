@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/er-model-practice/"
 parent_title: "ER 모델 연습"
 description: "데이터베이스 설계 · ER 모델 연습 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/31_er-model-practice_p4/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-bounded-wildcard/"
 parent_title: "제한된 타입 파라미터와 와일드카드"
 description: "자바 프로그래밍 · 제한된 타입 파라미터와 와일드카드 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/39_java-bounded-wildcard_impl/"
 ---
 {% raw %}

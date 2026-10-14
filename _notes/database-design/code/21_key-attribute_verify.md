@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/key-attribute/"
 parent_title: "키 속성"
 description: "데이터베이스 설계 · 키 속성 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/21_key-attribute_verify/"
 ---
 {% raw %}

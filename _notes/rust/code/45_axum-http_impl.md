@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/axum-http/"
 parent_title: "axum으로 HTTP 서비스 만들기"
 description: "Rust · axum으로 HTTP 서비스 만들기 구현 코드"
+sitemap: false
 permalink: "/studies/rust/code/45_axum-http_impl/"
 ---
 {% raw %}

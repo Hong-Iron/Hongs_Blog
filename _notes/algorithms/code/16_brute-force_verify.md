@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/brute-force/"
 parent_title: "완전탐색"
 description: "알고리즘 · 완전탐색 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/16_brute-force_verify/"
 ---
 {% raw %}

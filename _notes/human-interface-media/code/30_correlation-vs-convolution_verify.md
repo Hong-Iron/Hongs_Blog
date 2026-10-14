@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/correlation-vs-convolution/"
 parent_title: "교차 상관과 합성곱 비교"
 description: "휴먼 인터페이스 미디어 · 교차 상관과 합성곱 비교 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/30_correlation-vs-convolution_verify/"
 ---
 {% raw %}

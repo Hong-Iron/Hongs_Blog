@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/taylor-method/"
 parent_title: "테일러 급수 방법"
 description: "수치해석 · 테일러 급수 방법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/33_taylor-method_plot/"
 ---
 {% raw %}

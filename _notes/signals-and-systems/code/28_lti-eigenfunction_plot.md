@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/lti-eigenfunction/"
 parent_title: "LTI 시스템의 고유함수"
 description: "신호 및 시스템 · LTI 시스템의 고유함수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/28_lti-eigenfunction_plot/"
 ---
 {% raw %}

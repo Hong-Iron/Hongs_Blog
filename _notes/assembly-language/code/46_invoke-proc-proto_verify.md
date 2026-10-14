@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/invoke-proc-proto/"
 parent_title: "INVOKE·PROC·PROTO 지시어"
 description: "어셈블리어 · INVOKE·PROC·PROTO 지시어 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/46_invoke-proc-proto_verify/"
 ---
 {% raw %}

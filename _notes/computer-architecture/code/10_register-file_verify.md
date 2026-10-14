@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/register-file/"
 parent_title: "레지스터 파일과 메모리 소자"
 description: "컴퓨터 구조 · 레지스터 파일과 메모리 소자 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/10_register-file_verify/"
 ---
 {% raw %}

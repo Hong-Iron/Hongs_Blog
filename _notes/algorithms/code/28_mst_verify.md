@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/mst/"
 parent_title: "최소 신장 트리"
 description: "알고리즘 · 최소 신장 트리 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/28_mst_verify/"
 ---
 {% raw %}

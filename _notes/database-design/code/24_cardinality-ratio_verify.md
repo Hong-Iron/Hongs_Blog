@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/cardinality-ratio/"
 parent_title: "카디널리티 비율"
 description: "데이터베이스 설계 · 카디널리티 비율 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/24_cardinality-ratio_verify/"
 ---
 {% raw %}

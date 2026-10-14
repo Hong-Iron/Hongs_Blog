@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/follow-set/"
 parent_title: "FOLLOW 집합"
 description: "컴파일러 · FOLLOW 집합 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/19_follow-set_impl/"
 ---
 {% raw %}

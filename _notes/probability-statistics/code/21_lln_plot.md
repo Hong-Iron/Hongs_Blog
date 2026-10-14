@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/lln/"
 parent_title: "큰 수의 법칙"
 description: "확률과 통계 · 큰 수의 법칙 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/21_lln_plot/"
 ---
 {% raw %}

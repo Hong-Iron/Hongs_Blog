@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/jvm-bytecode/"
 parent_title: "JVM과 바이트코드"
 description: "자바 프로그래밍 · JVM과 바이트코드 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/01_jvm-bytecode_impl/"
 ---
 {% raw %}

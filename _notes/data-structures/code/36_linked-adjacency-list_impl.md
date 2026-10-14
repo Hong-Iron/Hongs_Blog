@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/linked-adjacency-list/"
 parent_title: "연결 인접 리스트와 배열 인접 리스트"
 description: "자료구조 · 연결 인접 리스트와 배열 인접 리스트 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/36_linked-adjacency-list_impl/"
 ---
 {% raw %}

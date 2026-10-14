@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/complex-retrieval-practice/"
 parent_title: "복잡한 검색 연습"
 description: "데이터베이스 설계 · 복잡한 검색 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/70_complex-retrieval-practice_p1-sql/"
 ---
 {% raw %}

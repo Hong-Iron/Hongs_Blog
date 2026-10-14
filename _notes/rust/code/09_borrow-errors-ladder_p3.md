@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/borrow-errors-ladder/"
 parent_title: "빌림 오류 고치기 예제 사다리"
 description: "Rust · 빌림 오류 고치기 예제 사다리 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/09_borrow-errors-ladder_p3/"
 ---
 {% raw %}

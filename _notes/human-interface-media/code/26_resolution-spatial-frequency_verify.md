@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/resolution-spatial-frequency/"
 parent_title: "해상도와 공간 주파수"
 description: "휴먼 인터페이스 미디어 · 해상도와 공간 주파수 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/26_resolution-spatial-frequency_verify/"
 ---
 {% raw %}

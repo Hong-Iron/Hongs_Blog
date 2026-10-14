@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-access-modifier/"
 parent_title: "접근 제한자"
 description: "자바 프로그래밍 · 접근 제한자 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/19_java-access-modifier_impl/"
 ---
 {% raw %}

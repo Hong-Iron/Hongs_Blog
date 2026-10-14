@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/context-free-grammar/"
 parent_title: "문맥 자유 문법"
 description: "컴파일러 · 문맥 자유 문법 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/11_context-free-grammar_verify/"
 ---
 {% raw %}

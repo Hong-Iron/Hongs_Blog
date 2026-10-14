@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/panic-policy/"
 parent_title: "panic을 쓸 때"
 description: "Rust · panic을 쓸 때 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/26_panic-policy_verify/"
 ---
 {% raw %}

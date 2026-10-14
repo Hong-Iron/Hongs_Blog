@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/discrete-distributions-compared/"
 parent_title: "이항·기하·포아송 비교"
 description: "확률과 통계 · 이항·기하·포아송 비교 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/13_discrete-distributions-compared_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/recurrence-matrix-bridge/"
 parent_title: "선형 점화식 ↔ 행렬 거듭제곱"
 description: "선형대수학 · 선형 점화식 ↔ 행렬 거듭제곱 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/21_recurrence-matrix-bridge_plot/"
 ---
 {% raw %}

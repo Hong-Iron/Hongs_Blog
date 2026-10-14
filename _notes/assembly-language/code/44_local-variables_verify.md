@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/local-variables/"
 parent_title: "지역 변수"
 description: "어셈블리어 · 지역 변수 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/44_local-variables_verify/"
 ---
 {% raw %}

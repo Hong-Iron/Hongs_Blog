@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cache-write-policy/"
 parent_title: "캐시 쓰기 정책"
 description: "컴퓨터 구조 · 캐시 쓰기 정책 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/39_cache-write-policy_verify/"
 ---
 {% raw %}

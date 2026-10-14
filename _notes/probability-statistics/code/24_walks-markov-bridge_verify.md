@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/walks-markov-bridge/"
 parent_title: "인접행렬 거듭제곱 ↔ 마르코프 전이"
 description: "확률과 통계 · 인접행렬 거듭제곱 ↔ 마르코프 전이 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/24_walks-markov-bridge_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/b-tree-height/"
 parent_title: "B-트리의 높이"
 description: "데이터베이스 설계 · B-트리의 높이 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/12_b-tree-height_verify/"
 ---
 {% raw %}

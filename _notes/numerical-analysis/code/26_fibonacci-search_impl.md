@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/fibonacci-search/"
 parent_title: "피보나치 탐색"
 description: "수치해석 · 피보나치 탐색 구현 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/26_fibonacci-search_impl/"
 ---
 {% raw %}

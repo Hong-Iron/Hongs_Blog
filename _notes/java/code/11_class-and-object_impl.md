@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/class-and-object/"
 parent_title: "클래스와 객체"
 description: "자바 프로그래밍 · 클래스와 객체 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/11_class-and-object_impl/"
 ---
 {% raw %}

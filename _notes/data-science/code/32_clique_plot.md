@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/clique/"
 parent_title: "CLIQUE"
 description: "데이터 과학 · CLIQUE 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/32_clique_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/error-propagation/"
 parent_title: "물음표 연산자와 에러 전파"
 description: "Rust · 물음표 연산자와 에러 전파 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/23_error-propagation_verify/"
 ---
 {% raw %}

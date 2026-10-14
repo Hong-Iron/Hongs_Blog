@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/fourier-coefficient-ladder/"
 parent_title: "푸리에 계수 계산 예제 사다리"
 description: "신호 및 시스템 · 푸리에 계수 계산 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/30_fourier-coefficient-ladder_p4/"
 ---
 {% raw %}

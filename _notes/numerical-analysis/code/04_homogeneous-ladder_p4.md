@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/homogeneous-ladder/"
 parent_title: "동차 좌표 예제 사다리"
 description: "수치해석 · 동차 좌표 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/04_homogeneous-ladder_p4/"
 ---
 {% raw %}

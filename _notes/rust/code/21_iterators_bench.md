@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/iterators/"
 parent_title: "반복자"
 description: "Rust · 반복자 실험 코드"
+sitemap: false
 permalink: "/studies/rust/code/21_iterators_bench/"
 ---
 {% raw %}

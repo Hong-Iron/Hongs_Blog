@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/contrast--line-coding/"
 parent_title: "인코딩 방식 비교"
 description: "컴퓨터 통신 · 인코딩 방식 비교 그림 생성 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/43_contrast--line-coding_plot/"
 ---
 {% raw %}

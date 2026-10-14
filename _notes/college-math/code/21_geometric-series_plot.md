@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/geometric-series/"
 parent_title: "등비급수"
 description: "대학수학 · 등비급수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/21_geometric-series_plot/"
 ---
 {% raw %}

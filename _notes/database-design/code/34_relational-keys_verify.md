@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/relational-keys/"
 parent_title: "슈퍼키·후보 키·기본 키"
 description: "데이터베이스 설계 · 슈퍼키·후보 키·기본 키 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/34_relational-keys_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/packet-switching/"
 parent_title: "패킷 스위칭"
 description: "컴퓨터 통신 · 패킷 스위칭 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/08_packet-switching_verify/"
 ---
 {% raw %}

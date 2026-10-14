@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/ode-ladder/"
 parent_title: "미분방정식 풀이 예제 사다리"
 description: "신호 및 시스템 · 미분방정식 풀이 예제 사다리 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/02_ode-ladder_p1/"
 ---
 {% raw %}

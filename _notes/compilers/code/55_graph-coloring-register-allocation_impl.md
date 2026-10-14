@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/graph-coloring-register-allocation/"
 parent_title: "그래프 색칠 레지스터 할당"
 description: "컴파일러 · 그래프 색칠 레지스터 할당 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/55_graph-coloring-register-allocation_impl/"
 ---
 {% raw %}

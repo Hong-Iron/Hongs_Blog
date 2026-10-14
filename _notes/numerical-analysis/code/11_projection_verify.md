@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/projection/"
 parent_title: "평행 투영과 원근 투영"
 description: "수치해석 · 평행 투영과 원근 투영 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/11_projection_verify/"
 ---
 {% raw %}

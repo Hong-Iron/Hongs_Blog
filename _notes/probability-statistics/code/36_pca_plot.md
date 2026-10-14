@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/pca/"
 parent_title: "주성분 분석"
 description: "확률과 통계 · 주성분 분석 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/36_pca_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/dt-period-ladder/"
 parent_title: "이산 신호 주기 예제 사다리"
 description: "신호 및 시스템 · 이산 신호 주기 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/09_dt-period-ladder_p4/"
 ---
 {% raw %}

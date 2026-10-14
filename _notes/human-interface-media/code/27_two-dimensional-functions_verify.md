@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/two-dimensional-functions/"
 parent_title: "2차원 함수"
 description: "휴먼 인터페이스 미디어 · 2차원 함수 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/27_two-dimensional-functions_verify/"
 ---
 {% raw %}

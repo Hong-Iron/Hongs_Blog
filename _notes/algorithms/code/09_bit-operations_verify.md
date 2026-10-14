@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/bit-operations/"
 parent_title: "비트 연산과 비트마스크"
 description: "알고리즘 · 비트 연산과 비트마스크 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/09_bit-operations_verify/"
 ---
 {% raw %}

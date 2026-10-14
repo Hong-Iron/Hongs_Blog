@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/inverse-function/"
 parent_title: "역함수"
 description: "대학수학 · 역함수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/03_inverse-function_plot/"
 ---
 {% raw %}

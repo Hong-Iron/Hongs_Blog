@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/eclat/"
 parent_title: "ECLAT"
 description: "데이터 과학 · ECLAT 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/14_eclat_impl/"
 ---
 {% raw %}

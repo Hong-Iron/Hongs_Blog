@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/matrix-calculus/"
 parent_title: "행렬 미분"
 description: "미분적분학 · 행렬 미분 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/24_matrix-calculus_verify/"
 ---
 {% raw %}

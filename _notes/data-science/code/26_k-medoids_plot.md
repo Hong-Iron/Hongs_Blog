@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/k-medoids/"
 parent_title: "k-메도이드"
 description: "데이터 과학 · k-메도이드 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/26_k-medoids_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/abstract-syntax-tree/"
 parent_title: "추상 구문 트리"
 description: "컴파일러 · 추상 구문 트리 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/16_abstract-syntax-tree_impl/"
 ---
 {% raw %}

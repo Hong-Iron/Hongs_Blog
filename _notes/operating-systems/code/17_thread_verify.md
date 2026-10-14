@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/thread/"
 parent_title: "스레드"
 description: "운영체제 · 스레드 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/17_thread_verify/"
 ---
 {% raw %}

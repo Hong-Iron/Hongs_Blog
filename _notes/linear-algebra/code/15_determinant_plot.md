@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/determinant/"
 parent_title: "행렬식"
 description: "선형대수학 · 행렬식 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/15_determinant_plot/"
 ---
 {% raw %}

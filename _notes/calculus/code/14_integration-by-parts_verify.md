@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/integration-by-parts/"
 parent_title: "부분적분"
 description: "미분적분학 · 부분적분 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/14_integration-by-parts_verify/"
 ---
 {% raw %}

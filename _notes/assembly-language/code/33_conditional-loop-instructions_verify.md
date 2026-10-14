@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/conditional-loop-instructions/"
 parent_title: "조건부 반복 명령"
 description: "어셈블리어 · 조건부 반복 명령 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/33_conditional-loop-instructions_verify/"
 ---
 {% raw %}

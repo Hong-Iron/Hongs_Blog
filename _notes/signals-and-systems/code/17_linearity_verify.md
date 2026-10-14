@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/linearity/"
 parent_title: "선형성"
 description: "신호 및 시스템 · 선형성 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/17_linearity_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/dfs/"
 parent_title: "깊이 우선 탐색(DFS)"
 description: "알고리즘 · 깊이 우선 탐색(DFS) 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/25_dfs_impl/"
 ---
 {% raw %}

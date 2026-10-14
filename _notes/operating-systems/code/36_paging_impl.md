@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/paging/"
 parent_title: "페이징"
 description: "운영체제 · 페이징 구현 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/36_paging_impl/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/countability/"
 parent_title: "가산 집합과 대각선 논법"
 description: "이산수학 · 가산 집합과 대각선 논법 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/08_countability_verify/"
 ---
 {% raw %}

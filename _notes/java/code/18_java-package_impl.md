@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-package/"
 parent_title: "패키지"
 description: "자바 프로그래밍 · 패키지 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/18_java-package_impl/"
 ---
 {% raw %}

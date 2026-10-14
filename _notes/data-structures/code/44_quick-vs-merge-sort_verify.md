@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/quick-vs-merge-sort/"
 parent_title: "퀵 정렬과 병합 정렬 비교"
 description: "자료구조 · 퀵 정렬과 병합 정렬 비교 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/44_quick-vs-merge-sort_verify/"
 ---
 {% raw %}

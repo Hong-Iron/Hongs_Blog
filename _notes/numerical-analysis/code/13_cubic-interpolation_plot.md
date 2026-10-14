@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/cubic-interpolation-curve/"
 parent_title: "3차 보간 곡선"
 description: "수치해석 · 3차 보간 곡선 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/13_cubic-interpolation_plot/"
 ---
 {% raw %}

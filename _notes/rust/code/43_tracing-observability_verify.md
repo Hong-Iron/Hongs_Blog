@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/tracing-observability/"
 parent_title: "tracing으로 관측하기"
 description: "Rust · tracing으로 관측하기 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/43_tracing-observability_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/ct-fourier-transform/"
 parent_title: "연속 시간 푸리에 변환"
 description: "신호 및 시스템 · 연속 시간 푸리에 변환 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/38_ct-fourier-transform_plot/"
 ---
 {% raw %}

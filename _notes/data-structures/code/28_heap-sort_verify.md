@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/heap-sort/"
 parent_title: "우선순위 큐 정렬과 힙 정렬"
 description: "자료구조 · 우선순위 큐 정렬과 힙 정렬 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/28_heap-sort_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/virtual-memory/"
 parent_title: "가상 메모리"
 description: "운영체제 · 가상 메모리 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/38_virtual-memory_verify/"
 ---
 {% raw %}

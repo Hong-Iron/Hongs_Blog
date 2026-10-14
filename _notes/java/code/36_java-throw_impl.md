@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-throw/"
 parent_title: "예외 던지기"
 description: "자바 프로그래밍 · 예외 던지기 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/36_java-throw_impl/"
 ---
 {% raw %}

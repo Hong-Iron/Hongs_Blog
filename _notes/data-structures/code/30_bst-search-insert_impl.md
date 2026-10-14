@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/bst-search-insert/"
 parent_title: "이진 탐색 트리의 탐색과 삽입"
 description: "자료구조 · 이진 탐색 트리의 탐색과 삽입 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/30_bst-search-insert_impl/"
 ---
 {% raw %}

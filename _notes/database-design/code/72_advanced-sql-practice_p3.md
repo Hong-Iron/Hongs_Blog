@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/advanced-sql-practice/"
 parent_title: "JOIN·GROUP BY 종합 연습"
 description: "데이터베이스 설계 · JOIN·GROUP BY 종합 연습 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/72_advanced-sql-practice_p3/"
 ---
 {% raw %}

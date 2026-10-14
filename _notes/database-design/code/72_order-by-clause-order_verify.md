@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/order-by-clause-order/"
 parent_title: "ORDER BY와 질의의 절 순서"
 description: "데이터베이스 설계 · ORDER BY와 질의의 절 순서 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/72_order-by-clause-order_verify/"
 ---
 {% raw %}

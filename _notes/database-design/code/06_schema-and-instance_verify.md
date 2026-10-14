@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/schema-and-instance/"
 parent_title: "스키마와 인스턴스"
 description: "데이터베이스 설계 · 스키마와 인스턴스 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/06_schema-and-instance_verify/"
 ---
 {% raw %}

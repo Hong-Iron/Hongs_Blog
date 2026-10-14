@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/multivariate-newton/"
 parent_title: "다변수 뉴턴 방법"
 description: "수치해석 · 다변수 뉴턴 방법 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/31_multivariate-newton_plot/"
 ---
 {% raw %}

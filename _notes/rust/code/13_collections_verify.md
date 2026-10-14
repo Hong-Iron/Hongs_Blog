@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/collections/"
 parent_title: "컬렉션"
 description: "Rust · 컬렉션 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/13_collections_verify/"
 ---
 {% raw %}

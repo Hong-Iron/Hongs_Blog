@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/malloc-free-vs-ownership/"
 parent_title: "malloc·free ↔ 소유권과 Drop"
 description: "Rust · malloc·free ↔ 소유권과 Drop 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/06_malloc-free-vs-ownership_verify/"
 ---
 {% raw %}

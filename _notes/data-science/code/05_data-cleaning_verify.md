@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/data-cleaning/"
 parent_title: "데이터 정제"
 description: "데이터 과학 · 데이터 정제 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/05_data-cleaning_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/error-detecting-code/"
 parent_title: "오류 검출 코드"
 description: "컴퓨터 통신 · 오류 검출 코드 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/47_error-detection_verify/"
 ---
 {% raw %}

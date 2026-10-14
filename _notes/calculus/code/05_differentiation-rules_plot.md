@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/differentiation-rules/"
 parent_title: "미분 법칙"
 description: "미분적분학 · 미분 법칙 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/05_differentiation-rules_plot/"
 ---
 {% raw %}

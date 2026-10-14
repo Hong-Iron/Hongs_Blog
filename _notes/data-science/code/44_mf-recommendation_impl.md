@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/mf-recommendation/"
 parent_title: "행렬 분해 추천"
 description: "데이터 과학 · 행렬 분해 추천 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/44_mf-recommendation_impl/"
 ---
 {% raw %}

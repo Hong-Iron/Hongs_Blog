@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/fp-growth-ladder/"
 parent_title: "FP-Growth 예제 사다리"
 description: "데이터 과학 · FP-Growth 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/data-science/code/15_fp-growth-ladder_p4/"
 ---
 {% raw %}

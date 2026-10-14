@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/disk-scheduling/"
 parent_title: "디스크 스케줄링"
 description: "운영체제 · 디스크 스케줄링 구현 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/53_disk-scheduling_impl/"
 ---
 {% raw %}

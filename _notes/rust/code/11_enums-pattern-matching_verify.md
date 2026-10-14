@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/enums-pattern-matching/"
 parent_title: "열거형과 패턴 매칭"
 description: "Rust · 열거형과 패턴 매칭 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/11_enums-pattern-matching_verify/"
 ---
 {% raw %}

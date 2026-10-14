@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/linked-list-practice/"
 parent_title: "연결 리스트 연습"
 description: "자료구조 · 연결 리스트 연습 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/19_linked-list-practice_p3/"
 ---
 {% raw %}

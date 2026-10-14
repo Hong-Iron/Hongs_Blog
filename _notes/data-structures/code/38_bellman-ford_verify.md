@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/bellman-ford/"
 parent_title: "벨만–포드 알고리즘"
 description: "자료구조 · 벨만–포드 알고리즘 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/38_bellman-ford_verify/"
 ---
 {% raw %}

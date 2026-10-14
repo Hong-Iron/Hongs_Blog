@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/convolution-integral/"
 parent_title: "컨벌루션 적분"
 description: "신호 및 시스템 · 컨벌루션 적분 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/19_convolution-integral_plot/"
 ---
 {% raw %}

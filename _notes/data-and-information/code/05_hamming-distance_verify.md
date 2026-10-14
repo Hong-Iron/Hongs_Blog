@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/hamming-distance/"
 parent_title: "해밍 거리와 부호 거리"
 description: "자료와 정보 · 해밍 거리와 부호 거리 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/05_hamming-distance_verify/"
 ---
 {% raw %}

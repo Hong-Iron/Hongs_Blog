@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/hash-table-terms/"
 parent_title: "해시 테이블의 홈 버킷과 충돌"
 description: "자료구조 · 해시 테이블의 홈 버킷과 충돌 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/47_hash-table-terms_verify/"
 ---
 {% raw %}

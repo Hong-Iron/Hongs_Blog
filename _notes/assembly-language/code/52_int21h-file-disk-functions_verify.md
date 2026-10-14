@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/int21h-file-disk-functions/"
 parent_title: "INT 21h 파일·디스크 함수"
 description: "어셈블리어 · INT 21h 파일·디스크 함수 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/52_int21h-file-disk-functions_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-view/"
 parent_title: "뷰"
 description: "데이터베이스 설계 · 뷰 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/75_sql-view_verify/"
 ---
 {% raw %}

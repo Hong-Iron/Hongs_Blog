@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/type-lengthof-sizeof/"
 parent_title: "TYPE·LENGTHOF·SIZEOF 연산자"
 description: "어셈블리어 · TYPE·LENGTHOF·SIZEOF 연산자 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/22_type-lengthof-sizeof_verify/"
 ---
 {% raw %}

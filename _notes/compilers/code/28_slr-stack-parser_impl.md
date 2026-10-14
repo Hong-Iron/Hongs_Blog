@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/slr-stack-parser/"
 parent_title: "SLR 파서의 스택 동작"
 description: "컴파일러 · SLR 파서의 스택 동작 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/28_slr-stack-parser_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/virtual-machine-levels/"
 parent_title: "가상 기계 계층"
 description: "어셈블리어 · 가상 기계 계층 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/02_virtual-machine-levels_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/rods-and-cones/"
 parent_title: "간상체와 추상체"
 description: "휴먼 인터페이스 미디어 · 간상체와 추상체 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/15_rods-and-cones_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/register-interference-graph/"
 parent_title: "레지스터 간섭 그래프"
 description: "컴파일러 · 레지스터 간섭 그래프 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/54_register-interference-graph_impl/"
 ---
 {% raw %}

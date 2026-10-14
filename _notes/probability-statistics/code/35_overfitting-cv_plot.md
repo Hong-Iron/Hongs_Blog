@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/overfitting-cv/"
 parent_title: "과적합과 교차검증"
 description: "확률과 통계 · 과적합과 교차검증 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/35_overfitting-cv_plot/"
 ---
 {% raw %}

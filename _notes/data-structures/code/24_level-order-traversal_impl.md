@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/level-order-traversal/"
 parent_title: "레벨 순서 순회"
 description: "자료구조 · 레벨 순서 순회 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/24_level-order-traversal_impl/"
 ---
 {% raw %}

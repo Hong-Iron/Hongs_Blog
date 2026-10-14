@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/cross-product/"
 parent_title: "외적"
 description: "수치해석 · 외적 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/01_cross-product_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/tree-dp/"
 parent_title: "트리 DP"
 description: "알고리즘 · 트리 DP 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/32_tree-dp_verify/"
 ---
 {% raw %}

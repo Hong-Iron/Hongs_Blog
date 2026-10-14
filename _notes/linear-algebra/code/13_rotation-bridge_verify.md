@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/rotation-bridge/"
 parent_title: "덧셈정리 ↔ 복소수 곱 ↔ 회전 행렬"
 description: "선형대수학 · 덧셈정리 ↔ 복소수 곱 ↔ 회전 행렬 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/13_rotation-bridge_verify/"
 ---
 {% raw %}

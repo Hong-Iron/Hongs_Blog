@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/compilation-vs-interpretation/"
 parent_title: "컴파일과 인터프리트 비교"
 description: "컴파일러 · 컴파일과 인터프리트 비교 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/02_compilation-vs-interpretation_verify/"
 ---
 {% raw %}

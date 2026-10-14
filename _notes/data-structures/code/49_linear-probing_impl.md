@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/linear-probing/"
 parent_title: "선형 탐사"
 description: "자료구조 · 선형 탐사 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/49_linear-probing_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/framing-compared/"
 parent_title: "프레이밍 방식 비교"
 description: "컴퓨터 통신 · 프레이밍 방식 비교 그림 생성 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/46_framing-compared_plot/"
 ---
 {% raw %}

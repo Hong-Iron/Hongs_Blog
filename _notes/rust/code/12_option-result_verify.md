@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/option-result/"
 parent_title: "Option과 Result"
 description: "Rust · Option과 Result 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/12_option-result_verify/"
 ---
 {% raw %}

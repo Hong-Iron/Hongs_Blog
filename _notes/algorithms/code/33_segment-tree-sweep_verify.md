@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/segment-tree-sweep/"
 parent_title: "세그먼트 트리와 스위핑"
 description: "알고리즘 · 세그먼트 트리와 스위핑 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/33_segment-tree-sweep_verify/"
 ---
 {% raw %}

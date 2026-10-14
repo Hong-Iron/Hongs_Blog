@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/entity-type-and-set/"
 parent_title: "개체 타입과 개체 집합"
 description: "데이터베이스 설계 · 개체 타입과 개체 집합 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/19_entity-type-and-set_verify/"
 ---
 {% raw %}

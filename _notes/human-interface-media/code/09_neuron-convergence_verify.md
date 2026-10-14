@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/neuron-convergence/"
 parent_title: "뉴런의 수렴"
 description: "휴먼 인터페이스 미디어 · 뉴런의 수렴 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/09_neuron-convergence_verify/"
 ---
 {% raw %}

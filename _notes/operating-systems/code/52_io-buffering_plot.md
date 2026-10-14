@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/io-buffering/"
 parent_title: "입출력 버퍼링"
 description: "운영체제 · 입출력 버퍼링 그림 생성 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/52_io-buffering_plot/"
 ---
 {% raw %}

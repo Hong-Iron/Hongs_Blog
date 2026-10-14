@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/normal-distribution/"
 parent_title: "정규분포"
 description: "확률과 통계 · 정규분포 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/16_normal-distribution_verify/"
 ---
 {% raw %}

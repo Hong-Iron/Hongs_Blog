@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/homogeneous-coordinates/"
 parent_title: "동차 좌표"
 description: "수치해석 · 동차 좌표 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/04_homogeneous-coordinates_verify/"
 ---
 {% raw %}

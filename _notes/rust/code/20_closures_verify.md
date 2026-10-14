@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/closures/"
 parent_title: "클로저"
 description: "Rust · 클로저 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/20_closures_verify/"
 ---
 {% raw %}

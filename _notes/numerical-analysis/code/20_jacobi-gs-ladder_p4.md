@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/jacobi-gs-ladder/"
 parent_title: "야코비와 가우스-자이델 예제 사다리"
 description: "수치해석 · 야코비와 가우스-자이델 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/20_jacobi-gs-ladder_p4/"
 ---
 {% raw %}

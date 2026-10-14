@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/ownership-move/"
 parent_title: "소유권과 이동"
 description: "Rust · 소유권과 이동 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/05_ownership-move_verify/"
 ---
 {% raw %}

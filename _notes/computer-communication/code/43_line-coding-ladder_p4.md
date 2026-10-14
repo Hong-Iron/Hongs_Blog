@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/line-coding-ladder/"
 parent_title: "인코딩 예제 사다리"
 description: "컴퓨터 통신 · 인코딩 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/43_line-coding-ladder_p4/"
 ---
 {% raw %}

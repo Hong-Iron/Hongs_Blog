@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/permutations-combinations/"
 parent_title: "순열과 조합"
 description: "이산수학 · 순열과 조합 그림 생성 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/15_permutations-combinations_plot/"
 ---
 {% raw %}

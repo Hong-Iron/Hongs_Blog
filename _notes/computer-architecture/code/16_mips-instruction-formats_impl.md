@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-instruction-formats/"
 parent_title: "MIPS 명령어 형식"
 description: "컴퓨터 구조 · MIPS 명령어 형식 구현 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/16_mips-instruction-formats_impl/"
 ---
 {% raw %}

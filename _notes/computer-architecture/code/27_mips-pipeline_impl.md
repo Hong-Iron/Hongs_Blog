@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-pipeline/"
 parent_title: "5단계 파이프라인"
 description: "컴퓨터 구조 · 5단계 파이프라인 구현 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/27_mips-pipeline_impl/"
 ---
 {% raw %}

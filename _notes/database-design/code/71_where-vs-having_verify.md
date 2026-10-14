@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/where-vs-having/"
 parent_title: "WHERE와 HAVING 비교"
 description: "데이터베이스 설계 · WHERE와 HAVING 비교 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/71_where-vs-having_verify/"
 ---
 {% raw %}

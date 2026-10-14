@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/winner-tree/"
 parent_title: "승자 트리"
 description: "자료구조 · 승자 트리 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/34_winner-tree_impl/"
 ---
 {% raw %}

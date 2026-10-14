@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/tokio-runtime-tasks/"
 parent_title: "tokio 런타임과 태스크"
 description: "Rust · tokio 런타임과 태스크 구현 코드"
+sitemap: false
 permalink: "/studies/rust/code/37_tokio-runtime-tasks_impl/"
 ---
 {% raw %}

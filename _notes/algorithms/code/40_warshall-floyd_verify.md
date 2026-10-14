@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/warshall-floyd/"
 parent_title: "추이 폐포 ↔ 플로이드–워셜"
 description: "알고리즘 · 추이 폐포 ↔ 플로이드–워셜 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/40_warshall-floyd_verify/"
 ---
 {% raw %}

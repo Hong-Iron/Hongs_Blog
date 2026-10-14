@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/entropy/"
 parent_title: "엔트로피"
 description: "확률과 통계 · 엔트로피 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/37_entropy_plot/"
 ---
 {% raw %}

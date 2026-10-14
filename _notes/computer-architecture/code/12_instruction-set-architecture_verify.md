@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/instruction-set-architecture/"
 parent_title: "명령어 집합 구조"
 description: "컴퓨터 구조 · 명령어 집합 구조 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/12_instruction-set-architecture_verify/"
 ---
 {% raw %}

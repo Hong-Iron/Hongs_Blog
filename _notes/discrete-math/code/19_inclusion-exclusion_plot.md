@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/inclusion-exclusion/"
 parent_title: "포함-배제 원리"
 description: "이산수학 · 포함-배제 원리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/19_inclusion-exclusion_plot/"
 ---
 {% raw %}

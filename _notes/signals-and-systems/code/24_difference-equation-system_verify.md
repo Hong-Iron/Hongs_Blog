@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/difference-equation-system/"
 parent_title: "차분방정식으로 표현한 LTI 시스템"
 description: "신호 및 시스템 · 차분방정식으로 표현한 LTI 시스템 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/24_difference-equation-system_verify/"
 ---
 {% raw %}

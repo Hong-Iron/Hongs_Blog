@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/geometric-distribution/"
 parent_title: "기하분포"
 description: "확률과 통계 · 기하분포 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/11_geometric-distribution_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/closed-maximal-patterns/"
 parent_title: "닫힌 패턴과 최대 패턴"
 description: "데이터 과학 · 닫힌 패턴과 최대 패턴 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/12_closed-maximal_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/vectors/"
 parent_title: "벡터"
 description: "선형대수학 · 벡터 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/01_vectors_plot/"
 ---
 {% raw %}

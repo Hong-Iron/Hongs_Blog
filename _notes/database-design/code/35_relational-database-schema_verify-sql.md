@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/relational-database-schema/"
 parent_title: "관계형 데이터베이스 스키마와 상태"
 description: "데이터베이스 설계 · 관계형 데이터베이스 스키마와 상태 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/35_relational-database-schema_verify-sql/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/lhopital-growth/"
 parent_title: "로피탈 정리와 증가 속도"
 description: "미분적분학 · 로피탈 정리와 증가 속도 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/09_lhopital-growth_plot/"
 ---
 {% raw %}

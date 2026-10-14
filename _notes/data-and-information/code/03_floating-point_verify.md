@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/floating-point/"
 parent_title: "부동소수점"
 description: "자료와 정보 · 부동소수점 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/03_floating-point_verify/"
 ---
 {% raw %}

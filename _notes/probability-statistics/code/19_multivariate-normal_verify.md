@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/multivariate-normal/"
 parent_title: "공분산 행렬과 다변량 정규분포"
 description: "확률과 통계 · 공분산 행렬과 다변량 정규분포 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/19_multivariate-normal_verify/"
 ---
 {% raw %}

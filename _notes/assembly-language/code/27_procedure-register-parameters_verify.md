@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/procedure-register-parameters/"
 parent_title: "레지스터 매개변수와 USES"
 description: "어셈블리어 · 레지스터 매개변수와 USES 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/27_procedure-register-parameters_verify/"
 ---
 {% raw %}

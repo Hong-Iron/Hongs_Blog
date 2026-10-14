@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/rc-arc-weak/"
 parent_title: "Rc·Arc·Weak"
 description: "Rust · Rc·Arc·Weak 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/28_rc-arc-weak_verify/"
 ---
 {% raw %}

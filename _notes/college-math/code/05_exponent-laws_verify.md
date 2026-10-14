@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/exponent-laws/"
 parent_title: "거듭제곱과 지수법칙"
 description: "대학수학 · 거듭제곱과 지수법칙 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/05_exponent-laws_verify/"
 ---
 {% raw %}

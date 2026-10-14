@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/surface-patches/"
 parent_title: "매개변수 곡면 패치"
 description: "수치해석 · 매개변수 곡면 패치 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/17_surface-patches_plot/"
 ---
 {% raw %}

@@ -935,6 +935,7 @@ def export(vault):
                 kind="code", kind_label=f"코드 · {role_label}", num=code["num"], **base,
                 parent_url=parent and parent["url"], parent_title=parent and parent["title"],
                 description=f"{course['name']} · {parent['title'] if parent else ''} {role_label} 코드".strip(),
+                sitemap=False,   # code pages stay out of search engines; head.html adds noindex
                 permalink=code["url"]
             )
             write_page(NOTES_DIR / course["slug"] / "code" / f"{code_slug(code['path'])}.md", front, lines)

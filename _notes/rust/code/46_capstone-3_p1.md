@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/capstone-3/"
 parent_title: "캡스톤 3 axum API"
 description: "Rust · 캡스톤 3 axum API 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/46_capstone-3_p1/"
 ---
 {% raw %}

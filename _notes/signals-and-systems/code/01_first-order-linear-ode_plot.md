@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/first-order-linear-ode/"
 parent_title: "1계 선형 미분방정식"
 description: "신호 및 시스템 · 1계 선형 미분방정식 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/01_first-order-linear-ode_plot/"
 ---
 {% raw %}

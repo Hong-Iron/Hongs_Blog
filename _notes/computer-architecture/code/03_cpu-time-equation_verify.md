@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cpu-time-equation/"
 parent_title: "CPU 시간 식"
 description: "컴퓨터 구조 · CPU 시간 식 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/03_cpu-time-equation_verify/"
 ---
 {% raw %}

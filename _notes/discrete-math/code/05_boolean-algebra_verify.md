@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/boolean-algebra/"
 parent_title: "불 대수와 논리 회로"
 description: "이산수학 · 불 대수와 논리 회로 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/05_boolean-algebra_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cache-replacement/"
 parent_title: "캐시 교체 정책"
 description: "컴퓨터 구조 · 캐시 교체 정책 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/40_cache-replacement_verify/"
 ---
 {% raw %}

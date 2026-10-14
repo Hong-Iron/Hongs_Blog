@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/superscalar-out-of-order/"
 parent_title: "슈퍼스칼라와 비순차 실행"
 description: "컴퓨터 구조 · 슈퍼스칼라와 비순차 실행 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/34_superscalar-out-of-order_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/classification-metrics/"
 parent_title: "분류 평가 지표"
 description: "데이터 과학 · 분류 평가 지표 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/19_classification-metrics_plot/"
 ---
 {% raw %}

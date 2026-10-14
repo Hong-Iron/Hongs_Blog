@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/curse-of-dimensionality/"
 parent_title: "차원의 저주"
 description: "데이터 과학 · 차원의 저주 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/34_curse-of-dimensionality_verify/"
 ---
 {% raw %}

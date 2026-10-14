@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/markov-chains/"
 parent_title: "마르코프 연쇄"
 description: "확률과 통계 · 마르코프 연쇄 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/23_markov-chains_verify/"
 ---
 {% raw %}

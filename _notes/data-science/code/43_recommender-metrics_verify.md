@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/recommender-metrics/"
 parent_title: "추천 평가 지표"
 description: "데이터 과학 · 추천 평가 지표 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/43_recommender-metrics_verify/"
 ---
 {% raw %}

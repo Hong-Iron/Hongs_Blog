@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/orthogonal-projection/"
 parent_title: "직교성과 직교 사영"
 description: "선형대수학 · 직교성과 직교 사영 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/16_orthogonal-projection_verify/"
 ---
 {% raw %}

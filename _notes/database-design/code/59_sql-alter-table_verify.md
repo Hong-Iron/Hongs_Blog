@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-alter-table/"
 parent_title: "ALTER TABLE"
 description: "데이터베이스 설계 · ALTER TABLE 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/59_sql-alter-table_verify/"
 ---
 {% raw %}

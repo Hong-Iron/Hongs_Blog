@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/ci-quality-gates/"
 parent_title: "CI 품질 게이트"
 description: "Rust · CI 품질 게이트 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/48_ci-quality-gates_verify/"
 ---
 {% raw %}

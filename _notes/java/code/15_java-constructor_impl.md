@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-constructor/"
 parent_title: "생성자"
 description: "자바 프로그래밍 · 생성자 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/15_java-constructor_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cache-tlb-interaction/"
 parent_title: "캐시와 TLB와 페이지 테이블의 상호작용"
 description: "컴퓨터 구조 · 캐시와 TLB와 페이지 테이블의 상호작용 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/43_cache-tlb-interaction_verify/"
 ---
 {% raw %}

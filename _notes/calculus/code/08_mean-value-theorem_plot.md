@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/mean-value-theorem/"
 parent_title: "평균값 정리"
 description: "미분적분학 · 평균값 정리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/08_mean-value-theorem_plot/"
 ---
 {% raw %}

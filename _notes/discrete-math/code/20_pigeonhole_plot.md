@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/pigeonhole/"
 parent_title: "비둘기집 원리"
 description: "이산수학 · 비둘기집 원리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/20_pigeonhole_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/three-schema-architecture/"
 parent_title: "3단계 스키마 구조"
 description: "데이터베이스 설계 · 3단계 스키마 구조 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/07_three-schema-architecture_verify/"
 ---
 {% raw %}

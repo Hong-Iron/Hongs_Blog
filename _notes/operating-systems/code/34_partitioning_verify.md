@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/memory-partitioning/"
 parent_title: "메모리 분할"
 description: "운영체제 · 메모리 분할 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/34_partitioning_verify/"
 ---
 {% raw %}

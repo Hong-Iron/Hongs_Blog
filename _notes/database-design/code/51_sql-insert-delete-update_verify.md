@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-insert-delete-update/"
 parent_title: "INSERT·DELETE·UPDATE"
 description: "데이터베이스 설계 · INSERT·DELETE·UPDATE 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/51_sql-insert-delete-update_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/cargo-packages/"
 parent_title: "cargo와 패키지 구조"
 description: "Rust · cargo와 패키지 구조 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/02_cargo-packages_verify/"
 ---
 {% raw %}

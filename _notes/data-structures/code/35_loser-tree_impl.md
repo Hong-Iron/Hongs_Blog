@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/loser-tree/"
 parent_title: "패자 트리"
 description: "자료구조 · 패자 트리 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/35_loser-tree_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/double-shift/"
 parent_title: "이중 시프트 SHLD·SHRD"
 description: "어셈블리어 · 이중 시프트 SHLD·SHRD 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/40_double-shift_verify/"
 ---
 {% raw %}

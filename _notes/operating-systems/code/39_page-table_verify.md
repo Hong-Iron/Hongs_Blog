@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/page-table-structure/"
 parent_title: "페이지 표 구조"
 description: "운영체제 · 페이지 표 구조 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/39_page-table_verify/"
 ---
 {% raw %}

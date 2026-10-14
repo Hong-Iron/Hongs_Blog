@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/choosing-k/"
 parent_title: "군집 수 고르기"
 description: "데이터 과학 · 군집 수 고르기 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/28_choosing-k_plot/"
 ---
 {% raw %}

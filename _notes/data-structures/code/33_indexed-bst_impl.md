@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/indexed-bst/"
 parent_title: "색인 이진 탐색 트리"
 description: "자료구조 · 색인 이진 탐색 트리 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/33_indexed-bst_impl/"
 ---
 {% raw %}

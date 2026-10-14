@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/conditional-jumps/"
 parent_title: "조건 점프"
 description: "어셈블리어 · 조건 점프 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/31_conditional-jumps_verify/"
 ---
 {% raw %}

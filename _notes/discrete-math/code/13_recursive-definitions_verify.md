@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/recursive-definitions/"
 parent_title: "재귀적 정의와 구조적 귀납법"
 description: "이산수학 · 재귀적 정의와 구조적 귀납법 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/13_recursive-definitions_verify/"
 ---
 {% raw %}

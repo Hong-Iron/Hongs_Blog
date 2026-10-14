@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/substitution/"
 parent_title: "치환적분"
 description: "미분적분학 · 치환적분 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/13_substitution_plot/"
 ---
 {% raw %}

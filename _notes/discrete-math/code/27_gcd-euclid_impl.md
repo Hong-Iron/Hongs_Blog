@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/gcd-euclid/"
 parent_title: "최대공약수와 유클리드 호제법"
 description: "이산수학 · 최대공약수와 유클리드 호제법 구현 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/27_gcd-euclid_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/probing-vs-chaining/"
 parent_title: "선형 탐사와 체이닝 비교"
 description: "자료구조 · 선형 탐사와 체이닝 비교 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/51_probing-vs-chaining_verify/"
 ---
 {% raw %}

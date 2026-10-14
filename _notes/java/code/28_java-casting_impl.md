@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-casting/"
 parent_title: "참조 타입 변환과 instanceof"
 description: "자바 프로그래밍 · 참조 타입 변환과 instanceof 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/28_java-casting_impl/"
 ---
 {% raw %}

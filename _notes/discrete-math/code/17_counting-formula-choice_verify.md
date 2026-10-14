@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/counting-formula-choice/"
 parent_title: "순열·조합·중복조합 비교"
 description: "이산수학 · 순열·조합·중복조합 비교 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/17_counting-formula-choice_verify/"
 ---
 {% raw %}

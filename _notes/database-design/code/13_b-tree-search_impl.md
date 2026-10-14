@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/b-tree-search/"
 parent_title: "B-트리 검색"
 description: "데이터베이스 설계 · B-트리 검색 구현 코드"
+sitemap: false
 permalink: "/studies/database-design/code/13_b-tree-search_impl/"
 ---
 {% raw %}

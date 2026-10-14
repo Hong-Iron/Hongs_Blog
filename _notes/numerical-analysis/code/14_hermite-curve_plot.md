@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/hermite-curve/"
 parent_title: "에르미트 곡선"
 description: "수치해석 · 에르미트 곡선 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/14_hermite-curve_plot/"
 ---
 {% raw %}

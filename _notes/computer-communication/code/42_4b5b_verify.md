@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/4b5b/"
 parent_title: "4B/5B"
 description: "컴퓨터 통신 · 4B/5B 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/42_4b5b_verify/"
 ---
 {% raw %}

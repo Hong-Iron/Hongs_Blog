@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/time-conversion/"
 parent_title: "시간·날짜 계산"
 description: "알고리즘 · 시간·날짜 계산 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/07_time-conversion_verify/"
 ---
 {% raw %}

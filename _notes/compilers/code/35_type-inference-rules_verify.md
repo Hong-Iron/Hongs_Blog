@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/type-inference-rules/"
 parent_title: "타입 추론 규칙"
 description: "컴파일러 · 타입 추론 규칙 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/35_type-inference-rules_verify/"
 ---
 {% raw %}

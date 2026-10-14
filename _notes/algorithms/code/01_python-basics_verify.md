@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/python-basics/"
 parent_title: "파이썬 기본 문법"
 description: "알고리즘 · 파이썬 기본 문법 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/01_python-basics_verify/"
 ---
 {% raw %}

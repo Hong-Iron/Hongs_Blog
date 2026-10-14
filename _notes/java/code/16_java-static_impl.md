@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-static/"
 parent_title: "static 멤버"
 description: "자바 프로그래밍 · static 멤버 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/16_java-static_impl/"
 ---
 {% raw %}

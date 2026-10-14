@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/convolution-ladder/"
 parent_title: "컨벌루션 계산 예제 사다리"
 description: "신호 및 시스템 · 컨벌루션 계산 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/19_convolution-ladder_p4/"
 ---
 {% raw %}

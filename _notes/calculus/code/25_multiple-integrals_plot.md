@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/multiple-integrals/"
 parent_title: "중적분과 변수변환"
 description: "미분적분학 · 중적분과 변수변환 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/25_multiple-integrals_plot/"
 ---
 {% raw %}

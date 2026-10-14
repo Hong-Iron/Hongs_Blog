@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/variance/"
 parent_title: "분산과 표준편차"
 description: "확률과 통계 · 분산과 표준편차 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/09_variance_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/bios-video-int10h/"
 parent_title: "BIOS 비디오 INT 10h와 속성 바이트"
 description: "어셈블리어 · BIOS 비디오 INT 10h와 속성 바이트 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/54_bios-video-int10h_verify/"
 ---
 {% raw %}

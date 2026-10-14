@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/fourier-series/"
 parent_title: "푸리에 급수"
 description: "미분적분학 · 푸리에 급수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/30_fourier-series_plot/"
 ---
 {% raw %}

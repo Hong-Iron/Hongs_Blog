@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/bandwidth-delay-product/"
 parent_title: "대역폭-지연 곱"
 description: "컴퓨터 통신 · 대역폭-지연 곱 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/28_bandwidth-delay-product_verify/"
 ---
 {% raw %}

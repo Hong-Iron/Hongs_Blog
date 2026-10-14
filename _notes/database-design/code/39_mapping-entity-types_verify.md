@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/mapping-entity-types/"
 parent_title: "개체 타입의 사상"
 description: "데이터베이스 설계 · 개체 타입의 사상 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/39_mapping-entity-types_verify/"
 ---
 {% raw %}

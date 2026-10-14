@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/quadruples/"
 parent_title: "쿼드러플"
 description: "컴파일러 · 쿼드러플 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/38_quadruples_verify/"
 ---
 {% raw %}

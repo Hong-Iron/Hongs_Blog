@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/crc-ladder/"
 parent_title: "CRC 예제 사다리"
 description: "컴퓨터 통신 · CRC 예제 사다리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/50_crc-ladder_plot/"
 ---
 {% raw %}

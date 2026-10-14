@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/testing-strategy/"
 parent_title: "테스트 전략"
 description: "Rust · 테스트 전략 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/42_testing-strategy_verify/"
 ---
 {% raw %}

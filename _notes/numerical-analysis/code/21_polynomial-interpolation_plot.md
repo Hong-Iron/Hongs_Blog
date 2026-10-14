@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/polynomial-interpolation/"
 parent_title: "다항식 보간"
 description: "수치해석 · 다항식 보간 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/21_polynomial-interpolation_plot/"
 ---
 {% raw %}

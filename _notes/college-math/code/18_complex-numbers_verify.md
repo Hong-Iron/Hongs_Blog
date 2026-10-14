@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/complex-numbers/"
 parent_title: "복소수"
 description: "대학수학 · 복소수 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/18_complex-numbers_verify/"
 ---
 {% raw %}

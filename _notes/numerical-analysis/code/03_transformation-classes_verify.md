@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/transformation-classes/"
 parent_title: "기하 변환의 종류"
 description: "수치해석 · 기하 변환의 종류 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/03_transformation-classes_verify/"
 ---
 {% raw %}

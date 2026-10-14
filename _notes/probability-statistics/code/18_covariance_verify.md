@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/covariance/"
 parent_title: "공분산과 상관계수"
 description: "확률과 통계 · 공분산과 상관계수 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/18_covariance_verify/"
 ---
 {% raw %}

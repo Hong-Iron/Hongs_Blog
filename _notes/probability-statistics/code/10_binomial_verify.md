@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/binomial/"
 parent_title: "베르누이 시행과 이항분포"
 description: "확률과 통계 · 베르누이 시행과 이항분포 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/10_binomial_verify/"
 ---
 {% raw %}

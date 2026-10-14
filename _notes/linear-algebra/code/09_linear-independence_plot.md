@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/linear-independence/"
 parent_title: "선형독립"
 description: "선형대수학 · 선형독립 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/09_linear-independence_plot/"
 ---
 {% raw %}

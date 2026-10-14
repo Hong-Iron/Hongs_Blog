@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-addressing-modes/"
 parent_title: "MIPS 주소 지정 방식"
 description: "컴퓨터 구조 · MIPS 주소 지정 방식 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/19_mips-addressing-modes_verify/"
 ---
 {% raw %}

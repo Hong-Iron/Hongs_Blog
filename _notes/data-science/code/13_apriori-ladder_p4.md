@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/apriori-ladder/"
 parent_title: "Apriori 예제 사다리"
 description: "데이터 과학 · Apriori 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/data-science/code/13_apriori-ladder_p4/"
 ---
 {% raw %}

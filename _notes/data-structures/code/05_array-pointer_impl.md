@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/array-pointer/"
 parent_title: "배열과 포인터"
 description: "자료구조 · 배열과 포인터 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/05_array-pointer_impl/"
 ---
 {% raw %}

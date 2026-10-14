@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/tree-index-binary/"
 parent_title: "트리 칸 번호 ↔ 2진법 자릿수"
 description: "알고리즘 · 트리 칸 번호 ↔ 2진법 자릿수 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/42_tree-index-binary_verify/"
 ---
 {% raw %}

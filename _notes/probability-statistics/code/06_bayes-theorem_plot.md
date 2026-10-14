@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/bayes-theorem/"
 parent_title: "베이즈 정리"
 description: "확률과 통계 · 베이즈 정리 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/06_bayes-theorem_plot/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/independence/"
 parent_title: "독립"
 description: "확률과 통계 · 독립 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/04_independence_verify/"
 ---
 {% raw %}

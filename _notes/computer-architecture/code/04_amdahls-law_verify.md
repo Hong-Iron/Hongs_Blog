@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/amdahls-law/"
 parent_title: "암달의 법칙"
 description: "컴퓨터 구조 · 암달의 법칙 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/04_amdahls-law_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/abnormal-psychology/cbt-i/"
 parent_title: "불면증 인지행동치료"
 description: "이상 심리학 · 불면증 인지행동치료 검증 코드"
+sitemap: false
 permalink: "/studies/abnormal-psychology/code/100_cbt-i_verify/"
 ---
 {% raw %}

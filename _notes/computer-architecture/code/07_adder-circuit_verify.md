@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/adder-circuit/"
 parent_title: "가산기"
 description: "컴퓨터 구조 · 가산기 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/07_adder-circuit_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/abnormal-psychology/gamblers-fallacy--independence/"
 parent_title: "도박사의 오류 ↔ 독립"
 description: "이상 심리학 · 도박사의 오류 ↔ 독립 검증 코드"
+sitemap: false
 permalink: "/studies/abnormal-psychology/code/137_gamblers-fallacy--independence_verify/"
 ---
 {% raw %}

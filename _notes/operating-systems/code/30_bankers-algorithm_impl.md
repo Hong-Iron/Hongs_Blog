@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/deadlock-avoidance/"
 parent_title: "교착상태 회피"
 description: "운영체제 · 교착상태 회피 구현 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/30_bankers-algorithm_impl/"
 ---
 {% raw %}

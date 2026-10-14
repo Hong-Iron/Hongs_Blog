@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/two-pointers/"
 parent_title: "투 포인터와 슬라이딩 윈도"
 description: "알고리즘 · 투 포인터와 슬라이딩 윈도 그림 생성 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/18_two-pointers_plot/"
 ---
 {% raw %}

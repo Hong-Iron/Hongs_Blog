@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/load-factor-design/"
 parent_title: "적재율로 해시 테이블 크기 정하기"
 description: "자료구조 · 적재율로 해시 테이블 크기 정하기 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/52_load-factor-design_verify/"
 ---
 {% raw %}

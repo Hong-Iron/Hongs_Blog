@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/linear-recurrences/"
 parent_title: "선형 점화식"
 description: "이산수학 · 선형 점화식 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/21_linear-recurrences_verify/"
 ---
 {% raw %}

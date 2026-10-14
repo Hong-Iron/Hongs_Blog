@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/equivalence-relations/"
 parent_title: "동치관계와 분할"
 description: "이산수학 · 동치관계와 분할 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/10_equivalence-relations_verify/"
 ---
 {% raw %}

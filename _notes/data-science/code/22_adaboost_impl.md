@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/boosting-adaboost/"
 parent_title: "부스팅과 AdaBoost"
 description: "데이터 과학 · 부스팅과 AdaBoost 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/22_adaboost_impl/"
 ---
 {% raw %}

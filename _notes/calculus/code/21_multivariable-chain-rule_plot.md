@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/multivariable-chain-rule/"
 parent_title: "다변수 연쇄 법칙과 야코비 행렬"
 description: "미분적분학 · 다변수 연쇄 법칙과 야코비 행렬 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/21_multivariable-chain-rule_plot/"
 ---
 {% raw %}

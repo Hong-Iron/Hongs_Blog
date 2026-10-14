@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/ct-fourier-series/"
 parent_title: "연속 시간 푸리에 급수"
 description: "신호 및 시스템 · 연속 시간 푸리에 급수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/30_ct-fourier-series_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/codegen-simple-operations/"
 parent_title: "단순 연산과 분기의 코드 생성"
 description: "컴파일러 · 단순 연산과 분기의 코드 생성 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/52_codegen-simple-operations_impl/"
 ---
 {% raw %}

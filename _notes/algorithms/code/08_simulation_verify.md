@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/simulation/"
 parent_title: "구현과 시뮬레이션"
 description: "알고리즘 · 구현과 시뮬레이션 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/08_simulation_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/combinational-logic/"
 parent_title: "논리 게이트와 조합 회로"
 description: "컴퓨터 구조 · 논리 게이트와 조합 회로 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/05_combinational-logic_verify/"
 ---
 {% raw %}

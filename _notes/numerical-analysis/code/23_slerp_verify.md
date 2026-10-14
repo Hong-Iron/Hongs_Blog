@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/slerp/"
 parent_title: "구면 선형 보간"
 description: "수치해석 · 구면 선형 보간 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/23_slerp_verify/"
 ---
 {% raw %}

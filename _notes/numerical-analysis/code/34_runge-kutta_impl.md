@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/runge-kutta/"
 parent_title: "룽게-쿠타 방법"
 description: "수치해석 · 룽게-쿠타 방법 구현 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/34_runge-kutta_impl/"
 ---
 {% raw %}

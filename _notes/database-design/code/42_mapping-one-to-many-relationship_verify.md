@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/mapping-one-to-many-relationship/"
 parent_title: "일대다 관계 타입의 사상"
 description: "데이터베이스 설계 · 일대다 관계 타입의 사상 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/42_mapping-one-to-many-relationship_verify/"
 ---
 {% raw %}

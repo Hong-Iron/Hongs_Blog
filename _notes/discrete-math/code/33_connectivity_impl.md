@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/connectivity/"
 parent_title: "경로와 연결성"
 description: "이산수학 · 경로와 연결성 구현 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/33_connectivity_impl/"
 ---
 {% raw %}

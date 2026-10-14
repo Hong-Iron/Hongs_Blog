@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/union-find/"
 parent_title: "유니온 파인드"
 description: "알고리즘 · 유니온 파인드 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/15_union-find_impl/"
 ---
 {% raw %}

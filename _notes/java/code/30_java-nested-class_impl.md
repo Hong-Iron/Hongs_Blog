@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-nested-class/"
 parent_title: "중첩 클래스"
 description: "자바 프로그래밍 · 중첩 클래스 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/30_java-nested-class_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/discretization/"
 parent_title: "이산화"
 description: "데이터 과학 · 이산화 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/08_discretization_plot/"
 ---
 {% raw %}

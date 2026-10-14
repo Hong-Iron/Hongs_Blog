@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/ode-systems/"
 parent_title: "연립 상미분방정식"
 description: "수치해석 · 연립 상미분방정식 구현 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/35_ode-systems_impl/"
 ---
 {% raw %}

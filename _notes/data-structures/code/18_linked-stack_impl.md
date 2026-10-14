@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/linked-stack/"
 parent_title: "연결 리스트로 만든 스택"
 description: "자료구조 · 연결 리스트로 만든 스택 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/18_linked-stack_impl/"
 ---
 {% raw %}

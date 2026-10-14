@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/step-response/"
 parent_title: "단위 계단 응답"
 description: "신호 및 시스템 · 단위 계단 응답 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/22_step-response_verify/"
 ---
 {% raw %}

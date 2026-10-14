@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/bios-keyboard-int16h/"
 parent_title: "BIOS 키보드 입력 INT 16h"
 description: "어셈블리어 · BIOS 키보드 입력 INT 16h 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/53_bios-keyboard-int16h_verify/"
 ---
 {% raw %}

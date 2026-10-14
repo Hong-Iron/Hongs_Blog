@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/frequency-division-multiplexing/"
 parent_title: "주파수 분할 다중화"
 description: "컴퓨터 통신 · 주파수 분할 다중화 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/14_frequency-division-multiplexing_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/first-set/"
 parent_title: "FIRST 집합"
 description: "컴파일러 · FIRST 집합 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/18_first-set_impl/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/convexity/"
 parent_title: "볼록 함수와 볼록 최적화"
 description: "미분적분학 · 볼록 함수와 볼록 최적화 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/27_convexity_plot/"
 ---
 {% raw %}

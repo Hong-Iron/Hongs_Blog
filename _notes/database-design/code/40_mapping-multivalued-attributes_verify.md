@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/mapping-multivalued-attributes/"
 parent_title: "다치 속성의 사상"
 description: "데이터베이스 설계 · 다치 속성의 사상 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/40_mapping-multivalued-attributes_verify/"
 ---
 {% raw %}

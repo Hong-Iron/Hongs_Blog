@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/crc/"
 parent_title: "CRC"
 description: "컴퓨터 통신 · CRC 구현 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/50_crc_impl/"
 ---
 {% raw %}

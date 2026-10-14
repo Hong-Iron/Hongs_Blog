@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/eigenvalues/"
 parent_title: "고윳값과 고유벡터"
 description: "선형대수학 · 고윳값과 고유벡터 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/19_eigenvalues_verify/"
 ---
 {% raw %}

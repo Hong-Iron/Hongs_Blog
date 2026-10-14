@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/data-metadata/"
 parent_title: "데이터와 메타데이터"
 description: "자료와 정보 · 데이터와 메타데이터 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/01_data-metadata_verify/"
 ---
 {% raw %}

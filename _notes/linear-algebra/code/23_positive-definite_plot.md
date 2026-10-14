@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/positive-definite/"
 parent_title: "양의 정부호 행렬과 이차형식"
 description: "선형대수학 · 양의 정부호 행렬과 이차형식 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/23_positive-definite_plot/"
 ---
 {% raw %}

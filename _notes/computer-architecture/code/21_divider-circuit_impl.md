@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/divider-circuit/"
 parent_title: "나눗셈 회로"
 description: "컴퓨터 구조 · 나눗셈 회로 구현 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/21_divider-circuit_impl/"
 ---
 {% raw %}

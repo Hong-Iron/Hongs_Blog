@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/trait-objects/"
 parent_title: "트레이트 객체"
 description: "Rust · 트레이트 객체 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/18_trait-objects_verify/"
 ---
 {% raw %}

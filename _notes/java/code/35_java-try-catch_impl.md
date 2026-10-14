@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-try-catch/"
 parent_title: "try-catch-finally"
 description: "자바 프로그래밍 · try-catch-finally 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/35_java-try-catch_impl/"
 ---
 {% raw %}

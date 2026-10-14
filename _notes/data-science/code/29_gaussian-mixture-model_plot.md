@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/gaussian-mixture-model/"
 parent_title: "가우스 혼합 모델"
 description: "데이터 과학 · 가우스 혼합 모델 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/29_gaussian-mixture-model_plot/"
 ---
 {% raw %}

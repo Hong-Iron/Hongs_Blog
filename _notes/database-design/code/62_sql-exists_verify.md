@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-exists/"
 parent_title: "EXISTS와 NOT EXISTS"
 description: "데이터베이스 설계 · EXISTS와 NOT EXISTS 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/62_sql-exists_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/bursty-traffic/"
 parent_title: "버스티 트래픽"
 description: "컴퓨터 통신 · 버스티 트래픽 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/07_bursty-traffic_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/causality/"
 parent_title: "인과성"
 description: "신호 및 시스템 · 인과성 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/14_causality_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/control-unit/"
 parent_title: "제어 장치와 제어 신호"
 description: "컴퓨터 구조 · 제어 장치와 제어 신호 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/25_control-unit_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/calling-convention/"
 parent_title: "호출 규약"
 description: "어셈블리어 · 호출 규약 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/43_calling-convention_verify/"
 ---
 {% raw %}

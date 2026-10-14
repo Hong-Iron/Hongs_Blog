@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/register-spilling/"
 parent_title: "스필링"
 description: "컴파일러 · 스필링 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/56_register-spilling_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/bezier-subdivision/"
 parent_title: "베지어 곡선의 세분화"
 description: "수치해석 · 베지어 곡선의 세분화 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/18_bezier-subdivision_verify/"
 ---
 {% raw %}

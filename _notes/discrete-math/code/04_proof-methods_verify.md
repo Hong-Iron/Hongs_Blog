@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/proof-methods/"
 parent_title: "추론 규칙과 증명 방법"
 description: "이산수학 · 추론 규칙과 증명 방법 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/04_proof-methods_verify/"
 ---
 {% raw %}

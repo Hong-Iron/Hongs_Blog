@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/mips-instructions/"
 parent_title: "수업용 MIPS 명령어"
 description: "컴파일러 · 수업용 MIPS 명령어 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/51_mips-instructions_impl/"
 ---
 {% raw %}

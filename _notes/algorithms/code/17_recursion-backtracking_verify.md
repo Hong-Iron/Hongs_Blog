@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/recursion-backtracking/"
 parent_title: "재귀와 백트래킹"
 description: "알고리즘 · 재귀와 백트래킹 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/17_recursion-backtracking_verify/"
 ---
 {% raw %}

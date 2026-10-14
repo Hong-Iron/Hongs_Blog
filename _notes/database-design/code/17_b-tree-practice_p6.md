@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/b-tree-practice/"
 parent_title: "B-트리 연습"
 description: "데이터베이스 설계 · B-트리 연습 문제 6 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/17_b-tree-practice_p6/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/matrix-vector/"
 parent_title: "행렬과 행렬-벡터 곱"
 description: "선형대수학 · 행렬과 행렬-벡터 곱 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/04_matrix-vector_verify/"
 ---
 {% raw %}

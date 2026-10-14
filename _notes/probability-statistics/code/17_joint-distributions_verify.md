@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/joint-distributions/"
 parent_title: "결합분포와 조건부 기댓값"
 description: "확률과 통계 · 결합분포와 조건부 기댓값 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/17_joint-distributions_verify/"
 ---
 {% raw %}

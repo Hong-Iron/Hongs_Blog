@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/confidence-intervals/"
 parent_title: "신뢰구간"
 description: "확률과 통계 · 신뢰구간 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/31_confidence-intervals_plot/"
 ---
 {% raw %}

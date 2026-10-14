@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-operators/"
 parent_title: "연산자와 오버플로"
 description: "자바 프로그래밍 · 연산자와 오버플로 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/04_java-operators_impl/"
 ---
 {% raw %}

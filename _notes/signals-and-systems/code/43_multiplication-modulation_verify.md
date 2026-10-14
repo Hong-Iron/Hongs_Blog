@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/multiplication-modulation/"
 parent_title: "곱셈 성질과 진폭 변조"
 description: "신호 및 시스템 · 곱셈 성질과 진폭 변조 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/43_multiplication-modulation_verify/"
 ---
 {% raw %}

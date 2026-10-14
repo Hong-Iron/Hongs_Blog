@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/test-cmp/"
 parent_title: "TEST와 CMP"
 description: "어셈블리어 · TEST와 CMP 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/30_test-cmp_verify/"
 ---
 {% raw %}

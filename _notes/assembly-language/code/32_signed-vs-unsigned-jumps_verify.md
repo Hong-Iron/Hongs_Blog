@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/signed-vs-unsigned-jumps/"
 parent_title: "부호 있는 비교 점프와 부호 없는 비교 점프"
 description: "어셈블리어 · 부호 있는 비교 점프와 부호 없는 비교 점프 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/32_signed-vs-unsigned-jumps_verify/"
 ---
 {% raw %}

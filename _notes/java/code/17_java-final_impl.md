@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-final/"
 parent_title: "final과 상수"
 description: "자바 프로그래밍 · final과 상수 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/17_java-final_impl/"
 ---
 {% raw %}

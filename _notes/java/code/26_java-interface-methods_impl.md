@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-interface-methods/"
 parent_title: "디폴트·정적·private 메서드"
 description: "자바 프로그래밍 · 디폴트·정적·private 메서드 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/26_java-interface-methods_impl/"
 ---
 {% raw %}

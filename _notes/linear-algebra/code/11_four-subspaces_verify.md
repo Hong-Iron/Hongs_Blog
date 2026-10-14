@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/four-subspaces/"
 parent_title: "랭크와 네 부분공간"
 description: "선형대수학 · 랭크와 네 부분공간 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/11_four-subspaces_verify/"
 ---
 {% raw %}

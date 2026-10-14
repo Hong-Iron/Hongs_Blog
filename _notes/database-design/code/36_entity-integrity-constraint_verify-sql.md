@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/entity-integrity-constraint/"
 parent_title: "개체 무결성 제약"
 description: "데이터베이스 설계 · 개체 무결성 제약 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/36_entity-integrity-constraint_verify-sql/"
 ---
 {% raw %}

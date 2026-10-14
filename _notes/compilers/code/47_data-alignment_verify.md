@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/data-alignment/"
 parent_title: "데이터 정렬과 패딩"
 description: "컴파일러 · 데이터 정렬과 패딩 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/47_data-alignment_verify/"
 ---
 {% raw %}

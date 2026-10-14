@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/pagerank/"
 parent_title: "PageRank"
 description: "확률과 통계 · PageRank 구현 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/25_pagerank_impl/"
 ---
 {% raw %}

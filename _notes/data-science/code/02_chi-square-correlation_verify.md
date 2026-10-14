@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/chi-square-correlation/"
 parent_title: "카이제곱 상관 분석"
 description: "데이터 과학 · 카이제곱 상관 분석 검증 코드"
+sitemap: false
 permalink: "/studies/data-science/code/02_chi-square-correlation_verify/"
 ---
 {% raw %}

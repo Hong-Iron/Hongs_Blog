@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/k-way-merge/"
 parent_title: "k-way 병합과 선택 트리"
 description: "자료구조 · k-way 병합과 선택 트리 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/46_k-way-merge_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-polymorphism/"
 parent_title: "다형성"
 description: "자바 프로그래밍 · 다형성 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/29_java-polymorphism_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/mips-encoding-ladder/"
 parent_title: "명령어 인코딩 예제 사다리"
 description: "컴퓨터 구조 · 명령어 인코딩 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/16_mips-encoding-ladder_p4/"
 ---
 {% raw %}

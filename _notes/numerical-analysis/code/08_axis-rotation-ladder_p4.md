@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/axis-rotation-ladder/"
 parent_title: "임의 축 회전 예제 사다리"
 description: "수치해석 · 임의 축 회전 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/08_axis-rotation-ladder_p4/"
 ---
 {% raw %}

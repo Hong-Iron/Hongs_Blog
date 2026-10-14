@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/live-variable-analysis/"
 parent_title: "생존 변수 분석"
 description: "컴파일러 · 생존 변수 분석 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/43_live-variable-analysis_impl/"
 ---
 {% raw %}

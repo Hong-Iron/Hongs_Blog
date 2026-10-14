@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/race-condition-critical-section/"
 parent_title: "경쟁 조건과 임계 구역"
 description: "운영체제 · 경쟁 조건과 임계 구역 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/21_race-condition_verify/"
 ---
 {% raw %}

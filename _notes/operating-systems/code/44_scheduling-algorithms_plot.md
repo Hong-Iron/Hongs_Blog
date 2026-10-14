@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/scheduling-algorithms/"
 parent_title: "스케줄링 알고리즘"
 description: "운영체제 · 스케줄링 알고리즘 그림 생성 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/44_scheduling-algorithms_plot/"
 ---
 {% raw %}

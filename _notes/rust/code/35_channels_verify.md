@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/channels/"
 parent_title: "채널"
 description: "Rust · 채널 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/35_channels_verify/"
 ---
 {% raw %}

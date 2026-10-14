@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/activation-tree/"
 parent_title: "활성 트리와 호출 스택"
 description: "컴파일러 · 활성 트리와 호출 스택 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/48_activation-tree_verify/"
 ---
 {% raw %}

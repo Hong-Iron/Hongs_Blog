@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/random-process/"
 parent_title: "확률 과정"
 description: "자료와 정보 · 확률 과정 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/12_random-process_verify/"
 ---
 {% raw %}

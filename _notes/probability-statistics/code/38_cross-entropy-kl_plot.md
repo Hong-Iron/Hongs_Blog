@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/cross-entropy-kl/"
 parent_title: "교차 엔트로피와 KL 발산"
 description: "확률과 통계 · 교차 엔트로피와 KL 발산 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/38_cross-entropy-kl_plot/"
 ---
 {% raw %}

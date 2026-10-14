@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/relations/"
 parent_title: "관계와 그 성질"
 description: "이산수학 · 관계와 그 성질 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/09_relations_verify/"
 ---
 {% raw %}

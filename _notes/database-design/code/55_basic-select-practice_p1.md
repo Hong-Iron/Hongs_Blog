@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/basic-select-practice/"
 parent_title: "기본 검색 연습"
 description: "데이터베이스 설계 · 기본 검색 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/database-design/code/55_basic-select-practice_p1/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/viable-prefix/"
 parent_title: "유효 접두사"
 description: "컴파일러 · 유효 접두사 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/24_viable-prefix_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/string-parsing/"
 parent_title: "문자열 파싱과 정규 표현식"
 description: "알고리즘 · 문자열 파싱과 정규 표현식 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/06_string-parsing_verify/"
 ---
 {% raw %}

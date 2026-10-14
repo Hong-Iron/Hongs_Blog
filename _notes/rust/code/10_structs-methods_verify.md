@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/structs-methods/"
 parent_title: "구조체와 메서드"
 description: "Rust · 구조체와 메서드 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/10_structs-methods_verify/"
 ---
 {% raw %}

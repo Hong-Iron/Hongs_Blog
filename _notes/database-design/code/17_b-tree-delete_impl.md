@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/b-tree-delete/"
 parent_title: "B-트리 삭제"
 description: "데이터베이스 설계 · B-트리 삭제 구현 코드"
+sitemap: false
 permalink: "/studies/database-design/code/17_b-tree-delete_impl/"
 ---
 {% raw %}

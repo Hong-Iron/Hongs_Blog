@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/sort-tracing-practice/"
 parent_title: "정렬 추적 연습"
 description: "자료구조 · 정렬 추적 연습 문제 5 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/43_sort-tracing-practice_p5/"
 ---
 {% raw %}

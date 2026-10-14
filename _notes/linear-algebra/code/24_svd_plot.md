@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/svd/"
 parent_title: "특잇값 분해"
 description: "선형대수학 · 특잇값 분해 그림 생성 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/24_svd_plot/"
 ---
 {% raw %}

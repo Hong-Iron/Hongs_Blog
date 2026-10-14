@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cpu-performance/"
 parent_title: "성능과 실행 시간"
 description: "컴퓨터 구조 · 성능과 실행 시간 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/02_cpu-performance_verify/"
 ---
 {% raw %}

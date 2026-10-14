@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/newton-divided-difference/"
 parent_title: "뉴턴 다항식과 분할 차분"
 description: "수치해석 · 뉴턴 다항식과 분할 차분 그림 생성 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/22_newton-divided-difference_plot/"
 ---
 {% raw %}

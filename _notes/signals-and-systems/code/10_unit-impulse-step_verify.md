@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/unit-impulse-step/"
 parent_title: "단위 임펄스와 단위 계단"
 description: "신호 및 시스템 · 단위 임펄스와 단위 계단 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/10_unit-impulse-step_verify/"
 ---
 {% raw %}

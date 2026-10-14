@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/c-pointer/"
 parent_title: "포인터"
 description: "자료구조 · 포인터 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/03_c-pointer_impl/"
 ---
 {% raw %}

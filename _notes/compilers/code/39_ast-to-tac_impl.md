@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/ast-to-tac/"
 parent_title: "AST에서 3주소 코드 만들기"
 description: "컴파일러 · AST에서 3주소 코드 만들기 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/39_ast-to-tac_impl/"
 ---
 {% raw %}

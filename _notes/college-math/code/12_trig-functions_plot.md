@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/trig-functions/"
 parent_title: "삼각함수"
 description: "대학수학 · 삼각함수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/12_trig-functions_plot/"
 ---
 {% raw %}

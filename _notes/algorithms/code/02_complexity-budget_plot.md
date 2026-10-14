@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/complexity-budget/"
 parent_title: "시간 복잡도로 방법 고르기"
 description: "알고리즘 · 시간 복잡도로 방법 고르기 그림 생성 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/02_complexity-budget_plot/"
 ---
 {% raw %}

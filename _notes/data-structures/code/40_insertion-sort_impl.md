@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/insertion-sort/"
 parent_title: "삽입 정렬"
 description: "자료구조 · 삽입 정렬 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/40_insertion-sort_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/dbms-languages-interfaces/"
 parent_title: "DBMS 언어와 인터페이스"
 description: "데이터베이스 설계 · DBMS 언어와 인터페이스 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/09_dbms-languages-interfaces_verify/"
 ---
 {% raw %}

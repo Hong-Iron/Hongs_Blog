@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/values-variables-types/"
 parent_title: "값·변수·타입"
 description: "Rust · 값·변수·타입 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/03_values-variables-types_verify/"
 ---
 {% raw %}

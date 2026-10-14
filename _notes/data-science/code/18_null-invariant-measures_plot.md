@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/null-invariant-measures/"
 parent_title: "널 불변 측정"
 description: "데이터 과학 · 널 불변 측정 그림 생성 코드"
+sitemap: false
 permalink: "/studies/data-science/code/18_null-invariant-measures_plot/"
 ---
 {% raw %}

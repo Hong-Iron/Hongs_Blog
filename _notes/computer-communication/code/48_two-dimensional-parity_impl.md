@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/two-dimensional-parity/"
 parent_title: "2차원 패리티"
 description: "컴퓨터 통신 · 2차원 패리티 구현 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/48_two-dimensional-parity_impl/"
 ---
 {% raw %}

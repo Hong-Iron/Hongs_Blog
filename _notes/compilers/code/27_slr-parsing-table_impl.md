@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/slr-parsing-table/"
 parent_title: "SLR 파싱 표"
 description: "컴파일러 · SLR 파싱 표 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/27_slr-parsing-table_impl/"
 ---
 {% raw %}

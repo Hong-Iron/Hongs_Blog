@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-primitive-types/"
 parent_title: "변수와 기본 타입"
 description: "자바 프로그래밍 · 변수와 기본 타입 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/02_java-primitive-types_impl/"
 ---
 {% raw %}

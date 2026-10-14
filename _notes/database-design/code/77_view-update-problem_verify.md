@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/view-update-problem/"
 parent_title: "뷰 갱신 문제"
 description: "데이터베이스 설계 · 뷰 갱신 문제 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/77_view-update-problem_verify/"
 ---
 {% raw %}

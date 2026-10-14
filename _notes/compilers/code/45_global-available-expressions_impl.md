@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/global-available-expressions/"
 parent_title: "전역 사용 가능한 식 분석"
 description: "컴파일러 · 전역 사용 가능한 식 분석 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/45_global-available-expressions_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/binary-search/"
 parent_title: "이분 탐색"
 description: "알고리즘 · 이분 탐색 그림 생성 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/20_binary-search_plot/"
 ---
 {% raw %}

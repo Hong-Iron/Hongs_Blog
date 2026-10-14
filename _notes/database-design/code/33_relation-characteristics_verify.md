@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/relation-characteristics/"
 parent_title: "릴레이션의 특성"
 description: "데이터베이스 설계 · 릴레이션의 특성 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/33_relation-characteristics_verify/"
 ---
 {% raw %}

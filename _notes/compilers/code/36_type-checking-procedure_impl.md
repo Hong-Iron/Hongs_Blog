@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/type-checking-procedure/"
 parent_title: "타입 검사 절차"
 description: "컴파일러 · 타입 검사 절차 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/36_type-checking-procedure_impl/"
 ---
 {% raw %}

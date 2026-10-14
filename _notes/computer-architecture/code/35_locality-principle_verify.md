@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/locality-principle/"
 parent_title: "지역성의 원리"
 description: "컴퓨터 구조 · 지역성의 원리 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/35_locality-principle_verify/"
 ---
 {% raw %}

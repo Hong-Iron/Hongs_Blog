@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/edge-detection-smoothing/"
 parent_title: "영상의 경계 검출과 평활화"
 description: "신호 및 시스템 · 영상의 경계 검출과 평활화 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/"
 ---
 {% raw %}

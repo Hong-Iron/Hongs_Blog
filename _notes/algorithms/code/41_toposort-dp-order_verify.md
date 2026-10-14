@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/toposort-dp-order/"
 parent_title: "위상 정렬 ↔ 동적 계획법의 계산 순서"
 description: "알고리즘 · 위상 정렬 ↔ 동적 계획법의 계산 순서 검증 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/41_toposort-dp-order_verify/"
 ---
 {% raw %}

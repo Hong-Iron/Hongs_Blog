@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/arq-sequence-number/"
 parent_title: "ARQ와 순서 번호"
 description: "컴퓨터 통신 · ARQ와 순서 번호 구현 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/53_arq_impl/"
 ---
 {% raw %}

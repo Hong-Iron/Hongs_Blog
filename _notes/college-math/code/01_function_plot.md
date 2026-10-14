@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/function/"
 parent_title: "함수"
 description: "대학수학 · 함수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/college-math/code/01_function_plot/"
 ---
 {% raw %}

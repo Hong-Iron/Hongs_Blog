@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/point-to-point-link/"
 parent_title: "점대점 링크"
 description: "컴퓨터 통신 · 점대점 링크 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/01_point-to-point-link_verify/"
 ---
 {% raw %}

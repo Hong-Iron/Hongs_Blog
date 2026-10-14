@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/merge-sort/"
 parent_title: "병합 정렬"
 description: "자료구조 · 병합 정렬 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/43_merge-sort_impl/"
 ---
 {% raw %}

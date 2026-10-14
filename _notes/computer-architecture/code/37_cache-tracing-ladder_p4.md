@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cache-tracing-ladder/"
 parent_title: "캐시 적중과 실패 추적 예제 사다리"
 description: "컴퓨터 구조 · 캐시 적중과 실패 추적 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/37_cache-tracing-ladder_p4/"
 ---
 {% raw %}

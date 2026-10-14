@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/edit-distance/"
 parent_title: "편집 거리"
 description: "자료와 정보 · 편집 거리 구현 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/11_edit-distance_impl/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/asm-finite-state-machine/"
 parent_title: "유한 상태 기계"
 description: "어셈블리어 · 유한 상태 기계 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/36_asm-finite-state-machine_verify/"
 ---
 {% raw %}

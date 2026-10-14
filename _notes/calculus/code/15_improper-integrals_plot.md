@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/improper-integrals/"
 parent_title: "이상적분"
 description: "미분적분학 · 이상적분 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/15_improper-integrals_plot/"
 ---
 {% raw %}

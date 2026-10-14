@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/type-driven-design/"
 parent_title: "타입으로 잘못된 상태 막기"
 description: "Rust · 타입으로 잘못된 상태 막기 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/14_type-driven-design_verify/"
 ---
 {% raw %}

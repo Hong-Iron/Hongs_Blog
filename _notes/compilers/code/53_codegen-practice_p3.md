@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/codegen-practice/"
 parent_title: "코드 생성 연습"
 description: "컴파일러 · 코드 생성 연습 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/53_codegen-practice_p3/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-string/"
 parent_title: "String"
 description: "자바 프로그래밍 · String 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/09_java-string_impl/"
 ---
 {% raw %}

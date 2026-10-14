@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/multilevel-cache/"
 parent_title: "다단계 캐시"
 description: "컴퓨터 구조 · 다단계 캐시 검증 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/42_multilevel-cache_verify/"
 ---
 {% raw %}

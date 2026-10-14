@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/periodic-fourier-transform/"
 parent_title: "주기 신호의 푸리에 변환"
 description: "신호 및 시스템 · 주기 신호의 푸리에 변환 그림 생성 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/39_periodic-fourier-transform_plot/"
 ---
 {% raw %}

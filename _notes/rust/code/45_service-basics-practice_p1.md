@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/service-basics-practice/"
 parent_title: "서비스 기초 연습"
 description: "Rust · 서비스 기초 연습 문제 1 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/45_service-basics-practice_p1/"
 ---
 {% raw %}

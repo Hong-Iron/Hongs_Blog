@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/cache-memory/"
 parent_title: "캐시 메모리"
 description: "운영체제 · 캐시 메모리 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/06_cache-memory_verify/"
 ---
 {% raw %}

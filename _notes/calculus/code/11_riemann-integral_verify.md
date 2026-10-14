@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/riemann-integral/"
 parent_title: "정적분과 리만 합"
 description: "미분적분학 · 정적분과 리만 합 검증 코드"
+sitemap: false
 permalink: "/studies/calculus/code/11_riemann-integral_verify/"
 ---
 {% raw %}

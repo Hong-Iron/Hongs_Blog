@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/async-practice/"
 parent_title: "async 연습"
 description: "Rust · async 연습 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/40_async-practice_p4/"
 ---
 {% raw %}

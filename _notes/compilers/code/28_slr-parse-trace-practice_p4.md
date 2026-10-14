@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/slr-parse-trace-practice/"
 parent_title: "SLR 파서 추적 연습"
 description: "컴파일러 · SLR 파서 추적 연습 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/compilers/code/28_slr-parse-trace-practice_p4/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/referential-integrity-foreign-key/"
 parent_title: "참조 무결성 제약과 외래 키"
 description: "데이터베이스 설계 · 참조 무결성 제약과 외래 키 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/37_referential-integrity-foreign-key_verify-sql/"
 ---
 {% raw %}

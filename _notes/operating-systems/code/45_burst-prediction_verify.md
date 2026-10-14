@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/burst-prediction/"
 parent_title: "실행 시간 예측"
 description: "운영체제 · 실행 시간 예측 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/45_burst-prediction_verify/"
 ---
 {% raw %}

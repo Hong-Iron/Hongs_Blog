@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/buddy-system/"
 parent_title: "버디 시스템"
 description: "운영체제 · 버디 시스템 구현 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/35_buddy-system_impl/"
 ---
 {% raw %}

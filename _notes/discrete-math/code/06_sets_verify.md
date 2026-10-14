@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/sets/"
 parent_title: "집합"
 description: "이산수학 · 집합 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/06_sets_verify/"
 ---
 {% raw %}

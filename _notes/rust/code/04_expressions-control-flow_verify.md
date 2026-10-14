@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/expressions-control-flow/"
 parent_title: "표현식과 제어 흐름"
 description: "Rust · 표현식과 제어 흐름 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/04_expressions-control-flow_verify/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/external-sort-ladder/"
 parent_title: "외부 정렬 시간 계산 예제 사다리"
 description: "자료구조 · 외부 정렬 시간 계산 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/46_external-sort-ladder_p4/"
 ---
 {% raw %}

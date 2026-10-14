@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/user-authentication/"
 parent_title: "사용자 인증"
 description: "운영체제 · 사용자 인증 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/65_password-salt_verify/"
 ---
 {% raw %}

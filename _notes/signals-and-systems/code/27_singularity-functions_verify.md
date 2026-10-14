@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/singularity-functions/"
 parent_title: "특이함수"
 description: "신호 및 시스템 · 특이함수 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/27_singularity-functions_verify/"
 ---
 {% raw %}

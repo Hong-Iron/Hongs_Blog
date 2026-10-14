@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-and-information/string-similarity/"
 parent_title: "문자열 유사도"
 description: "자료와 정보 · 문자열 유사도 검증 코드"
+sitemap: false
 permalink: "/studies/data-and-information/code/10_string-similarity_verify/"
 ---
 {% raw %}

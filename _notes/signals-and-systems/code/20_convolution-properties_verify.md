@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/convolution-properties/"
 parent_title: "컨벌루션의 성질"
 description: "신호 및 시스템 · 컨벌루션의 성질 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/20_convolution-properties_verify/"
 ---
 {% raw %}

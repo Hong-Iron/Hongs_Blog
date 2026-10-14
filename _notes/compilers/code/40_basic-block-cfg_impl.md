@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/basic-block-cfg/"
 parent_title: "기본 블록과 제어 흐름 그래프"
 description: "컴파일러 · 기본 블록과 제어 흐름 그래프 구현 코드"
+sitemap: false
 permalink: "/studies/compilers/code/40_basic-block-cfg_impl/"
 ---
 {% raw %}

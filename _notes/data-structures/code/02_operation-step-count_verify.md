@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/operation-step-count/"
 parent_title: "연산 횟수와 단계 수 세기"
 description: "자료구조 · 연산 횟수와 단계 수 세기 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/02_operation-step-count_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/lu-decomposition/"
 parent_title: "LU 분해"
 description: "선형대수학 · LU 분해 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/08_lu-decomposition_verify/"
 ---
 {% raw %}

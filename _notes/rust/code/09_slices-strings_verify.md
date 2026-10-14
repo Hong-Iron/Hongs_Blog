@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/slices-strings/"
 parent_title: "슬라이스와 String·&str"
 description: "Rust · 슬라이스와 String·&str 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/09_slices-strings_verify/"
 ---
 {% raw %}

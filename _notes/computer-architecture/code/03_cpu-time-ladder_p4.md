@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-architecture/cpu-time-ladder/"
 parent_title: "CPU 시간 계산 예제 사다리"
 description: "컴퓨터 구조 · CPU 시간 계산 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/computer-architecture/code/03_cpu-time-ladder_p4/"
 ---
 {% raw %}

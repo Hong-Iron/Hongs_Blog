@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/data-science/bagging-random-forest/"
 parent_title: "배깅과 랜덤 포레스트"
 description: "데이터 과학 · 배깅과 랜덤 포레스트 구현 코드"
+sitemap: false
 permalink: "/studies/data-science/code/21_bagging_impl/"
 ---
 {% raw %}

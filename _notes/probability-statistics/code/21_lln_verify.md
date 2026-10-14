@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/lln/"
 parent_title: "큰 수의 법칙"
 description: "확률과 통계 · 큰 수의 법칙 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/21_lln_verify/"
 ---
 {% raw %}

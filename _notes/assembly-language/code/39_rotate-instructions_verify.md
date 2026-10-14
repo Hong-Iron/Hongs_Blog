@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/assembly-language/rotate-instructions/"
 parent_title: "회전 명령"
 description: "어셈블리어 · 회전 명령 검증 코드"
+sitemap: false
 permalink: "/studies/assembly-language/code/39_rotate-instructions_verify/"
 ---
 {% raw %}

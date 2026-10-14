@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/digital-image/"
 parent_title: "디지털 이미지"
 description: "휴먼 인터페이스 미디어 · 디지털 이미지 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/25_digital-image_verify/"
 ---
 {% raw %}

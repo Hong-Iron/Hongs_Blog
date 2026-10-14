@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-type-conversion/"
 parent_title: "타입 변환"
 description: "자바 프로그래밍 · 타입 변환 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/03_java-type-conversion_impl/"
 ---
 {% raw %}

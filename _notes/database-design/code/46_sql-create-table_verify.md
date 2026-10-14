@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-create-table/"
 parent_title: "CREATE SCHEMA와 CREATE TABLE"
 description: "데이터베이스 설계 · CREATE SCHEMA와 CREATE TABLE 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/46_sql-create-table_verify/"
 ---
 {% raw %}

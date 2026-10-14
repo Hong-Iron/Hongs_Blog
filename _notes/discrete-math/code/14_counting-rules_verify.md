@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/discrete-math/counting-rules/"
 parent_title: "셈의 기본 법칙"
 description: "이산수학 · 셈의 기본 법칙 검증 코드"
+sitemap: false
 permalink: "/studies/discrete-math/code/14_counting-rules_verify/"
 ---
 {% raw %}

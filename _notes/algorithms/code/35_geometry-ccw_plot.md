@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/geometry-ccw/"
 parent_title: "계산 기하 기초"
 description: "알고리즘 · 계산 기하 기초 그림 생성 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/35_geometry-ccw_plot/"
 ---
 {% raw %}

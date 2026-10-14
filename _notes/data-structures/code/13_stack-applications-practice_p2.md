@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/stack-applications-practice/"
 parent_title: "스택 응용 연습"
 description: "자료구조 · 스택 응용 연습 문제 2 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/13_stack-applications-practice_p2/"
 ---
 {% raw %}

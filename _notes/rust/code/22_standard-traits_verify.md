@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/standard-traits/"
 parent_title: "꼭 구현할 표준 트레이트"
 description: "Rust · 꼭 구현할 표준 트레이트 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/22_standard-traits_verify/"
 ---
 {% raw %}

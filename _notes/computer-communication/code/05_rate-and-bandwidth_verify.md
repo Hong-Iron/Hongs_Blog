@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/computer-communication/rate-and-bandwidth/"
 parent_title: "전송 속도와 대역폭"
 description: "컴퓨터 통신 · 전송 속도와 대역폭 검증 코드"
+sitemap: false
 permalink: "/studies/computer-communication/code/05_rate-and-bandwidth_verify/"
 ---
 {% raw %}

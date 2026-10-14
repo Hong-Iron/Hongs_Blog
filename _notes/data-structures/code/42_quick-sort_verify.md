@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/quick-sort/"
 parent_title: "퀵 정렬"
 description: "자료구조 · 퀵 정렬 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/42_quick-sort_verify/"
 ---
 {% raw %}

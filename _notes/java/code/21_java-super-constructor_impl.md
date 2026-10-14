@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-super-constructor/"
 parent_title: "부모 생성자 호출"
 description: "자바 프로그래밍 · 부모 생성자 호출 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/21_java-super-constructor_impl/"
 ---
 {% raw %}

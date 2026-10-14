@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/independent-vs-disjoint/"
 parent_title: "독립과 배반 비교"
 description: "확률과 통계 · 독립과 배반 비교 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/05_independent-vs-disjoint_verify/"
 ---
 {% raw %}

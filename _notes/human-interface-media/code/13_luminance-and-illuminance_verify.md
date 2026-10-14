@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/luminance-and-illuminance/"
 parent_title: "휘도와 조도"
 description: "휴먼 인터페이스 미디어 · 휘도와 조도 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/13_luminance-and-illuminance_verify/"
 ---
 {% raw %}

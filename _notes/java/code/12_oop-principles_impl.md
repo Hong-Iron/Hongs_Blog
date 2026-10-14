@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/oop-principles/"
 parent_title: "객체 지향의 세 원칙"
 description: "자바 프로그래밍 · 객체 지향의 세 원칙 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/12_oop-principles_impl/"
 ---
 {% raw %}

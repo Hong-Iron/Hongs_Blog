@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/procedural-vs-oop/"
 parent_title: "절차 지향과 객체 지향 비교"
 description: "자바 프로그래밍 · 절차 지향과 객체 지향 비교 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/13_procedural-vs-oop_impl/"
 ---
 {% raw %}

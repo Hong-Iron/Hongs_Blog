@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/recursive-relationship/"
 parent_title: "역할 이름과 재귀 관계"
 description: "데이터베이스 설계 · 역할 이름과 재귀 관계 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/23_recursive-relationship_verify/"
 ---
 {% raw %}

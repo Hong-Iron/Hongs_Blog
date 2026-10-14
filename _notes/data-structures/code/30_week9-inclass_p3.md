@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/week9-inclass/"
 parent_title: "9주차 수업 문제 풀이"
 description: "자료구조 · 9주차 수업 문제 풀이 문제 3 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/30_week9-inclass_p3/"
 ---
 {% raw %}

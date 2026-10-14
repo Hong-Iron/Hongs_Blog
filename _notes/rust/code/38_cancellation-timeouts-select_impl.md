@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/cancellation-timeouts-select/"
 parent_title: "취소·타임아웃·select"
 description: "Rust · 취소·타임아웃·select 구현 코드"
+sitemap: false
 permalink: "/studies/rust/code/38_cancellation-timeouts-select_impl/"
 ---
 {% raw %}

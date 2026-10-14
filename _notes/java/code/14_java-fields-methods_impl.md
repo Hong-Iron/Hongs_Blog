@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-fields-methods/"
 parent_title: "필드와 메서드"
 description: "자바 프로그래밍 · 필드와 메서드 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/14_java-fields-methods_impl/"
 ---
 {% raw %}

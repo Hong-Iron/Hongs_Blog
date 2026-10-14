@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/signals-and-systems/frequency-filters/"
 parent_title: "주파수 형성 필터와 주파수 선택 필터"
 description: "신호 및 시스템 · 주파수 형성 필터와 주파수 선택 필터 검증 코드"
+sitemap: false
 permalink: "/studies/signals-and-systems/code/36_frequency-filters_verify/"
 ---
 {% raw %}

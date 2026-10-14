@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/trie/"
 parent_title: "트라이"
 description: "알고리즘 · 트라이 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/14_trie_impl/"
 ---
 {% raw %}

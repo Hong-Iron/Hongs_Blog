@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/abstract-vector-spaces/"
 parent_title: "추상 벡터공간과 베지어 곡선"
 description: "선형대수학 · 추상 벡터공간과 베지어 곡선 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/25_abstract-vector-spaces_verify/"
 ---
 {% raw %}

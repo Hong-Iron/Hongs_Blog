@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/configuration-secrets/"
 parent_title: "설정과 비밀값"
 description: "Rust · 설정과 비밀값 검증 코드"
+sitemap: false
 permalink: "/studies/rust/code/44_configuration-secrets_verify/"
 ---
 {% raw %}

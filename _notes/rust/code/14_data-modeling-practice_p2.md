@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/data-modeling-practice/"
 parent_title: "데이터 모델링 연습"
 description: "Rust · 데이터 모델링 연습 문제 2 풀이 코드"
+sitemap: false
 permalink: "/studies/rust/code/14_data-modeling-practice_p2/"
 ---
 {% raw %}

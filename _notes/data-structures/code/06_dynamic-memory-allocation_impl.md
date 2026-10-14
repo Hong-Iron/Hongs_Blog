@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/dynamic-memory-allocation/"
 parent_title: "동적 메모리 할당"
 description: "자료구조 · 동적 메모리 할당 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/06_dynamic-memory-allocation_impl/"
 ---
 {% raw %}

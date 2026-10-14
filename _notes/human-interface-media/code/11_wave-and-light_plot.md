@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/wave-and-light/"
 parent_title: "파동과 빛"
 description: "휴먼 인터페이스 미디어 · 파동과 빛 그림 생성 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/11_wave-and-light_plot/"
 ---
 {% raw %}

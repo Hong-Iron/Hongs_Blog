@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/pointer-parameters/"
 parent_title: "포인터 인자와 값 전달"
 description: "자료구조 · 포인터 인자와 값 전달 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/04_pointer-parameters_impl/"
 ---
 {% raw %}

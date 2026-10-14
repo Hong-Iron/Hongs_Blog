@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/randomized-analysis/"
 parent_title: "해싱과 무작위 알고리즘의 확률"
 description: "확률과 통계 · 해싱과 무작위 알고리즘의 확률 그림 생성 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/26_randomized-analysis_plot/"
 ---
 {% raw %}

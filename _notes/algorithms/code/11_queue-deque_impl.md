@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/algorithms/queue-deque/"
 parent_title: "큐와 덱"
 description: "알고리즘 · 큐와 덱 구현 코드"
+sitemap: false
 permalink: "/studies/algorithms/code/11_queue-deque_impl/"
 ---
 {% raw %}

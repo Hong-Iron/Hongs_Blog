@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-generics/"
 parent_title: "제네릭"
 description: "자바 프로그래밍 · 제네릭 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/38_java-generics_impl/"
 ---
 {% raw %}

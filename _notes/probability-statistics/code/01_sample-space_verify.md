@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/probability-statistics/sample-space/"
 parent_title: "표본공간과 사건"
 description: "확률과 통계 · 표본공간과 사건 검증 코드"
+sitemap: false
 permalink: "/studies/probability-statistics/code/01_sample-space_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/calculus/gradient/"
 parent_title: "그래디언트와 방향도함수"
 description: "미분적분학 · 그래디언트와 방향도함수 그림 생성 코드"
+sitemap: false
 permalink: "/studies/calculus/code/20_gradient_plot/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/sql-key-clauses/"
 parent_title: "PRIMARY KEY·UNIQUE·FOREIGN KEY 절"
 description: "데이터베이스 설계 · PRIMARY KEY·UNIQUE·FOREIGN KEY 절 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/49_sql-key-clauses_verify-sql/"
 ---
 {% raw %}

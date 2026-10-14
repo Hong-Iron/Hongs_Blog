@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/record-blocking/"
 parent_title: "레코드 블로킹"
 description: "운영체제 · 레코드 블로킹 검증 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/59_record-blocking_verify/"
 ---
 {% raw %}

@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/college-math/exponential-function/"
 parent_title: "지수함수"
 description: "대학수학 · 지수함수 검증 코드"
+sitemap: false
 permalink: "/studies/college-math/code/06_exponential-function_verify/"
 ---
 {% raw %}

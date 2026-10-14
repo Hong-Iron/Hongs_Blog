@@ -13,6 +13,7 @@ track_sub: "신호와 수치 계산"
 parent_url: "/studies/numerical-analysis/coordinate-frame/"
 parent_title: "좌표계 변환"
 description: "수치해석 · 좌표계 변환 검증 코드"
+sitemap: false
 permalink: "/studies/numerical-analysis/code/06_coordinate-frame_verify/"
 ---
 {% raw %}

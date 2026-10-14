@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/array-doubling/"
 parent_title: "배열 두 배 늘리기"
 description: "자료구조 · 배열 두 배 늘리기 구현 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/08_array-doubling_impl/"
 ---
 {% raw %}

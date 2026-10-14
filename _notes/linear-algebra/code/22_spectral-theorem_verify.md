@@ -12,6 +12,7 @@ track: "수학"
 parent_url: "/studies/linear-algebra/spectral-theorem/"
 parent_title: "대칭행렬과 스펙트럼 정리"
 description: "선형대수학 · 대칭행렬과 스펙트럼 정리 검증 코드"
+sitemap: false
 permalink: "/studies/linear-algebra/code/22_spectral-theorem_verify/"
 ---
 {% raw %}

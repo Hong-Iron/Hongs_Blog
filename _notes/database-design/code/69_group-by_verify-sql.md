@@ -13,6 +13,7 @@ track_sub: "데이터"
 parent_url: "/studies/database-design/group-by/"
 parent_title: "GROUP BY"
 description: "데이터베이스 설계 · GROUP BY 검증 코드"
+sitemap: false
 permalink: "/studies/database-design/code/69_group-by_verify-sql/"
 ---
 {% raw %}

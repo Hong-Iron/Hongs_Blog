@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/rust/performance-measurement/"
 parent_title: "성능 측정과 최적화"
 description: "Rust · 성능 측정과 최적화 실험 코드"
+sitemap: false
 permalink: "/studies/rust/code/47_performance-measurement_bench/"
 ---
 {% raw %}

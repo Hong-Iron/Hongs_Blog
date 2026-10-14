@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/heap-tracing-ladder/"
 parent_title: "힙 삽입·삭제 추적 예제 사다리"
 description: "자료구조 · 힙 삽입·삭제 추적 예제 사다리 문제 4 풀이 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/27_heap-tracing-ladder_p4/"
 ---
 {% raw %}

@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/sparse-matrix-transpose/"
 parent_title: "희소 행렬의 전치"
 description: "자료구조 · 희소 행렬의 전치 검증 코드"
+sitemap: false
 permalink: "/studies/data-structures/code/12_sparse-matrix-transpose_verify/"
 ---
 {% raw %}

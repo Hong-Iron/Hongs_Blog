@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/java/java-exception/"
 parent_title: "예외와 예외 클래스"
 description: "자바 프로그래밍 · 예외와 예외 클래스 구현 코드"
+sitemap: false
 permalink: "/studies/java/code/34_java-exception_impl/"
 ---
 {% raw %}

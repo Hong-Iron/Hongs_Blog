@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/static-vs-dynamic-typing/"
 parent_title: "정적 타입과 동적 타입 비교"
 description: "컴파일러 · 정적 타입과 동적 타입 비교 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/34_static-vs-dynamic-typing_verify/"
 ---
 {% raw %}

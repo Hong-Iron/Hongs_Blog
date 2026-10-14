@@ -13,6 +13,7 @@ track_sub: "소프트웨어"
 parent_url: "/studies/compilers/activation-record/"
 parent_title: "활성 레코드"
 description: "컴파일러 · 활성 레코드 검증 코드"
+sitemap: false
 permalink: "/studies/compilers/code/49_activation-record_verify/"
 ---
 {% raw %}

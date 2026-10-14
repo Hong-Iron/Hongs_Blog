@@ -12,6 +12,7 @@ track: "사람과 심리"
 parent_url: "/studies/human-interface-media/complex-wave/"
 parent_title: "파동의 복소수 표현"
 description: "휴먼 인터페이스 미디어 · 파동의 복소수 표현 검증 코드"
+sitemap: false
 permalink: "/studies/human-interface-media/code/24_complex-wave_verify/"
 ---
 {% raw %}

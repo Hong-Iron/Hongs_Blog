@@ -13,6 +13,7 @@ track_sub: "컴퓨터 시스템"
 parent_url: "/studies/operating-systems/instruction-cycle/"
 parent_title: "명령어 사이클"
 description: "운영체제 · 명령어 사이클 구현 코드"
+sitemap: false
 permalink: "/studies/operating-systems/code/03_instruction-cycle_impl/"
 ---
 {% raw %}
