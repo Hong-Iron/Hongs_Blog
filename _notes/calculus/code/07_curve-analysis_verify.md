@@ -80,7 +80,7 @@ def main():
     cands = {0: g(0), 1: g(1), 3: g(3)}
     assert max(cands, key=cands.get) == 3 and cands[3] == 3 and min(cands, key=cands.get) == 1
     print("[OK] 주장 7·카드 C4: 끝점이 최대")
-    # 수치해석(2-2) 과목별 관점: 슬라이드 14회 p.8의 예, 카드 C5
+    # 수치해석(2-2) 과목별 관점: 문서의 f(x) = x^3 + x^2 - x + 1 예, 카드 C5
     from fractions import Fraction as Fr
     fs = lambda x: x ** 3 + x ** 2 - x + 1
     d1 = lambda x: 3 * x * x + 2 * x - 1; d2 = lambda x: 6 * x + 2

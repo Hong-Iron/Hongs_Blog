@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["CREATE TABLE", "CREATE SCHEMA", "표 만들기", "테이블 생성", "스키마 생성", "권한 식별자", "Authorization Identifier", "기본 테이블", "Base Table", "순환 참조", "Circular Reference"]
 description: "표를 쓰려면 먼저 빈 표의 틀을 만들어야 한다. 장부의 첫 줄에 칸 이름을 적고 칸마다 \"숫자만\", \"빈칸 금지\" 같은 규칙을 걸어 두는 일과 같아서, 틀을 잘 만들어 두면 잘못된 값은 들어올 때 걸러진다. 다만 표끼리 서로를 가리킬 때는 만드는 순서가 꼬인다. 아직 없는 표를 가…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/sql-create-table/"
 
 행을 넣으려면 넣을 표가 있어야 한다. DBMS는 그 표에 어떤 칸이 있고 칸마다 어떤 값을 받는지 알아야 한다. 이것을 알려 주는 문장이 `CREATE TABLE`이다.
 
-회사 데이터베이스의 부서 표는 이렇게 만든다[^1].
+회사 데이터베이스의 부서 표는 이렇게 만든다.
 
 ```sql
 CREATE TABLE DEPARTMENT
@@ -57,7 +57,7 @@ CREATE TABLE DEPARTMENT
 
 ## 정의
 
-**스키마 만들기.** SQL에서 스키마는 표와 자료형, 제약, [뷰](/Hongs_Blog/studies/database-design/sql-view/)처럼 데이터베이스를 이루는 것들을 한 이름 아래 묶은 것이다. 스키마에는 이름과 주인이 있다. 주인을 적는 자리를 권한 식별자(authorization identifier)라고 한다[^2].
+**스키마 만들기.** SQL에서 스키마는 표와 자료형, 제약, [뷰](/Hongs_Blog/studies/database-design/sql-view/)처럼 데이터베이스를 이루는 것들을 한 이름 아래 묶은 것이다. 스키마에는 이름과 주인이 있다. 주인을 적는 자리를 권한 식별자(authorization identifier)라고 한다.
 
 ```sql
 CREATE SCHEMA COMPANY AUTHORIZATION 'Jsmith';
@@ -65,13 +65,13 @@ CREATE SCHEMA COMPANY AUTHORIZATION 'Jsmith';
 
 이름이 COMPANY이고 주인이 Jsmith인 스키마를 만든다.
 
-**표 만들기.** `CREATE TABLE`은 새 릴레이션의 이름, 속성, 처음 거는 제약을 적어 표를 만든다[^3].
+**표 만들기.** `CREATE TABLE`은 새 릴레이션의 이름, 속성, 처음 거는 제약을 적어 표를 만든다.
 
 - **표 이름.** 앞에 스키마 이름을 붙여 `CREATE TABLE COMPANY.EMPLOYEE …`처럼 쓸 수 있다. 안 붙이고 `CREATE TABLE EMPLOYEE …`라고 써도 된다.
 - **속성.** 〈속성 이름, 자료형〉 짝을 쉼표로 이어 적는다.
 - **처음 거는 제약.** 속성 하나에 거는 제약(`NOT NULL`, 기본값)과 무결성 제약(키, 참조 무결성)을 적는다.
 
-회사 데이터베이스의 표 여섯 개를 만드는 문장 전체는 다음과 같다[^4]. 표의 열과 화살표는 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)의 스키마 그림과 한 줄씩 맞아떨어진다.
+회사 데이터베이스의 표 여섯 개를 만드는 문장 전체는 다음과 같다. 표의 열과 화살표는 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)의 스키마 그림과 한 줄씩 맞아떨어진다.
 
 <details class="callout callout-note" markdown="1">
 <summary class="callout-title" markdown="span">COMPANY의 CREATE TABLE 여섯 문장</summary>
@@ -130,17 +130,12 @@ CREATE TABLE DEPENDENT
 </details>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 9 p.18과 10 p.3의 `Hours DECIMAL(3,1) NOT NULL` / 문제점: 같은 슬라이드 묶음의 상태 표(9 p.31)에는 WORKS_ON에 (888665555, 20, NULL) 행이 있다. Hours가 `NOT NULL`이면 이 행은 들어가지 않는다 / 수정안: 위 문장처럼 Hours에서 `NOT NULL`을 뺀다 / 근거: 슬라이드대로 만들고 상태를 넣으면 SQLite는 "NOT NULL constraint failed: WORKS_ON.Hours"로, PostgreSQL 16은 NOT NULL 위반 오류로 막는다 — [46_sql-create-table_verify.py](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify/), [46_sql-create-table_verify.sql](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify-sql/)
-
-</div>
+WORKS_ON의 Hours에는 `NOT NULL`을 걸지 않는다. COMPANY 상태에는 사장 Borg가 20번 프로젝트에서 일한 시간을 비워 둔 행 (888665555, 20, NULL)이 있다. Hours를 `NOT NULL`로 만들면 이 행은 들어가지 못한다. SQLite는 "NOT NULL constraint failed: WORKS_ON.Hours"라는 오류로 막는다.
 
 
 ### 서로를 가리키는 표
 
-슬라이드는 여섯 문장을 보여 준 뒤 묻는다. "이것으로 충분한가? 어떤 문제가 생길 수 있는가?"[^5]
+여섯 문장을 다 적었으면 물어볼 것이 있다. 이것으로 충분한가? 어떤 문제가 생길 수 있는가?
 
 위 문장에서 EMPLOYEE만 `FOREIGN KEY` 줄이 없다. 스키마 그림에는 EMPLOYEE에서 나가는 화살표가 둘 있다. 상사를 가리키는 Super_ssn → EMPLOYEE.Ssn과, 부서를 가리키는 Dno → DEPARTMENT.Dnumber다. 이 둘이 문장에서 빠져 있다. 그러니 이것만으로는 충분하지 않다[^s1].
 
@@ -166,7 +161,7 @@ flowchart LR
     DEPN -->|"Essn"| EMP
 ```
 
-화살표 "A → B"는 A가 B를 가리킨다는 뜻이다. 그래서 B가 먼저 있어야 한다. EMPLOYEE와 DEPARTMENT 사이는 화살표가 양쪽으로 나 있어 "먼저"를 정할 수 없다. 나머지 네 표는 가리킴 받는 표를 먼저 만들면 된다[^s2].
+화살표 "A → B"는 A가 B를 가리킨다는 뜻이다. 그래서 B가 먼저 있어야 한다. EMPLOYEE와 DEPARTMENT 사이는 화살표가 양쪽으로 나 있어 "먼저"를 정할 수 없다. 나머지 네 표는 가리킴 받는 표를 먼저 만들면 된다.
 
 푸는 방법은 걸리는 외래 키를 빼고 표를 다 만든 뒤, 표의 틀을 고치는 `ALTER TABLE` 문으로 나중에 붙이는 것이다([ALTER TABLE](/Hongs_Blog/studies/database-design/sql-alter-table/)).
 
@@ -182,7 +177,7 @@ ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPDEPTFK
 행을 넣을 때도 같은 일이 생긴다. 빈 데이터베이스에 첫 직원 Borg를 넣으려면 그가 일하는 1번 부서가 있어야 한다. 1번 부서를 넣으려면 관리자 Borg가 있어야 한다. 둘 다 거부된다. 길은 둘이다. 외래 키를 붙이기 전에 행을 먼저 넣거나, 외래 키 검사를 한 묶음의 작업이 끝날 때로 미룬다[^s1].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 표 여섯 개의 열 수(10, 4, 2, 4, 3, 5)와 외래 키 여덟 개, Hours `NOT NULL`과 상태의 충돌, 서로 가리키는 두 표에 첫 행 넣기(SQLite) — [46_sql-create-table_verify.py](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify/). `CREATE SCHEMA … AUTHORIZATION`, 아직 없는 표를 가리키는 외래 키의 오류, `ALTER TABLE`로 나중에 붙이기는 PostgreSQL 16에서 실행 — [46_sql-create-table_verify.sql](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: 표 여섯 개의 열 수(10, 4, 2, 4, 3, 5)와 외래 키 여덟 개, Hours에 `NOT NULL`을 걸면 상태의 NULL 행이 막힘, 서로 가리키는 두 표에 첫 행 넣기(SQLite) — [46_sql-create-table_verify.py](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify/). `CREATE SCHEMA … AUTHORIZATION`, 아직 없는 표를 가리키는 외래 키의 오류, `ALTER TABLE`로 나중에 붙이기는 PostgreSQL 16에서 실행 — [46_sql-create-table_verify.sql](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify-sql/)</div>
 
 </div>
 
@@ -191,7 +186,7 @@ ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPDEPTFK
 
 - **설계에서 문장으로.** ER 그림을 표로 옮긴 결과([ER-관계형 사상 절차](/Hongs_Blog/studies/database-design/er-to-relational-mapping/))를 `CREATE TABLE` 문으로 적으면 데이터베이스가 된다. 릴레이션 하나가 문장 하나, 밑줄 친 속성이 `PRIMARY KEY`, 화살표가 `FOREIGN KEY`다.
 - **만드는 순서.** 외래 키를 문장 안에 적으려면 가리킴 받는 표부터 만든다. COMPANY에서 EMPLOYEE의 Dno 외래 키만 뒤로 미루면 EMPLOYEE → DEPARTMENT → DEPT_LOCATIONS, PROJECT → WORKS_ON, DEPENDENT 순서로 만들 수 있다.
-- **제품마다 다른 점.** 슬라이드의 `CREATE SCHEMA COMPANY AUTHORIZATION 'Jsmith';`를 PostgreSQL 16은 따옴표 때문에 구문 오류로 본다. 따옴표를 떼면, Jsmith라는 사용자가 있을 때 돈다. SQLite에는 `CREATE SCHEMA`가 없다. 또 SQLite는 `CREATE TABLE` 때 가리키는 표가 있는지 보지 않아서, 아직 없는 표를 가리키는 외래 키도 받는다[^s1].
+- **제품마다 다른 점.** 위의 `CREATE SCHEMA COMPANY AUTHORIZATION 'Jsmith';`를 PostgreSQL 16은 따옴표 때문에 구문 오류로 본다. 따옴표를 떼면, Jsmith라는 사용자가 있을 때 돈다. SQLite에는 `CREATE SCHEMA`가 없다. 또 SQLite는 `CREATE TABLE` 때 가리키는 표가 있는지 보지 않아서, 아직 없는 표를 가리키는 외래 키도 받는다[^s1].
 - **흔한 실수.** 마지막 열이나 제약 뒤에 쉼표를 남긴다. 닫는 괄호 앞의 쉼표는 구문 오류다.
 
 ## 연결
@@ -212,7 +207,7 @@ ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPDEPTFK
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C2** 슬라이드의 EMPLOYEE 문장에는 스키마 그림에 있는 외래 키 둘이 빠져 있다. 왜 그 자리에 적지 못하는가? 어떻게 붙이는가?</summary>
+<summary class="callout-title" markdown="span">**C2** 위 여섯 문장 가운데 EMPLOYEE 문장에는 스키마 그림에 있는 외래 키 둘이 빠져 있다. 왜 그 자리에 적지 못하는가? 어떻게 붙이는가?</summary>
 
 **답:** EMPLOYEE를 맨 먼저 만드는데 Dno의 외래 키는 아직 없는 DEPARTMENT를 가리키기 때문이다. DEPARTMENT를 먼저 만들어도 그쪽의 Mgr_ssn이 EMPLOYEE를 가리켜 똑같이 걸린다. 표를 다 만든 뒤 `ALTER TABLE EMPLOYEE ADD CONSTRAINT … FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber);`로 붙인다.<br>
 **이유:** 두 표가 서로를 가리키면 "가리킴 받는 표 먼저"라는 순서가 없다. PostgreSQL 16은 없는 표를 가리키는 `FOREIGN KEY`를 오류로 막는다.
@@ -239,11 +234,5 @@ DEPARTMENT가 먼저 있어야 한다. Dnum이 DEPARTMENT의 Dnumber를 가리�
 </details>
 
 
-[^1]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.12 (CREATE TABLE DEPARTMENT). 같은 문장이 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.17에 있다
-[^2]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.11 (Creating a Schema in SQL). 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.3
-[^3]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.12 (Creating a Table in SQL: name, attributes, initial constraints)
-[^4]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.17~18. 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.3, p.12. 슬라이드의 EMPLOYEE 문장은 `PRIMARY KEY (Ssn),`에서 끊겨 다음 문장으로 넘어간다. 여기서는 괄호를 닫아 적었다
-[^5]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.18 ("Is it enough? What problem can occur?")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 9 p.18의 물음에는 답이 없다. 빠진 외래 키 둘, 서로 가리키는 표의 문제, `ALTER TABLE`로 나중에 붙이는 방법, 행을 넣을 때의 같은 문제, 제품마다 다른 점은 슬라이드에 없다. Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.1.2절이 같은 문제와 `ALTER TABLE`로 나중에 붙이는 방법을 적는다. 오류와 해결은 PostgreSQL 16과 SQLite에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 9 p.17~18의 스키마 그림에 있는 화살표 여덟 개를 표 단위로 옮겨 그렸다.
+[^s1]: Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.1.2절이 같은 문제와 `ALTER TABLE`로 나중에 붙이는 방법을 적는다. 오류와 해결은 PostgreSQL 16과 SQLite에서 실행해 확인했다.
 {% endraw %}

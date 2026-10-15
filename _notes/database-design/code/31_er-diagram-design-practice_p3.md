@@ -23,11 +23,10 @@ permalink: "/studies/database-design/code/31_er-diagram-design-practice_p3/"
 """ER 다이어그램 설계 연습 p3: CONF_REVIEW.
 
 문서: 31.ER 다이어그램 설계 연습 (문제 3)
-출처: 데이터베이스 설계 6주차 슬라이드 6-1 풀이 p.27~35
 확인하는 것:
-  1. 완성 그림(p.35)의 (min, max): SUBMITS 저자 (1,N)·논문 (1,N), IS_CONTACT 저자 (0,N)·논문 (1,1),
+  1. 완성 그림의 (min, max): SUBMITS 저자 (1,N)·논문 (1,N), IS_CONTACT 저자 (0,N)·논문 (1,1),
      REVIEWS 심사자 (1,N)·논문 (2,4). 요구사항을 지키는 자료는 통과한다.
-  2. p.32의 물음: Is_contact를 SUBMITS의 속성으로만 두면, 연락 저자가 둘이거나 없는 논문도 통과한다.
+  2. 문서 끝의 물음: Is_contact를 SUBMITS의 속성으로만 두면, 연락 저자가 둘이거나 없는 논문도 통과한다.
      IS_CONTACT를 따로 두고 논문 쪽에 (1,1)을 적으면 둘 다 걸린다.
   3. 심사자가 1명이거나 5명인 논문, 심사할 논문이 없는 심사자는 REVIEWS에서 걸린다.
   4. 그림이 적지 못하는 것: 연락 저자가 그 논문의 저자가 아니어도 (min, max)는 모두 통과한다.
@@ -35,11 +34,11 @@ permalink: "/studies/database-design/code/31_er-diagram-design-practice_p3/"
 from collections import Counter
 
 N = float("inf")
-DESIGN_A = {   # p.32: Is_contact는 SUBMITS의 속성
+DESIGN_A = {   # 설계 A: Is_contact는 SUBMITS의 속성
     "SUBMITS": [("AUTHOR", (1, N)), ("PAPER", (1, N))],
     "REVIEWS": [("REVIEWER", (1, N)), ("PAPER", (2, 4))],
 }
-DESIGN_B = dict(DESIGN_A, IS_CONTACT=[("AUTHOR", (0, N)), ("PAPER", (1, 1))])   # p.33, p.35
+DESIGN_B = dict(DESIGN_A, IS_CONTACT=[("AUTHOR", (0, N)), ("PAPER", (1, 1))])   # 설계 B: 완성 그림
 
 
 def violations(schema, entities, rels):

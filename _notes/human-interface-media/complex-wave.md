@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Complex Representation of Waves", "복소 지수 표현", "complex exponential", "오일러 공식", "Euler's formula", "페이저", "phasor", "주기의 정규화"]
 description: "사인파는 원 위를 일정하게 도는 점의 그림자다. 그림자 하나만 보면 높이만 남지만, 도는 점 자체를 적으면 높이와 함께 어느 방향으로 얼마나 돌았는지도 남는다. 평면 위의 점을 숫자 하나로 적는 방법이 복소수라서, 파동을 복소수로 쓰면 크기·빠르기·출발 각도가 한 식에 깔끔하게 들…"
@@ -33,14 +33,14 @@ permalink: "/studies/human-interface-media/complex-wave/"
 
 ## 예시로 보기
 
-사인파를 식으로 쓰려면 "한 바퀴"를 시간에 맞춰야 한다. 원을 한 바퀴 돌면 각도가 $$2\pi$$만큼 늘고 그림자가 한 주기를 그린다[^1]. $$\sin t$$는 $$t = 2\pi$$에서야 한 주기가 끝난다. 시간 1에서 한 주기를 끝내려면 각도를 $$2\pi t$$로 늘리고, 시간 $$T$$에서 끝내려면 $$2\pi t / T$$로 늘린다. 출발점이 $$x$$축에서 $$\phi$$만큼 돌아간 곳이면 그만큼 더한다[^1].
+사인파를 식으로 쓰려면 "한 바퀴"를 시간에 맞춰야 한다. 원을 한 바퀴 돌면 각도가 $$2\pi$$만큼 늘고 그림자가 한 주기를 그린다. $$\sin t$$는 $$t = 2\pi$$에서야 한 주기가 끝난다. 시간 1에서 한 주기를 끝내려면 각도를 $$2\pi t$$로 늘리고, 시간 $$T$$에서 끝내려면 $$2\pi t / T$$로 늘린다. 출발점이 $$x$$축에서 $$\phi$$만큼 돌아간 곳이면 그만큼 더한다.
 
 $$ f(t) = A\sin\!\left(\frac{2\pi t}{T} + \phi\right) $$
 
 
 $$A = 2$$, $$T = 0.5$$ s, $$\phi = \pi/3$$을 넣으면 $$f(0) = 2\sin(\pi/3) \approx 1.73$$이고, $$t = 0.5$$ s에서 같은 값으로 돌아온다.
 
-그런데 높이 1.73만 보면 원 위의 점이 위로 올라가는 중인지 내려가는 중인지 모른다. 그림자를 하나 더 보면 안다. 가로 그림자 $$A\cos(\cdot)$$와 세로 그림자 $$A\sin(\cdot)$$를 함께 적으면 원 위의 점이 정해진다. 이 두 값을 복소수 하나로 묶는다[^2].
+그런데 높이 1.73만 보면 원 위의 점이 위로 올라가는 중인지 내려가는 중인지 모른다. 그림자를 하나 더 보면 안다. 가로 그림자 $$A\cos(\cdot)$$와 세로 그림자 $$A\sin(\cdot)$$를 함께 적으면 원 위의 점이 정해진다. 이 두 값을 복소수 하나로 묶는다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/24_complex-wave_fig1.svg" alt="그림" width="679" height="276" loading="lazy">
 
@@ -59,12 +59,12 @@ $$ e^{i\theta} = \cos\theta + i\sin\theta $$
 
 $$ x(t) = A\cos\!\left(\frac{2\pi t}{T} + \phi\right) + iA\sin\!\left(\frac{2\pi t}{T} + \phi\right) = A\,e^{i\left(\frac{2\pi t}{T} + \phi\right)} $$
 
-이다[^2]. 실제 사인파는 이 값의 허수부(세로 성분), 코사인파는 실수부(가로 성분)다.
+이다. 실제 사인파는 이 값의 허수부(세로 성분), 코사인파는 실수부(가로 성분)다.
 
 </div>
 
 
-강의는 이 식을 한 번 더 나눠 쓴다[^2].
+이 식은 두 부분으로 한 번 더 나눠 쓸 수 있다.
 
 $$ x(t) = e^{(\alpha + i\phi)}\, e^{i\,2\pi t/T} $$
 
@@ -74,9 +74,9 @@ $$ x(t) = e^{(\alpha + i\phi)}\, e^{i\,2\pi t/T} $$
 복소수로 쓰면 두 가지가 편하다.
 
 - **크기가 늘 일정하다.** $$\vert x(t)\vert  = A$$다. 실수 사인은 0과 $$A$$ 사이를 오가지만, 원 위의 점은 중심에서 늘 같은 거리에 있다.
-- **회전 방향이 구별된다.** $$e^{+i2\pi t}$$와 $$e^{-i2\pi t}$$는 실수부(코사인)가 같아 실수 한 줄로는 구별되지 않는다. 복소수로는 하나는 시계 반대 방향, 하나는 시계 방향으로 도는 점이라 다르다. 강의가 "같은 에너지지만 회전 모양이 다른 파동"을 나타내려고 복소수를 들여오는 이유다[^3].
+- **회전 방향이 구별된다.** $$e^{+i2\pi t}$$와 $$e^{-i2\pi t}$$는 실수부(코사인)가 같아 실수 한 줄로는 구별되지 않는다. 복소수로는 하나는 시계 반대 방향, 하나는 시계 방향으로 도는 점이라 다르다. "같은 에너지지만 회전 모양이 다른 파동"을 나타내려고 복소수를 쓰는 이유다.
 
-**파동의 에너지.** 구간 $$t_1 \le t \le t_2$$의 에너지는 $$\int_{t_1}^{t_2} \vert x(t)\vert ^2 dt$$, 평균 에너지(전력)는 $$P_\infty = \lim_{T \to \infty} \frac{1}{2T}\int_{-T}^{T} \vert x(t)\vert ^2 dt$$다[^4]. 복소수 표현은 $$\vert x(t)\vert ^2 = A^2$$이라 전력이 $$A^2$$이고, 실수 사인 $$A\sin(\cdot)$$의 전력은 그 절반인 $$A^2/2$$다. 정의와 성질은 [신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/)에 있다.
+**파동의 에너지.** 구간 $$t_1 \le t \le t_2$$의 에너지는 $$\int_{t_1}^{t_2} \vert x(t)\vert ^2 dt$$, 평균 에너지(전력)는 $$P_\infty = \lim_{T \to \infty} \frac{1}{2T}\int_{-T}^{T} \vert x(t)\vert ^2 dt$$다. 복소수 표현은 $$\vert x(t)\vert ^2 = A^2$$이라 전력이 $$A^2$$이고, 실수 사인 $$A\sin(\cdot)$$의 전력은 그 절반인 $$A^2/2$$다. 정의와 성질은 [신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/)에 있다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 주기 $$T$$, 오일러 공식, 실수부·허수부와 $$\vert x\vert  = A$$, $$e^{\alpha + i\phi}e^{i2\pi t/T}$$ 분해, 평균 전력 $$A^2/2$$와 $$A^2$$, 회전 방향 구별 (실험으로 확인됨) — [24_complex-wave_verify.py](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_verify/)</div>
@@ -86,7 +86,7 @@ $$ x(t) = e^{(\alpha + i\phi)}\, e^{i\,2\pi t/T} $$
 
 ## 활용
 
-- 강의는 파동을 시간 영역(시점 $$t$$를 변수로)과 주기 영역(주기 $$T$$를 변수로)으로 나눠 볼 수 있다고 소개한다. 공간에서도 1차원은 $$f(x)$$와 $$F(\lambda_x)$$, 2차원은 $$f(x, y)$$와 $$F(\lambda_x, \lambda_y)$$로 쓴다[^5]. 주기나 파장을 변수로 쓰는 쪽이 강의 계획표 11~14주차의 푸리에 급수·변환으로 이어진다.
+- 파동은 시간 영역(시점 $$t$$를 변수로)과 주기 영역(주기 $$T$$를 변수로)으로 나눠 볼 수 있다. 공간에서도 1차원은 $$f(x)$$와 $$F(\lambda_x)$$, 2차원은 $$f(x, y)$$와 $$F(\lambda_x, \lambda_y)$$로 쓴다. 주기나 파장을 변수로 쓰는 쪽이 푸리에 급수·변환으로 이어진다.
 - 신호 처리에서 사인파를 복소 지수로 다루는 이유도 같다. 크기와 위상을 곱셈 한 번으로 바꿀 수 있다: $$e^{i\theta_1}e^{i\theta_2} = e^{i(\theta_1 + \theta_2)}$$. 자세한 성질은 [연속 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/ct-complex-exponential/)에 있다.
 
 ## 연결
@@ -128,11 +128,6 @@ $$ x(t) = e^{(\alpha + i\phi)}\, e^{i\,2\pi t/T} $$
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 4회 강의 자료 「HIM_강의04_파동의표현」, p.5 (파동의 시간 함수: 1주기는 1회전, 주기의 정규화, 위상)
-[^2]: 같은 자료, p.8 (오일러 공식, 1차원 진동을 복소 평면으로 확대, 파동의 기본 표현 $$x(t) = Ae^{i(2\pi t/T + \phi)} = e^{(\alpha + i\phi)}e^{i(2\pi t/T)}$$). 같은 식이 요약 p.10에 반복된다.
-[^3]: 같은 자료, p.7 (동일한 에너지의 파동이지만 회전 모양이 다른 파동을 표현하는 방법, 2차원 수 복소수)
-[^4]: 같은 자료, p.9 (파동의 에너지)
-[^5]: 같은 자료, p.4 (파동의 표현: 시간 영역 $$F(t)$$, $$F(T)$$, 공간 영역 $$f(x)$$, $$F(\lambda_x)$$, $$f(x,y)$$, $$F(\lambda_x, \lambda_y)$$)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본 p.5의 회전-사인 그림을 같은 원리로 다시 계산해 그린 것이다. [24_complex-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/)로 그렸고, 점의 세로 위치가 $$\sin$$, 가로 위치가 $$\cos$$와 같은지를 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 $$\alpha$$를 정의하지 않는다. $$Ae^{i\phi} = e^{\alpha + i\phi}$$가 되려면 $$A = e^\alpha$$, 곧 $$\alpha = \ln A$$여야 한다. 실수 사인을 복소수의 허수부로 읽는 해석, 회전 방향 예, 실수와 복소수 전력의 비교, 카드 C2·C3은 원본에 없다. 계산은 검증 코드로 확인했다.
+[^s1]: [24_complex-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/24_complex-wave_plot/)로 그렸고, 점의 세로 위치가 $$\sin$$, 가로 위치가 $$\cos$$와 같은지를 같은 코드로 확인했다.
+[^s2]: $$Ae^{i\phi} = e^{\alpha + i\phi}$$가 되려면 $$A = e^\alpha$$, 곧 $$\alpha = \ln A$$여야 한다. 계산은 검증 코드로 확인했다.
 {% endraw %}

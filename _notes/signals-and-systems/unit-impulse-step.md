@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/unit-impulse-step/"
 
 ## 예시로 보기
 
-이산 시간에서 둘의 관계는 간단하다[^1].
+이산 시간에서 둘의 관계는 간단하다.
 
 | $$n$$ | $$\cdots$$ | $$-2$$ | $$-1$$ | $$0$$ | $$1$$ | $$2$$ | $$\cdots$$ |
 |---|---|---|---|---|---|---|---|
@@ -51,13 +51,13 @@ permalink: "/studies/signals-and-systems/unit-impulse-step/"
 $$\delta[n] = \begin{cases}0 & n \neq 0\\ 1 & n = 0\end{cases}, \qquad u[n] = \begin{cases}0 & n < 0\\ 1 & n \ge 0\end{cases}$$
 
 
-단위 임펄스는 단위 샘플이라고도 부른다[^1]. 두 신호는 서로 바꿔 쓸 수 있다[^1][^2].
+단위 임펄스는 단위 샘플이라고도 부른다. 두 신호는 서로 바꿔 쓸 수 있다.
 
 - 첫 번째 차: $$\delta[n] = u[n] - u[n-1]$$
 - 누적 합: $$u[n] = \sum_{m=-\infty}^{n}\delta[m]$$
 - 합 변수를 $$k = n - m$$으로 바꾸면 $$u[n] = \sum_{k=0}^{\infty}\delta[n - k]$$. 계단은 $$0, 1, 2, \dots$$칸 늦춘 임펄스들을 겹쳐 쌓은 것이다. 예: $$u[2] = \delta[2-0] + \delta[2-1] + \delta[2-2] + \cdots$$에서 $$\delta[0]$$인 셋째 항만 1이다.
 
-**표본화 성질.** 신호에 $$\delta[n - n_0]$$을 곱하면 $$n = n_0$$의 값만 남는다[^3].
+**표본화 성질.** 신호에 $$\delta[n - n_0]$$을 곱하면 $$n = n_0$$의 값만 남는다.
 
 $$x[n]\,\delta[n - n_0] = x[n_0]\,\delta[n - n_0]$$
 
@@ -67,19 +67,19 @@ $$x[n]\,\delta[n - n_0] = x[n_0]\,\delta[n - n_0]$$
 $$u(t) = \begin{cases}0 & t < 0\\ 1 & t > 0\end{cases}$$
 
 
-$$u(t)$$는 $$t = 0$$에서 끊겨 원래는 미분할 수 없다. 그래서 $$\Delta$$라는 짧은 시간 동안 0에서 1로 곧게 오르는 $$u_\Delta(t)$$로 바꿔 생각한다[^4].
+$$u(t)$$는 $$t = 0$$에서 끊겨 원래는 미분할 수 없다. 그래서 $$\Delta$$라는 짧은 시간 동안 0에서 1로 곧게 오르는 $$u_\Delta(t)$$로 바꿔 생각한다.
 
 1. $$u_\Delta(t)$$를 미분한 $$\delta_\Delta(t) = \dfrac{du_\Delta(t)}{dt}$$는 폭 $$\Delta$$, 높이 $$\dfrac1\Delta$$인 짧은 펄스다. 넓이는 늘 $$1$$이다.
 2. $$\Delta \to 0$$이면 폭은 0으로, 높이는 무한대로 가지만 넓이는 1 그대로다. 이 극한을 단위 임펄스 $$\delta(t) = \lim_{\Delta\to0}\delta_\Delta(t)$$라 한다.
-3. 그래서 $$\delta(t) = \dfrac{du(t)}{dt}$$, $$u(t) = \displaystyle\int_{-\infty}^{t}\delta(\tau)\,d\tau$$다[^5].
+3. 그래서 $$\delta(t) = \dfrac{du(t)}{dt}$$, $$u(t) = \displaystyle\int_{-\infty}^{t}\delta(\tau)\,d\tau$$다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/10_unit-impulse-step_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 $$\Delta$$를 1, 0.5, 0.25로 줄이면 $$u_\Delta$$는 점점 가파른 계단이 되고, $$\delta_\Delta$$는 좁고 높아지지만 색칠한 넓이는 늘 1이다[^s2].
 
-그림에서는 화살표로 그리고, 화살표 옆의 숫자는 높이가 아니라 넓이다. $$k\delta(t)$$는 넓이 $$k$$인 임펄스이고 $$\int_{-\infty}^{t}k\delta(\tau)d\tau = ku(t)$$다[^4]. 적분 변수를 $$\sigma = t - \tau$$로 바꾸면 $$u(t) = \int_0^\infty\delta(t - \sigma)\,d\sigma$$로, 이산 시간의 "늦춘 임펄스들의 합"과 같은 모양이 된다[^4].
+그림에서는 화살표로 그리고, 화살표 옆의 숫자는 높이가 아니라 넓이다. $$k\delta(t)$$는 넓이 $$k$$인 임펄스이고 $$\int_{-\infty}^{t}k\delta(\tau)d\tau = ku(t)$$다. 적분 변수를 $$\sigma = t - \tau$$로 바꾸면 $$u(t) = \int_0^\infty\delta(t - \sigma)\,d\sigma$$로, 이산 시간의 "늦춘 임펄스들의 합"과 같은 모양이 된다.
 
-**표본화 성질.** $$\Delta$$가 아주 작으면 그 짧은 구간에서 $$x(t)$$는 거의 상수 $$x(0)$$이다. 그래서 $$x(t)\delta_\Delta(t) \approx x(0)\delta_\Delta(t)$$이고, 극한에서 등호가 된다[^6].
+**표본화 성질.** $$\Delta$$가 아주 작으면 그 짧은 구간에서 $$x(t)$$는 거의 상수 $$x(0)$$이다. 그래서 $$x(t)\delta_\Delta(t) \approx x(0)\delta_\Delta(t)$$이고, 극한에서 등호가 된다.
 
 $$x(t)\,\delta(t - t_0) = x(t_0)\,\delta(t - t_0), \qquad \int_{-\infty}^{\infty}x(t)\,\delta(t - \sigma)\,dt = x(\sigma)$$
 
@@ -115,7 +115,7 @@ $$\delta[n - k]$$는 $$k = n$$일 때만 1이다. $$n \ge 0$$이면 그런 $$k$$
 
 ## 예제
 
-**예제 1.7** 끊긴 신호 $$x(t) = 2u(t-1) - 3u(t-2) + 2u(t-4)$$의 도함수[^7]
+**예제 1.7** 끊긴 신호 $$x(t) = 2u(t-1) - 3u(t-2) + 2u(t-4)$$의 도함수
 
 - 값: $$1 < t < 2$$에서 2, $$2 < t < 4$$에서 $$2 - 3 = -1$$, $$t > 4$$에서 $$-1 + 2 = 1$$.
 - 미분: 크기 $$k$$인 계단을 미분하면 그 자리에 넓이 $$k$$인 임펄스가 생긴다. 그래서 $$\dot x(t) = 2\delta(t-1) - 3\delta(t-2) + 2\delta(t-4)$$.
@@ -138,7 +138,7 @@ $$\delta[n - k]$$는 $$k = n$$일 때만 1이다. $$n \ge 0$$이면 그런 $$k$$
 - 2장의 핵심: 어떤 신호든 늦춘 임펄스들의 합 $$x[n] = \sum_k x[k]\delta[n - k]$$로 쓸 수 있다. 그래서 시스템이 임펄스 하나에 어떻게 반응하는지(임펄스 응답)만 알면 모든 입력의 출력을 구한다.
 - 계단 입력은 "스위치를 켰을 때"의 반응을 보는 표준 시험 신호다. RC 회로의 충전 곡선이 계단 응답이다.
 - 영상에서 2차원 임펄스 격자를 곱해 화소를 뽑는다 → [표본화와 양자화](/Hongs_Blog/studies/signals-and-systems/sampling-quantization/)
-- 단위 계단 $$u(t)$$는 에너지가 무한대이고 평균 전력이 $$\frac12$$인 전력 신호다[^5].
+- 단위 계단 $$u(t)$$는 에너지가 무한대이고 평균 전력이 $$\frac12$$인 전력 신호다.
 
 ## 연결
 
@@ -197,13 +197,6 @@ $$\delta[n - k]$$는 $$k = n$$일 때만 1이다. $$n \ge 0$$이면 그런 $$k$$
 </details>
 
 
-[^1]: 신호 및 시스템 3회 강의 자료 「Week03_CH01_2_handout」, p.29
-[^2]: 같은 자료, p.30~31
-[^3]: 같은 자료, p.31
-[^4]: 같은 자료, p.33
-[^5]: 같은 자료, p.32
-[^6]: 같은 자료, p.34
-[^7]: 같은 자료, p.38 (예제 1.7)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표본화 성질에 연속 조건이 필요하다는 점, $$u(0)$$을 정하지 않는 이유, 스스로 설명해 보기, 오해 항목, 확인 문제 C2~C4는 원본에 없다. Oppenheim·Willsky 2판 1.4절의 내용이며 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [10_unit-impulse-step_plot.py](/Hongs_Blog/studies/signals-and-systems/code/10_unit-impulse-step_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 세 펄스의 넓이 1, 예제 1.7의 값 2, $$-1$$, 1이 임펄스 넓이의 누적 합과 같음.
+[^s1]: Oppenheim·Willsky 2판 1.4절의 내용이며 검증 코드로 확인했다.
+[^s2]: [10_unit-impulse-step_plot.py](/Hongs_Blog/studies/signals-and-systems/code/10_unit-impulse-step_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 세 펄스의 넓이 1, 예제 1.7의 값 2, $$-1$$, 1이 임펄스 넓이의 누적 합과 같음.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Levels of Input-Output", "입출력 수준", "I/O Access Levels", "Programming Levels", "BIOS", "Basic Input-Output System", "API", "Application Programming Interface", "장치 드라이버", "직접 하드웨어 접근"]
 description: "프로그램이 화면에 글자를 찍거나 키보드를 읽을 때는 누군가에게 부탁한다. 손님이 식당 종업원에게 주문하면 종업원이 주방에 전하고 주방이 불을 쓰는 것처럼, 부탁은 여러 단계를 거쳐 하드웨어에 닿는다. 위 단계에 부탁할수록 쓰기 쉽고 어느 컴퓨터에서나 통한다. 아래 단계로 내려갈수록…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/io-access-levels/"
 
 ## 예시로 보기
 
-C++의 `cout << "Hello";` 한 줄로 글자가 화면에 나온다. 이 한 줄이 그래픽 카드를 직접 움직이는 것은 아니다. 고급 언어 프로그램이 글자열을 찍을 때는 다음 단계를 차례로 거친다[^1].
+C++의 `cout << "Hello";` 한 줄로 글자가 화면에 나온다. 이 한 줄이 그래픽 카드를 직접 움직이는 것은 아니다. 고급 언어 프로그램이 글자열을 찍을 때는 다음 단계를 차례로 거친다.
 
 ```mermaid
 flowchart TD
@@ -45,7 +45,7 @@ flowchart TD
 
 BIOS(basic input-output system)는 컴퓨터의 칩에 들어 있는 작은 프로그램 모음으로, 장치와 직접 이야기하는 코드(드라이버)가 담겨 있다[^s1].
 
-어셈블리어 프로그램은 이 네 단계 가운데 어느 단계에든 직접 부탁할 수 있다[^2]. 고급 언어 프로그램은 보통 맨 위로만 들어간다.
+어셈블리어 프로그램은 이 네 단계 가운데 어느 단계에든 직접 부탁할 수 있다. 고급 언어 프로그램은 보통 맨 위로만 들어간다.
 
 ```mermaid
 flowchart LR
@@ -57,6 +57,8 @@ flowchart LR
 
 ## 단계마다 얻는 것과 잃는 것
 
+단계마다 얻는 것과 잃는 것은 다음과 같다.
+
 | 단계 | 누구에게 부탁하나 | 얻는 것 | 잃는 것 |
 |---|---|---|---|
 | 3 | 고급 언어의 함수. C++, Java의 입출력 함수. 어셈블리어에서는 라이브러리 | 다른 컴퓨터로 옮기기 쉽고 쓰기 편하다 | 늘 가장 빠르지는 않다 |
@@ -64,9 +66,9 @@ flowchart LR
 | 1 | BIOS. 장치와 직접 이야기하는 드라이버 | 장치를 더 가까이에서 다룬다 | 운영체제의 보안이 응용 프로그램의 이 단계 코드를 막을 수 있다 |
 | 0 | 하드웨어 자체 | 가장 빠르다 | 그 하드웨어에서만 돈다 |
 
-3~1단계는 슬라이드의 설명이다[^3]. 0단계 줄은 아래 화면 출력의 예와 같은 이야기다[^s1].
+0단계 줄은 아래 화면 출력의 예와 같은 이야기다[^s1].
 
-**화면 출력의 세 길.** 16비트 MS-DOS 프로그램이 화면에 글자를 찍는 방법 셋이 이 단계와 그대로 맞는다[^4].
+**화면 출력의 세 길.** 16비트 MS-DOS 프로그램이 화면에 글자를 찍는 방법 셋이 이 단계와 그대로 맞는다.
 
 | 방법 | 속도 | 어디서 도나 |
 |---|---|---|
@@ -74,7 +76,7 @@ flowchart LR
 | BIOS 함수를 부른다 (1단계) | 중간 | MS-DOS 기반 컴퓨터 거의 모두에서 |
 | 화면 내용이 들어 있는 메모리에 직접 쓴다 (0단계) | 빠르다 | IBM PC와 100% 호환되는 컴퓨터에서만 |
 
-**이 그림이 약속하지 않는 것.** 아래 단계로 내려가면 늘 된다는 보장이 없다. 보호 모드 운영체제는 응용 프로그램이 BIOS나 하드웨어를 직접 만지는 것을 막을 수 있다[^3]. 실주소 모드의 MS-DOS에서는 막는 것이 없어서 세 길을 모두 쓸 수 있다[^s1]: [x86 동작 모드](/Hongs_Blog/studies/assembly-language/x86-operating-modes/).
+**이 그림이 약속하지 않는 것.** 아래 단계로 내려가면 늘 된다는 보장이 없다. 보호 모드 운영체제는 응용 프로그램이 BIOS나 하드웨어를 직접 만지는 것을 막을 수 있다. 실주소 모드의 MS-DOS에서는 막는 것이 없어서 세 길을 모두 쓸 수 있다[^s1]: [x86 동작 모드](/Hongs_Blog/studies/assembly-language/x86-operating-modes/).
 
 ## 활용
 
@@ -114,9 +116,5 @@ flowchart LR
 </details>
 
 
-[^1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.15 (Displaying a String of Characters: Application Program Level 3 → OS Function Level 2 → BIOS Function Level 1 → Hardware Level 0)
-[^2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.16 (Programming levels: ASM Program → Library Level 3, OS Function Level 2, BIOS Function Level 1, Hardware Level 0)
-[^3]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.14 (Levels of Input-Output: Level 3 High-level language function, Level 2 Operating system, Level 1 BIOS)
-[^4]: 어셈블리어 14회 강의 자료 「wk14-chapt_16-2-1」, p.27 (Three Levels of Video Access: MS-DOS function calls, BIOS function calls, Direct memory-mapped video)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 식당 비유, BIOS가 칩에 들어 있는 프로그램 모음이라는 풀이, 표의 0단계 줄, 화면 출력의 세 길에 붙인 단계 번호, 실주소 모드에서는 막는 것이 없다는 설명, 카드 C2의 상황과 C3의 풀이는 슬라이드에 없다. 0단계 줄은 14주차 p.27의 "Direct memory-mapped video: fast – works only on 100% IBM-compatible computers"에서, 실주소 모드 이야기는 3주차 3-3 p.8의 "Application programs can access any area of memory"에서 읽었다. BIOS의 풀이는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 2.5절을 따랐다. 이 문서에는 계산이 없어 검증 코드를 두지 않았다.
+[^s1]: BIOS의 풀이는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 2.5절을 따랐다. 이 문서에는 계산이 없어 검증 코드를 두지 않았다.
 {% endraw %}

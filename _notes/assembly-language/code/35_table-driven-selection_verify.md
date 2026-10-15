@@ -21,7 +21,7 @@ permalink: "/studies/assembly-language/code/35_table-driven-selection_verify/"
 
 ```python
 """표 기반 선택 문서의 값 확인 (파이썬 흉내, 실제 MASM 실행 아님).
-프로시저 주소 00000120~00000150은 슬라이드 그림(wk09-2-1 p.23)의 값을 그대로 썼다.
+프로시저 주소 00000120~00000150은 문서 그림의 값을 그대로 썼다.
 실행: python3 35_table-driven-selection_verify.py"""
 import re
 
@@ -29,7 +29,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(예: 00000020의 call 다음 줄은 00000025).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -530,13 +530,13 @@ def build():
 
 def main():
     c, t = build()
-    # 1. 표의 크기 (p.22): 한 줄 = 1 + 4 = 5바이트, 4줄, 모두 20바이트
+    # 1. 표의 크기: 한 줄 = 1 + 4 = 5바이트, 4줄, 모두 20바이트
     assert c.const["entrysize"] == 5 and c.const["numberofentries"] == 4 and c.here - t == 20
-    # 2. 표의 내용 (p.23): 리틀 엔디언으로 놓인 주소
+    # 2. 표의 내용: 리틀 엔디언으로 놓인 주소
     raw = [c.mem[t + i] for i in range(20)]
     assert raw == [0x41, 0x20, 0x01, 0, 0, 0x42, 0x30, 0x01, 0, 0, 0x43, 0x40, 0x01, 0, 0, 0x44, 0x50, 0x01, 0, 0]
     assert [c.rd(t + 5 * k + 1, 4) for k in range(4)] == [0x120, 0x130, 0x140, 0x150]
-    # 3. 찾기 (p.24)
+    # 3. 찾기
     for k, ch in enumerate("ABCD"):
         c, t = build()
         c.put("al", ord(ch))

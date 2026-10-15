@@ -146,14 +146,14 @@ if __name__ == "__main__":
     assert sorted(ino(t) for t in chains) == ["abc", "acb", "bca", "cba"]
     # 남은 하나(a 아래에 b, c)는 후위가 bca이고 혼자다
     assert [post(t) for t in three if post(t) != "cba"] == ["bca"]
-    # 전위 + 레벨, 후위 + 레벨로 안 정해지는 가장 작은 예는 슬라이드의 노드 둘짜리다
+    # 전위 + 레벨, 후위 + 레벨로 안 정해지는 가장 작은 예는 문서 예시의 노드 둘짜리다
     assert table[(2, "전위", "레벨")] == (2, 2) and table[(2, "후위", "레벨")] == (2, 2)
     assert table[(2, "전위", "후위")] == (2, 2) and table[(2, "중위", "전위")] == (4, 1)
     # 노드 3개: 트리 30개, (전위, 후위) 쌍은 12가지뿐
     assert table[(3, "전위", "후위")] == (12, 4) and table[(3, "중위", "전위")] == (30, 1)
 
-    # 슬라이드 p.51의 예: 중위·전위가 같은 트리는 하나뿐임은 n = 10이라 전수로는 못 본다.
-    # 여기서는 그 트리의 네 순회가 슬라이드와 같은지만 본다
+    # 문서의 예: 중위·전위가 같은 트리는 하나뿐임은 n = 10이라 전수로는 못 본다.
+    # 여기서는 그 트리의 네 순회가 문서와 같은지만 본다
     T = ("a", ("b", ("d", ("g", None, None), ("h", None, None)), ("e", None, ("i", None, None))),
               ("c", ("f", None, ("j", None, None)), None))
     assert (pre(T), ino(T), post(T), level(T)) == ("abdgheicfj", "gdhbeiafjc", "ghdiebjfca", "abcdefghij")

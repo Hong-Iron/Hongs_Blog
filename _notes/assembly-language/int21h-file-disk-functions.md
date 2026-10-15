@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["MS-DOS File I/O Services", "함수 716Ch", "함수 7305h", "파일 핸들", "File Handle", "DISKIO", "절대 디스크 읽기", "Absolute Disk Read", "Create Subdirectory", "Remove Subdirectory"]
 description: "파일을 다룰 때도 MS-DOS의 같은 창구에 번호를 대고 부탁한다. 파일을 열면 도서관의 대출 번호표 같은 번호를 하나 받고, 그 뒤로 읽기·쓰기·닫기는 파일 이름 대신 그 번호로 한다. 일이 잘못되면 깃발 하나가 서므로, 부른 직후에 그 깃발부터 봐야 한다. 디스크의 조각을 파일…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/int21h-file-disk-functions/"
 
 ## 예시로 보기
 
-파일에 글을 쓰려면 먼저 "이 이름의 파일을 쓰겠다"고 MS-DOS에 알려야 한다. 그래야 MS-DOS가 디렉터리에서 그 파일을 찾거나 새로 만들고, 어느 클러스터에 쓸지 정한다. 새 파일을 만드는 코드다[^1].
+파일에 글을 쓰려면 먼저 "이 이름의 파일을 쓰겠다"고 MS-DOS에 알려야 한다. 그래야 MS-DOS가 디렉터리에서 그 파일을 찾거나 새로 만들고, 어느 클러스터에 쓸지 정한다. 새 파일을 만드는 코드다.
 
 ```asm
 mov ax,716Ch            ; 파일 만들기 또는 열기
@@ -53,10 +53,10 @@ mov actionTaken,cx      ; 실제로 한 동작
 - 함수 번호가 AH에 다 들어가지 않아 AX 전체(716Ch)를 쓴다.
 - 성공하면 AX에 번호 하나가 돌아온다. 이 번호를 파일 핸들이라 부른다. 실패하면 올림 플래그(CF)가 1이 된다.
 
-이미 있는 파일을 읽기만 하려면 BX를 0, DX를 1로 바꾼다[^2].
+이미 있는 파일을 읽기만 하려면 BX를 0, DX를 1로 바꾼다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 716Ch·7305h가 AH와 AL로 나뉘는 값, 동작 값 10h + 02h = 12h, 속성 값 3 = 1 OR 2, DISKIO 구조체의 크기 10바이트와 칸 위치 — [52_int21h-file-disk-functions_verify.py](/Hongs_Blog/studies/assembly-language/code/52_int21h-file-disk-functions_verify/). 상수 계산만 확인했다. 파일을 만들거나 섹터를 읽지는 않았고, 함수의 동작은 슬라이드 근거다.</div>
+<div class="callout-title" markdown="span">검증: 716Ch·7305h가 AH와 AL로 나뉘는 값, 동작 값 10h + 02h = 12h, 속성 값 3 = 1 OR 2, 표의 속성 값이 서로 겹치지 않는 비트인 것, DISKIO 구조체의 크기 10바이트와 칸 위치 — [52_int21h-file-disk-functions_verify.py](/Hongs_Blog/studies/assembly-language/code/52_int21h-file-disk-functions_verify/). 상수 계산만 확인했다. 파일을 만들거나 섹터를 읽지는 않았고, 함수의 동작은 실행으로 확인하지 못했다.</div>
 
 </div>
 
@@ -71,35 +71,25 @@ mov actionTaken,cx      ; 실제로 한 동작
 | 5706h | 파일을 만든 날짜와 시각을 읽는다 |
 | 3Fh, 40h | 핸들로 읽고 쓴다: [INT 21h 입출력 함수](/Hongs_Blog/studies/assembly-language/int21h-io-functions/) |
 
-위 넷이 슬라이드가 고른 파일 함수다[^3].
+앞의 넷이 MS-DOS의 기본 파일 입출력 함수다.
 
-함수 716Ch가 받는 값은 다음과 같다[^4].
+함수 716Ch가 받는 값은 다음과 같다.
 
 | 레지스터 | 뜻 | 값 |
 |---|---|---|
 | AX | 함수 번호 | 716Ch |
 | BX | 어떻게 쓸지 | 0 = 읽기, 1 = 쓰기, 2 = 읽기와 쓰기 |
-| CX | 파일 속성 | 0 = 보통, 1 = 읽기 전용, 2 = 숨김, 3 = 시스템, 8 = 볼륨 이름, 20h = 보관 |
+| CX | 파일 속성 | 0 = 보통, 1 = 읽기 전용, 2 = 숨김, 4 = 시스템, 8 = 볼륨 이름, 20h = 보관 |
 | DX | 동작 | 1 = 열기, 2 = 비우기, 10h = 만들기 |
 | DS:SI | 파일 이름의 주소 | |
 | DI | 별칭 힌트 | 안 써도 된다 |
 
-동작 값은 더해서 쓴다. 10h + 02h = 12h는 "없으면 만들고, 있으면 내용을 비운다"다. 10h와 02h는 켜지는 비트가 달라서 더하기와 OR가 같다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: CX의 속성 값 목록에 "3 = system"이 있다.<br>
-문제점: 나머지 값 1, 2, 8, 20h는 모두 비트 하나만 켜진 수다. 속성을 여러 개 겹쳐 쓰는 값이라면 3은 1(읽기 전용)과 2(숨김)를 함께 켠 값이 되어 "시스템"을 따로 나타낼 수 없다.<br>
-수정안: 시스템 속성은 4일 가능성이 높다. [확인필요]<br>
-근거: $$1 \text{ OR } 2 = 3$$. 1, 2, 8, 20h 사이에 비어 있는 2의 거듭제곱은 4와 10h다. 슬라이드만으로는 확정할 수 없다.
-
-</div>
+동작 값은 더해서 쓴다. 10h + 02h = 12h는 "없으면 만들고, 있으면 내용을 비운다"다. 10h와 02h는 켜지는 비트가 달라서 더하기와 OR가 같다. 속성 값도 비트 하나씩이라 OR로 겹쳐 쓴다. 3은 1 OR 2, 곧 읽기 전용이면서 숨긴 파일이다. 시스템 파일은 3이 아니라 4다[^s2].
 
 
 ## 디스크와 디렉터리 함수
 
-슬라이드의 표다[^5].
+디스크와 디렉터리를 다루는 함수 가운데 자주 쓰는 것들이다.
 
 | 번호 | 하는 일 |
 |---|---|
@@ -117,7 +107,7 @@ mov actionTaken,cx      ; 실제로 한 동작
 | 57h | 파일의 날짜와 시각을 읽거나 바꾼다 |
 | 59h | 자세한 오류 정보를 읽는다 |
 
-디렉터리를 만드는 39h와 지우는 3Ah는 모양이 같다. DX에 경로 문자열의 주소를 넣고 부른 뒤 올림 플래그를 본다. 경로 문자열은 0으로 끝난다[^6].
+디렉터리를 만드는 39h와 지우는 3Ah는 모양이 같다. DX에 경로 문자열의 주소를 넣고 부른 뒤 올림 플래그를 본다. 경로 문자열은 0으로 끝난다.
 
 ```asm
 .data
@@ -131,12 +121,12 @@ jc  DisplayError
 
 ## 섹터를 직접 읽고 쓰기
 
-함수 7305h는 파일 이름을 거치지 않고 디스크의 논리 섹터를 번호로 읽고 쓴다[^7].
+함수 7305h는 파일 이름을 거치지 않고 디스크의 논리 섹터를 번호로 읽고 쓴다.
 
 - 16비트 실주소 모드에서만 돈다.
-- Windows 2000, XP, Vista, Windows 7에서는 돌지 않는다. 슬라이드는 이유를 "보안이 엄격해서"라고 적는다.
+- Windows 2000, XP, Vista, Windows 7에서는 돌지 않는다. 보안을 엄격하게 지키는 운영체제라서 막아 둔다.
 
-어느 섹터부터 몇 개를 어디로 읽을지는 구조체 하나에 적어 넘긴다[^8].
+어느 섹터부터 몇 개를 어디로 읽을지는 구조체 하나에 적어 넘긴다.
 
 ```asm
 DISKIO STRUCT
@@ -155,7 +145,7 @@ DISKIO ENDS
           4바이트     2        2        2       = 10바이트
 ```
 
-C 드라이브에서 섹터를 읽는 코드다[^9].
+C 드라이브에서 섹터를 읽는 코드다.
 
 ```asm
 .data
@@ -174,7 +164,7 @@ int 21h
 
 ## 활용
 
-- 흔한 실수: `int 21h` 바로 뒤에 `jc`로 실패를 확인하지 않고 AX를 핸들로 쓰는 것. 실패했을 때 AX에는 핸들이 아니라 오류 코드가 들어 있다[^10].
+- 흔한 실수: `int 21h` 바로 뒤에 `jc`로 실패를 확인하지 않고 AX를 핸들로 쓰는 것. 실패했을 때 AX에는 핸들이 아니라 오류 코드가 들어 있다.
 - 파일을 다 쓰면 3Eh로 닫는다. 핸들은 MS-DOS가 열린 파일마다 내준 번호이고, 닫아야 그 번호를 다시 쓸 수 있다[^s1].
 - 운영체제 과목의 "파일 열기 → 읽기·쓰기 → 닫기"가 어셈블리어 수준에서는 이 함수들이다: [파일과 파일 관리 시스템](/Hongs_Blog/studies/operating-systems/file-management-system/).
 
@@ -207,20 +197,11 @@ int 21h
 <summary class="callout-title" markdown="span">**C3** 함수 7305h는 왜 Windows 2000 이후에서 막혀 있는가? 이 함수가 파일 함수(716Ch, 3Fh, 40h)와 다른 점에서 답하라.</summary>
 
 **답:** 716Ch 같은 파일 함수는 파일 이름으로 부탁하므로 MS-DOS가 그 파일의 클러스터만 건드린다. 7305h는 섹터 번호를 바로 대므로 FAT나 디렉터리, 다른 파일의 섹터도 읽고 덮어쓸 수 있다. 프로그램 하나가 디스크 전체를 망가뜨릴 수 있어서 보호 장치가 있는 운영체제는 이를 막는다.<br>
-**이유:** 슬라이드는 "Tight security!"라고만 적는다. 무엇이 위험한지는 섹터와 FAT의 관계에서 나온다.
+**이유:** "보안 때문"이라는 말만으로는 무엇이 위험한지 알 수 없다. 위험은 섹터와 FAT의 관계에서 나온다.
 
 </details>
 
 
-[^1]: 어셈블리어 13회 강의 자료 「wk13-chapt_14-2-2」, p.17 (Example: Create a New File)
-[^2]: 같은 자료, p.18 (Example: Open an Existing File)
-[^3]: 같은 자료, p.15 (Standard MS-DOS File I/O Services)
-[^4]: 같은 자료, p.16 (Function 716Ch: Create or open file)
-[^5]: 어셈블리어 12회 강의 자료 「wk12-chapt_15-1-1」, p.21 (Common Disk-Related Functions 표)
-[^6]: 같은 자료, p.22~23 (Create Subdirectory, Remove Subdirectory)
-[^7]: 같은 자료, p.16 (Reading and Writing Disk Sectors 7305h: 16비트 실주소 모드에서만, Windows 2000·XP·Vista·7에서는 안 됨, Tight security)
-[^8]: 같은 자료, p.17 (DISKIO Structure)
-[^9]: 같은 자료, p.18 (Example: Read one or more sectors from drive C)
-[^10]: 어셈블리어 14회 강의 자료 「wk14-chapt_16-2-1」, p.18 (INT 21h Appendix, 함수 3C·3D: "AX = error code if the Carry flag is set; otherwise AX = the new file handle")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DISKIO 구조체의 칸 위치 그림과 10바이트 계산, 읽은 섹터에서 FAT를 볼 수 있다는 것, 핸들을 닫는 이유, 카드 C2·C3은 슬라이드에 없다. 구조체 크기는 검증 코드로 확인했다. 코드 블록의 한국어 주석은 슬라이드의 영어 주석을 옮긴 것이다.
+[^s1]: 구조체 크기는 검증 코드로 확인했다.
+[^s2]: 시스템 속성 값 4는 Microsoft의 FAT 명세(Microsoft Extensible Firmware Initiative FAT32 File System Specification, 2000)의 ATTR_SYSTEM = 0x04를 따랐다. 값들이 서로 겹치지 않는 비트라는 것은 검증 코드로 확인했다.
 {% endraw %}

@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/58_sql-drop_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 58.DROP 명령과 CASCADE·RESTRICT 검증 (PostgreSQL 16). SQLite에는 DROP SCHEMA도, DROP의 CASCADE·RESTRICT도 없다.
---   슬라이드 11 p.15~16의 두 문장 DROP SCHEMA COMPANY CASCADE; DROP TABLE DEPENDENT CASCADE; 와 RESTRICT 판을 돌린다.
+--   문서의 두 문장 DROP SCHEMA COMPANY CASCADE; DROP TABLE DEPENDENT CASCADE; 와 RESTRICT 판을 돌린다.
 --   오류 번호: 2BP01 = 딸린 것이 있어 못 지움(RESTRICT), 42P01 = 없는 표, 23503 = 외래 키 위반
 \set QUIET 1
 SET client_min_messages TO warning;
@@ -47,7 +47,7 @@ CREATE FUNCTION fk_names() RETURNS TEXT[] LANGUAGE sql AS
 
 CREATE SCHEMA COMPANY;
 SET search_path TO company, sql_drop;
--- COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
+-- COMPANY 스키마와 상태.
 -- EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 EMPLOYEE의 외래 키 두 개는 행을 넣은 뒤 ALTER TABLE로 붙인다.
 -- WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 CREATE TABLE EMPLOYEE (
@@ -100,7 +100,7 @@ INSERT INTO DEPENDENT VALUES ('333445555', 'Alice', 'F', '1986-04-05', 'Daughter
 ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPSUPERFK FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn);
 ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPDEPTFK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber);
 
--- 1. DELETE와 DROP TABLE의 차이 (슬라이드 11 p.16)
+-- 1. DELETE와 DROP TABLE의 차이
 BEGIN;
 DELETE FROM DEPENDENT;
 DO $$ BEGIN
@@ -161,7 +161,7 @@ DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM information_schema.views WHERE table_schema = 'company') = 0, 'CASCADE는 뷰도 함께 지운다';
 END $$;
 
--- 3. DROP SCHEMA의 RESTRICT와 CASCADE (슬라이드 11 p.15)
+-- 3. DROP SCHEMA의 RESTRICT와 CASCADE
 DO $$ BEGIN
   ASSERT n_tables() = 2, 'PROJECT와 DEPT_LOCATIONS가 남아 있다';
   ASSERT err_of($q$DROP SCHEMA COMPANY RESTRICT$q$) = '2BP01', '스키마에 든 것이 있으면 RESTRICT는 막는다';

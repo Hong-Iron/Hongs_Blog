@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: SLR 파서의 스택 동작, SLR 파싱 표."
 prev_url: "/studies/compilers/slr-table-ladder/"
@@ -25,7 +25,7 @@ permalink: "/studies/compilers/slr-parse-trace-practice/"
 {% raw %}
 사용 개념: [SLR 파서의 스택 동작](/Hongs_Blog/studies/compilers/slr-stack-parser/), [SLR 파싱 표](/Hongs_Blog/studies/compilers/slr-parsing-table/).
 
-네 문제 모두 강의의 문법과 표를 쓴다[^1]. 규칙은 (1) $$S' \to E$$, (2) $$E \to T * E$$, (3) $$E \to T$$, (4) $$T \to (E)$$, (5) $$T \to id$$다.
+네 문제 모두 [SLR 파싱 표](/Hongs_Blog/studies/compilers/slr-parsing-table/)의 문법과 표를 쓴다. 규칙은 (1) $$S' \to E$$, (2) $$E \to T * E$$, (3) $$E \to T$$, (4) $$T \to (E)$$, (5) $$T \to id$$다.
 
 | 상태 | `*` | `(` | `)` | `id` | `$` | E | T |
 |---|---|---|---|---|---|---|---|
@@ -147,6 +147,5 @@ permalink: "/studies/compilers/slr-parse-trace-practice/"
 - p1을 `( ( id ) ) $`로 바꿔 추적하라. R(4)가 두 번 나오고, 그때마다 GOTO를 찾는 상태가 다르다.
 - p4의 문법을 $$E \to E * T \mid T$$로 바꾸면 스택 깊이가 어떻게 달라질지 [SLR 파싱 표 예제 사다리](/Hongs_Blog/studies/compilers/slr-table-ladder/)의 문제 3, 4로 미루어 말하라.
 
-[^1]: 컴파일러 8회 강의 자료 「Lecture08 Syntax analysis part 5」, p.7 (규칙 번호), p.10~11 (SLR 파싱 표), p.22~34 (스택으로 파싱하는 절차)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 네 문제와 풀이는 원본에 없다. 슬라이드는 `id * id $` 하나만 추적한다. 모든 줄을 문제 코드로 확인했다.
+[^s1]: 모든 줄을 문제 코드로 확인했다.
 {% endraw %}

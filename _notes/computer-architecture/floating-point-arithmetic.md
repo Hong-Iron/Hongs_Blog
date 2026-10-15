@@ -212,5 +212,5 @@ $$12.5 \times 0.4375$$를 한다.
 [^3]: University of Utah CS3810, Lecture 9, 같은 자료, 슬라이드 17 (곱셈: 지수 계산, 유효숫자 곱하기, 정규화, 반올림, 부호), 12 (바이어스 127, 값 = (−1)^S × (1 + Fraction) × 2^(Exponent − Bias))
 [^4]: 같은 자료, 슬라이드 18 (add.s·add.d·sub·mul·div, 비교가 숨은 비트를 세우고 bc1t·bc1f가 본다, `$f0`~`$f31`, 배정도는 레지스터 둘, lwc1·swc1의 주소는 정수 레지스터로). MIPS Reference Data(Green Sheet), https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf (ARITHMETIC CORE INSTRUCTION SET: add.s, add.d, mul.s, lwc1, swc1, c.x.s, bc1t, bc1f)
 [^5]: University of Utah CS3810, Lecture 3 "MIPS Instruction Set", https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-15-03.pdf, 슬라이드 8 (부동소수점 연산은 결합법칙·교환법칙이 꼭 맞지는 않아 계산 순서에 따라 결과가 다를 수 있다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 10진수 예의 수치(Utah 슬라이드의 예와 다른 수로 새로 만들었다), 2진수 예 넷의 걸음별 표, 흐름 다이어그램, 가까운 짝수로 반올림하는 까닭, $$2^{24}$$ 근처의 표, 걸리는 시간의 설명, 활용 절의 예, 카드는 위 자료에 그대로 있지 않다. 모든 비트 값은 구현 코드의 절차로 구하고 파이썬 `struct`가 만든 단정도 값과 대조했다. 반올림 규칙은 IEEE 754 표준의 기본 방식이다.
+[^s1]: 모든 비트 값은 구현 코드의 절차로 구하고 파이썬 `struct`가 만든 단정도 값과 대조했다. 반올림 규칙은 IEEE 754 표준의 기본 방식이다.
 {% endraw %}

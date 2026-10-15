@@ -23,10 +23,9 @@ permalink: "/studies/assembly-language/code/01_assembly-language_verify/"
 """어셈블리어와 기계어 검증 (MASM이 없어 파이썬 흉내로 확인).
 
 문서: 01.어셈블리어와 기계어
-출처: 어셈블리어 1주차 슬라이드 p.10 (Translating Languages)
 주장:
   1. 어셈블리 네 줄(mov eax,A / mul B / add eax,C / call WriteInt)과 기계어 네 줄이 한 줄에 하나씩 짝지어진다.
-  2. 슬라이드의 기계어 첫 바이트는 인텔 명령 부호와 맞는다.
+  2. 문서 예시의 기계어 첫 바이트는 인텔 명령 부호와 맞는다.
      A1 = mov eax,메모리 / F7 /4 = mul / 03 /r = add 레지스터,메모리 / E8 = call.
      F7 25 의 25h = 00 100 101b (가운데 100b = 4 → MUL),
      03 05 의 05h = 00 000 101b (가운데 000b = EAX).
@@ -90,7 +89,7 @@ def main():
     assert names == ["mov eax", "mul", "add eax", "call"]
     for a, n in zip(ASM, names):
         assert a.split()[0] == n.split()[0]
-    print("[OK] p.10: 어셈블리 네 줄 = 기계어 네 줄, 줄마다 같은 명령")
+    print("[OK] 문서 예시: 어셈블리 네 줄 = 기계어 네 줄, 줄마다 같은 명령")
 
     assert modrm(0x25) == (0, 4, 5) and modrm(0x05) == (0, 0, 5)
     print("[OK] 25h = 00 100 101b (MUL), 05h = 00 000 101b (EAX)")

@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/71_where-vs-having_verify-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 71.WHERE와 HAVING 비교: 슬라이드 11-2 p.33~34, 12주차 풀이 p.1~2
+-- 71.WHERE와 HAVING 비교 검증
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS where_vs_having CASCADE;
 CREATE SCHEMA where_vs_having;
 SET search_path TO where_vs_having;
 
--- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
--- 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
+-- 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 -- 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -82,14 +82,14 @@ DO $$ BEGIN
          = '5:4:33250,4:3:31000,1:1:55000', 'HAVING 판이 다르다';
 END $$;
 
--- 2. 12주차 풀이 Q1-2 (p.2). 적힌 그대로(GROUP BY Dno, SELECT Dname)는 PostgreSQL에서 오류다
+-- 2. 틀리기 쉬운 답(WHERE에 Sex = 'M'만 더함). GROUP BY Dno에 SELECT Dname인 꼴은 PostgreSQL에서 오류다
 DO $$ DECLARE ok boolean := false; BEGIN
   BEGIN
     EXECUTE $q$ SELECT Dname, COUNT(*) AS Number_of_employees FROM EMPLOYEE, DEPARTMENT
                 WHERE Dno = Dnumber AND Sex = 'M' GROUP BY Dno HAVING AVG(Salary) > 30000 $q$;
   EXCEPTION WHEN grouping_error THEN ok := true;
   END;
-  ASSERT ok, '풀이의 질의가 오류를 내지 않았다';
+  ASSERT ok, 'GROUP BY Dno에 SELECT Dname인 질의가 오류를 내지 않았다';
 END $$;
 
 -- 묶는 열에 Dname을 더해 돌리면 2행이고, 그려진 3행은 중첩 질의의 결과다

@@ -109,7 +109,7 @@ def main():
     sd = math.sqrt(sum(cc * cc for cc in cs) / trials)
     assert abs(sd - 1 / math.sqrt(n)) < 0.006 and max(abs(cc) for cc in cs) < 0.15
     print(f"[OK] 주장 8: 1000차원 코사인 표준편차 {sd:.4f}")
-    # 데이터 과학 2회 슬라이드 26: 문서 단어 빈도 벡터의 코사인 유사도
+    # 데이터 과학 관점: 문서 단어 빈도 벡터의 코사인 유사도
     x = [5, 0, 3, 0, 2, 0, 0, 2, 0, 0]; y = [3, 0, 2, 0, 1, 1, 0, 1, 0, 1]
     d = sum(a * b for a, b in zip(x, y))
     cos = d / (sum(a * a for a in x) ** 0.5 * sum(b * b for b in y) ** 0.5)

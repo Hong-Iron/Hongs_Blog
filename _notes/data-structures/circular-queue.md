@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Circular Queue", "환형 큐", "Circular Array", "원형 배열", "Ring Buffer", "링 버퍼", "front", "rear", "AddQ", "DeleteQ", "IsFullQ", "IsEmptyQ", "QueueFull", "QueueEmpty", "MAX_QUEUE_SIZE", "배열로 만든 큐"]
 description: "배열로 줄을 만들면, 앞사람이 빠질 때마다 줄 전체를 한 칸씩 당기거나, 줄이 배열 오른쪽 끝으로 밀려가 앞쪽에 빈칸만 남는다. 배열의 끝과 처음을 이어 고리처럼 쓰면 끝 칸 다음이 0번 칸이라, 당기지 않고도 넣기와 빼기가 한 번에 끝난다. 대신 텅 빈 줄과 꽉 찬 줄이 똑같아 …"
@@ -34,9 +34,9 @@ permalink: "/studies/data-structures/circular-queue/"
 
 ## 예시로 보기
 
-큐는 먼저 넣은 것이 먼저 나가는 줄이다([큐와 덱](/Hongs_Blog/studies/algorithms/queue-deque/)). 한쪽 끝(rear)으로만 넣고 반대쪽 끝(front)에서만 뺀다[^1]. 배열로 만드는 가장 쉬운 방법은 맨 앞 원소를 늘 0번 칸에 두는 것이다. 넣기는 오른쪽 끝에 붙이면 되니 한 번에 끝난다. 그런데 뺄 때마다 남은 원소를 모두 한 칸씩 왼쪽으로 당겨야 해서, 원소가 많을수록 오래 걸린다[^2].
+큐는 먼저 넣은 것이 먼저 나가는 줄이다([큐와 덱](/Hongs_Blog/studies/algorithms/queue-deque/)). 한쪽 끝(rear)으로만 넣고 반대쪽 끝(front)에서만 뺀다. 배열로 만드는 가장 쉬운 방법은 맨 앞 원소를 늘 0번 칸에 두는 것이다. 넣기는 오른쪽 끝에 붙이면 되니 한 번에 끝난다. 그런데 뺄 때마다 남은 원소를 모두 한 칸씩 왼쪽으로 당겨야 해서, 원소가 많을수록 오래 걸린다.
 
-당기지 않으려면 맨 앞이 어디인지 따로 기억하면 된다. 정수 `front`와 `rear`를 두고, 넣을 때는 `rear`를, 뺄 때는 `front`를 오른쪽으로 한 칸 옮긴다[^3]. 운영체제가 일거리 J1 ~ J5를 줄 세우는 예다[^4].
+당기지 않으려면 맨 앞이 어디인지 따로 기억하면 된다. 정수 `front`와 `rear`를 두고, 넣을 때는 `rear`를, 뺄 때는 `front`를 오른쪽으로 한 칸 옮긴다. 운영체제가 일거리 J1 ~ J5를 줄 세우는 예다.
 
 | 한 일 | 0번 칸 | 1번 칸 | 2번 칸 | 3번 칸 | 4번 칸 |
 |---|---|---|---|---|---|
@@ -47,9 +47,9 @@ permalink: "/studies/data-structures/circular-queue/"
 | 빼기 | | | J3 | J4 | J5 |
 | 빼기 | | | | J4 | J5 |
 
-넣기도 빼기도 한 번에 끝나지만 줄이 오른쪽으로 밀려 간다. 칸이 다섯이면 마지막 줄에서 `rear`가 끝 칸에 닿는다. 앞의 세 칸이 비었는데도 더 넣을 수 없어, 줄 전체를 왼쪽으로 옮겨야 한다. 그 일이 다시 오래 걸린다[^4].
+넣기도 빼기도 한 번에 끝나지만 줄이 오른쪽으로 밀려 간다. 칸이 다섯이면 마지막 줄에서 `rear`가 끝 칸에 닿는다. 앞의 세 칸이 비었는데도 더 넣을 수 없어, 줄 전체를 왼쪽으로 옮겨야 한다. 그 일이 다시 오래 걸린다.
 
-배열의 끝과 처음을 이어 고리로 보면 풀린다. 끝 칸의 다음 칸이 0번 칸이다. 칸이 여섯인 고리에서 A, B, C가 2, 3, 4번 칸에 있다고 하자. `front`는 첫 원소의 한 칸 앞을, `rear`는 마지막 원소의 칸을 가리킨다[^5].
+배열의 끝과 처음을 이어 고리로 보면 풀린다. 끝 칸의 다음 칸이 0번 칸이다. 칸이 여섯인 고리에서 A, B, C가 2, 3, 4번 칸에 있다고 하자. `front`는 첫 원소의 한 칸 앞을, `rear`는 마지막 원소의 칸을 가리킨다.
 
 ```
 칸 번호   [0] [1] [2] [3] [4] [5]
@@ -60,7 +60,7 @@ queue   |   |   | A | B | C |   |     [5]의 다음 칸은 [0]이다
           front = 1    rear = 4
 ```
 
-넣기(AddQ)는 `rear`를 한 칸 옮기고 그 칸에 쓴다. 빼기(DeleteQ)는 `front`를 한 칸 옮기고 그 칸의 값을 돌려준다[^6].
+넣기(AddQ)는 `rear`를 한 칸 옮기고 그 칸에 쓴다. 빼기(DeleteQ)는 `front`를 한 칸 옮기고 그 칸의 값을 돌려준다.
 
 | 한 일 | 돌려준 값 | front | rear | [0] ~ [5] | 원소 수 |
 |---|---|---|---|---|---|
@@ -83,9 +83,9 @@ queue   |   |   | A | B | C |   |     [5]의 다음 칸은 [0]이다
 
 ## 정의
 
-큐가 하는 일은 네 가지 연산으로 정한다. 가득 찼는가(IsFullQ), 비었는가(IsEmptyQ), 맨 뒤에 넣기(AddQ), 맨 앞을 빼서 돌려주기(DeleteQ)다[^7]. 5주차 슬라이드와 유인물은 넣기와 빼기를 다른 이름으로 부른다. 같은 연산이다.
+큐가 하는 일은 네 가지 연산으로 정한다. 가득 찼는가(IsFullQ), 비었는가(IsEmptyQ), 맨 뒤에 넣기(AddQ), 맨 앞을 빼서 돌려주기(DeleteQ)다. 넣기와 빼기는 다른 이름으로도 부른다. 같은 연산이다.
 
-| 하는 일 | 3주차 슬라이드 | 5주차 슬라이드, 유인물 |
+| 하는 일 | 이 문서의 이름 | 다른 이름 |
 |---|---|---|
 | 맨 뒤에 넣기 | AddQ | enqueue |
 | 맨 앞을 빼서 돌려주기 | DeleteQ | dequeue |
@@ -99,8 +99,8 @@ $$a \bmod n$$은 $$a$$를 $$n$$으로 나눈 나머지이고 C에서는 `a % n`�
 
 | 연산 | 조건과 동작 | 시간 |
 |---|---|---|
-| IsEmptyQ | `front == rear`이면 비었다[^8] | $$O(1)$$ |
-| IsFullQ | `(rear + 1) % n == front`이면 가득 찼다[^8] | $$O(1)$$ |
+| IsEmptyQ | `front == rear`이면 비었다 | $$O(1)$$ |
+| IsFullQ | `(rear + 1) % n == front`이면 가득 찼다 | $$O(1)$$ |
 | AddQ | 가득 차지 않았으면 `rear`를 한 칸 옮기고 그 칸에 쓴다 | $$O(1)$$ |
 | DeleteQ | 비지 않았으면 `front`를 한 칸 옮기고 그 칸의 값을 돌려준다 | $$O(1)$$ |
 
@@ -141,16 +141,6 @@ int SizeQ(int front, int rear)
 ```
 
 `front`와 `rear`는 함수 밖의 변수다. 함수가 값을 바꿔야 하는 쪽은 주소(`int *rear`)로 받고, 읽기만 하는 쪽은 값(`int front`)으로 받는다([포인터 인자와 값 전달](/Hongs_Blog/studies/data-structures/pointer-parameters/)). `QueueFull()`은 가득 찼다고 알리고 돌아오는 함수이고, `QueueEmpty()`는 빈 큐에서 빼려 할 때 부르는 함수다[^s1].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.93의 AddQ는 첫 줄에서 `*rear = (*rear + 1) % MAX_QUEUE_SIZE;`로 rear를 옮긴 다음에 `if (front == *rear) { QueueFull(); return; }`을 본다. p.92는 "Full <=> rear + 1 == front"라고 적는다. p.86과 p.93의 AddQ에는 반환형이 없고, p.86은 `MAX_Queue_SIZE`, p.93은 `Queue[*rear]`라고 대소문자를 다르게 쓴다.<br>
-문제점: 가득 찬 큐에 넣으려 하면 rear가 이미 front와 같아진 채로 돌아온다. `front == rear`는 빈 큐의 표시라, 들어 있던 원소 $$n - 1$$개를 모두 잃는다. `rear + 1 == front`는 나머지를 구하지 않아서 rear가 끝 칸이고 front가 0일 때의 가득 찬 큐를 놓친다. 이름과 반환형 때문에 그대로는 컴파일되지 않는다.<br>
-수정안: 위 코드처럼 옮길 칸 `next`를 먼저 계산해 `front`와 견주고, 자리가 있을 때만 rear를 옮긴다. 가득 참 조건은 `(rear + 1) % MAX_QUEUE_SIZE == front`다.<br>
-근거: 이름만 맞춰 슬라이드 코드를 돌렸다. 여섯 칸에 다섯 개(10 ~ 50)를 넣고 여섯째를 넣으려 하자 `QueueFull`이 불린 뒤 front = rear = 0이 되어 빈 큐로 보였다. 36쌍의 (front, rear) 가운데 `rear + 1 == front`가 놓치는 가득 찬 큐는 (front 0, rear 5) 하나다. `QueueFull()`이 프로그램을 끝내거나 rear를 되돌려 놓는다면 p.93의 코드도 문제없지만, 슬라이드에는 그 본문이 없다[^s2].
-
-</div>
 
 
 ### 왜 맞는가
@@ -226,7 +216,7 @@ int SizeQ(int front, int rear)
 ## 활용
 
 - 구현: [14_circular-queue_impl.c](/Hongs_Blog/studies/data-structures/code/14_circular-queue_impl/). 연습: [원형 큐 추적 예제 사다리](/Hongs_Blog/studies/data-structures/circular-queue-ladder/)
-- 운영체제는 차례를 기다리는 일거리를 큐에 세운다([스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/))[^4].
+- 운영체제는 차례를 기다리는 일거리를 큐에 세운다([스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/)).
 - 가까운 곳부터 퍼져 나가는 탐색이 큐를 쓴다: [너비 우선 탐색(BFS)](/Hongs_Blog/studies/algorithms/bfs/), [레벨 순서 순회](/Hongs_Blog/studies/data-structures/level-order-traversal/)
 - 파이썬의 `deque`가 해 주던 일을 C에서는 이 원형 배열이나 연결 리스트로 직접 만든다.
 - 흔한 실수 셋. `% MAX_QUEUE_SIZE`를 빠뜨려 `rear`가 배열 밖으로 나간다. `front`를 "첫 원소의 칸"으로 알고 옮기기 전에 `queue[front]`를 읽는다. AddQ에서 가득 찼는지 보기 전에 `rear`부터 옮긴다.
@@ -283,14 +273,5 @@ int SizeQ(int front, int rear)
 </details>
 
 
-[^1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.78~79 (큐의 뜻: front, rear, 넣기는 rear에서만, 빼기는 front에서만. FIFO)
-[^2]: 같은 자료, p.82~83 (맨 앞 원소를 queue[0]에 두면 DeleteQ가 $$O(\text{queue size})$$. 연산마다 $$O(1)$$로 하려고 원형 표현을 쓴다)
-[^3]: 같은 자료, p.86, p.88 (front, rear가 오른쪽으로만 가는 AddQ와 DeleteQ)
-[^4]: 같은 자료, p.89 (운영체제의 job queue. 큐가 오른쪽으로 밀리고, 가득 차면 전체를 왼쪽으로 옮겨야 한다. 슬라이드는 칸을 Q[1]부터 그린다)
-[^5]: 같은 자료, p.84, p.90 (원형 배열. front는 첫 원소에서 시계 반대 방향으로 한 칸, rear는 마지막 원소의 자리. A, B, C가 [2], [3], [4]에 있는 그림)
-[^6]: 같은 자료, p.85, p.87, p.93~94 (넣기는 rear를 시계 방향으로 한 칸, 빼기는 front를 한 칸. 원형 배열의 AddQ와 DeleteQ)
-[^7]: 같은 자료, p.81 (큐의 추상 자료형: IsFullQ, IsEmptyQ, AddQ, DeleteQ)
-[^8]: 같은 자료, p.91~92 (Empty <=> front == rear. Full <=> rear + 1 == front. "use only n-1 element", $$n$$개를 쓰면 빔과 가득 참을 구별하지 못한다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 추적 표의 넷째 줄부터, 표현 불변식과 원소 수 식, `IsEmptyQ`·`IsFullQ`·`SizeQ`의 본문, 정확성 증명과 스스로 설명해 보기, 방법 넷을 견준 표, 오해 항목의 예, 카드 C1~C4는 슬라이드에 없다. 구현 코드로 확인했다. 슬라이드에는 `QueueFull`과 `QueueEmpty`의 본문이 없다. 구현 파일의 `QueueFull`은 불린 횟수만 세고 돌아오고, `QueueEmpty`는 오류를 찍고 끝낸다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.86과 p.93의 코드를 그대로 컴파일하면 Apple clang 21에서 "type specifier missing", "use of undeclared identifier" 오류가 난다. 이름을 맞춘 p.93 판은 구현 파일에 `AddQ_p93`으로 두고 다섯 개를 잃는 것을 확인했다. 교재 원문이 rear를 되돌리는 꼴이었는지는 확인하지 못했다[확인필요].
+[^s1]: 구현 코드로 확인했다. 구현 파일의 `QueueFull`은 불린 횟수만 세고 돌아오고, `QueueEmpty`는 오류를 찍고 끝낸다.
 {% endraw %}

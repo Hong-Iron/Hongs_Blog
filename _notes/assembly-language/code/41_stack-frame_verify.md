@@ -281,7 +281,7 @@ AddTwo PROC
 AddTwo ENDP
 """
 
-# 레지스터를 지키는 틀 (wk11-2-1 p.4)
+# 레지스터를 지키는 틀
 MYSUB = """
 main PROC
     push 7

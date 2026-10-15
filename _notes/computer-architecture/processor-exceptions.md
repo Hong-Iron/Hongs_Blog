@@ -150,10 +150,10 @@ Cause에 적는 값은 MIPS 참조표에 번호로 정해져 있다. 몇 가지�
 
 
 [^1]: 교재 출판사 강의 슬라이드 "Chapter 4 — The Processor" (Cooper Union 게시본), 슬라이드 63 (§4.9 Exceptions, Exceptions and Interrupts: 예외는 CPU 안에서, 인터럽트는 바깥 입출력 제어기에서. 명령어 집합마다 낱말을 다르게 쓴다), https://ee.cooper.edu/~curro/comparch/pipeline/chapter4_pipelining_END_FA11.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor"
-[^2]: 같은 슬라이드, 64 (Handling Exceptions: CP0, EPC, Cause 레지스터, 처리기 주소). 슬라이드에는 주소가 "8000 00180"으로 숫자 하나가 더 찍혀 있다. 32비트 주소는 16진수 여덟 자리이므로 `8000 0180`으로 적었다.
+[^2]: 같은 슬라이드, 64 (Handling Exceptions: CP0, EPC, Cause 레지스터, 처리기 주소). 32비트 주소는 16진수 여덟 자리이므로 `8000 0180`으로 적었다.
 [^3]: MIPS Reference Data (교재의 참조표, Univ. of Patras 게시본), EXCEPTION CODES 표, https://eclass.upatras.gr/modules/document/file.php/EE805/MIPS_Instruction_Set/MIPSReferenceData.pdf
 [^4]: 같은 슬라이드, 65 (Handler Actions)
 [^5]: 같은 슬라이드, 66 (Exceptions in a Pipeline: 제어 해저드의 한 형태, `add $1, $2, $1`의 넘침, 앞선 명령어는 끝내고 그 명령어와 뒤 명령어를 버린다, 예측이 틀린 분기와 비슷하다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 단일 사이클 데이터패스에 보탤 부품과, 정의되지 않은 명령어가 ID에서 드러난다는 것은 연 슬라이드에 글로 없다. 넘침의 경우만 흉내기로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MIPS 참조표에서 주석 "(1) May cause overflow exception"이 add·sub·addi에는 붙어 있고 addu·subu에는 없는 것을 확인했다. "C 컴파일러는 보통 u가 붙은 쪽을 쓴다"는 직접 확인하지 못했다[확인필요].
+[^s1]: 넘침의 경우만 흉내기로 확인했다.
+[^s2]: MIPS 참조표에서 주석 "(1) May cause overflow exception"이 add·sub·addi에는 붙어 있고 addu·subu에는 없는 것을 확인했다. "C 컴파일러는 보통 u가 붙은 쪽을 쓴다"는 직접 확인하지 못했다[확인필요].
 {% endraw %}

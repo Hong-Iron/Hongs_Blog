@@ -23,15 +23,15 @@ permalink: "/studies/database-design/code/46_sql-create-table_verify/"
 # 46.CREATE SCHEMA와 CREATE TABLE 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 46_sql-create-table_verify.py)
 # 확인하는 것
 #   1. 여섯 CREATE TABLE 문이 만드는 표, 열 수, 외래 키 여덟 개가 가리키는 곳
-#   2. 슬라이드 9 p.18대로 Hours에 NOT NULL을 붙이면 상태(6-2 p.21)의 행 하나가 들어가지 않는다
+#   2. Hours에 NOT NULL을 붙이면 COMPANY 상태의 행 하나가 들어가지 않는다
 #   3. EMPLOYEE와 DEPARTMENT는 서로를 가리킨다. 어느 쪽 행을 먼저 넣어도 막히고, 검사를 미루면 들어간다
 #   4. SQLite에는 CREATE SCHEMA가 없다. ATTACH로 이름을 붙이면 COMPANY.EMPLOYEE라고 쓸 수 있다
 # SQLite는 CREATE TABLE 때 가리키는 표가 있는지 보지 않는다. "아직 없는 표를 가리키면 오류"는
 # PostgreSQL에서 확인했다(46_sql-create-table_verify.sql).
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -87,7 +87,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     n_rows = {t: rows(c, 'SELECT COUNT(*) FROM %s' % t)[0][0] for t in n_cols}
     assert n_rows == {'EMPLOYEE': 8, 'DEPARTMENT': 3, 'DEPT_LOCATIONS': 5, 'PROJECT': 6, 'WORKS_ON': 16, 'DEPENDENT': 7}
 
-    # 외래 키 여덟 개: (표, 열) -> (가리키는 표, 열). 슬라이드 스키마 그림의 화살표와 같다.
+    # 외래 키 여덟 개: (표, 열) -> (가리키는 표, 열). COMPANY 스키마 그림의 화살표와 같다.
     fks = set()
     for t in n_cols:
         for r in rows(c, 'PRAGMA foreign_key_list(%s)' % t):
@@ -152,7 +152,7 @@ if __name__ == "__main__":
     assert pk == {'EMPLOYEE': ['Ssn'], 'DEPARTMENT': ['Dnumber'], 'DEPT_LOCATIONS': ['Dnumber', 'Dlocation'],
                   'PROJECT': ['Pnumber'], 'WORKS_ON': ['Essn', 'Pno'], 'DEPENDENT': ['Essn', 'Dependent_name']}
 
-    # --- 2. 슬라이드 9 p.18 그대로: Hours DECIMAL(3,1) NOT NULL
+    # --- 2. Hours에 NOT NULL을 붙인 판: Hours DECIMAL(3,1) NOT NULL
     slide_ddl = COMPANY_DDL.replace('Hours DECIMAL(3,1),', 'Hours DECIMAL(3,1) NOT NULL,')
     assert slide_ddl != COMPANY_DDL
     try:

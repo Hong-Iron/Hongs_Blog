@@ -21,10 +21,10 @@ permalink: "/studies/human-interface-media/code/07_neuron-computational-model_ve
 ```python
 """뉴런의 연산 모형 검증.
 
-문서: 07.뉴런의 연산 모형 (예시로 보기, 정의, 원본 오류 의심, 카드 C2·C3)
+문서: 07.뉴런의 연산 모형 (예시로 보기, 정의, 바이어스의 크기, 카드 C2·C3)
 주장:
   1. A가 R x D, x가 D x 1이면 Ax는 R x 1이다. 그래서 바이어스 b는 R x 1이어야 한다.
-     슬라이드처럼 b를 D x 1로 두면 R != D일 때 더할 수 없다.
+     b를 입력 수에 맞춰 D x 1로 두면 R != D일 때 더할 수 없다.
   2. 활성 함수 없이 선형(아핀) 층을 두 번 쌓으면 한 층과 같다:
      A2 (A1 x + b1) + b2 = (A2 A1) x + (A2 b1 + b2).
   3. 예시: 가중치 (1, 1, -1), b = 0인 뉴런에 x = (3, 2, 4)면 o = 1, x = (1, 0, 4)면 o = -3.
@@ -74,7 +74,7 @@ def main() -> None:
     Ax = matmul(A, x)
     assert shape(Ax) == (R, 1)
     try:
-        matadd(Ax, rand_matrix(D, 1, rng))  # 슬라이드의 D x 1 바이어스
+        matadd(Ax, rand_matrix(D, 1, rng))  # 틀리기 쉬운 D x 1 바이어스
         raise AssertionError("D x 1 바이어스가 더해지면 안 된다")
     except ValueError:
         pass

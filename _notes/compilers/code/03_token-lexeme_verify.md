@@ -20,10 +20,10 @@ permalink: "/studies/compilers/code/03_token-lexeme_verify/"
 [토큰과 렉심](/Hongs_Blog/studies/compilers/token-lexeme/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 토큰과 렉심: 슬라이드 L02 p.9의 예(A = B + C)와 p.10의 빈칸을 작은 어휘 분석기로 확인한다
+# 토큰과 렉심: 문서의 예(A = B + C)와 C 함수 예의 토큰 줄을 작은 어휘 분석기로 확인한다
 # 실행: python3 03_token-lexeme_verify.py   (표준 라이브러리만 쓴다)
-# 토큰 이름은 슬라이드 p.6~7, p.9에 나온 것(ID, IF, COMMA, LPAREN, ASSIGN, ADD, COMPARISON, NUMBER)을 쓰고,
-# 슬라이드에 없는 이름(BOOL, INT, RETURN, RPAREN, LBRACE, RBRACE, SEMI)은 같은 방식으로 지었다.
+# 토큰 이름은 문서에 나온 것(ID, IF, COMMA, LPAREN, ASSIGN, ADD, COMPARISON, NUMBER)을 쓰고,
+# 나머지(BOOL, INT, RETURN, RPAREN, LBRACE, RBRACE, SEMI)는 같은 방식으로 지었다.
 import re
 
 # 위에 적힌 것이 먼저다. 예약어가 식별자보다 위에 있어야 한다.
@@ -63,12 +63,12 @@ def show(tokens):
 
 
 if __name__ == "__main__":
-    # p.9
+    # A = B + C
     toks = lex("A = B + C")
     assert [v for _, v in toks] == ["A", "=", "B", "+", "C"]                 # 렉심
     assert [n for n, _ in toks] == ["ID", "ASSIGN", "ID", "ADD", "ID"]       # 토큰 이름
     assert show(toks) == "<ID, A> <ASSIGN> <ID, B> <ADD> <ID, C>"
-    # p.10의 빈칸
+    # 문서의 C 함수 예
     src = "bool compare(int a, int b) {\n/* compare a and b */\nreturn a >= b;\n}"
     toks = lex(src)
     assert show(toks) == ("<BOOL> <ID, compare> <LPAREN> <INT> <ID, a> <COMMA> <INT> <ID, b> <RPAREN> <LBRACE> "
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     assert sum(n == "COMMENT" for n, _ in everything) == 1
     assert len(everything) > len(toks)                     # 빈칸과 주석은 버려졌다
     assert "".join(v for _, v in everything) == src        # 렉심을 이으면 원래 글이 된다
-    # 한 토큰에 렉심 여럿(p.6): pi, score, i, j, k 는 모두 ID
+    # 한 토큰에 렉심 여럿: pi, score, i, j, k 는 모두 ID
     assert {n for n, _ in lex("pi score i j k")} == {"ID"}
     assert [n for n, _ in lex("0 3.14")] == ["NUMBER", "NUMBER"]
     assert lex("if") == [("IF", "if")] and lex("iff") == [("ID", "iff")]

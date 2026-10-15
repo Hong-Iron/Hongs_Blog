@@ -33,9 +33,9 @@ def tdm_owner(j: int, n_inputs: int) -> int:
 
 
 def main() -> None:
-    assert [tdm_owner(j, 6) for j in range(12)] == [1, 2, 3, 4, 5, 6] * 2  # 슬라이드 그림 순서
+    assert [tdm_owner(j, 6) for j in range(12)] == [1, 2, 3, 4, 5, 6] * 2  # 입력 6개의 칸 순서
     assert [tdm_owner(j, 4) for j in range(8)] == [1, 2, 3, 4] * 2  # 예시 표 (사용자 4명)
-    print("[OK] 슬라이드 순서 1~6 반복, 사용자 4명 표")
+    print("[OK] 입력 6개 순서 1~6 반복, 사용자 4명 표")
 
     # 예제: N = 6, 칸 17의 주인, 입력 3의 처음 세 칸
     assert tdm_owner(17, 6) == 6

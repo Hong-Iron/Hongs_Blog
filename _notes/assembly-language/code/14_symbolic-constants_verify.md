@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/14_symbolic-constants_verify/"
 
 실행: python3 14_symbolic-constants_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -264,11 +264,11 @@ if __name__ == "__main__":
     # 위치 카운터 $ = 지금까지 채운 바이트 다음 자리
     c = CPU()
     d = Data(c, base=0); d.byte("list", 10, 20, 30, 40)
-    assert d.loc - d.offset("list") == 4                      # p.9
+    assert d.loc - d.offset("list") == 4                      # BYTE 배열
     d = Data(c, base=0); d.word("list", 0x1000, 0x2000, 0x3000, 0x4000)
-    assert d.loc - d.offset("list") == 8 and (d.loc - d.offset("list")) // 2 == 4   # p.10
+    assert d.loc - d.offset("list") == 8 and (d.loc - d.offset("list")) // 2 == 4   # WORD 배열
     d = Data(c, base=0); d.dword("list", 1, 2, 3, 4)
-    assert d.loc - d.offset("list") == 16 and (d.loc - d.offset("list")) // 4 == 4  # p.11
+    assert d.loc - d.offset("list") == 16 and (d.loc - d.offset("list")) // 4 == 4  # DWORD 배열
     # 시작 주소가 달라도 차이는 같다
     for base in (0, 0x404000, 0x1234):
         d = Data(c, base=base); d.byte("pad", dup(base % 7, 0)); d.word("list", 1, 2, 3)
@@ -276,14 +276,14 @@ if __name__ == "__main__":
     # 사이에 다른 변수가 끼면 틀린다
     d = Data(c, base=0); d.byte("list", 10, 20, 30, 40); d.byte("other", 1, 2)
     assert d.loc - d.offset("list") == 6
-    # p.8: COUNT = 500, mov ax,COUNT
+    # COUNT = 500, mov ax,COUNT
     COUNT = 500
     c.mov("ax", COUNT); assert c.get("ax") == 500 == 0x01F4
     COUNT = 10                       # '='는 다시 정할 수 있다
     c.mov("ax", COUNT); assert c.get("ax") == 10
     # 기호 상수는 메모리를 차지하지 않는다: 정의 앞뒤로 $가 같다
     d = Data(c, base=0); d.byte("a", 1); before = d.loc; ListSize = d.loc - d.offset("a"); assert d.loc == before
-    # p.12: pressKey EQU <"Press any key to continue...",0>, prompt BYTE pressKey
+    # pressKey EQU <"Press any key to continue...",0>, prompt BYTE pressKey
     d = Data(c, base=0); d.byte("prompt", "Press any key to continue...", 0)
     assert d.sym["prompt"]["size"] == 29
     # 카드 C1: list WORD 5 DUP(0),7 / ListSize = ($ - list) / 2

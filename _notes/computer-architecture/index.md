@@ -20,7 +20,7 @@ permalink: "/studies/computer-architecture/"
 - [불 대수와 논리 회로](/Hongs_Blog/studies/discrete-math/boolean-algebra/) (공학수학 이산수학): AND·OR·NOT과 진리표. 1단원의 게이트와 가산기가 여기서 출발한다
 - [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/), [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/) (2-1학기 자료와 정보): 음수와 실수를 비트로 적는 법. 가산기와 부동소수점 연산이 쓴다
 
-> 자료 출처: 이 과목은 강의 자료가 남아 있지 않다. 모든 문서는 Patterson & Hennessy, *Computer Organization and Design*(MIPS판)의 장 구성을 따라, 공개된 대학 강의 자료(MIT 6.004, Utah CS 3810, Princeton COS 375, CS61C 계열 등)를 직접 열어 확인한 내용으로 새로 썼다. 그래서 단위가 강의 회차가 아니라 단원이고, 강조 표시와 시험 범위는 없다. 책은 장 수준으로만 인용했다. 명령어는 MIPS이고, 회로와 파이프라인·캐시의 동작은 실제 하드웨어가 아니라 파이썬 흉내기로 확인했다.
+> 책은 장 수준으로만 인용했다. 명령어는 MIPS이고, 회로와 파이프라인·캐시의 동작은 실제 하드웨어가 아니라 파이썬 흉내기로 확인했다.
 
 
 ## 1단원 · 성능과 논리 회로
@@ -49,8 +49,6 @@ permalink: "/studies/computer-architecture/"
 | 10 | [레지스터 파일과 메모리 소자](/Hongs_Blog/studies/computer-architecture/register-file/) | 읽기는 멀티플렉서 둘, 쓰기는 디코더와 쓰기 허용, 쓰기는 에지에서만 | [verify](/Hongs_Blog/studies/computer-architecture/code/10_register-file_verify/) | — |
 | 11 | [클록과 순차 회로](/Hongs_Blog/studies/computer-architecture/clocked-sequential-logic/) | 상태 소자 사이에 조합 회로, 주기 ≥ clk-to-q + 가장 긴 조합 지연 + 준비 시간 | [verify](/Hongs_Blog/studies/computer-architecture/code/11_clocked-sequential-logic_verify/) | — |
 
-자료: 
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 CPU 시간 식의 세 수를 쓴 뒤, 게이트에서 출발해 가산기·ALU·레지스터 파일까지 무엇을 이어 무엇을 만드는지 차례로 적고, 클록 주기가 그 가운데 어디서 정해지는지 적어 본다.
 
 ## 2단원 · 명령어 집합과 산술
@@ -79,8 +77,6 @@ permalink: "/studies/computer-architecture/"
 | 21 | [나눗셈 회로](/Hongs_Blog/studies/computer-architecture/divider-circuit/) | 빼 보고 음수면 되돌린다를 $$n+1$$번. 몫은 Lo, 나머지는 Hi | [impl](/Hongs_Blog/studies/computer-architecture/code/21_divider-circuit_impl/) | — |
 | 22 | [부동소수점 연산](/Hongs_Blog/studies/computer-architecture/floating-point-arithmetic/) | 지수 맞추기 → 더하기 → 꼴 고치기 → 반올림. 더하는 순서가 답을 바꾼다 | [impl](/Hongs_Blog/studies/computer-architecture/code/22_floating-point-arithmetic_impl/) | — |
 
-자료: 
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 C의 `sum += A[i]` 한 줄이 MIPS 명령 몇 줄로, 다시 32비트 수로 바뀌는 길을 적고, 그 길에서 "16비트 칸"이 만드는 제약 세 가지(상수, 분기 거리, 오프셋)를 써 본다.
 
 ## 3단원 · 프로세서
@@ -110,8 +106,6 @@ permalink: "/studies/computer-architecture/"
 | 33 | [단일 사이클과 파이프라인 비교](/Hongs_Blog/studies/computer-architecture/single-cycle-vs-pipeline/) | CPI 1에 긴 주기 대 CPI 1 + 손실에 짧은 주기. CPU 시간 식으로 견주기 | — | — |
 | 34 | [슈퍼스칼라와 비순차 실행](/Hongs_Blog/studies/computer-architecture/superscalar-out-of-order/) | 한 사이클에 여러 명령어를 시작하고 준비된 것부터 실행하되 확정은 순서대로 | [verify](/Hongs_Blog/studies/computer-architecture/code/34_superscalar-out-of-order_verify/) | — |
 
-자료: 
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 `lw` 하나가 단일 사이클 데이터패스에서 지나는 부품을 차례로 적은 뒤, 그 길을 다섯 단계로 자르면 어떤 해저드 세 가지가 생기고 각각 어떻게 푸는지 써 본다.
 
 ## 4단원 · 메모리 계층과 병렬
@@ -139,14 +133,12 @@ permalink: "/studies/computer-architecture/"
 | 43 | [캐시와 TLB와 페이지 테이블의 상호작용](/Hongs_Blog/studies/computer-architecture/cache-tlb-interaction/) | 한 번의 메모리 접근이 TLB, 페이지 표, 캐시를 거치는 길과 일어날 수 없는 조합 | [verify](/Hongs_Blog/studies/computer-architecture/code/43_cache-tlb-interaction_verify/) | — |
 | 44 | [멀티코어와 병렬 처리](/Hongs_Blog/studies/computer-architecture/multicore-parallelism/) | 코어 여럿에 일 나누기, 플린 분류, 나눌 수 없는 부분이 정하는 천장 $$1/(1-F)$$ | [verify](/Hongs_Blog/studies/computer-architecture/code/44_multicore-parallelism_verify/) | — |
 
-자료: 
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 주소 하나가 캐시에서 적중인지 실패인지 정해지기까지의 순서(자르기, 줄 고르기, 태그 비교)를 쓰고, 실패를 줄이는 손잡이 세 가지(캐시 크기, way 수, 블록 크기)가 평균 접근 시간의 어느 항을 바꾸는지 적어 본다.
 
 ## 다른 과목과의 연결
 - [MIPS 레지스터와 메모리 피연산자](/Hongs_Blog/studies/computer-architecture/mips-operands/), [RISC와 CISC 비교](/Hongs_Blog/studies/computer-architecture/risc-vs-cisc/) ↔ [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/) (2-1학기 어셈블리어): 레지스터 32개에 길이가 같은 명령과, 레지스터 8개에 길이가 제각각인 명령
 - [5단계 파이프라인](/Hongs_Blog/studies/computer-architecture/mips-pipeline/), [슈퍼스칼라와 비순차 실행](/Hongs_Blog/studies/computer-architecture/superscalar-out-of-order/) ↔ [파이프라인과 슈퍼스칼라](/Hongs_Blog/studies/assembly-language/instruction-pipeline/) (2-1학기 어셈블리어): 그쪽이 뺀 '기다림'이 여기서는 해저드다
-- [MIPS 산술·논리 명령](/Hongs_Blog/studies/computer-architecture/mips-arithmetic-logic/), [MIPS 프로시저 호출](/Hongs_Blog/studies/computer-architecture/mips-procedure-call/) ↔ [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/) (3-2학기 컴파일러): 컴파일러 수업의 줄인 표기와 실제 MIPS 문법
+- [MIPS 산술·논리 명령](/Hongs_Blog/studies/computer-architecture/mips-arithmetic-logic/), [MIPS 프로시저 호출](/Hongs_Blog/studies/computer-architecture/mips-procedure-call/) ↔ [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/) (3-2학기 컴파일러): 컴파일러 수업의 줄인 표기와 실제 MIPS 문법
 - [단일 사이클 데이터패스](/Hongs_Blog/studies/computer-architecture/single-cycle-datapath/) ↔ [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/) (3-1학기 운영체제): 인출과 실행을 부품으로 그린 것
 - [지역성의 원리](/Hongs_Blog/studies/computer-architecture/locality-principle/), [직접 사상 캐시](/Hongs_Blog/studies/computer-architecture/direct-mapped-cache/), [캐시와 TLB와 페이지 테이블의 상호작용](/Hongs_Blog/studies/computer-architecture/cache-tlb-interaction/) ↔ [메모리 계층](/Hongs_Blog/studies/operating-systems/memory-hierarchy/), [캐시 메모리](/Hongs_Blog/studies/operating-systems/cache-memory/), [TLB](/Hongs_Blog/studies/operating-systems/tlb/) (3-1학기 운영체제): 운영체제가 겉에서 본 캐시의 속 구조
 

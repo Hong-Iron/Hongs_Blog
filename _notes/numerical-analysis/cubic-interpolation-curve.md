@@ -34,7 +34,7 @@ permalink: "/studies/numerical-analysis/cubic-interpolation-curve/"
 
 ## 예시로 보기
 
-곡선을 식으로 적는 방법은 두 가지다. **음함수 표현**은 $$x^2 + y^2 - r^2 = 0$$(원)처럼 "이 식을 0으로 만드는 점들"이다. 점이 곡선 위에 있는지 확인하기는 쉽다. 하지만 곡선 위의 점을 차례로 만들어 그리기는 어렵다. **매개변수 표현**은 $$\mathbf p(u) = (x(u), y(u), z(u))$$처럼 $$u$$를 넣으면 점이 나온다. 그리기 쉽고, 도함수 $$\frac{d\mathbf p}{du}$$가 접선 방향과 빠르기를 준다[^1][^2].
+곡선을 식으로 적는 방법은 두 가지다. **음함수 표현**은 $$x^2 + y^2 - r^2 = 0$$(원)처럼 "이 식을 0으로 만드는 점들"이다. 점이 곡선 위에 있는지 확인하기는 쉽다. 하지만 곡선 위의 점을 차례로 만들어 그리기는 어렵다. **매개변수 표현**은 $$\mathbf p(u) = (x(u), y(u), z(u))$$처럼 $$u$$를 넣으면 점이 나온다. 그리기 쉽고, 도함수 $$\frac{d\mathbf p}{du}$$가 접선 방향과 빠르기를 준다.
 
 점 $$(0, 0)$$, $$(1, 2)$$, $$(2, 2)$$, $$(3, 0)$$을 $$u = 0, \frac13, \frac23, 1$$에서 지나는 3차 곡선을 만들면, $$u = \frac12$$에서 점 $$(1.5, 2.25)$$를 지난다. 가운데 두 점의 높이 2보다 높이 솟는다[^s1].
 
@@ -50,19 +50,19 @@ permalink: "/studies/numerical-analysis/cubic-interpolation-curve/"
 
 ## 정의
 
-좋은 곡선 표현은 국소 조절(점 하나를 움직이면 근처만 바뀜), 매끄러움, 도함수 계산, 안정성, 그리기 쉬움을 갖춰야 한다[^3]. 다항식의 차수가 높으면 굽이가 많아 데이터에 잘 맞지만 계산이 많고 덜 매끄럽다. 차수가 낮으면 매끄럽지만 잘 맞지 않는다. 3차가 그 절충이다[^4]. 긴 곡선은 여러 조각을 이어 만든다[^5].
+좋은 곡선 표현은 국소 조절(점 하나를 움직이면 근처만 바뀜), 매끄러움, 도함수 계산, 안정성, 그리기 쉬움을 갖춰야 한다. 다항식의 차수가 높으면 굽이가 많아 데이터에 잘 맞지만 계산이 많고 덜 매끄럽다. 차수가 낮으면 매끄럽지만 잘 맞지 않는다. 3차가 그 절충이다. 긴 곡선은 여러 조각을 이어 만든다.
 
 3차 곡선은 성분마다 계수 넷이다.
 
 $$\mathbf p(u) = \mathbf c_0 + \mathbf c_1u + \mathbf c_2u^2 + \mathbf c_3u^3 = \mathbf u^\top\mathbf c, \qquad \mathbf u = (1, u, u^2, u^3)^\top, \quad 0 \le u \le 1$$
 
 
-3차원이면 점 하나가 식 3개를 주고 미지수는 12개다. 점 네 개면 식 12개로 딱 맞는다. 네 점에 $$u = 0, \frac13, \frac23, 1$$을 고르게 짝지어 $$\mathbf p = A\mathbf c$$를 세운다. $$A$$의 각 행은 그 $$u$$에서의 $$(1, u, u^2, u^3)$$이다[^6][^7].
+3차원이면 점 하나가 식 3개를 주고 미지수는 12개다. 점 네 개면 식 12개로 딱 맞는다. 네 점에 $$u = 0, \frac13, \frac23, 1$$을 고르게 짝지어 $$\mathbf p = A\mathbf c$$를 세운다. $$A$$의 각 행은 그 $$u$$에서의 $$(1, u, u^2, u^3)$$이다.
 
 $$\mathbf c = A^{-1}\mathbf p = M_I\mathbf p, \qquad M_I = \begin{pmatrix}1 & 0 & 0 & 0\\ -5.5 & 9 & -4.5 & 1\\ 9 & -22.5 & 18 & -4.5\\ -4.5 & 13.5 & -13.5 & 4.5\end{pmatrix}$$
 
 
-$$M_I$$를 **보간 기하 행렬**이라 한다[^8]. 그러면 $$\mathbf p(u) = \mathbf u^\top M_I\mathbf p = \mathbf b(u)^\top\mathbf p$$로 쓸 수 있다. $$\mathbf b(u) = M_I^\top\mathbf u$$의 네 성분이 **블렌딩 함수**다. 곡선의 점은 네 점 $$\mathbf p_0, \dots, \mathbf p_3$$를 무게 $$b_0(u), \dots, b_3(u)$$로 섞은 것이다[^9].
+$$M_I$$를 **보간 기하 행렬**이라 한다. 그러면 $$\mathbf p(u) = \mathbf u^\top M_I\mathbf p = \mathbf b(u)^\top\mathbf p$$로 쓸 수 있다. $$\mathbf b(u) = M_I^\top\mathbf u$$의 네 성분이 **블렌딩 함수**다. 곡선의 점은 네 점 $$\mathbf p_0, \dots, \mathbf p_3$$를 무게 $$b_0(u), \dots, b_3(u)$$로 섞은 것이다.
 
 $$b_0(u) = -\tfrac92(u - \tfrac13)(u - \tfrac23)(u - 1), \quad b_1(u) = \tfrac{27}{2}u(u - \tfrac23)(u - 1)$$
 
@@ -70,13 +70,13 @@ $$b_0(u) = -\tfrac92(u - \tfrac13)(u - \tfrac23)(u - 1), \quad b_1(u) = \tfrac{2
 $$b_2(u) = -\tfrac{27}{2}u(u - \tfrac13)(u - 1), \quad b_3(u) = \tfrac92u(u - \tfrac13)(u - \tfrac23)$$
 
 
-$$b_i$$는 자기 점의 $$u$$에서 1이고 나머지 세 $$u$$에서 0이다[^10]. 네 무게의 합은 늘 1이다. 그러나 $$b_0(\frac12) = -\frac1{16}$$처럼 음수가 될 수 있다. 그래서 곡선이 네 점이 만드는 볼록 다각형 밖으로 나갈 수 있다[^s1].
+$$b_i$$는 자기 점의 $$u$$에서 1이고 나머지 세 $$u$$에서 0이다. 네 무게의 합은 늘 1이다. 그러나 $$b_0(\frac12) = -\frac1{16}$$처럼 음수가 될 수 있다. 그래서 곡선이 네 점이 만드는 볼록 다각형 밖으로 나갈 수 있다[^s1].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/13_cubic-interpolation_fig2.svg" alt="그림" width="502" height="351" loading="lazy">
 
 네 함수는 자기 점의 $$u$$에서 1, 다른 세 점에서 0이다. 음영 부분이 무게가 0 아래로 내려가는 구간이다. 가운데 두 점 사이에서는 양 끝 점의 무게 $$b_0$$, $$b_3$$이 음수가 된다[^s2].
 
-점이 네 개보다 많으면 네 개씩 묶어 조각마다 곡선을 만든다($$\mathbf p_0..\mathbf p_3$$, $$\mathbf p_3..\mathbf p_6$$, …). 이음점에서 위치는 이어지지만 기울기는 맞지 않을 수 있다[^11].
+점이 네 개보다 많으면 네 개씩 묶어 조각마다 곡선을 만든다($$\mathbf p_0..\mathbf p_3$$, $$\mathbf p_3..\mathbf p_6$$, …). 이음점에서 위치는 이어지지만 기울기는 맞지 않을 수 있다.
 
 ## 활용
 
@@ -115,17 +115,6 @@ $$b_i$$는 자기 점의 $$u$$에서 1이고 나머지 세 $$u$$에서 0이다[^
 </details>
 
 
-[^1]: 수치해석 7회 강의 자료 「na07_curves」, p.2
-[^2]: 같은 자료, p.3
-[^3]: 같은 자료, p.4
-[^4]: 같은 자료, p.6
-[^5]: 같은 자료, p.7
-[^6]: 같은 자료, p.8~9
-[^7]: 같은 자료, p.10~11
-[^8]: 같은 자료, p.12
-[^9]: 같은 자료, p.13~14
-[^10]: 같은 자료, p.14~15
-[^11]: 같은 자료, p.16
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시 점과 $$u = \frac12$$ 값, 음수 블렌딩 값과 볼록 껍질 설명, 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [13_cubic-interpolation_plot.py](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 네 점 통과, $$\mathbf p(\frac12) = (1.5, 2.25)$$, $$b_0(\frac12) = -\frac1{16}$$, 네 함수의 합 1.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [13_cubic-interpolation_plot.py](/Hongs_Blog/studies/numerical-analysis/code/13_cubic-interpolation_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 네 점 통과, $$\mathbf p(\frac12) = (1.5, 2.25)$$, $$b_0(\frac12) = -\frac1{16}$$, 네 함수의 합 1.
 {% endraw %}

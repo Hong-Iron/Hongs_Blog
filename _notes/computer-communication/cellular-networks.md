@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Cellular Networks", "셀룰러", "셀룰러 네트워크", "셀", "cell", "기지국", "base station", "핸드오프", "handoff", "hand-off", "주파수 재사용", "frequency reuse", "공간 분할 다중화", "space-division multiplexing", "AMPS", "PCS", "GSM", "CDMA", "W-CDMA", "4G", "5G", "마이크로셀", "microcell"]
 description: "이동통신은 넓은 지역을 작은 구역(셀)으로 나누고, 구역마다 기지국을 두어 휴대 단말기와 잇는 방식이다. 서로 떨어진 셀은 같은 주파수를 다시 써서, 한정된 전파로 많은 사람을 받는다. 대신 사용자가 셀 경계를 넘을 때 끊기지 않게 담당 기지국을 바꿔 주어야 한다(핸드오프). 세대…"
@@ -34,9 +34,9 @@ permalink: "/studies/computer-communication/cellular-networks/"
 
 ## 예시로 보기
 
-고속도로를 달리며 통화한다. 휴대폰은 처음에 셀 A의 기지국과 통신한다. 셀 B로 들어가면 두 셀이 겹치는 곳에서 셀 B의 기지국으로 넘어간다. 이 겹치는 구역이 있어야 끊기지 않고 넘길 수 있다[^1].
+고속도로를 달리며 통화한다. 휴대폰은 처음에 셀 A의 기지국과 통신한다. 셀 B로 들어가면 두 셀이 겹치는 곳에서 셀 B의 기지국으로 넘어간다. 이 겹치는 구역이 있어야 끊기지 않고 넘길 수 있다.
 
-슬라이드의 세 그림은 셀을 그리는 방식이다[^2]. 실제 전파는 원 모양으로 퍼져 서로 겹친다(Overlapping circular cells). 계산하기 좋게 빈틈없는 육각형으로 그린다(Idealised hexagonal network). 사람이 많은 곳에는 큰 셀 안에 작은 셀을 더 둔다(Microcells within a network).
+셀을 그리는 방식은 세 가지다. 실제 전파는 원 모양으로 퍼져 서로 겹친다(Overlapping circular cells). 계산하기 좋게 빈틈없는 육각형으로 그린다(Idealised hexagonal network). 사람이 많은 곳에는 큰 셀 안에 작은 셀을 더 둔다(Microcells within a network).
 
 이 장면에서 휴대폰이 단말기, 기지국의 전파가 닿는 범위가 셀이다.
 
@@ -45,15 +45,15 @@ permalink: "/studies/computer-communication/cellular-networks/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-기지국과 단말기가 무선으로 통신한다[^2].
+기지국과 단말기가 무선으로 통신한다.
 - **셀**: 하나의 기지국이 관할하는 지역.
-- **핸드오프**: 단말기가 셀 사이를 옮길 때 관할하는 기지국을 바꾸는 문제. 핸드오프를 위해 셀 사이에 겹치는 지역이 있다[^1].
-- **공간 분할 다중화**: 공간(셀)을 나눠, 떨어진 셀끼리 같은 주파수를 다시 쓴다. 인접한 셀은 서로 다른 주파수를 써야 한다[^2][^1].
+- **핸드오프**: 단말기가 셀 사이를 옮길 때 관할하는 기지국을 바꾸는 문제. 핸드오프를 위해 셀 사이에 겹치는 지역이 있다.
+- **공간 분할 다중화**: 공간(셀)을 나눠, 떨어진 셀끼리 같은 주파수를 다시 쓴다. 인접한 셀은 서로 다른 주파수를 써야 한다.
 
 </div>
 
 
-| 세대 | 기술[^2] | 특징[^1] |
+| 세대 | 기술 | 특징 |
 |---|---|---|
 | 1 | AMPS | 아날로그. 음성 전화 |
 | 2 | PCS (GSM / CDMA) | 디지털 |
@@ -61,7 +61,7 @@ permalink: "/studies/computer-communication/cellular-networks/"
 | 4 | 4세대 이동통신 | 패킷 통신으로 전환 |
 | 5 | 5G | 셀이 더 작아짐 |
 
-4·5세대로 오면서 셀이 작아지는 경향이 있다. 망의 비용 대비 성능과 유지비를 위한 선택이다. 고속을 내는 높은 주파수를 쓰기에 작은 셀이 유리하고, 작을수록 같은 주파수를 더 자주 다시 쓸 수 있다[^1].
+4·5세대로 오면서 셀이 작아지는 경향이 있다. 망의 비용 대비 성능과 유지비를 위한 선택이다. 고속을 내는 높은 주파수를 쓰기에 작은 셀이 유리하고, 작을수록 같은 주파수를 더 자주 다시 쓸 수 있다.
 
 ## 연결
 
@@ -92,7 +92,5 @@ permalink: "/studies/computer-communication/cellular-networks/"
 
 </details>
 
-[^1]: 컴퓨터 통신 4회 필기 「4주차」, 69~82행
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "이동통신(Cellular Networks)". 초록 글씨: space-division multiplexing
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> AMPS가 통화마다 주파수 채널을 나눠 주는 방식(FDMA)이라는 것은 원본에 없다. 원본은 1세대를 "아날로그"로만 적는다. AMPS는 30 kHz 채널을 쓰는 아날로그 FDMA 방식이다(Kurose & Ross, *Computer Networking: A Top-Down Approach*, 7장).
+[^s1]: AMPS는 30 kHz 채널을 쓰는 아날로그 FDMA 방식이다(Kurose & Ross, *Computer Networking: A Top-Down Approach*, 7장).
 {% endraw %}

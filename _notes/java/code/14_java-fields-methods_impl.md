@@ -42,7 +42,7 @@ class FieldsMethodsCheck {
         System.out.println(w.total);
     }
 
-    // 메서드 오버로딩(슬라이드의 Calculator에 세 번째 add를 보탰다)
+    // 메서드 오버로딩(문서의 Calculator, add 세 개)
     static void overloading() {
         Calculator c = new Calculator();
         System.out.println(c.add(1, 2));

@@ -193,6 +193,6 @@ $$(1, 1, 0)$$, $$(0, 1, 1)$$, $$(1, 0, 1)$$이 독립인지 판정한다.
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.4절 "Independence, Basis and Dimension"(독립의 정의, 영공간과의 관계, $$n$$개보다 많은 벡터는 종속).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "검사 행렬의 어떤 $$d - 1$$개 열도 독립이면 최소 거리 $$\ge d$$"는 부호 이론 교재의 표준 결과이고, 여기서는 2진수(법 2) 위의 선형대수다. 해밍(7, 4) 부호의 모든 부호어 16개의 최소 무게가 3임을 09_linear-independence_verify.py에서 전수로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [09_linear-independence_plot.py](/Hongs_Blog/studies/linear-algebra/code/09_linear-independence_plot/)로 그렸고, 두 모임의 랭크(3과 2)와 $$(1, 2, 1) = (1, 1, 0) + (0, 1, 1)$$을 같은 코드로 확인했다.
+[^s1]: "검사 행렬의 어떤 $$d - 1$$개 열도 독립이면 최소 거리 $$\ge d$$"는 부호 이론 교재의 표준 결과이고, 여기서는 2진수(법 2) 위의 선형대수다. 해밍(7, 4) 부호의 모든 부호어 16개의 최소 무게가 3임을 09_linear-independence_verify.py에서 전수로 확인했다.
+[^s2]: [09_linear-independence_plot.py](/Hongs_Blog/studies/linear-algebra/code/09_linear-independence_plot/)로 그렸고, 두 모임의 랭크(3과 2)와 $$(1, 2, 1) = (1, 1, 0) + (0, 1, 1)$$을 같은 코드로 확인했다.
 {% endraw %}

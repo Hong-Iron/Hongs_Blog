@@ -212,6 +212,6 @@ fib 4를 정의 그대로 부르면 호출이 9번이다. $$2F_{n+1} - 1$$에 $$
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 22장 "Recurrences"(하노이의 탑, 선형 점화식). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장(선형 점화식의 풀이).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [21_linear-recurrences_plot.py](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_plot/)로 그렸고, $$n \le 30$$에서 $$F_n = \operatorname{round}(\varphi^n/\sqrt5)$$와 $$T_n = 2^n - 1$$, 비 $$F_{n+1}/F_n$$이 $$\varphi$$ 위아래를 번갈아 오가는 것, $$\vert F_{16}/F_{15} - \varphi\vert  < 10^{-5}$$을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '활용'의 순진한 피보나치 재귀(호출 수 $$2F_{n+1} - 1$$)를 $$n = 4$$의 호출 나무로 그렸다.
+[^s1]: [21_linear-recurrences_plot.py](/Hongs_Blog/studies/discrete-math/code/21_linear-recurrences_plot/)로 그렸고, $$n \le 30$$에서 $$F_n = \operatorname{round}(\varphi^n/\sqrt5)$$와 $$T_n = 2^n - 1$$, 비 $$F_{n+1}/F_n$$이 $$\varphi$$ 위아래를 번갈아 오가는 것, $$\vert F_{16}/F_{15} - \varphi\vert  < 10^{-5}$$을 같은 코드로 확인했다.
+[^s2]: '활용'의 순진한 피보나치 재귀(호출 수 $$2F_{n+1} - 1$$)를 $$n = 4$$의 호출 나무로 그렸다.
 {% endraw %}

@@ -21,14 +21,14 @@ permalink: "/studies/database-design/code/70_complex-retrieval-practice_p2-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 70.복잡한 검색 연습 p2: 12주차 슬라이드 p.16~17, 풀이 p.3~6 (UNIVERSITY)
+-- 70.복잡한 검색 연습 p2 (Q2-1, Q2-2, UNIVERSITY)
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS complex_retrieval_practice_p2 CASCADE;
 CREATE SCHEMA complex_retrieval_practice_p2;
 SET search_path TO complex_retrieval_practice_p2;
 
--- UNIVERSITY 스키마와 상태 (Elmasri 그림 1.2, 슬라이드 12 p.16~17).
+-- UNIVERSITY 스키마와 상태 (Elmasri 그림 1.2).
 CREATE TABLE STUDENT (Name VARCHAR(20) NOT NULL, Student_number INT NOT NULL, Class INT, Major VARCHAR(4),
   PRIMARY KEY (Student_number));
 CREATE TABLE COURSE (Course_name VARCHAR(30), Course_number VARCHAR(8) NOT NULL, Credit_hours INT, Department VARCHAR(4),
@@ -51,7 +51,7 @@ INSERT INTO SECTION VALUES (85,'MATH2410','Fall','07','King'),(92,'CS1310','Fall
 INSERT INTO GRADE_REPORT VALUES (17,112,'B'),(17,119,'C'),(8,85,'A'),(8,92,'A'),(8,102,'B'),(8,135,'A');
 INSERT INTO PREREQUISITE VALUES ('CS3380','CS3320'),('CS3380','MATH2410'),('CS3320','CS1310');
 
--- 풀이에 적힌 NOT EXIST (S가 빠짐)는 구문 오류다
+-- 틀리기 쉬운 판: NOT EXIST (S가 빠짐)는 구문 오류다
 DO $$ DECLARE ok boolean := false; BEGIN
   BEGIN
     EXECUTE $q$ SELECT Name, Major FROM STUDENT AS S

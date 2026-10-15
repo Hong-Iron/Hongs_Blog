@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["MS-DOS Memory Map", "MS-DOS Memory Organization", "메모리 맵", "BIOS 데이터 영역", "BIOS Data Area", "VRAM", "640K", "Transient Program Area", "ROM BIOS"]
 description: "MS-DOS가 도는 옛 PC의 메모리는 1메가바이트짜리 건물 한 채다. 맨 아래층에는 \"무슨 일이 생기면 어디로 가라\"는 안내판이 있고, 그 위로 운영체제, 내 프로그램, 화면에 쓸 자리, 맨 꼭대기에 지울 수 없는 기본 프로그램이 층층이 놓인다. 층마다 주소가 정해져 있어서 어느…"
@@ -34,9 +34,9 @@ MS-DOS가 도는 옛 PC의 메모리는 1메가바이트짜리 건물 한 채다
 
 ## 예시로 보기
 
-요즘 운영체제에서는 프로그램이 화면이나 키보드를 직접 건드릴 수 없다. 운영체제에 부탁해야 한다. 실주소 모드의 MS-DOS는 반대다. 한 번에 프로그램 하나만 돌고, 메모리 경계를 지키는 장치가 없다. 프로그램은 1MB 안의 어느 주소든 읽고 쓸 수 있다[^1].
+요즘 운영체제에서는 프로그램이 화면이나 키보드를 직접 건드릴 수 없다. 운영체제에 부탁해야 한다. 실주소 모드의 MS-DOS는 반대다. 한 번에 프로그램 하나만 돌고, 메모리 경계를 지키는 장치가 없다. 프로그램은 1MB 안의 어느 주소든 읽고 쓸 수 있다.
 
-1MB는 $$2^{20}$$바이트이고, 주소로는 00000h부터 FFFFFh까지다. 이 안이 다음처럼 나뉜다[^2].
+1MB는 $$2^{20}$$바이트이고, 주소로는 00000h부터 FFFFFh까지다. 이 안이 다음처럼 나뉜다.
 
 ```
  주소
@@ -85,11 +85,11 @@ A0000h +------------------------------------+  -+
 | 비디오 메모리 (A0000h~BFFFFh) | 화면에 보이는 글자와 점: [BIOS 비디오 INT 10h와 속성 바이트](/Hongs_Blog/studies/assembly-language/bios-video-int10h/) |
 | ROM BIOS (F0000h~FFFFFh) | 지워지지 않는 기본 입출력 코드 |
 
-이 순서는 슬라이드의 목록과 같다: 인터럽트 벡터 표, BIOS·DOS 데이터, 소프트웨어 BIOS, MS-DOS 커널, 상주 명령 처리기, 잠깐 올라오는 프로그램, 비디오, 예약, ROM BIOS[^3].
+낮은 주소부터 차례로 적으면 인터럽트 벡터 표, BIOS·DOS 데이터, 소프트웨어 BIOS, MS-DOS 커널, 상주 명령 처리기, 잠깐 올라오는 프로그램, 비디오, 예약, ROM BIOS 순서다.
 
 ### BIOS 데이터 영역
 
-주소 00400h부터는 BIOS와 MS-DOS가 장치의 상태를 적어 두는 자리다. 위치가 고정이라 어느 프로그램이든 같은 주소에서 같은 정보를 읽는다. 세그먼트 0040h로 잡으면 오프셋이 표의 값 그대로다[^4].
+주소 00400h부터는 BIOS와 MS-DOS가 장치의 상태를 적어 두는 자리다. 위치가 고정이라 어느 프로그램이든 같은 주소에서 같은 정보를 읽는다. 세그먼트 0040h로 잡으면 오프셋이 표의 값 그대로다.
 
 | 오프셋(16진) | 내용 |
 |---|---|
@@ -108,11 +108,11 @@ A0000h +------------------------------------+  -+
 
 예: 키보드 상태 플래그는 0040:0017에 있다. 세그먼트에 16을 곱해 오프셋을 더하면 $$0040\text{h} \times 16 + 0017\text{h} = 00417\text{h}$$다: [실주소 모드의 세그먼트 주소](/Hongs_Blog/studies/assembly-language/real-mode-segment-address/).
 
-이 영역은 Windows 98과 Windows Me에서는 읽을 수 있지만 Windows NT, 2000, XP에서는 읽을 수 없다[^5].
+이 영역은 Windows 98과 Windows Me에서는 읽을 수 있지만 Windows NT, 2000, XP에서는 읽을 수 없다.
 
 ## 활용
 
-- 12~14주차에 나오는 INT 21h, INT 16h, INT 10h, 인터럽트 처리기 바꾸기는 모두 이 배치를 전제로 한다. 16비트 실주소 모드에서만 돈다.
+- [INT 21h](/Hongs_Blog/studies/assembly-language/int21h-io-functions/), [INT 16h](/Hongs_Blog/studies/assembly-language/bios-keyboard-int16h/), [INT 10h](/Hongs_Blog/studies/assembly-language/bios-video-int10h/), [인터럽트 처리기 바꾸기](/Hongs_Blog/studies/assembly-language/custom-interrupt-handler/)는 모두 이 배치를 전제로 한다. 16비트 실주소 모드에서만 돈다.
 - 흔한 실수: 640K를 "메모리 전체"로 읽는 것. 주소 공간은 1MB이고, 640K는 그 가운데 프로그램과 운영체제가 쓰는 RAM이다.
 
 ## 연결
@@ -149,11 +149,6 @@ A0000h +------------------------------------+  -+
 </details>
 
 
-[^1]: 어셈블리어 13회 강의 자료 「wk13-chapt_14-2-1」, p.4, 6 (Real-Address Mode: 1MB, single tasking, no memory boundary protection, 어느 영역이든 접근)
-[^2]: 같은 자료, p.9 (MS-DOS Memory Map 그림). 같은 그림이 14.wk14-chapt_16-2-1.pdf p.4와 14.wk14-chapt_17-2-2.pdf p.4에 다시 나온다.
-[^3]: 같은 자료, p.5 (MS-DOS Memory Organization)
-[^4]: 어셈블리어 14회 강의 자료 「wk14-chapt_16-2-1」, p.6 (BIOS Data Area, at Segment 0040h 표). 표의 줄 가운데 일부만 옮겼다.
-[^5]: 같은 자료, p.5 (BIOS Data Area: 고정 위치 00400h, Windows 98·Me에서는 접근 가능, NT·2000·XP에서는 불가)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림에는 경계 주소와 "640K RAM", "VRAM"만 적혀 있다. 구역별 크기(64K, 192K, 128K)와 합은 경계 주소를 빼서 계산했고 검증 코드로 확인했다. 인터럽트 벡터 표의 끝 003FFh와 칸 256개도 같은 계산이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 "Resident Command Processor", "Transient Command Processor"라는 이름만 적는다. 둘의 차이 설명은 Irvine, *Assembly Language for x86 Processors* 7판 14.1절의 설명을 따랐다. [확인필요]
+[^s1]: 그림에는 경계 주소와 "640K RAM", "VRAM"만 적혀 있다. 구역별 크기(64K, 192K, 128K)와 합은 경계 주소를 빼서 계산했고 검증 코드로 확인했다. 인터럽트 벡터 표의 끝 003FFh와 칸 256개도 같은 계산이다.
+[^s2]: 둘의 차이 설명은 Irvine, *Assembly Language for x86 Processors* 7판 14.1절의 설명을 따랐다. [확인필요]
 {% endraw %}

@@ -46,10 +46,10 @@ def main():
     root = 0.56714329040978387
     s = secant(f, 0.0, 1.0, 6)
     assert round(f(0.0), 5) == 1.0 and round(f(1.0), 5) == -0.63212
-    assert round(s[2], 5) == 0.61270 and round(f(s[2]), 5) == -0.07081            # 슬라이드 p.20
+    assert round(s[2], 5) == 0.61270 and round(f(s[2]), 5) == -0.07081            # 문서 표
     assert round(s[3], 5) == 0.56384
     assert round(abs(root - s[2]) / root * 100, 1) == 8.0 and round(abs(root - s[3]) / root * 100, 2) == 0.58
-    # 뉴턴 방법 표 (미분적분학 문서의 슬라이드 예)
+    # 뉴턴 방법 표 (미분적분학 문서의 예)
     nw = newton(f, df, 0.0, 4)
     assert [round(v, 9) for v in nw] == [0.0, 0.5, 0.566311003, 0.567143165, 0.56714329]
     # 수렴 빠르기: 오차가 줄어드는 차수(log 비율). 뉴턴 약 2, 할선법 약 1.618

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 갱신 연산과 제약 위반의 판정표. 키 제약, 개체 무결성, 참조 무결성."
 prev_url: "/studies/database-design/university-mapping-practice/"
@@ -29,7 +29,7 @@ permalink: "/studies/database-design/constraint-violation-practice/"
 
 ## 문제 p1 · 열한 가지 연산
 
-아래 연산을 [COMPANY의 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)에 하나씩 따로 적용한다고 하자. 앞의 연산이 한 일은 다음 연산에 남지 않는다. 연산마다 어기는 무결성 제약을 모두 말하고, 그 제약을 지키게 하는 방법을 말하라[^1].
+아래 연산을 [COMPANY의 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)에 하나씩 따로 적용한다고 하자. 앞의 연산이 한 일은 다음 연산에 남지 않는다. 연산마다 어기는 무결성 제약을 모두 말하고, 그 제약을 지키게 하는 방법을 말하라.
 
 - a. EMPLOYEE에 〈'Robert', 'F', 'Scott', '943775543', '1972-06-21', '2365 Newcastle Rd, Bellaire, TX', M, 58000, '888665555', 1〉을 넣는다.
 - b. PROJECT에 〈'ProductA', 4, 'Bellaire', 2〉를 넣는다.
@@ -59,7 +59,8 @@ permalink: "/studies/database-design/constraint-violation-practice/"
 1. *연산의 종류:* 삽입. 세 제약을 모두 본다.
 2. *키 따지기:* Ssn 943775543은 표에 없는 새 값이고 NULL이 아니다.
 3. *가리키는 쪽 따지기:* Super_ssn 888665555는 직원 Borg의 번호다. Dno 1인 부서도 있다.
-4. *답:* 어기는 제약이 없다. 들어간다.
+4. *자료형 따지기:* 주소 '2365 Newcastle Rd, Bellaire, TX'는 31글자다. [COMPANY의 CREATE TABLE 문](/Hongs_Blog/studies/database-design/sql-create-table/)은 Address를 `VARCHAR(30)`(30글자까지)으로 만든다. 그 표에는 한 글자가 넘친다. PostgreSQL 16은 "value too long for type character varying(30)" 오류로 막는다. SQLite는 글자 수를 검사하지 않아 그대로 받는다.
+5. *답:* 키 제약, 개체 무결성, 참조 무결성은 어기지 않는다. 자료형의 길이까지 따지면 주소가 한 글자 넘쳐 들어가지 않는다. 주소를 30글자 안으로 줄이면 들어간다.
 
 </details>
 
@@ -82,6 +83,8 @@ permalink: "/studies/database-design/constraint-violation-practice/"
 2. *가리키는 쪽 따지기:* Mgr_ssn 943775543인 직원이 없다. 참조 무결성 위반.
 3. *답:* 키 제약과 참조 무결성을 함께 어긴다.
 4. *지키게 하는 방법:* 거부한다. 넣으려면 부서 번호를 안 쓰는 번호로 바꾸고, 관리자를 있는 직원으로 바꾸거나 그 직원을 먼저 넣는다.
+
+키 제약만 적고 멈추기 쉽다. 부서 번호를 안 쓰는 6으로 바꿔 넣어도 관리자 번호 때문에 외래 키 오류로 거부된다. (a)를 먼저 했다고 치면 943775543이 직원이 되어 키 제약 하나만 남는다. 하지만 연산은 하나씩 따로 적용하므로 둘 다 적는다.
 
 </details>
 
@@ -163,7 +166,7 @@ permalink: "/studies/database-design/constraint-violation-practice/"
 
 1. *고치는 칸:* Hours는 기본 키에도 외래 키에도 들지 않는다.
 2. *답:* 어기는 제약이 없다. 10.0이 5.0이 된다.
-3. *교훈:* 기본 키에도 외래 키에도 들지 않은 속성을 고치는 것은 대개 문제를 일으키지 않는다[^2].
+3. *교훈:* 기본 키에도 외래 키에도 들지 않은 속성을 고치는 것은 대개 문제를 일으키지 않는다.
 
 </details>
 
@@ -173,7 +176,7 @@ permalink: "/studies/database-design/constraint-violation-practice/"
 
 | 연산 | 어기는 제약 |
 |---|---|
-| a | 없음 |
+| a | 없음 (Address가 `VARCHAR(30)`이면 주소가 한 글자 넘친다) |
 | b | 참조 무결성 |
 | c | 키 제약, 참조 무결성 |
 | d | 개체 무결성, 참조 무결성 |
@@ -188,28 +191,7 @@ permalink: "/studies/database-design/constraint-violation-practice/"
 </details>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: 풀이 슬라이드 p.4의 (c) "Key constraint is violated. A tuple with Dnumber=4 already exists" / 문제점: 키 제약만 적혀 있다. Mgr_ssn 943775543인 직원이 없어서 참조 무결성도 어긴다 / 수정안: (c)는 키 제약과 참조 무결성을 함께 어긴다 / 근거: 번호만 안 쓰는 6으로 바꿔 넣어도 외래 키 오류로 거부된다. 다만 (a)를 먼저 했다고 치면 943775543이 직원이 되어 키 제약 하나만 남는다. 문제는 "따로 적용한다"고 했으므로 둘 다 적는 것이 맞다 — [52_constraint-violation-practice_p1.py](/Hongs_Blog/studies/database-design/code/52_constraint-violation-practice_p1/)
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 풀이 슬라이드 p.2~12에는 (j)의 쪽이 없다. (i)의 쪽(p.10) 다음이 (k)의 쪽(p.11)이다 / 문제점: (j)의 답이 빠졌다 / 수정안: (j)는 참조 무결성을 어긴다 / 근거: Ssn이 943775543인 직원이 없고, 이 수정은 SQLite와 PostgreSQL 16 모두 외래 키 오류로 거부한다 — [52_constraint-violation-practice_p1.py](/Hongs_Blog/studies/database-design/code/52_constraint-violation-practice_p1/)
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 풀이 슬라이드 p.2의 (a) "None of the integrity constraints is violated" / 문제점: (a)의 주소 '2365 Newcastle Rd, Bellaire, TX'는 31글자다. 슬라이드 9 p.17의 문장은 Address를 `VARCHAR(30)`으로 만든다. 그 문장대로 만든 표에는 이 주소가 들어가지 않는다 / 수정안: 키 제약, 개체 무결성, 참조 무결성은 풀이대로 어기지 않는다. 자료형의 길이까지 따지면 한 글자가 넘친다 / 근거: PostgreSQL 16은 "값이 너무 길다"는 오류로 (a)를 막고, 주소를 30글자 안으로 줄이면 받는다. SQLite는 길이를 검사하지 않아 그대로 받는다 — [52_constraint-violation-practice_p1.sql](/Hongs_Blog/studies/database-design/code/52_constraint-violation-practice_p1-sql/)
-
-</div>
 
 
 <div class="callout callout-check" markdown="1">
@@ -238,7 +220,5 @@ permalink: "/studies/database-design/constraint-violation-practice/"
 </details>
 
 
-[^1]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.30~31. 같은 문제가 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.7~8에 "Exercise 2"로 다시 나온다. 풀이는 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.2~12
-[^2]: 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.11~12 ("Lesson: Updating an attribute that is neither part of a primary key nor part of a foreign key usually causes no problems")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 슬라이드는 연산마다 어긴 제약의 이름과 한 줄 설명만 적는다. 푸는 차례, 하위목표로 나눈 풀이, "지키게 하는 방법", 가리키는 행의 수, 변형 문제와 그 답은 슬라이드에 없다. 모두 문제 코드로 확인했다.
+[^s1]: 모두 문제 코드로 확인했다.
 {% endraw %}

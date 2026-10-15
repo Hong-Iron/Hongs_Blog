@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Key Attribute", "키", "Key", "복합 키", "Composite Key", "유일성 제약", "Uniqueness Constraint", "식별자"]
 description: "학번은 학생마다 달라서, 학번 하나만 대면 누구인지 정해진다. 이렇게 값만 대면 대상 하나가 정해지는 항목을 따로 표시해 둔다. 항목 하나로 안 되면 둘을 묶어 쓸 수도 있고, 그런 항목이 둘 이상 있을 수도 있다. 다만 \"지금 들어 있는 자료에서 안 겹친다\"로는 부족하고, 앞으로…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/key-attribute/"
 
 개체를 저장했으면 나중에 "바로 그 개체"를 다시 찾을 수 있어야 한다. 값이 겹치는 속성으로 찾으면 두 개가 나와 어느 것인지 모른다.
 
-차 세 대가 들어 있는 CAR 개체 집합이다[^1].
+차 세 대가 들어 있는 CAR 개체 집합이다.
 
 | 차 | Number | State | Vehicle_id | Make | Model | Year |
 |---|---|---|---|---|---|---|
@@ -64,7 +64,7 @@ flowchart TD
     CAR --- color(["Color (다치)"])
 ```
 
-슬라이드 그림에서는 키 속성의 이름에 밑줄을 긋는다. 위 그림은 밑줄 대신 "(키)"라고 적었다[^s1].
+ER 다이어그램에서는 키 속성의 이름에 밑줄을 긋는다. 위 그림은 밑줄 대신 "(키)"라고 적었다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: Number만·State만으로는 겹치고 (Number, State)와 Vehicle_id는 안 겹치는 것, Year가 우연히 안 겹치다가 한 대를 넣으면 깨지는 것 — [21_key-attribute_verify.py](/Hongs_Blog/studies/database-design/code/21_key-attribute_verify/)</div>
@@ -74,18 +74,11 @@ flowchart TD
 
 ## 정의
 
-키 속성은 값이 개체마다 다른 속성이다. 그 값으로 개체 하나를 가려낼 수 있다[^1]. 학생의 학번, 회사의 이름, 사람의 사회보장번호가 예다.
+키 속성은 값이 개체마다 다른 속성이다. 그 값으로 개체 하나를 가려낼 수 있다. 학생의 학번, 회사의 이름, 사람의 사회보장번호가 예다.
 
-- **속성 여러 개가 함께 키가 될 수 있다.** 이때는 값의 묶음이 개체마다 달라야 한다[^1]. ER 다이어그램에서는 그 속성들을 성분으로 하는 복합 속성을 만들고 거기에 밑줄을 긋는다. CAR의 Registration이 그렇다.
-- **한 개체 타입에 키가 둘 이상 있을 수 있다.** CAR의 Registration과 Vehicle_id, DEPARTMENT의 Name과 Number가 그렇다[^2].
+- **속성 여러 개가 함께 키가 될 수 있다.** 이때는 값의 묶음이 개체마다 달라야 한다. ER 다이어그램에서는 그 속성들을 성분으로 하는 복합 속성을 만들고 거기에 밑줄을 긋는다. CAR의 Registration이 그렇다.
+- **한 개체 타입에 키가 둘 이상 있을 수 있다.** CAR의 Registration과 Vehicle_id, DEPARTMENT의 Name과 Number가 그렇다.
 - **"값이 다르다"는 지금 자료가 아니라 규칙에 대한 말이다.** 그 개체 타입에 어떤 개체들이 들어오더라도 값이 겹치면 안 된다[^s2].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "An entity type can have more than two keys" (4주차 4-2 p.12, 5주차 p.6) / 문제점: "둘보다 많은 키"는 셋 이상이라는 뜻이 된다. 바로 아래 CAR 그림의 키는 Registration과 Vehicle_id 둘뿐이고, 하나만 있는 개체 타입(EMPLOYEE의 Ssn)도 흔하다. / 수정안: "more than one key", 곧 키가 둘 이상일 수 있다. / 근거: 같은 쪽의 CAR 그림에서 밑줄 친 속성이 둘이다.
-
-</div>
 
 
 "키가 둘"과 "둘을 묶은 키 하나"는 다르다.
@@ -98,7 +91,7 @@ flowchart TD
 
 ## 활용
 
-- 키는 자료를 보고 찾는 것이 아니라 요구사항에서 정한다. COMPANY에서 부서의 Name과 Number가 키인 까닭은 요구사항이 둘 다 "unique"라고 했기 때문이다[^2].
+- 키는 자료를 보고 찾는 것이 아니라 요구사항에서 정한다. COMPANY에서 부서의 Name과 Number가 키인 까닭은 요구사항이 둘 다 "unique"라고 했기 때문이다.
 - 흔한 실수: 지금 자료에서 안 겹친다고 키로 삼는 것. 위 표에서 Year는 2004, 2005, 2002로 세 대가 다 다르다. 하지만 2004년식 차가 한 대 더 들어오면 바로 겹친다. Year는 키가 아니다[^s2].
 - 키 속성이 하나도 없는 개체 타입도 있다. 그런 개체는 딸려 있는 다른 개체를 함께 대야 가려진다: [약한 개체 타입](/Hongs_Blog/studies/database-design/weak-entity-type/)
 
@@ -137,8 +130,6 @@ flowchart TD
 </details>
 
 
-[^1]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.12 (Key Attributes of an Entity Type, CAR 그림과 개체 집합). 5주차 p.6에 같은 쪽이 있다.
-[^2]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.13 (DEPARTMENT: "Name and Number are key attributes (underlined) since each was specified to be unique")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 슬라이드 4-2 p.12의 CAR 그림을 옮겨 그린 것이다. 밑줄과 겹타원을 그릴 수 없어 "(키)", "(다치)"로 적었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "어떤 개체가 들어와도 안 겹쳐야 한다"는 설명은 슬라이드에 없다. Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 설명이다. Year의 예, 2004년식 차 한 대, "키가 둘"과 "묶음이 키 하나"를 가르는 표, 카드 C1~C3은 원본에 없고 검증 코드로 확인했다.
+[^s1]: 밑줄과 겹타원을 그릴 수 없어 "(키)", "(다치)"로 적었다.
+[^s2]: Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 설명이다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Classes of Transformations", "강체 변환", "Rigid-body Transformation", "등거리 변환", "Isometry", "닮음 변환", "Similarity Transformation", "전단", "Shear", "아핀 변환", "Affine Transformation", "사영 변환", "Projective Transformation", "불변량", "Invariant"]
 description: "도형을 옮기고 돌리고 늘이는 변환은 \"무엇을 그대로 두는가\"로 나뉜다. 길이까지 지키면 강체 변환, 모양(각)만 지키면 닮음 변환, 평행만 지키면 아핀 변환, 곧은 선만 지키면 사영 변환이다. 뒤로 갈수록 더 많은 변환이 들어가지만 지켜 주는 성질은 줄어든다. 그래서 어떤 계산을 …"
@@ -34,7 +34,7 @@ permalink: "/studies/numerical-analysis/transformation-classes/"
 
 ## 예시로 보기
 
-정사각형 그림 하나에 네 가지 변환을 해 본다[^1].
+정사각형 그림 하나에 네 가지 변환을 해 본다.
 
 | 변환 | 그림 | 그대로인 것 | 바뀌는 것 |
 |---|---|---|---|
@@ -57,7 +57,7 @@ permalink: "/studies/numerical-analysis/transformation-classes/"
 
 ## 정의
 
-변환해도 바뀌지 않는 성질을 **불변량**이라 한다. 슬라이드가 쓰는 성질은 다음과 같다[^2][^3].
+변환해도 바뀌지 않는 성질을 **불변량**이라 한다. 변환을 가르는 데 쓰는 성질은 다음과 같다.
 
 - 위치(원점에서의 거리), 거리(두 점 사이), 각(두 선 사이), 방향(절대 각)
 - 곧은 선을 곧은 선으로 보냄(공선성)
@@ -68,14 +68,14 @@ permalink: "/studies/numerical-analysis/transformation-classes/"
 
 | 종류 | 조건 | 지키는 것 | 예 |
 |---|---|---|---|
-| 강체(등거리) 변환 | $$M^\top = M^{-1}$$, $$\det M = \pm1$$ | 거리, 각, 넓이 | 평행이동, 회전, 반사[^4][^5] |
-| 닮음 변환 | $$M = kM_0$$, $$M_0M_0^\top = I$$, $$\det M_0 = \pm1$$ | 각(모양), 길이의 비 | 강체 변환 + 고른 확대[^6][^7] |
-| 전단 | $$x$$ 방향: $$a = d = 1$$, $$b = k$$, $$c = 0$$ | 넓이($$\det M = 1$$), 평행 | 축 방향으로 좌표에 비례해 밀기[^8][^9] |
-| 아핀 변환 | $$\det M \ne 0$$ | 곧은 선, 평행, 한 선 위 길이의 비 | 위 모두 + 축마다 다른 확대[^10][^11] |
+| 강체(등거리) 변환 | $$M^\top = M^{-1}$$, $$\det M = \pm1$$ | 거리, 각, 넓이 | 평행이동, 회전, 반사 |
+| 닮음 변환 | $$M = kM_0$$, $$M_0M_0^\top = I$$, $$\det M_0 = \pm1$$ | 각(모양), 길이의 비 | 강체 변환 + 고른 확대 |
+| 전단 | $$x$$ 방향: $$a = d = 1$$, $$b = k$$, $$c = 0$$ | 넓이($$\det M = 1$$), 평행 | 축 방향으로 좌표에 비례해 밀기 |
+| 아핀 변환 | $$\det M \ne 0$$ | 곧은 선, 평행, 한 선 위 길이의 비 | 위 모두 + 축마다 다른 확대 |
 
 $$k$$는 확대 배율이다. 닮음 변환에서 길이는 모두 $$k$$배가 된다.
 
-종류들은 포함 관계를 이룬다. 강체 ⊂ 닮음 ⊂ 아핀 ⊂ 사영이다. 선형변환(원점을 지키는 $$\mathbf x' = M\mathbf x$$)은 회전, 고른 확대, 축별 확대, 전단을 포함하지만 평행이동은 포함하지 않는다. 원근 투영은 아핀이 아니고 사영 변환에만 들어간다[^12].
+종류들은 포함 관계를 이룬다. 강체 ⊂ 닮음 ⊂ 아핀 ⊂ 사영이다. 선형변환(원점을 지키는 $$\mathbf x' = M\mathbf x$$)은 회전, 고른 확대, 축별 확대, 전단을 포함하지만 평행이동은 포함하지 않는다. 원근 투영은 아핀이 아니고 사영 변환에만 들어간다.
 
 ```mermaid
 flowchart TD
@@ -88,9 +88,9 @@ flowchart TD
     R --> RE["예: 평행이동, 회전, 반사"]
 ```
 
-위로 갈수록 들어가는 변환이 많고, 아래로 갈수록 지키는 성질이 하나씩 늘어난다. 아래 칸의 변환은 모두 그 위 칸에도 들어간다[^s3].
+위로 갈수록 들어가는 변환이 많고, 아래로 갈수록 지키는 성질이 하나씩 늘어난다. 아래 칸의 변환은 모두 그 위 칸에도 들어간다.
 
-가역 선형변환은 연립방정식 $$\mathbf x' = M\mathbf x$$에서 $$\vert M\vert  \ne 0$$일 때 역변환이 하나로 정해진다. 평행이동을 더한 $$\mathbf x' = M\mathbf x + \mathbf t$$가 아핀 변환이다[^13].
+가역 선형변환은 연립방정식 $$\mathbf x' = M\mathbf x$$에서 $$\vert M\vert  \ne 0$$일 때 역변환이 하나로 정해진다. 평행이동을 더한 $$\mathbf x' = M\mathbf x + \mathbf t$$가 아핀 변환이다.
 
 ## 활용
 
@@ -129,20 +129,6 @@ flowchart TD
 </details>
 
 
-[^1]: 수치해석 4회 강의 자료 「na04_transformation」, p.2~4
-[^2]: 같은 자료, p.5~7
-[^3]: 같은 자료, p.8
-[^4]: 같은 자료, p.9
-[^5]: 같은 자료, p.10
-[^6]: 같은 자료, p.11
-[^7]: 같은 자료, p.12
-[^8]: 같은 자료, p.13
-[^9]: 같은 자료, p.14
-[^10]: 같은 자료, p.15
-[^11]: 같은 자료, p.16
-[^12]: 같은 자료, p.20
-[^13]: 같은 자료, p.17~19
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원근 그림의 폭 계산, 무게중심과 원근 보정 텍스처 매핑, 흔한 실수의 각도, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [03_transformation-classes_plot.py](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 회전·평행이동 뒤 변의 길이 1, 고르게 2배 뒤 직각, 전단 $$k = 1.5$$에서 각 33.7°, 원근의 폭 2와 $$\frac23$$.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 표와 포함 관계 문단(원본 04.na04_transformation.pdf p.9~20)으로 그렸다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [03_transformation-classes_plot.py](/Hongs_Blog/studies/numerical-analysis/code/03_transformation-classes_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 회전·평행이동 뒤 변의 길이 1, 고르게 2배 뒤 직각, 전단 $$k = 1.5$$에서 각 33.7°, 원근의 폭 2와 $$\frac23$$.
 {% endraw %}

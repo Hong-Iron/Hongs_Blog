@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Equivalence Relation", "Partition", "동치관계", "동치류", "equivalence class", "분할", "몫집합", "quotient set", "유니온-파인드", "union-find", "서로소 집합", "disjoint set"]
 description: "반사·대칭·추이를 모두 갖춘 관계는 \"같은 무리로 본다\"는 뜻의 동치관계다. 동치관계가 있으면 집합이 서로 겹치지 않는 무리로 깔끔하게 나뉘고, 거꾸로 집합을 무리로 나누면 동치관계가 생긴다. 나머지가 같은 정수, 서로 연결된 네트워크 노드, 같은 동작을 하는 상태들이 모두 이 구…"
@@ -106,7 +106,7 @@ $$A$$의 **분할**은 공집합이 아닌 부분집합들의 모음으로, 서�
 
 ## 과목별 관점
 
-**데이터베이스 설계 (2-2학기).** SQL의 `GROUP BY`가 분할을 만든다. 슬라이드는 묶기를 "표의 행을 서로 겹치지 않는 부분집합(묶음)으로 나누는 일"이라고 적는다[^b1]. `GROUP BY Dno`는 직원 표의 행에 "`Dno`의 값이 같다"는 관계를 주고, 그 동치류 하나하나를 묶음으로 삼는다. 위 정리의 1번이 말하는 대로 묶음은 서로 겹치지 않고 합치면 표 전체다.
+**데이터베이스 설계 (2-2학기).** SQL의 `GROUP BY`가 분할을 만든다. 묶기는 표의 행을 서로 겹치지 않는 부분집합(묶음)으로 나누는 일이다. `GROUP BY Dno`는 직원 표의 행에 "`Dno`의 값이 같다"는 관계를 주고, 그 동치류 하나하나를 묶음으로 삼는다. 위 정리의 1번이 말하는 대로 묶음은 서로 겹치지 않고 합치면 표 전체다.
 
 - **묶음이 곧 동치류다.** COMPANY의 직원 8명은 5번 부서 {Smith, Wong, Narayan, English}, 4번 부서 {Zelaya, Wallace, Jabbar}, 1번 부서 {Borg}로 나뉜다. 묶음마다 직원 수와 평균 급여를 하나씩 계산해 묶음 하나가 결과의 한 줄이 된다: [GROUP BY](/Hongs_Blog/studies/database-design/group-by/).
 - **묶는 열을 늘리면 분할이 잘게 쪼개진다.** `GROUP BY Dno, Sex`는 두 값이 모두 같아야 같은 묶음이라, 세 묶음이 다섯 묶음이 된다[^bs1].
@@ -147,7 +147,6 @@ $$A$$의 **분할**은 공집합이 아닌 부분집합들의 모음으로, 서�
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 10장(동치관계). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장 "Relations"(동치관계와 분할).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 유니온-파인드의 경로 압축과 랭크 합치기를 함께 쓰면 연산당 비용이 역아커만 함수 $$\alpha(n)$$로 사실상 상수다(Cormen et al., *Introduction to Algorithms* 3판, 21장).
-[^b1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.31 (Grouping in SQL: 겹치지 않는 부분집합으로 나누기, 묶는 속성의 값이 같은 튜플끼리 한 묶음, Query 24의 묶음 그림)
-[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 묶음을 동치류로 읽는 설명, 두 열로 묶은 다섯 묶음, 추이가 깨지는 예, 카드 C4는 슬라이드에 없다. 세 묶음이 겹치지 않고 8명을 다 덮는 것, 다섯 묶음, Narayan·Wong·Wallace의 급여 차이는 [69_group-by_verify.py](/Hongs_Blog/studies/database-design/code/69_group-by_verify/)로 확인했다.
+[^s1]: 유니온-파인드의 경로 압축과 랭크 합치기를 함께 쓰면 연산당 비용이 역아커만 함수 $$\alpha(n)$$로 사실상 상수다(Cormen et al., *Introduction to Algorithms* 3판, 21장).
+[^bs1]: 세 묶음이 겹치지 않고 8명을 다 덮는 것, 다섯 묶음, Narayan·Wong·Wallace의 급여 차이는 [69_group-by_verify.py](/Hongs_Blog/studies/database-design/code/69_group-by_verify/)로 확인했다.
 {% endraw %}

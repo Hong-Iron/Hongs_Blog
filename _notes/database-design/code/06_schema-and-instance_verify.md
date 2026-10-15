@@ -23,19 +23,19 @@ permalink: "/studies/database-design/code/06_schema-and-instance_verify/"
 """스키마와 인스턴스 문서의 값 확인.
 
 문서: 06.스키마와 인스턴스
-출처: 데이터베이스 설계 2주차 슬라이드 2-2 p.6~7 (스키마 다이어그램, Kim 행 추가, Date_of_birth 추가)
+출처: Elmasri & Navathe, Fundamentals of Database Systems 2장 (스키마와 상태)
 주장:
-  1. p.6의 스키마 다이어그램은 표 5개의 열 이름 4, 4, 2, 5, 3개(합 18개)다. 행은 하나도 들어 있지 않다.
-  2. p.7: STUDENT에 (Kim, 25, 4, CS)를 넣으면 상태는 바뀌고(2행 -> 3행) 스키마는 그대로다.
+  1. 문서의 스키마 다이어그램은 표 5개의 열 이름 4, 4, 2, 5, 3개(합 18개)다. 행은 하나도 들어 있지 않다.
+  2. STUDENT에 (Kim, 25, 4, CS)를 넣으면 상태는 바뀌고(2행 -> 3행) 스키마는 그대로다.
   3. 넣기, 고치기, 지우기를 한 번 할 때마다 상태가 다른 상태로 바뀐다. 그동안 스키마는 한 번도 안 바뀐다.
-  4. p.6: STUDENT에 Date_of_birth 열을 더하면(스키마 진화) 스키마가 바뀐다(4열 -> 5열).
+  4. STUDENT에 Date_of_birth 열을 더하면(스키마 진화) 스키마가 바뀐다(4열 -> 5열).
      이미 있던 행은 그대로 남고 새 칸은 비어 있다(NULL).
   5. 카드 C2의 분류: 행을 모두 지워도 스키마는 남고, 표를 없애면 스키마가 바뀐다.
 실행: python3 06_schema-and-instance_verify.py
 """
 import sqlite3
 
-# p.6 스키마 다이어그램에 그려진 순서
+# 문서의 스키마 다이어그램에 그려진 순서
 DDL = """
 CREATE TABLE STUDENT (Name TEXT, Student_number INTEGER, Class INTEGER, Major TEXT);
 CREATE TABLE COURSE (Course_name TEXT, Course_number TEXT, Credit_hours INTEGER, Department TEXT);
@@ -44,7 +44,7 @@ CREATE TABLE SECTION (Section_identifier INTEGER, Course_number TEXT, Semester T
 CREATE TABLE GRADE_REPORT (Student_number INTEGER, Section_identifier INTEGER, Grade TEXT);
 """
 
-SCHEMA_DIAGRAM = {      # p.6
+SCHEMA_DIAGRAM = {      # 문서의 스키마 다이어그램
     "STUDENT": ["Name", "Student_number", "Class", "Major"],
     "COURSE": ["Course_name", "Course_number", "Credit_hours", "Department"],
     "PREREQUISITE": ["Course_number", "Prerequisite_number"],
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     # 2~3. 넣기, 고치기, 지우기마다 상태가 바뀐다.
     seen_states = [state(conn)]
     changes = [
-        "INSERT INTO STUDENT VALUES ('Kim', 25, 4, 'CS')",                 # p.7
+        "INSERT INTO STUDENT VALUES ('Kim', 25, 4, 'CS')",                 # 문서의 Kim 행
         "UPDATE STUDENT SET Class = 2 WHERE Name = 'Smith'",
         "DELETE FROM GRADE_REPORT WHERE Student_number = 17 AND Section_identifier = 119",
     ]

@@ -22,7 +22,7 @@ permalink: "/studies/computer-communication/code/12_multiplexing_verify/"
 ```python
 """다중화의 DEMUX 키와 다채널 분할 검증.
 
-문서: 12.다중화 (방식별 비교표, 원본 오류 의심 상자, 오해, 카드 C4)
+문서: 12.다중화 (방식별 비교표, 키를 늘 함께 보내지는 않는다는 점, 오해, 카드 C4)
 주장 1: TDM은 칸 위치가 키다. 스트림에 주소를 싣지 않아도 DEMUX가 입력을 되살린다.
 주장 2: FDM은 주파수가 키다. 섞인 신호에 이름표가 없어도 주파수로 걸러 입력을 되살린다.
 주장 3: 통계적 다중화는 쉬는 입력의 칸을 건너뛰므로 위치로는 주인을 알 수 없다.
@@ -83,7 +83,7 @@ def main() -> None:
     assert all(abs(g - a) < 1e-9 for g, a in zip(got, amps))
     print("[OK] FDM: 이름표 없이 주파수로 걸러 진폭", [round(g, 6) for g in got], "을 되살림")
 
-    act = [{"A", "B"}, {"B", "C"}]  # 슬라이드 그림의 두 주기
+    act = [{"A", "B"}, {"B", "C"}]  # 통계적 다중화 예시의 두 주기
     stream = stat_mux(act, "ABCD")
     assert [d for _, d in stream] == ["A1", "B1", "B2", "C2"]
     assert stat_demux(stream, "ABCD") == {"A": ["A1"], "B": ["B1", "B2"], "C": ["C2"], "D": []}

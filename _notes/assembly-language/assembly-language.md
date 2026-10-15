@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Assembly Language", "어셈블리 언어", "기계어", "Machine Language", "어셈블러", "Assembler", "니모닉", "Mnemonic", "일대일 대응", "이식성", "Portability"]
 description: "컴퓨터의 두뇌인 프로세서가 알아듣는 말은 숫자뿐이다. 어셈블리어는 그 숫자 명령 하나하나에 사람이 읽을 수 있는 짧은 이름을 붙인 말이다. 요리사에게 \"3번 동작, 7번 재료\"라고 적는 대신 \"썰어라, 양파\"라고 적어 주는 것과 같아서, 한 줄이 프로세서의 동작 하나와 정확히 짝이…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/assembly-language/"
 
 C++로 `cout << (A * B + C);` 한 줄을 쓰면 화면에 답이 나온다. 그런데 프로세서에는 "곱하고 더해서 출력하라"는 명령이 없다. 프로세서가 한 번에 할 수 있는 일은 값을 옮기기, 두 수를 곱하기, 두 수를 더하기처럼 아주 작은 동작뿐이다. 그래서 이 한 줄은 작은 동작 여러 개로 쪼개져야 한다.
 
-슬라이드는 같은 일을 네 가지 말로 적는다[^1].
+같은 일을 네 가지 말로 적으면 이렇다.
 
 ```
 사람의 말    : A 곱하기 B에 C를 더한 값을 보여라
@@ -64,8 +64,8 @@ C++ 한 줄이 어셈블리어 네 줄이 되었다. 그리고 어셈블리어 �
 
 ## 정의
 
-- **기계어 (machine language).** 프로세서가 바로 읽어 실행하는 숫자 명령이다. 프로세서 종류마다 숫자와 뜻이 다르다[^2].
-- **어셈블리어 (assembly language).** 기계어 명령 하나에 니모닉 하나를 붙여 글자로 적은 말이다. 어셈블리어 한 줄은 기계어 명령 한 개가 된다(일대일 관계)[^3].
+- **기계어 (machine language).** 프로세서가 바로 읽어 실행하는 숫자 명령이다. 프로세서 종류마다 숫자와 뜻이 다르다.
+- **어셈블리어 (assembly language).** 기계어 명령 하나에 니모닉 하나를 붙여 글자로 적은 말이다. 어셈블리어 한 줄은 기계어 명령 한 개가 된다(일대일 관계).
 - **어셈블러 (assembler).** 어셈블리어로 쓴 글을 기계어로 바꿔 주는 프로그램이다[^s2]. 이 과목에서는 마이크로소프트의 MASM을 쓴다.
 
 C++이나 Java 같은 고급 언어는 한 줄이 기계어 여러 개로 바뀐다(일대다 관계)[^s2]. 위의 `cout` 한 줄이 네 개가 된 것이 그 예다.
@@ -74,8 +74,8 @@ C++이나 Java 같은 고급 언어는 한 줄이 기계어 여러 개로 바뀐
 
 ## 활용
 
-- 슬라이드는 프로그램의 대표 종류로 업무용 응용 프로그램, 하드웨어 장치를 직접 다루는 프로그램(장치 드라이버), 기계 안에 들어가는 작은 컴퓨터용 프로그램(임베디드 시스템)과 컴퓨터 게임을 든다[^4]. 뒤의 둘처럼 하드웨어를 직접 만지거나 메모리와 속도가 빠듯한 곳에서 어셈블리어가 쓰인다[^s2].
-- 어셈블리어를 배우면 소프트웨어가 가장 낮은 단계에서 어떻게 만들어지는지 알게 된다[^3]. 고급 언어의 변수, 반복문, 함수 호출이 실제로 어떤 동작으로 바뀌는지는 뒤의 문서들이 다룬다: [조건 구조를 점프로 옮기기](/Hongs_Blog/studies/assembly-language/conditional-structures/), [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/).
+- 프로그램의 대표 종류로는 업무용 응용 프로그램, 하드웨어 장치를 직접 다루는 프로그램(장치 드라이버), 기계 안에 들어가는 작은 컴퓨터용 프로그램(임베디드 시스템), 컴퓨터 게임이 있다. 뒤의 둘처럼 하드웨어를 직접 만지거나 메모리와 속도가 빠듯한 곳에서 어셈블리어가 쓰인다[^s2].
+- 어셈블리어를 배우면 소프트웨어가 가장 낮은 단계에서 어떻게 만들어지는지 알게 된다. 고급 언어의 변수, 반복문, 함수 호출이 실제로 어떤 동작으로 바뀌는지는 뒤의 문서들이 다룬다: [조건 구조를 점프로 옮기기](/Hongs_Blog/studies/assembly-language/conditional-structures/), [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/).
 - 흔한 실수: 어셈블리어와 기계어를 같은 것으로 부르는 것. 어셈블리어는 글자이고 기계어는 숫자다. 둘 사이에 어셈블러가 있다.
 
 ## 연결
@@ -108,16 +108,12 @@ C++이나 Java 같은 고급 언어는 한 줄이 기계어 여러 개로 바뀐
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C3** x86 프로세서용으로 만든 프로그램을 전혀 다른 종류의 프로세서를 쓰는 기기로 옮기려 한다. 프로그램이 (가) C++로 쓰여 있을 때와 (나) 어셈블리어로 쓰여 있을 때 할 일은 각각 무엇인가?</summary>
 
-**답:** (가) 새 프로세서용 번역기로 다시 번역한다. 원본은 거의 그대로 쓴다. (나) 새 프로세서의 어셈블리어로 처음부터 다시 쓴다.<br>
+**답:** (가) 새 프로세서용 번역기로 다시 번역한다. C++ 코드는 거의 그대로 쓴다. (나) 새 프로세서의 어셈블리어로 처음부터 다시 쓴다.<br>
 **이유:** 어셈블리어의 니모닉은 그 프로세서의 기계어 명령에 붙인 이름이다. 프로세서가 다르면 명령의 종류와 저장 칸의 이름부터 다르다.
 
 </details>
 
 
-[^1]: 어셈블리어 1회 강의 자료 「Chapt_01-1」, p.10 (Translating Languages: English, C++, Assembly Language, Intel Machine Language)
-[^2]: 어셈블리어 1회 강의 자료 「Chapt_01-1」, p.9 (Each computer has a native machine language)
-[^3]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.22 (Summary: one-to-one relationship with machine language, software at the lowest levels). 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-1」, p.3 (Instruction mnemonics that have a one-to-one correspondence to machine language)
-[^4]: 어셈블리어 1회 강의 자료 「Chapt_01-1」, p.6 (Assembly Language Applications)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표의 "프로세서가 하는 일" 칸, 기계어 첫 바이트의 뜻, 변수 주소가 4씩 떨어진 까닭, 카드 C2는 슬라이드에 없다. 슬라이드에는 네 가지 말이 상자로만 나온다. 첫 바이트의 뜻은 인텔 명령 부호 표(Intel 64 and IA-32 Architectures Software Developer's Manual, Vol. 2)를 따랐고 검증 코드에서 풀어 확인했다. 슬라이드는 주소를 읽기 쉬운 숫자 순서로 적었다. 메모리에 실제로 놓이는 바이트 순서는 [리틀 엔디언](/Hongs_Blog/studies/assembly-language/little-endian/)에서 다룬다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.4~5는 "어셈블러란 무엇인가", "C++과 Java는 어셈블리어와 어떤 관계인가", "어셈블리어는 다른 기계로 옮길 수 있는가", "왜 배우는가"를 질문으로만 적는다. 답은 교재 Irvine, *Assembly Language for x86 Processors* 7판, 1.1절의 내용이다.
+[^s1]: 첫 바이트의 뜻은 인텔 명령 부호 표(Intel 64 and IA-32 Architectures Software Developer's Manual, Vol. 2)를 따랐고 검증 코드에서 풀어 확인했다. 메모리에 실제로 놓이는 바이트 순서는 [리틀 엔디언](/Hongs_Blog/studies/assembly-language/little-endian/)에서 다룬다.
+[^s2]: 답은 교재 Irvine, *Assembly Language for x86 Processors* 7판, 1.1절의 내용이다.
 {% endraw %}

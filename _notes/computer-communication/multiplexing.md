@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Multiplexing", "멀티플렉싱", "MUX", "DEMUX", "역다중화기", "DEMUX 키", "demux key", "자원 공유", "resource sharing", "다채널 분할", "Multi-Channel Splitting", "역다중화", "inverse multiplexing"]
 description: "여러 사람의 통신이 선 하나를 나눠 쓰게 하는 방법이다. 이삿짐 여러 집 것을 트럭 한 대에 섞어 싣는 것과 같다. 선을 계속 새로 깔지 않고 있는 자원을 아껴 쓸 수 있다. 대신 받는 쪽에서 다시 나누려면 각 조각이 누구 것인지 알아낼 단서가 반드시 있어야 한다."
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/multiplexing/"
 
 ## 예시로 보기
 
-슬라이드에서 L1→R1, L2→R2, L3→R3 세 연결이 Switch 1과 Switch 2 사이의 링크 하나를 함께 쓴다[^3]. 이 그림을 MUX/DEMUX 그림으로 옮기면 Switch 1이 합치는 장치 MUX(멀티플렉서), Switch 2가 나누는 장치 DEMUX(디멀티플렉서), 둘 사이 링크가 "1 link, N channels"가 된다($$N = 3$$)[^2].
+L1→R1, L2→R2, L3→R3 세 연결이 Switch 1과 Switch 2 사이의 링크 하나를 함께 쓴다고 하자. 이것을 MUX/DEMUX 그림으로 옮기면 Switch 1이 합치는 장치 MUX(멀티플렉서), Switch 2가 나누는 장치 DEMUX(디멀티플렉서), 둘 사이 링크가 "1 link, N channels"가 된다($$N = 3$$).
 
 ```mermaid
 graph LR
@@ -51,7 +51,7 @@ graph LR
 
 ## 정의
 
-노드와 링크는 한정된 자원이다. 사용자는 계속 늘어나므로 자원을 계속 늘리지 않고 비용 효율적으로 나눠 써야 한다(자원 공유)[^1][^3]. 다중화는 여러 연결이 하나의 링크를 함께 쓰는 것이다[^1].
+노드와 링크는 한정된 자원이다. 사용자는 계속 늘어나므로 자원을 계속 늘리지 않고 비용 효율적으로 나눠 써야 한다(자원 공유). 다중화는 여러 연결이 하나의 링크를 함께 쓰는 것이다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -73,16 +73,6 @@ $$\kappa : \{y\text{의 조각}\} \to \{1, \dots, N\}$$
 | [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/) | 주파수 | 고정 | 어느 주파수 대역인가 | 아니다 |
 | [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/) | 시간 | 요구에 따라 | 조각에 붙인 주소 | 그렇다. 그래서 오버헤드가 생긴다 |
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "Multiplex 시, DEMUX 키를 항상 함께 주어야 한다." (1주차 필기 60행)<br>
-문제점: DEMUX 키는 항상 **있어야** 하지만, 항상 데이터와 **함께 보내야** 하는 것은 아니다. 같은 필기 72행도 시분할 다중화에서는 "시간이 곧 DEMUX 키"라고 쓴다.<br>
-수정안: "다중화할 때는 수신 측이 각 조각의 주인을 알아낼 방법(DEMUX 키)이 항상 있어야 한다. 시분할·주파수 분할 다중화는 시간 위치와 주파수가 키라서 따로 보내지 않고, 통계적 다중화는 주소를 붙여 보낸다."<br>
-근거: 검증 코드에서 시분할 다중화는 위치만으로, 주파수 분할 다중화는 주파수만으로 입력을 되살렸다. 주소를 뗀 통계적 다중화 스트림은 위치로 나누면 틀렸다. 슬라이드도 "Demux key/select?"와 "address 필요"를 통계적 다중화에서만 묻는다[^4].
-
-</div>
-
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 세 방식의 DEMUX 키, 다채널 분할의 순서 되살리기 — [12_multiplexing_verify.py](/Hongs_Blog/studies/computer-communication/code/12_multiplexing_verify/)</div>
@@ -92,13 +82,13 @@ $$\kappa : \{y\text{의 조각}\} \to \{1, \dots, N\}$$
 
 ## 예제
 
-- 다중화인 것: 슬라이드의 Switch 1–Switch 2 링크 공유[^3], 전화망의 시분할 회선, FM 라디오 방송국들의 주파수 나눠 쓰기[^s1]
+- 다중화인 것: 위 Switch 1–Switch 2 링크 공유, 전화망의 시분할 회선, FM 라디오 방송국들의 주파수 나눠 쓰기
 - 아닌 것: 연결마다 따로 깐 링크(완전 연결, 공유가 없음), 다채널 분할(한 연결이 여러 링크를 쓰는 반대 방향)
 
 ## 활용
 
-- 트래픽이 일정하면 고정 할당(시분할·주파수 분할)도 낭비가 작다. 트래픽이 몰렸다 끊겼다 하면([버스티 트래픽](/Hongs_Blog/studies/computer-communication/bursty-traffic/)) 고정 할당은 낭비가 커서 [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)가 필요하다[^6].
-- 오늘날은 방향이 반대인 경우도 있다. **다채널 분할**은 입력 하나를 채널 $$N$$개로 나눠(Split) 보내고 받는 쪽에서 합친다(Merge)[^5]. 한 사용자의 트래픽이 링크 하나보다 클 때 쓴다[^7]. 채널마다 지연이 달라 도착 순서가 뒤바뀔 수 있어서, 조각에 순서 번호를 붙여 되살린다[^s2].
+- 트래픽이 일정하면 고정 할당(시분할·주파수 분할)도 낭비가 작다. 트래픽이 몰렸다 끊겼다 하면([버스티 트래픽](/Hongs_Blog/studies/computer-communication/bursty-traffic/)) 고정 할당은 낭비가 커서 [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)가 필요하다.
+- 오늘날은 방향이 반대인 경우도 있다. **다채널 분할**은 입력 하나를 채널 $$N$$개로 나눠(Split) 보내고 받는 쪽에서 합친다(Merge). 한 사용자의 트래픽이 링크 하나보다 클 때 쓴다. 채널마다 지연이 달라 도착 순서가 뒤바뀔 수 있어서, 조각에 순서 번호를 붙여 되살린다[^s2].
 
 ```mermaid
 flowchart LR
@@ -112,7 +102,7 @@ flowchart LR
   MG --> OUT["출력 1개"]
 ```
 
-위의 MUX 그림을 거꾸로 뒤집은 모양이다. 입력 하나가 Split에서 여러 채널로 갈라졌다가 Merge에서 다시 하나로 모인다[^s3].
+위의 MUX 그림을 거꾸로 뒤집은 모양이다. 입력 하나가 Split에서 여러 채널로 갈라졌다가 Merge에서 다시 하나로 모인다.
 
 ## 연결
 
@@ -127,7 +117,7 @@ flowchart LR
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"다중화하면 조각마다 누구 것인지 적어서 보내야 한다"</div>
 
-틀렸다. 편지에 주소를 쓰듯 섞인 데이터를 나누려면 이름표가 필요할 것 같아서 그럴듯하다. 실제로는 키가 데이터의 위치나 성질에 이미 들어 있으면 따로 적지 않아도 된다. 시분할 다중화는 칸의 순서가, 주파수 분할 다중화는 주파수 대역이 키다. 이름표(주소)를 붙이는 것은 칸을 고정하지 않는 통계적 다중화뿐이다. 슬라이드의 동기식 시분할 그림은 1 2 3 4 5 6 1 2 …처럼 칸 순서만 있고, 통계적 다중화 그림에만 주소(Address) 칸이 있다[^4][^8].
+틀렸다. 편지에 주소를 쓰듯 섞인 데이터를 나누려면 이름표가 필요할 것 같아서 그럴듯하다. 실제로는 키가 데이터의 위치나 성질에 이미 들어 있으면 따로 적지 않아도 된다. 시분할 다중화는 칸의 순서가, 주파수 분할 다중화는 주파수 대역이 키다. 이름표(주소)를 붙이는 것은 칸을 고정하지 않는 통계적 다중화뿐이다. 동기식 시분할 다중화로 입력 6개를 실으면 1 2 3 4 5 6 1 2 …처럼 칸 순서만 있고 주소 칸은 없다. 통계적 다중화에서만 조각마다 주소(Address) 칸이 붙는다.
 
 </div>
 
@@ -156,15 +146,5 @@ flowchart LR
 
 </details>
 
-[^1]: 컴퓨터 통신 1회 필기 「1주차」, 55~60행
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "Multiplexing" (N inputs, MUX, 1 link / N channels, DEMUX, N outputs)
-[^3]: 수업 슬라이드 캡처 — 슬라이드 "비용 효율적인 자원 공유 (Resource Sharing)", 1장. 기본 개념: 요구 사항 2
-[^4]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
-[^5]: 수업 슬라이드 캡처 — 슬라이드 "(Multi-Channel) Splitting" (1 inputs, Split, N channels, Merge, 1 outputs)
-[^6]: 컴퓨터 통신 1회 필기 「1주차」, 68~70행
-[^7]: 컴퓨터 통신 1회 필기 「1주차」, 73~74행
-[^8]: 수업 슬라이드 캡처 — 슬라이드 "시분할 다중화", 동기식 시분할 다중화 그림
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 방식별 비교표는 슬라이드와 필기의 내용을 표로 모은 것이다. 전화망과 FM 라디오 예는 원본에 없다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 순서 번호로 되살리는 방법은 원본에 없다. 역다중화(inverse multiplexing)라고도 하며, 이더넷 링크 묶음(IEEE 802.1AX)이나 MPTCP(RFC 8684)가 실제 사례다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 "(Multi-Channel) Splitting"(1 inputs, Split, N channels, Merge, 1 outputs)을 위 MUX 그림과 같은 모양으로 옮겼다.
+[^s2]: 역다중화(inverse multiplexing)라고도 하며, 이더넷 링크 묶음(IEEE 802.1AX)이나 MPTCP(RFC 8684)가 실제 사례다.
 {% endraw %}

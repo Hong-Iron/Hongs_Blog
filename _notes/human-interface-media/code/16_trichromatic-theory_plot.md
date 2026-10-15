@@ -50,7 +50,7 @@ def save(fig, k):
     fig.savefig(os.path.join(HERE, f"{PREFIX}_fig{k}.svg"), bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
 
-PEAK = {"S": 445.0, "M": 535.0, "L": 575.0}   # 슬라이드의 봉우리
+PEAK = {"S": 445.0, "M": 535.0, "L": 575.0}   # 문서 표의 봉우리
 WIDTH = {"S": 30.0, "M": 45.0, "L": 45.0}     # 가정한 폭 (검증 코드와 같음)
 PRIMS = [450.0, 530.0, 620.0]
 

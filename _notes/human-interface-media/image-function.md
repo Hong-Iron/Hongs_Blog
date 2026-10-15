@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Image Function", "이미지", "image", "단색 이미지", "컬러 이미지", "RGB", "윤곽선", "edge", "기울기", "gradient"]
 description: "흑백 사진은 종이 위 위치마다 밝기 숫자가 하나씩 적힌 지도다. 컬러 사진은 빨강·초록·파랑 세 장의 지도를 겹친 것이다. 이렇게 보면 사진은 위치를 넣으면 밝기를 돌려주는 함수가 되고, 윤곽선은 그 함수가 급하게 변하는 곳이다. 단, 세 장의 지도를 숫자로 더해 한 장으로 합치면…"
@@ -45,28 +45,28 @@ permalink: "/studies/human-interface-media/image-function/"
 
 칸 하나하나가 $$i(x, y)$$의 값이다. 예를 들어 $$i(1, 2) = 100$$, $$i(4, 0) = 20$$이다. 옆 칸과의 차이를 가로 방향으로 재면 $$x = 2$$와 $$3$$ 사이에서만 $$20 - 100 = -80$$이고 나머지는 0이다. 세로 방향 차이는 어디서나 0이다. 윤곽선은 차이가 큰 곳, 곧 가운데의 세로 경계다.
 
-컬러 사진은 슬라이드의 연꽃 사진처럼 빨강·초록·파랑 채널 사진 세 장으로 나뉜다[^1]. 채널마다 그 색 빛의 밝기 분포다.
+컬러 사진은 빨강·초록·파랑 채널 사진 세 장으로 나눌 수 있다. 채널마다 그 색 빛의 밝기 분포다.
 
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **단색 이미지**: 2차원 공간에 대한 밝기 변화 함수 $$i(x, y)$$[^1]. 위치 $$(x, y)$$에서의 밝기를 돌려준다.
-- **컬러 이미지**: 빨강·초록·파랑에 대한 밝기 변화를 함께 가진 함수[^1]. 각 위치에서 세 값을 가지므로 벡터 값 함수로 쓴다.
+- **단색 이미지**: 2차원 공간에 대한 밝기 변화 함수 $$i(x, y)$$. 위치 $$(x, y)$$에서의 밝기를 돌려준다.
+- **컬러 이미지**: 빨강·초록·파랑에 대한 밝기 변화를 함께 가진 함수. 각 위치에서 세 값을 가지므로 벡터 값 함수로 쓴다.
 
 $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 
-- **윤곽선**: 평면에 대한 밝기(또는 색) 변화의 정도 $$\nabla i(x, y)$$[^2]. $$\nabla i = \left(\dfrac{\partial i}{\partial x}, \dfrac{\partial i}{\partial y}\right)$$이고($$\partial i / \partial x$$는 오른쪽으로 조금 움직일 때 밝기가 얼마나 바뀌는지, $$\partial i / \partial y$$는 위아래로 조금 움직일 때의 변화), 크기 $$\lVert \nabla i \rVert$$($$\lVert\cdot\rVert$$는 벡터의 길이)가 윤곽의 세기, 방향이 밝기가 가장 빨리 느는 방향이다.
+- **윤곽선**: 평면에 대한 밝기(또는 색) 변화의 정도 $$\nabla i(x, y)$$. $$\nabla i = \left(\dfrac{\partial i}{\partial x}, \dfrac{\partial i}{\partial y}\right)$$이고($$\partial i / \partial x$$는 오른쪽으로 조금 움직일 때 밝기가 얼마나 바뀌는지, $$\partial i / \partial y$$는 위아래로 조금 움직일 때의 변화), 크기 $$\lVert \nabla i \rVert$$($$\lVert\cdot\rVert$$는 벡터의 길이)가 윤곽의 세기, 방향이 밝기가 가장 빨리 느는 방향이다.
 
 </div>
 
 
-슬라이드는 컬러 이미지를 $$i(x,y) = i_R(x,y) + i_G(x,y) + i_B(x,y)$$로 적는다[^1]. 이 덧셈은 빨간 채널 사진, 초록 채널 사진, 파란 채널 사진을 겹친다는 뜻이다. 채널 사진을 각각 $$(i_R, 0, 0)$$, $$(0, i_G, 0)$$, $$(0, 0, i_B)$$라는 벡터로 보면 합이 위의 벡터와 같다[^s1].
+컬러 이미지를 $$i(x,y) = i_R(x,y) + i_G(x,y) + i_B(x,y)$$로 적기도 한다. 이 덧셈은 빨간 채널 사진, 초록 채널 사진, 파란 채널 사진을 겹친다는 뜻이다. 채널 사진을 각각 $$(i_R, 0, 0)$$, $$(0, i_G, 0)$$, $$(0, 0, i_B)$$라는 벡터로 보면 합이 위의 벡터와 같다.
 
-**공간 주파수.** 평면 위에서 밝기가 얼마나 촘촘히 바뀌는지를 cycle/m로 잰다[^1]. 한 방향으로 사인 모양으로 바뀌는 줄무늬 $$i(x) = m + a\sin(2\pi u x)$$에서 $$u$$가 공간 주파수다. $$u = 500$$ cycle/m면 1 cm 안에 밝고 어두운 줄 한 쌍이 5번 들어 있다.
+**공간 주파수.** 평면 위에서 밝기가 얼마나 촘촘히 바뀌는지를 cycle/m로 잰다. 한 방향으로 사인 모양으로 바뀌는 줄무늬 $$i(x) = m + a\sin(2\pi u x)$$에서 $$u$$가 공간 주파수다. $$u = 500$$ cycle/m면 1 cm 안에 밝고 어두운 줄 한 쌍이 5번 들어 있다.
 
-디지털 이미지는 $$i(x, y)$$를 격자점에서만 재고(표본화, sampling) 값을 정수로 반올림한(양자화, quantization) 것이다. 강의 계획표 6주차 "Image Representation & Spatial Frequency"가 다룬다[^3][^s2].
+디지털 이미지는 $$i(x, y)$$를 격자점에서만 재고(표본화, sampling) 값을 정수로 반올림한(양자화, quantization) 것이다[^s2]. 자세한 내용은 [디지털 이미지](/Hongs_Blog/studies/human-interface-media/digital-image/)에 있다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/12_image-function_fig1.svg" alt="그림" width="612" height="352" loading="lazy">
 
@@ -94,7 +94,7 @@ $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"$$i = i_R + i_G + i_B$$는 세 채널 값을 더한 숫자 하나다"</div>
 
-틀렸다. 식이 보통의 덧셈처럼 생겨서 그렇게 읽기 쉽다. 세 값을 숫자로 더하면 서로 다른 색이 같은 값이 된다. 확인 방법: 빨강 $$(255, 0, 0)$$, 초록 $$(0, 255, 0)$$, 파랑 $$(0, 0, 255)$$, 회색 $$(85, 85, 85)$$는 합이 모두 255다. 숫자 하나로는 네 색을 구별할 수 없다. 슬라이드의 덧셈은 색 채널 사진 세 장을 겹치는 벡터의 덧셈이다.
+틀렸다. 식이 보통의 덧셈처럼 생겨서 그렇게 읽기 쉽다. 세 값을 숫자로 더하면 서로 다른 색이 같은 값이 된다. 확인 방법: 빨강 $$(255, 0, 0)$$, 초록 $$(0, 255, 0)$$, 파랑 $$(0, 0, 255)$$, 회색 $$(85, 85, 85)$$는 합이 모두 255다. 숫자 하나로는 네 색을 구별할 수 없다. 이 식의 덧셈은 색 채널 사진 세 장을 겹치는 벡터의 덧셈이다.
 
 </div>
 
@@ -108,10 +108,10 @@ $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 
 </details>
 
-<details markdown="1"><summary markdown="span"><b>C2</b> 슬라이드의 $$i = i_R + i_G + i_B$$를 세 값의 숫자 덧셈으로 읽으면 무엇이 문제인지 반례로 보이라.</summary>
+<details markdown="1"><summary markdown="span"><b>C2</b> 컬러 이미지의 식 $$i = i_R + i_G + i_B$$를 세 값의 숫자 덧셈으로 읽으면 무엇이 문제인지 반례로 보이라.</summary>
 
 
-**답:** 빨강 $$(255,0,0)$$과 초록 $$(0,255,0)$$은 합이 모두 255라 구별되지 않는다. 컬러 이미지는 세 값을 따로 가진 벡터이고, 슬라이드의 덧셈은 채널 사진을 겹치는 벡터 덧셈이다.
+**답:** 빨강 $$(255,0,0)$$과 초록 $$(0,255,0)$$은 합이 모두 255라 구별되지 않는다. 컬러 이미지는 세 값을 따로 가진 벡터이고, 이 식의 덧셈은 채널 사진을 겹치는 벡터 덧셈이다.
 
 </details>
 
@@ -122,10 +122,6 @@ $$ \mathbf{i}(x, y) = \bigl(i_R(x, y),\ i_G(x, y),\ i_B(x, y)\bigr) $$
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.3 (시각 정보)
-[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.19 (요약: "윤곽선: 평면에 대한 밝기 변화 또는 색깔 변화 정도 ∇i(x,y)")
-[^3]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 6주차
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 벡터 값 함수 표기와 "채널 사진의 벡터 덧셈"이라는 해석은 슬라이드 그림(원본 = 빨강 + 초록 + 파랑 채널 사진)에 맞춘 것이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표본화·양자화, 윤곽 검출과 흐리기의 주파수 해석은 영상 처리의 표준 내용이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [12_image-function_plot.py](/Hongs_Blog/studies/human-interface-media/code/12_image-function_plot/)로 그렸고, 그림에 쓴 값(한 주기 2 mm라 1 cm에 5주기, 양자화 오차가 단계 간격의 절반(16) 이하)을 같은 코드로 확인했다.
+[^s2]: 표본화·양자화, 윤곽 검출과 흐리기의 주파수 해석은 영상 처리의 표준 내용이다.
+[^s3]: [12_image-function_plot.py](/Hongs_Blog/studies/human-interface-media/code/12_image-function_plot/)로 그렸고, 그림에 쓴 값(한 주기 2 mm라 1 cm에 5주기, 양자화 오차가 단계 간격의 절반(16) 이하)을 같은 코드로 확인했다.
 {% endraw %}

@@ -23,22 +23,21 @@ permalink: "/studies/database-design/code/77_view-update-problem_verify/"
 """뷰 갱신 문제 검증 (SQLite 판). 뷰에 대한 갱신 자체는 77_view-update-problem_verify.sql(PostgreSQL)에서 본다.
 
 문서: 77.뷰 갱신 문제
-출처: 13주차 슬라이드 13-View p.17~24
 SQLite는 뷰를 모두 읽기 전용으로 다룬다. 그래서 여기서는 (1) 그 사실과, (2) 뷰 갱신을 기본 테이블 갱신으로
 옮기는 두 길 (a)·(b)의 효과, (3) 집계 값을 맞추는 길이 여럿이라는 것을 기본 테이블에서 확인한다.
 주장:
   1. SQLite에서는 표 하나로 만든 뷰(DEPT5EMP)조차 UPDATE·INSERT·DELETE가 "is a view" 오류로 거부된다.
-  2. p.21의 (a)와 (b)를 슬라이드의 COMPANY 상태에 그대로 돌리면 둘 다 유일성 제약에 걸린다.
+  2. 두 길 (a)와 (b)를 COMPANY 상태에 그대로 돌리면 둘 다 유일성 제약에 걸린다.
      (a): WORKS_ON의 기본 키 (Essn, Pno) = (123456789, 2)가 이미 있다. (b): UNIQUE (Pname)에 ProductY가 이미 있다.
   3. 제약 없는 복사본에서 (a)와 (b)는 둘 다 뷰의 (John, Smith, ProductX, 32.5)를 ProductY로 바꾼다.
      (a)는 다른 행을 건드리지 않고, (b)는 English의 ProductX 행까지 ProductY로 바꾼다.
-  4. p.22: Research의 Total_sal 133000을 100000으로 만드는 기본 테이블 수정이 둘 이상 있다.
-  5. p.23: INSTEAD OF 트리거를 달면 SQLite의 뷰도 UPDATE를 받는다(설계자가 길을 정한다).
+  4. Research의 Total_sal 133000을 100000으로 만드는 기본 테이블 수정이 둘 이상 있다.
+  5. INSTEAD OF 트리거를 달면 SQLite의 뷰도 UPDATE를 받는다(설계자가 길을 정한다).
 실행: python3 77_view-update-problem_verify.py
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -154,7 +153,7 @@ def main():
     assert q(c, "SELECT Pno FROM WORKS_ON WHERE Essn = '123456789' ORDER BY Pno") == [(1,), (2,)]
     fails(c, A.format(**REAL), "UNIQUE constraint failed: WORKS_ON.Essn, WORKS_ON.Pno")
     fails(c, B.format(**REAL), "UNIQUE constraint failed: PROJECT.Pname")
-    print("[OK] p.21: 슬라이드 상태에서는 (a)도 (b)도 유일성 제약에 걸린다")
+    print("[OK] 두 길: 처음 상태에서는 (a)도 (b)도 유일성 제약에 걸린다")
 
     # 3. 제약 없는 복사본에서 두 길의 효과
     before = sorted(q(c, "SELECT * FROM WORKS_ON1"), key=str)
@@ -173,7 +172,7 @@ def main():
     assert changed_a == [want_gone]
     assert changed_b == [("John", "Smith", "ProductX", 32.5), ("Joyce", "English", "ProductX", 20.0)]
     assert q(c, "SELECT COUNT(*) FROM P2 WHERE Pname = 'ProductX'") == [(0,)]
-    print("[OK] p.21: 복사본에서 (a)는 뷰의 1행만, (b)는 2행(Smith, English)을 바꾼다. 둘 다 바라던 행은 ProductY가 된다")
+    print("[OK] 두 길: 복사본에서 (a)는 뷰의 1행만, (b)는 2행(Smith, English)을 바꾼다. 둘 다 바라던 행은 ProductY가 된다")
 
     # 4. 집계 값을 맞추는 길은 여럿
     total = "SELECT Total_sal FROM DEPT_INFO WHERE Dept_name = 'Research'"
@@ -185,7 +184,7 @@ def main():
     assert q(c, total) == [(100000,)]
     c.execute("UPDATE EMPLOYEE SET Salary = Salary + 33000 WHERE Lname = 'Wong'")
     assert 133000 - 4 * 8250 == 100000 and q(c, total) == [(133000,)]
-    print("[OK] p.22: 넷에게서 8250씩 깎아도, Wong 한 사람에게서 33000을 깎아도 Total_sal은 100000")
+    print("[OK] 집계 뷰: 넷에게서 8250씩 깎아도, Wong 한 사람에게서 33000을 깎아도 Total_sal은 100000")
 
     # 5. INSTEAD OF 트리거: 설계자가 길 (a)를 골라 준다
     c.executescript("""
@@ -199,7 +198,7 @@ def main():
     assert q(c, "SELECT Pno FROM WORKS_ON WHERE Essn = '666884444'") == [(1,)]
     assert q(c, "SELECT Pname FROM WORKS_ON1 WHERE Lname = 'Narayan'") == [("ProductX",)]
     assert q(c, "SELECT COUNT(*) FROM PROJECT WHERE Pname = 'ProductZ'") == [(1,)]
-    print("[OK] p.23: INSTEAD OF 트리거를 단 뒤에는 뷰의 UPDATE가 WORKS_ON 수정으로 옮겨진다")
+    print("[OK] INSTEAD OF 트리거를 단 뒤에는 뷰의 UPDATE가 WORKS_ON 수정으로 옮겨진다")
     print("ALL CHECKS PASSED")
 
 

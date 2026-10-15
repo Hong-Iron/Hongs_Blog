@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/20_ll1-parsing-table_impl/"
 [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""LL(1) 파싱 표를 만들고 슬라이드의 표를 재현한다. LL(1)이 아닌 문법에서 충돌이 나는 칸도 확인한다.
+"""LL(1) 파싱 표를 만들고 문서의 표를 재현한다. LL(1)이 아닌 문법에서 충돌이 나는 칸도 확인한다.
 
 실행: python3 20_ll1-parsing-table_impl.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -122,7 +122,7 @@ def cells(table):
 
 
 if __name__ == "__main__":
-    # p.20, 31~32: E → TE', E' → +E | ε, T → FT', T' → *T | ε, F → (E) | id
+    # 산술식 예: E → TE', E' → +E | ε, T → FT', T' → *T | ε, F → (E) | id
     g = G("E -> T E'\nE' -> + E | ε\nT -> F T'\nT' -> * T | ε\nF -> ( E ) | id")
     table = ll1_table(g, "E")
     assert cells(table) == {
@@ -136,12 +136,12 @@ if __name__ == "__main__":
     # 30칸 가운데 13칸만 차 있다. 나머지 17칸은 문법 오류다.
     assert len(table) == 13 and 5 * 6 - len(table) == 17
 
-    # p.31: FIRST만으로 채우는 칸은 8개, p.32: ε 규칙을 FOLLOW로 채우는 칸은 5개
+    # FIRST만으로 채우는 칸은 8개, ε 규칙을 FOLLOW로 채우는 칸은 5개
     first = first_sets(g)
     by_first = sum(len(first_of(p, first, g) - {EPS}) for ps in g.values() for p in ps)
     assert by_first == 8 and len(table) - by_first == 5
 
-    # p.18: S → aA | b | A, A → (S)
+    # S → aA | b | A, A → (S)
     g2 = G("S -> a A | b | A\nA -> ( S )")
     assert cells(ll1_table(g2, "S")) == {("S", "a"): ["a A"], ("S", "b"): ["b"], ("S", "("): ["A"],
                                          ("A", "("): ["( S )"]}

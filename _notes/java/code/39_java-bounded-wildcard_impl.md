@@ -51,7 +51,7 @@ class BoundedWildcardImpl {
         System.out.println("ok  " + what);
     }
 
-    // 슬라이드 p.10
+    // 문서의 compare
     public static <T extends Number> boolean compare(T t1, T t2) {
         double v1 = t1.doubleValue();   // Number의 doubleValue()
         double v2 = t2.doubleValue();
@@ -63,7 +63,7 @@ class BoundedWildcardImpl {
         return a.compareTo(b) >= 0 ? a : b;
     }
 
-    // 슬라이드 p.12
+    // 문서의 클래스 관계: Worker와 Student는 Person의 자식
     static class Person {}
     static class Worker extends Person {}
     static class Student extends Person {}
@@ -77,7 +77,7 @@ class BoundedWildcardImpl {
         }
     }
 
-    // 슬라이드 p.13 Course
+    // 문서의 Course
     static class Course {
         // 누구나
         public static void registerCourse1(Applicant<?> applicant) {
@@ -93,8 +93,8 @@ class BoundedWildcardImpl {
         }
     }
 
-    // 슬라이드 p.14 Main
-    static void slideMain() {
+    // 세 메서드에 지원자를 넘겨 본다
+    static void registerExample() {
         Course.registerCourse1(new Applicant<Person>(new Person()));
         Course.registerCourse1(new Applicant<Worker>(new Worker()));
         Course.registerCourse1(new Applicant<Student>(new Student()));
@@ -119,12 +119,12 @@ class BoundedWildcardImpl {
         check(compare(4.5, 4.5), "compare(4.5, 4.5) = true");
         check(max(3, 8) == 8 && max("apple", "banana").equals("banana"), "max: Comparable을 구현한 타입만");
 
-        // 2. p.14
-        same(capture(BoundedWildcardImpl::slideMain),
+        // 2. 세 메서드에 넘긴 출력
+        same(capture(BoundedWildcardImpl::registerExample),
                 "Person registered the Course1.\nWorker registered the Course1.\nStudent registered the Course1.\n"
               + "HighStudent registered the Course1.\nMiddleStudent registered the Course1.\n"
               + "Student registered the Course2.\nHighStudent registered the Course2.\n"
-              + "Person registered the Course3.\nWorker registered the Course3.\n", "p.14 출력 9줄");
+              + "Person registered the Course3.\nWorker registered the Course3.\n", "세 메서드 출력 9줄");
 
         // 3. 와일드카드 변수로 받기
         Applicant<? extends Student> a = new Applicant<HighStudent>(new HighStudent());

@@ -118,5 +118,5 @@ $$P(\vert \bar X_n - \mu\vert  \ge \varepsilon) \le \frac{\sigma^2}{n\varepsilon
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.2절 "Law of large numbers"(약한·강한 법칙, 체비쇼프를 이용한 증명, 도박사의 오류와의 구별).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [21_lln_plot.py](/Hongs_Blog/studies/probability-statistics/code/21_lln_plot/)로 그렸고, 그림에 쓴 값(100번에서 차이 약 4개, 1만 번에서 약 40개, 기울기 0.5)을 같은 코드로 확인했다.
+[^s1]: [21_lln_plot.py](/Hongs_Blog/studies/probability-statistics/code/21_lln_plot/)로 그렸고, 그림에 쓴 값(100번에서 차이 약 4개, 1만 번에서 약 40개, 기울기 0.5)을 같은 코드로 확인했다.
 {% endraw %}

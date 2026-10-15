@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Referential Integrity Constraint", "참조 무결성", "Foreign Key", "외래 키", "외래키", "FK", "참조하는 릴레이션", "Referencing Relation", "참조되는 릴레이션", "Referenced Relation"]
 description: "직원 표에 \"5번 부서 소속\"이라고 적었다면 부서 표에 5번 부서가 정말 있어야 한다. 한 표의 줄이 다른 표의 줄을 가리킬 때, 가리킨 곳에 그 줄이 있어야 한다는 규칙이다. 가리키는 칸에는 상대 표의 대표 값과 같은 종류의 값이 들어가고, 그 값은 상대 표에 실제로 있는 값이거…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/referential-integrity-foreign-key/"
 
 ## 예시로 보기
 
-표를 여러 개로 나누면 표끼리 값으로 이어야 한다. 그런데 이어 놓은 값이 틀리면 어떻게 될까? EMPLOYEE의 Dno는 그 직원이 일하는 부서의 번호다[^1].
+표를 여러 개로 나누면 표끼리 값으로 이어야 한다. 그런데 이어 놓은 값이 틀리면 어떻게 될까? EMPLOYEE의 Dno는 그 직원이 일하는 부서의 번호다.
 
 | EMPLOYEE (일부) | | | | DEPARTMENT | |
 |---|---|---|---|---|---|
@@ -43,7 +43,7 @@ permalink: "/studies/database-design/referential-integrity-foreign-key/"
 | Wallace | 987654321 | 888665555 | 4 → | Administration | 4 |
 | Borg | 888665555 | NULL | 1 → | Headquarters | 1 |
 
-John Smith의 튜플은 Dno 5로 Research 부서의 튜플을 가리킨다. Smith가 이 부서에서 일한다는 뜻이다[^2]. Smith의 Dno가 7이라면 가리킬 튜플이 없다. "Smith의 부서 이름은?"이라는 질문에 답할 수 없게 된다. 그래서 모든 EMPLOYEE 튜플의 Dno 값은 DEPARTMENT의 어떤 튜플의 Dnumber 값과 맞아야 한다[^1].
+John Smith의 튜플은 Dno 5로 Research 부서의 튜플을 가리킨다. Smith가 이 부서에서 일한다는 뜻이다. Smith의 Dno가 7이라면 가리킬 튜플이 없다. "Smith의 부서 이름은?"이라는 질문에 답할 수 없게 된다. 그래서 모든 EMPLOYEE 튜플의 Dno 값은 DEPARTMENT의 어떤 튜플의 Dnumber 값과 맞아야 한다.
 
 Dno처럼 다른 릴레이션의 기본 키를 가리키는 속성을 외래 키(foreign key)라 부른다. 남의 릴레이션에서 온 키라는 뜻이다.
 
@@ -55,9 +55,9 @@ Dno처럼 다른 릴레이션의 기본 키를 가리키는 속성을 외래 키
 
 ## 정의
 
-**참조 무결성 제약.** 두 릴레이션 사이에 거는 제약이다. 한 릴레이션의 튜플이 다른 릴레이션을 가리킨다면, 그 릴레이션에 실제로 있는 튜플을 가리켜야 한다. 두 릴레이션의 튜플들이 서로 어긋나지 않게 하려는 것이다[^1].
+**참조 무결성 제약.** 두 릴레이션 사이에 거는 제약이다. 한 릴레이션의 튜플이 다른 릴레이션을 가리킨다면, 그 릴레이션에 실제로 있는 튜플을 가리켜야 한다. 두 릴레이션의 튜플들이 서로 어긋나지 않게 하려는 것이다.
 
-**외래 키.** 릴레이션 스키마 $$R_1$$의 속성 묶음 $$FK$$가 아래 두 조건을 지키면, $$FK$$는 $$R_2$$를 참조하는 $$R_1$$의 외래 키다[^3].
+**외래 키.** 릴레이션 스키마 $$R_1$$의 속성 묶음 $$FK$$가 아래 두 조건을 지키면, $$FK$$는 $$R_2$$를 참조하는 $$R_1$$의 외래 키다.
 
 1. *같은 도메인.* $$FK$$의 속성들은 $$R_2$$의 기본 키 $$PK$$의 속성들과 도메인이 같다.
 2. *있는 값이거나 NULL.* $$R_1$$의 지금 상태 $$r_1(R_1)$$에 든 튜플 $$t_1$$의 $$FK$$ 값은, $$R_2$$의 지금 상태 $$r_2(R_2)$$에 든 어떤 튜플 $$t_2$$의 $$PK$$ 값이거나 NULL이다.
@@ -67,16 +67,16 @@ Dno처럼 다른 릴레이션의 기본 키를 가리키는 속성을 외래 키
 $$t_1[FK] = t_2[PK]$$
 
 
-인 튜플 $$t_2 \in r_2(R_2)$$가 있다는 것이다. 이때 "튜플 $$t_1$$이 튜플 $$t_2$$를 참조한다"고 말한다. 슬라이드는 이 식을 둥근 괄호로 $$t_1(FK) = t_2(PK)$$라고 적는다[^3].
+인 튜플 $$t_2 \in r_2(R_2)$$가 있다는 것이다. 이때 "튜플 $$t_1$$이 튜플 $$t_2$$를 참조한다"고 말한다. 이 식을 둥근 괄호로 $$t_1(FK) = t_2(PK)$$라고 적기도 한다.
 
-$$R_1$$을 참조하는 릴레이션(referencing relation), $$R_2$$를 참조되는 릴레이션(referenced relation)이라 부른다. Dno의 경우 $$R_1$$은 EMPLOYEE, $$R_2$$는 DEPARTMENT다. 스키마 그림에서는 $$R_1$$의 외래 키에서 $$R_2$$의 기본 키로 화살표를 그린다[^3].
+$$R_1$$을 참조하는 릴레이션(referencing relation), $$R_2$$를 참조되는 릴레이션(referenced relation)이라 부른다. Dno의 경우 $$R_1$$은 EMPLOYEE, $$R_2$$는 DEPARTMENT다. 스키마 그림에서는 $$R_1$$의 외래 키에서 $$R_2$$의 기본 키로 화살표를 그린다.
 
-조건 2를 집합으로 말해도 같다. $$r_1$$에 나오는 NULL이 아닌 $$FK$$ 값을 모두 모은 집합이 $$r_2$$에 나오는 $$PK$$ 값을 모두 모은 집합에 들어 있다[^s1].
+조건 2를 집합으로 말해도 같다. $$r_1$$에 나오는 NULL이 아닌 $$FK$$ 값을 모두 모은 집합이 $$r_2$$에 나오는 $$PK$$ 값을 모두 모은 집합에 들어 있다.
 
 $$\{\, t_1[FK] : t_1 \in r_1,\ t_1[FK] \ne \text{NULL} \,\} \subseteq \{\, t_2[PK] : t_2 \in r_2 \,\}$$
 
 
-COMPANY에는 외래 키가 여덟 개 있다[^4].
+COMPANY에는 외래 키가 여덟 개 있다.
 
 | 참조하는 릴레이션 | 외래 키 | 참조되는 릴레이션 | 그 기본 키 | 뜻 |
 |---|---|---|---|---|
@@ -89,19 +89,12 @@ COMPANY에는 외래 키가 여덟 개 있다[^4].
 | WORKS_ON | Pno | PROJECT | Pnumber | 일하는 프로젝트 |
 | DEPENDENT | Essn | EMPLOYEE | Ssn | 이 부양가족의 직원 |
 
-표에서 읽을 수 있는 것이 넷 있다[^s1].
+표에서 읽을 수 있는 것이 넷 있다.
 
 - **같은 릴레이션을 가리켜도 된다.** Super_ssn은 EMPLOYEE에서 EMPLOYEE로 간다. Smith의 Super_ssn 333445555는 같은 릴레이션의 Wong을 가리킨다.
 - **NULL이어도 된다.** Borg는 상사가 없어 Super_ssn이 NULL이다. 상태 전체에서 NULL인 외래 키 값은 이 하나다.
 - **값이 겹쳐도 된다.** Dno 5는 네 직원에게 나온다. 외래 키는 자기 릴레이션에서 키가 아니어도 된다.
 - **이름이 달라도 된다.** Dno와 Dnumber, Essn과 Ssn은 이름이 다르다. 조건은 이름이 아니라 도메인과 값에 걸린다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 6-2 슬라이드 p.23의 그림에서 "Must be matched!" 선이 EMPLOYEE의 Dno 상자와 DEPT_LOCATIONS의 Dnumber 상자를 잇는다. / 문제점: 같은 쪽의 글은 "the Dnumber value of some tuple in the DEPARTMENT relation"이라고 적는다. Dno가 가리키는 것은 DEPARTMENT의 Dnumber다. 상자가 한 줄 아래 릴레이션에 그려졌다. / 수정안: 파란 상자는 DEPARTMENT의 Dnumber에 있어야 한다. / 근거: 같은 슬라이드 p.24~25의 그림과 7주차 p.8, 9주차 p.5의 복습 그림은 DEPARTMENT의 Dnumber에 상자를 쳤다. DEPT_LOCATIONS의 Dnumber는 값이 겹쳐(5가 세 번) 혼자서는 키가 아니므로 가리킬 수 없다.
-
-</div>
 
 
 ### 스스로 설명해 보기
@@ -152,7 +145,7 @@ Borg의 튜플이다. Super_ssn이 NULL이라서다. 사장처럼 가리킬 상�
 
 **외래 키가 아닌 예.** DEPENDENT.Sex와 EMPLOYEE.Sex는 이름이 같지만 가리키는 사이가 아니다. 부양가족의 성별이 어느 직원의 성별 값이어야 할 까닭이 없다. 출장 예제의 SALESPERSON.Dept_no는 부서 번호처럼 보이지만, 그 스키마에는 부서 릴레이션이 없어서 가리킬 곳이 없다([외래 키 찾기 연습](/Hongs_Blog/studies/database-design/foreign-key-practice/)).
 
-**Wong을 지우려 하면.** EMPLOYEE에서 Wong(333445555)의 튜플을 지우면 Wong을 가리키던 값이 모두 갈 곳을 잃는다[^s1].
+**Wong을 지우려 하면.** EMPLOYEE에서 Wong(333445555)의 튜플을 지우면 Wong을 가리키던 값이 모두 갈 곳을 잃는다.
 
 1. *EMPLOYEE.Super_ssn:* Smith, Narayan, English의 3개.
 2. *DEPARTMENT.Mgr_ssn:* Research 부서의 1개.
@@ -237,17 +230,12 @@ Borg의 튜플이다. Super_ssn이 NULL이라서다. 사장처럼 가리킬 상�
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C5** 외래 키는 왜 상대 릴레이션의 "기본 키"를 가리키게 정했는가? 6-2 슬라이드 p.23의 그림처럼 DEPT_LOCATIONS의 Dnumber를 가리키면 무엇이 곤란한가?</summary>
+<summary class="callout-title" markdown="span">**C5** 외래 키는 왜 상대 릴레이션의 "기본 키"를 가리키게 정했는가? EMPLOYEE의 Dno가 DEPARTMENT의 Dnumber 대신 DEPT_LOCATIONS의 Dnumber를 가리키게 하면 무엇이 곤란한가?</summary>
 
 **답:** 가리킨다는 것은 튜플 하나를 집어내는 일이라, 값이 안 겹치고 NULL이 아닌 기본 키여야 한다. DEPT_LOCATIONS의 Dnumber는 5가 세 번 나와서 Dno 5가 어느 튜플을 가리키는지 정해지지 않는다. 위치가 하나도 등록되지 않은 부서에는 직원을 둘 수 없게 되기도 한다.
 
 </details>
 
 
-[^1]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.23 (Referential Integrity Constraint, "Must be matched!"). 복습: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.8, 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.5
-[^2]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.25 (John Smith의 튜플이 Research 부서의 튜플을 참조한다)
-[^3]: 같은 자료, p.24 (Foreign key FK, 두 조건, referencing relation과 referenced relation, 화살표)
-[^4]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.11 (COMPANY 스키마 그림의 화살표 여덟 개). 6-2 p.24의 그림에는 그 가운데 EMPLOYEE와 DEPARTMENT 사이의 것만 보인다
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 조건 2의 집합 표현, 외래 키 표에서 읽은 네 가지, "Wong을 지우려 하면" 예제, 스스로 설명해 보기, 두 오해, 카드 C2~C5는 원본에 없다. 슬라이드 p.24의 두 조건과 6-2 p.21의 상태에서 끌어냈고 검증 코드로 세었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 제품마다 다른 점은 원본에 없다. PostgreSQL 16과 SQLite에서 실행해 확인했다. 슬라이드의 정의는 기본 키를 가리킨다고만 적는다. `UNIQUE`인 속성도 가리킬 수 있는 것은 PostgreSQL에서 본 동작이다.
+[^s2]: PostgreSQL 16과 SQLite에서 실행해 확인했다. `UNIQUE`인 속성도 가리킬 수 있는 것은 PostgreSQL에서 본 동작이다.
 {% endraw %}

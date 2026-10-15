@@ -23,12 +23,9 @@ permalink: "/studies/data-structures/code/13_array-stack_impl/"
 /* 배열로 만든 스택: 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/13.배열로 만든 스택.md
- * 출처: 자료구조 3주차 슬라이드 p.45~53. 슬라이드 코드를 컴파일되게 고쳤다.
- *       (p.50의 pop은 값을 돌려주는 return이 빠졌고, p.51과 p.53의 StackFull은 반환형이 없다.
- *        문서의 warning 참고)
  * 실행: cc -std=c11 -Wall -Wextra 13_array-stack_impl.c -o stack && ./stack
  *
- * 가득 찼을 때 할 일은 두 가지다. 슬라이드는 같은 이름 StackFull()을 두 번 적는다(p.51 끝내기, p.53 두 배 늘리기).
+ * 가득 찼을 때 할 일은 두 가지다(끝내기, 두 배 늘리기). 둘 다 StackFull()이라는 이름으로 부른다.
  * 한 파일에 둘을 다 두려고 이름을 StackFullExit, StackFullDouble로 나누고, 함수 포인터 StackFull로 갈아 끼운다.
  *
  * 확인하는 것
@@ -53,20 +50,20 @@ static void check(int ok, const char *what)
 typedef int element;
 
 static element *stack;        /* 원소를 담는 배열. stack[0]이 바닥, stack[top]이 맨 위 */
-static int capacity;          /* 배열의 칸 수 (슬라이드 p.49의 MAX_STACK_SIZE) */
+static int capacity;          /* 배열의 칸 수 (고정 판의 MAX_STACK_SIZE) */
 static int top = -1;          /* 맨 위 원소의 칸 번호. 비었으면 -1 */
 
 int IsEmpty(void) { return top == -1; }
 int IsFull(void)  { return top == capacity - 1; }
 
-/* 가득 찼을 때 1: 알리고 끝낸다 (슬라이드 p.51) */
+/* 가득 찼을 때 1: 알리고 끝낸다 */
 void StackFullExit(void)
 {
     fprintf(stderr, "Stack is full, cannot add element.\n");
     exit(EXIT_FAILURE);
 }
 
-/* 가득 찼을 때 2: 배열을 두 배로 늘린다 (슬라이드 p.53) */
+/* 가득 찼을 때 2: 배열을 두 배로 늘린다 */
 void StackFullDouble(void)
 {
     element *bigger = realloc(stack, 2 * capacity * sizeof(*stack));

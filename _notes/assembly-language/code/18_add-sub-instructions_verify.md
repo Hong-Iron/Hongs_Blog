@@ -20,11 +20,11 @@ permalink: "/studies/assembly-language/code/18_add-sub-instructions_verify/"
 [덧셈·뺄셈 명령](/Hongs_Blog/studies/assembly-language/add-sub-instructions/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""「덧셈·뺄셈 명령」: INC·DEC·ADD·SUB·NEG 슬라이드 값과 Your turn, NEG 8비트 전수 검사, 산술식 예, 카드 C1~C3
+"""「덧셈·뺄셈 명령」: INC·DEC·ADD·SUB·NEG 예와 연습 문제, NEG 8비트 전수 검사, 산술식 예, 카드 C1~C3
 
 실행: python3 18_add-sub-instructions_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -261,7 +261,7 @@ def must_fail(fn, *args):
 
 
 if __name__ == "__main__":
-    # p.4 INC, DEC
+    # INC, DEC
     c = CPU(); d = Data(c)
     d.word("myWord", 0x1000); d.dword("myDword", 0x10000000)
     c.inc(d.m("myWord")); assert c.get(d.m("myWord")) == 0x1001
@@ -269,7 +269,7 @@ if __name__ == "__main__":
     c.inc(d.m("myDword")); assert c.get(d.m("myDword")) == 0x10000001
     c.mov("ax", 0x00FF); c.inc("ax"); assert c.get("ax") == 0x0100
     c.mov("ax", 0x00FF); c.inc("al"); assert c.get("ax") == 0x0000
-    # p.5 Your turn
+    # 연습 문제: myByte
     c = CPU(); d = Data(c)
     d.byte("myByte", 0xFF, 0)
     c.mov("al", d.m("myByte")); assert c.get("al") == 0xFF
@@ -277,7 +277,7 @@ if __name__ == "__main__":
     c.dec("ah"); assert c.get("ah") == 0xFF
     c.inc("al"); assert c.get("al") == 0x00
     c.dec("ax"); assert c.get("ax") == 0xFEFF
-    # p.7 ADD, SUB
+    # ADD, SUB
     c = CPU(); d = Data(c)
     d.dword("var1", 0x10000); d.dword("var2", 0x20000)
     c.mov("eax", d.m("var1")); assert c.get("eax") == 0x00010000
@@ -285,7 +285,7 @@ if __name__ == "__main__":
     c.add("ax", 0xFFFF); assert c.get("eax") == 0x0003FFFF
     c.add("eax", 1); assert c.get("eax") == 0x00040000
     c.sub("ax", 1); assert c.get("eax") == 0x0004FFFF
-    # p.8 NEG
+    # NEG
     c = CPU(); d = Data(c)
     d.byte("valB", -1); d.word("valW", 32767)
     c.mov("al", d.m("valB")); assert signed(c.get("al"), 1) == -1
@@ -301,7 +301,7 @@ if __name__ == "__main__":
     for v in range(256):
         c.mov("al", v); c.inc("al"); a = c.get("al"); c.mov("bl", v); c.add("bl", 1); assert a == c.get("bl") == (v + 1) & 0xFF
         c.mov("al", v); c.dec("al"); a = c.get("al"); c.mov("bl", v); c.sub("bl", 1); assert a == c.get("bl") == (v - 1) & 0xFF
-    # p.9 Rval = -Xval + (Yval - Zval)
+    # Rval = -Xval + (Yval - Zval)
     c = CPU(); d = Data(c)
     d.dword("Rval", None); d.dword("Xval", 26); d.dword("Yval", 30); d.dword("Zval", 40)
     c.mov("eax", d.m("Xval")); c.neg("eax"); assert signed(c.get("eax"), 4) == -26

@@ -23,16 +23,15 @@ permalink: "/studies/database-design/code/44_university-mapping-practice_p1/"
 """UNIVERSITY 사상 연습 검증.
 
 문서: 44.UNIVERSITY 사상 연습 p1
-출처: 데이터베이스 설계 7 슬라이드 p.31 (UNIVERSITY ER, (min, max) 표기), 7 풀이 슬라이드 p.3~6 (단계별 답)
 실행: python3 44_university-mapping-practice_p1.py   (표준 라이브러리 sqlite3만 쓴다)
-하는 일: 강의의 사상 단계를 옮긴 사상기에 UNIVERSITY ER을 넣고, 단계마다의 결과를 풀이 슬라이드와 견준다.
+하는 일: 사상 절차의 단계를 옮긴 사상기에 UNIVERSITY ER을 넣고, 단계마다의 결과를 문서의 답과 견준다.
 확인하는 것:
   1. (min, max)에서 읽은 관계의 종류: 1:1이 2개(DEAN, CHAIR), 1:N이 6개, M:N이 1개(TAKES).
-  2. 1단계(풀이 p.3): 개체 릴레이션 6개. 복합 속성 SName, CRoom은 성분으로 들어간다.
-  3. 2단계(풀이 p.4): COLLEGE에 DeanId, DEPARTMENT에 ChairId와 CStartDate.
-  4. 3단계(풀이 p.5): Employed, Admined, Offered, Taught, Belongs, Dept가 max = 1인 쪽 릴레이션에 붙는다.
-  5. 4단계(풀이 p.6): TAKES(SId, SecId, Grade). 릴레이션은 모두 7개(개체 6 + 관계 1), 외래 키는 10개.
-  6. 외래 키 10개가 가리키는 곳이 풀이 p.5~6의 화살표와 같다.
+  2. 1단계: 개체 릴레이션 6개. 복합 속성 SName, CRoom은 성분으로 들어간다.
+  3. 2단계: COLLEGE에 DeanId, DEPARTMENT에 ChairId와 CStartDate.
+  4. 3단계: Employed, Admined, Offered, Taught, Belongs, Dept가 max = 1인 쪽 릴레이션에 붙는다.
+  5. 4단계: TAKES(SId, SecId, Grade). 릴레이션은 모두 7개(개체 6 + 관계 1), 외래 키는 10개.
+  6. 외래 키 10개가 가리키는 곳이 문서의 답과 같다.
   7. min이 1인 쪽의 외래 키 7개만 NOT NULL이다. STUDENT.Dept는 (0, 1)이라 NULL을 받는다.
   8. 만든 표가 SQLite에서 돌아간다. 지어낸 행으로 외래 키가 걸리는 것까지 본다.
   9. 변형 (가): HAS를 교차 참조로 옮기면 STUDENT에서 Dept가 빠지고 HAS(SId, DName)(기본 키 SId)가 생겨 릴레이션이 8개다.
@@ -41,7 +40,7 @@ permalink: "/studies/database-design/code/44_university-mapping-practice_p1/"
 import copy
 import sqlite3
 
-# ---- ER → 릴레이션 사상기 (강의 7 p.12의 순서). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- ER → 릴레이션 사상기 (사상 절차의 일곱 단계 순서). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 # ER 적는 법
 #   개체: {"name", "attrs": [단순 속성 이름 | (복합 속성 이름, [성분들])], "key": [기본 키로 고른 키 속성],
 #          "multivalued": [(릴레이션 이름, 값 속성, [외래 키 이름])], "derived": [유도 속성],
@@ -181,7 +180,7 @@ def build_sqlite(rels):
     return c
 # ---- 사상기 끝 ----
 
-UNIVERSITY_ER = {   # 7 p.31. 개체 DEPT의 릴레이션 이름은 풀이 슬라이드를 따라 DEPARTMENT로 적었다
+UNIVERSITY_ER = {   # 문서의 ER 그림. 개체 DEPT의 릴레이션 이름은 DEPARTMENT로 적는다
     "entities": [
         {"name": "COLLEGE", "key": ["CName"], "attrs": ["CName", "COffice", "CPhone"]},
         {"name": "INSTRUCTOR", "key": ["Id"], "attrs": ["Id", "Rank", "IName", "IOffice", "IPhone"]},
@@ -206,7 +205,7 @@ UNIVERSITY_ER = {   # 7 p.31. 개체 DEPT의 릴레이션 이름은 풀이 슬�
     ],
 }
 
-STEP1 = {   # 풀이 p.3
+STEP1 = {   # 1단계의 답
     "COLLEGE": ["CName", "COffice", "CPhone"],
     "INSTRUCTOR": ["Id", "Rank", "IName", "IOffice", "IPhone"],
     "DEPARTMENT": ["DName", "DCode", "DOffice", "DPhone"],
@@ -214,7 +213,7 @@ STEP1 = {   # 풀이 p.3
     "SECTION": ["SecId", "SecNo", "Sem", "Year", "Bldg", "RoomNo", "DaysTime"],
     "STUDENT": ["SId", "DOB", "FName", "MName", "LName", "Addr", "Phone", "Major"],
 }
-FINAL = {   # 풀이 p.6 (DEPARTMENT의 Chaired는 p.4의 ChairId와 같은 속성이다)
+FINAL = {   # 마지막 스키마
     "COLLEGE": STEP1["COLLEGE"] + ["DeanId"],
     "INSTRUCTOR": STEP1["INSTRUCTOR"] + ["Employed"],
     "DEPARTMENT": STEP1["DEPARTMENT"] + ["ChairId", "CStartDate", "Admined"],
@@ -223,7 +222,7 @@ FINAL = {   # 풀이 p.6 (DEPARTMENT의 Chaired는 p.4의 ChairId와 같은 속�
     "STUDENT": STEP1["STUDENT"] + ["Dept"],
     "TAKES": ["SId", "SecId", "Grade"],
 }
-ARROWS = {   # 풀이 p.5~6의 화살표: (릴레이션, 외래 키) → (가리키는 릴레이션, 기본 키)
+ARROWS = {   # 외래 키가 가리키는 곳: (릴레이션, 외래 키) → (가리키는 릴레이션, 기본 키)
     ("COLLEGE", "DeanId"): ("INSTRUCTOR", "Id"), ("DEPARTMENT", "ChairId"): ("INSTRUCTOR", "Id"),
     ("INSTRUCTOR", "Employed"): ("DEPARTMENT", "DName"), ("DEPARTMENT", "Admined"): ("COLLEGE", "CName"),
     ("COURSE", "Offered"): ("DEPARTMENT", "DName"), ("SECTION", "Taught"): ("INSTRUCTOR", "Id"),
@@ -245,26 +244,26 @@ def main():
     print("[OK] 관계 9개: 1:1 2개, 1:N 6개, M:N 1개")
 
     assert step["일반 개체"] == STEP1 and step["다치 속성"] == STEP1          # 약한 개체도 다치 속성도 없다
-    print("[OK] 1단계: 개체 릴레이션 6개가 풀이 p.3과 같다")
+    print("[OK] 1단계: 개체 릴레이션 6개가 문서의 답과 같다")
 
     s2 = step["1:1 관계"]
     assert s2["COLLEGE"] == STEP1["COLLEGE"] + ["DeanId"]
     assert s2["DEPARTMENT"] == STEP1["DEPARTMENT"] + ["ChairId", "CStartDate"]
     assert all(s2[n] == STEP1[n] for n in ("INSTRUCTOR", "COURSE", "SECTION", "STUDENT"))
-    print("[OK] 2단계: COLLEGE + DeanId, DEPARTMENT + ChairId, CStartDate (풀이 p.4)")
+    print("[OK] 2단계: COLLEGE + DeanId, DEPARTMENT + ChairId, CStartDate")
 
     s3 = step["1:N 관계"]
     assert s3 == {n: FINAL[n] for n in STEP1}
-    print("[OK] 3단계: Employed, Admined, Offered, Taught, Belongs, Dept (풀이 p.5)")
+    print("[OK] 3단계: Employed, Admined, Offered, Taught, Belongs, Dept")
 
     assert {n: r["attrs"] for n, r in rels.items()} == FINAL
     assert rels["TAKES"]["pk"] == ["SId", "SecId"] and len(rels) == 7
     assert step["n항 관계"] == step["M:N 관계"]
-    print("[OK] 4단계: TAKES(SId, SecId, Grade). 릴레이션 7개 (풀이 p.6)")
+    print("[OK] 4단계: TAKES(SId, SecId, Grade). 릴레이션 7개")
 
     arrows = {(n, cols[0]): (ref, refcols[0]) for n, r in rels.items() for cols, ref, refcols in r["fks"]}
     assert arrows == ARROWS and len(arrows) == 10
-    print("[OK] 외래 키 10개가 풀이 p.5~6의 화살표와 같다")
+    print("[OK] 외래 키 10개가 가리키는 곳이 문서의 답과 같다")
 
     fk_not_null = {(n, c) for n, r in rels.items() for cols, _, _ in r["fks"] for c in cols if c in r["not_null"]}
     assert fk_not_null == set(ARROWS) - {("STUDENT", "Dept")}

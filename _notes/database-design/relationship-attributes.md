@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Attributes of Relationship Types", "관계 속성", "Relationship Attribute", "속성 옮기기", "Attribute Migration", "Hours", "Start_date"]
 description: "\"김씨가 A 프로젝트에 주 10시간 일한다\"에서 10시간은 김씨의 것도 A 프로젝트의 것도 아니고, 김씨와 A라는 짝에 붙은 값이다. 이런 값은 사람이나 프로젝트가 아니라 둘을 잇는 줄에 적는다. 한쪽이 상대를 하나만 가질 수 있는 관계라면 그 값을 그쪽 대상으로 옮겨 적어도 뜻이…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/relationship-attributes/"
 
 ## 예시로 보기
 
-"직원이 프로젝트에 주당 몇 시간 일하는가"를 어디에 적을지 정해야 한다. 직원에 적어 보자. Smith는 1번 프로젝트에 32.5시간, 2번 프로젝트에 7.5시간 일한다[^6]. Smith의 "시간" 칸에 적을 값이 둘이다. 프로젝트에 적어도 마찬가지다. 1번 프로젝트에는 Smith의 32.5시간과 English의 20.0시간이 있다.
+"직원이 프로젝트에 주당 몇 시간 일하는가"를 어디에 적을지 정해야 한다. 직원에 적어 보자. Smith는 1번 프로젝트에 32.5시간, 2번 프로젝트에 7.5시간 일한다. Smith의 "시간" 칸에 적을 값이 둘이다. 프로젝트에 적어도 마찬가지다. 1번 프로젝트에는 Smith의 32.5시간과 English의 20.0시간이 있다.
 
 | 직원 | 프로젝트 | Hours |
 |---|---|---|
@@ -43,7 +43,7 @@ permalink: "/studies/database-design/relationship-attributes/"
 | English | 1 | 20.0 |
 | English | 2 | 20.0 |
 
-값은 (직원, 프로젝트) 짝마다 하나씩 정해진다. 짝은 곧 관계 인스턴스다. 그래서 Hours는 관계 타입 WORKS_ON에 붙인다[^1][^3].
+값은 (직원, 프로젝트) 짝마다 하나씩 정해진다. 짝은 곧 관계 인스턴스다. 그래서 Hours는 관계 타입 WORKS_ON에 붙인다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: COMPANY 자료의 WORKS_ON 16줄에서 Hours가 직원만으로도 프로젝트만으로도 정해지지 않고 짝으로는 정해지는 것, 1:1인 MANAGES의 시작 날짜는 양쪽 어느 개체로도 정해지는 것, 1:N에서는 N쪽 개체로만 정해지는 것 — [26_relationship-attributes_verify.py](/Hongs_Blog/studies/database-design/code/26_relationship-attributes_verify/)</div>
@@ -53,36 +53,36 @@ permalink: "/studies/database-design/relationship-attributes/"
 
 ## 정의
 
-관계 타입도 개체 타입처럼 속성을 가질 수 있다[^1]. 관계 타입의 속성 값은 관계 인스턴스마다 하나씩 붙는다. COMPANY의 예는 둘이다.
+관계 타입도 개체 타입처럼 속성을 가질 수 있다. 관계 타입의 속성 값은 관계 인스턴스마다 하나씩 붙는다. COMPANY의 예는 둘이다.
 
-- WORKS_ON의 Hours: 직원이 그 프로젝트에 주당 일하는 시간[^3]
-- MANAGES의 Start_date: 관리자가 그 부서를 맡기 시작한 날[^1]
+- WORKS_ON의 Hours: 직원이 그 프로젝트에 주당 일하는 시간
+- MANAGES의 Start_date: 관리자가 그 부서를 맡기 시작한 날
 
 ER 다이어그램에서는 속성 타원을 마름모에 선으로 붙인다.
 
-**옮길 수 있는 곳.** 관계 타입의 비율에 따라, 관계에 붙은 속성을 참여하는 개체 타입으로 옮겨 적을 수 있는지가 정해진다[^2][^3].
+**옮길 수 있는 곳.** 관계 타입의 비율에 따라, 관계에 붙은 속성을 참여하는 개체 타입으로 옮겨 적을 수 있는지가 정해진다.
 
 | 비율 | 옮길 수 있는 곳 | 예 | 까닭 |
 |---|---|---|---|
-| 1:1 | 양쪽 어느 개체 타입으로든 | MANAGES의 Start_date → DEPARTMENT 또는 EMPLOYEE[^4] | 양쪽 개체 모두 인스턴스 하나에만 낀다 |
+| 1:1 | 양쪽 어느 개체 타입으로든 | MANAGES의 Start_date → DEPARTMENT 또는 EMPLOYEE | 양쪽 개체 모두 인스턴스 하나에만 낀다 |
 | 1:N | N쪽 개체 타입으로만 | WORKS_FOR에 시작 날짜를 붙인다면 → EMPLOYEE | N쪽 개체는 인스턴스 하나에만 낀다 |
 | M:N | 옮길 수 없다 | WORKS_ON의 Hours | 양쪽 개체 모두 인스턴스 여러 개에 낀다 |
 
 까닭은 한 줄이다. 어떤 개체가 인스턴스 하나에만 낀다면, 그 인스턴스의 값을 "그 개체의 값"이라고 불러도 값이 하나로 정해진다[^s1]. 직원은 WORKS_FOR 인스턴스 하나에만 끼므로 "이 직원이 부서에서 일하기 시작한 날"은 직원마다 하나다. 부서는 인스턴스 여럿에 끼므로 "이 부서의 시작 날짜"는 직원 수만큼 있다.
 
-M:N 관계에서는 값이 참여 개체들의 짝으로만 정해진다. 슬라이드는 Hours를 "어느 참여 개체로도 옮길 수 없다"고 적었다[^3].
+M:N 관계에서는 값이 참여 개체들의 짝으로만 정해진다. 그래서 Hours는 어느 참여 개체로도 옮길 수 없다.
 
 ## 활용
 
-- 관계 타입에 속성이 꼭 있어야 하는가: 아니다. 짝에 붙는 값이 있을 때만 붙인다. COMPANY의 여섯 관계 타입 가운데 속성이 있는 것은 WORKS_ON과 MANAGES 둘뿐이다[^s2].
-- 옮길 수 있다고 해서 꼭 옮기는 것은 아니다. COMPANY의 그림은 Start_date를 MANAGES에 그대로 붙여 두었다[^5]. 표로 옮길 때 비로소 어느 표의 열이 될지 정한다. Start_date는 DEPARTMENT 표의 Mgr_start_date가 된다: [일대일 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-one-to-one-relationship/)
+- 관계 타입에 속성이 꼭 있어야 하는가: 아니다. 짝에 붙는 값이 있을 때만 붙인다. COMPANY의 여섯 관계 타입 가운데 속성이 있는 것은 WORKS_ON과 MANAGES 둘뿐이다.
+- 옮길 수 있다고 해서 꼭 옮기는 것은 아니다. COMPANY의 그림은 Start_date를 MANAGES에 그대로 붙여 두었다. 표로 옮길 때 비로소 어느 표의 열이 될지 정한다. Start_date는 DEPARTMENT 표의 Mgr_start_date가 된다: [일대일 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-one-to-one-relationship/)
 - M:N 관계의 속성은 표로 옮겨도 갈 곳이 관계를 옮긴 표뿐이다. Hours는 WORKS_ON 표의 열이 된다: [다대다·n항 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-many-to-many-relationship/)
 - 요구사항에서 알아보는 신호: "A가 B를 여럿 갖고, B마다 값이 하나씩 딸린다". 처음 설계에서 EMPLOYEE의 Works_on(Project, Hours)처럼 성분이 둘인 다치 속성으로 적히는 것이 이것이다: [ER 설계 절차](/Hongs_Blog/studies/database-design/er-design-steps/)
 
 ## 연결
 
 - 인스턴스 몇 개에 끼는지를 정하는 규칙: [카디널리티 비율](/Hongs_Blog/studies/database-design/cardinality-ratio/)
-- 개체 타입에 붙는 속성과 종류: [속성의 종류](/Hongs_Blog/studies/database-design/er-attribute-types/). 관계 타입의 속성도 복합이나 다치일 수 있다. 6주차 연습의 ACTS는 다치 속성 Quotes를, REVIEWS는 복합 속성 Rating을 갖는다: [ER 다이어그램 설계 연습](/Hongs_Blog/studies/database-design/er-diagram-design-practice/)
+- 개체 타입에 붙는 속성과 종류: [속성의 종류](/Hongs_Blog/studies/database-design/er-attribute-types/). 관계 타입의 속성도 복합이나 다치일 수 있다. 설계 연습의 MOVIE 문제에서 ACTS는 다치 속성 Quotes를, REVIEWS는 복합 속성 Rating을 갖는다: [ER 다이어그램 설계 연습](/Hongs_Blog/studies/database-design/er-diagram-design-practice/)
 
 ## 확인 문제
 
@@ -113,12 +113,5 @@ M:N 관계에서는 값이 참여 개체들의 짝으로만 정해진다. 슬라
 </details>
 
 
-[^1]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.18 (Attributes of Relationship Types: Hours for WORKS_ON, StartDate for MANAGES, "Does a Relationship type always need an attribute? If not, when does it need it?")
-[^2]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.19 (Attributes of 1:1 or 1:N Relationship Types: "can be migrated to one of the participating entity types", "N-side of the relationship")
-[^3]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.20 (Attributes of M:N Relationship Types: "Hours cannot be migrated into one of the participating entities"). 6주차 6-1 풀이 p.6에 같은 내용이 있다.
-[^4]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.25 (MANAGES: "This attribute can be assigned to one of the DEPARTMENT and EMPLOYEE entity type")
-[^5]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.34 (ER Diagram of COMPANY Database: MANAGES에 붙은 Start_date, WORKS_ON에 붙은 Hours)
-[^6]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.21 (COMPANY 상태의 WORKS_ON: 123456789가 1번에 32.5, 2번에 7.5, 453453453이 1번과 2번에 20.0)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "인스턴스 하나에만 끼는 개체로는 값이 하나로 정해진다"는 까닭 풀이와 표의 "까닭" 칸은 슬라이드에 없다. 슬라이드 p.19~20의 규칙을 풀어 쓴 것이고, 검증 코드로 확인했다. 1:N의 시작 날짜 값은 검증 코드에서 지어낸 것이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.18의 물음("관계 타입에 속성이 늘 필요한가")에는 답이 없다. 답은 5주차 p.34의 COMPANY 그림에서 속성이 붙은 마름모가 둘뿐인 것을 근거로 썼다. 요구사항에서 알아보는 신호와 카드 C1~C3도 원본에 없다.
+[^s1]: 1:N의 시작 날짜 값은 검증 코드에서 지어낸 것이다.
 {% endraw %}

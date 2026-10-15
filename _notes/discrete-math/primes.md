@@ -154,7 +154,7 @@ $$360 = 10 \times 36$$에서 출발해 더 쪼갤 수 없을 때까지 나눈 �
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(소수, 산술의 기본정리). Rosen, *Discrete Mathematics and Its Applications* 7판, 4장(소수의 무한성, 에라토스테네스의 체, 소수 정리 소개).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 체의 $$O(n\log\log n)$$과 소수 정리는 증명하지 않고 인용했다(소수 정리는 해석적 정수론의 결과). 해시 칸 예와 $$\pi(10^6)$$은 28_primes_verify.py에서 계산했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [28_primes_plot.py](/Hongs_Blog/studies/discrete-math/code/28_primes_plot/)로 그렸고, $$\pi(10^6) = 78{,}498$$, $$10^6/\ln 10^6$$의 정수 부분 72,382, 비 약 1.08을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 $$360 = 10 \times 36$$ 분해를 인수 나무로 그렸다.
+[^s1]: 체의 $$O(n\log\log n)$$과 소수 정리는 증명하지 않고 인용했다(소수 정리는 해석적 정수론의 결과). 해시 칸 예와 $$\pi(10^6)$$은 28_primes_verify.py에서 계산했다.
+[^s2]: [28_primes_plot.py](/Hongs_Blog/studies/discrete-math/code/28_primes_plot/)로 그렸고, $$\pi(10^6) = 78{,}498$$, $$10^6/\ln 10^6$$의 정수 부분 72,382, 비 약 1.08을 같은 코드로 확인했다.
+[^s3]: '예시로 보기'의 $$360 = 10 \times 36$$ 분해를 인수 나무로 그렸다.
 {% endraw %}

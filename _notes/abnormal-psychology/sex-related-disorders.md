@@ -41,7 +41,7 @@ permalink: "/studies/abnormal-psychology/sex-related-disorders/"
 | "낯선 사람에게 몸을 노출하고 싶은 충동을 억누르지 못해 체포되었다" | 성적 흥분의 대상과 방식 | [성도착장애](/Hongs_Blog/studies/abnormal-psychology/paraphilic-disorders/) |
 | "여자로 태어났지만 나는 남자이고, 이 몸이 너무 괴롭다" | 할당된 성별과 경험하는 성별의 불일치 | [성별 불쾌감](/Hongs_Blog/studies/abnormal-psychology/gender-dysphoria/) |
 
-## 정의[^1]
+## 정의
 
 | 용어 | 뜻 |
 |---|---|
@@ -71,7 +71,6 @@ permalink: "/studies/abnormal-psychology/sex-related-disorders/"
 
 </details>
 
-[^1]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.2
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 호소는 세 무리를 가르려고 만든 가상 예다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR은 성기능부전, 성별 불쾌감, 변태성욕장애를 각각 독립된 장으로 둔다.
+[^s1]: 세 호소는 세 무리를 가르려고 만든 가상 예다.
+[^s2]: DSM-5-TR은 성기능부전, 성별 불쾌감, 변태성욕장애를 각각 독립된 장으로 둔다.
 {% endraw %}

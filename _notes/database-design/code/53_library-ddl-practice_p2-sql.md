@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/53_library-ddl-practice_p2-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 53.LIBRARY 스키마 DDL 연습 p2를 PostgreSQL 16에서 돌린다.
---   풀이 슬라이드(10-11-SQL-Solutions p.17~20)에 적힌 그대로는 세 군데에서 멈춘다.
+--   틀리기 쉬운 판은 세 군데에서 멈춘다.
 --     1. BOOK을 PUBLISHER보다 먼저 만든다 -> 아직 없는 표를 가리킨다 (42P01). SQLite는 이것을 받는다
 --     2. BOOK_COPIES와 BOOK_LOANS: REFERENCES 줄 끝에 쉼표가 있고 동작이 다음 줄에 있다 -> 구문 오류 (42601)
 --     3. ON DELETE REJECT -> 구문 오류 (42601)
@@ -43,7 +43,7 @@ BEGIN
   RETURN 'OK';
 END $f$;
 
--- 1. 슬라이드 순서대로 BOOK부터
+-- 1. 틀리기 쉬운 순서: BOOK부터
 DO $$ BEGIN
   ASSERT err_of($q$CREATE TABLE BOOK (
       Book_id CHAR(15) NOT NULL, Title VARCHAR(100) NOT NULL, Publisher_name VARCHAR(50),
@@ -70,7 +70,7 @@ CREATE TABLE BOOK_AUTHORS (
   PRIMARY KEY (Book_id, Author_name),
   FOREIGN KEY (Book_id) REFERENCES BOOK(Book_id) ON DELETE CASCADE ON UPDATE CASCADE);
 
--- 2. 슬라이드 p.18의 BOOK_COPIES: 쉼표가 동작 앞에 있다
+-- 2. 틀리기 쉬운 BOOK_COPIES: 쉼표가 동작 앞에 있다
 DO $$ BEGIN
   ASSERT err_of($q$CREATE TABLE BOOK_COPIES (
       Book_id CHAR(15) NOT NULL, Branch_id INT NOT NULL, No_of_copies INT NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE BOOK_COPIES (
   FOREIGN KEY (Book_id) REFERENCES BOOK(Book_id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (Branch_id) REFERENCES LIBRARY_BRANCH(Branch_id) ON DELETE CASCADE ON UPDATE CASCADE);
 
--- 3. 슬라이드 p.19의 BOOK_LOANS: 쉼표를 바로잡아도 ON DELETE REJECT에서 멈춘다
+-- 3. 틀리기 쉬운 BOOK_LOANS: 쉼표를 바로잡아도 ON DELETE REJECT에서 멈춘다
 DO $$ BEGIN
   ASSERT err_of($q$CREATE TABLE BOOK_LOANS (
       Book_id CHAR(15) NOT NULL, Branch_id INT NOT NULL, Card_no INT NOT NULL, Date_out DATE NOT NULL, Due_date DATE NOT NULL,
@@ -111,7 +111,7 @@ DO $$ BEGIN
                  'book_loans>book:ac', 'book_loans>borrower:ac', 'book_loans>library_branch:cc'], '외래 키 일곱 개의 동작';
 END $$;
 
--- 예시 행 (슬라이드에는 행이 없다)
+-- 예시 행 (동작을 보려고 만든 것이다)
 INSERT INTO PUBLISHER VALUES ('Pearson', 'New Jersey', '111'), ('MIT Press', 'Massachusetts', '222');
 INSERT INTO LIBRARY_BRANCH VALUES (1, 'Central', 'Seoul'), (2, 'East', 'Seoul');
 INSERT INTO BORROWER VALUES (100, 'Kim', 'Seoul', '010'), (200, 'Lee', 'Seoul', '011');

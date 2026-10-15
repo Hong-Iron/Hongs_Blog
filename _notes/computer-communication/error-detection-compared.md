@@ -68,7 +68,7 @@ permalink: "/studies/computer-communication/error-detection-compared/"
 | 놓치는 대표 오류 | 2비트 | 직사각형 4비트 | 워드 순서 바뀜, 같은 자리 상쇄 | $$C(x)$$의 배수인 오류 |
 | 잘 맞는 곳 | 아주 짧은 데이터 | 오류를 고쳐야 할 때 | IP·TCP(소프트웨어) | 링크 계층(하드웨어) |
 
-CRC의 검출율이 매우 높고 하드웨어로 만들 수 있다는 점은 슬라이드 p.53, p.57의 결론이다[^1][^2]. 필기도 체크섬은 IP/TCP에서, CRC는 NIC 안의 XOR 연산으로 쓴다고 정리했다[^3].
+CRC는 검출율이 매우 높고 하드웨어로 만들 수 있다. 그래서 체크섬은 IP·TCP에서 소프트웨어로 계산하고, CRC는 네트워크 어댑터(NIC) 안의 XOR 회로로 계산한다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 표의 놓친 횟수, CRC-16의 16비트 이내 버스트 3,000개 모두 검출, 체크섬이 놓치는 상쇄 예 — [51_error-detection-compared_verify.py](/Hongs_Blog/studies/computer-communication/code/51_error-detection-compared_verify/). 아래 4바이트 예의 값, 실험의 2비트·4비트 나눔, 확률 계산, 그림의 값 — [51_error-detection-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/51_error-detection-compared_plot/)</div>
@@ -180,10 +180,7 @@ CRC가 앞서는 또 한 가지는 덩어리 오류다. 선에 잠깐 큰 잡음
 
 </details>
 
-[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 53 "CRC의 성능"
-[^2]: 같은 자료, 슬라이드 57 "CRC에 대해 간단히 설명하시오"
-[^3]: 컴퓨터 통신 6회 필기 「6주차」, 89행, 106행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 상황 문제, 놓친 횟수 실험, 표의 "늘 잡는 오류"와 "놓치는 대표 오류", 해밍·리드-솔로몬과 암호학적 해시, 카드는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 4바이트 `F0 F0 12 34`에 네 방식을 적용한 값(패리티 1, 2차원 패리티 가로 0, 0, 0, 1·세로 `00100110`·모서리 1, 체크섬 `0xFCDA`, CRC-16 `0x2053`), 덧붙는 비트 41개와 비율, 실험 절차와 읽는 법, 체크섬이 놓친 132번의 2비트 124번·4비트 8번 나눔과 4비트 8번의 모양, 2비트 오류를 놓칠 확률 $$15/255 \times 1/2$$, 직사각형 13,888가지와 확률, CRC-16이 256비트에서 1·2·3비트 오류를 모두 잡고 놓치는 4비트 모양이 14,995가지라는 전수 계산, 젯수 모양 오류, 10비트 덩어리 예는 원본에 없다. 모두 [51_error-detection-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/51_error-detection-compared_plot/)의 assert로 확인했다. CRC-16 값은 표준마다 초깃값과 비트 순서가 달라질 수 있어 이 코드의 방식으로만 적었다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [51_error-detection-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/51_error-detection-compared_plot/)로 그렸고, 워드 `0xF0F0 → 0xF0F4`, `0x1234 → 0x1230`에서 체크섬이 `0xFCDA` 그대로인 것, 오류 모양의 두 1이 16칸 떨어진 것, CRC-16 나머지 `0x0048`을 같은 코드로 확인했다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: 모두 [51_error-detection-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/51_error-detection-compared_plot/)의 assert로 확인했다. CRC-16 값은 표준마다 초깃값과 비트 순서가 달라질 수 있어 이 코드의 방식으로만 적었다.
+[^s3]: [51_error-detection-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/51_error-detection-compared_plot/)로 그렸고, 워드 `0xF0F0 → 0xF0F4`, `0x1234 → 0x1230`에서 체크섬이 `0xFCDA` 그대로인 것, 오류 모양의 두 1이 16칸 떨어진 것, CRC-16 나머지 `0x0048`을 같은 코드로 확인했다.
 {% endraw %}

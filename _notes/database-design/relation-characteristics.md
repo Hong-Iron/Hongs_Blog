@@ -34,20 +34,20 @@ permalink: "/studies/database-design/relation-characteristics/"
 
 ## 예시로 보기
 
-엑셀 표에서는 "세 번째 줄"이라는 말이 통한다. 릴레이션에서는 통하지 않는다. 같은 학생 다섯 명을 두 가지 순서로 적은 표가 있다[^1].
+엑셀 표에서는 "세 번째 줄"이라는 말이 통한다. 릴레이션에서는 통하지 않는다. 같은 학생 다섯 명을 두 가지 순서로 적은 표가 있다.
 
 | 순서 1 | 순서 2 |
 |---|---|
 | Bayer, Kim, Davidson, Panchal, Benson | Davidson, Benson, Panchal, Kim, Bayer |
 
-두 표는 같은 릴레이션이다. 어느 순서가 더 맞는 것도 아니다. 릴레이션은 튜플의 집합이고, 집합의 원소에는 순서가 없기 때문이다. 디스크에는 어떤 순서로든 저장되고 화면에도 위에서 아래로 그려지지만, 그 순서는 릴레이션의 정의에 들어 있지 않다[^1].
+두 표는 같은 릴레이션이다. 어느 순서가 더 맞는 것도 아니다. 릴레이션은 튜플의 집합이고, 집합의 원소에는 순서가 없기 때문이다. 디스크에는 어떤 순서로든 저장되고 화면에도 위에서 아래로 그려지지만, 그 순서는 릴레이션의 정의에 들어 있지 않다.
 
-칸의 순서는 어떨까? Davidson의 튜플을 "속성 이름과 값의 짝"으로 두 번 적는다[^2].
+칸의 순서는 어떨까? Davidson의 튜플을 "속성 이름과 값의 짝"으로 두 번 적는다.
 
 - ⟨(Name, Dick Davidson), (Ssn, 422-11-2320), (Home_phone, NULL), (Address, 3452 Elgin Road), (Office_phone, (817)749-1253), (Age, 25), (Gpa, 3.53)⟩
 - ⟨(Address, 3452 Elgin Road), (Name, Dick Davidson), (Ssn, 422-11-2320), (Age, 25), (Office_phone, (817)749-1253), (Gpa, 3.53), (Home_phone, NULL)⟩
 
-짝의 순서만 다르고 짝은 같다. 그래서 같은 튜플이다. 반대로 값만 자리를 바꿔 Age 칸에 3.53을, Gpa 칸에 25를 넣으면 짝이 달라져 다른 튜플이 된다[^s1].
+짝의 순서만 다르고 짝은 같다. 그래서 같은 튜플이다. 반대로 값만 자리를 바꿔 Age 칸에 3.53을, Gpa 칸에 25를 넣으면 짝이 달라져 다른 튜플이 된다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 두 순서가 집합으로 같음, 짝의 순서를 바꿔도 같은 튜플이고 짝이 어긋나면 다른 튜플, 부서 위치 5행, NULL 4개와 `= NULL` 0행·`IS NULL` 3행, 키가 없는 SQL 표에 같은 행 두 번 — [33_relation-characteristics_verify.py](/Hongs_Blog/studies/database-design/code/33_relation-characteristics_verify/)</div>
@@ -57,18 +57,18 @@ permalink: "/studies/database-design/relation-characteristics/"
 
 ## 네 가지 특성
 
-**1. 튜플에는 순서가 없다.** 릴레이션은 튜플의 집합으로 정의한다. 그래서 튜플을 늘어놓는 순서는 릴레이션의 일부가 아니다[^1].
+**1. 튜플에는 순서가 없다.** 릴레이션은 튜플의 집합으로 정의한다. 그래서 튜플을 늘어놓는 순서는 릴레이션의 일부가 아니다.
 
-**2. 속성의 순서는 짝만 맞으면 중요하지 않다.** 튜플은 정의로는 값 $$n$$개를 순서대로 늘어놓은 목록이다. 그래도 어느 값이 어느 속성의 것인지만 지켜지면 속성을 적는 순서는 그리 중요하지 않다[^2].
+**2. 속성의 순서는 짝만 맞으면 중요하지 않다.** 튜플은 정의로는 값 $$n$$개를 순서대로 늘어놓은 목록이다. 그래도 어느 값이 어느 속성의 것인지만 지켜지면 속성을 적는 순서는 그리 중요하지 않다.
 
-**3. 값은 더 쪼갤 수 없는 값 하나다.** 이런 값을 원자값이라 부른다. 그래서 여러 부분으로 된 속성(복합 속성)과 값이 여럿인 속성(다치 속성)은 그대로는 들어가지 못한다[^3].
+**3. 값은 더 쪼갤 수 없는 값 하나다.** 이런 값을 원자값이라 부른다. 그래서 여러 부분으로 된 속성(복합 속성)과 값이 여럿인 속성(다치 속성)은 그대로는 들어가지 못한다.
 
 - 복합 속성은 가장 작은 성분만 속성으로 둔다. 이름 Name(Fname, Minit, Lname)은 Fname, Minit, Lname 세 속성이 된다.
 - 다치 속성은 릴레이션을 따로 만든다. 5번 부서의 위치는 Bellaire, Sugarland, Houston 세 곳이다. 이 셋을 한 칸에 넣지 않고, DEPT_LOCATIONS(Dnumber, Dlocation)에 (5, Bellaire), (5, Sugarland), (5, Houston) 세 줄로 적는다: [다치 속성의 사상](/Hongs_Blog/studies/database-design/mapping-multivalued-attributes/)
 
-칸마다 값이 하나뿐인 납작한 표만 쓴다는 뜻에서 이 모델을 평면 관계형 모델(flat relational model)이라 부른다[^3].
+칸마다 값이 하나뿐인 납작한 표만 쓴다는 뜻에서 이 모델을 평면 관계형 모델(flat relational model)이라 부른다.
 
-**4. 값이 없으면 NULL을 쓴다.** NULL은 그 튜플에서 값을 모르거나 그 속성이 그 튜플에 맞지 않을 때 쓴다. 뜻이 여럿이다: 모른다(unknown), 있지만 얻을 수 없다(unavailable), 정해지지 않았다(undefined)[^3]. STUDENT 표에는 NULL이 네 칸 있다. Davidson의 Home_phone 한 칸과 Bayer, Kim, Benson의 Office_phone 세 칸이다. 학생에게는 사무실이 없을 수 있으니 Office_phone의 NULL은 "맞지 않는다"로, Home_phone의 NULL은 "모른다"로 읽을 수 있다. 표만 보고는 어느 뜻인지 가를 수 없다[^s2].
+**4. 값이 없으면 NULL을 쓴다.** NULL은 그 튜플에서 값을 모르거나 그 속성이 그 튜플에 맞지 않을 때 쓴다. 뜻이 여럿이다: 모른다(unknown), 있지만 얻을 수 없다(unavailable), 정해지지 않았다(undefined). STUDENT 표에는 NULL이 네 칸 있다. Davidson의 Home_phone 한 칸과 Bayer, Kim, Benson의 Office_phone 세 칸이다. 학생에게는 사무실이 없을 수 있으니 Office_phone의 NULL은 "맞지 않는다"로, Home_phone의 NULL은 "모른다"로 읽을 수 있다. 표만 보고는 어느 뜻인지 가를 수 없다[^s2].
 
 ## 활용
 
@@ -110,10 +110,6 @@ permalink: "/studies/database-design/relation-characteristics/"
 </details>
 
 
-[^1]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.12 (Ordering of Tuples in a Relation, 두 순서의 표). 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.5
-[^2]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.13 (Ordering of Values within a Tuple, 두 줄로 적은 Davidson의 튜플)
-[^3]: 같은 자료, p.14 (Values and NULLs in tuples, flat relational model)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 값만 자리를 바꾸면 다른 튜플이 된다는 반례와 카드 C1의 (다)는 원본에 없다. 슬라이드 p.13의 "As long as the correspondence between attributes and values maintained"를 뒤집어 만들었고 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 NULL을 "맞지 않는다"와 "모른다"로 읽는 풀이는 슬라이드에 없다. 슬라이드 p.14는 두 칸에 상자만 쳐 두었다. Elmasri & Navathe, *Fundamentals of Database Systems* 7판 5.1절이 같은 표를 이렇게 설명한다 [확인필요: 판과 절 번호].
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `= NULL`과 `IS NULL`의 결과, SQL 표가 같은 줄을 두 번 받는 것은 이 쪽의 슬라이드에는 없다. 링크한 두 문서가 다루는 내용이고 SQLite로 실행해 확인했다.
+[^s2]: Elmasri & Navathe, *Fundamentals of Database Systems* 7판 5.1절이 같은 표를 이렇게 설명한다 [확인필요: 판과 절 번호].
+[^s3]: 링크한 두 문서가 다루는 내용이고 SQLite로 실행해 확인했다.
 {% endraw %}

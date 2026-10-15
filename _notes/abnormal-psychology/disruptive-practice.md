@@ -24,7 +24,7 @@ permalink: "/studies/abnormal-psychology/disruptive-practice/"
 {% raw %}
 사용 개념: [파괴적, 충동조절 및 품행장애](/Hongs_Blog/studies/abnormal-psychology/disruptive-impulse-conduct/), [적대적 반항장애](/Hongs_Blog/studies/abnormal-psychology/odd/), [간헐적 폭발장애](/Hongs_Blog/studies/abnormal-psychology/intermittent-explosive/), [품행장애](/Hongs_Blog/studies/abnormal-psychology/conduct-disorder/), [적대적 반항장애와 품행장애 비교](/Hongs_Blog/studies/abnormal-psychology/odd-vs-cd/), [병적 방화](/Hongs_Blog/studies/abnormal-psychology/pyromania/), [병적 도벽](/Hongs_Blog/studies/abnormal-psychology/kleptomania/)
 
-모든 사례는 가상이다[^s1]. "참지 못하고 남에게 해를 끼치는" 사례는 다섯 하위목표로 푼다. 이 범주는 행동의 겉모습보다 "누구를 향하는가"와 "계획이나 목적이 있는가"로 갈린다.
+모든 사례는 가상이다. "참지 못하고 남에게 해를 끼치는" 사례는 다섯 하위목표로 푼다. 이 범주는 행동의 겉모습보다 "누구를 향하는가"와 "계획이나 목적이 있는가"로 갈린다.
 
 1. *행동:* 무엇을 하는가. 반항, 공격 폭발, 권리 침해, 방화, 절도.
 2. *대상:* 누구를, 무엇을 향하는가. 권위자, 가까운 사람, 사람·동물·재산, 불, 물건.
@@ -110,7 +110,4 @@ permalink: "/studies/abnormal-psychology/disruptive-practice/"
 품행장애의 영역(사기·절도, 사람과 동물에 대한 공격성, 중대한 규칙 위반)이 3개 이상 나타나므로 품행장애를 진단한다. 적대적 반항장애의 기준도 여전히 채우면 두 장애를 함께 진단할 수 있다. ADHD → 적대적 반항장애 → 품행장애로 이어지는 발달경로의 한 예이므로, ADHD 여부를 평가하고 부모·학교를 아우르는 개입으로 넓힌다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf의 장애별 설명(p.4, 6~12, 14~18, 20~29, 38~41)을 적용한 가상 사례다.
 {% endraw %}

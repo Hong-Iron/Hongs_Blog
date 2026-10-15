@@ -22,14 +22,14 @@ permalink: "/studies/database-design/code/52_update-constraint-violations_verify
 ```python
 # 52.갱신 연산과 제약 위반 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 52_update-constraint-violations_verify.py)
 # 확인하는 것
-#   1. 슬라이드 9 p.25(삽입 넷), p.27(삭제 셋), p.29(수정 넷)의 결과
+#   1. 문서의 삽입 넷, 삭제 셋, 수정 넷의 결과
 #   2. 문서의 판정표: 삽입은 키·개체 무결성·참조 무결성을 모두 어길 수 있고, 삭제는 참조 무결성만 어긴다.
 #      기본 키도 외래 키도 아닌 열을 고치면 세 제약은 그대로다
 #   3. 제약을 하나하나 손으로 검사하는 파이썬 검사기와 SQLite의 판정(받는다/막는다)이 무작위 연산 900개에서 일치한다
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -85,7 +85,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -211,7 +211,7 @@ if __name__ == "__main__":
     db = as_dicts(STATE0)
     assert violated(db) == set()                                    # 처음 상태는 어떤 제약도 어기지 않는다
 
-    # --- 1. 슬라이드 9 p.25: 삽입 넷
+    # --- 1. 문서의 예: 삽입 넷
     f, e = judge(c, db, ('insert', 'EMPLOYEE', ('Cecilia', 'F', 'Kolonsky', None, '1960-04-05', '6357 Windy Lane, Katy, TX', 'F', 28000, None, 4)))
     assert f == {'개체 무결성'} and e == 'NOT NULL constraint failed: EMPLOYEE.Ssn'
     f, e = judge(c, db, ('insert', 'EMPLOYEE', ('Alicia', 'J', 'Zelaya', '999887777', '1960-04-05', '6357 Windy Lane, Katy, TX', 'F', 28000, '987654321', 4)))
@@ -221,7 +221,7 @@ if __name__ == "__main__":
     f, e = judge(c, db, ('insert', 'EMPLOYEE', ('Cecilia', 'F', 'Kolonsky', '677678989', '1960-04-05', '6357 Windy Lane, Katy, TX', 'F', 28000, None, 4)))
     assert f == set() and e is None
 
-    # --- 슬라이드 9 p.27: 삭제 셋
+    # --- 문서의 예: 삭제 셋
     f, e = judge(c, db, ('delete', 'WORKS_ON', {'Essn': '999887777', 'Pno': 10}))
     assert f == set()
     f, e = judge(c, db, ('delete', 'EMPLOYEE', {'Ssn': '999887777'}))
@@ -239,7 +239,7 @@ if __name__ == "__main__":
     assert referencing('333445555') == (3, 1, 4, 3)                 # Wong: 네 표의 11행이 가리킨다 ("even worse")
     assert referencing('987654321') == (2, 1, 2, 1)                 # Wallace: 네 표의 6행
 
-    # --- 슬라이드 9 p.29: 수정 넷
+    # --- 문서의 예: 수정 넷
     f, e = judge(c, db, ('update', 'EMPLOYEE', {'Ssn': '999887777'}, {'Salary': 28000}))
     assert f == set()
     f, e = judge(c, db, ('update', 'EMPLOYEE', {'Ssn': '999887777'}, {'Dno': 1}))

@@ -195,5 +195,5 @@ $$V = \{(x_1, x_2, x_3, x_4) : x_1 + x_2 = 0,\ x_3 = 2x_4\}$$의 기저와 차�
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.1절 "Spaces of Vectors"(부분공간), 3.4절 "Independence, Basis and Dimension"(기저, 차원, 모든 기저의 크기가 같음).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [10_basis-dimension_plot.py](/Hongs_Blog/studies/linear-algebra/code/10_basis-dimension_plot/)로 그렸고, $$2\mathbf{b}_1 + 3\mathbf{b}_2 = (2, 3, -5)$$와 그 성분 합이 0인 것을 같은 코드로 확인했다.
+[^s1]: [10_basis-dimension_plot.py](/Hongs_Blog/studies/linear-algebra/code/10_basis-dimension_plot/)로 그렸고, $$2\mathbf{b}_1 + 3\mathbf{b}_2 = (2, 3, -5)$$와 그 성분 합이 0인 것을 같은 코드로 확인했다.
 {% endraw %}

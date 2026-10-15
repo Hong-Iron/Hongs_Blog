@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Generics", "Generic", "제네릭 타입", "Generic Type", "제네릭 메서드", "Generic Method", "타입 파라미터", "Type Parameter", "타입 매개변수"]
 description: "무엇을 담을지 비워 둔 상자 설계도다. 설계도에는 \"여기에 들어갈 것의 종류\"를 빈칸으로 두고, 상자를 실제로 쓸 때 \"이 상자는 글자용\"처럼 빈칸을 채운다. 설계도 하나로 글자 상자도 숫자 상자도 만들 수 있고, 글자 상자에 숫자를 넣으려 하면 프로그램을 돌려 보기도 전에 번역 …"
@@ -48,7 +48,7 @@ String str = (String) box.content;      // 문자열인 줄 알고 꺼냈다
 
 이 코드는 번역된다. 그리고 실행하면 마지막 줄에서 `ClassCastException`으로 끝난다. 꺼낼 때마다 [강제 변환](/Hongs_Blog/studies/java/java-casting/)을 써야 하고, 잘못 꺼내도 번역기는 모른다.
 
-내용물의 타입 자리를 빈칸 `T`로 둔다[^1].
+내용물의 타입 자리를 빈칸 `T`로 둔다.
 
 ```java
 public static class Box<T> {
@@ -71,7 +71,7 @@ error: incompatible types: int cannot be converted to String
 
 ## 정의
 
-**제네릭**은 아직 정하지 않은 타입을 파라미터로 두고, 실제로 쓸 때 그 파라미터를 구체적인 타입으로 바꿔 넣는 기능이다. `<T>`는 `T`가 타입 파라미터라는 표시다. 타입이 필요한 자리에 `T`를 쓸 수 있다는 뜻이다[^2].
+**제네릭**은 아직 정하지 않은 타입을 파라미터로 두고, 실제로 쓸 때 그 파라미터를 구체적인 타입으로 바꿔 넣는 기능이다. `<T>`는 `T`가 타입 파라미터라는 표시다. 타입이 필요한 자리에 `T`를 쓸 수 있다는 뜻이다.
 
 메서드의 매개변수와 견주면 이해가 쉽다. 매개변수는 값이 들어올 빈칸이고, 타입 파라미터는 타입이 들어올 빈칸이다[^s2].
 
@@ -83,9 +83,9 @@ error: incompatible types: int cannot be converted to String
 
 ### 제네릭 타입
 
-**제네릭 타입**은 정하지 않은 타입을 파라미터로 가진 클래스와 인터페이스다. 선언할 때 이름 뒤에 `< >`를 쓰고 그 사이에 타입 파라미터를 둔다. 타입 파라미터는 보통 대문자 한 글자로 쓴다. 밖에서 제네릭 타입을 쓸 때는 타입 파라미터 자리에 구체적인 타입을 적어야 한다. 적지 않으면 `Object` 타입이 쓰인다[^3].
+**제네릭 타입**은 정하지 않은 타입을 파라미터로 가진 클래스와 인터페이스다. 선언할 때 이름 뒤에 `< >`를 쓰고 그 사이에 타입 파라미터를 둔다. 타입 파라미터는 보통 대문자 한 글자로 쓴다. 밖에서 제네릭 타입을 쓸 때는 타입 파라미터 자리에 구체적인 타입을 적어야 한다. 적지 않으면 `Object` 타입이 쓰인다.
 
-타입 파라미터는 쉼표로 나눠 여러 개 둘 수 있다[^4].
+타입 파라미터는 쉼표로 나눠 여러 개 둘 수 있다.
 
 ```java
 public static class Product<K, M> {
@@ -122,7 +122,7 @@ String carModel = product2.getModel();
 
 ### 제네릭 메서드
 
-**제네릭 메서드**는 타입 파라미터를 가진 메서드다. 타입 파라미터를 메서드 선언에서 정한다. 돌려주는 타입 앞에 `< >`를 써서 타입 파라미터를 정하고, 그것을 돌려주는 타입과 매개변수 타입에 쓴다[^5].
+**제네릭 메서드**는 타입 파라미터를 가진 메서드다. 타입 파라미터를 메서드 선언에서 정한다. 돌려주는 타입 앞에 `< >`를 써서 타입 파라미터를 정하고, 그것을 돌려주는 타입과 매개변수 타입에 쓴다.
 
 ```java
 public <A, B, …> 리턴타입 메서드이름(매개변수, …) { … }
@@ -139,9 +139,9 @@ Box<Integer> box1 = boxing(100);          // T는 Integer
 Box<String>  box2 = boxing("안녕하세요");   // T는 String
 ```
 
-부를 때 타입을 따로 적지 않는다. 번역기가 넘긴 인자의 타입을 보고 `T`를 구체적인 타입으로 바꾼다[^6]. `100`은 `int`인데 `T`가 `Integer`가 됐다. 타입 파라미터 자리에는 객체의 타입만 올 수 있어서, 번역기가 `int` 값을 `Integer` 객체로 감싸 넘긴다[^s3].
+부를 때 타입을 따로 적지 않는다. 번역기가 넘긴 인자의 타입을 보고 `T`를 구체적인 타입으로 바꾼다. `100`은 `int`인데 `T`가 `Integer`가 됐다. 타입 파라미터 자리에는 객체의 타입만 올 수 있어서, 번역기가 `int` 값을 `Integer` 객체로 감싸 넘긴다[^s3].
 
-메서드의 타입 파라미터는 클래스의 타입 파라미터와 따로 논다. 아래 클래스에서 `genericMethod1`의 `<E>`는 클래스의 `E`와 글자만 같고 다른 빈칸이다[^7].
+메서드의 타입 파라미터는 클래스의 타입 파라미터와 따로 논다. 아래 클래스에서 `genericMethod1`의 `<E>`는 클래스의 `E`와 글자만 같고 다른 빈칸이다.
 
 ```java
 class ClassName<E> {
@@ -183,7 +183,7 @@ java.lang.String
 | 3 | `a.genericMethod1(10)` | 메서드의 `E` = `Integer` (인자 `10`을 보고 정했다) | `java.lang.Integer` |
 | 4 | `b.genericMethod2("10")` | 메서드의 `T` = `String` | `java.lang.String` |
 
-셋째 줄이 핵심이다. `a`는 `ClassName<String>`인데 `genericMethod1`에 정수를 넘겨도 번역되고 `Integer`가 나온다. 메서드의 `<E>`가 클래스의 `E`를 가렸기 때문이다. 반대로 `a.setElement(10)`은 번역되지 않는다. `setElement`는 클래스의 `E`(여기서는 `String`)를 쓴다[^7][^s3].
+셋째 줄이 핵심이다. `a`는 `ClassName<String>`인데 `genericMethod1`에 정수를 넘겨도 번역되고 `Integer`가 나온다. 메서드의 `<E>`가 클래스의 `E`를 가렸기 때문이다. 반대로 `a.setElement(10)`은 번역되지 않는다. `setElement`는 클래스의 `E`(여기서는 `String`)를 쓴다[^s3].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: `ObjectBox`의 `ClassCastException`, `Box`와 `Product` 예, `boxing`의 타입, 위 네 줄 출력, 타입을 안 적은 `Box`의 내용물이 `Object`로 나오는 것, 카드 C2의 답 — [38_java-generics_impl.java](/Hongs_Blog/studies/java/code/38_java-generics_impl/)</div>
@@ -195,7 +195,7 @@ java.lang.String
 
 - 타입 파라미터 자리에 기본 타입은 못 쓴다. `Box<int>`는 `unexpected type … required: reference, found: int` 오류가 난다. `Box<Integer>`, `Box<Double>`처럼 감싸는 클래스를 쓴다[^s3].
 - 타입을 안 적고 `Box box = new Box();`처럼 쓰면 번역은 되지만 `content`가 `Object`로 다뤄져서 `ObjectBox`와 같은 처지가 된다. 번역기가 경고(`found raw type`)를 낸다. 새 코드에서는 늘 타입을 적는다[^s3].
-- 타입 파라미터 이름은 관례로 `T`(타입), `E`(원소), `K`(키), `V`(값)를 많이 쓴다. 슬라이드의 `Product<K, M>`은 kind와 model의 첫 글자다[^s2].
+- 타입 파라미터 이름은 관례로 `T`(타입), `E`(원소), `K`(키), `V`(값)를 많이 쓴다. 위의 `Product<K, M>`은 kind와 model의 첫 글자다[^s2].
 - 메서드의 타입 파라미터에 클래스와 같은 글자를 쓰면 위 `genericMethod1`처럼 헷갈린다. 다른 글자를 쓴다.
 - `Box<String>`과 `Box<Integer>`는 번역 때만 다르고, 실행 중에는 같은 `Box` 클래스 하나다(`getClass()`가 같다). 타입 검사는 번역기가 끝내 놓는다[^s3].
 
@@ -243,14 +243,7 @@ java.lang.String
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 17회 강의 자료 「Software Project 17. Generics」, p.4 (`Box<T>` 예제)
-[^2]: 같은 자료, p.3 (제네릭의 뜻, `<T>`의 뜻)
-[^3]: 같은 자료, p.5 (제네릭 타입, 타입을 안 적으면 Object)
-[^4]: 같은 자료, p.6 (`Product<K, M>`, Tv, Car 예제)
-[^5]: 같은 자료, p.7 (제네릭 메서드, 타입 파라미터를 적는 자리)
-[^6]: 같은 자료, p.8 (boxing 메서드, 인자의 타입을 보고 T를 바꾼다)
-[^7]: 같은 자료, p.9 (`ClassName<E>`와 genericMethod1·genericMethod2. `a.setElement(10)`과 `b.setElement("10")`은 주석으로 막혀 있다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `ObjectBox`와의 비교, `box1.content = 100`의 번역 오류는 원본에 없다. `ClassCastException`은 검증 코드로, 번역 오류 문구는 JDK 21 javac로 확인했다. 원본 p.4의 `Box`는 `Main` 안의 `static` 클래스다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 매개변수와 견준 표, 빈 `<>`의 뜻, 글자 관례는 원본에 없다. 원본 p.6의 `main`은 `Tv tv1 = new Tv();`로 객체를 먼저 만들어 넘긴다. 여기서는 줄였다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실행 결과 네 줄과 표, `int`가 `Integer`로 감싸진다는 설명, `boxing`의 몸통(원본은 `{ … }`), `Box<int>` 오류, 타입을 안 적었을 때의 경고, 실행 중에는 같은 클래스라는 것, 카드 C2·C3·C4는 원본에 없다. 출력은 검증 코드로, 번역 오류와 경고는 JDK 21 javac로 확인했다.
+[^s1]: `ClassCastException`은 검증 코드로, 번역 오류 문구는 JDK 21 javac로 확인했다.
+[^s2]: 여기서는 줄였다.
+[^s3]: 출력은 검증 코드로, 번역 오류와 경고는 JDK 21 javac로 확인했다.
 {% endraw %}

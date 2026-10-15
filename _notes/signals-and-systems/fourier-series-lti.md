@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/fourier-series-lti/"
 
 ## 예시로 보기
 
-예제 3.2의 주기 신호 $$x(t) = 1 + \frac12\cos2\pi t + \cos4\pi t + \frac23\cos6\pi t$$를 임펄스 응답이 $$h(t) = e^{-t}u(t)$$인 시스템에 넣는다(예제 3.16)[^1].
+예제 3.2의 주기 신호 $$x(t) = 1 + \frac12\cos2\pi t + \cos4\pi t + \frac23\cos6\pi t$$를 임펄스 응답이 $$h(t) = e^{-t}u(t)$$인 시스템에 넣는다(예제 3.16).
 
 1. *주파수 응답:* $$H(j\omega) = \int_0^\infty e^{-\tau}e^{-j\omega\tau}d\tau = \dfrac{1}{1 + j\omega}$$.
 2. *주파수마다 곱하기:* 기본 주파수가 $$2\pi$$이므로 $$b_k = a_kH(jk2\pi)$$.
@@ -50,7 +50,7 @@ permalink: "/studies/signals-and-systems/fourier-series-lti/"
 
 ## 정의
 
-[고유함수 성질](/Hongs_Blog/studies/signals-and-systems/lti-eigenfunction/)에서 $$s$$를 순허수 $$j\omega$$(크기가 변하지 않는 진동)로 두면 주파수 응답이 나온다[^2].
+[고유함수 성질](/Hongs_Blog/studies/signals-and-systems/lti-eigenfunction/)에서 $$s$$를 순허수 $$j\omega$$(크기가 변하지 않는 진동)로 두면 주파수 응답이 나온다.
 
 | | 연속 시간 | 이산 시간 |
 |---|---|---|
@@ -59,11 +59,11 @@ permalink: "/studies/signals-and-systems/fourier-series-lti/"
 | 출력 | $$y(t) = \sum_ka_kH(jk\omega_0)e^{jk\omega_0t}$$ | $$y[n] = \sum_{k=\langle N\rangle}a_kH(e^{j2\pi k/N})e^{jk(2\pi/N)n}$$ |
 | 출력 계수 | $$b_k = a_kH(jk\omega_0)$$ | $$b_k = a_kH(e^{j2\pi k/N})$$ |
 
-[^3][^4]
 
-이산 시간 주파수 응답은 $$\vert z\vert  = 1$$인 $$z = e^{j\omega}$$에서 시스템 함수 $$H(z)$$를 읽은 것이고, $$\omega$$에 대해 주기 $$2\pi$$다[^3].
 
-**실수 출력의 정리.** $$x$$와 $$h$$가 실수면 $$y$$도 실수라 $$b_{-k} = b_k^*$$다. 그래서[^5]
+이산 시간 주파수 응답은 $$\vert z\vert  = 1$$인 $$z = e^{j\omega}$$에서 시스템 함수 $$H(z)$$를 읽은 것이고, $$\omega$$에 대해 주기 $$2\pi$$다.
+
+**실수 출력의 정리.** $$x$$와 $$h$$가 실수면 $$y$$도 실수라 $$b_{-k} = b_k^*$$다. 그래서
 
 $$y(t) = b_0 + \sum_{k=1}^{\infty}\left[b_ke^{jk\omega_0t} + b_k^*e^{-jk\omega_0t}\right] = b_0 + 2\sum_{k=1}^{\infty}\mathrm{Re}\{b_ke^{jk\omega_0t}\}$$
 
@@ -98,12 +98,12 @@ $$b_k = D_ke^{j\theta_k}$$로 쓰면 각 항은 $$2D_k\cos(k\omega_0t + \theta_k
 
 ## 예제
 
-**예제 3.16의 $$b_1$$을 극형식과 직교 형식으로**[^6]
+**예제 3.16의 $$b_1$$을 극형식과 직교 형식으로**
 
 - $$\vert b_1\vert  = D_1 = \frac14\cdot\frac{1}{\vert 1 + j2\pi\vert } = \dfrac{1}{4\sqrt{1 + 4\pi^2}}$$, $$\angle b_1 = \theta_1 = -\tan^{-1}(2\pi)$$.
 - 분모를 실수로 만들기: $$b_1 = \frac14\cdot\frac{1 - j2\pi}{1 + 4\pi^2}$$, 실수부 $$E_1 = \dfrac{1}{4(1 + 4\pi^2)}$$, 허수부 $$F_1 = -\dfrac{\pi}{2(1 + 4\pi^2)}$$.
 
-**예제 3.17 이산 시간**[^7]. $$h[n] = \alpha^nu[n]$$ ($$-1 < \alpha < 1$$), $$x[n] = \cos\frac{2\pi n}{N}$$
+**예제 3.17 이산 시간**. $$h[n] = \alpha^nu[n]$$ ($$-1 < \alpha < 1$$), $$x[n] = \cos\frac{2\pi n}{N}$$
 
 1. *입력 나누기:* $$x[n] = \frac12e^{j(2\pi/N)n} + \frac12e^{-j(2\pi/N)n}$$.
 2. *주파수 응답:* $$H(e^{j\omega}) = \sum_{n=0}^{\infty}(\alpha e^{-j\omega})^n = \dfrac{1}{1 - \alpha e^{-j\omega}}$$ ($$\vert \alpha\vert  < 1$$이라 등비급수가 수렴).
@@ -172,13 +172,6 @@ $$b_k = D_ke^{j\theta_k}$$로 쓰면 각 항은 $$2D_k\cos(k\omega_0t + \theta_k
 </details>
 
 
-[^1]: 신호 및 시스템 10회 강의 자료 「Week10_CH03_3_handout」, p.34 (예제 3.16)
-[^2]: 같은 자료, p.32~33
-[^3]: 같은 자료, p.33
-[^4]: 같은 자료, p.36
-[^5]: 같은 자료, p.35
-[^6]: 같은 자료, p.35~36
-[^7]: 같은 자료, p.37~38 (예제 3.17)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 페이저 해석 연결, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [35_fourier-series-lti_plot.py](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$b_0 = 1$$, $$\vert b_1\vert  = \frac{1}{4\sqrt{1 + 4\pi^2}}$$, 출력 $$y(t)$$가 $$h = e^{-t}u(t)$$와의 수치 컨벌루션과 같음.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [35_fourier-series-lti_plot.py](/Hongs_Blog/studies/signals-and-systems/code/35_fourier-series-lti_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$b_0 = 1$$, $$\vert b_1\vert  = \frac{1}{4\sqrt{1 + 4\pi^2}}$$, 출력 $$y(t)$$가 $$h = e^{-t}u(t)$$와의 수치 컨벌루션과 같음.
 {% endraw %}

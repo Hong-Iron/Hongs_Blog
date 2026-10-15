@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Default Method", "Static Method", "Private Method", "Private Static Method", "디폴트 메서드", "인터페이스 정적 메서드", "인터페이스 private 메서드", "인터페이스의 메서드 종류"]
 description: "리모컨의 버튼 목록에 \"기본 동작이 이미 들어 있는 버튼\"을 넣을 수 있다. 기기가 따로 만들지 않아도 그 버튼은 돌아가고, 마음에 안 들면 기기가 자기 것으로 바꿔 끼운다. 건전지 갈기처럼 기기 없이 리모컨만으로 하는 일도 넣을 수 있고, 이런 버튼들이 속에서 함께 쓰는 부품은 …"
@@ -85,10 +85,10 @@ Change battery
 
 `setMute` 안의 `setVolume(MIN_VOLUME)`은 몸통 없는 메서드를 부른다. 실행할 때는 `rc`에 든 Television 객체의 `setVolume`이 돌아서 `Volume 0`이 찍힌다. `changeBattery`는 객체 없이 인터페이스 이름으로 불렀다[^s2].
 
-`default`를 붙여 몸통을 미리 써 둔 메서드가 디폴트 메서드, `static`을 붙여 객체 없이 부르는 메서드가 정적 메서드다[^1].
+`default`를 붙여 몸통을 미리 써 둔 메서드가 디폴트 메서드, `static`을 붙여 객체 없이 부르는 메서드가 정적 메서드다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 출력, 디폴트 메서드를 다시 정의했을 때의 출력, 슬라이드 `Service` 예제의 네 메서드 출력, 카드 C3 — [26_java-interface-methods_impl.java](/Hongs_Blog/studies/java/code/26_java-interface-methods_impl/)</div>
+<div class="callout-title" markdown="span">검증: 위 출력, 디폴트 메서드를 다시 정의했을 때의 출력, `Service` 예제의 네 메서드 출력, 카드 C3 — [26_java-interface-methods_impl.java](/Hongs_Blog/studies/java/code/26_java-interface-methods_impl/)</div>
 
 </div>
 
@@ -97,15 +97,15 @@ Change battery
 
 ### 디폴트 메서드
 
-인터페이스 안에 실행할 수 있는 몸통을 다 갖춘 메서드다. 메서드 앞에 `default`를 쓴다. `public`은 생략해도 자동으로 붙는다[^1].
+인터페이스 안에 실행할 수 있는 몸통을 다 갖춘 메서드다. 메서드 앞에 `default`를 쓴다. `public`은 생략해도 자동으로 붙는다.
 
 ```java
 [public] default void setMute(boolean mute) { ... }
 ```
 
-- 몸통 안에서 상수 필드를 읽거나 추상 메서드를 부를 수 있다[^1].
-- 구현 객체가 있어야 부를 수 있다. `rc.setMute(true)`처럼 객체를 가리키는 변수로 부른다[^2].
-- 구현 클래스가 자기에게 맞게 다시 정의해도 된다[^1]. 이때는 `default`를 빼고 `public`을 붙인다. 클래스 안에 `default`를 쓰면 `modifier default not allowed here` 오류다[^s3].
+- 몸통 안에서 상수 필드를 읽거나 추상 메서드를 부를 수 있다.
+- 구현 객체가 있어야 부를 수 있다. `rc.setMute(true)`처럼 객체를 가리키는 변수로 부른다.
+- 구현 클래스가 자기에게 맞게 다시 정의해도 된다. 이때는 `default`를 빼고 `public`을 붙인다. 클래스 안에 `default`를 쓰면 `modifier default not allowed here` 오류다[^s3].
 
 ```java
 class Audio implements RemoteControl {
@@ -120,7 +120,7 @@ class Audio implements RemoteControl {
 
 ### 정적 메서드
 
-`static`을 붙인 메서드다. 추상 메서드와 디폴트 메서드는 구현 객체가 있어야 부를 수 있지만, 정적 메서드는 구현 객체 없이 인터페이스 이름만으로 부른다[^2].
+`static`을 붙인 메서드다. 추상 메서드와 디폴트 메서드는 구현 객체가 있어야 부를 수 있지만, 정적 메서드는 구현 객체 없이 인터페이스 이름만으로 부른다.
 
 ```java
 [public | private] static void changeBattery() { ... }
@@ -130,31 +130,24 @@ class Audio implements RemoteControl {
 RemoteControl.changeBattery();
 ```
 
-정적 메서드의 몸통에서는 추상 메서드, 디폴트 메서드, (static이 아닌) private 메서드를 부를 수 없다. 이 셋은 객체가 있어야 돌아가는 인스턴스 메서드인데, 정적 메서드는 객체 없이 실행되기 때문이다. 상수 필드는 읽을 수 있다[^2]. 클래스의 정적 메서드가 인스턴스 멤버를 못 쓰는 것과 같은 이유다([static 멤버](/Hongs_Blog/studies/java/java-static/)).
+정적 메서드의 몸통에서는 추상 메서드, 디폴트 메서드, (static이 아닌) private 메서드를 부를 수 없다. 이 셋은 객체가 있어야 돌아가는 인스턴스 메서드인데, 정적 메서드는 객체 없이 실행되기 때문이다. 상수 필드는 읽을 수 있다. 클래스의 정적 메서드가 인스턴스 멤버를 못 쓰는 것과 같은 이유다([static 멤버](/Hongs_Blog/studies/java/java-static/)).
 
 부르는 법에 클래스의 정적 메서드와 다른 점이 둘 있다[^s3].
 
 - 객체를 가리키는 변수로는 못 부른다. `rc.changeBattery()`는 `illegal static interface method call` 오류다.
 - 구현 클래스 이름으로도 못 부른다. `Television.changeBattery()`는 `cannot find symbol` 오류다. 인터페이스의 정적 메서드는 구현 클래스에 물려지지 않는다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 12회 슬라이드 p.5 "you cannot call abstract methods, default methods, or private methods" / 문제점: private 메서드 전부를 못 부르는 것처럼 읽힌다. 실제로 못 부르는 것은 `static`이 아닌 private 메서드뿐이다. private 정적 메서드는 정적 메서드 안에서 부를 수 있다. / 수정안: "추상 메서드, 디폴트 메서드, static이 아닌 private 메서드를 부를 수 없다" / 근거: 같은 슬라이드 p.7이 private 정적 메서드는 정적 메서드 안에서도 부를 수 있다고 적었고, p.8의 `staticMethod1()`이 `staticCommon()`을 부른다. JDK 21에서 실행해 `staticMethod1`, `staticCommon`이 차례로 찍히는 것을 확인했다.
-
-</div>
-
 
 ### private 메서드
 
-상수 필드, 추상 메서드, 디폴트 메서드, 정적 메서드는 모두 `public`이다. `public`을 생략해도 컴파일할 때 자동으로 붙어서 늘 밖에서 쓸 수 있다. 여기에 더해, 밖에서 쓸 수 없는 private 메서드를 인터페이스 안에 둘 수 있다[^3].
+상수 필드, 추상 메서드, 디폴트 메서드, 정적 메서드는 모두 `public`이다. `public`을 생략해도 컴파일할 때 자동으로 붙어서 늘 밖에서 쓸 수 있다. 여기에 더해, 밖에서 쓸 수 없는 private 메서드를 인터페이스 안에 둘 수 있다.
 
 | 종류 | 구현 객체가 필요한가 | 부를 수 있는 곳 |
 |---|---|---|
 | private 메서드 | 필요하다 | 디폴트 메서드 안에서만 |
 | private 정적 메서드 | 필요 없다 | 디폴트 메서드와 정적 메서드 안 |
 
-private 메서드를 두는 이유는 디폴트 메서드끼리, 정적 메서드끼리 겹치는 코드를 한곳에 모으기 위해서다[^4].
+private 메서드를 두는 이유는 디폴트 메서드끼리, 정적 메서드끼리 겹치는 코드를 한곳에 모으기 위해서다.
 
 ```java
 interface Service {
@@ -189,7 +182,7 @@ interface Service {
 }
 ```
 
-슬라이드는 이 코드를 두 조각으로 나눠 실었다. 한 인터페이스로 합친 것이 위 코드다[^5]. `class ServiceImpl implements Service { }`로 빈 구현 클래스를 만들고 `Service s = new ServiceImpl();`로 불러 본 결과다[^s2].
+`class ServiceImpl implements Service { }`로 빈 구현 클래스를 만들고 `Service s = new ServiceImpl();`로 불러 보면 다음과 같다[^s2].
 
 | 호출 | 출력 (위에서 아래로) |
 |---|---|
@@ -221,7 +214,7 @@ flowchart LR
     S -. "부를 수 없다" .-x P
 ```
 
-실선은 "이 몸통 안에서 저 메서드를 부를 수 있다"이다. 정적 메서드에서 나가는 실선은 private 정적 메서드 하나뿐이다[^s4].
+실선은 "이 몸통 안에서 저 메서드를 부를 수 있다"이다. 정적 메서드에서 나가는 실선은 private 정적 메서드 하나뿐이다.
 
 ## 활용
 
@@ -304,13 +297,7 @@ staticCommon
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 12회 강의 자료 「Software Project 12. Interface (2)」, p.4 (디폴트 메서드, `[public] default void setMute(boolean mute) { ... }`)
-[^2]: 같은 자료, p.5 (정적 메서드, <code>[public &#124; private] static void changeBattery() { ... }</code>, 정적 메서드 안에서 부를 수 없는 것)
-[^3]: 같은 자료, p.6 (인터페이스 멤버는 모두 public, private 메서드를 둘 수 있다)
-[^4]: 같은 자료, p.7 (private 메서드와 private 정적 메서드, 필요한 이유)
-[^5]: 같은 자료, p.8 (`Service` 인터페이스 코드 두 조각)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 디폴트 메서드가 필요한 까닭(이미 있는 구현 클래스를 고치지 않고 메서드를 더한다)은 원본에 없다. 추상 메서드를 더하면 구현 클래스가 `is not abstract and does not override abstract method` 오류를 내는 것을 JDK 21에서 확인했다. 디폴트 메서드와 정적 메서드는 Java 8, private 메서드는 Java 9에서 추가되었다(Java Language Specification §9.4.3).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `setMute`와 `changeBattery`의 몸통, `Television`·`Audio`·`ServiceImpl` 클래스, 실행 출력, 카드 C3은 원본에 없다. 슬라이드에는 선언 한 줄씩만 있다. 구현 코드로 출력을 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오류 메시지, 정적 메서드를 부르는 두 가지 제한, 카드 C1·C2는 원본에 없다. JDK 21에서 직접 컴파일해 확인했다(Java Language Specification §8.4.8, §15.12.3).
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 한눈에 표와 호출 관계 그림은 원본에 없다. 슬라이드 p.4~7의 내용을 모았고, 각 화살표를 JDK 21 컴파일로 확인했다.
+[^s1]: 추상 메서드를 더하면 구현 클래스가 `is not abstract and does not override abstract method` 오류를 내는 것을 JDK 21에서 확인했다. 디폴트 메서드와 정적 메서드는 Java 8, private 메서드는 Java 9에서 추가되었다(Java Language Specification §9.4.3).
+[^s2]: 구현 코드로 출력을 확인했다.
+[^s3]: JDK 21에서 직접 컴파일해 확인했다(Java Language Specification §8.4.8, §15.12.3).
 {% endraw %}

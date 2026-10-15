@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Context Free Grammar", "Context-Free Grammar", "CFG", "문맥 자유 언어", "Context-Free Language", "단말 기호", "Terminal", "비단말 기호", "Non-terminal", "시작 기호", "Start Symbol", "생성 규칙", "Production", "구문 분석기", "Syntax Analyzer", "Parser", "파서"]
 description: "프로그램의 문장이 올바른 모양인지 정하는 규칙 묶음이다. \"식은 식 더하기 식이다\"처럼 이름 하나를 더 작은 조각들로 바꿔 쓰는 규칙을 모아 두고, 그 규칙을 거듭 써서 만들 수 있는 것만 올바른 문장으로 친다. 규칙 안에서 자기 이름을 다시 쓸 수 있어서, 괄호 짝이나 겹겹이 든…"
@@ -34,16 +34,16 @@ permalink: "/studies/compilers/context-free-grammar/"
 
 ## 예시로 보기
 
-앞 단계(어휘 분석기)는 글자들을 낱말로 잘라 준다. `A = B + C`는 `<ID, A>`, `<ASSIGNMENT>`, `<ID, B>`, `<ADD>`, `<ID, C>` 다섯 토큰이 된다. 그런데 토큰을 `<ID, A>`, `<ADD>`, `<ID, B>`, `<ASSIGNMENT>`, `<ID, C>` 순서로 늘어놓은 `A + B = C`도 낱말 하나하나는 멀쩡하다. 낱말이 놓인 순서가 틀렸다는 것은 어휘 분석기가 모른다. 영어 문장에서 낱말은 다 맞는데 동사 자리에 명사가 온 것과 같다[^1].
+앞 단계(어휘 분석기)는 글자들을 낱말로 잘라 준다. `A = B + C`는 `<ID, A>`, `<ASSIGNMENT>`, `<ID, B>`, `<ADD>`, `<ID, C>` 다섯 토큰이 된다. 그런데 토큰을 `<ID, A>`, `<ADD>`, `<ID, B>`, `<ASSIGNMENT>`, `<ID, C>` 순서로 늘어놓은 `A + B = C`도 낱말 하나하나는 멀쩡하다. 낱말이 놓인 순서가 틀렸다는 것은 어휘 분석기가 모른다. 영어 문장에서 낱말은 다 맞는데 동사 자리에 명사가 온 것과 같다.
 
-이 순서를 검사하는 단계가 구문 분석기(파서)다. 구문 분석기는 두 가지 일을 한다[^2].
+이 순서를 검사하는 단계가 구문 분석기(파서)다. 구문 분석기는 두 가지 일을 한다.
 
 1. 토큰들이 올바른 순서로 놓였는지 판정한다.
 2. 올바르면 토큰들이 어떻게 묶이는지를 나무 모양으로 그려 낸다. 이 나무는 [유도와 파스 트리](/Hongs_Blog/studies/compilers/derivation-parse-tree/)에서 다룬다.
 
-그러려면 "올바른 순서"를 적어 둘 방법이 필요하다. 토큰을 적을 때 쓴 [정규 표현식](/Hongs_Blog/studies/compilers/regular-expression/)을 다시 쓰면 될까? 괄호에서 막힌다. `()`, `(())`, `((()))`처럼 여는 괄호 $$n$$개 뒤에 닫는 괄호가 똑같이 $$n$$개 오는 문자열만 고르는 정규 표현식은 없다[^3]. 정규 표현식에 `(*)*`라고 쓰면 `(()`도 통과한다. 여는 괄호를 몇 개 봤는지 기억할 방법이 없기 때문이다.
+그러려면 "올바른 순서"를 적어 둘 방법이 필요하다. 토큰을 적을 때 쓴 [정규 표현식](/Hongs_Blog/studies/compilers/regular-expression/)을 다시 쓰면 될까? 괄호에서 막힌다. `()`, `(())`, `((()))`처럼 여는 괄호 $$n$$개 뒤에 닫는 괄호가 똑같이 $$n$$개 오는 문자열만 고르는 정규 표현식은 없다. 정규 표현식에 `(*)*`라고 쓰면 `(()`도 통과한다. 여는 괄호를 몇 개 봤는지 기억할 방법이 없기 때문이다.
 
-규칙을 이렇게 쓰면 된다[^4].
+규칙을 이렇게 쓰면 된다.
 
 $$BALANCED \to (\,BALANCED\,) \mid \epsilon$$
 
@@ -64,7 +64,7 @@ BALANCED에서 시작해 `(())`를 만들어 본다.
 이 예에서 `(`와 `)`처럼 더 바꿀 수 없는 기호를 단말 기호, BALANCED처럼 다른 것으로 바꿔 쓰는 이름을 비단말 기호, 화살표로 적은 줄 하나하나를 생성 규칙이라 부른다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 균형 괄호 규칙이 길이 12 이하에서 정확히 `(` $$n$$개 뒤 `)` $$n$$개만 만드는 것, 슬라이드의 산술식·함수 호출·while 문법이 예로 든 문자열을 모두 만드는 것, 상태 3개 이하의 결정적 유한 오토마타를 모두 시험해도 균형 괄호를 가르는 것이 없는 것 — [11_context-free-grammar_verify.py](/Hongs_Blog/studies/compilers/code/11_context-free-grammar_verify/)</div>
+<div class="callout-title" markdown="span">검증: 균형 괄호 규칙이 길이 12 이하에서 정확히 `(` $$n$$개 뒤 `)` $$n$$개만 만드는 것, 예제 표의 산술식·함수 호출·while 문법이 예로 든 문자열을 모두 만드는 것, 상태 3개 이하의 결정적 유한 오토마타를 모두 시험해도 균형 괄호를 가르는 것이 없는 것 — [11_context-free-grammar_verify.py](/Hongs_Blog/studies/compilers/code/11_context-free-grammar_verify/)</div>
 
 </div>
 
@@ -74,22 +74,22 @@ BALANCED에서 시작해 `(())`를 만들어 본다.
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-문맥 자유 문법(CFG)은 문맥 자유 언어를 적는 표기법이고, 네 가지로 이루어진다[^5].
+문맥 자유 문법(CFG)은 문맥 자유 언어를 적는 표기법이고, 네 가지로 이루어진다.
 - **단말 기호**(terminal): 기본 기호다. 다른 것으로 바꿀 수 없다. 보통 토큰 이름이 단말 기호다.
 - **비단말 기호**(non-terminal): 문법 안에서 쓰는 변수다. 다른 비단말 기호나 단말 기호로 바꿀 수 있다.
 - **시작 기호**(start symbol): 비단말 기호 가운데 하나다. 보통 첫 규칙의 왼쪽에 있는 비단말 기호다.
 - **생성 규칙**(production, $$\to$$): 바꿔 쓰는 규칙이다.
 
-모든 생성 규칙은 왼쪽에 비단말 기호 하나, 오른쪽에 단말 기호·비단말 기호·$$\epsilon$$을 늘어놓은 것이 오는 $$A \to \alpha$$ 꼴이다[^6].
+모든 생성 규칙은 왼쪽에 비단말 기호 하나, 오른쪽에 단말 기호·비단말 기호·$$\epsilon$$을 늘어놓은 것이 오는 $$A \to \alpha$$ 꼴이다.
 
 </div>
 
 
 기호로 쓰면 문법은 네 개짜리 묶음 $$G = (V_T, V_N, S, P)$$다. $$V_T$$는 단말 기호의 집합, $$V_N$$은 비단말 기호의 집합, $$S \in V_N$$은 시작 기호, $$P$$는 생성 규칙의 집합이다. 규칙 하나는 $$A \to \alpha$$이고 $$A \in V_N$$, $$\alpha \in (V_T \cup V_N)^*$$이다. $$(V_T \cup V_N)^*$$는 단말·비단말 기호를 0개 이상 늘어놓은 것 전부를 뜻하고, 0개일 때가 $$\epsilon$$이다[^s1].
 
-슬라이드의 가장 작은 예는 단말 기호가 $$\{+, id\}$$, 비단말 기호가 $$\{S, E\}$$, 시작 기호가 $$S$$, 규칙이 $$S \to E + E$$와 $$E \to id$$ 둘인 문법이다[^6]. 이 문법이 만드는 문자열은 $$id + id$$ 하나뿐이다.
+가장 작은 예는 단말 기호가 $$\{+, id\}$$, 비단말 기호가 $$\{S, E\}$$, 시작 기호가 $$S$$, 규칙이 $$S \to E + E$$와 $$E \to id$$ 둘인 문법이다. 이 문법이 만드는 문자열은 $$id + id$$ 하나뿐이다.
 
-**이 수업의 표기 약속.** 비단말 기호는 대문자, 단말 기호는 소문자로 쓴다. 단말·비단말 기호와 $$\epsilon$$을 늘어놓은 것은 그리스 문자 $$\alpha$$(알파), $$\beta$$(베타), $$\omega$$(오메가)로 쓴다. 예: $$\alpha = aABBBcddef$$[^4].
+**이 문서 모음의 표기 약속.** 비단말 기호는 대문자, 단말 기호는 소문자로 쓴다. 단말·비단말 기호와 $$\epsilon$$을 늘어놓은 것은 그리스 문자 $$\alpha$$(알파), $$\beta$$(베타), $$\omega$$(오메가)로 쓴다. 예: $$\alpha = aABBBcddef$$.
 
 **이름의 뜻.** 규칙의 왼쪽에 비단말 기호가 딱 하나만 있다. 그래서 그 기호가 어떤 기호들 사이(문맥)에 끼어 있든 상관없이 규칙을 쓸 수 있다. "문맥에서 자유롭다"는 이름이 여기서 나왔다[^s1].
 
@@ -105,7 +105,7 @@ BALANCED에서 시작해 `(())`를 만들어 본다.
 
 ### 정규 표현식과의 관계
 
-슬라이드는 언어의 넓이를 네 겹의 원으로 그린다. 가장 안쪽이 정규 언어이고, 그 바깥이 문맥 자유 언어, 문맥 의존 언어, 재귀 열거 가능 언어 순이다[^7].
+언어의 넓이를 네 겹의 원으로 그리면 가장 안쪽이 정규 언어이고, 그 바깥이 문맥 자유 언어, 문맥 의존 언어, 재귀 열거 가능 언어 순이다.
 
 $$\text{정규 언어} \subsetneq \text{문맥 자유 언어} \subsetneq \text{문맥 의존 언어} \subsetneq \text{재귀 열거 가능 언어}$$
 
@@ -162,14 +162,14 @@ $$a^n b^n$$, 앞뒤가 같은 문자열(회문), `{`와 `}`의 짝처럼 "앞에
 
 ## 예제
 
-슬라이드가 든 문법 네 개다. 괄호와 쉼표도 단말 기호다.
+프로그램의 구조를 적는 문법 네 개다. 괄호와 쉼표도 단말 기호다.
 
 | 적으려는 것 | 문법 | 만들 수 있는 예 |
 |---|---|---|
-| 산술식[^8] | $$E \to E + E \mid E * E \mid (E) \mid id$$ | $$id + id$$, $$id * id$$, $$(id)$$, $$id + id * id$$, $$(id + id) * id$$ |
-| 함수 호출[^9] | $$S \to id(E) \mid id()$$, $$\ E \to id, E \mid id$$ | `func(arg1, arg2)`, `print(arg)`, `func2()` |
-| while 문의 머리[^10] | $$S \to while(E)$$, $$\ E \to T\ comparison\ T \mid T \mid \epsilon$$, $$\ T \to id \mid number$$ | `while(A > B)`, `while(A)`, `while(0)`, `while(3 > 2)`, `while()` |
-| if 문[^11] | $$STMT \to if\,(EXPR)\ STMT\ else\ STMT \mid if\,(EXPR)\ STMT$$ | if 안에 if가 겹겹이 든 문장 |
+| 산술식 | $$E \to E + E \mid E * E \mid (E) \mid id$$ | $$id + id$$, $$id * id$$, $$(id)$$, $$id + id * id$$, $$(id + id) * id$$ |
+| 함수 호출 | $$S \to id(E) \mid id()$$, $$\ E \to id, E \mid id$$ | `func(arg1, arg2)`, `print(arg)`, `func2()` |
+| while 문의 머리 | $$S \to while(E)$$, $$\ E \to T\ comparison\ T \mid T \mid \epsilon$$, $$\ T \to id \mid number$$ | `while(A > B)`, `while(A)`, `while(0)`, `while(3 > 2)`, `while()` |
+| if 문 | $$STMT \to if\,(EXPR)\ STMT\ else\ STMT \mid if\,(EXPR)\ STMT$$ | if 안에 if가 겹겹이 든 문장 |
 
 **함수 호출 문법으로 `func(arg1, arg2)` 만들기.** 어휘 분석을 거치면 $$id(id, id)$$다.
 
@@ -180,15 +180,15 @@ $$a^n b^n$$, 앞뒤가 같은 문자열(회문), `{`와 `}`의 짝처럼 "앞에
 
 $$E \to id, E$$는 오른쪽 끝에 자기 자신이 다시 나온다. 이 규칙을 한 번 쓸 때마다 인자가 하나 늘어나므로 인자가 몇 개든 적을 수 있다.
 
-**경계 사례.** while 문법에서 $$E \to \epsilon$$이 있어서 `while()`도 문법에 맞는다. 조건이 빈 while이 말이 되는지는 문법이 따지지 않는다. 슬라이드가 `while()`을 예에 넣었다[^10].
+**경계 사례.** while 문법에서 $$E \to \epsilon$$이 있어서 `while()`도 문법에 맞는다. 조건이 빈 while이 말이 되는지는 문법이 따지지 않는다.
 
-**재귀를 멈출 규칙이 없으면.** 위 표의 if 문 규칙 두 개는 둘 다 오른쪽에 $$STMT$$가 있다. 이 두 규칙만으로는 $$STMT$$를 아무리 바꿔 써도 $$STMT$$가 남아, 끝나는 문장이 하나도 나오지 않는다. 실제 문법에는 대입문처럼 $$STMT$$가 다시 나오지 않는 규칙이 더 있다. 슬라이드는 재귀 구조를 보이려고 두 규칙만 적었다[^s3].
+**재귀를 멈출 규칙이 없으면.** 위 표의 if 문 규칙 두 개는 둘 다 오른쪽에 $$STMT$$가 있다. 이 두 규칙만으로는 $$STMT$$를 아무리 바꿔 써도 $$STMT$$가 남아, 끝나는 문장이 하나도 나오지 않는다. 실제 문법에는 대입문처럼 $$STMT$$가 다시 나오지 않는 규칙이 더 있다. 위 표는 재귀 구조만 보이려고 두 규칙만 적었다[^s3].
 
 ## 활용
 
 - **문법 쓰기의 흔한 실수.** 재귀를 멈출 규칙(위의 $$BALANCED \to \epsilon$$, $$E \to id$$)을 빠뜨린다. 반복되는 것은 "하나 그리고 나머지"로 쪼개 재귀 규칙으로 쓴다($$E \to id, E \mid id$$).
-- **좋은 문법의 세 조건.** 규칙이 맞는 문자열을 다 만든다고 끝이 아니다. 파서가 효율적으로 읽으려면 한 문장이 두 가지로 읽히지 않아야 하고([모호한 문법](/Hongs_Blog/studies/compilers/ambiguous-grammar/)), 왼쪽 끝에서 자기 자신을 부르는 규칙이 없어야 하고([좌재귀 없애기](/Hongs_Blog/studies/compilers/left-recursion-elimination/)), 다음 토큰 하나로 쓸 규칙이 정해져야 한다([좌인수분해](/Hongs_Blog/studies/compilers/left-factoring/))[^12].
-- **문법으로 판정하기.** 토큰열이 문법에 맞는지는 "시작 기호에서 그 토큰열을 만들 수 있는가"로 정한다. 이것을 손이 아니라 프로그램으로 하는 방법이 위에서 내려가는 [재귀 하강 파싱](/Hongs_Blog/studies/compilers/recursive-descent-parsing/)과 아래에서 올라가는 [이동-환원 파싱](/Hongs_Blog/studies/compilers/shift-reduce-parsing/)이다[^13].
+- **좋은 문법의 세 조건.** 규칙이 맞는 문자열을 다 만든다고 끝이 아니다. 파서가 효율적으로 읽으려면 한 문장이 두 가지로 읽히지 않아야 하고([모호한 문법](/Hongs_Blog/studies/compilers/ambiguous-grammar/)), 왼쪽 끝에서 자기 자신을 부르는 규칙이 없어야 하고([좌재귀 없애기](/Hongs_Blog/studies/compilers/left-recursion-elimination/)), 다음 토큰 하나로 쓸 규칙이 정해져야 한다([좌인수분해](/Hongs_Blog/studies/compilers/left-factoring/)).
+- **문법으로 판정하기.** 토큰열이 문법에 맞는지는 "시작 기호에서 그 토큰열을 만들 수 있는가"로 정한다. 이것을 손이 아니라 프로그램으로 하는 방법이 위에서 내려가는 [재귀 하강 파싱](/Hongs_Blog/studies/compilers/recursive-descent-parsing/)과 아래에서 올라가는 [이동-환원 파싱](/Hongs_Blog/studies/compilers/shift-reduce-parsing/)이다.
 - 문법이 따지지 못하는 것도 있다. 선언하지 않은 변수를 쓰는지, 타입이 맞는지는 다음 단계인 [의미 분석](/Hongs_Blog/studies/compilers/semantic-analysis/)이 본다.
 
 ## 연결
@@ -204,7 +204,7 @@ $$E \to id, E$$는 오른쪽 끝에 자기 자신이 다시 나온다. 이 규�
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"정규 표현식을 잘 짜면 괄호 짝도 맞출 수 있다"</div>
 
-틀렸다. `(*)*`나 <code>(()&#124;(()))</code>처럼 써 보면 될 것 같아 보이는 까닭은, 괄호가 두세 겹인 경우만 떠올리기 때문이다. 겹 수를 정해 두면 정규 표현식으로 적을 수 있다. 하지만 겹 수에 한계가 없으면 여는 괄호의 개수를 끝없이 세어야 하고, 정규 표현식과 힘이 같은 유한 오토마타는 상태가 유한해서 그럴 수 없다. 슬라이드도 기본 정규 표현식 다섯 가지만으로 적을 수 있어야 정규 표현식이라 하고, $$(^n)^n$$은 거기에 들지 않는다고 적는다[^3]. 확인하는 법: 내가 쓴 정규 표현식에 여는 괄호가 닫는 괄호보다 많은 문자열을 넣어 본다. 통과하거나, 겹 수가 큰 올바른 문자열이 떨어진다.
+틀렸다. `(*)*`나 <code>(()&#124;(()))</code>처럼 써 보면 될 것 같아 보이는 까닭은, 괄호가 두세 겹인 경우만 떠올리기 때문이다. 겹 수를 정해 두면 정규 표현식으로 적을 수 있다. 하지만 겹 수에 한계가 없으면 여는 괄호의 개수를 끝없이 세어야 하고, 정규 표현식과 힘이 같은 유한 오토마타는 상태가 유한해서 그럴 수 없다. 정규 표현식은 기본 다섯 가지 식만으로 조립한 것이고, $$(^n)^n$$은 그렇게 조립할 수 없다. 확인하는 법: 내가 쓴 정규 표현식에 여는 괄호가 닫는 괄호보다 많은 문자열을 넣어 본다. 통과하거나, 겹 수가 큰 올바른 문자열이 떨어진다.
 
 </div>
 
@@ -233,7 +233,7 @@ $$E \to id, E$$는 오른쪽 끝에 자기 자신이 다시 나온다. 이 규�
 <summary class="callout-title" markdown="span">**C3** 단말 기호가 `[`, `]`, `,`, `id`일 때 `[ ]`, `[ id ]`, `[ id , id ]`, `[ id , id , id ]`, …를 만드는 문법을 쓰라.</summary>
 
 **답:** $$L \to [\ ] \mid [\ I\ ]$$, $$\ I \to id\ ,\ I \mid id$$.<br>
-**이유:** 슬라이드의 함수 호출 문법과 같은 짜임이다. 빈 목록은 따로 규칙을 두고, 원소 나열은 "원소 하나, 쉼표, 나머지"로 쪼갠다. $$I \to id\ ,\ I \mid \epsilon$$으로 쓰면 `[ id , ]`처럼 쉼표로 끝나는 목록이 나와서 틀린다[^s4].
+**이유:** 예제의 함수 호출 문법과 같은 짜임이다. 빈 목록은 따로 규칙을 두고, 원소 나열은 "원소 하나, 쉼표, 나머지"로 쪼갠다. $$I \to id\ ,\ I \mid \epsilon$$으로 쓰면 `[ id , ]`처럼 쉼표로 끝나는 목록이 나와서 틀린다.
 
 </details>
 
@@ -247,21 +247,7 @@ $$E \to id, E$$는 오른쪽 끝에 자기 자신이 다시 나온다. 이 규�
 </details>
 
 
-[^1]: 컴파일러 4회 강의 자료 「Lecture04 Syntax analysis part 1」, p.4~5 (문장 구조가 올바른가, 올바른 토큰 순서와 틀린 순서)
-[^2]: 같은 자료, p.5~7 (구문 분석기가 하는 두 가지 일)
-[^3]: 같은 자료, p.8~9 (기본 정규 표현식 다섯 가지, $$(^n)^n$$은 정규 표현식이 아니다)
-[^4]: 같은 자료, p.13 (표기 약속, BALANCED 규칙)
-[^5]: 같은 자료, p.11 (CFG의 네 구성 요소)
-[^6]: 같은 자료, p.12 (규칙의 꼴, 가장 작은 예)
-[^7]: 같은 자료, p.10 (형식 언어의 범위 그림)
-[^8]: 같은 자료, p.15
-[^9]: 같은 자료, p.16
-[^10]: 같은 자료, p.17
-[^11]: 같은 자료, p.14 (재귀 구조를 잘 적는다)
-[^12]: 같은 자료, p.34, p.46
-[^13]: 같은 자료, p.21~22, p.62
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 개짜리 묶음으로 쓴 기호 정의, '문맥 자유'라는 이름의 뜻, CFG 규칙이 아닌 예 둘은 원본에 없다. 형식 언어 교재의 표준 정의다(Aho·Lam·Sethi·Ullman, *Compilers: Principles, Techniques, and Tools* 2판, 4.2절).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 $$(^n)^n$$이 정규 표현식이 아니라는 결론만 적는다. 상태 수로 따지는 설명과 접어 둔 증명, 스스로 설명해 보기는 보탠 것이다. 표준 논법이고(Hopcroft·Motwani·Ullman, *Introduction to Automata Theory, Languages, and Computation* 3판, 4.1절), 상태 3개 이하 DFA를 모두 시험해 그런 기계가 없음을 검증 코드로 확인했다. 전수 시험은 작은 크기에서의 확인이고, 모든 크기에 대한 근거는 증명이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 규칙만으로는 문장이 나오지 않는다는 점과 카드 C4는 원본에 없다. 검증 코드에서 두 규칙만 둔 문법의 언어가 비어 있고, $$STMT \to other$$를 더하면 겹친 if 문이 나오는 것을 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C3의 문법은 원본에 없다. 슬라이드 p.16의 함수 호출 문법을 본떠 만들었고, 길이 7 이하에서 네 문자열만 만드는 것을 검증 코드로 확인했다.
+[^s1]: 형식 언어 교재의 표준 정의다(Aho·Lam·Sethi·Ullman, *Compilers: Principles, Techniques, and Tools* 2판, 4.2절).
+[^s2]: 상태 수로 따지는 설명과 접어 둔 증명, 스스로 설명해 보기는 보탠 것이다. 표준 논법이고(Hopcroft·Motwani·Ullman, *Introduction to Automata Theory, Languages, and Computation* 3판, 4.1절), 상태 3개 이하 DFA를 모두 시험해 그런 기계가 없음을 검증 코드로 확인했다. 전수 시험은 작은 크기에서의 확인이고, 모든 크기에 대한 근거는 증명이다.
+[^s3]: 검증 코드에서 두 규칙만 둔 문법의 언어가 비어 있고, $$STMT \to other$$를 더하면 겹친 if 문이 나오는 것을 확인했다.
 {% endraw %}

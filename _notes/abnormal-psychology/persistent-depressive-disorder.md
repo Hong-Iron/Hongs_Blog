@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-26"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Persistent Depressive Disorder", "PDD", "기분저하증", "dysthymia", "만성 우울", "이중 우울증", "double depression"]
 description: "우울한 기분이 삽화처럼 왔다 가는 것이 아니라, 몇 년씩 바닥에 깔린 채 이어지는 장애다. 한 번의 폭우가 아니라 몇 년째 흐린 날씨와 같다. 하루하루의 증상은 주요우울장애보다 가벼울 수 있지만, 오래 가기 때문에 일·돈·관계가 더 크게 무너지고 치료도 더 어렵다. 기준은 성인 2…"
@@ -46,31 +46,26 @@ permalink: "/studies/abnormal-psychology/persistent-depressive-disorder/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">지속성 우울장애</div>
 
-성인은 2년 동안(아동·청소년은 1년) 우울한 기분이 없는 날보다 있는 날이 더 많고[^1], 다음 중 2가지 이상이 함께 나타난다[^2]. 식욕 변화, 수면 변화, 활력 저하, 자존감 저하, 집중력 감소, 절망감. 증상이 삽화적이지 않고 만성적이며, 조증 삽화와 경조증 삽화가 없다[^2].
+성인은 2년 동안(아동·청소년은 1년) 우울한 기분이 없는 날보다 있는 날이 더 많고, 다음 중 2가지 이상이 함께 나타난다. 식욕 변화, 수면 변화, 활력 저하, 자존감 저하, 집중력 감소, 절망감. 증상이 삽화적이지 않고 만성적이며, 조증 삽화와 경조증 삽화가 없다.
 
 </div>
 
 
 DSM-5-TR은 이 기간 동안 증상이 없는 기간이 두 달 넘게 이어지지 않을 것을 요구하고, 주요우울 삽화의 기준을 2년 내내 채워도 이 진단을 줄 수 있게 한다[^s2].
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "지속성 우울장애 Persistent Dysphoric Disorder; PDD"(p.12) / 문제점: DSM-5-TR의 영어 이름은 Persistent Depressive Disorder(Dysthymia)다. "Dysphoric"은 월경전불쾌감장애(Premenstrual Dysphoric Disorder)의 단어가 섞인 것으로 보인다. 약자 PDD는 같다. / 수정안: "Persistent Depressive Disorder; PDD" / 근거: DSM-5-TR 우울장애 범주의 장애 이름[^s2].
-
-</div>
+영어 이름은 Persistent Depressive Disorder(PDD)다. 이름에 Dysphoric(불쾌감)이 들어가는 장애는 [월경전불쾌감장애](/Hongs_Blog/studies/abnormal-psychology/pmdd/)(Premenstrual Dysphoric Disorder)이니 둘을 섞지 않는다[^s2].
 
 
-필기는 동반 증상 목록의 "자존감 저하"에 밑줄을 긋고 "MDD와의 차이!"라고 적었다[^2]. 주요우울 삽화의 9개 증상에는 자존감 저하 대신 무가치감·죄책감이 있고, 절망감도 따로 없다. 두 장애의 차이는 [주요우울장애와 지속성 우울장애 비교](/Hongs_Blog/studies/abnormal-psychology/mdd-vs-pdd/)에서 다룬다.
+동반 증상 가운데 자존감 저하는 주요우울장애(MDD)와 갈리는 지점이다. 주요우울 삽화의 9개 증상에는 자존감 저하 대신 무가치감·죄책감이 있고, 절망감도 따로 없다. 두 장애의 차이는 [주요우울장애와 지속성 우울장애 비교](/Hongs_Blog/studies/abnormal-psychology/mdd-vs-pdd/)에서 다룬다.
 
-### 만성이라서 더 심각한 점[^2]
+### 만성이라서 더 심각한 점
 
 - 실업, 재정적 곤란, 신체기능 약화, 사회적 위축, 일상생활의 부적응이 더 심각하다.
 - 약물치료와 심리치료의 효과가 나쁘다.
 - 심한 우울 삽화와 자살사고가 더 자주 나타난다.
 - 다른 정신장애와의 공병률이 높다.
 
-### 임상적 특징[^3]
+### 임상적 특징
 
 - 평생 유병률 3~6%. 주요우울장애의 15~25%가 만성 우울에 해당한다.
 - 여성이 남성보다 약 2배 많다.
@@ -105,9 +100,6 @@ DSM-5-TR은 이 기간 동안 증상이 없는 기간이 두 달 넘게 이어�
 
 </details>
 
-[^1]: 이상 심리학 3회 강의 자료 「양극성장애와 우울장애」, p.7 (하위 유형 표)
-[^2]: 이상 심리학 3회 강의 자료 「양극성장애와 우울장애」, p.12. "자존감 저하"의 밑줄과 "MDD와의 차이!"는 손글씨 필기다.
-[^3]: 이상 심리학 3회 강의 자료 「양극성장애와 우울장애」, p.13
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> AL의 사례는 진단 조건을 보이려고 만든 가상 사례다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR 지속성 우울장애의 이름과 진단기준(증상 없는 기간 2개월 이하, 주요우울장애 기준이 2년 내내 충족될 수 있음, 아동·청소년의 과민한 기분)을 요약했다. DSM-IV의 기분부전장애와 만성 주요우울장애를 합친 진단이다.
+[^s1]: AL의 사례는 진단 조건을 보이려고 만든 가상 사례다.
+[^s2]: DSM-5-TR 지속성 우울장애의 이름과 진단기준(증상 없는 기간 2개월 이하, 주요우울장애 기준이 2년 내내 충족될 수 있음, 아동·청소년의 과민한 기분)을 요약했다. DSM-IV의 기분부전장애와 만성 주요우울장애를 합친 진단이다.
 {% endraw %}

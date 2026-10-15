@@ -64,7 +64,7 @@ def show(trace):
 
 
 if __name__ == "__main__":
-    # 슬라이드 그림 1.4: 940번지 값에 941번지 값을 더해 941번지에 저장한다
+    # 문서 예시(Stallings 그림 1.4): 940번지 값에 941번지 값을 더해 941번지에 저장한다
     program = {0x300: 0x1940, 0x301: 0x5941, 0x302: 0x2941, 0x940: 0x0003, 0x941: 0x0002}
     mem, pc, ac, trace = run(program, 0x300, 3)
     show(trace)

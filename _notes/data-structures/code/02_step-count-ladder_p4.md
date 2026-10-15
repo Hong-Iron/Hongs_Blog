@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/02_step-count-ladder_p4/"
 """단계 수 세기 예제 사다리: 문제 1~4의 답을 코드를 실제로 돌리며 세어 확인한다.
 
 문서: 4.연습문제/02.단계 수 세기 예제 사다리
-출처: 자료구조 2주차 슬라이드 p.8~17
 실행: python3 02_step-count-ladder_p4.py
 
 세는 규칙: 줄을 한 번 실행하면 1단계. for의 머리줄은 조건을 검사할 때마다 한 번 실행한 것으로 센다.

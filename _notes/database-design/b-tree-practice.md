@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: B-트리의 성질, B-트리의 높이, B-트리 검색, B-트리 삽입, B-트리 삭제."
 prev_url: "/studies/database-design/b-tree-delete-ladder/"
@@ -25,16 +25,7 @@ permalink: "/studies/database-design/b-tree-practice/"
 {% raw %}
 사용 개념: [B-트리](/Hongs_Blog/studies/database-design/b-tree/)의 성질, [B-트리의 높이](/Hongs_Blog/studies/database-design/b-tree-height/), [B-트리 검색](/Hongs_Blog/studies/database-design/b-tree-search/), [B-트리 삽입](/Hongs_Blog/studies/database-design/b-tree-insert/), [B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/).
 
-슬라이드의 연습 여섯 개다. 슬라이드는 3주차와 4주차에서 번호를 따로 매겨 "연습 1"과 "연습 2"가 두 번씩 나온다. 여기서는 p1~p6으로 다시 매겼다[^1].
-
-| 이 문서 | 슬라이드 | 풀이가 있는 곳 |
-|---|---|---|
-| p1 | 3주차 첫 덱 연습 1 | 03.3_B-tree-solutions.pdf p.1 |
-| p2 | 3주차 첫 덱 연습 2 | 03.3_B-tree-solutions.pdf p.2 |
-| p3 | 3주차 둘째 덱 연습 1 | 04.4_B-tree-solutions.pdf p.1 |
-| p4 | 3주차 둘째 덱 연습 2 | 04.4_B-tree-solutions.pdf p.2 |
-| p5 | 3주차 둘째 덱 연습 3 | 04.4_B-tree-solutions.pdf p.3 |
-| p6 | 4주차 연습 4 | 04.4_B-tree-solutions.pdf p.4 |
+문제는 p1~p6의 여섯 개다.
 
 트리를 한 줄로 적을 때는 층을 `/`로, 부모가 다른 묶음을 <code>&#124;</code>로 가른다.
 
@@ -79,8 +70,6 @@ permalink: "/studies/database-design/b-tree-practice/"
 [1] [3] [5]
 ```
 
-슬라이드의 답과 같다[^2].
-
 </details>
 
 
@@ -116,9 +105,9 @@ permalink: "/studies/database-design/b-tree-practice/"
    $$n = \left(1 + 2t + (2t)^2 + \cdots + (2t)^h\right)(2t - 1) = \frac{(2t)^{h+1} - 1}{2t - 1}\,(2t - 1) = (2t)^{h+1} - 1$$
 
 
-4. *넣어 보기:* $$t = 2$$, $$h = 1$$이면 $$4^2 - 1 = 15$$개다. 뿌리 [4 8 12] 밑에 키 3개짜리 잎 4개다[^3].
+4. *넣어 보기:* $$t = 2$$, $$h = 1$$이면 $$4^2 - 1 = 15$$개다. 뿌리 [4 8 12] 밑에 키 3개짜리 잎 4개다.
 
-슬라이드의 풀이는 식에서 $$(2t - 1)$$ 밑에 "자식 수"라는 라벨을 붙였는데 "키 수"가 맞다([B-트리의 높이](/Hongs_Blog/studies/database-design/b-tree-height/)의 원본 오류 의심).
+식의 $$(2t - 1)$$은 노드 하나에 든 키 수다. 자식 수 $$2t$$와 헷갈리기 쉽다.
 
 </details>
 
@@ -145,7 +134,7 @@ B-Tree-Search가 노드 안에서 앞에서부터 하나씩 견주는 대신 이
 3. *곱하기:* $$O(\lg t \cdot \log_t n)$$.
 4. *밑 바꾸기:* $$\log_t n = \frac{\lg n}{\lg t}$$이므로 $$\lg t$$가 약분되어 $$O(\lg n)$$이다.
 
-$$t$$를 $$n$$에 따라 어떻게 잡든 $$O(\lg n)$$이다[^4]. 디스크를 읽는 횟수는 줄지 않는다. 지나는 노드가 그대로이기 때문이다.
+$$t$$를 $$n$$에 따라 어떻게 잡든 $$O(\lg n)$$이다. 디스크를 읽는 횟수는 줄지 않는다. 지나는 노드가 그대로이기 때문이다.
 
 </details>
 
@@ -158,7 +147,7 @@ $$t$$를 $$n$$에 따라 어떻게 잡든 $$O(\lg n)$$이다[^4]. 디스크를 �
 
 ## 문제 p4 · L과 F 넣기
 
-최소 차수 $$t = 3$$인 아래 트리에 L을 넣은 결과를 그리고, 이어서 F를 넣은 결과를 그려라[^5].
+최소 차수 $$t = 3$$인 아래 트리에 L을 넣은 결과를 그리고, 이어서 F를 넣은 결과를 그려라.
 
 ```
                  [G M P T X]
@@ -198,8 +187,6 @@ $$t$$를 $$n$$에 따라 어떻게 잡든 $$O(\lg n)$$이다[^4]. 디스크를 �
 [A B] [D E F] [J K L] [N O]   [Q R S] [U V] [Y Z]
 ```
 
-슬라이드의 답과 같다[^6].
-
 </details>
 
 
@@ -211,7 +198,7 @@ $$t$$를 $$n$$에 따라 어떻게 잡든 $$O(\lg n)$$이다[^4]. 디스크를 �
 
 ## 문제 p5 · 키 21개 넣기
 
-최소 차수 $$t = 2$$인 빈 B-트리에 F, S, Q, K, C, L, H, T, V, W, M, R, N, P, A, B, X, Y, D, Z, E를 이 순서로 넣은 결과를 그려라[^7].
+최소 차수 $$t = 2$$인 빈 B-트리에 F, S, Q, K, C, L, H, T, V, W, M, R, N, P, A, B, X, Y, D, Z, E를 이 순서로 넣은 결과를 그려라.
 
 풀이 전략: 가득 찬 노드는 키 3개짜리다. 넣을 때마다 뿌리부터 내려가며 가득 찬 노드를 만나는지만 본다. 쪼개기가 없는 삽입은 잎에 키만 하나 는다. 그러니 쪼개기가 일어나는 삽입만 꼼꼼히 그리면 된다.
 
@@ -249,7 +236,7 @@ E: [K Q] / [B F] [M] [T W] / [A] [C D E] [H] | [L] [N P] | [R S] [V] [X Y Z]
 - **A.** A가 갈 잎 [C]는 키가 1개뿐인데도, 지나가는 노드 [F K M]이 가득 차 있어 쪼갠다. K가 뿌리로 올라간다.
 - **높이.** 높이가 는 것은 뿌리를 쪼갠 K와 M 두 번뿐이다.
 
-끝난 트리는 이렇고, 슬라이드의 답과 같다[^8].
+끝난 트리는 이렇다.
 
 ```
                     [K Q]
@@ -270,7 +257,7 @@ E: [K Q] / [B F] [M] [T W] / [A] [C D E] [H] | [L] [N P] | [R S] [V] [X Y Z]
 
 ## 문제 p6 · C, P, V 지우기
 
-최소 차수 $$t = 3$$인 아래 트리에서 C, P, V를 차례로 지운 결과를 그려라. 뿌리가 아닌 노드는 키가 적어도 2개 있어야 한다[^9].
+최소 차수 $$t = 3$$인 아래 트리에서 C, P, V를 차례로 지운 결과를 그려라. 뿌리가 아닌 노드는 키가 적어도 2개 있어야 한다.
 
 ```
              [E L P T X]
@@ -281,7 +268,7 @@ E: [K Q] / [B F] [M] [T W] / [A] [C D E] [H] | [L] [N P] | [R S] [V] [X Y Z]
 풀이 전략: 지울 키가 잎에 있는지 뿌리에 있는지부터 본다. 잎에서 키가 하나 빠져 1개만 남으면 형제를 본다. 형제가 키를 빌려주려면 3개 이상 가지고 있어야 한다. 빌릴 형제는 왼쪽부터 본다.
 
 <details class="callout callout-answer" markdown="1">
-<summary class="callout-title" markdown="span">답 (슬라이드 본문의 규칙: 왼쪽 형제 먼저)</summary>
+<summary class="callout-title" markdown="span">답 (왼쪽 형제를 먼저 보는 규칙)</summary>
 
 **C 지우기: 경우 1-2b**
 1. *자리 찾기:* C는 잎 [A C]에 있다.
@@ -321,8 +308,10 @@ E: [K Q] / [B F] [M] [T W] / [A] [C D E] [H] | [L] [N P] | [R S] [V] [X Y Z]
 </details>
 
 
+빌릴 형제를 오른쪽부터 보는 규칙도 있다. 이 규칙으로 지우면 P와 V에서 결과가 달라진다. 두 결과 모두 올바른 B-트리이고 담긴 키도 같다. 모양만 다르다.
+
 <details class="callout callout-answer" markdown="1">
-<summary class="callout-title" markdown="span">슬라이드 풀이의 답 (오른쪽 형제 먼저)</summary>
+<summary class="callout-title" markdown="span">답 (오른쪽 형제를 먼저 보는 규칙)</summary>
 
 C를 지운 결과는 위와 같다. 왼쪽 형제가 없어서 어느 쪽을 먼저 보든 오른쪽 형제와 합친다.
 
@@ -346,17 +335,10 @@ C를 지운 결과는 위와 같다. 왼쪽 형제가 없어서 어느 쪽을 �
 [A E J K] [N O] [R S] [U X Y Z]
 ```
 
-슬라이드의 풀이 그림과 경우 이름(C: 1-2b, P: 2 → 1-2a, V: 1-2b)이 이 결과와 같다[^10].
+이 규칙에서 세 삭제의 경우 이름은 C가 1-2b, P가 2 → 1-2a, V가 1-2b다.
 
 </details>
 
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 04.4_B-tree-solutions.pdf p.4의 풀이는 P와 V를 지울 때 오른쪽 형제를 썼다. / 문제점: 04.4-1_B-tree-deletion.pdf p.16의 규칙은 "(1) 왼쪽 형제를 먼저 보고, 안 되면 (2) 오른쪽 형제를 본다"다. P를 지울 때 왼쪽 형제 [A E J K]는 키가 4개라 빌려줄 수 있었다. 규칙대로면 왼쪽에서 빌린다. / 수정안: 본문의 규칙을 따른 답을 먼저 싣고 풀이의 답을 함께 실었다. 두 결과 모두 올바른 B-트리이고 담긴 키가 같다. 모양만 다르다. 수업이나 채점이 어느 쪽을 기준으로 했는지는 자료만으로 알 수 없다. / 근거: 두 순서로 지운 결과와 성질 검사([17_b-tree-practice_p6.py](/Hongs_Blog/studies/database-design/code/17_b-tree-practice_p6/)). 같은 쪽의 "minimum degree t=3 (i.e., the minimum nuber of keys t=2)"도 $$t - 1 = 2$$가 맞다.
-
-</div>
 
 
 <div class="callout callout-check" markdown="1">
@@ -365,25 +347,15 @@ C를 지운 결과는 위와 같다. 왼쪽 형제가 없어서 어느 쪽을 �
 </div>
 
 
-변형: 슬라이드 풀이의 "P를 지운 뒤" 트리 `[L Q T X] / [A E J K] [N O] [R S] [U V] [Y Z]`에서 V를 왼쪽 형제 먼저 규칙으로 지우면 어떻게 되는가?
+변형: 오른쪽 형제 먼저 규칙으로 P까지 지운 트리 `[L Q T X] / [A E J K] [N O] [R S] [U V] [Y Z]`에서, V만 왼쪽 형제 먼저 규칙으로 지우면 어떻게 되는가?
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">변형의 답</summary>
 
-두 형제 모두 2개뿐이라 빌릴 수 없는 것은 같다. 합칠 때 왼쪽 형제 [R S]와 합친다. 뿌리의 T가 내려와 [R S T U]가 되고 결과는 `[L Q X] / [A E J K] [N O] [R S T U] [Y Z]`이다. 풀이의 답과 합친 쪽만 다르다.
+두 형제 모두 2개뿐이라 빌릴 수 없는 것은 같다. 합칠 때 왼쪽 형제 [R S]와 합친다. 뿌리의 T가 내려와 [R S T U]가 되고 결과는 `[L Q X] / [A E J K] [N O] [R S T U] [Y Z]`이다. 오른쪽 형제 먼저 규칙의 답과 합친 쪽만 다르다.
 
 </details>
 
 
-[^1]: 데이터베이스 설계 3회 강의 자료 「3_B-tree」, p.19 (연습 1, 2). 03.3-2_B-tree-insertion.pdf, p.16, 29, 31 (연습 1, 2, 3). 04.4-1_B-tree-deletion.pdf, p.21 (연습 4)
-[^2]: 데이터베이스 설계 3회 강의 자료 「3_B-tree-solutions」, p.1
-[^3]: 같은 자료, p.2. 03.3-2_B-tree-insertion.pdf, p.9
-[^4]: 데이터베이스 설계 4회 강의 자료 「4_B-tree-solutions」, p.1 ("independently of how t might be chosen as a function of n")
-[^5]: 데이터베이스 설계 3회 강의 자료 「3-2_B-tree-insertion」, p.29 (Exercise 2: Q를 넣은 뒤의 트리에 L, 이어서 F)
-[^6]: 데이터베이스 설계 4회 강의 자료 「4_B-tree-solutions」, p.2. 04.4-1_B-tree-deletion.pdf, p.10
-[^7]: 데이터베이스 설계 3회 강의 자료 「3-2_B-tree-insertion」, p.31 (Exercise 3). 04.4-1_B-tree-deletion.pdf, p.11
-[^8]: 데이터베이스 설계 4회 강의 자료 「4_B-tree-solutions」, p.3
-[^9]: 데이터베이스 설계 4회 강의 자료 「4-1_B-tree-deletion」, p.21 (Exercise 4)
-[^10]: 데이터베이스 설계 4회 강의 자료 「4_B-tree-solutions」, p.4
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 전략, 하위목표로 나눈 풀이, 변형 문제, p5의 단계별 표는 슬라이드에 없다. 슬라이드는 답 그림과 식만 준다. 변형의 답과 단계별 결과는 검증 코드로 확인했다.
+[^s1]: 변형의 답과 단계별 결과는 검증 코드로 확인했다.
 {% endraw %}

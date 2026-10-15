@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Trichromatic Theory", "삼원색설", "영-헬름홀츠 이론", "색채 인식", "단일 변수 원리", "principle of univariance", "색 맞추기", "color matching", "원색", "primary"]
 description: "색은 세 개의 음량계가 가리키는 눈금의 조합이다. 눈에는 짧은·중간·긴 파장에 각각 잘 반응하는 세 종류의 추상체가 있고, 뇌는 빛의 스펙트럼 전체가 아니라 세 반응의 크기만 받는다. 그래서 빨강·초록·파랑 세 빛만 섞어도 대부분의 색을 흉내 낼 수 있다. 대신 서로 다른 빛이 똑…"
@@ -33,7 +33,7 @@ permalink: "/studies/human-interface-media/trichromatic-theory/"
 
 ## 예시로 보기
 
-슬라이드는 색마다 S, M, L 추상체의 반응 크기가 어떻게 다른지 화살표 크기로 보여 준다[^1][판독불확실: 화살표 크기를 크다·중간·작다로 읽음].
+색마다 S, M, L 추상체가 얼마나 크게 반응하는지 비교하면 이렇다[판독불확실: 크다·중간·작다 세 단계로 읽음].
 
 | 보이는 색 | S | M | L |
 |---|---|---|---|
@@ -52,7 +52,7 @@ permalink: "/studies/human-interface-media/trichromatic-theory/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**삼색 이론**: 색 시각은 서로 다른 세 가지 수용기 메커니즘의 활동에 달려 있다[^2].
+**삼색 이론**: 색 시각은 서로 다른 세 가지 수용기 메커니즘의 활동에 달려 있다.
 
 </div>
 
@@ -82,7 +82,7 @@ graph LR
 | 서로 다른 빛이 같은 색으로 보인다([조건등색](/Hongs_Blog/studies/human-interface-media/metamerism/)) | 주변 색에 따라 같은 색이 달라 보인다(동시 대비) |
 | 추상체가 하나 없으면 두 원색으로 모든 색을 맞춘다(색각 이상) | "붉은 초록", "노란 파랑"이라는 색은 떠올릴 수 없다 |
 
-오른쪽 열은 추상체 뒤의 단계인 [반대색 과정](/Hongs_Blog/studies/human-interface-media/opponent-process/)이 설명한다. 슬라이드 p.13도 두 단계를 차례로 놓는다: 수용기(삼색, 색 맞추기) → 반대색 세포(잔상, 동시 대비)[^3].
+오른쪽 열은 추상체 뒤의 단계인 [반대색 과정](/Hongs_Blog/studies/human-interface-media/opponent-process/)이 설명한다. 색 시각은 두 단계가 차례로 이어진다. 수용기(삼색, 색 맞추기) → 반대색 세포(잔상, 동시 대비).
 
 ## 증명
 
@@ -118,7 +118,7 @@ graph LR
   </details>
 - 이 방법을 쓸 수 있는 다른 상황은?
   <details class="inline-fold" markdown="1"><summary markdown="span">답</summary>
-  모니터의 RGB 값을 계산할 때, 다른 원색을 쓰는 두 기기 사이에서 색을 옮길 때(색 공간 변환), 카메라 센서 값을 사람 눈 기준 색으로 바꿀 때. 모두 $$3 \times 3$$ 행렬 곱이다. 강의 계획표 5주차의 CIE XYZ가 그 기준 좌표계다.
+  모니터의 RGB 값을 계산할 때, 다른 원색을 쓰는 두 기기 사이에서 색을 옮길 때(색 공간 변환), 카메라 센서 값을 사람 눈 기준 색으로 바꿀 때. 모두 $$3 \times 3$$ 행렬 곱이다. 국제조명위원회(CIE)의 XYZ가 그 기준 좌표계다.
   </details>
 
 ## 예제
@@ -153,7 +153,7 @@ L과 M 곡선은 대부분 겹치고, S 곡선만 짧은 파장 쪽에 따로 �
 ## 활용
 
 - 모니터, 휴대폰 화면, 카메라가 모두 R·G·B 세 채널인 이유다. 파장마다 값을 다 저장할 필요 없이 세 값이면 사람 눈에는 충분하다. 이것이 [이미지 함수](/Hongs_Blog/studies/human-interface-media/image-function/)의 $$\mathbf{i} = (i_R, i_G, i_B)$$가 세 성분인 이유다.
-- 음수 원색 문제를 피하려고, 국제조명위원회(CIE)는 실제로 만들 수 없는 가상의 원색으로 좌표계 XYZ를 정했다. 그러면 모든 색이 양수 좌표를 가진다. 강의 계획표 5주차 "Color Space - CIE XYZ, CIE Lab"의 출발점이다[^4][^s4].
+- 음수 원색 문제를 피하려고, 국제조명위원회(CIE)는 실제로 만들 수 없는 가상의 원색으로 좌표계 XYZ를 정했다. 그러면 모든 색이 양수 좌표를 가진다. CIE XYZ, CIE Lab 같은 색 공간(color space)의 출발점이다[^s4].
 - 색각 이상 검사와 색각 이상 사용자를 위한 화면 설계도 이 이론에 기댄다. 추상체 하나가 없으면 조건등색이 훨씬 많아져, 세 추상체를 가진 사람에게 다른 두 색이 같아 보인다.
 
 ## 연결
@@ -175,10 +175,10 @@ L과 M 곡선은 대부분 겹치고, S 곡선만 짧은 파장 쪽에 따로 �
 
 ## 확인 문제
 
-<details markdown="1"><summary markdown="span"><b>C1</b> 삼색 이론을 한 문장으로 쓰고, 세 추상체와 슬라이드의 봉우리 파장을 쓰라.</summary>
+<details markdown="1"><summary markdown="span"><b>C1</b> 삼색 이론을 한 문장으로 쓰고, 세 추상체와 각각의 봉우리 파장을 쓰라.</summary>
 
 
-**답:** 색 시각은 서로 다른 세 수용기 메커니즘(추상체)의 활동에 달려 있다. 색은 세 반응의 크기(조합)로 정해진다. S 445 nm, M 535 nm, L 575 nm.
+**답:** 색 시각은 서로 다른 세 수용기 메커니즘(추상체)의 활동에 달려 있다. 색은 세 반응의 크기(조합)로 정해진다. S 445 nm, M 535 nm, L 575 nm. 봉우리 값은 자료마다 조금 다르다(예: 419, 531, 558 nm).
 
 </details>
 
@@ -211,13 +211,9 @@ L과 M 곡선은 대부분 겹치고, S 곡선만 짧은 파장 쪽에 따로 �
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.10 (왼쪽 그림)
-[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.10 ("Trichromatic Theory"가 굵은 글씨). 영어 정의를 우리말로 옮겼다.
-[^3]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.13 (Trichromatic → Opponent-process 그림)
-[^4]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 4~5주차
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 단일 변수 원리는 지각 교재(예: Goldstein, *Sensation and Perception*)의 표준 용어다. 1.35배 수치는 아래 가우스 모형의 계산값이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 반응 적분식, 선형성(그라스만 법칙), 행렬식 색 맞추기와 증명은 색채학의 표준 내용이며 슬라이드에는 없다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 가우스 민감도 모형은 설명용 가정이다. 봉우리는 슬라이드 p.8 값, 폭은 슬라이드 그래프의 모양에 맞춰 가정했다. 실제 민감도 곡선은 가우스가 아니므로 수치는 경향만 보여 준다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실제 색 맞추기 실험(CIE 1931 RGB 등색 함수)에서도 약 440~550 nm 구간에서 빨강 원색이 음수가 된다. XYZ가 가상 원색으로 이를 피한다는 것은 색채학의 표준 내용이다.
-[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [16_trichromatic-theory_plot.py](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_plot/)로 그렸고, 그림에 쓴 값(480~510 nm의 빨강 세기 −0.37 ~ −0.28, 5 nm 간격 61개 중 58개가 음수 원색을 요구)을 같은 코드로 확인했다.
+[^s1]: 단일 변수 원리는 지각 교재(예: Goldstein, *Sensation and Perception*)의 표준 용어다. 1.35배 수치는 아래 가우스 모형의 계산값이다.
+[^s2]: 반응 적분식, 선형성(그라스만 법칙), 행렬식 색 맞추기와 증명은 색채학의 표준 내용이다.
+[^s3]: 가우스 민감도 모형은 설명용 가정이다. 실제 민감도 곡선은 가우스가 아니므로 수치는 경향만 보여 준다.
+[^s4]: 실제 색 맞추기 실험(CIE 1931 RGB 등색 함수)에서도 약 440~550 nm 구간에서 빨강 원색이 음수가 된다. XYZ가 가상 원색으로 이를 피한다는 것은 색채학의 표준 내용이다.
+[^s5]: [16_trichromatic-theory_plot.py](/Hongs_Blog/studies/human-interface-media/code/16_trichromatic-theory_plot/)로 그렸고, 그림에 쓴 값(480~510 nm의 빨강 세기 −0.37 ~ −0.28, 5 nm 간격 61개 중 58개가 음수 원색을 요구)을 같은 코드로 확인했다.
 {% endraw %}

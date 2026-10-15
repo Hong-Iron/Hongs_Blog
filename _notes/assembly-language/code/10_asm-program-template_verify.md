@@ -23,11 +23,10 @@ permalink: "/studies/assembly-language/code/10_asm-program-template_verify/"
 """프로그램 틀 검증 (MASM이 없어 파이썬 흉내로 확인).
 
 문서: 10.프로그램 틀
-출처: 어셈블리어 4주차 4-1 p.15~16, 19 / 4-3 p.5
 주장:
-  1. AddTwo (p.15): mov eax,5 / add eax,6 → EAX = 0000000Bh (11).
-  2. AddSub2 (4-3 p.5): 10000h + 40000h - 20000h → EAX = 00030000h, finalVal = 30000h.
-  3. 4-1 p.16의 디버거 출력 EAX=00030000 은 AddTwo가 아니라 AddSub 쪽 결과다.
+  1. AddTwo: mov eax,5 / add eax,6 → EAX = 0000000Bh (11).
+  2. AddSub2: 10000h + 40000h - 20000h → EAX = 00030000h, finalVal = 30000h.
+  3. 디버거 출력 EAX=00030000 은 AddTwo가 아니라 AddSub 쪽 결과다.
      EFL=00000206의 짝수 플래그(PF) = 1 도 30000h(아래 8비트 00h)와 맞고 0Bh(1이 세 개)와는 안 맞는다.
   4. 두 프로그램 모두 CF = SF = ZF = OF = 0 으로 끝난다.
   5. 틀의 줄 순서: .386 → .model → .stack → PROTO → .data → .code → main PROC … main ENDP → END main.
@@ -115,7 +114,7 @@ def main():
     assert c.reg["eax"] != 0x00030000
     assert f2["PF"] == 1 and f1["PF"] == 0
     assert (0x206 >> 2) & 1 == 1
-    print("[OK] p.16의 EAX=00030000, EFL=206h(PF = 1)은 AddSub 결과와 맞고 AddTwo(0Bh, PF = 0)와는 안 맞는다")
+    print("[OK] 디버거 출력의 EAX=00030000, EFL=206h(PF = 1)은 AddSub 결과와 맞고 AddTwo(0Bh, PF = 0)와는 안 맞는다")
 
     for f in (f1, f2):
         assert (f["CF"], f["SF"], f["ZF"], f["OF"]) == (0, 0, 0, 0)

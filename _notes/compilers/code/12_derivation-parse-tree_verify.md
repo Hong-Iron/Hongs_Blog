@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/12_derivation-parse-tree_verify/"
 [유도와 파스 트리](/Hongs_Blog/studies/compilers/derivation-parse-tree/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""유도와 파스 트리 문서의 예를 확인한다: 슬라이드의 좌측·우측 유도, 잎을 왼쪽부터 읽기, 파스 트리와 좌측 유도의 일대일 대응.
+"""유도와 파스 트리 문서의 예를 확인한다: 본문의 좌측·우측 유도, 잎을 왼쪽부터 읽기, 파스 트리와 좌측 유도의 일대일 대응.
 
 실행: python3 12_derivation-parse-tree_verify.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -140,22 +140,22 @@ if __name__ == "__main__":
     g = G("E -> E + E | E * E | ( E ) | id")
     s = "id * id + id".split()
     trees = parse_trees(g, "E", s)
-    # 슬라이드 p.24~30의 트리: 뿌리가 + 이고 왼쪽 자식이 id * id
+    # 본문의 트리: 뿌리가 + 이고 왼쪽 자식이 id * id
     t = [x for x in trees if x[2] == "+"][0]
     assert bracket(t) == "E[E[E[id] * E[id]] + E[id]]"
 
-    # p.20, p.25~29의 좌측 유도
+    # 본문의 좌측 유도
     assert derivation(t, True) == ["E", "E + E", "E * E + E", "id * E + E", "id * id + E", "id * id + id"]
-    # p.20, p.31의 우측 유도
+    # 본문의 우측 유도
     assert derivation(t, False) == ["E", "E + E", "E + id", "E * E + id", "E * id + id", "id * id + id"]
     # 두 유도는 같은 트리에서 나왔고, 걸음 수는 비단말 노드 수(5)와 같다
     assert len(derivation(t, True)) - 1 == len(derivation(t, False)) - 1 == 5
 
-    # p.30: 잎을 왼쪽부터 읽으면 원래 문자열이다
+    # 잎을 왼쪽부터 읽으면 원래 문자열이다
     for x in trees:
         assert leaves(x) == s
 
-    # p.19: E ⇒ (E) ⇒ (E + E) ⇒ (id + E) ⇒ (id + id)
+    # E ⇒ (E) ⇒ (E + E) ⇒ (id + E) ⇒ (id + id)
     t2 = parse_trees(g, "E", "( id + id )".split())
     assert len(t2) == 1
     assert derivation(t2[0], True) == ["E", "( E )", "( E + E )", "( id + E )", "( id + id )"]

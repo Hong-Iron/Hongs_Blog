@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/38_quadruples_verify/"
 ```python
 # 38_quadruples_verify.py
 # 쿼드러플 문서의 표를 확인한다. 3주소 코드 한 줄을 (op, arg1, arg2, result) 네 칸으로 옮기는
-# to_quad가 슬라이드 L11 p.21의 표 12줄과 p.20의 다섯 줄을 그대로 내는지 보고,
+# to_quad가 문서의 표 12줄과 다섯 줄 예를 그대로 내는지 보고,
 # 연결 리스트에 차례로 이어 붙인 뒤 실행한 값이 식을 직접 계산한 값과 같은지 본다.
 # 실행: python3 38_quadruples_verify.py
 import re
@@ -159,7 +159,7 @@ class QuadList:
             n = n.next
 
 
-# p.21 표: (3주소 코드, op, arg1, arg2, result)
+# 문서의 표: (3주소 코드, op, arg1, arg2, result)
 TABLE = [
     ("a = b",          "=",      "b", None, "a"),
     ("a = b - c",      "-",      "b", "c",  "a"),
@@ -187,7 +187,7 @@ if __name__ == "__main__":
     for line, *quad in TABLE:
         assert to_quad(line) == tuple(quad), line
 
-    # p.20: 다섯 줄이 다섯 칸짜리 리스트가 된다. 슬라이드는 마지막 op를 copy로 적었다
+    # 다섯 줄 예가 다섯 칸짜리 리스트가 된다. 문서의 그림은 마지막 op를 copy로 적었다
     lst = QuadList()
     for q in quads(P20):
         lst.append(q)

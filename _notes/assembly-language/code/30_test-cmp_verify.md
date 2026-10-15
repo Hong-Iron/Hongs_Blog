@@ -28,7 +28,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(문서 예시의 00000020 call → 00000025와 맞춘 값).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -487,7 +487,7 @@ def cmp8(a, b):
 
 
 def main():
-    # 1. 슬라이드의 CMP 예 (wk07-3-2 p.15~17)
+    # 1. 문서의 CMP 예 다섯 개
     f = machine("mov al,5\ncmp al,5").run().f
     assert f["ZF"] == 1 and f["CF"] == 0
     f = machine("mov al,4\ncmp al,5").run().f
@@ -515,7 +515,7 @@ def main():
             assert (f["ZF"] == 0 and f["CF"] == 0) == (a > b)             # 부호 없는 >
             assert (f["SF"] != f["OF"]) == (sa < sb)                      # 부호 있는 <
             assert (f["ZF"] == 0 and f["SF"] == f["OF"]) == (sa > sb)     # 부호 있는 >
-    # 3. TEST (p.14): 0·1번 비트 중 하나라도 켜졌나. 전수. AL은 그대로
+    # 3. TEST: 0·1번 비트 중 하나라도 켜졌나. 전수. AL은 그대로
     for v in range(256):
         c = machine("test al,00000011b\njnz ValueFound\nmov bl,1\nValueFound:")
         c.put("al", v)
@@ -531,7 +531,7 @@ def main():
     # TEST는 CF·OF를 0으로 만든다
     c = machine("mov al,0FFh\nadd al,1\ntest bl,bl").run()
     assert (c.f["CF"], c.f["OF"], c.f["ZF"]) == (0, 0, 1)
-    # 4. 넘침 플래그 = 7번 비트로 들어온 올림 XOR 7번 비트에서 나간 올림 (p.4). 덧셈 8비트 전수
+    # 4. 넘침 플래그 = 7번 비트로 들어온 올림 XOR 7번 비트에서 나간 올림. 덧셈 8비트 전수
     for a in range(256):
         for b in range(256):
             c = CPU()
@@ -540,7 +540,7 @@ def main():
             out7 = (a + b) >> 8
             assert c.f["OF"] == into7 ^ out7 and c.f["CF"] == out7
             assert c.f["OF"] == int(not -128 <= signed(a, 1) + signed(b, 1) <= 127)
-    # 5. 짝수 패리티 (p.4): 아래 바이트의 1이 짝수 개면 PF = 1
+    # 5. 짝수 패리티: 아래 바이트의 1이 짝수 개면 PF = 1
     c = CPU()
     c.logic(0b00000011, 1)
     assert c.f["PF"] == 1

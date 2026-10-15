@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-any-all/"
 
 ## 예시로 보기
 
-[IN](/Hongs_Blog/studies/database-design/nested-query-in/)은 쪽지의 값과 같은지만 본다. "5번 부서의 어느 직원보다도 급여가 많은 직원"처럼 크기를 견주는 질문에는 쓸 수 없다. 이 질문은 이렇게 쓴다[^1].
+[IN](/Hongs_Blog/studies/database-design/nested-query-in/)은 쪽지의 값과 같은지만 본다. "5번 부서의 어느 직원보다도 급여가 많은 직원"처럼 크기를 견주는 질문에는 쓸 수 없다. 이 질문은 이렇게 쓴다.
 
 ```sql
 SELECT Lname, Fname
@@ -65,7 +65,7 @@ WHERE  Salary > ALL ( SELECT Salary
 
 ## 정의
 
-비교 연산자 `=`, `>`, `>=`, `<`, `<=`, `<>` 뒤에 `ANY`나 `ALL`을 붙여, 값 `v` 하나를 값의 모음 `V`(안쪽 질의의 결과)와 견준다[^2].
+비교 연산자 `=`, `>`, `>=`, `<`, `<=`, `<>` 뒤에 `ANY`나 `ALL`을 붙여, 값 `v` 하나를 값의 모음 `V`(안쪽 질의의 결과)와 견준다.
 
 - `v > ANY V`: `V`의 값 가운데 **적어도 하나**보다 `v`가 크면 참이다.
 - `v > ALL V`: `V`의 **모든** 값보다 `v`가 크면 참이다.
@@ -80,7 +80,7 @@ $$v \;\theta\; \text{ANY}\; V \iff \exists x \in V\ (v \;\theta\; x), \qquad v \
 
 | 식 | 뜻 | 같은 말 |
 |---|---|---|
-| `v = ANY V` | `V`에 `v`와 같은 값이 있다 | `v IN V`[^2] |
+| `v = ANY V` | `V`에 `v`와 같은 값이 있다 | `v IN V` |
 | `v <> ALL V` | `V`의 어느 값과도 다르다 | `v NOT IN V` |
 | `v > ALL V` | `V`의 가장 큰 값보다도 크다 | 대개 `v > (SELECT MAX …)` |
 | `v > ANY V` | `V`의 가장 작은 값보다는 크다 | 대개 `v > (SELECT MIN …)` |
@@ -135,8 +135,6 @@ $$v \;\theta\; \text{ANY}\; V \iff \exists x \in V\ (v \;\theta\; x), \qquad v \
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.13 (= ALL operator, "5번 부서의 모든 직원보다 급여가 많은 직원" 질의)
-[^2]: 같은 자료, p.12 (= ANY operator는 IN과 같다, `>`, `>=`, `<`, `<=`, `<>`도 ANY와 함께 쓴다). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.4에 IN, ANY, ALL이 한 쪽으로 다시 정리되어 있다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 직원별 참·거짓 표, `> ANY`의 결과, `<> ANY`·`= ALL`·`<> ALL`의 예, 카드 C2는 슬라이드에 없다. 슬라이드는 `> ALL` 질의만 싣고 결과는 싣지 않았다. PostgreSQL 16에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `MAX`·`MIN`으로 바꿔 쓰기와 두 경우의 차이는 슬라이드에 없다. `> ALL`의 8명과 0행은 PostgreSQL 16에서, `MAX` 쪽의 0명과 7행은 SQLite와 PostgreSQL 16 양쪽에서 실행해 확인했다.
+[^s1]: PostgreSQL 16에서 실행해 확인했다.
+[^s2]: `> ALL`의 8명과 0행은 PostgreSQL 16에서, `MAX` 쪽의 0명과 7행은 SQLite와 PostgreSQL 16 양쪽에서 실행해 확인했다.
 {% endraw %}

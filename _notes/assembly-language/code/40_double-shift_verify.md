@@ -22,7 +22,7 @@ permalink: "/studies/assembly-language/code/40_double-shift_verify/"
 ```python
 """이중 시프트(SHLD, SHRD) 검증. 실행: python3 40_double-shift_verify.py
 MASM이 없어 시프트·회전 명령을 파이썬 함수로 흉내 낸다(한 칸씩 n번 민다).
-슬라이드 wk10-3-2 p.9~14의 값과 Your turn 답을 단언하고, 이어 붙인 수의 시프트와 같은지 검사한다."""
+문서의 값과 이어서 실행하기의 답을 단언하고, 이어 붙인 수의 시프트와 같은지 검사한다."""
 def mask(bits):
     return (1 << bits) - 1
 
@@ -114,15 +114,15 @@ def shrd(dest, src, n, bits=16):
 
 
 if __name__ == "__main__":
-    # --- 슬라이드 wk10-3-2 p.9: SHLD 그림 (8비트로 그린 그림) ---
+    # --- SHLD 그림 (8비트로 그린 그림) ---
     assert shld(0b11100000, 0b10011101, 1, bits=8) == (0b11000001, 1)
-    # --- p.10: wval = 9BA6h, AX = AC36h, shld wval,ax,4 ---
+    # --- wval = 9BA6h, AX = AC36h, shld wval,ax,4 ---
     assert shld(0x9BA6, 0xAC36, 4)[0] == 0xBA6A
-    # --- p.12: SHRD 그림 (8비트) ---
+    # --- SHRD 그림 (8비트) ---
     assert shrd(0b11000001, 0b00011101, 1, bits=8) == (0b11100000, 1)
-    # --- p.13: AX = 234Bh, DX = 7654h, shrd ax,dx,4 ---
+    # --- AX = 234Bh, DX = 7654h, shrd ax,dx,4 ---
     assert shrd(0x234B, 0x7654, 4)[0] == 0x4234
-    # --- p.14 Your turn: AX = 7C36h, DX = 9FA6h ---
+    # --- 이어서 실행하기: AX = 7C36h, DX = 9FA6h ---
     dx, cf = shld(0x9FA6, 0x7C36, 4); assert dx == 0xFA67
     dx, cf = shrd(dx, 0x7C36, 8);     assert dx == 0x36FA
     # 둘째 줄을 처음 DX에 바로 하면 다른 값이 나온다 (앞줄 결과에 이어서 해야 한다)

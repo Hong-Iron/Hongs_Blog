@@ -23,7 +23,7 @@ permalink: "/studies/database-design/code/12_b-tree-height_verify/"
 """B-트리의 높이 검증: 가장 적게 담을 때 2t^h - 1개, 가득 찼을 때 (2t)^(h+1) - 1개.
 
 문서: 12.B-트리의 높이, 16.B-트리와 이진 탐색 트리 비교, 연습 17.B-트리 연습 p2
-출처: 03.3_B-tree.pdf p.18~19, 03.3-2_B-tree-insertion.pdf p.8~9, 03.3_B-tree-solutions.pdf p.2
+출처: Cormen 외, Introduction to Algorithms 3판 정리 18.1
 실행: python3 12_b-tree-height_verify.py
 
 확인하는 것 (증명이 아니라 실험이다. 증명은 문서에 있다)
@@ -260,13 +260,13 @@ def main():
     # 6. 문서의 수
     table = [(h, 2 * 2 ** h - 1, 4 ** (h + 1) - 1) for h in range(4)]
     assert table == [(0, 1, 3), (1, 3, 15), (2, 7, 63), (3, 15, 255)]                 # 예시 표, t = 2
-    assert upper(5, 2) == 1 and lower(5, 2) == 1                                     # 연습 1의 네 트리는 모두 높이 1
+    assert upper(5, 2) == 1 and lower(5, 2) == 1                                     # 17.B-트리 연습 p1의 네 트리는 모두 높이 1
     assert heights_of_all_btrees(3, 2) == [0, 1] and upper(3, 2) == 1                # 오해 항목: 키 3개면 높이 0 또는 1
     assert upper(1000, 3) == 5 and 3 ** 5 == 243 and 3 ** 6 == 729                   # C3
     assert abs(math.log(500.5, 3) - 5.657) < 0.001
     assert lower(1000, 3) == 3 and 6 ** 3 - 1 == 215 and 6 ** 4 - 1 == 1295          # C3: 가장 낮으면 3
     assert 4 ** 3 - 1 == 63 and 2 * 2 ** 2 - 1 == 7                                  # C5: t = 2, h = 2
-    assert 1001 ** 3 - 1 == 1003003000                                               # 3 p.13 그림
+    assert 1001 ** 3 - 1 == 1003003000                                               # 문서 11의 표(노드마다 키 1,000개)
     # 16.비교 문서: 키 100만 개
     n = 10 ** 6
     assert math.ceil(math.log2(n + 1)) - 1 == 19                                     # 가장 고른 이진 탐색 트리의 높이

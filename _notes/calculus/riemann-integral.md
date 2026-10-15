@@ -218,8 +218,8 @@ $$\int_0^1 e^x\,dx$$를 세 방법으로 계산한 오차다. 두 눈금이 모�
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 5.1절 "Approximating Areas"(왼쪽·오른쪽 끝 합, 상합·하합), 5.2절 "The Definite Integral"(정의, 적분 가능성, 성질).
-[^2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다르부 판정과 "불연속점이 유한 개인 유계 함수는 적분 가능"은 해석학 교재의 리만 적분 장에 있는 표준 결과다. 이 문서에서는 증가함수의 경우만 증명했다. 계단 함수의 값 3은 11_riemann-integral_verify.py에서 확인했다.
+[^2]: 다르부 판정과 "불연속점이 유한 개인 유계 함수는 적분 가능"은 해석학 교재의 리만 적분 장에 있는 표준 결과다. 이 문서에서는 증가함수의 경우만 증명했다. 계단 함수의 값 3은 11_riemann-integral_verify.py에서 확인했다.
 [^3]: OpenStax, *Calculus Volume 2*, 3.6절 "Numerical Integration"(중점·사다리꼴·심프슨 규칙과 오차 한계). 오차 비율은 11_riemann-integral_verify.py에서 실험으로 확인했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [11_riemann-integral_plot.py](/Hongs_Blog/studies/calculus/code/11_riemann-integral_plot/)로 그렸고, 표의 $$L_6 = 6.875$$, $$R_6 = 11.375$$와, $$n$$을 64에서 128로 늘릴 때 오차 비율이 왼쪽 끝 합 약 2, 사다리꼴 약 4, 심프슨 약 16인 것을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 동치인 정의(다르부 판정), 적분 가능한 것과 적분 가능하지 않은 것을 근거로 그렸다.
+[^s1]: [11_riemann-integral_plot.py](/Hongs_Blog/studies/calculus/code/11_riemann-integral_plot/)로 그렸고, 표의 $$L_6 = 6.875$$, $$R_6 = 11.375$$와, $$n$$을 64에서 128로 늘릴 때 오차 비율이 왼쪽 끝 합 약 2, 사다리꼴 약 4, 심프슨 약 16인 것을 같은 코드로 확인했다.
+[^s2]: 정의 절의 동치인 정의(다르부 판정), 적분 가능한 것과 적분 가능하지 않은 것을 근거로 그렸다.
 {% endraw %}

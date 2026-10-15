@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-09-25"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 측면 억제의 최종 반응 = 자기 수용기 반응 − 이웃마다 (이웃 수용기 반응 × k)."
 prev_url: "/studies/human-interface-media/metamerism-ladder/"
@@ -28,7 +28,7 @@ permalink: "/studies/human-interface-media/lateral-inhibition-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-수용기 반응이 A~F 순으로 (100, 100, 100, 20, 20, 20)이다. 각 수용기는 좌우 이웃에 자기 반응의 10%만큼 억제를 보낸다. 최종 반응을 구하고 무엇이 보이는지 쓰라(슬라이드 p.12의 마하 띠)[^1].
+수용기 반응이 A~F 순으로 (100, 100, 100, 20, 20, 20)이다. 각 수용기는 좌우 이웃에 자기 반응의 10%만큼 억제를 보낸다. 최종 반응을 구하고 무엇이 보이는지 쓰라(마하 띠).
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
@@ -42,7 +42,7 @@ permalink: "/studies/human-interface-media/lateral-inhibition-ladder/"
 
 ## 문제 2 · 마지막 하위목표만 빈칸
 
-헤르만 격자에서 흰 길은 100, 검은 칸은 20이고, 억제는 상하좌우 이웃에 10%다. 교차점 A와 두 검은 칸 사이의 길 D의 최종 반응을 구하고, 어느 쪽이 어둡게 보이는지 쓰라(슬라이드 p.11)[^1].
+헤르만 격자에서 흰 길은 100, 검은 칸은 20이고, 억제는 상하좌우 이웃에 10%다. 교차점 A와 두 검은 칸 사이의 길 D의 최종 반응을 구하고, 어느 쪽이 어둡게 보이는지 쓰라.
 
 1. *이웃 찾기:* A의 이웃 넷은 모두 흰 길. D의 이웃은 위아래 흰 길 둘, 좌우 검은 칸 둘.
 2. *이웃별 억제량:* A는 10 × 4. D는 10, 10, 2, 2.
@@ -107,7 +107,4 @@ A(60) < D(76)이라 교차점이 길보다 어둡게 보인다. 교차점에 회
 <div class="callout-title" markdown="span">검증: 억제 20%의 (60, 60, 76, −4, 12, 12)와 0으로 자른 결과 — [18_lateral-inhibition_verify.py](/Hongs_Blog/studies/human-interface-media/code/18_lateral-inhibition_verify/)</div>
 
 </div>
-
-
-[^1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1·2는 슬라이드 p.11~12의 예를 하위목표로 나눈 것이고, 문제 3·4와 변형 문제의 수치는 원본에 없는 설명용 가상 수치다.
 {% endraw %}

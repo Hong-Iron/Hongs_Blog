@@ -46,18 +46,18 @@ $$x$$축과, $$(0, 1, 0)$$을 지나 $$z$$ 방향으로 뻗은 직선은 서로 
 
 ## 정의
 
-직선은 점 $$S$$와 방향 $$V$$로 $$S + tV$$, 평면은 법선 $$N$$과 평면 위 점 $$P$$로 $$N\cdot(X - P) = 0$$이다. 평면을 $$L = \langle N, D\rangle = \langle N, -N\cdot P\rangle$$ 한 묶음으로도 쓴다[^1][^2].
+직선은 점 $$S$$와 방향 $$V$$로 $$S + tV$$, 평면은 법선 $$N$$과 평면 위 점 $$P$$로 $$N\cdot(X - P) = 0$$이다. 평면을 $$L = \langle N, D\rangle = \langle N, -N\cdot P\rangle$$ 한 묶음으로도 쓴다.
 
 ### 점과 직선
 
-$$Q - S$$를 직선 방향으로 사영한 부분을 빼면 수직 부분이 남는다. 피타고라스 정리로 그 길이가 거리다[^3].
+$$Q - S$$를 직선 방향으로 사영한 부분을 빼면 수직 부분이 남는다. 피타고라스 정리로 그 길이가 거리다.
 
 $$d = \sqrt{\vert Q - S\vert ^2 - \frac{\big((Q - S)\cdot V\big)^2}{\vert V\vert ^2}}$$
 
 
 ### 두 직선
 
-두 직선 $$S_1 + t_1V_1$$, $$S_2 + t_2V_2$$ 위 점 사이 거리의 제곱 $$f(t_1, t_2)$$를 가장 작게 하는 $$t_1, t_2$$를 찾는다[^4]. 최소인 곳에서 두 편미분이 0이다[^5].
+두 직선 $$S_1 + t_1V_1$$, $$S_2 + t_2V_2$$ 위 점 사이 거리의 제곱 $$f(t_1, t_2)$$를 가장 작게 하는 $$t_1, t_2$$를 찾는다. 최소인 곳에서 두 편미분이 0이다.
 
 $$\begin{pmatrix}V_1\cdot V_1 & -V_1\cdot V_2\\ V_1\cdot V_2 & -V_2\cdot V_2\end{pmatrix}\begin{pmatrix}t_1\\ t_2\end{pmatrix} = \begin{pmatrix}(S_2 - S_1)\cdot V_1\\ (S_2 - S_1)\cdot V_2\end{pmatrix}$$
 
@@ -65,7 +65,7 @@ $$\begin{pmatrix}V_1\cdot V_1 & -V_1\cdot V_2\\ V_1\cdot V_2 & -V_2\cdot V_2\end
 $$\begin{pmatrix}t_1\\ t_2\end{pmatrix} = \frac{1}{(V_1\cdot V_2)^2 - \vert V_1\vert ^2\vert V_2\vert ^2}\begin{pmatrix}-V_2\cdot V_2 & V_1\cdot V_2\\ -V_1\cdot V_2 & V_1\cdot V_1\end{pmatrix}\begin{pmatrix}(S_2 - S_1)\cdot V_1\\ (S_2 - S_1)\cdot V_2\end{pmatrix}$$
 
 
-두 직선이 평행하면 분모 $$(V_1\cdot V_2)^2 - \vert V_1\vert ^2\vert V_2\vert ^2$$이 0이다(코시-슈바르츠 부등식의 등호). 이때는 한 직선 위의 아무 점과 다른 직선 사이의 거리(점과 직선)로 잰다[^6].
+두 직선이 평행하면 분모 $$(V_1\cdot V_2)^2 - \vert V_1\vert ^2\vert V_2\vert ^2$$이 0이다(코시-슈바르츠 부등식의 등호). 이때는 한 직선 위의 아무 점과 다른 직선 사이의 거리(점과 직선)로 잰다.
 
 ```mermaid
 flowchart TD
@@ -75,20 +75,20 @@ flowchart TD
     D --> E["두 점 S1 + t1V1, S2 + t2V2 사이 거리"]
 ```
 
-먼저 평행인지 보고, 평행이면 점과 직선 문제로 넘긴다. 평행하지 않을 때만 $$t_1, t_2$$를 구한다[^s2].
+먼저 평행인지 보고, 평행이면 점과 직선 문제로 넘긴다. 평행하지 않을 때만 $$t_1, t_2$$를 구한다.
 
 ### 점과 평면
 
 $$d = N\cdot Q - N\cdot P = L\cdot Q \quad (Q \text{를 } (Q, 1)\text{로 보고})$$
 
 
-$$d = 0$$이면 $$Q$$는 평면 위, $$d > 0$$이면 법선 쪽, $$d < 0$$이면 반대쪽이다[^7]. $$d$$가 실제 거리인 것은 $$\vert N\vert  = 1$$일 때다. 그렇지 않으면 $$d$$를 $$\vert N\vert $$로 나눈다[^s1].
+$$d = 0$$이면 $$Q$$는 평면 위, $$d > 0$$이면 법선 쪽, $$d < 0$$이면 반대쪽이다. $$d$$가 실제 거리인 것은 $$\vert N\vert  = 1$$일 때다. 그렇지 않으면 $$d$$를 $$\vert N\vert $$로 나눈다[^s1].
 
 ### 교점
 
-- **직선과 평면.** $$N\cdot(S + tV) + D = 0$$을 풀면 $$t = -\frac{N\cdot S + D}{N\cdot V}$$이다. $$N\cdot V = 0$$이면 평행이다[^8].
-- **세 평면.** 세 식 $$N_i\cdot Q = N_i\cdot P_i$$를 모으면 $$MQ = \mathbf b$$다. $$M$$은 행이 $$N_1^\top, N_2^\top, N_3^\top$$인 행렬이라 $$Q = M^{-1}\mathbf b$$다[^9].
-- **두 평면.** 교선의 방향은 두 법선에 모두 수직인 $$N_1 \times N_2$$다. 교선 위 한 점 $$Q$$는 셋째 식으로 "$$N_1 \times N_2$$ 방향 성분이 0"을 더해 구한다[^10].
+- **직선과 평면.** $$N\cdot(S + tV) + D = 0$$을 풀면 $$t = -\frac{N\cdot S + D}{N\cdot V}$$이다. $$N\cdot V = 0$$이면 평행이다.
+- **세 평면.** 세 식 $$N_i\cdot Q = N_i\cdot P_i$$를 모으면 $$MQ = \mathbf b$$다. $$M$$은 행이 $$N_1^\top, N_2^\top, N_3^\top$$인 행렬이라 $$Q = M^{-1}\mathbf b$$다.
+- **두 평면.** 교선의 방향은 두 법선에 모두 수직인 $$N_1 \times N_2$$다. 교선 위 한 점 $$Q$$는 셋째 식으로 "$$N_1 \times N_2$$ 방향 성분이 0"을 더해 구한다.
 
 $$Q = \begin{pmatrix}N_1\\ N_2\\ N_1 \times N_2\end{pmatrix}^{-1}\begin{pmatrix}N_1\cdot P_1\\ N_2\cdot P_2\\ 0\end{pmatrix}, \qquad X = Q + t(N_1 \times N_2)$$
 
@@ -129,16 +129,5 @@ $$Q = \begin{pmatrix}N_1\\ N_2\\ N_1 \times N_2\end{pmatrix}^{-1}\begin{pmatrix}
 </details>
 
 
-[^1]: 수치해석 6회 강의 자료 「na06_rotation」, p.34
-[^2]: 같은 자료, p.39
-[^3]: 같은 자료, p.35
-[^4]: 같은 자료, p.36
-[^5]: 같은 자료, p.37
-[^6]: 같은 자료, p.38
-[^7]: 같은 자료, p.39
-[^8]: 같은 자료, p.40
-[^9]: 같은 자료, p.41
-[^10]: 같은 자료, p.42
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 꼬인 직선 예, 평행일 때 분모가 0인 이유(코시-슈바르츠), 단위 법선 조건, 교선의 셋째 식 설명, 충돌 판정 등 활용, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '두 직선' 절의 연립방정식과 평행일 때의 처리(원본 06.na06_rotation.pdf p.36~38)로 그렸다.
+[^s1]: 검증 코드로 확인했다.
 {% endraw %}

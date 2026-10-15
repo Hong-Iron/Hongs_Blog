@@ -236,8 +236,8 @@ for i in range(n - 1, -1, -1):
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 2.2절 "The Idea of Elimination", 2.3절 "Elimination Using Matrices", 3.3절 "The Complete Solution to Ax = b"(해의 종류), 11.1절 "Gaussian Elimination in Practice"(피벗팅과 연산 수).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> NumPy 문서는 `numpy.linalg.solve`가 LAPACK의 `gesv`(부분 피벗팅 LU)를 부른다고 밝힌다. 연산 수와 피벗팅 예는 05_gaussian-elimination_verify.py에서 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> IEEE 754 배정밀도의 유효숫자는 10진수로 약 15~17자리다(가수 53비트, $$2^{-53} \approx 1.1 \times 10^{-16}$$).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [05_gaussian-elimination_plot.py](/Hongs_Blog/studies/linear-algebra/code/05_gaussian-elimination_plot/)로 그렸고, $$\varepsilon = 10^{-20}$$에서 그냥 풀면 $$x = 0$$, 행을 바꾸면 $$x = 1$$이 나오는 것, $$\varepsilon \le 10^{-16}$$에서 오차가 1 정도인 것, 행을 바꾼 풀이의 오차가 $$2.2 \times 10^{-16}$$ 이하인 것을 같은 코드로 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 GAUSS 의사코드를 그대로 옮겼다(Strang 5판 2.2~2.3절, 11.1절).
+[^s1]: NumPy 문서는 `numpy.linalg.solve`가 LAPACK의 `gesv`(부분 피벗팅 LU)를 부른다고 밝힌다. 연산 수와 피벗팅 예는 05_gaussian-elimination_verify.py에서 확인했다.
+[^s2]: IEEE 754 배정밀도의 유효숫자는 10진수로 약 15~17자리다(가수 53비트, $$2^{-53} \approx 1.1 \times 10^{-16}$$).
+[^s3]: [05_gaussian-elimination_plot.py](/Hongs_Blog/studies/linear-algebra/code/05_gaussian-elimination_plot/)로 그렸고, $$\varepsilon = 10^{-20}$$에서 그냥 풀면 $$x = 0$$, 행을 바꾸면 $$x = 1$$이 나오는 것, $$\varepsilon \le 10^{-16}$$에서 오차가 1 정도인 것, 행을 바꾼 풀이의 오차가 $$2.2 \times 10^{-16}$$ 이하인 것을 같은 코드로 확인했다.
+[^s4]: 이 문서 `정의`의 GAUSS 의사코드를 그대로 옮겼다(Strang 5판 2.2~2.3절, 11.1절).
 {% endraw %}

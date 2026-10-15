@@ -23,21 +23,20 @@ permalink: "/studies/database-design/code/75_sql-view_verify/"
 """뷰 검증 (SQLite). 권한 예는 75_sql-view_verify.sql(PostgreSQL)에서 확인한다.
 
 문서: 75.뷰, 78.뷰와 기본 테이블 비교, 77.뷰 연습의 연습 0
-출처: 13주차 슬라이드 13-View p.3~8, 14, 25~26, 30
 주장:
-  1. WORKS_ON1(p.5)은 16행, 열은 Fname, Lname, Pname, Hours(정의에 쓴 표의 열 이름 그대로)다.
-  2. DEPT_INFO(p.6)는 열 이름을 따로 붙인 뷰다(안 붙이면 계산식 글자가 열 이름이 된다): (Research, 4, 133000), (Administration, 3, 93000), (Headquarters, 1, 55000).
-  3. 뷰에 던진 질의(p.7)와 세 표를 직접 조인한 질의(p.30, 연습 0)의 답이 같다: Smith, English.
+  1. WORKS_ON1은 16행, 열은 Fname, Lname, Pname, Hours(정의에 쓴 표의 열 이름 그대로)다.
+  2. DEPT_INFO는 열 이름을 따로 붙인 뷰다(안 붙이면 계산식 글자가 열 이름이 된다): (Research, 4, 133000), (Administration, 3, 93000), (Headquarters, 1, 55000).
+  3. 뷰에 던진 질의와 세 표를 직접 조인한 질의(뷰 연습의 연습 0)의 답이 같다: Smith, English.
   4. 뷰는 저장된 표가 아니다: 카탈로그에 정의 글만 있고 저장 자리(rootpage)는 0이다.
-  5. 기본 테이블을 고치면 뷰를 다시 만들지 않아도 답이 바뀐다(p.8). CREATE TABLE ... AS로 떠 둔 복사본은 안 바뀐다.
-  6. DROP VIEW는 정의에 쓴 표를 건드리지 않는다(p.14).
-  7. DEPT5EMP(p.25)는 5번 부서 4행만, BASIC_EMP_DATA(p.26)는 8행의 세 열만 보인다.
+  5. 기본 테이블을 고치면 뷰를 다시 만들지 않아도 답이 바뀐다. CREATE TABLE ... AS로 떠 둔 복사본은 안 바뀐다.
+  6. DROP VIEW는 정의에 쓴 표를 건드리지 않는다.
+  7. DEPT5EMP는 5번 부서 4행만, BASIC_EMP_DATA는 8행의 세 열만 보인다.
   8. 뷰가 기대는 기본 테이블을 지우면 SQLite는 뷰 정의만 남기고, 그 뷰는 쓸 때 오류가 난다.
 실행: python3 75_sql-view_verify.py
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -144,31 +143,31 @@ def main():
     assert q(c, "SELECT COUNT(*) FROM WORKS_ON1") == [(16,)]
     assert q(c, "SELECT * FROM WORKS_ON1 WHERE Lname = 'Smith' ORDER BY Pname") == [
         ("John", "Smith", "ProductX", 32.5), ("John", "Smith", "ProductY", 7.5)]
-    print("[OK] p.5: WORKS_ON1은 16행, 열 이름은 기본 테이블 것 그대로")
+    print("[OK] WORKS_ON1은 16행, 열 이름은 기본 테이블 것 그대로")
 
     assert cols(c, "SELECT * FROM DEPT_INFO") == ["Dept_name", "No_of_emps", "Total_sal"]
     assert q(c, "SELECT * FROM DEPT_INFO ORDER BY No_of_emps DESC") == [
         ("Research", 4, 133000), ("Administration", 3, 93000), ("Headquarters", 1, 55000)]
-    print("[OK] p.6: DEPT_INFO =", q(c, "SELECT * FROM DEPT_INFO ORDER BY No_of_emps DESC"))
+    print("[OK] DEPT_INFO =", q(c, "SELECT * FROM DEPT_INFO ORDER BY No_of_emps DESC"))
 
     c.execute("CREATE VIEW DEPT_INFO_NONAME AS SELECT Dname, COUNT (*), SUM (Salary) FROM DEPARTMENT, EMPLOYEE "
               "WHERE Dnumber = Dno GROUP BY Dname")
     assert cols(c, "SELECT * FROM DEPT_INFO_NONAME") == ["Dname", "COUNT (*)", "SUM (Salary)"]
     c.execute("DROP VIEW DEPT_INFO_NONAME")
-    print("[OK] p.6: 열 이름을 안 붙이면 SQLite는 계산식 글자를 그대로 열 이름으로 쓴다 ('COUNT (*)', 'SUM (Salary)')")
+    print("[OK] 열 이름을 안 붙이면 SQLite는 계산식 글자를 그대로 열 이름으로 쓴다 ('COUNT (*)', 'SUM (Salary)')")
 
     on_view = q(c, "SELECT Fname, Lname FROM WORKS_ON1 WHERE Pname = 'ProductX' ORDER BY Lname DESC")
     on_base = q(c, "SELECT Fname, Lname FROM EMPLOYEE, PROJECT, WORKS_ON "
                    "WHERE Ssn = Essn AND Pno = Pnumber AND Pname = 'ProductX' ORDER BY Lname DESC")
     assert on_view == on_base == [("John", "Smith"), ("Joyce", "English")]
-    print("[OK] p.7, p.30(연습 0): 뷰 질의 = 세 표 조인 질의 =", on_view)
+    print("[OK] 뷰 질의 = 세 표 조인 질의(연습 0) =", on_view)
 
     kind = q(c, "SELECT name, type, rootpage FROM sqlite_master WHERE name IN ('WORKS_ON1', 'WORKS_ON') ORDER BY name")
     assert kind[0][:2] == ("WORKS_ON", "table") and kind[0][2] > 0
     assert kind[1] == ("WORKS_ON1", "view", 0)
     sql = q(c, "SELECT sql FROM sqlite_master WHERE name = 'WORKS_ON1'")[0][0]
     assert sql.startswith("CREATE VIEW WORKS_ON1")
-    print("[OK] p.3: 카탈로그에 뷰는 정의 글만 있고 저장 자리(rootpage)는 0, 기본 테이블은 저장 자리가 있다")
+    print("[OK] 카탈로그에 뷰는 정의 글만 있고 저장 자리(rootpage)는 0, 기본 테이블은 저장 자리가 있다")
 
     # 늘 최신: 복사본(표)과 뷰를 나란히 두고 기본 테이블을 고친다
     c.execute("CREATE TABLE DEPT_INFO_COPY AS SELECT * FROM DEPT_INFO")
@@ -180,7 +179,7 @@ def main():
     assert q(c, "SELECT COUNT(*) FROM WORKS_ON1") == [(17,)]
     assert q(c, "SELECT Lname FROM WORKS_ON1 WHERE Pname = 'ProductX' ORDER BY Lname") == [
         ("English",), ("Lee",), ("Smith",)]
-    print("[OK] p.8: 직원 한 명을 넣으면 뷰는 (Research, 5, 160000), 떠 둔 복사본은 (Research, 4, 133000) 그대로")
+    print("[OK] 직원 한 명을 넣으면 뷰는 (Research, 5, 160000), 떠 둔 복사본은 (Research, 4, 133000) 그대로")
     c.execute("DELETE FROM WORKS_ON WHERE Essn = '111223333'")
     c.execute("DELETE FROM EMPLOYEE WHERE Ssn = '111223333'")
     c.commit()
@@ -189,14 +188,14 @@ def main():
     c.execute("DROP VIEW WORKS_ON1")
     assert counts(c) == before == [8, 3, 5, 6, 16, 7]
     fails(c, "SELECT * FROM WORKS_ON1", "no such table")
-    print("[OK] p.14: DROP VIEW 뒤 기본 테이블 여섯 개의 행 수는 그대로", before)
+    print("[OK] DROP VIEW 뒤 기본 테이블 여섯 개의 행 수는 그대로", before)
 
     assert [r[2] for r in q(c, "SELECT * FROM DEPT5EMP ORDER BY Lname")] == ["English", "Narayan", "Smith", "Wong"]
     assert cols(c, "SELECT * FROM DEPT5EMP") == cols(c, "SELECT * FROM EMPLOYEE")
     assert cols(c, "SELECT * FROM BASIC_EMP_DATA") == ["Fname", "Lname", "Address"]
     assert q(c, "SELECT COUNT(*) FROM BASIC_EMP_DATA") == [(8,)]
     fails(c, "SELECT Salary FROM BASIC_EMP_DATA", "no such column")
-    print("[OK] p.25~26: DEPT5EMP는 5번 부서 4행, BASIC_EMP_DATA는 8행 3열(Salary는 안 보인다)")
+    print("[OK] DEPT5EMP는 5번 부서 4행, BASIC_EMP_DATA는 8행 3열(Salary는 안 보인다)")
 
     # 기본 테이블을 지우면: SQLite는 지우게 두고, 남은 뷰는 쓸 때 오류가 난다 (PostgreSQL은 지우기를 거부한다)
     d = make()

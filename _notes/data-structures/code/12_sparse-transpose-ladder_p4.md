@@ -111,7 +111,7 @@ int main(void)
     term a[MAX_T], b[MAX_T];
     int size[MAX_COLS + 1], start[MAX_COLS + 1], slot[MAX_T], t, steps;
 
-    /* 문제 1: 슬라이드의 4 x 5 행렬 */
+    /* 문제 1: 문서의 4 x 5 행렬 */
     const int D1[4 * 5] = { 0,0,3,0,4,  0,0,5,7,0,  0,0,0,0,0,  0,2,6,0,0 };
     t = from_dense(4, 5, D1, a);
     steps = transpose(a, t, 5, b, size, start, slot);

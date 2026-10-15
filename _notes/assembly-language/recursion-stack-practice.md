@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 재귀 프로시저의 CalcSum과 Factorial, 스택 프레임."
 prev_url: "/studies/assembly-language/stack-frame-ladder/"
@@ -25,7 +25,7 @@ permalink: "/studies/assembly-language/recursion-stack-practice/"
 
 재귀를 따라갈 때는 두 가지를 따로 적는다. 내려가는 길에서는 호출마다 프레임이 놓이는 주소를, 올라오는 길에서는 돌아올 때마다 레지스터가 어떻게 바뀌는지를 적는다. 프레임 하나의 크기를 먼저 구해 두면 주소는 그만큼씩 빼기만 하면 된다[^s1].
 
-모든 문제는 ESP = 00001000h, EBP = 00001010h에서 시작한다. 코드는 슬라이드의 것이다[^1].
+모든 문제는 ESP = 00001000h, EBP = 00001010h에서 시작한다. 코드는 [재귀 프로시저](/Hongs_Blog/studies/assembly-language/recursive-procedure/)의 것과 같다.
 
 ```asm
 CalcSum PROC                    Factorial PROC
@@ -160,6 +160,5 @@ SumTo ENDP
 </div>
 
 
-[^1]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-2」, p.4 (CalcSum), p.6 (Factorial), p.7 (프레임 그림)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제, 시작 주소, 풀이 전략, 답, SumTo 코드는 원본에 없다. 답은 문제 코드로 확인했다.
+[^s1]: 답은 문제 코드로 확인했다.
 {% endraw %}

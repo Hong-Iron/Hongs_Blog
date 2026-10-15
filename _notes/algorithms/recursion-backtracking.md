@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Recursion", "Backtracking", "재귀", "재귀 함수", "백트래킹", "기저 사례", "base case", "가지치기", "pruning", "호출 스택", "recursion limit"]
 description: "러시아 인형(마트료시카)을 열면 같은 모양의 더 작은 인형이 나오듯, 재귀는 문제 안에서 더 작은 같은 문제를 풀어 답을 만든다. 함수가 자기 자신을 부르고, 가장 작은 경우에서 멈춘다. 백트래킹은 재귀로 선택을 하나씩 쌓아 가다가, 막히면 마지막 선택을 되돌리고 다른 길로 가는 …"
@@ -218,7 +218,7 @@ def count_subsets(nums, target):
 
 ## 과목별 관점
 
-**컴파일러 (3-2학기).** 문법대로 입력을 읽는 가장 단순한 방법인 [재귀 하강 파싱](/Hongs_Blog/studies/compilers/recursive-descent-parsing/)이 백트래킹이다. 문법의 이름 하나를 풀어 쓸 규칙이 여럿이면 적힌 순서대로 하나를 골라 들어가 보고, 입력과 어긋나면 되돌아가 다음 규칙을 고른다[^c1]. 위의 틀과 짝지으면 다음과 같다[^cs1].
+**컴파일러 (3-2학기).** 문법대로 입력을 읽는 가장 단순한 방법인 [재귀 하강 파싱](/Hongs_Blog/studies/compilers/recursive-descent-parsing/)이 백트래킹이다. 문법의 이름 하나를 풀어 쓸 규칙이 여럿이면 적힌 순서대로 하나를 골라 들어가 보고, 입력과 어긋나면 되돌아가 다음 규칙을 고른다. 위의 틀과 짝지으면 다음과 같다[^cs1].
 
 | 백트래킹 틀 | 재귀 하강 파싱 |
 |---|---|
@@ -229,9 +229,9 @@ def count_subsets(nums, target):
 | 되돌린다(`pop`) | 입력을 읽던 자리를 갈림길 위치로 돌려놓는다 |
 | 다 골랐다 | 풀 이름이 남지 않고 입력도 끝났다 |
 
-- **되돌릴 것이 하나 더 있다.** 위 오해 항목처럼 고른 것을 물리지 않으면 다른 가지가 망가진다. 파서에서는 물릴 것이 "입력을 어디까지 읽었는가"다. 강의의 예에서 규칙 $$S \to cAe$$가 입력 $$cad$$의 $$c$$, $$a$$까지 맞추고 $$e$$에서 틀리면, 읽던 자리를 맨 앞으로 돌린 뒤 $$S \to cAd$$를 시험한다[^c1].
-- **"반드시 작아져야 한다"가 깨지는 문법.** 규칙 $$S \to Sa$$처럼 오른쪽 맨 앞에 자기 자신이 오면, 입력을 한 낱말도 읽지 않은 채 같은 자리에서 같은 함수를 다시 부른다. 문제가 작아지지 않으니 위 정리의 조건 (3)이 깨지고 끝나지 않는다. 그래서 강의는 재귀 하강 파싱의 조건으로 이런 규칙(좌재귀)이 없을 것을 든다[^c2]. 고치는 법은 [좌재귀 없애기](/Hongs_Blog/studies/compilers/left-recursion-elimination/)에 있다.
-- **가지치기를 끝까지 밀면 되돌아가기가 없어진다.** 강의는 재귀 하강이 인기 없는 까닭을 되돌아가기로 든다[^c2]. 산술식 문법으로 괄호를 겹친 식을 읽으면 시험한 규칙 수가 괄호 0겹에서 14, 1겹에서 69, 2겹에서 292로 한 겹마다 4배 넘게 는다. 규칙을 고르기 전에 입력의 다음 낱말 하나를 보고 "이 규칙은 그 낱말로 시작할 수 없다"를 미리 알면 그 가지에 아예 들어가지 않는다. 문법을 다듬어 남는 가지가 늘 하나가 되게 한 것이 [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/)이고, 같은 입력에서 8, 15, 22로 한 겹마다 7씩만 는다[^cs1].
+- **되돌릴 것이 하나 더 있다.** 위 오해 항목처럼 고른 것을 물리지 않으면 다른 가지가 망가진다. 파서에서는 물릴 것이 "입력을 어디까지 읽었는가"다. 예를 들어 규칙 $$S \to cAe$$가 입력 $$cad$$의 $$c$$, $$a$$까지 맞추고 $$e$$에서 틀리면, 읽던 자리를 맨 앞으로 돌린 뒤 $$S \to cAd$$를 시험한다.
+- **"반드시 작아져야 한다"가 깨지는 문법.** 규칙 $$S \to Sa$$처럼 오른쪽 맨 앞에 자기 자신이 오면, 입력을 한 낱말도 읽지 않은 채 같은 자리에서 같은 함수를 다시 부른다. 문제가 작아지지 않으니 위 정리의 조건 (3)이 깨지고 끝나지 않는다. 그래서 재귀 하강 파싱을 쓰려면 이런 규칙(좌재귀)이 없어야 한다. 고치는 법은 [좌재귀 없애기](/Hongs_Blog/studies/compilers/left-recursion-elimination/)에 있다.
+- **가지치기를 끝까지 밀면 되돌아가기가 없어진다.** 재귀 하강이 잘 쓰이지 않는 까닭이 이 되돌아가기다. 산술식 문법으로 괄호를 겹친 식을 읽으면 시험한 규칙 수가 괄호 0겹에서 14, 1겹에서 69, 2겹에서 292로 한 겹마다 4배 넘게 는다. 규칙을 고르기 전에 입력의 다음 낱말 하나를 보고 "이 규칙은 그 낱말로 시작할 수 없다"를 미리 알면 그 가지에 아예 들어가지 않는다. 문법을 다듬어 남는 가지가 늘 하나가 되게 한 것이 [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/)이고, 같은 입력에서 8, 15, 22로 한 겹마다 7씩만 는다[^cs1].
 
 ## 확인 문제
 
@@ -279,7 +279,5 @@ def count_subsets(nums, target):
 [^1]: 재귀와 귀납법의 대응은 [재귀적 정의와 구조적 귀납법](/Hongs_Blog/studies/discrete-math/recursive-definitions/)과 [수학적 귀납법](/Hongs_Blog/studies/discrete-math/induction/) 문서를 따른다. 정리는 그 내용을 재귀 함수에 맞게 옮겨 쓴 것이다.
 [^2]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 5.3 "Backtracking", 5.4 "Pruning the search".
 [^3]: Python 3 표준 라이브러리 문서, `sys.getrecursionlimit`, `sys.setrecursionlimit`: 한도를 너무 높이면 인터프리터가 멈출(crash) 수 있다고 경고한다. 기본값 1,000은 이 컴퓨터(Python 3.14)에서 확인했다.
-[^c1]: 컴파일러 5회 강의 자료 「Lecture05 Syntax analysis part 2」, p.8~15 (재귀 하강 파싱의 규칙, 입력 $$cad$$에서 되돌아가는 과정)
-[^c2]: 컴파일러 5회 강의 자료 「Lecture05 Syntax analysis part 2」, p.17 (재귀 하강 파서의 조건, 되돌아가기 때문에 인기가 없다)
-[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 백트래킹 틀과 짝지은 표, 조건 (3)과 좌재귀를 이은 설명, 시험한 규칙 수, 카드 C5는 컴파일러 슬라이드에 없다. 규칙 수는 [17_recursive-descent-parsing_impl.py](/Hongs_Blog/studies/compilers/code/17_recursive-descent-parsing_impl/)를 돌려 얻었고, 좌재귀 문법에서 `RecursionError`가 나는 것도 같은 코드로 확인했다.
+[^cs1]: 규칙 수는 [17_recursive-descent-parsing_impl.py](/Hongs_Blog/studies/compilers/code/17_recursive-descent-parsing_impl/)를 돌려 얻었고, 좌재귀 문법에서 `RecursionError`가 나는 것도 같은 코드로 확인했다.
 {% endraw %}

@@ -18,10 +18,10 @@ permalink: "/studies/java/"
 {% raw %}
 ## 먼저 알아야 할 것
 - 이 과목 안에서는 [JVM과 바이트코드](/Hongs_Blog/studies/java/jvm-bytecode/)가 시작점이다.
-- [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/) (공학수학 대학수학): 2~3회의 타입 범위, 비트 연산
-- [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/), [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/) (2-1학기 자료와 정보): 3회의 오버플로, NaN, 실수 오차
+- [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/) (공학수학 대학수학): 타입의 범위와 비트 연산을 읽을 때 쓴다
+- [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/), [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/) (2-1학기 자료와 정보): 오버플로, NaN, 실수 오차를 읽을 때 쓴다
 
-> 자료 출처: 2024년 봄학기 강의 슬라이드(Java). 9~10회 슬라이드는 자료에 없다. 슬라이드 표지의 강의 번호는 파일 번호와 다를 수 있어(11·12번 파일 표지는 09, 13번은 10, 14~17번은 11~14) 출처는 파일 번호로 적었다. 예제 코드는 JDK 21에서 실행해 확인했다.
+> 예제 코드는 JDK 21에서 실행해 확인했다.
 
 
 ## 2회 · Java 기초 (1): 실행 과정, 변수, 타입 변환
@@ -42,8 +42,6 @@ permalink: "/studies/java/"
 | 02 | [변수와 기본 타입](/Hongs_Blog/studies/java/java-primitive-types/) | 변수는 이름 붙은 칸이고, 타입이 칸의 크기와 담을 값의 범위($$-2^{n-1}$$ ~ $$2^{n-1}-1$$)를 정한다 | [impl](/Hongs_Blog/studies/java/code/02_java-primitive-types_impl/) | — |
 | 03 | [타입 변환](/Hongs_Blog/studies/java/java-type-conversion/) | 작은 타입에서 큰 타입으로는 자동, 반대는 괄호로 직접 적어야 하고 값이 잘릴 수 있다 | [impl](/Hongs_Blog/studies/java/code/03_java-type-conversion_impl/) | — |
 
-자료: Software Project 02. Java Language Basics (1)
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 `.java` 파일이 화면 출력이 되기까지의 단계, 기본 타입 여덟 개의 크기, 자동 변환과 강제 변환이 갈리는 기준을 써 본다.
 
 ## 3회 · Java 기초 (2): 연산자와 제어문
@@ -64,8 +62,6 @@ permalink: "/studies/java/"
 | 05 | [비트 연산](/Hongs_Blog/studies/java/java-bitwise/) | 정수를 비트 줄로 보고 같은 자리끼리 계산하거나 옆으로 민다 | [impl](/Hongs_Blog/studies/java/code/05_java-bitwise_impl/) | — |
 | 06 | [제어문](/Hongs_Blog/studies/java/java-control-flow/) | 조건에 따라 건너뛰고(if, switch) 되풀이하는(for) 문장, break와 continue | [impl](/Hongs_Blog/studies/java/code/06_java-control-flow_impl/) | — |
 
-자료: Software Project 03. Java Language Basics (2)
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 수학과 다르게 나오는 계산 세 가지(넘침, 정수 나눗셈, 0.1 계산)와 `for`의 네 단계 실행 순서, `break`와 `continue`의 차이를 써 본다.
 
 ## 4회 · 참조 타입
@@ -87,8 +83,6 @@ permalink: "/studies/java/"
 | 09 | [String](/Hongs_Blog/studies/java/java-string/) | 같은 리터럴은 String 객체 하나를 같이 쓰고 new는 늘 새로 만든다, 그래서 비교는 equals로 | [impl](/Hongs_Blog/studies/java/code/09_java-string_impl/) | — |
 | 10 | [배열](/Hongs_Blog/studies/java/java-array/) | 같은 타입의 값을 번호(0부터) 붙은 칸에 줄지어 둔 것, 길이는 만들 때 정해진다 | [impl](/Hongs_Blog/studies/java/code/10_java-array_impl/) | — |
 
-자료: Software Project 04. Reference Types
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 스택·힙·메서드 영역에 각각 무엇이 놓이는지 그림으로 그리고, `==`와 `equals`의 차이, `new String[3]` 직후 칸에 든 값을 써 본다.
 
 ## 5회 · 객체 지향 프로그래밍
@@ -106,11 +100,9 @@ permalink: "/studies/java/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 11 | [클래스와 객체](/Hongs_Blog/studies/java/class-and-object/) | 클래스는 틀, 객체는 그 틀로 찍어 낸 실물 | [impl](/Hongs_Blog/studies/java/code/11_class-and-object_impl/) | — |
-| 12 | [객체 지향의 세 원칙](/Hongs_Blog/studies/java/oop-principles/) | 감추기(캡슐화)·물려받기(상속)·같은 이름 다른 동작(다형성) (강조)[^n1] | [impl](/Hongs_Blog/studies/java/code/12_oop-principles_impl/) | — |
+| 12 | [객체 지향의 세 원칙](/Hongs_Blog/studies/java/oop-principles/) | 감추기(캡슐화)·물려받기(상속)·같은 이름 다른 동작(다형성) | [impl](/Hongs_Blog/studies/java/code/12_oop-principles_impl/) | — |
 | 13 | [절차 지향과 객체 지향 비교](/Hongs_Blog/studies/java/procedural-vs-oop/) | 자료와 그 자료를 다루는 코드를 한 객체에 묶느냐로 갈린다 | [impl](/Hongs_Blog/studies/java/code/13_procedural-vs-oop_impl/) | — |
 
-자료: Software Project 05. Object-Oriented Programming
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 세 원칙의 이름, 각각이 막아 주는 곤란함, 오버로딩과 오버라이딩이 정해지는 때를 써 본다.
 
 ## 6회 · 클래스
@@ -130,8 +122,6 @@ permalink: "/studies/java/"
 | 14 | [필드와 메서드](/Hongs_Blog/studies/java/java-fields-methods/) | 객체에 남는 칸(필드)과 동작(메서드), 메서드 안에서만 사는 지역 변수 | [impl](/Hongs_Blog/studies/java/code/14_java-fields-methods_impl/) | — |
 | 15 | [생성자](/Hongs_Blog/studies/java/java-constructor/) | `new` 할 때 객체를 처음 값으로 채우는 코드. 하나라도 쓰면 기본 생성자는 사라진다 | [impl](/Hongs_Blog/studies/java/code/15_java-constructor_impl/) | — |
 
-자료: Software Project 06. Class
-필기: 아직 없다.
 떠올려 보기: 클래스의 멤버 세 가지와 필드·지역 변수의 차이 세 줄, 기본 생성자가 사라지는 조건을 써 본다.
 
 ## 7회 · 클래스 (2)
@@ -153,8 +143,6 @@ permalink: "/studies/java/"
 | 18 | [패키지](/Hongs_Blog/studies/java/java-package/) | 클래스에 붙이는 성. 폴더 구조와 짝이 맞아야 하고 `import`로 줄여 부른다 | [impl](/Hongs_Blog/studies/java/code/18_java-package_impl/) | — |
 | 19 | [접근 제한자](/Hongs_Blog/studies/java/java-access-modifier/) | public > protected > default > private. 감춘 필드는 getter·setter로 다룬다 | [impl](/Hongs_Blog/studies/java/code/19_java-access-modifier_impl/) | — |
 
-자료: Software Project 07. Class (2)
-필기: 아직 없다.
 떠올려 보기: 접근 단계 넷을 넓은 순서로 쓰고, `static`·`final`·`static final`이 각각 무엇을 정하는지 한 줄씩 써 본다.
 
 ## 8회 · 상속
@@ -175,8 +163,6 @@ permalink: "/studies/java/"
 | 21 | [부모 생성자 호출](/Hongs_Blog/studies/java/java-super-constructor/) | 자식 생성자 첫 줄의 숨은 `super()`가 부모 생성자를 먼저 돌린다 | [impl](/Hongs_Blog/studies/java/code/21_java-super-constructor_impl/) | — |
 | 22 | [메서드 오버라이딩](/Hongs_Blog/studies/java/java-overriding/) | 물려받은 메서드를 같은 모양으로 다시 쓴다. 실행 중 실제 객체의 것이 돈다 | [impl](/Hongs_Blog/studies/java/code/22_java-overriding_impl/) | — |
 
-자료: Software Project 08. Inheritance
-필기: 아직 없다.
 떠올려 보기: `extends`·`super()`·`super.method()`·`@Override`가 각각 하는 일과 오버라이딩의 두 가지 규칙을 써 본다.
 
 ## 11회 · 인터페이스 (1)
@@ -197,8 +183,6 @@ permalink: "/studies/java/"
 | 24 | [추상 클래스](/Hongs_Blog/studies/java/java-abstract-class/) | 공통 필드·메서드를 모아 두고 new는 막은 부모 클래스, 자식마다 다른 몸통은 추상 메서드로 강제한다 | [impl](/Hongs_Blog/studies/java/code/24_java-abstract-class_impl/) | — |
 | 25 | [추상 클래스와 인터페이스 비교](/Hongs_Blog/studies/java/abstract-class-vs-interface/) | 객체마다 다른 값을 물려줘야 하면 추상 클래스, 여러 개를 함께 맡겨야 하면 인터페이스 | [impl](/Hongs_Blog/studies/java/code/25_abstract-class-vs-interface_impl/) | — |
 
-자료: Software Project 11. Interface (1)
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 인터페이스에 넣을 수 있는 것, 컴파일러가 자동으로 붙이는 키워드, 구현 클래스가 지켜야 할 두 가지를 쓰고, 추상 클래스와 다른 점을 두 줄로 적어 본다.
 
 ## 12회 · 인터페이스 (2)
@@ -220,8 +204,6 @@ permalink: "/studies/java/"
 | 28 | [참조 타입 변환과 instanceof](/Hongs_Blog/studies/java/java-casting/) | 넓은 타입으로는 그냥 바뀌고, 좁은 타입으로는 (타입)을 쓰고 실행 중에 확인한다. 바꾸기 전에 instanceof로 묻는다 | [impl](/Hongs_Blog/studies/java/code/28_java-casting_impl/) | — |
 | 29 | [다형성](/Hongs_Blog/studies/java/java-polymorphism/) | 부를 수 있는지는 변수의 타입이, 어느 몸통이 도는지는 변수에 든 객체가 정한다 (필드 다형성, 매개변수 다형성) | [impl](/Hongs_Blog/studies/java/code/29_java-polymorphism_impl/) | — |
 
-자료: Software Project 12. Interface (2)
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 인터페이스의 메서드 다섯 종류가 서로 무엇을 부를 수 있는지 그리고, "호출 한 줄은 두 번 정해진다"를 `Driver`와 `Vehicle`로 설명해 본다.
 
 ## 13회 · 중첩 선언과 익명 객체
@@ -241,8 +223,6 @@ permalink: "/studies/java/"
 | 30 | [중첩 클래스](/Hongs_Blog/studies/java/java-nested-class/) | 클래스 안에 넣은 클래스 세 종류(인스턴스 멤버, 정적 멤버, 로컬)와 바깥 멤버 접근, 중첩 인터페이스 | [impl](/Hongs_Blog/studies/java/code/30_java-nested-class_impl/) | — |
 | 31 | [익명 객체](/Hongs_Blog/studies/java/java-anonymous-object/) | 이름 없는 자식·구현 클래스를 쓰는 자리에서 선언하고 곧바로 객체 하나를 만든다 | [impl](/Hongs_Blog/studies/java/code/31_java-anonymous-object_impl/) | — |
 
-자료: Software Project 13. Nested Declarations and Anonymous Objects
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 중첩 클래스 세 종류를 "선언 자리, 만들 수 있는 때, 쓸 수 있는 바깥 멤버"로 표를 그리고, 익명 객체가 이름이 없어서 못 하는 일을 적어 본다.
 
 ## 14회 · 라이브러리와 모듈
@@ -262,8 +242,6 @@ permalink: "/studies/java/"
 | 32 | [라이브러리와 JAR](/Hongs_Blog/studies/java/java-library-jar/) | 번역된 클래스 묶음(JAR)을 클래스패스에 넣어 여러 프로그램이 함께 쓴다 | — | — |
 | 33 | [모듈](/Hongs_Blog/studies/java/java-module/) | 안내문(module-info)에 내보낼 패키지와 필요한 모듈을 적고, 안 적은 패키지는 숨는다 | — | — |
 
-자료: Software Project 14. Libraries and Modules
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 module-info.java에 쓰는 낱말(requires, exports, transitive, opens)이 각각 무엇을 허락하는지와 서로의 관계를 써 본다.
 
 ## 15회 · 예외 처리
@@ -285,14 +263,10 @@ permalink: "/studies/java/"
 | 36 | [예외 던지기](/Hongs_Blog/studies/java/java-throw/) | throws로 부른 쪽에 넘기고 throw로 직접 일으킨다 | [impl](/Hongs_Blog/studies/java/code/36_java-throw_impl/) | — |
 | 37 | [사용자 정의 예외](/Hongs_Blog/studies/java/java-custom-exception/) | Exception이나 RuntimeException을 상속해 내 프로그램만의 예외를 만든다 | [impl](/Hongs_Blog/studies/java/code/37_java-custom-exception_impl/) | — |
 
-자료: Software Project 15. Exception handling
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 Throwable 아래의 클래스 가지를 그리고, 어느 가지가 번역기 검사를 받는지와 try-catch-finally의 세 가지 실행 순서를 써 본다.
 
 ## 16회 · java.base 모듈
-이 회차의 java.base, java.lang, API 문서, AWT·Swing 소개는 [모듈](/Hongs_Blog/studies/java/java-module/) 문서의 "java.base와 API 문서"에 있다. ChessGame 활동(p.9~12)은 과제 조건이 없어 연습 문서를 만들지 않았다.
-자료: Software Project 16. java.base Module
-필기: 아직 없다.
+java.base, java.lang, API 문서, AWT·Swing은 [모듈](/Hongs_Blog/studies/java/java-module/) 문서의 "java.base와 API 문서"에서 다룬다.
 떠올려 보기: `requires` 없이 쓸 수 있는 모듈 하나와, `import` 없이 쓸 수 있는 패키지 하나를 대고 그 안의 클래스 네 개를 써 본다.
 
 ## 17회 · 제네릭
@@ -312,8 +286,6 @@ permalink: "/studies/java/"
 | 38 | [제네릭](/Hongs_Blog/studies/java/java-generics/) | 타입을 빈칸으로 둔 클래스와 메서드, 쓸 때 채우고 번역 때 검사한다 | [impl](/Hongs_Blog/studies/java/code/38_java-generics_impl/) | — |
 | 39 | [제한된 타입 파라미터와 와일드카드](/Hongs_Blog/studies/java/java-bounded-wildcard/) | 빈칸에 올 타입을 extends로 좁히고, 상자는 ? extends·? super·?의 범위로 받는다 | [impl](/Hongs_Blog/studies/java/code/39_java-bounded-wildcard_impl/) | — |
 
-자료: Software Project 17. Generics
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 Person–Worker–Student–HighStudent–MiddleStudent 그림을 그린 뒤 `? extends Student`, `? super Worker`, `?`가 받는 범위를 표시해 본다.
 
 ## 다른 과목과의 연결
@@ -456,6 +428,4 @@ graph TD
   C20 --> C39
   C28 --> C39
 ```
-
-[^n1]: 원본에서 강조된 개념. 객체 지향의 세 원칙: 5회 슬라이드 p.19~32(14쪽).
 {% endraw %}

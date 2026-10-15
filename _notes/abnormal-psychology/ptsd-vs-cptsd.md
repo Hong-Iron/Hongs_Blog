@@ -9,10 +9,10 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-27"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["PTSD vs C-PTSD", "복합 외상 후 스트레스 장애", "Complex PTSD", "C-PTSD", "복합 PTSD", "ICD-11"]
-description: "PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온다. 복합 PTSD(C-PTSD)는 아동기 학대, 가정폭력, 장기 감금처럼 오래 반복된 외상 뒤에 온다. 복합 PTSD는 PTSD의 증상에 더해 자기, 관계, 감정 조절까지 무너진다. 필기는 이 비교에 별표를 쳤다. 가르…"
+description: "PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온다. 복합 PTSD(C-PTSD)는 아동기 학대, 가정폭력, 장기 감금처럼 오래 반복된 외상 뒤에 온다. 복합 PTSD는 PTSD의 증상에 더해 자기, 관계, 감정 조절까지 무너진다. 가르는 질문은 \"외상이 한 번이었나,…"
 prev_url: "/studies/abnormal-psychology/ptsd-theories/"
 prev_title: "외상 후 스트레스 장애의 심리적 이론"
 next_url: "/studies/abnormal-psychology/posttraumatic-growth/"
@@ -23,7 +23,7 @@ code_count: 0
 permalink: "/studies/abnormal-psychology/ptsd-vs-cptsd/"
 ---
 {% raw %}
-PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온다. 복합 PTSD(C-PTSD)는 아동기 학대, 가정폭력, 장기 감금처럼 오래 반복된 외상 뒤에 온다. 복합 PTSD는 PTSD의 증상에 더해 자기, 관계, 감정 조절까지 무너진다. 필기는 이 비교에 별표를 쳤다[^1]. 가르는 질문은 "외상이 한 번이었나, 오래 반복되었나. 그리고 증상이 사건에 대한 반응에 머무나, 나라는 사람 전체로 번졌나"다.
+PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온다. 복합 PTSD(C-PTSD)는 아동기 학대, 가정폭력, 장기 감금처럼 오래 반복된 외상 뒤에 온다. 복합 PTSD는 PTSD의 증상에 더해 자기, 관계, 감정 조절까지 무너진다. 가르는 질문은 "외상이 한 번이었나, 오래 반복되었나. 그리고 증상이 사건에 대한 반응에 머무나, 나라는 사람 전체로 번졌나"다.
 
 ## 어느 쪽일까
 
@@ -43,7 +43,7 @@ PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온�
 
 ## 결정적 차이
 
-슬라이드의 표다[^1].
+두 장애를 항목별로 나란히 놓으면 이렇다.
 
 | 구분 | PTSD | 복합 PTSD |
 |---|---|---|
@@ -55,7 +55,7 @@ PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온�
 | 치료 접근 | 단일 외상 중심 치료(EMDR, 노출치료, 인지행동치료 등) | 장기적·관계 중심 치료(안정화 → 외상 처리 → 재통합) |
 | 진단 분류 | DSM-5에 포함 | ICD-11(세계보건기구 진단 기준)에 별도 진단으로 포함 |
 
-마지막 줄이 시험에서 헷갈리기 쉽다. 복합 PTSD는 DSM-5-TR에는 따로 없고 ICD-11에만 있다.
+마지막 줄이 헷갈리기 쉽다. 복합 PTSD는 DSM-5-TR에는 따로 없고 ICD-11에만 있다.
 
 ## 둘 다 아닐 때
 
@@ -63,6 +63,4 @@ PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온�
 - **외상이 아니라 일상의 스트레스 뒤의 부적응:** [적응장애](/Hongs_Blog/studies/abnormal-psychology/adjustment-disorder/).
 - **정체감이 여러 인격으로 나뉠 때:** 해리성 정체감 장애. 반복적 아동기 외상에서 온다는 점은 복합 PTSD와 비슷하지만, 둘 이상의 구별되는 성격 상태가 핵심이다.
 - **만성적인 정서 불안정과 불안정한 관계가 외상 없이도 성격으로 굳었을 때:** [경계선 성격장애](/Hongs_Blog/studies/abnormal-psychology/borderline-pd/)를 함께 생각한다.
-
-[^1]: 이상 심리학 6회 강의 자료 「외상 후 스트레스 장애 및 해리장애」, p.11 (PTSD vs C-PTSD 표). 제목의 별표는 손글씨 필기다.
 {% endraw %}

@@ -179,6 +179,6 @@ S[r2+1][c1]   = A + C             S[r1][c1]   = A
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 9.1 "Static array queries"의 Sum queries(누적 합과 2차원 누적 합), 9.4 "Additional techniques"의 Range updates(차분 배열: 원래 배열은 차분 배열의 누적 합이고, 구간 [a, b]에 x를 더하려면 a에 x, b + 1에 −x를 더한다).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [19_prefix-sum_plot.py](/Hongs_Blog/studies/algorithms/code/19_prefix-sum_plot/)로 그렸고, 두 예시의 값(P = [0, 3, 4, 8, 9, 14, 23], P[5] − P[2] = 10, D = [0, 2, 5, 0, −2, 0, −5], 누적 결과 [0, 2, 7, 7, 5, 5])을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '2차원으로 넓히기' 절의 직사각형 합 공식과 S[i][j]의 뜻(왼쪽 위 모서리부터의 직사각형 합)을 넓이 그림으로 옮겼다.
+[^s1]: [19_prefix-sum_plot.py](/Hongs_Blog/studies/algorithms/code/19_prefix-sum_plot/)로 그렸고, 두 예시의 값(P = [0, 3, 4, 8, 9, 14, 23], P[5] − P[2] = 10, D = [0, 2, 5, 0, −2, 0, −5], 누적 결과 [0, 2, 7, 7, 5, 5])을 같은 코드로 확인했다.
+[^s2]: '2차원으로 넓히기' 절의 직사각형 합 공식과 S[i][j]의 뜻(왼쪽 위 모서리부터의 직사각형 합)을 넓이 그림으로 옮겼다.
 {% endraw %}

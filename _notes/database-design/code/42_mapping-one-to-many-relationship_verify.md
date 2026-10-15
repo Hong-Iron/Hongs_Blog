@@ -23,7 +23,6 @@ permalink: "/studies/database-design/code/42_mapping-one-to-many-relationship_ve
 """일대다 관계 타입의 사상 검증.
 
 문서: 42.일대다 관계 타입의 사상 (예시, 두 방법, 카드 C1~C3)
-출처: 데이터베이스 설계 7 슬라이드 p.21~25, 9 슬라이드 p.11, 6-2 p.21 (상태)
 실행: python3 42_mapping-one-to-many-relationship_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 주장:
   1. WORKS_FOR(부서 1 : 직원 N): N쪽인 EMPLOYEE에 Dno를 넣는다. 직원 8명 모두 부서 번호가 하나씩 있다.
@@ -31,14 +30,14 @@ permalink: "/studies/database-design/code/42_mapping-one-to-many-relationship_ve
   2. SUPERVISION(상사 1 : 부하 N): 같은 릴레이션을 가리키는 Super_ssn. 8명 가운데 Borg 한 명만 NULL(부분 참여).
      부하는 Wong 3명, Wallace 2명, Borg 2명이다.
   3. CONTROLS(부서 1 : 프로젝트 N): PROJECT에 Dnum. 6칸 모두 값이 있다. 5번 부서 3개, 4번 2개, 1번 1개.
-  4. 교차 참조(7 p.25): WORKS_FOR(Essn, Dno)는 8행이고 기본 키는 N쪽의 키 Essn이다. Dno는 겹친다.
+  4. 교차 참조: WORKS_FOR(Essn, Dno)는 8행이고 기본 키는 N쪽의 키 Essn이다. Dno는 겹친다.
      SUPERVISION을 교차 참조로 만들면 7행이고 NULL이 없다.
   5. 참여하는 튜플이 적을 때: 프로젝트 6개 가운데 1개만 후원 부서가 있다면 외래 키 방법은 NULL이 5칸,
      교차 참조는 1행이다(카드 C3).
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태. 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

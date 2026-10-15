@@ -210,7 +210,7 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.4절 "Tangent Planes and Linear Approximations"(미분 가능성, 편미분이 연속이면 미분 가능), 4.6절 "Directional Derivatives and the Gradient"(방향도함수 = 그래디언트와의 내적, 가장 가파른 방향, 등고선과 수직).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 캐니 윤곽 검출기(Canny, 1986)는 그래디언트의 크기와 방향으로 윤곽을 찾는 표준 알고리즘이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_gradient_plot.py](/Hongs_Blog/studies/calculus/code/20_gradient_plot/)로 그렸다. 화살표 길이는 같게 줄였다. 표의 네 방향도함수($$-2$$, $$-4$$, $$\sqrt{20}$$, 0)를 중앙 차분으로, 그래디언트와 등고선 방향이 수직인 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 미분 가능성과 충분조건, 정리 1, 가정이 필요한 이유의 표를 근거로 그렸다.
+[^s1]: 캐니 윤곽 검출기(Canny, 1986)는 그래디언트의 크기와 방향으로 윤곽을 찾는 표준 알고리즘이다.
+[^s2]: [20_gradient_plot.py](/Hongs_Blog/studies/calculus/code/20_gradient_plot/)로 그렸다. 화살표 길이는 같게 줄였다. 표의 네 방향도함수($$-2$$, $$-4$$, $$\sqrt{20}$$, 0)를 중앙 차분으로, 그래디언트와 등고선 방향이 수직인 것을 같은 코드로 확인했다.
+[^s3]: 정의 절의 미분 가능성과 충분조건, 정리 1, 가정이 필요한 이유의 표를 근거로 그렸다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["TYPE Operator", "LENGTHOF Operator", "SIZEOF Operator", "TYPE 연산자", "LENGTHOF 연산자", "SIZEOF 연산자", "원소 크기", "원소 개수", "여러 줄에 걸친 데이터 정의", "Spanning Multiple Lines"]
 description: "배열에 대해 알고 싶은 수는 셋이다. 칸 하나가 몇 바이트인가, 칸이 몇 개인가, 전체가 몇 바이트인가. 이 셋을 손으로 세어 코드에 적는 대신 어셈블러에게 물어보는 연산자다. 배열을 고쳐도 코드는 그대로 두면 된다. 다만 어셈블러는 이름이 붙은 정의 한 덩이만 세므로, 배열을 여…"
@@ -48,7 +48,7 @@ mov ebx,SIZEOF array3     ; 16  (전체 16바이트)
 세 값은 어셈블할 때 정해져 코드에는 수로 들어간다[^s1].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 표의 TYPE·LENGTHOF·SIZEOF 값 전부, SIZEOF = LENGTHOF × TYPE, 여러 줄 정의의 6과 12, 쉼표를 빼먹은 경우, 카드 C1·C3. 파이썬 흉내로 확인 — [22_type-lengthof-sizeof_verify.py](/Hongs_Blog/studies/assembly-language/code/22_type-lengthof-sizeof_verify/)</div>
+<div class="callout-title" markdown="span">검증: 아래 표의 TYPE·LENGTHOF·SIZEOF 값 전부, SIZEOF = LENGTHOF × TYPE, 여러 줄 정의의 6과 12, 쉼표를 빼먹은 경우, 카드 C1·C3. 파이썬 흉내로 확인 — [22_type-lengthof-sizeof_verify.py](/Hongs_Blog/studies/assembly-language/code/22_type-lengthof-sizeof_verify/)</div>
 
 </div>
 
@@ -57,18 +57,18 @@ mov ebx,SIZEOF array3     ; 16  (전체 16바이트)
 
 | 연산자 | 주는 값 | 근거 |
 |---|---|---|
-| `TYPE 이름` | 데이터 정의의 원소 하나의 크기(바이트) | [^1] |
-| `LENGTHOF 이름` | 한 데이터 정의에 든 원소의 개수 | [^2] |
-| `SIZEOF 이름` | `LENGTHOF`에 `TYPE`을 곱한 값. 전체 바이트 수다 | [^3] |
+| `TYPE 이름` | 데이터 정의의 원소 하나의 크기(바이트) |  |
+| `LENGTHOF 이름` | 한 데이터 정의에 든 원소의 개수 |  |
+| `SIZEOF 이름` | `LENGTHOF`에 `TYPE`을 곱한 값. 전체 바이트 수다 |  |
 
 $$\text{SIZEOF} = \text{LENGTHOF} \times \text{TYPE}$$
 
 
-`TYPE`은 지시어만 보고 정해진다. `BYTE`는 1, `WORD`는 2, `DWORD`는 4, `QWORD`는 8이다[^1].
+`TYPE`은 지시어만 보고 정해진다. `BYTE`는 1, `WORD`는 2, `DWORD`는 4, `QWORD`는 8이다.
 
 ## 예제
 
-**슬라이드의 표.**[^2][^3]
+**여러 정의의 세 값.**
 
 | 정의 | TYPE | LENGTHOF | SIZEOF |
 |---|---|---|---|
@@ -80,7 +80,7 @@ $$\text{SIZEOF} = \text{LENGTHOF} \times \text{TYPE}$$
 
 `array1`은 `DUP`로 만든 30개에 0 두 개가 더 붙어 32개다. `array2`는 "3개짜리를 5번"이라 15개다. `digitStr`은 글자 8개에 끝의 0까지 9개다. 바이트 배열에서는 `LENGTHOF`와 `SIZEOF`가 같다.
 
-**여러 줄에 걸친 정의.** 마지막 줄을 뺀 모든 줄이 쉼표로 끝나면 한 정의다. `LENGTHOF`와 `SIZEOF`는 그 줄들을 모두 센다[^4].
+**여러 줄에 걸친 정의.** 마지막 줄을 뺀 모든 줄이 쉼표로 끝나면 한 정의다. `LENGTHOF`와 `SIZEOF`는 그 줄들을 모두 센다.
 
 ```asm
 .data
@@ -139,9 +139,5 @@ array WORD 10,20
 </details>
 
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-3」, p.1 (TYPE Operator: var1~var4의 1, 2, 4, 8)
-[^2]: 같은 자료, p.2 (LENGTHOF Operator 표)
-[^3]: 같은 자료, p.3 (SIZEOF Operator 표: LENGTHOF에 TYPE을 곱한 값)
-[^4]: 같은 자료, p.4 (Spanning Multiple Lines)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시의 세 줄, 표의 TYPE 칸, 쉼표 없이 줄을 바꾼 예, 위치 카운터·자바 배열과의 비교, 카드 C1~C3은 원본에 없다. 쉼표 없는 예는 Irvine, *Assembly Language for x86 Processors* 7판 4.3.5절에 있다. 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 쉼표 없는 예는 Irvine, *Assembly Language for x86 Processors* 7판 4.3.5절에 있다. 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

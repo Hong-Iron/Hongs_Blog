@@ -44,7 +44,7 @@ permalink: "/studies/abnormal-psychology/neurodevelopmental-disorders/"
 | 아홉 살 JX | 지능은 평균인데 글자를 읽는 것만 유독 어렵다 | 특정학습장애 |
 | 열 살 JY | 눈을 깜빡이고 킁킁 소리를 내는 일이 1년째 이어진다 | 틱장애(운동장애) |
 
-## 정의[^1]
+## 정의
 
 - 중추신경계, 곧 뇌의 발달 지연이나 뇌 손상과 관련된 정신장애다.
 - 발달기에 시작되는 장애들의 집합이다.
@@ -52,7 +52,7 @@ permalink: "/studies/abnormal-psychology/neurodevelopmental-disorders/"
 - 발달 결함의 범위는 제한적인 손상부터 전반적인 손상까지 다양하다.
 - 동반 질환이 흔하다.
 
-### 여섯 장애 (DSM-5-TR)[^2]
+### 여섯 장애 (DSM-5-TR)
 
 | 장애 | 특징 |
 |---|---|
@@ -63,7 +63,7 @@ permalink: "/studies/abnormal-psychology/neurodevelopmental-disorders/"
 | [특정학습장애](/Hongs_Blog/studies/abnormal-psychology/specific-learning-disorder/) | 정보를 효율적이고 정확하게 인지하고 처리하는 능력의 특정한 결함 |
 | 운동장애 | 운동 기능의 문제 |
 
-### 운동장애[^3]
+### 운동장애
 
 나이나 발달 단계에 맞지 않는 운동 능력의 문제다. [발달성 협응장애](/Hongs_Blog/studies/abnormal-psychology/developmental-coordination/), [상동증적 운동장애](/Hongs_Blog/studies/abnormal-psychology/stereotypic-movement/), [틱장애](/Hongs_Blog/studies/abnormal-psychology/tic-disorders/)(투렛장애, 지속성 운동·음성 틱장애, 일시성 틱장애)가 있다.
 
@@ -83,7 +83,7 @@ flowchart TD
     T --> T3["일시성 틱장애"]
 ```
 
-운동장애는 그 자체로 세 장애를 묶은 무리이고, 틱장애는 다시 세 진단으로 나뉜다[^s2].
+운동장애는 그 자체로 세 장애를 묶은 무리이고, 틱장애는 다시 세 진단으로 나뉜다.
 
 ## 연결
 
@@ -106,9 +106,5 @@ flowchart TD
 
 </details>
 
-[^1]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.3
-[^2]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.4
-[^3]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.50
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 여섯 아이의 사례는 무리를 가르려고 만든 가상 예다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '여섯 장애' 표(p.4)와 '운동장애'(p.50)를 한 분류 나무로 그렸다.
+[^s1]: 여섯 아이의 사례는 무리를 가르려고 만든 가상 예다.
 {% endraw %}

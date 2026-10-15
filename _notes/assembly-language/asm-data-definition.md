@@ -40,7 +40,7 @@ permalink: "/studies/assembly-language/asm-data-definition/"
 value1 BYTE 10
 ```
 
-`value1`이 이름, `BYTE`가 칸의 크기(1바이트), `10`이 처음 넣을 값이다[^1]. 값을 여러 개 적으면 그 순서대로 이어서 놓인다.
+`value1`이 이름, `BYTE`가 칸의 크기(1바이트), `10`이 처음 넣을 값이다. 값을 여러 개 적으면 그 순서대로 이어서 놓인다.
 
 ```asm
 list4 BYTE 0Ah,20h,'A',22h
@@ -51,7 +51,7 @@ list4 BYTE 0Ah,20h,'A',22h
 메모리 바이트      0A    20    41    22
 ```
 
-이름 `list4`는 첫 칸(+0)의 주소다. `'A'`는 그 글자의 ASCII 코드 41h가 되어 들어간다. 10진수로 적든 16진수로 적든 글자로 적든 메모리에 들어가는 것은 모두 2진 바이트다[^1]. `list3 BYTE ?,32,41h,00100010b`의 뒤 세 값도 20h, 41h, 22h로 `list4`의 뒤 세 칸과 똑같다[^2].
+이름 `list4`는 첫 칸(+0)의 주소다. `'A'`는 그 글자의 ASCII 코드 41h가 되어 들어간다. 10진수로 적든 16진수로 적든 글자로 적든 메모리에 들어가는 것은 모두 2진 바이트다. `list3 BYTE ?,32,41h,00100010b`의 뒤 세 값도 20h, 41h, 22h로 `list4`의 뒤 세 칸과 똑같다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 이 문서의 바이트 배치와 바이트 수(list2 12, str1 16, greeting 62, menu 137, var3 20, var4 5), AddSub2의 30000h, 카드 C1·C3. 파이썬 흉내로 확인 — [12_asm-data-definition_verify.py](/Hongs_Blog/studies/assembly-language/code/12_asm-data-definition_verify/)</div>
@@ -61,13 +61,13 @@ list4 BYTE 0Ah,20h,'A',22h
 
 ## 정의
 
-데이터 정의문은 변수 하나가 쓸 메모리를 잡는다. 이름은 붙여도 되고 안 붙여도 된다[^1].
+데이터 정의문은 변수 하나가 쓸 메모리를 잡는다. 이름은 붙여도 되고 안 붙여도 된다.
 
 ```
 [이름] 지시어 초깃값 [,초깃값] ...
 ```
 
-지시어가 칸 하나의 크기를 정한다. 어셈블러에 들어 있는 자료형은 다음과 같다[^3].
+지시어가 칸 하나의 크기를 정한다. 어셈블러에 들어 있는 자료형은 다음과 같다.
 
 | 지시어 | 칸 하나의 크기 | 담는 값 |
 |---|---|---|
@@ -82,14 +82,14 @@ list4 BYTE 0Ah,20h,'A',22h
 
 초깃값 자리에는 네 가지가 올 수 있다.
 
-- **값 하나.** `value3 BYTE 255`. 글자 상수 `'A'`도 값 하나다[^4].
-- **물음표.** `value6 BYTE ?`. 칸만 잡고 값은 정하지 않는다[^4].
-- **쉼표로 이은 여러 값.** `list1 BYTE 10,20,30,40`. 4바이트를 잡는다. 이름은 첫 값의 자리만 가리킨다. 다음 줄에 이름 없이 `BYTE 50,60,70,80`을 쓰면 바로 뒤에 이어서 놓인다[^2].
-- **되풀이.** `개수 DUP (값)`. 같은 값을 개수만큼 놓는다. 개수와 값은 상수여야 한다[^5].
+- **값 하나.** `value3 BYTE 255`. 글자 상수 `'A'`도 값 하나다.
+- **물음표.** `value6 BYTE ?`. 칸만 잡고 값은 정하지 않는다.
+- **쉼표로 이은 여러 값.** `list1 BYTE 10,20,30,40`. 4바이트를 잡는다. 이름은 첫 값의 자리만 가리킨다. 다음 줄에 이름 없이 `BYTE 50,60,70,80`을 쓰면 바로 뒤에 이어서 놓인다.
+- **되풀이.** `개수 DUP (값)`. 같은 값을 개수만큼 놓는다. 개수와 값은 상수여야 한다.
 
 ## 예제
 
-**문자열.** 문자열은 글자(바이트)의 배열이다. 따옴표로 묶어 쓰면 글자마다 한 바이트가 된다. 끝에 0을 붙여 "여기서 끝"을 표시하는 일이 많다(널 종료)[^6].
+**문자열.** 문자열은 글자(바이트)의 배열이다. 따옴표로 묶어 쓰면 글자마다 한 바이트가 된다. 끝에 0을 붙여 "여기서 끝"을 표시하는 일이 많다(널 종료).
 
 ```asm
 str1 BYTE "Enter your name",0        ; 글자 15개 + 0 = 16바이트
@@ -98,7 +98,7 @@ greeting BYTE "Welcome to the Encryption Demo program "
          BYTE "created by Kip Irvine.",0
 ```
 
-긴 문자열 하나를 여러 줄에 쓰려면 줄 끝마다 쉼표를 둔다[^7]. 줄을 바꾸는 글자는 두 바이트 `0Dh`(맨 앞으로, carriage return), `0Ah`(다음 줄로, line feed)를 이어 쓴다[^8].
+긴 문자열 하나를 여러 줄에 쓰려면 줄 끝마다 쉼표를 둔다. 줄을 바꾸는 글자는 두 바이트 `0Dh`(맨 앞으로, carriage return), `0Ah`(다음 줄로, line feed)를 이어 쓴다.
 
 ```asm
 str1 BYTE "Enter your name:    ",0Dh,0Ah
@@ -106,7 +106,7 @@ str1 BYTE "Enter your name:    ",0Dh,0Ah
 newLine BYTE 0Dh,0Ah,0
 ```
 
-**DUP.**[^5]
+**DUP.**
 
 ```asm
 var1 BYTE 20 DUP(0)          ; 20바이트, 모두 0
@@ -115,7 +115,7 @@ var3 BYTE 4 DUP("STACK")     ; 20바이트: "STACKSTACKSTACKSTACK"
 var4 BYTE 10,3 DUP(0),20     ; 5바이트: 0A 00 00 00 14
 ```
 
-**더 큰 칸.**[^9]
+**더 큰 칸.**
 
 ```asm
 word1  WORD  65535           ; 부호 없는 가장 큰 값
@@ -129,7 +129,7 @@ val4   SDWORD -3,-2,-1,0,1
 
 2바이트 이상인 칸은 바이트가 놓이는 순서가 따로 정해져 있다: [리틀 엔디언](/Hongs_Blog/studies/assembly-language/little-endian/).
 
-**변수를 쓰는 프로그램.** 변수는 `.data` 아래에 정의하고 `.code`의 명령에서 이름으로 쓴다[^10].
+**변수를 쓰는 프로그램.** 변수는 `.data` 아래에 정의하고 `.code`의 명령에서 이름으로 쓴다.
 
 ```asm
 .data
@@ -147,8 +147,8 @@ main PROC
 
 ## 활용
 
-- 프로그램이 쓰는 문자열은 데이터 세그먼트의 한곳에 모아 정의한다[^8].
-- `SBYTE`로 정의한 변수는 Microsoft 디버거가 부호 붙은 10진수로 보여 준다[^4]. 메모리에 들어간 바이트는 `BYTE`로 정의했을 때와 같다. −1과 255는 둘 다 FFh다[^s1].
+- 프로그램이 쓰는 문자열은 데이터 세그먼트의 한곳에 모아 정의한다.
+- `SBYTE`로 정의한 변수는 Microsoft 디버거가 부호 붙은 10진수로 보여 준다. 메모리에 들어간 바이트는 `BYTE`로 정의했을 때와 같다. −1과 255는 둘 다 FFh다[^s1].
 - 흔한 실수: 문자열 끝의 0을 빼먹는다. 문자열을 찍는 코드는 0을 만날 때까지 읽으므로, 0이 없으면 바로 뒤에 놓인 다른 변수까지 읽는다[^s1].
 - 흔한 실수: `var4 BYTE 10,3 DUP(0),20`을 "0이 3개"가 아니라 "3이 들어간다"로 읽는다. `DUP` 앞의 수는 개수, 괄호 안이 값이다.
 
@@ -189,15 +189,5 @@ main PROC
 </details>
 
 
-[^1]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-2」, p.9 (Data Definition Statement: 문법, `value1 BYTE 10`, 모든 초깃값은 2진 데이터가 된다)
-[^2]: 같은 자료, p.11 (Defining Byte Arrays: list1~list4)
-[^3]: 같은 자료, p.7~8 (Intrinsic Data Types)
-[^4]: 같은 자료, p.10 (Defining BYTE and SBYTE Data, 디버거의 SBYTE 표시)
-[^5]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-3」, p.1 (Using the DUP Operator)
-[^6]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-2」, p.12 (Defining Strings 1: 글자의 배열, 널 종료)
-[^7]: 같은 자료, p.13 (Defining Strings 2: 줄 끝의 쉼표, menu)
-[^8]: 같은 자료, p.14 (Defining Strings 3: 0Dh와 0Ah, 문자열을 한곳에 정의)
-[^9]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-3」, p.2~3 (Defining WORD and SWORD Data, Defining DWORD and SDWORD Data)
-[^10]: 같은 자료, p.5 (Adding Variables to AddSub: AddSub2.asm)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 메모리 배치 그림, 표의 값 범위 가운데 슬라이드에 없는 칸, `SBYTE -1`과 `BYTE 255`가 같은 바이트라는 설명, 흔한 실수 두 항목, 카드 C1~C3은 원본에 없다. 5주차 슬라이드(05.wk05-chapt_04-3-1.pdf, p.8)가 `valB BYTE -1`을 쓰는 것이 같은 사실의 근거다. 바이트 배치는 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 바이트 배치는 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

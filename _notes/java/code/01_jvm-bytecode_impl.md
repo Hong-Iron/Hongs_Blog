@@ -54,7 +54,7 @@ class JvmBytecodeImpl {
         check(os != null, "운영체제 이름: " + os);
         check(add(5, 3) == 8, "5 + 3 = 8");
 
-        // 4. 슬라이드의 Hello 프로그램이 찍는 글자
+        // 4. 문서의 Hello 프로그램이 찍는 글자
         String hello = "Hello, Java";
         check(hello.length() == 11, "Hello, Java는 11글자");
 

@@ -45,7 +45,7 @@ def axis_angle(n, t):
 
 
 def mat(q):
-    w, x, y, z = q   # 슬라이드 p.27
+    w, x, y, z = q   # 문서의 R_q 공식
     return [[1 - 2 * y * y - 2 * z * z, 2 * x * y - 2 * w * z, 2 * x * z + 2 * w * y],
             [2 * x * y + 2 * w * z, 1 - 2 * x * x - 2 * z * z, 2 * y * z - 2 * w * x],
             [2 * x * z - 2 * w * y, 2 * y * z + 2 * w * x, 1 - 2 * x * x - 2 * y * y]]
@@ -99,7 +99,7 @@ def main():
         assert close(rotate(q, v), rod)
         assert close(mv(mat(q), v), rod)                     # 행렬 공식
         assert close(rotate(tuple(-a for a in q), v), rod)   # q와 −q는 같은 회전
-    # 슬라이드 p.26: q = q_x q_y q_z ↔ X' = Rx Ry Rz X
+    # 문서의 q = q_x q_y q_z ↔ X' = Rx Ry Rz X
     for _ in range(100):
         a, b, g = (random.uniform(-3, 3) for _ in range(3))
         q = qmul(qmul(axis_angle((1, 0, 0), a), axis_angle((0, 1, 0), b)), axis_angle((0, 0, 1), g))

@@ -25,7 +25,7 @@ permalink: "/studies/numerical-analysis/b-spline-ladder/"
 {% raw %}
 사용 개념: [B-스플라인](/Hongs_Blog/studies/numerical-analysis/b-spline/)의 블렌딩 함수 $$\mathbf b(u) = \frac16\big((1 - u)^3,\ 4 - 6u^2 + 3u^3,\ 1 + 3u + 3u^2 - 3u^3,\ u^3\big)$$.
 
-곡선 위의 점이나 이음점을 구하는 하위목표는 넷이다. ① 조각 고르기: 그 점을 만드는 조절점 네 개 ② 블렌딩 값: $$u$$를 넣어 네 무게 ③ 무게 합: 조절점에 무게를 곱해 더하기 ④ 확인: 무게 합이 1인지, 이음점이면 양쪽 조각이 같은지[^s1].
+곡선 위의 점이나 이음점을 구하는 하위목표는 넷이다. ① 조각 고르기: 그 점을 만드는 조절점 네 개 ② 블렌딩 값: $$u$$를 넣어 네 무게 ③ 무게 합: 조절점에 무게를 곱해 더하기 ④ 확인: 무게 합이 1인지, 이음점이면 양쪽 조각이 같은지.
 
 ## 문제 1 · 완전한 풀이
 
@@ -94,7 +94,4 @@ permalink: "/studies/numerical-analysis/b-spline-ladder/"
 <div class="callout-title" markdown="span">검증 — [16_b-spline-ladder_p4.py](/Hongs_Blog/studies/numerical-analysis/code/16_b-spline-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드 7회 p.29~31의 이음점 조건과 블렌딩 함수를 연습하도록 만들었고, 답은 분수로 정확히 계산하는 문제 코드로 확인했다.
 {% endraw %}

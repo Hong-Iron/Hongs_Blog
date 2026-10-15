@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/48_sql-attribute-constraints_verify-sq
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 48.속성 제약 NOT NULL·DEFAULT·CHECK 검증 (PostgreSQL 16)
---   SQLite와 갈리는 곳: 기본 키 열은 NOT NULL을 안 써도 NULL을 못 넣는다(슬라이드 10 p.15). SQLite는 받는다.
+--   SQLite와 갈리는 곳: 기본 키 열은 NOT NULL을 안 써도 NULL을 못 넣는다. SQLite는 받는다.
 --   오류 번호: 23502 = NOT NULL 위반, 23514 = CHECK 위반
 \set QUIET 1
 SET client_min_messages TO warning;
@@ -52,7 +52,7 @@ DO $$ BEGIN
   ASSERT err_of($q$INSERT INTO P VALUES (NULL, 'x')$q$) = '23502', '기본 키에 NULL이 들어갔다';
 END $$;
 
--- 2. 슬라이드 10 p.16~17: DEFAULT와 CHECK
+-- 2. DEFAULT와 CHECK
 CREATE TABLE EMPLOYEE (
   Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL DEFAULT 1,

@@ -17,6 +17,11 @@ Only the notes written in the vault are exported (roadmaps, 3.개념집,
 2.필기노트 and _시스템 never leave the vault. Add anything else that must stay
 private to EXCLUDE below.
 
+Where a note came from stays in the vault too: footnotes citing the course
+materials, the sentences of "에이전트 보충." notes that talk about them,
+a roadmap's 자료/필기 lines and "원본 오류 의심" boxes are left out (see
+tidy_footnotes, strip_course_notes, convert_quote).
+
 Obsidian syntax is rewritten into what GitHub Pages' kramdown understands:
 wikilinks become site links, callouts become styled blocks (foldable ones
 become <details>), "- 답" answer lists fold, single-dollar math becomes
@@ -104,6 +109,7 @@ def track_courses(entries):
 # Links pointing at them render as plain text.
 EXCLUDE = {
     "4-1학기/컴퓨터 통신/4.연습문제/26.과제 2.md",  # graded assignment solution
+    "4-1학기/컴퓨터 통신/4.연습문제/99.중간시험 예상 문제.md",  # built on the professor's sample exam
 }
 
 # Past-exam write-ups (기출 풀이, 기출 유형 연습 and their code) stay private:
@@ -295,6 +301,10 @@ def convert_quote(group, pad, nested=False):
         return [f"{pad}> {l}".rstrip() for l in inner] + [""]
 
     ctype, fold, title = head.group(1).lower(), head.group(2), head.group(3).strip()
+    if ctype == "warning" and title.startswith("원본"):
+        # "원본 오류 의심" and similar boxes record a suspected error in the
+        # course materials; the document around them already has it fixed
+        return []
     inner = convert_lines(group[1:], nested=True)
     while inner and not inner[-1].strip():
         inner.pop()
@@ -516,6 +526,8 @@ class Linker:
             return f'<img class="note-fig" src="{self.images[target]}" alt="{alt}"{dims} loading="lazy">'
         if target in self.images:
             return f"[{display}]({self.images[target]})"
+        if not hit and (target + ".md" in EXCLUDE or PRIVATE_NAME.search(target.rsplit("/", 1)[-1])):
+            return "\x06"   # a private page: the link goes, with its " · " separator (convert_spans)
         if embed or not hit:
             if not embed and not re.search(r"/(1\.수업자료|2\.필기노트)/|^_시스템/|\.(pdf|png|jpe?g|webm)$", target) \
                     and target + ".md" not in EXCLUDE:
@@ -571,6 +583,7 @@ def convert_spans(lines, linker, source):
 
         work = CODE_SPAN_RE.sub(stash_code, line)
         work = WIKILINK_RE.sub(site_link, work)
+        work = re.sub(r"\x06\s*·\s*|\s*·\s*\x06|\x06", "", work)
         work = re.sub(r"==([^=\s][^=]*?)==", r"<mark>\1</mark>", work)
         work = re.sub(r"\$\$(.+?)\$\$", lambda mm: stash_math(mm.group(1), False), work)
         work = INLINE_MATH_RE.sub(lambda mm: stash_math(mm.group(1), True), work)
@@ -600,26 +613,76 @@ def convert_spans(lines, linker, source):
 # Document assembly
 # ---------------------------------------------------------------------------
 
-# Footnotes are written for the vault: "에이전트 보충." marks an added note and
-# sources are vault paths. On the site they read as a 보충 tag and a short
-# "<과목> <n>회 강의 자료 「…」" source.
-SOURCE_RE = re.compile(
-    r"(?:\d-(?:\d|여름|겨울)학기|공학수학)/([^/\n]+)/(1\.수업자료|2\.필기노트)/"
-    r"([^\n]+?)\.(?:pdf|pptx?|md|png|jpe?g|docx?|hwp|txt|py|c|ipynb|zip)\b")
-PASTED_RE = re.compile(r"(?:\d-(?:\d|여름|겨울)학기/)?pasted_images/Pasted image \d+\.(?:png|jpe?g)")
+# Footnotes are written for the vault: sources are vault paths into the
+# course's lecture materials and handwritten notes, and "에이전트 보충." notes
+# say what was added beyond those materials and why. The user keeps all of
+# that in the vault but not on the site, so a footnote citing course
+# materials is dropped with its references, and so is every sentence of a
+# note that talks about them. Public references (books, docs, URLs, public
+# lecture notes) stay.
+COURSE_PATH_RE = re.compile(r"(?:1\.수업자료|2\.필기노트)/|pasted_images/|Pasted image \d+")
+COURSE_FILE_RE = re.compile(r"\.(?:pdf|pptx?|hwp|docx?)\b", re.I)
+# words that only the user's own courses explain ...
+COURSE_STRONG_RE = re.compile(
+    r"필기|판서|수업|교수|유인물|녹음|중앙대|캡처|\d+\s?주차|\d+\s?회\s?(?:차|강의|슬라이드|자료|수업|필기|p\.)|"
+    r"\d+-\d+\s?p\.|자료에(?:는)? 없|강의 자료(?:가|는)? 없|자료가 남아 있지 않")
+# ... and words a public lecture citation shares with them
+COURSE_WEAK_RE = re.compile(r"슬라이드|강의|원본|원문")
+PAGE_RE = re.compile(r"(?<![A-Za-z])pp?\.\s?\d")
+# a sentence with one of these cites something public, even if it says "슬라이드 13"
+PUBLIC_RE = re.compile(r"https?://|\bUniv\.|University|공개(?:된)? (?:강의|슬라이드|자료|교재|본)")
+# a page number next to a book title or edition belongs to a public book
+BOOK_RE = re.compile(r"\*[^*\n]+\*|\d+판|교재")
+SAME_RE = re.compile(r"^(?:같은 (?:자료|슬라이드|필기|문서|강의|노트|파일|그림)|위와 같은)")
+# a sentence ends at "다. " or "). " outside any brackets
+SENTENCE_TOKEN_RE = re.compile(r"[(\[]|[)\]]|(?<=[가-힣)\]」』\"'*`]\.)\s+(?=\S)")
 
 
-def source_label(m):
-    course, folder, name = m.group(1), m.group(2), m.group(3)
-    num = re.match(r"(\d{2})\.(.+)", name)
-    title = num.group(2) if num else name
-    if folder.startswith("2"):
-        kind = f"{int(num.group(1))}회 필기" if num else "필기"
-    elif num and int(num.group(1)) < 90:
-        kind = f"{int(num.group(1))}회 강의 자료"
-    else:
-        kind = "참고 자료"
-    return f"{course} {kind} 「{title}」"
+def split_sentences(text):
+    out, depth, start = [], 0, 0
+    for m in SENTENCE_TOKEN_RE.finditer(text):
+        tok = m.group(0)
+        if tok in "([":
+            depth += 1
+        elif tok in ")]":
+            depth = max(0, depth - 1)
+        elif depth == 0:
+            out.append(text[start:m.start()])
+            start = m.end()
+    out.append(text[start:])
+    return [s.strip() for s in out if s.strip()]
+
+
+def course_sentence(s, same_course):
+    """Does this sentence of a footnote cite or talk about course materials?
+    `same_course` answers for a "같은 자료, p.3" that points back."""
+    if COURSE_PATH_RE.search(s) or (COURSE_FILE_RE.search(s) and "://" not in s) or COURSE_STRONG_RE.search(s):
+        return True
+    if SAME_RE.match(s):
+        return same_course
+    if PUBLIC_RE.search(s):
+        return False
+    if COURSE_WEAK_RE.search(s):
+        return True
+    return bool(PAGE_RE.search(s)) and not BOOK_RE.search(s)
+
+
+def course_free(text, prev_course=False, citation=False):
+    """Drop the sentences of `text` that cite course materials. Returns the
+    rest ("" when nothing is left) and whether the first sentence cites them.
+    A citation that starts with course materials goes as a whole: what
+    follows it describes those pages."""
+    parts = split_sentences(text.strip())
+    if not parts:
+        return "", False
+    first = course_sentence(parts[0], prev_course)
+    if citation and first:
+        return "", True
+    flags = [first] + [course_sentence(p, first) for p in parts[1:]]
+    kept = " ".join(p for p, f in zip(parts, flags) if not f).strip()
+    if not re.search(r"[^\W\d_]", kept):
+        kept = ""
+    return kept, first
 
 
 def ascii_footnote_labels(body):
@@ -635,12 +698,84 @@ def ascii_footnote_labels(body):
 
 
 def tidy_footnotes(body):
+    """Drop course-material sources (see COURSE_PATH_RE) and their references."""
     body = ascii_footnote_labels(body)
+    dropped, prev_course = set(), False
+
     def fix(m):
-        line = re.sub(r"^(\[\^[^\]]+\]:\s*)에이전트 보충\.\s*", r'\1<span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> ', m.group(0))
-        line = SOURCE_RE.sub(source_label, line)
-        return PASTED_RE.sub("수업 슬라이드 캡처", line)
-    return re.sub(r"^\[\^[^\]]+\]:.*$", fix, body, flags=re.M)
+        nonlocal prev_course
+        label, text = m.group(1), m.group(2)
+        added = text.startswith("에이전트 보충")
+        text = re.sub(r"^에이전트 보충\.?\s*", "", text)
+        kept, first_course = course_free(text, prev_course, citation=not added)
+        if not added:
+            prev_course = first_course
+        if not kept:
+            dropped.add(label)
+            return "\x05"
+        return f"[^{label}]: {kept}"
+
+    body = re.sub(r"^\[\^([^\]]+)\]:[ \t]*(.*)$", fix, body, flags=re.M)
+    body = body.replace("\x05\n", "").replace("\x05", "")
+    if dropped:
+        refs = re.compile(r"\[\^(" + "|".join(map(re.escape, dropped)) + r")\]")
+        out, fence = [], None
+        for line in body.split("\n"):
+            m = FENCE_RE.match(line)
+            if fence is not None or m:
+                if m:
+                    fence = None if fence and m.group(1)[0] == fence else (fence or m.group(1)[0])
+                out.append(line)
+                continue
+            out.append(refs.sub("", line))
+        body = "\n".join(out)
+    # a "## 출처" section holds only footnote definitions, which kramdown
+    # moves to the end of the page anyway
+    return re.sub(r"^## 출처\s*\n(?=(?:[ \t]*\n|\[\^[^\]]+\]:.*\n?)*(?:^## |\Z))", "", body, flags=re.M)
+
+
+# "(p.34)", "(슬라이드 p.12~13)", "(2-1 p.20)": page references into course PDFs
+INLINE_PAGE_RE = re.compile(
+    r"\s?\((?:(?:슬라이드|필기|강의 자료)\s?|\d+\s?회\s?|\d+\s?주차\s?|\d+(?:-\d+)?\s)?pp?\.\s?\d+(?:\s?[~–-]\s?\d+)?"
+    r"(?:\s?(?:,|·|와|과)\s?(?:pp?\.\s?)?\d+(?:\s?[~–-]\s?\d+)?)*\)")
+
+
+def strip_course_notes(body, is_roadmap):
+    """Remove the remaining pointers at course materials outside footnotes:
+    inline page references and, in a roadmap, the 자료/필기 lines and the
+    plain quote notes about where the materials came from."""
+    out, fence, quote, in_math = [], None, None, False
+    for line in body.split("\n"):
+        m = FENCE_RE.match(line)
+        if fence is not None or m:
+            if m:
+                fence = None if fence and m.group(1)[0] == fence else (fence or m.group(1)[0])
+            out.append(line)
+            continue
+        s = line.strip()
+        if s.startswith("$$") and not (len(s) > 4 and s.endswith("$$")):
+            in_math = not in_math
+        if in_math or re.match(r"^\[\^[^\]]+\]:", s):
+            out.append(line)
+            continue
+        line = INLINE_PAGE_RE.sub("", line)
+        if is_roadmap:
+            if re.match(r"^(?:자료|필기)\s*:", s):
+                continue
+            q = re.match(r"^>\s?(.*)$", line)
+            if q:
+                if quote is None:
+                    quote = "callout" if CALLOUT_RE.match(q.group(1).strip()) else "plain"
+                if quote == "plain":
+                    kept, _ = course_free(q.group(1))
+                    if not kept:
+                        continue
+                    line = "> " + kept
+            else:
+                quote = None
+            line = re.sub(r"\s?\(강조\)", "", line) if s.startswith("|") else line
+        out.append(line)
+    return "\n".join(out)
 
 
 def tidy_oneliners(body):
@@ -675,6 +810,7 @@ def tidy_oneliners(body):
 def clean_body(body, is_roadmap):
     body = re.sub(r"<!--.*?-->\n?", "", body, flags=re.S)
     body = tidy_footnotes(body)
+    body = strip_course_notes(body, is_roadmap)
     # drop an empty "## 내 메모" section (keeps any notes actually written there)
     body = re.sub(r"^## 내 메모\s*\n(?:[ \t]*\n)*(?=\[\^|^## |\Z)", "", body, flags=re.M)
     title = None
@@ -800,6 +936,14 @@ def export(vault):
     courses = []   # dicts with everything needed to render
     figures = []   # (svg path, course slug)
 
+    # code and figures named after an excluded document (<num>_<id>_<role>) stay private too
+    excluded_ids = set()
+    for rel in EXCLUDE:
+        if rel.endswith(".md") and (vault / rel).exists():
+            meta = parse_front_matter(split_front_matter((vault / rel).read_text(encoding="utf-8"))[0])
+            if meta.get("id"):
+                excluded_ids.add((rel.rsplit("/", 2)[0], meta["id"]))
+
     # pass 1: collect pages and register every link target
     for track, entries in TRACKS:
         for sub, folder, name, slug in track_courses(entries):
@@ -827,6 +971,8 @@ def export(vault):
                         course["docs"].append(doc)
                         linker.add(rel, doc["url"], doc["title"])
                     elif f.suffix == ".svg":
+                        if (folder, "_".join(f.stem.split("_")[1:-1])) in excluded_ids:
+                            continue
                         figures.append((f, slug))
                         linker.images[rel] = f"{baseurl}/assets/notes/{slug}/{f.name}"
                         vb = re.search(r'viewBox="[\d.\-]+ [\d.\-]+ ([\d.]+) ([\d.]+)"', f.read_text(encoding="utf-8")[:2000])
@@ -839,13 +985,6 @@ def export(vault):
                         linker.add(rel, code["url"], f.name)
             courses.append(course)
 
-    # code named after an excluded document (<num>_<id>_<role>) stays private too
-    excluded_ids = set()
-    for rel in EXCLUDE:
-        if rel.endswith(".md") and (vault / rel).exists():
-            meta = parse_front_matter(split_front_matter((vault / rel).read_text(encoding="utf-8"))[0])
-            if meta.get("id"):
-                excluded_ids.add((rel.rsplit("/", 2)[0], meta["id"]))
     for course in courses:
         ids = {d["id"]: d for d in course["docs"]}
         kept = []

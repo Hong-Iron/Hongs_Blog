@@ -45,9 +45,9 @@ permalink: "/studies/abnormal-psychology/disruptive-impulse-conduct/"
 
 ## 정의
 
-정서와 행동에 대한 자기통제의 문제로, 타인의 권리를 침해하거나 사회적 규범을 위반하는 부적응적 행동들이다[^1].
+정서와 행동에 대한 자기통제의 문제로, 타인의 권리를 침해하거나 사회적 규범을 위반하는 부적응적 행동들이다.
 
-| 장애 | 특징[^2] |
+| 장애 | 특징 |
 |---|---|
 | [적대적 반항장애](/Hongs_Blog/studies/abnormal-psychology/odd/) | 어른에게 거부적이고 적대적이며 반항적인 행동 특성 |
 | [간헐적 폭발장애](/Hongs_Blog/studies/abnormal-psychology/intermittent-explosive/) | 공격적인 충동을 조절하기 어려워 심각한 파괴적 행동 |
@@ -55,7 +55,7 @@ permalink: "/studies/abnormal-psychology/disruptive-impulse-conduct/"
 | [병적 방화](/Hongs_Blog/studies/abnormal-psychology/pyromania/) | 불을 지르고 싶은 충동이 통제되지 않아 반복적으로 방화 |
 | [병적 도벽](/Hongs_Blog/studies/abnormal-psychology/kleptomania/) | 남의 물건을 훔치고 싶은 충동을 조절하지 못해 반복적으로 도둑질 |
 
-[반사회성 성격장애](/Hongs_Blog/studies/abnormal-psychology/antisocial-pd/)는 이 범주와 성격장애 범주 양쪽에 모두 포함되어 있다[^3].
+[반사회성 성격장애](/Hongs_Blog/studies/abnormal-psychology/antisocial-pd/)는 이 범주와 성격장애 범주 양쪽에 모두 포함되어 있다.
 
 ## 연결
 
@@ -74,13 +74,9 @@ permalink: "/studies/abnormal-psychology/disruptive-impulse-conduct/"
 <details markdown="1"><summary markdown="span"><b>C2</b> 병적 도벽과 털뽑기장애는 모두 "긴장 → 행동 → 안도"의 고리를 가진다. 그런데 왜 다른 범주에 속하는가?</summary>
 
 
-**답:** 병적 도벽의 행동(훔치기)은 남의 재산권을 침해하는, 곧 타인을 향한 규범 위반이라 파괴적, 충동조절 및 품행장애에 속한다. 털뽑기장애의 행동은 자기 몸을 향한 반복 행동이라 강박 및 관련 장애에 속한다. 행동이 누구를 향하는지가 범주를 가른다[^s2].
+**답:** 병적 도벽의 행동(훔치기)은 남의 재산권을 침해하는, 곧 타인을 향한 규범 위반이라 파괴적, 충동조절 및 품행장애에 속한다. 털뽑기장애의 행동은 자기 몸을 향한 반복 행동이라 강박 및 관련 장애에 속한다. 행동이 누구를 향하는지가 범주를 가른다.
 
 </details>
 
-[^1]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.3
-[^2]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.4
-[^3]: 이상 심리학 10회 강의 자료 「파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애」, p.30
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다섯 사람의 사례는 장애를 가르려고 만든 가상 예다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 범주를 행동이 향하는 대상으로 가르는 설명은 두 범주의 정의(p.3과 05.강박 관련 장애.pdf)를 비교한 해석이다.
+[^s1]: 다섯 사람의 사례는 장애를 가르려고 만든 가상 예다.
 {% endraw %}

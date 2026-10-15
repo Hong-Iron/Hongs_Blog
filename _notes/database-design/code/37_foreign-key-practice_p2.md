@@ -23,14 +23,13 @@ permalink: "/studies/database-design/code/37_foreign-key-practice_p2/"
 """외래 키 찾기 연습 문제 2 (수강과 교재 데이터베이스) 검증.
 
 문서: 37.외래 키 찾기 연습 p2
-출처: 데이터베이스 설계 6-2 슬라이드 p.27 (문제), 7 풀이 슬라이드 p.2 (답)
 실행: python3 37_foreign-key-practice_p2.py   (표준 라이브러리 sqlite3만 쓴다)
 스키마: STUDENT(Ssn, Name, Major, Bdate), COURSE(Course#, Cname, Dept), ENROLL(Ssn, Course#, Quarter, Grade),
         BOOK_ADOPTION(Course#, Quarter, Book_isbn), TEXT(Book_isbn, Book_title, Publisher, Author).
         기본 키는 Ssn / Course# / (Ssn, Course#, Quarter) / (Course#, Quarter) / Book_isbn.
 확인하는 것:
   1. "다른 릴레이션의 기본 키 속성을 모두 가진 릴레이션"을 기계적으로 찾으면 후보가 5개 나온다.
-     그중 4개가 슬라이드의 답이다. 남는 하나는 ENROLL(Course#, Quarter) → BOOK_ADOPTION이다.
+     그중 4개가 문서의 답이다. 남는 하나는 ENROLL(Course#, Quarter) → BOOK_ADOPTION이다.
   2. 답 4개로 표를 만들면 없는 학생·과목의 수강, 없는 과목·교재의 채택은 들어가지 않는다. (행은 지어낸 것)
   3. 남는 후보를 외래 키로 걸지 않았으므로, 교재를 채택하지 않은 학기의 수강도 들어간다.
      그 후보까지 걸면 같은 수강이 거부된다. 문제는 "수강하려면 그 학기에 교재가 채택돼 있어야 한다"고 말하지 않았다.
@@ -46,7 +45,7 @@ SCHEMA = {
     "TEXT": (["Book_isbn", "Book_title", "Publisher", "Author"], ["Book_isbn"]),
 }
 ANSWER = {("ENROLL", ("Ssn",), "STUDENT"), ("ENROLL", ("Course#",), "COURSE"),
-          ("BOOK_ADOPTION", ("Course#",), "COURSE"), ("BOOK_ADOPTION", ("Book_isbn",), "TEXT")}      # 풀이 슬라이드 p.2
+          ("BOOK_ADOPTION", ("Course#",), "COURSE"), ("BOOK_ADOPTION", ("Book_isbn",), "TEXT")}      # 문서의 답
 
 DDL = """
   CREATE TABLE STUDENT (Ssn CHAR(9) NOT NULL, Name VARCHAR(20), Major VARCHAR(10), Bdate DATE, PRIMARY KEY (Ssn));
@@ -98,7 +97,7 @@ def main():
     cand = candidates(SCHEMA)
     assert len(cand) == 5 and ANSWER <= cand
     assert cand - ANSWER == {("ENROLL", ("Course#", "Quarter"), "BOOK_ADOPTION")}
-    print("[OK] 후보 5개 가운데 4개가 슬라이드의 답. 남는 것:", cand - ANSWER)
+    print("[OK] 후보 5개 가운데 4개가 문서의 답. 남는 것:", cand - ANSWER)
 
     c = make()
     assert rejected(c, "INSERT INTO ENROLL VALUES ('999999999', 'CS3380', '2024F', 'B')")           # 없는 학생

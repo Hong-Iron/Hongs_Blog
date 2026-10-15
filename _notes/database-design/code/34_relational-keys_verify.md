@@ -23,7 +23,7 @@ permalink: "/studies/database-design/code/34_relational-keys_verify/"
 """슈퍼키·후보 키·기본 키 검증.
 
 문서: 34.슈퍼키·후보 키·기본 키 (예시, 정의, 오해, 카드 C1~C5)
-출처: 데이터베이스 설계 6-2 슬라이드 p.17~19 (STUDENT, CAR), 6-2 p.21 (WORKS_ON 상태)
+출처: Elmasri & Navathe, Fundamentals of Database Systems 5장 (STUDENT, CAR)과 COMPANY 상태의 WORKS_ON
 실행: python3 34_relational-keys_verify.py   (표준 라이브러리만 쓴다)
 하는 일: 표의 상태 하나에서 "값이 겹치지 않는 속성 묶음"을 모두 세고(전수), 그중 더 줄일 수 없는 것을 고른다.
   주의: 상태 하나로는 "키가 아니다"만 확정할 수 있다(겹치는 두 튜플이 반례다).
@@ -33,8 +33,8 @@ permalink: "/studies/database-design/code/34_relational-keys_verify/"
      그중 더 줄일 수 없는 것은 {Name}, {Ssn}, {Home_phone}, {Address}, {Gpa} 다섯 개다.
      뜻으로 정한 후보 키는 {Ssn} 하나이고, 슈퍼키는 Ssn을 품은 묶음 2^6 = 64개다.
   2. {Age}, {Office_phone}, {Office_phone, Age}는 이 상태에서 값이 겹친다. 그래서 어떤 경우에도 키가 아니다.
-  3. CAR(p.19)의 상태에서 혼자 값이 안 겹치는 속성은 License_number, Engine_serial_number, Model 셋이다.
-     Model은 같은 차종 한 대를 더 넣으면 겹친다. 슬라이드가 말하는 후보 키는 앞의 둘이다.
+  3. 문서 CAR의 상태에서 혼자 값이 안 겹치는 속성은 License_number, Engine_serial_number, Model 셋이다.
+     Model은 같은 차종 한 대를 더 넣으면 겹친다. 문서가 말하는 후보 키는 앞의 둘이다.
      후보 키가 둘일 때 슈퍼키는 둘 중 하나라도 품은 묶음 2^5 − 2^3 = 24개다.
   4. WORKS_ON의 {Essn, Pno}는 16행에서 안 겹치고, Essn만으로도 Pno만으로도 겹친다(최소성).
   5. 카드 C4: R(A, B, C)의 상태 {(1, x, p), (1, y, p), (2, x, q)}에서 값이 안 겹치는 묶음은 {A, B}, {B, C}, {A, B, C}.
@@ -89,7 +89,7 @@ def minimal(sets):
 
 
 def minimal_by_one_removal(sets):
-    """속성 하나를 뺀 묶음이 모두 목록에 없는 것(슬라이드 p.18의 정의)."""
+    """속성 하나를 뺀 묶음이 모두 목록에 없는 것(문서가 먼저 든 최소성의 정의)."""
     have = set(sets)
     return [s for s in sets if not any((s - {a}) in have for a in s if len(s) > 1)]
 
@@ -109,7 +109,7 @@ def main():
     assert set(mins) == {frozenset({a}) for a in ("Name", "Ssn", "Home_phone", "Address", "Gpa")}
     sk = superkeys_from_candidates(STUDENT_ATTRS, [frozenset({"Ssn"})])
     assert len(sk) == 2 ** 6 == 64
-    assert frozenset(STUDENT_ATTRS) in sk and frozenset({"Ssn", "Name", "Age"}) in sk   # p.17, p.18의 예
+    assert frozenset(STUDENT_ATTRS) in sk and frozenset({"Ssn", "Name", "Age"}) in sk   # 문서의 슈퍼키 예
     assert minimal(sk) == [frozenset({"Ssn"})]
     print("[OK] STUDENT: 묶음 127개, 이 상태에서 안 겹치는 것 124개, 그중 최소 5개. Ssn을 품은 슈퍼키 64개")
 

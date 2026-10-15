@@ -110,5 +110,5 @@ CPU 시간을 묻는 문제는 같은 하위목표의 되풀이다. ① 주어�
 </div>
 
 
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 직접 만들었다. 식과 하위목표는 Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 1장 "Computer Abstractions and Technology"의 CPU 시간 식을 따랐고(책을 직접 열지 못해 장까지만 적는다), 답은 분수로 정확히 계산하는 문제 코드로 확인했다.
+[^s1]: 이 문서의 문제와 수치는 직접 만들었다. 식과 하위목표는 Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 1장 "Computer Abstractions and Technology"의 CPU 시간 식을 따랐고(책을 직접 열지 못해 장까지만 적는다), 답은 분수로 정확히 계산하는 문제 코드로 확인했다.
 {% endraw %}

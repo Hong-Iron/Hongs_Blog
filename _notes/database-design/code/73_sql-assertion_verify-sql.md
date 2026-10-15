@@ -22,18 +22,18 @@ permalink: "/studies/database-design/code/73_sql-assertion_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 주장(CREATE ASSERTION) 검증. PostgreSQL 16에서 실행한다.
--- 문서: 73.주장 CREATE ASSERTION / 출처: 11주차 슬라이드 11_SQL-DDL-Complex p.5~8
+-- 문서: 73.주장 CREATE ASSERTION
 -- 확인하는 것:
---   1. 슬라이드의 CREATE ASSERTION 문은 PostgreSQL 16도 받지 않는다(문법은 알아보지만 "not yet implemented").
+--   1. 문서의 CREATE ASSERTION 문은 PostgreSQL 16도 받지 않는다(문법은 알아보지만 "not yet implemented").
 --   2. CHECK 안에 부질의를 넣는 길도 막혀 있다.
---   3. 주장 안의 점검 질의는 슬라이드 상태에서 0행, 규칙을 깨는 직원을 넣으면 1행이다.
+--   3. 주장 안의 점검 질의는 COMPANY 상태에서 0행, 규칙을 깨는 직원을 넣으면 1행이다.
 --   4. 실제로 막으려면 트리거를 쓴다: 규칙을 깨는 삽입을 오류로 거부한다(74.트리거와 ECA 규칙).
 SET client_min_messages TO warning;
 DROP SCHEMA IF EXISTS sql_assertion CASCADE;
 CREATE SCHEMA sql_assertion;
 SET search_path TO sql_assertion;
 
--- COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태. WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
 -- EMPLOYEE와 DEPARTMENT는 서로 가리키므로 외래 키를 커밋 때 검사한다(DEFERRABLE INITIALLY DEFERRED).
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -67,7 +67,7 @@ INSERT INTO WORKS_ON VALUES ('123456789',1,32.5),('123456789',2,7.5),('666884444
 INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),('333445555','Theodore','M','1983-10-25','Son'),('333445555','Joy','F','1958-05-03','Spouse'),('987654321','Abner','M','1942-02-28','Spouse'),('123456789','Michael','M','1988-01-04','Son'),('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1. 슬라이드 p.7의 문장 그대로
+-- 1. 문서의 문장 그대로
 DO $$
 DECLARE ok boolean := false;
 BEGIN
@@ -97,7 +97,7 @@ CREATE VIEW SALARY_VIOLATORS AS
   WHERE E.Salary > M.Salary AND E.Dno = D.Dnumber AND D.Mgr_ssn = M.Ssn;
 
 DO $$ BEGIN
-  ASSERT (SELECT COUNT(*) FROM SALARY_VIOLATORS) = 0, '슬라이드 상태에서 위반이 있다';
+  ASSERT (SELECT COUNT(*) FROM SALARY_VIOLATORS) = 0, 'COMPANY 상태에서 위반이 있다';
   ASSERT (SELECT NOT EXISTS (SELECT * FROM SALARY_VIOLATORS)), '주장이 거짓이다';
 END $$;
 

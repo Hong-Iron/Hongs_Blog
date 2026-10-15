@@ -23,23 +23,22 @@ permalink: "/studies/database-design/code/68_aggregate-functions_verify/"
 """집계 함수 검증 (SQLite).
 
 문서: 68.집계 함수
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.27~30, 12주차 p.10
 주장:
-  1. Q19(p.27): 전 직원 급여의 합 281000, 최대 55000, 최소 25000, 평균 35125.
-  2. Q21 8, Q22 4, Q23 6 (p.28).
-  3. p.28의 두 물음: COUNT(Salary)는 8(같은 값도 따로 센다), NULL은 세지 않는다(COUNT(Super_ssn) = 7).
+  1. Q19: 전 직원 급여의 합 281000, 최대 55000, 최소 25000, 평균 35125.
+  2. Q21 8, Q22 4, Q23 6.
+  3. 문서의 물음: COUNT(Salary)는 8(같은 값도 따로 센다), NULL은 세지 않는다(COUNT(Super_ssn) = 7).
   4. AVG는 NULL이 아닌 값의 수로 나눈다: WORKS_ON.Hours는 275 / 15.
   5. 행이 하나도 없으면 COUNT는 0, 나머지는 NULL.
-  6. 안쪽 질의에 쓴 COUNT(p.30): 부양가족이 둘 이상인 직원은 Smith, Wong.
+  6. 안쪽 질의에 쓴 COUNT: 부양가족이 둘 이상인 직원은 Smith, Wong.
   7. 급여가 가장 많은 직원의 이름은 중첩 질의로 구한다(Borg).
      SQLite는 SELECT Lname, MAX(Salary)를 받아 주지만 PostgreSQL은 거부한다(.sql 파일).
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -137,7 +136,7 @@ def main():
     assert rows(c, "SELECT COUNT(DISTINCT Salary) FROM EMPLOYEE") == [(6,)]
     print("[OK] Q21: 8, Q22: 4, Q23: 6")
 
-    # 3. p.28의 두 물음
+    # 3. 문서의 물음: COUNT(Salary)와 NULL
     assert rows(c, "SELECT COUNT(Salary), COUNT(Super_ssn), COUNT(DISTINCT Super_ssn) FROM EMPLOYEE") == [(8, 7, 3)]
     assert sorted(col(c, "SELECT DISTINCT Salary FROM EMPLOYEE")) == [25000, 30000, 38000, 40000, 43000, 55000]
     print("[OK] COUNT(Salary) 8, COUNT(Super_ssn) 7, COUNT(DISTINCT Super_ssn) 3")
@@ -154,7 +153,7 @@ def main():
     # 6. 안쪽 질의에 쓴 COUNT
     two = "SELECT Lname, Fname FROM EMPLOYEE WHERE (SELECT COUNT(*) FROM DEPENDENT WHERE Ssn = Essn) >= 2"
     assert sorted(rows(c, two)) == [("Smith", "John"), ("Wong", "Franklin")]
-    print("[OK] p.30: Smith, Wong")
+    print("[OK] 부양가족 둘 이상: Smith, Wong")
 
     # 7. 집계 함수와 보통 열을 섞을 때
     top = "SELECT Lname FROM EMPLOYEE WHERE Salary = (SELECT MAX(Salary) FROM EMPLOYEE)"

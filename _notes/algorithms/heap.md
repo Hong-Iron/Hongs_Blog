@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Heap", "Priority Queue", "Binary Heap", "힙", "우선순위 큐", "최소 힙", "최대 힙", "heapq", "heappush", "heappop", "heapify"]
 description: "응급실은 온 순서가 아니라 가장 급한 환자부터 부른다. 이렇게 \"가장 작은(급한) 것부터 꺼내는 줄\"이 우선순위 큐이고, 힙은 그것을 빠르게 만드는 방법이다. 넣기와 가장 작은 것 꺼내기가 모두 빠르다. 원소가 100만 개여도 스무 번이 안 되게 자리를 바꾸면 끝난다. 대신 가장 …"
@@ -112,9 +112,9 @@ A는 1을 맨 끝(칸 3)에 붙인 모습, B는 부모 5와 바꾼 뒤, C는 부
 
 ## 과목별 관점
 
-**자료구조 (1-2학기).** 강의는 같은 힙을 C 배열로 만들면서 배열의 1번 칸부터 쓴다. 0번 칸은 비워 둔다[^d1]. 이 문서의 `heapq`는 0번 칸부터 쓴다. 같은 나무이고 칸 번호만 하나씩 밀린다.
+**자료구조 (1-2학기).** 자료구조에서는 같은 힙을 C 배열로 만들면서 배열의 1번 칸부터 쓴다. 0번 칸은 비워 둔다. 이 문서의 `heapq`는 0번 칸부터 쓴다. 같은 나무이고 칸 번호만 하나씩 밀린다.
 
-| | 이 문서 (0번 칸부터) | 자료구조 강의 (1번 칸부터) |
+| | 이 문서 (0번 칸부터) | 자료구조 (1번 칸부터) |
 |---|---|---|
 | 뿌리 | 칸 0 | 칸 1 |
 | 칸 i의 부모 | (i − 1) // 2 | i / 2의 몫 |
@@ -123,7 +123,7 @@ A는 1을 맨 끝(칸 3)에 붙인 모습, B는 부모 5와 바꾼 뒤, C는 부
 
 1번 칸부터 쓰는 쪽의 번호에서 1을 빼면 0번 칸부터 쓰는 쪽의 번호다. 1번 방식의 칸 4는 0번 방식의 칸 3이고, 그 자식인 칸 8·9는 칸 7·8이다[^ds1].
 
-강의가 이 문서에 더하는 것은 두 가지다. 하나는 방향이다. 우선순위 큐를 가장 작은 것을 꺼내는 것(min priority queue)과 가장 큰 것을 꺼내는 것(max priority queue)으로 나누고, 할 수 있는 일을 empty, size, push, top, pop으로 적는다[^d2]. `heapq`는 앞의 것이고, 강의의 그림은 주로 뒤의 것(최대 힙)이다. 다른 하나는 만드는 법이다. 넣기와 꺼내기를 C로 직접 쓰되, 두 값을 맞바꾸는 대신 빈자리를 한 층씩 옮기고 값은 마지막에 한 번만 적는다: [최대 힙과 최소 힙](/Hongs_Blog/studies/data-structures/max-heap/). 힙으로 정렬하는 법은 [우선순위 큐 정렬과 힙 정렬](/Hongs_Blog/studies/data-structures/heap-sort/)에, 가장 먼저 비는 기계를 힙으로 찾는 예는 [LPT 스케줄링](/Hongs_Blog/studies/data-structures/lpt-scheduling/)에 있다.
+자료구조 쪽이 이 문서에 더하는 것은 두 가지다. 하나는 방향이다. 우선순위 큐를 가장 작은 것을 꺼내는 것(min priority queue)과 가장 큰 것을 꺼내는 것(max priority queue)으로 나누고, 할 수 있는 일을 empty, size, push, top, pop으로 적는다. `heapq`는 앞의 것이고, 자료구조의 예는 주로 뒤의 것(최대 힙)이다. 다른 하나는 만드는 법이다. 넣기와 꺼내기를 C로 직접 쓰되, 두 값을 맞바꾸는 대신 빈자리를 한 층씩 옮기고 값은 마지막에 한 번만 적는다: [최대 힙과 최소 힙](/Hongs_Blog/studies/data-structures/max-heap/). 힙으로 정렬하는 법은 [우선순위 큐 정렬과 힙 정렬](/Hongs_Blog/studies/data-structures/heap-sort/)에, 가장 먼저 비는 기계를 힙으로 찾는 예는 [LPT 스케줄링](/Hongs_Blog/studies/data-structures/lpt-scheduling/)에 있다.
 
 ## 확인 문제
 
@@ -161,8 +161,6 @@ A는 1을 맨 끝(칸 3)에 붙인 모습, B는 부모 5와 바꾼 뒤, C는 부
 
 
 [^1]: Python 3 표준 라이브러리 문서, "heapq — Heap queue algorithm": 모든 k에 대해 `a[k] <= a[2*k+1]`, `a[k] <= a[2*k+2]`인 리스트, 가장 작은 값은 `a[0]`, `heapify`는 선형 시간. 넣기·꺼내기의 O(log n)은 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 4.5 "Other structures"의 Priority queue와 Cormen 외, *Introduction to Algorithms* 3판 6장.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '넣고 꺼내는 방법' 절의 넣기 예 [3, 5, 8, 1] → [3, 1, 8, 5] → [1, 3, 8, 5]를 칸 i의 자식이 2i + 1, 2i + 2라는 규칙대로 나무로 그렸다.
-[^d1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.77 ~ 78 (힙을 배열에 담은 그림: 9 8 7 6 7 2 6 5 1이 칸 1 ~ 9에 있고 칸 0은 비어 있다. 노드 옆의 번호 1 ~ 9)
-[^d2]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.56 ~ 59 (우선순위 큐의 두 종류, 연산 empty·size·push·top·pop, top은 O(1)이고 push와 pop은 O(log n))
-[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 방식의 비교표와 카드 C4는 원본에 없다. 번호를 1씩 민 관계는 [22_full-complete-binary-tree_verify.py](/Hongs_Blog/studies/data-structures/code/22_full-complete-binary-tree_verify/)로, 카드의 칸과 값은 [27_max-heap_impl.c](/Hongs_Blog/studies/data-structures/code/27_max-heap_impl/)로 확인했다.
+[^s1]: '넣고 꺼내는 방법' 절의 넣기 예 [3, 5, 8, 1] → [3, 1, 8, 5] → [1, 3, 8, 5]를 칸 i의 자식이 2i + 1, 2i + 2라는 규칙대로 나무로 그렸다.
+[^ds1]: 번호를 1씩 민 관계는 [22_full-complete-binary-tree_verify.py](/Hongs_Blog/studies/data-structures/code/22_full-complete-binary-tree_verify/)로, 카드의 칸과 값은 [27_max-heap_impl.c](/Hongs_Blog/studies/data-structures/code/27_max-heap_impl/)로 확인했다.
 {% endraw %}

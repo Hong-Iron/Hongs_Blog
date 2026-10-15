@@ -146,7 +146,7 @@ flowchart TD
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.8절 "Lagrange Multipliers"(정리, 풀이 절차, 제약이 둘일 때).
 [^2]: Boyd, Vandenberghe, *Convex Optimization*, 5장 "Duality"(라그랑지안, 쌍대 문제, KKT 최적 조건, 승수의 민감도 해석).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 승수를 최적값의 민감도로 읽는 해석은 Boyd·Vandenberghe 5장에 있다. PCA가 공분산 행렬의 최대 고윳값 방향을 찾는다는 것은 [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/)에서 다룬다. 수치는 28_lagrange-multipliers_verify.py에서 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [28_lagrange-multipliers_plot.py](/Hongs_Blog/studies/calculus/code/28_lagrange-multipliers_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. 직선 위 최댓값 25가 $$x = 5$$에서 나오는 것, $$\nabla f = 5\nabla g$$, 등고선 $$xy = 25$$의 $$(5, 5)$$ 접선 기울기가 직선과 같은 $$-1$$인 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 푸는 법, 가정 $$\nabla g \ne \mathbf{0}$$이 필요한 이유, 활용 절의 흔한 실수를 근거로 그렸다.
+[^s1]: 승수를 최적값의 민감도로 읽는 해석은 Boyd·Vandenberghe 5장에 있다. PCA가 공분산 행렬의 최대 고윳값 방향을 찾는다는 것은 [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/)에서 다룬다. 수치는 28_lagrange-multipliers_verify.py에서 확인했다.
+[^s2]: [28_lagrange-multipliers_plot.py](/Hongs_Blog/studies/calculus/code/28_lagrange-multipliers_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. 직선 위 최댓값 25가 $$x = 5$$에서 나오는 것, $$\nabla f = 5\nabla g$$, 등고선 $$xy = 25$$의 $$(5, 5)$$ 접선 기울기가 직선과 같은 $$-1$$인 것을 같은 코드로 확인했다.
+[^s3]: 푸는 법, 가정 $$\nabla g \ne \mathbf{0}$$이 필요한 이유, 활용 절의 흔한 실수를 근거로 그렸다.
 {% endraw %}

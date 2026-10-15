@@ -22,7 +22,7 @@ permalink: "/studies/assembly-language/code/37_shift-instructions_verify/"
 ```python
 """시프트 명령(SHL, SHR, SAL, SAR) 검증. 실행: python3 37_shift-instructions_verify.py
 MASM이 없어 시프트·회전 명령을 파이썬 함수로 흉내 낸다(한 칸씩 n번 민다).
-슬라이드 wk10-3-1 p.7~10의 값과 Your turn 답을 단언하고, 8비트 256가지 값을 모두 검사한다."""
+문서의 값과 추적 표의 답을 단언하고, 8비트 256가지 값을 모두 검사한다."""
 def mask(bits):
     return (1 << bits) - 1
 
@@ -114,20 +114,20 @@ def shrd(dest, src, n, bits=16):
 
 
 if __name__ == "__main__":
-    # --- 슬라이드 wk10-3-1 p.7: 빠른 곱셈 ---
+    # --- 빠른 곱셈 ---
     assert shl(5, 1)[0] == 10
     assert shl(5, 2)[0] == 20
-    # --- p.8: SHR로 나누기 ---
+    # --- SHR로 나누기 ---
     dl, _ = shr(80, 1); assert dl == 40
     dl, _ = shr(dl, 2); assert dl == 10
-    # --- p.9: SAR은 부호를 지킨다 (-80 = B0h) ---
+    # --- SAR은 부호를 지킨다 (-80 = B0h) ---
     dl = (-80) & 0xFF; assert dl == 0xB0
     dl, _ = sar(dl, 1); assert signed(dl) == -40 and dl == 0xD8
     dl, _ = sar(dl, 2); assert signed(dl) == -10 and dl == 0xF6
-    # --- p.4, p.5 그림: 11001111을 한 칸 오른쪽으로 ---
+    # --- 11001111을 한 칸 오른쪽으로 ---
     assert shr(0b11001111, 1) == (0b01100111, 1)
     assert sar(0b11001111, 1) == (0b11100111, 1)
-    # --- p.10 Your turn ---
+    # --- 추적 표 (네 문제) ---
     al, cf = shr(0x6B, 1); assert (al, cf) == (0x35, 1)      # a
     al, cf = shl(al, 3);   assert (al, cf) == (0xA8, 1)      # b
     al, cf = sar(0x8C, 1); assert (al, cf) == (0xC6, 0)      # c

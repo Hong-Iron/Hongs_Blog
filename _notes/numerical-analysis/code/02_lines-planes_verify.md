@@ -54,10 +54,10 @@ def solve3(A, b):
 
 
 def main():
-    # 슬라이드 p.19: x = u + 1, y = 2u − 1
+    # 문서의 예: x = u + 1, y = 2u − 1
     pts = {u: (u + 1, 2 * u - 1) for u in (-1, 0, F(1, 2), 1)}
     assert pts[-1] == (0, -3) and pts[0] == (1, -1) and pts[F(1, 2)] == (F(3, 2), 0) and pts[1] == (2, 1)
-    # 슬라이드 p.23: x = −4u + 1, y = 3u + 2, z = 5u − 3
+    # 문서의 선분 예: x = −4u + 1, y = 3u + 2, z = 5u − 3
     seg = lambda u: (-4 * u + 1, 3 * u + 2, 5 * u - 3)
     assert seg(0) == (1, 2, -3) and seg(1) == (-3, 5, 2)
     assert seg(F(1, 2)) == (-1, F(7, 2), F(-1, 2))                      # 카드 C2

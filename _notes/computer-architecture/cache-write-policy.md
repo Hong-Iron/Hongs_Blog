@@ -93,7 +93,7 @@ loop: sll  $t1, $t0, 2        # $t1 = i * 4
 
 나중 쓰기에서 실패 한 번이 메모리에 두 번 가는 경우가 있다. 쫓겨나는 블록이 더티면 그것을 되쓰고(1번), 새 블록을 가져온다(2번)[^2].
 
-**쓰기 버퍼**(write buffer). 즉시 쓰기를 그대로 하면 저장 명령마다 느린 메모리 쓰기가 끝나기를 기다려야 한다. 그래서 캐시와 메모리 사이에 작은 대기열을 둔다. 프로세서는 "주소와 값"을 대기열에 넣고 바로 다음 명령으로 간다. 메모리는 뒤에서 대기열을 하나씩 비운다[^3].
+**쓰기 버퍼**(write buffer). 즉시 쓰기를 그대로 하면 저장 명령마다 느린 메모리 쓰기가 끝나기를 기다려야 한다. 그래서 캐시와 메모리 사이에 작은 대기열을 둔다. 프로세서는 "주소와 값"을 대기열에 넣고 바로 다음 명령으로 간다. 메모리는 뒤에서 대기열을 하나씩 비운다.
 
 메모리 쓰기 한 번이 10사이클이라 하자. 저장 명령 4개가 2사이클 간격으로 몰려 오고, 한참 뒤 또 4개가 몰려 온다.
 
@@ -112,7 +112,7 @@ loop: sll  $t1, $t0, 2        # $t1 = i * 4
 
 ## 활용
 
-- MIT 6.004 강의는 요즘 시스템이 흔히 나중 쓰기를 쓴다고 적는다[^5].
+- MIT 6.004 강의는 요즘 시스템이 흔히 나중 쓰기를 쓴다고 적는다.
 - 즉시 쓰기는 아래층에 늘 최신 사본이 있어서, 프로세서가 여럿일 때 사본을 맞추는 규칙이 단순해진다[^4]. 프로세서가 여럿일 때의 문제는 [멀티코어와 병렬 처리](/Hongs_Blog/studies/computer-architecture/multicore-parallelism/)에서 다룬다.
 - 운영체제 과목의 [캐시 메모리](/Hongs_Blog/studies/operating-systems/cache-memory/)는 같은 두 정책을 "입출력 장치가 메모리를 직접 읽을 때 낡은 값을 볼 수 있다"는 쪽에서 짚는다.
 - 흔한 실수: 더티 비트와 유효 비트를 섞는다. 유효 비트는 "이 줄에 쓸 만한 내용이 있다", 더티 비트는 "이 줄이 메모리보다 새롭다"이다. 유효하면서 더티가 아닌 줄이 가장 흔하다.
@@ -154,7 +154,5 @@ loop: sll  $t1, $t0, 2        # $t1 = i * 4
 
 [^1]: ShanghaiTech CS 110 Computer Architecture (UC Berkeley CS61C 슬라이드 기반), 2022, "Caches Part II", 슬라이드 9, 11~13 (Write-Through, Write-Back, Dirty bit, 두 정책의 비교), https://robotics.shanghaitech.edu.cn/courses/ca/22s/lectures/2022-CA-L17_Caches_II.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 5장 "Large and Fast: Exploiting Memory Hierarchy"
 [^2]: MIT 6.004 Computation Structures, Fall 2023, L13 "Caches", 슬라이드 21 (쓰기 실패: 쫓겨나는 줄이 더티면 먼저 되쓰고, 새 줄을 가져와 고친 뒤 더티 비트를 세운다), https://shd.mit.edu/2024/lectures/readings/6191-fall2023/L13.pdf
-[^3]: ShanghaiTech CS 110, 2022, "Caches Part II", 슬라이드 9~10 (Write Buffer: 프로세서가 멈추지 않게 하고, 칸이 여럿이면 몰려 오는 쓰기를 받아 준다)
 [^4]: University of Utah CS 3810, Lecture 20 "Cache Hierarchies, Virtual Memory", 슬라이드 7~8 (write-allocate와 write-no-allocate, write-through와 write-back), https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-20.pdf
-[^5]: MIT 6.004, Fall 2023, L13, 슬라이드 18 (Write Policy: write-back은 "Commonly implemented in current systems")
 {% endraw %}

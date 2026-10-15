@@ -223,28 +223,28 @@ int main(void)
 {
     heapType *h = createHeap();
 
-    /* 1. 슬라이드 p.77의 최대 힙. 이 차례로 넣으면 값마다 부모보다 크지 않아 그 자리에 그대로 놓인다 */
-    const int p77[] = {9, 8, 7, 6, 7, 2, 6, 5, 1};
-    for (int i = 0; i < 9; i++) pushHeap(h, p77[i]);
-    check(sameArray(h, p77, 9) && isHeap(h, 1), "p.77 배열 [9, 8, 7, 6, 7, 2, 6, 5, 1]");
+    /* 1. 문서 예시의 최대 힙. 이 차례로 넣으면 값마다 부모보다 크지 않아 그 자리에 그대로 놓인다 */
+    const int example[] = {9, 8, 7, 6, 7, 2, 6, 5, 1};
+    for (int i = 0; i < 9; i++) pushHeap(h, example[i]);
+    check(sameArray(h, example, 9) && isHeap(h, 1), "예시 힙 배열 [9, 8, 7, 6, 7, 2, 6, 5, 1]");
     check(topHeap(h) == 9, "뿌리가 가장 큰 값 9");
     check(h->heap[4 / 2] == 8 && h->heap[2 * 4] == 5 && h->heap[2 * 4 + 1] == 1,
           "4번 칸(6)의 부모는 2번(8), 자식은 8번(5)과 9번(1)");
     /* 같은 값을 0번 칸부터 적으면 j = i - 1번 칸: 3번 칸(6)의 자식은 2j + 1 = 7번(5), 2j + 2 = 8번(1) */
-    check(p77[(3 - 1) / 2] == 8 && p77[2 * 3 + 1] == 5 && p77[2 * 3 + 2] == 1, "0번 칸부터 쓰는 규칙");
+    check(example[(3 - 1) / 2] == 8 && example[2 * 3 + 1] == 5 && example[2 * 3 + 2] == 1, "0번 칸부터 쓰는 규칙");
     check(floorLg(9) == 3, "노드 9개: 높이 3(간선), 층 4개. log2(10) = 3.32는 정수가 아니다");
 
-    /* 2. p.79: 5를 넣으면 10번 칸에 그대로 놓인다 (부모 7보다 작다) */
+    /* 2. 5를 넣으면 10번 칸에 그대로 놓인다 (부모 7보다 작다) */
     pushHeap(h, 5);
     {
         const int want[] = {9, 8, 7, 6, 7, 2, 6, 5, 1, 5};
         const int path[] = {10};
         check(sameArray(h, want, 10) && samePath(path, 1) && moves == 0, "5 넣기: 옮긴 값 없음");
     }
-    h->heap_size = 0;                             /* 다음 시험을 위해 p.77의 힙을 새로 만든다 */
-    for (int i = 0; i < 9; i++) pushHeap(h, p77[i]);
+    h->heap_size = 0;                             /* 다음 시험을 위해 예시 힙을 새로 만든다 */
+    for (int i = 0; i < 9; i++) pushHeap(h, example[i]);
 
-    /* 3. p.79~80: 20을 넣으면 구멍이 10 -> 5 -> 2 -> 1로 올라간다 */
+    /* 3. 20을 넣으면 구멍이 10 -> 5 -> 2 -> 1로 올라간다 */
     char shot[512] = "";
     snapBuf = shot;
     pushHeap(h, 20);
@@ -259,7 +259,7 @@ int main(void)
         const int path[] = {10, 5, 2, 1};
         check(sameArray(h, want, 10) && samePath(path, 4) && moves == 3, "20 넣기");
     }
-    /* 이어서 15를 넣으면 구멍이 11 -> 5 -> 2 (p.80의 그림) */
+    /* 이어서 15를 넣으면 구멍이 11 -> 5 -> 2 */
     shot[0] = '\0';
     pushHeap(h, 15);
     check(strcmp(shot,
@@ -274,7 +274,7 @@ int main(void)
     }
     check(isHeap(h, 1), "넣은 뒤에도 최대 힙");
 
-    /* 4. p.81: 가장 큰 값 20을 꺼낸다. 마지막 값 8을 들고 구멍이 1 -> 2 -> 5 */
+    /* 4. 가장 큰 값 20을 꺼낸다. 마지막 값 8을 들고 구멍이 1 -> 2 -> 5 */
     shot[0] = '\0';
     check(popHeap(h) == 20, "첫 꺼내기는 20");
     check(strcmp(shot,
@@ -287,7 +287,7 @@ int main(void)
         const int path[] = {1, 2, 5};
         check(sameArray(h, want, 10) && samePath(path, 3) && moves == 2, "20을 꺼낸 뒤");
     }
-    /* p.81~82: 15를 꺼낸다. 마지막 값 7을 들고 구멍이 1 -> 2 -> 5 */
+    /* 15를 꺼낸다. 마지막 값 7을 들고 구멍이 1 -> 2 -> 5 */
     shot[0] = '\0';
     check(popHeap(h) == 15, "둘째 꺼내기는 15");
     check(strcmp(shot,
@@ -298,7 +298,7 @@ int main(void)
     snapBuf = NULL;
     {
         const int path[] = {1, 2, 5};
-        check(sameArray(h, p77, 9) && samePath(path, 3) && moves == 2, "15를 꺼낸 뒤 p.82의 힙");
+        check(sameArray(h, example, 9) && samePath(path, 3) && moves == 2, "15를 꺼낸 뒤 처음의 예시 힙");
     }
 
     /* 5. 카드의 값 */

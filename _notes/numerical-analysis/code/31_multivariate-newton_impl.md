@@ -29,7 +29,7 @@ def newton2(u, v, J, x, y, n):
     for _ in range(n):
         ux, uy, vx, vy = J(x, y); U, V = u(x, y), v(x, y)
         det = ux * vy - uy * vx
-        x, y = x - (U * vy - V * uy) / det, y - (V * ux - U * vx) / det     # 슬라이드 p.12
+        x, y = x - (U * vy - V * uy) / det, y - (V * ux - U * vx) / det     # 문서의 갱신식
         out.append((x, y))
     return out
 
@@ -38,9 +38,9 @@ def main():
     u = lambda x, y: x * x + x * y - 10
     v = lambda x, y: y + 3 * x * y * y - 57
     J = lambda x, y: (2 * x + y, x, 3 * y * y, 1 + 6 * x * y)
-    assert J(1.5, 3.5) == (6.5, 1.5, 36.75, 32.5)                            # 슬라이드 p.13
+    assert J(1.5, 3.5) == (6.5, 1.5, 36.75, 32.5)                            # 문서 예의 야코비 행렬
     it = newton2(u, v, J, 1.5, 3.5, 5)
-    assert round(it[1][0], 5) == 2.03603 and round(it[1][1], 5) == 2.84388   # 슬라이드 p.14
+    assert round(it[1][0], 5) == 2.03603 and round(it[1][1], 5) == 2.84388   # 문서 예의 한 걸음 뒤 값
     assert abs(it[-1][0] - 2) < 1e-12 and abs(it[-1][1] - 3) < 1e-12
     # 이차 수렴: 오차가 매번 대략 제곱
     e = [math.dist(p, (2, 3)) for p in it]

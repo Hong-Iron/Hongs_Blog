@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/43_calling-convention_verify/"
 MASM이 없어 x86 32비트 명령 일부(레지스터, 리틀 엔디언 메모리, PUSH/POP/CALL/RET,
 ENTER/LEAVE, ZF/CF)를 파이썬으로 흉내 낸다. 문서에 실린 코드를 글자 그대로 넣어 돌린다.
 스택은 ESP = 00001000h에서 시작하고, 명령 주소는 가짜 값(00401000h + 4 × 순번)이다.
-슬라이드 wk11-2-1 p.2의 두 방식과 p.3 Difference(EAX = 16)를 돌려 ESP가 제자리로 오는지 확인한다."""
+문서의 두 방식(C, STDCALL)과 Difference(EAX = 16)를 돌려 ESP가 제자리로 오는지 확인한다."""
 import re
 
 M32 = 0xFFFFFFFF
@@ -259,7 +259,7 @@ class CPU:
         return self
 
 
-# wk11-2-1 p.2 왼쪽: C 방식. 부른 쪽이 add esp,8로 치운다
+# C 방식. 부른 쪽이 add esp,8로 치운다
 C_STYLE = """
 main PROC
     push 6
@@ -277,13 +277,13 @@ AddTwo PROC
     ret
 AddTwo ENDP
 """
-# p.2 오른쪽: STDCALL 방식. 불린 쪽이 ret 8로 치운다
+# STDCALL 방식. 불린 쪽이 ret 8로 치운다
 STD_STYLE = C_STYLE.replace("    add  esp,8\n", "").replace("    ret\n", "    ret  8\n")
 # 아무도 안 치운다
 NOBODY = C_STYLE.replace("    add  esp,8\n", "")
 # 둘 다 치운다
 BOTH = C_STYLE.replace("    ret\n", "    ret  8\n")
-# p.3 Your turn: Difference
+# Difference
 DIFF = """
 main PROC
     push 14
@@ -341,7 +341,7 @@ if __name__ == "__main__":
     # 100번 부르면 800바이트가 샌다
     l = CPU(LEAK).run("main")
     assert 0x1000 - l.r["esp"] == 800
-    # p.3 Difference: 30 - 14 = 16, 둘째 인수가 [ebp+8]
+    # Difference: 30 - 14 = 16, 둘째 인수가 [ebp+8]
     d = CPU(DIFF).run("main")
     assert d.r["eax"] == 16 and d.r["esp"] == 0x1000
     assert d.rd(0x0FF8) == 30 and d.rd(0x0FFC) == 14     # 나중에 넣은 것이 [ebp+8]

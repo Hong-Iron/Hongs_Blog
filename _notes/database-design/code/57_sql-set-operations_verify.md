@@ -21,16 +21,16 @@ permalink: "/studies/database-design/code/57_sql-set-operations_verify/"
 
 ```python
 # 57.집합 연산 UNION·EXCEPT·INTERSECT 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 57_sql-set-operations_verify.py)
-# 확인하는 것 (슬라이드 10-2 p.23~24, 11-2 p.9)
-#   1. Query 4(UNION)의 답 {1, 2}와 두 부분 질의의 답
+# 확인하는 것
+#   1. Smith 질의(UNION)의 답 {1, 2}와 두 부분 질의의 답
 #   2. Wong으로 바꾼 예에서 UNION, UNION ALL, INTERSECT, EXCEPT의 답
-#   3. p.24 그림의 R, S에서 UNION ALL, EXCEPT ALL, INTERSECT ALL: 개수를 세는 규칙을 파이썬 Counter로 계산
+#   3. 문서의 R, S에서 UNION ALL, EXCEPT ALL, INTERSECT ALL: 개수를 세는 규칙을 파이썬 Counter로 계산
 #      (SQLite에는 EXCEPT ALL과 INTERSECT ALL이 없다. 문장 그대로는 PostgreSQL에서 돌렸다: 57_sql-set-operations_verify.sql)
 #   4. 두 질의의 열 수가 다르면 오류
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -86,7 +86,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -136,7 +136,7 @@ def nums(c, sql):
 if __name__ == "__main__":
     c = make()
 
-    # --- 1. Query 4: Smith가 일꾼으로든, 맡은 부서의 관리자로든 얽힌 프로젝트 번호
+    # --- 1. Smith 질의: Smith가 일꾼으로든, 맡은 부서의 관리자로든 얽힌 프로젝트 번호
     assert nums(c, MANAGER % 'Smith') == []                 # Smith는 어느 부서의 관리자도 아니다
     assert nums(c, WORKER % 'Smith') == [1, 2]
     assert nums(c, MANAGER % 'Smith' + ' UNION ' + WORKER % 'Smith') == [1, 2]
@@ -158,7 +158,7 @@ if __name__ == "__main__":
     assert nums(c, "SELECT Salary FROM EMPLOYEE WHERE Dno = 5 UNION SELECT Salary FROM EMPLOYEE WHERE Dno = 4") == [25000, 30000, 38000, 40000, 43000]
     assert len(rows(c, "SELECT Salary FROM EMPLOYEE WHERE Dno = 5 UNION ALL SELECT Salary FROM EMPLOYEE WHERE Dno = 4")) == 7
 
-    # --- 3. p.24 그림: R(A) = a1, a2, a2, a3 / S(A) = a1, a2, a4, a5
+    # --- 3. 문서의 예: R(A) = a1, a2, a2, a3 / S(A) = a1, a2, a4, a5
     R, S = Counter(['a1', 'a2', 'a2', 'a3']), Counter(['a1', 'a2', 'a4', 'a5'])
     assert sorted((R + S).elements()) == ['a1', 'a1', 'a2', 'a2', 'a2', 'a3', 'a4', 'a5']     # UNION ALL: 개수를 더한다 (그림 b)
     assert sorted((R - S).elements()) == ['a2', 'a3']                                         # EXCEPT ALL: 개수를 뺀다 (그림 c)

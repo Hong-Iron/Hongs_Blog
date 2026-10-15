@@ -20,7 +20,7 @@ permalink: "/studies/computer-communication/code/53_arq_impl/"
 [ARQ와 순서 번호](/Hongs_Blog/studies/computer-communication/arq-sequence-number/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""ARQ(정지 대기)와 순서 번호 시뮬레이션. 슬라이드 p.62~66의 네 경우 (a)~(d)."""
+"""ARQ(정지 대기)와 순서 번호 시뮬레이션. 문서의 네 경우 (a)~(d)."""
 
 
 def run(events, use_seq):

@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/45_external-merge-sort_verify/"
 
 실행: python3 45_external-merge-sort_verify.py
 문서: 45.외부 병합 정렬 (시간 계산 표, 추적 예, 카드 C1~C4), 4.연습문제/46.외부 정렬 시간 계산 예제 사다리
-출처: 자료구조 14주차 슬라이드 p.29~41
 
 모형
   - 디스크의 파일은 블록의 줄이고, 블록 하나에 레코드가 blk개 들어간다.
@@ -32,7 +31,7 @@ permalink: "/studies/data-structures/code/45_external-merge-sort_verify/"
   - 런 만들기: 메모리에 들어가는 만큼(mem개) 읽어 정렬(t_IS 1번)하고 런으로 쓴다.
   - 런 합치기: 런마다 입력 버퍼 1블록, 출력 버퍼 1블록. 입력 버퍼가 비면 읽고 출력 버퍼가 차면 쓴다.
     출력 블록 하나를 채우는 일을 내부 병합 1번(t_IM)으로 센다.
-  - 짝이 없는 런은 copy_unpaired=True면 그대로 읽어 다시 쓰고(슬라이드의 식), False면 손대지 않는다.
+  - 짝이 없는 런은 copy_unpaired=True면 그대로 읽어 다시 쓰고(문서 본문의 식), False면 손대지 않는다.
 
 주장
   1. 10,000개, 메모리 500개, 블록 100개: 런 20개(5블록씩), 런 만들기 200 t_IO + 20 t_IS.
@@ -135,7 +134,7 @@ if __name__ == "__main__":
     rng = random.Random(45)
     data = [rng.randrange(10 ** 6) for _ in range(10000)]
 
-    # 1~4, 6. 슬라이드의 수치 (짝 없는 런도 옮겨 적는다)
+    # 1~4, 6. 문서 본문의 수치 (짝 없는 런도 옮겨 적는다)
     out, gen, passes, run_counts, cnt = external_sort(data, 500, 100)
     assert out == sorted(data)
     assert gen == {"io": 200, "sort": 20, "merge": 0}

@@ -23,21 +23,21 @@ permalink: "/studies/database-design/code/36_entity-integrity-constraint_verify/
 """개체 무결성 제약 검증.
 
 문서: 36.개체 무결성 제약 (예시, 정의, 카드 C1~C3)
-출처: 데이터베이스 설계 6-2 슬라이드 p.22, 7 슬라이드 p.7, 9 슬라이드 p.4
+출처: Elmasri & Navathe, Fundamentals of Database Systems 5장(개체 무결성 제약)과 COMPANY 상태
 실행: python3 36_entity-integrity-constraint_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 주장:
-  1. COMPANY 상태(6-2 p.21)의 여섯 릴레이션 어디에도 기본 키 속성이 NULL인 튜플이 없다.
+  1. COMPANY 상태의 여섯 릴레이션 어디에도 기본 키 속성이 NULL인 튜플이 없다.
      키가 아닌 속성은 NULL이어도 된다(Borg의 Super_ssn, Borg의 Hours).
   2. 기본 키가 NULL인 튜플은 넣을 수 없다. 여러 속성으로 된 기본 키는 한 속성만 NULL이어도 안 된다.
-  3. 슬라이드의 까닭: 기본 키가 NULL인 튜플이 둘이면 가려낼 길이 없다. "= NULL"로는 한 행도 안 잡히고,
+  3. 문서가 드는 까닭: 기본 키가 NULL인 튜플이 둘이면 가려낼 길이 없다. "= NULL"로는 한 행도 안 잡히고,
      "IS NULL"로는 둘이 한꺼번에 잡힌다.
-  4. p.22 그림의 Office_phone은 NULL이 3개다. 이 속성이 기본 키라면 세 학생을 가려낼 수 없다.
+  4. STUDENT 표의 Office_phone은 NULL이 3개다. 이 속성이 기본 키라면 세 학생을 가려낼 수 없다.
   5. SQLite만의 동작: PRIMARY KEY만 적고 NOT NULL을 안 적은 열에는 NULL이 들어간다.
      (PostgreSQL은 PRIMARY KEY만으로 막는다 → 36_entity-integrity-constraint_verify.sql)
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태 (Elmasri & Navathe의 COMPANY, DDL은 같은 교재의 CREATE TABLE 문). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -126,7 +126,7 @@ def main():
     assert t.execute("SELECT COUNT(*) FROM PERSON WHERE Ssn = '111'").fetchone()[0] == 1
     print("[OK] 키가 NULL인 두 튜플: = NULL은 0행, IS NULL은 2행. 하나만 집어낼 수 없다")
 
-    # 4. p.22 그림: Office_phone의 NULL 3개
+    # 4. STUDENT 표: Office_phone의 NULL 3개
     office = [None, None, "(817)749-1253", "(817)749-6492", None]
     assert office.count(None) == 3
     print("[OK] Office_phone이 기본 키라면 NULL인 세 학생을 가려낼 수 없다")

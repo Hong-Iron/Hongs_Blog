@@ -23,13 +23,13 @@ permalink: "/studies/database-design/code/13_b-tree-search_impl/"
 """B-트리 검색 구현과 검증.
 
 문서: 13.B-트리 검색, 연습 17.B-트리 연습 p3
-출처: 03.3-2_B-tree-insertion.pdf p.11~16, 04.4-1_B-tree-deletion.pdf p.4, 04.4_B-tree-solutions.pdf p.1
-인덱스: 슬라이드 의사코드(CLRS)는 1부터 센다. 이 코드는 0부터 센다.
+출처: Cormen 외, Introduction to Algorithms 3판 18.2절 (B-TREE-SEARCH)
+인덱스: 문서의 의사코드(CLRS)는 1부터 센다. 이 코드는 0부터 센다.
         search가 돌려주는 자리 i는 의사코드의 i - 1이다(의사코드가 (y, 2)를 돌려주면 여기서는 (y, 1)).
 실행: python3 13_b-tree-search_impl.py
 
 확인하는 것
-  1. p.14의 예: R을 찾으면 [M] -> [Q T X] -> [R S]를 지나 [R S]의 첫째 키에서 멈춘다. 디스크 읽기는 2번.
+  1. 문서의 예: R을 찾으면 [M] -> [Q T X] -> [R S]를 지나 [R S]의 첫째 키에서 멈춘다. 디스크 읽기는 2번.
   2. 없는 키 U는 잎 [V W]에서 NIL로 끝난다.
   3. 무작위 트리(t = 2~6): 결과가 "그 키가 들어 있는가"와 늘 같다. 지나는 노드는 높이 + 1개, 디스크 읽기는 높이 이하.
      노드 안에서 차례로 찾기와 이분 탐색은 같은 답을 낸다.
@@ -96,7 +96,7 @@ def search(x, k, c=None):
 
 
 def search_binary(x, k, c=None):
-    """노드 안에서 이분 탐색을 쓰는 판(연습 1). 돌려주는 값은 search와 같다."""
+    """노드 안에서 이분 탐색을 쓰는 판(17.B-트리 연습 p3). 돌려주는 값은 search와 같다."""
     c = c or Count()
     c.path.append(x.keys)
     lo, hi = 0, len(x.keys)                         # k 이상인 첫 키의 자리를 [lo, hi)에서 좁힌다
@@ -144,7 +144,7 @@ def insert(root, k, t):
 
 
 def main():
-    # 1. p.14의 예
+    # 1. 문서의 예
     tree = T(("M", [("D H", ["B C", "F G", "J K L"]), ("Q T X", ["N P", "R S", "V W", "Y Z"])]))
     c = Count()
     node, i = search(tree, "R", c)

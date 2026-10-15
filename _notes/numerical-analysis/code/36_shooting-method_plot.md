@@ -74,7 +74,7 @@ def shoot(z0, h):
     return np.array(xs), np.array(Ts)
 
 
-end2 = {z: shoot(z, 2.0)[1][-1] for z in (10, 20)}      # 슬라이드처럼 걸음 2
+end2 = {z: shoot(z, 2.0)[1][-1] for z in (10, 20)}      # 문서 값처럼 걸음 2
 z_star = 10 + (20 - 10) / (end2[20] - end2[10]) * (200 - end2[10])
 
 fig, ax = plt.subplots(figsize=(6, 3.6))

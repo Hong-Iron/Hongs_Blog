@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/06_dynamic-memory-allocation_impl/"
 /* 동적 메모리 할당: calloc, malloc, realloc, free와 누수.
  *
  * 문서: 06.동적 메모리 할당 (예시, 네 함수, 누수, 카드)
- * 출처: 자료구조 2주차 슬라이드 p.36~43
  * 실행: cc -std=c11 -Wall -Wextra 06_dynamic-memory-allocation_impl.c -o dyn_mem && ./dyn_mem
  *
  * 받은 덩어리와 돌려준 덩어리를 세는 감싸개(counted_...)를 쓴다.
@@ -138,7 +137,7 @@ static void mean_and_variance(const double *input, int n, double *mean, double *
     counted_free(nums);                 /* 다 썼으면 돌려준다 */
 }
 
-/* ---------- 2. 누수: 슬라이드 p.41의 함수 problem ---------- */
+/* ---------- 2. 누수: 문서의 함수 problem ---------- */
 static void problem(int n)
 {
     float *nums = counted_calloc((size_t)n, sizeof *nums);

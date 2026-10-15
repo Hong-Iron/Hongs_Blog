@@ -126,6 +126,6 @@ flowchart LR
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.2절(큰 수의 법칙과 몬테카를로), 10.3절(중심극한정리와 오차의 크기).
 [^2]: Owen, *Monte Carlo Theory, Methods and Examples*(온라인 교재), 중요도 샘플링 장. 수치는 27_monte-carlo_verify.py로 확인했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [27_monte-carlo_plot.py](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_plot/)로 그렸고, 그림에 쓴 값($$\frac{1.64}{\sqrt n}$$이 1,000·4,000·16,000에서 0.052·0.026·0.013, 모의실험과 12% 안)을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의 절의 식(표본평균과 95% 오차 막대)과 적분으로 쓰기를 순서대로 그렸다.
+[^s1]: [27_monte-carlo_plot.py](/Hongs_Blog/studies/probability-statistics/code/27_monte-carlo_plot/)로 그렸고, 그림에 쓴 값($$\frac{1.64}{\sqrt n}$$이 1,000·4,000·16,000에서 0.052·0.026·0.013, 모의실험과 12% 안)을 같은 코드로 확인했다.
+[^s2]: 이 문서 정의 절의 식(표본평균과 95% 오차 막대)과 적분으로 쓰기를 순서대로 그렸다.
 {% endraw %}

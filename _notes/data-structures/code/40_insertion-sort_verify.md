@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/40_insertion-sort_verify/"
 
 실행: python3 40_insertion-sort_verify.py
 문서: 40.삽입 정렬 (복잡도 절, 카드 C3)
-출처: 자료구조 2주차 슬라이드 p.6, p.11~12, p.18
 
 주장
   1. 모든 순열(n <= 8)에서 비교 횟수는 n - 1 이상 n(n - 1)/2 이하다.
@@ -35,7 +34,7 @@ permalink: "/studies/data-structures/code/40_insertion-sort_verify/"
   4. 비교 횟수가 최대인 순열은 역순 하나가 아니다. 2^(n-1)개이고 n = 5이면 16개다
      ([7, 3, 6, 2, 1]과 같은 꼴 포함).
   5. 같은 값끼리는 처음 순서가 지켜진다(안정 정렬). 무작위 2,000개.
-  6. 최악의 비교 횟수는 n이 두 배가 되면 약 네 배가 된다 (p.18).
+  6. 최악의 비교 횟수는 n이 두 배가 되면 약 네 배가 된다.
   7. 조건을 t <= a[j]로 바꾸면 같은 값의 순서가 뒤집힌다: [1a, 1b] -> [1b, 1a].
 """
 import random
@@ -43,7 +42,7 @@ from itertools import permutations
 
 
 def insertion_sort(a):
-    """슬라이드 p.6의 코드. (정렬된 리스트, 비교 횟수, 밀기 횟수, 끼울 때마다의 비교 횟수)"""
+    """문서의 코드. (정렬된 리스트, 비교 횟수, 밀기 횟수, 끼울 때마다의 비교 횟수)"""
     a = list(a)
     cmp_count = 0
     moves = 0

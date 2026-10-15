@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/42_quick-sort_verify/"
 
 실행: python3 42_quick-sort_verify.py
 문서: 42.퀵 정렬 (복잡도 절, 오해 항목, 카드 C3~C5), 44.퀵 정렬과 병합 정렬 비교
-출처: 자료구조 14주차 슬라이드 p.14~18
 분할은 42_quick-sort_impl.c의 partition과 같은 규칙이다(피벗은 맨 왼쪽, big은 피벗 이상, small은 피벗 이하).
 
 주장
@@ -36,7 +35,7 @@ permalink: "/studies/data-structures/code/42_quick-sort_verify/"
   5. 가운데 값 피벗(median-of-three)이면 정렬된 입력에서도 비교가 2n lg n 아래다.
      그래도 최악이 없어지지는 않는다. 이 코드에서는 역순 입력이 여전히 n^2에 비례한다
      (1,000개 126,748번, 2,000개 503,498번: 두 배에 약 네 배).
-  6. 모두 같은 값일 때: 등호를 넣은 규칙(p.17)은 조각이 반반, 등호 없는 규칙은 0개와 n - 1개로 갈린다.
+  6. 모두 같은 값일 때: 등호를 넣은 규칙은 조각이 반반, 등호 없는 규칙은 0개와 n - 1개로 갈린다.
   7. 작은 조각만 재귀로 부르면 정렬된 입력에서도 재귀 깊이가 lg n + 1 이하다.
   8. 문서와 카드의 수치.
 """
@@ -48,7 +47,7 @@ sys.setrecursionlimit(20000)
 
 
 def partition(a, left, right, cnt, strict=False):
-    """strict=False: big은 피벗 이상인 첫 값, small은 피벗 이하인 첫 값 (p.17의 규칙).
+    """strict=False: big은 피벗 이상인 첫 값, small은 피벗 이하인 첫 값 (같은 값이 많을 때의 규칙).
     strict=True : big은 피벗보다 큰 첫 값, small은 피벗보다 작은 첫 값 (등호 없는 규칙)."""
     pivot = a[left]
     i, j = left, right + 1
@@ -181,7 +180,7 @@ if __name__ == "__main__":
     sizes = []
     run([7] * 9, strict=True, sizes=sizes)
     assert sizes[0] == (0, 8)                                 # 한쪽으로 몰림
-    # 등호 없는 규칙도 값이 모두 다르면 같은 결과를 낸다(슬라이드 p.14의 예)
+    # 등호 없는 규칙도 값이 모두 다르면 같은 결과를 낸다(문서의 제자리 분할 예)
     for strict in (False, True):
         a = [6, 2, 8, 5, 11, 10, 4, 1, 9, 7, 3]
         partition(a, 0, 10, [0], strict)
@@ -202,12 +201,12 @@ if __name__ == "__main__":
     # C5: a[0..8]에서 a[0], a[4], a[8]만 본다
     assert median_of_three({0: 12, 4: 40, 8: 7}, 0, 8) == 0      # 12가 가운데 값: 이미 맨 왼쪽
     assert median_of_three({0: 12, 4: 9, 8: 7}, 0, 8) == 4       # 9가 가운데 값: a[0]과 맞바꾼다
-    # 슬라이드 p.11~12의 세 예 (a[6], a[13], a[20])
+    # 문서의 가운데 값 규칙 세 예 (a[6], a[13], a[20])
     assert median_of_three({6: 30, 13: 2, 20: 10}, 6, 20) == 20
     assert median_of_three({6: 3, 13: 2, 20: 10}, 6, 20) == 6
     assert median_of_three({6: 30, 13: 25, 20: 10}, 6, 20) == 13
 
-    # 문서의 나무 그림: 슬라이드 예를 두 층까지 나눈 모습
+    # 문서의 나무 그림: 예시 배열을 두 층까지 나눈 모습
     a = [6, 2, 8, 5, 11, 10, 4, 1, 9, 7, 3]
     assert partition(a, 0, 10, [0]) == 5 and a == [4, 2, 3, 5, 1, 6, 10, 11, 9, 7, 8]
     assert partition(a, 0, 4, [0]) == 3 and a[0:5] == [1, 2, 3, 4, 5]

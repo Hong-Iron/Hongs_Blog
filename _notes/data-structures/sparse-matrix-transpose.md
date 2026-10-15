@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Sparse Matrix Transpose", "Fast Transpose", "빠른 전치", "전치", "Transpose", "rowSize", "rowStart", "열별 개수", "시작 위치"]
 description: "표의 줄과 칸을 맞바꾼 표를, 0이 아닌 칸만 적은 목록에서 바로 만든다. 줄 번호와 칸 번호를 서로 바꿔 적기만 하면 목록의 순서가 뒤죽박죽이 된다. 그래서 먼저 새 표의 줄마다 몇 개가 들어갈지 세고, 그 수로 줄마다 목록의 어디서 시작할지 정한 다음, 원래 목록을 앞에서부터 …"
@@ -36,7 +36,7 @@ permalink: "/studies/data-structures/sparse-matrix-transpose/"
 
 행과 열을 맞바꾸는 일(전치)은 2차원 배열에서는 쉽다. $$i$$행 $$j$$열의 값을 $$j$$행 $$i$$열로 옮기면 된다. 하지만 500 × 500 행렬이면 0이 아닌 칸이 2천 개뿐이어도 칸 25만 개를 모두 건드린다. [3원소 목록](/Hongs_Blog/studies/data-structures/sparse-matrix-triples/)만 가지고 하면 훨씬 적게 건드린다.
 
-슬라이드의 4 × 5 행렬과 그 전치다[^1].
+[3원소 표현](/Hongs_Blog/studies/data-structures/sparse-matrix-triples/)의 예시와 같은 4 × 5 행렬과 그 전치다.
 
 ```
 0 0 3 0 4            0 0 0 0
@@ -53,7 +53,7 @@ permalink: "/studies/data-structures/sparse-matrix-transpose/"
 | 원래 목록 (행, 열, 값) | (1, 3, 3) | (1, 5, 4) | (2, 3, 5) | (2, 4, 7) | (4, 2, 2) | (4, 3, 6) |
 | 번호만 바꿈 | (3, 1, 3) | (5, 1, 4) | (3, 2, 5) | (4, 2, 7) | (2, 4, 2) | (3, 4, 6) |
 
-바꾼 목록의 행 번호가 3, 5, 3, 4, 2, 3이다. 행 번호가 작은 것부터 서야 한다는 목록의 규칙이 깨졌다. 다시 정렬하면 되지만, 정렬하지 않고도 묶음마다 갈 자리를 미리 알아낼 수 있다. 세 단계다[^2].
+바꾼 목록의 행 번호가 3, 5, 3, 4, 2, 3이다. 행 번호가 작은 것부터 서야 한다는 목록의 규칙이 깨졌다. 다시 정렬하면 되지만, 정렬하지 않고도 묶음마다 갈 자리를 미리 알아낼 수 있다. 세 단계다.
 
 **1단계: 새 행마다 몇 개가 들어가나.** 전치한 행렬의 $$c$$행은 원래 행렬의 $$c$$열이다. 그래서 원래 목록에서 열 번호별로 개수를 센다.
 
@@ -75,7 +75,7 @@ permalink: "/studies/data-structures/sparse-matrix-transpose/"
 | (4, 2, 2) | 2 | 0 | (2, 4, 2) | 0, **1**, 3, 5, 6 |
 | (4, 3, 6) | 3 | 3 | (3, 4, 6) | 0, 1, **4**, 5, 6 |
 
-칸 번호 순으로 읽으면 (2, 4, 2), (3, 1, 3), (3, 2, 5), (3, 4, 6), (4, 2, 7), (5, 1, 4)다. 슬라이드의 전치한 목록과 같고[^1], 행 우선 순서로 서 있다.
+칸 번호 순으로 읽으면 (2, 4, 2), (3, 1, 3), (3, 2, 5), (3, 4, 6), (4, 2, 7), (5, 1, 4)다. 오른쪽 행렬을 윗줄부터 읽어 적은 목록과 같고, 행 우선 순서로 서 있다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 위 개수·시작 칸·추적 표·결과, 번호만 바꾸면 순서가 깨지는 것, 카드 C1·C3, 경계(0이 아닌 칸이 없는 행렬, 1 × 1, 한 행, 한 열), 무작위 행렬 1,000개에서 세 단계의 결과 = 2차원 배열을 뒤집어 만든 목록, 두 번 전치하면 원래 목록 — [12_sparse-matrix-transpose_impl.c](/Hongs_Blog/studies/data-structures/code/12_sparse-matrix-transpose_impl/)</div>
@@ -117,7 +117,7 @@ SparseMatrix fast_transpose(const SparseMatrix *a)
 }
 ```
 
-`get_memory`는 `malloc`에 실패 검사를 붙인 것이고 `give_back`은 `free`다. 행·열 번호를 슬라이드처럼 1부터 세므로, 두 덤 배열은 `cols + 1`칸을 잡아 1번 칸부터 쓴다[^s1].
+`get_memory`는 `malloc`에 실패 검사를 붙인 것이고 `give_back`은 `free`다. 행·열 번호를 행렬 표기대로 1부터 세므로, 두 덤 배열은 `cols + 1`칸을 잡아 1번 칸부터 쓴다[^s1].
 
 ### 왜 맞는가
 
@@ -138,11 +138,11 @@ SparseMatrix fast_transpose(const SparseMatrix *a)
 
 ### 걸음 수
 
-단계마다 세면 이렇다. 1단계는 개수 칸 $$n$$개를 0으로 만들고 목록 $$t$$개를 한 번 훑으니 $$O(n + t)$$, 2단계는 $$O(n)$$, 3단계는 $$O(t)$$, 모두 더해 $$O(n + t)$$다[^3]. 여기서 $$n$$은 원래 행렬의 열 수, $$t$$는 0이 아닌 칸 수다. 행 수 $$m$$은 식에 나오지 않는다.
+단계마다 세면 이렇다. 1단계는 개수 칸 $$n$$개를 0으로 만들고 목록 $$t$$개를 한 번 훑으니 $$O(n + t)$$, 2단계는 $$O(n)$$, 3단계는 $$O(t)$$, 모두 더해 $$O(n + t)$$다. 여기서 $$n$$은 원래 행렬의 열 수, $$t$$는 0이 아닌 칸 수다. 행 수 $$m$$은 식에 나오지 않는다.
 
 고리가 도는 횟수를 정확히 세면 $$n + t + (n - 1) + t = 2t + 2n - 1$$번이다. 다른 방법과 견주면 이렇다[^s1].
 
-| 방법 | 고리가 도는 횟수 | 500 × 500, $$t = 1{,}994$$ | 슬라이드의 4 × 5 예 |
+| 방법 | 고리가 도는 횟수 | 500 × 500, $$t = 1{,}994$$ | 예시의 4 × 5 행렬 |
 |---|---|---|---|
 | 2차원 배열에서 칸마다 옮기기 | $$mn$$ | 250,000 | 20 |
 | 열 번호 1부터 $$n$$까지, 번호마다 목록 전체를 훑어 골라내기 | $$nt$$ | 997,000 | 30 |
@@ -160,7 +160,7 @@ SparseMatrix fast_transpose(const SparseMatrix *a)
 
 - 구현: [12_sparse-matrix-transpose_impl.c](/Hongs_Blog/studies/data-structures/code/12_sparse-matrix-transpose_impl/). 연습: [희소 행렬 전치 예제 사다리](/Hongs_Blog/studies/data-structures/sparse-transpose-ladder/)
 - "종류별로 세고 → 시작 칸을 정하고 → 한 번 훑으며 꽂는다"는 값의 종류가 적은 자료를 순서대로 세울 때 쓰는 방법(계수 정렬)과 같은 짜임이다. 여기서는 열 번호가 그 종류다[^s1].
-- 희소 행렬의 곱셈은 강의에서 직접 해 볼 일로 남겨 두었다[^4].
+- 희소 행렬의 곱셈은 이 문서에서 다루지 않는다.
 - 흔한 실수 둘. 3단계에서 시작 칸을 올리지 않으면 같은 행의 묶음이 한 칸에 겹쳐 쓰인다. 2단계에서 자기 행의 개수까지 더하면 모든 묶음이 제자리보다 뒤로 밀려, 마지막 행의 묶음이 배열 끝을 넘는다.
 
 ## 연결
@@ -197,9 +197,5 @@ SparseMatrix fast_transpose(const SparseMatrix *a)
 </details>
 
 
-[^1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.16~17 (4 × 5 행렬과 전치, 원래 목록과 전치한 목록)
-[^2]: 같은 자료, p.18 (Step 1 개수 [0, 1, 3, 1, 1], Step 2 시작 위치 [0, 0, 1, 4, 5], Step 3 옮기기, "See in program 2.8")
-[^3]: 같은 자료, p.19 (Step 1 $$O(n + t)$$, Step 2 $$O(n)$$, Step 3 $$O(t)$$, Overall $$O(n + t)$$)
-[^4]: 같은 자료, p.20 (Matrix Multiplication: "Easy. Do it yourself. (see in 2.4.3 section)"). 슬라이드가 가리키는 교재의 2.4.3절과 p.18의 "program 2.8"은 이 볼트에 없다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 세 단계의 설명과 예의 값만 싣는다. C 코드, 3단계의 추적 표, 정확성 논증, 고리가 도는 횟수 $$2t + 2n - 1$$과 다른 두 방법의 횟수, 계수 정렬과 같은 짜임이라는 말(Cormen 외, *Introduction to Algorithms* 3판, 8.2절 "Counting sort"), 흔한 실수, 카드 C1~C3은 슬라이드에 없다. 구현 코드와 검증 코드로 확인했다.
+[^s1]: 계수 정렬은 Cormen 외, *Introduction to Algorithms* 3판, 8.2절 "Counting sort"를 따랐다. 구현 코드와 검증 코드로 확인했다.
 {% endraw %}

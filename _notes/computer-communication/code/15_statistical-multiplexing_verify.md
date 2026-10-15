@@ -23,7 +23,7 @@ permalink: "/studies/computer-communication/code/15_statistical-multiplexing_ver
 """통계적 다중화의 동작과 통계적 이득 계산 검증.
 
 문서: 15.통계적 다중화 (예시, 정리, 예제, 카드 C2·C3·C4), 16.시분할 다중화와 통계적 다중화 비교
-주장 1: 슬라이드 그림(A~D, 2주기)에서 동기식 TDM은 8칸 중 4칸이 비고, 통계적 다중화는 A1 B1 | B2 C2만 싣는다.
+주장 1: 문서 예시(A~D, 2주기)에서 동기식 TDM은 8칸 중 4칸이 비고, 통계적 다중화는 A1 B1 | B2 C2만 싣는다.
 주장 2: 사용자 n명이 서로 독립으로 확률 p만큼 활동하면 동시 활동자 수 X ~ Bin(n, p)이고,
         링크가 넘칠 확률은 Pr[X > n_max], n_max = floor(R/a)이다.
 주장 3: 독립 가정을 빼면(모두 함께 켜지고 꺼짐) 넘칠 확률이 p까지 커진다.
@@ -71,7 +71,7 @@ def monte_carlo_tail(n, p, k, trials, rng, correlated=False):
 
 
 def main() -> None:
-    # --- 주장 1: 슬라이드 그림 재현 ---
+    # --- 주장 1: 문서 예시 재현 ---
     inputs = "ABCD"
     act = [{"A", "B"}, {"B", "C"}]
     s = sync_tdm(act, inputs)
@@ -79,7 +79,7 @@ def main() -> None:
     assert sum(x is None for fr in s for x in fr) == 4
     sent, _ = stat_tdm(act, inputs, capacity=4)
     assert [[b for _, b in cyc] for cyc in sent] == [["A1", "B1"], ["B2", "C2"]]
-    print("[OK] 슬라이드 그림: 동기식 8칸 중 4칸 빈 칸, 통계적은 A1 B1 | B2 C2 (+주소)")
+    print("[OK] 문서 예시: 동기식 8칸 중 4칸 빈 칸, 통계적은 A1 B1 | B2 C2 (+주소)")
 
     # --- 카드 statistical-multiplexing#C2 ---
     inputs = "ABC"

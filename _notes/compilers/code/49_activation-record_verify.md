@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/49_activation-record_verify/"
 ```python
 # 활성 레코드: 함수 한 번의 실행에 필요한 것을 스택에 모아 둔 덩어리.
 # 실행: python3 49_activation-record_verify.py  (표준 라이브러리만 쓴다)
-# 슬라이드 14회 p.25~30의 3주소 코드를 활성 레코드만으로 실행해 스택 그림을 다시 만든다.
+# 문서의 3주소 코드를 활성 레코드만으로 실행해 스택 그림을 다시 만든다.
 
 TAC = [
     "begin fib",            # 0
@@ -50,8 +50,8 @@ PARAMS = {"fib": ["n"], "main": []}
 
 
 def make_record(func, args, link, ret_addr):
-    """슬라이드 p.24, p.26의 칸 순서: 반환값, 입력 인자, 제어 링크, 저장한 기계 상태, 지역·임시 변수.
-    main의 레코드는 슬라이드 그림(p.27)처럼 지역 변수 칸만 둔다."""
+    """문서의 칸 순서: 반환값, 입력 인자, 제어 링크, 저장한 기계 상태, 지역·임시 변수.
+    main의 레코드는 문서 그림처럼 지역 변수 칸만 둔다."""
     cells = []
     if func != "main":
         cells.append(["(result)", None])
@@ -131,27 +131,27 @@ def run(tac, first_arg=None, watch=None):
 
 
 if __name__ == "__main__":
-    # ---- p.26: fib(1)의 활성 레코드 ----
+    # ---- fib(1)의 활성 레코드 ----
     rec = make_record("fib", [1], 0, 17)
     assert [c[0] for c in rec] == ["(result)", "n", "control link", "return address",
                                    "t0", "t1", "t2", "t3", "t4", "t5"]
     assert rec[1] == ["n", 1] and len(rec) == 10
 
-    # ---- p.27~30: main이 fib(1)을 부른다 ----
+    # ---- main이 fib(1)을 부른다 ----
     stack, snaps, max_cells = run(TAC, watch={15, 1, 12})
-    # p.27: main이 불렸을 때 스택에는 a, t0
+    # main이 불렸을 때 스택에는 a, t0
     assert [c[0] for c in snaps[15]] == ["a", "t0"]
-    # p.28: fib(1)이 불린 직후. main의 두 칸 아래에 fib의 열 칸
+    # fib(1)이 불린 직후. main의 두 칸 아래에 fib의 열 칸
     s = snaps[1]
     assert [c[0] for c in s] == ["a", "t0", "(result)", "n", "control link", "return address",
                                  "t0", "t1", "t2", "t3", "t4", "t5"]
     assert s[3] == ["n", 1]
     assert s[4] == ["control link", 0]              # main의 레코드가 시작하는 칸
     assert s[5] == ["return address", 17] and TAC[17] == "a = t0" and TAC[16] == "t0 = call fib, 1"
-    # p.29: return n 직전. fib의 t0 = true, t1~t5는 쓰이지 않았다
+    # return n 직전. fib의 t0 = true, t1~t5는 쓰이지 않았다
     s = snaps[12]
     assert s[6] == ["t0", True] and all(c[1] is None for c in s[7:])
-    # p.30: 끝난 뒤. fib의 레코드는 사라지고 a = 1, t0 = 1
+    # 끝난 뒤. fib의 레코드는 사라지고 a = 1, t0 = 1
     assert stack == [["a", 1], ["t0", 1]]
     assert max_cells == 12
 

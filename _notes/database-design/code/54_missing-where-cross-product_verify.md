@@ -21,14 +21,14 @@ permalink: "/studies/database-design/code/54_missing-where-cross-product_verify/
 
 ```python
 # 54.WHERE 없는 질의와 카티션 곱 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 54_missing-where-cross-product_verify.py)
-# 확인하는 것 (슬라이드 10-2 p.18~19, 11-2 p.5)
+# 확인하는 것
 #   1. SELECT Ssn FROM EMPLOYEE: 조건이 없으면 모든 행(8행)이 나온다
 #   2. SELECT Ssn, Dname FROM EMPLOYEE, DEPARTMENT: 모든 조합 8 x 3 = 24행이 나온다
 #   3. 조건을 하나 빠뜨릴 때마다 결과가 몇 배로 불어나는지 (Q1, Q2)
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -84,7 +84,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)

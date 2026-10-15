@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Data Transfer Instructions", "MOV", "MOV 명령", "MOV Instruction", "XCHG", "XCHG 명령", "XCHG Instruction", "목적지 피연산자", "Destination Operand", "원본 피연산자", "Source Operand", "크기 불일치", "Size Mismatch"]
 description: "값을 한 곳에서 다른 곳으로 옮겨 적는 명령과, 두 곳의 값을 맞바꾸는 명령이다. 옮겨 적어도 원래 자리의 값은 그대로 남으므로 \"이동\"보다 \"복사\"에 가깝다. 계산은 거의 다 레지스터에서 하므로 프로그램의 절반은 값을 나르는 이 명령이다. 다만 양쪽의 크기가 같아야 하고, 메모리…"
@@ -44,7 +44,7 @@ mov var2,ax      ; 레지스터 → 메모리
 `MOV`는 쉼표 왼쪽이 받는 쪽, 오른쪽이 주는 쪽이다. `mov ax,var1`은 "AX ← var1"로 읽는다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 MOV·XCHG 예와 오류 줄, Your turn 다섯 줄의 오류 이유, 두 변수 맞바꾸기 추적, MOV 뒤에 플래그가 그대로인 것, 카드 C1·C2. 파이썬 흉내로 확인 — [16_data-transfer-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/16_data-transfer-instructions_verify/)</div>
+<div class="callout-title" markdown="span">검증: 본문의 MOV·XCHG 예와 오류 줄, 틀린 MOV 다섯 줄의 오류 이유, 두 변수 맞바꾸기 추적, MOV 뒤에 플래그가 그대로인 것, 카드 C1·C2. 파이썬 흉내로 확인 — [16_data-transfer-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/16_data-transfer-instructions_verify/)</div>
 
 </div>
 
@@ -53,13 +53,13 @@ mov var2,ax      ; 레지스터 → 메모리
 
 ### MOV
 
-주는 쪽(원본, source)의 값을 받는 쪽(목적지, destination)에 복사한다[^1].
+주는 쪽(원본, source)의 값을 받는 쪽(목적지, destination)에 복사한다.
 
 ```
 MOV 목적지,원본
 ```
 
-지켜야 할 규칙은 다음과 같다[^1].
+지켜야 할 규칙은 다음과 같다.
 
 - 두 피연산자의 크기가 같아야 한다.
 - 메모리 피연산자는 많아야 하나다. 둘 다 메모리일 수 없다.
@@ -80,11 +80,11 @@ mov ax,count      ; 오류: 16비트 ← 8비트
 mov eax,count     ; 오류: 32비트 ← 8비트
 ```
 
-`MOV`는 상태 플래그를 하나도 바꾸지 않는다[^2].
+`MOV`는 상태 플래그를 하나도 바꾸지 않는다.
 
 ### XCHG
 
-두 피연산자의 값을 맞바꾼다. 적어도 한쪽은 레지스터여야 하고, 즉시값은 쓸 수 없다[^3].
+두 피연산자의 값을 맞바꾼다. 적어도 한쪽은 레지스터여야 하고, 즉시값은 쓸 수 없다.
 
 ```asm
 .data
@@ -101,7 +101,7 @@ xchg var1,var2    ; 오류: 둘 다 메모리
 
 ## 예제
 
-**틀린 MOV 다섯 줄.** 슬라이드의 문제와 답이다[^4].
+**틀린 MOV 다섯 줄.** 변수가 다음과 같을 때, 표의 다섯 줄은 모두 어셈블되지 않는다.
 
 ```asm
 .data
@@ -174,9 +174,5 @@ mov  var1,ax
 </details>
 
 
-[^1]: 어셈블리어 4회 강의 자료 「wk04-chapt_04-4-4」, p.7 (MOV Instruction: 문법, 규칙, 예와 오류 세 줄)
-[^2]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-1」, p.11 (The MOV instruction never affects the flags)
-[^3]: 어셈블리어 4회 강의 자료 「wk04-chapt_04-4-4」, p.11 (XCHG Instruction)
-[^4]: 같은 자료, p.8 (Your turn: 틀린 MOV 다섯 줄과 이유)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 레지스터를 거쳐 메모리에서 메모리로 옮기는 두 줄, 두 변수 맞바꾸기 세 줄과 추적 표, 흔한 실수, 카드 C1~C3은 원본에 없다. 두 코드는 Irvine, *Assembly Language for x86 Processors* 7판 4.1.4절과 4.1.7절에 있다. 추적 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 두 코드는 Irvine, *Assembly Language for x86 Processors* 7판 4.1.4절과 4.1.7절에 있다. 추적 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

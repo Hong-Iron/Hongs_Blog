@@ -23,21 +23,20 @@ permalink: "/studies/database-design/code/71_where-vs-having_verify/"
 """WHERE와 HAVING 비교 검증 (SQLite).
 
 문서: 71.WHERE와 HAVING 비교
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.33~34, 12주차 풀이 p.1~2
 주장:
   1. 같은 "30000 초과"라도 WHERE에 쓰면 행을 거르고 HAVING에 쓰면 묶음을 거른다.
      WHERE Salary > 30000: (5, 2), (4, 1), (1, 1). HAVING AVG(Salary) > 30000: (5, 4), (4, 3), (1, 1).
-  2. 12주차 풀이 Q1-2(p.2): Q1-1에 Sex = 'M'만 WHERE에 더한 질의는 2행(Research 3, Headquarters 1)이다.
+  2. 틀리기 쉬운 답: 평균 급여로 거르는 질의의 WHERE에 Sex = 'M'만 더한 질의는 2행(Research 3, Headquarters 1)이다.
      남자만의 평균이 Research 36000, Administration 25000, Headquarters 55000이라 Administration이 빠진다.
      그려진 결과 3행(3, 1, 1)은 평균을 전 직원으로 내는 중첩 질의의 결과다.
   3. 둘을 함께 쓰는 예: 20시간 이상 일하는 행만 남기고, 그런 행이 둘 이상인 프로젝트 -> (1, 2), (30, 2).
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -134,7 +133,7 @@ def main():
     assert sorted(rows(c, h2), reverse=True) == [(5, 4, 33250.0), (1, 1, 55000.0)]
     print("[OK] WHERE: (5, 2), (4, 1), (1, 1) / HAVING: (5, 4), (4, 3), (1, 1) / 문턱 32000이면 4번 부서가 빠진다")
 
-    # 2. 12주차 풀이 Q1-2
+    # 2. 틀리기 쉬운 답(WHERE에 Sex = 'M'만 더함)과 고친 답
     q11 = "SELECT Dname, COUNT(*) AS Number_of_employees FROM EMPLOYEE, DEPARTMENT WHERE Dno = Dnumber GROUP BY Dno, Dname HAVING AVG(Salary) > 30000"
     assert sorted(rows(c, q11)) == [("Administration", 3), ("Headquarters", 1), ("Research", 4)]
     slide = q11.replace("WHERE Dno = Dnumber", "WHERE Dno = Dnumber AND Sex = 'M'")

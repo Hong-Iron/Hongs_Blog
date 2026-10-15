@@ -50,7 +50,7 @@ class ExceptionImpl {
         System.out.println("ok  " + what);
     }
 
-    // 슬라이드 p.7 WithNoExceptionHandling
+    // 문서의 첫 예제: null을 넘겨도 대비하지 않는다
     static void printLength(String data) {
         int result = data.length();
         System.out.println("length: " + result);
@@ -62,7 +62,7 @@ class ExceptionImpl {
         System.out.println("[Program end]");
     }
 
-    // 슬라이드 p.9 CheckedException
+    // 문서의 일반 예외 예제: Class.forName
     static void checkedExample() {
         try {
             Class.forName("java.lang.String");
@@ -82,7 +82,7 @@ class ExceptionImpl {
     static void forever(int n) { forever(n + 1); }
 
     public static void main(String[] args) throws Throwable {
-        // 1. 클래스 계층 (슬라이드 p.4 그림)
+        // 1. 클래스 계층 (문서의 그림)
         check(Exception.class.getSuperclass() == Throwable.class, "Exception의 부모는 Throwable");
         check(Error.class.getSuperclass() == Throwable.class, "Error의 부모는 Throwable");
         check(RuntimeException.class.getSuperclass() == Exception.class, "RuntimeException의 부모는 Exception");
@@ -100,20 +100,20 @@ class ExceptionImpl {
             check(Error.class.isAssignableFrom(c) && !Exception.class.isAssignableFrom(c),
                     c.getSimpleName() + "는 Error 쪽이고 Exception이 아니다");
 
-        // 2. 처리하지 않은 실행 예외: 뒤 줄이 실행되지 않는다 (p.7)
+        // 2. 처리하지 않은 실행 예외: 뒤 줄이 실행되지 않는다 (문서의 첫 예제)
         final Throwable[] escaped = new Throwable[1];
         PrintStream old = System.out;
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         System.setOut(new PrintStream(buf, true));
         try { noHandling(); } catch (NullPointerException e) { escaped[0] = e; } finally { System.setOut(old); }
-        same(buf.toString(), "[Program start]\nlength: 11\n", "p.7: [Program end]가 찍히지 않는다");
-        check(escaped[0] instanceof NullPointerException, "p.7: NullPointerException이 main 밖으로 나간다");
+        same(buf.toString(), "[Program start]\nlength: 11\n", "첫 예제: [Program end]가 찍히지 않는다");
+        check(escaped[0] instanceof NullPointerException, "첫 예제: NullPointerException이 main 밖으로 나간다");
         check(escaped[0].getMessage().startsWith("Cannot invoke \"String.length()\" because"),
                 "NPE 메시지: " + escaped[0].getMessage());
 
-        // 3. 일반 예외 예제 (p.9)
+        // 3. 일반 예외 예제 (Class.forName)
         same(capture(ExceptionImpl::checkedExample),
-                "There is a String class.\n\nThere is no String2 class.\n", "p.9 출력");
+                "There is a String class.\n\nThere is no String2 class.\n", "일반 예외 예제 출력");
 
         // 4. Error는 catch (Exception e)에 걸리지 않는다
         boolean caughtAsError = false, caughtAsException = false;

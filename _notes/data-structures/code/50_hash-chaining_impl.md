@@ -24,11 +24,11 @@ permalink: "/studies/data-structures/code/50_hash-chaining_impl/"
  *
  * 실행: cc -std=c11 -Wall -Wextra 50_hash-chaining_impl.c -o chaining && ./chaining
  * 문서: 50.체이닝 (정렬된 체인 그림, 카드 C1~C3)
- * 출처: 자료구조 15주차 슬라이드 p.30~31. 슬라이드에는 그림만 있어 코드는 그림대로 짠 것이다.
+ * 코드는 문서의 체인 그림대로 짠 것이다.
  * 키는 0 이상인 정수, 홈 버킷은 key % b. 버킷마다 키가 작은 것부터 늘어선 체인을 단다.
  *
  * 확인하는 것
- *   1. 6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45를 b = 17에 넣은 체인 (p.31)
+ *   1. 6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45를 b = 17에 넣은 체인 (문서의 그림)
  *   2. 넣는 차례를 거꾸로 해도 체인이 같다(정렬된 체인이라서).
  *   3. 찾을 때 본 노드 수: 있는 키 12개의 평균 1.5. 없는 키는 자기보다 큰 노드를 만나면 멈춘다.
  *   4. 무작위 연산 60,000번을 단순한 모형과 비교, 체인마다 오름차순인지 검사.
@@ -163,7 +163,7 @@ static int fail(const char *msg)
 
 static const int SLIDE_KEYS[12] = {6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45};
 
-/* 슬라이드 p.31의 체인. 길이 0은 빈 체인. */
+/* 문서 그림의 체인. 길이 0은 빈 체인. */
 static const int WANT_LEN[17] = {2, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 3, 2, 1, 0, 0, 1};
 static const int WANT[17][3] = {
     {0, 34}, {0}, {0}, {0}, {0}, {0}, {6, 23}, {7}, {0}, {0}, {0}, {11, 28, 45}, {12, 29}, {30}, {0}, {0}, {33},
@@ -187,14 +187,14 @@ int main(void)
 {
     ChainTable t;
 
-    /* 1. 슬라이드의 체인 (p.31) */
+    /* 1. 문서 그림의 체인 */
     if (!chain_init(&t, 17))
         return fail("표 만들기");
     for (int i = 0; i < 12; i++)
         if (chain_insert(&t, SLIDE_KEYS[i]) != 1)
             return fail("넣기");
     if (!is_slide_table(&t) || !invariant_ok(&t) || t.n != 12)
-        return fail("정렬된 체인 (p.31)");
+        return fail("정렬된 체인 (문서의 그림)");
     if (chain_insert(&t, 28) != 0)
         return fail("같은 키를 두 번 넣기");
 
@@ -287,7 +287,7 @@ int main(void)
         }
     }
 
-    printf("정렬된 체인이 슬라이드 p.31과 같음 (있는 키 12개를 찾을 때 본 노드 수 평균 1.5)\n");
+    printf("정렬된 체인이 문서의 그림과 같음 (있는 키 12개를 찾을 때 본 노드 수 평균 1.5)\n");
     printf("ALL CHECKS PASSED\n");
     return 0;
 }

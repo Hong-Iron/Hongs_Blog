@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/42_quick-partition-ladder_p4/"
  *
  * 실행: cc -std=c11 -Wall -Wextra 42_quick-partition-ladder_p4.c -o ladder42 && ./ladder42
  * 문서: 4.연습문제/42.퀵 정렬 분할 예제 사다리
- * 출처: 자료구조 14주차 슬라이드 p.7, p.11~14
  * 두 분할 함수는 3.개념집/42_quick-sort_impl.c의 것을 그대로 옮겨 적었다(파일끼리 불러오지 않는다).
  * 색인은 0부터 센다.
  */
@@ -99,7 +98,7 @@ static int fail(const char *msg)
 
 int main(void)
 {
-    /* 문제 1: 슬라이드의 예 */
+    /* 문제 1: 3.개념집/42.퀵 정렬의 예 */
     {
         int a[11] = {6, 2, 8, 5, 11, 10, 4, 1, 9, 7, 3};
         int b[11];

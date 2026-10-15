@@ -23,20 +23,19 @@ permalink: "/studies/database-design/code/64_sql-join-on_verify/"
 """FROM 절의 조인 (JOIN ON) 검증 (SQLite).
 
 문서: 64.FROM 절의 조인 (JOIN ON)
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.20~21, 12주차 p.6
 주장:
-  1. Q1(WHERE에 조건을 모두 적은 판)과 Q1A(JOIN ON 판)의 결과가 같다: Research 부서 직원 4명 (p.20).
+  1. Q1(WHERE에 조건을 모두 적은 판)과 Q1A(JOIN ON 판)의 결과가 같다: Research 부서 직원 4명.
   2. 이어 붙인 표는 8행 14열이고, EMPLOYEE의 열 10개 뒤에 DEPARTMENT의 열 4개가 온다.
-     맞춘 두 열 Dno와 Dnumber가 둘 다 남는다 (p.21, 12 p.6).
+     맞춘 두 열 Dno와 Dnumber가 둘 다 남는다.
   3. 조인을 겹쳐 쓴 판(세 표)은 WHERE에 적은 Q2와 같은 2행을 낸다.
   4. 내부 조인에서는 행을 고르는 조건을 ON에 옮겨도 결과가 같다.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

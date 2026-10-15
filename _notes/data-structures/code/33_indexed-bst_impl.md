@@ -23,18 +23,17 @@ permalink: "/studies/data-structures/code/33_indexed-bst_impl/"
 /* 색인 이진 탐색 트리: 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/33.색인 이진 탐색 트리.md
- * 출처: 자료구조 9주차 슬라이드 p.19~25. 슬라이드에는 그림과 규칙 세 줄(p.21)만 있고 코드는 없다.
- *       아래 코드는 그 규칙을 옮긴 것이고, 색인으로 지우기는 규칙에서 이어 만든 것이다(에이전트 보충).
+ * 아래 코드는 문서의 규칙 세 줄을 옮긴 것이고, 색인으로 지우기는 그 규칙에서 이어 만든 것이다.
  * 실행: cc -std=c11 -Wall -Wextra 33_indexed-bst_impl.c -o ibst && ./ibst
- * 색인과 순위는 모두 0부터 센다(슬라이드와 같다).
+ * 색인과 순위는 모두 0부터 센다.
  *
  * 확인하는 것
- *   1. 슬라이드 트리(12개)의 leftSize 12개와 rank(2) = 0, rank(15) = 5, rank(20) = 7.
+ *   1. 문서 예시의 트리(12개)의 leftSize 12개와 rank(2) = 0, rank(15) = 5, rank(20) = 7.
  *   2. 문서의 추적: 색인 5 찾기는 20, 10, 15를 들르고, 18의 순위는 6이다.
  *      오른쪽으로 갈 때 1을 빼지 않는 틀린 판은 색인 5에서 빈자리에 닿아 NULL을 낸다.
  *   3. 줄 [a..l]을 담은 트리에 Insert(5, 'm'): 중위 순회 a b c d e m f g h i j k l,
  *      m은 f의 왼쪽 자식, leftSize는 h가 7 -> 8, f가 0 -> 1로만 바뀐다.
- *      슬라이드의 다른 방법(m을 e의 오른쪽 자식으로 달기)으로도 같은 줄이 되고, 그때는 h만 8로 바뀐다.
+ *      문서의 다른 방법(m을 e의 오른쪽 자식으로 달기)으로도 같은 줄이 되고, 그때는 h만 8로 바뀐다.
  *   4. 색인으로 찾기가 들르는 노드 수 <= 높이 + 1.
  *   5. 무작위 키 넣기 2,000묶음: 색인 i의 키 = 정렬 배열의 i번째, 그 키의 순위 = i.
  *   6. 무작위 줄 연산(색인에 끼우기·색인으로 지우기·색인으로 읽기) 2,000묶음이 배열 모형과 같고,
@@ -69,7 +68,7 @@ static treePointer newNode(int key)
     return ptr;
 }
 
-/* 색인 index(0부터)의 노드. 범위 밖이면 NULL (슬라이드 p.21의 세 줄) */
+/* 색인 index(0부터)의 노드. 범위 밖이면 NULL (문서의 규칙 세 줄) */
 treePointer findByIndex(treePointer x, int index)
 {
     while (x) {
@@ -113,7 +112,7 @@ int insertKey(treePointer *root, int key)
     return 1;
 }
 
-/* 줄의 index번째 자리에 끼우기 (0 <= index <= 원소 수). 슬라이드의 Insert(5, 'm') */
+/* 줄의 index번째 자리에 끼우기 (0 <= index <= 원소 수). 문서의 Insert(5, 'm') */
 void listInsert(treePointer *root, int index, int element)
 {
     treePointer *link = root;
@@ -221,14 +220,14 @@ int main(void)
 {
     int buf[256], n;
 
-    /* 1. 슬라이드 트리의 leftSize와 순위 */
+    /* 1. 문서 예시 트리의 leftSize와 순위 */
     treePointer root = NULL;
     int order[] = {20, 10, 40, 6, 15, 30, 2, 8, 25, 18, 35, 7};
-    for (int i = 0; i < 12; i++) CHECK(insertKey(&root, order[i]) == 1, "슬라이드 키 넣기");
+    for (int i = 0; i < 12; i++) CHECK(insertKey(&root, order[i]) == 1, "예시 키 넣기");
     int keys[]     = {20, 10, 40, 6, 15, 30, 2, 8, 18, 25, 35, 7};
     int wantLeft[] = { 7,  4,  3, 1,  0,  1, 0, 1,  0,  0,  0, 0};
     for (int i = 0; i < 12; i++)
-        CHECK(findKey(root, keys[i])->leftSize == wantLeft[i], "슬라이드 p.19의 leftSize");
+        CHECK(findKey(root, keys[i])->leftSize == wantLeft[i], "문서 그림의 leftSize");
     CHECK(checkedSize(root) == 12, "leftSize가 모두 실제 왼쪽 노드 수와 같다");
     CHECK(rankOf(root, 2) == 0 && rankOf(root, 15) == 5 && rankOf(root, 20) == 7, "rank(2) = 0, rank(15) = 5, rank(20) = 7");
     CHECK(rankOf(root, 99) == -1, "없는 키의 순위는 -1");
@@ -238,7 +237,7 @@ int main(void)
         CHECK(rankOf(root, sorted[i]) == i, "그 키의 순위 = i");
     }
     CHECK(findByIndex(root, 12) == NULL && findByIndex(root, -1) == NULL, "범위 밖 색인은 NULL");
-    printf("[OK] 슬라이드 트리: leftSize 12개, rank(2) = 0, rank(15) = 5, rank(20) = 7, 색인 0~11\n");
+    printf("[OK] 예시 트리: leftSize 12개, rank(2) = 0, rank(15) = 5, rank(20) = 7, 색인 0~11\n");
 
     /* 2. 추적 */
     visited = 0;
@@ -268,7 +267,7 @@ int main(void)
     text[n] = '\0';
     CHECK(strcmp(text, "abcdefghijkl") == 0, "줄 = [a, b, ..., l]");
     CHECK(root->key == 'h' && root->leftSize == 7 && root->leftChild->key == 'e'
-          && root->leftChild->leftSize == 4 && root->rightChild->key == 'l', "슬라이드 p.22의 모양");
+          && root->leftChild->leftSize == 4 && root->rightChild->key == 'l', "문서 그림 (줄 a..l)의 모양");
     CHECK(findByIndex(root, 4)->key == 'e', "색인 4의 원소는 e");
     listInsert(&root, 5, 'm');
     n = 0; inorder(root, buf, &n);
@@ -285,7 +284,7 @@ int main(void)
     freeTree(root); root = NULL;
     printf("[OK] Insert(5, 'm'): a b c d e m f g h i j k l, m은 f의 왼쪽 자식, leftSize는 h 8, f 1\n");
 
-    /* 3-2. 슬라이드 p.24의 다른 방법: m을 e의 오른쪽 자식으로 달고, e의 옛 오른쪽 부분 트리를 m의 오른쪽에 단다 */
+    /* 3-2. 문서의 다른 방법: m을 e의 오른쪽 자식으로 달고, e의 옛 오른쪽 부분 트리를 m의 오른쪽에 단다 */
     for (int i = 0; i < 12; i++) insertKey(&root, letterOrder[i]);
     treePointer e = root->leftChild;
     treePointer m = newNode('m');

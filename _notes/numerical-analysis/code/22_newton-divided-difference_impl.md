@@ -42,12 +42,12 @@ def newton_eval(coef, centers, x):
 
 
 def main():
-    # 슬라이드 p.18: 중심 1, 3, 4, 4.5, 계수 5, −2, 0.5, −0.1, 0.003
+    # 문서의 예: 중심 1, 3, 4, 4.5, 계수 5, −2, 0.5, −0.1, 0.003
     cen = [F(1), F(3), F(4), F(9, 2)]; co = [F(5), F(-2), F(1, 2), F(-1, 10), F(3, 1000)]
     vals = [newton_eval(co[:k + 1], cen, F(5, 2)) for k in range(1, 5)]
     assert vals == [2, F(13, 8), F(121, 80), F(30115, 20000)]
     assert [float(v) for v in vals] == [2.0, 1.625, 1.5125, 1.50575]
-    # 슬라이드 p.28: f(x) = x³ − 4x, x = 1..6
+    # 문서의 분할 차분표: f(x) = x³ − 4x, x = 1..6
     xs = [F(x) for x in range(1, 7)]; ys = [x ** 3 - 4 * x for x in xs]
     T = divided_differences(xs, ys)
     assert [T[k][0] for k in range(6)] == [-3, 0, 15, 48, 105, 192]

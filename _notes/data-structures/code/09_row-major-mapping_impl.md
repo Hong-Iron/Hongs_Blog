@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/09_row-major-mapping_impl/"
 /* 행 우선 배치와 열 우선 배치: 2차원 배열을 메모리에 놓는 세 가지 모양과 위치 식.
  *
  * 문서: 09.행 우선 배치와 열 우선 배치 (예시, 위치 식, 배열의 배열, 카드)
- * 출처: 자료구조 3주차 슬라이드 p.24~34
  * 실행: cc -std=c11 -Wall -Wextra 09_row-major-mapping_impl.c -o row_major && ./row_major
  *
  * 줄 수 r, 칸 수 c, 줄 번호 i, 칸 번호 j는 모두 0부터 센다.
@@ -93,8 +92,8 @@ static void free_array_of_arrays(int **x, int r)
     give_back(x);
 }
 
-/* 1. 슬라이드의 3 x 4 예 */
-static void slide_example(void)
+/* 1. 문서 예시의 3 x 4 표 */
+static void doc_example(void)
 {
     char a[3][4] = {
         {'a', 'b', 'c', 'd'},
@@ -118,8 +117,8 @@ static void slide_example(void)
             by_columns[k++] = a[i][j];
     by_columns[12] = '\0';
 
-    CHECK(strcmp(by_rows, "abcdefghijkl") == 0, "p.29: 행 우선으로 모으면 abcdefghijkl");
-    CHECK(strcmp(by_columns, "aeibfjcgkdhl") == 0, "p.33: 열 우선으로 모으면 aeibfjcgkdhl");
+    CHECK(strcmp(by_rows, "abcdefghijkl") == 0, "행 우선으로 모으면 abcdefghijkl");
+    CHECK(strcmp(by_columns, "aeibfjcgkdhl") == 0, "열 우선으로 모으면 aeibfjcgkdhl");
 
     /* C의 char a[3][4]는 메모리에 행 우선 한 덩어리로 놓인다 */
     memcpy(flat, a, sizeof a);
@@ -134,7 +133,7 @@ static void slide_example(void)
         }
     CHECK(row_major(2, 1, 4) == 9 && by_rows[9] == 'j', "x[2][1] = j 는 행 우선 9번 칸");
     CHECK(column_major(2, 1, 3) == 5 && by_columns[5] == 'j', "x[2][1] = j 는 열 우선 5번 칸");
-    CHECK(row_major(1, 0, 4) == 4 && row_major(2, 0, 4) == 8, "p.30: 줄의 첫 칸은 0, c, 2c");
+    CHECK(row_major(1, 0, 4) == 4 && row_major(2, 0, 4) == 8, "줄의 첫 칸은 0, c, 2c");
     printf("[OK] 3 x 4 예: 행 우선 %s, 열 우선 %s\n", by_rows, by_columns);
 }
 
@@ -215,11 +214,11 @@ static void overhead(void)
 
     CHECK(aoa_blocks == r + 1, "배열의 배열: 덩어리 r + 1 = 4개 (크기 3, 4, 4, 4)");
     CHECK(dense_blocks == 1, "한 덩어리: 1개");
-    CHECK(r * 4 == 12, "p.27: 주소 하나가 4바이트면 덤은 줄 수 x 4 = 12바이트");
-    CHECK(4 + 4 == 8, "p.31: 한 덩어리의 덤은 시작 주소 4 + 칸 수 4 = 8바이트");
+    CHECK(r * 4 == 12, "주소 하나가 4바이트면 덤은 줄 수 x 4 = 12바이트");
+    CHECK(4 + 4 == 8, "한 덩어리의 덤은 시작 주소 4 + 칸 수 4 = 8바이트");
     CHECK((size_t)r * sizeof(int *) == 24, "이 기계는 주소 하나가 8바이트라 배열의 배열의 덤은 24바이트");
 
-    /* p.24의 둘째 선언은 3 x 4 배열이 아니다 */
+    /* 한 행 분량만 빌리는 흔한 실수: 3 x 4 배열이 아니다 */
     CHECK(sizeof(int) * 4 == 16 && sizeof(int[3][4]) == 48, "malloc(sizeof(int) * 4)는 16바이트, int arr[3][4]는 48바이트");
 
     free_array_of_arrays(aoa, r);
@@ -258,7 +257,7 @@ static void cards(void)
 
 int main(void)
 {
-    slide_example();
+    doc_example();
     exhaustive();
     overhead();
     ragged();

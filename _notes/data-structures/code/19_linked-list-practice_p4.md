@@ -23,8 +23,7 @@ permalink: "/studies/data-structures/code/19_linked-list-practice_p4/"
 /* 연결 리스트 연습 문제 4: 연결 큐 따라가기와, 큐 하나를 차례를 지키며 둘로 나누기.
  *
  * 문서: 1-2학기/자료구조/4.연습문제/19.연결 리스트 연습.md
- * 출처: 자료구조 5주차 슬라이드 p.33~36의 enqueue, dequeue(3.개념집/19_linked-queue_impl.c에서 옮겨 적었다).
- *       둘로 나누는 문제는 슬라이드에 없는 변형이다.
+ * enqueue, dequeue는 3.개념집/19_linked-queue_impl.c에서 옮겨 적었다. 둘로 나누는 문제는 변형 문제다.
  * 실행: cc -std=c11 -Wall -Wextra 19_linked-list-practice_p4.c -o p4 && ./p4
  */
 #include <stdio.h>

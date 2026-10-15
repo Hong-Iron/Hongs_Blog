@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Three-Schema Architecture", "3단계 스키마 아키텍처", "3-스키마 구조", "ANSI/SPARC 구조", "내부 단계", "Internal Level", "내부 스키마", "Internal Schema", "개념 단계", "Conceptual Level", "개념 스키마", "Conceptual Schema", "외부 단계", "External Level", "뷰 단계", "View Level", "외부 스키마", "External Schema", "사용자 뷰", "User View", "사상", "Mapping", "외부/개념 사상", "개념/내부 사상"]
 description: "식당에서 손님은 차림표만 보고 주문하고, 주방은 조리법대로 만들고, 재료는 창고에 있다. 데이터베이스도 사용자 무리마다 보는 모습, 전체를 한 벌로 적은 모습, 디스크에 실제로 놓인 모습의 세 층으로 가르고, 요청이 층을 건널 때마다 관리 프로그램(DBMS)이 옮겨 적어 준다. 이…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/three-schema-architecture/"
 
 두 학과 사무실이 같은 학생 데이터를 쓴다. 보는 칸도 다르고 칸을 부르는 이름도 다르다. 두 학과의 프로그램이 "디스크의 몇 번째 바이트를 읽는다"까지 알고 있다면, 저장 모양을 한 번 바꿀 때마다 두 프로그램을 모두 고쳐야 한다. 그래서 학과가 보는 모습과 디스크의 모습 사이에 층을 하나 더 두고, 층마다 설명을 따로 적는다.
 
-슬라이드의 대학 예에는 설명이 넷 있다[^1].
+대학 예에는 설명이 넷 있다.
 
 | 층 | 이름 | 내용 |
 |---|---|---|
@@ -47,7 +47,7 @@ permalink: "/studies/database-design/three-schema-architecture/"
 
 가운데 층은 학생에 대해 저장하는 여섯 칸을 모두 적는다. 두 학과는 그 가운데 네 칸씩만 본다. 맨 아래 층은 레코드 하나가 디스크에서 몇 바이트이고 칸마다 어디서 시작하는지를 적는다. 오프셋(offset)은 레코드 맨 앞에서 몇 바이트 떨어져 있는지를 0부터 센 수다.
 
-같은 칸을 층마다 어떻게 부르는지 한 줄에 놓으면 이렇다[^1].
+같은 칸을 층마다 어떻게 부르는지 한 줄에 놓으면 이렇다.
 
 | 학과 A | 학과 B | 가운데 층 | 맨 아래 층 | 오프셋 | 길이(바이트) |
 |---|---|---|---|---|---|
@@ -59,9 +59,9 @@ permalink: "/studies/database-design/three-schema-architecture/"
 | DEPT | — | DEPT | SDEPT | 22 | 5 |
 | — | ADDR | ADDRESS | SADDR | 27 | 44 |
 
-오프셋은 앞 칸들의 길이를 더한 값이다. SNAME은 $$4 + 4 = 8$$, SADDR은 $$4 + 4 + 10 + 2 + 2 + 5 = 27$$에서 시작한다. 길이를 모두 더하면 $$4 + 4 + 10 + 2 + 2 + 5 + 44 = 71$$이라 슬라이드의 LENGTH = 71과 맞는다. 학과 A는 YEAR와 ADDRESS를, 학과 B는 GRADE와 DEPT를 보지 못한다. prefix는 어느 학과에도 보이지 않는다. SNO 옆의 INDEX = STINDX는 이 칸의 값으로 레코드를 빨리 찾게 해 주는 색인이 있고 그 이름이 STINDX라는 표시다. 색인은 책 뒤의 찾아보기 같은 것이다[^s1].
+오프셋은 앞 칸들의 길이를 더한 값이다. SNAME은 $$4 + 4 = 8$$, SADDR은 $$4 + 4 + 10 + 2 + 2 + 5 = 27$$에서 시작한다. 길이를 모두 더하면 $$4 + 4 + 10 + 2 + 2 + 5 + 44 = 71$$이라 맨 아래 층에 적힌 LENGTH = 71과 맞는다. 학과 A는 YEAR와 ADDRESS를, 학과 B는 GRADE와 DEPT를 보지 못한다. prefix는 어느 학과에도 보이지 않는다. SNO 옆의 INDEX = STINDX는 이 칸의 값으로 레코드를 빨리 찾게 해 주는 색인이 있고 그 이름이 STINDX라는 표시다. 색인은 책 뒤의 찾아보기 같은 것이다[^s1].
 
-학과 A의 프로그램이 "SN이 1002인 학생의 GRADE"를 달라고 하면 요청은 두 번 옮겨진다[^2][^s1].
+학과 A의 프로그램이 "SN이 1002인 학생의 GRADE"를 달라고 하면 요청은 두 번 옮겨진다[^s1].
 
 1. 맨 위에서 가운데로. SN은 SNUMBER로, GRADE는 GRADE로 바꿔 읽는다.
 2. 가운데에서 맨 아래로. SNUMBER는 저장 레코드의 SNO다. 색인 STINDX로 그 학생의 레코드를 찾는다. GRADE는 SGRADE이고, 레코드의 오프셋 20에서 2바이트다.
@@ -80,7 +80,7 @@ permalink: "/studies/database-design/three-schema-architecture/"
 
 ## 정확히 말하면
 
-3단계 스키마 구조는 사용자 응용을 물리적 데이터베이스에서 떼어 놓으려는 구조다. 사용자 프로그램과 데이터가 서로 매이지 않게 하는 것이 목적이다[^3].
+3단계 스키마 구조는 사용자 응용을 물리적 데이터베이스에서 떼어 놓으려는 구조다. 사용자 프로그램과 데이터가 서로 매이지 않게 하는 것이 목적이다.
 
 ```mermaid
 flowchart TD
@@ -106,15 +106,15 @@ flowchart TD
 
 | 단계 | 가진 것 | 무엇을 적나 | 쓰는 데이터 모델 |
 |---|---|---|---|
-| 외부 단계 (뷰 단계) | 외부 스키마 여러 개. 사용자 뷰라고도 한다 | 어느 한 사용자 무리가 관심 있는, 데이터베이스 구조의 일부. 나머지는 그 무리에게 가린다 | 고수준 데이터 모델. 표현적 모델이나 개념적 모델[^4] |
-| 개념 단계 | 개념 스키마 | 데이터베이스의 논리 구조. 물리 저장 구조의 세부는 가리고 개체, 자료형, 관계, 사용자 연산, 제약 같은 고수준 개념을 적는다 | 표현적 데이터 모델[^5] |
-| 내부 단계 | 내부 스키마 | 데이터베이스의 물리 저장 구조. 데이터 저장과 접근 경로의 세부를 빠짐없이 적는다 | 물리적 데이터 모델[^6] |
+| 외부 단계 (뷰 단계) | 외부 스키마 여러 개. 사용자 뷰라고도 한다 | 어느 한 사용자 무리가 관심 있는, 데이터베이스 구조의 일부. 나머지는 그 무리에게 가린다 | 고수준 데이터 모델. 표현적 모델이나 개념적 모델 |
+| 개념 단계 | 개념 스키마 | 데이터베이스의 논리 구조. 물리 저장 구조의 세부는 가리고 개체, 자료형, 관계, 사용자 연산, 제약 같은 고수준 개념을 적는다 | 표현적 데이터 모델 |
+| 내부 단계 | 내부 스키마 | 데이터베이스의 물리 저장 구조. 데이터 저장과 접근 경로의 세부를 빠짐없이 적는다 | 물리적 데이터 모델 |
 
-슬라이드 그림은 세 단계 옆에 위에서부터 End User View, Community User View, Storage View라고 적는다. 최종 사용자가 보는 모습, 사용자 모두가 함께 보는 모습, 저장된 모습이라는 뜻이다[^3]. 대학 예에서 학과 A와 B의 두 설명이 외부 스키마, 가운데 층이 개념 스키마, 맨 아래 층이 내부 스키마다.
+세 단계를 위에서부터 End User View, Community User View, Storage View라고 부르기도 한다. 최종 사용자가 보는 모습, 사용자 모두가 함께 보는 모습, 저장된 모습이라는 뜻이다. 대학 예에서 학과 A와 B의 두 설명이 외부 스키마, 가운데 층이 개념 스키마, 맨 아래 층이 내부 스키마다.
 
-**사상(mapping).** 세 단계 사이에서 요청과 결과를 바꿔 주는 과정이다. 외부 스키마로 적은 사용자의 요청을 개념 스키마에 대한 요청으로 바꾸고, 그것을 다시 내부 스키마에 대한 요청으로 바꿔 저장된 데이터베이스에서 처리한다. 저장된 데이터베이스에서 얻은 결과는 외부 뷰에 맞게 바꿔 돌려준다[^2]. 외부 단계와 개념 단계 사이를 외부/개념 사상, 개념 단계와 내부 단계 사이를 개념/내부 사상이라 한다[^3]. 사용자 무리마다 자기 외부 스키마에 적힌 대로의 데이터베이스만 보는데도 DBMS가 요청을 처리할 수 있는 것은 이 사상 덕분이다[^4].
+**사상(mapping).** 세 단계 사이에서 요청과 결과를 바꿔 주는 과정이다. 외부 스키마로 적은 사용자의 요청을 개념 스키마에 대한 요청으로 바꾸고, 그것을 다시 내부 스키마에 대한 요청으로 바꿔 저장된 데이터베이스에서 처리한다. 저장된 데이터베이스에서 얻은 결과는 외부 뷰에 맞게 바꿔 돌려준다. 외부 단계와 개념 단계 사이를 외부/개념 사상, 개념 단계와 내부 단계 사이를 개념/내부 사상이라 한다. 사용자 무리마다 자기 외부 스키마에 적힌 대로의 데이터베이스만 보는데도 DBMS가 요청을 처리할 수 있는 것은 이 사상 덕분이다.
 
-**내부 단계는 누가 신경 쓰나.** 최종 사용자는 내부 단계의 정보에 관심이 없을 수 있다. 하지만 데이터베이스 설계자는 이 부분을 챙겨야 한다. 내부 스키마의 주된 목표는 디스크 입출력을 줄이는 것이다[^7]. 이 목표가 [B-트리](/Hongs_Blog/studies/database-design/b-tree/)로 이어진다.
+**내부 단계는 누가 신경 쓰나.** 최종 사용자는 내부 단계의 정보에 관심이 없을 수 있다. 하지만 데이터베이스 설계자는 이 부분을 챙겨야 한다. 내부 스키마의 주된 목표는 디스크 입출력을 줄이는 것이다. 이 목표가 [B-트리](/Hongs_Blog/studies/database-design/b-tree/)로 이어진다.
 
 ### 이 구조가 주는 것과 주지 않는 것
 
@@ -156,13 +156,6 @@ flowchart TD
 </details>
 
 
-[^1]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.14 (Three-Schema Architecture (Example): External Schema 1 (Dept-A) ST, External Schema 2 (Dept-B) STUDENT, Conceptual Schema STUDENT, Internal Schema STORED-STUDENT LENGTH = 71과 칸별 BYTE·OFFSET, INDEX = STINDX)
-[^2]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.13 (Mapping: "The process of transforming requests and results between the three levels")
-[^3]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.9 (Overview: "To separate the user application from the physical database", 그림의 External/Conceptual Mapping과 Conceptual/Internal Mapping, End User View / Community User View / Storage View). 같은 그림이 데이터베이스 설계 3회 강의 자료 「3_B-tree」, p.3에 복습으로 다시 나온다.
-[^4]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.12 (External or View Level, "How can the DBMS support each user request?")
-[^5]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.11 (Conceptual Level)
-[^6]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.10 (Internal Level, "A physical database is stored in storage in the way as described in the internal schema")
-[^7]: 데이터베이스 설계 3회 강의 자료 「3_B-tree」, p.4 ("However, DB designers should care for this part", "What is the main goal of the internal schema? → Reducing/Minimizing Disk I/Os")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 층마다의 이름을 한 줄에 놓은 표, 오프셋이 길이의 합이라는 계산, "SN이 1002인 학생의 GRADE"를 두 번 옮기는 풀이와 카드 C2는 슬라이드에 없다. 슬라이드 p.14에는 스키마만 있고 학생의 값은 없어서, 검증 코드는 학생 세 명(1001, 1002, 1003)을 지어내 71바이트 레코드로 저장하고 두 번 옮긴 결과가 SQLite의 뷰와 같은지 확인했다. prefix 칸의 쓰임은 슬라이드에 적혀 있지 않다. INDEX = STINDX의 풀이는 표기를 읽은 것이다. PIC 9(4)는 COBOL에서 숫자 네 자리, PIC X(10)은 글자 열 칸을 적는 표기다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 스키마는 설명일 뿐이고 데이터는 물리 단계에만 있다는 것, 사상이 부담이 되어 세 단계를 완전히 구현한 DBMS가 드물다는 것은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.2.1~2.2.2절을 따랐다. 식당 비유와 그 한계는 보탠 것이다. 뷰가 행을 따로 갖지 않고 바탕 표를 고치면 두 뷰가 함께 바뀌는 것은 검증 코드로 확인했다.
+[^s1]: INDEX = STINDX의 풀이는 표기를 읽은 것이다. PIC 9(4)는 COBOL에서 숫자 네 자리, PIC X(10)은 글자 열 칸을 적는 표기다.
+[^s2]: 세 스키마는 설명일 뿐이고 데이터는 물리 단계에만 있다는 것, 사상이 부담이 되어 세 단계를 완전히 구현한 DBMS가 드물다는 것은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.2.1~2.2.2절을 따랐다. 식당 비유와 그 한계는 보탠 것이다. 뷰가 행을 따로 갖지 않고 바탕 표를 고치면 두 뷰가 함께 바뀌는 것은 검증 코드로 확인했다.
 {% endraw %}

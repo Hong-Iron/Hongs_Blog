@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/68_aggregate-functions_verify-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 68.집계 함수: 슬라이드 11-2 p.27~30, 12 p.10
+-- 68.집계 함수 검증
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS aggregate_functions CASCADE;
 CREATE SCHEMA aggregate_functions;
 SET search_path TO aggregate_functions;
 
--- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
--- 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
+-- 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 -- 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -72,7 +72,7 @@ INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),
  ('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1. Q19, Q21~Q23 (p.27~28)
+-- 1. Q19, Q21~Q23
 DO $$ BEGIN
   ASSERT (SELECT SUM(Salary) = 281000 AND MAX(Salary) = 55000 AND MIN(Salary) = 25000 AND AVG(Salary) = 35125
           FROM EMPLOYEE), 'Q19가 281000, 55000, 25000, 35125가 아니다';
@@ -81,7 +81,7 @@ DO $$ BEGIN
   ASSERT (SELECT COUNT(DISTINCT Salary) FROM EMPLOYEE) = 6, 'Q23이 6이 아니다';
 END $$;
 
--- 2. p.28의 두 물음과 NULL
+-- 2. COUNT(Salary)의 물음과 NULL
 DO $$ BEGIN
   ASSERT (SELECT COUNT(Salary) = 8 AND COUNT(Super_ssn) = 7 AND COUNT(DISTINCT Super_ssn) = 3 FROM EMPLOYEE),
          'COUNT(Salary) 8, COUNT(Super_ssn) 7, COUNT(DISTINCT Super_ssn) 3이 아니다';
@@ -95,10 +95,10 @@ DO $$ BEGIN
           FROM EMPLOYEE WHERE Dno = 9), '빈 입력의 COUNT 0, 나머지 NULL이 아니다';
 END $$;
 
--- 4. 안쪽 질의에 쓴 COUNT (p.30)와 최고 급여자
+-- 4. 안쪽 질의에 쓴 COUNT와 최고 급여자
 DO $$ BEGIN
   ASSERT (SELECT string_agg(Lname, ',' ORDER BY Lname) FROM EMPLOYEE
-          WHERE (SELECT COUNT(*) FROM DEPENDENT WHERE Ssn = Essn) >= 2) = 'Smith,Wong', 'p.30이 Smith, Wong이 아니다';
+          WHERE (SELECT COUNT(*) FROM DEPENDENT WHERE Ssn = Essn) >= 2) = 'Smith,Wong', '부양가족 둘 이상이 Smith, Wong이 아니다';
   ASSERT (SELECT string_agg(Lname, ',') FROM EMPLOYEE WHERE Salary = (SELECT MAX(Salary) FROM EMPLOYEE)) = 'Borg',
          '최고 급여자가 Borg가 아니다';
 END $$;

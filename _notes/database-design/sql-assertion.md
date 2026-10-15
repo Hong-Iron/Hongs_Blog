@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Assertion", "CREATE ASSERTION", "주장", "단언", "일반 제약", "General Constraint", "SALARY_CONSTRAINT"]
 description: "표를 만들 때 걸어 두는 규칙은 행 하나나 표 하나만 본다. \"직원은 자기 부서의 부서장보다 급여를 많이 받을 수 없다\"처럼 여러 행과 여러 표를 함께 봐야 하는 규칙은 거기에 적을 자리가 없다. 주장은 이런 규칙을 \"규칙을 어기는 조합을 찾는 질의의 결과가 늘 비어 있어야 한다\"…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-assertion/"
 
 ## 예시로 보기
 
-COMPANY의 표에는 이미 규칙이 걸려 있다. 기본 키는 비거나 겹칠 수 없고, 외래 키의 값은 가리키는 표에 있어야 한다. 그런데 회사에는 이런 규칙도 있다[^1].
+COMPANY의 표에는 이미 규칙이 걸려 있다. 기본 키는 비거나 겹칠 수 없고, 외래 키의 값은 가리키는 표에 있어야 한다. 그런데 회사에는 이런 규칙도 있다.
 
 > 직원의 급여는 그 직원이 일하는 부서의 부서장 급여보다 많을 수 없다.
 
@@ -45,7 +45,7 @@ COMPANY의 표에는 이미 규칙이 걸려 있다. 기본 키는 비거나 겹
 |---|---|---|---|---|---|
 | Kate | Lee | 111223333 | 45000 | 333445555 | 5 |
 
-Ssn은 비지도 겹치지도 않는다. Super_ssn 333445555(Wong)와 Dno 5는 둘 다 있는 값이다. 처음부터 걸려 있던 규칙은 하나도 어기지 않았으니 이 행은 그대로 들어간다. 그런데 Lee는 부서장 Wong보다 5000을 더 받는다. 회사 규칙은 깨졌는데 데이터베이스는 모른다[^1].
+Ssn은 비지도 겹치지도 않는다. Super_ssn 333445555(Wong)와 Dno 5는 둘 다 있는 값이다. 처음부터 걸려 있던 규칙은 하나도 어기지 않았으니 이 행은 그대로 들어간다. 그런데 Lee는 부서장 Wong보다 5000을 더 받는다. 회사 규칙은 깨졌는데 데이터베이스는 모른다.
 
 이 규칙을 확인하려면 행 세 개를 한꺼번에 봐야 한다.
 
@@ -55,17 +55,17 @@ Ssn은 비지도 겹치지도 않는다. Super_ssn 333445555(Wong)와 Dno 5는 �
 | 그 직원의 부서 행 (D) | DEPARTMENT | Research, Dnumber 5, Mgr_ssn 333445555 |
 | 그 부서의 부서장 행 (M) | EMPLOYEE | Wong, Salary 40000 |
 
-`NOT NULL`이나 `CHECK`는 지금 넣는 행 하나만 본다. 기본 키와 외래 키도 정해진 꼴의 규칙만 적는다. 그래서 이런 규칙은 따로 적는 자리가 필요하다[^2].
+`NOT NULL`이나 `CHECK`는 지금 넣는 행 하나만 본다. 기본 키와 외래 키도 정해진 꼴의 규칙만 적는다. 그래서 이런 규칙은 따로 적는 자리가 필요하다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 상태에서 점검 질의 0행, Lee를 넣은 뒤 1행, 규칙을 깨는 다른 네 가지 변경, 카드 C2·C3 — [73_sql-assertion_verify.py](/Hongs_Blog/studies/database-design/code/73_sql-assertion_verify/). PostgreSQL 16에서 실행: `CREATE ASSERTION`과 `CHECK` 안의 부질의가 거부되는 것, 트리거로 막는 판 — [73_sql-assertion_verify.sql](/Hongs_Blog/studies/database-design/code/73_sql-assertion_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: COMPANY 상태에서 점검 질의 0행, Lee를 넣은 뒤 1행, 규칙을 깨는 다른 네 가지 변경, 카드 C2·C3 — [73_sql-assertion_verify.py](/Hongs_Blog/studies/database-design/code/73_sql-assertion_verify/). PostgreSQL 16에서 실행: `CREATE ASSERTION`과 `CHECK` 안의 부질의가 거부되는 것, 트리거로 막는 판 — [73_sql-assertion_verify.sql](/Hongs_Blog/studies/database-design/code/73_sql-assertion_verify-sql/)</div>
 
 </div>
 
 
 ## 정의
 
-주장은 데이터베이스의 어느 상태에서나 참이어야 하는 조건에 이름을 붙여 걸어 둔 것이다. 조건을 지키는 일은 DBMS가 맡는다. 조건을 어기는 튜플의 조합이 그 상태에 하나도 없으면, 그 상태는 주장을 지킨 것이다[^3].
+주장은 데이터베이스의 어느 상태에서나 참이어야 하는 조건에 이름을 붙여 걸어 둔 것이다. 조건을 지키는 일은 DBMS가 맡는다. 조건을 어기는 튜플의 조합이 그 상태에 하나도 없으면, 그 상태는 주장을 지킨 것이다.
 
 ```sql
 CREATE ASSERTION SALARY_CONSTRAINT
@@ -83,7 +83,7 @@ CHECK ( NOT EXISTS ( SELECT *
 | `NOT EXISTS ( 질의 )` | 안쪽 질의의 결과가 비어 있어야 참이다 |
 | 안쪽 질의 | 부서장(M)보다 많이 받는 직원(E)을 고른다. `EMPLOYEE`를 E와 M 두 이름으로 두 번 쓴다 |
 
-주장은 두 걸음으로 쓴다[^4].
+주장은 두 걸음으로 쓴다.
 
 1. 규칙을 **어기는** 튜플을 고르는 질의를 쓴다.
 2. 그 질의를 `NOT EXISTS` 안에 넣는다. 결과가 비어 있으면 조건은 참이고, 한 행이라도 나오면 주장은 깨진 것이다.
@@ -102,9 +102,9 @@ $$\lnot \exists e, m, d\ \big( e.\text{Dno} = d.\text{Dnumber} \land d.\text{Mgr
 
 **점검 질의로 돌려 보기.** PostgreSQL 16과 SQLite는 `CREATE ASSERTION`을 받지 않는다. 그래서 `NOT EXISTS` 안의 질의만 꺼내 그대로 돌린다. 0행이면 주장이 지켜진 상태다[^s2].
 
-슬라이드의 COMPANY 상태에서는 0행이다. 5번 부서에서 가장 많이 받는 사람이 부서장 Wong(40000)이고, 4번 부서는 Wallace(43000), 1번 부서는 Borg(55000) 혼자다.
+COMPANY 상태에서는 0행이다. 5번 부서에서 가장 많이 받는 사람이 부서장 Wong(40000)이고, 4번 부서는 Wallace(43000), 1번 부서는 Borg(55000) 혼자다.
 
-규칙을 깨는 길은 새 직원을 넣는 것만이 아니다. 슬라이드 상태에서 아래 변경을 하나씩 해 보면 점검 질의가 이렇게 답한다[^s2].
+규칙을 깨는 길은 새 직원을 넣는 것만이 아니다. COMPANY 상태에서 아래 변경을 하나씩 해 보면 점검 질의가 이렇게 답한다[^s2].
 
 | 변경 | 고친 표 | 점검 질의의 결과 |
 |---|---|---|
@@ -161,7 +161,7 @@ CHECK ( NOT EXISTS ( SELECT *
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C3** "한 직원이 여러 프로젝트에서 일하는 시간을 다 더한 값은 40을 넘을 수 없다"를 주장으로 쓰라. 슬라이드의 COMPANY 상태는 이 주장을 지키는가? Smith(123456789)가 3번 프로젝트에서 5시간을 더 일하게 되면?</summary>
+<summary class="callout-title" markdown="span">**C3** "한 직원이 여러 프로젝트에서 일하는 시간을 다 더한 값은 40을 넘을 수 없다"를 주장으로 쓰라. COMPANY 상태는 이 주장을 지키는가? Smith(123456789)가 3번 프로젝트에서 5시간을 더 일하게 되면?</summary>
 
 **답:**
 ```sql
@@ -171,17 +171,13 @@ CHECK ( NOT EXISTS ( SELECT   Essn
                      GROUP BY Essn
                      HAVING   SUM(Hours) > 40 ) );
 ```
-슬라이드 상태는 지킨다. 점검 질의가 0행이다. Smith는 32.5 + 7.5로 딱 40.0이고, 가장 적은 Wallace는 35.0이다. `WORKS_ON`에 (123456789, 3, 5.0)을 넣으면 점검 질의가 (123456789, 45.0) 한 행을 낸다.<br>
+COMPANY 상태는 지킨다. 점검 질의가 0행이다. Smith는 32.5 + 7.5로 딱 40.0이고, 가장 적은 Wallace는 35.0이다. `WORKS_ON`에 (123456789, 3, 5.0)을 넣으면 점검 질의가 (123456789, 45.0) 한 행을 낸다.<br>
 **이유:** 어기는 것은 "시간 합이 40을 넘는 직원"이다. 직원마다 묶어 합을 내고 `HAVING`으로 넘는 묶음만 남긴다. 조건이 `> 40`이라 딱 40인 Smith는 위반이 아니다. `>= 40`으로 쓰면 지금 상태에서 여섯 명이 걸린다[^s3].
 
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.6 (Motivation: General Constraints. 급여 규칙, "New EMPLOYEE tuples, which do not violate any initial constraints, can be inserted")
-[^2]: 같은 자료, p.5 (Assertions: 기본 키·유일 키·개체 무결성·참조 무결성 같은 내장 제약의 범위 밖에 있는 제약을 적는다)
-[^3]: 같은 자료, p.7 (CREATE ASSERTION, SALARY_CONSTRAINT, "The DBMS is responsible for ensuring that the condition is not violated")
-[^4]: 같은 자료, p.8 (How to write such assertions in SQL?)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기호로 쓴 두 줄은 슬라이드에 없다. 슬라이드 p.8의 "위반하는 튜플을 고르는 질의를 NOT EXISTS에 넣는다"를 한정기호로 옮겼다. 두 줄이 같다는 것은 $$\lnot\exists x\,P(x) \equiv \forall x\,\lnot P(x)$$와 $$\lnot(A \land B) \equiv (A \rightarrow \lnot B)$$에서 나온다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Lee의 행, 다섯 가지 변경의 표, 빈 EMPLOYEE의 경우, 제품별 동작, 트리거로 막는 판은 슬라이드에 없다. SQLite 3.50.4와 PostgreSQL 16에서 실행해 확인했다. `CREATE ASSERTION`은 두 제품 모두 받지 않아 점검 질의(위반이 없으면 0행)로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C3의 규칙은 슬라이드에 없다. 슬라이드 상태에서 시간 합이 40.0인 직원은 Smith, Wong, Narayan, English, Zelaya, Jabbar 여섯이고 Wallace는 35.0, Borg는 NULL이다. 검증 코드로 확인했다.
+[^s1]: 두 줄이 같다는 것은 $$\lnot\exists x\,P(x) \equiv \forall x\,\lnot P(x)$$와 $$\lnot(A \land B) \equiv (A \rightarrow \lnot B)$$에서 나온다.
+[^s2]: SQLite 3.50.4와 PostgreSQL 16에서 실행해 확인했다. `CREATE ASSERTION`은 두 제품 모두 받지 않아 점검 질의(위반이 없으면 0행)로 확인했다.
+[^s3]: 검증 코드로 확인했다.
 {% endraw %}

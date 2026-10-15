@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Multiple Access Link", "다중 접근", "multiple access", "공유 매체", "버스형 네트워크"]
 description: "여러 기기가 선 하나를 함께 붙잡고 쓰는 연결이다. 한 강의실에서 한 사람이 말하면 모두가 듣는 것과 같다. 선은 하나면 된다. 대신 두 기기가 동시에 보내면 신호가 섞여 둘 다 못 쓰게 된다(동시성 문제)."
@@ -75,12 +75,12 @@ permalink: "/studies/computer-communication/multiple-access-link/"
 
 ## 예제
 
-- 다중 접근 링크인 것: 슬라이드 그림 (b)의 multiple access 네트워크[^2], 초기 이더넷의 동축 케이블 버스, 같은 무선 채널을 쓰는 와이파이 기기들[^s2]
+- 다중 접근 링크인 것: 여러 노드가 버스 하나에 붙은 multiple access 네트워크, 초기 이더넷의 동축 케이블 버스, 같은 무선 채널을 쓰는 와이파이 기기들[^s2]
 - 아닌 것: [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/)(끝점이 둘로 정해짐), 오늘날의 스위치 이더넷(기기마다 스위치와 점대점으로 이어지고 스위치가 중계함)[^s2]
 
 ## 활용
 
-- 점대점 완전 연결의 링크 폭증을 푼다. 대신 동시성 문제가 생긴다[^1].
+- 점대점 완전 연결의 링크 폭증을 푼다. 대신 동시성 문제가 생긴다.
 - 누가 언제 보낼지 정하는 규칙을 매체 접근 제어(MAC)라 한다. 이더넷의 CSMA/CD, 와이파이의 CSMA/CA가 예다[^s2].
 
 ## 연결
@@ -94,7 +94,7 @@ permalink: "/studies/computer-communication/multiple-access-link/"
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"기기 여럿이 한 줄에 연결되니 간접 연결이다"</div>
 
-틀렸다. 여러 기기가 무언가 공통된 것을 거쳐 이어진 것처럼 보여서 그렇게 생각하기 쉽다. 실제로 기기들이 붙어 있는 것은 매체(선)일 뿐이다. 데이터를 받아 다시 보내 주는 중계 노드가 없으므로 직접 링크다[^1]. 슬라이드에서 (b)가 "연결: 직접 링크" 제목 아래에 있고, 간접 연결 슬라이드에만 스위치가 따로 그려져 있다[^2].
+틀렸다. 여러 기기가 무언가 공통된 것을 거쳐 이어진 것처럼 보여서 그렇게 생각하기 쉽다. 실제로 기기들이 붙어 있는 것은 매체(선)일 뿐이다. 데이터를 받아 다시 보내 주는 중계 노드가 없으므로 직접 링크다. 다중 접근은 직접 링크의 한 종류이고, 스위치는 간접 연결에서만 나온다.
 
 </div>
 
@@ -129,9 +129,7 @@ permalink: "/studies/computer-communication/multiple-access-link/"
 </div>
 
 
-[^1]: 컴퓨터 통신 1회 필기 「1주차」, 21~24행
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "연결: 직접 링크 (Direct Links)"의 (b) multiple access network
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 충돌 모델은 필기의 "동시성 문제"를 정식화한 것이다. 실제 매체에서는 신호 세기에 따라 한쪽이 수신되기도 하지만, 입문 모델은 둘 다 잃는다고 본다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이더넷·와이파이 예와 MAC 규칙 이름은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 2장(직접 연결 네트워크)의 내용이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 공유 매체에서 각 기기가 받은 프레임의 목적지 주소를 보고 자기 것이 아니면 버리는 동작은 원본에 없다. 이더넷 같은 공유 매체 LAN의 일반 동작이다(Peterson & Davie, *Computer Networks: A Systems Approach*, 2장).
+[^s1]: 실제 매체에서는 신호 세기에 따라 한쪽이 수신되기도 하지만, 입문 모델은 둘 다 잃는다고 본다.
+[^s2]: Peterson & Davie, *Computer Networks: A Systems Approach*, 2장(직접 연결 네트워크)의 내용이다.
+[^s3]: 이더넷 같은 공유 매체 LAN의 일반 동작이다(Peterson & Davie, *Computer Networks: A Systems Approach*, 2장).
 {% endraw %}

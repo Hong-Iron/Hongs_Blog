@@ -10,10 +10,10 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-08"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Eigenfunctions and Eigenvectors", "고유함수와 고유벡터", "고윳값 분해와 푸리에 해석", "Eigendecomposition and Fourier Analysis"]
-description: "행렬을 곱해도 방향이 그대로인 벡터가 고유벡터이고, LTI 시스템을 지나도 모양이 그대로인 신호가 고유함수다. 둘 다 \"입력을 이런 특별한 것들의 합으로 나누면, 복잡한 연산이 성분별 곱셈이 된다\"는 같은 생각이다. 수업 자료도 선형대수의 고윳값 분해 A = C\\Lambda C^{…"
+description: "행렬을 곱해도 방향이 그대로인 벡터가 고유벡터이고, LTI 시스템을 지나도 모양이 그대로인 신호가 고유함수다. 둘 다 \"입력을 이런 특별한 것들의 합으로 나누면, 복잡한 연산이 성분별 곱셈이 된다\"는 같은 생각이다. 그래서 푸리에 이론을 선형대수의 고윳값 분해 A = C\\Lambd…"
 prev_url: "/studies/signals-and-systems/lti-eigenfunction/"
 prev_title: "LTI 시스템의 고유함수"
 next_url: "/studies/signals-and-systems/ct-fourier-series/"
@@ -27,7 +27,7 @@ permalink: "/studies/signals-and-systems/eigenfunction-eigenvector-bridge/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-행렬을 곱해도 방향이 그대로인 벡터가 고유벡터이고, LTI 시스템을 지나도 모양이 그대로인 신호가 고유함수다. 둘 다 "입력을 이런 특별한 것들의 합으로 나누면, 복잡한 연산이 성분별 곱셈이 된다"는 같은 생각이다. 수업 자료도 선형대수의 고윳값 분해 $$A = C\Lambda C^{-1}$$를 먼저 보이고 푸리에 이론을 그 유추로 소개한다. 차이는 크기다. 행렬은 고유벡터가 유한 개이고, 연속 시간 신호에는 고유함수 $$e^{j\omega t}$$가 무한히 많다.
+행렬을 곱해도 방향이 그대로인 벡터가 고유벡터이고, LTI 시스템을 지나도 모양이 그대로인 신호가 고유함수다. 둘 다 "입력을 이런 특별한 것들의 합으로 나누면, 복잡한 연산이 성분별 곱셈이 된다"는 같은 생각이다. 그래서 푸리에 이론을 선형대수의 고윳값 분해 $$A = C\Lambda C^{-1}$$에 빗대어 이해할 수 있다. 차이는 크기다. 행렬은 고유벡터가 유한 개이고, 연속 시간 신호에는 고유함수 $$e^{j\omega t}$$가 무한히 많다.
 
 </div>
 
@@ -58,7 +58,7 @@ permalink: "/studies/signals-and-systems/eigenfunction-eigenvector-bridge/"
 
 ## 어디까지 같은가
 
-- 같은 것: 선형성, 고유한 성분으로 나누는 것, 성분별 곱셈, 직교하면 내적으로 계수를 구한다는 것[^1][^2].
+- 같은 것: 선형성, 고유한 성분으로 나누는 것, 성분별 곱셈, 직교하면 내적으로 계수를 구한다는 것.
 - 다른 것: 행렬은 아무 행렬이나 고유벡터가 다르다. LTI 시스템은 어떤 시스템이든 고유함수가 똑같이 $$e^{st}$$다. 시불변성 덕분이다. 그래서 신호를 미리 한 번 푸리에 성분으로 나눠 두면 모든 LTI 시스템에 쓸 수 있다.
 - 행렬은 $$n \times n$$이면 고유벡터가 많아야 $$n$$개다. 주기 신호는 무한히 많은 고조파가 필요하고, 그 무한합이 언제 원래 신호로 수렴하는지가 따로 문제가 된다 → [푸리에 급수의 수렴](/Hongs_Blog/studies/signals-and-systems/fourier-series-convergence/)
 - 순환 행렬(한 칸씩 돌린 행으로 만든 행렬)은 정확히 이산 시간 주기 컨벌루션이고, 그 고유벡터가 DFT 기저 $$e^{j2\pi kn/N}$$이다. 두 세계가 완전히 겹치는 지점이다[^s1].
@@ -78,9 +78,5 @@ $$L$$은 대칭 행렬이라 서로 수직인 고유벡터로 신호를 나눌 �
 </details>
 
 
-## 출처
-
-[^1]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.14~16 (고유값과 고유벡터, 대각화 $$A = C\Lambda C^{-1}$$), p.20 ("analogous to eigenvectors/eigenvalues matrix decomposition")
-[^2]: 같은 자료, p.37~38 (직교 기저 벡터와 내적으로 계수 구하기)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 순환 행렬과 DFT의 관계, 직렬 연결의 $$H^m$$, 전이 문제는 원본에 없다. Strang, *Introduction to Linear Algebra* 5판 9.3절과 그래프 신호 처리의 표준 정의를 바탕으로 썼고, 행렬 예의 고윳값은 [28_lti-eigenfunction_verify.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_verify/)로 확인했다.
+[^s1]: Strang, *Introduction to Linear Algebra* 5판 9.3절과 그래프 신호 처리의 표준 정의를 바탕으로 썼고, 행렬 예의 고윳값은 [28_lti-eigenfunction_verify.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_verify/)로 확인했다.
 {% endraw %}

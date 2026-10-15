@@ -41,7 +41,7 @@ def main():
         assert mean == p and var == p * (1 - p)
     print("[OK] 주장 1: Bern(p)의 평균 p, 분산 p(1 - p)")
 
-    # 주장 2: 슬라이드의 칸 13개 0010000101100
+    # 주장 2: 문서 예시의 칸 13개 0010000101100
     s = "0010000101100"
     assert len(s) == 13 and s.count("1") == 4
     arrivals = [i + 1 for i, c in enumerate(s) if c == "1"]
@@ -81,12 +81,12 @@ def main():
         assert q == binom(4, a, p) * binom(3, b, p)
     print("[OK] 주장 4: 앞 4칸과 뒤 3칸의 개수는 독립")
 
-    # 슬라이드 p.11: 동전 3개
+    # 이항분포 문서의 예: 동전 3개
     h = F(1, 2)
     assert [binom(3, k, h) for k in range(4)] == [F(1, 8), F(3, 8), F(3, 8), F(1, 8)]
-    print("[OK] 슬라이드 p.11: 1/8, 3/8, 3/8, 1/8")
+    print("[OK] 동전 3개: 1/8, 3/8, 3/8, 1/8")
 
-    # 슬라이드 p.12: 해밍 부호. 원본의 0.468은 0.478이 맞다.
+    # 이항분포 문서의 예: 해밍 부호. 틀리기 쉬운 값 0.468이 아니라 0.478이다.
     q = F(1, 10)
     p0, p1 = binom(7, 0, q), binom(7, 1, q)
     assert round(float(p0), 3) == 0.478 and round(float(p1), 3) == 0.372
@@ -95,24 +95,24 @@ def main():
     assert round(float(plain), 3) == 0.656
     assert abs(float(p0 + p1) - float(plain) - 0.194) < 5e-4
     assert abs(float((p0 + p1) / plain) - 1.296) < 5e-4
-    assert abs((0.468 + 0.372) - 0.840) < 1e-9          # 원본 숫자를 그대로 더하면 0.850이 아니다
-    print("[OK] 슬라이드 p.12: 0.478 + 0.372 = 0.850, 부호 없이 0.656, 차 0.194, 비 1.296")
+    assert abs((0.468 + 0.372) - 0.840) < 1e-9          # 0.468을 쓰면 합이 0.850이 아니다
+    print("[OK] 해밍 부호: 0.478 + 0.372 = 0.850, 부호 없이 0.656, 차 0.194, 비 1.296")
 
-    # 슬라이드 p.13: n = 20 그림의 두 값
+    # 이항분포 문서의 예: n = 20 그림의 두 값
     assert abs(binom(20, 16, 0.6) - 0.03499) < 5e-6
     assert abs(binom(20, 7, 0.1) - 0.00197) < 5e-6
     assert max(range(21), key=lambda k: binom(20, k, 0.6)) == 12 == round(20 * 0.6)
     assert max(range(21), key=lambda k: binom(20, k, 0.1)) == 2 == round(20 * 0.1)
-    print("[OK] 슬라이드 p.13: P(X = 16) = 0.03499, P(X = 7) = 0.00197, 봉우리 12와 2")
+    print("[OK] n = 20: P(X = 16) = 0.03499, P(X = 7) = 0.00197, 봉우리 12와 2")
 
-    # 슬라이드 p.14: 광고 1000번. 지수는 998이 아니라 990이다.
+    # 이항분포 문서의 예: 광고 1000번. 지수는 998이 아니라 990이다.
     right = binom(1000, 10, 0.01)
     wrong = comb(1000, 10) * 0.01 ** 10 * 0.99 ** 998
     pois = math.exp(-10) * 10 ** 10 / math.factorial(10)
     assert abs(right - 0.1257) < 5e-5 and round(right, 3) == 0.126
     assert abs(wrong - 0.1160) < 5e-5
     assert abs(pois - 0.1251) < 5e-5
-    print(f"[OK] 슬라이드 p.14: 지수 990이면 {right:.4f}, 998이면 {wrong:.4f}, 포아송 근사 {pois:.4f}")
+    print(f"[OK] 광고 1000번: 지수 990이면 {right:.4f}, 998이면 {wrong:.4f}, 포아송 근사 {pois:.4f}")
 
     # 카드: 베르누이 과정 C2 (10칸에 1이 정확히 2개, p = 0.1), C3는 위 주장 2
     assert abs(binom(10, 2, 0.1) - 0.1937) < 5e-5

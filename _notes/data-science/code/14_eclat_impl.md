@@ -23,11 +23,10 @@ permalink: "/studies/data-science/code/14_eclat_impl/"
 """ECLAT(수직 데이터 형식) 구현과 자체 테스트.
 
 문서: 14.ECLAT (예시, 의사코드, 카드)
-출처: 데이터 과학 3회 슬라이드 3-1 p.27~28
 입력: 거래 목록 {TID: 항목 집합}, 최소 지지 개수 min_sup.
 방법: 항목마다 그 항목이 든 거래 번호 집합(TID 목록)을 만들고(DB 한 번 훑기),
       같은 앞부분을 가진 집합끼리 TID 목록의 교집합으로 지지 개수를 구하며 깊이 우선으로 늘린다.
-검사: 슬라이드 수직 표, 2·3항목 결과, 무작위 자료 300개에서 무식한 방법과 같음.
+검사: 문서 예시의 수직 표, 2·3항목 결과, 무작위 자료 300개에서 무식한 방법과 같음.
 """
 from itertools import combinations
 import random
@@ -80,7 +79,7 @@ def main():
     assert {i: sorted(t) for i, t in v.items()} == {
         "A": [10, 20, 50, 70, 80, 90], "B": [10, 20, 30, 40, 60, 80, 90], "C": [30, 50, 60, 70, 80, 90],
         "D": [20, 40], "E": [10, 80]}
-    print("[OK] p.27 수직 형식: A 6개, B 7개, C 6개, D 2개, E 2개 TID")
+    print("[OK] 수직 형식: A 6개, B 7개, C 6개, D 2개, E 2개 TID")
     S = lambda s: frozenset(s)
     assert sorted(v["A"] & v["B"]) == [10, 20, 80, 90] and sorted(v["A"] & v["C"]) == [50, 70, 80, 90]
     assert sorted(v["A"] & v["B"] & v["C"]) == [80, 90] and sorted(v["A"] & v["B"] & v["E"]) == [10, 80]
@@ -88,7 +87,7 @@ def main():
     two = {k: n for k, n in f.items() if len(k) == 2}; three = {k: n for k, n in f.items() if len(k) == 3}
     assert two == {S("AB"): 4, S("AC"): 4, S("AE"): 2, S("BC"): 4, S("BD"): 2, S("BE"): 2}
     assert three == {S("ABC"): 2, S("ABE"): 2}
-    print("[OK] p.28: 2항목 AB4 AC4 AE2 BC4 BD2 BE2, 3항목 ABC2 ABE2")
+    print("[OK] 교집합: 2항목 AB4 AC4 AE2 BC4 BD2 BE2, 3항목 ABC2 ABE2")
     assert f == brute(H, 2)
 
     rnd = random.Random(3)

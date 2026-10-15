@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 참조 무결성 제약과 외래 키의 두 조건, 기본 키."
 prev_url: "/studies/database-design/er-model-practice/"
@@ -25,7 +25,7 @@ permalink: "/studies/database-design/foreign-key-practice/"
 {% raw %}
 사용 개념: [참조 무결성 제약과 외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/)의 두 조건, [기본 키](/Hongs_Blog/studies/database-design/relational-keys/).
 
-6주차 슬라이드의 연습 두 문제다. 릴레이션 스키마와 기본 키만 주어지고 외래 키를 찾으라고 한다.
+외래 키를 찾는 문제 둘이다. 릴레이션 스키마와 기본 키만 주어지고 외래 키를 찾으라고 한다.
 
 **풀이 전략.** 외래 키는 "다른 릴레이션의 기본 키를 가리키는 속성"이다. 그래서 기본 키에서 출발한다.
 
@@ -38,7 +38,7 @@ permalink: "/studies/database-design/foreign-key-practice/"
 
 ## p1 · 출장 데이터베이스
 
-판매 사무소 직원들의 출장을 적는 데이터베이스다. 출장 한 번의 경비는 계정 하나 이상에 청구할 수 있다. 이 스키마의 외래 키를 적어라[^1].
+판매 사무소 직원들의 출장을 적는 데이터베이스다. 출장 한 번의 경비는 계정 하나 이상에 청구할 수 있다. 이 스키마의 외래 키를 적어라.
 
 | 릴레이션 | 속성 (굵은 것이 기본 키) |
 |---|---|
@@ -59,7 +59,7 @@ permalink: "/studies/database-design/foreign-key-practice/"
 | TRIP.Ssn | SALESPERSON(Ssn) | 출장은 있는 판매원의 것이어야 한다 |
 | EXPENSE.Trip_id | TRIP(Trip_id) | 경비는 있는 출장의 것이어야 한다 |
 
-슬라이드의 답도 이 둘이다[^2].
+외래 키는 이 둘이다.
 
 </details>
 
@@ -84,7 +84,7 @@ SALESPERSON.Dept_no → DEPARTMENT(Dept_no)가 하나 더 생겨 셋이 된다. 
 
 ## p2 · 수강과 교재 데이터베이스
 
-학생의 수강과 과목마다 채택한 교재를 적는 데이터베이스다. 이 스키마의 외래 키를 적어라[^3].
+학생의 수강과 과목마다 채택한 교재를 적는 데이터베이스다. 이 스키마의 외래 키를 적어라.
 
 | 릴레이션 | 속성 (굵은 것이 기본 키) |
 |---|---|
@@ -109,7 +109,7 @@ SALESPERSON.Dept_no → DEPARTMENT(Dept_no)가 하나 더 생겨 셋이 된다. 
 | BOOK_ADOPTION.Course# | COURSE(Course#) | 채택하는 교재는 어떤 과목의 것이어야 한다 |
 | BOOK_ADOPTION.Book_isbn | TEXT(Book_isbn) | 채택하는 교재의 ISBN은 TEXT에 있어야 한다 |
 
-슬라이드의 답은 이 넷이다[^4].
+외래 키는 이 넷이다.
 
 </details>
 
@@ -117,7 +117,7 @@ SALESPERSON.Dept_no → DEPARTMENT(Dept_no)가 하나 더 생겨 셋이 된다. 
 다섯째 후보를 외래 키로 걸면 무엇이 달라질까? 교재를 채택하지 않은 학기의 수강이 들어가지 않는다. 답의 넷만 걸면 그런 수강도 들어간다. 어느 쪽이 맞는지는 학교의 규칙이 정한다. 이름이 맞는다고 외래 키로 거는 것이 아니라 규칙이 있을 때만 건다[^s2].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 기계적으로 찾은 후보 5개 가운데 4개가 슬라이드의 답이고 남는 것은 ENROLL(Course#, Quarter) → BOOK_ADOPTION, 답 4개가 없는 학생·과목·교재를 거부, 교재 없는 학기의 수강은 답 4개로는 들어가고 다섯째까지 걸면 거부 — [37_foreign-key-practice_p2.py](/Hongs_Blog/studies/database-design/code/37_foreign-key-practice_p2/)</div>
+<div class="callout-title" markdown="span">검증: 기계적으로 찾은 후보 5개 가운데 4개가 답이고 남는 것은 ENROLL(Course#, Quarter) → BOOK_ADOPTION, 답 4개가 없는 학생·과목·교재를 거부, 교재 없는 학기의 수강은 답 4개로는 들어가고 다섯째까지 걸면 거부 — [37_foreign-key-practice_p2.py](/Hongs_Blog/studies/database-design/code/37_foreign-key-practice_p2/)</div>
 
 </div>
 
@@ -132,10 +132,6 @@ ENROLL(Course#, Quarter) → BOOK_ADOPTION(Course#, Quarter)를 더한다. 두 �
 </details>
 
 
-[^1]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.26 (Exercise 1)
-[^2]: 데이터베이스 설계 7회 강의 자료 「7-relational-model-solutions」, p.1
-[^3]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.27 (Exercise 2)
-[^4]: 데이터베이스 설계 7회 강의 자료 「7-relational-model-solutions」, p.2
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 전략의 네 단계, Dept_no가 외래 키가 아닌 까닭, 계정 둘에 나눠 적는 예, p1의 변형 문제는 원본에 없다. 슬라이드의 답은 외래 키 둘과 그 뜻만 적는다. 문제 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다섯째 후보에 대한 설명과 p2의 변형 문제는 원본에 없다. 슬라이드의 답은 넷만 적는다. 다섯째를 걸었을 때와 안 걸었을 때의 차이는 문제 코드로 확인했다.
+[^s1]: 문제 코드로 확인했다.
+[^s2]: 다섯째를 걸었을 때와 안 걸었을 때의 차이는 문제 코드로 확인했다.
 {% endraw %}

@@ -22,7 +22,7 @@ permalink: "/studies/data-structures/"
 - [로그](/Hongs_Blog/studies/college-math/logarithm/), [등비급수](/Hongs_Blog/studies/college-math/geometric-series/) (공학수학 대학수학): 높이와 두 배 늘리기 계산에 쓴다
 - 스택, 큐, 힙, 연결 리스트, 순회, 그래프 탐색, 최단 경로의 생각은 알고리즘 과목 문서에 먼저 정리돼 있다. 번호 원칙으로는 먼저 배우는 이 과목이 번호를 가져야 하지만, 이미 있는 문서의 번호는 바꾸지 않고 그 문서의 `과목별 관점`에 이 과목 내용을 합쳤다. 이 과목에는 그쪽에 없는 것(C 배열과 포인터로 만드는 법, 삭제와 재경기 같은 절차, 볼트에 없던 주제)만 번호를 받았다.
 
-> 자료 출처: 중앙대 자료구조 2024년 강의 슬라이드(2, 3, 5, 6, 9, 10, 11, 12, 14, 15주차)와 유인물 한 장. 1, 4, 7, 13주차 자료는 없고 8주차는 중간고사로 보인다. 9주차 수업 문제(pptx)는 세 판 가운데 고친 판만 넣었다. 강의는 C와 포인터로 진행됐다. 구현 코드는 C로 쓰고 메모리 오류 검사(ASan, UBSan)를 켠 채 컴파일해 실행했고, 횟수 세기와 전수 비교는 파이썬으로 했다. 슬라이드의 코드는 그대로는 컴파일되지 않는 곳이 많아 고쳐 실었고, 고친 곳마다 `원본 오류 의심` 표시를 남겼다. 트리의 높이는 볼트 표기(간선 수)로 쓰고 강의 표기(층 수)를 함께 적었다.
+> 구현 코드는 C로 쓰고 메모리 오류 검사(ASan, UBSan)를 켠 채 컴파일해 실행했고, 횟수 세기와 전수 비교는 파이썬으로 했다.
 
 
 ## 2주차 · 자료구조의 뜻, 연산 횟수 세기, C 포인터와 동적 메모리
@@ -46,9 +46,7 @@ permalink: "/studies/data-structures/"
 | 05 | [배열과 포인터](/Hongs_Blog/studies/data-structures/array-pointer/) | 칸의 주소 = 시작 주소 + 번호 × 칸 크기. 배열 이름은 첫 칸의 주소처럼 쓰인다 | [impl](/Hongs_Blog/studies/data-structures/code/05_array-pointer_impl/) | [포인터와 주소 계산 연습](/Hongs_Blog/studies/data-structures/pointer-address-practice/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/05_pointer-address-practice_p4/) |
 | 06 | [동적 메모리 할당](/Hongs_Blog/studies/data-structures/dynamic-memory-allocation/) | 필요한 만큼 빌리고(`malloc`·`calloc`·`realloc`) 직접 돌려준다(`free`). 안 돌려주면 누수 | [impl](/Hongs_Blog/studies/data-structures/code/06_dynamic-memory-allocation_impl/) | — |
 
-삽입 정렬은 이 주차에 예로 나오지만 14주차 정렬과 함께 40번에 있다. 시간표와 점근 표기는 [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/), [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/) 문서의 `과목별 관점`에 합쳤다.
-자료: DS_Week2_2024
-필기: 아직 없다.
+삽입 정렬은 여기서 횟수를 세는 예로 쓰이고, 정렬 방법으로는 40번에서 다룬다. 시간표와 점근 표기는 [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/), [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 변수 하나, 그것을 가리키는 포인터, 그 포인터를 가리키는 포인터를 칸과 화살표로 그린 뒤 `&`와 `*`가 각각 어느 쪽으로 가는지 적어 본다.
 
 ## 3주차 · 배열 배치, 희소 행렬, 스택, 큐
@@ -65,18 +63,16 @@ permalink: "/studies/data-structures/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 07 | [추상 자료형](/Hongs_Blog/studies/data-structures/abstract-data-type/) | 무엇을 할 수 있는지만 정하고 어떻게 만드는지는 정하지 않은 약속 (강조)[^n1] | — | — |
-| 08 | [배열 두 배 늘리기](/Hongs_Blog/studies/data-structures/array-doubling/) | 꽉 차면 용량을 두 배로. 한 번은 비싸도 $$n$$번 전체는 $$O(n)$$ (강조)[^n1] | [impl](/Hongs_Blog/studies/data-structures/code/08_array-doubling_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/08_array-doubling_verify/) | — |
+| 07 | [추상 자료형](/Hongs_Blog/studies/data-structures/abstract-data-type/) | 무엇을 할 수 있는지만 정하고 어떻게 만드는지는 정하지 않은 약속 | — | — |
+| 08 | [배열 두 배 늘리기](/Hongs_Blog/studies/data-structures/array-doubling/) | 꽉 차면 용량을 두 배로. 한 번은 비싸도 $$n$$번 전체는 $$O(n)$$ | [impl](/Hongs_Blog/studies/data-structures/code/08_array-doubling_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/08_array-doubling_verify/) | — |
 | 09 | [행 우선 배치와 열 우선 배치](/Hongs_Blog/studies/data-structures/row-major-mapping/) | 표를 한 줄로 펴기. 행 우선이면 `x[i][j]`는 $$ic + j$$번 칸, 배열의 배열은 덤이 행 수 × 4바이트 | [impl](/Hongs_Blog/studies/data-structures/code/09_row-major-mapping_impl/) | — |
 | 10 | [특수 행렬을 1차원 배열에 담기](/Hongs_Blog/studies/data-structures/triangular-matrix-mapping/) | 0의 자리가 정해진 행렬은 값이 오는 칸만 담는다. 아래삼각의 $$x(i, j)$$는 $$i(i-1)/2 + j - 1$$번 위치 | [impl](/Hongs_Blog/studies/data-structures/code/10_triangular-matrix-mapping_impl/) | [배열 위치 공식 예제 사다리](/Hongs_Blog/studies/data-structures/array-mapping-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/10_array-mapping-ladder_p4/) |
 | 11 | [희소 행렬의 3원소 표현](/Hongs_Blog/studies/data-structures/sparse-matrix-triples/) | 0이 아닌 칸만 (행, 열, 값)으로 적어 행 우선 순서로 늘어놓는다. $$3t < mn$$일 때만 이득 | [impl](/Hongs_Blog/studies/data-structures/code/11_sparse-matrix-triples_impl/) | — |
 | 12 | [희소 행렬의 전치](/Hongs_Blog/studies/data-structures/sparse-matrix-transpose/) | 열별 개수 → 시작 칸 → 꽂기 세 단계로 정렬 없이 $$O(n + t)$$ | [impl](/Hongs_Blog/studies/data-structures/code/12_sparse-matrix-transpose_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/12_sparse-matrix-transpose_verify/) | [희소 행렬 전치 예제 사다리](/Hongs_Blog/studies/data-structures/sparse-transpose-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/12_sparse-transpose-ladder_p4/) |
 | 13 | [배열로 만든 스택](/Hongs_Blog/studies/data-structures/array-stack/) | 배열 하나와 맨 위 칸 번호 top. 가득 차면 끝내거나 두 배로 늘린다 | [impl](/Hongs_Blog/studies/data-structures/code/13_array-stack_impl/) | [스택 응용 연습](/Hongs_Blog/studies/data-structures/stack-applications-practice/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/13_stack-applications-practice_p1/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/13_stack-applications-practice_p2/) |
-| 14 | [원형 큐](/Hongs_Blog/studies/data-structures/circular-queue/) | 배열의 끝과 처음을 이은 큐. 빔과 가득 참을 가르려고 한 칸을 비워 $$n - 1$$개까지 (강조)[^n1] | [impl](/Hongs_Blog/studies/data-structures/code/14_circular-queue_impl/) | [원형 큐 추적 예제 사다리](/Hongs_Blog/studies/data-structures/circular-queue-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/14_circular-queue-ladder_p4/) |
+| 14 | [원형 큐](/Hongs_Blog/studies/data-structures/circular-queue/) | 배열의 끝과 처음을 이은 큐. 빔과 가득 참을 가르려고 한 칸을 비워 $$n - 1$$개까지 | [impl](/Hongs_Blog/studies/data-structures/code/14_circular-queue_impl/) | [원형 큐 추적 예제 사다리](/Hongs_Blog/studies/data-structures/circular-queue-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/14_circular-queue-ladder_p4/) |
 
-강의는 희소 행렬을 먼저 다루지만, 희소 행렬이 행 우선 순서를 쓰므로 배열 배치(09·10)를 앞에 두었다. 스택과 큐의 쓰임은 [스택](/Hongs_Blog/studies/algorithms/stack/), [큐와 덱](/Hongs_Blog/studies/algorithms/queue-deque/) 문서의 `과목별 관점`에 합쳤다. 이 주차 자료는 식 계산 규칙 3쪽에서 끊긴다.
-자료: DS_Week3_Lecture_2024
-필기: 아직 없다.
+희소 행렬이 행 우선 순서를 쓰므로 배열 배치(09·10)를 앞에 둔다. 스택과 큐의 쓰임은 [스택](/Hongs_Blog/studies/algorithms/stack/), [큐와 덱](/Hongs_Blog/studies/algorithms/queue-deque/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고, 스택은 정수 하나(top)로 되는데 큐는 왜 둘(front, rear)이 필요하고 한 칸까지 비워야 하는지 써 본다.
 
 ## 5주차 · 연결 리스트
@@ -100,9 +96,7 @@ permalink: "/studies/data-structures/"
 | 19 | [연결 리스트로 만든 큐](/Hongs_Blog/studies/data-structures/linked-queue/) | front와 rear 두 포인터. 비는 순간과 차는 순간에는 둘을 함께 고친다 | [impl](/Hongs_Blog/studies/data-structures/code/19_linked-queue_impl/) | [연결 리스트 연습](/Hongs_Blog/studies/data-structures/linked-list-practice/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/19_linked-list-practice_p1/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/19_linked-list-practice_p2/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/19_linked-list-practice_p3/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/19_linked-list-practice_p4/) |
 | 20 | [선형 자료구조](/Hongs_Blog/studies/data-structures/linear-data-structure/) | 원소마다 앞 하나 뒤 하나인 구조를 묶는 말. "한 줄"은 순서 이야기지 메모리 이야기가 아니다 | — | — |
 
-20번은 회차를 알 수 없는 유인물(Linear Data Structure)에서 나왔다. 선형 구조를 다 배운 자리라 여기에 두었다. 칸 번호로 만든 연결 리스트는 [연결 리스트](/Hongs_Blog/studies/algorithms/linked-list/) 문서에 있다.
-자료: DS_Week5_Lecture_2024 · Linear Data Structure
-필기: 아직 없다.
+20번은 선형 구조를 다 배운 자리라 여기에 둔다. 칸 번호로 만든 연결 리스트는 [연결 리스트](/Hongs_Blog/studies/algorithms/linked-list/) 문서에 있다.
 떠올려 보기: 노트를 닫고, 체인에서 한 번에 끝나는 일 세 가지와 그렇지 않은 일 하나를 쓰고, 그것이 스택과 큐의 모양을 어떻게 정하는지 써 본다.
 
 ## 6주차 · 트리, 이진 트리, 순회, 우선순위 큐와 힙
@@ -120,7 +114,7 @@ permalink: "/studies/data-structures/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 21 | [이진 트리](/Hongs_Blog/studies/data-structures/binary-tree/) | 자식을 둘까지만 두고 왼쪽·오른쪽을 구별하는 트리. 층이 $$L$$개면 노드는 $$L$$개에서 $$2^L - 1$$개 | [verify](/Hongs_Blog/studies/data-structures/code/21_binary-tree_verify/) | — |
-| 22 | [포화 이진 트리와 완전 이진 트리](/Hongs_Blog/studies/data-structures/full-complete-binary-tree/) | 위층부터 왼쪽부터 채운 트리. 번호 $$i$$의 부모는 $$\lfloor i/2 \rfloor$$, 자식은 $$2i$$와 $$2i + 1$$ (강조)[^n1] | [verify](/Hongs_Blog/studies/data-structures/code/22_full-complete-binary-tree_verify/) | — |
+| 22 | [포화 이진 트리와 완전 이진 트리](/Hongs_Blog/studies/data-structures/full-complete-binary-tree/) | 위층부터 왼쪽부터 채운 트리. 번호 $$i$$의 부모는 $$\lfloor i/2 \rfloor$$, 자식은 $$2i$$와 $$2i + 1$$ | [verify](/Hongs_Blog/studies/data-structures/code/22_full-complete-binary-tree_verify/) | — |
 | 23 | [이진 트리의 배열 표현과 연결 표현](/Hongs_Blog/studies/data-structures/binary-tree-representation/) | 번호대로 배열에 넣기와 자식 주소 적어 두기. 치우친 트리는 배열이 $$2^n$$칸까지 든다 | [impl](/Hongs_Blog/studies/data-structures/code/23_binary-tree-representation_impl/) | — |
 | 24 | [레벨 순서 순회](/Hongs_Blog/studies/data-structures/level-order-traversal/) | 자식을 큐 뒤에 세워 두고 위층부터 한 층씩 방문 | [impl](/Hongs_Blog/studies/data-structures/code/24_level-order-traversal_impl/) | — |
 | 25 | [수식 트리와 전위·중위·후위 표기](/Hongs_Blog/studies/data-structures/expression-tree/) | 식을 트리로 그려 세 순회로 읽으면 전위·중위·후위 표기. 중위만 괄호가 필요하다 | [verify](/Hongs_Blog/studies/data-structures/code/25_expression-tree_verify/) | — |
@@ -130,8 +124,6 @@ permalink: "/studies/data-structures/"
 | 29 | [LPT 스케줄링](/Hongs_Blog/studies/data-structures/lpt-scheduling/) | 긴 작업부터 가장 먼저 비는 기계에. 최적의 $$\frac43 - \frac{1}{3m}$$배 이내 | [verify](/Hongs_Blog/studies/data-structures/code/29_lpt-scheduling_verify/) | — |
 
 트리의 뜻과 높이는 [트리](/Hongs_Blog/studies/discrete-math/trees/), 전위·중위·후위 순회는 [트리 순회와 이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/), 힙의 쓰임은 [힙과 우선순위 큐](/Hongs_Blog/studies/algorithms/heap/) 문서의 `과목별 관점`에 합쳤다.
-자료: DS_Week6_Lecture_2024
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 이진 트리를 담는 두 방법, 네 가지 순회, 힙의 넣기·꺼내기가 층수만큼만 걸리는 까닭을 그림과 함께 써 본다.
 
 ## 9주차 · 이진 탐색 트리, 색인 이진 탐색 트리, 승자·패자 트리
@@ -148,15 +140,13 @@ permalink: "/studies/data-structures/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 30 | [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/) | 작으면 왼쪽, 크면 오른쪽으로 한 길만 내려가 찾고, 끊긴 자리에 매단다. 시간은 $$O(\text{높이})$$ (강조)[^n1] | [impl](/Hongs_Blog/studies/data-structures/code/30_bst-search-insert_impl/) | [9주차 수업 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p1/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p2/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p3/) |
+| 30 | [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/) | 작으면 왼쪽, 크면 오른쪽으로 한 길만 내려가 찾고, 끊긴 자리에 매단다. 시간은 $$O(\text{높이})$$ | [impl](/Hongs_Blog/studies/data-structures/code/30_bst-search-insert_impl/) | [트리와 힙 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p1/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p2/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p3/) |
 | 31 | [최대 힙과 이진 탐색 트리 비교](/Hongs_Blog/studies/data-structures/heap-vs-bst/) | 힙은 위아래로만, 이진 탐색 트리는 좌우로 크기를 맞춘다 | [verify](/Hongs_Blog/studies/data-structures/code/31_heap-vs-bst_verify/) | — |
 | 32 | [이진 탐색 트리의 삭제](/Hongs_Blog/studies/data-structures/bst-delete/) | 자식이 둘이면 왼쪽에서 가장 큰 키를 올려 적고 그 노드를 뗀다 | [impl](/Hongs_Blog/studies/data-structures/code/32_bst-delete_impl/) | [이진 탐색 트리 삽입·삭제 예제 사다리](/Hongs_Blog/studies/data-structures/bst-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/32_bst-ladder_p4/) |
 | 33 | [색인 이진 탐색 트리](/Hongs_Blog/studies/data-structures/indexed-bst/) | 노드마다 왼쪽 노드 수(leftSize)를 적어 몇 번째 값을 $$O(\text{높이})$$에 찾는다 | [impl](/Hongs_Blog/studies/data-structures/code/33_indexed-bst_impl/) | — |
-| 34 | [승자 트리](/Hongs_Blog/studies/data-structures/winner-tree/) | 이긴 쪽을 적어 올라가는 토너먼트. 만들기 $$O(n)$$, 다시 겨루기 $$O(\log n)$$ (강조)[^n1] | [impl](/Hongs_Blog/studies/data-structures/code/34_winner-tree_impl/) | — |
+| 34 | [승자 트리](/Hongs_Blog/studies/data-structures/winner-tree/) | 이긴 쪽을 적어 올라가는 토너먼트. 만들기 $$O(n)$$, 다시 겨루기 $$O(\log n)$$ | [impl](/Hongs_Blog/studies/data-structures/code/34_winner-tree_impl/) | — |
 | 35 | [패자 트리](/Hongs_Blog/studies/data-structures/loser-tree/) | 진 쪽을 적어 두면 다시 겨룰 때 옆 가지를 안 봐도 된다 | [impl](/Hongs_Blog/studies/data-structures/code/35_loser-tree_impl/) | [승자 트리와 패자 트리 재경기 예제 사다리](/Hongs_Blog/studies/data-structures/selection-tree-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/35_selection-tree-ladder_p4/) |
 
-자료: DS_Week9_Lecture_2024 (BST, Heap 수정) · DS_Week9_Lecture_BST_2024
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 이진 탐색 트리의 찾기·넣기·지우기와 승자·패자 트리의 다시 겨루기가 각각 나무의 어느 길을 지나는지, 왜 모두 높이만큼만 걸리는지 써 본다.
 
 ## 10주차 · 그래프의 뜻과 표현
@@ -175,8 +165,6 @@ permalink: "/studies/data-structures/"
 | 36 | [연결 인접 리스트와 배열 인접 리스트](/Hongs_Blog/studies/data-structures/linked-adjacency-list/) | 이웃 목록을 체인이나 배열로 담는다. 원소 수는 무방향 $$2m$$, 방향 $$m$$ | [impl](/Hongs_Blog/studies/data-structures/code/36_linked-adjacency-list_impl/) | — |
 
 그래프의 뜻과 용어는 [그래프의 기초](/Hongs_Blog/studies/discrete-math/graph-basics/), 인접 행렬과 인접 리스트의 고르기는 [그래프 표현](/Hongs_Blog/studies/algorithms/graph-representation/) 문서에 있다. 이 과목에는 C로 만드는 방법만 번호를 받았다.
-자료: DS_Week10_Lecture_Graph_2024
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 인접 행렬, 연결 인접 리스트, 배열 인접 리스트가 쓰는 자리와 "한 점의 이웃 모두 보기"에 드는 시간을 견줘 써 본다.
 
 ## 11주차 · 너비 우선 탐색, 최소 비용 신장 트리
@@ -195,9 +183,7 @@ permalink: "/studies/data-structures/"
 |---|---|---|---|---|
 | 37 | [솔린 알고리즘](/Hongs_Blog/studies/data-structures/sollin-algorithm/) | 덩어리마다 가장 싼 간선을 한꺼번에 골라 덩어리를 절반씩 줄인다 | [verify](/Hongs_Blog/studies/data-structures/code/37_sollin-algorithm_verify/) | [그래프 탐색과 신장 트리 연습](/Hongs_Blog/studies/data-structures/graph-spanning-practice/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/37_graph-spanning-practice_p5/) |
 
-자료 제목이 "Graph Traversal(2)"다. (1)에 해당하는 깊이 우선 탐색 자료는 없다. 탐색과 신장 트리는 [너비 우선 탐색(BFS)](/Hongs_Blog/studies/algorithms/bfs/), [깊이 우선 탐색(DFS)](/Hongs_Blog/studies/algorithms/dfs/), 크루스칼과 프림은 [최소 신장 트리](/Hongs_Blog/studies/algorithms/mst/) 문서의 `과목별 관점`에 합쳤다.
-자료: DS_Week11_Lecture_GraphTraversal_2024
-필기: 아직 없다.
+탐색과 신장 트리는 [너비 우선 탐색(BFS)](/Hongs_Blog/studies/algorithms/bfs/), [깊이 우선 탐색(DFS)](/Hongs_Blog/studies/algorithms/dfs/), 크루스칼과 프림은 [최소 신장 트리](/Hongs_Blog/studies/algorithms/mst/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 고르기 전략 셋(크루스칼, 프림, 솔린)과 버리기 전략 둘이 각각 "어떤 간선 가운데 가장 싼(비싼) 것"을 보는지 써 본다.
 
 ## 12주차 · 최단 경로
@@ -214,12 +200,10 @@ permalink: "/studies/data-structures/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 38 | [벨만–포드 알고리즘](/Hongs_Blog/studies/data-structures/bellman-ford/) | 간선 수 제한을 하나씩 늘리는 $$d(v, k)$$ 표로 음수 간선이 있어도 최단 길이를 구한다 (강조)[^n1] | [verify](/Hongs_Blog/studies/data-structures/code/38_bellman-ford_verify/) | — |
+| 38 | [벨만–포드 알고리즘](/Hongs_Blog/studies/data-structures/bellman-ford/) | 간선 수 제한을 하나씩 늘리는 $$d(v, k)$$ 표로 음수 간선이 있어도 최단 길이를 구한다 | [verify](/Hongs_Blog/studies/data-structures/code/38_bellman-ford_verify/) | — |
 | 39 | [플로이드 알고리즘의 경로 출력](/Hongs_Blog/studies/data-structures/floyd-path-output/) | 줄일 때 거친 점 $$kay(i, j)$$를 적어 두고 길을 둘로 갈라 되짚는다 | [impl](/Hongs_Blog/studies/data-structures/code/39_floyd-path-output_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/39_floyd-path-output_verify/) | [최단 경로 표 채우기 예제 사다리](/Hongs_Blog/studies/data-structures/shortest-path-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/39_shortest-path-ladder_p4/) |
 
-자료 표지에는 "Week 11"이라고 적혀 있다. 다익스트라와 플로이드의 점화식은 [다익스트라](/Hongs_Blog/studies/algorithms/dijkstra/), [플로이드–워셜](/Hongs_Blog/studies/algorithms/floyd-warshall/) 문서의 `과목별 관점`에 합쳤다.
-자료: DS_Week12_Lecture_ShortestPath_2024
-필기: 아직 없다.
+다익스트라와 플로이드의 점화식은 [다익스트라](/Hongs_Blog/studies/algorithms/dijkstra/), [플로이드–워셜](/Hongs_Blog/studies/algorithms/floyd-warshall/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 세 알고리즘이 각각 무엇에 제한을 걸고(확정한 점, 간선 수, 중간 점 번호) 길을 되짚으려고 무엇을 적어 두는지(p, p, kay) 써 본다.
 
 ## 14주차 · 정렬과 외부 정렬
@@ -244,9 +228,7 @@ permalink: "/studies/data-structures/"
 | 45 | [외부 병합 정렬](/Hongs_Blog/studies/data-structures/external-merge-sort/) | 메모리만큼씩 정렬해 런을 만들고 둘씩 합친다. 패스마다 $$200t_{IO} + 100t_{IM}$$, 패스 $$\lceil \log_2 20 \rceil = 5$$번 | [verify](/Hongs_Blog/studies/data-structures/code/45_external-merge-sort_verify/) | — |
 | 46 | [k-way 병합과 선택 트리](/Hongs_Blog/studies/data-structures/k-way-merge/) | 한 번에 $$k$$개씩 합치면 패스가 $$\lceil \log_k r \rceil$$번. 선택 트리로 고르면 비교가 $$k - 1$$번에서 $$\log_2 k$$번으로 | [verify](/Hongs_Blog/studies/data-structures/code/46_k-way-merge_verify/) | [외부 정렬 시간 계산 예제 사다리](/Hongs_Blog/studies/data-structures/external-sort-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/46_external-sort-ladder_p4/) |
 
-정렬을 고르는 기준은 [정렬과 정렬 기준](/Hongs_Blog/studies/algorithms/sorting/) 문서에 있다. 힙 정렬은 6주차의 28번에 있다.
-자료: DS_Week14_Lecture_2024
-필기: 아직 없다.
+정렬을 고르는 기준은 [정렬과 정렬 기준](/Hongs_Blog/studies/algorithms/sorting/) 문서에 있다. 힙 정렬은 28번에 있다.
 떠올려 보기: 노트를 닫고 삽입·선택·퀵·병합 정렬이 각각 "어디서 일을 하는지"와 가장 나쁠 때의 빠르기를 표로 쓰고, 외부 정렬의 두 단계와 패스 수 식을 써 본다.
 
 ## 15주차 · 해시 테이블
@@ -264,15 +246,13 @@ permalink: "/studies/data-structures/"
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
 | 47 | [해시 테이블의 홈 버킷과 충돌](/Hongs_Blog/studies/data-structures/hash-table-terms/) | 키가 계산대로 가야 할 칸이 홈 버킷. 충돌은 "누가 먼저 와 있다", 넘침은 "자리가 없다" | [verify](/Hongs_Blog/studies/data-structures/code/47_hash-table-terms_verify/) | — |
-| 48 | [나눗셈 해시 함수](/Hongs_Blog/studies/data-structures/hash-function-division/) | 홈 버킷 = 수 % 버킷 수. 나누는 수는 짝수를 피하고 소수로 (강조)[^n1] | [impl](/Hongs_Blog/studies/data-structures/code/48_hash-function-division_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/48_hash-function-division_verify/) | — |
+| 48 | [나눗셈 해시 함수](/Hongs_Blog/studies/data-structures/hash-function-division/) | 홈 버킷 = 수 % 버킷 수. 나누는 수는 짝수를 피하고 소수로 | [impl](/Hongs_Blog/studies/data-structures/code/48_hash-function-division_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/48_hash-function-division_verify/) | — |
 | 49 | [선형 탐사](/Hongs_Blog/studies/data-structures/linear-probing/) | 홈 버킷이 차 있으면 다음 빈 버킷에 넣는다. 지울 때는 뒤의 키를 당겨 온다. $$U_n \approx \frac12\left(1 + \frac{1}{(1-\alpha)^2}\right)$$ | [impl](/Hongs_Blog/studies/data-structures/code/49_linear-probing_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/49_linear-probing_verify/) | [선형 탐사 삽입·삭제 예제 사다리](/Hongs_Blog/studies/data-structures/linear-probing-ladder/) · [문제 코드](/Hongs_Blog/studies/data-structures/code/49_linear-probing-ladder_p4/) |
 | 50 | [체이닝](/Hongs_Blog/studies/data-structures/hash-chaining/) | 버킷마다 동의어를 체인으로 매단다. 체인 길이 평균 $$\alpha$$, $$S_n \approx 1 + \frac{\alpha}{2}$$ | [impl](/Hongs_Blog/studies/data-structures/code/50_hash-chaining_impl/) · [verify](/Hongs_Blog/studies/data-structures/code/50_hash-chaining_verify/) | — |
 | 51 | [선형 탐사와 체이닝 비교](/Hongs_Blog/studies/data-structures/probing-vs-chaining/) | 넘친 쌍을 표 안에 두는가 밖에 매다는가. 찰수록 느려지는 쪽과 포인터가 드는 쪽 | [verify](/Hongs_Blog/studies/data-structures/code/51_probing-vs-chaining_verify/) | — |
 | 52 | [적재율로 해시 테이블 크기 정하기](/Hongs_Blog/studies/data-structures/load-factor-design/) | $$S_n \le 10$$, $$U_n \le 13$$이면 $$\alpha \le \frac45$$, 쌍 1,000개면 $$b \ge 1250$$. 넘으면 두 배로 늘려 다시 넣는다 | [verify](/Hongs_Blog/studies/data-structures/code/52_load-factor-design_verify/) | — |
 
 딕셔너리를 쓰는 쪽의 이야기는 [딕셔너리와 집합](/Hongs_Blog/studies/algorithms/hash-dict-set/), 탐사 횟수의 확률 계산은 [해싱과 무작위 알고리즘의 확률](/Hongs_Blog/studies/probability-statistics/randomized-analysis/) 문서의 `과목별 관점`에 합쳤다.
-자료: DS_Week15_Lecture_2024
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 홈 버킷·동의어·충돌·넘침의 뜻을 쓰고, 선형 탐사에서 키를 지울 때 "그 칸만 비우면" 무슨 일이 생기는지 예를 하나 만들어 본다.
 
 ## 다른 과목과의 연결
@@ -428,6 +408,4 @@ graph TD
   C48 --> C52
   C8 --> C52
 ```
-
-[^n1]: 원본에서 강조된 개념. 추상 자료형: 여섯 강의에서 되풀이된다. 배열 두 배 늘리기: 3주차 p.14, 52~54와 15주차 p.29에 다시 나오고 p.54에 "remains O(n)!". 원형 큐: 3주차 13쪽 분량. 완전 이진 트리: 6주차 p.18의 손으로 그린 빨간 테두리. 이진 탐색 트리의 O(높이): 9주차 p.10, 18, 25. 승자 트리: 9주차 31쪽 분량. 벨만–포드: 12주차 p.8 "Algorithm doesn't work!"와 p.9의 파란 글씨. 나눗셈 해시 함수: 15주차 p.18의 짝수 나누는 수 경고.
 {% endraw %}

@@ -56,7 +56,7 @@ class CastingCheck {
     }
 
     public static void main(String[] args) {
-        // 자동 변환: 슬라이드의 A, B, C, D, E
+        // 자동 변환: 문서의 A, B, C, D, E
         A a;
         B b = new B(); C c = new C(); D d = new D(); E e = new E();
         a = b; a = c; a = d; a = e;
@@ -69,7 +69,7 @@ class CastingCheck {
         if (v != original) throw new AssertionError("같은 객체여야 한다");
         System.out.println("ok: 자동 변환 뒤에도 같은 객체");
 
-        // 강제 변환: 슬라이드의 Vehicle과 Bus
+        // 강제 변환: 문서의 Vehicle과 Bus
         check("강제 변환", capture(() -> {
             Vehicle vehicle = new Bus();
             vehicle.run();

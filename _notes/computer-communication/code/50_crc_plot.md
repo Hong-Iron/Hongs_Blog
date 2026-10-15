@@ -205,7 +205,7 @@ draw_division(ax, DIVIDEND, DIV,
 save(fig, 1)
 
 
-# 그림 2: C = 1101의 시프트 레지스터 회로 (슬라이드 56과 같은 배치)
+# 그림 2: C = 1101의 시프트 레지스터 회로
 def xor_gate(ax, x, y, r=0.27):
     ax.add_patch(Circle((x, y), r, facecolor="none", edgecolor=C[1], lw=1.4))
     ax.plot([x - r, x + r], [y, y], color=C[1], lw=1.2)

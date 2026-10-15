@@ -29,7 +29,7 @@ class TypeConversionImpl {
     }
 
     public static void main(String[] args) {
-        // 1. 자동 변환 (슬라이드 ImplicitConversion)
+        // 1. 자동 변환 (문서의 첫 예제)
         int i = 100;
         long l = i;
         float f = l;
@@ -37,7 +37,7 @@ class TypeConversionImpl {
         check(("Long value " + l).equals("Long value 100"), "long");
         check(("Float value " + f).equals("Float value 100.0"), "float");
 
-        // 2. 강제 변환 (슬라이드 ExplicitConversion)
+        // 2. 강제 변환 (문서의 둘째 예제)
         double d = 100.04;
         long l2 = (long) d;
         int i2 = (int) l2;
@@ -89,7 +89,7 @@ class TypeConversionImpl {
         Object o3 = 1L + 2.0f;
         check(o3 instanceof Float, "long + float = float");
 
-        // 7. + 의 두 가지 일 (슬라이드)
+        // 7. + 의 두 가지 일 (문서의 여덟 줄 예제)
         check(3 + 7 == 10, "3 + 7");
         check(("3" + 7).equals("37"), "\"3\" + 7");
         check((3 + "7").equals("37"), "3 + \"7\"");

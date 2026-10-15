@@ -23,7 +23,7 @@ permalink: "/studies/computer-communication/code/26_timing-analysis_verify/"
 """소요시간 분석(시간 흐름 그림) 공식 검증.
 
 문서: 26.소요시간 분석 (정리, 예제, 카드), 4.연습문제/26.소요시간 분석 예제 사다리 (문제 1~4, 변형),
-      4.연습문제/26.과제 2 (문제 1~4)
+      4.연습문제의 A–S–B 회선·패킷 비교 문제 (문제 1~4)
 모델:
   - 경로의 링크 H개. 링크마다 전송률 R, 전파 지연 p. 중간 스위치 H-1개는 패킷마다 처리 지연 q.
   - 패킷 P개(각 L비트)가 시각 0에 출발지에 모두 있다. 대기 지연(다른 트래픽)은 0.
@@ -214,7 +214,7 @@ def main():
     assert cross == 944
     print(f"[OK] 사다리: 516, 10.5, {float(t3)}, 회선 {c4} vs 패킷 {float(p4)}; 변형 {c4b} vs {float(p4b)}; 역전 P={cross}")
 
-    # ---- 과제 2 (A - S - B, 링크 8 Mbps, 전파 2 ms) ----
+    # ---- A–S–B 회선·패킷 비교 문제 (링크 8 Mbps, 전파 2 ms) ----
     R = 8_000_000
     # 1) 회선: 설정 20 ms, 40 Mbit
     assert circuit(20, 40_000_000, R, 2, 2) == 5024
@@ -230,7 +230,7 @@ def main():
     t_serial = fifo(2, P, T, F(2), F(1, 10), overlap=False)[-1]
     assert t_overlap == closed_packet(2, P, T, 2, F(1, 10)) == F(510512, 100)
     assert t_serial == F(560502, 100)
-    # 필기 풀이의 식: 스위치가 파일 전체를 다 받은 뒤 보내는 경우 (파이프라인 없음)
+    # 파이프라인을 쓰지 않는 풀이의 식: 스위치가 파일 전체를 다 받은 뒤 보내는 경우
     whole = 2 * (T * P) + P * F(1, 10) + 2 * 2
     assert whole == 10704
     # 4) 오버헤드: 회선은 설정 20 ms, 패킷은 헤더 전송 + 파이프라인 채움 + 처리
@@ -243,7 +243,7 @@ def main():
     assert Tv == F(1002, 100)
     assert closed_packet(2, 500, Tv, 2, F(1, 10)) == F(502412, 100)
     assert ms(160 * 500, R) == 10
-    print(f"[OK] 과제 2: 1) 5,024 ms  2) 6.14 ms  3) {float(t_overlap)} ms (처리·송신 따로), "
+    print(f"[OK] A–S–B 비교 문제: 1) 5,024 ms  2) 6.14 ms  3) {float(t_overlap)} ms (처리·송신 따로), "
           f"{float(t_serial)} ms (한 장치), 파이프라인 없음 {whole} ms  4) 패킷 오버헤드 {float(t_overlap - ideal)} ms, 변형 5,024.12 ms")
 
     print("ALL CHECKS PASSED")

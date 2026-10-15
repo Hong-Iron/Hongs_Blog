@@ -71,19 +71,19 @@ def optimal(times, m):
 
 
 def bound(m):
-    """슬라이드의 한계: 4/3 - 1/(3m)"""
+    """문서의 한계: 4/3 - 1/(3m)"""
     return Fraction(4, 3) - Fraction(1, 3 * m)
 
 
 if __name__ == "__main__":
-    # 1. 슬라이드 p.67~68: 기계 3대, 작업 [6, 2, 3, 5, 10, 7, 14]
+    # 1. 문서 예시: 기계 3대, 작업 [6, 2, 3, 5, 10, 7, 14]
     times = [6, 2, 3, 5, 10, 7, 14]
-    # p.67의 "가능한 일정": A = 6, 7 / B = 2, 5, 14 / C = 3, 10 -> 13, 21, 13
+    # 문서의 "아무렇게나 맡긴 일정": A = 6, 7 / B = 2, 5, 14 / C = 3, 10 -> 13, 21, 13
     assert [sum(x) for x in ([6, 7], [2, 5, 14], [3, 10])] == [13, 21, 13]
     assert sorted([6, 7] + [2, 5, 14] + [3, 10]) == sorted(times)
     trace = []
     finish, jobs = lpt(times, 3, trace)
-    assert finish == 16                                           # p.68 "Finish time is 16!"
+    assert finish == 16                                           # LPT로 맡기면 16에 끝난다
     assert jobs == [[14, 2], [10, 5], [7, 6, 3]]                  # A, B, C
     assert [sum(j) for j in jobs] == [16, 15, 16]
     # 본문의 추적 표: (작업, 맡은 기계, 그 뒤 세 기계의 끝나는 시각)

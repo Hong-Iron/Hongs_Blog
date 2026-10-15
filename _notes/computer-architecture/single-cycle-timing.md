@@ -135,5 +135,5 @@ $$0.25 \times 950 + 0.10 \times 850 + 0.45 \times 700 + 0.15 \times 600 + 0.05 \
 
 [^1]: Princeton COS/ELE 375 (Fall 2015, David August), Lecture 8 "Control", 슬라이드 22~24 (Single Cycle Implementation: 주기는 가장 긴 길의 길이가 정한다, load word가 가장 오래 걸린다), https://www.cs.princeton.edu/courses/archive/fall15/cos375/lectures/08-Control.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor"
 [^2]: 같은 강의, 슬라이드 26~33 (What's Wrong with Single Cycle?: 모든 명령어가 가장 느린 것만큼 걸린다, 아주 긴 명령어의 문제, 여러 사이클로 나누는 방법)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부품 시간, 명령어 비율, 그것으로 계산한 모든 수치는 교재나 강의 자료의 값이 아니라 이 문서에서 직접 정한 것이다. 계산 방법(명령어마다 지나는 부품의 시간을 더하고 최댓값을 고른다)만 위 출처를 따랐다. "0으로 친다"는 가정과 PC + 4 가산기를 빼는 것도 같은 출처의 예제가 쓰는 단순화다.
+[^s1]: 계산 방법(명령어마다 지나는 부품의 시간을 더하고 최댓값을 고른다)만 위 출처를 따랐다. "0으로 친다"는 가정과 PC + 4 가산기를 빼는 것도 같은 출처의 예제가 쓰는 단순화다.
 {% endraw %}

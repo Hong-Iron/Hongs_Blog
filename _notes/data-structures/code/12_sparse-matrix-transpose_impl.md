@@ -23,18 +23,16 @@ permalink: "/studies/data-structures/code/12_sparse-matrix-transpose_impl/"
 /* 희소 행렬의 전치: 세 단계(열별 개수 -> 시작 위치 -> 옮기기) 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/12.희소 행렬의 전치.md
- * 출처: 자료구조 3주차 슬라이드 p.16~19. 슬라이드에는 세 단계의 설명과 예의 값만 있고
- *       코드는 "program 2.8을 보라"로 넘긴다. 아래 코드는 그 세 단계를 그대로 짠 것이다.
  * 실행: cc -std=c11 -Wall -Wextra 12_sparse-matrix-transpose_impl.c -o transpose && ./transpose
- * 번호: 행·열 번호는 슬라이드처럼 1부터 센다. 목록(data 배열)의 칸 번호는 0부터다.
+ * 번호: 행·열 번호는 행렬 표기대로 1부터 센다. 목록(data 배열)의 칸 번호는 0부터다.
  *       그래서 rowSize와 rowStart는 cols + 1칸을 잡고 1번 칸부터 쓴다.
  *
  * 확인하는 것
- *   1. 슬라이드 p.17~18: 열별 개수 [0, 1, 3, 1, 1], 시작 위치 [0, 0, 1, 4, 5],
+ *   1. 문서 예시의 4 x 5 행렬: 열별 개수 [0, 1, 3, 1, 1], 시작 위치 [0, 0, 1, 4, 5],
  *      결과 (2,4,2) (3,1,3) (3,2,5) (3,4,6) (4,2,7) (5,1,4).
  *   2. 문서의 추적 표: 원소마다 꽂히는 칸 1, 5, 2, 4, 0, 3.
  *   3. 행·열 번호만 바꿔 적으면 행 우선 순서가 깨진다.
- *   4. 카드 C1(p.3의 3 x 6 행렬): 개수 [1, 0, 1, 2, 0, 1], 시작 [0, 1, 1, 2, 4, 4].
+ *   4. 카드 C1(3 x 6 행렬): 개수 [1, 0, 1, 2, 0, 1], 시작 [0, 1, 1, 2, 4, 4].
  *   5. 카드 C3: 원래 목록이 행 순서가 아니면 결과의 한 행 안에서 열 순서가 어긋난다.
  *   6. 경계: 0이 아닌 칸이 없는 행렬, 1 x 1, 한 행짜리, 한 열짜리.
  *   7. 무작위 행렬 1,000개: 빠른 전치 = 2차원 배열을 뒤집어 만든 목록 = 열마다 목록을 훑는 느린 전치.
@@ -209,7 +207,7 @@ static int landed_at(const SparseMatrix *a, const SparseMatrix *b, int i)
 
 int main(void)
 {
-    /* 1. 슬라이드 p.16~18 */
+    /* 1. 문서 예시의 4 x 5 행렬 */
     const int A[4 * 5] = {
         0, 0, 3, 0, 4,
         0, 0, 5, 7, 0,
@@ -219,11 +217,11 @@ int main(void)
     int size[8], start[8];
     sizes_and_starts(&a, size, start);
     const int wantSize[5] = { 0, 1, 3, 1, 1 }, wantStart[5] = { 0, 0, 1, 4, 5 };
-    check(same_ints(size, wantSize, 5), "p.18 1단계 [0, 1, 3, 1, 1]");
-    check(same_ints(start, wantStart, 5), "p.18 2단계 [0, 0, 1, 4, 5]");
+    check(same_ints(size, wantSize, 5), "예시 1단계 [0, 1, 3, 1, 1]");
+    check(same_ints(start, wantStart, 5), "예시 2단계 [0, 0, 1, 4, 5]");
     SparseMatrix b = fast_transpose(&a);
     const int wantB[6][3] = { {2,4,2}, {3,1,3}, {3,2,5}, {3,4,6}, {4,2,7}, {5,1,4} };
-    check(b.rows == 5 && b.cols == 4 && same_list(&b, wantB, 6), "p.17 전치한 목록");
+    check(b.rows == 5 && b.cols == 4 && same_list(&b, wantB, 6), "예시의 전치한 목록");
 
     /* 2. 문서의 추적 표: 꽂히는 칸과, 꽂은 뒤의 시작 위치 */
     const int wantSlot[6] = { 1, 5, 2, 4, 0, 3 };
@@ -257,12 +255,12 @@ int main(void)
     sm_free(&swapped);
 
     SparseMatrix s = slow_transpose(&a);
-    check(same_matrix(&s, &b), "느린 전치 = 빠른 전치 (슬라이드 예)");
+    check(same_matrix(&s, &b), "느린 전치 = 빠른 전치 (문서 예시)");
     SparseMatrix bb = fast_transpose(&b);
     check(same_matrix(&bb, &a), "두 번 전치하면 원래 목록");
     sm_free(&s); sm_free(&bb); sm_free(&b); sm_free(&a);
 
-    /* 4. 카드 C1: 슬라이드 p.3의 3 x 6 행렬 */
+    /* 4. 카드 C1: 3 x 6 행렬 */
     const int P3[3 * 6] = {
         1, 0, 0, 1, 0, 0,
         0, 0, 2, 0, 0, 1,

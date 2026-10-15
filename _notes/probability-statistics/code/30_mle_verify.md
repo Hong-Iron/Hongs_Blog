@@ -29,7 +29,7 @@ permalink: "/studies/probability-statistics/code/30_mle_verify/"
 주장 5: 오해 — 가능도를 θ에 대해 적분하면 1이 아니다(동전 7/10: ∫ p^7(1-p)^3 dp = 1/1320).
 주장 6: 사다리 — 포아송 [2,3,1,4,0] → 2, 지수 [1,3,2,2] → 0.5(2계 도함수 음수), 정규 [4,6,5,9] → 6,
         기하 [1,3,2,4] → 0.4, 균등(0, θ) [0.3, 0.9, 0.5] → 최댓값 0.9(도함수 0이 없음).
-주장 7: 자료와 정보 11회(과목별 관점·카드 C5) — 예 1: 공분산을 아는 2차원 정규분포에서 기울기 합 Σ⁻¹(x_k - μ)가 표본평균에서 0,
+주장 7: 자료와 정보 과목별 관점·카드 C5 — 예 1: 공분산을 아는 2차원 정규분포에서 기울기 합 Σ⁻¹(x_k - μ)가 표본평균에서 0,
         예 2: 1차원 자료 [2,4,4,6] → μ̂ = 4, σ̂² = 2(두 편미분이 0, 격자 탐색과 일치), N - 1로 나누면 8/3,
         주사위 4개 전수로 E[σ̂²] = (N - 1)/N · σ².
 """
@@ -98,7 +98,7 @@ def main():
     Lu = lambda th: th ** -3 if th >= max(xs) else 0.0
     assert abs(argmax(Lu, 0.01, 3, 300000) - 0.9) < 1e-4
     print("[OK] 주장 6: 예제 사다리")
-    # 주장 7: 자료와 정보 11회 슬라이드 13~15
+    # 주장 7: 자료와 정보 과목별 관점(예 1, 예 2, MLE 바이어스)
     from fractions import Fraction as Fr
     from itertools import product
     pts = [(Fr(1), Fr(2)), (Fr(3), Fr(0)), (Fr(2), Fr(4))]
@@ -137,7 +137,7 @@ def main():
     assert (t1, t2) == (4, 2)
     assert sum((x - t1) / t2 for x in xs) == 0                                   # 평균 쪽 편미분의 합
     assert sum(-1 / (2 * t2) + (x - t1) ** 2 / (2 * t2 ** 2) for x in xs) == 0    # 분산 쪽 편미분의 합
-    assert -sum(1 / t2 for x in xs) + sum((x - t1) ** 2 / t2 ** 2 for x in xs) == 0   # 슬라이드 14의 꼴(2배)
+    assert -sum(1 / t2 for x in xs) + sum((x - t1) ** 2 / t2 ** 2 for x in xs) == 0   # 분산 쪽 편미분의 합을 2배 한 꼴
     ll = lambda a, b: sum(-0.5 * math.log(2 * math.pi * b) - (float(x) - a) ** 2 / (2 * b) for x in xs)
     grid = [(ll(a / 100, b / 100), a / 100, b / 100) for a in range(300, 501, 2) for b in range(50, 401, 2)]
     _, ga, gb = max(grid)

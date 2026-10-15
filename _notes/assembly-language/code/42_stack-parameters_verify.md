@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/42_stack-parameters_verify/"
 MASM이 없어 x86 32비트 명령 일부(레지스터, 리틀 엔디언 메모리, PUSH/POP/CALL/RET,
 ENTER/LEAVE, ZF/CF)를 파이썬으로 흉내 낸다. 문서에 실린 코드를 글자 그대로 넣어 돌린다.
 스택은 ESP = 00001000h에서 시작하고, 명령 주소는 가짜 값(00401000h + 4 × 순번)이다.
-슬라이드 wk10-3-3 p.7, p.9, p.12의 스택 내용과 값·참조 전달의 차이를 확인한다."""
+문서에 적은 스택 내용과 값·참조 전달의 차이를 확인한다."""
 import re
 
 M32 = 0xFFFFFFFF
@@ -273,7 +273,7 @@ main PROC
     hlt
 main ENDP
 """
-# 참조로 받은 주소를 따라가 두 변수의 값을 바꾼다 (원본에 없는 보충 예)
+# 참조로 받은 주소를 따라가 두 변수의 값을 바꾼다 (문서의 Swap 예)
 SWAP = """
 main PROC
     push OFFSET val2
@@ -311,7 +311,7 @@ Bump PROC
     ret  4
 Bump ENDP
 """
-# wk10-3-3 p.11~12 ArrayFill의 앞부분. 난수 대신 남은 개수를 적어 넣는다.
+# ArrayFill의 앞부분. 난수 대신 남은 개수를 적어 넣는다.
 ARRAYFILL = """
 main PROC
     push OFFSET array
@@ -343,10 +343,10 @@ def fresh(src):
 
 
 if __name__ == "__main__":
-    # p.7: 값으로 넘기기. 스택에 6, 5가 쌓이고 ESP는 5를 가리킨다
+    # 값으로 넘기기. 스택에 6, 5가 쌓이고 ESP는 5를 가리킨다
     c = fresh(BY_VALUE).run("main")
     assert c.r["esp"] == 0x0FF8 and c.rd(0x0FFC) == 6 and c.rd(0x0FF8) == 5
-    # p.9: 참조로 넘기기. 스택에 00000004, 00000000이 쌓인다
+    # 참조로 넘기기. 스택에 00000004, 00000000이 쌓인다
     c = fresh(BY_REF).run("main")
     assert c.r["esp"] == 0x0FF8 and c.rd(0x0FFC) == 4 and c.rd(0x0FF8) == 0
     # 참조: 프로시저가 원래 변수를 바꾼다
@@ -355,7 +355,7 @@ if __name__ == "__main__":
     # 값: 스택의 사본만 바뀌고 val1은 5 그대로다
     c = fresh(BUMP).run("main")
     assert c.rd(0x0000) == 5 and c.r["eax"] == 105 and c.rd(0x0FFC) == 105
-    # p.12: ArrayFill. [ebp+12] = 배열 주소, [ebp+8] = 개수
+    # ArrayFill. [ebp+12] = 배열 주소, [ebp+8] = 개수
     c = fresh(ARRAYFILL)
     c.r.update(esi=0x1111, ecx=0x2222, ebp=0x1010)
     got = {}
@@ -369,7 +369,7 @@ if __name__ == "__main__":
     assert got == dict(esi=0x0100, ecx=5, ebp=0x0FF0, esp=0x0FF0 - 32)   # pushad가 32바이트
     assert [c.rd(0x0100 + 2 * i, 2) for i in range(5)] == [5, 4, 3, 2, 1]
     assert (c.r["esi"], c.r["ecx"], c.r["esp"], c.r["ebp"]) == (0x1111, 0x2222, 0x1000, 0x1010)
-    # p.5: 레지스터 방식은 명령 5개, 스택 방식은 3개
+    # 레지스터 방식은 명령 5개, 스택 방식은 3개
     assert len("pushad|mov esi|mov ecx|mov ebx|popad".split("|")) == 5
     print("ALL CHECKS PASSED")
 ```

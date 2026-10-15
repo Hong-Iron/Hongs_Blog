@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Time-Division Multiplexing", "TDM", "동기식 시분할 다중화", "synchronous TDM", "타임 슬롯", "time slot", "칸", "프레임", "frame"]
 description: "놀이기구를 정해진 순서대로 한 명씩 돌아가며 타듯, 링크를 쓰는 시간을 짧은 칸으로 잘라 사용자들이 순서대로 돌아가며 쓰게 하는 방법이다. 자기 차례에는 링크 전체를 쓰고, 받는 쪽은 차례만 보고 누구 것인지 안다. 대신 차례가 미리 정해져 있어서, 보낼 것이 없는 사용자의 칸은 …"
@@ -34,14 +34,14 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 
 ## 예시로 보기
 
-슬라이드 그림에서 사용자 4명(파랑·초록·노랑·분홍)이 파랑→초록→노랑→분홍 순서로 돌아가며 링크를 쓴다. 칸마다 세로 막대가 주파수 축 전체를 덮는다. 자기 차례에는 링크 전체를 쓴다는 뜻이다[^2]. 같은 사례를 칸 번호로 옮기면 다음과 같다.
+사용자 4명(파랑·초록·노랑·분홍)이 파랑→초록→노랑→분홍 순서로 돌아가며 링크를 쓴다고 하자. 가로축을 시간, 세로축을 주파수로 그리면 칸마다 세로 막대가 주파수 축 전체를 덮는다. 자기 차례에는 링크 전체를 쓴다는 뜻이다. 같은 사례를 칸 번호로 옮기면 다음과 같다.
 
 | 칸 번호 $$j$$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | … |
 |---|---|---|---|---|---|---|---|---|---|
 | 주인 | 1 | 2 | 3 | 4 | 1 | 2 | 3 | 4 | … |
 | 프레임 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 2 | … |
 
-그림의 색이 입력 번호, 막대의 위치가 칸 번호 $$j$$다. 칸 $$N$$개가 한 바퀴 도는 것을 프레임이라 부른다. 슬라이드의 동기식 시분할 그림(입력 6개)도 같은 구조다: 1 2 3 4 5 6 1 2 3 4 5 6[^1].
+막대의 색이 입력 번호, 막대의 위치가 칸 번호 $$j$$다. 칸 $$N$$개가 한 바퀴 도는 것을 프레임이라 부른다. 입력이 6개여도 구조는 같다: 1 2 3 4 5 6 1 2 3 4 5 6.
 
 ## 정의
 
@@ -59,7 +59,7 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 
 | 보장한다 | 보장하지 않는다 |
 |---|---|
-| 입력마다 전송률 $$R/N$$이 늘 확보된다. 입력끼리 충돌하지 않는다 | 빈 칸의 재사용. 쉬는 입력의 칸은 비어서 지나간다[^3][^4] |
+| 입력마다 전송률 $$R/N$$이 늘 확보된다. 입력끼리 충돌하지 않는다 | 빈 칸의 재사용. 쉬는 입력의 칸은 비어서 지나간다 |
 | 각 입력의 차례가 프레임마다 반드시 한 번 돌아와 지연이 일정하다[^s1] | 입력 수 변경. 칸 수가 미리 정해져 있어 $$N$$개를 넘는 입력은 받을 수 없다[^s1] |
 
 양쪽의 시간이 어긋나면(동기 상실) DEMUX가 모든 칸의 주인을 잘못 읽어 데이터가 엉뚱한 출력으로 간다. 그래서 실제 시스템은 프레임마다 동기를 맞추는 비트를 넣는다[^s1].
@@ -76,14 +76,14 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 - 모든 입력이 늘 보낼 것이 있으면 빈 칸이 없어 낭비가 0이다. 시분할 다중화가 가장 잘 맞는 경우다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 순서(1~6 반복), 예제의 입력 6과 칸 2·8·14, 카드 C2, T1·E1 전송률 — [13_time-division-multiplexing_verify.py](/Hongs_Blog/studies/computer-communication/code/13_time-division-multiplexing_verify/)</div>
+<div class="callout-title" markdown="span">검증: 입력 6개의 칸 순서(1~6 반복), 예제의 입력 6과 칸 2·8·14, 카드 C2, T1·E1 전송률 — [13_time-division-multiplexing_verify.py](/Hongs_Blog/studies/computer-communication/code/13_time-division-multiplexing_verify/)</div>
 
 </div>
 
 
 ## 활용
 
-- 칸 단위로 비트를 끊어 넣고 빼야 해서 디지털 장비가 필요하다[^3].
+- 칸 단위로 비트를 끊어 넣고 빼야 해서 디지털 장비가 필요하다.
 - 디지털 전화망의 T1(칸 24개 × 64 kbps에 프레이밍 비트를 더해 1.544 Mbps)과 E1(칸 32개, 2.048 Mbps), GSM 휴대전화(주파수 하나를 시간 칸 8개로 나눔)가 이 방식이다[^s1].
 - 회선 하나가 칸 하나를 차지하는 식으로 [회선 스위칭](/Hongs_Blog/studies/computer-communication/circuit-switching/)을 구현한다[^s1].
 
@@ -98,7 +98,7 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"시분할 다중화에서도 칸마다 누구 데이터인지 주소를 붙여 보낸다"</div>
 
-틀렸다. 섞인 데이터를 나누려면 이름표가 필요할 것 같아서 그럴듯하다. 실제로는 칸의 순서가 고정되어 있어서 칸 번호만으로 주인이 정해진다. 시간이 곧 DEMUX 키다[^3]. 주소를 붙이는 것은 칸을 고정하지 않는 통계적 다중화다. 슬라이드의 동기식 시분할 그림에는 칸 번호(1~6)만 있고 주소 칸이 없다[^1].
+틀렸다. 섞인 데이터를 나누려면 이름표가 필요할 것 같아서 그럴듯하다. 실제로는 칸의 순서가 고정되어 있어서 칸 번호만으로 주인이 정해진다. 시간이 곧 DEMUX 키다. 주소를 붙이는 것은 칸을 고정하지 않는 통계적 다중화다. 입력 6개짜리 동기식 시분할 다중화의 프레임에는 칸 번호(1~6)만 있고 주소 칸이 없다.
 
 </div>
 
@@ -127,10 +127,6 @@ permalink: "/studies/computer-communication/time-division-multiplexing/"
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "시분할 다중화 (Time Division Multiplexing)", 동기식 시분할 다중화
-[^2]: 수업 슬라이드 캡처 — TDM 그림 (4 users, frequency–time)
-[^3]: 컴퓨터 통신 1회 필기 「1주차」, 62~64행, 72행
-[^4]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화"의 Synchronous TDM 그림 (Wasted Bandwidth)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 지연이 일정하다는 보장, 입력 수 제한, 동기 상실, T1·E1·GSM 사례, 회선 스위칭 구현은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 내용이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 필기 63행은 "FDM보다는 효율적으로 나눌 수 있다"고 쓴다. 보호 대역 기준으로는 맞고, 쉬는 입력의 낭비 기준으로는 둘이 같다.
+[^s1]: Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 내용이다.
+[^s2]: 보호 대역 기준으로는 맞고, 쉬는 입력의 낭비 기준으로는 둘이 같다.
 {% endraw %}

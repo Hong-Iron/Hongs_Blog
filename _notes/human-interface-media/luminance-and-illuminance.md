@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Luminance", "Illuminance", "휘도", "조도", "광도", "luminous intensity", "밝기", "brightness", "intensity", "대비", "contrast"]
 description: "조도는 무대에 쏟아지는 조명의 양이고, 휘도는 그 무대에서 관객 눈으로 되돌아오는 빛의 양이다. 같은 조명 아래서도 흰 종이와 검은 종이는 휘도가 다르다. 눈이 직접 받는 것은 휘도다. 그런데 조명이 바뀌어도 흰 종이는 계속 희게 보인다. 눈이 절대적인 밝기보다 주변과의 비(대비)…"
@@ -41,7 +41,7 @@ permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 
 ## 정의
 
-슬라이드는 빛을 나타내는 파라미터로 파장, 밝기(intensity, brightness), 광도와 조도(luminance vs illuminance), 대비(contrast)를 든다[^1]. 측광에서 쓰는 양을 구별하면 이렇다[^s2].
+빛을 나타내는 파라미터로는 파장, 밝기(intensity, brightness), 휘도와 조도(luminance vs illuminance), 대비(contrast)가 있다. 측광에서 쓰는 양을 구별하면 이렇다[^s2].
 
 | 양 | 기호·단위 | 뜻 |
 |---|---|---|
@@ -49,6 +49,8 @@ permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 | 조도 (illuminance) | $$E$$, lx (럭스) $$=$$ lm/m² | 면에 떨어지는 빛의 양 |
 | 휘도 (luminance) | $$L$$, cd/m² | 면이 한 방향으로, 단위 넓이당 내보내는 빛의 세기. 눈이 받는 양 |
 | 밝기 (brightness) | 단위 없음 | 사람이 느끼는 밝음. 주관적 |
+
+영어 luminance는 휘도다. 이것을 광도로 옮기면 luminous intensity와 헷갈린다. 광도는 광원이 한 방향으로 내는 세기(cd)이고, 휘도는 면이 단위 넓이당 내는 세기(cd/m²)다. 단위부터 다른 양이다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -71,20 +73,13 @@ flowchart LR
   V --> B["느끼는 밝기: 주변과의 대비를 크게 참고"]
 ```
 
-빛 하나가 왼쪽에서 오른쪽으로 가면서 이름이 바뀐다. 거리는 조도를, 반사율은 휘도를 정한다. 눈에 닿는 것은 맨 끝의 휘도뿐이다[^s5].
+빛 하나가 왼쪽에서 오른쪽으로 가면서 이름이 바뀐다. 거리는 조도를, 반사율은 휘도를 정한다. 눈에 닿는 것은 맨 끝의 휘도뿐이다.
 
 두 식을 합치면 대비가 조도와 무관한 이유가 바로 보인다. 흰 종이와 검은 종이의 휘도는 $$\rho_w E/\pi$$와 $$\rho_b E/\pi$$이므로 $$C_M = (\rho_w - \rho_b)/(\rho_w + \rho_b)$$다. $$E$$가 약분되어 사라진다. 예시의 종이는 $$C_M = 0.75/0.85 \approx 0.882$$다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/13_luminance-and-illuminance_fig1.svg" alt="그림" width="593" height="340" loading="lazy">
 
 두 축이 모두 로그 눈금이라 "몇 배"가 같은 길이로 보인다. 두 선이 나란하다는 것이 곧 휘도 비 16배가 조도와 상관없다는 뜻이다[^s4].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "광도와 조도: luminance vs illuminance" (강의 3 p.4, p.19) / 문제점: 측광 용어에서 광도는 luminous intensity(단위 cd)이고, luminance는 휘도(단위 cd/m²)다. 광도는 광원이 한 방향으로 내는 세기, 휘도는 면이 단위 넓이당 내는 세기로 다른 양이다. / 수정안: "휘도와 조도: luminance vs illuminance" / 근거: 국내 교과서와 표준 측광 용어의 번역(광도 cd, 휘도 cd/m², 조도 lx). 영어 쌍 luminance vs illuminance(면에서 나오는 빛 대 면에 떨어지는 빛)는 맞다.
-
-</div>
 
 
 <div class="callout callout-check" markdown="1">
@@ -138,10 +133,8 @@ flowchart LR
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.4 (가시광: 빛의 표현), p.19 (요약)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전구와 종이의 수치(100 cd, 반사율 0.8·0.05, 500 lx)는 설명용 가상 수치다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 측광량의 표와 식(역제곱 법칙, 완전 확산면의 $$L = \rho E/\pi$$, 웨버·마이컬슨 대비)은 측광·영상 공학 교재의 표준 내용이다. 슬라이드는 이름만 든다. 이미지 값이 휘도에 비례한다는 것은 감마 보정 전의 선형 센서 값에 대한 설명이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 밝기 항등성을 주변과의 비로 설명하는 것은 지각 교재의 표준 설명(비율 원리)이지만, 그것만으로 모든 경우를 설명하지는 못한다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [13_luminance-and-illuminance_plot.py](/Hongs_Blog/studies/human-interface-media/code/13_luminance-and-illuminance_plot/)로 그렸고, 그림에 쓴 값(500 lx에서 127.3과 7.96 cd/m², 모든 조도에서 휘도 비 16과 마이컬슨 대비 0.882)을 같은 코드로 확인했다.
-[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의의 측광량 표와 두 식(역제곱 법칙, 완전 확산면의 휘도), 강의 3 p.4의 빛 파라미터 목록을 근거로 그렸다.
+[^s1]: 전구와 종이의 수치(100 cd, 반사율 0.8·0.05, 500 lx)는 설명용 가상 수치다.
+[^s2]: 측광량의 표와 식(역제곱 법칙, 완전 확산면의 $$L = \rho E/\pi$$, 웨버·마이컬슨 대비)은 측광·영상 공학 교재의 표준 내용이다. 이미지 값이 휘도에 비례한다는 것은 감마 보정 전의 선형 센서 값에 대한 설명이다.
+[^s3]: 밝기 항등성을 주변과의 비로 설명하는 것은 지각 교재의 표준 설명(비율 원리)이지만, 그것만으로 모든 경우를 설명하지는 못한다.
+[^s4]: [13_luminance-and-illuminance_plot.py](/Hongs_Blog/studies/human-interface-media/code/13_luminance-and-illuminance_plot/)로 그렸고, 그림에 쓴 값(500 lx에서 127.3과 7.96 cd/m², 모든 조도에서 휘도 비 16과 마이컬슨 대비 0.882)을 같은 코드로 확인했다.
 {% endraw %}

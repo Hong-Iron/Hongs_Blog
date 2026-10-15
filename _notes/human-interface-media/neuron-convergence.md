@@ -33,7 +33,7 @@ permalink: "/studies/human-interface-media/neuron-convergence/"
 
 ## 예시로 보기
 
-수용기 1~7이 한 줄로 있고, 가운데 수용기 4를 중심으로 자극 범위를 넓혀 간다: 4 하나 → 3~5 → 2~6 → 1~7. 세 가지 배선에서 뉴런 B의 발화율을 본다[^1].
+수용기 1~7이 한 줄로 있고, 가운데 수용기 4를 중심으로 자극 범위를 넓혀 간다: 4 하나 → 3~5 → 2~6 → 1~7. 세 가지 배선에서 뉴런 B의 발화율을 본다.
 
 | 배선 | 연결 | 4 | 3~5 | 2~6 | 1~7 |
 |---|---|---|---|---|---|
@@ -56,19 +56,19 @@ flowchart TD
   C -- "회로 2: 흥분, 회로 3: 억제" --> B
 ```
 
-회로 2와 회로 3의 배선은 같다. 다른 곳은 A와 C에서 B로 가는 두 선의 종류뿐이다. 수용기 3~5는 B에 바로, 바깥 넷은 A나 C를 한 번 거쳐 B에 닿는다[^s6].
+회로 2와 회로 3의 배선은 같다. 다른 곳은 A와 C에서 B로 가는 두 선의 종류뿐이다. 수용기 3~5는 B에 바로, 바깥 넷은 A나 C를 한 번 거쳐 B에 닿는다.
 
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-**수렴**은 여러 뉴런(또는 수용기)이 한 뉴런에 시냅스로 연결되는 구조다[^2]. 받는 뉴런은 들어온 신호를 흥분성은 더하고 억제성은 빼서 합친다.
+**수렴**은 여러 뉴런(또는 수용기)이 한 뉴런에 시냅스로 연결되는 구조다. 받는 뉴런은 들어온 신호를 흥분성은 더하고 억제성은 빼서 합친다.
 
 </div>
 
 
-[뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/)으로 쓰면 세 회로는 가중치 벡터만 다르다. 자극받은 수용기는 $$x_i = 1$$, 아니면 0이다[^s1].
+[뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/)으로 쓰면 세 회로는 가중치 벡터만 다르다. 자극받은 수용기는 $$x_i = 1$$, 아니면 0이다.
 
 $$
 B = a(\mathbf{w}\cdot\mathbf{x}), \qquad a(o) = \max(0, o)
@@ -151,12 +151,8 @@ $$
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 2회 강의 자료 「HIM_강의02_사람의지각」, p.12 (그래프는 p.13~14에 모델링용으로 다시 나온다)
-[^2]: 휴먼 인터페이스 미디어 2회 강의 자료 「HIM_강의02_사람의지각」, p.16 (요약: "뉴런, 뉴런의 수렴구조")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 가중치 벡터 표현은 슬라이드 p.13~14(Neuron Convergence (modeling))의 빈 오른쪽을 연산 모형으로 채운 것이다. 강의에서 교수님이 쓴 모형과 표기가 다를 수 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 약한 자극 0.3과 문턱 1은 설명용 가상 수치다. 민감도와 해상도의 거래는 표준 지각 교재(예: Goldstein, *Sensation and Perception*)의 설명이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 필터·신호 대 잡음비·풀링과의 대응은 원본 밖의 연결이다. $$1/\sqrt{N}$$은 독립이고 분산이 같은 잡음의 평균에 대한 표준 결과(분산이 $$1/N$$로 줄어듦)다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 강의 2 p.12를 확대해 눈금(1과 2 사이 간격)으로 잰 값은 약 0.41이다. 0이 아닌 까닭을 자발 발화로 설명한 것은 해석이다. 그래프 자체가 개략도라 정확한 값에는 의미를 두지 않는다.
-[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [09_neuron-convergence_plot.py](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_plot/)로 그렸고, 그림에 쓴 값(신호 1에 표준편차 1인 독립 잡음, 20,000회, 폭의 비 2.65(이론값 $$\sqrt{7} \approx 2.65$$))을 같은 코드로 확인했다.
-[^s6]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시 표의 회로 2·3 연결과 강의 2 p.12의 회로 그림을 근거로 그렸다.
+[^s2]: 약한 자극 0.3과 문턱 1은 설명용 가상 수치다. 민감도와 해상도의 거래는 표준 지각 교재(예: Goldstein, *Sensation and Perception*)의 설명이다.
+[^s3]: $$1/\sqrt{N}$$은 독립이고 분산이 같은 잡음의 평균에 대한 표준 결과(분산이 $$1/N$$로 줄어듦)다.
+[^s4]: 0이 아닌 까닭을 자발 발화로 설명한 것은 해석이다. 그래프 자체가 개략도라 정확한 값에는 의미를 두지 않는다.
+[^s5]: [09_neuron-convergence_plot.py](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_plot/)로 그렸고, 그림에 쓴 값(신호 1에 표준편차 1인 독립 잡음, 20,000회, 폭의 비 2.65(이론값 $$\sqrt{7} \approx 2.65$$))을 같은 코드로 확인했다.
 {% endraw %}

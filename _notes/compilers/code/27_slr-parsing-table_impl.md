@@ -20,14 +20,14 @@ permalink: "/studies/compilers/code/27_slr-parsing-table_impl/"
 [SLR 파싱 표](/Hongs_Blog/studies/compilers/slr-parsing-table/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 구현과 검증: SLR 파싱 표 만들기 (L08 p.6~11). 슬라이드의 ACTION·GOTO 표를 그대로 다시 만든다.
+# 구현과 검증: SLR 파싱 표 만들기. 문서의 ACTION·GOTO 표를 그대로 다시 만든다.
 # 실행: python3 27_slr-parsing-table_impl.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 문서처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,10 +228,10 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# 항목 오토마타·SLR 문서의 문법: E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 이동-환원·핸들·유효 접두사 문서의 문법: E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
@@ -250,14 +250,14 @@ def table_rows(prods, order, states, action, gototab):
 
 if __name__ == "__main__":
     states, trans, action, gototab = slr_table(G2, G2_ORDER)
-    # 슬라이드의 열 순서: * ( ) id $ | E T  (L08 p.8~11)
+    # 문서 표의 열 순서: * ( ) id $ | E T
     cols = ["*", "(", ")", "id", "$"]
     got = {i: [next(iter(action[(i, a)])) if (i, a) in action else "" for a in cols]
               + [str(gototab.get((i, A), "")) for A in ("E", "T")] for i in range(1, 10)}
     slide = {
         1: ["", "S4", "", "S5", "", "2", "3"],
-        2: ["", "", "", "", "R0", "", ""],          # 슬라이드의 R(1): S' -> E 로 환원 = 받아들임
-        3: ["S6", "", "R2", "", "R2", "", ""],      # 슬라이드의 R(3): E -> T
+        2: ["", "", "", "", "R0", "", ""],          # 문서의 R(1): S' -> E 로 환원 = 받아들임
+        3: ["S6", "", "R2", "", "R2", "", ""],      # 문서의 R(3): E -> T
         4: ["", "S4", "", "S5", "", "7", "3"],
         5: ["R4", "", "R4", "", "R4", "", ""],      # R(5): T -> id
         6: ["", "S4", "", "S5", "", "8", "3"],
@@ -267,15 +267,15 @@ if __name__ == "__main__":
     }
     assert got == slide, got
     assert conflicts(action) == []
-    # 코드의 규칙 번호는 0부터, 슬라이드는 1부터다. 코드의 Rk = 슬라이드의 R(k+1)
+    # 코드의 규칙 번호는 0부터, 문서는 1부터다. 코드의 Rk = 문서의 R(k+1)
     shifts = sum(1 for v in action.values() for a in v if a[0] == "S")
     reduces = sum(1 for v in action.values() for a in v if a[0] == "R")
     assert (shifts, reduces, len(gototab)) == (8, 11, 6)
     assert 9 * 5 - shifts - reduces == 26            # 빈칸(오류) 26칸
 
-    # 1단계(GOTO)만: L08 p.8
+    # 1단계(GOTO)만
     assert gototab == {(1, "E"): 2, (1, "T"): 3, (4, "E"): 7, (4, "T"): 3, (6, "E"): 8, (6, "T"): 3}
-    # 2단계 1) 이동만: L08 p.9
+    # 2단계 1) 이동만
     sh = {k: next(iter(v)) for k, v in action.items() if next(iter(v))[0] == "S"}
     assert sh == {(1, "("): "S4", (1, "id"): "S5", (3, "*"): "S6", (4, "("): "S4", (4, "id"): "S5",
                   (6, "("): "S4", (6, "id"): "S5", (7, ")"): "S9"}
@@ -285,7 +285,7 @@ if __name__ == "__main__":
     # FOLLOW를 안 쓰면(LR(0)) 3번 줄의 * 칸에 이동과 환원이 겹친다
     _, _, a0, _ = slr_table(G2, G2_ORDER, use_follow=False)
     assert conflicts(a0) == [((3, "*"), ["R2", "S6"])]
-    print("SLR 표: 이동 8칸, 환원 11칸, GOTO 6칸, 빈칸 26칸. 슬라이드 표와 일치")
+    print("SLR 표: 이동 8칸, 환원 11칸, GOTO 6칸, 빈칸 26칸. 문서 표와 일치")
     print("ALL CHECKS PASSED")
 ```
 {% endraw %}

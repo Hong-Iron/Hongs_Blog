@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["User-Defined Exception", "Custom Exception", "커스텀 예외", "InsufficientException"]
 description: "자바가 미리 만들어 둔 사고 종류에는 \"잔액이 모자란다\" 같은 내 프로그램만의 사고가 없다. 그럴 때 사고 종류를 직접 하나 만든다. 이름만 봐도 무슨 사고인지 알 수 있고, 받는 쪽에서 그 사고만 골라 처리할 수 있다. 만들 때 어느 부모 밑에 둘지를 골라야 한다. 그 선택에 따…"
@@ -34,7 +34,7 @@ permalink: "/studies/java/java-custom-exception/"
 
 ## 예시로 보기
 
-계좌에서 잔액보다 많은 돈을 찾으려 하면 막아야 한다. `withdraw`가 아무것도 안 하고 조용히 끝나면 부른 쪽은 돈이 나간 줄 안다. `false`를 돌려주게 해도 부른 쪽이 그 값을 안 보면 그만이다. 예외를 일으키면 부른 쪽이 모르고 지나갈 수 없다. 표준 라이브러리에는 "잔액 부족" 예외가 없으니 직접 만든다[^1].
+계좌에서 잔액보다 많은 돈을 찾으려 하면 막아야 한다. `withdraw`가 아무것도 안 하고 조용히 끝나면 부른 쪽은 돈이 나간 줄 안다. `false`를 돌려주게 해도 부른 쪽이 그 값을 안 보면 그만이다. 예외를 일으키면 부른 쪽이 모르고 지나갈 수 없다. 표준 라이브러리에는 "잔액 부족" 예외가 없으니 직접 만든다.
 
 ```java
 public class InsufficientException extends Exception {
@@ -68,7 +68,7 @@ public class Account {
 }
 ```
 
-`withdraw`는 잔액이 모자라면 `throw`로 예외를 일으키고, 선언에 `throws InsufficientException`을 붙여 부른 쪽에 넘긴다[^2]. 10000원을 넣고 돈을 찾아 본다[^3].
+`withdraw`는 잔액이 모자라면 `throw`로 예외를 일으키고, 선언에 `throws InsufficientException`을 붙여 부른 쪽에 넘긴다. 10000원을 넣고 돈을 찾아 본다.
 
 ```java
 Account account = new Account();
@@ -90,7 +90,7 @@ try {
 
 | `withdraw`에 준 돈 | 찍히는 줄 |
 |---|---|
-| 5000 (슬라이드 그대로) | `Deposit: 10000` → `Deposit: 5000` |
+| 5000 (위 코드 그대로) | `Deposit: 10000` → `Deposit: 5000` |
 | 30000 | `Deposit: 10000` → `Insufficient balance: need more 20000 won.` → `Deposit: 10000` |
 | 10000 (잔액과 같다) | `Deposit: 10000` → `Deposit: 0` |
 | 10001 (1원 모자란다) | `Deposit: 10000` → `Insufficient balance: need more 1 won.` → `Deposit: 10000` |
@@ -105,7 +105,7 @@ try {
 
 ## 정의
 
-**사용자 정의 예외**는 표준 라이브러리에 없어서 직접 선언하는 예외 클래스다. 일반 예외로 만들려면 `Exception`의 자식으로, 실행 예외로 만들려면 `RuntimeException`의 자식으로 선언한다[^1].
+**사용자 정의 예외**는 표준 라이브러리에 없어서 직접 선언하는 예외 클래스다. 일반 예외로 만들려면 `Exception`의 자식으로, 실행 예외로 만들려면 `RuntimeException`의 자식으로 선언한다.
 
 ```java
 public class XXXException extends Exception {        // 또는 extends RuntimeException
@@ -117,9 +117,9 @@ public class XXXException extends Exception {        // 또는 extends RuntimeEx
 }
 ```
 
-생성자는 보통 둘을 둔다. 인자 없는 기본 생성자와, 사고 설명 글을 받는 생성자다. 글을 받는 생성자는 [super(message)](/Hongs_Blog/studies/java/java-super-constructor/)로 그 글을 부모에게 넘긴다. 부모(`Exception`)가 글을 보관하고 있다가 `getMessage()`를 부르면 돌려준다[^1].
+생성자는 보통 둘을 둔다. 인자 없는 기본 생성자와, 사고 설명 글을 받는 생성자다. 글을 받는 생성자는 [super(message)](/Hongs_Blog/studies/java/java-super-constructor/)로 그 글을 부모에게 넘긴다. 부모(`Exception`)가 글을 보관하고 있다가 `getMessage()`를 부르면 돌려준다.
 
-일으킬 때는 `throw` 뒤에 객체를 만들어 준다. 사고 원인을 알리는 글은 생성자 인자로 넣는다[^4].
+일으킬 때는 `throw` 뒤에 객체를 만들어 준다. 사고 원인을 알리는 글은 생성자 인자로 넣는다.
 
 ```java
 throw new InsufficientException();
@@ -139,7 +139,7 @@ throw new InsufficientException("예외메시지");
 
 ## 활용
 
-- 예외 클래스 이름은 `Exception`으로 끝낸다. 슬라이드의 틀이 `XXXException`이고, 표준 예외도 모두 그렇다[^1].
+- 예외 클래스 이름은 `Exception`으로 끝낸다. 위의 틀 `XXXException`도, 표준 예외도 모두 그렇게 짓는다.
 - 메시지에는 수습에 필요한 숫자를 넣는다. 위 예는 "모자란다"만이 아니라 얼마가 모자라는지(`money - balance`)를 넣었다.
 - 사고 검사는 상태를 바꾸기 전에 한다. `withdraw`는 `balance -= money`보다 `throw`가 먼저라서, 예외가 난 뒤에도 잔액이 망가지지 않는다.
 - 사용자 정의 예외도 `Exception`의 자손이라 `catch (Exception e)`에 걸린다. 따로 처리하려면 그 앞에 `catch (InsufficientException e)`를 둔다([try-catch-finally](/Hongs_Blog/studies/java/java-try-catch/)의 순서 규칙).
@@ -173,15 +173,11 @@ throw new InsufficientException("예외메시지");
 <summary class="callout-title" markdown="span">**C3** `InsufficientException`의 부모를 `Exception`에서 `RuntimeException`으로 바꾸면 `Account`를 쓰는 사람에게 무엇이 달라지는가? 어느 쪽이 "잔액 부족"에 어울리는가?</summary>
 
 **답:** `withdraw`를 `try-catch` 없이 불러도 번역된다. 대신 대비를 깜빡한 채 잔액이 모자라면 프로그램이 실행 중에 끝난다. 잔액 부족은 정상으로 쓰다가도 흔히 만나는 일이고 부른 쪽이 수습할 수 있으므로(다시 입력받기 등), 대비를 강제하는 일반 예외가 어울린다.<br>
-**이유:** 일반 예외는 번역기가 처리 코드를 검사하고, 실행 예외는 검사하지 않는다. 슬라이드도 `extends Exception`으로 만들었다.
+**이유:** 일반 예외는 번역기가 처리 코드를 검사하고, 실행 예외는 검사하지 않는다. 본문의 `InsufficientException`도 `extends Exception`으로 만들었다.
 
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 15회 강의 자료 「Software Project 15. Exception handling」, p.18 (사용자 정의 예외의 뜻, 부모 고르기, 생성자 두 개의 틀), p.20 (InsufficientException.java)
-[^2]: 같은 자료, p.21 (Account.java)
-[^3]: 같은 자료, p.22 (AccountExample.java)
-[^4]: 같은 자료, p.19 (throw로 예외 객체 주기, 메시지는 생성자 인자로)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실행 결과는 원본에 없다. 원본 p.22는 5000원을 찾아 예외가 나지 않는 경우만 싣는다. 30000원, 10000원, 10001원의 경우와 `getMessage()`가 `null`인 경우는 검증 코드로 확인했다. 예시로 보기 첫 문단의 "조용히 끝나거나 `false`를 돌려주는 방법"과의 비교도 원본에 없다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부모에 따른 차이 표, 번역 오류 문구, 활용의 항목들, 카드 세 장은 원본에 없다. 번역 오류는 JDK 21 javac로, 실행 예외로 만든 판(`NegativeAmountException`)은 검증 코드로 확인했다.
+[^s1]: 30000원, 10000원, 10001원의 경우와 `getMessage()`가 `null`인 경우는 검증 코드로 확인했다.
+[^s2]: 번역 오류는 JDK 21 javac로, 실행 예외로 만든 판(`NegativeAmountException`)은 검증 코드로 확인했다.
 {% endraw %}

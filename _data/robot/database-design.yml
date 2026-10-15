@@ -13,7 +13,7 @@ questions:
   link: /studies/database-design/sql-exists/
   link_label: "EXISTS와 NOT EXISTS"
 - q: "답은 믿어도 돼요?"
-  a: "질의를 SQLite에서 돌리고, SQLite가 못 받는 문장은 PostgreSQL에서 돌렸어요. 두 제품이 다르게 도는 곳과 슬라이드 질의가 그대로는 안 도는 곳도 적어 뒀어요."
+  a: "질의를 SQLite에서 돌리고, SQLite가 못 받는 문장은 PostgreSQL에서 돌렸어요. 두 제품이 다르게 도는 곳도 적어 뒀어요."
   link: /studies/database-design/
   link_label: 로드맵
 - q: "제일 중요한 건 뭐예요?"

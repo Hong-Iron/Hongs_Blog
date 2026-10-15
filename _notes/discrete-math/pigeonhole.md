@@ -131,6 +131,6 @@ $$n = 3$$에서 1, 3, 4, 6의 네 수를 고른 경우다. 칸이 셋뿐이라 �
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(비둘기집 원리). Rosen, *Discrete Mathematics and Its Applications* 7판, 6장 "Counting"(일반화된 비둘기집 원리).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [20_pigeonhole_plot.py](/Hongs_Blog/studies/discrete-math/code/20_pigeonhole_plot/)로 그렸고, 22명에서 0.5 미만, 23명에서 0.5073, 57명에서 0.99 초과를 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제'의 이웃한 두 수 논증을 $$n = 3$$의 한 경우로 그렸다.
+[^s1]: [20_pigeonhole_plot.py](/Hongs_Blog/studies/discrete-math/code/20_pigeonhole_plot/)로 그렸고, 22명에서 0.5 미만, 23명에서 0.5073, 57명에서 0.99 초과를 같은 코드로 확인했다.
+[^s2]: '예제'의 이웃한 두 수 논증을 $$n = 3$$의 한 경우로 그렸다.
 {% endraw %}

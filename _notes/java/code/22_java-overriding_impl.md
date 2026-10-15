@@ -25,7 +25,7 @@ permalink: "/studies/java/code/22_java-overriding_impl/"
 // 문서 「메서드 오버라이딩」의 예제 출력과 카드 답을 실제 실행 결과와 비교한다.
 
 class OverridingCheck {
-    // 슬라이드 p.7의 Parent / Child
+    // 문서의 Parent / Child
     static void trace() {
         Child child = new Child();
         child.method1();
@@ -41,7 +41,7 @@ class OverridingCheck {
         q.method2();
     }
 
-    // 슬라이드 p.9: super.method()로 가려진 부모 메서드를 부른다
+    // super.method()로 가려진 부모 메서드를 부른다
     static void superCall() {
         new Worker().method();
     }
@@ -101,7 +101,7 @@ class Base {
 
 class Worker extends Base {
     @Override
-    public void method() {      // 슬라이드에는 public이 빠져 있어 컴파일되지 않는다
+    public void method() {      // public을 빼면 접근 범위가 좁아져 컴파일되지 않는다
         super.method();
         System.out.println("작업 처리2");
     }

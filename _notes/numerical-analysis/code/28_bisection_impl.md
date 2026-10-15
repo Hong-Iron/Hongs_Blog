@@ -55,7 +55,7 @@ def incremental_search(f, a, b, dx):
 
 
 def main():
-    # 슬라이드 p.11: 낙하산 항력 계수 c
+    # 문서의 예: 낙하산 항력 계수 c
     f = lambda c: 9.8 * 68.1 / c * (1 - math.exp(-(c / 68.1) * 10)) - 40
     true = 14.780203831661058                      # 다른 방법(이분법 100번)으로 구한 참값
     rows = bisection(f, 12, 16, max_iter=6)

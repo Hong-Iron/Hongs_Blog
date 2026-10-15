@@ -23,7 +23,7 @@ permalink: "/studies/data-and-information/edit-distance-ladder/"
 {% raw %}
 사용 개념: [편집 거리](/Hongs_Blog/studies/data-and-information/edit-distance/)의 점화식, 표 채우기, 되짚기, 편집 유사도.
 
-편집 거리 문제는 같은 하위목표의 되풀이다. ① 가장자리: 맨 윗줄과 맨 왼쪽 줄을 0, 1, 2, …로 채운다 ② 안쪽 채우기: 칸마다 위 + 지우기값, 왼쪽 + 넣기값, 대각 + (글자가 같으면 0, 다르면 바꾸기값) 중 가장 작은 값을 적는다 ③ 답 읽기: 오른쪽 아래 끝 칸 ④ 되짚기: 끝 칸에서 거꾸로 따라가 손질을 읽는다(대각은 그대로 또는 바꾸기, 위는 지우기, 왼쪽은 넣기) ⑤ 유사도: 긴 쪽 길이로 나눠 1에서 뺀다[^s1].
+편집 거리 문제는 같은 하위목표의 되풀이다. ① 가장자리: 맨 윗줄과 맨 왼쪽 줄을 0, 1, 2, …로 채운다 ② 안쪽 채우기: 칸마다 위 + 지우기값, 왼쪽 + 넣기값, 대각 + (글자가 같으면 0, 다르면 바꾸기값) 중 가장 작은 값을 적는다 ③ 답 읽기: 오른쪽 아래 끝 칸 ④ 되짚기: 끝 칸에서 거꾸로 따라가 손질을 읽는다(대각은 그대로 또는 바꾸기, 위는 지우기, 왼쪽은 넣기) ⑤ 유사도: 긴 쪽 길이로 나눠 1에서 뺀다.
 
 세로가 고칠 낱말, 가로가 목표 낱말이다. 따로 말이 없으면 세 손질의 값은 모두 1이다.
 
@@ -138,7 +138,4 @@ permalink: "/studies/data-and-information/edit-distance-ladder/"
 <div class="callout-title" markdown="span">검증 — [11_edit-distance_impl.py](/Hongs_Blog/studies/data-and-information/code/11_edit-distance_impl/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드(강의04-2) p.14~17의 표 채우기, 되짚기, 편집 유사도를 연습하도록 만들었고, 답은 구현 코드로 확인했다.
 {% endraw %}

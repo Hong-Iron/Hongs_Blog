@@ -84,7 +84,7 @@ def main():
 
     assert 4 + 9 + 2 * 0.5 * 2 * 3 == 19 and 4 + 9 - 2 * 0.5 * 2 * 3 == 7
     print("[OK] 주장 5·카드 C3")
-    # 데이터 과학 2회 슬라이드 17·18: AllElectronics와 HighTech 주가 (n으로 나눈 공분산)
+    # 데이터 과학 관점: AllElectronics와 HighTech 주가 (n으로 나눈 공분산)
     A = [6, 5, 4, 3, 2]; B = [20, 10, 14, 5, 5]
     n = len(A); ma = sum(A) / n; mb = sum(B) / n
     cov = sum((a - ma) * (b - mb) for a, b in zip(A, B)) / n

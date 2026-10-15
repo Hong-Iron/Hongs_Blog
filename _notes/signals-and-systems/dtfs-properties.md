@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 
 ## 예시로 보기
 
-예제 3.13의 수열(주기 5)은 한 주기가 $$\dots, 1, 2, 2, 2, 1, \dots$$처럼 생겼다[^1]. 직접 적분(합)하지 않고 두 조각으로 나눈다.
+예제 3.13의 수열(주기 5)은 한 주기가 $$\dots, 1, 2, 2, 2, 1, \dots$$처럼 생겼다. 직접 적분(합)하지 않고 두 조각으로 나눈다.
 
 - $$x_1[n]$$: $$\vert n\vert  \le 1$$에서 1인 구형파($$N_1 = 1$$, $$N = 5$$). 예제 3.12에서 $$b_k = \frac15\frac{\sin(3\pi k/5)}{\sin(\pi k/5)}$$, $$b_0 = \frac35$$.
 - $$x_2[n] = 1$$: 직류뿐이라 $$c_0 = 1$$, 나머지 $$c_k = 0$$.
@@ -42,7 +42,7 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 
 ## 정의
 
-주기 $$N$$, $$\omega_0 = \frac{2\pi}{N}$$, $$x[n] \leftrightarrow a_k$$, $$y[n] \leftrightarrow b_k$$ (둘 다 주기 $$N$$)[^2].
+주기 $$N$$, $$\omega_0 = \frac{2\pi}{N}$$, $$x[n] \leftrightarrow a_k$$, $$y[n] \leftrightarrow b_k$$ (둘 다 주기 $$N$$).
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">표 3.2 (주요 성질)</div>
@@ -66,24 +66,24 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 </div>
 
 
-[^2]
 
-**첫 번째 차.** 수열이 바로 앞 칸과 얼마나 다른지를 나타낸다. 시간 이동($$x[n-1] \to e^{-jk\omega_0}a_k$$)과 선형성만 쓰면 바로 나온다. 원래 수열보다 첫 번째 차의 계수가 구하기 쉬울 때 쓴다[^3].
 
-**곱셈과 주기 컨벌루션.** 곱셈 증명에서 $$m = k + l$$로 바꾼 뒤, $$b_{m-k}$$와 $$e^{j\omega_0mn}$$이 모두 주기 $$N$$이라 합 범위를 $$0 \dots N-1$$로 되돌릴 수 있다. 그래서 계수의 컨벌루션도 $$N$$칸 범위에서만 한다[^4].
+**첫 번째 차.** 수열이 바로 앞 칸과 얼마나 다른지를 나타낸다. 시간 이동($$x[n-1] \to e^{-jk\omega_0}a_k$$)과 선형성만 쓰면 바로 나온다. 원래 수열보다 첫 번째 차의 계수가 구하기 쉬울 때 쓴다.
 
-**파스발 관계.** 한 주기의 평균 전력 = 모든 고조파 성분의 평균 전력 $$\vert a_k\vert ^2$$의 합. 합도 $$N$$개뿐이다[^3].
+**곱셈과 주기 컨벌루션.** 곱셈 증명에서 $$m = k + l$$로 바꾼 뒤, $$b_{m-k}$$와 $$e^{j\omega_0mn}$$이 모두 주기 $$N$$이라 합 범위를 $$0 \dots N-1$$로 되돌릴 수 있다. 그래서 계수의 컨벌루션도 $$N$$칸 범위에서만 한다.
+
+**파스발 관계.** 한 주기의 평균 전력 = 모든 고조파 성분의 평균 전력 $$\vert a_k\vert ^2$$의 합. 합도 $$N$$개뿐이다.
 
 ## 예제
 
-**예제 3.14 조건으로 수열 찾기**[^5]. 주기 6, $$\sum_{n=0}^{5}x[n] = 2$$, $$\sum_{n=2}^{7}(-1)^nx[n] = 1$$, 이 조건을 만족하는 수열 중 한 주기 평균 전력이 가장 작은 것.
+**예제 3.14 조건으로 수열 찾기**. 주기 6, $$\sum_{n=0}^{5}x[n] = 2$$, $$\sum_{n=2}^{7}(-1)^nx[n] = 1$$, 이 조건을 만족하는 수열 중 한 주기 평균 전력이 가장 작은 것.
 
 1. *조건 2:* $$a_0 = \frac16\sum x[n] = \frac13$$.
 2. *조건 3:* $$(-1)^n = e^{-j\pi n} = e^{-j(2\pi/6)3n}$$이므로 $$\frac16\sum(-1)^nx[n] = a_3 = \frac16$$.
 3. *파스발:* 평균 전력은 $$\sum_{k=0}^{5}\vert a_k\vert ^2$$. 0이 아닌 계수가 있으면 늘어나므로 정해지지 않은 $$a_1, a_2, a_4, a_5$$를 0으로 둔다.
 4. *답:* $$x[n] = \frac13 + \frac16(-1)^n$$. $$x[0] = \frac12$$, $$x[1] = \frac16$$, $$x[2] = \frac12$$, … (그림 3.20)
 
-**예제 3.15 주기 컨벌루션**[^6]. $$x[n]$$은 $$N_1 = 1$$, $$N = 7$$인 구형파, $$w[n] = \sum_{r=\langle 7\rangle}x[r]x[n-r]$$.
+**예제 3.15 주기 컨벌루션**. $$x[n]$$은 $$N_1 = 1$$, $$N = 7$$인 구형파, $$w[n] = \sum_{r=\langle 7\rangle}x[r]x[n-r]$$.
 
 - *계수:* 주기 컨벌루션 성질로 $$c_k = 7d_k^2$$, $$d_k$$는 구형파의 계수 $$\frac17\frac{\sin(3\pi k/7)}{\sin(\pi k/7)}$$. 그래서 $$c_k = \dfrac{\sin^2(3\pi k/7)}{7\sin^2(\pi k/7)}$$.
 - *수열 자체:* 한 주기만 남긴 $$\hat x[r]$$($$-1 \le r \le 1$$에서 1)과 $$x$$의 보통 컨벌루션과 같다. $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$인 삼각형이 7마다 반복된다(그림 3.21). 사각형끼리 컨벌루션하면 삼각형이 되는 연속 시간 결과와 같다.
@@ -134,12 +134,6 @@ permalink: "/studies/signals-and-systems/dtfs-properties/"
 </details>
 
 
-[^1]: 신호 및 시스템 10회 강의 자료 「Week10_CH03_3_handout」, p.25~26 (예제 3.13, 그림 3.19)
-[^2]: 같은 자료, p.22 (표 3.2)
-[^3]: 같은 자료, p.24
-[^4]: 같은 자료, p.23~24
-[^5]: 같은 자료, p.27~28 (예제 3.14, 그림 3.20)
-[^6]: 같은 자료, p.29~31 (예제 3.15, 그림 3.21)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 신호 복원·원형 컨벌루션 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [34_dtfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$과 $$c_k = 7d_k^2$$.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [34_dtfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/34_dtfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$w[0] = 3$$, $$w[\pm1] = 2$$, $$w[\pm2] = 1$$, $$w[\pm3] = 0$$과 $$c_k = 7d_k^2$$.
 {% endraw %}

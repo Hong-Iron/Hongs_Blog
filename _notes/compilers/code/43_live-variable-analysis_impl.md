@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/43_live-variable-analysis_impl/"
 ```python
 # 43_live-variable-analysis_impl.py
 # 기본 블록 하나에서 생존 변수 분석을 하고, 그 집합으로 죽은 코드를 지운다.
-# 슬라이드 L12 p.33의 표, p.34~36의 한 줄 예, p.38~41의 추적을 그대로 다시 만들고,
+# 문서의 세 줄 표, 한 줄 예 둘, 다섯 줄 추적을 그대로 다시 만들고,
 # 지우기 전후 코드가 블록 끝에서 살아 있는 변수에 같은 값을 남기는지 무작위 블록 3,000개로 견준다.
 # 표준 라이브러리만 쓴다.
 # 실행: python3 43_live-variable-analysis_impl.py
@@ -157,7 +157,7 @@ def show(q):
 def available(qs, rewrite=True, naive=False):
     """기본 블록을 위에서 아래로 훑으며 사용 가능한 식 집합을 만든다.
     rewrite=True면 복사 전파와 공통 부분식 제거를 함께 한다.
-    naive=True면 슬라이드 규칙 그대로, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
+    naive=True면 "새 식은 늘 넣는다"를 글자 그대로 따라, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
     (새 코드, 각 문장 뒤의 집합 목록)을 돌려준다. 집합은 넣은 순서를 지키는 리스트다."""
     avail, out, sets = [], [], []
     for op, a1, a2, res in qs:
@@ -233,7 +233,7 @@ def random_env(rng):
 
 
 if __name__ == "__main__":
-    # p.33: 분석만. 블록 뒤에서 b, d가 쓰인다
+    # 세 줄 표: 분석만. 블록 뒤에서 b, d가 쓰인다
     P33 = quads("a = b\nc = a + b\nd = a")
     _, sets = live(P33, {"b", "d"}, remove=False)
     assert sets == [{"b"}, {"a", "b"}, {"a", "b"}]
@@ -241,16 +241,16 @@ if __name__ == "__main__":
     out, _ = live(P33, {"b", "d"})
     assert [show(q) for q in out] == ["a = b", "d = a"]
 
-    # p.34~36: 한 줄에서 '왼쪽을 빼고 오른쪽을 넣는다'
+    # 한 줄 예 둘: '왼쪽을 빼고 오른쪽을 넣는다'
     assert live(quads("d = a + c"), {"b", "d"}, remove=False)[1] == [{"a", "b", "c"}]
     assert live(quads("a = a + c"), {"b", "d"}, remove=False)[1] == [{"a", "b", "c", "d"}]
     # 순서를 거꾸로(넣고 나서 빼기) 하면 a가 빠져 틀린다
     assert (({"b", "d"} | {"a", "c"}) - {"a"}) == {"b", "c", "d"}
 
-    # p.37: t1 = a * a 뒤가 {a}면 지운다
+    # t1 = a * a 뒤가 {a}면 지운다
     assert live(quads("t1 = a * a"), {"a"})[0] == []
 
-    # p.38~41: 다섯 줄 추적
+    # 다섯 줄 추적
     P38 = quads("t0 = a * a\nt1 = t0\nt2 = t0 + t0\nt0 = t2\nt3 = t2 + 1")
     out, sets = live(P38, {"t3"})
     assert [show(q) for q in out] == ["t0 = a * a", "t2 = t0 + t0", "t3 = t2 + 1"]

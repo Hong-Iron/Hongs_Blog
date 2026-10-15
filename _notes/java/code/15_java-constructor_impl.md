@@ -27,7 +27,7 @@ permalink: "/studies/java/code/15_java-constructor_impl/"
 import java.util.Arrays;
 
 class ConstructorCheck {
-    // 슬라이드 p.15의 생성자 세 개. 넘긴 값의 개수와 타입으로 생성자가 골라진다
+    // 문서의 생성자 세 개. 넘긴 값의 개수와 타입으로 생성자가 골라진다
     static void overloading() {
         int[] grades = {90, 85, 88};
         Student s1 = new Student();

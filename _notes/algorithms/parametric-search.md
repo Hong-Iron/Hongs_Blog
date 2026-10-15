@@ -248,6 +248,6 @@ flowchart TD
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search"의 Finding the smallest solution: ok(x)가 x < k에서 거짓, x ≥ k에서 참이면 k를 이분 탐색으로 찾고, ok를 O(log z)번 부른다. 불변식 증명의 형식은 Cormen 외, *Introduction to Algorithms* 3판 2.1절을 따랐다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [21_parametric-search_plot.py](/Hongs_Blog/studies/algorithms/code/21_parametric-search_plot/)로 그렸고, 토막 수(L = 1 ~ 6에서 24, 11, 6, 5, 4, 2), 토막 수가 L에 따라 늘지 않는다는 것, max_true 틀이 6, 3, 4, 5를 묻고 4를 돌려준다는 것을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '적용 조건과 알아보는 신호' 절의 조건 1·2와 '정의' 절의 최소형·최대형 틀(min_true, max_true의 mid 잡는 법)을 순서도로 옮겼다.
+[^s1]: [21_parametric-search_plot.py](/Hongs_Blog/studies/algorithms/code/21_parametric-search_plot/)로 그렸고, 토막 수(L = 1 ~ 6에서 24, 11, 6, 5, 4, 2), 토막 수가 L에 따라 늘지 않는다는 것, max_true 틀이 6, 3, 4, 5를 묻고 4를 돌려준다는 것을 같은 코드로 확인했다.
+[^s2]: '적용 조건과 알아보는 신호' 절의 조건 1·2와 '정의' 절의 최소형·최대형 틀(min_true, max_true의 mid 잡는 법)을 순서도로 옮겼다.
 {% endraw %}

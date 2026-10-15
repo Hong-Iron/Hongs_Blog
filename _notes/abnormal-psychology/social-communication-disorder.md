@@ -40,7 +40,7 @@ permalink: "/studies/abnormal-psychology/social-communication-disorder/"
 - 함축적·이중적 의미를 이해하지 못함.
 - 제한적·반복적 행동이 없다: 자폐스펙트럼장애가 아니다.
 
-## 정의[^1]
+## 정의
 
 - DSM-5에 처음 추가된 장애다.
 - 사회적 상황에서 언어적·비언어적 의사소통 기술을 쓰는 능력이 미숙하거나 곤란하다. 실용성, 곧 화용언어의 어려움이다. 다음 네 영역에 결함이 있다.
@@ -49,7 +49,7 @@ permalink: "/studies/abnormal-psychology/social-communication-disorder/"
     3. 대화와 이야기하기의 규칙을 따르는 능력
     4. 언어의 함축적이거나 이중적인 의미를 이해하는 능력
 
-## 임상적 특징[^2]
+## 임상적 특징
 
 - 자폐스펙트럼장애와의 감별은 제한적이고 반복적인 행동·흥미·활동의 유무로 한다.
 - 4세 미만의 아동에게는 드물게 진단한다.
@@ -76,7 +76,5 @@ permalink: "/studies/abnormal-psychology/social-communication-disorder/"
 
 </details>
 
-[^1]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.19
-[^2]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.20
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> KD의 사례는 네 영역과 자폐스펙트럼장애와의 차이를 보이려고 만든 가상 사례다.
+[^s1]: KD의 사례는 네 영역과 자폐스펙트럼장애와의 차이를 보이려고 만든 가상 사례다.
 {% endraw %}

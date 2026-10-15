@@ -10,7 +10,7 @@ course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Minkowski Distance", "Lp 거리", "Lp Norm", "유클리드 거리", "Euclidean Distance", "맨해튼 거리", "Manhattan Distance", "시가지 거리", "City Block Distance", "최대 거리", "Supremum Distance", "체비셰프 거리", "거리 공리", "삼각부등식"]
 description: "숫자로 된 두 점이 얼마나 떨어져 있는지 재는 방법을 하나로 묶은 공식이다. 지도에서 곧장 날아가는 거리(유클리드)와 바둑판 같은 도로를 따라 걷는 거리(맨해튼)가 모두 이 공식의 특별한 경우다. 공식 속 지수 하나만 바꾸면 어느 쪽인지 정해진다. 다만 지수가 1보다 작으면 \"돌아…"
@@ -34,7 +34,7 @@ permalink: "/studies/data-science/minkowski-distance/"
 
 ## 예시로 보기
 
-점 $$x_1 = (1, 2)$$에서 $$x_2 = (3, 5)$$까지 가로로 2, 세로로 3 떨어져 있다[^1].
+점 $$x_1 = (1, 2)$$에서 $$x_2 = (3, 5)$$까지 가로로 2, 세로로 3 떨어져 있다.
 
 - 대각선으로 곧장 가면 피타고라스 정리로 $$\sqrt{2^2 + 3^2} = \sqrt{13} \approx 3.61$$이다. 유클리드 거리다.
 - 바둑판 도로처럼 가로세로로만 갈 수 있으면 $$2 + 3 = 5$$다. 맨해튼 거리(시가지 거리)다. 뉴욕 맨해튼의 격자 도로에서 택시가 가는 거리라는 뜻이다.
@@ -49,7 +49,7 @@ permalink: "/studies/data-science/minkowski-distance/"
 
 ## 정의
 
-수치 속성 $$p$$개로 적은 두 대상 $$i = (x_{i1}, \dots, x_{ip})$$와 $$j = (x_{j1}, \dots, x_{jp})$$의 민코프스키 거리는, 좌표 차이의 $$h$$제곱을 모두 더해 $$h$$제곱근을 씌운 것이다[^1]. 여기서 $$h \ge 1$$인 실수다.
+수치 속성 $$p$$개로 적은 두 대상 $$i = (x_{i1}, \dots, x_{ip})$$와 $$j = (x_{j1}, \dots, x_{jp})$$의 민코프스키 거리는, 좌표 차이의 $$h$$제곱을 모두 더해 $$h$$제곱근을 씌운 것이다. 여기서 $$h \ge 1$$인 실수다.
 
 $$d(i, j) = \sqrt[h]{\vert x_{i1} - x_{j1}\vert ^h + \vert x_{i2} - x_{j2}\vert ^h + \cdots + \vert x_{ip} - x_{jp}\vert ^h}$$
 
@@ -66,7 +66,7 @@ $$h$$가 커질수록 가장 큰 좌표 차이가 합을 좌우한다. 예시 �
 
 원점에서 거리가 정확히 1인 점들을 $$h$$마다 이었다. $$h = 1$$은 마름모, $$h = 2$$는 원이고, $$h$$가 커질수록 정사각형($$h = \infty$$)에 다가간다. 점선 $$h = \frac12$$는 안쪽으로 오목하다. 그래서 곧장 가는 길이 꺾어 가는 길보다 길어진다[^s2].
 
-거리는 다음 세 성질을 지킨다[^1].
+거리는 다음 세 성질을 지킨다.
 
 - **0 이상:** $$d(i, j) \ge 0$$.
 - **대칭:** $$d(i, j) = d(j, i)$$.
@@ -95,17 +95,17 @@ $$h$$가 커질수록 가장 큰 좌표 차이가 합을 좌우한다. 예시 �
 
 ## 과목별 관점
 
-**자료와 정보 (2-1학기).** 같은 식을 지수 $$p$$로 쓰고 $$L_p$$ 노름이라 부른다. 속성 수는 $$k$$다[^di1].
+**자료와 정보 (2-1학기).** 같은 식을 지수 $$p$$로 쓰고 $$L_p$$ 노름이라 부른다. 속성 수는 $$k$$다.
 
 $$L_p(\mathbf x, \mathbf y) = \left(\sum_{i=1}^{k} \vert x_i - y_i\vert ^p\right)^{\frac1p}$$
 
 
-위 정의의 $$h$$가 $$p$$이고, $$p \ge 1$$일 때만 거리의 척도라는 조건도 같다[^di1]. $$p \to \infty$$인 최대 거리를 체비셰프 거리라 부르고 $$L_\infty(\mathbf x, \mathbf y) = \max_i \vert x_i - y_i\vert $$로 적는다[^di2]. 슬라이드의 그림은 가로 4, 세로 3인 직사각형의 마주 보는 두 꼭짓점에서 유클리드 5, 맨해튼 7, 체비셰프 4를 보여 준다[^di2]. 맨해튼 거리는 격자 도로 지도 위에서 꺾어 가는 길로 그린다[^di3].
+위 정의의 $$h$$가 $$p$$이고, $$p \ge 1$$일 때만 거리의 척도라는 조건도 같다. $$p \to \infty$$인 최대 거리를 체비셰프 거리라 부르고 $$L_\infty(\mathbf x, \mathbf y) = \max_i \vert x_i - y_i\vert $$로 적는다. 가로 4, 세로 3인 직사각형의 마주 보는 두 꼭짓점 사이는 유클리드 거리로 5, 맨해튼 거리로 7, 체비셰프 거리로 4다. 맨해튼 거리는 격자 도로 지도 위에서 꺾어 가는 길로 그린다.
 
 두 가지가 이 문서와 다르다.
 
-- **조건의 수.** 이 과목은 거리의 척도가 되려면 네 조건을 지켜야 한다고 적는다. 위의 세 성질에 "거리가 0인 것은 두 점이 같을 때뿐"이 더 있다: [거리와 유사도](/Hongs_Blog/studies/data-and-information/distance-similarity/). 민코프스키 거리는 $$p \ge 1$$이면 이 조건도 지킨다. 좌표가 하나라도 다르면 합이 0보다 크기 때문이다[^sdi1].
-- **자료의 퍼진 모양.** 민코프스키 거리는 모든 방향을 똑같이 본다. 자료가 한쪽으로 길게 퍼져 있을 때 그 모양까지 넣어 재는 것이 [마할라노비스 거리](/Hongs_Blog/studies/data-and-information/mahalanobis-distance/)다. 모든 속성이 0 또는 1이면 맨해튼 거리는 다른 자리의 수가 되어 [해밍 거리](/Hongs_Blog/studies/data-and-information/hamming-distance/)와 같다[^di4].
+- **조건의 수.** 자료와 정보에서는 거리의 척도가 되려면 네 조건을 지켜야 한다고 본다. 위의 세 성질에 "거리가 0인 것은 두 점이 같을 때뿐"이 더 있다: [거리와 유사도](/Hongs_Blog/studies/data-and-information/distance-similarity/). 민코프스키 거리는 $$p \ge 1$$이면 이 조건도 지킨다. 좌표가 하나라도 다르면 합이 0보다 크기 때문이다[^sdi1].
+- **자료의 퍼진 모양.** 민코프스키 거리는 모든 방향을 똑같이 본다. 자료가 한쪽으로 길게 퍼져 있을 때 그 모양까지 넣어 재는 것이 [마할라노비스 거리](/Hongs_Blog/studies/data-and-information/mahalanobis-distance/)다. 모든 속성이 0 또는 1이면 맨해튼 거리는 다른 자리의 수가 되어 [해밍 거리](/Hongs_Blog/studies/data-and-information/hamming-distance/)와 같다.
 
 ## 확인 문제
 
@@ -142,12 +142,7 @@ $$L_p(\mathbf x, \mathbf y) = \left(\sum_{i=1}^{k} \vert x_i - y_i\vert ^p\right
 </details>
 
 
-[^1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.25
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 최대 거리($$h \to \infty$$), $$h$$에 따른 감소, $$h < 1$$의 반례, 맨해튼 거리의 견고성, 카드 C1~C3은 원본에 없다. Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.4절이 최대 거리를 다룬다. 수치는 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [04_minkowski-distance_plot.py](/Hongs_Blog/studies/data-science/code/04_minkowski-distance_plot/)로 그렸고, 곡선 위 점들의 거리가 1인지, 예시 두 점의 5, 3.61, 3.14, 3.005, $$h = \frac12$$의 반례를 같은 코드로 확인했다.
-[^di1]: 자료와 정보 4회 강의 자료 「D&I_강의04-1-유사도와거리」, p.7 (Minkowski Distance: $$L_p$$-norm, Euclidean distance, metric if $$p \ge 1$$)
-[^di2]: 같은 자료, p.9 ($$L_p$$ norms: $$p = 1$$, $$p = 2$$, $$p \to \infty$$ Chebyshev distance, 4 × 3 그림의 5·7·4)
-[^di3]: 같은 자료, p.8 (Manhattan Distance: city block distance, 격자 도로 지도)
-[^di4]: 자료와 정보 4회 강의 자료 「D&I_강의04-2-유사도와거리」, p.4 (Hamming Distance: $$L_1$$ norm for binary data, Manhattan distance when all features are binary)
-[^sdi1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 넷째 조건을 민코프스키 거리가 지킨다는 설명과 카드 C4는 슬라이드에 없다. [08_distance-similarity_verify.py](/Hongs_Blog/studies/data-and-information/code/08_distance-similarity_verify/)로 확인했다.
+[^s1]: Han, Kamber, Pei, *Data Mining: Concepts and Techniques* 3판, 2.4.4절이 최대 거리를 다룬다. 수치는 검증 코드로 확인했다.
+[^s2]: [04_minkowski-distance_plot.py](/Hongs_Blog/studies/data-science/code/04_minkowski-distance_plot/)로 그렸고, 곡선 위 점들의 거리가 1인지, 예시 두 점의 5, 3.61, 3.14, 3.005, $$h = \frac12$$의 반례를 같은 코드로 확인했다.
+[^sdi1]: [08_distance-similarity_verify.py](/Hongs_Blog/studies/data-and-information/code/08_distance-similarity_verify/)로 확인했다.
 {% endraw %}

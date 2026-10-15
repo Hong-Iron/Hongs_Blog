@@ -26,7 +26,7 @@ permalink: "/studies/data-structures/code/21_binary-tree_verify/"
 
 높이를 두 가지로 센다.
   - 볼트 표기 h: 뿌리에서 가장 먼 잎까지의 간선 수 (노드 하나 = 0, 빈 트리 = -1)
-  - 강의 표기 L: 층 수 (노드 하나 = 1, 빈 트리 = 0).  L = h + 1
+  - 층 수 표기 L: 층 수 (노드 하나 = 1, 빈 트리 = 0).  L = h + 1
 
 트리는 (왼쪽, 오른쪽) 튜플로, 빈 트리는 None으로 적는다.
 """
@@ -56,7 +56,7 @@ def height_edges(t):
 
 
 def levels(t):
-    """강의 표기의 높이(층 수). 빈 트리는 0."""
+    """층 수 표기의 높이(층 수). 빈 트리는 0."""
     return height_edges(t) + 1
 
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         for t, h in zip(ts, hs):
             assert count(t) == n
             L = h + 1
-            # 강의 표기: L <= n <= 2^L - 1
+            # 층 수 표기: L <= n <= 2^L - 1
             assert L <= n <= 2 ** L - 1
             # 볼트 표기: h + 1 <= n <= 2^(h+1) - 1
             assert h + 1 <= n <= 2 ** (h + 1) - 1
@@ -116,17 +116,17 @@ if __name__ == "__main__":
 
     # 본문과 카드의 수치
     assert len(shapes(2)) == 2 and len(shapes(3)) == 5
-    # 층이 4개(강의 높이 4, 볼트 높이 3)면 노드는 4개 이상 15개 이하
+    # 층이 4개(층 수 높이 4, 볼트 높이 3)면 노드는 4개 이상 15개 이하
     assert (4, 2 ** 4 - 1) == (4, 15)
     hs7 = {height_edges(t) for t in shapes(7)}
     assert min(hs7) == 2 and max(hs7) == 6            # 노드 7개: 볼트 높이 2 ~ 6, 층 3 ~ 7
-    # 변별 카드: "높이 3"의 최대 노드 수 - 강의 표기 7, 볼트 표기 15
+    # 변별 카드: "높이 3"의 최대 노드 수 - 층 수 표기 7, 볼트 표기 15
     assert 2 ** 3 - 1 == 7 and 2 ** (3 + 1) - 1 == 15
     # 적용 카드: 노드 100개 - 볼트 높이 6 ~ 99, 층 수 7 ~ 100
     assert ceil(log2(101)) - 1 == 6 and ceil(log2(101)) == 7
     # 오해 항목: 노드 1,000개 - 볼트 높이 9 ~ 999
     assert ceil(log2(1001)) - 1 == 9
-    # 예시: 슬라이드 p.7의 트리 (노드 9개, 층 4개)
+    # 예시: 문서 그림의 트리 (노드 9개, 층 4개)
     p7 = (((None, None), (None, None)), (None, (None, None)))   # 왼쪽 부분 트리
     p7 = (p7, ((None, None), None))
     assert count(p7) == 9 and levels(p7) == 4 and level_sizes(p7) == [1, 2, 3, 3]

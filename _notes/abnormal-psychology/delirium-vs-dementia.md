@@ -23,7 +23,7 @@ code_count: 0
 permalink: "/studies/abnormal-psychology/delirium-vs-dementia/"
 ---
 {% raw %}
-둘 다 기억이 흐려지고 엉뚱한 말을 하지만, 섬망은 갑자기 와서 의식이 흐리고 대개 돌아온다. 치매는 서서히 와서 의식은 맑은 채 계속 나빠진다. 가르는 질문은 "언제부터, 얼마나 빨리 시작했고, 지금 정신이 또렷한가"다[^1].
+둘 다 기억이 흐려지고 엉뚱한 말을 하지만, 섬망은 갑자기 와서 의식이 흐리고 대개 돌아온다. 치매는 서서히 와서 의식은 맑은 채 계속 나빠진다. 가르는 질문은 "언제부터, 얼마나 빨리 시작했고, 지금 정신이 또렷한가"다.
 
 ## 어느 쪽일까
 
@@ -52,7 +52,7 @@ permalink: "/studies/abnormal-psychology/delirium-vs-dementia/"
 | 발견 장소 | 내과, 외과, 신경과 병실 | 정신병원이나 요양소 |
 | 발생률 | 노인은 물론 일반 사람도 많음 | 나이가 많아지면서 증가 |
 
-[^1]
+
 
 ## 둘 다 아닐 때
 
@@ -60,7 +60,6 @@ permalink: "/studies/abnormal-psychology/delirium-vs-dementia/"
 - **처음부터 발달이 늦었던 경우:** [지적장애](/Hongs_Blog/studies/abnormal-psychology/intellectual-disability/). 떨어진 것이 아니라 도달하지 못한 것이다.
 - **의식은 맑은데 환청과 망상이 중심일 때:** [조현병](/Hongs_Blog/studies/abnormal-psychology/schizophrenia/) 같은 정신병적 장애.
 
-[^1]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.66 (섬망 vs 치매 표). 표 위에 "한 번 읽어보기!"라는 손글씨 필기가 있다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 치매가 섬망의 가장 큰 위험 요인이고 두 상태가 겹칠 수 있다는 점은 DSM-5-TR 섬망의 위험 요인 설명을 따랐다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 우울증에 의한 인지 저하와 치매의 감별은 임상에서 흔히 쓰는 구별이다. 가성치매는 DSM의 공식 진단명이 아니다.
+[^s1]: 치매가 섬망의 가장 큰 위험 요인이고 두 상태가 겹칠 수 있다는 점은 DSM-5-TR 섬망의 위험 요인 설명을 따랐다.
+[^s2]: 우울증에 의한 인지 저하와 치매의 감별은 임상에서 흔히 쓰는 구별이다. 가성치매는 DSM의 공식 진단명이 아니다.
 {% endraw %}

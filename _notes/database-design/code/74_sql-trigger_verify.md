@@ -23,20 +23,19 @@ permalink: "/studies/database-design/code/74_sql-trigger_verify/"
 """트리거와 ECA 규칙 검증 (SQLite 판). PostgreSQL 판은 74_sql-trigger_verify.sql.
 
 문서: 74.트리거와 ECA 규칙
-출처: 11주차 슬라이드 11_SQL-DDL-Complex p.9~13
-SQLite는 슬라이드의 트리거 문을 그대로 받지 않는다. 트리거 하나에 사건을 하나만 적을 수 있어
+SQLite는 교재 문법의 트리거 문을 그대로 받지 않는다. 트리거 하나에 사건을 하나만 적을 수 있어
 삽입용과 수정용 둘로 나누고, 동작은 알림 표에 한 줄 넣는 것으로 바꿨다.
 주장:
-  1. 슬라이드 문장 그대로는 구문 오류다("INSERT OR UPDATE"를 한 트리거에 못 쓴다).
+  1. 교재 문법의 문장 그대로는 구문 오류다("INSERT OR UPDATE"를 한 트리거에 못 쓴다).
   2. 나눠 쓴 두 트리거: 삽입, Salary 수정, Super_ssn 수정에서 조건이 참일 때만 알림이 한 줄 쌓인다.
   3. 사건 목록에 없는 Address 수정, 조건이 거짓인 삽입, 상사가 없는 직원에서는 알림이 없다.
-  4. 상사의 급여를 내리는 사건은 이 트리거가 못 잡는다(슬라이드 p.11 "모든 사건을 챙겨야 한다").
+  4. 상사의 급여를 내리는 사건은 이 트리거가 못 잡는다("모든 사건을 챙겨야 한다").
   5. 동작을 RAISE(ABORT)로 바꾸면 알리는 대신 그 문장을 거부한다.
 실행: python3 74_sql-trigger_verify.py
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -144,7 +143,7 @@ def main():
     c = make()
     fails(c, SLIDE, "syntax error")
     fails(c, "CREATE TRIGGER T BEFORE INSERT OR UPDATE ON EMPLOYEE BEGIN SELECT 1; END", 'near "OR": syntax error')
-    print("[OK] p.10의 문장 그대로는 SQLite에서 구문 오류 (한 트리거에 INSERT OR UPDATE를 못 쓴다)")
+    print("[OK] 교재 문법의 문장 그대로는 SQLite에서 구문 오류 (한 트리거에 INSERT OR UPDATE를 못 쓴다)")
 
     c.executescript(TWO)
     n = lambda: q(c, "SELECT * FROM NOTICE")

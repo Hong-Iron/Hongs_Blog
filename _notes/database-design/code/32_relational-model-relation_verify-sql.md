@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/32_relational-model-relation_verify-sq
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 문서: 32.릴레이션과 도메인·속성·튜플 (활용: 도메인을 SQL로 적기)
--- 출처: 데이터베이스 설계 6-2 슬라이드 p.8 (도메인은 자료형으로 정한다. Usa_phone_numbers, Employee_ages)
+-- 출처: Elmasri & Navathe, Fundamentals of Database Systems 5장 (도메인은 자료형으로 정한다. Usa_phone_numbers, Employee_ages)
 -- PostgreSQL 16에서 확인하는 것 (SQLite에는 CREATE DOMAIN이 없다):
 --   1. 도메인을 자료형 + 조건으로 만들 수 있다.
 --   2. 도메인 밖의 값(나이 14, 꼴이 다른 전화번호)은 들어가지 않는다.

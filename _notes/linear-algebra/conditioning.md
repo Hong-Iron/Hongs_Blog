@@ -145,5 +145,5 @@ $$n$$이 하나 늘 때마다 조건수가 약 30배씩 커진다. 실제 오차
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 11.2절 "Norms and Condition Numbers"(벡터·행렬 노름, $$\kappa = \sigma_{\max}/\sigma_{\min}$$, 오차 한계).
 [^2]: Trefethen·Bau, *Numerical Linear Algebra*, 12장 "Conditioning and Condition Numbers", 13장 "Floating Point Arithmetic"(기계 엡실론, 역방향 안정성과 $$\kappa\varepsilon$$ 크기의 오차).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [26_conditioning_plot.py](/Hongs_Blog/studies/linear-algebra/code/26_conditioning_plot/)로 그렸고, 두 해 $$(1, 1)$$과 $$(0, 2)$$, $$\kappa \approx 4 \times 10^4$$, 힐베르트 행렬의 $$\kappa_2(H_{10}) \approx 1.6 \times 10^{13}$$, 조건수가 한 단계에 25~35배 커지는 것, 실제 오차가 $$\kappa\varepsilon$$ 이하인 것을 같은 코드로 확인했다.
+[^s1]: [26_conditioning_plot.py](/Hongs_Blog/studies/linear-algebra/code/26_conditioning_plot/)로 그렸고, 두 해 $$(1, 1)$$과 $$(0, 2)$$, $$\kappa \approx 4 \times 10^4$$, 힐베르트 행렬의 $$\kappa_2(H_{10}) \approx 1.6 \times 10^{13}$$, 조건수가 한 단계에 25~35배 커지는 것, 실제 오차가 $$\kappa\varepsilon$$ 이하인 것을 같은 코드로 확인했다.
 {% endraw %}

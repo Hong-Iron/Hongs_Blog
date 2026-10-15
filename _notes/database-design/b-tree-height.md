@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Height of a B-Tree", "B-트리 높이", "최악 높이", "Worst-case Height", "높이의 상한", "최대 키 수", "정리 18.1"]
 description: "한 칸에서 길이 여러 갈래로 갈리면 나무는 금방 넓어지고, 그만큼 낮다. 값이 몇 개 들어 있는지만 알면 나무가 아무리 홀쭉해도 넘을 수 없는 높이가 정해지고, 갈래가 많을수록 그 높이는 낮아진다. 디스크를 읽는 횟수가 높이를 따라가므로 이 한계가 곧 \"아무리 나빠도 디스크를 몇 …"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/b-tree-height/"
 
 ## 예시로 보기
 
-B-트리에서 연산 하나가 디스크를 읽고 쓰는 횟수는 트리의 높이에 비례한다[^1]. 그러니 "키가 $$n$$개일 때 높이가 얼마까지 커질 수 있나"를 알면 가장 나쁠 때의 비용을 안다.
+B-트리에서 연산 하나가 디스크를 읽고 쓰는 횟수는 트리의 높이에 비례한다. 그러니 "키가 $$n$$개일 때 높이가 얼마까지 커질 수 있나"를 알면 가장 나쁠 때의 비용을 안다.
 
 최소 차수 $$t = 2$$로 높이마다 키를 몇 개까지 담는지 센다. 가장 적게 담으려면 뿌리에 키 1개, 다른 노드에도 아래 한계인 1개씩만 둔다. 가장 많이 담으려면 모든 노드를 3개로 가득 채운다.
 
@@ -74,7 +74,7 @@ B-트리에서 연산 하나가 디스크를 읽고 쓰는 횟수는 트리의 �
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">높이의 위쪽 한계</div>
 
-키가 $$n$$개($$n \ge 1$$)이고 최소 차수가 $$t$$($$t \ge 2$$)인 B-트리의 높이 $$h$$는 다음 값을 넘지 못한다[^2].
+키가 $$n$$개($$n \ge 1$$)이고 최소 차수가 $$t$$($$t \ge 2$$)인 B-트리의 높이 $$h$$는 다음 값을 넘지 못한다.
 
 $$h \le \log_t \frac{n + 1}{2}$$
 
@@ -83,11 +83,11 @@ $$h \le \log_t \frac{n + 1}{2}$$
 
 $$\log_t$$는 "밑이 $$t$$인 로그"라고 읽는다. $$\log_t \frac{n+1}{2}$$은 $$t$$를 몇 번 곱해야 $$\frac{n+1}{2}$$이 되는지를 말한다. 높이는 정수이므로 이 값의 소수점 아래를 버린 수까지 될 수 있다. $$t = 2$$, $$n = 7$$이면 $$\log_2 4 = 2$$라 높이는 2 이하다. 위 표의 "높이 2에 적어도 7개"와 같은 말이다.
 
-높이가 이 한계에 닿는 것은 뿌리를 뺀 모든 노드가 아래 한계인 $$t - 1$$개만 가질 때다[^3].
+높이가 이 한계에 닿는 것은 뿌리를 뺀 모든 노드가 아래 한계인 $$t - 1$$개만 가질 때다.
 
 ## 증명
 
-높이가 $$h$$인 B-트리가 담는 키 수의 가장 작은 값을 세고, $$n$$이 그 값 이상이라는 식을 $$h$$에 대해 푼다[^2].
+높이가 $$h$$인 B-트리가 담는 키 수의 가장 작은 값을 세고, $$n$$이 그 값 이상이라는 식을 $$h$$에 대해 푼다[^s2].
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
@@ -111,8 +111,6 @@ $$\log_t$$는 "밑이 $$t$$인 로그"라고 읽는다. $$\log_t \frac{n+1}{2}$$
 
 </details>
 
-
-슬라이드는 4~5단계의 세 줄과 깊이별 노드 수(1, 2, $$2t$$, $$2t^2$$)를 그림으로 준다. 1~3단계와 6단계는 그 그림을 글로 푼 것이다[^s2].
 
 ### 스스로 설명해 보기
 
@@ -166,7 +164,7 @@ $$\log_t$$는 "밑이 $$t$$인 로그"라고 읽는다. $$\log_t \frac{n+1}{2}$$
 
 ## 가장 많이 담을 때
 
-높이 $$h$$인 B-트리가 담을 수 있는 키는 가장 많을 때 $$(2t)^{h+1} - 1$$개다[^4].
+높이 $$h$$인 B-트리가 담을 수 있는 키는 가장 많을 때 $$(2t)^{h+1} - 1$$개다.
 
 모든 노드가 가득 찼다고 하자. 노드마다 키가 $$2t - 1$$개, 자식이 $$2t$$개다. 깊이 0에 노드 1개, 깊이 1에 $$2t$$개, 깊이 $$i$$에 $$(2t)^i$$개가 있다. 노드 수를 모두 더해 노드 하나의 키 수를 곱한다.
 
@@ -174,13 +172,6 @@ $$n = \underbrace{\left(1 + 2t + (2t)^2 + \cdots + (2t)^h\right)}_{\text{노드 
 
 
 $$t = 2$$, $$h = 1$$이면 $$4^2 - 1 = 15$$개다. 위의 둘째 그림이 그 트리다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 03.3-2_B-tree-insertion.pdf p.9와 03.3_B-tree-solutions.pdf p.2의 식에서 $$(2t - 1)$$ 아래에 "The number of children of each node"라는 라벨이 붙어 있다. / 문제점: $$2t - 1$$은 가득 찬 노드 하나의 키 수다. 자식 수는 $$2t$$다. 같은 쪽의 설명도 "every node has (2t-1) keys, then has 2t children"이라고 적는다. / 수정안: 라벨을 "노드 하나의 키 수"로 읽는다. 식 자체는 맞다. / 근거: 가득 찬 트리를 만들어 세면 키가 $$(2t)^{h+1} - 1$$개다([12_b-tree-height_verify.py](/Hongs_Blog/studies/database-design/code/12_b-tree-height_verify/)).
-
-</div>
 
 
 두 결과를 한 줄에 놓으면 높이 $$h$$인 B-트리의 키 수는 $$2t^h - 1 \le n \le (2t)^{h+1} - 1$$이다. 높이에 대해 풀면 아래쪽 한계도 나온다[^s3].
@@ -214,7 +205,7 @@ $$\log_{2t}(n + 1) - 1 \le h \le \log_t \frac{n + 1}{2}$$
 ## 활용
 
 - **디스크 읽기 횟수.** 뿌리가 주기억장치에 있으면 검색 한 번에 디스크를 많아야 $$h$$번 읽는다. 노드마다 키가 1,000개인 트리는 높이 2로 10억 개가 넘는 키를 담으니 2번이면 된다([B-트리](/Hongs_Blog/studies/database-design/b-tree/)의 표).
-- **연산 시간의 $$\log_t n$$.** 검색과 삽입의 시간 $$O(t \log_t n)$$에서 $$\log_t n$$이 이 정리에서 온 높이다[^5].
+- **연산 시간의 $$\log_t n$$.** 검색과 삽입의 시간 $$O(t \log_t n)$$에서 $$\log_t n$$이 이 정리에서 온 높이다.
 - **이진 탐색 트리와 견주기.** $$\log_t n = \frac{\lg n}{\lg t}$$다. 잘 균형 잡힌 이진 탐색 트리의 높이가 $$\lg n$$쯤이니, B-트리는 그보다 $$\lg t$$배쯤 낮다. $$t = 1024$$면 10배다[^s3]. 숫자로 견준 것은 [B-트리와 이진 탐색 트리 비교](/Hongs_Blog/studies/database-design/b-tree-vs-bst/)에 있다.
 - **흔한 실수.** 높이를 층의 수로 센다. 이 정리의 높이는 뿌리에서 잎까지의 간선 수라서 노드 하나짜리 트리가 0이다. 층의 수로 세면 식이 1씩 어긋난다.
 - 연습: [B-트리 연습](/Hongs_Blog/studies/database-design/b-tree-practice/)의 p2
@@ -280,12 +271,7 @@ $$\log_{2t}(n + 1) - 1 \le h \le \log_t \frac{n + 1}{2}$$
 </details>
 
 
-[^1]: 데이터베이스 설계 3회 강의 자료 「3_B-tree」, p.18 ("The number of disk I/O operations is proportional to the height of the B-tree")
-[^2]: 같은 자료, p.18 (Theorem 18.1과 증명 세 줄, 깊이별 노드 수 그림). 03.3-2_B-tree-insertion.pdf, p.8
-[^3]: 데이터베이스 설계 3회 강의 자료 「3-2_B-tree-insertion」, p.8 ("The height is maximized when every node except for the root has t-1 keys")
-[^4]: 같은 자료, p.9 (The maximum number of keys that a B-tree can store). 문제는 03.3_B-tree.pdf, p.19의 연습 2, 답은 03.3_B-tree-solutions.pdf, p.2
-[^5]: 같은 자료, p.15, 30 ($$O(h) = O(\log_t n)$$)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 높이별 키 수 표, 두 그림, "키 5개면 높이 1, 키 3개면 0 또는 1"은 슬라이드에 없다. 두 식 $$2t^h - 1$$과 $$(2t)^{h+1} - 1$$에 $$t = 2$$를 넣은 값이고, 검증 코드가 트리를 직접 만들어 세었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 증명의 1~3단계와 6단계, 스스로 설명해 보기는 슬라이드에 글로 적혀 있지 않다. 슬라이드의 그림(깊이 0~3의 노드 수 1, 2, $$2t$$, $$2t^2$$)과 "뿌리를 뺀 모든 노드가 $$t - 1$$개일 때 가장 높다"는 문장을 단계로 풀었다. 출처는 Cormen 외, *Introduction to Algorithms* 3판, 정리 18.1의 증명이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 아래쪽 한계 $$\log_{2t}(n+1) - 1 \le h$$, 가정을 뺀 반례 넷, 한계 안의 높이가 모두 나온다는 관찰, $$\lg t$$배 낮다는 견줌, 카드 C3~C5는 슬라이드에 없다. 아래쪽 한계는 가장 많이 담을 때의 식을 $$h$$에 대해 푼 것이다. 수와 반례는 검증 코드로 확인했다.
+[^s1]: 두 식 $$2t^h - 1$$과 $$(2t)^{h+1} - 1$$에 $$t = 2$$를 넣은 값이고, 검증 코드가 트리를 직접 만들어 세었다.
+[^s2]: 출처는 Cormen 외, *Introduction to Algorithms* 3판, 정리 18.1의 증명이다.
+[^s3]: 아래쪽 한계는 가장 많이 담을 때의 식을 $$h$$에 대해 푼 것이다. 수와 반례는 검증 코드로 확인했다.
 {% endraw %}

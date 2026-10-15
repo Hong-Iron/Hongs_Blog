@@ -44,13 +44,13 @@ def set_vector(n, seg, off):  # INT 21h 함수 25h: DS:DX
     w16(n * 4 + 2, seg)
 
 
-# 키보드 상태 바이트의 비트 (wk14-17 p.27 그림)
+# 키보드 상태 바이트의 비트
 RT_SHIFT, LEFT_SHIFT, CTRL_KEY, ALT_KEY = 0x01, 0x02, 0x04, 0x08
-DEL_KEY = 0x53               # 스캔 코드 표 (wk14-16 p.10)
+DEL_KEY = 0x53               # 스캔 코드 표
 
 
 def int9_handler(flag_byte, scan):
-    """wk14-17 p.28~31의 L1~L5. (새 플래그 바이트, 재시작을 막았는가)를 돌려준다."""
+    """문서 코드의 L1~L5. (새 플래그 바이트, 재시작을 막았는가)를 돌려준다."""
     ah = flag_byte
     if ah & CTRL_KEY == 0:           # L2: test ah,ctrl_key / jz L5
         return ah, False
@@ -65,10 +65,10 @@ def int9_handler(flag_byte, scan):
 
 
 if __name__ == "__main__":
-    # 처음: INT 9 칸에 BIOS 처리기 0DAD:2BAD (wk14-17 p.22 그림)
+    # 처음: INT 9 칸에 BIOS 처리기 0DAD:2BAD (문서의 흐름 그림)
     set_vector(9, 0x0DAD, 0x2BAD)
     assert 9 * 4 == 0x24
-    # 1) 옛 주소 저장: int9Save에 오프셋, int9Save+2에 세그먼트 (wk14-17 p.20)
+    # 1) 옛 주소 저장: int9Save에 오프셋, int9Save+2에 세그먼트
     es, bx = get_vector(9)
     int9save = bytearray(4)
     int9save[0:2] = bx.to_bytes(2, "little")
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     # 옛 주소를 저장하지 않고 덮어쓰면 되찾을 수 없다
     assert (0x0DAD, 0x2BAD) != get_vector(9)
 
-    # Ctrl-Break 예제: INT 23h 칸은 008Ch (wk14-17 p.24~25)
+    # Ctrl-Break 예제: INT 23h 칸은 008Ch
     assert 0x23 * 4 == 0x008C
 
     # NOT ctrl_key = 11111011b

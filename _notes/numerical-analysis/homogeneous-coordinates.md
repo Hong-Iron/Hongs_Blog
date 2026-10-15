@@ -34,7 +34,7 @@ permalink: "/studies/numerical-analysis/homogeneous-coordinates/"
 
 ## 예시로 보기
 
-점 $$(2, 1)$$을 점 $$P = (1, 1)$$을 중심으로 90° 돌린다. 회전 행렬은 원점을 중심으로만 돌린다. 그래서 세 단계로 나눈다[^1].
+점 $$(2, 1)$$을 점 $$P = (1, 1)$$을 중심으로 90° 돌린다. 회전 행렬은 원점을 중심으로만 돌린다. 그래서 세 단계로 나눈다.
 
 | 단계 | 하는 일 | 식 | 결과 |
 |---|---|---|---|
@@ -46,7 +46,7 @@ permalink: "/studies/numerical-analysis/homogeneous-coordinates/"
 
 파란 깃발이 처음 자리이고, 동그라미가 점 $$(2, 1)$$이다. 주황(1단계), 초록(2단계), 보라(3단계) 순서로 움직인다. 세 단계를 거치면 $$P$$를 중심으로 90° 돈 자리에 간다[^s2].
 
-점이 1만 개라면 점마다 빼기, 곱하기, 더하기를 해야 한다. 동차 좌표에서는 세 단계를 $$3 \times 3$$ 행렬 하나 $$H = T(P)\,R\,T(-P)$$로 미리 곱해 둔다. 그 뒤로는 점마다 행렬 곱 한 번이다[^2].
+점이 1만 개라면 점마다 빼기, 곱하기, 더하기를 해야 한다. 동차 좌표에서는 세 단계를 $$3 \times 3$$ 행렬 하나 $$H = T(P)\,R\,T(-P)$$로 미리 곱해 둔다. 그 뒤로는 점마다 행렬 곱 한 번이다.
 
 ```mermaid
 flowchart RL
@@ -56,7 +56,7 @@ flowchart RL
     T2 --> Y["H X"]
 ```
 
-$$H = T(P)\,R\,T(-P)$$는 왼쪽부터 적지만, 점에는 오른쪽 행렬부터 작용한다. 그래서 화살표가 오른쪽에서 왼쪽으로 간다[^s3].
+$$H = T(P)\,R\,T(-P)$$는 왼쪽부터 적지만, 점에는 오른쪽 행렬부터 작용한다. 그래서 화살표가 오른쪽에서 왼쪽으로 간다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예시, (hx, hy, h)가 같은 점, 방향 벡터는 평행이동되지 않음, TM ≠ MT, 무작위 200쌍에서 합성 공식, 역행렬 공식, 카드 C2 — [04_homogeneous-coordinates_verify.py](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_verify/)</div>
@@ -66,36 +66,36 @@ $$H = T(P)\,R\,T(-P)$$는 왼쪽부터 적지만, 점에는 오른쪽 행렬부�
 
 ## 정의
 
-**동차 좌표**는 2차원 점 $$(x, y)$$를 3차원 벡터 $$(hx, hy, h)$$($$h \ne 0$$)로 나타낸다. $$h$$가 무엇이든 같은 점이다. 마지막 성분으로 나누면 원래 점이 나온다[^3].
+**동차 좌표**는 2차원 점 $$(x, y)$$를 3차원 벡터 $$(hx, hy, h)$$($$h \ne 0$$)로 나타낸다. $$h$$가 무엇이든 같은 점이다. 마지막 성분으로 나누면 원래 점이 나온다.
 
 $$\begin{pmatrix}hx\\ hy\\ h\end{pmatrix} \;\Longleftrightarrow\; \begin{pmatrix}x\\ y\end{pmatrix}$$
 
 
-그림으로 보면 $$(hx, hy, h)$$는 원점을 지나는 직선이다. 이 직선이 높이 $$h = 1$$인 평면과 만나는 점이 $$(x, y)$$다. 원점을 지나는 직선과 2차원 점이 일대일로 짝지어진다[^4]. 계산할 때는 $$h = 1$$을 쓴다[^5].
+그림으로 보면 $$(hx, hy, h)$$는 원점을 지나는 직선이다. 이 직선이 높이 $$h = 1$$인 평면과 만나는 점이 $$(x, y)$$다. 원점을 지나는 직선과 2차원 점이 일대일로 짝지어진다. 계산할 때는 $$h = 1$$을 쓴다.
 
-이 공간에서 $$xy$$ 방향 전단은 높이 $$h$$인 평면을 옆으로 민다. 높이 1인 평면에서 보면 그것이 평행이동이다[^6].
+이 공간에서 $$xy$$ 방향 전단은 높이 $$h$$인 평면을 옆으로 민다. 높이 1인 평면에서 보면 그것이 평행이동이다.
 
 $$\begin{pmatrix}1 & 0 & a\\ 0 & 1 & b\\ 0 & 0 & 1\end{pmatrix}\begin{pmatrix}x\\ y\\ 1\end{pmatrix} = \begin{pmatrix}x + a\\ y + b\\ 1\end{pmatrix}$$
 
 
-평행이동을 뺀 변환(회전, 확대, 전단)을 $$L$$, 평행이동을 $$T$$라 하면 블록 행렬로 다음과 같다. 3차원 점은 $$(x, y, z, 1)$$과 $$4 \times 4$$ 행렬을 쓴다[^5].
+평행이동을 뺀 변환(회전, 확대, 전단)을 $$L$$, 평행이동을 $$T$$라 하면 블록 행렬로 다음과 같다. 3차원 점은 $$(x, y, z, 1)$$과 $$4 \times 4$$ 행렬을 쓴다.
 
 $$M = \begin{pmatrix}L & 0\\ 0 & 1\end{pmatrix}, \quad T = \begin{pmatrix}I & \mathbf t\\ 0 & 1\end{pmatrix}, \quad TM = \begin{pmatrix}L & \mathbf t\\ 0 & 1\end{pmatrix}, \quad MT = \begin{pmatrix}L & L\mathbf t\\ 0 & 1\end{pmatrix} \ne TM$$
 
 
 $$TM$$은 먼저 $$L$$을 하고 나중에 옮긴다. $$MT$$는 먼저 옮기고 나중에 $$L$$을 해서, 옮긴 거리까지 $$L$$로 바뀐다.
 
-**두 변환 잇기.** $$[M_1, T_1]$$ 다음에 $$[M_2, T_2]$$를 하면 다음과 같다[^7].
+**두 변환 잇기.** $$[M_1, T_1]$$ 다음에 $$[M_2, T_2]$$를 하면 다음과 같다.
 
 $$\begin{pmatrix}M_2 & T_2\\ 0 & 1\end{pmatrix}\begin{pmatrix}M_1 & T_1\\ 0 & 1\end{pmatrix} = \begin{pmatrix}M_2M_1 & M_2T_1 + T_2\\ 0 & 1\end{pmatrix}$$
 
 
-**역행렬.** $$H = MT$$(먼저 $$\mathbf t_s$$만큼 옮기고 $$M_s$$)이면, 거꾸로 되돌려 $$H^{-1} = T^{-1}M^{-1}$$이다[^7].
+**역행렬.** $$H = MT$$(먼저 $$\mathbf t_s$$만큼 옮기고 $$M_s$$)이면, 거꾸로 되돌려 $$H^{-1} = T^{-1}M^{-1}$$이다.
 
 $$H^{-1} = \begin{pmatrix}I & -\mathbf t_s\\ 0 & 1\end{pmatrix}\begin{pmatrix}M_s^{-1} & 0\\ 0 & 1\end{pmatrix}$$
 
 
-**회전.** 2차원 회전 $$R_\theta = \begin{pmatrix}\cos\theta & -\sin\theta\\ \sin\theta & \cos\theta\end{pmatrix}$$의 역행렬은 $$R_{-\theta} = R_\theta^\top$$이고, 연속 회전 $$R_\beta R_\alpha = R_{\alpha + \beta}$$는 각을 더한다[^8].
+**회전.** 2차원 회전 $$R_\theta = \begin{pmatrix}\cos\theta & -\sin\theta\\ \sin\theta & \cos\theta\end{pmatrix}$$의 역행렬은 $$R_{-\theta} = R_\theta^\top$$이고, 연속 회전 $$R_\beta R_\alpha = R_{\alpha + \beta}$$는 각을 더한다.
 
 마지막 성분이 0인 $$(x, y, 0)$$은 평행이동해도 그대로다. 그래서 위치가 아닌 방향(벡터)을 나타낼 때 쓴다[^s1].
 
@@ -206,15 +206,6 @@ $$(AB)^{-1} = B^{-1}A^{-1}$$이다. 양말을 신고 신발을 신었으면 신�
 </details>
 
 
-[^1]: 수치해석 4회 강의 자료 「na04_transformation」, p.32
-[^2]: 같은 자료, p.33~34
-[^3]: 같은 자료, p.35~36
-[^4]: 같은 자료, p.36
-[^5]: 같은 자료, p.40~42
-[^6]: 같은 자료, p.37~39
-[^7]: 같은 자료, p.43
-[^8]: 같은 자료, p.28~31
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시의 수치, 확대·평행이동 예제, 방향 벡터($$w = 0$$), 그래픽스 파이프라인, 스스로 설명해 보기, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [04_homogeneous-coordinates_plot.py](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$(2, 1) \to (1, 0) \to (0, 1) \to (1, 2)$$와 $$H = T(P)\,R\,T(-P)$$가 세 단계와 같음.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 세 단계와 $$H = T(P)\,R\,T(-P)$$(원본 04.na04_transformation.pdf p.32~33)로 그렸다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [04_homogeneous-coordinates_plot.py](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$(2, 1) \to (1, 0) \to (0, 1) \to (1, 2)$$와 $$H = T(P)\,R\,T(-P)$$가 세 단계와 같음.
 {% endraw %}

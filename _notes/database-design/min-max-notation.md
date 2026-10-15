@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Min-Max Notation", "(min", "max) Notation", "최소 최대 표기", "구조 제약", "Structural Constraint", "최소 카디널리티", "Minimum Cardinality", "최대 카디널리티", "Maximum Cardinality"]
 description: "놀이기구 앞의 \"한 번에 2명 이상 4명까지\" 팻말처럼, 이어질 수 있는 횟수의 아래 한계와 위 한계를 숫자 두 개로 적는 방법이다. 어떤 대상 하나가 그 관계에 적어도 몇 번, 많아야 몇 번 끼는지를 그 대상 바로 옆에 적는다. \"하나 대 여럿\"으로만 적는 방식보다 자세해서 \"2…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/min-max-notation/"
 
 ## 예시로 보기
 
-"교수는 2과목에서 4과목을 가르친다"는 요구가 있다[^3]. 1, N으로 적는 방식으로는 이것을 "여럿(N)"이라고밖에 못 적는다. 1과목만 맡은 교수도, 10과목을 맡은 교수도 막지 못한다.
+"교수는 2과목에서 4과목을 가르친다"는 요구가 있다. 1, N으로 적는 방식으로는 이것을 "여럿(N)"이라고밖에 못 적는다. 1과목만 맡은 교수도, 10과목을 맡은 교수도 막지 못한다.
 
 (min, max) 표기는 INSTRUCTOR 옆에 (2,4)를 적는다. "교수 한 명은 TEACHES 관계에 2번 이상 4번 이하 낀다"는 뜻이다.
 
@@ -46,7 +46,7 @@ permalink: "/studies/database-design/min-max-notation/"
 | $$c_1$$ | 1 | 어긴다(아래 한계 2에 못 미친다) |
 | $$c_1$$ ~ $$c_5$$ | 5 | 어긴다(위 한계 4를 넘는다) |
 
-COMPANY의 WORKS_FOR를 두 방식으로 나란히 그리면 숫자의 자리가 바뀌는 것이 보인다[^1][^2][^s1].
+COMPANY의 WORKS_FOR를 두 방식으로 나란히 그리면 숫자의 자리가 바뀌는 것이 보인다.
 
 ```mermaid
 flowchart LR
@@ -60,14 +60,14 @@ flowchart LR
 - 윗줄 읽기: 부서 하나에 직원 여럿(N), 직원 한 명에 부서 하나(1).
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: (2,4)를 지키는 횟수와 어기는 횟수, COMPANY 여섯 관계의 (min, max)에서 뽑은 1/N 숫자·겹선이 슬라이드 4-2 p.5 그림과 모두 같은 것, 5주차 p.25~30의 글과 견준 결과(SUPERVISION의 참여만 다름), COMPANY 자료가 (4,N)만 어기는 것, 카드 C1~C5 — [30_min-max-notation_verify.py](/Hongs_Blog/studies/database-design/code/30_min-max-notation_verify/)</div>
+<div class="callout-title" markdown="span">검증: (2,4)를 지키는 횟수와 어기는 횟수, COMPANY 여섯 관계의 (min, max)에서 뽑은 1/N 숫자·겹선이 1, N으로 그린 COMPANY 그림과 모두 같은 것, COMPANY 데이터가 (4,N)만 어기고 (1,N)이면 모두 지키는 것, 카드 C1~C5 — [30_min-max-notation_verify.py](/Hongs_Blog/studies/database-design/code/30_min-max-notation_verify/)</div>
 
 </div>
 
 
 ## 정의
 
-관계 타입 $$R$$에 참여하는 개체 타입 $$E$$마다 숫자쌍 (min, max)를 하나씩 붙인다. 뜻은 이렇다. $$E$$의 개체는 누구든, 어느 때든, $$R$$의 관계 인스턴스에 min번 이상 max번 이하 끼어야 한다[^s2]. 숫자쌍은 $$E$$와 $$R$$을 잇는 선에서 $$E$$ 쪽에 적는다[^2].
+관계 타입 $$R$$에 참여하는 개체 타입 $$E$$마다 숫자쌍 (min, max)를 하나씩 붙인다. 뜻은 이렇다. $$E$$의 개체는 누구든, 어느 때든, $$R$$의 관계 인스턴스에 min번 이상 max번 이하 끼어야 한다[^s2]. 숫자쌍은 $$E$$와 $$R$$을 잇는 선에서 $$E$$ 쪽에 적는다.
 
 기호로 쓰면, 개체 $$e$$가 낀 인스턴스의 수를 $$c(e)$$라 할 때
 
@@ -87,8 +87,8 @@ $$\forall e \in E$$는 "$$E$$의 모든 개체 $$e$$에 대해"로 읽는다. ma
 
 **1, N 표기와 오가는 법.** 같은 내용을 [카디널리티 비율](/Hongs_Blog/studies/database-design/cardinality-ratio/)과 [참여 제약](/Hongs_Blog/studies/database-design/participation-constraint/)으로 적은 것과 이렇게 이어진다.
 
-- min이 0이면 부분 참여(홑선), 1 이상이면 전체 참여(겹선)다. 선은 같은 쪽에 그대로 있다[^4].
-- max는 건너편으로 간다. $$E$$ 옆의 max가 1이면 1, N 표기에서는 **상대편** 개체 타입 옆에 1을 적는다. max가 N이면 상대편 옆에 N을 적는다[^s1].
+- min이 0이면 부분 참여(홑선), 1 이상이면 전체 참여(겹선)다. 선은 같은 쪽에 그대로 있다.
+- max는 건너편으로 간다. $$E$$ 옆의 max가 1이면 1, N 표기에서는 **상대편** 개체 타입 옆에 1을 적는다. max가 N이면 상대편 옆에 N을 적는다.
 
 거꾸로 가면 잃는 것이 있다. (2,4)를 1, N 표기로 옮기면 "N, 전체 참여"가 되고, 이것을 다시 (min, max)로 옮기면 (1,N)이다. 2와 4는 사라진다. (min, max)가 더 많은 것을 적는다.
 
@@ -96,7 +96,7 @@ $$\forall e \in E$$는 "$$E$$의 모든 개체 $$e$$에 대해"로 읽는다. ma
 
 ### COMPANY의 (min, max)
 
-슬라이드 그림의 숫자쌍 열두 개다[^2].
+(min, max)로 그린 COMPANY 그림의 숫자쌍 열두 개다.
 
 | 관계 타입 | 개체 타입 (역할 이름) | (min, max) | 읽기 |
 |---|---|---|---|
@@ -113,14 +113,9 @@ $$\forall e \in E$$는 "$$E$$의 모든 개체 $$e$$에 대해"로 읽는다. ma
 | DEPENDENTS_OF | EMPLOYEE (Employee) | (0,N) | 직원은 부양가족을 몇 명이든 둔다. 없어도 된다 |
 | | DEPENDENT (Dependent) | (1,1) | 부양가족은 정확히 한 직원에 딸린다 |
 
-이 열두 개에서 뽑은 비율과 참여는 1, N으로 그린 COMPANY 그림과 여섯 관계 모두 같다. 슬라이드의 글과는 SUPERVISION의 참여 한 군데만 다르다. 글 쪽이 틀린 것으로 보인다: [역할 이름과 재귀 관계](/Hongs_Blog/studies/database-design/recursive-relationship/)의 원본 오류 의심.
+이 열두 개에서 뽑은 비율과 참여는 1, N으로 그린 COMPANY 그림과 여섯 관계 모두 같다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: WORKS_FOR의 DEPARTMENT 쪽 (4,N) (5주차 p.34, p.31) / 문제점: 뒤에 나오는 COMPANY의 자료(6주차 6-2 p.21)에서 부서별 직원 수는 5번 4명, 4번 3명, 1번 1명이다. 4번과 1번 부서가 "직원 4명 이상"을 어긴다. 요구사항 설명(4주차 4-2 p.4)과 WORKS_FOR 설명(5주차 p.26)에도 4명이라는 조건은 없다. / 수정안: 자료에 맞추면 (1,N)이다. p.26의 "양쪽 다 전체 참여"와도 맞는다. / 근거: 검증 코드로 자료를 세면 열두 개 가운데 이 하나만 어기고, (1,N)으로 바꾸면 모두 지킨다.
-
-</div>
+WORKS_FOR의 DEPARTMENT 쪽 (4,N)은 조심해서 읽는다. COMPANY의 요구사항 글에는 "부서에 직원이 4명 이상 있어야 한다"는 조건이 없다([데이터베이스 설계 과정](/Hongs_Blog/studies/database-design/database-design-process/)). 실제 COMPANY 데이터에서도 부서별 직원 수는 5번 부서 4명, 4번 부서 3명, 1번 부서 1명이다. 4번과 1번 부서가 이 한계를 어긴다. 열두 개 가운데 데이터가 어기는 것은 이 하나뿐이다. 요구사항과 데이터에 맞추려면 (1,N)으로 적는다. 그러면 12개 모두 지킨다. 아래의 읽기 연습은 그림에 적힌 (4,N)을 그대로 쓴다.
 
 
 ### 스스로 설명해 보기
@@ -177,8 +172,8 @@ WORKS_FOR의 (1,1)과 (4,N)을 "부서 1 : 직원 N, 양쪽 전체 참여"로 �
 
 ## 활용
 
-- 요구 문장을 숫자쌍으로 옮길 때는 문장의 주어를 본다. 주어인 개체 타입 옆에 적는다. "A paper is reviewed by 2 to 4 reviewers"의 주어는 논문이므로 PAPER 옆에 (2,4)를 적는다[^5].
-- 낱말이 한계를 알려 준다. 슬라이드의 풀이는 "does not have to"를 아래 한계 0으로, "has to"와 "at least one"을 아래 한계 1로 옮겼다[^4][^5]. "a single"은 위 한계 1, "many"는 위 한계 N이다[^s3].
+- 요구 문장을 숫자쌍으로 옮길 때는 문장의 주어를 본다. 주어인 개체 타입 옆에 적는다. "A paper is reviewed by 2 to 4 reviewers"의 주어는 논문이므로 PAPER 옆에 (2,4)를 적는다.
+- 낱말이 한계를 알려 준다. "does not have to"(안 해도 된다)는 아래 한계 0, "has to"(해야 한다)와 "at least one"(적어도 하나)은 아래 한계 1이다. "a single"은 위 한계 1, "many"는 위 한계 N이다[^s3].
 - 표로 옮길 때: 위 한계가 1인 쪽의 표에 상대를 가리키는 열을 둘 수 있다. 아래 한계까지 1이면 그 열은 비면 안 된다: [일대다 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-one-to-many-relationship/). (2,4)나 (4,N)처럼 0, 1, N이 아닌 한계는 열 하나로는 지킬 수 없어 따로 검사하는 규칙이 있어야 한다: [주장 CREATE ASSERTION](/Hongs_Blog/studies/database-design/sql-assertion/)[^s3]
 - 다른 표기를 만나면: UML 클래스 다이어그램은 같은 숫자를 이 표기와 반대쪽 끝에 적는다[^s3].
 
@@ -245,13 +240,7 @@ WORKS_FOR의 (1,1)과 (4,N)을 "부서 1 : 직원 N, 양쪽 전체 참여"로 �
 </details>
 
 
-[^1]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.5 (COMPANY ER 다이어그램: 1, N, M과 겹선)
-[^2]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.34 (ER Diagram of COMPANY Database: (min, max)와 역할 이름). p.31에 같은 그림이 작게 있다.
-[^3]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.36 (Exercise 3: "Instructors teach from two to four courses"). 답 (2, 4)는 데이터베이스 설계 5회 강의 자료 「5_ERmodel-solution」, p.3
-[^4]: 데이터베이스 설계 6회 강의 자료 「6-1_ER-diagram-solution」, p.33 (IS_CONTACT: "total participation (the minimum cardinality = 1)", "partial participation (the minimum cardinality = 0)")
-[^5]: 데이터베이스 설계 6회 강의 자료 「6-1_ER-diagram-solution」, p.34 (REVIEWS: "A paper is reviewed by 2 to 4 reviewers, so its (min, max) constraint is (2,4) (i.e., total participation)")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 방식을 나란히 놓은 다이어그램과 "위 한계는 건너편으로 간다"는 규칙은 슬라이드에 글로 적혀 있지 않다. 슬라이드의 두 COMPANY 그림(4-2 p.5와 5주차 p.34)을 견주어 썼고, 여섯 관계 모두에서 맞는 것을 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 (min, max)를 그림과 연습으로만 보이고 글로 정의하지 않는다. 정의와 식은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장(ER 다이어그램의 다른 표기)의 것이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "a single", "many"를 한계로 옮기는 요령, 표로 옮길 때의 설명, UML의 숫자 자리는 슬라이드에 없다. UML에 대한 말은 Elmasri & Navathe, 같은 책 3장(UML 클래스 다이어그램)의 설명이다. "a single", "many"는 6주차 6-1 풀이 p.15~17의 문장과 답(1:N, M:N)에서 읽었다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 설계 이유, 스스로 설명해 보기, 오해 항목, 카드 C1~C5와 C2의 동아리 예는 원본에 없다. 답은 검증 코드로 확인했다.
+[^s2]: 정의와 식은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장(ER 다이어그램의 다른 표기)의 것이다.
+[^s3]: UML에 대한 말은 Elmasri & Navathe, 같은 책 3장(UML 클래스 다이어그램)의 설명이다.
+[^s4]: 답은 검증 코드로 확인했다.
 {% endraw %}

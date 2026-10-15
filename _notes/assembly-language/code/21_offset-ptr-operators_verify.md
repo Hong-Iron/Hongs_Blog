@@ -20,11 +20,11 @@ permalink: "/studies/assembly-language/code/21_offset-ptr-operators_verify/"
 [OFFSET과 PTR 연산자](/Hongs_Blog/studies/assembly-language/offset-ptr-operators/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""「OFFSET과 PTR 연산자」: OFFSET 값, PTR로 일부만 읽고 쓰기, Your turn, LABEL, 카드 C1·C2
+"""「OFFSET과 PTR 연산자」: OFFSET 값, PTR로 일부만 읽고 쓰기, 연습 문제, LABEL, 카드 C1·C2
 
 실행: python3 21_offset-ptr-operators_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -261,12 +261,12 @@ def must_fail(fn, *args):
 
 
 if __name__ == "__main__":
-    # 5-3-2 p.10 OFFSET
+    # OFFSET
     c = CPU(); d = Data(c, base=0x00404000)
     d.byte("bVal", None); d.word("wVal", None); d.dword("dVal", None); d.dword("dVal2", None)
     for name, want in (("bVal", 0x00404000), ("wVal", 0x00404001), ("dVal", 0x00404003), ("dVal2", 0x00404007)):
         c.mov("esi", d.offset(name)); assert c.get("esi") == want
-    # p.12, p.14 PTR
+    # PTR
     c = CPU(); d = Data(c)
     d.dword("myDouble", 0x12345678)
     assert must_fail(c.mov, "ax", d.m("myDouble")) == "size mismatch"
@@ -277,13 +277,13 @@ if __name__ == "__main__":
     c.mov("ax", d.m("myDouble", 2, 2)); assert c.get("ax") == 0x1234
     c.mov(d.m("myDouble", 0, 2), 0x4321)
     assert c.get(d.m("myDouble")) == 0x12344321 and d.bytes_of("myDouble") == [0x21, 0x43, 0x34, 0x12]
-    # p.15 작은 것을 모아 큰 것으로
+    # 작은 것을 모아 큰 것으로
     c = CPU(); d = Data(c)
     d.byte("myBytes", 0x12, 0x34, 0x56, 0x78)
     c.mov("ax", d.m("myBytes", 0, 2)); assert c.get("ax") == 0x3412
     c.mov("ax", d.m("myBytes", 2, 2)); assert c.get("ax") == 0x7856
     c.mov("eax", d.m("myBytes", 0, 4)); assert c.get("eax") == 0x78563412
-    # p.16 Your turn
+    # 연습 문제
     c = CPU(); d = Data(c)
     d.byte("varB", 0x65, 0x31, 0x02, 0x05); d.word("varW", 0x6543, 0x1202); d.dword("varD", 0x12345678)
     c.mov("ax", d.m("varB", 2, 2)); assert c.get("ax") == 0x0502
@@ -291,7 +291,7 @@ if __name__ == "__main__":
     c.mov("bl", d.m("varW", 2, 1)); assert c.get("bl") == 0x02
     c.mov("ax", d.m("varD", 2, 2)); assert c.get("ax") == 0x1234
     c.mov("eax", d.m("varW", 0, 4)); assert c.get("eax") == 0x12026543
-    # 5-3-3 p.5 LABEL
+    # LABEL
     c = CPU(); d = Data(c)
     d.label("dwList", 4); d.label("wordList", 2); d.byte("intList", 0x00, 0x10, 0x00, 0x20)
     assert d.offset("dwList") == d.offset("wordList") == d.offset("intList")

@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Available Expressions vs Live Variables", "전방 분석과 후방 분석", "Forward Analysis", "Backward Analysis", "데이터 흐름 분석", "Data-flow Analysis"]
 description: "둘 다 코드의 지점마다 집합 하나를 붙이고, 그 집합으로 코드를 고친다. 가르는 질문은 \"지나온 일을 묻는가, 앞으로 올 일을 묻는가\"다. 사용 가능한 식은 여기까지 오는 동안 무엇이 계산되어 아직 맞는지를 묻고, 생존 변수는 여기서부터 무엇이 읽힐지를 묻는다. 이 답이 훑는 방향…"
@@ -69,9 +69,9 @@ permalink: "/studies/compilers/available-vs-live/"
 | 이 집합으로 하는 최적화 | 복사 전파, 공통 부분식 제거 | 죽은 코드 제거 |
 | 덜 정확해도 괜찮은 쪽 | 맞는 식을 빠뜨려도 된다(집합이 작은 쪽) | 죽은 변수를 살았다고 봐도 된다(집합이 큰 쪽) |
 
-마지막 줄을 뺀 나머지는 12회와 13회 슬라이드의 규칙을 나란히 놓은 것이다[^1][^2][^3]. 마지막 줄은 그 규칙들에서 따라 나온다[^s1]. 선택을 가르는 줄은 "방향"과 "합치는 법"이다. 시험에서 가장 자주 뒤바꾸는 것도 이 두 줄이다.
+마지막 줄을 뺀 나머지는 두 분석의 규칙을 나란히 놓은 것이다. 마지막 줄은 그 규칙들에서 따라 나온다[^s1]. 선택을 가르는 줄은 "방향"과 "합치는 법"이다. 두 분석을 헷갈릴 때 뒤바꾸기 쉬운 것도 이 두 줄이다.
 
-두 분석은 같은 코드에 차례로 쓴다. 12회의 예에서 사용 가능한 식으로 `t1 = t0`, `t0 = t2`처럼 고쳐 쓰고 나면 읽히지 않는 변수가 생기고, 생존 변수 분석이 그 줄을 지운다[^4].
+두 분석은 같은 코드에 차례로 쓴다. [사용 가능한 식 분석](/Hongs_Blog/studies/compilers/available-expressions/)의 다섯 줄 예에서 사용 가능한 식으로 `t1 = t0`, `t0 = t2`처럼 고쳐 쓰고 나면 읽히지 않는 변수가 생기고, 생존 변수 분석이 그 줄을 지운다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 교집합과 합집합을 바꿔 쓰면 틀리는 예(왼쪽 길로 왔는데 `c = 1 + b`가 거짓, 한쪽 길에서만 읽히는 변수의 대입을 지움), 고리에서 집합이 한쪽은 줄고 한쪽은 느는 것 — [45_global-available-expressions_impl.py](/Hongs_Blog/studies/compilers/code/45_global-available-expressions_impl/), [44_global-live-variable-analysis_impl.py](/Hongs_Blog/studies/compilers/code/44_global-live-variable-analysis_impl/)</div>
@@ -84,17 +84,11 @@ permalink: "/studies/compilers/available-vs-live/"
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C4** 두 분석 어느 것도 필요 없는 최적화 둘과, 두 분석만으로는 못 하는 최적화 하나를 쓰라.</summary>
 
-**답:** 필요 없는 것: ① 산술 단순화(`x * 2`를 `x + x`로 바꾸는 식의 고쳐 쓰기) ② 상수 접기(`3 + 4`를 컴파일할 때 7로 계산해 두기). 둘은 그 줄 하나만 보고 고친다. 앞뒤의 집합이 필요 없다[^5]. 못 하는 것: 코드 이동. 문장을 한 블록에서 다른 블록으로 옮기는 일은 한 블록만 봐서는 할 수 없고 전역으로 봐야 한다[^6].<br>
+**답:** 필요 없는 것: ① 산술 단순화(`x * 2`를 `x + x`로 바꾸는 식의 고쳐 쓰기) ② 상수 접기(`3 + 4`를 컴파일할 때 7로 계산해 두기). 둘은 그 줄 하나만 보고 고친다. 앞뒤의 집합이 필요 없다. 못 하는 것: 코드 이동. 문장을 한 블록에서 다른 블록으로 옮기는 일은 한 블록만 봐서는 할 수 없고 전역으로 봐야 한다.<br>
 **이유:** 사용 가능한 식과 생존 변수는 "다른 줄과의 관계"를 알려 준다. 한 줄 안에서 끝나는 고쳐 쓰기에는 관계가 필요 없다.
 
 </details>
 
 
-[^1]: 컴파일러 12회 강의 자료 「Lecture12 Code optimization part 1」, p.22~27 (사용 가능한 식의 뜻과 규칙, 공통 부분식 제거, 복사 전파)
-[^2]: 같은 자료, p.33~37 (생존 변수의 뜻, 거꾸로 훑는 규칙, 죽은 코드 제거)
-[^3]: 컴파일러 13회 강의 자료 「Lecture13 Code optimization part 2」, p.9 (끝 집합 = 다음 블록들 시작 집합의 합집합), p.15 (고리 끝 블록 고치기), p.25 (시작 집합 = 앞 블록들 결과의 교집합), p.31 (고리 첫 블록 고치기)
-[^4]: 컴파일러 12회 강의 자료 「Lecture12 Code optimization part 1」, p.28~32 (사용 가능한 식으로 고쳐 쓴 예), p.38~41 (같은 코드에 생존 변수 분석)
-[^5]: 같은 자료, p.43 (지역 최적화 요약: 다섯 기법 가운데 셋만 분석에 기댄다)
-[^6]: 컴파일러 13회 강의 자료 「Lecture13 Code optimization part 2」, p.36 (전역으로만 할 수 있는 최적화, 코드 이동)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "덜 정확해도 괜찮은 쪽" 줄과 카드의 이유 설명은 원본에 없다. 교집합·합집합을 바꾸면 틀리는 것을 두 구현 코드의 반례로 확인했다. 산술 단순화와 상수 접기의 예(`x * 2`, `3 + 4`)도 보충이다.
+[^s1]: 교집합·합집합을 바꾸면 틀리는 것을 두 구현 코드의 반례로 확인했다. 산술 단순화와 상수 접기의 예(`x * 2`, `3 + 4`)도 보충이다.
 {% endraw %}

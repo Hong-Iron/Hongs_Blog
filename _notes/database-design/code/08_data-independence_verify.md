@@ -23,22 +23,22 @@ permalink: "/studies/database-design/code/08_data-independence_verify/"
 """데이터 독립성 문서의 값 확인.
 
 문서: 08.데이터 독립성
-출처: 데이터베이스 설계 2주차 슬라이드 2-2 p.16~19, 3주차 슬라이드 3 p.6, UNIVERSITY 상태 2-1 p.5, p.10, p.20
+출처: Elmasri & Navathe, Fundamentals of Database Systems 2.2절과 1장의 UNIVERSITY 예
 주장: 응용 프로그램(성적표 프로그램)의 요청 문장을 한 글자도 안 고치고 아래 변화를 차례로 겪게 한다.
   물리적 데이터 독립성 (내부 스키마를 바꾼다)
     P1. SECTION에 (Semester, Year) 색인을 단다. "2008년 가을 분반" 질의의 실행 계획은 전부 훑기에서
         색인 찾기로 바뀌고, 답 112, 119, 135는 그대로다.
     P2. GRADE_REPORT에 색인을 달았다가 뗀다. 성적표는 그대로다.
   논리적 데이터 독립성 (개념 스키마를 바꾼다)
-    L1. STUDENT에 Date_of_birth 열을 더한다(슬라이드 2-2 p.6). 성적표는 그대로다.
+    L1. STUDENT에 Date_of_birth 열을 더한다(문서 06의 스키마 진화 예). 성적표는 그대로다.
     L2. 새 표 DEPARTMENT를 더한다. 성적표는 그대로다.
-    L3. GRADE_REPORT를 이름과 과목 번호가 든 꼴(2-1 p.20)로 바꾼다. 뷰 정의(사상)만 고치면 성적표는 그대로다.
+    L3. GRADE_REPORT를 이름과 과목 번호가 든 꼴(문서 04의 중복 표)로 바꾼다. 뷰 정의(사상)만 고치면 성적표는 그대로다.
     L4. 성적표가 쓰지 않는 SECTION.Instructor 열을 뺀다. 성적표는 그대로다.
   지켜 주지 못하는 것
     N1. 프로그램이 쓰는 데이터를 빼면 깨진다: PREREQUISITE 표를 없애면 선수 과목 프로그램이 오류를 낸다.
         뷰가 쓰는 Grade 열을 빼려는 시도는 SQLite가 아예 거부한다.
     N2. 외부 스키마를 거치지 않고 표의 열 개수에 기대는 프로그램은 열 하나만 더해도 깨진다.
-  카드 C2: 3 p.6의 네 가지 변화 가운데 (1)~(3)은 개념 스키마, (4)는 내부 스키마의 변화다.
+  카드 C2: 문서 표에 묶어 든 네 가지 변화 가운데 (1)~(3)은 개념 스키마, (4)는 내부 스키마의 변화다.
 실행: python3 08_data-independence_verify.py
 SQLite를 DBMS의 한 예로 썼다. EXPLAIN QUERY PLAN의 글귀는 SQLite 3.50.4 기준이다.
 """
@@ -63,7 +63,7 @@ ROWS = {
     "PREREQUISITE": [("CS3380", "CS3320"), ("CS3380", "MATH2410"), ("CS3320", "CS1310")],
 }
 
-# 외부 스키마: 성적표를 뽑는 사람들이 보는 모습(2-1 p.10의 TRANSCRIPT)
+# 외부 스키마: 성적표를 뽑는 사람들이 보는 모습(문서 02의 TRANSCRIPT)
 VIEW_V1 = """
 CREATE VIEW TRANSCRIPT AS
   SELECT S.Name AS Student_name, SE.Course_number, G.Grade, SE.Semester, SE.Year, SE.Section_identifier AS Section_id
@@ -89,7 +89,7 @@ APP_TRANSCRIPT = ("SELECT Course_number, Grade, Semester, Year, Section_id "
 APP_FALL08 = "SELECT Section_identifier FROM SECTION WHERE Semester = 'Fall' AND Year = '08'"
 APP_PREREQ = "SELECT Prerequisites FROM COURSE_PREREQUISITES WHERE Course_name = 'Database'"
 
-EXPECTED = {       # 2-1 p.10의 TRANSCRIPT 그림
+EXPECTED = {       # 문서 02의 TRANSCRIPT 표
     "Smith": [("MATH2410", "B", "Fall", "08", 112), ("CS1310", "C", "Fall", "08", 119)],
     "Brown": [("MATH2410", "A", "Fall", "07", 85), ("CS1310", "A", "Fall", "07", 92),
               ("CS3320", "B", "Spring", "08", 102), ("CS3380", "A", "Fall", "08", 135)],
@@ -158,7 +158,7 @@ if __name__ == "__main__":
     assert transcript_program(conn) == EXPECTED
 
     # ---------- 논리적 데이터 독립성 ----------
-    # L1. 열을 더한다 (2-2 p.6의 Date_of_birth)
+    # L1. 열을 더한다 (Date_of_birth)
     conn.execute("ALTER TABLE STUDENT ADD COLUMN Date_of_birth TEXT")
     assert columns(conn, "STUDENT") == ["Name", "Student_number", "Class", "Major", "Date_of_birth"]
     assert transcript_program(conn) == EXPECTED
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     conn.execute("INSERT INTO DEPARTMENT VALUES ('CS', 'Bldg 208')")
     assert transcript_program(conn) == EXPECTED
     assert view_text(conn, "TRANSCRIPT").split() == VIEW_V1.split()            # 여기까지 사상도 그대로다
-    # L3. GRADE_REPORT의 모양을 바꾼다 (2-1 p.5의 꼴 -> p.20의 꼴). 뷰 정의(사상)만 고친다.
+    # L3. GRADE_REPORT의 모양을 바꾼다 (UNIVERSITY의 꼴 -> 문서 04의 중복 표 꼴). 뷰 정의(사상)만 고친다.
     conn.executescript("""
         CREATE TABLE GRADE_REPORT_NEW (Student_number INTEGER, Student_name TEXT,
                                        Section_identifier INTEGER, Course_number TEXT, Grade TEXT);
@@ -229,7 +229,7 @@ if __name__ == "__main__":
 
     assert (APP_TRANSCRIPT, APP_FALL08, APP_PREREQ) == app_text_at_start       # 요청 문장은 처음 그대로다
 
-    # 카드 C2: 3 p.6의 네 변화가 어느 스키마의 변화인가
+    # 카드 C2: 네 변화가 어느 스키마의 변화인가
     changes = {"새 레코드 타입이나 데이터 항목을 더한다": "개념", "제약을 고친다": "개념",
                "레코드 타입이나 데이터 항목을 뺀다": "개념", "새 접근 경로를 만든다": "내부"}
     independence = {"개념": "논리적", "내부": "물리적"}

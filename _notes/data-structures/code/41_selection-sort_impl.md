@@ -24,7 +24,7 @@ permalink: "/studies/data-structures/code/41_selection-sort_impl/"
  *
  * 실행: cc -std=c11 -Wall -Wextra 41_selection-sort_impl.c -o selection && ./selection
  * 문서: 41.선택 정렬 (예시 추적 표, 재귀로 보는 눈, 카드 C1~C3)
- * 출처: 자료구조 14주차 슬라이드 p.5. 슬라이드에는 설명 네 줄뿐이라 코드는 그 설명대로 짠 것이다.
+ * 코드는 문서의 재귀 설명 세 줄대로 짠 것이다.
  * 색인은 0부터 센다.
  *
  * 확인하는 것
@@ -66,7 +66,7 @@ static void selection_sort(int a[], int n)
     }
 }
 
-/* 14주차 p.5의 눈: 가장 큰 값을 오른쪽 끝으로 보내고, 남은 n-1개를 같은 방법으로 정렬한다. */
+/* 재귀로 보는 눈: 가장 큰 값을 오른쪽 끝으로 보내고, 남은 n-1개를 같은 방법으로 정렬한다. */
 static void selection_sort_rec(int a[], int n)
 {
     if (n <= 1)

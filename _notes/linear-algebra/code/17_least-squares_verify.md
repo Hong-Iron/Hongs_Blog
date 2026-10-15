@@ -138,7 +138,7 @@ def main():
     a, b = math.exp(float(lx[0])), float(lx[1])
     assert abs(a - 2.01) < 0.01 and abs(b - 0.999) < 0.001
     print("[OK] 주장 9: 사다리")
-    # 수치해석(2-2) 과목별 관점: 오차 노름, 슬라이드 직선 예, 포물선 예
+    # 수치해석(2-2) 과목별 관점: 오차 노름, 문서의 직선 예, 포물선 예
     from fractions import Fraction as Fr
     xs = [-1, 0, 1, 2, 3, 4, 5, 6]; ys = [10, 9, 7, 5, 4, 3, 0, -1]
     e = [abs(Fr(86, 10) - Fr(16, 10) * x - y) for x, y in zip(xs, ys)]

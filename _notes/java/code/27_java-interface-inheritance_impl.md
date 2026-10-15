@@ -51,7 +51,7 @@ class InterfaceInheritanceCheck {
             System.out.println(rc == sc);
         }), "Turn on TV\nSearch: java\ntrue\n");
 
-        // 인터페이스 상속: 슬라이드의 InterfaceA, B, C
+        // 인터페이스 상속: 문서의 InterfaceA, B, C
         check("인터페이스 상속", capture(() -> {
             InterfaceCImpl impl = new InterfaceCImpl();
             InterfaceA ia = impl;

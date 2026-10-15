@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/51_sql-insert-delete-update_verify/"
 
 ```python
 # 51.INSERT·DELETE·UPDATE 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 51_sql-insert-delete-update_verify.py)
-# 확인하는 것 (슬라이드 9 p.23~24, 26, 28의 문장을 COMPANY 상태에 돌린다)
+# 확인하는 것 (문서의 INSERT, DELETE, UPDATE 문장을 COMPANY 상태에 돌린다)
 #   1. INSERT: 값을 열 순서대로 다 적는 꼴, 열 이름을 골라 적는 꼴(안 적은 열은 NULL이나 DEFAULT)
 #   2. DELETE: WHERE에 맞는 행을 모두 지운다. 맞는 행이 없으면 0행을 지우고 끝난다
 #   3. UPDATE: WHERE에 맞는 행의 값을 SET대로 고친다
-#   4. 슬라이드의 빨간 물음 셋(2번 부서가 없으면? Ssn 123456789를 지워도 되나? 키 값을 고치면?)
+#   4. 문서의 물음 셋(2번 부서가 없으면? Ssn 123456789를 지워도 되나? 키 값을 고치면?)
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -85,7 +85,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -146,15 +146,15 @@ if __name__ == "__main__":
     assert error_of(c, "INSERT INTO EMPLOYEE VALUES ('Richard', 'K', 'Marini', '653298653')") \
         == 'table EMPLOYEE has 10 columns but 4 values were supplied'
 
-    # 열 이름을 골라 적는 꼴 (9 p.23): 안 적은 여섯 열은 NULL
+    # 열 이름을 골라 적는 꼴: 안 적은 여섯 열은 NULL
     c = make()
     assert changed(c, "INSERT INTO EMPLOYEE (Fname, Lname, Dno, Ssn) VALUES ('Richard', 'Marini', 4, '653298653')") == 1
     assert rows(c, "SELECT * FROM EMPLOYEE WHERE Ssn = '653298653'") \
         == [('Richard', None, 'Marini', '653298653', None, None, None, None, None, 4)]
-    # 열 목록의 순서와 값의 순서가 짝이 맞으면 된다 (9 p.24는 Ssn, Dno 순서로 적었다)
+    # 열 목록의 순서와 값의 순서가 짝이 맞으면 된다 (문서의 물음은 Ssn, Dno 순서로 적었다)
     c = make()
     assert error_of(c, "INSERT INTO EMPLOYEE (Fname, Lname, Ssn, Dno) VALUES ('Robert', 'Hatcher', '980760540', 4)") is None
-    # 빨간 물음 1: Dnumber = 2인 부서가 없다 -> 참조 무결성 위반
+    # 물음 1: Dnumber = 2인 부서가 없다 -> 참조 무결성 위반
     assert rows(c, "SELECT COUNT(*) FROM DEPARTMENT WHERE Dnumber = 2") == [(0,)]
     assert error_of(c, "INSERT INTO EMPLOYEE (Fname, Lname, Ssn, Dno) VALUES ('Robert', 'Hatcher', '980760540', 2)") \
         == 'FOREIGN KEY constraint failed'
@@ -166,7 +166,7 @@ if __name__ == "__main__":
     c = make()
     assert changed(c, "DELETE FROM EMPLOYEE WHERE Lname = 'Brown'") == 0       # Brown이라는 직원은 없다. 오류도 없다
     assert rows(c, "SELECT COUNT(*) FROM EMPLOYEE") == [(8,)]
-    # 빨간 물음 2: Ssn = '123456789'(Smith)를 지워도 되나 -> 안 된다
+    # 물음 2: Ssn = '123456789'(Smith)를 지워도 되나 -> 안 된다
     assert error_of(c, "DELETE FROM EMPLOYEE WHERE Ssn = '123456789'") == 'FOREIGN KEY constraint failed'
     assert rows(c, "SELECT COUNT(*) FROM WORKS_ON WHERE Essn = '123456789'") == [(2,)]      # Smith를 가리키는 행들
     assert rows(c, "SELECT COUNT(*) FROM DEPENDENT WHERE Essn = '123456789'") == [(3,)]
@@ -202,7 +202,7 @@ if __name__ == "__main__":
     assert rows(c, "SELECT COUNT(*) FROM DEPT_LOCATIONS WHERE Dlocation LIKE '%, TX'") == [(5,)]
     # 맞는 행이 없으면 0행을 고친다
     assert changed(c, "UPDATE PROJECT SET Plocation = 'Seoul' WHERE Pnumber = 99") == 0
-    # 빨간 물음 3: 외래 키 값을 없는 부서로 고치면 참조 무결성 위반, 기본 키 값을 이미 있는 값으로 고치면 키 위반
+    # 물음 3: 외래 키 값을 없는 부서로 고치면 참조 무결성 위반, 기본 키 값을 이미 있는 값으로 고치면 키 위반
     c = make()
     assert error_of(c, "UPDATE PROJECT SET Dnum = 7 WHERE Pnumber = 10") == 'FOREIGN KEY constraint failed'
     assert error_of(c, "UPDATE PROJECT SET Pnumber = 20 WHERE Pnumber = 10") == 'UNIQUE constraint failed: PROJECT.Pnumber'

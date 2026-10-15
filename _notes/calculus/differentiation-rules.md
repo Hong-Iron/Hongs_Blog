@@ -158,6 +158,6 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.3절 "Differentiation Rules", 3.5절 "Derivatives of Trigonometric Functions", 3.9절 "Derivatives of Exponential and Logarithmic Functions"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [05_differentiation-rules_plot.py](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_plot/)로 그렸다. 늘어난 양은 잘 보이게 크게 잡았다. 늘어난 넓이가 두 띠와 모서리의 합인 것, $$f = x^2$$, $$g = e^x$$, $$x = 1$$에서 모서리를 $$h$$로 나눈 값이 0으로 가는 것, $$(x^2e^x)' = (2x + x^2)e^x$$를 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 기본 도함수 표와 법칙, 예제의 풀이 순서, [연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/)을 근거로 그렸다.
+[^s1]: [05_differentiation-rules_plot.py](/Hongs_Blog/studies/calculus/code/05_differentiation-rules_plot/)로 그렸다. 늘어난 양은 잘 보이게 크게 잡았다. 늘어난 넓이가 두 띠와 모서리의 합인 것, $$f = x^2$$, $$g = e^x$$, $$x = 1$$에서 모서리를 $$h$$로 나눈 값이 0으로 가는 것, $$(x^2e^x)' = (2x + x^2)e^x$$를 같은 코드로 확인했다.
+[^s2]: 정의 절의 기본 도함수 표와 법칙, 예제의 풀이 순서, [연쇄 법칙](/Hongs_Blog/studies/calculus/chain-rule/)을 근거로 그렸다.
 {% endraw %}

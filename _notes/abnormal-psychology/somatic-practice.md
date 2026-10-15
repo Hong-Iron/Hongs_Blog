@@ -24,7 +24,7 @@ permalink: "/studies/abnormal-psychology/somatic-practice/"
 {% raw %}
 사용 개념: [신체증상 및 관련 장애](/Hongs_Blog/studies/abnormal-psychology/somatic-symptom-related/), [신체증상장애](/Hongs_Blog/studies/abnormal-psychology/somatic-symptom-disorder/), [기능성 신경학적 증상장애](/Hongs_Blog/studies/abnormal-psychology/conversion-disorder/), [질병불안장애](/Hongs_Blog/studies/abnormal-psychology/illness-anxiety-disorder/), [인위성장애](/Hongs_Blog/studies/abnormal-psychology/factitious-disorder/), [인위성장애와 꾀병 비교](/Hongs_Blog/studies/abnormal-psychology/factitious-vs-malingering/)
 
-모든 사례는 가상이다[^s1]. "몸이 아프다는데 검사로는 설명이 안 되는" 사례는 다섯 하위목표로 푼다. 이 장애들은 증상의 종류보다 "증상이 실제로 있는가, 일부러 만드는가, 무엇이 중심인가"로 갈린다.
+모든 사례는 가상이다. "몸이 아프다는데 검사로는 설명이 안 되는" 사례는 다섯 하위목표로 푼다. 이 장애들은 증상의 종류보다 "증상이 실제로 있는가, 일부러 만드는가, 무엇이 중심인가"로 갈린다.
 
 1. *증상:* 어떤 신체 증상이 있고, 얼마나 뚜렷한가(없음, 경미, 뚜렷함). 운동·감각 기능의 신경 증상인가.
 2. *의학적 설명:* 손상이 있는가, 증상과 의학적 소견이 맞는가.
@@ -110,7 +110,4 @@ permalink: "/studies/abnormal-psychology/somatic-practice/"
 경제적 보상이라는 외적 이득이 목적이라면 꾀병이다. 꾀병은 정신장애가 아니다. 다만 보험금이 있어도 그것으로 설명되지 않는 반복적 자해와 환자 역할에 대한 집착이 뚜렷하면, 두 가능성을 모두 검토해야 한다. 가르는 질문은 "외적 보상을 없애도 증상을 계속 만들 것인가"다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 07.신체증상 및 관련 장애, 배설장애.pdf의 장애별 설명(p.3, 6, 9~12, 18~21, 23, 27, 30~34)을 적용한 가상 사례다.
 {% endraw %}

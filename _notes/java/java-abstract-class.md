@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Abstract Class", "abstract", "실체 클래스", "Concrete Class", "추상 메서드", "Abstract Method"]
 description: "\"동물\"은 개와 고양이를 묶어 부르는 말일 뿐, 그냥 동물 한 마리는 세상에 없다. 이처럼 자식들이 함께 쓰는 것만 모아 두고, 그 자체로는 객체를 만들지 못하게 막아 둔 부모 클래스다. 자식마다 달라야 하는 동작은 이름만 적어 두고 내용은 자식이 채우게 강제할 수 있다. 자식이 …"
@@ -34,7 +34,7 @@ permalink: "/studies/java/java-abstract-class/"
 
 ## 예시로 보기
 
-개와 고양이는 둘 다 이름이 있고 숨을 쉰다. 이 공통 부분을 `Animal`에 모으면 두 번 쓰지 않아도 된다. 그런데 `Animal`을 보통 클래스로 두면 두 가지가 곤란하다. 누군가 `new Animal()`로 "그냥 동물"을 만들 수 있고, 소리 내는 메서드에 무엇을 써야 할지 알 수 없다. 구체적인 소리는 아직 모르기 때문이다[^1].
+개와 고양이는 둘 다 이름이 있고 숨을 쉰다. 이 공통 부분을 `Animal`에 모으면 두 번 쓰지 않아도 된다. 그런데 `Animal`을 보통 클래스로 두면 두 가지가 곤란하다. 누군가 `new Animal()`로 "그냥 동물"을 만들 수 있고, 소리 내는 메서드에 무엇을 써야 할지 알 수 없다. 구체적인 소리는 아직 모르기 때문이다.
 
 ```java
 abstract class Animal {
@@ -80,9 +80,9 @@ a.sound();
 야옹
 ```
 
-`breathe`는 `Animal`에 한 번만 썼는데 두 자식이 함께 쓴다. `sound`는 자식마다 다르게 채웠다[^s1].
+`breathe`는 `Animal`에 한 번만 썼는데 두 자식이 함께 쓴다. `sound`는 자식마다 다르게 채웠다.
 
-`Animal`처럼 `abstract`를 붙여 객체를 만들지 못하게 한 클래스를 추상 클래스라고 부른다. `Dog`, `Cat`처럼 실제로 객체를 만드는 자식은 실체 클래스다. `sound()`처럼 몸통이 없는 메서드는 추상 메서드다[^2].
+`Animal`처럼 `abstract`를 붙여 객체를 만들지 못하게 한 클래스를 추상 클래스라고 부른다. `Dog`, `Cat`처럼 실제로 객체를 만드는 자식은 실체 클래스다. `sound()`처럼 몸통이 없는 메서드는 추상 메서드다.
 
 ```mermaid
 classDiagram
@@ -102,7 +102,7 @@ classDiagram
     Animal <|-- Cat : extends
 ```
 
-별표가 붙은 `sound()`가 추상 메서드다. 두 자식이 각자 채운다[^s2].
+별표가 붙은 `sound()`가 추상 메서드다. 두 자식이 각자 채운다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 출력, 추상 클래스의 생성자가 자식 생성자보다 먼저 실행되는 순서(카드 C3) — [24_java-abstract-class_impl.java](/Hongs_Blog/studies/java/code/24_java-abstract-class_impl/)</div>
@@ -112,11 +112,11 @@ classDiagram
 
 ## 정의
 
-추상 클래스는 실체 클래스들이 함께 가진 필드와 메서드를 뽑아 선언한 클래스다. 실체 클래스의 부모가 되어 공통 필드와 메서드를 물려준다[^2].
+추상 클래스는 실체 클래스들이 함께 가진 필드와 메서드를 뽑아 선언한 클래스다. 실체 클래스의 부모가 되어 공통 필드와 메서드를 물려준다.
 
 ### 선언
 
-클래스 선언에 `abstract`를 붙인다. 안에는 보통 클래스처럼 필드, 생성자, 메서드를 둔다[^3].
+클래스 선언에 `abstract`를 붙인다. 안에는 보통 클래스처럼 필드, 생성자, 메서드를 둔다.
 
 ```java
 public abstract class Sound {
@@ -126,11 +126,11 @@ public abstract class Sound {
 }
 ```
 
-`new`로 직접 객체를 만들 수 없다. 자식 클래스를 만들어 상속으로만 쓴다[^3]. `new Animal("x")`를 쓰면 `Animal is abstract; cannot be instantiated`라는 컴파일 오류가 난다[^s3].
+`new`로 직접 객체를 만들 수 없다. 자식 클래스를 만들어 상속으로만 쓴다. `new Animal("x")`를 쓰면 `Animal is abstract; cannot be instantiated`라는 컴파일 오류가 난다[^s3].
 
 ### 추상 메서드
 
-자식들이 함께 가진 메서드를 부모로 뽑아 올릴 때, 선언은 같은데 하는 일이 자식마다 다르면 추상 메서드로 선언한다. 보통 메서드와 다른 점은 `abstract`가 붙고 몸통 `{ }`이 없다는 것이다[^1].
+자식들이 함께 가진 메서드를 부모로 뽑아 올릴 때, 선언은 같은데 하는 일이 자식마다 다르면 추상 메서드로 선언한다. 보통 메서드와 다른 점은 `abstract`가 붙고 몸통 `{ }`이 없다는 것이다.
 
 ```java
 abstract 리턴타입 메서드이름(매개변수, …);
@@ -144,13 +144,13 @@ abstract 리턴타입 메서드이름(매개변수, …);
 
 ### 생성자는 있다
 
-객체를 직접 만들 수는 없지만 생성자는 둘 수 있다. 자식 객체를 만들 때 자식 생성자가 `super(...)`로 부모 생성자를 먼저 부르기 때문이다([부모 생성자 호출](/Hongs_Blog/studies/java/java-super-constructor/)). 위 예에서 `Dog("바둑이")`는 `super(name)`으로 `Animal`의 생성자를 불러 `name`을 채운다[^s1].
+객체를 직접 만들 수는 없지만 생성자는 둘 수 있다. 자식 객체를 만들 때 자식 생성자가 `super(...)`로 부모 생성자를 먼저 부르기 때문이다([부모 생성자 호출](/Hongs_Blog/studies/java/java-super-constructor/)). 위 예에서 `Dog("바둑이")`는 `super(name)`으로 `Animal`의 생성자를 불러 `name`을 채운다.
 
 ## 활용
 
 - 구현: [24_java-abstract-class_impl.java](/Hongs_Blog/studies/java/code/24_java-abstract-class_impl/)
 - 변수 타입을 추상 클래스로 두면 자식 객체를 모두 담을 수 있다. `Animal a = new Dog("바둑이");`에서 `a.sound()`는 Dog의 `sound`를 실행한다([다형성](/Hongs_Blog/studies/java/java-polymorphism/)).
-- 흔한 실수: 추상 메서드가 하나도 없으면 추상 클래스가 아니라고 생각하는 것. `abstract`만 붙이면 추상 메서드가 없어도 추상 클래스이고 `new`가 막힌다. 슬라이드의 `Sound` 선언에도 추상 메서드는 보이지 않는다[^3].
+- 흔한 실수: 추상 메서드가 하나도 없으면 추상 클래스가 아니라고 생각하는 것. `abstract`만 붙이면 추상 메서드가 없어도 추상 클래스이고 `new`가 막힌다. 위의 `Sound` 틀에도 추상 메서드는 적혀 있지 않다.
 
 ## 연결
 
@@ -224,10 +224,5 @@ Circle 생성자
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 11회 강의 자료 「Software Project 11. Interface (1)」, p.11 (추상 메서드와 오버라이딩, `abstract 리턴타입 메서드명(매개변수, …);`, Animal·Dog·Cat 그림의 "소리 낸다: 구체적인 소리는 아직 모름", "멍멍", "야옹")
-[^2]: 같은 자료, p.9 (추상 클래스와 실체 클래스, Animal·Bird·Insect·Fish 그림)
-[^3]: 같은 자료, p.10 (`public abstract class Sound`, `new`로 직접 만들 수 없다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `name` 필드, 생성자, `breathe` 메서드와 실행 출력, 추상 클래스의 생성자 설명은 원본에 없다. 슬라이드 p.10의 "field, Constructor, method" 주석과 p.11의 Animal·Dog·Cat 그림을 실행할 수 있는 코드로 채웠고, 구현 코드로 출력을 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 클래스 관계 그림은 슬라이드 p.11의 그림을 Mermaid로 옮긴 것이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오류 메시지, 추상 메서드의 세 규칙, 카드 C1~C3은 원본에 없다. JDK 21에서 직접 컴파일하고 실행해 확인했다(Java Language Specification §8.1.1.1, §8.4.3.1).
+[^s3]: JDK 21에서 직접 컴파일하고 실행해 확인했다(Java Language Specification §8.1.1.1, §8.4.3.1).
 {% endraw %}

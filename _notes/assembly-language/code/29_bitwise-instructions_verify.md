@@ -28,7 +28,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(문서 예시의 00000020 call → 00000025와 맞춘 값).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -488,41 +488,41 @@ def al(code, **reg):
 
 
 def main():
-    # 1. 슬라이드 그림 (wk07-3-2 p.5~8)
+    # 1. 네 연산 표의 값
     assert al("mov al,00111011b\nand al,00001111b").get("al") == 0b00001011
     assert al("mov al,00111011b\nor al,00001111b").get("al") == 0b00111111
     assert al("mov al,00111011b\nxor al,00001111b").get("al") == 0b00110100
     assert al("mov al,00111011b\nnot al").get("al") == 0b11000100
-    # 2. 대문자로 (p.9): 5번 비트 끄기. 소문자 26개 전부
+    # 2. 대문자로: 5번 비트 끄기. 소문자 26개 전부
     assert al("mov al,'a'\nand al,11011111b").get("al") == 0b01000001 == ord("A")
     for ch in "abcdefghijklmnopqrstuvwxyz":
         assert chr(al("and al,11011111b", al=ord(ch)).get("al")) == ch.upper()
     assert ord("a") - ord("A") == 32 == 1 << 5
-    # 3. 숫자를 글자로 (p.10): 4·5번 비트 켜기. 0~9 전부
+    # 3. 숫자를 글자로: 4·5번 비트 켜기. 0~9 전부
     assert al("mov al,6\nor al,00110000b").get("al") == 0b00110110 == ord("6")
     for d in range(10):
         assert chr(al("or al,00110000b", al=d).get("al")) == str(d)
-    # 4. CapsLock (p.11): 6번 비트. 주소 0040:0017 = 00417h. 실행 확인 안 함(실주소 모드 전용), 계산만
+    # 4. CapsLock: 6번 비트. 주소 0040:0017 = 00417h. 실행 확인 안 함(실주소 모드 전용), 계산만
     assert 0x40 * 16 + 0x17 == 0x417 and (0b00000000 | 0b01000000) == 1 << 6
-    # 5. 짝수면 점프 (p.12), 0이 아니면 점프 (p.13): 전수
+    # 5. 짝수면 점프, 0이 아니면 점프: 전수
     for v in list(range(0, 300)) + [0x7FFF, 0x8000, 0xFFFE, 0xFFFF]:
         c = al("and ax,1\njz EvenValue\nmov bl,1\nEvenValue:", ax=v)
         assert (c.get("bl") == 0) == (v % 2 == 0)
     for v in range(256):
         c = al("or al,al\njnz IsNotZero\nmov bl,1\nIsNotZero:", al=v)
         assert (c.get("bl") == 0) == (v != 0) and c.get("al") == v
-    # Your turn (p.12): 음수면 점프. 두 가지 답, 16비트 전수
+    # Your turn: 음수면 점프. 두 가지 답, 16비트 전수
     for v in range(0, 65536, 7):
         neg = signed(v, 2) < 0
         c = al("test ax,8000h\njnz IsNeg\nmov bl,1\nIsNeg:", ax=v)
         assert (c.get("bl") == 0) == neg and c.get("ax") == v
         c = al("or ax,ax\njs IsNeg\nmov bl,1\nIsNeg:", ax=v)
         assert (c.get("bl") == 0) == neg and c.get("ax") == v
-    # 6. 0·1·3번 비트가 모두 켜졌나 (wk07-3-3 p.12): 전수
+    # 6. 0·1·3번 비트가 모두 켜졌나: 전수
     for v in range(256):
         c = al("and al,00001011b\ncmp al,00001011b\nje L1\nmov bl,1\nL1:", al=v)
         assert (c.get("bl") == 0) == (v & 1 and v & 2 and v & 8 and True or False)
-    # 7. XOR 암호 (p.13~14): 두 번 하면 돌아온다
+    # 7. XOR 암호: 두 번 하면 돌아온다
     enc = """mov ecx,bufSize
         mov esi,0
         L1:
@@ -590,7 +590,7 @@ def main():
     c = machine("shr eax,1")
     c.r["eax"] = -8 % 2 ** 32
     assert c.run().r["eax"] == 2147483644
-    # wk10-3-1 p.8~10의 값: 80 shr 1 = 40, shr 2 = 10 / -80 sar 1 = -40, sar 2 = -10 / Your turn
+    # 시프트 예의 값: 80 shr 1 = 40, shr 2 = 10 / -80 sar 1 = -40, sar 2 = -10 / Your turn
     assert al("mov dl,80\nshr dl,1\nshr dl,2").get("dl") == 10
     assert signed(al("mov dl,-80\nsar dl,1\nsar dl,2").get("dl"), 1) == -10
     assert al("mov al,6Bh\nshr al,1").get("al") == 0x35 and al("mov al,6Bh\nshr al,1\nshl al,3").get("al") == 0xA8

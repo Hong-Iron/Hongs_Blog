@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Thompson's Construction", "McNaughton-Yamada-Thompson Algorithm", "맥노튼-야마다-톰슨 알고리즘", "톰슨 알고리즘", "정규 표현식을 NFA로", "Regular Expression to NFA", "ε-NFA"]
 description: "조립 설명서대로 부품을 끼워 맞추듯, 글자 줄의 모양을 적은 식을 그 모양을 알아보는 기계로 바꾸는 방법이다. 식을 가장 작은 조각까지 쪼개 조각마다 정해진 작은 그림을 그리고, 식이 조립된 순서대로 그림을 공짜 화살표로 이어 붙인다. 생각할 것 없이 규칙만 따르면 되고 어떤 식이…"
@@ -62,7 +62,7 @@ flowchart LR
     n8 -->|"c"| n9((("9")))
 ```
 
-상태 10개, ε-화살표 9개, 글자 화살표 3개다. 슬라이드의 마지막 그림과 같다[^1]. 상태 번호는 슬라이드에 없어서 붙였다[^s1].
+상태 10개, ε-화살표 9개, 글자 화살표 3개다. 상태 번호 0~9는 만든 순서대로 붙였다[^s1].
 
 `bc`를 넣어 본다. ε-화살표는 공짜라서, 말이 있을 수 있는 칸에는 ε-화살표로 닿는 칸이 모두 들어간다.
 
@@ -76,12 +76,12 @@ flowchart LR
 
 ## 정의
 
-톰슨 구성법(맥노튼-야마다-톰슨 알고리즘)은 정규 표현식을 부분식으로 쪼개 가며 재귀적으로 NFA를 만든다[^2].
+톰슨 구성법(맥노튼-야마다-톰슨 알고리즘)은 정규 표현식을 부분식으로 쪼개 가며 재귀적으로 NFA를 만든다.
 
 - **입력:** 알파벳 $$\Sigma$$ 위의 [정규 표현식](/Hongs_Blog/studies/compilers/regular-expression/) $$r$$.
 - **출력:** $$L(r)$$을 받아들이는 NFA. 시작 상태 하나, 받아들이는 상태 하나를 가진다.
 
-기본 정규 표현식이 다섯 가지라서 규칙도 다섯 가지다[^3]. 아래 표에서 "시작"과 "끝"은 그 조각 그림의 시작 상태와 받아들이는 상태다.
+기본 정규 표현식이 다섯 가지라서 규칙도 다섯 가지다. 아래 표에서 "시작"과 "끝"은 그 조각 그림의 시작 상태와 받아들이는 상태다.
 
 | 식 | 새로 만드는 상태 | 긋는 화살표 | 결과의 시작과 끝 |
 |---|---|---|---|
@@ -105,7 +105,7 @@ flowchart LR
     b -->|"ε 한 번 더"| a
 ```
 
-"건너뛰기"는 $$r_1$$을 0번 도는 길이고, "한 번 더"는 다시 도는 길이다[^4][^s1].
+"건너뛰기"는 $$r_1$$을 0번 도는 길이고, "한 번 더"는 다시 도는 길이다[^s1].
 
 ### 의사코드
 
@@ -158,7 +158,7 @@ flowchart LR
 
 ## 예제
 
-**$$r_1^+$$는 어떻게 그리나.** 슬라이드는 반복의 그림을 다시 보여 주며 $$r_1^+ = r_1 r_1^*$$인지 묻는다[^5]. 펼치기 전에 답을 써 본다.
+**$$r_1^+$$는 어떻게 그리나.** $$r_1^+$$(한 번 이상 반복)에는 따로 그림이 없다. $$r_1^+ = r_1 r_1^*$$로 보고 반복의 그림을 쓰면 될까? 펼치기 전에 답을 써 본다.
 
 <details class="callout callout-note" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -168,11 +168,11 @@ flowchart LR
 </details>
 
 
-**식별자.** $$sIdentifier = letter(digit \mid letter)^*$$의 NFA는 상태가 10개다. $$letter$$ 둘, $$digit$$ 둘, 선택 둘, 반복 둘이고 $$x = 3$$, $$y = 1$$, $$z = 1$$로 위 예시와 같다. 슬라이드는 이 그림의 상태에 A~J를 붙였다[^6]. 이 NFA를 DFA로 바꾸는 과정은 [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/)에 있다.
+**식별자.** $$sIdentifier = letter(digit \mid letter)^*$$의 NFA는 상태가 10개다. $$letter$$ 둘, $$digit$$ 둘, 선택 둘, 반복 둘이고 $$x = 3$$, $$y = 1$$, $$z = 1$$로 위 예시와 같다. 이 그림의 상태 열 개에 A~J라는 이름을 붙여, 이 NFA를 DFA로 바꾸는 과정을 [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/)에서 따라간다.
 
 ## 활용
 
-- 어휘 분석기를 만드는 둘째 걸음이다. 토큰의 정규 표현식 → **NFA** → DFA → 전이 표[^7].
+- 어휘 분석기를 만드는 둘째 걸음이다. 토큰의 정규 표현식 → **NFA** → DFA → 전이 표.
 - 만든 NFA는 그대로 돌리지 않는다. 글자 하나마다 ε-화살표를 따라 상태 집합을 다시 구해야 해서 느리다. [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/)으로 DFA로 바꾼다.
 - 구현: [08_thompson-construction_impl.py](/Hongs_Blog/studies/compilers/code/08_thompson-construction_impl/)
 - 흔한 실수: 연결에서 새 상태를 만든다. 연결은 ε-화살표 하나만 긋는다.
@@ -221,14 +221,7 @@ flowchart LR
 </details>
 
 
-[^1]: 컴파일러 3회 강의 자료 「Lecture03 Lexical analysis part 2」, p.23~27 ($$(a \mid b)^* c$$를 조각부터 그려 가는 그림 다섯 장)
-[^2]: 같은 자료, p.17 (McNaughton-Yamada-Thompson algorithm: 부분식으로 쪼개 재귀적으로 만든다)
-[^3]: 같은 자료, p.18~21 ($$\epsilon$$, $$a$$, $$r_1 r_2$$, $$r_1 \mid r_2$$, $$r_1^*$$의 그림)
-[^4]: 같은 자료, p.21 ($$r_1^*$$의 그림)
-[^5]: 같은 자료, p.22 (물음: $$r_1^+ = r_1 r_1^*$$??)
-[^6]: 같은 자료, p.28, p.35 ($$sIdentifier$$의 정의와 NFA)
-[^7]: 같은 자료, p.16 (어휘 분석기를 만드는 순서)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 다이어그램은 원본 p.27과 p.21의 그림을 옮긴 것이다. 상태 번호 0~9, 표의 "지금까지 상태 수", `bc`의 추적, "건너뛰기"와 "한 번 더"라는 이름은 원본에 없다. 번호는 구현 코드가 상태를 만든 순서다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 의사코드, 정확성의 증명 스케치, 상태 수 식은 원본에 없다. 슬라이드의 다섯 그림을 근거로 적었고 구현 코드로 확인했다. 완전한 증명은 Aho·Lam·Sethi·Ullman, *Compilers* 2판, 3.7.4절에 있다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> p.22의 물음에 대한 답은 원본에 없다. $$r_1 r_1^*$$로 만든 NFA와 건너뛰기 화살표를 뺀 NFA가 길이 6 이하의 모든 문자열에서 같은 답을 내는 것을 구현 코드로 확인했다.
+[^s1]: 번호는 구현 코드가 상태를 만든 순서다.
+[^s2]: 완전한 증명은 Aho·Lam·Sethi·Ullman, *Compilers* 2판, 3.7.4절에 있다.
+[^s3]: $$r_1 r_1^*$$로 만든 NFA와 건너뛰기 화살표를 뺀 NFA가 길이 6 이하의 모든 문자열에서 같은 답을 내는 것을 구현 코드로 확인했다.
 {% endraw %}

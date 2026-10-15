@@ -26,7 +26,7 @@ permalink: "/studies/data-structures/code/22_full-complete-binary-tree_verify/"
 
 번호 규칙을 쓰지 않고 트리를 먼저 만든 뒤(위층부터, 같은 층은 왼쪽부터 자식을 하나씩 붙인다),
 만들어진 연결에서 부모·자식 번호를 읽어 공식과 비교한다.
-번호는 1부터 센다. 높이 h는 간선 수(볼트 표기), 층 수 L = h + 1이 강의의 높이다.
+번호는 1부터 센다. 높이 h는 간선 수(볼트 표기), 층 수 L = h + 1은 층 수로 센 높이다.
 """
 from collections import deque
 from math import ceil, floor, log2
@@ -73,7 +73,7 @@ if __name__ == "__main__":
             # 번호 i의 깊이는 floor(lg i): k번째 층(1부터)은 번호 2^(k-1) ~ 2^k - 1
             assert depth[i] == i.bit_length() - 1 == floor(log2(i))
         h = max(depth[1:])                       # 높이(간선 수)
-        L = h + 1                                # 층 수 = 강의의 높이
+        L = h + 1                                # 층 수 = 층 수로 센 높이
         assert h == floor(log2(n)) == ceil(log2(n + 1)) - 1
         assert L == ceil(log2(n + 1)) == n.bit_length()
         assert 2 ** (L - 1) <= n <= 2 ** L - 1
@@ -95,7 +95,7 @@ if __name__ == "__main__":
             assert (j - 1) // 2 == (i // 2) - 1
 
     # 본문과 카드의 수치
-    parent, left, right, depth = build_complete(10)          # 슬라이드 p.18의 10개짜리
+    parent, left, right, depth = build_complete(10)          # 문서 예시의 10개짜리
     assert (parent[5], left[5], right[5]) == (2, 10, 0)
     assert (parent[10], left[4], right[4]) == (5, 8, 9)
     assert [i for i in range(1, 11) if left[i] == 0] == [6, 7, 8, 9, 10]

@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Subset Construction", "Powerset Construction", "멱집합 구성법", "NFA를 DFA로", "NFA to DFA", "엡실론 닫힘", "ε-closure", "epsilon closure", "결정화", "Determinization"]
 description: "갈림길이 많은 미로에서 분신 여럿을 따로따로 쫓는 대신, \"지금 분신들이 서 있는 칸의 모음\"을 쪽지 한 장에 적어 들고 다닌다고 하자. 글자를 하나 읽을 때마다 쪽지를 새 모음으로 고쳐 쓰면, 쪽지는 늘 한 장이다. 나올 수 있는 쪽지를 미리 다 찾아 쪽지마다 칸 하나로 삼으면 …"
@@ -36,7 +36,7 @@ permalink: "/studies/compilers/subset-construction/"
 
 [톰슨 구성법](/Hongs_Blog/studies/compilers/thompson-construction/)이 만든 NFA는 ε-화살표와 갈림길이 많다. 글자를 읽을 때마다 "말이 있을 수 있는 칸"을 다시 구해야 해서 느리다. 그 계산을 미리 다 해 두면 실행할 때는 표만 읽으면 된다.
 
-$$(a \mid b)a$$의 NFA다[^1].
+$$(a \mid b)a$$의 NFA다.
 
 ```mermaid
 flowchart LR
@@ -51,7 +51,7 @@ flowchart LR
     G -->|"a"| H((("H")))
 ```
 
-아무것도 읽기 전에 말이 있을 수 있는 칸은 A와, A에서 ε-화살표로 닿는 B, C다. 이 모음 $$\{A, B, C\}$$가 첫 쪽지 $$T_0$$이다. 여기서 $$a$$를 읽으면 B에 있던 분신만 D로 가고, D에서 ε-화살표로 F, G까지 닿는다. 쪽지는 $$\{D, F, G\}$$가 된다. 같은 식으로 끝까지 가면 쪽지는 네 장뿐이다[^2].
+아무것도 읽기 전에 말이 있을 수 있는 칸은 A와, A에서 ε-화살표로 닿는 B, C다. 이 모음 $$\{A, B, C\}$$가 첫 쪽지 $$T_0$$이다. 여기서 $$a$$를 읽으면 B에 있던 분신만 D로 가고, D에서 ε-화살표로 F, G까지 닿는다. 쪽지는 $$\{D, F, G\}$$가 된다. 같은 식으로 끝까지 가면 쪽지는 네 장뿐이다.
 
 | 쪽지 | NFA 상태의 모음 | $$a$$를 읽으면 | $$b$$를 읽으면 |
 |---|---|---|---|
@@ -60,7 +60,7 @@ flowchart LR
 | $$T_2$$ | $$\{E, F, G\}$$ | $$T_3$$ | $$\varnothing$$ |
 | $$T_3$$ | $$\{H\}$$ | $$\varnothing$$ | $$\varnothing$$ |
 
-쪽지 한 장을 상태 하나로 그리면 DFA다. H가 든 $$T_3$$이 받아들이는 상태다[^3].
+쪽지 한 장을 상태 하나로 그리면 DFA다. H가 든 $$T_3$$이 받아들이는 상태다.
 
 ```mermaid
 flowchart LR
@@ -75,28 +75,28 @@ flowchart LR
 
 ## 정의
 
-부분집합 구성법은 어떤 문자열들을 읽은 뒤 닿을 수 있는 NFA 상태들을 한 묶음으로 삼는다. 그 묶음 하나가 DFA의 상태 하나다[^4]. 멱집합 구성법이라고도 부른다.
+부분집합 구성법은 어떤 문자열들을 읽은 뒤 닿을 수 있는 NFA 상태들을 한 묶음으로 삼는다. 그 묶음 하나가 DFA의 상태 하나다. 멱집합 구성법이라고도 부른다.
 
 - **입력:** NFA. 상태 집합 $$Q$$, 알파벳 $$\Sigma$$, 전이 $$\delta$$, 시작 상태 $$q_0^N$$, 받아들이는 상태의 집합 $$F$$.
 - **출력:** 같은 언어를 받아들이는 DFA. 상태는 $$Q$$의 부분집합 $$T_0, T_1, \dots$$이다.
 
-**ε-closure.** 두 가지 꼴이 있다[^4].
+**ε-closure.** 두 가지 꼴이 있다.
 
 - $$\epsilon\text{-}closure(q)$$: NFA 상태 $$q$$에서 ε-전이만으로 닿을 수 있는 상태를 모두 모은 집합이다. $$q$$ 자신도 들어간다.
 - $$\epsilon\text{-}closure(T)$$: 상태의 집합 $$T$$에 든 어느 상태에서든 ε-전이만으로 닿을 수 있는 상태를 모두 모은 집합이다.
 
-기호로 쓰면 $$\epsilon\text{-}closure(T) = \bigcup_{q \in T} \epsilon\text{-}closure(q)$$다. $$T$$의 상태마다 구한 것을 합친다는 뜻이다. $$\delta(T, s)$$는 $$T$$의 어느 상태에서든 기호 $$s$$의 화살표 하나로 갈 수 있는 상태를 모은 집합이다[^s1].
+기호로 쓰면 $$\epsilon\text{-}closure(T) = \bigcup_{q \in T} \epsilon\text{-}closure(q)$$다. $$T$$의 상태마다 구한 것을 합친다는 뜻이다. $$\delta(T, s)$$는 $$T$$의 어느 상태에서든 기호 $$s$$의 화살표 하나로 갈 수 있는 상태를 모은 집합이다.
 
-$$(a \mid b)$$의 NFA(위 그림에서 A~F만 떼어 낸 것)에서 $$\epsilon\text{-}closure(A) = \{A, B, C\}$$이고 $$\epsilon\text{-}closure(\{A, B, C, D\}) = \{A, B, C, D, F\}$$다[^4]. ε-화살표를 한 번만 따라가고 멈추지 않는다. 닿은 곳에서 또 ε-화살표가 있으면 계속 따라간다.
+$$(a \mid b)$$의 NFA(위 그림에서 A~F만 떼어 낸 것)에서 $$\epsilon\text{-}closure(A) = \{A, B, C\}$$이고 $$\epsilon\text{-}closure(\{A, B, C, D\}) = \{A, B, C, D, F\}$$다. ε-화살표를 한 번만 따라가고 멈추지 않는다. 닿은 곳에서 또 ε-화살표가 있으면 계속 따라간다.
 
-**네 단계.**[^5]
+**네 단계.**
 
 1. $$T_0 = \epsilon\text{-}closure(q_0^N)$$을 구한다. NFA의 시작 상태에서 공짜로 닿는 곳 전부다.
 2. $$\Sigma$$의 기호 $$s$$마다 $$\epsilon\text{-}closure(\delta(T_0, s))$$를 구한다. 앞에서 나온 어느 $$T_j$$와도 다르면 새 이름 $$T_i$$를 붙인다.
 3. 새로 나온 $$T_i$$마다 2를 되풀이한다. 새 결과가 더 안 나오면 멈춘다.
 4. DFA를 만든다. $$T_i$$ 하나하나가 DFA의 상태다. $$T_0$$이 시작 상태다. NFA의 받아들이는 상태가 하나라도 든 $$T_i$$는 모두 DFA의 받아들이는 상태다.
 
-결과가 빈 집합이면 표에 $$\varnothing$$을 적고 상태로 만들지 않는다[^2].
+결과가 빈 집합이면 표에 $$\varnothing$$을 적고 상태로 만들지 않는다.
 
 ### 의사코드
 
@@ -114,11 +114,11 @@ T[0] = ε-closure({q0})
 받아들이는 상태 = F의 상태가 하나라도 든 T[i] 전부
 ```
 
-할 일을 넣은 순서대로 꺼내면 [너비 우선 탐색](/Hongs_Blog/studies/algorithms/bfs/)과 같은 꼴이다. 슬라이드의 $$T_0, T_1, T_2, T_3$$도 이 순서로 번호가 붙는다[^s1].
+할 일을 넣은 순서대로 꺼내면 [너비 우선 탐색](/Hongs_Blog/studies/algorithms/bfs/)과 같은 꼴이다. 위 예의 $$T_0, T_1, T_2, T_3$$도 이 순서로 번호가 붙었다.
 
 ### 실행 추적
 
-$$(a \mid b)a$$의 NFA, $$\Sigma = \{a, b\}$$[^2].
+$$(a \mid b)a$$의 NFA, $$\Sigma = \{a, b\}$$.
 
 | 꺼낸 것 | 기호 | $$\delta(T_i, s)$$ | $$\epsilon\text{-}closure$$ | 판정 |
 |---|---|---|---|---|
@@ -132,7 +132,7 @@ $$(a \mid b)a$$의 NFA, $$\Sigma = \{a, b\}$$[^2].
 | $$T_3$$ | $$a$$, $$b$$ | $$\varnothing$$ | $$\varnothing$$ | 갈 곳 없음 |
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 ε-closure 예 둘, $$(a \mid b)a$$의 $$T_0 \sim T_3$$과 전이 표, 아래 식별자 예의 $$T_0 \sim T_3$$과 전이 표, 무작위 NFA 300개에서 만든 DFA가 길이 7 이하의 모든 문자열에서 NFA와 같은 답을 내는 것, "뒤에서 $$n$$번째 글자가 a"($$n = 1, \dots, 10$$)에서 DFA 상태가 정확히 $$2^n$$개인 것 — [09_subset-construction_impl.py](/Hongs_Blog/studies/compilers/code/09_subset-construction_impl/)</div>
+<div class="callout-title" markdown="span">검증: $$(a \mid b)$$의 NFA에서 구한 ε-closure 예 둘, $$(a \mid b)a$$의 $$T_0 \sim T_3$$과 전이 표, 아래 식별자 예의 $$T_0 \sim T_3$$과 전이 표, 무작위 NFA 300개에서 만든 DFA가 길이 7 이하의 모든 문자열에서 NFA와 같은 답을 내는 것, "뒤에서 $$n$$번째 글자가 a"($$n = 1, \dots, 10$$)에서 DFA 상태가 정확히 $$2^n$$개인 것 — [09_subset-construction_impl.py](/Hongs_Blog/studies/compilers/code/09_subset-construction_impl/)</div>
 
 </div>
 
@@ -201,12 +201,12 @@ NFA는 받아들이는 상태에서 끝나는 길이 하나만 있어도 받아�
 ### 복잡도
 
 - **가장 좋을 때.** NFA에 갈림길과 ε-전이가 없으면 $$T_i$$가 모두 상태 하나짜리 집합이라 DFA 상태 수가 NFA와 같다[^s3].
-- **가장 나쁠 때.** DFA 상태가 $$2^n$$에 가깝게 불어난다. "뒤에서 $$n$$번째 글자가 a인 줄"을 받아들이는 NFA는 상태가 $$n + 1$$개인데, 만들어지는 DFA는 정확히 $$2^n$$개다. $$n = 10$$이면 11개가 1,024개가 된다. DFA는 마지막 $$n$$글자가 각각 a였는지를 다 기억해야 하기 때문이다[^s3]. 슬라이드가 DFA의 단점으로 "NFA보다 지수적으로 커진다"고 적은 것이 이 경우다[^6].
+- **가장 나쁠 때.** DFA 상태가 $$2^n$$에 가깝게 불어난다. "뒤에서 $$n$$번째 글자가 a인 줄"을 받아들이는 NFA는 상태가 $$n + 1$$개인데, 만들어지는 DFA는 정확히 $$2^n$$개다. $$n = 10$$이면 11개가 1,024개가 된다. DFA는 마지막 $$n$$글자가 각각 a였는지를 다 기억해야 하기 때문이다[^s3]. DFA의 단점으로 꼽는 "NFA보다 지수적으로 커질 수 있다"가 바로 이 경우다.
 - **토큰에서는.** 아래 식별자 예처럼 상태가 오히려 줄어드는 일이 흔하다.
 
 ## 예제
 
-$$sIdentifier = letter(digit \mid letter)^*$$의 NFA다. 상태 A~J, 받아들이는 상태 J[^7].
+$$sIdentifier = letter(digit \mid letter)^*$$의 NFA다. 상태 A~J, 받아들이는 상태 J.
 
 ```mermaid
 flowchart LR
@@ -238,19 +238,12 @@ flowchart LR
 | $$T_2$$ | $$T_2$$ | $$T_3$$ |
 | $$T_3$$ | $$T_2$$ | $$T_3$$ |
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.36 계산의 마지막 줄 "$$\epsilon\text{-}closure(\delta(T_3, digit)) = \{D, E, G, H, I, J\} = T_3$$" / 문제점: 적힌 집합은 $$T_2$$다. 같은 쪽 위에서 $$T_3 = \{D, E, G, F, I, J\}$$라고 했으므로 "$$= T_3$$"과 맞지 않는다. / 수정안: $$\{D, E, G, F, I, J\} = T_3$$ (H를 F로) / 근거: $$T_3$$에서 $$digit$$ 화살표가 있는 상태는 E뿐이고 E는 F로 간다. $$\epsilon\text{-}closure(F) = \{D, E, F, G, I, J\}$$다. 구현 코드의 결과도 같다. 옆의 전이 표($$T_3$$의 $$digit$$ 칸이 $$T_3$$)는 맞게 적혀 있다.
-
-</div>
-
 
 NFA 상태 10개가 DFA 상태 4개가 되었다. 이 표에 `(` 칸을 더한 것으로 토큰을 자르는 과정은 [최장 일치와 토큰 인식](/Hongs_Blog/studies/compilers/longest-match-tokenizing/)에 있다.
 
 ## 활용
 
-- 어휘 분석기를 만드는 셋째 걸음이다. 정규 표현식 → NFA → **DFA** → 전이 표[^8]. `lex`, `flex` 같은 어휘 분석기 생성 도구가 이 일을 대신 해 준다[^s3].
+- 어휘 분석기를 만드는 셋째 걸음이다. 정규 표현식 → NFA → **DFA** → 전이 표. `lex`, `flex` 같은 어휘 분석기 생성 도구가 이 일을 대신 해 준다[^s3].
 - 구현: [09_subset-construction_impl.py](/Hongs_Blog/studies/compilers/code/09_subset-construction_impl/). 연습: [부분집합 구성법 예제 사다리](/Hongs_Blog/studies/compilers/subset-construction-ladder/)
 - 흔한 실수: ε-closure에서 ε-화살표를 한 번만 따라간다. 닿은 곳에서 또 따라간다.
 - 흔한 실수: $$\delta(T, s)$$만 구하고 ε-closure를 빼먹는다. 식별자 예에서 $$\delta(T_1, letter) = \{H\}$$에서 멈추면 I, J, D, E, G가 빠진다.
@@ -326,15 +319,6 @@ NFA 상태 10개가 DFA 상태 4개가 되었다. 이 표에 `(` 칸을 더한 �
 </details>
 
 
-[^1]: 컴파일러 3회 강의 자료 「Lecture03 Lexical analysis part 2」, p.30 ($$(a \mid b)a$$의 NFA)
-[^2]: 같은 자료, p.30~33 ($$T_0 \sim T_3$$의 계산과 전이 표)
-[^3]: 같은 자료, p.34 (4단계와 $$(a \mid b)a$$의 DFA)
-[^4]: 같은 자료, p.29 (Subset (powerset) construction algorithm의 기본 생각, ε-closure의 두 정의와 예)
-[^5]: 같은 자료, p.30~34 (Step 1~4)
-[^6]: 같은 자료, p.15 (DFA의 단점: "exponentially larger than NFA")
-[^7]: 같은 자료, p.35~36 ($$sIdentifier$$의 NFA, $$T_0 \sim T_3$$, 전이 표)
-[^8]: 같은 자료, p.16 (어휘 분석기를 만드는 순서)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$\epsilon\text{-}closure(T)$$를 합집합으로 쓴 식, $$\delta(T, s)$$의 풀이, 의사코드와 너비 우선 탐색과의 비교는 원본에 없다. 슬라이드는 $$\delta(T_0, s)$$를 설명 없이 쓴다. 다이어그램 세 개는 원본 p.30, p.34, p.35의 그림을 옮긴 것이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 불변식, 정확성 증명, 멈춘다는 논증, 스스로 설명해 보기, 카드 C4는 원본에 없다. 표준 증명이다(Sipser, *Introduction to the Theory of Computation* 3판, 정리 1.39). 무작위 NFA 300개로도 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 복잡도의 세 경우, "뒤에서 $$n$$번째 글자가 a"의 예, 오해 항목, 카드 C6, `lex`·`flex` 언급은 원본에 없다. 상태 수는 구현 코드로 $$n = 1, \dots, 10$$에서 확인했다. 이 언어를 $$2^n$$개보다 적은 상태의 DFA로는 받아들일 수 없다는 것은 이 문서에서 증명하지 않았다.
+[^s2]: 표준 증명이다(Sipser, *Introduction to the Theory of Computation* 3판, 정리 1.39). 무작위 NFA 300개로도 확인했다.
+[^s3]: 상태 수는 구현 코드로 $$n = 1, \dots, 10$$에서 확인했다. 이 언어를 $$2^n$$개보다 적은 상태의 DFA로는 받아들일 수 없다는 것은 이 문서에서 증명하지 않았다.
 {% endraw %}

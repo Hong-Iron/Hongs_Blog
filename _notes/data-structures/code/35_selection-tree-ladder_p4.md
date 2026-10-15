@@ -23,7 +23,7 @@ permalink: "/studies/data-structures/code/35_selection-tree-ladder_p4/"
 /* 승자 트리와 패자 트리 재경기 예제 사다리: 문제 1 ~ 4의 답 확인.
  *
  * 문서: 1-2학기/자료구조/4.연습문제/35.승자 트리와 패자 트리 재경기 예제 사다리.md
- * 출처: 문제 1은 자료구조 9주차 슬라이드 p.29, 53~56의 16명. 문제 2 ~ 4의 수치는 에이전트가 만든 것이다.
+ * 문제 1은 3.개념집/34.승자 트리의 예시 16명이다.
  * 실행: cc -std=c11 -Wall -Wextra 35_selection-tree-ladder_p4.c -o ladder && ./ladder
  * 두 트리의 코드는 3.개념집/34_winner-tree_impl.c와 35_loser-tree_impl.c에서 필요한 만큼 옮겨 왔다.
  * 칸 번호: 1 ~ n - 1번이 경기 노드, 선수 p(0부터)는 n + p번. 작은 값이 이기고, 같으면 번호가 앞선 선수가 이긴다.

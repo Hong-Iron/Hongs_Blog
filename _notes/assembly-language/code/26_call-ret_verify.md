@@ -28,7 +28,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(문서 예시의 00000020 call → 00000025와 맞춘 값).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -481,7 +481,7 @@ def machine(code, esp=0x1000, base=0):
     return c
 
 def main():
-    # 1. CALL-RET 예 (wk06-3-3 p.7~8)
+    # 1. CALL-RET 예
     c = machine("""main PROC
         00000020 call MySub
         00000025 mov eax,ebx
@@ -498,7 +498,7 @@ def main():
     assert c.trace[0][1]["esp"] == 0xFFC and c.rd(0xFFC, 4) == 0x25   # CALL: 복귀 주소를 넣는다
     assert c.label["MySub"] == 0x40
     assert c.trace[2][1]["esp"] == 0x1000                              # RET: 꺼내서 EIP로
-    # 2. 중첩 호출 (p.9): Sub3 안에서는 복귀 주소 세 개가 쌓여 있다
+    # 2. 중첩 호출: Sub3 안에서는 복귀 주소 세 개가 쌓여 있다
     c = machine("""main PROC
         00000000 call Sub1
         00000005 exit
@@ -524,7 +524,7 @@ def main():
     # 돌아오는 순서는 부른 순서의 거꾸로
     after = [l for l, r, f in c.trace][3:]
     assert after == ["nop", "ret", "ret", "ret", "exit"]
-    # 3. SumOf (p.5)
+    # 3. SumOf
     c = machine("""SumOf PROC
         add eax,ebx
         add eax,ecx

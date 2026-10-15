@@ -34,7 +34,7 @@ permalink: "/studies/data-science/bagging-random-forest/"
 
 ## 예시로 보기
 
-[앙상블](/Hongs_Blog/studies/data-science/ensemble-learning/)은 모델들이 서로 다를수록 효과가 크다. 그런데 자료가 한 벌뿐이면 어떻게 서로 다른 모델을 만들까[^1]?
+[앙상블](/Hongs_Blog/studies/data-science/ensemble-learning/)은 모델들이 서로 다를수록 효과가 크다. 그런데 자료가 한 벌뿐이면 어떻게 서로 다른 모델을 만들까?
 
 자료 40개에서 복원 추출로 40개를 뽑아 한 벌을 만든다. 어떤 자료는 두세 번, 어떤 자료는 한 번도 안 뽑힌다. 한 벌에는 서로 다른 원래 자료가 평균 약 63.7%만 들어 있다. 이렇게 50벌을 만들어 벌마다 "가장 가까운 이웃 하나의 값을 그대로 답하는" 모델(분산이 큰 모델)을 만들고 예측을 평균 냈다[^s1].
 
@@ -57,7 +57,7 @@ permalink: "/studies/data-science/bagging-random-forest/"
 
 ## 정의
 
-**배깅**(Bootstrap Aggregating)은 부트스트랩 표본으로 여러 모델을 훈련한다[^1].
+**배깅**(Bootstrap Aggregating)은 부트스트랩 표본으로 여러 모델을 훈련한다.
 
 ```
 배깅(훈련 자료 D, 모델 수 k):
@@ -67,7 +67,7 @@ permalink: "/studies/data-science/bagging-random-forest/"
     새 점 x의 예측: 분류면 M_1(x), ..., M_k(x)의 다수결, 회귀면 평균
 ```
 
-복원 추출이 자료 벌들을 서로 다르게 만든다. 각 모델의 편향과 분산은 비슷하고, 모아서 분산이 준다[^1].
+복원 추출이 자료 벌들을 서로 다르게 만든다. 각 모델의 편향과 분산은 비슷하고, 모아서 분산이 준다.
 
 ```mermaid
 flowchart LR
@@ -83,15 +83,15 @@ flowchart LR
     V --> P["최종 예측"]
 ```
 
-세 줄은 서로 이어지지 않는다. 표본도 모델도 서로를 보지 않고 따로 만들어지고, 맨 끝에서만 한데 모인다[^s3].
+세 줄은 서로 이어지지 않는다. 표본도 모델도 서로를 보지 않고 따로 만들어지고, 맨 끝에서만 한데 모인다.
 
-**랜덤 포레스트**는 분산이 큰 결정 트리에 쓰는 배깅이다[^2].
+**랜덤 포레스트**는 분산이 큰 결정 트리에 쓰는 배깅이다.
 
 1. **자료 뽑기:** 훈련 자료에서 복원 추출로 훈련 자료 $$k$$벌을 만든다.
 2. **속성 뽑기:** 나무마다(보통은 마디마다) 속성 $$n$$개 중 $$m$$개만 무작위로 골라 쓴다.
 3. **다수결:** 나무들의 예측을 투표로 모은다.
 
-속성 뽑기는 나무들 사이의 상관을 낮춘다. 아주 강한 속성 하나가 있으면 모든 나무가 맨 위에서 그 속성으로 갈라 비슷해지는데, 그 속성을 못 쓰는 나무가 생기기 때문이다. [앙상블의 분산 공식](/Hongs_Blog/studies/data-science/ensemble-learning/)에서 $$\rho$$가 줄면 분산이 준다[^2][^s1].
+속성 뽑기는 나무들 사이의 상관을 낮춘다. 아주 강한 속성 하나가 있으면 모든 나무가 맨 위에서 그 속성으로 갈라 비슷해지는데, 그 속성을 못 쓰는 나무가 생기기 때문이다. [앙상블의 분산 공식](/Hongs_Blog/studies/data-science/ensemble-learning/)에서 $$\rho$$가 줄면 분산이 준다[^s1].
 
 ### 복잡도
 
@@ -135,9 +135,6 @@ flowchart LR
 </details>
 
 
-[^1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.15
-[^2]: 같은 자료, p.16
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실험 수치, 속성 뽑기가 상관을 낮추는 이유, 마디마다 뽑는 보통의 구현(Breiman, "Random Forests", Machine Learning 2001), 복잡도, 사이킷런, OOB 평가, 카드는 원본에 없다. 검증 코드로 실험했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [21_bagging-random-forest_plot.py](/Hongs_Blog/studies/data-science/code/21_bagging-random-forest_plot/)로 그렸다. 같은 코드에서 다른 난수로 150회 다시 실험해 예측 분산 0.090 → 0.046, 편향² 0.0002 그대로를 확인했다(위 표와 같은 경향).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 배깅 의사코드(원본 6-2 p.15)를 근거로 그렸다.
+[^s1]: 검증 코드로 실험했다.
+[^s2]: [21_bagging-random-forest_plot.py](/Hongs_Blog/studies/data-science/code/21_bagging-random-forest_plot/)로 그렸다. 같은 코드에서 다른 난수로 150회 다시 실험해 예측 분산 0.090 → 0.046, 편향² 0.0002 그대로를 확인했다(위 표와 같은 경향).
 {% endraw %}

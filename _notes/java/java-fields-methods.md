@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Field", "Method", "Class Members", "클래스 멤버", "라이브러리 클래스", "Library Class", "실행 클래스", "Executable Class", "지역 변수", "Local Variable", "메서드 오버로딩", "Method Overloading"]
 description: "클래스라는 틀 안에는 세 가지를 적는다. 객체가 계속 들고 있을 값을 담는 칸, 객체를 처음 만들 때 그 칸을 채우는 코드, 객체가 할 수 있는 동작이다. 값을 담는 칸은 객체가 살아 있는 동안 내내 남는다. 반면 동작 안에서 잠깐 만든 변수는 그 동작이 끝나면 사라진다. 이 둘을…"
@@ -64,7 +64,7 @@ System.out.println(w.total);     // 6
 
 ## 클래스의 두 쓰임
 
-클래스는 쓰임에 따라 둘로 나뉜다[^1].
+클래스는 쓰임에 따라 둘로 나뉜다.
 
 - **라이브러리 클래스:** 혼자서는 실행할 수 없고 다른 클래스가 가져다 쓴다. 예: `Student`.
 - **실행 클래스:** `main()` 메서드가 있어 실행할 수 있다. 예: `Student` 객체를 만들어 평균을 찍는 `GradeProcessor`.
@@ -73,7 +73,7 @@ System.out.println(w.total);     // 6
 
 ## 클래스의 멤버
 
-클래스 안에 적는 것을 멤버라고 한다. 세 가지다[^2].
+클래스 안에 적는 것을 멤버라고 한다. 세 가지다.
 
 ```java
 public class ClassName {
@@ -98,13 +98,15 @@ public class ClassName {
 
 ### 필드와 지역 변수
 
+필드와 지역 변수는 이렇게 다르다.
+
 | | 필드 | 지역 변수 |
 |---|---|---|
 | 선언하는 곳 | 클래스 블록 안(메서드 밖) | 생성자·메서드 블록 안 |
 | 있는 곳 | 객체 안 | 생성자·메서드가 불려 도는 동안만 있다 |
 | 쓸 수 있는 곳 | 객체 안팎 어디서나 | 그 생성자·메서드 블록 안에서만 |
 
-표는 슬라이드를 옮긴 것이다[^3]. "객체 밖 어디서나"는 필드를 감추지 않았을 때의 이야기이고, `private`를 붙이면 밖에서는 못 쓴다([접근 제한자](/Hongs_Blog/studies/java/java-access-modifier/)).
+표의 "객체 안팎 어디서나"는 필드를 감추지 않았을 때의 이야기이고, `private`를 붙이면 밖에서는 못 쓴다([접근 제한자](/Hongs_Blog/studies/java/java-access-modifier/)).
 
 차이가 하나 더 있다. 필드는 값을 주지 않아도 기본값으로 채워진다. 지역 변수는 값을 주지 않고 읽으면 번역 단계에서 막힌다[^s1].
 
@@ -127,7 +129,7 @@ void m() {
 
 ### 메서드 오버로딩
 
-한 클래스에 이름이 같은 메서드를 여러 개 둘 수 있다. 단, 매개변수의 타입이나 개수나 순서가 달라야 한다[^4].
+한 클래스에 이름이 같은 메서드를 여러 개 둘 수 있다. 단, 매개변수의 타입이나 개수나 순서가 달라야 한다.
 
 ```java
 class Calculator {
@@ -182,9 +184,5 @@ class Calculator {
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 6회 강의 자료 「Software Project 06. Class」, p.2~3 (Two Main Purposes of Class, `Student.java`와 `GradeProcessor.java`)
-[^2]: 같은 자료, p.4~5 (Members of a class)
-[^3]: 같은 자료, p.6~7 (Differences between fields and local variables, `Student`의 필드 예)
-[^4]: 소프트웨어 프로젝트 5회 강의 자료 「Software Project 05. Object-Oriented Programming」, p.29 (Method Overloading, `Calculator`의 `add` 두 개). 타입·개수·순서가 달라야 한다는 조건은 06.Software Project 06. Class.pdf, p.14가 생성자 오버로딩에 대해 적은 것과 같다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `Wallet` 예, 필드의 기본값과 지역 변수의 초기화 오류, 세 번째 `add`, 반환 타입만 다른 메서드가 안 되는 이유, 가리기(`this.`), `println`의 예, 실행 클래스가 보통 하나라는 설명, 카드 C3은 원본에 없다. 출력과 오류 문구는 JDK 21에서 직접 실행해 확인했다.
+[^s1]: 출력과 오류 문구는 JDK 21에서 직접 실행해 확인했다.
 {% endraw %}

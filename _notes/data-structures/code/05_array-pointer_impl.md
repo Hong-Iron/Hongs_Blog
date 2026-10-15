@@ -23,10 +23,9 @@ permalink: "/studies/data-structures/code/05_array-pointer_impl/"
 /* 배열과 포인터: 칸의 주소 = 시작 주소 + i x 칸 크기, 문자 배열과 문자 포인터, strcpy·strcmp 두 판.
  *
  * 문서: 05.배열과 포인터 (예시, 주소 식, 문자 배열과 문자 포인터, 문자열 함수 두 판, 카드)
- * 출처: 자료구조 2주차 슬라이드 p.30~34, 3주차 슬라이드 p.22~23
  * 실행: cc -std=c11 -Wall -Wextra 05_array-pointer_impl.c -o array_pointer && ./array_pointer
  *
- * 슬라이드의 함수 이름 strcpy, strcmp는 표준 라이브러리에 이미 있어 그대로 쓰면 겹친다.
+ * 함수 이름을 strcpy, strcmp로 쓰면 표준 라이브러리에 이미 있는 것과 겹친다.
  * 여기서는 copy_a, copy_b, compare_a, compare_b로 이름을 바꿨다.
  * 무작위 문자열은 정해 둔 씨앗에서 뽑으므로 돌릴 때마다 같은 문자열이 나온다.
  */
@@ -57,7 +56,7 @@ struct date {
     int day;
 };
 
-/* 슬라이드 p.33 A: 색인으로 쓴 복사. 원문의 "while ({s[i]" 는 "while ((s[i]" 로 고쳤다 */
+/* A: 색인으로 쓴 복사 */
 static void copy_a(char *s, const char *t)
 {
     int i;
@@ -66,7 +65,7 @@ static void copy_a(char *s, const char *t)
         i++;
 }
 
-/* 슬라이드 p.33 B: 포인터로 쓴 복사 */
+/* B: 포인터로 쓴 복사 */
 static void copy_b(char *s, const char *t)
 {
     while ((*s = *t) != '\0') {
@@ -75,7 +74,7 @@ static void copy_b(char *s, const char *t)
     }
 }
 
-/* 슬라이드 p.34 strcmp 1: 색인으로 쓴 비교 */
+/* 비교 1: 색인으로 쓴 비교 */
 static int compare_a(const char *s, const char *t)
 {
     int i;
@@ -85,7 +84,7 @@ static int compare_a(const char *s, const char *t)
     return s[i] - t[i];
 }
 
-/* 슬라이드 p.34 strcmp 2: 포인터로 쓴 비교 */
+/* 비교 2: 포인터로 쓴 비교 */
 static int compare_b(const char *s, const char *t)
 {
     for (; *s == *t; s++, t++)
@@ -164,7 +163,7 @@ static void address_formula(void)
         CHECK((uintptr_t)&today.day - (uintptr_t)&today == 8 && today.day == 12, "day의 주소 = 시작 + 8");
         CHECK(100 + 2 * 4 == 108 && 200 + 8 == 208, "01번 문서의 예: 100번지 배열의 2번 칸은 108번지, 200번지 레코드의 day는 208번지");
     }
-    CHECK(sizeof(int) == 4 && 100 + 3 * sizeof(int) == 112, "p.31: arr[0]이 100번지면 arr[3]은 112번지");
+    CHECK(sizeof(int) == 4 && 100 + 3 * sizeof(int) == 112, "문서 예: arr[0]이 100번지면 arr[3]은 112번지");
     CHECK(sizeof(double) == 8 && 100 + 3 * sizeof(double) == 124, "double 배열이면 124번지");
     CHECK(&a[5] - &a[2] == 3, "포인터끼리 빼면 칸 수가 나온다");
     CHECK((uintptr_t)&a[5] - (uintptr_t)&a[2] == 12, "바이트로는 12");

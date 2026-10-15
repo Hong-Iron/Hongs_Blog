@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 1차원은 컨벌루션 적분 (f g)(t) = \\int f(\\tau)g(t - \\tau)\\,d\\tau와 컨벌루션 합, 2차원은 2차원 합성곱."
 prev_url: "/studies/human-interface-media/lateral-inhibition-ladder/"
@@ -22,11 +22,11 @@ permalink: "/studies/human-interface-media/convolution-practice/"
 {% raw %}
 사용 개념: 1차원은 [컨벌루션 적분](/Hongs_Blog/studies/signals-and-systems/convolution-integral/) $$(f * g)(t) = \int f(\tau)g(t - \tau)\,d\tau$$와 [컨벌루션 합](/Hongs_Blog/studies/signals-and-systems/convolution-sum/), 2차원은 [2차원 합성곱](/Hongs_Blog/studies/human-interface-media/two-dimensional-convolution/).
 
-강의 6의 예제와 문제를 모았다[^1]. 풀이 전략은 늘 같다. 한 함수를 뒤집어 $$t$$만큼 옮긴 뒤, $$t$$를 왼쪽 끝에서 오른쪽 끝으로 움직이며 겹치는 구간의 끝점이 바뀌는 순간마다 경우를 나눈다. 겹치는 구간을 찾으면 그 구간에서 두 함수의 곱을 적분(또는 합)한다. 임펄스가 끼면 이 과정 대신 "그 자리로 옮기기"를 쓴다.
+1차원과 2차원 합성곱의 예제와 문제를 모았다. 풀이 전략은 늘 같다. 한 함수를 뒤집어 $$t$$만큼 옮긴 뒤, $$t$$를 왼쪽 끝에서 오른쪽 끝으로 움직이며 겹치는 구간의 끝점이 바뀌는 순간마다 경우를 나눈다. 겹치는 구간을 찾으면 그 구간에서 두 함수의 곱을 적분(또는 합)한다. 임펄스가 끼면 이 과정 대신 "그 자리로 옮기기"를 쓴다.
 
 ## 문제 1 · 단위 사각형끼리 (p1)
 
-$$f(x) = h(x) = 1$$ ($$0 \le x < 1$$), 그 밖은 0이다. $$f * h$$를 구하라[^2].
+$$f(x) = h(x) = 1$$ ($$0 \le x < 1$$), 그 밖은 0이다. $$f * h$$를 구하라.
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
@@ -39,12 +39,12 @@ $$f(x) = h(x) = 1$$ ($$0 \le x < 1$$), 그 밖은 0이다. $$f * h$$를 구하�
 
 ## 문제 2 · 높이가 다른 사각형 (p2)
 
-$$x(\tau) = 2$$ ($$0 \le \tau < 2$$), $$h(\tau) = 1$$ ($$0 \le \tau < 1$$)일 때 $$y(t) = \int x(\tau)h(t - \tau)\,d\tau$$를 구하라[^3].
+$$x(\tau) = 2$$ ($$0 \le \tau < 2$$), $$h(\tau) = 1$$ ($$0 \le \tau < 1$$)일 때 $$y(t) = \int x(\tau)h(t - \tau)\,d\tau$$를 구하라.
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
 1. *뒤집고 옮기기:* $$h(t - \tau)$$는 $$\tau \in (t - 1, t]$$에서 1인 폭 1의 사각형이다.
-2. *경우 나누기:* 슬라이드처럼 $$t < 0$$, $$0 < t < 1$$, $$1 < t < 2$$, $$2 < t < 3$$, $$t > 3$$의 다섯 경우다.
+2. *경우 나누기:* $$t < 0$$, $$0 < t < 1$$, $$1 < t < 2$$, $$2 < t < 3$$, $$t > 3$$의 다섯 경우로 나눈다.
 3. *겹친 넓이 × 높이 2:* $$t < 0$$이면 0. $$0 < t < 1$$이면 겹친 길이 $$t$$라 $$2t$$. $$1 < t < 2$$이면 $$h$$가 통째로 $$x$$ 안이라 $$2 \times 1 = 2$$. $$2 < t < 3$$이면 겹친 길이 $$3 - t$$라 $$2(3 - t)$$. $$t > 3$$이면 0.
 4. *결과:* 0에서 2까지 오르고, 1~2에서 2로 평평하고, 3에서 0으로 내려오는 사다리꼴이다.
 
@@ -59,7 +59,7 @@ $$x(\tau) = 2$$ ($$0 \le \tau < 2$$), $$h(\tau) = 1$$ ($$0 \le \tau < 1$$)일 �
 
 ## 문제 3 · 델타 함수와의 합성곱 (p3)
 
-사각 함수 $$\mathrm{rect}(x)$$와 델타 함수 $$\delta(x)$$의 합성곱은? $$\delta(x - a)$$와의 합성곱은?[^4]
+사각 함수 $$\mathrm{rect}(x)$$와 델타 함수 $$\delta(x)$$의 합성곱은? $$\delta(x - a)$$와의 합성곱은?
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
@@ -72,21 +72,21 @@ $$x(\tau) = 2$$ ($$0 \le \tau < 2$$), $$h(\tau) = 1$$ ($$0 \le \tau < 1$$)일 �
 
 ## 문제 4 · 네 줄 (p4)
 
-슬라이드 15쪽의 네 줄에서 $$(x * h)(t)$$를 그려라. 모든 줄에서 $$x$$는 $$0 \le t < 0.5$$에서 1인 펄스이고, 둘째 줄의 $$x$$에는 $$1 \le t < 1.5$$의 펄스가 하나 더 있다[^5].
+다음 네 줄에서 $$(x * h)(t)$$를 그려라. 모든 줄에서 $$x$$는 $$0 \le t < 0.5$$에서 1인 펄스이고, 둘째 줄의 $$x$$에는 $$1 \le t < 1.5$$의 펄스가 하나 더 있다.
 
 | 줄 | $$h(t)$$ |
 |---|---|
 | 1 | $$x$$와 같은 펄스 |
 | 2 | $$x$$와 같은 펄스 |
 | 3 | $$\delta(t - 1)$$ |
-| 4 | $$\delta(t - 0.5)$$와 높이가 더 낮은 $$\delta(t - 1.5)$$ |
+| 4 | $$\delta(t - 0.5)$$와, 높이가 약 1/2로 더 낮은 둘째 임펄스 $$\tfrac{1}{2}\delta(t - 1.5)$$ [판독불확실: 높이 약 1/2] |
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
 1. *줄 1:* 폭 0.5인 펄스끼리라 문제 1과 같은 모양을 반으로 줄인 삼각형이다. 0에서 시작해 $$(0.5, 0.5)$$에서 꼭대기, 1에서 0.
 2. *줄 2:* 합성곱은 더하기를 나눠 계산할 수 있다(선형). 펄스마다 줄 1의 삼각형이 하나씩 생겨 0~1과 1~2에 같은 삼각형 둘이다.
 3. *줄 3:* $$\delta(t - 1)$$과의 합성곱은 1만큼 옮기기라 $$1 \le t < 1.5$$의 펄스다.
-4. *줄 4:* 두 임펄스가 각각 복사본을 만든다. $$0.5 \le t < 1$$에 높이 1의 펄스, $$1.5 \le t < 2$$에 둘째 임펄스의 높이만큼의 펄스다. 둘째 임펄스의 높이는 슬라이드 그림에서 [판독불확실: 약 1/2]로 읽힌다.
+4. *줄 4:* 두 임펄스가 각각 복사본을 만든다. $$0.5 \le t < 1$$에 높이 1의 펄스, $$1.5 \le t < 2$$에 둘째 임펄스의 높이(약 1/2)만큼의 펄스다.
 
 </details>
 
@@ -99,7 +99,7 @@ $$x(\tau) = 2$$ ($$0 \le \tau < 2$$), $$h(\tau) = 1$$ ($$0 \le \tau < 1$$)일 �
 
 ## 문제 5 · 불연속 합성곱의 길이 (p5)
 
-$$f[n]$$은 $$n = 0, \dots, 3$$에서만, $$h[n]$$은 $$n = 0, \dots, 5$$에서만 0이 아니다. $$(f * h)[n] = \sum_m f[m]h[n - m]$$이 0이 아닐 수 있는 $$n$$의 범위는?[^6]
+$$f[n]$$은 $$n = 0, \dots, 3$$에서만, $$h[n]$$은 $$n = 0, \dots, 5$$에서만 0이 아니다. $$(f * h)[n] = \sum_m f[m]h[n - m]$$이 0이 아닐 수 있는 $$n$$의 범위는?
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
@@ -118,7 +118,7 @@ $$f[n]$$은 $$n = 0, \dots, 3$$에서만, $$h[n]$$은 $$n = 0, \dots, 5$$에서�
 
 ## 문제 6 · 2차원 단위 정사각형 (p6)
 
-$$f$$와 $$h$$가 모두 $$0 \sim 1 \times 0 \sim 1$$에서 1이다. $$g(x, y) = \iint f(\alpha, \beta)h(x - \alpha, y - \beta)\,d\alpha\,d\beta$$를 구역별로 구하라[^7].
+$$f$$와 $$h$$가 모두 $$0 \sim 1 \times 0 \sim 1$$에서 1이다. $$g(x, y) = \iint f(\alpha, \beta)h(x - \alpha, y - \beta)\,d\alpha\,d\beta$$를 구역별로 구하라.
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
@@ -132,7 +132,7 @@ $$f$$와 $$h$$가 모두 $$0 \sim 1 \times 0 \sim 1$$에서 1이다. $$g(x, y) =
 
 ## 문제 7 · 2차원 불연속 (p7)
 
-$$f(m, n)$$은 $$m, n \in \{-1, 0, 1\}$$에서 1, $$h(m, n)$$은 $$(1, 0), (0, -1), (0, 0)$$에서 1이다. $$g(m, n) = \sum_k\sum_l f(k, l)h(m - k, n - l)$$의 표를 만들라[^8].
+$$f(m, n)$$은 $$m, n \in \{-1, 0, 1\}$$에서 1, $$h(m, n)$$은 $$(1, 0), (0, -1), (0, 0)$$에서 1이다. $$g(m, n) = \sum_k\sum_l f(k, l)h(m - k, n - l)$$의 표를 만들라.
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
@@ -148,7 +148,7 @@ $$f(m, n)$$은 $$m, n \in \{-1, 0, 1\}$$에서 1, $$h(m, n)$$은 $$(1, 0), (0, -
 	1 3 3 2
 	1 2 2 1
 	```
-    슬라이드의 $$g(-1, -2) = 1$$, $$g(2, 1) = 1$$과 맞는다.
+    모서리 $$g(-1, -2) = 1$$, $$g(2, 1) = 1$$은 복사본 한 장만 겹친 칸이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 문제 6의 다섯 지점(수치 적분), 문제 7의 표 — [31_convolution-practice_p7.py](/Hongs_Blog/studies/human-interface-media/code/31_convolution-practice_p7/)</div>
@@ -178,13 +178,5 @@ $$f(m, n)$$은 $$m, n \in \{-1, 0, 1\}$$에서 1, $$h(m, n)$$은 $$(1, 0), (0, -
     </details>
 
 
-[^1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.12~16, p.21~22
-[^2]: 같은 자료, p.12 (예: 1-D 합성곱, 연속. 경우 (1) $$0 \le x < 1$$, (2) $$1 \le x < 2$$, 결과 삼각형)
-[^3]: 같은 자료, p.13 (예2: $$t < 0$$부터 $$t > 3$$까지 다섯 경우, 결과 사다리꼴)
-[^4]: 같은 자료, p.14 (문제1: 델타 함수와의 합성곱, 그래프를 그리는 빈 모눈)
-[^5]: 같은 자료, p.15 (문제2: $$x(t)$$, $$h(t)$$, 빈 $$(x * h)(t)$$ 네 줄)
-[^6]: 같은 자료, p.16 (예3: 1-D 합성곱, 불연속. 경우 (a) $$n < 0$$, (b) $$0 \le n \le 8$$, (c) $$n > 8$$)
-[^7]: 같은 자료, p.21 (예: 2차원 단위 정사각형, 네 구역)
-[^8]: 같은 자료, p.22 (예2: 2차원 불연속)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 3·4는 슬라이드가 그래프 칸만 비워 둔 문제라 풀이는 직접 썼다. 문제 5의 $$f$$, $$h$$ 값은 슬라이드에 숫자로 적혀 있지 않아 길이만 맞춘 예로 골랐다. 변형 문제는 원본에 없다. 모든 결과는 문제 코드로 확인했다.
+[^s1]: 모든 결과는 문제 코드로 확인했다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Follow Set", "FOLLOW", "Follow 집합", "팔로우 집합", "후속 기호 집합", "Endmarker", "끝 표시", "입력 끝 기호"]
 description: "문법의 어떤 이름 바로 뒤에 올 수 있는 낱말을 모두 모은 것이다. 그 이름 자신의 규칙이 아니라, 그 이름이 다른 규칙 안에서 어디에 쓰이는지를 보고 구한다. 아무것도 내놓지 않고 사라질 수 있는 이름을 읽을 때 쓴다. 사라졌다면 다음 낱말은 그 이름 뒤에 오던 것일 테니, 다음…"
@@ -36,12 +36,12 @@ permalink: "/studies/compilers/follow-set/"
 
 [FIRST 집합](/Hongs_Blog/studies/compilers/first-set/)은 규칙을 펼치면 맨 앞에 무엇이 나오는지 알려 준다. 그런데 $$E' \to \epsilon$$처럼 아무것도 내놓지 않는 규칙은 맨 앞에 나오는 것이 없다. 다음 입력이 무엇일 때 이 규칙을 골라야 하는지 FIRST로는 정할 수 없다.
 
-문법 $$E \to TE'$$, $$\ E' \to +E \mid \epsilon$$, $$\ T \to FT'$$, $$\ T' \to *T \mid \epsilon$$, $$\ F \to (E) \mid id$$로 $$(id)$$를 읽는다고 하자. `(`와 $$id$$를 읽고 나면 남은 모양은 $$(id\ T'E')\ T'E'$$이고 다음 입력은 `)`다[^1]. 가장 왼쪽 비단말 기호 $$T'$$를 $$*T$$로 펼치면 $$*$$가 나와야 하는데 입력은 `)`다. 그러니 $$T'$$는 사라져야 한다. 왜 그렇게 확신하는가? $$T'$$가 사라지고 그 뒤의 $$E'$$도 사라지면 `)`가 바로 온다. `)`는 "$$T'$$ 바로 뒤에 올 수 있는 토큰"이다. 이런 토큰을 비단말 기호마다 미리 모아 둔 것이 FOLLOW 집합이다.
+문법 $$E \to TE'$$, $$\ E' \to +E \mid \epsilon$$, $$\ T \to FT'$$, $$\ T' \to *T \mid \epsilon$$, $$\ F \to (E) \mid id$$로 $$(id)$$를 읽는다고 하자. `(`와 $$id$$를 읽고 나면 남은 모양은 $$(id\ T'E')\ T'E'$$이고 다음 입력은 `)`다. 가장 왼쪽 비단말 기호 $$T'$$를 $$*T$$로 펼치면 $$*$$가 나와야 하는데 입력은 `)`다. 그러니 $$T'$$는 사라져야 한다. 왜 그렇게 확신하는가? $$T'$$가 사라지고 그 뒤의 $$E'$$도 사라지면 `)`가 바로 온다. `)`는 "$$T'$$ 바로 뒤에 올 수 있는 토큰"이다. 이런 토큰을 비단말 기호마다 미리 모아 둔 것이 FOLLOW 집합이다.
 
 입력의 맨 끝에는 끝 표시 $\$$가 붙어 있다고 친다. 시작 기호 뒤에는 아무것도 없으니 $\$$가 온다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 아래 슬라이드 예의 다섯 집합과 바퀴별 추적, 무작위 문법 100개에서 되풀이로 구한 값이 "문장 형식을 다 만들어 바로 뒤 기호를 모은 값"과 같은 것 — [19_follow-set_impl.py](/Hongs_Blog/studies/compilers/code/19_follow-set_impl/)</div>
+<div class="callout-title" markdown="span">검증: 아래 산술식 예의 다섯 집합과 바퀴별 추적, 무작위 문법 100개에서 되풀이로 구한 값이 "문장 형식을 다 만들어 바로 뒤 기호를 모은 값"과 같은 것 — [19_follow-set_impl.py](/Hongs_Blog/studies/compilers/code/19_follow-set_impl/)</div>
 
 </div>
 
@@ -51,16 +51,16 @@ permalink: "/studies/compilers/follow-set/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-비단말 기호 $$A$$의 FOLLOW 집합은 시작 기호 $$S$$에서 유도되는 문장 형식 안에서 $$A$$ 바로 오른쪽에 올 수 있는 단말 기호를 모두 모은 집합이다[^2].
+비단말 기호 $$A$$의 FOLLOW 집합은 시작 기호 $$S$$에서 유도되는 문장 형식 안에서 $$A$$ 바로 오른쪽에 올 수 있는 단말 기호를 모두 모은 집합이다.
 
 $$Follow(A) = \{\,x \mid S \Rightarrow^* \alpha A x \beta\,\}$$
 
 </div>
 
 
-$$x$$는 단말 기호이고 $$\alpha$$, $$\beta$$는 단말·비단말 기호를 늘어놓은 것이다. "$$S$$에서 유도하다 보면 $$A$$ 바로 뒤에 $$x$$가 붙어 있는 모양이 나온다"로 읽는다. $$A$$가 문장 형식의 맨 끝에 올 수 있으면 끝 표시 $$\$$$를 넣는다. FOLLOW에는 $$\epsilon$$이 들어가지 않는다. 뒤에 오는 것은 실제 토큰이거나 입력의 끝이기 때문이다[^s1].
+$$x$$는 단말 기호이고 $$\alpha$$, $$\beta$$는 단말·비단말 기호를 늘어놓은 것이다. "$$S$$에서 유도하다 보면 $$A$$ 바로 뒤에 $$x$$가 붙어 있는 모양이 나온다"로 읽는다. $$A$$가 문장 형식의 맨 끝에 올 수 있으면 끝 표시 $$\$$$를 넣는다. FOLLOW에는 $$\epsilon$$이 들어가지 않는다. 뒤에 오는 것은 실제 토큰이거나 입력의 끝이기 때문이다.
 
-**구하는 규칙 셋**[^2].
+**구하는 규칙 셋**.
 
 | | 규칙 | 뜻 |
 |---|---|---|
@@ -72,9 +72,9 @@ $$\subseteq$$는 "왼쪽 집합의 원소가 모두 오른쪽 집합에 들어 �
 
 세 규칙 모두 $$A$$가 규칙의 **오른쪽**에 나오는 곳을 본다. $$A$$ 자신의 규칙($$A \to \dots$$)은 보지 않는다. $$A$$가 여러 규칙의 여러 자리에 나오면 자리마다 ②와 ③을 따진다.
 
-### 슬라이드 예
+### 예: 산술식 문법
 
-FIRST는 앞 문서에서 구했다. $$First(F) = \{(, id\}$$, $$First(T') = \{*, \epsilon\}$$, $$First(T) = \{(, id\}$$, $$First(E') = \{+, \epsilon\}$$, $$First(E) = \{(, id\}$$[^3].
+FIRST는 앞 문서에서 구했다. $$First(F) = \{(, id\}$$, $$First(T') = \{*, \epsilon\}$$, $$First(T) = \{(, id\}$$, $$First(E') = \{+, \epsilon\}$$, $$First(E) = \{(, id\}$$.
 
 | 비단말 | 오른쪽에 나오는 곳 | 계산 | 결과 |
 |---|---|---|---|
@@ -86,7 +86,7 @@ FIRST는 앞 문서에서 구했다. $$First(F) = \{(, id\}$$, $$First(T') = \{*
 
 $$T$$ 줄을 풀어 본다. $$E \to TE'$$에서 $$T$$ 뒤에 $$E'$$가 온다. 규칙 ②로 $$First(E')$$에서 $$\epsilon$$을 뺀 $$\{+\}$$를 넣는다. $$E'$$는 사라질 수 있으므로($$\epsilon \in First(E')$$) 규칙 ③으로 $$Follow(E) = \{\$, )\}$$도 넣는다. $$T' \to *T$$에서는 $$T$$가 맨 끝이라 규칙 ③으로 $$Follow(T')$$를 넣는다.
 
-여기서 $$Follow(E)$$는 $$Follow(E')$$를 쓰고 $$Follow(E')$$는 $$Follow(E)$$를 쓴다. $$Follow(T)$$와 $$Follow(T')$$도 서로를 쓴다. 슬라이드는 이것을 $$Follow(E) = \{\$, )\} \cup Follow(E) = \{\$, )\}$$처럼 적는다. 자기 자신을 다시 넣어도 새로 늘 것이 없다는 뜻이다[^3].
+여기서 $$Follow(E)$$는 $$Follow(E')$$를 쓰고 $$Follow(E')$$는 $$Follow(E)$$를 쓴다. $$Follow(T)$$와 $$Follow(T')$$도 서로를 쓴다. 손으로 풀 때는 이것을 $$Follow(E) = \{\$, )\} \cup Follow(E) = \{\$, )\}$$처럼 적기도 한다. 자기 자신을 다시 넣어도 새로 늘 것이 없다는 뜻이다.
 
 ### 알고리즘
 
@@ -176,7 +176,7 @@ $$T \to FT'$$에서 $$T'$$가 사라질 수 있어 규칙 ③으로 $$Follow(T)$
 
 ## 활용
 
-- **LL(1) 파싱 표의 ε 칸.** 규칙 $$A \to \alpha$$에서 $$\epsilon \in First(\alpha)$$이면, 이 규칙을 $$A$$ 줄의 $$Follow(A)$$에 든 단말 기호 칸마다 적는다. 슬라이드는 $$E' \to \epsilon$$을 $$Follow(E') = \{\$, )\}$$의 두 칸에, $$T' \to \epsilon$$을 $$Follow(T') = \{+, \$, )\}$$의 세 칸에 적는다[^4]. → [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/)
+- **LL(1) 파싱 표의 ε 칸.** 규칙 $$A \to \alpha$$에서 $$\epsilon \in First(\alpha)$$이면, 이 규칙을 $$A$$ 줄의 $$Follow(A)$$에 든 단말 기호 칸마다 적는다. 산술식 문법에서는 $$E' \to \epsilon$$을 $$Follow(E') = \{\$, )\}$$의 두 칸에, $$T' \to \epsilon$$을 $$Follow(T') = \{+, \$, )\}$$의 세 칸에 적는다. → [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/)
 - **흔한 실수.**
     - $$A$$ 자신의 규칙 오른쪽을 본다. 봐야 할 곳은 $$A$$가 오른쪽에 **쓰인** 규칙들이다.
     - 규칙 ③을 빠뜨린다. $$E \to TE'$$에서 $$E'$$가 사라질 수 있는데 $$Follow(T)$$를 $$\{+\}$$로만 적는다.
@@ -229,7 +229,7 @@ $$T \to FT'$$에서 $$T'$$가 사라질 수 있어 규칙 ③으로 $$Follow(T)$
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C4** 슬라이드 문법에서 $$) \in Follow(T')$$임을 보이는 유도를 쓰라. $$S \Rightarrow^* \alpha\,T'\,)\,\beta$$ 꼴의 문장 형식을 만들면 된다.</summary>
+<summary class="callout-title" markdown="span">**C4** 위 산술식 문법에서 $$) \in Follow(T')$$임을 보이는 유도를 쓰라. $$S \Rightarrow^* \alpha\,T'\,)\,\beta$$ 꼴의 문장 형식을 만들면 된다.</summary>
 
 **답:** $$E \Rightarrow TE' \Rightarrow FT'E' \Rightarrow (E)T'E' \Rightarrow (TE')T'E' \Rightarrow (FT'E')T'E' \Rightarrow (FT')T'E'$$. 마지막 모양에서 안쪽 $$T'$$ 바로 뒤에 `)`가 있다.<br>
 **이유:** 안쪽 $$E'$$를 $$\epsilon$$으로 바꾸는 걸음이 규칙 ③을 쓰는 자리다. $$E'$$가 사라져 $$T'$$가 괄호 안의 맨 끝이 되었다.
@@ -238,7 +238,7 @@ $$T \to FT'$$에서 $$T'$$가 사라질 수 있어 규칙 ③으로 $$Follow(T)$
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C5** 규칙 ③을 쓰지 않으면 슬라이드 문법의 어느 FOLLOW가 어떻게 틀리는가? 그 때문에 파서가 못 읽게 되는 가장 짧은 입력을 하나 들어라.</summary>
+<summary class="callout-title" markdown="span">**C5** 규칙 ③을 쓰지 않으면 위 산술식 문법의 어느 FOLLOW가 어떻게 틀리는가? 그 때문에 파서가 못 읽게 되는 가장 짧은 입력을 하나 들어라.</summary>
 
 **답:** $$Follow(E')$$가 빈 집합, $$Follow(T)$$가 $$\{+\}$$, $$Follow(T')$$가 빈 집합이 된다. 그러면 $$T' \to \epsilon$$과 $$E' \to \epsilon$$을 $$\$$$ 칸에 적지 못해, $$id$$ 하나짜리 입력도 $$id$$를 읽은 뒤 $$T'$$에서 막힌다.<br>
 **이유:** $$\$$$와 `)`는 모두 규칙 ③을 거쳐 전해진다. 규칙 ②만으로 들어오는 것은 $$+$$와 $$*$$, 그리고 $$F \to (E)$$의 `)`뿐이다.
@@ -246,10 +246,5 @@ $$T \to FT'$$에서 $$T'$$가 사라질 수 있어 규칙 ③으로 $$Follow(T)$
 </details>
 
 
-[^1]: 컴파일러 5회 강의 자료 「Lecture05 Syntax analysis part 2」, p.23 ($$(id)$$를 읽는 중, 다음 입력이 `)`일 때)
-[^2]: 같은 자료, p.28 (FOLLOW 집합의 정의와 세 규칙)
-[^3]: 같은 자료, p.29 (FOLLOW 집합의 예)
-[^4]: 같은 자료, p.32 (ε 규칙을 FOLLOW로 채우기)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> FOLLOW에 $$\epsilon$$이 들어가지 않는다는 점과 $$\$$$의 뜻 풀이는 원본에 글로 적혀 있지 않다. 슬라이드의 세 규칙이 $$\epsilon$$을 빼고 넣는 것에서 읽었고, 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 세 규칙과 손 계산 예만 준다. 되풀이 알고리즘, 바퀴별 추적 표, 정확성 증명 스케치, 스스로 설명해 보기, 복잡도, 카드 C2·C4·C5는 보탠 것이다(Aho 외, *Compilers* 2판 4.4.2절). 추적 표와 카드의 값은 구현 코드로 확인했고, 무작위 문법 100개에서 정의대로 구한 값과 같았다. 이 비교는 실험이고, 모든 문법에 대한 근거는 증명 스케치다.
+[^s2]: 되풀이 알고리즘, 바퀴별 추적 표, 정확성 증명 스케치, 스스로 설명해 보기, 복잡도, 카드 C2·C4·C5는 보탠 것이다(Aho 외, *Compilers* 2판 4.4.2절). 추적 표와 카드의 값은 구현 코드로 확인했고, 무작위 문법 100개에서 정의대로 구한 값과 같았다. 이 비교는 실험이고, 모든 문법에 대한 근거는 증명 스케치다.
 {% endraw %}

@@ -113,7 +113,7 @@ $$S = \frac{1}{(1 - p) + \dfrac{p}{s}}$$
 
 - **자주 생기는 경우를 빠르게.** 고칠 곳을 고를 때는 시간을 가장 많이 쓰는 곳부터 본다. 그러려면 먼저 어디에 시간을 쓰는지 재야 한다[^2].
 - **코어 수 늘리기.** 프로그램의 95%를 코어에 나눠 줄 수 있어도 8코어에서 약 5.93배, 64코어에서 약 15.4배이고, 코어가 끝없이 많아도 20배가 한계다. 나눌 수 없는 5%가 바닥에 남는다. [멀티코어와 병렬 처리](/Hongs_Blog/studies/computer-architecture/multicore-parallelism/)에서 다시 쓴다.
-- 이 이름은 1967년에 이 논리로 병렬 컴퓨터의 한계를 이야기한 진 암달(Gene Amdahl)에게서 왔다[^3].
+- 이 이름은 1967년에 이 논리로 병렬 컴퓨터의 한계를 이야기한 진 암달(Gene Amdahl)에게서 왔다.
 - **흔한 실수.** "부분이 $$s$$배 빨라졌으니 전체도 $$s$$배"라고 쓰는 것. 전체가 $$s$$배가 되는 것은 $$p = 1$$일 때뿐이다.
 
 ## 연결
@@ -160,5 +160,4 @@ $$S = \frac{1}{(1 - p) + \dfrac{p}{s}}$$
 
 [^1]: KFUPM ICS 233 "Performance" 슬라이드 20 "Amdahl's Law" (고친 뒤 시간 = 원래 시간 × (f/s + (1 − f)), Speedup = 1/(f/s + (1 − f))), https://faculty.kfupm.edu.sa/COE/aimane/coe301/07-Performance.pdf. 슬라이드의 $$f$$를 이 문서는 $$p$$로 쓴다. 위키백과 "Amdahl's law"도 같은 식을 $$p$$, $$s$$로 적고 $$s \to \infty$$일 때의 한계 $$1/(1 - p)$$를 적는다, https://en.wikipedia.org/wiki/Amdahl%27s_law. 예시와 예제의 수치는 직접 만들었다.
 [^2]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 1장 "Computer Abstractions and Technology" (암달의 법칙과 "자주 생기는 경우를 빠르게"). 책을 직접 열지 못해 장까지만 적는다.
-[^3]: 위키백과 "Amdahl's law"가 적은 서지: Gene M. Amdahl, "Validity of the single processor approach to achieving large scale computing capabilities", AFIPS Spring Joint Computer Conference, 1967, pp. 483–485. 논문 자체는 열어 보지 못했다.
 {% endraw %}

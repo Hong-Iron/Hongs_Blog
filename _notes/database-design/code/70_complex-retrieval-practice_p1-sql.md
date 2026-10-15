@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/70_complex-retrieval-practice_p1-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 70.복잡한 검색 연습 p1: 12주차 슬라이드 p.14~15, 풀이 p.1~2
+-- 70.복잡한 검색 연습 p1 (Q1-1, Q1-2)
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS complex_retrieval_practice_p1 CASCADE;
 CREATE SCHEMA complex_retrieval_practice_p1;
 SET search_path TO complex_retrieval_practice_p1;
 
--- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
--- 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
+-- WORKS_ON.Hours에는 NOT NULL을 걸지 않았다. 상태에 (888665555, 20, NULL)이 있다.
 -- 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -72,7 +72,7 @@ INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),
  ('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- Q1-1, Q1-2 풀이의 질의 그대로: GROUP BY Dno인데 SELECT에 Dname. PostgreSQL 16은 둘 다 거부한다
+-- 틀리기 쉬운 판: GROUP BY Dno인데 SELECT에 Dname. PostgreSQL 16은 둘 다 거부한다
 DO $$ DECLARE ok1 boolean := false; ok2 boolean := false; BEGIN
   BEGIN
     EXECUTE $q$ SELECT Dname, COUNT(*) AS Number_of_employees FROM EMPLOYEE, DEPARTMENT
@@ -84,7 +84,7 @@ DO $$ DECLARE ok1 boolean := false; ok2 boolean := false; BEGIN
                 WHERE Dno = Dnumber AND Sex = 'M' GROUP BY Dno HAVING AVG(Salary) > 30000 $q$;
   EXCEPTION WHEN grouping_error THEN ok2 := true;
   END;
-  ASSERT ok1 AND ok2, '풀이의 질의가 오류를 내지 않았다';
+  ASSERT ok1 AND ok2, 'Dno로만 묶은 질의가 오류를 내지 않았다';
 END $$;
 
 -- 묶는 열에 Dname을 더한 판
@@ -96,7 +96,7 @@ DO $$ BEGIN
   ASSERT (SELECT string_agg(Dname || ':' || n, ',' ORDER BY Dname) FROM (
             SELECT Dname, COUNT(*) AS n FROM EMPLOYEE, DEPARTMENT
             WHERE Dno = Dnumber AND Sex = 'M' GROUP BY Dno, Dname HAVING AVG(Salary) > 30000) t)
-         = 'Headquarters:1,Research:3', 'Q1-2 풀이의 질의가 2행이 아니다';
+         = 'Headquarters:1,Research:3', 'Q1-2 Sex = M만 더한 질의가 2행이 아니다';
   ASSERT (SELECT string_agg(Dname || ':' || n, ',' ORDER BY Dname) FROM (
             SELECT Dname, COUNT(*) AS n FROM EMPLOYEE, DEPARTMENT
             WHERE Dno = Dnumber AND Sex = 'M'

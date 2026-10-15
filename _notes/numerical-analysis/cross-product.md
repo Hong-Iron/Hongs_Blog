@@ -44,19 +44,19 @@ permalink: "/studies/numerical-analysis/cross-product/"
 
 ## 정의
 
-두 3차원 벡터 $$\mathbf a = (a_1, a_2, a_3)$$, $$\mathbf b = (b_1, b_2, b_3)$$의 외적은 다음 벡터다[^1].
+두 3차원 벡터 $$\mathbf a = (a_1, a_2, a_3)$$, $$\mathbf b = (b_1, b_2, b_3)$$의 외적은 다음 벡터다.
 
 $$\mathbf a \times \mathbf b = (a_2b_3 - a_3b_2,\ a_3b_1 - a_1b_3,\ a_1b_2 - a_2b_1)$$
 
 
-성분마다 나머지 두 축의 성분으로 $$2 \times 2$$ 행렬식을 만든다. 첫 성분은 $$\begin{vmatrix}a_2 & a_3\\ b_2 & b_3\end{vmatrix}$$이다. 그래서 단위 벡터 $$\mathbf i, \mathbf j, \mathbf k$$를 첫 행에 넣은 $$3 \times 3$$ 행렬식으로 외워도 된다[^2].
+성분마다 나머지 두 축의 성분으로 $$2 \times 2$$ 행렬식을 만든다. 첫 성분은 $$\begin{vmatrix}a_2 & a_3\\ b_2 & b_3\end{vmatrix}$$이다. 그래서 단위 벡터 $$\mathbf i, \mathbf j, \mathbf k$$를 첫 행에 넣은 $$3 \times 3$$ 행렬식으로 외워도 된다.
 
 $$\mathbf a \times \mathbf b = \begin{vmatrix}\mathbf i & \mathbf j & \mathbf k\\ a_1 & a_2 & a_3\\ b_1 & b_2 & b_3\end{vmatrix}$$
 
 
 작은 예: $$(1, 2, 3) \times (4, 5, 6) = (2\cdot6 - 3\cdot5,\ 3\cdot4 - 1\cdot6,\ 1\cdot5 - 2\cdot4) = (-3, 6, -3)$$.
 
-성질[^3]:
+성질:
 
 - $$\mathbf a \times \mathbf b$$는 $$\mathbf a$$와 $$\mathbf b$$ 모두에 수직이다.
 - 두 벡터가 평행하면 $$\mathbf a \times \mathbf b = \mathbf 0$$이다.
@@ -112,8 +112,5 @@ $$\mathbf a \times \mathbf b = \begin{vmatrix}\mathbf i & \mathbf j & \mathbf k\
 </details>
 
 
-[^1]: 수치해석 2회 강의 자료 「na02_vector」, p.11
-[^2]: 수치해석 3회 강의 자료 「na03_matrix」, p.22
-[^3]: 수치해석 2회 강의 자료 「na02_vector」, p.12
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시의 삼각형, 길이 공식의 유도, 법선·넓이·메시 활용, 흔한 실수, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
+[^s1]: 검증 코드로 확인했다.
 {% endraw %}

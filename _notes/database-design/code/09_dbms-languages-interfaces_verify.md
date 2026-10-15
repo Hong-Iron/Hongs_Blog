@@ -23,7 +23,7 @@ permalink: "/studies/database-design/code/09_dbms-languages-interfaces_verify/"
 """DBMS 언어와 인터페이스 문서의 값 확인.
 
 문서: 09.DBMS 언어와 인터페이스
-출처: 데이터베이스 설계 2주차 슬라이드 2-2 p.21~23, UNIVERSITY 상태 2-1 p.5
+출처: Elmasri & Navathe, Fundamentals of Database Systems 2.3절과 1장의 UNIVERSITY 예
 주장:
   1. 네 언어가 하는 일은 "무엇이 바뀌는가"로 갈린다.
      DDL(표의 틀 정의), VDL(뷰 정의), SDL(색인 같은 저장 구조 정의)의 문장은 카탈로그(스키마의 기록)를 바꾸고
@@ -31,7 +31,7 @@ permalink: "/studies/database-design/code/09_dbms-languages-interfaces_verify/"
      DML의 찾기는 아무것도 바꾸지 않고 행을 돌려준다.
   2. "Brown이 A를 받은 과목 번호"를 두 방식으로 구하면 답이 같다(MATH2410, CS1310, CS3380).
      비절차적 DML: 문장 하나에 원하는 것만 적는다.
-     절차적 DML: 레코드를 하나씩 꺼내 비교하는 차례를 직접 적는다. 이 자료에서는 레코드를 17번 꺼낸다.
+     절차적 DML: 레코드를 하나씩 꺼내 비교하는 차례를 직접 적는다. UNIVERSITY 데이터에서는 레코드를 17번 꺼낸다.
   3. 카드 C2의 분류.
 실행: python3 09_dbms-languages-interfaces_verify.py
 SQLite를 DBMS의 한 예로 썼다. 요즘 DBMS에서는 네 언어가 SQL 하나에 들어 있다.

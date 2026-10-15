@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/assemble-link-execute/"
 
 ## 예시로 보기
 
-[프로그램 틀](/Hongs_Blog/studies/assembly-language/asm-program-template/)의 AddSub2는 `call DumpRegs`로 레지스터를 화면에 찍는다. 그런데 `DumpRegs`의 코드는 내 원본 파일에 없다. 다른 사람이 미리 만들어 둔 코드 모음에 있다. 내 코드를 기계어로 바꾸는 일과 그 코드 모음을 가져다 붙이는 일은 서로 다른 프로그램이 한다[^1].
+[프로그램 틀](/Hongs_Blog/studies/assembly-language/asm-program-template/)의 AddSub2는 `call DumpRegs`로 레지스터를 화면에 찍는다. 그런데 `DumpRegs`의 코드는 내 원본 파일에 없다. 다른 사람이 미리 만들어 둔 코드 모음에 있다. 내 코드를 기계어로 바꾸는 일과 그 코드 모음을 가져다 붙이는 일은 서로 다른 프로그램이 한다.
 
 ```mermaid
 flowchart LR
@@ -61,11 +61,11 @@ flowchart LR
 - **링크 라이브러리**는 미리 기계어로 바꿔 둔 프로시저의 모음이다. 링커가 여기서 필요한 프로시저를 꺼내 목적 파일과 합친다[^s1].
 - **로더**는 실행 파일을 메모리에 올리고 프로세서가 그 첫 명령부터 실행하게 하는 운영체제의 한 부분이다[^s1].
 
-원본을 고치면 2단계부터 4단계까지를 다시 해야 한다[^1].
+원본을 고치면 2단계부터 4단계까지를 다시 해야 한다.
 
 ### 리스팅 파일
 
-어셈블러가 원본을 어떻게 번역했는지 보여 주는 파일이다. 다음이 들어 있다[^2].
+어셈블러가 원본을 어떻게 번역했는지 보여 주는 파일이다. 다음이 들어 있다.
 
 - 원본 코드
 - 주소
@@ -73,7 +73,7 @@ flowchart LR
 - 세그먼트 이름
 - 기호 (변수, 프로시저, 상수)
 
-리스팅 파일의 한 토막이다. 왼쪽부터 주소(오프셋), 기계어, 원본이다[^3].
+리스팅 파일의 한 토막이다. 왼쪽부터 주소(오프셋), 기계어, 원본이다.
 
 ```
  오프셋     기계어         원본
@@ -86,7 +86,7 @@ flowchart LR
 
 오프셋은 코드 구역의 맨 앞에서 몇 바이트 떨어져 있는지다. 첫 명령의 기계어가 4바이트라서 둘째 명령은 `00000004h`에서 시작한다. 둘째가 5바이트라서 셋째는 `00000009h`, 셋째가 3바이트라서 넷째는 `0000000Ch`, 넷째가 2바이트라서 그다음은 `0000000Eh`다.
 
-마지막 명령 `loop L1`의 기계어는 `E2 FB`다. `E2`가 "반복하라"이고 `FB`는 "어디로 돌아가는가"다. `FBh`는 8비트 부호 있는 수로 −5다. 이 명령 다음의 주소 `0000000Eh`에 −5를 더하면 `00000009h`, 곧 `L1`의 주소다[^3]. 어셈블러가 레이블 `L1`을 숫자로 바꿔 넣은 것이다.
+마지막 명령 `loop L1`의 기계어는 `E2 FB`다. `E2`가 "반복하라"이고 `FB`는 "어디로 돌아가는가"다. `FBh`는 8비트 부호 있는 수로 −5다. 이 명령 다음의 주소 `0000000Eh`에 −5를 더하면 `00000009h`, 곧 `L1`의 주소다. 어셈블러가 레이블 `L1`을 숫자로 바꿔 넣은 것이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 리스팅 파일의 오프셋 00·04·09·0C·0E가 기계어 바이트 수 4·5·3·2의 누적과 같음, `FBh` = −5, `0Eh` − 5 = `09h`, 이 반복을 흉내 내면 AX = 15, 카드의 값 — [11_assemble-link-execute_verify.py](/Hongs_Blog/studies/assembly-language/code/11_assemble-link-execute_verify/). 파이썬 흉내로 확인했다.</div>
@@ -96,7 +96,7 @@ flowchart LR
 
 ### 맵 파일
 
-링커가 실행 파일과 함께 만드는 파일이다[^1]. 합친 프로그램의 구역(세그먼트)들이 어디서 시작하고 얼마나 큰지 같은 배치 정보가 적힌다[^s1].
+링커가 실행 파일과 함께 만드는 파일이다. 합친 프로그램의 구역(세그먼트)들이 어디서 시작하고 얼마나 큰지 같은 배치 정보가 적힌다[^s1].
 
 **이 과정이 약속하지 않는 것.** 어셈블러와 링커가 오류 없이 지나갔다고 프로그램이 맞게 도는 것은 아니다. 두 프로그램은 문법과 이름의 짝만 본다. 계산이 맞는지는 4단계에서 돌려 봐야 안다[^s1].
 
@@ -141,8 +141,5 @@ flowchart LR
 </details>
 
 
-[^1]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-2」, p.3 (Assemble-Link Execute Cycle 그림: Step 1 text editor, Step 2 assembler, Step 3 linker, Step 4 OS loader, Source·Object·Listing·Link Library·Executable·Map File, Output. "If the source code is modified, Steps 2 through 4 must be repeated.")
-[^2]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-2」, p.4 (Listing File)
-[^3]: 어셈블리어 6회 강의 자료 「wk06-chapt_04-3-1」, p.1 (LOOP Example: offset, machine code, source code. "–5 (FBh) is added to the current location, causing a jump to location 00000009")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원고와 책의 비유, 목적 파일·링크 라이브러리·로더의 풀이, 맵 파일에 적히는 내용, 오류 없이 지나가도 계산이 맞다는 보장이 없다는 것, 링커 오류의 풀이, 오프셋이 바이트 수의 누적이라는 설명, 카드 C2·C3은 슬라이드에 없다. 슬라이드에는 그림과 리스팅 파일의 항목 목록이 있다. 풀이는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 3.3절을 따랐다. 오프셋 계산은 검증 코드로 확인했다.
+[^s1]: 풀이는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 3.3절을 따랐다. 오프셋 계산은 검증 코드로 확인했다.
 {% endraw %}

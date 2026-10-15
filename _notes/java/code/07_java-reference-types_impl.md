@@ -30,7 +30,7 @@ class ReferenceTypesImpl {
         if (!ok) throw new AssertionError(what);
     }
 
-    // 슬라이드의 Calculator.add
+    // 문서의 Calculator.add
     static int add(int a, int b) {
         int sum = a + b;
         return sum;
@@ -79,7 +79,7 @@ class ReferenceTypesImpl {
         q[1] = -5;
         check(p[1] == 2 && p != q, "이제 p와 q는 다른 배열");
 
-        // 3. 메서드를 부르면 스택에 프레임이 생기고, 끝나면 사라진다 (슬라이드 Calculator)
+        // 3. 메서드를 부르면 스택에 프레임이 생기고, 끝나면 사라진다 (문서의 Calculator)
         int result = add(5, 3);
         check(("5 + 3 = " + result).equals("5 + 3 = 8"), "5 + 3 = 8");
         check(factorial(5) == 120, "재귀: 프레임 다섯 개가 쌓였다 풀린다");

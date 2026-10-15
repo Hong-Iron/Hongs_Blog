@@ -116,6 +116,6 @@ $$\mathbf{b} = (1, 3, 5)$$가 $$\mathbf{v}_1 = (1, 1, 1)$$, $$\mathbf{v}_2 = (0,
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.1절 "Vectors and Linear Combinations", 3.1절 "Spaces of Vectors"(열들의 모든 결합).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 음이 아닌 계수만 허용한 결합은 원뿔(원점에서 뻗는 부채꼴 모양)을 이룬다. 선형대수의 생성과 달리 모니터의 색 영역은 이 제약 때문에 모든 색을 포함하지 못한다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [03_span_plot.py](/Hongs_Blog/studies/linear-algebra/code/03_span_plot/)로 그렸고, $$(3, 5) = 1\cdot(1, 1) + 2\cdot(1, 2)$$와 $$(1, 2)$$, $$(2, 4)$$의 결합이 모두 $$y = 2x$$ 위에 있다는 것을 같은 코드로 확인했다.
+[^s1]: 음이 아닌 계수만 허용한 결합은 원뿔(원점에서 뻗는 부채꼴 모양)을 이룬다. 선형대수의 생성과 달리 모니터의 색 영역은 이 제약 때문에 모든 색을 포함하지 못한다.
+[^s2]: [03_span_plot.py](/Hongs_Blog/studies/linear-algebra/code/03_span_plot/)로 그렸고, $$(3, 5) = 1\cdot(1, 1) + 2\cdot(1, 2)$$와 $$(1, 2)$$, $$(2, 4)$$의 결합이 모두 $$y = 2x$$ 위에 있다는 것을 같은 코드로 확인했다.
 {% endraw %}

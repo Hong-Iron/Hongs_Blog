@@ -10,7 +10,7 @@ course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Ensemble Learning", "앙상블", "Ensemble", "약한 모델", "Weak Learner", "기본 모델", "Base Model", "투표", "Voting", "평균", "Averaging", "편향-분산 분해", "Bias-Variance Decomposition", "분산 감소"]
 description: "모델 하나를 고르는 대신 여러 모델의 예측을 평균 내거나 투표시킨다. 한 모델이 훈련 자료에 휘둘려 엉뚱하게 튀어도, 다른 모델들과 섞이면 튄 부분이 서로 상쇄되어 예측이 안정된다. 그래서 정확도가 오르고 과적합이 줄어든다. 단, 모델들이 서로 똑같이 틀리면 아무리 많이 모아도 소…"
@@ -34,9 +34,9 @@ permalink: "/studies/data-science/ensemble-learning/"
 
 ## 예시로 보기
 
-모델마다 데이터에 대한 가정이 달라서(결정 트리, 나이브 베이즈, 퍼셉트론, 로지스틱 회귀, SVM) 같은 자료에서도 성능이 다르다[^1]. 그렇다면 하나를 고르는 대신 여럿을 섞으면 어떨까[^2]?
+모델마다 데이터에 대한 가정이 달라서(결정 트리, 나이브 베이즈, 퍼셉트론, 로지스틱 회귀, SVM) 같은 자료에서도 성능이 다르다. 그렇다면 하나를 고르는 대신 여럿을 섞으면 어떨까?
 
-어떤 점의 정답이 2인데, 모델 하나는 훈련 자료에 따라 예측이 평균 2.3에서 표준편차 0.4로 흔들리고, 측정 자체에도 표준편차 0.5의 잡음이 있다. 이 모델의 제곱 오차 평균은 세 부분의 합이다[^3][^s1].
+어떤 점의 정답이 2인데, 모델 하나는 훈련 자료에 따라 예측이 평균 2.3에서 표준편차 0.4로 흔들리고, 측정 자체에도 표준편차 0.5의 잡음이 있다. 이 모델의 제곱 오차 평균은 세 부분의 합이다[^s1].
 
 | 부분 | 뜻 | 값 |
 |---|---|---|
@@ -54,22 +54,22 @@ permalink: "/studies/data-science/ensemble-learning/"
 
 ## 정의
 
-**앙상블 학습**은 하나의 모델을 고르는 대신 여러 "약한" 모델을 합쳐, 그 예측을 평균(회귀)이나 투표(분류)로 모아 더 강한 하나의 예측을 만든다. 정확도를 높이고, 과적합을 줄이고, 성능을 더 안정되게 한다[^2].
+**앙상블 학습**은 하나의 모델을 고르는 대신 여러 "약한" 모델을 합쳐, 그 예측을 평균(회귀)이나 투표(분류)로 모아 더 강한 하나의 예측을 만든다. 정확도를 높이고, 과적합을 줄이고, 성능을 더 안정되게 한다.
 
-**오차 분해.** 참값을 $$y = f(x) + \epsilon$$($$f$$는 모르는 참 함수, $$\epsilon$$은 평균 0, 분산 $$\sigma_\epsilon^2$$인 잡음), 모델의 예측을 $$\hat f(x)$$라 하면 제곱 오차의 기댓값은[^3]
+**오차 분해.** 참값을 $$y = f(x) + \epsilon$$($$f$$는 모르는 참 함수, $$\epsilon$$은 평균 0, 분산 $$\sigma_\epsilon^2$$인 잡음), 모델의 예측을 $$\hat f(x)$$라 하면 제곱 오차의 기댓값은
 
 $$\mathbb{E}[(y - \hat f(x))^2] = \underbrace{(\mathbb{E}[\hat f(x)] - f(x))^2}_{\text{편향}^2} + \underbrace{\mathbb{E}[(\hat f(x) - \mathbb{E}[\hat f(x)])^2]}_{\text{분산}} + \underbrace{\mathbb{E}[\epsilon^2]}_{\text{잡음}}$$
 
 
-**정리 (평균의 분산).** 기본 모델 $$f_1, \dots, f_k$$의 분산이 모두 $$\sigma^2$$이고, 서로 다른 두 모델의 상관계수가 모두 $$\rho$$이면, 평균 $$f_{ens} = \frac1k\sum_{i=1}^{k} f_i$$의 분산은[^4]
+**정리 (평균의 분산).** 기본 모델 $$f_1, \dots, f_k$$의 분산이 모두 $$\sigma^2$$이고, 서로 다른 두 모델의 상관계수가 모두 $$\rho$$이면, 평균 $$f_{ens} = \frac1k\sum_{i=1}^{k} f_i$$의 분산은
 
 $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2$$
 
 
 말로 하면, 모델끼리 닮지 않은 몫($$1 - \rho$$)은 $$k$$로 나뉘어 사라지고, 닮은 몫($$\rho\sigma^2$$)은 아무리 모아도 남는다. 대입하면 다음과 같다.
 
-- $$\rho = 0$$(서로 독립): $$\frac{\sigma^2}{k}$$. $$k$$가 커질수록 0으로 간다[^5].
-- $$\rho = 1$$(모두 같은 모델): $$\sigma^2$$. 평균 내도 줄지 않는다[^4].
+- $$\rho = 0$$(서로 독립): $$\frac{\sigma^2}{k}$$. $$k$$가 커질수록 0으로 간다.
+- $$\rho = 1$$(모두 같은 모델): $$\sigma^2$$. 평균 내도 줄지 않는다.
 - $$k \to \infty$$: $$\rho\sigma^2$$로 다가간다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/20_ensemble-learning_fig1.svg" alt="그림" width="652" height="328" loading="lazy">
@@ -78,7 +78,7 @@ $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2
 
 ## 증명
 
-분산을 합의 공식으로 펼친다. 슬라이드 p.13의 $$\frac{\sigma^2}{k}$$는 $$\rho = 0$$인 특수한 경우다.
+분산을 합의 공식으로 펼친다. 자주 보는 $$\frac{\sigma^2}{k}$$는 $$\rho = 0$$인 특수한 경우다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
@@ -88,7 +88,7 @@ $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2
 3. 첫 합은 $$k\sigma^2$$이다. 둘째 합의 항은 $$k(k - 1)$$개이고 각각 $$\operatorname{Cov}(f_i, f_j) = \rho\sigma\sigma = \rho\sigma^2$$이다. — 가정, 상관계수의 정의
 4. 대입하면 $$\frac{1}{k^2}\left(k\sigma^2 + k(k - 1)\rho\sigma^2\right) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2$$. ∎
 
-오차 분해의 증명은 $$f - \hat f = (f - \mathbb{E}\hat f) + (\mathbb{E}\hat f - \hat f)$$로 나눠 제곱을 펼친다. 교차항은 $$\mathbb{E}[\hat f - \mathbb{E}\hat f] = 0$$이라서, 잡음과의 교차항은 $$\epsilon$$이 평균 0이고 $$\hat f$$와 독립이라서 사라진다[^3][^s1].
+오차 분해의 증명은 $$f - \hat f = (f - \mathbb{E}\hat f) + (\mathbb{E}\hat f - \hat f)$$로 나눠 제곱을 펼친다. 교차항은 $$\mathbb{E}[\hat f - \mathbb{E}\hat f] = 0$$이라서, 잡음과의 교차항은 $$\epsilon$$이 평균 0이고 $$\hat f$$와 독립이라서 사라진다[^s1].
 
 </details>
 
@@ -104,9 +104,9 @@ $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">2. 슬라이드 p.13이 $$\frac{1}{k^2}\sum \operatorname{Var}(f_i)$$로 바로 간 단계에 숨은 가정</summary>
+<summary class="callout-title" markdown="span">2. 평균의 분산을 곧바로 $$\frac{1}{k^2}\sum \operatorname{Var}(f_i)$$로 쓰는 계산에 숨은 가정</summary>
 
-공분산 항을 지웠으므로 모델끼리 상관이 없다(서로 독립)고 가정한 것이다. 슬라이드는 "$$\operatorname{Var}(f_i) \approx \operatorname{Var}(f_j)$$"만 이유로 들지만, 그것은 3단계의 $$k\sigma^2$$를 위한 가정이고 공분산이 0이라는 가정은 따로 필요하다. p.14의 일반식이 그 빠진 항을 되살린다.
+공분산 항을 지웠으므로 모델끼리 상관이 없다(서로 독립)고 가정한 것이다. "$$\operatorname{Var}(f_i) \approx \operatorname{Var}(f_j)$$"라는 가정만으로는 모자란다. 그것은 3단계의 $$k\sigma^2$$를 위한 가정이고, 공분산이 0이라는 가정은 따로 필요하다. 위 일반식이 그 빠진 항을 되살린다.
 
 </details>
 
@@ -137,7 +137,7 @@ $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2
 
 ## 활용
 
-- 언제 더 쓸모 있나[^4]: 기본 모델들이 서로 다를 때(독립이거나 상관이 낮을 때), 그리고 기본 모델의 분산이 클 때. 분산이 큰 모델은 훈련 자료가 조금만 바뀌어도 결정 경계가 크게 달라져, 그 자체로 서로 다른 모델이 만들어진다.
+- 언제 더 쓸모 있나: 기본 모델들이 서로 다를 때(독립이거나 상관이 낮을 때), 그리고 기본 모델의 분산이 클 때. 분산이 큰 모델은 훈련 자료가 조금만 바뀌어도 결정 경계가 크게 달라져, 그 자체로 서로 다른 모델이 만들어진다.
 - 모델을 서로 다르게 만드는 방법이 [배깅과 랜덤 포레스트](/Hongs_Blog/studies/data-science/bagging-random-forest/)다. 편향까지 줄이려 차례로 실수를 고쳐 나가는 방법이 [부스팅](/Hongs_Blog/studies/data-science/boosting-adaboost/)이다.
 
 ## 연결
@@ -189,11 +189,6 @@ $$\operatorname{Var}(f_{ens}) = \frac{\sigma^2}{k} + \frac{k - 1}{k}\rho\sigma^2
 </details>
 
 
-[^1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.8, p.11
-[^2]: 같은 자료, p.12
-[^3]: 같은 자료, p.10
-[^4]: 같은 자료, p.14
-[^5]: 같은 자료, p.13
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수치 예, 일반식의 증명, 교차항이 사라지는 이유, 스스로 설명해 보기, 오해 항목, 카드 C2~C4는 원본에 없다. 검증 코드로 몬테카를로 확인을 했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [20_ensemble-learning_plot.py](/Hongs_Blog/studies/data-science/code/20_ensemble-learning_plot/)로 그렸고, $$k = 10$$에서 0.016($$\rho = 0$$)과 0.088($$\rho = 0.5$$)을 식과 몬테카를로 20만 회로 확인했다.
+[^s1]: 검증 코드로 몬테카를로 확인을 했다.
+[^s2]: [20_ensemble-learning_plot.py](/Hongs_Blog/studies/data-science/code/20_ensemble-learning_plot/)로 그렸고, $$k = 10$$에서 0.016($$\rho = 0$$)과 0.088($$\rho = 0.5$$)을 식과 몬테카를로 20만 회로 확인했다.
 {% endraw %}

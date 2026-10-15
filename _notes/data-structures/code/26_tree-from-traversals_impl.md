@@ -245,7 +245,7 @@ int main(void)
 {
     char buf[64], trace[512];
 
-    /* 1. 슬라이드 p.51~54: inorder = g d h b e i a f j c */
+    /* 1. 문서의 예: inorder = g d h b e i a f j c */
     const char *in = "gdhbeiafjc", *pre = "abdgheicfj", *post = "ghdiebjfca", *level = "abcdefghij";
     treePointer want =
         makeNode('a',
@@ -260,7 +260,7 @@ int main(void)
     traceBuf = trace;
     treePointer a = fromInPre(in, pre, 10);
     traceBuf = NULL;
-    check(equal(a, want), "중위 + 전위로 슬라이드의 트리가 나온다");
+    check(equal(a, want), "중위 + 전위로 문서 예의 트리가 나온다");
     /* 문서의 추적 표: 뿌리 | 왼쪽 부분 트리의 글자 | 오른쪽 부분 트리의 글자 */
     check(strcmp(trace,
                  "a|gdhbei|fjc\n" "b|gdh|ei\n" "d|g|h\n" "g||\n" "h||\n"
@@ -281,7 +281,7 @@ int main(void)
     check(equal(c, want), "중위 + 레벨 순서로 같은 트리가 나온다");
     freeTree(a); freeTree(b); freeTree(c); freeTree(want);
 
-    /* 2. 슬라이드 p.48, p.50: 노드 둘짜리 두 트리 */
+    /* 2. 문서 예시: 노드 둘짜리 두 트리 */
     treePointer leftB  = makeNode('a', makeNode('b', NULL, NULL), NULL);    /* b가 왼쪽 자식 */
     treePointer rightB = makeNode('a', NULL, makeNode('b', NULL, NULL));    /* b가 오른쪽 자식 */
     char p1[8] = "", p2[8] = "", q1[8] = "", q2[8] = "", l1[8] = "", l2[8] = "", i1[8] = "", i2[8] = "";

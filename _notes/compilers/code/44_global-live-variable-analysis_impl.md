@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/44_global-live-variable-analysis_impl/"
 ```python
 # 전역 생존 변수 분석과 전역 죽은 코드 제거.
 # 실행: python3 44_global-live-variable-analysis_impl.py  (표준 라이브러리만 쓴다)
-# 슬라이드 13회 p.5~19의 집합과 결과 코드를 그대로 다시 만든다.
+# 문서의 두 예(고리 없는 예, 고리 있는 예)의 집합과 결과 코드를 그대로 다시 만든다.
 # 문장 표기: "a = c + d", "d = -a", "b = 3", "c = a", "return d"
 import random
 
@@ -141,7 +141,7 @@ EXITS = set()
 if __name__ == "__main__":
     S = lambda *xs: set(xs)
 
-    # ---- 단순한 예 (p.5~11) ----
+    # ---- 단순한 예 (고리 없음) ----
     blocks = {"B1": ["a = c + d"], "B2": ["b = b + c", "d = a + c"],
               "B3": ["c = a + b"], "B4": ["a = a + b", "d = b + b", "return d"]}
     succ = {"B1": ["B2", "B3"], "B2": ["B4"], "B3": ["B4"]}
@@ -150,12 +150,12 @@ if __name__ == "__main__":
     assert block_points(blocks["B4"], OUT["B4"]) == [S("a", "b"), S("b"), S("d"), S()]
     opt, IN2, OUT2 = dead_code_elimination(blocks, succ, {})
     assert opt == {"B1": [], "B2": ["b = b + c"], "B3": [], "B4": ["d = b + b", "return d"]}
-    # p.6: {b} d = b + b {d} return d {}
+    # B4: {b} d = b + b {d} return d {}
     assert block_points(opt["B4"], OUT2["B4"]) == [S("b"), S("d"), S()]
-    # p.8: {b, c} b = b + c {b} / 오른쪽 블록은 {b}
+    # B2: {b, c} b = b + c {b} / 오른쪽 블록 B3은 {b}
     assert block_points(opt["B2"], OUT2["B2"]) == [S("b", "c"), S("b")]
     assert IN2["B3"] == OUT2["B3"] == S("b")
-    # p.9~10: 첫 블록 끝 = {b, c} ∪ {b} = {b, c}, a = c + d는 지워진다
+    # B1: 첫 블록 끝 = {b, c} ∪ {b} = {b, c}, a = c + d는 지워진다
     assert OUT2["B1"] == IN2["B2"] | IN2["B3"] == S("b", "c") and IN2["B1"] == S("b", "c")
     # 지우기 전후의 return 값이 두 길 모두에서 같다
     rnd = random.Random(1)
@@ -163,37 +163,37 @@ if __name__ == "__main__":
         env = {v: rnd.randint(-9, 9) for v in "abcd"}
         for ch in (0, 1):
             assert run(blocks, succ, "B1", env, [ch])[2] == run(opt, succ, "B1", env, [ch])[2]
-    # p.11의 한 줄짜리 결과(b = b + c; d = b + c; return d)는 원래 프로그램과 다르다
-    slide11 = {"B": ["b = b + c", "d = b + c", "return d"]}
+    # 한 줄기로 이은 결과(b = b + c; d = b + c; return d)는 원래 프로그램과 다르다
+    chain = {"B": ["b = b + c", "d = b + c", "return d"]}
     env = {"a": 0, "b": 1, "c": 2, "d": 0}
     left = run(blocks, succ, "B1", env, [0])[2]
     right = run(blocks, succ, "B1", env, [1])[2]
-    got = run(slide11, {}, "B", env, [])[2]
+    got = run(chain, {}, "B", env, [])[2]
     assert (left, right, got) == (6, 2, 5)
     # d = b + b로 바로잡아도 오른쪽 길(b를 안 고치는 길)에서는 값이 다르다
     fixed_line = {"B": ["b = b + c", "d = b + b", "return d"]}
     assert run(fixed_line, {}, "B", env, [])[2] == 6 != right
 
-    # ---- 고리가 있는 예 (p.12~19) ----
+    # ---- 고리가 있는 예 ----
     blocks = {"B1": ["a = c + d"], "B2": ["b = b + c", "d = a + c"],
               "B3": ["c = a + b"], "B4": ["a = a + b", "d = b + b"]}
     succ = {"B1": ["B2", "B3"], "B2": ["B4"], "B3": ["B4"], "B4": ["B1"]}
-    boundary = {"B4": {"d"}}         # 고리 다음 블록의 시작 집합 {d} (p.13)
+    boundary = {"B4": {"d"}}         # 고리 다음 블록의 시작 집합 {d} (1단계)
     trace = []
     IN, OUT, rounds = liveness(blocks, succ, boundary, order=["B4", "B2", "B3", "B1"], trace=trace)
     assert rounds == 3               # 두 번째에 바뀌고 세 번째에 그대로다
-    # p.14: 첫 바퀴 (고리 끝 블록의 끝 집합을 {d}로 두고)
+    # 첫 바퀴 (고리 끝 블록의 끝 집합을 {d}로 두고)
     assert trace[0] == {"B1": [S("b", "c", "d"), S("a", "b", "c")],
                         "B2": [S("a", "b", "c"), S("a", "b", "c"), S("a", "b")],
                         "B3": [S("a", "b"), S("a", "b")],
                         "B4": [S("a", "b"), S("b"), S("d")]}
-    # p.15~16: 끝 집합을 {d} ∪ {b, c, d}로 고치고 한 바퀴 더
+    # 둘째 바퀴: 끝 집합을 {d} ∪ {b, c, d}로 고치고 한 바퀴 더
     assert trace[1] == {"B1": [S("b", "c", "d"), S("a", "b", "c")],
                         "B2": [S("a", "b", "c"), S("a", "b", "c"), S("a", "b", "c")],
                         "B3": [S("a", "b"), S("a", "b", "c")],
                         "B4": [S("a", "b", "c"), S("b", "c"), S("b", "c", "d")]}
     assert trace[2] == trace[1]
-    # p.18~19: 죽은 코드 제거 뒤
+    # 5단계: 죽은 코드 제거 뒤
     opt, IN2, OUT2 = dead_code_elimination(blocks, succ, boundary)
     assert opt == {"B1": ["a = c + d"], "B2": ["b = b + c"], "B3": ["c = a + b"], "B4": ["d = b + b"]}
     assert block_points(opt["B1"], OUT2["B1"]) == [S("b", "c", "d"), S("a", "b", "c")]

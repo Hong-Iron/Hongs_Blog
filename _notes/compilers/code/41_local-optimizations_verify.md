@@ -21,8 +21,8 @@ permalink: "/studies/compilers/code/41_local-optimizations_verify/"
 
 ```python
 # 41_local-optimizations_verify.py
-# 지역 최적화 다섯 기법의 슬라이드 예(L12 p.5~6, p.11, p.14~20)를 실행해, 고치기 전과 뒤의 코드가
-# 같은 값을 내는지 확인한다. 정수 a * 2 = a << 1, 10 * 2 = 20, p.20 연습의 답,
+# 지역 최적화 다섯 기법의 문서 예를 실행해, 고치기 전과 뒤의 코드가
+# 같은 값을 내는지 확인한다. 정수 a * 2 = a << 1, 10 * 2 = 20, 문서 연습의 답,
 # 조건을 어기면 값이 달라지는 반례도 본다. 표준 라이브러리만 쓴다.
 # 실행: python3 41_local-optimizations_verify.py
 import random
@@ -156,7 +156,7 @@ def show(q):
 def available(qs, rewrite=True, naive=False):
     """기본 블록을 위에서 아래로 훑으며 사용 가능한 식 집합을 만든다.
     rewrite=True면 복사 전파와 공통 부분식 제거를 함께 한다.
-    naive=True면 슬라이드 규칙 그대로, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
+    naive=True면 "새 식은 늘 넣는다"를 글자 그대로 따라, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
     (새 코드, 각 문장 뒤의 집합 목록)을 돌려준다. 집합은 넣은 순서를 지키는 리스트다."""
     avail, out, sets = [], [], []
     for op, a1, a2, res in qs:
@@ -224,7 +224,7 @@ def same(before, after, keep, names, rng, trials=300):
 if __name__ == "__main__":
     rng = random.Random(41)
 
-    # p.15 공통 부분식 제거 -> p.17 복사 전파 -> p.18 죽은 코드 제거
+    # 공통 부분식 제거 -> 복사 전파 -> 죽은 코드 제거 (문서의 예제 표)
     S0 = quads("t0 = x + x\ny = t0 * x\nt2 = x + x\nt3 = t2 == y")
     S1 = quads("t0 = x + x\ny = t0 * x\nt2 = t0\nt3 = t2 == y")
     S2 = quads("t0 = x + x\ny = t0 * x\nt2 = t0\nt3 = t0 == y")
@@ -235,7 +235,7 @@ if __name__ == "__main__":
     assert available(S0)[0] == S2
     assert live(S2, {"y", "t3"})[0] == S3
 
-    # p.14의 조건: 두 대입 사이에 a, b, v0가 바뀌면 안 된다
+    # 공통 부분식 제거의 조건: 두 대입 사이에 a, b, v0가 바뀌면 안 된다
     BAD0 = quads("v0 = a + b\na = a + 1\nv1 = a + b")
     BAD1 = quads("v0 = a + b\na = a + 1\nv1 = v0")
     assert not same(BAD0, BAD1, ["v1"], ["a", "b"], rng)
@@ -244,25 +244,25 @@ if __name__ == "__main__":
     assert not same(BAD2, BAD3, ["v1"], ["a", "b"], rng)
     assert available(BAD0)[0] == BAD0 and available(BAD2)[0] == BAD2
 
-    # p.16의 조건: v0 = v1 뒤에 v1이 바뀌면 복사 전파를 못 한다
+    # 복사 전파의 조건: v0 = v1 뒤에 v1이 바뀌면 복사 전파를 못 한다
     C0 = quads("v0 = v1\nv1 = v1 + 1\na = v0 * 2")
     C1 = quads("v0 = v1\nv1 = v1 + 1\na = v1 * 2")
     assert not same(C0, C1, ["a"], ["v1"], rng)
     assert available(C0)[0] == C0
 
-    # p.19 산술 단순화: 정수에서 a * 2 = a << 1
+    # 산술 단순화: 정수에서 a * 2 = a << 1
     for a in range(-1000, 1001):
         assert a * 2 == a << 1
     assert simplify(quads("x = a * 2")) == quads("x = a << 1")
     assert same(quads("x = a * 2"), quads("x = a << 1"), ["x"], ["a"], rng)
-    # p.19 상수 접기
+    # 상수 접기
     assert fold(quads("x = 10 * 2")) == quads("x = 20")
-    # p.11: t0 = 10 + 100; y = t0  ->  y = 110  (상수 접기 + 복사 전파 + 죽은 코드 제거)
+    # 기본 블록 문서의 예: t0 = 10 + 100; y = t0  ->  y = 110  (상수 접기 + 복사 전파 + 죽은 코드 제거)
     B = quads("t0 = 10 + 100\ny = t0\nt1 = x == 10")
     step = live(available(fold(B))[0], {"y", "t1", "x"})[0]
     assert [show(q) for q in step] == ["y = 110", "t1 = x == 10"]
 
-    # p.5 -> p.6: 아홉 줄을 네 줄로. 실행 결과(b1, b2, b3)가 같다
+    # 문서 맨 위 예: 아홉 줄을 네 줄로. 실행 결과(b1, b2, b3)가 같다
     P5 = quads("""t0 = x + x
 t1 = t0 < y
 b1 = t1
@@ -274,13 +274,13 @@ t5 = t4 > y
 b3 = t5""")
     P6 = quads("t0 = x + x\nb1 = t0 < y\nb2 = t0 == y\nb3 = t0 > y")
     assert same(P5, P6, ["b1", "b2", "b3"], ["x", "y"], rng)
-    # 이 강의의 두 분석만으로는 일곱 줄까지 줄어든다(b1 = t1 꼴의 복사가 남는다)
+    # 사용 가능한 식 분석과 생존 변수 분석만으로는 일곱 줄까지 줄어든다(b1 = t1 꼴의 복사가 남는다)
     mine = live(available(P5)[0], {"b1", "b2", "b3"})[0]
     assert [show(q) for q in mine] == ["t0 = x + x", "t1 = t0 < y", "b1 = t1",
                                        "t3 = t0 == y", "b2 = t3", "t5 = t0 > y", "b3 = t5"]
     assert same(P5, mine, ["b1", "b2", "b3"], ["x", "y"], rng)
 
-    # p.20 연습(보충): t4만 뒤에서 쓰인다
+    # 문서의 연습: t4만 뒤에서 쓰인다
     P20 = quads("t0 = a * a\nt1 = a * a\nt2 = t0 + t1\nt3 = t0 + t0\nt4 = t3 + 1")
     s1 = available(P20)[0]
     assert [show(q) for q in s1] == ["t0 = a * a", "t1 = t0", "t2 = t0 + t0", "t3 = t2", "t4 = t2 + 1"]

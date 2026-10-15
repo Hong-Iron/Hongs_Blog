@@ -149,6 +149,6 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.8절 "L'Hôpital's Rule"(부정형, 증가 속도 비교)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [09_lhopital-growth_plot.py](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_plot/)로 그렸고, $$\frac{\ln x}{x^{0.1}}$$의 값(2.3과 $$2.3 \times 10^{-8}$$)과 꼭대기 위치 $$x = e^{10}$$, $$\frac{x^{10}}{1.1^x}$$의 꼭대기 $$x = \frac{10}{\ln 1.1} \approx 105$$와 1 아래로 내려가는 $$x \approx 685$$를 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정리의 가정($$\frac00$$, $$\frac{\infty}{\infty}$$ 꼴), 예제의 두 번 미분과 꼴 바꾸기, 자주 하는 오해를 근거로 그렸다.
+[^s1]: [09_lhopital-growth_plot.py](/Hongs_Blog/studies/calculus/code/09_lhopital-growth_plot/)로 그렸고, $$\frac{\ln x}{x^{0.1}}$$의 값(2.3과 $$2.3 \times 10^{-8}$$)과 꼭대기 위치 $$x = e^{10}$$, $$\frac{x^{10}}{1.1^x}$$의 꼭대기 $$x = \frac{10}{\ln 1.1} \approx 105$$와 1 아래로 내려가는 $$x \approx 685$$를 같은 코드로 확인했다.
+[^s2]: 정리의 가정($$\frac00$$, $$\frac{\infty}{\infty}$$ 꼴), 예제의 두 번 미분과 꼴 바꾸기, 자주 하는 오해를 근거로 그렸다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Types of Attributes", "복합 속성", "Composite Attribute", "단순 속성", "Simple Attribute", "Atomic Attribute", "단일값 속성", "Single-valued Attribute", "다치 속성", "Multivalued Attribute", "저장 속성", "Stored Attribute", "유도 속성", "Derived Attribute"]
 description: "주소는 도로명, 도시, 우편번호로 쪼갤 수 있고, 전화번호는 한 사람이 여러 개 가질 수 있고, 나이는 생일만 알면 계산된다. 대상에 적는 항목은 이렇게 \"더 쪼갤 수 있는가\", \"값이 여럿일 수 있는가\", \"저장하는가 계산하는가\"의 세 물음으로 가른다. 어느 쪽인지에 따라 나중에…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/er-attribute-types/"
 
 개체에 적을 항목을 "이름, 주소, 전화번호, 나이"라고만 정하면 뒤에서 곤란해진다. "휴스턴에 사는 직원"을 찾고 싶은데 주소가 통짜 글 한 줄이면 도시만 꺼내기 어렵다. 전화번호가 둘인 직원은 어디에 적을지도 정해야 한다.
 
-직원 $$e_1$$의 주소 "2311 Kirby, Houston, Texas 77001"은 이렇게 쪼개진다[^1].
+직원 $$e_1$$의 주소 "2311 Kirby, Houston, Texas 77001"은 이렇게 쪼개진다.
 
 ```
 Address
@@ -51,7 +51,7 @@ Address
 
 Address와 Street_address처럼 더 작은 속성으로 나뉘는 것이 복합 속성이다. 맨 끝의 여섯 개(Number, Street, Apartment_number, City, State, Zip)는 더 못 쪼갠다. 단순 속성이다.
 
-차 세 대의 색을 보면 값의 개수가 다르다[^2].
+차 세 대의 색을 보면 값의 개수가 다르다.
 
 | 차 | Color |
 |---|---|
@@ -69,17 +69,17 @@ Color는 한 개체에 값이 여러 개 붙을 수 있다. 다치 속성이다.
 
 ## 세 가지 물음
 
+속성은 세 가지 물음으로 가른다.
+
 | 물음 | 한쪽 | 다른 쪽 |
 |---|---|---|
 | 더 쪼갤 수 있는가 | **복합 속성**(composite): 더 작은 부분으로 나뉜다. 나뉜 부분이 또 나뉘어 계층을 이룰 수 있다. 예: Address | **단순 속성**(simple): 더 못 나눈다. 원자 속성(atomic)이라고도 한다. 예: City, State, Zip |
 | 값이 여럿일 수 있는가 | **다치 속성**(multivalued): 한 개체에 값이 여러 개(값들의 집합)다. 예: 전화번호, 학위 | **단일값 속성**(single-valued): 한 개체에 값이 하나다. 대부분의 속성이 이쪽이다. 예: 나이, 성별, 이름 |
 | 저장하는가 | **저장 속성**(stored): 데이터베이스에 실제로 저장한다. 예: 생일 | **유도 속성**(derived): 저장하지 않고 다른 것에서 계산한다. 예: 나이(생일에서 계산) |
 
-세 종류의 정의와 예는 슬라이드의 것이다[^1][^3].
+세 물음은 서로 따로다. 속성 하나가 세 물음에 각각 답을 갖는다. 직원이 맡은 프로젝트와 주당 시간을 적는 Works_on(Project, Hours)는 성분이 둘이라 복합이고, 프로젝트를 여럿 맡을 수 있어 다치다.
 
-세 물음은 서로 따로다. 속성 하나가 세 물음에 각각 답을 갖는다. 직원이 맡은 프로젝트와 주당 시간을 적는 Works_on(Project, Hours)는 성분이 둘이라 복합이고, 프로젝트를 여럿 맡을 수 있어 다치다[^4].
-
-**글로 적는 법.** 복합 속성은 이름 뒤 괄호에 성분을 쓰고, 다치 속성은 중괄호로 감싼다[^2].
+**글로 적는 법.** 복합 속성은 이름 뒤 괄호에 성분을 쓰고, 다치 속성은 중괄호로 감싼다.
 
 ```
 CAR: Registration(Number, State), Vehicle_id, Make, Model, Year, {Color}
@@ -87,13 +87,13 @@ CAR: Registration(Number, State), Vehicle_id, Make, Model, Year, {Color}
 
 Registration은 성분이 둘인 복합 속성, Color는 다치 속성, 나머지 넷은 단순 단일값 속성이다.
 
-**그림 기호.** 속성은 타원으로 그린다. 다치 속성은 겹타원, 유도 속성은 점선 타원이고, 복합 속성은 성분 타원들을 그 타원에 선으로 붙인다[^5].
+**그림 기호.** 속성은 타원으로 그린다. 다치 속성은 겹타원, 유도 속성은 점선 타원이고, 복합 속성은 성분 타원들을 그 타원에 선으로 붙인다.
 
 ## 활용
 
 - 복합 속성은 언제 쓸모 있나: 어떤 때는 주소 전체를 한 덩어리로 쓰고, 어떤 때는 도시만 따로 쓸 때다. 늘 통째로만 쓴다면 쪼갤 필요가 없다[^s1].
-- 유도 속성을 저장하지 않는 까닭: 나이는 가만히 있어도 해마다 바뀐다. 생일이 1965-01-09인 사람은 2024-10-04에는 59세이고 2025-01-09에는 60세다. 저장해 두면 그날부터 틀린 값이 된다[^s2].
-- COMPANY의 유도 속성: DEPARTMENT의 Number_of_employees는 점선 타원이다[^6]. 그 부서에 소속된 직원을 세면 나온다. COMPANY의 자료에서 세면 5번 부서 4명, 4번 부서 3명, 1번 부서 1명이다[^s2].
+- 유도 속성을 저장하지 않는 까닭: 나이는 가만히 있어도 해마다 바뀐다. 생일이 1965-01-09인 사람은 2024-10-04에는 59세이고 2025-01-09에는 60세다. 저장해 두면 그날부터 틀린 값이 된다.
+- COMPANY의 유도 속성: DEPARTMENT의 Number_of_employees는 점선 타원이다. 그 부서에 소속된 직원을 세면 나온다. COMPANY의 데이터에서 세면 5번 부서 4명, 4번 부서 3명, 1번 부서 1명이다.
 - 표로 옮길 때 갈린다. 복합 속성은 단순 성분만 열로 넣는다. 다치 속성은 한 칸에 값 하나만 들어가는 표에 그대로 못 넣어 표를 따로 만든다: [개체 타입의 사상](/Hongs_Blog/studies/database-design/mapping-entity-types/), [다치 속성의 사상](/Hongs_Blog/studies/database-design/mapping-multivalued-attributes/)
 
 ## 연결
@@ -117,7 +117,7 @@ Registration은 성분이 둘인 복합 속성, Color는 다치 속성, 나머�
 <summary class="callout-title" markdown="span">**C2** 생일을 저장하면서 나이까지 저장 속성으로 두면 무엇이 곤란한가?</summary>
 
 **답:** 나이는 아무도 고치지 않아도 생일이 지날 때마다 바뀌어야 한다. 저장해 둔 값은 다음 생일부터 틀린다. 생일만 저장하고 나이는 필요할 때 계산하면 늘 맞는다.<br>
-**이유:** 같은 사실을 두 군데에 적으면 한쪽만 바뀌었을 때 서로 어긋난다. 유도 속성은 "한쪽에서 계산되는 값"이라 어긋날 일이 없다[^s2].
+**이유:** 같은 사실을 두 군데에 적으면 한쪽만 바뀌었을 때 서로 어긋난다. 유도 속성은 "한쪽에서 계산되는 값"이라 어긋날 일이 없다.
 
 </details>
 
@@ -131,12 +131,5 @@ Registration은 성분이 둘인 복합 속성, Color는 다치 속성, 나머�
 </details>
 
 
-[^1]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.9 (Category 1: Composite vs Simple Attributes, Address 계층 그림). 주소 값은 p.8의 $$e_1$$ 그림.
-[^2]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.12 (CAR 개체 집합과 표기 `Registration (Number, State), Vehicle_id, Make, Model, Year, {Color}`)
-[^3]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.10 (Category 2: Single-valued vs Multivalued, Category 3: Stored vs Derived). 5주차 p.4에 같은 내용이 있다.
-[^4]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.14 (EMPLOYEE의 Works_on: 성분 Project, Hours가 붙은 겹타원)
-[^5]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.33 (Notation of the ER Diagram)
-[^6]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.5 (COMPANY ER 다이어그램의 Number_of_employees)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 4-2 p.9는 "When are composite attributes useful?"라고 묻기만 한다. 답은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 설명이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 나이를 저장하지 않는 까닭, 날짜에 따른 나이 계산, 부서별 직원 수, 세 물음이 서로 따로라는 설명, 주소 계층의 값 배치, 카드 C1~C3은 원본에 없다. 생일과 부서 번호는 6주차 6-2 p.21의 COMPANY 자료이고, 계산은 검증 코드로 확인했다.
+[^s1]: 답은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 설명이다.
 {% endraw %}

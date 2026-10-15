@@ -27,7 +27,7 @@ permalink: "/studies/data-structures/code/23_binary-tree-representation_impl/"
  *
  * 배열 표현은 1번 칸부터 쓴다(0번 칸은 비워 둔다). 번호 i의 부모는 i / 2,
  * 자식은 2 * i와 2 * i + 1이다. 노드가 없는 칸은 '-'로 적는다.
- * 높이는 간선 수로 센다(노드 하나 = 0, 빈 트리 = -1). 강의의 높이(층 수)는 여기에 1을 더한 값이다.
+ * 높이는 간선 수로 센다(노드 하나 = 0, 빈 트리 = -1). 층 수로 센 높이는 여기에 1을 더한 값이다.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -180,22 +180,22 @@ int main(void)
     int len;
     char *arr;
 
-    /* 1. 슬라이드 p.20: 노드 10개인 완전 이진 트리 a ~ j */
-    treePointer t20 =
+    /* 1. 문서 예시: 노드 10개인 완전 이진 트리 a ~ j */
+    treePointer tComplete =
         makeNode('a',
             makeNode('b',
                 makeNode('d', makeNode('h', NULL, NULL), makeNode('i', NULL, NULL)),
                 makeNode('e', makeNode('j', NULL, NULL), NULL)),
             makeNode('c', makeNode('f', NULL, NULL), makeNode('g', NULL, NULL)));
-    arr = toArray(t20, &len);
-    check(len == 11, "p.20 배열 길이 11 (n + 1)");
-    check(strcmp(arr + 1, "abcdefghij") == 0, "p.20 tree[1..10] = abcdefghij");
+    arr = toArray(tComplete, &len);
+    check(len == 11, "완전 이진 트리: 배열 길이 11 (n + 1)");
+    check(strcmp(arr + 1, "abcdefghij") == 0, "완전 이진 트리: tree[1..10] = abcdefghij");
     check(arr[5 / 2] == 'b' && arr[2 * 5] == 'j', "e(5번)의 부모는 2번 b, 왼쪽 자식은 10번 j");
     check(2 * 5 + 1 >= len, "e의 오른쪽 자식 11번은 배열 밖이라 없다");
-    check(countNodes(t20) == 10 && height(t20) == 3, "p.20 노드 10개, 높이 3(층 4개)");
+    check(countNodes(tComplete) == 10 && height(tComplete) == 3, "완전 이진 트리: 노드 10개, 높이 3(층 4개)");
     free(arr);
 
-    /* 2. 슬라이드 p.22: 오른쪽으로만 내려가는 4개짜리 트리 */
+    /* 2. 문서 예시: 오른쪽으로만 내려가는 4개짜리 트리 */
     treePointer right4 =
         makeNode('a', NULL, makeNode('b', NULL, makeNode('c', NULL, makeNode('d', NULL, NULL))));
     arr = toArray(right4, &len);
@@ -212,25 +212,25 @@ int main(void)
     check(strcmp(arr + 1, "ab-c---d") == 0, "칸 1, 2, 4, 8에만 값이 있다");
     free(arr);
 
-    /* 4. 슬라이드 p.25의 연결 표현 예 */
-    treePointer t25 =
+    /* 4. 문서의 연결 표현 예 */
+    treePointer tLinked =
         makeNode('a',
             makeNode('b', makeNode('d', makeNode('f', NULL, NULL), NULL), NULL),
             makeNode('c', NULL,
                 makeNode('e', makeNode('g', NULL, makeNode('h', NULL, NULL)), NULL)));
-    check(countNodes(t25) == 8, "p.25 노드 8개");
-    check(height(t25) == 4, "p.25 높이 4(a-c-e-g-h, 층 5개)");
-    check(countNullLinks(t25) == 9, "p.25 NULL 칸 9개 = n + 1");
-    arr = toArray(t25, &len);
-    check(len == 30 && arr[29] == 'h', "p.25를 배열에 담으면 h가 29번 칸, 길이 30");
+    check(countNodes(tLinked) == 8, "연결 표현 예: 노드 8개");
+    check(height(tLinked) == 4, "연결 표현 예: 높이 4(a-c-e-g-h, 층 5개)");
+    check(countNullLinks(tLinked) == 9, "연결 표현 예: NULL 칸 9개 = n + 1");
+    arr = toArray(tLinked, &len);
+    check(len == 30 && arr[29] == 'h', "연결 표현 예를 배열에 담으면 h가 29번 칸, 길이 30");
     check(arr[1] == 'a' && arr[3] == 'c' && arr[7] == 'e' && arr[14] == 'g', "a-c-e-g는 1, 3, 7, 14번");
     check(arr[2] == 'b' && arr[4] == 'd' && arr[8] == 'f', "b-d-f는 2, 4, 8번");
     free(arr);
 
-    /* 카드: p.25의 트리에서 height가 노드마다 돌려주는 값 (아래에서부터) */
+    /* 카드: 연결 표현 예의 트리에서 height가 노드마다 돌려주는 값 (아래에서부터) */
     {
-        treePointer nb = t25->leftChild, nd = nb->leftChild, nf = nd->leftChild;
-        treePointer nc = t25->rightChild, ne = nc->rightChild, ng = ne->leftChild, nh = ng->rightChild;
+        treePointer nb = tLinked->leftChild, nd = nb->leftChild, nf = nd->leftChild;
+        treePointer nc = tLinked->rightChild, ne = nc->rightChild, ng = ne->leftChild, nh = ng->rightChild;
         check(height(nf) == 0 && height(nd) == 1 && height(nb) == 2, "f 0, d 1, b 2");
         check(height(nh) == 0 && height(ng) == 1 && height(ne) == 2 && height(nc) == 3, "h 0, g 1, e 2, c 3");
         check(countNodes(nb) == 3 && countNodes(nc) == 4, "b 아래 3개, c 아래 4개");
@@ -255,10 +255,10 @@ int main(void)
     }
 
     /* 5. 복사본은 모양과 값이 같고, 원본과 메모리를 나눠 쓰지 않는다 */
-    treePointer copy = clone(t25);
-    check(equal(copy, t25) && copy != t25, "복사본은 같은 트리이고 주소는 다르다");
+    treePointer copy = clone(tLinked);
+    check(equal(copy, tLinked) && copy != tLinked, "복사본은 같은 트리이고 주소는 다르다");
     copy->leftChild->data = 'X';
-    check(t25->leftChild->data == 'b' && !equal(copy, t25), "복사본을 고쳐도 원본은 그대로다");
+    check(tLinked->leftChild->data == 'b' && !equal(copy, tLinked), "복사본을 고쳐도 원본은 그대로다");
     freeTree(copy);
 
     /* 6. 빈 트리와 노드 하나 */
@@ -295,10 +295,10 @@ int main(void)
     check(sizeof(node) >= sizeof(char) + 2 * sizeof(treePointer), "노드 크기");
     printf("sizeof(node) = %zu바이트, 포인터 하나 = %zu바이트\n", sizeof(node), sizeof(treePointer));
 
-    freeTree(t20);
+    freeTree(tComplete);
     freeTree(right4);
     freeTree(left4);
-    freeTree(t25);
+    freeTree(tLinked);
     printf("ALL CHECKS PASSED\n");
     return 0;
 }

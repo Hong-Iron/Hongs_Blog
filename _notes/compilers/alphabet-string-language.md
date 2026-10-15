@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Alphabet String and Language", "알파벳", "Alphabet", "문자열", "String", "언어", "Language", "형식 언어", "Formal Language", "빈 문자열", "Empty String", "엡실론", "Epsilon", "접합", "연결", "Concatenation", "클레이니 닫힘", "Kleene Closure", "클레이니 스타", "양의 닫힘", "Positive Closure"]
 description: "쓸 수 있는 글자의 목록을 먼저 정하고, 그 글자를 줄 세운 것을 글자 줄이라 하고, 글자 줄 가운데 \"우리 편\"으로 치는 것만 모은 주머니를 언어라 부른다. \"식별자란 무엇인가\"를 \"이 주머니에 든 글자 줄\"이라고 말할 수 있게 되어, 토큰의 모양을 집합 계산으로 다룰 수 있다.…"
@@ -36,7 +36,7 @@ permalink: "/studies/compilers/alphabet-string-language/"
 
 "식별자는 글자로 시작하고 글자나 숫자가 이어진다"를 말로만 적으면 프로그램이 검사할 수 없다. 검사하려면 "어떤 글자 줄이 식별자인가"를 예, 아니오로 답할 수 있는 모음으로 적어야 한다.
 
-글자를 `a`와 `b` 둘만 쓰기로 한다. 이 둘로 만들 수 있는 줄은 `a`, `b`, `aa`, `ab`, `ba`, `bb`, `aaa`, …로 끝이 없다. 이 가운데 몇 개를 골라 주머니에 담는다[^1].
+글자를 `a`와 `b` 둘만 쓰기로 한다. 이 둘로 만들 수 있는 줄은 `a`, `b`, `aa`, `ab`, `ba`, `bb`, `aaa`, …로 끝이 없다. 이 가운데 몇 개를 골라 주머니에 담는다.
 
 - $$L_1 = \{a, ab, ba, aba\}$$: 줄이 네 개뿐인 주머니다.
 - $$L_2 = \{a, b, aa, ab, ba, bb, aaa, \dots\}$$: 줄이 끝없이 많은 주머니다.
@@ -45,19 +45,14 @@ permalink: "/studies/compilers/alphabet-string-language/"
 
 ## 정의
 
-**알파벳.** 알파벳 $$\Sigma$$(시그마)는 기호를 유한 개 모은 집합이다[^1]. 예: 글자 $$\Sigma^L = \{A, B, \dots, Z, a, b, \dots, z\}$$, 숫자 $$\Sigma^D = \{0, 1, \dots, 9\}$$.
+**알파벳.** 알파벳 $$\Sigma$$(시그마)는 기호를 유한 개 모은 집합이다. 예: 글자 $$\Sigma^L = \{A, B, \dots, Z, a, b, \dots, z\}$$, 숫자 $$\Sigma^D = \{0, 1, \dots, 9\}$$.
 
-**문자열.** 알파벳 $$\Sigma$$ 위의 문자열 $$s$$는 $$\Sigma$$에서 뽑은 기호를 유한 개 **줄 세운 것**이다. $$\Sigma = \{0\}$$이면 $$0$$, $$00$$, $$000$$이 문자열이고, $$\Sigma = \{a, b\}$$이면 $$a$$, $$b$$, $$aa$$, $$ab$$, $$ba$$가 문자열이다[^1].
+**문자열.** 알파벳 $$\Sigma$$ 위의 문자열 $$s$$는 $$\Sigma$$에서 뽑은 기호를 유한 개 **줄 세운 것**이다. $$\Sigma = \{0\}$$이면 $$0$$, $$00$$, $$000$$이 문자열이고, $$\Sigma = \{a, b\}$$이면 $$a$$, $$b$$, $$aa$$, $$ab$$, $$ba$$가 문자열이다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.13과 p.14 "A string s over alphabet Σ is a finite **set** of symbols drawn from the alphabet" / 문제점: 집합은 순서와 중복을 따지지 않는다. 문자열이 집합이면 $$ab$$와 $$ba$$가 같고 $$aa$$와 $$a$$가 같아진다. 같은 쪽의 예는 $$ab$$와 $$ba$$, $$a$$와 $$aa$$를 따로 적었다. / 수정안: "a finite **sequence** of symbols" (기호를 유한 개 줄 세운 것) / 근거: 파이썬에서 `set("ab") == set("ba")`와 `set("aa") == set("a")`는 참이지만 `"ab" == "ba"`는 거짓이다. 표준 정의는 Aho·Lam·Sethi·Ullman, *Compilers* 2판, 3.3.1절.
-
-</div>
+문자열에서는 기호의 순서와 겹침이 중요하다. 그래서 문자열은 기호의 집합이 아니다. 집합은 순서와 겹침을 따지지 않으므로, 집합으로 보면 $$ab$$와 $$ba$$가 같고 $$aa$$와 $$a$$도 같아진다. 문자열로는 넷이 모두 다르다[^s2].
 
 
-**언어.** 언어 $$L$$은 정해 둔 알파벳 $$\Sigma$$ 위의 문자열을 모은 집합이다. 어떤 집합이든 된다. 문자열이 유한 개면 유한 언어, 끝없이 많으면 무한 언어다[^1].
+**언어.** 언어 $$L$$은 정해 둔 알파벳 $$\Sigma$$ 위의 문자열을 모은 집합이다. 어떤 집합이든 된다. 문자열이 유한 개면 유한 언어, 끝없이 많으면 무한 언어다.
 
 기호로 쓰면, $$\Sigma$$ 위의 모든 문자열의 집합을 $$\Sigma^*$$라 할 때 언어는 $$L \subseteq \Sigma^*$$다($$\subseteq$$는 "~의 부분집합"으로 읽는다).
 
@@ -65,22 +60,17 @@ permalink: "/studies/compilers/alphabet-string-language/"
 
 | 표기 | 뜻 | 예와 성질 |
 |---|---|---|
-| $$\lvert s \rvert$$ | 길이. $$s$$에 기호가 놓인 자리의 수 | $$s = compiler$$이면 $$\lvert s \rvert = 8$$[^2] |
-| $$s_1 s_2$$ | 이어 붙이기(접합). $$s_1$$ 뒤에 $$s_2$$를 붙인다 | $$CSE$$, $$@$$, $$CAU$$를 이으면 $$CSE@CAU$$. $$\lvert s_1 s_2 \rvert = \lvert s_1 \rvert + \lvert s_2 \rvert$$[^2] |
-| $$\epsilon$$ | 빈 문자열. 기호가 하나도 없는 줄. "엡실론"으로 읽는다 | $$\lvert \epsilon \rvert = 0$$. $$\epsilon s = s = s\epsilon$$[^3] |
-| $$s^i$$ | 거듭 쓰기. $$s$$를 $$i$$번 이어 붙인다 | $$s^0 = \epsilon$$, $$s^1 = s$$, $$s^2 = ss$$. $$i > 0$$이면 $$s^i = s^{i-1}s$$[^3] |
+| $$\lvert s \rvert$$ | 길이. $$s$$에 기호가 놓인 자리의 수 | $$s = compiler$$이면 $$\lvert s \rvert = 8$$ |
+| $$s_1 s_2$$ | 이어 붙이기(접합). $$s_1$$ 뒤에 $$s_2$$를 붙인다 | $$CSE$$, $$@$$, $$CAU$$를 이으면 $$CSE@CAU$$. $$\lvert s_1 s_2 \rvert = \lvert s_1 \rvert + \lvert s_2 \rvert$$ |
+| $$\epsilon$$ | 빈 문자열. 기호가 하나도 없는 줄. "엡실론"으로 읽는다 | $$\lvert \epsilon \rvert = 0$$. $$\epsilon s = s = s\epsilon$$ |
+| $$s^i$$ | 거듭 쓰기. $$s$$를 $$i$$번 이어 붙인다 | $$s^0 = \epsilon$$, $$s^1 = s$$, $$s^2 = ss$$. $$i > 0$$이면 $$s^i = s^{i-1}s$$ |
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.14 "$$s_1 s_2 \ne s_2 s_1$$, if $$s_1 \ne s_2$$" / 문제점: 서로 다른 두 문자열도 순서를 바꿔 이은 결과가 같을 수 있다. / 수정안: "$$s_1 s_2 = s_2 s_1$$이 늘 맞는 것은 아니다"(이어 붙이기는 순서를 바꿔도 된다는 법칙이 없다) / 근거: $$s_1 = a$$, $$s_2 = aa$$이면 $$s_1 \ne s_2$$인데 $$s_1 s_2 = aaa = s_2 s_1$$이다. $$ab$$와 $$abab$$도 그렇다. 길이 4 이하에서 찾은 그런 쌍은 모두 같은 조각을 되풀이한 것끼리였다.
-
-</div>
+이어 붙이기는 순서를 바꿔도 된다는 법칙이 없다. $$ab \cdot ba = abba$$이고 $$ba \cdot ab = baab$$처럼 대개는 순서를 바꾸면 다른 문자열이 된다. 그렇다고 서로 다른 두 문자열이면 반드시 달라지는 것도 아니다. $$ab \cdot abab = ababab = abab \cdot ab$$다. 두 문자열이 같은 조각($$ab$$)을 되풀이한 것이라서, 어느 쪽을 먼저 붙여도 그 조각이 세 번 이어진다[^s2].
 
 
 ### 언어의 연산
 
-언어는 집합이라서 집합 연산을 그대로 쓰고, 문자열의 이어 붙이기를 집합으로 넓혀 쓴다[^4][^5].
+언어는 집합이라서 집합 연산을 그대로 쓰고, 문자열의 이어 붙이기를 집합으로 넓혀 쓴다.
 
 | 표기 | 말로 | 기호로 쓰면 | 예 |
 |---|---|---|---|
@@ -94,16 +84,17 @@ $$\{s \mid \text{조건}\}$$은 "조건에 맞는 $$s$$를 모두 모은 집합"
 
 $$L_1 L_2$$를 구할 때는 앞에서 하나, 뒤에서 하나를 고르는 모든 짝을 만든다. $$\{a, ab\}\{b, aa\}$$는 $$a \cdot b$$, $$a \cdot aa$$, $$ab \cdot b$$, $$ab \cdot aa$$ 네 개다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
+<div class="callout callout-misconception" markdown="1">
+<div class="callout-title" markdown="span">"$$L^+$$는 $$L^*$$에서 빈 문자열만 뺀 것이다"</div>
 
-원문: p.17 "$$L^+ = L^* - \{\epsilon\}$$" / 문제점: $$L$$에 빈 문자열이 들어 있으면 틀린다. / 수정안: "$$\epsilon \notin L$$이면 $$L^+ = L^* - \{\epsilon\}$$". 조건 없이 늘 맞는 식은 $$L^+ = L L^*$$다. / 근거: $$L = \{\epsilon, a\}$$이면 $$L^1 = L$$에 $$\epsilon$$이 있으므로 $$L^+$$에도 $$\epsilon$$이 있다. $$L^* - \{\epsilon\}$$에는 없다. 슬라이드의 예 $$L = \{0\}$$에서는 $$\epsilon \notin L$$이라 식이 맞는다.
+늘 맞는 말은 아니다. $$L^*$$와 $$L^+$$의 차이는 $$L^0 = \{\epsilon\}$$을 넣느냐 마느냐뿐이라서, $$L^+ = L^* - \{\epsilon\}$$으로 쓰고 싶어진다. 그런데 $$L$$ 자체에 빈 문자열이 들어 있으면 한 번만 이어 붙여도($$L^1 = L$$) 빈 문자열이 나온다. $$L = \{\epsilon, a\}$$이면 $$L^+$$에 $$\epsilon$$이 있지만 $$L^* - \{\epsilon\}$$에는 없다. 그래서 이 식은 $$\epsilon \notin L$$일 때만 맞는다. $$L = \{0\}$$처럼 빈 문자열이 없는 언어에서는 맞는다. 조건 없이 늘 맞는 식은 $$L^+ = L L^*$$(하나를 먼저 고르고 그 뒤에 0번 이상 더 붙인다)다[^s2].
 
 </div>
 
 
+
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 표의 모든 예, 길이 4 이하의 모든 문자열 쌍에서 $$\lvert s_1 s_2 \rvert = \lvert s_1 \rvert + \lvert s_2 \rvert$$, 세 원본 오류 의심의 반례, 카드의 답 — [04_alphabet-string-language_verify.py](/Hongs_Blog/studies/compilers/code/04_alphabet-string-language_verify/)</div>
+<div class="callout-title" markdown="span">검증: 표의 모든 예, 길이 4 이하의 모든 문자열 쌍에서 $$\lvert s_1 s_2 \rvert = \lvert s_1 \rvert + \lvert s_2 \rvert$$, 문자열을 집합으로 볼 때와 순서를 바꿔 이을 때와 $$L^+ = L^* - \{\epsilon\}$$의 반례, 길이 4 이하에서 $$L^+ = L L^*$$, 카드의 답 — [04_alphabet-string-language_verify.py](/Hongs_Blog/studies/compilers/code/04_alphabet-string-language_verify/)</div>
 
 </div>
 
@@ -150,10 +141,6 @@ $$L_1 L_2$$를 구할 때는 앞에서 하나, 뒤에서 하나를 고르는 모
 </details>
 
 
-[^1]: 컴파일러 2회 강의 자료 「Lecture02 Lexical analysis part 1」, p.13 (Definition: Alphabet, string, and language. 유한 언어와 무한 언어)
-[^2]: 같은 자료, p.14 (Operations on strings: 길이, 이어 붙이기)
-[^3]: 같은 자료, p.15 (빈 문자열, 거듭 쓰기)
-[^4]: 같은 자료, p.16 (Operations on languages: 합치기, 이어 붙이기, $$L^i$$)
-[^5]: 같은 자료, p.17 (클레이니 닫힘, 양의 닫힘)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$\{a, aa\}\{a, aa\}$$의 크기, $$\varnothing^* = \{\epsilon\}$$, 카드 C1~C3의 예는 원본에 없다. 검증 코드로 확인했다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: 문자열을 집합으로 볼 때의 문제, 순서를 바꿔 이어도 같은 예 $$ab$$와 $$abab$$, $$L^+ = L^* - \{\epsilon\}$$의 조건과 $$L^+ = L L^*$$는 검증 코드로 확인했다. 표준 정의는 Aho·Lam·Sethi·Ullman, *Compilers: Principles, Techniques, and Tools* 2판, 3.3.1~3.3.2절을 따랐다.
 {% endraw %}

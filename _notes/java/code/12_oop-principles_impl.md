@@ -42,7 +42,7 @@ class OopPrinciplesCheck {
         m.attack();
     }
 
-    // 다형성 1: 오버로딩(슬라이드의 Calculator)
+    // 다형성 1: 오버로딩(문서의 Calculator)
     static void overloading() {
         Calculator c = new Calculator();
         System.out.println(c.add(1, 2));
@@ -50,7 +50,7 @@ class OopPrinciplesCheck {
         System.out.println(c.add(1, 2.0));
     }
 
-    // 다형성 2: 오버라이딩(슬라이드의 Animal)
+    // 다형성 2: 오버라이딩(문서의 Animal)
     static void overriding() {
         Animal[] zoo = { new Animal(), new Dog(), new Cat() };
         for (Animal a : zoo) {

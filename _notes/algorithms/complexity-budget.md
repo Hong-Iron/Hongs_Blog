@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Time Complexity Budget", "시간 복잡도", "시간 제한", "연산 횟수 어림", "Big-O 어림", "estimating efficiency"]
 description: "여행 가기 전에 \"차로 몇 시간 걸리지?\"를 먼저 따져 보는 것과 같다. 문제에는 \"입력이 최대 얼마까지 온다\"는 제한이 적혀 있다. 코드를 짜기 전에 내 방법이 계산을 몇 번쯤 하는지 세어 보면, 시간 안에 끝날지 짜기 전에 알 수 있다. 다만 이 셈은 자릿수만 맞추는 어림이다.…"
@@ -185,7 +185,7 @@ def solution(participant, completion):
 
 ## 과목별 관점
 
-**자료구조 (1-2학기).** 자료구조 강의는 같은 어림을 기계의 명령 수로 한다. 1초에 명령 $$10^9$$개를 실행하는 기계에서 방법마다 걸리는 시간이다[^d1].
+**자료구조 (1-2학기).** 자료구조에서는 같은 어림을 기계의 명령 수로 한다. 1초에 명령 $$10^9$$개를 실행하는 기계에서 방법마다 걸리는 시간이다.
 
 | $$n$$ | $$n$$ | $$n \log_2 n$$ | $$n^2$$ | $$n^3$$ |
 |---|---|---|---|---|
@@ -193,9 +193,9 @@ def solution(participant, completion):
 | 10,000 | 10마이크로초 | 130마이크로초 | 100밀리초 | 17분 |
 | $$10^6$$ | 1밀리초 | 20밀리초 | 17분 | 32년 |
 
-값이 백만 개일 때 $$n \log_2 n$$ 방법은 0.02초에 끝나고, $$n^2$$ 방법은 17분, $$n^3$$ 방법은 32년이 걸린다. 이 문서는 파이썬에 맞춰 1초에 천만 번으로 잡았다. 강의의 기계는 그보다 100배 빠른데도 $$n^2$$ 방법이 백만 개 앞에서 못 쓰게 되는 것은 같다[^ds1].
+값이 백만 개일 때 $$n \log_2 n$$ 방법은 0.02초에 끝나고, $$n^2$$ 방법은 17분, $$n^3$$ 방법은 32년이 걸린다. 이 문서는 파이썬에 맞춰 1초에 천만 번으로 잡았다. 위 표의 기계는 그보다 100배 빠른데도 $$n^2$$ 방법이 백만 개 앞에서 못 쓰게 되는 것은 같다[^ds1].
 
-그래서 강의의 결론은 "기계를 빠르게 바꾸는 것보다 방법을 고치는 쪽이 쓸모 있다"이다. 예로는 $$2^n$$ 방법을 $$n^3$$ 방법으로 바꾸는 것을 든다[^d2]. 횟수를 자릿수로 어림하지 않고 줄 단위로 정확히 세는 법은 [연산 횟수와 단계 수 세기](/Hongs_Blog/studies/data-structures/operation-step-count/)에 있다.
+그래서 기계를 빠르게 바꾸는 것보다 방법을 고치는 쪽이 쓸모 있다. $$2^n$$ 방법을 $$n^3$$ 방법으로 바꾸는 것이 그런 예다. 횟수를 자릿수로 어림하지 않고 줄 단위로 정확히 세는 법은 [연산 횟수와 단계 수 세기](/Hongs_Blog/studies/data-structures/operation-step-count/)에 있다.
 
 ## 확인 문제
 
@@ -235,8 +235,6 @@ def solution(participant, completion):
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 2.3 "Estimating efficiency". 요즘 컴퓨터가 1초에 수억 번 계산한다는 것을 출발점으로 삼고, 1초 제한에서 n ≤ 10 → O(n!), n ≤ 20 → O(2ⁿ), n ≤ 500 → O(n³), n ≤ 5000 → O(n²), n ≤ 10⁶ → O(n log n) 또는 O(n), n이 더 크면 O(1) 또는 O(log n)이라는 표를 준다. 표의 "파이썬에서 편한 n" 칸은 이 교재가 C++ 기준이라는 점과 위 측정값을 바탕으로 한 어림이다.
 [^2]: Python Wiki, "TimeComplexity" (wiki.python.org/moin/TimeComplexity). list의 `x in s`, `insert`, `pop(0)`, `remove`, `min/max`는 O(n), slice는 O(k), sort는 O(n log n), dict·set의 get/set/delete와 `in`은 평균 O(1)이다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [02_complexity-budget_plot.py](/Hongs_Blog/studies/algorithms/code/02_complexity-budget_plot/)로 그렸고, 1초 예산 $$10^7$$번을 넘기 시작하는 n($$n^2$$: 3,163, $$n^3$$: 216, $$2^n$$: 24, $$n!$$: 11, $$n\log_2 n$$: 약 52만)과, 두 배로 늘리는 배열에 10만 번 넣는 동안 그때까지의 평균 비용이 늘 3 미만임을 같은 코드로 확인했다.
-[^d1]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.19 (Practical Complexities: 초당 10⁹ 명령일 때 n, n log n, n², n³의 시간)
-[^d2]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.20 (Efficient Algorithm: 알고리즘을 고치는 것이 하드웨어를 고치는 것보다 쓸모 있다, 2ⁿ에서 n³으로)
-[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 표의 셋째 줄은 $$n$$이 $$10^9$$으로 적혀 있지만 값(1밀리초, 20밀리초, 17분, 32년)은 $$n = 10^6$$의 것이라 $$10^6$$으로 고쳐 실었다. 근거는 [연산 횟수와 단계 수 세기](/Hongs_Blog/studies/data-structures/operation-step-count/)의 "원본 오류 의심"에 있다. 이 문서의 1초 천만 번과 견준 문장은 원본에 없다. 표의 값은 [02_operation-step-count_verify.py](/Hongs_Blog/studies/data-structures/code/02_operation-step-count_verify/)로 다시 계산했다.
+[^s1]: [02_complexity-budget_plot.py](/Hongs_Blog/studies/algorithms/code/02_complexity-budget_plot/)로 그렸고, 1초 예산 $$10^7$$번을 넘기 시작하는 n($$n^2$$: 3,163, $$n^3$$: 216, $$2^n$$: 24, $$n!$$: 11, $$n\log_2 n$$: 약 52만)과, 두 배로 늘리는 배열에 10만 번 넣는 동안 그때까지의 평균 비용이 늘 3 미만임을 같은 코드로 확인했다.
+[^ds1]: 표의 값은 [02_operation-step-count_verify.py](/Hongs_Blog/studies/data-structures/code/02_operation-step-count_verify/)로 다시 계산했다.
 {% endraw %}

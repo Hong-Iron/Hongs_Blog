@@ -20,7 +20,7 @@ permalink: "/studies/signals-and-systems/code/19_convolution-integral_verify/"
 [컨벌루션 적분](/Hongs_Blog/studies/signals-and-systems/convolution-integral/) 문서의 검증 코드다.
 
 ```python
-"""컨벌루션 적분 문서: 예제 2.6~2.8과 사각 펄스 두 개의 컨벌루션(7주차)을 수치 적분으로 확인한다."""
+"""컨벌루션 적분 문서: 예제 2.6~2.8과 사각 펄스 두 개의 컨벌루션을 수치 적분으로 확인한다."""
 import math
 
 def conv_at(x, h, t, lo, hi, n=40000):
@@ -55,7 +55,7 @@ h = lambda s: 1.0 if s > 3 else 0.0
 for t in (0.0, 2.0, 3.0, 5.0):
     want = 0.5 * math.exp(2 * (t - 3)) if t <= 3 else 0.5
     assert abs(conv_at(x, h, t, -15, 0, 60000) - want) < 1e-3, t
-# 7주차 참조: 높이 1, 폭 a와 b(b > a)인 사각 펄스 -> 사다리꼴
+# 사각 펄스 두 개: 높이 1, 폭 a와 b(b > a)인 사각 펄스 -> 사다리꼴
 A, B = 1.0, 2.5
 x = lambda s: 1.0 if 0 < s < A else 0.0
 h = lambda s: 1.0 if 0 < s < B else 0.0

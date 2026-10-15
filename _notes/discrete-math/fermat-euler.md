@@ -141,7 +141,7 @@ flowchart LR
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장 "Number Theory"(오일러 피 함수, 오일러 정리, 페르마 소정리).
 [^2]: Cormen et al., *Introduction to Algorithms* 3판, 31.6절 "Powers of an element"(MODULAR-EXPONENTIATION), 31.8절 "Primality testing"(유사소수, 카마이클 수, 밀러–라빈).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오일러 정리는 "유한군의 원소의 차수는 군의 크기를 나눈다"(라그랑주 정리)의 특수한 경우다. 서로소인 나머지들이 곱셈에 대해 크기 $$\varphi(n)$$인 군을 이룬다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [30_fermat-euler_plot.py](/Hongs_Blog/studies/discrete-math/code/30_fermat-euler_plot/)로 그렸고, 마지막 열이 모두 1인 것, 주기 1, 12, 3, 6, 4, 12, 12, 4, 3, 6, 12, 2가 모두 12의 약수인 것, 예시의 $$3^{100} \bmod 7 = 4$$을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '빠른 거듭제곱' 문단의 $$3^{100}$$ 예($$100 = 64 + 32 + 4$$)를 그렸다.
+[^s1]: 오일러 정리는 "유한군의 원소의 차수는 군의 크기를 나눈다"(라그랑주 정리)의 특수한 경우다. 서로소인 나머지들이 곱셈에 대해 크기 $$\varphi(n)$$인 군을 이룬다.
+[^s2]: [30_fermat-euler_plot.py](/Hongs_Blog/studies/discrete-math/code/30_fermat-euler_plot/)로 그렸고, 마지막 열이 모두 1인 것, 주기 1, 12, 3, 6, 4, 12, 12, 4, 3, 6, 12, 2가 모두 12의 약수인 것, 예시의 $$3^{100} \bmod 7 = 4$$을 같은 코드로 확인했다.
+[^s3]: '빠른 거듭제곱' 문단의 $$3^{100}$$ 예($$100 = 64 + 32 + 4$$)를 그렸다.
 {% endraw %}

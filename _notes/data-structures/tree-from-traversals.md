@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Binary Tree Construction", "Tree Reconstruction", "트리 복원", "트리 재구성", "중위와 전위로 트리 만들기", "중위와 후위로 트리 만들기", "Inorder and Preorder", "Inorder and Postorder"]
 description: "순회 결과는 트리의 칸들을 한 줄로 늘어놓은 것이라, 한 줄만 보고는 원래 모양을 알 수 없다. 두 줄이 있어도 아무 두 줄이나 되는 것이 아니라, \"왼쪽을 다 본 뒤 뿌리, 그다음 오른쪽\" 순서로 적은 줄이 꼭 끼어 있어야 한다. 그 줄에서 뿌리의 자리를 찾으면 왼쪽 식구와 오른…"
@@ -34,7 +34,7 @@ permalink: "/studies/data-structures/tree-from-traversals/"
 
 ## 예시로 보기
 
-순회 결과 한 줄을 받았다. 이 줄이 나온 트리를 다시 그릴 수 있을까? 노드가 둘만 되어도 안 된다[^1].
+순회 결과 한 줄을 받았다. 이 줄이 나온 트리를 다시 그릴 수 있을까? 노드가 둘만 되어도 안 된다.
 
 ```
 전위 = a b          a            a
@@ -56,9 +56,9 @@ permalink: "/studies/data-structures/tree-from-traversals/"
 
 네 가지 순회 모두, 같은 줄을 내는 트리가 둘씩 있다. 전위와 레벨 순서는 "a가 뿌리"까지는 알려 주지만 b가 왼쪽인지 오른쪽인지는 알려 주지 않는다.
 
-두 줄을 주면 어떨까. 어느 두 줄이냐에 달렸다[^2]. 전위 `a b`와 후위 `b a`를 함께 줘도 위 첫 줄의 두 트리가 모두 맞는다. 전위와 레벨 순서, 후위와 레벨 순서도 같은 예에서 막힌다[^3].
+두 줄을 주면 어떨까. 어느 두 줄이냐에 달렸다. 전위 `a b`와 후위 `b a`를 함께 줘도 위 첫 줄의 두 트리가 모두 맞는다. 전위와 레벨 순서, 후위와 레벨 순서도 같은 예에서 막힌다.
 
-중위가 끼면 풀린다. 슬라이드의 예다[^4].
+중위가 끼면 풀린다. 예를 하나 본다.
 
 - 중위 = g d h b e i a f j c
 - 전위 = a b d g h e i c f j
@@ -95,17 +95,17 @@ flowchart TD
 
 ## 어떤 조합이 되는가
 
-노드의 값이 모두 다른 이진 트리에 대해서다[^5].
+노드의 값이 모두 다른 이진 트리에 대해서다.
 
 | 주어진 것 | 트리가 하나로 정해지는가 | 근거 |
 |---|---|---|
-| 순회 결과 하나 (노드 둘 이상) | 아니다 | 위의 노드 둘짜리 예[^1] |
-| 전위 + 후위 | 아니다 | 전위 a b, 후위 b a인 두 트리[^3] |
+| 순회 결과 하나 (노드 둘 이상) | 아니다 | 위의 노드 둘짜리 예 |
+| 전위 + 후위 | 아니다 | 전위 a b, 후위 b a인 두 트리 |
 | 전위 + 레벨 순서 | 아니다 | 같은 예 |
 | 후위 + 레벨 순서 | 아니다 | 같은 예 |
-| 중위 + 전위 | 정해진다 | 전위를 왼쪽부터 읽으며 뿌리를 정한다[^4] |
-| 중위 + 후위 | 정해진다 | 후위를 오른쪽부터 읽으며 뿌리를 정한다[^6] |
-| 중위 + 레벨 순서 | 정해진다 | 레벨 순서를 왼쪽부터 읽으며 뿌리를 정한다[^7] |
+| 중위 + 전위 | 정해진다 | 전위를 왼쪽부터 읽으며 뿌리를 정한다 |
+| 중위 + 후위 | 정해진다 | 후위를 오른쪽부터 읽으며 뿌리를 정한다 |
+| 중위 + 레벨 순서 | 정해진다 | 레벨 순서를 왼쪽부터 읽으며 뿌리를 정한다 |
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
@@ -211,7 +211,7 @@ treePointer fromInPre(const char *in, const char *pre, int n)
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 슬라이드의 예를 세 조합으로 되살려 같은 트리가 나오고 위 표의 차례와 같음, 노드 둘짜리 예의 네 순회, 값이 겹치는 예, 카드의 값을 확인했다. 값이 서로 다른 노드 1 ~ 6개짜리 이진 트리 100,451개 모두에서 세 방법이 처음 트리를 그대로 되살렸다. 잡은 메모리는 모두 풀었다(`leaks` 도구로 확인) — [26_tree-from-traversals_impl.c](/Hongs_Blog/studies/data-structures/code/26_tree-from-traversals_impl/)</div>
+<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 위 예를 세 조합으로 되살려 같은 트리가 나오고 위 표의 차례와 같음, 노드 둘짜리 예의 네 순회, 값이 겹치는 예, 카드의 값을 확인했다. 값이 서로 다른 노드 1 ~ 6개짜리 이진 트리 100,451개 모두에서 세 방법이 처음 트리를 그대로 되살렸다. 잡은 메모리는 모두 풀었다(`leaks` 도구로 확인) — [26_tree-from-traversals_impl.c](/Hongs_Blog/studies/data-structures/code/26_tree-from-traversals_impl/)</div>
 
 </div>
 
@@ -226,7 +226,7 @@ treePointer fromInPre(const char *in, const char *pre, int n)
 
 ### 중위 + 후위로 되살리기
 
-중위 = g d h b e i a f j c, 후위 = g h d i e b j f c a[^6].
+중위 = g d h b e i a f j c, 후위 = g h d i e b j f c a.
 
 1. *뿌리 찾기.* 후위의 맨 뒤 a가 뿌리다.
 2. *가르기.* 중위에서 a의 왼쪽은 g d h b e i(6개), 오른쪽은 f j c(3개)다.
@@ -308,13 +308,6 @@ treePointer fromInPre(const char *in, const char *pre, int n)
 </details>
 
 
-[^1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.47 (원소가 서로 다르다고 하자. 순회 결과에 원소가 둘 이상이면 이진 트리가 하나로 정해지지 않는다), p.48 (preorder = ab, inorder = ab, postorder = ab, level order = ab인 트리 두 개씩의 그림)
-[^2]: 같은 자료, p.49 (순회 결과 둘이면 되는가: 어느 둘이냐에 달렸다)
-[^3]: 같은 자료, p.50 (전위와 후위는 이진 트리를 하나로 정하지 못한다. 전위와 레벨 순서, 후위와 레벨 순서도 같은 예로 안 된다)
-[^4]: 같은 자료, p.51 ~ 52 (Inorder And Preorder: a가 뿌리, gdhbei가 왼쪽, fjc가 오른쪽. 다음 뿌리 b, gdh가 왼쪽, ei가 오른쪽)
-[^5]: 같은 자료, p.47 ("Suppose that the elements in a binary tree are distinct.")
-[^6]: 같은 자료, p.53 (Inorder And Postorder: 후위를 오른쪽에서 왼쪽으로 읽으며 중위로 좌우를 가른다)
-[^7]: 같은 자료, p.54 (Inorder And Level Order: 레벨 순서를 왼쪽에서 오른쪽으로 읽으며 중위로 좌우를 가른다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 열 줄짜리 표(슬라이드는 처음 두 줄까지만 보인다), 다이어그램 1개, 단계로 적은 방법과 C 코드, 세 조합의 차이를 적은 표, 증명과 스스로 설명해 보기, 비용은 원본에 없다. 구현 코드로 슬라이드의 예와 노드 6개까지의 모든 트리에서 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 둘째 예제와 $$2^s$$개라는 셈, 오해 항목의 "네 개", "다섯 개", 카드 C2는 원본에 없다. 슬라이드는 노드 둘짜리 예만 든다. 검증 코드로 노드 6개까지의 모든 트리를 묶어 세었다. 일반적인 $$n$$에 대한 증명은 싣지 않았다.
+[^s1]: 구현 코드로 본문의 예와 노드 6개까지의 모든 트리에서 확인했다.
+[^s2]: 검증 코드로 노드 6개까지의 모든 트리를 묶어 세었다. 일반적인 $$n$$에 대한 증명은 싣지 않았다.
 {% endraw %}

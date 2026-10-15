@@ -46,7 +46,7 @@ if __name__ == "__main__":
     A = [[1, 0, 1, 1, 0], [1, 1, 0, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 0, 0]]
     R = [2, 1, 1, 2, 1]
     V = [R[k] - sum(A[i][k] for i in range(4)) for k in range(5)]
-    assert V == [0, 0, 0, 0, 1]          # 슬라이드 48의 "Allocation vector"는 실제로 사용 가능 벡터
+    assert V == [0, 0, 0, 0, 1]          # 총량 - 할당 합 = 사용 가능 벡터 (할당 벡터가 아니다)
     dead, steps = detect(Q, A, V)
     print("교착", dead, "단계", steps)
     assert dead == [1, 2] and steps == [(3, [0, 0, 0, 1, 1])]
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     dead2, _ = detect(Q2, A, V)
     assert dead2 == []                    # P3 -> P2 -> P1 순서로 모두 표시
 
-    # 6장 슬라이드 14 메모리 예: 200KB, P1 80 -> 60, P2 70 -> 80
+    # 교착상태 문서의 메모리 예: 200KB, P1 80 -> 60, P2 70 -> 80
     free = 200 - 80 - 70
     assert free == 50 and 60 > free and 80 > free   # 둘 다 두 번째 요청에서 막힘
     print("ALL CHECKS PASSED")

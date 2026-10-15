@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/44_local-variables_verify/"
 MASM이 없어 x86 32비트 명령 일부(레지스터, 리틀 엔디언 메모리, PUSH/POP/CALL/RET,
 ENTER/LEAVE, ZF/CF)를 파이썬으로 흉내 낸다. 문서에 실린 코드를 글자 그대로 넣어 돌린다.
 스택은 ESP = 00001000h에서 시작하고, 명령 주소는 가짜 값(00401000h + 4 × 순번)이다.
-슬라이드 wk11-2-1 p.7(x = 10, y = 20), p.10~11(ENTER·LEAVE), p.14, p.16의 내용을 확인한다."""
+문서의 x = 10, y = 20 예, ENTER·LEAVE, LOCAL이 만드는 코드, 바이트 지역 변수의 자리를 확인한다."""
 import re
 
 M32 = 0xFFFFFFFF
@@ -259,7 +259,7 @@ class CPU:
         return self
 
 
-# wk11-2-1 p.7: 지역 변수 x = 10, y = 20
+# 지역 변수 x = 10, y = 20
 MYSUB = """
 main PROC
     call MySub
@@ -278,7 +278,7 @@ MySub PROC
     ret
 MySub ENDP
 """
-# p.10~11: ENTER 8,0 / LEAVE로 바꾼 것
+# ENTER 8,0 / LEAVE로 바꾼 것
 ENTER_LEAVE = """
 main PROC
     call MySub
@@ -294,7 +294,7 @@ MySub PROC
     ret
 MySub ENDP
 """
-# p.14: LOCAL이 만드는 코드. add esp,0FFFFFFF8h
+# LOCAL이 만드는 코드. add esp,0FFFFFFF8h
 LOCAL_GEN = MYSUB.replace("sub  esp,8", "add  esp,0FFFFFFF8h")
 # 초기화하지 않은 지역 변수: 앞 호출이 남긴 값이 그대로 보인다
 GARBAGE = """
@@ -324,7 +324,7 @@ Second ENDP
 """
 # mov esp,ebp를 빠뜨리면 pop ebp가 지역 변수 y(20)를 EBP에 넣는다
 NO_FREE = MYSUB.replace("    mov  esp,ebp\n", "")
-# p.16: 바이트 지역 변수 하나. 4바이트를 잡고 var1은 [EBP-1]
+# 바이트 지역 변수 하나. 4바이트를 잡고 var1은 [EBP-1]
 BYTE_LOCAL = """
 main PROC
     call Example1
@@ -354,7 +354,7 @@ if __name__ == "__main__":
     assert t[8] == ("mov  esp,ebp", 0x0FF8, 0x0FF8)
     assert t[9] == ("pop  ebp", 0x0FFC, 0x1010)
     assert t[10] == ("ret", 0x1000, 0x1010)
-    # 스택 그림 (p.7): [ebp-4] = 10, [ebp-8] = 20, [ebp] = 옛 EBP, [ebp+4] = 복귀 주소
+    # 스택 그림: [ebp-4] = 10, [ebp-8] = 20, [ebp] = 옛 EBP, [ebp+4] = 복귀 주소
     assert c.rd(0x0FF4) == 10 and c.rd(0x0FF0) == 20
     assert c.rd(0x0FF8) == 0x1010 and c.rd(0x0FFC) == c.addr_of(1)
     assert c.r["eax"] == 30

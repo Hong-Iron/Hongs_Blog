@@ -23,22 +23,21 @@ permalink: "/studies/database-design/code/44_er-to-relational-mapping_verify/"
 """ER-관계형 사상 절차 검증.
 
 문서: 44.ER-관계형 사상 절차 (예시, 절차, 대응표, 카드 C1~C6)
-출처: 데이터베이스 설계 7 슬라이드 p.11~29 (COMPANY ER → 릴레이션 6개), 6-2 p.20~21 (스키마와 상태), 9 p.17~18 (DDL)
 실행: python3 44_er-to-relational-mapping_verify.py   (표준 라이브러리 sqlite3만 쓴다)
-하는 일: 강의의 단계(개체 → 다치 속성 → 관계)를 그대로 코드로 옮긴 사상기에 COMPANY ER을 넣고,
-        나온 릴레이션을 슬라이드의 답과 견준다. 그 결과를 CREATE TABLE로 만들어 SQLite에서 실제로 돌린다.
+하는 일: 문서의 단계(개체 → 다치 속성 → 관계)를 그대로 코드로 옮긴 사상기에 COMPANY ER을 넣고,
+        나온 릴레이션을 COMPANY 스키마와 견준다. 그 결과를 CREATE TABLE로 만들어 SQLite에서 실제로 돌린다.
 주장:
-  1. 사상 결과는 릴레이션 6개이고, 속성·기본 키·외래 키 8개가 6-2 p.20과 7 p.11의 그림과 같다.
-  2. 단계마다의 중간 결과가 7 p.13~27의 그림과 같다.
+  1. 사상 결과는 릴레이션 6개이고, 속성·기본 키·외래 키 8개가 COMPANY 스키마와 같다.
+  2. 단계마다의 중간 결과가 문서의 단계 표와 같다.
   3. 개수: 일반 개체 3 + 약한 개체 1 + 다치 속성 1 + M:N 관계 1 = 릴레이션 6개.
      외래 키는 약한 개체 1 + 다치 속성 1 + 1:1 관계 1 + 1:N 관계 3 + M:N 관계 2 = 8개.
   4. 유도 속성 Number_of_employees와 복합 속성 Name, 다치 속성 Locations는 열이 되지 않는다.
-  5. 전체 참여인 쪽에 넣은 외래 키만 NOT NULL로 두면 9 p.17~18 DDL의 NOT NULL과 같다(Mgr_ssn, Dno, Dnum. Super_ssn은 아님).
-  6. 만든 표에 6-2 p.21의 상태가 그대로 들어가고 외래 키 검사를 통과한다.
-  7. 1:N인 WORKS_FOR를 교차 참조 방법으로 바꾸면 릴레이션이 7개가 된다(외래 키 방법이 릴레이션 수를 줄인다, 7 p.21).
-  8. 7 p.11·p.29의 완성 그림은 PROJECT의 Plocation에도 밑줄이 있다. 상태에서 Pnumber 혼자 안 겹치므로
+  5. 전체 참여인 쪽에 넣은 외래 키만 NOT NULL로 두면 COMPANY DDL의 NOT NULL과 같다(Mgr_ssn, Dno, Dnum. Super_ssn은 아님).
+  6. 만든 표에 COMPANY 상태가 그대로 들어가고 외래 키 검사를 통과한다.
+  7. 1:N인 WORKS_FOR를 교차 참조 방법으로 바꾸면 릴레이션이 7개가 된다(외래 키 방법이 릴레이션 수를 줄인다).
+  8. PROJECT에서 {Pnumber, Plocation}을 기본 키로 볼 수 있는가: 상태에서 Pnumber 혼자 안 겹치므로
      {Pnumber, Plocation}은 줄일 수 있는 묶음이고 기본 키는 Pnumber다.
-  9. 5 p.34의 (min, max) 표기로 읽어도 같은 1·N과 전체·부분 참여가 나온다(max가 1인 쪽이 외래 키를 받는다).
+  9. (min, max) 표기로 읽어도 같은 1·N과 전체·부분 참여가 나온다(max가 1인 쪽이 외래 키를 받는다).
  10. 1:1과 1:N을 모두 외래 키 방법으로 옮길 때의 개수 식:
      릴레이션 = 일반 개체 + 약한 개체 + 다치 속성 + M:N 관계 + n항 관계,
      외래 키 = 약한 개체 + 다치 속성 + 1:1 관계 + 1:N 관계 + 2 × M:N 관계 + (n항 관계마다 n).
@@ -46,7 +45,7 @@ permalink: "/studies/database-design/code/44_er-to-relational-mapping_verify/"
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태. 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -97,7 +96,7 @@ def make_company(hours_not_null=False):
     return c
 # ---- COMPANY 끝 ----
 
-# ---- ER → 릴레이션 사상기 (강의 7 p.12의 순서). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- ER → 릴레이션 사상기 (문서의 단계 순서). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 # ER 적는 법
 #   개체: {"name", "attrs": [단순 속성 이름 | (복합 속성 이름, [성분들])], "key": [기본 키로 고른 키 속성],
 #          "multivalued": [(릴레이션 이름, 값 속성, [외래 키 이름])], "derived": [유도 속성],
@@ -237,7 +236,7 @@ def build_sqlite(rels):
     return c
 # ---- 사상기 끝 ----
 
-COMPANY_ER = {   # 7 p.11 왼쪽 그림. 속성 이름은 오른쪽 그림(릴레이션)의 이름으로 적었다
+COMPANY_ER = {   # COMPANY ER 그림. 속성 이름은 릴레이션에서 쓰는 이름으로 적었다
     "entities": [
         {"name": "EMPLOYEE", "key": ["Ssn"],
          "attrs": [("Name", ["Fname", "Minit", "Lname"]), "Ssn", "Bdate", "Address", "Sex", "Salary"]},
@@ -247,7 +246,7 @@ COMPANY_ER = {   # 7 p.11 왼쪽 그림. 속성 이름은 오른쪽 그림(릴�
         {"name": "DEPENDENT", "attrs": ["Dependent_name", "Sex", "Bdate", "Relationship"],
          "weak": {"owner": "EMPLOYEE", "fk": ["Essn"], "partial_key": ["Dependent_name"]}},
     ],
-    "relationships": [   # 식별 관계 DEPENDENTS_OF는 약한 개체를 옮길 때 함께 처리된다(7 p.14)
+    "relationships": [   # 식별 관계 DEPENDENTS_OF는 약한 개체를 옮길 때 함께 처리된다
         {"name": "MANAGES", "ends": [("EMPLOYEE", "1", "partial"), ("DEPARTMENT", "1", "total")],
          "fk": ["Mgr_ssn"], "attrs": ["Mgr_start_date"], "ends_fk": [["Essn"], ["Dno"]]},
         {"name": "WORKS_FOR", "ends": [("EMPLOYEE", "N", "total"), ("DEPARTMENT", "1", "total")],
@@ -259,7 +258,7 @@ COMPANY_ER = {   # 7 p.11 왼쪽 그림. 속성 이름은 오른쪽 그림(릴�
     ],
 }
 
-EXPECTED = {   # 6-2 p.20의 속성과 밑줄, 7 p.11의 화살표
+EXPECTED = {   # COMPANY 스키마의 속성, 기본 키, 외래 키
     "EMPLOYEE": (["Fname", "Minit", "Lname", "Ssn", "Bdate", "Address", "Sex", "Salary", "Super_ssn", "Dno"], ["Ssn"],
                  [(("Super_ssn",), "EMPLOYEE", ("Ssn",)), (("Dno",), "DEPARTMENT", ("Dnumber",))]),
     "DEPARTMENT": (["Dname", "Dnumber", "Mgr_ssn", "Mgr_start_date"], ["Dnumber"], [(("Mgr_ssn",), "EMPLOYEE", ("Ssn",))]),
@@ -280,13 +279,13 @@ def count(regular, weak, multi, one_one, one_n, m_n, nary=()):
 def main():
     rels, log = map_er(COMPANY_ER)
 
-    # 1. 결과가 슬라이드와 같다
+    # 1. 결과가 COMPANY 스키마와 같다
     want = {n: (frozenset(a), frozenset(pk), frozenset(fks)) for n, (a, pk, fks) in EXPECTED.items()}
     assert shape(rels) == want
     assert sum(len(r["fks"]) for r in rels.values()) == 8 and len(rels) == 6
-    print("[OK] COMPANY ER → 릴레이션 6개, 외래 키 8개. 6-2 p.20, 7 p.11과 같다")
+    print("[OK] COMPANY ER → 릴레이션 6개, 외래 키 8개. COMPANY 스키마와 같다")
 
-    # 2. 단계별 중간 결과 (7 p.13, 14, 15, 17, 24, 27)
+    # 2. 단계별 중간 결과
     step = dict(log)
     emp8 = ["Fname", "Minit", "Lname", "Ssn", "Bdate", "Address", "Sex", "Salary"]
     assert step["일반 개체"] == {"EMPLOYEE": emp8, "DEPARTMENT": ["Dname", "Dnumber"], "PROJECT": ["Pname", "Pnumber", "Plocation"]}
@@ -294,11 +293,11 @@ def main():
     assert step["다치 속성"]["DEPT_LOCATIONS"] == ["Dnumber", "Dlocation"]
     assert step["1:1 관계"]["DEPARTMENT"] == ["Dname", "Dnumber", "Mgr_ssn", "Mgr_start_date"]
     assert step["1:1 관계"]["EMPLOYEE"] == emp8                                   # 직원 쪽에는 아무것도 안 붙는다
-    assert step["1:N 관계"]["EMPLOYEE"] == emp8 + ["Dno", "Super_ssn"]            # 7 p.24의 순서
+    assert step["1:N 관계"]["EMPLOYEE"] == emp8 + ["Dno", "Super_ssn"]            # 5단계 뒤의 순서
     assert step["1:N 관계"]["PROJECT"] == ["Pname", "Pnumber", "Plocation", "Dnum"]
     assert "WORKS_ON" not in step["1:N 관계"] and step["M:N 관계"]["WORKS_ON"] == ["Essn", "Pno", "Hours"]
     assert step["n항 관계"] == step["M:N 관계"]                                   # COMPANY에는 n항 관계가 없다
-    print("[OK] 단계마다의 중간 결과가 7 p.13~27과 같다")
+    print("[OK] 단계마다의 중간 결과가 문서의 단계 표와 같다")
 
     # 3. 개수
     n_regular = sum(1 for e in COMPANY_ER["entities"] if "weak" not in e)
@@ -321,7 +320,7 @@ def main():
     ddl_not_null = {(t, row[1]) for t in EXPECTED for row in c.execute(f"PRAGMA table_info({t})")
                     if row[3] and row[1] in ("Mgr_ssn", "Dno", "Dnum", "Super_ssn")}
     assert ddl_not_null == fk_not_null
-    print("[OK] 전체 참여 쪽 외래 키 Mgr_ssn, Dno, Dnum만 NOT NULL. 9 p.17~18의 DDL과 같다")
+    print("[OK] 전체 참여 쪽 외래 키 Mgr_ssn, Dno, Dnum만 NOT NULL. COMPANY DDL과 같다")
 
     # 6. 만든 표에 상태를 넣는다
     m = build_sqlite(rels)
@@ -339,7 +338,7 @@ def main():
         raise AssertionError("없는 9번 부서를 가리키는 프로젝트가 들어갔다")
     except sqlite3.IntegrityError:
         pass
-    print("[OK] 사상 결과로 만든 표에 6-2 p.21의 45행이 들어가고 외래 키 검사를 통과한다")
+    print("[OK] 사상 결과로 만든 표에 COMPANY 상태 45행이 들어가고 외래 키 검사를 통과한다")
 
     # 7. 다른 선택: WORKS_FOR를 교차 참조로
     alt, _ = map_er(COMPANY_ER, approach={"WORKS_FOR": "cross"})
@@ -355,7 +354,7 @@ def main():
     assert c.execute("SELECT COUNT(DISTINCT Plocation) FROM PROJECT").fetchone()[0] == 4      # Houston 2, Stafford 2
     print("[OK] Pnumber 혼자 6행에서 안 겹친다. {Pnumber, Plocation}은 최소가 아니다")
 
-    # 9. (min, max)로 읽기 (5 p.34)
+    # 9. (min, max)로 읽기
     mm = {"MANAGES": minmax(("EMPLOYEE", 0, 1), ("DEPARTMENT", 1, 1)),
           "WORKS_FOR": minmax(("EMPLOYEE", 1, 1), ("DEPARTMENT", 4, "N")),
           "SUPERVISION": minmax(("EMPLOYEE", 0, "N"), ("EMPLOYEE", 0, 1)),          # 상사, 부하 순서
@@ -363,13 +362,13 @@ def main():
           "WORKS_ON": minmax(("EMPLOYEE", 1, "N"), ("PROJECT", 1, "N"))}
     for r in COMPANY_ER["relationships"]:
         assert mm[r["name"]] == r["ends"], r["name"]
-    print("[OK] 5 p.34의 (min, max)에서 뽑은 1·N과 참여가 7 p.11 그림의 표기와 같다")
+    print("[OK] (min, max)에서 뽑은 1·N과 참여가 1·N 표기의 그림과 같다")
 
     # 10. 개수 식
     assert count(3, 1, 1, 1, 3, 1) == (len(rels), sum(len(r["fks"]) for r in rels.values())) == (6, 8)
-    assert count(6, 0, 0, 2, 6, 1) == (7, 10)               # UNIVERSITY (7 p.31, 풀이 p.6)
+    assert count(6, 0, 0, 2, 6, 1) == (7, 10)               # UNIVERSITY
     assert count(5, 1, 2, 1, 4, 2) == (10, 12)              # 카드 C3
-    assert count(3, 0, 0, 0, 0, 0, nary=(3,)) == (4, 3)     # SUPPLY (7 p.28): 개체 셋과 삼항 관계 하나
+    assert count(3, 0, 0, 0, 0, 0, nary=(3,)) == (4, 3)     # SUPPLY: 개체 셋과 삼항 관계 하나
     print("[OK] 개수 식: COMPANY (6, 8), UNIVERSITY (7, 10), 카드 C3 (10, 12), SUPPLY (4, 3)")
     print("ALL CHECKS PASSED")
 

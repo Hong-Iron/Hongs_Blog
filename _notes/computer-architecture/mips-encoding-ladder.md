@@ -118,5 +118,5 @@ permalink: "/studies/computer-architecture/mips-encoding-ladder/"
 
 [^1]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장 "Instructions: Language of the Computer"
 [^2]: MIPS Reference Data(Green Sheet), NUS CS2100 공개본 https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf (OPCODE / FUNCT 열과 레지스터 번호 표)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 문제와 풀이는 새로 만든 것이다. 답은 문제 코드로 확인했다.
+[^s1]: 네 문제와 풀이는 새로 만든 것이다. 답은 문제 코드로 확인했다.
 {% endraw %}

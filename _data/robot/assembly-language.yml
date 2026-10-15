@@ -13,11 +13,11 @@ questions:
   link: /studies/assembly-language/flag-tracing-ladder/
   link_label: "플래그 추적 예제 사다리"
 - q: "코드는 진짜 돌려 본 거예요?"
-  a: "윈도우용 어셈블러가 없어서 파이썬으로 레지스터, 플래그, 스택을 흉내 내서 슬라이드 값과 맞춰 봤어요. 문서마다 그렇게 적어 뒀어요."
+  a: "윈도우용 어셈블러가 없어서 파이썬으로 레지스터, 플래그, 스택을 흉내 내서 문서에 실린 값과 맞춰 봤어요. 문서마다 그렇게 적어 뒀어요."
   link: /studies/assembly-language/
   link_label: 로드맵
-- q: "슬라이드에 틀린 데도 있었어요?"
-  a: "네. 넘침 플래그 규칙 하나가 8비트 덧셈을 전부 돌려 보니 절반에서 틀렸어요. 맞는 규칙은 다른 주차 슬라이드에 있었어요."
+- q: "넘침 플래그는 언제 켜져요?"
+  a: "부호가 같은 두 수를 더했는데 결과의 부호가 다르면 켜져요. 8비트 덧셈을 전부 돌려서 이 규칙이 맞는지 확인해 뒀어요."
   link: /studies/assembly-language/x86-status-flags/
   link_label: "산술 연산과 상태 플래그"
 chats:

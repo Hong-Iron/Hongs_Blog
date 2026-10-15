@@ -58,7 +58,7 @@ NAME = {SYN: "SYN", SOH: "SOH", STX: "STX", ETX: "ETX", DLE: "DLE"}
 
 
 def bisync_body(data):
-    """슬라이드 방식: 본문의 ETX·DLE 앞에 DLE를 붙이고, 끝은 맨 ETX 하나.
+    """끝 ETX 방식: 본문의 ETX·DLE 앞에 DLE를 붙이고, 끝은 맨 ETX 하나.
     돌려주는 값: (보내는 바이트, 바이트마다 종류 'data'|'stuff'|'end', 본문 바이트 k가 놓인 자리)"""
     out, kind, pos = [], [], []
     for b in data:
@@ -89,7 +89,7 @@ def naive_read(stream):
 
 
 def transparent_body(data):
-    """필기의 방식(투명 모드): 본문의 DLE만 두 번 쓰고, 끝은 DLE ETX."""
+    """투명 모드: 본문의 DLE만 두 번 쓰고, 끝은 DLE ETX."""
     out, kind, pos = [], [], []
     for b in data:
         if b == DLE:
@@ -178,7 +178,7 @@ def stuff_rows(ax, data, sent, kind, pos, y_top, y_bot, end_text):
     ax.text((ends[0] + ends[-1]) / 2, y_bot - 0.55, end_text, ha="center", va="top", fontsize=9, color=C[2])
 
 
-# ---------------------------------------------------------------- 그림 1: 채우기 없이 잘리는 모습과 슬라이드 방식 채우기
+# ---------------------------------------------------------------- 그림 1: 채우기 없이 잘리는 모습과 끝 ETX 방식 채우기
 fig, ax = plt.subplots(figsize=(6.8, 4.5))
 LX = -1.0
 # (가) 채우기 없이
@@ -198,9 +198,9 @@ bracket(ax, -0.4, NAIVE_CUT - 0.6, ya - 0.6, "본문으로 받음", up=False, fs
 bracket(ax, NAIVE_CUT + 0.6, len(NAIVE_SENT) - 0.6, ya - 0.6, "잘려 나감", up=False, fs=9, color=C[1])
 ax.text(len(NAIVE_SENT) + 0.1, ya, "주황 03은 ETX와 같은 값이라\n받는 쪽이 여기서 끝낸다", fontsize=9, color=C[1],
         va="center", ha="left")
-# (나) 슬라이드 방식
+# (나) 끝 ETX 방식
 yb_top, yb_bot = 2.25, 0.55
-ax.text(LX - 1.6, yb_top + 0.75, "(나) 슬라이드 방식으로 채움: 본문 41 ETX 42 DLE ETX 43", fontsize=10, ha="left",
+ax.text(LX - 1.6, yb_top + 0.75, "(나) 끝 ETX 방식으로 채움: 본문 41 ETX 42 DLE ETX 43", fontsize=10, ha="left",
         va="bottom")
 ax.text(LX, yb_top, "본문", ha="right", va="center", fontsize=9)
 ax.text(LX, yb_bot, "보내는 바이트", ha="right", va="center", fontsize=9)
@@ -269,7 +269,7 @@ ax.axis("off")
 save(fig, 2)
 
 
-# ---------------------------------------------------------------- 그림 3: 필기의 방식(투명 모드)
+# ---------------------------------------------------------------- 그림 3: 투명 모드
 fig, ax = plt.subplots(figsize=(6.8, 2.5))
 yt, yb3 = 1.7, 0.0
 ax.text(LX, yt, "본문", ha="right", va="center", fontsize=9)
@@ -366,12 +366,12 @@ if __name__ == "__main__":
     assert abs(over - 2 / 256) < 0.001, over
     # 최악: 본문이 DLE 10개면 21바이트
     assert len(bisync_body([DLE] * 10)[0]) == 21
-    # 그림 3: 필기의 방식 41 ETX 42 DLE DLE ETX 43 DLE ETX, 되돌리면 원래 본문
+    # 그림 3: 투명 모드 41 ETX 42 DLE DLE ETX 43 DLE ETX, 되돌리면 원래 본문
     assert TSENT == [0x41, ETX, 0x42, DLE, DLE, ETX, 0x43, DLE, ETX]
     assert transparent_read(TSENT + [0x99])[0] == DATA
-    # 오버헤드: 본문 6바이트가 슬라이드 방식으로 10바이트(4 늘어남), 필기 방식으로 9바이트(3 늘어남)
+    # 오버헤드: 본문 6바이트가 끝 ETX 방식으로 10바이트(4 늘어남), 투명 모드로 9바이트(3 늘어남)
     assert len(SENT) - len(DATA) == 4 and len(TSENT) - len(DATA) == 3
-    # 그림 2: 칸 비트 수(슬라이드 44)
+    # 그림 2: 칸 비트 수
     assert FIXED_BIS == [8, 8, 8, 8, 8, 16] and FIXED_DDC == [8, 8, 8, 14, 42, 16]
     assert sum(FIXED_DDC) == 96                          # DDCMP는 본문 밖에 96비트 = 12바이트
     assert 2 ** 14 - 1 == 16383                          # Count 14비트가 적을 수 있는 가장 큰 수

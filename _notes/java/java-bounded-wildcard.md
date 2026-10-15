@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Bounded Type Parameter", "제한된 타입 파라미터", "상한", "Upper Bound", "와일드카드", "Wildcard", "Wildcard Type Parameter", "? extends", "? super", "하한", "Lower Bound"]
 description: "빈칸에 아무 종류나 들어오게 두면, 그 빈칸으로 받은 것에 \"숫자로 바꿔라\" 같은 일을 시킬 수 없다. 숫자가 아닌 것이 들어올 수도 있기 때문이다. 그래서 \"숫자 집안만 들어올 수 있다\"고 빈칸에 조건을 건다. 조건을 건 만큼 그 집안이 할 줄 아는 일을 마음 놓고 시킬 수 있다…"
@@ -49,7 +49,7 @@ error: cannot find symbol
 
 번역되지 않는다. `T` 자리에는 `String`도, 직접 만든 `Tv`도 올 수 있다. 그런 객체에는 `doubleValue()`가 없다. 번역기는 `T`가 무엇이든 될 수 있다고 보고, 모든 객체가 가진 메서드(`Object`의 메서드)만 부르게 한다[^s1].
 
-`T`에 올 수 있는 타입을 `Number`와 그 자식으로 좁힌다[^1].
+`T`에 올 수 있는 타입을 `Number`와 그 자식으로 좁힌다.
 
 ```java
 public static <T extends Number> boolean compare(T t1, T t2) {
@@ -72,17 +72,17 @@ public static <T extends Number> boolean compare(T t1, T t2) {
 
 ### 제한된 타입 파라미터
 
-**제한된 타입 파라미터**는 아무 타입으로나 바꿀 수 없고, 어떤 클래스의 자식이거나 어떤 인터페이스를 구현했다는 관계가 있는 타입으로만 바꿀 수 있는 타입 파라미터다[^1].
+**제한된 타입 파라미터**는 아무 타입으로나 바꿀 수 없고, 어떤 클래스의 자식이거나 어떤 인터페이스를 구현했다는 관계가 있는 타입으로만 바꿀 수 있는 타입 파라미터다.
 
 ```java
 public <T extends 상위타입> 리턴타입 메서드(매개변수, …) { … }
 ```
 
-`extends` 뒤의 상위 타입은 클래스여도 되고 인터페이스여도 된다[^1]. 인터페이스일 때도 `implements`가 아니라 `extends`를 쓴다. 상위 타입 자신도 들어올 수 있다[^s1].
+`extends` 뒤의 상위 타입은 클래스여도 되고 인터페이스여도 된다. 인터페이스일 때도 `implements`가 아니라 `extends`를 쓴다. 상위 타입 자신도 들어올 수 있다[^s1].
 
 ### 와일드카드
 
-**와일드카드**는 제네릭 타입을 매개변수나 돌려주는 타입으로 쓸 때, 타입 파라미터 자리에 어떤 범위 안의 타입이면 무엇이든 올 수 있게 하는 표시다. `?`로 쓴다[^2].
+**와일드카드**는 제네릭 타입을 매개변수나 돌려주는 타입으로 쓸 때, 타입 파라미터 자리에 어떤 범위 안의 타입이면 무엇이든 올 수 있게 하는 표시다. `?`로 쓴다.
 
 | 적는 법 | 받는 범위 |
 |---|---|
@@ -90,7 +90,7 @@ public <T extends 상위타입> 리턴타입 메서드(매개변수, …) { … 
 | `제네릭타입<? super Worker>` | `Worker`와 그 조상 |
 | `제네릭타입<?>` | 모든 타입 |
 
-슬라이드의 클래스들로 범위를 그린다. `Worker`와 `Student`는 `Person`의 자식이고, `HighStudent`와 `MiddleStudent`는 `Student`의 자식이다[^2][^3].
+다음 클래스들로 범위를 그려 본다. `Worker`와 `Student`는 `Person`의 자식이고, `HighStudent`와 `MiddleStudent`는 `Student`의 자식이다.
 
 ```mermaid
 flowchart TD
@@ -113,7 +113,7 @@ flowchart TD
 
 화살표는 부모에서 자식으로 간다. `extends`는 기준 타입에서 아래쪽(자손)으로, `super`는 기준 타입에서 위쪽(조상)으로 범위를 잡는다[^s2].
 
-지원자를 담는 제네릭 클래스와, 지원자를 받아 수강 신청을 하는 메서드 셋이다[^3][^4].
+지원자를 담는 제네릭 클래스와, 지원자를 받아 수강 신청을 하는 메서드 셋이다.
 
 ```java
 public class Applicant<T> {
@@ -136,13 +136,14 @@ public class Course {
         System.out.println(applicant.kind.getClass().getSimpleName() + " registered the Course2.");
     }
 
+    // Worker와 그 조상(Person)만 신청할 수 있다
     public static void registerCourse3(Applicant<? super Worker> applicant) {
         System.out.println(applicant.kind.getClass().getSimpleName() + " registered the Course3.");
     }
 }
 ```
 
-`new Applicant<Person>(new Person())`처럼 지원자를 만들어 세 메서드에 넘긴 결과다[^5].
+`new Applicant<Person>(new Person())`처럼 지원자를 만들어 세 메서드에 넘긴 결과다.
 
 | 넘긴 것 | `registerCourse1` (`?`) | `registerCourse2` (`? extends Student`) | `registerCourse3` (`? super Worker`) |
 |---|---|---|---|
@@ -160,17 +161,10 @@ error: incompatible types: Applicant<Student> cannot be converted to Applicant<?
 ```
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: `compare` 표의 세 줄, 슬라이드 `Main`의 출력 9줄, 와일드카드 변수에서 꺼내고 넣는 것, 카드 C4의 답 — [39_java-bounded-wildcard_impl.java](/Hongs_Blog/studies/java/code/39_java-bounded-wildcard_impl/). 표의 번역 오류 칸과 카드 C3의 답은 JDK 21 javac로 따로 확인했다.</div>
+<div class="callout-title" markdown="span">검증: `compare` 표의 세 줄, 세 메서드에 지원자를 넘긴 출력 9줄(`registerCourse1` 다섯, `registerCourse2`와 `registerCourse3` 둘씩), 와일드카드 변수에서 꺼내고 넣는 것, 카드 C4의 답 — [39_java-bounded-wildcard_impl.java](/Hongs_Blog/studies/java/code/39_java-bounded-wildcard_impl/). 표의 번역 오류 칸과 카드 C3의 답은 JDK 21 javac로 따로 확인했다.</div>
 
 </div>
 
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.14 코드의 주석 "Only Worker can register the Course3" / 문제점: `registerCourse3`의 매개변수는 `Applicant<? super Worker>`라서 `Worker`뿐 아니라 그 조상인 `Person`도 받는다. 같은 쪽의 코드도 `Applicant<Person>`을 넘기고 있다. / 수정안: "Worker와 그 조상(Person)만 신청할 수 있다" / 근거: `registerCourse3(new Applicant<Person>(new Person()))`이 번역되고 `Person registered the Course3.`를 찍는다(검증 코드).
-
-</div>
 
 
 ### 둘은 어떻게 다른가
@@ -230,7 +224,7 @@ error: incompatible types: Applicant<Student> cannot be converted to Applicant<?
 
 - `extends`로 범위를 잡은 상자에서는 꺼내 쓰기가 안전하다. `Applicant<? extends Student> a`의 `a.kind`는 적어도 `Student`이므로 `Student` 변수로 받을 수 있다. 반대로 `a.kind = new Student();`는 번역되지 않는다. 실제 상자가 `Applicant<HighStudent>`일 수도 있기 때문이다[^s3].
 - `super`로 범위를 잡은 상자에는 넣기가 안전하다. `Applicant<? super Student> b`에는 `b.kind = new Student();`를 쓸 수 있다. 실제 상자가 `Applicant<Person>`이든 `Applicant<Object>`든 `Student`는 들어간다. 꺼낼 때는 `Object`로만 받을 수 있다[^s3].
-- `Applicant<?>`에서 꺼낸 것은 `Object`로만 받을 수 있다. 슬라이드의 세 메서드가 `kind`에서 `getClass()`만 부르는 이유다. `getClass()`는 `Object`의 메서드다.
+- `Applicant<?>`에서 꺼낸 것은 `Object`로만 받을 수 있다. 위 `Course`의 세 메서드가 `kind`에서 `getClass()`만 부르는 이유다. `getClass()`는 `Object`의 메서드다.
 - 오류 문구의 `cannot be converted to Applicant<? extends Student>`는 "넘긴 상자의 타입이 범위 밖"이라는 뜻이다. 넘긴 쪽의 `< >` 안 타입이 기준 타입의 위인지 아래인지를 그림에서 찾는다.
 
 ## 연결
@@ -296,12 +290,7 @@ error: incompatible types: Applicant<Student> cannot be converted to Applicant<?
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 17회 강의 자료 「Software Project 17. Generics」, p.10 (제한된 타입 파라미터, compare 메서드)
-[^2]: 같은 자료, p.11 (와일드카드의 뜻, 세 가지 적는 법, 클래스 계층과 범위 그림)
-[^3]: 같은 자료, p.12 (Person, Worker, Student, HighStudent, MiddleStudent, `Applicant<T>`)
-[^4]: 같은 자료, p.13 (Course의 registerCourse1·2·3. 주석 "anyone can register the course", "only student can register the course")
-[^5]: 같은 자료, p.14 (Main. 번역되지 않는 네 줄은 주석으로 막혀 있다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 조건 없는 `<T>`로 먼저 만들어 본 예와 오류 문구, `compare`를 부른 결과 표, "인터페이스일 때도 `extends`", "상위 타입 자신도 된다"는 원본에 없다. 결과는 검증 코드로, 오류 문구는 JDK 21 javac로 확인했다. 원본 p.10의 `compare`에는 `static`이 없다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 원본 p.11의 그림을 Mermaid로 다시 그리고 `Object`를 더한 것이다(원본 그림의 `? super Worker` 범위는 `Person`과 `Worker`만 둘러싼다). 둘을 견준 표, 스스로 설명해 보기, `max` 예는 원본에 없다. `max`의 결과와 `Applicant<Object>`가 `registerCourse3`에 넘어가는 것은 직접 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표는 원본 p.14의 호출 13줄을 정리한 것이다. 표의 `registerCourse2`·`registerCourse3`에 `Applicant<MiddleStudent>`를 넘긴 두 칸은 원본에 없어 직접 확인했다. 원본의 출력 문자열은 클래스 이름과 `registered` 사이에 빈칸이 없다(`"registered the Course1."`). 여기서는 빈칸을 넣었다. 오류 문구, 와일드카드 변수에서 꺼내고 넣는 규칙, 오해 항목, 카드 C2~C5는 원본에 없고 JDK 21에서 확인했다.
+[^s1]: 결과는 검증 코드로, 오류 문구는 JDK 21 javac로 확인했다.
+[^s2]: `max`의 결과와 `Applicant<Object>`가 `registerCourse3`에 넘어가는 것은 직접 확인했다.
+[^s3]: 여기서는 빈칸을 넣었다.
 {% endraw %}

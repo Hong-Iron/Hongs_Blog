@@ -10,7 +10,7 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Frequency Response of LCCDE Systems", "유리함수", "Rational Function", "부분 분수 전개", "Partial Fraction Expansion", "역변환", "Inverse Fourier Transform"]
 description: "미분방정식으로 적힌 LTI 시스템은 양변을 푸리에 변환하면 미분이 j\\omega 곱셈으로 바뀌어 대수식이 된다. 그러면 주파수 응답은 j\\omega에 대한 다항식 두 개의 비(유리함수)로 바로 읽힌다. 출력을 구할 때는 Y = HX를 부분 분수로 쪼개 이미 아는 변환쌍(\\frac{…"
@@ -32,7 +32,7 @@ permalink: "/studies/signals-and-systems/lccde-frequency-response/"
 
 ## 예시로 보기
 
-$$\frac{dy}{dt} + ay = x$$, $$a > 0$$(예제 4.24)[^1].
+$$\frac{dy}{dt} + ay = x$$, $$a > 0$$(예제 4.24).
 
 - 양변을 변환: $$j\omega Y + aY = X$$.
 - $$H(j\omega) = \frac YX = \frac{1}{j\omega + a}$$.
@@ -40,7 +40,7 @@ $$\frac{dy}{dt} + ay = x$$, $$a > 0$$(예제 4.24)[^1].
 
 ## 정의
 
-$$\sum_{k=0}^{N}a_k\frac{d^ky}{dt^k} = \sum_{k=0}^{M}b_k\frac{d^kx}{dt^k}$$인 LTI 시스템의 주파수 응답을 구하는 두 길[^2]:
+$$\sum_{k=0}^{N}a_k\frac{d^ky}{dt^k} = \sum_{k=0}^{M}b_k\frac{d^kx}{dt^k}$$인 LTI 시스템의 주파수 응답을 구하는 두 길:
 
 1. 복소 지수가 고유함수라는 사실로: $$x = e^{j\omega t}$$이면 $$y = H(j\omega)e^{j\omega t}$$이고, 이것을 식에 넣어 $$H$$를 푼다(3.10절 RC 필터에서 쓴 방법).
 2. 변환의 미분 성질로: 양변을 변환하고 선형성과 $$\frac{d^kx}{dt^k} \leftrightarrow (j\omega)^kX$$를 쓰면 $$Y\sum a_k(j\omega)^k = X\sum b_k(j\omega)^k$$.
@@ -50,12 +50,12 @@ $$\sum_{k=0}^{N}a_k\frac{d^ky}{dt^k} = \sum_{k=0}^{M}b_k\frac{d^kx}{dt^k}$$인 L
 
 $$H(j\omega) = \frac{Y(j\omega)}{X(j\omega)} = \frac{\sum_{k=0}^{M}b_k(j\omega)^k}{\sum_{k=0}^{N}a_k(j\omega)^k}$$
 
-$$j\omega$$에 대한 다항식 두 개의 비(유리함수)다[^2].
+$$j\omega$$에 대한 다항식 두 개의 비(유리함수)다.
 
 </div>
 
 
-**부분 분수 전개**[^3]. 유리함수를 $$\frac{A}{x - p}$$ 꼴의 합으로 쪼갠다.
+**부분 분수 전개**. 유리함수를 $$\frac{A}{x - p}$$ 꼴의 합으로 쪼갠다.
 
 - 서로 다른 근: $$\frac{1}{(x-2)(x-1)} = \frac{A}{x-2} + \frac{B}{x-1}$$. $$A = \lim_{x\to2}(x-2)\cdot\frac{1}{(x-2)(x-1)} = 1$$, $$B = -1$$.
 - 제곱근(중근)이 있으면 $$\frac{A}{x+p} + \frac{B}{x+q} + \frac{C}{(x+q)^2}$$ 꼴로 둔다. 예: $$\frac{1}{x^2(x+4)} = \frac Ax + \frac{B}{x^2} + \frac{C}{x+4}$$에서 $$C = \frac{1}{x^2}\big\vert _{x=-4} = \frac{1}{16}$$, $$B = \frac{1}{x+4}\big\vert _{x=0} = \frac14$$, $$A = \frac{d}{dx}\frac{1}{x+4}\big\vert _{x=0} = -\frac{1}{16}$$.
@@ -73,17 +73,17 @@ flowchart TD
   G --> H
 ```
 
-미분방정식이 대수식으로 바뀐 뒤에는 부분 분수와 아는 변환쌍만 쓴다. 중근이 있으면 쪼갤 때 제곱 항을 따로 둔다.[^s3]
+미분방정식이 대수식으로 바뀐 뒤에는 부분 분수와 아는 변환쌍만 쓴다. 중근이 있으면 쪼갤 때 제곱 항을 따로 둔다.
 
 ## 예제
 
-**예제 4.25** $$\frac{d^2y}{dt^2} + 4\frac{dy}{dt} + 3y = \frac{dx}{dt} + 2x$$[^4]
+**예제 4.25** $$\frac{d^2y}{dt^2} + 4\frac{dy}{dt} + 3y = \frac{dx}{dt} + 2x$$
 
 1. *주파수 응답:* $$H = \dfrac{j\omega + 2}{(j\omega)^2 + 4j\omega + 3} = \dfrac{j\omega + 2}{(j\omega + 1)(j\omega + 3)}$$.
 2. *부분 분수:* $$= \dfrac{1/2}{j\omega + 1} + \dfrac{1/2}{j\omega + 3}$$.
 3. *역변환:* $$h(t) = \frac12e^{-t}u(t) + \frac12e^{-3t}u(t)$$.
 
-**예제 4.26** 같은 시스템에 $$x(t) = e^{-t}u(t)$$[^5]
+**예제 4.26** 같은 시스템에 $$x(t) = e^{-t}u(t)$$
 
 1. *곱:* $$Y = HX = \dfrac{j\omega + 2}{(j\omega + 1)^2(j\omega + 3)}$$.
 2. *부분 분수:* $$\dfrac{A_{11}}{j\omega + 1} + \dfrac{A_{12}}{(j\omega + 1)^2} + \dfrac{A_{21}}{j\omega + 3}$$. 분자를 맞추면 $$A_{11} + A_{21} = 0$$, $$4A_{11} + A_{12} + 2A_{21} = 1$$, $$3A_{11} + 3A_{12} + A_{21} = 2$$에서 $$A_{11} = \frac14$$, $$A_{12} = \frac12$$, $$A_{21} = -\frac14$$.
@@ -94,7 +94,7 @@ flowchart TD
 왼쪽은 예제 4.25의 $$\vert H(j\omega)\vert $$로, $$\omega = 0$$에서 $$\frac23$$이고 주파수가 높을수록 작아진다. 오른쪽의 굵은 선이 예제 4.26의 출력이고, 점선 세 조각을 더한 것이다[^s2].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 예제 4.25·4.26의 부분 분수와 계수 연립식, 구한 $$y(t)$$와 $$h(t)$$를 미분방정식에 넣어 양변이 같음, $$y(0) = 0$$, 참조 슬라이드의 부분 분수 두 예 확인 — [44_lccde-frequency-response_verify.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_verify/)</div>
+<div class="callout-title" markdown="span">검증: 예제 4.25·4.26의 부분 분수와 계수 연립식, 구한 $$y(t)$$와 $$h(t)$$를 미분방정식에 넣어 양변이 같음, $$y(0) = 0$$, 부분 분수 전개의 두 예 확인 — [44_lccde-frequency-response_verify.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_verify/)</div>
 
 </div>
 
@@ -136,12 +136,6 @@ flowchart TD
 </details>
 
 
-[^1]: 신호 및 시스템 15회 강의 자료 「Week15_CH04_3_handout」, p.29 (예제 4.24)
-[^2]: 같은 자료, p.27~28
-[^3]: 같은 자료, p.31 (참조: 부분 분수 풀이)
-[^4]: 같은 자료, p.29 (예제 4.25)
-[^5]: 같은 자료, p.30 (예제 4.26)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 보드 선도 활용과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [44_lccde-frequency-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$H(0) = \frac23$$, $$y(0) = 0$$, $$y(t)$$가 미분방정식을 만족하고 $$h * x$$의 수치 컨벌루션과 같음.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의의 두 길과 부분 분수 전개(15주차 자료 p.27~28, p.31), 예제 4.25~4.26(p.29~30)을 근거로 그렸다.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [44_lccde-frequency-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/44_lccde-frequency-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$H(0) = \frac23$$, $$y(0) = 0$$, $$y(t)$$가 미분방정식을 만족하고 $$h * x$$의 수치 컨벌루션과 같음.
 {% endraw %}

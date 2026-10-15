@@ -23,11 +23,10 @@ permalink: "/studies/data-structures/code/37_sollin-algorithm_verify/"
 """솔린 알고리즘(Sollin, 보루프카) 검증.
 
 문서: 1-2학기/자료구조/3.개념집/37.솔린 알고리즘.md
-출처: 자료구조 11주차 슬라이드 p.31, 33, 40~41 (그림과 설명). 구현과 반례는 에이전트 보충.
 실행: python3 37_sollin-algorithm_verify.py
 
 확인하는 것
-  1. 슬라이드 그래프(정점 8, 간선 10): 1바퀴에서 덩어리 8개가 간선 4개(1-2, 3-4, 5-6, 7-8)를,
+  1. 문서 예시의 그래프(정점 8, 간선 10): 1바퀴에서 덩어리 8개가 간선 4개(1-2, 3-4, 5-6, 7-8)를,
      2바퀴에서 덩어리 4개가 간선 3개(2-3, 3-5, 5-7)를 골라 끝난다. 비용 합 46 = 크루스칼의 합.
   2. 같은 비용 간선이 있을 때 덩어리마다 아무 간선이나 고르면 사이클이 생긴다(삼각형, 비용 1, 1, 1).
      "비용이 같으면 번호가 앞선 간선"으로 정하면 사이클이 생기지 않는다.
@@ -36,7 +35,7 @@ permalink: "/studies/data-structures/code/37_sollin-algorithm_verify/"
      정점 8개 사슬 예에서는 덩어리 수가 8 -> 4 -> 2 -> 1로 꼭 3바퀴를 돈다.
   4. 비용이 모두 다른 무작위 그래프 300개에서 솔린이 고른 간선 집합 = 크루스칼이 고른 간선 집합.
   5. 비용이 모두 다른 무작위 그래프 300개(점 2~6)에서 신장 트리를 모두 만들어 보면 비용이 가장 작은 것이 꼭 하나다.
-     슬라이드 그래프도 하나(46). 비용이 같은 삼각형은 셋이다.
+     문서 예시의 그래프도 하나(46). 비용이 같은 삼각형은 셋이다.
 """
 import math
 import random
@@ -153,7 +152,7 @@ def all_min_spanning_trees(n, edges):
 
 
 def main():
-    # 1. 슬라이드 그래프
+    # 1. 문서 예시의 그래프
     total, chosen, rounds = sollin(8, SLIDE_EDGES)
     name = lambda idx: (SLIDE_EDGES[idx][0], SLIDE_EDGES[idx][1])
     assert total == 46 and kruskal(8, SLIDE_EDGES)[0] == 46
@@ -171,7 +170,7 @@ def main():
     assert [name(i) for i in added2] == [(2, 3), (3, 5), (5, 7)]
     assert sum(SLIDE_EDGES[i][2] for i in added2) == 7 + 10 + 14
     assert sorted(chosen) == sorted(kruskal(8, SLIDE_EDGES)[1])
-    print("[OK] 슬라이드 그래프: 1바퀴 1-2, 3-4, 5-6, 7-8 / 2바퀴 2-3, 3-5, 5-7, 합 46 = 크루스칼")
+    print("[OK] 예시 그래프: 1바퀴 1-2, 3-4, 5-6, 7-8 / 2바퀴 2-3, 3-5, 5-7, 합 46 = 크루스칼")
 
     # 2. 같은 비용 간선과 사이클
     tri = [(1, 2, 1), (2, 3, 1), (1, 3, 1)]

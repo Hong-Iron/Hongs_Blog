@@ -24,14 +24,14 @@ permalink: "/studies/data-structures/code/42_quick-sort_impl/"
  *
  * 실행: cc -std=c11 -Wall -Wextra 42_quick-sort_impl.c -o quick && ./quick
  * 문서: 42.퀵 정렬 (분할 추적 표, 불변식, 피벗 세 가지, 카드 C1~C6)
- * 출처: 자료구조 14주차 슬라이드 p.6~18. 슬라이드에는 그림과 설명만 있어 코드는 그 설명대로 짠 것이다.
- * 색인은 0부터 센다. 구간 a[left..right]는 양 끝을 포함한다(슬라이드의 a[6:20]과 같은 뜻).
+ * 코드는 문서의 설명대로 짠 것이다.
+ * 색인은 0부터 센다. 구간 a[left..right]는 양 끝을 포함한다(a[6:20]이라 적는 것과 같은 뜻).
  *
  * 확인하는 것
- *   1. 덤 배열 분할: [6, 2, 8, 5, 11, 10, 4, 1, 9, 7, 3] -> [2, 5, 4, 1, 3, 6, 7, 9, 10, 11, 8] (p.7, p.13)
- *   2. 제자리 분할: 맞바꾸는 쌍 (8, 3), (11, 1), (10, 4), 끝 상태 [4, 2, 3, 5, 1, 6, 10, 11, 9, 7, 8] (p.14)
+ *   1. 덤 배열 분할: [6, 2, 8, 5, 11, 10, 4, 1, 9, 7, 3] -> [2, 5, 4, 1, 3, 6, 7, 9, 10, 11, 8] (문서의 예시)
+ *   2. 제자리 분할: 맞바꾸는 쌍 (8, 3), (11, 1), (10, 4), 끝 상태 [4, 2, 3, 5, 1, 6, 10, 11, 9, 7, 8] (문서의 추적 표)
  *   3. 제자리 분할의 불변식을 바퀴마다 검사(무작위 20,000개).
- *   4. 가운데 값 고르기(median-of-three)의 슬라이드 예 세 개 (p.11~12)
+ *   4. 가운데 값 고르기(median-of-three)의 문서 예 세 개
  *   5. 정렬 네 판(맨 왼쪽 피벗, 덤 배열 분할, 가운데 값 피벗, 손본 판)을 qsort와 무작위 2,000개 비교, 경계.
  *   6. 카드 C1, C6의 답.
  */
@@ -47,7 +47,7 @@ static void swap_int(int *x, int *y)
     *y = t;
 }
 
-/* 덤 배열 분할 (p.13). 피벗 a[left]보다 크지 않은 값은 b의 왼쪽 끝부터,
+/* 덤 배열 분할. 피벗 a[left]보다 크지 않은 값은 b의 왼쪽 끝부터,
  * 큰 값은 b의 오른쪽 끝부터 채우고, 남은 한 칸에 피벗을 놓는다. 피벗 자리를 돌려준다. */
 static int partition_extra(const int a[], int b[], int left, int right)
 {
@@ -75,7 +75,7 @@ static void check_invariant(const int a[], int left, int right, int i, int j, in
         assert(a[k] >= pivot);
 }
 
-/* 제자리 분할 (p.14, p.17의 규칙). 피벗은 a[left].
+/* 제자리 분할 (같은 값이 많을 때의 규칙: 이상, 이하에서 멈춘다). 피벗은 a[left].
  * i는 왼쪽에서 "피벗 이상인 첫 값"(bigElement)을, j는 오른쪽에서 "피벗 이하인 첫 값"(smallElement)을 찾는다.
  * i가 j보다 왼쪽이면 둘을 맞바꾸고 계속한다. 아니면 피벗과 a[j]를 맞바꾸고 끝낸다. */
 static int partition(int a[], int left, int right)
@@ -104,7 +104,7 @@ static int partition(int a[], int left, int right)
     return j;
 }
 
-/* 맨 왼쪽 값을 피벗으로 쓰는 퀵 정렬 (p.6, p.9). */
+/* 맨 왼쪽 값을 피벗으로 쓰는 퀵 정렬. */
 static void quick_sort(int a[], int left, int right)
 {
     if (left >= right)
@@ -125,7 +125,7 @@ static void quick_sort_extra(int a[], int b[], int left, int right)
     quick_sort_extra(a, b, p + 1, right);
 }
 
-/* 맨 왼쪽, 가운데, 맨 오른쪽 세 값 가운데 크기가 중간인 값의 자리 (p.11). */
+/* 맨 왼쪽, 가운데, 맨 오른쪽 세 값 가운데 크기가 중간인 값의 자리. */
 static int median_of_three(const int a[], int left, int right)
 {
     int mid = (left + right) / 2;
@@ -137,7 +137,7 @@ static int median_of_three(const int a[], int left, int right)
     return right;
 }
 
-/* 가운데 값을 피벗으로 쓰는 퀵 정렬: 고른 피벗을 맨 왼쪽과 맞바꾼 뒤 같은 분할을 쓴다 (p.12). */
+/* 가운데 값을 피벗으로 쓰는 퀵 정렬: 고른 피벗을 맨 왼쪽과 맞바꾼 뒤 같은 분할을 쓴다. */
 static void quick_sort_m3(int a[], int left, int right)
 {
     if (left >= right)
@@ -159,8 +159,8 @@ static void insertion_sort_range(int a[], int left, int right)
     }
 }
 
-/* 손본 판: 조각이 15개 이하면 삽입 정렬로 넘기고(p.18), 가운데 값 피벗을 쓰고,
- * 작은 조각만 재귀로 부르고 큰 조각은 같은 함수 안에서 돌아 재귀 깊이를 log n 안으로 묶는다(p.17). */
+/* 손본 판: 조각이 15개 이하면 삽입 정렬로 넘기고, 가운데 값 피벗을 쓰고,
+ * 작은 조각만 재귀로 부르고 큰 조각은 같은 함수 안에서 돌아 재귀 깊이를 log n 안으로 묶는다. */
 static int g_depth, g_max_depth;
 static void quick_sort_tuned(int a[], int left, int right)
 {
@@ -216,7 +216,7 @@ int main(void)
         const int want[11] = {2, 5, 4, 1, 3, 6, 7, 9, 10, 11, 8};
         int p = partition_extra(slide, b, 0, 10);
         if (p != 5 || !same(b, want, 11))
-            return fail("덤 배열 분할 (p.13)");
+            return fail("덤 배열 분할");
     }
 
     /* 2. 제자리 분할 */
@@ -229,10 +229,10 @@ int main(void)
         int p = partition(a, 0, 10);
         g_log_on = 0;
         if (p != 5 || !same(a, want, 11))
-            return fail("제자리 분할 끝 상태 (p.14)");
+            return fail("제자리 분할 끝 상태");
         if (g_log_n != 3 || g_log[0][0] != 8 || g_log[0][1] != 3 || g_log[1][0] != 11 ||
             g_log[1][1] != 1 || g_log[2][0] != 10 || g_log[2][1] != 4)
-            return fail("제자리 분할에서 맞바꾼 쌍 (p.14)");
+            return fail("제자리 분할에서 맞바꾼 쌍");
     }
 
     /* 6. 카드 C1: [5, 9, 1, 7, 3, 8, 2] */
@@ -343,7 +343,7 @@ int main(void)
         printf("손본 판: 정렬된 4,096개에서 재귀 깊이 %d\n", g_max_depth);
     }
 
-    printf("덤 배열 분할, 제자리 분할(맞바꾼 쌍 (8, 3), (11, 1), (10, 4)) 슬라이드와 같음\n");
+    printf("덤 배열 분할, 제자리 분할(맞바꾼 쌍 (8, 3), (11, 1), (10, 4)) 문서의 예와 같음\n");
     printf("ALL CHECKS PASSED\n");
     return 0;
 }

@@ -49,7 +49,7 @@ def check(frame, c):
 
 
 def shift_register(msg, c):
-    """슬라이드 p.56의 하드웨어: (|C| − 1)비트 레지스터, C의 1 자리 앞에 XOR."""
+    """CRC 하드웨어: (|C| − 1)비트 레지스터, C의 1 자리 앞에 XOR."""
     k = len(c) - 1; reg = [0] * k                      # reg[0] = x^0 칸
     taps = [int(c[::-1][i]) for i in range(k)]         # x^0..x^(k−1)의 계수
     for b in msg + "0" * k:
@@ -65,10 +65,10 @@ def shift_register(msg, c):
 def main():
     M, C = "10011010", "1101"
     q, f = xor_div(M + "000", C)
-    assert q == "11111001" and f == "101"                  # 슬라이드 p.54
+    assert q == "11111001" and f == "101"                  # 문서 예시의 몫과 나머지
     P = crc(M, C)
     assert P == "10011010101" and check(P, C)
-    # 슬라이드의 "10011010000 − 101 = 10011010101"은 XOR이다(보통의 뺄셈이면 10011001011)
+    # "10011010000 − 101 = 10011010101"의 −는 XOR이다(보통의 뺄셈이면 10011001011)
     assert format(int("10011010000", 2) - 0b101, "b") == "10011001011"
     assert format(int("10011010000", 2) ^ 0b101, "b") == "10011010101"
     # 하드웨어 시프트 레지스터도 같은 나머지
@@ -95,7 +95,7 @@ def main():
         e = "0" * s + burst + "0" * (len(p) - s - L)
         bad = "".join("1" if a != b else "0" for a, b in zip(p, e))
         assert not check(bad, C)
-    # CRC-32: 슬라이드의 다항식 = 표준 0x04C11DB7
+    # CRC-32: 문서의 다항식 = 표준 0x04C11DB7
     exps = [32, 26, 23, 22, 16, 12, 11, 10, 8, 7, 5, 4, 2, 1, 0]
     assert sum(1 << e for e in exps if e < 32) == 0x04C11DB7
     # 카드 C2: M = 1101, C = 1011 → F = 001

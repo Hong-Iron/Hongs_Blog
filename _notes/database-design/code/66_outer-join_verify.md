@@ -23,22 +23,21 @@ permalink: "/studies/database-design/code/66_outer-join_verify/"
 """외부 조인 검증 (SQLite).
 
 문서: 66.외부 조인
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.24~26, 12주차 p.8~9, 14주차 풀이 p.3~5, 8
 RIGHT, FULL OUTER JOIN은 SQLite 3.39부터 돈다. 같은 값을 66_outer-join_verify.sql(PostgreSQL 16)에서도 확인한다.
 주장:
-  1. 직원-상사 내부 조인은 7행, LEFT OUTER JOIN은 (Borg, NULL)이 더해져 8행 (p.24~25).
+  1. 직원-상사 내부 조인은 7행, LEFT OUTER JOIN은 (Borg, NULL)이 더해져 8행.
   2. RIGHT OUTER JOIN은 12행(부하가 없는 다섯 명이 왼쪽이 NULL인 채 남는다), FULL OUTER JOIN은 13행.
-  3. 짝 없는 행만 고르기(p.26): LEFT + IS NULL은 Borg, RIGHT + IS NULL은 5명.
+  3. 짝 없는 행만 고르기: LEFT + IS NULL은 Borg, RIGHT + IS NULL은 5명.
      직원 LEFT OUTER JOIN 부양가족은 12행이고, 짝 없는 행만 고르면 Q6과 같은 5명.
   4. 빈칸으로 채운 행도 한 줄이다: COUNT(*) 8, COUNT(S.Ssn) 7. 직원마다 세면 COUNT(*)는 1, COUNT(D.Essn)은 0.
   5. 오른쪽 표에 거는 조건을 WHERE에 두면 3행, ON에 두면 8행.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

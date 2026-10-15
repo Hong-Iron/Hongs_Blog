@@ -130,11 +130,11 @@ $$f(x, y) = x^3 - 3x + y^2$$의 임계점을 분류한다.
 
 ## 과목별 관점
 
-**수치해석 (2-2학기).** 두 변수 함수의 판정을 헤세 행렬의 행렬식 $$\vert H\vert  = \frac{\partial^2 f}{\partial x^2}\frac{\partial^2 f}{\partial y^2} - \left(\frac{\partial^2 f}{\partial x\,\partial y}\right)^2$$으로 쓴다. 임계점에서 $$\vert H\vert  > 0$$이고 $$\frac{\partial^2 f}{\partial x^2} > 0$$이면 극소, $$\vert H\vert  > 0$$이고 $$\frac{\partial^2 f}{\partial x^2} < 0$$이면 극대, $$\vert H\vert  < 0$$이면 안장점이다[^n1].
+**수치해석 (2-2학기).** 두 변수 함수의 판정을 헤세 행렬의 행렬식 $$\vert H\vert  = \frac{\partial^2 f}{\partial x^2}\frac{\partial^2 f}{\partial y^2} - \left(\frac{\partial^2 f}{\partial x\,\partial y}\right)^2$$으로 쓴다. 임계점에서 $$\vert H\vert  > 0$$이고 $$\frac{\partial^2 f}{\partial x^2} > 0$$이면 극소, $$\vert H\vert  > 0$$이고 $$\frac{\partial^2 f}{\partial x^2} < 0$$이면 극대, $$\vert H\vert  < 0$$이면 안장점이다.
 
-$$x$$ 방향과 $$y$$ 방향의 2계 도함수만 보면 안 된다. $$f = xy$$는 $$x$$축과 $$y$$축을 따라 보면 평평하지만, 대각선 $$y = x$$를 따라서는 올라가고 $$y = -x$$를 따라서는 내려간다. 그래서 섞인 편도함수 $$\frac{\partial^2 f}{\partial x\,\partial y}$$까지 넣은 $$\vert H\vert $$로 판정한다[^n2].
+$$x$$ 방향과 $$y$$ 방향의 2계 도함수만 보면 안 된다. $$f = xy$$는 $$x$$축과 $$y$$축을 따라 보면 평평하지만, 대각선 $$y = x$$를 따라서는 올라가고 $$y = -x$$를 따라서는 내려간다. 그래서 섞인 편도함수 $$\frac{\partial^2 f}{\partial x\,\partial y}$$까지 넣은 $$\vert H\vert $$로 판정한다.
 
-편도함수를 식으로 구하기 어려우면 중심 차분으로 근사한다[^n3].
+편도함수를 식으로 구하기 어려우면 중심 차분으로 근사한다.
 
 $$\frac{\partial f}{\partial x} \approx \frac{f(x + \delta x, y) - f(x - \delta x, y)}{2\delta x}, \qquad \frac{\partial^2 f}{\partial x^2} \approx \frac{f(x + \delta x, y) - 2f(x, y) + f(x - \delta x, y)}{\delta x^2}$$
 
@@ -177,11 +177,8 @@ $$\frac{\partial^2 f}{\partial x\,\partial y} \approx \frac{f(x + \delta x, y + 
 
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.7절 "Maxima/Minima Problems"(임계점, 2계 도함수 판정 $$D = f_{xx}f_{yy} - f_{xy}^2$$, 안장점). Strang, *Introduction to Linear Algebra* 5판, 6.5절(양의 정부호와 최솟점, 2차 근사).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Dauphin et al., "Identifying and attacking the saddle point problem in high-dimensional non-convex optimization", *NeurIPS* 2014. 23_hessian_verify.py의 무작위 대칭 행렬 실험은 이 관찰의 단순한 모형일 뿐 신경망 손실 곡면 자체를 보인 것은 아니다.
-[^n1]: 수치해석 15회 강의 자료 「na15_multiop」, p.11, p.15~16
-[^n2]: 같은 자료, p.12~14
-[^n3]: 같은 자료, p.17
-[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C4는 원본에 없다. 23_hessian_verify.py로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [23_hessian_plot.py](/Hongs_Blog/studies/calculus/code/23_hessian_plot/)로 그렸고, 예제의 값 $$f(1, 0) = -2$$, $$f(-1, 0) = 2$$, $$(1, 0)$$ 둘레 무작위 점 1,000개가 모두 $$-2$$보다 높은 것, $$(-1, 0)$$에서 $$x$$ 방향은 내려가고 $$y$$ 방향은 올라가는 것, 예시 세 함수의 원점 둘레 부호를 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정리의 두 변수 판정을 그렸다. $$D$$가 $$2 \times 2$$ 헤세 행렬의 행렬식이고 행렬식이 고윳값의 곱이라는 것은 선형대수의 표준 사실이다.
+[^s1]: Dauphin et al., "Identifying and attacking the saddle point problem in high-dimensional non-convex optimization", *NeurIPS* 2014. 23_hessian_verify.py의 무작위 대칭 행렬 실험은 이 관찰의 단순한 모형일 뿐 신경망 손실 곡면 자체를 보인 것은 아니다.
+[^sn1]: 23_hessian_verify.py로 확인했다.
+[^s2]: [23_hessian_plot.py](/Hongs_Blog/studies/calculus/code/23_hessian_plot/)로 그렸고, 예제의 값 $$f(1, 0) = -2$$, $$f(-1, 0) = 2$$, $$(1, 0)$$ 둘레 무작위 점 1,000개가 모두 $$-2$$보다 높은 것, $$(-1, 0)$$에서 $$x$$ 방향은 내려가고 $$y$$ 방향은 올라가는 것, 예시 세 함수의 원점 둘레 부호를 같은 코드로 확인했다.
+[^s3]: 정리의 두 변수 판정을 그렸다. $$D$$가 $$2 \times 2$$ 헤세 행렬의 행렬식이고 행렬식이 고윳값의 곱이라는 것은 선형대수의 표준 사실이다.
 {% endraw %}

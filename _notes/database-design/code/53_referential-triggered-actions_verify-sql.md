@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/53_referential-triggered-actions_verif
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 53.참조 동작 SET NULL·CASCADE·SET DEFAULT 검증 (PostgreSQL 16)
---   슬라이드 10 p.16, p.20~21의 DDL을 그대로 만들고 10-2 p.7~8의 물음을 실제로 돌린다.
+--   문서의 DDL을 그대로 만들고 문서의 물음을 실제로 돌린다.
 --   오류 번호: 23503 = 외래 키 위반(거부), 23502 = NOT NULL 위반, 42601 = 구문 오류
 \set QUIET 1
 SET client_min_messages TO warning;
@@ -40,8 +40,8 @@ BEGIN
   RETURN 'OK';
 END $f$;
 
--- COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21을 따른다.
--- 제약 이름, DEFAULT, 참조 동작은 슬라이드 10 p.16, p.20~21에 적힌 그대로다. 슬라이드가 동작을 적지 않은
+-- COMPANY 스키마와 상태.
+-- 제약 이름, DEFAULT, 참조 동작은 문서에 적힌 그대로다. 문서가 동작을 적지 않은
 -- PROJECT, WORKS_ON, DEPENDENT의 외래 키에는 아무 동작도 붙이지 않았다(기본값: 거부).
 -- EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 EMPLOYEE의 외래 키 두 개는 행을 넣은 뒤 ALTER TABLE로 붙인다.
 CREATE TABLE EMPLOYEE (
@@ -96,7 +96,7 @@ ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPSUPERFK FOREIGN KEY (Super_ssn) REFERENCE
 ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPDEPTFK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber)
   ON DELETE SET DEFAULT ON UPDATE CASCADE;
 
--- EMPLOYEE 한 표만 따로 떼어 낸 것 (10-2 p.8의 물음용). 외래 키 동작만 바꿔 가며 쓴다.
+-- EMPLOYEE 한 표만 따로 떼어 낸 것 (CASCADE 물음용). 외래 키 동작만 바꿔 가며 쓴다.
 CREATE TABLE EMP_NULL AS SELECT * FROM EMPLOYEE;
 ALTER TABLE EMP_NULL ADD PRIMARY KEY (Ssn);
 ALTER TABLE EMP_NULL ADD FOREIGN KEY (Super_ssn) REFERENCES EMP_NULL(Ssn) ON DELETE SET NULL ON UPDATE CASCADE;
@@ -113,7 +113,7 @@ DO $$ BEGIN
   ASSERT err_of($q$UPDATE EMP_NONE SET Ssn = '444335555' WHERE Ssn = '333445555'$q$) = '23503', '가리키는 행이 있는데 번호가 바뀌었다';
 END $$;
 
--- 2. EMPLOYEE 한 표: ON DELETE SET NULL, ON UPDATE CASCADE (슬라이드 10 p.20)
+-- 2. EMPLOYEE 한 표: ON DELETE SET NULL, ON UPDATE CASCADE
 BEGIN;
 DELETE FROM EMP_NULL WHERE Ssn = '333445555';
 DO $$ BEGIN
@@ -130,7 +130,7 @@ DO $$ BEGIN
 END $$;
 ROLLBACK;
 
--- 3. 여섯 표가 다 있을 때 (10-2 p.7의 물음)
+-- 3. 여섯 표가 다 있을 때
 DO $$ BEGIN
   ASSERT err_of($q$DELETE FROM EMPLOYEE WHERE Ssn = '333445555'$q$) = '23503', 'WORKS_ON과 DEPENDENT가 가리키므로 거부되어야 한다';
   ASSERT err_of($q$UPDATE EMPLOYEE SET Ssn = '444335555' WHERE Ssn = '333445555'$q$) = '23503', '같은 까닭으로 거부되어야 한다';
@@ -184,7 +184,7 @@ DO $$ BEGIN
   ASSERT err_of($q$DELETE FROM D WHERE Dnumber = 1$q$) = '23502', 'NOT NULL 열을 NULL로 만들 수는 없다';
 END $$;
 
--- 4. 10-2 p.8: EMPSUPERFK가 ON DELETE CASCADE일 때
+-- 4. EMPSUPERFK가 ON DELETE CASCADE일 때
 BEGIN;
 DELETE FROM EMP_CASC WHERE Lname = 'Wong';
 DO $$ BEGIN

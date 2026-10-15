@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/23_indirect-addressing_verify/"
 
 실행: python3 23_indirect-addressing_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -261,14 +261,14 @@ def must_fail(fn, *args):
 
 
 if __name__ == "__main__":
-    # p.8 간접 피연산자
+    # 간접 피연산자
     c = CPU(); d = Data(c)
     d.byte("val1", 0x10, 0x20, 0x30)
     c.mov("esi", d.offset("val1"))
     c.mov("al", ("m", c.get("esi"), 1)); assert c.get("al") == 0x10
     c.inc("esi"); c.mov("al", ("m", c.get("esi"), 1)); assert c.get("al") == 0x20
     c.inc("esi"); c.mov("al", ("m", c.get("esi"), 1)); assert c.get("al") == 0x30
-    # p.9 크기를 모르는 [esi]
+    # 크기를 모르는 [esi]
     c = CPU(); d = Data(c)
     d.word("myCount", 0)
     c.mov("esi", d.offset("myCount"))
@@ -280,7 +280,7 @@ if __name__ == "__main__":
     c.inc(("m", 0x500, 1)); assert c.dump(0x500, 2) == [0x00, 0x01]
     c.mem[0x500], c.mem[0x501] = 0xFF, 0x01
     c.inc(("m", 0x500, 2)); assert c.dump(0x500, 2) == [0x00, 0x02]
-    # p.10 배열 합 (추적 표)
+    # 배열 합 (추적 표)
     c = CPU(); d = Data(c, base=0x00404000)
     d.word("arrayW", 0x1000, 0x2000, 0x3000)
     trace = []
@@ -299,7 +299,7 @@ if __name__ == "__main__":
     c.add("esi", 4); c.add("eax", ("m", c.get("esi"), 4))
     c.add("esi", 4); c.add("eax", ("m", c.get("esi"), 4))
     assert c.get("eax") == 0x60000
-    # p.11 인덱스 피연산자 (더블워드판 포함)
+    # 인덱스 피연산자 (더블워드판 포함)
     c = CPU(); d = Data(c)
     d.word("arrayW", 0x1000, 0x2000, 0x3000); d.dword("arrayD", 0x10000, 0x20000, 0x30000)
     c.mov("esi", 0); c.mov("ax", d.m("arrayW", c.get("esi"))); assert c.get("ax") == 0x1000
@@ -309,7 +309,7 @@ if __name__ == "__main__":
     c.add("esi", 4); c.add("eax", d.m("arrayD", c.get("esi")))
     c.add("esi", 4); c.add("eax", d.m("arrayD", c.get("esi")))
     assert c.get("eax") == 0x60000
-    # p.12 인덱스에 TYPE 곱하기
+    # 인덱스에 TYPE 곱하기
     c = CPU(); d = Data(c)
     d.byte("arrayB", 0, 1, 2, 3, 4, 5); d.word("arrayW", 0, 1, 2, 3, 4, 5); d.dword("arrayD", 0, 1, 2, 3, 4, 5)
     c.mov("esi", 4)
@@ -322,7 +322,7 @@ if __name__ == "__main__":
     # 곱하지 않으면: arrayW[4]는 2번 원소, arrayD[4]는 1번 원소
     c.mov("bx", d.m("arrayW", 4)); assert c.get("bx") == 2
     c.mov("edx", d.m("arrayD", 4)); assert c.get("edx") == 1
-    # p.13 포인터 변수
+    # 포인터 변수
     c = CPU(); d = Data(c)
     d.word("arrayW", 0x1000, 0x2000, 0x3000); d.dword("ptrW", d.offset("arrayW"))
     c.mov("esi", d.m("ptrW")); assert c.get("esi") == d.offset("arrayW")

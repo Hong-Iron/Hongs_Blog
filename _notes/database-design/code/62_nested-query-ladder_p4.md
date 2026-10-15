@@ -23,7 +23,7 @@ permalink: "/studies/database-design/code/62_nested-query-ladder_p4/"
 """중첩 질의 쓰기 예제 사다리의 문제 1~4 확인. SQLite, COMPANY.
 
 문서: 62.중첩 질의 쓰기 예제 사다리
-출처: 문제 1은 11주차 슬라이드 11-2_SQL-DML-Complex p.11의 Q4A. 문제 2~4는 이 문서에서 만들었다.
+출처: 문제 1은 Elmasri & Navathe의 질의 Q4A다. 문제 2~4는 이 문서에서 만들었다.
 확인하는 것:
   문제 1. 안쪽 질의 둘의 결과는 0행과 {1, 2}, 전체 답은 프로젝트 번호 1, 2.
   문제 2. 평균 급여는 35125, 그보다 많이 받는 직원은 Wong, Wallace, Narayan, Borg.
@@ -33,7 +33,7 @@ permalink: "/studies/database-design/code/62_nested-query-ladder_p4/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,

@@ -22,10 +22,10 @@ permalink: "/studies/database-design/code/46_sql-create-table_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 46.CREATE SCHEMA와 CREATE TABLE 검증 (PostgreSQL 16). SQLite가 못 돌리거나 다르게 받는 문장을 실제로 돌린다.
---   1. CREATE SCHEMA COMPANY AUTHORIZATION 'Jsmith' (슬라이드 10 p.11): 따옴표가 있으면 구문 오류, 없으면 돈다
---   2. 아직 없는 표를 가리키는 FOREIGN KEY는 CREATE TABLE에서 오류다 (슬라이드 9 p.18의 물음)
+--   1. CREATE SCHEMA COMPANY AUTHORIZATION 'Jsmith': 따옴표가 있으면 구문 오류, 없으면 돈다
+--   2. 아직 없는 표를 가리키는 FOREIGN KEY는 CREATE TABLE에서 오류다 (문서의 "이것으로 충분한가" 물음)
 --   3. 서로 가리키는 EMPLOYEE와 DEPARTMENT: 어느 쪽 행을 먼저 넣어도 막힌다. 푸는 길 둘을 돌려 본다
---   4. 슬라이드대로 Hours에 NOT NULL을 붙이면 상태의 (888665555, 20, NULL) 행이 들어가지 않는다
+--   4. Hours에 NOT NULL을 붙이면 상태의 (888665555, 20, NULL) 행이 들어가지 않는다
 \set QUIET 1
 SET client_min_messages TO warning;
 DROP SCHEMA IF EXISTS sql_create_table CASCADE;
@@ -55,7 +55,7 @@ DO $$ BEGIN
   ASSERT (SELECT schema_owner FROM information_schema.schemata WHERE schema_name = 'company') = 'jsmith', '스키마 주인이 jsmith가 아니다';
 END $$;
 
--- 2. 표 이름 앞에 스키마 이름을 붙인다 (슬라이드 10 p.12). 아직 없는 표를 가리키면 오류다.
+-- 2. 표 이름 앞에 스키마 이름을 붙인다. 아직 없는 표를 가리키면 오류다.
 DO $$ BEGIN
   ASSERT err_of($q$CREATE TABLE COMPANY.EMPLOYEE (Ssn CHAR(9) NOT NULL, Dno INT NOT NULL, PRIMARY KEY (Ssn),
                    FOREIGN KEY (Dno) REFERENCES COMPANY.DEPARTMENT(Dnumber))$q$) = '42P01', 'DEPARTMENT가 없는데 받았다';
@@ -67,7 +67,7 @@ DO $$ BEGIN
                    FOREIGN KEY (Super_ssn) REFERENCES SELF_REF(Ssn))$q$) = 'OK', '자기 자신을 가리키는 외래 키';
 END $$;
 
--- 슬라이드 9 p.17~18의 여섯 문장. EMPLOYEE에는 외래 키 줄이 없다. Hours는 슬라이드대로 NOT NULL이다.
+-- COMPANY의 여섯 문장. EMPLOYEE에는 외래 키 줄이 없다. 여기서는 Hours에 NOT NULL을 붙였다.
 CREATE TABLE COMPANY.EMPLOYEE (
   Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE DEPENDENT (
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'company') = 6, '표가 여섯 개가 아니다';
   ASSERT (SELECT COUNT(*) FROM pg_constraint WHERE connamespace = 'company'::regnamespace AND contype = 'f') = 6,
-         '슬라이드 문장만으로는 외래 키가 여섯 개여야 한다(EMPLOYEE의 둘이 빠져 있다)';
+         '여섯 문장만으로는 외래 키가 여섯 개여야 한다(EMPLOYEE의 둘이 빠져 있다)';
 END $$;
 
 -- 빠진 두 외래 키를 ALTER TABLE로 붙인다. 표가 모두 생긴 뒤라 이제는 받는다.

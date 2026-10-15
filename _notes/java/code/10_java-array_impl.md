@@ -30,7 +30,7 @@ class ArrayImpl {
         if (!ok) throw new AssertionError(what);
     }
 
-    // 슬라이드의 "java Sum 10 20": 실행할 때 준 글자들이 String[] args로 들어온다
+    // 문서의 "java Sum 10 20": 실행할 때 준 글자들이 String[] args로 들어온다
     static int sumArgs(String[] args) {
         int sum = 0;
         for (String arg : args) {
@@ -100,7 +100,7 @@ class ArrayImpl {
         }
         check(total == 432, "모든 점수의 합 432");
 
-        // 6. 참조 타입 배열 (슬라이드 strArray)
+        // 6. 참조 타입 배열 (문서의 strArray)
         String[] strArray = new String[3];
         check(strArray[0] == null, "처음에는 null");
         strArray[0] = "Java";

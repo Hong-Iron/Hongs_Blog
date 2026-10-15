@@ -23,7 +23,7 @@ code_count: 0
 permalink: "/studies/abnormal-psychology/schizoid-vs-schizotypal/"
 ---
 {% raw %}
-이름이 한 글자 차이이고 둘 다 친구 없이 고립되어 있다. 가르는 질문은 "관계에 관심이 없어서 혼자인가, 아니면 관계가 불안하고 생각과 지각이 기이한가"다. 조현성은 "없음"(관심, 감정)의 장애이고, 조현형은 "이상함"(사고, 지각, 행동)의 장애다[^1][^2].
+이름이 한 글자 차이이고 둘 다 친구 없이 고립되어 있다. 가르는 질문은 "관계에 관심이 없어서 혼자인가, 아니면 관계가 불안하고 생각과 지각이 기이한가"다. 조현성은 "없음"(관심, 감정)의 장애이고, 조현형은 "이상함"(사고, 지각, 행동)의 장애다.
 
 ## 어느 쪽일까
 
@@ -52,7 +52,7 @@ permalink: "/studies/abnormal-psychology/schizoid-vs-schizotypal/"
 | 조현병과의 관계 | 병전 전구기로 나타나기도 한다 | 조현병 스펙트럼에 공식적으로 포함된다 |
 | 약물 | 소량의 항정신병 약물, 항우울제, 정신자극제 | 항정신병 약물(50%에서 개선) |
 
-[^1][^2]
+
 
 ## 둘 다 아닐 때
 
@@ -60,7 +60,5 @@ permalink: "/studies/abnormal-psychology/schizoid-vs-schizotypal/"
 - **고립의 이유가 타인에 대한 불신과 의심일 때:** [편집성 성격장애](/Hongs_Blog/studies/abnormal-psychology/paranoid-pd/).
 - **사회적 의사소통의 결함과 제한적·반복적 행동이 발달 초기부터 있을 때:** [자폐스펙트럼장애](/Hongs_Blog/studies/abnormal-psychology/autism-spectrum-disorder/). 성격장애의 진단은 이 신경발달장애로 더 잘 설명되지 않아야 한다[^s1].
 
-[^1]: 이상 심리학 12회 강의 자료 「성격장애」, p.14~18 (조현성)
-[^2]: 이상 심리학 12회 강의 자료 「성격장애」, p.20~24 (조현형)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR은 조현성·조현형 성격장애의 배제 조건에 자폐스펙트럼장애를 둔다.
+[^s1]: DSM-5-TR은 조현성·조현형 성격장애의 배제 조건에 자폐스펙트럼장애를 둔다.
 {% endraw %}

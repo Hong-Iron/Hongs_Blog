@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Program Template", "프로그램 템플릿", "AddTwo", "AddSub", ".386", ".model", ".stack", ".data", ".code", "PROC", "ENDP", "END", "ExitProcess", "코딩 규칙", "Coding Standards"]
 description: "어셈블리어 프로그램은 매번 똑같은 뼈대 위에 쓴다. 이력서 양식처럼 칸이 미리 나뉘어 있어서, 변수는 변수 칸에, 실행할 코드는 코드 칸에 채워 넣으면 된다. 뼈대를 한 번 익히면 새 프로그램마다 바뀌는 곳은 두 칸뿐이다. 다만 뼈대의 줄들은 순서와 짝이 맞아야 하고, 끝내는 줄을…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/asm-program-template/"
 
 ## 예시로 보기
 
-실제로 하고 싶은 일은 "5에 6을 더한다" 두 줄이다. 그런데 어셈블러는 이 두 줄만으로는 프로그램을 만들지 못한다. 어떤 프로세서용인지, 코드가 어디서 시작하는지, 끝나면 무엇을 할지를 알려 주어야 한다. 슬라이드의 첫 프로그램이다[^1].
+실제로 하고 싶은 일은 "5에 6을 더한다" 두 줄이다. 그런데 어셈블러는 이 두 줄만으로는 프로그램을 만들지 못한다. 어떤 프로세서용인지, 코드가 어디서 시작하는지, 끝나면 무엇을 할지를 알려 주어야 한다. 가장 작은 완성 프로그램은 이렇다.
 
 ```asm
 ; AddTwo.asm – adds two 32-bit integers
@@ -56,22 +56,15 @@ END main
 가운데 `mov`와 `add` 두 줄만 프로세서가 실행하는 계산이다. 나머지는 뼈대다. 두 줄을 실행하면 EAX는 5 + 6 = 11, 16진수로 `0000000Bh`가 된다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: AddTwo의 EAX = `0000000Bh`, AddSub2의 EAX = `00030000h`와 `finalVal`, 두 프로그램이 끝날 때의 플래그, 슬라이드 p.16의 출력이 어느 프로그램의 것인지, 카드의 값 — [10_asm-program-template_verify.py](/Hongs_Blog/studies/assembly-language/code/10_asm-program-template_verify/). 파이썬 흉내로 확인했다.</div>
+<div class="callout-title" markdown="span">검증: AddTwo의 EAX = `0000000Bh`, AddSub2의 EAX = `00030000h`와 `finalVal`, 두 프로그램이 끝날 때의 플래그, 디버거 화면의 `EAX=00030000`·`EFL=00000206`이 AddSub2의 결과와 맞고 AddTwo의 결과와는 맞지 않는 것, 카드의 값 — [10_asm-program-template_verify.py](/Hongs_Blog/studies/assembly-language/code/10_asm-program-template_verify/). 파이썬 흉내로 확인했다.</div>
 
 </div>
 
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: AddTwo 프로그램(4주차 4-1, p.15) 바로 뒤 p.16의 "Example Output"이 `EAX=00030000`을 보여 준다. / 문제점: AddTwo를 실행하면 EAX는 5 + 6 = `0000000Bh`다. `00030000h`가 될 수 없다. / 수정안: p.16의 출력은 `10000h + 40000h − 20000h`를 계산하는 AddSub 프로그램(4주차 4-3, p.5)의 결과로 읽는다. / 근거: 흉내 실행에서 AddTwo는 `0Bh`, AddSub2는 `30000h`가 나온다. 출력의 `EFL=00000206`은 짝수 플래그가 켜진 값인데, 이것도 `30000h`(아래 8비트 `00h`)와는 맞고 `0Bh`(1인 비트가 3개)와는 맞지 않는다.
-
-</div>
 
 
 ## 틀
 
-새 프로그램을 쓸 때 베껴 쓰는 뼈대다[^2].
+새 프로그램을 쓸 때 베껴 쓰는 뼈대다.
 
 ```asm
 ; Program Template           (Template.asm)
@@ -111,11 +104,11 @@ END main
 | `INVOKE ExitProcess,0` | 운영체제에 "끝났다"고 알리고 프로그램을 끝낸다. 0은 정상 종료라는 뜻으로 넘기는 값이다 |
 | `END main` | 원본의 마지막 줄이다. 프로그램이 `main`에서 시작한다고도 알린다 |
 
-표의 줄은 모두 어셈블러에게 하는 지시(지시어)이고 프로세서가 실행하는 명령이 아니다. `INVOKE`만은 어셈블러가 그 자리에 프로시저를 부르는 명령어를 써넣는다: [지시어와 명령어 비교](/Hongs_Blog/studies/assembly-language/directive-vs-instruction/). 프로그램은 코드, 데이터, 스택 세 구역(세그먼트)으로 이루어진다[^3].
+표의 줄은 모두 어셈블러에게 하는 지시(지시어)이고 프로세서가 실행하는 명령이 아니다. `INVOKE`만은 어셈블러가 그 자리에 프로시저를 부르는 명령어를 써넣는다: [지시어와 명령어 비교](/Hongs_Blog/studies/assembly-language/directive-vs-instruction/). 프로그램은 코드, 데이터, 스택 세 구역(세그먼트)으로 이루어진다.
 
 ### 변수를 쓰는 프로그램
 
-`.data` 칸에 변수를 두면 이렇게 된다[^4].
+`.data` 칸에 변수를 두면 이렇게 된다.
 
 ```asm
 TITLE Add and Subtract, Version 2         (AddSub2.asm)
@@ -149,11 +142,11 @@ END main
 | `sub eax,val3` | `00030000h` | 그대로 |
 | `mov finalVal,eax` | `00030000h` | `00030000h` |
 
-이 프로그램은 뼈대의 앞 네 줄 대신 `INCLUDE Irvine32.inc` 한 줄을 쓴다. 이 파일 안에 `.model`과 `.stack` 같은 줄과 라이브러리 프로시저의 선언이 들어 있기 때문이다. `exit`는 `INVOKE ExitProcess,0`의 줄임말이다[^s2]. `call DumpRegs`는 레지스터와 플래그를 화면에 찍는 라이브러리 프로시저를 부른다: [Irvine32 라이브러리](/Hongs_Blog/studies/assembly-language/irvine32-library/).
+이 프로그램은 뼈대의 앞 네 줄 대신 `INCLUDE Irvine32.inc` 한 줄을 쓴다. 이 파일 안에 `.model`과 `.stack` 같은 줄과 라이브러리 프로시저의 선언이 들어 있기 때문이다. `exit`는 `INVOKE ExitProcess,0`의 줄임말이다[^s2]. `call DumpRegs`는 레지스터와 플래그를 화면에 찍는 라이브러리 프로시저를 부른다: [Irvine32 라이브러리](/Hongs_Blog/studies/assembly-language/irvine32-library/). 이 프로그램에서는 EAX가 `00030000`으로 찍힌다. 화면 전체의 모양은 [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)의 예제에 있다.
 
 ### 권하는 쓰기 규칙
 
-어셈블러가 강제하는 것은 아니고, 읽기 좋게 쓰자는 약속이다[^5].
+어셈블러가 강제하는 것은 아니고, 읽기 좋게 쓰자는 약속이다.
 
 - 대문자 쓰기는 한 가지로 정해 끝까지 지킨다. 전부 소문자, 전부 대문자, 예약어만 대문자, 지시어와 연산자만 대문자 가운데 고른다.
 - 이름은 뜻이 드러나게 짓는다.
@@ -202,11 +195,6 @@ END main
 </details>
 
 
-[^1]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-1」, p.15 (Example: Adding and Subtracting Integers, AddTwo.asm)
-[^2]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-1」, p.19 (Program Template)
-[^3]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-3」, p.13 (Summary: code, data, and stack segments)
-[^4]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-3」, p.5 (Adding Variables to AddSub, AddSub2.asm)
-[^5]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-1」, p.17~18 (Suggested Coding Standards)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이력서 양식 비유, 줄마다 하는 일을 적은 표, 끝내는 줄을 빼면 생기는 일, 카드 C3의 구역 순서 이야기는 슬라이드에 없다. 슬라이드는 프로그램과 틀을 코드로만 보여 준다. 표의 풀이는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 3.2절을 따랐다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> AddSub2의 추적 표, `INCLUDE Irvine32.inc`가 앞 줄들을 대신한다는 것, `exit`의 뜻은 슬라이드에 없다. 추적 표는 검증 코드의 흉내 실행 결과다. `INCLUDE`가 선언을 베껴 넣는다는 것은 7주차 3-1 p.2에 나온다("The INCLUDE directive copies in the procedure prototypes"). `.MODEL flat,stdcall`, `.STACK 4096`, `exit EQU <INVOKE ExitProcess,0>`은 Irvine32.inc가 불러오는 정의 파일 SmallWin.inc에 적혀 있다.
+[^s1]: 표의 풀이는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 3.2절을 따랐다.
+[^s2]: 추적 표는 검증 코드의 흉내 실행 결과다. `.MODEL flat,stdcall`, `.STACK 4096`, `exit EQU <INVOKE ExitProcess,0>`은 Irvine32.inc가 불러오는 정의 파일 SmallWin.inc에 적혀 있다.
 {% endraw %}

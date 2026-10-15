@@ -71,20 +71,20 @@ error: cannot assign a value to final variable id
 
 ## 정의
 
-**final 필드**는 값을 한 번 넣으면 프로그램이 도는 동안 바꿀 수 없는 필드다[^1].
+**final 필드**는 값을 한 번 넣으면 프로그램이 도는 동안 바꿀 수 없는 필드다.
 
 ```java
 final 타입 필드 [= 초기값];
 ```
 
-처음 값을 주는 방법은 둘 중 하나다[^1].
+처음 값을 주는 방법은 둘 중 하나다.
 
 1. 필드를 선언하면서 준다(`school`). 모든 객체가 같은 값을 가진다.
 2. 생성자에서 준다(`id`). 객체마다 다른 값을 가질 수 있다.
 
 둘 다 하지 않으면 번역되지 않는다. `final String id;`만 두고 생성자에서 넣지 않으면 `variable id might not have been initialized` 오류가 난다. 값을 줄 기회가 다시는 없기 때문이다[^s1].
 
-**상수**는 바뀌지 않는 값을 담는 필드다. 상수는 객체마다 따로 둘 까닭이 없고(`static`), 값이 여럿이어서도 안 되므로(`final`), `static`과 `final`을 함께 붙인다[^2].
+**상수**는 바뀌지 않는 값을 담는 필드다. 상수는 객체마다 따로 둘 까닭이 없고(`static`), 값이 여럿이어서도 안 되므로(`final`), `static`과 `final`을 함께 붙인다.
 
 ```java
 static final 타입 상수 [= 초기값];
@@ -168,7 +168,5 @@ s.healths ──(final: 이 화살표를 못 바꾼다)──▶ [ 100 | 45 | 45
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 7회 강의 자료 「Software Project 07. Class (2)」, p.7 (Declaring final fields, `final 타입 필드 [=초기값];`)
-[^2]: 같은 자료, p.8 (Declaring Constants, `static final 타입 상수 [= 초기값];`)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에는 선언 형식 두 줄만 있고 예제 코드가 없다. `Student`·`Game`·`Squad` 예와 출력, 오류 문구, 비교 표, 대문자 이름 관례, 가리키는 대상의 속은 바뀐다는 설명과 그림, 메서드·클래스에 붙는 `final`, 카드 C2·C3은 원본에 없다. 모두 JDK 21에서 직접 실행·컴파일해 확인했다. 상수 이름 관례는 Oracle의 Java Code Conventions 9절에 있다.
+[^s1]: 모두 JDK 21에서 직접 실행·컴파일해 확인했다. 상수 이름 관례는 Oracle의 Java Code Conventions 9절에 있다.
 {% endraw %}

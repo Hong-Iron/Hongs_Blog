@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Bitwise Operator", "비트 연산자", "비트 논리 연산자", "Bitwise Logical Operator", "비트 AND", "비트 OR", "비트 XOR", "비트 NOT", "시프트 연산자", "비트 이동 연산자", "Shift Operator", "산술 시프트", "Arithmetic Shift", "논리 시프트", "Logical Shift", "비트 마스크", "Bit Mask"]
 description: "컴퓨터 속의 정수는 켜짐과 꺼짐을 나타내는 스위치가 한 줄로 늘어선 것이다. 비트 연산은 수를 크기로 보지 않고 이 스위치 줄로 보아, 같은 자리의 스위치끼리 짝지어 계산하거나 줄 전체를 옆으로 민다. 스위치 하나하나를 따로 켜고 끄고 확인할 수 있고, 2를 곱하거나 나누는 일을 …"
@@ -36,7 +36,7 @@ permalink: "/studies/java/java-bitwise/"
 
 파일 하나에 "읽기 가능, 쓰기 가능, 실행 가능"을 적어 두려 한다. `boolean` 변수 셋을 둘 수도 있다. 하지만 예/아니오 하나는 스위치 하나, 곧 1비트면 충분하다. 정수 하나의 비트 셋에 나눠 담으면 변수 하나로 끝난다. 그러려면 정수의 특정 비트만 건드리는 연산이 필요하다.
 
-슬라이드가 묻는 `45 & 25`부터 푼다[^1]. 두 수를 2진수로 적고 같은 자리끼리 본다. 둘 다 1인 자리만 1이다.
+`45 & 25`부터 풀어 본다. 두 수를 2진수로 적고 같은 자리끼리 본다. 둘 다 1인 자리만 1이다.
 
 ```
   45 = 0 0 1 0 1 1 0 1
@@ -55,7 +55,7 @@ permalink: "/studies/java/java-bitwise/"
 
 ## 비트 논리 연산
 
-비트 하나하나에 논리 연산을 한다. 1을 참, 0을 거짓으로 보면 [논리 연산자](/Hongs_Blog/studies/java/java-operators/)와 규칙이 같다[^2].
+비트 하나하나에 논리 연산을 한다. 1을 참, 0을 거짓으로 보면 [논리 연산자](/Hongs_Blog/studies/java/java-operators/)와 규칙이 같다.
 
 | 연산 | 기호 | 결과 비트가 1인 때 | 45와 25로 하면 |
 |---|---|---|---|
@@ -66,11 +66,11 @@ permalink: "/studies/java/java-bitwise/"
 
 `~45`가 왜 −46일까? 모든 비트를 뒤집으면 맨 앞의 부호 비트도 1이 되어 음수가 된다. 자바가 음수를 적는 방식에서는 "비트를 모두 뒤집고 1을 더한 것"이 부호를 바꾼 수다. 그래서 뒤집기만 한 것은 부호를 바꾼 수보다 1 작다. 식으로는 `~x`가 늘 $$-x - 1$$이다[^s1]. 45를 넣으면 $$-45 - 1 = -46$$이다. 자세한 것은 [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)에 있다.
 
-피연산자는 정수 타입(`byte`, `short`, `int`, `long`)만 된다. `float`와 `double`은 안 된다[^2]. `1.5 & 1`은 `bad operand types for binary operator '&'`라는 컴파일 오류다[^s1]. `byte`와 `short`는 [타입 변환](/Hongs_Blog/studies/java/java-type-conversion/)에서 본 대로 `int`로 바뀐 뒤 계산되므로 결과는 `int`다.
+피연산자는 정수 타입(`byte`, `short`, `int`, `long`)만 된다. `float`와 `double`은 안 된다. `1.5 & 1`은 `bad operand types for binary operator '&'`라는 컴파일 오류다[^s1]. `byte`와 `short`는 [타입 변환](/Hongs_Blog/studies/java/java-type-conversion/)에서 본 대로 `int`로 바뀐 뒤 계산되므로 결과는 `int`다.
 
 ## 시프트 연산
 
-비트 줄 전체를 왼쪽이나 오른쪽으로 민다[^3].
+비트 줄 전체를 왼쪽이나 오른쪽으로 민다.
 
 | 식 | 하는 일 | 빈자리 |
 |---|---|---|
@@ -78,7 +78,7 @@ permalink: "/studies/java/java-bitwise/"
 | `a >> b` | 비트를 오른쪽으로 `b`칸 민다 | 왼쪽 빈자리를 맨 앞 비트(부호 비트)와 같은 값으로 채운다 |
 | `a >>> b` | 비트를 오른쪽으로 `b`칸 민다 | 왼쪽 빈자리를 0으로 채운다 |
 
-`1 << 3`을 따라가 본다. `int`는 32비트지만 아래 8비트만 그린다[^3].
+`1 << 3`을 따라가 본다. `int`는 32비트지만 아래 8비트만 그린다.
 
 ```
  1      = ... 0 0 0 0 0 0 0 1
@@ -86,7 +86,7 @@ permalink: "/studies/java/java-bitwise/"
               (왼쪽 끝에서 밀려난 3비트는 버리고, 오른쪽 빈 3칸은 0)
 ```
 
-10진수에서 숫자를 왼쪽으로 한 칸 밀고 0을 붙이면 10배가 된다. 2진수에서는 2배다. 그래서 왼쪽으로 `b`칸 밀면 $$2^b$$를 곱한 것과 같다. $$1 \times 2^3 = 8$$이다[^3].
+10진수에서 숫자를 왼쪽으로 한 칸 밀고 0을 붙이면 10배가 된다. 2진수에서는 2배다. 그래서 왼쪽으로 `b`칸 밀면 $$2^b$$를 곱한 것과 같다. $$1 \times 2^3 = 8$$이다.
 
 오른쪽으로 미는 연산이 둘인 것은 음수 때문이다. −8을 오른쪽으로 한 칸 밀어 본다.
 
@@ -98,12 +98,7 @@ permalink: "/studies/java/java-bitwise/"
 
 `>>`는 부호를 지켜 준다. `>>>`는 부호 비트 자리에 0이 들어와 아주 큰 양수가 된다. 양수에서는 둘의 답이 같다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.12 표의 `a >> b` 설명 "a / 2^b와 동일한 결과가 됨" / 문제점: `a`가 음수이고 $$2^b$$로 나누어떨어지지 않으면 다르다. 자바의 `/`는 0 쪽으로 버리고 `>>`는 작은 쪽으로 내린다. / 수정안: "a를 $$2^b$$로 나눈 뒤 내림한 값. a가 0 이상이면 a / 2^b와 같다" / 근거: `-7 >> 1`은 −4, `-7 / 2`는 −3이다. −200 ~ 200의 모든 정수에서 `x >> s`가 `Math.floorDiv(x, 1 << s)`와 같았다(구현 코드 2번).
-
-</div>
+`>>`로 `b`칸 미는 것은 $$2^b$$로 나누는 일과 거의 같다. 정확히는 `a >> b`가 $$a / 2^b$$를 작은 쪽으로 내린 값 $$\lfloor a / 2^b \rfloor$$이다($$\lfloor \ \rfloor$$는 소수점 아래를 작은 쪽으로 내린다는 기호다). 자바의 `/`는 0 쪽으로 버린다. 그래서 `a`가 음수이고 $$2^b$$로 나누어떨어지지 않으면 둘이 다르다. `-7 / 2`는 −3.5를 0 쪽으로 버린 −3이고, `-7 >> 1`은 작은 쪽으로 내린 −4다. `a`가 0 이상이면 둘이 같다[^s1].
 
 
 ## 예제
@@ -163,12 +158,12 @@ int green = (color >> 8) & 0xFF;   // 0x82 = 130
 | `>>` | `SAR` | 왼쪽을 부호 비트로 |
 | `>>>` | `SHR` | 왼쪽을 0으로 |
 
-강의는 빈자리를 0으로 채우는 밀기를 논리 시프트, 부호 비트를 베껴 채우는 밀기를 산술 시프트라 부른다. 산술 시프트는 수의 부호를 지킨다[^a1]. 슬라이드의 예로 `mov dl,-80` 뒤에 `sar dl,1`을 하면 −40, 이어서 `sar dl,2`를 하면 −10이다. `mov dl,80` 뒤의 `shr dl,1`은 40이다[^a2]. 자세한 것은 [시프트 명령](/Hongs_Blog/studies/assembly-language/shift-instructions/)과 [논리 시프트와 산술 시프트 비교](/Hongs_Blog/studies/assembly-language/logical-vs-arithmetic-shift/)에 있다.
+빈자리를 0으로 채우는 밀기를 논리 시프트, 부호 비트를 베껴 채우는 밀기를 산술 시프트라 부른다. 산술 시프트는 수의 부호를 지킨다. 예를 들어 `mov dl,-80` 뒤에 `sar dl,1`을 하면 −40, 이어서 `sar dl,2`를 하면 −10이다. `mov dl,80` 뒤의 `shr dl,1`은 40이다. 자세한 것은 [시프트 명령](/Hongs_Blog/studies/assembly-language/shift-instructions/)과 [논리 시프트와 산술 시프트 비교](/Hongs_Blog/studies/assembly-language/logical-vs-arithmetic-shift/)에 있다.
 
 어셈블리어 쪽에만 있는 것이 둘 있다.
 
-- **밀려 나간 비트가 남는다.** Java에서는 밖으로 밀려난 비트가 그냥 사라진다. CPU에서는 마지막으로 밀려난 비트가 올림 플래그 CF에 들어간다[^a1].
-- **결과가 0인지가 따로 남는다.** `AND`, `OR`, `XOR`은 결과가 0이면 ZF라는 표시를 켠다. 그래서 위의 `(flags & WRITE) != 0`을 어셈블리어로는 값을 바꾸지 않고 AND만 해 보는 `test` 한 줄과 "0이 아니면 가라"는 `jnz` 한 줄로 쓴다[^a3]. 명령마다의 쓰임은 [비트 논리 명령](/Hongs_Blog/studies/assembly-language/bitwise-instructions/)과 [TEST와 CMP](/Hongs_Blog/studies/assembly-language/test-cmp/)에 있다.
+- **밀려 나간 비트가 남는다.** Java에서는 밖으로 밀려난 비트가 그냥 사라진다. CPU에서는 마지막으로 밀려난 비트가 올림 플래그 CF에 들어간다.
+- **결과가 0인지가 따로 남는다.** `AND`, `OR`, `XOR`은 결과가 0이면 ZF라는 표시를 켠다. 그래서 위의 `(flags & WRITE) != 0`을 어셈블리어로는 값을 바꾸지 않고 AND만 해 보는 `test` 한 줄과 "0이 아니면 가라"는 `jnz` 한 줄로 쓴다. 명령마다의 쓰임은 [비트 논리 명령](/Hongs_Blog/studies/assembly-language/bitwise-instructions/)과 [TEST와 CMP](/Hongs_Blog/studies/assembly-language/test-cmp/)에 있다.
 
 위 경계 사례의 "`int`를 32칸 이상 밀면 칸 수를 32로 나눈 나머지만 쓴다"도 CPU에서 온 것이다. x86의 시프트 명령은 32비트 값을 밀 때 칸 수의 아래 5비트만 본다[^as1].
 
@@ -219,13 +214,7 @@ int green = (color >> 8) & 0xFF;   // 0x82 = 130
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 3회 강의 자료 「Software Project 03. Java Language Basics (2)」, p.11 (45 & 25 = ?)
-[^2]: 같은 자료, p.10 (비트 논리 연산자 표, 피연산자 제한)
-[^3]: 같은 자료, p.12 (시프트 연산자 표, 1 << 3 그림)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `45 & 25`의 풀이, 45와 25의 OR·XOR·NOT 값, `~x`가 $$-x - 1$$인 이유, −8을 미는 그림, 경계 사례, 활용 항목, 카드 C1~C4는 원본에 없다. 값은 구현 코드로, 컴파일 오류 메시지는 JDK 21에서 직접 컴파일해 확인했다. 원본은 피연산자를 `byte`, `short`, `int`, `long`으로 적는데 `char`도 된다. 규칙은 Java Language Specification §15.19(시프트), §15.22(비트 논리)에 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 파일 권한 예와 색 예는 원본에 없다. 구현 코드로 확인했다.
-[^a1]: 어셈블리어 10회 강의 자료 「wk10-chapt_07-3-1」, p.4~5 (논리 시프트와 산술 시프트, 밀려난 비트가 CF로 가는 그림); p.6, p.8~9 (SHL, SHR, SAL·SAR)
-[^a2]: 같은 자료, p.8~9 (80을 SHR, −80을 SAR 하는 예)
-[^a3]: 어셈블리어 7회 강의 자료 「wk07-chapt_06-3-2」, p.5~8 (AND, OR, XOR, NOT 명령); p.14 (TEST 뒤 JNZ)
-[^as1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Java 연산자와 x86 명령을 짝지은 표, 칸 수의 아래 5비트만 본다는 점, 카드 C5는 원본에 없다. 표의 짝은 −16, −8, −7, −1, 0, 1, 7, 45, `int`의 최댓값·최솟값을 0~31칸 밀어 Java의 정의(Java Language Specification §15.19)와 x86 명령의 흉내가 같은 값을 내는지 [29_bitwise-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/29_bitwise-instructions_verify/)로 확인했다(파이썬 흉내. 실제 CPU 명령을 돌린 것이 아니다). 칸 수를 5비트로 자르는 것은 Intel 64 and IA-32 Architectures Software Developer's Manual 2권의 SAL/SAR/SHL/SHR 항목에 있다.
+[^s1]: 값은 구현 코드로, 컴파일 오류 메시지는 JDK 21에서 직접 컴파일해 확인했다. 규칙은 Java Language Specification §15.19(시프트), §15.22(비트 논리)에 있다.
+[^s2]: 구현 코드로 확인했다.
+[^as1]: 표의 짝은 −16, −8, −7, −1, 0, 1, 7, 45, `int`의 최댓값·최솟값을 0~31칸 밀어 Java의 정의(Java Language Specification §15.19)와 x86 명령의 흉내가 같은 값을 내는지 [29_bitwise-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/29_bitwise-instructions_verify/)로 확인했다(파이썬 흉내. 실제 CPU 명령을 돌린 것이 아니다). 칸 수를 5비트로 자르는 것은 Intel 64 and IA-32 Architectures Software Developer's Manual 2권의 SAL/SAR/SHL/SHR 항목에 있다.
 {% endraw %}

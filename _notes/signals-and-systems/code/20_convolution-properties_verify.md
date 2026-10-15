@@ -62,7 +62,7 @@ for n in range(-5, 8):
     assert abs(got - want) < F(1, 2 ** 80), n
 vals = {n: 4 - F(1, 2) ** n if n >= 0 else F(2) ** (n + 1) for n in range(-3, 3)}
 assert vals[-3] == F(1, 4) and vals[-2] == F(1, 2) and vals[-1] == 1 and vals[0] == 3 and vals[1] == F(7, 2) and vals[2] == F(15, 4)
-# 비선형 max 시스템 예(6주차 p.3): max는 중첩을 깨뜨린다
+# 비선형 max 시스템 예: max는 중첩을 깨뜨린다
 m1, m2 = [[0, 1], [2, 3]], [[4, 5], [0, 1]]
 comb = [[m1[i][j] - m2[i][j] for j in range(2)] for i in range(2)]
 assert max(map(max, comb)) == 2 and max(map(max, m1)) - max(map(max, m2)) == -2

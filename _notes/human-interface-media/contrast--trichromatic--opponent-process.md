@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-09-25"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["삼색 이론 vs 반대색 과정", "trichromatic vs opponent-process", "삼원색설과 반대색설"]
 description: "둘은 경쟁하는 이론이 아니라 색 신호가 거치는 앞뒤 두 단계다. 가르는 질문은 \"그 현상이 세 추상체 반응의 크기만으로 정해지는가, 아니면 짝끼리의 차이(+와 −)가 필요한가\"다."
@@ -23,7 +23,7 @@ code_count: 0
 permalink: "/studies/human-interface-media/contrast--trichromatic--opponent-process/"
 ---
 {% raw %}
-둘은 경쟁하는 이론이 아니라 색 신호가 거치는 앞뒤 두 단계다. 가르는 질문은 "그 현상이 세 추상체 반응의 크기만으로 정해지는가, 아니면 짝끼리의 차이(+와 −)가 필요한가"다[^1].
+둘은 경쟁하는 이론이 아니라 색 신호가 거치는 앞뒤 두 단계다. 가르는 질문은 "그 현상이 세 추상체 반응의 크기만으로 정해지는가, 아니면 짝끼리의 차이(+와 −)가 필요한가"다.
 
 ## 어느 쪽일까
 
@@ -60,15 +60,13 @@ permalink: "/studies/human-interface-media/contrast--trichromatic--opponent-proc
 | 설명하는 현상 | 색 맞추기, 조건등색, 색각 이상의 원색 수 | 잔상, 동시 대비, 떠올릴 수 없는 색 조합 |
 | 공학의 좌표계 | RGB, CIE XYZ | CIE Lab ($$a^*$$, $$b^*$$), YCbCr |
 
-슬라이드 p.13 가운데 그림이 이 표의 첫 줄과 넷째 줄을 한 줄로 요약한다: 빛 → 수용기(삼색, 색 맞추기) → 반대색 세포(잔상, 동시 대비) → 뇌[^1]. 공학의 좌표계 줄은 강의 계획표 5주차의 색 공간과 이어진다[^2][^s1].
+이 표의 첫 줄과 넷째 줄을 한 줄로 줄이면 이렇다. 빛 → 수용기(삼색, 색 맞추기) → 반대색 세포(잔상, 동시 대비) → 뇌. 공학의 좌표계 줄은 색 공간(color space)과 이어진다[^s1].
 
 ## 둘 다 아닐 때
 
 - **색 항등성.** 조명이 누르스름한 전등에서 한낮의 햇빛으로 바뀌어도 사과는 계속 빨갛게 보인다. 눈에 들어오는 스펙트럼은 크게 바뀌므로 추상체 반응도 바뀐다. 장면 전체의 조명을 추정해 보정하는 일은 두 단계보다 뒤의 대뇌 피질이 한다[^s2].
 - **밝기 항등성.** 흰 종이가 어두운 방에서도 희게 보이는 것은 색이 아니라 밝기의 문제이고, 주변과의 비를 쓰는 [휘도와 조도](/Hongs_Blog/studies/human-interface-media/luminance-and-illuminance/)의 대비와 [측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/)가 관여한다.
 
-[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.10 (Trichromatic Theory, Metamerism), p.13 (보색: Trichromatic → Opponent-process)
-[^2]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 5주차
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 공학 좌표계 줄과 (f) 문항은 원본 밖이다. CIELAB, YCbCr와 반대색 과정의 대응은 색채·영상 공학의 표준 설명이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 색 항등성과 피질의 역할은 표준 지각 교재의 설명이다.
+[^s1]: CIELAB, YCbCr와 반대색 과정의 대응은 색채·영상 공학의 표준 설명이다.
+[^s2]: 색 항등성과 피질의 역할은 표준 지각 교재의 설명이다.
 {% endraw %}

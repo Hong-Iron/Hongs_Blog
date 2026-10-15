@@ -108,8 +108,6 @@ permalink: "/studies/probability-statistics/walks-markov-bridge/"
 </details>
 
 
-## 출처
-
 [^1]: Rosen, *Discrete Mathematics and Its Applications* 7판, 10장(그래프의 연결성과 길이 $$r$$인 경로의 수 = 인접행렬의 $$r$$제곱).
 [^2]: Blitzstein, Hwang, *Introduction to Probability* 2판, 11.1절(전이행렬의 거듭제곱), 11.4절 "Reversibility"(무방향 그래프 위 무작위 보행의 정상분포가 차수에 비례함).
 {% endraw %}

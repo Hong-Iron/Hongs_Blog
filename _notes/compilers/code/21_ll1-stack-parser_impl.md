@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/21_ll1-stack-parser_impl/"
 [LL(1) 파서의 스택 동작](/Hongs_Blog/studies/compilers/ll1-stack-parser/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""스택으로 도는 LL(1) 파서를 구현하고 슬라이드의 id * id 추적을 재현한다. 길이 6 이하 모든 입력에서 문법의 언어와 견준다.
+"""스택으로 도는 LL(1) 파서를 구현하고 문서의 id * id 추적을 재현한다. 길이 6 이하 모든 입력에서 문법의 언어와 견준다.
 
 실행: python3 21_ll1-stack-parser_impl.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -191,28 +191,28 @@ if __name__ == "__main__":
     table = ll1_table(g, "E")
     assert conflicts(table) == {}
 
-    # p.33~45: 입력 id * id $
+    # 문서의 추적: 입력 id * id $
     ok, rows = ll1_parse(g, "E", table, "id * id".split())
     assert ok
     assert rows == [
-        ("E $", "id * id $", "E → T E'"),                       # p.33 → p.34
-        ("T E' $", "id * id $", "T → F T'"),                    # p.35
-        ("F T' E' $", "id * id $", "F → id"),                   # p.36
-        ("id T' E' $", "id * id $", "id 맞음, 입력 한 칸 전진"),   # p.37
-        ("T' E' $", "* id $", "T' → * T"),                      # p.38
-        ("* T E' $", "* id $", "* 맞음, 입력 한 칸 전진"),         # p.39
-        ("T E' $", "id $", "T → F T'"),                         # p.40
-        ("F T' E' $", "id $", "F → id"),                        # p.41
-        ("id T' E' $", "id $", "id 맞음, 입력 한 칸 전진"),        # p.42
-        ("T' E' $", "$", "T' → ε"),                             # p.43
-        ("E' $", "$", "E' → ε"),                                # p.44
-        ("$", "$", "받아들임"),                                  # p.45
+        ("E $", "id * id $", "E → T E'"),                       # 걸음 1
+        ("T E' $", "id * id $", "T → F T'"),                    # 걸음 2
+        ("F T' E' $", "id * id $", "F → id"),                   # 걸음 3
+        ("id T' E' $", "id * id $", "id 맞음, 입력 한 칸 전진"),   # 걸음 4
+        ("T' E' $", "* id $", "T' → * T"),                      # 걸음 5
+        ("* T E' $", "* id $", "* 맞음, 입력 한 칸 전진"),         # 걸음 6
+        ("T E' $", "id $", "T → F T'"),                         # 걸음 7
+        ("F T' E' $", "id $", "F → id"),                        # 걸음 8
+        ("id T' E' $", "id $", "id 맞음, 입력 한 칸 전진"),        # 걸음 9
+        ("T' E' $", "$", "T' → ε"),                             # 걸음 10
+        ("E' $", "$", "E' → ε"),                                # 걸음 11
+        ("$", "$", "받아들임"),                                  # 걸음 12
     ]
     # 적용한 규칙을 이으면 좌측 유도다
     assert leftmost_from_rows(rows, "E", g) == [
         "E", "T E'", "F T' E'", "id T' E'", "id * T E'", "id * F T' E'", "id * id T' E'", "id * id E'", "id * id"]
 
-    # p.21~24: 입력 ( id ) $ 의 좌측 유도
+    # 입력 ( id ) $ 의 좌측 유도
     ok, rows2 = ll1_parse(g, "E", table, "( id )".split())
     assert ok
     assert leftmost_from_rows(rows2, "E", g) == [

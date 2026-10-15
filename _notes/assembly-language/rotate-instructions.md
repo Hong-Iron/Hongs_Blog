@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Rotate Instructions", "ROL", "ROR", "RCL", "RCR", "Rotate Left", "Rotate Right", "Rotate Carry Left", "Rotate Carry Right", "비트 회전", "순환 시프트"]
 description: "회전초밥집의 벨트처럼, 한쪽 끝에서 밀려난 비트가 사라지지 않고 반대쪽 끝으로 다시 들어오는 밀기다. 그래서 몇 번을 돌려도 잃는 비트가 없고, 칸 수만큼 돌리면 처음 값으로 돌아온다. 벨트에 보관 칸 하나를 끼워 한 칸 더 긴 고리로 돌리는 종류도 있는데, 이쪽은 여러 레지스터에…"
@@ -41,7 +41,7 @@ mov dl,3Fh      ; DL = 0011 1111b
 rol dl,4        ; DL = 1111 0011b = F3h
 ```
 
-`ROL`은 왼쪽으로 민다. 맨 위 칸에서 나간 비트는 맨 아래 빈칸으로 들어가고, 같은 비트가 CF에도 복사된다[^1].
+`ROL`은 왼쪽으로 민다. 맨 위 칸에서 나간 비트는 맨 아래 빈칸으로 들어가고, 같은 비트가 CF에도 복사된다.
 
 ```
 ROL:   CF ←──┬── [7 6 5 4 3 2 1 0] ←──┐
@@ -52,14 +52,14 @@ rol al,1          ; AL = 11100001b, CF = 1
 ```
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 모든 값과 Your turn 답(B5h, ADh, B5h, AEh), 256가지 값 전부에서 8칸 돌리면 제자리, 1의 개수가 그대로, `RCL`·`RCR`은 9칸이 한 바퀴 — [39_rotate-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/39_rotate-instructions_verify/) (실제 어셈블러가 아니라 파이썬 흉내로 확인)</div>
+<div class="callout-title" markdown="span">검증: 본문의 모든 값과 추적 표의 답(B5h, ADh, B5h, AEh), 256가지 값 전부에서 8칸 돌리면 제자리, 1의 개수가 그대로, `RCL`·`RCR`은 9칸이 한 바퀴 — [39_rotate-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/39_rotate-instructions_verify/) (실제 어셈블러가 아니라 파이썬 흉내로 확인)</div>
 
 </div>
 
 
 ## 정의
 
-회전 명령은 넷이다. 피연산자 꼴은 [시프트 명령](/Hongs_Blog/studies/assembly-language/shift-instructions/)과 같다(대상, 칸 수. 칸 수는 즉시값이나 CL)[^2].
+회전 명령은 넷이다. 피연산자 꼴은 [시프트 명령](/Hongs_Blog/studies/assembly-language/shift-instructions/)과 같다(대상, 칸 수. 칸 수는 즉시값이나 CL).
 
 | 명령 | 도는 고리 | 빈칸에 들어오는 것 | CF에 들어가는 것 |
 |---|---|---|---|
@@ -68,7 +68,7 @@ rol al,1          ; AL = 11100001b, CF = 1
 | `RCL` 올림 낀 왼쪽 회전 | CF + 대상 | 전에 있던 CF | 맨 위에서 나간 비트 |
 | `RCR` 올림 낀 오른쪽 회전 | CF + 대상 | 전에 있던 CF | 맨 아래에서 나간 비트 |
 
-`ROL`과 `ROR`에서 CF는 구경꾼이다. 나가는 비트를 복사해 받을 뿐 고리에 끼지 않는다. `RCL`과 `RCR`에서는 CF가 고리의 한 칸이다. 8비트 대상이면 9칸짜리 고리가 돈다[^3].
+`ROL`과 `ROR`에서 CF는 구경꾼이다. 나가는 비트를 복사해 받을 뿐 고리에 끼지 않는다. `RCL`과 `RCR`에서는 CF가 고리의 한 칸이다. 8비트 대상이면 9칸짜리 고리가 돈다.
 
 ```
 ROR:   ┌──→ [7 6 5 4 3 2 1 0] ──┬──→ CF
@@ -90,7 +90,7 @@ $$\mathrm{ROL}: \; x_{w-2}\cdots x_0\,x_{w-1}, \quad \mathrm{CF} = x_{w-1} \qqua
 
 ## 예제
 
-**ROR.** 오른쪽으로 돌린다. 4칸 돌리면 `ROL` 4칸과 같은 결과다(8칸 고리에서 왼쪽 4칸과 오른쪽 4칸은 같은 자리다)[^4].
+**ROR.** 오른쪽으로 돌린다. 4칸 돌리면 `ROL` 4칸과 같은 결과다(8칸 고리에서 왼쪽 4칸과 오른쪽 4칸은 같은 자리다).
 
 ```asm
 mov al,11110000b
@@ -99,7 +99,7 @@ mov dl,3Fh
 ror dl,4          ; DL = F3h
 ```
 
-**RCL.** `clc`는 CF를 0으로 만드는 명령이다[^5].
+**RCL.** `clc`는 CF를 0으로 만드는 명령이다.
 
 ```asm
 clc               ; CF = 0
@@ -110,7 +110,7 @@ rcl bl,1          ; CF,BL = 0 00100001b
 
 첫 `rcl`에서 맨 위의 1이 CF로 나가고, 전의 CF(0)가 맨 아래로 들어왔다. 둘째 `rcl`에서 CF에 있던 그 1이 맨 아래로 들어왔다. 나간 비트가 한 박자 늦게 돌아온다.
 
-**RCR.** `stc`는 CF를 1로 만드는 명령이다[^6].
+**RCR.** `stc`는 CF를 1로 만드는 명령이다.
 
 ```asm
 stc               ; CF = 1
@@ -118,7 +118,7 @@ mov ah,10h        ; CF,AH = 1 00010000b
 rcr ah,1          ; CF,AH = 0 10001000b
 ```
 
-**한 줄씩 따라가기.** 슬라이드의 Your turn 두 묶음이다. 답은 슬라이드에 적힌 값과 같다[^7].
+**한 줄씩 따라가기.** AL = 6Bh에서 두 묶음을 실행한다. 앞 묶음은 `ROR`·`ROL`, 뒤 묶음은 `stc`로 CF를 1로 만든 뒤 `RCR`·`RCL`이다.
 
 | 명령 | 돌리기 전 (CF, AL) | 돌린 뒤 AL | 16진 | CF |
 |---|---|---|---|---|
@@ -175,12 +175,5 @@ rcr ah,1          ; CF,AH = 0 10001000b
 </details>
 
 
-[^1]: 어셈블리어 10회 강의 자료 「wk10-chapt_07-3-1」, p.11 (ROL의 뜻과 그림, `11110000b` → `11100001b`, 3Fh → F3h). 10.wk10-chapt_07-3-2.pdf, p.2에 같은 내용
-[^2]: 어셈블리어 10회 강의 자료 「wk10-chapt_07-3-1」, p.6 (피연산자 꼴은 모든 시프트·회전 명령에 같다)
-[^3]: 어셈블리어 10회 강의 자료 「wk10-chapt_07-3-2」, p.5~6 (RCL, RCR의 뜻과 그림)
-[^4]: 어셈블리어 10회 강의 자료 「wk10-chapt_07-3-1」, p.12 (ROR). 10.wk10-chapt_07-3-2.pdf, p.3에 같은 내용
-[^5]: 어셈블리어 10회 강의 자료 「wk10-chapt_07-3-2」, p.5 (RCL 예)
-[^6]: 같은 자료, p.6 (RCR 예)
-[^7]: 같은 자료, p.4 (ROR·ROL Your turn: B5h, ADh), p.7 (RCR·RCL Your turn: B5h, AEh)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 고리 그림 세 개, 기호 식, 추적 표의 중간 값과 CF, `clc`였을 때의 35h, 활용의 세 쓰임(자리 바꾸기, 긴 수 밀기, 비트 읽기), 카드의 답은 원본에 없다. 수치는 검증 줄의 파이썬 흉내로 확인했다.
+[^s1]: 수치는 검증 줄의 파이썬 흉내로 확인했다.
 {% endraw %}

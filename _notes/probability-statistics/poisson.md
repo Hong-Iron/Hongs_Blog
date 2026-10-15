@@ -139,6 +139,6 @@ $$\lambda$$를 고정하고 $$p = \frac{\lambda}{n}$$으로 두면, 모든 $$k$$
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 4.7절 "Poisson"(PMF, 평균과 분산, 독립인 포아송의 합), 4.8절 "Connections between Poisson and Binomial"(포아송 극한).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 광역 네트워크 트래픽이 포아송 모델과 맞지 않는다는 측정 결과는 Paxson, Floyd, "Wide Area Traffic: The Failure of Poisson Modeling", *IEEE/ACM Transactions on Networking* 3(3), 1995에 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [12_poisson_plot.py](/Hongs_Blog/studies/probability-statistics/code/12_poisson_plot/)로 그렸고, 그림에 쓴 값(예시 표의 값, $$\mathrm{Bin}(1000, 0.003)$$과의 차이 $$3.4 \times 10^{-4}$$ 미만, $$n = 5, 10, 1000$$으로 갈수록 차이가 줄어듦)을 같은 코드로 확인했다.
+[^s1]: 광역 네트워크 트래픽이 포아송 모델과 맞지 않는다는 측정 결과는 Paxson, Floyd, "Wide Area Traffic: The Failure of Poisson Modeling", *IEEE/ACM Transactions on Networking* 3(3), 1995에 있다.
+[^s2]: [12_poisson_plot.py](/Hongs_Blog/studies/probability-statistics/code/12_poisson_plot/)로 그렸고, 그림에 쓴 값(예시 표의 값, $$\mathrm{Bin}(1000, 0.003)$$과의 차이 $$3.4 \times 10^{-4}$$ 미만, $$n = 5, 10, 1000$$으로 갈수록 차이가 줄어듦)을 같은 코드로 확인했다.
 {% endraw %}

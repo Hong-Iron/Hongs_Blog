@@ -20,9 +20,9 @@ permalink: "/studies/compilers/code/01_compiler-structure_verify/"
 [컴파일러의 구조](/Hongs_Blog/studies/compilers/compiler-structure/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 컴파일러의 구조: 슬라이드 L01 p.11~16의 예(A = B + C)를 단계마다 실행해, 모든 단계의 결과가 같은 값을 내는지 확인한다
+# 컴파일러의 구조: 문서의 예(A = B + C)를 단계마다 실행해, 모든 단계의 결과가 같은 값을 내는지 확인한다
 # 실행: python3 01_compiler-structure_verify.py   (표준 라이브러리만 쓴다)
-# 슬라이드에는 B와 C의 타입이 적혀 있지 않다. inttofloat(C)가 붙었으므로 C는 정수, A와 B는 실수로 두었다.
+# inttofloat(C)가 붙었으므로 C는 정수, A와 B는 실수로 둔다.
 import random
 
 
@@ -50,7 +50,7 @@ def run_tac(lines, env):
 
 
 def run_machine(lines, memory):
-    """슬라이드 p.16의 네 명령만 아는 흉내기. LDF 레지스터, 변수 / ADDF 받는 곳, 왼쪽, 오른쪽 / STF 변수, 레지스터."""
+    """문서 표의 기계 명령만 아는 흉내기. LDF는 변수 값을 실수로 바꿔 읽는다. LDF 레지스터, 변수 / ADDF 받는 곳, 왼쪽, 오른쪽 / STF 변수, 레지스터."""
     memory, reg = dict(memory), {}
     for op, *args in lines:
         if op == "LDF":
@@ -62,12 +62,12 @@ def run_machine(lines, memory):
     return memory
 
 
-TOKENS = ["A", "=", "B", "+", "C"]                                   # p.11
-TREE = ("=", "A", ("+", "B", "C"))                                   # p.12
-TREE_TYPED = ("=", "A", ("+", "B", ("inttofloat", "C")))             # p.13
-TAC = [("t1", "inttofloat", "C"), ("t2", "+", "t1", "B"), ("A", "copy", "t2")]     # p.14
-TAC_OPT = [("t1", "inttofloat", "C"), ("A", "+", "t1", "B")]                       # p.15
-MACHINE = [("LDF", "R2", "C"), ("LDF", "R1", "B"), ("ADDF", "R1", "R1", "R2"), ("STF", "A", "R1")]   # p.16
+TOKENS = ["A", "=", "B", "+", "C"]                                   # 어휘 분석기
+TREE = ("=", "A", ("+", "B", "C"))                                   # 구문 분석기
+TREE_TYPED = ("=", "A", ("+", "B", ("inttofloat", "C")))             # 의미 분석기
+TAC = [("t1", "inttofloat", "C"), ("t2", "+", "t1", "B"), ("A", "copy", "t2")]     # 중간 코드 생성기
+TAC_OPT = [("t1", "inttofloat", "C"), ("A", "+", "t1", "B")]                       # 코드 최적화기
+MACHINE = [("LDF", "R2", "C"), ("LDF", "R1", "B"), ("ADDF", "R1", "R1", "R2"), ("STF", "A", "R1")]   # 코드 생성기
 
 if __name__ == "__main__":
     assert "".join(TOKENS) == "A=B+C" and len(TOKENS) == 5

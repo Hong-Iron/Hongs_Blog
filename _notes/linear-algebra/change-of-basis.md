@@ -123,7 +123,7 @@ flowchart LR
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 8.2절 "The Matrix of a Linear Transformation"(기저를 바꾸면 행렬이 바뀜), 8.3절 "The Search for a Good Basis"($$B = M^{-1}AM$$, 닮은 행렬).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> RGB와 YCbCr의 변환 행렬은 ITU-R BT.601 규격에 정의되어 있고, JPEG(JFIF)이 이것을 쓴다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [14_change-of-basis_plot.py](/Hongs_Blog/studies/linear-algebra/code/14_change-of-basis_plot/)로 그렸고, 새 좌표 $$(2, 1)$$, 반사 결과 $$(1, 3)$$, $$P^{-1}AP = \operatorname{diag}(1, -1)$$을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$B = P^{-1}AP$$와 그것을 오른쪽부터 읽는 문단을 옮겼다(Strang 5판 8.2~8.3절).
+[^s1]: RGB와 YCbCr의 변환 행렬은 ITU-R BT.601 규격에 정의되어 있고, JPEG(JFIF)이 이것을 쓴다.
+[^s2]: [14_change-of-basis_plot.py](/Hongs_Blog/studies/linear-algebra/code/14_change-of-basis_plot/)로 그렸고, 새 좌표 $$(2, 1)$$, 반사 결과 $$(1, 3)$$, $$P^{-1}AP = \operatorname{diag}(1, -1)$$을 같은 코드로 확인했다.
+[^s3]: 이 문서 `정의`의 $$B = P^{-1}AP$$와 그것을 오른쪽부터 읽는 문단을 옮겼다(Strang 5판 8.2~8.3절).
 {% endraw %}

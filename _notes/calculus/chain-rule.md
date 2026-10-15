@@ -208,7 +208,7 @@ flowchart LR
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.6절 "The Chain Rule", 3.7절 "Derivatives of Inverse Functions", 3.8절 "Implicit Differentiation", 3.9절 "Derivatives of Exponential and Logarithmic Functions"(로그 미분법)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기울기 소실 문제와 ReLU의 도입은 딥러닝의 표준 서술이다(Goodfellow·Bengio·Courville, *Deep Learning*, 6장).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [06_chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/06_chain-rule_plot/)로 그렸고, 세 곡선이 차례로 도함수 관계인 것(중앙 차분, $$-5 \le x \le 5$$)과 $$\sigma(1 - \sigma)$$의 최댓값이 $$x = 0$$의 $$\frac14$$인 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예제의 뉴런 하나의 학습 기울기 식을 계산 그래프로 옮겼다. $$\frac{\partial z}{\partial b} = 1$$은 $$z = wx + b$$에서 바로 나온다.
+[^s1]: 기울기 소실 문제와 ReLU의 도입은 딥러닝의 표준 서술이다(Goodfellow·Bengio·Courville, *Deep Learning*, 6장).
+[^s2]: [06_chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/06_chain-rule_plot/)로 그렸고, 세 곡선이 차례로 도함수 관계인 것(중앙 차분, $$-5 \le x \le 5$$)과 $$\sigma(1 - \sigma)$$의 최댓값이 $$x = 0$$의 $$\frac14$$인 것을 같은 코드로 확인했다.
+[^s3]: 예제의 뉴런 하나의 학습 기울기 식을 계산 그래프로 옮겼다. $$\frac{\partial z}{\partial b} = 1$$은 $$z = wx + b$$에서 바로 나온다.
 {% endraw %}

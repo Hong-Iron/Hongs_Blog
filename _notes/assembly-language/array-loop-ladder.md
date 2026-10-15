@@ -25,13 +25,13 @@ permalink: "/studies/assembly-language/array-loop-ladder/"
 {% raw %}
 사용 개념: [JMP와 LOOP](/Hongs_Blog/studies/assembly-language/jmp-loop/), [간접 피연산자와 인덱스 피연산자](/Hongs_Blog/studies/assembly-language/indirect-addressing/), [TYPE·LENGTHOF·SIZEOF 연산자](/Hongs_Blog/studies/assembly-language/type-lengthof-sizeof/).
 
-"배열을 처음부터 끝까지 돌며 무엇을 하라"는 문제는 같은 하위목표의 되풀이다. ① 위치 준비: 배열의 주소나 인덱스 0을 레지스터에 넣는다 ② 횟수 준비: ECX에 원소 수를 넣는다 ③ 결과 자리 준비: 합을 담을 레지스터를 0으로 만든다(필요할 때) ④ 몸통: 원소 하나를 다룬다 ⑤ 다음 원소로: 위치를 원소 크기만큼 옮긴다 ⑥ 되풀이: `loop`[^s1].
+"배열을 처음부터 끝까지 돌며 무엇을 하라"는 문제는 같은 하위목표의 되풀이다. ① 위치 준비: 배열의 주소나 인덱스 0을 레지스터에 넣는다 ② 횟수 준비: ECX에 원소 수를 넣는다 ③ 결과 자리 준비: 합을 담을 레지스터를 0으로 만든다(필요할 때) ④ 몸통: 원소 하나를 다룬다 ⑤ 다음 원소로: 위치를 원소 크기만큼 옮긴다 ⑥ 되풀이: `loop`.
 
 모든 답은 파이썬 흉내로 확인했다. 실제 MASM으로 돌린 것이 아니다.
 
 ## 문제 1 · 완전한 풀이
 
-16비트 정수 배열 `intarray WORD 100h,200h,300h,400h`의 합을 AX에 구한다[^1].
+16비트 정수 배열 `intarray WORD 100h,200h,300h,400h`의 합을 AX에 구한다.
 
 ```asm
     mov edi,OFFSET intarray     ; ① 위치 준비: 배열의 주소
@@ -146,8 +146,4 @@ L1:
 <div class="callout-title" markdown="span">검증 — [24_array-loop-ladder_p4.py](/Hongs_Blog/studies/assembly-language/code/24_array-loop-ladder_p4/)</div>
 
 </div>
-
-
-[^1]: 어셈블리어 6회 강의 자료 「wk06-chapt_04-3-1」, p.3 (정수 배열의 합)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표 라벨과 문제 2~4는 원본에 없다. 슬라이드 p.3~4의 배열 합과 문자열 복사를 연습하도록 만들었고, 답은 문제 코드의 파이썬 흉내로 확인했다.
 {% endraw %}

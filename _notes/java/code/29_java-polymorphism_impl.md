@@ -41,7 +41,7 @@ class PolymorphismCheck {
     }
 
     public static void main(String[] args) {
-        // 필드 다형성: 슬라이드의 Car
+        // 필드 다형성: 문서의 Car
         check("필드 다형성", capture(() -> {
             Car myCar = new Car();
             myCar.run();
@@ -49,7 +49,7 @@ class PolymorphismCheck {
             myCar.run();
         }), "Hankook Tire\nKumho Tire\n");
 
-        // 매개변수 다형성: 슬라이드의 Driver
+        // 매개변수 다형성: 문서의 Driver
         check("매개변수 다형성", capture(() -> {
             Driver driver = new Driver();
             Bus bus = new Bus();

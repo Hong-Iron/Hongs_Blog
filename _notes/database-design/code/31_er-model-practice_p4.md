@@ -23,17 +23,16 @@ permalink: "/studies/database-design/code/31_er-model-practice_p4/"
 """ER 모델 연습 p4: ER 그림을 보고 문장이 참인지 가리기.
 
 문서: 31.ER 모델 연습 (p4와 변형 문제)
-출처: 데이터베이스 설계 5주차 슬라이드 p.37 (연습 4), 풀이 p.4
 방법: 그림의 숫자와 겹선을 (min, max)로 옮긴다. 문장마다
   - True  = 그림의 규칙을 지키는 자료라면 늘 참이다(문장을 어기는 자료는 규칙에도 어긋난다).
   - False = 그림의 규칙을 지키면서 문장과 반대인 자료가 있다(문장이 "~할 수 없다"고 했는데 할 수 있다).
   - Maybe = 규칙을 지키는 자료 가운데 문장이 참인 것도 있고 거짓인 것도 있다.
-풀이의 답: (a) True (b) Maybe (c) Maybe (d) True (e) False (f) Maybe
+문서의 답: (a) True (b) Maybe (c) Maybe (d) True (e) False (f) Maybe
 """
 from collections import Counter
 
 N = float("inf")
-# 그림(p.37)을 (min, max)로 옮긴 것. 겹선 = min 1, 홑선 = min 0. 상대 쪽에 적힌 숫자가 이쪽의 max다.
+# 문서의 그림을 (min, max)로 옮긴 것. 겹선 = min 1, 홑선 = min 0. 상대 쪽에 적힌 숫자가 이쪽의 max다.
 SCHEMA = {
     "PERFORMS_IN": [("ACTOR", (1, N)), ("MOVIE", (1, N))],       # M:N, 양쪽 겹선
     "LEAD_ROLE": [("ACTOR", (0, N)), ("MOVIE", (1, 2))],         # ACTOR 옆 2, MOVIE 옆 N, MOVIE 쪽 겹선

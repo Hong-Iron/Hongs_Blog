@@ -76,7 +76,7 @@ class PrimitiveTypesImpl {
         }
         check(seen == 7, "범위 예제의 합 7");
 
-        // 6. printf 서식 (슬라이드 표). 빈칸을 _로 바꿔 비교한다
+        // 6. printf 서식 (문서의 서식 표). 빈칸을 _로 바꿔 비교한다
         check(String.format("%d", 123).equals("123"), "%d");
         check(String.format("%6d", 123).replace(' ', '_').equals("___123"), "%6d");
         check(String.format("%-6d", 123).replace(' ', '_').equals("123___"), "%-6d");

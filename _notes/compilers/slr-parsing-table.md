@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["SLR Parsing Table", "SLR-parsing table", "ACTION 표", "GOTO 표", "ACTION table", "GOTO table", "파싱 표"]
 description: "파서가 걸음마다 할 고민을 미리 다 풀어서 표 한 장에 적어 둔 것이다. 줄은 \"지금 처지\", 칸은 \"다음에 보이는 것\"이고, 칸 안에는 읽고 넘어가라, 어느 규칙으로 묶어라, 받아들여라 가운데 하나가 적혀 있다. 파싱할 때는 생각 없이 표만 찾으면 되니 빠르고, 사람이 아니라 프…"
@@ -36,7 +36,7 @@ permalink: "/studies/compilers/slr-parsing-table/"
 
 [SLR 파싱](/Hongs_Blog/studies/compilers/slr-parsing/)은 걸음마다 DFA 그림에서 상태를 찾고, 그 상태의 항목을 훑고, FOLLOW 집합을 뒤진다. 사람이 손으로 하기에도 번거롭고 프로그램으로 옮기기에도 느리다. 그런데 "상태와 다음 토큰이 정해지면 할 일도 정해진다". 그러면 모든 (상태, 토큰) 짝의 답을 한 번만 계산해 표에 적어 두면 된다.
 
-강의의 문법에 규칙 번호를 붙인다[^1].
+문법에 규칙 번호를 붙인다.
 
 $$(1)\ S' \to E \qquad (2)\ E \to T * E \qquad (3)\ E \to T \qquad (4)\ T \to (E) \qquad (5)\ T \to id$$
 
@@ -51,14 +51,14 @@ $$(1)\ S' \to E \qquad (2)\ E \to T * E \qquad (3)\ E \to T \qquad (4)\ T \to (E
 
 ## 정의
 
-SLR 파싱 표는 두 부분으로 되어 있다[^2].
+SLR 파싱 표는 두 부분으로 되어 있다.
 
 | 부분 | 줄 | 칸 | 칸에 적는 것 |
 |---|---|---|---|
 | ACTION | 상태 | 터미널과 `$` | 이동(`S`+갈 상태), 환원(`R`+규칙 번호), 빈칸(오류) |
 | GOTO | 상태 | 논터미널 | 갈 상태 |
 
-SLR 문법에서 표까지 가는 길은 네 칸이다[^3].
+SLR 문법에서 표까지 가는 길은 네 칸이다.
 
 ```mermaid
 flowchart TD
@@ -71,18 +71,18 @@ flowchart TD
 
 DFA의 전이 함수를 $$\delta$$(델타)라 하자. $$\delta(q_i, X) = q_j$$는 "상태 $$q_i$$에서 기호 $$X$$를 읽으면 $$q_j$$로 간다"이다.
 
-**1단계. GOTO 표.** 상태 $$q_i$$와 논터미널 $$A$$마다, $$q_i$$에서 $$A$$로 $$q_j$$에 가는 전이가 있으면 그 칸에 $$q_j$$를 적는다[^2].
+**1단계. GOTO 표.** 상태 $$q_i$$와 논터미널 $$A$$마다, $$q_i$$에서 $$A$$로 $$q_j$$에 가는 전이가 있으면 그 칸에 $$q_j$$를 적는다.
 
 $$GOTO(q_i, A) = q_j \quad \text{(} \delta(q_i, A) = q_j \text{일 때)}$$
 
 
-**2단계. ACTION 표.** 상태 $$q_i$$와 터미널 $$a$$마다[^4]
+**2단계. ACTION 표.** 상태 $$q_i$$와 터미널 $$a$$마다
 
 1. $$q_i$$에 점 바로 뒤가 $$a$$인 항목 $$X \to \alpha . a\beta$$가 있고 $$\delta(q_i, a) = q_j$$이면, $$ACTION(q_i, a)$$ = "이동하고 $$q_j$$로".
 2. $$q_i$$에 점이 끝인 항목 $$X \to \alpha.$$이 있고 $$a \in \text{Follow}(X)$$이면, $$ACTION(q_i, a)$$ = "$$X \to \alpha$$로 환원".
 3. 그 밖의 칸은 오류다.
 
-덧붙인 규칙 $$S' \to S$$의 환원은 Follow(S') = {`$`}라서 `$` 칸에만 들어간다. 이 칸이 "받아들임"이다[^5].
+덧붙인 규칙 $$S' \to S$$의 환원은 Follow(S') = {`$`}라서 `$` 칸에만 들어간다. 이 칸이 "받아들임"이다.
 
 정리하면 DFA의 화살표가 그대로 표로 옮겨진다. 논터미널이 붙은 화살표는 GOTO로, 터미널이 붙은 화살표는 ACTION의 이동으로 간다. DFA에 없던 정보는 환원 칸뿐이고, 그것을 FOLLOW가 정한다.
 
@@ -98,9 +98,9 @@ $$GOTO(q_i, A) = q_j \quad \text{(} \delta(q_i, A) = q_j \text{일 때)}$$
 한 칸에 둘 이상 들어가면 → 충돌 (SLR 문법이 아니다)
 ```
 
-### 강의의 표
+### 완성된 표
 
-DFA의 전이와 Follow(S') = {`$`}, Follow(E) = {`)`, `$`}, Follow(T) = {`*`, `)`, `$`}로 표를 채우면 이렇다[^4].
+DFA의 전이와 Follow(S') = {`$`}, Follow(E) = {`)`, `$`}, Follow(T) = {`*`, `)`, `$`}로 표를 채우면 이렇다.
 
 | 상태 | `*` | `(` | `)` | `id` | `$` | E | T |
 |---|---|---|---|---|---|---|---|
@@ -193,7 +193,7 @@ DFA의 전이와 Follow(S') = {`$`}, Follow(E) = {`)`, `$`}, Follow(T) = {`*`, `
 
 ### 복잡도
 
-표의 크기는 (상태 수) × (터미널 수 + 1 + 논터미널 수)다. 강의의 예는 $$9 \times 7 = 63$$칸이다. 표를 채우는 일은 전이마다 한 번, 점이 끝인 항목마다 FOLLOW 크기만큼이다[^s1].
+표의 크기는 (상태 수) × (터미널 수 + 1 + 논터미널 수)다. 위 예는 $$9 \times 7 = 63$$칸이다. 표를 채우는 일은 전이마다 한 번, 점이 끝인 항목마다 FOLLOW 크기만큼이다[^s1].
 
 ## 활용
 
@@ -228,7 +228,7 @@ DFA의 전이와 Follow(S') = {`$`}, Follow(E) = {`)`, `$`}, Follow(T) = {`*`, `
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C2** 강의의 DFA에서 상태 9($$T \to (E).$$)와 상태 8($$E \to T * E.$$)의 줄을 채우라.</summary>
+<summary class="callout-title" markdown="span">**C2** 본문의 DFA에서 상태 9($$T \to (E).$$)와 상태 8($$E \to T * E.$$)의 줄을 채우라.</summary>
 
 **답:** 상태 9: `*`, `)`, `$` 칸에 R(4). 상태 8: `)`, `$` 칸에 R(2). 두 줄 모두 나가는 전이가 없어 이동과 GOTO는 없다.<br>
 **이유:** Follow(T) = {`*`, `)`, `$`}, Follow(E) = {`)`, `$`}다. 상태 8의 `*` 칸을 채우면 틀린다. `E` 뒤에는 `*`가 오지 않는다.
@@ -262,10 +262,5 @@ DFA의 전이와 Follow(S') = {`$`}, Follow(E) = {`)`, `$`}, Follow(T) = {`*`, `
 </details>
 
 
-[^1]: 컴파일러 8회 강의 자료 「Lecture08 Syntax analysis part 5」, p.7 (규칙 번호 (1)~(5)와 상태 번호 1~9를 붙인 DFA)
-[^2]: 같은 자료, p.8 (ACTION과 GOTO로 나뉜 표, 1단계 GOTO 표 만들기)
-[^3]: 같은 자료, p.6 (SLR 문법 → NFA → DFA → SLR 파싱 표)
-[^4]: 같은 자료, p.9~11 (2단계의 세 규칙과 다 채운 표)
-[^5]: 같은 자료, p.20 (입력이 덧붙인 시작 기호 $$S'$$으로 환원되면 받아들인다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상태 3과 상태 5의 줄을 채우는 과정, 의사코드, 칸 수(이동 8, 환원 11, 빈칸 26, GOTO 6), 정확성 주장과 증명, 스스로 설명해 보기, 복잡도, 오해 항목, 카드 C2~C5는 원본에 없다. 슬라이드는 규칙과 완성된 표를 보인다. 표 전체를 구현 코드로 다시 만들어 슬라이드와 견줬다. 근거: Aho·Lam·Sethi·Ullman, *Compilers* 2판, 4.6.4 "Constructing SLR-Parsing Tables".
+[^s1]: 근거: Aho·Lam·Sethi·Ullman, *Compilers* 2판, 4.6.4 "Constructing SLR-Parsing Tables".
 {% endraw %}

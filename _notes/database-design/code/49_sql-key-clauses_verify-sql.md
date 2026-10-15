@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/49_sql-key-clauses_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 49.PRIMARY KEY·UNIQUE·FOREIGN KEY 절 검증 (PostgreSQL 16)
---   1. 제약에 붙인 이름(슬라이드 10 p.16의 EMPPK, EMPSUPERFK, EMPDEPTFK, DEPTPK, DEPTSK, DEPTMGRFK)이 오류에 그대로 나온다
+--   1. 제약에 붙인 이름(EMPPK, EMPSUPERFK, EMPDEPTFK, DEPTPK, DEPTSK, DEPTMGRFK)이 오류에 그대로 나온다
 --   2. 외래 키는 상대 표의 기본 키나 UNIQUE 열만 가리킬 수 있다
 --   3. 기본 키는 표에 하나뿐이다
 --   오류 번호: 23505 = 키(유일성) 위반, 23503 = 외래 키 위반, 42830 = 가리킬 수 없는 열, 42P16 = 표 정의 오류
@@ -54,7 +54,7 @@ BEGIN
   RETURN 'OK';
 END $f$;
 
--- COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
+-- COMPANY 스키마와 상태.
 -- EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 EMPLOYEE의 외래 키 두 개는 행을 넣은 뒤 ALTER TABLE로 붙인다.
 -- WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 CREATE TABLE EMPLOYEE (

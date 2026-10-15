@@ -10,7 +10,7 @@ course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["K-means vs GMM vs DBSCAN vs CLIQUE", "군집화 방법 비교"]
 description: "네 방법은 \"무엇을 비슷하다고 보는가\"가 다르다. k-평균은 중심까지의 거리, GMM은 종 모양 분포에서 나왔을 확률, DBSCAN은 점들이 빽빽하게 이어졌는지, CLIQUE는 격자 칸에 점이 많이 들었는지를 본다. 고르는 질문은 셋이다. 무리 수를 아는가? 무리 모양을 가정할 수…"
@@ -46,6 +46,8 @@ permalink: "/studies/data-science/contrast--clustering-algorithms/"
 
 ## 결정적 차이
 
+다섯 방법을 다섯 기준으로 견주면 이렇다.
+
 | | 모양 가정 | $$k$$ 필요 | 고차원 | 잡음에 견고 | 배정 |
 |---|---|---|---|---|---|
 | k-평균 | 둥근 모양 | 필요 | 약함 | 약함 | 하드 |
@@ -54,7 +56,7 @@ permalink: "/studies/data-science/contrast--clustering-algorithms/"
 | DBSCAN | 제멋대로 | 필요 없음 | 약함 | 견고 | 하드 + 잡음 |
 | CLIQUE | 제멋대로(부분공간) | 필요 없음 | 강함(보통) | 견고 | 하드 + 잡음 |
 
-표는 두 슬라이드의 비교표를 합친 것이다[^1][^2]. 선택을 가르는 열은 "$$k$$ 필요"와 "모양 가정"이다. 무리 수와 모양을 안다면 k-평균이나 GMM이 빠르고 해석하기 쉽다. 모르면 밀도 기반이 낫다.
+선택을 가르는 열은 "$$k$$ 필요"와 "모양 가정"이다. 무리 수와 모양을 안다면 k-평균이나 GMM이 빠르고 해석하기 쉽다. 모르면 밀도 기반이 낫다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 고리 + 덩어리 자료에서 DBSCAN은 나누고 k-평균은 못 나눔, 부분공간 군집 예 — [31_dbscan_impl.py](/Hongs_Blog/studies/data-science/code/31_dbscan_impl/), [32_clique_impl.py](/Hongs_Blog/studies/data-science/code/32_clique_impl/)</div>
@@ -67,12 +69,7 @@ permalink: "/studies/data-science/contrast--clustering-algorithms/"
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">**C3** 네 방법 모두 잘 맞지 않는 상황과 선택지를 쓰라.</summary>
 
-**답:** ① 자료가 점의 좌표보다 "누가 누구와 연결되었나"(친구 관계, 링크)로 주어질 때 → 그래프 군집화(10회). ② 차원이 아주 많고 군집이 축에 비스듬한 부분공간에 있을 때 → 주성분 분석이나 행렬 분해로 차원을 줄인 뒤 군집화(10회)[^s1].
+**답:** ① 자료가 점의 좌표보다 "누가 누구와 연결되었나"(친구 관계, 링크)로 주어질 때 → [그래프 군집화](/Hongs_Blog/studies/data-science/graph-partitioning/). ② 차원이 아주 많고 군집이 축에 비스듬한 부분공간에 있을 때 → 주성분 분석이나 [행렬 분해](/Hongs_Blog/studies/data-science/nmf-clustering/)로 차원을 줄인 뒤 군집화.
 
 </details>
-
-
-[^1]: 데이터 과학 7회 강의 자료 「7-1_basic-clustering」, p.32
-[^2]: 데이터 과학 7회 강의 자료 「7-2_density-clustering」, p.19
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상황 문제와 10회로 넘기는 답은 원본에 없다. 10회 슬라이드(고차원 군집화, 그래프 군집화)의 주제다.
 {% endraw %}

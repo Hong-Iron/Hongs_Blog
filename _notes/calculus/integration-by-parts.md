@@ -151,7 +151,7 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 3.1절 "Integration by Parts"(공식, $$u$$ 고르기, 반복 적용, 정적분).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> LIATE는 여러 미적분 교재와 강의에서 쓰는 경험칙이다. 아벨의 부분합은 Graham·Knuth·Patashnik, *Concrete Mathematics* 2.6절의 "summation by parts"로 확인할 수 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [14_integration-by-parts_plot.py](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_plot/)로 그렸고, 두 넓이 1과 $$e - 1$$, 그 합 $$e$$, 원시함수 $$x\ln x - x$$로 계산한 값 1을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기(잘못 고르면 차수가 오름), $$u$$ 고르는 요령, 반복과 표, 예제의 두 경우를 근거로 그렸다.
+[^s1]: 아벨의 부분합은 Graham·Knuth·Patashnik, *Concrete Mathematics* 2.6절의 "summation by parts"로 확인할 수 있다.
+[^s2]: [14_integration-by-parts_plot.py](/Hongs_Blog/studies/calculus/code/14_integration-by-parts_plot/)로 그렸고, 두 넓이 1과 $$e - 1$$, 그 합 $$e$$, 원시함수 $$x\ln x - x$$로 계산한 값 1을 같은 코드로 확인했다.
+[^s3]: 예시로 보기(잘못 고르면 차수가 오름), $$u$$ 고르는 요령, 반복과 표, 예제의 두 경우를 근거로 그렸다.
 {% endraw %}

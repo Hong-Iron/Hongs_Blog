@@ -23,24 +23,23 @@ permalink: "/studies/database-design/code/39_mapping-entity-types_verify/"
 """개체 타입의 사상 검증.
 
 문서: 39.개체 타입의 사상 (예시, 절차, 카드 C1~C3)
-출처: 데이터베이스 설계 7 슬라이드 p.13~14, 9 슬라이드 p.7~8, 6-2 p.21 (상태)
 실행: python3 39_mapping-entity-types_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 주장:
   1. 일반 개체: 단순 속성만 열이 된다. 복합 속성 Name은 성분 Fname, Minit, Lname으로 들어간다.
-     7 p.13의 결과는 EMPLOYEE 8열, DEPARTMENT 2열, PROJECT 3열이다. 다치 속성 Locations와 유도 속성은 빠진다.
+     옮긴 결과는 EMPLOYEE 8열, DEPARTMENT 2열, PROJECT 3열이다. 다치 속성 Locations와 유도 속성은 빠진다.
   2. 키 속성이 둘인 DEPARTMENT(Name, Number)와 PROJECT(Name, Number)는 하나만 기본 키가 된다.
-     상태에서 Dname, Pname도 안 겹친다(9 p.17~18의 DDL은 UNIQUE로 적는다).
+     상태에서 Dname, Pname도 안 겹친다(COMPANY의 DDL은 UNIQUE로 적는다).
   3. 약한 개체 DEPENDENT: 소유자 기본 키 Essn을 외래 키로 넣고, 기본 키는 (Essn, Dependent_name)이다.
      부분 키 Dependent_name 혼자는 겹친다('Alice'가 두 직원에게 있다). Essn 혼자도 겹친다. 둘을 묶으면 안 겹친다.
   4. Essn이 기본 키의 일부라 NULL일 수 없다. 그래서 주인 없는 부양가족은 넣을 수 없다(식별 관계의 전체 참여).
      없는 직원을 가리키는 부양가족도 넣을 수 없다.
-  5. 카드 C1: CAR(4-2 p.12)는 키 속성이 Vehicle_id와 복합 속성 Registration(Number, State) 둘이다.
+  5. 카드 C1: CAR는 키 속성이 Vehicle_id와 복합 속성 Registration(Number, State) 둘이다.
      옮기면 CAR(Vehicle_id, Reg_number, Reg_state, Make, Model, Year) 6열이고 다치 속성 Color는 빠진다.
      그림의 세 대에서 Vehicle_id도, (Reg_number, Reg_state)도 안 겹친다. Reg_number 혼자는 겹친다(ABC 123이 두 주에 있다).
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태. 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

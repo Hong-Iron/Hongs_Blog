@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 희소 행렬의 전치의 세 단계, 3원소 목록."
 prev_url: "/studies/data-structures/array-mapping-ladder/"
@@ -25,11 +25,11 @@ permalink: "/studies/data-structures/sparse-transpose-ladder/"
 {% raw %}
 사용 개념: [희소 행렬의 전치](/Hongs_Blog/studies/data-structures/sparse-matrix-transpose/)의 세 단계, [3원소 목록](/Hongs_Blog/studies/data-structures/sparse-matrix-triples/).
 
-"3원소 목록을 전치하라"는 문제는 같은 하위목표의 되풀이다. ① 목록 적기: 2차원 배열이 주어졌으면 윗줄부터, 줄 안에서는 왼쪽부터 읽어 (행, 열, 값)을 적는다. ② 개수 세기: 열 번호마다 묶음이 몇 개인지 센다. ③ 시작 칸 정하기: 앞 열들의 개수를 더한다. 1열은 0번 칸이다. ④ 꽂기: 목록을 앞에서부터 읽어 그 열의 시작 칸에 (열, 행, 값)으로 꽂고, 시작 칸을 1 올린다. 행·열 번호는 1부터, 목록의 칸 번호는 0부터 센다[^s1].
+"3원소 목록을 전치하라"는 문제는 같은 하위목표의 되풀이다. ① 목록 적기: 2차원 배열이 주어졌으면 윗줄부터, 줄 안에서는 왼쪽부터 읽어 (행, 열, 값)을 적는다. ② 개수 세기: 열 번호마다 묶음이 몇 개인지 센다. ③ 시작 칸 정하기: 앞 열들의 개수를 더한다. 1열은 0번 칸이다. ④ 꽂기: 목록을 앞에서부터 읽어 그 열의 시작 칸에 (열, 행, 값)으로 꽂고, 시작 칸을 1 올린다. 행·열 번호는 1부터, 목록의 칸 번호는 0부터 센다.
 
 ## 문제 1 · 완전한 풀이
 
-슬라이드의 4 × 5 행렬을 전치한다[^1].
+다음 4 × 5 행렬을 전치한다.
 
 ```
 0 0 3 0 4
@@ -43,7 +43,7 @@ permalink: "/studies/data-structures/sparse-transpose-ladder/"
 3. *시작 칸 정하기:* 1열은 0. 2열은 0 + 0 = 0. 3열은 0 + 1 = 1. 4열은 1 + 3 = 4. 5열은 4 + 1 = 5. 시작 칸은 0, 0, 1, 4, 5.
 4. *꽂기:* (1, 3, 3)은 열 번호가 3이라 1번 칸에 (3, 1, 3)으로 꽂고 3열의 시작 칸을 2로 올린다. 같은 식으로 (1, 5, 4)는 5번 칸, (2, 3, 5)는 2번 칸, (2, 4, 7)은 4번 칸, (4, 2, 2)는 0번 칸, (4, 3, 6)은 3번 칸에 간다.
 
-칸 번호 순으로 읽은 결과는 (2, 4, 2), (3, 1, 3), (3, 2, 5), (3, 4, 6), (4, 2, 7), (5, 1, 4)다[^1].
+칸 번호 순으로 읽은 결과는 (2, 4, 2), (3, 1, 3), (3, 2, 5), (3, 4, 6), (4, 2, 7), (5, 1, 4)다.
 
 ## 문제 2 · 마지막 하위목표만 빈칸
 
@@ -108,8 +108,4 @@ permalink: "/studies/data-structures/sparse-transpose-ladder/"
 <div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 네 문제의 개수, 시작 칸, 꽂는 칸, 결과 목록을 확인했고, 결과가 2차원 배열을 뒤집어 만든 목록과 같다. 문제 4의 횟수 17, 15, 18 — [12_sparse-transpose-ladder_p4.c](/Hongs_Blog/studies/data-structures/code/12_sparse-transpose-ladder_p4/)</div>
 
 </div>
-
-
-[^1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.16~19 (4 × 5 행렬과 전치, 세 단계의 값 [0, 1, 3, 1, 1]과 [0, 0, 1, 4, 5], 전치한 목록)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 2 ~ 4의 행렬과 수치는 슬라이드에 없다. 슬라이드 p.18의 세 단계를 연습하도록 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

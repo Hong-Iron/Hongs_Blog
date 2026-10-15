@@ -10,7 +10,7 @@ course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Edit Distance", "레벤슈타인 거리", "Levenshtein Distance", "변환 거리", "Transformation Distance", "최소 편집 거리", "Minimum Edit Distance", "정규화 편집 거리", "Normalized Edit Distance", "편집 유사도", "Edit Similarity", "되짚기", "Backtrace", "편집 가중치"]
 description: "한 낱말을 다른 낱말로 고치는 데 드는 가장 적은 수고를 두 낱말 사이의 거리로 삼는다. 원고를 교정하는 사람이 글자를 하나 끼워 넣고, 하나 지우고, 하나를 다른 글자로 바꾸는 세 가지 손질만 할 수 있다고 할 때 손질 횟수를 세는 것이다. 글자가 빠지거나 끼어들어 길이가 달라져…"
@@ -38,9 +38,9 @@ permalink: "/studies/data-and-information/edit-distance/"
 
 손질 횟수로 세면 달라진다. `flaw`에서 맨 앞 `f`를 지우면 `law`, 끝에 `n`을 넣으면 `lawn`이다. 두 번이다. 그보다 적게는 안 되므로 편집 거리는 2다.
 
-슬라이드는 이 생각을 사람에게도 적용해 보인다. 한 대상을 다른 대상으로 바꾸는 데 든 수고를 거리로 삼는다. 만화 속 패티를 셀마로 바꾸려면 옷 색, 귀걸이 모양, 가르마를 바꿔 3점이고, 마지를 셀마로 바꾸려면 다섯 가지를 바꿔 5점이다[^1].
+이 생각은 사람에게도 쓸 수 있다. 한 대상을 다른 대상으로 바꾸는 데 든 수고를 거리로 삼는다. 만화 속 패티를 셀마로 바꾸려면 옷 색, 귀걸이 모양, 가르마를 바꿔 3점이고, 마지를 셀마로 바꾸려면 다섯 가지를 바꿔 5점이다.
 
-문제는 가장 적은 횟수를 어떻게 찾느냐다. 슬라이드는 이것을 길 찾기로 본다. 출발은 고칠 낱말, 도착은 목표 낱말, 한 걸음은 손질 한 번, 줄이려는 것은 걸음 수다[^2]. `intention`에서 한 걸음에 갈 수 있는 곳만 해도 `ntention`(지우기), `eintention`(넣기), `entention`(바꾸기)을 비롯해 수백 가지다. 걸음마다 그만큼씩 갈라지니 다 가 볼 수 없다.
+문제는 가장 적은 횟수를 어떻게 찾느냐다. 이것을 길 찾기로 볼 수 있다. 출발은 고칠 낱말, 도착은 목표 낱말, 한 걸음은 손질 한 번, 줄이려는 것은 걸음 수다. `intention`에서 한 걸음에 갈 수 있는 곳만 해도 `ntention`(지우기), `eintention`(넣기), `entention`(바꾸기)을 비롯해 수백 가지다. 걸음마다 그만큼씩 갈라지니 다 가 볼 수 없다.
 
 대신 작은 문제부터 표에 채운다. 칸 $$(i, j)$$에는 "`flaw`의 앞 $$i$$글자를 `lawn`의 앞 $$j$$글자로 고치는 가장 적은 횟수"를 적는다. `#`은 빈 문자열이다.
 
@@ -55,20 +55,20 @@ permalink: "/studies/data-and-information/edit-distance/"
 맨 윗줄은 빈 문자열에 글자를 넣기만 하는 횟수, 맨 왼쪽 줄은 지우기만 하는 횟수다. 나머지 칸은 위, 왼쪽, 왼쪽 위 대각선의 세 칸만 보고 채운다. 오른쪽 아래 끝의 2가 답이다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 길이 3 이하의 모든 문자열 쌍에서 표의 값 = 손질을 직접 해 보는 탐색의 값, 슬라이드의 `intention` → `execution` 5와 8, 슬라이드 표 100칸, 무작위 3,000회에서 거리의 네 조건과 범위·되짚기, `flaw` → `lawn` 표, 카드의 값 — [11_edit-distance_impl.py](/Hongs_Blog/studies/data-and-information/code/11_edit-distance_impl/)</div>
+<div class="callout-title" markdown="span">검증: 길이 3 이하의 모든 문자열 쌍에서 표의 값 = 손질을 직접 해 보는 탐색의 값, 본문의 `intention` → `execution` 5와 8, 실행 추적 표 100칸, 무작위 3,000회에서 거리의 네 조건과 범위·되짚기, `flaw` → `lawn` 표, 카드의 값 — [11_edit-distance_impl.py](/Hongs_Blog/studies/data-and-information/code/11_edit-distance_impl/)</div>
 
 </div>
 
 
 ## 정의
 
-두 문자열 사이의 편집 거리(최소 편집 거리)는 한쪽을 다른 쪽으로 바꾸는 데 필요한 손질의 가장 적은 횟수다. 손질은 세 가지다[^3].
+두 문자열 사이의 편집 거리(최소 편집 거리)는 한쪽을 다른 쪽으로 바꾸는 데 필요한 손질의 가장 적은 횟수다. 손질은 세 가지다.
 
 - **넣기**(insertion): 글자 하나를 끼워 넣는다.
 - **지우기**(deletion): 글자 하나를 뺀다.
 - **바꾸기**(substitution): 글자 하나를 다른 글자로 바꾼다.
 
-손질마다 비용을 달리 줄 수 있다. 슬라이드의 `intention` → `execution`은 두 낱말을 위아래로 맞춰 놓고 손질을 적는다[^3].
+손질마다 비용을 달리 줄 수 있다. 예로 `intention` → `execution`에서 두 낱말을 위아래로 맞춰 놓고 손질을 적으면 이렇다.
 
 ```
 I N T E * N T I O N
@@ -84,7 +84,7 @@ d s s   i s
 | 세 손질 모두 1 | $$1 + 3 + 1$$ | 5 |
 | 넣기·지우기 1, 바꾸기 2 | $$1 + 3 \cdot 2 + 1$$ | 8 |
 
-바꾸기를 2로 두는 것은 "지우고 다시 넣는 것"과 같은 값으로 치겠다는 뜻이다. 슬라이드는 이 둘째 방식을 레벤슈타인이라 부르고, 계산 표도 이 비용으로 채운다[^3][^s1].
+바꾸기를 2로 두는 것은 "지우고 다시 넣는 것"과 같은 값으로 치겠다는 뜻이다. 이 둘째 방식을 레벤슈타인 거리라 부르는 교재도 있다(Jurafsky, Martin). 하지만 세 손질이 모두 1인 쪽을 레벤슈타인 거리라 부르는 자료가 더 많다. 그래서 문제를 풀 때는 비용 약속을 먼저 확인한다. 아래 계산 표는 둘째 방식으로 채운다[^s1].
 
 ### 입출력
 
@@ -93,7 +93,7 @@ d s s   i s
 
 ### 점화식
 
-$$D(i, j)$$를 "$$S_1$$의 앞 $$i$$글자를 $$S_2$$의 앞 $$j$$글자로 바꾸는 가장 싼 비용"이라 하자($$0 \le i \le n$$, $$0 \le j \le m$$). $$S_1(i)$$는 $$S_1$$의 $$i$$번째 글자다(1부터 센다). 가장자리는 $$D(i, 0) = i$$, $$D(0, j) = j$$다. 안쪽 칸은 세 값 중 가장 작은 것이다[^4].
+$$D(i, j)$$를 "$$S_1$$의 앞 $$i$$글자를 $$S_2$$의 앞 $$j$$글자로 바꾸는 가장 싼 비용"이라 하자($$0 \le i \le n$$, $$0 \le j \le m$$). $$S_1(i)$$는 $$S_1$$의 $$i$$번째 글자다(1부터 센다). 가장자리는 $$D(i, 0) = i$$, $$D(0, j) = j$$다. 안쪽 칸은 세 값 중 가장 작은 것이다.
 
 $$D(i, j) = \min \begin{cases} D(i-1, j) + 1 & \text{(지우기)} \\ D(i, j-1) + 1 & \text{(넣기)} \\ D(i-1, j-1) + \begin{cases} 2 & S_1(i) \ne S_2(j) \\ 0 & S_1(i) = S_2(j) \end{cases} & \text{(바꾸기 또는 그대로)} \end{cases}$$
 
@@ -123,9 +123,9 @@ $$D(i, j) = \min \begin{cases} D(i-1, j) + 1 & \text{(지우기)} \\ D(i, j-1) +
 
 의사코드의 `S1[i]`는 1부터 센다. 파이썬 구현에서는 `a[i - 1]`이다.
 
-### 실행 추적: 슬라이드의 표
+### 실행 추적: `intention` → `execution`
 
-`intention`(세로)을 `execution`(가로)으로 바꾼다. 넣기·지우기 1, 바꾸기 2다. 슬라이드는 아래에서 위로 그리지만 여기서는 위에서 아래로 적는다[^5].
+`intention`(세로)을 `execution`(가로)으로 바꾼다. 넣기·지우기 1, 바꾸기 2다.
 
 | | # | e | x | e | c | u | t | i | o | n |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -146,7 +146,7 @@ $$D(i, j) = \min \begin{cases} D(i-1, j) + 1 & \text{(지우기)} \\ D(i, j-1) +
 - $$D(4, 1)$$: `e`와 `e`가 같다. 대각 $$D(3, 0) + 0 = 3$$. 위 $$4 + 1 = 5$$, 왼쪽 $$4 + 1 = 5$$. 가장 작은 값 3. `int`를 지우고 `e`는 그대로 둔 것이다.
 - $$D(9, 9)$$: `n`과 `n`이 같다. 대각 $$D(8, 8) + 0 = 8$$. 답 8.
 
-**되짚기.** 어떤 손질을 했는지 알려면, 칸마다 세 방향 가운데 어디서 왔는지를 화살표로 적어 두고 오른쪽 아래 끝에서 왼쪽 위 끝까지 거꾸로 따라간다. 대각선은 맞추기나 바꾸기, 위는 지우기, 왼쪽은 넣기다. 슬라이드의 표에서 색칠된 칸이 이 길이고, 그 길을 읽으면 위의 맞춤(INTE\*NTION / \*EXECUTION)이 나온다[^6].
+**되짚기.** 어떤 손질을 했는지 알려면, 칸마다 세 방향 가운데 어디서 왔는지를 화살표로 적어 두고 오른쪽 아래 끝에서 왼쪽 위 끝까지 거꾸로 따라간다. 대각선은 맞추기나 바꾸기, 위는 지우기, 왼쪽은 넣기다. 위 표에서 이 길을 따라 읽으면 앞의 맞춤(INTE\*NTION / \*EXECUTION)이 나온다.
 
 ### 정확성
 
@@ -156,7 +156,7 @@ $$D(i, j) = \min \begin{cases} D(i-1, j) + 1 & \text{(지우기)} \\ D(i, j-1) +
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
 
 강한 [귀납법](/Hongs_Blog/studies/discrete-math/induction/)을 $$i + j$$에 대해 쓴다. 불변식: 칸 $$(i, j)$$를 채울 때 그 위, 왼쪽, 대각 칸에는 이미 가장 싼 비용이 들어 있다.
-1. **맞춤으로 바꿔 생각한다.** 손질의 나열은 두 문자열을 위아래로 맞춘 그림 하나로 적을 수 있다. 칸마다 (글자, 글자), (글자, 빈 칸), (빈 칸, 글자) 중 하나다. 세 손질의 값이 모두 1이거나 슬라이드처럼 바꾸기만 2일 때, 같은 자리를 두 번 손대는 나열(넣었다가 지우기, 바꾼 것을 또 바꾸기)은 한 번만 손대는 나열보다 싸지 않다. 그래서 가장 싼 나열은 맞춤 가운데 있다. 글자 쌍마다 값을 달리 줄 때는 "두 번 바꾸는 값이 한 번에 바꾸는 값보다 싸지 않다"는 조건이 있어야 같은 말을 할 수 있다. — 손질을 맞춤으로 옮겨 적기
+1. **맞춤으로 바꿔 생각한다.** 손질의 나열은 두 문자열을 위아래로 맞춘 그림 하나로 적을 수 있다. 칸마다 (글자, 글자), (글자, 빈 칸), (빈 칸, 글자) 중 하나다. 세 손질의 값이 모두 1이거나 위 표처럼 바꾸기만 2일 때, 같은 자리를 두 번 손대는 나열(넣었다가 지우기, 바꾼 것을 또 바꾸기)은 한 번만 손대는 나열보다 싸지 않다. 그래서 가장 싼 나열은 맞춤 가운데 있다. 글자 쌍마다 값을 달리 줄 때는 "두 번 바꾸는 값이 한 번에 바꾸는 값보다 싸지 않다"는 조건이 있어야 같은 말을 할 수 있다. — 손질을 맞춤으로 옮겨 적기
 2. **가장자리.** $$j = 0$$이면 $$S_1$$의 앞 $$i$$글자를 빈 문자열로 만들어야 하니 $$i$$번 지우는 수밖에 없다. $$i = 0$$도 같다. — 정의
 3. **마지막 칸은 세 가지뿐이다.** 앞 $$i$$글자와 앞 $$j$$글자의 맞춤에서 맨 끝 칸은 ($$S_1(i)$$, 빈 칸), (빈 칸, $$S_2(j)$$), ($$S_1(i)$$, $$S_2(j)$$) 중 하나다. — 맞춤의 꼴
 4. **나머지도 가장 싸야 한다.** 맨 끝 칸을 떼어 낸 나머지는 각각 $$(i-1, j)$$, $$(i, j-1)$$, $$(i-1, j-1)$$ 문제의 맞춤이다. 전체가 가장 싸려면 나머지도 그 문제에서 가장 싸야 한다. 더 싼 것이 있다면 바꿔 끼워 전체를 더 싸게 만들 수 있기 때문이다. — 바꿔 끼우기 논증
@@ -209,7 +209,7 @@ $$D(i, j) = \min \begin{cases} D(i-1, j) + 1 & \text{(지우기)} \\ D(i, j-1) +
 
 ### 복잡도
 
-두 길이를 $$n$$, $$m$$이라 하면 칸이 $$(n + 1)(m + 1)$$개이고 칸 하나는 세 값을 비교할 뿐이다[^6].
+두 길이를 $$n$$, $$m$$이라 하면 칸이 $$(n + 1)(m + 1)$$개이고 칸 하나는 세 값을 비교할 뿐이다.
 
 | | 비용 |
 |---|---|
@@ -221,7 +221,7 @@ $$D(i, j) = \min \begin{cases} D(i-1, j) + 1 & \text{(지우기)} \\ D(i, j-1) +
 
 ## 예제
 
-**편집 유사도.** 편집 거리는 긴 낱말일수록 커지기 쉽다. 길이로 나눠 0~1로 맞춘다[^7].
+**편집 유사도.** 편집 거리는 긴 낱말일수록 커지기 쉽다. 길이로 나눠 0~1로 맞춘다.
 
 $$\mathrm{NED}(r, s) = \frac{\mathrm{ED}(r, s)}{\max(\vert r\vert , \vert s\vert )}, \qquad \mathrm{EDS}(r, s) = 1 - \mathrm{NED}(r, s)$$
 
@@ -236,15 +236,15 @@ $$\mathrm{NED}(r, s) = \frac{\mathrm{ED}(r, s)}{\max(\vert r\vert , \vert s\vert
 ## 활용
 
 - 구현: [11_edit-distance_impl.py](/Hongs_Blog/studies/data-and-information/code/11_edit-distance_impl/). 연습: [편집 거리 예제 사다리](/Hongs_Blog/studies/data-and-information/edit-distance-ladder/)
-- **기계 번역과 음성 인식의 평가.** 글자 대신 낱말을 단위로 삼는다. 슬라이드의 예는 기준 문장 "Spokesman confirms senior government adviser was shot"과 기계가 낸 "Spokesman said the senior adviser was shot dead"를 맞춰 바꾸기 1, 넣기 2, 지우기 1을 센다[^3].
-- **편집 가중치 조절.** 모든 바꾸기가 같은 값일 필요는 없다. 슬라이드의 표 `sub[X, Y]`는 맞는 글자 Y 자리에 X를 잘못 친 횟수를 글자 쌍마다 센 것이다[^8]. 자주 헷갈리는 쌍의 바꾸기 값을 낮추면 맞춤법 교정이 더 그럴듯한 후보를 고른다. 예: `thr`의 교정 후보 `the`와 `tho`는 편집 거리가 둘 다 1이다. 자판에서 이웃한 `e`와 `r`의 바꾸기 값을 0.5로 낮추면 `the`가 0.5로 앞선다[^s1].
+- **기계 번역과 음성 인식의 평가.** 글자 대신 낱말을 단위로 삼는다. 예를 들어 기준 문장 "Spokesman confirms senior government adviser was shot"과 기계가 낸 "Spokesman said the senior adviser was shot dead"를 맞추면 바꾸기 1, 넣기 2, 지우기 1이다.
+- **편집 가중치 조절.** 모든 바꾸기가 같은 값일 필요는 없다. 오타를 모아 맞는 글자 Y 자리에 X를 잘못 친 횟수 `sub[X, Y]`를 글자 쌍마다 세어 둘 수 있다. 자주 헷갈리는 쌍의 바꾸기 값을 낮추면 맞춤법 교정이 더 그럴듯한 후보를 고른다. 예: `thr`의 교정 후보 `the`와 `tho`는 편집 거리가 둘 다 1이다. 자판에서 이웃한 `e`와 `r`의 바꾸기 값을 0.5로 낮추면 `the`가 0.5로 앞선다[^s1].
 - 흔한 실수: 표의 가장자리를 0으로 채우는 것. 빈 문자열에서 $$j$$글자를 만들려면 $$j$$번 넣어야 하므로 $$D(0, j) = j$$다.
 - 흔한 실수: 비용 약속을 확인하지 않는 것. 같은 두 낱말이 바꾸기 1이면 5, 바꾸기 2면 8이다.
 
 ## 연결
 
 - 선수: [문자열 유사도](/Hongs_Blog/studies/data-and-information/string-similarity/)(문자 기반 유사도의 대표), [동적 계획법](/Hongs_Blog/studies/algorithms/dynamic-programming/)
-- 손질 한 번을 간선으로 보면 편집 거리는 낱말 사이의 최단 경로다: [너비 우선 탐색(BFS)](/Hongs_Blog/studies/algorithms/bfs/). 슬라이드의 길 찾기 그림이 이 그래프다.
+- 손질 한 번을 간선으로 보면 편집 거리는 낱말 사이의 최단 경로다: [너비 우선 탐색(BFS)](/Hongs_Blog/studies/algorithms/bfs/). 예시로 보기의 길 찾기가 이 그래프 위에서 길을 찾는 것이다.
 - 세 손질이 모두 1이면 [거리의 네 조건](/Hongs_Blog/studies/data-and-information/distance-similarity/)을 지킨다[^s1].
 - 같은 자리끼리만 비교하는 거리: [해밍 거리와 부호 거리](/Hongs_Blog/studies/data-and-information/hamming-distance/)
 
@@ -309,13 +309,5 @@ $$\mathrm{NED}(r, s) = \frac{\mathrm{ED}(r, s)}{\max(\vert r\vert , \vert s\vert
 </details>
 
 
-[^1]: 자료와 정보 4회 강의 자료 「D&I_강의04-2-유사도와거리」, p.6 (Edit Distance (Transformation Distance): D(Patty, Selma) = 3, D(Marge, Selma) = 5)
-[^2]: 같은 자료, p.13 (편집 거리 계산하기: initial state, operators, goal state, path cost, intention에서 ntention·eintention·entention으로 가는 그림)
-[^3]: 같은 자료, p.12 (편집 거리: 세 연산, INTE\*NTION / \*EXECUTION 맞춤과 d s s i s, 비용이 1이면 5, 바꾸기가 2(Levenshtein)면 8, 기계 번역·음성 인식 평가 예)
-[^4]: 같은 자료, p.14 (편집 거리 계산 테이블: 점화식과 가장자리 값)
-[^5]: 같은 자료, p.15 (편집 거리 계산: 채워진 표)
-[^6]: 같은 자료, p.16 (편집 거리 찾기: 화살표가 달린 표, Time $$O(nm)$$, Space $$O(nm)$$, Backtrace $$O(n + m)$$)
-[^7]: 같은 자료, p.17 (Edit Similarity: NED, EDS)
-[^8]: 같은 자료, p.18 (편집 가중치 조절: sub[X, Y] = Substitution of X (incorrect) for Y (correct) 표)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `flaw` → `lawn` 예시와 표, 점화식을 말로 푼 설명, 의사코드, 손으로 따라간 칸, 정확성 증명, 공간 줄이기, NED가 0~1인 까닭과 두 계산 예, 해밍 거리와의 비교, `thr` 가중치 예, 흔한 실수, 오해 항목, 카드는 슬라이드에 없다. 구현 코드의 전수 검사와 무작위 검사로 확인했다(실험 확인이며, 증명은 위에 따로 적었다). 슬라이드는 바꾸기 값이 2인 쪽을 레벤슈타인이라 부른다. 세 손질이 모두 1인 쪽을 레벤슈타인 거리라 부르는 자료가 더 많으므로(Wagner, Fischer, "The string-to-string correction problem", 1974), 문제를 풀 때는 비용 약속을 먼저 확인한다. 슬라이드의 예와 표는 Jurafsky, Martin, *Speech and Language Processing*의 최소 편집 거리 절에서 온 것이다.
+[^s1]: 구현 코드의 전수 검사와 무작위 검사로 확인했다(실험 확인이며, 증명은 위에 따로 적었다). 세 손질이 모두 1인 쪽을 레벤슈타인 거리라 부르는 자료가 더 많으므로(Wagner, Fischer, "The string-to-string correction problem", 1974), 문제를 풀 때는 비용 약속을 먼저 확인한다.
 {% endraw %}

@@ -21,10 +21,10 @@ permalink: "/studies/database-design/code/53_library-ddl-practice_p2/"
 
 ```python
 # 53.LIBRARY 스키마 DDL 연습 p2 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 53_library-ddl-practice_p2.py)
-# 문제: 슬라이드 10 p.22 = 10-2 p.9의 연습 2(외래 키 일곱 개의 참조 동작 고르기)와 연습 3(DDL 쓰기).
-# 풀이 슬라이드(10-11-SQL-Solutions p.13~20)의 선택대로 표 일곱 개를 만들고, 작은 예시 행을 넣어 동작을 하나씩 확인한다.
-# 고친 곳: 가리키는 표를 먼저 만든다, 쉼표를 동작 뒤로 옮긴다, ON DELETE REJECT는 쓰지 않는다(안 적으면 거부다).
-# 풀이 슬라이드에 적힌 그대로가 왜 안 도는지는 PostgreSQL에서 확인했다(53_library-ddl-practice_p2.sql).
+# 문제: p1(외래 키 일곱 개의 참조 동작 고르기)과 p2(DDL 쓰기).
+# 문서의 답대로 표 일곱 개를 만들고, 작은 예시 행을 넣어 동작을 하나씩 확인한다.
+# 틀리기 쉬운 곳: 가리키는 표를 먼저 만든다, 쉼표를 동작 뒤로 옮긴다, ON DELETE REJECT는 쓰지 않는다(안 적으면 거부다).
+# 틀리기 쉬운 판이 왜 안 도는지는 PostgreSQL에서 확인했다(53_library-ddl-practice_p2.sql).
 import sqlite3
 
 LIBRARY_DDL = """
@@ -57,7 +57,7 @@ CREATE TABLE BOOK_LOANS (
   FOREIGN KEY (Branch_id) REFERENCES LIBRARY_BRANCH(Branch_id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (Card_no) REFERENCES BORROWER(Card_no) ON UPDATE CASCADE);
 """
-# 예시 행 (슬라이드에는 행이 없다. 동작을 보려고 만든 것이다)
+# 예시 행 (동작을 보려고 만든 것이다)
 ROWS = """
 INSERT INTO PUBLISHER VALUES ('Pearson', 'New Jersey', '111'), ('MIT Press', 'Massachusetts', '222');
 INSERT INTO LIBRARY_BRANCH VALUES (1, 'Central', 'Seoul'), (2, 'East', 'Seoul');

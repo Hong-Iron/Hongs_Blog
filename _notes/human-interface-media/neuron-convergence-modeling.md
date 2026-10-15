@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-09-25"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 뉴런의 연산 모형 o' = a(A\\mathbf{x} + \\mathbf{b}), 뉴런의 수렴의 세 회로."
 next_url: "/studies/human-interface-media/metamerism-ladder/"
@@ -22,7 +22,7 @@ permalink: "/studies/human-interface-media/neuron-convergence-modeling/"
 {% raw %}
 사용 개념: [뉴런의 연산 모형](/Hongs_Blog/studies/human-interface-media/neuron-computational-model/) $$o' = a(A\mathbf{x} + \mathbf{b})$$, [뉴런의 수렴](/Hongs_Blog/studies/human-interface-media/neuron-convergence/)의 세 회로.
 
-강의 2 p.13~14는 세 회로의 그림과 그래프만 두고 오른쪽을 비워 두었다. 그 자리를 연산 모형으로 채우는 연습이다[^1]. 공통 설정: 수용기 1~7이 한 줄로 있고, 자극받은 수용기의 출력은 1, 아니면 0이다. 자극은 4 하나, 3~5, 2~6, 1~7 네 가지다. 출력은 뉴런 B 하나라서 $$A$$는 $$1 \times 7$$ 행렬, 곧 가중치 벡터 $$\mathbf{w}$$다. 바이어스는 0으로 둔다.
+[뉴런의 수렴](/Hongs_Blog/studies/human-interface-media/neuron-convergence/)의 세 회로와 반응 그래프를 연산 모형의 식으로 옮기는 연습이다. 공통 설정: 수용기 1~7이 한 줄로 있고, 자극받은 수용기의 출력은 1, 아니면 0이다. 자극은 4 하나, 3~5, 2~6, 1~7 네 가지다. 출력은 뉴런 B 하나라서 $$A$$는 $$1 \times 7$$ 행렬, 곧 가중치 벡터 $$\mathbf{w}$$다. 바이어스는 0으로 둔다.
 
 풀이 전략은 늘 같다. 회로 그림에서 "각 수용기가 B까지 어떤 부호로 몇 번 닿는가"를 세면 그것이 가중치다. 중간 뉴런(A, C)을 거치면 그 뉴런이 B에 닿는 부호를 곱한다. 그다음 네 자극을 넣어 그래프와 맞는지 확인한다.
 
@@ -108,7 +108,4 @@ permalink: "/studies/human-interface-media/neuron-convergence-modeling/"
 <div class="callout-title" markdown="span">검증: 변형 1의 (1, 3, 2, 1), 변형 2의 0.3과 2.1 — [09_neuron-convergence_verify.py](/Hongs_Blog/studies/human-interface-media/code/09_neuron-convergence_verify/)</div>
 
 </div>
-
-
-[^1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 가중치 벡터로 푸는 방법은 슬라이드의 빈칸을 연산 모형으로 채운 것이다. 강의에서 교수님이 쓴 식과 표기가 다를 수 있다. 문제 4와 변형 문제는 원본에 없다.
 {% endraw %}

@@ -155,7 +155,7 @@ def main():
     xh = F(dot(a, b), dot(a, a))
     assert xh == 1 and [xh * x for x in a] == [1, 1] and [bi - xh * ai for ai, bi in zip(a, b)] == [1, -1]
     print("[OK] 주장 7·카드 C2")
-    # 수치해석(2-2) 과목별 관점: 직교 행렬은 길이와 각을 지킨다, 슬라이드의 30° 회전
+    # 수치해석(2-2) 과목별 관점: 직교 행렬은 길이와 각을 지킨다, 문서의 30° 회전
     import math
     s3 = math.sqrt(3)
     Q = [[s3 / 2, -0.5], [0.5, s3 / 2]]

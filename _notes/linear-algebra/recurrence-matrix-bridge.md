@@ -120,9 +120,7 @@ $$k$$계 점화식도 $$k \times k$$ 동반 행렬로 같은 대응이 맞는다
 </details>
 
 
-## 출처
-
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.2절(피보나치 수와 $$\begin{pmatrix}1 & 1\\ 1 & 0\end{pmatrix}$$, 황금비 고윳값). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장(선형 점화식과 특성방정식).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 전이 행렬로 문자열·경로를 세는 방법은 조합론의 전이 행렬 방법이며, 결정적 유한 오토마타의 인접 행렬 거듭제곱이 길이 $$n$$ 문자열의 수를 준다. 전이 문제의 개수는 21_recurrence-matrix-bridge_verify.py에서 전수로 셌다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [21_recurrence-matrix-bridge_plot.py](/Hongs_Blog/studies/linear-algebra/code/21_recurrence-matrix-bridge_plot/)로 그렸고, $$F_{10} = 55$$, $$Q^{10}$$, 비가 $$\varphi$$의 위아래를 번갈아 오가는 것, 차이가 줄어드는 비율이 $$\varphi^2$$에 가까운 것을 같은 코드로 확인했다.
+[^s1]: 전이 행렬로 문자열·경로를 세는 방법은 조합론의 전이 행렬 방법이며, 결정적 유한 오토마타의 인접 행렬 거듭제곱이 길이 $$n$$ 문자열의 수를 준다. 전이 문제의 개수는 21_recurrence-matrix-bridge_verify.py에서 전수로 셌다.
+[^s2]: [21_recurrence-matrix-bridge_plot.py](/Hongs_Blog/studies/linear-algebra/code/21_recurrence-matrix-bridge_plot/)로 그렸고, $$F_{10} = 55$$, $$Q^{10}$$, 비가 $$\varphi$$의 위아래를 번갈아 오가는 것, 차이가 줄어드는 비율이 $$\varphi^2$$에 가까운 것을 같은 코드로 확인했다.
 {% endraw %}

@@ -53,7 +53,7 @@ def save(fig, k):
 
 
 def cksum(words):
-    """슬라이드 50의 C 코드를 그대로 옮긴 것."""
+    """문서의 C 코드를 그대로 옮긴 것."""
     s = 0
     for w in words:
         s += w

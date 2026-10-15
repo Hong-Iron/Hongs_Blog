@@ -88,7 +88,7 @@ def main():
         c = fit(train, d)
         assert mse(c + [0.0], train) == mse(c, train) >= tr[d + 1] - 1e-12
     print("[OK] 주장 4·카드 C1")
-    # 데이터 과학 6회 슬라이드 p.5: 부트스트랩 표본에 한 번도 안 뽑히는(OOB) 비율 -> 1/e ≈ 0.368 (카드 C4)
+    # 데이터 과학 관점: 부트스트랩 표본에 한 번도 안 뽑히는(OOB) 비율 -> 1/e ≈ 0.368 (카드 C4)
     import math as _m
     for n, want in ((10, 0.349), (100, 0.366), (10000, 0.368)):
         assert round((1 - 1 / n) ** n, 3) == want

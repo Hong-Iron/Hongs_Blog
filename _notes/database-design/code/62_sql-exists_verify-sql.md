@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/62_sql-exists_verify-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 62.EXISTS와 NOT EXISTS: 슬라이드 11-2 p.15~18, 12 p.5
+-- 62.EXISTS와 NOT EXISTS 검증
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS sql_exists CASCADE;
 CREATE SCHEMA sql_exists;
 SET search_path TO sql_exists;
 
--- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
--- 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
+-- 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 -- 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -72,7 +72,7 @@ INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),
  ('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1. Q6 (p.16), EXISTS 판, Q16B (p.15), 연습 1 (p.17)
+-- 1. Q6, EXISTS 판, Q16B, 부양가족이 있는 관리자
 DO $$ BEGIN
   ASSERT (SELECT string_agg(Lname, ',' ORDER BY Lname) FROM EMPLOYEE
           WHERE NOT EXISTS (SELECT * FROM DEPENDENT WHERE Ssn = Essn)) = 'Borg,English,Jabbar,Narayan,Zelaya',
@@ -84,7 +84,7 @@ DO $$ BEGIN
                         WHERE E.Ssn = D.Essn AND E.Sex = D.Sex AND E.Fname = D.Dependent_name)) = 0, 'Q16B가 0행이 아니다';
   ASSERT (SELECT string_agg(Lname, ',' ORDER BY Lname) FROM EMPLOYEE
           WHERE EXISTS (SELECT * FROM DEPENDENT WHERE Ssn = Essn)
-            AND EXISTS (SELECT * FROM DEPARTMENT WHERE Ssn = Mgr_ssn)) = 'Wallace,Wong', '연습 1이 Wallace, Wong이 아니다';
+            AND EXISTS (SELECT * FROM DEPARTMENT WHERE Ssn = Mgr_ssn)) = 'Wallace,Wong', '부양가족이 있는 관리자가 Wallace, Wong이 아니다';
 END $$;
 
 -- 2. 바깥 행을 쓰지 않는 안쪽 질의는 모든 행에 같은 답을 준다
@@ -103,7 +103,7 @@ DO $$ BEGIN
             AND EXISTS (SELECT * FROM DEPENDENT AS D WHERE D.Essn = E.Ssn)) = 0, '부양가족이 있어야 한다는 판이 0명이 아니다';
 END $$;
 
--- 4. UNIQUE(부질의) (p.18): PostgreSQL 16은 "UNIQUE predicate is not yet implemented"로 거부한다
+-- 4. UNIQUE(부질의): PostgreSQL 16은 "UNIQUE predicate is not yet implemented"로 거부한다
 DO $$ DECLARE ok boolean := false; BEGIN
   BEGIN
     EXECUTE $q$ SELECT Fname, Lname FROM EMPLOYEE WHERE UNIQUE (SELECT * FROM DEPENDENT WHERE Ssn = Essn) $q$;
@@ -116,7 +116,7 @@ DO $$ DECLARE ok boolean := false; BEGIN
          'UNIQUE를 바꿔 쓴 판이 8명이 아니다';
 END $$;
 
--- 5. 12주차 풀이의 NOT EXIST (S가 빠짐)는 구문 오류다
+-- 5. NOT EXIST (S가 빠짐)는 구문 오류다
 DO $$ DECLARE ok boolean := false; BEGIN
   BEGIN
     EXECUTE $q$ SELECT Fname FROM EMPLOYEE WHERE NOT EXIST (SELECT * FROM DEPENDENT WHERE Ssn = Essn) $q$;

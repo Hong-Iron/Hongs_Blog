@@ -23,12 +23,12 @@ permalink: "/studies/data-structures/code/39_floyd-path-output_impl/"
 /* 플로이드 알고리즘의 경로 출력: 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/39.플로이드 알고리즘의 경로 출력.md
- * 출처: 자료구조 12주차 슬라이드 p.61~70. 반복문(p.61)과 outputPath(p.70)를 한 파일로 돌아가게 옮겼다.
+ * 문서의 반복문과 outputPath를 한 파일로 돌아가게 옮겼다.
  * 실행: cc -std=c11 -Wall -Wextra 39_floyd-path-output_impl.c -o floyd && ./floyd
- * 정점 번호는 슬라이드처럼 1부터 n까지다. 배열의 0번 칸은 쓰지 않는다.
+ * 정점 번호는 문서처럼 1부터 n까지다. 배열의 0번 칸은 쓰지 않는다.
  *
  * 확인하는 것
- *   1. 슬라이드의 정점 8개 그래프: 끝난 뒤의 비용 표(p.63)와 kay 표(p.64) 64칸씩.
+ *   1. 문서 예시의 정점 8개 그래프: 끝난 뒤의 비용 표와 kay 표 64칸씩.
  *   2. outputPath(1, 7)이 4 2 5 8 6 7을 찍는다. 앞에 1을 붙이면 길 1 4 2 5 8 6 7, 길이 14.
  *   3. 모든 (i, j)에서 찍힌 길의 간선이 처음 그래프에 있고, 그 비용의 합이 c[i][j]와 같다.
  *   4. 길이 없는 쌍은 c가 INF이고 kay가 0이다. 이때 outputPath를 그냥 부르면 없는 간선을 찍는다.
@@ -48,7 +48,7 @@ static int kay[MAXN + 1][MAXN + 1];    /* kay[i][j]: 그 길에서 번호가 가
 
 static int path[4 * MAXN], pathLen;    /* 테스트에서 견주려고 찍은 정점을 따로 적어 둔다 */
 
-/* 슬라이드 p.61: 길이가 줄어들 때마다 그때의 k를 적는다 */
+/* 문서의 반복문: 길이가 줄어들 때마다 그때의 k를 적는다 */
 void floydWithKay(void)
 {
     for (int i = 1; i <= n; i++)
@@ -62,7 +62,7 @@ void floydWithKay(void)
                 }
 }
 
-/* 슬라이드 p.70: i에서 j로 가는 길을 찍는다. 첫 정점 i는 찍지 않는다 */
+/* 문서의 outputPath: i에서 j로 가는 길을 찍는다. 첫 정점 i는 찍지 않는다 */
 void outputPath(int i, int j)
 {
     if (i == j) return;
@@ -79,7 +79,7 @@ void outputPath(int i, int j)
 
 static void loadSlideGraph(int cost0[MAXN + 1][MAXN + 1])
 {
-    /* 슬라이드 p.62의 처음 비용 표. 0은 간선 없음을 뜻하게 적었다 */
+    /* 문서 예시 그래프의 처음 비용 표. 0은 간선 없음을 뜻하게 적었다 */
     static const int rows[8][8] = {
         {0, 7, 5, 1, 0, 0, 0, 0},
         {0, 0, 0, 0, 4, 0, 0, 0},
@@ -127,10 +127,10 @@ int main(void)
     };
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= n; j++) {
-            CHECK(c[i][j] == wantC[i - 1][j - 1], "비용 표가 슬라이드 p.63과 같다");
-            CHECK(kay[i][j] == wantKay[i - 1][j - 1], "kay 표가 슬라이드 p.64와 같다");
+            CHECK(c[i][j] == wantC[i - 1][j - 1], "끝난 뒤의 비용 표");
+            CHECK(kay[i][j] == wantKay[i - 1][j - 1], "kay 표가 문서의 표와 같다");
         }
-    printf("[OK] 정점 8개 그래프: 비용 표 64칸과 kay 표 64칸이 슬라이드와 같다\n");
+    printf("[OK] 정점 8개 그래프: 비용 표 64칸과 kay 표 64칸이 문서의 표와 같다\n");
 
     /* 2. 1에서 7로 가는 길 */
     pathLen = 0;

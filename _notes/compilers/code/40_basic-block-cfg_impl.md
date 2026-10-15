@@ -21,9 +21,9 @@ permalink: "/studies/compilers/code/40_basic-block-cfg_impl/"
 
 ```python
 # 40_basic-block-cfg_impl.py
-# 3주소 코드를 기본 블록으로 자르고 제어 흐름 그래프를 만든다. 슬라이드 L12 p.9의 네 블록과
-# p.10의 간선 여섯 개를 다시 만들고, p.11(지역)·p.12(전역) 최적화 뒤 코드가 원래 코드와
-# 같은 결과를 내는지 실행해 견준다. 블록을 자르는 세 규칙은 슬라이드에 없다(Aho 외 8.4절).
+# 3주소 코드를 기본 블록으로 자르고 제어 흐름 그래프를 만든다. 문서 예시의 네 블록과
+# 간선 여섯 개를 다시 만들고, 지역·전역 최적화 뒤 코드가 원래 코드와
+# 같은 결과를 내는지 실행해 견준다. 블록을 자르는 세 규칙은 Aho 외 8.4절을 따른다.
 # 실행: python3 40_basic-block-cfg_impl.py
 import re
 
@@ -214,13 +214,13 @@ if __name__ == "__main__":
             assert (env["x"], env["y"], env["z"]) == src(x, 7)
     assert src(10, 7) == (10, 10, 110) and src(3, 7) == (110, 10, 7)   # 카드 C3
 
-    # p.11 지역 최적화는 첫 블록만 바꾼다. p.12 전역 최적화는 다른 블록까지 바꾼다
+    # 지역 최적화(P11)는 첫 블록만 바꾼다. 전역 최적화(P12)는 다른 블록까지 바꾼다
     b11, b12 = blocks(quads(P11)), blocks(quads(P12))
     assert [len(b) for b in b11] == [3, 2, 2, 2] and b11[1:] == bs[1:]
     assert b12[0] == b11[0] and b12[1][0] == ("=", "110", None, "x") and b12[2][1] == ("=", "110", None, "z")
     assert cfg(b11) == cfg(bs) == cfg(b12)
 
-    # L11 p.17의 if-else는 블록 5개, L12 p.7의 while은 블록 3개
+    # 3주소 코드 문서의 if-else는 블록 5개, while은 블록 3개
     IFELSE = """t0 = x == y
 if t0 goto L0
 goto L1

@@ -118,6 +118,6 @@ $$\frac{\partial f}{\partial x_i}(\mathbf{a}) = \lim_{h \to 0}\frac{f(\mathbf{a}
 
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.1절 "Functions of Several Variables"(등고선), 4.2절 "Limits and Continuity", 4.3절 "Partial Derivatives"(정의, 2계 편미분, 클레로 정리).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 소벨 필터는 영상 처리 교재의 표준 윤곽 검출 연산자다. 19_partial-derivatives_verify.py에서 밝기가 선형으로 변하는 작은 이미지의 차분이 편미분과 같음을 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [19_partial-derivatives_plot.py](/Hongs_Blog/studies/calculus/code/19_partial-derivatives_plot/)로 그렸고, $$(1, 0)$$의 두 편미분 0과 2(중앙 차분), 예제 함수가 축 위에서 0, 대각선 위에서 원점에 $$10^{-8}$$까지 가까워도 $$\frac12$$인 것을 같은 코드로 확인했다.
+[^s1]: 소벨 필터는 영상 처리 교재의 표준 윤곽 검출 연산자다. 19_partial-derivatives_verify.py에서 밝기가 선형으로 변하는 작은 이미지의 차분이 편미분과 같음을 확인했다.
+[^s2]: [19_partial-derivatives_plot.py](/Hongs_Blog/studies/calculus/code/19_partial-derivatives_plot/)로 그렸고, $$(1, 0)$$의 두 편미분 0과 2(중앙 차분), 예제 함수가 축 위에서 0, 대각선 위에서 원점에 $$10^{-8}$$까지 가까워도 $$\frac12$$인 것을 같은 코드로 확인했다.
 {% endraw %}

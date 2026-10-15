@@ -203,7 +203,7 @@ $$A = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$의 고윳값과 고유벡터.
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.1절 "Introduction to Eigenvalues"(마르코프 행렬 예, 특성방정식, 대각합과 행렬식, 사영·반사·회전).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 페이지랭크를 거듭제곱법으로 구하는 방법은 Brin·Page의 1998년 논문 이후 선형대수 교재의 표준 응용 예다(Strang 5판 10.3절 "Markov Matrices"). 라이브러리가 QR 알고리즘을 쓴다는 것은 LAPACK 문서(`geev`)에 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [19_eigenvalues_plot.py](/Hongs_Blog/studies/linear-algebra/code/19_eigenvalues_plot/)로 그렸고, $$(0.8, 0.2)$$, $$(0.7, 0.3)$$, $$(0.65, 0.35)$$의 순서, 두 고유벡터, 남은 차이가 늘 $$(1, -1)$$ 방향이고 해마다 절반이 되는 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 동치인 정의(특성방정식, $$N(A - \lambda I)$$)와 "합과 곱" 정리, `예제`의 풀이 순서를 옮겼다(Strang 5판 6.1절).
+[^s1]: 페이지랭크를 거듭제곱법으로 구하는 방법은 Brin·Page의 1998년 논문 이후 선형대수 교재의 표준 응용 예다(Strang 5판 10.3절 "Markov Matrices"). 라이브러리가 QR 알고리즘을 쓴다는 것은 LAPACK 문서(`geev`)에 있다.
+[^s2]: [19_eigenvalues_plot.py](/Hongs_Blog/studies/linear-algebra/code/19_eigenvalues_plot/)로 그렸고, $$(0.8, 0.2)$$, $$(0.7, 0.3)$$, $$(0.65, 0.35)$$의 순서, 두 고유벡터, 남은 차이가 늘 $$(1, -1)$$ 방향이고 해마다 절반이 되는 것을 같은 코드로 확인했다.
+[^s3]: 이 문서 `정의`의 동치인 정의(특성방정식, $$N(A - \lambda I)$$)와 "합과 곱" 정리, `예제`의 풀이 순서를 옮겼다(Strang 5판 6.1절).
 {% endraw %}

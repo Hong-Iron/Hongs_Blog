@@ -64,7 +64,7 @@ s = np.logspace(-1.3, 2, 400)
 pts = [0.25, 0.5, 1, 2, 4]
 fig, ax = plt.subplots(figsize=(6, 3.6))
 ax.axhspan(500, 800, color=C[4], alpha=0.12)
-ax.text(0.06, 650, "슬라이드의 최대 발화율 500~800", fontsize=10, va="center")
+ax.text(0.06, 650, "실제 최대 발화율 500~800", fontsize=10, va="center")
 ax.axhline(1000, color=C[1], lw=1.2, ls="--")
 ax.text(0.06, 1030, "상한 $1/t_{ref}$ = 1,000회/초", fontsize=10, color=C[1], va="bottom")
 ax.plot(s, rate(s), color=C[0], lw=2)

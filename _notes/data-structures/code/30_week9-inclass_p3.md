@@ -11,24 +11,23 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 parent_url: "/studies/data-structures/week9-inclass/"
-parent_title: "9주차 수업 문제 풀이"
-description: "자료구조 · 9주차 수업 문제 풀이 문제 3 풀이 코드"
+parent_title: "트리와 힙 문제 풀이"
+description: "자료구조 · 트리와 힙 문제 풀이 문제 3 풀이 코드"
 sitemap: false
 permalink: "/studies/data-structures/code/30_week9-inclass_p3/"
 ---
 {% raw %}
-[9주차 수업 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/) 문서의 문제 3 풀이 코드다.
+[트리와 힙 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/) 문서의 문제 3 풀이 코드다.
 
 ```c
-/* 9주차 수업 문제 3: 더 맵게 (프로그래머스 42626)
+/* 트리와 힙 문제 3: 더 맵게 (프로그래머스 42626)
  *
- * 문서: 1-2학기/자료구조/4.연습문제/30.9주차 수업 문제 풀이.md 의 p3
- * 출처: 자료구조 9주차 수업 문제 슬라이드 19~27. 슬라이드 22~27의 최소 힙 풀이를 고친 것이다.
- *   고친 곳
- *   - 슬라이드 23: while (n > 0)의 n이 줄지 않아, 답이 -1인 입력에서 끝나지 않는다 -> 힙에 남은 개수로 판단한다.
- *   - 슬라이드 25, 27: printf(stderr, ...) -> fprintf(stderr, ...).
- *   - 힙을 만들고 풀어 주지 않는다 -> destroyHeap으로 푼다.
- *   - 힙 크기가 100칸으로 굳어 있다 -> 음식 수만큼 잡는다.
+ * 문서: 트리와 힙 문제 풀이(연습 30)의 p3
+ * 최소 힙 풀이에서 챙긴 곳
+ *   - 반복 조건에 처음 개수 n을 쓰면 n이 줄지 않아, 답이 -1인 입력에서 끝나지 않는다 -> 힙에 남은 개수로 판단한다.
+ *   - 오류 문구는 fprintf(stderr, ...)로 찍는다(printf(stderr, ...)는 잘못이다).
+ *   - 만든 힙은 destroyHeap으로 푼다.
+ *   - 힙 크기를 100칸으로 굳히지 않고 음식 수만큼 잡는다.
  *   - 섞은 값 a + 2b가 int를 넘을 수 있다 -> long long으로 담는다.
  * 실행: cc -std=c11 -Wall -Wextra 30_week9-inclass_p3.c -o p3 && ./p3
  *
@@ -37,8 +36,8 @@ permalink: "/studies/data-structures/code/30_week9-inclass_p3/"
  * 힙은 1번 칸부터 쓰는 최소 힙이다: i번 칸의 부모는 i / 2, 자식은 2i와 2i + 1.
  *
  * 확인하는 것
- *   1. 슬라이드 20의 표 [1, 2, 3, 9, 10, 12], K = 7 -> 2. 슬라이드 24의 K = 15 -> 4.
- *   2. 만들 수 없는 입력 [1, 2], K = 100 -> -1, [1, 1, 1], K = 10 -> -1 (슬라이드 판은 여기서 끝나지 않는다).
+ *   1. 문서의 예 [1, 2, 3, 9, 10, 12], K = 7 -> 2. 변형 (가)의 K = 15 -> 4.
+ *   2. 만들 수 없는 입력 [1, 2], K = 100 -> -1, [1, 1, 1], K = 10 -> -1 (처음 개수 n으로 검사하는 판은 여기서 끝나지 않는다).
  *   3. 처음부터 모두 K 이상이면 0. 음식이 하나뿐인 경우.
  *   4. 큰 값: [900000000, 900000000], K = 1000000000 -> 1 (섞은 값 2,700,000,000은 int를 넘는다).
  *   5. 무작위 2,000개에서 느린 풀이(매번 배열에서 가장 작은 둘을 찾는다)와 같은 답.
@@ -167,11 +166,11 @@ static unsigned rnd(void)
 
 int main(void)
 {
-    /* 1. 슬라이드의 값 */
+    /* 1. 문서의 예 */
     int s[] = {1, 2, 3, 9, 10, 12};
     CHECK(solution(s, 6, 7) == 2, "[1, 2, 3, 9, 10, 12], K = 7 -> 2");
     CHECK(solution(s, 6, 15) == 4, "[1, 2, 3, 9, 10, 12], K = 15 -> 4");
-    printf("[OK] 슬라이드 20의 표 K = 7 -> %d, 슬라이드 24의 main K = 15 -> %d\n", solution(s, 6, 7), solution(s, 6, 15));
+    printf("[OK] 문서의 예 K = 7 -> %d, 변형 (가)의 K = 15 -> %d\n", solution(s, 6, 7), solution(s, 6, 15));
 
     /* 2. 만들 수 없는 입력 */
     int t1[] = {1, 2}, t2[] = {1, 1, 1};

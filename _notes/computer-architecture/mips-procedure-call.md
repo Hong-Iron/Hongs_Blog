@@ -10,7 +10,7 @@ course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["MIPS Procedure Call", "jal", "jr", "jump and link", "$ra", "복귀 주소", "Return Address", "호출 규약", "Calling Convention", "호출자 저장", "Caller-Saved", "피호출자 저장", "Callee-Saved", "스택 프레임", "Stack Frame", "말단 프로시저", "Leaf Procedure", "재귀"]
 description: "일하다가 다른 방에 심부름을 갈 때, 돌아올 자리를 손바닥에 적고 간다. 심부름이 끝나면 손바닥을 보고 돌아온다. MIPS도 함수를 부를 때 돌아올 주소를 정해진 칸 하나에 적고 건너뛴다. 메모리에 쓰지 않아서 빠르다. 하지만 손바닥은 하나뿐이다. 심부름 간 곳에서 또 심부름을 가…"
@@ -86,7 +86,7 @@ permalink: "/studies/computer-architecture/mips-procedure-call/"
 <details class="callout callout-note" markdown="1">
 <summary class="callout-title" markdown="span">`jal`이 넣는 주소: PC + 4인가 PC + 8인가</summary>
 
-참조표는 `jal`의 동작을 R[31] = PC + 8로 적는다[^2]. 실제 MIPS 프로세서는 점프 명령 바로 다음 줄을 점프하기 전에 먼저 실행하도록 만들어졌고, 그래서 돌아올 곳이 두 줄 뒤다. 교재 본문과 강의는 이 사정을 빼고 "PC + 4를 넣는다"로 설명한다[^1]. 이 문서와 검증 코드도 PC + 4로 적는다.
+참조표는 `jal`의 동작을 R[31] = PC + 8로 적는다[^2]. 실제 MIPS 프로세서는 점프 명령 바로 다음 줄을 점프하기 전에 먼저 실행하도록 만들어졌고, 그래서 돌아올 곳이 두 줄 뒤다. 교재 본문과 여러 공개 강의 자료는 이 사정을 빼고 "PC + 4를 넣는다"로 설명한다[^1]. 이 문서와 검증 코드도 PC + 4로 적는다.
 
 </details>
 
@@ -347,5 +347,5 @@ P가 `$ra`를 맡긴 칸은 P의 프레임 안에 있고, Q는 자기 프레임�
 [^5]: University of Utah CS3810, Lecture 5, 같은 자료, 슬라이드 6 (스택은 높은 주소에서 낮은 주소로 자란다), 7 (호출과 복귀 때 스택 칸을 마련하고 반납한다)
 [^6]: 같은 자료, 슬라이드 8 (말단 프로시저 예: 스택을 아예 쓰지 않을 수도 있었다), 12 (Saving Conventions)
 [^7]: KFUPM ICS 233 (A. R. Naseer), Lecture 4, https://faculty.kfupm.edu.sa/coe/arnaseer/ICS233_Lecture4%20Slides.pdf, 슬라이드 7 (`$a0`~`$a3`은 처음 네 인수를 넘기고 나머지는 스택으로 넘긴다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 예(`diff`, `sum`)의 코드와 주소·수치, 추적 표, 스택 그림, 순서 다이어그램, "지키는 것"의 주장과 귀납 논증, 두 실패 시나리오, 스스로 설명해 보기, 오해 항목, x86·컴파일러 과목과의 비교, 카드는 위 자료에 그대로 있지 않다. 코드의 틀은 Utah 슬라이드 8~9의 말단 프로시저와 재귀 예를 따랐고 수치는 검증 코드의 흉내기로 구했다. 스택이 `0x7FFFFFFC`에서 시작한다는 것은 Patterson & Hennessy 2장의 메모리 배치 관례를 따른 예시 값이다.
+[^s1]: 두 예(`diff`, `sum`)의 코드와 주소·수치, 추적 표, 스택 그림, 순서 다이어그램, "지키는 것"의 주장과 귀납 논증, 두 실패 시나리오, 스스로 설명해 보기, 오해 항목, x86·컴파일러 과목과의 비교, 카드는 위 자료에 그대로 있지 않다. 스택이 `0x7FFFFFFC`에서 시작한다는 것은 Patterson & Hennessy 2장의 메모리 배치 관례를 따른 예시 값이다.
 {% endraw %}

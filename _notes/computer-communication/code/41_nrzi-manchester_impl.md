@@ -26,14 +26,14 @@ permalink: "/studies/computer-communication/code/41_nrzi-manchester_impl/"
       4.연습문제/43.인코딩 예제 사다리 (문제 1~3)
 표현: 비트 하나를 앞 절반·뒤 절반 두 칸으로 나누고, 칸마다 신호 높이 0(낮음) 또는 1(높음)을 적는다.
       그림 문자열에서는 0 -> '_', 1 -> '‾'.
-규칙 (2장-1 슬라이드 38·39):
+규칙:
   - NRZ: 1은 높음, 0은 낮음. 비트 안에서 바뀌지 않는다.
   - NRZI: 1이면 비트 한가운데서 지금 높이를 뒤집고, 0이면 지금 높이를 그대로 둔다. 처음 높이는 낮음.
   - 맨체스터: NRZ 높이 XOR 클럭. 클럭은 비트마다 앞 절반 0, 뒤 절반 1.
     그래서 0은 낮음→높음(올라감), 1은 높음→낮음(내려감).
 """
 
-SLIDE_BITS = "0010111101000010"  # 슬라이드 35~39의 예시 비트열
+EXAMPLE_BITS = "0010111101000010"  # 40·41 문서의 예시 비트열
 
 
 def nrz(bits):
@@ -70,7 +70,7 @@ def decode_manchester(levels):
 
 
 def recover_clock(received, data_bits):
-    """슬라이드 39: M' XOR Data = (Data XOR Clock) XOR Data = Clock."""
+    """M' XOR Data = (Data XOR Clock) XOR Data = Clock."""
     return [m ^ d for m, d in zip(received, nrz(data_bits))]
 
 
@@ -92,12 +92,12 @@ def transitions(levels):
 
 
 def main():
-    b = SLIDE_BITS
-    # 슬라이드 38 그림과 같은 모양
+    b = EXAMPLE_BITS
+    # 문서 그림 1과 같은 모양
     assert draw(nrz(b)) == "____‾‾__‾‾‾‾‾‾‾‾__‾‾________‾‾__"
     assert draw(manchester(b)) == "_‾_‾‾__‾‾_‾_‾_‾__‾‾__‾_‾_‾_‾‾__‾"
     assert draw(nrzi(b)) == "_____‾‾‾‾__‾‾__‾‾‾‾__________‾‾‾"
-    print("[OK] 슬라이드 비트열", b)
+    print("[OK] 예시 비트열", b)
     print("     NRZ       ", draw(nrz(b)))
     print("     클럭      ", draw(clock(len(b))))
     print("     맨체스터  ", draw(manchester(b)))

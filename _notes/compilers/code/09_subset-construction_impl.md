@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/09_subset-construction_impl/"
 [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 부분집합 구성법: NFA -> DFA (슬라이드 L03 p.29~36의 네 단계)
+# 부분집합 구성법: NFA -> DFA (문서의 네 단계)
 # 실행: python3 09_subset-construction_impl.py   (표준 라이브러리만 쓴다)
 # NFA는 (시작 상태, 받아들이는 상태 집합, 화살표 목록)으로 적는다. 화살표는 (출발, 라벨, 도착)이고 라벨 None이 ε이다.
 import itertools
@@ -42,13 +42,13 @@ def eps_closure(edges, states):
 
 
 def move(edges, states, sym):
-    """states의 어느 상태에서든 sym을 읽고 갈 수 있는 상태(슬라이드의 δ(T, s))."""
+    """states의 어느 상태에서든 sym을 읽고 갈 수 있는 상태(문서의 δ(T, s))."""
     return {b for (a, label, b) in edges if a in states and label == sym}
 
 
 def subset_construction(nfa, alphabet):
     """T0, T1, ...을 찾은 순서대로 담은 목록과 전이 표, 받아들이는 T의 번호를 돌려준다.
-    갈 곳이 없으면 표에 None(슬라이드의 ∅)을 적고 상태로 만들지 않는다."""
+    갈 곳이 없으면 표에 None(표의 ∅)을 적고 상태로 만들지 않는다."""
     start, finals, edges = nfa
     T = [eps_closure(edges, {start})]            # 1단계
     table = {}
@@ -94,22 +94,22 @@ def S(text):
     return frozenset(text)
 
 
-# 슬라이드 p.29: (a|b)의 NFA. A~F, F가 받아들이는 상태.
+# (a|b)의 NFA. A~F, F가 받아들이는 상태.
 N29 = ("A", {"F"}, [("A", EPS, "B"), ("A", EPS, "C"), ("B", "a", "D"), ("C", "b", "E"),
                     ("D", EPS, "F"), ("E", EPS, "F")])
-# 슬라이드 p.30~34: (a|b)a의 NFA. A~H, H가 받아들이는 상태.
+# (a|b)a의 NFA. A~H, H가 받아들이는 상태.
 N30 = ("A", {"H"}, N29[2] + [("F", EPS, "G"), ("G", "a", "H")])
-# 슬라이드 p.35: sIdentifier = letter(digit|letter)* 의 NFA. A~J, J가 받아들이는 상태. l = letter, d = digit.
+# sIdentifier = letter(digit|letter)* 의 NFA. A~J, J가 받아들이는 상태. l = letter, d = digit.
 NID = ("A", {"J"}, [("A", "l", "B"), ("B", EPS, "C"), ("C", EPS, "D"), ("C", EPS, "J"),
                     ("D", EPS, "E"), ("D", EPS, "G"), ("E", "d", "F"), ("G", "l", "H"),
                     ("F", EPS, "I"), ("H", EPS, "I"), ("I", EPS, "J"), ("I", EPS, "D")])
 
 if __name__ == "__main__":
-    # (1) p.29의 ε-closure 예
+    # (1) (a|b)의 NFA에서 구한 ε-closure 예
     assert eps_closure(N29[2], {"A"}) == S("ABC")
     assert eps_closure(N29[2], set("ABCD")) == S("ABCDF")
 
-    # (2) p.30~34: (a|b)a
+    # (2) (a|b)a
     T, table, acc = subset_construction(N30, "ab")
     assert T == [S("ABC"), S("DFG"), S("EFG"), S("H")]
     assert table == {(0, "a"): 1, (0, "b"): 2, (1, "a"): 3, (1, "b"): None,
@@ -119,13 +119,13 @@ if __name__ == "__main__":
     # 문서의 추적: "ba"는 T0 -> T2 -> T3, "ab"는 T0 -> T1 -> 갈 곳 없음
     assert (table[(0, "b")], table[(2, "a")]) == (2, 3) and table[(table[(0, "a")], "b")] is None
 
-    # (3) p.35~36: sIdentifier
+    # (3) sIdentifier
     T, table, acc = subset_construction(NID, "ld")
     assert T == [S("A"), S("BCDEGJ"), S("DEGHIJ"), S("DEFGIJ")]
     assert table == {(0, "l"): 1, (0, "d"): None, (1, "l"): 2, (1, "d"): 3,
                      (2, "l"): 2, (2, "d"): 3, (3, "l"): 2, (3, "d"): 3}
     assert acc == [1, 2, 3]
-    # 원본 오류 의심: p.36 마지막 줄은 {D,E,G,H,I,J} = T3 이라 적었다. 실제 값은 F가 든 집합이다.
+    # T3에서 digit을 읽은 결과는 F가 든 집합(T3 자신)이다. H가 든 {D,E,G,H,I,J}(T2)와 헷갈리기 쉽다.
     last = eps_closure(NID[2], move(NID[2], T[3], "d"))
     assert last == S("DEFGIJ") == T[3] and last != S("DEGHIJ")
     assert move(NID[2], T[3], "d") == {"F"}
@@ -159,13 +159,13 @@ if __name__ == "__main__":
                 assert dfa_accepts(table, acc, s) == (len(s) >= n and s[-n] == "a")
 
     # (6) 카드 값
-    #  C2(trace): p.13의 NFA ((0|1)*00). q0 -0,1-> q0, q0 -0-> q1, q1 -0-> q2
+    #  C2(trace): (0|1)*00 의 NFA. q0 -0,1-> q0, q0 -0-> q1, q1 -0-> q2
     N13 = (0, {2}, [(0, "0", 0), (0, "1", 0), (0, "0", 1), (1, "0", 2)])
     T, table, acc = subset_construction(N13, "01")
     assert T == [frozenset({0}), frozenset({0, 1}), frozenset({0, 1, 2})]
     assert table == {(0, "0"): 1, (0, "1"): 0, (1, "0"): 2, (1, "1"): 0, (2, "0"): 2, (2, "1"): 0}
     assert acc == [2]
-    #  C5(apply): ε-closure 연습. p.35의 NFA에서
+    #  C5(apply): ε-closure 연습. 식별자의 NFA에서
     assert eps_closure(NID[2], {"B"}) == S("BCDEGJ")
     assert eps_closure(NID[2], {"F"}) == S("DEFGIJ")
     assert eps_closure(NID[2], {"H"}) == S("DEGHIJ")

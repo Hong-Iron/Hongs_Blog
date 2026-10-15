@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Conditional Jump", "Jcond", "Jcc", "조건 분기", "JZ", "JNZ", "JE", "JNE", "JC", "JNC", "JO", "JNO", "JS", "JNS", "JP", "JNP", "JA", "JAE", "JB", "JBE", "JG", "JGE", "JL", "JLE", "JCXZ", "JECXZ"]
 description: "갈림길에 선 사람이 신호등을 보고 초록이면 옆길로, 아니면 가던 길로 간다. 이 명령들은 바로 앞 계산이 남긴 표시등을 보고, 조건이 맞으면 다른 줄로 넘어가고 아니면 바로 아래 줄로 간다. 이것으로 \"같으면\", \"크면\", \"0이면\" 같은 갈림을 만든다. 명령 자신은 아무것도 견주…"
@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/conditional-jumps/"
 
 [JMP](/Hongs_Blog/studies/assembly-language/jmp-loop/)는 무조건 넘어가고 `LOOP`는 횟수만 센다. "EAX가 EBX보다 크면 이 줄들을 건너뛰어라" 같은 갈림은 둘로는 못 만든다. 고급 언어의 `if`가 하는 일을 할 명령이 필요하다.
 
-갈림은 두 줄로 만든다. 첫 줄이 견주고, 둘째 줄이 갈라 간다[^1].
+갈림은 두 줄로 만든다. 첫 줄이 견주고, 둘째 줄이 갈라 간다.
 
 ```asm
     cmp eax,ebx     ; EAX - EBX를 해 보고 플래그만 남긴다
@@ -46,16 +46,16 @@ permalink: "/studies/assembly-language/conditional-jumps/"
 `CMP`가 플래그([TEST와 CMP](/Hongs_Blog/studies/assembly-language/test-cmp/))를 매기고, `JA`가 그 플래그를 읽는다. EAX = FFFFFFFFh, EBX = 1이라 하자. 부호 없는 수로 보면 4,294,967,295와 1이라 `ja`는 점프한다. 같은 자리에 `jg`를 쓰면 부호 있는 수로 읽는다. FFFFFFFFh는 −1이고 −1은 1보다 크지 않으니 점프하지 않는다[^s1].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 비교 점프 16개의 플래그 조건을 8비트 두 수의 모든 쌍(65,536쌍)과 16비트 무작위 20,000쌍에서 실제 크고 작음과 대조, 특정 플래그 점프 10개, JECXZ·JCXZ, 슬라이드 응용 코드(Large, Small, 메모리 값 견주기), 카드 C2·C3 — [31_conditional-jumps_verify.py](/Hongs_Blog/studies/assembly-language/code/31_conditional-jumps_verify/) (파이썬 흉내로 확인. 실제 MASM으로 돌린 것이 아니다)</div>
+<div class="callout-title" markdown="span">검증: 비교 점프 16개의 플래그 조건을 8비트 두 수의 모든 쌍(65,536쌍)과 16비트 무작위 20,000쌍에서 실제 크고 작음과 대조, 특정 플래그 점프 10개, JECXZ·JCXZ, 예제의 응용 코드(Large, Small, 메모리 값 견주기), 카드 C2·C3 — [31_conditional-jumps_verify.py](/Hongs_Blog/studies/assembly-language/code/31_conditional-jumps_verify/) (파이썬 흉내로 확인. 실제 MASM으로 돌린 것이 아니다)</div>
 
 </div>
 
 
 ## 정의
 
-조건 점프 명령은 레지스터나 플래그가 정해진 조건을 채우면 레이블로 넘어간다. 채우지 못하면 바로 아래 명령으로 간다[^2]. 꼴은 `J조건 레이블`이고, 조건 자리에 오는 글자에 따라 수십 가지가 있다. 슬라이드는 넷으로 묶는다[^3].
+조건 점프 명령은 레지스터나 플래그가 정해진 조건을 채우면 레이블로 넘어간다. 채우지 못하면 바로 아래 명령으로 간다. 꼴은 `J조건 레이블`이고, 조건 자리에 오는 글자에 따라 수십 가지가 있다. 무엇을 보느냐에 따라 넷으로 묶을 수 있다.
 
-**특정 플래그를 보는 점프.**[^4]
+**특정 플래그를 보는 점프.**
 
 | 명령 | 뜻 | 점프하는 때 |
 |---|---|---|
@@ -70,7 +70,7 @@ permalink: "/studies/assembly-language/conditional-jumps/"
 | `JP` | 1이 짝수 개면 | PF = 1 |
 | `JNP` | 1이 홀수 개면 | PF = 0 |
 
-**같은지를 보는 점프.** 아래 표들에서 왼쪽 값은 `CMP`의 첫 피연산자, 오른쪽 값은 둘째 피연산자다[^5].
+**같은지를 보는 점프.** 아래 표들에서 왼쪽 값은 `CMP`의 첫 피연산자, 오른쪽 값은 둘째 피연산자다.
 
 | 명령 | 뜻 | 점프하는 때 |
 |---|---|---|
@@ -79,7 +79,7 @@ permalink: "/studies/assembly-language/conditional-jumps/"
 | `JCXZ` | CX가 0이면 | CX = 0 |
 | `JECXZ` | ECX가 0이면 | ECX = 0 |
 
-**부호 없는 수의 크고 작음.** A는 above(위), B는 below(아래)다[^6].
+**부호 없는 수의 크고 작음.** A는 above(위), B는 below(아래)다.
 
 | 명령 | 같은 명령 | 뜻 | 점프하는 때[^s1] |
 |---|---|---|---|
@@ -88,7 +88,7 @@ permalink: "/studies/assembly-language/conditional-jumps/"
 | `JB` | `JNAE` | 왼쪽 < 오른쪽 | CF = 1 |
 | `JBE` | `JNA` | 왼쪽 ≤ 오른쪽 | CF = 1이거나 ZF = 1 |
 
-**부호 있는 수의 크고 작음.** G는 greater(더 큰), L은 less(더 작은)다[^7].
+**부호 있는 수의 크고 작음.** G는 greater(더 큰), L은 less(더 작은)다.
 
 | 명령 | 같은 명령 | 뜻 | 점프하는 때[^s1] |
 |---|---|---|---|
@@ -97,7 +97,7 @@ permalink: "/studies/assembly-language/conditional-jumps/"
 | `JL` | `JNGE` | 왼쪽 < 오른쪽 | SF ≠ OF |
 | `JLE` | `JNG` | 왼쪽 ≤ 오른쪽 | ZF = 1이거나 SF ≠ OF |
 
-"같은 명령" 칸은 이름만 다르고 하는 일이 같은 짝이다. `JNBE`는 "아래도 아니고 같지도 않으면"이니 "위면"과 같은 말이다. 플래그 조건이 같은 것끼리도 같은 명령이다. `JE`와 `JZ`는 둘 다 ZF = 1을 보고, `JB`와 `JC`는 둘 다 CF = 1을 본다[^2]. 뺄셈 뒤에 "같으면"으로 읽고 싶을 때 `JE`, 다른 연산 뒤에 "0이면"으로 읽고 싶을 때 `JZ`를 쓰면 코드가 뜻대로 읽힌다[^s1].
+"같은 명령" 칸은 이름만 다르고 하는 일이 같은 짝이다. `JNBE`는 "아래도 아니고 같지도 않으면"이니 "위면"과 같은 말이다. 플래그 조건이 같은 것끼리도 같은 명령이다. `JE`와 `JZ`는 둘 다 ZF = 1을 보고, `JB`와 `JC`는 둘 다 CF = 1을 본다. 뺄셈 뒤에 "같으면"으로 읽고 싶을 때 `JE`, 다른 연산 뒤에 "0이면"으로 읽고 싶을 때 `JZ`를 쓰면 코드가 뜻대로 읽힌다[^s1].
 
 ### 설계 이유
 
@@ -170,9 +170,9 @@ $$a \ge b$$는 $$a < b$$의 반대다. SF ≠ OF의 반대는 SF = OF다.
 
 ## 예제
 
-**슬라이드의 응용 다섯.** 견주는 줄과 갈라 가는 줄이 짝을 이룬다.
+**응용 다섯.** 견주는 줄과 갈라 가는 줄이 짝을 이룬다.
 
-부호 없는 수로 EAX가 EBX보다 크면, 부호 있는 수로 크면[^1].
+부호 없는 수로 EAX가 EBX보다 크면, 부호 있는 수로 크면.
 
 ```asm
     cmp eax,ebx
@@ -182,7 +182,7 @@ $$a \ge b$$는 $$a < b$$의 반대다. SF ≠ OF의 반대는 SF = OF다.
     jg  Greater         ; 부호 있게
 ```
 
-EAX가 `Val1` 이하면[^8].
+EAX가 `Val1` 이하면.
 
 ```asm
     cmp eax,Val1
@@ -192,7 +192,7 @@ EAX가 `Val1` 이하면[^8].
     jle L1              ; 부호 있게
 ```
 
-부호 없는 AX와 BX 중 큰 쪽을 `Large`에 넣는다. 먼저 BX를 넣어 두고, AX가 더 클 때만 덮어쓴다[^9].
+부호 없는 AX와 BX 중 큰 쪽을 `Large`에 넣는다. 먼저 BX를 넣어 두고, AX가 더 클 때만 덮어쓴다.
 
 ```asm
     mov Large,bx
@@ -202,7 +202,7 @@ EAX가 `Val1` 이하면[^8].
 Next:
 ```
 
-부호 있는 AX와 BX 중 작은 쪽을 `Small`에 넣는다[^9].
+부호 있는 AX와 BX 중 작은 쪽을 `Small`에 넣는다.
 
 ```asm
     mov Small,ax
@@ -212,7 +212,7 @@ Next:
 Next:
 ```
 
-메모리에 있는 값을 바로 견준다. 크기를 알려 주려고 `PTR`을 쓴다([OFFSET과 PTR 연산자](/Hongs_Blog/studies/assembly-language/offset-ptr-operators/))[^10].
+메모리에 있는 값을 바로 견준다. 크기를 알려 주려고 `PTR`을 쓴다([OFFSET과 PTR 연산자](/Hongs_Blog/studies/assembly-language/offset-ptr-operators/)).
 
 ```asm
     cmp WORD PTR [esi],0
@@ -255,7 +255,7 @@ Done:
 - 두 묶음을 가려 쓰기: [부호 있는 비교 점프와 부호 없는 비교 점프](/Hongs_Blog/studies/assembly-language/signed-vs-unsigned-jumps/)
 - 횟수와 조건을 한꺼번에 보는 반복: [조건부 반복 명령](/Hongs_Blog/studies/assembly-language/conditional-loop-instructions/)
 - 상태마다 글자를 보고 갈라 가는 프로그램: [유한 상태 기계](/Hongs_Blog/studies/assembly-language/asm-finite-state-machine/)
-- 다른 기계의 조건 분기 명령: [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)
+- 다른 기계의 조건 분기 명령: [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)
 - Java의 `if`와 비교 연산자: [제어문](/Hongs_Blog/studies/java/java-control-flow/)
 
 ## 자주 하는 오해
@@ -312,15 +312,5 @@ Done:
 </details>
 
 
-[^1]: 어셈블리어 7회 강의 자료 「wk07-chapt_06-3-3」, p.8 (응용 1: CMP 뒤 JA, CMP 뒤 JG)
-[^2]: 같은 자료, p.3 (Jcond의 뜻, JB·JC, JE·JZ, JS, JNE·JNZ, JECXZ)
-[^3]: 같은 자료, p.2 (특정 플래그, 같음, 부호 없는 비교, 부호 있는 비교)
-[^4]: 같은 자료, p.4 (특정 플래그 점프 표. 그림으로 실려 있어 옮겨 적었다)
-[^5]: 같은 자료, p.5 (같음 점프 표. 그림)
-[^6]: 같은 자료, p.6 (부호 없는 비교 점프 표. 그림)
-[^7]: 같은 자료, p.7 (부호 있는 비교 점프 표. 그림)
-[^8]: 같은 자료, p.9 (응용 2: JBE와 JLE)
-[^9]: 같은 자료, p.10 (응용 3: Large와 Small)
-[^10]: 같은 자료, p.11 (응용 4: 메모리 값 견주기)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원본 p.6~7의 표에는 명령 이름과 뜻만 있고 "점프하는 때"의 플래그 조건은 없다. 플래그 조건은 Intel 64 and IA-32 Architectures Software Developer's Manual 2권의 Jcc 항목을 따랐고, 8비트 두 수의 모든 쌍에서 CMP 뒤 플래그로 계산한 조건이 실제 크고 작음과 맞는지 전수 검사했다. 원본 wk07-3-2 p.15~17은 작을 때 CF, 부호 있는 비교에서 SF와 OF를 본다는 것까지만 적는다. 첫 예의 값, 이름을 가려 쓰는 법, 설계 이유, 조건 점프가 아닌 예, 증명과 스스로 설명해 보기, 90h와 20h 추적, 같을 때의 경계 사례, JECXZ로 루프 건너뛰기, 활용 항목, 오해 두 가지와 16,384쌍이라는 수, 카드 C1~C4도 원본에 없다. 모두 검증 코드로 확인했다.
+[^s1]: 플래그 조건은 Intel 64 and IA-32 Architectures Software Developer's Manual 2권의 Jcc 항목을 따랐고, 8비트 두 수의 모든 쌍에서 CMP 뒤 플래그로 계산한 조건이 실제 크고 작음과 맞는지 전수 검사했다. 모두 검증 코드로 확인했다.
 {% endraw %}

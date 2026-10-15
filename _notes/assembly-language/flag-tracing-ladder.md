@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 산술 연산과 상태 플래그의 ZF, SF, CF, OF."
 prev_url: "/studies/assembly-language/arithmetic-expression-practice/"
@@ -77,7 +77,7 @@ add al,92h
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-OF = 1. 80h는 −128, 92h는 −110이다. −128 + (−110) = −238로 −128~127 밖이다. 음수 둘을 더했는데 결과 12h(18)가 양수로 나온 것으로도 알 수 있다[^1].
+OF = 1. 80h는 −128, 92h는 −110이다. −128 + (−110) = −238로 −128~127 밖이다. 음수 둘을 더했는데 결과 12h(18)가 양수로 나온 것으로도 알 수 있다.
 
 </details>
 
@@ -111,8 +111,7 @@ sub al,3         ; (나)
 <summary class="callout-title" markdown="span">답</summary>
 
 (가) ZF = 0(결과 01h는 0이 아니다). CF = 1(부호 없이 108 + 149 = 257, 255를 넘었다). OF = 0(부호 있게 108 + (−107) = 1, 범위 안이다. 부호가 다른 두 수의 합은 넘치지 않는다).<br>
-(나) 결과: 02h − 03h는 0 아래로 내려가 FFh다. SF = 1(FFh의 맨 윗자리 비트). CF = 1(부호 없이 2 − 3, 작은 수에서 큰 수를 뺐다).<br>
-결과와 SF, ZF, CF는 슬라이드의 답과 같다[^2].
+(나) 결과: 02h − 03h는 0 아래로 내려가 FFh다. SF = 1(FFh의 맨 윗자리 비트). CF = 1(부호 없이 2 − 3, 작은 수에서 큰 수를 뺐다).
 
 </details>
 
@@ -148,7 +147,5 @@ sub cl,80h       ; (라)
 </details>
 
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.6 (A Rule of Thumb: `mov al,80h` / `add al,92h`, OF = 1)
-[^2]: 같은 자료, p.4 (Your turn: BH = 01h, SF 0, ZF 0, CF 1 / AL = FFh, SF 1, ZF 0, CF 1)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표 다섯 단계, 문제 1의 둘째 줄, 문제 3의 OF 값, 문제 4는 원본에 없다. 문제 1의 첫 줄은 슬라이드 p.5의 Example 2다. `INC`가 CF를 바꾸지 않는다는 것은 Intel 64 and IA-32 Architectures Software Developer's Manual, Volume 2의 INC 항목에 있다. 답은 파이썬 흉내로 확인했다. 실제 CPU로 돌린 결과가 아니다.
+[^s1]: `INC`가 CF를 바꾸지 않는다는 것은 Intel 64 and IA-32 Architectures Software Developer's Manual, Volume 2의 INC 항목에 있다. 답은 파이썬 흉내로 확인했다. 실제 CPU로 돌린 결과가 아니다.
 {% endraw %}

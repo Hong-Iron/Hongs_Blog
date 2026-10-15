@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Level Order Traversal", "Level-Order", "레벨 순회", "층별 순회", "너비 우선 순회", "이진 트리 순회", "Binary Tree Traversal", "방문", "visit"]
 description: "이진 트리의 칸을 위층부터 한 층씩, 같은 층에서는 왼쪽부터 차례로 들르는 방법이다. 지금 들른 칸의 자식들을 줄 맨 뒤에 세워 두고, 다음에는 줄 맨 앞의 칸을 들르기만 하면 이 순서가 나온다. 함수가 자기를 다시 부르지 않고 고리 하나로 끝난다. 대신 줄 서 있는 칸을 담아 둘…"
@@ -34,7 +34,7 @@ permalink: "/studies/data-structures/level-order-traversal/"
 
 ## 예시로 보기
 
-트리로 하는 일은 대개 "모든 노드를 정확히 한 번씩 들르며 무언가를 한다"는 꼴이다. 이렇게 도는 것을 순회라 하고, 노드에 들러 하는 일(출력, 복사, 계산)을 방문이라 한다[^1]. 도는 순서는 네 가지다[^2].
+트리로 하는 일은 대개 "모든 노드를 정확히 한 번씩 들르며 무언가를 한다"는 꼴이다. 이렇게 도는 것을 순회라 하고, 노드에 들러 하는 일(출력, 복사, 계산)을 방문이라 한다. 도는 순서는 네 가지다.
 
 | 이름 | 순서 |
 |---|---|
@@ -58,7 +58,7 @@ flowchart TD
     f -->|"오른쪽"| j(("j"))
 ```
 
-그래서 "나중에 들를 노드"를 적어 두는 줄이 필요하다. 먼저 적은 것을 먼저 꺼내는 줄, 곧 큐를 쓴다. 노드를 방문할 때마다 그 자식을 큐 뒤에 넣고, 큐 맨 앞에서 다음 노드를 꺼낸다[^3].
+그래서 "나중에 들를 노드"를 적어 두는 줄이 필요하다. 먼저 적은 것을 먼저 꺼내는 줄, 곧 큐를 쓴다. 노드를 방문할 때마다 그 자식을 큐 뒤에 넣고, 큐 맨 앞에서 다음 노드를 꺼낸다.
 
 | 방문 | 자식을 넣은 뒤의 큐 (앞 → 뒤) | 다음에 꺼내는 노드 |
 |---|---|---|
@@ -73,7 +73,7 @@ flowchart TD
 | i | j | j |
 | j | (비었다) | 끝 |
 
-방문한 순서는 a b c d e f g h i j다[^4]. d를 방문할 때 큐에는 같은 층의 e, f가 d의 자식 g, h보다 앞에 서 있다. 그래서 e로 건너간다.
+방문한 순서는 a b c d e f g h i j다. d를 방문할 때 큐에는 같은 층의 e, f가 d의 자식 g, h보다 앞에 서 있다. 그래서 e로 건너간다.
 
 ## 알고리즘
 
@@ -114,7 +114,7 @@ void levelOrder(treePointer root, char *out)     /* 방문 = 글자를 out 끝�
 **비용.** 노드마다 큐에 한 번 들어가고 한 번 나오니 시간은 $$O(n)$$이다. 큐가 가장 길어지는 때는 한 층이 통째로 들어 있을 때다. 층이 모두 찬 트리에서는 맨 아래층에 전체의 절반쯤인 $$(n + 1)/2$$개가 있어, 큐 자리도 그만큼 든다. 한 줄로 늘어선 트리에서는 큐에 늘 하나뿐이다[^s1].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 슬라이드의 트리에서 방문 순서 a ~ j와 위 표의 큐 내용, 큐를 스택으로 바꿨을 때의 순서, 완전 이진 트리에서 레벨 순서가 배열 칸 순서와 같음, 빈 트리·노드 하나·한 줄 트리, 무작위 트리 2,000개에서 깊이별로 모은 결과와 같음, 카드의 값을 확인했다. 잡은 메모리는 모두 풀었다(`leaks` 도구로 확인) — [24_level-order-traversal_impl.c](/Hongs_Blog/studies/data-structures/code/24_level-order-traversal_impl/)</div>
+<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 예시 트리에서 방문 순서 a ~ j와 위 표의 큐 내용, 큐를 스택으로 바꿨을 때의 순서, 완전 이진 트리에서 레벨 순서가 배열 칸 순서와 같음, 빈 트리·노드 하나·한 줄 트리, 무작위 트리 2,000개에서 깊이별로 모은 결과와 같음, 카드의 값을 확인했다. 잡은 메모리는 모두 풀었다(`leaks` 도구로 확인) — [24_level-order-traversal_impl.c](/Hongs_Blog/studies/data-structures/code/24_level-order-traversal_impl/)</div>
 
 </div>
 
@@ -160,9 +160,5 @@ void levelOrder(treePointer root, char *out)     /* 방문 = 글자를 out 끝�
 </details>
 
 
-[^1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.27 ~ 28 (순회에서는 모든 원소를 정확히 한 번씩 방문한다. 방문할 때 복사, 출력, 연산자 계산 같은 일을 한다)
-[^2]: 같은 자료, p.30 (Levelorder, Preorder: root → left → right, Inorder: left → root → right, Postorder: left → right → root)
-[^3]: 같은 자료, p.45 (Level Order의 의사코드: 방문하고 자식을 FIFO 큐에 넣는다. 큐가 비었으면 ptr = NULL, 아니면 큐에서 하나를 꺼내 ptr로 둔다)
-[^4]: 같은 자료, p.46 (Level-Order Example: a b c d e f g h i j)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개(슬라이드 p.46의 트리), 큐의 변화를 적은 표, C 코드, 층별 순서가 나오는 까닭, 비용, 활용의 네 항목은 원본에 없다. 슬라이드에는 의사코드와 방문 결과만 있다. 표의 큐 내용과 스택으로 바꾼 결과는 구현 코드가 낸 값이다.
+[^s1]: 표의 큐 내용과 스택으로 바꾼 결과는 구현 코드가 낸 값이다.
 {% endraw %}

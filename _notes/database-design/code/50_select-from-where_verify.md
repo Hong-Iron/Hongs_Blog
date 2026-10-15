@@ -22,14 +22,14 @@ permalink: "/studies/database-design/code/50_select-from-where_verify/"
 ```python
 # 50.SELECT-FROM-WHERE 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 50_select-from-where_verify.py)
 # 확인하는 것
-#   1. 슬라이드의 Q0, Q1, Q2 결과 표 (9 p.20~22, 10-2 p.11~13)
+#   1. 문서의 Q0, Q1, Q2 결과 표
 #   2. "FROM의 표에서 행을 하나씩 뽑은 모든 조합 -> WHERE가 참인 조합만 -> SELECT의 열만"이라는 읽는 법을
 #      파이썬으로 그대로 짜서 SQLite의 답과 견준다. 조합 수가 줄어드는 과정(24 -> 8 -> 4, 144 -> 48 -> 16 -> 2)도 센다
-#   3. SELECT * (10-2 p.20), 흔한 실수 두 가지, 확인 문제의 답
+#   3. SELECT *, 흔한 실수 두 가지, 확인 문제의 답
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -85,7 +85,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)

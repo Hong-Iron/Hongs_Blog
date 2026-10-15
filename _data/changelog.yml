@@ -1,6 +1,11 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-15
+  title: 노트 다듬기
+  items:
+    - 공부 노트의 문장을 다듬어 본문만 읽어도 설명이 이어지게 했어요. 따로 상자에 적어 두던 정정 내용은 상자를 없애고 본문에 넣었어요.
+    - 각주에는 교재와 공식 문서 같은 공개 참고문헌만 남겼어요.
+- date: 2026-10-15
   title: 검색엔진에서 코드 페이지 빼기
   items:
     - 코드 페이지 1,335개를 구글 같은 검색엔진 결과와 사이트맵에서 뺐어요. 검색으로 들어오는 사람은 개념 노트와 글부터 만나요.

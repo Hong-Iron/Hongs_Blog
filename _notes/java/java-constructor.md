@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Constructor", "기본 생성자", "Default Constructor", "생성자 오버로딩", "Constructor Overloading", "this", "new 연산자"]
 description: "새 공책을 사면 첫 장에 이름부터 적는다. 객체를 새로 만들 때 이렇게 처음 값을 채워 넣는 코드가 따로 있다. 이 코드 덕분에 이름이 비어 있는 학생 같은 덜 만들어진 객체가 돌아다니지 않는다. 이 코드를 하나도 쓰지 않으면 아무 일도 하지 않는 빈 것이 저절로 하나 붙는다. 단…"
@@ -42,7 +42,7 @@ s.name = "Bob";
 s.grades = new int[] {90, 85, 88};
 ```
 
-객체를 만드는 줄과 값을 채우는 줄이 떨어져 있다. 둘째 줄을 잊으면 이름이 `null`인 학생이 프로그램 안을 돌아다닌다. 만들 때 값을 함께 받도록 하면 잊을 수가 없다. 슬라이드의 예다[^1].
+객체를 만드는 줄과 값을 채우는 줄이 떨어져 있다. 둘째 줄을 잊으면 이름이 `null`인 학생이 프로그램 안을 돌아다닌다. 만들 때 값을 함께 받도록 하면 잊을 수가 없다.
 
 ```java
 public class Student {
@@ -63,14 +63,9 @@ System.out.println(student.name);                      // Bob
 System.out.println(Arrays.toString(student.grades));   // [90, 85, 88]
 ```
 
-`new Student("Bob", studentGrades)`에서 `new` 뒤의 `Student(...)`가 생성자를 부르는 자리다. 괄호 안의 값이 생성자의 매개변수로 들어간다[^2].
+`new Student("Bob", studentGrades)`에서 `new` 뒤의 `Student(...)`가 생성자를 부르는 자리다. 괄호 안의 값이 생성자의 매개변수로 들어간다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.13의 `GradeProcessor`가 `Arrays.toString(...)`을 쓰는데 `import java.util.Arrays;`가 없다. p.15의 `Student`는 세 번째 생성자의 닫는 중괄호 `}`가 하나 빠져 있다. / 문제점: 둘 다 그대로는 컴파일되지 않는다. / 수정안: 파일 맨 위에 `import java.util.Arrays;`를 넣고, 세 번째 생성자 끝에 `}`를 넣는다. / 근거: JDK 21로 컴파일하면 앞의 것은 `error: cannot find symbol ... symbol: variable Arrays`, 뒤의 것은 `error: reached end of file while parsing`이 난다.
-
-</div>
+`Arrays.toString`을 쓰려면 파일 맨 위에 `import java.util.Arrays;`를 둔다. 빠뜨리면 `cannot find symbol ... variable Arrays` 오류가 난다[^s1].
 
 
 <div class="callout callout-check" markdown="1">
@@ -81,9 +76,9 @@ System.out.println(Arrays.toString(student.grades));   // [90, 85, 88]
 
 ## 정의
 
-**객체 만들기.** 클래스에서 객체를 만들 때는 `new` 연산자를 쓴다. `new`는 객체를 만들고 그 객체의 주소를 돌려준다[^2]. 그 주소를 변수에 담아 두고 객체를 쓴다([참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/)).
+**객체 만들기.** 클래스에서 객체를 만들 때는 `new` 연산자를 쓴다. `new`는 객체를 만들고 그 객체의 주소를 돌려준다. 그 주소를 변수에 담아 두고 객체를 쓴다([참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/)).
 
-**생성자**는 `new`로 객체를 만들 때 객체를 처음 상태로 채우는 멤버다. 메서드처럼 생겼지만 두 가지가 다르다[^3].
+**생성자**는 `new`로 객체를 만들 때 객체를 처음 상태로 채우는 멤버다. 메서드처럼 생겼지만 두 가지가 다르다.
 
 - 돌려주는 타입을 적지 않는다(`void`도 적지 않는다).
 - 이름이 클래스 이름과 같다.
@@ -92,7 +87,7 @@ System.out.println(Arrays.toString(student.grades));   // [90, 85, 88]
 
 ### 기본 생성자
 
-클래스에 생성자를 하나도 쓰지 않으면, 번역기가 아무 일도 하지 않는 생성자를 하나 넣어 준다. 이것을 기본 생성자라고 한다[^4].
+클래스에 생성자를 하나도 쓰지 않으면, 번역기가 아무 일도 하지 않는 생성자를 하나 넣어 준다. 이것을 기본 생성자라고 한다.
 
 ```java
 public class Student {
@@ -119,7 +114,7 @@ error: constructor Student in class Student cannot be applied to given types;
 
 ### 생성자 오버로딩
 
-매개변수가 다른 생성자를 여러 개 둘 수 있다. 객체를 여러 방법으로 만들 수 있게 하려는 것이다[^5].
+매개변수가 다른 생성자를 여러 개 둘 수 있다. 객체를 여러 방법으로 만들 수 있게 하려는 것이다.
 
 ```java
 public class Student {
@@ -145,7 +140,7 @@ public class Student {
 | `new Student("Alice")` | 2 | Alice | null |
 | `new Student("Bob", grades)` | 3 | Bob | [90, 85, 88] |
 
-`new`에 넘긴 값의 타입과 개수를 보고 어느 생성자를 돌릴지가 정해진다. 매개변수의 타입·개수·순서는 그대로 두고 이름만 바꾼 것은 오버로딩이 아니다[^5]. `Student(String name)` 옆에 `Student(String nickname)`을 두면 `constructor Student(String) is already defined` 오류가 난다[^s1].
+`new`에 넘긴 값의 타입과 개수를 보고 어느 생성자를 돌릴지가 정해진다. 매개변수의 타입·개수·순서는 그대로 두고 이름만 바꾼 것은 오버로딩이 아니다. `Student(String name)` 옆에 `Student(String nickname)`을 두면 `constructor Student(String) is already defined` 오류가 난다[^s1].
 
 ### this
 
@@ -237,10 +232,5 @@ class Scv {
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 6회 강의 자료 「Software Project 06. Class」, p.12~13 (Constructor declaration과 예: `Student`, `GradeProcessor`)
-[^2]: 같은 자료, p.8~9 (`new` 연산자, `new` 뒤의 `Student()`와 `Student("Alice", grades)`에 "What does this mean?")
-[^3]: 같은 자료, p.5, p.12
-[^4]: 같은 자료, p.10~11 (Default constructor, 컴파일 전후 그림)
-[^5]: 같은 자료, p.14~15 (Constructor Overloading과 예)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 생성자 없이 만든 코드, `javap` 출력, 오류 문구, 표의 값, `this`의 설명과 `Wrong`·`Right` 예, `this(...)`와 `Scv` 예, 초기값과 본문의 순서, `void`를 붙인 실수, 카드 C2~C4는 원본에 없다. 슬라이드는 `this.name = name;`을 코드로만 쓰고 `this`를 설명하지 않았다. 모두 JDK 21에서 직접 실행·컴파일해 확인했다.
+[^s1]: 모두 JDK 21에서 직접 실행·컴파일해 확인했다.
 {% endraw %}

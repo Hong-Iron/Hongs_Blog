@@ -20,14 +20,14 @@ permalink: "/studies/compilers/code/28_slr-stack-parser_impl/"
 [SLR 파서의 스택 동작](/Hongs_Blog/studies/compilers/slr-stack-parser/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 구현과 검증: 스택으로 도는 SLR 파서 (L08 p.12~34). id * id $의 스택 변화와, 다시 읽는 방식과의 비교.
+# 구현과 검증: 스택으로 도는 SLR 파서. id * id $의 스택 변화와, 다시 읽는 방식과의 비교.
 # 실행: python3 28_slr-stack-parser_impl.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 문서처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,17 +228,17 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# 항목 오토마타·SLR 문서의 문법: E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 이동-환원·핸들·유효 접두사 문서의 문법: E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
 
 
 def parse_rerun(tokens, prods, trans, action):
-    """L08 p.12~21의 방식: 결정할 때마다 왼쪽 부분을 1번 상태부터 다시 읽는다. (받아들였나, 결정 목록, 읽은 기호 수)"""
+    """스택 없이 하는 방식: 결정할 때마다 왼쪽 부분을 1번 상태부터 다시 읽는다. (받아들였나, 결정 목록, 읽은 기호 수)"""
     toks = list(tokens) + ["$"]
     left, pos, walked, decisions = [], 0, 0, []
     while True:
@@ -269,19 +269,19 @@ def parse_rerun(tokens, prods, trans, action):
 if __name__ == "__main__":
     states, trans, action, gototab = slr_table(G2, G2_ORDER)
 
-    # (1) L08 p.22~34: id * id $의 스택 변화
+    # (1) 문서의 추적: id * id $의 스택 변화
     ok, tr = parse("id * id".split(), G2, action, gototab)
     assert ok
     stacks = [(st, a) for st, _, _, a in tr]
     slide = [
-        ([1], "shift"),                         # p.22~23: S5
-        ([1, 5], "reduce T -> id"),             # p.24~25: 하나 꺼내고 GOTO(1, T) = 3
-        ([1, 3], "shift"),                      # p.26: S6
-        ([1, 3, 6], "shift"),                   # p.27: S5
-        ([1, 3, 6, 5], "reduce T -> id"),       # p.28~29: GOTO(6, T) = 3
-        ([1, 3, 6, 3], "reduce E -> T"),        # p.30~31: GOTO(6, E) = 8
-        ([1, 3, 6, 8], "reduce E -> T * E"),    # p.32~33: 셋 꺼내고 GOTO(1, E) = 2
-        ([1, 2], "accept"),                     # p.34
+        ([1], "shift"),                         # S5
+        ([1, 5], "reduce T -> id"),             # 하나 꺼내고 GOTO(1, T) = 3
+        ([1, 3], "shift"),                      # S6
+        ([1, 3, 6], "shift"),                   # S5
+        ([1, 3, 6, 5], "reduce T -> id"),       # GOTO(6, T) = 3
+        ([1, 3, 6, 3], "reduce E -> T"),        # GOTO(6, E) = 8
+        ([1, 3, 6, 8], "reduce E -> T * E"),    # 셋 꺼내고 GOTO(1, E) = 2
+        ([1, 2], "accept"),                     # 받아들임
     ]
     assert stacks == slide, stacks
 

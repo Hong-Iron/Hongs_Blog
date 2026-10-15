@@ -23,22 +23,21 @@ permalink: "/studies/database-design/code/60_nested-query-in_verify/"
 """중첩 질의와 IN 검증 (SQLite).
 
 문서: 60.중첩 질의와 IN
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.11~12, 14, 19, 30, 12주차 풀이 p.7
 주장:
-  1. Q4A(p.11): Smith가 관리자이거나 일하는 프로젝트 번호는 1, 2다. 첫째 안쪽 질의는 빈 표, 둘째는 {1, 2}.
+  1. Q4A: Smith가 관리자이거나 일하는 프로젝트 번호는 1, 2다. 첫째 안쪽 질의는 빈 표, 둘째는 {1, 2}.
      Wong으로 바꾸면 {1, 2, 3}과 {2, 3, 10, 20}이라 바깥 결과는 {1, 2, 3, 10, 20}이다.
-  2. Q17(p.19): 프로젝트 1, 2, 3에서 일하는 직원의 Essn은 4개다.
-  3. Q16(p.14): 이 상태에서는 0행이다. 조건을 성별만 남기면 별칭이 있을 때 2명,
+  2. Q17: 프로젝트 1, 2, 3에서 일하는 직원의 Essn은 4개다.
+  3. Q16: 이 상태에서는 0행이다. 조건을 성별만 남기면 별칭이 있을 때 2명,
      별칭 없이 Sex = Sex로 쓰면 3명(안쪽 표의 Sex끼리 견준다).
-  4. 값 하나를 돌려주는 안쪽 질의(p.30): 부양가족이 둘 이상인 직원은 Smith, Wong.
-  5. 12주차 풀이 Q3-2(p.7): = 뒤의 안쪽 질의가 2행을 돌려준다. SQLite는 첫 행만 써서 3명, IN으로 고치면 5명.
+  4. 값 하나를 돌려주는 안쪽 질의: 부양가족이 둘 이상인 직원은 Smith, Wong.
+  5. 틀리기 쉬운 답(상사의 상사가 888665555인 직원을 = 로 씀): = 뒤의 안쪽 질의가 2행을 돌려준다. SQLite는 첫 행만 써서 3명, IN으로 고치면 5명.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -176,9 +175,9 @@ def main():
                 WHERE E.Super_ssn = (SELECT S.Ssn FROM EMPLOYEE AS S
                                      WHERE S.Fname = 'Franklin' AND S.Lname = 'Wong')"""
     assert sorted(col(c, single)) == ["English", "Narayan", "Smith"]
-    print("[OK] p.30: 부양가족 둘 이상은 Smith, Wong. 한 행짜리 안쪽 질의 앞의 = 는 3명")
+    print("[OK] 부양가족 둘 이상은 Smith, Wong. 한 행짜리 안쪽 질의 앞의 = 는 3명")
 
-    # 5. = 대신 IN (12주차 풀이 Q3-2)
+    # 5. = 대신 IN (틀리기 쉬운 답과 비교)
     inner = "SELECT Lname FROM EMPLOYEE WHERE Super_ssn = '888665555'"
     assert sorted(col(c, inner)) == ["Wallace", "Wong"]
     eq = "SELECT Lname FROM EMPLOYEE WHERE Super_ssn = (SELECT Ssn FROM EMPLOYEE WHERE Super_ssn = '888665555')"

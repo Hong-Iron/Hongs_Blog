@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Calling Convention", "C 호출 규약", "cdecl", "STDCALL", "stdcall", "RET n", "스택 정리", "Stack Cleanup", "호출자 정리", "피호출자 정리"]
 description: "프로시저를 부르는 쪽과 불리는 쪽이 미리 맞춰 두는 약속이다. 식당에서 다 먹은 그릇을 손님이 치우는지 직원이 치우는지 정해 두는 것과 같다. 스택에 쌓아 넘긴 값을 부른 쪽이 치우는 방식과 불린 쪽이 돌아가면서 치우는 방식이 있고, 어느 쪽이든 한쪽이 정확히 한 번 치우면 된다.…"
@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/calling-convention/"
 
 [스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/)로 인수 둘(8바이트)을 넣고 `AddTwo`를 불렀다. 프로시저가 `ret`으로 돌아오면 복귀 주소는 꺼내졌지만 인수 둘은 스택에 그대로 남는다. 이대로 반복문에서 100번 부르면 스택이 800바이트 줄어든 채로 남는다. 누군가는 ESP를 8만큼 올려 줘야 한다.
 
-슬라이드는 치우는 사람이 누구냐로 두 방식을 나란히 보인다[^1].
+치우는 사람이 누구냐에 따라 두 방식이 있다.
 
 ```asm
 ; C 방식: 부른 쪽이 치운다          ; STDCALL 방식: 불린 쪽이 치운다
@@ -72,14 +72,14 @@ AddTwo ENDP                         AddTwo ENDP
 
 ## 정의
 
-**RET n.** `RET`은 스택 꼭대기의 값을 꺼내 명령 포인터(EIP)에 넣어 그 주소로 돌아간다. 뒤에 수 $$n$$을 붙이면 복귀 주소를 꺼낸 다음 ESP에 $$n$$을 더한다. 인수 $$n$$바이트를 한 번에 치우는 것이다[^2].
+**RET n.** `RET`은 스택 꼭대기의 값을 꺼내 명령 포인터(EIP)에 넣어 그 주소로 돌아간다. 뒤에 수 $$n$$을 붙이면 복귀 주소를 꺼낸 다음 ESP에 $$n$$을 더한다. 인수 $$n$$바이트를 한 번에 치우는 것이다.
 
 $$\texttt{RET}\ n: \quad \mathrm{EIP} \leftarrow [\mathrm{ESP}], \qquad \mathrm{ESP} \leftarrow \mathrm{ESP} + 4 + n$$
 
 
 화살표는 "오른쪽 값을 왼쪽에 넣는다"는 뜻이다. 4는 꺼낸 복귀 주소의 크기, $$n$$은 치울 인수의 바이트 수다. 4바이트 인수가 둘이면 $$n = 8$$이다.
 
-**두 가지 규약.** 슬라이드가 다루는 것은 둘이다[^1][^3].
+**두 가지 규약.** 여기서 다루는 규약은 둘이다.
 
 | | C 규약 | STDCALL 규약 |
 |---|---|---|
@@ -88,11 +88,11 @@ $$\texttt{RET}\ n: \quad \mathrm{EIP} \leftarrow [\mathrm{ESP}], \qquad \mathrm{
 | 프로시저의 끝 | `ret` | `ret n` |
 | 치우는 코드가 놓이는 곳 | 호출하는 자리마다 | 프로시저 안에 한 번 |
 
-어느 규약을 쓸지는 프로그램 맨 앞의 `.model` 지시어가 정한다고 슬라이드가 예고한다[^1]. 이 수업의 프로그램 틀에는 `.model flat,stdcall`이 적혀 있다[^4].
+어느 규약을 쓸지는 프로그램 맨 앞의 `.model` 지시어가 정한다. [프로그램 틀](/Hongs_Blog/studies/assembly-language/asm-program-template/)의 `.model flat,stdcall`은 STDCALL 규약을 고른다.
 
 ## 예제
 
-**Difference.** 첫째 인수를 둘째 인수에서 빼는 프로시저를 만든다. 슬라이드의 Your turn과 답이다[^5].
+**Difference.** 첫째 인수를 둘째 인수에서 빼는 프로시저를 만든다.
 
 ```asm
     push 14               ; 첫째 인수
@@ -164,10 +164,5 @@ ESP가 어긋난 채로 부른 쪽 프로시저가 자기 `ret`에 닿으면, �
 </details>
 
 
-[^1]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-1」, p.2 (누가 매개변수를 스택에서 치우는가: C와 STDCALL, MODEL 지시어 예고)
-[^2]: 같은 자료, p.1 (RET과 RET n)
-[^3]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-2」, p.8 (요약: 호출 규약 C, stdcall)
-[^4]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-1」, p.15, p.19 (`.model flat,stdcall`)
-[^5]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-1」, p.3 (Your turn: Difference)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> ESP 값이 적힌 두 표, `RET n`의 식, 800바이트 계산, 두 예의 인수 순서가 다르다는 지적, 인수 수가 달라도 되는가에 대한 비교, 다른 언어끼리 부를 수 있다는 말, 카드의 답은 원본에 없다. 실행 결과는 실제 어셈블러가 아니라 파이썬 흉내로 확인했다(검증 줄의 코드).
+[^s1]: 실행 결과는 실제 어셈블러가 아니라 파이썬 흉내로 확인했다(검증 줄의 코드).
 {% endraw %}

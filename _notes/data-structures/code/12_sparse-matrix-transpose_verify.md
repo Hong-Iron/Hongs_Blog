@@ -23,12 +23,11 @@ permalink: "/studies/data-structures/code/12_sparse-matrix-transpose_verify/"
 """희소 행렬 전치의 걸음 수 세기와 무작위 비교.
 
 문서: 1-2학기/자료구조/3.개념집/12.희소 행렬의 전치.md
-출처: 자료구조 3주차 슬라이드 p.16~19 (세 단계, O(n + t))
 같은 알고리즘의 C 구현은 12_sparse-matrix-transpose_impl.c에 있다. 여기서는 파이썬으로 다시 짜서 걸음 수를 센다.
-행·열 번호는 슬라이드처럼 1부터 센다.
+행·열 번호는 행렬 표기대로 1부터 센다.
 
 확인하는 것
-  1. 슬라이드 예(4 x 5, 0이 아닌 칸 6개)의 개수 [0, 1, 3, 1, 1], 시작 [0, 0, 1, 4, 5], 결과 목록.
+  1. 문서 예시(4 x 5, 0이 아닌 칸 6개)의 개수 [0, 1, 3, 1, 1], 시작 [0, 0, 1, 4, 5], 결과 목록.
   2. 빠른 전치의 걸음 수가 정확히 2t + 2n - 1이다 (n = 열 수, t = 0이 아닌 칸 수).
      1단계 n + t, 2단계 n - 1, 3단계 t. 행 수 m과는 상관없다.
   3. 느린 전치(열마다 목록 전체 훑기)는 n * t걸음, 2차원 배열 뒤집기는 m * n걸음.
@@ -102,7 +101,7 @@ def main():
     assert slow == out and slow_steps == 5 * 6 == 30
     flipped, dense_steps = dense_transpose(A)
     assert to_triples(flipped) == out and dense_steps == 4 * 5 == 20
-    print(f"슬라이드 예: 빠른 전치 {steps}걸음, 느린 전치 {slow_steps}걸음, 2차원 배열 {dense_steps}걸음")
+    print(f"문서 예시: 빠른 전치 {steps}걸음, 느린 전치 {slow_steps}걸음, 2차원 배열 {dense_steps}걸음")
 
     # 무작위 1,000개: 결과가 같고 걸음 수 식이 맞다
     rng = random.Random(20261012)
@@ -121,7 +120,7 @@ def main():
         assert sum(size) == t and start == [sum(size[:c]) for c in range(n)]
     print("무작위 1,000개: 세 방법의 결과가 같고, 걸음 수는 2t + 2n - 1, n*t, m*n")
 
-    # 문서의 표: 500 x 500, t = 1,994 (슬라이드 p.15의 크기)
+    # 문서의 표: 500 x 500, t = 1,994 (3원소 표현 문서의 크기)
     m = n = 500
     cells = rng.sample(range(m * n), 1994)
     dense = [[0] * n for _ in range(m)]

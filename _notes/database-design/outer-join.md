@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Outer Join", "OUTER JOIN", "LEFT OUTER JOIN", "RIGHT OUTER JOIN", "FULL OUTER JOIN", "LEFT JOIN", "RIGHT JOIN", "왼쪽 외부 조인", "오른쪽 외부 조인", "완전 외부 조인", "내부 조인", "Inner Join", "안티 조인"]
 description: "직원 옆에 상사 이름을 붙인 명단을 만들면, 상사가 없는 사장은 짝이 없어서 명단에서 통째로 빠진다. 짝이 없는 사람도 명단에 남기고 짝 자리는 빈칸으로 두는 것이 외부 조인이다. 어느 쪽 표의 행을 다 남길지에 따라 왼쪽, 오른쪽, 양쪽 세 가지가 있다. 빈칸으로 채운 행도 한 …"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/outer-join/"
 
 ## 예시로 보기
 
-"모든 직원의 성과 그 상사의 성을 나란히 보여라." 직원 표를 두 번 써서 `E.Super_ssn = S.Ssn`으로 이으면 된다([별칭과 자기 조인](/Hongs_Blog/studies/database-design/sql-alias-self-join/)). 그런데 결과가 8행이 아니라 7행이다[^1].
+"모든 직원의 성과 그 상사의 성을 나란히 보여라." 직원 표를 두 번 써서 `E.Super_ssn = S.Ssn`으로 이으면 된다([별칭과 자기 조인](/Hongs_Blog/studies/database-design/sql-alias-self-join/)). 그런데 결과가 8행이 아니라 7행이다.
 
 ```sql
 SELECT E.Lname AS Employee_name, S.Lname AS Supervisor_name
@@ -42,7 +42,7 @@ FROM   EMPLOYEE AS E, EMPLOYEE AS S
 WHERE  E.Super_ssn = S.Ssn;
 ```
 
-Borg는 `Super_ssn`이 NULL이라 어떤 `S.Ssn`과도 맞지 않는다. 짝이 없는 행은 결과에 나오지 않는다. "모든 직원"을 보려면 조인의 종류를 바꾼다[^2].
+Borg는 `Super_ssn`이 NULL이라 어떤 `S.Ssn`과도 맞지 않는다. 짝이 없는 행은 결과에 나오지 않는다. "모든 직원"을 보려면 조인의 종류를 바꾼다.
 
 ```sql
 SELECT E.Lname AS Employee_name, S.Lname AS Supervisor_name
@@ -61,7 +61,7 @@ FROM   (EMPLOYEE AS E LEFT OUTER JOIN EMPLOYEE AS S
 | Jabbar | Wallace | 나온다 | 나온다 |
 | Borg | NULL | 빠진다 | 나온다 |
 
-왼쪽 표(E)의 행은 짝이 없어도 남고, 오른쪽 표(S)에서 올 열은 NULL로 채워진다. 7행이 8행이 된다. 슬라이드의 그림은 이름 대신 직원의 `Ssn`과 `Super_ssn` 두 열로 같은 결과를 그렸다[^2].
+왼쪽 표(E)의 행은 짝이 없어도 남고, 오른쪽 표(S)에서 올 열은 NULL로 채워진다. 7행이 8행이 된다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 내부 7행, LEFT 8행, RIGHT 12행, FULL 13행, 짝 없는 행만 고른 결과(Borg, 부하 없는 5명, 부양가족 없는 5명), `COUNT(*)` 8과 `COUNT(S.Ssn)` 7, 직원별 부양가족 수, 조건을 `ON`과 `WHERE`에 둔 8행과 3행. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다 — [66_outer-join_verify.py](/Hongs_Blog/studies/database-design/code/66_outer-join_verify/), [66_outer-join_verify.sql](/Hongs_Blog/studies/database-design/code/66_outer-join_verify-sql/)</div>
@@ -71,7 +71,7 @@ FROM   (EMPLOYEE AS E LEFT OUTER JOIN EMPLOYEE AS S
 
 ## 정의
 
-조인은 기본이 내부 조인(inner join)이다. 한 행은 다른 표에 짝이 되는 행이 있을 때만 결과에 들어간다[^1]. 외부 조인(outer join)은 짝이 없는 행도 꺼내고, 짝 쪽 표의 열을 NULL로 채운다[^2].
+조인은 기본이 내부 조인(inner join)이다. 한 행은 다른 표에 짝이 되는 행이 있을 때만 결과에 들어간다. 외부 조인(outer join)은 짝이 없는 행도 꺼내고, 짝 쪽 표의 열을 NULL로 채운다.
 
 | 종류 | 반드시 남는 행 | NULL로 채우는 쪽 |
 |---|---|---|
@@ -79,7 +79,7 @@ FROM   (EMPLOYEE AS E LEFT OUTER JOIN EMPLOYEE AS S
 | `A RIGHT OUTER JOIN B ON …` | 오른쪽 표 B의 모든 행 | A의 열 |
 | `A FULL OUTER JOIN B ON …` | 양쪽 표의 모든 행 | 짝이 없는 쪽의 반대쪽 열 |
 
-`OUTER`는 빼고 `LEFT JOIN`처럼 써도 같은 뜻이다. 슬라이드의 그림과 14주차 풀이가 그렇게 쓴다[^3][^4].
+`OUTER`는 빼고 `LEFT JOIN`처럼 써도 같은 뜻이다.
 
 기호로 쓰면, 내부 조인의 결과를 $$J$$라 할 때 `A LEFT OUTER JOIN B`의 결과는 $$J \cup \{\,(a, \text{NULL}, \dots, \text{NULL}) : a \in A,\ a\text{의 짝이 } B\text{에 없다}\,\}$$이다. $$\cup$$는 두 모음을 합친다는 뜻이다. 내부 조인의 행에, 짝 없는 A의 행을 NULL로 늘린 것을 더한다는 말이다[^s1].
 
@@ -96,7 +96,7 @@ FROM   (EMPLOYEE AS E LEFT OUTER JOIN EMPLOYEE AS S
 
 ### 짝 없는 행만 고르기
 
-외부 조인 뒤에 "채워진 쪽이 NULL인 행만" 남기면 짝이 없는 행만 얻는다. 슬라이드의 벤 그림 아랫줄이 이 꼴이다[^3].
+외부 조인 뒤에 "채워진 쪽이 NULL인 행만" 남기면 짝이 없는 행만 얻는다. 표 A와 B를 겹친 두 원으로 그리고 결과에 드는 곳을 색칠하면, 질의의 꼴마다 이렇다.
 
 | 색칠된 곳 | 질의의 꼴 | 뜻 |
 |---|---|---|
@@ -117,7 +117,7 @@ FROM   EMPLOYEE AS E LEFT OUTER JOIN DEPENDENT AS D
 WHERE  D.Essn IS NULL;
 ```
 
-결과는 Zelaya, Narayan, English, Jabbar, Borg로, `NOT EXISTS`로 쓴 판([EXISTS와 NOT EXISTS](/Hongs_Blog/studies/database-design/sql-exists/))과 같다. 14주차 연습의 "한 번도 주문하지 않은 고객"이 이 꼴로 풀려 있다[^4].
+결과는 Zelaya, Narayan, English, Jabbar, Borg로, `NOT EXISTS`로 쓴 판([EXISTS와 NOT EXISTS](/Hongs_Blog/studies/database-design/sql-exists/))과 같다. "한 번도 주문하지 않은 고객"도 이 꼴로 구한다.
 
 ### 빈칸으로 채운 행을 셀 때
 
@@ -132,7 +132,7 @@ WHERE  D.Essn IS NULL;
 | Wallace | 1 | 1 |
 | Zelaya, Narayan, English, Jabbar, Borg | 1 | 0 |
 
-부양가족이 없는 다섯 명은 NULL로 채운 한 줄이 있어서 `COUNT(*)`가 1이다. 맞는 값 0은 오른쪽 표의 열을 센 `COUNT(D.Essn)`에서 나온다. 14주차 연습의 "참가자가 없는 행사는 0으로 보여라"가 이 방법을 쓴다[^5].
+부양가족이 없는 다섯 명은 NULL로 채운 한 줄이 있어서 `COUNT(*)`가 1이다. 맞는 값 0은 오른쪽 표의 열을 센 `COUNT(D.Essn)`에서 나온다. "참가자가 없는 행사는 0으로 보여라" 같은 물음도 이 방법으로 푼다.
 
 ### 스스로 설명해 보기
 
@@ -179,7 +179,7 @@ ER 모델에서 관계에 꼭 참여하지 않아도 되는 개체([참여 제�
 ## 활용
 
 - 쓰는 때: "모든 ~에 대해 …를 보여라, 없으면 빈칸이나 0으로"라는 말이 나오면 외부 조인이다. "…가 없는 ~"은 외부 조인에 `IS NULL`을 더한다.
-- 슬라이드는 `LEFT OUTER JOIN`에서 채우는 쪽을 "오른쪽(왼쪽) 표의 속성"이라고 적었다[^2]. `LEFT`면 오른쪽 표의 열을, `RIGHT`면 왼쪽 표의 열을 채운다는 뜻이다.
+- NULL로 채우는 쪽은 이름과 반대쪽이다. `LEFT`면 오른쪽 표의 열을, `RIGHT`면 왼쪽 표의 열을 채운다.
 - 연습: [조인 질의 쓰기 예제 사다리](/Hongs_Blog/studies/database-design/join-query-ladder/), [JOIN·GROUP BY 종합 연습](/Hongs_Blog/studies/database-design/advanced-sql-practice/)
 
 ## 연결
@@ -244,11 +244,6 @@ ER 모델에서 관계에 꼭 참여하지 않아도 되는 개체([참여 제�
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.24 (Inner Join: 기본 조인, 짝이 있을 때만 결과에 들어간다, `Super_ssn`이 NULL인 행은 빠진다, 7행의 그림)
-[^2]: 같은 자료, p.25 (Outer Join: 짝이 없어도 꺼내고 NULL로 채운다, LEFT OUTER JOIN 질의, 8행의 그림). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.8에 두 조인이 나란히 다시 나온다.
-[^3]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.26 (조인 종류의 벤 그림: Inner join, LEFT, FULL, RIGHT와 `IS NULL`을 붙인 세 꼴). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.9에 같은 그림이 있다.
-[^4]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice-solutions」, p.3~5 (연습 2: 주문이 없는 고객을 `LEFT JOIN … WHERE O.customer_id IS NULL`로 구한다)
-[^5]: 같은 자료, p.8 (연습 5: 참가자가 없는 행사의 수를 0으로 내려고 `LEFT JOIN`과 `COUNT(열)`을 쓴다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기호로 쓴 정의, RIGHT와 FULL의 행 수, "부양가족이 없는 직원" 질의, `COUNT(*)`와 `COUNT(열)`의 두 표, 스스로 설명해 보기, 카드 C2~C5는 슬라이드에 없다. 슬라이드가 COMPANY로 보인 것은 내부 조인 7행과 LEFT OUTER JOIN 8행이다. 값은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 조건을 `ON`에 둘 때와 `WHERE`에 둘 때의 차이는 슬라이드에 없다. 8행과 3행은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s1]: 값은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s2]: 8행과 3행은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
 {% endraw %}

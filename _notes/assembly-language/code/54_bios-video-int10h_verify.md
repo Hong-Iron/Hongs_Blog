@@ -36,16 +36,16 @@ def split(attr):
 
 
 if __name__ == "__main__":
-    # 색 4비트 (wk14-16 p.28)
+    # 색 4비트
     light_gray = RED | GREEN | BLUE
     white = INTENSITY | RED | GREEN | BLUE
     cyan = GREEN | BLUE
     magenta = RED | BLUE
     assert (light_gray, white, cyan, magenta) == (0b0111, 0b1111, 0b0011, 0b0101)
-    # 속성 바이트 (wk14-16 p.29)
+    # 속성 바이트
     assert attribute(BLUE, light_gray) == 0x17
     assert attribute(RED, white) == 0x4F
-    # SHL 4 = × 16. wk07-3-1 p.14의 yellow + (blue * 16)과 같은 계산
+    # SHL 4 = × 16. Irvine32에서 쓰는 yellow + (blue * 16)과 같은 계산
     yellow = INTENSITY | RED | GREEN
     assert yellow == 14 and yellow + BLUE * 16 == attribute(BLUE, yellow) == 0x1E
     # 겹치는 비트가 없으니 더하기와 OR가 같다 (모든 조합 전수)
@@ -53,15 +53,15 @@ if __name__ == "__main__":
         for fg in range(16):
             a = attribute(bg, fg)
             assert a == bg * 16 + fg and split(a) == (bg, fg)
-    # 보통 속성 7 = 검은 배경에 밝은 회색 글자 (wk14-16 p.33의 bh,7)
+    # 보통 속성 7 = 검은 배경에 밝은 회색 글자 (Clrscr의 bh,7)
     assert split(0x07) == (0, light_gray)
-    # or bl,10000000b: 맨 윗비트만 켠다 (wk14-16 p.32)
+    # or bl,10000000b: 맨 윗비트만 켠다
     for bl in range(256):
         r = bl | 0b10000000
         assert r & 0x80 and (r & 0x7F) == (bl & 0x7F)
     assert 0x17 | 0x80 == 0x97
 
-    # Clrscr (wk14-16 p.33): mov ax,0600h -> AH=6(위로 스크롤), AL=0
+    # Clrscr: mov ax,0600h -> AH=6(위로 스크롤), AL=0
     assert (0x0600 >> 8, 0x0600 & 0xFF) == (6, 0)
     # mov cx,0 -> CH=0, CL=0 (왼쪽 위 0,0). mov dx,184Fh -> DH=24, DL=79
     assert (0x184F >> 8, 0x184F & 0xFF) == (24, 79)

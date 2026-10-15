@@ -23,16 +23,15 @@ permalink: "/studies/database-design/code/70_nested-aggregate-practice_p2/"
 """중첩 질의·집계 연습 p2: Research 부서의 급여 합, 최대, 최소, 평균 (SQLite).
 
 문서: 70.중첩 질의·집계 연습의 문제 p2
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.29 (연습 2), 풀이 10-11-SQL-Solutions p.25
-확인: 풀이의 질의는 (133000, 40000, 25000, 33250)을 낸다. 조인 조건을 WHERE에 적은 판도 같다.
+확인: 답의 질의는 (133000, 40000, 25000, 33250)을 낸다. 조인 조건을 WHERE에 적은 판도 같다.
       변형(Administration)은 (93000, 43000, 25000, 31000).
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - WORKS_ON.Hours에는 NOT NULL을 걸지 않았다. 상태에 (888665555, 20, NULL)이 있다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -123,7 +122,7 @@ def main():
                FROM (EMPLOYEE JOIN DEPARTMENT ON Dno = Dnumber)
                WHERE Dname = 'Research'"""
     assert rows(c, slide) == [(133000, 40000, 25000, 33250.0)]
-    print("[OK] 풀이: 133000, 40000, 25000, 33250")
+    print("[OK] 답: 133000, 40000, 25000, 33250")
 
     picked = rows(c, "SELECT Lname, Salary FROM (EMPLOYEE JOIN DEPARTMENT ON Dno = Dnumber) WHERE Dname = 'Research'")
     assert picked == [("Smith", 30000), ("Wong", 40000), ("Narayan", 38000), ("English", 25000)]

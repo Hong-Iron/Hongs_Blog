@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["ER Diagram Notation", "ER 다이어그램", "Entity-Relationship Diagram", "ERD", "Chen 표기법", "Chen Notation", "ER 스키마 다이어그램", "ER Schema Diagram"]
 description: "지하철 노선도처럼, 약속된 기호 몇 개로 데이터베이스의 틀을 한 장에 그린 그림이다. 네모는 저장할 대상, 마름모는 대상 사이의 이어짐, 타원은 대상에 적을 항목이고, 겹으로 그린 것과 밑줄에는 저마다 특별한 뜻이 있다. 그림에는 틀만 그리고 실제 자료는 그리지 않는다. 책과 도구…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/er-diagram-notation/"
 
 요구사항을 글로만 적어 두면 "부서와 프로젝트가 몇 대 몇인지"를 찾으려고 문단을 다시 읽어야 한다. 그림 한 장이면 선 하나를 보면 된다.
 
-COMPANY 데이터베이스 전체를 그린 그림이다[^1].
+COMPANY 데이터베이스 전체를 그린 그림이다.
 
 ```mermaid
 flowchart TB
@@ -88,13 +88,13 @@ flowchart TB
     DEPENDENT --- x_rel(["Relationship"])
 ```
 
-네모 넷이 개체 타입, 마름모 여섯이 관계 타입, 둥근 칸이 속성이다. 굵은 선은 슬라이드 그림의 겹선이다[^s1].
+네모 넷이 개체 타입, 마름모 여섯이 관계 타입, 둥근 칸이 속성이다. 굵은 선은 ER 다이어그램의 겹선을 대신한다[^s1].
 
 ## 기호와 뜻
 
-슬라이드의 기호표다[^2]. 오른쪽 칸은 이 과목 문서의 그림이 같은 것을 어떻게 적는지다[^s1].
+ER 다이어그램의 기호를 표로 모으면 이렇다. 오른쪽 칸은 이 문서 모음의 그림이 같은 것을 어떻게 적는지다[^s1].
 
-| 슬라이드의 기호 | 뜻 | 이 과목 문서의 그림 |
+| ER 다이어그램의 기호 | 뜻 | 이 문서 모음의 그림 |
 |---|---|---|
 | 네모 | 개체 타입 | 네모 |
 | 겹네모 | 약한 개체 타입 | 겹네모 |
@@ -108,7 +108,7 @@ flowchart TB
 | 네모와 마름모 사이의 겹선 | 그 개체 타입의 전체 참여 | 굵은 선 |
 | 마름모 양쪽 선의 1, N | 카디널리티 비율 | 선 위의 글자 |
 
-기호표에는 없지만 COMPANY 그림에 쓰인 것이 둘 더 있다. 약한 개체 타입의 부분 키는 이름에 점선 밑줄을 긋는다. 재귀 관계에서는 선에 역할 이름(Supervisor, Supervisee)을 적는다[^1].
+기호표에는 없지만 COMPANY 그림에 쓰인 것이 둘 더 있다. 약한 개체 타입의 부분 키는 이름에 점선 밑줄을 긋는다. 재귀 관계에서는 선에 역할 이름(Supervisor, Supervisee)을 적는다.
 
 **읽는 법.** 그림의 한 조각을 문장으로 옮기면 이렇다.
 
@@ -116,19 +116,19 @@ flowchart TB
 - `EMPLOYEE ─1─ MANAGES ═1═ DEPARTMENT`와 Start_date: 부서마다 관리자가 꼭 한 명 있다. 직원은 부서를 많아야 하나 관리하고, 관리하지 않아도 된다. 관리를 시작한 날은 관계에 적는다.
 - DEPARTMENT의 Name과 Number에 따로 밑줄: 둘 다 혼자서 부서를 가려낸다.
 
-**숫자를 적는 두 가지 방식.** 슬라이드에는 COMPANY 그림이 두 벌 있다. 한 벌은 위처럼 1, N, M과 겹선으로 적는다[^1]. 다른 한 벌은 선마다 (min, max) 숫자쌍과 역할 이름을 적는다[^3]. 두 방식은 숫자가 놓이는 쪽이 서로 반대다: [(min, max) 표기](/Hongs_Blog/studies/database-design/min-max-notation/)
+**숫자를 적는 두 가지 방식.** COMPANY 그림은 두 방식으로 그릴 수 있다. 한 방식은 위처럼 1, N, M과 겹선으로 적는다. 다른 방식은 선마다 (min, max) 숫자쌍과 역할 이름을 적는다. 두 방식은 숫자가 놓이는 쪽이 서로 반대다: [(min, max) 표기](/Hongs_Blog/studies/database-design/min-max-notation/)
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 그림의 개체 타입 넷, 관계 타입 여섯, 숫자와 겹선은 슬라이드 4-2 p.5와 한 칸씩 손으로 맞췄다. 여섯 관계의 숫자·겹선이 5주차 p.34의 (min, max)에서 뽑은 값과 같은 것은 [30_min-max-notation_verify.py](/Hongs_Blog/studies/database-design/code/30_min-max-notation_verify/)로 확인했다. 다이어그램은 문법 검사를 통과했다.</div>
+<div class="callout-title" markdown="span">검증: 그림의 개체 타입 넷, 관계 타입 여섯, 숫자와 겹선은 교재(Elmasri & Navathe)의 COMPANY ER 그림과 한 칸씩 손으로 맞췄다. 여섯 관계의 숫자·겹선이 (min, max)로 그린 COMPANY 그림에서 뽑은 값과 같은 것은 [30_min-max-notation_verify.py](/Hongs_Blog/studies/database-design/code/30_min-max-notation_verify/)로 확인했다. 다이어그램은 문법 검사를 통과했다.</div>
 
 </div>
 
 
 ## 활용
 
-- ER 다이어그램은 틀(스키마)을 그린다. 개체나 관계 인스턴스는 그리지 않는다. 틀은 드물게 바뀌고, 개체 집합의 내용은 자주 바뀌기 때문이다[^4].
+- ER 다이어그램은 틀(스키마)을 그린다. 개체나 관계 인스턴스는 그리지 않는다. 틀은 드물게 바뀌고, 개체 집합의 내용은 자주 바뀌기 때문이다.
 - 흔한 실수 세 가지. ① 겹선을 긋는 쪽을 뒤집는다(전체 참여하는 개체 타입 쪽 선이 겹선이다). ② 키가 아닌 속성에 밑줄을 긋는다(밑줄은 키 속성에만 긋는다). ③ 다른 개체를 가리키는 속성(직원의 "소속 부서")을 타원으로 남겨 둔 채 마름모도 그린다(마름모가 그 일을 하므로 타원은 지운다).
-- 이 표기는 교재(Elmasri & Navathe)의 것이다. 다른 책이나 도구의 그림은 기호가 다를 수 있다[^s2].
+- 이 표기는 교재(Elmasri & Navathe)의 것이다. 다른 책이나 도구의 그림은 기호가 다를 수 있다.
 
 ## 연결
 
@@ -166,10 +166,5 @@ flowchart TB
 </details>
 
 
-[^1]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.5 (Entity-Relationship Diagram for the COMPANY database: 1, N, M과 겹선으로 그린 그림)
-[^2]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.33 (Notation of the ER Diagram: Symbols and their meanings). 6주차 6-1 풀이 p.8에 같은 표가 있다.
-[^3]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.34 (ER Diagram of COMPANY Database: (min, max)와 역할 이름으로 그린 그림)
-[^4]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.32 ("Focus on representing the schema, rather than the instances")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 슬라이드 4-2 p.5의 그림을 Mermaid로 옮겨 그린 것이다. Mermaid는 밑줄, 겹타원, 겹마름모, 겹선을 그리지 못해 표의 오른쪽 칸처럼 바꿔 적었다. 그 칸과 "읽는 법"의 문장, 카드 C1~C3은 원본에 없다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 흔한 실수 세 가지와, 책·도구마다 표기가 다르다는 말은 원본에 없다. 표기가 교재의 것이라는 점은 슬라이드 그림이 Elmasri & Navathe, *Fundamentals of Database Systems*의 그림인 데서 읽었다.
+[^s1]: Mermaid는 밑줄, 겹타원, 겹마름모, 겹선을 그리지 못해 표의 오른쪽 칸처럼 바꿔 적었다.
 {% endraw %}

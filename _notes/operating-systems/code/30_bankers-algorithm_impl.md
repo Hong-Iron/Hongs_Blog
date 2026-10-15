@@ -69,7 +69,7 @@ if __name__ == "__main__":
     seq = safe_sequence(C, A, available(R, A))
     print("6.7a 순서", seq)
     assert seq is not None and seq[0] == 2              # 처음 끝낼 수 있는 것은 P2뿐
-    # 슬라이드 순서 P2 -> P1 -> P3 -> P4 도 가능한지 직접 따라가 확인
+    # 문서에 적은 순서 P2 -> P1 -> P3 -> P4 도 가능한지 직접 따라가 확인
     work = [0, 1, 1]
     for p in [2, 1, 3, 4]:
         need = [C[p-1][j] - A[p-1][j] for j in range(3)]

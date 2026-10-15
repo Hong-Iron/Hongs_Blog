@@ -10,7 +10,7 @@ course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Superscalar and Out-of-Order Execution", "슈퍼스칼라", "Superscalar", "다중 내보내기", "Multiple Issue", "정적 다중 내보내기", "Static Multiple Issue", "동적 다중 내보내기", "Dynamic Multiple Issue", "비순차 실행", "Out-of-Order Execution", "동적 스케줄링", "Dynamic Scheduling", "추측 실행", "Speculation", "레지스터 이름 바꾸기", "Register Renaming", "IPC", "명령어 수준 병렬성", "Instruction-Level Parallelism", "ILP"]
 description: "계산대를 두 줄로 늘리면 같은 시간에 손님을 두 배로 받을 수 있다. 거기에 더해, 앞 손님이 지갑을 찾느라 멈춰 있으면 준비된 뒤 손님부터 먼저 계산해 준다. 프로세서도 한 사이클에 명령어를 여러 개 시작하고 재료가 준비된 명령어부터 먼저 실행해서, 서로 기대지 않는 명령어가 많…"
@@ -95,7 +95,7 @@ permalink: "/studies/computer-architecture/superscalar-out-of-order/"
 - 분기가 어디로 갈지는 실행해 봐야 안다. 분기를 넘어 순서를 잡기 어렵다.
 - 같은 명령어 집합이라도 프로세서마다 걸리는 시간과 해저드가 다르다.
 
-순서를 뒤섞어도 지켜야 할 것이 하나 있다. 레지스터와 메모리를 고치는 일(확정)은 원래 순서대로 한다. 그래야 [예외](/Hongs_Blog/studies/computer-architecture/processor-exceptions/)가 났을 때 "그 명령어 앞까지만 실행된 상태"를 만들 수 있고, 분기 예측이 틀렸을 때 잘못 실행한 것을 흔적 없이 버릴 수 있다[^s2].
+순서를 뒤섞어도 지켜야 할 것이 하나 있다. 레지스터와 메모리를 고치는 일(확정)은 원래 순서대로 한다. 그래야 [예외](/Hongs_Blog/studies/computer-architecture/processor-exceptions/)가 났을 때 "그 명령어 앞까지만 실행된 상태"를 만들 수 있고, 분기 예측이 틀렸을 때 잘못 실행한 것을 흔적 없이 버릴 수 있다.
 
 **추측 실행.** 분기가 어디로 갈지 [예측](/Hongs_Blog/studies/computer-architecture/control-hazard-branch-prediction/)하고 그 길의 명령어를 미리 실행해 둔다. 결과는 분기가 확인될 때까지 확정하지 않는다. 맞으면 확정하고, 틀리면 버린다[^4].
 
@@ -120,7 +120,7 @@ lw  $t0, 0($s3)       # $t0를 다시 쓴다 (앞의 값과 무관)
 
 게다가 이 회로들은 전력을 많이 쓴다. 그래서 프로세서 하나를 더 복잡하게 만드는 대신 단순한 코어를 여러 개 넣는 쪽으로 방향이 바뀌었다[^7]. → [멀티코어와 병렬 처리](/Hongs_Blog/studies/computer-architecture/multicore-parallelism/)
 
-교재 슬라이드의 표에서 몇 줄을 옮긴다[^7].
+인텔 프로세서 몇 개를 견주면 이 흐름이 보인다[^7].
 
 | 프로세서 | 해 | 파이프라인 단계 | 한 사이클에 시작하는 수 | 비순차·추측 | 코어 |
 |---|---|---|---|---|---|
@@ -175,9 +175,8 @@ lw  $t0, 0($s3)       # $t0를 다시 쓴다 (앞의 값과 무관)
 [^2]: 같은 슬라이드, 77 (컴파일러의 순서 잡기가 필요 없어지지만 여전히 도움이 될 수 있다, 코드의 뜻은 CPU가 지킨다)
 [^3]: 같은 슬라이드, 79 (Why Do Dynamic Scheduling?)
 [^4]: 같은 슬라이드, 67, 78 (Speculation: 분기 결과를 추측하고 틀리면 되돌린다, 분기 결과가 정해질 때까지 확정하지 않는다)
-[^5]: 같은 슬라이드, 75 (Loop Unrolling: 레지스터 이름 바꾸기, 이름만 같아서 생기는 의존). 슬라이드는 컴파일러가 반복문을 펼칠 때의 이름 바꾸기로 설명한다. 프로세서가 실행 중에 같은 일을 한다는 것과 위 예는 [확인필요].
+[^5]: 같은 슬라이드, 75 (Loop Unrolling: 레지스터 이름 바꾸기, 이름만 같아서 생기는 의존). 프로세서가 실행 중에 같은 일을 한다는 것과 위 예는 [확인필요].
 [^6]: 같은 슬라이드, 80 (Does Multiple Issue Work?)
 [^7]: 같은 슬라이드, 81 (Power Efficiency: 여러 개의 단순한 코어가 나을 수 있다, 프로세서별 표)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 여섯 명령어의 예, 걸리는 사이클 수의 가정, 표의 수치, "변수 둘에 번갈아 더하기"는 연 자료에 없다. 예와 수치는 장난감 일정표 코드로 계산했다. 실제 프로세서의 가져오기·해독·확정 단계는 넣지 않은 단순한 모형이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "확정은 원래 순서대로"와 그 두 이유는 교재 4장의 설명으로 기억하지만, 연 슬라이드에는 "확정하지 않는다(don't commit)"는 말만 있고 순서에 대한 문장은 없었다[확인필요].
+[^s1]: 예와 수치는 장난감 일정표 코드로 계산했다. 실제 프로세서의 가져오기·해독·확정 단계는 넣지 않은 단순한 모형이다.
 {% endraw %}

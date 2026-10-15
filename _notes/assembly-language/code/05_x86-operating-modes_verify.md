@@ -23,7 +23,6 @@ permalink: "/studies/assembly-language/code/05_x86-operating-modes_verify/"
 """x86 동작 모드 검증.
 
 문서: 05.x86 동작 모드
-출처: 어셈블리어 3주차 3-2 p.5, 7 / 3-3 p.8, 11~12 / 13주차 2-1 p.4, 6
 주장:
   1. 주소가 20비트면 2^20 = 1,048,576바이트 = 1MB, 주소는 00000h ~ FFFFFh.
   2. 주소가 32비트면 2^32 = 4,294,967,296바이트 = 4GB, 주소는 00000000h ~ FFFFFFFFh.

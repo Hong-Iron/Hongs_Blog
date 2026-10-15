@@ -20,11 +20,11 @@ permalink: "/studies/assembly-language/code/22_type-lengthof-sizeof_verify/"
 [TYPE·LENGTHOF·SIZEOF 연산자](/Hongs_Blog/studies/assembly-language/type-lengthof-sizeof/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""「TYPE·LENGTHOF·SIZEOF 연산자」: 슬라이드 표의 값, SIZEOF = LENGTHOF x TYPE, 여러 줄 정의, 카드 C1·C3
+"""「TYPE·LENGTHOF·SIZEOF 연산자」: 문서 표의 값, SIZEOF = LENGTHOF x TYPE, 여러 줄 정의, 카드 C1·C3
 
 실행: python3 22_type-lengthof-sizeof_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -262,10 +262,10 @@ def must_fail(fn, *args):
 
 if __name__ == "__main__":
     c = CPU(); d = Data(c)
-    # p.1 TYPE
+    # TYPE
     d.byte("var1", None); d.word("var2", None); d.dword("var3", None); d.define("var4", 8, None)
     assert [d.sym[n]["type"] for n in ("var1", "var2", "var3", "var4")] == [1, 2, 4, 8]
-    # p.2~3 LENGTHOF, SIZEOF
+    # LENGTHOF, SIZEOF
     d.byte("byte1", 10, 20, 30)
     d.word("array1", dup(30, None), 0, 0)
     d.word("array2", dup(5, dup(3, None)))
@@ -278,7 +278,7 @@ if __name__ == "__main__":
         assert s["size"] == s["length"] * s["type"]          # SIZEOF = LENGTHOF x TYPE
     c.mov("ecx", d.sym["array1"]["length"]); assert c.get("ecx") == 32
     c.mov("ecx", d.sym["array1"]["size"]); assert c.get("ecx") == 64
-    # p.4: 쉼표로 이은 여러 줄
+    # 쉼표로 이은 여러 줄
     d.word("array", 10, 20, 30, 40, 50, 60)
     assert (d.sym["array"]["length"], d.sym["array"]["size"]) == (6, 12)
     # 쉼표 없이 새 지시어로 이으면 첫 줄만 센다 (메모리에는 이어서 놓인다)

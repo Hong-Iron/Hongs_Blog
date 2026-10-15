@@ -22,7 +22,7 @@ permalink: "/studies/computer-communication/code/40_nrz-clock-recovery_plot/"
 ```python
 # NRZ와 클럭 복구 문서의 그림을 만든다: 40_nrz-clock-recovery_fig1.svg ~ fig3.svg
 # 실행: ~/.venvs/vault-plots/bin/python 40_nrz-clock-recovery_plot.py  (matplotlib, numpy 필요)
-#   fig1: 슬라이드 비트열의 NRZ 파형, 평평한 구간과 신호가 바뀌는 순간
+#   fig1: 문서 예시 비트열의 NRZ 파형, 평평한 구간과 신호가 바뀌는 순간
 #   fig2: 받는 쪽 비트 폭이 15/16일 때 읽는 시각과 쌓이는 앞당김 (다시 맞추지 않음)
 #   fig3: 같은 시계로 신호가 바뀔 때마다 다시 맞추는 받는 쪽
 import math

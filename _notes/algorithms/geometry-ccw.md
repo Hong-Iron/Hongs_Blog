@@ -148,6 +148,6 @@ def crosses(p1, p2, q1, q2):               # 끝점이 아닌 곳에서 엇갈�
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018판), 29.2 "Points and lines"는 외적으로 점이 직선의 어느 쪽에 있는지와 선분 교차를 판정한다. 넓이 관계는 29.3 "Polygon area"에 있다.
 [^2]: 한 줄에 놓인 경우까지 다루는 선분 교차 판정은 Cormen 외, *Introduction to Algorithms* 3판, 33.1 "Line-segment properties"에 있다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [35_geometry-ccw_plot.py](/Hongs_Blog/studies/algorithms/code/35_geometry-ccw_plot/)로 그렸고, cross(O, P, Q) = 11, cross(O, Q, P) = −11, 삼각형 넓이 5.5(헤론 공식으로 따로 계산), 오른쪽 선분 p₁(0, 0)–p₂(4, 2)와 q₁(1, 3)–q₂(3, −1)의 네 부호 값 10, −10, −10, 10을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '정의' 절의 선분 교차 판정 문장과 crosses 코드의 d1 ~ d4를 순서도로 옮겼다.
+[^s1]: [35_geometry-ccw_plot.py](/Hongs_Blog/studies/algorithms/code/35_geometry-ccw_plot/)로 그렸고, cross(O, P, Q) = 11, cross(O, Q, P) = −11, 삼각형 넓이 5.5(헤론 공식으로 따로 계산), 오른쪽 선분 p₁(0, 0)–p₂(4, 2)와 q₁(1, 3)–q₂(3, −1)의 네 부호 값 10, −10, −10, 10을 같은 코드로 확인했다.
+[^s2]: '정의' 절의 선분 교차 판정 문장과 crosses 코드의 d1 ~ d4를 순서도로 옮겼다.
 {% endraw %}

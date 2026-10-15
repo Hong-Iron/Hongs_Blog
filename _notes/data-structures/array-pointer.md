@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Arrays and Pointers", "배열", "Array", "1차원 배열", "포인터 산술", "Pointer Arithmetic", "주소 계산", "임의 접근", "Random Access", "문자 배열", "문자 포인터", "Character Pointer", "문자열 상수", "strcpy", "strcmp", "널 문자"]
 description: "배열은 같은 크기의 칸이 빈틈없이 줄지어 선 것이다. 그래서 첫 칸의 주소와 칸 하나의 크기만 알면 몇 번째 칸이든 곱셈과 덧셈 한 번으로 주소가 나오고, 어느 칸이든 곧바로 읽는다. C에서는 배열의 이름이 첫 칸의 주소처럼 쓰여서 배열과 포인터를 거의 같은 식으로 다룬다. 다만 …"
@@ -36,7 +36,7 @@ permalink: "/studies/data-structures/array-pointer/"
 
 점수 30개를 변수 30개에 담을 수는 없다. 이름 하나에 번호를 붙여 `x[0]`, `x[1]`, …로 부르고 싶다. 그러려면 컴퓨터가 `x[2]`가 어디 있는지 바로 알아야 한다.
 
-1차원 배열 `x = [a, b, c, d]`는 메모리의 이어진 칸에 차례로 놓인다[^1].
+1차원 배열 `x = [a, b, c, d]`는 메모리의 이어진 칸에 차례로 놓인다.
 
 ```
                 start
@@ -46,11 +46,11 @@ permalink: "/studies/data-structures/array-pointer/"
                  x[0] x[1] x[2] x[3]
 ```
 
-첫 칸의 자리를 `start`라 하면, 칸 단위로 셀 때 `x[i]`의 자리는 `start + i`다[^1].
+첫 칸의 자리를 `start`라 하면, 칸 단위로 셀 때 `x[i]`의 자리는 `start + i`다.
 
-바이트로 세면 칸의 크기를 곱한다. `arr[0]`의 주소가 100이면 `arr[3]`의 주소는 112다[^2]. `int` 하나가 4바이트이고 앞에 세 칸이 있으니 $$100 + 3 \times 4 = 112$$다.
+바이트로 세면 칸의 크기를 곱한다. `arr[0]`의 주소가 100이면 `arr[3]`의 주소는 112다. `int` 하나가 4바이트이고 앞에 세 칸이 있으니 $$100 + 3 \times 4 = 112$$다.
 
-배열을 쓰려면 원소 자리 말고 `start`를 적어 둘 자리가 하나 더 든다. 슬라이드는 이것을 4바이트로 센다[^3].
+배열을 쓰려면 원소 자리 말고 `start`를 적어 둘 자리가 하나 더 든다. 주소 하나가 4바이트인 기계에서는 4바이트다. 이 문서를 확인한 기계처럼 주소가 8바이트면 8바이트다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: `char`·`int`·`double`·구조체 배열에서 칸의 주소 차가 번호 × 칸 크기인 것, 포인터 식과 배열 식이 같은 칸인 것, 문자 배열과 문자 포인터의 크기, 복사와 비교 두 판을 표준 `strcpy`·`strcmp`와 무작위 1,000쌍으로 견준 것, 카드의 답을 C로 컴파일해 실행(ASan·UBSan)해 확인했다 — [05_array-pointer_impl.c](/Hongs_Blog/studies/data-structures/code/05_array-pointer_impl/)</div>
@@ -60,18 +60,18 @@ permalink: "/studies/data-structures/array-pointer/"
 
 ## 정의
 
-C의 배열은 이어진 메모리 한 덩어리이고, 그 덩어리를 포인터로 다룬다[^4].
+C의 배열은 이어진 메모리 한 덩어리이고, 그 덩어리를 포인터로 다룬다.
 
-`int A[5]`라고 쓰면 `A`는 배열이 시작하는 곳, 곧 첫 원소의 주소다. `&A[0]`과 같다. 그래서 `A`는 어떤 뜻에서 `int`를 가리키는 포인터다[^2].
+`int A[5]`라고 쓰면 `A`는 배열이 시작하는 곳, 곧 첫 원소의 주소다. `&A[0]`과 같다. 그래서 `A`는 어떤 뜻에서 `int`를 가리키는 포인터다.
 
-**칸의 주소.** `A[x]`의 주소는 배열의 주소에 "칸 번호 × 칸 하나의 바이트 수"를 더한 것이다[^2].
+**칸의 주소.** `A[x]`의 주소는 배열의 주소에 "칸 번호 × 칸 하나의 바이트 수"를 더한 것이다.
 
 $$\text{addr}(A[x]) = \text{addr}(A[0]) + x \times s$$
 
 
 $$\text{addr}(\cdot)$$은 그 칸의 주소, $$x$$는 0부터 세는 칸 번호, $$s$$는 원소 하나의 크기(바이트)다. `int`면 $$s = 4$$, `double`이면 $$s = 8$$, `char`면 $$s = 1$$이다[^s1].
 
-**포인터에 더하기.** 포인터에 `+`를 쓰면 위 식대로 계산한다[^2]. `A + 1`은 주소를 1바이트가 아니라 한 칸만큼 올린다.
+**포인터에 더하기.** 포인터에 `+`를 쓰면 위 식대로 계산한다. `A + 1`은 주소를 1바이트가 아니라 한 칸만큼 올린다.
 
 | 포인터로 쓴 식 | 배열로 쓴 식 | 뜻 |
 |---|---|---|
@@ -79,23 +79,16 @@ $$\text{addr}(\cdot)$$은 그 칸의 주소, $$x$$는 0부터 세는 칸 번호,
 | `A + x` | `&A[x]` | x번 칸의 주소 |
 | `*(A + x)` | `A[x]` | x번 칸의 값 |
 
-배열을 포인터 변수에 받아 쓸 수도 있다. `int *pa = arr;`와 `int *pa = &arr[0];`은 같은 뜻이다[^4].
+배열을 포인터 변수에 받아 쓸 수도 있다. `int *pa = arr;`와 `int *pa = &arr[0];`은 같은 뜻이다.
 
 **배열 이름과 포인터의 차이.** 포인터 `pa`는 변수라서 `pa = arr + 2;`나 `pa++`처럼 다른 칸을 가리키게 바꿀 수 있다. 배열 이름 `arr`는 변수가 아니다. `arr = pa;`나 `arr++`는 컴파일 오류다[^s2]. 크기를 물어도 답이 다르다. `int arr[8]`에서 `sizeof arr`는 배열 전체인 32이고, `sizeof pa`는 포인터 하나의 크기다[^s1].
 
 **쓸 수 있는 번호.** `int arr[8]`의 칸은 `arr[0]`부터 `arr[7]`까지다. C는 번호가 범위 안인지 검사하지 않는다. 범위 밖 번호를 쓰면 위 식이 그대로 계산되어 배열 옆의 남의 칸을 읽거나 고친다[^s2].
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.30 "Consider array of 8 ints: `int arr[8];` / Accessing arr using array entry operator: `int a = arr[8];`" / 문제점: 8칸짜리 배열의 번호는 0~7이다. `arr[8]`은 배열 밖이다. / 수정안: `int a = arr[7];`처럼 0~7 가운데 하나를 쓴다. / 근거: 원문대로 컴파일하면 "array index 8 is past the end of the array" 경고가 나고, 실행하면 ASan이 stack-buffer-overflow로 멈춘다.
-
-</div>
-
 
 ## 문자 배열과 문자 포인터
 
-문자열은 글자를 차례로 놓고 맨 끝에 끝 표시 `'\0'`을 붙인 `char` 배열이다. 같은 문자열로 시작해도 두 선언은 다른 것을 만든다[^5].
+문자열은 글자를 차례로 놓고 맨 끝에 끝 표시 `'\0'`을 붙인 `char` 배열이다. 같은 문자열로 시작해도 두 선언은 다른 것을 만든다.
 
 ```c
 char amessage[] = "now is the time";    /* 배열 */
@@ -108,8 +101,8 @@ amessage  [n][o][w][ ][i][s][ ][t][h][e][ ][t][i][m][e][\0]      16칸. 글자�
 pmessage  [ 주소 ] ----> [n][o][w][ ][i][s] ... [m][e][\0]        글자는 다른 곳(문자열 상수)에 있다
 ```
 
-- `amessage`는 배열이다. 글자들과 `'\0'`을 담을 만큼만 크다[^5]. 글자 15개에 `'\0'` 하나라서 16바이트다.
-- `pmessage`는 포인터다. 문자열 상수를 가리키도록 처음 값을 넣었고, 나중에 다른 곳을 가리키게 바꿀 수 있다[^5].
+- `amessage`는 배열이다. 글자들과 `'\0'`을 담을 만큼만 크다. 글자 15개에 `'\0'` 하나라서 16바이트다.
+- `pmessage`는 포인터다. 문자열 상수를 가리키도록 처음 값을 넣었고, 나중에 다른 곳을 가리키게 바꿀 수 있다.
 
 | 줄 | 되는가 | 까닭 |
 |---|---|---|
@@ -122,7 +115,7 @@ pmessage  [ 주소 ] ----> [n][o][w][ ][i][s] ... [m][e][\0]        글자는 �
 
 ### 문자열 함수 두 판
 
-문자열 `t`를 `s`로 베끼는 함수를 두 가지로 쓴다[^6]. 표준 라이브러리에 같은 이름이 있어 이름을 `copy_a`, `copy_b`로 적는다.
+문자열 `t`를 `s`로 베끼는 함수를 두 가지로 쓴다. 표준 라이브러리의 `strcpy`와 이름이 겹치지 않게 `copy_a`, `copy_b`라 부른다.
 
 ```c
 /* A: 번호로 쓴 판 */
@@ -156,15 +149,8 @@ void copy_b(char *s, const char *t)
 
 글자를 세 번 베끼고 포인터를 두 번 옮긴다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: p.33 A의 "`while ({s[i] = t[i]) != '\0')`" / 문제점: 여는 중괄호와 닫는 소괄호가 짝이 맞지 않아 컴파일 오류가 난다. / 수정안: "`while ((s[i] = t[i]) != '\0')`" / 근거: 원문대로 컴파일하면 "expected expression" 오류가 난다. 같은 쪽 B의 `((*s = *t) != '\0')`과 모양을 맞추면 통과한다.
-
-</div>
-
-
-두 문자열을 견주는 함수도 두 가지로 쓴다[^7].
+두 문자열을 견주는 함수도 두 가지로 쓴다.
 
 ```c
 /* 번호로 쓴 판 */
@@ -233,14 +219,7 @@ int compare_b(const char *s, const char *t)
 </details>
 
 
-[^1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.22 (1D Array Representation In C: x = [a, b, c, d], location(x[i]) = start + i)
-[^2]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.31 (Arrays and pointers: A는 &(A[0]), 주소 식, A + x와 *(A + x), arr[0]이 100이면 arr[3]은 112)
-[^3]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.23 (Space Overhead: start에 4바이트)
-[^4]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.30 (Arrays and pointers: 이어진 메모리 덩어리를 가리키는 포인터, `int *pa = arr;`)
-[^5]: 같은 자료, p.32 (Character Pointers and Functions: amessage와 pmessage)
-[^6]: 같은 자료, p.33 (strcpy A와 B)
-[^7]: 같은 자료, p.34 (strcmp 1과 2)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기호로 쓴 주소 식과 `double`·`char`의 칸 크기, `sizeof arr`와 `sizeof pa`의 값은 원본에 없다. 구현 코드에서 확인했다. 이 기계에서 포인터 하나는 8바이트다. 슬라이드 3주차 p.23의 "4바이트"는 주소 하나가 4바이트인 기계를 두고 센 값이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 배열 이름을 바꿀 수 없다는 설명, 범위 검사가 없다는 설명, 네 줄의 표, `const char *`, 흔한 실수는 원본에 없다. 슬라이드 p.30의 "There is a modifiable/reassignable variable like a pointer"와 p.32의 "may subsequently be modified to point."(문장이 끊겨 있다)를 Kernighan·Ritchie, *The C Programming Language* 2판, 5.3절과 5.5절의 설명에 맞춰 읽었다. `arr = pa;`, `arr++`, `amessage = "later";`가 컴파일 오류인 것과 `pmessage[0] = 'N';`이 컴파일은 되고 실행 중에 죽는 것은 따로 돌려 확인했다(Apple clang 21, macOS).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 함수 이름을 `copy_a`, `copy_b`, `compare_a`, `compare_b`로 바꾸고 읽기만 하는 인자에 `const`를 붙였다. 슬라이드의 이름 `strcpy`, `strcmp`를 그대로 쓰면 `<string.h>`의 것과 겹쳐 컴파일되지 않는다. 두 판의 차이 설명, `"hi"`의 추적 표, 비교 결과의 풀이, 카드 C1~C3은 원본에 없다. 슬라이드는 "What is difference between them?"이라고 묻기만 한다. 구현 코드로 확인했다. 표준 `strcmp`는 결과의 부호만 약속하므로 부호를 견줬다.
+[^s1]: 구현 코드에서 확인했다. 이 기계에서 포인터 하나는 8바이트다.
+[^s2]: `arr = pa;`, `arr++`, `amessage = "later";`가 컴파일 오류인 것과 `pmessage[0] = 'N';`이 컴파일은 되고 실행 중에 죽는 것은 따로 돌려 확인했다(Apple clang 21, macOS).
+[^s3]: 함수 이름을 `copy_a`, `copy_b`, `compare_a`, `compare_b`로 바꾸고 읽기만 하는 인자에 `const`를 붙였다. 구현 코드로 확인했다. 표준 `strcmp`는 결과의 부호만 약속하므로 부호를 견줬다.
 {% endraw %}

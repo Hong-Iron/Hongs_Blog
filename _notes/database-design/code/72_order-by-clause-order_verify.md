@@ -23,9 +23,8 @@ permalink: "/studies/database-design/code/72_order-by-clause-order_verify/"
 """ORDER BY와 질의의 절 순서 검증 (SQLite).
 
 문서: 72.ORDER BY와 질의의 절 순서
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.35, 37, 12주차 p.12
 주장:
-  1. Q15(p.35): 16행이 부서 이름, 성, 이름 순으로 선다. 첫 행은 Administration의 Jabbar, 끝은 Research의 Wong.
+  1. Q15: 16행이 부서 이름, 성, 이름 순으로 선다. 첫 행은 Administration의 Jabbar, 끝은 Research의 Wong.
      세 기준이 모두 같은 행(한 직원의 여러 프로젝트)끼리의 순서는 정해져 있지 않다.
   2. DESC를 붙이면 그 기준만 큰 것부터다.
   3. 여섯 절을 모두 쓴 예: 남자 직원만 남기고 부서로 묶어 평균이 30000을 넘는 묶음을 평균이 큰 순으로 -> (1, 1, 55000), (5, 3, 36000).
@@ -34,10 +33,10 @@ permalink: "/studies/database-design/code/72_order-by-clause-order_verify/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

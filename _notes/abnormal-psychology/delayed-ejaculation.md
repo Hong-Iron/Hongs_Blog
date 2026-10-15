@@ -42,7 +42,7 @@ permalink: "/studies/abnormal-psychology/delayed-ejaculation/"
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
-<div class="callout-title" markdown="span">사정지연의 진단기준[^1]</div>
+<div class="callout-title" markdown="span">사정지연의 진단기준</div>
 
 A. 파트너와의 성적 행위에서, 본인이 지연을 원하지 않는데도 거의 모든 경우 또는 모든 경우(약 75~100%)에 다음 가운데 하나 이상을 겪는다.
 1. 현저한 사정지연
@@ -55,7 +55,7 @@ C. 본인에게 임상적으로 현저한 고통이 생긴다.<br>
 </div>
 
 
-## 임상적 특징[^2][^3]
+## 임상적 특징
 
 - 예전 이름은 남성 극치감장애(male orgasmic disorder)다. 사정과 극치감은 같은 것이 아니다.
 - "지연"의 정의에 대한 정확한 경계는 없다. 남성의 질 내 사정 잠복 시간(IELT)은 대략 4~10분이다.
@@ -85,8 +85,5 @@ C. 본인에게 임상적으로 현저한 고통이 생긴다.<br>
 
 </details>
 
-[^1]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.16
-[^2]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.17. "'지연'의 정의에 대한 정확한 경계는 없음"에 형광펜이 있다.
-[^3]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.18
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> HS의 사례는 진단기준과 관련 요인을 보이려고 만든 가상 사례다.
+[^s1]: HS의 사례는 진단기준과 관련 요인을 보이려고 만든 가상 사례다.
 {% endraw %}

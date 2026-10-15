@@ -23,7 +23,7 @@ permalink: "/studies/data-structures/code/19_linked-list-practice_p2/"
 /* 연결 리스트 연습 문제 2: 지우고 끼우기, 그리고 체인 뒤집기.
  *
  * 문서: 1-2학기/자료구조/4.연습문제/19.연결 리스트 연습.md
- * 출처: 자료구조 5주차 슬라이드 p.11~18(지우기와 끼우기의 줄). reverse는 슬라이드에 없는 변형 문제다.
+ * 지우기와 끼우기는 단순 연결 리스트의 기본 줄을 쓴다. reverse는 변형 문제다.
  * 실행: cc -std=c11 -Wall -Wextra 19_linked-list-practice_p2.c -o p2 && ./p2
  * 번호: 노드 번호는 0부터 센다.
  */
@@ -100,13 +100,13 @@ int main(void)
 {
     listPointer first = build("abcde"), deleteNode, beforeNode, newNode;
 
-    /* 1단계: delete(0) (슬라이드 p.11) */
+    /* 1단계: delete(0) */
     deleteNode = first;
     first = first->link;
     free(deleteNode); liveNodes--;
     check(strcmp(text(first), "bcde") == 0 && first->data == 'b', "1단계: bcde, first는 b");
 
-    /* 2단계: 1번 노드 뒤에 f (슬라이드 p.17~18의 줄, 자리만 다르다) */
+    /* 2단계: 1번 노드 뒤에 f (끼우기의 기본 줄, 자리만 다르다) */
     beforeNode = first->link;
     check(beforeNode->data == 'c', "2단계: 1번 노드는 c");
     MALLOC(newNode, sizeof(*newNode));
@@ -115,7 +115,7 @@ int main(void)
     beforeNode->link = newNode;
     check(strcmp(text(first), "bcfde") == 0 && beforeNode->link->data == 'f' && newNode->link->data == 'd', "2단계: bcfde, c -> f -> d");
 
-    /* 3단계: 3번 노드 지우기 (슬라이드 p.12~14의 줄, 자리만 다르다) */
+    /* 3단계: 3번 노드 지우기 (지우기의 기본 줄, 자리만 다르다) */
     beforeNode = first->link->link;
     check(beforeNode->data == 'f', "3단계: 2번 노드는 f");
     deleteNode = beforeNode->link;

@@ -23,22 +23,19 @@ permalink: "/studies/data-structures/code/14_circular-queue_impl/"
 /* 원형 큐: 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/14.원형 큐.md
- * 출처: 자료구조 3주차 슬라이드 p.78~94. 슬라이드 코드를 컴파일되게 고쳤다.
- *       (p.86, 93의 AddQ는 반환형이 없고 이름의 대소문자가 어긋난다. p.93은 가득 찼는지 보기 전에
- *        rear를 옮긴다. 문서의 warning 참고)
  * 실행: cc -std=c11 -Wall -Wextra 14_circular-queue_impl.c -o cqueue && ./cqueue
  *
  * front는 첫 원소의 한 칸 앞, rear는 마지막 원소의 칸이다. 둘 다 0 ~ MAX_QUEUE_SIZE - 1을 돈다.
  *
  * 확인하는 것
- *   1. 슬라이드 p.89의 일자 배열 큐: J1 ~ J5를 넣고 셋을 빼면 앞 세 칸이 비었는데도 가득 찼다고 한다.
- *   2. 문서의 추적 표(6칸): 슬라이드 p.84, 85, 87의 그림과 같은 front, rear, 칸 내용.
+ *   1. 문서 예시의 일자 배열 큐: J1 ~ J5를 넣고 셋을 빼면 앞 세 칸이 비었는데도 가득 찼다고 한다.
+ *   2. 문서의 추적 표(6칸): 표의 각 줄과 같은 front, rear, 칸 내용.
  *      끝 칸 [5] 다음에 [0]으로 넘어가고, 다섯 개가 들면 여섯째는 못 넣는다.
- *   3. 슬라이드 p.84 오른쪽 그림: front = 4, rear = 1이면 A, B, C가 [5], [0], [1]에 있다.
+ *   3. 고리를 넘어간 큐: front = 4, rear = 1이면 A, B, C가 [5], [0], [1]에 있다.
  *   4. 원소 수 = (rear - front + 6) % 6. 빔은 front == rear, 가득 참은 (rear + 1) % 6 == front.
  *      나머지 없이 rear + 1 == front로만 보면 rear = 5, front = 0인 가득 찬 큐를 놓친다.
  *   5. 카드 C1(6칸), C4(front = 4, rear = 1이면 3개).
- *   6. 슬라이드 p.93의 AddQ를 그대로 쓰면: 다섯 개가 든 큐에 하나를 더 넣으려다 front == rear가 되어
+ *   6. rear를 먼저 옮기는 틀린 AddQ를 쓰면: 다섯 개가 든 큐에 하나를 더 넣으려다 front == rear가 되어
  *      빈 큐로 보인다(카드 C3).
  *   7. 무작위 연산 10,000번: 느린 모형(맨 앞을 0번 칸에 두고 뺄 때마다 한 칸씩 당기는 배열)과
  *      꺼낸 값, 원소 수, 빔·가득 참 판정이 같다. 6칸 배열에 5개까지만 든다.
@@ -101,7 +98,7 @@ int SizeQ(int front, int rear)
     return (rear - front + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
 }
 
-/* 고리로 잇기 전의 일자 배열 큐 (슬라이드 p.86, 88). front와 rear가 오른쪽으로만 간다 */
+/* 고리로 잇기 전의 일자 배열 큐. front와 rear가 오른쪽으로만 간다 */
 #define LINE_SIZE 5
 static element line[LINE_SIZE];
 
@@ -123,8 +120,8 @@ element DeleteQ_line(int *front, int rear)
     return line[*front];
 }
 
-/* 슬라이드 p.93의 AddQ를 이름만 맞춰 옮긴 것. 틀린 판이다: 가득 찼는지 보기 전에 rear를 옮긴다 */
-void AddQ_p93(int front, int *rear, element item)
+/* 틀린 판의 AddQ: 가득 찼는지 보기 전에 rear를 옮긴다 (카드 C3) */
+void AddQ_rear_first(int front, int *rear, element item)
 {
     *rear = (*rear + 1) % MAX_QUEUE_SIZE;
     if (front == *rear) {
@@ -143,7 +140,7 @@ static unsigned rnd(void)
     return (unsigned)(lcg_state >> 33);
 }
 
-/* 느린 모형: 맨 앞 원소가 늘 0번 칸이다. 뺄 때마다 나머지를 한 칸씩 당긴다 (슬라이드 p.82~83) */
+/* 느린 모형: 맨 앞 원소가 늘 0번 칸이다. 뺄 때마다 나머지를 한 칸씩 당긴다 */
 #define MODEL_MAX 16
 static element model[MODEL_MAX];
 static int model_n = 0;
@@ -183,16 +180,16 @@ int main(void)
     int front, rear;
     element x;
 
-    /* 1. 슬라이드 p.89: 일자 배열 큐가 오른쪽으로 밀려 간다 */
+    /* 1. 문서 예시: 일자 배열 큐가 오른쪽으로 밀려 간다 */
     front = rear = -1;                               /* 비었다. front는 첫 원소의 한 칸 앞 */
     AddQ_line(&rear, 1);                             /* Insert J1 */
     AddQ_line(&rear, 2); AddQ_line(&rear, 3);        /* Insert J2, J3 */
     x = DeleteQ_line(&front, rear);                  /* Delete */
-    check(x == 1, "p.89 첫 Delete는 J1");
+    check(x == 1, "일자 큐: 첫 Delete는 J1");
     AddQ_line(&rear, 4); AddQ_line(&rear, 5);        /* Insert J4, J5 */
-    x = DeleteQ_line(&front, rear); check(x == 2, "p.89 둘째 Delete는 J2");
-    x = DeleteQ_line(&front, rear); check(x == 3, "p.89 셋째 Delete는 J3");
-    check(front == 2 && rear == 4 && line[3] == 4 && line[4] == 5, "p.89 마지막 줄: J4, J5가 넷째·다섯째 칸");
+    x = DeleteQ_line(&front, rear); check(x == 2, "일자 큐: 둘째 Delete는 J2");
+    x = DeleteQ_line(&front, rear); check(x == 3, "일자 큐: 셋째 Delete는 J3");
+    check(front == 2 && rear == 4 && line[3] == 4 && line[4] == 5, "일자 큐 마지막 줄: J4, J5가 넷째·다섯째 칸");
     full_calls = 0;
     AddQ_line(&rear, 6);
     check(full_calls == 1 && rear == 4, "일자 큐: 앞 세 칸이 비었는데도 가득 찼다고 한다");
@@ -205,15 +202,15 @@ int main(void)
     show("처음", front, rear, 1);
     AddQ(front, &rear, 'A'); AddQ(front, &rear, 'B'); AddQ(front, &rear, 'C');
     show("AddQ A, B, C", front, rear, 1);
-    const int s84[6] = { 0, 0, 'A', 'B', 'C', 0 };
-    check(front == 1 && rear == 4 && slots_are(s84) && SizeQ(front, rear) == 3, "p.84 왼쪽 그림");
+    const int sStart[6] = { 0, 0, 'A', 'B', 'C', 0 };
+    check(front == 1 && rear == 4 && slots_are(sStart) && SizeQ(front, rear) == 3, "처음 그림: A, B, C가 [2] ~ [4]");
     AddQ(front, &rear, 'D');
     show("AddQ D", front, rear, 1);
-    const int s85[6] = { 0, 0, 'A', 'B', 'C', 'D' };
-    check(front == 1 && rear == 5 && slots_are(s85), "p.85: rear = 5, D는 [5]");
+    const int sAfterD[6] = { 0, 0, 'A', 'B', 'C', 'D' };
+    check(front == 1 && rear == 5 && slots_are(sAfterD), "AddQ D: rear = 5, D는 [5]");
     x = DeleteQ(&front, rear);
     show("DeleteQ", front, rear, 1);
-    check(x == 'A' && front == 2 && rear == 5 && slots_are(s85), "p.87: front = 2, A가 나오고 칸에는 남아 있다");
+    check(x == 'A' && front == 2 && rear == 5 && slots_are(sAfterD), "DeleteQ: front = 2, A가 나오고 칸에는 남아 있다");
     AddQ(front, &rear, 'E');
     show("AddQ E", front, rear, 1);
     check(rear == 0 && queue[0] == 'E', "끝 칸 [5] 다음은 [0]");
@@ -235,12 +232,12 @@ int main(void)
     for (int i = 0; i < 5; i++) check(DeleteQ(&front, rear) == order[i], "넣은 순서대로 나온다");
     check(IsEmptyQ(front, rear) && front == 2 && rear == 2, "다 빼면 front == rear");
 
-    /* 3. 슬라이드 p.84 오른쪽 그림 */
+    /* 3. 고리를 넘어간 큐 (카드 C4) */
     clear_queue();
     front = rear = 4;
     AddQ(front, &rear, 'A'); AddQ(front, &rear, 'B'); AddQ(front, &rear, 'C');
-    const int s84r[6] = { 'B', 'C', 0, 0, 0, 'A' };
-    check(front == 4 && rear == 1 && slots_are(s84r) && SizeQ(front, rear) == 3, "p.84 오른쪽 그림(카드 C4: 3개)");
+    const int sWrap[6] = { 'B', 'C', 0, 0, 0, 'A' };
+    check(front == 4 && rear == 1 && slots_are(sWrap) && SizeQ(front, rear) == 3, "고리를 넘어간 큐(카드 C4: 3개)");
 
     /* 4. 원소 수 식과 두 판정. 가능한 (front, rear) 36쌍을 모두 본다 */
     int empties = 0, fulls = 0, missed = 0;
@@ -270,17 +267,17 @@ int main(void)
     check(full_calls == 1 && rear == 2 && slots_are(c1), "C1: 90은 못 들어간다");
     show("C1 끝", front, rear, 0);
 
-    /* 6. 슬라이드 p.93의 AddQ (카드 C3) */
+    /* 6. rear를 먼저 옮기는 틀린 AddQ (카드 C3) */
     clear_queue();
     full_calls = 0;
     front = rear = 0;
-    for (int v = 10; v <= 50; v += 10) AddQ_p93(front, &rear, v);
-    check(front == 0 && rear == 5 && SizeQ(front, rear) == 5 && full_calls == 0, "p.93: 다섯 개까지는 맞다");
-    AddQ_p93(front, &rear, 60);
-    check(full_calls == 1 && rear == 0, "p.93: 가득 찼다고 알렸지만 rear는 이미 0으로 갔다");
-    check(IsEmptyQ(front, rear) && SizeQ(front, rear) == 0, "p.93: front == rear라 빈 큐로 보인다. 다섯 개를 잃었다");
+    for (int v = 10; v <= 50; v += 10) AddQ_rear_first(front, &rear, v);
+    check(front == 0 && rear == 5 && SizeQ(front, rear) == 5 && full_calls == 0, "틀린 AddQ: 다섯 개까지는 맞다");
+    AddQ_rear_first(front, &rear, 60);
+    check(full_calls == 1 && rear == 0, "틀린 AddQ: 가득 찼다고 알렸지만 rear는 이미 0으로 갔다");
+    check(IsEmptyQ(front, rear) && SizeQ(front, rear) == 0, "틀린 AddQ: front == rear라 빈 큐로 보인다. 다섯 개를 잃었다");
     const int kept[6] = { 0, 10, 20, 30, 40, 50 };
-    check(slots_are(kept), "p.93: 값은 칸에 남아 있지만 꺼낼 길이 없다");
+    check(slots_are(kept), "틀린 AddQ: 값은 칸에 남아 있지만 꺼낼 길이 없다");
     /* 고친 AddQ는 같은 상황에서 rear를 건드리지 않는다 */
     clear_queue();
     full_calls = 0;

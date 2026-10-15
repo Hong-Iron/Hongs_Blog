@@ -21,7 +21,7 @@ permalink: "/studies/database-design/code/49_sql-key-clauses_verify/"
 
 ```python
 # 49.PRIMARY KEY·UNIQUE·FOREIGN KEY 절 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 49_sql-key-clauses_verify.py)
-# 확인하는 것 (슬라이드 10 p.18~19의 DEPARTMENT, DEPT_LOCATIONS)
+# 확인하는 것 (DEPARTMENT, DEPT_LOCATIONS의 키 절)
 #   1. PRIMARY KEY (Dnumber): 같은 부서 번호를 두 번 못 넣는다
 #   2. UNIQUE (Dname): 기본 키가 아니어도 같은 이름을 두 번 못 넣는다
 #   3. PRIMARY KEY (Dnumber, Dlocation): 두 값의 짝이 겹칠 때만 막는다
@@ -30,8 +30,8 @@ permalink: "/studies/database-design/code/49_sql-key-clauses_verify/"
 # 제약에 붙인 이름(EMPPK 등)이 오류 글에 나오는 것은 PostgreSQL에서 확인했다(49_sql-key-clauses_verify.sql).
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -87,7 +87,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     k.execute("INSERT INTO U VALUES (NULL), (NULL), (1)")
     assert rows(k, "SELECT COUNT(*) FROM U") == [(3,)]
 
-    # 이름 붙인 제약 (슬라이드 10 p.16): SQLite도 문법은 받는다
+    # 이름 붙인 제약: SQLite도 문법은 받는다
     k.execute("""CREATE TABLE DEPARTMENT (Dname VARCHAR(15) NOT NULL, Dnumber INT NOT NULL, Mgr_ssn CHAR(9) NOT NULL DEFAULT '888665555',
                  CONSTRAINT DEPTPK PRIMARY KEY (Dnumber), CONSTRAINT DEPTSK UNIQUE (Dname))""")
     k.execute("INSERT INTO DEPARTMENT (Dname, Dnumber) VALUES ('Research', 5)")

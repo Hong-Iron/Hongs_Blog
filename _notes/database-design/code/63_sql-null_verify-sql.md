@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/63_sql-null_verify-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 63.NULL 값과 IS NULL: 슬라이드 6-2 p.14, 11-2 p.18, 24~25, 28
+-- 63.NULL 값과 IS NULL 검증
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS sql_null CASCADE;
 CREATE SCHEMA sql_null;
 SET search_path TO sql_null;
 
--- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
--- 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
+-- 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 -- 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -72,7 +72,7 @@ INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),
  ('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1. = NULL, <> NULL, IS NULL (p.18)
+-- 1. = NULL, <> NULL, IS NULL
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE WHERE Super_ssn = NULL) = 0, '= NULL이 0행이 아니다';
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE WHERE Super_ssn <> NULL) = 0, '<> NULL이 0행이 아니다';
@@ -102,12 +102,12 @@ DO $$ BEGIN
   ASSERT (SELECT Hours + 1 FROM WORKS_ON WHERE Essn = '888665555') IS NULL, 'NULL + 1이 NULL이 아니다';
 END $$;
 
--- 4. 조인에서 빠진다 (p.18, 24)
+-- 4. 조인에서 빠진다
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE AS E, EMPLOYEE AS S WHERE E.Super_ssn = S.Ssn) = 7, '상사 조인이 7행이 아니다';
 END $$;
 
--- 5. 집계 함수와 NULL (p.28의 물음)
+-- 5. 집계 함수와 NULL (문서의 물음)
 DO $$ BEGIN
   ASSERT (SELECT ARRAY[COUNT(*), COUNT(Salary), COUNT(DISTINCT Salary), COUNT(Super_ssn), COUNT(DISTINCT Super_ssn)]
           FROM EMPLOYEE) = ARRAY[8, 8, 6, 7, 3]::bigint[], 'EMPLOYEE의 다섯 개수가 8, 8, 6, 7, 3이 아니다';

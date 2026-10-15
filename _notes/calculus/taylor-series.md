@@ -246,7 +246,7 @@ flowchart LR
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 6.1절 "Power Series and Functions"(수렴 반지름), 6.2절 "Properties of Power Series"(항별 미분, 계수의 유일성), 6.3절 "Taylor and Maclaurin Series"(테일러 정리와 나머지), 6.4절 "Working with Taylor Series".
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [18_taylor-series_plot.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_plot/)로 그렸고, 그림에 쓴 값($$T_5(1) = 2.71667$$, $$x = 1.5$$에서 $$T_{20}$$이 $$T_5$$보다 더 벗어남)을 같은 코드로 확인했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수학 라이브러리의 범위 줄이기와 최소최대 다항식은 fdlibm 같은 공개 구현의 주석에 설명되어 있다. 수렴 반지름이 가장 가까운 복소 특이점까지의 거리라는 것은 복소해석의 결과로, 이 과목 범위 밖이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 활용 절의 수학 라이브러리 $$e^x$$ 항목과 [18_taylor-series_impl.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_impl/)를 근거로 그렸다.
+[^s2]: [18_taylor-series_plot.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_plot/)로 그렸고, 그림에 쓴 값($$T_5(1) = 2.71667$$, $$x = 1.5$$에서 $$T_{20}$$이 $$T_5$$보다 더 벗어남)을 같은 코드로 확인했다.
+[^s1]: 수학 라이브러리의 범위 줄이기와 최소최대 다항식은 fdlibm 같은 공개 구현의 주석에 설명되어 있다. 수렴 반지름이 가장 가까운 복소 특이점까지의 거리라는 것은 복소해석의 결과로, 이 과목 범위 밖이다.
+[^s3]: 활용 절의 수학 라이브러리 $$e^x$$ 항목과 [18_taylor-series_impl.py](/Hongs_Blog/studies/calculus/code/18_taylor-series_impl/)를 근거로 그렸다.
 {% endraw %}

@@ -61,7 +61,7 @@ def line_line(S1, V1, S2, V2):
     if den == 0:
         return None
     r1, r2 = dot(sub(S2, S1), V1), dot(sub(S2, S1), V2)
-    t1 = (-c * r1 + b * r2) / den; t2 = (-b * r1 + a * r2) / den     # 슬라이드 p.37의 역행렬
+    t1 = (-c * r1 + b * r2) / den; t2 = (-b * r1 + a * r2) / den     # 2×2 연립방정식을 역행렬로 푼 해
     P1 = [s + t1 * v for s, v in zip(S1, V1)]; P2 = [s + t2 * v for s, v in zip(S2, V2)]
     return math.sqrt(dot(sub(P1, P2), sub(P1, P2))), t1, t2
 

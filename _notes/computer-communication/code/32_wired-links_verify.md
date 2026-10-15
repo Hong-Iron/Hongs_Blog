@@ -22,22 +22,22 @@ permalink: "/studies/computer-communication/code/32_wired-links_verify/"
 ```python
 """유선 링크의 수치 검증.
 
-문서: 32.유선 링크 (원본 오류 의심 상자, 카드 C3, 광케이블)
-주장 1: STS-n의 속도는 STS-1(51.840 Mbps)의 n배다. 슬라이드의 STS-3 155.250 Mbps는 155.520의 오기로 보인다.
+문서: 32.유선 링크 (STS-n 규칙, 카드 C3, 광케이블과 임계각)
+주장 1: STS-n의 속도는 STS-1(51.840 Mbps)의 n배다. 카드 C3의 STS-3 155.250 Mbps는 이 규칙과 맞지 않는다(155.520이어야 한다).
 주장 2: 굴절률 = 진공에서의 속도 / 매체에서의 속도. 광케이블 2.0e8 m/s -> 1.5.
 주장 3: 코어의 굴절률이 클래딩보다 크면 임계각 arcsin(n_clad / n_core)보다 비스듬히 닿은 빛은 모두 되돌아온다(전반사).
 """
 import math
 from fractions import Fraction as F
 
-SLIDE = {  # 슬라이드 표, Mbps
+TABLE = {  # 카드 C3의 표 (STS-3만 틀린 값), Mbps
     1: F("51.840"), 3: F("155.250"), 12: F("622.080"), 24: F("1244.160"), 48: F("2488.320"),
 }
 
 
 def main():
-    base = SLIDE[1]
-    for n, v in SLIDE.items():
+    base = TABLE[1]
+    for n, v in TABLE.items():
         if n == 3:
             assert v != n * base
             assert n * base == F("155.520")

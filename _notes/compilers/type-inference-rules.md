@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Rules of Inference for Types", "Type Inference Rules", "Typing Rules", "Typing Judgment", "타입 규칙", "타입 판단", "자유 변수", "Free Variable", "공리", "Axiom"]
 description: "\"양쪽이 다 정수면 더한 것도 정수다\"처럼, 작은 조각이 어떤 종류의 값인지(타입) 알면 그 조각들로 만든 식의 타입도 알 수 있다는 약속을 하나씩 적어 둔 것이다. 가로선을 긋고 위에 \"이것들을 알면\", 아래에 \"이것을 안다\"를 쓴다. 컴파일러는 이 약속을 식의 맨 안쪽부터 바깥…"
@@ -34,9 +34,9 @@ permalink: "/studies/compilers/type-inference-rules/"
 
 ## 예시로 보기
 
-타입 규칙이 없으면 컴파일러는 `A + B`를 보고 "이게 무슨 타입이지?"에 답할 방법이 없다. 식의 종류마다 답하는 법을 정해 둔 것이 추론 규칙이다. 추론 규칙은 보통 "만약 ~이면 ~이다" 꼴이다. 가정이 참이면 결론도 참이다[^1].
+타입 규칙이 없으면 컴파일러는 `A + B`를 보고 "이게 무슨 타입이지?"에 답할 방법이 없다. 식의 종류마다 답하는 법을 정해 둔 것이 추론 규칙이다. 추론 규칙은 보통 "만약 ~이면 ~이다" 꼴이다. 가정이 참이면 결론도 참이다.
 
-식 `A + B`에 쓰는 규칙은 "A가 int이고 B가 int이면 A + B는 int다"이다[^2]. 트리로 보면, 아래 두 잎의 타입을 알 때 위 노드의 타입이 정해진다.
+식 `A + B`에 쓰는 규칙은 "A가 int이고 B가 int이면 A + B는 int다"이다. 트리로 보면, 아래 두 잎의 타입을 알 때 위 노드의 타입이 정해진다.
 
 ```
         +  : int
@@ -44,7 +44,7 @@ permalink: "/studies/compilers/type-inference-rules/"
 id A : int   id B : int
 ```
 
-식 `A && B`에 쓰는 규칙은 "A가 bool이고 B가 bool이면 A && B는 bool이다"이다. A가 bool인데 B가 int면 가정이 채워지지 않는다. 쓸 수 있는 규칙이 없으므로 타입 오류다[^3].
+식 `A && B`에 쓰는 규칙은 "A가 bool이고 B가 bool이면 A && B는 bool이다"이다. A가 bool인데 B가 int면 가정이 채워지지 않는다. 쓸 수 있는 규칙이 없으므로 타입 오류다.
 
 ```
         &&  : 규칙을 쓸 수 없다 → 타입 오류
@@ -62,7 +62,7 @@ id A : bool   id B : int
 
 ### 적는 법
 
-규칙은 세 가지 기호로 적는다[^4].
+규칙은 세 가지 기호로 적는다.
 
 | 기호 | 읽는 법 | 뜻 |
 |---|---|---|
@@ -70,7 +70,7 @@ id A : bool   id B : int
 | $$\dfrac{\text{가정들}}{\text{결론}}$$ | "위가 참이면 아래가 참이다" | 만약 ~이면 ~이다 |
 | $$\vdash$$ | "~라고 추론할 수 있다" | 규칙들을 써서 끌어낼 수 있다 |
 
-`A && B`의 규칙을 말에서 기호로 한 단계씩 줄이면 이렇게 된다[^4].
+`A && B`의 규칙을 말에서 기호로 한 단계씩 줄이면 이렇게 된다.
 
 1. A가 bool이고 B가 bool이라고 추론할 수 있으면, A && B가 bool이라고 추론할 수 있다.
 2. 가로선으로: $$\dfrac{\text{A가 bool이고 B가 bool이라고 추론할 수 있다}}{\text{A \&\& B가 bool이라고 추론할 수 있다}}$$
@@ -81,55 +81,55 @@ $$\frac{\vdash A : bool \qquad \vdash B : bool}{\vdash A \,\&\&\, B : bool}$$
 
 ### 기본 규칙
 
-가정이 없는 규칙을 공리(axiom)라 부른다. 가로선 위가 비어 있다. 아무것도 몰라도 바로 쓸 수 있다는 뜻이다[^5].
+가정이 없는 규칙을 공리(axiom)라 부른다. 가로선 위가 비어 있다. 아무것도 몰라도 바로 쓸 수 있다는 뜻이다.
 
 $$\frac{}{\vdash true : bool} \qquad \frac{}{\vdash false : bool} \qquad \frac{}{\vdash 1 : int} \qquad \frac{}{\vdash 1000 : int}$$
 
 
-상수는 모양만 보고 타입을 정한다. $$i$$, $$s$$, $$d$$는 소스 코드에 적힌 상수다[^5].
+상수는 모양만 보고 타입을 정한다. $$i$$, $$s$$, $$d$$는 소스 코드에 적힌 상수다.
 
 $$\frac{i\text{는 정수 상수}}{\vdash i : int} \qquad \frac{s\text{는 문자열 상수}}{\vdash s : string} \qquad \frac{d\text{는 double 상수}}{\vdash d : double}$$
 
 
-덧셈은 양쪽이 같은 타입일 때 그 타입이 된다. $$e_1$$, $$e_2$$는 아무 식이나 가리키는 이름이고, $$T$$는 타입을 가리키는 이름이다[^5].
+덧셈은 양쪽이 같은 타입일 때 그 타입이 된다. $$e_1$$, $$e_2$$는 아무 식이나 가리키는 이름이고, $$T$$는 타입을 가리키는 이름이다.
 
 $$\frac{\vdash e_1 : int \qquad \vdash e_2 : int}{\vdash e_1 + e_2 : int} \qquad \frac{\vdash e_1 : double \qquad \vdash e_2 : double}{\vdash e_1 + e_2 : double}$$
 
 
-두 규칙을 하나로 묶으면 이렇다. "$$T$$는 short, int, long, float, double 중 하나다"도 가정이다. bool끼리나 string끼리는 이 규칙으로 더할 수 없다[^5].
+두 규칙을 하나로 묶으면 이렇다. "$$T$$는 short, int, long, float, double 중 하나다"도 가정이다. bool끼리나 string끼리는 이 규칙으로 더할 수 없다.
 
 $$\frac{\vdash e_1 : T \qquad \vdash e_2 : T \qquad T\text{는 short, int, long, float, double 중 하나}}{\vdash e_1 + e_2 : T}$$
 
 
-비교는 양쪽이 같은 원시 타입(primitive type)일 때 bool이 된다. 원시 타입은 언어가 처음부터 갖고 있는 기본 타입으로, 슬라이드는 byte, short, int, long, float, double, char를 예로 든다[^6].
+비교는 양쪽이 같은 원시 타입(primitive type)일 때 bool이 된다. 원시 타입은 언어가 처음부터 갖고 있는 기본 타입이다. byte, short, int, long, float, double, char가 그 예다.
 
 $$\frac{\vdash e_1 : T \qquad \vdash e_2 : T \qquad T\text{는 원시 타입}}{\vdash e_1 == e_2 : bool}$$
 
 
-`<=`, `>=`, `!=`도 가정이 같고 결론의 연산자만 다르다[^6].
+`<=`, `>=`, `!=`도 가정이 같고 결론의 연산자만 다르다.
 
 덧셈과 비교는 가정이 같은데 결론이 다르다. 덧셈은 받은 타입 $$T$$를 그대로 내놓고, 비교는 무엇을 받았든 bool을 내놓는다.
 
 ### 변수가 나오면: 스코프 정보 더하기
 
-`int y = x + 3;`의 `x`처럼, 식 안에서 타입이 선언되지 않은 변수를 그 식의 자유 변수(free variable)라 부른다. `y = x + 3;`에서는 x와 y가, `if (a == b)`에서는 a와 b가 자유 변수다[^7].
+`int y = x + 3;`의 `x`처럼, 식 안에서 타입이 선언되지 않은 변수를 그 식의 자유 변수(free variable)라 부른다. `y = x + 3;`에서는 x와 y가, `if (a == b)`에서는 a와 b가 자유 변수다.
 
-`x + 3`에 덧셈 규칙을 쓰려면 $$\vdash x : T$$가 필요하다. 그런데 x는 상수가 아니라서 모양만으로는 타입을 정할 수 없다. "x는 변수다"만으로는 가로선 아래에 쓸 타입이 없다[^8].
+`x + 3`에 덧셈 규칙을 쓰려면 $$\vdash x : T$$가 필요하다. 그런데 x는 상수가 아니라서 모양만으로는 타입을 정할 수 없다. "x는 변수다"만으로는 가로선 아래에 쓸 타입이 없다.
 
 $$\frac{x\text{는 변수}}{\vdash x : \,??}$$
 
 
-x의 타입은 선언에 적혀 있고, 어느 선언이 보이는지는 [스코프](/Hongs_Blog/studies/compilers/identifier-scope/)가 정한다. 그래서 $$\vdash$$의 왼쪽에 스코프 $$S$$를 적는다[^9].
+x의 타입은 선언에 적혀 있고, 어느 선언이 보이는지는 [스코프](/Hongs_Blog/studies/compilers/identifier-scope/)가 정한다. 그래서 $$\vdash$$의 왼쪽에 스코프 $$S$$를 적는다.
 
 $$S \vdash e : T$$
 
 
-"스코프 $$S$$ 안에서 식 $$e$$의 타입이 $$T$$라고 추론할 수 있다"로 읽는다. 타입은 이제 그 식이 놓인 스코프에 대해서 정해진다. 앞의 규칙들은 모든 $$\vdash$$ 앞에 $$S$$를 붙이면 그대로 쓴다[^9].
+"스코프 $$S$$ 안에서 식 $$e$$의 타입이 $$T$$라고 추론할 수 있다"로 읽는다. 타입은 이제 그 식이 놓인 스코프에 대해서 정해진다. 앞의 규칙들은 모든 $$\vdash$$ 앞에 $$S$$를 붙이면 그대로 쓴다.
 
 $$\frac{}{S \vdash true : bool} \qquad \frac{i\text{는 정수 상수}}{S \vdash i : int} \qquad \frac{S \vdash e_1 : int \qquad S \vdash e_2 : int}{S \vdash e_1 + e_2 : int}$$
 
 
-스코프 정보가 들어오면서 새로 적을 수 있는 규칙이 셋이다[^10].
+스코프 정보가 들어오면서 새로 적을 수 있는 규칙이 셋이다.
 
 **변수.** x가 변수이고 스코프 $$S$$에서 int로 선언되어 있으면 x는 int다. 선언은 [심벌 테이블](/Hongs_Blog/studies/compilers/symbol-table-scope-checking/)을 찾아서 확인한다.
 
@@ -154,7 +154,7 @@ $$\frac{S \vdash e_1 : T[\,] \qquad S \vdash e_2 : int}{S \vdash e_1[e_2] : T}$$
 
 ## 예제
 
-스코프 $$S$$에 `int x; int y;`가 선언되어 있을 때 `x + 3 == y`의 타입을 정한다[^s2].
+스코프 $$S$$에 `int x; int y;`가 선언되어 있을 때 `x + 3 == y`의 타입을 정한다.
 
 1. *잎: 변수.* x는 변수이고 $$S$$에 int로 선언되어 있다. 변수 규칙으로 $$S \vdash x : int$$.
 2. *잎: 상수.* 3은 정수 상수다. 상수 규칙으로 $$S \vdash 3 : int$$.
@@ -171,7 +171,7 @@ $$\frac{\dfrac{\dfrac{x\text{는 변수} \quad x\text{는 }S\text{에 int로 선
 
 **정해지지 않는 예 둘.** `true + false`는 양쪽 타입이 같지만 bool이 덧셈이 받는 다섯 타입에 없다. `1 == 2.5`는 양쪽이 int와 double로 달라서 비교 규칙의 $$T$$를 하나로 정할 수 없다.
 
-**가정을 하나 빼면.** 덧셈 규칙에서 "$$T$$는 short, int, long, float, double 중 하나"를 빼면 `true + false : bool`이 통과한다. 비교 규칙에서 양쪽의 $$T$$가 같아야 한다는 조건을 빼면 `1 == "one"`이 bool로 통과한다[^s2].
+**가정을 하나 빼면.** 덧셈 규칙에서 "$$T$$는 short, int, long, float, double 중 하나"를 빼면 `true + false : bool`이 통과한다. 비교 규칙에서 양쪽의 $$T$$가 같아야 한다는 조건을 빼면 `1 == "one"`이 bool로 통과한다.
 
 ### 스스로 설명해 보기
 
@@ -217,7 +217,7 @@ $$\frac{\dfrac{\dfrac{x\text{는 변수} \quad x\text{는 }S\text{에 int로 선
 
 ## 활용
 
-- 시험에서는 규칙을 주고 식의 타입을 묻거나, 말로 된 조건을 가로선 꼴로 쓰게 한다. 가로선 위에는 가정을 빠짐없이, 아래에는 결론 하나를 쓴다.
+- 익히는 법: 규칙을 놓고 식의 타입을 구해 보고, 말로 된 조건을 가로선 꼴로 옮겨 본다. 가로선 위에는 가정을 빠짐없이, 아래에는 결론 하나를 쓴다.
 - 구현에서는 규칙 하나가 트리 노드 종류 하나의 처리 함수가 된다. 가정의 $$S \vdash e_i : T_i$$는 자식 노드에 대한 재귀 호출이고, 결론의 타입은 함수가 돌려주는 값이다: [36_type-checking-procedure_impl.py](/Hongs_Blog/studies/compilers/code/36_type-checking-procedure_impl/)
 - 이 규칙들에는 타입을 알아서 바꿔 주는 규칙이 없다. `int + double`은 오류다([타입과 타입 시스템](/Hongs_Blog/studies/compilers/type-system/)).
 - 흔한 실수: $$S$$를 빼고 쓴다(변수가 있으면 타입을 정할 수 없다). 덧셈 규칙에서 "$$T$$는 다섯 타입 중 하나"를 빼먹는다. 함수 호출에서 인자 수가 맞는지 보지 않는다.
@@ -272,7 +272,7 @@ $$\frac{\dfrac{\dfrac{x\text{는 변수} \quad x\text{는 }S\text{에 int로 선
 <summary class="callout-title" markdown="span">**C4** "$$e_1$$과 $$e_2$$가 둘 다 bool이면 $$e_1$$ <code>&#124;&#124;</code> $$e_2$$도 bool이다"를 스코프를 넣은 가로선 꼴로 옮기라. 이 규칙으로 <code>(1 == 2) &#124;&#124; (x &lt;= 3)</code>의 타입을 구하라. x는 $$S$$에 int로 선언되어 있다.</summary>
 
 **답:** $$\dfrac{S \vdash e_1 : bool \qquad S \vdash e_2 : bool}{S \vdash e_1 \,\vert \vert \, e_2 : bool}$$. `1 == 2`는 양쪽이 int라 bool, `x <= 3`도 양쪽이 int라 bool이다. 두 가정이 채워져 전체는 bool이다.<br>
-**이유:** <code>&#124;&#124;</code> 규칙은 슬라이드에 없지만 `&&` 규칙과 같은 모양이다[^s3].
+**이유:** <code>&#124;&#124;</code> 규칙은 `&&` 규칙과 같은 모양이다.
 
 </details>
 
@@ -285,17 +285,5 @@ $$\frac{\dfrac{\dfrac{x\text{는 변수} \quad x\text{는 }S\text{에 int로 선
 </details>
 
 
-[^1]: 컴파일러 10회 강의 자료 「Lecture10 Semantic analysis part 2」, p.13 (추론 규칙은 if-then 꼴)
-[^2]: 같은 자료, p.14 (A + B의 규칙과 트리 그림)
-[^3]: 같은 자료, p.15 (A && B에서 bool과 int: Not satisfied… type error)
-[^4]: 같은 자료, p.16 (표기 세 가지와 A && B 규칙을 기호로 줄여 가는 네 줄)
-[^5]: 같은 자료, p.17 (공리, 상수 규칙, 덧셈 규칙 세 개)
-[^6]: 같은 자료, p.18 (==, <=, >=, != 규칙)
-[^7]: 같은 자료, p.19 (자유 변수의 뜻과 예 세 개)
-[^8]: 같은 자료, p.20 (x + 3에서 x의 타입을 정할 정보가 없다)
-[^9]: 같은 자료, p.21 (S ⊢ e : T와 스코프를 넣은 규칙들)
-[^10]: 같은 자료, p.22 (변수, 함수 호출, 배열 규칙. 배열 규칙의 대괄호는 슬라이드 그림에서 읽었다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 설계 이유 세 가지는 원본에 없다. 슬라이드의 규칙들이 모두 "더 작은 식의 타입 → 더 큰 식의 타입" 꼴인 것과 p.28의 "AST를 재귀로 돈다"에서 끌어냈다. Aho 외, *Compilers* 2판 6.5절.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `x + 3 == y`의 다섯 단계와 증명 나무, 정해지는 예·정해지지 않는 예, 가정을 뺀 반례, 스스로 설명해 보기, 오해 항목의 `2.5 + 1.5`, 카드 C3·C5는 원본에 없다. 슬라이드 p.17~22의 규칙만 써서 만들었고 검증 코드로 타입과 규칙 수를 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> <code>&#124;&#124;</code> 규칙은 원본에 없다. p.16의 `&&` 규칙과 같은 모양으로 적었다.
+[^s1]: Aho 외, *Compilers* 2판 6.5절.
 {% endraw %}

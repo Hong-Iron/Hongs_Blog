@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Parallel Projection", "Perspective Projection", "투영", "Projection", "직교 투영", "Orthographic Projection", "원근 단축", "Perspective Foreshortening", "소실점", "Vanishing Point"]
 description: "3차원 장면을 2차원 화면에 옮기는 방법은 두 가지다. 평행 투영은 모든 점을 같은 방향으로 곧장 화면에 떨어뜨려, 멀든 가깝든 크기가 그대로이고 평행선이 평행하게 남는다. 원근 투영은 눈 한 점을 향해 모이는 선으로 옮겨, 먼 것이 작게 보이고 평행선이 한 점으로 모인다. 원근이…"
@@ -50,7 +50,7 @@ permalink: "/studies/numerical-analysis/projection/"
 
 ## 정의
 
-**투영**은 3차원 월드의 점을 2차원 화면으로 옮긴다[^1].
+**투영**은 3차원 월드의 점을 2차원 화면으로 옮긴다. 두 투영이 무엇을 지키는지 견주면 다음과 같다.
 
 | | 평행(직교) 투영 | 원근 투영 |
 |---|---|---|
@@ -59,19 +59,17 @@ permalink: "/studies/numerical-analysis/projection/"
 | 평행선 | 평행하게 남는다 | 평행하지 않을 수 있다 |
 | 거리에 따른 크기 | 같다 | 가까운 것이 크다(원근 단축) |
 
-표는 슬라이드 p.29~30을 옮긴 것이다[^2].
-
-**평행 투영**은 평면 $$z = d$$로 $$z$$ 좌표만 $$d$$로 바꾼다[^3].
+**평행 투영**은 평면 $$z = d$$로 $$z$$ 좌표만 $$d$$로 바꾼다.
 
 $$\begin{pmatrix}x'\\ y'\\ z'\\ 1\end{pmatrix} = \begin{pmatrix}1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 0 & d\\ 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}x\\ y\\ z\\ 1\end{pmatrix}$$
 
 
-**원근 투영**은 눈(원점)에서 점 $$(x, y, z)$$로 가는 선이 화면 $$z = d$$와 만나는 점이다. 닮은 삼각형으로 $$\frac{x'}{d} = \frac xz$$라 다음과 같다[^4].
+**원근 투영**은 눈(원점)에서 점 $$(x, y, z)$$로 가는 선이 화면 $$z = d$$와 만나는 점이다. 닮은 삼각형으로 $$\frac{x'}{d} = \frac xz$$라 다음과 같다.
 
 $$x' = \frac{x}{z/d}, \qquad y' = \frac{y}{z/d}$$
 
 
-$$z$$로 나누기는 선형변환이 아니다. 그래서 동차 좌표의 마지막 성분 $$w'$$에 $$z/d$$를 넣고, 마지막에 $$w'$$로 나눈다[^5].
+$$z$$로 나누기는 선형변환이 아니다. 그래서 동차 좌표의 마지막 성분 $$w'$$에 $$z/d$$를 넣고, 마지막에 $$w'$$로 나눈다.
 
 $$\begin{pmatrix}x'\\ y'\\ z'\\ w'\end{pmatrix} = \begin{pmatrix}1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 1/d & 0\end{pmatrix}\begin{pmatrix}x\\ y\\ z\\ 1\end{pmatrix}, \qquad \frac{x'}{w'} = \frac{x}{z/d},\ \frac{y'}{w'} = \frac{y}{z/d},\ \frac{z'}{w'} = d$$
 
@@ -84,7 +82,7 @@ flowchart LR
     H -->|"w'로 나누기"| S["화면 좌표"]
 ```
 
-투영은 맨 끝의 두 칸이다. 그 앞에서 점을 카메라 기준 좌표로 바꿔 두어야 눈이 원점에 오고 화면이 $$z = d$$에 놓인다. 세 행렬은 모두 $$4 \times 4$$라 미리 곱해 둘 수 있지만, 마지막 나누기는 행렬이 아니라 따로 한다[^s3].
+투영은 맨 끝의 두 칸이다. 그 앞에서 점을 카메라 기준 좌표로 바꿔 두어야 눈이 원점에 오고 화면이 $$z = d$$에 놓인다. 세 행렬은 모두 $$4 \times 4$$라 미리 곱해 둘 수 있지만, 마지막 나누기는 행렬이 아니라 따로 한다.
 
 ## 활용
 
@@ -124,12 +122,6 @@ flowchart LR
 </details>
 
 
-[^1]: 수치해석 6회 강의 자료 「na06_rotation」, p.28
-[^2]: 같은 자료, p.29~30
-[^3]: 같은 자료, p.31
-[^4]: 같은 자료, p.32
-[^5]: 같은 자료, p.33
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 막대와 철길 예시, 쓰이는 곳, 중점과 텍스처 보간, 흔한 실수, 직교 사영과의 관계, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [11_projection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 막대 높이 1과 0.5, 폭 2가 거리 10에서 0.2, 거리 1000에서 0.002.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 원근 투영 행렬과 $$w'$$로 나누기(원본 06.na06_rotation.pdf p.32~33), [좌표계 변환](/Hongs_Blog/studies/numerical-analysis/coordinate-frame/)의 뷰 행렬, [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/) '활용'의 모델·뷰·투영 행렬로 그렸다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [11_projection_plot.py](/Hongs_Blog/studies/numerical-analysis/code/11_projection_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 막대 높이 1과 0.5, 폭 2가 거리 10에서 0.2, 거리 1000에서 0.002.
 {% endraw %}

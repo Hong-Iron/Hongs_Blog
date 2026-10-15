@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Wired Links", "유선 링크의 종류", "트위스티드 페어", "twisted pair", "UTP", "Cat 5", "동축 케이블", "coax", "coaxial cable", "광케이블", "optical fiber", "멀티모드", "multimode", "싱글모드", "single-mode", "굴절률", "index of refraction", "코어", "core", "클래딩", "cladding", "전반사", "전용선", "leased line", "T1", "T3", "STS", "SONET", "ISDN"]
 description: "선을 직접 깔 때는 거리와 속도를 보고 구리선이나 광케이블을 고른다. 꼬인 구리선은 싸고 흔하지만 100 m 정도가 한계이고, 광케이블은 빛을 유리 속에 가두어 수십 km를 빠르게 간다. 광케이블도 가운데 심이 굵은 멀티모드는 빛이 여러 길로 퍼져서 짧은 거리용이고, 심이 가는 싱…"
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/wired-links/"
 
 ## 예시로 보기
 
-선을 직접 깔 때는 거리를 기준으로 매체를 고른다[^1].
+선을 직접 깔 때는 거리를 기준으로 매체를 고른다.
 
 | 매체 | 속도 | 최대 거리 |
 |---|---|---|
@@ -45,35 +45,27 @@ permalink: "/studies/computer-communication/wired-links/"
 | 멀티모드 광케이블 | 100 Mbps | 2 km |
 | 싱글모드 광케이블 | 100~2,400 Mbps | 40 km |
 
-같은 건물의 PC와 스위치(수십 m)는 UTP로 충분하다. 1.5 km 떨어진 두 건물은 멀티모드 광케이블, 30 km 떨어진 두 지사는 싱글모드 광케이블이 필요하다. UTP는 노드와 노드 사이의 짧은 거리(100 m 안쪽)에 쓴다. 동축 케이블은 구리가 많이 들어 두꺼워서, 요즘은 UTP를 더 많이 쓴다[^2].
+같은 건물의 PC와 스위치(수십 m)는 UTP로 충분하다. 1.5 km 떨어진 두 건물은 멀티모드 광케이블, 30 km 떨어진 두 지사는 싱글모드 광케이블이 필요하다. UTP는 노드와 노드 사이의 짧은 거리(100 m 안쪽)에 쓴다. 동축 케이블은 구리가 많이 들어 두꺼워서, 요즘은 UTP를 더 많이 쓴다.
 
 ## 정의
 
-**광케이블.** 빛을 가두는 가운데 심을 코어, 그 둘레를 감싼 층을 클래딩이라 한다[^3]. 굴절률은 진공에서의 빛의 속도를 매체에서의 속도로 나눈 값이다. 값이 클수록 그 안에서 빛이 느리다[^3]. 신호 속도가 $$2.0 \times 10^8$$ m/s인 광케이블의 굴절률은 $$3.0 / 2.0 = 1.5$$다. 코어의 굴절률이 클래딩보다 커서, 경계에 비스듬히 닿은 빛은 빠져나가지 못하고 모두 되돌아온다(전반사). 빛은 이렇게 코어 안에서 튕기며 나아간다[^s1].
+**광케이블.** 빛을 가두는 가운데 심을 코어, 그 둘레를 감싼 층을 클래딩이라 한다. 굴절률은 진공에서의 빛의 속도를 매체에서의 속도로 나눈 값이다. 값이 클수록 그 안에서 빛이 느리다. 신호 속도가 $$2.0 \times 10^8$$ m/s인 광케이블의 굴절률은 $$3.0 / 2.0 = 1.5$$다. 코어의 굴절률이 클래딩보다 커서, 경계에 비스듬히 닿은 빛은 빠져나가지 못하고 모두 되돌아온다(전반사). 빛은 이렇게 코어 안에서 튕기며 나아간다[^s1].
+
+빛이 새지 않으려면 경계에 충분히 비스듬히 닿아야 한다. 코어의 굴절률을 $$n_{\text{core}}$$, 클래딩의 굴절률을 $$n_{\text{clad}}$$라 하자. 경계의 수직선에서 잰 각이 임계각 $$\theta_c = \arcsin(n_{\text{clad}} / n_{\text{core}})$$($$\arcsin$$은 사인값에서 각도를 구하는 함수)보다 크면 빛이 전부 되돌아온다. 예를 들어 $$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$이면 $$\theta_c \approx 80.6°$$다. 케이블 축에서 9.4°보다 덜 기운 빛은 모두 갇힌다는 뜻이다. 거친 면에서 빛이 여러 방향으로 흩어지는 난반사와는 다르다. 흩어진 빛은 코어 밖으로 새어 나간다[^s1].
 
 | | 멀티모드 (Multimode) | 싱글모드 (Single Mode) |
 |---|---|---|
-| 코어 | 비교적 굵다[^3] | 비교적 가늘다[^3] |
+| 코어 | 비교적 굵다 | 비교적 가늘다 |
 | 빛의 길 | 여러 각도의 길(모드)로 튕기며 간다 | 거의 곧은 길 하나로 간다 |
-| 결과 | 길마다 도착 시간이 달라 신호가 퍼진다. 느리고 짧은 거리용[^2] | 덜 퍼져서 빠르고 멀리 간다[^2] |
+| 결과 | 길마다 도착 시간이 달라 신호가 퍼진다. 느리고 짧은 거리용 | 덜 퍼져서 빠르고 멀리 간다 |
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/32_wired-links_fig1.svg" alt="그림" width="503" height="335" loading="lazy">
 
 위가 멀티모드, 아래가 싱글모드다. 멀티모드에서는 같은 순간 들어간 빛이 기울기에 따라 다른 길로 튕기며 간다. 많이 기운 빛일수록 길이 길어 늦게 도착한다. 싱글모드는 코어가 가늘어 빛이 축을 따라 거의 한 길로만 간다[^s3].
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: "광케이블 내부에서 난반사를 통한 데이터 전달이다." (4주차 필기 32행)<br>
-문제점: 난반사는 거친 면에 닿은 빛이 여러 방향으로 흩어지는 반사다. 흩어진 빛은 코어 밖으로 새어 나간다. 광케이블은 코어의 굴절률이 클래딩보다 커서, 경계에서 빛이 하나도 새지 않고 되돌아오는 전반사로 빛을 가둔다.<br>
-수정안: "광케이블 내부에서 전반사를 통한 데이터 전달이다."<br>
-근거: 굴절률이 $$n_{\text{core}} > n_{\text{clad}}$$이면 임계각 $$\theta_c = \arcsin(n_{\text{clad}} / n_{\text{core}})$$($$\arcsin$$은 사인값에서 각도를 구하는 함수)이 존재하고, 이보다 비스듬히 닿은 빛은 전부 반사된다. 예: $$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$이면 $$\theta_c \approx 80.6°$$. 검증 코드의 계산.
-
-</div>
-
-
-**빌리는 선.** 전화 회사로부터 선을 임대할 때는 정해진 속도를 고른다[^1].
+**빌리는 선.** 전화 회사로부터 선을 임대할 때는 정해진 속도를 고른다.
 
 | 서비스 | 대역폭 |
 |---|---|
@@ -81,20 +73,12 @@ permalink: "/studies/computer-communication/wired-links/"
 | T1 | 1.544 Mbps |
 | T3 | 44.736 Mbps |
 | STS-1 | 51.840 Mbps |
-| STS-3 | 155.520 Mbps (슬라이드: 155.250) |
+| STS-3 | 155.520 Mbps |
 | STS-12 | 622.080 Mbps |
 | STS-24 | 1.244160 Gbps |
 | STS-48 | 2.488320 Gbps |
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "STS-3 155.250 Mbps" (슬라이드 "사용 가능한 유선 링크의 종류")<br>
-문제점: STS-$$n$$의 속도는 STS-1의 정확히 $$n$$배다. 표의 STS-12, 24, 48은 모두 $$51.840 \times n$$과 맞는데, STS-3만 $$51.840 \times 3 = 155.520$$과 다르다. 숫자 5와 2의 자리가 바뀐 오기로 보인다.<br>
-수정안: STS-3 155.520 Mbps.<br>
-근거: $$51.84 \times 3 = 155.52$$. 검증 코드가 표의 나머지 네 값을 같은 규칙으로 확인한다[^s2].
-
-</div>
+STS-$$n$$의 속도는 STS-1의 정확히 $$n$$배다. 예를 들어 STS-3은 $$51.840 \times 3 = 155.520$$ Mbps, STS-12는 $$51.840 \times 12 = 622.080$$ Mbps다[^s2].
 
 
 <div class="callout callout-check" markdown="1">
@@ -106,7 +90,7 @@ permalink: "/studies/computer-communication/wired-links/"
 ## 활용
 
 - 링크 길이가 짧으면 전파 지연도 작다. UTP 100 m는 약 0.43 μs다([소요시간](/Hongs_Blog/studies/computer-communication/latency/)).
-- 흔한 실수는 광케이블이 "빛의 속도"라서 구리보다 전파 지연이 훨씬 작다고 보는 것이다. 슬라이드 수치로는 광케이블($$2.0 \times 10^8$$)이 구리 케이블($$2.3 \times 10^8$$)보다 오히려 조금 느리다. 광케이블의 장점은 속도와 거리(대역폭, 적은 손실)다.
+- 흔한 실수는 광케이블이 "빛의 속도"라서 구리보다 전파 지연이 훨씬 작다고 보는 것이다. 신호 속도로 보면 광케이블($$2.0 \times 10^8$$ m/s)이 구리 케이블($$2.3 \times 10^8$$ m/s)보다 오히려 조금 느리다. 광케이블의 장점은 속도와 거리(대역폭, 적은 손실)다.
 
 ## 연결
 
@@ -115,7 +99,7 @@ permalink: "/studies/computer-communication/wired-links/"
 
 ## 확인 문제
 
-<details markdown="1"><summary markdown="span"><b>C1</b> 다음 연결에 슬라이드 표의 매체 중 무엇을 쓰겠는가? (a) 같은 사무실의 PC와 스위치 30 m, 100 Mbps (b) 1.5 km 떨어진 두 건물, 100 Mbps (c) 30 km 떨어진 두 지사, 1 Gbps</summary>
+<details markdown="1"><summary markdown="span"><b>C1</b> 다음 연결에 위 표의 매체 중 무엇을 쓰겠는가? (a) 같은 사무실의 PC와 스위치 30 m, 100 Mbps (b) 1.5 km 떨어진 두 건물, 100 Mbps (c) 30 km 떨어진 두 지사, 1 Gbps</summary>
 
 
 **답:** (a) Category 5 UTP (100 m, 10~100 Mbps). (b) 멀티모드 광케이블 (2 km, 100 Mbps). 동축은 500 m까지다. (c) 싱글모드 광케이블 (40 km, 100~2,400 Mbps). 멀티모드는 2 km까지다.
@@ -129,17 +113,14 @@ permalink: "/studies/computer-communication/wired-links/"
 
 </details>
 
-<details markdown="1"><summary markdown="span"><b>C3</b> STS-1이 51.840 Mbps일 때 STS-12의 속도를 구하고, 슬라이드 표의 STS-3 값이 맞는지 검산하라.</summary>
+<details markdown="1"><summary markdown="span"><b>C3</b> STS-1이 51.840 Mbps일 때 STS-12의 속도를 구하라. 어떤 표에 STS-3이 155.250 Mbps로 적혀 있다. 이 값이 맞는지 검산하라.</summary>
 
 
-**답:** STS-12 $$= 51.840 \times 12 = 622.080$$ Mbps로 표와 같다. STS-3은 $$51.840 \times 3 = 155.520$$ Mbps여야 한다. 표의 155.250은 숫자 자리가 바뀐 오기로 보인다.
+**답:** STS-12 $$= 51.840 \times 12 = 622.080$$ Mbps로 표와 같다. STS-3은 $$51.840 \times 3 = 155.520$$ Mbps여야 한다. 155.250은 숫자 2와 5의 자리가 바뀐 틀린 값이다.
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "사용 가능한 유선 링크의 종류" (2장. 데이터 링크 네트워크: 점대점 링크)
-[^2]: 컴퓨터 통신 4회 필기 「4주차」, 20~34행
-[^3]: 수업 슬라이드 캡처 — 슬라이드 "광케이블: Optical Fiber". "Index of reflection = Speed in Vacuum / Speed in medium"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 굴절률 1.5의 계산, 전반사와 임계각, 모드마다 도착 시간이 다른 현상(모드 분산)은 원본에 없다. 표준적인 광학 내용이고, Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절의 광케이블 설명과 같다. 슬라이드의 "Index of reflection"은 굴절률(index of refraction)을 가리킨다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> STS-$$n$$이 STS-1의 $$n$$배라는 규칙은 SONET 표준(ANSI T1.105)의 정의다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [32_wired-links_plot.py](/Hongs_Blog/studies/computer-communication/code/32_wired-links_plot/)로 그렸다. 굴절률은 원본 오류 의심 상자의 예($$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$)를 썼다. 그린 빛의 기울기(축에서 4°, 8°)가 임계각 80.6°에서 나오는 한계 9.4°보다 작아 모두 전반사된다는 것과, 8° 기운 길이 곧은 길보다 약 1% 길다는 것을 같은 코드로 확인했다. 코어 굵기와 케이블 길이의 비율은 보기 좋게 바꿨다.
+[^s1]: 표준적인 광학 내용이고, Peterson & Davie, *Computer Networks: A Systems Approach*, 2.1절의 광케이블 설명과 같다.
+[^s2]: STS-$$n$$이 STS-1의 $$n$$배라는 규칙은 SONET 표준(ANSI T1.105)의 정의다.
+[^s3]: [32_wired-links_plot.py](/Hongs_Blog/studies/computer-communication/code/32_wired-links_plot/)로 그렸다. 굴절률은 본문의 임계각 예($$n_{\text{core}} = 1.50$$, $$n_{\text{clad}} = 1.48$$)를 썼다. 그린 빛의 기울기(축에서 4°, 8°)가 임계각 80.6°에서 나오는 한계 9.4°보다 작아 모두 전반사된다는 것과, 8° 기운 길이 곧은 길보다 약 1% 길다는 것을 같은 코드로 확인했다. 코어 굵기와 케이블 길이의 비율은 보기 좋게 바꿨다.
 {% endraw %}

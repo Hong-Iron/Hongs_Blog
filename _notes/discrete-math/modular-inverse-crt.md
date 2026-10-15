@@ -146,7 +146,7 @@ flowchart LR
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 9장. Rosen, *Discrete Mathematics and Its Applications* 7판, 4장(역원, 중국인의 나머지 정리). Cormen et al., *Introduction to Algorithms* 3판, 31.4절 "Solving modular linear equations", 31.5절 "The Chinese remainder theorem".
 [^2]: 손자산경의 문제는 Rosen 7판 4장의 중국인의 나머지 정리 절에 역사적 예로 실려 있다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> RSA-CRT 복호는 실제 RSA 구현이 쓰는 표준 기법이다. 잉여 수 체계는 큰 정수·다항식 곱셈 알고리즘에서 쓰는 표준 기법이다. 여러 소수로 나눈 나머지로 곱셈을 하고 되살리는 과정과 RSA-CRT 복호 결과가 직접 복호와 같음은 29_modular-inverse-crt_verify.py에서 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [29_modular-inverse-crt_plot.py](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_plot/)로 그렸고, 법 3, 5에서 15칸이 하나씩 차는 것, 법 4, 6에서 12칸에 두 개씩 몰리는 것, $$x \equiv 1 \pmod 4$$, $$x \equiv 0 \pmod 6$$의 해가 없는 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제'의 손자산경 문제 풀이(1~4단계)와 정리 증명의 존재 부분을 그렸다.
+[^s1]: RSA-CRT 복호는 실제 RSA 구현이 쓰는 표준 기법이다. 잉여 수 체계는 큰 정수·다항식 곱셈 알고리즘에서 쓰는 표준 기법이다. 여러 소수로 나눈 나머지로 곱셈을 하고 되살리는 과정과 RSA-CRT 복호 결과가 직접 복호와 같음은 29_modular-inverse-crt_verify.py에서 확인했다.
+[^s2]: [29_modular-inverse-crt_plot.py](/Hongs_Blog/studies/discrete-math/code/29_modular-inverse-crt_plot/)로 그렸고, 법 3, 5에서 15칸이 하나씩 차는 것, 법 4, 6에서 12칸에 두 개씩 몰리는 것, $$x \equiv 1 \pmod 4$$, $$x \equiv 0 \pmod 6$$의 해가 없는 것을 같은 코드로 확인했다.
+[^s3]: '예제'의 손자산경 문제 풀이(1~4단계)와 정리 증명의 존재 부분을 그렸다.
 {% endraw %}

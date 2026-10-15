@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/singularity-functions/"
 
 ## 예시로 보기
 
-$$\frac{dy}{dt} + 2y = x$$ 시스템(임펄스 응답 $$h(t) = e^{-2t}u(t)$$)에 넓이 1인 짧은 펄스 두 종류를 넣어 본다(예제 2.16)[^1].
+$$\frac{dy}{dt} + 2y = x$$ 시스템(임펄스 응답 $$h(t) = e^{-2t}u(t)$$)에 넓이 1인 짧은 펄스 두 종류를 넣어 본다(예제 2.16).
 
 - $$\delta_\Delta(t)$$: 폭 $$\Delta$$, 높이 $$\frac1\Delta$$인 사각 펄스.
 - $$r_\Delta(t) = \delta_\Delta(t) * \delta_\Delta(t)$$: 폭 $$2\Delta$$, 꼭대기 높이 $$\frac1\Delta$$인 삼각 펄스.
@@ -47,18 +47,18 @@ $$\Delta = 0.25$$이면 두 응답의 모양이 눈에 띄게 다르다. $$\Delt
 
 ## 정의
 
-**특이함수**는 함수나 그 도함수가 불연속인 함수다. 급격한 변화와 불연속을 나타낼 때 쓴다. 대표는 단위 계단, 단위 임펄스, 단위 램프다[^2].
+**특이함수**는 함수나 그 도함수가 불연속인 함수다. 급격한 변화와 불연속을 나타낼 때 쓴다. 대표는 단위 계단, 단위 임펄스, 단위 램프다.
 
-**짧은 펄스의 극한으로 본 임펄스.**[^3] 넓이가 1인 펄스 $$p_\Delta(t)$$가 모든 신호에 대해 $$\lim_{\Delta\to0}x(t) * p_\Delta(t) = x(t)$$를 만족하면, 그 극한을 $$\delta(t)$$로 쓸 수 있다. 사각 펄스 $$\delta_\Delta$$, 삼각 펄스 $$r_\Delta$$ 모두 그렇다. 그래서 $$\lim(p_\Delta * p_\Delta) = \delta$$이고 $$x * \delta * \delta = x$$다.
+**짧은 펄스의 극한으로 본 임펄스.** 넓이가 1인 펄스 $$p_\Delta(t)$$가 모든 신호에 대해 $$\lim_{\Delta\to0}x(t) * p_\Delta(t) = x(t)$$를 만족하면, 그 극한을 $$\delta(t)$$로 쓸 수 있다. 사각 펄스 $$\delta_\Delta$$, 삼각 펄스 $$r_\Delta$$ 모두 그렇다. 그래서 $$\lim(p_\Delta * p_\Delta) = \delta$$이고 $$x * \delta * \delta = x$$다.
 
-삼각 펄스는 두 사각 펄스의 컨벌루션이다. [사각 펄스 두 개의 컨벌루션](/Hongs_Blog/studies/signals-and-systems/convolution-integral/)에서 폭이 같으면 삼각형이 되기 때문이다[^4].
+삼각 펄스는 두 사각 펄스의 컨벌루션이다. [사각 펄스 두 개의 컨벌루션](/Hongs_Blog/studies/signals-and-systems/convolution-integral/)에서 폭이 같으면 삼각형이 되기 때문이다.
 
 $$r_\Delta(t) = \delta_\Delta(t) * \delta_\Delta(t) = \begin{cases}\dfrac{t}{\Delta^2} & 0 \le t \le \Delta\\[2mm] \dfrac{2\Delta - t}{\Delta^2} & \Delta \le t \le 2\Delta\\[2mm] 0 & \text{그 밖}\end{cases}$$
 
 
 $$0 \le t \le \Delta$$에서는 $$\int_0^t(\frac1\Delta)^2d\tau = \frac{t}{\Delta^2}$$, $$\Delta \le t \le 2\Delta$$에서는 $$\int_{t-\Delta}^{\Delta}(\frac1\Delta)^2d\tau = \frac{2\Delta - t}{\Delta^2}$$다. 넓이는 $$\frac12 \cdot 2\Delta \cdot \frac1\Delta = 1$$이다.
 
-**컨벌루션으로 정의한 임펄스.**[^5] 단위 임펄스는 항등 시스템의 임펄스 응답이다. 곧 모든 신호에 대해
+**컨벌루션으로 정의한 임펄스.** 단위 임펄스는 항등 시스템의 임펄스 응답이다. 곧 모든 신호에 대해
 
 $$x(t) = x(t) * \delta(t)$$
 
@@ -99,11 +99,6 @@ $$x(t) = x(t) * \delta(t)$$
 </details>
 
 
-[^1]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.6 (예제 2.16)
-[^2]: 같은 자료, p.1
-[^3]: 같은 자료, p.5
-[^4]: 같은 자료, p.1~4
-[^5]: 같은 자료, p.1, p.7
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 충격 시험 예와 시간 상수 비교, 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [27_singularity-functions_plot.py](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 두 펄스의 넓이 1, 사각 펄스 응답의 닫힌 꼴, $$\Delta = 0.25 \to 0.1 \to 0.0025$$로 갈수록 $$h$$와의 차이가 줄어듦.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [27_singularity-functions_plot.py](/Hongs_Blog/studies/signals-and-systems/code/27_singularity-functions_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 두 펄스의 넓이 1, 사각 펄스 응답의 닫힌 꼴, $$\Delta = 0.25 \to 0.1 \to 0.0025$$로 갈수록 $$h$$와의 차이가 줄어듦.
 {% endraw %}

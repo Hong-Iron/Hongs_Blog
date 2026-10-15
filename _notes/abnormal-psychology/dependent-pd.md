@@ -40,7 +40,7 @@ permalink: "/studies/abnormal-psychology/dependent-pd/"
 - 혼자 있으면 불안하고 무기력하다: 기준 6.
 - 관계가 끝나면 곧 다른 보호자를 찾는다: 기준 7.
 
-## 정의[^1]
+## 정의
 
 핵심 특징은 타인에 대한 과도한 의존성, 보호받고자 하는 과도한 욕구, 이별과 버림받음에 대한 두려움이다. 다음 가운데 5개 이상이다.
 
@@ -53,21 +53,14 @@ permalink: "/studies/abnormal-psychology/dependent-pd/"
 7. 친밀한 관계가 끝나면 곧 자신을 보호해 줄 다른 사람을 찾는다.
 8. 스스로 해결해야 하는 상황에 대한 두려움에 사로잡혀 있다.
 
-## 임상적 특징[^2]
+## 임상적 특징
 
 - 유병률: 일반 인구의 약 0.5%(0.49~0.6%)[^s2].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "유병률: 일반 인구의 2~48%" / 문제점: DSM-5-TR이 인용하는 일반 인구 유병률은 0.49%(미국 NESARC)와 0.6%(미국 NCS-R Part II)이고, 서구 일반 인구 메타분석도 0.78%다. 2~48%는 일반 인구 수치로 볼 수 없다. 0.49~0.6을 옮겨 적다 생긴 오기이거나 임상 표본의 범위일 수 있다. / 수정안: "일반 인구의 약 0.5%" / 근거: [^s2]
-
-</div>
 
 - 성비는 여자가 더 많다는 보고와 같다는 보고가 함께 있다.
 - 다른 성격장애, 특히 경계선, 연극성, 회피성 성격장애와 함께 나타나는 경향이 있다.
 
-## 원인[^3]
+## 원인
 
 | 입장 | 설명 |
 |---|---|
@@ -76,7 +69,7 @@ permalink: "/studies/abnormal-psychology/dependent-pd/"
 | 행동주의적 | 부모가 매달리거나 충성하는 행동은 보상하고, 독립적으로 행동하면 사랑을 거두는 식으로 처벌해 의존성을 강화했다 |
 | 인지적 | "나는 근본적으로 무력하고 부적절한 사람이다", "나는 도움을 받으며 의지할 사람이 필요하다". 의존과 독립에 대한 흑백논리(삶은 완전히 독립적이거나 완전히 의존적이다) |
 
-## 치료[^4]
+## 치료
 
 **치료 관계가 중요하다.**
 
@@ -126,10 +119,6 @@ permalink: "/studies/abnormal-psychology/dependent-pd/"
 
 </details>
 
-[^1]: 이상 심리학 12회 강의 자료 「성격장애」, p.59
-[^2]: 이상 심리학 12회 강의 자료 「성격장애」, p.60 ("여 > 남 or 여 = 남")
-[^3]: 이상 심리학 12회 강의 자료 「성격장애」, p.61
-[^4]: 이상 심리학 12회 강의 자료 「성격장애」, p.62
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MC의 사례는 진단기준을 보이려고 만든 가상 사례다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR의 유병률: NESARC 0.49%, NCS-R Part II 0.6%(StatPearls "Dependent Personality Disorder", NCBI Bookshelf NBK606086이 DSM-5-TR을 인용). 서구 일반 인구 메타분석(Volkert, Gablonski & Rabung, 2018, *British Journal of Psychiatry*)은 0.78%다. 이전 판의 이 각주는 0.6%를 "영국 조사"로 잘못 적었다.
+[^s1]: MC의 사례는 진단기준을 보이려고 만든 가상 사례다.
+[^s2]: DSM-5-TR의 유병률: NESARC 0.49%, NCS-R Part II 0.6%(StatPearls "Dependent Personality Disorder", NCBI Bookshelf NBK606086이 DSM-5-TR을 인용). 서구 일반 인구 메타분석(Volkert, Gablonski & Rabung, 2018, *British Journal of Psychiatry*)은 0.78%다. 이전 판의 이 각주는 0.6%를 "영국 조사"로 잘못 적었다.
 {% endraw %}

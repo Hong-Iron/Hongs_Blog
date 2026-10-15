@@ -102,5 +102,5 @@ $$\text{CPU 시간} = \text{명령어 수} \times \text{CPI} \times \text{클록
 
 [^1]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor". 교재 출판사 강의 슬라이드 "Chapter 4 — The Processor" (Cooper Union 게시본), 슬라이드 2~4, 17 (Pipeline Performance, Pipeline Speedup, Pipeline Summary: 처리량을 늘려 빨라진다, 명령어 하나의 시간은 같다, 해저드가 따른다), https://ee.cooper.edu/~curro/comparch/pipeline/chapter4_pipelining_END_FA11.pdf
 [^2]: Princeton COS/ELE 375 (Fall 2015, David August), Lecture 8 "Control", 슬라이드 30~40, 52~53 (Other Problems, Multicycle Approach: 명령어는 3~5단계, 부품을 다시 쓴다, 유형별 사이클 수 표, Single/Multi-Cycle Summary), https://www.cs.princeton.edu/courses/archive/fall15/cos375/lectures/08-Control.pdf. `j`의 3사이클은 같은 강의 슬라이드 48의 단계 요약 표에서 읽었다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부품 시간, 명령어 비율, "명령어당 0.2사이클"과 그것으로 계산한 수치는 교재의 값이 아니라 직접 정한 것이다.
+[^s1]: 부품 시간, 명령어 비율, "명령어당 0.2사이클"과 그것으로 계산한 수치는 교재의 값이 아니라 직접 정한 것이다.
 {% endraw %}

@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/02_compilation-vs-interpretation_verify/"
 [컴파일과 인터프리트 비교](/Hongs_Blog/studies/compilers/compilation-vs-interpretation/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 컴파일과 인터프리트 비교: "언제, 얼마만큼 번역하는가"(슬라이드 L01 p.5)를 작은 장난감 언어로 세어 본다
+# 컴파일과 인터프리트 비교: "언제, 얼마만큼 번역하는가"를 작은 장난감 언어로 세어 본다
 # 실행: python3 02_compilation-vs-interpretation_verify.py   (표준 라이브러리만 쓴다)
 # 장난감 언어: 한 줄에 문장 하나. "x = 식", "print 식", "repeat n" ... "end".
 # 번역 = 문장의 글자를 읽어 파이썬 함수 하나로 바꾸는 일. 번역 횟수를 센다.

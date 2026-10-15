@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["TEST 명령", "CMP 명령", "TEST Instruction", "CMP Instruction", "비교 명령", "Comparison Instructions", "비파괴 연산", "Nondestructive"]
 description: "두 물건의 무게를 견주려고 저울에 올려도 물건은 그대로다. 눈금만 움직인다. 이 두 명령은 계산을 하되 답은 버리고, 계산 결과가 어땠는지 알려 주는 표시등만 남긴다. 하나는 빼기를 해서 두 값의 크고 작음을 알려 주고, 다른 하나는 비트끼리 견줘서 고른 비트가 켜져 있는지 알려 …"
@@ -41,46 +41,46 @@ permalink: "/studies/assembly-language/test-cmp/"
     cmp al,5        ; 4 - 5를 해 보고 답은 버린다. AL은 4 그대로
 ```
 
-4에서 5를 빼면 모자라서 윗자리에서 빌려 와야 한다. 그래서 올림 플래그 CF가 1이 된다. 부호 없는 수로 볼 때 "왼쪽이 오른쪽보다 작다"는 표시다[^1].
+4에서 5를 빼면 모자라서 윗자리에서 빌려 와야 한다. 그래서 올림 플래그 CF가 1이 된다. 부호 없는 수로 볼 때 "왼쪽이 오른쪽보다 작다"는 표시다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 CMP 예 다섯 개의 플래그, 8비트 두 수의 모든 쌍(65,536쌍)에서 아래 두 표가 맞는 것, TEST 예 두 개(256가지 전수), CMP·TEST가 피연산자를 안 바꾸는 것, 넘침 플래그 규칙(덧셈 8비트 전수), 카드 C2 — [30_test-cmp_verify.py](/Hongs_Blog/studies/assembly-language/code/30_test-cmp_verify/) (파이썬 흉내로 확인. 실제 MASM으로 돌린 것이 아니다)</div>
+<div class="callout-title" markdown="span">검증: CMP 예 다섯 개의 플래그, 8비트 두 수의 모든 쌍(65,536쌍)에서 아래 두 표가 맞는 것, TEST 예 두 개(256가지 전수), CMP·TEST가 피연산자를 안 바꾸는 것, 넘침 플래그 규칙(덧셈 8비트 전수), 카드 C2 — [30_test-cmp_verify.py](/Hongs_Blog/studies/assembly-language/code/30_test-cmp_verify/) (파이썬 흉내로 확인. 실제 MASM으로 돌린 것이 아니다)</div>
 
 </div>
 
 
 ## 정의
 
-**CMP.** `CMP 목적지, 원본`은 목적지에서 원본을 빼 보고 플래그만 매긴다. 목적지는 바뀌지 않는다[^1]. `SUB`와 다른 점은 결과를 넣지 않는다는 것 하나다.
+**CMP.** `CMP 목적지, 원본`은 목적지에서 원본을 빼 보고 플래그만 매긴다. 목적지는 바뀌지 않는다. `SUB`와 다른 점은 결과를 넣지 않는다는 것 하나다.
 
-**TEST.** `TEST 목적지, 원본`은 두 피연산자의 같은 자리 비트끼리 AND를 해 보고 플래그만 매긴다. 어느 피연산자도 바뀌지 않는다[^2]. `AND`와 다른 점은 결과를 넣지 않는다는 것 하나다.
+**TEST.** `TEST 목적지, 원본`은 두 피연산자의 같은 자리 비트끼리 AND를 해 보고 플래그만 매긴다. 어느 피연산자도 바뀌지 않는다. `AND`와 다른 점은 결과를 넣지 않는다는 것 하나다.
 
 | 값을 바꾸는 명령 | 플래그만 매기는 짝 | 해 보는 계산 |
 |---|---|---|
 | `SUB` | `CMP` | 목적지 − 원본 |
 | `AND` | `TEST` | 목적지 AND 원본 |
 
-**CMP 뒤의 플래그 읽기.** 왼쪽이 목적지, 오른쪽이 원본이다. 부호 없는 수로 볼 때는 ZF와 CF를 본다[^1][^3].
+**CMP 뒤의 플래그 읽기.** 왼쪽이 목적지, 오른쪽이 원본이다. 부호 없는 수로 볼 때는 ZF와 CF를 본다.
 
-| 관계 (부호 없는 수) | 플래그 | 슬라이드의 예 |
+| 관계 (부호 없는 수) | 플래그 | 예 |
 |---|---|---|
 | 목적지 = 원본 | ZF = 1 | `mov al,5` / `cmp al,5` |
 | 목적지 < 원본 | CF = 1 | `mov al,4` / `cmp al,5` |
 | 목적지 > 원본 | ZF = 0이고 CF = 0 | `mov al,6` / `cmp al,5` |
 
-부호 있는 수로 볼 때는 ZF, SF, OF를 본다[^4][^s1].
+부호 있는 수로 볼 때는 ZF, SF, OF를 본다[^s1].
 
-| 관계 (부호 있는 수) | 플래그 | 슬라이드의 예 |
+| 관계 (부호 있는 수) | 플래그 | 예 |
 |---|---|---|
 | 목적지 = 원본 | ZF = 1 | |
 | 목적지 < 원본 | SF ≠ OF | `mov al,-1` / `cmp al,5` |
 | 목적지 > 원본 | ZF = 0이고 SF = OF | `mov al,5` / `cmp al,-2` |
 
-슬라이드는 `5`와 `-2`의 예에 "Sign flag == Overflow flag"라고만 적는다[^4]. 같을 때도 SF = OF(둘 다 0)라서, "크다"만 가려내려면 ZF = 0을 함께 봐야 한다[^s1].
+두 값이 같을 때도 SF = OF(둘 다 0)다. 그래서 "크다"만 가려내려면 SF = OF에 더해 ZF = 0을 함께 봐야 한다[^s1].
 
 왜 SF와 OF를 함께 볼까? 뺀 결과가 음수면(SF = 1) 왼쪽이 작다. 그런데 뺄셈이 넘치면(OF = 1) 결과의 부호가 뒤집혀 나온다. 그래서 "SF가 1이고 안 넘쳤거나, SF가 0인데 넘쳤으면" 작은 것이다. 이것을 한마디로 쓴 것이 SF ≠ OF다. 증명은 [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/)에 있다.
 
-**플래그 복습.** 슬라이드는 여기서 플래그 여섯을 다시 정리한다[^5].
+**플래그 복습.** 상태 플래그 여섯을 다시 정리하면 이렇다.
 
 | 플래그 | 1이 되는 때 |
 |---|---|
@@ -93,7 +93,7 @@ permalink: "/studies/assembly-language/test-cmp/"
 
 ## 예제
 
-**슬라이드의 CMP 예를 계산으로 따라가기.**[^s1]
+**CMP 예를 계산으로 따라가기.**[^s1]
 
 | 코드 | 해 보는 뺄셈 | 결과 | ZF | CF | SF | OF | 읽기 |
 |---|---|---|---|---|---|---|---|
@@ -107,14 +107,14 @@ permalink: "/studies/assembly-language/test-cmp/"
 
 **넘치는 경우.** `mov al,-128` / `cmp al,1`은 80h − 01h = 7Fh다. 결과가 양수(SF = 0)지만 −128 − 1 = −129는 8비트에 안 들어가 넘친다(OF = 1). SF ≠ OF이므로 "작다"로 바르게 읽힌다[^s1].
 
-**TEST로 비트 보기.** AL의 0번이나 1번 비트 중 하나라도 켜져 있으면 점프한다[^2].
+**TEST로 비트 보기.** AL의 0번이나 1번 비트 중 하나라도 켜져 있으면 점프한다.
 
 ```asm
     test al,00000011b
     jnz  ValueFound         ; 결과가 0이 아니다 = 하나 이상 켜졌다
 ```
 
-둘 다 꺼져 있으면 점프한다[^2].
+둘 다 꺼져 있으면 점프한다.
 
 ```asm
     test al,00000011b
@@ -126,7 +126,7 @@ permalink: "/studies/assembly-language/test-cmp/"
 ## 활용
 
 - `CMP`나 `TEST` 바로 다음 줄에는 거의 늘 [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/)가 온다. 견주고 갈라 가는 두 줄이 고급 언어의 `if` 한 줄이다([조건 구조를 점프로 옮기기](/Hongs_Blog/studies/assembly-language/conditional-structures/)).
-- 슬라이드는 `TEST`가 ZF에 영향을 준다고만 적는다[^2]. `AND`와 같은 계산이라 SF와 PF도 매겨지고 CF와 OF는 0이 된다[^s1].
+- `TEST`의 결과는 보통 ZF로 읽는다. 하지만 `AND`와 같은 계산이라 SF와 PF도 매겨지고 CF와 OF는 0이 된다[^s1].
 - 흔한 실수: `CMP`와 점프 사이에 플래그를 바꾸는 명령(`ADD`, `INC` 등)을 끼운다. 점프는 맨 마지막 연산의 플래그를 본다. `MOV`는 플래그를 안 바꾸므로 끼워도 된다.
 - 흔한 실수: 피연산자 순서를 뒤집는다. `cmp al,5`는 "AL을 5와 견준다"이고 `AL − 5`를 한다. "작다"는 왼쪽이 작다는 뜻이다.
 
@@ -166,10 +166,5 @@ permalink: "/studies/assembly-language/test-cmp/"
 </details>
 
 
-[^1]: 어셈블리어 7회 강의 자료 「wk07-chapt_06-3-2」, p.15 (CMP의 뜻과 문법, 같을 때 ZF, 작을 때 CF)
-[^2]: 같은 자료, p.14 (TEST의 뜻과 예 두 개)
-[^3]: 같은 자료, p.16 (클 때 ZF = 0, CF = 0)
-[^4]: 같은 자료, p.17 (부호 있는 비교: SF와 OF)
-[^5]: 같은 자료, p.4 (상태 플래그 복습)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예의 뺄셈 결과와 플래그 값 표, "크다"에 ZF = 0이 함께 필요하다는 점, SF와 OF를 함께 보는 까닭의 풀이, 넘치는 예(−128과 1), TEST가 매기는 다른 플래그, 활용 항목, 카드 C1~C3은 원본에 없다. 플래그 값은 검증 코드의 파이썬 흉내로 구했고, 두 표의 조건은 8비트 두 수의 모든 쌍에서 실제 크고 작음과 맞는지 전수 검사했다.
+[^s1]: 플래그 값은 검증 코드의 파이썬 흉내로 구했고, 두 표의 조건은 8비트 두 수의 모든 쌍에서 실제 크고 작음과 맞는지 전수 검사했다.
 {% endraw %}

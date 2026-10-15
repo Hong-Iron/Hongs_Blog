@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Irvine32", "Irvine32 Library", "Irvine32.inc", "INCLUDE 지시어", "WriteString", "WriteHex", "WriteDec", "WriteInt", "WriteBin", "ReadString", "DumpRegs", "DumpMem", "Crlf", "Clrscr", "RandomRange", "SetTextColor", "링크 라이브러리", "Link Library"]
 description: "화면에 숫자 하나를 찍는 일도 맨손으로 하려면 수를 글자로 바꾸고 운영체제에 부탁하는 코드를 길게 써야 한다. 교재 저자가 이런 일을 미리 만들어 둔 도구 상자가 있어서, 약속된 레지스터에 값을 넣고 도구 이름을 부르기만 하면 된다. 덕분에 입출력에 매이지 않고 배우려는 명령에 집…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/irvine32-library/"
 
 ## 예시로 보기
 
-지금까지의 프로그램은 계산을 해도 결과를 볼 길이 없었다. EAX에 든 값을 화면에 16진수로 찍어 본다[^1].
+지금까지의 프로그램은 계산을 해도 결과를 볼 길이 없었다. EAX에 든 값을 화면에 16진수로 찍어 본다.
 
 ```asm
 INCLUDE Irvine32.inc
@@ -44,33 +44,33 @@ INCLUDE Irvine32.inc
     call Crlf           ; 줄을 바꾼다
 ```
 
-세 가지를 한다. 맨 위에 `INCLUDE Irvine32.inc`를 쓴다. 약속된 레지스터에 값을 넣는다. `CALL`로 프로시저를 부른다. `INCLUDE` 지시어는 프로시저들의 선언(원형)을 그 자리에 복사해 넣는다. 그래야 어셈블러가 `WriteHex`라는 이름을 안다[^1].
+세 가지를 한다. 맨 위에 `INCLUDE Irvine32.inc`를 쓴다. 약속된 레지스터에 값을 넣는다. `CALL`로 프로시저를 부른다. `INCLUDE` 지시어는 프로시저들의 선언(원형)을 그 자리에 복사해 넣는다. 그래야 어셈블러가 `WriteHex`라는 이름을 안다.
 
-슬라이드는 이 코드가 "1234"를 찍는다고 적는다[^1]. 실제 라이브러리의 `WriteHex`는 32비트를 여덟 자리로 채워 `00001234`처럼 찍는 것으로 알려져 있다[확인필요].
+실제 라이브러리의 `WriteHex`는 32비트 값을 앞자리를 0으로 채운 여덟 자리로 찍는 것으로 알려져 있다. 그러면 이 코드는 `00001234`를 찍는다[확인필요].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 35의 2진·10진·16진 표기, EFL=00000286에서 읽은 플래그, 예제 2와 2a의 출력이 같은 것, `SIZEOF fileName - 1` = 79, 예제 5의 호출 순서와 0~99 범위, `yellow + (blue * 16)` = 1Eh, 프로시저 48개 — [28_irvine32-library_verify.py](/Hongs_Blog/studies/assembly-language/code/28_irvine32-library_verify/) (라이브러리 자체는 돌리지 못했다. 슬라이드에 적힌 출력과 인수 계산만 파이썬으로 다시 셈했고, 호출 순서는 라이브러리 프로시저를 파이썬 함수로 바꿔 끼운 흉내로 확인했다)</div>
+<div class="callout-title" markdown="span">검증: 35의 2진·10진·16진 표기, EFL=00000286에서 읽은 플래그, 예제 2와 2a의 출력이 같은 것, `SIZEOF fileName - 1` = 79, 예제 5의 호출 순서와 0~99 범위, `yellow + (blue * 16)` = 1Eh, 프로시저 48개 — [28_irvine32-library_verify.py](/Hongs_Blog/studies/assembly-language/code/28_irvine32-library_verify/) (라이브러리 자체는 돌리지 못했다. 본문에 실린 출력과 인수 계산만 파이썬으로 다시 셈했고, 호출 순서는 라이브러리 프로시저를 파이썬 함수로 바꿔 끼운 흉내로 확인했다)</div>
 
 </div>
 
 
 ## 부르는 법
 
-모든 프로시저를 `CALL`로 부른다. 어떤 프로시저는 받는 값이 있다[^1]. 받는 값은 레지스터로 넘긴다([레지스터 매개변수와 USES](/Hongs_Blog/studies/assembly-language/procedure-register-parameters/)). 슬라이드의 예제에 나온 약속은 다음과 같다.
+모든 프로시저를 `CALL`로 부른다. 어떤 프로시저는 받는 값이 있다. 받는 값은 레지스터로 넘긴다([레지스터 매개변수와 USES](/Hongs_Blog/studies/assembly-language/procedure-register-parameters/)). 아래 예제에 나오는 약속은 다음과 같다.
 
 | 프로시저 | 부르기 전에 넣는 것 | 하는 일 |
 |---|---|---|
-| `WriteHex`, `WriteDec`, `WriteBin`, `WriteInt` | EAX = 찍을 수 | 16진, 부호 없는 10진, 2진, 부호 있는 10진으로 찍는다[^2] |
-| `WriteString` | EDX = 문자열의 주소 | 0으로 끝나는 문자열을 찍는다[^3] |
-| `ReadString` | EDX = 받을 자리의 주소, ECX = 받을 글자 수의 한도 | 글자를 읽어 넣고 끝에 0을 붙인다[^4] |
-| `Delay` | EAX = 멈출 시간(밀리초) | 그만큼 멈춘다[^5] |
-| `RandomRange` | EAX = 위쪽 한계 n | 0부터 n − 1까지의 난수를 EAX로 돌려준다[^6] |
-| `SetTextColor` | EAX = 글자색 + 배경색 × 16 | 이후에 찍는 글자의 색을 바꾼다[^7] |
-| `Crlf`, `Clrscr`, `DumpRegs` | 없음 | 줄 바꾸기, 화면 지우기, 레지스터와 플래그 찍기[^5] |
+| `WriteHex`, `WriteDec`, `WriteBin`, `WriteInt` | EAX = 찍을 수 | 16진, 부호 없는 10진, 2진, 부호 있는 10진으로 찍는다 |
+| `WriteString` | EDX = 문자열의 주소 | 0으로 끝나는 문자열을 찍는다 |
+| `ReadString` | EDX = 받을 자리의 주소, ECX = 받을 글자 수의 한도 | 글자를 읽어 넣고 끝에 0을 붙인다 |
+| `Delay` | EAX = 멈출 시간(밀리초) | 그만큼 멈춘다 |
+| `RandomRange` | EAX = 위쪽 한계 n | 0부터 n − 1까지의 난수를 EAX로 돌려준다 |
+| `SetTextColor` | EAX = 글자색 + 배경색 × 16 | 이후에 찍는 글자의 색을 바꾼다 |
+| `Crlf`, `Clrscr`, `DumpRegs` | 없음 | 줄 바꾸기, 화면 지우기, 레지스터와 플래그 찍기 |
 
-## 슬라이드의 예제 여섯
+## 예제 여섯
 
-**예제 1.** 화면을 지우고, 500밀리초 멈추고, 레지스터와 플래그를 찍는다[^5].
+**예제 1.** 화면을 지우고, 500밀리초 멈추고, 레지스터와 플래그를 찍는다.
 
 ```asm
     call Clrscr
@@ -87,7 +87,7 @@ EIP=00401026  EFL=00000286  CF=0  SF=1  ZF=0  OF=0
 
 `DumpRegs`는 프로그램을 고칠 때 가장 자주 쓴다. 명령 하나를 실행한 뒤 레지스터와 플래그가 어떻게 됐는지 눈으로 본다. 위 출력에서 `EFL=00000286`은 플래그가 모인 레지스터의 값이고, 뒤의 네 칸은 거기서 네 비트를 뽑아 보여 준 것이다. 286h는 2진수로 `0010 1000 0110`이다. 0번 비트(CF)가 0, 6번 비트(ZF)가 0, 7번 비트(SF)가 1, 11번 비트(OF)가 0이라 옆에 적힌 값과 맞는다[^s1].
 
-**예제 2와 2a.** 0으로 끝나는 문자열을 찍고 다음 줄 맨 앞으로 간다. 줄 바꾸기를 `Crlf`로 해도 되고, 문자열 안에 줄 바꿈 글자 둘(0Dh, 0Ah)을 넣어도 된다[^3].
+**예제 2와 2a.** 0으로 끝나는 문자열을 찍고 다음 줄 맨 앞으로 간다. 줄 바꾸기를 `Crlf`로 해도 되고, 문자열 안에 줄 바꿈 글자 둘(0Dh, 0Ah)을 넣어도 된다.
 
 ```asm
 .data
@@ -108,7 +108,7 @@ str1 BYTE "Assembly language is easy!",0Dh,0Ah,0
 
 0Dh는 줄 맨 앞으로 가는 글자(CR), 0Ah는 한 줄 내려가는 글자(LF)다([부호와 부호화](/Hongs_Blog/studies/data-and-information/code-encoding/)). `Crlf`라는 이름이 이 둘을 합친 것이다[^s1].
 
-**예제 3.** 부호 없는 정수 35를 2진, 10진, 16진으로 한 줄씩 찍는다[^2].
+**예제 3.** 부호 없는 정수 35를 2진, 10진, 16진으로 한 줄씩 찍는다.
 
 ```asm
 IntVal = 35
@@ -130,7 +130,7 @@ IntVal = 35
 
 $$35 = 32 + 2 + 1$$이라 2진수 끝이 `10 0011`이고, 네 자리씩 끊어 읽으면 23h다.
 
-**예제 4.** 사용자에게서 문자열을 받는다. EDX가 받을 자리를 가리키고, ECX가 받을 수 있는 글자 수의 한도다. 끝에 0이 저절로 붙는다[^4].
+**예제 4.** 사용자에게서 문자열을 받는다. EDX가 받을 자리를 가리키고, ECX가 받을 수 있는 글자 수의 한도다. 끝에 0이 저절로 붙는다.
 
 ```asm
 .data
@@ -143,7 +143,7 @@ fileName BYTE 80 DUP(0)
 
 왜 80이 아니라 79일까? 80칸 가운데 한 칸은 끝에 붙을 0의 자리로 남겨야 한다.
 
-**예제 5.** 0부터 99까지의 난수 열 개를 한 줄에 하나씩 찍는다[^6].
+**예제 5.** 0부터 99까지의 난수 열 개를 한 줄에 하나씩 찍는다.
 
 ```asm
     mov ecx,10              ; 열 번
@@ -156,7 +156,7 @@ L1: mov eax,100             ; 위쪽 한계
 
 `RandomRange`가 EAX로 돌려준 값을 `WriteInt`가 그대로 EAX로 받는다. 그래서 둘 사이에 옮기는 명령이 없다.
 
-**예제 6.** 파란 바탕에 노란 글자로 문자열을 찍는다. 배경색에 16을 곱해 글자색에 더한다[^7].
+**예제 6.** 파란 바탕에 노란 글자로 문자열을 찍는다. 배경색에 16을 곱해 글자색에 더한다.
 
 ```asm
 .data
@@ -173,7 +173,7 @@ str1 BYTE "Color output is easy!",0
 
 ## 프로시저 목록
 
-슬라이드에 이름과 한 줄 설명이 실린 프로시저는 48개다[^8]. 하는 일끼리 묶었다[^s1].
+자주 쓰는 프로시저 48개를 하는 일끼리 묶으면 다음과 같다[^s1].
 
 | 묶음 | 프로시저 | 하는 일 |
 |---|---|---|
@@ -240,14 +240,6 @@ str1 BYTE "Color output is easy!",0
 </details>
 
 
-[^1]: 어셈블리어 7회 강의 자료 「wk07-chapt_05-3-1」, p.2 (라이브러리 프로시저 부르기, INCLUDE, 1234h 예)
-[^2]: 같은 자료, p.11 (예제 3과 출력 예); p.6 (WriteBin·WriteDec·WriteHex·WriteInt의 설명)
-[^3]: 같은 자료, p.9~10 (예제 2, 2a)
-[^4]: 같은 자료, p.12 (예제 4, 0이 저절로 붙는다)
-[^5]: 같은 자료, p.8 (예제 1과 출력 예)
-[^6]: 같은 자료, p.13 (예제 5)
-[^7]: 같은 자료, p.14 (예제 6, 배경색에 16을 곱한다)
-[^8]: 같은 자료, p.3~7 (프로시저 이름과 설명. p.7의 쪽 제목은 "(5 of 4)"로 적혀 있다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> EFL 값을 비트로 푼 것, CR·LF의 뜻, 프로시저를 하는 일끼리 묶은 것, 활용 항목, 카드 C1~C3은 원본에 없다. 원본의 목록은 알파벳 순서다. EFLAGS의 비트 자리(CF 0번, ZF 6번, SF 7번, OF 11번)는 Intel 64 and IA-32 Architectures Software Developer's Manual 1권 3.4.3절을 따랐다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 색 상수의 값은 이 슬라이드에 없다. Irvine32.inc는 black = 0, blue = 1, …, yellow = 14, white = 15로 정해 둔다. 카드 C3의 값도 이 표를 따랐다.
+[^s1]: EFLAGS의 비트 자리(CF 0번, ZF 6번, SF 7번, OF 11번)는 Intel 64 and IA-32 Architectures Software Developer's Manual 1권 3.4.3절을 따랐다.
+[^s2]: Irvine32.inc는 black = 0, blue = 1, …, yellow = 14, white = 15로 정해 둔다. 카드 C3의 값도 이 표를 따랐다.
 {% endraw %}

@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/10_array-mapping-ladder_p4/"
 /* 배열 위치 공식 예제 사다리: 문제 1~4의 답을 실제 배열에 견주어 확인한다.
  *
  * 문서: 4.연습문제/10.배열 위치 공식 예제 사다리
- * 출처: 자료구조 3주차 슬라이드 p.29~33, p.40~41
  * 실행: cc -std=c11 -Wall -Wextra 10_array-mapping-ladder_p4.c -o map_ladder && ./map_ladder
  *
  * 문제 1, 2의 2차원 배열은 줄과 칸을 0부터 센다. 문제 3, 4의 행렬은 1부터 센다.

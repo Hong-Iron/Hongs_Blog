@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: OFFSET과 PTR 연산자, 리틀 엔디언."
 prev_url: "/studies/assembly-language/flag-tracing-ladder/"
@@ -62,8 +62,6 @@ mov eax,DWORD PTR varW       ; e.
 4. *c.* 시작 자리 `varW+2` = 오프셋 6. 한 바이트 `02`. BL = 02h.
 5. *d.* 시작 자리 `varD+2` = 오프셋 10. 두 바이트 `34 12`. AX = 1234h.
 6. *e.* 시작 자리 `varW` = 오프셋 4. 네 바이트 `43 65 02 12`를 집어 거꾸로 붙인다. EAX = 12026543h.
-
-다섯 답은 슬라이드의 답과 같다[^1].
 
 ## 문제 2 · 마지막 하위목표만 빈칸
 
@@ -142,6 +140,5 @@ mov ecx,DWORD PTR arr         ; (라)
 </details>
 
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.16 (Your turn: varB, varW, varD와 다섯 답)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표 네 단계, 문제 1의 풀이 과정과 메모리 그림, 문제 2의 `[myBytes+1]`, 문제 3과 문제 4는 원본에 없다. 문제 2의 데이터는 슬라이드 p.15의 `myBytes`다. 답은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 답은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

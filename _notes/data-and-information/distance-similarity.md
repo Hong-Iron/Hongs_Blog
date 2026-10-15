@@ -10,7 +10,7 @@ course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Distance and Similarity", "거리", "Distance", "유사도", "Similarity", "거리 함수", "거리 척도", "Metric", "거리의 조건", "삼각부등식", "Triangle Inequality", "대소 비교", "코사인 거리", "Cosine Distance"]
 description: "두 대상이 얼마나 다른지를 수 하나로 적은 것이 거리이고, 얼마나 닮았는지를 적은 것이 유사도다. 지도 위 두 도시 사이의 길이처럼 거리는 작을수록 가깝고, 유사도는 그 눈금을 뒤집어 클수록 닮았다. 다만 아무 수나 거리라 부를 수는 없고, 자기 자신과만 0이고, 재는 방향을 바꿔…"
@@ -34,9 +34,9 @@ permalink: "/studies/data-and-information/distance-similarity/"
 
 ## 예시로 보기
 
-수는 크다·작다, 많다·적다를 비교할 수 있다. 사진, 문장, 장바구니는 그대로는 비교할 수 없다. "이 사진과 가장 닮은 사진"을 찾으려면 두 대상을 받아 수 하나를 내놓는 규칙이 있어야 한다. 그 수끼리 대소를 비교하면 가깝다·멀다가 나온다[^1].
+수는 크다·작다, 많다·적다를 비교할 수 있다. 사진, 문장, 장바구니는 그대로는 비교할 수 없다. "이 사진과 가장 닮은 사진"을 찾으려면 두 대상을 받아 수 하나를 내놓는 규칙이 있어야 한다. 그 수끼리 대소를 비교하면 가깝다·멀다가 나온다.
 
-슬라이드의 그림에서 바다사자 사진과 다른 세 사진의 유사도는 표범 0.81, 물범 0.88, 너구리 0.81이다[^1]. 물범이 가장 닮았다. 유사도를 "1에서 뺀 값"으로 거리로 바꾸면 0.19, 0.12, 0.19이고, 물범이 가장 가깝다. 순서가 뒤집힌 채로 같은 말을 한다.
+예를 들어 바다사자 사진과 다른 세 사진의 유사도가 표범 0.81, 물범 0.88, 너구리 0.81이라고 하자. 물범이 가장 닮았다. 유사도를 "1에서 뺀 값"으로 거리로 바꾸면 0.19, 0.12, 0.19이고, 물범이 가장 가깝다. 순서가 뒤집힌 채로 같은 말을 한다.
 
 거리라 부르려면 지켜야 할 조건이 있다. 좌표 위의 세 점 0, 1, 2에서 "차이의 제곱"을 거리로 쓰면 이렇게 된다.
 
@@ -55,14 +55,14 @@ permalink: "/studies/data-and-information/distance-similarity/"
 
 대상들의 모음을 $$\mathcal{S}$$라 하자. 사진 전체, 문장 전체, 좌표 평면 위의 점 전체 같은 것이다.
 
-**거리 함수.** 대상 둘을 받아 0 이상의 실수를 내놓는 함수 $$d : \mathcal{S} \times \mathcal{S} \to \mathbb{R}^+ \cup \{0\}$$이다[^2]. $$\mathbf x, \mathbf y, \mathbf z \in \mathcal{S}$$에 대해,
+**거리 함수.** 대상 둘을 받아 0 이상의 실수를 내놓는 함수 $$d : \mathcal{S} \times \mathcal{S} \to \mathbb{R}^+ \cup \{0\}$$이다. $$\mathbf x, \mathbf y, \mathbf z \in \mathcal{S}$$에 대해,
 
 - $$d(\mathbf x, \mathbf y)$$가 작으면 $$\mathbf x$$와 $$\mathbf y$$는 가깝다. 곧 비슷하다.
 - $$d(\mathbf x, \mathbf y) < d(\mathbf x, \mathbf z)$$이면 $$\mathbf x$$는 $$\mathbf z$$보다 $$\mathbf y$$에 더 가깝다.
 
-**유사도 함수.** 대상 둘을 받아 실수를 내놓는 함수 $$s : \mathcal{S} \times \mathcal{S} \to \mathbb{R}$$이다. $$\mathbf x$$와 $$\mathbf y$$가 비슷하면 $$s(\mathbf x, \mathbf y)$$가 크다. 흔히 0부터 1까지로 맞춘다[^3].
+**유사도 함수.** 대상 둘을 받아 실수를 내놓는 함수 $$s : \mathcal{S} \times \mathcal{S} \to \mathbb{R}$$이다. $$\mathbf x$$와 $$\mathbf y$$가 비슷하면 $$s(\mathbf x, \mathbf y)$$가 크다. 흔히 0부터 1까지로 맞춘다.
 
-**서로 바꾸기**[^3].
+**서로 바꾸기**.
 
 | 가진 것 | 바꾸는 식 | 쓰는 때 |
 |---|---|---|
@@ -73,14 +73,14 @@ permalink: "/studies/data-and-information/distance-similarity/"
 
 모두 거리가 0이면 유사도가 1이고, 거리가 클수록 유사도가 작다. 예: $$d = 3$$이면 $$\frac{1}{1 + 3} = 0.25$$다.
 
-**거리의 척도.** 거리 함수가 다음 네 조건을 모두 지키면 거리의 척도(metric)라 한다[^4].
+**거리의 척도.** 거리 함수가 다음 네 조건을 모두 지키면 거리의 척도(metric)라 한다.
 
 1. **0 이상:** $$d(\mathbf x, \mathbf y) \ge 0$$.
 2. **같을 때만 0:** $$d(\mathbf x, \mathbf y) = 0 \iff \mathbf x = \mathbf y$$.
 3. **대칭:** $$d(\mathbf x, \mathbf y) = d(\mathbf y, \mathbf x)$$.
 4. **삼각부등식:** $$d(\mathbf x, \mathbf z) \le d(\mathbf x, \mathbf y) + d(\mathbf y, \mathbf z)$$.
 
-4번은 삼각형의 한 변이 나머지 두 변의 합보다 길 수 없다는 말이다. 슬라이드의 그림은 삼각형을 점점 납작하게 눌러 $$\mathbf y$$가 $$\mathbf x$$와 $$\mathbf z$$를 잇는 선 위에 올 때 양쪽이 같아지는 것을 보여 준다[^4].
+4번은 삼각형의 한 변이 나머지 두 변의 합보다 길 수 없다는 말이다. 삼각형을 점점 납작하게 눌러 $$\mathbf y$$가 $$\mathbf x$$와 $$\mathbf z$$를 잇는 선 위에 오면 양쪽이 같아진다.
 
 각 조건이 왜 필요한지는 깨지는 예로 본다[^s1].
 
@@ -90,7 +90,7 @@ permalink: "/studies/data-and-information/distance-similarity/"
 | 3 (대칭) | 일방통행 길의 주행 시간 | "A에서 가까운 B"가 "B에서 가까운 A"가 아니다 |
 | 4 (삼각부등식) | 차이의 제곱: $$4 > 1 + 1$$ | 가까운 것의 가까운 것이 멀 수 있다 |
 
-**어떤 자료에 어떤 척도를 쓰나.** 슬라이드는 관계를 재야 할 자료를 아홉 가지로 든다. 숫자, 범주, 둘이 섞인 것, 집합, 이진, 문자열, 글, 그래프, 시계열이다[^5]. 이 과목 4회가 다루는 척도는 이렇게 나뉜다[^6].
+**어떤 자료에 어떤 척도를 쓰나.** 관계를 재야 할 자료는 아홉 가지로 나눌 수 있다. 숫자, 범주, 둘이 섞인 것, 집합, 이진, 문자열, 글, 그래프, 시계열이다. 이 문서 모음에서 다루는 척도는 자료에 따라 이렇게 나뉜다.
 
 | 자료 | 척도 | 문서 |
 |---|---|---|
@@ -102,7 +102,7 @@ permalink: "/studies/data-and-information/distance-similarity/"
 
 ## 예제
 
-**코사인 거리는 척도가 아니다.** 코사인 유사도를 1에서 뺀 $$1 - \cos(\mathbf x, \mathbf y)$$를 코사인 거리라 부른다[^7]. 이름은 거리지만 조건 2와 4를 어긴다[^s1].
+**코사인 거리는 척도가 아니다.** 코사인 유사도를 1에서 뺀 $$1 - \cos(\mathbf x, \mathbf y)$$를 코사인 거리라 부른다. 이름은 거리지만 조건 2와 4를 어긴다[^s1].
 
 1. *같을 때만 0인가:* $$(1, 2)$$와 $$(2, 4)$$는 방향이 같아 코사인이 1, 거리가 0이다. 다른 점인데 0이다.
 2. *삼각부등식:* $$\mathbf a = (1, 0)$$, $$\mathbf b = (1, 1)$$, $$\mathbf c = (0, 1)$$로 잰다. $$\mathbf a$$와 $$\mathbf c$$는 직각이라 거리 1이다. $$\mathbf a$$–$$\mathbf b$$와 $$\mathbf b$$–$$\mathbf c$$는 45도라 각각 $$1 - \frac{1}{\sqrt2} \approx 0.293$$이다.
@@ -151,12 +151,5 @@ permalink: "/studies/data-and-information/distance-similarity/"
 </details>
 
 
-[^1]: 자료와 정보 4회 강의 자료 「D&I_강의04-1-유사도와거리」, p.2 (대소 비교: 크다/작다, 많다/적다, 가깝다/멀다, 동물 사진과 0.81·0.88·0.81)
-[^2]: 같은 자료, p.3 (거리: distance function의 꼴과 직관)
-[^3]: 같은 자료, p.4 (비슷함: similarity function, $$d_s = 1 - s$$, $$s_d = 1 - d$$, $$1 - \frac{d}{D}$$, $$\frac{1}{1 + d}$$)
-[^4]: 같은 자료, p.5 (거리의 척도: 네 조건, 삼각형 그림)
-[^5]: 같은 자료, p.6 (관계 측정하기: numerical, categorical, mixed, sets, binary, strings, text, graphs, time series)
-[^6]: 자료와 정보 4회 강의 자료 「D&I_강의04-2-유사도와거리」, p.19 (요약: Vector space와 Code space의 척도 목록)
-[^7]: 자료와 정보 4회 강의 자료 「D&I_강의04-1-유사도와거리」, p.12 (Cosine distance: $$1 - \cos(\mathbf x, \mathbf y)$$)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 지도 비유, 사진 유사도를 거리로 바꾼 값, 조건이 깨지는 예 셋(차이의 제곱, 첫 좌표만 비교, 일방통행)과 코사인 거리의 반례, 활용 절, 카드는 슬라이드에 없다. 수치는 검증 코드로 확인했다. 삼각부등식으로 계산을 아끼는 방법은 Elkan, "Using the triangle inequality to accelerate k-means"(2003)가 대표 예다.
+[^s1]: 수치는 검증 코드로 확인했다. 삼각부등식으로 계산을 아끼는 방법은 Elkan, "Using the triangle inequality to accelerate k-means"(2003)가 대표 예다.
 {% endraw %}

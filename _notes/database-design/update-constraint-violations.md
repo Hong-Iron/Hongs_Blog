@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Update Operations and Constraint Violations", "Violating Integrity Constraints", "제약 위반", "무결성 제약 위반", "삽입 위반", "삭제 위반", "수정 위반", "Insert Violation", "Delete Violation", "Update Violation"]
 description: "행을 넣거나 지우거나 고칠 때, 표에 걸어 둔 규칙 가운데 무엇이 깨질 수 있는지 미리 짚어 보는 방법이다. 도서관에서 책을 새로 등록할 때, 폐기할 때, 등록 번호를 고칠 때 확인할 것이 서로 다른 것과 같다. 넣을 때는 모든 규칙을 봐야 하고, 지울 때는 \"이 행을 가리키는 다…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/update-constraint-violations/"
 
 `INSERT` 한 줄이 거부됐는데 왜 거부됐는지 모르면 고칠 수 없다. DBMS는 대개 먼저 걸린 규칙 하나만 알려 준다. 그래서 연산을 보고 "이것이 어길 수 있는 규칙은 무엇무엇이다"를 스스로 짚을 수 있어야 한다.
 
-직원 표에 네 사람을 넣어 본다. 지금 EMPLOYEE에는 여덟 명이 있고 부서는 1, 4, 5번뿐이다[^1].
+직원 표에 네 사람을 넣어 본다. 지금 EMPLOYEE에는 여덟 명이 있고 부서는 1, 4, 5번뿐이다.
 
 | 넣으려는 행 | 결과 | 까닭 |
 |---|---|---|
@@ -45,10 +45,10 @@ permalink: "/studies/database-design/update-constraint-violations/"
 | 〈Cecilia, F, Kolonsky, 677678989, 1960-04-05, …, 28000, 987654321, **7**〉 | 거부 | 7번 부서가 없다. 참조 무결성 위반 |
 | 〈Cecilia, F, Kolonsky, 677678989, 1960-04-05, …, 28000, NULL, 4〉 | 들어간다 | 세 제약을 모두 지킨다 |
 
-슬라이드는 여기에 한 줄을 붙인다. "어떤 제약도 어겨서는 안 된다."
+넣는 행은 어떤 제약도 어겨서는 안 된다. 하나라도 어기면 거부된다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 삽입 넷·삭제 셋·수정 넷의 결과, 아래 판정표, 제약을 하나하나 손으로 따지는 검사기와 SQLite의 판정이 무작위 연산 900개(삽입·삭제·수정 300개씩)에서 일치 — [52_update-constraint-violations_verify.py](/Hongs_Blog/studies/database-design/code/52_update-constraint-violations_verify/)</div>
+<div class="callout-title" markdown="span">검증: 본문의 삽입 넷·삭제 셋·수정 넷의 결과, 아래 판정표, 제약을 하나하나 손으로 따지는 검사기와 SQLite의 판정이 무작위 연산 900개(삽입·삭제·수정 300개씩)에서 일치 — [52_update-constraint-violations_verify.py](/Hongs_Blog/studies/database-design/code/52_update-constraint-violations_verify/)</div>
 
 </div>
 
@@ -61,7 +61,7 @@ permalink: "/studies/database-design/update-constraint-violations/"
 - **개체 무결성:** 기본 키는 NULL일 수 없다([개체 무결성 제약](/Hongs_Blog/studies/database-design/entity-integrity-constraint/)).
 - **참조 무결성:** 외래 키 값은 가리키는 표의 기본 키에 있는 값이거나 NULL이어야 한다([참조 무결성 제약과 외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/)).
 
-연산마다 어길 수 있는 제약이 다르다[^2].
+연산마다 어길 수 있는 제약이 다르다.
 
 | 연산 | 키 제약 | 개체 무결성 | 참조 무결성 |
 |---|---|---|---|
@@ -92,7 +92,7 @@ flowchart TD
 
 ### 삭제의 예
 
-지금 WORKS_ON에는 16행이 있다[^3].
+지금 WORKS_ON에는 16행이 있다.
 
 | 지우려는 행 | 결과 | 까닭 |
 |---|---|---|
@@ -102,7 +102,7 @@ flowchart TD
 
 ### 수정의 예
 
-Ssn이 999887777인 직원 Zelaya의 행을 고친다[^4].
+Ssn이 999887777인 직원 Zelaya의 행을 고친다.
 
 | 고치는 것 | 결과 | 까닭 |
 |---|---|---|
@@ -111,7 +111,7 @@ Ssn이 999887777인 직원 Zelaya의 행을 고친다[^4].
 | Dno를 7로 | 거부 | 7번 부서가 없다. 참조 무결성 위반 |
 | Ssn을 987654321로 | 거부 | 그 번호의 직원(Wallace)이 이미 있다. 키 제약 위반. 또 옛 번호를 가리키던 WORKS_ON 두 행이 갈 곳을 잃는다. 참조 무결성 위반 |
 
-연습 풀이는 수정에서 얻는 교훈을 한 줄로 적는다. "기본 키에도 외래 키에도 들지 않은 속성을 고치는 것은 대개 문제를 일으키지 않는다."[^5] "대개"라고 한 까닭이 있다. 그런 칸이라도 `UNIQUE`나 `NOT NULL`이 걸려 있으면 걸린다. Administration 부서의 Dname을 'Research'로 고치면 거부된다. Dname은 기본 키가 아니지만 `UNIQUE`로 적은 또 다른 키라서다[^s1].
+수정에서 얻는 교훈을 한 줄로 줄이면 이렇다. "기본 키에도 외래 키에도 들지 않은 속성을 고치는 것은 대개 문제를 일으키지 않는다." "대개"라고 한 까닭이 있다. 그런 칸이라도 `UNIQUE`나 `NOT NULL`이 걸려 있으면 걸린다. Administration 부서의 Dname을 'Research'로 고치면 거부된다. Dname은 기본 키가 아니지만 `UNIQUE`로 적은 또 다른 키라서다[^s1].
 
 ### 어겼을 때 할 수 있는 일
 
@@ -187,7 +187,7 @@ Dno는 DEPARTMENT의 Dnumber를 가리키는 외래 키다. 고친 뒤의 값이
 - **두 제약을 함께 어기면.** DBMS는 먼저 걸린 것 하나만 알려 주고 멈춘다. 그것만 고쳐 다시 돌리면 다음 것이 나온다. 그래서 문제를 풀 때는 표의 세 칸을 모두 따져야 한다.
 - **자료형과 속성 제약.** 위 셋 말고도 넣거나 고친 값이 자료형의 길이, `NOT NULL`, `CHECK`에 어긋나면 거부된다([속성 제약](/Hongs_Blog/studies/database-design/sql-attribute-constraints/))[^s1].
 - **흔한 실수.** 참조 무결성을 한쪽으로만 본다. 넣을 때는 "이 행이 가리키는 곳이 있는가"를, 지울 때는 "이 행을 가리키는 것이 있는가"를 본다. 방향이 반대다.
-- 연습: [제약 위반 찾기 연습](/Hongs_Blog/studies/database-design/constraint-violation-practice/)(슬라이드의 a~k 열한 문항)
+- 연습: [제약 위반 찾기 연습](/Hongs_Blog/studies/database-design/constraint-violation-practice/)(a~k 열한 문항)
 
 ## 연결
 
@@ -249,11 +249,6 @@ Dno는 DEPARTMENT의 Dnumber를 가리키는 외래 키다. 고친 뒤의 값이
 </details>
 
 
-[^1]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.25 (INSERT: Violating Integrity Constraints, "All constraints should not be violated!")
-[^2]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.25, p.27, p.29 (삽입·삭제·수정의 위반 예). 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.6. 슬라이드는 예만 보인다. 표는 이 예들과 연습 풀이(11.10-11-SQL-Solutions.pdf, p.12)의 교훈을 한데 묶은 것이다
-[^3]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.27 (DELETE: Violating Integrity Constraints)
-[^4]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.29 (UPDATE: Violating Integrity Constraints)
-[^5]: 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.11~12 ("Lesson: Updating an attribute that is neither part of a primary key nor part of a foreign key usually causes no problems")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "기본 키 수정은 삭제와 삽입을 이어서 한 것과 같다", "대개"의 반례(Dname), 어겼을 때 할 수 있는 일, 스스로 설명해 보기, 예제 둘, 자료형·속성 제약의 위반, 오해 항목, 확인 문제는 슬라이드에 없다. 기본 키 수정을 삭제와 삽입으로 보는 설명과 위반했을 때의 선택지는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 5.3절에 있다. 판정은 모두 SQLite 3.50에서 실행해 확인했고, 삽입·삭제·수정 300개씩의 무작위 연산으로 판정표를 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 위 판정표를 따지는 순서로 그렸다.
+[^s1]: 기본 키 수정을 삭제와 삽입으로 보는 설명과 위반했을 때의 선택지는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 5.3절에 있다. 판정은 모두 SQLite 3.50에서 실행해 확인했고, 삽입·삭제·수정 300개씩의 무작위 연산으로 판정표를 확인했다.
+[^s2]: 위 판정표를 따지는 순서로 그렸다.
 {% endraw %}

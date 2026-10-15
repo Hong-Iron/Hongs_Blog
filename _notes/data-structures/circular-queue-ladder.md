@@ -25,16 +25,16 @@ permalink: "/studies/data-structures/circular-queue-ladder/"
 {% raw %}
 사용 개념: [원형 큐](/Hongs_Blog/studies/data-structures/circular-queue/)의 AddQ, DeleteQ와 빔·가득 참 판정.
 
-"연산을 차례로 한 뒤의 front, rear, 칸 내용을 써라"는 문제는 같은 하위목표의 되풀이다. 칸 수를 $$n$$이라 하자. `front`는 첫 원소의 한 칸 앞, `rear`는 마지막 원소의 칸이다[^1].
+"연산을 차례로 한 뒤의 front, rear, 칸 내용을 써라"는 문제는 같은 하위목표의 되풀이다. 칸 수를 $$n$$이라 하자. `front`는 첫 원소의 한 칸 앞, `rear`는 마지막 원소의 칸이다.
 
 - ① 넣을 칸 계산: $$\text{next} = (\texttt{rear} + 1) \bmod n$$.
 - ② 넣기: next가 `front`와 같으면 가득 찼으니 아무것도 바꾸지 않는다. 다르면 `rear`를 next로 옮기고 그 칸에 쓴다.
 - ③ 빼기: `front == rear`면 비었다. 아니면 `front`를 $$(\texttt{front} + 1) \bmod n$$으로 옮기고 그 칸의 값을 돌려준다. 칸의 값은 지우지 않는다.
-- ④ 세기: 원소 수는 $$(\texttt{rear} - \texttt{front} + n) \bmod n$$이고, $$n - 1$$이면 가득 찼다.[^s1]
+- ④ 세기: 원소 수는 $$(\texttt{rear} - \texttt{front} + n) \bmod n$$이고, $$n - 1$$이면 가득 찼다.
 
 ## 문제 1 · 완전한 풀이
 
-6칸 원형 큐에 A, B, C가 [2], [3], [4]에 들어 있다. front = 1, rear = 4다. AddQ(D), DeleteQ(), AddQ(E)를 차례로 한다[^1].
+6칸 원형 큐에 A, B, C가 [2], [3], [4]에 들어 있다. front = 1, rear = 4다. AddQ(D), DeleteQ(), AddQ(E)를 차례로 한다.
 
 1. *AddQ(D), 넣을 칸 계산:* next = (4 + 1) mod 6 = 5.
 2. *넣기:* 5는 front(1)와 다르다. rear = 5, [5]에 D를 쓴다.
@@ -111,8 +111,4 @@ AddQ(5)는 next = (0 + 1) mod 4 = 1이 front와 같아서 들어가지 않는다
 <div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 네 문제의 단계마다 front, rear, 원소 수, 돌려준 값, 칸 내용을 확인했다 — [14_circular-queue-ladder_p4.c](/Hongs_Blog/studies/data-structures/code/14_circular-queue-ladder_p4/)</div>
 
 </div>
-
-
-[^1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.84~87, p.91~94 (front는 첫 원소의 한 칸 앞, rear는 마지막 원소의 자리. A, B, C가 든 6칸 큐에 D를 넣고 하나를 빼는 그림. 빔과 가득 참의 조건, AddQ와 DeleteQ)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1의 AddQ(E)와 문제 2 ~ 4의 수치는 슬라이드에 없다. 슬라이드 p.84 ~ 94의 연산을 손으로 따라가도록 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

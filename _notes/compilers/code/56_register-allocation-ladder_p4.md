@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/56_register-allocation-ladder_p4/"
 [레지스터 할당 예제 사다리](/Hongs_Blog/studies/compilers/register-allocation-ladder/) 문서의 문제 4 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 레지스터 할당 예제 사다리 문제 4: 16회 슬라이드의 코드에서 K = 3일 때 c 대신 f, e를 내보내 본다.
+# 레지스터 할당 예제 사다리 문제 4: 공통 프로그램에서 K = 3일 때 c 대신 f, e를 내보내 본다.
 # 실행: python3 56_register-allocation-ladder_p4.py  (표준 라이브러리만 쓴다)
 # 함수는 56_register-spilling_impl.py에서 복사했다.
 from itertools import combinations, product

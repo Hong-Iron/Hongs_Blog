@@ -23,10 +23,9 @@ permalink: "/studies/data-structures/code/02_operation-step-count_verify/"
 """연산 횟수와 단계 수 세기: 삽입 정렬을 실제로 돌리며 세어, 문서의 식과 맞춘다.
 
 문서: 02.연산 횟수와 단계 수 세기 (예시, 비교 횟수, s/e 표, 실용 시간표, 카드)
-출처: 자료구조 2주차 슬라이드 p.6~20
 실행: python3 02_operation-step-count_verify.py
 
-세는 규칙 (슬라이드 p.14, p.16의 s/e 표 그대로)
+세는 규칙 (문서의 s/e 표 그대로)
   for (i = 1; i < n; i++)                     실행 한 번에 1단계  -> 줄 이름 outer
   int t = a[i];                               1단계              -> t
   for (j = i - 1; j >= 0 && t < a[j]; j--)    1단계              -> inner
@@ -41,7 +40,7 @@ permalink: "/studies/data-structures/code/02_operation-step-count_verify/"
      모든 입력에서 단계 수 = 4n - 3 + 2 * (자리가 뒤바뀐 쌍의 수).
   3. 최악일 때 i번째 바퀴: 안쪽 for 머리줄 i+1번, 옮기기 i번, 바퀴 전체 2i+3단계. 비교는 i번.
   4. 평균 비교 횟수 = n(n-1)/4 + n - (1 + 1/2 + ... + 1/n)  (모든 순서가 같은 확률일 때, 분수로 정확히).
-  5. 실용 시간표 (초당 10^9 명령): 슬라이드 셋째 줄의 값은 n = 10^6의 값이다.
+  5. 실용 시간표 (초당 10^9 명령): 문서 시간표 셋째 줄의 값은 n = 10^6의 값이다.
   6. n을 두 배로 늘리면 최악 단계 수는 약 네 배, 최선 단계 수는 약 두 배.
 """
 from fractions import Fraction
@@ -51,7 +50,7 @@ import random
 
 
 def insertion_sort_counts(src):
-    """슬라이드의 삽입 정렬을 한 줄씩 그대로 따라가며 센다.
+    """문서의 삽입 정렬을 한 줄씩 그대로 따라가며 센다.
     돌려주는 것: (정렬 결과, 비교 횟수, 줄별 실행 횟수, 바퀴별 기록)"""
     a = list(src)
     n = len(a)
@@ -120,10 +119,10 @@ def seconds(count, rate=10 ** 9):
 
 
 def main():
-    # --- 슬라이드 p.11: a = [1, 2, 3, 4]에 t = 0을 끼우면 비교 4번 ---
+    # --- 최악의 한 바퀴: a = [1, 2, 3, 4]에 t = 0을 끼우면 비교 4번 ---
     _, _, _, rounds = insertion_sort_counts([1, 2, 3, 4, 0])
     assert rounds[-1] == (4, 4, 5, 4)      # i = 4: 비교 4, 머리줄 5, 옮기기 4
-    print("[OK] p.11: [1, 2, 3, 4]에 0을 끼우는 바퀴는 비교 4번, 머리줄 5번, 옮기기 4번")
+    print("[OK] 최악의 한 바퀴: [1, 2, 3, 4]에 0을 끼우는 바퀴는 비교 4번, 머리줄 5번, 옮기기 4번")
 
     # --- 문서 예시: [4, 3, 2, 1] 추적 표 ---
     out, cmp_, lines, rounds = insertion_sort_counts([4, 3, 2, 1])
@@ -225,7 +224,7 @@ def main():
     assert r9[0] == 1.0 and abs(r9[1] - 29.9) < 0.1 and abs(r9[2] / year - 31.7) < 0.1 and r9[3] / year > 3e10
     print("[OK] 시간표: 셋째 줄의 1밀리초·20밀리초·17분·32년은 n = 10^6의 값 (n = 10^9이면 1초·30초·32년·317억 년)")
 
-    # --- p.20: 2^n을 n^3으로 (보충 예 n = 60) ---
+    # --- 2^n 방법을 n^3 방법으로 (n = 60) ---
     assert abs(seconds(2 ** 60) / year - 36.5) < 0.1 and seconds(60 ** 3) == 0.000216
     assert 2 ** 70 / 2 ** 60 == 1024           # 1,000배 빠른 기계로는 n이 10쯤만 늘어난다
     print(f"[OK] n = 60: 2^n은 {seconds(2 ** 60) / year:.1f}년, n^3은 {seconds(60 ** 3) * 1000:.3f}밀리초")

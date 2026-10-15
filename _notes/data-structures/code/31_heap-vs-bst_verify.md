@@ -23,19 +23,18 @@ permalink: "/studies/data-structures/code/31_heap-vs-bst_verify/"
 """최대 힙과 이진 탐색 트리 비교: 문서에 실은 예와 카드의 답 확인.
 
 문서: 1-2학기/자료구조/3.개념집/31.최대 힙과 이진 탐색 트리 비교.md
-출처: 자료구조 6주차 슬라이드 p.73~77, 9주차 p.5~6, 9주차 수업 문제 슬라이드 12, 21. 같은 키로 견준 예는 에이전트 보충.
 실행: python3 31_heap-vs-bst_verify.py
-힙은 강의처럼 1번 칸부터 쓴다(부모 i // 2, 자식 2i, 2i + 1).
+힙은 최대 힙 문서처럼 1번 칸부터 쓴다(부모 i // 2, 자식 2i, 2i + 1).
 
 확인하는 것
   1. 같은 키 아홉 개를 같은 순서(20, 10, 40, 6, 15, 30, 2, 8, 25)로 넣으면
-     최대 힙의 배열은 40 25 30 15 10 20 2 6 8, 이진 탐색 트리는 슬라이드의 그림(전위 20 10 6 2 8 15 40 30 25).
+     최대 힙의 배열은 40 25 30 15 10 20 2 6 8, 이진 탐색 트리는 이진 탐색 트리 문서의 예시 나무(전위 20 10 6 2 8 15 40 30 25).
   2. 그 힙은 이진 탐색 트리가 아니고, 그 이진 탐색 트리는 힙이 아니다(20 < 40, 완전 이진 트리도 아니다).
   3. 가장 큰 값: 힙은 1번 칸 하나, 이진 탐색 트리는 오른쪽으로 내려가 노드 2개.
   4. 없는 값 9 찾기: 힙은 가지를 쳐도 노드 9개를 다 보고, 이진 탐색 트리는 4개(20, 10, 6, 8)만 본다.
   5. 크기 순으로 읽기: 이진 탐색 트리의 중위 순회는 오름차순, 힙의 배열 순서는 정렬이 아니다.
   6. 높이(간선 수): 힙은 늘 floor(lg n). 1 ~ 9를 오름차순으로 넣으면 힙의 높이는 3, 이진 탐색 트리의 높이는 8.
-  7. 수업 문제 슬라이드 21의 두 그림이 각각 최대 힙, 최소 힙이다. 무작위 300묶음에서 1 ~ 6이 모두 같은 꼴로 맞다.
+  7. 카드 C3의 나무와 그 짝인 최소 힙 그림이 각각 최대 힙, 최소 힙이다. 무작위 300묶음에서 1 ~ 6이 모두 같은 꼴로 맞다.
 """
 import math
 import random
@@ -182,7 +181,7 @@ def main():
     # 1
     assert heap[1:] == [40, 25, 30, 15, 10, 20, 2, 6, 8] and is_max_heap(heap)
     assert preorder(root, []) == [20, 10, 6, 2, 8, 15, 40, 30, 25]
-    print("[OK] 같은 순서로 넣기: 힙 배열 40 25 30 15 10 20 2 6 8, 이진 탐색 트리는 슬라이드 그림")
+    print("[OK] 같은 순서로 넣기: 힙 배열 40 25 30 15 10 20 2 6 8, 이진 탐색 트리는 예시 나무")
 
     # 2
     assert not is_bst(heap_as_tree(heap))
@@ -211,11 +210,11 @@ def main():
     print("[OK] 1 ~ 9를 오름차순으로 넣으면 힙의 높이 3, 이진 탐색 트리의 높이 8")
 
     # 7
-    slide_max = [None, 9, 7, 6, 5, 4, 3, 2, 2, 1, 3]
-    slide_min = [None, 1, 4, 2, 7, 5, 3, 3, 7, 8, 9]
-    assert is_max_heap(slide_max) and not is_min_heap(slide_max)
-    assert is_min_heap(slide_min) and not is_max_heap(slide_min)
-    assert not is_bst(heap_as_tree(slide_max))
+    c3_max = [None, 9, 7, 6, 5, 4, 3, 2, 2, 1, 3]
+    c3_min = [None, 1, 4, 2, 7, 5, 3, 3, 7, 8, 9]
+    assert is_max_heap(c3_max) and not is_min_heap(c3_max)
+    assert is_min_heap(c3_min) and not is_max_heap(c3_min)
+    assert not is_bst(heap_as_tree(c3_max))
     rng = random.Random(20261012)
     for _ in range(300):
         n = rng.randint(2, 30)
@@ -233,7 +232,7 @@ def main():
         assert bst_search_count(r, missing)[1] <= height(r) + 1
         if n >= 3:
             assert not is_bst(heap_as_tree(h))      # 키가 셋 이상이면 힙은 이진 탐색 트리일 수 없다
-    print("[OK] 슬라이드 21의 두 그림은 최대 힙과 최소 힙. 무작위 300묶음에서도 같은 성질")
+    print("[OK] 카드 C3의 나무와 짝 그림은 최대 힙과 최소 힙. 무작위 300묶음에서도 같은 성질")
     print("ALL CHECKS PASSED")
 
 

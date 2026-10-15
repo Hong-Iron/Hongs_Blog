@@ -22,7 +22,7 @@ permalink: "/studies/database-design/"
 - [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/), [트리](/Hongs_Blog/studies/discrete-math/trees/), [로그](/Hongs_Blog/studies/college-math/logarithm/), [등비급수](/Hongs_Blog/studies/college-math/geometric-series/) (공학수학): B-트리의 높이를 증명할 때 쓴다
 - [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/), [트리 순회와 이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/) (알고리즘), [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/), [이진 탐색 트리의 삭제](/Hongs_Blog/studies/data-structures/bst-delete/) (1-2학기 자료구조): B-트리는 이진 탐색 트리의 갈래 수를 늘린 것이다
 
-> 자료 출처: 중앙대 데이터베이스 설계 2024년 가을 학기 강의 슬라이드 26개(2~7주차, 9~14주차). 1주차(강의 소개), 8주차(중간고사), 15주차(복습과 심화) 자료는 없다. 일정표에 있던 관계 대수, 프로그램 안에서 쓰는 SQL, 정규화는 슬라이드가 없어 다루지 않았다. 슬라이드의 SQL은 특정 제품이 아니라 교재(Elmasri & Navathe)의 표준 문법이다. 질의와 결과 표는 SQLite(파이썬 `sqlite3`)로 실행해 확인했고, SQLite가 받지 않는 문장은 PostgreSQL 16으로 확인했다. 두 제품이 다르게 도는 곳과 슬라이드의 질의가 그대로는 돌지 않는 곳은 문서에 적고 `원본 오류 의심` 표시를 남겼다. 예제는 교재의 COMPANY 데이터베이스(표 6개, 45줄)를 쓴다. B-트리의 높이는 볼트 표기대로 간선 수로 세고, 삭제는 이 수업의 방식을 따랐다.
+> 질의와 결과 표는 SQLite(파이썬 `sqlite3`)로 실행해 확인했고, SQLite가 받지 않는 문장은 PostgreSQL 16으로 확인했다. 예제는 교재의 COMPANY 데이터베이스(표 6개, 45줄)를 쓴다.
 
 
 ## 2주차 · 데이터베이스와 사용자, 데이터베이스 시스템의 개념과 구조
@@ -46,13 +46,11 @@ permalink: "/studies/database-design/"
 | 05 | [데이터 모델의 종류](/Hongs_Blog/studies/database-design/data-model-categories/) | 누구에게 보여 주느냐로 갈리는 개념적·표현적·물리적 데이터 모델 | [verify](/Hongs_Blog/studies/database-design/code/05_data-model-categories_verify/) | — |
 | 06 | [스키마와 인스턴스](/Hongs_Blog/studies/database-design/schema-and-instance/) | 거의 안 바뀌는 틀(스키마)과 넣고 고칠 때마다 바뀌는 내용(상태) | [verify](/Hongs_Blog/studies/database-design/code/06_schema-and-instance_verify/) | — |
 | 07 | [3단계 스키마 구조](/Hongs_Blog/studies/database-design/three-schema-architecture/) | 외부·개념·내부 세 단계의 설명과 그 사이에서 요청을 옮겨 주는 사상 | [verify](/Hongs_Blog/studies/database-design/code/07_three-schema-architecture_verify/) | — |
-| 08 | [데이터 독립성](/Hongs_Blog/studies/database-design/data-independence/) | 아래 단계의 스키마를 바꿔도 바로 위 단계와 프로그램은 그대로 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/08_data-independence_verify/) | — |
+| 08 | [데이터 독립성](/Hongs_Blog/studies/database-design/data-independence/) | 아래 단계의 스키마를 바꿔도 바로 위 단계와 프로그램은 그대로 | [verify](/Hongs_Blog/studies/database-design/code/08_data-independence_verify/) | — |
 | 09 | [DBMS 언어와 인터페이스](/Hongs_Blog/studies/database-design/dbms-languages-interfaces/) | 틀을 정하는 말(DDL·SDL·VDL)과 자료를 다루는 말(DML), 말 대신 쓰는 다섯 가지 창구 | [verify](/Hongs_Blog/studies/database-design/code/09_dbms-languages-interfaces_verify/) | — |
 | 10 | [DBMS 구성 모듈](/Hongs_Blog/studies/database-design/dbms-component-modules/) | 어느 길로 들어온 요청이든 실행 시간 처리기 하나로 모여 저장 데이터 관리자를 거쳐 디스크에 닿는다 | [verify](/Hongs_Blog/studies/database-design/code/10_dbms-component-modules_verify/) | — |
 
 카탈로그가 메타데이터를 따로 둔다는 이야기는 [데이터와 메타데이터](/Hongs_Blog/studies/data-and-information/data-metadata/) 문서의 `과목별 관점`에 합쳤다.
-자료: 2-1_DB-users · 2-2_DB-system-architecture
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 외부·개념·내부 세 단계를 그린 뒤, 두 데이터 독립성이 어느 경계에 놓이는지와 경계마다 무엇이 바뀌고 무엇이 그대로인지 써 본다.
 
 ## 3주차 · B-트리의 뜻과 높이, 검색과 삽입
@@ -69,16 +67,14 @@ permalink: "/studies/database-design/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 11 | [B-트리](/Hongs_Blog/studies/database-design/b-tree/) | 노드 하나에 키를 여러 개 담아 디스크를 덜 읽는 균형 탐색 트리. 키 수는 $$t - 1$$~$$2t - 1$$개, 잎의 깊이는 모두 같다 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/11_b-tree_verify/) | — |
+| 11 | [B-트리](/Hongs_Blog/studies/database-design/b-tree/) | 노드 하나에 키를 여러 개 담아 디스크를 덜 읽는 균형 탐색 트리. 키 수는 $$t - 1$$~$$2t - 1$$개, 잎의 깊이는 모두 같다 | [verify](/Hongs_Blog/studies/database-design/code/11_b-tree_verify/) | — |
 | 12 | [B-트리의 높이](/Hongs_Blog/studies/database-design/b-tree-height/) | 키 $$n$$개면 높이 $$h \le \log_t \frac{n+1}{2}$$, 높이 $$h$$에 많아야 $$(2t)^{h+1} - 1$$개 | [verify](/Hongs_Blog/studies/database-design/code/12_b-tree-height_verify/) | — |
 | 13 | [B-트리 검색](/Hongs_Blog/studies/database-design/b-tree-search/) | 노드의 키와 견주어 여러 갈래 가운데 하나로 내려간다. $$O(t \log_t n)$$, 노드 안에서 이분 탐색을 쓰면 $$O(\lg n)$$ | [impl](/Hongs_Blog/studies/database-design/code/13_b-tree-search_impl/) | — |
 | 14 | [B-트리 노드 쪼개기](/Hongs_Blog/studies/database-design/b-tree-split-child/) | 가득 찬 노드의 가운데 키를 부모로 올리고 키 $$t - 1$$개짜리 둘로 가른다 | — | — |
-| 15 | [B-트리 삽입](/Hongs_Blog/studies/database-design/b-tree-insert/) | 내려가는 길의 가득 찬 노드를 미리 쪼개고 잎에 넣는다. 뿌리를 쪼갤 때만 높아진다 (강조)[^n1] | [impl](/Hongs_Blog/studies/database-design/code/15_b-tree-insert_impl/) | [B-트리 삽입 예제 사다리](/Hongs_Blog/studies/database-design/b-tree-insert-ladder/) |
+| 15 | [B-트리 삽입](/Hongs_Blog/studies/database-design/b-tree-insert/) | 내려가는 길의 가득 찬 노드를 미리 쪼개고 잎에 넣는다. 뿌리를 쪼갤 때만 높아진다 | [impl](/Hongs_Blog/studies/database-design/code/15_b-tree-insert_impl/) | [B-트리 삽입 예제 사다리](/Hongs_Blog/studies/database-design/b-tree-insert-ladder/) |
 | 16 | [B-트리와 이진 탐색 트리 비교](/Hongs_Blog/studies/database-design/b-tree-vs-bst/) | 노드 하나의 키 수가 갈래 수, 자라는 쪽, 디스크 읽기 횟수를 가른다 | — | — |
 
 노드 안에서 이분 탐색을 하면 걸리는 시간은 [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/), 색인과 디스크 접근 비용은 [파일 조직](/Hongs_Blog/studies/operating-systems/file-organization/)과 [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) 문서의 `과목별 관점`에 합쳤다.
-자료: 3-2_B-tree-insertion · 3_B-tree-solutions · 3_B-tree
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 B-트리가 지켜야 하는 성질 세 가지를 쓰고, 빈 트리($$t = 2$$)에 F, S, Q, K를 넣은 모양을 그려 본다.
 
 ## 4주차 · B-트리 삭제, ER 모델 1: 개체·속성·관계
@@ -95,7 +91,7 @@ permalink: "/studies/database-design/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 17 | [B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/) | 잎에서 지우고, 모자라면 형제에게 빌리거나 부모의 키를 내려 합친다(교재와 다른 이 수업의 방식) (강조)[^n1] | [impl](/Hongs_Blog/studies/database-design/code/17_b-tree-delete_impl/) | [B-트리 삭제 예제 사다리](/Hongs_Blog/studies/database-design/b-tree-delete-ladder/) · [B-트리 연습](/Hongs_Blog/studies/database-design/b-tree-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/17_b-tree-practice_p5/) · [문제 코드](/Hongs_Blog/studies/database-design/code/17_b-tree-practice_p6/) |
+| 17 | [B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/) | 잎에서 지우고, 모자라면 형제에게 빌리거나 부모의 키를 내려 합친다(CLRS와 다른 방식) | [impl](/Hongs_Blog/studies/database-design/code/17_b-tree-delete_impl/) | [B-트리 삭제 예제 사다리](/Hongs_Blog/studies/database-design/b-tree-delete-ladder/) · [B-트리 연습](/Hongs_Blog/studies/database-design/b-tree-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/17_b-tree-practice_p5/) · [문제 코드](/Hongs_Blog/studies/database-design/code/17_b-tree-practice_p6/) |
 | 18 | [데이터베이스 설계 과정](/Hongs_Blog/studies/database-design/database-design-process/) | 요구를 묻고 → 그림(ER)으로 정리하고 → 표로 옮기고 → 저장 구조를 정하는 네 단계 | — | — |
 | 19 | [개체 타입과 개체 집합](/Hongs_Blog/studies/database-design/entity-type-and-set/) | 개체 타입은 이름과 속성 목록이라는 틀, 개체 집합은 지금 들어 있는 개체들 | [verify](/Hongs_Blog/studies/database-design/code/19_entity-type-and-set_verify/) | — |
 | 20 | [속성의 종류](/Hongs_Blog/studies/database-design/er-attribute-types/) | 쪼갤 수 있는가(복합/단순), 값이 여럿인가(다치/단일값), 저장하는가(저장/유도)로 속성을 가름 | [verify](/Hongs_Blog/studies/database-design/code/20_er-attribute-types_verify/) | — |
@@ -103,9 +99,7 @@ permalink: "/studies/database-design/"
 | 22 | [관계 타입과 관계 집합](/Hongs_Blog/studies/database-design/relationship-type-and-set/) | 개체 타입들을 잇는 틀과 그 인스턴스들의 집합 $$R \subseteq E_1 \times \cdots \times E_n$$, 차수 | [verify](/Hongs_Blog/studies/database-design/code/22_relationship-type-and-set_verify/) | — |
 | 23 | [역할 이름과 재귀 관계](/Hongs_Blog/studies/database-design/recursive-relationship/) | 같은 개체 타입이 두 번 끼는 관계와, 구실을 가르는 역할 이름 | [verify](/Hongs_Blog/studies/database-design/code/23_recursive-relationship_verify/) | — |
 
-B-트리 삭제(17)는 4주차 앞쪽, ER 모델(18~23)은 뒤쪽 강의다. 삭제는 CLRS와 다른 이 수업의 방식이다. 내부 노드의 키는 늘 왼쪽 아래에서 가장 큰 키로 바꾼 뒤 잎에서 지운다.
-자료: 4-1_B-tree-deletion · 4-2_ERmodel · 4_B-tree-solutions
-필기: 아직 없다.
+B-트리 삭제(17)는 CLRS와 다른 방식을 따른다. 내부 노드의 키는 늘 왼쪽 아래에서 가장 큰 키로 바꾼 뒤 잎에서 지운다.
 떠올려 보기: 노트를 닫고 B-트리 삭제의 네 경우(1-1, 1-2a, 1-2b, 2)를 "언제, 무엇을 한다"로 쓴다. 이어서 개체·속성·관계 타입이 각각 무엇인지, 타입과 집합이 어떻게 다른지 COMPANY 예로 써 본다.
 
 ## 5주차 · ER 모델 2: 제약, 약한 개체, ER 다이어그램
@@ -124,14 +118,12 @@ B-트리 삭제(17)는 4주차 앞쪽, ER 모델(18~23)은 뒤쪽 강의다. 삭
 |---|---|---|---|---|
 | 24 | [카디널리티 비율](/Hongs_Blog/studies/database-design/cardinality-ratio/) | 개체 하나가 낄 수 있는 인스턴스 수의 위 한계 1:1, 1:N, M:N | [verify](/Hongs_Blog/studies/database-design/code/24_cardinality-ratio_verify/) | — |
 | 25 | [참여 제약](/Hongs_Blog/studies/database-design/participation-constraint/) | 모든 개체가 관계에 끼어야 하는가(전체 참여) 아닌가(부분 참여) | [verify](/Hongs_Blog/studies/database-design/code/25_participation-constraint_verify/) | — |
-| 26 | [관계 타입의 속성](/Hongs_Blog/studies/database-design/relationship-attributes/) | 짝에 붙는 값은 관계에 적는다. 1:1·1:N이면 개체로 옮길 수 있고 M:N이면 못 옮긴다 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/26_relationship-attributes_verify/) | — |
-| 27 | [약한 개체 타입](/Hongs_Blog/studies/database-design/weak-entity-type/) | 자기 키가 없어 주인 개체와 부분 키로 가려내는 개체 타입. 식별 관계에 늘 전체 참여 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/27_weak-entity-type_verify/) | — |
+| 26 | [관계 타입의 속성](/Hongs_Blog/studies/database-design/relationship-attributes/) | 짝에 붙는 값은 관계에 적는다. 1:1·1:N이면 개체로 옮길 수 있고 M:N이면 못 옮긴다 | [verify](/Hongs_Blog/studies/database-design/code/26_relationship-attributes_verify/) | — |
+| 27 | [약한 개체 타입](/Hongs_Blog/studies/database-design/weak-entity-type/) | 자기 키가 없어 주인 개체와 부분 키로 가려내는 개체 타입. 식별 관계에 늘 전체 참여 | [verify](/Hongs_Blog/studies/database-design/code/27_weak-entity-type_verify/) | — |
 | 28 | [일반 개체 타입과 약한 개체 타입 비교](/Hongs_Blog/studies/database-design/regular-vs-weak-entity/) | 자기 속성만으로 가려지는가로 가른다. 전체 참여 여부로 가르지 않는다 | — | — |
 | 29 | [ER 다이어그램 표기법](/Hongs_Blog/studies/database-design/er-diagram-notation/) | 네모·마름모·타원과 겹선·밑줄의 뜻, COMPANY 전체 그림 | — | — |
 | 30 | [(min, max) 표기](/Hongs_Blog/studies/database-design/min-max-notation/) | 개체 옆에 적는 참여 횟수의 아래·위 한계. 1, N 표기와 숫자 자리가 반대다 | [verify](/Hongs_Blog/studies/database-design/code/30_min-max-notation_verify/) | — |
 
-자료: 5_ERmodel-solution · 5_ERmodel
-필기: 아직 없다.
 떠올려 보기: COMPANY의 관계 타입 여섯 개를 적고, 각각의 비율·참여·관계의 속성을 표로 써 본다.
 
 ## 6주차 · ER 다이어그램 설계 연습, 관계형 데이터 모델
@@ -153,13 +145,11 @@ B-트리 삭제(17)는 4주차 앞쪽, ER 모델(18~23)은 뒤쪽 강의다. 삭
 | 33 | [릴레이션의 특성](/Hongs_Blog/studies/database-design/relation-characteristics/) | 줄에 순서가 없고 한 칸에 값 하나, 없는 값은 NULL | [verify](/Hongs_Blog/studies/database-design/code/33_relation-characteristics_verify/) | — |
 | 34 | [슈퍼키·후보 키·기본 키](/Hongs_Blog/studies/database-design/relational-keys/) | 값이 안 겹치는 묶음(슈퍼키), 그중 더 줄일 수 없는 것(후보 키), 대표로 고른 하나(기본 키) | [verify](/Hongs_Blog/studies/database-design/code/34_relational-keys_verify/) | — |
 | 35 | [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/) | 릴레이션 스키마들과 지켜야 할 규칙의 묶음, COMPANY의 표 6개와 45줄 | [verify](/Hongs_Blog/studies/database-design/code/35_relational-database-schema_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/35_relational-database-schema_verify-sql/) | — |
-| 36 | [개체 무결성 제약](/Hongs_Blog/studies/database-design/entity-integrity-constraint/) | 기본 키는 NULL일 수 없다 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/36_entity-integrity-constraint_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/36_entity-integrity-constraint_verify-sql/) | — |
-| 37 | [참조 무결성 제약과 외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/) | 다른 릴레이션을 가리키는 값은 그곳에 실제로 있거나 NULL이어야 한다 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/37_referential-integrity-foreign-key_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/37_referential-integrity-foreign-key_verify-sql/) | [외래 키 찾기 연습](/Hongs_Blog/studies/database-design/foreign-key-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/37_foreign-key-practice_p1/) · [문제 코드](/Hongs_Blog/studies/database-design/code/37_foreign-key-practice_p2/) |
+| 36 | [개체 무결성 제약](/Hongs_Blog/studies/database-design/entity-integrity-constraint/) | 기본 키는 NULL일 수 없다 | [verify](/Hongs_Blog/studies/database-design/code/36_entity-integrity-constraint_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/36_entity-integrity-constraint_verify-sql/) | — |
+| 37 | [참조 무결성 제약과 외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/) | 다른 릴레이션을 가리키는 값은 그곳에 실제로 있거나 NULL이어야 한다 | [verify](/Hongs_Blog/studies/database-design/code/37_referential-integrity-foreign-key_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/37_referential-integrity-foreign-key_verify-sql/) | [외래 키 찾기 연습](/Hongs_Blog/studies/database-design/foreign-key-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/37_foreign-key-practice_p1/) · [문제 코드](/Hongs_Blog/studies/database-design/code/37_foreign-key-practice_p2/) |
 | 38 | [키의 종류 비교](/Hongs_Blog/studies/database-design/key-kinds-comparison/) | 슈퍼키·후보 키·기본 키·외래 키를 "겹쳐도 되나, NULL이어도 되나"로 가르기 | — | — |
 
-ER 설계 절차(31)는 4~5주차 슬라이드에 흩어진 단계를 6주차 설계 연습과 함께 모은 문서다. 릴레이션이 곱집합의 부분집합이라는 것은 [관계와 그 성질](/Hongs_Blog/studies/discrete-math/relations/), 키와 일대다 관계를 함수로 읽는 법은 [함수의 성질과 집합의 크기](/Hongs_Blog/studies/discrete-math/function-properties/) 문서의 `과목별 관점`에 합쳤다.
-자료: 6-1_ER-diagram-solution · 6-1_ER-diagram · 6-2_relational-model
-필기: 아직 없다.
+ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 연습과 함께 한 장에 모은 문서다. 릴레이션이 곱집합의 부분집합이라는 것은 [관계와 그 성질](/Hongs_Blog/studies/discrete-math/relations/), 키와 일대다 관계를 함수로 읽는 법은 [함수의 성질과 집합의 크기](/Hongs_Blog/studies/discrete-math/function-properties/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 PART_ORDER 요구사항만 보고 개체 타입, 속성, 관계 타입을 처음부터 다시 적어 본다. 이어서 세 제약(키, 개체 무결성, 참조 무결성)이 각각 무엇을 막는지와 네 가지 키의 차이를 써 본다.
 
 ## 7주차 · ER 그림을 표로 옮기기
@@ -180,11 +170,9 @@ ER 설계 절차(31)는 4~5주차 슬라이드에 흩어진 단계를 6주차 �
 | 40 | [다치 속성의 사상](/Hongs_Blog/studies/database-design/mapping-multivalued-attributes/) | 값이 여럿인 속성은 (주인의 키, 값) 두 칸짜리 표로 뗀다 | [verify](/Hongs_Blog/studies/database-design/code/40_mapping-multivalued-attributes_verify/) | — |
 | 41 | [일대일 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-one-to-one-relationship/) | 일대일은 전체 참여 쪽에 외래 키 하나, 합치기와 교차 참조는 대안 | [verify](/Hongs_Blog/studies/database-design/code/41_mapping-one-to-one-relationship_verify/) | — |
 | 42 | [일대다 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-one-to-many-relationship/) | 일대다는 N쪽 표에 외래 키 하나 | [verify](/Hongs_Blog/studies/database-design/code/42_mapping-one-to-many-relationship_verify/) | — |
-| 43 | [다대다·n항 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-many-to-many-relationship/) | 다대다와 n항은 외래 키를 묶어 기본 키로 삼는 관계 릴레이션 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/43_mapping-many-to-many-relationship_verify/) | — |
+| 43 | [다대다·n항 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-many-to-many-relationship/) | 다대다와 n항은 외래 키를 묶어 기본 키로 삼는 관계 릴레이션 | [verify](/Hongs_Blog/studies/database-design/code/43_mapping-many-to-many-relationship_verify/) | — |
 | 44 | [ER-관계형 사상 절차](/Hongs_Blog/studies/database-design/er-to-relational-mapping/) | ER 그림을 일곱 단계로 표에 옮기는 순서와 옮기면 사라지는 규칙 | [verify](/Hongs_Blog/studies/database-design/code/44_er-to-relational-mapping_verify/) | [ER-관계형 사상 예제 사다리](/Hongs_Blog/studies/database-design/er-mapping-ladder/) · [UNIVERSITY 사상 연습](/Hongs_Blog/studies/database-design/university-mapping-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/44_er-mapping-ladder_p4/) · [문제 코드](/Hongs_Blog/studies/database-design/code/44_university-mapping-practice_p1/) |
 
-자료: 7-relational-model-solutions · 7_relational-model
-필기: 아직 없다.
 떠올려 보기: COMPANY ER 그림을 떠올려 일곱 단계로 옮기고, 릴레이션 여섯 개와 외래 키 여덟 개를 적어 본다.
 
 ## 9주차 · SQL 맛보기
@@ -205,11 +193,9 @@ ER 설계 절차(31)는 4~5주차 슬라이드에 흩어진 단계를 6주차 �
 | 46 | [CREATE SCHEMA와 CREATE TABLE](/Hongs_Blog/studies/database-design/sql-create-table/) | 표의 이름·열·처음 거는 제약을 적어 빈 틀 만들기, 서로 가리키는 외래 키는 나중에 붙인다 | [verify](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/46_sql-create-table_verify-sql/) | — |
 | 50 | [SELECT-FROM-WHERE](/Hongs_Blog/studies/database-design/select-from-where/) | 어느 표에서 어떤 행의 어느 칸을 꺼낼지 적는 기본 질의, 모든 조합에서 조건으로 거른다 | [verify](/Hongs_Blog/studies/database-design/code/50_select-from-where_verify/) | — |
 | 51 | [INSERT·DELETE·UPDATE](/Hongs_Blog/studies/database-design/sql-insert-delete-update/) | 행을 넣고 지우고 고치는 세 문장, 조건에 맞는 모든 행에 한꺼번에 | [verify](/Hongs_Blog/studies/database-design/code/51_sql-insert-delete-update_verify/) | — |
-| 52 | [갱신 연산과 제약 위반](/Hongs_Blog/studies/database-design/update-constraint-violations/) | 삽입은 세 제약 모두, 삭제는 참조 무결성만, 수정은 고치는 칸에 따라 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/52_update-constraint-violations_verify/) | [제약 위반 찾기 연습](/Hongs_Blog/studies/database-design/constraint-violation-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/52_constraint-violation-practice_p1/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/52_constraint-violation-practice_p1-sql/) |
+| 52 | [갱신 연산과 제약 위반](/Hongs_Blog/studies/database-design/update-constraint-violations/) | 삽입은 세 제약 모두, 삭제는 참조 무결성만, 수정은 고치는 칸에 따라 | [verify](/Hongs_Blog/studies/database-design/code/52_update-constraint-violations_verify/) | [제약 위반 찾기 연습](/Hongs_Blog/studies/database-design/constraint-violation-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/52_constraint-violation-practice_p1/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/52_constraint-violation-practice_p1-sql/) |
 
-9주차 자료의 앞 절반은 6~7주차 복습이고, 뒤 절반은 표 만들기, 검색, 고치기를 한 번씩 훑는다. 10주차가 표 만들기와 검색을 자세히 다시 다룬다. 번호는 표를 만드는 문서(46~49)를 앞에 모으고 검색(50), 고치기(51~52), 참조 동작(53) 순서로 두어서, 9주차와 10주차 표의 번호가 서로 섞여 있다.
-자료: 9_introduction-to-basic-SQL
-필기: 아직 없다.
+번호는 표를 만드는 문서(46~49)를 앞에 모으고 검색(50), 고치기(51~52), 참조 동작(53) 순서로 두었다. 그래서 이 절과 다음 절의 표에서 번호가 서로 섞여 있다.
 떠올려 보기: 노트를 닫고 SELECT 문의 세 절이 하는 일과, 삽입·삭제·수정이 각각 어길 수 있는 제약을 써 본다.
 
 ## 10주차 · SQL로 표 만들기, 기본 검색
@@ -229,15 +215,13 @@ ER 설계 절차(31)는 4~5주차 슬라이드에 흩어진 단계를 6주차 �
 | 47 | [SQL 자료형](/Hongs_Blog/studies/database-design/sql-data-types/) | 열마다 받을 값의 꼴 정하기(수·문자열·비트열·불·날짜와 시각), 얼마나 막는지는 제품마다 다르다 | [verify](/Hongs_Blog/studies/database-design/code/47_sql-data-types_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/47_sql-data-types_verify-sql/) | — |
 | 48 | [속성 제약 NOT NULL·DEFAULT·CHECK](/Hongs_Blog/studies/database-design/sql-attribute-constraints/) | 열 하나에 거는 세 규칙: 빈칸 금지, 안 적으면 넣을 값, 받을 범위 | [verify](/Hongs_Blog/studies/database-design/code/48_sql-attribute-constraints_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/48_sql-attribute-constraints_verify-sql/) | — |
 | 49 | [PRIMARY KEY·UNIQUE·FOREIGN KEY 절](/Hongs_Blog/studies/database-design/sql-key-clauses/) | 기본 키·또 다른 키·외래 키를 CREATE TABLE에 적는 세 절과 제약에 이름 붙이기 | [verify](/Hongs_Blog/studies/database-design/code/49_sql-key-clauses_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/49_sql-key-clauses_verify-sql/) | — |
-| 53 | [참조 동작 SET NULL·CASCADE·SET DEFAULT](/Hongs_Blog/studies/database-design/referential-triggered-actions/) | 가리킴 받는 행이 지워지거나 키가 고쳐질 때 가리키던 쪽을 비울지·기본값으로 돌릴지·함께 처리할지, 안 적으면 거부 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/53_referential-triggered-actions_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/53_referential-triggered-actions_verify-sql/) | [LIBRARY 스키마 DDL 연습](/Hongs_Blog/studies/database-design/library-ddl-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/53_library-ddl-practice_p2/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/53_library-ddl-practice_p2-sql/) |
-| 54 | [WHERE 없는 질의와 카티션 곱](/Hongs_Blog/studies/database-design/missing-where-cross-product/) | 조건을 빠뜨리면 모든 조합이 나온다($$8 \times 3 = 24$$행) (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/54_missing-where-cross-product_verify/) | — |
+| 53 | [참조 동작 SET NULL·CASCADE·SET DEFAULT](/Hongs_Blog/studies/database-design/referential-triggered-actions/) | 가리킴 받는 행이 지워지거나 키가 고쳐질 때 가리키던 쪽을 비울지·기본값으로 돌릴지·함께 처리할지, 안 적으면 거부 | [verify](/Hongs_Blog/studies/database-design/code/53_referential-triggered-actions_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/53_referential-triggered-actions_verify-sql/) | [LIBRARY 스키마 DDL 연습](/Hongs_Blog/studies/database-design/library-ddl-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/53_library-ddl-practice_p2/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/53_library-ddl-practice_p2-sql/) |
+| 54 | [WHERE 없는 질의와 카티션 곱](/Hongs_Blog/studies/database-design/missing-where-cross-product/) | 조건을 빠뜨리면 모든 조합이 나온다($$8 \times 3 = 24$$행) | [verify](/Hongs_Blog/studies/database-design/code/54_missing-where-cross-product_verify/) | — |
 | 55 | [별칭과 자기 조인](/Hongs_Blog/studies/database-design/sql-alias-self-join/) | 표에 별명을 붙여 같은 표를 두 번 쓰기(직원과 그 상사) | [verify](/Hongs_Blog/studies/database-design/code/55_sql-alias-self-join_verify/) | [기본 검색 연습](/Hongs_Blog/studies/database-design/basic-select-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/55_basic-select-practice_p1/) · [문제 코드](/Hongs_Blog/studies/database-design/code/55_basic-select-practice_p2/) |
 | 56 | [다중집합인 표와 DISTINCT](/Hongs_Blog/studies/database-design/sql-multiset-distinct/) | SQL의 표에는 같은 행이 여러 번 있을 수 있다, DISTINCT를 적어야 한 번만 | [verify](/Hongs_Blog/studies/database-design/code/56_sql-multiset-distinct_verify/) | — |
 | 57 | [집합 연산 UNION·EXCEPT·INTERSECT](/Hongs_Blog/studies/database-design/sql-set-operations/) | 두 질의 결과를 합치고 빼고 겹치는 것만 남기기, ALL을 붙이면 횟수까지 센다 | [verify](/Hongs_Blog/studies/database-design/code/57_sql-set-operations_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/57_sql-set-operations_verify-sql/) | — |
 
 표가 중복을 허락하는 모음이라는 것과 UNION·EXCEPT·INTERSECT는 [집합](/Hongs_Blog/studies/discrete-math/sets/) 문서의 `과목별 관점`에 합쳤다.
-자료: 10-2_SQL-DML · 10_SQL-DDL
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 CREATE TABLE에 걸 수 있는 제약 여섯 가지(NOT NULL, DEFAULT, CHECK, PRIMARY KEY, UNIQUE, FOREIGN KEY)와 참조 동작 셋을 쓰고, SQL의 표가 집합과 다른 점을 한 문장으로 써 본다.
 
 ## 11주차 · 표 정의 심화(주장·트리거·DROP·ALTER), 검색 심화(중첩 질의·조인·집계·묶기)
@@ -272,9 +256,7 @@ ER 설계 절차(31)는 4~5주차 슬라이드에 흩어진 단계를 6주차 �
 | 73 | [주장 CREATE ASSERTION](/Hongs_Blog/studies/database-design/sql-assertion/) | 여러 행과 여러 표에 걸친 규칙을 "어기는 조합이 없어야 한다"는 꼴로 거는 문장 | [verify](/Hongs_Blog/studies/database-design/code/73_sql-assertion_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/73_sql-assertion_verify-sql/) | — |
 | 74 | [트리거와 ECA 규칙](/Hongs_Blog/studies/database-design/sql-trigger/) | 사건이 일어나고 조건이 맞으면 정해 둔 동작을 데이터베이스가 스스로 하는 규칙 | [verify](/Hongs_Blog/studies/database-design/code/74_sql-trigger_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/74_sql-trigger_verify-sql/) | — |
 
-DROP·ALTER(58~59)와 주장·트리거(73~74)는 11주차 첫 자료, 검색 심화(60~72)는 둘째 자료다. 주장과 트리거는 NOT EXISTS(62)를 쓰므로 번호를 뒤에 두었다. IN·ANY·ALL·EXISTS를 한정기호로 읽는 법은 [술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/), GROUP BY가 행을 겹치지 않게 나누는 것은 [동치관계와 분할](/Hongs_Blog/studies/discrete-math/equivalence-relations/) 문서의 `과목별 관점`에 합쳤다.
-자료: 10-11-SQL-Solutions · 11-2_SQL-DML-Complex · 11_SQL-DDL-Complex
-필기: 아직 없다.
+주장과 트리거(73~74)는 NOT EXISTS(62)를 쓰므로 번호를 검색 심화(60~72) 뒤에 두었다. IN·ANY·ALL·EXISTS를 한정기호로 읽는 법은 [술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/), GROUP BY가 행을 겹치지 않게 나누는 것은 [동치관계와 분할](/Hongs_Blog/studies/discrete-math/equivalence-relations/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 중첩 질의, 조인, 집계 함수, GROUP BY와 HAVING, ORDER BY가 각각 무엇을 받아 무엇을 내놓는지와 여섯 절이 처리되는 차례를 써 본다. 이어서 주장과 트리거가 각각 무엇을 적는 문장인지, CASCADE와 RESTRICT가 표를 없앨 때 무엇을 함께 없애는지 써 본다.
 
 ## 12주차 · 복잡한 검색 연습
@@ -289,10 +271,8 @@ DROP·ALTER(58~59)와 주장·트리거(73~74)는 11주차 첫 자료, 검색 �
 </details>
 
 
-새 개념 없이 11주차 내용을 섞어 쓰는 연습이다. 풀이 문서 `복잡한 검색 연습`은 11주차 표 70번 줄의 연습 칸에 있다.
-자료: 12_SQL-DML-Complex-practices-solution · 12_SQL-DML-Complex-practices
-필기: 아직 없다.
-떠올려 보기: 노트를 닫고, 연습 일곱 문제 가운데 풀이 슬라이드의 질의가 그대로는 틀리는 것 셋과 그 까닭을 써 본다.
+새 개념 없이 중첩 질의, 조인, 집계, 묶기를 섞어 쓰는 연습이다. 풀이 문서 `복잡한 검색 연습`은 위의 표 정의·검색 심화 절에 있는 표 70번 줄의 연습 칸에 있다.
+떠올려 보기: 노트를 닫고, 연습 일곱 문제 가운데 언뜻 맞아 보이는 질의가 그대로는 틀리는 것 셋과 그 까닭을 써 본다.
 
 ## 13주차 · 뷰
 
@@ -308,13 +288,11 @@ DROP·ALTER(58~59)와 주장·트리거(73~74)는 11주차 첫 자료, 검색 �
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 75 | [뷰](/Hongs_Blog/studies/database-design/sql-view/) | 질의에 이름을 붙여 표처럼 쓰는 가상 테이블. 정의만 저장되고 늘 최신이다 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/75_sql-view_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/75_sql-view_verify-sql/) | — |
+| 75 | [뷰](/Hongs_Blog/studies/database-design/sql-view/) | 질의에 이름을 붙여 표처럼 쓰는 가상 테이블. 정의만 저장되고 늘 최신이다 | [verify](/Hongs_Blog/studies/database-design/code/75_sql-view_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/75_sql-view_verify-sql/) | — |
 | 76 | [질의 수정과 뷰 실체화](/Hongs_Blog/studies/database-design/view-implementation/) | 뷰 질의에 답하는 두 길. 물을 때마다 계산하거나, 결과를 보관하고 제때 고친다 | [verify](/Hongs_Blog/studies/database-design/code/76_view-implementation_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/76_view-implementation_verify-sql/) | — |
-| 77 | [뷰 갱신 문제](/Hongs_Blog/studies/database-design/view-update-problem/) | 뷰를 거친 갱신은 기본 테이블 갱신으로 옮길 길이 딱 하나일 때만 된다 (강조)[^n1] | [verify](/Hongs_Blog/studies/database-design/code/77_view-update-problem_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/77_view-update-problem_verify-sql/) | [뷰 연습](/Hongs_Blog/studies/database-design/view-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/77_view-practice_p1/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/77_view-practice_p1-sql/) · [문제 코드](/Hongs_Blog/studies/database-design/code/77_view-practice_p2/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/77_view-practice_p2-sql/) |
+| 77 | [뷰 갱신 문제](/Hongs_Blog/studies/database-design/view-update-problem/) | 뷰를 거친 갱신은 기본 테이블 갱신으로 옮길 길이 딱 하나일 때만 된다 | [verify](/Hongs_Blog/studies/database-design/code/77_view-update-problem_verify/) · [verify.sql](/Hongs_Blog/studies/database-design/code/77_view-update-problem_verify-sql/) | [뷰 연습](/Hongs_Blog/studies/database-design/view-practice/) · [문제 코드](/Hongs_Blog/studies/database-design/code/77_view-practice_p1/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/77_view-practice_p1-sql/) · [문제 코드](/Hongs_Blog/studies/database-design/code/77_view-practice_p2/) · [문제 코드.sql](/Hongs_Blog/studies/database-design/code/77_view-practice_p2-sql/) |
 | 78 | [뷰와 기본 테이블 비교](/Hongs_Blog/studies/database-design/view-vs-base-table/) | 행이 저장되는가, 물을 때마다 계산되는가 | — | — |
 
-자료: 13-View
-필기: 아직 없다.
 떠올려 보기: 노트를 닫고 뷰가 기본 테이블과 다른 점, 뷰를 구현하는 두 방법, 갱신할 수 있는 뷰의 조건을 쓰고 셋이 어떻게 이어지는지 적어 본다.
 
 ## 14주차 · 고급 SQL 연습(JOIN, GROUP BY)
@@ -328,9 +306,7 @@ DROP·ALTER(58~59)와 주장·트리거(73~74)는 11주차 첫 자료, 검색 �
 </details>
 
 
-새 개념 없이 조인과 묶기를 섞어 쓰는 연습이다. 풀이 문서 `JOIN·GROUP BY 종합 연습`은 11주차 표 72번 줄의 연습 칸에 있다.
-자료: 14-Adavanced-SQL-practice-solutions · 14-Adavanced-SQL-practice
-필기: 아직 없다.
+새 개념 없이 조인과 묶기를 섞어 쓰는 연습이다. 풀이 문서 `JOIN·GROUP BY 종합 연습`은 위의 표 정의·검색 심화 절에 있는 표 72번 줄의 연습 칸에 있다.
 떠올려 보기: 노트를 닫고 "없는 것 찾기", "0명까지 세기", "묶음에 조건 걸기"를 각각 어느 절로 쓰는지 적어 본다.
 
 ## 다른 과목과의 연결
@@ -604,6 +580,4 @@ graph TD
   C46 --> C78
   C77 --> C78
 ```
-
-[^n1]: 원본에서 강조된 개념. 데이터 독립성: 2주차 둘째 자료 p.19 "One of the most important features of DBMSs". B-트리: 3주차 p.4, p.12(실행 시간은 디스크 접근 횟수에 달렸다). B-트리 삽입: 3주차 둘째 자료 p.26(뿌리를 쪼갤 때만 높이가 는다). B-트리 삭제: 4주차 p.13 "Simple trick: perform all deletion operations in leaf nodes!". 관계 타입의 속성: 5주차 p.20. 약한 개체 타입: 5주차 p.21. 개체 무결성 제약: 6주차 둘째 자료 p.22. 참조 무결성 제약과 외래 키: 6주차 둘째 자료 p.23 "Must be matched!". 다대다·n항 관계 타입의 사상: 7주차 p.26~27. 갱신 연산과 제약 위반: 9주차 p.25 "All constraints should not be violated!". 참조 동작: 10주차 p.19의 빨간 글씨. WHERE 없는 질의와 카티션 곱: 10주차 둘째 자료 p.19의 파란 글씨. 뷰: 13주차 p.8 "always Up-to-Date". 뷰 갱신 문제: 13주차 p.22의 빨간 글씨와 p.24.
 {% endraw %}

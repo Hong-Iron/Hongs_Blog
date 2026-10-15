@@ -25,7 +25,7 @@ permalink: "/studies/numerical-analysis/axis-rotation-ladder/"
 {% raw %}
 사용 개념: [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/)의 로드리게스 공식 $$P' = P\cos\theta + (A \times P)\sin\theta + A(A\cdot P)(1 - \cos\theta)$$.
 
-하위목표는 넷이다. ① 축을 단위 벡터로: $$A$$를 길이로 나눈다 ② 축 성분: $$A\cdot P$$와 $$A(A\cdot P)$$ ③ 수직 방향: $$A \times P$$ ④ 합치기: 세 항에 $$\cos\theta$$, $$\sin\theta$$, $$1 - \cos\theta$$를 곱해 더한다[^s1].
+하위목표는 넷이다. ① 축을 단위 벡터로: $$A$$를 길이로 나눈다 ② 축 성분: $$A\cdot P$$와 $$A(A\cdot P)$$ ③ 수직 방향: $$A \times P$$ ④ 합치기: 세 항에 $$\cos\theta$$, $$\sin\theta$$, $$1 - \cos\theta$$를 곱해 더한다.
 
 ## 문제 1 · 완전한 풀이
 
@@ -95,7 +95,4 @@ $$R_y(90°) = \begin{pmatrix}0 & 0 & 1\\ 0 & 1 & 0\\ -1 & 0 & 0\end{pmatrix}$$�
 <div class="callout-title" markdown="span">검증 — [08_axis-rotation-ladder_p4.py](/Hongs_Blog/studies/numerical-analysis/code/08_axis-rotation-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드 6회 p.17~18의 로드리게스 공식을 연습하도록 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

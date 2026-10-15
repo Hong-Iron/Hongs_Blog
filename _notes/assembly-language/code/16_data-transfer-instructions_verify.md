@@ -20,11 +20,11 @@ permalink: "/studies/assembly-language/code/16_data-transfer-instructions_verify
 [데이터 전송 명령](/Hongs_Blog/studies/assembly-language/data-transfer-instructions/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""「데이터 전송 명령」: MOV·XCHG의 규칙과 오류, Your turn, 두 변수 바꾸기 추적, 카드 C1·C2
+"""「데이터 전송 명령」: MOV·XCHG의 규칙과 오류, 틀린 MOV 다섯 줄, 두 변수 바꾸기 추적, 카드 C1·C2
 
 실행: python3 16_data-transfer-instructions_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -262,7 +262,7 @@ def must_fail(fn, *args):
 
 if __name__ == "__main__":
     c = CPU(); d = Data(c)
-    # p.7
+    # MOV의 규칙과 오류 세 줄
     d.byte("count", 100); d.word("wVal", 2)
     c.mov("bl", d.m("count")); assert c.get("bl") == 100
     c.mov("ax", d.m("wVal")); assert c.get("ax") == 2
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     assert must_fail(c.mov, "al", d.m("wVal")) == "size mismatch"
     assert must_fail(c.mov, "ax", d.m("count")) == "size mismatch"
     assert must_fail(c.mov, "eax", d.m("count")) == "size mismatch"
-    # p.8 Your turn
+    # 틀린 MOV 다섯 줄
     c = CPU(); d = Data(c)
     d.byte("bVal", 100); d.byte("bVal2", None); d.word("wVal", 2); d.dword("dVal", 5)
     assert "segment" in must_fail(c.mov, "ds", 45)
@@ -282,7 +282,7 @@ if __name__ == "__main__":
     c.mov("al", d.m("bVal")); c.mov(d.m("bVal2"), "al"); assert c.get(d.m("bVal2")) == 100
     # MOV는 플래그를 건드리지 않는다
     c.mov("al", 0xFF); c.add("al", 1); f = c.flags(); c.mov("al", 0x55); c.mov("ebx", 0); assert c.flags() == f
-    # p.11 XCHG
+    # XCHG
     c = CPU(); d = Data(c)
     d.word("var1", 0x1000); d.word("var2", 0x2000)
     c.mov("ax", 0x1111); c.mov("bx", 0x2222); c.xchg("ax", "bx"); assert (c.get("ax"), c.get("bx")) == (0x2222, 0x1111)

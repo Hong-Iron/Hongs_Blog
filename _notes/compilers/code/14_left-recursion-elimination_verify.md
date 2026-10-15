@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/14_left-recursion-elimination_verify/"
 [좌재귀 없애기](/Hongs_Blog/studies/compilers/left-recursion-elimination/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""좌재귀 없애기 문서의 예를 확인한다: 슬라이드의 변환, 변환 전후 언어 비교, 간접 좌재귀, 좌재귀에서 재귀 하강이 끝나지 않는 것.
+"""좌재귀 없애기 문서의 예를 확인한다: 본문의 변환, 변환 전후 언어 비교, 간접 좌재귀, 좌재귀에서 재귀 하강이 끝나지 않는 것.
 
 실행: python3 14_left-recursion-elimination_verify.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -128,18 +128,18 @@ def naive_descent_depth(g, start, limit=200):
 
 
 if __name__ == "__main__":
-    # p.43: S → Sa | b  ⇒  S → bA, A → aA | ε
+    # S → Sa | b  ⇒  S → bA, A → aA | ε
     g = G("S -> S a | b")
     h = eliminate_immediate(g, "S", "A")
     assert show(h) == {"S": ["b A"], "A": ["a A", "ε"]}
     assert language(g, "S", 9) == language(h, "S", 9) == {("b",) + ("a",) * k for k in range(9)}
     assert left_recursive(g) == {"S"} and left_recursive(h) == set()
 
-    # p.42: 좌재귀 문법에서 첫 규칙만 따라 내려가면 입력을 읽지 못한 채 끝없이 내려간다.
+    # 좌재귀 문법에서 첫 규칙만 따라 내려가면 입력을 읽지 못한 채 끝없이 내려간다.
     assert naive_descent_depth(g, "S") == 200
     assert naive_descent_depth(h, "S") == 0
 
-    # p.43 일반 꼴: α 둘, β 둘
+    # 일반 꼴: α 둘, β 둘
     g2 = G("S -> S a | S b c | d | e f")
     h2 = eliminate_immediate(g2, "S", "A")
     assert show(h2) == {"S": ["d A", "e f A"], "A": ["a A", "b c A", "ε"]}
@@ -151,7 +151,7 @@ if __name__ == "__main__":
     assert show(h3) == {"E": ["T E'"], "E'": ["+ T E'", "ε"], "T": ["id"]}
     assert language(g3, "E", 9) == language(h3, "E", 9)
 
-    # p.42의 질문: S → Aa | b, A → Sb 는 좌재귀인가? S ⇒ Aa ⇒ Sba 라서 그렇다(간접 좌재귀).
+    # 대표 문제 2: S → Aa | b, A → Sb 는 좌재귀인가? S ⇒ Aa ⇒ Sba 라서 그렇다(간접 좌재귀).
     g4 = G("S -> A a | b\nA -> S b")
     assert left_recursive(g4) == {"S", "A"}
     # A를 S의 규칙에 넣어 직접 좌재귀로 만든 뒤 같은 방법으로 없앤다.

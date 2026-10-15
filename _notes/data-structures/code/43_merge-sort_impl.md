@@ -24,12 +24,12 @@ permalink: "/studies/data-structures/code/43_merge-sort_impl/"
  *
  * 실행: cc -std=c11 -Wall -Wextra 43_merge-sort_impl.c -o merge && ./merge
  * 문서: 43.병합 정렬 (합치기 추적 표, 나누고 합치는 나무, 카드 C1~C3)
- * 출처: 자료구조 14주차 슬라이드 p.19~25, p.28. 슬라이드에는 그림과 설명만 있어 코드는 그 설명대로 짠 것이다.
+ * 코드는 문서의 설명대로 짠 것이다.
  * 색인은 0부터 센다. 구간 [lo, hi)는 lo를 포함하고 hi를 포함하지 않는다.
  *
  * 확인하는 것
- *   1. 두 줄 합치기: A = (2, 5, 6), B = (1, 3, 8, 9, 10)을 한 개씩 옮길 때의 C (p.20~22)
- *   2. 13개짜리 예: 나누는 조각과 합친 결과가 슬라이드 그림과 같다 (p.23~24)
+ *   1. 두 줄 합치기: A = (2, 5, 6), B = (1, 3, 8, 9, 10)을 한 개씩 옮길 때의 C (문서의 추적 표)
+ *   2. 13개짜리 예: 나누는 조각과 합친 결과가 문서의 나무 그림과 같다
  *   3. 재귀 판, 재귀 없는 판, qsort가 무작위 2,000개에서 같은 결과. 경계.
  *   4. 카드 C1의 답.
  */
@@ -53,7 +53,7 @@ static void merge(const int a[], int na, const int b[], int nb, int c[])
         c[k++] = b[j++];
 }
 
-/* 합친 결과를 차례로 적어 두는 칸. 슬라이드 그림과 맞춰 볼 때만 쓴다. */
+/* 합친 결과를 차례로 적어 두는 칸. 문서의 나무 그림과 맞춰 볼 때만 쓴다. */
 static int g_log_on, g_log_n, g_log_len[32], g_log[32][16];
 
 /* a[lo..hi-1]을 정렬한다. tmp는 a와 같은 크기의 덤 배열. */
@@ -62,7 +62,7 @@ static void msort(int a[], int tmp[], int lo, int hi)
     int n = hi - lo;
     if (n <= 1)
         return;                       /* 한 개 이하는 이미 정렬되어 있다 */
-    int mid = lo + (n + 1) / 2;       /* 앞 조각이 ceil(n/2)개, 뒤 조각이 floor(n/2)개 (p.19) */
+    int mid = lo + (n + 1) / 2;       /* 앞 조각이 ceil(n/2)개, 뒤 조각이 floor(n/2)개 */
     msort(a, tmp, lo, mid);
     msort(a, tmp, mid, hi);
     merge(a + lo, mid - lo, a + mid, hi - mid, tmp + lo);
@@ -87,7 +87,7 @@ static int merge_sort(int a[], int n)
     return 1;
 }
 
-/* 재귀 없는 판 (p.19, p.28): 길이 1짜리 조각에서 시작해, 이웃한 두 조각을 합치는 일을
+/* 재귀 없는 판: 길이 1짜리 조각에서 시작해, 이웃한 두 조각을 합치는 일을
  * 한 바퀴(병합 패스)씩 되풀이한다. 조각 길이는 바퀴마다 두 배가 된다. */
 static int merge_sort_bottom_up(int a[], int n)
 {
@@ -139,7 +139,7 @@ static int same(const int x[], const int y[], int n)
 
 int main(void)
 {
-    /* 1. 두 줄 합치기 (p.20~22) */
+    /* 1. 두 줄 합치기 (문서의 추적 표) */
     {
         const int A[3] = {2, 5, 6};
         const int B[5] = {1, 3, 8, 9, 10};
@@ -150,7 +150,7 @@ int main(void)
             return fail("A = (2, 5, 6), B = (1, 3, 8, 9, 10)");
     }
 
-    /* 2. 13개짜리 예 (p.23~24): 합친 결과가 나오는 차례대로 */
+    /* 2. 13개짜리 예 (문서의 나무 그림): 합친 결과가 나오는 차례대로 */
     {
         int a[13] = {8, 3, 13, 6, 2, 14, 5, 9, 10, 1, 7, 12, 4};
         const int want_len[12] = {2, 2, 4, 2, 3, 7, 2, 3, 2, 3, 6, 13};
@@ -177,7 +177,7 @@ int main(void)
             return fail("합치기 횟수 12번 (n - 1)");
         for (int k = 0; k < 12; k++)
             if (g_log_len[k] != want_len[k] || !same(g_log[k], want[k], want_len[k]))
-                return fail("슬라이드 p.24의 합친 결과");
+                return fail("문서 나무 그림의 합친 결과");
     }
 
     /* 4. 카드 C1: A = (1, 4, 7), B = (2, 3, 9, 10)에서 네 개를 옮긴 뒤 */
@@ -229,7 +229,7 @@ int main(void)
             return fail("qsort와 다른 결과");
     }
 
-    printf("합치기 예와 13개짜리 예(합치기 12번)가 슬라이드와 같음\n");
+    printf("합치기 예와 13개짜리 예(합치기 12번)가 문서와 같음\n");
     printf("ALL CHECKS PASSED\n");
     return 0;
 }

@@ -36,7 +36,7 @@ permalink: "/studies/database-design/select-from-where/"
 
 직원이 여덟 명이면 눈으로 훑어도 찾는다. 팔천 명이면 못 찾는다. 그래서 "이런 행의 이런 칸을 달라"고 문장으로 적어 DBMS에 맡긴다. 아래 질의는 모두 [COMPANY의 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)에 돌린 것이다.
 
-**표 하나에서 찾기.** 이름이 John B. Smith인 직원의 생일과 주소를 찾는다[^1].
+**표 하나에서 찾기.** 이름이 John B. Smith인 직원의 생일과 주소를 찾는다.
 
 ```sql
 SELECT Bdate, Address
@@ -50,7 +50,7 @@ WHERE  Fname = 'John' AND Minit = 'B' AND Lname = 'Smith';
 
 EMPLOYEE의 여덟 행 가운데 `WHERE`의 조건이 참인 행은 하나다. 그 행에서 `SELECT`에 적힌 두 칸만 꺼냈다. `SELECT` 뒤에 적은 Bdate, Address를 투영 속성, `WHERE` 뒤의 조건처럼 한 표에서 행을 골라내는 조건을 선택 조건이라고 부른다.
 
-**표 둘에서 찾기.** Research 부서에서 일하는 직원의 이름과 주소를 찾는다[^2].
+**표 둘에서 찾기.** Research 부서에서 일하는 직원의 이름과 주소를 찾는다.
 
 ```sql
 SELECT Fname, Lname, Address
@@ -74,7 +74,7 @@ WHERE  Dname = 'Research' AND Dnumber = Dno;
 | Ramesh | Narayan | 975 Fire Oak, Humble, TX |
 | Joyce | English | 5631 Rice, Houston, TX |
 
-`Dname = 'Research'`는 부서 표에서 행 하나를 고르는 선택 조건이다. `Dnumber = Dno`는 다르다. 부서 표의 행과 직원 표의 행을 맞는 것끼리 짝지어 준다. 이렇게 두 표의 행을 잇는 조건을 조인 조건이라고 부른다[^3]. Dno는 Dnumber를 가리키는 [외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/)다. 조인 조건은 대개 이렇게 "외래 키 = 그것이 가리키는 기본 키" 꼴이다.
+`Dname = 'Research'`는 부서 표에서 행 하나를 고르는 선택 조건이다. `Dnumber = Dno`는 다르다. 부서 표의 행과 직원 표의 행을 맞는 것끼리 짝지어 준다. 이렇게 두 표의 행을 잇는 조건을 조인 조건이라고 부른다. Dno는 Dnumber를 가리키는 [외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/)다. 조인 조건은 대개 이렇게 "외래 키 = 그것이 가리키는 기본 키" 꼴이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: Q0, Q1, Q2의 결과 표, 조합 수 24 → 8 → 4와 144 → 48 → 16 → 2, `SELECT *`의 행과 열 수, 읽는 법대로 짠 파이썬 계산과 SQLite의 답이 무작위 조건 200개에서 일치, 확인 문제의 답 — [50_select-from-where_verify.py](/Hongs_Blog/studies/database-design/code/50_select-from-where_verify/)</div>
@@ -84,7 +84,7 @@ WHERE  Dname = 'Research' AND Dnumber = Dno;
 
 ## 정의
 
-SQL에서 정보를 꺼내는 기본 문장은 하나다. 세 절로 된 이 틀을 SELECT-FROM-WHERE 블록이라 한다[^4].
+SQL에서 정보를 꺼내는 기본 문장은 하나다. 세 절로 된 이 틀을 SELECT-FROM-WHERE 블록이라 한다.
 
 ```sql
 SELECT <속성 목록>
@@ -96,7 +96,7 @@ WHERE  <조건>;
 - **〈표 목록〉:** 질의를 처리하는 데 필요한 릴레이션의 이름들.
 - **〈조건〉:** 꺼낼 튜플을 가려내는 조건식. 튜플마다 참이나 거짓이 된다.
 
-결과의 튜플 하나는 `FROM`에 적힌 표마다 튜플을 하나씩 뽑아 붙인 조합 하나에서 나온다. 그 조합에서 `SELECT`의 속성만 내보인다[^5].
+결과의 튜플 하나는 `FROM`에 적힌 표마다 튜플을 하나씩 뽑아 붙인 조합 하나에서 나온다. 그 조합에서 `SELECT`의 속성만 내보인다.
 
 **기호로 쓰면.** 표 $$R_1, \dots, R_m$$에서 속성 $$A_1, \dots, A_k$$를 조건으로 꺼내는 질의의 결과는 다음과 같다[^s1].
 
@@ -105,7 +105,7 @@ $$\text{결과} = \{\, (t.A_1, \dots, t.A_k) \;:\; t \in R_1 \times \dots \times
 
 $$R_1 \times \dots \times R_m$$은 표마다 행을 하나씩 뽑아 만든 모든 조합의 모임이다([곱집합](/Hongs_Blog/studies/discrete-math/sets/)). $$t$$는 그 조합 하나이고, $$t.A_1$$은 그 조합에서 $$A_1$$ 칸의 값이다. 말로 읽으면 "모든 조합 $$t$$ 가운데 조건이 참인 것마다, 적힌 칸의 값만 뽑아 한 행으로 만든다"다. 조건이 참인 조합이 둘이면 뽑힌 값이 같아도 결과에는 두 행이 나온다([다중집합인 표와 DISTINCT](/Hongs_Blog/studies/database-design/sql-multiset-distinct/)).
 
-질의에 적는 것에는 이름이 셋 붙어 있다[^3].
+질의에 적는 것에는 이름이 셋 붙어 있다.
 
 | 이름 | 적는 곳 | 하는 일 |
 |---|---|---|
@@ -113,7 +113,7 @@ $$R_1 \times \dots \times R_m$$은 표마다 행을 하나씩 뽑아 만든 모�
 | 선택 조건(selection condition) | `WHERE` | 한 표에서 관심 있는 행을 고른다 |
 | 조인 조건(join condition) | `WHERE` | 두 표의 행을 맞는 것끼리 짝짓는다 |
 
-**모든 칸 꺼내기.** 속성 목록 자리에 별표 `*`를 쓰면 고른 행의 모든 칸이 나온다. 속성 이름을 일일이 적지 않아도 된다[^6].
+**모든 칸 꺼내기.** 속성 목록 자리에 별표 `*`를 쓰면 고른 행의 모든 칸이 나온다. 속성 이름을 일일이 적지 않아도 된다.
 
 ```sql
 SELECT * FROM EMPLOYEE WHERE Dno = 5;
@@ -124,7 +124,7 @@ SELECT * FROM EMPLOYEE, DEPARTMENT WHERE Dname = 'Research' AND Dno = Dnumber;
 
 ### 표 셋으로 읽어 보기
 
-Stafford에 있는 프로젝트마다 프로젝트 번호, 그 프로젝트를 맡은 부서의 번호, 그 부서 관리자의 성과 주소와 생일을 찾는다[^7].
+Stafford에 있는 프로젝트마다 프로젝트 번호, 그 프로젝트를 맡은 부서의 번호, 그 부서 관리자의 성과 주소와 생일을 찾는다.
 
 ```sql
 SELECT Pnumber, Dnum, Lname, Address, Bdate
@@ -284,13 +284,6 @@ WHERE  Dnum = Dnumber AND Plocation = 'Houston';
 </details>
 
 
-[^1]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.20 (Q0와 결과 표). 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.11
-[^2]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.21 (Q1과 결과 표). 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.4
-[^3]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.11~12 (Projection attributes, Selection condition, Join condition의 색 구분)
-[^4]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.19 (SELECT-FROM-WHERE block). 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.4
-[^5]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.13. 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.3 ("Each resulting tuple is a combination of one project, one department, and one employee")
-[^6]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.20 (Use of the Asterisk). 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.6
-[^7]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.22 (Q2와 결과 표). 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.12~13
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기호로 쓴 식과 "조합 수가 줄어드는 걸음" 표는 슬라이드에 없다. 슬라이드 10-2 p.13의 문장(결과의 튜플은 표마다 하나씩 뽑은 조합이고, 거기서 투영 속성을 내보인다)을 식과 숫자로 옮겼다. 걸음마다의 조합 수는 검증 코드로 세었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 스스로 설명해 보기, 틀리게 쓴 꼴 둘, 경계 사례, 비교 연산자와 `AND`·`OR`·`NOT`(슬라이드는 "conditional (Boolean) expression"이라고만 적는다), 최적화기에 대한 설명, 오해 항목, 확인 문제는 슬라이드에 없다. 수치와 결과는 SQLite 3.50에서 실행해 확인했다. 비교 연산자의 목록은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.3.1절에 있다.
+[^s1]: 걸음마다의 조합 수는 검증 코드로 세었다.
+[^s2]: 수치와 결과는 SQLite 3.50에서 실행해 확인했다. 비교 연산자의 목록은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.3.1절에 있다.
 {% endraw %}

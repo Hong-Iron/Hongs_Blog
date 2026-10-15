@@ -166,6 +166,6 @@ if (ID/EX.MemRead
 [^1]: 교재 출판사 강의 슬라이드 "Chapter 4 — The Processor" (Cooper Union 게시본), 슬라이드 10, 45 (Load-Use Data Hazard: 전방 전달로 늘 쉬는 것을 피할 수는 없다, 시간을 거슬러 넘길 수 없다, 한 사이클을 쉬어야 한다), https://ee.cooper.edu/~curro/comparch/pipeline/chapter4_pipelining_END_FA11.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor"
 [^2]: 같은 슬라이드, 46 (Load-Use Hazard Detection의 조건식)
 [^3]: 같은 슬라이드, 47~50 (How to Stall the Pipeline, Stall/Bubble in the Pipeline, Datapath with Hazard Detection)
-[^4]: 같은 슬라이드, 11, 51 (Code Scheduling to Avoid Stalls, Stalls and Performance: 컴파일러가 코드를 배치해 쉬는 사이클을 피할 수 있다). 표의 코드와 수치는 슬라이드의 예제가 아니라 이 문서에서 새로 만든 것이다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "rt에 쓰기만 하는 명령어에서도 쉰다"와 "`lw` 뒤 `sw`도 쉰다"는 연 자료에 없다. 슬라이드 46의 조건식을 그대로 구현한 흉내기에서 두 경우 모두 한 사이클을 쉬고 결과가 맞는 것을 확인했다. MEM 단계로 당겨 쓰는 길을 놓는 설계가 있다는 것은 [확인필요].
+[^4]: 같은 슬라이드, 11, 51 (Code Scheduling to Avoid Stalls, Stalls and Performance: 컴파일러가 코드를 배치해 쉬는 사이클을 피할 수 있다).
+[^s1]: MEM 단계로 당겨 쓰는 길을 놓는 설계가 있다는 것은 [확인필요].
 {% endraw %}

@@ -23,15 +23,15 @@ permalink: "/studies/database-design/code/32_relational-model-relation_verify/"
 """릴레이션과 도메인·속성·튜플 검증.
 
 문서: 32.릴레이션과 도메인·속성·튜플 (예시, 정의, 카드 C2·C3)
-출처: 데이터베이스 설계 6-2 슬라이드 p.6~11 (STUDENT 표, 도메인, r(R) ⊆ dom(A1) × … × dom(An))
+출처: Elmasri & Navathe, Fundamentals of Database Systems 5장 (STUDENT 표, 도메인, r(R) ⊆ dom(A1) × … × dom(An))
 실행: python3 32_relational-model-relation_verify.py   (표준 라이브러리만 쓴다)
 주장:
-  1. STUDENT 릴레이션(p.6)은 속성 7개(차수 7), 튜플 5개다.
-  2. 모든 값은 자기 속성의 도메인에 들어 있거나 NULL이다 (p.8의 도메인 설명을 검사 함수로 옮김).
+  1. 문서의 STUDENT 릴레이션은 속성 7개(차수 7), 튜플 5개다.
+  2. 모든 값은 자기 속성의 도메인에 들어 있거나 NULL이다 (문서의 도메인 설명을 검사 함수로 옮김).
   3. 상태 r(R)은 도메인들의 곱집합의 부분집합이다. 작은 도메인으로 곱집합의 크기와 가능한 상태 수를 센다.
      dom(A) = {a, b}, dom(B) = {1, 2, 3}이면 가능한 튜플 6개, 가능한 상태 2^6 = 64개 (카드 C3).
   4. 상태는 집합이다. 같은 튜플을 또 넣어도, 순서를 바꿔도 같은 상태다.
-  5. COMPANY 여섯 릴레이션의 차수는 10, 4, 2, 4, 3, 5다 (6-2 p.20, 카드 C2).
+  5. COMPANY 여섯 릴레이션의 차수는 10, 4, 2, 4, 3, 5다 (35.관계형 데이터베이스 스키마와 상태, 카드 C2).
 """
 import itertools
 import re
@@ -47,7 +47,7 @@ STUDENT = [
     ("Barbara Benson", "533-69-1238", "(817)839-8461", "7384 Fontana Lane", NULL, 19, 3.25),
 ]
 
-# p.8의 도메인 설명을 "이 값이 도메인에 드는가"를 답하는 함수로 옮긴 것
+# 문서의 도메인 설명을 "이 값이 도메인에 드는가"를 답하는 함수로 옮긴 것
 DOM = {
     "Name": lambda v: isinstance(v, str) and len(v) > 0,                        # Names: 사람 이름인 문자열
     "Ssn": lambda v: re.fullmatch(r"\d{3}-\d{2}-\d{4}", v) is not None,          # Social_security_numbers: 아홉 자리

@@ -28,7 +28,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(예: 00000020의 call 다음 줄은 00000025).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -481,7 +481,7 @@ def machine(code, esp=0x1000, base=0):
     return c
 
 def main():
-    # 문제 1: 16비트 배열의 합 (슬라이드 wk06-3-1 p.3)
+    # 문제 1: 16비트 배열의 합
     c = machine("""mov edi,OFFSET intarray
         mov ecx,LENGTHOF intarray
         mov ax,0

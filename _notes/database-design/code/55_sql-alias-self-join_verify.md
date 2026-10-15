@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/55_sql-alias-self-join_verify/"
 
 ```python
 # 55.별칭과 자기 조인 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 55_sql-alias-self-join_verify.py)
-# 확인하는 것 (슬라이드 10-2 p.14~17, 11-2 p.4, 14, 19)
+# 확인하는 것
 #   1. 두 표에 같은 이름의 열이 있으면 표 이름을 붙여야 한다
 #   2. 별칭 E, D를 붙인 질의는 긴 이름으로 쓴 질의와 답이 같다
-#   3. 일부러 틀린 판(E 하나만 씀)은 0행, 고친 판(E와 S)은 슬라이드의 7행
+#   3. 일부러 틀린 판(E 하나만 씀)은 0행, 고친 판(E와 S)은 문서 표의 7행
 #   4. 결과 열 이름 바꾸기(AS Employee_name), 확인 문제의 답
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -85,7 +85,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -131,7 +131,7 @@ def same(a, b):
 if __name__ == "__main__":
     c = make()
 
-    # --- 1. 같은 이름의 열 (슬라이드 10-2 p.14는 두 표에 Name과 Dnumber가 있다고 가정한다)
+    # --- 1. 같은 이름의 열 (문서처럼 두 표에 Name과 Dnumber가 있다고 가정한다)
     k = sqlite3.connect(':memory:', isolation_level=None)
     k.executescript("""CREATE TABLE EMPLOYEE (Fname, Name, Address, Dnumber);
                        CREATE TABLE DEPARTMENT (Name, Dnumber);
@@ -159,11 +159,11 @@ if __name__ == "__main__":
     # --- 3. 자기 조인
     # 별칭 없이 같은 표를 두 번 적으면 어느 쪽 열인지 가릴 수 없다
     assert error_of(c, "SELECT Fname, Lname FROM EMPLOYEE, EMPLOYEE WHERE Super_ssn = Ssn") == 'ambiguous column name: Fname'
-    # 틀린 판 (10-2 p.15~16). 슬라이드에 적힌 그대로는 FROM 앞의 쉼표 때문에 구문 오류다
+    # 틀린 판. SELECT 목록 끝에 쉼표가 하나 더 있으면 FROM 앞에서 구문 오류다
     assert 'syntax error' in error_of(c, "SELECT E.Fname, E.Lname, E.Fname, E.Lname, FROM EMPLOYEE AS E WHERE E.Super_ssn = E.Ssn")
     # 쉼표를 지워도 0행이다. 자기가 자기 상사인 직원은 없다
     assert rows(c, "SELECT E.Fname, E.Lname, E.Fname, E.Lname FROM EMPLOYEE AS E WHERE E.Super_ssn = E.Ssn") == []
-    # 고친 판 (10-2 p.17)
+    # 고친 판
     q8 = "SELECT E.Fname, E.Lname, S.Fname, S.Lname FROM EMPLOYEE AS E, EMPLOYEE AS S WHERE E.Super_ssn = S.Ssn"
     assert same(rows(c, q8), [('John', 'Smith', 'Franklin', 'Wong'), ('Franklin', 'Wong', 'James', 'Borg'),
                               ('Alicia', 'Zelaya', 'Jennifer', 'Wallace'), ('Jennifer', 'Wallace', 'James', 'Borg'),
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     swapped = rows(c, "SELECT E.Lname, S.Lname FROM EMPLOYEE AS E, EMPLOYEE AS S WHERE E.Ssn = S.Super_ssn")
     assert sorted(swapped) == sorted((r[3], r[1]) for r in rows(c, q8))
 
-    # --- 4. 결과 열 이름 바꾸기 (11-2 p.19)
+    # --- 4. 결과 열 이름 바꾸기
     cur = c.execute("SELECT E.Lname AS Employee_name, S.Lname AS Supervisor_name FROM EMPLOYEE AS E, EMPLOYEE AS S WHERE E.Super_ssn = S.Ssn")
     assert [d[0] for d in cur.description] == ['Employee_name', 'Supervisor_name']
     assert same(cur.fetchall(), [('Smith', 'Wong'), ('Wong', 'Borg'), ('Zelaya', 'Wallace'), ('Wallace', 'Borg'),
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     assert [d[0] for d in cur.description] == ['Lname', 'Lname']                # 이름을 안 바꾸면 두 열 이름이 같다
 
     # --- 확인 문제
-    # Wong이 상사인 직원 (연습 4-c와 같은 답)
+    # Wong이 상사인 직원 (기본 검색 연습 4-c와 같은 답)
     assert same(rows(c, "SELECT E.Fname, E.Lname FROM EMPLOYEE AS E, EMPLOYEE AS S WHERE E.Super_ssn = S.Ssn AND S.Fname = 'Franklin' AND S.Lname = 'Wong'"),
                 [('John', 'Smith'), ('Ramesh', 'Narayan'), ('Joyce', 'English')])
     # Jennifer Wallace가 직속 상사인 직원

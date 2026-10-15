@@ -34,7 +34,7 @@ permalink: "/studies/numerical-analysis/hermite-curve/"
 
 ## 예시로 보기
 
-[3차 보간 곡선](/Hongs_Blog/studies/numerical-analysis/cubic-interpolation-curve/)을 이어 붙이면 이음점에서 기울기가 어긋난다. 검증 코드의 예에서 앞 조각은 이음점에서 $$(3, -9)$$ 방향으로 들어오고, 뒤 조각은 $$(3, -15)$$ 방향으로 나간다. 그래서 이음점이 꺾인다[^1].
+[3차 보간 곡선](/Hongs_Blog/studies/numerical-analysis/cubic-interpolation-curve/)을 이어 붙이면 이음점에서 기울기가 어긋난다. 검증 코드의 예에서 앞 조각은 이음점에서 $$(3, -9)$$ 방향으로 들어오고, 뒤 조각은 $$(3, -15)$$ 방향으로 나간다. 그래서 이음점이 꺾인다.
 
 에르미트 곡선은 끝점의 접선을 직접 준다. $$\mathbf p(0) = (0, 0)$$, $$\mathbf p(1) = (4, 0)$$, $$\mathbf p'(0) = (0, 6)$$(위로 출발), $$\mathbf p'(1) = (0, -6)$$(아래로 도착)이면 아치 모양이 되고 가운데 $$u = \frac12$$에서 $$(2, 1.5)$$를 지난다. 다음 조각을 $$\mathbf p'(0) = (0, -6)$$으로 시작하면 이음점이 매끄럽다[^s1].
 
@@ -50,7 +50,7 @@ permalink: "/studies/numerical-analysis/hermite-curve/"
 
 ## 정의
 
-**에르미트 곡선**은 3차 곡선 $$\mathbf p(u) = \mathbf u^\top\mathbf c$$의 계수를 양 끝의 위치와 도함수로 정한다. 도함수는 $$\mathbf p'(u) = \mathbf c_1 + 2\mathbf c_2u + 3\mathbf c_3u^2$$이다. 네 조건을 모으면 $$\mathbf q = A\mathbf c$$다[^2].
+**에르미트 곡선**은 3차 곡선 $$\mathbf p(u) = \mathbf u^\top\mathbf c$$의 계수를 양 끝의 위치와 도함수로 정한다. 도함수는 $$\mathbf p'(u) = \mathbf c_1 + 2\mathbf c_2u + 3\mathbf c_3u^2$$이다. 네 조건을 모으면 $$\mathbf q = A\mathbf c$$다.
 
 $$\mathbf q = \begin{pmatrix}\mathbf p(0)\\ \mathbf p(1)\\ \mathbf p'(0)\\ \mathbf p'(1)\end{pmatrix} = \begin{pmatrix}1 & 0 & 0 & 0\\ 1 & 1 & 1 & 1\\ 0 & 1 & 0 & 0\\ 0 & 1 & 2 & 3\end{pmatrix}\begin{pmatrix}\mathbf c_0\\ \mathbf c_1\\ \mathbf c_2\\ \mathbf c_3\end{pmatrix}$$
 
@@ -58,7 +58,7 @@ $$\mathbf q = \begin{pmatrix}\mathbf p(0)\\ \mathbf p(1)\\ \mathbf p'(0)\\ \math
 $$\mathbf c = A^{-1}\mathbf q = M_H\mathbf q, \qquad M_H = \begin{pmatrix}1 & 0 & 0 & 0\\ 0 & 0 & 1 & 0\\ -3 & 3 & -2 & -1\\ 2 & -2 & 1 & 1\end{pmatrix}, \qquad \mathbf p(u) = \mathbf u^\top M_H\mathbf q$$
 
 
-블렌딩 함수로 쓰면 $$\mathbf p(u) = \mathbf b(u)^\top\mathbf q$$다[^3].
+블렌딩 함수로 쓰면 $$\mathbf p(u) = \mathbf b(u)^\top\mathbf q$$다.
 
 $$\mathbf b(u) = \begin{pmatrix}2u^3 - 3u^2 + 1\\ -2u^3 + 3u^2\\ u^3 - 2u^2 + u\\ u^3 - u^2\end{pmatrix}$$
 
@@ -102,9 +102,6 @@ $$\mathbf b(u) = \begin{pmatrix}2u^3 - 3u^2 + 1\\ -2u^3 + 3u^2\\ u^3 - 2u^2 + u\
 </details>
 
 
-[^1]: 수치해석 7회 강의 자료 「na07_curves」, p.16~17
-[^2]: 같은 자료, p.18~19
-[^3]: 같은 자료, p.19
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이음점 기울기 수치, 아치 예와 카드 C2, 블렌딩 함수의 역할 설명, 캣멀-롬 스플라인, 흔한 실수, 카드 C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [14_hermite-curve_plot.py](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 가운데 점 $$(2, 1.5)$$와 $$(2, 3)$$, 이음점에서 두 조각의 도함수가 모두 $$(0, -6)$$. 화살표는 접선 벡터를 $$\frac13$$ 길이로 줄여 그렸다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [14_hermite-curve_plot.py](/Hongs_Blog/studies/numerical-analysis/code/14_hermite-curve_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 가운데 점 $$(2, 1.5)$$와 $$(2, 3)$$, 이음점에서 두 조각의 도함수가 모두 $$(0, -6)$$. 화살표는 접선 벡터를 $$\frac13$$ 길이로 줄여 그렸다.
 {% endraw %}

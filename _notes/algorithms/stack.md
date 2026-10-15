@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Stack", "스택", "LIFO", "후입선출", "push", "pop", "괄호 검사"]
 description: "접시를 쌓으면 맨 위에 놓은 접시를 가장 먼저 꺼낸다. 스택은 이렇게 마지막에 넣은 것을 먼저 꺼내는 자료구조다. 이 규칙을 후입선출(LIFO)이라 부른다. \"가장 최근 것과 짝 맞추기\"나 \"방금 한 일 되돌리기\"에 딱 맞고, 넣기와 꺼내기가 한 번에 끝난다. 대신 맨 위만 볼 수…"
@@ -101,14 +101,14 @@ def balanced(s):
 
 **컴파일러 (3-2학기).** 구문 분석기는 스택 하나로 돈다. 같은 스택인데 두 방식이 담는 것이 다르다.
 
-- 위에서 내려오는 [LL(1) 파서](/Hongs_Blog/studies/compilers/ll1-stack-parser/)는 **앞으로 봐야 할 기호**를 쌓는다. 처음에 입력 끝 표시 `$`와 시작 기호를 넣는다. 맨 위를 꺼내 그것이 논터미널이면 표에서 고른 규칙의 오른쪽을 넣고, 터미널이면 입력의 다음 토큰과 맞춰 본다[^c1].
-- 아래에서 올라가는 [SLR 파서](/Hongs_Blog/studies/compilers/slr-stack-parser/)는 **지금까지 본 것을 읽은 상태 번호**를 쌓는다. 토큰을 읽으면 상태 하나를 넣는다. 규칙 $$A \to \alpha$$로 묶을 때는 $$\alpha$$의 기호 수만큼 꺼내고, 드러난 상태에서 $$A$$를 읽어 가는 상태 하나를 넣는다[^c2].
+- 위에서 내려오는 [LL(1) 파서](/Hongs_Blog/studies/compilers/ll1-stack-parser/)는 **앞으로 봐야 할 기호**를 쌓는다. 처음에 입력 끝 표시 `$`와 시작 기호를 넣는다. 맨 위를 꺼내 그것이 논터미널이면 표에서 고른 규칙의 오른쪽을 넣고, 터미널이면 입력의 다음 토큰과 맞춰 본다.
+- 아래에서 올라가는 [SLR 파서](/Hongs_Blog/studies/compilers/slr-stack-parser/)는 **지금까지 본 것을 읽은 상태 번호**를 쌓는다. 토큰을 읽으면 상태 하나를 넣는다. 규칙 $$A \to \alpha$$로 묶을 때는 $$\alpha$$의 기호 수만큼 꺼내고, 드러난 상태에서 $$A$$를 읽어 가는 상태 하나를 넣는다.
 
-두 파서 모두 "가장 최근 것부터 처리한다"는 스택의 성질에 기댄다. 괄호 검사에서 닫는 괄호가 가장 최근에 열린 괄호와 짝을 이루듯, SLR 파서에서 묶이는 것은 늘 가장 최근에 쌓인 몇 칸이다. 강의의 표로 `id * id`를 파싱하면 스택이 [1] → [1, 5] → [1, 3] → [1, 3, 6] → [1, 3, 6, 5] → [1, 3, 6, 3] → [1, 3, 6, 8] → [1, 2]로 바뀐다[^c2]. 일곱째에서 여덟째로 갈 때 $$E \to T * E$$의 기호 수 3만큼 8, 6, 3을 꺼내고 2를 넣었다[^cs1].
+두 파서 모두 "가장 최근 것부터 처리한다"는 스택의 성질에 기댄다. 괄호 검사에서 닫는 괄호가 가장 최근에 열린 괄호와 짝을 이루듯, SLR 파서에서 묶이는 것은 늘 가장 최근에 쌓인 몇 칸이다. 한 예제 문법의 SLR 표로 `id * id`를 파싱하면 스택이 [1] → [1, 5] → [1, 3] → [1, 3, 6] → [1, 3, 6, 5] → [1, 3, 6, 3] → [1, 3, 6, 8] → [1, 2]로 바뀐다. 일곱째에서 여덟째로 갈 때 $$E \to T * E$$의 기호 수 3만큼 8, 6, 3을 꺼내고 2를 넣었다[^cs1].
 
-**자료구조 (1-2학기).** 스택을 다섯 가지 연산으로 정한다. 위 `쓰는 법`의 표와 이렇게 짝이 된다[^d1].
+**자료구조 (1-2학기).** 스택을 다섯 가지 연산으로 정한다. 위 `쓰는 법`의 표와 이렇게 짝이 된다.
 
-| 강의의 연산 | 하는 일 | 파이썬 리스트로는 |
+| 연산 | 하는 일 | 파이썬 리스트로는 |
 |---|---|---|
 | IsEmpty | 비었으면 참 | `not st` |
 | IsFull | 더 넣을 자리가 없으면 참 | 없다. 리스트는 알아서 늘어난다 |
@@ -118,9 +118,9 @@ def balanced(s):
 
 C에는 `append`와 `pop`을 해 주는 리스트가 없어서 스택을 직접 만든다. 배열 하나와 맨 위 칸의 번호로 만들거나([배열로 만든 스택](/Hongs_Blog/studies/data-structures/array-stack/)), 노드를 이어서 만든다([연결 리스트로 만든 스택](/Hongs_Blog/studies/data-structures/linked-stack/)). IsFull은 칸 수가 정해진 배열로 만들 때 생기는 연산이다.
 
-괄호 검사도 한 걸음 더 나간다. 짝이 맞는지만 보지 않고, 위치 $$u$$의 여는 괄호와 위치 $$v$$의 닫는 괄호가 짝일 때마다 $$(u, v)$$를 찍는다. 그러려면 여는 괄호 글자 대신 그 위치를 쌓는다. `(a+b))*((c+d)`에서는 (0, 4)를 찍고, 5번 닫는 괄호는 꺼낼 것이 없어 짝이 없다고 알리고, (8, 12)를 찍고, 끝까지 남은 7번 여는 괄호도 짝이 없다고 알린다[^d2]. 풀이는 [스택 응용 연습](/Hongs_Blog/studies/data-structures/stack-applications-practice/)에 있다.
+괄호 검사도 한 걸음 더 나간다. 짝이 맞는지만 보지 않고, 위치 $$u$$의 여는 괄호와 위치 $$v$$의 닫는 괄호가 짝일 때마다 $$(u, v)$$를 찍는다. 그러려면 여는 괄호 글자 대신 그 위치를 쌓는다. `(a+b))*((c+d)`에서는 (0, 4)를 찍고, 5번 닫는 괄호는 꺼낼 것이 없어 짝이 없다고 알리고, (8, 12)를 찍고, 끝까지 남은 7번 여는 괄호도 짝이 없다고 알린다. 풀이는 [스택 응용 연습](/Hongs_Blog/studies/data-structures/stack-applications-practice/)에 있다.
 
-강의는 스택을 큐로 바꿀 수 없는 쓰임으로 괄호 짝 찾기, 하노이 탑, 스위치박스 배선(switchbox routing), 함수 호출과 복귀, try-catch-throw를 든다. 큐로 바꿔도 되는 쓰임으로는 미로의 쥐를 들고, 큐로 바꾸면 출구까지 가장 짧은 길을 찾는다고 적는다[^d3]. 괄호 짝 찾기에 큐를 쓰면 `(a(b)c)`에서 (0, 4)와 (2, 6)이라는 엇갈린 짝이 나온다[^ds1].
+스택을 큐로 바꿀 수 없는 쓰임은 괄호 짝 찾기, 하노이 탑, 스위치박스 배선(switchbox routing), 함수 호출과 복귀, try-catch-throw다. 큐로 바꿔도 되는 쓰임은 미로의 쥐다. 큐로 바꾸면 출구까지 가장 짧은 길을 찾는다. 괄호 짝 찾기에 큐를 쓰면 `(a(b)c)`에서 (0, 4)와 (2, 6)이라는 엇갈린 짝이 나온다[^ds1].
 
 ## 확인 문제
 
@@ -166,11 +166,6 @@ C에는 `append`와 `pop`을 해 주는 리스트가 없어서 스택을 직접 
 
 
 [^1]: Python 3 공식 튜토리얼 5.1.1 "Using Lists as Stacks"(append와 인자 없는 pop으로 스택을 쓴다). 스택의 정의와 연산은 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 10.1 "Stacks and queues".
-[^c1]: 컴파일러 5회 강의 자료 「Lecture05 Syntax analysis part 2」, p.33~45 (LL(1) 파서의 스택: `$`와 시작 기호를 넣고, 꺼낸 것이 논터미널이면 표의 규칙을 넣는다)
-[^c2]: 컴파일러 8회 강의 자료 「Lecture08 Syntax analysis part 5」, p.22~34 (SLR 파서의 스택: 상태를 넣고, 환원할 때 규칙 오른쪽의 기호 수만큼 꺼낸 뒤 GOTO를 넣는다. `id * id $`의 스택 변화)
-[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 파서의 스택을 "앞으로 볼 것"과 "지금까지 본 것"으로 견준 말과 괄호 검사에 빗댄 말, 카드 C4는 원본에 없다. 스택 변화는 [28_slr-stack-parser_impl.py](/Hongs_Blog/studies/compilers/code/28_slr-stack-parser_impl/)로 확인했다.
-[^d1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.43, p.45 (스택의 뜻과 LIFO. 추상 자료형으로 본 스택: IsEmpty, IsFull, Top, Push, Pop)
-[^d2]: 같은 자료, p.56~62 (Parentheses Matching: 짝의 위치 쌍 (u, v)를 출력한다. 여는 괄호의 위치를 스택에 넣고 닫는 괄호에서 뺀다)
-[^d3]: 같은 자료, p.80 (스택을 큐로 바꿀 수 없는 응용과 바꿀 수 있는 응용)
-[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 파이썬 코드와 짝지은 표의 셋째 칸, IsFull이 배열 구현에서 생긴다는 말, 큐로 바꿨을 때의 예, 카드 C5는 슬라이드에 없다. [13_stack-applications-practice_p1.c](/Hongs_Blog/studies/data-structures/code/13_stack-applications-practice_p1/)로 확인했다.
+[^cs1]: 스택 변화는 [28_slr-stack-parser_impl.py](/Hongs_Blog/studies/compilers/code/28_slr-stack-parser_impl/)로 확인했다.
+[^ds1]: [13_stack-applications-practice_p1.c](/Hongs_Blog/studies/data-structures/code/13_stack-applications-practice_p1/)로 확인했다.
 {% endraw %}

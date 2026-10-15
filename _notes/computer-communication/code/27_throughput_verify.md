@@ -23,9 +23,9 @@ permalink: "/studies/computer-communication/code/27_throughput_verify/"
 """처리량과 대역폭·소요시간의 상대적 중요성 검증.
 
 문서: 27.처리량 (예시 표, 정의, 카드 C2)
-정의 (슬라이드): Throughput = TransferSize / TransferTime
+정의: Throughput = TransferSize / TransferTime
                  회선 스위칭: TransferTime = RTT + TransferSize / Bandwidth
-단위: KB = 2^10 바이트, MB = 2^20 바이트 (슬라이드 표기), Mbps = 10^6 bps. 시간은 ms.
+단위: KB = 2^10 바이트, MB = 2^20 바이트 (이 문서 모음의 표기), Mbps = 10^6 bps. 시간은 ms.
 """
 from fractions import Fraction as F
 

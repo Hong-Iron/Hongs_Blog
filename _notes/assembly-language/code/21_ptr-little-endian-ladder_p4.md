@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/21_ptr-little-endian-ladder_p4/"
 
 실행: python3 21_ptr-little-endian-ladder_p4.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서의 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -261,7 +261,7 @@ def must_fail(fn, *args):
 
 
 if __name__ == "__main__":
-    # 문제 1 (슬라이드 5-3-2 p.16)
+    # 문제 1
     c = CPU(); d = Data(c, base=0)
     d.byte("varB", 0x65, 0x31, 0x02, 0x05); d.word("varW", 0x6543, 0x1202); d.dword("varD", 0x12345678)
     assert c.dump(0, 12) == [0x65, 0x31, 0x02, 0x05, 0x43, 0x65, 0x02, 0x12, 0x78, 0x56, 0x34, 0x12]

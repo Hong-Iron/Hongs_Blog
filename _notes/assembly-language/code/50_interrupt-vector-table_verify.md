@@ -22,7 +22,7 @@ permalink: "/studies/assembly-language/code/50_interrupt-vector-table_verify/"
 ```python
 # 50.INT 명령과 인터럽트 벡터 표 문서의 계산 확인. 실행: python3 50_interrupt-vector-table_verify.py
 # 16비트 실주소 모드를 실제로 돌리지 않는다. 1MB 바이트 배열 위에서 INT/IRET의 동작을 흉내 낸다.
-# INT가 스택에 플래그·CS·IP를 넣는 순서는 슬라이드에 없고 Intel 설명서의 실주소 모드 동작을 따랐다.
+# INT가 스택에 플래그·CS·IP를 넣는 순서는 Intel 설명서의 실주소 모드 동작을 따랐다.
 
 def linear(seg, off):
     return ((seg << 4) + off) & 0xFFFFF
@@ -71,15 +71,15 @@ class Machine:
 
 
 if __name__ == "__main__":
-    # 오프셋 = 인터럽트 번호 × 4 (wk14-17 p.5)
+    # 오프셋 = 인터럽트 번호 × 4
     assert 0x10 * 4 == 0x0040 and 0x21 * 4 == 0x0084 and 0x16 * 4 == 0x0058
     assert 0x09 * 4 == 0x0024 and 0x00 * 4 == 0 and 0xFF * 4 == 0x03FC
     assert 0xFF * 4 + 4 == 0x0400  # 표의 끝 = BIOS 데이터 영역의 시작
     assert 256 * 4 == 1024
-    # 슬라이드 표의 줄: 번호 00-03 / 04-07 / 08-0B / 0C-0F / 10-13 의 오프셋
+    # 문서 표의 줄: 번호 00-03 / 04-07 / 08-0B / 0C-0F / 10-13 의 오프셋
     for first, off in [(0x00, 0x0000), (0x04, 0x0010), (0x08, 0x0020), (0x0C, 0x0030), (0x10, 0x0040)]:
         assert first * 4 == off
-    # 슬라이드 표의 값으로 표를 채운다
+    # 문서 표의 값으로 표를 채운다
     rows = {
         0x00: ["02C1:5186", "0070:0C67", "0DAD:2C1B", "0070:0C67"],
         0x04: ["0070:0C67", "F000:FF54", "F000:837B", "F000:837B"],
@@ -92,14 +92,14 @@ if __name__ == "__main__":
         for i, v in enumerate(vecs):
             seg, off = (int(x, 16) for x in v.split(":"))
             m.set_vector(first + i, seg, off)
-    assert m.get_vector(0x09) == (0x0DAD, 0x2BAD)   # wk14-17 p.22 그림의 BIOS INT 9 주소와 같다
+    assert m.get_vector(0x09) == (0x0DAD, 0x2BAD)   # 핸들러 바꿔 끼우기 문서의 BIOS INT 9 주소와 같다
     assert m.get_vector(0x10) == (0xC000, 0x0CD7)
     # 메모리에는 리틀 엔디언으로: INT 9 칸(0024h~0027h) = AD 2B AD 0D
     assert bytes(m.mem[0x24:0x28]) == bytes([0xAD, 0x2B, 0xAD, 0x0D])
     # INT 10h 칸(0040h~0043h) = D7 0C 00 C0
     assert bytes(m.mem[0x40:0x44]) == bytes([0xD7, 0x0C, 0x00, 0xC0])
 
-    # wk13-2-1 p.11 그림: INT 10h 칸에 F000:F065
+    # 문서 첫 그림: INT 10h 칸에 F000:F065
     m = Machine()
     m.set_vector(0x10, 0xF000, 0xF065)
     assert linear(0xF000, 0xF065) == 0xFF065

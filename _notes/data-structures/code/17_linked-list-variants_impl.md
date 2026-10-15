@@ -23,16 +23,16 @@ permalink: "/studies/data-structures/code/17_linked-list-variants_impl/"
 /* 연결 리스트의 변형: 헤더 노드가 있는 체인, 원형 리스트, 헤더 노드가 있는 이중 원형 리스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/17.연결 리스트의 변형.md
- * 출처: 자료구조 5주차 슬라이드 p.19~25. 슬라이드에는 그림만 있다. 코드는 그 그림대로 짠 것이다.
+ * 코드는 문서의 그림대로 짠 것이다.
  * 실행: cc -std=c11 -Wall -Wextra 17_linked-list-variants_impl.c -o variants && ./variants
  * 번호: 원소 자리 k는 0부터 센다. 헤더 노드는 원소가 아니라서 자리 번호가 없다.
  *
  * 확인하는 것
- *   1. 헤더 노드가 있는 체인: 빈 목록은 headerNode->link == NULL(슬라이드 p.20).
+ *   1. 헤더 노드가 있는 체인: 빈 목록은 headerNode->link == NULL.
  *      0번 자리에 끼우고 지워도 headerNode의 주소가 그대로다.
- *   2. 원형 리스트(p.21): 어느 노드에서 출발해도 다섯 노드를 한 번씩 만나고 NULL은 나오지 않는다.
- *   3. 헤더 노드가 있는 이중 원형 리스트: 빈 목록은 두 링크가 모두 헤더 자신(p.25).
- *      오른쪽으로 돌면 abcde, 왼쪽으로 돌면 edcba(p.24). 마지막 노드는 headerNode->llink 한 번에 닿는다.
+ *   2. 원형 리스트: 어느 노드에서 출발해도 다섯 노드를 한 번씩 만나고 NULL은 나오지 않는다.
+ *   3. 헤더 노드가 있는 이중 원형 리스트: 빈 목록은 두 링크가 모두 헤더 자신.
+ *      오른쪽으로 돌면 abcde, 왼쪽으로 돌면 edcba. 마지막 노드는 headerNode->llink 한 번에 닿는다.
  *   4. 카드 C1: (a, b, c)에서 b를 지우면 링크 2개, 헤더 뒤에 d를 끼우면 링크 4개가 바뀌어 (d, a, c).
  *   5. 모든 노드 p에서 p->rlink->llink == p == p->llink->rlink.
  *   6. 무작위 끼우기·지우기 3,000번씩(헤더 체인, 이중 원형): 순회 결과가 배열 모형과 같다.
@@ -225,10 +225,10 @@ int main(void)
     /* 1. 헤더 노드가 있는 체인 */
     listPointer headerNode = makeHeader();
     listPointer same_header = headerNode;
-    check(headerNode->link == NULL && strcmp(chain_text(headerNode), "") == 0, "p.20 빈 체인: headerNode->link == NULL");
+    check(headerNode->link == NULL && strcmp(chain_text(headerNode), "") == 0, "빈 체인: headerNode->link == NULL");
     const char *abcde = "abcde";
     for (int i = 0; i < 5; i++) check(insertAt(headerNode, i, abcde[i]) == 1, "맨 뒤에 끼우기");
-    check(strcmp(chain_text(headerNode), "abcde") == 0, "p.19 헤더 노드 뒤에 a ~ e");
+    check(strcmp(chain_text(headerNode), "abcde") == 0, "헤더 노드 뒤에 a ~ e");
     link_writes = 0;
     check(insertAt(headerNode, 0, 'f') == 1 && strcmp(chain_text(headerNode), "fabcde") == 0, "0번 자리에 끼우기");
     check(link_writes == 2 && headerNode == same_header, "0번 자리도 링크 2개, headerNode는 그대로");
@@ -244,7 +244,7 @@ int main(void)
     last->link = firstNode;                              /* e -> a */
     listPointer start = firstNode;
     for (int s = 0; s < 5; s++) {
-        check(countCircular(start) == 5, "p.21 어디서 출발해도 다섯 노드");
+        check(countCircular(start) == 5, "원형: 어디서 출발해도 다섯 노드");
         char seen[6];
         listPointer p = start;
         for (int i = 0; i < 5; i++) { seen[i] = p->data; check(p->link != NULL, "원형: NULL이 없다"); p = p->link; }
@@ -288,9 +288,9 @@ int main(void)
 
     /* 3. 헤더 노드가 있는 이중 원형 리스트 */
     dPointer h = makeDoubleHeader();
-    check(h->llink == h && h->rlink == h && links_agree(h), "p.25 빈 목록: 두 링크가 헤더 자신");
+    check(h->llink == h && h->rlink == h && links_agree(h), "이중 원형 빈 목록: 두 링크가 헤더 자신");
     for (int i = 0; i < 5; i++) dinsert(h->llink, abcde[i]);        /* 마지막 노드 뒤에 붙인다 */
-    check(strcmp(right_text(h), "abcde") == 0 && strcmp(left_text(h), "edcba") == 0, "p.24 오른쪽 abcde, 왼쪽 edcba");
+    check(strcmp(right_text(h), "abcde") == 0 && strcmp(left_text(h), "edcba") == 0, "이중 원형: 오른쪽 abcde, 왼쪽 edcba");
     check(h->rlink->data == 'a' && h->llink->data == 'e' && h->llink->rlink == h && links_agree(h), "첫 노드와 마지막 노드가 헤더와 이어진다");
     dfree_all(h);
 

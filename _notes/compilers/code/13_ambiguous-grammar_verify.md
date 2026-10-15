@@ -133,12 +133,12 @@ def bracket(t):
 if __name__ == "__main__":
     T = lambda s: tuple(s.split())
 
-    # p.35~36: E → E + E | E * E | (E) | id 에서 id * id + id 의 파스 트리는 둘이다.
+    # E → E + E | E * E | (E) | id 에서 id * id + id 의 파스 트리는 둘이다.
     amb = G("E -> E + E | E * E | ( E ) | id")
     ts = parse_trees(amb, "E", T("id * id + id"))
     assert sorted(bracket(t) for t in ts) == ["E[E[E[id] * E[id]] + E[id]]", "E[E[id] * E[E[id] + E[id]]]"]
 
-    # p.41: 고친 문법은 같은 언어를 만들고, 모든 문자열의 파스 트리가 하나다.
+    # 고친 문법은 같은 언어를 만들고, 모든 문자열의 파스 트리가 하나다.
     fix = G("E -> T + E | T\nT -> F * T | F\nF -> ( E ) | id")
     assert language(amb, "E", 9) == language(fix, "E", 9)
     assert all(len(parse_trees(fix, "E", s)) == 1 for s in language(fix, "E", 9))
@@ -149,14 +149,14 @@ if __name__ == "__main__":
     counts = [len(parse_trees(amb, "E", T(" + ".join(["id"] * n)))) for n in range(1, 6)]
     assert counts == [1, 1, 2, 5, 14]
 
-    # p.37~38: 매달린 else. 트리가 둘이다.
+    # 매달린 else. 트리가 둘이다.
     d0 = G("E -> if E then E | if E then E else E | other")
     s = T("if other then if other then other else other")
     ts = sorted(bracket(t) for t in parse_trees(d0, "E", s))
     assert ts == ["E[if E[other] then E[if E[other] then E[other] else E[other]]]",
                   "E[if E[other] then E[if E[other] then E[other]] else E[other]]"]
 
-    # p.39~40: 슬라이드의 고친 문법. 트리는 하나뿐이고 else는 가까운 then에 붙는다.
+    # 조건 자리까지 M으로 묶은 고친 문법. 트리는 하나뿐이고 else는 가까운 then에 붙는다.
     d1 = G("""E -> M | U
 M -> if M then M else M | other
 U -> if E then E | if E then M else U""")
@@ -165,7 +165,7 @@ U -> if E then E | if E then M else U""")
     assert bracket(t1[0]) == "E[U[if E[M[other]] then E[M[if M[other] then M[other] else M[other]]]]]"
     assert all(len(parse_trees(d1, "E", x)) == 1 for x in language(d1, "E", 13))
 
-    # 그런데 슬라이드의 고친 문법은 원래 문법보다 문자열 하나를 덜 만든다(길이 9 이하에서).
+    # 그런데 조건 자리까지 M으로 묶은 문법은 원래 문법보다 문자열 하나를 덜 만든다(길이 9 이하에서).
     missing = language(d0, "E", 9) - language(d1, "E", 9)
     assert missing == {T("if if other then other then other else other")}
     assert language(d1, "E", 13) < language(d0, "E", 13)
@@ -176,6 +176,9 @@ M -> if E then M else M | other
 U -> if E then E | if E then M else U""")
     assert language(d0, "E", 13) == language(d2, "E", 13)
     assert all(len(parse_trees(d2, "E", x)) == 1 for x in language(d2, "E", 13))
+    # 문서의 문장: 바깥이 U → if E then E, 안쪽이 M 인 나무 하나
+    t2 = parse_trees(d2, "E", s)
+    assert len(t2) == 1 and bracket(t2[0]) == "E[U[if E[M[other]] then E[M[if E[M[other]] then M[other] else M[other]]]]]"
 
     # 카드: id + id + id 의 트리 둘, S → SS | a 에서 aaa 의 트리 둘
     assert sorted(bracket(t) for t in parse_trees(amb, "E", T("id + id + id"))) == [

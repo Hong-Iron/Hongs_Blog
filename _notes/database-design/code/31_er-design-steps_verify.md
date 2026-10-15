@@ -23,28 +23,28 @@ permalink: "/studies/database-design/code/31_er-design-steps_verify/"
 """ER 설계 절차 검증.
 
 문서: 31.ER 설계 절차 (COMPANY 표, 대표 문제, 카드 C2·C4), 연습 31.ER 다이어그램 설계 연습
-출처: 데이터베이스 설계 4주차 슬라이드 4-2 p.13~16, 5주차 p.24~31, p.34, 6주차 6-1 풀이 p.12~35
+출처: Elmasri & Navathe, Fundamentals of Database Systems 3장의 COMPANY 설계(처음 설계와 다듬은 설계)
 주장:
-  1. COMPANY의 처음 설계(4-2 p.13~14)에서 다른 개체를 가리키는 속성은 6개이고(5주차 p.24의 파란 상자),
-     여기에 Manager_start_date를 더한 7개가 관계 타입 6개로 바뀐다(5주차 p.31).
-  2. 그 7개를 지우면 다듬은 그림(5주차 p.34)의 개체 속성이 남는다.
+  1. COMPANY의 처음 설계(문서의 1단계 표)에서 다른 개체를 가리키는 속성은 6개이고,
+     여기에 Manager_start_date를 더한 7개가 관계 타입 6개로 바뀐다(문서의 2단계 표).
+  2. 그 7개를 지우면 다듬은 그림(29.ER 다이어그램 표기법의 COMPANY 그림)의 개체 속성이 남는다.
      (이름만 달라진 것: Birth_date -> Bdate, Dependent_name -> Name. 새로 생긴 것: 유도 속성 Number_of_employees.)
   3. 관계 타입의 속성 Hours, Start_date는 처음 설계의 Works_on(Project, Hours)와 Manager_start_date에서 온다.
-  4. 6주차 연습 셋도 같은 장부가 맞는다: PART_ORDER 3개 -> 3개, MOVIE 7개 -> 4개, CONF_REVIEW 4개 -> 3개.
+  4. 설계 연습 세 문제도 같은 장부가 맞는다: PART_ORDER 3개 -> 3개, MOVIE 7개 -> 4개, CONF_REVIEW 4개 -> 3개.
      서로 뒤집은 속성 짝(예: MOVIE의 Production과 PRODUCTION의 Produces)은 관계 타입 하나가 된다.
 """
 
-# 처음 설계: 개체 타입 -> 속성(성분은 풀지 않고 맨 위 이름만). 4-2 p.13~14
+# 처음 설계: 개체 타입 -> 속성(성분은 풀지 않고 맨 위 이름만). 문서의 1단계 표
 COMPANY_FIRST = {
     "DEPARTMENT": ["Name", "Number", "Locations", "Manager", "Manager_start_date"],
     "PROJECT": ["Name", "Number", "Location", "Controlling_department"],
     "EMPLOYEE": ["Name", "Ssn", "Sex", "Address", "Salary", "Birth_date", "Department", "Supervisor", "Works_on"],
     "DEPENDENT": ["Employee", "Dependent_name", "Sex", "Birth_date", "Relationship"],
 }
-# 5주차 p.24에서 파란 상자를 친 속성(다른 개체를 가리킨다)
+# 다른 개체를 가리키는 속성
 COMPANY_POINTERS = [("DEPARTMENT", "Manager"), ("PROJECT", "Controlling_department"), ("EMPLOYEE", "Department"),
                     ("EMPLOYEE", "Supervisor"), ("EMPLOYEE", "Works_on"), ("DEPENDENT", "Employee")]
-# 5주차 p.31: 관계 타입 <- 없어지는 속성. p.25~30: 참여 개체 타입, 관계 타입의 속성
+# 문서의 2단계 표: 관계 타입 <- 없어지는 속성, 참여 개체 타입, 관계 타입의 속성
 COMPANY_RELS = {
     "MANAGES": ([("DEPARTMENT", "Manager"), ("DEPARTMENT", "Manager_start_date")], ("EMPLOYEE", "DEPARTMENT"), ["Start_date"]),
     "WORKS_FOR": ([("EMPLOYEE", "Department")], ("EMPLOYEE", "DEPARTMENT"), []),
@@ -53,7 +53,7 @@ COMPANY_RELS = {
     "WORKS_ON": ([("EMPLOYEE", "Works_on")], ("EMPLOYEE", "PROJECT"), ["Hours"]),
     "DEPENDENTS_OF": ([("DEPENDENT", "Employee")], ("EMPLOYEE", "DEPENDENT"), []),
 }
-# 다듬은 그림: 5주차 p.34
+# 다듬은 그림: 29.ER 다이어그램 표기법의 COMPANY 그림
 COMPANY_FINAL = {
     "DEPARTMENT": ["Name", "Number", "Locations", "Number_of_employees"],
     "PROJECT": ["Name", "Number", "Location"],
@@ -88,14 +88,14 @@ def main():
     print("[OK] COMPANY: 가리키는 속성 6개 + Manager_start_date = 7개 -> 관계 타입 6개")
 
     check(COMPANY_FIRST, COMPANY_RELS, COMPANY_FINAL, RENAMED, ADDED)
-    print("[OK] 7개를 지우면 5주차 p.34 그림의 개체 속성이 남는다")
+    print("[OK] 7개를 지우면 다듬은 COMPANY 그림의 개체 속성이 남는다")
 
     with_attr = {r: a for r, (_, _, a) in COMPANY_RELS.items() if a}
     assert with_attr == {"MANAGES": ["Start_date"], "WORKS_ON": ["Hours"]}
     assert COMPANY_RELS["SUPERVISION"][1] == ("EMPLOYEE", "EMPLOYEE")
     print("[OK] 속성이 붙는 관계 타입은 MANAGES(Start_date), WORKS_ON(Hours). SUPERVISION은 EMPLOYEE가 두 번 낀다")
 
-    # PART_ORDER (6-1 풀이 p.12~18)
+    # PART_ORDER (설계 연습 문제 1)
     po_first = {"EMPLOYEE": ["Employee_no", "First_name", "Last_name", "Zip_code", "Takes_order"],
                 "CUSTOMER": ["Customer_no", "First_name", "Last_name", "Zip_code", "Places_order"],
                 "PART": ["Part_no", "Name", "Price", "Quantity"],
@@ -106,12 +106,12 @@ def main():
     po_final = {"EMPLOYEE": ["Employee_no", "First_name", "Last_name", "Zip_code"],
                 "CUSTOMER": ["Customer_no", "First_name", "Last_name", "Zip_code"],
                 "PART": ["Part_no", "Name", "Price", "Quantity"],
-                "ORDER": ["Order_no", "Expected_date", "Actual_date", "Receipt_date"]}   # p.18 그림은 Actual_date 자리에 Quantity
+                "ORDER": ["Order_no", "Expected_date", "Actual_date", "Receipt_date"]}   # 틀리기 쉬운 답: Actual_date 자리에 Quantity
     check(po_first, po_rels, po_final)
     assert len(removed(po_rels)) == 3 and len(po_rels) == 3
     print("[OK] PART_ORDER: 3개 -> 관계 타입 3개. ORDER에는 날짜 셋이 남는다(Quantity가 아니다)")
 
-    # MOVIE (6-1 풀이 p.20~26)
+    # MOVIE (설계 연습 문제 2)
     mv_first = {"MOVIE": ["Mkey", "Length", "Plot_outline", "Genre", "Production", "Directors", "Actors"],
                 "ACTOR": ["Akey", "Acts_on"],
                 "DIRECTOR": ["Dkey", "Directs", "Acts_on"],
@@ -127,7 +127,7 @@ def main():
     assert sum(1 for attrs, _, _ in mv_rels.values() if len(attrs) == 2) == 3
     print("[OK] MOVIE: 7개 -> 관계 타입 4개(서로 뒤집은 짝 3쌍 + DIRECTOR의 Acts_on)")
 
-    # CONF_REVIEW (6-1 풀이 p.29~35)
+    # CONF_REVIEW (설계 연습 문제 3)
     cr_first = {"AUTHOR": ["A_email", "First_name", "Last_name", "Submits_paper"],
                 "REVIEWER": ["R_email", "First_name", "Last_name", "Phone_no", "Affiliation", "Interest_topic", "Reviews_paper"],
                 "PAPER": ["P_id", "Title", "Abstract", "File_name", "Author", "Reviewer"]}

@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Asymptotic Notation", "Big-O", "빅오", "대문자 O", "Big-Omega", "빅오메가", "Big-Theta", "빅세타", "little-o", "소문자 o", "little-omega", "시간 복잡도", "time complexity", "증가 차수", "order of growth"]
 description: "알고리즘의 비용을 \"입력이 커질 때 얼마나 빨리 커지는가\"로만 비교하려고, 상수배와 작은 항을 버린 표기다. O는 \"많아야 이 정도로\", Ω는 \"적어도 이 정도로\", Θ는 \"딱 이 정도로\" 자란다는 뜻이다. 그래서 컴퓨터가 몇 배 빠른지와 상관없이 알고리즘끼리 비교할 수 있다. 다…"
@@ -173,11 +173,11 @@ $$a$$, $$b$$는 고정된 밑이라 $$n$$에 따라 변하지 않는다. $$O$$�
 
 ## 과목별 관점
 
-**자료구조 (1-2학기).** 자료구조 강의는 삽입 정렬 하나로 이 표기를 처음 쓴다. 삽입 정렬의 복잡도가 $$O(n^2)$$이라는 말을 강의는 이렇게 푼다. $$n$$이 알맞게 크면, 크기 $$n$$인 어떤 입력에서도 시간(또는 연산 횟수)이 $$c \cdot n^2$$을 넘지 않는다[^d1]. 위 정의의 $$\exists c$$와 $$\exists n_0$$을 말로 옮긴 것이다[^ds1].
+**자료구조 (1-2학기).** 삽입 정렬 하나로 이 표기를 처음 쓴다. 삽입 정렬의 복잡도가 $$O(n^2)$$이라는 말은 이런 뜻이다. $$n$$이 알맞게 크면, 크기 $$n$$인 어떤 입력에서도 시간(또는 연산 횟수)이 $$c \cdot n^2$$을 넘지 않는다. 위 정의의 $$\exists c$$와 $$\exists n_0$$을 말로 옮긴 것이다[^ds1].
 
-강의는 이어서 더 정확한 말을 덧붙인다. 삽입 정렬의 최악의 시간은 $$\Theta(n^2)$$이고 최선의 시간은 $$\Theta(n)$$이다[^d1]. 같은 알고리즘이라도 어떤 입력을 보느냐에 따라 차수가 다르다. 그래서 차수를 말할 때는 최악인지 최선인지를 함께 말한다[^ds1].
+더 정확히 말하면 삽입 정렬의 최악의 시간은 $$\Theta(n^2)$$이고 최선의 시간은 $$\Theta(n)$$이다. 같은 알고리즘이라도 어떤 입력을 보느냐에 따라 차수가 다르다. 그래서 차수를 말할 때는 최악인지 최선인지를 함께 말한다[^ds1].
 
-$$\Theta(n^2)$$에서 바로 나오는 어림이 하나 있다. $$n$$이 두 배가 될 때마다 최악의 시간은 네 배가 된다[^d1]. $$(2n)^2 = 4n^2$$이기 때문이다. 줄 단위로 센 최악의 단계 수 $$n^2 + 3n - 3$$으로 확인하면 $$n = 100$$에서 10,297, $$n = 200$$에서 40,597로 3.94배다. 낮은 차수의 항 $$3n - 3$$ 때문에 딱 4는 아니고, $$n$$이 커질수록 4에 다가간다[^ds1]. 이 식을 세는 과정은 [연산 횟수와 단계 수 세기](/Hongs_Blog/studies/data-structures/operation-step-count/)에 있다.
+$$\Theta(n^2)$$에서 바로 나오는 어림이 하나 있다. $$n$$이 두 배가 될 때마다 최악의 시간은 네 배가 된다. $$(2n)^2 = 4n^2$$이기 때문이다. 줄 단위로 센 최악의 단계 수 $$n^2 + 3n - 3$$으로 확인하면 $$n = 100$$에서 10,297, $$n = 200$$에서 40,597로 3.94배다. 낮은 차수의 항 $$3n - 3$$ 때문에 딱 4는 아니고, $$n$$이 커질수록 4에 다가간다[^ds1]. 이 식을 세는 과정은 [연산 횟수와 단계 수 세기](/Hongs_Blog/studies/data-structures/operation-step-count/)에 있다.
 
 ## 확인 문제
 
@@ -216,8 +216,7 @@ $$\Theta(n^2)$$에서 바로 나오는 어림이 하나 있다. $$n$$이 두 배
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14.7절 "Asymptotic Notation". Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.1절 "Asymptotic notation".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [24_asymptotic-notation_plot.py](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_plot/)로 그렸고, 예시 표의 값, $$n \ge 112$$에서 $$A(n) > B(n)$$(그 아래에서는 $$A(n) \le B(n)$$), $$n = 40$$과 $$64$$에서 여덟 함수의 서열, $$\lg 8 > \sqrt 8$$을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 섹션의 다섯 기호 정의와 '동치인 다른 정의'(극한으로 판정)를 그렸다.
-[^d1]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.18 (Complexity of Insertion Sort: O(n²)의 뜻, 최악 Θ(n²)과 최선 Θ(n), n이 두 배면 최악의 시간은 네 배)
-[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 정의의 $$c$$, $$n_0$$과 잇는 문장, 최악과 최선을 함께 말한다는 문장, $$(2n)^2 = 4n^2$$, 단계 수 식과 100·200의 값은 원본에 없다. 값은 [02_operation-step-count_verify.py](/Hongs_Blog/studies/data-structures/code/02_operation-step-count_verify/)로 확인했다.
+[^s1]: [24_asymptotic-notation_plot.py](/Hongs_Blog/studies/discrete-math/code/24_asymptotic-notation_plot/)로 그렸고, 예시 표의 값, $$n \ge 112$$에서 $$A(n) > B(n)$$(그 아래에서는 $$A(n) \le B(n)$$), $$n = 40$$과 $$64$$에서 여덟 함수의 서열, $$\lg 8 > \sqrt 8$$을 같은 코드로 확인했다.
+[^s2]: 정의 섹션의 다섯 기호 정의와 '동치인 다른 정의'(극한으로 판정)를 그렸다.
+[^ds1]: 단계 수와 100·200의 값은 [02_operation-step-count_verify.py](/Hongs_Blog/studies/data-structures/code/02_operation-step-count_verify/)로 확인했다.
 {% endraw %}

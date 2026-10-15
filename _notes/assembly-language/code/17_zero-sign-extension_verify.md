@@ -20,11 +20,11 @@ permalink: "/studies/assembly-language/code/17_zero-sign-extension_verify/"
 [제로 확장과 부호 확장](/Hongs_Blog/studies/assembly-language/zero-sign-extension/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""「제로 확장과 부호 확장」: MOVZX·MOVSX 슬라이드 값, 8비트 전수 검사, 카드 C1·C3
+"""「제로 확장과 부호 확장」: MOVZX·MOVSX 예시 값, 8비트 전수 검사, 카드 C1·C3
 
 실행: python3 17_zero-sign-extension_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -262,7 +262,7 @@ def must_fail(fn, *args):
 
 if __name__ == "__main__":
     c = CPU()
-    # p.9~10
+    # movzx·movsx ax,bl (BL = 8Fh)
     c.mov("bl", 0b10001111); c.movzx("ax", "bl"); assert c.get("ax") == 0b0000000010001111 == 0x008F
     c.mov("bl", 0b10001111); c.movsx("ax", "bl"); assert c.get("ax") == 0b1111111110001111 == 0xFF8F
     assert signed(0x8F, 1) == -113 and signed(0xFF8F, 2) == -113 and 0x8F == 143

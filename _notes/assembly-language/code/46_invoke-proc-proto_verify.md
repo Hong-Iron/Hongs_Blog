@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/46_invoke-proc-proto_verify/"
 MASM이 없어 x86 32비트 명령 일부(레지스터, 리틀 엔디언 메모리, PUSH/POP/CALL/RET,
 ENTER/LEAVE, ZF/CF)를 파이썬으로 흉내 낸다. 문서에 실린 코드를 글자 그대로 넣어 돌린다.
 스택은 ESP = 00001000h에서 시작하고, 명령 주소는 가짜 값(00401000h + 4 × 순번)이다.
-INVOKE와 매개변수 달린 PROC을 풀어 쓴 코드로 AddTwo와 FillArray(wk11-2-1 p.21~22)를 돌린다."""
+INVOKE와 매개변수 달린 PROC을 풀어 쓴 코드로 AddTwo와 FillArray를 돌린다."""
 import re
 
 M32 = 0xFFFFFFFF
@@ -278,7 +278,7 @@ AddTwo PROC
     ret  8
 AddTwo ENDP
 """
-# INVOKE FillArray, ADDR array, 0AAh, 6 을 풀어 쓴 것 (p.22, 쉼표를 넣어 고친 매개변수 순서)
+# INVOKE FillArray, ADDR array, 0AAh, 6 을 풀어 쓴 것 (매개변수 목록 줄 끝에 쉼표를 넣은 꼴)
 FILLARRAY = """
 main PROC
     push 6
@@ -317,7 +317,7 @@ if __name__ == "__main__":
     assert f.rd(0x0FF4) == 0x0100 and f.rd(0x0FF8) == 0xAA and f.rd(0x0FFC) == 6
     # 매개변수 3개 × 4바이트 = 12 → ret 12. BYTE 매개변수도 스택에서는 4바이트를 차지한다
     assert 3 * 4 == 12
-    # p.18 INVOKE Sub3,eax,(10 * 20): 식은 어셈블할 때 200으로 계산된다
+    # INVOKE Sub3,eax,(10 * 20): 식은 어셈블할 때 200으로 계산된다
     assert 10 * 20 == 200
     print("ALL CHECKS PASSED")
 ```

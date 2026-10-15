@@ -11,19 +11,19 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 parent_url: "/studies/compilers/mips-instructions/"
-parent_title: "수업용 MIPS 명령어"
-description: "컴파일러 · 수업용 MIPS 명령어 구현 코드"
+parent_title: "코드 생성용 MIPS 명령어"
+description: "컴파일러 · 코드 생성용 MIPS 명령어 구현 코드"
 sitemap: false
 permalink: "/studies/compilers/code/51_mips-instructions_impl/"
 ---
 {% raw %}
-[수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
+[코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 수업용 MIPS 명령어 흉내기.
+# 단순화한 MIPS 명령어 흉내기.
 # 실행: python3 51_mips-instructions_impl.py  (표준 라이브러리만 쓴다)
-# 슬라이드 15회 p.8~9, p.15의 명령 표기를 그대로 받는다: 피연산자는 빈칸으로 나누고 레지스터는 $r0, $r1, …, $sp, $ra.
-# 실제 MIPS 어셈블러가 아니다. 슬라이드가 적은 뜻(reg1 = reg2 + reg3 등)대로 움직이는지만 확인한다.
+# 문서의 명령 표기를 그대로 받는다: 피연산자는 빈칸으로 나누고 레지스터는 $r0, $r1, …, $sp, $ra.
+# 실제 MIPS 어셈블러가 아니다. 문서의 표에 적은 뜻(reg1 = reg2 + reg3 등)대로 움직이는지만 확인한다.
 import re
 
 CMP = {"eq": lambda a, b: a == b, "ne": lambda a, b: a != b, "gt": lambda a, b: a > b,
@@ -82,7 +82,7 @@ class Machine:
                 self.pc = self.labels[a[2]]
         elif op == "jr":
             self.pc = R[a[0]]
-        elif op == "jal":                    # 슬라이드에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
+        elif op == "jal":                    # 문서의 명령 표에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
             R["$ra"] = self.pc
             self.pc = self.labels[a[0]]
         else:
@@ -103,7 +103,7 @@ def one(line, **regs):
 
 if __name__ == "__main__":
     vals = range(-3, 4)
-    # ---- 세 레지스터 산술 (p.8) ----
+    # ---- 세 레지스터 산술 ----
     for x in vals:
         for y in vals:
             assert one("add $r0 $r1 $r2", r1=x, r2=y)["$r0"] == x + y
@@ -113,8 +113,8 @@ if __name__ == "__main__":
             for name, py in (("seq", x == y), ("sne", x != y), ("sgt", x > y),
                              ("sge", x >= y), ("slt", x < y), ("sle", x <= y)):
                 assert one(f"{name} $r0 $r1 $r2", r1=x, r2=y)["$r0"] == int(py)
-                assert one(f"{name}i $r0 $r1 {y}", r1=x)["$r0"] == int(py)      # 즉시값 꼴 (p.9)
-            # ---- 즉시값 산술 (p.9) ----
+                assert one(f"{name}i $r0 $r1 {y}", r1=x)["$r0"] == int(py)      # 즉시값 꼴
+            # ---- 즉시값 산술 ----
             assert one(f"addi $r0 $r1 {y}", r1=x)["$r0"] == x + y
             assert one(f"subi $r0 $r1 {y}", r1=x)["$r0"] == x - y
             assert one(f"muli $r0 $r1 {y}", r1=x)["$r0"] == x * y
@@ -126,11 +126,11 @@ if __name__ == "__main__":
         for y in vals:
             assert one(f"subi $r0 $r1 {y}", r1=x)["$r0"] == one(f"addi $r0 $r1 {-y}", r1=x)["$r0"]
 
-    # ---- 메모리를 만지는 것은 lw와 sw뿐 (p.6, p.8) ----
+    # ---- 메모리를 만지는 것은 lw와 sw뿐 ----
     m = Machine(["lw $r0 8($sp)", "sw $r0 4($sp)"], {"$sp": 100}, {108: 42}).run()
     assert m.reg["$r0"] == 42 and m.mem[104] == 42 and (m.loads, m.stores) == (1, 1)
 
-    # ---- 분기 (p.15) ----
+    # ---- 분기 ----
     def taken(line, **regs):
         m = Machine([line, "li $r9 1", "L:"], {"$" + k: v for k, v in regs.items()}).run()
         return "$r9" not in m.reg          # 뛰었으면 li를 건너뛴다
@@ -143,10 +143,10 @@ if __name__ == "__main__":
                              ("bge", x >= y), ("blt", x < y), ("ble", x <= y)):
                 assert taken(f"{name} $r0 $r1 L", r0=x, r1=y) == py
                 assert taken(f"{name}i $r0 {y} L", r0=x) == py
-    # ---- jr: 레지스터에 든 자리로 뛴다 (p.28) ----
+    # ---- jr: 레지스터에 든 자리로 뛴다 ----
     m = Machine(["jr $ra", "li $r0 1", "li $r1 2"], {"$ra": 2}).run()
     assert "$r0" not in m.reg and m.reg["$r1"] == 2
-    # ---- 스택 한 칸 만들기: subi $sp $sp 4 (p.20). 낮은 주소 쪽으로 자란다 ----
+    # ---- 스택 한 칸 만들기: subi $sp $sp 4. 낮은 주소 쪽으로 자란다 ----
     m = Machine(["li $r0 3", "sw $r0 0($sp)", "subi $sp $sp 4"], {"$sp": 100}).run()
     assert m.mem[100] == 3 and m.reg["$sp"] == 96
 

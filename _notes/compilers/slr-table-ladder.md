@@ -25,7 +25,7 @@ permalink: "/studies/compilers/slr-table-ladder/"
 {% raw %}
 사용 개념: [LR(0) 항목과 항목 오토마타](/Hongs_Blog/studies/compilers/lr0-item-automaton/)의 상태 만들기, [FOLLOW 집합](/Hongs_Blog/studies/compilers/follow-set/), [SLR 파싱 표](/Hongs_Blog/studies/compilers/slr-parsing-table/)의 두 단계.
 
-"이 문법의 SLR 파싱 표를 만들라"는 문제는 늘 같은 하위 목표를 거친다[^s1].
+"이 문법의 SLR 파싱 표를 만들라"는 문제는 늘 같은 하위 목표를 거친다.
 
 ① 번호 붙이기: 덧붙인 규칙 $$S' \to S$$를 (1)로 넣고 규칙에 번호를 붙인다
 ② 상태 만들기: 상태 1은 $$S' \to .S$$에서 시작해 점 뒤 논터미널의 규칙을 연다. 상태마다 기호를 읽어 새 상태를 만든다
@@ -163,7 +163,4 @@ Follow(E) = {`$`}(`E`는 규칙의 맨 끝에만 온다). Follow(T) = {`+`, `$`}
 <div class="callout-title" markdown="span">검증 — [27_slr-table-ladder_p4.py](/Hongs_Blog/studies/compilers/code/27_slr-table-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 네 문법과 표는 원본에 없다. 8회 슬라이드 p.7~11의 만드는 순서를 연습하도록 만들었고, 상태, FOLLOW, 표의 모든 칸과 스택 깊이를 문제 코드로 확인했다.
 {% endraw %}

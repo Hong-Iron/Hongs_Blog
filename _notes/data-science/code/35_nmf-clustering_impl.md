@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/35_nmf-clustering_impl/"
 """비음수 행렬 분해(NMF)로 군집화 - 구현과 실험.
 
 문서: 35.행렬 분해 군집화 (예시, 정의, 카드), 36.PCA와 NMF 비교
-출처: 데이터 과학 10회 슬라이드 10-1 p.17~21
 문제: X (n×d, 음수 없음) ≈ W H, W (n×k) >= 0, H (k×d) >= 0.
       min ||X - WH||_F² (+ λ Σ|W|)
 갱신(리-승 곱셈 갱신): H ← H ⊙ (WᵀX) / (WᵀWH),  W ← W ⊙ (XHᵀ) / (WHHᵀ + λ)

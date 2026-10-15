@@ -25,7 +25,7 @@ permalink: "/studies/operating-systems/scheduling-ladder/"
 {% raw %}
 사용 개념: [스케줄링 알고리즘](/Hongs_Blog/studies/operating-systems/scheduling-algorithms/)의 선택 함수와 선점 규칙, 반환 시간 = 끝난 시각 − 도착 시각.
 
-이 방법을 떠올리는 신호는 프로세스마다 도착 시각과 서비스 시간이 표로 주어지고 "끝나는 시각", "평균 반환 시간"을 묻는 문제다. 풀이는 늘 같은 하위목표로 나뉜다. 시각마다 준비 큐에 누가 있는지 적기, 정책의 규칙으로 다음 프로세스 고르기(선점형이면 도착 때마다 다시 확인), 시간 막대(간트 차트) 그리기, 반환 시간 계산하기다[^s1].
+이 방법을 떠올리는 신호는 프로세스마다 도착 시각과 서비스 시간이 표로 주어지고 "끝나는 시각", "평균 반환 시간"을 묻는 문제다. 풀이는 늘 같은 하위목표로 나뉜다. 시각마다 준비 큐에 누가 있는지 적기, 정책의 규칙으로 다음 프로세스 고르기(선점형이면 도착 때마다 다시 확인), 시간 막대(간트 차트) 그리기, 반환 시간 계산하기다.
 
 네 문제 모두 같은 프로세스를 쓴다.
 
@@ -102,7 +102,4 @@ SRT(선점)로 구하라.
 <div class="callout-title" markdown="span">검증: 네 문제의 시간 막대와 끝나는 시각 — [44_scheduling_impl.py](/Hongs_Blog/studies/operating-systems/code/44_scheduling_impl/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 문제의 프로세스 표는 원본 범위 밖의 변형이다. 풀이 규칙은 슬라이드 표 9.3·9.4의 예와 같다.
 {% endraw %}

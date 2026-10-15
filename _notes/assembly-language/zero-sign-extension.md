@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Zero Extension", "Sign Extension", "제로 확장", "부호 확장", "MOVZX", "MOVSX", "MOVZX 명령", "MOVSX 명령", "부호 비트", "Sign Bit"]
 description: "작은 칸의 값을 큰 칸으로 옮기면 큰 칸의 윗부분이 남는다. 그 빈자리를 무엇으로 채우느냐가 문제다. 음수가 없는 수라면 0으로 채우면 값이 그대로다. 음수일 수도 있는 수라면 맨 윗자리 비트를 복사해 채워야 값이 그대로다. 같은 비트라도 어느 쪽으로 채우느냐에 따라 전혀 다른 수…"
@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/zero-sign-extension/"
 
 BL에 든 8비트 값을 AX(16비트)로 옮기고 싶다. `mov ax,bl`은 크기가 달라 오류다. 그러면 AX의 윗바이트는 어떻게 될까? 그대로 두면 예전에 쓰던 값이 남아 엉뚱한 수가 된다. 채울 값을 정해야 한다.
 
-BL = `10001111`(8Fh)로 두 가지를 해 본다[^1][^2].
+BL = `10001111`(8Fh)로 두 가지를 해 본다.
 
 ```
                          원본 BL        10001111
@@ -49,18 +49,18 @@ BL = `10001111`(8Fh)로 두 가지를 해 본다[^1][^2].
 8Fh를 부호 없는 수로 읽으면 143, 부호 있는 수로 읽으면 −113이다. 008Fh는 143이고, FF8Fh는 16비트 부호 있는 수로 −113이다. 제로 확장은 143을, 부호 확장은 −113을 지켰다[^s1].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 008Fh와 FF8Fh, 8비트 값 256개 모두에서 MOVZX는 부호 없는 값을 지키고 MOVSX는 부호 있는 값을 지키는 것(16비트·32비트로), 16비트 표본, 카드 C1·C3. 파이썬 흉내로 확인 — [17_zero-sign-extension_verify.py](/Hongs_Blog/studies/assembly-language/code/17_zero-sign-extension_verify/)</div>
+<div class="callout-title" markdown="span">검증: 예시의 008Fh와 FF8Fh, 8비트 값 256개 모두에서 MOVZX는 부호 없는 값을 지키고 MOVSX는 부호 있는 값을 지키는 것(16비트·32비트로), 16비트 표본, 카드 C1·C3. 파이썬 흉내로 확인 — [17_zero-sign-extension_verify.py](/Hongs_Blog/studies/assembly-language/code/17_zero-sign-extension_verify/)</div>
 
 </div>
 
 
 ## 정의
 
-**제로 확장.** 작은 값을 큰 목적지에 복사할 때 `MOVZX`는 목적지의 윗부분을 0으로 채운다[^1].
+**제로 확장.** 작은 값을 큰 목적지에 복사할 때 `MOVZX`는 목적지의 윗부분을 0으로 채운다.
 
-**부호 확장.** `MOVSX`는 목적지의 윗부분을 원본의 부호 비트(맨 윗자리 비트)를 복사해 채운다[^2].
+**부호 확장.** `MOVSX`는 목적지의 윗부분을 원본의 부호 비트(맨 윗자리 비트)를 복사해 채운다.
 
-두 명령 모두 목적지는 레지스터여야 한다[^1][^2].
+두 명령 모두 목적지는 레지스터여야 한다.
 
 기호로 쓰면, 원본이 $$m$$비트 값 $$x$$이고 목적지가 $$n$$비트($$n > m$$)일 때 다음과 같다. $$s$$는 $$x$$의 맨 윗자리 비트(0 또는 1)다[^s1].
 
@@ -145,7 +145,5 @@ $$-2^{15} + (2^{14} + 2^{13} + \cdots + 2^{7}) = -2^{15} + (2^{15} - 2^{7}) = -2
 </details>
 
 
-[^1]: 어셈블리어 4회 강의 자료 「wk04-chapt_04-4-4」, p.9 (Zero Extension: `movzx ax,bl` 그림, 목적지는 레지스터)
-[^2]: 같은 자료, p.10 (Sign Extension: `movsx ax,bl` 그림, 목적지는 레지스터)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 143과 −113으로 읽은 해석, 기호로 쓴 식, 고르는 법과 흐름도, 값이 그대로인 까닭의 유도, 잘못 고른 예, `mov eax,0` 두 줄, 자바·시프트와의 연결, 카드 C1~C3은 원본에 없다. 8비트 값 256개 모두에서 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 8비트 값 256개 모두에서 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

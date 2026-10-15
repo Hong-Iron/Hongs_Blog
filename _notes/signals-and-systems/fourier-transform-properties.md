@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/fourier-transform-properties/"
 
 ## 예시로 보기
 
-예제 4.9의 신호는 높이 1.5와 1의 계단 모양이다(그림 4.15)[^1]. 직접 적분하지 않고 사각 펄스 둘로 나눈다.
+예제 4.9의 신호는 높이 1.5와 1의 계단 모양이다(그림 4.15). 직접 적분하지 않고 사각 펄스 둘로 나눈다.
 
 1. $$x(t) = \frac12x_1(t - 2.5) + x_2(t - 2.5)$$. $$x_1$$은 폭 $$\frac12$$($$T_1 = \frac12$$), $$x_2$$는 폭 $$\frac32$$($$T_1 = \frac32$$)인 대칭 사각 펄스.
 2. 예제 4.4로 $$X_1 = \frac{2\sin(\omega/2)}{\omega}$$, $$X_2 = \frac{2\sin(3\omega/2)}{\omega}$$.
@@ -42,7 +42,7 @@ permalink: "/studies/signals-and-systems/fourier-transform-properties/"
 
 ## 정의
 
-$$x(t) \leftrightarrow X(j\omega)$$, $$y(t) \leftrightarrow Y(j\omega)$$[^2].
+$$x(t) \leftrightarrow X(j\omega)$$, $$y(t) \leftrightarrow Y(j\omega)$$.
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">표 4.1 (주요 성질)</div>
@@ -68,36 +68,36 @@ $$x(t) \leftrightarrow X(j\omega)$$, $$y(t) \leftrightarrow Y(j\omega)$$[^2].
 </div>
 
 
-[^2]
 
-**시간 이동.** 합성식의 $$t$$를 $$t - t_0$$로 바꾸면 $$x(t - t_0) = \frac{1}{2\pi}\int(e^{-j\omega t_0}X)e^{j\omega t}d\omega$$다. 크기 $$\vert X\vert $$는 그대로이고 위상만 $$-\omega t_0$$ 바뀐다: $$\mathcal{F}\{x(t - t_0)\} = \vert X\vert e^{j[\angle X - \omega t_0]}$$[^3].
 
-**켤레 대칭.** $$X^*(j\omega) = \int x^*(t)e^{j\omega t}dt$$에서 $$\omega$$를 $$-\omega$$로 바꾸면 $$x^* \leftrightarrow X^*(-j\omega)$$. $$x$$가 실수면 $$X(-j\omega) = X^*(j\omega)$$다. 그래서 양의 주파수만 계산하면 음의 주파수 값은 저절로 정해진다[^4]. 예제 4.1에서 $$\mathrm{Re}\{X\} = \frac{a}{a^2+\omega^2}$$는 짝, $$\mathrm{Im}\{X\} = \frac{-\omega}{a^2+\omega^2}$$는 홀이다[^5].
+**시간 이동.** 합성식의 $$t$$를 $$t - t_0$$로 바꾸면 $$x(t - t_0) = \frac{1}{2\pi}\int(e^{-j\omega t_0}X)e^{j\omega t}d\omega$$다. 크기 $$\vert X\vert $$는 그대로이고 위상만 $$-\omega t_0$$ 바뀐다: $$\mathcal{F}\{x(t - t_0)\} = \vert X\vert e^{j[\angle X - \omega t_0]}$$.
 
-**미분과 적분.** 합성식을 $$t$$로 미분하면 $$\frac{dx}{dt} = \frac{1}{2\pi}\int j\omega X e^{j\omega t}d\omega$$, 곧 시간 미분은 주파수에서 $$j\omega$$ 곱셈이다. 미분방정식 시스템을 해석할 때 미분이 곱셈으로 바뀐다. 적분은 $$\frac{1}{j\omega}$$ 곱셈에, 직류 성분(평균값) 때문에 $$\omega = 0$$에 임펄스 $$\pi X(0)\delta(\omega)$$가 더해진다[^6].
+**켤레 대칭.** $$X^*(j\omega) = \int x^*(t)e^{j\omega t}dt$$에서 $$\omega$$를 $$-\omega$$로 바꾸면 $$x^* \leftrightarrow X^*(-j\omega)$$. $$x$$가 실수면 $$X(-j\omega) = X^*(j\omega)$$다. 그래서 양의 주파수만 계산하면 음의 주파수 값은 저절로 정해진다. 예제 4.1에서 $$\mathrm{Re}\{X\} = \frac{a}{a^2+\omega^2}$$는 짝, $$\mathrm{Im}\{X\} = \frac{-\omega}{a^2+\omega^2}$$는 홀이다.
 
-**척도.** $$\tau = at$$로 바꾸면 $$a > 0$$이면 $$\frac1aX(\frac{j\omega}{a})$$, $$a < 0$$이면 적분 범위가 뒤집혀 $$-\frac1aX(\frac{j\omega}{a})$$다. 합쳐서 $$\frac{1}{\vert a\vert }X(\frac{j\omega}{a})$$[^7]. 시간에서 $$a$$배 압축하면 주파수에서 $$\frac1a$$배 압축, 곧 $$a$$배 넓어진다. 녹음을 빨리 틀면($$\vert a\vert  > 1$$) 소리가 높아지고(스펙트럼 확장), 느리게 틀면 낮아진다[^8]. $$a = -1$$이면 시간 반전 $$x(-t) \leftrightarrow X(-j\omega)$$다.
+**미분과 적분.** 합성식을 $$t$$로 미분하면 $$\frac{dx}{dt} = \frac{1}{2\pi}\int j\omega X e^{j\omega t}d\omega$$, 곧 시간 미분은 주파수에서 $$j\omega$$ 곱셈이다. 미분방정식 시스템을 해석할 때 미분이 곱셈으로 바뀐다. 적분은 $$\frac{1}{j\omega}$$ 곱셈에, 직류 성분(평균값) 때문에 $$\omega = 0$$에 임펄스 $$\pi X(0)\delta(\omega)$$가 더해진다.
+
+**척도.** $$\tau = at$$로 바꾸면 $$a > 0$$이면 $$\frac1aX(\frac{j\omega}{a})$$, $$a < 0$$이면 적분 범위가 뒤집혀 $$-\frac1aX(\frac{j\omega}{a})$$다. 합쳐서 $$\frac{1}{\vert a\vert }X(\frac{j\omega}{a})$$. 시간에서 $$a$$배 압축하면 주파수에서 $$\frac1a$$배 압축, 곧 $$a$$배 넓어진다. 녹음을 빨리 틀면($$\vert a\vert  > 1$$) 소리가 높아지고(스펙트럼 확장), 느리게 틀면 낮아진다. $$a = -1$$이면 시간 반전 $$x(-t) \leftrightarrow X(-j\omega)$$다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/40_fourier-transform-properties_fig1.svg" alt="그림" width="640" height="266" loading="lazy">
 
 $$\vert t\vert  < 1$$인 펄스 $$x(t)$$와 두 배 빨리 감은 $$x(2t)$$다. 시간 폭이 절반이 되면 스펙트럼은 첫 영점이 $$\pi$$에서 $$2\pi$$로 옮겨 가 두 배 넓어지고, 높이는 2에서 1로 절반이 된다[^s2].
 
-**파스발 관계.** $$\int\vert x\vert ^2dt = \int x\left[\frac{1}{2\pi}\int X^*e^{-j\omega t}d\omega\right]dt$$에서 적분 순서를 바꾸면 $$\frac{1}{2\pi}\int X^*\left[\int xe^{-j\omega t}dt\right]d\omega = \frac{1}{2\pi}\int\vert X\vert ^2d\omega$$. 전체 에너지는 시간에서 $$\vert x\vert ^2$$를 적분해도, 주파수에서 $$\frac{\vert X\vert ^2}{2\pi}$$를 적분해도 같다. 그래서 $$\vert X(j\omega)\vert ^2$$를 에너지 밀도 스펙트럼이라 한다. 주기 신호의 파스발 관계 $$\frac1T\int_T\vert x\vert ^2dt = \sum\vert a_k\vert ^2$$와 짝이다[^9].
+**파스발 관계.** $$\int\vert x\vert ^2dt = \int x\left[\frac{1}{2\pi}\int X^*e^{-j\omega t}d\omega\right]dt$$에서 적분 순서를 바꾸면 $$\frac{1}{2\pi}\int X^*\left[\int xe^{-j\omega t}dt\right]d\omega = \frac{1}{2\pi}\int\vert X\vert ^2d\omega$$. 전체 에너지는 시간에서 $$\vert x\vert ^2$$를 적분해도, 주파수에서 $$\frac{\vert X\vert ^2}{2\pi}$$를 적분해도 같다. 그래서 $$\vert X(j\omega)\vert ^2$$를 에너지 밀도 스펙트럼이라 한다. 주기 신호의 파스발 관계 $$\frac1T\int_T\vert x\vert ^2dt = \sum\vert a_k\vert ^2$$와 짝이다.
 
 ## 예제
 
-**예제 4.10 대칭 성질로 구하기**[^10]. $$e^{-a\vert t\vert } = e^{-at}u(t) + e^{at}u(-t) = 2\mathcal{E}v\{e^{-at}u(t)\}$$. 실수 신호의 짝 부분은 $$\mathrm{Re}\{X\}$$에 대응하므로 $$X = 2\mathrm{Re}\left\{\frac{1}{a + j\omega}\right\} = \frac{2a}{a^2 + \omega^2}$$. 예제 4.2와 같다.
+**예제 4.10 대칭 성질로 구하기**. $$e^{-a\vert t\vert } = e^{-at}u(t) + e^{at}u(-t) = 2\mathcal{E}v\{e^{-at}u(t)\}$$. 실수 신호의 짝 부분은 $$\mathrm{Re}\{X\}$$에 대응하므로 $$X = 2\mathrm{Re}\left\{\frac{1}{a + j\omega}\right\} = \frac{2a}{a^2 + \omega^2}$$. 예제 4.2와 같다.
 
-**예제 4.11 단위 계단**[^11]. $$u(t) = \int_{-\infty}^{t}\delta(\tau)d\tau$$이고 $$\delta \leftrightarrow 1$$이라 적분 성질로 $$U(j\omega) = \frac{1}{j\omega} + \pi\delta(\omega)$$. 거꾸로 미분하면 $$j\omega\left[\frac{1}{j\omega} + \pi\delta(\omega)\right] = 1$$($$\omega\delta(\omega) = 0$$)로 $$\delta$$의 변환이 나온다.
+**예제 4.11 단위 계단**. $$u(t) = \int_{-\infty}^{t}\delta(\tau)d\tau$$이고 $$\delta \leftrightarrow 1$$이라 적분 성질로 $$U(j\omega) = \frac{1}{j\omega} + \pi\delta(\omega)$$. 거꾸로 미분하면 $$j\omega\left[\frac{1}{j\omega} + \pi\delta(\omega)\right] = 1$$($$\omega\delta(\omega) = 0$$)로 $$\delta$$의 변환이 나온다.
 
-**예제 4.12 미분해서 구하기**[^12]. $$x(t) = t$$ ($$-1 \le t < 1$$), 그 밖 0.
+**예제 4.12 미분해서 구하기**. $$x(t) = t$$ ($$-1 \le t < 1$$), 그 밖 0.
 
 1. 미분하면 $$g(t) = \frac{dx}{dt}$$는 높이 1, 폭 2인 사각 펄스에서 $$t = \pm1$$의 임펄스(넓이 $$-1$$) 둘을 뺀 것이다(그림 4.16).
 2. $$G(j\omega) = \frac{2\sin\omega}{\omega} - e^{j\omega} - e^{-j\omega}$$. $$G(0) = 2 - 1 - 1 = 0$$.
 3. 적분 성질: $$X = \frac{G}{j\omega} + \pi G(0)\delta(\omega) = \frac{2\sin\omega}{j\omega^2} - \frac{2\cos\omega}{j\omega}$$.
 4. 확인: $$x$$는 실수·홀이고 $$X$$는 순허수·홀이다.
 
-**예제 4.14 스펙트럼만으로 계산**[^13]. 그림 4.18의 $$X(j\omega)$$로 에너지 $$E = \int\vert x\vert ^2dt$$와 $$D = \frac{dx}{dt}\big\vert _{t=0}$$을 구한다.
+**예제 4.14 스펙트럼만으로 계산**. 그림 4.18의 $$X(j\omega)$$로 에너지 $$E = \int\vert x\vert ^2dt$$와 $$D = \frac{dx}{dt}\big\vert _{t=0}$$을 구한다.
 
 - $$E$$는 파스발로: (a) $$\frac{1}{2\pi}[\pi \cdot 0.5 + \frac\pi4 \cdot 1 + \pi \cdot 0.5] = \frac58$$, (b) $$\vert {\pm j\sqrt\pi}\vert ^2 = \pi$$라 $$\frac{1}{2\pi}[\pi + \pi] = 1$$.
 - $$D$$는 미분 성질과 역변환식 $$t = 0$$으로: $$D = \frac{1}{2\pi}\int j\omega X(j\omega)d\omega$$. (a) $$X$$가 짝이라 $$\omega X$$는 홀, 적분이 0. (b) $$\frac{1}{2\pi}\left[\int_{-1}^{0}\sqrt\pi\omega d\omega - \int_0^1\sqrt\pi\omega d\omega\right] = -\frac{1}{2\sqrt\pi}$$.
@@ -189,19 +189,6 @@ $$X$$가 실수·짝이라 $$x$$도 실수·짝이다. 짝함수의 도함수는
 </details>
 
 
-[^1]: 신호 및 시스템 14회 강의 자료 「Week14_CH04_2_handout」, p.9 (예제 4.9, 그림 4.15)
-[^2]: 같은 자료, p.6~7 (표 4.1), 신호 및 시스템 15회 강의 자료 「Week15_CH04_3_handout」, p.25
-[^3]: 같은 자료(14.Week14_CH04_2_handout.pdf), p.8
-[^4]: 같은 자료, p.10
-[^5]: 같은 자료, p.11
-[^6]: 같은 자료, p.17
-[^7]: 같은 자료, p.21
-[^8]: 같은 자료, p.22
-[^9]: 같은 자료, p.29~30
-[^10]: 같은 자료, p.12~14 (예제 4.10)
-[^11]: 같은 자료, p.18 (예제 4.11)
-[^12]: 같은 자료, p.19~20 (예제 4.12, 그림 4.16)
-[^13]: 같은 자료, p.31~32 (예제 4.14, 그림 4.18)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [40_fourier-transform-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$x(2t)$$의 변환을 수치 적분해 $$\frac12X(\frac{j\omega}{2})$$와 비교, 첫 영점 $$\pi$$와 $$2\pi$$.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [40_fourier-transform-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/40_fourier-transform-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$x(2t)$$의 변환을 수치 적분해 $$\frac12X(\frac{j\omega}{2})$$와 비교, 첫 영점 $$\pi$$와 $$2\pi$$.
 {% endraw %}

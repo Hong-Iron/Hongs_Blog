@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Joint Distribution", "결합분포", "결합확률밀도", "joint density", "주변분포", "marginal distribution", "조건부 분포", "conditional distribution", "조건부 기댓값", "conditional expectation", "아담의 법칙", "Adam's law", "전체 기댓값의 법칙", "law of total expectation", "이브의 법칙", "Eve's law", "전체 분산의 법칙", "law of total variance"]
 description: "두 확률변수를 따로가 아니라 함께 보는 표가 결합분포다. 한쪽만 보고 싶으면 다른 쪽을 모두 더해 없애고(주변분포), 한쪽 값을 알 때 다른 쪽을 보려면 그 줄만 잘라 합이 1이 되게 다시 맞춘다(조건부 분포). 조건부 기댓값은 \"이것을 알 때 저것의 가장 좋은 예측\"이고, 그룹별…"
@@ -176,9 +176,9 @@ $$\sum_x p(x, y)$$는 $$Y = y$$인 칸을 모든 $$x$$에 대해 더한 것, 곧
 
 ## 과목별 관점
 
-**자료와 정보 (2-1학기).** 결합 확률을 조건부 확률보다 먼저 꺼내고, 표 대신 "합 규칙"과 "곱 규칙" 두 식으로 다룬다. 뒤쪽에서는 연속 확률변수와 통계값의 표기를 한 쪽씩으로 훑는다[^i1].
+**자료와 정보 (2-1학기).** 결합 확률을 조건부 확률보다 먼저 꺼내고, 표 대신 "합 규칙"과 "곱 규칙" 두 식으로 다룬다. 이어서 연속 확률변수와 통계값의 표기를 짧게 훑는다.
 
-- **과일 상자를 표로.** [조건부 확률](/Hongs_Blog/studies/probability-statistics/conditional-probability/)의 과일 상자 예를 이 문서의 표로 옮기면 이렇다. 칸은 곱 규칙 $$p(B, F) = p(F \mid B)\,p(B)$$로 채운다. 빨강·오렌지 칸은 $$\frac34 \cdot \frac{4}{10} = \frac{3}{10}$$이다[^i2][^is2].
+- **과일 상자를 표로.** [조건부 확률](/Hongs_Blog/studies/probability-statistics/conditional-probability/)의 과일 상자 예를 이 문서의 표로 옮기면 이렇다. 칸은 곱 규칙 $$p(B, F) = p(F \mid B)\,p(B)$$로 채운다. 빨강·오렌지 칸은 $$\frac34 \cdot \frac{4}{10} = \frac{3}{10}$$이다[^is2].
 
     | | 사과 $$a$$ | 오렌지 $$o$$ | 상자의 주변 |
     |---|---|---|---|
@@ -186,16 +186,9 @@ $$\sum_x p(x, y)$$는 $$Y = y$$인 칸을 모든 $$x$$에 대해 더한 것, 곧
     | 파랑 $$b$$ | $$\frac{9}{20}$$ | $$\frac{3}{20}$$ | $$\frac{6}{10}$$ |
     | 과일의 주변 | $$\frac{11}{20}$$ | $$\frac{9}{20}$$ | 1 |
 
-    슬라이드의 합 규칙 $$p(X) = \sum_Y p(X, Y)$$가 이 문서의 주변분포다. 세로로 더한 맨 아랫줄이 과일의 확률이다[^i3]. 동전과 주사위 예에서는 $$P(D = 4, C = h) = \frac16 \cdot \frac12 = \frac1{12}$$로 모든 칸이 가장자리의 곱이라 독립이다[^i4][^is2].
-- **연속 확률변수의 표기.** 밀도를 소문자 $$p(x)$$, 누적분포를 대문자 $$P(z) = \int_{-\infty}^{z} p(x)\,dx$$로 쓴다. 이 문서의 $$f$$, $$F$$와 같다. 구간에 들 확률은 $$p(x \in (a, b)) = \int_a^b p(x)\,dx$$이고, 밀도는 $$p(x) \ge 0$$, $$\int_{-\infty}^{\infty} p(x)\,dx = 1$$을 지킨다[^i5].
-- **통계값의 표기.** 기댓값을 함수 $$f$$에 대해 $$\mathbb{E}[f] = \sum p(x)f(x)$$(연속이면 $$\int p(x)f(x)\,dx$$), 분산을 $$\operatorname{var}[f] = \mathbb{E}[f(x)^2] - \mathbb{E}[f(x)]^2$$로 적는다. 조건부 기댓값은 $$\mathbb{E}_x[f \mid y] = \sum_x p(x \mid y)f(x)$$다. $$\mathbb{E}$$ 아래의 작은 글자는 어느 변수로 평균을 내는지 알려 준다. 이 문서의 $$\mathbb{E}[Y \mid X = x]$$와 견주면 변수의 자리가 반대다. 슬라이드는 $$y$$를 알 때 $$x$$ 쪽을 평균 낸다. 공분산은 $$\operatorname{cov}[x, y] = \mathbb{E}_{x,y}[xy] - \mathbb{E}[x]\mathbb{E}[y]$$, 상관계수는 $$\rho_{X,Y} = \frac{\operatorname{cov}(X, Y)}{\sigma_X\sigma_Y}$$다[^i6]. 뒤의 둘은 [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/)에 있다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 자료와 정보 8회 슬라이드 p.8의 항목 이름 "Conditional Variance → Covariance" / 문제점: 옆에 적힌 식은 $$\operatorname{cov}[x, y] = \mathbb{E}_{x,y}[\{x - \mathbb{E}[x]\}\{y - \mathbb{E}[y]\}]$$로 공분산뿐이다. 조건부 분산의 식은 그 쪽에 없다 / 수정안: 항목 이름을 "Covariance"로 읽는다. 조건부 분산은 이 문서의 이브의 법칙에 나오는 $$\operatorname{Var}(Y \mid X)$$다 / 근거: 조건부 분산은 한 변수의 값을 알 때 다른 변수의 흩어짐이고, 공분산은 두 변수가 함께 움직이는 정도라 서로 다른 양이다. 과일 상자 표에서 빨강과 오렌지를 1, 나머지를 0으로 두고 계산하면 공분산은 $$\frac{3}{25}$$이고, 과일의 조건부 분산은 어느 상자에서든 $$\frac{3}{16}$$이다[^is2]
-
-</div>
+    합 규칙 $$p(X) = \sum_Y p(X, Y)$$가 이 문서의 주변분포다. 세로로 더한 맨 아랫줄이 과일의 확률이다. 동전과 주사위 예에서는 $$P(D = 4, C = h) = \frac16 \cdot \frac12 = \frac1{12}$$로 모든 칸이 가장자리의 곱이라 독립이다[^is2].
+- **연속 확률변수의 표기.** 밀도를 소문자 $$p(x)$$, 누적분포를 대문자 $$P(z) = \int_{-\infty}^{z} p(x)\,dx$$로 쓴다. 이 문서의 $$f$$, $$F$$와 같다. 구간에 들 확률은 $$p(x \in (a, b)) = \int_a^b p(x)\,dx$$이고, 밀도는 $$p(x) \ge 0$$, $$\int_{-\infty}^{\infty} p(x)\,dx = 1$$을 지킨다.
+- **통계값의 표기.** 기댓값을 함수 $$f$$에 대해 $$\mathbb{E}[f] = \sum p(x)f(x)$$(연속이면 $$\int p(x)f(x)\,dx$$), 분산을 $$\operatorname{var}[f] = \mathbb{E}[f(x)^2] - \mathbb{E}[f(x)]^2$$로 적는다. 조건부 기댓값은 $$\mathbb{E}_x[f \mid y] = \sum_x p(x \mid y)f(x)$$다. $$\mathbb{E}$$ 아래의 작은 글자는 어느 변수로 평균을 내는지 알려 준다. 이 문서의 $$\mathbb{E}[Y \mid X = x]$$와 견주면 변수의 자리가 반대다. 이 식은 $$y$$를 알 때 $$x$$ 쪽을 평균 낸다. 공분산은 $$\operatorname{cov}[x, y] = \mathbb{E}_{x,y}[xy] - \mathbb{E}[x]\mathbb{E}[y]$$, 상관계수는 $$\rho_{X,Y} = \frac{\operatorname{cov}(X, Y)}{\sigma_X\sigma_Y}$$다. 뒤의 둘은 [공분산과 상관계수](/Hongs_Blog/studies/probability-statistics/covariance/)에 있다. 공분산은 조건부 분산과 이름이 비슷해 헷갈리기 쉽지만 다른 양이다. 조건부 분산은 한 변수의 값을 알 때 다른 변수가 얼마나 흩어지는지이고, 이브의 법칙의 $$\operatorname{Var}(Y \mid X)$$가 이것이다. 공분산은 두 변수가 함께 움직이는 정도다. 과일 상자에서 빨강과 오렌지를 1, 나머지를 0으로 두면 공분산은 $$\frac{3}{25}$$이고, 오렌지인지 아닌지의 조건부 분산은 어느 상자에서든 $$\frac{3}{16}$$이다[^is2].
 
 
 ## 확인 문제
@@ -242,12 +235,6 @@ $$\sum_x p(x, y)$$는 $$Y = y$$인 칸을 모든 $$x$$에 대해 더한 것, 곧
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.1절 "Joint, marginal, and conditional", 7.2절 "2D LOTUS", 9.1~9.3절(조건부 기댓값과 그 성질, 아담의 법칙), 9.4절(조건부 기댓값은 제곱오차를 가장 작게 하는 예측), 9.5절 "Conditional variance"(이브의 법칙).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의(주변분포, 조건부 분포, 조건부 기댓값)와 아담의 법칙의 증명 순서를 그렸다.
-[^i1]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.3~8 (Joint Probability, Conditional Probability, Rules, Continuous R.V, Statistics)
-[^i2]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.6 (과일 상자의 조건부 확률과 $$p(B = r) = 4/10$$)
-[^i3]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.5 (Sum Rule, Product Rule)
-[^i4]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.3 (동전과 주사위의 결합 확률)
-[^i5]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.7 (Continuous R.V: 확률밀도, 구간의 확률, 누적분포)
-[^i6]: 자료와 정보 8회 강의 자료 「D&I_강의08-조건확률」, p.8 (Statistics: 기댓값, 분산, 조건부 기댓값, 공분산, 상관계수)
-[^is2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 과일 상자의 결합분포 표, 동전과 주사위의 $$\frac1{12}$$, 독립인지 가리는 계산, 공분산 $$\frac{3}{25}$$과 조건부 분산 $$\frac{3}{16}$$은 원본에 없다. 슬라이드에는 조건부 확률과 주변 확률만 있다. 표의 네 칸과 합 1, 주변분포, $$\frac{9}{50} \ne \frac{3}{10}$$, 공분산과 조건부 분산을 파이썬 분수 계산으로 확인했다.
+[^s1]: 이 문서 정의(주변분포, 조건부 분포, 조건부 기댓값)와 아담의 법칙의 증명 순서를 그렸다.
+[^is2]: 표의 네 칸과 합 1, 주변분포, $$\frac{9}{50} \ne \frac{3}{10}$$, 공분산과 조건부 분산을 파이썬 분수 계산으로 확인했다.
 {% endraw %}

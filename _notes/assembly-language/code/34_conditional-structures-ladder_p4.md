@@ -30,7 +30,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(예: 00000020의 call 다음 줄은 00000025).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -495,11 +495,11 @@ def run(code, regs=None, data=None, max_steps=10 ** 5):
 
 
 def main():
-    # 문제 1 (슬라이드 wk09-2-1 p.10)
+    # 문제 1
     code = "mov eax,op1\ncmp eax,op2\njne L1\nmov X,1\njmp L2\nL1:mov X,2\nL2:"
     for a, b in itertools.product(E, E):
         assert run(code, data=dict(op1=a, op2=b, X=0))[1]["X"] == (1 if a == b else 2)
-    # 문제 2 (슬라이드 p.16): 부호 없는 if (ebx <= ecx && ecx > edx) { eax = 5; edx = 6; }
+    # 문제 2: 부호 없는 if (ebx <= ecx && ecx > edx) { eax = 5; edx = 6; }
     code = "cmp ebx,ecx\nja next\ncmp ecx,edx\njbe next\nmov eax,5\nmov edx,6\nnext:"
     for b, c_, d in itertools.product(E, E, E):
         c, _ = run(code, dict(ebx=b, ecx=c_, edx=d, eax=99))

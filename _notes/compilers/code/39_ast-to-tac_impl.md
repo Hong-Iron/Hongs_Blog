@@ -21,8 +21,8 @@ permalink: "/studies/compilers/code/39_ast-to-tac_impl/"
 
 ```python
 # 39_ast-to-tac_impl.py
-# AST를 후위 순서로 돌며 쿼드러플을 만드는 생성기. 슬라이드 L11 p.22~31의 A + A * B - 1 추적과
-# p.32 while 연습, p.17 if-else 예, p.18 while 예를 다시 만들고, 만든 코드를 실행한 값이
+# AST를 후위 순서로 돌며 쿼드러플을 만드는 생성기. 문서의 A + A * B - 1 추적과
+# while 연습, 3주소 코드 문서의 if-else 예와 while 예를 다시 만들고, 만든 코드를 실행한 값이
 # AST를 직접 계산한 값과 같은지 무작위 식 2,000개로 견준다. 표준 라이브러리만 쓴다.
 # AST 노드: ("id", 이름), ("num", 값), (연산자, 왼쪽, 오른쪽), ("=", ("id", 이름), 식),
 #           ("while", 조건, 문장), ("if", 조건, 문장, 문장), ("block", [문장...]),
@@ -183,7 +183,7 @@ class Gen:
                 self.stmt(s)
         elif kind == "=":
             self.emit("=", self.expr(n[2]), None, n[1][1])
-        elif kind == "while":                  # p.32의 규칙 순서 그대로
+        elif kind == "while":                  # 문서의 while 규칙 순서 그대로
             li = self.label()
             self.emit("label", li, None, None)
             cond = self.expr(n[1])
@@ -192,7 +192,7 @@ class Gen:
             self.stmt(n[2])
             self.emit("goto", li, None, None)
             self.emit("label", lj, None, None)
-        elif kind == "if":                     # p.17 예의 모양(보충: 규칙은 슬라이드에 없다)
+        elif kind == "if":                     # 3주소 코드 문서의 if-else 예 모양에 맞춘 규칙
             cond = self.expr(n[1])
             lt, lf, le = self.label(), self.label(), self.label()
             self.emit("if", cond, lt, None)
@@ -260,7 +260,7 @@ def postorder_ops(n, out):
 if __name__ == "__main__":
     A, B, X, Y = ("id", "A"), ("id", "B"), ("id", "x"), ("id", "y")
 
-    # p.22~31: (A + A * B) - 1
+    # 문서의 추적: (A + A * B) - 1
     tree = ("-", ("+", A, ("*", A, B)), ("num", 1))
     g = Gen()
     assert g.expr(tree) == "t2"
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     assert g.log == [("visit", "A"), ("visit", "A"), ("visit", "B"), ("emit", "*", "A", "B", "t0"),
                      ("emit", "+", "A", "t0", "t1"), ("visit", 1), ("emit", "-", "t1", "1", "t2")]
 
-    # p.32 연습(보충): while (x <= y) x = x + 1
+    # while 연습: while (x <= y) x = x + 1
     g = Gen()
     g.stmt(("while", ("<=", X, Y), ("=", X, ("+", X, ("num", 1)))))
     assert [show(q) for q in g.out] == [
@@ -281,7 +281,7 @@ if __name__ == "__main__":
             _, env = run(g.out, {"x": x, "y": y})
             assert env["x"] == max(x, y + 1)
 
-    # p.18: while (x < y) { x = x + 1; } foo(x - 1);  슬라이드와 한 글자도 다르지 않다
+    # while (x < y) { x = x + 1; } foo(x - 1);  3주소 코드 문서의 코드와 한 글자도 다르지 않다
     g = Gen()
     g.stmt(("block", [("while", ("<", X, Y), ("block", [("=", X, ("+", X, ("num", 1)))])),
                       ("call", "foo", [("-", X, ("num", 1))])]))
@@ -289,7 +289,7 @@ if __name__ == "__main__":
         "L0:", "t0 = x < y", "ifnot t0 goto L1", "t1 = x + 1", "x = t1", "goto L0", "L1:",
         "t2 = x - 1", "param t2", "call foo, 1"]
 
-    # p.17: if-else. 슬라이드는 L0 안에서 t0를 다시 쓰고, 이 생성기는 늘 새 임시 변수를 쓴다.
+    # if-else. 3주소 코드 문서의 코드는 L0 안에서 t0를 다시 쓰고, 이 생성기는 늘 새 임시 변수를 쓴다.
     # 그래서 임시 변수 번호만 하나씩 밀린다. 실행 결과는 같다.
     g = Gen()
     g.stmt(("block", [("if", ("==", X, Y), ("block", [("=", X, ("+", X, ("num", 1)))]),
@@ -298,7 +298,7 @@ if __name__ == "__main__":
     mine = [show(q) for q in g.out]
     assert mine == ["t0 = x == y", "if t0 goto L0", "goto L1", "L0:", "t1 = x + 1", "x = t1", "goto L2",
                     "L1:", "t2 = x + 2", "x = t2", "L2:", "t3 = x + 3", "x = t3", "return x"]
-    slide = quads("""t0 = x == y
+    reused = quads("""t0 = x == y
 if t0 goto L0
 goto L1
 L0:
@@ -314,7 +314,7 @@ x = t2
 return x""")
     for x in range(-5, 6):
         for y in range(-5, 6):
-            assert run(g.out, {"x": x, "y": y})[0] == run(slide, {"x": x, "y": y})[0]
+            assert run(g.out, {"x": x, "y": y})[0] == run(reused, {"x": x, "y": y})[0]
 
     # 무작위 식 2,000개: 만든 코드의 실행값 = AST를 직접 계산한 값,
     # 쿼드러플의 op 순서 = AST 후위 순회에서 연산자가 나오는 순서, 쿼드러플 수 = 연산자 노드 수

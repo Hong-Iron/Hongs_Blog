@@ -20,10 +20,10 @@ permalink: "/studies/computer-communication/code/48_two-dimensional-parity_impl/
 [2차원 패리티](/Hongs_Blog/studies/computer-communication/two-dimensional-parity/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""2차원 패리티 구현과 검증 (슬라이드 p.49, p.60)."""
+"""2차원 패리티 구현과 검증."""
 import itertools, random
 
-ROWS = ["0101001", "1101001", "1011110", "0001110", "0110100", "1011111"]     # 데이터 6바이트(7비트씩), 슬라이드 49에 보이는 위→아래 순서
+ROWS = ["0101001", "1101001", "1011110", "0001110", "0110100", "1011111"]     # 데이터 6바이트(7비트씩), 문서 예시의 위→아래 순서
 
 
 def encode(rows):
@@ -41,8 +41,8 @@ def check(m):
 
 def main():
     m = encode(ROWS)
-    assert [r[-1] for r in m[:-1]] == [1, 0, 1, 1, 1, 0]      # 슬라이드의 패리티 비트
-    assert m[-1] == [1, 1, 1, 1, 0, 1, 1, 0]                   # 슬라이드의 패리티 바이트 1111011 0
+    assert [r[-1] for r in m[:-1]] == [1, 0, 1, 1, 1, 0]      # 예시의 가로 패리티 비트
+    assert m[-1] == [1, 1, 1, 1, 0, 1, 1, 0]                   # 예시의 패리티 바이트 1111011 0
     assert check(m) == ([], [])
     # 1비트 오류: 행과 열이 하나씩 틀려 위치를 알고 고칠 수 있다
     for i in range(7):

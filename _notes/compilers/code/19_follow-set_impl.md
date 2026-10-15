@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/19_follow-set_impl/"
 [FOLLOW 집합](/Hongs_Blog/studies/compilers/follow-set/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""FOLLOW 집합을 구하고 슬라이드 값을 재현한다. 문장 형식을 모두 만들어 구한 값과도 견준다.
+"""FOLLOW 집합을 구하고 문서의 값을 재현한다. 문장 형식을 모두 만들어 구한 값과도 견준다.
 
 실행: python3 19_follow-set_impl.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -176,7 +176,7 @@ def follow_rounds(g, start, first):
 if __name__ == "__main__":
     import random
 
-    # p.29: E → TE', E' → +E | ε, T → FT', T' → *T | ε, F → (E) | id
+    # 산술식 예: E → TE', E' → +E | ε, T → FT', T' → *T | ε, F → (E) | id
     g = G("E -> T E'\nE' -> + E | ε\nT -> F T'\nT' -> * T | ε\nF -> ( E ) | id")
     first = first_sets(g)
     follow = follow_sets(g, "E", first)
@@ -186,7 +186,7 @@ if __name__ == "__main__":
     # FOLLOW에는 ε이 들어가지 않는다
     assert all(EPS not in s for s in follow.values())
 
-    # p.18: S → aA | b | A, A → (S)
+    # S → aA | b | A, A → (S)
     g2 = G("S -> a A | b | A\nA -> ( S )")
     assert follow_sets(g2, "S", first_sets(g2)) == {"S": {END, ")"}, "A": {END, ")"}}
 
@@ -195,7 +195,7 @@ if __name__ == "__main__":
     f3 = follow_sets(g3, "S", first_sets(g3))
     assert f3 == {"S": {END}, "A": {"b", "c"}, "B": {"c"}}
 
-    # 셋째 규칙을 빼먹으면 틀린다: p.29에서 Follow(T)의 $ 와 ) 는 Follow(E)에서 넘어온 것이다
+    # 셋째 규칙을 빼먹으면 틀린다: 산술식 예에서 Follow(T)의 $ 와 ) 는 Follow(E)에서 넘어온 것이다
     assert first_of(("E'",), first, g) - {EPS} == {"+"} and follow["T"] - {"+"} == follow["E"]
 
     # 무작위 문법 100개(규칙 오른쪽 길이 2 이하): 되풀이로 구한 값 = 정의대로 구한 값

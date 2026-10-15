@@ -24,7 +24,7 @@ permalink: "/studies/abnormal-psychology/sex-related-practice/"
 {% raw %}
 사용 개념: [성기능부전](/Hongs_Blog/studies/abnormal-psychology/sexual-dysfunctions/), [발기장애](/Hongs_Blog/studies/abnormal-psychology/erectile-disorder/), [성기-골반 통증·삽입장애](/Hongs_Blog/studies/abnormal-psychology/genito-pelvic-pain/), [성도착과 성도착장애 비교](/Hongs_Blog/studies/abnormal-psychology/paraphilia-vs-disorder/), [노출장애](/Hongs_Blog/studies/abnormal-psychology/exhibitionistic-disorder/), [복장도착장애](/Hongs_Blog/studies/abnormal-psychology/transvestic-disorder/), [성별 불쾌감](/Hongs_Blog/studies/abnormal-psychology/gender-dysphoria/), [복장도착장애와 성별 불쾌감 비교](/Hongs_Blog/studies/abnormal-psychology/transvestic-vs-gender-dysphoria/)
 
-모든 사례는 가상이고, 진단기준의 적용만 다루도록 행위의 묘사는 줄였다[^s1]. 성 관련 사례는 다섯 하위목표로 푼다. 이 영역의 오진은 대부분 네 번째 단계, 곧 "관심이나 차이일 뿐인데 장애로 보는 것"에서 생긴다.
+모든 사례는 가상이고, 진단기준의 적용만 다루도록 행위의 묘사는 줄였다. 성 관련 사례는 다섯 하위목표로 푼다. 이 영역의 오진은 대부분 네 번째 단계, 곧 "관심이나 차이일 뿐인데 장애로 보는 것"에서 생긴다.
 
 1. *무리:* 무엇이 문제인가. 성적 반응의 능력(성기능부전), 성적 흥분의 대상·방식(성도착), 할당된 성별과 경험하는 성별의 불일치(성별 불쾌감).
 2. *핵심 증상:* 성반응주기의 어느 단계인가, 흥분의 대상은 무엇인가, 불일치의 항목은 무엇인가.
@@ -110,7 +110,4 @@ permalink: "/studies/abnormal-psychology/sex-related-practice/"
 불충분한 성적 자극 때문에 생긴 문제일 가능성을 먼저 본다. 그렇다면 치료나 상담이 도움이 될 수는 있어도 성기능부전으로 진단하지 않는다. 커플의 의사소통과 성적 기술을 다루고, 자극이 충분한데도 문제가 이어지는지 다시 평가한다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 09.성 관련 장애.pdf의 장애별 설명(p.4, 6, 10~12, 22~23, 30~31, 33, 38~39, 51~55, 65, 73)을 적용한 가상 사례다.
 {% endraw %}

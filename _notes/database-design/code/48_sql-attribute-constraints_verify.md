@@ -21,7 +21,7 @@ permalink: "/studies/database-design/code/48_sql-attribute-constraints_verify/"
 
 ```python
 # 48.속성 제약 NOT NULL·DEFAULT·CHECK 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 48_sql-attribute-constraints_verify.py)
-# 확인하는 것 (슬라이드 10 p.15~17의 문장을 COMPANY에 붙여 돌린다)
+# 확인하는 것 (문서의 NOT NULL, DEFAULT, CHECK 문장을 COMPANY에 붙여 돌린다)
 #   1. NOT NULL: 값이 꼭 있어야 하는 열에 NULL을 넣거나 값을 빼먹으면 막힌다
 #   2. DEFAULT: 값을 안 적으면 미리 정한 값이 들어간다 (Dno DEFAULT 1, Mgr_ssn DEFAULT '888665555')
 #   3. CHECK (Dnumber > 0 AND Dnumber < 21): 1~20만 받는다. NULL은 CHECK만으로는 못 막는다
@@ -29,8 +29,8 @@ permalink: "/studies/database-design/code/48_sql-attribute-constraints_verify/"
 #      (48_sql-attribute-constraints_verify.sql)
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -86,7 +86,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -124,7 +124,7 @@ def error_of(c, sql, args=()):
         c.execute('RELEASE try_it')
 
 
-# 슬라이드 10 p.16~17대로 DEFAULT와 CHECK를 붙인 DDL
+# 문서대로 DEFAULT와 CHECK를 붙인 DDL
 DDL_48 = (COMPANY_DDL
           .replace('Super_ssn CHAR(9), Dno INT NOT NULL,', 'Super_ssn CHAR(9), Dno INT NOT NULL DEFAULT 1,')
           .replace('Dnumber INT NOT NULL, Mgr_ssn CHAR(9) NOT NULL,',

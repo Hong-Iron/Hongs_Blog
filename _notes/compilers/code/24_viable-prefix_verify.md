@@ -20,14 +20,14 @@ permalink: "/studies/compilers/code/24_viable-prefix_verify/"
 [유효 접두사](/Hongs_Blog/studies/compilers/viable-prefix/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 검증: 유효 접두사 (L07 p.12~18, p.31). 정의대로 모은 집합과 오토마타가 받아들이는 집합을 견준다.
+# 검증: 유효 접두사. 정의대로 모은 집합과 오토마타가 받아들이는 집합을 견준다.
 # 실행: python3 24_viable-prefix_verify.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 문서처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,10 +228,10 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# 항목 오토마타·SLR 문서의 문법: E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 이동-환원·핸들·유효 접두사 문서의 문법: E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
@@ -276,7 +276,7 @@ if __name__ == "__main__":
     states1, trans1, action1, goto1 = slr_table(G1, G1_ORDER)
     states2, trans2, action2, goto2 = slr_table(G2, G2_ORDER)
 
-    # (1) L07 p.12의 표: id * id를 파싱하는 동안 왼쪽 부분은 늘 유효 접두사다
+    # (1) 문서의 표: id * id를 파싱하는 동안 왼쪽 부분은 늘 유효 접두사다
     ok, tr = parse("id * id".split(), G1, action1, goto1)
     lefts = [" ".join(s) for _, s, _, _ in tr]
     assert lefts == ["", "id", "F", "F *", "F * id", "F * F", "F * T", "T", "E"], lefts
@@ -298,13 +298,16 @@ if __name__ == "__main__":
         n += viable(s, trans2)
     print("G2: 길이 4 이하 기호열 %d개 중 유효 접두사 %d개, 정의와 오토마타가 일치" % (sum(6 ** k for k in range(5)), n))
 
-    # (3) L07 p.16~17: T + 뒤에 이어 붙을 수 있는 것
+    # (3) T + 뒤에 이어 붙을 수 있는 것
     for tail in ["T +", "F *", "(", "T", "F", "( E )", "id", "T + E", "F * T"]:
         assert viable(("T + " + tail).split(), trans1), tail
     for bad in ["T + )", "T + +", "T + E +", "T + id id", "T *", "E +"]:
         assert not viable(bad.split(), trans1), bad
 
-    # (4) L07 p.31: ((((((((는 유효 접두사다. 닫는 괄호로 시작하거나 id가 연달아 오면 아니다
+    # 핸들 후보: F|* id 에서 T -> F 가 있고 T 도 유효 접두사지만, 다음 토큰을 붙인 T * 는 아니다
+    assert ("T", ("F",)) in G1 and viable(["T"], trans1) and not viable(["T", "*"], trans1)
+
+    # (4) ((((((((는 유효 접두사다. 닫는 괄호로 시작하거나 id가 연달아 오면 아니다
     assert viable(["("] * 8, trans2)
     assert not viable([")"], trans2) and not viable(["id", "id"], trans2) and not viable(["E", "*"], trans2)
     assert len(states1) == 12 and len(states2) == 9       # 상태 수는 유한하다

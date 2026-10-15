@@ -22,12 +22,12 @@ permalink: "/studies/database-design/code/35_relational-database-schema_verify-s
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 문서: 35.관계형 데이터베이스 스키마와 상태 (PostgreSQL 16에서 실행)
--- 출처: 데이터베이스 설계 6-2 슬라이드 p.20~21 (스키마와 상태), 9 슬라이드 p.17~18 (CREATE TABLE)
+-- 출처: Elmasri & Navathe, Fundamentals of Database Systems의 COMPANY 스키마와 상태, CREATE TABLE 문
 -- 확인하는 것:
 --   1. EMPLOYEE와 DEPARTMENT는 서로 가리킨다. 아직 없는 표를 가리키는 외래 키는 표를 만들 때 거부된다
 --      (SQLite는 받는다). 그래서 표를 먼저 만들고 외래 키를 나중에 붙인다.
---   2. 9 p.17~18의 자료형(길이까지 검사된다)과 제약으로 6-2 p.21의 상태 45행이 들어간다. 단 Hours는 NULL을 받게 해야 한다.
---   3. 9 p.18에 적힌 대로 Hours를 NOT NULL로 하면 (888665555, 20, NULL) 때문에 거부된다.
+--   2. 교재 CREATE TABLE 문의 자료형(길이까지 검사된다)과 제약으로 문서의 상태 45행이 들어간다. 단 Hours는 NULL을 받게 해야 한다.
+--   3. Hours를 NOT NULL로 하면 (888665555, 20, NULL) 때문에 거부된다.
 --   4. 기본 키 6개, 외래 키 8개가 카탈로그에 있다.
 DROP SCHEMA IF EXISTS relational_database_schema CASCADE;
 CREATE SCHEMA relational_database_schema;
@@ -64,7 +64,7 @@ ALTER TABLE EMPLOYEE ADD FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn) DEFERR
 ALTER TABLE EMPLOYEE ADD FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber) DEFERRABLE INITIALLY DEFERRED;
 ALTER TABLE DEPARTMENT ADD FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn) DEFERRABLE INITIALLY DEFERRED;
 
--- 2. 상태를 넣는다 (6-2 p.21)
+-- 2. 상태를 넣는다 (문서의 COMPANY 상태)
 BEGIN;
 INSERT INTO EMPLOYEE VALUES
  ('John','B','Smith','123456789','1965-01-09','731 Fondren, Houston, TX','M',30000,'333445555',5),
@@ -97,7 +97,7 @@ DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE WHERE Super_ssn IS NULL) = 1, 'Super_ssn이 NULL인 직원은 Borg 하나';
 END $$;
 
--- 3. Hours를 NOT NULL로 (9 p.18)
+-- 3. Hours를 NOT NULL로
 DO $$ BEGIN
   ALTER TABLE WORKS_ON ALTER COLUMN Hours SET NOT NULL;
   RAISE EXCEPTION 'NULL인 Hours가 있는데 NOT NULL이 걸려 버렸다';
@@ -115,7 +115,7 @@ DO $$ BEGIN
             ON tc.constraint_name = kcu.constraint_name AND tc.table_schema = kcu.table_schema
           WHERE tc.table_schema = 'relational_database_schema' AND tc.constraint_type = 'PRIMARY KEY')
        = 'department.dnumber dependent.essn dependent.dependent_name dept_locations.dnumber dept_locations.dlocation employee.ssn project.pnumber works_on.essn works_on.pno',
-         '기본 키 속성이 6-2 p.20의 밑줄과 같아야 한다';
+         '기본 키 속성이 문서 스키마 표의 기본 키와 같아야 한다';
 END $$;
 
 SELECT 'ALL CHECKS PASSED';

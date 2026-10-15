@@ -23,7 +23,7 @@ permalink: "/studies/data-and-information/hamming-code-ladder/"
 {% raw %}
 사용 개념: [해밍 부호](/Hongs_Blog/studies/data-and-information/hamming-code/)의 검사 칸 자리, 부호 생성, 오류 검사와 정정.
 
-해밍 부호 문제는 같은 하위목표의 되풀이다. ① 칸 배치: 1, 2, 4, 8번에 검사 칸을 두고 나머지에 내용을 차례로 넣는다 ② 검사 칸 계산: $$P_1, P_2, P_4, P_8$$이 맡은 칸을 XOR한다 ③ 검사: 받은 열에서 검사 칸까지 넣어 다시 XOR한다 ④ 신드롬 읽기: 결과를 $$P_8 P_4 P_2 P_1$$ 순서의 2진수로 읽는다 ⑤ 정정과 꺼내기: 그 번호의 칸을 뒤집고 내용 칸만 읽는다[^s1].
+해밍 부호 문제는 같은 하위목표의 되풀이다. ① 칸 배치: 1, 2, 4, 8번에 검사 칸을 두고 나머지에 내용을 차례로 넣는다 ② 검사 칸 계산: $$P_1, P_2, P_4, P_8$$이 맡은 칸을 XOR한다 ③ 검사: 받은 열에서 검사 칸까지 넣어 다시 XOR한다 ④ 신드롬 읽기: 결과를 $$P_8 P_4 P_2 P_1$$ 순서의 2진수로 읽는다 ⑤ 정정과 꺼내기: 그 번호의 칸을 뒤집고 내용 칸만 읽는다.
 
 맡은 칸은 번호의 2진 자리로 정해진다. 7칸이면 $$P_1$$은 1, 3, 5, 7번, $$P_2$$는 2, 3, 6, 7번, $$P_4$$는 4, 5, 6, 7번이다. 12칸이면 $$P_1$$은 1, 3, 5, 7, 9, 11번, $$P_2$$는 2, 3, 6, 7, 10, 11번, $$P_4$$는 4, 5, 6, 7, 12번, $$P_8$$은 8, 9, 10, 11, 12번이다.
 
@@ -106,7 +106,4 @@ permalink: "/studies/data-and-information/hamming-code-ladder/"
 <div class="callout-title" markdown="span">검증 — [07_hamming-code_impl.py](/Hongs_Blog/studies/data-and-information/code/07_hamming-code_impl/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드(강의03-2-부호2) p.11~15의 코드 생성·오류 검사·오류 정정 과정을 연습하도록 만들었고, 답은 구현 코드로 확인했다.
 {% endraw %}

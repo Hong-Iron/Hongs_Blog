@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["INT 16h", "Keyboard Input with INT 16h", "스캔 코드", "Scan Code", "자판 미리 입력 버퍼", "Typeahead Buffer", "키보드 플래그", "Keyboard Flags", "INT 9h", "PC-BIOS"]
 description: "키를 누르면 그 글자가 곧장 프로그램으로 가는 것이 아니다. 우체부가 편지를 우편함에 넣어 두면 집주인이 나중에 꺼내 가듯, 누른 키는 먼저 작은 대기 줄에 쌓이고 프로그램이 필요할 때 꺼내 간다. 대기 줄에는 글자뿐 아니라 \"자판의 몇 번째 단추였는지\"도 함께 적혀 있어서, 글자…"
@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/bios-keyboard-int16h/"
 
 [INT 21h](/Hongs_Blog/studies/assembly-language/int21h-io-functions/)의 글자 읽기는 글자의 ASCII 코드만 준다. 그런데 F1이나 왼쪽 화살표에는 ASCII 코드가 없다. 게임이나 편집기는 이런 키를 알아야 한다.
 
-키보드는 눌린 단추마다 스캔 코드라는 번호를 보낸다. 글자가 아니라 단추의 번호다. 키 하나가 눌린 뒤 일어나는 일은 다음과 같다[^1].
+키보드는 눌린 단추마다 스캔 코드라는 번호를 보낸다. 글자가 아니라 단추의 번호다. 키 하나가 눌린 뒤 일어나는 일은 다음과 같다.
 
 ```mermaid
 flowchart TD
@@ -53,18 +53,18 @@ flowchart TD
 4. 프로그램이 INT 16h를 부르면 스캔 코드와 ASCII 코드를 둘 다 받는다. INT 21h를 부르면 ASCII 코드만 받는다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 키보드 플래그의 비트 번호와 마스크, 0040:0017 → 00417h, 버퍼 32바이트 = 16쌍, `or al,1`이 늘 ZF를 0으로 만드는지(8비트 전수), 버퍼 비우기 코드의 두 가지 끝, 카드 C3 — [53_bios-keyboard-int16h_verify.py](/Hongs_Blog/studies/assembly-language/code/53_bios-keyboard-int16h_verify/). BIOS를 실제로 부르지 못해서 버퍼를 큐로 흉내 냈다. 함수의 동작은 슬라이드 근거다.</div>
+<div class="callout-title" markdown="span">검증: 키보드 플래그의 비트 번호와 마스크, 0040:0017 → 00417h, 버퍼 32바이트 = 16쌍, `or al,1`이 늘 ZF를 0으로 만드는지(8비트 전수), 버퍼 비우기 코드의 두 가지 끝, 카드 C3 — [53_bios-keyboard-int16h_verify.py](/Hongs_Blog/studies/assembly-language/code/53_bios-keyboard-int16h_verify/). BIOS를 실제로 부르지 못해서 버퍼를 큐로 흉내 냈다. 함수의 동작 자체는 실행으로 확인하지 못했다.</div>
 
 </div>
 
 
 ## BIOS
 
-BIOS(Basic Input-Output System)는 장치를 직접 다루는 낮은 수준의 코드 묶음이다. 16비트 프로그램이 부를 수 있다. MS-DOS 함수와 비교하면 색과 그래픽을 쓸 수 있고, 입출력이 빠르고, 마우스·직렬 포트·병렬 포트를 읽을 수 있고, 디스크를 낮은 수준에서 다룰 수 있다[^2]: [입출력 접근 수준](/Hongs_Blog/studies/assembly-language/io-access-levels/).
+BIOS(Basic Input-Output System)는 장치를 직접 다루는 낮은 수준의 코드 묶음이다. 16비트 프로그램이 부를 수 있다. MS-DOS 함수와 비교하면 색과 그래픽을 쓸 수 있고, 입출력이 빠르고, 마우스·직렬 포트·병렬 포트를 읽을 수 있고, 디스크를 낮은 수준에서 다룰 수 있다: [입출력 접근 수준](/Hongs_Blog/studies/assembly-language/io-access-levels/).
 
 ## 스캔 코드
 
-기능 키와 화살표 키처럼 글자가 없는 키는 스캔 코드로 구별한다. 같은 키라도 Shift, Ctrl, Alt와 함께 누르면 다른 번호가 나온다. 값은 모두 16진수다[^3].
+기능 키와 화살표 키처럼 글자가 없는 키는 스캔 코드로 구별한다. 같은 키라도 Shift, Ctrl, Alt와 함께 누르면 다른 번호가 나온다. 값은 모두 16진수다.
 
 | 키 | 그냥 | Shift와 | Ctrl과 | Alt와 |
 |---|---|---|---|---|
@@ -91,11 +91,11 @@ BIOS(Basic Input-Output System)는 장치를 직접 다루는 낮은 수준의 �
 | 왼쪽 화살표 | 4B | 73 | | 회색 + | 4E | 90 |
 | 오른쪽 화살표 | 4D | 74 | | 회색 − | 4A | 8E |
 
-INT 21h로 이런 키를 읽으면 첫 번째 읽기가 0을 돌려준다. 한 번 더 읽어야 스캔 코드가 나온다[^3].
+INT 21h로 이런 키를 읽으면 첫 번째 읽기가 0을 돌려준다. 한 번 더 읽어야 스캔 코드가 나온다.
 
 ## 키보드 플래그
 
-Shift, Ctrl, Alt, Caps Lock 같은 키는 글자를 만들지 않고 상태만 바꾼다. BIOS는 이 상태를 16비트에 적어 0040:0017h~0018h에 둔다[^4]. 비트가 1이면 그 줄의 내용이 참이다.
+Shift, Ctrl, Alt, Caps Lock 같은 키는 글자를 만들지 않고 상태만 바꾼다. BIOS는 이 상태를 16비트에 적어 0040:0017h~0018h에 둔다. 비트가 1이면 그 줄의 내용이 참이다.
 
 | 비트 | 뜻 | | 비트 | 뜻 |
 |---|---|---|---|---|
@@ -112,13 +112,13 @@ Shift, Ctrl, Alt, Caps Lock 같은 키는 글자를 만들지 않고 상태만 �
 
 ## INT 16h 함수
 
-함수 번호는 늘 AH에 넣는다. 중요한 함수는 자동 반복 속도 정하기, 버퍼에 키 밀어 넣기, 키 기다리기, 버퍼 들여다보기, 키보드 플래그 읽기다[^5]. 슬라이드가 코드를 보인 것은 세 개다. 실행해서 확인하지는 않았다.
+함수 번호는 늘 AH에 넣는다. 중요한 함수는 자동 반복 속도 정하기, 버퍼에 키 밀어 넣기, 키 기다리기, 버퍼 들여다보기, 키보드 플래그 읽기다. 아래 표는 그 가운데 세 개다. 실행해서 확인하지는 않았다.
 
 | AH | 하는 일 | 돌아오는 값 |
 |---|---|---|
-| 10h | 키 하나를 꺼낸다. 버퍼에 키가 없으면 누를 때까지 프로그램이 멈춰 기다린다[^6] | AH = 스캔 코드, AL = ASCII 코드 |
-| 11h | 버퍼를 들여다보기만 한다. 꺼내지 않는다[^7] | 키가 있으면 ZF = 0, 없으면 ZF = 1 |
-| 12h | 키보드 플래그를 읽는다[^8] | AX = 플래그 16비트 |
+| 10h | 키 하나를 꺼낸다. 버퍼에 키가 없으면 누를 때까지 프로그램이 멈춰 기다린다 | AH = 스캔 코드, AL = ASCII 코드 |
+| 11h | 버퍼를 들여다보기만 한다. 꺼내지 않는다 | 키가 있으면 ZF = 0, 없으면 ZF = 1 |
+| 12h | 키보드 플래그를 읽는다 | AX = 플래그 16비트 |
 
 ```asm
 mov ah,10h
@@ -129,7 +129,7 @@ mov ASCIICode,al
 
 ## 예제
 
-**버퍼 비우기.** 쌓여 있는 키를 모두 꺼내 버린다. 꺼내다가 정해 둔 키(`scanCode`)가 나오면 그 자리에서 끝낸다[^7].
+**버퍼 비우기.** 쌓여 있는 키를 모두 꺼내 버린다. 꺼내다가 정해 둔 키(`scanCode`)가 나오면 그 자리에서 끝낸다.
 
 ```asm
 L1: mov ah,11h          ; 버퍼에 키가 있나?
@@ -159,8 +159,8 @@ quit:
 
 - INT 16h는 화살표, 기능 키, Shift 상태가 필요할 때 쓴다. 글자만 필요하면 INT 21h로 충분하다.
 - 11h로 먼저 들여다보고 10h로 꺼내면, 키가 없을 때 프로그램이 멈추지 않고 다른 일을 할 수 있다.
-- 미리 입력 버퍼는 BIOS 데이터 영역의 001E~003D, 32바이트다. 키 하나가 2바이트(스캔 코드와 ASCII 코드)라 16쌍이 들어간다[^9][^s1].
-- 16비트 프로그램에서만 쓸 수 있다[^2].
+- 미리 입력 버퍼는 BIOS 데이터 영역의 001E~003D, 32바이트다. 키 하나가 2바이트(스캔 코드와 ASCII 코드)라 16쌍이 들어간다[^s1].
+- 16비트 프로그램에서만 쓸 수 있다.
 
 ## 연결
 
@@ -206,14 +206,5 @@ quit:
 </details>
 
 
-[^1]: 어셈블리어 14회 강의 자료 「wk14-chapt_16-2-1」, p.11 (How the Keyboard Works와 그림: Keyboard → input port → INT 9h handler → typeahead buffer → INT 16h handler(sc, ac), INT 21h handler(ac))
-[^2]: 같은 자료, p.3 (PC-BIOS)
-[^3]: 같은 자료, p.9~10 (KEYBOARD SCAN CODES 표와 머리말: INT 16h로 읽거나 INT 21h로 두 번 읽는다, 첫 읽기는 0)
-[^4]: 같은 자료, p.21 (Keyboard Flags: 16비트, 0040:0017h~0018h, 비트 표)
-[^5]: 같은 자료, p.22 (INT 16h Functions)
-[^6]: 같은 자료, p.23 (Function 10h: Wait for Key)
-[^7]: 같은 자료, p.25 (Clearing the Keyboard Buffer: 함수 11h는 키가 기다리고 있으면 Zero 플래그를 0으로 한다)
-[^8]: 같은 자료, p.24 (Function 12h: Get Keyboard Flags)
-[^9]: 같은 자료, p.6 (BIOS Data Area 표: 001E~003D Keyboard typeahead buffer)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "켜져 있다"와 "눌려 있다"의 차이를 든 예, 버퍼 32바이트가 16쌍이라는 계산, 버퍼 비우기 코드의 ZF 표와 `or al,1` 설명, 카드 C2~C4는 슬라이드에 없다. 계산과 코드 흐름은 검증 코드로 확인했다. 코드 블록의 한국어 주석은 슬라이드의 영어 주석을 옮긴 것이다.
+[^s1]: 계산과 코드 흐름은 검증 코드로 확인했다.
 {% endraw %}

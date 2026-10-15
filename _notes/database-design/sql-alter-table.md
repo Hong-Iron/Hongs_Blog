@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["ALTER TABLE", "ALTER", "ADD COLUMN", "DROP COLUMN", "DROP CONSTRAINT", "ADD CONSTRAINT", "표 변경", "테이블 변경", "열 추가", "열 삭제", "제약 삭제", "Altering Schema Elements"]
 description: "이미 만든 표의 틀을 고치는 명령으로, 칸을 새로 더하고, 안 쓰는 칸을 없애고, 걸어 둔 규칙을 떼거나 붙인다. 쓰고 있는 장부에 칸 하나를 덧그리는 것과 같아서, 표를 새로 만들고 행을 옮겨 적지 않아도 된다. 새로 더한 칸은 이미 있던 행에서는 비어 있다. 없애려는 칸에 다른…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-alter-table/"
 
 ## 예시로 보기
 
-직원 표를 쓰다 보니 직원이 맡은 일(Job)도 적어 두고 싶어졌다. 표를 없애고 칸을 하나 더해 다시 만들면 여덟 행을 처음부터 다시 넣어야 한다. 표를 그대로 둔 채 칸만 더한다[^1].
+직원 표를 쓰다 보니 직원이 맡은 일(Job)도 적어 두고 싶어졌다. 표를 없애고 칸을 하나 더해 다시 만들면 여덟 행을 처음부터 다시 넣어야 한다. 표를 그대로 둔 채 칸만 더한다.
 
 ```sql
 ALTER TABLE COMPANY.EMPLOYEE ADD COLUMN Job VARCHAR(12);
@@ -43,14 +43,14 @@ ALTER TABLE COMPANY.EMPLOYEE ADD COLUMN Job VARCHAR(12);
 EMPLOYEE의 칸이 10개에서 11개가 된다. Job은 맨 뒤에 붙는다. 이미 있던 여덟 행은 그대로이고, 그 행들의 Job 칸은 모두 NULL이다. 아직 아무도 값을 적지 않았으니 당연하다. 값은 그다음에 `UPDATE`로 채운다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: `ADD COLUMN` 뒤 칸 11개와 Job이 NULL인 8행, `DROP COLUMN` 뒤의 칸 목록(SQLite) — [59_sql-alter-table_verify.py](/Hongs_Blog/studies/database-design/code/59_sql-alter-table_verify/). 슬라이드의 세 문장과 `CASCADE`·`RESTRICT`, `DROP CONSTRAINT`는 PostgreSQL 16에서 실행 — [59_sql-alter-table_verify.sql](/Hongs_Blog/studies/database-design/code/59_sql-alter-table_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: `ADD COLUMN` 뒤 칸 11개와 Job이 NULL인 8행, `DROP COLUMN` 뒤의 칸 목록(SQLite) — [59_sql-alter-table_verify.py](/Hongs_Blog/studies/database-design/code/59_sql-alter-table_verify/). 정의에 나오는 세 문장과 `CASCADE`·`RESTRICT`, `DROP CONSTRAINT`, `ALTER SCHEMA`의 구문 오류는 PostgreSQL 16에서 실행 — [59_sql-alter-table_verify.sql](/Hongs_Blog/studies/database-design/code/59_sql-alter-table_verify-sql/)</div>
 
 </div>
 
 
 ## 정의
 
-`ALTER TABLE`은 표의 정의를 바꾼다. 할 수 있는 일은 세 갈래다[^1].
+`ALTER TABLE`은 표의 정의를 바꾼다. 할 수 있는 일은 세 갈래다.
 
 - 속성(칸)을 더하거나 없앤다.
 - 칸의 정의를 바꾼다. 자료형이나 그 칸에 걸린 제약을 바꾼다.
@@ -58,9 +58,11 @@ EMPLOYEE의 칸이 10개에서 11개가 된다. Job은 맨 뒤에 붙는다. 이
 
 `DROP`과 함께, 돌아가는 데이터베이스의 스키마를 고치는 [스키마 진화 명령](/Hongs_Blog/studies/database-design/sql-drop/)이다.
 
+스키마를 고친다고 해서 `ALTER SCHEMA`로 쓰지는 않는다. 칸과 제약은 표에 딸려 있어서 `ALTER TABLE COMPANY.EMPLOYEE …`처럼 표에 대고 쓴다. `ALTER SCHEMA COMPANY ADD COLUMN …`은 PostgreSQL 16에서 구문 오류다.
+
 **칸 더하기.** `ADD COLUMN 이름 자료형`.
 
-**칸 없애기.** <code>DROP COLUMN 이름 CASCADE &#124; RESTRICT</code>[^2].
+**칸 없애기.** <code>DROP COLUMN 이름 CASCADE &#124; RESTRICT</code>.
 
 ```sql
 ALTER TABLE COMPANY.EMPLOYEE DROP COLUMN Address CASCADE;
@@ -69,7 +71,7 @@ ALTER TABLE COMPANY.EMPLOYEE DROP COLUMN Address CASCADE;
 - `CASCADE`: 그 칸을 가리키는 제약을 모두 칸과 함께 저절로 없앤다.
 - `RESTRICT`: 스키마의 어떤 요소도 그 칸을 가리키지 않을 때만 없앤다.
 
-**제약 없애기와 더하기.** `DROP CONSTRAINT 제약이름`. 표를 만들 때 [이름을 붙여 둔 제약](/Hongs_Blog/studies/database-design/sql-key-clauses/)을 그 이름으로 골라 뗀다[^3].
+**제약 없애기와 더하기.** `DROP CONSTRAINT 제약이름`. 표를 만들 때 [이름을 붙여 둔 제약](/Hongs_Blog/studies/database-design/sql-key-clauses/)을 그 이름으로 골라 뗀다.
 
 ```sql
 ALTER TABLE COMPANY.EMPLOYEE
@@ -77,13 +79,6 @@ ALTER TABLE COMPANY.EMPLOYEE
 ```
 
 다시 붙일 때는 `ADD CONSTRAINT 제약이름 …`으로 제약을 적는다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 11 p.17~19의 소제목 "The ALTER SCHEMA Command" / 문제점: 세 쪽의 예가 모두 `ALTER TABLE …`로 시작하고 설명도 "표나 다른 스키마 요소의 정의를 바꾼다"다. 칸을 더하고 빼는 명령은 `ALTER TABLE`이다 / 수정안: 소제목을 "The ALTER TABLE Command"로 읽는다. 큰 제목 "Altering Schema Elements"(스키마 요소 고치기)는 그대로 맞다 / 근거: PostgreSQL 16에서 `ALTER SCHEMA COMPANY ADD COLUMN …`은 구문 오류이고 `ALTER TABLE COMPANY.EMPLOYEE ADD COLUMN …`은 돈다 — [59_sql-alter-table_verify.sql](/Hongs_Blog/studies/database-design/code/59_sql-alter-table_verify-sql/)
-
-</div>
 
 
 ## 예제
@@ -147,9 +142,6 @@ COMPANY에 PostgreSQL 16으로 문장을 하나씩 돌린 결과다[^s1].
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.17 (Altering Schema Elements, ADD COLUMN Job VARCHAR(12))
-[^2]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.18 (DROP COLUMN Address CASCADE, CASCADE와 RESTRICT의 설명)
-[^3]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.19 (DROP CONSTRAINT EMPSUPERFK CASCADE, "To drop (or add) the constraint specified on a table")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예제 표의 여덟 문장과 결과, `NOT NULL` 칸을 더할 때의 거부, 어긋난 행이 있을 때 제약을 못 붙이는 것, 제품마다 다른 점, 확인 문제는 슬라이드에 없다. PostgreSQL 16과 SQLite 3.50에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 "Changing a column definition (e.g., data types or constraints)"라고만 적고 문장은 보이지 않는다. `ALTER COLUMN … DROP DEFAULT`와 `SET DEFAULT`의 예는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.4.2절의 것이고 PostgreSQL 16에서 실행해 확인했다.
+[^s1]: PostgreSQL 16과 SQLite 3.50에서 실행해 확인했다.
+[^s2]: `ALTER COLUMN … DROP DEFAULT`와 `SET DEFAULT`의 예는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.4.2절의 것이고 PostgreSQL 16에서 실행해 확인했다.
 {% endraw %}

@@ -30,7 +30,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(예: 00000020의 call 다음 줄은 00000025).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -525,7 +525,7 @@ def main():
             assert bool(JCC[j](c.f)) == REL[rel](a, b)
         for j, rel in SIGNED.items():
             assert bool(JCC[j](c.f)) == REL[rel](signed(a, 2), signed(b, 2))
-    # 2. 특정 플래그 점프 (wk07-3-3 p.4)
+    # 2. 특정 플래그 점프
     pairs = [("jz", "ZF", 1), ("jnz", "ZF", 0), ("jc", "CF", 1), ("jnc", "CF", 0), ("jo", "OF", 1),
              ("jno", "OF", 0), ("js", "SF", 1), ("jns", "SF", 0), ("jp", "PF", 1), ("jnp", "PF", 0)]
     for j, flag, want in pairs:
@@ -533,10 +533,10 @@ def main():
             f = dict(ZF=0, SF=0, CF=0, OF=0, PF=0)
             f[flag] = v
             assert bool(JCC[j](f)) == (v == want)
-    # 3. JECXZ, JCXZ (p.5)
+    # 3. JECXZ, JCXZ
     assert taken("jecxz", ecx=0) and not taken("jecxz", ecx=0x10000)
     assert taken("jcxz", ecx=0x10000) and not taken("jcxz", ecx=1)     # CX만 본다
-    # 4. 응용 (p.8~11)
+    # 4. 응용
     assert taken("cmp eax,ebx\nja", eax=0xFFFFFFFF, ebx=1)             # 부호 없이 4,294,967,295 > 1
     assert not taken("cmp eax,ebx\njg", eax=0xFFFFFFFF, ebx=1)         # 부호 있게 -1 > 1 은 거짓
     assert taken("cmp eax,ebx\njg", eax=5, ebx=0xFFFFFFFE)

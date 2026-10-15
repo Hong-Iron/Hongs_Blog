@@ -10,10 +10,10 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Relational Database Schema", "관계형 데이터베이스 스키마", "Database State", "데이터베이스 상태", "무결성 제약", "Integrity Constraints", "올바른 상태", "Valid State", "COMPANY 스키마", "COMPANY 데이터베이스"]
-description: "데이터베이스 하나는 표 여러 개와, 그 표들이 지켜야 할 규칙으로 되어 있다. 표의 틀과 규칙을 적은 것이 설계도이고, 어느 순간 표에 들어 있는 줄 전부가 그때의 모습이다. 규칙을 하나라도 어긴 모습은 올바르지 않은 것으로 친다. 이 과목은 표 여섯 개, 줄 마흔다섯 개짜리 회사…"
+description: "데이터베이스 하나는 표 여러 개와, 그 표들이 지켜야 할 규칙으로 되어 있다. 표의 틀과 규칙을 적은 것이 설계도이고, 어느 순간 표에 들어 있는 줄 전부가 그때의 모습이다. 규칙을 하나라도 어긴 모습은 올바르지 않은 것으로 친다. 이 문서 모음은 표 여섯 개, 줄 마흔다섯 개짜리…"
 prev_url: "/studies/database-design/relational-keys/"
 prev_title: "슈퍼키·후보 키·기본 키"
 next_url: "/studies/database-design/entity-integrity-constraint/"
@@ -27,14 +27,14 @@ permalink: "/studies/database-design/relational-database-schema/"
 <div class="callout callout-summary" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">요약</div>
 
-데이터베이스 하나는 표 여러 개와, 그 표들이 지켜야 할 규칙으로 되어 있다. 표의 틀과 규칙을 적은 것이 설계도이고, 어느 순간 표에 들어 있는 줄 전부가 그때의 모습이다. 규칙을 하나라도 어긴 모습은 올바르지 않은 것으로 친다. 이 과목은 표 여섯 개, 줄 마흔다섯 개짜리 회사 예제 하나를 끝까지 쓴다.
+데이터베이스 하나는 표 여러 개와, 그 표들이 지켜야 할 규칙으로 되어 있다. 표의 틀과 규칙을 적은 것이 설계도이고, 어느 순간 표에 들어 있는 줄 전부가 그때의 모습이다. 규칙을 하나라도 어긴 모습은 올바르지 않은 것으로 친다. 이 문서 모음은 표 여섯 개, 줄 마흔다섯 개짜리 회사 예제 하나를 끝까지 쓴다.
 
 </div>
 
 
 ## 예시로 보기
 
-회사 자료를 표 하나에 다 넣을 수는 없다. 직원, 부서, 프로젝트는 적을 항목이 서로 다르다. 그래서 표를 여러 개 만들고 한 묶음으로 다룬다. COMPANY 데이터베이스의 스키마는 릴레이션 스키마 여섯 개다[^1].
+회사 자료를 표 하나에 다 넣을 수는 없다. 직원, 부서, 프로젝트는 적을 항목이 서로 다르다. 그래서 표를 여러 개 만들고 한 묶음으로 다룬다. COMPANY 데이터베이스의 스키마는 릴레이션 스키마 여섯 개다.
 
 | 릴레이션 | 속성 (굵은 것이 기본 키) | 무엇을 적나 |
 |---|---|---|
@@ -45,9 +45,9 @@ permalink: "/studies/database-design/relational-database-schema/"
 | WORKS_ON | **Essn**, **Pno**, Hours | 어느 직원이 어느 프로젝트에서 몇 시간 일하나 |
 | DEPENDENT | **Essn**, **Dependent_name**, Sex, Bdate, Relationship | 직원의 부양가족 |
 
-슬라이드의 그림은 기본 키 속성에 밑줄을 그어 표시한다[^1]. 기본 키가 두 속성인 릴레이션이 셋 있다.
+스키마 그림에서는 기본 키 속성에 밑줄을 그어 표시한다. 위 표에서는 굵게 적었다. 기본 키가 두 속성인 릴레이션이 셋 있다.
 
-표끼리는 값으로 이어진다. EMPLOYEE의 Dno 5는 DEPARTMENT의 Dnumber 5를 가리킨다. 이렇게 다른 릴레이션의 기본 키를 가리키는 속성이 여덟 개 있다[^2].
+표끼리는 값으로 이어진다. EMPLOYEE의 Dno 5는 DEPARTMENT의 Dnumber 5를 가리킨다. 이렇게 다른 릴레이션의 기본 키를 가리키는 속성이 여덟 개 있다.
 
 ```mermaid
 flowchart LR
@@ -65,11 +65,11 @@ flowchart LR
 
 ## 정의
 
-**관계형 데이터베이스 스키마** $$S$$는 릴레이션 스키마의 집합 $$S = \{R_1, \dots, R_m\}$$과 무결성 제약의 집합 $$IC$$로 되어 있다. 무결성 제약은 실세계의 규칙에서 나온, 값이 지켜야 할 조건이다. 어떤 상태든 이 조건을 따라야 한다[^3].
+**관계형 데이터베이스 스키마** $$S$$는 릴레이션 스키마의 집합 $$S = \{R_1, \dots, R_m\}$$과 무결성 제약의 집합 $$IC$$로 되어 있다. 무결성 제약은 실세계의 규칙에서 나온, 값이 지켜야 할 조건이다. 어떤 상태든 이 조건을 따라야 한다.
 
-**데이터베이스 상태**는 릴레이션 상태의 집합 $$\{r_1, \dots, r_m\}$$이다. $$r_i$$는 $$R_i$$의 상태이고, $$IC$$의 제약을 모두 지킨다. 제약을 하나라도 어긴 상태는 올바르지 않은(not valid) 상태라 한다[^1].
+**데이터베이스 상태**는 릴레이션 상태의 집합 $$\{r_1, \dots, r_m\}$$이다. $$r_i$$는 $$R_i$$의 상태이고, $$IC$$의 제약을 모두 지킨다. 제약을 하나라도 어긴 상태는 올바르지 않은(not valid) 상태라 한다.
 
-관계형 모델에서 가장 중요한 제약은 셋이다[^3].
+관계형 모델에서 가장 중요한 제약은 셋이다.
 
 | 제약 | 무엇을 지키나 | 어디에 걸리나 | 문서 |
 |---|---|---|---|
@@ -79,7 +79,7 @@ flowchart LR
 
 ## COMPANY의 상태
 
-아래는 COMPANY 스키마의 올바른 상태 하나다[^4]. 이 과목의 SQL 예제는 모두 이 상태에 질의한다.
+아래는 COMPANY 스키마의 올바른 상태 하나다. 이 문서 모음의 SQL 예제는 모두 이 상태에 질의한다.
 
 **EMPLOYEE** (8줄)
 
@@ -156,7 +156,7 @@ flowchart LR
 | 123456789 | Alice | F | 1988-12-30 | Daughter |
 | 123456789 | Elizabeth | F | 1967-05-05 | Spouse |
 
-줄 수는 8, 3, 5, 6, 16, 7로 모두 45줄이다. NULL은 두 칸뿐이다. 사장 Borg는 상사가 없어 Super_ssn이 NULL이고, Borg가 20번 프로젝트에서 일한 시간도 NULL이다[^s1].
+줄 수는 8, 3, 5, 6, 16, 7로 모두 45줄이다. NULL은 두 칸뿐이다. 사장 Borg는 상사가 없어 Super_ssn이 NULL이고, Borg가 20번 프로젝트에서 일한 시간도 NULL이다[^s1]. 그래서 이 상태를 담을 WORKS_ON 표를 만들 때 Hours에 NOT NULL을 걸면 안 된다. 걸면 Borg의 줄 (888665555, 20, NULL)이 거부되어 상태 전체가 들어가지 않는다. 이 문서 모음의 검증 코드는 모두 Hours가 NULL을 받게 만든다.
 
 이 상태는 세 제약을 모두 지킨다. 기본 키 값이 겹치는 튜플이 없고, 기본 키가 NULL인 튜플이 없고, 가리키는 속성 여덟 개의 값은 모두 상대 릴레이션에 있거나 NULL이다. 값 하나만 바꿔도 올바르지 않은 상태가 된다. Smith의 Dno를 7로 바꾸면 7번 부서가 없어서 참조 무결성이 깨진다[^s1].
 
@@ -167,25 +167,11 @@ flowchart LR
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: PostgreSQL 16에서 실행. 9 p.17~18의 자료형과 제약으로 표 6개를 만들고 45줄을 넣음, 기본 키 6개와 가리키는 속성 8개가 카탈로그에 있음, Hours에 NOT NULL을 걸면 거부됨 — [35_relational-database-schema_verify.sql](/Hongs_Blog/studies/database-design/code/35_relational-database-schema_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: PostgreSQL 16에서 실행. 교재(Elmasri & Navathe)의 COMPANY CREATE TABLE 문과 같은 자료형과 제약으로 표 6개를 만들고 45줄을 넣음, 기본 키 6개와 가리키는 속성 8개가 카탈로그에 있음, Hours에 NOT NULL을 걸면 거부됨 — [35_relational-database-schema_verify.sql](/Hongs_Blog/studies/database-design/code/35_relational-database-schema_verify-sql/)</div>
 
 </div>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 9주차 슬라이드 p.18의 `CREATE TABLE WORKS_ON`에 `Hours DECIMAL(3,1) NOT NULL`이라고 적혀 있다. / 문제점: 6-2 슬라이드 p.21의 상태에는 (888665555, 20, NULL)이 있다. 그 선언 그대로면 이 튜플이 들어가지 않는다. 표의 선언과 상태가 서로 어긋난다. / 수정안: 이 상태를 쓰려면 Hours에서 NOT NULL을 뺀다. 이 볼트의 검증 코드는 모두 그렇게 만든다. / 근거: SQLite에서 "NOT NULL constraint failed: WORKS_ON.Hours", PostgreSQL 16에서 not_null_violation이 난다(위 두 검증 파일).
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 7주차 슬라이드 p.11과 p.29(9주차 p.6, p.14, p.17~18도 같은 그림)의 스키마 그림은 PROJECT의 Plocation에도 밑줄이 그어져 있다. / 문제점: 밑줄은 기본 키 표시다. 그대로 읽으면 기본 키가 {Pnumber, Plocation}이 된다. 6-2 슬라이드 p.20의 그림, 7주차 p.13·p.24·p.27의 그림, 9주차 p.18의 `PRIMARY KEY (Pnumber)`는 모두 Pnumber만 기본 키다. / 수정안: PROJECT의 기본 키는 Pnumber 하나다. / 근거: 상태의 6줄에서 Pnumber 혼자 값이 안 겹친다. {Pnumber, Plocation}은 Plocation을 빼도 안 겹치는 묶음이라 최소가 아니다([44_er-to-relational-mapping_verify.py](/Hongs_Blog/studies/database-design/code/44_er-to-relational-mapping_verify/)). 6-2 슬라이드 p.20의 글에는 릴레이션 이름이 "DEPEDENT"로 잘못 적혀 있다(DEPENDENT).
-
-</div>
 
 
 ## 활용
@@ -228,10 +214,6 @@ flowchart LR
 </details>
 
 
-[^1]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.20 (Relational Database Schema S, IC, not valid, COMPANY 스키마 그림)
-[^2]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.11 (화살표가 그려진 COMPANY 스키마 그림). 6-2 p.20의 그림에는 화살표가 없다
-[^3]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.16 (Relational Model Constraints, 세 가지 제약)
-[^4]: 같은 자료, p.21 (One possible database state for the COMPANY DB schema)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Mermaid 그림 1개, 화살표와 줄 수를 센 값, "Smith의 Dno를 7로" 예, 카드 C2·C3은 원본에 없다. 그림은 7 p.11의 화살표 여덟 개를 릴레이션 사이의 선으로 옮긴 것이다. 수는 검증 코드로 셌다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 서로 가리키는 표를 만드는 순서는 이 쪽의 슬라이드에 없다. 9 p.18의 "Is it enough? What problem can occur?"와 이어지는 내용이다. PostgreSQL 16에서 undefined_table 오류를, SQLite에서 오류 없이 만들어지는 것을 실행해 확인했다.
+[^s1]: 수는 검증 코드로 셌다.
+[^s2]: PostgreSQL 16에서 undefined_table 오류를, SQLite에서 오류 없이 만들어지는 것을 실행해 확인했다.
 {% endraw %}

@@ -20,13 +20,12 @@ permalink: "/studies/database-design/code/77_view-practice_p1/"
 [뷰 연습](/Hongs_Blog/studies/database-design/view-practice/) 문서의 문제 1 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""뷰 연습의 연습 1 (a~d) 확인 (SQLite). PostgreSQL 판은 77_view-practice_p1.sql.
+"""뷰 연습의 문제 1 (a~d) 확인 (SQLite). PostgreSQL 판은 77_view-practice_p1.sql.
 
 문서: 77.뷰 연습
-출처: 13주차 슬라이드 13-View p.15~16(문제), p.31~34(풀이)
 확인하는 것:
-  1-a. DEPT_INFO(DeptName, MgrFname, MgrLname, MgrSalary)는 3행 4열이다(슬라이드 그림은 Minit까지 5열).
-  1-b. 슬라이드 풀이는 적힌 그대로는 못 쓴다. 고칠 곳이 셋이다: "S,Fname"의 쉼표, 한정하지 않은 Dno,
+  1-a. DEPT_INFO(DeptName, MgrFname, MgrLname, MgrSalary)는 3행 4열이다(Minit은 뷰에 없다).
+  1-b. 틀리기 쉬운 곳이 셋이다: "S,Fname"의 쉼표, 한정하지 않은 Dno,
        열 이름 3개에 SELECT 항목 5개. 고친 뷰는 4행이다.
   1-c. ProjectInfo는 6행이다. SQLite는 GROUP BY에 없는 D.Dname을 받아 준다(PostgreSQL은 거부한다).
   1-d. 같은 이름 ProjectInfo로는 못 만든다. 이름을 바꾸면 6행이고 1-c와 내용이 같다(모든 프로젝트에 2명 이상).
@@ -35,7 +34,7 @@ permalink: "/studies/database-design/code/77_view-practice_p1/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -115,7 +114,7 @@ AS SELECT D.Dname, E.Fname, E.Lname, E.Salary
    FROM DEPARTMENT AS D, EMPLOYEE AS E
    WHERE D.Mgr_ssn=E.Ssn"""
 
-# 슬라이드 p.32에 적힌 그대로
+# 틀리기 쉬운 판: 쉼표, 한정하지 않은 Dno, 열 이름 셋
 B_SLIDE = """CREATE VIEW ResearchDept(Name, Supervisor, Salary)
 AS SELECT E.Fname, E.Lname, S,Fname, S,Lname, E.Salary
    FROM EMPLOYEE AS E, EMPLOYEE AS S
@@ -130,7 +129,7 @@ AS SELECT E.Fname || ' ' || E.Lname, S.Fname || ' ' || S.Lname, E.Salary
    FROM EMPLOYEE AS E, EMPLOYEE AS S
    WHERE E.Super_ssn = S.Ssn AND E.Dno IN ( SELECT D.Dnumber FROM DEPARTMENT AS D WHERE D.Dname='Research' )"""
 
-# 슬라이드 p.33, p.34에 적힌 그대로
+# 틀리기 쉬운 판: GROUP BY에 D.Dname이 없고, 1-d도 같은 이름
 C_SLIDE = """CREATE VIEW ProjectInfo(Pname, Dname, NumEmployees, TotalHours)
 AS SELECT P.Pname, D.Dname, COUNT(*), SUM(W.Hours)
    FROM PROJECT AS P, WORKS_ON AS W, DEPARTMENT AS D
@@ -166,7 +165,7 @@ def main():
     print("[OK] 1-a: 3행 4열", a)
 
     # 1-b: 적힌 그대로 -> 한 곳씩 고쳐 가며 오류를 본다
-    print("[OK] 1-b 적힌 그대로:", view_error(c, B_SLIDE, "ResearchDept", "no such column: S"))
+    print("[OK] 1-b 틀리기 쉬운 판:", view_error(c, B_SLIDE, "ResearchDept", "no such column: S"))
     print("[OK] 1-b 쉼표를 점으로:", view_error(c, B_STEP1, "ResearchDept", "ambiguous column name: Dno"))
     print("[OK] 1-b Dno를 E.Dno로:", view_error(c, B_STEP2, "ResearchDept", "expected 3 columns"))
     c.execute(B_FIXED)

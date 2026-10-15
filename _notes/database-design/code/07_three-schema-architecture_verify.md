@@ -23,9 +23,9 @@ permalink: "/studies/database-design/code/07_three-schema-architecture_verify/"
 """3단계 스키마 구조 문서의 값 확인.
 
 문서: 07.3단계 스키마 구조
-출처: 데이터베이스 설계 2주차 슬라이드 2-2 p.9~14 (p.14의 대학 예)
+출처: 문서의 대학 예 (두 학과의 외부 스키마, 개념 스키마, 71바이트 내부 스키마)
 주장:
-  1. p.14 내부 스키마의 오프셋 0, 4, 8, 18, 20, 22, 27은 앞 칸들의 길이 4, 4, 10, 2, 2, 5, 44를 차례로 더한 값이고
+  1. 문서 내부 스키마의 오프셋 0, 4, 8, 18, 20, 22, 27은 앞 칸들의 길이 4, 4, 10, 2, 2, 5, 44를 차례로 더한 값이고
      레코드 길이는 71바이트다.
   2. 두 외부 스키마는 개념 스키마의 여섯 칸 가운데 네 칸씩만 본다. Dept-A는 YEAR와 ADDRESS를,
      Dept-B는 GRADE와 DEPT를 못 본다. 두 쪽을 합치면 여섯 칸이 모두 나온다.
@@ -34,12 +34,12 @@ permalink: "/studies/database-design/code/07_three-schema-architecture_verify/"
      읽을지 정해진다. 그렇게 읽은 값은 DBMS(SQLite)의 뷰가 내놓는 값과 같다.
   5. 데이터는 한 벌이다. 바탕 표의 값을 고치면 두 외부 뷰가 모두 고친 값을 보여 준다.
 실행: python3 07_three-schema-architecture_verify.py
-학생 세 명의 값은 확인용으로 만든 것이다(슬라이드 p.14에는 스키마만 있고 행이 없다).
+학생 세 명의 값은 확인용으로 만든 것이다(문서의 예에는 스키마만 있고 행이 없다).
 """
 import sqlite3
 import struct
 
-# ---------- p.14의 세 단계 ----------
+# ---------- 문서 대학 예의 세 단계 ----------
 EXTERNAL_1 = [("SN", "INT"), ("NAME", "CHAR(10)"), ("GRADE", "INT"), ("DEPT", "CHAR(5)")]                 # Dept-A의 ST
 EXTERNAL_2 = [("SNO", "PIC 9(4)"), ("SNAME", "PIC X(10)"), ("YEAR", "PIC 9(2)"), ("ADDR", "PIC X(44)")]   # Dept-B의 STUDENT
 CONCEPTUAL = [("SNUMBER", "INTEGER"), ("NAME", "CHAR(10)"), ("YEAR", "SMALLINT"),

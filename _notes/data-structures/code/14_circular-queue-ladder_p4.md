@@ -69,7 +69,7 @@ static int DeleteQ(Ring *q)
 static int SizeQ(const Ring *q) { return (q->rear - q->front + q->n) % q->n; }
 static int IsFullQ(const Ring *q) { return (q->rear + 1) % q->n == q->front; }
 
-/* 슬라이드 p.93의 AddQ: rear를 먼저 옮긴다 */
+/* 문제 4 (라)의 AddQ: rear를 먼저 옮긴다 */
 static void AddQ_p93(Ring *q, int item)
 {
     q->rear = (q->rear + 1) % q->n;
@@ -92,7 +92,7 @@ int main(void)
 {
     Ring q;
 
-    /* 문제 1: 6칸, 슬라이드 p.84 ~ 87의 그림 */
+    /* 문제 1: 6칸 */
     start(&q, 6, 1);
     AddQ(&q, 'A'); AddQ(&q, 'B'); AddQ(&q, 'C');
     check(state(&q, 1, 4, 3) && q.slot[2] == 'A' && q.slot[3] == 'B' && q.slot[4] == 'C', "문제 1: 처음");
@@ -138,7 +138,7 @@ int main(void)
     Ring copy = q;                                        /* (라)에 쓸 가득 찬 상태 */
     check(DeleteQ(&q) == 'w' && DeleteQ(&q) == 'x' && state(&q, 0, 5, 5), "문제 4 (다): 두 번 빼면 front 0, 5개");
     AddQ_p93(&copy, '!');
-    check(copy.full_calls == 1 && copy.front == 6 && copy.rear == 6 && SizeQ(&copy) == 0, "문제 4 (라): p.93의 AddQ면 빈 큐로 보인다");
+    check(copy.full_calls == 1 && copy.front == 6 && copy.rear == 6 && SizeQ(&copy) == 0, "문제 4 (라): rear를 먼저 옮기는 AddQ면 빈 큐로 보인다");
     check(DeleteQ(&copy) == -1, "문제 4 (라): 일곱 개를 꺼낼 수 없다");
 
     if (failures) { printf("%d개 실패\n", failures); return 1; }

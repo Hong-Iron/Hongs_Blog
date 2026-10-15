@@ -152,9 +152,7 @@ $$\sqrt x$$는 늘어나기만 하므로 $$\int_0^n\sqrt x\,dx \le \sum \le \int
 </details>
 
 
-## 출처
-
 [^1]: Graham·Knuth·Patashnik, *Concrete Mathematics*, 2.6절 "Finite and Infinite Calculus"(차분 $$\Delta$$, 하강 거듭제곱, 부분합).
 [^2]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14장 "Sums and Asymptotics"(적분으로 합 끼우기, 조화수, 스털링 근사). 같은 부등식이 OpenStax, *Calculus Volume 2*, 5.3절 "The Divergence and Integral Tests"의 적분 판정 증명에 쓰인다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [16_sum-integral-bounds_plot.py](/Hongs_Blog/studies/calculus/code/16_sum-integral-bounds_plot/)로 그렸고, $$\ln 9 \le H_8 \le 1 + \ln 8$$과 $$n \le 10^4$$에서 $$\ln(n + 1) \le H_n \le 1 + \ln n$$을 같은 코드로 확인했다.
+[^s1]: [16_sum-integral-bounds_plot.py](/Hongs_Blog/studies/calculus/code/16_sum-integral-bounds_plot/)로 그렸고, $$\ln 9 \le H_8 \le 1 + \ln 8$$과 $$n \le 10^4$$에서 $$\ln(n + 1) \le H_n \le 1 + \ln n$$을 같은 코드로 확인했다.
 {% endraw %}

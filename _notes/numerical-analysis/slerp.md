@@ -37,7 +37,7 @@ permalink: "/studies/numerical-analysis/slerp/"
 카메라를 오른쪽($$\mathbf q_1 = (1, 0)$$)에서 위쪽($$\mathbf q_2 = (0, 1)$$)으로 1초 동안 돌린다.
 
 - **선형 보간** $$(1 - t)\mathbf q_1 + t\mathbf q_2$$: 0.5초에 $$(0.5, 0.5)$$로 길이가 $$\frac{1}{\sqrt2} \approx 0.71$$로 줄어든다.
-- **정규화한 선형 보간**: 길이는 1로 되돌리지만, 0.25초 간격마다 돈 각도가 고르지 않다. 가운데에서 빨리 돈다[^1][^2].
+- **정규화한 선형 보간**: 길이는 1로 되돌리지만, 0.25초 간격마다 돈 각도가 고르지 않다. 가운데에서 빨리 돈다.
 - **구면 선형 보간**: $$t$$초에 정확히 $$90° \times t$$만큼 돈다. $$t = \frac13$$이면 30° 방향 $$(\frac{\sqrt3}{2}, \frac12)$$다[^s1].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/23_slerp_fig1.svg" alt="그림" width="536" height="298" loading="lazy">
@@ -52,14 +52,14 @@ permalink: "/studies/numerical-analysis/slerp/"
 
 ## 정의
 
-**선형 보간**은 $$\mathbf q(t) = (1 - t)\mathbf q_1 + t\mathbf q_2$$($$0 \le t \le 1$$)다. 단위 벡터 사이에서 쓰려고 길이로 나누면 $$\mathbf q(t) = \frac{(1 - t)\mathbf q_1 + t\mathbf q_2}{\Vert (1 - t)\mathbf q_1 + t\mathbf q_2\Vert }$$다. 이것은 원호 위에 있지만, $$\mathbf q_1$$과의 각 $$\cos^{-1}(\mathbf q(t)\cdot\mathbf q_1)$$이 $$t$$에 정비례하지 않고 S자 모양으로 는다[^1][^2].
+**선형 보간**은 $$\mathbf q(t) = (1 - t)\mathbf q_1 + t\mathbf q_2$$($$0 \le t \le 1$$)다. 단위 벡터 사이에서 쓰려고 길이로 나누면 $$\mathbf q(t) = \frac{(1 - t)\mathbf q_1 + t\mathbf q_2}{\Vert (1 - t)\mathbf q_1 + t\mathbf q_2\Vert }$$다. 이것은 원호 위에 있지만, $$\mathbf q_1$$과의 각 $$\cos^{-1}(\mathbf q(t)\cdot\mathbf q_1)$$이 $$t$$에 정비례하지 않고 S자 모양으로 는다.
 
-**구면 선형 보간**은 $$\mathbf q(t) = a(t)\mathbf q_1 + b(t)\mathbf q_2$$로 두고, $$\mathbf q(t)$$가 $$\mathbf q_1$$과 각 $$\theta t$$, $$\mathbf q_2$$와 각 $$\theta(1 - t)$$를 이루게 한다. $$\theta = \cos^{-1}(\mathbf q_1\cdot\mathbf q_2)$$는 두 단위 벡터의 사잇각이다[^3].
+**구면 선형 보간**은 $$\mathbf q(t) = a(t)\mathbf q_1 + b(t)\mathbf q_2$$로 두고, $$\mathbf q(t)$$가 $$\mathbf q_1$$과 각 $$\theta t$$, $$\mathbf q_2$$와 각 $$\theta(1 - t)$$를 이루게 한다. $$\theta = \cos^{-1}(\mathbf q_1\cdot\mathbf q_2)$$는 두 단위 벡터의 사잇각이다.
 
 $$\mathbf q(t) = \frac{\sin\theta(1 - t)}{\sin\theta}\mathbf q_1 + \frac{\sin\theta t}{\sin\theta}\mathbf q_2, \qquad \sin\theta = \sqrt{1 - (\mathbf q_1\cdot\mathbf q_2)^2}$$
 
 
-$$a(t)$$는 그림에서 $$\mathbf q(t)$$의 끝에서 $$\mathbf q_2$$ 방향과 나란히 $$\mathbf q_1$$ 쪽 선까지 그은 길이다. 닮은 삼각형으로 $$\frac{a(t)}{\Vert \mathbf q_1\Vert } = \frac{\Vert \mathbf q(t)\Vert \sin\theta(1 - t)}{\Vert \mathbf q_1\Vert \sin\theta}$$이고, 단위 벡터라 $$a(t) = \frac{\sin\theta(1 - t)}{\sin\theta}$$다. $$b(t)$$도 같은 방식이다(사인 법칙)[^3][^4][^5].
+$$a(t)$$는 그림에서 $$\mathbf q(t)$$의 끝에서 $$\mathbf q_2$$ 방향과 나란히 $$\mathbf q_1$$ 쪽 선까지 그은 길이다. 닮은 삼각형으로 $$\frac{a(t)}{\Vert \mathbf q_1\Vert } = \frac{\Vert \mathbf q(t)\Vert \sin\theta(1 - t)}{\Vert \mathbf q_1\Vert \sin\theta}$$이고, 단위 벡터라 $$a(t) = \frac{\sin\theta(1 - t)}{\sin\theta}$$다. $$b(t)$$도 같은 방식이다(사인 법칙).
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">각이 $$\theta t$$인지 확인</summary>
@@ -83,11 +83,11 @@ flowchart TD
     D -->|"아니오"| F["구면 선형 보간 공식"]
 ```
 
-부호를 먼저 맞춰 짧은 호를 고르고, 다음에 $$\sin\theta$$로 나눠도 안전한지 본다[^s3].
+부호를 먼저 맞춰 짧은 호를 고르고, 다음에 $$\sin\theta$$로 나눠도 안전한지 본다.
 
 ### 격자에서의 보간
 
-**쌍선형 보간.** 네 격자점 $$Q_{11}, Q_{21}, Q_{12}, Q_{22}$$의 값으로 사이 점 $$P = (x, y)$$의 값을 짐작한다. $$x$$ 방향으로 두 번 선형 보간한 뒤 $$y$$ 방향으로 한 번 더 한다[^6].
+**쌍선형 보간.** 네 격자점 $$Q_{11}, Q_{21}, Q_{12}, Q_{22}$$의 값으로 사이 점 $$P = (x, y)$$의 값을 짐작한다. $$x$$ 방향으로 두 번 선형 보간한 뒤 $$y$$ 방향으로 한 번 더 한다.
 
 $$f(R_1) \approx \frac{x_2 - x}{x_2 - x_1}f(Q_{11}) + \frac{x - x_1}{x_2 - x_1}f(Q_{21}), \qquad f(R_2) \approx \frac{x_2 - x}{x_2 - x_1}f(Q_{12}) + \frac{x - x_1}{x_2 - x_1}f(Q_{22})$$
 
@@ -104,9 +104,9 @@ $$f(P) \approx \frac{y_2 - y}{y_2 - y_1}f(R_1) + \frac{y - y_1}{y_2 - y_1}f(R_2)
        x1         x               x2
 ```
 
-아래 변에서 $$R_1$$, 위 변에서 $$R_2$$를 먼저 구하고, 두 값을 세로로 한 번 더 섞어 $$P$$를 얻는다[^s3].
+아래 변에서 $$R_1$$, 위 변에서 $$R_2$$를 먼저 구하고, 두 값을 세로로 한 번 더 섞어 $$P$$를 얻는다.
 
-$$y$$ 방향을 먼저 해도 결과가 같다[^s1]. **삼선형 보간**은 정육면체의 꼭짓점 여덟 개로 같은 일을 세 방향으로 한다[^7].
+$$y$$ 방향을 먼저 해도 결과가 같다[^s1]. **삼선형 보간**은 정육면체의 꼭짓점 여덟 개로 같은 일을 세 방향으로 한다.
 
 ## 활용
 
@@ -153,14 +153,6 @@ $$y$$ 방향을 먼저 해도 결과가 같다[^s1]. **삼선형 보간**은 정
 </details>
 
 
-[^1]: 수치해석 12회 강의 자료 「na12_interpolation」, p.29~30
-[^2]: 같은 자료, p.31
-[^3]: 같은 자료, p.32
-[^4]: 같은 자료, p.33
-[^5]: 같은 자료, p.34
-[^6]: 같은 자료, p.35
-[^7]: 같은 자료, p.36
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카메라 예와 수치, 각이 $$\theta t$$인 확인, 쿼터니언 부호 뒤집기, 순서를 바꿔도 같은 쌍선형 보간, 쓰는 곳, 흔한 실수, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [23_slerp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 선형 보간의 가운데 길이 $$\frac{1}{\sqrt2}$$, 구면 선형 보간의 $$t = \frac13$$이 $$(\frac{\sqrt3}{2}, \frac12)$$, 각이 $$90° \times t$$, 정규화한 선형 보간의 $$t = \frac14$$가 22.5°에서 3° 넘게 벗어남.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 첫째는 이 문서 요약과 쿼터니언 부호 문단, 둘째는 '격자에서의 보간'의 세 식(원본 12.na12_interpolation.pdf p.35)으로 그렸다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [23_slerp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/23_slerp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 선형 보간의 가운데 길이 $$\frac{1}{\sqrt2}$$, 구면 선형 보간의 $$t = \frac13$$이 $$(\frac{\sqrt3}{2}, \frac12)$$, 각이 $$90° \times t$$, 정규화한 선형 보간의 $$t = \frac14$$가 22.5°에서 3° 넘게 벗어남.
 {% endraw %}

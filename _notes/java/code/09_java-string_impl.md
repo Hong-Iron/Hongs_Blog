@@ -32,14 +32,14 @@ class StringImpl {
     }
 
     public static void main(String[] args) {
-        // 1. 리터럴이 같으면 String 객체 하나를 같이 쓴다 (슬라이드 왼쪽 코드)
+        // 1. 리터럴이 같으면 String 객체 하나를 같이 쓴다 (문서 첫 예시의 위쪽 코드)
         String car1 = "Hyundai";
         String car2 = "KIA";
         String car3 = "KIA";
         check(car2 == car3, "같은 리터럴은 같은 객체");
         check(car1 != car2, "다른 리터럴은 다른 객체");
 
-        // 2. new는 늘 새 객체를 만든다 (슬라이드 오른쪽 코드)
+        // 2. new는 늘 새 객체를 만든다 (문서 첫 예시의 아래쪽 코드)
         String n1 = new String("Hyundai");
         String n2 = new String("KIA");
         String n3 = new String("KIA");
@@ -61,7 +61,7 @@ class StringImpl {
         check(typed != car2 && typed.equals(car2), "입력받은 문자열은 == 로 비교하면 틀린다");
         check(!"kia".equals("KIA") && "kia".equalsIgnoreCase("KIA"), "대소문자");
 
-        // 4. 주요 메서드 (슬라이드: "자바 프로그래밍")
+        // 4. 주요 메서드 (문서의 예: "자바 프로그래밍")
         String subject = "자바 프로그래밍";
         check(subject.length() == 8, "길이 8 (빈칸 포함)");
         check(subject.charAt(0) == '자' && subject.charAt(2) == ' ' && subject.charAt(3) == '프', "charAt");

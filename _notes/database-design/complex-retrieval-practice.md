@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: GROUP BY, HAVING, WHERE와 HAVING 비교, EXISTS와 NOT EXISTS, 중첩 질의와 IN, 집계 함수."
 prev_url: "/studies/database-design/group-by-query-ladder/"
@@ -25,7 +25,7 @@ permalink: "/studies/database-design/complex-retrieval-practice/"
 {% raw %}
 사용 개념: [GROUP BY](/Hongs_Blog/studies/database-design/group-by/), [HAVING](/Hongs_Blog/studies/database-design/having-clause/), [WHERE와 HAVING 비교](/Hongs_Blog/studies/database-design/where-vs-having/), [EXISTS와 NOT EXISTS](/Hongs_Blog/studies/database-design/sql-exists/), [중첩 질의와 IN](/Hongs_Blog/studies/database-design/nested-query-in/), [집계 함수](/Hongs_Blog/studies/database-design/aggregate-functions/).
 
-12주차 슬라이드의 연습 1~3이다. 연습 1과 3은 COMPANY에, 연습 2는 UNIVERSITY에 묻는다. COMPANY의 상태는 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)에 있다. 직원의 (성, 성별, 급여, 부서, 상사)만 옮기면 이렇다.
+문제 셋 가운데 p1과 p3은 COMPANY에, p2는 UNIVERSITY에 묻는다. COMPANY의 상태는 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)에 있다. 직원의 (성, 성별, 급여, 부서, 상사)만 옮기면 이렇다.
 
 | Lname | Ssn | Sex | Salary | Dno | Super_ssn |
 |---|---|---|---|---|---|
@@ -40,11 +40,11 @@ permalink: "/studies/database-design/complex-retrieval-practice/"
 
 부서는 Research(5번), Administration(4번), Headquarters(1번)다.
 
-풀이 슬라이드의 질의 가운데 여럿이 적힌 그대로는 돌지 않거나 그려진 답과 다른 답을 낸다. 문제마다 고친 질의를 답으로 싣고, 슬라이드의 질의가 어떻게 다른지를 따로 적었다. 실행은 SQLite 3.50.4와 PostgreSQL 16에서 했다.
+질의와 결과는 SQLite 3.50.4와 PostgreSQL 16에서 실행해 확인했다.
 
-## 문제 p1 · 묶음 조건과 행 조건 (연습 1-1, 1-2)
+## 문제 p1 · 묶음 조건과 행 조건 (Q1-1, Q1-2)
 
-COMPANY에 다음 두 질의를 SQL로 적고, 위 상태에서의 결과를 보여라[^1].
+COMPANY에 다음 두 질의를 SQL로 적고, 위 상태에서의 결과를 보여라.
 
 - **Q1-1.** 평균 급여가 30000을 넘는 부서마다 부서 이름과 그 부서에서 일하는 직원의 수를 구하라.
 - **Q1-2.** 평균 급여가 30000을 넘는 부서마다, 전 직원이 아니라 남자 직원의 수를 부서 이름과 함께 구하라.
@@ -55,7 +55,7 @@ COMPANY에 다음 두 질의를 SQL로 적고, 위 상태에서의 결과를 보
 <summary class="callout-title" markdown="span">Q1-1의 답</summary>
 
 1. *표 잇기:* 부서 이름이 필요하므로 `WHERE Dno = Dnumber`.
-2. *묶기:* 부서 번호와 이름으로 묶는다.
+2. *묶기:* 부서 번호와 이름으로 묶는다. `SELECT`에 Dname을 꺼내므로 Dname도 묶는 속성에 넣는다. `GROUP BY Dno`만 쓰면 PostgreSQL 16은 오류로 거부한다. SQLite는 받는다.
 3. *묶음 조건:* `HAVING AVG(Salary) > 30000`.
 
 ```sql
@@ -105,29 +105,17 @@ GROUP BY Dno, Dname;
 | Administration | 1 |
 | Headquarters | 1 |
 
+Q1-1의 질의에 `AND Sex = 'M'`만 더하면 안 된다. `WHERE`가 먼저 남자만 남기므로 `HAVING`의 평균이 남자만의 평균(36000, 25000, 55000)이 된다. 그러면 Administration이 빠져 2행(Research 3, Headquarters 1)만 나온다. 까닭은 [WHERE와 HAVING 비교](/Hongs_Blog/studies/database-design/where-vs-having/)에 있다.
+
 </details>
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: Q1-1의 3행, Q1-2의 중첩 질의 3행, 풀이에 적힌 질의의 2행, 다른 해석의 2행 — [70_complex-retrieval-practice_p1.py](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p1/), [70_complex-retrieval-practice_p1.sql](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p1-sql/)</div>
+<div class="callout-title" markdown="span">검증: Q1-1의 3행, Q1-2의 중첩 질의 3행, `AND Sex = 'M'`만 더한 질의의 2행, 다른 해석의 2행 — [70_complex-retrieval-practice_p1.py](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p1/), [70_complex-retrieval-practice_p1.sql](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p1-sql/)</div>
 
 </div>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: Q1-2의 풀이는 Q1-1의 질의에 `AND Sex = 'M'`만 더한 것이고("Just adding one more condition"), 결과 표는 Research 3, Administration 1, Headquarters 1이다[^2] / 문제점: 그 질의를 돌리면 2행(Research 3, Headquarters 1)이다. `WHERE`가 먼저 남자만 남기므로 `HAVING`의 평균이 남자만의 평균(36000, 25000, 55000)이 되어 Administration이 빠진다. 그려진 3행은 위 답의 중첩 질의가 내는 결과다 / 수정안: 위 답 / 근거: 두 제품에서 실행한 결과. 까닭은 [WHERE와 HAVING 비교](/Hongs_Blog/studies/database-design/where-vs-having/)에 있다.
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: Q1-1과 Q1-2의 풀이는 `GROUP BY Dno`에 `SELECT Dname`이다[^2] / 문제점: `Dname`이 묶는 속성에 없어 PostgreSQL 16은 두 질의를 오류로 거부한다. SQLite는 받는다 / 수정안: `GROUP BY Dno, Dname` / 근거: [70_complex-retrieval-practice_p1.sql](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p1-sql/). 까닭은 [GROUP BY](/Hongs_Blog/studies/database-design/group-by/)에 있다.
-
-</div>
 
 
 변형: Q1-2를 "급여가 30000을 넘는 남자 직원의 수를 부서마다"로 읽으면 질의와 결과는?
@@ -135,14 +123,14 @@ GROUP BY Dno, Dname;
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">변형의 답</summary>
 
-두 조건이 모두 직원 한 명만 보면 정해지므로 둘 다 `WHERE`에 간다. `WHERE Dno = Dnumber AND Sex = 'M' AND Salary > 30000 GROUP BY Dno, Dname`. 결과는 Research 2(Wong, Narayan), Headquarters 1(Borg)이다. 문제 글의 "making more than $30,000"이 부서를 꾸미는지 직원을 꾸미는지에 따라 답이 갈린다. 슬라이드가 그린 3행은 부서를 꾸미는 쪽이다[^s1].
+두 조건이 모두 직원 한 명만 보면 정해지므로 둘 다 `WHERE`에 간다. `WHERE Dno = Dnumber AND Sex = 'M' AND Salary > 30000 GROUP BY Dno, Dname`. 결과는 Research 2(Wong, Narayan), Headquarters 1(Borg)이다. 문제 글의 "making more than $30,000"이 부서를 꾸미는지 직원을 꾸미는지에 따라 답이 갈린다. 본문의 답 3행은 부서를 꾸미는 쪽이다[^s1].
 
 </details>
 
 
-## 문제 p2 · "모두"와 "하나도 없다" (연습 2-1, 2-2)
+## 문제 p2 · "모두"와 "하나도 없다" (Q2-1, Q2-2)
 
-UNIVERSITY 데이터베이스에 다음을 SQL로 적어라[^3].
+UNIVERSITY 데이터베이스에 다음을 SQL로 적어라.
 
 - **Q2-1.** 성적이 모두 A인 학생의 이름과 전공을 구하라.
 - **Q2-2.** A인 성적이 하나도 없는 학생의 이름과 전공을 구하라.
@@ -208,7 +196,7 @@ Smith의 성적 B, C에는 A가 없어 안쪽 결과가 비어 있다. Brown은 
 </details>
 
 
-슬라이드는 같은 두 질문을 조인과 묶기로도 풀었다[^4].
+같은 두 질문을 조인과 묶기로도 풀 수 있다.
 
 ```sql
 SELECT   Name, Major
@@ -225,20 +213,6 @@ HAVING   SUM(CASE WHEN G.Grade <> 'A' THEN 1 ELSE 0 END) = 0;
 </div>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 풀이의 중첩 질의는 `WHERE NOT EXIST ( SELECT * … )`다(Q2-1, Q2-2 모두)[^5] / 문제점: `EXIST`에 S가 빠졌다. SQLite와 PostgreSQL 16 모두 구문 오류다 / 수정안: `NOT EXISTS` / 근거: 두 제품에서 실행.
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 문제 Q2-1은 성적이 모두 A인 학생(straight-A)을 "in any of their courses"에서 A를 받은 학생이라고 풀어 적었다[^3] / 문제점: 그 말을 "어느 한 과목에서라도"로 읽으면 "A가 하나라도 있는 학생"이 되어 풀이와 맞지 않는다. 풀이는 "모든 과목에서 A"로 풀었다 / 수정안: "모든 과목에서"로 읽는다 / 근거: 풀이의 조건 `G.Grade <> 'A'`와 풀이에 적힌 결과(그런 학생이 없다)[^4].
-
-</div>
 
 
 변형: 성적이 한 줄도 없는 학생 (Kim, 25, 4, CS)를 STUDENT에 넣으면, Q2-1의 두 풀이는 각각 무엇을 내는가?
@@ -253,9 +227,9 @@ HAVING   SUM(CASE WHEN G.Grade <> 'A' THEN 1 ELSE 0 END) = 0;
 </details>
 
 
-## 문제 p3 · 값을 먼저 구해 견주기 (연습 3-1, 3-2, 3-3)
+## 문제 p3 · 값을 먼저 구해 견주기 (Q3-1, Q3-2, Q3-3)
 
-COMPANY에 다음을 중첩 질의와 집계 함수 따위를 써서 SQL로 적어라[^6].
+COMPANY에 다음을 중첩 질의와 집계 함수 따위를 써서 SQL로 적어라.
 
 - **Q3-1.** 전 직원 가운데 급여가 가장 많은 직원이 있는 부서에서 일하는 모든 직원의 이름을 구하라.
 - **Q3-2.** 상사의 상사가 Ssn 888665555인 모든 직원의 이름을 구하라.
@@ -303,6 +277,8 @@ WHERE  Super_ssn IN ( SELECT Ssn
 {: start="3"}
 3. *결과:* Wong의 부하 Smith, Narayan, English와 Wallace의 부하 Zelaya, Jabbar. **John B Smith, Alicia J Zelaya, Ramesh K Narayan, Joyce A English, Ahmad V Jabbar** 다섯 행이다.
 
+`IN` 대신 `=`를 쓰면 안쪽 질의가 두 행을 돌려주어 탈이 난다. PostgreSQL 16은 "more than one row returned by a subquery used as an expression" 오류로 멈춘다. SQLite는 오류 없이 첫 행(Wong)만 써서 Smith, Narayan, English 세 명만 내고 Wallace의 부하 둘을 빠뜨린다.
+
 자기 조인으로도 쓴다. `FROM EMPLOYEE AS E JOIN EMPLOYEE AS S ON E.Super_ssn = S.Ssn WHERE S.Super_ssn = '888665555'`. 같은 다섯 명이 나온다.
 
 </details>
@@ -332,20 +308,6 @@ WHERE  Salary - 10000 >= ( SELECT MIN(Salary) FROM EMPLOYEE );
 </div>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: Q3-2의 풀이는 `WHERE Super_ssn = ( SELECT Ssn FROM EMPLOYEE WHERE Super_ssn = '888665555');`다[^7] / 문제점: `=` 뒤의 안쪽 질의가 두 행(Wong, Wallace)을 돌려준다. PostgreSQL 16은 "more than one row returned by a subquery used as an expression" 오류로 멈춘다. SQLite는 오류 없이 첫 행(Wong)만 써서 3명(Smith, Narayan, English)을 내고 Wallace의 부하 둘을 빠뜨린다 / 수정안: `=`를 `IN`으로 / 근거: 두 제품에서 실행 — [70_complex-retrieval-practice_p3.sql](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p3-sql/)
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 문제 Q3-2의 Ssn은 '88866555'로 8자리다[^6] / 문제점: COMPANY의 Ssn은 9자리이고 이 값을 가진 직원은 없다. 그대로 쓰면 0행이다 / 수정안: 풀이가 쓴 '888665555'(Borg) / 근거: 풀이 p.7과 실행 결과.
-
-</div>
 
 
 변형: Q3-3을 "가장 많이 받는 직원보다 10000 이상 적게 받는 직원"으로 바꾸면 조건은 어떻게 쓰는가?
@@ -358,14 +320,7 @@ WHERE  Salary - 10000 >= ( SELECT MIN(Salary) FROM EMPLOYEE );
 </details>
 
 
-[^1]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.14~15 (Exercise 1-1, 1-2)
-[^2]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.1~2 (Q1-1, Q1-2의 풀이와 결과 표). p.1의 묶음 그림에는 Borg가 "Bong"으로 적혀 있다.
-[^3]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.16~17 (Exercise 2-1, 2-2와 UNIVERSITY 상태)
-[^4]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.4 (Q2-1의 조인과 묶기 풀이, 결과는 그런 학생이 없다), p.6 (Q2-2의 조인과 묶기 풀이, 결과는 Smith, CS)
-[^5]: 같은 자료, p.3 (Q2-1의 중첩 질의 풀이), p.5 (Q2-2의 중첩 질의 풀이)
-[^6]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.18~20 (Exercise 3-1, 3-2, 3-3)
-[^7]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.7 (Q3-1, Q3-2, Q3-3의 풀이)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 전략, 하위목표로 나눈 풀이, Q1-2의 중첩 질의와 다른 해석은 슬라이드에 없다. 중첩 질의의 꼴은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Grouping: The GROUP BY and HAVING Clauses"에 같은 꼴의 예가 있다. 결과는 문제 코드로 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `CASE WHEN`의 풀이, 학생별 합, 성적이 없는 학생 Kim과 모두 A인 학생 Lee를 넣은 실험, 기본 키와 `Major`의 관계는 슬라이드에 없다. 슬라이드는 `CASE WHEN`을 설명 없이 풀이에만 쓴다. 문제 코드로 실행해 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Q3-1~Q3-3의 결과 값(풀이 슬라이드에는 질의만 있다), `Dno IN`으로 쓰는 판, 자기 조인 판, 변형 문제는 슬라이드에 없다. 문제 코드로 실행해 확인했다.
+[^s1]: 중첩 질의의 꼴은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Grouping: The GROUP BY and HAVING Clauses"에 같은 꼴의 예가 있다. 결과는 문제 코드로 실행해 확인했다.
+[^s2]: 문제 코드로 실행해 확인했다.
+[^s3]: 문제 코드로 실행해 확인했다.
 {% endraw %}

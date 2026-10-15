@@ -69,7 +69,7 @@ def main():
     # 점 P = (0, 1)을 지나는 수평선 y = 1: X' = T R F R⁻¹ T⁻¹ X
     M = mm(T2(0, 1), mm(R2(0), mm(Fx, mm(R2(0), T2(0, -1)))))
     assert close(mv(M, [2, 3, 1]), [2, -1, 1])
-    # 평면 반사: 점 P를 지나고 법선 n인 평면, X' = X − 2((X − P)·n̂)n̂ 와 슬라이드의 T R⁻¹ F_xy R T⁻¹ 비교
+    # 평면 반사: 점 P를 지나고 법선 n인 평면, X' = X − 2((X − P)·n̂)n̂ 와 문서의 T R⁻¹ F_xy R T⁻¹ 비교
     random.seed(4)
     for _ in range(100):
         n = [random.uniform(-1, 1) for _ in range(3)]; ln = math.sqrt(sum(x * x for x in n)); n = [x / ln for x in n]

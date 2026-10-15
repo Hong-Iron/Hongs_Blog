@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["SLR Parser with Stack", "LR 파서 구동기", "LR Driver", "상태 스택", "State Stack", "스택 기반 SLR 파서"]
 description: "미로를 걸으며 지나온 갈림길마다 번호표를 차례로 쌓아 두는 방식이다. 묶을 때는 묶는 기호 수만큼 번호표를 걷어 내고, 드러난 갈림길에서 새 길로 한 걸음 간다. 처음부터 다시 걸을 필요가 없어서 입력 길이에 비례하는 시간에 끝난다. 맨 위 번호표와 다음 토큰만 보고 표 한 칸을 …"
@@ -34,11 +34,11 @@ permalink: "/studies/compilers/slr-stack-parser/"
 
 ## 예시로 보기
 
-[SLR 파싱 표](/Hongs_Blog/studies/compilers/slr-parsing-table/)가 있어도, 결정할 때마다 막대 왼쪽을 상태 1부터 다시 읽으면 느리다. <code>T * E&#124;$</code>에서 결정하려면 1 → 3 → 6 → 8을 다시 밟아야 한다. 슬라이드도 "결정할 때마다 DFA를 다시 돌아야 한다. 너무 비효율적이다"라고 적는다[^1].
+[SLR 파싱 표](/Hongs_Blog/studies/compilers/slr-parsing-table/)가 있어도, 결정할 때마다 막대 왼쪽을 상태 1부터 다시 읽으면 느리다. <code>T * E&#124;$</code>에서 결정하려면 1 → 3 → 6 → 8을 다시 밟아야 한다. 결정할 때마다 DFA를 처음부터 다시 도는 것은 너무 비효율적이다.
 
 그런데 방금 전 걸음에서 이미 1 → 3 → 6까지 와 있었다. 지나온 상태를 버리지 않고 쌓아 두면 다시 밟지 않아도 된다. 환원으로 끝자락 기호 몇 개가 사라지면, 그 기호들을 읽으며 지나온 상태도 그만큼 걷어 내면 된다. 끝에서 넣고 끝에서 빼니 [스택](/Hongs_Blog/studies/algorithms/stack/)이다.
 
-입력 `id * id $`를 표와 스택으로 파싱한다. 규칙 번호는 (1) $$S' \to E$$, (2) $$E \to T * E$$, (3) $$E \to T$$, (4) $$T \to (E)$$, (5) $$T \to id$$다[^2].
+입력 `id * id $`를 표와 스택으로 파싱한다. 규칙 번호는 (1) $$S' \to E$$, (2) $$E \to T * E$$, (3) $$E \to T$$, (4) $$T \to (E)$$, (5) $$T \to id$$다.
 
 | 스택 (오른쪽이 맨 위) | 남은 입력 | 표의 칸 | 한 일 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ permalink: "/studies/compilers/slr-stack-parser/"
 
 ## 절차
 
-스택에는 기호가 아니라 **상태 번호**를 쌓는다[^3].
+스택에는 기호가 아니라 **상태 번호**를 쌓는다.
 
 | 때 | 할 일 |
 |---|---|
@@ -66,7 +66,7 @@ permalink: "/studies/compilers/slr-stack-parser/"
 | 환원 R(1) ($$S' \to S$$) | 받아들인다 |
 | 빈칸 | 오류 |
 
-$$\lvert\alpha\rvert$$는 규칙 오른쪽의 기호 수다. $$T \to id$$면 1, $$E \to T * E$$면 3이다[^3].
+$$\lvert\alpha\rvert$$는 규칙 오른쪽의 기호 수다. $$T \to id$$면 1, $$E \to T * E$$면 3이다.
 
 ### 의사코드
 
@@ -101,13 +101,6 @@ $$\lvert\alpha\rvert$$는 규칙 오른쪽의 기호 수다. $$T \to id$$면 1, 
 
 다시 읽는 방식과 스택 방식은 결정이 모두 같고 드는 일만 다르다. `id * id`에서 다시 읽는 방식은 DFA를 14걸음 걷고, 스택 방식은 상태를 7번 넣는다. `id`가 10개면 390걸음 대 39번, 40개면 6,360걸음 대 159번이다. 한쪽은 입력 길이의 제곱으로, 다른 쪽은 길이에 비례해 는다[^s1].
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "For $$E\vert \$ \Rightarrow_{reduce} S\vert \0, "Reduce by $$S' \to E$$" / 근거: 8회 슬라이드 p.34의 같은 쪽이 "Reduce by (1) $$S' \to E$$"와 "reduced to the dummy start symbol S'"이라고 적고, p.7의 규칙 목록에도 $$S' \to E$만 있다.
-
-</div>
-
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 추적의 스택 8줄, 길이 7 이하 토큰열 21,845개에서 다시 읽는 방식과 스택 방식의 결정이 모두 같고 스택 성질이 걸음마다 지켜짐, 걸음 수 14 대 7과 390 대 39, 오류 입력 `id id`와 `id *`가 멈추는 자리 — [28_slr-stack-parser_impl.py](/Hongs_Blog/studies/compilers/code/28_slr-stack-parser_impl/)</div>
@@ -131,7 +124,7 @@ $$\lvert\alpha\rvert$$는 규칙 오른쪽의 기호 수다. $$T \to id$$면 1, 
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C1** 강의의 표로 `( id ) $`를 파싱할 때 스택이 어떻게 바뀌는지 차례로 쓰라.</summary>
+<summary class="callout-title" markdown="span">**C1** [SLR 파싱 표](/Hongs_Blog/studies/compilers/slr-parsing-table/) 문서의 표로 `( id ) $`를 파싱할 때 스택이 어떻게 바뀌는지 차례로 쓰라.</summary>
 
 **답:** [1] → [1 4] → [1 4 5] → [1 4 3] → [1 4 7] → [1 4 7 9] → [1 3] → [1 2] → 받아들임.<br>
 **이유:** S4, S5, R(5)로 5를 꺼내고 GOTO(4, T) = 3, R(3)으로 3을 꺼내고 GOTO(4, E) = 7, S9, R(4)로 9·7·4 셋을 꺼내고 GOTO(1, T) = 3, R(3)으로 3을 꺼내고 GOTO(1, E) = 2, 마지막에 R(1). 틀리기 쉬운 곳은 R(4)에서 셋을 꺼내는 것이다. $$T \to (E)$$의 오른쪽이 기호 3개다.
@@ -155,9 +148,6 @@ $$\lvert\alpha\rvert$$는 규칙 오른쪽의 기호 수다. $$T \to id$$면 1, 
 </details>
 
 
-[^1]: 컴파일러 8회 강의 자료 「Lecture08 Syntax analysis part 5」, p.12~21 (표만 쓰고 결정마다 DFA를 처음부터 다시 도는 방식과 그 비효율)
-[^2]: 같은 자료, p.22~34 (스택을 쓴 `id * id $`의 파싱 과정)
-[^3]: 같은 자료, p.22 (초기화), p.23 (이동), p.24~25 (환원의 두 걸음), p.34 (받아들임)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 추적을 표 한 장으로 모은 것, 의사코드, 스택 성질과 그 이유, 걸음 수 비교(14 대 7, 390 대 39, 6,360 대 159), 오류 입력의 예, 카드 C1~C3은 원본에 없다. 구현 코드로 확인했다. 근거: Aho·Lam·Sethi·Ullman, *Compilers* 2판, 4.6.3 "The LR-Parsing Algorithm".
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원본에 없다. 8회 슬라이드 p.36~37은 구문 분석기가 파스 트리를 만든다고만 한다. 근거: 같은 책 5.4 "Syntax-Directed Translation Schemes".
+[^s1]: 구현 코드로 확인했다. 근거: Aho·Lam·Sethi·Ullman, *Compilers* 2판, 4.6.3 "The LR-Parsing Algorithm".
+[^s2]: 근거: 같은 책 5.4 "Syntax-Directed Translation Schemes".
 {% endraw %}

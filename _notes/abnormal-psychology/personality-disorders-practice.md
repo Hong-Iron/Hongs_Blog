@@ -22,7 +22,7 @@ permalink: "/studies/abnormal-psychology/personality-disorders-practice/"
 {% raw %}
 사용 개념: [성격장애](/Hongs_Blog/studies/abnormal-psychology/personality-disorders/), [조현성 성격장애](/Hongs_Blog/studies/abnormal-psychology/schizoid-pd/), [조현형 성격장애](/Hongs_Blog/studies/abnormal-psychology/schizotypal-pd/), [조현성과 조현형 성격장애 비교](/Hongs_Blog/studies/abnormal-psychology/schizoid-vs-schizotypal/), [자기애성 성격장애](/Hongs_Blog/studies/abnormal-psychology/narcissistic-pd/), [경계선 성격장애](/Hongs_Blog/studies/abnormal-psychology/borderline-pd/), [강박성 성격장애](/Hongs_Blog/studies/abnormal-psychology/ocpd/), [강박장애와 강박성 성격장애 비교](/Hongs_Blog/studies/abnormal-psychology/ocd-vs-ocpd/), [의존성 성격장애](/Hongs_Blog/studies/abnormal-psychology/dependent-pd/), [성격장애의 대안 모델](/Hongs_Blog/studies/abnormal-psychology/alternative-pd-model/)
 
-모든 사례는 가상이다[^s1]. 성격장애 사례는 다섯 하위목표로 푼다. 시험의 서술형은 한 성격장애를 골라 핵심 증상, 원인, 치료, 진단기준을 쓰는 형식이므로[^1], 하위목표 5는 이론별로 빠짐없이 쓰는 연습을 한다.
+모든 사례는 가상이다. 성격장애 사례는 다섯 하위목표로 푼다. 시험의 서술형은 한 성격장애를 골라 핵심 증상, 원인, 치료, 진단기준을 쓰는 형식이므로, 하위목표 5는 이론별로 빠짐없이 쓰는 연습을 한다.
 
 1. *지속성과 만연함:* 청소년기나 초기 성인기부터, 여러 상황에서 이어졌는가(일반 기준).
 2. *군집:* 기이함(A), 극적·감정적(B), 불안·두려움(C) 가운데 어디인가.
@@ -120,8 +120,4 @@ permalink: "/studies/abnormal-psychology/personality-disorders-practice/"
 4. 치료: 의존적 관계를 맺되 점차 스스로 서게 하고 종결 무렵의 악화에 대비한다. 전이 감정의 해석(정신분석). 독립이 아닌 자율을 목표로 자기신뢰와 자기효능감을 높이고 자기주장 훈련, 의사소통 훈련을 한다(인지행동).
 
 </details>
-
-
-[^1]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.45 손글씨 필기: "<성격 장애 파트에서 나오는 문제> 1. 성격장애 전반과 대안적 모델 - 객관적 2. 핵심 증상, 원인, 치료, 진단기준 - 서술형 (성격 장애 중 좋아하는 거 골라서)".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 12.성격장애.pdf의 장애별 설명(p.3~74)을 적용한 가상 사례다.
 {% endraw %}

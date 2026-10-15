@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 선형 탐사의 넣기와 지우기(뭉치 당기기), 체이닝의 정렬된 체인. 홈 버킷은 늘 키를 버킷 수로 나눈 나머지다."
 prev_url: "/studies/data-structures/external-sort-ladder/"
@@ -23,7 +23,7 @@ permalink: "/studies/data-structures/linear-probing-ladder/"
 {% raw %}
 사용 개념: [선형 탐사](/Hongs_Blog/studies/data-structures/linear-probing/)의 넣기와 지우기(뭉치 당기기), [체이닝](/Hongs_Blog/studies/data-structures/hash-chaining/)의 정렬된 체인. 홈 버킷은 늘 키를 버킷 수로 나눈 나머지다.
 
-"키를 넣고 하나를 지워라"는 문제는 같은 하위목표의 되풀이다. ① 홈 버킷 구하기 ② 넣기: 홈 버킷부터 오른쪽으로(끝에 닿으면 0번으로) 가서 처음 만난 빈 버킷에 넣는다 ③ 빈 자리 만들기: 지울 키의 버킷을 비운다 ④ 뭉치 훑기: 빈 자리의 오른쪽부터 빈 버킷이 나올 때까지 하나씩 본다. 그 키의 홈 버킷이 "빈 자리의 다음 칸부터 지금 칸까지" 사이에 있으면 그대로 두고, 없으면 빈 자리로 옮기고 그 칸을 새 빈 자리로 삼는다 ⑤ 확인: 남은 키마다 홈 버킷에서 그 키까지 빈 버킷이 없는지 본다[^s1].
+"키를 넣고 하나를 지워라"는 문제는 같은 하위목표의 되풀이다. ① 홈 버킷 구하기 ② 넣기: 홈 버킷부터 오른쪽으로(끝에 닿으면 0번으로) 가서 처음 만난 빈 버킷에 넣는다 ③ 빈 자리 만들기: 지울 키의 버킷을 비운다 ④ 뭉치 훑기: 빈 자리의 오른쪽부터 빈 버킷이 나올 때까지 하나씩 본다. 그 키의 홈 버킷이 "빈 자리의 다음 칸부터 지금 칸까지" 사이에 있으면 그대로 두고, 없으면 빈 자리로 옮기고 그 칸을 새 빈 자리로 삼는다 ⑤ 확인: 남은 키마다 홈 버킷에서 그 키까지 빈 버킷이 없는지 본다.
 
 ## 문제 1 · 완전한 풀이
 
@@ -60,7 +60,7 @@ permalink: "/studies/data-structures/linear-probing-ladder/"
 3을 그대로 두는 까닭: 3은 자기 홈 버킷 3번에 있다. 2번으로 옮기면 홈 버킷보다 앞에 놓여 찾기가 닿지 못한다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 같은 코드로 슬라이드의 표와 지우기 세 개가 그대로 나오는 것을 먼저 확인한 뒤, 문제 1~4의 표, 옮긴 차례, 본 버킷 수, 체인을 확인했다 — [49_linear-probing-ladder_p4.py](/Hongs_Blog/studies/data-structures/code/49_linear-probing-ladder_p4/)</div>
+<div class="callout-title" markdown="span">검증: 같은 코드로 [선형 탐사](/Hongs_Blog/studies/data-structures/linear-probing/) 문서의 넣기 표와 지우기 세 개가 그대로 나오는 것을 먼저 확인한 뒤, 문제 1~4의 표, 옮긴 차례, 본 버킷 수, 체인을 확인했다 — [49_linear-probing-ladder_p4.py](/Hongs_Blog/studies/data-structures/code/49_linear-probing-ladder_p4/)</div>
 
 </div>
 
@@ -140,7 +140,4 @@ permalink: "/studies/data-structures/linear-probing-ladder/"
 (c) 체인은 [1] → 14 → 27 → 40, [3] → 16 → 29, [5] → 5 → 18, [6] → 6이다. 본 노드 수는 14: 1, 27: 2, 40: 3, 16: 1, 29: 2, 5: 1, 18: 2, 6: 1로 합이 13, 평균 $$\frac{13}{8} = 1.625$$다. 선형 탐사의 2.375보다 작다. 선형 탐사에서는 1번에서 넘친 40이 3번 쪽 키들 사이에 끼어 29, 18, 6까지 밀어냈지만, 체인에서는 버킷끼리 섞이지 않는다. 체인에서 27을 지우면 14의 `link`가 40을 가리키게 될 뿐, 다른 노드는 움직이지 않는다. 선형 탐사에서는 키 네 개를 옮겨야 했다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표의 이름과 문제 1~4의 키는 슬라이드에 없다. 슬라이드 p.21~24의 넣기·지우기 그림과 p.31의 정렬된 체인을 다른 수로 연습하도록 만들었다. 답은 문제 코드로 확인했고, 그 코드는 슬라이드의 표와 Delete(0), Delete(34), Delete(29)를 그대로 재현한다.
 {% endraw %}

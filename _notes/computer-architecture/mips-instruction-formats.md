@@ -306,5 +306,5 @@ R형식 명령은 op가 모두 0이라 op로는 `add`인지 `sub`인지 모른�
 [^4]: Green Sheet, 같은 자료 (CORE INSTRUCTION SET 표의 OPCODE / FUNCT (Hex) 열)
 [^5]: Harris & Harris, *Digital Design and Computer Architecture* 2판 6장 강의 슬라이드, https://www.esa.informatik.tu-darmstadt.de/archive/twiki/pub/Lectures/Prozessorarchitektur16De/DDCA_Ch6.pdf, 슬라이드 43 (opcode부터 본다. 모두 0이면 R형식이고 function 비트가 연산을 정한다. 아니면 opcode가 연산을 정한다)
 [^6]: 같은 슬라이드, 32 (Design Principle 4: 형식을 여럿 두어 유연하게 하되, 원칙 1과 3을 지키려고 수를 적게 둔다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 순서 다이어그램, 칸 이름의 뜻 풀이, "설계 이유"의 둘째·셋째 항목, 예제의 수치(`lw $t0, 32($s3)`만 Utah 슬라이드의 예다), 거꾸로 푸는 예, 들어가지 않는 예, 스스로 설명해 보기, 오해 항목, 카드는 위 자료에 그대로 있지 않다. 모든 기계어 값은 검증 코드의 인코더·디코더로 구하고 왕복으로 확인했다. rs·rt의 자리가 같아 레지스터를 미리 읽을 수 있다는 설명은 Patterson & Hennessy, 같은 책, 4장 "The Processor"의 내용이다.
+[^s1]: 모든 기계어 값은 검증 코드의 인코더·디코더로 구하고 왕복으로 확인했다. rs·rt의 자리가 같아 레지스터를 미리 읽을 수 있다는 설명은 Patterson & Hennessy, 같은 책, 4장 "The Processor"의 내용이다.
 {% endraw %}

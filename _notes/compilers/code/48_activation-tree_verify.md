@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/48_activation-tree_verify/"
 ```python
 # 활성 트리와 호출 스택.
 # 실행: python3 48_activation-tree_verify.py  (표준 라이브러리만 쓴다)
-# 슬라이드 14회 p.13~22의 fib(3) 활성 트리와 스택 그림을 실행으로 다시 만든다.
+# 문서의 fib(3) 활성 트리와 스택 표를 실행으로 다시 만든다.
 import random
 
 
@@ -65,32 +65,32 @@ def trace_fib(n):
 if __name__ == "__main__":
     value, events, edges, intervals = trace_fib(3)
     assert value == 2
-    # ---- p.13: 활성 트리 ----
+    # ---- 활성 트리 ----
     tree = sorted((p[0], c[0]) for p, c in edges)
     assert tree == sorted([("main", "fib(3)"), ("fib(3)", "fib(2)"), ("fib(3)", "fib(1)"),
                            ("fib(2)", "fib(1)"), ("fib(2)", "fib(0)")])
     assert len(intervals) == 6               # main 1개 + fib 활성 5개
-    # ---- p.14~22: 스택의 모습 (맨 뒤가 지금 실행 중인 함수) ----
+    # ---- 스택의 모습 (맨 뒤가 지금 실행 중인 함수) ----
     snaps = [s for _, s in events]
     assert snaps == [
-        ["main"],                                        # p.14
-        ["main", "fib(3)"],                              # p.15
-        ["main", "fib(3)", "fib(2)"],                    # p.16
-        ["main", "fib(3)", "fib(2)", "fib(1)"],          # p.17
-        ["main", "fib(3)", "fib(2)"],                    # p.18: fib(1)이 빠졌다
-        ["main", "fib(3)", "fib(2)", "fib(0)"],          # p.19
+        ["main"],
+        ["main", "fib(3)"],
         ["main", "fib(3)", "fib(2)"],
-        ["main", "fib(3)"],                              # p.20: fib(0), fib(2)가 빠졌다
-        ["main", "fib(3)", "fib(1)"],                    # p.21
+        ["main", "fib(3)", "fib(2)", "fib(1)"],
+        ["main", "fib(3)", "fib(2)"],                    # fib(1)이 빠졌다
+        ["main", "fib(3)", "fib(2)", "fib(0)"],
+        ["main", "fib(3)", "fib(2)"],
+        ["main", "fib(3)"],                              # fib(0), fib(2)가 빠졌다
+        ["main", "fib(3)", "fib(1)"],
         ["main", "fib(3)"],
         ["main"],
-        [],                                              # p.22: 모두 끝났다
+        [],                                              # 모두 끝났다
     ]
-    # 대기 중인 함수 = 맨 위를 뺀 나머지 (p.17: fib(2), fib(3), main)
+    # 대기 중인 함수 = 맨 위를 뺀 나머지 (fib(1)이 돌 때: fib(2), fib(3), main)
     assert snaps[3][-1] == "fib(1)" and snaps[3][:-1][::-1] == ["fib(2)", "fib(3)", "main"]
     assert max(len(s) for s in snaps) == 4
 
-    # ---- 활성의 수명은 서로 겹치지 않거나 한쪽이 다른 쪽을 완전히 품는다 (p.13 "properly nested") ----
+    # ---- 활성의 수명은 서로 겹치지 않거나 한쪽이 다른 쪽을 완전히 품는다 ("properly nested") ----
     iv = list(intervals.values())
     for a in iv:
         for b in iv:

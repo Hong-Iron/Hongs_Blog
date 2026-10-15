@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/runtime-stack/"
 
 레지스터는 여덟 개뿐이다. 계산하다 보면 "이 값은 잠깐 치워 두고 이 레지스터를 다른 데 쓰고 싶다"는 때가 온다. 치울 때마다 변수를 하나씩 만들면 이름이 끝없이 늘어난다. 이름 없이 올려 두고 도로 가져올 자리가 스택이다.
 
-CPU는 스택의 맨 위가 어디인지를 `ESP`라는 레지스터 하나로 기억한다[^1]. 주소 00001000h에 값 00000006h가 맨 위로 놓여 있다. 여기에 000000A5h, 1, 2를 차례로 올린다[^2].
+CPU는 스택의 맨 위가 어디인지를 `ESP`라는 레지스터 하나로 기억한다. 주소 00001000h에 값 00000006h가 맨 위로 놓여 있다. 여기에 000000A5h, 1, 2를 차례로 올린다.
 
 ```
  주소        처음         push 0A5h    push 1       push 2
@@ -47,9 +47,9 @@ CPU는 스택의 맨 위가 어디인지를 `ESP`라는 레지스터 하나로 �
  00000FF0  [        ]     [        ]   [        ]   [        ]
 ```
 
-값을 올릴 때마다 ESP가 4씩 **줄어든다**. 접시는 위로 쌓이지만, 이 스택은 주소가 작은 쪽으로 자란다. 그림에서는 아래로 내려간다[^3].
+값을 올릴 때마다 ESP가 4씩 **줄어든다**. 접시는 위로 쌓이지만, 이 스택은 주소가 작은 쪽으로 자란다. 그림에서는 아래로 내려간다.
 
-이제 `pop eax`를 한다[^4].
+이제 `pop eax`를 한다.
 
 ```
  주소        pop eax 앞     pop eax 뒤
@@ -69,21 +69,21 @@ CPU는 스택의 맨 위가 어디인지를 `ESP`라는 레지스터 하나로 �
 
 ## 정의
 
-런타임 스택은 CPU가 레지스터 둘로 직접 관리하는 메모리 구역이다. `SS`(스택 세그먼트)는 구역이 어디인지를, `ESP`(스택 포인터)는 그 안에서 마지막으로 올린 값의 주소를 담는다[^1]. 맨 나중에 넣은 것이 맨 먼저 나온다(LIFO)[^5]. 일반적인 스택 자료구조는 [스택](/Hongs_Blog/studies/algorithms/stack/)에 있다. 여기서는 그 스택을 배열 대신 메모리와 ESP로 만든 것이다.
+런타임 스택은 CPU가 레지스터 둘로 직접 관리하는 메모리 구역이다. `SS`(스택 세그먼트)는 구역이 어디인지를, `ESP`(스택 포인터)는 그 안에서 마지막으로 올린 값의 주소를 담는다. 맨 나중에 넣은 것이 맨 먼저 나온다(LIFO). 일반적인 스택 자료구조는 [스택](/Hongs_Blog/studies/algorithms/stack/)에 있다. 여기서는 그 스택을 배열 대신 메모리와 ESP로 만든 것이다.
 
-**PUSH.** 32비트 값을 올릴 때 ESP를 4 줄인 뒤, ESP가 가리키는 자리에 값을 복사한다[^2].
+**PUSH.** 32비트 값을 올릴 때 ESP를 4 줄인 뒤, ESP가 가리키는 자리에 값을 복사한다.
 
 $$\text{ESP} \leftarrow \text{ESP} - 4, \qquad \text{메모리}[\text{ESP}] \leftarrow \text{값}$$
 
 
-**POP.** ESP가 가리키는 자리의 값을 레지스터나 변수로 복사한다[^4]. 그런 다음 ESP를 4 늘린다[^s1].
+**POP.** ESP가 가리키는 자리의 값을 레지스터나 변수로 복사한다. 그런 다음 ESP를 4 늘린다[^s1].
 
 $$\text{목적지} \leftarrow \text{메모리}[\text{ESP}], \qquad \text{ESP} \leftarrow \text{ESP} + 4$$
 
 
 두 식에서 $$\text{메모리}[\text{ESP}]$$는 "ESP에 적힌 주소에 있는 4바이트"로 읽는다.
 
-**쓸 수 있는 피연산자.**[^6]
+**쓸 수 있는 피연산자.**
 
 | 명령 | 꼴 | 뜻 |
 |---|---|---|
@@ -97,7 +97,7 @@ $$\text{목적지} \leftarrow \text{메모리}[\text{ESP}], \qquad \text{ESP} \l
 $$\text{ESP} = \text{ESP}_0 - 4k$$
 
 
-$$\text{ESP}_0$$는 아무것도 올리기 전의 ESP다. ESP보다 주소가 작은 쪽은 늘 비어 있는 자리다(스택이 넘치지 않았다면)[^3].
+$$\text{ESP}_0$$는 아무것도 올리기 전의 ESP다. ESP보다 주소가 작은 쪽은 늘 비어 있는 자리다(스택이 넘치지 않았다면).
 
 **연산별 비용.**
 
@@ -107,7 +107,7 @@ $$\text{ESP}_0$$는 아무것도 올리기 전의 ESP다. ESP보다 주소가 �
 | `POP` | 4바이트 읽기, ESP + 4 | $$O(1)$$ |
 | 맨 위 보기 | `mov eax,[esp]` | $$O(1)$$ |
 
-**딸린 명령.**[^7]
+**딸린 명령.**
 
 | 명령 | 하는 일 |
 |---|---|
@@ -170,7 +170,7 @@ PUSH는 늘 지금의 ESP보다 아래(작은 주소)에 쓴다. 가운데 코�
 
 ## 예제
 
-**레지스터를 치워 두고 되돌리기.** 중요한 값이 든 레지스터를 다른 일에 쓰기 전에 올려 두고, 끝나면 내린다. `PUSH`와 `POP`의 순서가 서로 거꾸로다[^8].
+**레지스터를 치워 두고 되돌리기.** 중요한 값이 든 레지스터를 다른 일에 쓰기 전에 올려 두고, 끝나면 내린다. `PUSH`와 `POP`의 순서가 서로 거꾸로다.
 
 ```asm
     push esi                    ; 올린다: esi, ecx, ebx
@@ -187,7 +187,7 @@ PUSH는 늘 지금의 ESP보다 아래(작은 주소)에 쓴다. 가운데 코�
     pop esi
 ```
 
-**반복 안의 반복.** [JMP와 LOOP](/Hongs_Blog/studies/assembly-language/jmp-loop/)에서는 바깥 횟수를 변수 `count`에 치워 뒀다. 스택을 쓰면 변수가 필요 없다[^9].
+**반복 안의 반복.** [JMP와 LOOP](/Hongs_Blog/studies/assembly-language/jmp-loop/)에서는 바깥 횟수를 변수 `count`에 치워 뒀다. 스택을 쓰면 변수가 필요 없다.
 
 ```asm
     mov ecx,100         ; 바깥 횟수
@@ -201,7 +201,7 @@ L2:
     loop L1
 ```
 
-**문자열 뒤집기.** 글자를 앞에서부터 하나씩 올리고, 다시 앞에서부터 하나씩 내려 채운다. 맨 나중에 올린 마지막 글자가 맨 먼저 나와 첫 자리에 들어간다[^10].
+**문자열 뒤집기.** 글자를 앞에서부터 하나씩 올리고, 다시 앞에서부터 하나씩 내려 채운다. 맨 나중에 올린 마지막 글자가 맨 먼저 나와 첫 자리에 들어간다.
 
 ```asm
 .data
@@ -223,7 +223,7 @@ L2: pop eax                     ; 내려서
     loop L2
 ```
 
-끝나면 `aName`은 `"!dlroW olleH"`다. 글자를 왜 EAX에 넣고 올릴까? 스택에는 16비트나 32비트 값만 올릴 수 있어서다[^11]. 그래서 [MOVZX](/Hongs_Blog/studies/assembly-language/zero-sign-extension/)로 8비트 글자를 32비트로 넓힌다. 글자 12개가 48바이트를 차지한다.
+끝나면 `aName`은 `"!dlroW olleH"`다. 글자를 왜 EAX에 넣고 올릴까? 스택에는 16비트나 32비트 값만 올릴 수 있어서다. 그래서 [MOVZX](/Hongs_Blog/studies/assembly-language/zero-sign-extension/)로 8비트 글자를 32비트로 넓힌다. 글자 12개가 48바이트를 차지한다.
 
 **플래그 치워 두기.** `PUSHFD`와 `POPFD` 사이에서 플래그가 바뀌어도 내리면 되돌아온다. 쓰임새는 [조건부 반복 명령](/Hongs_Blog/studies/assembly-language/conditional-loop-instructions/)에 나온다.
 
@@ -231,7 +231,7 @@ L2: pop eax                     ; 내려서
 
 ## 활용
 
-- 스택에 올라가는 것은 세 가지다. 프로시저에서 돌아갈 주소, 프로시저에 넘기는 값, 프로시저 안에서만 쓰는 변수다[^5]. 차례로 [프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/), [스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/), [지역 변수](/Hongs_Blog/studies/assembly-language/local-variables/)에서 다룬다.
+- 스택에 올라가는 것은 세 가지다. 프로시저에서 돌아갈 주소, 프로시저에 넘기는 값, 프로시저 안에서만 쓰는 변수다. 차례로 [프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/), [스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/), [지역 변수](/Hongs_Blog/studies/assembly-language/local-variables/)에서 다룬다.
 - 변수에 치워 두기와 견주면: 변수는 이름이 있어 아무 때나 읽지만 자리를 늘 차지한다. 스택은 이름이 없고 순서를 지켜야 하지만, 쓰고 나면 자리가 저절로 돌아온다.
 - 흔한 실수: 올린 개수와 내린 개수가 다르다. 프로시저 안에서 이러면 돌아갈 주소 대신 엉뚱한 값을 꺼낸다([프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/)의 실패 시나리오).
 - 흔한 실수: 반복문 안에서 올리기만 한다. 한 바퀴에 4바이트씩 스택이 내려가 결국 넘친다.
@@ -301,16 +301,5 @@ L2: pop eax                     ; 내려서
 </details>
 
 
-[^1]: 어셈블리어 6회 강의 자료 「wk06-chapt_05-3-2」, p.5 (SS와 ESP, ESP가 00001000의 00000006을 가리키는 그림)
-[^2]: 같은 자료, p.6~7 (PUSH의 동작, 000000A5·1·2를 올린 그림)
-[^3]: 같은 자료, p.7 (스택은 아래로 자란다, ESP 아래는 늘 쓸 수 있다)
-[^4]: 같은 자료, p.8 (POP의 동작과 앞뒤 그림)
-[^5]: 같은 자료, p.4 (접시 더미, LIFO); 어셈블리어 7회 강의 자료 「wk07-chapt_05-3-1」, p.15 (스택이 담는 것: 복귀 주소, 매개변수, 지역 변수)
-[^6]: 어셈블리어 6회 강의 자료 「wk06-chapt_05-3-2」, p.9 (PUSH와 POP의 문법)
-[^7]: 같은 자료, p.17 (PUSHFD, POPFD, PUSHAD, POPAD, PUSHA, POPA)
-[^8]: 같은 자료, p.10 (레지스터 저장과 복원, 거꾸로 순서)
-[^9]: 같은 자료, p.11~12 (중첩 루프에서 push ecx, pop ecx)
-[^10]: 같은 자료, p.13~15 (문자열 뒤집기)
-[^11]: 같은 자료, p.16 (글자를 EAX에 넣는 이유)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원본 p.8의 글은 POP이 값을 복사한다고만 적고, ESP가 4 늘어나는 것은 그림으로만 보인다. 16비트 PUSH가 ESP를 2 줄이는 것, PUSHAD가 올리는 ESP 값, 불변식, 비용 표, 거꾸로 꺼내기의 증명과 스스로 설명해 보기, 경계 사례, 활용 항목, 오해 두 가지, 카드 C1~C4는 원본에 없다. 동작은 Intel 64 and IA-32 Architectures Software Developer's Manual 2권의 PUSH, POP, PUSHAD 항목을 따랐고 값은 검증 코드의 파이썬 흉내로 확인했다. ASCII 그림은 원본 p.5~8의 그림을 옮긴 것이다.
+[^s1]: 동작은 Intel 64 and IA-32 Architectures Software Developer's Manual 2권의 PUSH, POP, PUSHAD 항목을 따랐고 값은 검증 코드의 파이썬 흉내로 확인했다.
 {% endraw %}

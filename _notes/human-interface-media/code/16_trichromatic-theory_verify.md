@@ -23,7 +23,7 @@ permalink: "/studies/human-interface-media/code/16_trichromatic-theory_verify/"
 
 문서: 16.삼색 이론 (예시로 보기, 정의, 보장하지 않는 것, 카드 C2·C3·C4)
 추상체 모형 (설명용 가정): 민감도를 봉우리 1인 가우스 곡선으로 둔다.
-  봉우리는 슬라이드 값 S 445 nm, M 535 nm, L 575 nm. 폭(표준편차)은 S 30 nm, M·L 45 nm로 가정한다.
+  봉우리는 문서 표의 값 S 445 nm, M 535 nm, L 575 nm. 폭(표준편차)은 S 30 nm, M·L 45 nm로 가정한다.
   세기 i인 단색광 lambda에 대한 추상체 k의 반응 = i * sigma_k(lambda). 여러 빛이 섞이면 반응을 더한다.
 주장:
   1. 단일 변수 원리: 추상체 한 종류만으로는 파장과 세기를 구별할 수 없다.

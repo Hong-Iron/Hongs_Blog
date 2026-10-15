@@ -23,7 +23,7 @@ permalink: "/studies/numerical-analysis/code/27_direct-search_impl/"
 """직접 탐색법(무작위 탐색, 단변수 탐색, 패턴 탐색) 구현과 검증."""
 import math, random
 
-f = lambda x, y: y - x - 2 * x * x - 2 * x * y - y * y          # 슬라이드 p.3~4, 최댓값 1.25 at (−1, 1.5)
+f = lambda x, y: y - x - 2 * x * x - 2 * x * y - y * y          # 최댓값 1.25 at (−1, 1.5)
 
 
 def random_search(f, box, n, rng):

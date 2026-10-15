@@ -24,7 +24,7 @@ permalink: "/studies/operating-systems/code/04_interrupt_verify/"
 
 - sequential: 처리 중에는 인터럽트를 막는다. 막혀 있던 요청은 도착 순서대로 처리한다.
 - nested: 우선순위가 더 높은 요청만 지금 처리 중인 루틴을 끊는다.
-슬라이드 예(Stallings 그림 1.12): 프린터(우선순위 2) t=10, 통신(5) t=15, 디스크(4) t=20,
+문서의 예(Stallings 그림 1.12): 프린터(우선순위 2) t=10, 통신(5) t=15, 디스크(4) t=20,
 각 처리 루틴은 10단위 걸린다.
 """
 

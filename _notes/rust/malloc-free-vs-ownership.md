@@ -161,7 +161,7 @@ void problem(int N) { float *nums = calloc((size_t)N, sizeof(float)); nums[0] = 
 [^5]: std 문서, `Box::leak` — https://doc.rust-lang.org/std/boxed/struct.Box.html
 [^6]: The Rust Reference, Destructors (drop 순서, `process::exit`와 abort에서는 돌지 않음) — https://doc.rust-lang.org/reference/destructors.html
 [^7]: Clippy Lints, `mem_forget`(restriction) — https://rust-lang.github.io/rust-clippy/stable/index.html
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 대응표의 Rust 쪽 코드와 오류 코드는 상대 문서의 C 코드를 옮겨 rustc 1.99.0으로 컴파일해 얻었다. 받기·돌려주기 횟수는 검증 코드의 전역 할당자로 셌다. 상대 문서가 C에서 쓴 "받기와 돌려주기 횟수를 세는 감싸개"와 같은 방법이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `try_reserve`의 동작은 검증 코드에서 `usize::MAX`바이트를 요청해 `Err`가 오는 것으로만 확인했다.
+[^s1]: 대응표의 Rust 쪽 코드와 오류 코드는 상대 문서의 C 코드를 옮겨 rustc 1.99.0으로 컴파일해 얻었다. 받기·돌려주기 횟수는 검증 코드의 전역 할당자로 셌다. 상대 문서가 C에서 쓴 "받기와 돌려주기 횟수를 세는 감싸개"와 같은 방법이다.
+[^s2]: `try_reserve`의 동작은 검증 코드에서 `usize::MAX`바이트를 요청해 `Err`가 오는 것으로만 확인했다.
 [^8]: std 문서, `std::alloc::handle_alloc_error` (std를 쓰는 바이너리는 메시지를 찍고 abort) — https://doc.rust-lang.org/std/alloc/fn.handle_alloc_error.html
 {% endraw %}

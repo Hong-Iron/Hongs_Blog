@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Transmission Rate", "Bandwidth", "전송률", "데이터 전송률", "bit rate", "bps", "대역폭", "전송 지연", "전송 시간", "transmission delay", "전파 지연", "전파지연시간", "propagation delay", "비트 폭", "bit width"]
 description: "링크의 전송 속도(대역폭)는 1초에 선에 밀어 넣을 수 있는 데이터 양의 최댓값이다. 기차에 비유하면 객차를 선로에 올리는 빠르기가 전송 속도이고, 다 올린 기차가 다음 역까지 달리는 시간은 따로 있다. 속도를 올리면 올리는 시간만 줄고 달리는 시간은 그대로다. \"대역폭\"이라는 말…"
@@ -51,9 +51,9 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 
 파란 선(전송 지연)은 전송률이 10배가 될 때마다 10분의 1로 준다. 주황 선(전파 지연)은 2 ms에서 움직이지 않는다. 그래서 둘의 합(회색)은 100 Mbps쯤부터 2 ms에 거의 붙고, 속도를 더 올려도 도착 시각이 별로 당겨지지 않는다[^s3].
 
-속도를 올리면 비트 하나가 선 위에서 차지하는 시간(비트 폭)이 줄어든다. 1 Mbps에서는 비트 하나가 1 μs, 2 Mbps에서는 0.5 μs다. 비트 사이가 좁아지는 것이다[^3]. 비트 폭이 좁아지면 간섭이나 잡음에 약해진다[^5].
+속도를 올리면 비트 하나가 선 위에서 차지하는 시간(비트 폭)이 줄어든다. 1 Mbps에서는 비트 하나가 1 μs, 2 Mbps에서는 0.5 μs다. 비트 사이가 좁아지는 것이다. 비트 폭이 좁아지면 간섭이나 잡음에 약해진다.
 
-"대역폭"은 두 뜻으로 쓰인다. 주파수 분할 다중화 슬라이드의 채널 폭 4 kHz는 신호가 차지하는 **주파수 범위의 폭**이다[^1]. 통계적 다중화 슬라이드의 "Wasted Bandwidth", "Extra Bandwidth Available"은 링크가 실어 나르는 **전송 속도**의 몫이다[^2].
+"대역폭"은 두 뜻으로 쓰인다. 주파수 분할 다중화에서 채널 하나에 배정하는 폭 4 kHz는 신호가 차지하는 **주파수 범위의 폭**이다. 통계적 다중화를 설명할 때 쓰는 "Wasted Bandwidth"(버려진 대역폭), "Extra Bandwidth Available"(남는 대역폭)은 링크가 실어 나르는 **전송 속도**의 몫이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 120 μs, 12 μs, 2 ms, 비트 폭 1 μs와 0.5 μs, 카드 C2·C4의 값 — [05_rate-and-bandwidth_verify.py](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_verify/)</div>
@@ -66,26 +66,26 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **대역폭**(전송률) $$R$$: 1초에 보낼 수 있는 데이터의 양. 단위는 bps(초당 비트 수). 예: 10 Mbps[^3]. 링크 하나의 대역폭과, 출발지에서 목적지까지 경로 전체의 대역폭(종단 간 대역폭)을 구별한다[^3].
-- **전송 시간**(전송 지연): $$L$$비트를 링크에 모두 싣는 시간. 크기 ÷ 대역폭, 즉 $$d_{\text{trans}} = L / R$$ (초)[^4].
-- **전파 지연**: 신호가 링크의 한쪽 끝에서 다른 끝까지 가는 시간. 거리 ÷ 신호 속도, 즉 링크 길이를 $$x$$, 신호 속도를 $$v$$라 하면 $$d_{\text{prop}} = x / v$$ (초)[^4].
-- **비트 폭**: 비트 하나가 선 위에서 차지하는 시간 $$1/R$$[^3].
+- **대역폭**(전송률) $$R$$: 1초에 보낼 수 있는 데이터의 양. 단위는 bps(초당 비트 수). 예: 10 Mbps. 링크 하나의 대역폭과, 출발지에서 목적지까지 경로 전체의 대역폭(종단 간 대역폭)을 구별한다.
+- **전송 시간**(전송 지연): $$L$$비트를 링크에 모두 싣는 시간. 크기 ÷ 대역폭, 즉 $$d_{\text{trans}} = L / R$$ (초).
+- **전파 지연**: 신호가 링크의 한쪽 끝에서 다른 끝까지 가는 시간. 거리 ÷ 신호 속도, 즉 링크 길이를 $$x$$, 신호 속도를 $$v$$라 하면 $$d_{\text{prop}} = x / v$$ (초).
+- **비트 폭**: 비트 하나가 선 위에서 차지하는 시간 $$1/R$$.
 - 처리·대기 지연이 없으면, 링크 하나를 건너 패킷이 끝까지 도착하는 시간은 $$d_{\text{trans}} + d_{\text{prop}}$$이다.
 - **주파수 대역폭** $$B$$: 신호가 차지하는 주파수 범위의 폭. 단위 Hz.
 
-표기[^3]: 전송률의 접두어는 10진이다(1 Mbps $$= 10^6$$ bps). 데이터 크기의 KB는 2진이다(1 KB $$= 2^{10}$$바이트). 1바이트 $$= 8$$비트.
+표기: 전송률의 접두어는 10진이다(1 Mbps $$= 10^6$$ bps). 데이터 크기의 KB는 2진이다(1 KB $$= 2^{10}$$바이트). 1바이트 $$= 8$$비트.
 
 </div>
 
 
-대역폭은 이론상 낼 수 있는 최상의 속도, 보통 링크의 최대 속도에 가깝다[^5]. 실제로 낸 속도는 [처리량](/Hongs_Blog/studies/computer-communication/throughput/)이다.
+대역폭은 이론상 낼 수 있는 최상의 속도, 보통 링크의 최대 속도에 가깝다. 실제로 낸 속도는 [처리량](/Hongs_Blog/studies/computer-communication/throughput/)이다.
 
 두 대역폭은 관련이 있다. 주파수 폭이 넓을수록 실을 수 있는 최대 전송률도 커진다. 정확한 관계(섀넌 용량 공식)는 이 문서의 범위 밖이다[^s2].
 
 ## 예제
 
 - 짧은 링크: 건물 안 100 m 광케이블에서 $$d_{\text{prop}} = 100 / (2 \times 10^8) = 0.5\ \mu\text{s}$$다. 위 표의 전송 지연보다 훨씬 작아서 무시하기 쉽다.
-- 긴 링크: 약 36,000 km 위의 정지 궤도 위성까지는 진공에서 신호 속도 $$3 \times 10^8$$ m/s로도 약 0.12초가 걸린다. 전송률을 아무리 올려도 이 시간은 줄지 않는다[^6].
+- 긴 링크: 약 36,000 km 위의 정지 궤도 위성까지는 진공에서 신호 속도 $$3 \times 10^8$$ m/s로도 약 0.12초가 걸린다. 전송률을 아무리 올려도 이 시간은 줄지 않는다.
 
 ## 활용
 
@@ -128,7 +128,7 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 
 </details>
 
-<details markdown="1"><summary markdown="span"><b>C3</b> (a) 주파수 분할 다중화 슬라이드의 "채널 폭 4 kHz" (b) 통계적 다중화 슬라이드의 "Extra Bandwidth Available"에서 대역폭은 각각 무엇을 뜻하고, 단위는 무엇인가?</summary>
+<details markdown="1"><summary markdown="span"><b>C3</b> (a) 주파수 분할 다중화의 "채널 폭 4 kHz" (b) 통계적 다중화의 "Extra Bandwidth Available"(남는 대역폭)에서 대역폭은 각각 무엇을 뜻하고, 단위는 무엇인가?</summary>
 
 
 **답:** (a) 신호가 차지하는 주파수 범위의 폭. 단위 Hz. (b) 링크가 실어 나르는 전송 속도 중 남는 몫. 단위 bps.<br>
@@ -144,13 +144,7 @@ permalink: "/studies/computer-communication/rate-and-bandwidth/"
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "주파수분할 다중화", 반송파 64·68·72 kHz 스펙트럼
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화", Wasted Bandwidth / Extra Bandwidth Available
-[^3]: 수업 슬라이드 캡처 — 슬라이드 "성능 (Performance): 대역폭". 비트 폭 그림: 1 Mbps는 비트당 1 μs, 2 Mbps는 0.5 μs
-[^4]: 수업 슬라이드 캡처 — 슬라이드 "성능: 소요시간/지연시간". 신호 속도: 진공 3.0 × 10⁸, 케이블 2.3 × 10⁸, 광케이블 2.0 × 10⁸ m/s
-[^5]: 컴퓨터 통신 3회 필기 「3주차」, 36~43행
-[^6]: 수업 슬라이드 캡처 — 슬라이드 "위성통신", 정지궤도 약 36,000 km
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기차 비유와 그 한계(실제 신호는 첫 비트가 실리자마자 나아가지만 마지막 비트의 도착 시각은 같음)는 원본에 없다. Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.4절의 비유와 같다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 주파수 대역폭과 최대 전송률의 관계는 섀넌 용량 공식 $$C = B \log_2(1 + S/N)$$이 준다. 1주차 자료에는 나오지 않는다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [05_rate-and-bandwidth_plot.py](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_plot/)로 그렸고, 표의 값(100 Mbps에서 120 μs, 1 Gbps에서 12 μs, 전파 지연 2 ms)과 1 Gbps에서의 합 2.012 ms를 같은 코드로 확인했다.
+[^s1]: Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.4절의 비유와 같다.
+[^s2]: 주파수 대역폭과 최대 전송률의 관계는 섀넌 용량 공식 $$C = B \log_2(1 + S/N)$$이 준다.
+[^s3]: [05_rate-and-bandwidth_plot.py](/Hongs_Blog/studies/computer-communication/code/05_rate-and-bandwidth_plot/)로 그렸고, 표의 값(100 Mbps에서 120 μs, 1 Gbps에서 12 μs, 전파 지연 2 ms)과 1 Gbps에서의 합 2.012 ms를 같은 코드로 확인했다.
 {% endraw %}

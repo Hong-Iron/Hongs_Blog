@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["OFFSET Operator", "PTR Operator", "OFFSET 연산자", "PTR 연산자", "BYTE PTR", "WORD PTR", "DWORD PTR", "LABEL 지시어", "LABEL Directive", "오프셋", "Offset", "포인터", "Pointer"]
 description: "변수 이름을 쓰면 보통은 그 칸에 든 값을 뜻한다. 두 연산자는 이 기본을 바꾼다. 하나는 값 대신 그 칸이 어디 있는지, 곧 주소를 내놓는다. 다른 하나는 \"이 칸을 정의할 때와 다른 크기로 읽어라\"라고 시킨다. 덕분에 큰 값의 일부만 꺼내거나 작은 값 여러 개를 묶어 한 번에 …"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/offset-ptr-operators/"
 
 ## 예시로 보기
 
-4바이트 변수 `myDouble`의 아래 2바이트만 AX에 가져오고 싶다. 그대로 쓰면 오류다. `myDouble`은 32비트, AX는 16비트라 크기가 다르다[^1].
+4바이트 변수 `myDouble`의 아래 2바이트만 AX에 가져오고 싶다. 그대로 쓰면 오류다. `myDouble`은 32비트, AX는 16비트라 크기가 다르다.
 
 ```asm
 .data
@@ -54,19 +54,19 @@ mov ax,WORD PTR myDouble      ; AX = 5678h
                     12     0003   myDouble + 3
 ```
 
-`myDouble` 자리에서 두 바이트 `78 56`을 읽으면, 높은 주소의 56이 윗자리가 되어 5678h다[^2].
+`myDouble` 자리에서 두 바이트 `78 56`을 읽으면, 높은 주소의 56이 윗자리가 되어 5678h다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: OFFSET 네 값, PTR 예의 모든 값, 4321h를 적은 뒤의 메모리, Your turn 다섯 답, LABEL 예, 카드 C1·C2. 파이썬 흉내로 확인 — [21_offset-ptr-operators_verify.py](/Hongs_Blog/studies/assembly-language/code/21_offset-ptr-operators_verify/)</div>
+<div class="callout-title" markdown="span">검증: OFFSET 네 값, PTR 예의 모든 값, 4321h를 적은 뒤의 메모리, 연습 문제 다섯 답, LABEL 예, 카드 C1·C2. 파이썬 흉내로 확인 — [21_offset-ptr-operators_verify.py](/Hongs_Blog/studies/assembly-language/code/21_offset-ptr-operators_verify/)</div>
 
 </div>
 
 
 ## 정의
 
-**OFFSET.** 이름이 붙은 자리가 자기가 속한 세그먼트의 시작에서 몇 바이트 떨어져 있는지를 준다. 보호 모드에서는 32비트, 실주소 모드에서는 16비트 값이다[^3].
+**OFFSET.** 이름이 붙은 자리가 자기가 속한 세그먼트의 시작에서 몇 바이트 떨어져 있는지를 준다. 보호 모드에서는 32비트, 실주소 모드에서는 16비트 값이다.
 
-데이터 세그먼트가 00404000h에서 시작한다고 하자[^4].
+데이터 세그먼트가 00404000h에서 시작한다고 하자.
 
 ```asm
 .data
@@ -81,9 +81,9 @@ mov esi,OFFSET dVal     ; ESI = 00404003
 mov esi,OFFSET dVal2    ; ESI = 00404007
 ```
 
-앞 변수의 크기(1, 2, 4바이트)만큼씩 뒤로 밀린다. `OFFSET`이 주는 값은 포인터다. C++의 `char *p = array;`가 어셈블리에서는 `mov esi,OFFSET array`다[^5].
+앞 변수의 크기(1, 2, 4바이트)만큼씩 뒤로 밀린다. `OFFSET`이 주는 값은 포인터다. C++의 `char *p = array;`가 어셈블리에서는 `mov esi,OFFSET array`다.
 
-**PTR.** 이름에 붙은 기본 크기를 무시하고 앞에 적은 크기로 읽거나 쓴다. 변수의 일부에 손댈 수 있게 해 준다[^1].
+**PTR.** 이름에 붙은 기본 크기를 무시하고 앞에 적은 크기로 읽거나 쓴다. 변수의 일부에 손댈 수 있게 해 준다.
 
 ```
 크기 PTR 메모리 피연산자          (크기: BYTE, WORD, DWORD 등)
@@ -100,7 +100,7 @@ mov esi,OFFSET dVal2    ; ESI = 00404007
 
 ## 예제
 
-**큰 것의 일부를 읽는다.**[^2]
+**큰 것의 일부를 읽는다.**
 
 ```asm
 mov al,BYTE PTR myDouble         ; AL = 78h
@@ -110,9 +110,9 @@ mov ax,WORD PTR myDouble         ; AX = 5678h
 mov ax,WORD PTR [myDouble+2]     ; AX = 1234h
 ```
 
-**일부만 쓴다.** `mov WORD PTR myDouble,4321h`는 아래 두 바이트만 `21 43`으로 바꾼다[^1]. 메모리는 `21 43 34 12`가 되고 `myDouble`은 12344321h가 된다[^s1].
+**일부만 쓴다.** `mov WORD PTR myDouble,4321h`는 아래 두 바이트만 `21 43`으로 바꾼다. 메모리는 `21 43 34 12`가 되고 `myDouble`은 12344321h가 된다[^s1].
 
-**작은 것을 모아 큰 것으로 읽는다.** CPU가 바이트 순서를 알아서 뒤집어 준다[^6].
+**작은 것을 모아 큰 것으로 읽는다.** CPU가 바이트 순서를 알아서 뒤집어 준다.
 
 ```asm
 .data
@@ -123,7 +123,7 @@ mov ax,WORD PTR [myBytes+2]      ; AX = 7856h
 mov eax,DWORD PTR myBytes        ; EAX = 78563412h
 ```
 
-**슬라이드의 문제.**[^7]
+**연습 문제.**
 
 ```asm
 .data
@@ -138,7 +138,7 @@ mov ax,WORD PTR [varD+2]     ; d. 1234h
 mov eax,DWORD PTR varW       ; e. 12026543h
 ```
 
-**LABEL 지시어.** 이미 있는 자리에 다른 이름과 다른 크기를 하나 더 붙인다. 자기 몫의 메모리는 잡지 않는다. 이름을 붙여 두면 `PTR`을 쓰지 않아도 된다[^8].
+**LABEL 지시어.** 이미 있는 자리에 다른 이름과 다른 크기를 하나 더 붙인다. 자기 몫의 메모리는 잡지 않는다. 이름을 붙여 두면 `PTR`을 쓰지 않아도 된다.
 
 ```asm
 .data
@@ -194,13 +194,5 @@ mov dl,intList       ; 00h
 </details>
 
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.12 (PTR Operator: 기본 크기를 덮어쓴다, `mov ax,myDouble`은 오류, 5678h를 읽고 4321h를 쓴다)
-[^2]: 같은 자료, p.14 (PTR Operator Examples: 더블워드·워드·바이트·오프셋 그림과 다섯 줄)
-[^3]: 같은 자료, p.9 (OFFSET Operator: 세그먼트 시작에서의 거리, 보호 모드 32비트, 실주소 모드 16비트)
-[^4]: 같은 자료, p.10 (OFFSET Examples)
-[^5]: 같은 자료, p.11 (Relating to C/C++)
-[^6]: 같은 자료, p.15 (PTR Operator (cont): myBytes)
-[^7]: 같은 자료, p.16 (Your turn: varB, varW, varD와 다섯 답)
-[^8]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-3」, p.5 (LABEL Directive)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 4321h를 쓴 뒤의 메모리와 값, 알아보는 신호 표, 풀이 순서, 타입 변환과의 차이, 흔한 실수, 카드 C1~C3은 원본에 없다. 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

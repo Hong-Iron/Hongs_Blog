@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 부분집합 구성법의 ε-closure와 네 단계."
 prev_url: "/studies/compilers/regular-expression-practice/"
@@ -25,11 +25,11 @@ permalink: "/studies/compilers/subset-construction-ladder/"
 {% raw %}
 사용 개념: [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/)의 ε-closure와 네 단계.
 
-"NFA를 DFA로 바꿔라"는 문제는 같은 하위목표의 되풀이다. ① 시작 묶음: $$T_0 = \epsilon\text{-}closure(\text{시작 상태})$$ ② 한 칸 채우기: 묶음 하나와 기호 하나를 골라 $$\delta$$로 옮긴 뒤 ε-closure를 구한다 ③ 이름 붙이기: 처음 보는 묶음이면 새 $$T_i$$, 본 것이면 그 이름을 적는다 ④ 멈춤 확인: 모든 묶음의 모든 칸을 채웠으면 멈춘다 ⑤ 받아들이는 상태: NFA의 받아들이는 상태가 하나라도 든 묶음을 고른다[^1][^s1].
+"NFA를 DFA로 바꿔라"는 문제는 같은 하위목표의 되풀이다. ① 시작 묶음: $$T_0 = \epsilon\text{-}closure(\text{시작 상태})$$ ② 한 칸 채우기: 묶음 하나와 기호 하나를 골라 $$\delta$$로 옮긴 뒤 ε-closure를 구한다 ③ 이름 붙이기: 처음 보는 묶음이면 새 $$T_i$$, 본 것이면 그 이름을 적는다 ④ 멈춤 확인: 모든 묶음의 모든 칸을 채웠으면 멈춘다 ⑤ 받아들이는 상태: NFA의 받아들이는 상태가 하나라도 든 묶음을 고른다[^s1].
 
 ## 문제 1 · 완전한 풀이
 
-$$(0 \mid 1)^*00$$의 NFA다[^2]. $$q_0$$에서 0과 1로 $$q_0$$, $$q_0$$에서 0으로 $$q_1$$, $$q_1$$에서 0으로 $$q_2$$. 시작 $$q_0$$, 받아들이는 상태 $$q_2$$.
+$$(0 \mid 1)^*00$$의 NFA다. $$q_0$$에서 0과 1로 $$q_0$$, $$q_0$$에서 0으로 $$q_1$$, $$q_1$$에서 0으로 $$q_2$$. 시작 $$q_0$$, 받아들이는 상태 $$q_2$$.
 
 1. *시작 묶음:* ε-전이가 없다. $$T_0 = \{q_0\}$$.
 2. *한 칸 채우기 ($$T_0$$, 0):* $$q_0$$에서 0으로 $$q_0$$과 $$q_1$$. $$\{q_0, q_1\}$$. *이름 붙이기:* 처음 본다. $$T_1$$.
@@ -46,7 +46,7 @@ $$(0 \mid 1)^*00$$의 NFA다[^2]. $$q_0$$에서 0과 1로 $$q_0$$, $$q_0$$에서
 | $$T_1$$ | $$T_2$$ | $$T_0$$ |
 | $$T_2$$ | $$T_2$$ | $$T_0$$ |
 
-$$T_0, T_1, T_2$$를 $$q_0, q_1, q_2$$로 바꿔 읽으면 슬라이드가 같은 쪽에 그려 둔 DFA와 똑같다.
+$$T_0, T_1, T_2$$를 $$q_0, q_1, q_2$$로 바꿔 읽으면 $$(0 \mid 1)^*00$$을 받아들이는 세 상태짜리 DFA가 된다. $$q_0$$은 "끝에 0이 없다", $$q_1$$은 "끝이 0 하나다", $$q_2$$는 "끝이 00이다"를 뜻한다[^s2].
 
 ## 문제 2 · 마지막 하위목표만 빈칸
 
@@ -132,12 +132,11 @@ NFA 상태 6개가 DFA 상태 3개가 되었다. $$T_0$$과 $$T_1$$은 표의 �
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 네 문제의 묶음·전이 표·받아들이는 상태, 문제 1의 결과가 슬라이드의 DFA와 같은 것, 만든 DFA가 길이 8~9 이하의 모든 문자열에서 문제의 말 설명과 같은 답을 내는 것, "뒤에서 세 번째"의 8개 — [09_subset-construction-ladder_p4.py](/Hongs_Blog/studies/compilers/code/09_subset-construction-ladder_p4/)</div>
+<div class="callout-title" markdown="span">검증: 네 문제의 묶음·전이 표·받아들이는 상태, 문제 1의 결과가 세 상태 DFA와 같은 것, 만든 DFA가 길이 8~9 이하의 모든 문자열에서 문제의 말 설명과 같은 답을 내는 것, "뒤에서 세 번째"의 8개 — [09_subset-construction-ladder_p4.py](/Hongs_Blog/studies/compilers/code/09_subset-construction-ladder_p4/)</div>
 
 </div>
 
 
-[^1]: 컴파일러 3회 강의 자료 「Lecture03 Lexical analysis part 2」, p.30~34 (Step 1~4)
-[^2]: 같은 자료, p.13 ($$(0 \mid 1)^*00$$의 NFA와 DFA)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표의 이름, 문제 1의 풀이, 문제 2~4와 그 답은 원본에 없다. 문제 1의 NFA는 슬라이드 p.13의 것이고, 문제 2의 NFA는 슬라이드 p.18~21의 규칙대로 만든 것이다. 답은 문제 코드로 확인했다.
+[^s2]: 세 상태의 뜻풀이는 전이 표에서 읽은 것이다.
+[^s1]: 답은 문제 코드로 확인했다.
 {% endraw %}

@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/36_entity-integrity-constraint_verify-
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 문서: 36.개체 무결성 제약 (PostgreSQL 16에서 실행. SQLite와 동작이 다른 곳)
--- 출처: 데이터베이스 설계 6-2 슬라이드 p.22 ('No primary key value can be NULL')
+-- 출처: Elmasri & Navathe, Fundamentals of Database Systems 5장 ('No primary key value can be NULL')
 -- 확인하는 것:
 --   1. PRIMARY KEY만 적어도 그 열은 NULL을 받지 않는다 (SQLite는 NOT NULL을 따로 적지 않으면 받는다).
 --   2. 속성 여럿으로 된 기본 키는 한 속성만 NULL이어도 거부된다.

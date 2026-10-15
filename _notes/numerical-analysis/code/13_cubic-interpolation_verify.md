@@ -47,7 +47,7 @@ def main():
     A = [[F(1), u, u * u, u ** 3] for u in us]
     MI = inv(A)
     slide = [[1, 0, 0, 0], [-5.5, 9, -4.5, 1], [9, -22.5, 18, -4.5], [-4.5, 13.5, -13.5, 4.5]]
-    assert [[float(x) for x in r] for r in MI] == slide                     # 슬라이드 p.12
+    assert [[float(x) for x in r] for r in MI] == slide                     # 문서의 M_I
     P = [(0, 0), (1, 2), (2, 2), (3, 0)]
     for u, p in zip(us, P):
         assert curve(MI, P, u)[0] == p                                      # 네 점을 지난다
@@ -55,7 +55,7 @@ def main():
         u = F(k, 30)
         _, b = curve(MI, P, u)
         assert sum(b) == 1                                                  # 블렌딩 함수의 합 1
-        # 슬라이드 p.14의 인수분해
+        # 블렌딩 함수의 인수분해
         assert b[0] == F(-9, 2) * (u - F(1, 3)) * (u - F(2, 3)) * (u - 1)
         assert b[1] == F(27, 2) * u * (u - F(2, 3)) * (u - 1)
         assert b[2] == F(-27, 2) * u * (u - F(1, 3)) * (u - 1)

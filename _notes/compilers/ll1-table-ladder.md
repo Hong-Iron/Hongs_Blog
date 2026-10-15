@@ -25,7 +25,7 @@ permalink: "/studies/compilers/ll1-table-ladder/"
 {% raw %}
 사용 개념: [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/). FIRST와 FOLLOW를 구하는 연습은 [FIRST·FOLLOW 예제 사다리](/Hongs_Blog/studies/compilers/first-follow-ladder/)에 있고, 문제 1~3은 그 문서와 같은 문법을 쓴다.
 
-"이 문법의 LL(1) 파싱 표를 만들어라"는 문제는 같은 하위목표의 되풀이다[^s1].
+"이 문법의 LL(1) 파싱 표를 만들어라"는 문제는 같은 하위목표의 되풀이다.
 
 ① *FIRST와 FOLLOW:* 모든 비단말 기호에 대해 구한다.
 ② *규칙 오른쪽의 FIRST:* 규칙 $$A \to \alpha$$마다 $$First(\alpha)$$를 구한다.
@@ -159,7 +159,4 @@ $$Follow(S)$$에 $$e$$가 드는 까닭: $$S \to iEtSS'$$에서 $$S$$ 뒤가 $$S
 <div class="callout-title" markdown="span">검증 — [20_ll1-table-ladder_p4.py](/Hongs_Blog/studies/compilers/code/20_ll1-table-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 풀이는 원본에 없다. 슬라이드 p.30~32의 표 만들기 절차를 연습하도록 만들었고, 모든 표를 문제 코드로 확인했다. 문제 4의 문법은 4회 슬라이드 p.37의 매달린 else 문법을 좌인수분해한 것이다.
 {% endraw %}

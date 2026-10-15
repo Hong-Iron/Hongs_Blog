@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Transforming Normal Vectors", "법선 변환", "Normal Transformation", "역전치 행렬", "Inverse Transpose", "평면의 변환", "Transforming Planes"]
 description: "면을 변환할 때 그 면에 수직인 화살표(법선)까지 같은 행렬로 바꾸면, 화살표가 더는 면에 수직이 아닐 수 있다. 면을 한쪽으로만 늘이면 면은 눕는데 화살표는 반대로 서기 때문이다. 법선은 변환 행렬의 역행렬을 전치한 (M^{-1})^\\top로 바꿔야 수직이 유지된다. 회전처럼 길…"
@@ -65,16 +65,16 @@ permalink: "/studies/numerical-analysis/normal-transform/"
 </div>
 
 
-슬라이드는 $$GN$$과 $$MT$$가 수직일 조건을 다음처럼 적는다[^1].
+$$GN$$과 $$MT$$가 수직일 조건은 다음과 같다.
 
 $$(GN)\cdot(MT) = (GN)^\top(MT) = N^\top G^\top M\,T = 0$$
 
 
-$$N^\top T = 0$$이므로 $$G^\top M = I$$이면 충분하다. 곧 $$G = (M^{-1})^\top$$다. $$M$$이 직교 행렬이면 $$M^{-1} = M^\top$$이라 $$G = M$$이다[^1][^s1].
+$$N^\top T = 0$$이므로 $$G^\top M = I$$이면 충분하다. 곧 $$G = (M^{-1})^\top$$다. $$M$$이 직교 행렬이면 $$M^{-1} = M^\top$$이라 $$G = M$$이다[^s1].
 
 ### 평면 전체의 변환
 
-평면을 법선과 상수 한 묶음 $$L = \langle N, D\rangle = \langle N, -N\cdot P\rangle$$로 적는다. $$P$$는 평면 위의 한 점이다. 아핀 변환 $$F = TM = \begin{pmatrix}M & T\\ 0 & 1\end{pmatrix}$$로 평면을 옮기면 새 평면은 다음과 같다[^2].
+평면을 법선과 상수 한 묶음 $$L = \langle N, D\rangle = \langle N, -N\cdot P\rangle$$로 적는다. $$P$$는 평면 위의 한 점이다. 아핀 변환 $$F = TM = \begin{pmatrix}M & T\\ 0 & 1\end{pmatrix}$$로 평면을 옮기면 새 평면은 다음과 같다.
 
 $$N' = (M^{-1})^\top N, \qquad D' = D - N\cdot M^{-1}T, \qquad L' = (F^{-1})^\top L$$
 
@@ -129,8 +129,6 @@ $$= D - N\cdot M^{-1}T$$ ($$D = -N\cdot P$$)
 </details>
 
 
-[^1]: 수치해석 5회 강의 자료 「na05_ortho」, p.6
-[^2]: 수치해석 6회 강의 자료 「na06_rotation」, p.43
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.6은 직교 행렬일 때 $$G = M$$만 결론으로 적는다. 일반식 $$G = (M^{-1})^\top$$는 같은 식에서 바로 나오고 6회 p.43의 평면 변환에 쓰인다. 예시 표, 셰이더의 법선 행렬, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [05_normal-transform_plot.py](/Hongs_Blog/studies/numerical-analysis/code/05_normal-transform_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$M\mathbf n\cdot M\mathbf t = 3$$, $$(M^{-1})^\top\mathbf n = (\frac12, 1)$$과 $$M\mathbf t$$의 내적 0. 화살표는 방향만 보이도록 길이를 같게 그렸다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [05_normal-transform_plot.py](/Hongs_Blog/studies/numerical-analysis/code/05_normal-transform_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$M\mathbf n\cdot M\mathbf t = 3$$, $$(M^{-1})^\top\mathbf n = (\frac12, 1)$$과 $$M\mathbf t$$의 내적 0. 화살표는 방향만 보이도록 길이를 같게 그렸다.
 {% endraw %}

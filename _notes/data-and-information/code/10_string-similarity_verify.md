@@ -24,9 +24,8 @@ permalink: "/studies/data-and-information/code/10_string-similarity_verify/"
 
 문서: 10.문자열 유사도
       (같이 확인: 공학수학 선형대수학 02.내적과 노름의 '자료와 정보' 단락)
-출처: 자료와 정보 4회 슬라이드(강의04-1) p.12, (강의04-2) p.7~11
 주장:
-  1. 슬라이드 예 r = {frontier, computer, science}, s = {computer, science}:
+  1. 문서 예 r = {frontier, computer, science}, s = {computer, science}:
      OLP 2, JAC 2/3, COS 2/sqrt(6) = 0.816, DICE 4/5.
   2. JAC, COS, DICE는 0~1이고, 두 집합이 같을 때만 1, 겹치지 않을 때만 0이다. OLP는 그렇지 않다.
   3. 늘 JAC <= DICE <= COS. JAC = DICE / (2 - DICE).

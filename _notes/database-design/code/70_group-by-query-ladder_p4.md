@@ -23,7 +23,7 @@ permalink: "/studies/database-design/code/70_group-by-query-ladder_p4/"
 """GROUP BY 질의 쓰기 예제 사다리의 문제 1~4 확인. SQLite, COMPANY.
 
 문서: 70.GROUP BY 질의 쓰기 예제 사다리
-출처: 문제 1은 11주차 슬라이드 11-2_SQL-DML-Complex p.31의 Q24. 문제 2~4는 이 문서에서 만들었다.
+출처: 문제 1은 Elmasri & Navathe의 질의 Q24다. 문제 2~4는 이 문서에서 만들었다.
 확인하는 것:
   문제 1 (Q24). (5, 4, 33250), (4, 3, 31000), (1, 1, 55000).
   문제 2. 성별마다 (M, 5, 55000), (F, 3, 43000).
@@ -33,7 +33,7 @@ permalink: "/studies/database-design/code/70_group-by-query-ladder_p4/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,

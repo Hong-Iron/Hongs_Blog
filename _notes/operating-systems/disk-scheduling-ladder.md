@@ -10,9 +10,9 @@ course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-08"
+updated: "2026-10-15"
 status: "verified"
-description: "사용 개념: 디스크 스케줄링의 FIFO·SSTF·SCAN·C-SCAN 규칙. SCAN·C-SCAN은 이 강의의 정의대로 그 방향의 마지막 요청에서 돌아선다."
+description: "사용 개념: 디스크 스케줄링의 FIFO·SSTF·SCAN·C-SCAN 규칙. SCAN·C-SCAN은 Stallings의 정의대로 그 방향의 마지막 요청에서 돌아선다."
 prev_url: "/studies/operating-systems/real-time-scheduling-ladder/"
 prev_title: "실시간 스케줄링 예제 사다리"
 next_url: "/studies/operating-systems/file-allocation-inode-ladder/"
@@ -23,9 +23,9 @@ code_count: 0
 permalink: "/studies/operating-systems/disk-scheduling-ladder/"
 ---
 {% raw %}
-사용 개념: [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/)의 FIFO·SSTF·SCAN·C-SCAN 규칙. SCAN·C-SCAN은 이 강의의 정의대로 그 방향의 마지막 요청에서 돌아선다.
+사용 개념: [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/)의 FIFO·SSTF·SCAN·C-SCAN 규칙. SCAN·C-SCAN은 Stallings의 정의대로 그 방향의 마지막 요청에서 돌아선다.
 
-이 방법을 떠올리는 신호는 "헤드 위치", "요청 트랙 목록"이 주어지고 이동 거리를 묻는 문제다. 풀이는 같은 하위목표로 나뉜다. 규칙대로 처리 순서 정하기, 한 걸음씩 이동 거리 적기, 합과 평균 구하기다. SCAN 계열은 먼저 요청을 헤드보다 큰 쪽과 작은 쪽으로 나누면 쉽다[^s1].
+이 방법을 떠올리는 신호는 "헤드 위치", "요청 트랙 목록"이 주어지고 이동 거리를 묻는 문제다. 풀이는 같은 하위목표로 나뉜다. 규칙대로 처리 순서 정하기, 한 걸음씩 이동 거리 적기, 합과 평균 구하기다. SCAN 계열은 먼저 요청을 헤드보다 큰 쪽과 작은 쪽으로 나누면 쉽다.
 
 네 문제 모두 헤드 50, 요청 82, 170, 43, 140, 24, 16, 190(트랙 0~199)이다.
 
@@ -92,7 +92,4 @@ C-SCAN(커지는 방향으로만)의 처리 순서와 이동 합을 구하라. �
 <div class="callout-title" markdown="span">검증: 문제 1~4의 첫 번째 답(FIFO 642, SSTF 208, SCAN 314, C-SCAN 341) — [53_disk-scheduling_impl.py](/Hongs_Blog/studies/operating-systems/code/53_disk-scheduling_impl/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 문제의 요청 목록은 원본 범위 밖의 변형이다. 풀이 규칙은 슬라이드 표 11.2와 같다.
 {% endraw %}

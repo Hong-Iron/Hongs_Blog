@@ -19,7 +19,7 @@ permalink: "/studies/human-interface-media/code/31_convolution-practice_p2/"
 [합성곱 연습](/Hongs_Blog/studies/human-interface-media/convolution-practice/) 문서의 문제 2 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""합성곱 연습 p1·p2: 사각 펄스끼리의 합성곱 (강의 6 p.12~13).
+"""합성곱 연습 p1·p2: 사각 펄스끼리의 합성곱.
 
 p1: f = h = 1 (0 ≤ t < 1)이면 f * h는 0~1에서 t, 1~2에서 2 - t인 삼각형.
 p2: x = 2 (0 ≤ t < 2), h = 1 (0 ≤ t < 1)이면

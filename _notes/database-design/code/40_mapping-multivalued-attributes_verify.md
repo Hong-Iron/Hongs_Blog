@@ -23,7 +23,6 @@ permalink: "/studies/database-design/code/40_mapping-multivalued-attributes_veri
 """다치 속성의 사상 검증.
 
 문서: 40.다치 속성의 사상 (예시, 절차, 카드 C1~C3)
-출처: 데이터베이스 설계 7 슬라이드 p.15, 9 슬라이드 p.9, 6-2 p.14·p.21
 실행: python3 40_mapping-multivalued-attributes_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 주장:
   1. DEPT_LOCATIONS(Dnumber, Dlocation)는 5행이다. Dnumber 5가 세 번, Houston이 두 번 나온다.
@@ -33,12 +32,12 @@ permalink: "/studies/database-design/code/40_mapping-multivalued-attributes_veri
   4. 위치를 DEPARTMENT 안에 그대로 두고 위치마다 행을 만들면 5행이 되고 Dnumber 5가 세 번 나와 기본 키가 깨진다.
      부서 이름과 관리자도 세 번 적힌다.
   5. 카드 C3: Houston에 있는 부서는 1번과 5번이다.
-  6. 카드 C1: CAR(4-2 p.12)의 다치 속성 Color를 CAR_COLOR(Vehicle_id, Color)로 옮기면 세 대의 색
+  6. 카드 C1: CAR의 다치 속성 Color를 CAR_COLOR(Vehicle_id, Color)로 옮기면 세 대의 색
      {red, black}, {blue}, {white, blue}가 5행이 된다. blue가 두 번, TK629가 두 번 나와 둘을 묶어야 안 겹친다.
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태. 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

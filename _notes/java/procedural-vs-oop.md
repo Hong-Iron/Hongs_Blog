@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Procedural Programming vs Object-Oriented Programming", "절차 지향 프로그래밍", "Procedural Programming"]
 description: "둘 다 \"학생들의 시험 점수 평균을 낸다\"는 같은 일을 할 수 있다. 가르는 질문은 \"자료와 그 자료를 다루는 코드를 한곳에 묶어 두는가\"다. 절차 지향은 할 일을 위에서 아래로 순서대로 적고 자료는 따로 둔다. 객체 지향은 자료와 그 자료를 다루는 메서드를 객체 하나에 묶는다."
@@ -48,7 +48,7 @@ permalink: "/studies/java/procedural-vs-oop/"
 
 ## 결정적 차이
 
-슬라이드는 같은 문제를 두 방식으로 짠다[^1].
+같은 문제를 두 방식으로 짜 본다.
 
 ```java
 // 절차 지향: 자료(배열)와 계산 순서가 main 한곳에 놓인다
@@ -97,13 +97,6 @@ System.out.println("Average grade for " + student2.getName() + ": " + student2.c
 
 절차 지향 코드는 여섯 점수가 누구 것인지 모른다. 학생별로 내려면 배열을 학생마다 따로 두고 같은 반복문을 학생 수만큼 다시 써야 한다. 객체 지향 코드는 반복문을 `Student` 안에 한 번만 쓰고, 학생이 늘면 `new Student(...)`만 늘린다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.35의 `GradeProcessor`가 `student1.getName()`을 부르는데, 왼쪽 `Student` 클래스에는 `getName()`이 없다(6회 슬라이드 p.3도 같다). / 문제점: 그대로는 컴파일되지 않는다. / 수정안: `Student`에 `public String getName() { return name; }`을 보탠다. / 근거: 슬라이드 코드 그대로 JDK 21로 컴파일하면 `error: cannot find symbol ... symbol: method getName()`이 난다. 보탠 뒤에는 위 출력이 나온다.
-
-</div>
-
 
 | | 절차 지향 | 객체 지향 |
 |---|---|---|
@@ -124,7 +117,7 @@ System.out.println("Average grade for " + student2.getName() + ": " + student2.c
 ## 둘 다 아닐 때
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C3** 자바에서 절차 지향 코드를 써도 `class`와 `main`은 꼭 써야 한다. 그러면 슬라이드 p.34의 `GradeProcessor`는 객체 지향 코드인가? 또 두 방식 어느 쪽에도 딱 들어맞지 않는 경우를 하나 들어라.</summary>
+<summary class="callout-title" markdown="span">**C3** 자바에서 절차 지향 코드를 써도 `class`와 `main`은 꼭 써야 한다. 위의 절차 지향 코드를 `class GradeProcessor`의 `main` 안에 넣으면 `GradeProcessor`는 객체 지향 코드인가? 또 두 방식 어느 쪽에도 딱 들어맞지 않는 경우를 하나 들어라.</summary>
 
 **답:** 아니다. `GradeProcessor`는 클래스 안에 들어 있을 뿐, 객체를 하나도 만들지 않고 `main` 안에서 순서대로 계산한다. 자바는 모든 코드를 클래스 안에 쓰게 하므로 `class`가 있다는 것만으로는 객체 지향이 아니다. 둘 다 아닌 경우: 점수 목록에 "거르고, 바꾸고, 더한다"를 줄줄이 이어 붙이는 식으로, 상태를 가진 객체도 단계별 변수도 없이 값의 변환만 잇는 코드(함수형 방식)가 있다.<br>
 **이유:** 객체 지향인지는 문법이 아니라 자료와 동작을 객체로 묶었는지로 가른다. 실제 프로그램은 한 방식만 쓰지 않는다. 객체 지향으로 짠 프로그램도 메서드 하나의 속은 위에서 아래로 가는 절차다[^s1].
@@ -132,6 +125,5 @@ System.out.println("Average grade for " + student2.getName() + ": " + student2.c
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 5회 강의 자료 「Software Project 05. Object-Oriented Programming」, p.33~35 ("How can we average students' exam scores?", 절차 지향 `GradeProcessor`, 객체 지향 `Student`와 `GradeProcessor`)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 두 코드만 나란히 보이고 차이를 말로 적지 않았다. 비교 표, 카드 C1~C3, "학생이 늘 때"의 설명은 두 코드를 견주어 쓴 것이다. 함수형 방식은 원본에 없는 내용으로, 자바에서는 `java.util.stream`이 이 방식을 쓴다. 출력은 JDK 21에서 직접 실행해 확인했다.
+[^s1]: 비교 표, 카드 C1~C3, "학생이 늘 때"의 설명은 두 코드를 견주어 쓴 것이다. 출력은 JDK 21에서 직접 실행해 확인했다.
 {% endraw %}

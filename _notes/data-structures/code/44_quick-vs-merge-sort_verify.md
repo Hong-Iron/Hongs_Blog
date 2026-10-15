@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/44_quick-vs-merge-sort_verify/"
 
 실행: python3 44_quick-vs-merge-sort_verify.py
 문서: 44.퀵 정렬과 병합 정렬 비교 (결정적 차이 표, 카드 C1~C3)
-출처: 자료구조 14주차 슬라이드 p.15~19, p.25, p.27
 퀵 정렬의 분할은 42_quick-sort_impl.c와, 병합은 43_merge-sort_impl.c와 같은 규칙이다.
 세는 것: 키 비교 횟수, 배열 칸에 값을 써넣은 횟수(퀵은 맞바꾸기 한 번에 2칸, 병합은 덤 배열에 쓰기와
 되옮겨 쓰기), 재귀 깊이.

@@ -10,9 +10,9 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
-description: "5주차 슬라이드의 코드를 손으로 따라가고, 같은 줄들로 조금 다른 일을 해 보는 네 문제다. 노드 번호는 슬라이드처럼 0부터 센다. 그림을 먼저 그리고, 링크를 고치는 줄마다 화살표 하나를 지우고 새로 그리면 틀리지 않는다."
+description: "연결 리스트의 기본 코드를 손으로 따라가고, 같은 줄들로 조금 다른 일을 해 보는 네 문제다. 노드 번호는 0부터 센다. 그림을 먼저 그리고, 링크를 고치는 줄마다 화살표 하나를 지우고 새로 그리면 틀리지 않는다."
 prev_url: "/studies/data-structures/circular-queue-ladder/"
 prev_title: "원형 큐 추적 예제 사다리"
 next_url: "/studies/data-structures/tree-traversal-ladder/"
@@ -23,11 +23,11 @@ code_count: 4
 permalink: "/studies/data-structures/linked-list-practice/"
 ---
 {% raw %}
-5주차 슬라이드의 코드를 손으로 따라가고, 같은 줄들로 조금 다른 일을 해 보는 네 문제다. 노드 번호는 슬라이드처럼 0부터 센다. 그림을 먼저 그리고, 링크를 고치는 줄마다 화살표 하나를 지우고 새로 그리면 틀리지 않는다[^s1].
+연결 리스트의 기본 코드를 손으로 따라가고, 같은 줄들로 조금 다른 일을 해 보는 네 문제다. 노드 번호는 0부터 센다. 그림을 먼저 그리고, 링크를 고치는 줄마다 화살표 하나를 지우고 새로 그리면 틀리지 않는다.
 
 ## p1 · 체인 따라가기
 
-**문제.** 체인 (a, b, c, d, e)의 첫 노드를 `first`가 가리킨다. (가) `first->link->link->data`의 값은? (나) `first->link->link->link->link->data`의 값은? (다) `first->link->link->link->link->link`의 값은? (라) 모든 원소를 차례로 적는 함수 `printList`와 노드 수를 세는 함수 `length`를 써라[^1].
+**문제.** 체인 (a, b, c, d, e)의 첫 노드를 `first`가 가리킨다. (가) `first->link->link->data`의 값은? (나) `first->link->link->link->link->data`의 값은? (다) `first->link->link->link->link->link`의 값은? (라) 모든 원소를 차례로 적는 함수 `printList`와 노드 수를 세는 함수 `length`를 써라.
 
 **사용 개념.** [단순 연결 리스트](/Hongs_Blog/studies/data-structures/singly-linked-list/)의 "k번 노드 찾기"
 
@@ -38,7 +38,7 @@ permalink: "/studies/data-structures/linked-list-practice/"
 
 (가) *걸음 수 세기:* `->link`가 둘이니 2번 노드, c다.<br>
 (나) `->link`가 넷이니 4번 노드, e다.<br>
-(다) *끝을 넘는가 보기:* `->link`가 다섯이다. 4번 노드 e의 링크를 읽은 것이라 NULL이다. 여기에 `->data`를 붙이면 없는 노드를 읽어 프로그램이 죽는다[^1].<br>
+(다) *끝을 넘는가 보기:* `->link`가 다섯이다. 4번 노드 e의 링크를 읽은 것이라 NULL이다. 여기에 `->data`를 붙이면 없는 노드를 읽어 프로그램이 죽는다.<br>
 (라) *NULL까지 걷기:* 포인터 `p`를 `first`에서 시작해, NULL이 아닌 동안 할 일을 하고 `p = p->link`로 한 걸음 간다.
 
 ```c
@@ -83,7 +83,7 @@ int length(listPointer first)
 
 ## p2 · 지우고 끼우기
 
-**문제.** 체인 (a, b, c, d, e)에 다음을 차례로 한다. ① 0번 노드 지우기. ② 그 뒤의 1번 노드 바로 뒤에 f 끼우기. ③ 그 뒤의 3번 노드 지우기. 단계마다 쓰는 C 줄과 그 뒤의 목록을 써라[^2].
+**문제.** 체인 (a, b, c, d, e)에 다음을 차례로 한다. ① 0번 노드 지우기. ② 그 뒤의 1번 노드 바로 뒤에 f 끼우기. ③ 그 뒤의 3번 노드 지우기. 단계마다 쓰는 C 줄과 그 뒤의 목록을 써라.
 
 **사용 개념.** [단순 연결 리스트](/Hongs_Blog/studies/data-structures/singly-linked-list/)의 지우기와 끼우기
 
@@ -166,7 +166,7 @@ void reverse(listPointer *first)
 
 ## p3 · 연결 스택으로 글자 뒤집기
 
-**문제.** 빈 연결 스택에 D, A, T, A를 차례로 push한다. (가) push할 때마다 체인을 `top`부터 써라. (나) 모두 pop하면 어떤 순서로 나오는가? (다) 이것으로 글자 순서를 뒤집는 함수 `reverseWord`를 써라[^3].
+**문제.** 빈 연결 스택에 D, A, T, A를 차례로 push한다. (가) push할 때마다 체인을 `top`부터 써라. (나) 모두 pop하면 어떤 순서로 나오는가? (다) 이것으로 글자 순서를 뒤집는 함수 `reverseWord`를 써라.
 
 **사용 개념.** [연결 리스트로 만든 스택](/Hongs_Blog/studies/data-structures/linked-stack/)
 
@@ -217,7 +217,7 @@ D, A, T, A 그대로다. 큐는 먼저 넣은 것을 먼저 내놓으니 순서�
 
 ## p4 · 연결 큐 따라가기
 
-**문제.** 빈 연결 큐에 enqueue 5, enqueue 8, dequeue, enqueue 2, dequeue, dequeue를 차례로 한다. (가) 단계마다 돌려준 값, `count`, `front`와 `rear`가 가리키는 원소를 써라. (나) `front`와 `rear`가 함께 바뀌는 단계는 어디인가[^4]?
+**문제.** 빈 연결 큐에 enqueue 5, enqueue 8, dequeue, enqueue 2, dequeue, dequeue를 차례로 한다. (가) 단계마다 돌려준 값, `count`, `front`와 `rear`가 가리키는 원소를 써라. (나) `front`와 `rear`가 함께 바뀌는 단계는 어디인가?
 
 **사용 개념.** [연결 리스트로 만든 큐](/Hongs_Blog/studies/data-structures/linked-queue/)
 
@@ -268,11 +268,4 @@ void split(LinkedQueueType *q, LinkedQueueType *even, LinkedQueueType *odd)
 `even`은 8, 6, 4, 2이고 `odd`는 3, 1, 9다. 원래 큐는 빈다.
 
 </details>
-
-
-[^1]: 자료구조 5회 강의 자료 「DS_Week5_Lecture_2024」, p.10 (Get nodes: first, first->link, first->link->link, 링크 다섯 번이면 NULL)
-[^2]: 같은 자료, p.11~18 (delete(0), 가운데 노드 지우기, 맨 앞과 2번 노드 뒤에 끼우기의 코드)
-[^3]: 같은 자료, p.28~31 (연결 스택의 그림과 push, pop)
-[^4]: 같은 자료, p.33~36 (연결 큐의 그림과 enqueue, dequeue)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 문제의 연산 차례와 `printList`, `length`, `indexOf`, `reverse`, `reverseWord`, `split`은 슬라이드에 없다. 슬라이드의 줄(p.10 ~ 18, 30 ~ 31, 35 ~ 36)을 그대로 쓰거나 고리로 묶어 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Missing WHERE Clause", "WHERE 절 생략", "카티션 곱", "카테시안 곱", "Cartesian Product", "Cross Product", "크로스 곱", "모든 조합"]
 description: "행을 고르는 조건을 적지 않으면 모든 행이 나오고, 표가 둘이면 한 표의 행 하나하나가 다른 표의 모든 행과 짝지어져 나온다. 학생 8명과 동아리 3개를 조건 없이 늘어놓으면 \"누가 어느 동아리인지\"가 아니라 있을 수 있는 24가지 짝이 전부 나오는 것과 같다. 오류가 나지 않아서…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/missing-where-cross-product/"
 
 ## 예시로 보기
 
-조건은 "이런 행만"이라고 좁히는 말이다. 그 말을 안 하면 좁혀지지 않는다[^1].
+조건은 "이런 행만"이라고 좁히는 말이다. 그 말을 안 하면 좁혀지지 않는다.
 
 ```sql
 SELECT Ssn
@@ -70,7 +70,7 @@ Smith(123456789)는 Research에서만 일한다. 그런데 결과에는 Administ
 
 ## 정의
 
-`WHERE` 절이 없으면 튜플을 고르는 조건이 없다. `FROM`에 적힌 릴레이션의 모든 튜플이 나온다. 릴레이션이 둘 이상이면 그 릴레이션들의 튜플로 만들 수 있는 모든 조합이 나온다[^1].
+`WHERE` 절이 없으면 튜플을 고르는 조건이 없다. `FROM`에 적힌 릴레이션의 모든 튜플이 나온다. 릴레이션이 둘 이상이면 그 릴레이션들의 튜플로 만들 수 있는 모든 조합이 나온다.
 
 이렇게 만든 "모든 조합"을 두 표의 카티션 곱(cross product)이라 부른다[^s1].
 
@@ -81,14 +81,7 @@ $$R \times S = \{\, (r, s) \;:\; r \in R,\ s \in S \,\}, \qquad \vert R \times S
 
 $$r$$은 $$R$$의 행 하나, $$s$$는 $$S$$의 행 하나다. $$\vert R\vert $$은 $$R$$의 행 수다. 행 수는 두 표의 행 수를 곱한 것이다. EMPLOYEE가 8행, DEPARTMENT가 3행이라 8 × 3 = 24행이 나왔다. 집합의 [곱집합](/Hongs_Blog/studies/discrete-math/sets/)과 같은 식이다.
 
-슬라이드는 파란 글씨로 당부한다. 선택 조건과 조인 조건을 `WHERE` 절에 하나도 빠짐없이 적는 것이 아주 중요하다. 하나라도 빠뜨리면 틀리고 아주 큰 릴레이션이 결과로 나올 수 있다[^1].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 10-2 p.18과 11-2 p.5에서 `SELECT Ssn FROM EMPLOYEE;`의 결과 표 머리글 "E.Fname" / 문제점: 그 아래에 적힌 값은 123456789, 333445555처럼 이름이 아니라 Ssn이다. 질의도 Ssn을 꺼낸다 / 수정안: 머리글은 "Ssn"이다 / 근거: 이 질의의 결과는 Ssn 여덟 개다 — [54_missing-where-cross-product_verify.py](/Hongs_Blog/studies/database-design/code/54_missing-where-cross-product_verify/)
-
-</div>
+그래서 선택 조건과 조인 조건을 `WHERE` 절에 하나도 빠짐없이 적는 것이 아주 중요하다. 하나라도 빠뜨리면 틀리고 아주 큰 릴레이션이 결과로 나올 수 있다.
 
 
 ## 예제
@@ -110,7 +103,7 @@ Q1에서 조인 조건을 빠뜨린 8행은 "직원 여덟 명 모두"다. 다�
 
 - **빠뜨린 것을 알아채는 법.** 결과의 행 수를 어림한다. "직원이 8명인데 왜 24행이지?" 싶으면 조건이 빠졌다. 또 `FROM`의 표 수를 센다. 표가 $$n$$개인데 표끼리 잇는 조건이 $$n - 1$$개보다 적으면 어딘가 이어지지 않은 표가 있다[^s1].
 - **조인 조건을 `FROM`에 적기.** 조인 조건을 `WHERE`에 섞어 쓰면 빠뜨려도 티가 안 난다. `FROM`에서 표를 이을 때 조건을 바로 붙여 쓰는 방법이 있다: [FROM 절의 조인 (JOIN ON)](/Hongs_Blog/studies/database-design/sql-join-on/).
-- **행이 나오는 차례.** 결과의 행이 어떤 차례로 나오는지는 정해져 있지 않다. 슬라이드는 표에 적힌 차례로 그렸지만, SQLite에서 `SELECT Ssn FROM EMPLOYEE;`를 돌리면 번호가 작은 것부터 나온다. 차례를 정하려면 따로 적어야 한다: [ORDER BY와 질의의 절 순서](/Hongs_Blog/studies/database-design/order-by-clause-order/)[^s1].
+- **행이 나오는 차례.** 결과의 행이 어떤 차례로 나오는지는 정해져 있지 않다. SQLite에서 `SELECT Ssn FROM EMPLOYEE;`를 돌리면 행을 넣은 차례(Smith, Wong, Zelaya, …)가 아니라 번호가 작은 것부터 나온다. 차례를 정하려면 따로 적어야 한다: [ORDER BY와 질의의 절 순서](/Hongs_Blog/studies/database-design/order-by-clause-order/)[^s1].
 
 ## 연결
 
@@ -148,6 +141,5 @@ Q1에서 조인 조건을 빠뜨린 8행은 "직원 여덟 명 모두"다. 다�
 </details>
 
 
-[^1]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.18~19 (Missing WHERE Clause, 24행의 결과 표, 파란 글씨의 당부). 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.5
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 "all possible tuple combinations"라고만 적고 카티션 곱이라는 이름과 식은 쓰지 않는다. 이름은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.3.3절의 "CROSS PRODUCT"를 따랐다. 조건을 하나씩 빠뜨린 표, 여섯 표의 곱 80,640행, 빈 표의 경우, 알아채는 법, 행이 나오는 차례, 확인 문제는 슬라이드에 없다. 수치는 SQLite 3.50에서 실행해 확인했다.
+[^s1]: 이름은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.3.3절의 "CROSS PRODUCT"를 따랐다. 수치는 SQLite 3.50에서 실행해 확인했다.
 {% endraw %}

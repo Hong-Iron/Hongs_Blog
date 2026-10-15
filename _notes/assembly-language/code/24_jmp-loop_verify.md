@@ -28,7 +28,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(문서 예시의 00000020 call → 00000025와 맞춘 값).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -481,7 +481,7 @@ def machine(code, esp=0x1000, base=0):
     return c
 
 def main():
-    # 1. Your turn (wk05-3-3 p.18): AX = 10
+    # 1. Your turn: AX = 10
     c = machine("mov ax,6\nmov ecx,4\nL1:\ninc ax\nloop L1").run()
     assert c.get("ax") == 10 and c.r["ecx"] == 0
     # 2. ECX = 0에서 시작하면 첫 LOOP 뒤 ECX = FFFFFFFFh라 계속 돈다
@@ -502,7 +502,7 @@ def main():
                 return n
     assert count(8, 0) == 256 and count(8, 4) == 4 and count(16, 0) == 65536
     assert 2 ** 32 == 4294967296
-    # 3. LOOP Example (wk06-3-1 p.1): 5+4+3+2+1 = 15, 기계어 길이와 상대 오프셋
+    # 3. LOOP Example: 5+4+3+2+1 = 15, 기계어 길이와 상대 오프셋
     c = machine("mov ax,0\nmov ecx,5\nL1: add ax,cx\nloop L1").run()
     assert c.get("ax") == 15 == 0x000F
     lengths = [4, 5, 3, 2]            # 66 B8 0000 / B9 00000005 / 66 03 C1 / E2 FB
@@ -510,7 +510,7 @@ def main():
     assert offs == [0x0, 0x4, 0x9, 0xC, 0xE]
     assert signed(0xFB, 1) == -5 and (0x0E + signed(0xFB, 1)) == 0x09
     assert (0x0E + 0xFB) & 0xFF == 0x09
-    # 4. 배열 합 (wk06-3-1 p.3): AX = 0A00h, EDI는 2씩 네 번
+    # 4. 배열 합: AX = 0A00h, EDI는 2씩 네 번
     c = machine("""mov edi,OFFSET intarray
         mov ecx,LENGTHOF intarray
         mov ax,0
@@ -523,7 +523,7 @@ def main():
     c.run()
     assert c.get("ax") == 0x0A00 and c.r["edi"] == a + 8 and c.r["ecx"] == 0
     assert [r["eax"] & 0xFFFF for l, r, f in c.trace if l.startswith("add ax")] == [0x100, 0x300, 0x600, 0xA00]
-    # 5. 문자열 복사 (p.4): SIZEOF source = 26 (글자 25 + 널)
+    # 5. 문자열 복사: SIZEOF source = 26 (글자 25 + 널)
     c = machine("""mov esi,0
         mov ecx,SIZEOF source
         L1:
@@ -536,7 +536,7 @@ def main():
     t = c.data("target", "BYTE", [0] * n)
     c.run()
     assert n == 26 and bytes(c.mem[t + i] for i in range(n)) == b"This is the source string\x00"
-    # 6. 중첩 루프 (p.2): 안쪽 몸통 100 * 20 = 2000번
+    # 6. 중첩 루프: 안쪽 몸통 100 * 20 = 2000번
     nested = """mov ecx,100
         L1:
         mov count,ecx

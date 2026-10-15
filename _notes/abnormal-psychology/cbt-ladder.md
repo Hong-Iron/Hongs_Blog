@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-26"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 인지행동치료의 역기능적 사고일지와 하향화살표 기법, 우울증의 인지이론의 인지적 오류 아홉 가지."
 prev_url: "/studies/abnormal-psychology/schizophrenia-spectrum-practice/"
@@ -114,10 +114,10 @@ permalink: "/studies/abnormal-psychology/cbt-ladder/"
 
 <details class="answer-fold" markdown="1"><summary markdown="span">답</summary>
 
-행동 기법부터 한다. 자기생활 관찰표로 하루 활동과 기분을 가볍게 기록하고, 산책 10분처럼 아주 작은 행동활성화 과제를 준다. 행동으로 강화를 되찾아 기분이 조금 오르면 그때 사고일지를 시작한다. 필기의 "먼저 행동을 하게 만들고, 생각을 변화시키는 것이 더 쉬움"의 적용이다.
+행동 기법부터 한다. 자기생활 관찰표로 하루 활동과 기분을 가볍게 기록하고, 산책 10분처럼 아주 작은 행동활성화 과제를 준다. 행동으로 강화를 되찾아 기분이 조금 오르면 그때 사고일지를 시작한다. 먼저 행동을 하게 만든 뒤에 생각을 바꾸는 편이 더 쉽기 때문이다.
 
 </details>
 
 
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 슬라이드 p.29(인지적 오류), p.36~38(인지행동치료 기법)을 적용한 가상 사례다. 감정 점수는 예시다.
+[^s1]: 모든 사례와 풀이는 가상 사례다. 감정 점수는 예시다.
 {% endraw %}

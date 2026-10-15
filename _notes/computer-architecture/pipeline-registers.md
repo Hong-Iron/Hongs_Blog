@@ -139,6 +139,6 @@ ID에서 만든 9비트
 [^3]: 같은 슬라이드, 33~35 (Pipelined Control: 제어 신호는 단일 사이클 구현처럼 명령어에서 만든다)
 [^4]: 같은 슬라이드, 47 (How to Stall the Pipeline: ID/EX의 제어 값을 0으로 만들면 EX·MEM·WB가 아무 일도 하지 않는다)
 [^5]: 같은 슬라이드, 38 (Detecting the Need to Forward: ID/EX.RegisterRs 같은 표기)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 143, 102, 69비트는 위 표의 칸을 그대로 더한 값이고 교재의 수치가 아니다. 전방 전달에 쓰는 rs 번호까지 실었기 때문에 교재의 그림과 다를 수 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 묶음의 구성은 연 슬라이드에서는 그림으로만 나와 글로 확인하지 못했다. 단일 사이클 데이터패스에서 각 신호가 닿는 부품이 다섯 단계 가운데 어디에 놓이는지로 정했다. Branch를 MEM 묶음에 둔 것은 분기를 MEM 단계에서 정하는 기본 설계를 따른 것이다. 분기를 ID에서 정하도록 고친 설계([제어 해저드와 분기 예측](/Hongs_Blog/studies/computer-architecture/control-hazard-branch-prediction/))에서는 Branch가 ID에서 쓰인다.
+[^s1]: 143, 102, 69비트는 위 표의 칸을 그대로 더한 값이고 교재의 수치가 아니다. 전방 전달에 쓰는 rs 번호까지 실었기 때문에 교재의 그림과 다를 수 있다.
+[^s2]: 단일 사이클 데이터패스에서 각 신호가 닿는 부품이 다섯 단계 가운데 어디에 놓이는지로 정했다. Branch를 MEM 묶음에 둔 것은 분기를 MEM 단계에서 정하는 기본 설계를 따른 것이다. 분기를 ID에서 정하도록 고친 설계([제어 해저드와 분기 예측](/Hongs_Blog/studies/computer-architecture/control-hazard-branch-prediction/))에서는 Branch가 ID에서 쓰인다.
 {% endraw %}

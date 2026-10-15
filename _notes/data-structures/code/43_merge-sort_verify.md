@@ -24,10 +24,9 @@ permalink: "/studies/data-structures/code/43_merge-sort_verify/"
 
 실행: python3 43_merge-sort_verify.py
 문서: 43.병합 정렬 (합치기 추적 표, 복잡도 절, 카드 C1~C3)
-출처: 자료구조 14주차 슬라이드 p.19~25
 
 주장
-  1. A = (2, 5, 6), B = (1, 3, 8, 9, 10)을 합칠 때 한 개씩 옮긴 뒤의 A, B, C가 슬라이드와 같다.
+  1. A = (2, 5, 6), B = (1, 3, 8, 9, 10)을 합칠 때 한 개씩 옮긴 뒤의 A, B, C가 문서의 추적 표와 같다.
      비교는 5번, 옮기기는 8번이다.
   2. 길이 n, m인 두 줄을 합칠 때 비교는 min(n, m)번 이상 n + m - 1번 이하, 옮기기는 n + m번이다
      (무작위 3,000쌍).
@@ -91,7 +90,7 @@ def t_rec(n, c, d, memo):
 
 
 if __name__ == "__main__":
-    # 1. 슬라이드 p.20~22
+    # 1. 문서의 합치기 추적 표
     C, cmp_count, steps = merge_steps((2, 5, 6), (1, 3, 8, 9, 10))
     assert C == [1, 2, 3, 5, 6, 8, 9, 10] and cmp_count == 5
     assert steps == [
@@ -131,7 +130,7 @@ if __name__ == "__main__":
         assert t_rec(n, c0, d0, memo) <= c0 * n + d0 * n * math.ceil(math.log2(n))
     assert t_rec(8, 1, 1, {}) == 32                                # 카드 C3: 8 + 8 * 3
 
-    # 4. 13개짜리 예 (p.23~24)
+    # 4. 13개짜리 예 (문서의 나무 그림)
     stat = new_stat()
     a = [8, 3, 13, 6, 2, 14, 5, 9, 10, 1, 7, 12, 4]
     assert merge_sort(a, stat) == sorted(a)

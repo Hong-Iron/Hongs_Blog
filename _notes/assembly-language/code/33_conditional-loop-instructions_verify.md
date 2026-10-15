@@ -29,7 +29,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(예: 00000020의 call 다음 줄은 00000025).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -514,7 +514,7 @@ def scan(code, values, sentinel):
 
 
 def main():
-    # 1. LOOPNZ 예 (wk09-2-1 p.5): 첫 양수는 10, 인덱스 4
+    # 1. LOOPNZ 예: 첫 양수는 10, 인덱스 4
     vals = [-3, -6, -1, -10, 10, 30, 40, 4]
     c, i = scan(FIRST_POS, vals, 0)
     assert i == 4 and signed(c.rd(c.r["esi"], 2), 2) == 10 and c.r["ecx"] == 3
@@ -536,7 +536,7 @@ def main():
         assert scan(FIRST_POS, vals, 0)[1] == want
         want = next((k for k, v in enumerate(vals) if v != 0), n)
         assert scan(FIRST_NONZERO, vals, 0xFFFF)[1] == want
-    # 2. Your turn (p.6~7): 50칸에서 0이 아닌 첫 값
+    # 2. 연습: 50칸에서 0이 아닌 첫 값
     for pos in (0, 1, 17, 49):
         vals = [0] * 50
         vals[pos] = 9

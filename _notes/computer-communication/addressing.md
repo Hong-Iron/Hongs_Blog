@@ -46,7 +46,7 @@ permalink: "/studies/computer-communication/addressing/"
 
 ## 정의
 
-주소는 네트워크에서 노드 하나를 알아보게 해 주는 바이트열이다. 주소 지정은 주소로 통신 상대를 가리키는 일이다[^1].
+주소는 네트워크에서 노드 하나를 알아보게 해 주는 바이트열이다. 주소 지정은 주소로 통신 상대를 가리키는 일이다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -68,12 +68,12 @@ permalink: "/studies/computer-communication/addressing/"
 
 ## 예제
 
-- 주소인 것: 이더넷 MAC 주소(48비트, 네트워크 카드 하나를 가리키는 유니캐스트 주소), 이더넷 브로드캐스트 주소 `FF:FF:FF:FF:FF:FF`(같은 네트워크의 모든 기기), IPv4 멀티캐스트 범위 `224.0.0.0/4`(그룹에 가입한 기기들)[^s2]
-- 주소가 아닌 것: `www.example.com` 같은 호스트 이름(사람이 읽는 이름이며 전달에 쓰기 전에 주소로 바꾼다), 포트 번호(한 기기 안의 응용을 가리킨다)[^s2]
+- 주소인 것: 이더넷 MAC 주소(48비트, 네트워크 카드 하나를 가리키는 유니캐스트 주소), 이더넷 브로드캐스트 주소 `FF:FF:FF:FF:FF:FF`(같은 네트워크의 모든 기기), IPv4 멀티캐스트 범위 `224.0.0.0/4`(그룹에 가입한 기기들)
+- 주소가 아닌 것: `www.example.com` 같은 호스트 이름(사람이 읽는 이름이며 전달에 쓰기 전에 주소로 바꾼다), 포트 번호(한 기기 안의 응용을 가리킨다)
 
 ## 활용
 
-- 주소로 상대를 지정한 다음에야 그 상대까지 가는 경로를 찾을 수 있다 → [라우팅](/Hongs_Blog/studies/computer-communication/routing/)[^1]
+- 주소로 상대를 지정한 다음에야 그 상대까지 가는 경로를 찾을 수 있다 → [라우팅](/Hongs_Blog/studies/computer-communication/routing/)
 - [다중 접근 링크](/Hongs_Blog/studies/computer-communication/multiple-access-link/)에서 받을 기기를 가릴 때, [스위칭 네트워크](/Hongs_Blog/studies/computer-communication/switched-network/)에서 스위치가 어느 쪽으로 넘길지 정할 때, [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)에서 조각의 주인을 밝힐 때 쓴다.
 
 ## 연결
@@ -94,7 +94,7 @@ permalink: "/studies/computer-communication/addressing/"
 <details markdown="1"><summary markdown="span"><b>C2</b> 다음은 유니캐스트·브로드캐스트·멀티캐스트 중 무엇인가? (a) 한 웹 서버에 페이지를 요청한다 (b) 같은 네트워크의 모든 기기에게 "이 IP 주소를 가진 기기가 누구냐"고 묻는다 (c) 수강 신청한 기기들에게만 강의 영상을 보낸다</summary>
 
 
-**답:** (a) 유니캐스트. 받는 쪽이 하나다. (b) 브로드캐스트. 누구인지 모르니 모두에게 묻는다(이더넷의 ARP 요청이 실제로 이렇게 동작한다)[^s2]. (c) 멀티캐스트. 그룹에 속한 일부만 받는다.<br>
+**답:** (a) 유니캐스트. 받는 쪽이 하나다. (b) 브로드캐스트. 누구인지 모르니 모두에게 묻는다(이더넷의 ARP 요청이 실제로 이렇게 동작한다). (c) 멀티캐스트. 그룹에 속한 일부만 받는다.<br>
 **흔한 오답:** (c)를 브로드캐스트라고 하는 것. 모두가 아니라 가입한 일부만 받는다.
 
 </details>
@@ -106,7 +106,5 @@ permalink: "/studies/computer-communication/addressing/"
 
 </details>
 
-[^1]: 컴퓨터 통신 1회 필기 「1주차」, 42~52행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 학교 방송 비유의 한계와 세 방식을 수신 집합으로 묶는 정의는 원본에 없다. "노드를 식별하는 바이트열"이라는 표현은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 같다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MAC·IPv4 주소 예, 호스트 이름과 포트 번호, ARP는 원본에 없는 실제 사례다.
+[^s1]: "노드를 식별하는 바이트열"이라는 표현은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 같다.
 {% endraw %}

@@ -160,7 +160,7 @@ int main(void)
 {
     char out[64], trace[512];
 
-    /* 1. 슬라이드 p.33, p.46의 트리: a(b(d(g, h), e(-, i)), c(f(-, j), -)) */
+    /* 1. 문서 예시의 트리: a(b(d(g, h), e(-, i)), c(f(-, j), -)) */
     treePointer t =
         makeNode('a',
             makeNode('b',
@@ -170,7 +170,7 @@ int main(void)
                 makeNode('f', NULL, makeNode('j', NULL, NULL)),
                 NULL));
     int longest = levelOrder(t, out, trace);
-    check(strcmp(out, "abcdefghij") == 0, "p.46 레벨 순서 = a b c d e f g h i j");
+    check(strcmp(out, "abcdefghij") == 0, "예시 트리의 레벨 순서 = a b c d e f g h i j");
     /* 추적 표: 방문한 노드마다, 자식을 넣은 직후의 큐 */
     check(strcmp(trace, "bc\ncde\ndef\nefgh\nfghi\nghij\nhij\nij\nj\n\n") == 0, "문서의 추적 표");
     check(longest == 4, "큐가 가장 길 때 4개");
@@ -188,7 +188,7 @@ int main(void)
     check(strcmp(trace, "23\n345\n456\n56\n67\n7\n\n") == 0, "카드 C1 큐의 변화");
     freeTree(c1);
 
-    /* 3. 완전 이진 트리(슬라이드 p.20)는 레벨 순서가 배열 표현의 칸 순서와 같다 */
+    /* 3. 완전 이진 트리는 레벨 순서가 배열 표현의 칸 순서와 같다 */
     treePointer t20 =
         makeNode('a',
             makeNode('b',

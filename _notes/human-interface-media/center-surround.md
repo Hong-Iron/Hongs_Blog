@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Center-surround Antagonism", "중심-주변", "길항 작용", "Antagonism", "수용장", "receptive field", "흥분성 중심", "억제성 주변"]
 description: "과녁 모양의 감지 구역을 가진 뉴런이다. 과녁 가운데에 자극이 오면 신나게 발화하고, 둘레에 오면 오히려 발화를 줄인다. 그래서 넓고 고른 자극에는 둔하고, 가운데와 둘레의 차이, 곧 경계나 작은 점에 민감하다. 가운데를 딱 채우는 크기의 자극에 가장 세게 반응한다."
@@ -33,9 +33,9 @@ permalink: "/studies/human-interface-media/center-surround/"
 
 ## 예시로 보기
 
-원숭이 팔의 피부 한 곳을 누르면 반응하는 뉴런이 있다. 이 뉴런에 영향을 주는 피부 구역이 그 뉴런의 수용장(receptive field)이다. 수용장의 가운데는 흥분성, 둘레는 억제성이다[^1][^s1].
+원숭이 팔의 피부 한 곳을 누르면 반응하는 뉴런이 있다. 이 뉴런에 영향을 주는 피부 구역이 그 뉴런의 수용장(receptive field)이다. 수용장의 가운데는 흥분성, 둘레는 억제성이다[^s1].
 
-같은 수용장에 크기가 다른 자극을 준다[^1].
+같은 수용장에 크기가 다른 자극을 준다.
 
 | 자극 | 덮는 곳 | 발화 |
 |---|---|---|
@@ -53,7 +53,7 @@ permalink: "/studies/human-interface-media/center-surround/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-흥분성 중심·억제성 주변 수용장을 가진 뉴런은, 가운데에 닿은 자극에 발화를 늘리고 둘레에 닿은 자극에 발화를 줄인다[^1]. 반응은 두 효과의 차이로 정해진다.
+흥분성 중심·억제성 주변 수용장을 가진 뉴런은, 가운데에 닿은 자극에 발화를 늘리고 둘레에 닿은 자극에 발화를 줄인다. 반응은 두 효과의 차이로 정해진다.
 
 </div>
 
@@ -88,7 +88,7 @@ R(u) = \frac{2\sin(2\pi u)\,\bigl(1 - \cos(2\pi u)\bigr)}{\pi u}
 $$
 
 
-이다. $$R(0) = 0$$이라 고른 빛(공간 주파수 0)은 통과하지 못한다. 약 $$u = 0.29$$ 사이클/단위에서 가장 크고, 촘촘한 줄무늬($$u \ge 3$$)에서는 최대의 20%도 안 된다. 너무 성기지도, 너무 촘촘하지도 않은 무늬만 통과시키는 대역 통과 필터다. 줄무늬 한 줄의 폭이 가운데 크기와 비슷할 때 가장 세게 반응한다는 뜻이다. 영상 처리에서는 가우스 두 개의 차(DoG)나 가우스의 라플라시안(LoG)이 같은 모양의 필터로, 경계 검출에 쓴다. 강의 계획표 6주차 "Spatial Frequency"와 7주차 "Convolution"의 대상이다[^2][^s3].
+이다. $$R(0) = 0$$이라 고른 빛(공간 주파수 0)은 통과하지 못한다. 약 $$u = 0.29$$ 사이클/단위에서 가장 크고, 촘촘한 줄무늬($$u \ge 3$$)에서는 최대의 20%도 안 된다. 너무 성기지도, 너무 촘촘하지도 않은 무늬만 통과시키는 대역 통과 필터다. 줄무늬 한 줄의 폭이 가운데 크기와 비슷할 때 가장 세게 반응한다는 뜻이다. 영상 처리에서는 가우스 두 개의 차(DoG)나 가우스의 라플라시안(LoG)이 같은 모양의 필터로, 경계 검출에 쓴다. 이런 필터는 [공간 주파수](/Hongs_Blog/studies/human-interface-media/resolution-spatial-frequency/)와 [합성곱](/Hongs_Blog/studies/human-interface-media/two-dimensional-convolution/)으로 다룬다[^s3].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/10_center-surround_fig2.svg" alt="그림" width="530" height="323" loading="lazy">
 
@@ -115,7 +115,7 @@ $$
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"자극이 크고 셀수록 뉴런은 더 세게 반응한다"</div>
 
-틀렸다. 대부분의 감각에서 "많이 = 세게"가 맞아 보여서 그럴듯하다. 중심-주변 수용장에서는 자극이 가운데를 넘어 둘레까지 덮으면 반응이 오히려 줄어든다. 확인 방법: 슬라이드 p.15의 (b)와 (d)를 비교하면 더 큰 자극 (d)의 스파이크가 훨씬 드물다.
+틀렸다. 대부분의 감각에서 "많이 = 세게"가 맞아 보여서 그럴듯하다. 중심-주변 수용장에서는 자극이 가운데를 넘어 둘레까지 덮으면 반응이 오히려 줄어든다. 확인 방법: 위 예시의 (b)와 (d)를 비교하면 더 큰 자극 (d)에서 발화가 훨씬 적다.
 
 </div>
 
@@ -144,11 +144,9 @@ $$
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 2회 강의 자료 「HIM_강의02_사람의지각」, p.15 (Center-surround Antagonism). 요약 p.16의 "길항 작용 Antagonism"
-[^2]: 휴먼 인터페이스 미디어 0회 강의 자료 「 HIM_2026_Syllabus」, Lecture Calendar 6~7주차
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "수용장"이라는 이름은 슬라이드에 없다. 그림의 Excitatory center와 Inhibitory surround가 가리키는 구역의 표준 용어다. 가운데가 억제성이고 둘레가 흥분성인 반대 모양의 뉴런도 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 넓이 모형과 그 식은 원본에 없다. 슬라이드 (a)~(d)의 순서를 설명하려는 설명용 모형이다. (a)와 (c)의 크기 순서는 $$k$$에 따라 달라지므로 모형에서 주장하지 않는다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1차원 줄무늬 응답 공식은 가중치 함수 $$w(x)$$(가운데 +1, 둘레 −1)와 $$\cos(2\pi ux)$$의 적분에서 나온다. $$\int_{-1}^{1}\cos(2\pi ux)\,dx - 2\int_{1}^{2}\cos(2\pi ux)\,dx = \frac{2\sin 2\pi u - \sin 4\pi u}{\pi u}$$이고, $$\sin 4\pi u = 2\sin 2\pi u\cos 2\pi u$$로 정리했다. DoG·LoG 필터는 Marr와 Hildreth(1980)의 경계 검출 이론에서 널리 알려졌다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 학습된 첫 층 필터의 모양은 Krizhevsky, Sutskever & Hinton(2012, AlexNet) 논문의 그림 등에서 보고되었다. Hubel & Wiesel(1959~1962)의 수용장 연구와 Fukushima(1980)의 네오코그니트론은 신경망 교과서의 표준 역사다.
-[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [10_center-surround_plot.py](/Hongs_Blog/studies/human-interface-media/code/10_center-surround_plot/)로 그렸고, 그림에 쓴 값($$r_0 = 10$$, $$g = 10$$, $$k = 0.2, 1/3, 0.5, 1$$에서 최대가 $$\rho = 1$$, $$k = 1$$일 때 0이 되는 $$\rho = \sqrt{2 + 1/\pi} \approx 1.52$$, 줄무늬 반응의 최대 $$u \approx 0.287$$, $$u = 0.5, 1, 1.5, 2$$에서 반응 0, $$u \ge 3$$에서 최대의 20% 미만)을 같은 코드로 확인했다.
+[^s1]: 가운데가 억제성이고 둘레가 흥분성인 반대 모양의 뉴런도 있다.
+[^s2]: (a)와 (c)의 크기 순서는 $$k$$에 따라 달라지므로 모형에서 주장하지 않는다.
+[^s3]: 1차원 줄무늬 응답 공식은 가중치 함수 $$w(x)$$(가운데 +1, 둘레 −1)와 $$\cos(2\pi ux)$$의 적분에서 나온다. $$\int_{-1}^{1}\cos(2\pi ux)\,dx - 2\int_{1}^{2}\cos(2\pi ux)\,dx = \frac{2\sin 2\pi u - \sin 4\pi u}{\pi u}$$이고, $$\sin 4\pi u = 2\sin 2\pi u\cos 2\pi u$$로 정리했다. DoG·LoG 필터는 Marr와 Hildreth(1980)의 경계 검출 이론에서 널리 알려졌다.
+[^s4]: 학습된 첫 층 필터의 모양은 Krizhevsky, Sutskever & Hinton(2012, AlexNet) 논문의 그림 등에서 보고되었다. Hubel & Wiesel(1959~1962)의 수용장 연구와 Fukushima(1980)의 네오코그니트론은 신경망 교과서의 표준 역사다.
+[^s5]: [10_center-surround_plot.py](/Hongs_Blog/studies/human-interface-media/code/10_center-surround_plot/)로 그렸고, 그림에 쓴 값($$r_0 = 10$$, $$g = 10$$, $$k = 0.2, 1/3, 0.5, 1$$에서 최대가 $$\rho = 1$$, $$k = 1$$일 때 0이 되는 $$\rho = \sqrt{2 + 1/\pi} \approx 1.52$$, 줄무늬 반응의 최대 $$u \approx 0.287$$, $$u = 0.5, 1, 1.5, 2$$에서 반응 0, $$u \ge 3$$에서 최대의 20% 미만)을 같은 코드로 확인했다.
 {% endraw %}

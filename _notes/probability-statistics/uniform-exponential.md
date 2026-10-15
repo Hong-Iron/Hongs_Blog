@@ -139,6 +139,6 @@ flowchart LR
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 5.2절 "Uniform", 5.3절 "Universality of the Uniform"(역변환), 5.5절 "Exponential"(무기억성, 최솟값), 5.6절 "Poisson processes"(도착 간격).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [15_uniform-exponential_plot.py](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_plot/)로 그렸고, 그림에 쓴 값($$\frac{3}{10}$$, 수치 적분한 $$P(X > 1) = e^{-3} \approx 0.050$$)을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정리의 성질 2·4와 연결 절(기하분포의 연속판)을 그렸다.
+[^s1]: [15_uniform-exponential_plot.py](/Hongs_Blog/studies/probability-statistics/code/15_uniform-exponential_plot/)로 그렸고, 그림에 쓴 값($$\frac{3}{10}$$, 수치 적분한 $$P(X > 1) = e^{-3} \approx 0.050$$)을 같은 코드로 확인했다.
+[^s2]: 이 문서 정리의 성질 2·4와 연결 절(기하분포의 연속판)을 그렸다.
 {% endraw %}

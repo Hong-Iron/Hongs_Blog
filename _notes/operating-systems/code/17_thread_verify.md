@@ -22,7 +22,7 @@ permalink: "/studies/operating-systems/code/17_thread_verify/"
 ```python
 """스레드는 프로세스의 메모리를 함께 쓰고, 프로세스끼리는 따로 쓴다는 것을 확인한다.
 또 입출력을 기다리는 일(여기서는 sleep)을 스레드로 나누면 기다림이 겹쳐 빨라진다는 것도 확인한다
-(슬라이드의 RPC 예: 서버 두 곳에 요청을 보내고 답을 기다림)."""
+(문서의 RPC 예: 서버 두 곳에 요청을 보내고 답을 기다림)."""
 import multiprocessing as mp
 import threading
 import time

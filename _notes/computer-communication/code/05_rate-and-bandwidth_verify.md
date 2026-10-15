@@ -63,7 +63,7 @@ def main() -> None:
     assert L == 10_000 and t10 == F(1, 1000) and t100 == F(1, 10_000) and p == F(15, 1000)
     print(f"[OK] 카드 C2: 전송 {float(t10) * 1e3:g} ms -> {float(t100) * 1e3:g} ms, 전파 {float(p) * 1e3:g} ms (그대로)")
 
-    # 비트 폭 = 1 / R: 1 Mbps -> 1 us, 2 Mbps -> 0.5 us (슬라이드 그림)
+    # 비트 폭 = 1 / R: 1 Mbps -> 1 us, 2 Mbps -> 0.5 us (문서 예시)
     assert F(1, 1_000_000) == F(1, 10**6) and F(1, 2_000_000) == F(5, 10**7)
     # 예제: 100 m 광케이블 -> 0.5 us
     assert d_prop(100, 200_000_000) == F(5, 10**7)

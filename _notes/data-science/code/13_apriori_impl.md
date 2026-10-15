@@ -24,7 +24,6 @@ permalink: "/studies/data-science/code/13_apriori_impl/"
 
 문서: 13.Apriori 알고리즘 (예시, 의사코드, 실행 추적, 정확성, 카드), 11.연관 규칙(규칙 만들기),
       4.연습문제/13.Apriori 예제 사다리 (문제 1~3)
-출처: 데이터 과학 3회 슬라이드 3-1 p.17~24, 3-4 풀이 p.1~2
 입력: 거래 목록(각 거래는 항목 집합), 최소 지지 개수 min_sup(정수).
 출력: {빈발 항목 집합(frozenset): 지지 개수}. 단계별 후보 C_k와 빈발 L_k도 기록한다.
 검사: 모든 부분집합을 세는 무식한 방법과 무작위 자료 300개에서 결과가 같다.
@@ -88,8 +87,8 @@ def brute(db, min_sup):
 
 
 S = lambda *x: frozenset(x)
-TDB = [{"A", "C", "D"}, {"B", "C", "E"}, {"A", "B", "C", "E"}, {"B", "E"}]            # 3-1 p.20
-EX1 = [set("ABE"), set("ABD"), set("BC"), set("BD"), set("AC"), set("BC"), set("AC"), set("ABCE"), set("ABC")]  # 3-1 p.24
+TDB = [{"A", "C", "D"}, {"B", "C", "E"}, {"A", "B", "C", "E"}, {"B", "E"}]            # 문서 예시, 예제 사다리 문제 1
+EX1 = [set("ABE"), set("ABD"), set("BC"), set("BD"), set("AC"), set("BC"), set("AC"), set("ABCE"), set("ABC")]  # 예제 사다리 문제 3의 거래 9개
 
 
 def main():
@@ -102,19 +101,19 @@ def main():
     assert set(tr[1][2]) == {S("A", "C"), S("B", "C"), S("B", "E"), S("C", "E")}
     assert set(tr[2][1]) == {S("B", "C", "E")} and tr[2][2] == {S("B", "C", "E"): 2}
     assert scans == 3
-    print("[OK] p.20 추적: C1 -> L1(D 탈락), C2 6개 -> L2 4개, C3 = {BCE} -> L3 {BCE:2}, DB 3번 훑음")
+    print("[OK] 거래 4개 추적: C1 -> L1(D 탈락), C2 6개 -> L2 4개, C3 = {BCE} -> L3 {BCE:2}, DB 3번 훑음")
 
-    # p.21 후보 생성: L3 = {abc, abd, acd, ace, bcd} -> 결합 abcd, acde -> acde 가지치기
+    # 후보 생성 예: L3 = {abc, abd, acd, ace, bcd} -> 결합 abcd, acde -> acde 가지치기
     L3 = {S(*"abc"), S(*"abd"), S(*"acd"), S(*"ace"), S(*"bcd")}
     assert gen_candidates(L3, 3) == {S(*"abcd")}
-    print("[OK] p.21: abcd만 남고 acde는 ade·cde가 빈발이 아니라 가지치기")
+    print("[OK] 후보 생성: abcd만 남고 acde는 ade·cde가 빈발이 아니라 가지치기")
 
     r = {(s, t): (round(c, 3), ok) for s, t, c, ok in rules(f, "BCE", 0.7)}
     assert r[(("B",), ("C", "E"))] == (0.667, False)
-    assert r[(("C",), ("B", "E"))] == (0.667, False)       # 슬라이드 p.23은 100%로 적음
+    assert r[(("C",), ("B", "E"))] == (0.667, False)       # 2/3은 100%가 아니라 66.7%
     assert r[(("B", "C"), ("E",))] == (1.0, True) and r[(("C", "E"), ("B",))] == (1.0, True)
     assert r[(("B", "E"), ("C",))] == (0.667, False) and r[(("E",), ("B", "C"))] == (0.667, False)
-    print("[OK] p.23 규칙: {C}->{B,E}는 2/3 = 66.7% (슬라이드의 100%는 오기). 강한 규칙은 BC->E, CE->B")
+    print("[OK] BCE의 규칙: {C}->{B,E}는 2/3 = 66.7%(100%가 아니다). 강한 규칙은 BC->E, CE->B")
 
     f1, scans1 = apriori(EX1, 2)
     expect = {S("A"): 6, S("B"): 7, S("C"): 6, S("D"): 2, S("E"): 2, S("A", "B"): 4, S("A", "C"): 4, S("A", "E"): 2,
@@ -126,7 +125,7 @@ def main():
     assert rr[(("A", "B"), ("C",))] == 0.5
     rr2 = {(s, t): round(c, 4) for s, t, c, _ in rules(f1, "ABE", 0.5)}
     assert rr2[(("E",), ("A", "B"))] == 1.0 and rr2[(("A", "E"), ("B",))] == 1.0 and rr2[(("A", "B"), ("E",))] == 0.5
-    print("[OK] 연습 1(3-4 풀이 p.1~2): 빈발 13개, 규칙 신뢰도 33%, 28.6%, 50%, 100% ... (DB 3번 훑음. C4 후보 ABCE는 ACE·BCE가 빈발이 아니라 가지치기)")
+    print("[OK] 예제 사다리 문제 3: 빈발 13개, 규칙 신뢰도 33%, 28.6%, 50%, 100% ... (DB 3번 훑음. C4 후보 ABCE는 ACE·BCE가 빈발이 아니라 가지치기)")
 
     rnd = random.Random(7)
     for _ in range(300):

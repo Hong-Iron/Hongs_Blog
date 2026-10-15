@@ -147,7 +147,7 @@ def main():
     assert gauss_jordan([[4, 7], [2, 6]])[0] == [[F(3, 5), F(-7, 10)], [F(-1, 5), F(2, 5)]]
     assert gauss_jordan([[1, 2], [2, 4]])[0] is None and pivot_count([[1, 2], [2, 4]]) == 1
     print("[OK] 주장 5·예제·카드 C1")
-    # 수치해석(2-2) 과목별 관점: 부분 피벗팅 가우스–조르당, 여인수 역행렬, 슬라이드 예
+    # 수치해석(2-2) 과목별 관점: 부분 피벗팅 가우스–조르당, 여인수 역행렬, 문서의 예
     def gj_pivot(A):
         n = len(A); M = [[F(x) for x in r] + [F(int(i == j)) for j in range(n)] for i, r in enumerate(A)]
         swaps = []

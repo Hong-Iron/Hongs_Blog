@@ -24,7 +24,7 @@ permalink: "/studies/operating-systems/code/06_cache-memory_verify/"
 
 - LRU(least recently used): 마지막으로 쓴 때가 가장 오래된 블록을 내보낸다.
 - LFU(least frequently used): 지금까지 쓴 횟수가 가장 적은 블록을 내보낸다.
-슬라이드 53은 LRU를 "다른 블록보다 덜 쓰인 블록"이라고 적었는데, 그것은 LFU의 설명이다.
+LRU를 "다른 블록보다 덜 쓰인 블록"이라고 설명하면 틀린다. 그것은 LFU의 설명이다.
 """
 from collections import OrderedDict, Counter
 

@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Conditional Structures", "조건 구조", "IF 문 번역", "Block-Structured IF", "복합 조건식", "Compound Expression", "단락 평가", "Short-Circuit Evaluation", "WHILE 루프 번역", "폴스루", "Fall Through"]
 description: "고급 언어의 \"만약 ~이면 이 묶음을 해라\"에는 묶음을 감싸는 괄호가 있다. 기계에게는 괄호가 없고 \"저 줄로 가라\"만 있다. 그래서 \"~이면 해라\"를 \"~이 아니면 이 묶음을 건너뛰어라\"로 뒤집어 쓴다. 이 한 가지 요령으로 갈림, 여러 조건의 묶음, 되풀이를 모두 옮길 수 있다…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/conditional-structures/"
 
 ## 예시로 보기
 
-C++나 Java로는 이렇게 쓴다[^1].
+C++나 Java로는 이렇게 쓴다.
 
 ```
 if( op1 == op2 )
@@ -43,7 +43,7 @@ else
     X = 2;
 ```
 
-어셈블리어에는 `if`도 중괄호도 없다. 있는 것은 [CMP](/Hongs_Blog/studies/assembly-language/test-cmp/)와 [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/), 그리고 레이블뿐이다. 코드는 위에서 아래로 흐르니, "참일 때 할 일"을 바로 아래에 두고 거짓이면 그것을 뛰어넘게 한다[^1].
+어셈블리어에는 `if`도 중괄호도 없다. 있는 것은 [CMP](/Hongs_Blog/studies/assembly-language/test-cmp/)와 [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/), 그리고 레이블뿐이다. 코드는 위에서 아래로 흐르니, "참일 때 할 일"을 바로 아래에 두고 거짓이면 그것을 뛰어넘게 한다.
 
 ```asm
     mov eax,op1
@@ -90,7 +90,7 @@ flowchart TD
 
 ### IF
 
-else가 없는 `if`는 몸통을 건너뛰는 점프 하나면 된다. 값이 모두 부호 없는 수일 때다[^2].
+else가 없는 `if`는 몸통을 건너뛰는 점프 하나면 된다. 값이 모두 부호 없는 수일 때다.
 
 ```
 if( ebx <= ecx )
@@ -108,7 +108,7 @@ if( ebx <= ecx )
 next:
 ```
 
-else가 있으면 두 묶음 가운데 어느 것을 위에 둘지 고를 수 있다. 슬라이드의 풀이는 조건을 뒤집지 않고 "참이면 아래쪽 묶음으로 가라"로 썼다. 값이 32비트 부호 있는 정수일 때다[^3].
+else가 있으면 두 묶음 가운데 어느 것을 위에 둘지 고를 수 있다. 아래 풀이는 조건을 뒤집지 않고 "참이면 아래쪽 묶음으로 가라"로 쓴다. 값이 32비트 부호 있는 정수일 때다.
 
 ```
 if( var1 <= var2 )
@@ -131,18 +131,18 @@ L1: mov var3,10     ; 참일 때 할 일
 L2:
 ```
 
-조건을 뒤집어(`jg L1`) 참일 때 할 일을 위에 두어도 같은 답이 나온다. 이런 문제에는 맞는 풀이가 여럿이다[^3]. `cmp var1,var2`라고 바로 쓰지 않고 EAX를 거치는 것은 `CMP`도 두 피연산자가 모두 메모리일 수는 없기 때문이다([데이터 전송 명령](/Hongs_Blog/studies/assembly-language/data-transfer-instructions/))[^s1].
+조건을 뒤집어(`jg L1`) 참일 때 할 일을 위에 두어도 같은 답이 나온다. 이런 문제에는 맞는 풀이가 여럿이다. `cmp var1,var2`라고 바로 쓰지 않고 EAX를 거치는 것은 `CMP`도 두 피연산자가 모두 메모리일 수는 없기 때문이다([데이터 전송 명령](/Hongs_Blog/studies/assembly-language/data-transfer-instructions/))[^s1].
 
 ### AND로 묶인 조건
 
-고급 언어는 `A AND B`에서 A가 거짓이면 B를 아예 따지지 않는다. 이것을 단락 평가(short-circuit evaluation)라 부른다. 하나만 거짓이어도 전체가 거짓이기 때문이다[^4].
+고급 언어는 `A AND B`에서 A가 거짓이면 B를 아예 따지지 않는다. 이것을 단락 평가(short-circuit evaluation)라 부른다. 하나만 거짓이어도 전체가 거짓이기 때문이다.
 
 ```
 if (al > bl) AND (bl > cl)
     X = 1;
 ```
 
-한 가지 구현은 조건을 뒤집지 않는다. 참이면 다음 검사로 가고, 아니면 `jmp`로 빠져나간다[^5].
+한 가지 구현은 조건을 뒤집지 않는다. 참이면 다음 검사로 가고, 아니면 `jmp`로 빠져나간다.
 
 ```asm
     cmp al,bl       ; 첫째 조건
@@ -157,7 +157,7 @@ L2:                 ; 둘 다 참
 next:
 ```
 
-첫째 조건을 뒤집으면 `ja L1` / `jmp next` 두 줄이 `jbe next` 한 줄이 된다. 참이면 아무 데도 안 뛰고 그대로 아래 검사로 흘러 내려간다(fall through)[^6].
+첫째 조건을 뒤집으면 `ja L1` / `jmp next` 두 줄이 `jbe next` 한 줄이 된다. 참이면 아무 데도 안 뛰고 그대로 아래 검사로 흘러 내려간다(fall through).
 
 ```asm
     cmp al,bl       ; 첫째 조건
@@ -168,9 +168,9 @@ next:
 next:
 ```
 
-명령이 일곱 개에서 다섯 개로 줄었다. $$2 \div 7 \approx 0.29$$, 슬라이드가 말한 "29% 적은 코드"다[^6].
+명령이 일곱 개에서 다섯 개로 줄었다. $$2 \div 7 \approx 0.29$$, 곧 코드가 29% 줄었다.
 
-값이 부호 없는 수일 때의 Your turn[^7].
+값이 부호 없는 수일 때 다음 코드를 옮겨 보라.
 
 ```
 if( ebx <= ecx && ecx > edx )
@@ -198,7 +198,7 @@ next:
 
 ### OR로 묶인 조건
 
-`A OR B`에서는 A가 참이면 B를 따지지 않는다. 하나만 참이어도 전체가 참이기 때문이다[^8].
+`A OR B`에서는 A가 참이면 B를 따지지 않는다. 하나만 참이어도 전체가 참이기 때문이다.
 
 ```
 if (al > bl) OR (bl > cl)
@@ -214,7 +214,7 @@ L1: mov X,1
 next:
 ```
 
-첫째 조건은 뒤집지 않고 "참이면 몸통으로" 뛴다. 마지막 조건만 뒤집어 "거짓이면 건너뛰어라"로 쓴다[^9].
+첫째 조건은 뒤집지 않고 "참이면 몸통으로" 뛴다. 마지막 조건만 뒤집어 "거짓이면 건너뛰어라"로 쓴다.
 
 AND와 OR의 규칙을 나란히 놓으면 이렇다[^s1].
 
@@ -225,7 +225,7 @@ AND와 OR의 규칙을 나란히 놓으면 이렇다[^s1].
 
 ### WHILE
 
-`while`은 `if` 하나, 그 뒤의 몸통, 그 뒤에 맨 위로 돌아가는 무조건 점프다[^10].
+`while`은 `if` 하나, 그 뒤의 몸통, 그 뒤에 맨 위로 돌아가는 무조건 점프다.
 
 ```
 while( eax < ebx)
@@ -247,7 +247,7 @@ flowchart TD
     B -->|"jmp top"| C
 ```
 
-부호 없는 32비트 정수의 Your turn[^11].
+값이 부호 없는 32비트 정수일 때 다음 코드를 옮겨 보라.
 
 ```
 while( ebx <= val1)
@@ -336,7 +336,7 @@ EBX = 0, `val1` = 10으로 시작하면 (5, 9), (10, 8)을 거쳐 EBX = 10, `val
 ## 활용
 
 - 이 기법을 쓸 조건: 조건식이 `CMP`나 `TEST` 한 번으로 플래그에 담기는 견주기들로 이루어져 있다.
-- 이 기법을 떠올릴 신호: 고급 언어 코드나 의사코드를 주고 "어셈블리어로 구현하라"고 한다. 슬라이드의 Your turn이 모두 이 꼴이다.
+- 이 기법을 떠올릴 신호: 고급 언어 코드나 의사코드를 주고 "어셈블리어로 구현하라"고 한다. 이 문서의 연습 두 개도 이 꼴이다.
 - 대표 문제 둘: 복합 조건 `if`(AND, OR)를 가장 짧게 옮기기, `while`을 옮기고 몇 바퀴 도는지 따라가기.
 - 선택지가 아주 많은 갈림(`switch`)은 `CMP`와 점프를 줄줄이 쓰는 대신 표로 바꾼다([표 기반 선택](/Hongs_Blog/studies/assembly-language/table-driven-selection/)).
 - 컴파일러는 이 일을 두 단계로 한다. 먼저 `if`와 `while`을 "조건이면 어디로 가라"와 `goto`로 된 중간 코드로 풀고([3주소 코드](/Hongs_Blog/studies/compilers/three-address-code/)), 그것을 기계의 분기 명령으로 바꾼다. 이 문서의 코드를 점프 자리에서 끊으면 한 덩어리씩 떨어지는데, 그 덩어리가 [기본 블록](/Hongs_Blog/studies/compilers/basic-block-cfg/)이고 위의 순서도가 제어 흐름 그래프다[^s1].
@@ -357,7 +357,7 @@ EBX = 0, `val1` = 10으로 시작하면 (5, 9), (10, 8)을 거쳐 EBX = 10, `val
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"if (a <= b)를 옮길 때는 '이하면 점프'인 jbe를 쓴다"</div>
 
-몸통을 바로 아래에 두는 보통의 꼴에서는 틀렸다. 조건과 같은 이름의 점프를 쓰고 싶은 것은 고급 언어의 `if`가 "참이면 한다"로 읽히기 때문이다. 하지만 점프는 "참이면 **떠난다**"다. 몸통이 바로 아래에 있으면 참일 때 떠나면 안 되고, 거짓일 때 떠나야 한다. 그래서 `a <= b`의 반대인 `ja`를 쓴다. 확인하는 법: EBX = 1, ECX = 5에서 `cmp ebx,ecx` / `jbe next` / `mov eax,5` / `next:`를 따라가면, 조건이 참인데 `mov`를 건너뛴다. `jbe`를 그대로 쓰려면 슬라이드의 if-else 풀이처럼 뛰어간 곳에 참일 때 할 일을 둬야 한다.
+몸통을 바로 아래에 두는 보통의 꼴에서는 틀렸다. 조건과 같은 이름의 점프를 쓰고 싶은 것은 고급 언어의 `if`가 "참이면 한다"로 읽히기 때문이다. 하지만 점프는 "참이면 **떠난다**"다. 몸통이 바로 아래에 있으면 참일 때 떠나면 안 되고, 거짓일 때 떠나야 한다. 그래서 `a <= b`의 반대인 `ja`를 쓴다. 확인하는 법: EBX = 1, ECX = 5에서 `cmp ebx,ecx` / `jbe next` / `mov eax,5` / `next:`를 따라가면, 조건이 참인데 `mov`를 건너뛴다. `jbe`를 그대로 쓰려면 위 if-else 풀이(`jle L1`)처럼 뛰어간 곳에 참일 때 할 일을 둬야 한다.
 
 </div>
 
@@ -399,16 +399,5 @@ EBX = 0, `val1` = 10으로 시작하면 (5, 9), (10, 8)을 거쳐 EBX = 10, `val
 </details>
 
 
-[^1]: 어셈블리어 9회 강의 자료 「wk09-chapt_06-2-1」, p.10 (블록 구조 IF: op1 == op2)
-[^2]: 같은 자료, p.11 (Your turn: 부호 없는 if( ebx <= ecx ))
-[^3]: 같은 자료, p.12 (Your turn: 부호 있는 if-else, 맞는 풀이가 여럿이다)
-[^4]: 같은 자료, p.13 (AND와 단락 평가)
-[^5]: 같은 자료, p.14 (AND의 한 가지 구현)
-[^6]: 같은 자료, p.15 (첫 관계 연산자를 뒤집어 29% 줄인 구현, fall through)
-[^7]: 같은 자료, p.16 (Your turn: ebx <= ecx && ecx > edx)
-[^8]: 같은 자료, p.17 (OR와 단락 평가)
-[^9]: 같은 자료, p.18 (OR의 구현)
-[^10]: 같은 자료, p.19 (WHILE 루프)
-[^11]: 같은 자료, p.20 (Your turn: while( ebx <= val1 ))
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 뒤집은 조건 표, `cmp`가 EAX를 거치는 까닭, AND와 OR의 규칙을 모은 표, Your turn의 값 따라가기와 경계 사례, 증명과 스스로 설명해 보기, 순서도 두 개(원본 p.10, p.19의 코드를 근거로 그렸다), 활용 항목, 오해, 카드 C1~C4는 원본에 없다. 표의 짝이 서로 반대라는 것은 플래그 16가지 조합 전수로, 코드의 결과는 흉내기와 파이썬 `if`·`while`의 대조로 확인했다.
+[^s1]: 표의 짝이 서로 반대라는 것은 플래그 16가지 조합 전수로, 코드의 결과는 흉내기와 파이썬 `if`·`while`의 대조로 확인했다.
 {% endraw %}

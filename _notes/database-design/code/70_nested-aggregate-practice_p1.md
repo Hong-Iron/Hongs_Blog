@@ -23,16 +23,15 @@ permalink: "/studies/database-design/code/70_nested-aggregate-practice_p1/"
 """중첩 질의·집계 연습 p1: 부양가족이 있는 관리자 (SQLite).
 
 문서: 70.중첩 질의·집계 연습의 문제 p1
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.17 (연습 1), 풀이 10-11-SQL-Solutions p.24
-확인: 풀이의 질의(EXISTS 둘)는 Wong, Wallace를 낸다. IN 둘로 쓴 판과 조인으로 쓴 판도 같다.
+확인: 답의 질의(EXISTS 둘)는 Wong, Wallace를 낸다. IN 둘로 쓴 판과 조인으로 쓴 판도 같다.
       변형(부양가족이 없는 관리자)은 Borg다.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - WORKS_ON.Hours에는 NOT NULL을 걸지 않았다. 상태에 (888665555, 20, NULL)이 있다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -123,7 +122,7 @@ def main():
                WHERE EXISTS (SELECT * FROM DEPENDENT WHERE Ssn = Essn)
                  AND EXISTS (SELECT * FROM DEPARTMENT WHERE Ssn = Mgr_ssn)"""
     assert sorted(rows(c, slide)) == [("Franklin", "Wong"), ("Jennifer", "Wallace")]
-    print("[OK] 풀이(EXISTS 둘): Franklin Wong, Jennifer Wallace")
+    print("[OK] 답(EXISTS 둘): Franklin Wong, Jennifer Wallace")
 
     # 하위목표별 중간 결과
     assert sorted(col(c, "SELECT DISTINCT Essn FROM DEPENDENT")) == ["123456789", "333445555", "987654321"]

@@ -203,5 +203,5 @@ $$\sin\frac{5\pi}{6}$$, $$\cos\frac{5\pi}{6}$$을 구한다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 5.2절 "Unit Circle: Sine and Cosine Functions", 5.3절 "The Other Trigonometric Functions", 5.4절 "Right Triangle Trigonometry". 그래프는 6.1절 "Graphs of the Sine and Cosine Functions".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [12_trig-functions_plot.py](/Hongs_Blog/studies/college-math/code/12_trig-functions_plot/)로 그렸고, 그림에 쓴 값($$P(\pi/6) = (\sqrt3/2,\ 1/2)$$, $$\sin(\theta + \pi/2) = \cos\theta$$)을 같은 코드로 확인했다.
+[^s1]: [12_trig-functions_plot.py](/Hongs_Blog/studies/college-math/code/12_trig-functions_plot/)로 그렸고, 그림에 쓴 값($$P(\pi/6) = (\sqrt3/2,\ 1/2)$$, $$\sin(\theta + \pi/2) = \cos\theta$$)을 같은 코드로 확인했다.
 {% endraw %}

@@ -50,7 +50,7 @@ permalink: "/studies/computer-communication/internet-checksum/"
 
 4비트 칸에 두 수를 더하면 결과가 4비트를 넘을 수 있다. `1011`(11) + `0110`(6) = `10001`(17)이다. 다섯째 자리로 1이 넘쳤다.
 
-컴퓨터의 보통 정수 덧셈은 이 넘친 1을 버리고 `0001`만 남긴다. 체크섬에 쓰는 덧셈(1의 보수 덧셈)은 넘친 1을 버리지 않고 맨 아래 자리에 다시 더한다. `0001 + 1 = 0010`이다[^1].
+컴퓨터의 보통 정수 덧셈은 이 넘친 1을 버리고 `0001`만 남긴다. 체크섬에 쓰는 덧셈(1의 보수 덧셈)은 넘친 1을 버리지 않고 맨 아래 자리에 다시 더한다. `0001 + 1 = 0010`이다.
 
 왜 맨 아래에 더할까? 다섯째 자리의 1은 16이다. 이것을 1로 바꿔 더한다는 것은 16을 1로 본다는 뜻이다. $$16 = 15 + 1$$이므로, 이 덧셈은 결국 15로 나눈 나머지를 남기는 계산이다. 실제로 $$11 + 6 = 17$$이고, 17을 15로 나눈 나머지는 2, 곧 `0010`이다. 16비트에서는 같은 원리로 65,535로 나눈 나머지를 남긴다[^s2].
 
@@ -103,7 +103,7 @@ permalink: "/studies/computer-communication/internet-checksum/"
 
 ## 정의
 
-메시지를 16비트 정수의 연속으로 보고, 16비트 1의 보수 덧셈으로 모두 더한 뒤 결과의 1의 보수를 얻는다. 이 16비트 숫자가 체크섬이다[^1].
+메시지를 16비트 정수의 연속으로 보고, 16비트 1의 보수 덧셈으로 모두 더한 뒤 결과의 1의 보수를 얻는다. 이 16비트 숫자가 체크섬이다.
 
 ```c
 u_short cksum(u_short *buf, int count) {
@@ -123,7 +123,7 @@ u_short cksum(u_short *buf, int count) {
 
 워드를 하나 더할 때마다 바로 넘친 1을 접어 넣기 때문에 `sum`은 17비트를 넘지 않는다. 16비트 수 둘을 더한 최댓값은 `0xFFFF + 0xFFFF = 0x1FFFE`라서 넘친 자리는 늘 1 하나뿐이다.
 
-받는 쪽은 받은 워드와 체크섬을 함께 1의 보수로 더해 `0xFFFF`가 나오는지 본다[^s1]. 필기의 요약도 같다. 16비트로 쪼개 더하고, 자리올림을 반영해 1의 보수를 EDC로 넣는다. IP와 TCP에서 쓰고 2계층에서는 쓰지 않는다[^2].
+받는 쪽은 받은 워드와 체크섬을 함께 1의 보수로 더해 `0xFFFF`가 나오는지 본다[^s1]. 요약하면, 16비트로 쪼개 더하고, 자리올림을 반영해 1의 보수를 EDC로 넣는다. IP와 TCP에서 쓰고 2계층에서는 쓰지 않는다.
 
 ## 활용
 
@@ -180,9 +180,7 @@ u_short cksum(u_short *buf, int count) {
 
 </details>
 
-[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 50 "인터넷 체크섬 알고리즘" (수업 슬라이드 캡처)
-[^2]: 컴퓨터 통신 6회 필기 「6주차」, 87~91행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시 표와 카드 C2, 받는 쪽 점검 방법, IPv4 헤더 예와 RFC 1071, 약점과 놓친 비율, 흔한 실수, 카드 C4는 원본에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 체크섬을 쓰는 이유, 1의 보수의 뜻과 $$x + \sim x$$가 모두 1인 이유, 넘친 1을 맨 아래로 더하는 것이 15(16비트에서는 65,535)로 나눈 나머지 계산이라는 설명, 4비트 예, 본문 예시 `0xF0F0 + 0x1234`의 10진수 풀이, 받는 쪽이 모두 1을 얻는 이유와 1비트 오류를 늘 잡는 이유, C 코드의 줄별 설명, 두 약점의 수치 예, 넘친 1을 버릴 때의 두 가지 예는 원본에 없다. [49_internet-checksum_plot.py](/Hongs_Blog/studies/computer-communication/code/49_internet-checksum_plot/)와 구현 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [49_internet-checksum_plot.py](/Hongs_Blog/studies/computer-communication/code/49_internet-checksum_plot/)로 그렸고, 더한 값 `0x10324`, 접은 합 `0x0325`, 체크섬 `0xFCDA`, 받는 쪽 합 `0xFFFF`를 같은 코드로 확인했다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [49_internet-checksum_plot.py](/Hongs_Blog/studies/computer-communication/code/49_internet-checksum_plot/)와 구현 코드로 확인했다.
+[^s3]: [49_internet-checksum_plot.py](/Hongs_Blog/studies/computer-communication/code/49_internet-checksum_plot/)로 그렸고, 더한 값 `0x10324`, 접은 합 `0x0325`, 체크섬 `0xFCDA`, 받는 쪽 합 `0xFFFF`를 같은 코드로 확인했다.
 {% endraw %}

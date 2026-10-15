@@ -21,7 +21,7 @@ permalink: "/studies/rust/"
 - [참조 타입과 메모리 영역](/Hongs_Blog/studies/java/java-reference-types/), [인터페이스](/Hongs_Blog/studies/java/java-interface/) (2-1학기 자바 프로그래밍): 가비지 컬렉터가 있는 언어의 참조와 인터페이스
 - [경쟁 조건과 임계 구역](/Hongs_Blog/studies/operating-systems/race-condition-critical-section/), [모니터](/Hongs_Blog/studies/operating-systems/monitor/) (3-1학기 운영체제): 동시성 단원의 배경
 
-> 강의 자료 없이 공식 문서로 쓴 외부 학습 과목이다. 근거는 The Rust Programming Language, Rust Reference, 표준 라이브러리 문서, Edition Guide, Cargo Book, Clippy 린트 목록, Rust API Guidelines, 공식 릴리스 노트, tokio·axum·sqlx·tracing·thiserror·anyhow 문서, Mara Bos의 *Rust Atomics and Locks*다. 기준은 Rust 2024 에디션과 rustc 1.99.0이다. 코드는 모두 이 컴퓨터(aarch64 Mac)에서 rustfmt, clippy(경고를 오류로), 테스트, 실행을 거쳤고, 컴파일 오류 코드는 코드 안에서 rustc를 불러 확인했다. 의존성 버전은 `_시스템/Rust 계획/harness/Cargo.toml`에 고정했다. 시간을 잰 값은 이 컴퓨터에서 잰 것이라 다른 컴퓨터에서는 다르게 나온다. 9단원까지 개념을 익히고 10단원 캡스톤에서 단축 URL 서비스를 여섯 단계로 키운다.
+> 근거는 The Rust Programming Language, Rust Reference, 표준 라이브러리 문서, Edition Guide, Cargo Book, Clippy 린트 목록, Rust API Guidelines, 공식 릴리스 노트, tokio·axum·sqlx·tracing·thiserror·anyhow 문서, Mara Bos의 *Rust Atomics and Locks*다. 기준은 Rust 2024 에디션과 rustc 1.99.0이다. 코드는 모두 이 컴퓨터(aarch64 Mac)에서 rustfmt, clippy(경고를 오류로), 테스트, 실행을 거쳤고, 컴파일 오류 코드는 코드 안에서 rustc를 불러 확인했다. 의존성 버전은 `_시스템/Rust 계획/harness/Cargo.toml`에 고정했다. 시간을 잰 값은 이 컴퓨터에서 잰 것이라 다른 컴퓨터에서는 다르게 나온다. 9단원까지 개념을 익히고 10단원 캡스톤에서 단축 URL 서비스를 여섯 단계로 키운다.
 
 
 ## 1단원 · 시작과 도구
@@ -262,7 +262,7 @@ CI 설정(YAML), `deny.toml`, Dockerfile, 쿠버네티스 상태 확인 설정�
 - [꼭 구현할 표준 트레이트](/Hongs_Blog/studies/rust/standard-traits/) ↔ [동치관계와 분할](/Hongs_Blog/studies/discrete-math/equivalence-relations/), [부분순서와 위상 정렬](/Hongs_Blog/studies/discrete-math/partial-orders/) (공학수학 이산수학): `Eq`는 동치관계, `Ord`는 전순서의 약속이다
 - [스레드와 Send·Sync](/Hongs_Blog/studies/rust/threads-send-sync/), [채널](/Hongs_Blog/studies/rust/channels/) ↔ [교착상태](/Hongs_Blog/studies/operating-systems/deadlock/), [메시지 전달](/Hongs_Blog/studies/operating-systems/message-passing/) (3-1학기 운영체제): 안전한 Rust는 데이터 경쟁을 컴파일 때 막지만 교착상태와 경쟁 조건은 막지 않는다
 - [tokio 런타임과 태스크](/Hongs_Blog/studies/rust/tokio-runtime-tasks/) ↔ [사용자 수준 스레드와 커널 수준 스레드](/Hongs_Blog/studies/operating-systems/ult-klt/) (3-1학기 운영체제): 운영체제 스레드 몇 개 위에서 태스크 수만 개를 번갈아 돌린다
-- [sqlx로 데이터베이스 쓰기](/Hongs_Blog/studies/rust/sqlx-database/) ↔ [SELECT-FROM-WHERE](/Hongs_Blog/studies/database-design/select-from-where/), [갱신 연산과 제약 위반](/Hongs_Blog/studies/database-design/update-constraint-violations/) (2-2학기 데이터베이스 설계): 수업에서 쓴 SQL을 프로그램에서 안전하게 보내는 법
+- [sqlx로 데이터베이스 쓰기](/Hongs_Blog/studies/rust/sqlx-database/) ↔ [SELECT-FROM-WHERE](/Hongs_Blog/studies/database-design/select-from-where/), [갱신 연산과 제약 위반](/Hongs_Blog/studies/database-design/update-constraint-violations/) (2-2학기 데이터베이스 설계): 손으로 쓰던 SQL을 프로그램에서 안전하게 보내는 법
 - [성능 측정과 최적화](/Hongs_Blog/studies/rust/performance-measurement/) ↔ [지역성의 원리](/Hongs_Blog/studies/computer-architecture/locality-principle/) (2-1학기 컴퓨터 구조): 잰 속도 차이를 캐시와 지역성으로 읽는다
 - [빌드와 배포](/Hongs_Blog/studies/rust/build-deploy/) ↔ [어셈블·링크·실행 과정](/Hongs_Blog/studies/assembly-language/assemble-link-execute/) (2-1학기 어셈블리어): 정적 링크와 동적 링크
 

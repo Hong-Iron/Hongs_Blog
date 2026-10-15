@@ -148,6 +148,6 @@ $$(1 + 2i)(3 - i)$$와 $$\dfrac{1 + 2i}{3 - i}$$를 계산한다.
 
 [^1]: OpenStax, *Precalculus 2e*, 3.1절 "Complex Numbers"
 [^2]: OpenStax, *Precalculus 2e*, 3.6절 "Zeros of Polynomial Functions"(켤레근 정리)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 큐비트 상태 $$\alpha\vert 0\rangle + \beta\vert 1\rangle$$에서 $$\vert \alpha\vert ^2 + \vert \beta\vert ^2 = 1$$이고 $$\vert \alpha\vert ^2$$가 0을 측정할 확률이라는 것은 양자 계산의 표준 서술이다(Nielsen & Chuang, *Quantum Computation and Quantum Information*, 1.2절).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [18_complex-numbers_plot.py](/Hongs_Blog/studies/college-math/code/18_complex-numbers_plot/)로 그렸고, 그림에 쓴 값(두 근이 $$x^2 + 2x + 5 = 0$$을 만족, $$\vert -1 + 2i\vert  = \sqrt5$$)을 같은 코드로 확인했다.
+[^s1]: 큐비트 상태 $$\alpha\vert 0\rangle + \beta\vert 1\rangle$$에서 $$\vert \alpha\vert ^2 + \vert \beta\vert ^2 = 1$$이고 $$\vert \alpha\vert ^2$$가 0을 측정할 확률이라는 것은 양자 계산의 표준 서술이다(Nielsen & Chuang, *Quantum Computation and Quantum Information*, 1.2절).
+[^s2]: [18_complex-numbers_plot.py](/Hongs_Blog/studies/college-math/code/18_complex-numbers_plot/)로 그렸고, 그림에 쓴 값(두 근이 $$x^2 + 2x + 5 = 0$$을 만족, $$\vert -1 + 2i\vert  = \sqrt5$$)을 같은 코드로 확인했다.
 {% endraw %}

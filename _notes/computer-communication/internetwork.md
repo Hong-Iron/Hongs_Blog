@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Internetwork", "인터네트워킹", "internetworking", "네트워크들의 네트워크", "network of networks", "라우터", "router", "게이트웨이", "gateway"]
 description: "따로 만들어진 네트워크 여러 개를 다시 이어서 만든 더 큰 네트워크, 즉 \"네트워크들의 네트워크\"다. 학과 네트워크들을 잇고, 그것을 다시 통신사 네트워크에 잇는 식이다. 이미 있는 네트워크를 그대로 두고 규모를 얼마든지 키울 수 있다. 대신 네트워크마다 기술이 다를 수 있어서, …"
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/internetwork/"
 
 ## 예시로 보기
 
-슬라이드 그림에서 구름 하나가 네트워크 하나다. 구름 사이에 놓인 작은 상자는 두 구름에 동시에 붙어 있다. 이런 상자를 **라우터**(예전 이름은 게이트웨이)라 부른다. 구름 하나에만 붙은 상자는 호스트다[^1][^s1].
+네트워크 여러 개를 구름 여러 개로 그려 보자. 구름 하나가 네트워크 하나다. 구름 사이에 놓인 작은 상자는 두 구름에 동시에 붙어 있다. 이런 상자를 **라우터**(예전 이름은 게이트웨이)라 부른다. 구름 하나에만 붙은 상자는 호스트다[^s1].
 
 구름 안이 어떤 기술로 만들어졌는지는 따지지 않는다. 구름끼리 라우터로 이어졌는지만 본다.
 
@@ -66,7 +66,7 @@ flowchart LR
 
 ## 예제
 
-- 인터네트워크인 것: 인터넷, 학과 네트워크들을 라우터로 이은 캠퍼스 네트워크, 집 안 네트워크와 통신사 네트워크를 잇는 가정용 공유기[^s2]
+- 인터네트워크인 것: 인터넷, 학과 네트워크들을 라우터로 이은 캠퍼스 네트워크, 집 안 네트워크와 통신사 네트워크를 잇는 가정용 공유기
 - 아닌 것: 스위치 하나에 PC들이 붙은 사무실 네트워크 한 개(네트워크가 하나뿐), 두 PC를 직접 이은 [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/)
 
 ## 연결
@@ -83,7 +83,7 @@ flowchart LR
 
 </details>
 
-<details markdown="1"><summary markdown="span"><b>C2</b> 슬라이드의 구름 그림에서 라우터에 해당하는 상자를 어떻게 찾는가? 기준을 쓰라.</summary>
+<details markdown="1"><summary markdown="span"><b>C2</b> 네트워크를 구름으로, 노드를 상자로 그린 인터네트워크 그림에서 라우터인 상자를 어떻게 찾는가? 기준을 쓰라.</summary>
 
 
 **답:** 두 구름(네트워크)에 동시에 선이 이어진 상자가 라우터다. 구름 하나에만 이어진 상자는 호스트다.
@@ -98,8 +98,6 @@ flowchart LR
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks" (필기 29행에 삽입)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 라우터·게이트웨이라는 이름과 재귀적 구성은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절(연결성)의 설명이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예는 원본에 없다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의' 절의 라우터·호스트 구분과 슬라이드 "인터네트워킹(internetworks) ⇒ Network of Networks"의 구름 그림을 바탕으로 그렸다. 네트워크 3개는 설명용으로 고른 수다.
+[^s1]: Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절(연결성)의 설명이다.
+[^s3]: 네트워크 3개는 설명용으로 고른 수다.
 {% endraw %}

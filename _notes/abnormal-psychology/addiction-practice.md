@@ -24,7 +24,7 @@ permalink: "/studies/abnormal-psychology/addiction-practice/"
 {% raw %}
 사용 개념: [물질관련 및 중독 장애](/Hongs_Blog/studies/abnormal-psychology/substance-related-addictive/), [알코올 관련 장애](/Hongs_Blog/studies/abnormal-psychology/alcohol-related-disorders/), [도박장애](/Hongs_Blog/studies/abnormal-psychology/gambling-disorder/), [도박사의 오류 ↔ 독립](/Hongs_Blog/studies/abnormal-psychology/gamblers-fallacy--independence/), [인터넷 게임 장애](/Hongs_Blog/studies/abnormal-psychology/internet-gaming-disorder/)
 
-모든 사례는 가상이다[^s1]. 중독 사례는 다섯 하위목표로 푼다. 이 영역의 진단은 기준 목록의 "개수 세기"라서, 사례의 문장 하나하나를 기준 번호에 대응시키는 연습이 핵심이다.
+모든 사례는 가상이다. 중독 사례는 다섯 하위목표로 푼다. 이 영역의 진단은 기준 목록의 "개수 세기"라서, 사례의 문장 하나하나를 기준 번호에 대응시키는 연습이 핵심이다.
 
 1. *대상:* 물질인가 행위인가. 어떤 물질, 어떤 행위.
 2. *유형:* 사용장애(계속 사용), 중독(최근 섭취 직후의 변화), 금단(중단·감량 뒤의 변화)인가.
@@ -110,7 +110,4 @@ permalink: "/studies/abnormal-psychology/addiction-practice/"
 알코올 사용장애에서 회복한 사람은 대부분 한 모금만으로도 폭음이 재발하므로, 완전한 금주가 현실적인 목표라고 설명한다. AA의 슬로건처럼 첫 번째 잔이 통제력 상실의 방아쇠다. 금주 뒤의 불안과 초조를 다룰 대처 방법과, 술 없이 즐거움을 찾는 일상 활동을 함께 계획한다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 10.파괴적, 충동조절 및 품행장애, 물질관련 및 중독장애.pdf의 장애별 설명(p.46, 49~51, 59~62, 64~75, 77~81)을 적용한 가상 사례다.
 {% endraw %}

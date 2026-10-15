@@ -24,7 +24,7 @@ code_count: 0
 permalink: "/studies/assembly-language/carry-vs-overflow-flag/"
 ---
 {% raw %}
-둘 다 "결과가 칸에 안 들어갔다"를 알린다. 가르는 질문은 "지금 이 비트들을 음수가 없는 수로 쓰고 있는가, 음수가 있는 수로 쓰고 있는가"다. CPU는 이 답을 모르므로 덧셈과 뺄셈마다 두 플래그를 다 정해 둔다[^1]. 프로그래머가 자기 답에 맞는 쪽 하나만 읽는다.
+둘 다 "결과가 칸에 안 들어갔다"를 알린다. 가르는 질문은 "지금 이 비트들을 음수가 없는 수로 쓰고 있는가, 음수가 있는 수로 쓰고 있는가"다. CPU는 이 답을 모르므로 덧셈과 뺄셈마다 두 플래그를 다 정해 둔다. 프로그래머가 자기 답에 맞는 쪽 하나만 읽는다.
 
 ## 어느 쪽일까
 
@@ -50,9 +50,9 @@ permalink: "/studies/assembly-language/carry-vs-overflow-flag/"
 
 | | 올림 플래그 CF | 넘침 플래그 OF |
 |---|---|---|
-| 보는 해석 | 부호 없는 수[^2] | 부호 있는 수(2의 보수)[^3] |
+| 보는 해석 | 부호 없는 수 | 부호 있는 수(2의 보수) |
 | 8비트의 범위 | 0 ~ 255 | −128 ~ 127 |
-| 덧셈에서 켜지는 때 | 참값이 범위보다 크다 | 양수 둘의 합이 음수로, 또는 음수 둘의 합이 양수로 나왔다[^4] |
+| 덧셈에서 켜지는 때 | 참값이 범위보다 크다 | 양수 둘의 합이 음수로, 또는 음수 둘의 합이 양수로 나왔다 |
 | 뺄셈에서 켜지는 때 | 작은 수에서 큰 수를 뺐다(0 아래로 내려갔다) | 부호가 다른 두 수를 뺐는데 결과의 부호가 앞의 수와 다르다[^s1] |
 | 회로가 정하는 법 | 맨 윗자리 비트에서 나간 올림(뺄셈은 뒤집는다) | 맨 윗자리 비트로 들어온 올림 XOR 나간 올림 |
 | `INC`, `DEC` | 바꾸지 않는다[^s1] | 바꾼다 |
@@ -87,9 +87,5 @@ permalink: "/studies/assembly-language/carry-vs-overflow-flag/"
 
 크기를 비교해 갈라질 때도 같은 갈림이 되풀이된다. 부호 없는 비교는 CF를, 부호 있는 비교는 OF와 SF를 읽는다: [부호 있는 비교 점프와 부호 없는 비교 점프](/Hongs_Blog/studies/assembly-language/signed-vs-unsigned-jumps/).
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.1 (CPU는 부호 있는 수와 없는 수를 구별하지 못한다)
-[^2]: 같은 자료, p.3 (Carry Flag: unsigned value that is out of range)
-[^3]: 같은 자료, p.5 (Overflow Flag: signed result is invalid or out of range)
-[^4]: 같은 자료, p.6 (A Rule of Thumb)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 뺄셈에서 OF가 켜지는 조건, `INC`·`DEC` 줄, 네 조합 표와 쌍의 수, 카드 C1~C3은 원본에 없다. 뺄셈 조건과 쌍의 수는 파이썬 흉내의 전수 검사로 확인했다. `INC`·`DEC`가 CF를 바꾸지 않는다는 것은 Intel 64 and IA-32 Architectures Software Developer's Manual, Volume 2의 INC, DEC 항목에 있다. 실제 CPU로 돌린 결과가 아니다.
+[^s1]: 뺄셈 조건과 쌍의 수는 파이썬 흉내의 전수 검사로 확인했다. `INC`·`DEC`가 CF를 바꾸지 않는다는 것은 Intel 64 and IA-32 Architectures Software Developer's Manual, Volume 2의 INC, DEC 항목에 있다. 실제 CPU로 돌린 결과가 아니다.
 {% endraw %}

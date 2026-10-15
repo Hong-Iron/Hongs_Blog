@@ -133,6 +133,6 @@ flowchart LR
 
 [^1]: Wasserman, *All of Statistics*, "Bayesian Inference" 장(사전·사후분포, 사후 평균, 신용구간, 빈도주의와의 비교).
 [^2]: Blitzstein, Hwang, *Introduction to Probability* 2판, 8.3절 "Beta"(베타–이항 켤레, 사전분포의 가상 관측 해석).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [33_bayesian-inference_plot.py](/Hongs_Blog/studies/probability-statistics/code/33_bayesian-inference_plot/)로 그렸고, 그림에 쓴 값(사후 평균 0.8과 $$\frac57 \approx 0.71$$, MAP 0.8, 네 밀도의 넓이 1)을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 베타–이항 켤레 절을 그렸다. 사후분포를 다음 사전분포로 쓰는 차례 갱신은 [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/)의 두 번 연속 양성 예제와 같은 계산이다(Blitzstein·Hwang 2판 2.6절).
+[^s1]: [33_bayesian-inference_plot.py](/Hongs_Blog/studies/probability-statistics/code/33_bayesian-inference_plot/)로 그렸고, 그림에 쓴 값(사후 평균 0.8과 $$\frac57 \approx 0.71$$, MAP 0.8, 네 밀도의 넓이 1)을 같은 코드로 확인했다.
+[^s2]: 이 문서의 베타–이항 켤레 절을 그렸다. 사후분포를 다음 사전분포로 쓰는 차례 갱신은 [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/)의 두 번 연속 양성 예제와 같은 계산이다(Blitzstein·Hwang 2판 2.6절).
 {% endraw %}

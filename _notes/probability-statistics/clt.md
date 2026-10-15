@@ -183,6 +183,6 @@ $$\bar X_n - \mu = \frac{(X_1 + \cdots + X_n) - n\mu}{n}$$이다. 이것을 $$\f
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.3절 "Central limit theorem"(진술, 적률생성함수를 이용한 증명, 이항분포의 정규 근사와 연속성 보정).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 분포가 같지 않은 독립 합의 중심극한정리(린데베르크–펠러 정리)는 측도론적 확률 교재, 예를 들어 Billingsley, *Probability and Measure*의 중심극한정리 절에서 다룬다. 이 과정에서는 진술만 소개한다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [22_clt_plot.py](/Hongs_Blog/studies/probability-statistics/code/22_clt_plot/)로 그렸고, 그림에 쓴 값(예시 표의 최대 CDF 차이, 지수분포 평균의 꼬리 확률 0.041·0.030·0.025)을 같은 코드로 확인했다.
+[^s1]: 분포가 같지 않은 독립 합의 중심극한정리(린데베르크–펠러 정리)는 측도론적 확률 교재, 예를 들어 Billingsley, *Probability and Measure*의 중심극한정리 절에서 다룬다. 이 과정에서는 진술만 소개한다.
+[^s2]: [22_clt_plot.py](/Hongs_Blog/studies/probability-statistics/code/22_clt_plot/)로 그렸고, 그림에 쓴 값(예시 표의 최대 CDF 차이, 지수분포 평균의 꼬리 확률 0.041·0.030·0.025)을 같은 코드로 확인했다.
 {% endraw %}

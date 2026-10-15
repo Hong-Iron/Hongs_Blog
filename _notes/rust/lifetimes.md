@@ -302,5 +302,5 @@ fn evens(v: &[i32]) -> impl Iterator<Item = i32> { v.iter().copied().filter(|x| 
 [^5]: std 문서, `Box::leak` — https://doc.rust-lang.org/std/boxed/struct.Box.html
 [^6]: The Rust Edition Guide, Rust 2024, RPIT lifetime capture rules — https://doc.rust-lang.org/edition-guide/rust-2024/rpit-lifetime-capture.html
 [^7]: Clippy Lints — https://rust-lang.github.io/rust-clippy/stable/index.html. `needless_lifetimes`가 기본으로 경고하는 것은 검증 코드에서, `elidable_lifetime_names`가 pedantic에서 경고하는 것은 rustc 1.99.0의 `clippy-driver`로 따로 확인했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `T: 'static`과 `&'static T`의 구분은 Reference의 Lifetime elision 절과 Book 10.3의 `'static` 설명을 함께 풀어 쓴 것이다. `String`이 `'static` 경계를 만족한다는 것은 rustc로 확인할 수 있는 사실이다(`fn keep<T: 'static>(t: T)`에 `String`은 넘어가고 `&x`는 E0597).
+[^s1]: `T: 'static`과 `&'static T`의 구분은 Reference의 Lifetime elision 절과 Book 10.3의 `'static` 설명을 함께 풀어 쓴 것이다. `String`이 `'static` 경계를 만족한다는 것은 rustc로 확인할 수 있는 사실이다(`fn keep<T: 'static>(t: T)`에 `String`은 넘어가고 `&x`는 E0597).
 {% endraw %}

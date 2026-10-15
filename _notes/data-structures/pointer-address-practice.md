@@ -10,9 +10,9 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
-description: "2주차의 포인터 복습을 손으로 따라가는 네 문제다. 모두 \"코드를 읽고 결과를 예측한다\"는 같은 일을 한다. 답을 펴기 전에 종이에 칸을 그리고 화살표를 그어 본다."
+description: "포인터를 손으로 따라가는 네 문제다. 모두 \"코드를 읽고 결과를 예측한다\"는 같은 일을 한다. 답을 펴기 전에 종이에 칸을 그리고 화살표를 그어 본다."
 prev_url: "/studies/data-structures/step-count-ladder/"
 prev_title: "단계 수 세기 예제 사다리"
 next_url: "/studies/data-structures/array-mapping-ladder/"
@@ -23,7 +23,7 @@ code_count: 1
 permalink: "/studies/data-structures/pointer-address-practice/"
 ---
 {% raw %}
-2주차의 포인터 복습을 손으로 따라가는 네 문제다. 모두 "코드를 읽고 결과를 예측한다"는 같은 일을 한다. 답을 펴기 전에 종이에 칸을 그리고 화살표를 그어 본다[^s1].
+포인터를 손으로 따라가는 네 문제다. 모두 "코드를 읽고 결과를 예측한다"는 같은 일을 한다. 답을 펴기 전에 종이에 칸을 그리고 화살표를 그어 본다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 네 문제와 변형 문제의 답을 C로 컴파일해 실행(ASan·UBSan)해 확인했다 — [05_pointer-address-practice_p4.c](/Hongs_Blog/studies/data-structures/code/05_pointer-address-practice_p4/)</div>
@@ -101,7 +101,7 @@ printf("%d %d %d\n", a, b, **q);
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
 
-1. *식에 넣기:* (가) $$100 + 3 \times 4 = 112$$. 슬라이드의 "arr[0]이 100이면 arr[3]은 112. 왜?"의 답이다[^1]. (나) $$400 + 2 \times 8 = 416$$. (다) $$2000 + 7 \times 2 = 2014$$. (라) $$50 + 9 \times 1 = 59$$.
+1. *식에 넣기:* (가) $$100 + 3 \times 4 = 112$$. "`arr[0]`의 주소가 100이면 `arr[3]`은 왜 112인가"의 답이 이것이다. (나) $$400 + 2 \times 8 = 416$$. (다) $$2000 + 7 \times 2 = 2014$$. (라) $$50 + 9 \times 1 = 59$$.
 2. *포인터끼리 빼기:* (마) 3이다. 포인터의 뺄셈은 사이에 있는 칸 수를 준다. 바이트로는 $$3 \times 4 = 12$$바이트 떨어져 있다.
 3. *포인터에서 번호 붙이기:* (바) `p`는 `arr[2]`를 가리킨다. `p[1]`은 거기서 한 칸 뒤인 `arr[3]`이다.
 
@@ -166,8 +166,8 @@ int main(void)
 ## p4 · 문자열 함수
 
 - (가) 문자열의 길이를 돌려주는 함수 `length`를 포인터로 써라. 번호 `i`를 쓰지 않는다.
-- (나) 슬라이드의 포인터 판 비교 함수[^2]에 `("data", "date")`, `("list", "lis")`, `("heap", "heap")`을 넣으면 각각 무엇을 돌려주는가? 글자의 번호는 `'a'`가 97, `'e'`가 101, `'t'`가 116이다.
-- (다) 슬라이드의 포인터 판 복사 함수[^3]로 `"tree"`를 베끼면 글자를 몇 번 베끼고 포인터를 몇 번 옮기는가?
+- (나) 아래의 포인터 판 비교 함수 `compare`에 `("data", "date")`, `("list", "lis")`, `("heap", "heap")`을 넣으면 각각 무엇을 돌려주는가? 글자의 번호는 `'a'`가 97, `'e'`가 101, `'t'`가 116이다.
+- (다) 아래의 포인터 판 복사 함수 `copy`로 `"tree"`를 베끼면 글자를 몇 번 베끼고 포인터를 몇 번 옮기는가?
 
 ```c
 int compare(const char *s, const char *t)
@@ -225,8 +225,5 @@ int length(const char *s)
 </details>
 
 
-[^1]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.31 (arr[0]의 주소가 100이면 arr[3]은 112. Why?)
-[^2]: 같은 자료, p.34 (strcmp 2: 포인터로 쓴 판)
-[^3]: 같은 자료, p.33 (strcpy B: 포인터로 쓴 판)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 문제와 변형 문제의 코드와 수치는 원본에 없다. 슬라이드 p.26(포인터의 포인터), p.29(swap), p.31(주소 식), p.33~34(문자열 함수)를 연습하도록 만들었다. p4의 `compare`와 `copy`는 슬라이드의 함수에서 이름만 바꾸고 `const`를 붙인 것이다. 답은 변형 문제까지 문제 코드로 확인했다.
+[^s1]: 답은 변형 문제까지 문제 코드로 확인했다.
 {% endraw %}

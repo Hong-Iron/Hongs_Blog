@@ -136,6 +136,6 @@ $$[0, 2\pi)$$에서 $$\sin\theta = \frac12$$을 푼다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 6.3절 "Inverse Trigonometric Functions", 일반해는 7.5절 "Solving Trigonometric Equations"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> atan2는 C·파이썬·자바스크립트 등 대부분의 수학 라이브러리에 있는 함수로, 인자 순서가 $$(y, x)$$다. 코사인 유사도가 1을 넘는 벡터 $$(-0.4, 0.5, 0.2)$$는 검증 코드로 찾아 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [15_inverse-trig_plot.py](/Hongs_Blog/studies/college-math/code/15_inverse-trig_plot/)로 그렸고, 그림에 쓴 값($$\arcsin(1/2) = \pi/6$$, 그림에 찍은 해에서 모두 $$\sin\theta = 1/2$$, $$\arcsin(\sin\frac{2\pi}{3}) = \frac{\pi}{3}$$)을 같은 코드로 확인했다.
+[^s1]: atan2는 C·파이썬·자바스크립트 등 대부분의 수학 라이브러리에 있는 함수로, 인자 순서가 $$(y, x)$$다. 코사인 유사도가 1을 넘는 벡터 $$(-0.4, 0.5, 0.2)$$는 검증 코드로 찾아 확인했다.
+[^s2]: [15_inverse-trig_plot.py](/Hongs_Blog/studies/college-math/code/15_inverse-trig_plot/)로 그렸고, 그림에 쓴 값($$\arcsin(1/2) = \pi/6$$, 그림에 찍은 해에서 모두 $$\sin\theta = 1/2$$, $$\arcsin(\sin\frac{2\pi}{3}) = \frac{\pi}{3}$$)을 같은 코드로 확인했다.
 {% endraw %}

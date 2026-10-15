@@ -237,6 +237,6 @@ $$f(1/q)^q = b$$를 만족하는 수는 $$q$$가 짝수면 양수와 음수 두 
 
 
 [^1]: OpenStax, *Precalculus 2e*, 4.1절 "Exponential Functions"(정의, 밑의 조건, 연속 복리와 $$e$$), 4.2절 "Graphs of Exponential Functions"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 지수 백오프는 이더넷의 충돌 뒤 재전송 등에 쓰이는 방식이다(Kurose & Ross, *Computer Networking*, 6장 다중 접근 프로토콜). 소프트맥스에서 최댓값을 빼는 기법은 수치 계산의 표준 기법이다. `math.exp`의 경계(709와 710)는 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [06_exponential-function_plot.py](/Hongs_Blog/studies/college-math/code/06_exponential-function_plot/)로 그렸고, 그림에 쓴 값($$x = 0$$에서의 기울기 0.6931, 1.0000, 1.0986, $$1.01^{100} \approx 2.70$$, 역전점 $$x = 917$$)을 같은 코드로 확인했다.
+[^s1]: 지수 백오프는 이더넷의 충돌 뒤 재전송 등에 쓰이는 방식이다(Kurose & Ross, *Computer Networking*, 6장 다중 접근 프로토콜). 소프트맥스에서 최댓값을 빼는 기법은 수치 계산의 표준 기법이다. `math.exp`의 경계(709와 710)는 검증 코드로 확인했다.
+[^s2]: [06_exponential-function_plot.py](/Hongs_Blog/studies/college-math/code/06_exponential-function_plot/)로 그렸고, 그림에 쓴 값($$x = 0$$에서의 기울기 0.6931, 1.0000, 1.0986, $$1.01^{100} \approx 2.70$$, 역전점 $$x = 917$$)을 같은 코드로 확인했다.
 {% endraw %}

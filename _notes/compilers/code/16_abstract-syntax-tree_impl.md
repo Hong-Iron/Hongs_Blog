@@ -110,7 +110,7 @@ def bracket(t):
 
 
 def ast_expr(tree, lexemes):
-    """p.55의 의미 동작을 그대로 따른다. lexemes는 id 토큰들의 실제 이름(왼쪽부터)."""
+    """문서의 의미 동작 표를 그대로 따른다. lexemes는 id 토큰들의 실제 이름(왼쪽부터)."""
     names = iter(lexemes)
 
     def go(t):
@@ -131,7 +131,7 @@ def ast_expr(tree, lexemes):
 
 
 def prune(tree, lexemes):
-    """p.51~53의 세 단계로 파스 트리를 줄인다. 의미 동작으로 만든 것과 같은 결과여야 한다."""
+    """문서의 세 단계로 파스 트리를 줄인다. 의미 동작으로 만든 것과 같은 결과여야 한다."""
     names = iter(lexemes)
 
     def step1(t):                                          # 자식이 하나뿐인 노드를 자식으로 바꾼다
@@ -181,7 +181,7 @@ def postorder(a):
 
 
 def ast_while(tokens, lexemes):
-    """p.60: S → while ( C ) { B }, C → id comp id, B → type id ; | id ( ) ;"""
+    """while 문 예: S → while ( C ) { B }, C → id comp id, B → type id ; | id ( ) ;"""
     g = G("S -> while ( C ) { B }\nC -> id comp id\nB -> type id ; | id ( ) ;")
     (tree,) = parse_trees(g, "S", tokens)
     lex = iter(lexemes)
@@ -201,7 +201,7 @@ def ast_while(tokens, lexemes):
 if __name__ == "__main__":
     g = G("E -> E + E | E * E | ( E ) | id")
 
-    # p.49~53, 56~59: (A + B) * C
+    # (A + B) * C
     toks = "( id + id ) * id".split()
     trees = parse_trees(g, "E", toks)
     assert len(trees) == 1
@@ -214,7 +214,7 @@ if __name__ == "__main__":
     assert count_nodes(tree) == 13 and count_nodes(a) == 5
     assert infix(a) == "((A + B) * C)" and postorder(a) == ["A", "B", "+", "C", "*"]
 
-    # p.54: 제목의 (id * id) + id 라면 뿌리가 + 여야 한다. 그림(뿌리가 *)은 (id + id) * id 의 AST다.
+    # (id * id) + id 라면 뿌리가 + 여야 한다. 뿌리가 * 인 나무는 (id + id) * id 의 AST다.
     t2 = parse_trees(g, "E", "( id * id ) + id".split())[0]
     a2 = ast_expr(t2, "ABC")
     assert a2 == ("+", ("*", ("id", "A"), ("id", "B")), ("id", "C"))
@@ -229,11 +229,11 @@ if __name__ == "__main__":
     t4 = parse_trees(g2, "E", "id * id + id".split())[0]
     assert ast_expr(t4, "ABC") == ("+", ("*", ("id", "A"), ("id", "B")), ("id", "C"))
 
-    # 11회 p.8~9: id * id (A, B)
+    # id * id (A, B)
     t5 = parse_trees(g, "E", "id * id".split())[0]
     assert ast_expr(t5, "AB") == ("*", ("id", "A"), ("id", "B"))
 
-    # p.60: while (leftVar < rightVar) { int a; }
+    # while 문 예: while (leftVar < rightVar) { int a; }
     w = ast_while("while ( id comp id ) { type id ; }".split(), ["leftVar", "<", "rightVar", "int", "a"])
     assert w == ("while",
                  ("cond", ("comp", "<", ("id", "leftVar"), ("id", "rightVar"))),

@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Shift-Reduce Parsing", "Bottom-up Parsing", "상향식 파싱", "이동", "Shift", "환원", "Reduce", "Reduction", "이동-환원 충돌", "Shift-Reduce Conflict", "환원-환원 충돌", "Reduce-Reduce Conflict"]
 description: "퍼즐 조각을 왼쪽부터 하나씩 집어 책상에 늘어놓다가, 방금 놓은 몇 조각이 한 덩어리가 되면 바로 묶어 이름표 하나로 바꾸는 방식이다. 입력을 다 읽고 책상에 \"문장 전체\"라는 이름표 하나만 남으면 문법에 맞는 입력이다. 규칙을 미리 찍지 않고 조각을 본 뒤에 묶으니, 위에서 내려…"
@@ -36,12 +36,12 @@ permalink: "/studies/compilers/shift-reduce-parsing/"
 
 위에서 내려오는 파서는 토큰을 한두 개만 보고 어느 규칙을 쓸지 먼저 정해야 한다. `id * id + id`의 첫 토큰 `id`만 봐서는 $$E \to T + E$$인지 $$E \to T$$인지 알 수 없다. 거꾸로 가면 이 고민이 뒤로 밀린다. 토큰을 먼저 읽어 두고, 규칙의 오른쪽이 다 모였을 때 그 규칙으로 묶으면 된다.
 
-강의의 문법은 이것이다[^1].
+예로 쓸 문법은 이것이다.
 
 $$E \to T + E \mid T, \qquad T \to F * T \mid F, \qquad F \to (E) \mid id$$
 
 
-입력 `id * id + id`를 따라간다. 세로 막대 <code>&#124;</code>의 왼쪽이 이미 읽어 책상에 놓은 부분이고, 오른쪽이 아직 안 읽은 부분이다[^2].
+입력 `id * id + id`를 따라간다. 세로 막대 <code>&#124;</code>의 왼쪽이 이미 읽어 책상에 놓은 부분이고, 오른쪽이 아직 안 읽은 부분이다.
 
 | 단계 | 상태 | 한 일 |
 |---|---|---|
@@ -72,20 +72,13 @@ $$E \to T + E \mid T, \qquad T \to F * T \mid F, \qquad F \to (E) \mid id$$
 
 ## 정의
 
-이동-환원 파싱은 아래에서 위로 올라가는 파싱(상향식 파싱)을 하는 방법이다. 파스 트리를 잎(입력 토큰)에서 시작해 뿌리(시작 기호)까지 쌓아 올린다[^1].
+이동-환원 파싱은 아래에서 위로 올라가는 파싱(상향식 파싱)을 하는 방법이다. 파스 트리를 잎(입력 토큰)에서 시작해 뿌리(시작 기호)까지 쌓아 올린다.
 
-**두 가지 생각.** 문자열을 둘로 나누고, 걸음마다 이동이나 환원 중 하나를 한다[^3].
+**두 가지 생각.** 문자열을 둘로 나누고, 걸음마다 이동이나 환원 중 하나를 한다.
 
 - 문자열 $$\omega$$를 왼쪽 부분 $$\alpha$$와 오른쪽 부분 $$\beta$$로 나눈다. 기호로 쓰면 $$\omega = \alpha \mid \beta$$다. $$\alpha$$(알파)에는 터미널과 논터미널이 섞여 있고, $$\beta$$(베타)는 아직 안 읽은 토큰이라 터미널뿐이다.
 - 이동: 막대를 오른쪽으로 한 칸 옮긴다. $$XaY \mid bcd$$가 $$XaYb \mid cd$$가 된다.
-- 환원: 왼쪽 부분의 끝자락이 어떤 규칙의 오른쪽과 같으면, 그 끝자락을 규칙의 왼쪽 기호로 바꾼다. 규칙 $$Z \to Yb$$가 있으면 $$XaYb \mid cd$$가 $$XaZ \mid cd$$가 된다. 이때 끝자락 후보는 $$XaYb$$, $$aYb$$, $$Yb$$, $$b$$ 넷이다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "$$XaYb\vert cd \Rightarrow_{reduce} XaZ\vert cb$$" (7회 슬라이드 p.5) / 문제점: 환원은 막대 왼쪽만 바꾼다. 오른쪽의 `cd`가 `cb`로 바뀔 수 없다 / 수정안: $$XaZ \mid cd$$ / 근거: 같은 슬라이드의 이동 예는 오른쪽을 `cd`로 적었고, 구현에서 환원은 남은 입력을 건드리지 않는다([22_shift-reduce-parsing_impl.py](/Hongs_Blog/studies/compilers/code/22_shift-reduce-parsing_impl/)).
-
-</div>
+- 환원: 왼쪽 부분의 끝자락이 어떤 규칙의 오른쪽과 같으면, 그 끝자락을 규칙의 왼쪽 기호로 바꾼다. 규칙 $$Z \to Yb$$가 있으면 $$XaYb \mid cd$$가 $$XaZ \mid cd$$가 된다. 막대 오른쪽의 $$cd$$는 그대로다. 이때 끝자락 후보는 $$XaYb$$, $$aYb$$, $$Yb$$, $$b$$ 넷이다.
 
 
 ### 입력과 출력
@@ -105,22 +98,22 @@ $$E \to T + E \mid T, \qquad T \to F * T \mid F, \qquad F \to (E) \mid id$$
     둘 다 못 하면 → 오류
 ```
 
-왼쪽 부분은 끝에서만 늘고 끝에서만 줄어든다. 그래서 [스택](/Hongs_Blog/studies/algorithms/stack/)에 담는다[^s1].
+왼쪽 부분은 끝에서만 늘고 끝에서만 줄어든다. 그래서 [스택](/Hongs_Blog/studies/algorithms/stack/)에 담는다.
 
 ### 두 가지 충돌
 
-"결정한다" 줄에서 막히는 경우는 두 가지다[^4].
+"결정한다" 줄에서 막히는 경우는 두 가지다.
 
-| 이름 | 무엇을 못 정하나 | 강의의 예 |
+| 이름 | 무엇을 못 정하나 | 예 |
 |---|---|---|
 | 이동-환원 충돌 | 이동할지 환원할지 | `id\|* id`에서 이동? $$F \to id$$로 환원? |
 | 환원-환원 충돌 | 어느 규칙으로 환원할지 | `F * T\|`에서 $$T \to F * T$$? $$E \to T$$? |
 
-둘째 예에서 $$E \to T$$를 고르면 `F * E`가 되어 더 줄일 수 없다. 이 충돌을 푸는 도구가 [핸들](/Hongs_Blog/studies/compilers/parse-handle/)과 [유효 접두사](/Hongs_Blog/studies/compilers/viable-prefix/)다[^4].
+둘째 예에서 $$E \to T$$를 고르면 `F * E`가 되어 더 줄일 수 없다. 이 충돌을 푸는 도구가 [핸들](/Hongs_Blog/studies/compilers/parse-handle/)과 [유효 접두사](/Hongs_Blog/studies/compilers/viable-prefix/)다.
 
 ### 정확성: 환원을 거꾸로 읽으면 오른쪽 끝 유도다
 
-**주장.** 이동-환원 파서가 받아들이면 입력은 문법의 문장이다. 환원한 규칙을 마지막 것부터 거꾸로 늘어놓으면, 걸음마다 가장 오른쪽 논터미널을 바꾸는 유도(오른쪽 끝 유도)가 된다[^1].
+**주장.** 이동-환원 파서가 받아들이면 입력은 문법의 문장이다. 환원한 규칙을 마지막 것부터 거꾸로 늘어놓으면, 걸음마다 가장 오른쪽 논터미널을 바꾸는 유도(오른쪽 끝 유도)가 된다.
 
 반복마다 계속 맞는 성질(루프 불변식)은 이것이다: "왼쪽 부분과 오른쪽 부분을 이어 붙인 문자열에서 출발해 원래 입력을 유도할 수 있다."[^s2]
 
@@ -136,7 +129,7 @@ $$E \to T + E \mid T, \qquad T \to F * T \mid F, \qquad F \to (E) \mid id$$
 </details>
 
 
-`id * id`에서 환원한 순서는 $$F \to id$$, $$F \to id$$, $$T \to F$$, $$T \to F * T$$, $$E \to T$$다. 문자열로 보면 `id * id` → `F * id` → `F * F` → `F * T` → `T` → `E`다. 거꾸로 읽으면 슬라이드의 오른쪽 끝 유도와 같다[^1].
+`id * id`에서 환원한 순서는 $$F \to id$$, $$F \to id$$, $$T \to F$$, $$T \to F * T$$, $$E \to T$$다. 문자열로 보면 `id * id` → `F * id` → `F * F` → `F * T` → `T` → `E`다. 거꾸로 읽으면 아래 오른쪽 끝 유도가 된다.
 
 $$E \Rightarrow_{rm} T \Rightarrow_{rm} F * T \Rightarrow_{rm} F * F \Rightarrow_{rm} F * id \Rightarrow_{rm} id * id$$
 
@@ -227,7 +220,7 @@ $$\Rightarrow_{rm}$$은 "가장 오른쪽(rightmost) 논터미널을 바꾸는 �
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C2** 강의의 문법으로 `id + id`를 이동-환원 파싱하라. 상태(막대 포함)와 한 일을 차례로 쓰라.</summary>
+<summary class="callout-title" markdown="span">**C2** 위 문법으로 `id + id`를 이동-환원 파싱하라. 상태(막대 포함)와 한 일을 차례로 쓰라.</summary>
 
 **답:** <code>&#124;id + id</code> 이동 → <code>id&#124;+ id</code> $$F \to id$$ → <code>F&#124;+ id</code> $$T \to F$$ → <code>T&#124;+ id</code> 이동 → <code>T +&#124;id</code> 이동 → <code>T + id&#124;</code> $$F \to id$$ → <code>T + F&#124;</code> $$T \to F$$ → <code>T + T&#124;</code> $$E \to T$$ → <code>T + E&#124;</code> $$E \to T + E$$ → <code>E&#124;</code> 받아들임.<br>
 **이유:** 넷째 줄 <code>T&#124;+ id</code>에서 $$E \to T$$로 환원하면 `E +`가 되어 막힌다. 이 문법에서 `+`의 왼쪽에는 `T`만 온다. 이동 3번, 환원 6번이다[^s2].
@@ -259,11 +252,6 @@ $$\Rightarrow_{rm}$$은 "가장 오른쪽(rightmost) 논터미널을 바꾸는 �
 </details>
 
 
-[^1]: 컴파일러 7회 강의 자료 「Lecture07 Syntax analysis part 4」, p.3~4 (상향식 파싱의 뜻, 문법, `id * id`의 오른쪽 끝 유도와 파스 트리)
-[^2]: 같은 자료, p.6 (`id * id + id`의 상태와 동작 표). 슬라이드는 10~13단계의 환원 넷을 "<code>T + id&#124;</code> Reduce by $$F \to id, T \to F, E \to T, E \to T + E$$" 한 줄에 적었다.
-[^3]: 같은 자료, p.5 (두 가지 핵심 생각, 이동과 환원의 예)
-[^4]: 같은 자료, p.7~8 (두 가지 충돌과 예, 핸들과 유효 접두사를 배워야 한다는 말)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 7회 슬라이드의 이 부분은 스택을 말하지 않는다. 8회 슬라이드 p.22~34가 스택으로 구현한다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 6회 슬라이드가 없어 7회 p.3~8의 요약만 원본 근거다. 표의 10~13단계를 줄마다 나눈 것, 3단계에서 환원하면 막히는 이유, 루프 불변식과 증명, 스스로 설명해 보기, 이동·환원 횟수, 오해 항목의 `E * E` 예, 카드 C2·C4·C5는 원본에 없다. 구현 코드로 슬라이드 표를 다시 만들고 전수 비교로 확인했다. 근거: Aho·Lam·Sethi·Ullman, *Compilers: Principles, Techniques, and Tools* 2판, 4.5 "Bottom-Up Parsing".
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> LR이라는 이름의 뜻은 7회 슬라이드에 없다. 5회 슬라이드 p.6이 LL의 두 글자를 같은 방식으로 풀고, 7회 p.32부터 "LR(0) parsing"이라는 이름을 쓴다. 근거: 같은 책 4.5~4.6.
+[^s2]: 근거: Aho·Lam·Sethi·Ullman, *Compilers: Principles, Techniques, and Tools* 2판, 4.5 "Bottom-Up Parsing".
+[^s3]: 근거: 같은 책 4.5~4.6.
 {% endraw %}

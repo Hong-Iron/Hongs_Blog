@@ -22,7 +22,7 @@ permalink: "/studies/computer-communication/code/41_nrzi-manchester_plot/"
 ```python
 # NRZI와 맨체스터 문서의 그림을 만든다: 41_nrzi-manchester_fig1.svg ~ fig3.svg
 # 실행: ~/.venvs/vault-plots/bin/python 41_nrzi-manchester_plot.py  (matplotlib, numpy 필요)
-#   fig1: 슬라이드 비트열의 NRZ, 클럭, 맨체스터, NRZI 네 줄 (슬라이드 38 그림을 규칙대로 다시 계산)
+#   fig1: 예시 비트열의 NRZ, 클럭, 맨체스터, NRZI 네 줄 (규칙대로 계산)
 #   fig2: 실행 추적 표의 10110을 NRZI(처음 낮음)와 맨체스터로. 반 칸 값과 한가운데 전이
 #   fig3: 효율 50%의 이유. NRZ가 가장 자주 바뀌는 열과 맨체스터가 가장 자주 바뀌는 열
 import os
@@ -109,7 +109,7 @@ def flat_runs(halves):
 # ---- 공통 도구 끝 ----
 
 
-# ---- 인코딩 규칙 (슬라이드 38·39) ----
+# ---- 인코딩 규칙 ----
 def nrz(bits):
     return [int(b) for b in bits for _ in range(2)]
 
@@ -234,7 +234,7 @@ save(fig, 3)
 
 
 if __name__ == "__main__":
-    # 그림 1: 슬라이드 38 그림과 같은 모양 (구현 코드의 값과 같다)
+    # 그림 1: 예시 비트열 네 줄 (구현 코드의 값과 같다)
     assert draw(nrz(SLIDE)) == "____‾‾__‾‾‾‾‾‾‾‾__‾‾________‾‾__"
     assert draw(manchester(SLIDE)) == "_‾_‾‾__‾‾_‾_‾_‾__‾‾__‾_‾_‾_‾‾__‾"
     assert draw(nrzi(SLIDE)) == "_____‾‾‾‾__‾‾__‾‾‾‾__________‾‾‾"

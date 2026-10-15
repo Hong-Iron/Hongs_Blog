@@ -316,6 +316,6 @@ assert_eq!(v, ???);
 [^3]: std 문서, `std::marker::Copy` (공유 참조는 Copy, `&mut T`는 Copy가 아님) — https://doc.rust-lang.org/std/marker/trait.Copy.html
 [^4]: The Rustonomicon, Lifetimes (The area covered by a lifetime: 참조는 만든 곳부터 마지막 사용까지 살아 있다, destructor가 있으면 범위 끝도 사용) — https://doc.rust-lang.org/nomicon/lifetimes.html
 [^5]: The Rustonomicon, Aliasing (`compute` 예) — https://doc.rust-lang.org/nomicon/aliasing.html
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다시 빌리기, 두 단계 빌림, 필드별 빌림과 메서드 빌림의 차이는 여기서 열어 본 1차 자료에 절로 정리되어 있지 않다. Reference의 Expressions 절은 메서드 호출의 왼쪽 피연산자가 암묵적으로 빌려진다는 것만 적는다(https://doc.rust-lang.org/reference/expressions.html). 문서의 동작은 모두 rustc 1.99.0으로 컴파일해 확인한 실험 결과다. "예약"이라는 설명은 동작을 풀어 쓴 것이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `ptr_arg`가 기본으로 경고하는 것은 rustc 1.99.0의 `clippy-driver`로 확인했다([09_slices-strings_verify.rs](/Hongs_Blog/studies/rust/code/09_slices-strings_verify/)). `needless_borrow`도 같은 방법으로 기본 경고를 확인했다([07_borrowing-references_verify.rs](/Hongs_Blog/studies/rust/code/07_borrowing-references_verify/)).
+[^s1]: 다시 빌리기, 두 단계 빌림, 필드별 빌림과 메서드 빌림의 차이는 여기서 열어 본 1차 자료에 절로 정리되어 있지 않다. Reference의 Expressions 절은 메서드 호출의 왼쪽 피연산자가 암묵적으로 빌려진다는 것만 적는다(https://doc.rust-lang.org/reference/expressions.html). 문서의 동작은 모두 rustc 1.99.0으로 컴파일해 확인한 실험 결과다. "예약"이라는 설명은 동작을 풀어 쓴 것이다.
+[^s2]: `ptr_arg`가 기본으로 경고하는 것은 rustc 1.99.0의 `clippy-driver`로 확인했다([09_slices-strings_verify.rs](/Hongs_Blog/studies/rust/code/09_slices-strings_verify/)). `needless_borrow`도 같은 방법으로 기본 경고를 확인했다([07_borrowing-references_verify.rs](/Hongs_Blog/studies/rust/code/07_borrowing-references_verify/)).
 {% endraw %}

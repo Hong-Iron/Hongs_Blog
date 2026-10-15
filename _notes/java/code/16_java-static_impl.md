@@ -25,7 +25,7 @@ permalink: "/studies/java/code/16_java-static_impl/"
 // 문서 「static 멤버」의 예제 출력과 카드 답을 실제 실행 결과와 비교한다.
 
 class StaticCheck {
-    // 슬라이드 p.4: 객체를 만들지 않고 클래스 이름으로 쓴다
+    // 문서의 Calculator: 객체를 만들지 않고 클래스 이름으로 쓴다
     static void calculator() {
         double result1 = 10 * 10 * Calculator.pi;
         int result2 = Calculator.plus(10, 5);
@@ -53,7 +53,7 @@ class StaticCheck {
         System.out.println(Table.squares[3]);
     }
 
-    // 슬라이드 p.6: 정적 메서드에서 인스턴스 멤버를 쓰려면 객체부터 만든다
+    // 정적 메서드에서 인스턴스 멤버를 쓰려면 객체부터 만든다
     static void viaObject() {
         System.out.println(Robot.makeAndUse());
     }

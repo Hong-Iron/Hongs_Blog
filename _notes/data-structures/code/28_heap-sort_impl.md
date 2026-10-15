@@ -166,7 +166,7 @@ static void compareWithQsort(const int *src, int n, const char *what)
 
 int main(void)
 {
-    /* 1. 슬라이드 p.60~64: 6, 8, 2, 4, 1 */
+    /* 1. 문서 예시: 6, 8, 2, 4, 1 */
     {
         int a[] = {6, 8, 2, 4, 1}, heap[6], size = 0;
         const int afterPush[] = {8, 6, 2, 4, 1};
@@ -174,12 +174,12 @@ int main(void)
         check(memcmp(heap + 1, afterPush, sizeof(afterPush)) == 0, "다 넣은 뒤의 힙 [8, 6, 2, 4, 1]");
         int sorted[5] = {0, 0, 0, 0, 0};
         sorted[4] = popMax(heap, &size);
-        check(sorted[4] == 8 && size == 4, "p.62 첫 꺼내기: 맨 오른쪽 칸에 8");
+        check(sorted[4] == 8 && size == 4, "첫 꺼내기: 맨 오른쪽 칸에 8");
         sorted[3] = popMax(heap, &size);
-        check(sorted[3] == 6 && size == 3, "p.63 둘째 꺼내기: 그 왼쪽 칸에 6");
+        check(sorted[3] == 6 && size == 3, "둘째 꺼내기: 그 왼쪽 칸에 6");
         for (int i = 2; i >= 0; i--) sorted[i] = popMax(heap, &size);
         const int want[] = {1, 2, 4, 6, 8};
-        check(memcmp(sorted, want, sizeof(want)) == 0 && size == 0, "p.64 다섯 번 꺼낸 뒤 1 2 4 6 8");
+        check(memcmp(sorted, want, sizeof(want)) == 0 && size == 0, "다섯 번 꺼낸 뒤 1 2 4 6 8");
         pqSort(a, 5);
         check(memcmp(a, want, sizeof(want)) == 0, "pqSort 결과");
     }

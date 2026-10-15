@@ -55,12 +55,12 @@ class GenericsImpl {
         public Object content;
     }
 
-    // 슬라이드 p.4 Box<T>
+    // 문서의 Box<T>
     static class Box<T> {
         public T content;
     }
 
-    // 슬라이드 p.6 Product<K, M>
+    // 문서의 Product<K, M>
     static class Product<K, M> {
         private K kind;
         private M model;
@@ -73,14 +73,14 @@ class GenericsImpl {
     static class Tv {}
     static class Car {}
 
-    // 슬라이드 p.8 boxing
+    // 문서의 제네릭 메서드 boxing
     public static <T> Box<T> boxing(T t) {
         Box<T> box = new Box<>();
         box.content = t;
         return box;
     }
 
-    // 슬라이드 p.9 ClassName<E>
+    // 문서의 ClassName<E>
     static class ClassName<E> {
         private E element;
 
@@ -101,7 +101,7 @@ class GenericsImpl {
             return o;
         }
     }
-    static void slideP9() {
+    static void classNameExample() {
         ClassName<String> a = new ClassName<>();
         ClassName<Integer> b = new ClassName<>();
 
@@ -140,39 +140,39 @@ class GenericsImpl {
         }
         check(blewUp, "Object 상자: 잘못 꺼내면 ClassCastException(실행 중)");
 
-        // 2. p.4
+        // 2. Box<T>
         Box<String> box1 = new Box<>();
         box1.content = "hello world!";
         String str = box1.content;          // 강제 변환이 없다
-        check(str.equals("hello world!"), "p.4: Box<String>에서 String을 그대로 꺼낸다");
+        check(str.equals("hello world!"), "Box<String>에서 String을 그대로 꺼낸다");
 
-        // 3. p.6
+        // 3. Product<K, M>
         Product<Tv, String> product1 = new Product<>();
         Tv tv1 = new Tv();
         product1.setKind(tv1);
         product1.setModel("Smart Tv");
         Tv tv2 = product1.getKind();
         String tvModel = product1.getModel();
-        check(tv2 == tv1 && tvModel.equals("Smart Tv"), "p.6: Product<Tv, String>");
+        check(tv2 == tv1 && tvModel.equals("Smart Tv"), "Product<Tv, String>");
         Car car1 = new Car();
         Product<Car, String> product2 = new Product<>();
         product2.setKind(car1);
         product2.setModel("SUV");
         Car car2 = product2.getKind();
         String carModel = product2.getModel();
-        check(car2 == car1 && carModel.equals("SUV"), "p.6: Product<Car, String>");
+        check(car2 == car1 && carModel.equals("SUV"), "Product<Car, String>");
 
-        // 4. p.8: 인자를 보고 T를 정한다
+        // 4. boxing: 인자를 보고 T를 정한다
         Box<Integer> b1 = boxing(100);
         Box<String> b2 = boxing("안녕하세요");
-        check(b1.content == 100 && b2.content.equals("안녕하세요"), "p.8: boxing(100), boxing(\"안녕하세요\")");
+        check(b1.content == 100 && b2.content.equals("안녕하세요"), "boxing(100), boxing(\"안녕하세요\")");
         check(((Object) b1.content).getClass() == Integer.class, "boxing(100)의 내용물은 Integer(int가 아니다)");
 
-        // 5. p.9
-        same(capture(GenericsImpl::slideP9),
-                "java.lang.String\njava.lang.Integer\njava.lang.Integer\njava.lang.String\n", "p.9 출력");
+        // 5. ClassName<E>
+        same(capture(GenericsImpl::classNameExample),
+                "java.lang.String\njava.lang.Integer\njava.lang.Integer\njava.lang.String\n", "ClassName<E> 예제 출력");
 
-        // 6. 타입을 안 적으면 Object로 다룬다 (p.5)
+        // 6. 타입을 안 적으면 Object로 다룬다
         Box raw = new Box();
         raw.content = "x";
         Object o = raw.content;             // String이 아니라 Object로만 꺼낼 수 있다

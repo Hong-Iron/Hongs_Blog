@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/41_selection-sort_verify/"
 
 실행: python3 41_selection-sort_verify.py
 문서: 41.선택 정렬 (복잡도 절, 삽입 정렬과 견주는 표, 카드 C3)
-출처: 자료구조 14주차 슬라이드 p.5
 
 주장
   1. 모든 순열(n <= 7)에서 비교 횟수는 늘 n(n - 1)/2다. 입력이 정렬되어 있어도 줄지 않는다.

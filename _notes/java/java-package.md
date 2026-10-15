@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Package", "Java Package", "package 선언", "import", "Import Statement", "전체 이름", "Fully Qualified Name"]
 description: "같은 반에 민수가 둘이면 \"김민수\", \"이민수\"처럼 성을 붙여 부른다. 클래스에도 성을 붙여서, 서로 다른 회사가 똑같은 이름으로 만든 클래스를 한 프로그램에서 함께 쓸 수 있다. 성은 폴더 구조와 짝이 맞아야 해서, 번역해 나온 파일을 다른 폴더로 옮기면 그 클래스를 찾지 못한다…"
@@ -34,7 +34,7 @@ permalink: "/studies/java/java-package/"
 
 ## 예시로 보기
 
-내가 만든 `Car` 클래스가 있는데, 가져다 쓰려는 다른 회사 코드에도 `Car`가 있다. 이름만으로는 `new Car()`가 어느 쪽인지 가릴 수 없다. 자바는 클래스를 패키지라는 묶음에 넣고, 패키지 이름을 클래스 이름 앞에 붙여 가른다. 슬라이드의 그림대로 만들어 본다[^1].
+내가 만든 `Car` 클래스가 있는데, 가져다 쓰려는 다른 회사 코드에도 `Car`가 있다. 이름만으로는 `new Car()`가 어느 쪽인지 가릴 수 없다. 자바는 클래스를 패키지라는 묶음에 넣고, 패키지 이름을 클래스 이름 앞에 붙여 가른다. 다음 폴더 구조로 만들어 본다.
 
 ```
 src/
@@ -103,7 +103,7 @@ com.yourcompany.Car
 
 ## 정의
 
-**패키지**는 이름이 같은 클래스를 가려내는 데 쓰는 묶음이다[^1].
+**패키지**는 이름이 같은 클래스를 가려내는 데 쓰는 묶음이다.
 
 - 패키지 이름은 보통 회사의 도메인 이름을 거꾸로 써서 만든다. 도메인은 세상에 하나뿐이라 서로 겹치지 않는다.
 - 점(`.`)으로 위 패키지와 아래 패키지를 나눈다. `com.mycompany`는 `com` 아래의 `mycompany`다.
@@ -119,7 +119,7 @@ flowchart TD
     hk --> t["Tire.class<br/>com.hankook.Tire"]
 ```
 
-폴더를 위에서부터 따라 내려간 길이 곧 클래스의 전체 이름이다[^s2].
+폴더를 위에서부터 따라 내려간 길이 곧 클래스의 전체 이름이다.
 
 마지막 항목을 실험으로 확인한다. `out/com/mycompany/Car.class`를 `out/com/other/`로 옮기고 다시 실행하면 이렇게 된다[^s1].
 
@@ -131,7 +131,7 @@ Exception in thread "main" java.lang.NoClassDefFoundError: com/mycompany/Car
 
 ### 패키지 선언
 
-`package` 키워드 뒤에 패키지 이름을 적는다. 소스 파일의 맨 위에 와야 한다[^2].
+`package` 키워드 뒤에 패키지 이름을 적는다. 소스 파일의 맨 위에 와야 한다.
 
 ```java
 package 상위패키지.하위패키지;
@@ -144,7 +144,7 @@ public class 클래스명 { ... }
 
 ### import 문
 
-다른 패키지의 클래스를 쓰려면 `import` 문으로 그 클래스가 어느 패키지의 것인지 밝힌다[^3].
+다른 패키지의 클래스를 쓰려면 `import` 문으로 그 클래스가 어느 패키지의 것인지 밝힌다.
 
 - `import` 문은 패키지 선언과 클래스 선언 사이에 쓴다.
 - `import` 뒤에는 클래스의 전체 이름을 적는다: `import com.hankook.Tire;`
@@ -200,9 +200,5 @@ public class 클래스명 { ... }
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 7회 강의 자료 「Software Project 07. Class (2)」, p.9 (Java Packages, `com/mycompany/Car.class`와 `com/yourcompany/Car.class` 폴더 그림, 옮긴 `Car.class`에 X 표시)
-[^2]: 같은 자료, p.10 (Package declaration)
-[^3]: 같은 자료, p.11 (Import statement, `package com.mycompany; import com.hankook.Tire;` 예)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에는 폴더 그림과 `Car`의 코드 조각만 있다. 네 파일의 전체 코드, 명령과 출력, 옮긴 파일의 오류, 오류 표, 전체 이름으로 직접 쓰기, `java.lang`·`java.util.Date`·이름 없는 패키지, 카드 C2·C3은 원본에 없다. 패키지 폴더를 만들어 JDK 21에서 직접 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 슬라이드 p.9의 폴더 그림에 `hankook`(p.11)과 전체 이름을 보태 다시 그린 것이다.
+[^s1]: 패키지 폴더를 만들어 JDK 21에서 직접 실행해 확인했다.
 {% endraw %}

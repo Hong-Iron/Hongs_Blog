@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Procedure Parameters", "프로시저 매개변수", "레지스터 매개변수", "Register Parameters", "USES", "USES 연산자", "레지스터 보존", "지역 레이블", "Local Label", "전역 레이블", "Global Label"]
 description: "심부름을 시킬 때 \"식탁 위의 그 봉투를 부쳐 줘\"라고 하면 그 봉투만 부칠 수 있다. \"내가 건네는 봉투를 부쳐 줘\"라고 하면 어떤 봉투든 된다. 프로시저도 다룰 자료의 이름을 코드에 박아 두지 않고, 부르는 쪽이 약속한 레지스터에 자료의 위치와 개수를 담아 건네면 어떤 자료에나…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/procedure-register-parameters/"
 
 ## 예시로 보기
 
-배열의 합을 구하는 프로시저를 처음에는 이렇게 쓰기 쉽다[^1].
+배열의 합을 구하는 프로시저를 처음에는 이렇게 쓰기 쉽다.
 
 ```asm
 ArraySum PROC
@@ -49,9 +49,9 @@ L1: add eax,myArray[esi]
 ArraySum ENDP
 ```
 
-`myArray`와 `theSum`이라는 이름이 코드에 박혀 있다. 프로그램에 배열이 둘, 셋이면 어떻게 할까?[^1] 이 프로시저로는 `myArray`밖에 못 더한다. 배열마다 프로시저를 하나씩 복사해야 한다.
+`myArray`와 `theSum`이라는 이름이 코드에 박혀 있다. 프로그램에 배열이 둘, 셋이면 어떻게 할까? 이 프로시저로는 `myArray`밖에 못 더한다. 배열마다 프로시저를 하나씩 복사해야 한다.
 
-이름 대신 레지스터로 받게 고친다[^2].
+이름 대신 레지스터로 받게 고친다.
 
 ```asm
 ArraySum PROC
@@ -88,13 +88,13 @@ ArraySum ENDP
 
 ## 레지스터로 주고받기
 
-좋은 프로시저는 여러 프로그램에서 쓸 수 있다. 특정 변수 이름을 가리키면 그럴 수 없다. 받는 값(매개변수)은 실행할 때마다 달라질 수 있어서 프로시저를 어디에나 쓸 수 있게 한다[^3].
+좋은 프로시저는 여러 프로그램에서 쓸 수 있다. 특정 변수 이름을 가리키면 그럴 수 없다. 받는 값(매개변수)은 실행할 때마다 달라질 수 있어서 프로시저를 어디에나 쓸 수 있게 한다.
 
 어느 레지스터로 무엇을 받고 무엇을 돌려주는지는 프로시저 머리의 주석(Receives, Returns)에 적는다([프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/)). 어셈블러는 이것을 검사해 주지 않는다. 부르는 쪽이 주석을 읽고 맞춰야 한다[^s1].
 
 ## USES: 레지스터를 치우고 되돌리기
 
-위의 `ArraySum`은 일하면서 ESI를 배열 끝으로 옮기고 ECX를 0으로 만든다. 부른 쪽이 그 레지스터를 계속 쓰고 있었다면 값이 망가진다. 프로시저가 들어올 때 올려 두고 나갈 때 내리면 된다. `PROC` 뒤에 `USES`와 레지스터 이름을 적으면 MASM이 그 코드를 대신 만든다[^4].
+위의 `ArraySum`은 일하면서 ESI를 배열 끝으로 옮기고 ECX를 0으로 만든다. 부른 쪽이 그 레지스터를 계속 쓰고 있었다면 값이 망가진다. 프로시저가 들어올 때 올려 두고 나갈 때 내리면 된다. `PROC` 뒤에 `USES`와 레지스터 이름을 적으면 MASM이 그 코드를 대신 만든다.
 
 ```asm
 ArraySum PROC USES esi ecx
@@ -102,7 +102,7 @@ ArraySum PROC USES esi ecx
     etc.
 ```
 
-MASM은 이것을 다음처럼 바꾼다. `push`와 `pop` 네 줄이 MASM이 넣은 것이다[^4].
+MASM은 이것을 다음처럼 바꾼다. `push`와 `pop` 네 줄이 MASM이 넣은 것이다.
 
 ```asm
 ArraySum PROC
@@ -116,7 +116,7 @@ ArraySum PROC
 ArraySum ENDP
 ```
 
-적은 순서대로 올리고, 거꾸로 순서로 내린다. 레지스터 이름 사이에는 쉼표를 쓰지 않는다. 11주차 슬라이드의 `MySub1 PROC USES ecx edx`도 `push ecx`, `push edx`, `pop edx`, `pop ecx`, `ret`이 된다[^5].
+적은 순서대로 올리고, 거꾸로 순서로 내린다. 레지스터 이름 사이에는 쉼표를 쓰지 않는다. 예를 들어 `MySub1 PROC USES ecx edx`는 `push ecx`, `push edx`, `pop edx`, `pop ecx`, `ret`이 된다.
 
 이 프로시저 안에서 스택은 어떻게 되어 있을까? 복귀 주소 위에 레지스터 둘이 더 올라가 있다. ESP가 00001000h일 때 부르면 몸통을 도는 동안 ESP는 00000FF4h다[^s1].
 
@@ -130,7 +130,7 @@ ArraySum ENDP
 
 ## 레이블이 보이는 범위
 
-프로시저는 레이블의 울타리이기도 하다. 쌍점 하나로 만든 레이블(`L2:`)은 지역 레이블이라, 같은 프로시저 안의 문장에서만 보인다. 쌍점 둘로 만든 레이블(`L1::`)은 전역 레이블이라 어디서나 보인다[^6].
+프로시저는 레이블의 울타리이기도 하다. 쌍점 하나로 만든 레이블(`L2:`)은 지역 레이블이라, 같은 프로시저 안의 문장에서만 보인다. 쌍점 둘로 만든 레이블(`L1::`)은 전역 레이블이라 어디서나 보인다.
 
 ```asm
 main PROC
@@ -191,11 +191,5 @@ sub2 ENDP
 </details>
 
 
-[^1]: 어셈블리어 6회 강의 자료 「wk06-chapt_05-3-3」, p.12 (변수 이름이 박힌 ArraySum, 배열이 둘 셋이면?)
-[^2]: 같은 자료, p.13 (ESI와 ECX로 받는 ArraySum)
-[^3]: 같은 자료, p.11 (매개변수가 프로시저를 어디에나 쓸 수 있게 한다)
-[^4]: 같은 자료, p.14 (USES 연산자와 MASM이 만드는 코드)
-[^5]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-1」, p.5 (MySub1 PROC USES ecx edx가 만드는 코드)
-[^6]: 어셈블리어 6회 강의 자료 「wk06-chapt_05-3-3」, p.10 (지역 레이블과 전역 레이블)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부르는 쪽 코드와 `arrA`·`arrB`의 값, 어셈블러가 주석을 검사하지 않는다는 점, 몸통에서의 스택 그림, EAX를 USES에 넣을 때의 문제, 같은 레이블 이름을 프로시저마다 다시 쓸 수 있다는 점, 활용 항목, 카드 C1~C3은 원본에 없다. 값은 검증 코드의 파이썬 흉내로 확인했다. EAX를 USES에 넣지 말라는 주의는 Irvine, Assembly Language for x86 Processors 7판 5장의 USES 설명에 있다[확인필요: 절 번호].
+[^s1]: 값은 검증 코드의 파이썬 흉내로 확인했다. EAX를 USES에 넣지 말라는 주의는 Irvine, Assembly Language for x86 Processors 7판 5장의 USES 설명에 있다[확인필요: 절 번호].
 {% endraw %}

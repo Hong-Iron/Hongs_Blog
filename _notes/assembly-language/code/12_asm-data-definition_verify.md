@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/12_asm-data-definition_verify/"
 
 실행: python3 12_asm-data-definition_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -263,14 +263,14 @@ def must_fail(fn, *args):
 if __name__ == "__main__":
     c = CPU()
     d = Data(c)
-    # 내장 자료형의 크기(바이트): p.7~8
+    # 내장 자료형의 크기(바이트)
     TYPES = {"BYTE": 1, "SBYTE": 1, "WORD": 2, "SWORD": 2, "DWORD": 4, "SDWORD": 4,
              "QWORD": 8, "TBYTE": 10, "REAL4": 4, "REAL8": 8, "REAL10": 10}
     assert TYPES["TBYTE"] * 8 == 80 and TYPES["QWORD"] * 8 == 64
-    # 범위: p.10, 4-3 p.2~3
+    # 범위
     assert (0, 255) == (0, 2**8 - 1) and (-128, 127) == (-2**7, 2**7 - 1)
     assert 65535 == 2**16 - 1 and -32768 == -2**15 and -2147483648 == -2**31
-    # p.10: 한 바이트씩
+    # 한 바이트씩
     d.byte("value1", "A"); d.byte("value3", 255); d.byte("value4", -128); d.byte("value5", 127)
     assert d.bytes_of("value1") == [0x41] and d.bytes_of("value3") == [0xFF]
     assert d.bytes_of("value4") == [0x80] and d.bytes_of("value5") == [0x7F]
@@ -278,7 +278,7 @@ if __name__ == "__main__":
     d.byte("m1", -1); d.byte("u255", 255)
     assert d.bytes_of("m1") == d.bytes_of("u255") == [0xFF]
     assert signed(0xFF, 1) == -1
-    # p.11: 초깃값 여러 개
+    # 초깃값 여러 개
     d.byte("list1", 10, 20, 30, 40)
     start = d.loc
     d.byte("list2", 10, 20, 30, 40); d.byte(None, 50, 60, 70, 80); d.byte(None, 81, 82, 83, 84)
@@ -288,7 +288,7 @@ if __name__ == "__main__":
     assert d.bytes_of("list3") == [0x00, 0x20, 0x41, 0x22]
     assert d.bytes_of("list4") == [0x0A, 0x20, 0x41, 0x22]
     assert d.bytes_of("list3")[1:] == d.bytes_of("list4")[1:]
-    # p.12~14: 문자열
+    # 문자열
     d.byte("str1", "Enter your name", 0)
     assert d.sym["str1"]["size"] == 16 and d.bytes_of("str1")[-1] == 0
     d.byte("str3", "A", "E", "I", "O", "U")
@@ -304,20 +304,20 @@ if __name__ == "__main__":
     assert d.sym["menu"]["size"] == 137, d.sym["menu"]["size"]
     d.byte("newLine", 0x0D, 0x0A, 0)
     assert d.bytes_of("newLine") == [13, 10, 0]
-    # 4-3 p.1: DUP
+    # DUP
     d.byte("var1", dup(20, 0)); d.byte("var2", dup(20, None)); d.byte("var3", dup(4, "STACK"))
     d.byte("var4", 10, dup(3, 0), 20)
     assert d.sym["var1"]["size"] == d.sym["var2"]["size"] == d.sym["var3"]["size"] == 20
     assert bytes(d.bytes_of("var3")) == b"STACKSTACKSTACKSTACK"
     assert d.bytes_of("var4") == [0x0A, 0, 0, 0, 0x14]
-    # 4-3 p.2~3: WORD, DWORD
+    # WORD, DWORD
     d.word("word1", 65535); d.word("word2", -32768); d.word("myList", 1, 2, 3, 4, 5); d.word("array", dup(5, None))
     assert d.bytes_of("word1") == [0xFF, 0xFF] and d.bytes_of("word2") == [0x00, 0x80]
     assert d.sym["myList"]["size"] == 10 and d.sym["array"]["size"] == 10
     d.dword("val2", -2147483648); d.dword("val3", dup(20, None)); d.dword("val4", -3, -2, -1, 0, 1)
     assert d.bytes_of("val2") == [0, 0, 0, 0x80] and d.sym["val3"]["size"] == 80
     assert d.bytes_of("val4")[:4] == [0xFD, 0xFF, 0xFF, 0xFF] and d.sym["val4"]["size"] == 20
-    # 4-3 p.5: AddSub2
+    # AddSub2
     c2 = CPU(); d2 = Data(c2)
     d2.dword("val1", 0x10000); d2.dword("val2", 0x40000); d2.dword("val3", 0x20000); d2.dword("finalVal", None)
     c2.mov("eax", d2.m("val1")); c2.add("eax", d2.m("val2")); c2.sub("eax", d2.m("val3")); c2.mov(d2.m("finalVal"), "eax")

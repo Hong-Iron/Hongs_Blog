@@ -197,6 +197,6 @@ $$(S\mathbf{x}_1)^\top = \mathbf{x}_1^\top S^\top$$이고, 여기서 $$S^\top = 
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.4절 "Symmetric Matrices"(실수 고윳값, 직교 고유벡터, $$S = Q\Lambda Q^\top$$, 슈어 분해로 한 증명, 스펙트럼 분해).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 스펙트럼 군집화는 von Luxburg, "A tutorial on spectral clustering"(*Statistics and Computing*, 2007)에 정리되어 있다. 라플라시안의 영공간 차원과 연결 성분 수의 관계는 22_spectral-theorem_verify.py에서 무작위 그래프로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [22_spectral-theorem_plot.py](/Hongs_Blog/studies/linear-algebra/code/22_spectral-theorem_plot/)로 그렸고, $$S$$의 고윳값 3, 1과 고유벡터의 수직, 타원의 가장 긴 반지름이 $$(1, 1)$$ 방향으로 3인 것, 대칭이 아닌 행렬의 타원 긴 축이 두 고유벡터와 다른 것을 같은 코드로 확인했다.
+[^s1]: 스펙트럼 군집화는 von Luxburg, "A tutorial on spectral clustering"(*Statistics and Computing*, 2007)에 정리되어 있다. 라플라시안의 영공간 차원과 연결 성분 수의 관계는 22_spectral-theorem_verify.py에서 무작위 그래프로 확인했다.
+[^s2]: [22_spectral-theorem_plot.py](/Hongs_Blog/studies/linear-algebra/code/22_spectral-theorem_plot/)로 그렸고, $$S$$의 고윳값 3, 1과 고유벡터의 수직, 타원의 가장 긴 반지름이 $$(1, 1)$$ 방향으로 3인 것, 대칭이 아닌 행렬의 타원 긴 축이 두 고유벡터와 다른 것을 같은 코드로 확인했다.
 {% endraw %}

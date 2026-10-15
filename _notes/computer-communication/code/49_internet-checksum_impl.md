@@ -20,7 +20,7 @@ permalink: "/studies/computer-communication/code/49_internet-checksum_impl/"
 [인터넷 체크섬](/Hongs_Blog/studies/computer-communication/internet-checksum/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""인터넷 체크섬 구현과 검증 (슬라이드 p.50의 C 코드를 옮김)."""
+"""인터넷 체크섬 구현과 검증 (문서의 C 코드를 옮김)."""
 import random
 
 

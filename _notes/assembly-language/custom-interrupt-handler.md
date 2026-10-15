@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Writing a Custom Interrupt Handler", "사용자 인터럽트 핸들러", "인터럽트 벡터 바꾸기", "Get Interrupt Vector", "Set Interrupt Vector", "함수 35h", "함수 25h", "Chaining", "TSR", "Terminate and Stay Resident", "상주 프로그램", "No_Reset", "Ctrl-Break Handler"]
 description: "주소록의 한 줄을 내 주소로 고쳐 두면, 그 번호로 걸려 오는 전화를 내가 먼저 받는다. 나는 내용을 훑어보고 필요한 것만 손본 뒤 원래 주인에게 그대로 넘긴다. 이렇게 하면 운영체제의 코드를 고치지 않고도 키 조합 하나를 막거나 동작을 바꿀 수 있다. 다만 고치기 전에 원래 주소…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/custom-interrupt-handler/"
 
 Ctrl+Alt+Del을 누르면 컴퓨터가 다시 시작한다. 실수로 눌러 작업을 날리는 일을 막고 싶다. 키를 받아 처리하는 BIOS의 코드는 내가 만든 것이 아니라서 직접 고치기 어렵다. 그런데 키가 눌릴 때 프로세서는 그 코드로 곧장 가지 않고, [인터럽트 벡터 표](/Hongs_Blog/studies/assembly-language/interrupt-vector-table/)의 9번 칸에 적힌 주소로 간다. 그 칸은 고칠 수 있다.
 
-칸에 내 코드의 주소를 적어 두면 키가 눌릴 때마다 이렇게 흐른다[^1].
+칸에 내 코드의 주소를 적어 두면 키가 눌릴 때마다 이렇게 흐른다.
 
 ```mermaid
 flowchart LR
@@ -63,9 +63,9 @@ flowchart LR
 
 ## 언제 쓰고 무엇을 하나
 
-쓰는 까닭은 셋이다. 이미 있는 핸들러의 동작을 바꾸려고, 이미 있는 핸들러의 잘못을 고치려고, 어떤 키보드 명령을 꺼서 시스템을 안전하게 하려고[^2].
+쓰는 까닭은 셋이다. 이미 있는 핸들러의 동작을 바꾸려고, 이미 있는 핸들러의 잘못을 고치려고, 어떤 키보드 명령을 꺼서 시스템을 안전하게 하려고.
 
-할 일은 넷이다[^2].
+할 일은 넷이다.
 
 1. 새 핸들러를 쓴다.
 2. 그것을 메모리에 올린다.
@@ -76,10 +76,10 @@ flowchart LR
 
 | 함수 | 하는 일 | 넣는 값 | 돌아오는 값 |
 |---|---|---|---|
-| INT 21h, 35h | 칸에 적힌 주소를 읽는다[^3] | AL = 인터럽트 번호 | ES:BX = 핸들러 주소 |
-| INT 21h, 25h | 칸에 새 주소를 쓴다[^4] | AL = 인터럽트 번호, DS:DX = 새 핸들러 주소 | |
+| INT 21h, 35h | 칸에 적힌 주소를 읽는다 | AL = 인터럽트 번호 | ES:BX = 핸들러 주소 |
+| INT 21h, 25h | 칸에 새 주소를 쓴다 | AL = 인터럽트 번호, DS:DX = 새 핸들러 주소 | |
 
-**원래 주소 적어 두기.** 4바이트 자리를 만들어 오프셋을 앞에, 세그먼트를 뒤에 넣는다[^3].
+**원래 주소 적어 두기.** 4바이트 자리를 만들어 오프셋을 앞에, 세그먼트를 뒤에 넣는다.
 
 ```asm
 .data
@@ -93,7 +93,7 @@ mov int9Save,BX             ; 오프셋
 mov [int9Save+2],ES         ; 세그먼트
 ```
 
-**새 주소 써넣기.**[^4]
+**새 주소 써넣기.**
 
 ```asm
 mov ax,SEG kybd_rtn         ; 새 핸들러의 세그먼트
@@ -110,7 +110,7 @@ kybd_rtn PROC               ; 새 핸들러가 여기서 시작한다
 
 ## 예제 1: Ctrl-Break 핸들러
 
-MS-DOS 프로그램이 입력을 기다리는 동안 사용자가 Ctrl-Break를 누르면 INT 23h의 핸들러가 불린다. 기본 핸들러는 프로그램을 끝낸다. 그러면 파일이 열린 채 남거나 메모리가 반납되지 않을 수 있다. INT 23h의 칸을 내 코드로 바꾸면 프로그램이 멈추지 않는다[^5].
+MS-DOS 프로그램이 입력을 기다리는 동안 사용자가 Ctrl-Break를 누르면 INT 23h의 핸들러가 불린다. 기본 핸들러는 프로그램을 끝낸다. 그러면 파일이 열린 채 남거나 메모리가 반납되지 않을 수 있다. INT 23h의 칸을 내 코드로 바꾸면 프로그램이 멈추지 않는다.
 
 ```asm
 TITLE Control-Break Handler             (Ctrlbrk.asm)
@@ -175,15 +175,15 @@ END main
 
 ## 예제 2: No_Reset
 
-메모리에 올라가서 치워질 때까지 남아 있는 프로그램을 상주 프로그램(TSR)이라 부른다. 치우는 프로그램을 돌리거나 컴퓨터를 다시 켜야 없어진다[^6]. No_Reset은 INT 9의 칸을 자기 핸들러로 바꾸는 상주 프로그램이다. 들어오는 키를 하나하나 보다가 Del 키가 오면 Ctrl과 Alt가 눌려 있는지 본다. 오른쪽 Shift까지 눌려 있을 때만 다시 시작을 허락한다[^7].
+메모리에 올라가서 치워질 때까지 남아 있는 프로그램을 상주 프로그램(TSR)이라 부른다. 치우는 프로그램을 돌리거나 컴퓨터를 다시 켜야 없어진다. No_Reset은 INT 9의 칸을 자기 핸들러로 바꾸는 상주 프로그램이다. 들어오는 키를 하나하나 보다가 Del 키가 오면 Ctrl과 Alt가 눌려 있는지 본다. 오른쪽 Shift까지 눌려 있을 때만 다시 시작을 허락한다.
 
-키보드 상태 바이트(0040:0017)의 비트는 다음과 같다[^7].
+키보드 상태 바이트(0040:0017)의 비트는 다음과 같다.
 
 | 비트 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |---|---|---|---|---|---|---|---|---|
 | 뜻 | Insert 켜짐 | Caps Lock 켜짐 | Num Lock 켜짐 | Scroll Lock 켜짐 | Alt 눌림 | Ctrl 눌림 | 왼쪽 Shift 눌림 | 오른쪽 Shift 눌림 |
 
-핸들러 전체다[^8].
+핸들러 전체다.
 
 ```asm
 int9_handler PROC FAR
@@ -235,7 +235,7 @@ int9_handler ENDP
 
 - 핸들러를 쓸 때 지킬 것: 맨 앞에서 `sti`, 쓰는 레지스터와 플래그를 모두 보관했다가 되돌리기, 끝은 `iret` 또는 원래 핸들러로 `jmp`.
 - 흔한 실수 1: 원래 주소를 적어 두기 전에 칸을 덮어쓰는 것.
-- 흔한 실수 2: 원래 핸들러를 `call`로 부르는 것. 슬라이드는 `jmp`를 쓴다. 뛰어 들어가면 원래 핸들러의 `IRET`가 끊긴 프로그램으로 곧장 돌아간다[^s1].
+- 흔한 실수 2: 원래 핸들러를 `call`로 부르는 것. 위 코드처럼 `jmp`로 넘긴다. 뛰어 들어가면 원래 핸들러의 `IRET`가 끊긴 프로그램으로 곧장 돌아간다[^s1].
 - 16비트 실주소 모드의 MS-DOS에서만 쓸 수 있다. 보호 장치가 있는 운영체제에서는 응용 프로그램이 벡터 표를 고칠 수 없다[^s1].
 
 ## 연결
@@ -280,13 +280,5 @@ int9_handler ENDP
 </details>
 
 
-[^1]: 어셈블리어 14회 강의 자료 「wk14-chapt_17-2-2」, p.22~23 (Keyboard Processing Steps 1~7과 그림: 벡터 표의 INT 9 칸 10B2:0020 → our program → jmp 0DAD:2BAD → Bios INT 9 service routine → IRET)
-[^2]: 같은 자료, p.19 (Writing a Custom Interrupt Handler: Motivations, What's Involved)
-[^3]: 같은 자료, p.20 (Get Interrupt Vector: 함수 35h)
-[^4]: 같은 자료, p.21 (Set Interrupt Vector: 함수 25h)
-[^5]: 같은 자료, p.24~25 (Ctrl-Break Handler Example. 교재 쪽을 찍은 그림이라 그림에서 옮겨 적었다)
-[^6]: 같은 자료, p.26 (Terminate and Stay Resident Programs)
-[^7]: 같은 자료, p.27 (The No_Reset Program 1 of 5와 키보드 상태 바이트 그림)
-[^8]: 같은 자료, p.28~31 (The No_Reset Program 2~5 of 5). 네 쪽에 나뉜 코드를 이어 붙였다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 흐름 그림, 읽기와 쓰기의 순서 설명, Ctrl-Break 예제의 읽을 곳 세 가지, No_Reset이 키를 버리지 않고 Ctrl 비트만 지운다는 풀이와 경우 표, `ctrl_key` = 04h·`alt_key` = 08h·`rt_shift` = 01h·`del_key` = 53h라는 값(슬라이드 코드는 이름만 쓰고, 값은 p.27의 비트 그림과 14.wk14-chapt_16-2-1.pdf p.10의 스캔 코드 표에서 읽어 냈다), `call`이 아니라 `jmp`로 넘기는 이유, 보호 장치가 있는 운영체제에서는 안 된다는 것, `int9_handler ENDP` 줄, 카드 C2~C4는 슬라이드에 없다. 비트 계산과 경우 표는 검증 코드로 확인했다. 코드 블록의 한국어 주석은 슬라이드의 영어 주석을 옮긴 것이다.
+[^s1]: 비트 계산과 경우 표는 검증 코드로 확인했다.
 {% endraw %}

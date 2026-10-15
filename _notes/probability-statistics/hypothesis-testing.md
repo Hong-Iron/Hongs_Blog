@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Hypothesis Testing", "가설검정", "p값", "p-value", "귀무가설", "null hypothesis", "대립가설", "alternative hypothesis", "유의수준", "significance level", "제1종 오류", "type I error", "제2종 오류", "type II error", "검정력", "power", "z검정", "z-test", "순열 검정", "permutation test", "다중 검정", "multiple testing", "본페로니 보정", "Bonferroni correction", "A/B 테스트", "A/B testing"]
 description: "\"차이가 없다\"는 기본 가설을 세우고, 그 가설이 맞는데도 지금만큼(또는 더) 극단적인 결과가 우연히 나올 확률을 계산한다. 이 확률(p값)이 아주 작으면 \"우연으로 보기 어렵다\"며 기본 가설을 버린다. 새 기능이 전환율을 올렸는지, 새 버전이 느려졌는지를 판정하는 A/B 테스트의…"
@@ -163,14 +163,14 @@ flowchart TD
 
 ## 과목별 관점
 
-**데이터 과학 (3-2학기).** 두 분류 모델 A, B를 같은 $$k$$겹 교차검증으로 평가해, 정확도 차이가 우연인지 가린다(짝지은 t-검정)[^d1]. 겹 $$i$$의 차이 $$d_i = \operatorname{Acc}(A_i) - \operatorname{Acc}(B_i)$$로 가설을 세운다. $$H_0: \mu_d = 0$$(평균적으로 같다), $$H_1: \mu_d \ne 0$$이다.
+**데이터 과학 (3-2학기).** 두 분류 모델 A, B를 같은 $$k$$겹 교차검증으로 평가해, 정확도 차이가 우연인지 가린다(짝지은 t-검정). 겹 $$i$$의 차이 $$d_i = \operatorname{Acc}(A_i) - \operatorname{Acc}(B_i)$$로 가설을 세운다. $$H_0: \mu_d = 0$$(평균적으로 같다), $$H_1: \mu_d \ne 0$$이다.
 
 $$t = \frac{\bar d}{s_d / \sqrt k}, \qquad \bar d = \frac1k\sum_{i=1}^{k} d_i, \qquad s_d = \sqrt{\frac1k\sum_{i=1}^{k}(d_i - \bar d)^2}$$
 
 
-분자 $$\bar d$$는 A가 B보다 평균 얼마나 나은지(양수면 A가 낫다)다. 분모는 그 차이가 겹마다 얼마나 흔들리는지다. $$t$$가 크면 차이가 우연이 아니라고 본다. p값은 $$H_0$$ 아래에서 지금만큼 또는 더 극단적인 차이가 나올 확률이고, 0.05보다 작으면 유의하다[^d1].
+분자 $$\bar d$$는 A가 B보다 평균 얼마나 나은지(양수면 A가 낫다)다. 분모는 그 차이가 겹마다 얼마나 흔들리는지다. $$t$$가 크면 차이가 우연이 아니라고 본다. p값은 $$H_0$$ 아래에서 지금만큼 또는 더 극단적인 차이가 나올 확률이고, 0.05보다 작으면 유의하다.
 
-슬라이드는 $$s_d$$를 $$k$$로 나눈다. 보통의 표본표준편차는 $$k - 1$$로 나누고, $$t$$를 자유도 $$k - 1$$인 t 분포와 비교한다[^sd1]. 예: 5겹의 차이가 0.02, 0.03, 0.01, 0.03, 0.03이면 $$\bar d = 0.024$$, $$t$$는 $$k$$로 나누면 6.71, $$k - 1$$로 나누면 6.00이다. 자유도 4의 양측 0.05 임계값 2.776보다 커서 A가 유의하게 낫다.
+위 식은 $$s_d$$를 $$k$$로 나눈다. 보통의 표본표준편차는 $$k - 1$$로 나누고, $$t$$를 자유도 $$k - 1$$인 t 분포와 비교한다[^sd1]. 예: 5겹의 차이가 0.02, 0.03, 0.01, 0.03, 0.03이면 $$\bar d = 0.024$$, $$t$$는 $$k$$로 나누면 6.71, $$k - 1$$로 나누면 6.00이다. 자유도 4의 양측 0.05 임계값 2.776보다 커서 A가 유의하게 낫다.
 
 ## 확인 문제
 
@@ -216,8 +216,7 @@ $$t = \frac{\bar d}{s_d / \sqrt k}, \qquad \bar d = \frac1k\sum_{i=1}^{k} d_i, \
 
 [^1]: Wasserman, *All of Statistics*, "Hypothesis Testing and p-values" 장(귀무·대립가설, 유의수준, 검정력, p값, 순열 검정, 다중 검정과 본페로니).
 [^2]: Wasserstein, Lazar, "The ASA Statement on p-Values: Context, Process, and Purpose", *The American Statistician* 70(2), 2016.
-[^d1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.6 (6-1 복습: T-Test와 P-value)
-[^sd1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$k - 1$$로 나누는 표준 방법, 5겹 예와 카드 C5는 원본에 없다. 슬라이드처럼 $$k$$로 나누는 식은 Han, Kamber, Pei, *Data Mining* 3판 8.5.5절의 식이다. 32_hypothesis-testing_verify.py로 계산했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [32_hypothesis-testing_plot.py](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_plot/)로 그렸고, 그림에 쓴 값(표준오차 0.01427, $$z = 2.10$$, p값 0.035, 1,000명씩의 검정력 0.56, 2,000명씩 0.8 초과)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 정의, 대표 문제 2(검정력과 표본 크기), 활용 절(실험 전에 정해 두기), 자주 하는 오해(효과 크기와 신뢰구간 보고)를 한 흐름으로 그렸다.
+[^sd1]: 32_hypothesis-testing_verify.py로 계산했다.
+[^s2]: [32_hypothesis-testing_plot.py](/Hongs_Blog/studies/probability-statistics/code/32_hypothesis-testing_plot/)로 그렸고, 그림에 쓴 값(표준오차 0.01427, $$z = 2.10$$, p값 0.035, 1,000명씩의 검정력 0.56, 2,000명씩 0.8 초과)을 같은 코드로 확인했다.
+[^s3]: 이 문서 정의, 대표 문제 2(검정력과 표본 크기), 활용 절(실험 전에 정해 두기), 자주 하는 오해(효과 크기와 신뢰구간 보고)를 한 흐름으로 그렸다.
 {% endraw %}

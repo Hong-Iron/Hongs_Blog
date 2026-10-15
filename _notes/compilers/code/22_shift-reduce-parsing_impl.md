@@ -20,14 +20,14 @@ permalink: "/studies/compilers/code/22_shift-reduce-parsing_impl/"
 [이동-환원 파싱](/Hongs_Blog/studies/compilers/shift-reduce-parsing/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 구현과 검증: 이동-환원 파싱 (L07 p.3~8). 슬라이드의 추적 표를 다시 만들고, 길이 7 이하의 모든 토큰열에서 뻔한 방법과 견준다.
+# 구현과 검증: 이동-환원 파싱. 문서의 추적 표를 다시 만들고, 길이 7 이하의 모든 토큰열에서 뻔한 방법과 견준다.
 # 실행: python3 22_shift-reduce-parsing_impl.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 문서처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,10 +228,10 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# 항목 오토마타·SLR 문서의 문법: E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 이동-환원·핸들·유효 접두사 문서의 문법: E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
@@ -259,7 +259,7 @@ if __name__ == "__main__":
     states, trans, action, gototab = slr_table(G1, G1_ORDER)
     assert conflicts(action) == []
 
-    # (1) L07 p.6의 표: id * id + id
+    # (1) 문서의 표: id * id + id
     ok, tr = parse("id * id + id".split(), G1, action, gototab)
     assert ok
     rows = [(bar_form(s, r), a) for _, s, r, a in tr]
@@ -273,7 +273,7 @@ if __name__ == "__main__":
         ("F * T|+ id", "reduce T -> F * T"),
         ("T|+ id", "shift"),
         ("T +|id", "shift"),
-        ("T + id|", "reduce F -> id"),      # 슬라이드는 이 줄부터 네 번의 환원을 한 줄에 적었다
+        ("T + id|", "reduce F -> id"),      # 이 줄부터 환원이 네 번 이어진다
         ("T + F|", "reduce T -> F"),
         ("T + T|", "reduce E -> T"),
         ("T + E|", "reduce E -> T + E"),
@@ -283,7 +283,7 @@ if __name__ == "__main__":
     assert sum(a == "shift" for _, a in rows) == 5          # 토큰 수만큼 이동
     assert sum(a.startswith("reduce") for _, a in rows) == 8
 
-    # (2) L07 p.3~4: id * id의 환원 순서를 뒤집으면 오른쪽 끝 유도다
+    # (2) id * id의 환원 순서를 뒤집으면 오른쪽 끝 유도다
     ok, tr = parse("id * id".split(), G1, action, gototab)
     forms = []
     for _, s, r, a in tr:

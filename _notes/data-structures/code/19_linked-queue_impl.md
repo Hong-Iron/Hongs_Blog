@@ -23,14 +23,10 @@ permalink: "/studies/data-structures/code/19_linked-queue_impl/"
 /* 연결 리스트로 만든 큐: 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/19.연결 리스트로 만든 큐.md
- * 출처: 자료구조 5주차 슬라이드 p.32~36. 슬라이드 코드를 컴파일되게 고쳤다.
- *       (p.34의 typedef 이름이 StackeNode이고, p.35~36의 함수는 p.34와 다른 이름 queue, node, data, next를 쓴다.
- *        p.36의 dequeue는 빈 큐인지 보지 않고, 마지막 노드를 뺀 뒤 rear를 그대로 둔다. 문서의 warning 참고)
- *       이름은 p.34의 것(QueueNode, item, link, LinkedQueueType)으로 맞췄다. init, is_empty, destroy는 보탰다.
  * 실행: cc -std=c11 -Wall -Wextra 19_linked-queue_impl.c -o lqueue && ./lqueue
  *
  * 확인하는 것
- *   1. 슬라이드 p.33의 그림: A, B, C, D를 넣으면 front -> A -> B -> C -> D <- rear, D의 link는 NULL.
+ *   1. 문서의 그림: A, B, C, D를 넣으면 front -> A -> B -> C -> D <- rear, D의 link는 NULL.
  *   2. 문서의 추적 표: 빈 큐에 처음 넣을 때와 마지막 하나를 뺄 때 front와 rear가 함께 바뀐다.
  *   3. 카드 C1.
  *   4. 카드 C2: 맨 뒤 노드를 빼려면 그 앞 노드를 찾느라 링크를 count - 2번 따라가야 한다.
@@ -208,11 +204,11 @@ int main(void)
     init(&q);
     check(is_empty(&q) && q.front == NULL && q.rear == NULL && invariant(&q), "처음: 비었다");
 
-    /* 1. 슬라이드 p.33 (A, B, C, D를 글자 코드로 넣는다) */
+    /* 1. 문서의 그림 (A, B, C, D를 글자 코드로 넣는다) */
     enqueue(&q, 'A'); enqueue(&q, 'B'); enqueue(&q, 'C'); enqueue(&q, 'D');
-    check(q.count == 4 && q.front->item == 'A' && q.rear->item == 'D' && q.rear->link == NULL, "p.33 front는 A, rear는 D");
+    check(q.count == 4 && q.front->item == 'A' && q.rear->item == 'D' && q.rear->link == NULL, "그림: front는 A, rear는 D");
     check(q.front->link->item == 'B' && q.front->link->link->item == 'C'
-          && q.front->link->link->link == q.rear && invariant(&q), "p.33 A -> B -> C -> D");
+          && q.front->link->link->link == q.rear && invariant(&q), "그림: A -> B -> C -> D");
     check(hops_to_before_rear(&q) == 2, "C2: 노드 4개면 맨 뒤의 앞 노드까지 링크 2번");
     check(dequeue(&q) == 'A' && dequeue(&q) == 'B' && dequeue(&q) == 'C' && dequeue(&q) == 'D', "넣은 순서대로 나온다");
     check(is_empty(&q) && invariant(&q) && liveNodes == 0, "다 빼면 비었다");

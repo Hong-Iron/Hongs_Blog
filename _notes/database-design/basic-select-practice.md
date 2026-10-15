@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: SELECT-FROM-WHERE의 투영 속성·선택 조건·조인 조건, 별칭과 자기 조인."
 prev_url: "/studies/database-design/library-ddl-practice/"
@@ -31,7 +31,7 @@ permalink: "/studies/database-design/basic-select-practice/"
 
 ## 문제 p1 · 표 셋 잇기
 
-Stafford에 있는 프로젝트마다 프로젝트 번호, 그 프로젝트를 맡은 부서의 번호, 그 부서 관리자의 성과 주소와 생일을 구하라[^1].
+Stafford에 있는 프로젝트마다 프로젝트 번호, 그 프로젝트를 맡은 부서의 번호, 그 부서 관리자의 성과 주소와 생일을 구하라.
 
 풀이 전략: 꺼낼 칸이 흩어져 있다. 프로젝트 번호와 위치는 PROJECT에, 관리자가 누구인지는 DEPARTMENT에, 그 사람의 성과 주소는 EMPLOYEE에 있다. 표 셋을 줄줄이 잇는다.
 
@@ -79,7 +79,7 @@ WHERE  Dnum = Dnumber AND Mgr_ssn = Ssn AND
 
 ## 문제 p2 · 세 가지 질의
 
-다음 세 질의를 SQL로 쓰고 결과를 구하라[^2].
+다음 세 질의를 SQL로 쓰고 결과를 구하라.
 
 - a. 5번 부서 직원 가운데 ProductX 프로젝트에서 주 10시간 넘게 일하는 직원의 이름
 - b. 자기와 이름(first name)이 같은 부양가족이 있는 직원의 이름
@@ -109,15 +109,10 @@ WHERE  E.Dno = 5 AND E.Ssn = W.Essn AND W.Pno = P.Pnumber
 | John | Smith |
 | Joyce | English |
 
+일한 기록과 프로젝트를 잇는 `W.Pno = P.Pnumber` 대신 `E.Dno = P.Dnum`을 적기 쉽다. 이것은 "직원의 부서가 그 프로젝트를 맡은 부서다"라는 조건일 뿐, 그 직원이 그 프로젝트에서 일했다는 조건이 아니다. 그렇게 쓰면 Smith, Narayan, English, English의 네 행이 나온다. 5번 부서 직원이 어느 프로젝트에서든 10시간 넘게 일한 기록이 하나씩 다 잡힌 것이다.
+
 </details>
 
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 풀이 슬라이드 p.21의 `WHERE E.Dno=5 AND E.Ssn=W.Essn AND P.Pname='ProductX' AND E.Dno=P.Dnum AND W.Hours > 10;` / 문제점: 일한 기록과 프로젝트를 잇는 `W.Pno = P.Pnumber`가 없다. 그 자리에 있는 `E.Dno = P.Dnum`은 "직원의 부서가 그 프로젝트를 맡은 부서다"라는 조건일 뿐, 그 직원이 그 프로젝트에서 일했다는 조건이 아니다 / 수정안: 위 답처럼 `W.Pno = P.Pnumber`를 넣는다 / 근거: 적힌 그대로 돌리면 Smith, Narayan, English, English의 네 행이 나온다. 5번 부서 직원이 어느 프로젝트에서든 10시간 넘게 일한 기록이 하나씩 다 잡힌 것이다. 슬라이드가 표에 표시한 답은 Smith와 English 두 사람이고, 고친 질의가 그 답을 낸다 — [55_basic-select-practice_p2.py](/Hongs_Blog/studies/database-design/code/55_basic-select-practice_p2/)
-
-</div>
 
 
 <details class="callout callout-answer" markdown="1">
@@ -164,7 +159,7 @@ WHERE  E.Super_ssn = S.Ssn
 | Ramesh | Narayan |
 | Joyce | English |
 
-풀이 슬라이드는 질의 안에 질의를 넣어 풀었다. 안쪽 질의가 먼저 Wong의 Ssn을 구하고, 바깥 질의가 그 값을 상사 번호로 가진 직원을 찾는다[^3]. 결과는 같다. 이 꼴은 [중첩 질의와 IN](/Hongs_Blog/studies/database-design/nested-query-in/)에서 다룬다.
+질의 안에 질의를 넣어 풀 수도 있다. 안쪽 질의가 먼저 Wong의 Ssn을 구하고, 바깥 질의가 그 값을 상사 번호로 가진 직원을 찾는다. 결과는 같다. 이 꼴은 [중첩 질의와 IN](/Hongs_Blog/studies/database-design/nested-query-in/)에서 다룬다.
 
 ```sql
 SELECT E.Fname, E.Lname
@@ -178,7 +173,7 @@ WHERE  E.Super_ssn = ( SELECT E.Ssn
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: a의 고친 질의(2행)와 슬라이드에 적힌 그대로(4행), b의 0행과 조인 조건을 뺐을 때 달라지는 예, c의 두 판(자기 조인, 중첩 질의)이 같은 3행, 변형의 답 — [55_basic-select-practice_p2.py](/Hongs_Blog/studies/database-design/code/55_basic-select-practice_p2/)</div>
+<div class="callout-title" markdown="span">검증: a의 질의(2행)와 `W.Pno = P.Pnumber` 대신 `E.Dno = P.Dnum`을 쓴 질의(4행), b의 0행과 조인 조건을 뺐을 때 달라지는 예, c의 두 판(자기 조인, 중첩 질의)이 같은 3행, 변형의 답 — [55_basic-select-practice_p2.py](/Hongs_Blog/studies/database-design/code/55_basic-select-practice_p2/)</div>
 
 </div>
 
@@ -195,8 +190,5 @@ WHERE  E.Super_ssn = ( SELECT E.Ssn
 </details>
 
 
-[^1]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.5 (Exercise 1). 풀이는 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.1
-[^2]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.25 (Exercise 4). 풀이는 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.21~23
-[^3]: 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.23 ("We need the Ssn of 'Franklin Wong'", "Nested SQL query")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 푸는 차례, 하위목표로 나눈 풀이, b에서 조인 조건을 뺐을 때의 설명, c의 자기 조인 판(슬라이드는 중첩 질의 판만 보인다), 변형 문제와 그 답은 슬라이드에 없다. 결과는 문제 코드로 확인했다.
+[^s1]: 결과는 문제 코드로 확인했다.
 {% endraw %}

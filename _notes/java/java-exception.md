@@ -34,7 +34,7 @@ permalink: "/studies/java/java-exception/"
 
 ## 예시로 보기
 
-사고에 대비하지 않으면 어떻게 되는지부터 본다. 문자열의 길이를 찍는 메서드에 문자열 대신 `null`을 넘긴다[^1].
+사고에 대비하지 않으면 어떻게 되는지부터 본다. 문자열의 길이를 찍는 메서드에 문자열 대신 `null`을 넘긴다.
 
 ```java
 public static void printLength(String data) {
@@ -76,16 +76,16 @@ error: unreported exception ClassNotFoundException; must be caught or declared t
 
 ## 정의
 
-**예외**(exception)는 잘못 쓰거나 잘못 짜서 생기는 오류다. **에러**(error)는 기계의 자원이 바닥나는 것 같은 심각한 문제로 프로그램이 정상으로 계속 돌 수 없는 상황이다. `OutOfMemoryError`(기억 공간이 모자람), `StackOverflowError`(메서드 호출이 너무 깊이 쌓임)가 에러다. 에러와 달리 예외는 처리해서 프로그램을 계속 돌게 할 수 있다[^2].
+**예외**(exception)는 잘못 쓰거나 잘못 짜서 생기는 오류다. **에러**(error)는 기계의 자원이 바닥나는 것 같은 심각한 문제로 프로그램이 정상으로 계속 돌 수 없는 상황이다. `OutOfMemoryError`(기억 공간이 모자람), `StackOverflowError`(메서드 호출이 너무 깊이 쌓임)가 에러다. 에러와 달리 예외는 처리해서 프로그램을 계속 돌게 할 수 있다.
 
-예외는 다시 둘로 나뉜다[^3].
+예외는 다시 둘로 나뉜다.
 
 | 종류 | 번역기가 처리 코드를 검사하는가 | 예 |
 |---|---|---|
 | 일반 예외(checked exception) | 검사한다. 없으면 번역하지 않는다 | `ClassNotFoundException`, `InterruptedException` |
 | 실행 예외(runtime exception) | 검사하지 않는다 | `NullPointerException`, `ArrayIndexOutOfBoundsException`, `NumberFormatException` |
 
-자바는 사고 하나하나를 객체로 만든다. 그 객체의 클래스들이 [상속](/Hongs_Blog/studies/java/java-inheritance/) 관계로 이어져 있고, 어느 가지에 달렸는지가 종류를 정한다[^3].
+자바는 사고 하나하나를 객체로 만든다. 그 객체의 클래스들이 [상속](/Hongs_Blog/studies/java/java-inheritance/) 관계로 이어져 있고, 어느 가지에 달렸는지가 종류를 정한다.
 
 ```mermaid
 flowchart TD
@@ -101,7 +101,7 @@ flowchart TD
     RT --> NFE["NumberFormatException"]
 ```
 
-화살표는 부모에서 자식으로 간다. 읽는 법은 하나다[^s2].
+화살표는 부모에서 자식으로 간다. 읽는 법은 하나다.
 
 - `RuntimeException`과 그 자손이면 실행 예외다.
 - `Exception`의 자손인데 `RuntimeException` 가지에 달리지 않았으면 일반 예외다.
@@ -115,7 +115,7 @@ flowchart TD
 </div>
 
 
-일반 예외를 처리한 예다. 앞의 것은 있는 클래스, 뒤의 것은 없는 클래스를 찾는다[^4].
+일반 예외를 처리한 예다. 앞의 것은 있는 클래스, 뒤의 것은 없는 클래스를 찾는다.
 
 ```java
 try {
@@ -143,13 +143,6 @@ There is no String2 class.
 
 `try`와 `catch`가 어떻게 도는지는 [try-catch-finally](/Hongs_Blog/studies/java/java-try-catch/)에서 다룬다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.8 제목 "Checked Exception Example (2)"(코드는 `NullPointerException`을 잡는 `WithExceptionHandling.java`), p.9 제목 "Runtime Exception Example"(코드는 `ClassNotFoundException`을 잡는 `CheckedException.java`) / 문제점: 같은 자료 p.4의 그림에서 `NullPointerException`은 실행 예외, `ClassNotFoundException`은 일반 예외다. 두 쪽의 제목이 서로 바뀌었다. / 수정안: p.8은 실행 예외 예제, p.9는 일반 예외 예제 / 근거: p.9의 파일 이름이 `CheckedException.java`다. `Class.forName`을 `try` 없이 부르면 번역 오류가 나고, `data.length()`는 `try` 없이도 번역된다(JDK 21에서 확인).
-
-</div>
-
 
 ## 활용
 
@@ -163,7 +156,7 @@ There is no String2 class.
 | `ClassCastException` | 실제 객체와 맞지 않는 타입으로 강제 변환할 때 | [참조 타입 변환과 instanceof](/Hongs_Blog/studies/java/java-casting/) |
 
 - 오류 화면의 첫 줄은 "예외 클래스 이름: 메시지"이고, 그 아래 `at …` 줄들은 사고가 난 자리에서 `main`까지 거슬러 올라가는 호출 순서다. 맨 위 `at` 줄이 사고가 난 줄이다.
-- 에러는 잡으려고 하지 않는다. `catch (Exception e)`로는 `StackOverflowError`가 잡히지도 않는다. `Error`는 `Exception`의 자손이 아니기 때문이다[^s2].
+- 에러는 잡으려고 하지 않는다. `catch (Exception e)`로는 `StackOverflowError`가 잡히지도 않는다. `Error`는 `Exception`의 자손이 아니기 때문이다.
 
 ## 연결
 
@@ -199,11 +192,6 @@ There is no String2 class.
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 15회 강의 자료 「Software Project 15. Exception handling」, p.7 (WithNoExceptionHandling.java)
-[^2]: 같은 자료, p.3 (예외와 에러)
-[^3]: 같은 자료, p.4 (일반 예외와 실행 예외, 클래스 계층 그림)
-[^4]: 같은 자료, p.9 (CheckedException.java)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실행 결과와 `Class.forName`을 `try` 없이 부른 번역 오류는 원본에 없다. JDK 21에서 직접 실행해 확인했다. 오류 화면의 `E7`은 실험에 쓴 클래스 이름이다. 메시지의 `"<parameter1>"` 자리는 `javac -g`로 번역하면 변수 이름 `"data"`로 나온다(직접 확인).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 원본 p.4의 그림을 Mermaid로 다시 그린 것이다. `Error` 아래의 두 클래스는 원본 p.3의 예를 그림에 붙였다. 읽는 법 세 줄과 "`catch (Exception e)`로는 에러가 안 잡힌다"는 원본에 없고, 검증 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표의 원인 설명과 `ClassCastException` 줄, 오류 화면 읽는 법, 카드 C2·C3는 원본에 없다. 클래스 계층은 검증 코드로, C2의 번역 오류 두 건은 JDK 21 javac로 확인했다.
+[^s1]: JDK 21에서 직접 실행해 확인했다. 오류 화면의 `E7`은 실험에 쓴 클래스 이름이다. 메시지의 `"<parameter1>"` 자리는 `javac -g`로 번역하면 변수 이름 `"data"`로 나온다(직접 확인).
+[^s3]: 클래스 계층은 검증 코드로, C2의 번역 오류 두 건은 JDK 21 javac로 확인했다.
 {% endraw %}

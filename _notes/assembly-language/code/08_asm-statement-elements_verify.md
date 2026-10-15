@@ -23,13 +23,12 @@ permalink: "/studies/assembly-language/code/08_asm-statement-elements_verify/"
 """어셈블리 문장의 구성 검증 (MASM이 없어 파이썬으로 규칙을 흉내 냈다).
 
 문서: 08.어셈블리 문장의 구성
-출처: 어셈블리어 4주차 4-1 p.4~13
 주장:
   1. 정수 상수: 30d = 30, 6Ah = 106, 42 = 42, 1101b = 13, 0A5h = 165. 꼬리 글자가 진법을 정한다.
   2. A5h는 글자로 시작해서 식별자 규칙에 걸린다. 그래서 앞에 0을 붙여 0A5h로 쓴다.
-  3. 정수 식(p.5): 16 / 5 = 3, -(3 + 4) * (6 - 1) = -35, -3 + 4 * 6 - 1 = 20, 25 mod 3 = 1.
+  3. 정수 식: 16 / 5 = 3, -(3 + 4) * (6 - 1) = -35, -3 + 4 * 6 - 1 = 20, 25 mod 3 = 1.
   4. 식별자: 1~247자, 첫 글자는 글자·_·@·?·$, 대소문자를 가리지 않는다.
-  5. 문장 가르기: [레이블:] 니모닉 [피연산자] [; 주석]. p.13의 여섯 문장.
+  5. 문장 가르기: [레이블:] 니모닉 [피연산자] [; 주석]. 문서의 여섯 문장.
   6. add eax,36 * 25 의 상수식은 900.
 """
 import re
@@ -134,7 +133,7 @@ def split_statement(line):
 
 def main():
     assert [parse_int(t) for t in ("30d", "6Ah", "42", "1101b", "0A5h")] == [30, 106, 42, 13, 165]
-    print("[OK] p.4: 30d, 6Ah, 42, 1101b, 0A5h = 30, 106, 42, 13, 165")
+    print("[OK] 정수 상수: 30d, 6Ah, 42, 1101b, 0A5h = 30, 106, 42, 13, 165")
 
     assert is_identifier("A5h") and not is_identifier("0A5h")
     try:
@@ -147,13 +146,13 @@ def main():
     cases = {"16 / 5": 3, "-(3 + 4) * (6 - 1)": -35, "-3 + 4 * 6 - 1": 20, "25 mod 3": 1}
     for text, want in cases.items():
         assert eval_expr(text) == want, text
-    print("[OK] p.5 정수 식 네 개: 3, -35, 20, 1")
+    print("[OK] 정수 식 네 개: 3, -35, 20, 1")
 
     assert all(is_identifier(s) for s in ("myArray", "L1", "_main", "@count", "?x", "$first", "val1"))
     assert not any(is_identifier(s) for s in ("1stValue", "my-var", "", "a b"))
     assert is_identifier("a" * 247) and not is_identifier("a" * 248)
     assert "MyArray".lower() == "myarray"
-    print("[OK] p.7 식별자 규칙: 첫 글자, 길이 1~247")
+    print("[OK] 식별자 규칙: 첫 글자, 길이 1~247")
 
     p13 = {
         "stc ; set Carry flag": (None, "stc", [], "set Carry flag"),
@@ -168,7 +167,7 @@ def main():
         assert split_statement(line) == want, line
     assert [len(v[2]) for v in p13.values()] == [0, 1, 1, 2, 2, 2]
     assert eval_expr("36 * 25") == 900
-    print("[OK] p.13 여섯 문장: 피연산자 0, 1, 1, 2, 2, 2개. 36 * 25 = 900")
+    print("[OK] 여섯 문장: 피연산자 0, 1, 1, 2, 2, 2개. 36 * 25 = 900")
 
     assert split_statement("L1: add ax,cx   ; 더한다") == ("L1", "add", ["ax", "cx"], "더한다")
     assert split_statement("target: mov eax,5") == ("target", "mov", ["eax", "5"], None)

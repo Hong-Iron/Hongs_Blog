@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/72_advanced-sql-practice_p5-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- JOIN·GROUP BY 종합 연습의 연습 1~5를 PostgreSQL 16에서 확인한다. SQLite 판은 _p3.py(연습 1~3), _p5.py(연습 4~5).
--- 문서: 72.JOIN·GROUP BY 종합 연습 / 출처: 14주차 슬라이드 14-Adavanced-SQL-practice p.3~9, 풀이 덱 p.1~8
--- 표의 행은 슬라이드에 없어 이 문서에서 만들었다(_p3.py, _p5.py와 같은 행).
+-- JOIN·GROUP BY 종합 연습의 문제 1~5를 PostgreSQL 16에서 확인한다. SQLite 판은 _p3.py(문제 1~3), _p5.py(문제 4~5).
+-- 문서: 72.JOIN·GROUP BY 종합 연습
+-- 표의 행은 이 문서에서 만들었다(_p3.py, _p5.py와 같은 행).
 -- 확인하는 것:
---   슬라이드 풀이 다섯 가운데 넷은 적힌 그대로는 오류다.
---     연습 1, 2: FROM ORDER AS O (ORDER는 예약어) -> 구문 오류
---     연습 4:    COUNT(*) AS R.runners_number -> 구문 오류
---     연습 5:    COUNT(runner.id) (표의 별칭은 R) -> 없는 표를 가리킨다는 오류
---   고친 풀이의 답: 연습 1은 4행, 연습 2는 2행, 연습 3은 내부 조인 3행·LEFT JOIN 4행, 연습 4는 (5, 4), 연습 5는 3·2·0·1.
+--   틀리기 쉬운 판 넷은 오류다.
+--     문제 1, 2: FROM ORDER AS O (ORDER는 예약어) -> 구문 오류
+--     문제 4:    COUNT(*) AS R.runners_number -> 구문 오류
+--     문제 5:    COUNT(runner.id) (표의 별칭은 R) -> 없는 표를 가리킨다는 오류
+--   답: 문제 1은 4행, 문제 2는 2행, 문제 3은 내부 조인 3행·LEFT JOIN 4행, 문제 4는 (5, 4), 문제 5는 3·2·0·1.
 SET client_min_messages TO warning;
 DROP SCHEMA IF EXISTS advanced_sql_practice_p5 CASCADE;
 CREATE SCHEMA advanced_sql_practice_p5;
@@ -64,39 +64,39 @@ INSERT INTO EVENT VALUES (1,'Seoul Marathon','2024-03-17','Seoul'), (2,'Han Rive
   (3,'Jeju Trail Run','2024-09-21','Jeju'), (4,'Busan Night Run','2024-10-12','Busan');
 INSERT INTO RUNNER_EVENT VALUES (8,1), (9,1), (5,1), (5,2), (6,2), (1,4);
 
--- 슬라이드 풀이를 적힌 그대로 돌린다
+-- 틀리기 쉬운 판을 돌린다
 DO $$
 DECLARE k int := 0;
 BEGIN
-  BEGIN   -- 연습 1 (풀이 덱 p.1)
+  BEGIN   -- 문제 1
     EXECUTE 'SELECT CL.name AS clothes, C.name AS color, CUS.last_name, CUS.first_name
              FROM ORDER AS O JOIN CLOTHING AS CL ON CL.id = O.clothing_id JOIN COLOR AS C ON C.id = CL.color_id
                   JOIN CUSTOMER AS CUS ON CUS.id = O.customer_id
              WHERE CUS.favorite_color_id = CL.color_id ORDER BY C.name';
   EXCEPTION WHEN syntax_error THEN k := k + 1;
   END;
-  BEGIN   -- 연습 2 (풀이 덱 p.3)
+  BEGIN   -- 문제 2
     EXECUTE 'SELECT CUS.last_name, CUS.first_name, C.name
              FROM CUSTOMER AS CUS JOIN COLOR AS C ON C.id = CUS.favorite_color_id
                   LEFT JOIN ORDER AS O ON O.customer_id = CUS.id
              WHERE O.customer_id IS NULL';
   EXCEPTION WHEN syntax_error THEN k := k + 1;
   END;
-  BEGIN   -- 연습 4 (풀이 덱 p.7)
+  BEGIN   -- 문제 4
     EXECUTE 'SELECT R.main_distance, COUNT(*) AS R.runners_number FROM RUNNER AS R
              GROUP BY R.main_distance HAVING COUNT(*) > 3';
   EXCEPTION WHEN syntax_error THEN k := k + 1;
   END;
-  BEGIN   -- 연습 5 (풀이 덱 p.8)
+  BEGIN   -- 문제 5
     EXECUTE 'SELECT E.name, COUNT(runner.id) AS runner_count
              FROM EVENT AS E LEFT JOIN RUNNER_EVENT AS RE ON RE.event_id = E.id LEFT JOIN RUNNER AS R ON RE.runner_id = R.id
              GROUP BY E.name';
   EXCEPTION WHEN undefined_table THEN k := k + 1;       -- "invalid reference to FROM-clause entry for table runner"
   END;
-  ASSERT k = 4, '슬라이드 풀이 넷이 모두 오류여야 한다';
+  ASSERT k = 4, '틀리기 쉬운 판 넷이 모두 오류여야 한다';
 END $$;
 
--- 고친 풀이
+-- 답
 CREATE VIEW EX1 AS
 SELECT CL.name AS clothes, C.name AS color, CUS.last_name, CUS.first_name
 FROM "ORDER" AS O
@@ -113,7 +113,7 @@ FROM CUSTOMER AS CUS
   LEFT JOIN "ORDER" AS O ON O.customer_id = CUS.id
 WHERE O.customer_id IS NULL;
 
-CREATE VIEW EX3 AS            -- 슬라이드 풀이 그대로 (풀이 덱 p.6)
+CREATE VIEW EX3 AS            -- 내부 조인 판
 SELECT C1.name AS category, C2.name AS subcategory
 FROM CATEGORY AS C1
   JOIN CATEGORY AS C2 ON C2.parent_id = C1.id
@@ -140,16 +140,16 @@ GROUP BY E.name;
 
 DO $$ BEGIN
   ASSERT (SELECT string_agg(clothes || '/' || color || '/' || last_name || '/' || first_name, ' ' ORDER BY color, clothes, last_name) FROM EX1)
-         = 'Rain Jacket/Blue/Park/Jisu Trail Hoodie/Blue/Choi/Doyun Trail Hoodie/Blue/Park/Jisu Running Tee/Red/Kim/Mina', '연습 1';
+         = 'Rain Jacket/Blue/Park/Jisu Trail Hoodie/Blue/Choi/Doyun Trail Hoodie/Blue/Park/Jisu Running Tee/Red/Kim/Mina', '문제 1';
   ASSERT (SELECT string_agg(last_name || '/' || first_name || '/' || name, ' ' ORDER BY last_name) FROM EX2)
-         = 'Han/Yuna/Red Jung/Sora/Black', '연습 2';
+         = 'Han/Yuna/Red Jung/Sora/Black', '문제 2';
   ASSERT (SELECT string_agg(category || '>' || subcategory, ' ' ORDER BY category, subcategory) FROM EX3)
-         = 'Bottoms>Shorts Tops>Hoodies Tops>T-shirts', '연습 3 (내부 조인)';
+         = 'Bottoms>Shorts Tops>Hoodies Tops>T-shirts', '문제 3 (내부 조인)';
   ASSERT (SELECT string_agg(category || '>' || COALESCE(subcategory, 'NULL'), ' ' ORDER BY category, subcategory) FROM EX3_LEFT)
-         = 'Accessories>NULL Bottoms>Shorts Tops>Hoodies Tops>T-shirts', '연습 3 (LEFT JOIN)';
-  ASSERT (SELECT string_agg(main_distance || '/' || runners_number, ' ') FROM EX4) = '5/4', '연습 4';
+         = 'Accessories>NULL Bottoms>Shorts Tops>Hoodies Tops>T-shirts', '문제 3 (LEFT JOIN)';
+  ASSERT (SELECT string_agg(main_distance || '/' || runners_number, ' ') FROM EX4) = '5/4', '문제 4';
   ASSERT (SELECT string_agg(name || '=' || runner_count, ', ' ORDER BY name) FROM EX5)
-         = 'Busan Night Run=1, Han River 10K=2, Jeju Trail Run=0, Seoul Marathon=3', '연습 5';
+         = 'Busan Night Run=1, Han River 10K=2, Jeju Trail Run=0, Seoul Marathon=3', '문제 5';
   -- COUNT(*)로 세면 아무도 안 나간 대회가 1이 된다
   ASSERT (SELECT COUNT(*) FROM EVENT AS E LEFT JOIN RUNNER_EVENT AS RE ON RE.event_id = E.id WHERE E.name = 'Jeju Trail Run') = 1, 'COUNT(*)';
   ASSERT (SELECT COUNT(RE.runner_id) FROM EVENT AS E LEFT JOIN RUNNER_EVENT AS RE ON RE.event_id = E.id WHERE E.name = 'Jeju Trail Run') = 0, 'COUNT(열)';

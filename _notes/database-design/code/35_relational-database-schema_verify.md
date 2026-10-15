@@ -23,20 +23,20 @@ permalink: "/studies/database-design/code/35_relational-database-schema_verify/"
 """관계형 데이터베이스 스키마와 상태 검증.
 
 문서: 35.관계형 데이터베이스 스키마와 상태 (COMPANY 스키마와 상태 표, 카드 C1~C3)
-출처: 데이터베이스 설계 6-2 슬라이드 p.20(스키마 그림), p.21(상태), 9 슬라이드 p.17~18(DDL)
+출처: Elmasri & Navathe, Fundamentals of Database Systems의 COMPANY 스키마, 상태, CREATE TABLE 문
 실행: python3 35_relational-database-schema_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 주장:
-  1. COMPANY 스키마는 릴레이션 6개이고, 속성과 기본 키가 p.20 그림과 같다.
-  2. p.21의 상태는 8, 3, 5, 6, 16, 7행, 모두 45행이다.
+  1. COMPANY 스키마는 릴레이션 6개이고, 속성과 기본 키가 문서의 스키마 표와 같다.
+  2. 문서의 상태는 8, 3, 5, 6, 16, 7행, 모두 45행이다.
   3. 이 상태는 올바르다: 기본 키 값이 안 겹치고, 기본 키에 NULL이 없고, 외래 키 8개의 값이 모두
      가리키는 릴레이션에 있거나 NULL이다. (제약을 끈 채 직접 세어 확인하고, SQLite의 검사로 한 번 더 본다.)
   4. 값 하나만 바꿔도 올바르지 않은 상태가 된다: Smith의 Dno를 7로 바꾸면 가리킬 부서가 없다.
-  5. 9 p.18의 DDL은 WORKS_ON.Hours가 NOT NULL인데 상태에 (888665555, 20, NULL)이 있다.
-     그 DDL 그대로면 이 상태를 넣을 수 없다.
+  5. WORKS_ON.Hours를 NOT NULL로 선언하면 상태의 (888665555, 20, NULL) 때문에
+     이 상태를 넣을 수 없다.
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태 (Elmasri & Navathe의 COMPANY, DDL은 같은 교재의 CREATE TABLE 문). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -87,7 +87,7 @@ def make_company(hours_not_null=False):
     return c
 # ---- COMPANY 끝 ----
 
-SCHEMA = {   # 6-2 p.20: 속성 순서와 밑줄(기본 키)
+SCHEMA = {   # 문서의 스키마 표: 속성 순서와 기본 키
     "EMPLOYEE": (["Fname", "Minit", "Lname", "Ssn", "Bdate", "Address", "Sex", "Salary", "Super_ssn", "Dno"], ["Ssn"]),
     "DEPARTMENT": (["Dname", "Dnumber", "Mgr_ssn", "Mgr_start_date"], ["Dnumber"]),
     "DEPT_LOCATIONS": (["Dnumber", "Dlocation"], ["Dnumber", "Dlocation"]),
@@ -95,7 +95,7 @@ SCHEMA = {   # 6-2 p.20: 속성 순서와 밑줄(기본 키)
     "WORKS_ON": (["Essn", "Pno", "Hours"], ["Essn", "Pno"]),
     "DEPENDENT": (["Essn", "Dependent_name", "Sex", "Bdate", "Relationship"], ["Essn", "Dependent_name"]),
 }
-FKS = [   # 7 p.11의 화살표 8개: (릴레이션, 외래 키, 가리키는 릴레이션, 그쪽 기본 키)
+FKS = [   # 문서 그림의 화살표 8개: (릴레이션, 외래 키, 가리키는 릴레이션, 그쪽 기본 키)
     ("EMPLOYEE", "Super_ssn", "EMPLOYEE", "Ssn"), ("EMPLOYEE", "Dno", "DEPARTMENT", "Dnumber"),
     ("DEPARTMENT", "Mgr_ssn", "EMPLOYEE", "Ssn"), ("DEPT_LOCATIONS", "Dnumber", "DEPARTMENT", "Dnumber"),
     ("PROJECT", "Dnum", "DEPARTMENT", "Dnumber"), ("WORKS_ON", "Essn", "EMPLOYEE", "Ssn"),
@@ -131,7 +131,7 @@ def main():
         for row in c.execute(f"PRAGMA foreign_key_list({rel})"):          # (id, seq, table, from, to, ...)
             fk_db.add((rel, row[3], row[2], row[4]))
     assert fk_db == set(FKS) and len(FKS) == 8
-    print("[OK] 릴레이션 6개, 속성·기본 키가 p.20과 같고 외래 키는 8개")
+    print("[OK] 릴레이션 6개, 속성·기본 키가 문서의 스키마 표와 같고 외래 키는 8개")
 
     # 2. 상태의 크기
     counts = [c.execute(f"SELECT COUNT(*) FROM {rel}").fetchone()[0] for rel in SCHEMA]
@@ -153,7 +153,7 @@ def main():
     assert violations(c) == []
     print("[OK] Smith의 Dno를 7로 바꾸면 참조 무결성이 깨진 상태가 된다")
 
-    # 5. 9 p.18의 DDL(Hours NOT NULL)에는 p.21의 상태가 들어가지 않는다
+    # 5. Hours를 NOT NULL로 선언한 표에는 문서의 상태가 들어가지 않는다
     try:
         make_company(hours_not_null=True)
         raise AssertionError("Hours NOT NULL인데 상태가 들어갔다")

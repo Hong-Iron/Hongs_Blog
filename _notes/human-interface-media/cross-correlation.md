@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Cross-correlation", "교차 상관", "자기 상관", "autocorrelation", "패턴 찾기", "template matching", "틀 맞추기", "상관 그래프"]
 description: "찾고 싶은 작은 무늬(틀)를 투명 필름에 그려 큰 그림 위에서 한 칸씩 밀며, 자리마다 얼마나 잘 겹치는지 점수를 매기는 방법이다. 점수가 가장 높은 자리가 틀과 같은 무늬가 있는 곳이다. 동전 사진에서 동전을, 항공 사진에서 지붕을 찾는 데 그대로 쓴다. 다만 겹친 값을 곱해 더…"
@@ -33,7 +33,7 @@ permalink: "/studies/human-interface-media/cross-correlation/"
 
 ## 예시로 보기
 
-[모양의 비슷함 재기](/Hongs_Blog/studies/human-interface-media/shape-similarity/)의 상관계수는 길이가 같은 두 데이터를 한 번 비교한다. 같은 그림 찾기는 다르다. 틀은 작고 그림은 크다. 그림의 어디에 틀이 있는지 모른다. 그래서 틀을 한 칸씩 옮기며 자리마다 비교한다[^1].
+[모양의 비슷함 재기](/Hongs_Blog/studies/human-interface-media/shape-similarity/)의 상관계수는 길이가 같은 두 데이터를 한 번 비교한다. 같은 그림 찾기는 다르다. 틀은 작고 그림은 크다. 그림의 어디에 틀이 있는지 모른다. 그래서 틀을 한 칸씩 옮기며 자리마다 비교한다.
 
 1차원으로 해 보자. 신호 $$s$$에서 틀 $$t = [1, 3, 2]$$를 찾는다.
 
@@ -65,12 +65,12 @@ permalink: "/studies/human-interface-media/cross-correlation/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-두 함수 $$f$$, $$g$$의 **교차 상관**은 $$g$$를 $$x$$만큼 당겨 놓고 $$f$$와 겹친 값을 곱해 모두 더한(적분한) 것이다[^2]. $$\overline{f}$$는 $$f$$의 켤레복소수로, 실수 신호면 $$f$$ 그대로다.
+두 함수 $$f$$, $$g$$의 **교차 상관**은 $$g$$를 $$x$$만큼 당겨 놓고 $$f$$와 겹친 값을 곱해 모두 더한(적분한) 것이다. $$\overline{f}$$는 $$f$$의 켤레복소수로, 실수 신호면 $$f$$ 그대로다.
 
 연속: $$ (f \star g)(x) \overset{\text{def}}{=} \int \overline{f(t)}\, g(x + t)\, dt = \int \overline{f(t - x)}\, g(t)\, dt $$<br>
 불연속: $$ (f \star g)[n] \overset{\text{def}}{=} \sum_{k \in \mathbb{Z}} \overline{f[k]}\, g[n + k] = \sum_{k \in \mathbb{Z}} \overline{f[k - n]}\, g[k] $$
 
-$$f = g$$인 경우, 곧 자기 자신과의 교차 상관을 **자기 상관**이라 한다[^3].
+$$f = g$$인 경우, 곧 자기 자신과의 교차 상관을 **자기 상관**이라 한다.
 
 </div>
 
@@ -81,7 +81,7 @@ $$f$$가 틀, $$g$$가 그림이다. $$n$$을 바꾸는 것은 틀을 그림 위
 
 **순서를 바꾸면 좌우가 뒤집힌다.** 실수 신호에서 $$(f \star g)[n] = (g \star f)[-n]$$이다. 틀을 오른쪽으로 옮기는 것과 그림을 왼쪽으로 옮기는 것이 같기 때문이다. 이 점이 [합성곱](/Hongs_Blog/studies/human-interface-media/correlation-vs-convolution/)과 다르다.
 
-**정규화.** 그림이 밝은 곳에서 점수가 부풀지 않게, 실제 패턴 찾기에서는 자리마다 겹친 조각의 평균을 빼고 두 표준편차로 나눈 [정규화 교차 상관 계수](/Hongs_Blog/studies/human-interface-media/shape-similarity/)를 쓴다. 값은 −1에서 1 사이다. 슬라이드의 상관 그래프 영상에서 동전·지붕 자리가 1에 가까운 빨간 점으로 빛나는 것이 이 값이다[^4].
+**정규화.** 그림이 밝은 곳에서 점수가 부풀지 않게, 실제 패턴 찾기에서는 자리마다 겹친 조각의 평균을 빼고 두 표준편차로 나눈 [정규화 교차 상관 계수](/Hongs_Blog/studies/human-interface-media/shape-similarity/)를 쓴다. 값은 −1에서 1 사이다. 상관 그래프 영상에서 틀과 같은 모양이 있는 자리가 1에 가까운 밝은 점으로 빛나는 것이 이 값이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 틀 [1, 3, 2]의 곱의 합(위치 2에서 14, 위치 7에서 54)과 정규화 점수(위치 2에서 1), 자기 상관의 최댓값이 0에서, $$(f \star g)[n] = (g \star f)[-n]$$ (실험으로 확인됨) — [29_cross-correlation_impl.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/)</div>
@@ -114,7 +114,7 @@ $$f$$가 틀, $$g$$가 그림이다. $$n$$을 바꾸는 것은 틀을 그림 위
 
 ## 활용
 
-- **패턴 찾기(틀 맞추기).** 슬라이드 p.43은 동전 사진에서 동전 하나를, 항공 사진에서 지붕 하나를 틀로 삼아 상관 그래프 영상을 만든다. 같은 모양이 있는 자리마다 빨간 봉우리가 선다[^4].
+- **패턴 찾기(틀 맞추기).** 동전 여러 개가 찍힌 사진에서 동전 하나를, 항공 사진에서 지붕 하나를 틀로 삼아 상관 그래프 영상을 만들 수 있다. 같은 모양이 있는 자리마다 봉우리가 선다.
 - **계산량.** 그림이 $$N$$칸, 틀이 $$M$$칸이면 위치마다 곱셈 $$M$$번이라 모두 약 $$NM$$번이다. 영상이면 $$N^2 M^2$$에 비례해 금방 커진다. 그래서 큰 틀은 푸리에 변환으로 계산을 바꿔 빠르게 한다[^s4].
 - **한계.** 틀이 돌아가 있거나 크기가 다르면 점수가 떨어진다. 교차 상관은 옮김(평행 이동)만 찾는다.
 
@@ -179,12 +179,8 @@ def scan(t, s):
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.3 (같은 그림 찾기: 틀을 옮기며 만든 상관 그래프)
-[^2]: 같은 자료, p.9 (교차 상관의 연속·불연속 정의). 같은 식이 p.8 "교차 상관"과 p.7 "교차 공분산"에도 있다.
-[^3]: 같은 자료, p.6 (상관 가족: 상관, 교차 상관, 자기 상관)과 p.11 (비교 그림의 Autocorrelation)
-[^4]: 같은 자료, p.43 (합성곱 - 패턴 찾기: 동전과 항공 사진의 틀, 상관 그래프 영상)과 p.44 (요약)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1차원 예와 표의 수치는 원본에 없다. [29_cross-correlation_impl.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/)로 계산했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [29_cross-correlation_plot.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_plot/)로 그렸고, 곱의 합 최대(위치 7, 54)와 정규화 점수 최대(위치 2, 1)를 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 자기 상관의 최댓값 성질과 코시-슈바르츠 근거, 순서를 바꾸면 뒤집힌다는 성질은 원본에 없다. 표준 결과이고 검증 코드로 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 계산량과 푸리에 변환으로 빠르게 하는 방법, 응용 예(메아리, GPS·레이더)는 신호 처리 교재의 표준 내용이다. 카드 C2~C4는 원본 범위를 넘는다.
+[^s1]: [29_cross-correlation_impl.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_impl/)로 계산했다.
+[^s2]: [29_cross-correlation_plot.py](/Hongs_Blog/studies/human-interface-media/code/29_cross-correlation_plot/)로 그렸고, 곱의 합 최대(위치 7, 54)와 정규화 점수 최대(위치 2, 1)를 같은 코드로 확인했다.
+[^s3]: 표준 결과이고 검증 코드로 확인했다.
+[^s4]: 계산량과 푸리에 변환으로 빠르게 하는 방법, 응용 예(메아리, GPS·레이더)는 신호 처리 교재의 표준 내용이다.
 {% endraw %}

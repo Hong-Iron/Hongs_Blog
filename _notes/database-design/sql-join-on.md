@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-join-on/"
 
 ## 예시로 보기
 
-"Research 부서에서 일하는 직원의 이름과 주소를 구하라." 지금까지는 표 둘을 `FROM`에 쉼표로 적고, 조건을 모두 `WHERE`에 적었다. 아래의 첫 질의가 그 꼴이다. 둘째 질의는 표를 잇는 조건을 `FROM`으로 옮긴 꼴이다[^1].
+"Research 부서에서 일하는 직원의 이름과 주소를 구하라." 지금까지는 표 둘을 `FROM`에 쉼표로 적고, 조건을 모두 `WHERE`에 적었다. 아래의 첫 질의가 그 꼴이다. 둘째 질의는 표를 잇는 조건을 `FROM`으로 옮긴 꼴이다.
 
 ```sql
 -- 조건을 모두 WHERE에
@@ -52,7 +52,7 @@ WHERE  Dname = 'Research';
 
 두 질의는 같은 4행(Smith, Wong, Narayan, English)을 낸다.
 
-`(EMPLOYEE JOIN DEPARTMENT ON Dno = Dnumber)`가 만드는 큰 표는 8행 14열이다. 직원마다 자기 부서의 행이 옆에 붙는다. 열을 몇 개만 골라 보면 이렇다[^2].
+`(EMPLOYEE JOIN DEPARTMENT ON Dno = Dnumber)`가 만드는 큰 표는 8행 14열이다. 직원마다 자기 부서의 행이 옆에 붙는다. 열을 몇 개만 골라 보면 이렇다.
 
 | Lname | … | Dno | Dname | Dnumber | Mgr_ssn | … |
 |---|---|---|---|---|---|---|
@@ -75,14 +75,14 @@ WHERE  Dname = 'Research';
 
 ## 정의
 
-`FROM` 절에 표 이름 대신 "두 표를 이은 결과"를 적은 것을 조인된 표(joined table)라 한다[^1].
+`FROM` 절에 표 이름 대신 "두 표를 이은 결과"를 적은 것을 조인된 표(joined table)라 한다.
 
 ```
 FROM (표1 JOIN 표2 ON 잇는 조건)
 ```
 
 - `ON` 뒤에는 두 표의 행을 짝짓는 조건(조인 조건)을 적는다. 행을 고르는 조건(선택 조건)은 `WHERE`에 남긴다.
-- 결과 표의 열은 표1의 열 전부, 그 뒤에 표2의 열 전부다[^2]. EMPLOYEE가 10열, DEPARTMENT가 4열이라 14열이다.
+- 결과 표의 열은 표1의 열 전부, 그 뒤에 표2의 열 전부다. EMPLOYEE가 10열, DEPARTMENT가 4열이라 14열이다.
 - 짝이 있는 행만 결과에 나온다. 이것이 기본인 내부 조인(inner join)이다. 짝이 없는 행도 남기려면 [외부 조인](/Hongs_Blog/studies/database-design/outer-join/)을 쓴다.
 
 기호로 쓰면, 표1의 상태를 $$r_1$$, 표2의 상태를 $$r_2$$, 잇는 조건을 $$c$$라 할 때 결과는 $$\{\,(t_1, t_2) : t_1 \in r_1,\ t_2 \in r_2,\ c(t_1, t_2)\text{가 참}\,\}$$이다. $$t_1 \in r_1$$은 "$$t_1$$이 표1의 행 가운데 하나"라는 뜻이고, $$(t_1, t_2)$$는 두 행을 옆으로 이어 붙인 행이다. 모든 조합 가운데 조건이 참인 것만 남긴다는 말이다[^s1].
@@ -139,7 +139,5 @@ WHERE  Plocation = 'Stafford';
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.20 (JOIN Tables in SQL: joined table의 뜻, Research 부서 직원 질의의 두 꼴)
-[^2]: 같은 자료, p.21 (이어 붙인 표의 그림, "첫 표의 속성 전부 뒤에 둘째 표의 속성 전부"). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.6의 그림에는 Dno와 Dnumber 두 열이 모두 그려져 있다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기호로 쓴 정의, 세 표를 이은 질의, 고르는 조건을 `ON`에 옮긴 판, 카드 C1~C3은 슬라이드에 없다. 세 표를 이은 꼴은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Joined Tables in SQL and Outer Joins"의 꼴을 따랐다. 결과는 검증 코드로 실행해 확인했다.
+[^s1]: 세 표를 이은 꼴은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Joined Tables in SQL and Outer Joins"의 꼴을 따랐다. 결과는 검증 코드로 실행해 확인했다.
 {% endraw %}

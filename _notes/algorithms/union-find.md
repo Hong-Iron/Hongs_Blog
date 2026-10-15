@@ -151,6 +151,6 @@ def union(a, b):
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 15.2 "Union-find structure": 대표로 이어지는 줄, 작은 무리를 큰 무리에 잇는 방법, 연산이 O(log n)이다.
 [^2]: Cormen 외, *Introduction to Algorithms* 3판, 21.3절(순위(rank)로 합치기와 경로 압축), 21.4절(두 방법을 함께 쓰면 m번 연산이 O(m α(n)), α(n)은 실제로 쓰는 n에서 4 이하). 이 문서의 코드는 순위 대신 크기로 합친다. 크기로 합치기도 경로 압축과 함께 쓰면 같은 $$\Theta(m\,\alpha(n))$$이다(Tarjan & van Leeuwen, "Worst-case analysis of set union algorithms", *JACM* 31(2), 1984. 위키백과 "Disjoint-set data structure"가 이 논문을 근거로 "union by size or by rank"를 함께 적는다).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [15_union-find_plot.py](/Hongs_Blog/studies/algorithms/code/15_union-find_plot/)로 그렸고, n = 2 ~ 4,096에서 크기를 안 보면 깊이 n − 1, 크기로 합치면 같은 순서에서 깊이 1, 가장 나쁜 순서에서 정확히 $$\log_2 n$$이라는 것과, 무작위 union 300묶음에서 깊이가 $$\log_2 n$$ 이하라는 것을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시 표의 union(4, 5) 줄 parent = [0, 0, 0, 2, 4, 4]와 find(3) 줄 parent = [0, 0, 0, 0, 4, 4]를 나무로 그렸다.
+[^s1]: [15_union-find_plot.py](/Hongs_Blog/studies/algorithms/code/15_union-find_plot/)로 그렸고, n = 2 ~ 4,096에서 크기를 안 보면 깊이 n − 1, 크기로 합치면 같은 순서에서 깊이 1, 가장 나쁜 순서에서 정확히 $$\log_2 n$$이라는 것과, 무작위 union 300묶음에서 깊이가 $$\log_2 n$$ 이하라는 것을 같은 코드로 확인했다.
+[^s2]: 예시 표의 union(4, 5) 줄 parent = [0, 0, 0, 2, 4, 4]와 find(3) 줄 parent = [0, 0, 0, 0, 4, 4]를 나무로 그렸다.
 {% endraw %}

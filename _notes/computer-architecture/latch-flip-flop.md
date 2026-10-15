@@ -169,5 +169,5 @@ flowchart LR
 [^1]: Patterson & Hennessy, *Computer Organization and Design*, 부록 "The Basics of Logic Design"의 B.8절 "Memory Elements: Flip-flops, Latches, and Registers" (NOR를 맞물린 S-R 래치와 S·R을 함께 올리면 안 되는 까닭, 게이트 둘을 더한 D 래치와 투명 래치라는 이름, 래치 한 쌍으로 만든 내리는 에지 D 플립플롭, 준비 시간과 유지 시간의 정의, 이 책은 플립플롭만 쓴다는 말), B.11절 "Timing Methodologies" (준안정 상태). 절 번호는 공개된 PDF 기준이고 판에 따라 부록 문자가 다를 수 있다. https://www.doc.ic.ac.uk/~wl/teachlocal/arch/HP05/HP_AppB.pdf
 [^2]: MIT 6.004 Computation Structures 강의 노트 "Sequential Logic" (문 신호 G가 1이면 투명하고 0이면 붙드는 D 래치, 문 신호가 반대인 래치 둘을 이어 오르는 에지에서 찍는 플립플롭, 한 번에 하나만 투명하다는 것), https://computationstructures.org/notes/sequential_logic/notes.html
 [^3]: UC Berkeley CS61C 강의 노트 "The Register" (오르는 에지에서만 d를 q로 옮기고 그 밖에는 d를 무시한다는 것, 에지 뒤 짧은 clk-to-q 지연), https://notes.cs61c.org/content/sds-state/register
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 추적 표와 다이어그램 2개는 직접 만들었다. 오르는 에지에서 찍도록 문 신호를 정한 것은 [^2]를 따랐고, 표는 흉내기로 확인했다.
+[^s1]: 추적 표와 다이어그램 2개는 직접 만들었다. 오르는 에지에서 찍도록 문 신호를 정한 것은 [^2]를 따랐고, 표는 흉내기로 확인했다.
 {% endraw %}

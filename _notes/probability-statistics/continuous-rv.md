@@ -115,5 +115,5 @@ $$P(a \le X \le b) = \int_a^b f(x)\,dx$$
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 5.1절 "Probability density functions"(정의, CDF와의 관계, 기댓값), 8.1절 "Change of variables"(단조 변환의 밀도).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [14_continuous-rv_plot.py](/Hongs_Blog/studies/probability-statistics/code/14_continuous-rv_plot/)로 그렸고, 그림에 쓴 값(넓이 $$\frac14$$(수치 적분)와 $$F(\frac12) = \frac14$$)을 같은 코드로 확인했다.
+[^s1]: [14_continuous-rv_plot.py](/Hongs_Blog/studies/probability-statistics/code/14_continuous-rv_plot/)로 그렸고, 그림에 쓴 값(넓이 $$\frac14$$(수치 적분)와 $$F(\frac12) = \frac14$$)을 같은 코드로 확인했다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Procedure", "프로시저", "CALL", "RET", "PROC", "ENDP", "복귀 주소", "Return Address", "중첩 호출", "Nested Procedure Call", "사전 조건", "Precondition", "서브루틴"]
 description: "책을 읽다가 각주를 보러 뒤쪽으로 넘어갈 때는 읽던 자리에 손가락을 끼워 둔다. 다 보고 나면 손가락 자리로 돌아온다. 프로그램도 이름 붙인 코드 덩어리로 넘어갈 때 \"돌아올 자리\"를 스택 맨 위에 적어 두고, 덩어리가 끝나면 스택 맨 위에 적힌 자리로 돌아온다. 그래서 같은 코드…"
@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/call-ret/"
 
 배열의 합을 구하는 코드가 프로그램 세 군데에서 필요하다고 하자. 세 번 복사해 넣으면 고칠 때도 세 번 고쳐야 한다. 한 번만 써 두고 [JMP](/Hongs_Blog/studies/assembly-language/jmp-loop/)로 뛰어가면 될까? 가는 것은 되지만 돌아오지 못한다. 어디서 왔는지에 따라 돌아갈 곳이 다른데, `JMP`의 목적지는 하나로 박혀 있기 때문이다. 떠나기 전에 돌아올 주소를 적어 두는 명령이 필요하다. 그것이 `CALL`이고, 적어 둔 주소로 돌아가는 명령이 `RET`이다.
 
-`main`이 `MySub`를 부른다. 줄 앞의 숫자는 그 명령의 주소다[^1].
+`main`이 `MySub`를 부른다. 줄 앞의 숫자는 그 명령의 주소다.
 
 ```asm
 main PROC
@@ -52,7 +52,7 @@ MySub PROC
 MySub ENDP
 ```
 
-00000025h는 `CALL` 바로 다음 명령의 주소다. 00000040h는 `MySub`의 첫 명령의 주소다. ESP가 00001000h에서 시작한다고 하고 따라가 본다[^2].
+00000025h는 `CALL` 바로 다음 명령의 주소다. 00000040h는 `MySub`의 첫 명령의 주소다. ESP가 00001000h에서 시작한다고 하고 따라가 본다.
 
 | 실행한 줄 | 스택에 일어난 일 | ESP | 다음에 읽을 주소(EIP) |
 |---|---|---|---|
@@ -70,14 +70,14 @@ MySub ENDP
 ```
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 추적, 세 겹 호출에서 쌓이는 복귀 주소 셋, SumOf의 결과, POP을 빼먹었을 때 RET이 가는 곳, 카드 C2 — [26_call-ret_verify.py](/Hongs_Blog/studies/assembly-language/code/26_call-ret_verify/) (파이썬 흉내로 확인. 실제 MASM으로 돌린 것이 아니다. 주소는 슬라이드에 적힌 값을 넣어 줬다)</div>
+<div class="callout-title" markdown="span">검증: 위 추적, 세 겹 호출에서 쌓이는 복귀 주소 셋, SumOf의 결과, POP을 빼먹었을 때 RET이 가는 곳, 카드 C2 — [26_call-ret_verify.py](/Hongs_Blog/studies/assembly-language/code/26_call-ret_verify/) (파이썬 흉내로 확인. 실제 MASM으로 돌린 것이 아니다. 주소는 위 예의 값을 넣어 줬다)</div>
 
 </div>
 
 
 ## 정의
 
-**프로시저.** 이름을 붙인 실행 코드 덩어리다[^3]. Java나 C++의 함수가 어셈블리어에서는 프로시저다. 큰 문제를 작은 일로 나눠 다루기 쉽게 한다[^4]. `PROC`과 `ENDP` 지시어 사이에 쓰고, 끝에 `ret`을 둔다[^4].
+**프로시저.** 이름을 붙인 실행 코드 덩어리다. Java나 C++의 함수가 어셈블리어에서는 프로시저다. 큰 문제를 작은 일로 나눠 다루기 쉽게 한다. `PROC`과 `ENDP` 지시어 사이에 쓰고, 끝에 `ret`을 둔다.
 
 ```asm
 sample PROC
@@ -87,12 +87,12 @@ sample PROC
 sample ENDP
 ```
 
-**CALL.** 프로시저를 부른다. 두 일을 한다[^5].
+**CALL.** 프로시저를 부른다. 두 일을 한다.
 
 1. 다음 명령의 주소(복귀 주소)를 스택에 올린다.
 2. 부를 프로시저의 주소를 EIP에 넣는다.
 
-**RET.** 프로시저에서 돌아온다. 스택 맨 위의 값을 내려 EIP에 넣는다[^5].
+**RET.** 프로시저에서 돌아온다. 스택 맨 위의 값을 내려 EIP에 넣는다.
 
 기호로 쓰면 다음과 같다. $$\text{메모리}[\text{ESP}]$$는 ESP에 적힌 주소의 4바이트다.
 
@@ -102,7 +102,7 @@ $$\text{CALL}: \quad \text{ESP} \leftarrow \text{ESP} - 4, \quad \text{메모리
 $$\text{RET}: \quad \text{EIP} \leftarrow \text{메모리}[\text{ESP}], \quad \text{ESP} \leftarrow \text{ESP} + 4$$
 
 
-`CALL`은 "`PUSH` 복귀 주소" 뒤에 "`JMP` 프로시저"를 한 것과 같고, `RET`은 "`POP`해서 EIP에 넣기"다[^s1].
+`CALL`은 "`PUSH` 복귀 주소" 뒤에 "`JMP` 프로시저"를 한 것과 같고, `RET`은 "`POP`해서 EIP에 넣기"다.
 
 ```mermaid
 sequenceDiagram
@@ -118,7 +118,7 @@ sequenceDiagram
 
 ### 겹쳐 부르기
 
-프로시저가 다른 프로시저를 부르고, 그것이 또 다른 프로시저를 부를 수 있다. `main`이 `Sub1`을, `Sub1`이 `Sub2`를, `Sub2`가 `Sub3`을 부르면, `Sub3` 안에 들어선 순간 스택에는 복귀 주소 셋이 쌓여 있다[^6].
+프로시저가 다른 프로시저를 부르고, 그것이 또 다른 프로시저를 부를 수 있다. `main`이 `Sub1`을, `Sub1`이 `Sub2`를, `Sub2`가 `Sub3`을 부르면, `Sub3` 안에 들어선 순간 스택에는 복귀 주소 셋이 쌓여 있다.
 
 ```
  높은 주소
@@ -133,9 +133,9 @@ sequenceDiagram
 
 ### 지켜 주는 것과 지켜 주지 않는 것
 
-**지켜 주는 것.** 프로시저가 끝날 때 ESP가 들어올 때와 같으면, `RET`은 그 프로시저를 부른 `CALL`의 바로 다음 명령으로 돌아간다. 몇 겹으로 불렀든 같다[^s1].
+**지켜 주는 것.** 프로시저가 끝날 때 ESP가 들어올 때와 같으면, `RET`은 그 프로시저를 부른 `CALL`의 바로 다음 명령으로 돌아간다. 몇 겹으로 불렀든 같다.
 
-**지켜 주지 않는 것.**[^s1]
+**지켜 주지 않는 것.**
 
 - 레지스터 값. `CALL`과 `RET`은 EIP와 ESP만 건드린다. 프로시저가 EAX나 ECX를 바꾸면 부른 쪽에서도 바뀌어 있다. 지키려면 직접 올려 두고 내려야 한다([레지스터 매개변수와 USES](/Hongs_Blog/studies/assembly-language/procedure-register-parameters/)).
 - 플래그. 프로시저 안의 계산이 플래그를 바꾼 채 돌아온다.
@@ -143,7 +143,7 @@ sequenceDiagram
 
 ### 실패 시나리오
 
-프로시저 안에서 값을 올리고 내리지 않은 채 `ret`을 만난다[^s1].
+프로시저 안에서 값을 올리고 내리지 않은 채 `ret`을 만난다.
 
 ```asm
 main PROC
@@ -170,7 +170,7 @@ Bad ENDP
 
 ### 프로시저에 붙이는 설명
 
-프로시저마다 주석으로 다음을 적어 두라고 슬라이드는 권한다[^7].
+프로시저마다 주석으로 다음을 적어 두면 쓰는 사람과 읽는 사람이 모두 편하다.
 
 | 항목 | 적는 것 |
 |---|---|
@@ -179,7 +179,7 @@ Bad ENDP
 | Returns | 돌려주는 값 |
 | Requires | 부르기 전에 갖춰져 있어야 하는 것(사전 조건). 없으면 생략 |
 
-사전 조건을 갖추지 않고 부르면 기대한 결과가 나오지 않는다[^7]. 세 수의 합을 돌려주는 `SumOf`가 본보기다[^8].
+사전 조건을 갖추지 않고 부르면 기대한 결과가 나오지 않는다. 세 수의 합을 돌려주는 `SumOf`가 본보기다.
 
 ```asm
 ;---------------------------------------------------------
@@ -246,7 +246,7 @@ EAX = 1, EBX = 2, ECX = 3으로 부르면 EAX = 6으로 돌아온다. 플래그�
 
 - 프로시저에 값을 넘기고 받는 길: 레지스터([레지스터 매개변수와 USES](/Hongs_Blog/studies/assembly-language/procedure-register-parameters/)), 스택([스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/)).
 - 남이 만든 프로시저 부르기: [Irvine32 라이브러리](/Hongs_Blog/studies/assembly-language/irvine32-library/).
-- 흔한 실수: 프로시저 끝에 `ret`을 빼먹는다. `ENDP`는 어셈블러에게 "여기까지"라고 알리는 지시어일 뿐 돌아가는 명령이 아니다. CPU는 그 아래에 놓인 다른 프로시저의 코드로 그대로 흘러 들어간다[^s1].
+- 흔한 실수: 프로시저 끝에 `ret`을 빼먹는다. `ENDP`는 어셈블러에게 "여기까지"라고 알리는 지시어일 뿐 돌아가는 명령이 아니다. CPU는 그 아래에 놓인 다른 프로시저의 코드로 그대로 흘러 들어간다.
 - 흔한 실수: `ret` 전에 올린 만큼 내리지 않는다(위 실패 시나리오).
 
 ## 연결
@@ -301,15 +301,4 @@ EAX = 1, EBX = 2, ECX = 3으로 부르면 EAX = 6으로 돌아온다. 플래그�
 **이유:** `RET`은 맨 위 4바이트를 내릴 뿐이다. 올린 만큼 내려서 맨 위가 복귀 주소일 때만 부른 곳으로 돌아간다.
 
 </details>
-
-
-[^1]: 어셈블리어 6회 강의 자료 「wk06-chapt_05-3-3」, p.7 (CALL-RET 예제의 주소 00000020, 00000025, 00000040)
-[^2]: 같은 자료, p.8 (CALL 직후와 RET 직전의 스택·EIP 그림)
-[^3]: 어셈블리어 7회 강의 자료 「wk07-chapt_05-3-1」, p.15 (프로시저: 이름 붙인 실행 코드 덩어리)
-[^4]: 어셈블리어 6회 강의 자료 「wk06-chapt_05-3-3」, p.3 (프로시저를 만드는 까닭, PROC·ENDP)
-[^5]: 같은 자료, p.6 (CALL과 RET이 하는 일)
-[^6]: 같은 자료, p.9 (겹쳐 부르기, 복귀 주소 셋이 쌓인 그림)
-[^7]: 같은 자료, p.4 (프로시저 설명에 적을 것, 사전 조건)
-[^8]: 같은 자료, p.5 (SumOf)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 추적 표와 ESP 값(슬라이드 그림에는 스택 칸의 주소가 없어 00001000h에서 시작한다고 두었다), CALL = PUSH + JMP라는 풀이, 순서도, 지켜 주는 것과 지켜 주지 않는 것, 실패 시나리오, `ret`을 빼먹을 때의 동작, 스스로 설명해 보기, 오해, 카드 C1~C4는 원본에 없다. CALL과 RET의 동작은 원본 p.6을 따랐고, 값은 검증 코드의 파이썬 흉내로 확인했다.
 {% endraw %}

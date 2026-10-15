@@ -25,7 +25,7 @@ import math
 
 
 def rk2(f, x, y, h, a):
-    """슬라이드 p.9~10: F = w1 f(x, y) + w2 f(x + ah, y + ah f), w2 = 1/(2a), w1 = 1 − w2."""
+    """2차 룽게-쿠타: F = w1 f(x, y) + w2 f(x + ah, y + ah f), w2 = 1/(2a), w1 = 1 − w2."""
     w2 = 1 / (2 * a); w1 = 1 - w2
     k1 = f(x, y); k2 = f(x + a * h, y + a * h * k1)
     return y + h * (w1 * k1 + w2 * k2)

@@ -133,6 +133,6 @@ $$s(t) = A \sin(2\pi f t + \varphi) + C = A\sin(\omega t + \varphi) + C$$
 
 
 [^1]: OpenStax, *Precalculus 2e*, 6.1절 "Graphs of the Sine and Cosine Functions"(진폭, 주기, 위상 이동), 7.6절 "Modeling with Trigonometric Functions"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표본화 주파수의 절반보다 높은 성분이 낮은 주파수로 겹친다는 것은 표본화 정리(나이퀴스트-섀넌)의 내용이다. 전화 음성의 8 kHz 표본화는 PCM 음성 부호화의 표준 값이다. 이 문서의 예제는 삼각함수의 주기성과 홀함수 성질만으로 한 경우를 보였다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [13_sinusoid_plot.py](/Hongs_Blog/studies/college-math/code/13_sinusoid_plot/)로 그렸고, 그림에 쓴 값(주기 $$1/440$$초 ≈ 2.27 ms, 위상 $$\pi/2$$가 $$1/1760$$초 앞섬, 7 kHz와 −1 kHz 사인파의 표본 2,000개 일치)을 같은 코드로 확인했다.
+[^s1]: 표본화 주파수의 절반보다 높은 성분이 낮은 주파수로 겹친다는 것은 표본화 정리(나이퀴스트-섀넌)의 내용이다. 전화 음성의 8 kHz 표본화는 PCM 음성 부호화의 표준 값이다. 이 문서의 예제는 삼각함수의 주기성과 홀함수 성질만으로 한 경우를 보였다.
+[^s2]: [13_sinusoid_plot.py](/Hongs_Blog/studies/college-math/code/13_sinusoid_plot/)로 그렸고, 그림에 쓴 값(주기 $$1/440$$초 ≈ 2.27 ms, 위상 $$\pi/2$$가 $$1/1760$$초 앞섬, 7 kHz와 −1 kHz 사인파의 표본 2,000개 일치)을 같은 코드로 확인했다.
 {% endraw %}

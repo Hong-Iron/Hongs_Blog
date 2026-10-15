@@ -22,9 +22,9 @@ permalink: "/studies/compilers/code/36_type-checking-procedure_impl/"
 ```python
 # 36_type-checking-procedure_impl.py
 # AST를 재귀로 돌며 타입을 검사하는 작은 검사기. 식에는 타입 추론 규칙을, 문장에는 WF 규칙을 쓴다.
-# 슬라이드 L10 p.28~37의 while (a != b) { a = a + 1; } 추적(붙는 타입과 그 순서),
-# p.38의 return 예, p.27의 if (A && B) { var = 3; } 순서를 다시 만들고, 틀린 프로그램을 걸러내는지 본다.
-# 자동 타입 변환은 하지 않는다(강의 규칙에 없다). 표준 라이브러리만 쓴다.
+# 문서의 while (a != b) { a = a + 1; } 추적(붙는 타입과 그 순서),
+# return 예, if (A && B) { var = 3; } 순서를 다시 만들고, 틀린 프로그램을 걸러내는지 본다.
+# 자동 타입 변환은 하지 않는다(타입 추론 규칙에 없다). 표준 라이브러리만 쓴다.
 # AST: ("num", 1) ("dbl", 1.0) ("str", "ok") ("bool", True) ("id", "a") (연산자, 왼쪽, 오른쪽)
 #      ("call", f, [식...]) ("index", 식, 식) / ("decl", 타입, 이름[, 식]) ("=", ("id", x), 식)
 #      ("return", 식 또는 None) ("block", [문장...]) ("while", 식, 블록) ("if", 식, 블록, 블록 또는 None)
@@ -182,7 +182,7 @@ def ok(fn, *a):
 if __name__ == "__main__":
     a, b, one = ("id", "a"), ("id", "b"), ("num", 1)
 
-    # p.28~37: 스코프 검사 뒤의 심벌 테이블 {a: int, b: int}
+    # 문서의 예: 스코프 검사 뒤의 심벌 테이블 {a: int, b: int}
     S = Scope()
     S.declare("a", "int")
     S.declare("b", "int")
@@ -196,7 +196,7 @@ if __name__ == "__main__":
         ("while", "WF"),                                                   # 4. 전체
     ]
 
-    # p.27: if (A && B) { var = 3; }  부분식 -> 자식 문장 -> 전체
+    # if (A && B) { var = 3; }  부분식 -> 자식 문장 -> 전체
     S2 = Scope()
     for n, t in (("A", "bool"), ("B", "bool"), ("var", "int")):
         S2.declare(n, t)
@@ -204,7 +204,7 @@ if __name__ == "__main__":
     check(("if", ("&&", ("id", "A"), ("id", "B")), ("block", [("=", ("id", "var"), ("num", 3))]), None), S2, log)
     assert [x[0] for x in log] == ["A", "B", "&&", "cond", "var", "3", "=", "block", "if"]
 
-    # p.38 (보충): bool compare(int a, int b) { return a >= b; }
+    # return 예: bool compare(int a, int b) { return a >= b; }
     G = Scope()
     log = []
     f = ("func", "bool", "compare", [("int", "a"), ("int", "b")], ("block", [("return", (">=", a, b))]))
@@ -219,27 +219,27 @@ if __name__ == "__main__":
     assert not ok(check, ("func", "void", "v", [], ("block", [("return", one)])), Scope())
     assert not ok(check, ("func", "int", "v", [], ("block", [("return", None)])), Scope())
 
-    # p.15: A가 bool, B가 int면 A && B는 타입 오류
+    # A가 bool, B가 int면 A && B는 타입 오류
     S3 = Scope()
     S3.declare("A", "bool")
     S3.declare("B", "int")
     assert not ok(type_of, ("&&", ("id", "A"), ("id", "B")), S3)
-    # p.11: int a = 3; a = "ok";  정적 타입 언어에서는 컴파일할 때 걸린다
+    # int a = 3; a = "ok";  정적 타입 언어에서는 컴파일할 때 걸린다
     S4 = Scope()
     assert check(("decl", "int", "a", ("num", 3)), S4)
     assert not ok(check, ("=", a, ("str", "ok")), S4)
-    # p.23: 의미에 맞는 문장들
+    # 의미에 맞게 짜인 문장들
     S5 = Scope()
     assert check(("block", [("decl", "int", "a", ("num", 3)),
                             ("decl", "bool", "well_formed", ("bool", True)),
                             ("decl", "string", "s", ("str", "this is well-formed")),
                             ("while", (">", ("num", 1), ("num", 0)), ("block", [])),
                             ("if", ("==", ("num", 10), ("num", 10)), ("block", []), ("block", []))]), S5)
-    # p.9: if (1.0 + 2.0) 는 조건이 double이라 오류
+    # if (1.0 + 2.0) 는 조건이 double이라 오류
     assert type_of(("+", ("dbl", 1.0), ("dbl", 2.0)), Scope()) == "double"
     assert not ok(check, ("if", ("+", ("dbl", 1.0), ("dbl", 2.0)), ("block", []), None), Scope())
 
-    # if-else 규칙(보충): 조건이 bool, 두 블록이 각자 안쪽 스코프에서 WF
+    # if-else 규칙: 조건이 bool, 두 블록이 각자 안쪽 스코프에서 WF
     S6 = Scope()
     S6.declare("x", "int")
     good = ("if", ("==", ("id", "x"), one),
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     assert not ok(check, bad, S6)           # else 쪽 한 문장만 틀려도 전체가 WF가 아니다
     assert not ok(check, ("if", ("id", "x"), ("block", []), ("block", [])), S6)   # 조건이 int
 
-    # 자동 변환은 없다: int + double 에 맞는 규칙이 없다 (L01 p.13의 inttofloat는 이 규칙들 밖이다)
+    # 자동 변환은 없다: int + double 에 맞는 규칙이 없다 (inttofloat 노드를 끼우는 방식은 이 규칙들 밖이다)
     S7 = Scope()
     S7.declare("B", "double")
     S7.declare("C", "int")
@@ -260,11 +260,11 @@ if __name__ == "__main__":
     assert not ok(type_of, ("+", ("id", "B"), ("id", "C")), S7)
     assert not ok(check, ("=", ("id", "A"), ("+", ("id", "B"), ("id", "C"))), S7)
 
-    # 원본 오류 의심: p.24의 대입 규칙은 e2가 '변수 또는 상수'여야 한다고 적었다.
-    # 그대로면 p.35에서 통과시킨 a = a + 1 (e2가 식)이 떨어진다.
-    def assign_p24(s, S):
+    # 오른쪽 e2를 '변수 또는 상수'로 좁힌 대입 규칙과 비교한다.
+    # 좁힌 규칙이면 a = a + 1 (e2가 식)이 떨어진다. 문서의 규칙은 통과시킨다.
+    def assign_narrow(s, S):
         return s[2][0] in ("id", "num", "dbl", "str", "bool") and ok(check, s, S)
-    assert assign_p24(("=", a, ("num", 3)), S) and not assign_p24(("=", a, ("+", a, one)), S)
+    assert assign_narrow(("=", a, ("num", 3)), S) and not assign_narrow(("=", a, ("+", a, one)), S)
     assert ok(check, ("=", a, ("+", a, one)), S)
 
     # 연습 문서와 카드의 답

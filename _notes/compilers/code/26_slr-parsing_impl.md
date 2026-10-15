@@ -20,14 +20,14 @@ permalink: "/studies/compilers/code/26_slr-parsing_impl/"
 [SLR 파싱](/Hongs_Blog/studies/compilers/slr-parsing/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 구현과 검증: LR(0)의 충돌과 SLR의 해결, ( id * id )의 결정 순서, 모호한 문법과 우선순위 선언 (L07 p.32~47).
+# 구현과 검증: LR(0)의 충돌과 SLR의 해결, ( id * id )의 결정 순서, 모호한 문법과 우선순위 선언.
 # 실행: python3 26_slr-parsing_impl.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 문서처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,10 +228,10 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# 항목 오토마타·SLR 문서의 문법: E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 이동-환원·핸들·유효 접두사 문서의 문법: E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
@@ -288,7 +288,7 @@ def parse_tree(tokens, prods, action, gototab, choose):
 
 
 if __name__ == "__main__":
-    # (1) LR(0)로는 3번 상태에서 막힌다 (L07 p.36). FOLLOW를 보면 풀린다 (p.37~38)
+    # (1) LR(0)로는 3번 상태에서 막힌다. FOLLOW를 보면 풀린다
     states, trans, a0, g0 = slr_table(G2, G2_ORDER, use_follow=False)
     assert conflicts(a0) == [((3, "*"), ["R2", "S6"])]
     assert {show_item(G2, it) for it in states[2]} == {"E -> T.* E", "E -> T."}
@@ -297,22 +297,22 @@ if __name__ == "__main__":
     _, follow, _ = first_follow(G2)
     assert follow["E"] == {")", "$"} and follow["T"] == {"*", ")", "$"}
 
-    # (2) L07 p.33~46: ( id * id )의 결정 순서
+    # (2) 문서의 추적: ( id * id )의 결정 순서
     ok, tr = parse("( id * id )".split(), G2, action, gototab)
     rows = [(" ".join(s) + "|" + " ".join(r), a) for _, s, r, a in tr]
     slide = [
-        ("|( id * id ) $", "shift"),                  # p.33
+        ("|( id * id ) $", "shift"),
         ("(|id * id ) $", "shift"),
-        ("( id|* id ) $", "reduce T -> id"),          # p.35
-        ("( T|* id ) $", "shift"),                    # p.36, p.38: * 는 FOLLOW(E)에 없다
-        ("( T *|id ) $", "shift"),                    # p.39
-        ("( T * id|) $", "reduce T -> id"),           # p.40: ) 는 FOLLOW(T)에 있다
-        ("( T * T|) $", "reduce E -> T"),             # p.41: ) 는 FOLLOW(E)에 있다
-        ("( T * E|) $", "reduce E -> T * E"),         # p.42
-        ("( E|) $", "shift"),                         # p.43
-        ("( E )|$", "reduce T -> ( E )"),             # p.44: $ 는 FOLLOW(T)에 있다
-        ("T|$", "reduce E -> T"),                     # p.45
-        ("E|$", "accept"),                            # p.46
+        ("( id|* id ) $", "reduce T -> id"),
+        ("( T|* id ) $", "shift"),                    # * 는 FOLLOW(E)에 없다
+        ("( T *|id ) $", "shift"),
+        ("( T * id|) $", "reduce T -> id"),           # ) 는 FOLLOW(T)에 있다
+        ("( T * T|) $", "reduce E -> T"),             # ) 는 FOLLOW(E)에 있다
+        ("( T * E|) $", "reduce E -> T * E"),
+        ("( E|) $", "shift"),
+        ("( E )|$", "reduce T -> ( E )"),             # $ 는 FOLLOW(T)에 있다
+        ("T|$", "reduce E -> T"),
+        ("E|$", "accept"),
     ]
     assert ok and rows == slide, rows
 
@@ -325,7 +325,7 @@ if __name__ == "__main__":
         m += ok
     print("G2 전수 비교: 토큰열 %d개 중 %d개가 문법에 맞고, 모두 일치" % (n, m))
 
-    # (4) L07 p.47: 모호한 문법 E -> E + E | E * E | id 는 SLR 표에 충돌이 남는다
+    # (4) 모호한 문법 E -> E + E | E * E | id 는 SLR 표에 충돌이 남는다
     GA = [("S'", ("E",)), ("E", ("E", "+", "E")), ("E", ("E", "*", "E")), ("E", ("id",))]
     sa, ta, aa, ga = slr_table(GA, ["E", "id", "+", "*"])
     assert first_follow(GA)[1]["E"] == {"+", "*", "$"}

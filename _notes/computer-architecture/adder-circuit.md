@@ -174,5 +174,5 @@ $$c_2 = g_1 + p_1 g_0 + p_1 p_0 c_0, \qquad c_3 = g_2 + p_2 g_1 + p_2 p_1 g_0 + 
 
 [^1]: UC Berkeley CS61C 강의 노트 "Adder/Subtractor" (한 자리의 합은 세 입력의 XOR이고 올림은 다수결 $$a_i b_i + a_i c_i + b_i c_i$$라는 것, 전가산기를 이어 붙이고 $$c_0$$을 0으로 두는 것, 부호 있는 수의 넘침 $$c_n \oplus c_{n-1}$$, SUB를 $$c_0$$에 잇고 $$b$$의 비트마다 XOR하는 가감산기), https://notes.cs61c.org/content/sds-blocks/adder-subtractor. 부호 없는 수의 넘침이 맨 위 올림이라는 줄과 표의 수치는 검증 코드로 확인했다.
 [^2]: Patterson & Hennessy, *Computer Organization and Design*, 부록 "The Basics of Logic Design"의 B.6절 "Faster Addition: Carry Lookahead" ($$g_i = a_i b_i$$, $$p_i = a_i + b_i$$, $$c_{i+1} = g_i + p_i c_i$$, 도미노 비유, 4비트 묶음과 그 위의 둘째 단계). 절 번호는 공개된 PDF 기준이고 판에 따라 부록 문자가 다를 수 있다. https://www.doc.ic.ac.uk/~wl/teachlocal/arch/HP05/HP_AppB.pdf
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 게이트 겹 수(자리마다 두 겹, 올림 예측은 세 겹)는 올림 식을 AND-OR 두 겹으로 만든다고 치고 직접 센 것이다. 실제 지연은 게이트 종류와 입력 수에 따라 다르다.
+[^s1]: 게이트 겹 수(자리마다 두 겹, 올림 예측은 세 겹)는 올림 식을 AND-OR 두 겹으로 만든다고 치고 직접 센 것이다. 실제 지연은 게이트 종류와 입력 수에 따라 다르다.
 {% endraw %}

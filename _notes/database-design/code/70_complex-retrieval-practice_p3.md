@@ -20,24 +20,23 @@ permalink: "/studies/database-design/code/70_complex-retrieval-practice_p3/"
 [복잡한 검색 연습](/Hongs_Blog/studies/database-design/complex-retrieval-practice/) 문서의 문제 3 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""복잡한 검색 연습 p3: 연습 3-1, 3-2, 3-3 (SQLite).
+"""복잡한 검색 연습 p3: Q3-1, Q3-2, Q3-3 (SQLite).
 
 문서: 70.복잡한 검색 연습의 문제 p3
-출처: 데이터베이스 설계 12주차 슬라이드 p.18~20, 풀이 p.7
 확인:
   Q3-1. 급여가 가장 많은 직원(Borg, 55000)의 부서(1번)에서 일하는 직원은 Borg 한 명.
-  Q3-2. 풀이의 질의는 = 뒤의 안쪽 질의가 2행(Wong, Wallace)이다.
+  Q3-2. IN 대신 =를 쓰면 = 뒤의 안쪽 질의가 2행(Wong, Wallace)이다.
         SQLite는 첫 행만 써서 3명(Smith, Narayan, English)을 낸다. IN으로 고치면 5명이다.
-        문제지의 Ssn '88866555'(8자리)를 그대로 쓰면 0행이다.
+        Ssn을 '88866555'(8자리)로 잘못 쓰면 0행이다.
         PostgreSQL은 = 판을 오류로 거부한다(p3.sql).
   Q3-3. 가장 적은 급여(25000)보다 10000 이상 많이 받는 직원은 Wong, Wallace, Narayan, Borg.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - WORKS_ON.Hours에는 NOT NULL을 걸지 않았다. 상태에 (888665555, 20, NULL)이 있다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

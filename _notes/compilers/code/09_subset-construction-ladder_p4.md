@@ -79,7 +79,7 @@ def all_strings(alphabet, max_len):
 F = frozenset
 
 if __name__ == "__main__":
-    # 문제 1: (0|1)*00 의 NFA (슬라이드 L03 p.13). 결과가 같은 쪽의 DFA와 같다.
+    # 문제 1: (0|1)*00 의 NFA. 결과가 세 상태 DFA(끝에 0 없음, 0 하나, 00)와 같다.
     n1 = (0, {2}, [(0, "0", 0), (0, "1", 0), (0, "0", 1), (1, "0", 2)])
     T, table, acc = subset_construction(n1, "01")
     assert T == [F({0}), F({0, 1}), F({0, 1, 2})] and acc == [2]

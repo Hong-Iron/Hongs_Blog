@@ -22,12 +22,12 @@ permalink: "/studies/database-design/code/75_sql-view_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 뷰 검증 가운데 SQLite로 못 보이는 것. PostgreSQL 16에서 실행한다.
--- 문서: 75.뷰, 78.뷰와 기본 테이블 비교 / 출처: 13주차 슬라이드 13-View p.3~8, 14, 25~26
+-- 문서: 75.뷰, 78.뷰와 기본 테이블 비교
 -- 확인하는 것:
---   1. p.25~26: 뷰에만 조회 권한을 준 사용자는 뷰는 읽고, 기본 테이블 EMPLOYEE는 읽지 못한다.
+--   1. 뷰에만 조회 권한을 준 사용자는 뷰는 읽고, 기본 테이블 EMPLOYEE는 읽지 못한다.
 --      5번 부서가 아닌 직원과 Salary 열은 그 사용자에게 보이지 않는다.
---   2. p.5~8: WORKS_ON1 16행, DEPT_INFO 세 행, 기본 테이블을 고치면 뷰의 답이 바로 바뀐다.
---   3. p.14: DROP VIEW는 기본 테이블을 건드리지 않는다. 거꾸로 뷰가 기대고 있는 기본 테이블은
+--   2. WORKS_ON1 16행, DEPT_INFO 세 행, 기본 테이블을 고치면 뷰의 답이 바로 바뀐다.
+--   3. DROP VIEW는 기본 테이블을 건드리지 않는다. 거꾸로 뷰가 기대고 있는 기본 테이블은
 --      그냥은 못 지우고(오류), CASCADE를 붙이면 뷰까지 함께 지워진다.
 -- 주의: 사용자(역할) vault_dept5_user를 잠깐 만들었다가 끝에서 지운다.
 SET client_min_messages TO warning;
@@ -35,7 +35,7 @@ DROP SCHEMA IF EXISTS sql_view CASCADE;
 CREATE SCHEMA sql_view;
 SET search_path TO sql_view;
 
--- COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.6). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
 -- EMPLOYEE와 DEPARTMENT는 서로 가리키므로 외래 키를 커밋 때 검사한다(DEFERRABLE INITIALLY DEFERRED).
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -86,7 +86,7 @@ CREATE VIEW BASIC_EMP_DATA AS SELECT Fname, Lname, Address FROM EMPLOYEE;
 -- 2. 뷰의 내용과 "늘 최신"
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM WORKS_ON1) = 16, 'WORKS_ON1은 16행이어야 한다';
-  ASSERT (SELECT string_agg(Lname, ',' ORDER BY Lname) FROM WORKS_ON1 WHERE Pname = 'ProductX') = 'English,Smith', 'p.7의 답';
+  ASSERT (SELECT string_agg(Lname, ',' ORDER BY Lname) FROM WORKS_ON1 WHERE Pname = 'ProductX') = 'English,Smith', 'ProductX 질의의 답';
   ASSERT (SELECT string_agg(Dept_name || ':' || No_of_emps || ':' || Total_sal::int, ' ' ORDER BY No_of_emps DESC) FROM DEPT_INFO)
          = 'Research:4:133000 Administration:3:93000 Headquarters:1:55000', 'DEPT_INFO의 세 행';
   INSERT INTO EMPLOYEE VALUES ('Kate','A','Lee','111223333','1980-03-03','1 Main','F',27000,'333445555',5);

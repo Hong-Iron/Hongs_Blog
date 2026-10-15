@@ -142,6 +142,6 @@ flowchart TD
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14장 "Sums and Asymptotics"(거듭제곱의 합, 합의 어림, 조화수, 스털링 근사). Graham·Knuth·Patashnik, *Concrete Mathematics*, 2장 "Sums"(교란법).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [23_sums-asymptotics_plot.py](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_plot/)로 그렸고, $$n \le 10^4$$에서 조화수의 끼우기, $$H_{128}$$과 $$\ln 128 + 0.5772$$의 차이 0.005 미만, $$n = 10^6$$에서 $$\lg n!/(n\lg n) \approx 0.93$$을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제' 1~3단계의 비교 정렬 논증을 $$n = 3$$의 비교 나무로 그렸다.
+[^s1]: [23_sums-asymptotics_plot.py](/Hongs_Blog/studies/discrete-math/code/23_sums-asymptotics_plot/)로 그렸고, $$n \le 10^4$$에서 조화수의 끼우기, $$H_{128}$$과 $$\ln 128 + 0.5772$$의 차이 0.005 미만, $$n = 10^6$$에서 $$\lg n!/(n\lg n) \approx 0.93$$을 같은 코드로 확인했다.
+[^s2]: '예제' 1~3단계의 비교 정렬 논증을 $$n = 3$$의 비교 나무로 그렸다.
 {% endraw %}

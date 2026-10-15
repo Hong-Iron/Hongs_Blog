@@ -10,7 +10,7 @@ course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["PCA vs NMF", "주성분 분석과 비음수 행렬 분해 비교"]
 description: "둘 다 고차원 자료를 성분 몇 개로 줄인다. 가르는 질문은 \"성분을 빼서 써도 되는가\"다. PCA는 분산을 가장 잘 남기는 방향을 찾고 양수·음수 가중치로 속성을 섞는다. NMF는 음수 없는 부분들의 더하기로만 자료를 나타내서 성분이 군집과 바로 맞닿는다."
@@ -46,6 +46,8 @@ permalink: "/studies/data-science/contrast--pca-nmf/"
 
 ## 결정적 차이
 
+두 방법을 군집화에 쓸 때를 나란히 놓으면 이렇다.
+
 | | 군집화를 위한 PCA | 군집화를 위한 NMF |
 |---|---|---|
 | 핵심 생각 | 분산이 가장 큰 방향으로 투영 | 잠재 성분의 더하기로 표현 |
@@ -55,7 +57,7 @@ permalink: "/studies/data-science/contrast--pca-nmf/"
 | 장점 | 간단, 효율적, 잡음 감소 | 군집 구조를 드러냄, 희소하고 읽기 쉬움 |
 | 단점 | 군집 구조를 흐릴 수 있다 | 볼록하지 않아 처음 값에 민감 |
 
-표는 슬라이드 p.21을 옮긴 것이다[^1]. 선택을 가르는 줄은 "표현"이다. 자료에 음수가 있거나 분산 보존이 목적이면 PCA, 음수 없는 횟수·강도 자료를 부분으로 나누려면 NMF다.
+선택을 가르는 줄은 "표현"이다. 자료에 음수가 있거나 분산 보존이 목적이면 PCA, 음수 없는 횟수·강도 자료를 부분으로 나누려면 NMF다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/36_contrast--pca-nmf_fig1.svg" alt="그림" width="612" height="276" loading="lazy">
 
@@ -77,7 +79,6 @@ permalink: "/studies/data-science/contrast--pca-nmf/"
 </details>
 
 
-[^1]: 데이터 과학 10회 강의 자료 「10-1_high-dim-clustering」, p.21
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 상황 문제와 PCA 성분의 수치 예는 원본에 없다. 검증 코드로 계산했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [36_contrast--pca-nmf_plot.py](/Hongs_Blog/studies/data-science/code/36_contrast--pca-nmf_plot/)로 그렸고, PCA 첫 성분 −0.41, −0.41, −0.38, 0.41, 0.41, 0.42와 NMF의 $$W$$, $$H$$에 음수가 없고 문서가 두 주제로 정확히 나뉘는 것을 같은 코드로 확인했다.
+[^s1]: 검증 코드로 계산했다.
+[^s2]: [36_contrast--pca-nmf_plot.py](/Hongs_Blog/studies/data-science/code/36_contrast--pca-nmf_plot/)로 그렸고, PCA 첫 성분 −0.41, −0.41, −0.38, 0.41, 0.41, 0.42와 NMF의 $$W$$, $$H$$에 음수가 없고 문서가 두 주제로 정확히 나뉘는 것을 같은 코드로 확인했다.
 {% endraw %}

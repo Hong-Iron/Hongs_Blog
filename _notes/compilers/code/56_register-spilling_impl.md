@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/56_register-spilling_impl/"
 ```python
 # 스필링: 색이 모자랄 때 변수 하나를 메모리로 내보내고 다시 칠하기.
 # 실행: python3 56_register-spilling_impl.py  (표준 라이브러리만 쓴다)
-# 슬라이드 16회 p.29~35의 고쳐 쓴 코드, 생존 변수 집합, 새 간섭 그래프, 색을 그대로 다시 만든다.
+# 문서의 고쳐 쓴 코드, 생존 변수 집합, 새 간섭 그래프, 색을 그대로 다시 만든다.
 from itertools import combinations, product
 
 BLOCKS = {"B0": ["b = 3", "c = 1", "f = 0"],
@@ -149,12 +149,12 @@ def execute(blocks, path):
 
 if __name__ == "__main__":
     S = lambda s: set(s.split())
-    # ---- 스필링 전: K = 3이면 a, b를 뺀 뒤 막힌다 (p.28) ----
+    # ---- 스필링 전: K = 3이면 a, b를 뺀 뒤 막힌다 ----
     _, adj = build_rig(all_points(BLOCKS, SUCC, BOUNDARY))
     stack, left = simplify(adj, 3)
     assert stack == ["a", "b"] and left == set("cdef")
 
-    # ---- p.30~32: c를 내보내고 코드 고쳐 쓰기 ----
+    # ---- c를 내보내고 코드 고쳐 쓰기 ----
     NEW = spill(BLOCKS, "c", "ca")
     assert NEW == {"B0": ["b = 3", "c0 = 1", "store c0 ca", "f = 0"],
                    "B1": ["load c1 ca", "a = b + c1", "d = -a", "e = d + f"],
@@ -162,7 +162,7 @@ if __name__ == "__main__":
                    "B3": ["c2 = d + e", "store c2 ca", "e = e - 1"],
                    "B4": ["load c3 ca", "b = f + c3"]}
 
-    # ---- p.33: 고쳐 쓴 코드의 생존 변수 ----
+    # ---- 고쳐 쓴 코드의 생존 변수 ----
     P = all_points(NEW, SUCC, BOUNDARY)
     assert P["B0"] == [S(""), S("b"), S("b c0"), S("b"), S("b f")]
     assert P["B1"] == [S("b f"), S("b c1 f"), S("a f"), S("d f"), S("d e f")]
@@ -173,7 +173,7 @@ if __name__ == "__main__":
     for ci in ("c0", "c1", "c2", "c3"):
         assert sum(ci in live for pts in P.values() for live in pts) == 1
 
-    # ---- p.34: 새 간섭 그래프 (간선 11개) ----
+    # ---- 새 간섭 그래프 (간선 11개) ----
     edges, adj2 = build_rig(P)
     figure = {("b", "c0"), ("b", "c1"), ("b", "f"), ("a", "f"), ("c1", "f"), ("d", "e"),
               ("d", "f"), ("e", "f"), ("c2", "e"), ("c2", "f"), ("c3", "f")}
@@ -181,20 +181,20 @@ if __name__ == "__main__":
     # 이웃 수: 예전의 c는 5개였는데 조각난 c0~c3은 1~2개씩이다
     assert {v: len(adj2[v]) for v in ("c0", "c1", "c2", "c3")} == {"c0": 1, "c1": 2, "c2": 2, "c3": 1}
 
-    # ---- p.35: 3색으로 칠해진다 ----
+    # ---- 3색으로 칠해진다 ----
     stack, left = simplify(adj2, 3)
     assert left == set()
     color = select(adj2, stack, 3)
     assert all(color[u] != color[v] for u, v in edges) and max(color.values()) <= 2
-    slide = dict(c0=0, a=0, c1=0, b=1, d=1, e=0, c3=1, f=2, c2=1)          # 그림의 r0, r1, r2
-    assert all(slide[u] != slide[v] for u, v in edges) and set(slide) == set(adj2)
+    picked = dict(c0=0, a=0, c1=0, b=1, d=1, e=0, c3=1, f=2, c2=1)          # 문서의 색칠: r0, r1, r2
+    assert all(picked[u] != picked[v] for u, v in edges) and set(picked) == set(adj2)
 
     # ---- 고쳐 쓴 코드는 원래 코드와 같은 b를 낸다 (두 길 모두), 레지스터 이름으로 바꿔도 같다 ----
     for path in (["B0", "B1", "B2", "B4"], ["B0", "B1", "B3", "B4"]):
         e1 = execute(BLOCKS, path)
         e2 = execute(NEW, path)
         assert e1["b"] == e2["b"]
-        reg = {v: f"r{c}" for v, c in slide.items()}
+        reg = {v: f"r{c}" for v, c in picked.items()}
         REG = {b: [" ".join(("-" + reg[x[1:]]) if x[0] == "-" and x[1:] in reg else reg.get(x, x) for x in s.split())
                    for s in NEW[b]] for b in NEW}
         assert execute(REG, path)[reg["b"]] == e1["b"] == (-7 if "B2" in path else -8)

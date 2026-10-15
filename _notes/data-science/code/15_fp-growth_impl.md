@@ -23,12 +23,11 @@ permalink: "/studies/data-science/code/15_fp-growth_impl/"
 """FP-Growth 구현과 자체 테스트.
 
 문서: 15.FP-Growth (예시, 의사코드, 실행 추적, 카드), 4.연습문제/15.FP-Growth 예제 사다리
-출처: 데이터 과학 3회 슬라이드 3-1 p.29~36, 3-4 풀이 p.3~11
 방법:
   1. DB를 한 번 훑어 항목별 개수를 세고, min_sup 이상인 항목만 개수 내림차순(같으면 이름순)으로 정한다.
   2. DB를 다시 훑어 거래마다 빈발 항목만 그 순서로 늘어놓고 트리(FP-tree)에 넣는다. 앞부분이 같으면 가지를 공유하고 개수를 더한다.
   3. 순서의 맨 뒤 항목부터, 그 항목에 이르는 앞 경로들(조건부 패턴 베이스)로 작은 트리(조건부 FP-tree)를 만들어 재귀로 캔다.
-검사: 슬라이드의 조건부 패턴 베이스·조건부 FP-tree·빈발 패턴, 연습 2의 결과와 규칙, 무작위 자료 300개.
+검사: 문서 예시의 조건부 패턴 베이스·조건부 FP-tree·빈발 패턴, 연습 2의 결과와 규칙, 무작위 자료 300개.
 """
 from itertools import combinations
 import random
@@ -115,7 +114,7 @@ def main():
     assert ["".join(p) for p in paths] == ["BAE", "BAD", "BC", "BD", "AC", "BC", "AC", "BACE", "BAC"]
     assert root.children["B"].count == 7 and root.children["A"].count == 2
     assert root.children["B"].children["A"].count == 4 and root.children["B"].children["C"].count == 2
-    print("[OK] p.30: 순서 <B:7, A:6, C:6, D:2, E:2>, 루트 아래 B:7과 A:2, B-A:4, B-C:2")
+    print("[OK] 거래 9개의 트리: 순서 <B:7, A:6, C:6, D:2, E:2>, 루트 아래 B:7과 A:2, B-A:4, B-C:2")
 
     log = {}
     f = fp_growth(tx, 2, log=log)
@@ -124,7 +123,7 @@ def main():
     assert sorted(log["C"][0]) == [(("A",), 2), (("B",), 2), (("B", "A"), 2)] and log["C"][1] == [("B", 4), ("A", 4)]
     assert log["A"][0] == [(("B",), 4)] and log["A"][1] == [("B", 4)]
     assert f == brute(EX1, 2)
-    print("[OK] p.31~34: E, D, C, A의 조건부 패턴 베이스와 빈발 항목, 결과가 Apriori·무식한 방법과 같다")
+    print("[OK] 조건부 베이스: E, D, C, A의 조건부 패턴 베이스와 빈발 항목, 결과가 Apriori·무식한 방법과 같다")
 
     tx2 = [(t, 1) for t in EX2]
     root2, header2, order2, freq2, paths2 = build(tx2, 3)
@@ -140,7 +139,7 @@ def main():
     multi = {k: n for k, n in f2.items() if len(k) > 1}
     assert multi == {S("KY"): 3, S("KO"): 3, S("EO"): 3, S("EKO"): 3, S("KM"): 3, S("EK"): 4}
     assert f2 == brute(EX2, 3)
-    print("[OK] 연습 2(3-4 풀이 p.3~8): 순서 <K:5, E:4, M:3, O:3, Y:3>, 조건부 베이스 Y·O·M·E, 가장 긴 패턴 {K,E,O}:3")
+    print("[OK] 연습 2: 순서 <K:5, E:4, M:3, O:3, Y:3>, 조건부 베이스 Y·O·M·E, 가장 긴 패턴 {K,E,O}:3")
 
     conf = {}
     l = S("KEO")
@@ -148,7 +147,7 @@ def main():
         for s in combinations("KEO", r):
             conf["".join(s)] = f2[l] / f2[S(s)]
     assert {k: round(v, 2) for k, v in conf.items()} == {"K": 0.6, "E": 0.75, "O": 1.0, "KE": 0.75, "KO": 1.0, "EO": 1.0}
-    print("[OK] p.10: K->EO 60%, E->KO 75%, O->KE 100%, KE->O 75%, KO->E 100%, EO->K 100%")
+    print("[OK] 연습 2의 규칙: K->EO 60%, E->KO 75%, O->KE 100%, KE->O 75%, KO->E 100%, EO->K 100%")
 
     rnd = random.Random(11)
     for _ in range(300):

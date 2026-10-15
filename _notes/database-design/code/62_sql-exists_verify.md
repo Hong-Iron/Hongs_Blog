@@ -23,23 +23,22 @@ permalink: "/studies/database-design/code/62_sql-exists_verify/"
 """EXISTS와 NOT EXISTS 검증 (SQLite).
 
 문서: 62.EXISTS와 NOT EXISTS (그리고 이산수학 03.술어와 한정기호의 과목별 관점)
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.15~18, 12주차 p.5
 주장:
   1. 직원마다 안쪽 질의(그 직원의 부양가족)가 돌려주는 행 수는 3, 3, 0, 1, 0, 0, 0, 0이다.
-  2. Q6(p.16): 부양가족이 없는 직원은 5명. EXISTS로 바꾸면 나머지 3명.
-  3. Q16B(p.15): Q16과 같은 0행.
-  4. 연습 1(p.17): 부양가족이 있는 관리자는 Wong, Wallace.
+  2. Q6: 부양가족이 없는 직원은 5명. EXISTS로 바꾸면 나머지 3명.
+  3. Q16B: Q16과 같은 0행.
+  4. 부양가족이 있는 관리자는 Wong, Wallace.
   5. 안쪽 질의가 바깥 행을 쓰지 않으면 EXISTS는 모든 행에 같은 답을 준다(8행 또는 0행).
   6. "부양가족이 모두 여성인 직원"을 NOT EXISTS로 쓰면 5명이 나오고, 다섯 모두 부양가족이 없다.
      부양가족이 있다는 조건을 더하면 0명이다.
-  7. UNIQUE(부질의)(p.18)는 SQLite에서 구문 오류다. GROUP BY로 바꿔 쓴 판은 8명을 고른다.
+  7. UNIQUE(부질의)는 SQLite에서 구문 오류다. GROUP BY로 바꿔 쓴 판은 8명을 고른다.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -151,12 +150,12 @@ def main():
     assert rows(c, q16b) == []
     print("[OK] Q16B: 0행")
 
-    # 4. 연습 1
+    # 4. 부양가족이 있는 관리자
     ex1 = """SELECT Lname FROM EMPLOYEE
              WHERE EXISTS (SELECT * FROM DEPENDENT WHERE Ssn = Essn)
                AND EXISTS (SELECT * FROM DEPARTMENT WHERE Ssn = Mgr_ssn)"""
     assert sorted(col(c, ex1)) == ["Wallace", "Wong"]
-    print("[OK] 연습 1: Wallace, Wong")
+    print("[OK] 부양가족이 있는 관리자: Wallace, Wong")
 
     # 5. 바깥 행을 쓰지 않는 안쪽 질의
     assert len(rows(c, "SELECT Lname FROM EMPLOYEE WHERE EXISTS (SELECT * FROM DEPENDENT)")) == 8

@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/05_pointer-address-practice_p4/"
 /* 포인터와 주소 계산 연습: 문제 p1~p4의 답을 실제로 돌려 확인한다.
  *
  * 문서: 4.연습문제/05.포인터와 주소 계산 연습
- * 출처: 자료구조 2주차 슬라이드 p.25~34
  * 실행: cc -std=c11 -Wall -Wextra 05_pointer-address-practice_p4.c -o ptr_practice && ./ptr_practice
  */
 #include <stdint.h>
@@ -87,7 +86,7 @@ static int length_indexed(const char *s)
     return i;
 }
 
-/* 2주차 슬라이드 p.34의 포인터 판 비교 */
+/* 문서 p4의 포인터 판 비교 */
 static int compare(const char *s, const char *t)
 {
     for (; *s == *t; s++, t++)
@@ -96,7 +95,7 @@ static int compare(const char *s, const char *t)
     return *s - *t;
 }
 
-/* 2주차 슬라이드 p.33의 포인터 판 복사에 세는 줄을 넣은 것 */
+/* 문서 p4의 포인터 판 복사에 세는 줄을 넣은 것 */
 static void copy_counted(char *s, const char *t, int *assigns, int *moves)
 {
     *assigns = 0;

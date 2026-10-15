@@ -23,7 +23,7 @@ permalink: "/studies/numerical-analysis/runge-kutta-ladder/"
 {% raw %}
 사용 개념: [룽게-쿠타 방법](/Hongs_Blog/studies/numerical-analysis/runge-kutta/)의 2차 RK($$w_2 = \frac{1}{2a}$$, $$w_1 = 1 - w_2$$)와 RK4.
 
-한 걸음의 하위목표는 넷이다. ① 첫 기울기: $$k_1 = f(x_i, y_i)$$ ② 다음 기울기들: $$k_1$$로 짐작한 점에서 잰다 ③ 결합: 무게 평균 ④ 다음 점과 확인: $$y_{i+1} = y_i + h \times$$(평균 기울기), 참값이 있으면 비교한다[^s1].
+한 걸음의 하위목표는 넷이다. ① 첫 기울기: $$k_1 = f(x_i, y_i)$$ ② 다음 기울기들: $$k_1$$로 짐작한 점에서 잰다 ③ 결합: 무게 평균 ④ 다음 점과 확인: $$y_{i+1} = y_i + h \times$$(평균 기울기), 참값이 있으면 비교한다.
 
 ## 문제 1 · 완전한 풀이
 
@@ -91,7 +91,4 @@ $$y' = y^2$$, $$y(0) = 1$$에 랄스턴 방법($$a = \frac34$$)으로 $$h = 0.1$
 <div class="callout-title" markdown="span">검증 — [34_runge-kutta-ladder_p4.py](/Hongs_Blog/studies/numerical-analysis/code/34_runge-kutta-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드 18회 p.8~10의 2차 RK 유도와 RK4를 연습하도록 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

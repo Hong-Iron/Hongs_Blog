@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/17_recursive-descent-parsing_impl/"
 [재귀 하강 파싱](/Hongs_Blog/studies/compilers/recursive-descent-parsing/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""재귀 하강 파싱(되돌아가기 있음)을 구현하고 슬라이드의 cad 추적과 id + id 연습을 재현한다.
+"""재귀 하강 파싱(되돌아가기 있음)을 구현하고 문서의 cad 추적과 id + id 연습을 재현한다.
 
 실행: python3 17_recursive-descent-parsing_impl.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -103,22 +103,22 @@ def tries(log):
 
 
 if __name__ == "__main__":
-    # p.8~15: S → dAc | cAe | cAd, A → a, 입력 cad
+    # 문서의 추적: S → dAc | cAe | cAd, A → a, 입력 cad
     g = G("S -> d A c | c A e | c A d\nA -> a")
     ok, log = rd_parse(g, "S", "c a d".split())
     assert ok
     assert log == [
-        ("try", "S", "d A c", 0), ("mismatch", "d", "c", 0),          # p.9~10
-        ("try", "S", "c A e", 0), ("match", "c", 0),                  # p.11
-        ("try", "A", "a", 1), ("match", "a", 1),                      # p.12
-        ("mismatch", "e", "d", 2),                                    # p.13
-        ("try", "S", "c A d", 0), ("match", "c", 0),                  # p.14
-        ("try", "A", "a", 1), ("match", "a", 1), ("match", "d", 2),   # p.15
+        ("try", "S", "d A c", 0), ("mismatch", "d", "c", 0),          # 걸음 1
+        ("try", "S", "c A e", 0), ("match", "c", 0),                  # 걸음 2
+        ("try", "A", "a", 1), ("match", "a", 1),                      # 걸음 3
+        ("mismatch", "e", "d", 2),                                    # 걸음 4
+        ("try", "S", "c A d", 0), ("match", "c", 0),                  # 걸음 5
+        ("try", "A", "a", 1), ("match", "a", 1), ("match", "d", 2),   # 걸음 6~7
     ]
     assert rd_parse(g, "S", "c a".split())[0] is False
     assert rd_parse(g, "S", "c a d d".split())[0] is False
 
-    # p.16의 연습: E → T + E | T, T → F * T | F, F → (E) | id, 입력 id + id
+    # 연습: E → T + E | T, T → F * T | F, F → (E) | id, 입력 id + id
     e = G("E -> T + E | T\nT -> F * T | F\nF -> ( E ) | id")
     ok, log = rd_parse(e, "E", "id + id".split())
     assert ok
@@ -155,7 +155,7 @@ if __name__ == "__main__":
         for s in product(["+", "*", "(", ")", "id"], repeat=n):
             assert rd_parse(f, "E", s)[0] == (s in L)
 
-    # p.17, 4회 p.42: 좌재귀 문법에서는 입력을 읽지 못한 채 자기 자신을 끝없이 부른다
+    # 좌재귀 문법에서는 입력을 읽지 못한 채 자기 자신을 끝없이 부른다
     sys.setrecursionlimit(500)
     try:
         rd_parse(G("S -> S a | b"), "S", "b a".split())

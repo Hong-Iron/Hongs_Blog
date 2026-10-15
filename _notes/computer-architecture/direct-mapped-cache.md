@@ -10,7 +10,7 @@ course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Direct-Mapped Cache", "직접 매핑 캐시", "태그", "Tag", "인덱스", "Index", "블록 오프셋", "Block Offset", "유효 비트", "Valid Bit", "캐시 적중", "Cache Hit", "캐시 실패", "Cache Miss", "캐시 블록", "캐시 라인", "Cache Line"]
 description: "메모리의 덩어리마다 캐시 안에서 들어갈 자리를 딱 한 곳으로 정해 두는 방식이다. 사물함이 8칸뿐인 학교에서 학번 끝자리로 칸을 정해 주는 것과 같다. 어느 칸을 볼지 주소만 보면 바로 알아서 찾기가 빠르고 회로가 단순하다. 대신 같은 칸을 써야 하는 두 덩어리를 번갈아 쓰면, 다…"
@@ -50,7 +50,7 @@ permalink: "/studies/computer-architecture/direct-mapped-cache/"
 - 가운데 3비트: 8줄 중 몇 번 줄인지 가리킨다. 84번지는 5번 줄에만 들어갈 수 있다.
 - 위 3비트: 5번 줄을 쓰는 주소는 여럿이다(20, 52, 84, …). 그중 누구인지 가리는 꼬리표다.
 
-대학 수업에서는 이 세 토막을 위에서부터 태그, 인덱스, 오프셋이라 부른다.
+이 세 토막을 위에서부터 태그(tag), 인덱스(index), 오프셋(offset)이라 부른다.
 
 빈 캐시에 주소 20, 22, 24, 84, 21, 48, 50, 84, 26, 20을 차례로 읽는다.
 
@@ -174,7 +174,7 @@ $$\text{전체 비트 수} = 2^k \times (\underbrace{1}_{\text{유효}} + \under
 
 ### 블록 크기 고르기
 
-블록을 키우면 한 번 실패할 때 이웃 워드가 더 많이 딸려 온다. 차례로 읽는 코드에는 좋다. 하지만 캐시 크기가 그대로면 줄 수가 줄어든다. 줄이 너무 적으면 자주 쓰는 블록들이 줄을 두고 다투고, 블록 하나를 가져오는 시간도 길어진다[^3].
+블록을 키우면 한 번 실패할 때 이웃 워드가 더 많이 딸려 온다. 차례로 읽는 코드에는 좋다. 하지만 캐시 크기가 그대로면 줄 수가 줄어든다. 줄이 너무 적으면 자주 쓰는 블록들이 줄을 두고 다투고, 블록 하나를 가져오는 시간도 길어진다.
 
 배열 하나를 차례로 읽으면서 멀리 떨어진 변수 4개를 돌아가며 쓰는 접근 4,096번을 만들었다. 데이터 256바이트 캐시에서 블록 크기만 바꾼 결과다.
 
@@ -229,7 +229,7 @@ $$2^k$$로 나눈 나머지는 2진수의 아래 $$k$$자리다. 그래서 "블�
 
 ## 활용
 
-- **인덱스로 아래쪽 비트를 쓰는 까닭.** 이웃한 블록들이 서로 다른 줄로 간다. 그래서 차례로 읽는 블록들이 캐시에 함께 머문다. 위쪽 비트를 인덱스로 쓰면 가까운 주소들이 모두 한 줄로 몰려 서로 쫓아낸다[^4].
+- **인덱스로 아래쪽 비트를 쓰는 까닭.** 이웃한 블록들이 서로 다른 줄로 간다. 그래서 차례로 읽는 블록들이 캐시에 함께 머문다. 위쪽 비트를 인덱스로 쓰면 가까운 주소들이 모두 한 줄로 몰려 서로 쫓아낸다.
 - **MIPS에서.** `lw $t0, 20($s1)`이 내는 주소는 바이트 주소다. 워드는 4바이트라서 워드 주소의 아래 2비트는 늘 00이다. 블록이 워드 1개면 오프셋 2비트가 바로 이 자리다.
 - **흔한 실수.**
     - 오프셋을 빼먹고 주소의 맨 아래 비트부터 인덱스로 자른다. 블록이 1바이트가 아닌 한 틀린다.
@@ -303,6 +303,4 @@ $$2^k$$로 나눈 나머지는 2진수의 아래 $$k$$자리다. 그래서 "블�
 
 [^1]: MIT 6.004 Computation Structures, Fall 2023, L13 "Caches", 슬라이드 8~9 (Direct-Mapped Caches: 인덱스 비트로 줄을 고르고, 유효 비트가 1이며 태그가 같으면 적중), https://shd.mit.edu/2024/lectures/readings/6191-fall2023/L13.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 5장 "Large and Fast: Exploiting Memory Hierarchy"
 [^2]: ShanghaiTech CS 110 Computer Architecture (UC Berkeley CS61C 슬라이드 기반), 2022, "Caches Part II", 슬라이드 24 (직접 사상은 적중 판정 전에 블록을 쓸 수 있다), https://robotics.shanghaitech.edu.cn/courses/ca/22s/lectures/2022-CA-L17_Caches_II.pdf
-[^3]: MIT 6.004, Fall 2023, L13, 슬라이드 11~12 (Block Size, Block Size Tradeoffs)
-[^4]: 같은 자료, 슬라이드 10 (Selection of Index Bits)
 {% endraw %}

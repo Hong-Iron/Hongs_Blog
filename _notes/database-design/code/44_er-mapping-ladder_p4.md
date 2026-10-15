@@ -23,10 +23,9 @@ permalink: "/studies/database-design/code/44_er-mapping-ladder_p4/"
 """ER-관계형 사상 예제 사다리 문제 2~4 검증.
 
 문서: 44.ER-관계형 사상 예제 사다리 (문제 2 PART_ORDER, 문제 3 MOVIE, 문제 4 CONF_REVIEW)
-출처: ER 그림은 데이터베이스 설계 6-1 풀이 슬라이드 p.18, p.26, p.35. 릴레이션으로 옮긴 답은 슬라이드에 없다(보충).
-      옮기는 규칙은 7 슬라이드 p.13~28.
+ER 그림: 31.ER 다이어그램 설계 연습의 세 답. 옮기는 규칙: 44.ER-관계형 사상 절차.
 실행: python3 44_er-mapping-ladder_p4.py   (표준 라이브러리 sqlite3만 쓴다)
-하는 일: 강의의 사상 단계를 옮긴 사상기에 세 ER을 넣고, 문서에 실은 답과 같은지 본다. 답을 CREATE TABLE로 만들어 SQLite에서 돌린다.
+하는 일: 사상 절차의 단계를 옮긴 사상기에 세 ER을 넣고, 문서에 실은 답과 같은지 본다. 답을 CREATE TABLE로 만들어 SQLite에서 돌린다.
 확인하는 것:
   문제 2 PART_ORDER: 릴레이션 5개, 외래 키 4개. ORDER에 E_no, C_no(둘 다 NOT NULL), CONTAINS(O_no, P_no, Specified_qty).
                      ORDER는 SQL 예약어라 따옴표 없이는 표 이름으로 쓸 수 없다.
@@ -38,7 +37,7 @@ permalink: "/studies/database-design/code/44_er-mapping-ladder_p4/"
 """
 import sqlite3
 
-# ---- ER → 릴레이션 사상기 (강의 7 p.12의 순서). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- ER → 릴레이션 사상기 (사상 절차의 일곱 단계 순서). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 # ER 적는 법
 #   개체: {"name", "attrs": [단순 속성 이름 | (복합 속성 이름, [성분들])], "key": [기본 키로 고른 키 속성],
 #          "multivalued": [(릴레이션 이름, 값 속성, [외래 키 이름])], "derived": [유도 속성],
@@ -178,7 +177,7 @@ def build_sqlite(rels):
     return c
 # ---- 사상기 끝 ----
 
-PART_ORDER_ER = {   # 6-1 풀이 p.18. ORDER의 Actual_date는 요구 사항(p.11~12)을 따랐다(그림에는 Quantity로 적혀 있다)
+PART_ORDER_ER = {   # 문서 문제 2의 그림. ORDER의 속성은 주문 번호와 날짜 셋(요구 사항)
     "entities": [
         {"name": "EMPLOYEE", "key": ["E_no"], "attrs": ["E_no", "F_name", "L_name", "Zip"]},
         {"name": "CUSTOMER", "key": ["C_no"], "attrs": ["C_no", "F_name", "L_name", "Zip"]},
@@ -201,7 +200,7 @@ PART_ORDER_ANSWER = {
     "CONTAINS": (["O_no", "P_no", "Specified_qty"], ["O_no", "P_no"], {("O_no",): "ORDER", ("P_no",): "PART"}),
 }
 
-MOVIE_ER = {   # 6-1 풀이 p.26 (겹줄은 PRODUCES–MOVIE, DIRECTS–MOVIE에만 그려져 있다)
+MOVIE_ER = {   # 문서 문제 3의 그림. 참여는 요구 사항의 "한 편 이상", "한 명 이상"을 따른다
     "entities": [
         {"name": "PRODUCTION", "key": ["Name"], "attrs": ["Name", "Address"]},
         {"name": "MOVIE", "key": ["Title", "Year"], "attrs": [("MKey", ["Title", "Year"]), "Length", "Plot_outline"],
@@ -210,10 +209,10 @@ MOVIE_ER = {   # 6-1 풀이 p.26 (겹줄은 PRODUCES–MOVIE, DIRECTS–MOVIE에
         {"name": "ACTOR", "key": ["Name", "Date_of_birth"], "attrs": [("AKey", ["Name", "Date_of_birth"])]},
     ],
     "relationships": [
-        {"name": "PRODUCES", "ends": [("PRODUCTION", "1", "partial"), ("MOVIE", "N", "total")], "fk": ["Production_name"]},
-        {"name": "DIRECTS", "ends": [("MOVIE", "M", "total"), ("DIRECTOR", "N", "partial")],
+        {"name": "PRODUCES", "ends": [("PRODUCTION", "1", "total"), ("MOVIE", "N", "total")], "fk": ["Production_name"]},
+        {"name": "DIRECTS", "ends": [("MOVIE", "M", "total"), ("DIRECTOR", "N", "total")],
          "ends_fk": [["Title", "Year"], ["Dname", "Ddob"]]},
-        {"name": "ACTS", "ends": [("MOVIE", "M", "partial"), ("ACTOR", "N", "partial")],
+        {"name": "ACTS", "ends": [("MOVIE", "M", "total"), ("ACTOR", "N", "total")],
          "ends_fk": [["Title", "Year"], ["Aname", "Adob"]], "attrs": ["Role"], "multivalued": [("ACTS_QUOTES", "Quote")]},
         {"name": "DIR_ACTS", "ends": [("MOVIE", "M", "partial"), ("DIRECTOR", "N", "partial")],
          "ends_fk": [["Title", "Year"], ["Dname", "Ddob"]], "attrs": ["Role"], "multivalued": [("DIR_ACTS_QUOTES", "Quote")]},
@@ -237,7 +236,7 @@ MOVIE_ANSWER = {
                         {("Title", "Year", "Dname", "Ddob"): "DIR_ACTS"}),
 }
 
-CONF_ER = {   # 6-1 풀이 p.35 ((min, max) 표기)
+CONF_ER = {   # 문서 문제 4의 그림 ((min, max) 표기)
     "entities": [
         {"name": "AUTHOR", "key": ["A_email"], "attrs": ["A_email", "First_name", "Last_name"]},
         {"name": "PAPER", "key": ["P_id"], "attrs": ["P_id", "Title", "Abstract", "File_name"]},

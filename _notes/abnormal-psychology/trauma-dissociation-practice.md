@@ -24,7 +24,7 @@ permalink: "/studies/abnormal-psychology/trauma-dissociation-practice/"
 {% raw %}
 사용 개념: [외상 후 스트레스 장애](/Hongs_Blog/studies/abnormal-psychology/ptsd/), [급성 스트레스 장애](/Hongs_Blog/studies/abnormal-psychology/acute-stress-disorder/), [적응장애](/Hongs_Blog/studies/abnormal-psychology/adjustment-disorder/), [지속성 비탄 장애](/Hongs_Blog/studies/abnormal-psychology/prolonged-grief-disorder/), [해리성 정체감 장애](/Hongs_Blog/studies/abnormal-psychology/dissociative-identity-disorder/), [해리성 기억상실증](/Hongs_Blog/studies/abnormal-psychology/dissociative-amnesia/)
 
-모든 사례는 가상이다[^s1]. "어떤 일을 겪은 뒤 달라진 사람"의 사례는 다섯 하위목표로 푼다. 이 장애들은 사건과 시간으로 먼저 갈리므로, 증상보다 사건과 시간을 먼저 본다.
+모든 사례는 가상이다. "어떤 일을 겪은 뒤 달라진 사람"의 사례는 다섯 하위목표로 푼다. 이 장애들은 사건과 시간으로 먼저 갈리므로, 증상보다 사건과 시간을 먼저 본다.
 
 1. *사건:* 무엇을 겪었나. 외상(죽음, 심각한 상해, 성폭력)인가, 일상의 스트레스인가, 사별인가.
 2. *시간:* 사건 뒤 언제 시작해 얼마나 이어졌나.
@@ -110,7 +110,4 @@ permalink: "/studies/abnormal-psychology/trauma-dissociation-practice/"
 해리성 정체감 장애를 고려한다. 둘 이상의 구별되는 성격 상태가 있고(기준 A), 인격이 바뀐 동안의 일에 대한 기억 공백이 반복된다(기준 B). 기억상실은 해리성 정체감 장애의 기준 B에 이미 포함되므로 따로 해리성 기억상실증으로 진단하지 않는다. 아동기의 지속적인 외상은 외상 모델이 말하는 경로와 맞는다. 치료 목표는 여러 인격이 서로를 인식하고 협동하게 한 뒤, 가장 적응적인 인격을 중심으로 통합하는 것이다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 06.외상 후 스트레스 장애 및 해리장애.pdf의 장애별 설명(p.3, 5~10, 21~25, 28, 30, 32, 38~39, 43, 59, 62, 65, 67, 71)을 적용한 가상 사례다.
 {% endraw %}

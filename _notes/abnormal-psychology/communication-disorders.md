@@ -42,7 +42,7 @@ permalink: "/studies/abnormal-psychology/communication-disorders/"
 | 여섯 살 KC | "ㄱ-ㄱ-ㄱ-가방"처럼 첫소리를 반복하고 말이 막힌다 | 말하기(흐름) | 아동기 발병 유창성장애 |
 | 여덟 살 KD | 문법은 정확한데 선생님께 친구처럼 말하고, 농담을 곧이곧대로 듣는다 | 의사소통(사용) | 사회적 의사소통장애 |
 
-## 정의[^1]
+## 정의
 
 의사소통장애는 언어(language), 말하기(speech), 의사소통(communication)의 결함이다.
 
@@ -54,7 +54,7 @@ permalink: "/studies/abnormal-psychology/communication-disorders/"
 
 네 장애: [언어장애](/Hongs_Blog/studies/abnormal-psychology/language-disorder/), [말소리장애](/Hongs_Blog/studies/abnormal-psychology/speech-sound-disorder/), [아동기 발병 유창성장애(말더듬)](/Hongs_Blog/studies/abnormal-psychology/stuttering/), [사회적(실용적) 의사소통장애](/Hongs_Blog/studies/abnormal-psychology/social-communication-disorder/).
 
-## 치료[^2]
+## 치료
 
 - 그 아이가 보이는 증상과 심리적 특성을 고려한다.
 - 감각적·신체적·구조적 문제 같은 기질적 문제를 확인한다.
@@ -84,7 +84,5 @@ permalink: "/studies/abnormal-psychology/communication-disorders/"
 
 </details>
 
-[^1]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.11
-[^2]: 이상 심리학 11회 강의 자료 「신경발달장애, 신경인지장애」, p.21
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 아이의 사례는 장애를 가르려고 만든 가상 예다.
+[^s1]: 네 아이의 사례는 장애를 가르려고 만든 가상 예다.
 {% endraw %}

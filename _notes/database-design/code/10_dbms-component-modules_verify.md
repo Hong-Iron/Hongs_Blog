@@ -23,8 +23,8 @@ permalink: "/studies/database-design/code/10_dbms-component-modules_verify/"
 """DBMS 구성 모듈 문서의 값 확인.
 
 문서: 10.DBMS 구성 모듈
-출처: 데이터베이스 설계 2주차 슬라이드 2-2 p.29~33 (그림은 Elmasri 그림 2.3), UNIVERSITY 상태 2-1 p.5
-주장: 슬라이드가 말하는 모듈의 일을 실제 DBMS 하나(SQLite)에서 하나씩 본다.
+출처: Elmasri & Navathe, Fundamentals of Database Systems 그림 2.3과 1장의 UNIVERSITY 예
+주장: 문서가 말하는 모듈의 일을 실제 DBMS 하나(SQLite)에서 하나씩 본다.
   1. DDL 컴파일러: 정의 문장을 처리하면 그 내용이 시스템 카탈로그에 들어간다(이름, 정의, 저장 위치).
   2. 질의 컴파일러: 문법이 틀린 질의와 카탈로그에 없는 표·열을 쓰는 질의는 실행하기 전에 걸러진다.
      맞는 질의는 내부 형태(실행 시간 처리기가 돌릴 명령의 줄)로 바뀐다.
@@ -35,7 +35,7 @@ permalink: "/studies/database-design/code/10_dbms-component-modules_verify/"
   6. 저장 데이터 관리자: 저장된 데이터베이스는 크기가 같은 블록(페이지)의 줄이고, 표와 색인마다 시작 페이지가
      카탈로그에 적혀 있다.
 실행: python3 10_dbms-component-modules_verify.py
-SQLite의 부품과 슬라이드의 모듈을 짝지은 것은 확인을 위해 보탠 것이다. 글귀는 SQLite 3.50.4 기준이다.
+SQLite의 부품과 문서의 모듈을 짝지은 것은 확인을 위해 보탠 것이다. 글귀는 SQLite 3.50.4 기준이다.
 """
 import os
 import sqlite3

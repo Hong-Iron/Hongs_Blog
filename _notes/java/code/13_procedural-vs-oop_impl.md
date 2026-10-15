@@ -22,8 +22,8 @@ permalink: "/studies/java/code/13_procedural-vs-oop_impl/"
 ```java
 // 실행: docker run --rm -v "$PWD":/w -w /w eclipse-temurin:21-jdk java 13_procedural-vs-oop_impl.java
 // (JDK 21. 파일 이름이 숫자로 시작해 public 클래스를 두지 않는다. 맨 위 클래스의 main이 돈다.)
-// 문서 「절차 지향과 객체 지향 비교」의 두 코드(슬라이드 p.34, p.35)를 실행해 출력을 비교한다.
-// 슬라이드의 Student에는 getName()이 없어 그대로는 컴파일되지 않는다. 여기서는 getName()을 보탰다.
+// 문서 「절차 지향과 객체 지향 비교」의 두 코드를 실행해 출력을 비교한다.
+// Student에 getName()이 없으면 student1.getName()을 부르는 줄이 컴파일되지 않는다. 그래서 getName()을 둔다.
 
 class ProceduralVsOopCheck {
     // 절차 지향: 자료(배열)와 그 자료를 다루는 순서가 main 한곳에 놓인다
@@ -94,7 +94,7 @@ class Student {
         this.grades = grades;
     }
 
-    public String getName() {   // 슬라이드에는 없다
+    public String getName() {   // 없으면 student1.getName()이 컴파일되지 않는다
         return name;
     }
 

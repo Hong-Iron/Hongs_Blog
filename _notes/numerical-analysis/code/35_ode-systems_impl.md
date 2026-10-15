@@ -37,7 +37,7 @@ def rk4_sys(F, x, Y, h):
 
 
 def main():
-    # 슬라이드 p.3: dy1/dx = −0.5 y1, dy2/dx = 4 − 0.3 y2 − 0.1 y1, h = 0.5
+    # 문서의 예: dy1/dx = −0.5 y1, dy2/dx = 4 − 0.3 y2 − 0.1 y1, h = 0.5
     F = lambda x, Y: [-0.5 * Y[0], 4 - 0.3 * Y[1] - 0.1 * Y[0]]
     Y = [4.0, 6.0]; table = [Y]
     for i in range(4):

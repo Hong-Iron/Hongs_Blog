@@ -156,7 +156,7 @@ $$f(x) = \dfrac{2x + 1}{x - 3}$$의 역함수를 구한다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 1.7절 "Inverse Functions". 정의역을 잘라 역함수를 만드는 예는 3.8절 "Inverses and Radical Functions".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 좌표 변환과 해시는 컴퓨터공학에서 역함수가 쓰이는 곳과 쓰이지 않는 곳을 보이려고 넣었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [03_inverse-function_plot.py](/Hongs_Blog/studies/college-math/code/03_inverse-function_plot/)로 그렸고, 그림에 쓴 값($$(2, 4)$$와 $$(4, 2)$$, $$(-2)^2 = 2^2 = 4$$, $$0 \le x \le 3$$에서 $$\sqrt{x^2} = x$$)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `예시로 보기`의 섭씨-화씨 변환과 그 역함수(100°C ↔ 212°F)를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.7절).
+[^s1]: 좌표 변환과 해시는 컴퓨터공학에서 역함수가 쓰이는 곳과 쓰이지 않는 곳을 보이려고 넣었다.
+[^s2]: [03_inverse-function_plot.py](/Hongs_Blog/studies/college-math/code/03_inverse-function_plot/)로 그렸고, 그림에 쓴 값($$(2, 4)$$와 $$(4, 2)$$, $$(-2)^2 = 2^2 = 4$$, $$0 \le x \le 3$$에서 $$\sqrt{x^2} = x$$)을 같은 코드로 확인했다.
+[^s3]: `예시로 보기`의 섭씨-화씨 변환과 그 역함수(100°C ↔ 212°F)를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.7절).
 {% endraw %}

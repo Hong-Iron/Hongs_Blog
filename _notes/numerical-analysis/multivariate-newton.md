@@ -34,9 +34,9 @@ permalink: "/studies/numerical-analysis/multivariate-newton/"
 
 ## 예시로 보기
 
-$$u(x, y) = x^2 + xy - 10 = 0$$, $$v(x, y) = y + 3xy^2 - 57 = 0$$을 $$(x_0, y_0) = (1.5, 3.5)$$에서 푼다. 참값은 $$(2, 3)$$이다[^1].
+$$u(x, y) = x^2 + xy - 10 = 0$$, $$v(x, y) = y + 3xy^2 - 57 = 0$$을 $$(x_0, y_0) = (1.5, 3.5)$$에서 푼다. 참값은 $$(2, 3)$$이다.
 
-편미분은 $$\frac{\partial u}{\partial x} = 2x + y = 6.5$$, $$\frac{\partial u}{\partial y} = x = 1.5$$, $$\frac{\partial v}{\partial x} = 3y^2 = 36.75$$, $$\frac{\partial v}{\partial y} = 1 + 6xy = 32.5$$다. 다음 점은 $$(2.03603, 2.84388)$$이다[^1][^2].
+편미분은 $$\frac{\partial u}{\partial x} = 2x + y = 6.5$$, $$\frac{\partial u}{\partial y} = x = 1.5$$, $$\frac{\partial v}{\partial x} = 3y^2 = 36.75$$, $$\frac{\partial v}{\partial y} = 1 + 6xy = 32.5$$다. 다음 점은 $$(2.03603, 2.84388)$$이다.
 
 | 반복 | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
@@ -56,12 +56,12 @@ $$u(x, y) = x^2 + xy - 10 = 0$$, $$v(x, y) = y + 3xy^2 - 57 = 0$$을 $$(x_0, y_0
 
 ## 정의
 
-1차원 뉴턴 방법은 테일러 급수의 1차 근사 $$f(x_{i+1}) \approx f(x_i) + (x_{i+1} - x_i)f'(x_i)$$에서 $$f(x_{i+1}) = 0$$으로 둔 것이다[^3]. 두 변수에서도 같은 1차 근사를 쓴다[^4].
+1차원 뉴턴 방법은 테일러 급수의 1차 근사 $$f(x_{i+1}) \approx f(x_i) + (x_{i+1} - x_i)f'(x_i)$$에서 $$f(x_{i+1}) = 0$$으로 둔 것이다. 두 변수에서도 같은 1차 근사를 쓴다.
 
 $$u_{i+1} = u_i + (x_{i+1} - x_i)\frac{\partial u_i}{\partial x} + (y_{i+1} - y_i)\frac{\partial u_i}{\partial y}, \qquad v_{i+1} = v_i + (x_{i+1} - x_i)\frac{\partial v_i}{\partial x} + (y_{i+1} - y_i)\frac{\partial v_i}{\partial y}$$
 
 
-근에서는 $$u_{i+1} = v_{i+1} = 0$$이므로 $$x_{i+1}$$, $$y_{i+1}$$에 대한 연립 일차방정식이 된다[^4][^5].
+근에서는 $$u_{i+1} = v_{i+1} = 0$$이므로 $$x_{i+1}$$, $$y_{i+1}$$에 대한 연립 일차방정식이 된다.
 
 $$\frac{\partial u_i}{\partial x}x_{i+1} + \frac{\partial u_i}{\partial y}y_{i+1} = -u_i + x_i\frac{\partial u_i}{\partial x} + y_i\frac{\partial u_i}{\partial y}$$
 
@@ -69,7 +69,7 @@ $$\frac{\partial u_i}{\partial x}x_{i+1} + \frac{\partial u_i}{\partial y}y_{i+1
 $$\frac{\partial v_i}{\partial x}x_{i+1} + \frac{\partial v_i}{\partial y}y_{i+1} = -v_i + x_i\frac{\partial v_i}{\partial x} + y_i\frac{\partial v_i}{\partial y}$$
 
 
-크라메르 공식으로 풀면 다음과 같다. 분모는 편미분 행렬(야코비 행렬)의 행렬식이다[^5].
+크라메르 공식으로 풀면 다음과 같다. 분모는 편미분 행렬(야코비 행렬)의 행렬식이다.
 
 $$x_{i+1} = x_i - \frac{u_i\frac{\partial v_i}{\partial y} - v_i\frac{\partial u_i}{\partial y}}{\frac{\partial u_i}{\partial x}\frac{\partial v_i}{\partial y} - \frac{\partial u_i}{\partial y}\frac{\partial v_i}{\partial x}}, \qquad y_{i+1} = y_i - \frac{v_i\frac{\partial u_i}{\partial x} - u_i\frac{\partial v_i}{\partial x}}{\frac{\partial u_i}{\partial x}\frac{\partial v_i}{\partial y} - \frac{\partial u_i}{\partial y}\frac{\partial v_i}{\partial x}}$$
 
@@ -126,12 +126,7 @@ flowchart TD
 </details>
 
 
-[^1]: 수치해석 17회 강의 자료 「na17_nonlinear2」, p.13
-[^2]: 같은 자료, p.14
-[^3]: 같은 자료, p.10
-[^4]: 같은 자료, p.11
-[^5]: 같은 자료, p.12
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오차 표, 행렬 꼴 $$J\Delta\mathbf x = -\mathbf F$$, 활용과 복잡도, 다른 근 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [31_multivariate-newton_plot.py](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 반복 $$(2.03603, 2.84388)$$, 거리 표의 값, 고정점 방법 ii의 첫 값 $$(2.17945, 2.86051)$$.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 1차 근사와 연립 일차방정식(원본 17.na17_nonlinear2.pdf p.10~12), '활용'의 복잡도로 그렸다. 멈추는 기준은 예시 표의 근까지 거리를 보고 일반적인 꼴로 적었다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [31_multivariate-newton_plot.py](/Hongs_Blog/studies/numerical-analysis/code/31_multivariate-newton_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 첫 반복 $$(2.03603, 2.84388)$$, 거리 표의 값, 고정점 방법 ii의 첫 값 $$(2.17945, 2.86051)$$.
+[^s2]: 멈추는 기준은 예시 표의 근까지 거리를 보고 일반적인 꼴로 적었다.
 {% endraw %}

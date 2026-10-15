@@ -23,7 +23,7 @@ permalink: "/studies/computer-communication/crc-ladder/"
 {% raw %}
 사용 개념: [CRC](/Hongs_Blog/studies/computer-communication/crc/)의 XOR 나눗셈.
 
-"CRC 값을 구하라"는 문제는 같은 하위목표의 되풀이다. ① 0 붙이기: 젯수가 $$k + 1$$비트면 메시지 뒤에 0을 $$k$$개 붙인다 ② 맨 앞이 1인 $$k + 1$$비트를 젯수와 XOR한다(맨 앞이 0이면 건너뛴다) ③ 다음 비트를 내려 ②를 되풀이한다 ④ 마지막 $$k$$비트가 나머지 $$F$$다. 메시지 뒤에 붙여 보내고, 받는 쪽은 전체를 나눠 나머지가 0인지 본다[^s1].
+"CRC 값을 구하라"는 문제는 같은 하위목표의 되풀이다. ① 0 붙이기: 젯수가 $$k + 1$$비트면 메시지 뒤에 0을 $$k$$개 붙인다 ② 맨 앞이 1인 $$k + 1$$비트를 젯수와 XOR한다(맨 앞이 0이면 건너뛴다) ③ 다음 비트를 내려 ②를 되풀이한다 ④ 마지막 $$k$$비트가 나머지 $$F$$다. 메시지 뒤에 붙여 보내고, 받는 쪽은 전체를 나눠 나머지가 0인지 본다.
 
 하위목표마다 무엇을 보고 판단하는지는 다음과 같다[^s3].
 
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/crc-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-$$M = 10011010$$, $$C = 1101$$일 때 보낼 프레임을 구하라(슬라이드 p.54의 예).
+$$M = 10011010$$, $$C = 1101$$일 때 보낼 프레임을 구하라([CRC](/Hongs_Blog/studies/computer-communication/crc/) 문서와 같은 예).
 
 1. *0 붙이기:* $$C$$가 4비트라 $$k = 4 - 1 = 3$$. 메시지 뒤에 0을 3개 붙여 11비트 $$10011010\,000$$을 만든다.
 2. *XOR:* 앞 4비트 $$1001$$이 첫 창이다. 맨 앞이 1이니 $$1101$$과 자리마다 XOR한다. $$1 \oplus 1 = 0$$, $$0 \oplus 1 = 1$$, $$0 \oplus 0 = 0$$, $$1 \oplus 1 = 0$$이라 $$1001 \oplus 1101 = 0100$$. 몫의 첫 비트는 1이다.
@@ -111,7 +111,6 @@ $$C = 1101$$이다. (a) 받은 프레임 $$10011010\,111$$에 오류가 있는�
 </div>
 
 
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1은 슬라이드 p.54의 예이고, 문제 2~4와 수치는 원본에 없다. 필기의 "CRC 이해가 필요"에 맞춰 같은 계산을 단계별로 연습하도록 만들었고, 답은 문제 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1의 그림은 [CRC](/Hongs_Blog/studies/computer-communication/crc/) 문서의 그림 1을 그대로 넣었다. 문제 2, 3, 4 (a)의 그림 3장은 원본에 없다. [50_crc-ladder_plot.py](/Hongs_Blog/studies/computer-communication/code/50_crc-ladder_plot/)로 그렸고, 나머지 111·1011·010, 단계별 창, 건너뛰는 단계(문제 2의 5단계, 문제 3의 2·4·5단계), 몫 111101·101001, 문제 4 (a)의 바뀐 비트 자리를 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표마다 판단 기준(0을 $$k$$개 붙이는 까닭, 건너뛸 때를 아는 법, 나머지 자릿수 맞추기)과 문제 1~4 답의 단계별 풀이는 원본에 없다. [CRC](/Hongs_Blog/studies/computer-communication/crc/) 문서의 설명을 따랐고, 값은 문제 코드와 그림 코드로 확인했다.
+[^s2]: 문제 1의 그림은 [CRC](/Hongs_Blog/studies/computer-communication/crc/) 문서의 그림 1을 그대로 넣었다. [50_crc-ladder_plot.py](/Hongs_Blog/studies/computer-communication/code/50_crc-ladder_plot/)로 그렸고, 나머지 111·1011·010, 단계별 창, 건너뛰는 단계(문제 2의 5단계, 문제 3의 2·4·5단계), 몫 111101·101001, 문제 4 (a)의 바뀐 비트 자리를 같은 코드로 확인했다.
+[^s3]: [CRC](/Hongs_Blog/studies/computer-communication/crc/) 문서의 설명을 따랐고, 값은 문제 코드와 그림 코드로 확인했다.
 {% endraw %}

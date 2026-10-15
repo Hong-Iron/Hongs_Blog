@@ -23,7 +23,7 @@ permalink: "/studies/compilers/code/53_codegen-practice_p3/"
 # 코드 생성 연습 문제 3: 인자가 둘인 함수 호출  c = call add2(5, 7).
 # 실행: python3 53_codegen-practice_p3.py  (표준 라이브러리만 쓴다)
 # 흉내기(Machine)와 호출 명령 만드는 함수는 53_codegen-function-call_impl.py의 것을 복사했다.
-# 인자가 둘일 때 넣는 순서는 슬라이드에 없다. 여기서는 첫 인자를 먼저(더 높은 주소에) 넣는다.
+# 인자가 둘일 때 넣는 순서는 문제에서 정한 가정을 따른다. 첫 인자를 먼저(더 높은 주소에) 넣는다.
 import re
 
 CMP = {"eq": lambda a, b: a == b, "ne": lambda a, b: a != b, "gt": lambda a, b: a > b,
@@ -82,7 +82,7 @@ class Machine:
                 self.pc = self.labels[a[2]]
         elif op == "jr":
             self.pc = R[a[0]]
-        elif op == "jal":                    # 슬라이드에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
+        elif op == "jal":                    # 문서의 명령 표에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
             R["$ra"] = self.pc
             self.pc = self.labels[a[0]]
         else:

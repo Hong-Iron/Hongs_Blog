@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Segmented Memory", "세그먼트 메모리", "세그먼트 오프셋 주소", "Segment-Offset Address", "선형 주소", "Linear Address", "절대 주소", "Absolute Address", "Calculating Linear Addresses"]
 description: "실주소 모드에서는 메모리의 한 자리를 숫자 두 개로 가리킨다. \"몇 동\"과 \"그 동의 몇 호\"로 집을 찾는 것과 같다. 앞의 숫자가 구역이 시작하는 곳을, 뒤의 숫자가 그 안에서 얼마나 들어갔는지를 말한다. 작은 숫자 둘로 큰 메모리를 다 가리킬 수 있어 좋다. 대신 구역 하나가 …"
@@ -34,9 +34,7 @@ permalink: "/studies/assembly-language/real-mode-segment-address/"
 
 ## 예시로 보기
 
-실주소 모드의 메모리는 1MB이고, 한 자리를 가리키려면 20비트가 든다. 그런데 이 모드의 레지스터는 16비트라서 `0000h`부터 `FFFFh`까지, 곧 65,536가지만 담는다. 레지스터 하나로는 1MB의 16분의 1밖에 못 가리킨다. 그래서 16비트 숫자 두 개를 함께 쓴다.
-
-슬라이드의 그림이다[^1].
+실주소 모드의 메모리는 1MB이고, 한 자리를 가리키려면 20비트가 든다. 그런데 이 모드의 레지스터는 16비트라서 `0000h`부터 `FFFFh`까지, 곧 65,536가지만 담는다. 레지스터 하나로는 1MB의 16분의 1밖에 못 가리킨다. 그래서 16비트 숫자 두 개를 함께 쓴다. 그림으로 보면 이렇다.
 
 ```
  진짜 주소
@@ -62,7 +60,7 @@ permalink: "/studies/assembly-language/real-mode-segment-address/"
 
 ## 정의
 
-세그먼트 값에 16을 곱하고 오프셋을 더하면 선형 주소다[^2]. 세그먼트 값과 오프셋은 둘 다 16비트 수다.
+세그먼트 값에 16을 곱하고 오프셋을 더하면 선형 주소다. 세그먼트 값과 오프셋은 둘 다 16비트 수다.
 
 $$\text{선형 주소} = \text{세그먼트} \times 16 + \text{오프셋}$$
 
@@ -78,7 +76,7 @@ $$\text{선형 주소} = \text{세그먼트} \times 16 + \text{오프셋}$$
 
 ## 예제
 
-**`08F1:0100`을 선형 주소로** (슬라이드의 예)[^2]
+**`08F1:0100`을 선형 주소로**
 
 1. *세그먼트 끝에 0 붙이기:* `08F1` → `08F10`.
 2. *오프셋 더하기:* `08F10` + `0100` = `09010`.
@@ -99,7 +97,7 @@ $$\text{선형 주소} = \text{세그먼트} \times 16 + \text{오프셋}$$
 ## 활용
 
 - 실주소 모드에서 세그먼트 값은 세그먼트 레지스터(CS, DS, SS, ES)에 들어 있다: [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/). 프로그램은 보통 오프셋만 적고, 프로세서가 레지스터의 세그먼트 값과 합친다[^s1].
-- 인터럽트 벡터 표의 칸 하나는 이 꼴의 주소(세그먼트 16비트 + 오프셋 16비트 = 32비트)다[^3]: [INT 명령과 인터럽트 벡터 표](/Hongs_Blog/studies/assembly-language/interrupt-vector-table/).
+- 인터럽트 벡터 표의 칸 하나는 이 꼴의 주소(세그먼트 16비트 + 오프셋 16비트 = 32비트)다: [INT 명령과 인터럽트 벡터 표](/Hongs_Blog/studies/assembly-language/interrupt-vector-table/).
 - 흔한 실수: 두 수를 그냥 이어 붙이는 것. `08F1:0100`은 `08F10100h`가 아니다. 한 자리만 밀어서 더한다.
 - 흔한 실수: 10진수로 더하는 것. `F + 1`은 10이 아니라 올림이 생기는 `10h`다. 연습은 [16진 계산과 2의 보수 연습](/Hongs_Blog/studies/assembly-language/asm-hex-practice/)에 있다.
 
@@ -137,8 +135,5 @@ $$\text{선형 주소} = \text{세그먼트} \times 16 + \text{오프셋}$$
 </details>
 
 
-[^1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.9 (Segmented Memory: absolute (linear) address is a combination of a 16-bit segment value added to a 16-bit offset, 그림의 8000:0000·8000:0250·8000:FFFF). 같은 그림이 어셈블리어 13회 강의 자료 「wk13-chapt_14-2-1」, p.7에 다시 나온다.
-[^2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.10 (Calculating Linear Addresses: multiply it by 16 (add a hexadecimal zero), and add it to the offset, 08F1:0100 → 09010). 어셈블리어 13회 강의 자료 「wk13-chapt_14-2-1」, p.8 (같은 내용)
-[^3]: 어셈블리어 13회 강의 자료 「wk13-chapt_14-2-1」, p.10 (The Interrupt Vector Table (IVT) holds a 32-bit segment-offset address for each possible interrupt handler)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 동·호수 비유, 레지스터 하나로 못 가리키는 까닭, 겹치는 쌍의 예, `FFFF:FFFF`의 값, 세그먼트 레지스터와 합친다는 설명, 카드의 주소는 슬라이드에 없다. 슬라이드에는 그림과 계산 예 하나가 있다. 모든 값은 검증 코드로 확인했다. 내용은 교재 Irvine, *Assembly Language for x86 Processors* 7판, 2.3.1절에 있다.
+[^s1]: 모든 값은 검증 코드로 확인했다. 내용은 교재 Irvine, *Assembly Language for x86 Processors* 7판, 2.3.1절에 있다.
 {% endraw %}

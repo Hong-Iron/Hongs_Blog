@@ -23,11 +23,11 @@ permalink: "/studies/compilers/code/29_ll-vs-lr_verify/"
 # 검증: LL 파싱과 LR 파싱 비교. 같은 문법에서 LL(1) 표와 SLR 표의 충돌, 규칙을 쓰는 순서.
 # 실행: python3 29_ll-vs-lr_verify.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 SLR 문서들처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서에서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,10 +228,10 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# SLR 파싱 표 문서의 문법 E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 덧셈과 곱셈이 있는 문법 E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
@@ -291,11 +291,11 @@ def preorder(node, left_first=True):
 
 
 if __name__ == "__main__":
-    # (1) 강의의 문법 E -> T + E | T, T -> F * T | F, F -> ( E ) | id
+    # (1) 문법 E -> T + E | T, T -> F * T | F, F -> ( E ) | id
     #     그대로는 LL(1)이 아니다(앞부분이 같은 규칙이 있다). SLR 표에는 충돌이 없다
     assert ll1_conflicts(G1) != []
     assert conflicts(slr_table(G1, G1_ORDER)[2]) == []
-    # 좌인수분해한 문법(L05 p.33의 표)은 LL(1)이고 SLR이기도 하다
+    # 좌인수분해한 문법은 LL(1)이고 SLR이기도 하다
     GF = [("S'", ("E",)), ("E", ("T", "E'")), ("E'", ("+", "E")), ("E'", ()),
           ("T", ("F", "T'")), ("T'", ("*", "T")), ("T'", ()), ("F", ("(", "E", ")")), ("F", ("id",))]
     assert ll1_conflicts(GF) == []
@@ -313,7 +313,7 @@ if __name__ == "__main__":
     ll_order = preorder(tree)                       # 왼쪽 끝 유도 = 뿌리부터, 왼쪽 자식 먼저
     rm_order = preorder(tree, left_first=False)     # 오른쪽 끝 유도 = 뿌리부터, 오른쪽 자식 먼저
     assert [name(p) for p in ll_order] == ["E -> T", "T -> F * T", "F -> id", "T -> F", "F -> id"]
-    assert [name(p) for p in rm_order] == ["E -> T", "T -> F * T", "T -> F", "F -> id", "F -> id"]   # L07 p.3
+    assert [name(p) for p in rm_order] == ["E -> T", "T -> F * T", "T -> F", "F -> id", "F -> id"]   # 오른쪽 끝 유도
     assert lr_order == list(reversed(rm_order))     # LR 파서의 환원 순서 = 오른쪽 끝 유도의 역순
     assert [name(p) for p in lr_order][0] == "F -> id" and [name(p) for p in ll_order][0] == "E -> T"
     print("LL이 쓰는 규칙 순서:", ", ".join(name(p) for p in ll_order))

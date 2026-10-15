@@ -9,7 +9,7 @@ course: "선형대수학"
 course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Diagonalization", "대각화", "고유분해", "eigendecomposition", "행렬 거듭제곱", "matrix power", "대각화 가능", "diagonalizable", "결함 행렬", "defective matrix", "조르당 블록", "Jordan block", "정상 상태", "steady state", "선형 동역학계", "linear dynamical system"]
 description: "고유벡터들을 새 좌표축(기저)으로 삼으면, 복잡해 보이던 변환이 \"축마다 따로 늘이기\"로 바뀐다. 그러면 행렬을 100번 곱하는 일도 고윳값을 100제곱하는 일로 줄고, 시스템의 장기 행동(무엇이 남고, 무엇이 사라지고, 무엇이 폭발하는지)이 한눈에 보인다. 다만 고유벡터가 차원 …"
@@ -171,9 +171,9 @@ $$A = \begin{pmatrix}2 & 1\\ 1 & 2\end{pmatrix}$$의 $$A^k$$.
 
 ## 과목별 관점
 
-**수치해석 (2-2학기).** 같은 내용을 $$P^{-1}AP = \Lambda$$(대각행렬)로 쓴다. $$P$$의 열이 고유벡터다. $$n \times n$$ 행렬이 고윳값 $$\lambda_1, \dots, \lambda_n$$과 서로 독립인 고유벡터 $$X_1, \dots, X_n$$을 가지면 $$P = [X_1\ X_2\ \cdots\ X_n]$$이 $$A$$를 대각화하고, 거꾸로 $$P$$가 $$A$$를 대각화하면 $$P$$의 $$i$$번째 열은 고윳값 $$\lambda_i$$의 고유벡터다[^n1].
+**수치해석 (2-2학기).** 같은 내용을 $$P^{-1}AP = \Lambda$$(대각행렬)로 쓴다. $$P$$의 열이 고유벡터다. $$n \times n$$ 행렬이 고윳값 $$\lambda_1, \dots, \lambda_n$$과 서로 독립인 고유벡터 $$X_1, \dots, X_n$$을 가지면 $$P = [X_1\ X_2\ \cdots\ X_n]$$이 $$A$$를 대각화하고, 거꾸로 $$P$$가 $$A$$를 대각화하면 $$P$$의 $$i$$번째 열은 고윳값 $$\lambda_i$$의 고유벡터다.
 
-$$2 \times 2$$ 행렬 $$\begin{pmatrix}a & b\\ c & d\end{pmatrix}$$의 특성방정식은 $$\lambda^2 - (a + d)\lambda + (ad - bc) = 0$$이다[^n2]. 슬라이드의 예 $$A = \begin{pmatrix}5 & -1\\ 3 & 1\end{pmatrix}$$은 $$\lambda^2 - 6\lambda + 8 = 0$$이라 $$\lambda = 2, 4$$이고, 고유벡터는 $$(1, 3)$$과 $$(1, 1)$$이다. $$P = \begin{pmatrix}1 & 1\\ 3 & 1\end{pmatrix}$$이면 $$P^{-1}AP = \begin{pmatrix}2 & 0\\ 0 & 4\end{pmatrix}$$다[^n3].
+$$2 \times 2$$ 행렬 $$\begin{pmatrix}a & b\\ c & d\end{pmatrix}$$의 특성방정식은 $$\lambda^2 - (a + d)\lambda + (ad - bc) = 0$$이다. 예를 들어 $$A = \begin{pmatrix}5 & -1\\ 3 & 1\end{pmatrix}$$은 $$\lambda^2 - 6\lambda + 8 = 0$$이라 $$\lambda = 2, 4$$이고, 고유벡터는 $$(1, 3)$$과 $$(1, 1)$$이다. $$P = \begin{pmatrix}1 & 1\\ 3 & 1\end{pmatrix}$$이면 $$P^{-1}AP = \begin{pmatrix}2 & 0\\ 0 & 4\end{pmatrix}$$다.
 
 ## 확인 문제
 
@@ -218,10 +218,7 @@ $$2 \times 2$$ 행렬 $$\begin{pmatrix}a & b\\ c & d\end{pmatrix}$$의 특성방
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 6.2절 "Diagonalizing a Matrix"($$A = X\Lambda X^{-1}$$, $$A^k$$, 서로 다른 고윳값의 독립성, 대각화되지 않는 예, $$\mathbf{u}_{k+1} = A\mathbf{u}_k$$).
-[^n1]: 수치해석 3회 강의 자료 「na03_matrix」, p.41~46
-[^n2]: 같은 자료, p.40
-[^n3]: 같은 자료, p.39~40, p.46
-[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C5는 원본에 없다. 20_diagonalization_verify.py로 확인했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_diagonalization_plot.py](/Hongs_Blog/studies/linear-algebra/code/20_diagonalization_plot/)로 그렸고, $$(1, 0) = 1\cdot(0.6, 0.4) + 0.4\cdot(1, -1)$$, $$k \le 12$$에서 $$A^k\mathbf{u}_0 = X\Lambda^kX^{-1}\mathbf{u}_0$$, $$A^{60}$$이 극한 행렬과 같은 것을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 동역학계 문단($$\mathbf{c} = X^{-1}\mathbf{u}_0$$, $$\mathbf{u}_k = \sum c_i\lambda_i^k\mathbf{x}_i$$)을 옮겼다(Strang 5판 6.2절).
+[^sn1]: 20_diagonalization_verify.py로 확인했다.
+[^s1]: [20_diagonalization_plot.py](/Hongs_Blog/studies/linear-algebra/code/20_diagonalization_plot/)로 그렸고, $$(1, 0) = 1\cdot(0.6, 0.4) + 0.4\cdot(1, -1)$$, $$k \le 12$$에서 $$A^k\mathbf{u}_0 = X\Lambda^kX^{-1}\mathbf{u}_0$$, $$A^{60}$$이 극한 행렬과 같은 것을 같은 코드로 확인했다.
+[^s2]: 이 문서 `정의`의 동역학계 문단($$\mathbf{c} = X^{-1}\mathbf{u}_0$$, $$\mathbf{u}_k = \sum c_i\lambda_i^k\mathbf{x}_i$$)을 옮겼다(Strang 5판 6.2절).
 {% endraw %}

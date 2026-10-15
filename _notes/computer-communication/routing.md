@@ -70,7 +70,7 @@ sequenceDiagram
 
 ## 정의
 
-라우팅은 주소로 상대가 정해졌을 때, 그 상대까지 가는 경로를 찾는 일이다[^1].
+라우팅은 주소로 상대가 정해졌을 때, 그 상대까지 가는 경로를 찾는 일이다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -84,7 +84,7 @@ sequenceDiagram
 
 ## 예제
 
-- 라우팅인 것: 인터넷 라우터가 목적지 IP 주소를 보고 다음 라우터를 고른다. 전화망의 회선 설정에서 A–I–II–III–D 경로를 고른다[^2]. 경로 위 링크가 고장 나면 다른 경로로 돌아가도록 전달표를 고친다[^s1].
+- 라우팅인 것: 인터넷 라우터가 목적지 IP 주소를 보고 다음 라우터를 고른다. 전화망의 회선 설정에서 A–I–II–III–D 경로를 고른다. 경로 위 링크가 고장 나면 다른 경로로 돌아가도록 전달표를 고친다[^s1].
 - 라우팅이 필요 없는 것: [점대점 링크](/Hongs_Blog/studies/computer-communication/point-to-point-link/) 하나로 된 연결(경로가 하나뿐), [다중 접근 링크](/Hongs_Blog/studies/computer-communication/multiple-access-link/)에서 같은 매체의 상대에게 보내기(중계 노드가 없음)
 
 <div class="callout callout-check" markdown="1">
@@ -127,8 +127,6 @@ sequenceDiagram
 
 </details>
 
-[^1]: 컴퓨터 통신 1회 필기 「1주차」, 47행
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "간접 연결 방법: 스위칭 정책"의 전화망 그림
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 라우팅과 포워딩의 구분, 전달표, hop-by-hop 전달, 고장 시 경로 변경은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 3장의 내용이다. 회선 설정의 경로 선택을 라우팅의 예로 본 것은 해석이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 그래프, S1 전달표의 예, 홉 단위 전달 설명을 바탕으로 그렸다. S2와 S3의 전달표 내용은 위쪽 경로를 따르도록 정한 설명용 값이다.
+[^s1]: Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절과 3장의 내용이다. 회선 설정의 경로 선택을 라우팅의 예로 본 것은 해석이다.
+[^s2]: 이 문서 '예시로 보기'의 그래프, S1 전달표의 예, 홉 단위 전달 설명을 바탕으로 그렸다. S2와 S3의 전달표 내용은 위쪽 경로를 따르도록 정한 설명용 값이다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Overfitting", "과적합", "과대적합", "과소적합", "underfitting", "교차검증", "cross-validation", "k겹 교차검증", "k-fold cross-validation", "훈련 오차", "training error", "시험 오차", "test error", "일반화 오차", "generalization error", "검증 집합", "validation set", "시험 집합", "test set", "편향-분산 절충", "bias-variance tradeoff"]
 description: "모델이 훈련 데이터의 우연한 잡음까지 외우면 훈련 데이터에서는 거의 완벽해 보이지만 새 데이터에서는 크게 틀린다. 시험 범위의 문제와 답을 통째로 외운 학생이 처음 보는 문제에서 무너지는 것과 같다. 데이터를 나눠 일부로 학습하고 나머지로 평가하면(교차검증) 새 데이터에서의 성능을…"
@@ -112,7 +112,7 @@ flowchart TD
 
 ## 과목별 관점
 
-**데이터 과학 (3-2학기).** 모델 평가의 목표는 훈련 자료가 아니라 처음 보는 자료에서의 "진짜" 성능을 재고, 그것으로 모델을 고르는 것이다[^d1]. 평가 방법 세 가지를 비교한다[^d2].
+**데이터 과학 (3-2학기).** 모델 평가의 목표는 훈련 자료가 아니라 처음 보는 자료에서의 "진짜" 성능을 재고, 그것으로 모델을 고르는 것이다. 평가 방법 세 가지를 비교한다.
 
 | | 홀드아웃 | k겹 교차검증 | 부트스트랩 |
 |---|---|---|---|
@@ -124,7 +124,7 @@ flowchart TD
 
 부트스트랩에서 자료 $$n$$개를 복원으로 $$n$$번 뽑으면, 어떤 자료가 한 번도 안 뽑힐 확률은 $$(1 - \frac1n)^n$$이다. $$n$$이 크면 $$\frac1e \approx 0.368$$로 다가가, 약 36.8%가 시험용(OOB)으로 남는다[^sd1].
 
-**편향과 분산의 모습.** 슬라이드는 모델의 편향을 "모델이 현실을 얼마나 강하게 단순화하는가", 분산을 "훈련 자료에 얼마나 민감한가"로 설명한다[^d3]. 편향이 크면 단순하고 예측이 안정적이지만 체계적으로 틀려 과소적합하기 쉽다. 분산이 크면 복잡하고 결정 경계가 유연하지만 자료가 조금만 바뀌어도 예측이 크게 흔들려 과적합하기 쉽다. 오차는 편향² + 분산 + 줄일 수 없는 잡음으로 나뉘고[^d4], 이 분해가 [앙상블 학습](/Hongs_Blog/studies/data-science/ensemble-learning/)의 출발점이다.
+**편향과 분산의 모습.** 모델의 편향은 모델이 현실을 얼마나 강하게 단순화하는가이고, 분산은 모델이 훈련 자료에 얼마나 민감한가이다. 편향이 크면 단순하고 예측이 안정적이지만 체계적으로 틀려 과소적합하기 쉽다. 분산이 크면 복잡하고 결정 경계가 유연하지만 자료가 조금만 바뀌어도 예측이 크게 흔들려 과적합하기 쉽다. 오차는 편향² + 분산 + 줄일 수 없는 잡음으로 나뉘고, 이 분해가 [앙상블 학습](/Hongs_Blog/studies/data-science/ensemble-learning/)의 출발점이다.
 
 ## 확인 문제
 
@@ -162,11 +162,7 @@ flowchart TD
 
 [^1]: James, Witten, Hastie, Tibshirani, *An Introduction to Statistical Learning*, "Resampling Methods" 장(검증 집합 방법, $$k$$겹 교차검증).
 [^2]: Hastie, Tibshirani, Friedman, *The Elements of Statistical Learning* 2판, "Model Assessment and Selection" 장(편향-분산 분해, 교차검증의 올바른 사용과 잘못된 사용).
-[^d1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.3 (6-1 복습: 모델 평가와 선택)
-[^d2]: 같은 자료, p.5 (복습: 평가 방법 비교표)
-[^d3]: 같은 자료, p.9
-[^d4]: 같은 자료, p.10
-[^sd1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> OOB 비율 $$(1 - 1/n)^n \to 1/e$$와 카드 C4는 원본에 없다. 35_overfitting-cv_verify.py로 계산했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [35_overfitting-cv_plot.py](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_plot/)로 그렸고, 그림에 쓴 값(예시 표의 훈련·시험 오차(검증 코드와 같은 자료), 시험 오차 최소 차수 3, 모든 시험 오차 > 0.09)을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 k겹 교차검증 의사코드, 세 집합 절, 예제 4단계(고른 모델을 다시 맞추고 새 자료로 보고)를 한 흐름으로 그렸다.
+[^sd1]: 35_overfitting-cv_verify.py로 계산했다.
+[^s1]: [35_overfitting-cv_plot.py](/Hongs_Blog/studies/probability-statistics/code/35_overfitting-cv_plot/)로 그렸고, 그림에 쓴 값(예시 표의 훈련·시험 오차(검증 코드와 같은 자료), 시험 오차 최소 차수 3, 모든 시험 오차 > 0.09)을 같은 코드로 확인했다.
+[^s2]: 이 문서의 k겹 교차검증 의사코드, 세 집합 절, 예제 4단계(고른 모델을 다시 맞추고 새 자료로 보고)를 한 흐름으로 그렸다.
 {% endraw %}

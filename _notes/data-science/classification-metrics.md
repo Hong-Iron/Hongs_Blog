@@ -10,7 +10,7 @@ course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Classification Metrics", "혼동 행렬", "Confusion Matrix", "정확도", "Accuracy", "정밀도", "Precision", "재현율", "Recall", "민감도", "Sensitivity", "F1 점수", "F1 Score", "참 양성", "TP", "거짓 양성", "FP", "제1종 오류", "거짓 음성", "FN", "제2종 오류", "참 음성", "TN"]
 description: "병을 가려내는 검사가 얼마나 좋은지 하나의 숫자로 말하기는 어렵다. 전체 중 맞힌 비율(정확도)은 환자가 드물면 \"모두 건강하다\"고만 해도 높게 나온다. 그래서 \"양성이라 한 것 중 진짜 양성의 비율\"(정밀도)과 \"진짜 양성 중 찾아낸 비율\"(재현율)을 따로 보고, 둘을 함께 보려…"
@@ -47,7 +47,7 @@ permalink: "/studies/data-science/classification-metrics/"
 - 재현율 $$\frac{8}{8 + 2} = 80\%$$. 환자 10명 중 8명을 찾았다.
 - 정밀도 $$\frac{8}{8 + 40} = 16.7\%$$. "양성"이라 한 48명 중 진짜 환자는 8명이다.
 
-환자를 놓치는 것(FN)이 비싸면 재현율을, 건강한 사람을 괜히 재검사하는 것(FP)이 비싸면 정밀도를 본다[^1].
+환자를 놓치는 것(FN)이 비싸면 재현율을, 건강한 사람을 괜히 재검사하는 것(FP)이 비싸면 정밀도를 본다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 정확도 99%와 재현율 0, 위 혼동 행렬의 네 지표, 조화평균의 범위, 카드 C2 — [19_classification-metrics_verify.py](/Hongs_Blog/studies/data-science/code/19_classification-metrics_verify/)</div>
@@ -57,12 +57,14 @@ permalink: "/studies/data-science/classification-metrics/"
 
 ## 정의
 
-양성(+)과 음성(−)을 가르는 분류에서, 실제 값과 예측의 조합을 넷으로 센다[^1].
+양성(+)과 음성(−)을 가르는 분류에서, 실제 값과 예측의 조합을 넷으로 센다.
 
 - **TP**(참 양성): 양성을 양성으로 맞힘
 - **FN**(거짓 음성): 양성을 음성으로 틀림. 제2종 오류
 - **FP**(거짓 양성): 음성을 양성으로 틀림. 제1종 오류
 - **TN**(참 음성): 음성을 음성으로 맞힘
+
+이 네 수로 지표 네 가지를 만든다.
 
 | 지표 | 식 | 재는 것 | 쓸모 있을 때 | 한계 |
 |---|---|---|---|---|
@@ -71,7 +73,7 @@ permalink: "/studies/data-science/classification-metrics/"
 | 재현율 | $$\frac{TP}{TP + FN}$$ | 양성을 찾아내는 능력 | 양성을 놓치면 비쌀 때 | 거짓 양성을 무시한다 |
 | F1 | $$\frac{2 \cdot \text{정밀도} \cdot \text{재현율}}{\text{정밀도} + \text{재현율}}$$ | 정밀도와 재현율의 균형 | 불균형 자료, 둘을 함께 따질 때 | 참 음성을 무시한다 |
 
-표는 슬라이드를 옮긴 것이다[^1]. F1은 두 값의 조화평균이라 작은 쪽에 끌린다. 위 예는 정밀도 16.7%, 재현율 80%로 산술평균은 48%지만 F1은 27.6%다[^s1].
+F1은 두 값의 조화평균이라 작은 쪽에 끌린다. 위 예는 정밀도 16.7%, 재현율 80%로 산술평균은 48%지만 F1은 27.6%다[^s1].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/19_classification-metrics_fig1.svg" alt="그림" width="506" height="334" loading="lazy">
 
@@ -109,7 +111,6 @@ permalink: "/studies/data-science/classification-metrics/"
 </details>
 
 
-[^1]: 데이터 과학 6회 강의 자료 「6-2_ensemble」, p.4 (6-1 복습: 분류 평가 지표). 6-1 강의 자료는 받은 자료에 없다
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 환자 예와 수치, F1과 산술평균의 비교, 카드 C2·C3은 원본에 없다. 검증 코드로 계산했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [19_classification-metrics_plot.py](/Hongs_Blog/studies/data-science/code/19_classification-metrics_plot/)로 그렸고, 정밀도 16.7%·재현율 80%에서 F1 0.276, 산술평균 0.483, 그리고 F1이 늘 작은 값 이상·산술평균 이하임을 같은 코드로 확인했다.
+[^s1]: 검증 코드로 계산했다.
+[^s2]: [19_classification-metrics_plot.py](/Hongs_Blog/studies/data-science/code/19_classification-metrics_plot/)로 그렸고, 정밀도 16.7%·재현율 80%에서 F1 0.276, 산술평균 0.483, 그리고 F1이 늘 작은 값 이상·산술평균 이하임을 같은 코드로 확인했다.
 {% endraw %}

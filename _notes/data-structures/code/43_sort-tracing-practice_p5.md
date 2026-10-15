@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/43_sort-tracing-practice_p5/"
 
 실행: python3 43_sort-tracing-practice_p5.py
 문서: 4.연습문제/43.정렬 추적 연습
-출처: 자료구조 2주차 슬라이드 p.6, 14주차 p.4~5, p.20~24
 세 정렬은 3.개념집의 40, 41, 43번 구현과 같은 규칙으로 다시 짰다(파일끼리 불러오지 않는다).
 """
 

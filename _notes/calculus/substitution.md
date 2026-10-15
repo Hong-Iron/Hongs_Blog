@@ -141,7 +141,7 @@ flowchart TD
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 5.5절 "Substitution", 5.6절 "Integrals Involving Exponential and Logarithmic Functions", 5.7절 "Integrals Resulting in Inverse Trigonometric Functions".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 단조 변환의 확률밀도 공식은 확률론 교재의 "확률변수의 함수" 절에 있는 표준 결과다. 확률과 통계 과목에서 증명과 함께 다룬다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [13_substitution_plot.py](/Hongs_Blog/studies/calculus/code/13_substitution_plot/)로 그렸고, 두 넓이가 모두 $$\frac{e - 1}{2} \approx 0.859$$인 것을 같은 코드로(중점 합) 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정리의 두 식과 활용 절의 흔한 실수("둘 중 한 방식으로 통일한다")를 근거로 그렸다.
+[^s1]: 단조 변환의 확률밀도 공식은 확률론 교재의 "확률변수의 함수" 절에 있는 표준 결과다. 확률과 통계 과목에서 증명과 함께 다룬다.
+[^s2]: [13_substitution_plot.py](/Hongs_Blog/studies/calculus/code/13_substitution_plot/)로 그렸고, 두 넓이가 모두 $$\frac{e - 1}{2} \approx 0.859$$인 것을 같은 코드로(중점 합) 확인했다.
+[^s3]: 정리의 두 식과 활용 절의 흔한 실수("둘 중 한 방식으로 통일한다")를 근거로 그렸다.
 {% endraw %}

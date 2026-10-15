@@ -135,5 +135,5 @@ C를 중심으로 반지름 6인 원(점선)이 밑변과 $$B_1$$, $$B_2$$ 두 �
 
 
 [^1]: OpenStax, *Precalculus 2e*, 8.1절 "Non-right Triangles: Law of Sines"(모호한 경우와 넓이 포함), 8.2절 "Non-right Triangles: Law of Cosines"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [16_triangle-laws_plot.py](/Hongs_Blog/studies/college-math/code/16_triangle-laws_plot/)로 그렸고, 그림에 쓴 값(B에서의 각 138.19°와 41.81°, 두 삼각형 모두 $$BC = 6$$)을 같은 코드로 확인했다.
+[^s1]: [16_triangle-laws_plot.py](/Hongs_Blog/studies/college-math/code/16_triangle-laws_plot/)로 그렸고, 그림에 쓴 값(B에서의 각 138.19°와 41.81°, 두 삼각형 모두 $$BC = 6$$)을 같은 코드로 확인했다.
 {% endraw %}

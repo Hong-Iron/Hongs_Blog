@@ -158,5 +158,5 @@ NOT이 20피코초, AND와 OR가 40피코초 걸린다고 하자(입력 수가 �
 
 [^1]: Patterson & Hennessy, *Computer Organization and Design*, 부록 "The Basics of Logic Design"의 B.2절 "Gates, Truth Tables, and Logic Equations", B.3절 "Combinational Logic" (높은 전압과 낮은 전압, 조합 회로는 기억이 없다는 것, 진리표, 곱의 합). 절 번호는 공개된 PDF 기준이고 판에 따라 부록 문자가 다를 수 있다. https://www.doc.ic.ac.uk/~wl/teachlocal/arch/HP05/HP_AppB.pdf
 [^2]: MIT 6.004 Computation Structures 강의 노트 "Combinational Logic" (고리 없이 이은 조합 소자는 조합 소자라는 것, 진리표에서 곱의 합을 기계적으로 얻는 법과 세 겹 회로, 전파 지연은 가장 긴 길의 합이고 오염 지연은 가장 짧은 길의 합이라는 것), https://computationstructures.org/notes/combinational_logic/notes.html
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다수결 예와 다이어그램 1개, 지연 수치(20·40피코초)는 직접 만들었다. 식과 지연은 검증 코드로 확인했다.
+[^s1]: 다수결 예와 다이어그램 1개, 지연 수치(20·40피코초)는 직접 만들었다. 식과 지연은 검증 코드로 확인했다.
 {% endraw %}

@@ -23,13 +23,12 @@ permalink: "/studies/database-design/code/37_foreign-key-practice_p1/"
 """외래 키 찾기 연습 문제 1 (출장 데이터베이스) 검증.
 
 문서: 37.외래 키 찾기 연습 p1
-출처: 데이터베이스 설계 6-2 슬라이드 p.26 (문제), 7 풀이 슬라이드 p.1 (답)
 실행: python3 37_foreign-key-practice_p1.py   (표준 라이브러리 sqlite3만 쓴다)
 스키마: SALESPERSON(Ssn, Name, Start_year, Dept_no), TRIP(Ssn, From_city, To_city, Departure_date, Return_date, Trip_id),
         EXPENSE(Trip_id, Account#, Amount). 기본 키는 Ssn / Trip_id / (Trip_id, Account#).
 확인하는 것:
   1. "다른 릴레이션의 기본 키 속성을 모두 가진 릴레이션"을 기계적으로 찾으면 후보가 2개 나온다:
-     TRIP.Ssn → SALESPERSON, EXPENSE.Trip_id → TRIP. 슬라이드의 답과 같다.
+     TRIP.Ssn → SALESPERSON, EXPENSE.Trip_id → TRIP. 문서의 답과 같다.
   2. Dept_no는 가리킬 부서 릴레이션이 이 스키마에 없어서 외래 키가 아니다.
   3. 답대로 표를 만들면 없는 판매원의 출장, 없는 출장의 경비는 들어가지 않는다. (행은 지어낸 것)
   4. 한 출장의 경비를 계정 둘에 나눠 적을 수 있다(기본 키가 (Trip_id, Account#)이라서).
@@ -41,7 +40,7 @@ SCHEMA = {   # 이름: (속성, 기본 키)
     "TRIP": (["Ssn", "From_city", "To_city", "Departure_date", "Return_date", "Trip_id"], ["Trip_id"]),
     "EXPENSE": (["Trip_id", "Account#", "Amount"], ["Trip_id", "Account#"]),
 }
-ANSWER = {("TRIP", ("Ssn",), "SALESPERSON"), ("EXPENSE", ("Trip_id",), "TRIP")}       # 풀이 슬라이드 p.1
+ANSWER = {("TRIP", ("Ssn",), "SALESPERSON"), ("EXPENSE", ("Trip_id",), "TRIP")}       # 문서의 답
 
 
 def candidates(schema):
@@ -57,7 +56,7 @@ def candidates(schema):
 def main():
     cand = candidates(SCHEMA)
     assert cand == ANSWER and len(cand) == 2
-    print("[OK] 후보 2개가 슬라이드의 답과 같다:", sorted(cand))
+    print("[OK] 후보 2개가 문서의 답과 같다:", sorted(cand))
 
     pk_attrs = {a for _, pk in SCHEMA.values() for a in pk}
     assert "Dept_no" not in pk_attrs

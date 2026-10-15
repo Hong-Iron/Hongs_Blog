@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Polymorphism", "필드 다형성", "Field Polymorphism", "매개변수 다형성", "Parameter Polymorphism", "동적 바인딩", "Dynamic Binding", "Dynamic Dispatch"]
 description: "벽의 콘센트는 모양만 맞으면 선풍기를 꽂든 충전기를 꽂든 전기를 준다. 코드에서도 똑같이 쓴 호출 한 줄이, 그 자리에 지금 어떤 객체가 꽂혀 있느냐에 따라 다른 일을 한다. 그래서 새 부품을 만들어 끼워도 쓰는 쪽 코드는 고치지 않는다. 다만 이것은 자리에 약속된 메서드를 부품이…"
@@ -34,7 +34,7 @@ permalink: "/studies/java/java-polymorphism/"
 
 ## 예시로 보기
 
-자동차가 `HankookTire tire`처럼 특정 회사의 타이어 클래스를 필드 타입으로 박아 두면, 다른 회사 타이어로 바꿀 때 `Car` 클래스를 열어 고쳐야 한다. 필드 타입을 인터페이스 `Tire`로 두면 `Car`는 그대로 두고 타이어만 갈아 끼울 수 있다[^1].
+자동차가 `HankookTire tire`처럼 특정 회사의 타이어 클래스를 필드 타입으로 박아 두면, 다른 회사 타이어로 바꿀 때 `Car` 클래스를 열어 고쳐야 한다. 필드 타입을 인터페이스 `Tire`로 두면 `Car`는 그대로 두고 타이어만 갈아 끼울 수 있다.
 
 ```java
 interface Tire {
@@ -92,16 +92,16 @@ Kumho Tire
 
 ### 호출 한 줄은 두 번 정해진다
 
-`tire.roll();` 한 줄을 두고 컴파일러와 실행 환경이 서로 다른 것을 본다[^s1].
+`tire.roll();` 한 줄을 두고 컴파일러와 실행 환경이 서로 다른 것을 본다.
 
 | 때 | 누가 | 무엇을 보나 | 정하는 것 |
 |---|---|---|---|
 | 컴파일할 때 | 컴파일러 | 변수의 타입(`Tire`) | `roll()`을 불러도 되는가. `Tire`에 선언이 없으면 오류 |
 | 실행할 때 | 자바 가상 기계 | 변수에 들어 있는 객체의 클래스(`KumhoTire`) | 어느 몸통을 실행하는가 |
 
-실행할 때 객체를 보고 몸통을 고르는 둘째 단계를 동적 바인딩이라고 부른다. 객체 A가 인터페이스의 메서드를 부르면 실제 실행은 인터페이스 뒤에 있는 객체 B나 C의 메서드가 한다는 슬라이드의 설명이 이것이다[^2].
+실행할 때 객체를 보고 몸통을 고르는 둘째 단계를 동적 바인딩이라고 부른다. 객체 A가 인터페이스의 메서드를 부르면, 실제로 그 일을 하는 것은 인터페이스 뒤에 있는 객체 B다. B를 C로 바꿔 끼우면 같은 호출이 C의 메서드를 실행한다. 위 예에서는 `Car`가 A이고, `HankookTire`와 `KumhoTire` 객체가 B와 C다.
 
-다형성이 일어나려면 세 가지가 갖춰져야 한다[^s1].
+다형성이 일어나려면 세 가지가 갖춰져야 한다.
 
 1. 구현 객체(또는 자식 객체)가 인터페이스(또는 부모) 타입 변수에 들어 있다. [자동 변환](/Hongs_Blog/studies/java/java-casting/)이다.
 2. 그 객체의 클래스가 메서드를 다시 정의했다. [메서드 오버라이딩](/Hongs_Blog/studies/java/java-overriding/)이다.
@@ -109,7 +109,7 @@ Kumho Tire
 
 ### 필드 다형성
 
-필드의 타입을 인터페이스로 두고, 그 필드에 여러 구현 객체를 바꿔 넣는 것이다. `예시로 보기`의 `Car`와 `Tire`가 이것이다[^1].
+필드의 타입을 인터페이스로 두고, 그 필드에 여러 구현 객체를 바꿔 넣는 것이다. `예시로 보기`의 `Car`와 `Tire`가 이것이다.
 
 ```mermaid
 classDiagram
@@ -132,11 +132,11 @@ classDiagram
     Tire <|.. KumhoTire : implements
 ```
 
-`Car`에서 나가는 화살표는 `Tire`에서 멈춘다. `Car`의 `run()`은 두 타이어 클래스의 이름을 모른다[^s2].
+`Car`에서 나가는 화살표는 `Tire`에서 멈춘다. `Car`의 `run()`은 두 타이어 클래스의 이름을 모른다.
 
 ### 매개변수 다형성
 
-메서드의 매개변수 타입을 인터페이스로 두고, 부를 때 여러 구현 객체를 넘기는 것이다[^3].
+메서드의 매개변수 타입을 인터페이스로 두고, 부를 때 여러 구현 객체를 넘기는 것이다.
 
 ```java
 interface Vehicle {
@@ -192,14 +192,7 @@ sequenceDiagram
     T-->>M: "Taxi is running." 출력
 ```
 
-`Driver` 안의 코드 `vehicle.run()`은 두 번 다 같은 줄이다. 화살표가 닿는 곳만 다르다[^s2].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 12회 슬라이드 p.17의 코드 `publid void run() {`(Bus 클래스)와 `driver.drive(Taxi); // "Taxi is running."` / 문제점: `publid`는 `public`의 오타이고 `<identifier> expected` 오류가 난다. `Taxi`는 클래스 이름이라 인자로 넘길 수 없고 `cannot find symbol` 오류가 난다. 바로 위에서 만든 변수는 소문자 `taxi`다. / 수정안: `public void run() {`, `driver.drive(taxi);` / 근거: JDK 21에서 두 줄을 각각 컴파일해 확인했다. 고친 코드는 주석에 적힌 대로 `Taxi is running.`을 찍는다.
-
-</div>
+`Driver` 안의 코드 `vehicle.run()`은 두 번 다 같은 줄이다. 화살표가 닿는 곳만 다르다.
 
 
 ### 지켜 주는 것과 지켜 주지 않는 것
@@ -303,7 +296,7 @@ Parent p = new Child();
 ## 활용
 
 - 구현: [29_java-polymorphism_impl.java](/Hongs_Blog/studies/java/code/29_java-polymorphism_impl/)
-- 인터페이스 대신 부모 클래스나 [추상 클래스](/Hongs_Blog/studies/java/java-abstract-class/)를 변수의 타입으로 두어도 똑같이 돌아간다. `Animal a = new Dog("바둑이"); a.sound();`가 그 예다[^s1].
+- 인터페이스 대신 부모 클래스나 [추상 클래스](/Hongs_Blog/studies/java/java-abstract-class/)를 변수의 타입으로 두어도 똑같이 돌아간다. `Animal a = new Dog("바둑이"); a.sound();`가 그 예다.
 - 시험에서 자주 묻는 꼴: 변수의 타입과 든 객체가 다른 코드를 주고 출력을 묻는다. 메서드 호출은 객체를, 필드와 정적 메서드는 변수의 타입을 따라가며 읽는다.
 
 ## 연결
@@ -391,10 +384,5 @@ Kumho Tire
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 12회 강의 자료 「Software Project 12. Interface (2)」, p.16 (필드 다형성, `Tire`, `HankookTire`, `KumhoTire`, `Car`)
-[^2]: 소프트웨어 프로젝트 11회 강의 자료 「Software Project 11. Interface (1)」, p.5 (인터페이스와 다형성, 객체 B를 C로 바꾸기)
-[^3]: 소프트웨어 프로젝트 12회 강의 자료 「Software Project 12. Interface (2)」, p.17 (매개변수 다형성, `Vehicle`, `Driver`, `Bus`, `Taxi`)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 호출이 두 번 정해진다는 표, 동적 바인딩이라는 이름, 세 조건, 클래스 상속에도 똑같이 돌아간다는 설명, 스스로 설명해 보기는 원본에 없다. 슬라이드는 코드와 출력만 싣는다(Java Language Specification §15.12.4.4의 실행 시 메서드 찾기).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 클래스 그림과 호출 순서 그림은 원본에 없다. 슬라이드 p.16, p.17의 코드를 근거로 그렸다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `Subway`, `Parent`·`Child` 예, 지켜 주는 것과 지켜 주지 않는 것, 깨지는 경우 표, 오해 항목, 카드 C1~C5는 원본에 없다. 구현 코드와 JDK 21 컴파일로 확인했다(Java Language Specification §8.3의 필드 가리기, §8.4.8.2의 정적 메서드 가리기).
+[^s3]: 구현 코드와 JDK 21 컴파일로 확인했다(Java Language Specification §8.3의 필드 가리기, §8.4.8.2의 정적 메서드 가리기).
 {% endraw %}

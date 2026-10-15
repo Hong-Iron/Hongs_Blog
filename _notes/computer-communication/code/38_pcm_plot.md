@@ -51,7 +51,7 @@ def save(fig, k):
     fig.savefig(os.path.join(HERE, f"{PREFIX}_fig{k}.svg"), bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
 
-SAMPLES = [3.0, 1.4, 6.2, 1.3, 2.8, 5.9, 4.1]   # 슬라이드 그림에서 읽은 높이
+SAMPLES = [3.0, 1.4, 6.2, 1.3, 2.8, 5.9, 4.1]   # 문서 예시의 표본 높이
 TS = np.arange(1, len(SAMPLES) + 1)              # 재는 시각 (T_s 단위)
 
 

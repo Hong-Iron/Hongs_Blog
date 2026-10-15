@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Layering", "계층", "layer", "추상화", "abstraction", "논리적 통신", "logical communication", "물리적 통신", "physical communication", "계층 구조"]
 description: "복잡한 통신 문제를 한 번에 풀지 않고, 아래층이 해 주는 일을 믿고 그 위에서 조금 더 쉬운 문제만 푸는 식으로 층을 쌓는 방법이다. 사장은 \"이 서류를 부산 지사에 보내\"라고만 하고, 비서는 택배사에, 택배사는 트럭 기사에게 맡기는 것과 같다. 각 층은 자기 일만 알면 되고, …"
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/layering/"
 
 ## 예시로 보기
 
-슬라이드의 4층 그림에서 각 층은 바로 아래층이 주는 것을 재료로 쓴다[^1].
+네트워크를 4층으로 나눠 그리면 다음과 같다. 각 층은 바로 아래층이 주는 것을 재료로 쓴다.
 
 ```
 ┌──────────────────────────────┐
@@ -50,7 +50,7 @@ permalink: "/studies/computer-communication/layering/"
 
 택배 비유로 보면 사장이 응용, 비서가 프로세스 사이 채널, 택배사가 호스트 사이 연결, 트럭이 하드웨어다. 비유와 달리 통신에서는 받는 쪽에도 같은 층들이 거울처럼 서 있다.
 
-같은 층끼리의 대화는 **논리적**이다. 슬라이드의 그림에서 보내는 호스트의 transport 층과 받는 호스트의 transport 층이 data와 ack를 곧장 주고받는 것처럼 그려진다[^2]. 실제 데이터는 **물리적**으로 이렇게 흐른다[^3].
+같은 층끼리의 대화는 **논리적**이다. 보내는 호스트의 transport 층과 받는 호스트의 transport 층은 data와 ack를 곧장 주고받는 것처럼 본다. 실제 데이터는 **물리적**으로 이렇게 흐른다.
 
 ```
 보내는 호스트        라우터            받는 호스트
@@ -62,7 +62,7 @@ physical  ─────→    physical  ─────→    physical
    (아래로 내려가서 선을 건너고, 라우터에서 network까지 올라갔다 다시 내려간 뒤, 받는 쪽에서 위로 올라간다)
 ```
 
-"동료에게 보낸다"는 실제로는 "아래층에 내려보낸다"로 이루어진다(send to peer → send down)[^4].
+"동료에게 보낸다"는 실제로는 "아래층에 내려보낸다"로 이루어진다(send to peer → send down).
 
 ## 정의
 
@@ -71,14 +71,14 @@ physical  ─────→    physical  ─────→    physical
 
 각 층은 바로 아래층이 해 주는 일만 이용해서, 바로 위층에게 일을 해 준다. 다른 컴퓨터의 같은 층은 동료라 부른다.
 
-**기호로 쓰면.** 층에 아래부터 $$1, 2, 3, \dots$$으로 번호를 붙인다. 층 $$\ell$$(엘)은 층 $$\ell - 1$$(바로 아래층)이 주는 서비스만 써서 층 $$\ell + 1$$(바로 위층)에게 서비스를 준다. 서로 다른 호스트의 같은 층을 **동료**라 한다. 동료끼리의 통신은 대개 간접적이다. 실제 전달은 아래층에 맡겨서(위임) 이루어지고, 동료끼리 직접 닿는 것은 하드웨어 층뿐이다[^5].
+**기호로 쓰면.** 층에 아래부터 $$1, 2, 3, \dots$$으로 번호를 붙인다. 층 $$\ell$$(엘)은 층 $$\ell - 1$$(바로 아래층)이 주는 서비스만 써서 층 $$\ell + 1$$(바로 위층)에게 서비스를 준다. 서로 다른 호스트의 같은 층을 **동료**라 한다. 동료끼리의 통신은 대개 간접적이다. 실제 전달은 아래층에 맡겨서(위임) 이루어지고, 동료끼리 직접 닿는 것은 하드웨어 층뿐이다.
 
 </div>
 
 
-계층화는 추상화에서 자연히 나온다. 추상화는 복잡한 속사정을 숨겨 문제를 단순하게 만드는 것이다. 단순해진 문제를 풀 때 같은 방법을 한 번 더 쓰고, 또 한 번 더 쓰면(재귀적으로) 층이 하나씩 쌓인다[^1].
+계층화는 추상화에서 자연히 나온다. 추상화는 복잡한 속사정을 숨겨 문제를 단순하게 만드는 것이다. 단순해진 문제를 풀 때 같은 방법을 한 번 더 쓰고, 또 한 번 더 쓰면(재귀적으로) 층이 하나씩 쌓인다.
 
-- **장점:** 문제가 작게 쪼개진다. 각 층은 하나의 부품이라 다른 프로토콜에서 다시 쓸 수 있다. 응용 쪽은 제각각이어도 아래로 갈수록 여러 위층이 같은 층을 함께 쓴다[^4].
+- **장점:** 문제가 작게 쪼개진다. 각 층은 하나의 부품이라 다른 프로토콜에서 다시 쓸 수 있다. 응용 쪽은 제각각이어도 아래로 갈수록 여러 위층이 같은 층을 함께 쓴다.
 - **단점:** 층마다 처리와 헤더가 붙어 오버헤드가 생긴다. 아래층의 사정(예: 링크가 무선이라 자주 끊김)을 위층이 몰라서 최적의 선택을 못 할 수 있다[^s1].
 
 ## 예제
@@ -91,11 +91,11 @@ physical  ─────→    physical  ─────→    physical
 - 선수: [프로세스 간 채널](/Hongs_Blog/studies/computer-communication/process-to-process-channel/)(계층화가 만들어 내는 층 중 하나)
 - 한 층을 맡는 부품: [프로토콜](/Hongs_Blog/studies/computer-communication/protocol/)
 - 층을 내려가며 머리말이 붙는 방식: [캡슐화](/Hongs_Blog/studies/computer-communication/encapsulation/)
-- 계층화에 기초한 표준: [OSI 참조 모델](/Hongs_Blog/studies/computer-communication/osi-reference-model/), [인터넷 구조](/Hongs_Blog/studies/computer-communication/internet-architecture/). 슬라이드는 네트워크를 만드는 체계적 접근으로 "계층화에 기초한 표준"을 든다[^6].
+- 계층화에 기초한 표준: [OSI 참조 모델](/Hongs_Blog/studies/computer-communication/osi-reference-model/), [인터넷 구조](/Hongs_Blog/studies/computer-communication/internet-architecture/). 네트워크를 체계적으로 만드는 방법이 계층화에 기초한 표준이다.
 
 ## 확인 문제
 
-<details markdown="1"><summary markdown="span"><b>C1</b> 추상화와 계층화의 관계를 슬라이드의 흐름대로 쓰라.</summary>
+<details markdown="1"><summary markdown="span"><b>C1</b> 추상화에서 계층화가 나오는 흐름을 단계대로 쓰라.</summary>
 
 
 **답:** 복잡한 문제는 한 번에 풀 수 없다 → 복잡한 내용을 숨겨 문제를 단순화한다(추상화) → 추상화된 문제를 풀 때 추상화를 재귀적으로 다시 적용한다 → 그 결과 층이 쌓인다. 즉 추상화가 자연히 계층화를 유도한다.
@@ -110,18 +110,12 @@ physical  ─────→    physical  ─────→    physical
 
 </details>
 
-<details markdown="1"><summary markdown="span"><b>C3</b> 필기의 "로우 레벨로 내려갈수록 재사용성이 생긴다"는 왜 맞는가?</summary>
+<details markdown="1"><summary markdown="span"><b>C3</b> "로우 레벨(낮은 층)로 내려갈수록 재사용성이 생긴다"는 말은 왜 맞는가?</summary>
 
 
 **답:** 위층일수록 응용마다 필요한 기능이 달라 제각각이다. 아래층의 일(호스트 사이 연결, 선 위의 비트 전달)은 어떤 응용이든 똑같이 필요하다. 그래서 여러 위층이 같은 아래층 하나를 함께 쓴다. 인터넷 구조의 모래시계 모양이 그 예다.
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "계층화 (Layering)". 4층 그림은 수업 슬라이드 캡처
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "Layering: logical communication"
-[^3]: 수업 슬라이드 캡처 — 슬라이드 "Layering: physical communication"
-[^4]: 컴퓨터 통신 2회 필기 「2주차」, 46~53행, 63~66행
-[^5]: 수업 슬라이드 캡처 — 슬라이드 "(전체) 프로토콜 정의: 프로토콜 그래프", "동료 간의 통신은 대개 간접적으로 이루어진다"
-[^6]: 수업 슬라이드 캡처 — 슬라이드 "1장. 기본 개념", 네트워크 구조: "체계적인 접근이 필수: 계층화에 기초한 표준"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 계층화의 단점(오버헤드, 아래층 정보를 숨겨 생기는 비효율)과 유선→와이파이 교체 예는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다. 원본 슬라이드는 "계층이 많은 것은 장점인가, 단점인가?"를 질문으로 남긴다.
+[^s1]: Peterson & Davie, *Computer Networks: A Systems Approach*, 1.3절의 내용이다.
 {% endraw %}

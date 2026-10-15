@@ -147,7 +147,7 @@ $$f(x) = x^2$$을 $$[0, 2]$$에서 볼 때 정리의 $$c$$를 구한다.
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.4절 "The Mean Value Theorem"(롤의 정리, 평균값 정리, 따름정리)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 립시츠 연속성은 학습의 안정성과 적대적 견고성 연구에서 쓰는 조건이다. 기울기 자르기는 순환 신경망 학습의 표준 기법이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [08_mean-value-theorem_plot.py](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_plot/)로 그렸고, $$x^2$$의 평균 변화율 2와 $$c = 1$$, $$\vert x\vert $$의 평균 변화율 0과 도함수 $$\pm 1$$을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 증명과 따름정리, [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)의 증명(코시 평균값 정리를 롤의 정리로 얻는다), [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) 2부의 증명을 근거로 그렸다.
+[^s1]: 립시츠 연속성은 학습의 안정성과 적대적 견고성 연구에서 쓰는 조건이다. 기울기 자르기는 순환 신경망 학습의 표준 기법이다.
+[^s2]: [08_mean-value-theorem_plot.py](/Hongs_Blog/studies/calculus/code/08_mean-value-theorem_plot/)로 그렸고, $$x^2$$의 평균 변화율 2와 $$c = 1$$, $$\vert x\vert $$의 평균 변화율 0과 도함수 $$\pm 1$$을 같은 코드로 확인했다.
+[^s3]: 이 문서의 증명과 따름정리, [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)의 증명(코시 평균값 정리를 롤의 정리로 얻는다), [미적분의 기본정리](/Hongs_Blog/studies/calculus/ftc/) 2부의 증명을 근거로 그렸다.
 {% endraw %}

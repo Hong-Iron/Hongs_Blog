@@ -24,8 +24,7 @@ permalink: "/studies/data-structures/code/40_insertion-sort_impl/"
  *
  * 실행: cc -std=c11 -Wall -Wextra 40_insertion-sort_impl.c -o insertion && ./insertion
  * 문서: 40.삽입 정렬 (예시 추적 표, 재귀로 보는 눈, 카드 C1~C3)
- * 출처: 자료구조 2주차 슬라이드 p.6(코드), p.11~12(비교 횟수), 14주차 p.4(재귀로 보기)
- * 색인은 0부터 센다. 슬라이드의 a[0:n-1]은 a[0]부터 a[n-1]까지라는 뜻이다.
+ * 색인은 0부터 센다. 문서의 a[0:n-1]은 a[0]부터 a[n-1]까지라는 뜻이다.
  *
  * 확인하는 것
  *   1. 문서의 추적 표: [7, 3, 6, 2, 1]을 끼울 때마다의 배열과 비교 횟수 1, 2, 3, 4.
@@ -38,7 +37,7 @@ permalink: "/studies/data-structures/code/40_insertion-sort_impl/"
 #include <stdlib.h>
 #include <string.h>
 
-/* 2주차 슬라이드 p.6의 코드. a[0..i-1]이 정렬된 채로 a[i]를 제자리에 끼운다. */
+/* 문서의 코드. a[0..i-1]이 정렬된 채로 a[i]를 제자리에 끼운다. */
 static void insertion_sort(int a[], int n)
 {
     for (int i = 1; i < n; i++) {
@@ -50,7 +49,7 @@ static void insertion_sort(int a[], int n)
     }
 }
 
-/* 14주차 p.4의 눈: 앞의 n-1개를 먼저 정렬하고, 마지막 값을 끼운다. */
+/* 재귀로 보는 눈: 앞의 n-1개를 먼저 정렬하고, 마지막 값을 끼운다. */
 static void insertion_sort_rec(int a[], int n)
 {
     if (n <= 1)

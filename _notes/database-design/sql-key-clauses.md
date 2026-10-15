@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["PRIMARY KEY", "UNIQUE", "FOREIGN KEY", "REFERENCES", "CONSTRAINT", "기본 키 절", "유일성 제약", "외래 키 절", "이름 붙인 제약", "Named Constraint", "Key Integrity Constraint", "Referential Integrity Constraint"]
 description: "표를 만들 때 \"이 칸의 값은 행마다 달라야 한다\"와 \"이 칸의 값은 저 표에 있는 값이어야 한다\"를 적어 두는 세 문구다. 학번은 학생마다 달라야 하고, 수강 신청서에 적힌 학번은 학적부에 있는 학번이어야 하는 것과 같다. 적어 두면 겹치는 값과 없는 것을 가리키는 값이 들어올 …"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-key-clauses/"
 
 ## 예시로 보기
 
-부서 표와 부서 위치 표를 만드는 문장이다[^1].
+부서 표와 부서 위치 표를 만드는 문장이다.
 
 ```sql
 CREATE TABLE DEPARTMENT
@@ -71,11 +71,11 @@ CREATE TABLE DEPT_LOCATIONS
 
 ## 정의
 
-**`PRIMARY KEY (속성, …)`.** 릴레이션의 [기본 키](/Hongs_Blog/studies/database-design/relational-keys/)를 이루는 속성을 하나 이상 적는다[^2]. 속성이 둘이면 두 값의 짝이 행마다 달라야 한다. 한쪽 값만 겹치는 것은 괜찮다.
+**`PRIMARY KEY (속성, …)`.** 릴레이션의 [기본 키](/Hongs_Blog/studies/database-design/relational-keys/)를 이루는 속성을 하나 이상 적는다. 속성이 둘이면 두 값의 짝이 행마다 달라야 한다. 한쪽 값만 겹치는 것은 괜찮다.
 
-**`UNIQUE (속성, …)`.** 기본 키로 뽑히지 않은 또 다른 키를 적는다. 후보 키 가운데 기본 키가 아닌 것이 여기에 온다[^2]. DEPARTMENT에서는 번호(Dnumber)가 기본 키이고, 이름(Dname)도 부서마다 달라야 해서 `UNIQUE`다.
+**`UNIQUE (속성, …)`.** 기본 키로 뽑히지 않은 또 다른 키를 적는다. 후보 키 가운데 기본 키가 아닌 것이 여기에 온다. DEPARTMENT에서는 번호(Dnumber)가 기본 키이고, 이름(Dname)도 부서마다 달라야 해서 `UNIQUE`다.
 
-**`FOREIGN KEY (속성) REFERENCES 표(속성)`.** 다른 릴레이션의 기본 키를 가리키는 [외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/)를 적는다[^3]. `FOREIGN KEY (Dnumber) REFERENCES DEPARTMENT(Dnumber)`는 "이 표의 Dnumber 값은 DEPARTMENT의 Dnumber에 있는 값이어야 한다"는 뜻이다.
+**`FOREIGN KEY (속성) REFERENCES 표(속성)`.** 다른 릴레이션의 기본 키를 가리키는 [외래 키](/Hongs_Blog/studies/database-design/referential-integrity-foreign-key/)를 적는다. `FOREIGN KEY (Dnumber) REFERENCES DEPARTMENT(Dnumber)`는 "이 표의 Dnumber 값은 DEPARTMENT의 Dnumber에 있는 값이어야 한다"는 뜻이다.
 
 기본 키와 `UNIQUE`는 이렇게 다르다[^s1].
 
@@ -85,7 +85,7 @@ CREATE TABLE DEPT_LOCATIONS
 | NULL | 못 받는다([저절로 `NOT NULL`](/Hongs_Blog/studies/database-design/sql-attribute-constraints/)) | `NOT NULL`을 안 붙이면 받는다. 여러 행이 NULL이어도 된다 |
 | 뜻 | 행을 가려내는 대표 키 | 그 밖의 후보 키 |
 
-**이름 붙이기.** 제약 앞에 `CONSTRAINT 이름`을 붙이면 그 제약에 이름이 생긴다[^4].
+**이름 붙이기.** 제약 앞에 `CONSTRAINT 이름`을 붙이면 그 제약에 이름이 생긴다.
 
 ```sql
 CREATE TABLE EMPLOYEE
@@ -98,13 +98,13 @@ CREATE TABLE EMPLOYEE
     FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber) );
 ```
 
-슬라이드의 문장에는 외래 키마다 뒤에 `ON DELETE …`가 더 붙어 있다. 그 부분은 [참조 동작](/Hongs_Blog/studies/database-design/referential-triggered-actions/)에서 다룬다. DEPARTMENT 쪽 이름은 DEPTPK(기본 키), DEPTSK(`UNIQUE`), DEPTMGRFK(관리자를 가리키는 외래 키)다. 이름이 있으면 어긴 제약이 무엇인지 오류에 그 이름으로 나오고, 나중에 그 제약만 골라 뗄 수 있다([ALTER TABLE](/Hongs_Blog/studies/database-design/sql-alter-table/)의 `DROP CONSTRAINT EMPSUPERFK`). PostgreSQL 16에서 이미 있는 Ssn을 또 넣으면 오류에 `emppk`가, 없는 부서 번호를 넣으면 `empdeptfk`가 찍힌다. 이름을 안 붙이면 DBMS가 `dept_locations_pkey` 같은 이름을 지어 붙인다[^s1].
+외래 키마다 뒤에 `ON DELETE …`를 더 붙일 수도 있다. 그 부분은 [참조 동작](/Hongs_Blog/studies/database-design/referential-triggered-actions/)에서 다룬다. DEPARTMENT 쪽 이름은 DEPTPK(기본 키), DEPTSK(`UNIQUE`), DEPTMGRFK(관리자를 가리키는 외래 키)다. 이름이 있으면 어긴 제약이 무엇인지 오류에 그 이름으로 나오고, 나중에 그 제약만 골라 뗄 수 있다([ALTER TABLE](/Hongs_Blog/studies/database-design/sql-alter-table/)의 `DROP CONSTRAINT EMPSUPERFK`). PostgreSQL 16에서 이미 있는 Ssn을 또 넣으면 오류에 `emppk`가, 없는 부서 번호를 넣으면 `empdeptfk`가 찍힌다. 이름을 안 붙이면 DBMS가 `dept_locations_pkey` 같은 이름을 지어 붙인다[^s1].
 
 ## 활용
 
-- **참조 무결성은 넣을 때만 깨지는 것이 아니다.** 슬라이드는 빨간 글씨로 적는다. 참조 무결성은 행을 넣거나 지울 때, 그리고 외래 키나 기본 키의 값을 고칠 때 깨질 수 있다. SQL은 그런 연산을 기본으로는 거부하고, 따로 적어 두면 정해 둔 동작을 한다[^3]. 어떤 연산이 무엇을 깨는지는 [갱신 연산과 제약 위반](/Hongs_Blog/studies/database-design/update-constraint-violations/), 거부 말고 무엇을 할 수 있는지는 [참조 동작](/Hongs_Blog/studies/database-design/referential-triggered-actions/)에 있다.
+- **참조 무결성은 넣을 때만 깨지는 것이 아니다.** 참조 무결성은 행을 넣거나 지울 때, 그리고 외래 키나 기본 키의 값을 고칠 때 깨질 수 있다. SQL은 그런 연산을 기본으로는 거부하고, 따로 적어 두면 정해 둔 동작을 한다. 어떤 연산이 무엇을 깨는지는 [갱신 연산과 제약 위반](/Hongs_Blog/studies/database-design/update-constraint-violations/), 거부 말고 무엇을 할 수 있는지는 [참조 동작](/Hongs_Blog/studies/database-design/referential-triggered-actions/)에 있다.
 - **외래 키 값은 NULL일 수 있다.** Borg의 Super_ssn은 NULL이다. 상사가 없다는 뜻이고 제약을 어기지 않는다. NULL을 막으려면 그 열에 `NOT NULL`을 붙인다(Dno, Mgr_ssn이 그렇다).
-- **외래 키가 가리킬 수 있는 열.** 슬라이드는 "다른 릴레이션의 기본 키"라고 적는다. PostgreSQL 16은 `UNIQUE`로 적은 열도 가리킬 수 있게 하고, 키가 아닌 열(Mgr_start_date)을 가리키면 표를 만들 때 오류를 낸다[^s1].
+- **외래 키가 가리킬 수 있는 열.** 외래 키는 보통 다른 릴레이션의 기본 키를 가리킨다. PostgreSQL 16은 `UNIQUE`로 적은 열도 가리킬 수 있게 하고, 키가 아닌 열(Mgr_start_date)을 가리키면 표를 만들 때 오류를 낸다[^s1].
 - **흔한 실수.** 두 열짜리 기본 키를 `PRIMARY KEY (Dnumber), PRIMARY KEY (Dlocation)`처럼 두 줄로 쓴다. 기본 키는 표에 하나뿐이라 오류다. 괄호 하나에 `PRIMARY KEY (Dnumber, Dlocation)`으로 쓴다.
 
 ## 연결
@@ -142,9 +142,5 @@ CREATE TABLE EMPLOYEE
 </details>
 
 
-[^1]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.18~19 (DEPARTMENT와 DEPT_LOCATIONS의 CREATE TABLE)
-[^2]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.18 (Key Integrity Constraint: PRIMARY KEY clause, UNIQUE clause). 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.6
-[^3]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.19 (Referential Integrity Constraint: FOREIGN KEY clause, 빨간 글씨의 주의)
-[^4]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.16 (CONSTRAINT EMPPK, EMPSUPERFK, EMPDEPTFK, DEPTPK, DEPTSK, DEPTMGRFK)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 행을 하나씩 넣어 본 표, `PRIMARY KEY`와 `UNIQUE`를 견준 표, 제약 이름의 쓸모(슬라이드에는 이름이 문장에만 나오고 설명은 없다), 외래 키가 `UNIQUE` 열도 가리킬 수 있다는 것, 확인 문제 셋은 슬라이드에 없다. SQLite 3.50과 PostgreSQL 16에서 실행해 확인했다. SQLite는 오류 글에 제약 이름 대신 "UNIQUE constraint failed: DEPARTMENT.Dname"처럼 표와 열을 적는다.
+[^s1]: SQLite 3.50과 PostgreSQL 16에서 실행해 확인했다. SQLite는 오류 글에 제약 이름 대신 "UNIQUE constraint failed: DEPARTMENT.Dname"처럼 표와 열을 적는다.
 {% endraw %}

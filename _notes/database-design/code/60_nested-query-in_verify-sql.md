@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/60_nested-query-in_verify-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 60.중첩 질의와 IN: 슬라이드 11-2 p.11~12, 14, 19, 30, 12주차 풀이 p.7
+-- 60.중첩 질의와 IN 검증
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS nested_query_in CASCADE;
 CREATE SCHEMA nested_query_in;
 SET search_path TO nested_query_in;
 
--- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
--- 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
+-- 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 -- 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -72,7 +72,7 @@ INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),
  ('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1. Q4A (p.11): Smith -> {1, 2}
+-- 1. Q4A: Smith -> {1, 2}
 DO $$ BEGIN
   ASSERT (SELECT string_agg(Pnumber::text, ',' ORDER BY Pnumber) FROM (
             SELECT DISTINCT Pnumber FROM PROJECT
@@ -82,12 +82,12 @@ DO $$ BEGIN
          'Q4A의 결과가 1, 2가 아니다';
 END $$;
 
--- 2. Q17 (p.19): 명시적 집합
+-- 2. Q17: 명시적 집합
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM (SELECT DISTINCT Essn FROM WORKS_ON WHERE Pno IN (1, 2, 3)) t) = 4, 'Q17이 4행이 아니다';
 END $$;
 
--- 3. Q16 (p.14)과 이름이 겹칠 때: 별칭이 없으면 Sex = Sex는 안쪽 표(DEPENDENT)의 Sex끼리 견준다
+-- 3. Q16과 이름이 겹칠 때: 별칭이 없으면 Sex = Sex는 안쪽 표(DEPENDENT)의 Sex끼리 견준다
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE AS E
           WHERE E.Ssn IN (SELECT D.Essn FROM DEPENDENT AS D
@@ -100,7 +100,7 @@ DO $$ BEGIN
          '별칭 없는 판이 Smith, Wallace, Wong이 아니다';
 END $$;
 
--- 4. 값 하나를 돌려주는 안쪽 질의 (p.30)
+-- 4. 값 하나를 돌려주는 안쪽 질의
 DO $$ BEGIN
   ASSERT (SELECT string_agg(Lname, ',' ORDER BY Lname) FROM EMPLOYEE
           WHERE (SELECT COUNT(*) FROM DEPENDENT WHERE Ssn = Essn) >= 2) = 'Smith,Wong',
@@ -110,7 +110,7 @@ DO $$ BEGIN
          = 'English,Narayan,Smith', '한 행짜리 안쪽 질의 앞의 = 가 3명이 아니다';
 END $$;
 
--- 5. 12주차 풀이 Q3-2 (p.7): = 뒤의 안쪽 질의가 2행이면 PostgreSQL은 오류를 낸다 (SQLite는 첫 행만 쓴다)
+-- 5. 틀리기 쉬운 답(= 로 쓴 상사의 상사 질의): = 뒤의 안쪽 질의가 2행이면 PostgreSQL은 오류를 낸다 (SQLite는 첫 행만 쓴다)
 DO $$ DECLARE ok boolean := false; BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE WHERE Super_ssn = '888665555') = 2, '안쪽 질의가 2행이 아니다';
   BEGIN

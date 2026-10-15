@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Relation", "Binary Relation", "이항 관계", "반사적", "reflexive", "비반사적", "irreflexive", "대칭적", "symmetric", "반대칭적", "antisymmetric", "추이적", "transitive", "추이 폐포", "transitive closure", "와셜 알고리즘", "Warshall's algorithm", "관계 행렬"]
 description: "관계는 \"누가 누구와 이어져 있는가\"를 짝의 모음으로 적은 것이다. 친구, 부모와 자식, 작거나 같다, 선수 과목이 모두 관계다. 반사·대칭·반대칭·추이 네 성질로 관계의 성격을 가르면, 같은 무리로 묶는 관계(동치관계)와 줄을 세우는 관계(순서)가 나온다. 다만 \"대칭이 아니면 …"
@@ -119,18 +119,18 @@ $$\{1, 2, 3, 4\}$$ 위의 $$R = \{(1,2), (2,3), (3,4)\}$$의 추이 폐포를 �
 
 **데이터베이스 설계 (2-2학기).** 이 문서의 관계는 집합 두 개의 곱집합에서 고른 짝의 모음이다. 데이터베이스는 집합을 $$n$$개로 늘린 관계를 쓴다. 표가 바로 그것이고, 그래서 표를 릴레이션(relation)이라 부른다.
 
-속성이 $$A_1, \dots, A_n$$인 릴레이션의 상태 $$r(R)$$(어느 순간 표에 들어 있는 줄 전부)은, 속성마다 올 수 있는 값의 집합 $$\text{dom}(A_i)$$들의 곱집합에서 고른 부분집합이다[^b1].
+속성이 $$A_1, \dots, A_n$$인 릴레이션의 상태 $$r(R)$$(어느 순간 표에 들어 있는 줄 전부)은, 속성마다 올 수 있는 값의 집합 $$\text{dom}(A_i)$$들의 곱집합에서 고른 부분집합이다.
 
 $$r(R) \subseteq \text{dom}(A_1) \times \text{dom}(A_2) \times \dots \times \text{dom}(A_n)$$
 
 
-짝 $$(a, b)$$ 대신 값 $$n$$개를 늘어놓은 것(튜플)이 원소다. 위 정의의 이항 관계는 $$n = 2$$인 경우다. 곱집합은 만들 수 있는 줄 전부이고, 표에는 그 가운데 지금 참인 줄만 들어 있다[^b1].
+짝 $$(a, b)$$ 대신 값 $$n$$개를 늘어놓은 것(튜플)이 원소다. 위 정의의 이항 관계는 $$n = 2$$인 경우다. 곱집합은 만들 수 있는 줄 전부이고, 표에는 그 가운데 지금 참인 줄만 들어 있다.
 
-- **집합이라서 따라오는 것.** 줄을 어떤 순서로 적어도 같은 릴레이션이다. 똑같은 줄이 두 번 들어가지도 않는다[^b2]. 자세한 것은 [릴레이션과 도메인·속성·튜플](/Hongs_Blog/studies/database-design/relational-model-relation/)에 있다.
-- **ER 모델의 연결도 관계다.** "직원 $$e$$가 부서 $$d$$에서 일한다" 같은 연결 하나를 관계 인스턴스 $$r_i = (e_1, \dots, e_n)$$이라 하고, 그 모음을 관계 집합이라 한다. 슬라이드는 이것을 개체 집합 $$E_1, \dots, E_n$$ 위의 관계라고 적는다[^b3]. 자세한 것은 [관계 타입과 관계 집합](/Hongs_Blog/studies/database-design/relationship-type-and-set/)에 있다.
-- **낱말 조심.** 이 문서의 관계와 데이터베이스의 릴레이션은 영어로 같은 말(relation)이다. ER 모델의 관계 타입(relationship type)은 다른 말이다. 다만 관계 타입에 지금 들어 있는 연결의 모음은 수학의 관계다[^bs1].
+- **집합이라서 따라오는 것.** 줄을 어떤 순서로 적어도 같은 릴레이션이다. 똑같은 줄이 두 번 들어가지도 않는다. 자세한 것은 [릴레이션과 도메인·속성·튜플](/Hongs_Blog/studies/database-design/relational-model-relation/)에 있다.
+- **ER 모델의 연결도 관계다.** "직원 $$e$$가 부서 $$d$$에서 일한다" 같은 연결 하나를 관계 인스턴스 $$r_i = (e_1, \dots, e_n)$$이라 하고, 그 모음을 관계 집합이라 한다. 관계 집합은 곧 개체 집합 $$E_1, \dots, E_n$$ 위의 관계다. 자세한 것은 [관계 타입과 관계 집합](/Hongs_Blog/studies/database-design/relationship-type-and-set/)에 있다.
+- **낱말 조심.** 이 문서의 관계와 데이터베이스의 릴레이션은 영어로 같은 말(relation)이다. ER 모델의 관계 타입(relationship type)은 다른 말이다. 다만 관계 타입에 지금 들어 있는 연결의 모음은 수학의 관계다.
 
-원소 2개와 3개인 두 도메인으로 만들 수 있는 줄은 $$2 \times 3 = 6$$개이고, 가능한 상태는 그 부분집합의 수인 $$2^6 = 64$$가지다. 위에서 센 "원소 $$n$$개인 집합 위의 관계는 $$2^{n^2}$$개"와 같은 셈이다[^bs1].
+원소 2개와 3개인 두 도메인으로 만들 수 있는 줄은 $$2 \times 3 = 6$$개이고, 가능한 상태는 그 부분집합의 수인 $$2^6 = 64$$가지다. 위에서 센 "원소 $$n$$개인 집합 위의 관계는 $$2^{n^2}$$개"와 같은 셈이다.
 
 ## 확인 문제
 
@@ -162,16 +162,12 @@ $$r(R) \subseteq \text{dom}(A_1) \times \text{dom}(A_2) \times \dots \times \tex
 <summary class="callout-title" markdown="span">**C4** 표 WORKS_ON(Essn, Pno, Hours)에 세 줄 (123456789, 1, 32.5), (123456789, 2, 7.5), (453453453, 1, 20.0)이 있다. Hours를 떼어 내고 "직원 e가 프로젝트 p에서 일한다"는 이항 관계 R을 짝의 집합으로 쓰라. R은 어떤 곱집합의 부분집합인가? 표에서 줄의 순서를 바꾸면 R이 바뀌는가?</summary>
 
 **답:** $$R = \{(123456789, 1), (123456789, 2), (453453453, 1)\}$$. 직원 번호의 집합과 프로젝트 번호의 집합의 곱집합의 부분집합이다. 줄의 순서를 바꿔도 같은 집합이라 $$R$$은 그대로다.<br>
-**이유:** 표의 한 줄이 짝 하나다. 123456789가 두 짝에 나오므로 이 관계는 직원에서 프로젝트로 가는 함수가 아니다[^bs1].
+**이유:** 표의 한 줄이 짝 하나다. 123456789가 두 짝에 나오므로 이 관계는 직원에서 프로젝트로 가는 함수가 아니다.
 
 </details>
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장(이항 관계), 10장 "Directed graphs & Partial Orders"(관계의 성질). Rosen, *Discrete Mathematics and Its Applications* 7판, 9장 "Relations".
 [^2]: Rosen, *Discrete Mathematics and Its Applications* 7판, 9장(폐포와 와셜 알고리즘)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 첫 관계와 화살표 그림 설명을 그렸다.
-[^b1]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.9~11 (릴레이션 스키마 $$R(A_1, \dots, A_n)$$, $$\text{dom}(A_i)$$, 상태는 곱집합의 부분집합)
-[^b2]: 같은 자료, p.12 (릴레이션은 튜플의 집합이라 순서가 없다), p.17 (모든 튜플은 서로 다르다)
-[^b3]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.18 (Relationship set, "Relation on entity sets $$E_1, E_2, \dots, E_n$$")
-[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 "관계"라는 말을 가른 설명, 6개와 64가지의 셈, 카드 C4는 슬라이드에 없다. 셈은 [32_relational-model-relation_verify.py](/Hongs_Blog/studies/database-design/code/32_relational-model-relation_verify/)로, 카드의 세 줄은 6-2 p.21의 WORKS_ON 상태에서 [43_mapping-many-to-many-relationship_verify.py](/Hongs_Blog/studies/database-design/code/43_mapping-many-to-many-relationship_verify/)로 확인했다.
+[^s1]: '예시로 보기' 표의 첫 관계와 화살표 그림 설명을 그렸다.
 {% endraw %}

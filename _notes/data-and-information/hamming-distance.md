@@ -54,35 +54,35 @@ permalink: "/studies/data-and-information/hamming-distance/"
 
 알파벳 $$\Sigma$$의 기호를 $$n$$개 늘어놓은 열 전체를 $$\Sigma^n$$이라 적는다. 2진이면 길이 $$n$$의 0과 1의 줄 $$2^n$$개다.
 
-**오류 정정 부호.** $$\Sigma^n$$에서 고른 일부 $$C \subseteq \Sigma^n$$이다. $$\vert \Sigma\vert  = q$$이면 $$q$$진 부호라 하고, $$n$$을 블록 크기라 한다. 보낼 내용(메시지)의 집합 $$\mathcal{M}$$에서 $$C$$로 가는 짝짓기가 부호화다[^1].
+**오류 정정 부호.** $$\Sigma^n$$에서 고른 일부 $$C \subseteq \Sigma^n$$이다. $$\vert \Sigma\vert  = q$$이면 $$q$$진 부호라 하고, $$n$$을 블록 크기라 한다. 보낼 내용(메시지)의 집합 $$\mathcal{M}$$에서 $$C$$로 가는 짝짓기가 부호화다.
 
-**해밍 거리.** 두 열 $$x, y \in \Sigma^n$$에서 기호가 서로 다른 자리의 수다[^2]. $$\Delta$$는 델타라고 읽는다.
+**해밍 거리.** 두 열 $$x, y \in \Sigma^n$$에서 기호가 서로 다른 자리의 수다. $$\Delta$$는 델타라고 읽는다.
 
 $$\Delta(x, y) = \bigl\vert \{\, i \in [n] : x_i \ne y_i \,\}\bigr\vert $$
 
 
-예: `10110`과 `10011`은 셋째와 다섯째 자리가 달라 $$\Delta = 2$$다. 길이로 나눈 $$\delta(x, y) = \Delta(x, y)/n$$을 상대 해밍 거리라 한다[^2].
+예: `10110`과 `10011`은 셋째와 다섯째 자리가 달라 $$\Delta = 2$$다. 길이로 나눈 $$\delta(x, y) = \Delta(x, y)/n$$을 상대 해밍 거리라 한다.
 
-**해밍 무게.** 열 $$x$$에서 0이 아닌 기호의 수 $$\mathrm{wt}(x)$$다. `10110`의 무게는 3이다. 두 열의 거리는 둘의 차의 무게와 같다[^2].
+**해밍 무게.** 열 $$x$$에서 0이 아닌 기호의 수 $$\mathrm{wt}(x)$$다. `10110`의 무게는 3이다. 두 열의 거리는 둘의 차의 무게와 같다.
 
 $$\Delta(x, y) = \mathrm{wt}(x - y)$$
 
 
 2진에서는 빼기가 자리마다의 XOR(같으면 0, 다르면 1)이다. 다른 자리에만 1이 서니 1의 개수가 곧 거리다[^s1].
 
-**해밍 공.** 열 $$x$$에서 거리 $$r$$ 안에 있는 열을 모두 모은 것 $$\{\, y \in \Sigma^n : \Delta(x, y) \le r \,\}$$이다[^2]. $$x$$에서 $$r$$자리까지 바뀌었을 때 나올 수 있는 열 전부다. 2진 길이 3에서 `000`의 반지름 1짜리 공은 `000`, `100`, `010`, `001` 네 개다.
+**해밍 공.** 열 $$x$$에서 거리 $$r$$ 안에 있는 열을 모두 모은 것 $$\{\, y \in \Sigma^n : \Delta(x, y) \le r \,\}$$이다. $$x$$에서 $$r$$자리까지 바뀌었을 때 나올 수 있는 열 전부다. 2진 길이 3에서 `000`의 반지름 1짜리 공은 `000`, `100`, `010`, `001` 네 개다.
 
-**부호 거리.** 부호 $$C$$에서 서로 다른 두 부호어 사이의 거리 가운데 가장 작은 값이다[^3].
+**부호 거리.** 부호 $$C$$에서 서로 다른 두 부호어 사이의 거리 가운데 가장 작은 값이다.
 
 $$\Delta(C) = \min_{\substack{c_1, c_2 \in C \\ c_1 \ne c_2}} \Delta(c_1, c_2)$$
 
 
-상대 거리는 $$\delta(C) = \Delta(C)/n$$이다[^3]. 가장 가까운 쌍이 가장 약한 곳이라서 가장 작은 값을 잰다.
+상대 거리는 $$\delta(C) = \Delta(C)/n$$이다. 가장 가까운 쌍이 가장 약한 곳이라서 가장 작은 값을 잰다.
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">부호 거리와 능력</div>
 
-부호 $$C$$와 정수 $$t \ge 0$$에 대해 다음 넷은 같은 말이다[^4].
+부호 $$C$$와 정수 $$t \ge 0$$에 대해 다음 넷은 같은 말이다.
 1. $$C$$의 부호 거리가 $$2t + 1$$ 이상이다.
 2. $$C$$는 기호가 $$2t$$개까지 바뀐 것을 반드시 알아챈다.
 3. $$C$$는 기호가 $$2t$$개까지 지워진 것(어느 자리가 비었는지는 안다)을 반드시 채운다.
@@ -92,13 +92,6 @@ $$\Delta(C) = \min_{\substack{c_1, c_2 \in C \\ c_1 \ne c_2}} \Delta(c_1, c_2)$$
 
 
 부호 거리를 $$d$$로 적으면, $$d - 1$$개까지 알아채고, $$d - 1$$개까지 채우고, $$\left\lfloor \frac{d-1}{2} \right\rfloor$$개까지 고친다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 3-2 p.3의 둘째 줄 "C can detect 2t symbol erasures" / 문제점: 지워진 자리는 받는 쪽이 이미 어디인지 알므로 알아챈다는 말이 뜻이 없고, 셋째 줄 "correct 2t symbol erasures"와 겹친다 / 수정안: "C can detect 2t symbol errors"(바뀐 것 $$2t$$개를 알아챈다) / 근거: 거리 3인 $$\{000, 111\}$$과 (6,3) 부호, 거리 5인 $$\{00000, 11111\}$$에서 $$d - 1$$개까지의 바뀜은 모두 알아채고 $$d$$개는 놓치는 경우가 있음을 전수 검사로 확인했다(05_hamming-distance_verify.py). Guruswami, Rudra, Sudan, *Essential Coding Theory* 1.4절의 같은 명제도 "detect $$2t$$ errors"다.
-
-</div>
 
 
 <details class="callout callout-proof" markdown="1">
@@ -176,9 +169,5 @@ $$\Delta(C) = \min_{\substack{c_1, c_2 \in C \\ c_1 \ne c_2}} \Delta(c_1, c_2)$$
 </details>
 
 
-[^1]: 자료와 정보 3회 강의 자료 「D&I_강의03-부호」, p.13 (Definition: Error-correcting Code, q-ary code, block-size, encoding map)
-[^2]: 같은 자료, p.14 (Definition: Hamming Distance, relative Hamming distance, Hamming Weight, $$\Delta(x, y) = \mathrm{wt}(x - y)$$, Hamming ball)
-[^3]: 같은 자료, p.16과 자료와 정보 3회 강의 자료 「D&I_강의03-2-부호2」, p.2 (Definition: Distance, relative distance)
-[^4]: 자료와 정보 3회 강의 자료 「D&I_강의03-2-부호2」, p.3 (Lemma: minimum distance $$2t + 1$$ ⇔ detect $$2t$$ ⇔ correct $$2t$$ erasures ⇔ correct $$t$$ errors)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 번 되풀이 부호의 예, XOR 설명, 증명 전체, 공이 겹치지 않는다는 그림 설명, 예제, 활용 절, 카드는 슬라이드에 없다. 슬라이드에는 정의와 명제의 진술만 있다. 증명은 Guruswami, Rudra, Sudan, *Essential Coding Theory*, 1.4절(Proposition 1.4.2)을 따랐고, 작은 부호에서 전수 검사로 확인했다(실험 확인은 증명이 아니라 진술을 다시 점검한 것이다).
+[^s1]: 증명은 Guruswami, Rudra, Sudan, *Essential Coding Theory*, 1.4절(Proposition 1.4.2)을 따랐고, 작은 부호에서 전수 검사로 확인했다(실험 확인은 증명이 아니라 진술을 다시 점검한 것이다).
 {% endraw %}

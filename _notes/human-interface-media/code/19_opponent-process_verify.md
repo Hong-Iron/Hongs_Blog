@@ -24,10 +24,10 @@ permalink: "/studies/human-interface-media/code/19_opponent-process_verify/"
 문서: 19.반대색 과정 (예시로 보기, 카드 C2)
 추상체 모형은 16_trichromatic-theory_verify.py와 같다 (봉우리 S 445, M 535, L 575 nm, 폭 30/45/45 nm 가정).
 주장:
-  1. 슬라이드 p.13 오른쪽 (a)~(c): 빛 1(M 봉우리 535 nm)은 M > L이라 L - M < 0(초록 쪽),
+  1. 문서 예시의 빛 1, 빛 2: 빛 1(M 봉우리 535 nm)은 M > L이라 L - M < 0(초록 쪽),
      빛 2(L 봉우리 575 nm)는 L > M이라 L - M > 0(빨강 쪽)이다.
   2. 회로 1(S는 +, M+L은 -)을 S - (M + L)/2로 두면, 450 nm 파랑에는 양수(B+), 580 nm 노랑에는 음수(Y-)다.
-  3. 회로 2(M은 +, L은 -)의 출력 M - L은 (c)의 L - M과 부호만 반대다. 두 극성의 세포가 모두 있다.
+  3. 회로 2(M은 +, L은 -)의 출력 M - L은 주장 1의 L - M과 부호만 반대다. 두 극성의 세포가 모두 있다.
 """
 import math
 

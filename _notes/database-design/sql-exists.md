@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["EXISTS", "NOT EXISTS", "EXISTS 함수", "존재 검사", "상관 중첩 질의", "Correlated Nested Query", "상관 부질의", "Correlated Subquery", "UNIQUE 함수"]
 description: "직원마다 \"이 사람의 부양가족이 한 명이라도 있는가\"만 알고 싶을 때가 있다. 누구인지, 몇 명인지는 필요 없고 있다, 없다만 본다. 직원을 한 명씩 짚으면서 그 사람에게 딸린 행을 찾아보고, 하나라도 나오면 뽑는 것이 EXISTS이고 하나도 안 나와야 뽑는 것이 NOT EXIST…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-exists/"
 
 ## 예시로 보기
 
-"부양가족이 없는 직원의 이름을 구하라." [IN](/Hongs_Blog/studies/database-design/nested-query-in/)은 "쪽지에 있는 값"을 고르는 데 맞고, 여기서 필요한 것은 "딸린 행이 하나도 없다"이다. 이 질문은 이렇게 쓴다[^1].
+"부양가족이 없는 직원의 이름을 구하라." [IN](/Hongs_Blog/studies/database-design/nested-query-in/)은 "쪽지에 있는 값"을 고르는 데 맞고, 여기서 필요한 것은 "딸린 행이 하나도 없다"이다. 이 질문은 이렇게 쓴다.
 
 ```sql
 SELECT Fname, Lname
@@ -60,31 +60,31 @@ WHERE  NOT EXISTS ( SELECT *
 `NOT EXISTS`가 참인 다섯 명 Zelaya, Narayan, English, Jabbar, Borg가 결과다. `NOT`을 떼면 나머지 세 명 Smith, Wong, Wallace가 나온다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 표, Query 6의 5명, Query 16의 EXISTS 판(0행), 연습 1(Wong, Wallace), 바깥 행을 쓰지 않는 안쪽 질의(8행과 0행), "부양가족이 모두 여성"의 5명과 0명, 카드 C2. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다. `UNIQUE(부질의)`는 두 제품 모두 거부한다 — [62_sql-exists_verify.py](/Hongs_Blog/studies/database-design/code/62_sql-exists_verify/), [62_sql-exists_verify.sql](/Hongs_Blog/studies/database-design/code/62_sql-exists_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: 위 표, 부양가족이 없는 직원 5명, 이름과 성별이 같은 부양가족을 찾는 EXISTS 판(0행), 부양가족이 있는 관리자(Wong, Wallace), 바깥 행을 쓰지 않는 안쪽 질의(8행과 0행), "부양가족이 모두 여성"의 5명과 0명, 카드 C2. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다. `UNIQUE(부질의)`는 두 제품 모두 거부한다 — [62_sql-exists_verify.py](/Hongs_Blog/studies/database-design/code/62_sql-exists_verify/), [62_sql-exists_verify.sql](/Hongs_Blog/studies/database-design/code/62_sql-exists_verify-sql/)</div>
 
 </div>
 
 
 ## 정의
 
-`EXISTS`와 `NOT EXISTS`는 안쪽 질의의 결과가 비어 있는지 아닌지만 본다. 주로 `WHERE` 절의 조건으로 쓴다[^2].
+`EXISTS`와 `NOT EXISTS`는 안쪽 질의의 결과가 비어 있는지 아닌지만 본다. 주로 `WHERE` 절의 조건으로 쓴다.
 
 - `EXISTS ( Q )`: 안쪽 질의 `Q`의 결과에 행이 적어도 하나 있으면 참이다.
 - `NOT EXISTS ( Q )`: `Q`의 결과에 행이 하나도 없으면 참이다.
 
 기호로 쓰면, 바깥에서 짚은 행을 $$t$$, 그때 안쪽 질의의 결과를 $$Q(t)$$라 할 때 `EXISTS`는 $$Q(t) \ne \emptyset$$, `NOT EXISTS`는 $$Q(t) = \emptyset$$이다. $$\emptyset$$은 원소가 하나도 없는 빈 집합이다.
 
-슬라이드는 돌리는 차례를 이렇게 적는다. EMPLOYEE의 행마다 (1) 안쪽 질의를 돌려 조건에 맞는 DEPENDENT의 행을 모두 꺼내고 (2) 결과에 행이 하나라도 있으면(`NOT EXISTS`는 하나도 없으면) 그 EMPLOYEE의 행을 고른다[^2][^1].
+돌리는 차례는 이렇다. EMPLOYEE의 행마다 (1) 안쪽 질의를 돌려 조건에 맞는 DEPENDENT의 행을 모두 꺼내고 (2) 결과에 행이 하나라도 있으면(`NOT EXISTS`는 하나도 없으면) 그 EMPLOYEE의 행을 고른다.
 
 행이 있는지만 보므로 안쪽 질의의 `SELECT` 뒤에 무엇을 적든 결과는 같다. 그래서 흔히 `SELECT *`로 쓴다. `SELECT Essn`으로 바꿔도 위 질의는 같은 다섯 명을 낸다[^s1].
 
 ### 바깥 행마다 다시 돌리는 안쪽 질의
 
-안쪽 질의가 바깥 행의 값을 쓰면, 바깥 행 하나에 안쪽 질의를 한 번씩 돌려야 한다. 위 질의의 `Ssn = Essn`이 그렇다. 교재는 이런 질의를 상관 중첩 질의(correlated nested query)라 부른다[^s2]. [중첩 질의와 IN](/Hongs_Blog/studies/database-design/nested-query-in/)의 첫 질의는 안쪽 질의가 바깥 행의 값을 쓰지 않는다. 그런 쪽지는 한 번만 만들어 두면 된다.
+안쪽 질의가 바깥 행의 값을 쓰면, 바깥 행 하나에 안쪽 질의를 한 번씩 돌려야 한다. 위 질의의 `Ssn = Essn`이 그렇다. 이런 질의를 상관 중첩 질의(correlated nested query)라 부른다[^s2]. [중첩 질의와 IN](/Hongs_Blog/studies/database-design/nested-query-in/)의 첫 질의는 안쪽 질의가 바깥 행의 값을 쓰지 않는다. 그런 쪽지는 한 번만 만들어 두면 된다.
 
 `EXISTS`의 안쪽 질의가 바깥 행을 쓰지 않으면 모든 바깥 행에 같은 답이 나온다. `WHERE EXISTS ( SELECT * FROM DEPENDENT )`는 DEPENDENT에 행이 있기만 하면 참이라 직원 8명을 모두 고르고, `NOT EXISTS`로 바꾸면 0명을 고른다[^s1]. `Ssn = Essn` 같은 연결 조건을 빠뜨리면 이렇게 "전부 아니면 전무"가 된다.
 
-같은 질문을 `IN`으로도 `EXISTS`로도 쓸 수 있다. "자기와 이름도 성별도 같은 부양가족이 있는 직원"을 `EXISTS`로 쓴 판은 이렇다[^2].
+같은 질문을 `IN`으로도 `EXISTS`로도 쓸 수 있다. "자기와 이름도 성별도 같은 부양가족이 있는 직원"을 `EXISTS`로 쓴 판은 이렇다.
 
 ```sql
 SELECT E.Fname, E.Lname
@@ -99,7 +99,7 @@ WHERE  EXISTS ( SELECT *
 
 ### "모두"를 NOT EXISTS로
 
-SQL에는 "모든 행이 조건을 지킨다"를 묻는 `EXISTS`의 짝이 없다. 그래서 "모두 ~이다"를 "~가 아닌 것이 없다"로 바꿔 쓴다. 12주차 풀이가 "성적이 모두 A인 학생"을 "A가 아닌 성적이 없는 학생"으로 쓴 것이 이 방법이다[^3]. COMPANY에서 "부양가족이 모두 여성인 직원"을 구하면 이렇다[^s3].
+SQL에는 "모든 행이 조건을 지킨다"를 묻는 `EXISTS`의 짝이 없다. 그래서 "모두 ~이다"를 "~가 아닌 것이 없다"로 바꿔 쓴다. 예를 들어 "성적이 모두 A인 학생"은 "A가 아닌 성적이 없는 학생"으로 쓴다. COMPANY에서 "부양가족이 모두 여성인 직원"을 구하면 이렇다[^s3].
 
 ```sql
 SELECT E.Fname, E.Lname
@@ -118,7 +118,7 @@ $$\forall d \in D_e\ (\text{Sex}(d) = \text{F}) \iff \neg\,\exists d \in D_e\ (\
 
 ### UNIQUE
 
-슬라이드는 참, 거짓을 돌려주는 함수를 하나 더 든다. `UNIQUE ( Q )`는 `Q`의 결과에 똑같은 행이 두 번 나오지 않으면 참이다[^4].
+참, 거짓을 돌려주는 함수가 하나 더 있다. `UNIQUE ( Q )`는 `Q`의 결과에 똑같은 행이 두 번 나오지 않으면 참이다.
 
 ```sql
 SELECT Fname, Lname
@@ -191,7 +191,7 @@ DEPENDENT에 `Essn`이 888665555인 행이 없어 결과가 비어 있다. 빈 �
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"NOT EXISTS로 쓴 '모두 ~이다'는 ~인 것을 하나 이상 가진 행만 뽑는다"</div>
 
-틀렸다. "성적이 모두 A인 학생"이라는 말을 들으면 A를 받은 적이 있는 학생만 떠올리게 되어 그럴듯해 보인다. 하지만 `NOT EXISTS`가 보는 것은 "어긴 것이 있는가"뿐이다. 견줄 것이 하나도 없는 행은 어긴 것도 없으니 참이다. 위의 "부양가족이 모두 여성인 직원"에서 뽑힌 다섯 명은 모두 부양가족이 없는 사람이었다. 12주차 연습의 "성적이 모두 A인 학생"도 같다. 성적이 한 줄도 없는 학생을 넣어 보면 `NOT EXISTS`로 쓴 풀이는 그 학생을 뽑고, 조인과 묶기로 쓴 풀이는 뽑지 않는다([복잡한 검색 연습](/Hongs_Blog/studies/database-design/complex-retrieval-practice/)). 확인하는 법: 딸린 행이 하나도 없는 행을 넣고 돌려 본다. 그런 행을 빼려면 `AND EXISTS ( … )`를 더한다.
+틀렸다. "성적이 모두 A인 학생"이라는 말을 들으면 A를 받은 적이 있는 학생만 떠올리게 되어 그럴듯해 보인다. 하지만 `NOT EXISTS`가 보는 것은 "어긴 것이 있는가"뿐이다. 견줄 것이 하나도 없는 행은 어긴 것도 없으니 참이다. 위의 "부양가족이 모두 여성인 직원"에서 뽑힌 다섯 명은 모두 부양가족이 없는 사람이었다. "성적이 모두 A인 학생"도 같다. 성적이 한 줄도 없는 학생을 넣어 보면 `NOT EXISTS`로 쓴 풀이는 그 학생을 뽑고, 조인과 묶기로 쓴 풀이는 뽑지 않는다([복잡한 검색 연습](/Hongs_Blog/studies/database-design/complex-retrieval-practice/)). 확인하는 법: 딸린 행이 하나도 없는 행을 넣고 돌려 본다. 그런 행을 빼려면 `AND EXISTS ( … )`를 더한다.
 
 </div>
 
@@ -242,12 +242,8 @@ DEPENDENT에 `Essn`이 888665555인 행이 없어 결과가 비어 있다. 빈 �
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.16 (NOT EXISTS Function, Query 6, EMPLOYEE 튜플마다 안쪽 질의를 돌리는 두 단계)
-[^2]: 같은 자료, p.15 (EXISTS Function, Query 16의 EXISTS 판, 두 단계). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.5에 두 함수가 한 쪽으로 다시 정리되어 있다.
-[^3]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.3 (Q2-1의 풀이: 성적이 A가 아닌 행이 없는 학생)
-[^4]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.18 (Other Boolean Functions: UNIQUE function)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 직원별 추적 표, `SELECT Essn`으로 바꾼 판, 바깥 행을 쓰지 않는 안쪽 질의의 8행과 0행은 슬라이드에 없다. 슬라이드는 질의와 돌리는 차례만 적었다. SQLite와 PostgreSQL 16에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에는 "상관 중첩 질의"라는 이름이 없고 "EMPLOYEE 튜플마다 안쪽 질의를 돌린다"는 설명만 있다. 이름은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Correlated Nested Queries"의 것이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "부양가족이 모두 여성인 직원" 질의와 그 결과, 카드 C2~C5는 슬라이드에 없다. 슬라이드에서 "모두"를 `NOT EXISTS`로 쓴 곳은 12주차 풀이 Q2-1 하나다. SQLite와 PostgreSQL 16에서 실행해 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실행 결과와 바꿔 쓴 판은 슬라이드에 없다. 바꿔 쓴 판은 `NOT EXISTS ( SELECT 1 FROM DEPENDENT WHERE Ssn = Essn GROUP BY Essn, Dependent_name, Sex, Bdate, Relationship HAVING COUNT(*) > 1 )`이고 두 제품에서 8명을 낸다.
+[^s1]: SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s2]: 이름은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Correlated Nested Queries"의 것이다.
+[^s3]: SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s4]: 바꿔 쓴 판은 `NOT EXISTS ( SELECT 1 FROM DEPENDENT WHERE Ssn = Essn GROUP BY Essn, Dependent_name, Sex, Bdate, Relationship HAVING COUNT(*) > 1 )`이고 두 제품에서 8명을 낸다.
 {% endraw %}

@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/06_finite-automata_impl/"
 [유한 오토마타](/Hongs_Blog/studies/compilers/finite-automata/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 유한 오토마타: 전이 그래프를 표로 적고 문자열을 받아들이는지 따라가 본다 (슬라이드 L03 p.4~11)
+# 유한 오토마타: 전이 그래프를 표로 적고 문자열을 받아들이는지 따라가 본다
 # 실행: python3 06_finite-automata_impl.py   (표준 라이브러리만 쓴다)
 # 오토마타는 (시작 상태, 받아들이는 상태 집합, 화살표 목록)이다. 화살표는 (출발, 라벨, 도착), 라벨 None이 ε이다.
 import itertools
@@ -62,16 +62,16 @@ def all_strings(alphabet, max_len):
 
 
 def table(fa, symbols):
-    """전이 표: (상태, 기호) -> 도착 상태 집합. 빈 집합이 슬라이드의 ∅ 칸이다."""
+    """전이 표: (상태, 기호) -> 도착 상태 집합. 빈 집합이 전이 표의 ∅ 칸이다."""
     _, _, edges = fa
     states = sorted({a for a, _, _ in edges} | {b for _, _, b in edges})
     return {(q, s): {b for (a, label, b) in edges if a == q and label == s} for q in states for s in symbols}
 
 
-M6 = ("q0", {"q1"}, [("q0", "0", "q1")])                                   # p.6: 정규 표현식 0
-M7 = ("q0", {"q0"}, [("q0", "0", "q0")])                                   # p.7: 0*
-M8 = ("q0", {"q1"}, [("q0", "1", "q0"), ("q0", "0", "q1")])                # p.8: 물음
-# p.10: 물음. 기호 d가 숫자 0~9를, m이 빼기 기호를 대신한다.
+M6 = ("q0", {"q1"}, [("q0", "0", "q1")])                                   # 정규 표현식 0
+M7 = ("q0", {"q0"}, [("q0", "0", "q0")])                                   # 0*
+M8 = ("q0", {"q1"}, [("q0", "1", "q0"), ("q0", "0", "q1")])                # 문서의 첫째 물음
+# 문서의 ε-전이 물음. 기호 d가 숫자 0~9를, m이 빼기 기호를 대신한다.
 M10 = ("q0", {"q3"}, [("q0", "m", "q1"), ("q0", EPS, "q2"), ("q1", "d", "q3"),
                       ("q2", "d", "q3"), ("q3", "d", "q3")])
 
@@ -95,14 +95,14 @@ def no_small_dfa_for_parens(max_states, max_len):
 
 
 if __name__ == "__main__":
-    # p.6: 0 하나만 받아들인다
+    # 0 하나만 받아들인다
     assert [s for s in all_strings("0", 5) if accepts(M6, s)] == ["0"]
-    # p.7: 0을 몇 번 이어 써도(0번 포함) 받아들인다
+    # 0을 몇 번 이어 써도(0번 포함) 받아들인다
     assert all(accepts(M7, s) for s in all_strings("0", 8))
-    # p.8의 답: 1*0
+    # 첫째 물음의 답: 1*0
     assert all(accepts(M8, s) == bool(re.fullmatch("1*0", s)) for s in all_strings("01", 9))
     assert accepts(M8, "1110") and accepts(M8, "0") and not accepts(M8, "01") and not accepts(M8, "")
-    # p.10의 답: (-|ε) digit digit*
+    # ε-전이 물음의 답: (-|ε) digit digit*
     assert all(accepts(M10, s) == bool(re.fullmatch("m?d+", s)) for s in all_strings("md", 8))
     assert accepts(M10, "mdd") and accepts(M10, "d") and not accepts(M10, "m") and not accepts(M10, "dm")
     # 문서의 추적: -42 (m d d)
@@ -111,12 +111,12 @@ if __name__ == "__main__":
     ok, hist = run(M10, "dm")
     assert not ok and hist == [{"q0", "q2"}, {"q3"}, set()]
 
-    # p.11의 전이 표
+    # 0, 0*, ε-전이 하나짜리 기계의 전이 표
     assert table(M6, ["0"]) == {("q0", "0"): {"q1"}, ("q1", "0"): set()}
     assert table(M7, ["0"]) == {("q0", "0"): {"q0"}}
     eps_fa = ("qi", {"qj"}, [("qi", EPS, "qj")])
     assert table(eps_fa, [EPS]) == {("qi", EPS): {"qj"}, ("qj", EPS): set()}
-    # p.9: 자기 자신으로 가는 ε-화살표는 받아들이는 문자열을 바꾸지 않는다
+    # 자기 자신으로 가는 ε-화살표는 받아들이는 문자열을 바꾸지 않는다
     M8_loop = (M8[0], M8[1], M8[2] + [("q0", EPS, "q0")])
     assert all(accepts(M8, s) == accepts(M8_loop, s) for s in all_strings("01", 8))
 

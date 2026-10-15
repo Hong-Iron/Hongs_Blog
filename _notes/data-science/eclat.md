@@ -34,7 +34,7 @@ permalink: "/studies/data-science/eclat/"
 
 ## 예시로 보기
 
-[Apriori](/Hongs_Blog/studies/data-science/apriori/)는 후보 묶음 하나의 지지도를 알려고 DB 전체를 훑는다. 같은 일을 표를 뒤집어서 해 보자[^1].
+[Apriori](/Hongs_Blog/studies/data-science/apriori/)는 후보 묶음 하나의 지지도를 알려고 DB 전체를 훑는다. 같은 일을 표를 뒤집어서 해 보자.
 
 | 수평 형식 (거래 → 항목) | | 수직 형식 (항목 → 거래 번호) | |
 |---|---|---|---|
@@ -48,12 +48,12 @@ permalink: "/studies/data-science/eclat/"
 | 80 | A, B, C, E | | |
 | 90 | A, B, C | | |
 
-수직 형식에서 각 항목 옆의 번호 묶음을 TID 목록이라 부른다(TID는 거래 번호). 이제 {A, B}가 든 거래는 A와 B의 TID 목록의 교집합이다[^2].
+수직 형식에서 각 항목 옆의 번호 묶음을 TID 목록이라 부른다(TID는 거래 번호). 이제 {A, B}가 든 거래는 A와 B의 TID 목록의 교집합이다.
 
 $$\{10, 20, 50, 70, 80, 90\} \cap \{10, 20, 30, 40, 60, 80, 90\} = \{10, 20, 80, 90\}$$
 
 
-지지 개수는 4다. {A, B, C}는 {A, B}의 목록과 C의 목록을 겹쳐 {80, 90}, 지지 개수 2다. 최소 지지 개수 2에서 결과는 2항목 AB 4, AC 4, AE 2, BC 4, BD 2, BE 2와 3항목 ABC 2, ABE 2다[^2]. [Apriori](/Hongs_Blog/studies/data-science/apriori/)의 연습 1과 같은 답이다.
+지지 개수는 4다. {A, B, C}는 {A, B}의 목록과 C의 목록을 겹쳐 {80, 90}, 지지 개수 2다. 최소 지지 개수 2에서 결과는 2항목 AB 4, AC 4, AE 2, BC 4, BD 2, BE 2와 3항목 ABC 2, ABE 2다. [Apriori](/Hongs_Blog/studies/data-science/apriori/)의 연습 1과 같은 답이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 수직 표, 교집합 결과, 무작위 자료 300개에서 모든 부분집합을 세는 방법과 일치, 카드 C3 — [14_eclat_impl.py](/Hongs_Blog/studies/data-science/code/14_eclat_impl/)</div>
@@ -63,7 +63,7 @@ $$\{10, 20, 50, 70, 80, 90\} \cap \{10, 20, 30, 40, 60, 80, 90\} = \{10, 20, 80,
 
 ## 정의
 
-**ECLAT**(Equivalence Class Transformation)은 수직 데이터 형식 {항목: TID 집합}을 쓰고, 집합의 교집합으로 지지도를 구하는 깊이 우선 탐색 알고리즘이다[^1]. DB는 TID 목록을 만들 때 한 번만 훑는다[^3].
+**ECLAT**(Equivalence Class Transformation)은 수직 데이터 형식 {항목: TID 집합}을 쓰고, 집합의 교집합으로 지지도를 구하는 깊이 우선 탐색 알고리즘이다. DB는 TID 목록을 만들 때 한 번만 훑는다.
 
 ```
 ECLAT(같은 앞부분을 가진 빈발 집합들 P = [(X1, T1), (X2, T2), ...]):
@@ -108,7 +108,7 @@ flowchart TD
     AC --> ACE["ACE: 1, 버림"]
 ```
 
-숫자는 TID 목록의 길이, 곧 지지 개수다. ECLAT은 AB 아래를 끝까지 내려간 뒤에야 AC로 돌아온다. 같은 부모 아래의 형제끼리만 교집합을 구한다[^s2].
+숫자는 TID 목록의 길이, 곧 지지 개수다. ECLAT은 AB 아래를 끝까지 내려간 뒤에야 AC로 돌아온다. 같은 부모 아래의 형제끼리만 교집합을 구한다.
 
 ### 복잡도
 
@@ -117,7 +117,7 @@ flowchart TD
 ## 활용
 
 - 구현: [14_eclat_impl.py](/Hongs_Blog/studies/data-science/code/14_eclat_impl/)
-- 한계: 흔한 항목의 TID 목록은 거래 수만큼 길어 메모리를 많이 쓰고, 교집합 계산도 오래 걸린다. 후보(교집합할 짝)를 만드는 일도 남는다[^3].
+- 한계: 흔한 항목의 TID 목록은 거래 수만큼 길어 메모리를 많이 쓰고, 교집합 계산도 오래 걸린다. 후보(교집합할 짝)를 만드는 일도 남는다.
 - TID 목록을 0과 1의 비트열로 저장하면 교집합이 비트 AND 한 번이 된다(알고리즘의 [비트마스크](/Hongs_Blog/studies/algorithms/bit-operations/))[^s1].
 
 ## 연결
@@ -160,9 +160,5 @@ flowchart TD
 </details>
 
 
-[^1]: 데이터 과학 3회 강의 자료 「3-1_FP」, p.27
-[^2]: 같은 자료, p.28
-[^3]: 같은 자료, p.39 (요약 표: DB 1번 훑기, 수직 형식, 후보 생성 있음, TID 집합 교집합, DFS, 메모리 많음)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 의사코드, 교집합이 지지도가 되는 이유, 실행 추적 표, 복잡도, 비트열 저장, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다(Zaki, "Scalable Algorithms for Association Mining", IEEE TKDE 2000).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서의 `실행 추적` 표(수직 표는 원본 3-1 p.28)를 그대로 나무로 옮겼다.
+[^s1]: 구현 코드로 확인했다(Zaki, "Scalable Algorithms for Association Mining", IEEE TKDE 2000).
 {% endraw %}

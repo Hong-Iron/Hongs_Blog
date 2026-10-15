@@ -9,7 +9,7 @@ course: "이산수학"
 course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Recursive Definition", "Structural Induction", "재귀적 정의", "귀납적 정의", "구조적 귀납법", "재귀 자료형", "recursive data type", "균형 괄호", "balanced parentheses", "정 이진 트리", "full binary tree", "카탈랑 수", "Catalan number"]
 description: "끝없이 많은 대상을 \"기본 재료 몇 개\"와 \"이미 만든 것으로 새것을 만드는 규칙\"으로 정의하는 방법이다. 리스트, 트리, 수식, 프로그래밍 언어의 문법이 모두 이렇게 정의되고, 재귀 함수가 이 정의를 그대로 따라간다. 이렇게 정의한 대상의 성질은 같은 모양으로 증명한다. 기본 재…"
@@ -109,7 +109,7 @@ def leaves(t):
 
 ## 과목별 관점
 
-**컴파일러 (3-2학기).** 프로그래밍 언어의 문법을 적는 [문맥 자유 문법](/Hongs_Blog/studies/compilers/context-free-grammar/)이 재귀적 정의를 화살표로 쓴 것이다. 강의는 여는 괄호 $$n$$개 뒤에 닫는 괄호 $$n$$개가 오는 문자열을 $$BALANCED \to (\,BALANCED\,) \mid \epsilon$$ 한 줄로 적는다[^c1]. 이 문서의 말로 옮기면 다음과 같다[^cs1].
+**컴파일러 (3-2학기).** 프로그래밍 언어의 문법을 적는 [문맥 자유 문법](/Hongs_Blog/studies/compilers/context-free-grammar/)이 재귀적 정의를 화살표로 쓴 것이다. 여는 괄호 $$n$$개 뒤에 닫는 괄호 $$n$$개가 오는 문자열은 $$BALANCED \to (\,BALANCED\,) \mid \epsilon$$ 한 줄로 적는다. 이 문서의 말로 옮기면 다음과 같다[^cs1].
 
 | 재귀적 정의 | 문맥 자유 문법 |
 |---|---|
@@ -119,7 +119,7 @@ def leaves(t):
 | 한정("이렇게 만든 것만") | 시작 기호에서 규칙을 유한 번 써서 만든 문자열만 그 문법의 언어다 |
 | 구조적 귀납법 | 규칙을 쓴 횟수(유도의 걸음 수)에 대한 귀납법 |
 
-- 강의의 한 줄 문법에는 이 문서의 규칙 3(이어 붙이기)이 없다. 그래서 `(())`는 만들지만 `()()`는 못 만든다. 세 규칙을 다 옮기면 $$B \to (B) \mid BB \mid \epsilon$$이고, 이 문법이 길이 10 이하의 균형 괄호를 빠짐없이 만든다[^cs1].
+- 이 한 줄 문법에는 이 문서의 규칙 3(이어 붙이기)이 없다. 그래서 `(())`는 만들지만 `()()`는 못 만든다. 세 규칙을 다 옮기면 $$B \to (B) \mid BB \mid \epsilon$$이고, 이 문법이 길이 10 이하의 균형 괄호를 빠짐없이 만든다[^cs1].
 - 규칙 3을 그대로 옮긴 $$B \to BB$$에는 값이 따른다. `()()()`를 앞의 둘부터 묶을 수도 뒤의 둘부터 묶을 수도 있어, 문자열 하나에 만드는 과정을 그린 나무가 둘 나온다. 집합을 정의할 때는 "만들 수 있는가"만 중요해서 문제가 없었지만, 컴파일러는 그 나무로 뜻을 정하므로 나무가 하나만 나오게 문법을 고쳐 쓴다([모호한 문법](/Hongs_Blog/studies/compilers/ambiguous-grammar/)). $$B \to (B)B \mid \epsilon$$은 같은 문자열들을 만들면서 나무가 늘 하나다[^cs1].
 - 위 '활용'에서 "파서는 이 정의를 따라 재귀적으로 내려간다"고 한 것이 [재귀 하강 파싱](/Hongs_Blog/studies/compilers/recursive-descent-parsing/)이다. 문법의 규칙 하나가 재귀 함수의 경우 하나가 된다.
 
@@ -150,17 +150,16 @@ def leaves(t):
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C4** 균형 괄호의 세 규칙(기저 ε, 규칙 (s)와 st)을 문맥 자유 문법으로 옮겨라. 컴파일러 강의의 $$BALANCED \to (BALANCED) \mid \epsilon$$과는 어떤 문자열에서 달라지는가?</summary>
+<summary class="callout-title" markdown="span">**C4** 균형 괄호의 세 규칙(기저 ε, 규칙 (s)와 st)을 문맥 자유 문법으로 옮겨라. 한 줄 문법 $$BALANCED \to (BALANCED) \mid \epsilon$$과는 어떤 문자열에서 달라지는가?</summary>
 
-**답:** $$B \to (B) \mid BB \mid \epsilon$$. 강의의 문법에는 이어 붙이기 규칙 $$B \to BB$$가 없어서 `()()`, `(())()`처럼 덩어리가 옆으로 이어진 문자열을 만들지 못한다. 길이 4에서는 `(())`만, 길이 6에서는 `((()))`만 만든다.<br>
+**답:** $$B \to (B) \mid BB \mid \epsilon$$. 한 줄 문법에는 이어 붙이기 규칙 $$B \to BB$$가 없어서 `()()`, `(())()`처럼 덩어리가 옆으로 이어진 문자열을 만들지 못한다. 길이 4에서는 `(())`만, 길이 6에서는 `((()))`만 만든다.<br>
 **이유:** 기저가 자기 자신이 없는 규칙, 생성 규칙이 자기 자신이 다시 나오는 규칙이 된다. 규칙 하나를 빼면 만들어지는 집합이 줄어든다.
 
 </details>
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 7장 "Recursive Data Types"(재귀적 정의, 구조적 귀납법, 균형 괄호). Rosen, *Discrete Mathematics and Its Applications* 7판, 5장.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$n$$번째 카탈랑 수는 $$\frac{1}{n+1}\binom{2n}{n}$$이다. 이 값은 검증 코드의 개수와 같다(1, 1, 2, 5, 14, 42, 132).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '재귀 함수' 문단의 정 이진 트리 정의(잎 하나, 또는 두 트리를 붙인 노드)를 작은 예로 그렸다.
-[^c1]: 컴파일러 4회 강의 자료 「Lecture04 Syntax analysis part 1」, p.11~13 (문맥 자유 문법의 구성 요소, BALANCED 규칙)
-[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 재귀적 정의와 문법의 짝짓기 표, 세 규칙을 다 옮긴 문법, 나무가 둘 나오는 예, 카드 C4는 컴파일러 슬라이드에 없다. 세 규칙을 옮긴 문법이 길이 10 이하의 균형 괄호를 모두 만드는 것과 강의의 문법이 그 일부만 만드는 것은 [11_context-free-grammar_verify.py](/Hongs_Blog/studies/compilers/code/11_context-free-grammar_verify/)로, 나무의 수는 [13_ambiguous-grammar_verify.py](/Hongs_Blog/studies/compilers/code/13_ambiguous-grammar_verify/)로 확인했다.
+[^s1]: $$n$$번째 카탈랑 수는 $$\frac{1}{n+1}\binom{2n}{n}$$이다. 이 값은 검증 코드의 개수와 같다(1, 1, 2, 5, 14, 42, 132).
+[^s2]: '재귀 함수' 문단의 정 이진 트리 정의(잎 하나, 또는 두 트리를 붙인 노드)를 작은 예로 그렸다.
+[^cs1]: 세 규칙을 옮긴 문법이 길이 10 이하의 균형 괄호를 모두 만드는 것과 한 줄 문법이 그 일부만 만드는 것은 [11_context-free-grammar_verify.py](/Hongs_Blog/studies/compilers/code/11_context-free-grammar_verify/)로, 나무의 수는 [13_ambiguous-grammar_verify.py](/Hongs_Blog/studies/compilers/code/13_ambiguous-grammar_verify/)로 확인했다.
 {% endraw %}

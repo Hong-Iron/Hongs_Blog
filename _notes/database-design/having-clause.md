@@ -34,7 +34,7 @@ permalink: "/studies/database-design/having-clause/"
 
 ## 예시로 보기
 
-[GROUP BY](/Hongs_Blog/studies/database-design/group-by/)로 프로젝트마다 일하는 직원 수를 구했다. 여기서 "직원이 둘보다 많은 프로젝트만" 남기려 한다. `WHERE COUNT(*) > 2`라고 쓰고 싶지만, `WHERE`는 묶기 전에 행을 하나씩 보는 자리라 묶음의 행 수를 알 수 없다. 묶은 뒤에 거르는 자리가 따로 있다[^1].
+[GROUP BY](/Hongs_Blog/studies/database-design/group-by/)로 프로젝트마다 일하는 직원 수를 구했다. 여기서 "직원이 둘보다 많은 프로젝트만" 남기려 한다. `WHERE COUNT(*) > 2`라고 쓰고 싶지만, `WHERE`는 묶기 전에 행을 하나씩 보는 자리라 묶음의 행 수를 알 수 없다. 묶은 뒤에 거르는 자리가 따로 있다.
 
 ```sql
 SELECT   Pnumber, Pname, COUNT(*)
@@ -53,7 +53,7 @@ HAVING   COUNT(*) > 2;
 | 20 | Reorganization | 3 | 남긴다 |
 | 30 | Newbenefits | 3 | 남긴다 |
 
-행이 둘뿐인 ProductX와 ProductZ의 묶음이 통째로 빠지고[^2], 결과는 ProductY, Computerization, Reorganization, Newbenefits 4행이다(모두 3)[^1].
+행이 둘뿐인 ProductX와 ProductZ의 묶음이 통째로 빠지고, 결과는 ProductY, Computerization, Reorganization, Newbenefits 4행이다(모두 3).
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 표, 시간 합이 40을 넘는 프로젝트(1, 3, 10, 30), `WHERE`에 쓴 집계 함수의 오류, `HAVING Dno > 1`, `GROUP BY` 없는 `HAVING`, 카드 C2. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다. 묶지 않은 열을 쓴 `HAVING Salary > 30000`만 다르다(PostgreSQL은 오류, SQLite는 받는다) — [70_having-clause_verify.py](/Hongs_Blog/studies/database-design/code/70_having-clause_verify/), [70_having-clause_verify.sql](/Hongs_Blog/studies/database-design/code/70_having-clause_verify-sql/)</div>
@@ -63,7 +63,7 @@ HAVING   COUNT(*) > 2;
 
 ## 정의
 
-`HAVING` 절은 묶음을 요약한 값에 조건을 건다. 조건이 참인 묶음만 결과에 나온다. `GROUP BY` 절과 함께 쓴다[^2].
+`HAVING` 절은 묶음을 요약한 값에 조건을 건다. 조건이 참인 묶음만 결과에 나온다. `GROUP BY` 절과 함께 쓴다.
 
 ```
 GROUP BY 묶는 속성
@@ -144,7 +144,5 @@ HAVING   묶음 조건
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.34 (Query 26과 HAVING을 쓴 뒤의 결과 그림: ProductY, Computerization, Reorganization, Newbenefits가 3씩)
-[^2]: 같은 자료, p.33 (HAVING clause: 묶음의 요약 정보에 거는 조건, GROUP BY와 함께 쓴다, 빠지는 두 묶음을 빨간 테두리로 그린 그림). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.11
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기호로 쓴 정의, `HAVING`에 쓸 수 있는 것의 표, `WHERE`에 쓴 집계 함수의 오류, 시간 합 예제, `GROUP BY` 없는 `HAVING`, 카드 C2·C3은 슬라이드에 없다. 값과 오류는 SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s1]: 값과 오류는 SQLite와 PostgreSQL 16에서 실행해 확인했다.
 {% endraw %}

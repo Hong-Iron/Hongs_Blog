@@ -210,7 +210,7 @@ $$P(H \mid E)$$와 $$P(H^c \mid E)$$의 분모가 똑같이 $$P(E)$$라 비를 �
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 2.3절 "Bayes' rule and the law of total probability"(정리, 오즈 꼴, 검사 예제), 2.6절 "Coherency of Bayes' rule"(증거를 한꺼번에 또는 차례로 반영해도 같다), 2.8절 "Pitfalls and paradoxes"(검사 오류 혼동).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 나이브 베이즈 스팸 필터는 Paul Graham의 글 "A Plan for Spam"(2002)으로 널리 알려졌다. 조건부 독립 가정이 틀려도 분류 성능이 좋은 이유는 이 과정의 범위 밖이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [06_bayes-theorem_plot.py](/Hongs_Blog/studies/probability-statistics/code/06_bayes-theorem_plot/)로 그렸고, 그림에 쓴 값(유병률 1%에서 0.161과 0.785, 10%에서 0.679)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시의 1만 명 표를 원인 → 증거 순서의 확률 나무로 옮겼다. 근거는 Blitzstein·Hwang 2판 2.3절의 검사 예제다.
+[^s1]: 나이브 베이즈 스팸 필터는 Paul Graham의 글 "A Plan for Spam"(2002)으로 널리 알려졌다. 조건부 독립 가정이 틀려도 분류 성능이 좋은 이유는 이 과정의 범위 밖이다.
+[^s2]: [06_bayes-theorem_plot.py](/Hongs_Blog/studies/probability-statistics/code/06_bayes-theorem_plot/)로 그렸고, 그림에 쓴 값(유병률 1%에서 0.161과 0.785, 10%에서 0.679)을 같은 코드로 확인했다.
+[^s3]: 이 문서 예시의 1만 명 표를 원인 → 증거 순서의 확률 나무로 옮겼다. 근거는 Blitzstein·Hwang 2판 2.3절의 검사 예제다.
 {% endraw %}

@@ -21,7 +21,7 @@ permalink: "/studies/compilers/code/34_static-vs-dynamic-typing_verify/"
 
 ```python
 # 34_static-vs-dynamic-typing_verify.py
-# 정적 타입과 동적 타입 비교 문서의 예를 확인한다. 슬라이드 L10 p.11의 a = 3; a = "ok"; 를
+# 정적 타입과 동적 타입 비교 문서의 예를 확인한다. 문서의 a = 3; a = "ok"; 를
 # (가) 동적 타입 언어인 파이썬에서 실제로 돌리고, (나) 선언된 타입을 미리 보는 작은 정적 검사기에 넣는다.
 # 표준 라이브러리만 쓴다.
 # 실행: python3 34_static-vs-dynamic-typing_verify.py

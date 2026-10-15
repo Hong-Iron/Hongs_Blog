@@ -136,6 +136,6 @@ $$\sum_{j=1}^{t}(-1)^{j+1}\binom{t}{j} = 1 - \sum_{j=0}^{t}(-1)^{j}\binom{t}{j} 
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(포함-배제). Rosen, *Discrete Mathematics and Its Applications* 7판, 8장 "Advanced Counting Techniques"(포함-배제의 응용, 교란순열).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, $$D_1, \dots, D_6 = 0, 1, 2, 9, 44, 265$$, $$D_6/6! \approx 0.368$$, $$\vert D_{10}/10! - 1/e\vert  < 10^{-7}$$을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, 일곱 칸의 수(267, 134, 67, 133, 67, 33, 33)와 합 734, 원 밖의 266을 같은 코드로 확인했다.
+[^s1]: [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, $$D_1, \dots, D_6 = 0, 1, 2, 9, 44, 265$$, $$D_6/6! \approx 0.368$$, $$\vert D_{10}/10! - 1/e\vert  < 10^{-7}$$을 같은 코드로 확인했다.
+[^s2]: [19_inclusion-exclusion_plot.py](/Hongs_Blog/studies/discrete-math/code/19_inclusion-exclusion_plot/)로 그렸고, 일곱 칸의 수(267, 134, 67, 133, 67, 33, 33)와 합 734, 원 밖의 266을 같은 코드로 확인했다.
 {% endraw %}

@@ -23,12 +23,11 @@ permalink: "/studies/database-design/code/69_group-by_verify/"
 """GROUP BY 검증 (SQLite).
 
 문서: 69.GROUP BY (그리고 이산수학 10.동치관계와 분할의 과목별 관점)
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.31~32, 12주차 p.11
 주장:
-  1. Q24(p.31): (5, 4, 33250), (4, 3, 31000), (1, 1, 55000). 묶음의 구성원이 그림과 같다.
+  1. Q24: (5, 4, 33250), (4, 3, 31000), (1, 1, 55000). 묶음의 구성원이 그림과 같다.
   2. Dno로 나눈 묶음은 겹치지 않고 합치면 전체다(분할).
      "급여 차이가 3000 이하"로는 묶음이 겹친다(38000-40000-43000).
-  3. Q25(p.32): PROJECT와 WORKS_ON을 이은 16행을 프로젝트로 묶으면 2, 3, 2, 3, 3, 3.
+  3. Q25: PROJECT와 WORKS_ON을 이은 16행을 프로젝트로 묶으면 2, 3, 2, 3, 3, 3.
   4. 프로젝트 20: COUNT(*) 3, COUNT(Hours) 2.
   5. 열 둘로 묶기: (Dno, Sex)는 다섯 묶음. Sex만으로는 (F, 3, 31000), (M, 5, 37600).
   6. SQLite는 묶지 않은 열을 SELECT에 써도 받아서, 묶음 안의 아무 한 행 값을 내놓는다.
@@ -36,10 +35,10 @@ permalink: "/studies/database-design/code/69_group-by_verify/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

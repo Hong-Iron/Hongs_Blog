@@ -215,7 +215,7 @@ $$\frac{\sin t}{t}$$의 원시함수는 기본 함수로 쓸 수 없지만, 1부
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.10절 "Antiderivatives", 5.3절 "The Fundamental Theorem of Calculus"(적분의 평균값 정리, 1부와 2부), 5.4절 "Integration Formulas and the Net Change Theorem".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 2차원 누적합(합 영역 표, summed-area table)은 비올라–존스 얼굴 검출에서 "integral image"라는 이름으로 쓰였다. 누적합의 $$O(1)$$ 구간 질의와 누적합 예시는 12_ftc_verify.py에서 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [12_ftc_plot.py](/Hongs_Blog/studies/calculus/code/12_ftc_plot/)로 그렸고, 넓이 $$F(2) = \frac83$$(리만 합), $$F'(2) = f(2) = 4$$(수치 미분), $$\int_0^3 t^2\,dt = 9$$를 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 증명 단계(2부의 1~3단계, 1부의 4~6단계)와 연결 절의 두 기법을 근거로 그렸다.
+[^s1]: 2차원 누적합(합 영역 표, summed-area table)은 비올라–존스 얼굴 검출에서 "integral image"라는 이름으로 쓰였다. 누적합의 $$O(1)$$ 구간 질의와 누적합 예시는 12_ftc_verify.py에서 확인했다.
+[^s2]: [12_ftc_plot.py](/Hongs_Blog/studies/calculus/code/12_ftc_plot/)로 그렸고, 넓이 $$F(2) = \frac83$$(리만 합), $$F'(2) = f(2) = 4$$(수치 미분), $$\int_0^3 t^2\,dt = 9$$를 같은 코드로 확인했다.
+[^s3]: 이 문서의 증명 단계(2부의 1~3단계, 1부의 4~6단계)와 연결 절의 두 기법을 근거로 그렸다.
 {% endraw %}

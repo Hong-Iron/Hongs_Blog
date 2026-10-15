@@ -147,7 +147,7 @@ def is_ll1(g, start):
 
 
 if __name__ == "__main__":
-    # 문제 1 (슬라이드 p.47): DECL → DECL type id ; | DECL type id = id ; | ε
+    # 문제 1: DECL → DECL type id ; | DECL type id = id ; | ε
     o1 = G("DECL -> DECL type id ; | DECL type id = id ; | ε")
     a1 = G("DECL -> A\nA -> type id ; A | type id = id ; A | ε")           # 좌재귀를 없앤 직후
     b1 = G("DECL -> type id ; DECL | type id = id ; DECL | ε")              # 줄인 꼴

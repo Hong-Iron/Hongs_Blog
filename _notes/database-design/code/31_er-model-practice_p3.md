@@ -23,9 +23,8 @@ permalink: "/studies/database-design/code/31_er-model-practice_p3/"
 """ER 모델 연습 p3: (min, max) 제약 붙이기.
 
 문서: 31.ER 모델 연습 (p3과 변형 문제)
-출처: 데이터베이스 설계 5주차 슬라이드 p.36 (연습 3), 풀이 p.3
 확인하는 것:
-  1. 풀이의 답 INSTRUCTOR (2,4), COURSE(TEACHES 쪽) (1,4), COURSE(USES 쪽) (0,5), TEXT (1,N)이
+  1. 문서의 답 INSTRUCTOR (2,4), COURSE(TEACHES 쪽) (1,4), COURSE(USES 쪽) (0,5), TEXT (1,N)이
      다섯 문장을 모두 지키는 자료는 받아들이고, 문장을 하나씩 어긴 자료는 걸러 낸다.
   2. 변형 문제: 답을 1/N 표기로 옮기면 두 관계 모두 M:N이고, 부분 참여는 USES의 COURSE 쪽 하나뿐이다.
 """

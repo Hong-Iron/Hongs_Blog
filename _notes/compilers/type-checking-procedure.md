@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Type Checking Procedure", "Implementation of Type Checking", "Well-formedness Rules", "WF 규칙", "의미에 맞게 짜인 문장", "Semantically Well-formed Statement", "타입 검사기", "Type Checker"]
 description: "조립 설명서를 검수할 때 작은 부품부터 확인하고, 그 부품들로 만든 덩어리를 확인하고, 마지막에 전체를 확인하는 것과 같다. 컴파일러는 프로그램을 나무 모양으로 펼쳐 놓고 잎에서 뿌리로 올라가며 식에는 \"정수\", \"참·거짓\" 같은 값의 종류(타입)를, 문장에는 \"의미에 맞게 짜였다…"
@@ -34,9 +34,9 @@ permalink: "/studies/compilers/type-checking-procedure/"
 
 ## 예시로 보기
 
-[타입 추론 규칙](/Hongs_Blog/studies/compilers/type-inference-rules/)은 `a + 1` 같은 식의 타입만 정한다. 그런데 프로그램은 식이 아니라 문장으로 되어 있다. `a = a + 1;`이나 `while (…) { … }`에는 타입이 없다. 문장에 대해서는 "의미에 맞게 짜였는가"를 묻는다[^1].
+[타입 추론 규칙](/Hongs_Blog/studies/compilers/type-inference-rules/)은 `a + 1` 같은 식의 타입만 정한다. 그런데 프로그램은 식이 아니라 문장으로 되어 있다. `a = a + 1;`이나 `while (…) { … }`에는 타입이 없다. 문장에 대해서는 "의미에 맞게 짜였는가"를 묻는다.
 
-다음 코드를 검사한다. 스코프 검사가 끝난 뒤 심벌 테이블에는 `a : int`, `b : int`가 있다[^2].
+다음 코드를 검사한다. 스코프 검사가 끝난 뒤 심벌 테이블에는 `a : int`, `b : int`가 있다.
 
 ```c
 while (a != b) {
@@ -44,7 +44,7 @@ while (a != b) {
 }
 ```
 
-추상 구문 트리의 노드에 붙는 것과 붙는 순서(동그라미 번호)는 이렇다[^3].
+추상 구문 트리의 노드에 붙는 것과 붙는 순서(동그라미 번호)는 이렇다.
 
 ```
 while                : WF   ⑪
@@ -83,42 +83,37 @@ while                : WF   ⑪
 
 ### 문장의 규칙: WF
 
-식의 규칙을 문장으로 넓힌다. 다음을 새로 적는다[^4].
+식의 규칙을 문장으로 넓힌다. 다음을 새로 적는다.
 
 $$S \vdash WF(stmt)$$
 
 
-"스코프 $$S$$ 안에서 문장 $$stmt$$가 의미에 맞게 짜였다(semantically well-formed)고 추론할 수 있다"로 읽는다. $$WF$$는 well-formed의 머리글자다. 의미에 맞게 짜인 문장의 예는 `int a = 3;`, `bool well_formed = true;`, `string s = "this is well-formed";`, 그리고 안의 문장이 모두 의미에 맞게 짜인 `while (1 > 0) { … }`와 `if (10 == 10) { … } else { … }`다[^1].
+"스코프 $$S$$ 안에서 문장 $$stmt$$가 의미에 맞게 짜였다(semantically well-formed)고 추론할 수 있다"로 읽는다. $$WF$$는 well-formed의 머리글자다. 의미에 맞게 짜인 문장의 예는 `int a = 3;`, `bool well_formed = true;`, `string s = "this is well-formed";`, 그리고 안의 문장이 모두 의미에 맞게 짜인 `while (1 > 0) { … }`와 `if (10 == 10) { … } else { … }`다.
 
-**대입문.** 왼쪽 $$e_1$$이 변수이고, 양쪽의 타입이 같은 $$T$$이면 대입문은 WF다[^4].
+**대입문.** 왼쪽 $$e_1$$이 변수이고, 양쪽의 타입이 같은 $$T$$이면 대입문은 WF다.
 
-$$\frac{S \vdash e_1\text{은 변수} \qquad S \vdash e_2\text{는 변수 또는 상수} \qquad S \vdash e_1 : T \qquad S \vdash e_2 : T}{S \vdash WF(e_1 = e_2;)}$$
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.24의 대입 규칙에는 가정 "$$S \vdash e_2$$ is a variable or constant"가 있다. p.35에서 `a = a + 1`에 쓰는 대입 규칙에는 그 가정이 없고 "$$e_1$$ is a variable, $$e_1 : T$$, $$e_2 : T$$" 셋뿐이다. / 문제점: p.24의 규칙을 그대로 쓰면 오른쪽이 식 `a + 1`(변수도 상수도 아니다)인 `a = a + 1;`이 WF가 아니게 되어, 같은 강의의 p.35~37 결론(WF)과 어긋난다. / 수정안: 대입 규칙은 p.35의 꼴 $$\dfrac{S \vdash e_1\text{은 변수} \quad S \vdash e_1 : T \quad S \vdash e_2 : T}{S \vdash WF(e_1 = e_2)}$$로 쓴다. 오른쪽은 타입이 $$T$$인 아무 식이면 된다. / 근거: 두 규칙을 각각 구현해 `a = 3;`과 `a = a + 1;`에 대 보면 p.24 꼴은 뒤의 것을 떨어뜨린다(36_type-checking-procedure_impl.py).
-
-</div>
+$$\frac{S \vdash e_1\text{은 변수} \qquad S \vdash e_1 : T \qquad S \vdash e_2 : T}{S \vdash WF(e_1 = e_2;)}$$
 
 
-**return 문.** 지금 스코프가 타입 $$T$$를 돌려주는 함수 안이고 $$e$$의 타입이 $$T$$이면 `return e;`는 WF다. 아무것도 돌려주지 않는 함수(void) 안이면 `return;`이 WF다[^4].
+오른쪽 $$e_2$$는 변수나 상수가 아니어도 된다. 타입이 $$T$$인 식이면 무엇이든 된다. 오른쪽을 변수나 상수로 좁히면 `a = a + 1;`처럼 흔한 문장이 WF가 아니게 된다. 오른쪽 `a + 1`은 변수도 상수도 아닌 식이기 때문이다[^s4].
+
+
+**return 문.** 지금 스코프가 타입 $$T$$를 돌려주는 함수 안이고 $$e$$의 타입이 $$T$$이면 `return e;`는 WF다. 아무것도 돌려주지 않는 함수(void) 안이면 `return;`이 WF다.
 
 $$\frac{S\text{는 타입 }T\text{를 돌려주는 함수 안에 있다} \qquad S \vdash e : T}{S \vdash WF(return\ e;)} \qquad \frac{S\text{는 void를 돌려주는 함수 안에 있다}}{S \vdash WF(return;)}$$
 
 
-**문장 묶음.** 문장 하나하나가 WF이면 묶음도 WF다[^5].
+**문장 묶음.** 문장 하나하나가 WF이면 묶음도 WF다.
 
 $$\frac{S \vdash WF(stmt_1) \qquad S \vdash WF(stmt_2) \quad \cdots \quad S \vdash WF(stmt_n)}{S \vdash WF(stmt_1\ stmt_2\ \cdots\ stmt_n)}$$
 
 
-**while 문.** 조건 $$e$$가 bool이고, 반복문 안쪽 스코프 $$S'$$에서 안의 문장들이 WF이면 while 문은 WF다. $$S'$$은 "에스 프라임"으로 읽고, 중괄호 안에서 새로 열리는 스코프다[^5].
+**while 문.** 조건 $$e$$가 bool이고, 반복문 안쪽 스코프 $$S'$$에서 안의 문장들이 WF이면 while 문은 WF다. $$S'$$은 "에스 프라임"으로 읽고, 중괄호 안에서 새로 열리는 스코프다.
 
 $$\frac{S \vdash e : bool \qquad S'\text{은 while 안쪽의 스코프} \qquad S' \vdash WF(stmt_1\ stmt_2\ \cdots\ stmt_n)}{S \vdash WF(while(e)\{stmt_1\ stmt_2\ \cdots\ stmt_n\})}$$
 
 
-**if-else 문.** 슬라이드는 이 규칙을 질문으로 남겼다[^5]. while 규칙과 같은 꼴로 쓰면 이렇다[^s1]. 조건이 bool이고, 두 블록이 각자 자기 안쪽 스코프 $$S'$$, $$S''$$에서 WF이면 전체가 WF다.
+**if-else 문.** while 규칙과 같은 꼴로 쓰면 이렇다. 조건이 bool이고, 두 블록이 각자 자기 안쪽 스코프 $$S'$$, $$S''$$에서 WF이면 전체가 WF다.
 
 $$\frac{S \vdash e : bool \qquad S'\text{은 if 블록 안쪽의 스코프} \qquad S' \vdash WF(stmts_1) \qquad S''\text{은 else 블록 안쪽의 스코프} \qquad S'' \vdash WF(stmts_2)}{S \vdash WF(if(e)\{stmts_1\}\ else\ \{stmts_2\})}$$
 
@@ -127,7 +122,7 @@ $$\frac{S \vdash e : bool \qquad S'\text{은 if 블록 안쪽의 스코프} \qqu
 
 ### 절차
 
-입력은 추상 구문 트리이고, 출력은 "모든 문장이 WF다" 또는 타입 오류다. 먼저 스코프 검사를 한다. 그다음 문장마다 세 가지를 이 순서로 한다[^6].
+입력은 추상 구문 트리이고, 출력은 "모든 문장이 WF다" 또는 타입 오류다. 먼저 스코프 검사를 한다. 그다음 문장마다 세 가지를 이 순서로 한다.
 
 1. 그 문장에 든 부분식의 타입을 검사한다.
 2. 그 문장의 자식 문장을 검사한다.
@@ -146,7 +141,7 @@ $$\frac{S \vdash e : bool \qquad S'\text{은 if 블록 안쪽의 스코프} \qqu
                  가정이 채워지는 추론 규칙이 있으면 그 결론의 타입을 돌려준다. 없으면 타입 오류
 ```
 
-`if (A && B) { var = 3; }`에 대면 순서는 이렇다[^6].
+`if (A && B) { var = 3; }`에 대면 순서는 이렇다.
 
 1. 부분식 `A && B`의 타입을 검사한다.
 2. 자식 문장 `var = 3;`을 검사한다. 그 안에서 부분식 `var`와 `3`의 타입을 검사하고, `var = 3;`이 WF인지 본다.
@@ -156,7 +151,7 @@ $$\frac{S \vdash e : bool \qquad S'\text{은 if 블록 안쪽의 스코프} \qqu
 
 ## 예제
 
-**return 문.** 슬라이드가 문제로 남긴 함수다[^7].
+**return 문.** 다음 함수의 return 문을 검사한다.
 
 ```c
 bool compare (int a, int b) {
@@ -164,7 +159,7 @@ bool compare (int a, int b) {
 }
 ```
 
-심벌 테이블에는 전역에 `compare : bool`(반환 타입), 함수 안쪽에 `a : int`, `b : int`가 있다. 검사는 이렇게 간다[^s3].
+심벌 테이블에는 전역에 `compare : bool`(반환 타입), 함수 안쪽에 `a : int`, `b : int`가 있다. 검사는 이렇게 간다.
 
 1. *부분식의 잎.* `a`와 `b`를 심벌 테이블에서 찾는다. 둘 다 int.
 2. *부분식.* `a >= b`는 양쪽이 같은 원시 타입 int라 비교 규칙으로 bool.
@@ -172,13 +167,13 @@ bool compare (int a, int b) {
 
 반환 타입만 `int compare(…)`로 바꾸면 3단계에서 $$T$$는 int인데 $$e$$는 bool이라 가정 $$S \vdash e : T$$가 깨진다. 타입 오류다.
 
-**조건이 bool이 아니면.** `while (a) { a = a + 1; }`에서 a가 int면 while 규칙의 첫 가정 $$S \vdash e : bool$$이 깨진다. 안쪽 문장이 모두 WF여도 전체는 WF가 아니다[^s3].
+**조건이 bool이 아니면.** `while (a) { a = a + 1; }`에서 a가 int면 while 규칙의 첫 가정 $$S \vdash e : bool$$이 깨진다. 안쪽 문장이 모두 WF여도 전체는 WF가 아니다.
 
 ## 활용
 
 - 구현: [36_type-checking-procedure_impl.py](/Hongs_Blog/studies/compilers/code/36_type-checking-procedure_impl/). 연습: [타입 검사 연습](/Hongs_Blog/studies/compilers/type-checking-practice/)
 - 검사를 통과한 트리는 다음 단계에서 [3주소 코드](/Hongs_Blog/studies/compilers/three-address-code/)로 바뀐다. 타입 검사와 코드 만들기는 둘 다 트리를 자식 먼저 도는 같은 순서를 쓴다([AST에서 3주소 코드 만들기](/Hongs_Blog/studies/compilers/ast-to-tac/)).
-- 이 절차는 타입을 알아서 바꿔 주지 않는다. `s = d + n;`(d는 double, n은 int)은 덧셈에서 걸린다. 1회 강의 그림의 `inttofloat` 끼워 넣기는 이 강의의 규칙 밖이다([타입과 타입 시스템](/Hongs_Blog/studies/compilers/type-system/)).
+- 이 절차는 타입을 알아서 바꿔 주지 않는다. `s = d + n;`(d는 double, n은 int)은 덧셈에서 걸린다. 의미 분석기가 `inttofloat` 노드를 끼워 넣어 타입을 맞추는 방식은 이 규칙들 밖이다([타입과 타입 시스템](/Hongs_Blog/studies/compilers/type-system/)).
 - 흔한 실수: 스코프 검사 없이 시작한다(변수의 타입을 찾을 표가 없다). 부모를 자식보다 먼저 본다. while 안쪽 문장을 바깥 스코프 $$S$$에서 검사한다. 안쪽에서 선언한 변수는 $$S'$$에만 있다.
 
 ## 연결
@@ -223,14 +218,6 @@ bool compare (int a, int b) {
 </details>
 
 
-[^1]: 컴파일러 10회 강의 자료 「Lecture10 Semantic analysis part 2」, p.23 (Problem #2: statements, 의미에 맞게 짜인 문장의 예)
-[^2]: 같은 자료, p.28 (코드, AST, 스코프 검사 뒤의 심벌 테이블)
-[^3]: 같은 자료, p.29~37 (a != b, a = a + 1, 전체 순서로 타입과 WF를 붙여 가는 그림)
-[^4]: 같은 자료, p.24 (S ⊢ WF(stmt), 대입문과 return 문의 규칙)
-[^5]: 같은 자료, p.25 (문장 묶음과 while의 규칙, "Q. for if-else statements")
-[^6]: 같은 자료, p.27, p.40 (스코프 검사 먼저, 문장마다 세 가지, if (A && B) { var = 3; }의 순서)
-[^7]: 같은 자료, p.38 (compare 함수의 AST와 심벌 테이블)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> if-else의 WF 규칙은 원본에 없다. 슬라이드가 질문으로 남긴 것을 p.25의 while 규칙에 맞춰 적었다. 두 블록의 스코프가 따로라는 점은 9회 강의의 블록 스코프 규칙을 따랐고, 구현으로 확인했다(두 블록에서 같은 이름을 따로 선언해도 통과, 한쪽 블록만 틀려도 전체가 오류).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 의사코드와 시간에 대한 설명은 원본에 없다. p.27의 세 단계와 p.28의 "Recursively walk abstract syntax trees"를 코드 꼴로 옮겼다. 조립 설명서 비유도 원본에 없다. 실제 검사는 부품이 아니라 "부품에 붙은 꼬리표"만 본다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> compare 예의 풀이, 반환 타입을 바꾼 경우, `while (a)` 예, 카드 C1·C3은 원본에 없다. 슬라이드는 p.38에서 AST와 심벌 테이블만 주고 풀이를 남겼다. p.18의 비교 규칙과 p.24의 return 규칙을 대었고 구현으로 확인했다.
+[^s2]: 실제 검사는 부품이 아니라 "부품에 붙은 꼬리표"만 본다.
+[^s4]: 오른쪽을 변수나 상수로 좁힌 꼴과 아무 식이나 받는 꼴을 [36_type-checking-procedure_impl.py](/Hongs_Blog/studies/compilers/code/36_type-checking-procedure_impl/)로 비교했고, 좁힌 꼴은 `a = a + 1;`을 떨어뜨린다.
 {% endraw %}

@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/34_curse-of-dimensionality_verify/"
 """차원의 저주 검증.
 
 문서: 34.차원의 저주 (예시, 정의, 카드)
-출처: 데이터 과학 10회 슬라이드 10-1 p.9~11
 주장:
   1. 단위 초입방체에 고르게 흩은 점 1,000개 중 가장 가까운 10개를 담는 작은 초입방체의 한 변
      l = (10/1000)^(1/d): d = 1 -> 0.01, 2 -> 0.1, 3 -> 0.215, 10 -> 0.631, 100 -> 0.955, 1000 -> 0.9954.
@@ -42,7 +41,7 @@ def main():
     vals = {d: edge(10, 1000, d) for d in (1, 2, 3, 10, 100, 1000)}
     assert round(vals[1], 3) == 0.01 and round(vals[2], 3) == 0.1 and round(vals[3], 3) == 0.215
     assert round(vals[10], 2) == 0.63 and round(vals[100], 3) == 0.955 and round(vals[1000], 4) == 0.9954
-    print("[OK] p.10 표:", {d: round(v, 4) for d, v in vals.items()})
+    print("[OK] 한 변의 길이 표:", {d: round(v, 4) for d, v in vals.items()})
 
     rnd = random.Random(0)
     ratios = []

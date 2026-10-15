@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/02_chi-square-correlation_verify/"
 """카이제곱 상관 분석 검증.
 
 문서: 02.카이제곱 상관 분석 (예시, 정의, 카드 C2·C3)
-출처: 데이터 과학 2회 슬라이드 p.19 (성별 × 선호 도서 분할표)
 주장:
   1. 기대 빈도 e_ij = (행 합 × 열 합) / n. e11 = 300 × 450 / 1500 = 90.
   2. 카이제곱 = Σ (o - e)^2 / e = 284.44 + 121.90 + 71.11 + 30.48 = 507.93 (항을 반올림해 더한 값, 정확히는 507.937).
@@ -53,7 +52,7 @@ def main():
     assert [round(x, 2) for x in terms] == [284.44, 71.11, 121.9, 30.48]
     x = chi2(t)
     assert round(x, 2) == 507.94 or round(x, 2) == 507.93
-    print(f"[OK] 슬라이드 p.19: 기대 빈도 {e}, 카이제곱 {x:.3f}")
+    print(f"[OK] 성별 × 선호 도서 분할표: 기대 빈도 {e}, 카이제곱 {x:.3f}")
     print("     항목:", [round(v, 2) for v in terms])
     assert x > 10.828
     print("[OK] 자유도 1, 유의수준 0.001 임계값 10.828보다 크다")

@@ -20,13 +20,11 @@ permalink: "/studies/database-design/code/17_b-tree-practice_p5/"
 [B-트리 연습](/Hongs_Blog/studies/database-design/b-tree-practice/) 문서의 문제 5 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""B-트리 연습 p5 (슬라이드 연습 3): 빈 B-트리(t = 2)에 키 21개를 차례로 넣는다.
+"""B-트리 연습 p5: 빈 B-트리(t = 2)에 키 21개를 차례로 넣는다.
 
-문제: 03.3-2_B-tree-insertion.pdf p.31 (= 04.4-1_B-tree-deletion.pdf p.11)
-      F, S, Q, K, C, L, H, T, V, W, M, R, N, P, A, B, X, Y, D, Z, E
-답:   04.4_B-tree-solutions.pdf p.3
-      [K Q] / [B F] [M] [T W] / [A] [C D E] [H] | [L] [N P] | [R S] [V] [X Y Z]
-인덱스: 0부터 센다(슬라이드 의사코드는 1부터).
+넣는 키: F, S, Q, K, C, L, H, T, V, W, M, R, N, P, A, B, X, Y, D, Z, E
+답:   [K Q] / [B F] [M] [T W] / [A] [C D E] [H] | [L] [N P] | [R S] [V] [X Y Z]
+인덱스: 0부터 센다(교재 의사코드는 1부터).
 실행: python3 17_b-tree-practice_p5.py
 """
 

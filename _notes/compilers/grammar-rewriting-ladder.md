@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 좌재귀 없애기, 좌인수분해."
 prev_url: "/studies/compilers/subset-construction-ladder/"
@@ -35,7 +35,7 @@ permalink: "/studies/compilers/grammar-rewriting-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-슬라이드의 연습이다. $$DECL \to DECL\ type\ id\ ; \mid DECL\ type\ id = id\ ; \mid \epsilon$$ (모호하지 않은 문법이다)[^1].
+$$DECL \to DECL\ type\ id\ ; \mid DECL\ type\ id = id\ ; \mid \epsilon$$를 고친다. 모호하지 않은 문법이다.
 
 이 문법은 `int a; int b = c;`처럼 선언을 0개 이상 늘어놓은 것을 만든다.
 
@@ -130,6 +130,5 @@ $$B$$와 $$C$$는 좌재귀다($$\alpha$$는 각각 $$or\ C$$, $$and\ D$$). $$D$
 </div>
 
 
-[^1]: 컴파일러 4회 강의 자료 「Lecture04 Syntax analysis part 1」, p.47 (DECL 문법을 우재귀와 좌인수분해로 고쳐 쓰는 연습)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.47은 문제 1의 문법과 두 단계의 이름만 적고 풀이는 비워 두었다. 문제 1의 풀이와 문제 2~4는 보탠 것이다. 슬라이드 p.43의 좌재귀 없애기 절차와 p.45의 좌인수분해 절차를 따랐고, 고친 문법이 원래 문법과 같은 문자열을 만드는 것과 LL(1) 표에 겹치는 칸이 없는 것을 문제 코드로 확인했다.
+[^s1]: 문제 1의 풀이와 문제 2~4는 보탠 것이다.
 {% endraw %}

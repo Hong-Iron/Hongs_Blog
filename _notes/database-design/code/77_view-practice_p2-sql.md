@@ -21,20 +21,20 @@ permalink: "/studies/database-design/code/77_view-practice_p2-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 뷰 연습의 연습 2 (a~e)를 PostgreSQL 16에서 확인한다. SQLite 판은 77_view-practice_p2.py.
--- 문서: 77.뷰 연습 / 출처: 13주차 슬라이드 13-View p.27~28(문제), p.35~39(풀이)
+-- 뷰 연습의 문제 2 (a~e)를 PostgreSQL 16에서 확인한다. SQLite 판은 77_view-practice_p2.py.
+-- 문서: 77.뷰 연습
 -- 확인하는 것:
 --   2-a~c. 뷰에 던진 질의가 실행되고, 기본 테이블로 풀어 쓴 질의와 답이 같다.
 --   2-d. UPDATE DEPT_SUMMARY ... 는 거부된다(GROUP BY가 든 뷰).
 --   2-e. DELETE FROM DEPT_SUMMARY WHERE C > 4 는 조건에 맞는 행이 하나도 없는데도 거부된다.
---        슬라이드에 적힌 이름 DEPT_SUMMAR는 없는 표라는 다른 오류가 난다.
+--        이름을 DEPT_SUMMAR로 잘못 쓰면 없는 표라는 다른 오류가 난다.
 --   덧붙임: 2-d를 기본 테이블 수정으로 옮긴 UPDATE EMPLOYEE SET Dno = 3 WHERE Dno = 4는 3번 부서가 없어 외래 키에 걸린다.
 SET client_min_messages TO warning;
 DROP SCHEMA IF EXISTS view_practice_p2 CASCADE;
 CREATE SCHEMA view_practice_p2;
 SET search_path TO view_practice_p2;
 
--- COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.6). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
 -- EMPLOYEE와 DEPARTMENT는 서로 가리키므로 외래 키를 커밋 때 검사한다(DEFERRABLE INITIALLY DEFERRED).
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -102,7 +102,7 @@ BEGIN
     DELETE FROM DEPT_SUMMARY WHERE C > 4;
   EXCEPTION WHEN object_not_in_prerequisite_state THEN k := k + 1;
   END;
-  BEGIN   -- 슬라이드 p.39에 적힌 그대로(이름 끝의 Y가 빠졌다)
+  BEGIN   -- 이름 끝의 Y를 빠뜨린 판
     EXECUTE 'DELETE FROM DEPT_SUMMAR WHERE C > 4';
   EXCEPTION WHEN undefined_table THEN k := k + 1;
   END;

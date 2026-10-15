@@ -24,7 +24,7 @@ permalink: "/studies/abnormal-psychology/neurocognitive-practice/"
 {% raw %}
 사용 개념: [신경인지장애](/Hongs_Blog/studies/abnormal-psychology/neurocognitive-disorders/), [섬망](/Hongs_Blog/studies/abnormal-psychology/delirium/), [섬망과 치매 비교](/Hongs_Blog/studies/abnormal-psychology/delirium-vs-dementia/), [알츠하이머병](/Hongs_Blog/studies/abnormal-psychology/alzheimers-disease/)
 
-모든 사례는 가상이다[^s1]. 신경인지장애 사례는 다섯 하위목표로 푼다. 세 진단을 가르는 축은 두 개다. 시간 축(급하게 왔다가 돌아오는가, 서서히 나빠지는가)과 독립성 축(혼자 생활할 수 있는가)이다.
+모든 사례는 가상이다. 신경인지장애 사례는 다섯 하위목표로 푼다. 세 진단을 가르는 축은 두 개다. 시간 축(급하게 왔다가 돌아오는가, 서서히 나빠지는가)과 독립성 축(혼자 생활할 수 있는가)이다.
 
 1. *이전 수준:* 원래 능력이 있었는가. 처음부터 낮았다면 신경발달장애를 본다.
 2. *시간 경과:* 몇 시간~며칠 사이의 급성 변화인가, 몇 달~몇 년의 점진적 변화인가. 하루 중 오르내리는가.
@@ -110,7 +110,4 @@ permalink: "/studies/abnormal-psychology/neurocognitive-practice/"
 현재로서는 심하게 손상된 뇌의 능력을 되살리는 치료법이 없다고 솔직히 말한다. 콜린에스테라제 억제제는 남은 아세틸콜린을 유지해 인지 기능을 돕고, NMDA 수용체 길항제는 신경세포 파괴를 줄여 진행을 늦춘다. 목표는 증상의 진행을 늦추고 삶의 질을 지키는 것이다. 기억 지갑, 인지 자극, 돌봄 서비스처럼 환자와 보호자가 함께 대처하는 방법을 같이 계획한다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 11.신경발달장애, 신경인지장애.pdf의 신경인지장애 설명(p.60~75)을 적용한 가상 사례다.
 {% endraw %}

@@ -211,7 +211,7 @@ $$\lim_{x \to 0}\frac{\sin 3x}{x}$$를 구한다.
 
 [^1]: OpenStax, *Calculus Volume 1*, 2.2절 "The Limit of a Function", 2.3절 "The Limit Laws"(조임 정리, $$\sin x / x$$)
 [^2]: OpenStax, *Calculus Volume 1*, 2.5절 "The Precise Definition of a Limit"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 싱크 함수와 표본화 정리(휘태커-섀넌 보간)는 신호 처리의 표준 내용이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [01_limits_plot.py](/Hongs_Blog/studies/calculus/code/01_limits_plot/)로 그렸고, 예시 표의 값($$f(0.9) = 1.9$$, $$f(1.1) = 2.1$$ 등)과 0에 아무리 가까워도 $$\sin(1/x)$$가 1과 $$-1$$을 모두 지나는 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 한쪽 극한 조건(두 한쪽 극한이 있고 같을 때만 극한이 있다)과 해당하지 않는 예를 근거로 그렸다.
+[^s1]: 싱크 함수와 표본화 정리(휘태커-섀넌 보간)는 신호 처리의 표준 내용이다.
+[^s2]: [01_limits_plot.py](/Hongs_Blog/studies/calculus/code/01_limits_plot/)로 그렸고, 예시 표의 값($$f(0.9) = 1.9$$, $$f(1.1) = 2.1$$ 등)과 0에 아무리 가까워도 $$\sin(1/x)$$가 1과 $$-1$$을 모두 지나는 것을 같은 코드로 확인했다.
+[^s3]: 정의 절의 한쪽 극한 조건(두 한쪽 극한이 있고 같을 때만 극한이 있다)과 해당하지 않는 예를 근거로 그렸다.
 {% endraw %}

@@ -196,7 +196,7 @@ A의 박자가 훨씬 빠르지만(5 GHz 대 약 2.86 GHz) 명령 하나에 박�
 - 명령을 여러 단계로 나누면 주기가 짧아지고, 그 대가로 잃는 사이클이 CPI에 더해진다: [단일 사이클과 파이프라인 비교](/Hongs_Blog/studies/computer-architecture/single-cycle-vs-pipeline/)
 - 메모리에서 자료를 늦게 찾으면 그만큼 사이클이 더 들어 CPI가 오른다: [캐시 성능과 평균 접근 시간](/Hongs_Blog/studies/computer-architecture/cache-performance-amat/)
 
-**흔한 실수: 1초에 실행한 명령 수로 견주기.** 1초에 명령을 몇 백만 개 실행하는지를 MIPS 값(million instructions per second)이라 한다. 프로세서 이름 MIPS와는 다른 말이다. 명령어 수를 "CPU 시간 × 100만"으로 나눈 값이고, 식을 넣어 정리하면 클록 속도를 "CPI × 100만"으로 나눈 값이다[^4].
+**흔한 실수: 1초에 실행한 명령 수로 견주기.** 1초에 명령을 몇 백만 개 실행하는지를 MIPS 값(million instructions per second)이라 한다. 프로세서 이름 MIPS와는 다른 말이다. 명령어 수를 "CPU 시간 × 100만"으로 나눈 값이고, 식을 넣어 정리하면 클록 속도를 "CPI × 100만"으로 나눈 값이다.
 
 $$\text{MIPS 값} = \frac{IC}{T \times 10^6} = \frac{f}{CPI \times 10^6}$$
 
@@ -208,7 +208,7 @@ $$\text{MIPS 값} = \frac{IC}{T \times 10^6} = \frac{f}{CPI \times 10^6}$$
 | 컴파일러 1 | 60억 | 1.5초 | 약 3,333 |
 | 컴파일러 2 | 80억 | 2.0초 | 4,000 |
 
-컴파일러 2의 코드가 MIPS 값은 더 크지만 더 늦게 끝난다. 쉬운 명령을 많이 실행했을 뿐이다. 명령어 수가 다른 두 코드나 명령어 집합이 다른 두 컴퓨터는 이 값으로 견줄 수 없다[^4].
+컴파일러 2의 코드가 MIPS 값은 더 크지만 더 늦게 끝난다. 쉬운 명령을 많이 실행했을 뿐이다. 명령어 수가 다른 두 코드나 명령어 집합이 다른 두 컴퓨터는 이 값으로 견줄 수 없다.
 
 - 연습: [CPU 시간 계산 예제 사다리](/Hongs_Blog/studies/computer-architecture/cpu-time-ladder/)
 
@@ -278,5 +278,4 @@ $$\text{MIPS 값} = \frac{IC}{T \times 10^6} = \frac{f}{CPI \times 10^6}$$
 [^1]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 1장 "Computer Abstractions and Technology". 같은 장의 강의 슬라이드를 쓴 University of Crete HY225, 슬라이드 31 "CPU Time", 슬라이드 33 "Instruction Count and CPI", https://www.csd.uoc.gr/~hy225/22a/10a_cpi.pdf. 책을 직접 열지 못해 책은 장까지만 적는다.
 [^2]: 같은 슬라이드 묶음, 슬라이드 35 "CPI in More Detail" (종류별 CPI와 개수로 전체 사이클 수와 가중 평균 CPI를 구하는 식).
 [^3]: 같은 슬라이드 묶음, 슬라이드 37 "Performance Summary" (알고리즘은 명령어 수와 경우에 따라 CPI, 언어와 컴파일러는 명령어 수와 CPI, 명령어 집합은 셋 모두). 구현과 공정의 줄은 KFUPM ICS 233 "Performance" 슬라이드 11 "Factors Impacting Performance"의 표, https://faculty.kfupm.edu.sa/COE/aimane/coe301/07-Performance.pdf
-[^4]: KFUPM ICS 233 "Performance" 슬라이드 16 "MIPS as a Performance Measure", 슬라이드 17 "Drawbacks of MIPS" (식 두 가지, 명령어 집합이 다르면 견줄 수 없고 값이 성능과 거꾸로 갈 수 있다는 것), 같은 URL. 표의 수치는 직접 만들어 검증 코드로 확인했다.
 {% endraw %}

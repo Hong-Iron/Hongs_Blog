@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/66_outer-join_verify-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 66.외부 조인: 슬라이드 11-2 p.24~26, 12 p.8~9
+-- 66.외부 조인 검증
 -- PostgreSQL 16에서 실행한다. 모든 단언을 통과하면 마지막 줄에 ALL CHECKS PASSED가 나온다.
 SET client_min_messages TO WARNING;
 DROP SCHEMA IF EXISTS outer_join CASCADE;
 CREATE SCHEMA outer_join;
 SET search_path TO outer_join;
 
--- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
--- 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
+-- 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 -- 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -72,7 +72,7 @@ INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),
  ('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1. 내부 조인 7행, LEFT OUTER JOIN 8행 (p.24~25)
+-- 1. 내부 조인 7행, LEFT OUTER JOIN 8행
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE AS E, EMPLOYEE AS S WHERE E.Super_ssn = S.Ssn) = 7, '내부 조인이 7행이 아니다';
   ASSERT (SELECT COUNT(*) FROM (EMPLOYEE AS E LEFT OUTER JOIN EMPLOYEE AS S ON E.Super_ssn = S.Ssn)) = 8,
@@ -92,7 +92,7 @@ DO $$ BEGIN
           WHERE E.Ssn IS NULL) = 'English,Jabbar,Narayan,Smith,Zelaya', '부하 없는 직원이 5명이 아니다';
 END $$;
 
--- 3. 짝 없는 행만 고르기 (p.26)
+-- 3. 짝 없는 행만 고르기
 DO $$ BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE AS E LEFT OUTER JOIN DEPENDENT AS D ON E.Ssn = D.Essn) = 12,
          '직원 LEFT OUTER JOIN 부양가족이 12행이 아니다';

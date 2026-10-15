@@ -25,7 +25,7 @@ SYN, SOH, STX, ETX, DLE = 0x16, 0x01, 0x02, 0x03, 0x10
 
 
 def bisync_body(data):
-    """슬라이드 방식: 본문의 ETX·DLE 앞에 DLE를 붙이고, 끝은 맨 ETX 하나."""
+    """끝 ETX 방식: 본문의 ETX·DLE 앞에 DLE를 붙이고, 끝은 맨 ETX 하나."""
     out = []
     for b in data:
         if b in (ETX, DLE):
@@ -48,7 +48,7 @@ def bisync_read(stream):
 
 
 def transparent_body(data):
-    """투명 모드(필기의 방식): 본문의 DLE만 두 번 쓰고, 끝은 DLE ETX."""
+    """투명 모드: 본문의 DLE만 두 번 쓰고, 끝은 DLE ETX."""
     out = []
     for b in data:
         out += [DLE, DLE] if b == DLE else [b]

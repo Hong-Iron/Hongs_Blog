@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/15_operand-types_verify/"
 
 실행: python3 15_operand-types_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -262,15 +262,15 @@ def must_fail(fn, *args):
 
 if __name__ == "__main__":
     c = CPU(); d = Data(c)
-    # p.6: 직접 메모리 피연산자
+    # 직접 메모리 피연산자
     d.byte("var1", 0x10)
     c.mov("al", d.m("var1")); assert c.get("al") == 0x10
-    # p.12: arrayB+1
+    # arrayB+1
     d.byte("arrayB", 0x10, 0x20, 0x30, 0x40)
     c.mov("al", d.m("arrayB", 1)); assert c.get("al") == 0x20 != 0x11
     # 값에 1을 더하려면 명령이 따로 필요하다
     c.mov("al", d.m("arrayB")); c.add("al", 1); assert c.get("al") == 0x11
-    # p.13
+    # 원소가 1바이트보다 클 때: arrayW, arrayD
     d.word("arrayW", 0x1000, 0x2000, 0x3000); d.dword("arrayD", 1, 2, 3, 4)
     c.mov("ax", d.m("arrayW", 2)); assert c.get("ax") == 0x2000
     c.mov("ax", d.m("arrayW", 4)); assert c.get("ax") == 0x3000

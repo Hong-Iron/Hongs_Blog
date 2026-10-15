@@ -10,7 +10,7 @@ course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Mahalanobis Distance", "마할라노비스", "분포를 반영한 거리", "통계적 거리"]
 description: "자료가 퍼져 있는 모양을 자로 삼아 재는 거리다. 키가 10 cm 다른 것과 몸무게가 10 kg 다른 것을 같은 \"10\"으로 볼 수 없듯이, 자료가 원래 많이 흩어지는 방향으로 떨어진 것은 덜 멀다고 치고, 좀처럼 흩어지지 않는 방향으로 떨어진 것은 더 멀다고 친다. 그래서 단위가…"
@@ -36,9 +36,9 @@ permalink: "/studies/data-and-information/mahalanobis-distance/"
 
 자로 재는 거리(유클리드 거리)는 모든 방향을 똑같이 본다. 자료가 한 방향으로 길쭉하게 퍼져 있으면 이것이 이상한 답을 낸다.
 
-슬라이드의 첫 그림에는 넓게 흩어진 무리 안의 두 점 A, B와 좁게 뭉친 무리 안의 두 점 C, D가 있다. 슬라이드는 거리가 자료의 퍼진 모양을 반영해야 하는지, $$d(A, B)$$와 $$d(C, D)$$ 중 어느 쪽이 작아야 하는지 묻는다[^1]. 좁게 뭉친 무리에서는 조금만 떨어져도 큰 차이다.
+넓게 흩어진 무리 안에 두 점 A, B가 있고, 좁게 뭉친 무리 안에 두 점 C, D가 있다고 하자. 거리가 자료의 퍼진 모양을 반영해야 할까? $$d(A, B)$$와 $$d(C, D)$$ 중 어느 쪽이 작아야 할까? 좁게 뭉친 무리에서는 조금만 떨어져도 큰 차이다.
 
-둘째 그림에는 오른쪽 위로 비스듬히 길게 퍼진 점들이 있고, 가운데(원점)에서 같은 거리에 두 점 A와 B가 있다. A는 점들이 길게 뻗은 방향에, B는 그 옆구리 방향에 있다[^1]. 자로 재면 둘은 원점에서 똑같이 멀다. 하지만 A 근처에는 다른 점이 많고 B 근처에는 없다. 길게 뻗은 방향으로는 멀리 떨어진 점이 흔하니 A는 "보통 있는 점"이고, B는 "튀는 점"이다. 그래서 A를 B보다 가깝다고 보는 것이 맞다[^1].
+이번에는 점들이 오른쪽 위로 비스듬히 길게 퍼져 있고, 가운데(원점)에서 같은 거리에 두 점 A와 B가 있다고 하자. A는 점들이 길게 뻗은 방향에, B는 그 옆구리 방향에 있다. 자로 재면 둘은 원점에서 똑같이 멀다. 하지만 A 근처에는 다른 점이 많고 B 근처에는 없다. 길게 뻗은 방향으로는 멀리 떨어진 점이 흔하니 A는 "보통 있는 점"이고, B는 "튀는 점"이다. 그래서 A를 B보다 가깝다고 보는 것이 맞다.
 
 숫자로 본다. 자료의 가로 방향 분산이 4(표준편차 2), 세로 방향 분산이 1(표준편차 1)이고 두 방향이 따로 논다고 하자.
 
@@ -57,12 +57,12 @@ A는 표준편차 한 개만큼, B는 두 개만큼 떨어져 있다. "표준편
 
 ## 정의
 
-숫자 $$k$$개로 적은 두 점 $$\mathbf x, \mathbf y \in \mathbb{R}^k$$와, 자료의 [공분산 행렬](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) $$\Sigma$$(시그마, 방향마다 얼마나 흩어지고 서로 얼마나 함께 움직이는지를 적은 $$k \times k$$ 표)가 있다. $$\Sigma$$의 [역행렬](/Hongs_Blog/studies/linear-algebra/inverse-matrix/)이 있을 때, 마할라노비스 거리는 두 점의 차에 $$\Sigma^{-1}$$을 끼워 곱한 값의 제곱근이다[^2].
+숫자 $$k$$개로 적은 두 점 $$\mathbf x, \mathbf y \in \mathbb{R}^k$$와, 자료의 [공분산 행렬](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) $$\Sigma$$(시그마, 방향마다 얼마나 흩어지고 서로 얼마나 함께 움직이는지를 적은 $$k \times k$$ 표)가 있다. $$\Sigma$$의 [역행렬](/Hongs_Blog/studies/linear-algebra/inverse-matrix/)이 있을 때, 마할라노비스 거리는 두 점의 차에 $$\Sigma^{-1}$$을 끼워 곱한 값의 제곱근이다.
 
 $$\mathrm{Maha}(\mathbf x, \mathbf y) = \sqrt{(\mathbf x - \mathbf y)^\top \Sigma^{-1} (\mathbf x - \mathbf y)}$$
 
 
-슬라이드는 점을 가로로 적은 행벡터로 보아 $$\sqrt{(\mathbf x - \mathbf y)\Sigma^{-1}(\mathbf x - \mathbf y)^\top}$$로 쓴다. 같은 값이다[^2].
+점을 가로로 적은 행벡터로 보면 $$\sqrt{(\mathbf x - \mathbf y)\Sigma^{-1}(\mathbf x - \mathbf y)^\top}$$로 쓴다. 같은 값이다.
 
 $$\Sigma^{-1}$$이 하는 일은 "흩어진 정도로 나누기"다. 세 경우로 나눠 보면 보인다[^s1].
 
@@ -72,7 +72,7 @@ $$\Sigma^{-1}$$이 하는 일은 "흩어진 정도로 나누기"다. 세 경우�
 | 대각 행렬(분산 $$\sigma_1^2, \dots, \sigma_k^2$$) | $$\sqrt{\sum_i \left(\frac{x_i - y_i}{\sigma_i}\right)^2}$$. 좌표마다 표준편차로 나눈 뒤의 유클리드 거리다 |
 | 대각 밖에도 값이 있음 | 자료가 비스듬히 퍼진 축을 따라 나눈다. 아래 예제 |
 
-**같은 거리의 점들.** 원점에서 유클리드 거리가 같은 점들은 원 위에 있다. 마할라노비스 거리가 같은 점들은 자료가 퍼진 모양을 따라 기운 타원 위에 있다. 슬라이드의 두 그림이 이것이다[^2].
+**같은 거리의 점들.** 원점에서 유클리드 거리가 같은 점들은 원 위에 있다. 마할라노비스 거리가 같은 점들은 자료가 퍼진 모양을 따라 기운 타원 위에 있다.
 
 $$\Sigma$$가 [양의 정부호](/Hongs_Blog/studies/linear-algebra/positive-definite/)이면 마할라노비스 거리는 [거리의 네 조건](/Hongs_Blog/studies/data-and-information/distance-similarity/)을 모두 지킨다. 좌표를 알맞게 늘이고 돌린 뒤의 유클리드 거리와 같기 때문이다[^s1].
 
@@ -128,7 +128,5 @@ $$\Sigma$$가 [양의 정부호](/Hongs_Blog/studies/linear-algebra/positive-def
 </details>
 
 
-[^1]: 자료와 정보 4회 강의 자료 「D&I_강의04-1-유사도와거리」, p.10~11 (Distance on Distribution: 거리가 자료의 분포를 반영해야 하는가, A와 B가 원점에서 같은 거리여야 하는가, 분산이 큰 방향 ⇒ 멀리 있기 쉽다 ⇒ A를 B보다 가깝게 볼 수 있다)
-[^2]: 같은 자료, p.11 (Mahalanobis Distance의 식, $$\Sigma$$ = covariance matrix, 같은 유클리드 거리의 원과 같은 마할라노비스 거리의 타원 그림)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 분산 (4, 1)의 표 예시, $$\Sigma$$의 세 경우, 비스듬한 예제, 네 조건을 지킨다는 것, 활용 절, 카드는 슬라이드에 없다. 슬라이드에는 식과 그림, 세 줄의 설명만 있다. 2차원 수치는 검증 코드로 확인했다. 내용은 Mahalanobis, "On the generalised distance in statistics"(1936)와 Bishop, *Pattern Recognition and Machine Learning*, 2.3절에 있다.
+[^s1]: 2차원 수치는 검증 코드로 확인했다. 내용은 Mahalanobis, "On the generalised distance in statistics"(1936)와 Bishop, *Pattern Recognition and Machine Learning*, 2.3절에 있다.
 {% endraw %}

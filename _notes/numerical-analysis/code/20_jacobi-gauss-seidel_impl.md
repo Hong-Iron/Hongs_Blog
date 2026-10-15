@@ -56,7 +56,7 @@ def diag_dominant(A):
 def main():
     A = [[4, -1, 1], [4, -8, 1], [-2, 1, 5]]; b = [7, -21, 15]
     assert diag_dominant(A)
-    # 슬라이드 p.6 야코비 표
+    # 문서의 야코비 표
     xs = [[1.0, 2.0, 2.0]]
     for _ in range(19):
         xs.append(jacobi_step(A, b, xs[-1]))
@@ -65,7 +65,7 @@ def main():
     assert all(abs(v - s) < 6e-9 for v, s in zip(xs[5], [1.99414063, 3.9953125, 3.0009375]))
     assert all(abs(v - s) < 6e-9 for v, s in zip(xs[15], [1.99999993, 3.99999985, 2.99999993]))
     assert all(abs(v - s) < 6e-9 for v, s in zip(xs[19], [2.0, 4.0, 3.0]))
-    # 슬라이드 p.10 가우스-자이델 표
+    # 문서의 가우스-자이델 표
     gs = [[1.0, 2.0, 2.0]]
     for _ in range(10):
         gs.append(gauss_seidel_step(A, b, gs[-1]))

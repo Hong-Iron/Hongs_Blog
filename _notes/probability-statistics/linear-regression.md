@@ -150,6 +150,6 @@ flowchart TD
 
 
 [^1]: Wasserman, *All of Statistics*, "Linear and Logistic Regression" 장(모델, 최소제곱과 최대가능도, 추정량의 분산, $$R^2$$). Strang, *Introduction to Linear Algebra* 5판, 4.3절 "Least Squares Approximations"(정규방정식).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [34_linear-regression_plot.py](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_plot/)로 그렸고, 그림에 쓴 값($$\hat y = 0.05 + 1.99x$$, RSS 0.107, $$R^2 = 0.997$$, U자 잔차의 부호, 기울기 2와 $$-1.76$$)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 활용 절의 세 확장과 [베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)의 예제(MAP = 릿지 회귀)를 모아 그렸다.
+[^s2]: [34_linear-regression_plot.py](/Hongs_Blog/studies/probability-statistics/code/34_linear-regression_plot/)로 그렸고, 그림에 쓴 값($$\hat y = 0.05 + 1.99x$$, RSS 0.107, $$R^2 = 0.997$$, U자 잔차의 부호, 기울기 2와 $$-1.76$$)을 같은 코드로 확인했다.
+[^s3]: 이 문서 활용 절의 세 확장과 [베이즈 추론과 MAP](/Hongs_Blog/studies/probability-statistics/bayesian-inference/)의 예제(MAP = 릿지 회귀)를 모아 그렸다.
 {% endraw %}

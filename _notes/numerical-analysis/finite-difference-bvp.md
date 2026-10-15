@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Finite-Difference Method", "유한 차분", "Finite Difference", "중심 차분", "Centered Difference", "삼중대각 행렬", "Tridiagonal Matrix", "토마스 알고리즘", "Thomas Algorithm"]
 description: "경계값 문제를 사격법처럼 쏘아 맞히지 않고, 막대를 같은 간격의 점으로 나눠 각 점의 값을 미지수로 둔다. 미분을 이웃 점 값의 차이로 바꾸면 각 점에서 일차방정식 하나가 생기고, 양 끝 값은 알므로 오른쪽으로 옮긴다. 결과는 대각선 근처 세 줄에만 수가 있는 연립 일차방정식이라 …"
@@ -32,9 +32,9 @@ permalink: "/studies/numerical-analysis/finite-difference-bvp/"
 
 ## 예시로 보기
 
-[사격법](/Hongs_Blog/studies/numerical-analysis/shooting-method/)과 같은 막대 문제($$h' = 0.01$$, $$T_a = 20$$, $$T(0) = 40$$, $$T(10) = 200$$)를 간격 $$\Delta x = 2$$로 나눈다. 안쪽 점은 $$x = 2, 4, 6, 8$$의 넷이다[^1].
+[사격법](/Hongs_Blog/studies/numerical-analysis/shooting-method/)과 같은 막대 문제($$h' = 0.01$$, $$T_a = 20$$, $$T(0) = 40$$, $$T(10) = 200$$)를 간격 $$\Delta x = 2$$로 나눈다. 안쪽 점은 $$x = 2, 4, 6, 8$$의 넷이다.
 
-$$h'\Delta x^2 = 0.04$$라 대각선은 $$2.04$$, 우변은 $$0.04 \times 20 = 0.8$$에 양 끝 점에서는 경계 온도를 더한다[^1].
+$$h'\Delta x^2 = 0.04$$라 대각선은 $$2.04$$, 우변은 $$0.04 \times 20 = 0.8$$에 양 끝 점에서는 경계 온도를 더한다.
 
 $$\begin{pmatrix}2.04 & -1 & 0 & 0\\ -1 & 2.04 & -1 & 0\\ 0 & -1 & 2.04 & -1\\ 0 & 0 & -1 & 2.04\end{pmatrix}\begin{pmatrix}T_1\\ T_2\\ T_3\\ T_4\end{pmatrix} = \begin{pmatrix}40.8\\ 0.8\\ 0.8\\ 200.8\end{pmatrix}$$
 
@@ -44,26 +44,26 @@ $$\begin{pmatrix}2.04 & -1 & 0 & 0\\ -1 & 2.04 & -1 & 0\\ 0 & -1 & 2.04 & -1\\ 0
 | 유한 차분 ($$\Delta x = 2$$) | 65.9698 | 93.7785 | 124.5382 | 159.4795 |
 | 참값 | 65.9518 | 93.7478 | 124.5035 | 159.4534 |
 
-가장 큰 오차는 0.035다. $$\Delta x = 1$$로 줄이면 0.0087로 약 4분의 1이 된다[^1][^s1].
+가장 큰 오차는 0.035다. $$\Delta x = 1$$로 줄이면 0.0087로 약 4분의 1이 된다[^s1].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/37_finite-difference-bvp_fig1.svg" alt="그림" width="590" height="311" loading="lazy">
 
 왼쪽은 $$\Delta x = 2$$의 점들이 참값 곡선 위에 거의 그대로 놓이는 모습이다. 오른쪽은 간격을 반씩 줄일 때 가장 큰 오차가 0.035, 0.0087, 0.0022, 0.00055로 매번 약 4분의 1이 되는 것을 보인다[^s2].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 행렬·우변·해, 참값(지수함수 풀이)과 비교, 간격을 반으로 하면 오차 1/4, 토마스 알고리즘 = 직접 대입 확인(무작위 50개), 카드 C2 — [37_finite-difference-bvp_impl.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_impl/)</div>
+<div class="callout-title" markdown="span">검증: 본문의 행렬·우변·해, 참값(지수함수 풀이)과 비교, 간격을 반으로 하면 오차 1/4, 토마스 알고리즘 = 직접 대입 확인(무작위 50개), 카드 C2 — [37_finite-difference-bvp_impl.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_impl/)</div>
 
 </div>
 
 
 ## 정의
 
-원래 방정식의 도함수를 유한 차분으로 바꿔, 선형 미분방정식을 연립 대수 방정식으로 만든다. 2계 도함수에는 중심 차분을 쓴다[^2].
+원래 방정식의 도함수를 유한 차분으로 바꿔, 선형 미분방정식을 연립 대수 방정식으로 만든다. 2계 도함수에는 중심 차분을 쓴다.
 
 $$\frac{d^2T}{dx^2} \approx \frac{T_{i-1} - 2T_i + T_{i+1}}{\Delta x^2}$$
 
 
-막대를 $$n$$칸으로 나누면 안쪽 점 $$n - 1$$개마다 식이 하나씩 생긴다. $$\frac{d^2T}{dx^2} + h'(T_a - T) = 0$$에 넣고 정리하면 다음과 같다[^3].
+막대를 $$n$$칸으로 나누면 안쪽 점 $$n - 1$$개마다 식이 하나씩 생긴다. $$\frac{d^2T}{dx^2} + h'(T_a - T) = 0$$에 넣고 정리하면 다음과 같다.
 
 $$\frac{T_{i-1} - 2T_i + T_{i+1}}{\Delta x^2} + h'(T_a - T_i) = 0 \quad\Longrightarrow\quad -T_{i-1} + (2 + h'\Delta x^2)T_i - T_{i+1} = h'\Delta x^2T_a$$
 
@@ -78,9 +78,9 @@ i = 2의 식:   T1 ---- T2 ---- T3
              (-1)  (2.04)   (-1)
 ```
 
-`o`는 값을 아는 양 끝, `*`는 미지수다. 식 하나는 한 점과 그 양옆 두 점만 쓴다. 그래서 행렬의 한 줄에는 수가 세 개뿐이고, $$T_0$$와 $$T_5$$는 첫 식과 마지막 식의 우변으로 간다[^s3].
+`o`는 값을 아는 양 끝, `*`는 미지수다. 식 하나는 한 점과 그 양옆 두 점만 쓴다. 그래서 행렬의 한 줄에는 수가 세 개뿐이고, $$T_0$$와 $$T_5$$는 첫 식과 마지막 식의 우변으로 간다.
 
-$$T_0$$와 $$T_n$$은 알고 있으므로 첫 식과 마지막 식의 오른쪽으로 옮긴다. 그러면 계수 행렬은 대각선과 그 바로 위아래에만 수가 있는 **삼중대각 행렬**이다[^4].
+$$T_0$$와 $$T_n$$은 알고 있으므로 첫 식과 마지막 식의 오른쪽으로 옮긴다. 그러면 계수 행렬은 대각선과 그 바로 위아래에만 수가 있는 **삼중대각 행렬**이다.
 
 $$\begin{pmatrix}2 + h'\Delta x^2 & -1 & & \\ -1 & 2 + h'\Delta x^2 & -1 & \\ & \ddots & \ddots & \ddots\\ & & -1 & 2 + h'\Delta x^2\end{pmatrix}\begin{pmatrix}T_1\\ T_2\\ \vdots\\ T_{n-1}\end{pmatrix} = \begin{pmatrix}h'\Delta x^2T_a + T_0\\ h'\Delta x^2T_a\\ \vdots\\ h'\Delta x^2T_a + T_n\end{pmatrix}$$
 
@@ -127,11 +127,6 @@ $$\begin{pmatrix}2 + h'\Delta x^2 & -1 & & \\ -1 & 2 + h'\Delta x^2 & -1 & \\ & 
 </details>
 
 
-[^1]: 수치해석 19회 강의 자료 「na19_diff_eq2」, p.13
-[^2]: 같은 자료, p.10
-[^3]: 같은 자료, p.11
-[^4]: 같은 자료, p.12
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 참값 비교와 간격 실험, 토마스 알고리즘, 대각 우세, 오차 차수, 활용, 사격법과의 비교, 흔한 실수, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [37_finite-difference-bvp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 유한 차분 값과 참값, 가장 큰 오차가 간격을 반으로 할 때마다 약 $$\frac14$$.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '예시로 보기'의 격자($$\Delta x = 2$$, 경계 40과 200)와 '정의'의 안쪽 점 식(원본 19.na19_diff_eq2.pdf p.11~13)으로 그렸다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [37_finite-difference-bvp_plot.py](/Hongs_Blog/studies/numerical-analysis/code/37_finite-difference-bvp_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 유한 차분 값과 참값, 가장 큰 오차가 간격을 반으로 할 때마다 약 $$\frac14$$.
 {% endraw %}

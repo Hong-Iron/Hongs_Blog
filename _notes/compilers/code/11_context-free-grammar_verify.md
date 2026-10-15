@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/11_context-free-grammar_verify/"
 [문맥 자유 문법](/Hongs_Blog/studies/compilers/context-free-grammar/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""문맥 자유 문법 문서의 예를 확인한다: 슬라이드 문법들이 만드는 문자열, 균형 괄호 언어, 괄호 맞추기를 못 하는 작은 DFA.
+"""문맥 자유 문법 문서의 예를 확인한다: 예제 문법들이 만드는 문자열, 균형 괄호 언어, 괄호 맞추기를 못 하는 작은 DFA.
 
 실행: python3 11_context-free-grammar_verify.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -88,11 +88,11 @@ def small_dfa_exists(k, maxlen):
 if __name__ == "__main__":
     T = lambda s: tuple(s.split())
 
-    # p.12: S → E + E, E → id. 만들 수 있는 문자열은 id + id 하나뿐이다.
+    # S → E + E, E → id. 만들 수 있는 문자열은 id + id 하나뿐이다.
     g = G("S -> E + E\nE -> id")
     assert language(g, "S", 8) == {T("id + id")}
 
-    # p.13: BALANCED → ( BALANCED ) | ε 은 정확히 '( n개 뒤 ) n개'를 만든다.
+    # BALANCED → ( BALANCED ) | ε 은 정확히 '( n개 뒤 ) n개'를 만든다.
     bal = G("B -> ( B ) | ε")
     assert language(bal, "B", 12) == {tuple("(" * n + ")" * n) for n in range(7)}
 
@@ -100,13 +100,13 @@ if __name__ == "__main__":
     for k in (1, 2, 3):
         assert not small_dfa_exists(k, 8)
 
-    # p.14: STMT 규칙 두 개만으로는 끝나는 문장이 하나도 없다(재귀를 멈출 규칙이 없다).
+    # STMT 규칙 두 개만으로는 끝나는 문장이 하나도 없다(재귀를 멈출 규칙이 없다).
     stmt = G("STMT -> if ( EXPR ) STMT else STMT | if ( EXPR ) STMT\nEXPR -> expr")
     assert language(stmt, "STMT", 15) == set()
     stmt2 = G("STMT -> if ( EXPR ) STMT else STMT | if ( EXPR ) STMT | other\nEXPR -> expr")
     assert T("if ( expr ) if ( expr ) other else other") in language(stmt2, "STMT", 11)
 
-    # p.15: 산술식 문법. 슬라이드의 다섯 예가 모두 나온다.
+    # 산술식 문법. 문서의 다섯 예가 모두 나온다.
     arith = G("E -> E + E | E * E | ( E ) | id")
     L = language(arith, "E", 7)
     for s in ["id + id", "id * id", "( id )", "id + id * id", "( id + id ) * id"]:
@@ -115,7 +115,7 @@ if __name__ == "__main__":
         assert T(s) not in L
     assert len(L) == 60
 
-    # p.16: 함수 호출 문법.
+    # 함수 호출 문법.
     call = G("S -> id ( E ) | id ( )\nE -> id , E | id")
     L = language(call, "S", 8)
     for s in ["id ( id , id )", "id ( id )", "id ( )"]:
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     # 인자가 k개면 길이가 2k + 2 (k ≥ 1), 인자가 없으면 3
     assert sorted(len(s) for s in L) == [3, 4, 6, 8]
 
-    # p.17: while 문 문법. 조건은 '비교', '값 하나', '빈 것' 세 꼴이라 문자열이 4 + 2 + 1 = 7개다.
+    # while 문 문법. 조건은 '비교', '값 하나', '빈 것' 세 꼴이라 문자열이 4 + 2 + 1 = 7개다.
     wh = G("S -> while ( E )\nE -> T comparison T | T | ε\nT -> id | number")
     L = language(wh, "S", 10)
     assert len(L) == 7
@@ -151,7 +151,7 @@ if __name__ == "__main__":
     full = G("B -> ( B ) | B B | ε")
     assert language(full, "B", 10) == dyck
     assert sorted(len([s for s in dyck if len(s) == 2 * k]) for k in range(6)) == [1, 1, 2, 5, 14, 42]
-    # 슬라이드의 BALANCED → ( BALANCED ) | ε 은 그 가운데 겹치기만 한 것만 만든다: ()() 는 못 만든다
+    # BALANCED → ( BALANCED ) | ε 은 그 가운데 겹치기만 한 것만 만든다: ()() 는 못 만든다
     assert tuple("()()") in dyck and tuple("()()") not in language(bal, "B", 10)
     assert language(bal, "B", 10) < dyck
 

@@ -34,14 +34,14 @@ permalink: "/studies/signals-and-systems/convolution-properties/"
 
 ## 예시로 보기
 
-마이크 신호를 잡음 제거기와 증폭기에 차례로 통과시킨다고 하자. 둘 다 LTI라면 잡음 제거를 먼저 하든 증폭을 먼저 하든 결과는 같다. 두 기계를 하나로 합친 장치의 임펄스 응답은 두 임펄스 응답의 컨벌루션 $$h_1 * h_2$$다(그림 2.25)[^1][^s1].
+마이크 신호를 잡음 제거기와 증폭기에 차례로 통과시킨다고 하자. 둘 다 LTI라면 잡음 제거를 먼저 하든 증폭을 먼저 하든 결과는 같다. 두 기계를 하나로 합친 장치의 임펄스 응답은 두 임펄스 응답의 컨벌루션 $$h_1 * h_2$$다(그림 2.25)[^s1].
 
 ## 정의
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
 
-이산 시간과 연속 시간 모두에서[^2][^3][^4]
+이산 시간과 연속 시간 모두에서
 
 | 성질 | 식 | 시스템으로 보면 |
 |---|---|---|
@@ -80,22 +80,22 @@ flowchart LR
   end
 ```
 
-각 그림의 두 묶음은 같은 $$x$$에 같은 $$y$$를 낸다. 상자가 모두 LTI일 때만 이렇게 바꿔 그릴 수 있다.[^s3]
+각 그림의 두 묶음은 같은 $$x$$에 같은 $$y$$를 낸다. 상자가 모두 LTI일 때만 이렇게 바꿔 그릴 수 있다.
 
-분배법칙은 입력 쪽으로도 통한다: $$(x_1 + x_2) * h = x_1 * h + x_2 * h$$. 두 입력의 합에 대한 응답은 각 응답의 합이라는 뜻이다[^3].
+분배법칙은 입력 쪽으로도 통한다: $$(x_1 + x_2) * h = x_1 * h + x_2 * h$$. 두 입력의 합에 대한 응답은 각 응답의 합이라는 뜻이다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명</summary>
 
-**교환법칙**(이산): $$r = n - k$$로 바꾸면 $$k = n - r$$이고, $$k$$가 모든 정수를 돌 때 $$r$$도 모든 정수를 돈다[^2].
+**교환법칙**(이산): $$r = n - k$$로 바꾸면 $$k = n - r$$이고, $$k$$가 모든 정수를 돌 때 $$r$$도 모든 정수를 돈다.
 
 $$x[n] * h[n] = \sum_{k}x[k]h[n-k] = \sum_{r}x[n-r]h[r] = h[n] * x[n]$$
 
-**교환법칙**(연속): $$u = t - \tau$$로 바꾸면 $$d\tau = -du$$이고 적분 범위가 뒤집혀 부호가 상쇄된다[^5].
+**교환법칙**(연속): $$u = t - \tau$$로 바꾸면 $$d\tau = -du$$이고 적분 범위가 뒤집혀 부호가 상쇄된다.
 
 $$(f * g)(t) = \int_{\infty}^{-\infty}f(t-u)g(u)(-du) = \int_{-\infty}^{\infty}g(u)f(t-u)du = (g * f)(t)$$
 
-**결합법칙**(연속)[^5]
+**결합법칙**(연속)
 1. $$((f*g)*h)(t) = \int\left[\int f(u)g(\tau - u)du\right]h(t-\tau)d\tau$$ (안쪽 정의를 대입)
 2. 적분 순서를 바꾼다: $$= \int f(u)\left[\int g(\tau-u)h(t-\tau)d\tau\right]du$$ (적분 순서를 바꿀 수 있다고 가정)
 3. 안쪽에서 $$v = \tau - u$$로 바꾸면 $$\int g(v)h(t - u - v)dv = (g*h)(t-u)$$
@@ -108,7 +108,7 @@ $$(f * g)(t) = \int_{\infty}^{-\infty}f(t-u)g(u)(-du) = \int_{-\infty}^{\infty}g
 
 ## 예제
 
-**예제 2.10** $$x[n] = (\frac12)^n u[n] + 2^n u[-n]$$, $$h[n] = u[n]$$[^6]
+**예제 2.10** $$x[n] = (\frac12)^n u[n] + 2^n u[-n]$$, $$h[n] = u[n]$$
 
 - 분배법칙으로 나눈다: $$x_1 = (\frac12)^n u[n]$$, $$x_2 = 2^n u[-n]$$.
 - $$y_1 = x_1 * h$$는 예제 2.3에서 $$\alpha = \frac12$$: $$2 - (\frac12)^n$$ ($$n \ge 0$$).
@@ -119,7 +119,7 @@ $$(f * g)(t) = \int_{\infty}^{-\infty}f(t-u)g(u)(-du) = \int_{-\infty}^{\infty}g
 
 $$y_1$$은 $$n \ge 0$$에서만 값이 있고, $$y_2$$는 음의 $$n$$에서도 값이 있다. 둘을 더한 맨 아래 줄이 4(점선)로 다가간다[^s2].
 
-**비선형 시스템에서는 통하지 않는다.**[^7] $$y[n] = (x[n] + x[n-1])^2$$나 $$y[n] = \max(x[n], x[n-1])$$은 $$x[n] + x[n-1]$$과 비슷한 모양이지만 LTI가 아니라 임펄스 응답으로 나타낼 수 없다. max의 예: 행렬 $$m_1 = \begin{bmatrix}0&1\\2&3\end{bmatrix}$$, $$m_2 = \begin{bmatrix}4&5\\0&1\end{bmatrix}$$에서 $$\max(m_1 - m_2) = 2$$이지만 $$\max m_1 - \max m_2 = -2$$다(딥러닝의 맥스 풀링).
+**비선형 시스템에서는 통하지 않는다.** $$y[n] = (x[n] + x[n-1])^2$$나 $$y[n] = \max(x[n], x[n-1])$$은 $$x[n] + x[n-1]$$과 비슷한 모양이지만 LTI가 아니라 임펄스 응답으로 나타낼 수 없다. max의 예: 행렬 $$m_1 = \begin{bmatrix}0&1\\2&3\end{bmatrix}$$, $$m_2 = \begin{bmatrix}4&5\\0&1\end{bmatrix}$$에서 $$\max(m_1 - m_2) = 2$$이지만 $$\max m_1 - \max m_2 = -2$$다(딥러닝의 맥스 풀링).
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 교환·분배·결합법칙과 직렬 순서 무관을 무작위 정수 수열 300쌍으로 확인, 예제 2.10의 닫힌 꼴과 값, max 예 확인 — [20_convolution-properties_verify.py](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_verify/)</div>
@@ -163,14 +163,6 @@ $$y_1$$은 $$n \ge 0$$에서만 값이 있고, $$y_2$$는 음의 $$n$$에서도 
 </details>
 
 
-[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.8 (그림 2.25)
-[^2]: 같은 자료, p.3
-[^3]: 같은 자료, p.4 (그림 2.23)
-[^4]: 같은 자료, p.8
-[^5]: 같은 자료, p.43
-[^6]: 같은 자료, p.5~6 (예제 2.10, 그림 2.24)
-[^7]: 같은 자료, p.2~3
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 마이크 신호 비유, 분배법칙 증명의 한 줄, 하나로 합쳐 계산을 줄이는 활용, 확인 문제는 원본에 없다. 성질은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [20_convolution-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 정의대로 계산한 컨벌루션과 닫힌 꼴이 같고, $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 정의의 정리 표(6주차 자료 p.4, p.8의 그림 2.23, 2.25)를 근거로 그렸다.
+[^s1]: 성질은 검증 코드로 확인했다.
+[^s2]: [20_convolution-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/20_convolution-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 정의대로 계산한 컨벌루션과 닫힌 꼴이 같고, $$y[-3] = \frac14$$, $$y[-1] = 1$$, $$y[0] = 3$$, $$y[1] = 3.5$$, $$y[2] = 3.75$$.
 {% endraw %}

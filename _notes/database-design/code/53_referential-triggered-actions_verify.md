@@ -21,17 +21,17 @@ permalink: "/studies/database-design/code/53_referential-triggered-actions_verif
 
 ```python
 # 53.참조 동작 SET NULL·CASCADE·SET DEFAULT 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 53_referential-triggered-actions_verify.py)
-# 확인하는 것 (슬라이드 10 p.19~21, 10-2 p.7~8의 문장을 COMPANY 상태에 돌린다)
+# 확인하는 것 (문서의 참조 동작 문장과 물음을 COMPANY 상태에 돌린다)
 #   1. 아무것도 안 적으면 거부한다
 #   2. ON DELETE SET NULL, ON UPDATE CASCADE, ON DELETE SET DEFAULT, ON DELETE CASCADE가 하는 일
-#   3. 10-2 p.7의 물음(Wong을 지우면? Wong의 Ssn을 444335555로 고치면?)
-#   4. 10-2 p.8의 물음(EMPSUPERFK가 ON DELETE CASCADE일 때 Borg를 지우면?)
+#   3. 문서의 물음(Wong을 지우면? Wong의 Ssn을 444335555로 고치면?)
+#   4. 문서의 물음(EMPSUPERFK가 ON DELETE CASCADE일 때 Borg를 지우면?)
 #   5. DELETE EMPLOYEE WHERE ...(FROM 없음)와 ON DELETE REJECT는 SQL 문법이 아니다
 # 같은 내용을 PostgreSQL 16에서도 돌렸다(53_referential-triggered-actions_verify.sql).
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -87,7 +87,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -125,8 +125,8 @@ def error_of(c, sql, args=()):
         c.execute('RELEASE try_it')
 
 
-# 슬라이드 10 p.16, p.20~21에 적힌 DEFAULT, 제약 이름, 참조 동작을 붙인 DDL.
-# 슬라이드가 동작을 적지 않은 PROJECT, WORKS_ON, DEPENDENT의 외래 키는 그대로 둔다(기본값: 거부).
+# 문서에 적힌 DEFAULT, 제약 이름, 참조 동작을 붙인 DDL.
+# 문서가 동작을 적지 않은 PROJECT, WORKS_ON, DEPENDENT의 외래 키는 그대로 둔다(기본값: 거부).
 ACTION_DDL = """
 CREATE TABLE EMPLOYEE (
   Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -187,7 +187,7 @@ if __name__ == "__main__":
     assert error_of(c, "UPDATE EMPLOYEE SET Ssn = '444335555' WHERE Ssn = ?", (WONG,)) == 'FOREIGN KEY constraint failed'
     assert rows(c, "SELECT COUNT(*) FROM EMPLOYEE") == [(8,)]
 
-    # --- 2, 3. EMPLOYEE 한 표로 보는 SET NULL과 UPDATE CASCADE (슬라이드 10 p.20의 두 상자)
+    # --- 2, 3. EMPLOYEE 한 표로 보는 SET NULL과 UPDATE CASCADE (문서의 첫 표)
     e = one_table('SET NULL')
     assert sorted(l for l, s in supervisors(e).items() if s == WONG) == ['English', 'Narayan', 'Smith']
     e.execute("DELETE FROM EMPLOYEE WHERE Ssn = ?", (WONG,))
@@ -279,14 +279,14 @@ if __name__ == "__main__":
     k.execute("UPDATE D SET Dnumber = 6 WHERE Dnumber = 5")
     assert rows(k, "SELECT Dno FROM E1") == [(None,)] and rows(k, "SELECT Dno FROM E2") == [(1,)]
 
-    # --- 4. 10-2 p.8: EMPSUPERFK가 ON DELETE CASCADE일 때
+    # --- 4. EMPSUPERFK가 ON DELETE CASCADE일 때
     e = one_table('CASCADE')
     e.execute("DELETE FROM EMPLOYEE WHERE Lname = 'Wong'")
     assert sorted(r[0] for r in rows(e, "SELECT Lname FROM EMPLOYEE")) == ['Borg', 'Jabbar', 'Wallace', 'Zelaya']   # Wong과 부하 셋이 사라진다
     e = one_table('CASCADE')
     e.execute("DELETE FROM EMPLOYEE WHERE Lname = 'Borg'")
     assert rows(e, "SELECT COUNT(*) FROM EMPLOYEE") == [(0,)]                       # 여덟 명이 모두 사라진다
-    # 슬라이드의 원래 선택(SET NULL)이면 Borg 한 행만 사라진다
+    # 처음에 적은 동작(SET NULL)이면 Borg 한 행만 사라진다
     e = one_table('SET NULL')
     e.execute("DELETE FROM EMPLOYEE WHERE Lname = 'Borg'")
     assert rows(e, "SELECT COUNT(*) FROM EMPLOYEE") == [(7,)]

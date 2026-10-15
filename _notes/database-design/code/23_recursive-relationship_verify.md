@@ -23,28 +23,27 @@ permalink: "/studies/database-design/code/23_recursive-relationship_verify/"
 """역할 이름과 재귀 관계 검증.
 
 문서: 23.역할 이름과 재귀 관계 (예시로 보기, 카드 C1·C3)
-출처: 데이터베이스 설계 4주차 슬라이드 4-2 p.22 (5주차 p.10에 같은 그림),
-      COMPANY ER 5주차 p.34, COMPANY 상태 6-2 p.21
+출처: Elmasri & Navathe, Fundamentals of Database Systems 3장의 SUPERVISION 예와 COMPANY 상태
 주장:
-  1. SUPERVISION 그림(p.22)의 인스턴스 6개를 (상사, 부하)로 읽으면
+  1. 문서의 SUPERVISION 표의 인스턴스 6개를 (상사, 부하)로 읽으면
      r1 = (e5, e1), r2 = (e1, e2), r3 = (e1, e3), r4 = (e5, e4), r5 = (e4, e6), r6 = (e4, e7)이다.
   2. 부하 역할로는 누구나 많아야 한 번 나온다(상사는 많아야 한 명). 상사 역할로는 여러 번 나올 수 있다.
      그래서 상사 쪽이 1, 부하 쪽이 N인 1:N이다.
   3. e5는 부하로 나오지 않고(상사가 없다), e2, e3, e6, e7은 상사로 나오지 않는다. 양쪽 다 부분 참여다.
   4. 역할을 바꾼 (e1, e5)는 그림에 없다. 순서가 뜻을 정한다.
-  5. COMPANY 상태(6-2 p.21)에서 Super_ssn이 NULL이 아닌 직원은 7명이라 SUPERVISION 인스턴스는 7개이고,
+  5. COMPANY 상태에서 Super_ssn이 NULL이 아닌 직원은 7명이라 SUPERVISION 인스턴스는 7개이고,
      모양이 그림과 같다(맨 위 한 명, 그 아래 둘, 그 아래 다섯).
 """
 from collections import Counter
 
-# 4-2 p.22: 선에 적힌 1은 상사 역할, 2는 부하 역할. (상사, 부하)
+# 문서의 SUPERVISION 표: 선에 적힌 1은 상사 역할, 2는 부하 역할. (상사, 부하)
 SUPERVISION = {
     "r1": ("e5", "e1"), "r2": ("e1", "e2"), "r3": ("e1", "e3"),
     "r4": ("e5", "e4"), "r5": ("e4", "e6"), "r6": ("e4", "e7"),
 }
 EMPLOYEE = [f"e{i}" for i in range(1, 8)]
 
-# 6-2 p.21: (Lname, Ssn, Super_ssn)
+# COMPANY 상태의 EMPLOYEE: (Lname, Ssn, Super_ssn)
 EMP = [("Smith", "123456789", "333445555"), ("Wong", "333445555", "888665555"),
        ("Zelaya", "999887777", "987654321"), ("Wallace", "987654321", "888665555"),
        ("Narayan", "666884444", "333445555"), ("English", "453453453", "333445555"),
@@ -99,7 +98,7 @@ def main():
     assert subordinates(state, "Wong") == ["English", "Narayan", "Smith"]
     assert subordinates(state, "Wallace") == ["Jabbar", "Zelaya"]
     assert boss_of(state, "Borg") is None
-    print("[OK] 6-2 p.21: 인스턴스 7개, Borg 아래 Wong·Wallace, 그 아래 다섯 명")
+    print("[OK] COMPANY 상태: 인스턴스 7개, Borg 아래 Wong·Wallace, 그 아래 다섯 명")
 
     print("ALL CHECKS PASSED")
 

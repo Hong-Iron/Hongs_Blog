@@ -28,7 +28,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(예: 00000020의 call 다음 줄은 00000025).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -509,7 +509,7 @@ def main():
     assert all(jump("ja", a, b) == jump("jg", a, b) for a in range(128) for b in range(128))
     # 3. 같은지 다른지는 부호와 상관없다
     assert all(jump("je", a, b) == (a == b) for a in range(256) for b in range(256))
-    # 4. 슬라이드 응용 (wk07-3-3 p.9): jbe와 jle
+    # 4. 응용: jbe와 jle
     assert jump("jbe", 5, 0xFFFFFFFF, 4) and not jump("jle", 5, 0xFFFFFFFF, 4)
     # 5. 카드: 배열 길이 검사. 인덱스 -1(FFFFFFFFh)을 길이 10과 견준다
     assert jump("jl", 0xFFFFFFFF, 10, 4) and not jump("jb", 0xFFFFFFFF, 10, 4)

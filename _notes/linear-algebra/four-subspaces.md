@@ -219,7 +219,7 @@ $$A = \begin{pmatrix}1 & 2 & 0\\ 0 & 0 & 1\\ 1 & 2 & 1\end{pmatrix}$$의 네 부
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.2절 "The Nullspace of A"(특수해), 3.3절 "The Complete Solution to Ax = b", 3.5절 "Dimensions of the Four Subspaces", 4.1절 "Orthogonality of the Four Subspaces".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그래프의 근접 행렬(간선 × 정점)에 차원 정리를 쓰면 연결 그래프에서 랭크 $$n - 1$$, 사이클 공간의 차원 $$m - n + 1$$이 나온다. Strang 5판 10.1절 "Graphs and Networks"에 같은 내용이 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [11_four-subspaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/11_four-subspaces_plot/)로 그렸고, 영공간 평면이 $$A\mathbf{x} = \mathbf{0}$$을 만족하는 것, 행공간과의 수직, 무작위 입력 60개의 출력이 모두 열공간 위에 있는 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 네 부분공간 정의와 선형대수의 기본정리 1~3을 옮겼다(Strang 5판 3.5절, 4.1절).
+[^s1]: 그래프의 근접 행렬(간선 × 정점)에 차원 정리를 쓰면 연결 그래프에서 랭크 $$n - 1$$, 사이클 공간의 차원 $$m - n + 1$$이 나온다. Strang 5판 10.1절 "Graphs and Networks"에 같은 내용이 있다.
+[^s2]: [11_four-subspaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/11_four-subspaces_plot/)로 그렸고, 영공간 평면이 $$A\mathbf{x} = \mathbf{0}$$을 만족하는 것, 행공간과의 수직, 무작위 입력 60개의 출력이 모두 열공간 위에 있는 것을 같은 코드로 확인했다.
+[^s3]: 이 문서 `정의`의 네 부분공간 정의와 선형대수의 기본정리 1~3을 옮겼다(Strang 5판 3.5절, 4.1절).
 {% endraw %}

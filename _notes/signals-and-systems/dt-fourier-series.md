@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/dt-fourier-series/"
 
 ## 예시로 보기
 
-주기 4인 수열이 한 주기에 $$x[0] = 1$$, $$x[1] = 0$$, $$x[2] = 2$$, $$x[3] = -1$$이다[^1].
+주기 4인 수열이 한 주기에 $$x[0] = 1$$, $$x[1] = 0$$, $$x[2] = 2$$, $$x[3] = -1$$이다.
 
 이 수열을 $$x[n] = \sum_{k=0}^{3}a_ke^{jk(2\pi/4)n}$$으로 쓰고 싶다. $$e^{j(2\pi/4)} = j$$이므로 $$n = 0, 1, 2, 3$$을 넣으면 미지수 넷, 식 넷인 연립방정식이 된다.
 
@@ -45,7 +45,7 @@ $$\begin{aligned} a_0 + a_1 + a_2 + a_3 &= 1\\ a_0 + ja_1 - a_2 - ja_3 &= 0\\ a_
 
 ## 정의
 
-주기 $$N$$($$x[n] = x[n+N]$$), 기본 주파수 $$\omega_0 = \frac{2\pi}{N}$$인 수열에서 고조파는 $$\phi_k[n] = e^{jk(2\pi/N)n}$$이다. [이산 복소 지수의 성질](/Hongs_Blog/studies/signals-and-systems/dt-complex-exponential/)로 $$\phi_{k+N} = \phi_k$$라서 서로 다른 것은 연속한 $$N$$개뿐이다[^2]. 합을 연속한 $$N$$개 $$k$$에 대해서만 한다는 뜻으로 $$\sum_{k = \langle N\rangle}$$이라 쓴다. $$k = 0, \dots, N-1$$이든 $$k = 3, \dots, N+2$$든 결과가 같다[^3].
+주기 $$N$$($$x[n] = x[n+N]$$), 기본 주파수 $$\omega_0 = \frac{2\pi}{N}$$인 수열에서 고조파는 $$\phi_k[n] = e^{jk(2\pi/N)n}$$이다. [이산 복소 지수의 성질](/Hongs_Blog/studies/signals-and-systems/dt-complex-exponential/)로 $$\phi_{k+N} = \phi_k$$라서 서로 다른 것은 연속한 $$N$$개뿐이다. 합을 연속한 $$N$$개 $$k$$에 대해서만 한다는 뜻으로 $$\sum_{k = \langle N\rangle}$$이라 쓴다. $$k = 0, \dots, N-1$$이든 $$k = 3, \dots, N+2$$든 결과가 같다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">이산 시간 푸리에 급수 쌍</div>
@@ -54,12 +54,10 @@ $$x[n] = \sum_{k=\langle N\rangle}a_ke^{jk\omega_0n} = \sum_{k=\langle N\rangle}
 
 $$a_k = \frac1N\sum_{n=\langle N\rangle}x[n]e^{-jk\omega_0n} = \frac1N\sum_{n=\langle N\rangle}x[n]e^{-jk(2\pi/N)n} \qquad \text{(분석식)}$$
 
-[^4]
-
 </div>
 
 
-**한 주기 합의 공식.** 계수 공식의 열쇠다[^5].
+**한 주기 합의 공식.** 계수 공식의 열쇠다.
 
 $$\sum_{n=\langle N\rangle}e^{jk(2\pi/N)n} = \begin{cases}N & k = 0, \pm N, \pm 2N, \dots\\ 0 & \text{그 밖}\end{cases}$$
 
@@ -72,14 +70,14 @@ $$k$$가 $$N$$의 배수면 모든 항이 $$e^{j2\pi(\text{정수})} = 1$$이라
 1. 합성식 양변에 $$e^{-jr(2\pi/N)n}$$을 곱하고 $$N$$칸 더한다: $$\sum_nx[n]e^{-jr(2\pi/N)n} = \sum_n\sum_ka_ke^{j(k-r)(2\pi/N)n}$$
 2. 유한합이라 순서를 바꿔도 된다: $$= \sum_ka_k\sum_ne^{j(k-r)(2\pi/N)n}$$
 3. 한 주기 합의 공식: $$k$$와 $$r$$을 같은 범위에서 고르면 $$k = r$$일 때만 $$N$$, 나머지는 0
-4. 오른쪽은 $$Na_r$$, 그래서 $$a_r = \frac1N\sum_nx[n]e^{-jr(2\pi/N)n}$$[^6]
+4. 오른쪽은 $$Na_r$$, 그래서 $$a_r = \frac1N\sum_nx[n]e^{-jr(2\pi/N)n}$$
 
 </details>
 
 
-**계수도 주기 $$N$$.** $$a_{k+N} = a_k$$다. $$e^{-j(k+N)(2\pi/N)n} = e^{-jk(2\pi/N)n}$$이기 때문이다[^7]. 연속 시간의 계수는 $$k$$마다 다르지만, 이산 시간의 계수는 막대그래프가 $$N$$칸마다 똑같이 반복된다(그림 3.13).
+**계수도 주기 $$N$$.** $$a_{k+N} = a_k$$다. $$e^{-j(k+N)(2\pi/N)n} = e^{-jk(2\pi/N)n}$$이기 때문이다. 연속 시간의 계수는 $$k$$마다 다르지만, 이산 시간의 계수는 막대그래프가 $$N$$칸마다 똑같이 반복된다(그림 3.13).
 
-**수렴 문제가 없다.** 분석식은 $$N$$개의 수를 $$N$$개의 계수로 바꾸고, 합성식은 유한한 $$N$$개 항이라 그대로 되돌린다. 부분합 $$\hat x[n] = \sum_{k=-M}^{M}a_ke^{jk(2\pi/N)n}$$은 항이 $$N$$개가 되는 순간($$N$$이 홀수면 $$M = \frac{N-1}{2}$$) 원래 수열과 정확히 같다. 깁스 현상이 없다(그림 3.18)[^8]. 연속 시간 주기 신호는 한 주기에 값이 무한히 많아 무한히 많은 계수가 필요한 것과 다르다.
+**수렴 문제가 없다.** 분석식은 $$N$$개의 수를 $$N$$개의 계수로 바꾸고, 합성식은 유한한 $$N$$개 항이라 그대로 되돌린다. 부분합 $$\hat x[n] = \sum_{k=-M}^{M}a_ke^{jk(2\pi/N)n}$$은 항이 $$N$$개가 되는 순간($$N$$이 홀수면 $$M = \frac{N-1}{2}$$) 원래 수열과 정확히 같다. 깁스 현상이 없다(그림 3.18). 연속 시간 주기 신호는 한 주기에 값이 무한히 많아 무한히 많은 계수가 필요한 것과 다르다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/33_dt-fourier-series_fig1.svg" alt="그림" width="564" height="468" loading="lazy">
 
@@ -113,18 +111,18 @@ $$a = e^{jk(2\pi/N)}$$이므로 $$a^N = e^{jk2\pi} = 1$$이다. 분모는 $$k$$�
 
 ## 예제
 
-**예제 3.10** $$x[n] = \sin\omega_0n$$[^9]
+**예제 3.10** $$x[n] = \sin\omega_0n$$
 
 - $$\omega_0 = \frac{2\pi}{N}$$이면 오일러 관계로 $$x = \frac{1}{2j}e^{j(2\pi/N)n} - \frac{1}{2j}e^{-j(2\pi/N)n}$$. 그래서 $$a_1 = \frac{1}{2j}$$, $$a_{-1} = -\frac{1}{2j}$$, 한 주기의 나머지는 0. 주기 $$N$$으로 반복되므로 $$a_{N+1} = \frac{1}{2j}$$, $$a_{N-1} = -\frac{1}{2j}$$이다($$N = 5$$이면 그림 3.13).
 - $$\omega_0 = \frac{2\pi M}{N}$$($$M$$과 $$N$$은 서로소)이면 $$a_M = \frac{1}{2j}$$, $$a_{-M} = -\frac{1}{2j}$$. $$M = 3$$, $$N = 5$$이면 $$a_{-3} = a_2$$다(그림 3.14).
 
-**예제 3.11** $$x[n] = 1 + \sin\frac{2\pi}{N}n + 3\cos\frac{2\pi}{N}n + \cos\left(\frac{4\pi}{N}n + \frac\pi2\right)$$[^10]
+**예제 3.11** $$x[n] = 1 + \sin\frac{2\pi}{N}n + 3\cos\frac{2\pi}{N}n + \cos\left(\frac{4\pi}{N}n + \frac\pi2\right)$$
 
 - 모두 복소 지수로 풀어 같은 주파수끼리 모은다.
 - $$a_0 = 1$$, $$a_1 = \frac32 - \frac12j$$, $$a_{-1} = \frac32 + \frac12j$$, $$a_2 = \frac12e^{j\pi/2} = \frac12j$$, $$a_{-2} = -\frac12j$$.
-- $$\vert a_1\vert  = \frac{\sqrt{10}}{2}$$, $$\angle a_1 = -\tan^{-1}\frac13 \approx -18.43°$$. 실수 수열이라 $$a_{-k} = a_k^*$$다(그림 3.15)[^11].
+- $$\vert a_1\vert  = \frac{\sqrt{10}}{2}$$, $$\angle a_1 = -\tan^{-1}\frac13 \approx -18.43°$$. 실수 수열이라 $$a_{-k} = a_k^*$$다(그림 3.15).
 
-**예제 3.12 이산 구형파** 한 주기에서 $$-N_1 \le n \le N_1$$이면 1[^12]
+**예제 3.12 이산 구형파** 한 주기에서 $$-N_1 \le n \le N_1$$이면 1
 
 1. *합 범위:* $$a_k = \frac1N\sum_{n=-N_1}^{N_1}e^{-jk(2\pi/N)n}$$
 2. *0부터 세게 바꾸기:* $$m = n + N_1$$로 두면 $$a_k = \frac1Ne^{jk(2\pi/N)N_1}\sum_{m=0}^{2N_1}e^{-jk(2\pi/N)m}$$
@@ -137,13 +135,6 @@ $$2N_1 + 1 = 5$$, $$N = 10$$이면 $$a_0 = \frac12$$, $$a_1 = \frac{1}{10}\cdot\
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/33_dt-fourier-series_fig2.svg" alt="그림" width="583" height="352" loading="lazy">
 
 $$N = 10$$, $$2N_1 + 1 = 5$$인 구형파와 그 계수다. 계수도 10칸마다 똑같이 되풀이되므로 색칠한 한 주기만 알면 된다[^s2].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 10주차 p.19 "$$a_3 = \frac{1}{10}\cdot\frac{\sin(3\pi/2)}{\sin(3\pi/10)} = -0.11269$$" / 문제점: $$\sin(3\pi/10) \approx 0.8090$$이라 $$\frac{-1}{10 \times 0.8090} \approx -0.1236$$이다 / 수정안: $$a_3 \approx -0.1236$$ / 근거: [33_dt-fourier-series_verify.py](/Hongs_Blog/studies/signals-and-systems/code/33_dt-fourier-series_verify/)가 분석식 합으로 $$-0.12361$$을 계산
-
-</div>
 
 
 <div class="callout callout-check" markdown="1">
@@ -206,18 +197,6 @@ $$N = 10$$, $$2N_1 + 1 = 5$$인 구형파와 그 계수다. 계수도 10칸마�
 </details>
 
 
-[^1]: 신호 및 시스템 10회 강의 자료 「Week10_CH03_3_handout」, p.6~7
-[^2]: 같은 자료, p.2
-[^3]: 같은 자료, p.4
-[^4]: 같은 자료, p.10~11
-[^5]: 같은 자료, p.8
-[^6]: 같은 자료, p.9~10
-[^7]: 같은 자료, p.11, p.13
-[^8]: 같은 자료, p.20~21 (그림 3.18)
-[^9]: 같은 자료, p.12~14 (예제 3.10, 그림 3.13, 3.14)
-[^10]: 같은 자료, p.15~16 (예제 3.11)
-[^11]: 같은 자료, p.16~17 (그림 3.15)
-[^12]: 같은 자료, p.18~19 (예제 3.12, 그림 3.16, 3.17)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DFT·FFT 연결, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [33_dt-fourier-series_plot.py](/Hongs_Blog/studies/signals-and-systems/code/33_dt-fourier-series_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$a_0 = \frac12$$, $$a_1 \approx 0.3236$$, $$a_3 \approx -0.1236$$과 닫힌 꼴, $$N = 9$$ 구형파의 $$a_3 = 0$$과 $$M = 4$$ 부분합의 일치.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [33_dt-fourier-series_plot.py](/Hongs_Blog/studies/signals-and-systems/code/33_dt-fourier-series_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$a_0 = \frac12$$, $$a_1 \approx 0.3236$$, $$a_3 \approx -0.1236$$과 닫힌 꼴, $$N = 9$$ 구형파의 $$a_3 = 0$$과 $$M = 4$$ 부분합의 일치.
 {% endraw %}

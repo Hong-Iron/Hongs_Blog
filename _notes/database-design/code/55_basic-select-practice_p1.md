@@ -21,13 +21,13 @@ permalink: "/studies/database-design/code/55_basic-select-practice_p1/"
 
 ```python
 # 55.기본 검색 연습 p1 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 55_basic-select-practice_p1.py)
-# 문제 (슬라이드 10 p.5 연습 1): Stafford에 있는 프로젝트마다 프로젝트 번호, 맡은 부서의 번호,
-#       그 부서 관리자의 성, 주소, 생일을 구하라. 풀이는 10-11-SQL-Solutions p.1.
+# 문제: Stafford에 있는 프로젝트마다 프로젝트 번호, 맡은 부서의 번호,
+#       그 부서 관리자의 성, 주소, 생일을 구하라.
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
-# 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7). DDL은 46.CREATE SCHEMA와 CREATE TABLE의 문장을 따른다.
+# 그 문장과 다른 곳은 하나다. EMPLOYEE의 외래 키 두 개를 ALTER TABLE 대신 CREATE TABLE 안에 적었다(SQLite는
+# 아직 없는 표를 가리켜도 받는다). WORKS_ON.Hours에는 NOT NULL이 없다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
   Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -82,7 +82,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     c = make()
     got = sorted(rows(c, ANSWER))
     assert got == [(10, 4, 'Wallace', '291 Berry, Bellaire, TX', '1941-06-20'),
-                   (30, 4, 'Wallace', '291 Berry, Bellaire, TX', '1941-06-20')]          # 풀이 슬라이드의 결과 표
+                   (30, 4, 'Wallace', '291 Berry, Bellaire, TX', '1941-06-20')]          # 문서의 결과 표
 
     # 풀이의 하위목표를 하나씩 확인한다
     # 1. Stafford에 있는 프로젝트는 둘이다

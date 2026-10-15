@@ -50,8 +50,8 @@ def diff(A, B):
 
 def main():
     random.seed(9)
-    zxz = lambda a, b, c: mm(Rz(c), mm(Rx(b), Rz(a)))         # 슬라이드 p.21: X' = Rz Rx Rz X
-    zxy = lambda a, b, c: mm(Ry(c), mm(Rx(b), Rz(a)))         # 슬라이드 p.22: X' = Ry Rx Rz X
+    zxz = lambda a, b, c: mm(Rz(c), mm(Rx(b), Rz(a)))         # z-x-z 순서: X' = Rz Rx Rz X
+    zxy = lambda a, b, c: mm(Ry(c), mm(Rx(b), Rz(a)))         # z-x-y 순서: X' = Ry Rx Rz X
     for _ in range(100):
         a, b, c = (random.uniform(-3, 3) for _ in range(3))
         for M in (zxz(a, b, c), zxy(a, b, c)):

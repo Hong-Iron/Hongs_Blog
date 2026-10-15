@@ -21,7 +21,7 @@ permalink: "/studies/operating-systems/code/41_page-replacement_impl/"
 
 ```python
 """페이지 교체 알고리즘 OPT, LRU, FIFO, CLOCK (Stallings 8.2절, 그림 8.15).
-faults_after_fill: 프레임이 처음 다 찬 뒤의 페이지 부재 수 (슬라이드가 세는 방식)."""
+faults_after_fill: 프레임이 처음 다 찬 뒤의 페이지 부재 수 (문서 예시가 세는 방식)."""
 
 
 def simulate(refs, nframes, how):

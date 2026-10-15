@@ -20,15 +20,14 @@ permalink: "/studies/database-design/code/17_b-tree-practice_p6/"
 [B-트리 연습](/Hongs_Blog/studies/database-design/b-tree-practice/) 문서의 문제 6 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""B-트리 연습 p6 (슬라이드 연습 4): t = 3인 트리에서 C, P, V를 차례로 지운다.
+"""B-트리 연습 p6: t = 3인 트리에서 C, P, V를 차례로 지운다.
 
-문제: 04.4-1_B-tree-deletion.pdf p.21
-      [E L P T X] / [A C] [J K] [N O] [Q R S] [U V] [Y Z]
-답:   04.4_B-tree-solutions.pdf p.4 (오른쪽 형제를 먼저 본 결과)
+처음 트리: [E L P T X] / [A C] [J K] [N O] [Q R S] [U V] [Y Z]
+오른쪽 형제를 먼저 보는 규칙의 결과:
       C 뒤 [L P T X] / [A E J K] [N O] [Q R S] [U V] [Y Z]
       P 뒤 [L Q T X] / [A E J K] [N O] [R S] [U V] [Y Z]
       V 뒤 [L Q T]   / [A E J K] [N O] [R S] [U X Y Z]
-슬라이드 본문(p.16)의 규칙은 왼쪽 형제를 먼저 본다. 그 규칙대로면 P와 V의 결과가 다르다.
+왼쪽 형제를 먼저 보는 규칙으로는 P와 V의 결과가 다르다.
       P 뒤 [K O T X] / [A E J] [L N] [Q R S] [U V] [Y Z]
       V 뒤 [K O S X] / [A E J] [L N] [Q R] [T U] [Y Z]
 이 파일은 두 결과를 모두 만들고, 둘 다 올바른 B-트리이며 담긴 키가 같다는 것을 확인한다.
@@ -93,7 +92,7 @@ def check(root, t):
 
 
 def delete(root, k, t, first, log):
-    """잎에서 지우고, 키가 모자라면 위로 올라가며 고친다(4-1 p.13~20). first는 먼저 보는 형제."""
+    """잎에서 지우고, 키가 모자라면 위로 올라가며 고친다. first는 먼저 보는 형제."""
     path = []
     x = root
     while k not in x.keys:
@@ -161,12 +160,12 @@ def delete(root, k, t, first, log):
 
 START = ("E L P T X", ["A C", "J K", "N O", "Q R S", "U V", "Y Z"])
 
-LEFT_FIRST = [      # 슬라이드 본문의 규칙(p.16): 왼쪽 형제 먼저
+LEFT_FIRST = [      # 왼쪽 형제 먼저 (문서의 첫 답)
     ("C", ["1-2b(오른쪽)"], "[L P T X] / [A E J K] [N O] [Q R S] [U V] [Y Z]"),
     ("P", ["2(선행 키 O)", "1-2a(왼쪽)"], "[K O T X] / [A E J] [L N] [Q R S] [U V] [Y Z]"),
     ("V", ["1-2a(왼쪽)"], "[K O S X] / [A E J] [L N] [Q R] [T U] [Y Z]"),
 ]
-RIGHT_FIRST = [     # 풀이(4s p.4)와 같은 결과: 오른쪽 형제 먼저
+RIGHT_FIRST = [     # 오른쪽 형제 먼저 (문서의 둘째 답)
     ("C", ["1-2b(오른쪽)"], "[L P T X] / [A E J K] [N O] [Q R S] [U V] [Y Z]"),
     ("P", ["2(선행 키 O)", "1-2a(오른쪽)"], "[L Q T X] / [A E J K] [N O] [R S] [U V] [Y Z]"),
     ("V", ["1-2b(오른쪽)"], "[L Q T] / [A E J K] [N O] [R S] [U X Y Z]"),
@@ -195,7 +194,7 @@ def main():
     root = delete(root, "V", t, "left", log)
     check(root, t)
     assert log == ["1-2b(왼쪽)"] and show(root) == "[L Q X] / [A E J K] [N O] [R S T U] [Y Z]"
-    print("풀이의 P 뒤 그림에서 V를 왼쪽 먼저로:", show(root))
+    print("오른쪽 먼저로 P까지 지운 트리에서 V를 왼쪽 먼저로:", show(root))
     # 첫 단계 C는 왼쪽 형제가 없어서 어느 쪽을 먼저 보든 같다
     assert LEFT_FIRST[0] == RIGHT_FIRST[0]
     print("ALL CHECKS PASSED")

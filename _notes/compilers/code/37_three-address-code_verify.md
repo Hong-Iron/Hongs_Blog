@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/37_three-address-code_verify/"
 ```python
 # 37_three-address-code_verify.py
 # 3주소 코드 문서의 예를 확인한다. 3주소 코드를 쿼드러플로 읽어 실행하는 작은 실행기를 두고,
-# 슬라이드의 if-else 예(L11 p.17), while 예(p.18), for 연습(p.19)의 실행 결과를
+# 문서의 if-else 예, while 예, for 연습의 실행 결과를
 # 원래 고급 언어 코드를 파이썬으로 옮긴 것과 견준다. 표준 라이브러리만 쓴다.
 # 실행: python3 37_three-address-code_verify.py
 import re
@@ -170,7 +170,7 @@ param t2
 call foo, 1
 """
 
-# p.19 연습의 답(보충): for (i = 0; i < 10; i++) { b[i] = i + 1; }
+# for 연습의 답: for (i = 0; i < 10; i++) { b[i] = i + 1; }
 FOR = """
 i = 0
 L0:
@@ -198,13 +198,13 @@ def operands_of(q):
 
 
 if __name__ == "__main__":
-    # p.10~12: A + A * B - 1 의 세 줄
+    # A + A * B - 1 의 세 줄
     for A in range(-5, 6):
         for B in range(-5, 6):
             _, env = run(quads(EX0), {"A": A, "B": B})
             assert env["t2"] == A + A * B - 1
 
-    # p.17: if-else 예. 원래 코드와 같은 값을 돌려준다
+    # if-else 예. 원래 코드와 같은 값을 돌려준다
     def src1(x, y):
         if x == y:
             x = x + 1
@@ -219,7 +219,7 @@ if __name__ == "__main__":
     assert run(quads(EX1), {"x": 5, "y": 5})[0] == 9      # 카드 C3
     assert run(quads(EX1), {"x": 5, "y": 7})[0] == 10
 
-    # p.18: while 예. foo가 받는 값이 같다
+    # while 예. foo가 받는 값이 같다
     for x in range(-6, 7):
         for y in range(-6, 7):
             got = []
@@ -232,7 +232,7 @@ if __name__ == "__main__":
     run(quads(EX2), {"x": 2, "y": 5}, {"foo": lambda a: got.append(a)})
     assert got == [4]
 
-    # p.19 연습: b[0..9] = 1..10, 끝나면 i = 10
+    # for 연습: b[0..9] = 1..10, 끝나면 i = 10
     _, env = run(quads(FOR), {})
     assert env["b"] == {k: k + 1 for k in range(10)} and env["i"] == 10
 
@@ -245,7 +245,7 @@ if __name__ == "__main__":
     _, env = run(quads(CALL), {"a": 3, "b": 4}, {"foo": lambda p, q: p * 10 + q})
     assert env["y"] == 34
 
-    # 단항 연산과 불 연산 (p.14)
+    # 단항 연산과 불 연산
     _, env = run(quads("t0 = -2\nt1 = !true\nt2 = A || 1\nt3 = t0 <= 0"), {"A": 0})
     assert env["t0"] == -2 and env["t1"] is False and env["t2"] is True and env["t3"] is True
 

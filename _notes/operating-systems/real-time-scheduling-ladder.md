@@ -25,7 +25,7 @@ permalink: "/studies/operating-systems/real-time-scheduling-ladder/"
 {% raw %}
 사용 개념: [실시간 스케줄링](/Hongs_Blog/studies/operating-systems/real-time-scheduling/)의 EDF(마감이 가장 이른 작업 먼저)와 RMS 이용률 한계 $$n(2^{1/n} - 1)$$.
 
-이 방법을 떠올리는 신호는 작업마다 주기(또는 도착 시각)·실행 시간·마감이 주어지고 "마감을 지키는가"를 묻는 문제다. 풀이는 같은 하위목표로 나뉜다. 사용률 합 구하기, 도착할 때마다 준비된 작업의 마감 비교하기, 시간 막대 그리기, 마감과 끝난 시각 비교하기다[^s1].
+이 방법을 떠올리는 신호는 작업마다 주기(또는 도착 시각)·실행 시간·마감이 주어지고 "마감을 지키는가"를 묻는 문제다. 풀이는 같은 하위목표로 나뉜다. 사용률 합 구하기, 도착할 때마다 준비된 작업의 마감 비교하기, 시간 막대 그리기, 마감과 끝난 시각 비교하기다.
 
 ## 문제 1 · 완전한 풀이
 
@@ -89,7 +89,4 @@ B1은 50까지 25 중 20만 실행해 마감을 놓친다. A가 늘 B를 선점�
 <div class="callout-title" markdown="span">검증: 문제 1·2는 그림 10.6과 같은 시뮬레이터로, 문제 3의 사용률과 한계값은 계산으로 확인 — [49_real-time-scheduling_impl.py](/Hongs_Blog/studies/operating-systems/code/49_real-time-scheduling_impl/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1·2는 원본 그림 10.6의 예다. 문제 3·4는 원본 범위 밖의 변형 문제다.
 {% endraw %}

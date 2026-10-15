@@ -21,7 +21,7 @@ permalink: "/studies/data-and-information/code/12_random-process_verify/"
 
 ```python
 # 확률 과정 문서의 주장을 확인한다. 실행: python3 12_random-process_verify.py (표준 라이브러리만)
-# 주장 1: 슬라이드 예의 값 읽기 X_3(w1) = 130, X_2(w2) = 300, X_1(w2) = 200
+# 주장 1: 문서 예의 값 읽기 X_3(w1) = 130, X_2(w2) = 300, X_1(w2) = 200
 # 주장 2: 두 과정 A(매번 독립인 동전), B(어제 값을 0.9 확률로 그대로 따르는 연쇄)는
 #         한 시점만 보면 둘 다 1이 절반이지만, 같은 값이 이어지는 길이의 평균은 2와 10이다.
 # 주장 3: 길이 n인 0/1 수열은 2^n가지다.
@@ -81,7 +81,7 @@ def main():
     assert abs(sum(after1) / len(after1) - 0.5) < 0.01
     print("[OK] 예시: 1 다음에 1이 올 비율 0.9(연쇄)와 0.5(독립)")
 
-    # 원본 오류 의심·카드 C3: 어제에만 달려 있는 연쇄 B에서 오늘은 그저께와 독립이 아니다
+    # 본문의 주의 문단·카드 C3: 어제에만 달려 있는 연쇄 B에서 오늘은 그저께와 독립이 아니다
     stay = F(9, 10)
     p_two_steps = stay * stay + (1 - stay) * (1 - stay)      # P(X3 = 1 | X1 = 1)
     assert p_two_steps == F(41, 50) and p_two_steps != F(1, 2)

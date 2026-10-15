@@ -23,24 +23,23 @@ permalink: "/studies/database-design/code/30_min-max-notation_verify/"
 """(min, max) 표기 검증.
 
 문서: 30.(min, max) 표기 (예시, COMPANY 표, 예와 아닌 예, 카드 C1~C5), 29.ER 다이어그램 표기법(COMPANY 그림)
-출처: 데이터베이스 설계 5주차 슬라이드 p.25~31, p.34, p.36, 풀이 p.3, 4주차 4-2 p.5,
-      6주차 6-1 풀이 p.32~35, COMPANY 상태 6-2 p.21
+출처: Elmasri & Navathe, Fundamentals of Database Systems 3장의 COMPANY ER 그림 두 벌(1/N 표기, (min, max) 표기)과 COMPANY 상태
 주장:
-  1. COMPANY 여섯 관계의 (min, max)(5주차 p.34)에서 1/N 표기의 숫자와 참여(전체/부분)를 뽑으면
-     4-2 p.5 그림의 숫자·겹선과 모두 같다. 숫자는 서로 반대쪽에 놓인다.
-  2. 같은 값이 5주차 p.25~30의 글과도 같다. 단 p.28(SUPERVISION)의 참여 설명만 다르다(원본 오류 의심).
-  3. COMPANY 상태(6-2 p.21)는 (min, max) 12개 가운데 11개를 지킨다.
+  1. COMPANY 여섯 관계의 (min, max)에서 1/N 표기의 숫자와 참여(전체/부분)를 뽑으면
+     1/N 표기로 그린 COMPANY 그림의 숫자·겹선과 모두 같다. 숫자는 서로 반대쪽에 놓인다.
+  2. 같은 값이 관계마다 글로 적은 설명과도 같다. 단 SUPERVISION의 참여 설명만 다르다(글에 CONTROLS의 문장이 잘못 붙어 있다).
+  3. COMPANY 상태는 (min, max) 12개 가운데 11개를 지킨다.
      WORKS_FOR의 부서 쪽 (4, N)만 어긴다: 4번 부서 3명, 1번 부서 1명.
-  4. 연습 3(5주차 p.36)의 답 (2,4), (1,4), (0,5), (1,N)에 맞는 자료와 어기는 자료.
+  4. TEACHES·USES 연습의 답 (2,4), (1,4), (0,5), (1,N)에 맞는 자료와 어기는 자료.
   5. 비율·참여 -> (min, max) -> 비율·참여로 돌아오면 그대로지만,
      (2,4) -> 비율·참여 -> (min, max)는 (1,N)이 된다. (min, max)가 더 많은 것을 적는다.
-  6. CONF_REVIEW(6-1 풀이 p.32~35)의 세 관계.
+  6. CONF_REVIEW(31.ER 다이어그램 설계 연습의 문제 3)의 세 관계.
 """
 from collections import Counter
 
 N = float("inf")   # 위 한계가 없다
 
-# 관계 타입 -> [(개체 타입, 역할, (min, max)), (개체 타입, 역할, (min, max))]   (5주차 p.34)
+# 관계 타입 -> [(개체 타입, 역할, (min, max)), (개체 타입, 역할, (min, max))]   ((min, max)로 그린 COMPANY 그림)
 COMPANY = {
     "WORKS_FOR": [("EMPLOYEE", "Employee", (1, 1)), ("DEPARTMENT", "Department", (4, N))],
     "MANAGES": [("EMPLOYEE", "Manager", (0, 1)), ("DEPARTMENT", "Department Managed", (1, 1))],
@@ -50,7 +49,7 @@ COMPANY = {
     "DEPENDENTS_OF": [("EMPLOYEE", "Employee", (0, N)), ("DEPENDENT", "Dependent", (1, 1))],
 }
 
-# 4-2 p.5 그림: 각 쪽에 적힌 숫자(1, N, M)와 선(겹선 = 전체 참여). 순서는 위와 같다.
+# 1/N 표기로 그린 COMPANY 그림: 각 쪽에 적힌 숫자(1, N, M)와 선(겹선 = 전체 참여). 순서는 위와 같다.
 FIGURE_1N = {
     "WORKS_FOR": [("N", "전체"), ("1", "전체")],
     "MANAGES": [("1", "부분"), ("1", "전체")],
@@ -60,14 +59,14 @@ FIGURE_1N = {
     "DEPENDENTS_OF": [("1", "부분"), ("N", "전체")],
 }
 
-# 5주차 p.25~30의 글: (비율, [첫째 쪽 참여, 둘째 쪽 참여]). p.28은 적힌 그대로 옮기면 CONTROLS의 문장이다.
+# 관계마다 글로 적은 설명: (비율, [첫째 쪽 참여, 둘째 쪽 참여]). SUPERVISION의 글은 CONTROLS의 문장이 잘못 붙은 것이다.
 TEXT = {
-    "MANAGES": ("1:1", ["부분", "전체"]),           # p.25
-    "WORKS_FOR": ("N:1", ["전체", "전체"]),         # p.26: 1쪽 DEPARTMENT, N쪽 EMPLOYEE
-    "CONTROLS": ("1:N", ["부분", "전체"]),          # p.27
-    "SUPERVISION": ("1:N", None),                    # p.28: "PROJECT ... total, DEPARTMENT ... partial"
-    "WORKS_ON": ("M:N", ["전체", "전체"]),          # p.29
-    "DEPENDENTS_OF": ("1:N", ["부분", "전체"]),     # p.30
+    "MANAGES": ("1:1", ["부분", "전체"]),
+    "WORKS_FOR": ("N:1", ["전체", "전체"]),         # 1쪽 DEPARTMENT, N쪽 EMPLOYEE
+    "CONTROLS": ("1:N", ["부분", "전체"]),
+    "SUPERVISION": ("1:N", None),                    # 글: "PROJECT ... total, DEPARTMENT ... partial"
+    "WORKS_ON": ("M:N", ["전체", "전체"]),
+    "DEPENDENTS_OF": ("1:N", ["부분", "전체"]),
 }
 
 
@@ -107,7 +106,7 @@ def violations(schema, entities, rels):
     return out
 
 
-# COMPANY 상태 (6-2 p.21)
+# COMPANY 상태
 EMP = [("123456789", "333445555", 5), ("333445555", "888665555", 5), ("999887777", "987654321", 4),
        ("987654321", "888665555", 4), ("666884444", "333445555", 5), ("453453453", "333445555", 5),
        ("987987987", "987654321", 4), ("888665555", None, 1)]            # (Ssn, Super_ssn, Dno)
@@ -127,13 +126,13 @@ def main():
         got = to_1n(roles)
         want = [("N" if c == "M" else c, p) for c, p in FIGURE_1N[rel]]
         assert got == want, (rel, got, want)
-    print("[OK] 여섯 관계의 (min, max)에서 뽑은 1/N 숫자와 겹선이 4-2 p.5 그림과 모두 같다")
+    print("[OK] 여섯 관계의 (min, max)에서 뽑은 1/N 숫자와 겹선이 1/N 표기의 COMPANY 그림과 모두 같다")
 
     wf = COMPANY["WORKS_FOR"]
     assert wf[0][2] == (1, 1) and to_1n(wf)[0][0] == "N" and to_1n(wf)[1][0] == "1"
     print("[OK] WORKS_FOR: (1,1)은 EMPLOYEE 옆, 1/N 표기의 1은 DEPARTMENT 옆 -> 숫자가 반대쪽에 놓인다")
 
-    # 2. 글(p.25~30)과 비교
+    # 2. 관계마다 글로 적은 설명과 비교
     mismatch = []
     for rel, (text_ratio, text_part) in TEXT.items():
         roles = COMPANY[rel]
@@ -161,9 +160,9 @@ def main():
     assert Counter(dno for _, _, dno in EMP) == {5: 4, 4: 3, 1: 1}
     relaxed = dict(COMPANY, WORKS_FOR=[COMPANY["WORKS_FOR"][0], ("DEPARTMENT", "Department", (1, N))])
     assert violations(relaxed, entities, rels) == []
-    print("[OK] 6-2 p.21 상태: (4,N)만 어긴다(4번 부서 3명, 1번 부서 1명). (1,N)으로 바꾸면 12개 모두 지킨다")
+    print("[OK] COMPANY 상태: (4,N)만 어긴다(4번 부서 3명, 1번 부서 1명). (1,N)으로 바꾸면 12개 모두 지킨다")
 
-    # 4. 연습 3 (5주차 p.36, 풀이 p.3)
+    # 4. TEACHES·USES 연습 (문서 예시의 (2,4))
     ex3 = {"TEACHES": [("INSTRUCTOR", "", (2, 4)), ("COURSE", "", (1, 4))],
            "USES": [("COURSE", "", (0, 5)), ("TEXT", "", (1, N))]}
     ents = {"INSTRUCTOR": ["i1", "i2"], "COURSE": ["c1", "c2", "c3", "c4"], "TEXT": ["t1"]}
@@ -179,7 +178,7 @@ def main():
     assert violations(ex3, unused_text, good) == [("USES", "", "t2", 0)]
     assert to_1n(ex3["TEACHES"]) == [("N", "전체"), ("N", "전체")]
     assert to_1n(ex3["USES"]) == [("N", "부분"), ("N", "전체")]
-    print("[OK] 연습 3: 맞는 자료 1개, 어기는 자료 3개(1과목만 맡은 교수, 5과목 맡은 교수, 안 쓰이는 교재)")
+    print("[OK] TEACHES·USES 연습: 맞는 자료 1개, 어기는 자료 3개(1과목만 맡은 교수, 5과목 맡은 교수, 안 쓰이는 교재)")
 
     # 5. 오가기
     for rel, sides in FIGURE_1N.items():
@@ -194,7 +193,7 @@ def main():
     assert from_1n("N", "1", "전체") == (1, 1) != (4, N)
     print("[OK] 1/N 표기 -> (min, max) -> 1/N 표기는 그대로. (2,4)는 돌아오면 (1,N)이 된다")
 
-    # 6. CONF_REVIEW (6-1 풀이 p.32~35)
+    # 6. CONF_REVIEW (31.ER 다이어그램 설계 연습의 문제 3)
     conf = {"SUBMITS": [("AUTHOR", "", (1, N)), ("PAPER", "", (1, N))],
             "IS_CONTACT": [("AUTHOR", "", (0, N)), ("PAPER", "", (1, 1))],
             "REVIEWS": [("REVIEWER", "", (1, N)), ("PAPER", "", (2, 4))]}

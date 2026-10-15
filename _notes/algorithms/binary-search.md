@@ -197,14 +197,14 @@ a[mid] < x이면 mid는 답이 될 수 없다. 그래서 mid까지 버린다. �
 
 ## 과목별 관점
 
-**데이터베이스 설계 (2-2학기).** 이분 탐색이 더 큰 자료구조의 부품으로 쓰이는 예가 B-트리다. B-트리의 노드 하나에는 정렬된 키가 여러 개 들어 있다. 많아야 $$2t - 1$$개이고, $$t$$는 그 트리에서 정해 둔 수(최소 차수)다. 검색은 노드마다 "찾는 키 이상인 첫 키의 자리"를 구해, 그 키가 찾는 키가 아니면 그 자리의 자식으로 내려간다. 이 자리가 위 정의의 lower bound 그대로다[^b1].
+**데이터베이스 설계 (2-2학기).** 이분 탐색이 더 큰 자료구조의 부품으로 쓰이는 예가 B-트리다. B-트리의 노드 하나에는 정렬된 키가 여러 개 들어 있다. 많아야 $$2t - 1$$개이고, $$t$$는 그 트리에서 정해 둔 수(최소 차수)다. 검색은 노드마다 "찾는 키 이상인 첫 키의 자리"를 구해, 그 키가 찾는 키가 아니면 그 자리의 자식으로 내려간다. 이 자리가 위 정의의 lower bound 그대로다.
 
-노드 안을 앞에서부터 하나씩 훑으면 노드 하나에 $$O(t)$$가 든다. 지나는 노드가 $$O(\log_t n)$$개라 검색 전체는 $$O(t \log_t n)$$이다. 여기서 $$n$$은 트리에 담긴 키의 수다. 노드 안에서 이분 탐색을 쓰면 노드 하나에 $$O(\lg t)$$만 든다[^b2].
+노드 안을 앞에서부터 하나씩 훑으면 노드 하나에 $$O(t)$$가 든다. 지나는 노드가 $$O(\log_t n)$$개라 검색 전체는 $$O(t \log_t n)$$이다. 여기서 $$n$$은 트리에 담긴 키의 수다. 노드 안에서 이분 탐색을 쓰면 노드 하나에 $$O(\lg t)$$만 든다.
 
 $$O(\lg t \cdot \log_t n) = O\!\left(\lg t \cdot \frac{\lg n}{\lg t}\right) = O(\lg n)$$
 
 
-$$\lg t$$가 약분되어 $$t$$를 얼마로 잡든 $$O(\lg n)$$이다[^b2]. 줄어드는 것은 주기억장치 안에서 견주는 횟수다. 디스크에서 읽어 오는 노드의 수는 그대로다[^bs1]. 절차와 실험값은 [B-트리 검색](/Hongs_Blog/studies/database-design/b-tree-search/)에 있다.
+$$\lg t$$가 약분되어 $$t$$를 얼마로 잡든 $$O(\lg n)$$이다. 줄어드는 것은 주기억장치 안에서 견주는 횟수다. 디스크에서 읽어 오는 노드의 수는 그대로다[^bs1]. 절차와 실험값은 [B-트리 검색](/Hongs_Blog/studies/database-design/b-tree-search/)에 있다.
 
 ## 확인 문제
 
@@ -260,9 +260,7 @@ def f(a, x):
 
 [^1]: 루프 불변식의 세 단계(초기화·유지·종료)는 Cormen·Leiserson·Rivest·Stein, *Introduction to Algorithms* 3판, 2.1절의 방식을 따랐다. 이분 탐색 자체는 Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 3.3 "Binary search".
 [^2]: Python 3 표준 라이브러리 문서, "bisect — Array bisection algorithm"의 `bisect_left`, `bisect_right`.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_binary-search_plot.py](/Hongs_Blog/studies/algorithms/code/20_binary-search_plot/)로 그렸고, n = 1 ~ 2,048에서 답이 될 수 있는 모든 자리를 넣어 본 가장 많은 반복 횟수가 ⌈log₂(n + 1)⌉과 같다는 것, 예시의 8칸에서 3번, 100만 개에서 20번이라는 것을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '증명' 절의 루프 불변식과 증명 4단계(종료)를 배열 구간 그림으로 옮겼다.
-[^b1]: 데이터베이스 설계 3회 강의 자료 「3-2_B-tree-insertion」, p.12~13 (B-Tree-Search: "Find the smallest index i such that k ≤ x.key_i")
-[^b2]: 같은 자료, p.15~16 (검색 시간 $$O(t \log_t n)$$, 연습 1: 노드 안에서 이분 탐색을 쓰면). 답은 데이터베이스 설계 4회 강의 자료 「4_B-tree-solutions」, p.1 ($$O(\log_2 t \cdot \log_t n) = O(\log_2 n)$$)
-[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 디스크 읽기 횟수는 그대로라는 설명과 카드 C5는 슬라이드에 없다. 키 1,023개짜리 노드에서 가장 많이 견준 횟수(이분 탐색 10번, 하나씩 1,023번)는 [13_b-tree-search_impl.py](/Hongs_Blog/studies/database-design/code/13_b-tree-search_impl/)로 확인했다.
+[^s1]: [20_binary-search_plot.py](/Hongs_Blog/studies/algorithms/code/20_binary-search_plot/)로 그렸고, n = 1 ~ 2,048에서 답이 될 수 있는 모든 자리를 넣어 본 가장 많은 반복 횟수가 ⌈log₂(n + 1)⌉과 같다는 것, 예시의 8칸에서 3번, 100만 개에서 20번이라는 것을 같은 코드로 확인했다.
+[^s2]: '증명' 절의 루프 불변식과 증명 4단계(종료)를 배열 구간 그림으로 옮겼다.
+[^bs1]: 키 1,023개짜리 노드에서 가장 많이 견준 횟수(이분 탐색 10번, 하나씩 1,023번)는 [13_b-tree-search_impl.py](/Hongs_Blog/studies/database-design/code/13_b-tree-search_impl/)로 확인했다.
 {% endraw %}

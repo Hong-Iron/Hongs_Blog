@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Rods", "Cones", "간상세포", "추상세포", "간상체", "추상체", "시세포", "photoreceptor", "야간 시각", "색 시각", "L 추상체", "M 추상체", "S 추상체", "시세포의 분포"]
 description: "망막의 시세포는 두 팀이다. 간상체는 어두운 곳에서 일하는 고감도 흑백 카메라, 추상체는 밝은 곳에서 일하는 컬러 카메라다. 간상체가 훨씬 많고 약한 빛에 민감하지만 색을 구별하지 못한다. 추상체는 색을 보지만 빛이 충분해야 일한다. 추상체는 시선의 중심(중심와)에 몰려 있고 간상…"
@@ -33,7 +33,7 @@ permalink: "/studies/human-interface-media/rods-and-cones/"
 
 ## 예시로 보기
 
-밤하늘의 희미한 별은 똑바로 보면 사라지고 살짝 옆을 보면 나타난다[^s1]. 분포 그래프가 이유를 보여 준다[^1].
+밤하늘의 희미한 별은 똑바로 보면 사라지고 살짝 옆을 보면 나타난다[^s1]. 망막의 어디에 어떤 시세포가 얼마나 있는지 보면 이유를 알 수 있다.
 
 | 시선에서의 각도 | 추상체 (mm²당) | 간상체 (mm²당) |
 |---|---|---|
@@ -49,15 +49,15 @@ permalink: "/studies/human-interface-media/rods-and-cones/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **간상체**(rods): 망막에 약 1억 2천만 개. 약한 빛에 추상체보다 약 1,000배 민감하다. 어두울 때 보는 일(야간 시각)을 맡는다[^2].
-- **추상체**(cones): 망막에 약 600만~700만 개. 빛의 파장에 따라 다르게 반응한다. 색을 구별하는 일(색 시각)을 맡는다[^2].
+- **간상체**(rods): 망막에 약 1억 2천만 개. 약한 빛에 추상체보다 약 1,000배 민감하다. 어두울 때 보는 일(야간 시각)을 맡는다.
+- **추상체**(cones): 망막에 약 600만~700만 개. 빛의 파장에 따라 다르게 반응한다. 색을 구별하는 일(색 시각)을 맡는다.
 
 </div>
 
 
 간상체가 추상체보다 약 17~20배 많다. 시세포 가운데 추상체는 약 5%뿐이다.
 
-추상체는 가장 잘 반응하는 파장에 따라 세 종류다[^3].
+추상체는 가장 잘 반응하는 파장에 따라 세 종류다.
 
 | 종류 | 별명 | 가장 잘 반응하는 파장 | 추상체 중 비율 |
 |---|---|---|---|
@@ -92,7 +92,7 @@ permalink: "/studies/human-interface-media/rods-and-cones/"
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"L 추상체는 빨간빛만, M 추상체는 초록빛만 감지한다"</div>
 
-틀렸다. "Red cone", "Green cone"이라는 별명 때문에 색마다 전용 감지기가 있는 것처럼 들린다. 실제로 L과 M의 민감도 곡선은 크게 겹친다. 초록빛에도 L이 꽤 반응하고, L이 가장 잘 반응하는 파장(약 560~575 nm)은 빨강이 아니라 노랑-연두 쪽이다. 색은 어느 한 추상체가 켜지는 것이 아니라 세 추상체 반응의 비율로 정해진다. 확인 방법: 슬라이드 p.8의 민감도 그래프에서 Green과 Red 곡선이 대부분 겹친다.
+틀렸다. "Red cone", "Green cone"이라는 별명 때문에 색마다 전용 감지기가 있는 것처럼 들린다. 실제로 L과 M의 민감도 곡선은 크게 겹친다. 초록빛에도 L이 꽤 반응하고, L이 가장 잘 반응하는 파장(약 560~575 nm)은 빨강이 아니라 노랑-연두 쪽이다. 색은 어느 한 추상체가 켜지는 것이 아니라 세 추상체 반응의 비율로 정해진다. 확인 방법: [삼색 이론](/Hongs_Blog/studies/human-interface-media/trichromatic-theory/)의 민감도 곡선 그림에서 M과 L 곡선은 대부분 겹친다. 봉우리도 535 nm와 575 nm로 40 nm밖에 떨어져 있지 않다.
 
 </div>
 
@@ -120,12 +120,9 @@ permalink: "/studies/human-interface-media/rods-and-cones/"
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.7 (시세포의 분포). 표의 수치는 그래프에서 읽은 값이다.
-[^2]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.6 (Anatomy of Retina)
-[^3]: 휴먼 인터페이스 미디어 3회 강의 자료 「HIM_강의03_사람의시각」, p.8 (추상체). 슬라이드 제목의 "Cons"는 Cones의 오타로 보인다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 곁눈질로 희미한 별을 보는 예는 원본에 없다. 분포 그래프의 결과를 일상 사례로 보인 것이다.
-[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> HyperPhysics의 Color Vision·Rods and Cones 페이지가 64/32/2%와 S 봉우리 약 445 nm를 적는다. 실제 비율은 사람마다 크게 다르고, S 추상체는 연구에 따라 전체의 5~10%로 보고된다 [확인필요].
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 419/531/558 nm는 Dartnall, Bowmaker & Mollon(1983)의 사람 추상체 측정값으로 지각 교재에 널리 실린다. 슬라이드의 값(445/535/575 nm)과 다르며, 이 지식베이스의 설명용 계산에서는 슬라이드 값을 쓴다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 간상체가 추상체보다 많이 수렴한다는 것은 표준 지각 교재(예: Goldstein, *Sensation and Perception*)의 설명이다. 시신경 섬유 약 100만 개는 표준 해부학 값이다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 어두운 곳의 색 소실(간상체 시각)은 표준 설명이다.
+[^s1]: 분포 그래프의 결과를 일상 사례로 보인 것이다.
+[^s5]: HyperPhysics의 Color Vision·Rods and Cones 페이지가 64/32/2%와 S 봉우리 약 445 nm를 적는다. 실제 비율은 사람마다 크게 다르고, S 추상체는 연구에 따라 전체의 5~10%로 보고된다 [확인필요].
+[^s2]: 419/531/558 nm는 Dartnall, Bowmaker & Mollon(1983)의 사람 추상체 측정값으로 지각 교재에 널리 실린다.
+[^s3]: 간상체가 추상체보다 많이 수렴한다는 것은 표준 지각 교재(예: Goldstein, *Sensation and Perception*)의 설명이다. 시신경 섬유 약 100만 개는 표준 해부학 값이다.
+[^s4]: 어두운 곳의 색 소실(간상체 시각)은 표준 설명이다.
 {% endraw %}

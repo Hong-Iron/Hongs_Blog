@@ -85,7 +85,7 @@ error[E0382]: borrow of moved value: `s`
 | `send`가 기다리나 | 자리가 없어서 기다리는 일이 없다 | 칸이 차 있으면 빈 칸이 날 때까지 기다린다[^3] |
 | `n = 0`일 때 | — | 랑데부: 받는 쪽이 꺼낼 때까지 `send`가 돌아오지 않는다[^3] |
 
-운영체제 수업의 분류로 보면 `channel()`은 "논블로킹 send, 블로킹 receive"이고, `sync_channel(0)`은 양쪽이 모두 기다리는 랑데부다. 보내는 쪽 여럿이 받는 쪽 하나에 보내는 모양은 다대일 메일박스, 곧 포트다([메시지 전달](/Hongs_Blog/studies/operating-systems/message-passing/)).
+운영체제 교재의 분류로 보면 `channel()`은 "논블로킹 send, 블로킹 receive"이고, `sync_channel(0)`은 양쪽이 모두 기다리는 랑데부다. 보내는 쪽 여럿이 받는 쪽 하나에 보내는 모양은 다대일 메일박스, 곧 포트다([메시지 전달](/Hongs_Blog/studies/operating-systems/message-passing/)).
 
 | 연산 | 하는 일 | 실패할 때 |
 |---|---|---|
@@ -143,7 +143,7 @@ stateDiagram-v2
 
 `sync_channel(2)`에 `try_send`를 세 번 하면 두 번은 들어가고 세 번째는 `Err(Full(3))`이다. 하나를 `recv`한 뒤에는 다시 들어간다. `sync_channel(0)`은 칸이 없어서, 받으려고 기다리는 스레드가 없으면 `try_send`가 늘 `Full`이다[^5].
 
-칸 수를 정하면 받는 쪽이 느릴 때 보내는 쪽이 그 속도에 맞춰 기다린다. 쌓이는 양은 `n`을 넘지 않는다. 운영체제 수업의 유한 버퍼([생산자-소비자 문제](/Hongs_Blog/studies/operating-systems/producer-consumer/))가 `sync_channel(n)` 한 줄이 된다. `Mutex`와 `Condvar`로 같은 버퍼를 직접 짜는 법은 [모니터 ↔ Mutex](/Hongs_Blog/studies/rust/monitor-vs-mutex/)에 있다. 무제한 `channel()`에는 이 브레이크가 없다. 브레이크가 없을 때 큐가 얼마나 커지는지는 [백프레셔와 큐 제한](/Hongs_Blog/studies/rust/backpressure/)에서 잰다.
+칸 수를 정하면 받는 쪽이 느릴 때 보내는 쪽이 그 속도에 맞춰 기다린다. 쌓이는 양은 `n`을 넘지 않는다. 운영체제에서 다루는 유한 버퍼([생산자-소비자 문제](/Hongs_Blog/studies/operating-systems/producer-consumer/))가 `sync_channel(n)` 한 줄이 된다. `Mutex`와 `Condvar`로 같은 버퍼를 직접 짜는 법은 [모니터 ↔ Mutex](/Hongs_Blog/studies/rust/monitor-vs-mutex/)에 있다. 무제한 `channel()`에는 이 브레이크가 없다. 브레이크가 없을 때 큐가 얼마나 커지는지는 [백프레셔와 큐 제한](/Hongs_Blog/studies/rust/backpressure/)에서 잰다.
 
 ## fan-out: 일꾼 여럿에게 나눠 주기
 

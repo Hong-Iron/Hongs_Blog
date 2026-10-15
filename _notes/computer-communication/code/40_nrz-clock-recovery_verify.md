@@ -22,8 +22,7 @@ permalink: "/studies/computer-communication/code/40_nrz-clock-recovery_verify/"
 ```python
 """NRZ 수신과 클럭 어긋남 검증.
 
-문서: 40.NRZ와 클럭 복구 (예시, 원본 오류 의심, 카드 C3·C4)
-출처: 2장-1 슬라이드 35~37
+문서: 40.NRZ와 클럭 복구 (예시, 증명, 카드 C3·C4·C5)
 모형:
   - 보내는 쪽은 비트 하나를 폭 1 동안 보낸다 (NRZ: 1 높음, 0 낮음).
   - 받는 쪽은 자기 클럭으로 비트 폭을 w라 믿고, 칸 k의 한가운데 (k + 1/2)·w + phase 에서 높이를 읽는다.
@@ -35,14 +34,14 @@ permalink: "/studies/computer-communication/code/40_nrz-clock-recovery_verify/"
      (w < 1이면 다음 읽기 위치가 1보다 적게 움직이므로 보낸 비트 번호가 0 또는 1만 는다.)
   3. 같은 높이가 오래 이어질수록(0이나 1이 길게 이어질수록) 받는 쪽은 어긋남을 알아챌 단서가 없다:
      높이가 바뀌는 순간마다 받는 쪽이 칸 경계를 다시 맞추면 어긋남이 쌓이지 않는다.
-  4. 슬라이드 36의 '빠른 클럭' 수신열 0010111110100010은 1이 4개에서 5개로 늘고,
+  4. 틀리기 쉬운 수신열 0010111110100010은 1이 4개에서 5개로 늘고,
      0이 4개에서 3개로 줄었다. 클럭이 일정하게 빠르면(w < 1) 비트가 줄 수 없으므로
-     이 열은 어떤 일정한 w < 1, phase로도 나오지 않는다. (뜻 '비트 오류'는 맞다.)
+     이 열은 어떤 일정한 w < 1, phase로도 나오지 않는다. (비트 오류가 난다는 결론 자체는 맞다.)
 """
 from fractions import Fraction as F
 
 SENT = "0010111101000010"
-SLIDE_FAST = "0010111110100010"
+WRONG_FAST = "0010111110100010"
 
 
 def receive(sent, w, phase=F(0), n=None):
@@ -103,22 +102,22 @@ def main():
             assert all(b - a in (0, 1) for a, b in zip(idx, idx[1:]))
     print("[OK] w < 1이면 읽는 비트 번호는 0 또는 1씩만 는다 (w = 0.01~0.99, 세 가지 phase)")
 
-    # 주장 4: 슬라이드 수신열의 덩어리 길이 비교
+    # 주장 4: 틀리기 쉬운 수신열의 덩어리 길이 비교
     print("     보낸 열 덩어리 ", runs(SENT))
-    print("     슬라이드 수신열", runs(SLIDE_FAST))
-    assert runs(SENT)[3] == ("1", 4) and runs(SLIDE_FAST)[3] == ("1", 5)
-    assert runs(SENT)[6] == ("0", 4) and runs(SLIDE_FAST)[6] == ("0", 3)
+    print("     틀리기 쉬운 열", runs(WRONG_FAST))
+    assert runs(SENT)[3] == ("1", 4) and runs(WRONG_FAST)[3] == ("1", 5)
+    assert runs(SENT)[6] == ("0", 4) and runs(WRONG_FAST)[6] == ("0", 3)
     found = [(n, d, p) for d in range(2, 61) for n in range(1, d)
              for p in range(0, 20)
-             if receive(SENT, F(n, d), F(p, 40)) == SLIDE_FAST]
+             if receive(SENT, F(n, d), F(p, 40)) == WRONG_FAST]
     assert not found
-    print("[OK] 슬라이드 수신열은 일정하게 빠른 클럭(w = n/d < 1, d <= 60, phase 0~0.475)으로 나오지 않는다")
+    print("[OK] 틀리기 쉬운 열 0010111110100010은 일정하게 빠른 클럭(w = n/d < 1, d <= 60, phase 0~0.475)으로 나오지 않는다")
 
     # 주장 3: 다시 맞추기를 하면 w가 조금 틀려도 맞게 읽는다 (덩어리가 짧을 때)
     for w in (F(9, 10), F(19, 20), F(21, 20), F(11, 10)):
         assert receive_with_resync(SENT, w) == SENT
     assert receive_with_resync("1" + "0" * 20 + "1", F(9, 10)) != "1" + "0" * 20 + "1"
-    print("[OK] 높이가 바뀔 때마다 다시 맞추면 w = 0.9~1.1에서 슬라이드 열을 그대로 읽는다")
+    print("[OK] 높이가 바뀔 때마다 다시 맞추면 w = 0.9~1.1에서 보낸 열을 그대로 읽는다")
     print("     같은 높이가 20비트 이어지면 w = 0.9에서 틀린다 (단서가 없는 구간이 길다)")
 
     # 카드 C3: 받는 쪽 클럭이 1% 빠르면 몇 비트 뒤에 처음 같은 비트를 두 번 읽나

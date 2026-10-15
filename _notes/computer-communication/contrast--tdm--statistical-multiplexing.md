@@ -10,10 +10,10 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["TDM vs 통계적 다중화", "synchronous TDM vs statistical TDM", "동기식 vs 비동기식 시분할"]
-description: "둘 다 시간을 나눠 링크를 쓴다. 슬라이드도 통계적 다중화를 \"시분할 방법의 일종\"이라 부른다. 그래서 헷갈린다. 가르는 기준은 \"칸을 미리 정해 두는가\"다."
+description: "둘 다 시간을 나눠 링크를 쓴다. 통계적 다중화를 \"시분할 방법의 일종\"이라 부르기도 한다. 그래서 헷갈린다. 가르는 기준은 \"칸을 미리 정해 두는가\"다."
 prev_url: "/studies/computer-communication/statistical-multiplexing/"
 prev_title: "통계적 다중화"
 next_url: "/studies/computer-communication/contrast--packet-switching--statistical-multiplexing/"
@@ -24,7 +24,7 @@ code_count: 0
 permalink: "/studies/computer-communication/contrast--tdm--statistical-multiplexing/"
 ---
 {% raw %}
-둘 다 시간을 나눠 링크를 쓴다. 슬라이드도 통계적 다중화를 "시분할 방법의 일종"이라 부른다[^1]. 그래서 헷갈린다. 가르는 기준은 "칸을 미리 정해 두는가"다.
+둘 다 시간을 나눠 링크를 쓴다. 통계적 다중화를 "시분할 방법의 일종"이라 부르기도 한다. 그래서 헷갈린다. 가르는 기준은 "칸을 미리 정해 두는가"다.
 
 ## 어느 쪽일까
 
@@ -48,17 +48,17 @@ permalink: "/studies/computer-communication/contrast--tdm--statistical-multiplex
 
 | 기준 | 동기식 시분할 다중화 | 통계적 다중화 |
 |---|---|---|
-| 칸 배정 | 고정: 칸 $$j$$는 입력 $$(j \bmod N) + 1$$($$j$$를 $$N$$으로 나눈 나머지 + 1)[^2] | 요구에 따라 그때그때(동적)[^1] |
-| DEMUX 키 | 칸 위치 (따로 보내지 않음) | 조각마다 붙인 주소[^1] |
-| 오버헤드 | 동기 맞추기 비트 정도[^s1] | 조각마다 주소[^1] |
-| 쉬는 입력의 몫 | 빈 칸으로 낭비 (Wasted Bandwidth)[^1] | 다른 입력이 씀 (Extra Bandwidth)[^1] |
+| 칸 배정 | 고정: 칸 $$j$$는 입력 $$(j \bmod N) + 1$$($$j$$를 $$N$$으로 나눈 나머지 + 1) | 요구에 따라 그때그때(동적) |
+| DEMUX 키 | 칸 위치 (따로 보내지 않음) | 조각마다 붙인 주소 |
+| 오버헤드 | 동기 맞추기 비트 정도[^s1] | 조각마다 주소 |
+| 쉬는 입력의 몫 | 빈 칸으로 낭비 (Wasted Bandwidth) | 다른 입력이 씀 (Extra Bandwidth) |
 | 입력이 한꺼번에 몰리면 | 영향 없음. 각자 자기 칸만 씀 | 버퍼에서 기다림, 넘치면 손실[^s1] |
 | 필요한 링크 용량 | 입력별 최대 전송률의 합 | 평균에 가까운 값에 여유를 더한 값[^s1] |
-| 서비스 품질(QoS) | 좋다. 데이터가 스트림으로 일정하게 흐른다[^3] | 몰리면 대기와 손실이 생긴다 |
-| 망 운영자의 손익 | 버스티한 컴퓨터 통신에서는 링크가 노는 시간이 많아 손해다[^3] | 쉬는 몫을 다른 입력이 써서 이득이다 |
+| 서비스 품질(QoS) | 좋다. 데이터가 스트림으로 일정하게 흐른다 | 몰리면 대기와 손실이 생긴다 |
+| 망 운영자의 손익 | 버스티한 컴퓨터 통신에서는 링크가 노는 시간이 많아 손해다 | 쉬는 몫을 다른 입력이 써서 이득이다 |
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 그림(A~D, 2주기)을 코드로 재현해 동기식 8칸 중 빈 칸 4개, 통계적 A1 B1 \| B2 C2 확인 — [15_statistical-multiplexing_verify.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_verify/)</div>
+<div class="callout-title" markdown="span">검증: 사용자 A~D, 2주기 예를 코드로 재현해 동기식 8칸 중 빈 칸 4개, 통계적 A1 B1 \| B2 C2 확인 — [15_statistical-multiplexing_verify.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_verify/)</div>
 
 </div>
 
@@ -72,8 +72,5 @@ permalink: "/studies/computer-communication/contrast--tdm--statistical-multiplex
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "시분할 다중화", 동기식 시분할 다중화
-[^3]: 컴퓨터 통신 2회 필기 「2주차」, 10행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 입력 수 제한, 동기 비트, 몰릴 때의 동작, 필요한 링크 용량의 비교는 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 내용이다.
+[^s1]: Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 내용이다.
 {% endraw %}

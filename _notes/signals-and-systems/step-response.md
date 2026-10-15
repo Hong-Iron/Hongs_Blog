@@ -38,14 +38,14 @@ permalink: "/studies/signals-and-systems/step-response/"
 
 ## 정의
 
-계단 응답은 $$s[n] = u[n] * h[n]$$, $$s(t) = u(t) * h(t)$$다[^1].
+계단 응답은 $$s[n] = u[n] * h[n]$$, $$s(t) = u(t) * h(t)$$다.
 
 | | 계단 응답 ← 임펄스 응답 | 임펄스 응답 ← 계단 응답 |
 |---|---|---|
 | 이산 시간 | $$s[n] = \sum_{k=-\infty}^{n}h[k]$$ | $$h[n] = s[n] - s[n-1]$$ |
 | 연속 시간 | $$s(t) = \int_{-\infty}^{t}h(\tau)d\tau$$ | $$h(t) = \dfrac{ds(t)}{dt}$$ |
 
-$$s[n] = h * u = \sum_k h[k]u[n-k]$$에서 $$u[n-k]$$는 $$k \le n$$일 때만 1이므로 첫 식이 나온다. 이것은 예제 2.12 누산기의 출력 식과 같다[^1]. 둘째 식은 $$s[n]$$에서 $$s[n-1]$$을 빼면 마지막 항 $$h[n]$$만 남는다는 뜻이다.
+$$s[n] = h * u = \sum_k h[k]u[n-k]$$에서 $$u[n-k]$$는 $$k \le n$$일 때만 1이므로 첫 식이 나온다. 이것은 예제 2.12 누산기의 출력 식과 같다. 둘째 식은 $$s[n]$$에서 $$s[n-1]$$을 빼면 마지막 항 $$h[n]$$만 남는다는 뜻이다.
 
 $$\begin{aligned} s[n] &= \cdots + h[n-1] + h[n] \\ -\;s[n-1] &= \cdots + h[n-1] \\ \hline h[n] &= s[n] - s[n-1] \end{aligned}$$
 
@@ -92,7 +92,6 @@ $$h(t) = e^{-2t}u(t)$$이면 $$s(t) = \int_0^t e^{-2\tau}d\tau = \frac12(1 - e^{
 </details>
 
 
-[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.19~20
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 누산기 예, 연속 시간 예, 제어 공학 활용, 확인 문제는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [22_step-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^{0.5}h = s(0.5) = \frac12(1 - e^{-1})$$, $$s'(0.5) = h(0.5) = e^{-1}$$.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [22_step-response_plot.py](/Hongs_Blog/studies/signals-and-systems/code/22_step-response_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^{0.5}h = s(0.5) = \frac12(1 - e^{-1})$$, $$s'(0.5) = h(0.5) = e^{-1}$$.
 {% endraw %}

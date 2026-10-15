@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Code Generation for Function Calls", "함수 호출 코드 생성", "호출 시퀀스", "Calling Sequence", "반환 시퀀스", "Return Sequence", "프롤로그", "Prologue", "에필로그", "Epilogue", "jr", "$ra"]
 description: "남의 작업실을 빌려 쓸 때는 들어가기 전에 내 짐을 표시해 두고, 쓸 재료를 올려놓고, 끝나면 모두 치워서 처음 모습으로 돌려놓아야 한다. 함수를 부르는 코드도 그렇다. 부르기 전에 스택에 돌려받을 값의 칸, 넘겨줄 값, 부른 쪽 자리의 위치, 돌아올 곳, 불린 함수가 쓸 칸을 차…"
@@ -36,7 +36,7 @@ permalink: "/studies/compilers/codegen-function-call/"
 
 [단순 연산과 분기의 코드 생성](/Hongs_Blog/studies/compilers/codegen-simple-operations/)에서 옮긴 줄들은 지금 도는 함수의 레코드 안에서만 일했다. 함수를 부르는 줄은 다르다. [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)를 새로 하나 쌓아야 하고, 끝나면 걷어야 한다. 레코드를 "쌓는다"는 말을 명령으로 풀면 무엇이 되는지가 이 문서의 내용이다.
 
-슬라이드의 3주소 코드다. `main`이 `foo`를 인자 3으로 부르고 결과를 b에 받는다[^1].
+`main`이 `foo`를 인자 3으로 부르고 결과를 b에 받는 3주소 코드다.
 
 ```
 begin foo                begin main
@@ -65,14 +65,14 @@ end foo                    b = call foo, 1
 오른쪽 그림의 다섯 칸(1000~984번지)이 `foo`의 활성 레코드다. 칸의 순서는 [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)에서 정한 그대로다. 한 칸을 쌓는 방법은 늘 같다. `$sp`가 가리키는 빈칸에 값을 넣고, `$sp`에서 4를 뺀다. 스택이 낮은 번지 쪽으로 자라기 때문에 빼는 것이 "올리는" 것이다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 아래 명령들을 파이썬 흉내기로 돌려 걸음마다의 `$sp`(996, 992, 988, 984, 980)와 칸의 값, `foo` 안의 오프셋 4, 8, 12, 16, 20, 끝난 뒤 `$sp = 1000`, 반환값 4, `b = 4`를 확인. 같은 틀로 14회의 재귀 `fib`를 옮겨 $$n = 0 \sim 10$$에서 피보나치 수와 같고 `$sp`가 제자리로 돌아오며 스택이 $$40 \times \max(n, 1)$$바이트까지 자람. 카드 C2 — [53_codegen-function-call_impl.py](/Hongs_Blog/studies/compilers/code/53_codegen-function-call_impl/). 실제 MIPS 어셈블러로 돌린 것이 아니다.</div>
+<div class="callout-title" markdown="span">검증: 아래 명령들을 파이썬 흉내기로 돌려 걸음마다의 `$sp`(996, 992, 988, 984, 980)와 칸의 값, `foo` 안의 오프셋 4, 8, 12, 16, 20, 끝난 뒤 `$sp = 1000`, 반환값 4, `b = 4`를 확인. 같은 틀로 활성 레코드 문서의 재귀 `fib`를 옮겨 $$n = 0 \sim 10$$에서 피보나치 수와 같고 `$sp`가 제자리로 돌아오며 스택이 $$40 \times \max(n, 1)$$바이트까지 자람. 카드 C2 — [53_codegen-function-call_impl.py](/Hongs_Blog/studies/compilers/code/53_codegen-function-call_impl/). 실제 MIPS 어셈블러로 돌린 것이 아니다.</div>
 
 </div>
 
 
 ## 부를 때: 레코드를 쌓는다
 
-`main`에서 `foo`를 부를 때 `foo`의 레코드를 스택에 쌓는다[^2].
+`main`에서 `foo`를 부를 때 `foo`의 레코드를 스택에 쌓는다.
 
 | 걸음 | 하는 일 | 명령 | 뒤의 `$sp` | 새로 찬 칸 |
 |---|---|---|---|---|
@@ -83,15 +83,15 @@ end foo                    b = call foo, 1
 | 5 | 지역 변수 칸을 만든다 | `subi $sp $sp 4` | 980 | 984번지 (t0의 자리) |
 
 - 1걸음은 값을 넣지 않고 칸만 비워 둔다. `foo`가 끝날 때 채운다.
-- 3걸음의 12는 계산해서 나온 수다. 이때 `$sp`는 992이고, 그 위로 인자 칸(996), 반환값 칸(1000), 그리고 `main`의 마지막 칸 b(1004)가 있다. 세 칸 위이므로 4 × 3 = 12다. 슬라이드는 이 값을 "`main`의 활성 레코드의 시작 주소"라 부른다.
+- 3걸음의 12는 계산해서 나온 수다. 이때 `$sp`는 992이고, 그 위로 인자 칸(996), 반환값 칸(1000), 그리고 `main`의 마지막 칸 b(1004)가 있다. 세 칸 위이므로 4 × 3 = 12다. 이렇게 구한 `$sp + 12`, 곧 1004번지를 `main`의 활성 레코드의 시작 주소라고 부른다.
 - 4걸음의 `$ra`는 돌아갈 주소를 담는 레지스터다.
 - 5걸음에서 몇 칸을 만들지는 `foo`가 쓰는 변수를 적어 둔 심벌 테이블을 보고 정한다. `foo`는 t0 하나라 4바이트다.
 
-슬라이드에는 `foo`의 첫 명령으로 뛰는 명령이 나오지 않는다. 실제 MIPS에서는 `jal foo`가 돌아올 주소를 `$ra`에 넣고 뛴다[^s2].
+위 표에는 `foo`의 첫 명령으로 뛰는 명령이 없다. 실제 MIPS에서는 `jal foo`가 돌아올 주소를 `$ra`에 넣고 뛴다[^s2].
 
 ## 도는 동안: 자기 레코드의 칸을 읽고 쓴다
 
-`foo` 안에서 `$sp`는 980이다. 레코드의 칸은 `$sp`에서 이만큼 떨어져 있다[^3].
+`foo` 안에서 `$sp`는 980이다. 레코드의 칸은 `$sp`에서 이만큼 떨어져 있다.
 
 | 칸 | 오프셋 | 번지 |
 |---|---|---|
@@ -114,7 +114,7 @@ sw   $r0 20($sp)     # 반환값 칸 = 4
 
 ## 끝날 때: 레코드를 걷고 돌아간다
 
-`foo`가 끝나면 세 가지를 한다[^4].
+`foo`가 끝나면 세 가지를 한다.
 
 | 걸음 | 하는 일 | 명령 | 뒤의 상태 |
 |---|---|---|---|
@@ -149,7 +149,7 @@ $$p = 1$$, $$L = 1$$을 넣으면 오프셋이 4, 8, 12, 16, 20이고 제어 링
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">1. 2단계에서 더하는 수가 왜 $$4(p + 1)$$이 아니라 $$4(p + 2)$$인가?</summary>
 
-$$4(p + 1)$$을 더하면 $$S$$, 곧 반환값 칸의 번지가 된다. 슬라이드의 제어 링크는 그보다 한 칸 위, 부른 쪽 레코드의 마지막 칸($$S + 4$$)을 가리킨다. 한 칸이 4바이트라 4가 더 붙는다.
+$$4(p + 1)$$을 더하면 $$S$$, 곧 반환값 칸의 번지가 된다. 이 문서의 제어 링크는 그보다 한 칸 위, 부른 쪽 레코드의 마지막 칸($$S + 4$$)을 가리킨다. 한 칸이 4바이트라 4가 더 붙는다.
 
 </details>
 
@@ -205,8 +205,8 @@ x86의 프로시저도 들어올 때 프레임을 만들고 나갈 때 걷으며
 
 ## 연결
 
-- 선수: [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)(쌓는 칸의 종류와 순서), [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/), [단순 연산과 분기의 코드 생성](/Hongs_Blog/studies/compilers/codegen-simple-operations/)
-- x86에서 같은 일: `CALL`이 돌아갈 주소를 스택에 올리고 `RET`이 꺼내서 뛴다([프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/)). 프레임을 여닫는 명령과 `[EBP+8]` 같은 오프셋은 [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/)에 있다. 인자를 누가 어떤 순서로 넣고 누가 치우는지는 [호출 규약](/Hongs_Blog/studies/assembly-language/calling-convention/)이 정한다. 여기서는 슬라이드의 한 가지 약속만 쓴다[^s2].
+- 선수: [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)(쌓는 칸의 종류와 순서), [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/), [단순 연산과 분기의 코드 생성](/Hongs_Blog/studies/compilers/codegen-simple-operations/)
+- x86에서 같은 일: `CALL`이 돌아갈 주소를 스택에 올리고 `RET`이 꺼내서 뛴다([프로시저와 CALL·RET](/Hongs_Blog/studies/assembly-language/call-ret/)). 프레임을 여닫는 명령과 `[EBP+8]` 같은 오프셋은 [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/)에 있다. 인자를 누가 어떤 순서로 넣고 누가 치우는지는 [호출 규약](/Hongs_Blog/studies/assembly-language/calling-convention/)이 정한다. 여기서는 이 문서에서 정한 한 가지 약속만 쓴다[^s2].
 - 이 방식이 낳는 헛된 꺼내 오기·넣어 두기를 줄이는 길: [그래프 색칠 레지스터 할당](/Hongs_Blog/studies/compilers/graph-coloring-register-allocation/)
 
 ## 자주 하는 오해
@@ -264,11 +264,7 @@ x86의 프로시저도 들어올 때 프레임을 만들고 나갈 때 걷으며
 </details>
 
 
-[^1]: 컴파일러 15회 강의 자료 「Lecture15 Code generation part 2」, p.19 (foo와 main의 3주소 코드, 부르기 전의 스택)
-[^2]: 같은 자료, p.20 (반환값 칸), p.21 (인자), p.22 (제어 링크), p.23 (돌아갈 주소와 $ra), p.24 (지역 변수 칸, 심벌 테이블)
-[^3]: 같은 자료, p.25 (foo가 도는 동안: t0 = a + 1, 반환값 넣기)
-[^4]: 같은 자료, p.26 (기계 상태 되찾기), p.27 (레코드 걷기: $sp만 옮긴다), p.28 (돌아가서 반환값을 b에 옮긴다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 번지 1004, 1000, …, 980은 원본에 없다. 슬라이드는 번지 없이 화살표로 그린다. 걸음마다의 `$sp`와 칸의 값은 구현 코드의 흉내기가 돌려 확인한 것이다. 스택 그림 둘은 슬라이드 p.19와 p.25의 그림을 글자로 옮겼다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `jal` 이야기와 x86과의 비교는 원본에 없다. `jal`이 돌아올 주소를 `$ra`에 넣고 뛰는 것은 실제 MIPS 명령의 뜻이다(Patterson·Hennessy, Computer Organization and Design, MIPS판 2장). 구현 코드는 인자를 넣은 바로 뒤에 `jal`을 두고 돌렸다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 인자 $$p$$개·지역 변수 $$L$$개로 넓힌 식과 증명, 스스로 설명해 보기, 명령 수 비교, 인자를 넣는 동안 오프셋이 밀리는 이야기, 오해 두 항목, 카드 C1~C4는 원본에 없다. 슬라이드는 $$p = 1$$, $$L = 1$$인 예 하나만 보인다. 넓힌 틀로 재귀 `fib`($$p = 1$$, $$L = 6$$)와 카드 C2의 함수($$p = 0$$, $$L = 2$$)를 흉내기로 돌려 확인했다.
+[^s1]: 걸음마다의 `$sp`와 칸의 값은 구현 코드의 흉내기가 돌려 확인한 것이다.
+[^s2]: `jal`이 돌아올 주소를 `$ra`에 넣고 뛰는 것은 실제 MIPS 명령의 뜻이다(Patterson·Hennessy, Computer Organization and Design, MIPS판 2장). 구현 코드는 인자를 넣은 바로 뒤에 `jal`을 두고 돌렸다.
+[^s3]: 넓힌 틀로 재귀 `fib`($$p = 1$$, $$L = 6$$)와 카드 C2의 함수($$p = 0$$, $$L = 2$$)를 흉내기로 돌려 확인했다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Mapping of Regular Entity Types", "Mapping of Weak Entity Types", "일반 개체 타입의 사상", "약한 개체 타입의 사상", "개체 릴레이션", "Entity Relation", "개체를 릴레이션으로 옮기기"]
 description: "ER 그림의 네모 하나는 표 하나가 된다. 네모에 달린 동그라미가 표의 칸이 되고, 밑줄 친 동그라미가 줄을 가려내는 대표 값이 된다. 여러 부분으로 된 동그라미는 가장 작은 부분만 칸이 되고, 값이 여럿인 동그라미는 여기서는 넣지 않는다. 혼자서는 줄을 가려낼 수 없는 겹네모는 …"
@@ -53,9 +53,9 @@ flowchart TD
     D --- d2(["Sex, Birth_date, Relationship"])
 ```
 
-COMPANY ER 그림의 한 부분이다. 네모는 개체 타입, 겹네모는 약한 개체 타입, 마름모는 관계 타입, 둥근 칸은 속성이다. 자리를 아끼려고 단순 속성 몇 개를 한 칸에 모아 적었다[^s1].
+COMPANY ER 그림의 한 부분이다. 네모는 개체 타입, 겹네모는 약한 개체 타입, 마름모는 관계 타입, 둥근 칸은 속성이다. 자리를 아끼려고 단순 속성 몇 개를 한 칸에 모아 적었다.
 
-이 그림에서 릴레이션 둘이 나온다[^1][^2].
+이 그림에서 릴레이션 둘이 나온다.
 
 | 릴레이션 | 속성 (굵은 것이 기본 키) |
 |---|---|
@@ -65,20 +65,20 @@ COMPANY ER 그림의 한 부분이다. 네모는 개체 타입, 겹네모는 약
 EMPLOYEE에는 Name이라는 칸이 없다. 성분인 Fname, Minit, Lname만 있다. DEPENDENT에는 그림에 없던 Essn이 생겼다. 주인인 직원의 Ssn을 빌려 온 것이다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 7 p.13의 결과(EMPLOYEE 8열, DEPARTMENT 2열, PROJECT 3열)와 빠지는 속성, Dname·Pname도 값이 안 겹침, DEPENDENT 7줄에서 이름 6가지·주인 3명·짝 7가지, 주인 없는 부양가족은 거부, CAR를 옮긴 결과 — [39_mapping-entity-types_verify.py](/Hongs_Blog/studies/database-design/code/39_mapping-entity-types_verify/)</div>
+<div class="callout-title" markdown="span">검증: 일반 개체 타입 셋을 옮긴 결과(EMPLOYEE 8열, DEPARTMENT 2열, PROJECT 3열)와 빠지는 속성, Dname·Pname도 값이 안 겹침, DEPENDENT 7줄에서 이름 6가지·주인 3명·짝 7가지, 주인 없는 부양가족은 거부, CAR를 옮긴 결과 — [39_mapping-entity-types_verify.py](/Hongs_Blog/studies/database-design/code/39_mapping-entity-types_verify/)</div>
 
 </div>
 
 
 ## 옮기는 규칙
 
-**일반 개체 타입.** 자기 키 속성이 있는 개체 타입 $$E$$마다 릴레이션 $$R$$을 하나 만든다. 이렇게 만든 릴레이션을 개체 릴레이션(entity relation)이라 부른다[^1].
+**일반 개체 타입.** 자기 키 속성이 있는 개체 타입 $$E$$마다 릴레이션 $$R$$을 하나 만든다. 이렇게 만든 릴레이션을 개체 릴레이션(entity relation)이라 부른다.
 
 1. $$E$$의 단순 속성을 모두 $$R$$의 속성으로 넣는다.
 2. 복합 속성은 그 단순 성분만 넣는다.
 3. $$E$$의 키 속성 가운데 하나를 골라 $$R$$의 기본 키로 삼는다.
 
-COMPANY에서 일반 개체 타입 셋을 옮기면 이렇게 된다[^1].
+COMPANY에서 일반 개체 타입 셋을 옮기면 이렇게 된다.
 
 | 개체 타입 | 릴레이션 | 기본 키 | 아직 안 들어간 것 |
 |---|---|---|---|
@@ -86,21 +86,21 @@ COMPANY에서 일반 개체 타입 셋을 옮기면 이렇게 된다[^1].
 | DEPARTMENT | DEPARTMENT(Dname, Dnumber) | Dnumber | Locations(값이 여럿), Number_of_employees(계산해서 얻는 값) |
 | PROJECT | PROJECT(Pname, Pnumber, Plocation) | Pnumber | — |
 
-- 값이 여럿인 Locations는 한 칸에 못 들어간다. 이 속성은 다음 단계에서 따로 옮긴다[^1]. 방법은 [다치 속성의 사상](/Hongs_Blog/studies/database-design/mapping-multivalued-attributes/)에 있다.
+- 값이 여럿인 Locations는 한 칸에 못 들어간다. 이 속성은 다음 단계에서 따로 옮긴다. 방법은 [다치 속성의 사상](/Hongs_Blog/studies/database-design/mapping-multivalued-attributes/)에 있다.
 - 직원 수 Number_of_employees는 완성된 릴레이션 어디에도 없다. 직원 튜플을 세면 나오는 값이라 따로 적어 두지 않는다[^s2].
-- DEPARTMENT와 PROJECT는 그림에서 Name과 Number에 둘 다 밑줄이 있다. 키 속성이 둘이라는 뜻이다. 하나(번호)만 기본 키가 되고, 이름은 값이 안 겹친다는 조건만 따로 건다. 9주차 슬라이드의 `CREATE TABLE`은 이것을 `UNIQUE (Dname)`으로 적는다[^s2].
+- DEPARTMENT와 PROJECT는 그림에서 Name과 Number에 둘 다 밑줄이 있다. 키 속성이 둘이라는 뜻이다. 하나(번호)만 기본 키가 되고, 이름은 값이 안 겹친다는 조건만 따로 건다. `CREATE TABLE`에서는 이것을 `UNIQUE (Dname)`으로 적는다[^s2].
 - 그림의 Name, Number가 릴레이션에서는 Dname, Dnumber로 바뀌었다. 여러 릴레이션의 속성을 섞어 쓸 때 헷갈리지 않게 머리글자를 붙인 것이다[^s2].
 - 키 속성이 복합 속성이면 그 성분들을 묶은 것이 기본 키다. 영화를 (제목, 개봉 해)로 가려낸다면 기본 키는 (Title, Year)다[^s2].
 
-**약한 개체 타입.** 자기 키 속성이 없는 개체 타입 $$W$$도 릴레이션 $$R$$을 하나 만든다. 주인 개체 타입(소유 개체 타입)의 도움을 받는다[^2].
+**약한 개체 타입.** 자기 키 속성이 없는 개체 타입 $$W$$도 릴레이션 $$R$$을 하나 만든다. 주인 개체 타입(소유 개체 타입)의 도움을 받는다.
 
 1. $$W$$의 단순 속성을 모두 넣는다. 복합 속성은 단순 성분만 넣는다.
 2. 주인의 릴레이션의 기본 키를 외래 키로 넣는다. 이것으로 식별 관계 타입도 함께 옮겨진다.
 3. 기본 키는 주인의 기본 키와 $$W$$의 부분 키를 묶은 것이다.
 
-DEPENDENT의 주인은 EMPLOYEE다. 그래서 Ssn을 Essn이라는 이름으로 넣고, 기본 키를 (Essn, Dependent_name)으로 삼는다. 마름모 DEPENDENTS_OF는 따로 옮기지 않는다. Essn이 이미 "누구의 부양가족인가"를 적고 있다[^2].
+DEPENDENT의 주인은 EMPLOYEE다. 그래서 Ssn을 Essn이라는 이름으로 넣고, 기본 키를 (Essn, Dependent_name)으로 삼는다. 마름모 DEPENDENTS_OF는 따로 옮기지 않는다. Essn이 이미 "누구의 부양가족인가"를 적고 있다.
 
-왜 두 속성을 묶어야 할까? 상태를 보면 알 수 있다[^s3].
+왜 두 속성을 묶어야 할까? 상태를 보면 알 수 있다.
 
 | Essn | Dependent_name | Relationship |
 |---|---|---|
@@ -110,7 +110,7 @@ DEPENDENT의 주인은 EMPLOYEE다. 그래서 Ssn을 Essn이라는 이름으로 
 
 Dependent_name만으로는 Alice가 둘이라 겹친다. Essn만으로도 333445555가 여러 줄에 나와 겹친다. 둘을 묶으면 일곱 줄이 모두 다르다. 부분 키는 "같은 주인 안에서만" 값이 다르기 때문이다.
 
-덤으로 따라오는 것이 있다. Essn은 기본 키의 한 부분이라 NULL일 수 없다([개체 무결성 제약](/Hongs_Blog/studies/database-design/entity-integrity-constraint/)). 외래 키라서 없는 직원을 가리킬 수도 없다. 그래서 주인 없는 부양가족은 넣을 수 없다. 약한 개체는 식별 관계에 늘 전체 참여한다는 ER의 규칙이 릴레이션에서 저절로 지켜진다[^s3].
+덤으로 따라오는 것이 있다. Essn은 기본 키의 한 부분이라 NULL일 수 없다([개체 무결성 제약](/Hongs_Blog/studies/database-design/entity-integrity-constraint/)). 외래 키라서 없는 직원을 가리킬 수도 없다. 그래서 주인 없는 부양가족은 넣을 수 없다. 약한 개체는 식별 관계에 늘 전체 참여한다는 ER의 규칙이 릴레이션에서 저절로 지켜진다.
 
 ## 활용
 
@@ -132,7 +132,7 @@ Dependent_name만으로는 Alice가 둘이라 겹친다. Essn만으로도 333445
 <summary class="callout-title" markdown="span">**C1** 개체 타입 CAR의 속성은 Vehicle_id(키), Registration(Number, State)(복합 속성이자 키), Make, Model, Year, 그리고 값이 여럿인 Color다. 이 개체 타입을 릴레이션으로 옮겨라. 기본 키로 삼을 수 있는 것은 무엇인가?</summary>
 
 **답:** CAR(Vehicle_id, Reg_number, Reg_state, Make, Model, Year). 여섯 칸이다. 기본 키는 Vehicle_id로 삼거나 (Reg_number, Reg_state)로 삼는다. 속성이 하나인 Vehicle_id가 더 낫다. Color는 이 릴레이션에 넣지 않는다.<br>
-**이유:** Registration은 복합 속성이라 성분 둘만 들어간다. 번호만으로는 키가 아니다. 슬라이드의 예에서 번호 ABC 123이 텍사스와 뉴욕에 하나씩 있다[^3]. 그림에는 성분이 Number, State로만 적혀 있다. Reg_number, Reg_state는 무엇의 번호인지 드러나게 여기서 붙인 칸 이름이다.
+**이유:** Registration은 복합 속성이라 성분 둘만 들어간다. 번호만으로는 키가 아니다. 예를 들어 번호가 ABC 123인 차가 텍사스와 뉴욕에 한 대씩 있을 수 있다. Registration의 성분 이름은 Number와 State뿐이다. Reg_number, Reg_state는 무엇의 번호인지 드러나게 여기서 붙인 칸 이름이다.
 
 </details>
 
@@ -154,10 +154,5 @@ Dependent_name만으로는 Alice가 둘이라 겹친다. Essn만으로도 333445
 </details>
 
 
-[^1]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.13 (Mapping of Regular Entity Types, "How do we map a multivalued attribute?"). 복습: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.7
-[^2]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.14 (Mapping of Weak Entity Types, "Mapping the identifying relationship type"). 복습: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.8
-[^3]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.12 (CAR 개체 타입과 세 대의 예)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Mermaid 그림 1개는 원본에 없다. 7 p.11과 p.14의 ER 그림에서 EMPLOYEE와 DEPENDENT 부분을 옮겨 그렸다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 유도 속성을 칸으로 만들지 않는다는 것, 키 속성이 둘일 때 나머지를 `UNIQUE`로 건다는 것, 머리글자를 붙이는 까닭, 복합 키 속성의 처리는 슬라이드의 글에 없다. 앞의 둘은 7 p.11의 완성 그림(Number_of_employees가 없다)과 9 p.17~18의 `CREATE TABLE`(`UNIQUE (Dname)`, `UNIQUE (Pname)`)에서 읽었다. 복합 키 속성은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 9.1절의 1단계 설명을 따랐다 [확인필요: 판과 절 번호].
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Alice 반례, 주인 없는 부양가족을 넣을 수 없다는 설명, 카드 C1~C3은 원본에 없다. 6-2 p.21의 상태에서 검증 코드로 확인했다.
+[^s2]: 복합 키 속성은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 9.1절의 1단계 설명을 따랐다 [확인필요: 판과 절 번호].
 {% endraw %}

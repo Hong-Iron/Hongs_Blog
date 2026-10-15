@@ -149,5 +149,5 @@ $$\sum_{k=3}^{10}(2k + 1)$$을 구한다.
 
 [^1]: OpenStax, *Precalculus 2e*, 11.1절 "Sequences and Their Notations", 11.2절 "Arithmetic Sequences", 11.3절 "Geometric Sequences"
 [^2]: OpenStax, *Precalculus 2e*, 11.4절 "Series and Their Notations". Σ의 조작 규칙과 망원합은 Graham·Knuth·Patashnik, *Concrete Mathematics*, 2장 "Sums"의 방식이다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [20_sequences-sigma_plot.py](/Hongs_Blog/studies/college-math/code/20_sequences-sigma_plot/)로 그렸고, 그림에 쓴 값($$1 + 2 + \cdots + 6 = 21$$, $$2 \times 21 = 6 \times 7$$, $$n \le 2{,}000$$에서 공식 일치)을 같은 코드로 확인했다.
+[^s1]: [20_sequences-sigma_plot.py](/Hongs_Blog/studies/college-math/code/20_sequences-sigma_plot/)로 그렸고, 그림에 쓴 값($$1 + 2 + \cdots + 6 = 21$$, $$2 \times 21 = 6 \times 7$$, $$n \le 2{,}000$$에서 공식 일치)을 같은 코드로 확인했다.
 {% endraw %}

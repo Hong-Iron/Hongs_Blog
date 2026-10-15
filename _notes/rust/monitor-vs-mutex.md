@@ -145,8 +145,6 @@ permalink: "/studies/rust/monitor-vs-mutex/"
 </details>
 
 
-## 출처
-
 [^1]: 운영체제 노트 [모니터](/Hongs_Blog/studies/operating-systems/monitor/)의 `boundedbuffer` 코드(Stallings 6판 그림 5.16을 따른 것)
 [^2]: std 문서, `std::sync::Condvar` (`wait`, `wait_while`, `notify_one`, `notify_all`) — https://doc.rust-lang.org/std/sync/struct.Condvar.html
 [^3]: The Rust Programming Language, 16.3 Shared-State Concurrency (The API of Mutex<T>) — https://doc.rust-lang.org/book/ch16-03-shared-state.html

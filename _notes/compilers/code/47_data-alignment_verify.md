@@ -22,10 +22,10 @@ permalink: "/studies/compilers/code/47_data-alignment_verify/"
 ```python
 # 데이터 정렬과 패딩, 배열이 메모리에 놓이는 모양.
 # 실행: python3 47_data-alignment_verify.py  (표준 라이브러리만 쓴다)
-# 슬라이드 14회 p.6~9의 표와 그림(오프셋 0, 2, 4, 8, 12)을 계산으로 다시 만든다.
+# 데이터 정렬 문서의 표와 그림(오프셋 0, 2, 4, 8, 12)을 계산으로 다시 만든다.
 import ctypes
 
-# 14회 p.7의 표: x86 32비트 기계에서 C 기본 타입의 (크기, 정렬)
+# 문서의 표: x86 32비트 기계에서 C 기본 타입의 (크기, 정렬)
 TABLE = {"char": (1, 1), "short": (2, 2), "int": (4, 4), "long": (4, 4), "float": (4, 4),
          "double": (8, 4), "long long": (8, 4), "pointer": (4, 4)}
 
@@ -50,12 +50,12 @@ def c_index(i, j, n):
 
 
 if __name__ == "__main__":
-    # ---- p.7: char a; short b; short c; int d; double e; ----
+    # ---- 예: char a; short b; short c; int d; double e; ----
     offs, end, pad = layout(["char", "short", "short", "int", "double"])
     assert offs == [0, 2, 4, 8, 12]
     assert end == 20 and pad == 3       # 1번지 한 칸, 6~7번지 두 칸이 빈다
     assert sum(TABLE[t][0] for t in ["char", "short", "short", "int", "double"]) == 17
-    # 모든 시작 주소가 정렬 값의 배수다 (N바이트 정렬의 뜻, p.6)
+    # 모든 시작 주소가 정렬 값의 배수다 (N바이트 정렬의 뜻)
     for o, t in zip(offs, ["char", "short", "short", "int", "double"]):
         assert o % TABLE[t][1] == 0
     # 같은 규칙(정렬 값을 4로 묶은 것)을 ctypes에 시켜도 같은 오프셋이 나온다
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     # 정렬 값이 1이면 패딩이 없다
     assert layout(["char"] * 5) == ([0, 1, 2, 3, 4], 5, 0)
 
-    # ---- p.8: C 방식 배열은 원소가 이어져 있다. A[i]의 주소 = 시작 주소 + i × 원소 크기 ----
+    # ---- C 방식 배열은 원소가 이어져 있다. A[i]의 주소 = 시작 주소 + i × 원소 크기 ----
     base, size, n = 1000, 4, 6
     addrs = [base + i * size for i in range(n)]
     assert all(b - a == size for a, b in zip(addrs, addrs[1:]))
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     java = [base + 4 + i * size for i in range(n)]
     assert java[0] - base == 4 and len(java) == n
 
-    # ---- p.9: C 방식 2차원 배열은 한 덩어리. 그림의 순서는 A[0][0], …, A[0][n-1], A[1][0], … ----
+    # ---- C 방식 2차원 배열은 한 덩어리. 그림의 순서는 A[0][0], …, A[0][n-1], A[1][0], … ----
     m, n = 3, 4
     order = [(i, j) for i in range(m) for j in range(n)]
     assert [c_index(i, j, n) for i, j in order] == list(range(m * n))

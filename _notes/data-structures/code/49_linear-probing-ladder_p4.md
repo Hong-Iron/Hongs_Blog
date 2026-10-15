@@ -24,9 +24,8 @@ permalink: "/studies/data-structures/code/49_linear-probing-ladder_p4/"
 
 실행: python3 49_linear-probing-ladder_p4.py
 문서: 4.연습문제/49.선형 탐사 삽입·삭제 예제 사다리
-출처: 자료구조 15주차 슬라이드 p.21~24, p.31
 넣기와 지우기는 3.개념집/49_linear-probing_impl.c와 같은 규칙으로 다시 짰다(파일끼리 불러오지 않는다).
-먼저 슬라이드의 표와 지우기 세 개가 그대로 나오는지 확인해 이 코드가 맞는지 본다.
+먼저 3.개념집/49.선형 탐사 문서의 넣기 표와 지우기 세 개가 그대로 나오는지 확인해 이 코드가 맞는지 본다.
 """
 E = None
 
@@ -91,7 +90,7 @@ def all_found(table):
 
 
 if __name__ == "__main__":
-    # 이 코드가 슬라이드와 같은 답을 내는지 먼저 확인한다 (p.21~24)
+    # 이 코드가 선형 탐사 문서의 표와 같은 답을 내는지 먼저 확인한다
     slide, _ = insert_all([6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45], 17)
     assert slide == [34, 0, 45, E, E, E, 6, 23, 7, E, E, 28, 12, 29, 11, 30, 33]
     assert delete(slide, 0)[0] == [34, 45, E, E, E, E, 6, 23, 7, E, E, 28, 12, 29, 11, 30, 33]
@@ -134,7 +133,7 @@ if __name__ == "__main__":
     ch[1].remove(27)
     assert ch[1] == [14, 40]
 
-    print("슬라이드 표와 지우기 세 개 재현, 문제 1~4의 표와 옮긴 차례 확인")
+    print("선형 탐사 문서의 표와 지우기 세 개 재현, 문제 1~4의 표와 옮긴 차례 확인")
     print("ALL CHECKS PASSED")
 ```
 {% endraw %}

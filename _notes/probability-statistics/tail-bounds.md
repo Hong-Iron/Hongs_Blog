@@ -196,6 +196,6 @@ $$\mathbb{E}[e^{tX}] = \mathbb{E}\left[\prod_i e^{tX_i}\right]$$를 $$\prod_i\ma
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 10.1절 "Inequalities"(마르코프, 체비쇼프, 체르노프 부등식).
 [^2]: Mitzenmacher, Upfal, *Probability and Computing*, 3장(마르코프·체비쇼프 부등식), 4장(체르노프 한계의 유도와 곱셈형 꼴, 무작위 알고리즘에의 응용).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [20_tail-bounds_plot.py](/Hongs_Blog/studies/probability-statistics/code/20_tail-bounds_plot/)로 그렸고, 그림에 쓴 값($$a = 75$$에서 0.667·0.04·0.0155·$$2.8 \times 10^{-7}$$, 모든 $$a$$에서 참값 ≤ 체르노프·체비쇼프)을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 증명의 순서와 연결 절, [큰 수의 법칙](/Hongs_Blog/studies/probability-statistics/lln/)의 증명(체비쇼프 사용)을 그렸다.
+[^s1]: [20_tail-bounds_plot.py](/Hongs_Blog/studies/probability-statistics/code/20_tail-bounds_plot/)로 그렸고, 그림에 쓴 값($$a = 75$$에서 0.667·0.04·0.0155·$$2.8 \times 10^{-7}$$, 모든 $$a$$에서 참값 ≤ 체르노프·체비쇼프)을 같은 코드로 확인했다.
+[^s2]: 이 문서 증명의 순서와 연결 절, [큰 수의 법칙](/Hongs_Blog/studies/probability-statistics/lln/)의 증명(체비쇼프 사용)을 그렸다.
 {% endraw %}

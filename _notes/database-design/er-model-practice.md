@@ -10,9 +10,9 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
-description: "5주차 슬라이드의 연습 1~4다. 답은 접혀 있다. 먼저 종이에 써 본 뒤 펼친다."
+description: "ER 모델을 다루는 문제 넷이다. 답은 접혀 있다. 먼저 종이에 써 본 뒤 펼친다."
 prev_url: "/studies/database-design/er-diagram-design-practice/"
 prev_title: "ER 다이어그램 설계 연습"
 next_url: "/studies/database-design/foreign-key-practice/"
@@ -23,11 +23,11 @@ code_count: 2
 permalink: "/studies/database-design/er-model-practice/"
 ---
 {% raw %}
-5주차 슬라이드의 연습 1~4다. 답은 접혀 있다. 먼저 종이에 써 본 뒤 펼친다.
+ER 모델을 다루는 문제 넷이다. 답은 접혀 있다. 먼저 종이에 써 본 뒤 펼친다.
 
 ## p1 · 상식으로 비율 정하기
 
-두 개체 타입 사이의 이항 관계에, 개체 타입을 상식으로 본 뜻에 맞는 카디널리티 비율을 적으라[^1].
+두 개체 타입 사이의 이항 관계에, 개체 타입을 상식으로 본 뜻에 맞는 카디널리티 비율을 적으라.
 
 | 번호 | 개체 타입 1 | 개체 타입 2 |
 |---|---|---|
@@ -56,7 +56,7 @@ permalink: "/studies/database-design/er-model-practice/"
 | 6 | M:N | 학생은 수업 여럿을 듣고, 수업에는 학생이 여럿이다 |
 | 7 | M:N | 수업 하나를 강사 여럿이 맡을 수 있고, 강사는 수업 여럿을 맡는다 |
 
-5번의 N:1은 왼쪽(ITEM)이 N쪽, 오른쪽(ORDER)이 1쪽이라는 뜻이다[^2].
+5번의 N:1은 왼쪽(ITEM)이 N쪽, 오른쪽(ORDER)이 1쪽이라는 뜻이다.
 
 이 문제의 답은 가정에 따라 달라진다. 5번은 ITEM을 실물 하나하나로 볼 때 N:1이다. "상품 종류"로 보면 같은 상품이 여러 주문에 들어가므로 M:N이 된다. 7번은 수업 하나를 강사 한 명만 맡는 학교라면 N:1이다. 1번은 카드를 다시 발급받아 여러 장 갖는 경우까지 넣으면 1:N이다. 답안에는 어떤 가정으로 정했는지를 함께 쓴다[^s1].
 
@@ -65,7 +65,7 @@ permalink: "/studies/database-design/er-model-practice/"
 
 ## p2 · 미 하원 표결 ER 다이어그램
 
-미국 하원의 표결 정보를 적는 데이터베이스의 ER 다이어그램을 그려라[^3]. 힌트: 개체 타입 셋, 관계 타입 셋.
+미국 하원의 표결 정보를 적는 데이터베이스의 ER 다이어그램을 그려라. 힌트: 개체 타입 셋, 관계 타입 셋.
 
 1. 주(STATE): 이름(예: Texas, New York, California)과 지역(Northeast, Midwest, Southeast, Southwest, West).
 2. 하원의원(CONGRESS_PERSON): 이름, 선거구(District), 당선된 날(Start_date), 소속 정당(Republican, Democrat, Independent).
@@ -96,7 +96,7 @@ permalink: "/studies/database-design/er-model-practice/"
 - 4번의 표결 결과는 (의원, 법안) 짝마다 하나다. M:N 관계 타입 VOTES의 속성 Vote가 된다. 어느 개체로도 옮길 수 없다.
 - REPRESENTS는 요구사항 글에 따로 적혀 있지 않다. 의원은 어느 주의 선거구를 대표한다는 사실과 "관계 타입 셋"이라는 힌트에서 나온다[^s2].
 
-*3단계. 그림*[^4].
+*3단계. 그림*.
 
 ```mermaid
 flowchart TB
@@ -115,13 +115,13 @@ flowchart TB
     BILL --- pf(["Passed_or_failed"])
 ```
 
-굵은 선은 슬라이드 그림의 겹선(전체 참여)이다.
+굵은 선은 겹선(전체 참여)이다.
 
 </details>
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 개체 타입 셋의 속성, 관계 타입 셋의 숫자와 겹선을 풀이 슬라이드(p.2)의 그림과 한 칸씩 손으로 맞췄다. 다이어그램은 문법 검사를 통과했다.</div>
+<div class="callout-title" markdown="span">검증: 개체 타입 셋의 속성, 관계 타입 셋의 숫자와 겹선을 한 칸씩 손으로 맞췄다. 다이어그램은 문법 검사를 통과했다.</div>
 
 </div>
 
@@ -138,7 +138,7 @@ flowchart TB
 
 ## p3 · (min, max) 제약 붙이기
 
-아래 그림의 네 자리에 (min, max)를 적으라[^5].
+아래 그림의 네 자리에 (min, max)를 적으라.
 
 - 과목은 교재를 쓸 수도 있고 안 쓸 수도 있다.
 - 과목은 교재를 5권 넘게 쓸 수 없다.
@@ -166,7 +166,7 @@ flowchart LR
 | ③ COURSE (USES 쪽) | (0, 5) | 안 쓸 수도 있다(0), 5권 넘게는 못 쓴다(5) |
 | ④ TEXT | (1, N) | 어느 과목에선가 쓰인다(적어도 1). 위 한계는 말이 없다 |
 
-흔한 오답은 ①과 ②를 바꿔 적는 것이다. "교수는 2~4과목"의 주어는 교수이므로 (2,4)는 INSTRUCTOR 옆이다[^6].
+흔한 오답은 ①과 ②를 바꿔 적는 것이다. "교수는 2~4과목"의 주어는 교수이므로 (2,4)는 INSTRUCTOR 옆이다.
 
 </details>
 
@@ -189,7 +189,7 @@ TEACHES와 USES 둘 다 M:N이다. 위 한계가 4, 4, 5, N으로 모두 1보다
 
 ## p4 · ER 다이어그램 읽고 문장 가리기
 
-아래 ER 다이어그램을 보고 문장 (a)~(f)가 True인지, False인지, Maybe인지 답하라[^7]. 굵은 선은 겹선(전체 참여)이다.
+아래 ER 다이어그램을 보고 문장 (a)~(f)가 True인지, False인지, Maybe인지 답하라. 굵은 선은 겹선(전체 참여)이다.
 
 ```mermaid
 flowchart TB
@@ -208,13 +208,6 @@ flowchart TB
 - (e) 제작자는 다른 영화의 배우가 될 수 없다.
 - (f) 감독은 한 명인데 제작자는 여럿인 영화가 있다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "(d) A movie can have only a maximum of lead actors" (5주차 p.37, 풀이 p.4) / 문제점: maximum 뒤에 수가 빠져 문장이 뜻을 이루지 못한다. / 수정안: "a maximum of two lead actors". / 근거: 그림에서 LEAD_ROLE의 ACTOR 쪽에 2가 적혀 있고, 풀이의 답이 True다. 수가 2일 때만 True가 된다.
-
-</div>
-
 
 사용 개념: [ER 다이어그램 표기법](/Hongs_Blog/studies/database-design/er-diagram-notation/), [카디널리티 비율](/Hongs_Blog/studies/database-design/cardinality-ratio/), [참여 제약](/Hongs_Blog/studies/database-design/participation-constraint/)
 
@@ -232,7 +225,7 @@ flowchart TB
 | (e) | False | ACTOR_PRODUCER가 배우와 제작자를 잇는다. 제작자이면서 배우인 사람을 그림이 허용한다. 그 사람이 다른 영화에 나오는 것을 막는 규칙도 없다 |
 | (f) | Maybe | DIRECTS가 감독 1 : 영화 N이고 MOVIE 쪽이 겹선이라 영화의 감독은 꼭 한 명이다. PRODUCES는 M:N이라 제작자가 여럿일 수 있다. 그런 영화가 실제로 있는지는 모른다 |
 
-답은 풀이 슬라이드의 것이고[^8], 오른쪽 칸의 까닭은 그림에서 읽어 붙였다[^s4]. (b), (c), (f)를 True라고 답하기 쉽다. "할 수 있다"와 "실제로 있다"는 다르다.
+(b), (c), (f)를 True라고 답하기 쉽다. "할 수 있다"와 "실제로 있다"는 다르다[^s4].
 
 </details>
 
@@ -253,16 +246,8 @@ flowchart TB
 </details>
 
 
-[^1]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.17 (Exercise 1: Cardinality Ratio)
-[^2]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel-solution」, p.1 (답: 1:1, M:N, 1:1, M:N, N:1, M:N, M:N)
-[^3]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.35 (Exercise 2: ER Schema Diagram, "Hint: 3 Entity Types and 3 Relationship Types")
-[^4]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel-solution」, p.2 (Three Entity Types: CONGRESS_PERSON, STATE, BILL. Three Relationship Types: SPONSORS, VOTES, REPRESENTS. 그림의 마름모에는 SPOSNSORS로 적혀 있다)
-[^5]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.36 (Exercise 3: Constraints on ER Diagram)
-[^6]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel-solution」, p.3 (답: (2, 4), (1, 4), (0, 5), (1, N))
-[^7]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.37 (Exercise 4: Understanding ER Schema)
-[^8]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel-solution」, p.4 (답: True, Maybe, Maybe, True, False, Maybe)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 슬라이드에는 답만 있다. "두 물음의 답" 칸과, 가정이 바뀌면 답이 달라지는 세 경우는 원본에 없다. 문제가 "common-sense meaning"으로 정하라고 한 데서 썼다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 슬라이드에는 완성 그림만 있다. 1~2단계의 풀이, {Sponsor}를 처음 설계의 속성으로 적은 것, REPRESENTS가 어디서 나오는지의 설명은 원본에 없다. 표의 비율과 참여는 풀이 그림의 숫자와 겹선을 읽은 것이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 변형 문제 셋은 원본에 없다. p3과 p4의 변형은 문제 코드로 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 슬라이드에는 True, Maybe, False만 있다. 까닭과 풀이 전략은 문제의 그림에서 읽어 썼고 문제 코드로 확인했다. 그림은 슬라이드 p.37의 그림을 옮겨 그린 것이다.
+[^s1]: 문제가 "common-sense meaning"으로 정하라고 한 데서 썼다.
+[^s2]: 표의 비율과 참여는 풀이 그림의 숫자와 겹선을 읽은 것이다.
+[^s3]: p3과 p4의 변형은 문제 코드로 확인했다.
+[^s4]: 까닭과 풀이 전략은 문제의 그림에서 읽어 썼고 문제 코드로 확인했다.
 {% endraw %}

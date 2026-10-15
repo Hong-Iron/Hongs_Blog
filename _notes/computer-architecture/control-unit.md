@@ -100,7 +100,7 @@ $$\text{PCSrc} = \text{Branch} \cdot \text{Zero}$$
 
 ### 게이트로 만들기
 
-표를 회로로 옮기면 두 층이 된다. 앞층의 AND 게이트 넷이 opcode 6비트를 보고 "R형이다", "`lw`다", "`sw`다", "`beq`다"를 하나씩 알아본다. 뒤층의 OR 게이트가 그 넷을 모아 신호를 만든다[^4].
+표를 회로로 옮기면 두 층이 된다. 앞층의 AND 게이트 넷이 opcode 6비트를 보고 "R형이다", "`lw`다", "`sw`다", "`beq`다"를 하나씩 알아본다. 뒤층의 OR 게이트가 그 넷을 모아 신호를 만든다.
 
 $$\begin{aligned}
 \text{RegDst} &= \text{R형} & \text{ALUSrc} &= lw + sw & \text{MemtoReg} &= lw \\
@@ -146,7 +146,7 @@ $$op_3 = 0, \qquad op_2 = \text{ALUOp}_0 + \text{ALUOp}_1 \cdot F_1, \qquad op_1
 </details>
 
 
-오래된 판의 교재와 일부 강의 자료는 ALU 제어를 3비트(AND 000, OR 001, 더하기 010, 빼기 110, 작으면 1은 111)로 적는다. 위 4비트에서 맨 앞 0을 뗀 것과 같다[^6].
+오래된 판의 교재와 일부 강의 자료는 ALU 제어를 3비트(AND 000, OR 001, 더하기 010, 빼기 110, 작으면 1은 111)로 적는다. 위 4비트에서 맨 앞 0을 뗀 것과 같다.
 
 ### 스스로 설명해 보기
 
@@ -262,10 +262,8 @@ R형은 RegWrite = 1이라 쓸 값이 실제로 레지스터에 들어간다. AL
 [^1]: Princeton COS/ELE 375 (Fall 2015, David August), Lecture 8 "Control", 슬라이드 6~15 (제어 신호의 이름, 참·거짓일 때의 뜻, PCSrc = Branch & Zero), https://www.cs.princeton.edu/courses/archive/fall15/cos375/lectures/08-Control.pdf
 [^2]: 같은 강의, 슬라이드 17 (Control Design: Inputs. opcode 비트와 10진 값 0, 35, 43, 4). MIPS Reference Data (교재의 참조표, Univ. of Patras 게시본)의 lw 23hex, sw 2bhex, beq 4hex, j 2hex, addi 8hex, https://eclass.upatras.gr/modules/document/file.php/EE805/MIPS_Instruction_Set/MIPSReferenceData.pdf
 [^3]: NYU, A. Gottlieb, Computer Architecture 2007-08 Fall, Lecture 17 (주 제어의 진리표: 입력 Op5~Op0과 출력 아홉 줄), https://cs.nyu.edu/~gottlieb/courses/2000s/2007-08-fall/arch/lectures/lecture-17.html. Edinboro Univ. CSCI 312 (Fall 2017) 강의 노트 "Building the ALU Control"의 ALUOp 값(lw·sw 00, beq 01, R형 10), https://mirkwood.cs.edinboro.edu/~bennett/class/csci312/fall2017/notes/control/one.html. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor"
-[^4]: NYU 같은 강의 (제어 논리를 두 층 PLA로 그린다는 설명). Princeton 같은 강의, 슬라이드 20 (Combinational Implementation)
 [^5]: Edinboro Univ. 같은 노트 (ALU 제어 4비트 0000 AND, 0001 OR, 0010 add, 0110 subtract, 0111 slt, 1100 nor와 ALUOp·funct 표, funct의 위 두 비트는 늘 10)
-[^6]: Princeton 같은 강의, 슬라이드 11~12 (ALUControl 3비트 표)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `j`의 제어 줄과 "MemRead를 꺼 두는 이유"는 연 자료에서 글로 확인하지 못했다. `j`의 줄은 "레지스터도 메모리도 고치지 않는다"에서 정했고 흉내기로 확인했다. MemRead의 이유는 [확인필요].
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 주 제어의 식은 표에서 1인 칸을 모은 것이고, ALU 제어의 식은 표에서 직접 구했다. 두 식 모두 표와 같은지 [[2-1학기/컴퓨터 구조/3.개념집/25_control-unit_verify.py|25_control-unit_verify.py]]에서 전수 검사했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `addi`의 제어 줄은 이 문서의 명령어 범위 밖이다. 흉내기에 이 줄을 넣어 `$t5` = 5가 나오는 것을 확인했다.
+[^s1]: `j`의 제어 줄과 "MemRead를 꺼 두는 이유"는 연 자료에서 글로 확인하지 못했다. `j`의 줄은 "레지스터도 메모리도 고치지 않는다"에서 정했고 흉내기로 확인했다. MemRead의 이유는 [확인필요].
+[^s2]: 주 제어의 식은 표에서 1인 칸을 모은 것이고, ALU 제어의 식은 표에서 직접 구했다. 두 식 모두 표와 같은지 [[2-1학기/컴퓨터 구조/3.개념집/25_control-unit_verify.py|25_control-unit_verify.py]]에서 전수 검사했다.
+[^s3]: `addi`의 제어 줄은 이 문서의 명령어 범위 밖이다. 흉내기에 이 줄을 넣어 `$t5` = 5가 나오는 것을 확인했다.
 {% endraw %}

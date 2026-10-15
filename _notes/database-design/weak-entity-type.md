@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Weak Entity Type", "약한 엔티티", "식별 관계", "Identifying Relationship", "소유 개체 타입", "Owner Entity Type", "식별 개체 타입", "Identifying Entity Type", "부분 키", "Partial Key", "DEPENDENT", "부양가족"]
 description: "아파트의 \"302호\"는 호수만으로는 어느 집인지 알 수 없고, 몇 동인지를 함께 대야 한다. 이렇게 자기 항목만으로는 서로 가려지지 않아서, 딸려 있는 주인을 함께 대야 가려지는 대상이 있다. 주인이 없으면 가려낼 길이 없으므로, 이런 대상은 반드시 주인 하나에 이어져 있어야 한다."
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/weak-entity-type/"
 
 회사는 보험 때문에 직원의 부양가족을 적는다. 부양가족에 적는 항목은 이름, 성별, 생일, 직원과의 관계다. 이 가운데 부양가족 한 사람을 가려낼 항목이 있을까.
 
-COMPANY의 자료에 든 부양가족 일곱 명이다[^4].
+COMPANY의 자료에 든 부양가족 일곱 명이다.
 
 | 주인 직원 | Dependent_name | Sex | Bdate | Relationship |
 |---|---|---|---|---|
@@ -62,7 +62,7 @@ flowchart LR
     DEP --- rel(["Relationship"])
 ```
 
-겹네모가 약한 개체 타입이고, 굵은 선은 전체 참여(슬라이드 그림의 겹선)다[^s1].
+겹네모가 약한 개체 타입이고, 굵은 선은 전체 참여(ER 다이어그램의 겹선)다[^s1].
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: Alice가 두 명인 것, (주인 직원, 이름)은 일곱 명이 다 다른 것, 생일은 우연히 다 다를 뿐 같은 생일이 들어오면 겹치는 것, 부양가족 모두 주인 직원이 있고 직원 8명 중 3명만 부양가족이 있는 것 — [27_weak-entity-type_verify.py](/Hongs_Blog/studies/database-design/code/27_weak-entity-type_verify/)</div>
@@ -72,22 +72,22 @@ flowchart LR
 
 ## 정의
 
-- **약한 개체 타입(weak entity type):** 자기 속성 안에 키 속성이 없는 개체 타입. 다른 개체 타입의 특정 개체에 이어져 있다는 사실과 자기 속성 값을 합쳐서 가려낸다[^1].
-- **소유 개체 타입(owner entity type):** 약한 개체를 가려내는 데 쓰이는 그 다른 개체 타입. 식별 개체 타입(identifying entity type)이라고도 한다[^1].
-- **식별 관계(identifying relationship):** 약한 개체 타입을 소유 개체 타입에 잇는 관계 타입. 약한 개체 타입은 이 관계에 늘 전체 참여한다[^1].
-- **부분 키(partial key):** 같은 주인에 딸린 약한 개체들끼리 서로 가려내는 속성. 식별 관계와 합치면 키 구실을 한다[^2].
+- **약한 개체 타입(weak entity type):** 자기 속성 안에 키 속성이 없는 개체 타입. 다른 개체 타입의 특정 개체에 이어져 있다는 사실과 자기 속성 값을 합쳐서 가려낸다.
+- **소유 개체 타입(owner entity type):** 약한 개체를 가려내는 데 쓰이는 그 다른 개체 타입. 식별 개체 타입(identifying entity type)이라고도 한다.
+- **식별 관계(identifying relationship):** 약한 개체 타입을 소유 개체 타입에 잇는 관계 타입. 약한 개체 타입은 이 관계에 늘 전체 참여한다.
+- **부분 키(partial key):** 같은 주인에 딸린 약한 개체들끼리 서로 가려내는 속성. 식별 관계와 합치면 키 구실을 한다.
 
-DEPENDENT에서는 "한 직원의 부양가족 가운데 이름이 같은 사람은 없다"고 볼 때 Dependent_name이 부분 키다[^2].
+DEPENDENT에서는 "한 직원의 부양가족 가운데 이름이 같은 사람은 없다"고 볼 때 Dependent_name이 부분 키다.
 
-COMPANY의 DEPENDENTS_OF는 1:N이다. 1쪽이 EMPLOYEE, N쪽이 DEPENDENT다. EMPLOYEE는 부분 참여이고(부양가족이 없는 직원도 있다), DEPENDENT는 전체 참여다(부양가족은 반드시 직원에 딸려 있다)[^3].
+COMPANY의 DEPENDENTS_OF는 1:N이다. 1쪽이 EMPLOYEE, N쪽이 DEPENDENT다. EMPLOYEE는 부분 참여이고(부양가족이 없는 직원도 있다), DEPENDENT는 전체 참여다(부양가족은 반드시 직원에 딸려 있다).
 
-**그림 기호.** 약한 개체 타입은 겹네모, 식별 관계는 겹마름모로 그린다[^5]. 부분 키는 이름 아래에 점선 밑줄을 긋는다[^s2].
+**그림 기호.** 약한 개체 타입은 겹네모, 식별 관계는 겹마름모로 그린다. 부분 키는 이름 아래에 점선 밑줄을 긋는다.
 
 ## 활용
 
 - 왜 늘 전체 참여인가: 약한 개체는 주인을 대야만 가려진다. 주인에 이어지지 않은 약한 개체는 가려낼 길이 없어 저장할 수 없다.
 - 흔한 실수: 부분 키를 키로 여기는 것. Dependent_name은 같은 직원 안에서만 안 겹친다. 회사 전체에서는 Alice가 두 명이다.
-- 자료만 보고 판단하면 안 되는 것은 키 속성과 같다. 위 표에서 생일은 일곱 명이 우연히 다 다르다. 하지만 생일이 같은 부양가족이 들어오면 겹치므로 생일은 키가 아니다[^s3].
+- 자료만 보고 판단하면 안 되는 것은 키 속성과 같다. 위 표에서 생일은 일곱 명이 우연히 다 다르다. 하지만 생일이 같은 부양가족이 들어오면 겹치므로 생일은 키가 아니다.
 - 표로 옮기면 주인의 키가 약한 개체의 표에 열로 들어오고, 그 열과 부분 키를 묶은 것이 표의 키가 된다. DEPENDENT 표의 키는 (Essn, Dependent_name)이다: [개체 타입의 사상](/Hongs_Blog/studies/database-design/mapping-entity-types/)
 
 ## 연결
@@ -111,7 +111,7 @@ COMPANY의 DEPENDENTS_OF는 1:N이다. 1쪽이 EMPLOYEE, N쪽이 DEPENDENT다. E
 <summary class="callout-title" markdown="span">**C2** 약한 개체 타입은 식별 관계에 왜 늘 전체 참여하는가? 부분 참여를 허용하면 무엇이 곤란한가?</summary>
 
 **답:** 약한 개체는 "어느 주인의 것인가"와 부분 키를 합쳐야 가려진다. 부분 참여를 허용하면 주인이 없는 약한 개체가 생긴다. 그 개체는 가려낼 길이 없다. 이름이 Alice인 주인 없는 부양가족이 둘 있으면 둘을 가를 수 없다.<br>
-**이유:** 전체 참여는 여기서 고를 수 있는 것이 아니라 정의에서 따라 나온다. 슬라이드도 식별 관계는 "always has a total participation constraint"라고 적었다.
+**이유:** 전체 참여는 여기서 고를 수 있는 것이 아니라 정의에서 따라 나온다. 식별 관계에는 늘 전체 참여 제약이 걸린다.
 
 </details>
 
@@ -125,12 +125,5 @@ COMPANY의 DEPENDENTS_OF는 1:N이다. 1쪽이 EMPLOYEE, N쪽이 DEPENDENT다. E
 </details>
 
 
-[^1]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.21 (Weak Entity Types, Identifying Relationship: "Always has a total participation constraint"). 이 쪽은 식별 관계 이름을 DEPENDENT_OF로 적었고, p.30과 그림은 DEPENDENTS_OF로 적었다.
-[^2]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.22 (Partial Key: "If no two dependents of the same employee have the same first name, the Dependent_name attribute … is the partial key")
-[^3]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.30 (DEPENDENTS_OF: 1:N, EMPLOYEE partial, DEPENDENT total)
-[^4]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.21 (COMPANY 상태의 DEPENDENT 7행과 EMPLOYEE의 Lname)
-[^5]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.33 (Notation: Weak Entity, Identifying Relationship)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 5주차 p.34의 COMPANY 그림에서 DEPENDENTS_OF 둘레만 떼어 그렸다. 겹마름모와 밑줄을 그릴 수 없어 "(식별 관계)", "(키)", "(부분 키)"로 적었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부분 키의 점선 밑줄은 슬라이드의 기호표(p.33)에는 없다. 4주차 4-2 p.5와 5주차 p.34의 COMPANY 그림에서 DEPENDENT의 Name 아래에 그어진 점선 밑줄을 읽었다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 늘 전체 참여인 까닭의 풀이, 생일의 예, 카드 C1~C3은 원본에 없다. 표의 값은 6주차 6-2 p.21에서 읽었고 검증 코드로 확인했다.
+[^s1]: 겹마름모와 밑줄을 그릴 수 없어 "(식별 관계)", "(키)", "(부분 키)"로 적었다.
 {% endraw %}

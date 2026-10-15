@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/52_constraint-violation-practice_p1-sq
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 52.제약 위반 찾기 연습 p1 (a~k)을 PostgreSQL 16에서 돌린다. SQLite와 갈리는 곳은 (a) 하나다.
---   (a)의 주소 '2365 Newcastle Rd, Bellaire, TX'는 31글자인데 슬라이드 9 p.17의 Address는 VARCHAR(30)이다.
+--   (a)의 주소 '2365 Newcastle Rd, Bellaire, TX'는 31글자인데 COMPANY DDL의 Address는 VARCHAR(30)이다.
 --   PostgreSQL은 길이를 넘는다고 막는다(22001). SQLite는 길이를 안 봐서 받는다.
 --   오류 번호: 23505 = 키 위반, 23502 = NOT NULL(개체 무결성) 위반, 23503 = 참조 무결성 위반
 \set QUIET 1
@@ -41,9 +41,9 @@ BEGIN
   RETURN 'OK';
 END $f$;
 
--- COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7). DDL은 46.CREATE SCHEMA와 CREATE TABLE의 문장을 따른다.
 -- EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 EMPLOYEE의 외래 키 두 개는 행을 넣은 뒤 ALTER TABLE로 붙인다.
--- WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
+-- WORKS_ON.Hours에는 NOT NULL이 없다(상태에 Hours가 NULL인 행이 있다).
 CREATE TABLE EMPLOYEE (
   Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

@@ -389,7 +389,7 @@ if __name__ == "__main__":
     m, rows = run_loop([5, -1, 7])
     assert [r[2] for r in rows] == [5, 4, 11] and m.reg("$s0") == 3 and m.steps == 28
 
-    # 컴파일러 51.수업용 MIPS 명령어의 과목별 관점 표와 카드 C4: 수업용 표기를 실제 MIPS로 옮긴 것
+    # 컴파일러 문서 [코드 생성용 MIPS 명령어]의 과목별 관점 표와 카드 C4: 수업용 표기를 실제 MIPS로 옮긴 것
     m = Machine("addi $t0, $zero, 5\naddi $t1, $t0, -2\nslt $t3, $t1, $t0\nbne $t3, $zero, L\naddi $s7, $zero, 1\nL:")
     m.run()
     assert (m.reg("$t0"), m.reg("$t1"), m.reg("$t3"), m.reg("$s7")) == (5, 3, 1, 0)   # L로 가서 $s7은 0

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Entity Type", "Entity Set", "개체", "Entity", "속성", "Attribute", "엔티티 타입", "엔티티 집합", "Extension", "ER 모델", "Entity-Relationship Model"]
 description: "붕어빵 틀과 붕어빵의 차이다. \"직원이라면 이름, 나이, 급여를 적는다\"는 틀이 있고, 그 틀에 맞춰 지금 적혀 있는 직원 한 사람 한 사람의 모음이 있다. 틀은 한번 정하면 좀처럼 안 바뀌고, 모음은 직원이 들어오고 나갈 때마다 바뀐다. 둘을 같은 이름으로 부르기 때문에, 지금 …"
@@ -34,9 +34,9 @@ permalink: "/studies/database-design/entity-type-and-set/"
 
 ## 예시로 보기
 
-회사 데이터베이스에 무엇을 넣을지 정하려면, 먼저 "무엇에 대해 적는가"와 "그것의 무엇을 적는가"를 갈라야 한다. ER 모델은 자료를 세 가지로 적는다. 대상(개체), 대상에 적는 항목(속성), 대상 사이의 관계다[^1].
+회사 데이터베이스에 무엇을 넣을지 정하려면, 먼저 "무엇에 대해 적는가"와 "그것의 무엇을 적는가"를 갈라야 한다. ER 모델은 자료를 세 가지로 적는다. 대상(개체), 대상에 적는 항목(속성), 대상 사이의 관계다.
 
-직원 한 사람 $$e_1$$과 회사 하나 $$c_1$$을 적으면 이렇다[^2].
+직원 한 사람 $$e_1$$과 회사 하나 $$c_1$$을 적으면 이렇다.
 
 | 대상 | 항목 = 값 |
 |---|---|
@@ -45,7 +45,7 @@ permalink: "/studies/database-design/entity-type-and-set/"
 
 $$e_1$$, $$c_1$$처럼 따로 가려낼 수 있는 대상 하나하나를 개체라 하고, Name, Age 같은 항목을 속성이라 한다. 개체는 속성마다 값을 하나씩 갖는다.
 
-직원은 한 명이 아니다. 직원이라면 누구나 같은 항목을 적으므로, 항목 목록은 한 번만 정해 두고 그 아래에 직원들을 모은다[^3].
+직원은 한 명이 아니다. 직원이라면 누구나 같은 항목을 적으므로, 항목 목록은 한 번만 정해 두고 그 아래에 직원들을 모은다.
 
 | | EMPLOYEE | COMPANY |
 |---|---|---|
@@ -65,10 +65,10 @@ $$e_1$$, $$c_1$$처럼 따로 가려낼 수 있는 대상 하나하나를 개체
 
 ## 정의
 
-- **개체(entity):** 현실 세계에서 따로 존재하는 것. 사람, 차, 집, 학생처럼 눈에 보이는 것일 수도 있고, 회사, 부서, 프로젝트처럼 생각 속에만 있는 것일 수도 있다[^1].
-- **속성(attribute):** 개체를 설명하는 성질. 이름, 나이, 주소, 급여, 생일 같은 것이다[^1].
-- **개체 타입(entity type):** 같은 속성들을 갖는 개체들의 모음을 정하는 틀. 이름과 속성 목록으로 적는다[^3]. 예: 이름이 EMPLOYEE이고 속성이 Name, Age, Salary 셋인 개체 타입[^4].
-- **개체 집합(entity set):** 어느 한 시점에 데이터베이스에 들어 있는, 그 타입의 개체 전부[^s1]. 슬라이드 그림은 이것에 "Entity Set (Extension)"이라는 이름표를 붙였다[^3].
+- **개체(entity):** 현실 세계에서 따로 존재하는 것. 사람, 차, 집, 학생처럼 눈에 보이는 것일 수도 있고, 회사, 부서, 프로젝트처럼 생각 속에만 있는 것일 수도 있다.
+- **속성(attribute):** 개체를 설명하는 성질. 이름, 나이, 주소, 급여, 생일 같은 것이다.
+- **개체 타입(entity type):** 같은 속성들을 갖는 개체들의 모음을 정하는 틀. 이름과 속성 목록으로 적는다. 예: 이름이 EMPLOYEE이고 속성이 Name, Age, Salary 셋인 개체 타입.
+- **개체 집합(entity set):** 어느 한 시점에 데이터베이스에 들어 있는, 그 타입의 개체 전부[^s1]. 개체 집합을 그 타입의 외연(extension)이라고도 부른다.
 
 글로 적을 때는 개체 타입을 `EMPLOYEE(Name, Age, Salary)`처럼 이름 뒤 괄호에 속성을 늘어놓는다.
 
@@ -76,9 +76,9 @@ $$e_1$$, $$c_1$$처럼 따로 가려낼 수 있는 대상 하나하나를 개체
 
 ## 활용
 
-- ER 다이어그램에는 타입만 그린다. 네모 하나가 개체 타입 하나다. 개체 집합의 내용은 그리지 않는다. 틀은 드물게 바뀌고 내용은 자주 바뀌기 때문이다[^5]. 기호는 [ER 다이어그램 표기법](/Hongs_Blog/studies/database-design/er-diagram-notation/)에 있다.
+- ER 다이어그램에는 타입만 그린다. 네모 하나가 개체 타입 하나다. 개체 집합의 내용은 그리지 않는다. 틀은 드물게 바뀌고 내용은 자주 바뀌기 때문이다. 기호는 [ER 다이어그램 표기법](/Hongs_Blog/studies/database-design/er-diagram-notation/)에 있다.
 - 흔한 실수: 개체 하나를 개체 타입으로 그리는 것. "John Smith"는 네모가 아니다. 네모는 EMPLOYEE다.
-- 위 표에서 $$c_1$$의 President 값은 John Smith이고, $$e_1$$의 Name도 John Smith다. 한 개체의 속성 값이 다른 개체를 가리키고 있다. 이런 속성은 설계를 다듬을 때 관계로 바꾼다: [ER 설계 절차](/Hongs_Blog/studies/database-design/er-design-steps/)[^s2].
+- 위 표에서 $$c_1$$의 President 값은 John Smith이고, $$e_1$$의 Name도 John Smith다. 한 개체의 속성 값이 다른 개체를 가리키고 있다. 이런 속성은 설계를 다듬을 때 관계로 바꾼다: [ER 설계 절차](/Hongs_Blog/studies/database-design/er-design-steps/).
 
 ## 연결
 
@@ -111,16 +111,10 @@ $$e_1$$, $$c_1$$처럼 따로 가려낼 수 있는 대상 하나하나를 개체
 <summary class="callout-title" markdown="span">**C3** ER 다이어그램에는 왜 개체 집합의 내용($$e_1$$, $$e_2$$, …)을 그리지 않고 개체 타입만 그리는가?</summary>
 
 **답:** 다이어그램은 데이터베이스의 틀(스키마)을 보이려는 그림이기 때문이다. 틀은 드물게 바뀌지만 개체 집합의 내용은 자주 바뀐다. 내용을 그리면 직원이 한 명 들어올 때마다 그림을 고쳐야 한다.<br>
-**이유:** 슬라이드의 문장이 "A database schema changes rarely, whereas the contents of the entity sets may change frequently"다[^5]. 설계는 틀을 정하는 일이라 틀만 있으면 된다.
+**이유:** 설계는 틀을 정하는 일이라 틀만 있으면 된다.
 
 </details>
 
 
-[^1]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.7 (Entities and Attributes). 5주차 p.3에 같은 내용이 있다.
-[^2]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.8 (두 개체 $$e_1$$, $$c_1$$과 속성 값 그림)
-[^3]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.11 (Entity Types and Sets: Entity Type Name, Entity Set (Extension) 그림)
-[^4]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.5 (같은 그림에 "The entity type, named as 'EMPLOYEE', has three attributes" 설명)
-[^5]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.32 (ER Diagram: Focus on representing the schema, rather than the instances)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 개체 집합을 그림의 이름표로만 보이고 글로 정의하지 않는다. "어느 한 시점에 들어 있는 그 타입의 개체 전부"라는 정의와, 타입과 집합을 같은 이름으로 부른다는 설명은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 것이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> President 값이 다른 개체를 가리킨다는 관찰과 카드 C1~C3은 원본에 없다. 값은 슬라이드 4-2 p.8, p.11의 그림에서 읽었고 검증 코드로 확인했다.
+[^s1]: "어느 한 시점에 들어 있는 그 타입의 개체 전부"라는 정의와, 타입과 집합을 같은 이름으로 부른다는 설명은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 것이다.
 {% endraw %}

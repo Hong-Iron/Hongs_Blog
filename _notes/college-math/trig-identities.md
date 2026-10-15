@@ -227,7 +227,7 @@ $$\sin^2\omega t$$(파랑)는 $$\sin\omega t$$보다 두 배 빠르게 0과 1 �
 
 
 [^1]: OpenStax, *Precalculus 2e*, 7.1절 "Simplifying and Verifying Trigonometric Identities", 7.2절 "Sum and Difference Identities", 7.3절 "Double-Angle, Half-Angle, and Reduction Formulas", 7.4절 "Sum-to-Product and Product-to-Sum Formulas". 단위원 위 두 점의 거리를 두 번 재는 덧셈정리 증명은 표준적인 증명 방법 중 하나다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 반송파를 곱하는 진폭 변조와 실효값 $$A/\sqrt2$$은 통신·전기 공학의 표준 내용이다. 실제 주파수 분할 다중화는 한쪽 옆띠만 남기는 등 더 다듬은 변조를 쓴다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [14_trig-identities_plot.py](/Hongs_Blog/studies/college-math/code/14_trig-identities_plot/)로 그렸고, 그림에 쓴 값($$\sin^2$$의 한 주기 평균 0.5, 합 → 곱 공식으로 두 사인파의 합이 $$2\sin(2\pi \cdot 21t)\cos(2\pi \cdot 1 \cdot t)$$)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `증명`의 1~9단계가 각각 앞의 어느 공식을 쓰는지를 근거로 그렸다(OpenStax, *Precalculus 2e*, 7.2~7.4절).
+[^s1]: 반송파를 곱하는 진폭 변조와 실효값 $$A/\sqrt2$$은 통신·전기 공학의 표준 내용이다. 실제 주파수 분할 다중화는 한쪽 옆띠만 남기는 등 더 다듬은 변조를 쓴다.
+[^s2]: [14_trig-identities_plot.py](/Hongs_Blog/studies/college-math/code/14_trig-identities_plot/)로 그렸고, 그림에 쓴 값($$\sin^2$$의 한 주기 평균 0.5, 합 → 곱 공식으로 두 사인파의 합이 $$2\sin(2\pi \cdot 21t)\cos(2\pi \cdot 1 \cdot t)$$)을 같은 코드로 확인했다.
+[^s3]: `증명`의 1~9단계가 각각 앞의 어느 공식을 쓰는지를 근거로 그렸다(OpenStax, *Precalculus 2e*, 7.2~7.4절).
 {% endraw %}

@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/35_type-inference-rules_verify/"
 ```python
 # 35_type-inference-rules_verify.py
 # 타입 추론 규칙 문서의 예를 확인한다. 규칙을 "가정들 / 결론" 꼴 그대로 적용해 증명 나무를 만들고,
-# 슬라이드 L10 p.14~22의 예(A + B, A && B, 상수, x + 3, 함수 호출, 배열)에서
+# 문서의 예(A + B, A && B, 상수, x + 3, 함수 호출, 배열)에서
 # 붙는 타입과 쓰인 규칙 수를 본다. 표준 라이브러리만 쓴다.
 # 식: ("int", 3) ("double", 1.5) ("string", "s") ("bool", True) ("var", "x")
 #     (연산자, 왼쪽, 오른쪽) ("call", f, [식...]) ("index", 식, 식)
@@ -90,37 +90,37 @@ def typed(e, S):
 if __name__ == "__main__":
     var = lambda n: ("var", n)
 
-    # p.14: A, B가 int면 A + B는 int
+    # A, B가 int면 A + B는 int
     assert typed(("+", var("A"), var("B")), {"A": "int", "B": "int"}) == "int"
-    # p.15: A가 bool, B가 int면 A && B에 맞는 규칙이 없다
+    # A가 bool, B가 int면 A && B에 맞는 규칙이 없다
     assert typed(("&&", var("A"), var("B")), {"A": "bool", "B": "int"}) is None
     assert typed(("&&", var("A"), var("B")), {"A": "bool", "B": "bool"}) == "bool"
 
-    # p.17: 공리와 상수 규칙은 스코프 정보 없이도 쓸 수 있다
+    # 공리와 상수 규칙은 스코프 정보 없이도 쓸 수 있다
     assert typed(("bool", True), None) == "bool" and typed(("bool", False), None) == "bool"
     assert typed(("int", 1), None) == "int" and typed(("int", 1000), None) == "int"
     assert typed(("string", "hi"), None) == "string" and typed(("double", 2.5), None) == "double"
-    # p.17: 덧셈은 T가 short, int, long, float, double일 때만. 두 쪽의 T가 같아야 한다
+    # 덧셈은 T가 short, int, long, float, double일 때만. 두 쪽의 T가 같아야 한다
     for T in NUMERIC:
         assert typed(("+", var("p"), var("q")), {"p": T, "q": T}) == T
     for T in ("bool", "char", "string", "byte"):
         assert typed(("+", var("p"), var("q")), {"p": T, "q": T}) is None
     assert typed(("+", ("int", 1), ("double", 2.0)), None) is None
-    # p.18: 비교는 원시 타입 T가 같을 때 bool
+    # 비교는 원시 타입 T가 같을 때 bool
     for op in ("==", "!=", "<=", ">="):
         for T in PRIMITIVE:
             assert typed((op, var("p"), var("q")), {"p": T, "q": T}) == "bool"
         assert typed((op, var("p"), var("q")), {"p": "int", "q": "double"}) is None
         assert typed((op, var("p"), var("q")), {"p": "string", "q": "string"}) is None
 
-    # p.19~20: 스코프 정보가 없으면 x + 3의 x는 자유 변수라 타입을 못 정한다
+    # 스코프 정보가 없으면 x + 3의 x는 자유 변수라 타입을 못 정한다
     assert typed(("+", var("x"), ("int", 3)), None) is None
-    # p.21~22: 스코프 정보를 주면 정해진다. 같은 식이 스코프에 따라 다른 답을 낸다
+    # 스코프 정보를 주면 정해진다. 같은 식이 스코프에 따라 다른 답을 낸다
     assert typed(("+", var("x"), ("int", 3)), {"x": "int"}) == "int"
     assert typed(("+", var("x"), ("int", 3)), {"x": "double"}) is None
     assert typed(("+", var("x"), ("int", 3)), {"x": "bool"}) is None
 
-    # p.22: 함수 호출과 배열
+    # 함수 호출과 배열
     S = {"f": (("int", "bool"), "double"), "a": "int[]", "i": "int", "ok": "bool", "d": "double"}
     assert typed(("call", "f", [var("i"), var("ok")]), S) == "double"
     assert typed(("call", "f", [var("ok"), var("i")]), S) is None

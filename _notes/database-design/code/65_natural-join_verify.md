@@ -23,11 +23,10 @@ permalink: "/studies/database-design/code/65_natural-join_verify/"
 """자연 조인 NATURAL JOIN 검증 (SQLite로 바꿔 쓴 판).
 
 문서: 65.자연 조인 NATURAL JOIN
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.22~23, 12주차 p.7
 SQLite는 열 목록이 붙은 별칭 DEPT (Dname, Dno, Mssn, Msdate)를 받지 않는다.
-슬라이드의 꼴은 65_natural-join_verify.sql(PostgreSQL 16)에서 돌린다.
+열 목록이 붙은 별칭을 쓴 꼴은 65_natural-join_verify.sql(PostgreSQL 16)에서 돌린다.
 주장:
-  1. 슬라이드의 문장은 SQLite에서 구문 오류다. 열 이름을 바꾼 부질의로 쓰면 Research 직원 4명이 나온다.
+  1. 열 목록이 붙은 별칭을 쓴 문장은 SQLite에서 구문 오류다. 열 이름을 바꾼 부질의로 쓰면 Research 직원 4명이 나온다.
   2. 자연 조인한 표는 8행 13열이고 Dno가 한 번만 나온다 (JOIN ON은 14열).
   3. 이름을 맞추지 않고 EMPLOYEE NATURAL JOIN DEPARTMENT를 하면 같은 이름의 열이 없어 8 x 3 = 24행이 나온다.
   4. EMPLOYEE NATURAL JOIN DEPENDENT는 Sex와 Bdate가 겹쳐 그 두 열을 맞추려다 0행이 된다.
@@ -35,10 +34,10 @@ SQLite는 열 목록이 붙은 별칭 DEPT (Dname, Dno, Mssn, Msdate)를 받지 
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -126,7 +125,7 @@ def fails(c, sql):
 def main():
     c = make()
 
-    # 1. 슬라이드의 문장과 바꿔 쓴 판
+    # 1. 열 목록이 붙은 별칭을 쓴 문장과 바꿔 쓴 판
     slide = """SELECT Fname, Lname, Address
                FROM (EMPLOYEE NATURAL JOIN (DEPARTMENT AS DEPT (Dname, Dno, Mssn, Msdate)))
                WHERE Dname = 'Research'"""
@@ -135,7 +134,7 @@ def main():
     dept = "(SELECT Dname, Dnumber AS Dno, Mgr_ssn AS Mssn, Mgr_start_date AS Msdate FROM DEPARTMENT)"
     rewritten = "SELECT Fname, Lname, Address FROM EMPLOYEE NATURAL JOIN " + dept + " WHERE Dname = 'Research'"
     assert [r[1] for r in rows(c, rewritten)] == ["Smith", "Wong", "Narayan", "English"]
-    print("[OK] 슬라이드 문장은 SQLite 구문 오류. 바꿔 쓴 판은 Smith, Wong, Narayan, English")
+    print("[OK] 열 목록 별칭을 쓴 문장은 SQLite 구문 오류. 바꿔 쓴 판은 Smith, Wong, Narayan, English")
 
     # 2. 열이 한 번만 나온다
     star = "SELECT * FROM EMPLOYEE NATURAL JOIN " + dept

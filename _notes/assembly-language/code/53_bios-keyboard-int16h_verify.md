@@ -21,7 +21,7 @@ permalink: "/studies/assembly-language/code/53_bios-keyboard-int16h_verify/"
 
 ```python
 # 53.BIOS 키보드 입력 INT 16h 문서의 확인. 실행: python3 53_bios-keyboard-int16h_verify.py
-# BIOS를 실제로 부르지 않는다. 키보드 버퍼를 큐로 흉내 내고 슬라이드의 표와 코드 흐름만 확인한다.
+# BIOS를 실제로 부르지 않는다. 키보드 버퍼를 큐로 흉내 내고 문서의 표와 코드 흐름만 확인한다.
 from collections import deque
 
 
@@ -48,7 +48,7 @@ class Bios:
 
 
 def clear_buffer(bios, exit_scan):
-    """wk14-16 p.25의 흐름. 끝났을 때의 ZF를 돌려준다."""
+    """문서의 버퍼 비우기 코드 흐름. 끝났을 때의 ZF를 돌려준다."""
     while True:
         if bios.f11():                  # jz noKey
             al = 0
@@ -60,7 +60,7 @@ def clear_buffer(bios, exit_scan):
 
 
 if __name__ == "__main__":
-    # 키보드 상태 플래그의 자리 (wk14-16 p.21)
+    # 키보드 상태 플래그의 자리
     assert linear(0x0040, 0x0017) == 0x00417 and linear(0x0040, 0x0018) == 0x00418
     # 자판 미리 입력 버퍼 001E~003D: 32바이트 = (스캔 코드, ASCII) 16쌍
     assert 0x003D - 0x001E + 1 == 32 and 32 // 2 == 16
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     kf = 0x0045
     assert [n for n in names if kf & masks[n]] == ["Right Shift", "Ctrl", "Caps Lock on"]
 
-    # 스캔 코드 표 (wk14-16 p.9~10) 몇 칸
+    # 스캔 코드 표 몇 칸
     fkeys = {"F1": (0x3B, 0x54, 0x5E, 0x68), "F10": (0x44, 0x5D, 0x67, 0x71),
              "F11": (0x85, 0x87, 0x89, 0x8B), "F12": (0x86, 0x88, 0x8A, 0x8C)}
     # F1~F10은 줄마다 1씩 커진다

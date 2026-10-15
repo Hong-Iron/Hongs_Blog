@@ -10,9 +10,9 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
-description: "3주소 코드를 수업용 MIPS 명령어로 옮기는 문제 셋이다. 명령 표기는 슬라이드의 것을 쓴다($r0, 빈칸으로 나눈 피연산자). 실행 결과는 파이썬 흉내기로 확인한 것이고 실제 MIPS 어셈블러로 돌린 것이 아니다."
+description: "3주소 코드를 코드 생성용 MIPS 명령어로 옮기는 문제 셋이다. 명령 표기는 그 문서의 것을 쓴다($r0, 빈칸으로 나눈 피연산자). 실행 결과는 파이썬 흉내기로 확인한 것이고 실제 MIPS 어셈블러로 돌린 것이 아니다."
 prev_url: "/studies/compilers/global-dataflow-ladder/"
 prev_title: "전역 분석 예제 사다리"
 next_url: "/studies/compilers/register-allocation-ladder/"
@@ -23,11 +23,11 @@ code_count: 2
 permalink: "/studies/compilers/codegen-practice/"
 ---
 {% raw %}
-3주소 코드를 [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)로 옮기는 문제 셋이다. 명령 표기는 슬라이드의 것을 쓴다(`$r0`, 빈칸으로 나눈 피연산자). 실행 결과는 파이썬 흉내기로 확인한 것이고 실제 MIPS 어셈블러로 돌린 것이 아니다.
+3주소 코드를 [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)로 옮기는 문제 셋이다. 명령 표기는 그 문서의 것을 쓴다(`$r0`, 빈칸으로 나눈 피연산자). 실행 결과는 파이썬 흉내기로 확인한 것이고 실제 MIPS 어셈블러로 돌린 것이 아니다.
 
 ## p1 · 반복문 옮기기
 
-`t0`는 `$sp + 12`, x는 `$sp + 8`, y는 `$sp + 4`에 있다. 다음 3주소 코드를 옮기라[^1].
+`t0`는 `$sp + 12`, x는 `$sp + 8`, y는 `$sp + 4`에 있다. 다음 3주소 코드를 옮기라.
 
 ```
 L0:
@@ -93,7 +93,7 @@ y = 2
 L2:
 ```
 
-사용 개념: [단순 연산과 분기의 코드 생성](/Hongs_Blog/studies/compilers/codegen-simple-operations/), [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)
+사용 개념: [단순 연산과 분기의 코드 생성](/Hongs_Blog/studies/compilers/codegen-simple-operations/), [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)
 
 **풀이 전략.** p1과 같은 틀이다. 새로 나오는 것은 `y = 1`처럼 상수를 그대로 넣는 줄이다. 꺼낼 변수가 없으므로 `lw` 대신 `li`로 상수를 레지스터에 올린 뒤 `sw`로 넣는다. 함수 호출에서 인자 3을 넣을 때 쓴 `li $r0 3` / `sw $r0 0($sp)`와 같은 꼴이다.
 
@@ -142,7 +142,7 @@ L2:
 
 사용 개념: [함수 호출의 코드 생성](/Hongs_Blog/studies/compilers/codegen-function-call/), [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)
 
-**풀이 전략.** 슬라이드의 `foo`는 인자가 하나였다. 인자가 하나 늘면 달라지는 곳을 찾는다. 레코드의 칸이 하나 늘어나므로 ① 인자를 넣는 묶음이 한 번 더 나오고 ② 제어 링크를 계산할 때 더하는 수가 4 커지고 ③ 불린 함수 안에서 인자와 반환값 칸의 오프셋이 달라진다. 스택 그림을 먼저 그리고 `$sp`에서 칸 수를 세면 틀리지 않는다.
+**풀이 전략.** [함수 호출의 코드 생성](/Hongs_Blog/studies/compilers/codegen-function-call/)의 `foo`는 인자가 하나였다. 인자가 하나 늘면 달라지는 곳을 찾는다. 레코드의 칸이 하나 늘어나므로 ① 인자를 넣는 묶음이 한 번 더 나오고 ② 제어 링크를 계산할 때 더하는 수가 4 커지고 ③ 불린 함수 안에서 인자와 반환값 칸의 오프셋이 달라진다. 스택 그림을 먼저 그리고 `$sp`에서 칸 수를 세면 틀리지 않는다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
@@ -200,7 +200,6 @@ sw  $r0 4($sp)       # c = 12
 </div>
 
 
-[^1]: 컴파일러 15회 강의 자료 「Lecture15 Code generation part 2」, p.17 (연습 문제), p.18 (답). 슬라이드의 "itnot"은 "ifnot"의 오타로 읽었다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> p1의 변형 문제와 p2는 원본에 없다. 상수를 넣는 `li` / `sw` 꼴은 슬라이드 p.21의 인자 넣기에서 가져왔다. 답은 문제 코드의 흉내기로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> p3은 원본에 없다. 슬라이드 p.19~28의 `foo`(인자 하나)를 인자 둘로 넓혔다. 인자 둘을 넣는 순서는 슬라이드에 없어 "첫 인자부터"로 정했고, 문제에 그 가정을 적었다. 슬라이드에 없는 뛰는 명령은 흉내기에서 `jal`(돌아올 주소를 `$ra`에 넣고 뛴다)로 두었다. 답은 문제 코드로 확인했다.
+[^s1]: 답은 문제 코드의 흉내기로 확인했다.
+[^s2]: 답은 문제 코드로 확인했다.
 {% endraw %}

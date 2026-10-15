@@ -23,7 +23,6 @@ permalink: "/studies/data-and-information/code/05_hamming-distance_verify/"
 """해밍 거리와 부호 거리 문서의 주장 확인.
 
 문서: 05.해밍 거리와 부호 거리
-출처: 자료와 정보 3회 슬라이드(강의03-부호) p.13~14, p.16, (강의03-2-부호2) p.2~3
 주장:
   1. 해밍 거리는 거리의 네 조건을 지킨다 (길이 5의 모든 2진 열 전수 검사).
   2. 2진에서 Delta(x, y) = wt(x - y) = wt(x XOR y).
@@ -108,7 +107,7 @@ if __name__ == "__main__":
 
     # 문서의 예
     assert hd("10110", "10011") == 2 and wt("10110") == 3
-    assert hd("010010010", "100001011") == 5  # 4회 슬라이드의 9비트 예
+    assert hd("010010010", "100001011") == 5  # 9비트 예
     assert sum(1 for y in ["".join(p) for p in product("01", repeat=3)] if hd("000", y) <= 1) == 4
 
     rep3 = {"000", "111"}

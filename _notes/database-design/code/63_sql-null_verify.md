@@ -23,23 +23,22 @@ permalink: "/studies/database-design/code/63_sql-null_verify/"
 """NULL 값과 IS NULL 검증 (SQLite).
 
 문서: 63.NULL 값과 IS NULL
-출처: 데이터베이스 설계 슬라이드 6-2 p.14, 11-2 p.18, 24~25, 28
 주장:
-  1. Super_ssn = NULL과 Super_ssn <> NULL은 0행, IS NULL은 Borg 1행, IS NOT NULL은 7행 (p.18).
+  1. Super_ssn = NULL과 Super_ssn <> NULL은 0행, IS NULL은 Borg 1행, IS NOT NULL은 7행.
   2. NULL과의 비교는 참도 거짓도 아닌 값(모름)이다. AND, OR, NOT의 값 표.
   3. Hours > 10은 8행, Hours <= 10은 7행, 합쳐도 16행이 아니라 15행이다(NULL 행 하나가 양쪽에서 빠진다).
-  4. 조인에서 조인 열이 NULL인 행은 빠진다: 상사 조인은 8행이 아니라 7행 (p.18, 24).
-  5. COUNT(*) 8, COUNT(Salary) 8, COUNT(DISTINCT Salary) 6, COUNT(Super_ssn) 7 (p.28의 물음).
+  4. 조인에서 조인 열이 NULL인 행은 빠진다: 상사 조인은 8행이 아니라 7행.
+  5. COUNT(*) 8, COUNT(Salary) 8, COUNT(DISTINCT Salary) 6, COUNT(Super_ssn) 7 (문서의 물음).
      WORKS_ON: COUNT(*) 16, COUNT(Hours) 15, SUM 275, AVG는 275 / 15.
   6. GROUP BY와 DISTINCT는 NULL끼리 한데 모은다.
   7. NOT IN 뒤의 결과에 NULL이 하나라도 있으면 0행이다.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

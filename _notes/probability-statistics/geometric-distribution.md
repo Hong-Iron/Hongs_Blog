@@ -169,7 +169,7 @@ $$i$$종을 가진 동안은 과자 하나마다 확률 $$\frac{n-i}{n}$$로 다
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 4.3절 "Geometric and Negative Binomial"(실패 수 규약의 기하분포, 첫 성공 분포, 쿠폰 수집 문제).
 [^2]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 11.4절 "Open addressing"(정리 11.6, 실패한 탐색의 기대 탐사 수 $$\frac{1}{1 - \alpha}$$ 이하).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> SciPy의 `scipy.stats.geom`은 PMF를 $$(1-p)^{k-1}p$$($$k \ge 1$$)로 정의해 시행 수 규약을 쓴다(SciPy 문서). 두 규약의 평균과 분산은 11_geometric-distribution_verify.py로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [11_geometric-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_plot/)로 그렸고, 그림에 쓴 값(평균 6, $$\left(\frac56\right)^6 = 0.335$$)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예제(쿠폰 수집)의 1단계를 상태 전이 그림으로 옮겼다.
+[^s1]: SciPy의 `scipy.stats.geom`은 PMF를 $$(1-p)^{k-1}p$$($$k \ge 1$$)로 정의해 시행 수 규약을 쓴다(SciPy 문서). 두 규약의 평균과 분산은 11_geometric-distribution_verify.py로 확인했다.
+[^s2]: [11_geometric-distribution_plot.py](/Hongs_Blog/studies/probability-statistics/code/11_geometric-distribution_plot/)로 그렸고, 그림에 쓴 값(평균 6, $$\left(\frac56\right)^6 = 0.335$$)을 같은 코드로 확인했다.
+[^s3]: 이 문서 예제(쿠폰 수집)의 1단계를 상태 전이 그림으로 옮겼다.
 {% endraw %}

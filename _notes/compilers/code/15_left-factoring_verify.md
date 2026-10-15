@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/15_left-factoring_verify/"
 [좌인수분해](/Hongs_Blog/studies/compilers/left-factoring/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""좌인수분해 문서의 예를 확인한다: 슬라이드의 네 단계 절차, 변환 전후 언어 비교.
+"""좌인수분해 문서의 예를 확인한다: 문서의 네 단계 절차, 변환 전후 언어 비교.
 
 실행: python3 15_left-factoring_verify.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -73,7 +73,7 @@ def common_prefix(seqs):
 
 
 def left_factor(g):
-    """같은 기호로 시작하는 규칙이 둘 이상 남지 않을 때까지 슬라이드의 1~3단계를 되풀이한다."""
+    """같은 기호로 시작하는 규칙이 둘 이상 남지 않을 때까지 문서 절차의 1~3단계를 되풀이한다."""
     g = {A: list(ps) for A, ps in g.items()}
     again = True
     while again:
@@ -110,7 +110,7 @@ def needs_factoring(g):
 
 
 if __name__ == "__main__":
-    # p.44~45: E → T + E | T, T → F * T | F, F → (E) | id
+    # 대표 문제 1: E → T + E | T, T → F * T | F, F → (E) | id
     g = G("E -> T + E | T\nT -> F * T | F\nF -> ( E ) | id")
     assert needs_factoring(g) == {"E", "T"}
     h = left_factor(g)
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     assert show(h3) == {"A": ["a A'"], "A'": ["b A''", "e"], "A''": ["c", "d"]}
     assert language(g3, "A", 5) == language(h3, "A", 5)
 
-    # p.47의 연습: 우재귀로 고친 DECL 문법을 좌인수분해한다.
+    # DECL 연습: 우재귀로 고친 DECL 문법을 좌인수분해한다.
     d = G("DECL -> type id ; DECL | type id = id ; DECL | ε")
     hd = left_factor(d)
     assert show(hd) == {"DECL": ["type id DECL'", "ε"], "DECL'": ["; DECL", "= id ; DECL"]}

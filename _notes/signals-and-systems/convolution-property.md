@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/convolution-property/"
 
 ## 예시로 보기
 
-$$h(t) = e^{-at}u(t)$$인 시스템에 $$x(t) = e^{-bt}u(t)$$를 넣는다($$a, b > 0$$, 예제 4.19)[^1].
+$$h(t) = e^{-at}u(t)$$인 시스템에 $$x(t) = e^{-bt}u(t)$$를 넣는다($$a, b > 0$$, 예제 4.19).
 
 1. *변환:* $$X = \frac{1}{b + j\omega}$$, $$H = \frac{1}{a + j\omega}$$(예제 4.1).
 2. *곱하기:* $$Y = \dfrac{1}{(a + j\omega)(b + j\omega)}$$.
@@ -49,7 +49,7 @@ flowchart LR
   YF -->|"부분 분수 후 역변환"| Y
 ```
 
-같은 $$y(t)$$로 가는 두 길이다. 주파수 영역 길은 걸음이 셋이지만, 적분 대신 곱셈을 쓴다.[^s3]
+같은 $$y(t)$$로 가는 두 길이다. 주파수 영역 길은 걸음이 셋이지만, 적분 대신 곱셈을 쓴다.
 
 시간 영역 컨벌루션 $$\int_0^te^{-b\tau}e^{-a(t-\tau)}d\tau$$를 직접 해도 같은 답이 나온다.
 
@@ -64,8 +64,6 @@ $$a = 1$$, $$b = 2$$일 때다. 왼쪽 시간에서는 두 신호를 컨벌루�
 
 $$y(t) = h(t) * x(t) \overset{\mathcal{F}}{\longleftrightarrow} Y(j\omega) = H(j\omega)X(j\omega)$$
 
-[^2]
-
 </div>
 
 
@@ -75,26 +73,26 @@ $$y(t) = h(t) * x(t) \overset{\mathcal{F}}{\longleftrightarrow} Y(j\omega) = H(j
 1. $$Y = \int\left[\int x(\tau)h(t - \tau)d\tau\right]e^{-j\omega t}dt$$ (컨벌루션을 변환식에 넣음)
 2. 적분 순서를 바꾸고, $$x(\tau)$$는 $$t$$와 무관하므로 밖으로: $$Y = \int x(\tau)\left[\int h(t - \tau)e^{-j\omega t}dt\right]d\tau$$
 3. 안쪽은 $$h$$를 $$\tau$$만큼 옮긴 것의 변환이라 시간 이동 성질로 $$e^{-j\omega\tau}H(j\omega)$$
-4. $$Y = H(j\omega)\int x(\tau)e^{-j\omega\tau}d\tau = H(j\omega)X(j\omega)$$[^2]
+4. \$$Y = H(j\omega)\int x(\tau)e^{-j\omega\tau}d\tau = H(j\omega)X(j\omega)$$
 
-다른 길: 비주기 신호를 복소 지수의 적분 $$\frac{1}{2\pi}\int X(j\omega)e^{j\omega t}d\omega$$로 보면, 각 $$e^{j\omega t}$$는 고유함수라 $$H(j\omega)$$가 곱해지고, 중첩으로 $$y = \frac{1}{2\pi}\int X(j\omega)H(j\omega)e^{j\omega t}d\omega$$다. 이것을 역변환식과 비교하면 $$Y = XH$$[^3].
+다른 길: 비주기 신호를 복소 지수의 적분 $$\frac{1}{2\pi}\int X(j\omega)e^{j\omega t}d\omega$$로 보면, 각 $$e^{j\omega t}$$는 고유함수라 $$H(j\omega)$$가 곱해지고, 중첩으로 $$y = \frac{1}{2\pi}\int X(j\omega)H(j\omega)e^{j\omega t}d\omega$$다. 이것을 역변환식과 비교하면 $$Y = XH$$.
 
 </details>
 
 
-$$H(j\omega)$$를 주파수 응답이라 한다. 입력 스펙트럼이 주파수 $$\omega$$에서 받는 복소 배율이다. 주파수 선택 필터에서는 원하는 대역에서 $$H \approx 1$$(변화 없음), 나머지에서 $$H \approx 0$$(제거)이다[^4].
+$$H(j\omega)$$를 주파수 응답이라 한다. 입력 스펙트럼이 주파수 $$\omega$$에서 받는 복소 배율이다. 주파수 선택 필터에서는 원하는 대역에서 $$H \approx 1$$(변화 없음), 나머지에서 $$H \approx 0$$(제거)이다.
 
-**직렬 연결.** 두 LTI 시스템을 직렬로 이으면 주파수 응답은 곱 $$H_1H_2$$이고, 곱은 순서를 바꿔도 같으므로 연결 순서와 무관하다(그림 4.19)[^4].
+**직렬 연결.** 두 LTI 시스템을 직렬로 이으면 주파수 응답은 곱 $$H_1H_2$$이고, 곱은 순서를 바꿔도 같으므로 연결 순서와 무관하다(그림 4.19).
 
-**존재 조건.** 모든 LTI 시스템에서 주파수 응답이 정의되지는 않는다. 안정한 시스템은 $$\int\vert h(t)\vert dt < \infty$$라 디리클레 조건 하나를 만족하고, 나머지 두 조건까지 만족하면 $$H(j\omega)$$가 존재한다[^5].
+**존재 조건.** 모든 LTI 시스템에서 주파수 응답이 정의되지는 않는다. 안정한 시스템은 $$\int\vert h(t)\vert dt < \infty$$라 디리클레 조건 하나를 만족하고, 나머지 두 조건까지 만족하면 $$H(j\omega)$$가 존재한다.
 
 ## 예제
 
-**예제 4.15 시간 지연** $$h = \delta(t - t_0)$$[^6]. $$H = e^{-j\omega t_0}$$, $$Y = e^{-j\omega t_0}X$$이므로 $$y = x(t - t_0)$$. 모든 주파수에서 크기 1, 위상은 $$\omega$$에 비례하는 $$-\omega t_0$$.
+**예제 4.15 시간 지연** $$h = \delta(t - t_0)$$. $$H = e^{-j\omega t_0}$$, $$Y = e^{-j\omega t_0}X$$이므로 $$y = x(t - t_0)$$. 모든 주파수에서 크기 1, 위상은 $$\omega$$에 비례하는 $$-\omega t_0$$.
 
-**예제 4.16 미분기** $$y = \frac{dx}{dt}$$: $$H = j\omega$$. **예제 4.17 적분기** $$y = \int_{-\infty}^{t}x$$: $$h = u(t)$$, $$H = \frac{1}{j\omega} + \pi\delta(\omega)$$, $$Y = \frac{1}{j\omega}X + \pi X(0)\delta(\omega)$$[^7].
+**예제 4.16 미분기** $$y = \frac{dx}{dt}$$: $$H = j\omega$$. **예제 4.17 적분기** $$y = \int_{-\infty}^{t}x$$: $$h = u(t)$$, $$H = \frac{1}{j\omega} + \pi\delta(\omega)$$, $$Y = \frac{1}{j\omega}X + \pi X(0)\delta(\omega)$$.
 
-**예제 4.18 이상적 저역 통과 필터**[^8]. $$H = 1$$ ($$\vert \omega\vert  < \omega_c$$), 0 (그 밖).
+**예제 4.18 이상적 저역 통과 필터**. $$H = 1$$ ($$\vert \omega\vert  < \omega_c$$), 0 (그 밖).
 
 - 예제 4.5로 $$h(t) = \dfrac{\sin\omega_ct}{\pi t} = \dfrac{\omega_c}{\pi}\mathrm{sinc}\left(\dfrac{\omega_ct}{\pi}\right)$$, $$h(0) = \frac{\omega_c}{\pi}$$(그림 4.21).
 - $$t < 0$$에서 $$h(t) \ne 0$$이라 인과적이지 않다. 출력이 미래 입력에 영향을 받으므로, 실시간 시스템에는 이상적 필터를 쓸 수 없다.
@@ -104,9 +102,9 @@ $$H(j\omega)$$를 주파수 응답이라 한다. 입력 스펙트럼이 주파�
 
 $$\omega_c = 3$$인 이상적 저역 통과 필터의 임펄스 응답은 색칠한 $$t < 0$$ 쪽에서도 출렁인다. RC 필터 $$e^{-t}u(t)$$는 $$t < 0$$에서 0이고 진동 없이 줄어든다[^s2].
 
-**예제 4.19 ($$a = b$$)**[^9]. $$Y = \frac{1}{(a + j\omega)^2} = j\frac{d}{d\omega}\left[\frac{1}{a + j\omega}\right]$$. 주파수 미분 성질 $$tx(t) \leftrightarrow j\frac{dX}{d\omega}$$로 $$y(t) = te^{-at}u(t)$$.
+**예제 4.19 ($$a = b$$)**. $$Y = \frac{1}{(a + j\omega)^2} = j\frac{d}{d\omega}\left[\frac{1}{a + j\omega}\right]$$. 주파수 미분 성질 $$tx(t) \leftrightarrow j\frac{dX}{d\omega}$$로 $$y(t) = te^{-at}u(t)$$.
 
-**예제 4.20 sinc 입력과 이상적 저역 통과**[^10]. $$x = \frac{\sin\omega_it}{\pi t}$$, $$h = \frac{\sin\omega_ct}{\pi t}$$이면 $$X$$와 $$H$$는 각각 폭 $$\omega_i$$, $$\omega_c$$인 사각형이라 $$Y$$는 좁은 쪽 사각형($$\omega_0 = \min(\omega_i, \omega_c)$$). $$y = \frac{\sin\omega_0t}{\pi t}$$로, $$x$$와 $$h$$ 중 대역이 좁은 쪽이 출력이 된다.
+**예제 4.20 sinc 입력과 이상적 저역 통과**. $$x = \frac{\sin\omega_it}{\pi t}$$, $$h = \frac{\sin\omega_ct}{\pi t}$$이면 $$X$$와 $$H$$는 각각 폭 $$\omega_i$$, $$\omega_c$$인 사각형이라 $$Y$$는 좁은 쪽 사각형($$\omega_0 = \min(\omega_i, \omega_c)$$). $$y = \frac{\sin\omega_0t}{\pi t}$$로, $$x$$와 $$h$$ 중 대역이 좁은 쪽이 출력이 된다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 예제 4.15의 크기·위상, 예제 4.19($$a \ne b$$, $$a = b$$)를 시간 영역 수치 컨벌루션과 비교, 부분 분수, $$te^{-at}u(t) \leftrightarrow \frac{1}{(a+j\omega)^2}$$, 예제 4.20의 sinc 컨벌루션이 좁은 쪽 sinc, 이상적 필터 $$h$$의 $$t < 0$$ 값이 0이 아님 — [42_convolution-property_verify.py](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_verify/)</div>
@@ -196,17 +194,6 @@ $$h(t - \tau)$$는 $$h$$를 $$\tau$$만큼 늦춘 신호이고, 시간 이동 �
 </details>
 
 
-[^1]: 신호 및 시스템 15회 강의 자료 「Week15_CH04_3_handout」, p.12 (예제 4.19)
-[^2]: 같은 자료, p.4
-[^3]: 같은 자료, p.1~4
-[^4]: 같은 자료, p.5~6 (그림 4.19)
-[^5]: 같은 자료, p.7
-[^6]: 같은 자료, p.8 (예제 4.15)
-[^7]: 같은 자료, p.9 (예제 4.16, 4.17)
-[^8]: 같은 자료, p.10~11 (예제 4.18, 그림 4.20~4.22)
-[^9]: 같은 자료, p.13
-[^10]: 같은 자료, p.14 (예제 4.20)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> FFT 활용, 오해 항목의 수치, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [42_convolution-property_plot.py](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 수치 컨벌루션과 $$(e^{-t} - e^{-2t})u(t)$$가 같음, 이상적 필터의 $$h(-0.4) \approx 0.74$$.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 네 단계(예제 4.19, 15주차 자료 p.12)와 정리(p.4)를 근거로 그렸다.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [42_convolution-property_plot.py](/Hongs_Blog/studies/signals-and-systems/code/42_convolution-property_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 수치 컨벌루션과 $$(e^{-t} - e^{-2t})u(t)$$가 같음, 이상적 필터의 $$h(-0.4) \approx 0.74$$.
 {% endraw %}

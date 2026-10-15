@@ -23,13 +23,12 @@ permalink: "/studies/assembly-language/code/03_instruction-pipeline_verify/"
 """파이프라인과 슈퍼스칼라 검증.
 
 문서: 03.파이프라인과 슈퍼스칼라
-출처: 어셈블리어 3주차 3-3 p.2~5 (사이클 표 네 장)
 주장 (k = 단계 수, n = 명령어 수):
-  1. 파이프라인 없음: n * k 사이클. 슬라이드 p.2: k = 6, n = 2 → 12.
-  2. 파이프라인, 모든 단계 1사이클: k + (n - 1). p.3: k = 6, n = 2 → 7.
-  3. 파이프라인, 한 단계(S4)가 2사이클: k + (2n - 1). p.4: k = 6, n = 3 → 11.
-  4. 슈퍼스칼라, 2사이클짜리 S4를 두 줄(u, v)로: k + n. p.5: k = 6, n = 4 → 10.
-  5. 슬라이드 표의 S4·S5·S6 칸이 흉내 결과와 같다.
+  1. 파이프라인 없음: n * k 사이클. 문서의 첫 표: k = 6, n = 2 → 12.
+  2. 파이프라인, 모든 단계 1사이클: k + (n - 1). 둘째 표: k = 6, n = 2 → 7.
+  3. 파이프라인, 한 단계(S4)가 2사이클: k + (2n - 1). 셋째 표: k = 6, n = 3 → 11.
+  4. 슈퍼스칼라, 2사이클짜리 S4를 두 줄(u, v)로: k + n. 넷째 표: k = 6, n = 4 → 10.
+  5. 문서 표의 S4·S5·S6 칸이 흉내 결과와 같다.
 흉내 규칙: 명령어는 순서대로 들어간다. 다음 단계에 빈 자리가 생길 때까지 지금 단계에 머문다.
 """
 
@@ -70,12 +69,12 @@ def main():
     assert total(occ) == 12
     assert [occ[0][s][0] for s in range(k)] == [1, 2, 3, 4, 5, 6]
     assert [occ[1][s][0] for s in range(k)] == [7, 8, 9, 10, 11, 12]
-    print("[OK] p.2 파이프라인 없음: 12 = n*k")
+    print("[OK] 파이프라인 없음: 12 = n*k")
 
     occ = simulate(2, one, cap1)
     assert total(occ) == 7
     assert [occ[1][s][0] for s in range(k)] == [2, 3, 4, 5, 6, 7]
-    print("[OK] p.3 파이프라인: 7 = k + (n-1)")
+    print("[OK] 파이프라인: 7 = k + (n-1)")
 
     slow = [1, 1, 1, 2, 1, 1]
     occ = simulate(3, slow, cap1)
@@ -83,7 +82,7 @@ def main():
     assert [occ[i][3] for i in range(3)] == [[4, 5], [6, 7], [8, 9]]     # S4 칸
     assert [occ[i][4][-1] for i in range(3)] == [6, 8, 10]               # S5
     assert [occ[i][5][-1] for i in range(3)] == [7, 9, 11]               # S6
-    print("[OK] p.4 S4가 2사이클: 11 = k + (2n-1), S4·S5·S6 칸 일치")
+    print("[OK] S4가 2사이클: 11 = k + (2n-1), S4·S5·S6 칸 일치")
 
     cap2 = [1, 1, 1, 2, 1, 1]
     occ = simulate(4, slow, cap2)
@@ -91,7 +90,7 @@ def main():
     assert [occ[i][3] for i in range(4)] == [[4, 5], [5, 6], [6, 7], [7, 8]]
     assert [occ[i][4][-1] for i in range(4)] == [6, 7, 8, 9]
     assert [occ[i][5][-1] for i in range(4)] == [7, 8, 9, 10]
-    print("[OK] p.5 슈퍼스칼라: 10 = k + n, S4(u, v)·S5·S6 칸 일치")
+    print("[OK] 슈퍼스칼라: 10 = k + n, S4(u, v)·S5·S6 칸 일치")
 
     for kk in range(4, 9):
         for n in range(1, 30):

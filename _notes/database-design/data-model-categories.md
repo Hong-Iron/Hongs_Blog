@@ -40,8 +40,8 @@ permalink: "/studies/database-design/data-model-categories/"
 
 | 적는 말 | "학생이 과목을 듣는다"를 적으면 |
 |---|---|
-| 누구나 알아듣는 말 | 학생이라는 대상이 있고 이름과 전공을 가진다. 과목이라는 대상이 있다. 둘 사이에 "수강한다(take_course)"라는 이어짐이 있다[^1] |
-| 표로 적는 말 | STUDENT(Name, Student_number, Class, Major) 표와 COURSE(Course_name, Course_number, Credit_hours, Department) 표가 있다[^1]. 누가 무엇을 들었는지는 GRADE_REPORT와 SECTION 표가 학번과 분반 번호로 잇는다[^s1] |
+| 누구나 알아듣는 말 | 학생이라는 대상이 있고 이름과 전공을 가진다. 과목이라는 대상이 있다. 둘 사이에 "수강한다(take_course)"라는 이어짐이 있다 |
+| 표로 적는 말 | STUDENT(Name, Student_number, Class, Major) 표와 COURSE(Course_name, Course_number, Credit_hours, Department) 표가 있다. 누가 무엇을 들었는지는 GRADE_REPORT와 SECTION 표가 학번과 분반 번호로 잇는다[^s1] |
 | 저장 모양까지 적는 말 | STUDENT 레코드는 39글자다. 1~30번째가 이름, 31~34번째가 학번, 35번째가 학년, 36~39번째가 전공이다[^s1] |
 
 세 줄은 같은 내용이다. 표에서 "누가 어느 과목을 들었나"를 뽑으면 여섯 쌍이 나오고, 저장 모양대로 39글자에 채워 넣었다가 다시 끊어 읽으면 표의 행이 그대로 나온다[^s1].
@@ -54,29 +54,29 @@ permalink: "/studies/database-design/data-model-categories/"
 
 ## 데이터 모델과 세 갈래
 
-데이터가 어떻게 짜여 저장되는지의 세부는 누르고, 데이터를 이해하는 데 꼭 필요한 특징만 드러내는 일을 데이터 추상화(data abstraction)라 한다. 그 덕에 사용자마다 자기가 원하는 만큼만 자세히 데이터를 볼 수 있다[^2].
+데이터가 어떻게 짜여 저장되는지의 세부는 누르고, 데이터를 이해하는 데 꼭 필요한 특징만 드러내는 일을 데이터 추상화(data abstraction)라 한다. 그 덕에 사용자마다 자기가 원하는 만큼만 자세히 데이터를 볼 수 있다.
 
-데이터 모델(data model)은 데이터베이스의 구조를 적는 데 쓰는 개념들의 모음이다. 데이터 추상화를 하려면 적을 말이 있어야 하는데, 그 말을 주는 것이 데이터 모델이다. 자료형, 관계, 제약, 그리고 찾기와 고치기를 적는 기본 연산이 여기에 든다[^2].
+데이터 모델(data model)은 데이터베이스의 구조를 적는 데 쓰는 개념들의 모음이다. 데이터 추상화를 하려면 적을 말이 있어야 하는데, 그 말을 주는 것이 데이터 모델이다. 자료형, 관계, 제약, 그리고 찾기와 고치기를 적는 기본 연산이 여기에 든다.
 
-데이터 모델은 구조를 적을 때 어떤 개념을 쓰느냐에 따라 셋으로 나눈다[^2].
+데이터 모델은 구조를 적을 때 어떤 개념을 쓰느냐에 따라 셋으로 나눈다.
 
 | 종류 | 누구를 위한 개념인가 | 쓰는 개념 | 대표 |
 |---|---|---|---|
-| 개념적 데이터 모델 (고수준) | 컴퓨터를 전공하지 않은 사용자와 이해관계자까지 포함한 누구나 | 개체, 속성, 관계 | ER 모델[^3] |
-| 표현적 데이터 모델 (둘 사이) | 최종 사용자도 쉽게 이해하지만, 컴퓨터 안에서 데이터가 짜인 모양과 너무 멀지 않다 | 표처럼 그대로 구현할 수 있는 구조 | 관계형 모델, 네트워크 모델, 계층 모델[^4] |
-| 물리적 데이터 모델 (저수준) | 컴퓨터 전문가. 최종 사용자를 위한 것이 아니다 | 레코드 형식, 레코드를 놓는 순서, 접근 경로 | —[^4] |
+| 개념적 데이터 모델 (고수준) | 컴퓨터를 전공하지 않은 사용자와 이해관계자까지 포함한 누구나 | 개체, 속성, 관계 | ER 모델 |
+| 표현적 데이터 모델 (둘 사이) | 최종 사용자도 쉽게 이해하지만, 컴퓨터 안에서 데이터가 짜인 모양과 너무 멀지 않다 | 표처럼 그대로 구현할 수 있는 구조 | 관계형 모델, 네트워크 모델, 계층 모델 |
+| 물리적 데이터 모델 (저수준) | 컴퓨터 전문가. 최종 사용자를 위한 것이 아니다 | 레코드 형식, 레코드를 놓는 순서, 접근 경로 | — |
 
-**개념적 데이터 모델.** 쓰는 개념은 셋이다[^3].
+**개념적 데이터 모델.** 쓰는 개념은 셋이다.
 
 - 개체(entity): 현실의 대상이나 개념. 예: 학생, 과목.
 - 속성(attribute): 개체를 설명하는, 관심 있는 성질. 예: 학생의 이름, 전공.
 - 관계(relationship): 둘 이상의 개체 사이의 이어짐. 예: 수강한다.
 
-특정 데이터베이스를 만들기 전, 요구를 모으는 단계에서 쓴다. 흔히 쓰는 것이 개체-관계 모델, 줄여서 ER 모델이다[^3].
+특정 데이터베이스를 만들기 전, 요구를 모으는 단계에서 쓴다. 흔히 쓰는 것이 개체-관계 모델, 줄여서 ER 모델이다.
 
-**표현적 데이터 모델.** 디스크에 저장하는 세부는 많이 가리지만 그대로 구현할 수 있다. 그래서 대부분의 상용 DBMS가 이 종류를 쓴다[^4]. 구현 데이터 모델이라고도 부른다[^s2].
+**표현적 데이터 모델.** 디스크에 저장하는 세부는 많이 가리지만 그대로 구현할 수 있다. 그래서 대부분의 상용 DBMS가 이 종류를 쓴다. 구현 데이터 모델이라고도 부른다[^s2].
 
-**물리적 데이터 모델.** 데이터가 컴퓨터(디스크)에 어떻게 저장되는지를 적는다[^4]. 접근 경로(access path)는 원하는 레코드를 빨리 찾게 해 주는 길이고, 색인이 그 예다[^s2].
+**물리적 데이터 모델.** 데이터가 컴퓨터(디스크)에 어떻게 저장되는지를 적는다. 접근 경로(access path)는 원하는 레코드를 빨리 찾게 해 주는 길이고, 색인이 그 예다[^s2].
 
 ### 이 과목에서의 자리
 
@@ -121,10 +121,6 @@ permalink: "/studies/database-design/data-model-categories/"
 </details>
 
 
-[^1]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.4 (Entity, Attribute, Relationship의 예: student or course, student's name or major, 'take_course'. STUDENT와 COURSE의 칸 그림)
-[^2]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.3 (Data Abstraction: suppression / highlighting, Data Model의 정의, 세 종류)
-[^3]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.4 (Conceptual data models: "meant for anyone", "Used during requirement-gathering phase", ER model)
-[^4]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.5 (Physical data models: record formats, orderings, access paths. Representational Data Model: "can be implemented directly", "Used in most commercial DBMSs", Relational / Network / Hierarchical)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 같은 사실을 세 가지 말로 적은 표는 슬라이드에 없다. 표의 내용은 2주차 첫 덱의 대학 예(데이터베이스 설계 2회 강의 자료 「2-1_DB-users」, p.5의 표와 p.9의 저장 형식)에서 가져왔다. 세 줄이 같은 내용이라는 것은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "구현 데이터 모델"이라는 다른 이름과 접근 경로의 풀이는 슬라이드에 없다. Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.1.1절을 따랐다.
+[^s1]: 세 줄이 같은 내용이라는 것은 검증 코드로 확인했다.
+[^s2]: Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.1.1절을 따랐다.
 {% endraw %}

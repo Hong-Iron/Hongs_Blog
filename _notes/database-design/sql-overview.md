@@ -36,7 +36,7 @@ SQL은 표로 된 데이터베이스에 일을 시키는 언어다. 식당에서
 
 직원 표와 부서 표에서 Research 부서 직원의 이름과 주소를 찾고 싶다. 보통의 프로그램이라면 순서를 하나하나 적어야 한다. "부서 표를 첫 행부터 읽어 Research의 번호를 찾는다. 직원 표를 첫 행부터 읽는다. 부서 번호가 같으면 이름과 주소를 적는다."
 
-SQL에서는 답이 어떤 것이어야 하는지만 적는다[^1].
+SQL에서는 답이 어떤 것이어야 하는지만 적는다.
 
 ```sql
 SELECT Fname, Lname, Address
@@ -56,9 +56,9 @@ WHERE  Dname = 'Research' AND Dnumber = Dno;
 
 ## 정의
 
-SQL(Structured Query Language)은 데이터베이스를 다루려고 만든 선언적 언어다. IBM의 첫 DBMS를 위해 만들었고 처음 이름은 SEQUEL(Structured English Query Language)이었다. 그래서 "에스큐엘"이라고도, "시퀄"이라고도 읽는다[^2].
+SQL(Structured Query Language)은 데이터베이스를 다루려고 만든 선언적 언어다. IBM의 첫 DBMS를 위해 만들었고 처음 이름은 SEQUEL(Structured English Query Language)이었다. 그래서 "에스큐엘"이라고도, "시퀄"이라고도 읽는다.
 
-명령은 무엇을 건드리느냐로 두 묶음으로 나뉜다[^2].
+명령은 무엇을 건드리느냐로 두 묶음으로 나뉜다.
 
 | 묶음 | 건드리는 것 | 명령 |
 |---|---|---|
@@ -67,12 +67,12 @@ SQL(Structured Query Language)은 데이터베이스를 다루려고 만든 선�
 
 DDL 문을 돌리면 표의 틀이 달라진다. 표가 생기거나 사라지고, 열이 늘거나 준다. DML 문을 돌리면 틀은 그대로이고 그 안의 행만 달라진다. `SELECT`는 행을 읽기만 한다.
 
-DML에는 두 갈래가 있다[^3].
+DML에는 두 갈래가 있다.
 
 - **비절차적 DML:** 어떤 데이터를 원하는지만 적는다. 문장 하나로 행 여러 개를 한꺼번에 찾는다. SQL이 여기에 든다.
 - **절차적 DML:** 찾는 걸음을 하나하나 적는다. 행을 하나씩 꺼내 따로따로 처리한다.
 
-찾는 문장은 세 줄이 기본 틀이다. 무엇을(`SELECT`), 어느 표에서(`FROM`), 어떤 조건으로(`WHERE`)[^1].
+찾는 문장은 세 줄이 기본 틀이다. 무엇을(`SELECT`), 어느 표에서(`FROM`), 어떤 조건으로(`WHERE`).
 
 ## 활용
 
@@ -115,8 +115,5 @@ DML에는 두 갈래가 있다[^3].
 </details>
 
 
-[^1]: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.19, p.21 (SELECT-FROM-WHERE 틀, Q1). 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.4
-[^2]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.10 (Overview: SQL, SEQUEL, 발음, DDL과 DML의 명령). 같은 명령 목록이 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.16, p.23에도 있다
-[^3]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.21~23 (DBMS Languages, non-procedural과 procedural DML)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 색인을 만들기 전과 뒤를 견주는 실험, "선언적이라고 답까지 챙겨 주지는 않는다", 제품마다 문법이 다르다는 설명은 슬라이드에 없다. 실험은 SQLite의 `EXPLAIN QUERY PLAN`으로 했다(만들기 전 `SCAN EMPLOYEE`, 만든 뒤 `SEARCH EMPLOYEE USING INDEX`). 슬라이드의 문법이 표준 SQL이라는 판단은 `CREATE SCHEMA … AUTHORIZATION`, `CREATE ASSERTION`, `EXCEPT ALL` 같은 문장이 나오는 것에 근거한다.
+[^s1]: 실험은 SQLite의 `EXPLAIN QUERY PLAN`으로 했다(만들기 전 `SCAN EMPLOYEE`, 만든 뒤 `SEARCH EMPLOYEE USING INDEX`).
 {% endraw %}

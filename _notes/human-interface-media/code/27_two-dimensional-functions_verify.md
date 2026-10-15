@@ -21,7 +21,7 @@ permalink: "/studies/human-interface-media/code/27_two-dimensional-functions_ver
 ```python
 """2차원 함수 검증.
 
-문서: 27.2차원 함수 (정의, 원본 오류 의심, 자주 하는 오해, 카드 C2·C3)
+문서: 27.2차원 함수 (정의, 두 변수의 관계, 자주 하는 오해, 카드 C2·C3)
 주장:
   1. 2차원 사각 함수는 분리된다: rect(x/a, y/b) = rect(x/a) rect(y/b).
      경계값까지: |x| = a/2, |y| < b/2이면 1/2, 모서리 |x| = a/2, |y| = b/2이면 1/4.

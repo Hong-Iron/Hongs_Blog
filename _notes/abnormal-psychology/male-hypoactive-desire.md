@@ -42,7 +42,7 @@ permalink: "/studies/abnormal-psychology/male-hypoactive-desire/"
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
-<div class="callout-title" markdown="span">남성 성욕감퇴장애의 진단기준[^1]</div>
+<div class="callout-title" markdown="span">남성 성욕감퇴장애의 진단기준</div>
 
 A. 6개월 이상 성적·성애적 사고나 환상, 성적 행위에 대한 욕망이 지속적으로 결여되어 있다.<br>
 B. 성적 공상이나 성행위 욕구의 결여는 그 사람의 나이와 사회문화적 맥락을 고려해 판단한다.<br>
@@ -51,7 +51,7 @@ C. 이 문제로 본인에게 심각한 고통이나 대인관계의 어려움�
 </div>
 
 
-## 임상적 특징[^2][^3]
+## 임상적 특징
 
 - 흔히 더 이상 성적 행위를 먼저 시작하지 않고, 상대의 시도를 최소한으로만 받아들인다.
 - 파트너보다 성욕이 낮은 "욕구의 불일치(desire discrepancy)"만으로는 진단하기에 충분하지 않다.
@@ -83,8 +83,5 @@ C. 이 문제로 본인에게 심각한 고통이나 대인관계의 어려움�
 
 </details>
 
-[^1]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.7
-[^2]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.8
-[^3]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.9
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> HQ의 사례는 진단기준을 보이려고 만든 가상 사례다.
+[^s1]: HQ의 사례는 진단기준을 보이려고 만든 가상 사례다.
 {% endraw %}

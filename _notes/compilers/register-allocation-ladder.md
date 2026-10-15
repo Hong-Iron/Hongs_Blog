@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 레지스터 간섭 그래프, 그래프 색칠 레지스터 할당, 스필링."
 prev_url: "/studies/compilers/codegen-practice/"
@@ -25,11 +25,11 @@ permalink: "/studies/compilers/register-allocation-ladder/"
 
 "코드와 레지스터 수 $$K$$가 주어지고 변수에 레지스터를 나눠 주라"는 문제는 늘 같은 하위목표의 반복이다. ① 지점마다 살아 있는 변수의 목록 구하기 ② 같은 목록에 든 변수끼리 이어 간섭 그래프 그리기 ③ 이웃이 $$K$$보다 적은 노드를 빼서 스택에 쌓기 ④ 스택에서 꺼내며 칠한 이웃과 다른 색 주기 ⑤ 막히면 변수 하나를 내보내고 ①부터 다시 하기. 문제 1~3과 4는 같은 프로그램을 쓴다. 뺄 노드가 여럿이면 이름 순으로 고른다.
 
-**공통 프로그램.** B0 `b = 3; c = 1; f = 0`, B1 `a = b + c; d = -a; e = d + f`, B2 `f = 2 * e`, B3 `c = d + e; e = e - 1`, B4 `b = f + c`다. B0 → B1, B1 → B2, B1 → B3, B2 → B4, B3 → B4이고, B4 다음 블록은 b만 읽는다[^1].
+**공통 프로그램.** B0 `b = 3; c = 1; f = 0`, B1 `a = b + c; d = -a; e = d + f`, B2 `f = 2 * e`, B3 `c = d + e; e = e - 1`, B4 `b = f + c`다. B0 → B1, B1 → B2, B1 → B3, B2 → B4, B3 → B4이고, B4 다음 블록은 b만 읽는다.
 
 ## 문제 1 · 완전한 풀이
 
-공통 프로그램에 레지스터 넷($$K = 4$$)을 나눠 주라[^2].
+공통 프로그램에 레지스터 넷($$K = 4$$)을 나눠 주라.
 
 1. *목록 구하기:* 끝에서 거꾸로 간다. B4: {c, f} `b = f + c` {b}. B3: {d, e, f} `c = d + e` {c, e, f} `e = e - 1` {c, f}. B2: {c, e} `f = 2 * e` {c, f}. B1의 끝 = {c, e} ∪ {d, e, f} = {c, d, e, f}. B1: {b, c, f} `a = b + c` {a, c, f} `d = -a` {c, d, f} `e = d + f` {c, d, e, f}. B0: {} `b = 3` {b} `c = 1` {b, c} `f = 0` {b, c, f}.
 2. *간섭 그래프:* 목록마다 둘씩 짝짓는다. a–c, a–f, b–c, b–f, c–d, c–e, c–f, d–e, d–f, e–f. 열 개. 이웃 수는 a 2, b 2, c 5, d 3, e 3, f 5.
@@ -47,7 +47,7 @@ permalink: "/studies/compilers/register-allocation-ladder/"
 
 ## 문제 2 · 마지막 하위목표만 빈칸
 
-한 블록짜리 코드 `a = 1` / `b = 2` / `c = a + b` / `d = c + a` / `e = d + b`에 레지스터 셋($$K = 3$$)을 나눠 주라. 끝난 뒤에는 e만 쓰인다. 색은 쓸 수 있는 것 가운데 번호가 가장 작은 것을 준다[^s1].
+한 블록짜리 코드 `a = 1` / `b = 2` / `c = a + b` / `d = c + a` / `e = d + b`에 레지스터 셋($$K = 3$$)을 나눠 주라. 끝난 뒤에는 e만 쓰인다. 색은 쓸 수 있는 것 가운데 번호가 가장 작은 것을 준다.
 
 1. *목록 구하기:* {} `a = 1` {a} `b = 2` {a, b} `c = a + b` {a, b, c} `d = c + a` {b, d} `e = d + b` {e}.
 2. *간섭 그래프:* {a, b}에서 a–b. {a, b, c}에서 a–c, b–c가 더 나온다. {b, d}에서 b–d. 간선 넷. e는 이웃이 없다.
@@ -72,14 +72,14 @@ e: 칠한 이웃이 없다 → r0. d: 이웃 b는 아직 스택에 있다 → r0
 
 ## 문제 3 · 하위목표 절반이 빈칸
 
-공통 프로그램에 레지스터 셋($$K = 3$$)을 나눠 주라. 막히면 c를 메모리 자리 `ca`로 내보낸다[^3].
+공통 프로그램에 레지스터 셋($$K = 3$$)을 나눠 주라. 막히면 c를 메모리 자리 `ca`로 내보낸다.
 
 1. *목록과 간섭 그래프:* 문제 1과 같다.
 2. *빼서 쌓기:* a(2), b(2)를 뺀다. 남은 c, d, e, f는 모두 이웃이 3이다. 3보다 적은 노드가 없어 막힌다.
 3. *내보내고 고쳐 쓰기:* ______
 4. *새 목록:* B0: {} `b = 3` {b} `c0 = 1` {b, c0} `store c0 ca` {b} `f = 0` {b, f}. B1: {b, f} `load c1 ca` {b, c1, f} `a = b + c1` {a, f} `d = -a` {d, f} `e = d + f` {d, e, f}. B2: {e} `f = 2 * e` {f}. B3: {d, e, f} `c2 = d + e` {e, f, c2} `store c2 ca` {e, f} `e = e - 1` {f}. B4: {f} `load c3 ca` {f, c3} `b = f + c3` {b}.
 5. *새 간섭 그래프:* ______
-6. *다시 칠하기:* a, c0, b, c1, c2, c3, d, e, f 순으로 모두 빠진다(b는 처음에 이웃이 3이라 c0이 빠진 뒤에 빠진다). 슬라이드의 색은 c0, a, c1, e에 r0, b, d, c2, c3에 r1, f에 r2다.
+6. *다시 칠하기:* a, c0, b, c1, c2, c3, d, e, f 순으로 모두 빠진다(b는 처음에 이웃이 3이라 c0이 빠진 뒤에 빠진다). 색의 한 예: c0, a, c1, e에 r0, b, d, c2, c3에 r1, f에 r2.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -100,7 +100,7 @@ e: 칠한 이웃이 없다 → r0. d: 이웃 b는 아직 스택에 있다 → r0
 
 ## 문제 4 · 독립 문제
 
-공통 프로그램에 레지스터 셋($$K = 3$$)을 나눠 주는데, 이번에는 c 대신 f를 메모리 자리 `fa`로 내보낸다. (가) 고쳐 쓴 코드 (나) 새 목록 (다) 새 간섭 그래프의 간선 (라) 이름 순으로 빼고 가장 작은 번호를 주는 색칠을 구하라. (마) f 대신 e를 `ea`로 내보내면 어떻게 되는가[^s1]?
+공통 프로그램에 레지스터 셋($$K = 3$$)을 나눠 주는데, 이번에는 c 대신 f를 메모리 자리 `fa`로 내보낸다. (가) 고쳐 쓴 코드 (나) 새 목록 (다) 새 간섭 그래프의 간선 (라) 이름 순으로 빼고 가장 작은 번호를 주는 색칠을 구하라. (마) f 대신 e를 `ea`로 내보내면 어떻게 되는가?
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -119,10 +119,4 @@ e: 칠한 이웃이 없다 → r0. d: 이웃 b는 아직 스택에 있다 → r0
 <div class="callout-title" markdown="span">검증 — [56_register-allocation-ladder_p4.py](/Hongs_Blog/studies/compilers/code/56_register-allocation-ladder_p4/)</div>
 
 </div>
-
-
-[^1]: 컴파일러 16회 강의 자료 「Lecture16 Code generation part 3」, p.6 (프로그램과 생존 변수 목록)
-[^2]: 같은 자료, p.7 (간섭 그래프), p.13~18 (빼서 쌓기), p.19~25 (꺼내며 칠하기)
-[^3]: 같은 자료, p.27~28 (K = 3에서 막힘), p.29~35 (c를 내보내는 여섯 걸음)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 2와 문제 4, 하위목표 다섯 가지로 나눈 것, 문제 3의 이웃 수는 원본에 없다. 문제 1과 3의 목록·간선·색은 슬라이드와 같고, 문제 2와 4의 답은 문제 코드로 확인했다.
 {% endraw %}

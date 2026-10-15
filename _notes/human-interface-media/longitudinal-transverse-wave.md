@@ -9,7 +9,7 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Longitudinal Wave", "Transverse Wave", "종파", "횡파", "편광", "Polarization", "진동면", "파속", "wave speed"]
 description: "물결이 나아가는 방향과 물결이 흔들리는 방향이 같으면 종파, 서로 수직이면 횡파다. 소리는 공기가 앞뒤로 밀렸다 당겨지는 종파라서, 한 지점에서 시간에 따른 값 하나만 알면 된다. 빛은 횡파라서 나아가는 방향에 수직인 평면 안에서 어느 쪽으로든 흔들릴 수 있다. 그래서 빛을 적으려…"
@@ -33,9 +33,9 @@ permalink: "/studies/human-interface-media/longitudinal-transverse-wave/"
 
 ## 예시로 보기
 
-스피커 앞의 공기 입자는 소리가 나아가는 쪽으로 밀렸다가 되돌아온다. 입자가 빽빽한 곳과 성긴 곳이 번갈아 생기고, 그 무늬가 앞으로 나아간다[^1]. 흔들리는 방향이 나아가는 방향 하나로 정해져 있으니, 소리는 "이 순간 이 지점의 압력이 얼마인가"라는 숫자 하나로 적힌다. 시간에 따라 바뀌는 값이 하나라서 1차원 신호다.
+스피커 앞의 공기 입자는 소리가 나아가는 쪽으로 밀렸다가 되돌아온다. 입자가 빽빽한 곳과 성긴 곳이 번갈아 생기고, 그 무늬가 앞으로 나아간다. 흔들리는 방향이 나아가는 방향 하나로 정해져 있으니, 소리는 "이 순간 이 지점의 압력이 얼마인가"라는 숫자 하나로 적힌다. 시간에 따라 바뀌는 값이 하나라서 1차원 신호다.
 
-빛은 전기장과 자기장이 나아가는 방향에 수직으로 흔들리며 나아간다[^1]. 빛이 $$z$$ 방향으로 나아가면 흔들림은 $$x$$ 방향일 수도, $$y$$ 방향일 수도, 둘이 섞인 방향일 수도 있다. 흔들리는 면이 2차원이다.
+빛은 전기장과 자기장이 나아가는 방향에 수직으로 흔들리며 나아간다. 빛이 $$z$$ 방향으로 나아가면 흔들림은 $$x$$ 방향일 수도, $$y$$ 방향일 수도, 둘이 섞인 방향일 수도 있다. 흔들리는 면이 2차원이다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/human-interface-media/23_longitudinal-transverse-wave_fig1.svg" alt="그림" width="660" height="391" loading="lazy">
 
@@ -56,20 +56,20 @@ permalink: "/studies/human-interface-media/longitudinal-transverse-wave/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-- **종파**: 매질이 흔들리는 방향과 파동이 나아가는 방향이 같은 파동. 예: 소리[^1].
-- **횡파**: 흔들리는 방향이 나아가는 방향에 수직인 파동. 예: 빛. 흔들리는 면이 2차원이라 같은 진폭이어도 흔들리는 방향이 다를 수 있다. 이 차이가 **편광**이다[^1].
+- **종파**: 매질이 흔들리는 방향과 파동이 나아가는 방향이 같은 파동. 예: 소리.
+- **횡파**: 흔들리는 방향이 나아가는 방향에 수직인 파동. 예: 빛. 흔들리는 면이 2차원이라 같은 진폭이어도 흔들리는 방향이 다를 수 있다. 이 차이가 **편광**이다.
 
 </div>
 
 
-강의는 파동을 세 축으로 나눠 본다[^2]. 진폭은 에너지를, 시간축의 반복 길이는 주기 $$T$$를, 공간축의 반복 길이는 파장 $$\lambda$$를 정한다. 시간과 공간을 함께 보면 파동이 나아가는 빠르기(파속)가 나온다. 한 주기 동안 한 파장만큼 나아가므로
+파동은 세 축으로 나눠 볼 수 있다. 진폭은 에너지를, 시간축의 반복 길이는 주기 $$T$$를, 공간축의 반복 길이는 파장 $$\lambda$$를 정한다. 시간과 공간을 함께 보면 파동이 나아가는 빠르기(파속)가 나온다. 한 주기 동안 한 파장만큼 나아가므로
 
 $$ V = \frac{\lambda}{T} $$
 
 
 이다. $$T = 1/f$$를 넣으면 [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/)의 $$c = f\lambda$$와 같은 식이다. 예를 들어 440 Hz 소리(주기 약 2.27 ms)가 공기에서 초속 343 m로 가면 파장은 약 78 cm다[^s2].
 
-빛은 흔들림이 2차원이고 그 흔들림이 다시 평면 위에 펼쳐지므로, 강의는 빛의 에너지를 $$f(x, y, t)$$처럼 2차원 공간 위의 파동으로 적어야 한다고 정리한다[^1]. 흔들림 자체의 2차원 성질을 숫자 하나에 담는 방법이 [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/)이다[^3].
+빛은 흔들림이 2차원이고 그 흔들림이 다시 평면 위에 펼쳐지므로, 빛의 에너지는 $$f(x, y, t)$$처럼 2차원 공간 위의 파동으로 적어야 한다. 흔들림 자체의 2차원 성질을 숫자 하나에 담는 방법이 [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/)이다.
 
 ## 연결
 
@@ -111,10 +111,7 @@ $$ V = \frac{\lambda}{T} $$
 
 </details>
 
-[^1]: 휴먼 인터페이스 미디어 4회 강의 자료 「HIM_강의04_파동의표현」, p.6 (파동의 공간 전파: 소리는 종파, 빛은 횡파와 편광 현상, $$f(x,y,t)$$)
-[^2]: 같은 자료, p.3 (에너지: 진폭, 시간축: 주기, 공간축: 파장, 시공간: 파속 $$V = \lambda/T$$)
-[^3]: 같은 자료, p.7 (2차원 진동의 표현: 변인은 시간, 초기값은 위상과 회전. 2차원 수인 복소수 체계의 도입)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 편광 필터와 선글라스 예는 원본에 없다. 슬라이드는 "편광 현상"이라는 이름만 든다. 표준 물리 교재의 내용이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 440 Hz 예와 카드 C3의 수치는 원본에 없다. 343 m/s는 [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/)에서 쓴 공기 중 음속이다. 440 Hz의 파장 343/440 = 0.78 m, C3의 0.686/0.002 = 343은 직접 계산했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [23_longitudinal-transverse-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/)로 그렸고, 그림에 쓴 값(종파는 나아가는 방향으로만, 횡파는 그에 수직으로만 밀림, 종파에서 입자 간격이 쉬는 간격 0.5보다 좁은 곳과 넓은 곳이 함께 생김)을 같은 코드로 확인했다. 근거는 강의 4 p.6의 종파·횡파 설명이다.
+[^s1]: 표준 물리 교재의 내용이다.
+[^s2]: 343 m/s는 [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/)에서 쓴 공기 중 음속이다. 440 Hz의 파장 343/440 = 0.78 m, C3의 0.686/0.002 = 343은 직접 계산했다.
+[^s3]: [23_longitudinal-transverse-wave_plot.py](/Hongs_Blog/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/)로 그렸고, 그림에 쓴 값(종파는 나아가는 방향으로만, 횡파는 그에 수직으로만 밀림, 종파에서 입자 간격이 쉬는 간격 0.5보다 좁은 곳과 넓은 곳이 함께 생김)을 같은 코드로 확인했다.
 {% endraw %}

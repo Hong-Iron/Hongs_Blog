@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/47_recursive-procedure_impl/"
 MASM이 없어 x86 32비트 명령 일부(레지스터, 리틀 엔디언 메모리, PUSH/POP/CALL/RET,
 ENTER/LEAVE, ZF/CF)를 파이썬으로 흉내 낸다. 문서에 실린 코드를 글자 그대로 넣어 돌린다.
 스택은 ESP = 00001000h에서 시작하고, 명령 주소는 가짜 값(00401000h + 4 × 순번)이다.
-슬라이드 wk11-2-2 p.4의 CalcSum 표, p.5~7의 Factorial 값과 스택 그림을 그대로 재현한다."""
+문서의 CalcSum 표, Factorial 값과 스택 그림을 그대로 재현한다."""
 import math
 import re
 
@@ -260,7 +260,7 @@ class CPU:
         return self
 
 
-# wk11-2-2 p.4: CalcSum. ECX = 개수, EAX = 합 (main이 EAX = 0, ECX = 5로 부른다)
+# CalcSum. ECX = 개수, EAX = 합 (main이 EAX = 0, ECX = 5로 부른다)
 CALCSUM = """
 main PROC
     mov  ecx,5
@@ -278,7 +278,7 @@ L2: ret
 CalcSum ENDP
 """
 
-# p.6: Factorial. 스택으로 n을 받고 EAX로 n!을 돌려준다
+# Factorial. 스택으로 n을 받고 EAX로 n!을 돌려준다
 FACT = """
 main PROC
     push {n}
@@ -326,7 +326,7 @@ def rd(mem, addr):
 
 
 if __name__ == "__main__":
-    # ---- CalcSum: 슬라이드 p.4의 표 ----
+    # ---- CalcSum: 문서의 표 ----
     c = CPU(CALCSUM)
     rows = []
 
@@ -349,7 +349,7 @@ if __name__ == "__main__":
         assert k.r["eax"] == n * (n + 1) // 2
         assert min(r["esp"] for _, r, _, _ in k.trace) == 0x1000 - (n + 1) * 4
 
-    # ---- Factorial: p.5의 값 ----
+    # ---- Factorial의 값 ----
     for n, want in [(0, 1), (1, 1), (2, 2), (3, 6), (4, 24), (5, 120)]:
         f, _, _ = run_fact(n)
         assert f.r["eax"] == want and f.r["esp"] == 0x1000 and f.r["ebp"] == 0x1010
@@ -366,7 +366,7 @@ if __name__ == "__main__":
     assert math.factorial(13) > 2 ** 32
     assert f13.r["edx"] == 1 and f13.r["eax"] == math.factorial(13) % 2 ** 32 == 0x7328CC00 == 1932053504
 
-    # ---- p.7의 그림: 12!을 부를 때 처음 네 프레임 ----
+    # ---- 12!을 부를 때 처음 네 프레임 ----
     ret_main = f.addr_of(f.labels["ReturnMain"])
     ret_fact = f.addr_of(f.labels["ReturnFact"])
     words = [rd(snap, a) for a in range(0x0FFC, 0x0FFC - 48, -4)]

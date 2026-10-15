@@ -18,11 +18,11 @@ questions:
   link: /studies/operating-systems/deadlock/
   link_label: 교착상태
 - q: "제일 중요한 건 뭐예요?"
-  a: "가상 메모리랑 스케줄링이요. 슬라이드가 제일 많았던 부분이기도 해요."
+  a: "가상 메모리랑 스케줄링이요. 운영체제가 하는 일의 큰 몫이 이 둘에 걸려 있어요."
   link: /studies/operating-systems/virtual-memory/
   link_label: "가상 메모리"
-- q: "자료가 다 교수님 거예요?"
-  a: "3·5·6·7장은 교수님 자료가 없어서, 같은 교재를 쓰는 다른 대학의 공개 강의자료로 채웠어요. 로드맵에 장마다 적어 뒀어요."
+- q: "어떤 책을 따라가요?"
+  a: "Stallings의 Operating Systems 6판 순서예요. 프로세스와 스레드, 동시성, 교착상태, 메모리, 스케줄링, 입출력, 파일 순으로 가요."
   link: /studies/operating-systems/
   link_label: 로드맵
 chats:
@@ -102,7 +102,7 @@ chats:
     link: /studies/operating-systems/user-authentication/
     link_label: "사용자 인증"
 talk:
-- text: "LRU는 '가장 덜 쓴' 게 아니라 '가장 오래전에 쓴' 걸 내보내요. 덜 쓴 걸 내보내는 건 LFU예요. 교수님 슬라이드에도 하나 섞여 있어서 확인할 것에 적어 뒀어요."
+- text: "LRU는 '가장 덜 쓴' 게 아니라 '가장 오래전에 쓴' 걸 내보내요. 덜 쓴 걸 내보내는 건 LFU예요. 둘을 섞어 설명하는 글이 많으니 조심하세요."
   link: /studies/operating-systems/cache-memory/
   link_label: "캐시 메모리"
 - text: "세마포어는 숫자 하나에 기다리는 줄이 붙은 거예요. wait는 하나 빼고, 0 밑이면 줄 서요."

@@ -90,7 +90,7 @@ sw  $s1, 28($s3)       # $s1의 값을 $s3 + 28번지에 넣는다
 
 마지막 열은 [MIPS 프로시저 호출](/Hongs_Blog/studies/computer-architecture/mips-procedure-call/)에서 쓴다. 하드웨어가 특별히 다루는 칸은 `$zero`(써도 0이다)와 `$ra`(함수를 부르는 명령이 여기에 주소를 넣는다)뿐이다. 나머지 이름은 프로그래머끼리의 약속이다[^s1]. C 변수는 보통 `$s0`~`$s7`에, 계산 중간값은 `$t0`~`$t9`에 둔다[^1].
 
-레지스터가 32개인 까닭은 설계 원칙 "작을수록 빠르다"다[^4]. 칸이 많아지면 그 가운데 하나를 고르는 회로가 커지고 느려진다.
+레지스터가 32개인 까닭은 설계 원칙 "작을수록 빠르다"다. 칸이 많아지면 그 가운데 하나를 고르는 회로가 커지고 느려진다.
 
 **메모리 명령.** 메모리에 닿는 명령은 둘이다[^5].
 
@@ -108,7 +108,7 @@ $$\texttt{lw}:\ R[rt] = M[R[rs] + \mathrm{SignExt}(imm)], \qquad \texttt{sw}:\ M
 
 **바이트 주소와 정렬.** 메모리의 주소는 바이트마다 하나씩 붙는다. 워드는 4바이트이므로 이웃한 워드의 주소는 4씩 차이 난다. 워드의 주소는 4의 배수여야 한다[^6]. 그래서 배열 원소 `A[i]`의 오프셋은 $$4i$$다.
 
-**엔디언.** 워드 하나의 4바이트를 어느 쪽부터 낮은 주소에 놓는지에는 두 방식이 있다[^7].
+**엔디언.** 워드 하나의 4바이트를 어느 쪽부터 낮은 주소에 놓는지에는 두 방식이 있다.
 
 - 빅 엔디언: 가장 윗자리 바이트가 가장 낮은 주소에 온다.
 - 리틀 엔디언: 가장 아랫자리 바이트가 가장 낮은 주소에 온다.
@@ -137,7 +137,7 @@ $$\texttt{lw}:\ R[rt] = M[R[rs] + \mathrm{SignExt}(imm)], \qquad \texttt{sw}:\ M
 - 선수: [명령어 집합 구조](/Hongs_Blog/studies/computer-architecture/instruction-set-architecture/), 회로로 본 레지스터 묶음은 [레지스터 파일과 메모리 소자](/Hongs_Blog/studies/computer-architecture/register-file/)
 - x86의 레지스터와 견주기: [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/). x86의 `[esi+4]` 같은 표기가 MIPS의 `4($s3)`과 같은 생각이다: [간접 피연산자와 인덱스 피연산자](/Hongs_Blog/studies/assembly-language/indirect-addressing/)
 - 프로세서 종류와 상관없는 레지스터 이야기: [프로세서 레지스터](/Hongs_Blog/studies/operating-systems/processor-registers/)
-- 컴파일러 과목의 [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 레지스터를 `$r0`, `$r1`, …로 적고 쉼표를 뺀다. 실제 MIPS에는 그런 이름이 없고 위 표의 이름을 쓴다.
+- 컴파일러 과목의 [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 레지스터를 `$r0`, `$r1`, …로 적고 쉼표를 뺀다. 실제 MIPS에는 그런 이름이 없고 위 표의 이름을 쓴다.
 - `lw`·`sw`의 주소 계산을 다른 방식들과 함께: [MIPS 주소 지정 방식](/Hongs_Blog/studies/computer-architecture/mips-addressing-modes/)
 
 ## 확인 문제
@@ -171,9 +171,7 @@ $$\texttt{lw}:\ R[rt] = M[R[rs] + \mathrm{SignExt}(imm)], \qquad \texttt{sw}:\ M
 [^1]: University of Utah CS3810 (R. Balasubramonian), Lecture 3 "MIPS Instruction Set", https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-15-03.pdf, 슬라이드 9~11 (메모리 접근은 비싸다, add·sub는 레지스터만 쓴다, 32비트 덩어리를 워드라 부른다, `$s0`~`$s7`은 변수에 `$t0`~`$t9`는 임시값에, lw와 sw)
 [^2]: Harris & Harris, *Digital Design and Computer Architecture* 2판 6장 강의 슬라이드, https://www.esa.informatik.tu-darmstadt.de/archive/twiki/pub/Lectures/Prozessorarchitektur16De/DDCA_Ch6.pdf, 슬라이드 13 (MIPS has 32 32-bit registers)
 [^3]: MIPS Reference Data(Green Sheet), Patterson & Hennessy 교재의 참조표, NUS CS2100 공개본 https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf (REGISTER NAME, NUMBER, USE, CALL CONVENTION 표. lw와 sw의 동작 식)
-[^4]: Harris & Harris, 같은 슬라이드, 14 (Design Principle 3: Smaller is Faster)
 [^5]: University of Utah CS3810, Lecture 4 "MIPS Instruction Set", https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-15-04.pdf, 슬라이드 3~4 (lw와 sw의 꼴: 레지스터, 괄호 안 레지스터에 더하는 상수)
 [^6]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장 "Instructions: Language of the Computer" (바이트 주소, 워드 주소는 4의 배수라는 정렬 제약)
-[^7]: Harris & Harris, 같은 슬라이드, 28~31 (빅 엔디언과 리틀 엔디언, 워드 주소는 같다, `sw` 뒤 `lb`로 한 바이트를 읽는 예)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시의 C 두 줄과 수치, 메모리 배치 그림, 엔디언 예의 값(`0x1A2B3C4D`), "하드웨어가 특별히 다루는 칸은 둘뿐"이라는 정리, 활용 절, 카드는 위 자료에 그대로 있지 않다. 값은 검증 코드의 흉내기로 구했다. `jal`이 31번 레지스터에 주소를 넣는 것은 Green Sheet의 `jal` 줄(R[31] = …)에 있다.
+[^s1]: 예시의 C 두 줄과 수치, 메모리 배치 그림, 엔디언 예의 값(`0x1A2B3C4D`), "하드웨어가 특별히 다루는 칸은 둘뿐"이라는 정리, 활용 절, 카드는 위 자료에 그대로 있지 않다. 값은 검증 코드의 흉내기로 구했다. `jal`이 31번 레지스터에 주소를 넣는 것은 Green Sheet의 `jal` 줄(R[31] = …)에 있다.
 {% endraw %}

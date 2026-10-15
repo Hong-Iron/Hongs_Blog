@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Addition and Subtraction", "INC", "DEC", "ADD", "SUB", "NEG", "INC 명령", "DEC 명령", "ADD 명령", "SUB 명령", "NEG 명령", "산술식 구현", "Implementing Arithmetic Expressions"]
 description: "1 올리기, 1 내리기, 더하기, 빼기, 부호 바꾸기의 다섯 명령이다. 계산기의 버튼처럼 한 번에 한 가지만 하고, 결과는 늘 받는 쪽에 덮어쓴다. 그래서 긴 식은 한 줄에 못 쓰고 작은 계산 여러 줄로 쪼개야 한다. 계산은 명령에 적은 칸의 크기 안에서만 일어나므로, 칸이 넘쳐도…"
@@ -34,7 +34,7 @@ permalink: "/studies/assembly-language/add-sub-instructions/"
 
 ## 예시로 보기
 
-`Rval = -Xval + (Yval - Zval)`을 C 컴파일러는 알아서 기계어로 바꿔 준다. 어셈블리에는 식을 통째로 받는 명령이 없다. 사람이 손으로 계산하는 순서대로 한 줄씩 쓴다[^1].
+`Rval = -Xval + (Yval - Zval)`을 C 컴파일러는 알아서 기계어로 바꿔 준다. 어셈블리에는 식을 통째로 받는 명령이 없다. 사람이 손으로 계산하는 순서대로 한 줄씩 쓴다.
 
 ```asm
 .data
@@ -54,7 +54,7 @@ mov Rval,eax         ; -36
 변수 값을 레지스터로 가져와 거기서 계산하고, 다 되면 결과 변수에 적는다. `Xval`, `Yval`, `Zval`은 바뀌지 않는다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드의 INC·DEC·ADD·SUB·NEG 예와 Your turn 다섯 줄, NEG가 "0에서 빼기"와 같은 것(8비트 전수), 산술식의 −36, 카드 C1~C3. 파이썬 흉내로 확인 — [18_add-sub-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/18_add-sub-instructions_verify/)</div>
+<div class="callout-title" markdown="span">검증: 본문의 INC·DEC·ADD·SUB·NEG 예와 연습 문제 다섯 줄, NEG가 "0에서 빼기"와 같은 것(8비트 전수), 산술식의 −36, 카드 C1~C3. 파이썬 흉내로 확인 — [18_add-sub-instructions_verify.py](/Hongs_Blog/studies/assembly-language/code/18_add-sub-instructions_verify/)</div>
 
 </div>
 
@@ -63,19 +63,19 @@ mov Rval,eax         ; -36
 
 | 명령 | 하는 일 | 피연산자 |
 |---|---|---|
-| `INC 목적지` | 목적지 ← 목적지 + 1 | 레지스터나 메모리[^2] |
-| `DEC 목적지` | 목적지 ← 목적지 − 1 | 레지스터나 메모리[^2] |
-| `ADD 목적지,원본` | 목적지 ← 목적지 + 원본 | `MOV`와 같은 규칙[^3] |
-| `SUB 목적지,원본` | 목적지 ← 목적지 − 원본 | `MOV`와 같은 규칙[^3] |
-| `NEG 목적지` | 목적지의 부호를 바꾼다 | 레지스터나 메모리[^4] |
+| `INC 목적지` | 목적지 ← 목적지 + 1 | 레지스터나 메모리 |
+| `DEC 목적지` | 목적지 ← 목적지 − 1 | 레지스터나 메모리 |
+| `ADD 목적지,원본` | 목적지 ← 목적지 + 원본 | `MOV`와 같은 규칙 |
+| `SUB 목적지,원본` | 목적지 ← 목적지 − 원본 | `MOV`와 같은 규칙 |
+| `NEG 목적지` | 목적지의 부호를 바꾼다 | 레지스터나 메모리 |
 
 화살표 ←는 "오른쪽을 계산해 왼쪽에 넣는다"다. `ADD`와 `SUB`가 `MOV`와 같은 규칙을 따른다는 말은, 두 피연산자의 크기가 같아야 하고 둘 다 메모리일 수 없다는 뜻이다: [데이터 전송 명령](/Hongs_Blog/studies/assembly-language/data-transfer-instructions/).
 
-`NEG`는 2의 보수를 구한다. 비트를 모두 뒤집고 1을 더한 값이고, 0에서 그 값을 뺀 것과 같다[^5][^s1].
+`NEG`는 2의 보수를 구한다. 비트를 모두 뒤집고 1을 더한 값이고, 0에서 그 값을 뺀 것과 같다[^s1].
 
 ## 예제
 
-**INC와 DEC.**[^6]
+**INC와 DEC.**
 
 ```asm
 .data
@@ -100,7 +100,7 @@ mov ax,00FFh   00        FF
 inc al         00        00      ← AL만 바뀐다. 올림은 버려진다
 ```
 
-**슬라이드의 문제.**[^7]
+**연습 문제.**
 
 ```asm
 .data
@@ -115,7 +115,7 @@ dec ax               ; AX = FEFFh
 
 `dec ah`는 00h에서 1을 빼 FFh가 된다. 그 시점의 AX는 FF00h이고, `dec ax`가 16비트 전체에서 1을 빼 FEFFh가 된다.
 
-**ADD와 SUB.**[^8]
+**ADD와 SUB.**
 
 ```asm
 .data
@@ -131,7 +131,7 @@ sub ax,1                 ; 0004FFFFh
 
 `add ax,0FFFFh`는 EAX의 아래 16비트(0000h)에만 더한다. `add eax,1`은 32비트 전체라 FFFFh에서 생긴 올림이 윗부분으로 올라가 0004가 된다. `sub ax,1`은 다시 아래 16비트 안에서만 0000h − 1 = FFFFh를 하고, 윗부분 0004는 그대로다.
 
-**NEG.**[^4]
+**NEG.**
 
 ```asm
 .data
@@ -186,13 +186,5 @@ neg valW         ; valW = -32767
 </details>
 
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-1」, p.9 (Implementing Arithmetic Expressions)
-[^2]: 같은 자료, p.3 (INC and DEC Instructions)
-[^3]: 같은 자료, p.6 (ADD and SUB Instructions: Same operand rules as for the MOV instruction)
-[^4]: 같은 자료, p.8 (NEG (negate) Instruction)
-[^5]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-2」, p.2 (NEG = Negate (same as SUB 0,operand))
-[^6]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-1」, p.4 (INC and DEC Examples)
-[^7]: 같은 자료, p.5 (Your turn: myByte)
-[^8]: 같은 자료, p.7 (ADD and SUB Examples)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 줄마다 붙인 풀이 설명, AH·AL 그림, `NEG`가 비트를 뒤집고 1을 더하는 것이라는 설명, −128의 경계 사례, 흔한 실수, 카드 C1~C3은 원본에 없다. `NEG`의 정의는 Irvine, *Assembly Language for x86 Processors* 7판 4.2절에 있다. 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: `NEG`의 정의는 Irvine, *Assembly Language for x86 Processors* 7판 4.2절에 있다. 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

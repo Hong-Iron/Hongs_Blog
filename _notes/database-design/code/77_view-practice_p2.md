@@ -20,10 +20,9 @@ permalink: "/studies/database-design/code/77_view-practice_p2/"
 [뷰 연습](/Hongs_Blog/studies/database-design/view-practice/) 문서의 문제 2 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""뷰 연습의 연습 2 (a~e) 확인 (SQLite). 2-d, 2-e가 거부되는 까닭은 77_view-practice_p2.sql(PostgreSQL)에서 본다.
+"""뷰 연습의 문제 2 (a~e) 확인 (SQLite). 2-d, 2-e가 거부되는 까닭은 77_view-practice_p2.sql(PostgreSQL)에서 본다.
 
 문서: 77.뷰 연습
-출처: 13주차 슬라이드 13-View p.27~28(문제), p.35~39(풀이)
 확인하는 것:
   2-a. DEPT_SUMMARY는 (5, 4, 133000, 33250), (4, 3, 93000, 31000), (1, 1, 55000, 55000)이다.
   2-b. 답은 (5, 4). 기본 테이블에는 GROUP BY Dno HAVING SUM(Salary) > 100000으로 옮겨진다.
@@ -33,7 +32,7 @@ permalink: "/studies/database-design/code/77_view-practice_p2/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,

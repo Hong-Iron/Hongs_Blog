@@ -20,14 +20,14 @@ permalink: "/studies/compilers/code/25_lr0-item-automaton_impl/"
 [LR(0) 항목과 항목 오토마타](/Hongs_Blog/studies/compilers/lr0-item-automaton/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 구현과 검증: LR(0) 항목, 항목 NFA, 부분집합 구성법으로 만든 DFA (L07 p.19~31, L08 p.7).
+# 구현과 검증: LR(0) 항목, 항목 NFA, 부분집합 구성법으로 만든 DFA.
 # 실행: python3 25_lr0-item-automaton_impl.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 문서처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,10 +228,10 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# 항목 오토마타·SLR 문서의 문법: E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 이동-환원·핸들·유효 접두사 문서의 문법: E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
@@ -242,7 +242,7 @@ def items_of(prods):
 
 
 def item_nfa(prods):
-    """L07 p.20의 3~5단계. 상태 = 항목, 시작 = S' -> .S, 모든 상태가 받아들이는 상태."""
+    """문서 절차의 3~5단계. 상태 = 항목, 시작 = S' -> .S, 모든 상태가 받아들이는 상태."""
     nts = set(nonterminals(prods))
     sym, eps = {}, {}
     for p, d in items_of(prods):
@@ -292,16 +292,16 @@ def nfa_accepts(prods, symbols):
 
 
 if __name__ == "__main__":
-    # (1) 항목 수: E -> T * E는 4개, 빈 규칙은 1개 (L07 p.19)
+    # (1) 항목 수: E -> T * E는 4개, 빈 규칙은 1개
     assert [show_item(G2, it) for it in items_of(G2) if it[0] == 1] == \
         ["E -> .T * E", "E -> T.* E", "E -> T *.E", "E -> T * E."]
     assert len(items_of([("S'", ("A",)), ("A", ())])) == 3 and items_of([("A", ())]) == [(0, 0)]
-    assert len(items_of(G2)) == 14                       # L07 p.29의 NFA 상태 14개
+    assert len(items_of(G2)) == 14                       # 문서의 NFA 상태 14개
     sym, eps = item_nfa(G2)
     assert len(sym) == 9 and sum(len(v) for v in eps.values()) == 10
     print("NFA: 상태 14개, 기호 전이 9개, 엡실론 전이 10개")
 
-    # (2) 부분집합 구성법으로 만든 DFA = closure/goto로 만든 DFA = L07 p.30, L08 p.7의 그림
+    # (2) 부분집합 구성법으로 만든 DFA = closure/goto로 만든 DFA = 문서의 그림
     states, trans = subset_construction(G2, G2_ORDER)
     states_c, trans_c = canonical(G2, G2_ORDER)
     assert states == states_c and trans == trans_c
@@ -321,7 +321,7 @@ if __name__ == "__main__":
                    (4, "E"): 7, (4, "T"): 3, (4, "("): 4, (4, "id"): 5,
                    (6, "E"): 8, (6, "T"): 3, (6, "("): 4, (6, "id"): 5, (7, ")"): 9}
     assert trans == slide_trans
-    print("DFA: 상태 9개, 전이 14개, 슬라이드 그림과 일치")
+    print("DFA: 상태 9개, 전이 14개, 문서 그림과 일치")
 
     # (3) NFA와 DFA는 같은 기호열을 받아들인다 (길이 5 이하 전부)
     syms = ["E", "T", "(", ")", "id", "*"]
@@ -337,7 +337,7 @@ if __name__ == "__main__":
         n += okd
     print("길이 5 이하 기호열 %d개 중 %d개를 받아들이고, NFA와 DFA의 답이 모두 같다" % (sum(6 ** k for k in range(6)), n))
 
-    # (4) L07 p.31: ((((((((는 4번 상태에서 맴돈다
+    # (4) ((((((((는 4번 상태에서 맴돈다
     st = 1
     for _ in range(8):
         st = trans[(st, "(")]

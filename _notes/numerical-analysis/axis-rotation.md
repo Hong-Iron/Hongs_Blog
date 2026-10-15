@@ -46,16 +46,16 @@ $$z$$축으로 90° 돌리는 것 같은 기본 회전으로는 이 결과를 �
 
 ## 정의
 
-**기본 회전.** 오른손 좌표계에서 축을 바라보는 쪽(양의 방향)에서 볼 때 반시계 방향이 양의 각이다. 2차원 회전은 $$z$$축 회전과 같다[^1].
+**기본 회전.** 오른손 좌표계에서 축을 바라보는 쪽(양의 방향)에서 볼 때 반시계 방향이 양의 각이다. 2차원 회전은 $$z$$축 회전과 같다.
 
 $$R_x(\theta) = \begin{pmatrix}1 & 0 & 0\\ 0 & \cos\theta & -\sin\theta\\ 0 & \sin\theta & \cos\theta\end{pmatrix}, \quad R_y(\theta) = \begin{pmatrix}\cos\theta & 0 & \sin\theta\\ 0 & 1 & 0\\ -\sin\theta & 0 & \cos\theta\end{pmatrix}, \quad R_z(\theta) = \begin{pmatrix}\cos\theta & -\sin\theta & 0\\ \sin\theta & \cos\theta & 0\\ 0 & 0 & 1\end{pmatrix}$$
 
 
-90°로 확인하면 $$R_z$$는 $$x \to y$$, $$R_x$$는 $$y \to z$$, $$R_y$$는 $$z \to x$$로 보낸다. $$R_y$$만 $$\sin$$의 부호 자리가 다른 것은 이 순환($$x \to y \to z \to x$$) 때문이다[^2][^s1].
+90°로 확인하면 $$R_z$$는 $$x \to y$$, $$R_x$$는 $$y \to z$$, $$R_y$$는 $$z \to x$$로 보낸다. $$R_y$$만 $$\sin$$의 부호 자리가 다른 것은 이 순환($$x \to y \to z \to x$$) 때문이다[^s1].
 
 ### 다섯 단계 방법
 
-원점을 지나는 축 $$A$$를 중심으로 $$\theta$$만큼 돌린다[^3].
+원점을 지나는 축 $$A$$를 중심으로 $$\theta$$만큼 돌린다.
 
 1. $$z$$축을 중심으로 돌려 $$A$$를 $$xz$$ 평면에 놓는다. $$\alpha$$는 $$A$$를 $$xy$$ 평면에 내린 그림자 $$A_{xy}$$와 $$x$$축 사이의 각이다($$R_\alpha$$).
 2. $$y$$축을 중심으로 $$\beta$$만큼 돌려 $$A$$를 $$x$$축에 맞춘다. $$\beta$$는 $$R_\alpha A$$와 $$x$$축 사이의 각이다($$R_\beta$$).
@@ -70,12 +70,12 @@ $$X' = R_\alpha^{-1}R_\beta^{-1}R_\theta R_\beta R_\alpha X$$
 
 ### 로드리게스 공식
 
-$$A$$가 단위 벡터일 때, 점 $$P$$를 $$A$$ 방향 부분(사영)과 $$A$$에 수직인 부분으로 나눈다[^4].
+$$A$$가 단위 벡터일 때, 점 $$P$$를 $$A$$ 방향 부분(사영)과 $$A$$에 수직인 부분으로 나눈다.
 
 $$P = \underbrace{(A\cdot P)A}_{\text{축 방향, 돌려도 그대로}} + \underbrace{P - (A\cdot P)A}_{\text{축에 수직, 원을 따라 돈다}}$$
 
 
-수직인 부분은 축에 수직인 평면에서 2차원 회전을 한다. 그 평면의 두 축은 수직 부분 자신과, 그것을 90° 돌린 $$A \times P$$다. 둘의 길이는 같다: $$\vert P - (A\cdot P)A\vert  = \vert P\vert \sin\alpha = \vert A \times P\vert $$[^4].
+수직인 부분은 축에 수직인 평면에서 2차원 회전을 한다. 그 평면의 두 축은 수직 부분 자신과, 그것을 90° 돌린 $$A \times P$$다. 둘의 길이는 같다: $$\vert P - (A\cdot P)A\vert  = \vert P\vert \sin\alpha = \vert A \times P\vert $$.
 
 $$P' = P\cos\theta + (A \times P)\sin\theta + A(A\cdot P)(1 - \cos\theta)$$
 
@@ -92,7 +92,7 @@ flowchart LR
     S --> Q["P'"]
 ```
 
-점을 두 갈래로 나눈 뒤 수직 부분만 돌리고, 축 방향 부분은 그대로 다시 더한다[^s2].
+점을 두 갈래로 나눈 뒤 수직 부분만 돌리고, 축 방향 부분은 그대로 다시 더한다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">유도 과정</summary>
@@ -210,10 +210,5 @@ flowchart LR
 </details>
 
 
-[^1]: 수치해석 6회 강의 자료 「na06_rotation」, p.9
-[^2]: 같은 자료, p.10
-[^3]: 같은 자료, p.11~16
-[^4]: 같은 자료, p.17~18
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 정육면체 대각선 예, 부호 자리의 설명, 로드리게스 유도의 한 줄, 스스로 설명해 보기, 예제, OpenCV, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '로드리게스 공식' 절의 분해와 공식(원본 06.na06_rotation.pdf p.17~18)으로 그렸다.
+[^s1]: 검증 코드로 확인했다.
 {% endraw %}

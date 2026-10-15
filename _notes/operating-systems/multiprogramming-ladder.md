@@ -23,7 +23,7 @@ permalink: "/studies/operating-systems/multiprogramming-ladder/"
 {% raw %}
 사용 개념: [다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/)의 프로세서 사용률 = 일한 시간 ÷ 전체 시간.
 
-이 계산을 떠올리는 신호는 "읽기 몇 µs, 계산 몇 µs, 쓰기 몇 µs"처럼 한 번 도는 동안의 시간이 나뉘어 나오는 문제다. 풀이는 늘 같은 세 하위목표로 나뉜다. 한 번 도는 전체 시간을 구하고, 그중 프로세서가 일한 시간을 고르고, 나눈다. 프로그램이 여럿이면 일한 시간이 몇 배로 늘어나는지를 따진다[^s1].
+이 계산을 떠올리는 신호는 "읽기 몇 µs, 계산 몇 µs, 쓰기 몇 µs"처럼 한 번 도는 동안의 시간이 나뉘어 나오는 문제다. 풀이는 늘 같은 세 하위목표로 나뉜다. 한 번 도는 전체 시간을 구하고, 그중 프로세서가 일한 시간을 고르고, 나눈다. 프로그램이 여럿이면 일한 시간이 몇 배로 늘어나는지를 따진다.
 
 ## 문제 1 · 완전한 풀이
 
@@ -85,7 +85,4 @@ $$2 / 22 = 1/11 \approx 9.1\%$$.
 <div class="callout-title" markdown="span">검증: 네 문제의 답 — [11_multiprogramming_verify.py](/Hongs_Blog/studies/operating-systems/code/11_multiprogramming_verify/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 1은 원본 그림 2.4의 수치다. 문제 2~4는 원본 범위 밖의 변형 문제이고, 문제 4의 "겹치지 않는다" 가정은 원본 그림 2.5c를 단순화한 것이다.
 {% endraw %}

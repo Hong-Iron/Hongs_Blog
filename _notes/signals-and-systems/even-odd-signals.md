@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/even-odd-signals/"
 
 ## 예시로 보기
 
-단위 계단 $$u[n]$$($$n \ge 0$$에서 1, 그 밖은 0)은 짝도 홀도 아니다. 그래도 둘로 나눌 수 있다[^1].
+단위 계단 $$u[n]$$($$n \ge 0$$에서 1, 그 밖은 0)은 짝도 홀도 아니다. 그래도 둘로 나눌 수 있다.
 
 | $$n$$ | $$\cdots, -2, -1$$ | $$0$$ | $$1, 2, \cdots$$ |
 |---|---|---|---|
@@ -51,9 +51,9 @@ permalink: "/studies/signals-and-systems/even-odd-signals/"
 | 짝 신호 | $$x(-t) = x(t)$$ | $$x[-n] = x[n]$$ |
 | 홀 신호 | $$x(-t) = -x(t)$$ | $$x[-n] = -x[n]$$ |
 
-홀 신호에 $$t = 0$$을 넣으면 $$x(0) = -x(0)$$이므로 $$x(0) = 0$$이다[^2].
+홀 신호에 $$t = 0$$을 넣으면 $$x(0) = -x(0)$$이므로 $$x(0) = 0$$이다.
 
-신호를 뒤집은 것과 원래 신호를 더하면 짝, 빼면 홀이 된다. 그래서 짝 부분과 홀 부분은 다음과 같다[^1].
+신호를 뒤집은 것과 원래 신호를 더하면 짝, 빼면 홀이 된다. 그래서 짝 부분과 홀 부분은 다음과 같다.
 
 $$\mathcal{E}v\{x(t)\} = \tfrac12\bigl[x(t) + x(-t)\bigr], \qquad \mathcal{O}d\{x(t)\} = \tfrac12\bigl[x(t) - x(-t)\bigr]$$
 
@@ -62,7 +62,7 @@ $$\mathcal{E}v\{x(t)\} = \tfrac12\bigl[x(t) + x(-t)\bigr], \qquad \mathcal{O}d\{
 
 ## 예제
 
-**예** $$x[n] = 3\cos(6\pi n) + 4\sin(8\pi n)$$의 짝 부분과 홀 부분[^3]
+**예** $$x[n] = 3\cos(6\pi n) + 4\sin(8\pi n)$$의 짝 부분과 홀 부분
 
 - 뒤집기: $$\cos$$는 짝, $$\sin$$은 홀이므로 $$x[-n] = 3\cos(6\pi n) - 4\sin(8\pi n)$$.
 - 짝 부분: $$\frac12(x[n] + x[-n]) = 3\cos(6\pi n)$$.
@@ -112,8 +112,5 @@ $$\mathcal{E}v\{x(t)\} = \tfrac12\bigl[x(t) + x(-t)\bigr], \qquad \mathcal{O}d\{
 </details>
 
 
-[^1]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.39 (그림 1.18)
-[^2]: 같은 자료, p.38
-[^3]: 같은 자료, p.40
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 예제가 정수 $$n$$에서 상수 3이 된다는 지적, 대칭 구간 적분이 0이라는 활용, 확인 문제 C3은 원본에 없다. 검증 코드로 확인했다.
+[^s1]: 검증 코드로 확인했다.
 {% endraw %}

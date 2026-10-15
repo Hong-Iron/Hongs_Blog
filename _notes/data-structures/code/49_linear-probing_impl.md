@@ -24,12 +24,12 @@ permalink: "/studies/data-structures/code/49_linear-probing_impl/"
  *
  * 실행: cc -std=c11 -Wall -Wextra 49_linear-probing_impl.c -o probing && ./probing
  * 문서: 49.선형 탐사 (넣기 표, 지우기 추적 세 개, 불변식, 오해, 카드 C1~C5)
- * 출처: 자료구조 15주차 슬라이드 p.20~25. 슬라이드에는 그림만 있어 코드는 그림대로 짠 것이다.
+ * 코드는 문서의 그림과 규칙대로 짠 것이다.
  * 키는 0 이상인 정수, 홈 버킷은 key % b. 버킷 번호는 0부터 b-1까지.
  *
  * 확인하는 것
- *   1. 넣기: 6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45를 b = 17에 넣은 표 (p.21)
- *   2. 지우기: 처음 표에서 0, 34, 29를 각각 지운 표 (p.22~24)와 옮겨진 키의 차례
+ *   1. 넣기: 6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45를 b = 17에 넣은 표 (문서의 넣기 표)
+ *   2. 지우기: 처음 표에서 0, 34, 29를 각각 지운 표 (문서의 지우기 추적 세 개)와 옮겨진 키의 차례
  *   3. "그 칸만 비우는" 틀린 지우기로 34를 지우면 0과 45를 못 찾는다 (오해 항목)
  *   4. 무작위 연산 60,000번(넣기·찾기·지우기)을 단순한 모형과 비교, 연산마다 불변식 검사
  *   5. 가득 찬 표에서 넣기 실패, 없는 키 찾기가 끝난다
@@ -208,13 +208,13 @@ int main(void)
 {
     Table t;
 
-    /* 1. 넣기 (p.21) */
+    /* 1. 넣기 (문서의 넣기 표) */
     {
         const int want[17] = {34, 0, 45, E, E, E, 6, 23, 7, E, E, 28, 12, 29, 11, 30, 33};
         if (!build_slide_table(&t))
             return fail("표 만들기");
         if (!table_is(&t, want) || t.n != 12 || !invariant_ok(&t))
-            return fail("넣기 표 (p.21)");
+            return fail("넣기 표");
         /* 카드 C4: 45를 찾을 때 보는 버킷 수 = 11, 12, ..., 16, 0, 1, 2 -> 9개 */
         if (lp_find(&t, 45) != 2 || (2 - 45 % 17 + 17) % 17 + 1 != 9)
             return fail("카드 C4");
@@ -225,7 +225,7 @@ int main(void)
         table_free(&t);
     }
 
-    /* 2. 지우기 세 개: 모두 처음 표에서 시작한다 (p.22~24) */
+    /* 2. 지우기 세 개: 모두 처음 표에서 시작한다 */
     {
         const int after0[17] = {34, 45, E, E, E, E, 6, 23, 7, E, E, 28, 12, 29, 11, 30, 33};
         const int after34[17] = {0, 45, E, E, E, E, 6, 23, 7, E, E, 28, 12, 29, 11, 30, 33};
@@ -235,7 +235,7 @@ int main(void)
             return fail("표 만들기");
         g_moved_n = 0;
         if (lp_delete(&t, 0) != 1 || !table_is(&t, after0) || !invariant_ok(&t))
-            return fail("Delete(0) (p.22)");
+            return fail("Delete(0)");
         if (g_moved_n != 1 || g_moved[0] != 45)
             return fail("Delete(0)에서 옮긴 키: 45");
         table_free(&t);
@@ -244,7 +244,7 @@ int main(void)
             return fail("표 만들기");
         g_moved_n = 0;
         if (lp_delete(&t, 34) != 1 || !table_is(&t, after34) || !invariant_ok(&t))
-            return fail("Delete(34) (p.23)");
+            return fail("Delete(34)");
         if (g_moved_n != 2 || g_moved[0] != 0 || g_moved[1] != 45)
             return fail("Delete(34)에서 옮긴 키: 0, 45");
         table_free(&t);
@@ -253,7 +253,7 @@ int main(void)
             return fail("표 만들기");
         g_moved_n = 0;
         if (lp_delete(&t, 29) != 1 || !table_is(&t, after29) || !invariant_ok(&t))
-            return fail("Delete(29) (p.24)");
+            return fail("Delete(29)");
         if (g_moved_n != 3 || g_moved[0] != 11 || g_moved[1] != 30 || g_moved[2] != 45)
             return fail("Delete(29)에서 옮긴 키: 11, 30, 45");
         for (int i = 0; i < 12; i++)
@@ -347,7 +347,7 @@ int main(void)
         table_free(&t);
     }
 
-    printf("넣기 표와 Delete(0), Delete(34), Delete(29)가 슬라이드와 같음\n");
+    printf("넣기 표와 Delete(0), Delete(34), Delete(29)가 문서의 표와 같음\n");
     printf("틀린 지우기: 34의 칸만 비우면 0과 45를 못 찾음\n");
     printf("ALL CHECKS PASSED\n");
     return 0;

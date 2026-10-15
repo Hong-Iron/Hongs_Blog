@@ -180,6 +180,6 @@ $$\text{Zero} = \overline{\text{Result}_{31} + \text{Result}_{30} + \cdots + \te
 
 
 [^1]: Patterson & Hennessy, *Computer Organization and Design*, 부록 "The Basics of Logic Design"의 B.5절 "Constructing a Basic Arithmetic Logic Unit" (1비트 ALU와 멀티플렉서, Binvert와 받는 올림으로 하는 뺄셈, 둘을 묶은 Bnegate, Ainvert로 만드는 NOR, slt를 위한 Less 입력과 맨 윗자리의 Set 출력, 넘침 때문에 비교가 더 복잡하다는 말, Zero를 구하는 식, 제어선 표 Figure B.5.13). 절·그림 번호는 공개된 PDF 기준이고 판에 따라 부록 문자가 다를 수 있다. https://www.doc.ic.ac.uk/~wl/teachlocal/arch/HP05/HP_AppB.pdf. 모든 연산을 계산해 놓고 멀티플렉서로 고른다는 설명은 UC Berkeley CS61C 강의 노트 "Arithmetic Logic Unit"에도 있다, https://notes.cs61c.org/content/sds-blocks/alu
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개와 8비트 예는 직접 만들었다. 선의 이름과 멀티플렉서 입력 순서는 [^1]의 B.5절을 따랐고, 값은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 8비트 반례, 16,384쌍이라는 수, Set과 넘침을 XOR하는 고침은 책 본문에 없다(책은 연습 문제로 넘긴다). 8비트 전수 검사로 확인했다.
+[^s1]: 다이어그램 1개와 8비트 예는 직접 만들었다. 선의 이름과 멀티플렉서 입력 순서는 [^1]의 B.5절을 따랐고, 값은 검증 코드로 확인했다.
+[^s2]: 8비트 반례, 16,384쌍이라는 수, Set과 넘침을 XOR하는 고침은 책 본문에 없다(책은 연습 문제로 넘긴다). 8비트 전수 검사로 확인했다.
 {% endraw %}

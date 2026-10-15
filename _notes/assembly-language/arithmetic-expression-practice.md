@@ -45,7 +45,7 @@ Zval SDWORD 40
 
 ## 문제 p1
 
-`Rval = -Xval + (Yval - Zval)`을 어셈블리로 옮기라[^1].
+`Rval = -Xval + (Yval - Zval)`을 어셈블리로 옮기라.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
@@ -89,7 +89,7 @@ mov Rval,eax
 
 ## 문제 p2
 
-`Rval = Xval - (-Yval + Zval)`을 어셈블리로 옮기라. `Xval`, `Yval`, `Zval`이 바뀌면 안 된다[^2].
+`Rval = Xval - (-Yval + Zval)`을 어셈블리로 옮기라. `Xval`, `Yval`, `Zval`이 바뀌면 안 된다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
@@ -162,7 +162,5 @@ mov Rval,eax
 </details>
 
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-1」, p.9 (Implementing Arithmetic Expressions: 식과 코드)
-[^2]: 같은 자료, p.10 (Your turn: 식과 답 코드)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 전략, 풀이의 단계 이름, 흔한 오답, 문제 p1의 변형, 문제 p3과 그 변형은 원본에 없다. 슬라이드는 변수를 `DWORD`로 정의하고 "부호 있는 더블워드로 본다"고 적는다. 여기서는 `SDWORD`로 적었다. 메모리에 들어가는 바이트는 같다. 결과는 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 여기서는 `SDWORD`로 적었다. 메모리에 들어가는 바이트는 같다. 결과는 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

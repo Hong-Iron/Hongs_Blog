@@ -161,6 +161,6 @@ DRAM에서 새는 전하를 다시 채우는 일을 리프레시라 부른다. "
 [^1]: Patterson & Hennessy, *Computer Organization and Design*, 부록 "The Basics of Logic Design"의 B.8절 "Memory Elements: Flip-flops, Latches, and Registers" 가운데 "Register Files" (D 플립플롭을 늘어놓은 레지스터, 읽는 곳 둘과 쓰는 곳 하나, 읽기는 멀티플렉서 한 쌍, 쓰기는 디코더, 같은 사이클에 읽고 쓰면 앞 사이클에 쓴 값이 읽힌다는 것). 절 번호는 공개된 PDF 기준이고 판에 따라 부록 문자가 다를 수 있다. https://www.doc.ic.ac.uk/~wl/teachlocal/arch/HP05/HP_AppB.pdf
 [^2]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장 "Instructions: Language of the Computer" (0번 레지스터 `$zero`는 늘 0). 책을 직접 열지 못해 장까지만 적는다.
 [^3]: [^1]과 같은 부록의 B.9절 "Memory Elements: SRAMs and DRAMs" (SRAM은 인버터 한 쌍에 값을 두고 전원이 있는 한 지킨다, 비트당 트랜지스터 4~6개, DRAM은 축전기의 전하와 트랜지스터 1개, 주기적인 리프레시, SRAM이 더 빠르고 덜 촘촘하고 비트당 비싸다).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 4개 × 8비트 추적 표와 다이어그램 1개는 직접 만들었다. 선의 이름은 [^1]의 Verilog 예(Read1, Read2, WriteReg, WriteData, RegWrite)를 따랐고, 표는 흉내기로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 0번에 쓰는 신호를 막는다는 것은 `$zero`를 만드는 한 가지 방법으로, 검증 코드의 흉내기가 이렇게 한다. 책의 부록 회로에는 이 부분이 그려져 있지 않다.
+[^s1]: 4개 × 8비트 추적 표와 다이어그램 1개는 직접 만들었다. 선의 이름은 [^1]의 Verilog 예(Read1, Read2, WriteReg, WriteData, RegWrite)를 따랐고, 표는 흉내기로 확인했다.
+[^s2]: 0번에 쓰는 신호를 막는다는 것은 `$zero`를 만드는 한 가지 방법으로, 검증 코드의 흉내기가 이렇게 한다. 책의 부록 회로에는 이 부분이 그려져 있지 않다.
 {% endraw %}

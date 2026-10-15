@@ -89,7 +89,7 @@ DO $$ BEGIN
   ASSERT err_of($q$INSERT INTO T (dt) VALUES ('2024-13-01')$q$) = '22008', '13월은 없다';
   ASSERT err_of($q$INSERT INTO T (tm) VALUES ('13:15:47')$q$) = 'OK', '있는 시각';
   ASSERT err_of($q$INSERT INTO T (tm) VALUES ('25:00:00')$q$) = '22008', '25시는 없다';
-  ASSERT err_of($q$INSERT INTO T (ts) VALUES ('2024-11-07 13:15:47.648302')$q$) = 'OK', '슬라이드의 TIMESTAMP 예';
+  ASSERT err_of($q$INSERT INTO T (ts) VALUES ('2024-11-07 13:15:47.648302')$q$) = 'OK', '문서의 TIMESTAMP 예';
   ASSERT (SELECT LENGTH(dt::TEXT) FROM T WHERE dt IS NOT NULL) = 10, 'DATE는 10자리';
   ASSERT (SELECT LENGTH(tm::TEXT) FROM T WHERE tm IS NOT NULL) = 8, 'TIME은 8자리';
   ASSERT (SELECT ts::TEXT FROM T WHERE ts IS NOT NULL) = '2024-11-07 13:15:47.648302', '소수 여섯 자리까지 그대로 남는다';
@@ -102,7 +102,7 @@ END $$;
 -- COMPANY의 자료형: Hours DECIMAL(3,1), Salary DECIMAL(10,2), Ssn CHAR(9)
 CREATE TABLE W (Essn CHAR(9), Hours DECIMAL(3,1), Salary DECIMAL(10,2));
 DO $$ BEGIN
-  ASSERT err_of($q$INSERT INTO W VALUES ('123456789', 32.5, 30000)$q$) = 'OK', '슬라이드의 값';
+  ASSERT err_of($q$INSERT INTO W VALUES ('123456789', 32.5, 30000)$q$) = 'OK', '문서의 값';
   ASSERT err_of($q$INSERT INTO W (Salary) VALUES (99999999.99)$q$) = 'OK', 'DECIMAL(10,2)의 가장 큰 값';
   ASSERT err_of($q$INSERT INTO W (Salary) VALUES (100000000)$q$) = '22003', '정수부는 여덟 자리까지다';
   ASSERT err_of($q$INSERT INTO W (Hours) VALUES (168.0)$q$) = '22003', '주 168시간은 DECIMAL(3,1)에 안 들어간다';

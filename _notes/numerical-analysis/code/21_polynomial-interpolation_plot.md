@@ -53,7 +53,7 @@ def save(fig, k):
 
 
 XS = np.array([1, 1.1, 1.2, 1.3])
-YS = np.array([1.5574, 1.9648, 2.5722, 3.6021])           # 슬라이드의 tan 표 (넷째 자리)
+YS = np.array([1.5574, 1.9648, 2.5722, 3.6021])           # 문서의 tan 표 (넷째 자리)
 
 
 def lagrange(xs, ys, x):

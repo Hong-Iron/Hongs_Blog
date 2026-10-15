@@ -22,7 +22,7 @@ permalink: "/studies/java/code/35_java-try-catch_impl/"
 ```java
 // 실행: docker run --rm -v "$PWD":/w -w /w eclipse-temurin:21-jdk java 35_java-try-catch_impl.java
 // (JDK 21. 이 파일이 있는 폴더에서 실행한다. 다른 파일을 불러오지 않는다.)
-// 문서 「try-catch-finally」의 실행 순서 표, 슬라이드 예제 출력, 카드의 답을 확인한다.
+// 문서 「try-catch-finally」의 실행 순서 표, 예제 출력, 카드의 답을 확인한다.
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -65,7 +65,7 @@ class TryCatchImpl {
         }
     }
 
-    // 슬라이드 p.8 WithExceptionHandling
+    // 문서의 첫 예제: printLength를 try로 감싼다
     static void printLength(String data) {
         try {
             int result = data.length();
@@ -83,7 +83,7 @@ class TryCatchImpl {
         System.out.println("[Program end]");
     }
 
-    // 슬라이드 p.11 MultipleCatchBlockExample1
+    // 문서의 반복문 예제 1: catch 두 개
     static void multi1() {
         String[] array = {"100", "1oo"};
         for (int i = 0; i <= array.length; i++) {
@@ -98,7 +98,7 @@ class TryCatchImpl {
         }
     }
 
-    // 슬라이드 p.14 MultipleCatchBlockExample2
+    // 문서의 반복문 예제 2: 자식 catch 먼저, Exception 나중
     static void multi2() {
         String[] array = {"100", "1oo"};
         for (int i = 0; i <= array.length; i++) {
@@ -170,22 +170,22 @@ class TryCatchImpl {
                 "A\nD\n", "못 잡는 예외: A D만 찍고 밖으로 나간다");
         check(t[0] instanceof ArrayIndexOutOfBoundsException, "못 잡는 예외는 부른 쪽으로 간다");
 
-        // 2. p.8
+        // 2. 첫 예제
         same(capture(TryCatchImpl::withHandling),
                 "[Program start]\nlength: 11\ncontinue..\n"
               + "Cannot invoke \"String.length()\" because \"<parameter1>\" is null\ncontinue..\n[Program end]\n",
-                "p.8 출력: 끝까지 간다");
+                "첫 예제 출력: 끝까지 간다");
 
-        // 3. p.11
+        // 3. 반복문 예제 1
         same(capture(TryCatchImpl::multi1),
                 "array[0] = 100\n"
               + "Number format exception.For input string: \"1oo\"\n"
-              + "Array index out of bounds.Index 2 out of bounds for length 2\n", "p.11 출력");
+              + "Array index out of bounds.Index 2 out of bounds for length 2\n", "반복문 예제 1 출력");
 
-        // 4. p.14
+        // 4. 반복문 예제 2
         same(capture(TryCatchImpl::multi2),
                 "array[0] = 100\nThere is an exception.\n"
-              + "Array index out of bounds.Index 2 out of bounds for length 2\n", "p.14 출력");
+              + "Array index out of bounds.Index 2 out of bounds for length 2\n", "반복문 예제 2 출력");
 
         // 5. 한 catch에 묶기
         same(capture(TryCatchImpl::multi3),

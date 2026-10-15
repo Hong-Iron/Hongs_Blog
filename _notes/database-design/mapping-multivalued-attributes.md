@@ -36,7 +36,7 @@ permalink: "/studies/database-design/mapping-multivalued-attributes/"
 
 5번 부서(Research)는 Bellaire, Sugarland, Houston 세 곳에 있다. ER 그림에서는 DEPARTMENT에 겹동그라미 Locations를 달면 끝이다. 릴레이션에서는 한 칸에 값 하나만 들어간다([릴레이션의 특성](/Hongs_Blog/studies/database-design/relation-characteristics/)). 어디에 적어야 할까?
 
-DEPARTMENT에 그대로 두고 위치마다 줄을 늘리면 이렇게 된다[^s1].
+DEPARTMENT에 그대로 두고 위치마다 줄을 늘리면 이렇게 된다.
 
 | Dname | Dnumber | Mgr_ssn | Dlocation |
 |---|---|---|---|
@@ -48,7 +48,7 @@ DEPARTMENT에 그대로 두고 위치마다 줄을 늘리면 이렇게 된다[^s
 
 Dnumber 5가 세 번 나온다. 기본 키 값이 겹쳐서 Dnumber는 더는 기본 키가 못 된다. 부서 이름과 관리자도 세 번 적힌다. 관리자가 바뀌면 세 줄을 다 고쳐야 한다.
 
-그래서 위치만 따로 떼어 낸다[^1].
+그래서 위치만 따로 떼어 낸다.
 
 | DEPT_LOCATIONS | |
 |---|---|
@@ -69,13 +69,13 @@ DEPARTMENT는 부서마다 한 줄 그대로이고, 위치는 DEPT_LOCATIONS에 
 
 ## 옮기는 규칙
 
-다치 속성 $$A$$마다 릴레이션 $$R$$을 따로 하나 만든다[^1].
+다치 속성 $$A$$마다 릴레이션 $$R$$을 따로 하나 만든다.
 
 1. $$R$$에 $$A$$를 나타내는 속성을 넣는다.
 2. $$A$$를 가진 개체 타입(또는 관계 타입)을 옮긴 릴레이션의 기본 키를 $$R$$에 외래 키로 넣는다. 이 기본 키를 $$K$$라 부른다[^s2].
 3. $$R$$의 기본 키는 $$A$$와 $$K$$를 묶은 것이다.
 
-COMPANY에서는 $$A$$가 Locations, $$K$$가 DEPARTMENT의 Dnumber다. 그래서 DEPT_LOCATIONS(Dnumber, Dlocation)가 나오고, 기본 키는 (Dnumber, Dlocation), 외래 키는 Dnumber → DEPARTMENT.Dnumber다[^1].
+COMPANY에서는 $$A$$가 Locations, $$K$$가 DEPARTMENT의 Dnumber다. 그래서 DEPT_LOCATIONS(Dnumber, Dlocation)가 나오고, 기본 키는 (Dnumber, Dlocation), 외래 키는 Dnumber → DEPARTMENT.Dnumber다.
 
 ```mermaid
 flowchart LR
@@ -91,9 +91,9 @@ flowchart LR
     ER ==> REL
 ```
 
-겹동그라미 Locations가 릴레이션 하나로 나오고, 그 릴레이션의 Dnumber가 DEPARTMENT를 가리킨다[^s3].
+겹동그라미 Locations가 릴레이션 하나로 나오고, 그 릴레이션의 Dnumber가 DEPARTMENT를 가리킨다.
 
-왜 기본 키가 두 속성의 묶음일까? 값이 여럿이니 개체의 키 값이 되풀이되어 들어간다[^1]. Dnumber 5가 세 번 나온다. Dlocation도 혼자서는 겹친다. Houston에 부서가 둘(1번과 5번) 있다. 둘을 묶은 (5, Houston)은 한 번만 나온다[^s1].
+왜 기본 키가 두 속성의 묶음일까? 값이 여럿이니 개체의 키 값이 되풀이되어 들어간다. Dnumber 5가 세 번 나온다. Dlocation도 혼자서는 겹친다. Houston에 부서가 둘(1번과 5번) 있다. 둘을 묶은 (5, Houston)은 한 번만 나온다.
 
 다치 속성이 관계 타입에 달려 있어도 같은 규칙이다. 그때 $$K$$는 그 관계 타입을 옮긴 릴레이션의 기본 키다. 영화 예제의 "배우가 그 영화에서 한 대사들"이 그런 경우다: [ER-관계형 사상 예제 사다리](/Hongs_Blog/studies/database-design/er-mapping-ladder/)
 
@@ -136,8 +136,5 @@ flowchart LR
 </details>
 
 
-[^1]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.15 (Mapping of Multivalued Attributes, DEPT_LOCATIONS). 복습: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.9. 다치 속성은 릴레이션을 따로 만든다는 말은 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.14에도 있다
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 위치를 DEPARTMENT에 둔 채 줄을 늘린 표, 값이 겹치는 곳을 센 것, 흔한 실수 두 가지, 카드 C1~C3은 원본에 없다. 6-2 p.21의 상태와 4-2 p.12의 CAR 예에서 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.15는 "Primary key: the combination of A and K"라고만 적고 $$K$$를 정의하지 않는다. Elmasri & Navathe, *Fundamentals of Database Systems* 7판 9.1절의 같은 단계는 $$K$$를 "그 속성을 가진 개체 타입이나 관계 타입을 나타내는 릴레이션의 기본 키"로 적는다 [확인필요: 판과 절 번호].
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Mermaid 그림 1개는 원본에 없다. 7 p.15의 두 그림(ER 조각과 화살표가 그려진 두 릴레이션)을 한 그림으로 옮겼다.
+[^s2]: Elmasri & Navathe, *Fundamentals of Database Systems* 7판 9.1절의 같은 단계는 $$K$$를 "그 속성을 가진 개체 타입이나 관계 타입을 나타내는 릴레이션의 기본 키"로 적는다 [확인필요: 판과 절 번호].
 {% endraw %}

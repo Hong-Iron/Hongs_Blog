@@ -21,7 +21,7 @@ permalink: "/studies/database-design/code/59_sql-alter-table_verify-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 59.ALTER TABLE 검증 (PostgreSQL 16). 슬라이드 11 p.17~19의 세 문장을 적힌 그대로 돌린다.
+-- 59.ALTER TABLE 검증 (PostgreSQL 16). 문서의 세 문장을 적힌 그대로 돌린다.
 --   ALTER TABLE COMPANY.EMPLOYEE ADD COLUMN Job VARCHAR(12);
 --   ALTER TABLE COMPANY.EMPLOYEE DROP COLUMN Address CASCADE;
 --   ALTER TABLE COMPANY.EMPLOYEE DROP CONSTRAINT EMPSUPERFK CASCADE;
@@ -50,7 +50,7 @@ CREATE FUNCTION fk_names() RETURNS TEXT[] LANGUAGE sql AS
 
 CREATE SCHEMA COMPANY;
 SET search_path TO company, sql_alter_table;
--- COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
+-- COMPANY 스키마와 상태.
 -- EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 EMPLOYEE의 외래 키 두 개는 행을 넣은 뒤 ALTER TABLE로 붙인다.
 -- WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 CREATE TABLE EMPLOYEE (
@@ -103,7 +103,7 @@ INSERT INTO DEPENDENT VALUES ('333445555', 'Alice', 'F', '1986-04-05', 'Daughter
 ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPSUPERFK FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn);
 ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPDEPTFK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber);
 
--- 1. 열 더하기 (슬라이드 11 p.17)
+-- 1. 열 더하기
 ALTER TABLE COMPANY.EMPLOYEE ADD COLUMN Job VARCHAR(12);
 DO $$ BEGIN
   ASSERT cols('employee') = ARRAY['fname', 'minit', 'lname', 'ssn', 'bdate', 'address', 'sex', 'salary', 'super_ssn', 'dno', 'job'], 'Job이 맨 뒤에 붙는다';
@@ -118,8 +118,8 @@ DO $$ BEGIN
   ASSERT (SELECT ARRAY_AGG(Lname::TEXT ORDER BY Lname) FROM EMPLOYEE WHERE Job = 'Manager') = ARRAY['Borg', 'Wallace', 'Wong'], '값은 UPDATE로 채운다';
 END $$;
 
--- 2. 열 지우기 (슬라이드 11 p.18)
--- Address에는 아무것도 기대지 않는다: 슬라이드 문장 그대로 돈다
+-- 2. 열 지우기
+-- Address에는 아무것도 기대지 않는다: 문서의 문장 그대로 돈다
 BEGIN;
 ALTER TABLE COMPANY.EMPLOYEE DROP COLUMN Address CASCADE;
 DO $$ BEGIN
@@ -160,7 +160,7 @@ DO $$ BEGIN
 END $$;
 ROLLBACK;
 
--- 3. 제약 지우기와 다시 붙이기 (슬라이드 11 p.19)
+-- 3. 제약 지우기와 다시 붙이기
 DO $$ BEGIN
   ASSERT err_of($q$INSERT INTO EMPLOYEE (Fname, Lname, Ssn, Super_ssn, Dno) VALUES ('Ann', 'Lee', '111111111', '000000000', 1)$q$) = '23503',
          '제약이 있을 때는 없는 상사 번호를 못 넣는다';
@@ -197,7 +197,7 @@ DO $$ BEGIN
   ASSERT err_of($q$INSERT INTO DEPARTMENT (Dname, Dnumber) VALUES ('Legal', 8)$q$) = '23502', 'DROP DEFAULT 뒤에는 NOT NULL에 걸린다';
 END $$;
 
--- 슬라이드 제목의 ALTER SCHEMA로는 열을 못 더한다
+-- ALTER SCHEMA로는 열을 못 더한다
 DO $$ BEGIN
   ASSERT err_of($q$ALTER SCHEMA COMPANY ADD COLUMN Job VARCHAR(12)$q$) = '42601', 'ALTER SCHEMA에는 ADD COLUMN이 없다';
 END $$;

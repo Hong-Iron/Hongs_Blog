@@ -64,7 +64,7 @@ A1, p1, A2, p2, w = 2.0, 0.4, 1.0, -1.1, 3.0
 P = A1 * cmath.exp(1j * p1) + A2 * cmath.exp(1j * p2)
 for t in ts:
     assert abs(A1 * math.cos(w * t + p1) + A2 * math.cos(w * t + p2) - abs(P) * math.cos(w * t + cmath.phase(P))) < 1e-12
-# 1주차 예: z = 1 + j0.5 -> r ≈ 1.118, θ ≈ 0.4636 rad ≈ 26.56°
+# 페이저 예: z = 1 + j0.5 -> r ≈ 1.118, θ ≈ 0.4636 rad ≈ 26.56°
 z = 1 + 0.5j
 assert abs(abs(z) - 1.118) < 1e-3 and abs(cmath.phase(z) - 0.4636) < 1e-4 and abs(math.degrees(cmath.phase(z)) - 26.565) < 1e-2
 print("ALL CHECKS PASSED")

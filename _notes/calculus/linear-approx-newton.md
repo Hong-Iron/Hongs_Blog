@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Linear Approximation", "Newton's Method", "선형 근사", "접선 근사", "tangent line approximation", "미분", "differential", "뉴턴 방법", "뉴턴-랩슨", "Newton-Raphson", "이차 수렴", "quadratic convergence", "바빌로니아 방법"]
 description: "매끄러운 곡선은 한 점 근처를 확대하면 직선(접선)처럼 보인다. 그래서 복잡한 함수값을 접선으로 어림하고(선형 근사), 방정식의 근은 \"접선이 0이 되는 곳\"으로 거듭 옮겨 가며 찾는다(뉴턴 방법). 뉴턴 방법은 근 근처에서 한 번 반복할 때마다 맞는 자릿수가 거의 두 배로 는다.…"
@@ -125,11 +125,11 @@ $$\sqrt2$$를 뉴턴 방법으로 구하는 첫 두 걸음을 추적한다. $$f(
 
 ## 과목별 관점
 
-**수치해석 (2-2학기).** 뉴턴-랩슨 방법을 근 찾기 알고리즘으로 정리한다. 시작값 $$x_0$$에서 $$f$$와 $$f'$$를 계산하고 $$x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}$$로 고친 뒤, 상대 오차 $$\vert \epsilon_a\vert  = \left\vert \frac{x_{i+1} - x_i}{x_{i+1}}\right\vert  \times 100$$이 허용 오차보다 작으면 멈춘다. 반복 횟수의 상한도 함께 둔다[^n1].
+**수치해석 (2-2학기).** 뉴턴-랩슨 방법을 근 찾기 알고리즘으로 정리한다. 시작값 $$x_0$$에서 $$f$$와 $$f'$$를 계산하고 $$x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}$$로 고친 뒤, 상대 오차 $$\vert \epsilon_a\vert  = \left\vert \frac{x_{i+1} - x_i}{x_{i+1}}\right\vert  \times 100$$이 허용 오차보다 작으면 멈춘다. 반복 횟수의 상한도 함께 둔다.
 
-슬라이드의 예는 $$f(x) = e^{-x} - x$$, $$x_0 = 0$$이다. $$x_i$$는 $$0.5$$, $$0.566311003$$, $$0.567143165$$, $$0.567143290$$으로, 참 오차가 11.8%, 0.147%, 0.0000220%, $$10^{-8}$$% 미만으로 준다. 오차의 자릿수가 매번 대략 두 배로 는다[^n2].
+예: $$f(x) = e^{-x} - x$$를 $$x_0 = 0$$에서 시작해 풀면 $$x_i$$는 $$0.5$$, $$0.566311003$$, $$0.567143165$$, $$0.567143290$$으로, 참 오차가 11.8%, 0.147%, 0.0000220%, $$10^{-8}$$% 미만으로 준다. 오차의 자릿수가 매번 대략 두 배로 는다.
 
-장점은 수렴하면 빠르고 시작값이 하나뿐이라는 것이다. 단점은 천천히 수렴하거나, 근을 지나쳐 실패하거나, $$f'(x_i) = 0$$이면 0으로 나누게 된다는 것이다[^n3]. $$f'$$을 계산하기 어려우면 두 점의 기울기로 바꾼 [할선법](/Hongs_Blog/studies/numerical-analysis/secant-method/)을 쓰고, 연립방정식이면 [다변수 뉴턴 방법](/Hongs_Blog/studies/numerical-analysis/multivariate-newton/)을 쓴다.
+장점은 수렴하면 빠르고 시작값이 하나뿐이라는 것이다. 단점은 천천히 수렴하거나, 근을 지나쳐 실패하거나, $$f'(x_i) = 0$$이면 0으로 나누게 된다는 것이다. $$f'$$을 계산하기 어려우면 두 점의 기울기로 바꾼 [할선법](/Hongs_Blog/studies/numerical-analysis/secant-method/)을 쓰고, 연립방정식이면 [다변수 뉴턴 방법](/Hongs_Blog/studies/numerical-analysis/multivariate-newton/)을 쓴다.
 
 ## 확인 문제
 
@@ -167,10 +167,7 @@ $$\sqrt2$$를 뉴턴 방법으로 구하는 첫 두 걸음을 추적한다. $$f(
 
 [^1]: OpenStax, *Calculus Volume 1*, 4.2절 "Linear Approximations and Differentials"
 [^2]: OpenStax, *Calculus Volume 1*, 4.9절 "Newton's Method"(실패하는 경우 포함)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "빠른 역제곱근"(fast inverse square root)은 게임 Quake III Arena의 소스 코드로 알려진 기법이다.
-[^n1]: 수치해석 16회 강의 자료 「na16_nonlinear」, p.14~16
-[^n2]: 같은 자료, p.17
-[^n3]: 같은 자료, p.18
-[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C4는 원본에 없다. 10_linear-approx-newton_verify.py로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [10_linear-approx-newton_plot.py](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_plot/)로 그렸고, 표의 $$x_n$$과 오차($$8.6 \times 10^{-2}$$부터 $$1.6 \times 10^{-12}$$까지), 이분법이 40번에 구간 길이 $$10^{-12}$$ 이하가 되는 것을 같은 코드로 확인했다.
+[^s1]: "빠른 역제곱근"(fast inverse square root)은 게임 Quake III Arena의 소스 코드로 알려진 기법이다.
+[^sn1]: 10_linear-approx-newton_verify.py로 확인했다.
+[^s2]: [10_linear-approx-newton_plot.py](/Hongs_Blog/studies/calculus/code/10_linear-approx-newton_plot/)로 그렸고, 표의 $$x_n$$과 오차($$8.6 \times 10^{-2}$$부터 $$1.6 \times 10^{-12}$$까지), 이분법이 40번에 구간 길이 $$10^{-12}$$ 이하가 되는 것을 같은 코드로 확인했다.
 {% endraw %}

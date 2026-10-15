@@ -34,9 +34,9 @@ permalink: "/studies/data-structures/linked-stack/"
 
 ## 예시로 보기
 
-[배열로 만든 스택](/Hongs_Blog/studies/data-structures/array-stack/)은 정해 둔 칸 수까지만 담는다. 얼마나 쌓일지 모르면 칸 수를 넉넉히 잡거나 가득 찰 때마다 배열을 옮겨야 한다. 연결 리스트로 만들면 처음에 크기를 정할 필요가 없다[^1].
+[배열로 만든 스택](/Hongs_Blog/studies/data-structures/array-stack/)은 정해 둔 칸 수까지만 담는다. 얼마나 쌓일지 모르면 칸 수를 넉넉히 잡거나 가득 찰 때마다 배열을 옮겨야 한다. 연결 리스트로 만들면 처음에 크기를 정할 필요가 없다.
 
-3, 7, 9를 차례로 쌓은 스택을 두 방법으로 그리면 이렇다[^2].
+3, 7, 9를 차례로 쌓은 스택을 두 방법으로 그리면 이렇다.
 
 ```
 배열 스택                    연결 스택
@@ -48,7 +48,7 @@ permalink: "/studies/data-structures/linked-stack/"
 칸 0 | 3 |
 ```
 
-연결 스택에서는 `top`이 맨 위 원소의 노드를 가리키고, 노드마다 링크가 바로 아래 원소의 노드를 가리킨다. 맨 아래 노드의 링크는 NULL이다. 새 원소는 늘 `top`이 가리키는 자리에 끼우고, 꺼낼 때는 `top`이 가리키는 노드를 뗀 뒤 `top`을 그 아래 노드로 옮긴다[^2].
+연결 스택에서는 `top`이 맨 위 원소의 노드를 가리키고, 노드마다 링크가 바로 아래 원소의 노드를 가리킨다. 맨 아래 노드의 링크는 NULL이다. 새 원소는 늘 `top`이 가리키는 자리에 끼우고, 꺼낼 때는 `top`이 가리키는 노드를 뗀 뒤 `top`을 그 아래 노드로 옮긴다.
 
 | 한 일 | 돌려준 값 | 체인 (맨 왼쪽이 top) |
 |---|---|---|
@@ -66,7 +66,7 @@ permalink: "/studies/data-structures/linked-stack/"
 
 ## 정의
 
-하는 일은 [배열로 만든 스택](/Hongs_Blog/studies/data-structures/array-stack/)과 같다. 넣기(push), 꺼내기(pop), 비었는지 보기다. 달라진 것은 담는 방법이다. 원소마다 노드 하나를 두고, 맨 위 노드의 주소를 `top`에 적는다[^3].
+하는 일은 [배열로 만든 스택](/Hongs_Blog/studies/data-structures/array-stack/)과 같다. 넣기(push), 꺼내기(pop), 비었는지 보기다. 달라진 것은 담는 방법이다. 원소마다 노드 하나를 두고, 맨 위 노드의 주소를 `top`에 적는다.
 
 ```c
 typedef int element;
@@ -116,24 +116,14 @@ element pop(LinkedStackType *s)
 }
 ```
 
-`push`는 [단순 연결 리스트](/Hongs_Blog/studies/data-structures/singly-linked-list/)의 맨 앞에 끼우기이고, `pop`은 맨 앞 지우기다. 두 줄의 차례도 그대로다. `push`에서는 새 노드의 링크를 먼저 채우고 나서 `top`을 바꾼다. `pop`에서는 떼어 낼 노드의 주소와 값을 먼저 적어 두고 나서 `top`을 옮기고 `free`한다[^4].
+`push`는 [단순 연결 리스트](/Hongs_Blog/studies/data-structures/singly-linked-list/)의 맨 앞에 끼우기이고, `pop`은 맨 앞 지우기다. 두 줄의 차례도 그대로다. `push`에서는 새 노드의 링크를 먼저 채우고 나서 `top`을 바꾼다. `pop`에서는 떼어 낼 노드의 주소와 값을 먼저 적어 두고 나서 `top`을 옮기고 `free`한다.
 
 늘 지켜야 할 규칙(표현 불변식)은 이렇다. `top`에서 링크를 따라가면 맨 위 원소부터 맨 아래 원소까지 차례로 만나고 NULL에서 끝난다. 노드 수는 스택에 든 원소 수와 같다[^s1].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.29의 첫 구조체는 `typedef struct StackNode { … } StackeNode;`로 끝나고, 바로 아래 구조체는 `StackNode *top;`을 쓴다. p.30과 p.31의 함수도 `StackNode`를 쓴다.<br>
-문제점: typedef로 만든 이름은 `StackeNode`(e가 하나 더 있다)라서 `StackNode`라는 형 이름이 없다. `struct StackNode`라고 써야 하는 자리에 `StackNode`만 써서 컴파일되지 않는다.<br>
-수정안: typedef 이름을 `StackNode`로 고친다.<br>
-근거: p.29의 두 구조체를 그대로 컴파일하면 "must use 'struct' tag to refer to type 'StackNode'" 오류가 난다[^s2].
-
-</div>
 
 
 ### 배열 스택과 견주기
 
-두 구현을 견주면 이렇다[^1][^s1].
+두 구현을 견주면 이렇다[^s1].
 
 | | 배열 스택 | 연결 스택 |
 |---|---|---|
@@ -184,10 +174,5 @@ element pop(LinkedStackType *s)
 </details>
 
 
-[^1]: 자료구조 5회 강의 자료 「DS_Week5_Lecture_2024」, p.27 (배열로 만든 스택은 정해진 개수까지만 된다. 연결 리스트로 만들면 개수 제한이 없고 처음에 크기를 정할 필요가 없다)
-[^2]: 같은 자료, p.28 (새 원소는 늘 top에 끼우고, top이 가리키는 원소를 빼며 top을 그 앞 노드로 옮긴다. 3, 7, 9를 쌓은 배열 스택과 연결 스택의 그림)
-[^3]: 같은 자료, p.29 (element, StackNode, LinkedStackType의 선언)
-[^4]: 같은 자료, p.30~31 (push와 pop의 코드)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `init`, `is_empty`의 본문(슬라이드는 `is_empty(s)`를 부르기만 한다), `push`가 실패했을 때 끝내게 한 것(슬라이드의 `push`는 "error"를 찍고 돌아온다), `pop`의 `int item`을 `element item`으로 맞춘 것, 표현 불변식, 추적 표, 견주는 표의 아래 두 줄, 카드 C1~C3은 슬라이드에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.29의 선언을 그대로 옮겨 Apple clang 21로 컴파일한 결과다.
+[^s1]: 구현 코드로 확인했다.
 {% endraw %}

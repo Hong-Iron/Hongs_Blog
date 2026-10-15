@@ -23,11 +23,11 @@ permalink: "/studies/database-design/code/33_relation-characteristics_verify/"
 """릴레이션의 특성 검증.
 
 문서: 33.릴레이션의 특성 (예시, 정의, 카드 C1~C3)
-출처: 데이터베이스 설계 6-2 슬라이드 p.12~14, 7 슬라이드 p.5
+출처: Elmasri & Navathe, Fundamentals of Database Systems 5장의 STUDENT 예와 COMPANY 상태
 실행: python3 33_relation-characteristics_verify.py   (표준 라이브러리만 쓴다)
 주장:
-  1. 튜플의 순서를 바꾼 두 표(p.12의 Tuple ordering 1, 2)는 같은 릴레이션이다. 목록으로 보면 다르다.
-  2. 튜플을 (속성, 값) 짝의 모음으로 보면, 짝의 순서를 바꾼 두 튜플(p.13)은 같다.
+  1. 튜플의 순서를 바꾼 두 표(문서의 두 순서)는 같은 릴레이션이다. 목록으로 보면 다르다.
+  2. 튜플을 (속성, 값) 짝의 모음으로 보면, 짝의 순서를 바꾼 두 튜플(문서의 Davidson 두 줄)은 같다.
   3. 값은 더 쪼갤 수 없어야 한다. 여러 값인 부서 위치는 행을 나눠 DEPT_LOCATIONS에 5행으로 들어간다.
      5번 부서는 위치가 3곳이라 3행이다. 여러 부분으로 된 이름은 Fname, Minit, Lname 세 속성이 된다.
   4. STUDENT 표의 NULL은 4개다(Home_phone 1, Office_phone 3).
@@ -43,8 +43,8 @@ DAVIDSON = ("Dick Davidson", "422-11-2320", None, "3452 Elgin Road", "(817)749-1
 PANCHAL = ("Rohan Panchal", "489-22-1100", "(817)376-9821", "265 Lark Lane", "(817)749-6492", 28, 3.93)
 BENSON = ("Barbara Benson", "533-69-1238", "(817)839-8461", "7384 Fontana Lane", None, 19, 3.25)
 
-ORDERING1 = [BAYER, KIM, DAVIDSON, PANCHAL, BENSON]       # p.12 왼쪽 표
-ORDERING2 = [DAVIDSON, BENSON, PANCHAL, KIM, BAYER]       # p.12 오른쪽 표
+ORDERING1 = [BAYER, KIM, DAVIDSON, PANCHAL, BENSON]       # 첫째 순서
+ORDERING2 = [DAVIDSON, BENSON, PANCHAL, KIM, BAYER]       # 둘째 순서
 
 DEPT_LOCATIONS = [(1, "Houston"), (4, "Stafford"), (5, "Bellaire"), (5, "Sugarland"), (5, "Houston")]
 
@@ -52,9 +52,9 @@ DEPT_LOCATIONS = [(1, "Houston"), (4, "Stafford"), (5, "Bellaire"), (5, "Sugarla
 def main():
     # 1. 튜플 순서
     assert ORDERING1 != ORDERING2 and set(ORDERING1) == set(ORDERING2)
-    print("[OK] p.12: 두 순서는 목록으로는 다르고 집합으로는 같다")
+    print("[OK] 튜플 순서: 두 순서는 목록으로는 다르고 집합으로는 같다")
 
-    # 2. 속성 순서 (p.13의 두 줄)
+    # 2. 속성 순서 (Davidson의 두 줄)
     t1 = [("Name", "Dick Davidson"), ("Ssn", "422-11-2320"), ("Home_phone", None), ("Address", "3452 Elgin Road"),
           ("Office_phone", "(817)749-1253"), ("Age", 25), ("Gpa", 3.53)]
     t2 = [("Address", "3452 Elgin Road"), ("Name", "Dick Davidson"), ("Ssn", "422-11-2320"), ("Age", 25),
@@ -63,7 +63,7 @@ def main():
     # 짝을 잃으면 다른 튜플이 된다: 값만 순서를 바꾸면 Age와 Gpa가 뒤바뀐다
     swapped = dict(zip(ATTRS, DAVIDSON[:5] + (3.53, 25)))
     assert swapped != dict(t1)
-    print("[OK] p.13: (속성, 값) 짝의 순서를 바꿔도 같은 튜플. 짝이 어긋나면 다른 튜플")
+    print("[OK] 속성 순서: (속성, 값) 짝의 순서를 바꿔도 같은 튜플. 짝이 어긋나면 다른 튜플")
 
     # 3. 원자값
     locs = {}

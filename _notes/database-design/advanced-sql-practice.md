@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: FROM 절의 조인 (JOIN ON), 짝 없는 행을 남기는 외부 조인, 같은 표를 두 번 쓰는 자기 조인, GROUP BY와 HAVING, NULL을 세지 않는 COUNT(열)."
 prev_url: "/studies/database-design/nested-aggregate-practice/"
@@ -25,11 +25,11 @@ permalink: "/studies/database-design/advanced-sql-practice/"
 {% raw %}
 사용 개념: [FROM 절의 조인 (JOIN ON)](/Hongs_Blog/studies/database-design/sql-join-on/), 짝 없는 행을 남기는 [외부 조인](/Hongs_Blog/studies/database-design/outer-join/), 같은 표를 두 번 쓰는 [자기 조인](/Hongs_Blog/studies/database-design/sql-alias-self-join/), [GROUP BY](/Hongs_Blog/studies/database-design/group-by/)와 [HAVING](/Hongs_Blog/studies/database-design/having-clause/), NULL을 세지 않는 [COUNT(열)](/Hongs_Blog/studies/database-design/aggregate-functions/).
 
-14주차 슬라이드의 연습 1~5다. 답을 손으로 따라갈 수 있게 표마다 행을 몇 줄씩 두었다[^s1]. 풀이는 실행되는 문장으로 적었다. 슬라이드 풀이와 다른 곳은 맨 끝에 모았다.
+JOIN과 GROUP BY를 섞어 쓰는 문제 다섯이다. 답을 손으로 따라갈 수 있게 표마다 행을 몇 줄씩 두었다[^s1]. 풀이는 SQLite와 PostgreSQL 16에서 그대로 실행되는 문장으로 적었다.
 
-## 운동복 가게 (연습 1~3)
+## 운동복 가게 (문제 1~3)
 
-옷, 옷의 범주, 색, 손님, 주문을 담은 데이터베이스다[^1].
+옷, 옷의 범주, 색, 손님, 주문을 담은 데이터베이스다.
 
 | 표 | 열 |
 |---|---|
@@ -97,11 +97,11 @@ permalink: "/studies/database-design/advanced-sql-practice/"
 
 괄호 안의 이름은 읽기 쉬우라고 붙인 것이고 표에는 번호만 들어 있다.
 
-## 문제 1 · 좋아하는 색으로 산 옷 (연습 1)
+## 문제 1 · 좋아하는 색으로 산 옷
 
-옷의 이름(`clothes`), 그 옷의 색(`color`), 그리고 그 옷을 **자기가 좋아하는 색으로** 산 손님의 성과 이름을 보여라. 색 이름의 오름차순으로 정렬한다[^2].
+옷의 이름(`clothes`), 그 옷의 색(`color`), 그리고 그 옷을 **자기가 좋아하는 색으로** 산 손님의 성과 이름을 보여라. 색 이름의 오름차순으로 정렬한다.
 
-**풀이 전략.** 보여 줄 값이 세 표에 흩어져 있다. 옷 이름은 CLOTHING, 색 이름은 COLOR, 손님 이름은 CUSTOMER다. 누가 무엇을 샀는지는 ORDER에 있다. 그래서 ORDER를 한가운데 두고 나머지 셋을 외래 키로 잇는다. "좋아하는 색으로 샀다"는 "손님의 좋아하는 색 번호 = 산 옷의 색 번호"라는 조건이다[^3].
+**풀이 전략.** 보여 줄 값이 세 표에 흩어져 있다. 옷 이름은 CLOTHING, 색 이름은 COLOR, 손님 이름은 CUSTOMER다. 누가 무엇을 샀는지는 ORDER에 있다. 그래서 ORDER를 한가운데 두고 나머지 셋을 외래 키로 잇는다. "좋아하는 색으로 샀다"는 "손님의 좋아하는 색 번호 = 산 옷의 색 번호"라는 조건이다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
@@ -138,11 +138,11 @@ ORDER BY C.name;
 </details>
 
 
-## 문제 2 · 한 번도 사지 않은 손님 (연습 2)
+## 문제 2 · 한 번도 사지 않은 손님
 
-주문이 하나도 없는 손님의 성과 이름, 그 손님이 좋아하는 색의 이름을 구하라[^4].
+주문이 하나도 없는 손님의 성과 이름, 그 손님이 좋아하는 색의 이름을 구하라.
 
-**풀이 전략.** "없는 것"을 찾는 문제다. 조인은 짝이 있는 줄만 남기므로, 그냥 이으면 주문 없는 손님이 사라진다. 손님을 모두 남기는 `LEFT JOIN`으로 ORDER를 붙이면, 주문 없는 손님의 줄에는 ORDER 쪽 열이 NULL로 채워진다. 그 줄만 고른다[^5].
+**풀이 전략.** "없는 것"을 찾는 문제다. 조인은 짝이 있는 줄만 남기므로, 그냥 이으면 주문 없는 손님이 사라진다. 손님을 모두 남기는 `LEFT JOIN`으로 ORDER를 붙이면, 주문 없는 손님의 줄에는 ORDER 쪽 열이 NULL로 채워진다. 그 줄만 고른다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
@@ -173,9 +173,9 @@ WHERE  O.customer_id IS NULL;
 </details>
 
 
-## 문제 3 · 주 범주와 하위 범주 (연습 3)
+## 문제 3 · 주 범주와 하위 범주
 
-주 범주(`parent_id`가 NULL인 범주)의 이름과 그 바로 아래 하위 범주의 이름을(있으면) 구하라. 첫 열은 `category`, 둘째 열은 `subcategory`라고 부른다[^6].
+주 범주(`parent_id`가 NULL인 범주)의 이름과 그 바로 아래 하위 범주의 이름을(있으면) 구하라. 첫 열은 `category`, 둘째 열은 `subcategory`라고 부른다.
 
 **풀이 전략.** 주 범주도 하위 범주도 CATEGORY 한 표에 있다. 같은 표를 두 번 쓴다. `C1`은 주 범주 구실, `C2`는 하위 범주 구실이다. 하위 범주의 `parent_id`가 주 범주의 `id`를 가리킨다.
 
@@ -186,7 +186,6 @@ WHERE  O.customer_id IS NULL;
 2. *잇는 조건:* `C2.parent_id = C1.id`.
 3. *주 범주만:* `WHERE C1.parent_id IS NULL`.
 
-슬라이드의 풀이다[^7].
 ```sql
 SELECT C1.name AS category,
        C2.name AS subcategory
@@ -209,14 +208,14 @@ Graphic tees는 T-shirts의 아래라서 Tops의 "바로 아래"가 아니다. �
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 문제 1~3의 결과, 슬라이드 풀이를 그대로 실행했을 때의 오류, 변형 — [72_advanced-sql-practice_p3.py](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p3/). PostgreSQL 16에서 실행 — [72_advanced-sql-practice_p5.sql](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5-sql/)</div>
+<div class="callout-title" markdown="span">검증: 문제 1~3의 결과, `ORDER`를 따옴표 없이 쓴 문장의 구문 오류, 변형 — [72_advanced-sql-practice_p3.py](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p3/). PostgreSQL 16에서 실행 — [72_advanced-sql-practice_p5.sql](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5-sql/)</div>
 
 </div>
 
 
-## 달리기 모임 (연습 4~5)
+## 달리기 모임 (문제 4~5)
 
-러너와 달리기 대회를 담은 데이터베이스다[^8].
+러너와 달리기 대회를 담은 데이터베이스다.
 
 | 표 | 열 |
 |---|---|
@@ -249,11 +248,11 @@ Graphic tees는 T-shirts의 아래라서 Tops의 "바로 아래"가 아니다. �
 
 **RUNNER_EVENT**: (8, 1), (9, 1), (5, 1), (5, 2), (6, 2), (1, 4). 앞이 runner_id, 뒤가 event_id다.
 
-## 문제 4 · 거리마다 러너 수 (연습 4)
+## 문제 4 · 거리마다 러너 수
 
-주 거리와 그 거리를 뛰는 러너의 수(`runners_number`)를 구하라. 러너 수가 3보다 큰 줄만 보인다[^9].
+주 거리와 그 거리를 뛰는 러너의 수(`runners_number`)를 구하라. 러너 수가 3보다 큰 줄만 보인다.
 
-**풀이 전략.** "거리마다 몇 명"이니 거리로 묶고 센다. "3보다 큰 줄만"은 센 값에 거는 조건이라 묶은 뒤에 거른다[^10].
+**풀이 전략.** "거리마다 몇 명"이니 거리로 묶고 센다. "3보다 큰 줄만"은 센 값에 거는 조건이라 묶은 뒤에 거른다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
@@ -278,14 +277,16 @@ HAVING COUNT(*) > 3;
 
 10 km는 딱 3명이라 "3보다 크다"가 아니다. 조건을 `WHERE COUNT(*) > 3`으로 쓰면 오류다. `WHERE`는 묶기 전에 행을 거르는 자리라 그때는 센 값이 없다.
 
+열에 붙이는 새 이름에는 표 이름을 달 수 없다. `COUNT(*) AS R.runners_number`처럼 쓰면 SQLite와 PostgreSQL 16 모두 구문 오류를 낸다.
+
 </details>
 
 
-## 문제 5 · 대회마다 참가자 수 (연습 5)
+## 문제 5 · 대회마다 참가자 수
 
-대회 이름과 그 대회에 나가는 모임 회원의 수(`runner_count`)를 구하라. 회원이 한 명도 안 나가는 대회가 있을 수 있다. 그런 대회의 `runner_count`는 0이어야 한다[^11].
+대회 이름과 그 대회에 나가는 모임 회원의 수(`runner_count`)를 구하라. 회원이 한 명도 안 나가는 대회가 있을 수 있다. 그런 대회의 `runner_count`는 0이어야 한다.
 
-**풀이 전략.** 대회와 러너는 다대다 사이다. 한 러너가 여러 대회에 나가고 한 대회에 여러 러너가 나간다. 둘을 잇는 표가 RUNNER_EVENT다[^12]. 참가자가 없는 대회도 한 줄 나와야 하니 EVENT를 왼쪽에 두고 `LEFT JOIN`한다. 0이 나오게 하려면 무엇을 세는지가 중요하다.
+**풀이 전략.** 대회와 러너는 다대다 사이다. 한 러너가 여러 대회에 나가고 한 대회에 여러 러너가 나간다. 둘을 잇는 표가 RUNNER_EVENT다. 참가자가 없는 대회도 한 줄 나와야 하니 EVENT를 왼쪽에 두고 `LEFT JOIN`한다. 0이 나오게 하려면 무엇을 세는지가 중요하다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">풀이</summary>
@@ -315,11 +316,13 @@ Jeju Trail Run은 `LEFT JOIN` 뒤에 러너 쪽이 NULL로 채워진 한 줄로 
 
 러너의 이름이나 나이를 쓰지 않으므로 RUNNER까지 잇지 않아도 된다. `COUNT(RE.runner_id)`로 세면 조인 하나로 같은 답이 나온다.
 
+표에 별칭 `R`을 붙인 뒤에는 그 표를 `R`로만 가리킨다. `COUNT(runner.id)`처럼 원래 표 이름을 쓰면 SQLite는 `no such column: runner.id`를, PostgreSQL 16은 `invalid reference to FROM-clause entry for table "runner"`를 낸다.
+
 </details>
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 문제 4~5의 결과, 슬라이드 풀이를 그대로 실행했을 때의 오류, `COUNT(*)`와 내부 조인의 결과, 변형 — [72_advanced-sql-practice_p5.py](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5/). PostgreSQL 16에서 실행 — [72_advanced-sql-practice_p5.sql](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5-sql/)</div>
+<div class="callout-title" markdown="span">검증: 문제 4~5의 결과, 별칭을 잘못 쓴 두 문장의 오류, `COUNT(*)`와 내부 조인의 결과, 변형 — [72_advanced-sql-practice_p5.py](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5/). PostgreSQL 16에서 실행 — [72_advanced-sql-practice_p5.sql](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5-sql/)</div>
 
 </div>
 
@@ -356,53 +359,10 @@ Jeju Trail Run은 `LEFT JOIN` 뒤에 러너 쪽이 NULL로 채워진 한 줄로 
 </details>
 
 
-## 슬라이드 풀이에서 고친 곳
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 14주차 풀이 덱 p.1~5(연습 1, 2)의 `FROM ORDER AS O`, `LEFT JOIN ORDER AS O`<br>
-문제점: `ORDER`는 `ORDER BY`에 쓰는 예약어다. 표 이름으로 그냥 쓰면 구문 오류가 난다.<br>
-수정안: 큰따옴표로 감싸 `"ORDER"`라고 쓴다. 표 이름을 바꿔도 된다. 풀이 덱 p.2의 설명은 이 표를 "clothing_order"라고 부른다.<br>
-근거: SQLite와 PostgreSQL 16 모두 슬라이드 문장에 구문 오류를 낸다. 고친 문장은 두 제품에서 위의 4행, 2행을 낸다 — [72_advanced-sql-practice_p3.py](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p3/), [72_advanced-sql-practice_p5.sql](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5-sql/)
-
-</div>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 14주차 풀이 덱 p.7(연습 4)의 `COUNT(*) AS R.runners_number`, p.8(연습 5)의 `COUNT(runner.id) AS runner_count`<br>
-문제점: 열에 붙이는 새 이름에는 표 이름을 달 수 없다. p.8은 RUNNER에 별칭 `R`을 붙여 놓고 `runner.id`라고 썼다. 별칭을 붙인 뒤에는 별칭으로만 가리킬 수 있다.<br>
-수정안: `COUNT(*) AS runners_number`, `COUNT(R.id) AS runner_count`.<br>
-근거: 연습 4는 두 제품 모두 구문 오류다. 연습 5는 SQLite가 "no such column: runner.id"를, PostgreSQL 16이 "invalid reference to FROM-clause entry for table runner"를 낸다. 고친 문장은 위의 결과를 낸다 — [72_advanced-sql-practice_p5.py](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5/), [72_advanced-sql-practice_p5.sql](/Hongs_Blog/studies/database-design/code/72_advanced-sql-practice_p5-sql/)
-
-</div>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 14주차 슬라이드 p.3의 표 설명. CLOTHING의 color_id "the item's color (PK)", category_id "the item's category (PK)", CUSTOMER의 last_name "the customer's first name"<br>
-문제점: color_id와 category_id는 다른 표의 id를 가리키는 열이다. 풀이도 `C.id = CL.color_id`로 잇는다. 기본 키가 아니라 외래 키다. last_name의 설명은 first_name의 설명을 그대로 옮긴 것이다.<br>
-수정안: color_id (FK), category_id (FK), last_name은 "the customer's last name".<br>
-근거: 같은 쪽에서 CLOTHING의 기본 키는 id라고 적혀 있고, CUSTOMER의 favorite_color_id와 ORDER의 두 열에는 (FK)가 붙어 있다.
-
-</div>
-
-
-[^1]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice」, p.3 (Given a sportwear database: 다섯 표의 열 설명)
-[^2]: 같은 자료, p.4 (Exercise 1: List All Clothing Items)
-[^3]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice-solutions」, p.1~2 (연습 1 풀이: 네 표를 공통 열로 잇는다)
-[^4]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice」, p.5 (Exercise 2: Get All Non-Buying Customers)
-[^5]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice-solutions」, p.3~5 (연습 2 풀이: LEFT JOIN으로 손님을 모두 남기고 ORDER의 customer_id가 NULL인 줄만 고른다)
-[^6]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice」, p.6 (Exercise 3: All Main Categories and their Subcategories)
-[^7]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice-solutions」, p.6 (연습 3 풀이)
-[^8]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice」, p.7 (Given a sports club database: 세 표의 열 설명)
-[^9]: 같은 자료, p.8 (Exercise 4: Organize Runners into Groups)
-[^10]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice-solutions」, p.7 (연습 4 풀이: 거리로 묶고 COUNT로 센다)
-[^11]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice」, p.9 (Exercise 5: How Many Runners Participate in Each Event)
-[^12]: 데이터베이스 설계 14회 강의 자료 「14-Adavanced-SQL-practice-solutions」, p.8 (연습 5 풀이: EVENT와 RUNNER는 다대다, RUNNER_EVENT로 잇는다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 여덟 표의 행, 모든 결과 표, `NOT EXISTS` 판, `COUNT(*)`와 내부 조인으로 바꿨을 때의 결과, 변형 문제 셋은 슬라이드에 없다. 슬라이드는 질의문만 싣는다. 행은 문제마다 답이 갈리는 경우(좋아하는 색이 아닌 주문, 주문 없는 손님, 하위 범주 없는 주 범주, 딱 3명인 거리, 참가자 없는 대회)가 하나씩 들어가게 만들었다. 결과는 SQLite 3.50.4와 PostgreSQL 16에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 연습 3을 `LEFT JOIN`으로 읽는 풀이는 슬라이드에 없다. 슬라이드의 풀이는 내부 조인이다. 두 판의 결과(3행, 4행)를 문제 코드로 확인했다.
+[^s1]: 행은 문제마다 답이 갈리는 경우(좋아하는 색이 아닌 주문, 주문 없는 손님, 하위 범주 없는 주 범주, 딱 3명인 거리, 참가자 없는 대회)가 하나씩 들어가게 만들었다. 결과는 SQLite 3.50.4와 PostgreSQL 16에서 실행해 확인했다.
+[^s2]: 두 판의 결과(3행, 4행)를 문제 코드로 확인했다.
 {% endraw %}

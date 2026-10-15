@@ -129,11 +129,11 @@ flowchart TD
 
 ## 과목별 관점
 
-**컴파일러 (3-2학기).** 멱집합이 기계를 바꾸는 데 쓰인다. 글자를 읽으며 칸을 옮겨 다니는 기계(유한 오토마타) 가운데 갈림길이 있는 것을 갈림길 없는 것으로 바꿀 때, 원래 기계의 상태 집합 $$Q$$의 부분집합 하나를 새 기계의 상태 하나로 삼는다. 그래서 이 방법을 부분집합 구성법 또는 멱집합 구성법이라 부른다[^c1]. 원래 상태가 $$n$$개면 새 기계의 상태는 많아야 $$\vert \mathcal{P}(Q)\vert  = 2^n$$개다. 빈 집합은 상태로 삼지 않으므로 정확히는 $$2^n - 1$$개 이하다. 실제로는 시작 상태에서 닿는 부분집합만 쓰여 대개 훨씬 적다: [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/)[^cs1].
+**컴파일러 (3-2학기).** 멱집합이 기계를 바꾸는 데 쓰인다. 글자를 읽으며 칸을 옮겨 다니는 기계(유한 오토마타) 가운데 갈림길이 있는 것을 갈림길 없는 것으로 바꿀 때, 원래 기계의 상태 집합 $$Q$$의 부분집합 하나를 새 기계의 상태 하나로 삼는다. 그래서 이 방법을 부분집합 구성법 또는 멱집합 구성법이라 부른다. 원래 상태가 $$n$$개면 새 기계의 상태는 많아야 $$\vert \mathcal{P}(Q)\vert  = 2^n$$개다. 빈 집합은 상태로 삼지 않으므로 정확히는 $$2^n - 1$$개 이하다. 실제로는 시작 상태에서 닿는 부분집합만 쓰여 대개 훨씬 적다: [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/)[^cs1].
 
-**데이터베이스 설계 (2-2학기).** 집합은 같은 원소를 한 번만 친다. SQL의 표는 그렇지 않다. 똑같은 행이 여러 번 들어 있을 수 있어서, 원소마다 "몇 번 들어 있는가"까지 따지는 모음이다. 이런 모음을 다중집합(multiset)이라 부른다[^b1]. 직원 여덟 명의 월급을 꺼내면 25000이 세 번 나와 여덟 행이다. 질의에 `DISTINCT`를 적어야 겹친 것이 지워져 서로 다른 여섯 값의 집합이 된다. 행마다 값이 달라야 하는 키가 걸린 표는 똑같은 행이 있을 수 없어 처음부터 집합이다[^b1]: [다중집합인 표와 DISTINCT](/Hongs_Blog/studies/database-design/sql-multiset-distinct/).
+**데이터베이스 설계 (2-2학기).** 집합은 같은 원소를 한 번만 친다. SQL의 표는 그렇지 않다. 똑같은 행이 여러 번 들어 있을 수 있어서, 원소마다 "몇 번 들어 있는가"까지 따지는 모음이다. 이런 모음을 다중집합(multiset)이라 부른다. 직원 여덟 명의 월급을 꺼내면 25000이 세 번 나와 여덟 행이다. 질의에 `DISTINCT`를 적어야 겹친 것이 지워져 서로 다른 여섯 값의 집합이 된다. 행마다 값이 달라야 하는 키가 걸린 표는 똑같은 행이 있을 수 없어 처음부터 집합이다: [다중집합인 표와 DISTINCT](/Hongs_Blog/studies/database-design/sql-multiset-distinct/).
 
-이 문서의 합집합·차집합·교집합은 SQL에서 `UNION`, `EXCEPT`, `INTERSECT`다. 그대로 쓰면 집합의 연산이라 결과에서 겹친 행이 지워진다. 뒤에 `ALL`을 붙이면 다중집합의 연산이 되어 횟수를 계산에 넣는다[^b2]. 어떤 값이 앞 결과에 $$m$$번, 뒤 결과에 $$n$$번 들어 있을 때 `UNION ALL`은 그 값을 $$m + n$$번, `EXCEPT ALL`은 $$\max(m - n, 0)$$번, `INTERSECT ALL`은 $$\min(m, n)$$번 남긴다. 합칠 때는 횟수를 더하고, 뺄 때는 횟수를 빼되 0 아래로는 안 내려가고, 겹치는 것을 구할 때는 작은 쪽을 딴다는 뜻이다[^bs1].
+이 문서의 합집합·차집합·교집합은 SQL에서 `UNION`, `EXCEPT`, `INTERSECT`다. 그대로 쓰면 집합의 연산이라 결과에서 겹친 행이 지워진다. 뒤에 `ALL`을 붙이면 다중집합의 연산이 되어 횟수를 계산에 넣는다. 어떤 값이 앞 결과에 $$m$$번, 뒤 결과에 $$n$$번 들어 있을 때 `UNION ALL`은 그 값을 $$m + n$$번, `EXCEPT ALL`은 $$\max(m - n, 0)$$번, `INTERSECT ALL`은 $$\min(m, n)$$번 남긴다. 합칠 때는 횟수를 더하고, 뺄 때는 횟수를 빼되 0 아래로는 안 내려가고, 겹치는 것을 구할 때는 작은 쪽을 딴다는 뜻이다[^bs1].
 
 집합은 횟수가 0 아니면 1뿐인 다중집합이다. 그때 빼기와 겹치기의 식은 위 정의의 $$A - B$$, $$A \cap B$$와 똑같다. 합치기만 다르다. 양쪽에 다 있는 원소는 $$1 + 1 = 2$$번이 되므로, 집합의 합집합은 더한 뒤 2를 1로 줄인 것, 곧 $$\max(m, n)$$이다[^bs1]: [집합 연산 UNION·EXCEPT·INTERSECT](/Hongs_Blog/studies/database-design/sql-set-operations/).
 
@@ -173,11 +173,8 @@ flowchart TD
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 4장 "Mathematical Data Types"(집합). Rosen, *Discrete Mathematics and Its Applications* 7판, 2장(집합, 집합 연산).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 러셀의 역설과 이를 피하는 분리 공리는 공리적 집합론(ZFC)의 내용이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예제' 2단계의 '원소마다 넣을지 뺄지 두 가지씩'을 갈림길로 그렸다.
-[^c1]: 컴파일러 3회 강의 자료 「Lecture03 Lexical analysis part 2」, p.29 (Subset (powerset) construction algorithm), p.15 (DFA는 NFA보다 지수적으로 커질 수 있다)
-[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$2^n$$이라는 위쪽 끝과 "대개 훨씬 적다"는 슬라이드에 없다. 무작위 기계 300개에서 $$2^n - 1$$개를 넘지 않는 것, 상태 10개짜리가 4개로 바뀌는 예, 정확히 $$2^n$$개가 되는 예를 [09_subset-construction_impl.py](/Hongs_Blog/studies/compilers/code/09_subset-construction_impl/)로 확인했다.
-[^b1]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.21~22 (Tables as Multisets in SQL, 키가 있는 표는 집합, DISTINCT와 ALL, 월급 여덟 행과 여섯 행). 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.7~8
-[^b2]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.23~24 (UNION, EXCEPT, INTERSECT와 ALL이 붙은 다중집합 연산, R과 S의 그림). 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.9
-[^bs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 횟수의 세 식, "집합은 횟수가 0 아니면 1뿐인 다중집합"이라는 설명, 카드 C4에서 `ALL`을 뗀 판과 견주는 부분은 슬라이드에 없다. 세 식은 슬라이드 10-2 p.24의 그림(R, S와 세 결과)에서 읽은 규칙이다. 그림의 값과 무작위 집합 500쌍은 [57_sql-set-operations_verify.py](/Hongs_Blog/studies/database-design/code/57_sql-set-operations_verify/)로, `EXCEPT ALL`과 `INTERSECT ALL` 문장은 PostgreSQL 16에서 [57_sql-set-operations_verify.sql](/Hongs_Blog/studies/database-design/code/57_sql-set-operations_verify-sql/)로 확인했다.
+[^s1]: 러셀의 역설과 이를 피하는 분리 공리는 공리적 집합론(ZFC)의 내용이다.
+[^s2]: '예제' 2단계의 '원소마다 넣을지 뺄지 두 가지씩'을 갈림길로 그렸다.
+[^cs1]: 무작위 기계 300개에서 $$2^n - 1$$개를 넘지 않는 것, 상태 10개짜리가 4개로 바뀌는 예, 정확히 $$2^n$$개가 되는 예를 [09_subset-construction_impl.py](/Hongs_Blog/studies/compilers/code/09_subset-construction_impl/)로 확인했다.
+[^bs1]: 그림의 값과 무작위 집합 500쌍은 [57_sql-set-operations_verify.py](/Hongs_Blog/studies/database-design/code/57_sql-set-operations_verify/)로, `EXCEPT ALL`과 `INTERSECT ALL` 문장은 PostgreSQL 16에서 [57_sql-set-operations_verify.sql](/Hongs_Blog/studies/database-design/code/57_sql-set-operations_verify-sql/)로 확인했다.
 {% endraw %}

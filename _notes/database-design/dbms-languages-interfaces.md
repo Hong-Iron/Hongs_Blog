@@ -34,7 +34,7 @@ permalink: "/studies/database-design/dbms-languages-interfaces/"
 
 ## 예시로 보기
 
-데이터베이스의 설계를 마쳤고, 그것을 올릴 DBMS도 골랐다. 다음에 할 일은 무엇인가? 세 스키마와 그 사이의 사상을 DBMS에 알려 주는 것이다[^1]. 스키마가 들어가고 데이터가 채워진 다음에는 그 데이터를 다룰 도구가 있어야 한다[^2]. 알려 주는 말과 다루는 말이 따로 필요하다.
+데이터베이스의 설계를 마쳤고, 그것을 올릴 DBMS도 골랐다. 다음에 할 일은 무엇인가? 세 스키마와 그 사이의 사상을 DBMS에 알려 주는 것이다. 스키마가 들어가고 데이터가 채워진 다음에는 그 데이터를 다룰 도구가 있어야 한다. 알려 주는 말과 다루는 말이 따로 필요하다.
 
 요즘 DBMS에서는 이 말들이 SQL이라는 언어 하나에 들어 있다[^s1]. 아래는 STUDENT 표 하나에 네 가지 말을 한 번씩 쓴 것이다. 문법은 뒤에서 배운다. 지금은 문장마다 무엇을 시키는지만 보면 된다.
 
@@ -74,30 +74,23 @@ SELECT Name FROM STUDENT WHERE Major = 'CS';
 
 ## 네 가지 언어
 
-DBMS는 사용자가 여러 부류라서 여러 종류의 언어를 준다. 데이터베이스 설계자는 개념 스키마와 내부 스키마를 적어야 하고, 데이터베이스 관리자(DBA)는 색인을 고르고 데이터를 저장 장치에 어떻게 놓을지를 조절하고 싶어 한다[^3]. DBMS 언어는 DBMS가 데이터베이스를 다스리고 관리하라고 주는 언어다[^3].
+DBMS는 사용자가 여러 부류라서 여러 종류의 언어를 준다. 데이터베이스 설계자는 개념 스키마와 내부 스키마를 적어야 하고, 데이터베이스 관리자(DBA)는 색인을 고르고 데이터를 저장 장치에 어떻게 놓을지를 조절하고 싶어 한다. DBMS 언어는 DBMS가 데이터베이스를 다스리고 관리하라고 주는 언어다.
 
 | 언어 | 무엇을 적나 | 누가 쓰나 |
 |---|---|---|
-| 데이터 정의어 (DDL) | 대상 데이터베이스의 외부 스키마와 개념 스키마 | DBA와 데이터베이스 설계자[^1] |
-| 저장 정의어 (SDL) | 내부 스키마 | DBA. 색인 선택과 데이터를 저장 장치에 놓는 방법을 조절한다[^1] |
-| 뷰 정의어 (VDL) | 사용자 뷰와, 그 뷰를 개념 스키마에 잇는 사상 | —[^1] |
-| 데이터 조작어 (DML) | 데이터를 찾고, 넣고, 지우고, 고치는 일 | 사용자[^2] |
+| 데이터 정의어 (DDL) | 대상 데이터베이스의 외부 스키마와 개념 스키마 | DBA와 데이터베이스 설계자 |
+| 저장 정의어 (SDL) | 내부 스키마 | DBA. 색인 선택과 데이터를 저장 장치에 놓는 방법을 조절한다 |
+| 뷰 정의어 (VDL) | 사용자 뷰와, 그 뷰를 개념 스키마에 잇는 사상 | — |
+| 데이터 조작어 (DML) | 데이터를 찾고, 넣고, 지우고, 고치는 일 | 사용자 |
 
 DDL은 data definition language, SDL은 storage definition language, VDL은 view definition language, DML은 data manipulation language를 줄인 말이다. 예시의 CREATE TABLE이 DDL, CREATE VIEW가 VDL, CREATE INDEX가 SDL, INSERT와 SELECT가 DML의 일을 한다[^s1].
 
 표에서 외부 스키마가 DDL에도 VDL에도 걸려 있다. 세 단계를 엄격히 가른 DBMS에서는 DDL로 개념 스키마만 적고 뷰는 VDL로 적는다. 대부분의 DBMS는 DDL 하나로 개념 스키마와 외부 스키마를 모두 적는다[^s2].
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.21의 목록 넷째 줄 "Data manipulation language (DDL)" / 문제점: 줄임말이 첫째 줄의 Data definition language와 같은 DDL로 적혀 있다. / 수정안: Data manipulation language (DML) / 근거: 같은 덱 p.23의 제목이 "Data Manipulation Language (DML)"이고, p.35의 요약도 두 언어를 따로 든다.
-
-</div>
-
 
 ## 데이터 조작어의 두 갈래
 
-DML은 적는 방식에 따라 둘로 나뉜다[^2].
+DML은 적는 방식에 따라 둘로 나뉜다.
 
 | | 비절차적 DML (고수준) | 절차적 DML (저수준) |
 |---|---|---|
@@ -105,7 +98,7 @@ DML은 적는 방식에 따라 둘로 나뉜다[^2].
 | 한 문장이 다루는 양 | 한 문장으로 많은 레코드를 정하고 가져온다 | 레코드를 하나씩 가져와 따로따로 처리한다 |
 | 예 | SQL | — |
 
-비절차적 DML은 복잡한 연산을 아주 짧게 적는다. 어떻게 찾을지가 아니라 무엇을 찾을지에 집중하므로 선언적(declarative)이라고 부른다[^2].
+비절차적 DML은 복잡한 연산을 아주 짧게 적는다. 어떻게 찾을지가 아니라 무엇을 찾을지에 집중하므로 선언적(declarative)이라고 부른다.
 
 "Brown이 A를 받은 과목 번호"는 두 방식으로 구할 수 있다[^s3]. 먼저 원하는 것만 적는 방식이다.
 
@@ -130,15 +123,15 @@ GRADE_REPORT의 레코드를 끝까지 하나씩 꺼낸다. 학번이 같고 Gra
 
 ## 인터페이스
 
-DBMS는 언어 말고도 쓰기 쉬운 인터페이스를 여러 가지 준다. 인터페이스마다 겨냥하는 사용자 부류가 다르다[^4].
+DBMS는 언어 말고도 쓰기 쉬운 인터페이스를 여러 가지 준다. 인터페이스마다 겨냥하는 사용자 부류가 다르다.
 
 | 인터페이스 | 어떻게 쓰나 |
 |---|---|
-| 메뉴 기반 | 시스템이 보여 주는 선택지 목록(메뉴)에서 하나씩 골라 가며 질의를 만든다. 질의 언어의 명령과 문법을 외울 필요가 없다. 웹 클라이언트나 둘러보기에 쓴다[^5] |
-| 서식 기반 | 미리 만들어 둔 서식의 칸을 채워 새 데이터를 넣는다. 보통 초보 사용자가 트랜잭션을 쓰는 창구로 설계한다[^6] |
-| 그래픽 사용자 인터페이스 (GUI) | 스키마를 그림으로 보여 주고, 사용자가 그 그림을 다뤄 질의를 적는다. 보통 메뉴와 서식을 함께 쓴다[^7] |
-| 자연어 | 영어 같은 사람의 말로 적은 요청을 받는다[^7] |
-| DBA용 | DBMS를 관리하는 특권 명령을 준다. DBA 직원만 쓸 수 있다. 예: 계정 만들기, 스키마 바꾸기, 데이터베이스의 저장 구조 다시 짜기, 시스템 매개변수 정하기, 계정에 권한 주기[^7] |
+| 메뉴 기반 | 시스템이 보여 주는 선택지 목록(메뉴)에서 하나씩 골라 가며 질의를 만든다. 질의 언어의 명령과 문법을 외울 필요가 없다. 웹 클라이언트나 둘러보기에 쓴다 |
+| 서식 기반 | 미리 만들어 둔 서식의 칸을 채워 새 데이터를 넣는다. 보통 초보 사용자가 트랜잭션을 쓰는 창구로 설계한다 |
+| 그래픽 사용자 인터페이스 (GUI) | 스키마를 그림으로 보여 주고, 사용자가 그 그림을 다뤄 질의를 적는다. 보통 메뉴와 서식을 함께 쓴다 |
+| 자연어 | 영어 같은 사람의 말로 적은 요청을 받는다 |
+| DBA용 | DBMS를 관리하는 특권 명령을 준다. DBA 직원만 쓸 수 있다. 예: 계정 만들기, 스키마 바꾸기, 데이터베이스의 저장 구조 다시 짜기, 시스템 매개변수 정하기, 계정에 권한 주기 |
 
 ## 연결
 
@@ -175,14 +168,7 @@ DBMS는 언어 말고도 쓰기 쉬운 인터페이스를 여러 가지 준다. 
 </details>
 
 
-[^1]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.22 (Real-world Scenario: "We have to specify the three schemas for the database and any mappings among them!", DDL / SDL / VDL의 풀이)
-[^2]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.23 (Data Manipulation Language: retrieve, insert, delete and modify. Two types of DML: Non-procedural (high-level), Procedural (low-level), declarative)
-[^3]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.21 (DBMS Languages: Motivation, 네 언어의 목록)
-[^4]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.24 (DBMS Interfaces: Motivation, 종류 목록)
-[^5]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.25 (Menu-based interfaces for Web Clients or Browsing)
-[^6]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.26 (Form-based interfaces)
-[^7]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.27 (Graphical user interfaces, Natural language interfaces, Interfaces for the DBA)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> SQL로 적은 다섯 문장, 뷰 이름 CS_STUDENT와 색인 이름 STUDENT_BY_NUMBER, 문장마다 무엇이 바뀌는지 적은 표, 예시의 문장을 네 언어에 짝지은 것은 슬라이드에 없다. 슬라이드는 네 언어를 말로만 풀이하고 비절차적 DML의 예로 SQL을 든다. 요즘 DBMS에서 네 언어가 따로 떨어져 있지 않고 SQL이 DDL, VDL, DML을 겸한다는 것은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.3.1절을 따랐다. 교재는 SDL이 SQL의 초기 판에 있다가 빠졌다고 적는다. 색인을 다는 CREATE INDEX는 제품마다 있지만 표준 SQL에는 없다. 다섯 문장은 SQLite에서 적힌 그대로 실행했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DDL과 VDL이 겹치는 까닭은 슬라이드에 없다. 같은 교재 2.3.1절을 따랐다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "Brown이 A를 받은 과목"을 두 방식으로 구한 예와 17번이라는 횟수, 카드 C3은 슬라이드에 없다. 슬라이드의 "한 문장으로 많은 레코드"와 "레코드를 하나씩 가져와 따로 처리"를 대학 예로 옮겼다. 교재는 두 방식을 한 번에 집합 하나(set-at-a-time), 한 번에 레코드 하나(record-at-a-time)라고도 부른다. 두 답이 같은 것과 횟수는 검증 코드로 확인했다. 색인이 생기면 DBMS가 같은 문장을 다른 길로 처리하는 것은 [10_dbms-component-modules_verify.py](/Hongs_Blog/studies/database-design/code/10_dbms-component-modules_verify/)에서 확인했다.
+[^s1]: 요즘 DBMS에서 네 언어가 따로 떨어져 있지 않고 SQL이 DDL, VDL, DML을 겸한다는 것은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.3.1절을 따랐다. 교재는 SDL이 SQL의 초기 판에 있다가 빠졌다고 적는다. 색인을 다는 CREATE INDEX는 제품마다 있지만 표준 SQL에는 없다. 다섯 문장은 SQLite에서 적힌 그대로 실행했다.
+[^s2]: 같은 교재 2.3.1절을 따랐다.
+[^s3]: 교재는 두 방식을 한 번에 집합 하나(set-at-a-time), 한 번에 레코드 하나(record-at-a-time)라고도 부른다. 두 답이 같은 것과 횟수는 검증 코드로 확인했다. 색인이 생기면 DBMS가 같은 문장을 다른 길로 처리하는 것은 [10_dbms-component-modules_verify.py](/Hongs_Blog/studies/database-design/code/10_dbms-component-modules_verify/)에서 확인했다.
 {% endraw %}

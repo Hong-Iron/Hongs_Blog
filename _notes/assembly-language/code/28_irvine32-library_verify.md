@@ -21,7 +21,7 @@ permalink: "/studies/assembly-language/code/28_irvine32-library_verify/"
 
 ```python
 """Irvine32 라이브러리 문서의 값 확인.
-라이브러리 자체는 이 맥에서 돌릴 수 없다. 슬라이드의 출력 예와 인수 계산만 파이썬으로 다시 셈했고,
+라이브러리 자체는 이 맥에서 돌릴 수 없다. 문서에 실린 출력 예와 인수 계산만 파이썬으로 다시 셈했고,
 호출 순서는 라이브러리 프로시저를 파이썬 함수로 바꿔 끼운 흉내기로 확인했다.
 실행: python3 28_irvine32-library_verify.py"""
 import random
@@ -31,7 +31,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(문서 예시의 00000020 call → 00000025와 맞춘 값).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -504,7 +504,7 @@ def library(c, out, rnd):
 
 def main():
     rnd = random.Random(1)
-    # Example 3 (wk07-3-1 p.11): 35를 2진, 10진, 16진으로
+    # Example 3: 35를 2진, 10진, 16진으로
     out = []
     c = machine("mov eax,IntVal\ncall WriteBin\ncall Crlf\ncall WriteDec\ncall Crlf\ncall WriteHex\ncall Crlf")
     c.const["intval"] = 35
@@ -512,12 +512,12 @@ def main():
     c.run()
     assert out == ["0000 0000 0000 0000 0000 0000 0010 0011", "\r\n", "35", "\r\n", "23", "\r\n"]
     assert int("100011", 2) == 35 == 0x23
-    # p.2: 1234h
+    # WriteHex 예: 1234h
     assert "%X" % 0x1234 == "1234" and "%08X" % 0x1234 == "00001234"
-    # Example 1 (p.8): EFL=00000286에서 읽은 플래그가 옆에 적힌 값과 같다
+    # Example 1: EFL=00000286에서 읽은 플래그가 옆에 적힌 값과 같다
     efl = 0x286
     assert (efl & 1, (efl >> 7) & 1, (efl >> 6) & 1, (efl >> 11) & 1) == (0, 1, 0, 0)   # CF SF ZF OF
-    # Example 2와 2a (p.9~10): 문자열 뒤 줄바꿈
+    # Example 2와 2a: 문자열 뒤 줄바꿈
     out = []
     c = machine("mov edx,OFFSET str1\ncall WriteString\ncall Crlf")
     c.data("str1", "BYTE", ["Assembly language is easy!", 0])
@@ -530,12 +530,12 @@ def main():
     library(c, out, rnd)
     c.run()
     assert a == "".join(out) == "Assembly language is easy!\r\n"
-    # Example 4 (p.12): SIZEOF fileName - 1 = 79
+    # Example 4: SIZEOF fileName - 1 = 79
     c = machine("mov edx,OFFSET fileName\nmov ecx,SIZEOF fileName - 1")
     c.data("fileName", "BYTE", [0] * 80)
     c.run()
     assert c.r["ecx"] == 79
-    # Example 5 (p.13): 0~99 난수 열 개
+    # Example 5: 0~99 난수 열 개
     out = []
     c = machine("mov ecx,10\nL1:mov eax,100\ncall RandomRange\ncall WriteInt\ncall Crlf\nloop L1")
     library(c, out, rnd)
@@ -543,7 +543,7 @@ def main():
     nums = [int(x) for x in out if x != "\r\n"]
     assert len(nums) == 10 and all(0 <= v <= 99 for v in nums)
     assert c.calls == ["RandomRange", "WriteInt", "Crlf"] * 10
-    # Example 6 (p.14): yellow + (blue * 16). Irvine32.inc의 색 상수 yellow = 14, blue = 1
+    # Example 6: yellow + (blue * 16). Irvine32.inc의 색 상수 yellow = 14, blue = 1
     out = []
     c = machine("mov eax,yellow + (blue * 16)\ncall SetTextColor")
     c.const.update(yellow=14, blue=1)
@@ -551,7 +551,7 @@ def main():
     c.run()
     assert c.r["eax"] == 30 == 0x1E and out == ["<color 1E>"]
     assert (0x1E >> 4, 0x1E & 0xF) == (1, 14)      # 위 4비트 배경, 아래 4비트 글자색
-    # 프로시저 수: 슬라이드 목록 p.3~7
+    # 프로시저 수: 문서 목록 표
     assert 11 + 12 + 11 + 9 + 5 == 48              # MsgBox와 MsgBoxAsk를 둘로 세면 48
 
     # 카드 C3: white = 15, red = 4

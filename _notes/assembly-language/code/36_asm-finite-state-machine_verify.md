@@ -21,8 +21,8 @@ permalink: "/studies/assembly-language/code/36_asm-finite-state-machine_verify/"
 
 ```python
 """유한 상태 기계 검증. 실행: python3 36_asm-finite-state-machine_verify.py
-MASM이 없어 슬라이드의 어셈블리 코드를 파이썬으로 한 줄씩 흉내 낸다.
-슬라이드 wk09-2-2 p.5(두 그림), p.6(Your turn), p.7~12(Finite.asm)의 동작을 확인한다."""
+MASM이 없어 문서의 어셈블리 코드를 파이썬으로 한 줄씩 흉내 낸다.
+문서의 두 그림, 상태 둘짜리 그림(카드 C3), Finite.asm 전체 코드의 동작을 확인한다."""
 import itertools
 import re
 
@@ -39,7 +39,7 @@ def run_fsm(table, start, accepting, text, classify):
     return state in accepting
 
 
-# ---- p.5 위 그림: x로 시작, a..y가 0개 이상, z로 끝 ----
+# ---- x...z 그림: x로 시작, a..y가 0개 이상, z로 끝 ----
 def fsm_xz(text):
     state = "A"
     for ch in text:
@@ -54,7 +54,7 @@ def fsm_xz(text):
     return state == "C"
 
 
-# ---- p.5 아래 그림: 부호 있는 정수 ----
+# ---- 부호 있는 정수 그림 ----
 def cls_int(ch):
     if ch in "+-":
         return "sign"
@@ -64,11 +64,11 @@ def cls_int(ch):
 
 
 INT_FSM = {("A", "sign"): "B", ("A", "digit"): "C", ("B", "digit"): "C", ("C", "digit"): "C"}
-# ---- p.6 Your turn의 그림: 상태 둘 ----
+# ---- 카드 C3의 그림: 상태 둘 ----
 BAD_FSM = {("A", "sign"): "B", ("A", "digit"): "B", ("B", "digit"): "B"}
 
 
-# ---- p.8 IsDigit: 명령 한 줄씩 플래그를 계산한다 ----
+# ---- IsDigit: 명령 한 줄씩 플래그를 계산한다 ----
 def is_digit_asm(al):
     """ZF를 돌려준다. cmp는 al - 상수의 결과로 ZF, CF를 정한다."""
     zf, cf = int(al == ord("0")), int(al < ord("0"))      # cmp al,'0'
@@ -81,7 +81,7 @@ def is_digit_asm(al):
     return zf
 
 
-# ---- p.10~12 Finite.asm: 상태마다 이름표, 간선마다 cmp + 조건 점프 ----
+# ---- Finite.asm 전체: 상태마다 이름표, 간선마다 cmp + 조건 점프 ----
 def finite_asm(keys, state_c_has_jz_quit):
     """키 입력 keys를 넣어 돌린다. ("ok" 또는 "error", 읽은 글자 수)를 돌려준다.
     Getnext(ReadChar, WriteChar)는 ZF를 바꾸지 않는다고 가정한다."""
@@ -112,7 +112,7 @@ def finite_asm(keys, state_c_has_jz_quit):
         state = "C"
     while True:                                   # StateC
         al = getnext()
-        if state_c_has_jz_quit and zf:            # jz Quit (슬라이드 p.11의 줄)
+        if state_c_has_jz_quit and zf:            # jz Quit (흔한 실수로 든 줄)
             return "ok", read
         zf = is_digit_asm(al)
         if zf:
@@ -124,7 +124,7 @@ def finite_asm(keys, state_c_has_jz_quit):
 
 
 if __name__ == "__main__":
-    # p.5 위 그림과 정규식 x[a-y]*z
+    # x...z 그림과 정규식 x[a-y]*z
     alpha = "axyzb1"
     for n in range(0, 6):
         for t in itertools.product(alpha, repeat=n):
@@ -133,7 +133,7 @@ if __name__ == "__main__":
     assert fsm_xz("xz") and fsm_xz("xabcz") and fsm_xz("xxz")
     assert not fsm_xz("xab") and not fsm_xz("abz") and not fsm_xz("xzz") and not fsm_xz("x")
 
-    # p.5 아래 그림과 정규식 [+-]?[0-9]+ (길이 5 이하 전수)
+    # 부호 있는 정수 그림과 정규식 [+-]?[0-9]+ (길이 5 이하 전수)
     alpha = "+-059a"
     for n in range(0, 6):
         for t in itertools.product(alpha, repeat=n):
@@ -144,7 +144,7 @@ if __name__ == "__main__":
                     ("12a", False), ("+-3", False), ("3+", False)]:
         assert run_fsm(INT_FSM, "A", {"C"}, s, cls_int) == want, s
 
-    # p.6 Your turn: 상태 둘짜리 그림은 부호만 있는 "+", "-"도 받아들인다
+    # 카드 C3: 상태 둘짜리 그림은 부호만 있는 "+", "-"도 받아들인다
     diff = []
     for n in range(0, 5):
         for t in itertools.product("+-05a", repeat=n):
@@ -155,7 +155,7 @@ if __name__ == "__main__":
                 diff.append(s)
     assert diff == ["+", "-"], diff
 
-    # p.8 IsDigit: 256가지 AL 전부에서 ZF = 1 ⇔ '0'..'9'
+    # IsDigit: 256가지 AL 전부에서 ZF = 1 ⇔ '0'..'9'
     for al in range(256):
         assert is_digit_asm(al) == int(ord("0") <= al <= ord("9")), al
     assert is_digit_asm(ord("0")) == 1 and is_digit_asm(ord("9")) == 1
@@ -169,7 +169,7 @@ if __name__ == "__main__":
             got, _ = finite_asm(s + ENTER, state_c_has_jz_quit=False)
             assert got == want, (s, got, want)
 
-    # 슬라이드 p.11 그대로(jz Quit이 있는 것): 상태 C에 들어올 때 ZF = 1이라
+    # 흔한 실수 그대로(jz Quit이 있는 것): 상태 C에 들어올 때 ZF = 1이라
     # 다음 글자를 읽자마자 검사 없이 끝난다 → "1a"가 오류 없이 통과한다
     assert finite_asm("1a" + ENTER, True) == ("ok", 2)
     assert finite_asm("1a" + ENTER, False) == ("error", 2)

@@ -16,7 +16,7 @@ description: "사용 개념: 최대 힙과 최소 힙의 넣기와 꺼내기. �
 prev_url: "/studies/data-structures/tree-traversal-ladder/"
 prev_title: "이진 트리 순회 예제 사다리"
 next_url: "/studies/data-structures/week9-inclass/"
-next_title: "9주차 수업 문제 풀이"
+next_title: "트리와 힙 문제 풀이"
 math: true
 mermaid: false
 code_count: 1
@@ -34,7 +34,7 @@ permalink: "/studies/data-structures/heap-tracing-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-최대 힙 9 8 7 6 7 2 6 5 1에 20을 넣고, 이어서 15를 넣은 뒤, 두 번 꺼낸다[^1].
+최대 힙 9 8 7 6 7 2 6 5 1에 20을 넣고, 이어서 15를 넣은 뒤, 두 번 꺼낸다.
 
 **20 넣기.**
 1. *구멍 정하기:* 값이 9개이니 새 칸은 10번이다. 9 8 7 6 7 2 6 5 1 _
@@ -152,6 +152,5 @@ permalink: "/studies/data-structures/heap-tracing-ladder/"
 </div>
 
 
-[^1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.79 ~ 80 (최대 힙에 20, 15 넣기), p.81 ~ 82 (가장 큰 값을 두 번 꺼내기: 8을 다시 넣고, 7을 다시 넣는다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표의 이름, 문제 1의 단계별 배열, 문제 2 ~ 4와 그 답은 원본에 없다. 슬라이드는 넣기 전후와 꺼내기 전후의 그림만 준다. 모든 단계의 배열은 문제 코드가 찍은 것과 같다.
+[^s1]: 모든 단계의 배열은 문제 코드가 찍은 것과 같다.
 {% endraw %}

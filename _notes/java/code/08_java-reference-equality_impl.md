@@ -31,7 +31,7 @@ class ReferenceEqualityImpl {
     }
 
     public static void main(String[] args) {
-        // 1. 슬라이드 그림: refVar1 -> 객체1, refVar2와 refVar3 -> 객체2
+        // 1. 문서의 그림: refVar1 -> 객체1, refVar2와 refVar3 -> 객체2
         int[] refVar1 = {1, 2, 3};
         int[] refVar2 = {1, 2, 3};
         int[] refVar3 = refVar2;
@@ -100,7 +100,7 @@ class ReferenceEqualityImpl {
         }
         check(npe, "null 쪽에서 equals를 부르면 NullPointerException");
 
-        // 6. 주소를 넣어 주면 해결된다 (슬라이드: refVar1은 "자바"를 가리킨다)
+        // 6. 주소를 넣어 주면 해결된다 (refVar에 "자바"의 주소를 넣는다)
         refVar = "자바";
         check(refVar.length() == 2, "이제 length()를 부를 수 있다");
 

@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Quick Sort", "Quicksort", "퀵소트", "분할", "Partition", "피벗", "Pivot", "가운데 값 규칙", "Median-of-Three", "제자리 분할", "In-Place Partitioning"]
 description: "책장을 정리할 때 기준이 될 책 한 권을 고르고, 그보다 앞에 올 책은 왼쪽 더미로, 뒤에 올 책은 오른쪽 더미로 가른 다음, 두 더미를 같은 방법으로 다시 정리하는 방식이다. 더미가 번번이 반반쯤으로 갈리면 아주 빠르고, 책을 놓아 둘 덤 자리도 거의 필요 없다. 그러나 기준을 …"
@@ -36,7 +36,7 @@ permalink: "/studies/data-structures/quick-sort/"
 
 [삽입 정렬](/Hongs_Blog/studies/data-structures/insertion-sort/)은 값 하나를 제자리로 보내려고 한 칸씩 민다. 멀리 가야 하는 값이 많으면 $$n^2$$에 비례하는 일을 한다. 값을 한 번에 멀리 보낼 수 있으면 훨씬 빠르다.
 
-6, 2, 8, 5, 11, 10, 4, 1, 9, 7, 3에서 맨 앞의 6을 기준으로 고른다. 6보다 작은 값은 왼쪽에, 큰 값은 오른쪽에 모은다[^1].
+6, 2, 8, 5, 11, 10, 4, 1, 9, 7, 3에서 맨 앞의 6을 기준으로 고른다. 6보다 작은 값은 왼쪽에, 큰 값은 오른쪽에 모은다.
 
 ```
 처음:   6  2  8  5 11 10  4  1  9  7  3
@@ -59,17 +59,17 @@ flowchart TD
     R --> RR["11"]
 ```
 
-아래의 제자리 분할로 두 층까지 나눈 모습이다. 조각 안의 순서는 분할 방법에 따라 위 그림과 다를 수 있다[^s2].
+아래의 제자리 분할로 두 층까지 나눈 모습이다. 조각 안의 순서는 분할 방법에 따라 위 그림과 다를 수 있다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 덤 배열 분할과 제자리 분할의 슬라이드 예(맞바꾼 쌍과 끝 상태), 분할의 불변식을 바퀴마다 검사(무작위 20,000개), 가운데 값 규칙의 세 예, 정렬 네 판을 표준 `qsort`와 무작위 2,000개 비교, 빈 구간·1개·모두 같은 값·정렬됨·역순을 컴파일해 실행(ASan·UBSan) — [42_quick-sort_impl.c](/Hongs_Blog/studies/data-structures/code/42_quick-sort_impl/). 비교 횟수와 재귀 깊이 세기(정렬된 입력 $$n \le 300$$ 전부, 무작위 1,000개 200번 등) — [42_quick-sort_verify.py](/Hongs_Blog/studies/data-structures/code/42_quick-sort_verify/)</div>
+<div class="callout-title" markdown="span">검증: 덤 배열 분할과 제자리 분할의 예(맞바꾼 쌍과 끝 상태), 분할의 불변식을 바퀴마다 검사(무작위 20,000개), 가운데 값 규칙의 세 예, 정렬 네 판을 표준 `qsort`와 무작위 2,000개 비교, 빈 구간·1개·모두 같은 값·정렬됨·역순을 컴파일해 실행(ASan·UBSan) — [42_quick-sort_impl.c](/Hongs_Blog/studies/data-structures/code/42_quick-sort_impl/). 비교 횟수와 재귀 깊이 세기(정렬된 입력 $$n \le 300$$ 전부, 무작위 1,000개 200번 등) — [42_quick-sort_verify.py](/Hongs_Blog/studies/data-structures/code/42_quick-sort_verify/)</div>
 
 </div>
 
 
 ## 정의
 
-입력은 배열의 한 구간 `a[left]`부터 `a[right]`까지다. 끝나면 그 구간의 값들이 작은 것부터 놓인다. 값의 수를 $$n$$이라 하면 방법은 이렇다[^2].
+입력은 배열의 한 구간 `a[left]`부터 `a[right]`까지다. 끝나면 그 구간의 값들이 작은 것부터 놓인다. 값의 수를 $$n$$이라 하면 방법은 이렇다.
 
 - $$n \le 1$$이면 이미 정렬되어 있다.
 - $$n > 1$$이면 값 가운데 하나를 피벗으로 고른다.
@@ -88,11 +88,11 @@ void quick_sort(int a[], int left, int right)
 }
 ```
 
-일은 거의 다 `partition`이 한다. 슬라이드는 분할을 두 가지로 보여 준다.
+일은 거의 다 `partition`이 한다. 가르는 방법은 두 가지다.
 
 ### 덤 배열로 가르기
 
-같은 크기의 배열 `b`를 하나 더 둔다. 피벗 다음 값부터 차례로 보면서, 피벗 이하인 값은 `b`의 왼쪽 끝부터, 큰 값은 `b`의 오른쪽 끝부터 채운다. 마지막에 남는 한 칸에 피벗을 놓는다[^3].
+같은 크기의 배열 `b`를 하나 더 둔다. 피벗 다음 값부터 차례로 보면서, 피벗 이하인 값은 `b`의 왼쪽 끝부터, 큰 값은 `b`의 오른쪽 끝부터 채운다. 마지막에 남는 한 칸에 피벗을 놓는다.
 
 ```c
 int partition_extra(const int a[], int b[], int left, int right)
@@ -114,10 +114,10 @@ int partition_extra(const int a[], int b[], int left, int right)
 
 ### 제자리에서 가르기
 
-덤 배열 없이 같은 배열 안에서 맞바꾸기만으로 가른다[^4].
+덤 배열 없이 같은 배열 안에서 맞바꾸기만으로 가른다.
 
 1. 피벗은 맨 왼쪽 값이다.
-2. 왼쪽에서 오른쪽으로 가며 피벗 이상인 첫 값을 찾는다. 슬라이드는 이 값을 `bigElement`라 부른다.
+2. 왼쪽에서 오른쪽으로 가며 피벗 이상인 첫 값을 찾는다. 이 값을 `bigElement`라 부른다.
 3. 오른쪽에서 왼쪽으로 가며 피벗 이하인 첫 값을 찾는다. `smallElement`다.
 4. `bigElement`가 `smallElement`보다 왼쪽에 있으면 둘을 맞바꾸고 2로 돌아간다.
 5. 그렇지 않으면 피벗과 `smallElement`를 맞바꾸고 끝낸다.
@@ -227,7 +227,7 @@ int partition(int a[], int left, int right)
 
 ### 피벗 고르기
 
-피벗을 고르는 방법은 세 가지가 나온다[^5]. `a[6]`부터 `a[20]`까지를 정렬하는 경우로 적는다.
+피벗을 고르는 방법은 세 가지가 있다. `a[6]`부터 `a[20]`까지를 정렬하는 경우로 적는다.
 
 | 방법 | 고르는 값 | 예 |
 |---|---|---|
@@ -235,7 +235,7 @@ int partition(int a[], int left, int right)
 | 무작위 | 6부터 20까지에서 수 `r`을 아무렇게나 뽑아 `a[r]` | |
 | 가운데 값 규칙(median-of-three) | 맨 왼쪽, 가운데, 맨 오른쪽 세 값 가운데 크기가 중간인 값 | `a[6]`, `a[13]`, `a[20]`을 본다. 13은 $$(6 + 20) / 2$$다 |
 
-가운데 값 규칙의 예는 셋이다[^5].
+가운데 값 규칙의 예는 셋이다.
 
 | `a[6]` | `a[13]` | `a[20]` | 피벗 |
 |---|---|---|---|
@@ -243,37 +243,30 @@ int partition(int a[], int left, int right)
 | 3 | 2 | 10 | `a[6]` (3) |
 | 30 | 25 | 10 | `a[13]` (25) |
 
-무작위나 가운데 값 규칙으로 고른 피벗이 맨 왼쪽에 있지 않아도 코드를 새로 짤 필요는 없다. 고른 피벗을 맨 왼쪽 값과 먼저 맞바꾸면 위의 `partition`을 그대로 쓸 수 있다[^6].
+무작위나 가운데 값 규칙으로 고른 피벗이 맨 왼쪽에 있지 않아도 코드를 새로 짤 필요는 없다. 고른 피벗을 맨 왼쪽 값과 먼저 맞바꾸면 위의 `partition`을 그대로 쓸 수 있다.
 
 ### 복잡도
 
-값 $$n$$개를 가르는 데는 $$O(n)$$ 시간이 든다. 두 손가락이 합쳐서 구간을 한 번 훑기 때문이다. $$n$$개를 정렬하는 시간을 $$t(n)$$이라 하면[^7]
+값 $$n$$개를 가르는 데는 $$O(n)$$ 시간이 든다. 두 손가락이 합쳐서 구간을 한 번 훑기 때문이다. $$n$$개를 정렬하는 시간을 $$t(n)$$이라 하면
 
 $$t(0) = t(1) = c, \qquad t(n) = t(\vert \text{left}\vert ) + t(\vert \text{right}\vert ) + dn \quad (n > 1)$$
 
 
 이다. $$c$$, $$d$$는 상수이고, $$\vert \text{left}\vert $$와 $$\vert \text{right}\vert $$는 왼쪽 조각과 오른쪽 조각에 든 값의 수다. 말로 읽으면 "두 조각을 정렬하는 시간에, 가르는 시간 $$dn$$을 더한다"이다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "When t > 1, t(n) = t(\|left\|) + t(\|right\|) + dn" (p.15) / 문제점: 조건의 글자가 t다. t는 시간이고, 식이 갈리는 기준은 값의 수 n이다 / 수정안: "When n > 1" / 근거: 바로 윗줄이 t(0) = t(1) = c로 n = 0, 1을 따로 정하고, p.16은 같은 식에 "n > 1"을 붙인다.
-
-</div>
-
 
 | 경우 | 조각이 갈리는 모양 | 점화식 | 결과 |
 |---|---|---|---|
 | 가장 나쁠 때 | 번번이 한쪽이 0개 | $$t(n) = t(n - 1) + dn$$ | $$O(n^2)$$ |
 | 가장 좋을 때 | 번번이 반반(또는 1개 차이) | $$t(n) = 2t(n/2) + dn$$ | $$O(n \log n)$$ |
-| 평균 | | | $$O(n \log n)$$ [증명 생략: 슬라이드 p.17] |
+| 평균 | | | $$O(n \log n)$$ [증명 생략: Cormen 외, *Introduction to Algorithms* 3판 7.4절] |
 
-가장 나쁜 경우는 예를 들어 피벗이 늘 가장 작은 값일 때다[^8]. 이미 정렬된 배열에서 맨 왼쪽 값을 피벗으로 삼으면 바로 그렇게 된다.
+가장 나쁜 경우는 예를 들어 피벗이 늘 가장 작은 값일 때다. 이미 정렬된 배열에서 맨 왼쪽 값을 피벗으로 삼으면 바로 그렇게 된다.
 
 <details class="callout callout-note" markdown="1">
 <summary class="callout-title" markdown="span">두 점화식을 푸는 과정</summary>
 
-**가장 나쁠 때.** 식을 자기 자신에 되풀이해 넣는다(슬라이드의 "repeated substitution").
+**가장 나쁠 때.** 식을 자기 자신에 되풀이해 넣는다(되풀이 대입, repeated substitution).
 
 $$t(n) = t(n-1) + dn = t(n-2) + d(n-1) + dn = \cdots = t(1) + d(2 + 3 + \cdots + n) = c + d\left(\frac{n(n+1)}{2} - 1\right)$$
 
@@ -301,11 +294,11 @@ $$t(n) = 2t\left(\frac n2\right) + dn = 4t\left(\frac n4\right) + 2dn = \cdots =
 
 정렬된 입력에 맨 왼쪽 피벗을 쓰면 비교가 정확히 $$\frac{(n - 1)(n + 4)}{2}$$번이다. 가운데 값 규칙은 정렬된 입력을 잘 넘기지만, 이 코드에서는 역순 입력에서 다시 $$n^2$$에 비례한다(2,000개면 503,498번으로 약 네 배). 피벗 규칙을 바꾸면 나쁜 입력이 다른 입력으로 옮겨 갈 뿐, 가장 나쁜 경우가 없어지지는 않는다.
 
-**공간.** 덤 배열은 필요 없지만 재귀 호출이 쌓인다. 조각이 번번이 한쪽으로 몰리면 재귀가 $$n$$겹까지 쌓여 $$O(n)$$ 공간이 든다. 이것은 $$O(\log n)$$으로 줄일 수 있다[^9]. 작은 조각만 재귀로 부르고 큰 조각은 같은 함수 안에서 반복문으로 이어 가면, 재귀로 부르는 조각이 매번 절반 이하라서 깊이가 $$\lg n$$을 넘지 않는다[^s1].
+**공간.** 덤 배열은 필요 없지만 재귀 호출이 쌓인다. 조각이 번번이 한쪽으로 몰리면 재귀가 $$n$$겹까지 쌓여 $$O(n)$$ 공간이 든다. 이것은 $$O(\log n)$$으로 줄일 수 있다. 작은 조각만 재귀로 부르고 큰 조각은 같은 함수 안에서 반복문으로 이어 가면, 재귀로 부르는 조각이 매번 절반 이하라서 깊이가 $$\lg n$$을 넘지 않는다[^s1].
 
 ## 예제
 
-**같은 값이 많을 때의 규칙.** 슬라이드는 조각을 고르게 가르려면 제자리 분할의 규칙을 이렇게 쓰라고 한다[^9]. big은 피벗 **이상**인 가장 왼쪽 값, small은 피벗 **이하**인 가장 오른쪽 값이다. 위 코드가 이 규칙이다. 등호를 빼고 "피벗보다 큰 값", "피벗보다 작은 값"으로 찾으면 값이 모두 다를 때는 결과가 같다. 값이 모두 같을 때 차이가 난다[^s1].
+**같은 값이 많을 때의 규칙.** 조각을 고르게 가르려면 제자리 분할의 규칙을 이렇게 쓴다. big은 피벗 **이상**인 가장 왼쪽 값, small은 피벗 **이하**인 가장 오른쪽 값이다. 위 코드가 이 규칙이다. 등호를 빼고 "피벗보다 큰 값", "피벗보다 작은 값"으로 찾으면 값이 모두 다를 때는 결과가 같다. 값이 모두 같을 때 차이가 난다[^s1].
 
 | 값이 모두 같은 9개 | 첫 분할 뒤 조각 크기 | 1,000개일 때 비교 횟수 |
 |---|---|---|
@@ -317,8 +310,8 @@ $$t(n) = 2t\left(\frac n2\right) + dn = 4t\left(\frac n4\right) + 2dn = \cdots =
 ## 활용
 
 - 구현: [42_quick-sort_impl.c](/Hongs_Blog/studies/data-structures/code/42_quick-sort_impl/). 연습: [퀵 정렬 분할 예제 사다리](/Hongs_Blog/studies/data-structures/quick-partition-ladder/)
-- 조각이 작아지면 재귀를 멈춘다. 조각의 크기가 15쯤 이하가 되면 그 조각은 [삽입 정렬](/Hongs_Blog/studies/data-structures/insertion-sort/)로 정렬한다[^10]. 작은 조각에서는 함수를 부르고 돌아오는 비용이 삽입 정렬의 비교 몇 번보다 크기 때문이다[^s1]. 구현 파일의 `quick_sort_tuned`가 가운데 값 규칙, 작은 조각 넘기기, 작은 조각 먼저 부르기를 모두 넣은 판이다. 정렬된 4,096개에서 재귀 깊이가 9다.
-- 평균 실행 시간이 가장 좋은 정렬로 꼽힌다[^11]. 가장 나쁜 경우까지 보장해야 하면 [병합 정렬](/Hongs_Blog/studies/data-structures/merge-sort/)을 쓴다: [퀵 정렬과 병합 정렬 비교](/Hongs_Blog/studies/data-structures/quick-vs-merge-sort/).
+- 조각이 작아지면 재귀를 멈춘다. 조각의 크기가 15쯤 이하가 되면 그 조각은 [삽입 정렬](/Hongs_Blog/studies/data-structures/insertion-sort/)로 정렬한다. 작은 조각에서는 함수를 부르고 돌아오는 비용이 삽입 정렬의 비교 몇 번보다 크기 때문이다[^s1]. 구현 파일의 `quick_sort_tuned`가 가운데 값 규칙, 작은 조각 넘기기, 작은 조각 먼저 부르기를 모두 넣은 판이다. 정렬된 4,096개에서 재귀 깊이가 9다.
+- 평균 실행 시간이 가장 좋은 정렬로 꼽힌다. 가장 나쁜 경우까지 보장해야 하면 [병합 정렬](/Hongs_Blog/studies/data-structures/merge-sort/)을 쓴다: [퀵 정렬과 병합 정렬 비교](/Hongs_Blog/studies/data-structures/quick-vs-merge-sort/).
 - 흔한 실수: 재귀 호출에 피벗 칸을 다시 넣는 것(`quick_sort(a, left, p)`). 조각이 줄지 않아 끝나지 않을 수 있다.
 
 ## 연결
@@ -393,17 +386,5 @@ $$t(n) = 2t\left(\frac n2\right) + dn = 4t\left(\frac n4\right) + 2dn = \cdots =
 </details>
 
 
-[^1]: 자료구조 14회 강의 자료 「DS_Week14_Lecture_2024」, p.7 (Example: 6을 피벗으로 쓴 그림)
-[^2]: 같은 자료, p.6 (Quick Sort: 세 조각으로 가르기)
-[^3]: 같은 자료, p.13 (Partitioning Example Using Additional Array)
-[^4]: 같은 자료, p.14 (In-Place Partitioning Example: 그림 다섯 줄과 "bigElement is not to left of smallElement, terminate process. Swap pivot and smallElement.")
-[^5]: 같은 자료, p.8~12 (Choice Of Pivot)
-[^6]: 같은 자료, p.12 (고른 피벗을 맨 왼쪽 값과 먼저 맞바꾼다)
-[^7]: 같은 자료, p.15 (Complexity)
-[^8]: 같은 자료, p.16 (가장 나쁜 경우의 점화식, 가장 좋은 경우)
-[^9]: 같은 자료, p.17 (Complexity Of Quick Sort: 바꾼 맞바꾸기 규칙, 재귀 스택의 공간)
-[^10]: 같은 자료, p.18 (조각 크기가 15 이하면 삽입 정렬)
-[^11]: 같은 자료, p.27 (Quick sort … best average run time)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에는 그림과 설명만 있고 코드가 없다("see text"라고 적힌 교재 본문은 자료에 없다). 두 `partition`과 `quick_sort`의 C 코드, 추적 표의 칸 번호, 불변식과 증명, 스스로 설명해 보기, 점화식을 푸는 과정, 비교 횟수와 재귀 깊이의 표, 같은 값이 많을 때의 비교, 작은 조각을 먼저 부르는 방법, 작은 조각에서 삽입 정렬이 나은 까닭, 카드 C1~C6은 그 설명에 맞춰 보탰다. p.14의 처음 규칙에 등호가 없다는 것은 p.17이 "규칙을 이렇게 바꾼다"고 적은 데서 읽은 것이다. 분할의 정확성 논증은 Hoare의 분할(C. A. R. Hoare, "Quicksort", *The Computer Journal* 5(1), 1962)을 이 코드에 맞춰 쓴 것이다. 수치는 위 두 코드로 확인했고, 실험으로 확인한 값은 증명이 아니다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 제자리 분할 코드를 슬라이드의 예에 두 층까지 돌린 결과를 그렸고, 42_quick-sort_verify.py에서 조각의 내용을 확인했다.
+[^s1]: 두 `partition`과 `quick_sort`의 C 코드, 추적 표의 칸 번호, 불변식과 증명, 스스로 설명해 보기, 점화식을 푸는 과정, 비교 횟수와 재귀 깊이의 표, 같은 값이 많을 때의 비교, 작은 조각을 먼저 부르는 방법, 작은 조각에서 삽입 정렬이 나은 까닭, 카드 C1~C6은 그 설명에 맞춰 보탰다. 분할의 정확성 논증은 Hoare의 분할(C. A. R. Hoare, "Quicksort", *The Computer Journal* 5(1), 1962)을 이 코드에 맞춰 쓴 것이다. 수치는 위 두 코드로 확인했고, 실험으로 확인한 값은 증명이 아니다.
 {% endraw %}

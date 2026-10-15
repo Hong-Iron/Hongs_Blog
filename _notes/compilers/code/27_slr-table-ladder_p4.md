@@ -23,11 +23,11 @@ permalink: "/studies/compilers/code/27_slr-table-ladder_p4/"
 # 문제 코드: SLR 파싱 표 예제 사다리의 문제 1~4. 네 문법의 상태, FOLLOW, 표를 확인한다.
 # 실행: python3 27_slr-table-ladder_p4.py
 # 표준 라이브러리만 쓴다. 다른 파일을 불러오지 않으려고 공통 도구를 이 파일 안에 그대로 넣었다.
-# 상태 번호는 슬라이드처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 슬라이드는 1부터다.
+# 상태 번호는 SLR 문서들처럼 1부터 센다. 규칙 번호는 코드에서 0부터(S' -> S가 0)이고, 문서에서는 1부터다.
 
 # ---------- 공통 도구: 문법, LR(0) 항목 집합, FOLLOW, SLR 표, 스택 파서 ----------
 # 문법은 (왼쪽, 오른쪽 튜플)의 목록이다. 0번은 덧붙인 규칙 S' -> S.
-# 상태 번호는 1부터 센다(슬라이드와 같다). 파이썬 리스트 인덱스는 0부터다.
+# 상태 번호는 1부터 센다(문서와 같다). 파이썬 리스트 인덱스는 0부터다.
 
 def nonterminals(prods):
     return [a for a in dict.fromkeys(l for l, _ in prods)]
@@ -228,17 +228,17 @@ def show_item(prods, item):
     return "%s -> %s.%s" % (l, " ".join(r[:d]), " ".join(r[d:]))
 
 
-# 강의 7~8회의 문법 (L07 p.21, L08 p.7)
+# SLR 파싱 표 문서의 문법 E -> T * E | T, T -> ( E ) | id
 G2 = [("S'", ("E",)), ("E", ("T", "*", "E")), ("E", ("T",)), ("T", ("(", "E", ")")), ("T", ("id",))]
 G2_ORDER = ["E", "T", "(", ")", "id", "*"]
-# 강의 7회 앞부분의 문법 (L07 p.3~18)
+# 덧셈과 곱셈이 있는 문법 E -> T + E | T, T -> F * T | F, F -> ( E ) | id
 G1 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("F", "*", "T")), ("T", ("F",)),
       ("F", ("(", "E", ")")), ("F", ("id",))]
 G1_ORDER = ["E", "T", "F", "(", ")", "id", "+", "*"]
 
 
-def slide_table(prods, order):
-    """슬라이드 표기로 바꾼 표: 규칙 번호는 1부터(S' -> S가 (1)), 환원은 R(k)."""
+def doc_table(prods, order):
+    """문서 표기로 바꾼 표: 규칙 번호는 1부터(S' -> S가 (1)), 환원은 R(k)."""
     states, trans, action, gototab = slr_table(prods, order)
     terms = terminals(prods) + ["$"]
     nts = nonterminals(prods)[1:]
@@ -258,7 +258,7 @@ def slide_table(prods, order):
 if __name__ == "__main__":
     # 문제 1: (1) S' -> S, (2) S -> ( S ), (3) S -> a
     P1 = [("S'", ("S",)), ("S", ("(", "S", ")")), ("S", ("a",))]
-    cols, rows, kern, follow = slide_table(P1, ["S", "(", ")", "a"])
+    cols, rows, kern, follow = doc_table(P1, ["S", "(", ")", "a"])
     assert cols == ["(", ")", "a", "$", "S"] and follow["S"] == {")", "$"}
     assert kern == {1: ["S' -> .S"], 2: ["S' -> S."], 3: ["S -> (.S )"], 4: ["S -> a."],
                     5: ["S -> ( S.)"], 6: ["S -> ( S )."]}
@@ -267,7 +267,7 @@ if __name__ == "__main__":
 
     # 문제 2: (1) S' -> S, (2) S -> a S, (3) S -> b
     P2 = [("S'", ("S",)), ("S", ("a", "S")), ("S", ("b",))]
-    cols, rows, kern, follow = slide_table(P2, ["S", "a", "b"])
+    cols, rows, kern, follow = doc_table(P2, ["S", "a", "b"])
     assert cols == ["a", "b", "$", "S"] and follow["S"] == {"$"}
     assert kern == {1: ["S' -> .S"], 2: ["S' -> S."], 3: ["S -> a.S"], 4: ["S -> b."], 5: ["S -> a S."]}
     assert rows == {1: ["S3", "S4", "", "2"], 2: ["", "", "R(1)", ""], 3: ["S3", "S4", "", "5"],
@@ -275,7 +275,7 @@ if __name__ == "__main__":
 
     # 문제 3: (1) S' -> E, (2) E -> E + T, (3) E -> T, (4) T -> id  (좌재귀)
     P3 = [("S'", ("E",)), ("E", ("E", "+", "T")), ("E", ("T",)), ("T", ("id",))]
-    cols, rows, kern, follow = slide_table(P3, ["E", "T", "id", "+"])
+    cols, rows, kern, follow = doc_table(P3, ["E", "T", "id", "+"])
     assert cols == ["+", "id", "$", "E", "T"] and follow["E"] == {"+", "$"} and follow["T"] == {"+", "$"}
     assert kern == {1: ["S' -> .E"], 2: ["E -> E.+ T", "S' -> E."], 3: ["E -> T."], 4: ["T -> id."],
                     5: ["E -> E +.T"], 6: ["E -> E + T."]}
@@ -287,7 +287,7 @@ if __name__ == "__main__":
 
     # 문제 4: (1) S' -> E, (2) E -> T + E, (3) E -> T, (4) T -> id  (우재귀)
     P4 = [("S'", ("E",)), ("E", ("T", "+", "E")), ("E", ("T",)), ("T", ("id",))]
-    cols, rows, kern, follow = slide_table(P4, ["E", "T", "id", "+"])
+    cols, rows, kern, follow = doc_table(P4, ["E", "T", "id", "+"])
     assert follow["E"] == {"$"} and follow["T"] == {"+", "$"}
     assert kern == {1: ["S' -> .E"], 2: ["S' -> E."], 3: ["E -> T.", "E -> T.+ E"], 4: ["T -> id."],
                     5: ["E -> T +.E"], 6: ["E -> T + E."]}

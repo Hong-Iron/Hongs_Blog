@@ -157,7 +157,7 @@ for k in range(n // 2):
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 9.3절 "The Fast Fourier Transform"(푸리에 행렬, $$\bar{F}^\top F = nI$$, FFT의 분해). Cormen et al., *Introduction to Algorithms* 3판, 30장 "Polynomials and the FFT"(합성곱 정리와 다항식 곱셈, 재귀 FFT).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> JPEG의 DCT와 OFDM의 IFFT/FFT는 각각 JPEG(ITU-T T.81)과 Wi-Fi·LTE 표준의 내용이다. 속도 비교(백만 점에서 약 10만 배)는 $$n^2$$ 대 $$\frac n2\log_2 n$$ 곱셈 수로 센 값이고, 실제 실행 시간의 비는 덧셈·메모리 접근 때문에 이와 다르다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [27_dft_plot.py](/Hongs_Blog/studies/linear-algebra/code/27_dft_plot/)로 그렸고, 정의대로 한 DFT가 `numpy.fft.fft`와 같은 것, 가장 큰 네 막대가 $$k = 5, 12, 52, 59$$인 것, $$n = 2^{20}$$에서 곱셈 수의 비가 약 10만 배(104,858)인 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 FFT 의사코드(짝수·홀수 번째로 나누는 재귀)와 복잡도 문단을 $$n = 8$$에 적용해 그렸다.
+[^s1]: JPEG의 DCT와 OFDM의 IFFT/FFT는 각각 JPEG(ITU-T T.81)과 Wi-Fi·LTE 표준의 내용이다. 속도 비교(백만 점에서 약 10만 배)는 $$n^2$$ 대 $$\frac n2\log_2 n$$ 곱셈 수로 센 값이고, 실제 실행 시간의 비는 덧셈·메모리 접근 때문에 이와 다르다.
+[^s2]: [27_dft_plot.py](/Hongs_Blog/studies/linear-algebra/code/27_dft_plot/)로 그렸고, 정의대로 한 DFT가 `numpy.fft.fft`와 같은 것, 가장 큰 네 막대가 $$k = 5, 12, 52, 59$$인 것, $$n = 2^{20}$$에서 곱셈 수의 비가 약 10만 배(104,858)인 것을 같은 코드로 확인했다.
+[^s3]: 이 문서 `정의`의 FFT 의사코드(짝수·홀수 번째로 나누는 재귀)와 복잡도 문단을 $$n = 8$$에 적용해 그렸다.
 {% endraw %}

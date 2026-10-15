@@ -241,7 +241,7 @@ $$f$$가 다항식이면 정칙 조건은 저절로 맞는다. $$a f(n/b) = \fra
 
 [^1]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 4.4절(재귀 트리), 4.5절(마스터 방법), 4.6절(증명). 아크라–바치 정리는 Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 22장 "Recurrences".
 [^2]: 카라츠바 곱셈은 Kleinberg·Tardos, *Algorithm Design*, 5장. 슈트라센 알고리즘은 Cormen et al. 3판, 4.2절.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 정칙 조건의 반례, 역의 반례, $$2T(n/2) + n\lg n$$의 답은 재귀 트리의 층별 합으로 유도했고 $$n = 2^k$$에서 정확히 계산해 확인했다(25_master-theorem_verify.py).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [25_master-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/25_master-theorem_plot/)로 그렸고, $$n = 2^k$$($$k \le 20$$)에서 닫힌 꼴 $$n\lg n + n$$, $$2n^2 - n$$, $$2n - 1$$, $$3n^{\lg 3} - 2n$$과 예시 표의 합 80, 496, 31을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기' 표의 왼쪽 열($$n = 16$$) 0~2층을 재귀 트리로 그렸다.
+[^s1]: 정칙 조건의 반례, 역의 반례, $$2T(n/2) + n\lg n$$의 답은 재귀 트리의 층별 합으로 유도했고 $$n = 2^k$$에서 정확히 계산해 확인했다(25_master-theorem_verify.py).
+[^s2]: [25_master-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/25_master-theorem_plot/)로 그렸고, $$n = 2^k$$($$k \le 20$$)에서 닫힌 꼴 $$n\lg n + n$$, $$2n^2 - n$$, $$2n - 1$$, $$3n^{\lg 3} - 2n$$과 예시 표의 합 80, 496, 31을 같은 코드로 확인했다.
+[^s3]: '예시로 보기' 표의 왼쪽 열($$n = 16$$) 0~2층을 재귀 트리로 그렸다.
 {% endraw %}

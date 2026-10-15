@@ -34,7 +34,7 @@ permalink: "/studies/database-design/join-query-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-'Research' 부서에서 일하는 모든 직원의 이름과 주소를 구하라[^1].
+'Research' 부서에서 일하는 모든 직원의 이름과 주소를 구하라.
 
 1. *필요한 열 찾기:* `Fname`, `Lname`, `Address`는 EMPLOYEE에 있다. 조건에 쓰는 'Research'는 DEPARTMENT의 `Dname`이다. 표는 둘이다.
 2. *잇는 열 짝 찾기:* EMPLOYEE의 `Dno`가 DEPARTMENT의 `Dnumber`를 가리킨다. `Dno = Dnumber`.
@@ -54,7 +54,7 @@ WHERE  Dname = 'Research';
 | Ramesh | Narayan | 975 Fire Oak, Humble, TX |
 | Joyce | English | 5631 Rice, Houston, TX |
 
-조인 조건을 `WHERE`에 섞어 쓴 `FROM EMPLOYEE, DEPARTMENT WHERE Dname = 'Research' AND Dnumber = Dno`와 답이 같다. `JOIN … ON`으로 쓰면 "잇는 조건"과 "고르는 조건"이 다른 자리에 놓여 읽기 쉽다[^1].
+조인 조건을 `WHERE`에 섞어 쓴 `FROM EMPLOYEE, DEPARTMENT WHERE Dname = 'Research' AND Dnumber = Dno`와 답이 같다. `JOIN … ON`으로 쓰면 "잇는 조건"과 "고르는 조건"이 다른 자리에 놓여 읽기 쉽다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증 — [66_join-query-ladder_p4.py](/Hongs_Blog/studies/database-design/code/66_join-query-ladder_p4/)</div>
@@ -165,6 +165,5 @@ FROM   DEPARTMENT LEFT OUTER JOIN PROJECT
 </div>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.20 (JOIN Tables in SQL: Research 부서 직원의 이름과 주소를 WHERE 판과 JOIN … ON 판으로 쓴 예. "Easier to comprehend than simply mixing together all the select and join conditions in WHERE clause")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 하위목표로 나눈 것, 문제 2~4와 변형은 원본에 없다. 문제 1의 질의는 슬라이드 p.20의 것이다. 문제 4의 꼴(LEFT JOIN 뒤 IS NULL)은 14주차 연습 2의 풀이가 쓰는 방법이다. 모든 답은 SQLite 3.50.4에서 실행해 확인했다.
+[^s1]: 모든 답은 SQLite 3.50.4에서 실행해 확인했다.
 {% endraw %}

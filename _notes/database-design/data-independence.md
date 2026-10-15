@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Data Independence", "논리적 데이터 독립성", "Logical Data Independence", "물리적 데이터 독립성", "Physical Data Independence", "프로그램-데이터 독립성", "Program-data Independence"]
 description: "건물의 배관을 새로 깔아도 방 안의 수도꼭지는 그대로 쓰는 것과 같다. 데이터베이스를 세 층으로 갈라 두면 아래층의 설명을 바꿔도 위층의 설명과 그 위에서 도는 프로그램을 안 고쳐도 된다. 표를 늘리거나 칸을 더하는 변화를 견디는 것과, 찾는 길을 새로 내는 것처럼 저장 방법만 바…"
@@ -71,7 +71,7 @@ ORDER BY Section_id;
 
 ## 정의
 
-데이터 독립성은 데이터베이스 시스템의 어느 한 단계에서 스키마를 바꿔도 바로 위 단계의 스키마를 바꾸지 않아도 되는 능력이다[^1]. 단계가 셋이라 경계가 둘이고, 독립성도 둘이다.
+데이터 독립성은 데이터베이스 시스템의 어느 한 단계에서 스키마를 바꿔도 바로 위 단계의 스키마를 바꾸지 않아도 되는 능력이다. 단계가 셋이라 경계가 둘이고, 독립성도 둘이다.
 
 ```mermaid
 flowchart TD
@@ -85,7 +85,7 @@ flowchart TD
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">논리적 데이터 독립성 (logical data independence)</div>
 
-외부 스키마나 응용 프로그램을 바꾸지 않고 개념 스키마를 바꿀 수 있는 능력이다. 외부 스키마를 쓰는 기존 응용 프로그램을 다시 짤 필요가 없다[^2].
+외부 스키마나 응용 프로그램을 바꾸지 않고 개념 스키마를 바꿀 수 있는 능력이다. 외부 스키마를 쓰는 기존 응용 프로그램을 다시 짤 필요가 없다.
 
 </div>
 
@@ -93,7 +93,7 @@ flowchart TD
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">물리적 데이터 독립성 (physical data independence)</div>
 
-개념 스키마를 바꾸지 않고 내부 스키마를 바꿀 수 있는 능력이다. 개념 스키마가 그대로이니 외부 스키마도 그대로다. 외부 스키마를 쓰는 기존 응용 프로그램을 다시 짤 필요가 없다[^3].
+개념 스키마를 바꾸지 않고 내부 스키마를 바꿀 수 있는 능력이다. 개념 스키마가 그대로이니 외부 스키마도 그대로다. 외부 스키마를 쓰는 기존 응용 프로그램을 다시 짤 필요가 없다.
 
 </div>
 
@@ -102,17 +102,17 @@ flowchart TD
 |---|---|---|
 | 바뀌는 스키마 | 개념 스키마 | 내부 스키마 |
 | 그대로인 것 | 외부 스키마, 응용 프로그램 | 개념 스키마, 외부 스키마, 응용 프로그램 |
-| 바꾸는 까닭 | 레코드 종류나 데이터 항목을 더해 데이터베이스를 넓힌다. 제약을 바꾼다. 레코드 종류나 데이터 항목을 빼서 데이터베이스를 줄인다[^2] | 찾기나 고치기의 성능을 높이려고 색인 같은 접근 구조를 더 만든다[^3] |
-| 고쳐야 하는 것 | 뷰의 정의와 외부/개념 사상[^2] | 개념/내부 사상[^s2] |
+| 바꾸는 까닭 | 레코드 종류나 데이터 항목을 더해 데이터베이스를 넓힌다. 제약을 바꾼다. 레코드 종류나 데이터 항목을 빼서 데이터베이스를 줄인다 | 찾기나 고치기의 성능을 높이려고 색인 같은 접근 구조를 더 만든다 |
+| 고쳐야 하는 것 | 뷰의 정의와 외부/개념 사상 | 개념/내부 사상[^s2] |
 | 예시의 차례 | 2, 3, 4, 5 | 1 |
 
-3주차 슬라이드는 같은 내용을 한 줄로 묶어, 개념 스키마나 내부 스키마를 바꾸는 일로 넷을 든다. 레코드 종류나 데이터를 더한다, 제약을 고친다, 레코드 종류나 데이터를 뺀다, 새 접근 경로를 만든다[^4]. 앞의 셋은 개념 스키마의 변화이고 넷째는 내부 스키마의 변화다.
+같은 내용을 한 줄로 묶으면, 개념 스키마나 내부 스키마를 바꾸는 일은 넷이다. 레코드 종류나 데이터를 더한다, 제약을 고친다, 레코드 종류나 데이터를 뺀다, 새 접근 경로를 만든다. 앞의 셋은 개념 스키마의 변화이고 넷째는 내부 스키마의 변화다.
 
 ### 왜 프로그램을 안 고쳐도 되는가
 
 1. 프로그램은 자기 단계의 이름만 쓴다. 성적표 프로그램의 문장에는 TRANSCRIPT와 그 칸 이름만 있고, GRADE_REPORT도 색인도 나오지 않는다.
 2. DBMS는 요청을 받을 때마다 사상을 보고 그 요청을 아래 단계의 요청으로 옮긴다. 사상은 프로그램이 아니라 DBMS의 카탈로그에 적혀 있다[^s2].
-3. 아래 단계의 스키마를 바꾸면 사상을 새 스키마에 맞게 고친다. 위 단계의 스키마는 그대로 둔다[^2].
+3. 아래 단계의 스키마를 바꾸면 사상을 새 스키마에 맞게 고친다. 위 단계의 스키마는 그대로 둔다.
 4. 그래서 프로그램이 보낸 문장은 그대로이고, DBMS가 그 문장을 옮긴 결과만 달라진다.
 
 ### 스스로 설명해 보기
@@ -166,7 +166,7 @@ flowchart TD
 
 ## 활용
 
-- 데이터 독립성은 DBMS의 가장 중요한 특징 가운데 하나다. 기존 응용 프로그램을 유지하는 부담을 크게 줄여 준다[^5]. 응용 프로그램이 여럿이어도 다시 짤 필요가 없다[^4].
+- 데이터 독립성은 DBMS의 가장 중요한 특징 가운데 하나다. 기존 응용 프로그램을 유지하는 부담을 크게 줄여 준다. 응용 프로그램이 여럿이어도 다시 짤 필요가 없다.
 - 찾기가 느릴 때 색인을 다는 일은 프로그램을 고치지 않고 한다. 예시의 1번이 그 일이다. 색인으로 쓰는 구조가 [B-트리](/Hongs_Blog/studies/database-design/b-tree/)다.
 - 칸을 더하는 SQL 문장은 [ALTER TABLE](/Hongs_Blog/studies/database-design/sql-alter-table/), 외부 스키마를 만드는 SQL 문장은 [뷰](/Hongs_Blog/studies/database-design/sql-view/)에서 다룬다.
 - 흔한 실수: 프로그램에서 표의 모든 칸을 통째로 받아 칸의 수와 순서에 기대는 것. 필요한 칸을 이름으로 적어야 칸이 늘어도 버틴다[^s1].
@@ -225,12 +225,7 @@ flowchart TD
 </details>
 
 
-[^1]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.16 (Data Independence의 정의, 두 경계에 Logical / Physical Data Independence를 적은 그림)
-[^2]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.17 (Logical Data Independence, 개념 스키마를 바꾸는 세 까닭, "External schemas should not be affected, Only the view definition and the mappings need to be updated")
-[^3]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.18 (Physical Data Independence, "by creating additional access structure for better retrieval or update", "Conceptual and external schemas should not be affected")
-[^4]: 데이터베이스 설계 3회 강의 자료 「3_B-tree」, p.6 ("We may change the conceptual/internal schemas: (1) by adding a new record type or data, (2) by updating constraints, (3) by removing a record type of data (4) creating new access paths", User App 1 … N과 "No need to rewrite existing application programs!")
-[^5]: 데이터베이스 설계 2회 강의 자료 「2-2_DB-system-architecture」, p.19 ("One of the most important features of DBMSs", "Significantly reduces the maintenance overhead of existing application programs")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 성적표 프로그램의 문장, 다섯 번의 변화와 그 결과, 지켜 주는 변화와 못 지켜 주는 변화의 예, 흔한 실수, 카드 C4는 슬라이드에 없다. 슬라이드의 정의를 대학 예(데이터베이스 설계 2회 강의 자료 「2-1_DB-users」, p.5의 표, p.10의 TRANSCRIPT, p.20의 GRADE_REPORT)에 적용해 SQLite에서 실행한 결과다. 4번 변화는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.2.2절이 논리적 데이터 독립성의 예로 드는 것과 같다. 색인을 다는 문장 CREATE INDEX는 제품마다 있지만 표준 SQL에는 없다. 실행 계획의 글귀는 SQLite 3.50.4에서 `SCAN SECTION`과 `SEARCH SECTION USING INDEX SECTION_SEM_YEAR (Semester=? AND Year=?)`였다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 사상이 카탈로그에 적혀 있고 DBMS가 요청마다 그것을 본다는 설명은 슬라이드에 없다. 같은 교재 2.2.2절을 따랐다. 슬라이드에는 "뷰의 정의와 사상만 고치면 된다"는 결론만 있고, 내부 스키마를 바꿀 때 고치는 것은 적혀 있지 않다. 교재는 어느 단계의 스키마가 바뀌든 그 단계와 위 단계 사이의 사상만 바뀐다고 적는다. 색인이 생기자 SQLite가 스스로 색인을 쓰는 계획으로 바꾼 것은 검증 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 데이터베이스를 줄일 때는 남은 데이터만 쓰는 외부 스키마가 영향을 받지 않는다는 조건, 논리적 데이터 독립성이 더 어렵다는 설명은 슬라이드에 없다. 같은 교재 2.2.2절을 따랐다.
+[^s1]: 4번 변화는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 2.2.2절이 논리적 데이터 독립성의 예로 드는 것과 같다. 색인을 다는 문장 CREATE INDEX는 제품마다 있지만 표준 SQL에는 없다. 실행 계획의 글귀는 SQLite 3.50.4에서 `SCAN SECTION`과 `SEARCH SECTION USING INDEX SECTION_SEM_YEAR (Semester=? AND Year=?)`였다.
+[^s2]: 같은 교재 2.2.2절을 따랐다. 교재는 어느 단계의 스키마가 바뀌든 그 단계와 위 단계 사이의 사상만 바뀐다고 적는다. 색인이 생기자 SQLite가 스스로 색인을 쓰는 계획으로 바꾼 것은 검증 코드로 확인했다.
+[^s3]: 같은 교재 2.2.2절을 따랐다.
 {% endraw %}

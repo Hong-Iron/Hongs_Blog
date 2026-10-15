@@ -42,7 +42,7 @@ permalink: "/studies/abnormal-psychology/fetishistic-disorder/"
 ## 정의
 
 <div class="callout callout-definition" markdown="1">
-<div class="callout-title" markdown="span">물품음란장애의 진단기준[^1]</div>
+<div class="callout-title" markdown="span">물품음란장애의 진단기준</div>
 
 A. 무생물을 이용하거나, 성기가 아닌 신체 부위에 매우 특정한 집착을 함으로써 반복적이고 강렬한 성적 흥분이 성적 공상, 성적 충동, 성적 행동으로 나타나며 적어도 6개월 이상 이어진다.<br>
 B. 임상적으로 현저한 고통이나 손상을 낳는다.<br>
@@ -54,7 +54,7 @@ C. 대상이 되는 물체는 이성의 옷을 입는 데 쓰는 의복(복장�
 
 C는 이성의 옷 자체가 흥분의 수단이면 [복장도착장애](/Hongs_Blog/studies/abnormal-psychology/transvestic-disorder/)로, 성기 자극 기구를 쓰는 것은 정상적인 성행위의 일부로 보라는 뜻이다[^s2].
 
-## 임상적 특징[^2][^3]
+## 임상적 특징
 
 - 고통을 표현하지 않고 기능 손상이 없으면 물품음란증은 있어도 장애로 진단하지 않는다.
 - 자위할 때 물품을 잡고, 맛보고, 문지르고, 냄새 맡는 등 여러 감각을 쓴다.
@@ -86,9 +86,6 @@ C는 이성의 옷 자체가 흥분의 수단이면 [복장도착장애](/Hongs_
 
 </details>
 
-[^1]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.48
-[^2]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.49
-[^3]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.50
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> IF의 사례는 진단기준을 보이려고 만든 가상 사례다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 기준 C의 취지는 DSM-5-TR의 설명을 쉬운 말로 풀었다.
+[^s1]: IF의 사례는 진단기준을 보이려고 만든 가상 사례다.
+[^s2]: 기준 C의 취지는 DSM-5-TR의 설명을 쉬운 말로 풀었다.
 {% endraw %}

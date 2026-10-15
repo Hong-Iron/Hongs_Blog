@@ -21,21 +21,21 @@ permalink: "/studies/database-design/code/77_view-practice_p1-sql/"
 
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
--- 뷰 연습의 연습 1 (a~d)을 PostgreSQL 16에서 확인한다. SQLite 판은 77_view-practice_p1.py.
--- 문서: 77.뷰 연습 / 출처: 13주차 슬라이드 13-View p.15~16(문제), p.31~34(풀이)
+-- 뷰 연습의 문제 1 (a~d)을 PostgreSQL 16에서 확인한다. SQLite 판은 77_view-practice_p1.py.
+-- 문서: 77.뷰 연습
 -- 확인하는 것:
---   1-a. 3행 4열. 슬라이드 p.6의 DEPT_INFO와 이름이 같아 둘을 함께 만들 수는 없다.
---   1-b. 슬라이드 풀이는 적힌 그대로는 오류다(열 이름이 모호하다). 고친 뷰는 4행.
---   1-c. 슬라이드 풀이(GROUP BY P.Pnumber, P.Pname)는 PostgreSQL이 거부한다: SELECT의 D.Dname이 GROUP BY에 없다.
+--   1-a. 3행 4열. 75.뷰 문서의 DEPT_INFO와 이름이 같아 둘을 함께 만들 수는 없다.
+--   1-b. Dno를 한정하지 않으면 오류다(열 이름이 모호하다). 고친 뷰는 4행.
+--   1-c. GROUP BY P.Pnumber, P.Pname만 쓰면 PostgreSQL이 거부한다: SELECT의 D.Dname이 GROUP BY에 없다.
 --        D.Dname을 GROUP BY에 더하면 6행.
 --   1-d. 1-c와 같은 이름으로는 못 만든다. 이름을 바꾸면 6행(1-c와 같다).
---   덧붙임: SELECT Dname ... GROUP BY Dno도 거부된다(부서 이름을 고르고 부서 번호로 묶는 다른 풀이들의 꼴).
+--   덧붙임: SELECT Dname ... GROUP BY Dno도 거부된다(부서 이름을 고르고 부서 번호로 묶는 꼴).
 SET client_min_messages TO warning;
 DROP SCHEMA IF EXISTS view_practice_p1 CASCADE;
 CREATE SCHEMA view_practice_p1;
 SET search_path TO view_practice_p1;
 
--- COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.6). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
 -- EMPLOYEE와 DEPARTMENT는 서로 가리키므로 외래 키를 커밋 때 검사한다(DEFERRABLE INITIALLY DEFERRED).
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -69,7 +69,7 @@ INSERT INTO WORKS_ON VALUES ('123456789',1,32.5),('123456789',2,7.5),('666884444
 INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),('333445555','Theodore','M','1983-10-25','Son'),('333445555','Joy','F','1958-05-03','Spouse'),('987654321','Abner','M','1942-02-28','Spouse'),('123456789','Michael','M','1988-01-04','Son'),('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1-a (슬라이드 p.31 그대로)
+-- 1-a
 CREATE VIEW DEPT_INFO(DeptName, MgrFname, MgrLname, MgrSalary)
 AS SELECT D.Dname, E.Fname, E.Lname, E.Salary
    FROM DEPARTMENT AS D, EMPLOYEE AS E
@@ -81,7 +81,7 @@ DO $$ BEGIN
          = 'Research/Franklin/Wong/40000 Administration/Jennifer/Wallace/43000 Headquarters/James/Borg/55000', '1-a의 세 행';
 END $$;
 
--- 같은 이름의 다른 뷰: 슬라이드 p.6의 DEPT_INFO(Dept_name, No_of_emps, Total_sal)는 이 데이터베이스에 함께 둘 수 없다
+-- 같은 이름의 다른 뷰: 75.뷰 문서의 DEPT_INFO(Dept_name, No_of_emps, Total_sal)는 이 데이터베이스에 함께 둘 수 없다
 DO $$
 DECLARE refused boolean := false;
 BEGIN
@@ -97,7 +97,7 @@ END $$;
 DO $$
 DECLARE k int := 0;
 BEGIN
-  BEGIN   -- 슬라이드 p.32 그대로
+  BEGIN   -- 틀리기 쉬운 판
     EXECUTE 'CREATE VIEW ResearchDept(Name, Supervisor, Salary)
              AS SELECT E.Fname, E.Lname, S,Fname, S,Lname, E.Salary
                 FROM EMPLOYEE AS E, EMPLOYEE AS S
@@ -137,7 +137,7 @@ END $$;
 DO $$
 DECLARE refused boolean := false;
 BEGIN
-  BEGIN   -- 슬라이드 p.33 그대로
+  BEGIN   -- 틀리기 쉬운 판: GROUP BY에 D.Dname이 없다
     EXECUTE 'CREATE VIEW ProjectInfo(Pname, Dname, NumEmployees, TotalHours)
              AS SELECT P.Pname, D.Dname, COUNT(*), SUM(W.Hours)
                 FROM PROJECT AS P, WORKS_ON AS W, DEPARTMENT AS D
@@ -145,7 +145,7 @@ BEGIN
                 GROUP BY P.Pnumber, P.Pname';
   EXCEPTION WHEN grouping_error THEN refused := true;     -- "column d.dname must appear in the GROUP BY clause ..."
   END;
-  ASSERT refused, '1-c의 슬라이드 풀이가 그대로 실행됐다';
+  ASSERT refused, '1-c의 D.Dname 빠진 판이 실행됐다';
 END $$;
 
 CREATE VIEW ProjectInfo(Pname, Dname, NumEmployees, TotalHours)
@@ -164,7 +164,7 @@ END $$;
 DO $$
 DECLARE refused boolean := false;
 BEGIN
-  BEGIN   -- 슬라이드 p.34처럼 같은 이름으로
+  BEGIN   -- 1-c와 같은 이름으로
     EXECUTE 'CREATE VIEW ProjectInfo(Pname, Dname, NumEmployees, TotalHours)
              AS SELECT P.Pname, D.Dname, COUNT(*), SUM(W.Hours)
                 FROM PROJECT AS P, WORKS_ON AS W, DEPARTMENT AS D

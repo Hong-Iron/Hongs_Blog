@@ -24,7 +24,7 @@ permalink: "/studies/data-science/code/13_apriori-ladder_p4/"
 
 문서: 4.연습문제/13.Apriori 예제 사다리
 문제 2: ABC, AB, AC, BC, ABCD (min_sup 3)
-문제 3: 3-1 p.24 연습 1 (min_sup 2) — 13_apriori_impl.py와 같은 결과를 여기서도 계산한다
+문제 3: 거래 9개 (min_sup 2) — 13_apriori_impl.py와 같은 결과를 여기서도 계산한다
 문제 4: 영수증 5장 (맥주·견과·기저귀 / 맥주·커피·기저귀 / 맥주·기저귀·달걀 / 견과·달걀·우유 / 견과·커피·기저귀·달걀·우유),
         min_sup 2, 가장 긴 빈발 집합에서 min_conf 60% 규칙
 Apriori 구현은 3.개념집/13_apriori_impl.py에서 필요한 부분을 복사했다.

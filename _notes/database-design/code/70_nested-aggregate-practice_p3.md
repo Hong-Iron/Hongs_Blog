@@ -23,17 +23,16 @@ permalink: "/studies/database-design/code/70_nested-aggregate-practice_p3/"
 """중첩 질의·집계 연습 p3: 평균 급여가 30000을 넘는 부서의 이름과 직원 수 (SQLite).
 
 문서: 70.중첩 질의·집계 연습의 문제 p3
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.36 (연습 3), 풀이 10-11-SQL-Solutions p.26
-확인: 풀이의 질의(GROUP BY E.Dno, SELECT Dname)는 SQLite에서 Research 4, Administration 3, Headquarters 1을 낸다.
-      묶는 열에 Dname을 더한 판도 같다. PostgreSQL에서는 풀이의 질의가 오류다(p3.sql).
+확인: E.Dno로만 묶은 질의(SELECT Dname)는 SQLite에서 Research 4, Administration 3, Headquarters 1을 낸다.
+      묶는 열에 Dname을 더한 판도 같다. PostgreSQL에서는 그 질의가 오류다(p3.sql).
       변형(문턱 32000)은 Research 4, Headquarters 1.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - WORKS_ON.Hours에는 NOT NULL을 걸지 않았다. 상태에 (888665555, 20, NULL)이 있다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -127,7 +126,7 @@ def main():
                HAVING AVG(E.Salary) > 30000"""
     want = [("Administration", 3), ("Headquarters", 1), ("Research", 4)]
     assert sorted(rows(c, slide)) == want
-    print("[OK] 풀이(SQLite): Research 4, Administration 3, Headquarters 1")
+    print("[OK] E.Dno로만 묶은 판(SQLite): Research 4, Administration 3, Headquarters 1")
 
     avg = sorted(rows(c, "SELECT Dno, COUNT(*), AVG(Salary) FROM EMPLOYEE GROUP BY Dno"), reverse=True)
     assert avg == [(5, 4, 33250.0), (4, 3, 31000.0), (1, 1, 55000.0)]

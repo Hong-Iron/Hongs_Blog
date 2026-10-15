@@ -20,12 +20,11 @@ permalink: "/studies/database-design/code/70_complex-retrieval-practice_p2/"
 [복잡한 검색 연습](/Hongs_Blog/studies/database-design/complex-retrieval-practice/) 문서의 문제 2 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""복잡한 검색 연습 p2: 연습 2-1, 2-2 (SQLite, UNIVERSITY).
+"""복잡한 검색 연습 p2: Q2-1, Q2-2 (SQLite, UNIVERSITY).
 
 문서: 70.복잡한 검색 연습의 문제 p2 (그리고 이산수학 03.술어와 한정기호의 과목별 관점 카드)
-출처: 데이터베이스 설계 12주차 슬라이드 p.16~17, 풀이 p.3~6
 확인:
-  Q2-1. 풀이에 적힌 NOT EXIST는 구문 오류다. NOT EXISTS로 고치면 0행, 조인과 묶기로 쓴 판도 0행.
+  Q2-1. S가 빠진 NOT EXIST는 구문 오류다. NOT EXISTS로 고치면 0행, 조인과 묶기로 쓴 판도 0행.
   Q2-2. 두 판 모두 (Smith, CS).
   성적이 하나도 없는 학생 Kim을 넣으면 NOT EXISTS 판은 Kim을 뽑고, 조인과 묶기 판은 뽑지 않는다.
   성적이 있어야 한다는 조건(EXISTS)을 더하면 두 판이 다시 같아진다.
@@ -45,7 +44,7 @@ def fails(c, sql):
     return None
 
 
-# UNIVERSITY 스키마와 상태 (Elmasri 그림 1.2, 슬라이드 12 p.16~17).
+# UNIVERSITY 스키마와 상태 (Elmasri 그림 1.2).
 UNIV_DDL = """
 CREATE TABLE STUDENT (Name VARCHAR(20) NOT NULL, Student_number INT NOT NULL, Class INT, Major VARCHAR(4),
   PRIMARY KEY (Student_number));
@@ -97,7 +96,7 @@ HAVING SUM(CASE WHEN G.Grade OP 'A' THEN 1 ELSE 0 END) = 0"""
 def main():
     c = make_univ()
 
-    # 풀이에 적힌 그대로: NOT EXIST
+    # 틀리기 쉬운 판: NOT EXIST
     err = fails(c, NE.replace("NOT EXISTS", "NOT EXIST").replace("OP", "<>"))
     assert err and "syntax error" in err
     print("[OK] NOT EXIST:", err)

@@ -20,23 +20,22 @@ permalink: "/studies/database-design/code/70_complex-retrieval-practice_p1/"
 [복잡한 검색 연습](/Hongs_Blog/studies/database-design/complex-retrieval-practice/) 문서의 문제 1 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""복잡한 검색 연습 p1: 연습 1-1, 1-2 (SQLite).
+"""복잡한 검색 연습 p1: Q1-1, Q1-2 (SQLite).
 
 문서: 70.복잡한 검색 연습의 문제 p1
-출처: 데이터베이스 설계 12주차 슬라이드 p.14~15, 풀이 p.1~2
 확인:
-  Q1-1. 풀이의 질의는 Research 4, Administration 3, Headquarters 1 (평균 33250, 31000, 55000).
-  Q1-2. 풀이의 질의(Q1-1의 WHERE에 Sex = 'M'만 더함)는 2행(Research 3, Headquarters 1)이다.
-        풀이에 그려진 결과는 3행(3, 1, 1)이고, 이것은 평균을 전 직원으로 내는 중첩 질의의 결과다.
+  Q1-1. 답의 질의는 Research 4, Administration 3, Headquarters 1 (평균 33250, 31000, 55000).
+  Q1-2. Q1-1의 WHERE에 Sex = 'M'만 더한 질의는 2행(Research 3, Headquarters 1)이다.
+        맞는 답은 3행(3, 1, 1)이고, 평균을 전 직원으로 내는 중첩 질의가 이 답을 낸다.
         "남자이고 급여가 30000을 넘는 직원 수"로 읽으면 Research 2, Headquarters 1.
-PostgreSQL에서는 두 풀이 모두 GROUP BY Dno에 SELECT Dname이라 오류다(p1.sql).
+GROUP BY Dno에 SELECT Dname으로 쓰면 PostgreSQL에서는 오류다(p1.sql).
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - WORKS_ON.Hours에는 NOT NULL을 걸지 않았다. 상태에 (888665555, 20, NULL)이 있다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -138,7 +137,7 @@ def main():
     assert sorted(rows(c, q12_slide)) == [("Headquarters", 1), ("Research", 3)]
     male = with_avg.replace("WHERE Dno = Dnumber", "WHERE Dno = Dnumber AND Sex = 'M'")
     assert sorted(rows(c, male)) == [("Administration", 1, 25000.0), ("Headquarters", 1, 55000.0), ("Research", 3, 36000.0)]
-    print("[OK] Q1-2 풀이의 질의: 2행. 남자만의 평균은 36000, 25000, 55000이라 Administration이 빠진다")
+    print("[OK] Q1-2 Sex = 'M'만 더한 질의: 2행. 남자만의 평균은 36000, 25000, 55000이라 Administration이 빠진다")
 
     q12_nested = """SELECT Dname, COUNT(*) AS Number_of_employees
                     FROM EMPLOYEE, DEPARTMENT
@@ -146,7 +145,7 @@ def main():
                       AND Dno IN (SELECT Dno FROM EMPLOYEE GROUP BY Dno HAVING AVG(Salary) > 30000)
                     GROUP BY Dno, Dname"""
     assert sorted(rows(c, q12_nested)) == [("Administration", 1), ("Headquarters", 1), ("Research", 3)]
-    print("[OK] Q1-2 중첩 질의: 3행 (Research 3, Administration 1, Headquarters 1) = 풀이에 그려진 표")
+    print("[OK] Q1-2 중첩 질의: 3행 (Research 3, Administration 1, Headquarters 1) = 맞는 답")
 
     q12_other = """SELECT Dname, COUNT(*) FROM EMPLOYEE, DEPARTMENT
                    WHERE Dno = Dnumber AND Sex = 'M' AND Salary > 30000 GROUP BY Dno, Dname"""

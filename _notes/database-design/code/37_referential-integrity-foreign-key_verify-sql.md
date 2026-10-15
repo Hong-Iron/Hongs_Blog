@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/37_referential-integrity-foreign-key_v
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 문서: 37.참조 무결성 제약과 외래 키 (PostgreSQL 16에서 실행. SQLite와 동작이 다른 곳)
--- 출처: 데이터베이스 설계 6-2 슬라이드 p.23~25 (외래 키의 두 조건)
+-- 출처: Elmasri & Navathe, Fundamentals of Database Systems 5장 (외래 키의 두 조건)
 -- 확인하는 것:
 --   1. 조건 2: 외래 키 값은 상대 기본 키에 있거나 NULL이어야 한다. 없는 값은 foreign_key_violation.
 --   2. 가리킴을 받는 튜플을 지우면 foreign_key_violation (참조 동작을 적지 않았을 때).

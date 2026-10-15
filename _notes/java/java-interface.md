@@ -34,7 +34,7 @@ permalink: "/studies/java/java-interface/"
 
 ## 예시로 보기
 
-`main`이 `Television` 클래스를 직접 쓰면, 켜는 대상을 조명으로 바꿀 때 `main` 안의 타입 이름을 전부 찾아 고쳐야 한다. 쓰는 쪽이 "켠다, 끈다"라는 버튼 이름만 알고 있으면 이 수고가 사라진다[^1].
+`main`이 `Television` 클래스를 직접 쓰면, 켜는 대상을 조명으로 바꿀 때 `main` 안의 타입 이름을 전부 찾아 고쳐야 한다. 쓰는 쪽이 "켠다, 끈다"라는 버튼 이름만 알고 있으면 이 수고가 사라진다.
 
 버튼 목록을 먼저 적는다. 몸통 `{ }` 없이 이름만 있다.
 
@@ -63,7 +63,7 @@ class Lights implements RemoteControl {
 }
 ```
 
-쓰는 쪽은 `RemoteControl` 타입 변수 하나만 둔다[^2].
+쓰는 쪽은 `RemoteControl` 타입 변수 하나만 둔다.
 
 ```java
 RemoteControl rc;
@@ -87,7 +87,7 @@ Turn on lights
 
 `rc.turnOn();`은 두 번 다 똑같이 썼는데 출력이 다르다. 변수에 무엇이 들어 있는지가 실행될 메서드를 정한다.
 
-여기서 버튼 목록 `RemoteControl`을 인터페이스라고 부른다. 목록의 버튼을 채운 `Television`, `Lights`는 구현 클래스이고, 그 클래스로 만든 객체는 구현 객체다. 몸통 없이 이름만 적은 `turnOn()`은 추상 메서드다[^3].
+여기서 버튼 목록 `RemoteControl`을 인터페이스라고 부른다. 목록의 버튼을 채운 `Television`, `Lights`는 구현 클래스이고, 그 클래스로 만든 객체는 구현 객체다. 몸통 없이 이름만 적은 `turnOn()`은 추상 메서드다.
 
 ```mermaid
 classDiagram
@@ -112,7 +112,7 @@ classDiagram
     RemoteControl <|.. Lights : implements
 ```
 
-`Main`에서 나가는 화살표는 `RemoteControl`에서 멈춘다. `Main`은 `Television`도 `Lights`도 모른다[^s1].
+`Main`에서 나가는 화살표는 `RemoteControl`에서 멈춘다. `Main`은 `Television`도 `Lights`도 모른다.
 
 비유가 틀어지는 곳이 하나 있다. 진짜 리모컨은 손에 잡히는 물건이지만 인터페이스는 객체로 만들 수 없다. 인터페이스는 버튼 목록이 적힌 종이에 가깝다.
 
@@ -124,18 +124,18 @@ classDiagram
 
 ## 정의
 
-인터페이스는 두 객체를 이어 주는 연결 고리다. 객체 A는 인터페이스에 적힌 메서드만 부르고, 그 호출을 실제로 처리하는 일은 인터페이스 뒤에 있는 객체 B가 한다. B를 C로 바꿔도 A는 신경 쓸 것이 없다[^1].
+인터페이스는 두 객체를 이어 주는 연결 고리다. 객체 A는 인터페이스에 적힌 메서드만 부르고, 그 호출을 실제로 처리하는 일은 인터페이스 뒤에 있는 객체 B가 한다. B를 C로 바꿔도 A는 신경 쓸 것이 없다.
 
 ### 선언
 
-`class` 자리에 `interface`를 쓴다. 접근 제한자는 클래스와 같다. `public`을 붙이면 어느 패키지에서나 쓰고, 아무것도 안 붙이면 같은 패키지 안에서만 쓴다[^4].
+`class` 자리에 `interface`를 쓴다. 접근 제한자는 클래스와 같다. `public`을 붙이면 어느 패키지에서나 쓰고, 아무것도 안 붙이면 같은 패키지 안에서만 쓴다.
 
 ```java
 interface RemoteControl { ... }          // 같은 패키지 안에서만
 public interface RemoteControl { ... }   // 어디서나
 ```
 
-중괄호 안에 둘 수 있는 것은 여섯 가지다[^4].
+중괄호 안에 둘 수 있는 것은 여섯 가지다.
 
 | 넣을 수 있는 것 | 다루는 문서 |
 |---|---|
@@ -147,7 +147,7 @@ public interface RemoteControl { ... }   // 어디서나
 
 ### 상수 필드
 
-인터페이스의 필드는 모두 바꿀 수 없는 값(상수)이다. `public`, `static`, `final` 세 키워드를 쓰지 않아도 컴파일할 때 자동으로 붙는다[^5].
+인터페이스의 필드는 모두 바꿀 수 없는 값(상수)이다. `public`, `static`, `final` 세 키워드를 쓰지 않아도 컴파일할 때 자동으로 붙는다.
 
 ```java
 interface RemoteControl {
@@ -163,11 +163,11 @@ System.out.println("Max:" + RemoteControl.MAX_VOLUME);   // Max:10
 - `static`이 붙었으니 객체 없이 `인터페이스이름.상수이름`으로 읽는다.
 - `final`이 붙었으니 값을 바꾸는 줄은 컴파일 오류다. `RemoteControl.MAX_VOLUME = 20;`은 `cannot assign a value to static final variable MAX_VOLUME`으로 막힌다[^s3].
 - 선언하면서 바로 값을 넣어야 한다. `int MAX_VOLUME;`만 쓰면 `= expected` 오류가 난다[^s3].
-- 이름은 대문자로 쓰고, 단어가 여럿이면 밑줄로 잇는 것이 관례다[^5].
+- 이름은 대문자로 쓰고, 단어가 여럿이면 밑줄로 잇는 것이 관례다.
 
 ### 추상 메서드
 
-몸통 없이 선언만 있는 메서드다. `public abstract`를 쓰지 않아도 컴파일할 때 자동으로 붙는다[^3].
+몸통 없이 선언만 있는 메서드다. `public abstract`를 쓰지 않아도 컴파일할 때 자동으로 붙는다.
 
 ```java
 interface RemoteControl {
@@ -175,17 +175,10 @@ interface RemoteControl {
 }
 ```
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 11회 슬라이드 p.13의 코드 `public void turnOn; // public abstract` / 문제점: 메서드 선언에 괄호가 없다. 이대로 컴파일하면 `'(' expected` 오류가 난다. / 수정안: `public void turnOn();` / 근거: JDK 21에서 직접 컴파일해 확인했다. 12회 p.15의 `void run();`은 괄호가 있다.
-
-</div>
-
 
 ### 구현 클래스
 
-클래스 이름 뒤에 `implements 인터페이스이름`을 붙인다. 이 클래스가 인터페이스의 추상 메서드를 모두 다시 정의(오버라이딩)했다는 뜻이다[^6].
+클래스 이름 뒤에 `implements 인터페이스이름`을 붙인다. 이 클래스가 인터페이스의 추상 메서드를 모두 다시 정의(오버라이딩)했다는 뜻이다.
 
 ```java
 public class Television implements RemoteControl {
@@ -198,20 +191,13 @@ public class Television implements RemoteControl {
 
 지켜야 할 것은 두 가지다.
 
-1. 추상 메서드를 하나도 빠뜨리지 않는다. 선언(이름, 매개변수, 리턴 타입)도 똑같아야 한다[^7]. `turnOff()`를 빠뜨리면 `Television is not abstract and does not override abstract method turnOff() in RemoteControl` 오류가 난다[^s3].
-2. 다시 정의할 때 `public`을 붙인다[^3]. 인터페이스 쪽이 `public`이기 때문이다. [메서드 오버라이딩](/Hongs_Blog/studies/java/java-overriding/)에서 접근 범위는 넓힐 수만 있고 좁힐 수 없다. `public`을 빼면 `attempting to assign weaker access privileges; was public` 오류가 난다[^s3].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 11회 슬라이드 p.12~14의 `public class B implement RemoteControl { … }`, `public class Television implement RemoteControl { … }` / 문제점: 키워드는 `implements`다. `implement`로 쓰면 `'{' expected` 오류가 난다. / 수정안: `implements` / 근거: JDK 21에서 직접 컴파일해 확인했다. 같은 p.12의 본문과 12회 p.9, p.15의 코드는 `implements`로 적혀 있다.
-
-</div>
+1. 추상 메서드를 하나도 빠뜨리지 않는다. 선언(이름, 매개변수, 리턴 타입)도 똑같아야 한다. `turnOff()`를 빠뜨리면 `Television is not abstract and does not override abstract method turnOff() in RemoteControl` 오류가 난다[^s3].
+2. 다시 정의할 때 `public`을 붙인다. 인터페이스 쪽이 `public`이기 때문이다. [메서드 오버라이딩](/Hongs_Blog/studies/java/java-overriding/)에서 접근 범위는 넓힐 수만 있고 좁힐 수 없다. `public`을 빼면 `attempting to assign weaker access privileges; was public` 오류가 난다[^s3].
 
 
 ### 변수 선언과 객체 대입
 
-인터페이스도 타입이다. 변수의 타입으로 쓸 수 있고, 참조 타입이라 `null`도 넣을 수 있다. 인터페이스로 객체를 쓰려면 구현 객체를 인터페이스 변수에 넣는다[^2].
+인터페이스도 타입이다. 변수의 타입으로 쓸 수 있고, 참조 타입이라 `null`도 넣을 수 있다. 인터페이스로 객체를 쓰려면 구현 객체를 인터페이스 변수에 넣는다.
 
 ```java
 RemoteControl rc;                      // 선언만
@@ -382,15 +368,7 @@ Turn on lights
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 11회 강의 자료 「Software Project 11. Interface (1)」, p.3~5 (리모컨 그림, 인터페이스의 역할, 객체 B를 C로 바꾸기)
-[^2]: 같은 자료, p.15 (변수 선언과 객체 대입, `RemoteControl rc = new Television();`, `new Lights();`)
-[^3]: 같은 자료, p.13~14 (추상 메서드, `public abstract` 생략, 구현 클래스는 `public`으로 다시 정의)
-[^4]: 같은 자료, p.6~7 (인터페이스 선언, 접근 제한자, 넣을 수 있는 멤버 여섯 가지)
-[^5]: 소프트웨어 프로젝트 12회 강의 자료 「Software Project 12. Interface (2)」, p.3 (상수 필드, `MAX_VOLUME`, `MIN_VOLUME`)
-[^6]: 소프트웨어 프로젝트 11회 강의 자료 「Software Project 11. Interface (1)」, p.12 (`implements` 키워드의 뜻)
-[^7]: 같은 자료, p.8 (구현 객체는 추상 메서드와 선언이 같은 메서드를 가져야 한다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 클래스 관계 그림과 실행 추적 표는 원본에 없다. 슬라이드 p.5, p.14의 그림(객체 A → 인터페이스 → 객체 B·C)을 클래스 그림으로 옮겼다. `Lights`의 몸통과 `turnOff`는 슬라이드 p.3의 "turnon, turnoff", p.15의 `new Lights()`를 근거로 채웠다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 인터페이스에 생성자와 인스턴스 필드를 둘 수 없다는 점과 설계 이유 세 가지는 원본에 없다. 생성자를 넣으면 `<identifier> expected`, 값 없는 필드를 넣으면 `= expected` 오류가 나는 것을 JDK 21에서 직접 컴파일해 확인했다. private 메서드는 Java 9에서 추가되었다(Java Language Specification §9.4).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오류 메시지, null 호출의 결과, 카드 C3·C4는 원본에 없다. JDK 21에서 직접 컴파일하고 실행해 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표준 라이브러리의 예는 원본에 없다. Java SE 21 API 문서의 `java.util.List`, `java.lang.Comparable`, `java.lang.Runnable`(인터페이스), `java.util.ArrayList`, `java.lang.String`(클래스)을 근거로 했다.
+[^s2]: 생성자를 넣으면 `<identifier> expected`, 값 없는 필드를 넣으면 `= expected` 오류가 나는 것을 JDK 21에서 직접 컴파일해 확인했다. private 메서드는 Java 9에서 추가되었다(Java Language Specification §9.4).
+[^s3]: JDK 21에서 직접 컴파일하고 실행해 확인했다.
+[^s4]: Java SE 21 API 문서의 `java.util.List`, `java.lang.Comparable`, `java.lang.Runnable`(인터페이스), `java.util.ArrayList`, `java.lang.String`(클래스)을 근거로 했다.
 {% endraw %}

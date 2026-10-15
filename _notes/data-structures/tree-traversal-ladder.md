@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 전위·중위·후위 순회, 레벨 순서 순회, 순회 결과로 이진 트리 되살리기."
 prev_url: "/studies/data-structures/linked-list-practice/"
@@ -31,7 +31,7 @@ permalink: "/studies/data-structures/tree-traversal-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-슬라이드의 트리다[^1]. a의 자식은 b와 c다. b의 자식은 d와 e다. d의 자식은 g와 h다. e는 오른쪽 자식 i만 있다. c는 왼쪽 자식 f만 있고, f는 오른쪽 자식 j만 있다.
+다음 트리를 본다. a의 자식은 b와 c다. b의 자식은 d와 e다. d의 자식은 g와 h다. e는 오른쪽 자식 i만 있다. c는 왼쪽 자식 f만 있고, f는 오른쪽 자식 j만 있다.
 
 ```mermaid
 flowchart TD
@@ -136,6 +136,5 @@ p의 자식은 q와 r이다. q는 오른쪽 자식 s만 있고, s의 자식은 u
 </div>
 
 
-[^1]: 자료구조 6회 강의 자료 「DS_Week6_Lecture_2024」, p.33 (전위 a b d g h e i c f j), p.37 (중위 g d h b e i a f j c), p.42 (후위 g h d i e b j f c a), p.46 (레벨 순서 a b c d e f g h i j), p.53 (중위와 후위로 되살리기)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 괄호로 묶어 펴는 요령, 문제 2 ~ 4의 트리와 답, 문제 1의 되살리기 풀이의 뒷부분(슬라이드는 첫 가르기까지만 보인다)은 원본에 없다. 모든 답은 문제 코드로 확인했다.
+[^s1]: 모든 답은 문제 코드로 확인했다.
 {% endraw %}

@@ -143,5 +143,5 @@ $$\lim_{n \to \infty}\frac{3n^2 + n}{n^2 + 5}$$를 구한다.
 
 
 [^1]: OpenStax, *Calculus Volume 2*, 5.1절 "Sequences"(수열의 극한, 단조 수렴 정리)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [03_sequence-limits_plot.py](/Hongs_Blog/studies/calculus/code/03_sequence-limits_plot/)로 그렸고, $$(1 + 1/n)^n$$이 $$n \le 40$$에서 증가하고 3 미만임(유리수로 정확히), $$H_{2^k} \ge 1 + k/2$$($$k \le 16$$), $$H_{65536} \ge 9$$를 같은 코드로 확인했다.
+[^s1]: [03_sequence-limits_plot.py](/Hongs_Blog/studies/calculus/code/03_sequence-limits_plot/)로 그렸고, $$(1 + 1/n)^n$$이 $$n \le 40$$에서 증가하고 3 미만임(유리수로 정확히), $$H_{2^k} \ge 1 + k/2$$($$k \le 16$$), $$H_{65536} \ge 9$$를 같은 코드로 확인했다.
 {% endraw %}

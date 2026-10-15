@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Multi-Stage Pipeline", "다단계 파이프라인", "파이프라이닝", "Pipelining", "Pipelined Execution", "슈퍼스칼라", "Superscalar", "낭비되는 사이클", "Wasted Cycles"]
 description: "빨래방에서 한 사람의 빨래가 세탁, 건조, 개기를 모두 끝낼 때까지 다음 사람이 기다리면 기계 대부분이 놀게 된다. 세탁기가 비는 대로 다음 사람이 빨래를 넣으면 같은 시간에 훨씬 많은 빨래가 끝난다. 프로세서도 명령어 하나를 여러 걸음으로 나눠, 앞 명령어가 다음 걸음으로 넘어가…"
@@ -34,9 +34,9 @@ permalink: "/studies/assembly-language/instruction-pipeline/"
 
 ## 예시로 보기
 
-명령어 하나를 처리하는 일은 가져오기, 뜻 알아내기, 실행하기 같은 여러 걸음으로 나뉜다. 슬라이드의 프로세서는 걸음이 여섯이고 S1~S6이라 부른다. 한 걸음에 시계 한 번(1사이클)이 든다.
+명령어 하나를 처리하는 일은 가져오기, 뜻 알아내기, 실행하기 같은 여러 걸음으로 나뉜다. 여기서 보는 프로세서는 걸음이 여섯이고, 각 걸음을 S1~S6이라 부른다. 한 걸음에 시계 한 번(1사이클)이 든다.
 
-**나누지 않고 하나씩.** 명령어 I-1이 S1부터 S6까지 다 지나간 뒤에야 I-2가 S1에 들어간다[^1].
+**나누지 않고 하나씩.** 명령어 I-1이 S1부터 S6까지 다 지나간 뒤에야 I-2가 S1에 들어간다.
 
 ```
 사이클   S1   S2   S3   S4   S5   S6
@@ -53,7 +53,7 @@ permalink: "/studies/assembly-language/instruction-pipeline/"
 
 명령어 2개에 12사이클이 든다. 표의 칸 72개 가운데 12개만 차 있다. 사이클마다 걸음 여섯 중 다섯이 논다.
 
-**파이프라인.** I-1이 S2로 넘어가면 비어 있는 S1에 곧바로 I-2를 넣는다[^2].
+**파이프라인.** I-1이 S2로 넘어가면 비어 있는 S1에 곧바로 I-2를 넣는다.
 
 ```
 사이클   S1   S2   S3   S4   S5   S6
@@ -69,21 +69,21 @@ permalink: "/studies/assembly-language/instruction-pipeline/"
 12사이클이 7사이클로 줄었다. I-1이 끝나는 데 6사이클이 들고, 그 뒤로는 사이클마다 명령어가 하나씩 끝난다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 표 네 장의 사이클 수(12, 7, 11, 10)와 S4·S5·S6 칸, 걸음 수 4~8과 명령어 수 1~29에서 네 식이 흉내 결과와 같음, 카드의 값 — [03_instruction-pipeline_verify.py](/Hongs_Blog/studies/assembly-language/code/03_instruction-pipeline_verify/)</div>
+<div class="callout-title" markdown="span">검증: 본문의 사이클 표 네 개의 사이클 수(12, 7, 11, 10)와 S4·S5·S6 칸, 걸음 수 4~8과 명령어 수 1~29에서 네 식이 흉내 결과와 같음, 카드의 값 — [03_instruction-pipeline_verify.py](/Hongs_Blog/studies/assembly-language/code/03_instruction-pipeline_verify/)</div>
 
 </div>
 
 
 ## 사이클 수
 
-걸음 수를 $$k$$, 명령어 수를 $$n$$이라 한다. 슬라이드는 걸음을 state(또는 stage)라 부른다.
+걸음 수를 $$k$$, 명령어 수를 $$n$$이라 한다. 걸음을 단계(stage)라고도 부른다.
 
-| 방식 | 드는 사이클 수 | 슬라이드의 표 |
+| 방식 | 드는 사이클 수 | 본문 표의 예 |
 |---|---|---|
-| 하나씩 (파이프라인 없음) | $$n \times k$$[^s1] | $$k = 6$$, $$n = 2$$ → 12[^1] |
-| 파이프라인, 모든 걸음이 1사이클 | $$k + (n - 1)$$ | $$k = 6$$, $$n = 2$$ → 7[^2] |
-| 파이프라인, 한 걸음이 2사이클 | $$k + (2n - 1)$$ | $$k = 6$$, $$n = 3$$ → 11[^3] |
-| 슈퍼스칼라, 2사이클짜리 걸음을 두 줄로 | $$k + n$$ | $$k = 6$$, $$n = 4$$ → 10[^4] |
+| 하나씩 (파이프라인 없음) | $$n \times k$$[^s1] | $$k = 6$$, $$n = 2$$ → 12 |
+| 파이프라인, 모든 걸음이 1사이클 | $$k + (n - 1)$$ | $$k = 6$$, $$n = 2$$ → 7 |
+| 파이프라인, 한 걸음이 2사이클 | $$k + (2n - 1)$$ | $$k = 6$$, $$n = 3$$ → 11 |
+| 슈퍼스칼라, 2사이클짜리 걸음을 두 줄로 | $$k + n$$ | $$k = 6$$, $$n = 4$$ → 10 |
 
 둘째 식은 "첫 명령어가 $$k$$사이클, 나머지 $$n - 1$$개가 1사이클씩"이라고 읽는다.
 
@@ -91,7 +91,7 @@ permalink: "/studies/assembly-language/instruction-pipeline/"
 
 ### 한 걸음이 오래 걸리면
 
-실행 걸음 S4가 2사이클을 쓴다고 하자. S4에는 한 번에 한 명령어만 들어가므로, 뒤 명령어는 S4가 빌 때까지 앞에서 기다린다[^3].
+실행 걸음 S4가 2사이클을 쓴다고 하자. S4에는 한 번에 한 명령어만 들어가므로, 뒤 명령어는 S4가 빌 때까지 앞에서 기다린다.
 
 | 명령어 | S4에 있는 사이클 | S5 | S6 (끝나는 사이클) |
 |---|---|---|---|
@@ -103,7 +103,7 @@ permalink: "/studies/assembly-language/instruction-pipeline/"
 
 ### 슈퍼스칼라
 
-느린 걸음 S4를 두 줄(u와 v)로 놓는다. 명령어가 번갈아 두 줄로 들어간다[^4].
+느린 걸음 S4를 두 줄(u와 v)로 놓는다. 명령어가 번갈아 두 줄로 들어간다.
 
 | 명령어 | S4에 있는 사이클 (줄) | S5 | S6 (끝나는 사이클) |
 |---|---|---|---|
@@ -125,7 +125,7 @@ S4 한 줄은 여전히 2사이클을 쓰지만, 두 줄이 한 사이클씩 엇
 </details>
 
 
-빨래방 비유는 "명령어들이 서로 상관없이 흘러간다"는 데까지만 맞다. 실제 명령어는 앞 명령어의 결과를 기다려야 할 때가 있고, 그러면 줄이 더 밀린다. 슬라이드의 표와 식은 그런 기다림이 없다고 놓은 것이다[^s1].
+빨래방 비유는 "명령어들이 서로 상관없이 흘러간다"는 데까지만 맞다. 실제 명령어는 앞 명령어의 결과를 기다려야 할 때가 있고, 그러면 줄이 더 밀린다. 위의 표와 식은 그런 기다림이 없다고 놓은 것이다[^s1].
 
 ## 활용
 
@@ -181,11 +181,7 @@ S4 한 줄은 여전히 2사이클을 쓰지만, 두 줄이 한 사이클씩 엇
 </details>
 
 
-[^1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.2 (Multi-Stage Pipeline: Example of a non-pipelined processor. Many wasted cycles. 12사이클 표)
-[^2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.3 (Pipelined Execution: k + (n – 1), 7사이클 표)
-[^3]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.4 (Wasted Cycles (pipelined): k + (2n – 1), S4에 exe 표시, 11사이클 표)
-[^4]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.5 (Superscalar: Stage S4 has left and right pipelines (u and v), k + n, 10사이클 표)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 빨래방 비유와 그 한계, $$n \times k$$ 식, 명령어 100개의 값, 네 식이 나오는 과정, 카드는 슬라이드에 없다. 슬라이드에는 표 네 장과 식 세 개가 있다. $$n \times k$$는 p.2의 표(12 = 2 × 6)에서 읽었다. 흉내 프로그램으로 표의 칸과 식을 확인했다.
+[^s1]: 흉내 프로그램으로 표의 칸과 식을 확인했다.
 [^k1]: 교재 출판사 강의 슬라이드 "Chapter 4 — The Processor" (Cooper Union 게시본), 슬라이드 1 (MIPS Pipeline: 다섯 단계), https://ee.cooper.edu/~curro/comparch/pipeline/chapter4_pipelining_END_FA11.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 4장 "The Processor"
-[^ks1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "$$n + 4$$에 쉰 사이클과 버린 명령어 수를 더한다"와 카드 C4의 수치는 슬라이드에 없다. 5단계 파이프라인 흉내기([27_mips-pipeline_impl.py](/Hongs_Blog/studies/computer-architecture/code/27_mips-pipeline_impl/))의 예제들에서 이 셈이 맞는 것을 확인했다.
+[^ks1]: 5단계 파이프라인 흉내기([27_mips-pipeline_impl.py](/Hongs_Blog/studies/computer-architecture/code/27_mips-pipeline_impl/))의 예제들에서 이 셈이 맞는 것을 확인했다.
 {% endraw %}

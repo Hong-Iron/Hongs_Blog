@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/31_dbscan_impl/"
 """DBSCAN 구현과 자체 테스트.
 
 문서: 31.DBSCAN (예시, 의사코드, 실행 추적, 카드)
-출처: 데이터 과학 7회 슬라이드 7-2 p.8~13
 정의: 이웃 N(p) = {q : d(p, q) <= Eps} (p 자신 포함). |N(p)| >= MinPts면 핵심점.
       핵심점이 아니지만 어떤 핵심점의 이웃이면 경계점, 둘 다 아니면 잡음.
 주장:

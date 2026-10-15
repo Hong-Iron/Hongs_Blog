@@ -23,12 +23,10 @@ permalink: "/studies/data-structures/code/30_bst-search-insert_impl/"
 /* 이진 탐색 트리의 탐색과 삽입: 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/30.이진 탐색 트리의 탐색과 삽입.md
- * 출처: 자료구조 9주차 슬라이드 p.5~10. 코드는 p.7~9를 컴파일되고 메모리 오류가 없게 고친 것이다.
- *       (p.8은 매개변수 이름과 본문 이름이 달랐고, p.9는 malloc 크기가 틀렸다. 문서의 warning 참고)
  * 실행: cc -std=c11 -Wall -Wextra 30_bst-search-insert_impl.c -o bst && ./bst
  *
  * 확인하는 것
- *   1. 슬라이드 트리(20, 10, 40, 6, 15, 30, 2, 8, 25 순서로 넣음)의 모양과 중위 순회.
+ *   1. 예시 나무(20, 10, 40, 6, 15, 30, 2, 8, 25 순서로 넣음)의 모양과 중위 순회.
  *   2. 문서의 추적 표: 8 찾기, 28 찾기, 35·7·18 넣기에서 들르는 노드와 붙는 자리.
  *   3. 한 번의 찾기·넣기가 들르는 노드 수 <= 높이 + 1 (높이는 간선 수, 빈 트리는 -1).
  *   4. 1, 2, ..., n 순서로 넣으면 한 줄이 되어 높이 n - 1, 넣는 동안 들른 노드 합 n(n - 1)/2.
@@ -53,7 +51,7 @@ typedef struct node {
 static long visited;    /* 찾기와 넣기가 들른 노드 수 */
 static long liveNodes;  /* malloc 횟수 - free 횟수 */
 
-/* 재귀 판 (슬라이드 p.7) */
+/* 재귀 판 */
 treePointer search(treePointer t, int x)
 {
     if (t == NULL) return NULL;            /* 빈자리에 닿았다: 없다 */
@@ -63,7 +61,7 @@ treePointer search(treePointer t, int x)
     return search(t->rightChild, x);
 }
 
-/* 반복 판 (슬라이드 p.8) */
+/* 반복 판 */
 treePointer iterSearch(treePointer t, int x)
 {
     while (t) {
@@ -88,7 +86,7 @@ treePointer modifiedSearch(treePointer t, int x)
     return last;
 }
 
-/* 넣었으면 1, 이미 있는 키라 넣지 않았으면 0 (슬라이드 p.9) */
+/* 넣었으면 1, 이미 있는 키라 넣지 않았으면 0 */
 int insertNode(treePointer *root, int x)
 {
     treePointer temp = modifiedSearch(*root, x);
@@ -182,18 +180,18 @@ int main(void)
 {
     int buf[2048], n;
 
-    /* 1. 슬라이드 트리 */
+    /* 1. 예시 나무 */
     treePointer root = NULL;
     int order[] = {20, 10, 40, 6, 15, 30, 2, 8, 25};
-    for (int i = 0; i < 9; i++) CHECK(insertNode(&root, order[i]) == 1, "슬라이드 키 넣기");
+    for (int i = 0; i < 9; i++) CHECK(insertNode(&root, order[i]) == 1, "예시 키 넣기");
     int wantPre[] = {20, 10, 6, 2, 8, 15, 40, 30, 25};
     int wantIn[] = {2, 6, 8, 10, 15, 20, 25, 30, 40};
     n = 0; preorder(root, buf, &n);
-    CHECK(n == 9 && sameArray(buf, wantPre, 9), "슬라이드 트리의 모양(전위 순회)");
+    CHECK(n == 9 && sameArray(buf, wantPre, 9), "예시 나무의 모양(전위 순회)");
     n = 0; inorder(root, buf, &n);
     CHECK(n == 9 && sameArray(buf, wantIn, 9), "중위 순회가 오름차순");
-    CHECK(height(root) == 3, "슬라이드 트리의 높이는 3(간선 수)");
-    printf("[OK] 슬라이드 트리: 전위 20 10 6 2 8 15 40 30 25, 중위는 오름차순, 높이 3\n");
+    CHECK(height(root) == 3, "예시 나무의 높이는 3(간선 수)");
+    printf("[OK] 예시 나무: 전위 20 10 6 2 8 15 40 30 25, 중위는 오름차순, 높이 3\n");
 
     /* 2. 추적 표 */
     visited = 0;

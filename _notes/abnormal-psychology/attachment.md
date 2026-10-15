@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Attachment", "애착 이론", "attachment theory", "볼비", "Bowlby", "할로", "Harlow", "접촉 위안", "contact comfort", "에인스워스", "Ainsworth", "낯선 상황 절차", "strange situation procedure", "안정 애착", "secure attachment", "회피 애착", "avoidant attachment", "불안 애착", "anxious attachment", "저항 애착", "불안정 애착", "insecure attachment", "안전기지", "secure base"]
 description: "아기와 주 양육자 사이에 생기는 오래가는 정서적 끈이다. 겁날 때 달려갈 수 있는 품(안전한 피난처)이자, 마음 놓고 세상을 탐색하러 나갔다 돌아올 수 있는 기지(안전기지)다. 양육자가 일관되고 민감하게 반응하면 안정 애착이, 무관심하거나 오락가락하면 불안정 애착이 생긴다. 어린 …"
@@ -33,7 +33,7 @@ permalink: "/studies/abnormal-psychology/attachment/"
 
 ## 예시로 보기
 
-에인스워스의 낯선 상황 절차에서 엄마가 방을 잠깐 나갔다 돌아올 때 세 아이의 반응이 다르다[^1][^s1].
+에인스워스의 낯선 상황 절차에서 엄마가 방을 잠깐 나갔다 돌아올 때 세 아이의 반응이 다르다[^s1].
 
 | 아이 | 엄마가 나갈 때 | 엄마가 돌아올 때 | 애착 유형 |
 |---|---|---|---|
@@ -45,7 +45,7 @@ BQ에게 엄마는 돌아오면 진정할 수 있는 안전기지다. BR은 매�
 
 ## 정의
 
-애착은 주 양육자와 아동 사이의 지속적인 사회적·정서적 관계다(Zimbardo, Weber, Johnson, 2003)[^1]. 슬라이드의 그림은 애착의 네 모습으로 근접성 유지(곁에 있으려 함), 안전한 피난처, 안전기지, 분리 고통을 든다[^1].
+애착은 주 양육자와 아동 사이의 지속적인 사회적·정서적 관계다(Zimbardo, Weber, Johnson, 2003). 애착은 네 모습으로 드러난다. 근접성 유지(곁에 있으려 함), 안전한 피난처, 안전기지, 분리 고통이다.
 
 ```mermaid
 flowchart LR
@@ -57,15 +57,15 @@ flowchart LR
   S["양육자와 떨어짐"] --> D["분리 고통"]
 ```
 
-위의 고리는 아이가 양육자 곁을 떠났다가 돌아오는 한 바퀴다. 아래 줄은 그 기지와 떨어질 때 드는 괴로움이다[^s3].
+위의 고리는 아이가 양육자 곁을 떠났다가 돌아오는 한 바퀴다. 아래 줄은 그 기지와 떨어질 때 드는 괴로움이다.
 
-### 주요 연구[^1]
+### 주요 연구
 
 - **볼비(Bowlby):** 2차 세계대전 뒤 시설과 병원에 수용된 아동을 관찰해 애착 개념을 세웠다.
 - **할로(Harlow):** 새끼 원숭이 실험에서 새끼는 우유를 주는 철사 엄마보다 헝겊 엄마에게 매달렸다. 애착의 바탕이 먹이가 아니라 접촉 위안(contact comfort)임을 보였다.
 - **에인스워스(Ainsworth):** 낯선 상황 절차로 애착을 실험적으로 재서 유형을 나눴다.
 
-### 애착 유형[^2]
+### 애착 유형
 
 | 유형 | 모습 | 양육 |
 |---|---|---|
@@ -78,7 +78,7 @@ flowchart LR
 ## 연결
 
 - 애착 대상과의 분리가 핵심인 장애: [분리불안장애](/Hongs_Blog/studies/abnormal-psychology/separation-anxiety-disorder/)
-- 애착 형성 자체가 실패한 장애: 반응성 애착장애, 탈억제성 사회적 유대감 장애(6회)
+- 애착 형성 자체가 실패한 장애: [반응성 애착장애](/Hongs_Blog/studies/abnormal-psychology/reactive-attachment-disorder/), [탈억제성 사회적 유대감 장애](/Hongs_Blog/studies/abnormal-psychology/dsed/)
 - 정신분석의 대상관계이론과 이어진다: [정신분석적 입장](/Hongs_Blog/studies/abnormal-psychology/psychoanalytic-perspective/)
 
 ## 확인 문제
@@ -104,9 +104,6 @@ flowchart LR
 
 </details>
 
-[^1]: 이상 심리학 4회 강의 자료 「불안장애」, p.7 (애착의 정의, 주요 연구, 네 요소 그림 Proximity Maintenance·Safe Haven·Secure Base·Separation Distress, 할로의 원숭이 사진)
-[^2]: 이상 심리학 4회 강의 자료 「불안장애」, p.8
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 아이의 사례는 낯선 상황 절차에서 각 유형이 보이는 전형적 반응을 옮긴 것이다. 슬라이드의 "불안 애착"은 에인스워스의 저항(양가) 애착에 해당한다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 혼란 애착은 Main과 Solomon(1990)이 더한 유형이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 요약과 '정의'의 네 요소(슬라이드 p.7 그림의 Proximity Maintenance, Safe Haven, Secure Base, Separation Distress)를 근거로 그렸다.
+[^s1]: 세 아이의 사례는 낯선 상황 절차에서 각 유형이 보이는 전형적 반응을 옮긴 것이다. 이 문서의 "불안 애착"은 에인스워스의 저항(양가) 애착에 해당한다.
+[^s2]: 혼란 애착은 Main과 Solomon(1990)이 더한 유형이다.
 {% endraw %}

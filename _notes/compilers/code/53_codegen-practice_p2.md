@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/53_codegen-practice_p2/"
 [코드 생성 연습](/Hongs_Blog/studies/compilers/codegen-practice/) 문서의 문제 2 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 코드 생성 연습 문제 2: if-else를 수업용 MIPS 명령으로.
+# 코드 생성 연습 문제 2: if-else를 단순화한 MIPS 명령으로.
 # 실행: python3 53_codegen-practice_p2.py  (표준 라이브러리만 쓴다)
 # 흉내기(Machine)는 51_mips-instructions_impl.py의 것을 복사했다.
 import re
@@ -81,7 +81,7 @@ class Machine:
                 self.pc = self.labels[a[2]]
         elif op == "jr":
             self.pc = R[a[0]]
-        elif op == "jal":                    # 슬라이드에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
+        elif op == "jal":                    # 문서의 명령 표에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
             R["$ra"] = self.pc
             self.pc = self.labels[a[0]]
         else:

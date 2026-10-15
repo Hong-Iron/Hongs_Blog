@@ -26,7 +26,7 @@ permalink: "/studies/data-structures/code/25_expression-tree_verify/"
 
 수식 트리: 잎은 피연산자 이름(문자열), 안쪽 노드는 (연산자, 왼쪽, 오른쪽) 튜플.
 값은 분수(Fraction)로 정확히 계산한다.
-우선순위는 슬라이드 표의 숫자를 쓴다: * / 는 13, + - 는 12. 같은 우선순위는 왼쪽부터 계산한다.
+우선순위는 문서의 우선순위 표 숫자를 쓴다: * / 는 13, + - 는 12. 같은 우선순위는 왼쪽부터 계산한다.
 """
 import random
 from fractions import Fraction
@@ -193,7 +193,7 @@ def random_tree(rng, n_ops, names):
 
 
 if __name__ == "__main__":
-    # 1. 3주차 p.95: A / B - C, A = 6, B = 3, C = 2
+    # 1. 문서 예시: A / B - C, A = 6, B = 3, C = 2
     env = {"A": 6, "B": 3, "C": 2}
     t1 = ("-", ("/", "A", "B"), "C")          # (A / B) - C
     t2 = ("/", "A", ("-", "B", "C"))          # A / (B - C)
@@ -207,11 +207,11 @@ if __name__ == "__main__":
     assert infix_min(t1) == ["A", "/", "B", "-", "C"]
     assert infix_min(t2) == ["A", "/", "(", "B", "-", "C", ")"]
 
-    # 2. 6주차 p.34, 39, 43의 수식 트리
+    # 2. 문서의 수식 트리와 세 표기
     T = ("/", ("*", ("+", "a", "b"), ("-", "c", "d")), ("+", "e", "f"))
-    assert " ".join(prefix(T)) == "/ * + a b - c d + e f"            # p.34
-    assert " ".join(infix_plain(T)) == "a + b * c - d / e + f"        # p.39
-    assert " ".join(postfix(T)) == "a b + c d - * e f + /"            # p.43
+    assert " ".join(prefix(T)) == "/ * + a b - c d + e f"            # 전위
+    assert " ".join(infix_plain(T)) == "a + b * c - d / e + f"        # 중위(괄호 없음)
+    assert " ".join(postfix(T)) == "a b + c d - * e f + /"            # 후위
     assert "".join(infix_full(T)) == "(((a+b)*(c-d))/(e+f))"
     assert " ".join(infix_min(T)) == "( a + b ) * ( c - d ) / ( e + f )"
     env = {"a": 8, "b": 4, "c": 6, "d": 3, "e": 2, "f": 4}

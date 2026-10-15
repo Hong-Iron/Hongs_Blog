@@ -23,9 +23,8 @@ permalink: "/studies/data-science/code/38_spectral-clustering_impl/"
 """그래프 분할과 스펙트럼 군집화 - 구현과 자체 테스트 (고유분해는 야코비 방법으로 직접 계산).
 
 문서: 37.그래프 분할과 정규화 컷 (예시, 정의, 카드), 38.스펙트럼 군집화 (예시, 정의, 증명, 카드)
-출처: 데이터 과학 10회 슬라이드 10-2 p.11~18
 주장:
-  1. 슬라이드 p.15의 4꼭짓점 그래프(1-2, 1-3, 2-3, 2-4, 3-4): D = diag(2, 3, 3, 2), L = D - A가 슬라이드와 같다.
+  1. 문서 예시의 4꼭짓점 그래프(1-2, 1-3, 2-3, 2-4, 3-4): D = diag(2, 3, 3, 2), L = D - A가 문서의 행렬과 같다.
   2. f_i = ±1이면 fᵀLf = Σ_{i<j} w_ij (f_i - f_j)² = 4·cut(A, B). (모든 나눔에서 확인)
   3. L의 가장 작은 고윳값은 0이고 고유벡터는 모두 같은 값(나누지 않음). 둘째로 작은 고유벡터의 부호로 나눈다.
   4. 삼각형 둘을 다리 하나로 이은 그래프: 둘째 고유벡터의 부호가 두 삼각형을 가른다. 컷 1, NCut = 1/7 + 1/7.
@@ -92,7 +91,7 @@ def main():
     W, D, L = laplacian(4, [(0, 1, 1), (0, 2, 1), (1, 2, 1), (1, 3, 1), (2, 3, 1)])
     assert D == [2, 3, 3, 2]
     assert L == [[2, -1, -1, 0], [-1, 3, -1, -1], [-1, -1, 3, -1], [0, -1, -1, 2]]
-    print("[OK] p.15: D = diag(2,3,3,2), L = D - A")
+    print("[OK] 4꼭짓점 그래프: D = diag(2,3,3,2), L = D - A")
     for f in product((1, -1), repeat=4):
         A = {i for i in range(4) if f[i] == 1}
         q = sum(f[i] * L[i][j] * f[j] for i in range(4) for j in range(4))
@@ -100,7 +99,7 @@ def main():
     print("[OK] 모든 ±1 나눔에서 fᵀLf = 4·cut")
     vals, vecs = jacobi(L)
     assert abs(vals[0]) < 1e-9 and max(vecs[0]) - min(vecs[0]) < 1e-9
-    print("     p.15 그래프 L의 고윳값:", [round(v, 3) for v in vals], "둘째 고유벡터:", [round(x, 3) for x in vecs[1]])
+    print("     4꼭짓점 그래프 L의 고윳값:", [round(v, 3) for v in vals], "둘째 고유벡터:", [round(x, 3) for x in vecs[1]])
 
     # 카드 C2: 경로 1-2-3, f = (1, 1, -1)
     W2, D2, L2 = laplacian(3, [(0, 1, 1), (1, 2, 1)])

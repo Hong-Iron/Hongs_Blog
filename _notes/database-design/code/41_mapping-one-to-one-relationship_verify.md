@@ -23,23 +23,22 @@ permalink: "/studies/database-design/code/41_mapping-one-to-one-relationship_ver
 """일대일 관계 타입의 사상 검증.
 
 문서: 41.일대일 관계 타입의 사상 (예시, 세 방법, 카드 C1~C4)
-출처: 데이터베이스 설계 7 슬라이드 p.16~20, 9 슬라이드 p.10, 6-2 p.21 (상태)
 실행: python3 41_mapping-one-to-one-relationship_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 MANAGES(직원 1 : 부서 1. 부서는 전체 참여, 직원은 부분 참여)를 세 방법으로 옮겨 COMPANY 상태로 견준다.
 주장:
-  1. 외래 키 방법, 전체 참여인 DEPARTMENT에 넣기(7 p.17): Mgr_ssn 3칸이 모두 차 있다. NULL 0개.
-  2. 외래 키 방법, 부분 참여인 EMPLOYEE에 넣기(7 p.18): D_managed가 8명 가운데 5명에게 NULL이다.
+  1. 외래 키 방법, 전체 참여인 DEPARTMENT에 넣기: Mgr_ssn 3칸이 모두 차 있다. NULL 0개.
+  2. 외래 키 방법, 부분 참여인 EMPLOYEE에 넣기: D_managed가 8명 가운데 5명에게 NULL이다.
      Mgr_start_date까지 옮기면 NULL은 10칸이다.
-  3. 합친 릴레이션(7 p.19): 직원 8명, 부서 3개라 튜플 수가 다르다. 한 표로 합치면 8행 가운데 5행의 부서 열이 NULL이고,
+  3. 합친 릴레이션: 직원 8명, 부서 3개라 튜플 수가 다르다. 한 표로 합치면 8행 가운데 5행의 부서 열이 NULL이고,
      Dnumber는 NULL이 있어 기본 키가 못 된다. 양쪽이 전체 참여일 때만 쓸 수 있다.
-  4. 교차 참조(7 p.20): MANAGES(Essn, Dno)는 3행이고 Essn도 Dno도 혼자 안 겹친다(둘 중 하나가 기본 키).
+  4. 교차 참조: MANAGES(Essn, Dno)는 3행이고 Essn도 Dno도 혼자 안 겹친다(둘 중 하나가 기본 키).
      부서 이름과 관리자 성을 함께 보려면 표 셋을 이어야 한다. 외래 키 방법은 둘이면 된다. 결과는 같다.
   5. 외래 키만으로는 "한 직원이 많아야 한 부서를 관리한다"가 지켜지지 않는다. Mgr_ssn에 UNIQUE가 없으면
      Wong을 관리자로 하는 부서를 하나 더 넣을 수 있다. UNIQUE를 걸면 거부된다.
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태. 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -97,7 +96,7 @@ def main():
     assert c.execute("SELECT COUNT(*), COUNT(Mgr_ssn) FROM DEPARTMENT").fetchone() == (3, 3)
     print("[OK] DEPARTMENT.Mgr_ssn: 3칸 모두 값이 있다")
 
-    # 2. S = EMPLOYEE (7 p.18의 D_managed)
+    # 2. S = EMPLOYEE (D_managed)
     c.executescript("""
       CREATE TABLE EMPLOYEE2 AS
         SELECT E.Ssn, E.Lname, D.Dnumber AS D_managed, D.Mgr_start_date

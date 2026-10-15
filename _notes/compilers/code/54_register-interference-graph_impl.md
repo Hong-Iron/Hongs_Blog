@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/54_register-interference-graph_impl/"
 ```python
 # 레지스터 간섭 그래프(RIG) 만들기.
 # 실행: python3 54_register-interference-graph_impl.py  (표준 라이브러리만 쓴다)
-# 슬라이드 16회 p.4~8의 생존 변수 집합과 간섭 그래프를 그대로 다시 만든다.
+# 문서의 생존 변수 집합과 간섭 그래프를 그대로 다시 만든다.
 from itertools import combinations
 
 
@@ -86,16 +86,16 @@ BLOCKS = {"B0": ["b = 3", "c = 1", "f = 0"],
           "B3": ["c = d + e", "e = e - 1"],
           "B4": ["b = f + c"]}
 SUCC = {"B0": ["B1"], "B1": ["B2", "B3"], "B2": ["B4"], "B3": ["B4"]}
-BOUNDARY = {"B4": {"b"}}              # 다음 블록의 시작 집합 {b} (p.6)
+BOUNDARY = {"B4": {"b"}}              # 다음 블록의 시작 집합 {b}
 
 if __name__ == "__main__":
     S = lambda s: set(s.split())
-    # 복습 표 (p.4~5): {a, b} d = a + b {b, d}. a와 d는 같은 집합에 함께 든 적이 없다
+    # 한 줄 예: {a, b} d = a + b {b, d}. a와 d는 같은 집합에 함께 든 적이 없다
     pts = block_points(["d = a + b"], {"b", "d"})
     assert pts == [{"a", "b"}, {"b", "d"}]
     assert not any({"a", "d"} <= p for p in pts)
 
-    # p.6: 전역 생존 변수 분석
+    # 1걸음: 전역 생존 변수 분석
     P = all_points(BLOCKS, SUCC, BOUNDARY)
     assert P["B0"] == [S(""), S("b"), S("b c"), S("b c f")]
     assert P["B1"] == [S("b c f"), S("a c f"), S("c d f"), S("c d e f")]
@@ -105,14 +105,14 @@ if __name__ == "__main__":
     # 갈림길 앞 블록의 끝 = 두 다음 블록 시작의 합집합
     assert P["B1"][-1] == P["B2"][0] | P["B3"][0]
 
-    # p.7: 간섭 그래프. 그림의 간선 10개
+    # 2걸음: 간섭 그래프. 문서 그림의 간선 10개
     edges, adj = build_rig(P, "abcdef")
     figure = {("a", "c"), ("a", "f"), ("b", "c"), ("b", "f"), ("c", "d"),
               ("c", "e"), ("c", "f"), ("d", "e"), ("d", "f"), ("e", "f")}
     assert edges == figure and len(edges) == 10
-    # p.8: b와 d는 간선이 없고(같이 써도 된다), b와 c는 간선이 있다
+    # b와 d는 간선이 없고(같이 써도 된다), b와 c는 간선이 있다
     assert "d" not in adj["b"] and "c" in adj["b"]
-    # 이웃 수. p.12는 "a has 3 neighbors"라고 적었지만 a의 이웃은 c, f 둘이다
+    # 이웃 수. a의 이웃은 c, f 둘이다 (셋으로 세기 쉬운 곳)
     deg = {v: len(adj[v]) for v in adj}
     assert deg == {"a": 2, "b": 2, "c": 5, "d": 3, "e": 3, "f": 5}
     assert adj["a"] == {"c", "f"}

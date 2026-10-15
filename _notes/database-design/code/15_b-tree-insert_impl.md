@@ -23,16 +23,16 @@ permalink: "/studies/database-design/code/15_b-tree-insert_impl/"
 """B-트리 삽입 구현과 검증 (노드 쪼개기 포함).
 
 문서: 14.B-트리 노드 쪼개기, 15.B-트리 삽입, 연습 15.B-트리 삽입 예제 사다리
-출처: 03.3-2_B-tree-insertion.pdf p.17~31, 04.4-1_B-tree-deletion.pdf p.5~11, 04.4_B-tree-solutions.pdf p.2~3
-인덱스: 슬라이드 의사코드(CLRS)는 1부터 센다(x.key_1, x.c_1). 이 코드는 0부터 센다.
+출처: Cormen 외, Introduction to Algorithms 3판 18.2절 (B-TREE-CREATE, B-TREE-SPLIT-CHILD, B-TREE-INSERT)
+인덱스: 문서의 의사코드(CLRS)는 1부터 센다(x.key_1, x.c_1). 이 코드는 0부터 센다.
         의사코드의 x.key_i는 x.keys[i-1], x.c_i는 x.ch[i-1]이다.
 실행: python3 15_b-tree-insert_impl.py
 
 확인하는 것
-  1. B-TREE-SPLIT-CHILD: t = 4 그림(p.20)의 [P Q R S T U V]가 [P Q R] / S / [T U V]로 갈린다. 자식 8개는 4개씩.
-  2. B-TREE-INSERT: 뿌리가 가득 차면 먼저 쪼갠다(p.25의 [A D F H L N P] -> H).
-  3. t = 3 예(p.28~29, 4-1 p.9~10): B, Q, L, F를 차례로 넣은 네 그림.
-  4. t = 2 실행 추적(F S Q K C L H)과 연습 3(21개 키)의 답(4s p.3).
+  1. B-TREE-SPLIT-CHILD: t = 4 예(문서 14)의 [P Q R S T U V]가 [P Q R] / S / [T U V]로 갈린다. 자식 8개는 4개씩.
+  2. B-TREE-INSERT: 뿌리가 가득 차면 먼저 쪼갠다(t = 4, [A D F H L N P] -> H).
+  3. t = 3 예(문서 15, 연습 17.B-트리 연습 p4): B, Q, L, F를 차례로 넣은 네 그림.
+  4. t = 2 실행 추적(F S Q K C L H)과 연습 17.B-트리 연습 p5(21개 키)의 답.
   5. 무작위 삽입: 넣을 때마다 B-트리 성질이 모두 지켜지고, 차례로 읽으면 정렬된 목록과 같다.
      높이는 뿌리를 쪼갤 때만, 그때마다 1씩 는다. 내려가는 노드는 가득 차 있지 않다.
   6. 예제 사다리와 확인 문제의 답.
@@ -94,7 +94,7 @@ def height(x):
 
 
 def check(root, t):
-    """B-트리 성질(3 p.15~17)을 모두 확인하고 높이를 돌려준다. 어기면 AssertionError."""
+    """B-트리 성질(문서 11)을 모두 확인하고 높이를 돌려준다. 어기면 AssertionError."""
     depths = set()
 
     def rec(x, lo, hi, depth, is_root):
@@ -117,7 +117,7 @@ def check(root, t):
     return depths.pop()
 
 
-# ---------------------------------------------------------------- 삽입 (3-2 p.21, 25, 27)
+# ---------------------------------------------------------------- 삽입 (CLRS 18.2절의 세 절차)
 
 def split_child(x, i, t):
     """B-TREE-SPLIT-CHILD(x, i+1). 가득 찬 자식 y = x.ch[i]를 둘로 쪼개고 가운데 키를 x로 올린다.
@@ -192,7 +192,7 @@ def expect(name, root, want, t):
 
 
 def main():
-    # 1. B-TREE-SPLIT-CHILD, t = 4 그림 (3-2 p.20~24). 자식 T1..T8을 넣어 4개씩 갈리는지도 본다.
+    # 1. B-TREE-SPLIT-CHILD, t = 4 예 (문서 14). 자식 T1..T8을 넣어 4개씩 갈리는지도 본다.
     t = 4
     kids = [Node(["T%d" % j]) for j in range(1, 9)]
     y = Node(list("PQRSTUV"), kids)
@@ -213,14 +213,14 @@ def main():
     except AssertionError:
         print("[OK] 부모가 가득 차 있으면 쪼개기를 거부한다 (t = 2, 부모 [B D F])")
 
-    # 2. 뿌리 쪼개기, t = 4 그림 (3-2 p.25): [A D F H L N P] -> [H] / [A D F] [L N P]
+    # 2. 뿌리 쪼개기, t = 4: [A D F H L N P] -> [H] / [A D F] [L N P]
     r = T("A D F H L N P")
     log = []
     r = insert(r, "B", 4, log)
     expect("뿌리 쪼개기 t = 4 (B를 넣음)", r, ("H", ["A B D F", "L N P"]), 4)
     assert log[0] == "뿌리 쪼갬(H 올라감)" and height(r) == 1
 
-    # 3. t = 3 예 (3-2 p.28~29, 4-1 p.9~10, 4s p.2)
+    # 3. t = 3 예 (문서 15, 17.B-트리 연습 p4)
     t = 3
     r = T(("G M P X", ["A C D E", "J K", "N O", "R S T U V", "Y Z"]))
     check(r, t)
@@ -239,7 +239,7 @@ def main():
     assert logs["L"] == ["뿌리 쪼갬(P 올라감)", "잎 [J K L]에 넣음"]      # 잎 [J K]는 가득 차 있지 않았는데도 뿌리를 쪼갠다
     assert logs["F"] == ["자식 쪼갬(C 올라감)", "잎 [D E F]에 넣음"]
 
-    # 4. t = 2 실행 추적(문서 15의 표)과 연습 3 (3-2 p.31, 답 4s p.3)
+    # 4. t = 2 실행 추적(문서 15의 표)과 17.B-트리 연습 p5
     t = 2
     r = Node()
     trace = []
@@ -258,7 +258,7 @@ def main():
 
     ex3 = "F S Q K C L H T V W M R N P A B X Y D Z E"
     r = build(ex3, 2)
-    expect("연습 3 (t = 2, 키 21개)", r,
+    expect("연습 p5 (t = 2, 키 21개)", r,
            ("K Q", [("B F", ["A", "C D E", "H"]), ("M", ["L", "N P"]), ("T W", ["R S", "V", "X Y Z"])]), 2)
     assert height(r) == 2 and inorder(r) == sorted(K(ex3))
 

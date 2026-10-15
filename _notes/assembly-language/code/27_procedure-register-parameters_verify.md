@@ -21,7 +21,7 @@ permalink: "/studies/assembly-language/code/27_procedure-register-parameters_ver
 
 ```python
 """레지스터 매개변수와 USES 문서의 값 확인 (파이썬 흉내, 실제 MASM 실행 아님).
-레이블이 보이는 범위(지역·전역)는 어셈블러가 하는 검사라 흉내 내지 않았다. 슬라이드 근거다.
+레이블이 보이는 범위(지역·전역)는 어셈블러가 하는 검사라 흉내 내지 않았다. 문서의 설명을 근거로 한다.
 실행: python3 27_procedure-register-parameters_verify.py"""
 import re
 
@@ -29,7 +29,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(문서 예시의 00000020 call → 00000025와 맞춘 값).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -501,13 +501,13 @@ PARAM = """ArraySum PROC%s
 
 
 def main():
-    # 1. 변수 이름을 박아 둔 판 (wk06-3-3 p.12): myArray만 더한다
+    # 1. 변수 이름을 박아 둔 판: myArray만 더한다
     c = machine(FIXED)
     c.data("myArray", "DWORD", [1, 2, 3, 4])
     s = c.data("theSum", "DWORD", [0])
     c.call_proc("ArraySum")
     assert c.rd(s, 4) == 10
-    # 2. 레지스터로 받는 판 (p.13): 배열 두 개에 같은 프로시저를 쓴다
+    # 2. 레지스터로 받는 판: 배열 두 개에 같은 프로시저를 쓴다
     c = machine(PARAM % "")
     a = c.data("arrA", "DWORD", [1, 2, 3, 4])
     b = c.data("arrB", "DWORD", [10, 20, 30])
@@ -518,7 +518,7 @@ def main():
     c.r.update(esi=b, ecx=3)
     c.call_proc("ArraySum")
     assert c.r["eax"] == 60
-    # 3. USES esi ecx (p.14): push esi, push ecx ... pop ecx, pop esi, ret
+    # 3. USES esi ecx: push esi, push ecx ... pop ecx, pop esi, ret
     c = machine(PARAM % " USES esi ecx")
     ops = [line for addr, op, args, line in c.code]
     assert ops[:2] == ["push esi", "push ecx"] and ops[-3:] == ["pop ecx", "pop esi", "ret"]
@@ -529,7 +529,7 @@ def main():
     assert c.r["eax"] == 10 and (c.r["esi"], c.r["ecx"]) == (a, 4) and c.r["esp"] == 0x1000
     # 프로시저 안에서 스택은 복귀 주소 + 레지스터 둘 = 12바이트 내려가 있다
     assert min(r["esp"] for l, r, f in c.trace) == 0x1000 - 12
-    # wk11-2-1 p.5: USES ecx edx -> push ecx, push edx, pop edx, pop ecx, ret
+    # USES ecx edx -> push ecx, push edx, pop edx, pop ecx, ret
     c = machine("MySub1 PROC USES ecx edx\nret\nMySub1 ENDP")
     assert [line for addr, op, args, line in c.code] == ["push ecx", "push edx", "pop edx", "pop ecx", "ret"]
     # 4. 돌려줄 레지스터(EAX)를 USES에 넣으면 답이 지워진다

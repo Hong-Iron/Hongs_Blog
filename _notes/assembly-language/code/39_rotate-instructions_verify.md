@@ -22,7 +22,7 @@ permalink: "/studies/assembly-language/code/39_rotate-instructions_verify/"
 ```python
 """회전 명령(ROL, ROR, RCL, RCR) 검증. 실행: python3 39_rotate-instructions_verify.py
 MASM이 없어 시프트·회전 명령을 파이썬 함수로 흉내 낸다(한 칸씩 n번 민다).
-슬라이드 wk10-3-1 p.11~12, wk10-3-2 p.2~7의 값과 Your turn 답을 단언하고, 8비트 전수 검사를 한다."""
+문서의 값과 추적 표의 답을 단언하고, 8비트 전수 검사를 한다."""
 def mask(bits):
     return (1 << bits) - 1
 
@@ -114,22 +114,22 @@ def shrd(dest, src, n, bits=16):
 
 
 if __name__ == "__main__":
-    # --- 슬라이드 wk10-3-1 p.11 / wk10-3-2 p.2: ROL ---
+    # --- ROL ---
     assert rol(0b11110000, 1) == (0b11100001, 1)
     assert rol(0x3F, 4)[0] == 0xF3
-    # --- wk10-3-1 p.12 / wk10-3-2 p.3: ROR ---
+    # --- ROR ---
     assert ror(0b11110000, 1) == (0b01111000, 0)
     assert ror(0x3F, 4)[0] == 0xF3
-    # --- wk10-3-2 p.4 Your turn ---
+    # --- 추적 표 앞 묶음 (ROR, ROL) ---
     al, cf = ror(0x6B, 1); assert (al, cf) == (0xB5, 1)     # a
     al, cf = rol(al, 3);   assert (al, cf) == (0xAD, 1)     # b
-    # --- p.5: RCL ---
+    # --- RCL ---
     bl, cf = 0x88, 0                                        # clc
     bl, cf = rcl(bl, 1, cf=cf); assert (cf, bl) == (1, 0b00010000)
     bl, cf = rcl(bl, 1, cf=cf); assert (cf, bl) == (0, 0b00100001)
-    # --- p.6: RCR ---
+    # --- RCR ---
     ah, cf = rcr(0x10, 1, cf=1); assert (cf, ah) == (0, 0b10001000)
-    # --- p.7 Your turn ---
+    # --- 추적 표 뒤 묶음 (RCR, RCL) ---
     al, cf = rcr(0x6B, 1, cf=1); assert (al, cf) == (0xB5, 1)   # a
     al, cf = rcl(al, 3, cf=cf);  assert (al, cf) == (0xAE, 1)   # b
     # stc 대신 clc였다면 rcr의 결과는 35h

@@ -22,7 +22,7 @@ permalink: "/studies/database-design/code/57_sql-set-operations_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 57.집합 연산 UNION·EXCEPT·INTERSECT 검증 (PostgreSQL 16)
---   SQLite에 없는 EXCEPT ALL, INTERSECT ALL을 슬라이드 10-2 p.24의 R, S로 실제로 돌린다.
+--   SQLite에 없는 EXCEPT ALL, INTERSECT ALL을 문서의 R, S로 실제로 돌린다.
 --   합칠 수 있는 조건(열 수와 자료형)을 어기면 나는 오류도 본다. 42601 = 열 수가 다름, 42804 = 자료형이 안 맞음
 \set QUIET 1
 SET client_min_messages TO warning;
@@ -40,7 +40,7 @@ BEGIN
   RETURN 'OK';
 END $f$;
 
--- COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
+-- COMPANY 스키마와 상태.
 -- EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 EMPLOYEE의 외래 키 두 개는 행을 넣은 뒤 ALTER TABLE로 붙인다.
 -- WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 CREATE TABLE EMPLOYEE (
@@ -93,7 +93,7 @@ INSERT INTO DEPENDENT VALUES ('333445555', 'Alice', 'F', '1986-04-05', 'Daughter
 ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPSUPERFK FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn);
 ALTER TABLE EMPLOYEE ADD CONSTRAINT EMPDEPTFK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber);
 
--- 슬라이드 10-2 p.24 그림 (a)
+-- 문서의 R, S
 CREATE TABLE R (A VARCHAR(2));
 CREATE TABLE S (A VARCHAR(2));
 INSERT INTO R VALUES ('a1'), ('a2'), ('a2'), ('a3');
@@ -113,12 +113,12 @@ DO $$ BEGIN
 END $$;
 
 DO $$ BEGIN
-  -- Query 4 (슬라이드 10-2 p.23): 괄호까지 그대로
+  -- Smith 질의: 괄호까지 그대로
   ASSERT (SELECT ARRAY_AGG(Pnumber ORDER BY Pnumber) FROM (
             (SELECT DISTINCT Pnumber FROM PROJECT, DEPARTMENT, EMPLOYEE WHERE Dnum = Dnumber AND Mgr_ssn = Ssn AND Lname = 'Smith')
             UNION
             (SELECT DISTINCT Pnumber FROM PROJECT, WORKS_ON, EMPLOYEE WHERE Pnumber = Pno AND Essn = Ssn AND Lname = 'Smith')) T)
-         = ARRAY[1, 2], 'Query 4';
+         = ARRAY[1, 2], 'Smith 질의';
   -- Wong으로 바꾼 예
   ASSERT (SELECT ARRAY_AGG(Pnumber ORDER BY Pnumber) FROM (
             (SELECT Pnumber FROM PROJECT, DEPARTMENT, EMPLOYEE WHERE Dnum = Dnumber AND Mgr_ssn = Ssn AND Lname = 'Wong')

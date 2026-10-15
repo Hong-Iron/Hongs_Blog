@@ -20,7 +20,7 @@ permalink: "/studies/operating-systems/code/11_multiprogramming_verify/"
 [다중 프로그래밍](/Hongs_Blog/studies/operating-systems/multiprogramming/) 문서의 검증 코드다.
 
 ```python
-"""다중 프로그래밍 슬라이드의 수치를 다시 계산한다 (Stallings 그림 2.4, 표 2.1, 그림 2.6)."""
+"""다중 프로그래밍 문서의 수치를 다시 계산한다 (Stallings 그림 2.4, 표 2.1, 그림 2.6)."""
 from fractions import Fraction as F
 
 # 그림 2.4: 레코드 하나 읽기 15us, 명령어 100개 실행 1us, 쓰기 15us

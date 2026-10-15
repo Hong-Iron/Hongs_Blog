@@ -48,7 +48,7 @@
 - title: "9주차 · 이진 탐색 트리, 색인 이진 탐색 트리, 승자·패자 트리"
   items:
     - {n: "30", t: "이진 탐색 트리의 탐색과 삽입", u: "/studies/data-structures/bst-search-insert/", k: "concept"}
-    - {n: "30", t: "9주차 수업 문제 풀이", u: "/studies/data-structures/week9-inclass/", k: "practice"}
+    - {n: "30", t: "트리와 힙 문제 풀이", u: "/studies/data-structures/week9-inclass/", k: "practice"}
     - {n: "31", t: "최대 힙과 이진 탐색 트리 비교", u: "/studies/data-structures/heap-vs-bst/", k: "concept"}
     - {n: "32", t: "이진 탐색 트리의 삭제", u: "/studies/data-structures/bst-delete/", k: "concept"}
     - {n: "32", t: "이진 탐색 트리 삽입·삭제 예제 사다리", u: "/studies/data-structures/bst-ladder/", k: "practice"}

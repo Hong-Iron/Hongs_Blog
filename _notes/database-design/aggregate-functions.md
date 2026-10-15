@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Aggregate Function", "집계 함수", "집단 함수", "COUNT", "SUM", "MAX", "MIN", "AVG", "COUNT DISTINCT"]
 description: "직원 여덟 명의 급여를 하나하나 보는 대신 \"모두 더하면 얼마, 가장 많이 받는 사람은 얼마, 평균은 얼마\"처럼 한 줄로 줄여 보고 싶을 때가 있다. 여러 행을 받아 값 하나로 줄여 주는 계산이 집계 함수다. 개수, 합, 가장 큰 값, 가장 작은 값, 평균 다섯 가지가 기본으로 있…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/aggregate-functions/"
 
 ## 예시로 보기
 
-지금까지의 질의는 조건에 맞는 행을 그대로 보여 주었다. "직원이 모두 몇 명인가", "급여의 합은 얼마인가"에 답하려면 결과 행을 사람이 세고 더해야 했다. 집계 함수는 그 일을 질의 안에서 한다[^1].
+지금까지의 질의는 조건에 맞는 행을 그대로 보여 주었다. "직원이 모두 몇 명인가", "급여의 합은 얼마인가"에 답하려면 결과 행을 사람이 세고 더해야 했다. 집계 함수는 그 일을 질의 안에서 한다.
 
 ```sql
 SELECT SUM(Salary), MAX(Salary), MIN(Salary), AVG(Salary)
@@ -50,14 +50,14 @@ EMPLOYEE의 8행이 한 행으로 줄어든다.
 여덟 급여 30000, 40000, 25000, 43000, 38000, 25000, 25000, 55000을 더하면 281000이고, 8로 나누면 35125다[^s1].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 표, Q21의 8, Q22의 4, Q23의 6, `COUNT(Salary)` 8과 `COUNT(Super_ssn)` 7, `AVG(Hours)` 18.33, 행이 없을 때의 0과 NULL, 부양가족 둘 이상(Smith, Wong), 최고 급여자 Borg, 카드 C2. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다. 집계 함수와 보통 열을 섞은 `SELECT Lname, MAX(Salary)`만 다르다(PostgreSQL은 오류, SQLite는 받는다) — [68_aggregate-functions_verify.py](/Hongs_Blog/studies/database-design/code/68_aggregate-functions_verify/), [68_aggregate-functions_verify.sql](/Hongs_Blog/studies/database-design/code/68_aggregate-functions_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: 위 표, 직원 수 8, Research 직원 수 4, 서로 다른 급여 6, `COUNT(Salary)` 8과 `COUNT(Super_ssn)` 7, `AVG(Hours)` 18.33, 행이 없을 때의 0과 NULL, 부양가족 둘 이상(Smith, Wong), 최고 급여자 Borg, 카드 C2. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다. 집계 함수와 보통 열을 섞은 `SELECT Lname, MAX(Salary)`만 다르다(PostgreSQL은 오류, SQLite는 받는다) — [68_aggregate-functions_verify.py](/Hongs_Blog/studies/database-design/code/68_aggregate-functions_verify/), [68_aggregate-functions_verify.sql](/Hongs_Blog/studies/database-design/code/68_aggregate-functions_verify-sql/)</div>
 
 </div>
 
 
 ## 정의
 
-집계 함수(aggregate function)는 여러 행의 정보를 한 행으로 줄여 요약한다. 주로 `SELECT` 절에 쓰고 `HAVING` 절에도 쓴다[^1].
+집계 함수(aggregate function)는 여러 행의 정보를 한 행으로 줄여 요약한다. 주로 `SELECT` 절에 쓰고 `HAVING` 절에도 쓴다.
 
 | 함수 | 돌려주는 것 |
 |---|---|
@@ -69,7 +69,7 @@ EMPLOYEE의 8행이 한 행으로 줄어든다.
 
 `SUM`, `MAX`, `MIN`, `AVG`는 수로 된 값의 모음에 쓴다. 같은 값이 여러 번 들어 있어도 되는 모음이다. 25000을 받는 세 사람을 한 번으로 치면 합과 평균이 틀리므로, 표가 중복을 지우지 않는다는 점이 여기서 쓸모가 있다([다중집합인 표와 DISTINCT](/Hongs_Blog/studies/database-design/sql-multiset-distinct/)).
 
-**COUNT의 세 꼴.** 무엇을 세는지가 괄호 안에 따라 다르다[^2].
+**COUNT의 세 꼴.** 무엇을 세는지가 괄호 안에 따라 다르다.
 
 | 식 | 세는 것 | EMPLOYEE에서 |
 |---|---|---|
@@ -78,9 +78,9 @@ EMPLOYEE의 8행이 한 행으로 줄어든다.
 | `COUNT(DISTINCT Salary)` | 서로 다른 `Salary` 값 | 6 |
 | `COUNT(Super_ssn)` | `Super_ssn`에 값이 있는 칸. NULL은 세지 않는다 | 7 |
 
-슬라이드는 "`COUNT(Salary)`를 쓰면 어떻게 되는가, NULL 값도 세는가"를 물음으로 남겼다[^2]. 급여는 여덟 명 모두 적혀 있어 `COUNT(Salary)`는 `COUNT(*)`와 같은 8이다. 서로 다른 급여는 25000, 30000, 38000, 40000, 43000, 55000 여섯 가지다. NULL은 세지 않는다. Borg의 `Super_ssn`이 비어 있어 `COUNT(Super_ssn)`은 7이다[^s1].
+`COUNT(Salary)`처럼 열을 세면 NULL도 셀까? 급여는 여덟 명 모두 적혀 있어 `COUNT(Salary)`는 `COUNT(*)`와 같은 8이다. 서로 다른 급여는 25000, 30000, 38000, 40000, 43000, 55000 여섯 가지다. NULL은 세지 않는다. Borg의 `Super_ssn`이 비어 있어 `COUNT(Super_ssn)`은 7이다[^s1].
 
-조건이나 조인과 함께 쓰면 고른 행만 센다. "Research 부서의 직원 수"는 4다[^2].
+조건이나 조인과 함께 쓰면 고른 행만 센다. "Research 부서의 직원 수"는 4다.
 
 ```sql
 SELECT COUNT(*)
@@ -92,7 +92,7 @@ WHERE  Dno = Dnumber AND Dname = 'Research';
 
 ### 안쪽 질의에 쓰기
 
-집계 함수는 값 하나를 돌려주므로, 안쪽 질의에 넣어 바깥 질의의 조건에 쓸 수 있다. (1) 집계 함수가 든 안쪽 질의를 적고 (2) 그것을 바깥 `WHERE`의 비교에 쓴다[^3].
+집계 함수는 값 하나를 돌려주므로, 안쪽 질의에 넣어 바깥 질의의 조건에 쓸 수 있다. (1) 집계 함수가 든 안쪽 질의를 적고 (2) 그것을 바깥 `WHERE`의 비교에 쓴다.
 
 ```sql
 SELECT Lname, Fname
@@ -152,9 +152,6 @@ WHERE  Salary = ( SELECT MAX(Salary) FROM EMPLOYEE );
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.27 (Aggregate Functions: 뜻, COUNT와 SUM·MAX·MIN·AVG, Query 19). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.10에 다시 나온다.
-[^2]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.28 (COUNT Function: Query 21, 22, 23, `*`는 행을 가리킨다, 빨간 글씨의 두 물음)
-[^3]: 같은 자료, p.30 (Other Usage of Aggregate Functions: 안쪽 질의에 집계 함수를 쓰는 두 단계, 부양가족이 둘 이상인 직원)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에는 질의만 있고 결과 값은 없다. Query 19·21·22·23의 값, 두 물음의 답, `AVG(Hours)`와 빈 입력의 동작은 SQLite와 PostgreSQL 16에서 실행해 얻었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 집계 함수와 보통 열을 섞는 실수, 고친 질의, 카드 C2·C3은 슬라이드에 없다. 고친 질의의 꼴은 12주차 풀이 Q3-1(데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.7)이 쓴 것과 같다. 두 제품의 동작은 실행해 확인했다.
+[^s1]: Query 19·21·22·23의 값, 두 물음의 답, `AVG(Hours)`와 빈 입력의 동작은 SQLite와 PostgreSQL 16에서 실행해 얻었다.
+[^s2]: 두 제품의 동작은 실행해 확인했다.
 {% endraw %}

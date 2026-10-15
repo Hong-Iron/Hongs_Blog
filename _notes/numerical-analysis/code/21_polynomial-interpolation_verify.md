@@ -37,14 +37,14 @@ def lagrange(xs, ys, x):
 
 
 def main():
-    # 슬라이드 p.3: cos을 0, π/4, π/2에서 보간
+    # 문서의 예: cos을 0, π/4, π/2에서 보간
     xs = [0, math.pi / 4, math.pi / 2]; ys = [math.cos(v) for v in xs]
     for v, w in zip(xs, ys):
         assert abs(lagrange(xs, ys, v) - w) < 1e-15
     p = lambda x: lagrange(xs, ys, x)
     print("cos 보간 p(π/8) =", round(p(math.pi / 8), 4), "참값", round(math.cos(math.pi / 8), 4))
     assert abs(p(math.pi / 8) - math.cos(math.pi / 8)) < 0.02
-    # 슬라이드 p.15의 tan 표
+    # 문서의 tan 표
     tx = [1.0, 1.1, 1.2, 1.3]; ty = [1.5574, 1.9648, 2.5722, 3.6021]
     assert all(abs(math.tan(a) - b) < 5e-5 for a, b in zip(tx, ty))
     true = math.tan(1.15)
@@ -53,7 +53,7 @@ def main():
     P3 = lagrange(tx, ty, 1.15)
     assert round(P1, 4) == 2.2685 and round(P3, 4) == 2.2296
     assert round(true - P1, 4) == -0.034 and round(true - P3, 4) == 0.0049
-    assert round(P2, 4) == 2.2435 and round(true - P2, 4) == -0.009    # 슬라이드의 P2는 1, 1.1, 1.2 세 점
+    assert round(P2, 4) == 2.2435 and round(true - P2, 4) == -0.009    # 문서의 P2는 1, 1.1, 1.2 세 점
     # 유일성: 같은 세 점을 지나는 2차식은 하나 (무작위로 다른 방법과 비교)
     random.seed(21)
     for _ in range(100):

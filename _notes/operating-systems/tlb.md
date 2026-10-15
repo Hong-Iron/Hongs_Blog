@@ -52,9 +52,9 @@ permalink: "/studies/operating-systems/tlb/"
 
 ## 정확히 말하면
 
-가상 메모리 참조 하나는 실제 메모리 접근을 두 번 일으킬 수 있다. 페이지 표 항목을 가져올 때 한 번, 데이터를 가져올 때 한 번이다. 이를 해결하려고 페이지 표 항목을 위한 고속 캐시를 둔다. 이것이 **TLB**이고, 가장 최근에 쓴 페이지 표 항목을 담는다[^1].
+가상 메모리 참조 하나는 실제 메모리 접근을 두 번 일으킬 수 있다. 페이지 표 항목을 가져올 때 한 번, 데이터를 가져올 때 한 번이다. 이를 해결하려고 페이지 표 항목을 위한 고속 캐시를 둔다. 이것이 **TLB**이고, 가장 최근에 쓴 페이지 표 항목을 담는다.
 
-**동작**[^2]
+**동작**
 
 ```mermaid
 flowchart TB
@@ -71,9 +71,9 @@ flowchart TB
 4. 페이지 표에서 그 페이지가 주기억장치에 있는지 본다. 없으면 페이지 부재를 낸다.
 5. 찾은 항목으로 TLB를 갱신한다.
 
-**연관 사상.** TLB에는 페이지 표 항목의 일부만 있으므로, 페이지 번호로 TLB의 칸을 바로 찾아갈(색인) 수 없다. 그래서 TLB의 각 칸에는 페이지 번호와 페이지 표 항목 전체를 함께 넣고, 하드웨어가 여러 칸을 **동시에** 비교해 일치하는 것을 찾는다[^3]. 페이지 표는 페이지 번호로 바로 찾는 직접 사상이고, TLB는 내용으로 찾는 연관 사상이다.
+**연관 사상.** TLB에는 페이지 표 항목의 일부만 있으므로, 페이지 번호로 TLB의 칸을 바로 찾아갈(색인) 수 없다. 그래서 TLB의 각 칸에는 페이지 번호와 페이지 표 항목 전체를 함께 넣고, 하드웨어가 여러 칸을 **동시에** 비교해 일치하는 것을 찾는다. 페이지 표는 페이지 번호로 바로 찾는 직접 사상이고, TLB는 내용으로 찾는 연관 사상이다.
 
-**캐시와 함께.** 실제 주소를 얻은 뒤에는 그 주소로 메모리 [캐시](/Hongs_Blog/studies/operating-systems/cache-memory/)를 찾는다. 캐시에 있으면 주기억장치까지 가지 않는다. TLB는 주소 변환을, 캐시는 데이터 접근을 빠르게 한다[^4].
+**캐시와 함께.** 실제 주소를 얻은 뒤에는 그 주소로 메모리 [캐시](/Hongs_Blog/studies/operating-systems/cache-memory/)를 찾는다. 캐시에 있으면 주기억장치까지 가지 않는다. TLB는 주소 변환을, 캐시는 데이터 접근을 빠르게 한다.
 
 **유효 접근 시간.** TLB 적중률을 $$h$$, TLB 검사 시간을 $$t$$, 메모리 접근 시간을 $$m$$이라 하자(한 단계 페이지 표, 페이지 부재 없음). 적중하면 TLB를 보고 메모리를 한 번, 실패하면 TLB를 보고 메모리를 두 번 읽는다.
 
@@ -121,12 +121,8 @@ $$t = 20$$, $$m = 100$$ ns로 그린 직선이다. 적중률이 1%포인트 오�
 
 </details>
 
-[^1]: 운영체제 8회 강의 자료 「Chapter08-new」, 슬라이드 24
-[^2]: 같은 자료, 슬라이드 25~28 (그림 8.7, 8.8)
-[^3]: 같은 자료, 슬라이드 29~30 (그림 8.9)
-[^4]: 같은 자료, 슬라이드 31 (그림 8.10)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 시간 예와 유효 접근 시간 식, 프로세스·스레드 전환과 TLB, 확인 문제 C2·C3은 슬라이드에 없다. Stallings 6판 8.1절과 일반 교재의 유효 접근 시간 계산을 따랐다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [40_tlb_plot.py](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/)로 그렸고, 적중률 98%에서 122 ns, 0%에서 220 ns, 100%에서 120 ns, 20%에서 TLB 없을 때와 같은 200 ns를 같은 코드로 확인했다.
+[^s1]: Stallings 6판 8.1절과 일반 교재의 유효 접근 시간 계산을 따랐다.
+[^s2]: [40_tlb_plot.py](/Hongs_Blog/studies/operating-systems/code/40_tlb_plot/)로 그렸고, 적중률 98%에서 122 ns, 0%에서 220 ns, 100%에서 120 ns, 20%에서 TLB 없을 때와 같은 200 ns를 같은 코드로 확인했다.
 [^k1]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 5장 "Large and Fast: Exploiting Memory Hierarchy". 다섯 조합만 나오는 것은 무작위 접근 2만 번의 흉내로 확인했다 — [43_cache-tlb-interaction_verify.py](/Hongs_Blog/studies/computer-architecture/code/43_cache-tlb-interaction_verify/)
 [^k2]: University of Utah CS 3810, Lecture 20 "Cache Hierarchies, Virtual Memory", 슬라이드 14~15 (TLB and Cache, Virtually Indexed; Physically Tagged Cache), https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-20.pdf
 {% endraw %}

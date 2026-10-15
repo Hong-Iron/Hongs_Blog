@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Control Flow Statement", "Control Statement", "조건문", "Conditional Statement", "반복문", "Loop", "if", "if-else", "switch", "case", "default", "for", "while", "do-while", "break", "continue", "fall-through"]
 description: "프로그램은 책처럼 위에서 아래로 한 줄씩 읽힌다. 제어문은 그 길에 놓는 갈림길과 되돌아가는 길이다. 조건에 따라 한 덩어리를 건너뛰거나 둘 중 하나를 고르고, 같은 덩어리를 여러 번 되풀이한다. 덕분에 같은 코드를 백 번 적지 않아도 된다. 대신 여러 갈래 중 하나를 고르는 문에…"
@@ -44,7 +44,7 @@ for (int i = 1; i <= 100; i++) {
 // sum = 5050
 ```
 
-실행은 `main()` 메서드의 여는 중괄호 `{`에서 닫는 중괄호 `}`까지 위에서 아래로 흐른다. 이 흐름을 원하는 쪽으로 바꾸는 문장이 제어문이다. 조건이 맞을 때만 실행하는 것(조건문)과, 끝까지 간 뒤 처음으로 되돌아가 다시 실행하는 것(반복문)이 있다[^1].
+실행은 `main()` 메서드의 여는 중괄호 `{`에서 닫는 중괄호 `}`까지 위에서 아래로 흐른다. 이 흐름을 원하는 쪽으로 바꾸는 문장이 제어문이다. 조건이 맞을 때만 실행하는 것(조건문)과, 끝까지 간 뒤 처음으로 되돌아가 다시 실행하는 것(반복문)이 있다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 등급 예와 경계 점수, `break`가 있는 `switch`와 없는 `switch`의 출력, `for` 추적 표, 1 ~ 100의 합 5050, `float`로 센 횟수 9번, `do-while` 1번, 안쪽 `break`의 출력, `continue`의 출력, 카드 C1·C3 — [06_java-control-flow_impl.java](/Hongs_Blog/studies/java/code/06_java-control-flow_impl/)</div>
@@ -56,7 +56,7 @@ for (int i = 1; i <= 100; i++) {
 
 ### if
 
-`if`는 조건의 결과를 보고 블록을 실행할지 정한다. 조건 자리에는 `true`나 `false`가 되는 식(또는 `boolean` 변수)이 온다. `true`면 블록을 실행하고 `false`면 건너뛴다. `else`를 붙이면 `false`일 때 대신 실행할 블록을 둘 수 있다[^2].
+`if`는 조건의 결과를 보고 블록을 실행할지 정한다. 조건 자리에는 `true`나 `false`가 되는 식(또는 `boolean` 변수)이 온다. `true`면 블록을 실행하고 `false`면 건너뛴다. `else`를 붙이면 `false`일 때 대신 실행할 블록을 둘 수 있다.
 
 ```java
 if (score >= 90) {
@@ -72,7 +72,7 @@ if (score >= 90) {
 
 ### switch
 
-`switch`는 괄호 안 변수의 값과 같은 `case`를 찾아 그 아래 문장을 실행한다. 맞는 `case`가 없으면 `default`로 간다. `default`는 없어도 된다[^3].
+`switch`는 괄호 안 변수의 값과 같은 `case`를 찾아 그 아래 문장을 실행한다. 맞는 `case`가 없으면 `default`로 간다. `default`는 없어도 된다.
 
 ```java
 switch (n) {
@@ -87,7 +87,7 @@ switch (n) {
 }
 ```
 
-`break`는 `switch`를 빠져나가라는 표시다. `break`를 빼면 다음 `case`의 문장까지 이어서 실행한다[^3]. `case`는 "여기서부터 시작하라"는 입구일 뿐 칸막이가 아니다. 위 코드에서 `break` 둘을 지우면 출력이 이렇게 달라진다[^s1].
+`break`는 `switch`를 빠져나가라는 표시다. `break`를 빼면 다음 `case`의 문장까지 이어서 실행한다. `case`는 "여기서부터 시작하라"는 입구일 뿐 칸막이가 아니다. 위 코드에서 `break` 둘을 지우면 출력이 이렇게 달라진다[^s1].
 
 | `n` | `break`가 있을 때 | `break`를 지웠을 때 |
 |---|---|---|
@@ -99,7 +99,7 @@ switch (n) {
 
 ### for
 
-`for`는 문장을 여러 번 되풀이한다. 괄호 안에 세 가지를 적는다[^4].
+`for`는 문장을 여러 번 되풀이한다. 괄호 안에 세 가지를 적는다.
 
 ```java
 for (①초기화식; ②조건식; ④증감식) {
@@ -132,7 +132,7 @@ flowchart TD
 
 조건식은 네 번, 실행문은 세 번 실행된다. 조건이 처음부터 `false`면 실행문은 한 번도 실행되지 않는다.
 
-**초기화식에 `float`를 쓰지 않는다**[^4]. 0.1부터 1.0까지 0.1씩 올리면 열 번 돌 것 같지만 아홉 번 돈다[^s1].
+**초기화식에 `float`를 쓰지 않는다**. 0.1부터 1.0까지 0.1씩 올리면 열 번 돌 것 같지만 아홉 번 돈다[^s1].
 
 ```java
 int count = 0;
@@ -146,7 +146,7 @@ for (float x = 0.1f; x <= 1.0f; x += 0.1f) {
 
 ### while과 do-while
 
-슬라이드는 `while`과 `do-while`을 `break`와 `continue`의 대상으로만 든다[^5]. 모양은 다음과 같다[^s2].
+`while`과 `do-while`은 횟수 없이 조건만 보고 도는 반복문이다. 모양은 다음과 같다[^s2].
 
 | 반복문 | 모양 | 조건을 보는 때 | 최소 실행 횟수 |
 |---|---|---|---|
@@ -159,10 +159,10 @@ for (float x = 0.1f; x <= 1.0f; x += 0.1f) {
 
 | 문장 | 하는 일 | 쓸 수 있는 곳 |
 |---|---|---|
-| `break` | 반복문이나 `switch`를 그 자리에서 끝낸다 | `for`, `while`, `do-while`, `switch`[^5] |
-| `continue` | 이번 바퀴의 남은 문장을 건너뛰고 다음 바퀴로 간다. `for`에서는 증감식으로, `while`과 `do-while`에서는 조건식으로 간다 | `for`, `while`, `do-while`만[^6] |
+| `break` | 반복문이나 `switch`를 그 자리에서 끝낸다 | `for`, `while`, `do-while`, `switch` |
+| `continue` | 이번 바퀴의 남은 문장을 건너뛰고 다음 바퀴로 간다. `for`에서는 증감식으로, `while`과 `do-while`에서는 조건식으로 간다 | `for`, `while`, `do-while`만 |
 
-`continue`는 `break`와 달리 반복문을 끝내지 않는다[^6].
+`continue`는 `break`와 달리 반복문을 끝내지 않는다.
 
 ```java
 for (int j = 1; j <= 7; j++) {
@@ -250,12 +250,6 @@ switch (n) {
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 3회 강의 자료 「Software Project 03. Java Language Basics (2)」, p.17 (실행 흐름과 제어문)
-[^2]: 같은 자료, p.18 (if, if-else)
-[^3]: 같은 자료, p.19 (switch, default, break)
-[^4]: 같은 자료, p.20 (for의 실행 순서, float 주의)
-[^5]: 같은 자료, p.21 (break)
-[^6]: 같은 자료, p.22 (continue)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1 ~ 100의 합, 등급 예, `break`를 지운 `switch`의 출력 표, `for` 추적 표, `float` 반복의 횟수와 `1.0000001`, 겹친 반복문의 `break`, 중괄호 없는 `if`, 카드 C1~C4는 원본에 없다. 출력과 값은 구현 코드로 확인했다. `for`의 흐름 다이어그램은 원본 p.20의 그림과 번호를 근거로 그렸다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `while`과 `do-while`의 모양, `switch`에 넣을 수 있는 타입은 원본에 없다. Java Language Specification §14.11(switch), §14.12(while), §14.13(do)에 있고, 구현 코드로 확인했다.
+[^s1]: 출력과 값은 구현 코드로 확인했다.
+[^s2]: Java Language Specification §14.11(switch), §14.12(while), §14.13(do)에 있고, 구현 코드로 확인했다.
 {% endraw %}

@@ -49,7 +49,7 @@ def checksum(data):
 
 
 def crc16(data, poly=0x8005):
-    """CRC-16 (x^16 + x^15 + x^2 + 1), 슬라이드 p.55의 다항식."""
+    """CRC-16 (다항식 x^16 + x^15 + x^2 + 1)."""
     r = 0
     for b in data:
         r ^= b << 8

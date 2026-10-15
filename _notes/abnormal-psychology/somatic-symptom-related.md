@@ -45,11 +45,11 @@ permalink: "/studies/abnormal-psychology/somatic-symptom-related/"
 
 ## 정의
 
-### 몸과 마음의 관계[^1]
+### 몸과 마음의 관계
 
 몸과 마음이 하나인지(일원론) 둘인지(이원론)는 오래된 질문이다. 사람은 신체적 존재이자 정신적 존재다. 정신은 신체에 영향을 주고, 신체는 다시 정신에 영향을 준다. 이를 심신 상호작용(mind-body interaction)이라 한다.
 
-### 심신 관계와 관련된 세 경우[^2]
+### 심신 관계와 관련된 세 경우
 
 | 경우 | 신체 손상 | 특징 |
 |---|---|---|
@@ -59,7 +59,7 @@ permalink: "/studies/abnormal-psychology/somatic-symptom-related/"
 
 DSM-5-TR은 심리신체질환에 해당하는 "기타 의학적 상태에 영향을 주는 심리적 요인"도 이 범주에 넣는다[^s2].
 
-### 이 범주의 장애 (DSM-5-TR)[^3]
+### 이 범주의 장애 (DSM-5-TR)
 
 | 장애 | 특징 |
 |---|---|
@@ -89,9 +89,6 @@ DSM-5-TR은 심리신체질환에 해당하는 "기타 의학적 상태에 영�
 
 </details>
 
-[^1]: 이상 심리학 7회 강의 자료 「신체증상 및 관련 장애, 배설장애」, p.2. "몸과 마음은 하나인가?"는 손글씨 필기다.
-[^2]: 이상 심리학 7회 강의 자료 「신체증상 및 관련 장애, 배설장애」, p.3. "심리적 요인의 영향"과 "주로 심리적 원인에 의한"에 형광펜이 있다.
-[^3]: 이상 심리학 7회 강의 자료 「신체증상 및 관련 장애, 배설장애」, p.4. 질병불안장애 아래 "(건강염려증)"은 손글씨 필기다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> EQ, ER, ES의 사례는 세 경우를 가르려고 만든 가상 사례다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR의 신체증상 및 관련 장애 범주에는 "기타 의학적 상태에 영향을 주는 심리적 요인(Psychological Factors Affecting Other Medical Conditions)"이 들어 있다.
+[^s1]: EQ, ER, ES의 사례는 세 경우를 가르려고 만든 가상 사례다.
+[^s2]: DSM-5-TR의 신체증상 및 관련 장애 범주에는 "기타 의학적 상태에 영향을 주는 심리적 요인(Psychological Factors Affecting Other Medical Conditions)"이 들어 있다.
 {% endraw %}

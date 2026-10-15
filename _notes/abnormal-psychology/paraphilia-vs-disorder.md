@@ -9,10 +9,10 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-27"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Paraphilia vs Paraphilic Disorder", "변태성욕과 변태성욕장애 비교", "성적 관심과 장애"]
-description: "슬라이드는 유형마다 같은 문장을 되풀이한다. \"고통을 표명하지 않고, 기능 손상이 없고, 충동에 따라 행동하지 않으면 성적 관심은 있으나 장애로 진단하지 않는다.\" 가르는 질문은 \"특이한 성적 관심이 있을 뿐인가, 그 관심이 본인에게 고통이나 기능 손상을 주거나 동의하지 않은 사람…"
+description: "성도착장애의 유형마다 같은 조건이 붙는다. \"고통을 표명하지 않고, 기능 손상이 없고, 충동에 따라 행동하지 않으면 성적 관심은 있으나 장애로 진단하지 않는다.\" 가르는 질문은 \"특이한 성적 관심이 있을 뿐인가, 그 관심이 본인에게 고통이나 기능 손상을 주거나 동의하지 않은 사람에…"
 prev_url: "/studies/abnormal-psychology/paraphilic-disorders/"
 prev_title: "성도착장애"
 next_url: "/studies/abnormal-psychology/voyeuristic-disorder/"
@@ -23,7 +23,7 @@ code_count: 0
 permalink: "/studies/abnormal-psychology/paraphilia-vs-disorder/"
 ---
 {% raw %}
-슬라이드는 유형마다 같은 문장을 되풀이한다. "고통을 표명하지 않고, 기능 손상이 없고, 충동에 따라 행동하지 않으면 성적 관심은 있으나 장애로 진단하지 않는다."[^1] 가르는 질문은 "특이한 성적 관심이 있을 뿐인가, 그 관심이 본인에게 고통이나 기능 손상을 주거나 동의하지 않은 사람에게 행동으로 옮겨졌는가"다. 앞의 것이 성도착(paraphilia), 뒤의 것이 성도착장애(paraphilic disorder)다. 성도착은 성도착장애의 필요조건이지만 충분조건은 아니다[^s1].
+성도착장애의 유형마다 같은 조건이 붙는다. "고통을 표명하지 않고, 기능 손상이 없고, 충동에 따라 행동하지 않으면 성적 관심은 있으나 장애로 진단하지 않는다." 가르는 질문은 "특이한 성적 관심이 있을 뿐인가, 그 관심이 본인에게 고통이나 기능 손상을 주거나 동의하지 않은 사람에게 행동으로 옮겨졌는가"다. 앞의 것이 성도착(paraphilia), 뒤의 것이 성도착장애(paraphilic disorder)다. 성도착은 성도착장애의 필요조건이지만 충분조건은 아니다[^s1].
 
 ## 어느 쪽일까
 
@@ -51,7 +51,7 @@ permalink: "/studies/abnormal-psychology/paraphilia-vs-disorder/"
 | 숨기거나 부인할 때 | 과거력이 행동을 시사하지 않으면 장애 아님 | 과거력이 행동을 보여 주면 진단 가능 |
 | 치료가 필요한가 | 필요하지 않다 | 필요하다 |
 
-[^1][^s1]
+[^s1]
 
 ## 둘 다 아닐 때
 
@@ -60,7 +60,6 @@ permalink: "/studies/abnormal-psychology/paraphilia-vs-disorder/"
 - **조증 삽화 중의 과도한 성행위:** [양극성장애](/Hongs_Blog/studies/abnormal-psychology/bipolar-disorder/)의 증상이다. 삽화가 끝나면 사라진다.
 - **특이한 흥분 없이 규범을 무시하는 성범죄:** [반사회성 성격장애](/Hongs_Blog/studies/abnormal-psychology/antisocial-pd/) 같은 다른 문제를 먼저 본다.
 
-[^1]: 이상 심리학 9회 강의 자료 「성 관련 장애」, p.37(관음), p.39(노출), p.41(마찰도착), p.43(피학·가학), p.45(소아성애), p.49(물품음란). 여섯 쪽에 같은 조건이 되풀이된다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 성도착과 성도착장애의 구분, 필요조건·충분조건의 관계는 DSM-5-TR 변태성욕장애 장의 서론을 요약했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 강박장애의 성적 침투사고와의 감별은 DSM-5-TR의 감별 진단 설명이다.
+[^s1]: 성도착과 성도착장애의 구분, 필요조건·충분조건의 관계는 DSM-5-TR 변태성욕장애 장의 서론을 요약했다.
+[^s2]: 강박장애의 성적 침투사고와의 감별은 DSM-5-TR의 감별 진단 설명이다.
 {% endraw %}

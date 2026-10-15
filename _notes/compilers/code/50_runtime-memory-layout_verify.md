@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/50_runtime-memory-layout_verify/"
 ```python
 # 실행 시 메모리 배치: 코드, 전역 데이터, 힙, 스택.
 # 실행: python3 50_runtime-memory-layout_verify.py  (표준 라이브러리만 쓴다)
-# 슬라이드 14회 p.33~39의 그림을 작은 모형으로 옮겨, 스택과 힙이 서로 마주 보고 자랄 때의 성질을 확인한다.
+# 문서의 메모리 배치 그림을 작은 모형으로 옮겨, 스택과 힙이 서로 마주 보고 자랄 때의 성질을 확인한다.
 import random
 
 
@@ -73,20 +73,20 @@ def fits_split(heap, stack, room):
 
 if __name__ == "__main__":
     m = Memory(size=100, code=20, static=10)
-    # p.39의 순서: 낮은 주소부터 코드 < 전역 < 힙 < (빈 곳) < 스택
+    # 배치 순서: 낮은 주소부터 코드 < 전역 < 힙 < (빈 곳) < 스택
     assert (m.code_end, m.static_end, m.heap_top, m.stack_top) == (20, 30, 30, 100) and m.gap() == 70
-    # 스택은 높은 주소에서 낮은 주소로 (p.36): 부를 때마다 꼭대기 주소가 줄어든다
+    # 스택은 높은 주소에서 낮은 주소로: 부를 때마다 꼭대기 주소가 줄어든다
     tops = []
     for n in (8, 5, 12):
         assert m.call(n)
         tops.append(m.stack_top)
     assert tops == [92, 87, 75] and tops == sorted(tops, reverse=True)
-    # 힙은 낮은 주소에서 높은 주소로 (p.39): 받을 때마다 주소가 늘어난다
+    # 힙은 낮은 주소에서 높은 주소로: 받을 때마다 주소가 늘어난다
     addrs = [m.malloc(10), m.malloc(10)]
     assert addrs == [30, 40] and m.heap_top == 50
-    # 전역 변수 자리는 스택과 힙이 어떻게 움직여도 그대로다 (p.34 "fixed address")
+    # 전역 변수 자리는 스택과 힙이 어떻게 움직여도 그대로다 ("fixed address")
     assert (m.code_end, m.static_end) == (20, 30)
-    # 함수가 끝나면 스택은 줄지만 힙에서 받은 자리는 그대로 남는다 (free를 부를 때까지, p.38)
+    # 함수가 끝나면 스택은 줄지만 힙에서 받은 자리는 그대로 남는다 (free를 부를 때까지)
     m.ret(); m.ret(); m.ret()
     assert m.stack_top == 100 and m.heap_top == 50
     # 가운데 빈 곳이 바닥나면 더 못 쌓는다

@@ -23,12 +23,12 @@ permalink: "/studies/database-design/code/37_referential-integrity-foreign-key_v
 """참조 무결성 제약과 외래 키 검증.
 
 문서: 37.참조 무결성 제약과 외래 키 (예시, 정의, 오해, 카드 C1~C5)
-출처: 데이터베이스 설계 6-2 슬라이드 p.23~25, 7 슬라이드 p.8·p.11, 9 슬라이드 p.5
+출처: Elmasri & Navathe, Fundamentals of Database Systems 5장(참조 무결성 제약, 외래 키)과 COMPANY 상태
 실행: python3 37_referential-integrity-foreign-key_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 주장:
-  1. COMPANY의 외래 키는 8개다. 화살표는 Ssn에 4개, Dnumber에 3개, Pnumber에 1개가 꽂힌다(7 p.11).
-  2. 상태(6-2 p.21)의 모든 외래 키 값은 가리키는 릴레이션의 기본 키에 있거나 NULL이다.
-     NULL인 외래 키는 Borg의 Super_ssn 하나다. Smith의 Dno 5는 Research 부서를 가리킨다(p.25).
+  1. COMPANY의 외래 키는 8개다. 화살표는 Ssn에 4개, Dnumber에 3개, Pnumber에 1개가 꽂힌다(문서의 외래 키 표).
+  2. COMPANY 상태의 모든 외래 키 값은 가리키는 릴레이션의 기본 키에 있거나 NULL이다.
+     NULL인 외래 키는 Borg의 Super_ssn 하나다. Smith의 Dno 5는 Research 부서를 가리킨다(문서의 예시).
   3. 없는 값을 가리키는 튜플은 못 넣는다(Dno 7, Super_ssn 000000000). 외래 키가 NULL인 튜플은 넣을 수 있다.
   4. 가리킴을 받는 튜플은 그냥 지울 수 없다(5번 부서). 아무도 안 가리키는 튜플은 지울 수 있다.
   5. 외래 키는 자기 릴레이션에서 값이 겹쳐도 된다(Dno 5가 네 번). 같은 릴레이션을 가리킬 수도 있다(Super_ssn).
@@ -40,7 +40,7 @@ permalink: "/studies/database-design/code/37_referential-integrity-foreign-key_v
 """
 import sqlite3
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태 (Elmasri & Navathe의 COMPANY, DDL은 같은 교재의 CREATE TABLE 문). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

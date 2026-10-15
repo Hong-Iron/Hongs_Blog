@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/04_pointer-parameters_impl/"
 /* 포인터 인자와 값 전달: 값을 넘기는 swap은 못 바꾸고, 주소를 넘기는 swap은 바꾼다.
  *
  * 문서: 04.포인터 인자와 값 전달 (예시, 추적 표, 포인터를 바꾸는 함수, 카드)
- * 출처: 자료구조 2주차 슬라이드 p.29 (swap 두 판), p.35 (참조 변수)
  * 실행: cc -std=c11 -Wall -Wextra 04_pointer-parameters_impl.c -o ptr_params && ./ptr_params
  */
 #include <stdio.h>
@@ -38,7 +37,7 @@ static int fails = 0;
         }                                                             \
     } while (0)
 
-/* 슬라이드 p.29 위쪽: 값을 받는 판. x, y는 복사본이다 */
+/* 값을 받는 판. x, y는 복사본이다 */
 static void swap_by_value(int x, int y)
 {
     int temp;
@@ -49,7 +48,7 @@ static void swap_by_value(int x, int y)
     (void)y;                /* 복사본만 바뀌고 함수가 끝나면 사라진다 */
 }
 
-/* 슬라이드 p.29 아래쪽: 주소를 받는 판. *px, *py는 부른 쪽의 칸이다 */
+/* 주소를 받는 판. *px, *py는 부른 쪽의 칸이다 */
 static void swap_by_pointer(int *px, int *py)
 {
     int temp;

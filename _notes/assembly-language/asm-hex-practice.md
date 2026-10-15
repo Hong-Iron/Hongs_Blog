@@ -10,9 +10,9 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
-description: "슬라이드가 \"프로그래머는 변수와 명령어의 주소를 자주 더하고 뺀다\"며 중요한 기술로 꼽은 16진 계산과, 슬라이드의 연습 질문들을 모았다. 답을 펼치기 전에 종이에 먼저 써 본다."
+description: "프로그래머는 변수와 명령어의 주소를 자주 더하고 뺀다. 그래서 16진 계산은 어셈블리어에서 꼭 익혀야 할 기술이다. 여기에 2의 보수와 글자 코드를 읽는 연습을 더해 모았다. 답을 펼치기 전에 종이에 먼저 써 본다."
 next_url: "/studies/assembly-language/arithmetic-expression-practice/"
 next_title: "산술식을 어셈블리로 옮기기 연습"
 math: true
@@ -21,7 +21,7 @@ code_count: 1
 permalink: "/studies/assembly-language/asm-hex-practice/"
 ---
 {% raw %}
-슬라이드가 "프로그래머는 변수와 명령어의 주소를 자주 더하고 뺀다"며 중요한 기술로 꼽은 16진 계산과[^1], 슬라이드의 연습 질문들을 모았다. 답을 펼치기 전에 종이에 먼저 써 본다.
+프로그래머는 변수와 명령어의 주소를 자주 더하고 뺀다. 그래서 16진 계산은 어셈블리어에서 꼭 익혀야 할 기술이다. 여기에 2의 보수와 글자 코드를 읽는 연습을 더해 모았다. 답을 펼치기 전에 종이에 먼저 써 본다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 여섯 문제와 변형의 답 전부, 8비트 65,536쌍에서 뺄셈 = 2의 보수 덧셈 — [01_asm-hex-practice_p1.py](/Hongs_Blog/studies/assembly-language/code/01_asm-hex-practice_p1/)</div>
@@ -31,7 +31,7 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 
 ## p1 · 16진 덧셈
 
-`6A + 4B`를 16진수로 계산하라[^1].
+`6A + 4B`를 16진수로 계산하라.
 
 사용 개념: [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/)
 
@@ -56,14 +56,14 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-(가) `80`. 8 + 8 = 16이라 0을 쓰고 1을 올린다. 2 + 5 + 1 = 8[^1]. (나) `B5`. C + 9 = 21 → 5, 올림 1. 7 + 3 + 1 = B. (다) `29C9`. B + E = 25 → 9, 올림 1. 2 + 9 + 1 = 12 → C. A + F = 25 → 9, 올림 1. 1 + 0 + 1 = 2. (라) `0040006A`.
+(가) `80`. 8 + 8 = 16이라 0을 쓰고 1을 올린다. 2 + 5 + 1 = 8. (나) `B5`. C + 9 = 21 → 5, 올림 1. 7 + 3 + 1 = B. (다) `29C9`. B + E = 25 → 9, 올림 1. 2 + 9 + 1 = 12 → C. A + F = 25 → 9, 올림 1. 1 + 0 + 1 = 2. (라) `0040006A`.
 
 </details>
 
 
 ## p2 · 16진 뺄셈과 변수의 크기
 
-`var1`의 주소는 `00400020`이다. `var1` 바로 다음 변수의 주소는 `0040006A`다. `var1`은 몇 바이트를 차지하는가[^2]?
+`var1`의 주소는 `00400020`이다. `var1` 바로 다음 변수의 주소는 `0040006A`다. `var1`은 몇 바이트를 차지하는가?
 
 사용 개념: [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/)
 
@@ -87,14 +87,14 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-(가) `2E`. 5에서 7을 못 빼므로 16을 빌려 16 + 5 = 21, 21 − 7 = 14 = E. 윗자리는 7 − 1 − 4 = 2[^2]. (나) `24`. 빌려 올 일이 없다[^2]. (다) `00E4`. 0 − C는 모자라므로 빌려 16 − 12 = 4. 다음 자리는 0 − 1(빌려준 것) − 1이 모자라므로 또 빌려 16 − 2 = 14 = E. 그 윗자리는 1 − 1 = 0. (라) `30h` = 48바이트. 정수 하나가 4바이트이므로 12개.
+(가) `2E`. 5에서 7을 못 빼므로 16을 빌려 16 + 5 = 21, 21 − 7 = 14 = E. 윗자리는 7 − 1 − 4 = 2. (나) `24`. 빌려 올 일이 없다. (다) `00E4`. 0 − C는 모자라므로 빌려 16 − 12 = 4. 다음 자리는 0 − 1(빌려준 것) − 1이 모자라므로 또 빌려 16 − 2 = 14 = E. 그 윗자리는 1 − 1 = 0. (라) `30h` = 48바이트. 정수 하나가 4바이트이므로 12개.
 
 </details>
 
 
 ## p3 · 정해진 비트 수에 담기는 가장 큰 수
 
-(가) 20비트에 담을 수 있는 가장 큰 부호 없는 정수는[^3]? (나) 20비트에 담을 수 있는 가장 큰 양수는(맨 윗비트를 부호로 쓸 때)[^4]?
+(가) 20비트에 담을 수 있는 가장 큰 부호 없는 정수는? (나) 20비트에 담을 수 있는 가장 큰 양수는(맨 윗비트를 부호로 쓸 때)?
 
 사용 개념: [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/), [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)
 
@@ -117,14 +117,14 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-(가) $$2^{12} - 1 = 4{,}095$$와 $$2^{11} - 1 = 2{,}047$$. (나) −32,768과 +32,767[^4].
+(가) $$2^{12} - 1 = 4{,}095$$와 $$2^{11} - 1 = 2{,}047$$. (나) −32,768과 +32,767.
 
 </details>
 
 
 ## p4 · 2진 뺄셈을 덧셈으로
 
-2진수 `1001`에서 `0101`을 빼라. 4비트로 계산한다[^5].
+2진수 `1001`에서 `0101`을 빼라. 4비트로 계산한다.
 
 사용 개념: [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)
 
@@ -151,16 +151,16 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-(가) `00000011`의 2의 보수는 `11111101`. `00001100 + 11111101 = 1 00001001` → `00001001`(12 − 3 = 9)[^5]. (나) `0110`의 2의 보수는 `1010`. `1100 + 1010 = 1 0110` → `0110`(부호 없이 12 − 6 = 6).
+(가) `00000011`의 2의 보수는 `11111101`. `00001100 + 11111101 = 1 00001001` → `00001001`(12 − 3 = 9). (나) `0110`의 2의 보수는 `1010`. `1100 + 1010 = 1 0110` → `0110`(부호 없이 12 − 6 = 6).
 
 </details>
 
 
 ## p5 · 부호 있는 수 다섯 가지 바꾸기
 
-슬라이드가 "할 줄 알아야 한다"고 적은 다섯 가지다[^6].
+부호 있는 수를 다룰 때 할 줄 알아야 하는 다섯 가지다.
 
-(가) 16진수 `6A3D`의 2의 보수를 구하라(16비트). (나) 부호 있는 2진수 `11110000`을 10진수로. (다) 10진수 −43을 8비트 2진수로. (라) −43을 16진수로. (마) 부호 있는 8비트 16진수 `8A`, `C5`, `A2`, `9D`를 10진수로[^7].
+(가) 16진수 `6A3D`의 2의 보수를 구하라(16비트). (나) 부호 있는 2진수 `11110000`을 10진수로. (다) 10진수 −43을 8비트 2진수로. (라) −43을 16진수로. (마) 부호 있는 8비트 16진수 `8A`, `C5`, `A2`, `9D`를 10진수로.
 
 사용 개념: [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)
 
@@ -192,7 +192,7 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 
 ## p6 · 16진수로 적힌 글자 읽기
 
-`54 68 65 20 45 6E 64`는 무엇을 나타내는가[^8]?
+`54 68 65 20 45 6E 64`는 무엇을 나타내는가?
 
 사용 개념: [부호와 부호화](/Hongs_Blog/studies/data-and-information/code-encoding/)
 
@@ -210,7 +210,7 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 
 변형 문제
 
-- (가) `42 69 6E 61 72 79`는 무슨 낱말인가[^9]? (나) "Hi!"를 16진수 바이트로 적어라(`!`는 `21h`).
+- (가) `42 69 6E 61 72 79`는 무슨 낱말인가? (나) "Hi!"를 16진수 바이트로 적어라(`!`는 `21h`).
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -220,14 +220,5 @@ permalink: "/studies/assembly-language/asm-hex-practice/"
 </details>
 
 
-[^1]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-1」, p.19 (Hexadecimal Addition: 36 + 42 = 78, 28 + 45 = 6D, 28 + 58 = 80, 6A + 4B = B5, "21 / 16 = 1, rem 5", Important skill)
-[^2]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-1」, p.20 (Hexadecimal Subtraction: C6 − A2 = 24, 75 − 47 = 2E, "16 + 5 = 21", Practice: var1의 주소)
-[^3]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-1」, p.13 (Integer Storage Sizes: "What is the largest unsigned integer that may be stored in 20 bits?")
-[^4]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.4 (Ranges of Signed Integers 표, "Practice: What is the largest positive value that may be stored in 20 bits?")
-[^5]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.2 (Binary Subtraction: 00001100 − 00000011, "Practice: Subtract 0101 from 1001.")
-[^6]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.3 (Learn How To Do the Following)
-[^7]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-1」, p.21 (Signed Integers: "If the highest digit of a hexadecimal integer is > 7, the value is negative. Examples: 8A, C5, A2, 9D")
-[^8]: 어셈블리어 2회 강의 자료 「wk02-chapt_01-2-2」, p.23 ("54 68 65 20 45 6E 64 What do these numbers represent?")
-[^9]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.18 ("42 69 6E 61 72 79 What does this say?")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드의 연습 질문에는 답이 없다. 모든 풀이와 답, 풀이 전략, 변형 문제 가운데 슬라이드의 예가 아닌 것(p1의 나·다·라, p2의 다·라, p3의 가, p4의 나, p5의 값과 변형, p6의 나), p4에서 `1001`을 부호 있는 수로 읽을 때의 설명은 슬라이드에 없다. p5 (가)의 `6A3D`는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 1.3절의 예다. 답은 모두 문제 코드로 확인했다.
+[^s1]: p5 (가)의 `6A3D`는 교재 Irvine, *Assembly Language for x86 Processors* 7판, 1.3절의 예다. 답은 모두 문제 코드로 확인했다.
 {% endraw %}

@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/16_array-vs-linked-list_impl/"
 /* 배열과 연결 리스트 비교: 같은 일을 두 구조로 하면서 옮긴 원소 수와 따라간 링크 수를 센다.
  *
  * 문서: 1-2학기/자료구조/3.개념집/16.배열과 연결 리스트 비교.md
- * 출처: 자료구조 5주차 슬라이드 p.3~5, 27, 32와 2주차 p.4. 횟수를 세는 실험은 슬라이드에 없다.
  * 실행: cc -std=c11 -Wall -Wextra 16_array-vs-linked-list_impl.c -o versus && ./versus
  *
  * 확인하는 것 (n = 1,000)

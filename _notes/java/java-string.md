@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["String", "문자열", "문자열 리터럴", "String Literal", "문자열 풀", "String Pool", "String Constant Pool", "equals", "불변", "Immutable", "charAt", "length", "replace", "substring", "indexOf", "split", "intern"]
 description: "글자를 줄줄이 이은 것을 문자열이라 한다. 자바는 코드에 똑같은 글귀를 여러 번 적어도 그것을 한 번만 만들어 두고 같이 쓴다. 메모리를 아끼는 장치다. 그런데 이 때문에 두 문자열이 같은지 주소로 견주면 어떤 때는 맞고 어떤 때는 틀린다. 직접 새로 만든 문자열이나 실행 중에 생…"
@@ -48,7 +48,7 @@ System.out.println(n2 == n3);            // false
 System.out.println(n2.equals(n3));       // true
 ```
 
-두 코드의 변수는 모두 `"KIA"`를 담고 있다. 그런데 `==`의 답이 다르다. 문자열은 `String` 객체로 만들어지는 [참조 타입](/Hongs_Blog/studies/java/java-reference-types/)이고, `==`는 [주소를 비교](/Hongs_Blog/studies/java/java-reference-equality/)하기 때문이다. 만드는 방법에 따라 객체가 놓이는 곳이 다르다[^1].
+두 코드의 변수는 모두 `"KIA"`를 담고 있다. 그런데 `==`의 답이 다르다. 문자열은 `String` 객체로 만들어지는 [참조 타입](/Hongs_Blog/studies/java/java-reference-types/)이고, `==`는 [주소를 비교](/Hongs_Blog/studies/java/java-reference-equality/)하기 때문이다. 만드는 방법에 따라 객체가 놓이는 곳이 다르다.
 
 ```
  큰따옴표로 적었을 때                     new로 만들었을 때
@@ -70,14 +70,14 @@ System.out.println(n2.equals(n3));       // true
 
 ### 만드는 두 방법
 
-자바에서 문자열은 `String` 객체로 만들어진다. 만드는 방법은 둘이다[^1].
+자바에서 문자열은 `String` 객체로 만들어진다. 만드는 방법은 둘이다.
 
 | 방법 | 코드 | 객체 |
 |---|---|---|
 | 큰따옴표로 직접 적는다(리터럴) | `String s = "KIA";` | 글자가 같은 리터럴은 `String` 객체 하나를 같이 쓴다 |
 | `new`로 만든다 | `String s = new String("KIA");` | 부를 때마다 새 객체가 생긴다 |
 
-JVM은 리터럴로 만든 문자열을 한곳에 모아 둔다. 이 모음을 문자열 풀이라 부른다. 같은 글귀의 리터럴이 또 나오면 새로 만들지 않고 모아 둔 것의 주소를 준다[^s1]. `new`는 객체를 만드는 연산자라[^1] 풀에 같은 글귀가 있든 없든 힙에 새 객체를 만든다.
+JVM은 리터럴로 만든 문자열을 한곳에 모아 둔다. 이 모음을 문자열 풀이라 부른다. 같은 글귀의 리터럴이 또 나오면 새로 만들지 않고 모아 둔 것의 주소를 준다[^s1]. `new`는 객체를 만드는 연산자라 풀에 같은 글귀가 있든 없든 힙에 새 객체를 만든다.
 
 ### 비교
 
@@ -86,7 +86,7 @@ JVM은 리터럴로 만든 문자열을 한곳에 모아 둔다. 이 모음을 �
 | 같은 객체인가 | `a == b` | `false` |
 | 글자가 같은가 | `a.equals(b)` | `true` |
 
-문자열을 비교할 때는 `==`와 `!=` 대신 `equals()`를 쓴다. 다른지 볼 때는 앞에 `!`를 붙여 `!a.equals(b)`로 쓴다[^2].
+문자열을 비교할 때는 `==`와 `!=` 대신 `equals()`를 쓴다. 다른지 볼 때는 앞에 `!`를 붙여 `!a.equals(b)`로 쓴다.
 
 리터럴끼리는 `==`로도 `true`가 나온다. 그래서 `==`로 비교하는 코드가 연습할 때는 잘 돌다가, 실행 중에 만들어진 문자열을 만나면 틀린다. 실행 중에 만들어지는 문자열은 풀의 것이 아니다[^s1].
 
@@ -101,7 +101,7 @@ JVM은 리터럴로 만든 문자열을 한곳에 모아 둔다. 이 모음을 �
 
 ### 바뀌지 않는 객체
 
-`String` 객체는 한 번 만들어지면 글자가 바뀌지 않는다. 글자를 바꾸는 것처럼 보이는 메서드는 모두 새 문자열을 만들어 돌려주고 원래 것은 그대로 둔다[^3][^s2].
+`String` 객체는 한 번 만들어지면 글자가 바뀌지 않는다. 글자를 바꾸는 것처럼 보이는 메서드는 모두 새 문자열을 만들어 돌려주고 원래 것은 그대로 둔다[^s2].
 
 ```java
 String subject = "자바 프로그래밍";
@@ -114,12 +114,14 @@ System.out.println(subject);    // 자바 프로그래밍
 
 ### 주요 메서드
 
-`"자바 프로그래밍"`으로 본다. 글자마다 0부터 번호가 붙는다. 빈칸도 한 글자다[^3].
+`"자바 프로그래밍"`으로 본다. 글자마다 0부터 번호가 붙는다. 빈칸도 한 글자다.
 
 ```
  글자   자   바  (빈칸)  프   로   그   래   밍
  번호   0    1     2     3    4    5    6    7        모두 8글자
 ```
+
+자주 쓰는 메서드는 다음과 같다.
 
 | 하는 일 | 메서드 | 예 (`s`는 `"자바 프로그래밍"`) | 결과 |
 |---|---|---|---|
@@ -131,24 +133,15 @@ System.out.println(subject);    // 자바 프로그래밍
 | 찾기 | `indexOf(찾을 것)` | `s.indexOf("프로그래밍")` | 3 (처음 나오는 자리의 번호) |
 | 쪼개기 | `split(구분자)` | `"번호,제목,내용,글쓴이".split(",")` | 문자열 배열 |
 
-출처는 차례로 [^3][^4][^5]다.
-
 - `substring(시작, 끝)`은 끝 번호의 글자를 넣지 않는다. `s.substring(3, 5)`는 3번과 4번 글자인 `"프로"`다. 글자 수는 끝에서 시작을 뺀 $$5 - 3 = 2$$다[^s2].
 - `indexOf`는 찾는 것이 없으면 −1을 준다. `s.indexOf("파이썬")`은 −1이다[^s2].
-- `split`은 구분자를 기준으로 문자열을 나눠 [배열](/Hongs_Blog/studies/java/java-array/)에 담아 준다[^5].
+- `split`은 구분자를 기준으로 문자열을 나눠 [배열](/Hongs_Blog/studies/java/java-array/)에 담아 준다.
 
 ```java
 String board = "번호,제목,내용,글쓴이";
 String[] arr = board.split(",");
 // arr[0] = "번호", arr[1] = "제목", arr[2] = "내용", arr[3] = "글쓴이"
 ```
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.12의 코드는 `String board = "번호,제목,내용,글쓴이";`인데 아래 그림의 `arr[3]` 칸에는 `"성명"`이 적혀 있다. / 문제점: 코드와 그림이 맞지 않는다. `split`은 글자를 바꾸지 않는다. / 수정안: 그림의 `arr[3]`을 `"글쓴이"`로(또는 코드의 마지막 조각을 `성명`으로). / 근거: JDK 21에서 `"번호,제목,내용,글쓴이".split(",")`의 넷째 조각은 `"글쓴이"`다(구현 코드 6번).
-
-</div>
 
 
 ### 스스로 설명해 보기
@@ -293,12 +286,7 @@ String e = a.toUpperCase();      // 5
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 4회 강의 자료 「Software Project 04. Reference Types」, p.8~9 (String 객체, 같은 리터럴의 공유, new 연산자, Car1~3 코드)
-[^2]: 소프트웨어 프로젝트 3회 강의 자료 「Software Project 03. Java Language Basics (2)」, p.8 (문자열은 equals로 비교)
-[^3]: 소프트웨어 프로젝트 4회 강의 자료 「Software Project 04. Reference Types」, p.10 (charAt, length, replace, "자바 프로그래밍" 번호 그림)
-[^4]: 같은 자료, p.11 (substring, indexOf)
-[^5]: 같은 자료, p.12 (split)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "문자열 풀"이라는 이름, 실행 중에 만들어진 문자열이 풀의 것이 아니라는 설명과 네 경우의 표, 첫 예시의 출력과 메모리 그림은 원본에 없다. 출력은 구현 코드로 확인했다. Java Language Specification §3.10.5와 `String.intern()` 문서에 있다. 원본 p.8~9는 두 코드만 보여 주고 `==`의 결과는 적지 않는다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `String`이 바뀌지 않는다는 일반 규칙과 그 이유, `substring`의 끝 번호 규칙 설명, `indexOf`의 −1, 경계 사례, `equalsIgnoreCase`는 원본에 없다(원본 p.10은 `replace`가 원래 문자열을 그대로 둔다고만 적는다). 값은 구현 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 스스로 설명해 보기, 예제, 활용 항목, 오해 항목, 카드 C1~C4는 원본에 없다. 값은 구현 코드로 확인했다.
+[^s1]: 출력은 구현 코드로 확인했다. Java Language Specification §3.10.5와 `String.intern()` 문서에 있다.
+[^s2]: 값은 구현 코드로 확인했다.
+[^s3]: 값은 구현 코드로 확인했다.
 {% endraw %}

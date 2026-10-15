@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/05_regular-expression-practice_p6/"
 ```python
 # 정규 표현식 연습: 문제 1~6의 답을 확인한다
 # 실행: python3 05_regular-expression-practice_p6.py   (표준 라이브러리만 쓴다)
-# 수업 표기(기본 다섯 식)를 파이썬 re 표기로 옮겨 길이 제한 안의 모든 문자열에서 견준다.
+# 문서의 표기(기본 다섯 식)를 파이썬 re 표기로 옮겨 길이 제한 안의 모든 문자열에서 견준다.
 # 옮기는 규칙: ε -> 빈 묶음 (), 나머지는 그대로. 한 글자가 한 기호다.
 import itertools
 import re
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     assert got == {"a", "b", "bc", "bcc"}
     assert "ac" not in got and "" not in got and "bcbc" not in lang("a|bc*", "abc", 4)
 
-    # 문제 2: 정수 (슬라이드 예 4). d = 숫자 하나
+    # 문제 2: 정수. d = 숫자 하나
     assert lang("dd*", "d", 7) == strings("d", 7) - {""}
     assert all(re.fullmatch(r"[0-9][0-9]*", s) for s in ["0", "11", "1530", "007"])
     assert not re.fullmatch(r"[0-9][0-9]*", "")
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     nolead = re.compile(r"0|[1-9][0-9]*")
     assert all(nolead.fullmatch(s) for s in ["0", "11", "1530"]) and not nolead.fullmatch("007")
 
-    # 문제 3: 식별자 (슬라이드 예 5). l = 글자, d = 숫자, u = 밑줄
+    # 문제 3: 식별자. l = 글자, d = 숫자, u = 밑줄
     ident = "(l|u)(l|d|u)*"
     assert lang(ident, "ldu", 6) == {s for s in strings("ldu", 6) if s and s[0] != "d"}
     wrong = "(l|d|u)(l|d|u)*"                 # 흔한 오답: 첫 글자를 따로 떼지 않았다
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     assert all(real.fullmatch(s) for s in ["aaa", "i", "funcAtoB", "_var", "main", "variable123"])
     assert not real.fullmatch("123variable")
 
-    # 문제 4: 실수 (슬라이드 예 6). m = 빼기, p = 점, q = 더하기, E = 지수 표시
+    # 문제 4: 실수. m = 빼기, p = 점, q = 더하기, E = 지수 표시
     flt = "(m|ε)dd*pdd*(ε|E(q|m|ε)dd*)"
     assert lang(flt, "mdpEq", 6) == {s for s in strings("mdpEq", 6) if re.fullmatch(r"m?d+pd+(E[qm]?d+)?", s)}
     real = re.compile(r"(-|)[0-9][0-9]*\.[0-9][0-9]*(|E(\+|-|)[0-9][0-9]*)")

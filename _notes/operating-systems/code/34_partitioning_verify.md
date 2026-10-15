@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
     # 그림 7.5: 16K 요청. 빈 블록(주소 순)과 마지막 배치 위치(14K 블록 직후)
     holes = [(0, 8), (1, 12), (2, 22), (3, 18), (4, 8), (5, 6), (6, 14), (7, 36)]
-    # 슬라이드 그림에서 14K는 마지막으로 할당된 블록이고, 그 뒤 36K가 next-fit이 처음 보는 구멍
+    # 그림 7.5에서 14K는 마지막으로 할당된 블록이고, 그 뒤 36K가 next-fit이 처음 보는 구멍
     holes_free = [h for h in holes if h[0] != 6]
     sizes = [s for _, s in holes_free]
     i_first = place(holes_free, 16, "first")

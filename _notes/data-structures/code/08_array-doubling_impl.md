@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/08_array-doubling_impl/"
 /* 배열 두 배 늘리기: 꽉 차면 realloc으로 용량을 두 배로 늘리는 스택.
  *
  * 문서: 08.배열 두 배 늘리기 (예시 표, 코드, 복잡도, 카드)
- * 출처: 자료구조 3주차 슬라이드 p.14, p.52~54
  * 실행: cc -std=c11 -Wall -Wextra 08_array-doubling_impl.c -o array_doubling && ./array_doubling
  *
  * "옮겨 담은 수"는 용량을 늘리는 순간 이미 들어 있던 원소의 수다.
@@ -78,7 +77,7 @@ static void stack_free(Stack *s)
     s->top = -1;
 }
 
-/* 슬라이드 p.53의 StackFull(): 가득 찼을 때 부른다 */
+/* StackFull(): 가득 찼을 때 부른다 */
 static void stack_full(Stack *s)
 {
     int new_capacity = s->step == 0 ? 2 * s->capacity : s->capacity + s->step;
@@ -148,7 +147,7 @@ int main(void)
     /* 2. 한 번에 길게: 100,000번 넣는 동안 매번 확인한다 */
     {
         Stack s;
-        int n, ok_capacity = 1, ok_moved = 1, ok_bound = 1, ok_slide = 1;
+        int n, ok_capacity = 1, ok_moved = 1, ok_bound = 1, ok_count = 1;
         long worst_times_1000 = 0;
 
         stack_init(&s, 1, 0);
@@ -159,13 +158,13 @@ int main(void)
             if (s.capacity != cap) ok_capacity = 0;         /* 용량은 n 이상인 가장 작은 2의 거듭제곱 */
             if (s.moved != cap - 1) ok_moved = 0;           /* 옮긴 수 = 1 + 2 + ... + 용량/2 = 용량 - 1 */
             if (!(s.moved < 2L * n)) ok_bound = 0;          /* 옮긴 수 < 2n */
-            if (n >= 2 && !(n >= cap / 2 + 1)) ok_slide = 0; /* p.54: 넣은 횟수 >= 2^(k-1) + 1 */
+            if (n >= 2 && !(n >= cap / 2 + 1)) ok_count = 0; /* 문서의 논증 1: 넣은 횟수 >= 2^(k-1) + 1 */
             if (s.moved * 1000 / n > worst_times_1000) worst_times_1000 = s.moved * 1000 / n;
         }
         CHECK(ok_capacity, "용량 = n 이상인 가장 작은 2의 거듭제곱");
         CHECK(ok_moved, "옮긴 수 = 용량 - 1");
         CHECK(ok_bound, "옮긴 수 < 2n");
-        CHECK(ok_slide, "용량이 2^k이면 넣은 횟수는 2^(k-1) + 1 이상");
+        CHECK(ok_count, "용량이 2^k이면 넣은 횟수는 2^(k-1) + 1 이상");
         CHECK(s.capacity == 131072 && s.moved == 131071 && s.grows == 17, "100,000번: 용량 131,072, 옮긴 수 131,071, 늘린 횟수 17");
         for (n = 100000; n >= 1; n--)
             if (pop(&s) != n) { CHECK(0, "100,000개가 거꾸로 나온다"); break; }
@@ -204,7 +203,7 @@ int main(void)
         printf("[OK] 열 칸씩: n = 2,000이면 옮긴 수 199,000\n");
     }
 
-    /* 5. 슬라이드 p.14: 기본 용량 10에서 시작해 두 배씩 */
+    /* 5. 희소 행렬 목록의 예: 기본 용량 10에서 시작해 두 배씩 */
     {
         Stack s;
         int n;

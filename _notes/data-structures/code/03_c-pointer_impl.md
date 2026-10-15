@@ -23,7 +23,6 @@ permalink: "/studies/data-structures/code/03_c-pointer_impl/"
 /* 포인터: 주소 연산자 &, 따라가기 연산자 *, 포인터의 포인터, 포인터 형 변환을 값으로 확인한다.
  *
  * 문서: 03.포인터 (예시, 식과 타입 표, 추적 표, 스스로 설명해 보기, 오해, 카드)
- * 출처: 자료구조 2주차 슬라이드 p.21~28
  * 실행: cc -std=c11 -Wall -Wextra 03_c-pointer_impl.c -o c_pointer && ./c_pointer
  *
  * 주소 값 자체(예: 0x16b...)는 실행할 때마다 달라진다. 그래서 주소의 숫자가 아니라
@@ -43,7 +42,7 @@ static int fails = 0;
         }                                                             \
     } while (0)
 
-/* 1. 변수와 포인터: 슬라이드 p.22~23, p.25의 그림 */
+/* 1. 변수와 포인터: 문서 예시의 그림 */
 static void basics(void)
 {
     int a = 100;
@@ -63,7 +62,7 @@ static void basics(void)
     printf("[OK] 변수와 포인터: p == &a, *p로 읽고 쓰면 a를 읽고 쓰는 것이다\n");
 }
 
-/* 2. 슬라이드 p.26: 101을 세 번 찍는 코드 */
+/* 2. 문서의 예: 101을 세 번 찍는 코드 */
 static void slide_example(void)
 {
     int V = 101;
@@ -74,7 +73,7 @@ static void slide_example(void)
     snprintf(out, sizeof out, "%d %d %d", V, *P, **Q);
     CHECK(strcmp(out, "101 101 101") == 0, "V, *P, **Q는 모두 101");
     CHECK(*Q == P && *Q == &V, "*Q는 P에 든 값, 곧 V의 주소다");
-    printf("[OK] p.26: V, *P, **Q -> %s\n", out);
+    printf("[OK] 101을 세 번: V, *P, **Q -> %s\n", out);
 }
 
 /* 3. 문서의 추적 표 */
@@ -141,7 +140,7 @@ static void declarations(void)
            sizeof(int), sizeof(double), sizeof(void *));
 }
 
-/* 6. 포인터 형 변환: 슬라이드 p.27~28
+/* 6. 포인터 형 변환
  *    같은 칸을 다른 타입으로 읽으면 같은 비트가 다른 값으로 읽힌다.
  *    int의 자리를 float * 로 직접 읽는 것은 C 표준이 결과를 정해 두지 않았다.
  *    그래서 여기서는 표준이 허락하는 두 방법으로 같은 일을 한다:

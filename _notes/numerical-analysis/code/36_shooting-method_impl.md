@@ -20,7 +20,7 @@ permalink: "/studies/numerical-analysis/code/36_shooting-method_impl/"
 [사격법](/Hongs_Blog/studies/numerical-analysis/shooting-method/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""사격법 구현과 검증. T'' = h'(T − Ta), T(0) = 40, T(10) = 200 (슬라이드 p.7)."""
+"""사격법 구현과 검증. T'' = h'(T − Ta), T(0) = 40, T(10) = 200."""
 import math
 
 
@@ -42,7 +42,7 @@ def shoot(F, y0, z0, L, n=1000):
 def main():
     hp, Ta = 0.01, 20.0
     F = lambda x, Y: [Y[1], hp * (Y[0] - Ta)]
-    T10a = shoot(F, 40, 10, 10, 5); T10b = shoot(F, 40, 20, 10, 5)     # 슬라이드 값은 RK4, 걸음 2
+    T10a = shoot(F, 40, 10, 10, 5); T10b = shoot(F, 40, 20, 10, 5)     # 문서 값은 RK4, 걸음 2
     assert abs(T10a - 168.3797) < 1e-4 and abs(T10b - 285.8980) < 1e-4
     z = 10 + (20 - 10) / (T10b - T10a) * (200 - T10a)
     assert abs(z - 12.6907) < 1e-4

@@ -10,7 +10,7 @@ questions:
   link: /studies/human-interface-media/
   link_label: 로드맵
 - q: 어려워요?
-  a: "강의 소개에 미적분, 확률통계, 푸리에, C/C++를 미리 알아야 한다고 나와요. 수업에선 따로 안 가르쳐 준대요. 행렬도 꽤 나와요."
+  a: "미적분, 확률통계, 푸리에, C/C++를 미리 알아 두면 편해요. 행렬도 꽤 나와요."
 - q: "배워서 어디에 써요?"
   a: "모니터랑 카메라가 R, G, B 세 개뿐인 이유가 삼색 이론이에요. 세 개면 사람 눈엔 충분하거든요. 측면 억제는 우리가 밝기보다 경계를 더 잘 보는 이유고요."
   link: /studies/human-interface-media/trichromatic-theory/

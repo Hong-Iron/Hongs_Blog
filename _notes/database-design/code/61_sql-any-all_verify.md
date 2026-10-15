@@ -23,20 +23,19 @@ permalink: "/studies/database-design/code/61_sql-any-all_verify/"
 """ANY와 ALL 검증 (SQLite로 바꿔 쓴 판).
 
 문서: 61.ANY와 ALL
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.12~13, 12주차 p.4
-SQLite에는 ANY와 ALL이 없다. 슬라이드 문장 그대로는 61_sql-any-all_verify.sql(PostgreSQL 16)에서 돌린다.
+SQLite에는 ANY와 ALL이 없다. 문서의 문장 그대로는 61_sql-any-all_verify.sql(PostgreSQL 16)에서 돌린다.
 주장:
   1. SQLite는 > ALL, = ANY를 구문 오류로 거부한다.
-  2. > ALL (5번 부서 급여)를 > (SELECT MAX ...)로 바꾸면 Wallace, Borg (p.13).
+  2. > ALL (5번 부서 급여)를 > (SELECT MAX ...)로 바꾸면 Wallace, Borg.
   3. > ANY를 > (SELECT MIN ...)으로 바꾸면 5명, = ANY를 IN으로 바꾼 Q4A는 {1, 2}.
   4. 바꿔 쓴 판이 원래 식과 달라지는 두 경우의 MAX 쪽 값: 빈 집합이면 0행, NULL이 섞이면 7행.
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

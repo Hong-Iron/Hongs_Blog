@@ -23,12 +23,11 @@ permalink: "/studies/assembly-language/code/02_virtual-machine-levels_verify/"
 """가상 기계 계층 검증.
 
 문서: 02.가상 기계 계층
-출처: 어셈블리어 1주차 p.9 (해석과 번역), 2주차 2-1 p.1~5 (네 단계), 2-2 p.19~21 (진리표, 멀티플렉서)
 주장:
   1. 같은 L1 프로그램을 (가) 한 줄씩 해석해 돌린 결과와 (나) 통째로 L0로 번역한 뒤 돌린 결과가 같다.
   2. 해석은 L1 문장을 실행할 때마다 다시 읽고, 번역은 한 번만 읽는다 (반복문 100번이면 100번 대 1번).
-  3. 네 단계는 위에서 아래로 4 → 3 → 2 → 1 로 넘겨진다 (슬라이드 p.2의 "(Level 4)"는 3이 맞다).
-  4. 1단계 부품의 예: 슬라이드 진리표 세 개 (¬X∨Y, X∧¬Y, 멀티플렉서 (Y∧S)∨(X∧¬S)).
+  3. 네 단계는 위에서 아래로 4 → 3 → 2 → 1 로 넘겨진다 (고급 언어는 3단계 어셈블리어로 컴파일된다).
+  4. 1단계 부품의 예: 진리표 세 개 (¬X∨Y, X∧¬Y, 멀티플렉서 (Y∧S)∨(X∧¬S)).
 """
 from itertools import product
 
@@ -91,7 +90,7 @@ def translate(l1, counter):
 
 
 LEVELS = {4: "고급 언어", 3: "어셈블리어", 2: "명령어 집합 구조(ISA)", 1: "디지털 논리"}
-GOES_TO = {4: 3, 3: 2, 2: 1}            # 슬라이드 p.2~4를 바로잡은 것
+GOES_TO = {4: 3, 3: 2, 2: 1}            # 4단계(고급 언어)는 3단계로 내려간다
 
 
 def main():
@@ -116,10 +115,10 @@ def main():
 
     T, F = True, False
     t1 = [(x, y, (not x) or y) for x, y in product([F, T], repeat=2)]
-    assert [r[2] for r in t1] == [T, T, F, T]                 # 2-2 p.19
+    assert [r[2] for r in t1] == [T, T, F, T]                 # ¬X∨Y
     t2 = [(x, y, x and (not y)) for x, y in product([F, T], repeat=2)]
-    assert [r[2] for r in t2] == [F, F, T, F]                 # 2-2 p.20
-    # 2-2 p.21: 줄 순서는 S, Y, X 순으로 X가 가장 빨리 바뀜. X Y S = FFF, FTF, TFF, TTF, FFT, FTT, TFT, TTT
+    assert [r[2] for r in t2] == [F, F, T, F]                 # X∧¬Y
+    # 멀티플렉서: 줄 순서는 S, Y, X 순으로 X가 가장 빨리 바뀜. X Y S = FFF, FTF, TFF, TTF, FFT, FTT, TFT, TTT
     rows = [(F, F, F), (F, T, F), (T, F, F), (T, T, F), (F, F, T), (F, T, T), (T, F, T), (T, T, T)]
     mux = [(y and s) or (x and (not s)) for x, y, s in rows]
     assert mux == [F, F, T, T, F, T, F, T]

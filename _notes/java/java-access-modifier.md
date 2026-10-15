@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Access Modifier", "public", "protected", "default", "private", "접근 제어자", "Getter", "Setter", "게터", "세터", "무결성", "Integrity"]
 description: "건물의 문마다 누가 들어올 수 있는지가 다르다. 정문은 누구나, 사무실은 같은 회사 사람만, 금고는 주인만 연다. 클래스와 그 안의 값·동작에도 이런 문패를 붙여서, 중요한 것을 바깥 코드가 함부로 건드리지 못하게 한다. 값을 금고에 넣어 두고 창구를 통해서만 넣고 꺼내게 하면, …"
@@ -86,9 +86,9 @@ System.out.println(s.getName());                         // (이름 없음)
 
 ## 정의
 
-**접근 제한자**는 중요한 필드와 메서드가 밖에 드러나지 않게 막아, 객체가 늘 올바른 상태로 있게(무결성) 하는 데 쓴다[^1]. [캡슐화](/Hongs_Blog/studies/java/oop-principles/)를 실제로 해 주는 문법이다.
+**접근 제한자**는 중요한 필드와 메서드가 밖에 드러나지 않게 막아, 객체가 늘 올바른 상태로 있게(무결성) 하는 데 쓴다. [캡슐화](/Hongs_Blog/studies/java/oop-principles/)를 실제로 해 주는 문법이다.
 
-단계는 넷이다. 아래로 갈수록 더 좁게 막는다[^2].
+키워드는 `public`, `protected`, `private` 셋이다. 여기에 아무것도 쓰지 않은 경우(default)까지 더해 단계는 넷이다. 아래로 갈수록 더 좁게 막는다.
 
 | 접근 제한자 | 붙일 수 있는 곳 | 쓸 수 있는 범위 |
 |---|---|---|
@@ -96,13 +96,6 @@ System.out.println(s.getName());                         // (이름 없음)
 | `protected` | 필드, 생성자, 메서드 | 같은 패키지이거나, 자식 객체 |
 | (default) 아무것도 안 씀 | 클래스, 필드, 생성자, 메서드 | 같은 패키지 |
 | `private` | 필드, 생성자, 메서드 | 객체(클래스) 안 |
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.13의 글머리표는 "There are three types of access modifiers: public, protected, and private"라고 적고, 같은 쪽의 그림과 표는 `default`까지 네 단계를 보인다. p.15와 p.16의 글머리표는 생성자·필드·메서드가 "public, default, and private"를 가질 수 있다고 적어 `protected`를 뺐는데, p.13의 표는 `protected`의 대상을 "필드, 생성자, 메소드"로 적었다. p.14의 아래 그림은 두 상자의 이름이 모두 `package1`이다. / 문제점: 키워드는 셋이 맞지만 접근 단계는 넷이다. 생성자·필드·메서드에는 `protected`도 붙는다. 그림의 오른쪽 상자는 다른 패키지여야 설명과 맞는다. / 수정안: "키워드 셋(`public`, `protected`, `private`)에 아무것도 안 쓰는 default를 더해 네 단계", "생성자·필드·메서드는 네 단계 모두 가능", 오른쪽 상자는 `package2`. / 근거: 아래 표를 JDK 21에서 컴파일해 `protected` 필드가 다른 패키지의 자식에서는 되고 남에게서는 `pro has protected access in B`로 막히는 것을 확인했다.
-
-</div>
 
 
 ### 한눈에 보는 표
@@ -120,7 +113,7 @@ System.out.println(s.getName());                         // (이름 없음)
 
 ### 클래스
 
-클래스에는 `public`을 붙이거나 안 붙이거나 둘 중 하나다[^3].
+클래스에는 `public`을 붙이거나 안 붙이거나 둘 중 하나다.
 
 - `public`을 빼면 다른 패키지에서 그 클래스를 쓸 수 없다.
 - `public`을 붙이면 같은 패키지뿐 아니라 다른 패키지에서도 쓸 수 있다.
@@ -141,11 +134,12 @@ package1                    package2
 
 ### 생성자
 
-생성자의 접근 제한자는 "누가 `new`로 이 객체를 만들 수 있는가"를 정한다[^4].
+생성자의 접근 제한자는 "누가 `new`로 이 객체를 만들 수 있는가"를 정한다.
 
 | 접근 제한자 | 생성자 | 뜻 |
 |---|---|---|
 | `public` | `클래스(…)` | 모든 패키지에서 생성자를 부를 수 있다 = 모든 패키지에서 객체를 만들 수 있다 |
+| `protected` | `클래스(…)` | 같은 패키지에서 객체를 만들 수 있다. 다른 패키지에서는 자식 클래스의 생성자가 `super(…)`로 부를 수만 있다[^s2] |
 | (default) | `클래스(…)` | 같은 패키지에서만 객체를 만들 수 있다 |
 | `private` | `클래스(…)` | 클래스 안에서만 객체를 만들 수 있다 |
 
@@ -162,17 +156,18 @@ class Map {
 
 ### 필드와 메서드
 
+필드와 메서드에 붙인 접근 제한자는 누가 그 필드를 읽고 바꾸는지, 누가 그 메서드를 부르는지를 정한다.
+
 | 접근 제한자 | 뜻 |
 |---|---|
 | `public` | 모든 패키지에서 필드를 읽고 바꿀 수 있다. 메서드를 부를 수 있다 |
+| `protected` | 같은 패키지와, 다른 패키지의 자식 클래스 안에서 필드를 읽고 바꿀 수 있다. 메서드를 부를 수 있다[^s2] |
 | (default) | 같은 패키지에서만 필드를 읽고 바꿀 수 있다. 메서드를 부를 수 있다 |
 | `private` | 클래스 안에서만 필드를 읽고 바꿀 수 있다. 메서드를 부를 수 있다 |
 
-표는 슬라이드를 옮긴 것이다[^5].
-
 ### getter와 setter
 
-필드를 `private`로 감추고, 읽는 메서드와 넣는 메서드를 `public`으로 내놓는다[^6].
+필드를 `private`로 감추고, 읽는 메서드와 넣는 메서드를 `public`으로 내놓는다.
 
 - **setter**는 값을 검사해서 맞는 값만 필드에 넣는 메서드다.
 - **getter**는 필드 값이 객체 밖에서 쓰기에 알맞지 않으면 알맞게 바꿔서 돌려줄 수 있는 메서드다.
@@ -235,7 +230,7 @@ public void setFieldName(타입 fieldName) { // setter: public, void
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C4** `private double speed;` 필드에 슬라이드의 이름 규칙대로 getter와 setter의 머리(선언부)를 쓰라. setter는 음수를 0으로 바꿔 넣게 하라.</summary>
+<summary class="callout-title" markdown="span">**C4** `private double speed;` 필드의 getter와 setter를 이름 규칙대로 쓰라. setter는 음수를 0으로 바꿔 넣게 하라.</summary>
 
 **답:** `public double getSpeed() { return speed; }` / `public void setSpeed(double speed) { if (speed < 0) { this.speed = 0; } else { this.speed = speed; } }`<br>
 **이유:** getter는 `get` + 필드 이름(첫 글자 대문자), 돌려주는 타입은 필드 타입. setter는 `set` + 필드 이름, `void`, 매개변수는 필드 타입. setter 안에서 `this.`를 빼면 매개변수에 매개변수를 넣게 된다[^s1].
@@ -243,11 +238,6 @@ public void setFieldName(타입 fieldName) { // setter: public, void
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 7회 강의 자료 「Software Project 07. Class (2)」, p.12 (Access modifiers, 외부 객체가 노출 메서드·필드에는 닿고 숨긴 필드·메서드에는 닿지 못하는 그림)
-[^2]: 같은 자료, p.13 (public ⊃ protected ⊃ default ⊃ private 그림, 접근 제한자·제한 대상·제한 범위 표)
-[^3]: 같은 자료, p.14 (Access restriction for classes)
-[^4]: 같은 자료, p.15 (Access restriction for constructors)
-[^5]: 같은 자료, p.16 (Access restriction for fields and methods). 표의 둘째 칸 머리글이 "생성자"로 적혀 있으나 내용은 필드와 메서드다.
-[^6]: 같은 자료, p.17 (Setter, Getter, 선언 형식과 이름 규칙)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `Scv` 예와 출력, 네 곳에서 써 본 표와 오류 문구, 클래스 그림의 `package2` 표기, `Map` 예, 활용의 항목, 카드 C2~C4는 원본에 없다. 슬라이드에는 getter·setter의 틀만 있고 검사하는 예가 없다. `package1`(`A`, `B`, 같은 패키지의 클래스)과 `package2`(남 `C`, 자식 `D`)를 만들어 JDK 21에서 직접 컴파일해 확인했다.
+[^s1]: `package1`(`A`, `B`, 같은 패키지의 클래스)과 `package2`(남 `C`, 자식 `D`)를 만들어 JDK 21에서 직접 컴파일해 확인했다.
+[^s2]: 생성자 표와 필드·메서드 표의 `protected` 줄은 Java Language Specification §6.6.2에 따라 보탰다. `package1`의 `B`에 `protected` 생성자·필드·메서드를 두고 JDK 21에서 컴파일해 확인했다. 같은 패키지의 클래스와 `package2`의 자식 `D`(`super()`, 물려받은 필드와 메서드)는 통과했고, `package2`에서 `new B()`를 쓰면 자식 클래스 안에서도 `B() has protected access in B`로 막혔다.
 {% endraw %}

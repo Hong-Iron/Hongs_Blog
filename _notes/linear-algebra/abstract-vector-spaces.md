@@ -98,17 +98,17 @@ $$\mathbb{R}^n$$의 [벡터](/Hongs_Blog/studies/linear-algebra/vectors/)에서 
 
 ## 과목별 관점
 
-**수치해석 (2-2학기).** 3차 베지어 곡선을 3차 보간·에르미트 곡선과 같은 행렬 틀 $$\mathbf p(u) = \mathbf u^\top M\mathbf p$$로 만든다. 에르미트는 끝점의 도함수를 알아야 하는데, 실제로는 점들만 있는 경우가 많다. 베지어는 끝 도함수를 이웃 조절점의 차이로 정한다. 곡선은 $$\mathbf p_0$$, $$\mathbf p_3$$을 지나고 $$\mathbf p_1$$, $$\mathbf p_2$$는 지나지 않는다[^n1].
+**수치해석 (2-2학기).** 3차 베지어 곡선을 3차 보간·에르미트 곡선과 같은 행렬 틀 $$\mathbf p(u) = \mathbf u^\top M\mathbf p$$로 만든다. 에르미트는 끝점의 도함수를 알아야 하는데, 실제로는 점들만 있는 경우가 많다. 베지어는 끝 도함수를 이웃 조절점의 차이로 정한다. 곡선은 $$\mathbf p_0$$, $$\mathbf p_3$$을 지나고 $$\mathbf p_1$$, $$\mathbf p_2$$는 지나지 않는다.
 
 $$\mathbf p'(0) = \frac{\mathbf p_1 - \mathbf p_0}{1/3} = 3(\mathbf p_1 - \mathbf p_0), \qquad \mathbf p'(1) = 3(\mathbf p_3 - \mathbf p_2)$$
 
 
-이 네 조건($$\mathbf p(0) = \mathbf p_0$$, $$\mathbf p(1) = \mathbf p_3$$, 두 도함수)을 계수 $$\mathbf c$$로 풀면 $$\mathbf p = A\mathbf c$$, $$\mathbf c = M_B\mathbf p$$다[^n2].
+이 네 조건($$\mathbf p(0) = \mathbf p_0$$, $$\mathbf p(1) = \mathbf p_3$$, 두 도함수)을 계수 $$\mathbf c$$로 풀면 $$\mathbf p = A\mathbf c$$, $$\mathbf c = M_B\mathbf p$$다.
 
 $$A = \begin{pmatrix}1 & 0 & 0 & 0\\ 1 & \frac13 & 0 & 0\\ 1 & \frac23 & \frac13 & 0\\ 1 & 1 & 1 & 1\end{pmatrix}, \qquad M_B = A^{-1} = \begin{pmatrix}1 & 0 & 0 & 0\\ -3 & 3 & 0 & 0\\ 3 & -6 & 3 & 0\\ -1 & 3 & -3 & 1\end{pmatrix}$$
 
 
-블렌딩 함수 $$\mathbf b(u) = M_B^\top\mathbf u = ((1 - u)^3, 3u(1 - u)^2, 3u^2(1 - u), u^3)$$가 위의 베른슈타인 다항식이다. 이 함수들은 $$u = 0$$과 $$u = 1$$에서만 0이 되고 합이 1이다. 그래서 곡선은 조절점의 볼록 껍질 안에 있고, 보간 곡선의 블렌딩 함수보다 매끄럽다[^n3]. 조각을 이을 때는 따로 맞추지 않으면 도함수가 어긋나 $$C^0$$이다([곡선의 연속성](/Hongs_Blog/studies/numerical-analysis/curve-continuity/)). 이 행렬은 다른 곡선을 베지어로 바꿔 그릴 때도 쓴다([베지어 곡선의 세분화](/Hongs_Blog/studies/numerical-analysis/bezier-subdivision/)).
+블렌딩 함수 $$\mathbf b(u) = M_B^\top\mathbf u = ((1 - u)^3, 3u(1 - u)^2, 3u^2(1 - u), u^3)$$가 위의 베른슈타인 다항식이다. 이 함수들은 $$u = 0$$과 $$u = 1$$에서만 0이 되고 합이 1이다. 그래서 곡선은 조절점의 볼록 껍질 안에 있고, 보간 곡선의 블렌딩 함수보다 매끄럽다. 조각을 이을 때는 따로 맞추지 않으면 도함수가 어긋나 $$C^0$$이다([곡선의 연속성](/Hongs_Blog/studies/numerical-analysis/curve-continuity/)). 이 행렬은 다른 곡선을 베지어로 바꿔 그릴 때도 쓴다([베지어 곡선의 세분화](/Hongs_Blog/studies/numerical-analysis/bezier-subdivision/)).
 
 ## 확인 문제
 
@@ -145,10 +145,7 @@ $$A = \begin{pmatrix}1 & 0 & 0 & 0\\ 1 & \frac13 & 0 & 0\\ 1 & \frac23 & \frac13
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 3.1절 "Spaces of Vectors"(벡터공간의 여덟 법칙, 함수·행렬 공간), 8.1절(미분이 선형변환), 8.2절(미분의 행렬).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 트루타입의 2차 곡선과 CFF·SVG의 3차 곡선은 각 규격(OpenType 명세, SVG 1.1 경로 명령)에 정의되어 있다. CSS `cubic-bezier()`는 CSS Easing Functions 명세의 함수다.
-[^n1]: 수치해석 7회 강의 자료 「na07_curves」, p.20~21
-[^n2]: 같은 자료, p.22
-[^n3]: 같은 자료, p.23~24
-[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드 C4는 원본에 없다. 25_abstract-vector-spaces_verify.py로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [25_abstract-vector-spaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/25_abstract-vector-spaces_plot/)로 그렸고, 기저 함수의 합이 1이고 0 이상인 것, 중점 $$(\frac12, 1)$$, $$(\frac32, 1)$$과 $$\mathbf{P}(\frac12) = (1, 1)$$을 같은 코드로 확인했다.
+[^s1]: 트루타입의 2차 곡선과 CFF·SVG의 3차 곡선은 각 규격(OpenType 명세, SVG 1.1 경로 명령)에 정의되어 있다. CSS `cubic-bezier()`는 CSS Easing Functions 명세의 함수다.
+[^sn1]: 25_abstract-vector-spaces_verify.py로 확인했다.
+[^s2]: [25_abstract-vector-spaces_plot.py](/Hongs_Blog/studies/linear-algebra/code/25_abstract-vector-spaces_plot/)로 그렸고, 기저 함수의 합이 1이고 0 이상인 것, 중점 $$(\frac12, 1)$$, $$(\frac32, 1)$$과 $$\mathbf{P}(\frac12) = (1, 1)$$을 같은 코드로 확인했다.
 {% endraw %}

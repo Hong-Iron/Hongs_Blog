@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Method Overriding", "오버라이딩", "재정의", "@Override", "super.method", "동적 다형성", "Dynamic Polymorphism", "메서드 시그니처", "Method Signature"]
 description: "집안에 내려오는 김치찌개 조리법을 물려받았는데, 내 입맛에 맞게 고쳐서 내 공책에 다시 적어 두는 것과 같다. 그 뒤로 내가 끓이는 찌개는 늘 고쳐 적은 쪽이다. 원래 조리법이 없어진 것은 아니어서 \"원래대로 끓인 다음 치즈를 얹는다\"처럼 불러다 쓸 수도 있다. 지켜야 할 것이 있…"
@@ -34,7 +34,7 @@ permalink: "/studies/java/java-overriding/"
 
 ## 예시로 보기
 
-[상속](/Hongs_Blog/studies/java/java-inheritance/)으로 물려받은 메서드가 자식에게 딱 맞지 않을 때가 있다. 동물은 모두 소리를 내지만 개와 고양이의 소리는 다르다. 자식마다 `bark()`, `meow()`처럼 다른 이름의 메서드를 만들면, 부르는 쪽이 동물의 종류를 일일이 확인해야 한다. 물려받은 메서드를 같은 이름으로 다시 쓰면 그럴 필요가 없다. 슬라이드의 예로 본다[^1].
+[상속](/Hongs_Blog/studies/java/java-inheritance/)으로 물려받은 메서드가 자식에게 딱 맞지 않을 때가 있다. 동물은 모두 소리를 내지만 개와 고양이의 소리는 다르다. 자식마다 `bark()`, `meow()`처럼 다른 이름의 메서드를 만들면, 부르는 쪽이 동물의 종류를 일일이 확인해야 한다. 물려받은 메서드를 같은 이름으로 다시 쓰면 그럴 필요가 없다. 간단한 예로 본다.
 
 ```java
 class Parent {
@@ -75,7 +75,7 @@ classDiagram
     Parent <|-- Child
 ```
 
-`method2`가 두 상자에 모두 있다. `Child` 객체에게 `method2`를 시키면 아래 상자의 것이 돈다[^s2].
+`method2`가 두 상자에 모두 있다. `Child` 객체에게 `method2`를 시키면 아래 상자의 것이 돈다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 표의 출력, 부모 타입 변수로 불러도 자식 것이 도는 것, `super.method()` 예(작업 처리1, 작업 처리2), 매개변수가 다른 메서드가 부모 것을 가리지 못하는 것, 카드 C2의 답을 JDK 21에서 실행해 비교. 오류 문구 다섯은 따로 컴파일해 확인 — [22_java-overriding_impl.java](/Hongs_Blog/studies/java/code/22_java-overriding_impl/)</div>
@@ -85,9 +85,9 @@ classDiagram
 
 ## 정의
 
-**메서드 오버라이딩**은 물려받은 메서드를 자식 클래스에서 다시 쓰는 것이다. 다시 쓰면 부모의 그 메서드는 가려지고 자식의 메서드가 먼저 쓰인다[^1].
+**메서드 오버라이딩**은 물려받은 메서드를 자식 클래스에서 다시 쓰는 것이다. 다시 쓰면 부모의 그 메서드는 가려지고 자식의 메서드가 먼저 쓰인다.
 
-어느 메서드가 돌지는 실행 중에 객체의 실제 타입을 보고 정한다. 그래서 슬라이드는 이것을 동적 다형성이라고 부른다[^2]. 변수의 타입이 부모여도 객체가 자식이면 자식의 것이 돈다.
+어느 메서드가 돌지는 실행 중에 객체의 실제 타입을 보고 정한다. 그래서 이것을 동적 다형성이라고도 부른다. 변수의 타입이 부모여도 객체가 자식이면 자식의 것이 돈다.
 
 ```java
 Parent p = new Child();
@@ -100,8 +100,10 @@ q.method2();              // Parent.method2
 
 ### 지켜야 할 것
 
-1. 자식 메서드는 부모 메서드와 돌려주는 타입, 이름, 매개변수가 같아야 한다[^3].
-2. 접근 범위를 부모보다 좁힐 수 없다. `public`이던 것을 `private`로 바꿀 수 없다[^3].
+1. 자식 메서드는 부모 메서드와 돌려주는 타입, 이름, 매개변수가 같아야 한다.
+2. 접근 범위를 부모보다 좁힐 수 없다. `public`이던 것을 `private`로 바꿀 수 없다.
+
+1번의 돌려주는 타입에는 예외가 하나 있다. 부모가 돌려주던 타입의 자식 타입으로는 바꿔도 된다. 부모가 `Animal self()`이면 자식은 `Dog self()`로 다시 쓸 수 있다[^s1].
 
 | 어긴 코드 | 번역기의 반응 |
 |---|---|
@@ -126,7 +128,7 @@ a.makeSound();      // Some sound   ← 개인데 부모 것이 돈다
 
 ### @Override
 
-다시 쓰는 메서드 위에 `@Override`를 붙인다[^4]. 이 표시는 번역기에게 "이 메서드는 부모 것을 다시 쓴 것이니 확인해 달라"고 부탁한다. 부모에 같은 모양의 메서드가 없으면 번역이 멈춘다[^s1].
+다시 쓰는 메서드 위에 `@Override`를 붙인다. 이 표시는 번역기에게 "이 메서드는 부모 것을 다시 쓴 것이니 확인해 달라"고 부탁한다. 부모에 같은 모양의 메서드가 없으면 번역이 멈춘다[^s1].
 
 ```java
 class Dog extends Animal {
@@ -140,7 +142,7 @@ class Dog extends Animal {
 
 ### 부모 메서드 부르기
 
-다시 쓰면 부모의 메서드는 가려진다. 자식 메서드 안에서 `super.`을 앞에 붙이면 가려진 부모 메서드를 부를 수 있다. 부모가 하던 일을 자식에 다시 쓰지 않고 가져다 쓴다[^5].
+다시 쓰면 부모의 메서드는 가려진다. 자식 메서드 안에서 `super.`을 앞에 붙이면 가려진 부모 메서드를 부를 수 있다. 부모가 하던 일을 자식에 다시 쓰지 않고 가져다 쓴다.
 
 ```java
 class Parent {
@@ -158,13 +160,6 @@ class Child extends Parent {
 }
 // new Child().method() → 작업 처리1, 작업 처리2
 ```
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.9의 그림에서 부모는 `public void method()`, 자식은 `@Override void method()`로 `public`이 빠져 있다. / 문제점: 접근 범위를 `public`에서 default로 좁힌 것이라 컴파일되지 않는다. 바로 앞 p.8의 둘째 주의점과 어긋난다. / 수정안: 자식 메서드에도 `public`을 붙인다. / 근거: 슬라이드 코드 그대로 JDK 21로 컴파일하면 `method() in Child cannot override method() in Parent; attempting to assign weaker access privileges; was public` 오류가 난다. `public`을 붙이면 위 출력이 나온다.
-
-</div>
 
 
 ### 스스로 설명해 보기
@@ -288,11 +283,5 @@ class Child extends Parent {
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 8회 강의 자료 「Software Project 08. Inheritance」, p.7 (Method Overriding, `Parent`·`Child`·`ChildExample` 그림: `child.method2()`가 부모 것이 아니라 자식 것에 닿는다)
-[^2]: 소프트웨어 프로젝트 5회 강의 자료 「Software Project 05. Object-Oriented Programming」, p.30 ("dynamically determined based on the object's type at runtime", "dynamic polymorphism")
-[^3]: 소프트웨어 프로젝트 8회 강의 자료 「Software Project 08. Inheritance」, p.8 (Points to note when overriding methods). 슬라이드는 돌려주는 타입·이름·매개변수를 묶어 "method signature"라고 부른다. Java Language Specification 8.4.2절에서 시그니처는 이름과 매개변수 타입만이고, 돌려주는 타입은 부모 것의 자식 타입으로 바꿀 수 있다(예: 부모 `Animal self()`, 자식 `Dog self()`. JDK 21에서 컴파일해 확인).
-[^4]: 소프트웨어 프로젝트 5회 강의 자료 「Software Project 05. Object-Oriented Programming」, p.32 (`Dog`·`Cat`의 `@Override`). 08.Software Project 08. Inheritance.pdf, p.9의 그림에도 `@Override`가 있다. 두 슬라이드 모두 코드에만 쓰고 뜻은 적지 않았다.
-[^5]: 소프트웨어 프로젝트 8회 강의 자료 「Software Project 08. Inheritance」, p.9 (Invoking Parent Methods, `super.method();`)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 추적 표의 출력, 부모 타입 변수 예, 어긴 코드 표, `LoudDog` 예, `@Override`의 뜻과 오류, 접근 범위를 넓히는 것은 된다는 설명, 스스로 설명해 보기, 오해 두 항목, 대표 문제, `final`·필드·`static`, 카드 C2~C5는 원본에 없다. 모두 JDK 21에서 직접 실행·컴파일해 확인했다(필드와 `static` 메서드: 부모 타입 변수로 읽으면 부모의 값이 나온다).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 클래스 그림은 슬라이드 p.7의 그림을 옮겨 다시 그린 것이다.
+[^s1]: 모두 JDK 21에서 직접 실행·컴파일해 확인했다(필드와 `static` 메서드: 부모 타입 변수로 읽으면 부모의 값이 나온다).
 {% endraw %}

@@ -34,7 +34,7 @@ permalink: "/studies/database-design/order-by-clause-order/"
 
 ## 예시로 보기
 
-표의 행에는 순서가 없다([릴레이션의 특성](/Hongs_Blog/studies/database-design/relation-characteristics/)). 그래서 "직원과 그가 일하는 프로젝트"를 뽑으면 16행이 뒤섞여 나온다. 같은 부서끼리, 그 안에서는 이름순으로 보고 싶으면 순서를 적어 줘야 한다[^1].
+표의 행에는 순서가 없다([릴레이션의 특성](/Hongs_Blog/studies/database-design/relation-characteristics/)). 그래서 "직원과 그가 일하는 프로젝트"를 뽑으면 16행이 뒤섞여 나온다. 같은 부서끼리, 그 안에서는 이름순으로 보고 싶으면 순서를 적어 줘야 한다.
 
 ```sql
 SELECT   D.Dname, E.Lname, E.Fname, P.Pname
@@ -66,7 +66,7 @@ ORDER BY D.Dname, E.Lname, E.Fname;
 
 ## 정의
 
-`ORDER BY` 절은 결과에 나오는 열 하나 이상의 값을 기준으로 결과 행을 줄 세운다[^1].
+`ORDER BY` 절은 결과에 나오는 열 하나 이상의 값을 기준으로 결과 행을 줄 세운다.
 
 ```
 ORDER BY 열1 [ASC | DESC], 열2 [ASC | DESC], …
@@ -81,7 +81,7 @@ ORDER BY 열1 [ASC | DESC], 열2 [ASC | DESC], …
 
 ### 여섯 절을 적는 차례
 
-검색 질의에는 절이 여섯 가지 있고, 이 차례로 적는다. 대괄호 안의 넷은 필요할 때만 적는다[^2].
+검색 질의에는 절이 여섯 가지 있고, 이 차례로 적는다. 대괄호 안의 넷은 필요할 때만 적는다.
 
 ```
 SELECT   <속성과 함수의 목록>
@@ -171,8 +171,6 @@ ORDER BY Avg_sal DESC;
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.35 (ORDER BY Clause: 결과에 나오는 속성의 값으로 줄 세우기, DESC와 ASC, Query 15). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.12에 같은 쪽이 다시 나온다.
-[^2]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.37 (Summary: 여섯 절의 틀)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Query 15의 결과 표, `ASC`가 기본이라는 점, 기호로 쓴 정의, `ORDER BY Dno ASC, Salary DESC`의 예, 세 기준이 같은 행의 순서와 NULL이 서는 자리, 카드 C2는 슬라이드에 없다. `ASC`가 기본이라는 것과 `DESC`를 섞어 쓰는 꼴은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.3절 "Ordering of Query Results"에 있다. 값은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 절이 처리되는 차례와 그 그림, 여섯 절을 모두 쓴 예, `SELECT`에서 붙인 이름을 쓸 수 있는 절, 카드 C3은 슬라이드에 없다. 슬라이드는 적는 차례만 보인다. 처리되는 차례는 같은 교재 7.1절 "Discussion and Summary of SQL Queries"가 개념상의 차례로 설명한다. 표의 각 단계와 두 제품의 동작은 실행해 확인했다.
+[^s1]: `ASC`가 기본이라는 것과 `DESC`를 섞어 쓰는 꼴은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.3절 "Ordering of Query Results"에 있다. 값은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s2]: 처리되는 차례는 같은 교재 7.1절 "Discussion and Summary of SQL Queries"가 개념상의 차례로 설명한다. 표의 각 단계와 두 제품의 동작은 실행해 확인했다.
 {% endraw %}

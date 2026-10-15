@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Secant Method", "시컨트 방법", "할선", "Secant Line", "열린 방법", "Open Method", "수렴 차수", "Order of Convergence"]
 description: "뉴턴 방법은 접선의 기울기, 곧 도함수가 필요하다. 할선법은 도함수 대신 최근 두 점을 잇는 직선(할선)의 기울기를 써서, 그 직선이 x축과 만나는 곳으로 간다. 도함수를 계산할 필요가 없고 뉴턴 방법에 가깝게 빠르다. 시작점이 두 개 필요하지만 이분법처럼 근을 사이에 둘 필요는 …"
@@ -34,7 +34,7 @@ permalink: "/studies/numerical-analysis/secant-method/"
 
 ## 예시로 보기
 
-$$f(x) = e^{-x} - x$$의 근(참값 0.56714329…)을 $$x_{-1} = 0$$, $$x_0 = 1$$에서 찾는다[^1].
+$$f(x) = e^{-x} - x$$의 근(참값 0.56714329…)을 $$x_{-1} = 0$$, $$x_0 = 1$$에서 찾는다.
 
 | 반복 | 두 점 | 함수 값 | 새 점 | $$\lvert\epsilon_t\rvert$$ |
 |---|---|---|---|---|
@@ -55,12 +55,12 @@ $$f(x) = e^{-x} - x$$의 근(참값 0.56714329…)을 $$x_{-1} = 0$$, $$x_0 = 1$
 
 ## 정의
 
-뉴턴 방법 $$x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}$$에서 도함수를 최근 두 점의 기울기(1계 분할 차분)로 바꾼다[^2].
+뉴턴 방법 $$x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}$$에서 도함수를 최근 두 점의 기울기(1계 분할 차분)로 바꾼다.
 
 $$f'(x_i) \approx \frac{f(x_i) - f(x_{i-1})}{x_i - x_{i-1}}$$
 
 
-넣으면 할선법이다[^2].
+넣으면 할선법이다.
 
 $$x_{i+1} = x_i - \frac{f(x_i)(x_i - x_{i-1})}{f(x_i) - f(x_{i-1})}$$
 
@@ -81,12 +81,14 @@ flowchart TD
 
 고리를 한 번 돌 때마다 점 하나가 새로 들어오고 가장 오래된 점이 빠진다. 이분법과 달리 부호를 보고 고르는 단계가 없다[^s3].
 
+할선법의 장점과 단점은 다음과 같다.
+
 | 장점 | 단점 |
 |---|---|
 | 수렴하면 빠르다 | 실패할 수 있다(수렴 보장 없음) |
 | 두 시작점이 근을 사이에 둘 필요가 없다 | $$f(x_i) = f(x_{i-1})$$이면 0으로 나눈다 |
 
-표는 슬라이드 p.21을 옮긴 것이다[^3]. 근 근처에서 오차는 대략 $$e_{i+1} \propto e_i^{1.618}$$로 준다. 뉴턴 방법(지수 2)보다 조금 느리지만 도함수 계산이 없어 한 반복이 싸다[^s1].
+근 근처에서 오차는 대략 $$e_{i+1} \propto e_i^{1.618}$$로 준다. 뉴턴 방법(지수 2)보다 조금 느리지만 도함수 계산이 없어 한 반복이 싸다[^s1].
 
 ## 활용
 
@@ -125,10 +127,7 @@ flowchart TD
 </details>
 
 
-[^1]: 수치해석 16회 강의 자료 「na16_nonlinear」, p.20
-[^2]: 같은 자료, p.19
-[^3]: 같은 자료, p.21
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수렴 차수(황금비 1.618, 실험값 1.65), 가위치법과 브렌트 방법, 흔한 실수의 예, 카드 C2·C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [29_secant-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$x_1 = 0.61270$$, $$x_2 = 0.56384$$, 둘째 반복의 두 점에서 함수 값이 모두 음수.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 갱신식, 입출력과 장단점 표(원본 16.na16_nonlinear.pdf p.19~21)로 그렸다. 상대 오차로 멈추는 기준은 [이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/)과 같은 것을 썼다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [29_secant-method_plot.py](/Hongs_Blog/studies/numerical-analysis/code/29_secant-method_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$x_1 = 0.61270$$, $$x_2 = 0.56384$$, 둘째 반복의 두 점에서 함수 값이 모두 음수.
+[^s3]: 상대 오차로 멈추는 기준은 [이분법](/Hongs_Blog/studies/numerical-analysis/bisection-method/)과 같은 것을 썼다.
 {% endraw %}

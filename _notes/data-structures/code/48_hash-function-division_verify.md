@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/48_hash-function-division_verify/"
 
 실행: python3 48_hash-function-division_verify.py
 문서: 48.나눗셈 해시 함수 (치우침 표, 까닭, 카드 C2)
-출처: 자료구조 15주차 슬라이드 p.13~19
 
 주장
   1. b가 p의 배수이면 (k % b) % p == k % p다. 키의 "p로 나눈 나머지"가 버킷 번호에 그대로 남는다
@@ -32,8 +31,8 @@ permalink: "/studies/data-structures/code/48_hash-function-division_verify/"
   2. 짝수 키 1,000개: b = 14이면 짝수 버킷 7개만 쓴다. b = 15, 17이면 모든 버킷을 쓴다.
   3. 5의 배수 키 1,000개: b = 15이면 버킷 3개(0, 5, 10)만 쓴다. b = 14, 17이면 모든 버킷을 쓴다.
   4. 홀수가 90%인 키 10,000개: b = 14이면 홀수 버킷에 90%가 몰리고, b = 15이면 절반쯤이다.
-  5. 32비트 정수 전체에서는 어떤 b든 버킷마다 floor(2^32 / b) 또는 그보다 1개 많게 들어간다 (p.16).
-  6. 슬라이드의 나머지 12개 (p.17~18).
+  5. 32비트 정수 전체에서는 어떤 b든 버킷마다 floor(2^32 / b) 또는 그보다 1개 많게 들어간다.
+  6. 문서 예시의 나머지 12개.
 """
 import random
 
@@ -89,7 +88,7 @@ if __name__ == "__main__":
         assert counts <= {total // b, total // b + 1}
         assert sum((total - i + b - 1) // b for i in range(b)) == total
 
-    # 6. 슬라이드의 나머지
+    # 6. 문서 예시의 나머지
     assert [k % 14 for k in (20, 30, 8, 15, 3, 23)] == [6, 2, 8, 1, 3, 9]
     assert [k % 15 for k in (20, 30, 8, 15, 3, 23)] == [5, 0, 8, 0, 3, 8]
 

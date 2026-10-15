@@ -10,7 +10,7 @@ course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Burst Time Prediction", "지수 평균", "Exponential Averaging", "지수 평활", "Exponential Smoothing", "단순 평균", "Simple Average", "버스트", "Burst"]
 description: "SPN, SRT, HRRN은 각 프로세스가 프로세서를 얼마나 쓸지 알아야 한다. 미리 알 수 없으니, 같은 프로세스가 지난번들에 프로세서를 쓴 시간(버스트)으로 다음 버스트를 짐작한다. 일기 예보가 최근 날씨에 더 무게를 두듯, 최근 값에 더 큰 무게를 주는 지수 평균이 흔히 쓰인…"
@@ -51,31 +51,31 @@ SPN, SRT, HRRN은 각 프로세스가 프로세서를 얼마나 쓸지 알아야
 
 ## 정확히 말하면
 
-$$T_i$$를 이 프로세스의 $$i$$번째 실제 실행 시간, $$S_i$$를 $$i$$번째의 예측값이라 하자. $$S_1$$은 계산하지 않고 정해 준다[^1].
+$$T_i$$를 이 프로세스의 $$i$$번째 실제 실행 시간, $$S_i$$를 $$i$$번째의 예측값이라 하자. $$S_1$$은 계산하지 않고 정해 준다.
 
-**단순 평균.** 지금까지의 실제 값을 똑같은 무게로 평균 낸다[^1].
+**단순 평균.** 지금까지의 실제 값을 똑같은 무게로 평균 낸다.
 
 $$S_{n+1} = \frac{1}{n} \sum_{i=1}^{n} T_i$$
 
 
-매번 다 더하지 않도록, 앞 예측값을 이용해 다음처럼 쓸 수 있다[^1].
+매번 다 더하지 않도록, 앞 예측값을 이용해 다음처럼 쓸 수 있다.
 
 $$S_{n+1} = \frac{1}{n} T_n + \frac{n - 1}{n} S_n$$
 
 
-**지수 평균.** 과거 값의 시계열로 미래 값을 예측하는 흔한 방법이다. 이번 실제 값과 지난 예측값을 $$\alpha : (1 - \alpha)$$로 섞는다[^2].
+**지수 평균.** 과거 값의 시계열로 미래 값을 예측하는 흔한 방법이다. 이번 실제 값과 지난 예측값을 $$\alpha : (1 - \alpha)$$로 섞는다.
 
 $$S_{n+1} = \alpha T_n + (1 - \alpha) S_n \qquad (0 < \alpha < 1)$$
 
 
-식을 풀어 쓰면 $$S_{n+1} = \alpha T_n + (1-\alpha)\alpha T_{n-1} + (1-\alpha)^2 \alpha T_{n-2} + \cdots$$이다. 오래된 관측일수록 무게가 $$(1 - \alpha)$$배씩 줄어든다. $$\alpha = 0.8$$이면 가장 최근 값에 0.8, 그 앞에 0.16, 그 앞에 0.032를 준다. 금방 옛날 값을 잊는다[^3].
+식을 풀어 쓰면 $$S_{n+1} = \alpha T_n + (1-\alpha)\alpha T_{n-1} + (1-\alpha)^2 \alpha T_{n-2} + \cdots$$이다. 오래된 관측일수록 무게가 $$(1 - \alpha)$$배씩 줄어든다. $$\alpha = 0.8$$이면 가장 최근 값에 0.8, 그 앞에 0.16, 그 앞에 0.032를 준다. 금방 옛날 값을 잊는다.
 
 | $$\alpha$$ | 성질 |
 |---|---|
 | 크다 (예: 0.8) | 최근 변화에 빨리 반응한다. 한 번 튄 값에 크게 흔들린다 |
 | 작다 (예: 0.2) | 오래된 값까지 고루 반영해 안정적이다. 실제 행동이 바뀌어도 늦게 따라간다 |
 
-슬라이드 그림 9.9는 실제 값이 갑자기 오르거나 내릴 때, 단순 평균보다 지수 평균이, 그리고 α가 클수록 빨리 따라간다는 것을 보여 준다[^4].
+실제 값이 갑자기 오르거나 내리면, 단순 평균보다 지수 평균이, 그리고 α가 클수록 빨리 따라간다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/operating-systems/45_burst-prediction_fig1.svg" alt="그림" width="650" height="335" loading="lazy">
 
@@ -114,10 +114,6 @@ $$S_{n+1} = \alpha T_n + (1 - \alpha) S_n \qquad (0 < \alpha < 1)$$
 
 </details>
 
-[^1]: 운영체제 9회 강의 자료 「Chapter09-new」, 슬라이드 37 (식 9.1, 9.2)
-[^2]: 같은 자료, 슬라이드 38 (식 9.3)
-[^3]: 같은 자료, 슬라이드 39 (그림 9.8)
-[^4]: 같은 자료, 슬라이드 40~41 (그림 9.9)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 버스트 6, 4, 6, 4, 13, 13, 13 예는 Silberschatz, *Operating System Concepts* 6장의 예제 수치다. 무게를 풀어 쓴 식, α의 성질 표, TCP 연결, 확인 문제 C2·C3은 슬라이드에 없다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [45_burst-prediction_plot.py](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_plot/)로 그렸고, α = 0.5의 예측값 10, 8, 6, 6, 5, 9, 11, 12와 8번째 예측의 순서(α = 0.8 > α = 0.5 > α = 0.2 > 단순 평균 59/7)을 같은 코드로 확인했다.
+[^s1]: 버스트 6, 4, 6, 4, 13, 13, 13 예는 Silberschatz, *Operating System Concepts* 6장의 예제 수치다.
+[^s2]: [45_burst-prediction_plot.py](/Hongs_Blog/studies/operating-systems/code/45_burst-prediction_plot/)로 그렸고, α = 0.5의 예측값 10, 8, 6, 6, 5, 9, 11, 12와 8번째 예측의 순서(α = 0.8 > α = 0.5 > α = 0.2 > 단순 평균 59/7)을 같은 코드로 확인했다.
 {% endraw %}

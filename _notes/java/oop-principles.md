@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Three Principles of OOP", "캡슐화", "Encapsulation", "상속", "Inheritance", "다형성", "Polymorphism", "메서드 오버로딩", "Method Overloading", "메서드 오버라이딩", "Method Overriding", "정적 다형성", "Static Polymorphism", "동적 다형성", "Dynamic Polymorphism"]
 description: "객체를 잘 쓰기 위한 약속이 셋 있다. 첫째, 자판기처럼 속은 감추고 버튼만 내놓는다. 밖에서 속을 함부로 건드려 망가뜨리지 못한다. 둘째, 자식이 부모의 것을 물려받듯 이미 만든 틀의 내용을 새 틀이 그대로 받아 쓴다. 같은 코드를 두 번 쓰지 않는다. 셋째, \"소리 내\"라는 같…"
@@ -78,7 +78,7 @@ class Unit {
                  └─────────────────────────────┘
 ```
 
-`public`은 밖에 내놓는다는 표시, `private`는 감춘다는 표시다[^1]. 자세한 규칙은 [접근 제한자](/Hongs_Blog/studies/java/java-access-modifier/)에 있다.
+`public`은 밖에 내놓는다는 표시, `private`는 감춘다는 표시다. 자세한 규칙은 [접근 제한자](/Hongs_Blog/studies/java/java-access-modifier/)에 있다.
 
 ### 상속: 부모의 것을 물려받아 쓴다
 
@@ -102,13 +102,13 @@ m.move();      // Marine moves          ← Marine에는 move를 쓰지 않았�
 m.attack();    // Marine attacks with 6
 ```
 
-`Marine`에는 `move`도 `hit`도 적지 않았는데 쓸 수 있다. 부모 `Unit`에서 물려받았기 때문이다. 자식은 물려받은 것에 자기 것(`damage`, `attack`)을 보탠다[^2].
+`Marine`에는 `move`도 `hit`도 적지 않았는데 쓸 수 있다. 부모 `Unit`에서 물려받았기 때문이다. 자식은 물려받은 것에 자기 것(`damage`, `attack`)을 보탠다.
 
 ### 다형성: 같은 이름이 다르게 돈다
 
-같은 이름을 두 가지 방법으로 다르게 돌게 할 수 있다[^3].
+같은 이름을 두 가지 방법으로 다르게 돌게 할 수 있다.
 
-**메서드 오버로딩(overloading).** 한 클래스 안에 이름이 같고 매개변수가 다른 메서드를 여러 개 둔다. overload는 "겹쳐 싣는다"는 뜻이다[^4].
+**메서드 오버로딩(overloading).** 한 클래스 안에 이름이 같고 매개변수가 다른 메서드를 여러 개 둔다. overload는 "겹쳐 싣는다"는 뜻이다.
 
 ```java
 class Calculator {
@@ -119,7 +119,7 @@ class Calculator {
 
 `add(1, 2)`는 `3`, `add(1.5, 2.0)`은 `3.5`가 나온다. 넘긴 값의 타입을 보고 어느 `add`인지가 번역 단계에서 정해진다.
 
-**메서드 오버라이딩(overriding).** 부모에 이미 있는 메서드를 자식이 다시 쓴다. override는 "위에 덮어쓴다"는 뜻이다[^5].
+**메서드 오버라이딩(overriding).** 부모에 이미 있는 메서드를 자식이 다시 쓴다. override는 "위에 덮어쓴다"는 뜻이다.
 
 ```java
 class Animal {
@@ -154,9 +154,9 @@ for (Animal a : zoo) {
 
 | 원칙 | 하는 일 | 얻는 것 |
 |---|---|---|
-| 캡슐화(encapsulation) | 객체의 필드와 메서드를 하나로 묶고, 실제 구현을 밖에서 못 보게 감춘다. 밖의 객체는 속 구조를 모르고, 객체가 허락한 필드와 메서드만 쓴다[^1] | 밖에서 잘못 써서 객체가 망가지는 일을 막는다 |
-| 상속(inheritance) | 부모 객체가 자기 필드와 메서드를 자식 객체에게 물려주어 자식이 쓰게 한다[^2] | 같은 코드를 자식에 다시 쓰지 않는다. 고칠 곳이 줄어 손보는 시간이 준다 |
-| 다형성(polymorphism) | 이름이 같은 메서드나 연산자가 클래스에 따라 다르게 동작한다. 오버로딩과 오버라이딩이 여기에 든다[^3] | 부르는 쪽 코드가 대상의 종류를 몰라도 된다 |
+| 캡슐화(encapsulation) | 객체의 필드와 메서드를 하나로 묶고, 실제 구현을 밖에서 못 보게 감춘다. 밖의 객체는 속 구조를 모르고, 객체가 허락한 필드와 메서드만 쓴다 | 밖에서 잘못 써서 객체가 망가지는 일을 막는다 |
+| 상속(inheritance) | 부모 객체가 자기 필드와 메서드를 자식 객체에게 물려주어 자식이 쓰게 한다 | 같은 코드를 자식에 다시 쓰지 않는다. 고칠 곳이 줄어 손보는 시간이 준다 |
+| 다형성(polymorphism) | 이름이 같은 메서드나 연산자가 클래스에 따라 다르게 동작한다. 오버로딩과 오버라이딩이 여기에 든다 | 부르는 쪽 코드가 대상의 종류를 몰라도 된다 |
 
 ```mermaid
 classDiagram
@@ -188,14 +188,16 @@ classDiagram
 
 ### 다형성의 두 갈래
 
+오버로딩과 오버라이딩은 다음처럼 갈린다.
+
 | | 오버로딩 | 오버라이딩 |
 |---|---|---|
 | 어디에 | 같은 이름, 다른 매개변수의 메서드 여러 개 | 부모에 있는 메서드를 자식이 다시 쓴다 |
 | 언제 고르나 | 코드를 번역할 때(컴파일 시점) | 실행하면서(런타임) |
 | 무엇을 보고 | 넘긴 값의 타입(변수에 적힌 타입) | 실제 객체의 타입 |
-| 슬라이드의 이름 | 정적 다형성 | 동적 다형성 |
+| 다른 이름 | 정적 다형성 | 동적 다형성 |
 
-표의 앞 두 줄과 마지막 줄은 슬라이드[^4][^5], 셋째 줄은 아래 실험으로 확인한 것이다[^s1].
+셋째 줄은 아래 실험에서 드러난다[^s1].
 
 **변수 타입과 실제 객체.** 두 갈래가 한 코드에서 갈린다.
 
@@ -259,7 +261,7 @@ System.out.println(who(y));   // who(Dog)
 - 캡슐화는 `private` 필드와 그 필드를 다루는 메서드로 짠다. 값을 읽고 쓰는 메서드를 따로 두는 관례는 [접근 제한자](/Hongs_Blog/studies/java/java-access-modifier/)의 getter와 setter를 본다.
 - 상속의 문법(`extends`)과 한계는 [상속](/Hongs_Blog/studies/java/java-inheritance/), 다시 쓰기의 규칙은 [메서드 오버라이딩](/Hongs_Blog/studies/java/java-overriding/)에 있다.
 - 흔한 실수: 오버라이딩하려다 매개변수를 다르게 써서 오버로딩이 되는 것. 번역기는 아무 말 없이 새 메서드로 받아들인다. `@Override`를 붙이면 잡아 준다.
-- 시험에서 자주 묻는 짝: 오버로딩 — 컴파일 시점 — 정적, 오버라이딩 — 런타임 — 동적[^4][^5].
+- 외워 둘 짝: 오버로딩 — 컴파일 시점 — 정적, 오버라이딩 — 런타임 — 동적.
 
 ## 연결
 
@@ -280,7 +282,7 @@ System.out.println(who(y));   // who(Dog)
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"캡슐화는 필드를 전부 private로 만들고 값을 읽고 쓰는 메서드를 달아 주는 것이다"</div>
 
-반만 맞다. 필드마다 값을 그대로 읽고 그대로 쓰는 메서드를 달면, 밖에서 아무 값이나 넣을 수 있는 것은 그대로다. 슬라이드가 든 캡슐화의 이유는 "밖에서 잘못 써서 객체가 망가지지 않게"다[^1]. 그러려면 `hit`처럼 객체가 스스로 규칙(체력은 0 이상)을 지키는 메서드만 내놓아야 한다. 확인하는 법: `hit(30)`을 두 번 불러 체력이 `-20`이 아니라 `0`인지 본다.
+반만 맞다. 필드마다 값을 그대로 읽고 그대로 쓰는 메서드를 달면, 밖에서 아무 값이나 넣을 수 있는 것은 그대로다. 캡슐화를 하는 이유는 밖에서 잘못 써서 객체가 망가지지 않게 하려는 것이다. 그러려면 `hit`처럼 객체가 스스로 규칙(체력은 0 이상)을 지키는 메서드만 내놓아야 한다. 확인하는 법: `hit(30)`을 두 번 불러 체력이 `-20`이 아니라 `0`인지 본다.
 
 </div>
 
@@ -332,11 +334,6 @@ System.out.println(who(y));   // who(Dog)
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 5회 강의 자료 「Software Project 05. Object-Oriented Programming」, p.19~23 (Encapsulation: 외부 객체가 public 메서드·필드에는 닿고 private 필드·메서드에는 닿지 못하는 그림)
-[^2]: 같은 자료, p.24~27 (Inheritance: 부모의 Field 1 + Method 1을 물려받고 Field 2 + Method 2를 보태는 그림)
-[^3]: 같은 자료, p.28 (Polymorphism)
-[^4]: 같은 자료, p.29 (Method Overloading, `Calculator`의 `add` 두 개, "determined at compile time", "static polymorphism")
-[^5]: 같은 자료, p.30~32 (Method Overriding, `Animal`·`Dog`·`Cat`의 `makeSound`, "dynamically determined based on the object's type at runtime", "dynamic polymorphism")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `Unit`·`Marine` 코드, 동물 배열 반복문, `who` 실험, 표의 "무엇을 보고" 줄, 스스로 설명해 보기, 오해 두 항목, 카드 C2~C5는 원본에 없다. 슬라이드의 그림(p.22, p.27)과 코드(p.29, p.32)를 실행할 수 있는 예로 옮겼다. 출력과 오류 문구는 JDK 21에서 직접 실행해 확인했다. 오버로딩이 컴파일 시점의 타입으로 정해진다는 것은 Java Language Specification 15.12절에 적혀 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 접근을 나타낸 글자 그림은 슬라이드 p.22의 그림을 옮긴 것이고, 클래스 그림은 원본에 없다. 이 문서의 코드를 근거로 그렸다.
+[^s1]: 출력과 오류 문구는 JDK 21에서 직접 실행해 확인했다. 오버로딩이 컴파일 시점의 타입으로 정해진다는 것은 Java Language Specification 15.12절에 적혀 있다.
+[^s2]: 이 문서의 코드를 근거로 그렸다.
 {% endraw %}

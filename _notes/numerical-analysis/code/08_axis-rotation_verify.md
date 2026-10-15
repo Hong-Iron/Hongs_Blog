@@ -55,7 +55,7 @@ def rodrigues(A, P, t):
 
 
 def five_steps(A, t):
-    """슬라이드 p.16의 X' = R_α⁻¹ R_β⁻¹ R_θ R_β R_α X. R_α: z축 회전으로 A를 xz 평면에, R_β: y축 회전으로 x축에."""
+    """다섯 단계 방법 X' = R_α⁻¹ R_β⁻¹ R_θ R_β R_α X. R_α: z축 회전으로 A를 xz 평면에, R_β: y축 회전으로 x축에."""
     al = math.atan2(A[1], A[0]); be = math.atan2(A[2], math.hypot(A[0], A[1]))
     Ra, Rb = Rz(-al), Ry(be)
     assert all(abs(x - y) < 1e-9 for x, y in zip(mv(Rb, mv(Ra, A)), [1, 0, 0]))

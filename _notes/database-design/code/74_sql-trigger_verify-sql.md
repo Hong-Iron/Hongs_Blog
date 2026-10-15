@@ -22,10 +22,10 @@ permalink: "/studies/database-design/code/74_sql-trigger_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 트리거와 ECA 규칙 검증. PostgreSQL 16에서 실행한다.
--- 문서: 74.트리거와 ECA 규칙 / 출처: 11주차 슬라이드 11_SQL-DDL-Complex p.5, 9~13
+-- 문서: 74.트리거와 ECA 규칙
 -- 확인하는 것:
---   1. 슬라이드 p.10의 CREATE TRIGGER 문은 적힌 그대로는 구문 오류다. WHEN 안의 부질의도 PostgreSQL은 받지 않는다.
---      슬라이드가 쓴 열 이름 SUPERVISOR_SSN은 COMPANY의 EMPLOYEE에 없다(Super_ssn이다).
+--   1. 교재 문법의 CREATE TRIGGER 문은 적힌 그대로는 구문 오류다. WHEN 안의 부질의도 PostgreSQL은 받지 않는다.
+--      교재 꼴의 문장에 나오는 열 이름 SUPERVISOR_SSN은 COMPANY의 EMPLOYEE에 없다(Super_ssn이다).
 --   2. 조건을 함수 안으로 옮긴 판: 사건(삽입, Salary 수정, Super_ssn 수정)이 일어나고 조건이 참일 때만 알림이 쌓인다.
 --   3. 사건 목록에 없는 열(Address)을 고치면 트리거가 아예 돌지 않는다.
 --   4. 빠뜨린 사건: 상사의 급여를 내리면 부하가 상사보다 많이 받게 되는데 알림이 없다. 트리거를 하나 더 달면 잡힌다.
@@ -37,7 +37,7 @@ DROP SCHEMA IF EXISTS sql_trigger CASCADE;
 CREATE SCHEMA sql_trigger;
 SET search_path TO sql_trigger;
 
--- COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태. WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
 -- EMPLOYEE와 DEPARTMENT는 서로 가리키므로 외래 키를 커밋 때 검사한다(DEFERRABLE INITIALLY DEFERRED).
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -71,7 +71,7 @@ INSERT INTO WORKS_ON VALUES ('123456789',1,32.5),('123456789',2,7.5),('666884444
 INSERT INTO DEPENDENT VALUES ('333445555','Alice','F','1986-04-05','Daughter'),('333445555','Theodore','M','1983-10-25','Son'),('333445555','Joy','F','1958-05-03','Spouse'),('987654321','Abner','M','1942-02-28','Spouse'),('123456789','Michael','M','1988-01-04','Son'),('123456789','Alice','F','1988-12-30','Daughter'),('123456789','Elizabeth','F','1967-05-05','Spouse');
 COMMIT;
 
--- 1. 슬라이드 p.10의 문장 그대로 (열 이름도 슬라이드대로 SALARY, SUPERVISOR_SSN)
+-- 1. 교재 문법의 문장 그대로 (열 이름 SALARY, SUPERVISOR_SSN)
 DO $$
 DECLARE ok boolean := false;
 BEGIN
@@ -81,10 +81,10 @@ BEGIN
              INFORM_SUPERVISOR(NEW.Supervisor_ssn, NEW.Ssn)';
   EXCEPTION WHEN syntax_error THEN ok := true;
   END;
-  ASSERT ok, '슬라이드의 트리거 문이 그대로 실행됐다';
+  ASSERT ok, '교재 문법의 트리거 문이 그대로 실행됐다';
 END $$;
 
--- 열 이름도 슬라이드와 COMPANY가 다르다: EMPLOYEE에는 SUPERVISOR_SSN이 없고 Super_ssn이 있다
+-- 열 이름도 교재 꼴의 문장과 COMPANY가 다르다: EMPLOYEE에는 SUPERVISOR_SSN이 없고 Super_ssn이 있다
 CREATE FUNCTION do_nothing() RETURNS trigger AS $$ BEGIN RETURN NEW; END $$ LANGUAGE plpgsql;
 DO $$
 DECLARE ok boolean := false;
@@ -100,7 +100,7 @@ END $$;
 -- 트리거를 달기 전에 이미 있는 위반: Narayan 38000 -> 41000 (상사 Wong 40000)
 UPDATE EMPLOYEE SET Salary = 41000 WHERE Lname = 'Narayan';
 
--- 알림을 쌓는 표. 슬라이드의 INFORM_SUPERVISOR(상사 Ssn, 직원 Ssn)가 하는 일을 흉내 낸다.
+-- 알림을 쌓는 표. 문서의 INFORM_SUPERVISOR(상사 Ssn, 직원 Ssn)가 하는 일을 흉내 낸다.
 CREATE TABLE NOTICE (Seq SERIAL, Supervisor_ssn CHAR(9), Emp_ssn CHAR(9));
 CREATE TABLE FIRED (Seq SERIAL, What TEXT);            -- 트리거가 돌 때마다 한 줄 (사건 확인용)
 

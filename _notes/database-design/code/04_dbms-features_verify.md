@@ -23,11 +23,11 @@ permalink: "/studies/database-design/code/04_dbms-features_verify/"
 """DBMS의 기능과 쓰지 않을 때 문서의 값 확인.
 
 문서: 04.DBMS의 기능과 쓰지 않을 때
-출처: 데이터베이스 설계 2주차 슬라이드 2-1 p.5, p.20~24
+출처: Elmasri & Navathe, Fundamentals of Database Systems 1.6절 (UNIVERSITY 예)
 주장:
-  1. (중복 통제) p.20의 중복이 든 GRADE_REPORT 6행은 p.5의 STUDENT, GRADE_REPORT, SECTION을 이은 것과 같다.
+  1. (중복 통제) 문서의 중복이 든 GRADE_REPORT 6행은 UNIVERSITY의 STUDENT, GRADE_REPORT, SECTION을 이은 것과 같다.
      값은 18개에서 30개로 늘고, Smith는 2번 Brown은 4번 적힌다.
-  2. 통제하지 않으면 p.20의 틀린 행 (17, Brown, 112, MATH2410, B)이 그대로 들어가고 17번 학생의 이름이 둘이 된다.
+  2. 통제하지 않으면 문서의 틀린 행 (17, Brown, 112, MATH2410, B)이 그대로 들어가고 17번 학생의 이름이 둘이 된다.
      "(학번, 이름) 짝은 STUDENT에 있는 짝이어야 한다"를 DBMS가 검사하게 하면 그 행은 거부되고 맞는 행은 들어간다.
   3. (접근 제한) 읽기만 허락된 접속은 찾기는 되고 고치기는 거부된다.
   4. (무결성 제약) 자료형·길이 제약과 "다른 표의 레코드와 이어져야 한다"는 제약을 걸면 어긋난 행이 거부된다.
@@ -62,11 +62,11 @@ ROWS = {
     "PREREQUISITE": [("CS3380", "CS3320"), ("CS3380", "MATH2410"), ("CS3320", "CS1310")],
 }
 
-# p.20 왼쪽 표: Student_name과 Course_number를 함께 적은 GRADE_REPORT
+# 문서의 첫 표: Student_name과 Course_number를 함께 적은 GRADE_REPORT
 FIGURE_P20 = [(17, "Smith", 112, "MATH2410", "B"), (17, "Smith", 119, "CS1310", "C"),
               (8, "Brown", 85, "MATH2410", "A"), (8, "Brown", 92, "CS1310", "A"),
               (8, "Brown", 102, "CS3320", "B"), (8, "Brown", 135, "CS3380", "A")]
-BAD_ROW = (17, "Brown", 112, "MATH2410", "B")        # p.20 오른쪽 표
+BAD_ROW = (17, "Brown", 112, "MATH2410", "B")        # 문서의 틀린 행
 
 
 def build_university(conn):
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     conn.execute("PRAGMA foreign_keys = ON")
     build_university(conn)
 
-    # ---- 1. p.20의 중복 표는 세 표를 이은 것이다 ----
+    # ---- 1. 문서의 중복 표는 세 표를 이은 것이다 ----
     joined = conn.execute(
         """SELECT G.Student_number, S.Name, G.Section_identifier, SE.Course_number, G.Grade
            FROM GRADE_REPORT G, STUDENT S, SECTION SE

@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/18_first-set_impl/"
 [FIRST 집합](/Hongs_Blog/studies/compilers/first-set/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""FIRST 집합을 구하고 슬라이드 값을 재현한다. 정의대로 문자열을 모두 만들어 구한 값과도 견준다.
+"""FIRST 집합을 구하고 문서의 값을 재현한다. 정의대로 문자열을 모두 만들어 구한 값과도 견준다.
 
 실행: python3 18_first-set_impl.py  (표준 라이브러리만 쓴다. 다른 파일을 불러오지 않는다.)
 """
@@ -125,27 +125,27 @@ def first_rounds(g):
 if __name__ == "__main__":
     import random
 
-    # p.27: E → TE', E' → +E | ε, T → FT', T' → *T | ε, F → (E) | id
+    # 산술식 예: E → TE', E' → +E | ε, T → FT', T' → *T | ε, F → (E) | id
     g = G("E -> T E'\nE' -> + E | ε\nT -> F T'\nT' -> * T | ε\nF -> ( E ) | id")
     first = first_sets(g)
     assert first == {"F": {"(", "id"}, "T'": {"*", EPS}, "T": {"(", "id"},
                      "E'": {"+", EPS}, "E": {"(", "id"}}
     assert first == first_by_definition(g, 6)
 
-    # p.31: 규칙 오른쪽 기호열의 FIRST
+    # 규칙 오른쪽 기호열의 FIRST
     S = lambda s: tuple(s.split())
     assert first_of(S("T E'"), first, g) == {"(", "id"}
     assert first_of(S("+ E"), first, g) == {"+"}
     assert first_of(S("F T'"), first, g) == {"(", "id"}
     assert first_of(S("* T"), first, g) == {"*"}
     assert first_of(S("( E )"), first, g) == {"("}
-    assert first_of((), first, g) == {EPS}                      # p.32: First(ε) = {ε}
+    assert first_of((), first, g) == {EPS}                      # First(ε) = {ε}
     # 앞 기호가 빈 문자열이 될 수 있으면 다음 기호까지 본다
     assert first_of(S("T' E'"), first, g) == {"*", "+", EPS}
     assert first_of(S("T' E' )"), first, g) == {"*", "+", ")"}
     assert first_of(S("E' T"), first, g) == {"+", "(", "id"}
 
-    # p.18: S → aA | b | A, A → (S)
+    # 예시로 보기: S → aA | b | A, A → (S)
     g2 = G("S -> a A | b | A\nA -> ( S )")
     assert first_sets(g2) == {"S": {"a", "b", "("}, "A": {"("}}
 

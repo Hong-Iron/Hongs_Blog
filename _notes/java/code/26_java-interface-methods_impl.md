@@ -57,7 +57,7 @@ class InterfaceMethodsCheck {
         // 정적 메서드: 객체 없이 인터페이스 이름으로 부른다
         check("정적 메서드", capture(() -> RemoteControl.changeBattery()), "Change battery\n");
 
-        // 슬라이드의 Service 예제
+        // 문서의 Service 예제
         check("Service.staticMethod1", capture(() -> Service.staticMethod1()), "staticMethod1\nstaticCommon\n");
         check("Service.staticMethod2", capture(() -> Service.staticMethod2()), "staticMethod2\nstaticCommon\n");
         Service s = new ServiceImpl();

@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Throwing Exceptions", "throws", "throw", "예외 떠넘기기", "예외 전파", "Exception Propagation"]
 description: "사고를 그 자리에서 수습하지 않고 \"이 일을 시킨 쪽이 알아서 하라\"고 위로 넘기는 방법이다. 일을 맡은 쪽은 사고를 어떻게 수습할지 모를 때가 많고, 시킨 쪽이 더 잘 안다. 넘기려면 \"나는 이런 사고를 넘길 수 있다\"고 미리 밝혀 두어야 한다. 끝까지 아무도 받지 않으면 프로그…"
@@ -34,7 +34,7 @@ permalink: "/studies/java/java-throw/"
 
 ## 예시로 보기
 
-이름으로 클래스를 찾는 메서드 `findClass`를 만든다. 클래스가 없으면 무엇을 할까? 다른 이름으로 다시 찾을지, 사용자에게 알릴지, 그냥 넘어갈지는 `findClass`를 부른 쪽 사정에 달렸다. 그래서 `findClass`는 처리하지 않고 부른 쪽에 넘긴다[^1].
+이름으로 클래스를 찾는 메서드 `findClass`를 만든다. 클래스가 없으면 무엇을 할까? 다른 이름으로 다시 찾을지, 사용자에게 알릴지, 그냥 넘어갈지는 `findClass`를 부른 쪽 사정에 달렸다. 그래서 `findClass`는 처리하지 않고 부른 쪽에 넘긴다.
 
 ```java
 public static void main(String[] args) {
@@ -58,16 +58,16 @@ Exception: java.lang.String2
 
 ## 정의
 
-**`throws`** 는 메서드 안에서 난 예외를 그 메서드를 부른 쪽으로 넘긴다. 메서드 선언의 맨 끝에 쓰고, 넘길 예외 클래스를 쉼표로 나눠 적는다[^2].
+**`throws`** 는 메서드 안에서 난 예외를 그 메서드를 부른 쪽으로 넘긴다. 메서드 선언의 맨 끝에 쓰고, 넘길 예외 클래스를 쉼표로 나눠 적는다.
 
 ```java
 리턴타입 메서드이름(매개변수, …) throws 예외클래스1, 예외클래스2, … {
 }
 ```
 
-넘길 예외 클래스가 많으면 `throws Exception`이나 `throws Throwable` 하나로 모든 예외를 넘길 수 있다[^3]. 부모 타입 하나가 자손 예외를 모두 받기 때문이다.
+넘길 예외 클래스가 많으면 `throws Exception`이나 `throws Throwable` 하나로 모든 예외를 넘길 수 있다. 부모 타입 하나가 자손 예외를 모두 받기 때문이다.
 
-**`throw`** 는 예외 객체를 직접 만들어 그 자리에서 일으킨다. `throw` 뒤에 예외 객체를 준다. 왜 사고가 났는지 알리는 글은 생성자의 인자로 넣는다[^4].
+**`throw`** 는 예외 객체를 직접 만들어 그 자리에서 일으킨다. `throw` 뒤에 예외 객체를 준다. 왜 사고가 났는지 알리는 글은 생성자의 인자로 넣는다.
 
 ```java
 throw new Exception();
@@ -149,7 +149,7 @@ Exception in thread "main" java.lang.ClassNotFoundException: java.lang.String2
 `end`는 찍히지 않는다[^s3].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 예제의 출력, 위 여섯 단계 표의 출력 순서, `throw`에 넣은 글이 `getMessage()`로 나오는 것, `throws`에 예외 둘을 적은 경우와 `Exception` 하나로 뭉친 경우, 카드 C2의 답 — [36_java-throw_impl.java](/Hongs_Blog/studies/java/code/36_java-throw_impl/)</div>
+<div class="callout-title" markdown="span">검증: 첫 예제(`findClass`)의 출력, 위 여섯 단계 표의 출력 순서, `throw`에 넣은 글이 `getMessage()`로 나오는 것, `throws`에 예외 둘을 적은 경우와 `Exception` 하나로 뭉친 경우, 카드 C2의 답 — [36_java-throw_impl.java](/Hongs_Blog/studies/java/code/36_java-throw_impl/)</div>
 
 </div>
 
@@ -206,11 +206,7 @@ Exception in thread "main" java.lang.ClassNotFoundException: java.lang.String2
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 15회 강의 자료 「Software Project 15. Exception handling」, p.16 (ThrowingException.java)
-[^2]: 같은 자료, p.15 (throws의 뜻과 쓰는 자리, method1이 method2를 부르는 그림)
-[^3]: 같은 자료, p.17 (throws Exception, throws Throwable)
-[^4]: 같은 자료, p.19 (throw와 생성자 인자로 주는 메시지)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실행 결과는 원본에 없고 검증 코드로 확인했다. `ClassNotFoundException`의 `getMessage()`는 못 찾은 클래스 이름을 돌려준다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `throws`와 `throw`를 견준 표, 세 층 예제와 단계 표, 다이어그램은 원본에 없다. 원본 p.15의 그림(부른 곳에서 예외 처리)을 세 층으로 늘린 것이다. 출력 순서는 검증 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `main`이 `throws`로 넘겼을 때의 화면, 번역 오류 문구, 실행 예외에는 `throws`가 필요 없다는 것, 생성자에도 붙일 수 있다는 것, 카드 C2·C3·C4는 원본에 없다. JDK 21에서 직접 실행해 확인했다. 화면의 `E5`는 실험에 쓴 클래스 이름이고 `…`는 줄인 자리다.
+[^s1]: `ClassNotFoundException`의 `getMessage()`는 못 찾은 클래스 이름을 돌려준다.
+[^s2]: 출력 순서는 검증 코드로 확인했다.
+[^s3]: JDK 21에서 직접 실행해 확인했다. 화면의 `E5`는 실험에 쓴 클래스 이름이고 `…`는 줄인 자리다.
 {% endraw %}

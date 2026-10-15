@@ -24,7 +24,7 @@ permalink: "/studies/assembly-language/code/13_little-endian_verify/"
 
 실행: python3 13_little-endian_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -262,7 +262,7 @@ def must_fail(fn, *args):
 
 if __name__ == "__main__":
     c = CPU(); d = Data(c, base=0)
-    # 4-3 p.4, 5-3-2 p.13: 12345678h -> 78 56 34 12
+    # 12345678h -> 78 56 34 12
     d.dword("val1", 0x12345678)
     assert d.bytes_of("val1") == [0x78, 0x56, 0x34, 0x12]
     assert [d.offset("val1") + i for i in range(4)] == [0, 1, 2, 3]

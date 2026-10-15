@@ -21,14 +21,14 @@ permalink: "/studies/database-design/code/56_sql-multiset-distinct_verify/"
 
 ```python
 # 56.다중집합인 표와 DISTINCT 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 56_sql-multiset-distinct_verify.py)
-# 확인하는 것 (슬라이드 10-2 p.21~22, 11-2 p.7~8)
+# 확인하는 것
 #   1. SELECT ALL Salary는 8행, SELECT DISTINCT Salary는 6행
 #   2. 키가 있는 표에는 똑같은 행이 둘 있을 수 없다. 키가 없는 표와 질의 결과에는 있을 수 있다
 #   3. 중복을 남겨 두어야 평균과 합이 맞게 나온다
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
+# COMPANY 스키마와 상태.
+# 손본 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
 # 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
@@ -84,7 +84,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -130,8 +130,8 @@ if __name__ == "__main__":
     q1 = [r[0] for r in rows(c, "SELECT ALL Salary FROM EMPLOYEE")]
     q2 = [r[0] for r in rows(c, "SELECT DISTINCT Salary FROM EMPLOYEE")]
     # 행이 나오는 차례는 정해져 있지 않으므로 차례를 빼고 견준다
-    assert sorted(q1) == sorted([30000, 40000, 25000, 43000, 38000, 25000, 25000, 55000])     # 슬라이드 Q1 (8행)
-    assert sorted(q2) == sorted([30000, 40000, 25000, 43000, 38000, 55000])                    # 슬라이드 Q2 (6행)
+    assert sorted(q1) == sorted([30000, 40000, 25000, 43000, 38000, 25000, 25000, 55000])     # 문서의 Q1 (8행)
+    assert sorted(q2) == sorted([30000, 40000, 25000, 43000, 38000, 55000])                    # 문서의 Q2 (6행)
     assert sorted(r[0] for r in rows(c, "SELECT Salary FROM EMPLOYEE")) == sorted(q1)          # ALL은 안 써도 같다
     assert Counter(q1) == Counter({25000: 3, 30000: 1, 38000: 1, 40000: 1, 43000: 1, 55000: 1})
     assert sorted(set(q1)) == sorted(q2)                                          # DISTINCT = 집합으로 만든 것

@@ -305,5 +305,5 @@ stderr에는 `Display`가 아니라 `Debug` 형식이 찍힌다. 사람에게 �
 [^2]: The Rust Reference, Operator expressions — The try propagation expression — https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-try-propagation-expression
 [^3]: Rust 표준 라이브러리 문서, Trait `std::error::Error` (설명, `source`, `From` 구현 목록) — https://doc.rust-lang.org/std/error/trait.Error.html
 [^4]: Rust API Guidelines, Interoperability — Error types are meaningful and well-behaved (C-GOOD-ERR) — https://rust-lang.github.io/api-guidelines/interoperability.html
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `impl<T> From<T> for T`는 표준 라이브러리의 `From` 문서에 있는 일반 구현이다. 검증 코드에서 `ok_or(ConfigError::Missing(..))?`가 변환 없이 컴파일되는 것으로 확인했다.
+[^s1]: `impl<T> From<T> for T`는 표준 라이브러리의 `From` 문서에 있는 일반 구현이다. 검증 코드에서 `ok_or(ConfigError::Missing(..))?`가 변환 없이 컴파일되는 것으로 확인했다.
 {% endraw %}

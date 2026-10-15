@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["INVOKE", "PROC", "PROTO", "ADDR", "INVOKE Directive", "PROC Directive", "PROTO Directive", "프로시저 원형", "Procedure Prototype", "매개변수 목록", "Parameter List"]
 description: "스택으로 값을 넘기는 호출을 고급 언어의 함수 호출처럼 한 줄로 쓰게 해 주는 받아쓰기 도구다. 부르는 쪽은 프로시저 이름과 넘길 값만 적고, 불리는 쪽은 받을 값에 이름을 붙여 둔다. 값을 스택에 넣고, 기준점에서 몇 칸 떨어졌는지 세고, 끝나고 치우는 줄은 어셈블러가 대신 써 …"
@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/invoke-proc-proto/"
 
 두 수를 더하는 프로시저를 [스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/)로 쓰면, 부르는 쪽은 `push` 두 줄과 `call`을, 불리는 쪽은 `push ebp`, `mov ebp,esp`, `[ebp+8]`, `[ebp+12]`, `pop ebp`, `ret 8`을 손으로 적어야 한다. 넣는 순서나 거리 하나만 틀려도 다른 값을 읽는다.
 
-같은 프로시저를 지시어로 쓰면 이렇다[^1].
+같은 프로시저를 지시어로 쓰면 이렇다.
 
 ```asm
 AddTwo PROC,
@@ -69,7 +69,7 @@ INVOKE AddTwo, 5, 6        ; EAX = 11
                                 AddTwo ENDP
 ```
 
-인수는 뒤에서부터 넣는다. 그래서 첫 인수 5가 맨 나중에 들어가 `[ebp+8]`에 놓이고, 이것이 첫 매개변수 `val1`이다. `ret`은 인수 8바이트를 치우는 `ret 8`로 바뀐다. 이 수업의 프로그램은 `.model flat,stdcall`로 시작하므로 불린 쪽이 치운다[^2].
+인수는 뒤에서부터 넣는다. 그래서 첫 인수 5가 맨 나중에 들어가 `[ebp+8]`에 놓이고, 이것이 첫 매개변수 `val1`이다. `ret`은 인수 8바이트를 치우는 `ret 8`로 바뀐다. [프로그램 틀](/Hongs_Blog/studies/assembly-language/asm-program-template/)처럼 `.model flat,stdcall`로 시작하는 프로그램에서는 불린 쪽이 치우기 때문이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 풀어 쓴 AddTwo가 EAX = 11을 돌려주고 ESP가 제자리로 오는 것, 풀어 쓴 FillArray가 배열 6칸만 0AAh로 채우고 `ret 12`로 돌아오는 것 — [46_invoke-proc-proto_verify.py](/Hongs_Blog/studies/assembly-language/code/46_invoke-proc-proto_verify/) (풀어 쓴 코드를 파이썬 흉내로 돌렸다. 어셈블러가 실제로 만드는 코드는 확인하지 못했다)</div>
@@ -79,13 +79,13 @@ INVOKE AddTwo, 5, 6        ; EAX = 11
 
 ## 정의
 
-**INVOKE.** 32비트 모드에서 `CALL`을 대신해 인수 여러 개를 한 줄로 넘기는 지시어다[^3].
+**INVOKE.** 32비트 모드에서 `CALL`을 대신해 인수 여러 개를 한 줄로 넘기는 지시어다.
 
 ```asm
 INVOKE 프로시저이름 [, 인수목록]
 ```
 
-인수목록은 쉼표로 나눈다. 인수 자리에 올 수 있는 것은 네 가지다[^3][^4].
+인수목록은 쉼표로 나눈다. 인수 자리에 올 수 있는 것은 네 가지다.
 
 | 인수의 종류 | 예 |
 |---|---|
@@ -96,7 +96,7 @@ INVOKE 프로시저이름 [, 인수목록]
 
 `ADDR 변수`는 변수의 주소를 넘긴다. [스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/)의 참조로 넘기기를 `INVOKE` 안에서 쓰는 방법이다. `(10 * 20)` 같은 식은 번역할 때 200으로 계산된다[^s1].
 
-**PROC.** 프로시저를 선언하면서 매개변수에 이름과 자료형을 붙인다[^5].
+**PROC.** 프로시저를 선언하면서 매개변수에 이름과 자료형을 붙인다.
 
 ```asm
 이름 PROC 매개변수목록
@@ -104,7 +104,7 @@ INVOKE 프로시저이름 [, 인수목록]
 매개변수 하나의 꼴:   매개변수이름 : 자료형
 ```
 
-자료형은 `BYTE`, `SBYTE`, `WORD` 같은 기본 자료형이거나 그것을 가리키는 포인터(`PTR BYTE`)다. 매개변수목록을 다음 줄로 넘길 때는 `PROC` 뒤에 쉼표를 붙이고, 매개변수를 여러 줄에 나눠 쓸 때는 줄마다 끝에 쉼표를 붙인다(마지막 줄 빼고)[^6].
+자료형은 `BYTE`, `SBYTE`, `WORD` 같은 기본 자료형이거나 그것을 가리키는 포인터(`PTR BYTE`)다. 매개변수목록을 다음 줄로 넘길 때는 `PROC` 뒤에 쉼표를 붙이고, 매개변수를 여러 줄에 나눠 쓸 때는 줄마다 끝에 쉼표를 붙인다(마지막 줄 빼고).
 
 ```asm
 이름 PROC,
@@ -113,7 +113,7 @@ INVOKE 프로시저이름 [, 인수목록]
     매개변수n:자료형n
 ```
 
-**PROTO.** 프로시저의 이름과 매개변수목록만 먼저 알려 주는 선언이다. 몸통은 없다. `INVOKE`가 프로시저 정의보다 앞에 나올 때, 어셈블러가 인수의 개수와 자료형을 맞춰 볼 수 있게 프로그램 앞쪽에 적어 둔다[^s2]. 이 수업의 모든 프로그램 앞머리에 있던 줄이 바로 이것이다[^2].
+**PROTO.** 프로시저의 이름과 매개변수목록만 먼저 알려 주는 선언이다. 몸통은 없다. `INVOKE`가 프로시저 정의보다 앞에 나올 때, 어셈블러가 인수의 개수와 자료형을 맞춰 볼 수 있게 프로그램 앞쪽에 적어 둔다[^s2]. 프로그램 틀의 앞머리에 있는 `ExitProcess` 줄이 바로 이것이다.
 
 ```asm
 ExitProcess PROTO, dwExitCode:DWORD
@@ -125,7 +125,7 @@ INVOKE ExitProcess,0
 
 ## 예제
 
-**FillArray.** 바이트 배열의 주소, 채울 값, 배열 크기를 받아 배열을 그 값으로 채운다[^7].
+**FillArray.** 바이트 배열의 주소, 채울 값, 배열 크기를 받아 배열을 그 값으로 채운다.
 
 ```asm
 FillArray PROC,
@@ -141,13 +141,6 @@ L1: mov [esi],al
     ret
 FillArray ENDP
 ```
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.22는 매개변수목록을 `pArray:PTR BYTE, fillVal:BYTE` 다음 줄에 `arraySize:DWORD`로 적었다. 첫 줄 끝에 쉼표가 없다. / 문제점: p.20의 규칙은 매개변수를 여러 줄에 나눠 쓸 때 줄 끝에 쉼표를 붙이라는 것이다. 쉼표가 없으면 둘째 줄은 매개변수목록에 이어지지 않는다. / 수정안: `fillVal:BYTE,`처럼 첫 줄 끝에 쉼표를 붙인다(위 코드는 붙인 것이다). / 근거: 같은 자료 p.20의 "comma required". 실제 어셈블러로 오류가 나는지는 확인하지 못했다[확인필요].
-
-</div>
 
 
 `INVOKE FillArray, ADDR array, 0AAh, 6`으로 부른다고 하면 프레임은 이렇게 된다[^s1].
@@ -207,13 +200,6 @@ FillArray ENDP
 </details>
 
 
-[^1]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-1」, p.21 (AddTwo: 두 정수를 받아 합을 EAX로 돌려준다)
-[^2]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-1」, p.15, p.19 (`.model flat,stdcall`, `ExitProcess PROTO, dwExitCode:DWORD`, `INVOKE ExitProcess,0`)
-[^3]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-1」, p.17 (INVOKE의 뜻, 문법, 인수의 종류)
-[^4]: 같은 자료, p.18 (INVOKE 예 네 가지)
-[^5]: 같은 자료, p.19 (PROC 지시어의 문법, 매개변수의 꼴)
-[^6]: 같은 자료, p.20 (매개변수목록을 여러 줄에 쓰는 법, "comma required")
-[^7]: 같은 자료, p.22 (FillArray)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `INVOKE AddTwo, 5, 6`이라는 호출, 풀어 쓴 코드, FillArray를 부르는 줄과 프레임 그림, `ret 12`, Java와의 짝, 카드의 답은 원본에 없다. 풀어 쓴 꼴은 슬라이드 p.14가 LOCAL에 대해 보인 "어셈블러가 만드는 코드"와 p.2의 STDCALL 코드를 따라 쓴 것이고, 어셈블러의 목록 파일과 대조하지는 못했다[확인필요]. 풀어 쓴 코드는 파이썬 흉내로 돌려 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> PROTO의 설명과 INVOKE가 EAX·EDX를 덮을 수 있다는 주의는 이 슬라이드 묶음에 없다(목차와 요약에 이름만 있다). Irvine, *Assembly Language for x86 Processors* 7판 8.4절의 내용이다[확인필요].
+[^s1]: 풀어 쓴 코드는 파이썬 흉내로 돌려 확인했다.
+[^s2]: Irvine, *Assembly Language for x86 Processors* 7판 8.4절의 내용이다[확인필요].
 {% endraw %}

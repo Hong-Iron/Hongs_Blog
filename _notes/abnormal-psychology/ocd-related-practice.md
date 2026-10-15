@@ -24,7 +24,7 @@ permalink: "/studies/abnormal-psychology/ocd-related-practice/"
 {% raw %}
 사용 개념: [강박장애](/Hongs_Blog/studies/abnormal-psychology/ocd/), [강박장애의 인지모델](/Hongs_Blog/studies/abnormal-psychology/ocd-cognitive-models/), [노출 및 반응방지법](/Hongs_Blog/studies/abnormal-psychology/erp/), [신체이형장애](/Hongs_Blog/studies/abnormal-psychology/body-dysmorphic-disorder/), [저장장애](/Hongs_Blog/studies/abnormal-psychology/hoarding-disorder/), [신체중심 반복행동](/Hongs_Blog/studies/abnormal-psychology/bfrb/)
 
-모든 사례는 가상이다[^s1]. 반복 행동이 보이는 사례는 다섯 하위목표로 푼다. 이 순서를 떠올리는 신호는 "멈추지 못하는 반복 행동이 적힌 사례"다.
+모든 사례는 가상이다. 반복 행동이 보이는 사례는 다섯 하위목표로 푼다. 이 순서를 떠올리는 신호는 "멈추지 못하는 반복 행동이 적힌 사례"다.
 
 1. *반복 행동:* 무엇을 되풀이하나.
 2. *출발점:* 행동 전에 무엇이 있나(침투적 생각, 외모 걱정, 물건을 잃는 고통, 몸의 감각).
@@ -110,7 +110,4 @@ permalink: "/studies/abnormal-psychology/ocd-related-practice/"
 안심시키기가 강박행동(안심 구하기)의 역할을 해 불안을 잠깐 줄이고 행동을 강화한다. 불확실성을 견디는 법을 배울 기회가 사라진다. 노출 및 반응방지의 원리대로, 안심 구하기에도 응하지 않고 불확실함 속에 머무르게 한다.
 
 </details>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 05.강박 관련 장애.pdf의 장애별 설명(p.3, 5, 11, 23, 30, 36, 43)을 적용한 가상 사례다.
 {% endraw %}

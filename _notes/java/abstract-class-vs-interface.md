@@ -56,9 +56,9 @@ permalink: "/studies/java/abstract-class-vs-interface/"
 | 읽는 법 | 자식은 부모의 한 종류다 | 구현 클래스는 이 일을 할 수 있다 |
 | `new`로 객체 만들기 | 안 된다 | 안 된다 |
 
-위 네 줄이 선택을 바꾼다. 아래 두 줄은 선택에 따라오는 것과 둘이 같은 점이다[^1].
+위 네 줄이 선택을 바꾼다. 아래 두 줄은 선택에 따라오는 것과 둘이 같은 점이다.
 
-몸통이 있는 메서드는 양쪽 모두 둘 수 있다. 추상 클래스는 보통 메서드로, 인터페이스는 디폴트 메서드로 둔다([디폴트·정적·private 메서드](/Hongs_Blog/studies/java/java-interface-methods/)). 그래서 "몸통이 있느냐"는 둘을 가르지 못한다[^2].
+몸통이 있는 메서드는 양쪽 모두 둘 수 있다. 추상 클래스는 보통 메서드로, 인터페이스는 디폴트 메서드로 둔다([디폴트·정적·private 메서드](/Hongs_Blog/studies/java/java-interface-methods/)). 그래서 "몸통이 있느냐"는 둘을 가르지 못한다.
 
 ```mermaid
 classDiagram
@@ -103,7 +103,5 @@ classDiagram
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 11회 강의 자료 「Software Project 11. Interface (1)」, p.7 (인터페이스의 멤버 여섯 가지), p.9~11 (추상 클래스의 필드·생성자·메서드, `new` 불가). 소프트웨어 프로젝트 12회 강의 자료 「Software Project 12. Interface (2)」, p.3 (상수 필드), p.9 (인터페이스 여러 개 구현)
-[^2]: 소프트웨어 프로젝트 12회 강의 자료 「Software Project 12. Interface (2)」, p.4 (디폴트 메서드는 실행할 수 있는 몸통을 가진다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 두 개념을 따로 설명하고 나란히 비교하지 않는다. 가르는 질문 둘, 비교 표의 구성, `Bird`·`Flyable`·`Swimmable`·`Duck` 예와 그림, 카드 C1~C3은 원본에 없다. 표의 각 칸은 위 출처의 쪽에 있는 내용이고, 구현 코드와 JDK 21 컴파일로 확인했다. 부모를 둘 쓰면 `'{' expected`, 인터페이스에 생성자를 쓰면 `<identifier> expected` 오류가 난다.
+[^s1]: 표의 각 칸은 위 출처의 쪽에 있는 내용이고, 구현 코드와 JDK 21 컴파일로 확인했다. 부모를 둘 쓰면 `'{' expected`, 인터페이스에 생성자를 쓰면 `<identifier> expected` 오류가 난다.
 {% endraw %}

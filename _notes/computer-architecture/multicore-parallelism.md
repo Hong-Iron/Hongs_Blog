@@ -82,17 +82,17 @@ permalink: "/studies/computer-architecture/multicore-parallelism/"
 $$\text{속도 향상} = \frac{1}{(1 - F) + \dfrac{F}{N}}, \qquad N \to \infty \text{일 때 } \frac{1}{1 - F}$$
 
 
-분모의 $$(1 - F)$$는 차례로 해야 해서 그대로 남는 부분, $$F/N$$은 $$N$$개가 나눠 해서 줄어든 부분이다[^3]. $$F = 0.9$$, $$N = 8$$이면 $$1 \div (0.1 + 0.1125) \approx 4.71$$이다. 거꾸로, 프로세서 32개로 16배를 얻으려면 $$F$$가 약 96.8%는 되어야 한다.
+분모의 $$(1 - F)$$는 차례로 해야 해서 그대로 남는 부분, $$F/N$$은 $$N$$개가 나눠 해서 줄어든 부분이다. $$F = 0.9$$, $$N = 8$$이면 $$1 \div (0.1 + 0.1125) \approx 4.71$$이다. 거꾸로, 프로세서 32개로 16배를 얻으려면 $$F$$가 약 96.8%는 되어야 한다.
 
 이 식은 나눠 맡은 일이 서로 기다리지 않고, 일을 나누고 모으는 값이 0이라고 가정한다. 실제로는 그보다 덜 빨라진다.
 
 ## 코어마다 캐시가 따로 있어서 생기는 일
 
-코어마다 캐시가 있으면 같은 블록의 사본이 여러 캐시에 생긴다. 코어 0이 자기 사본을 고치면 코어 1의 사본은 낡은 값이 된다. 그대로 두면 코어 1이 틀린 값을 읽는다. 그래서 하드웨어가 규칙을 둔다. 어느 코어가 블록에 쓰려면, 먼저 다른 코어들이 가진 그 블록의 사본을 못 쓰게 만든다. 이렇게 사본들을 맞추는 일을 캐시 일관성(cache coherence) 유지라 부른다[^4].
+코어마다 캐시가 있으면 같은 블록의 사본이 여러 캐시에 생긴다. 코어 0이 자기 사본을 고치면 코어 1의 사본은 낡은 값이 된다. 그대로 두면 코어 1이 틀린 값을 읽는다. 그래서 하드웨어가 규칙을 둔다. 어느 코어가 블록에 쓰려면, 먼저 다른 코어들이 가진 그 블록의 사본을 못 쓰게 만든다. 이렇게 사본들을 맞추는 일을 캐시 일관성(cache coherence) 유지라 부른다.
 
-이 규칙이 새 종류의 실패를 만든다. 다른 코어가 쓰는 바람에 내 사본이 못 쓰게 되어 나는 실패다. 캐시를 키워도 줄지 않는다[^4].
+이 규칙이 새 종류의 실패를 만든다. 다른 코어가 쓰는 바람에 내 사본이 못 쓰게 되어 나는 실패다. 캐시를 키워도 줄지 않는다.
 
-**거짓 공유**(false sharing). 두 코어가 서로 다른 변수를 쓰는데, 그 두 변수가 우연히 같은 블록에 들어 있는 경우다. 실제로 함께 쓰는 데이터는 없다. 그런데 캐시는 블록 단위로 사본을 관리하므로, 한 코어가 쓸 때마다 다른 코어의 블록이 통째로 못 쓰게 된다[^4].
+**거짓 공유**(false sharing). 두 코어가 서로 다른 변수를 쓰는데, 그 두 변수가 우연히 같은 블록에 들어 있는 경우다. 실제로 함께 쓰는 데이터는 없다. 그런데 캐시는 블록 단위로 사본을 관리하므로, 한 코어가 쓸 때마다 다른 코어의 블록이 통째로 못 쓰게 된다.
 
 코어 0은 변수 `x`만, 코어 1은 변수 `y`만 번갈아 100번씩 쓴다.
 
@@ -105,7 +105,7 @@ $$\text{속도 향상} = \frac{1}{(1 - F) + \dfrac{F}{N}}, \qquad N \to \infty \
 
 ## 활용
 
-- 나눠 돌리기 좋은 일: 큰 격자를 구역별로 계산하는 과학 계산, 요청마다 따로 처리하는 서버, 그림·영상의 조각을 따로 압축하는 일. 어느 경우든 소프트웨어가 일을 나누도록 짜여 있어야 한다[^5].
+- 나눠 돌리기 좋은 일: 큰 격자를 구역별로 계산하는 과학 계산, 요청마다 따로 처리하는 서버, 그림·영상의 조각을 따로 압축하는 일. 어느 경우든 소프트웨어가 일을 나누도록 짜여 있어야 한다.
 - 여러 스레드가 같은 변수를 고칠 때 순서를 지키게 하는 문제(동기화)는 운영체제 과목에서 다룬다: [스레드](/Hongs_Blog/studies/operating-systems/thread/).
 - [캐시 쓰기 정책](/Hongs_Blog/studies/computer-architecture/cache-write-policy/)에서 본 "사본과 원본이 다르다"는 문제가, 코어가 여럿이면 "사본과 사본이 다르다"로 넓어진다.
 - 흔한 실수: 코어가 $$N$$개면 $$N$$배 빨라진다고 본다. 나눌 수 없는 부분, 일을 나누고 모으는 값, 사본을 맞추는 값이 모두 그 아래로 끌어내린다.
@@ -146,7 +146,4 @@ $$\text{속도 향상} = \frac{1}{(1 - F) + \dfrac{F}{N}}, \qquad N \to \infty \
 
 [^1]: ShanghaiTech CS 110 Computer Architecture (UC Berkeley CS61C 슬라이드 기반), 2017, "Amdahl's Law, Data-level Parallelism", 슬라이드 4~8 (SISD, SIMD, MIMD, MISD, Flynn Taxonomy), https://robotics.shanghaitech.edu.cn/courses/ca/17s/lecture/2017-CA-L19_DLP.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 6장 "Parallel Processors from Client to Cloud"
 [^2]: University of Pennsylvania CIS 501 Computer Architecture (Milo Martin), Unit 10 "Multicore", 슬라이드 18~19 (스레드마다 PC·레지스터·스택, 전역 변수와 힙은 함께 쓴다, 모든 load와 store가 하나의 공유 메모리 공간으로 간다), https://acg.cis.upenn.edu/milom/cis501-Fall12/lectures/10_multicore.pdf
-[^3]: ShanghaiTech CS 110, 2017, 같은 자료, 슬라이드 9~11 (Amdahl's Law: Speedup = 1 / [(1 − F) + F/S]). UPenn CIS 501, Unit 10, 슬라이드 15
-[^4]: UPenn CIS 501, Unit 10 "Multicore", 슬라이드 40~48, 63 (코어별 캐시의 사본이 어긋나는 문제, 쓰기 전에 다른 사본을 무효로 만든다, coherence miss와 false sharing, 캐시를 키워도 이런 실패는 줄지 않는다)
-[^5]: 같은 자료, 슬라이드 13 (Application Domains for Multiprocessors)
 {% endraw %}

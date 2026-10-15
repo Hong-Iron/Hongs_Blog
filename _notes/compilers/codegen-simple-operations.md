@@ -10,12 +10,12 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Code Generation for Simple Operations", "코드 생성", "Code Generation", "Code Generation for Conditional Jumps", "조건 분기의 코드 생성", "적재-연산-저장", "Load-Compute-Store"]
 description: "서랍에 든 서류로 일하려면 꺼내서 책상에 놓고, 고치고, 다시 서랍에 넣는다. 컴파일러가 계산 한 줄을 기계 명령으로 옮길 때도 이 세 걸음을 그대로 찍어 낸다. 변수의 값을 메모리에서 꺼내고, 계산하고, 결과를 메모리에 넣는다. 조건에 따라 건너뛰는 줄은 조건 값을 꺼내서 0인지…"
 prev_url: "/studies/compilers/mips-instructions/"
-prev_title: "수업용 MIPS 명령어"
+prev_title: "코드 생성용 MIPS 명령어"
 next_url: "/studies/compilers/codegen-function-call/"
 next_title: "함수 호출의 코드 생성"
 math: true
@@ -34,9 +34,9 @@ permalink: "/studies/compilers/codegen-simple-operations/"
 
 ## 예시로 보기
 
-[수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)에서 본 것처럼 이 기계는 메모리에 있는 값끼리 바로 계산하지 못한다. 그런데 3주소 코드의 변수는 모두 메모리에 있다. 지금 도는 함수의 지역 변수이므로 그 함수의 [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/), 곧 스택에 이미 자리가 있다[^1].
+[코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)에서 본 것처럼 이 기계는 메모리에 있는 값끼리 바로 계산하지 못한다. 그런데 3주소 코드의 변수는 모두 메모리에 있다. 지금 도는 함수의 지역 변수이므로 그 함수의 [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/), 곧 스택에 이미 자리가 있다.
 
-3주소 코드 `a = b + c`를 옮긴다. 스택은 이런 모습이다. `$sp`는 스택 꼭대기 바로 다음의 빈칸을 가리킨다[^1].
+3주소 코드 `a = b + c`를 옮긴다. 스택은 이런 모습이다. `$sp`는 스택 꼭대기 바로 다음의 빈칸을 가리킨다.
 
 ```
  높은 번지   |   ...   |
@@ -51,7 +51,7 @@ permalink: "/studies/compilers/codegen-simple-operations/"
  낮은 번지   +---------+
 ```
 
-변수마다 `$sp`에서 몇 바이트 떨어져 있는지는 심벌 테이블에 적혀 있다[^1]. 옮기는 걸음은 셋이다[^2].
+변수마다 `$sp`에서 몇 바이트 떨어져 있는지는 심벌 테이블에 적혀 있다. 옮기는 걸음은 셋이다.
 
 | 걸음 | 하는 일 | 명령 |
 |---|---|---|
@@ -62,14 +62,14 @@ permalink: "/studies/compilers/codegen-simple-operations/"
 b = 2, c = 5로 돌리면 `$r0 = 2`, `$r1 = 5`, `$r2 = 7`이 되고 `$sp + 12`번지에 7이 들어간다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 아래 규칙대로 만든 명령이 슬라이드 p.13, p.14, p.16, p.18의 어셈블리와 글자까지 같음, 파이썬 흉내기로 돌려 3주소 코드를 직접 실행한 값과 같음(`a = b + c`는 −3~3의 모든 쌍, 반복문은 x, y가 −2~5인 모든 쌍, 무작위 직선 코드 500개), 메모리 읽기·쓰기 횟수 — [52_codegen-simple-operations_impl.py](/Hongs_Blog/studies/compilers/code/52_codegen-simple-operations_impl/). 실제 MIPS 어셈블러로 돌린 것이 아니다.</div>
+<div class="callout-title" markdown="span">검증: 아래 규칙대로 만든 명령이 이 문서 네 예제의 어셈블리와 글자까지 같음, 파이썬 흉내기로 돌려 3주소 코드를 직접 실행한 값과 같음(`a = b + c`는 −3~3의 모든 쌍, 반복문은 x, y가 −2~5인 모든 쌍, 무작위 직선 코드 500개), 메모리 읽기·쓰기 횟수 — [52_codegen-simple-operations_impl.py](/Hongs_Blog/studies/compilers/code/52_codegen-simple-operations_impl/). 실제 MIPS 어셈블러로 돌린 것이 아니다.</div>
 
 </div>
 
 
 ## 옮기는 규칙
 
-3주소 코드의 줄 모양마다 찍어 낼 명령이 정해져 있다. `off(x)`는 심벌 테이블에 적힌 변수 x의 오프셋이다. 줄마다 레지스터 번호를 `$r0`부터 새로 쓴다[^3][^s1].
+3주소 코드의 줄 모양마다 찍어 낼 명령이 정해져 있다. `off(x)`는 심벌 테이블에 적힌 변수 x의 오프셋이다. 줄마다 레지스터 번호를 `$r0`부터 새로 쓴다.
 
 | 3주소 코드 | 찍어 내는 명령 |
 |---|---|
@@ -82,7 +82,7 @@ b = 2, c = 5로 돌리면 `$r0 = 2`, `$r1 = 5`, `$r2 = 7`이 되고 `$sp + 12`�
 
 `op 명령`은 연산자에 맞는 명령이다. `+`는 `add`, `-`는 `sub`, `*`는 `mul`, `/`는 `div`, `<`는 `slt`, `<=`는 `sle`, `>`는 `sgt`, `>=`는 `sge`, `==`는 `seq`, `!=`는 `sne`다. 오른쪽이 상수면 끝에 `i`가 붙은 즉시값 명령을 써서 꺼내 오기 한 번을 아낀다.
 
-**비교.** `a = b < 3`은 a가 `$sp + 8`, b가 `$sp + 4`에 있을 때 이렇게 된다[^4].
+**비교.** `a = b < 3`은 a가 `$sp + 8`, b가 `$sp + 4`에 있을 때 이렇게 된다.
 
 ```
 lw   $r0 4($sp)      # b를 꺼낸다
@@ -90,7 +90,7 @@ slti $r1 $r0 3       # $r1 = ($r0 < 3)
 sw   $r1 8($sp)      # a에 넣는다
 ```
 
-**조건 분기.** 조건이 참이면 뛰는 줄은 "0이 아니면 뛴다"가 된다. 참을 0이 아닌 값으로 적어 두었기 때문이다. `t0`가 `$sp + 8`, b가 `$sp + 4`에 있다[^5].
+**조건 분기.** 조건이 참이면 뛰는 줄은 "0이 아니면 뛴다"가 된다. 참을 0이 아닌 값으로 적어 두었기 때문이다. `t0`가 `$sp + 8`, b가 `$sp + 4`에 있다.
 
 ```
 [3주소 코드]            [어셈블리]
@@ -104,7 +104,7 @@ L0:                     L0:
 
 ## 예제
 
-**반복문.** 슬라이드의 연습이다. `t0`는 `$sp + 12`, x는 `$sp + 8`, y는 `$sp + 4`에 있다[^6].
+**반복문.** `t0`는 `$sp + 12`, x는 `$sp + 8`, y는 `$sp + 4`에 있다.
 
 ```
 [3주소 코드]            [어셈블리]
@@ -133,7 +133,7 @@ x = 0, y = 3으로 돌린 흐름이다[^s2].
 
 세 바퀴 돌고 넷째 검사에서 나온다. 그동안 메모리 읽기(`lw`)가 15번, 쓰기(`sw`)가 7번 일어난다. 한 바퀴에 읽기 4번과 쓰기 2번이고, 마지막 검사에 읽기 3번과 쓰기 1번이다.
 
-**헛일이 생기는 곳.** 위 어셈블리의 넷째와 다섯째 명령을 보면 `sw $r2 12($sp)`로 `t0`를 메모리에 넣자마자 `lw $r0 12($sp)`로 다시 꺼낸다. 값은 방금까지 `$r2`에 있었다. 줄마다 따로 옮기기 때문에 생기는 일이다. 슬라이드는 이 방식의 문제를 둘로 적는다[^7].
+**헛일이 생기는 곳.** 위 어셈블리의 넷째와 다섯째 명령을 보면 `sw $r2 12($sp)`로 `t0`를 메모리에 넣자마자 `lw $r0 12($sp)`로 다시 꺼낸다. 값은 방금까지 `$r2`에 있었다. 줄마다 따로 옮기기 때문에 생기는 일이다. 이 방식의 문제는 둘이다.
 
 - 레지스터가 끝없이 많다고 쳤는데 실제로는 수가 정해져 있다.
 - 조각마다 그대로 옮기면 만들기는 간단하지만 효율을 잃는다. 필요 없는 꺼내 오기와 넣어 두기가 나온다.
@@ -143,14 +143,14 @@ x = 0, y = 3으로 돌린 흐름이다[^s2].
 ## 활용
 
 - 구현: [52_codegen-simple-operations_impl.py](/Hongs_Blog/studies/compilers/code/52_codegen-simple-operations_impl/). 연습: [코드 생성 연습](/Hongs_Blog/studies/compilers/codegen-practice/)
-- 비용: 3주소 코드 한 줄이 명령 2~4줄이 된다. 줄 수에 비례하는 시간에 끝난다. 앞뒤 줄을 보지 않으므로 한 줄씩 읽으면서 바로 찍어 낼 수 있다[^s1].
+- 비용: 3주소 코드 한 줄이 명령 2~4줄이 된다. 줄 수에 비례하는 시간에 끝난다. 앞뒤 줄을 보지 않으므로 한 줄씩 읽으면서 바로 찍어 낼 수 있다.
 - 흔한 실수: 오프셋을 변수의 순서로 착각한다. 오프셋은 `$sp`에서 떨어진 바이트 수이고, 그림에서 위에 있는(높은 번지의) 변수일수록 크다.
 - 흔한 실수: `if x goto L`에 `beqz`를 쓴다. 참일 때 뛰어야 하므로 "0이 아니면"인 `bnez`다. `ifnot`이 `beqz`다.
 - 흔한 실수: `x = x + 1`에서 결과를 넣는 `sw`를 빼먹는다. `addi`는 레지스터만 바꾼다. 메모리의 x는 `sw`를 해야 바뀐다.
 
 ## 연결
 
-- 선수: [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/), [3주소 코드](/Hongs_Blog/studies/compilers/three-address-code/), [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)
+- 선수: [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/), [3주소 코드](/Hongs_Blog/studies/compilers/three-address-code/), [활성 레코드](/Hongs_Blog/studies/compilers/activation-record/)
 - 변수의 오프셋을 적어 두는 곳: [심벌 테이블과 스코프 검사](/Hongs_Blog/studies/compilers/symbol-table-scope-checking/)
 - 함수 호출 줄(`param`, `call`, `return`)을 옮기는 법: [함수 호출의 코드 생성](/Hongs_Blog/studies/compilers/codegen-function-call/)
 - x86에서 같은 일을 하는 명령: 비교한 뒤 플래그를 보고 뛰는 [조건 점프](/Hongs_Blog/studies/assembly-language/conditional-jumps/), 값을 담는 [x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/)
@@ -192,13 +192,5 @@ x = 0, y = 3으로 돌린 흐름이다[^s2].
 </details>
 
 
-[^1]: 컴파일러 15회 강의 자료 「Lecture15 Code generation part 2」, p.10 (변수는 이미 스택에 있다, $sp 기준 위치는 심벌 테이블에 있다)
-[^2]: 같은 자료, p.11~13 (a = b + c의 세 걸음)
-[^3]: 같은 자료, p.13, p.14, p.16, p.18 (네 예제의 어셈블리)
-[^4]: 같은 자료, p.14 (a = b < 3)
-[^5]: 같은 자료, p.16 (조건 분기 예제)
-[^6]: 같은 자료, p.17~18 (연습과 답). p.17~18의 3주소 코드에 "itnot t0 goto L1"이라 적혀 있는데 "ifnot"의 오타로 읽었다. 답의 `beqz`가 "t0가 거짓이면 뛴다"와 맞는다.
-[^7]: 같은 자료, p.29 (수업 가정의 문제점)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 규칙을 한 표로 모은 것, "줄마다 레지스터 번호를 새로 쓴다", 비용 이야기는 원본에 없다. 슬라이드의 네 예제에서 읽어 낸 규칙이고, 이 규칙으로 만든 명령이 네 예제와 글자까지 같은 것을 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> b = 2, c = 5의 값, x = 0, y = 3의 실행 표, 읽기·쓰기 횟수, 카드 C1~C3은 원본에 없다. 파이썬 흉내기로 돌려 확인했다.
+[^s2]: 파이썬 흉내기로 돌려 확인했다.
 {% endraw %}

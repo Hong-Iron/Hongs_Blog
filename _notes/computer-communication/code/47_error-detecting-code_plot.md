@@ -160,7 +160,7 @@ if __name__ == "__main__":
         d = format(v, "07b")
         groups.setdefault(even_parity(d), []).append(d)
     assert sorted(len(g) for g in groups.values()) == [64, 64]
-    # 10진 비유(슬라이드 p.52): 젯수 11, 331 → 3311, 2211은 놓침
+    # 10진 비유(문서 본문): 젯수 11, 331 → 3311, 2211은 놓침
     assert 3311 % 11 == 0 and 3310 % 11 != 0 and 2311 % 11 != 0 and 2211 % 11 == 0
     print("ALL CHECKS PASSED")
 ```

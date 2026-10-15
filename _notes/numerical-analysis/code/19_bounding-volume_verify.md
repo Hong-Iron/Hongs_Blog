@@ -59,11 +59,11 @@ def box(P, axes):
 
 
 def main():
-    P = [(-1, -2, 1), (1, 0, 2), (2, -1, 3), (2, -1, 2)]                         # 슬라이드 p.10
+    P = [(-1, -2, 1), (1, 0, 2), (2, -1, 3), (2, -1, 2)]                         # 문서의 예
     m, C = mean_cov(P)
     assert m == [1, -1, 2]
     assert C == [[F(3, 2), F(1, 2), F(3, 4)], [F(1, 2), F(1, 2), F(1, 4)], [F(3, 4), F(1, 4), F(1, 2)]]
-    # 특성다항식 −λ³ + (5/2)λ² − (7/8)λ + 1/16 (슬라이드 p.11)
+    # 특성다항식 −λ³ + (5/2)λ² − (7/8)λ + 1/16
     det3 = lambda M: (M[0][0] * (M[1][1] * M[2][2] - M[1][2] * M[2][1]) - M[0][1] * (M[1][0] * M[2][2] - M[1][2] * M[2][0])
                       + M[0][2] * (M[1][0] * M[2][1] - M[1][1] * M[2][0]))
     for lam in (F(0), F(1), F(2), F(-1), F(1, 3)):
@@ -82,7 +82,7 @@ def main():
     assert all(abs(ACA[i][j]) < 1e-9 for i in range(3) for j in range(3) if i != j)
     ext, vol = box(P, A)
     _, vol_aabb = box(P, [(1, 0, 0), (0, 1, 0), (0, 0, 1)])
-    print("슬라이드 예 OBB 폭", [round(hi - lo, 3) for lo, hi in ext], "부피", round(vol, 3), "AABB 부피", vol_aabb)
+    print("문서 예 OBB 폭", [round(hi - lo, 3) for lo, hi in ext], "부피", round(vol, 3), "AABB 부피", vol_aabb)
     # 비스듬히 길쭉한 점 구름: OBB가 AABB보다 훨씬 작다
     random.seed(19)
     th = math.radians(35)

@@ -129,7 +129,7 @@ def main():
     snippet = [0.15 / n + sum(0.85 * r0[i] / len(links[i]) for i in links if j in links[i]) for j in range(n)]
     assert all(abs(a - b) < 1e-15 for a, b in zip(one, snippet))
     print("[OK] 주장 6: 카드 C2")
-    # 데이터 과학 13회 관점: 슬라이드 p.10 거듭제곱법, p.12 막다른 페이지, p.14 구글 행렬
+    # 데이터 과학 관점: 거듭제곱법, 막다른 페이지, 구글 행렬
     from fractions import Fraction as Fr
     def step(r, M):
         return [sum(r[i] * M[i][j] for i in range(len(r))) for j in range(len(r))]

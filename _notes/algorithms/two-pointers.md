@@ -133,5 +133,5 @@ def count_windows(a, S):          # a는 모두 양수
 
 
 [^1]: Laaksonen, *Competitive Programmer's Handbook* (2018년 7월판), 8.1 "Two pointers method": 부분 배열 합 문제(양수 배열)와 2SUM 문제(정렬 후 양 끝에서 좁혀 오기)로 설명하고, 두 포인터가 각각 O(n)번만 움직여 전체가 O(n)임을 보인다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [18_two-pointers_plot.py](/Hongs_Blog/studies/algorithms/code/18_two-pointers_plot/)로 그렸고, 들른 순서 (1, 11) → (1, 8) → (3, 8) → (3, 6) → (4, 6), 표가 행과 열 방향으로 커진다는 것, 15칸 중 5칸을 들른다는 것을 같은 코드로 확인했다.
+[^s1]: [18_two-pointers_plot.py](/Hongs_Blog/studies/algorithms/code/18_two-pointers_plot/)로 그렸고, 들른 순서 (1, 11) → (1, 8) → (3, 8) → (3, 6) → (4, 6), 표가 행과 열 방향으로 커진다는 것, 15칸 중 5칸을 들른다는 것을 같은 코드로 확인했다.
 {% endraw %}

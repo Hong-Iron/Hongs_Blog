@@ -172,7 +172,7 @@ $$y = -2(x - 1)^2 + 3$$의 그래프를 $$y = x^2$$에서 얻는다.
 
 [^1]: OpenStax, *Precalculus 2e*, 1.5절 "Transformation of Functions". 교재는 이동·대칭·확대를 하나씩 다룬다. 한 식으로 묶은 점 대응은 그 결과를 합친 것이다.
 [^2]: OpenStax, *Precalculus 2e*, 1.4절 "Composition of Functions"
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 신호 지연·화면 좌표·셸 파이프라인은 컴퓨터공학에서 변환과 합성이 쓰이는 곳을 보이려고 넣었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [02_function-transformation_plot.py](/Hongs_Blog/studies/college-math/code/02_function-transformation_plot/)로 그렸고, 그림에 쓴 값(점 대응 $$(1, 1) \to (4, 1)$$, 예제의 $$g(1) = 3$$, $$g(0) = g(2) = 1$$)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. `예시로 보기`의 두 합성 $$g \circ f$$, $$f \circ g$$($$x = 3$$을 넣은 값 8과 7은 두 식에서 계산)와 `정의`의 식 $$a\,f\big(b(x - h)\big) + k$$의 계산 순서를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.4~1.5절).
+[^s1]: 신호 지연·화면 좌표·셸 파이프라인은 컴퓨터공학에서 변환과 합성이 쓰이는 곳을 보이려고 넣었다.
+[^s2]: [02_function-transformation_plot.py](/Hongs_Blog/studies/college-math/code/02_function-transformation_plot/)로 그렸고, 그림에 쓴 값(점 대응 $$(1, 1) \to (4, 1)$$, 예제의 $$g(1) = 3$$, $$g(0) = g(2) = 1$$)을 같은 코드로 확인했다.
+[^s3]: `예시로 보기`의 두 합성 $$g \circ f$$, $$f \circ g$$($$x = 3$$을 넣은 값 8과 7은 두 식에서 계산)와 `정의`의 식 $$a\,f\big(b(x - h)\big) + k$$의 계산 순서를 근거로 그렸다(OpenStax, *Precalculus 2e*, 1.4~1.5절).
 {% endraw %}

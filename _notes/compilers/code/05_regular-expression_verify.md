@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/05_regular-expression_verify/"
 [정규 표현식](/Hongs_Blog/studies/compilers/regular-expression/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 정규 표현식: 기본 다섯 식의 뜻을 집합 연산으로 직접 계산해, 슬라이드 L02 p.18~24의 규칙과 예를 확인한다
+# 정규 표현식: 기본 다섯 식의 뜻을 집합 연산으로 직접 계산해, 문서의 규칙과 예를 확인한다
 # 실행: python3 05_regular-expression_verify.py   (표준 라이브러리만 쓴다)
 # 표기: 글자 하나 = 기호, 'ε', '|', 이어 쓰기, '*', '+', 괄호. 언어는 길이 N 이하의 문자열만 모아 견준다.
 import itertools
@@ -75,7 +75,7 @@ def parse(src):
 
 
 def lang(tree):
-    """L(r)에서 길이 N 이하인 문자열의 집합. 슬라이드 p.18의 표를 그대로 옮긴 것이다."""
+    """L(r)에서 길이 N 이하인 문자열의 집합. 기본 다섯 식의 표를 그대로 옮긴 것이다."""
     kind = tree[0]
     if kind == "eps":
         return {""}
@@ -116,16 +116,16 @@ def random_regex(rng, depth):
 
 
 if __name__ == "__main__":
-    # p.18: 기본 다섯 식
+    # 기본 다섯 식
     assert L("ε") == {""} and L("a") == {"a"} and L("a|b") == {"a", "b"} and L("ab") == {"ab"}
     assert L("a*") == {"a" * i for i in range(N + 1)}
-    # p.19: a+ = aa*
+    # a+ = aa*
     assert L("a+") == L("aa*") == {"a" * i for i in range(1, N + 1)}
-    # p.20: 우선순위  (r1)|((r2)*(r3)) = r1|r2*r3
+    # 우선순위  (r1)|((r2)*(r3)) = r1|r2*r3
     assert L("(a)|((b)*(c))") == L("a|b*c") == {"a"} | {"b" * i + "c" for i in range(N)}
     assert L("a|b*c") != L("(a|b)*c") and L("a|b*c") != L("a|(bc)*")
     assert "bbc" in L("a|b*c") and "abc" not in L("a|b*c") and "abc" in L("(a|b)*c")
-    # p.20: 대수 법칙. 무작위 식 300조에 대해 길이 N 이하에서 언어가 같은지 본다
+    # 대수 법칙. 무작위 식 300조에 대해 길이 N 이하에서 언어가 같은지 본다
     rng = random.Random(5)
     for _ in range(300):
         r1, r2, r3 = (random_regex(rng, 2) for _ in range(3))
@@ -142,14 +142,14 @@ if __name__ == "__main__":
     # | 는 연결 위로 분배되지 않는다:  a|(bc) ≠ (a|b)(a|c)
     assert L("a|bc") != L("(a|b)(a|c)")
 
-    # p.21~24: 토큰 예. l = 글자, d = 숫자, u = 밑줄, p = 점, m = 빼기, q = 더하기, E = 지수 표시
+    # 토큰 예. l = 글자, d = 숫자, u = 밑줄, p = 점, m = 빼기, q = 더하기, E = 지수 표시
     integer = "dd*"                                        # 예 4의 답(보충): digit+
     assert L(integer) == L("d+") == py("d+", "d")
     identifier = "(l|u)(l|d|u)*"                           # 예 5의 답(보충)
     assert L(identifier) == {s for s in all_strings("ldu", N) if s and s[0] != "d"}
     flt = "(m|ε)dd*pdd*(ε|E(q|m|ε)dd*)"                    # 예 6의 답(보충)
     assert L(flt) == py("m?d+pd+(E[qm]?d+)?", "mdpEq")
-    # 슬라이드의 일곱 예를 실제 글자로 확인한다
+    # 문서의 실수 예 일곱 개를 실제 글자로 확인한다
     real = re.compile(r"(-|)[0-9][0-9]*\.[0-9][0-9]*(|E(\+|-|)[0-9][0-9]*)")
     for s in ["0.5", "3.14", "-6.111", "1.0E+3", "100.0", "-10.53E-1", "9.123E3"]:
         assert real.fullmatch(s), s
@@ -159,7 +159,7 @@ if __name__ == "__main__":
     for s in ["aaa", "i", "funcAtoB", "_var", "main", "variable123"]:
         assert ident.fullmatch(s)
     assert not ident.fullmatch("1abc") and not ident.fullmatch("")
-    # p.22: Whitespace = (빈칸|\t|\n)+
+    # Whitespace = (빈칸|\t|\n)+
     ws = re.compile("( |\t|\n)( |\t|\n)*")
     assert all(ws.fullmatch(s) for s in [" ", "\t", "\n", "\t\t", " \n\t"]) and not ws.fullmatch("")
 

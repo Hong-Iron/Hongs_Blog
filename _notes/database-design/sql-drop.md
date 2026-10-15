@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-drop/"
 
 ## 예시로 보기
 
-부양가족 표 DEPENDENT가 더 필요 없어졌다. 행을 다 지우면 될까, 표를 없애야 할까? 두 문장을 따로 돌려 견준다[^1].
+부양가족 표 DEPENDENT가 더 필요 없어졌다. 행을 다 지우면 될까, 표를 없애야 할까? 두 문장을 따로 돌려 견준다.
 
 | | `DELETE FROM DEPENDENT;` | `DROP TABLE DEPENDENT CASCADE;` |
 |---|---|---|
@@ -53,13 +53,13 @@ permalink: "/studies/database-design/sql-drop/"
 
 ## 정의
 
-표, 속성, 제약 같은 스키마의 요소를 더하거나 없애 스키마를 바꾸는 문장을 스키마 진화(schema evolution) 명령이라 한다. `DROP`과 `ALTER`가 여기에 든다. 세 가지가 따라붙는다[^2].
+표, 속성, 제약 같은 스키마의 요소를 더하거나 없애 스키마를 바꾸는 문장을 스키마 진화(schema evolution) 명령이라 한다. `DROP`과 `ALTER`가 여기에 든다. 세 가지가 따라붙는다.
 
 - 데이터베이스가 돌아가는 동안에 할 수 있다.
 - 스키마 전체를 DBMS가 다시 읽어 들이게 할(재컴파일) 필요가 없다.
 - 바꾼 것이 데이터베이스의 나머지에 영향을 주거나 앞뒤가 안 맞게 만들지 않는지 DBMS가 검사해야 한다.
 
-**<code>DROP SCHEMA 이름 CASCADE &#124; RESTRICT</code>.** 더 필요 없는 스키마를 통째로 없앤다[^3].
+**<code>DROP SCHEMA 이름 CASCADE &#124; RESTRICT</code>.** 더 필요 없는 스키마를 통째로 없앤다.
 
 ```sql
 DROP SCHEMA COMPANY CASCADE;
@@ -68,7 +68,7 @@ DROP SCHEMA COMPANY CASCADE;
 - `CASCADE`: 스키마에 든 요소(표, 도메인 등)를 모두 함께 없앤다.
 - `RESTRICT`: 스키마에 든 요소가 하나도 없을 때만 없앤다. 든 것이 있으면 사용자가 하나씩 먼저 없애야 한다.
 
-**<code>DROP TABLE 이름 CASCADE &#124; RESTRICT</code>.** 이름으로 가리킨 표를 없앤다. 표의 튜플을 모두 지우고, 카탈로그에서 표의 정의도 지운다[^1].
+**<code>DROP TABLE 이름 CASCADE &#124; RESTRICT</code>.** 이름으로 가리킨 표를 없앤다. 표의 튜플을 모두 지우고, 카탈로그에서 표의 정의도 지운다.
 
 ```sql
 DROP TABLE DEPENDENT CASCADE;
@@ -77,7 +77,7 @@ DROP TABLE DEPENDENT CASCADE;
 - `CASCADE`: 튜플과 표의 정의를 지우고, 이 표를 가리키는 제약과 다른 요소도 스키마에서 저절로 함께 없앤다.
 - `RESTRICT`: 어떤 제약도, 다른 어떤 요소도 이 표를 가리키지 않을 때만 없앤다.
 
-`DROP`은 도메인, 자료형, 제약(주장과 트리거까지)처럼 이름이 붙은 다른 요소를 없애는 데도 쓴다[^1].
+`DROP`은 도메인, 자료형, 제약(주장과 트리거까지)처럼 이름이 붙은 다른 요소를 없애는 데도 쓴다.
 
 ## 예제
 
@@ -142,8 +142,5 @@ COMPANY의 여섯 표를 만들어 놓고 PostgreSQL 16에서 문장을 하나�
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.16 (The DROP TABLE Command, DELETE와의 차이, CASCADE와 RESTRICT, 다른 요소의 DROP)
-[^2]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.14 (Schema Evolution Statements in SQL)
-[^3]: 데이터베이스 설계 11회 강의 자료 「11_SQL-DDL-Complex」, p.15 (The DROP SCHEMA Command)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `DELETE`와 `DROP TABLE`을 견준 표, PostgreSQL 16에서 돌린 다섯 문장의 결과, "함께 없어지는 것은 제약이지 행이 아니다", `ON DELETE CASCADE`와 견준 표, 아무것도 안 적었을 때의 동작, SQLite에 없는 것, 뷰가 기댈 때의 결과, 확인 문제는 슬라이드에 없다. PostgreSQL 16과 SQLite 3.50에서 실행해 확인했다.
+[^s1]: PostgreSQL 16과 SQLite 3.50에서 실행해 확인했다.
 {% endraw %}

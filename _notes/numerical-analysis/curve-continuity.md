@@ -56,7 +56,7 @@ permalink: "/studies/numerical-analysis/curve-continuity/"
 
 ## 정의
 
-두 조각 $$\mathbf p(u)$$, $$\mathbf q(u)$$($$0 \le u \le 1$$)를 $$\mathbf p(1) = \mathbf q(0)$$에서 잇는다[^1].
+두 조각 $$\mathbf p(u)$$, $$\mathbf q(u)$$($$0 \le u \le 1$$)를 $$\mathbf p(1) = \mathbf q(0)$$에서 잇는다.
 
 **매개변수 연속성**
 
@@ -79,9 +79,9 @@ flowchart LR
     G1 --> C0
 ```
 
-화살표는 "이것이면 저것도 된다"는 뜻이다. 거꾸로 가는 화살표는 없다[^s3].
+화살표는 "이것이면 저것도 된다"는 뜻이다. 거꾸로 가는 화살표는 없다.
 
-**곡선 종류별 연속성**[^2]
+**곡선 종류별 연속성**
 
 | 곡선 | 이음점 | 이유 |
 |---|---|---|
@@ -90,7 +90,7 @@ flowchart LR
 | 베지어 | $$C^0$$ (도함수가 맞지 않을 수 있다) | 조절점을 따로 놓으면 끝 접선이 어긋난다 |
 | B-스플라인 | $$C^2$$ | 이웃 조각이 조절점 셋을 함께 쓴다 |
 
-원하는 방법은 에르미트처럼 이음점이 매끄러우면서 베지어처럼 점들만으로 정하는 것이다. 스플라인이 두 가지를 모두 하고 $$C^2$$까지 준다[^2].
+원하는 방법은 에르미트처럼 이음점이 매끄러우면서 베지어처럼 점들만으로 정하는 것이다. 스플라인이 두 가지를 모두 하고 $$C^2$$까지 준다.
 
 ```mermaid
 flowchart LR
@@ -99,7 +99,7 @@ flowchart LR
     B -->|"조각마다 끝 접선이 어긋날 수 있다"| S["B-스플라인: 점만으로 C²"]
 ```
 
-화살표 위의 말이 앞 곡선의 약점이고, 다음 곡선이 그 약점을 고친다[^s3].
+화살표 위의 말이 앞 곡선의 약점이고, 다음 곡선이 그 약점을 고친다.
 
 베지어 조각을 $$C^1$$으로 잇는 조건은 $$3(\mathbf p_3 - \mathbf p_2) = 3(\mathbf q_1 - \mathbf q_0)$$이다. $$\mathbf q_0 = \mathbf p_3$$이므로 $$\mathbf q_1 = 2\mathbf p_3 - \mathbf p_2$$, 곧 $$\mathbf p_2$$, $$\mathbf p_3$$, $$\mathbf q_1$$이 한 직선 위에 같은 간격으로 놓이면 된다[^s1].
 
@@ -141,9 +141,6 @@ flowchart LR
 </details>
 
 
-[^1]: 수치해석 7회 강의 자료 「na07_curves」, p.25
-[^2]: 같은 자료, p.26
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 트랙 비유, 표의 세 경우, $$C^1 \Rightarrow G^1$$, 표의 "이유" 칸, 베지어의 $$C^1$$ 조건, 그림 도구, 흔한 실수, 카드 C2·C3은 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [15_curve-continuity_plot.py](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$A$$의 끝 속도 $$(3, -6)$$, $$B$$의 출발 속도 $$(6, 9)$$, $$(6, -12)$$, $$(3, -6)$$.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 2개는 원본에 없다. 첫째는 이 문서 '정의'의 연속성 정의, 둘째는 '곡선 종류별 연속성' 표와 그 아래 문단(원본 07.na07_curves.pdf p.25~26), [3차 보간 곡선](/Hongs_Blog/studies/numerical-analysis/cubic-interpolation-curve/)과 [에르미트 곡선](/Hongs_Blog/studies/numerical-analysis/hermite-curve/)의 장단점으로 그렸다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: [15_curve-continuity_plot.py](/Hongs_Blog/studies/numerical-analysis/code/15_curve-continuity_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: $$A$$의 끝 속도 $$(3, -6)$$, $$B$$의 출발 속도 $$(6, 9)$$, $$(6, -12)$$, $$(3, -6)$$.
 {% endraw %}

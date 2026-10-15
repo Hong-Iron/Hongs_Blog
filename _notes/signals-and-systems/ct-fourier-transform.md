@@ -34,13 +34,13 @@ permalink: "/studies/signals-and-systems/ct-fourier-transform/"
 
 ## 예시로 보기
 
-주기 사각파($$\vert t\vert  < T_1$$에서 1)를 생각하자[^1]. 한 펄스의 폭 $$T_1$$은 그대로 두고 주기 $$T$$만 $$4T_1 \to 8T_1 \to 16T_1$$로 늘린다.
+주기 사각파($$\vert t\vert  < T_1$$에서 1)를 생각하자. 한 펄스의 폭 $$T_1$$은 그대로 두고 주기 $$T$$만 $$4T_1 \to 8T_1 \to 16T_1$$로 늘린다.
 
 - 계수에 주기를 곱한 $$Ta_k = \frac{2\sin(k\omega_0T_1)}{k\omega_0}$$은 늘 같은 곡선 $$\frac{2\sin\omega T_1}{\omega}$$(포락선)을 $$\omega = k\omega_0$$에서 찍은 값이다.
 - $$T$$를 키우면 $$\omega_0 = \frac{2\pi}{T}$$가 작아져 찍는 점이 촘촘해진다(그림 4.2).
 - $$T \to \infty$$이면 이웃 펄스가 무한히 멀어져 펄스 하나만 남고, 찍은 점들은 곡선 전체가 된다. 이 곡선이 펄스 하나의 푸리에 변환이다.
 
-포락선은 진동하는 신호의 진폭이 어떻게 변하는지를 따라 그린 곡선이다[^1].
+포락선은 진동하는 신호의 진폭이 어떻게 변하는지를 따라 그린 곡선이다.
 
 ## 정의
 
@@ -51,12 +51,12 @@ $$X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt \qquad \text{(푸리�
 
 $$x(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(j\omega)e^{j\omega t}d\omega \qquad \text{(역푸리에 변환, 합성식)}$$
 
-$$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$, $$X(j\omega) = \mathcal{F}\{x(t)\}$$, $$x(t) = \mathcal{F}^{-1}\{X(j\omega)\}$$로 쓴다[^2].
+$$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$, $$X(j\omega) = \mathcal{F}\{x(t)\}$$, $$x(t) = \mathcal{F}^{-1}\{X(j\omega)\}$$로 쓴다.
 
 </div>
 
 
-$$X(j\omega)$$를 $$x(t)$$의 스펙트럼이라 한다. 주기 신호는 고조파 주파수 $$k\omega_0$$에서만 크기 $$a_k$$를 갖는 복소 지수의 합이고, 비주기 신호는 모든 주파수에 걸쳐 크기 $$X(j\omega)\frac{d\omega}{2\pi}$$를 갖는 복소 지수들의 적분이다[^2].
+$$X(j\omega)$$를 $$x(t)$$의 스펙트럼이라 한다. 주기 신호는 고조파 주파수 $$k\omega_0$$에서만 크기 $$a_k$$를 갖는 복소 지수의 합이고, 비주기 신호는 모든 주파수에 걸쳐 크기 $$X(j\omega)\frac{d\omega}{2\pi}$$를 갖는 복소 지수들의 적분이다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">급수에서 변환으로 (유도)</summary>
@@ -65,14 +65,14 @@ $$X(j\omega)$$를 $$x(t)$$의 스펙트럼이라 한다. 주기 신호는 고조
 2. $$\tilde x$$의 계수: $$\vert t\vert  < \frac T2$$에서 $$\tilde x = x$$이고 그 밖에서 $$x = 0$$이라 $$a_k = \frac1T\int_{-T/2}^{T/2}\tilde xe^{-jk\omega_0t}dt = \frac1T\int_{-\infty}^{\infty}xe^{-jk\omega_0t}dt$$.
 3. $$X(j\omega) = \int x(t)e^{-j\omega t}dt$$로 정의하면 $$a_k = \frac1TX(jk\omega_0)$$.
 4. 합성식에 넣고 $$\frac1T = \frac{\omega_0}{2\pi}$$를 쓰면 $$\tilde x(t) = \frac{1}{2\pi}\sum_kX(jk\omega_0)e^{jk\omega_0t}\omega_0$$.
-5. 각 항은 높이 $$X(jk\omega_0)e^{jk\omega_0t}$$, 폭 $$\omega_0$$인 직사각형의 넓이다(그림 4.4). $$T \to \infty$$면 $$\omega_0 \to 0$$이고 $$\tilde x \to x$$이므로, 리만 합이 적분이 되어 $$x(t) = \frac{1}{2\pi}\int X(j\omega)e^{j\omega t}d\omega$$[^3].
+5. 각 항은 높이 $$X(jk\omega_0)e^{jk\omega_0t}$$, 폭 $$\omega_0$$인 직사각형의 넓이다(그림 4.4). $$T \to \infty$$면 $$\omega_0 \to 0$$이고 $$\tilde x \to x$$이므로, 리만 합이 적분이 되어 $$x(t) = \frac{1}{2\pi}\int X(j\omega)e^{j\omega t}d\omega$$.
 
-역변환에 변환을 넣으면 $$\frac{1}{2\pi}\int e^{j\omega(t-t')}d\omega = \delta(t - t')$$라서 원래 $$x(t)$$가 나온다[^4].
+역변환에 변환을 넣으면 $$\frac{1}{2\pi}\int e^{j\omega(t-t')}d\omega = \delta(t - t')$$라서 원래 $$x(t)$$가 나온다.
 
 </details>
 
 
-**수렴 조건**[^5]
+**수렴 조건**
 
 - 에너지가 유한하면($$\int\vert x\vert ^2dt < \infty$$) $$X(j\omega)$$가 유한하고, 역변환으로 만든 $$\hat x$$와 $$x$$의 오차 에너지가 0이다.
 - 디리클레 조건(절대 적분 가능 $$\int\vert x\vert dt < \infty$$, 유한 구간에서 극값·불연속점이 유한, 불연속에서 뛰는 크기 유한)을 만족하면, 불연속점을 뺀 모든 점에서 $$\hat x = x$$이고 불연속점에서는 양쪽 평균이다. 그래서 적분 가능한 연속 신호나 불연속점이 유한한 신호는 푸리에 변환할 수 있다.
@@ -105,7 +105,7 @@ $$x(t)$$는 $$\vert t\vert  > T_1$$에서 0이고 $$\frac T2 > T_1$$이라, 넓�
 
 ## 예제
 
-**예제 4.1** $$x(t) = e^{-at}u(t)$$, $$a > 0$$[^6]
+**예제 4.1** $$x(t) = e^{-at}u(t)$$, $$a > 0$$
 
 - $$X(j\omega) = \int_0^\infty e^{-(a+j\omega)t}dt = -\frac{1}{a+j\omega}e^{-(a+j\omega)t}\Big\vert _0^\infty = \frac{1}{a + j\omega}$$.
 - 복소수라 크기와 위상으로 그린다: $$\vert X\vert  = \frac{1}{\sqrt{a^2 + \omega^2}}$$, $$\angle X = -\tan^{-1}\frac\omega a$$ (분모를 실수화 $$\frac{a - j\omega}{a^2 + \omega^2}$$). $$\omega = \pm a$$에서 크기는 $$\frac{\sqrt2}{2a}$$, 위상은 $$\mp\frac\pi4$$(그림 4.5).
@@ -115,15 +115,15 @@ $$x(t)$$는 $$\vert t\vert  > T_1$$에서 0이고 $$\frac T2 > T_1$$이라, 넓�
 
 $$a = 1$$일 때다. 크기는 $$\omega = 0$$에서 가장 큰 짝함수, 위상은 홀함수다. 점은 $$\omega = \pm1$$에서 크기 $$\frac{\sqrt2}{2}$$, 위상 $$\mp\frac\pi4$$다[^s2].
 
-**예제 4.2** $$x(t) = e^{-a\vert t\vert }$$, $$a > 0$$[^7]. 양쪽으로 나눠 적분하면 $$\frac{1}{a - j\omega} + \frac{1}{a + j\omega} = \frac{2a}{a^2 + \omega^2}$$. 실수이고 짝인 종 모양이다(그림 4.7).
+**예제 4.2** $$x(t) = e^{-a\vert t\vert }$$, $$a > 0$$. 양쪽으로 나눠 적분하면 $$\frac{1}{a - j\omega} + \frac{1}{a + j\omega} = \frac{2a}{a^2 + \omega^2}$$. 실수이고 짝인 종 모양이다(그림 4.7).
 
-**예제 4.3** $$x(t) = \delta(t)$$[^7]. 표본화 성질로 $$X(j\omega) = 1$$. 모든 주파수에서 크기가 같아, 시스템에 임펄스를 넣으면 모든 주파수의 반응을 한 번에 본다. $$\delta(t - a)$$이면 $$e^{-j\omega a}$$다.
+**예제 4.3** $$x(t) = \delta(t)$$. 표본화 성질로 $$X(j\omega) = 1$$. 모든 주파수에서 크기가 같아, 시스템에 임펄스를 넣으면 모든 주파수의 반응을 한 번에 본다. $$\delta(t - a)$$이면 $$e^{-j\omega a}$$다.
 
-**예제 4.4** 사각 펄스 $$\vert t\vert  < T_1$$에서 1[^8]. $$X(j\omega) = \frac{1}{-j\omega}(e^{-j\omega T_1} - e^{j\omega T_1}) = \frac{2\sin\omega T_1}{\omega}$$ ($$\omega \ne 0$$), $$\omega = 0$$에서 $$2T_1$$. sinc 함수 $$\mathrm{sinc}(\theta) = \frac{\sin\pi\theta}{\pi\theta}$$로 쓰면 $$2T_1\mathrm{sinc}\left(\frac{\omega T_1}{\pi}\right)$$이다. $$\lim_{x\to0}\frac{\sin x}{x} = 1$$(테일러 급수 $$\sin x = x - \frac{x^3}{3!} + \cdots$$)이라 $$\mathrm{sinc}(0) = 1$$이다. 펄스는 불연속이라 역변환은 $$t = \pm T_1$$에서 $$\frac12$$로 수렴한다(깁스 현상).
+**예제 4.4** 사각 펄스 $$\vert t\vert  < T_1$$에서 1. $$X(j\omega) = \frac{1}{-j\omega}(e^{-j\omega T_1} - e^{j\omega T_1}) = \frac{2\sin\omega T_1}{\omega}$$ ($$\omega \ne 0$$), $$\omega = 0$$에서 $$2T_1$$. sinc 함수 $$\mathrm{sinc}(\theta) = \frac{\sin\pi\theta}{\pi\theta}$$로 쓰면 $$2T_1\mathrm{sinc}\left(\frac{\omega T_1}{\pi}\right)$$이다. $$\lim_{x\to0}\frac{\sin x}{x} = 1$$(테일러 급수 $$\sin x = x - \frac{x^3}{3!} + \cdots$$)이라 $$\mathrm{sinc}(0) = 1$$이다. 펄스는 불연속이라 역변환은 $$t = \pm T_1$$에서 $$\frac12$$로 수렴한다(깁스 현상).
 
-**예제 4.5** $$X(j\omega) = 1$$ ($$\vert \omega\vert  < W$$), 0 (그 밖)[^9]. $$x(t) = \frac{1}{2\pi}\int_{-W}^{W}e^{j\omega t}d\omega = \frac{\sin Wt}{\pi t} = \frac W\pi\mathrm{sinc}\left(\frac{Wt}{\pi}\right)$$, $$x(0) = \frac W\pi$$.
+**예제 4.5** $$X(j\omega) = 1$$ ($$\vert \omega\vert  < W$$), 0 (그 밖). $$x(t) = \frac{1}{2\pi}\int_{-W}^{W}e^{j\omega t}d\omega = \frac{\sin Wt}{\pi t} = \frac W\pi\mathrm{sinc}\left(\frac{Wt}{\pi}\right)$$, $$x(0) = \frac W\pi$$.
 
-예제 4.4와 4.5는 사각형과 sinc가 자리를 바꾼 쌍이다(쌍대성). $$W$$를 키우면 $$X$$가 넓어지고, $$x(t)$$는 꼭대기가 높아지며 첫 봉우리 폭($$\vert t\vert  < \frac\pi W$$)이 좁아진다. $$W \to \infty$$면 $$x(t)$$는 임펄스에 다가간다(그림 4.11). 시간에서 좁으면 주파수에서 넓다[^10].
+예제 4.4와 4.5는 사각형과 sinc가 자리를 바꾼 쌍이다(쌍대성). $$W$$를 키우면 $$X$$가 넓어지고, $$x(t)$$는 꼭대기가 높아지며 첫 봉우리 폭($$\vert t\vert  < \frac\pi W$$)이 좁아진다. $$W \to \infty$$면 $$x(t)$$는 임펄스에 다가간다(그림 4.11). 시간에서 좁으면 주파수에서 넓다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/38_ct-fourier-transform_fig2.svg" alt="그림" width="631" height="266" loading="lazy">
 
@@ -190,16 +190,6 @@ $$W$$를 1, 2, 4로 키우면 왼쪽 사각형은 넓어지고, 오른쪽 $$x(t)
 </details>
 
 
-[^1]: 신호 및 시스템 14회 강의 자료 「Week14_CH04_1_handout」, p.2~6 (그림 3.7, 4.1, 4.2)
-[^2]: 같은 자료, p.12
-[^3]: 같은 자료, p.7~11 (그림 4.3, 4.4)
-[^4]: 같은 자료, p.12
-[^5]: 같은 자료, p.13
-[^6]: 같은 자료, p.14 (예제 4.1, 그림 4.5)
-[^7]: 같은 자료, p.15 (예제 4.2, 4.3)
-[^8]: 같은 자료, p.16 (예제 4.4, 그림 4.8, 4.10)
-[^9]: 같은 자료, p.17 (예제 4.5, 그림 4.9)
-[^10]: 같은 자료, p.17~18 (그림 4.11)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 통신 대역폭 활용, 오해 항목, 스스로 설명해 보기, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [38_ct-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 4.1의 분석식 수치 적분, $$\omega = \pm1$$의 크기·위상, 예제 4.5($$W = 1, 2, 4$$)의 합성식 수치 적분과 $$x(0) = \frac W\pi$$.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [38_ct-fourier-transform_plot.py](/Hongs_Blog/studies/signals-and-systems/code/38_ct-fourier-transform_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 4.1의 분석식 수치 적분, $$\omega = \pm1$$의 크기·위상, 예제 4.5($$W = 1, 2, 4$$)의 합성식 수치 적분과 $$x(0) = \frac W\pi$$.
 {% endraw %}

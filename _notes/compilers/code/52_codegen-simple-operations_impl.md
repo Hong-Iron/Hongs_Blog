@@ -20,9 +20,9 @@ permalink: "/studies/compilers/code/52_codegen-simple-operations_impl/"
 [단순 연산과 분기의 코드 생성](/Hongs_Blog/studies/compilers/codegen-simple-operations/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 3주소 코드 한 줄을 수업용 MIPS 명령 몇 줄로 바꾸기 (단순 연산, 비교, 분기).
+# 3주소 코드 한 줄을 단순화한 MIPS 명령 몇 줄로 바꾸기 (단순 연산, 비교, 분기).
 # 실행: python3 52_codegen-simple-operations_impl.py  (표준 라이브러리만 쓴다)
-# 슬라이드 15회 p.10~18의 어셈블리를 글자 그대로 다시 만들고, 흉내기로 돌려 3주소 코드와 같은 값을 내는지 본다.
+# 문서 네 예제의 어셈블리를 글자 그대로 다시 만들고, 흉내기로 돌려 3주소 코드와 같은 값을 내는지 본다.
 # 흉내기(Machine)는 51_mips-instructions_impl.py의 것을 복사했다.
 import re
 
@@ -82,7 +82,7 @@ class Machine:
                 self.pc = self.labels[a[2]]
         elif op == "jr":
             self.pc = R[a[0]]
-        elif op == "jal":                    # 슬라이드에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
+        elif op == "jal":                    # 문서의 명령 표에 없는 명령. 실제 MIPS의 jal처럼 돌아올 자리를 $ra에 넣고 뛴다
             R["$ra"] = self.pc
             self.pc = self.labels[a[0]]
         else:
@@ -154,7 +154,7 @@ def run_tac(tacs, env):
 
 if __name__ == "__main__":
     SP = 1000
-    # ---- p.10~13: a = b + c (a는 $sp+12, b는 $sp+8, c는 $sp+4) ----
+    # ---- a = b + c (a는 $sp+12, b는 $sp+8, c는 $sp+4) ----
     off = {"a": 12, "b": 8, "c": 4}
     asm = gen("a = b + c", off)
     assert asm == ["lw $r0 8($sp)", "lw $r1 4($sp)", "add $r2 $r0 $r1", "sw $r2 12($sp)"]
@@ -166,20 +166,20 @@ if __name__ == "__main__":
     m = Machine(asm, {"$sp": SP}, {SP + 8: 2, SP + 4: 5}).run()
     assert (m.reg["$r0"], m.reg["$r1"], m.reg["$r2"], m.mem[SP + 12]) == (2, 5, 7, 7)
 
-    # ---- p.14: a = b < 3 (a는 $sp+8, b는 $sp+4) ----
+    # ---- a = b < 3 (a는 $sp+8, b는 $sp+4) ----
     off = {"a": 8, "b": 4}
     asm = gen("a = b < 3", off)
     assert asm == ["lw $r0 4($sp)", "slti $r1 $r0 3", "sw $r1 8($sp)"]
     for b in range(0, 7):
         assert Machine(asm, {"$sp": SP}, {SP + 4: b}).run().mem[SP + 8] == int(b < 3)
 
-    # ---- p.16: t0 = b < 3; if t0 goto L0; L0: ----
+    # ---- 조건 분기: t0 = b < 3; if t0 goto L0; L0: ----
     off = {"t0": 8, "b": 4}
     asm = gen_all(["t0 = b < 3", "if t0 goto L0", "L0:"], off)
     assert asm == ["lw $r0 4($sp)", "slti $r1 $r0 3", "sw $r1 8($sp)",
                    "lw $r0 8($sp)", "bnez $r0 L0", "L0:"]
 
-    # ---- p.17~18 연습: while (x < y) x = x + 1 (t0는 $sp+12, x는 $sp+8, y는 $sp+4) ----
+    # ---- 반복문: while (x < y) x = x + 1 (t0는 $sp+12, x는 $sp+8, y는 $sp+4) ----
     tac = ["L0:", "t0 = x < y", "ifnot t0 goto L1", "x = x + 1", "goto L0", "L1:"]
     off = {"t0": 12, "x": 8, "y": 4}
     asm = gen_all(tac, off)
@@ -200,7 +200,7 @@ if __name__ == "__main__":
     # x = 0, y = 3: 세 바퀴에 메모리 읽기 15번, 쓰기 7번
     m = Machine(asm, {"$sp": SP}, {SP + 8: 0, SP + 4: 3}).run()
     assert (m.loads, m.stores) == (15, 7)
-    # p.29: 방금 쓴 값을 바로 다시 읽는다 (sw $r2 12($sp) 다음 줄이 lw $r0 12($sp))
+    # 헛일: 방금 쓴 값을 바로 다시 읽는다 (sw $r2 12($sp) 다음 줄이 lw $r0 12($sp))
     assert asm[4] == "sw $r2 12($sp)" and asm[5] == "lw $r0 12($sp)"
 
     # ---- 무작위 직선 코드: 어셈블리와 3주소 코드가 같은 값을 낸다 ----

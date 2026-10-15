@@ -10,7 +10,7 @@ course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: FP-Growth의 트리 압축과 조건부 패턴 베이스, 연관 규칙의 신뢰도."
 prev_url: "/studies/data-science/apriori-ladder/"
@@ -29,7 +29,7 @@ permalink: "/studies/data-science/fp-growth-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-거래 9개(10: A, B, E / 20: A, B, D / 30: B, C / 40: B, D / 50: A, C / 60: B, C / 70: A, C / 80: A, B, C, E / 90: A, B, C), 최소 지지 개수 2[^1].
+거래 9개(10: A, B, E / 20: A, B, D / 30: B, C / 40: B, D / 50: A, C / 60: B, C / 70: A, C / 80: A, B, C, E / 90: A, B, C), 최소 지지 개수 2.
 
 1. *순서 정하기:* B 7, A 6, C 6, D 2, E 2 → <B, A, C, D, E>.
 2. *트리 만들기:* 다시 적은 거래 BAE, BAD, BC, BD, AC, BC, AC, BACE, BAC를 차례로 넣는다. 루트 아래 B:7(그 아래 A:4, C:2, D:1)과 A:2(그 아래 C:2). A:4 아래 E:1, D:1, C:2(그 아래 E:1).
@@ -48,7 +48,7 @@ permalink: "/studies/data-science/fp-growth-ladder/"
 
 ## 문제 2 · 마지막 하위목표만 빈칸
 
-3-1 슬라이드 p.36 연습 2. 거래 T1: E, K, M, N, O, Y / T2: D, E, K, N, O, Y / T3: A, E, K, M / T4: C, K, M, U, Y / T5: C, E, I, K, O, O. 최소 지지 개수 3, 최소 신뢰도 50%[^2].
+거래 T1: E, K, M, N, O, Y / T2: D, E, K, N, O, Y / T3: A, E, K, M / T4: C, K, M, U, Y / T5: C, E, I, K, O, O. 최소 지지 개수 3, 최소 신뢰도 50%.
 
 1. *순서 정하기:* K 5, E 4, M 3, O 3, Y 3 (나머지는 3 미만) → <K, E, M, O, Y>.
 2. *트리 만들기:* KEMOY, KEOY, KEM, KMY, KEO.
@@ -59,7 +59,7 @@ permalink: "/studies/data-science/fp-growth-ladder/"
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-가장 긴 빈발 집합 {K, E, O}(지지 3)에서: K → EO = 3/5 = 60%, E → KO = 3/4 = 75%, O → KE = 3/3 = 100%, KE → O = 3/4 = 75%, KO → E = 3/3 = 100%, EO → K = 3/3 = 100%. 모두 50% 이상이라 여섯 개 모두 강하다[^3].
+가장 긴 빈발 집합 {K, E, O}(지지 3)에서: K → EO = 3/5 = 60%, E → KO = 3/4 = 75%, O → KE = 3/3 = 100%, KE → O = 3/4 = 75%, KO → E = 3/3 = 100%, EO → K = 3/3 = 100%. 모두 50% 이상이라 여섯 개 모두 강하다.
 
 </details>
 
@@ -139,8 +139,5 @@ m의 조건부 트리가 가지 하나(c-f-a)라, 그 항목들의 모든 조합
 </div>
 
 
-[^1]: 데이터 과학 3회 강의 자료 「3-1_FP」, p.30~35
-[^2]: 같은 자료, p.36. 풀이는 데이터 과학 3회 강의 자료 「3-4-solutions」, p.3~8
-[^3]: 데이터 과학 3회 강의 자료 「3-4-solutions」, p.10
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문제 3의 거래는 Han, Pei, Yin, SIGMOD 2000의 예이고, 같은 개수의 항목을 알파벳순으로 놓아 원 논문의 트리(f, c 순서)와 모양이 다르다. 문제 4는 원본에 없다. 답은 문제 코드로 확인했다.
+[^s1]: 문제 3의 거래는 Han, Pei, Yin, SIGMOD 2000의 예이고, 같은 개수의 항목을 알파벳순으로 놓아 원 논문의 트리(f, c 순서)와 모양이 다르다. 답은 문제 코드로 확인했다.
 {% endraw %}

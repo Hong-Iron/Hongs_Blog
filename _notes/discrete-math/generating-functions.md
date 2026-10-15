@@ -133,5 +133,5 @@ $$A(x) = \sum a_n x^n$$, $$B(x) = \sum b_n x^n$$이면 $$A(x)B(x)$$의 $$x^n$$ �
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 16장 "Generating Functions". Graham·Knuth·Patashnik, *Concrete Mathematics*, 7장 "Generating Functions".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [22_generating-functions_plot.py](/Hongs_Blog/studies/discrete-math/code/22_generating-functions_plot/)로 그렸고, 두 개의 계수 1, 2, …, 6, …, 1, 세 개에서 합 10과 11의 계수 27, 계수의 합 $$6^m$$을 같은 코드로 확인했다.
+[^s1]: [22_generating-functions_plot.py](/Hongs_Blog/studies/discrete-math/code/22_generating-functions_plot/)로 그렸고, 두 개의 계수 1, 2, …, 6, …, 1, 세 개에서 합 10과 11의 계수 27, 계수의 합 $$6^m$$을 같은 코드로 확인했다.
 {% endraw %}

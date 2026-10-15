@@ -39,13 +39,13 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 - 온도계 바늘을 계속 지켜보면 모든 순간의 값 $$x(t)$$가 있다. 시간 $$t$$는 실수이고 0.5초, 0.501초 어디서든 값이 있다.
 - 한 시간마다 한 번 적으면 $$x[1], x[2], x[3], \dots$$만 남는다. 괄호 안의 $$n$$은 "몇 번째 기록"인지를 뜻하는 정수다.
 
-두 번째 기록은 첫 번째 신호를 $$T_s$$(표본 간격)마다 뽑은 것이다. 그래서 $$x[n] = x(nT_s)$$로 적는다[^1]. 둘을 구별하려고 연속 시간은 둥근 괄호 $$x(t)$$, 이산 시간은 대괄호 $$x[n]$$을 쓴다.
+두 번째 기록은 첫 번째 신호를 $$T_s$$(표본 간격)마다 뽑은 것이다. 그래서 $$x[n] = x(nT_s)$$로 적는다. 둘을 구별하려고 연속 시간은 둥근 괄호 $$x(t)$$, 이산 시간은 대괄호 $$x[n]$$을 쓴다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/03_ct-dt-signals_fig1.svg" alt="그림" width="564" height="372" loading="lazy">
 
 위는 모든 실수 $$t$$에 값이 있는 $$x(t)$$, 아래는 $$T_s = 0.5$$마다 뽑은 $$x[n]$$이다. 아래 그래프에는 정수 $$n$$ 사이에 값이 없다[^s1].
 
-신호의 예는 다양하다[^2].
+신호의 예는 다양하다.
 
 | 신호 | 독립 변수 | 값 |
 |---|---|---|
@@ -54,11 +54,11 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 | 흑백 영상 | 가로·세로 위치(그리고 시간) | 밝기 $$f(x, y, t)$$ |
 | 주가 지수, 인구 통계 | 날짜(정수) | 숫자 |
 
-이 과목에서는 독립 변수가 시간 하나인 신호만 다룬다[^3].
+이 과목에서는 독립 변수가 시간 하나인 신호만 다룬다.
 
 ## 정의
 
-신호는 독립 변수의 함수로 적는다. 독립 변수가 연속인지, 값(진폭)이 연속인지에 따라 넷으로 나뉜다[^4].
+신호는 독립 변수의 함수로 적는다. 독립 변수가 연속인지, 값(진폭)이 연속인지에 따라 넷으로 나뉜다.
 
 | 이름 | 시간 | 값 |
 |---|---|---|
@@ -69,7 +69,7 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 
 이산 시간 신호는 정수 $$n$$에서만 정의된다. $$x[1.5]$$ 같은 값은 0이 아니라 아예 없다.
 
-다른 기준으로도 나눈다[^5].
+다른 기준으로도 나눈다.
 
 | 기준 | 갈래 |
 |---|---|
@@ -82,7 +82,7 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 ## 활용
 
 - 컴퓨터, 휴대폰의 소리와 사진은 모두 이산 시간이면서 값도 몇 단계로 끊은 디지털 신호다. 연속 신호를 뽑는 과정은 [표본화와 양자화](/Hongs_Blog/studies/signals-and-systems/sampling-quantization/)에서 다룬다.
-- 입력은 연속 신호인데 내부는 이산 시스템인 경우(A/D 변환기 → 이산 시스템)를 혼합(hybrid) 시스템이라 한다[^6].
+- 입력은 연속 신호인데 내부는 이산 시스템인 경우(A/D 변환기 → 이산 시스템)를 혼합(hybrid) 시스템이라 한다.
 
 ## 연결
 
@@ -107,11 +107,5 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 </details>
 
 
-[^1]: 신호 및 시스템 2회 강의 자료 「Week02_CH01_1_handout」, p.4, p.13
-[^2]: 같은 자료, p.3, p.11
-[^3]: 같은 자료, p.12
-[^4]: 같은 자료, p.6 (정보통신기술용어해설 인용)
-[^5]: 같은 자료, p.8~9
-[^6]: 신호 및 시스템 4회 강의 자료 「Week04_CH01_3_handout」, p.2
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [03_ct-dt-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/03_ct-dt-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 신호 $$x(t) = \sin 0.6t + 0.5\cos 1.7t$$는 설명을 위해 고른 것이고, $$x[4] = x(2)$$를 확인.
+[^s1]: [03_ct-dt-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/03_ct-dt-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 신호 $$x(t) = \sin 0.6t + 0.5\cos 1.7t$$는 설명을 위해 고른 것이고, $$x[4] = x(2)$$를 확인.
 {% endraw %}

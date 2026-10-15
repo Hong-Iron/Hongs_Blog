@@ -45,14 +45,14 @@ permalink: "/studies/abnormal-psychology/feeding-eating-disorders/"
 
 ## 정의
 
-### 급식장애와 섭식장애[^1]
+### 급식장애와 섭식장애
 
 | 구분 | 뜻 | 주로 나타나는 때 | 장애 |
 |---|---|---|---|
 | 급식장애(feeding disorder) | 음식을 먹인다 | 어린아이에게 먹이는 과정 | 이식증, 되새김장애, 회피적·제한적 음식섭취 장애 |
 | 섭식장애(eating disorder) | 스스로 식사한다 | 청소년기와 성인기 | 신경성 식욕부진증, 신경성 폭식증, 폭식장애 |
 
-### 여섯 장애 (DSM-5-TR)[^2]
+### 여섯 장애 (DSM-5-TR)
 
 | 장애 | 특징 |
 |---|---|
@@ -84,7 +84,5 @@ permalink: "/studies/abnormal-psychology/feeding-eating-disorders/"
 
 </details>
 
-[^1]: 이상 심리학 8회 강의 자료 「급식 및 섭식장애, 수면-각성장애」, p.2
-[^2]: 이상 심리학 8회 강의 자료 「급식 및 섭식장애, 수면-각성장애」, p.3
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다섯 사람의 사례는 여섯 장애를 가르려고 만든 가상 사례다.
+[^s1]: 다섯 사람의 사례는 여섯 장애를 가르려고 만든 가상 사례다.
 {% endraw %}

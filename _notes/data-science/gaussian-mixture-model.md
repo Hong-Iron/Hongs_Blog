@@ -34,7 +34,7 @@ permalink: "/studies/data-science/gaussian-mixture-model/"
 
 ## 예시로 보기
 
-[k-평균](/Hongs_Blog/studies/data-science/k-means/)은 무리를 둥글고 크기가 비슷하다고 보고, 경계의 점도 한 무리에 딱 잘라 넣는다[^1]. 그런데 두 무리 가운데에 있는 점은 "반쯤 이쪽"이라고 말하는 편이 정직하다.
+[k-평균](/Hongs_Blog/studies/data-science/k-means/)은 무리를 둥글고 크기가 비슷하다고 보고, 경계의 점도 한 무리에 딱 잘라 넣는다. 그런데 두 무리 가운데에 있는 점은 "반쯤 이쪽"이라고 말하는 편이 정직하다.
 
 1차원에서 무리 1은 평균 0, 무리 2는 평균 5이고 둘 다 표준편차 1, 비율 반반이라 하자. 가운데 2.5에 있는 점은 두 무리에서 나왔을 가능성이 같아 각각 0.5다. 0.5에 있는 점은 거의 무리 1이다[^s1]. 이렇게 점마다 무리별 확률을 주는 것을 부드러운 배정이라 부른다.
 
@@ -42,7 +42,7 @@ permalink: "/studies/data-science/gaussian-mixture-model/"
 
 위는 두 무리가 만드는 밀도, 아래는 점이 무리 1에서 왔을 확률(책임도)이다. 두 종의 가운데 2.5에서 0.5이고, 그 양옆 폭 2쯤에서만 0과 1 사이 값을 가진다. 그 밖에서는 거의 0 또는 1이라 k-평균의 딱 잘라 넣기와 비슷해진다[^s2].
 
-두 차원이 서로 강하게 함께 움직이면(상관이 크면) 무리는 기울어진 타원이 된다. 종 모양 분포의 공분산 행렬이 그 모양을 담는다[^2].
+두 차원이 서로 강하게 함께 움직이면(상관이 크면) 무리는 기울어진 타원이 된다. 종 모양 분포의 공분산 행렬이 그 모양을 담는다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/29_gaussian-mixture-model_fig2.svg" alt="그림" width="466" height="241" loading="lazy">
 
@@ -56,35 +56,35 @@ permalink: "/studies/data-science/gaussian-mixture-model/"
 
 ## 정의
 
-**GMM**은 확률적이고 생성적인 군집화 모델이다. 자료점이 가우스 분포 여러 개의 혼합에서 나왔다고 보고, 각 점이 여러 군집에 서로 다른 확률로 속한다[^3].
+**GMM**은 확률적이고 생성적인 군집화 모델이다. 자료점이 가우스 분포 여러 개의 혼합에서 나왔다고 보고, 각 점이 여러 군집에 서로 다른 확률로 속한다.
 
-군집 $$\alpha$$는 평균 $$\boldsymbol\mu_\alpha$$(중심)와 공분산 $$\Sigma_\alpha$$(모양과 퍼짐)를 가진 가우스 분포다. 공분산이 작으면 촘촘한 군집, 크면 퍼진 군집, 차원끼리 상관이 있으면 기울어진 타원이다[^2].
+군집 $$\alpha$$는 평균 $$\boldsymbol\mu_\alpha$$(중심)와 공분산 $$\Sigma_\alpha$$(모양과 퍼짐)를 가진 가우스 분포다. 공분산이 작으면 촘촘한 군집, 크면 퍼진 군집, 차원끼리 상관이 있으면 기울어진 타원이다.
 
-자료 전체의 확률밀도는 $$k$$개 성분의 가중합이다[^4].
+자료 전체의 확률밀도는 $$k$$개 성분의 가중합이다.
 
 $$p(\mathbf x) = \sum_{\alpha=1}^{k}\pi_\alpha\,\mathcal N(\mathbf x \mid \boldsymbol\mu_\alpha, \Sigma_\alpha), \qquad \sum_{\alpha=1}^{k}\pi_\alpha = 1,\ \pi_\alpha \ge 0$$
 
 
-$$\pi_\alpha$$(혼합 계수)는 군집 $$\alpha$$의 비중이다. 이 식은 점 하나를 만드는 과정으로 읽는다. ① 확률 $$\pi_\alpha$$로 군집 $$\alpha$$를 고르고 ② 가우스 분포 $$\alpha$$에서 점을 뽑는다[^4].
+$$\pi_\alpha$$(혼합 계수)는 군집 $$\alpha$$의 비중이다. 이 식은 점 하나를 만드는 과정으로 읽는다. ① 확률 $$\pi_\alpha$$로 군집 $$\alpha$$를 고르고 ② 가우스 분포 $$\alpha$$에서 점을 뽑는다.
 
-**군집 배정.** 점 $$\mathbf x_i$$가 군집 $$\alpha$$에서 나왔을 확률(그 군집이 그 점을 만든 책임의 크기, 책임도)은 [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/)로 구한다[^5].
+**군집 배정.** 점 $$\mathbf x_i$$가 군집 $$\alpha$$에서 나왔을 확률(그 군집이 그 점을 만든 책임의 크기, 책임도)은 [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/)로 구한다.
 
 $$[\mathbf z_i]_\alpha = \frac{\pi_\alpha\,\mathcal N(\mathbf x_i \mid \boldsymbol\mu_\alpha, \Sigma_\alpha)}{\sum_{l=1}^{k}\pi_l\,\mathcal N(\mathbf x_i \mid \boldsymbol\mu_l, \Sigma_l)}$$
 
 
-분자는 "군집 $$\alpha$$를 고르고 그 군집에서 $$\mathbf x_i$$가 나올 가능성", 분모는 모든 군집에 대한 합이다. 이것을 계산하려면 모든 군집의 $$(\boldsymbol\mu_\alpha, \Sigma_\alpha, \pi_\alpha)$$가 필요하다. 그것을 추정하는 방법이 [EM 알고리즘](/Hongs_Blog/studies/data-science/em-algorithm/)이다[^5].
+분자는 "군집 $$\alpha$$를 고르고 그 군집에서 $$\mathbf x_i$$가 나올 가능성", 분모는 모든 군집에 대한 합이다. 이것을 계산하려면 모든 군집의 $$(\boldsymbol\mu_\alpha, \Sigma_\alpha, \pi_\alpha)$$가 필요하다. 그것을 추정하는 방법이 [EM 알고리즘](/Hongs_Blog/studies/data-science/em-algorithm/)이다.
 
 ## 활용
 
-- **k-평균보다 나은 점:** 부드러운 배정(확률적 해석, 겹치는 군집), 군집마다 다른 퍼짐과 타원 모양[^6].
-- **한계:** 군집 수 $$k$$를 정해야 한다. 자료가 가우스 분포에서 왔다고 가정한다. 처음 값에 민감하고 국소 최적에 멈출 수 있다. 고차원에서는 공분산 추정이 불안정하다(차원의 저주)[^6].
+- **k-평균보다 나은 점:** 부드러운 배정(확률적 해석, 겹치는 군집), 군집마다 다른 퍼짐과 타원 모양.
+- **한계:** 군집 수 $$k$$를 정해야 한다. 자료가 가우스 분포에서 왔다고 가정한다. 처음 값에 민감하고 국소 최적에 멈출 수 있다. 고차원에서는 공분산 추정이 불안정하다(차원의 저주).
 - 사이킷런 `GaussianMixture`가 이것이다. `predict_proba`가 책임도다[^s1].
 
 ## 연결
 
 - 선수: [k-평균](/Hongs_Blog/studies/data-science/k-means/), [다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/), [베이즈 정리](/Hongs_Blog/studies/probability-statistics/bayes-theorem/)
 - 매개변수 추정: [EM 알고리즘](/Hongs_Blog/studies/data-science/em-algorithm/)
-- 분산을 모두 같게 하고 0으로 보내면 책임도가 0/1이 되어 k-평균의 배정과 같아진다. GMM은 k-평균의 확률적 확장이다[^2][^s1].
+- 분산을 모두 같게 하고 0으로 보내면 책임도가 0/1이 되어 k-평균의 배정과 같아진다. GMM은 k-평균의 확률적 확장이다[^s1].
 
 ## 확인 문제
 
@@ -112,12 +112,6 @@ $$[\mathbf z_i]_\alpha = \frac{\pi_\alpha\,\mathcal N(\mathbf x_i \mid \boldsymb
 </details>
 
 
-[^1]: 데이터 과학 7회 강의 자료 「7-1_basic-clustering」, p.22
-[^2]: 같은 자료, p.24
-[^3]: 같은 자료, p.23
-[^4]: 같은 자료, p.25
-[^5]: 같은 자료, p.26
-[^6]: 같은 자료, p.31
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 1차원 수치 예, k-평균이 극한으로 나오는 성질, 사이킷런, 카드 C3은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [29_gaussian-mixture-model_plot.py](/Hongs_Blog/studies/data-science/code/29_gaussian-mixture-model_plot/)로 그렸고, 2.5에서 책임도 0.5, 0.5에서 0.9999 이상, 2차원 EM(처음 값 8가지 중 로그가능도가 가장 큰 답)의 로그가능도가 줄지 않음과 맞힌 비율 0.997을 같은 코드로 확인했다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [29_gaussian-mixture-model_plot.py](/Hongs_Blog/studies/data-science/code/29_gaussian-mixture-model_plot/)로 그렸고, 2.5에서 책임도 0.5, 0.5에서 0.9999 이상, 2차원 EM(처음 값 8가지 중 로그가능도가 가장 큰 답)의 로그가능도가 줄지 않음과 맞힌 비율 0.997을 같은 코드로 확인했다.
 {% endraw %}

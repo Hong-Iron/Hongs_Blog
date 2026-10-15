@@ -23,10 +23,9 @@ permalink: "/studies/data-structures/code/10_triangular-matrix-mapping_impl/"
 /* 특수 행렬을 1차원 배열에 담기: 대각 행렬, 삼중대각 행렬, 아래삼각 행렬의 위치 식.
  *
  * 문서: 10.특수 행렬을 1차원 배열에 담기 (예시, 세 모양의 칸 수와 위치 식, 카드)
- * 출처: 자료구조 3주차 슬라이드 p.6~7, p.35~41
  * 실행: cc -std=c11 -Wall -Wextra 10_triangular-matrix-mapping_impl.c -o tri_map && ./tri_map
  *
- * 행렬의 줄 번호 i와 칸 번호 j는 슬라이드처럼 1부터 센다: x(i, j), 1 <= i, j <= n.
+ * 행렬의 줄 번호 i와 칸 번호 j는 행렬 표기대로 1부터 센다: x(i, j), 1 <= i, j <= n.
  * 1차원 배열의 위치는 C 배열처럼 0부터 센다.
  *   대각:      i == j 인 칸만.          위치 = i - 1
  *   삼중대각:  |i - j| <= 1 인 칸만.    위치 = 2i + j - 3
@@ -114,8 +113,8 @@ static int lower_set(LowerTriangular *m, int i, int j, int value)
     return value == 0;
 }
 
-/* 1. 슬라이드 p.38~41의 4 x 4 예 */
-static void slide_example(void)
+/* 1. 문서 예시의 4 x 4 아래삼각 행렬 */
+static void doc_example(void)
 {
     static const int full[5][5] = {
         {0, 0, 0, 0, 0},
@@ -134,9 +133,9 @@ static void slide_example(void)
 
     CHECK(k == 10 && 4 * (4 + 1) / 2 == 10, "4 x 4 아래삼각의 칸 수는 10");
     for (k = 0; k < 10; k++)
-        CHECK(packed[k] == k + 1, "p.40: 1, 2, ..., 10 순서로 담긴다");
+        CHECK(packed[k] == k + 1, "1, 2, ..., 10 순서로 담긴다");
     CHECK(lower_index(1, 1) == 0 && lower_index(2, 1) == 1 && lower_index(3, 1) == 3 && lower_index(4, 1) == 6,
-          "p.41: 줄의 첫 칸 위치는 0, 1, 3, 6");
+          "줄의 첫 칸 위치는 0, 1, 3, 6");
     for (i = 1; i <= 4; i++)
         for (j = 1; j <= i; j++)
             CHECK(packed[lower_index(i, j)] == full[i][j], "위치 식이 맞는 값을 찾는다");
@@ -224,7 +223,7 @@ static void exhaustive(void)
     printf("[OK] n = 1..12: 대각 n칸, 삼중대각 3n - 2칸, 아래삼각 n(n+1)/2칸. 위치 식을 %d칸에서 확인\n", cells);
 }
 
-/* 3. 0이 아닐 수 있는 칸의 비율: 슬라이드 p.6 */
+/* 3. 0이 아닐 수 있는 칸의 비율 */
 static void ratios(void)
 {
     int n = 100;
@@ -275,7 +274,7 @@ static void cards(void)
 
 int main(void)
 {
-    slide_example();
+    doc_example();
     exhaustive();
     ratios();
     get_and_set();

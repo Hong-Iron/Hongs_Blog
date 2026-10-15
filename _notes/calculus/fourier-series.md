@@ -151,7 +151,7 @@ flowchart LR
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 10.5절 "Fourier Series: Linear Algebra for Functions"(함수의 내적, 직교성, 계수 = 사영).
 [^2]: Stein, Shakarchi, *Fourier Analysis: An Introduction*, 2장 "Basic Properties of Fourier Series", 3장 "Convergence of Fourier Series"(평균제곱 수렴, 파스발 항등식, 최선 근사).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 깁스 봉우리의 극한은 $$\frac2\pi\int_0^\pi\frac{\sin t}{t}dt \approx 1.17898$$이고, 30_fourier-series_verify.py로 부분합의 최댓값과 함께 계산했다. JPEG의 $$8 \times 8$$ 이산 코사인 변환은 JPEG 표준(ITU-T T.81)에, MP3의 MDCT는 MPEG-1 Audio Layer III 표준에 정의되어 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [30_fourier-series_plot.py](/Hongs_Blog/studies/calculus/code/30_fourier-series_plot/)로 그렸고, 첫 항의 높이 $$\frac4\pi \approx 1.27$$, 깁스 상수 1.17898, $$k \le 51, 201, 801$$인 부분합의 봉우리가 모두 그 값에서 0.005 안인 것, $$x = \frac\pi2$$에서 부분합이 1로 가는 것을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 계수 공식(사영 공식)과 정리의 세 항목(점별 수렴, 파스발 항등식, 최선 근사)을 근거로 그렸다.
+[^s1]: 깁스 봉우리의 극한은 $$\frac2\pi\int_0^\pi\frac{\sin t}{t}dt \approx 1.17898$$이고, 30_fourier-series_verify.py로 부분합의 최댓값과 함께 계산했다. JPEG의 $$8 \times 8$$ 이산 코사인 변환은 JPEG 표준(ITU-T T.81)에, MP3의 MDCT는 MPEG-1 Audio Layer III 표준에 정의되어 있다.
+[^s2]: [30_fourier-series_plot.py](/Hongs_Blog/studies/calculus/code/30_fourier-series_plot/)로 그렸고, 첫 항의 높이 $$\frac4\pi \approx 1.27$$, 깁스 상수 1.17898, $$k \le 51, 201, 801$$인 부분합의 봉우리가 모두 그 값에서 0.005 안인 것, $$x = \frac\pi2$$에서 부분합이 1로 가는 것을 같은 코드로 확인했다.
+[^s3]: 정의 절의 계수 공식(사영 공식)과 정리의 세 항목(점별 수렴, 파스발 항등식, 최선 근사)을 근거로 그렸다.
 {% endraw %}

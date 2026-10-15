@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/fourier-series-convergence/"
 
 ## 예시로 보기
 
-사각파(예제 3.5)를 $$k = -N \dots N$$까지만 더한 근사 $$x_N(t)$$를 그려 보면(그림 3.9)[^1]
+사각파(예제 3.5)를 $$k = -N \dots N$$까지만 더한 근사 $$x_N(t)$$를 그려 보면(그림 3.9)
 
 - $$N = 1$$: 코사인 하나라 둥근 언덕이다.
 - $$N = 3, 7, 19$$: 점점 사각형에 가까워지고 위쪽이 평평해진다.
@@ -45,18 +45,18 @@ permalink: "/studies/signals-and-systems/fourier-series-convergence/"
 
 $$T = 4$$, $$T_1 = 1$$인 사각파의 부분합이다. 회색 점이 끊긴 점 $$t = \pm1$$의 값 $$\frac12$$이고, $$N$$이 커져도 모서리 옆의 작은 넘침은 남는다[^s2].
 
-A. Michelson은 이 근사를 기계(조화 분석기)로 그려 보다가 이 넘침을 처음 보고했다[^1].
+A. Michelson은 이 근사를 기계(조화 분석기)로 그려 보다가 이 넘침을 처음 보고했다.
 
 ## 정의
 
-**유한 개 항으로 근사하기.** $$x_N(t) = \sum_{k=-N}^{N}a_ke^{jk\omega_0t}$$로 근사하면 오차는 $$e_N(t) = x(t) - x_N(t)$$이다. 오차의 크기를 한 주기의 오차 에너지로 잰다[^2].
+**유한 개 항으로 근사하기.** $$x_N(t) = \sum_{k=-N}^{N}a_ke^{jk\omega_0t}$$로 근사하면 오차는 $$e_N(t) = x(t) - x_N(t)$$이다. 오차의 크기를 한 주기의 오차 에너지로 잰다.
 
 $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_ke^{jk\omega_0t}\right\vert ^2dt$$
 
 
-이 $$E_N$$을 가장 작게 만드는 계수가 바로 분석식의 $$a_k$$다. 그래서 유한 개 항을 쓸 때 가장 좋은 근사는 "푸리에 급수를 원하는 개수만큼 자르고 나머지를 버리는 것"이고, $$N$$이 커지면 $$E_N$$이 줄어든다[^2].
+이 $$E_N$$을 가장 작게 만드는 계수가 바로 분석식의 $$a_k$$다. 그래서 유한 개 항을 쓸 때 가장 좋은 근사는 "푸리에 급수를 원하는 개수만큼 자르고 나머지를 버리는 것"이고, $$N$$이 커지면 $$E_N$$이 줄어든다.
 
-**수렴의 두 가지 보장**[^3][^4]
+**수렴의 두 가지 보장**
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
@@ -70,9 +70,9 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 </div>
 
 
-조건 1에서 $$\vert a_k\vert $$의 한계가 나오는 이유: $$\vert e^{-jk\omega_0t}\vert  = 1$$이라 $$\vert a_k\vert  = \left\vert \frac1T\int x e^{-jk\omega_0t}dt\right\vert  \le \frac1T\int\vert x\vert dt$$이다[^4].
+조건 1에서 $$\vert a_k\vert $$의 한계가 나오는 이유: $$\vert e^{-jk\omega_0t}\vert  = 1$$이라 $$\vert a_k\vert  = \left\vert \frac1T\int x e^{-jk\omega_0t}dt\right\vert  \le \frac1T\int\vert x\vert dt$$이다.
 
-**조건을 깨는 신호**(그림 3.8)[^5]
+**조건을 깨는 신호**(그림 3.8)
 
 | 깨는 조건 | 예 | 이유 |
 |---|---|---|
@@ -80,15 +80,15 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 | 조건 2 | $$x(t) = \sin\frac{2\pi}{t}$$ ($$0 < t \le 1$$) | 절대 적분은 1보다 작지만 0 근처에서 무한히 오르내린다 |
 | 조건 3 | 주기 8, $$[0,4)$$에서 1, $$[4,6)$$에서 $$\frac12$$, $$[6,7)$$에서 $$\frac14$$, … | 넓이는 8보다 작지만 불연속점이 무한히 많다 |
 
-조건 2의 예에서 $$\int_0^1\vert \sin\frac{2\pi}{t}\vert dt$$는 $$u = \frac1t$$로 바꾸면 $$\int_1^\infty\frac{\vert \sin2\pi u\vert }{u^2}du \le \int_1^\infty\frac{1}{u^2}du = 1$$이라 유한하다(비교 판정법)[^5].
+조건 2의 예에서 $$\int_0^1\vert \sin\frac{2\pi}{t}\vert dt$$는 $$u = \frac1t$$로 바꾸면 $$\int_1^\infty\frac{\vert \sin2\pi u\vert }{u^2}du \le \int_1^\infty\frac{1}{u^2}du = 1$$이라 유한하다(비교 판정법).
 
-이런 신호는 모두 인위적으로 만든 것이라 실제 상황에서는 거의 나오지 않는다[^6].
+이런 신호는 모두 인위적으로 만든 것이라 실제 상황에서는 거의 나오지 않는다.
 
-**두 신호가 "같다"는 뜻.** 불연속점에서만 값이 다른 두 신호는 어느 구간에서 적분해도 같고, 어떤 시스템과 컨벌루션해도 결과가 같다. 그래서 LTI 시스템 해석에서는 같은 신호로 본다[^6].
+**두 신호가 "같다"는 뜻.** 불연속점에서만 값이 다른 두 신호는 어느 구간에서 적분해도 같고, 어떤 시스템과 컨벌루션해도 결과가 같다. 그래서 LTI 시스템 해석에서는 같은 신호로 본다.
 
 ## 예제
 
-**깁스 현상**[^7]. 사각파의 $$x_N$$은 불연속점 근처에서 넘침과 물결이 생긴다. $$N$$을 늘리면 물결이 불연속점 쪽으로 좁아지지만, 넘치는 높이는 점프 크기의 약 9%로 줄지 않는다. 그래도 넓이가 0으로 줄어 오차 에너지는 0으로 간다. 이것이 "오차 에너지 → 0"과 "모든 점에서 같다"가 다른 이유다.
+**깁스 현상**. 사각파의 $$x_N$$은 불연속점 근처에서 넘침과 물결이 생긴다. $$N$$을 늘리면 물결이 불연속점 쪽으로 좁아지지만, 넘치는 높이는 점프 크기의 약 9%로 줄지 않는다. 그래도 넓이가 0으로 줄어 오차 에너지는 0으로 간다. 이것이 "오차 에너지 → 0"과 "모든 점에서 같다"가 다른 이유다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/31_fourier-series-convergence_fig2.svg" alt="그림" width="541" height="297" loading="lazy">
 
@@ -103,7 +103,7 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 ## 활용
 
 - 디지털 오디오나 영상에서 높은 주파수 성분을 갑자기 잘라내면 경계 근처에 물결무늬(링잉)가 생긴다. 깁스 현상이다. 그래서 필터는 경계를 부드럽게 줄이는 창 함수를 함께 쓴다[^s1].
-- LTI 시스템이 안정할 조건 $$\int\vert h(t)\vert dt < \infty$$(절대 적분 가능)도 디리클레 조건 1과 같은 꼴이다. 이 조건이면 $$H(s)$$를 정의하는 적분이 수렴한다[^4].
+- LTI 시스템이 안정할 조건 $$\int\vert h(t)\vert dt < \infty$$(절대 적분 가능)도 디리클레 조건 1과 같은 꼴이다. 이 조건이면 $$H(s)$$를 정의하는 적분이 수렴한다.
 
 ## 연결
 
@@ -136,13 +136,6 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 </details>
 
 
-[^1]: 신호 및 시스템 9회 강의 자료 「Week09_CH03_2_handout」, p.8 (그림 3.9)
-[^2]: 같은 자료, p.2
-[^3]: 같은 자료, p.3
-[^4]: 같은 자료, p.4
-[^5]: 같은 자료, p.4~6 (그림 3.8)
-[^6]: 같은 자료, p.7
-[^7]: 같은 자료, p.8~9
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 링잉과 창 함수의 활용, 넘침 높이 약 9%의 수치(Oppenheim·Willsky 2판 3.4절), 확인 문제는 원본에 없다. 수치는 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [31_fourier-series-convergence_plot.py](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 끊긴 점에서 $$x_N = \frac12$$, $$N = 19, 79, 301$$의 넘침이 모두 0.085~0.095, 오차 에너지가 줄어 0.006 아래.
+[^s1]: 수치는 검증 코드로 확인했다.
+[^s2]: [31_fourier-series-convergence_plot.py](/Hongs_Blog/studies/signals-and-systems/code/31_fourier-series-convergence_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 끊긴 점에서 $$x_N = \frac12$$, $$N = 19, 79, 301$$의 넘침이 모두 0.085~0.095, 오차 에너지가 줄어 0.006 아래.
 {% endraw %}

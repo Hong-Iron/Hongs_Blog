@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["First Set", "FIRST", "First 집합", "퍼스트 집합", "시작 기호 집합", "Nullable", "널 가능"]
 description: "문법의 어떤 이름을 끝까지 풀어 썼을 때 맨 앞에 올 수 있는 낱말을 모두 모은 것이다. 식당 메뉴판에서 \"세트 A를 시키면 처음 나오는 음식은 무엇일 수 있나\"를 미리 적어 둔 표와 같다. 이 표가 있으면 읽는 프로그램은 다음 낱말 하나만 보고 어느 규칙으로 갈지 바로 고른다. …"
@@ -36,12 +36,12 @@ permalink: "/studies/compilers/first-set/"
 
 [재귀 하강 파싱](/Hongs_Blog/studies/compilers/recursive-descent-parsing/)은 규칙을 찍어서 시험하고 틀리면 되돌아간다. 되돌아가지 않으려면 규칙을 펼치기 전에 "이 규칙을 쓰면 맨 앞에 무슨 토큰이 나오는가"를 알아야 한다. 다음 입력 토큰이 그 가운데 있으면 그 규칙을 고르고, 없으면 고르지 않는다.
 
-문법 $$S \to aA \mid b \mid A$$, $$\ A \to (S)$$를 보자[^1]. $$S$$를 펼칠 차례에 다음 입력이 `(`라면 어느 규칙인가? $$aA$$는 $$a$$로, $$b$$는 $$b$$로 시작하니 아니다. 셋째 규칙 $$A$$는 단말 기호가 아니라서 바로는 모른다. $$A$$를 한 번 더 풀어 $$A \to (S)$$를 봐야 `(`로 시작한다는 것을 안다. 이렇게 "끝까지 풀었을 때 맨 앞에 올 수 있는 단말 기호"를 비단말 기호마다 미리 모아 둔 것이 FIRST 집합이다. 여기서는 $$First(A) = \{(\}$$이고 $$First(S) = \{a, b, (\}$$다.
+문법 $$S \to aA \mid b \mid A$$, $$\ A \to (S)$$를 보자. $$S$$를 펼칠 차례에 다음 입력이 `(`라면 어느 규칙인가? $$aA$$는 $$a$$로, $$b$$는 $$b$$로 시작하니 아니다. 셋째 규칙 $$A$$는 단말 기호가 아니라서 바로는 모른다. $$A$$를 한 번 더 풀어 $$A \to (S)$$를 봐야 `(`로 시작한다는 것을 안다. 이렇게 "끝까지 풀었을 때 맨 앞에 올 수 있는 단말 기호"를 비단말 기호마다 미리 모아 둔 것이 FIRST 집합이다. 여기서는 $$First(A) = \{(\}$$이고 $$First(S) = \{a, b, (\}$$다.
 
 빈 문자열이 끼면 한 가지를 더 챙겨야 한다. 문법 $$S \to ABc$$, $$\ A \to a \mid \epsilon$$, $$\ B \to b \mid \epsilon$$에서 $$S$$가 만드는 문자열은 $$abc$$, $$ac$$, $$bc$$, $$c$$ 넷이다. 맨 앞 글자는 $$a$$, $$b$$, $$c$$가 다 될 수 있다. $$A$$가 사라지면 $$B$$의 첫 글자가 앞으로 나오고, $$B$$까지 사라지면 $$c$$가 앞으로 나오기 때문이다[^s1].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 아래 슬라이드 예의 다섯 집합과 규칙 오른쪽의 FIRST, 위 두 문법의 값, 무작위 문법 300개에서 되풀이로 구한 값이 "만들 수 있는 문자열을 다 만들어 첫 글자를 모은 값"과 같은 것 — [18_first-set_impl.py](/Hongs_Blog/studies/compilers/code/18_first-set_impl/)</div>
+<div class="callout-title" markdown="span">검증: 아래 산술식 예의 다섯 집합과 규칙 오른쪽의 FIRST, 위 두 문법의 값, 무작위 문법 300개에서 되풀이로 구한 값이 "만들 수 있는 문자열을 다 만들어 첫 글자를 모은 값"과 같은 것 — [18_first-set_impl.py](/Hongs_Blog/studies/compilers/code/18_first-set_impl/)</div>
 
 </div>
 
@@ -51,7 +51,7 @@ permalink: "/studies/compilers/first-set/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-비단말 기호 $$A$$의 FIRST 집합은 $$A$$에서 유도되는 문자열의 맨 앞에 올 수 있는 단말 기호를 모두 모은 집합이다. $$A$$가 빈 문자열을 유도할 수 있으면 $$\epsilon$$도 넣는다[^2].
+비단말 기호 $$A$$의 FIRST 집합은 $$A$$에서 유도되는 문자열의 맨 앞에 올 수 있는 단말 기호를 모두 모은 집합이다. $$A$$가 빈 문자열을 유도할 수 있으면 $$\epsilon$$도 넣는다.
 
 $$First(A) = \{\,x \mid A \Rightarrow^* x\alpha\,\}, \qquad \epsilon \in First(A)\ \text{ if }\ A \Rightarrow^* \epsilon$$
 
@@ -60,7 +60,7 @@ $$First(A) = \{\,x \mid A \Rightarrow^* x\alpha\,\}, \qquad \epsilon \in First(A
 
 $$x$$는 단말 기호이고, $$\alpha$$는 단말·비단말 기호를 늘어놓은 것이다. $$A \Rightarrow^* x\alpha$$는 "$$A$$에서 0걸음 이상 유도해 $$x$$로 시작하는 모양에 이른다"로 읽는다.
 
-단말 기호와 기호열에도 FIRST를 정한다[^2].
+단말 기호와 기호열에도 FIRST를 정한다.
 
 - 단말 기호 $$x$$: $$First(x) = \{x\}$$. 자기 자신으로 시작한다.
 - 기호열 $$\alpha = Y_1 Y_2 \dots Y_n$$: 왼쪽 기호부터 차례로 본다.
@@ -76,22 +76,15 @@ $$First(Y_1 \dots Y_n) = \bigcup_{i=1}^{k} \bigl(First(Y_i) \setminus \{\epsilon
 
 $$\bigcup$$은 여러 집합을 다 합친다는 뜻이고, $$\setminus$$는 "왼쪽 집합에서 오른쪽 원소를 뺀다"는 뜻이다. 단말 기호는 $$\epsilon$$을 갖지 않으므로 단말 기호를 만나면 늘 거기서 멈춘다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: p.26 "$$First(\alpha) = First(A_1) \cup First(A_2) \cup \dots \cup First(A_n) \cup First(x)$$, if $$\alpha = A_1 A_2 \dots A_n x \beta$$ and $$\epsilon \in First(A_i)$$ for all $$i$$" / 문제점: 적힌 그대로 합치면 $$First(A_i)$$에 든 $$\epsilon$$이 $$First(\alpha)$$에 딸려 들어간다. 그런데 $$\alpha$$에는 단말 기호 $$x$$가 있어서 $$\alpha$$는 빈 문자열이 될 수 없다. 또 세 줄의 규칙은 "$$A_1$$이 사라질 수 없는 비단말 기호"인 경우를 적지 않았다. 같은 슬라이드의 예 $$First(FT') = First(F)$$가 바로 그 경우다. / 수정안: 합칠 때 $$First(A_i) \setminus \{\epsilon\}$$을 쓰고, 사라질 수 없는 기호를 만나면 멈춘다(위 정의). / 근거: $$S \to ABc$$, $$A \to a \mid \epsilon$$, $$B \to b \mid \epsilon$$에서 원문대로 하면 $$First(S) = \{a, b, c, \epsilon\}$$이 되지만 $$S$$가 만드는 문자열은 모두 $$c$$로 끝나 빈 문자열이 없다. 검증 코드가 확인한다. p.28이 FOLLOW를 정할 때는 $$First(\beta) - \{\epsilon\}$$이라고 $$\epsilon$$을 뺐다.
-
-</div>
-
-
-**비단말 기호의 FIRST 구하기.** $$A$$의 규칙이 $$A \to \alpha_1 \mid \dots \mid \alpha_m$$이면 각 규칙 오른쪽의 FIRST를 다 합친다[^3].
+**비단말 기호의 FIRST 구하기.** $$A$$의 규칙이 $$A \to \alpha_1 \mid \dots \mid \alpha_m$$이면 각 규칙 오른쪽의 FIRST를 다 합친다.
 
 $$First(A) = First(\alpha_1) \cup \dots \cup First(\alpha_m)$$
 
 
-### 슬라이드 예
+### 예: 산술식 문법
 
-문법은 [좌인수분해](/Hongs_Blog/studies/compilers/left-factoring/)를 마친 산술식 문법이다[^3].
+문법은 [좌인수분해](/Hongs_Blog/studies/compilers/left-factoring/)를 마친 산술식 문법이다.
 
 $$E \to TE' \qquad E' \to +E \mid \epsilon \qquad T \to FT' \qquad T' \to *T \mid \epsilon \qquad F \to (E) \mid id$$
 
@@ -193,7 +186,7 @@ $$F$$의 값이 한 바퀴에 한 단계씩 $$T$$, $$E$$로 올라간다. 넷째
 
 ## 활용
 
-- **LL(1) 파싱 표.** 규칙 $$A \to \alpha$$는 표의 $$A$$ 줄에서 $$First(\alpha)$$에 든 단말 기호의 칸에 적는다. 슬라이드는 다섯 규칙의 FIRST를 $$First(TE') = \{(, id\}$$, $$First(+E) = \{+\}$$, $$First(FT') = \{(, id\}$$, $$First(*T) = \{*\}$$, $$First((E)) = \{(\}$$로 구해 여덟 칸을 채운다[^4]. 자세한 것은 [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/)에 있다.
+- **LL(1) 파싱 표.** 규칙 $$A \to \alpha$$는 표의 $$A$$ 줄에서 $$First(\alpha)$$에 든 단말 기호의 칸에 적는다. 산술식 문법에서는 다섯 규칙의 FIRST가 $$First(TE') = \{(, id\}$$, $$First(+E) = \{+\}$$, $$First(FT') = \{(, id\}$$, $$First(*T) = \{*\}$$, $$First((E)) = \{(\}$$이고, 이것으로 여덟 칸을 채운다. 자세한 것은 [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/)에 있다.
 - **ε이 들어 있으면.** $$First(\alpha)$$에 $$\epsilon$$이 있으면 그 규칙은 FIRST만으로는 자리를 정할 수 없다. "$$A$$ 뒤에 무엇이 오는가"를 봐야 하고, 그것이 [FOLLOW 집합](/Hongs_Blog/studies/compilers/follow-set/)이다.
 - **흔한 실수.** $$First(AB)$$를 $$First(A)$$로만 적는다($$A$$가 사라질 수 있는지 안 본다). 합칠 때 $$\epsilon$$을 빼지 않는다. 거꾸로 모든 기호가 사라질 수 있는데 $$\epsilon$$을 넣지 않는다. $$\epsilon$$을 단말 기호처럼 여겨 파싱 표의 열로 만든다.
 - 연습: [FIRST·FOLLOW 예제 사다리](/Hongs_Blog/studies/compilers/first-follow-ladder/)
@@ -210,7 +203,7 @@ $$F$$의 값이 한 바퀴에 한 단계씩 $$T$$, $$E$$로 올라간다. 넷째
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"First(AB)는 A의 첫 글자들이니 First(A)와 같다"</div>
 
-틀렸다. $$A$$가 빈 문자열이 될 수 있으면 $$B$$의 첫 글자가 맨 앞으로 나온다. 그럴듯해 보이는 까닭은 슬라이드의 예 $$First(FT') = First(F)$$, $$First(TE') = First(T)$$가 다 그렇게 끝나기 때문이다. 이 예들에서는 앞 기호 $$F$$, $$T$$가 사라질 수 없어서 그랬을 뿐이다. $$S \to AB$$, $$A \to a \mid \epsilon$$, $$B \to b \mid \epsilon$$에서 $$First(A) = \{a, \epsilon\}$$이지만 $$First(AB) = \{a, b, \epsilon\}$$이다. $$S$$가 만드는 문자열 $$ab$$, $$a$$, $$b$$, 빈 문자열을 늘어놓고 맨 앞 글자를 모아 보면 확인된다.
+틀렸다. $$A$$가 빈 문자열이 될 수 있으면 $$B$$의 첫 글자가 맨 앞으로 나온다. 그럴듯해 보이는 까닭은 위 산술식 예의 $$First(FT') = First(F)$$, $$First(TE') = First(T)$$가 다 그렇게 끝나기 때문이다. 이 예들에서는 앞 기호 $$F$$, $$T$$가 사라질 수 없어서 그랬을 뿐이다. $$S \to AB$$, $$A \to a \mid \epsilon$$, $$B \to b \mid \epsilon$$에서 $$First(A) = \{a, \epsilon\}$$이지만 $$First(AB) = \{a, b, \epsilon\}$$이다. $$S$$가 만드는 문자열 $$ab$$, $$a$$, $$b$$, 빈 문자열을 늘어놓고 맨 앞 글자를 모아 보면 확인된다.
 
 </div>
 
@@ -252,10 +245,6 @@ $$F$$의 값이 한 바퀴에 한 단계씩 $$T$$, $$E$$로 올라간다. 넷째
 </details>
 
 
-[^1]: 컴파일러 5회 강의 자료 「Lecture05 Syntax analysis part 2」, p.18 (다음 입력 기호로 규칙을 정하는 예)
-[^2]: 같은 자료, p.26 (FIRST 집합의 정의)
-[^3]: 같은 자료, p.27 (FIRST 집합의 예)
-[^4]: 같은 자료, p.31 (규칙 오른쪽의 FIRST로 표 채우기)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$S \to ABc$$ 예와 오해 항목의 $$S \to AB$$ 예, 카드 C2·C4의 문법은 원본에 없다. 구현 코드로 값을 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드는 정의와 손 계산 예만 준다. 되풀이 알고리즘, 바퀴별 추적 표, 정확성 증명 스케치, 스스로 설명해 보기, 복잡도는 보탠 것이다(Aho 외, *Compilers* 2판 4.4.2절의 계산 규칙). 추적 표는 구현 코드로 확인했고, 무작위 문법 300개에서 정의대로 구한 값과 같았다. 이 비교는 실험이고, 모든 문법에 대한 근거는 증명 스케치다.
+[^s1]: 구현 코드로 값을 확인했다.
+[^s2]: 되풀이 알고리즘, 바퀴별 추적 표, 정확성 증명 스케치, 스스로 설명해 보기, 복잡도는 보탠 것이다(Aho 외, *Compilers* 2판 4.4.2절의 계산 규칙). 추적 표는 구현 코드로 확인했고, 무작위 문법 300개에서 정의대로 구한 값과 같았다. 이 비교는 실험이고, 모든 문법에 대한 근거는 증명 스케치다.
 {% endraw %}

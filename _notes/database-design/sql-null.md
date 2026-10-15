@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["NULL", "널", "널 값", "IS NULL", "IS NOT NULL", "세 값 논리", "Three-valued Logic", "3값 논리", "UNKNOWN", "모름"]
 description: "표의 빈칸은 0이나 빈 글자가 아니라 \"값이 없다\"는 표시다. 아직 모르는 값일 수도 있고, 그 행에는 애초에 쓸 수 없는 값일 수도 있다. 무엇인지 모르는 값이라 다른 값과 같은지 다른지도 알 수 없어서, 빈칸끼리 견줘도 참이 되지 않는다. 그래서 빈칸인지 묻는 말이 따로 있고,…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/sql-null/"
 
 COMPANY 상태([관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/))에는 빈칸이 두 곳 있다. Borg의 `Super_ssn`은 사장이라 상사가 없어서 비어 있고, WORKS_ON의 (888665555, 20) 행은 일한 시간 `Hours`가 적혀 있지 않다.
 
-"상사가 없는 직원"을 찾으려고 `=`로 견주면 아무도 안 나온다[^1].
+"상사가 없는 직원"을 찾으려고 `=`로 견주면 아무도 안 나온다.
 
 | 조건 | 결과 |
 |---|---|
@@ -61,7 +61,7 @@ WHERE  Super_ssn IS NULL;
 
 ## 정의
 
-NULL은 어떤 행에서 그 열의 값을 모르거나, 그 행에는 그 열이 맞지 않을 때 값 자리에 두는 표시다. 슬라이드는 뜻을 셋으로 든다[^2]. 표의 풀이와 예는 이 과목의 표에 있는 빈칸에 세 뜻을 맞춰 본 것이다[^s3].
+NULL은 어떤 행에서 그 열의 값을 모르거나, 그 행에는 그 열이 맞지 않을 때 값 자리에 두는 표시다. NULL의 뜻은 셋으로 나눈다. 아래 표의 예는 COMPANY와 학생 표의 빈칸에 세 뜻을 맞춰 본 것이다.
 
 | 뜻 | 풀이 | 예 |
 |---|---|---|
@@ -69,13 +69,13 @@ NULL은 어떤 행에서 그 열의 값을 모르거나, 그 행에는 그 열�
 | 얻지 못한 값 (unavailable) | 값은 있는데 알려 주지 않았거나 구하지 못했다 | 집 전화번호를 적지 않은 학생 |
 | 정해지지 않는 값 (undefined) | 그 행에는 이 열이 맞지 않는다 | 사장 Borg의 상사, 사무실이 없는 학생의 사무실 전화번호 |
 
-**IS NULL.** 열의 값이 NULL이면 참이다. `IS NOT NULL`은 그 반대다[^1].
+**IS NULL.** 열의 값이 NULL이면 참이다. `IS NOT NULL`은 그 반대다.
 
-슬라이드가 적은 규칙은 셋이다.
+NULL을 다루는 규칙은 셋이다.
 
-- NULL은 저마다 다른 NULL과 같지 않다고 본다. 그래서 `=`나 `<>`로 NULL과 견줄 수 없다[^1].
-- 표를 이을 때 맞추는 열이 NULL인 행은 결과에서 빠진다[^1]. 직원과 상사를 `E.Super_ssn = S.Ssn`으로 이으면 8행이 아니라 7행이 나온다. Borg가 빠진다[^3]. 빠진 행까지 남기는 방법이 [외부 조인](/Hongs_Blog/studies/database-design/outer-join/)이다.
-- 값을 세는 계산은 NULL을 세지 않는다. 슬라이드는 "`COUNT(Salary)`를 쓰면 어떻게 되는가, NULL도 세는가"를 물음으로 남겼다[^4]. 돌려 보면 이렇다[^s1].
+- NULL은 저마다 다른 NULL과 같지 않다고 본다. 그래서 `=`나 `<>`로 NULL과 견줄 수 없다.
+- 표를 이을 때 맞추는 열이 NULL인 행은 결과에서 빠진다. 직원과 상사를 `E.Super_ssn = S.Ssn`으로 이으면 8행이 아니라 7행이 나온다. Borg가 빠진다. 빠진 행까지 남기는 방법이 [외부 조인](/Hongs_Blog/studies/database-design/outer-join/)이다.
+- 값을 세는 계산은 NULL을 세지 않는다. `COUNT(Salary)`처럼 열을 세면 NULL은 어떻게 될까? 돌려 보면 이렇다[^s1].
 
 | 식 | EMPLOYEE (8행) | 뜻 |
 |---|---|---|
@@ -149,11 +149,6 @@ NULL과 견준 결과는 참도 거짓도 아닌 셋째 값 "모름"이다. `WHE
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.18 (IS NULL function, "상사가 없는 직원" 질의, NULL끼리 같지 않다, `=`와 `<>`로 견줄 수 없다, 조인에서 빠진다)
-[^2]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.14 (NULL 값의 뜻: unknown, unavailable, undefined. STUDENT 표의 Home_phone과 Office_phone 빈칸)
-[^3]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.24 (내부 조인의 결과 7행, `Super_ssn`이 NULL인 행은 빠진다)
-[^4]: 같은 자료, p.28 (COUNT Function, 빨간 글씨의 두 물음)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드의 두 물음에는 답이 적혀 있지 않다. 표의 값과 WORKS_ON의 평균은 SQLite와 PostgreSQL 16에서 실행해 얻었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 셋째 값 "모름"과 `AND`·`OR`·`NOT`의 표, 조건과 반대 조건의 8행·7행, `NOT IN`의 0행, 계산과 묶기에서의 동작, 카드 C2·C3은 슬라이드에 없다. 세 값 논리는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Comparisons Involving NULL and Three-Valued Logic"에 있다. 값은 모두 SQLite와 PostgreSQL 16에서 실행해 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 뜻의 풀이와 예는 슬라이드에 없다. 슬라이드는 낱말 셋과 STUDENT 표의 빈칸 두 곳만 보인다. 어느 빈칸이 어느 뜻인지는 슬라이드가 정해 주지 않는다.
+[^s1]: 표의 값과 WORKS_ON의 평균은 SQLite와 PostgreSQL 16에서 실행해 얻었다.
+[^s2]: 세 값 논리는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Comparisons Involving NULL and Three-Valued Logic"에 있다. 값은 모두 SQLite와 PostgreSQL 16에서 실행해 확인했다.
 {% endraw %}

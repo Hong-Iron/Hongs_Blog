@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 정규 표현식의 기본 다섯 식, 우선순위, 대수 법칙."
 next_url: "/studies/compilers/subset-construction-ladder/"
@@ -25,13 +25,13 @@ permalink: "/studies/compilers/regular-expression-practice/"
 
 말로 된 토큰 설명을 식으로 옮기는 문제는 같은 차례로 푼다. ① 토막 나누기: 설명을 "처음에 오는 것, 그다음에 오는 것"으로 끊는다 ② 토막마다 고르기: 그 자리에 올 수 있는 것을 <code>&#124;</code>로 잇는다 ③ 횟수 정하기: 그 토막이 몇 번 오는지에 따라 그대로, `*`, `+`, 또는 $$\epsilon$$과의 선택을 고른다 ④ 맞는 예와 틀린 예 넣어 보기[^s1].
 
-문제 2~4는 슬라이드가 식을 비워 둔 예 4~6이다[^1]. $$digit = 0 \mid 1 \mid \cdots \mid 9$$, $$letter = a \mid \cdots \mid z \mid A \mid \cdots \mid Z$$로 둔다.
+문제 2~4는 자주 쓰는 토큰 셋(정수, 식별자, 실수)이다. $$digit = 0 \mid 1 \mid \cdots \mid 9$$, $$letter = a \mid \cdots \mid z \mid A \mid \cdots \mid Z$$로 둔다.
 
 ## 문제 p1 · 우선순위 읽기
 
 <code>a&#124;bc*</code>에 괄호를 모두 채워 쓰고, 이 식이 가리키는 문자열 가운데 길이 3 이하인 것을 모두 쓰라. `ac`, `bcbc`는 여기에 드는가?
 
-풀이 전략: 가장 먼저 묶이는 것부터 안쪽 괄호를 친다. 반복 → 연결 → 선택 순서다[^2].
+풀이 전략: 가장 먼저 묶이는 것부터 안쪽 괄호를 친다. 반복 → 연결 → 선택 순서다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -52,7 +52,7 @@ permalink: "/studies/compilers/regular-expression-practice/"
 
 "정수는 숫자가 하나 이상 이어진 것이다(0, 11, 1530)"를 기본 다섯 식만으로 적으라.
 
-풀이 전략: "하나 이상"은 `+`다. 기본 식에는 `+`가 없으므로 $$r^+ = rr^*$$로 푼다[^3].
+풀이 전략: "하나 이상"은 `+`다. 기본 식에는 `+`가 없으므로 $$r^+ = rr^*$$로 푼다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -120,7 +120,7 @@ $$0 \mid nonzero\;digit^*$$, 여기서 $$nonzero = 1 \mid 2 \mid \cdots \mid 9$$
 
 (가) $$(a \mid \epsilon)^*$$를 더 짧게 쓰라. (나) $$(a^*)^*b \mid (a^*)^*c$$를 더 짧게 쓰라. (다) $$(a \mid b)^*$$와 $$a^* \mid b^*$$는 같은가?
 
-풀이 전략: 대수 법칙 표[^2]에서 모양이 맞는 줄을 찾아 한 번에 하나씩 쓴다. 같은지 아닌지는 한쪽에만 드는 문자열을 찾아본다.
+풀이 전략: 대수 법칙 표에서 모양이 맞는 줄을 찾아 한 번에 하나씩 쓴다. 같은지 아닌지는 한쪽에만 드는 문자열을 찾아본다.
 
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
@@ -160,8 +160,5 @@ $$0 \mid nonzero\;digit^*$$, 여기서 $$nonzero = 1 \mid 2 \mid \cdots \mid 9$$
 </div>
 
 
-[^1]: 컴파일러 2회 강의 자료 「Lecture02 Lexical analysis part 1」, p.22~24 (예 4 정수, 예 5 식별자, 예 6 실수. 식은 비어 있다)
-[^2]: 같은 자료, p.20 (우선순위와 대수 법칙)
-[^3]: 같은 자료, p.19 ($$a^+ = aa^*$$)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이의 네 걸음, 문제 p1·p5·p6과 모든 변형, 문제 p2~p4의 답은 원본에 없다. 문제 p2~p4의 말 설명과 예는 슬라이드의 것이다. 답은 문제 코드로 확인했다. 수업에서 쓴 답과 다를 수 있다.
+[^s1]: 답은 문제 코드로 확인했다.
 {% endraw %}

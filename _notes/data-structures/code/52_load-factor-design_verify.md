@@ -24,7 +24,6 @@ permalink: "/studies/data-structures/code/52_load-factor-design_verify/"
 
 실행: python3 52_load-factor-design_verify.py
 문서: 52.적재율로 해시 테이블 크기 정하기 (예제, 카드 C1~C3)
-출처: 자료구조 15주차 슬라이드 p.26~29
 
 주장
   1. S_n = (1 + 1/(1 - a))/2 <= 10 은 a <= 18/19 와 같고,
@@ -101,7 +100,7 @@ def grow_and_count(n, b0=5, limit=Fraction(4, 5)):
 
 
 if __name__ == "__main__":
-    # 1. 슬라이드의 두 조건
+    # 1. 문서 예시의 두 조건
     a1, a2 = Fraction(18, 19), Fraction(4, 5)
     assert S(a1) == 10 and U(a2) == 13
     eps = Fraction(1, 10 ** 6)

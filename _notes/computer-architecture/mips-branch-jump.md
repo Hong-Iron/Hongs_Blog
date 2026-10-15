@@ -189,5 +189,5 @@ Exit:
 [^1]: University of Utah CS3810 (R. Balasubramonian), Lecture 4 "MIPS Instruction Set", https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-15-04.pdf, 슬라이드 11~14 (beq·bne·slt, j, if-else를 bne와 j로 옮긴 예, while을 옮긴 예). MIPS Reference Data(Green Sheet), https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf (beq·bne·j의 동작 식)
 [^2]: Green Sheet, 같은 자료 (PSEUDOINSTRUCTION SET: blt, bgt, ble, bge, li, move). University of Utah CS3810, Lecture 5 "Procedure Calls", https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-15-05.pdf, 슬라이드 15 (어셈블러가 의사 명령을 실제 명령으로 바꾼다), 19 (bge는 뒤에 slt와 beq로 바뀐다)
 [^3]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장 "Instructions: Language of the Computer" (작으면 분기하는 명령을 두지 않고 빠른 명령 둘로 나눈 까닭)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 예의 C 코드와 수치, 다이어그램, 추적 표, 크기 비교 네 줄의 표, 활용 절, 카드는 위 자료에 그대로 있지 않다. 틀은 Utah 슬라이드 12·14의 예와 같고 수치는 검증 코드의 흉내기로 구했다.
+[^s1]: 두 예의 C 코드와 수치, 다이어그램, 추적 표, 크기 비교 네 줄의 표, 활용 절, 카드는 위 자료에 그대로 있지 않다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Alias", "Tuple Variable", "튜플 변수", "별칭", "별명", "AS", "이름 한정", "Qualified Attribute Name", "모호한 속성 이름", "Ambiguous Attribute Name", "자기 조인", "셀프 조인", "Self Join", "Renaming Attributes"]
 description: "질의 안에서 표에 짧은 별명을 붙이는 방법이다. 같은 이름의 칸이 두 표에 있을 때 어느 표의 칸인지 밝히는 데 쓰고, 한 표를 두 번 쓸 때는 꼭 있어야 한다. 직원 명단 한 장으로 \"직원과 그 상사\"를 찾으려면, 명단을 두 장 복사해 한 장은 직원용, 한 장은 상사용으로 놓고 …"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/sql-alias-self-join/"
 
 ## 예시로 보기
 
-"직원마다 그 직원의 이름과 직속 상사의 이름을 구하라." 직원도 상사도 같은 표 EMPLOYEE에 들어 있다. 직원 행의 Super_ssn에 상사의 Ssn이 적혀 있다. 그러니 표 하나로 될 것 같다. 슬라이드가 일부러 보여 주는 틀린 질의다[^1].
+"직원마다 그 직원의 이름과 직속 상사의 이름을 구하라." 직원도 상사도 같은 표 EMPLOYEE에 들어 있다. 직원 행의 Super_ssn에 상사의 Ssn이 적혀 있다. 그러니 표 하나로 될 것 같다. 그런데 그렇게 쓴 아래 질의는 틀렸다.
 
 ```sql
 SELECT E.Fname, E.Lname, E.Fname, E.Lname
@@ -44,7 +44,7 @@ WHERE  E.Super_ssn = E.Ssn;
 
 돌리면 0행이다. 이 조건은 한 행 안에서 Super_ssn과 Ssn이 같은지를 본다. 곧 "자기가 자기 상사인 직원"을 찾는다. 그런 직원은 없다.
 
-필요한 것은 직원 행 하나와 상사 행 하나, 두 행을 나란히 놓고 견주는 일이다. 그래서 같은 표를 두 번 적고 서로 다른 별명을 붙인다[^2].
+필요한 것은 직원 행 하나와 상사 행 하나, 두 행을 나란히 놓고 견주는 일이다. 그래서 같은 표를 두 번 적고 서로 다른 별명을 붙인다.
 
 ```sql
 SELECT E.Fname, E.Lname, S.Fname, S.Lname
@@ -66,13 +66,6 @@ E와 S를 EMPLOYEE의 서로 다른 두 복사본이라고 생각한다. E는 �
 
 직원은 여덟 명인데 결과는 일곱 행이다. Borg가 직원 쪽으로는 한 번도 안 나온다. Borg의 Super_ssn은 NULL이라 어느 S와도 맞지 않는다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 10-2 p.15~16의 틀린 질의 첫 줄 `SELECT E.Fname, E.Lname, E.Fname, E.Lname,` / 문제점: `FROM` 바로 앞에 쉼표가 하나 더 있다. 이 쉼표 때문에 "0행이 나온다"를 보기 전에 구문 오류가 난다 / 수정안: 마지막 쉼표를 지운다 / 근거: 쉼표가 있으면 SQLite는 `near "FROM": syntax error`를 내고, 지우면 0행을 낸다 — [55_sql-alias-self-join_verify.py](/Hongs_Blog/studies/database-design/code/55_sql-alias-self-join_verify/)
-
-</div>
-
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 틀린 판 0행, 고친 판 7행(위 표), 64개 조합, 같은 이름의 열에서 나는 오류, 긴 이름과 별칭의 답이 같음, 결과 열 이름 바꾸기, 확인 문제의 답 — [55_sql-alias-self-join_verify.py](/Hongs_Blog/studies/database-design/code/55_sql-alias-self-join_verify/)</div>
@@ -82,7 +75,7 @@ E와 S를 EMPLOYEE의 서로 다른 두 복사본이라고 생각한다. E는 �
 
 ## 정의
 
-**표 이름 붙여 쓰기.** 서로 다른 릴레이션의 속성이 같은 이름을 쓸 수 있다. 한 질의가 그런 속성을 둘 이상 건드리면 어느 릴레이션의 것인지 헷갈린다. 이때는 속성 이름 앞에 릴레이션 이름을 붙이고 점으로 잇는다[^3]. 슬라이드의 가정대로 직원 표와 부서 표에 둘 다 Name과 Dnumber라는 칸이 있다면 이렇게 쓴다.
+**표 이름 붙여 쓰기.** 서로 다른 릴레이션의 속성이 같은 이름을 쓸 수 있다. 한 질의가 그런 속성을 둘 이상 건드리면 어느 릴레이션의 것인지 헷갈린다. 이때는 속성 이름 앞에 릴레이션 이름을 붙이고 점으로 잇는다. 직원 표와 부서 표에 둘 다 Name과 Dnumber라는 칸이 있다고 하자. 그러면 이렇게 쓴다.
 
 ```sql
 SELECT Fname, EMPLOYEE.Name, Address
@@ -93,7 +86,7 @@ WHERE  DEPARTMENT.Name = 'Research' AND
 
 헷갈릴 것이 없는 속성에도 표 이름을 붙일 수 있다. 읽기에는 더 또렷하다.
 
-**별칭.** 표 이름을 매번 다 쓰면 길다. `FROM`에서 `표 AS 별칭`으로 짧은 이름을 붙이고 그 이름으로 쓴다. 이 별칭을 튜플 변수라고도 한다[^4].
+**별칭.** 표 이름을 매번 다 쓰면 길다. `FROM`에서 `표 AS 별칭`으로 짧은 이름을 붙이고 그 이름으로 쓴다. 이 별칭을 튜플 변수라고도 한다.
 
 ```sql
 SELECT E.Fname, E.LName, E.Address
@@ -101,9 +94,9 @@ FROM   EMPLOYEE AS E, DEPARTMENT AS D
 WHERE  D.DName = 'Research' AND D.Dnumber = E.Dno;
 ```
 
-**같은 표를 두 번 쓰기.** 한 질의가 같은 릴레이션을 두 번 가리킬 때도 이름이 헷갈린다. 이때는 별칭이 꼭 있어야 한다. 별칭마다 그 표의 복사본 하나를 가리킨다고 보고 두 복사본을 조인한다[^2]. 이런 조인을 흔히 자기 조인이라고 부른다[^s1].
+**같은 표를 두 번 쓰기.** 한 질의가 같은 릴레이션을 두 번 가리킬 때도 이름이 헷갈린다. 이때는 별칭이 꼭 있어야 한다. 별칭마다 그 표의 복사본 하나를 가리킨다고 보고 두 복사본을 조인한다. 이런 조인을 흔히 자기 조인이라고 부른다[^s1].
 
-**결과의 칸 이름 바꾸기.** `SELECT`에서 `속성 AS 새이름`이라고 쓰면 결과에 나오는 칸의 이름이 바뀐다[^5].
+**결과의 칸 이름 바꾸기.** `SELECT`에서 `속성 AS 새이름`이라고 쓰면 결과에 나오는 칸의 이름이 바뀐다.
 
 ```sql
 SELECT E.Lname AS Employee_name, S.Lname AS Supervisor_name
@@ -113,7 +106,7 @@ WHERE  E.Super_ssn = S.Ssn;
 
 이름을 안 바꾸면 결과의 두 칸이 모두 Lname이라 어느 쪽이 직원이고 어느 쪽이 상사인지 알 수 없다.
 
-슬라이드의 권고는 이렇다. 질의에 나오는 모든 표에 별칭을 붙여 두는 편이 좋다. 실수와 헷갈림을 미리 막는다[^6].
+질의에 나오는 모든 표에 별칭을 붙여 두는 편이 좋다. 실수와 헷갈림을 미리 막는다.
 
 ## 예제
 
@@ -189,11 +182,5 @@ WHERE  E.Super_ssn = S.Ssn AND S.Super_ssn = T.Ssn;
 </details>
 
 
-[^1]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.15~16 (일부러 틀리게 쓴 질의, "Is there no ambiguity?", "The ambiguity of attribute names also arises when a query refers to the same relation twice")
-[^2]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.17 (EMPLOYEE AS E, EMPLOYEE AS S와 7행의 결과 표)
-[^3]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.14 (Ambiguous Attribute Name). 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.4
-[^4]: 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.15 (Alias (Tuple variable) for Table Names). 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.4
-[^5]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.19 (Rename any attribute that appears in the result of a query)
-[^6]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.14 ("It is generally advisable to create tuple variables (aliases) for all the tables referenced in an SQL query")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "자기 조인"이라는 이름은 슬라이드에 없다(슬라이드는 "refers to the same relation twice"라고 적는다). 예제 둘, 별칭을 붙인 뒤 원래 이름을 못 쓴다는 것, `AS`를 빼도 된다는 것, 확인 문제는 슬라이드에 없다. 결과는 SQLite 3.50에서 실행해 확인했다.
+[^s1]: 결과는 SQLite 3.50에서 실행해 확인했다.
 {% endraw %}

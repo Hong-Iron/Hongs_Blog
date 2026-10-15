@@ -1,7 +1,7 @@
 ---
 layout: "note"
-title: "9주차 수업 문제 풀이"
-display_title: "9주차 수업 문제 풀이"
+title: "트리와 힙 문제 풀이"
+display_title: "트리와 힙 문제 풀이"
 kind: "practice"
 kind_label: "연습"
 num: "30"
@@ -10,9 +10,9 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
-description: "9주차 수업에서 다룬 문제 세 개다. 트리 순회, 이진 탐색 트리, 힙을 하나씩 쓴다. 문제마다 먼저 직접 풀어 본 뒤 전략과 풀이를 펼친다. 슬라이드의 풀이 코드에는 컴파일되지 않거나 일부 입력에서 틀리는 곳이 있어, 여기에는 고친 코드를 싣고 무엇을 고쳤는지 따로 적었다."
+description: "트리 순회, 이진 탐색 트리, 힙을 하나씩 쓰는 문제 세 개다. 문제마다 먼저 직접 풀어 본 뒤 전략과 풀이를 펼친다."
 prev_url: "/studies/data-structures/heap-tracing-ladder/"
 prev_title: "힙 삽입·삭제 추적 예제 사다리"
 next_url: "/studies/data-structures/bst-ladder/"
@@ -23,9 +23,9 @@ code_count: 3
 permalink: "/studies/data-structures/week9-inclass/"
 ---
 {% raw %}
-9주차 수업에서 다룬 문제 세 개다. 트리 순회, 이진 탐색 트리, 힙을 하나씩 쓴다[^1]. 문제마다 먼저 직접 풀어 본 뒤 전략과 풀이를 펼친다. 슬라이드의 풀이 코드에는 컴파일되지 않거나 일부 입력에서 틀리는 곳이 있어, 여기에는 고친 코드를 싣고 무엇을 고쳤는지 따로 적었다.
+트리 순회, 이진 탐색 트리, 힙을 하나씩 쓰는 문제 세 개다. 문제마다 먼저 직접 풀어 본 뒤 전략과 풀이를 펼친다.
 
-세 문제가 쓰는 트리 노드는 같다[^2].
+세 문제가 쓰는 트리 노드는 같다.
 
 ```c
 typedef struct TreeNode {
@@ -37,7 +37,7 @@ typedef struct TreeNode {
 
 ## p1 · 좋은 노드 세기
 
-이진 트리의 뿌리가 주어진다. 뿌리에서 노드 X까지 가는 길 위에 X보다 큰 값을 가진 노드가 하나도 없으면 X를 좋은 노드라 한다. 좋은 노드가 몇 개인지 돌려준다[^3].
+이진 트리의 뿌리가 주어진다. 뿌리에서 노드 X까지 가는 길 위에 X보다 큰 값을 가진 노드가 하나도 없으면 X를 좋은 노드라 한다. 좋은 노드가 몇 개인지 돌려준다.
 
 - 예 1: 뿌리 3, 왼쪽 자식 1, 오른쪽 자식 4 → 2 (3과 4)
 - 예 2: 뿌리 3의 자식이 1과 4, 1의 왼쪽 자식이 3, 4의 자식이 1과 5 → 4
@@ -76,21 +76,16 @@ int goodNodes(TreeNode *root)
 }
 ```
 
+C에서는 함수를 부르기 전에 그 함수가 선언되어 있어야 한다. 그래서 `traversal`을 `goodNodes`보다 위에 둔다. `goodNodes`를 먼저 쓰고 싶으면 그 위에 `int traversal(TreeNode *root, int prevMax);` 한 줄을 넣는다. 이 줄 없이 순서만 바꾸면 컴파일 오류가 난다.
+
 예 2를 따라가면: 뿌리 3(좋음, 넘기는 값 3) → 왼쪽 1(3보다 작아 아님, 넘기는 값 3) → 그 아래 3(3 이상이라 좋음) → 오른쪽 4(좋음, 넘기는 값 4) → 그 아래 1(아님), 5(좋음). 좋은 노드는 3, 3, 4, 5의 넷이다. 노드마다 한 번씩 들르니 노드가 $$n$$개면 $$O(n)$$이다.
 
 </details>
 
 
-<details class="callout callout-warning" markdown="1">
-<summary class="callout-title" markdown="span">원본 오류 의심 (슬라이드 9)</summary>
-
-원문: `goodNodes`가 먼저 나오고 그 안에서 `traversal(root, maxVal)`을 부른다. `traversal`의 정의는 그 아래에 있다. / 문제점: C는 쓰기 전에 선언된 함수만 부를 수 있다. 컴파일하면 `call to undeclared function 'traversal'` 오류가 난다. / 수정안: 위 코드처럼 `traversal`을 먼저 두거나, `goodNodes` 위에 `int traversal(TreeNode *root, int prevMax);` 한 줄을 넣는다. / 근거: 슬라이드 그대로 컴파일하면 오류, 한 줄을 넣으면 예 1과 예 2에서 2와 4가 나온다.
-
-</details>
-
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 슬라이드의 트리 → 2, 원문의 예 → 4, 3, 1, 무작위 트리 3,000개에서 "노드마다 길을 다시 걸어 최댓값을 구하는" 느린 풀이와 같은 답 — [30_week9-inclass_p1.c](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p1/)</div>
+<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 예 1 → 2, LeetCode 문제의 예 세 개 → 4, 3, 1, 무작위 트리 3,000개에서 "노드마다 길을 다시 걸어 최댓값을 구하는" 느린 풀이와 같은 답 — [30_week9-inclass_p1.c](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p1/)</div>
 
 </div>
 
@@ -107,7 +102,7 @@ int goodNodes(TreeNode *root)
 
 ## p2 · 이진 탐색 트리인지 판별하기
 
-이진 트리가 주어진다. 이진 탐색 트리이면 1, 아니면 0을 돌려준다[^4]. 슬라이드의 그림은 20, 10, 40, 6, 15, 30, 2, 8, 25를 넣은 나무다.
+이진 트리가 주어진다. 이진 탐색 트리이면 1, 아니면 0을 돌려준다. 예: 빈 나무에 20, 10, 40, 6, 15, 30, 2, 8, 25를 차례로 넣은 나무는 이진 탐색 트리다.
 
 사용 개념: [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/)의 정의
 
@@ -143,23 +138,18 @@ int isBST(const TreeNode *root)
 }
 ```
 
-그림의 나무는 1이다. 10의 왼쪽 자식이 5이고 5의 오른쪽 자식이 15인 나무는 0이다. 15가 "10보다 작아야 하는 자리"에 있기 때문이다. 노드마다 한 번씩 들러 $$O(n)$$이다.
+예의 나무는 1이다. 10의 왼쪽 자식이 5이고 5의 오른쪽 자식이 15인 나무는 0이다. 15가 "10보다 작아야 하는 자리"에 있기 때문이다. 노드마다 한 번씩 들러 $$O(n)$$이다.
+
+범위의 끝을 −32768과 32767 같은 수로 넘기면 안 된다. 키가 `int`라 그 밖의 값도 들어올 수 있다. 그러면 10의 오른쪽 자식이 40000인 올바른 나무에 0을 돌려준다. `INT_MIN`, `INT_MAX`로 넘겨도 그 값 자체가 키로 들어 있으면 틀린다. 그래서 "끝이 없다"를 `NULL`로 따로 나타낸다[^s3].
 
 </details>
 
 
-<details class="callout callout-warning" markdown="1">
-<summary class="callout-title" markdown="span">원본 오류 의심 (슬라이드 15, 16)</summary>
 
-원문: 슬라이드 15 `return isBSTNode(root, -32768, 32767);`, 슬라이드 16 `printf(“is BST", result);` / 문제점: ① 범위의 양 끝을 16비트 정수의 끝 값으로 넘긴다. 값이 `int`라 그 밖의 값도 들어올 수 있다. 10의 오른쪽 자식이 40000인 올바른 나무에 0을 돌려준다. ② 여는 따옴표가 둥근 따옴표(“)라 컴파일되지 않고, 형식 문자열에 `%d`가 없어 결과가 찍히지 않는다. / 수정안: ① "끝이 없다"를 `NULL` 포인터로 나타낸다(위 코드). ② `printf("is BST: %d\n", result);` / 근거: 두 판을 같은 나무에 돌리면 슬라이드 판 0, 고친 판 1. 슬라이드 16을 그대로 컴파일하면 `unexpected character <U+201C>` 오류가 난다.
-
-</details>
-
-
-**초안에서 배울 것.** 수정본 전에 올라온 초안 두 개의 풀이는 다음과 같았다.
+**틀리기 쉬운 풀이.** 다음 두 풀이는 그럴듯하지만 틀렸다[^s3].
 
 <details class="callout callout-answer" markdown="1">
-<summary class="callout-title" markdown="span">초안 (가): 자식 둘하고만 견주기</summary>
+<summary class="callout-title" markdown="span">틀린 풀이 (가): 자식 둘하고만 견주기</summary>
 
 노드마다 "왼쪽 자식 ≤ 나 ≤ 오른쪽 자식"만 확인했다. 10(5(−, 15), −)를 이진 탐색 트리라고 답한다. 조건이 부분 트리 전체에 걸려 있다는 것을 놓쳤다([이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/)의 오해 항목).
 
@@ -167,7 +157,7 @@ int isBST(const TreeNode *root)
 
 
 <details class="callout callout-answer" markdown="1">
-<summary class="callout-title" markdown="span">초안 (나): <code>&#124;&#124;</code>를 `&&`로 쓰기</summary>
+<summary class="callout-title" markdown="span">틀린 풀이 (나): <code>&#124;&#124;</code>를 `&&`로 쓰기</summary>
 
 범위 검사를 `if (root->val <= min && root->val >= max) return 0;`으로 썼다. 범위가 멀쩡한 동안(min < max)에는 "min 이하이면서 max 이상"인 값이 없어 0을 돌려줄 수 없다. 그래서 5(9, 1) 같은 나무도 통과한다. 0이 나오는 것은 조상이 이미 규칙을 깨서 범위가 뒤집힌 자리에서뿐이다. 예를 들어 5(9(−, 7), −)에서는 7의 자리의 범위가 (9, 5)로 뒤집혀 있어 0이 나온다. 무작위로 만든 "이진 탐색 트리가 아닌 나무" 966개 가운데 929개를 통과시켰다.
 
@@ -175,7 +165,7 @@ int isBST(const TreeNode *root)
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 슬라이드의 두 나무 → 1, 큰 키가 든 나무에서 슬라이드 판과 고친 판의 답, 초안 두 개의 반례, `INT_MIN`·`INT_MAX`가 든 나무, 무작위 나무 3,000개에서 "중위 순회가 늘 커지는가"로 본 느린 판정과 같은 답 — [30_week9-inclass_p2.c](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p2/)</div>
+<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 나무 3(1, 4)와 예의 나무 → 둘 다 1, 큰 키가 든 나무에서 범위 끝을 −32768, 32767로 넘기는 판과 고친 판의 답, 틀린 풀이 두 개의 반례, `INT_MIN`·`INT_MAX`가 든 나무, 무작위 나무 3,000개에서 "중위 순회가 늘 커지는가"로 본 느린 판정과 같은 답 — [30_week9-inclass_p2.c](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p2/)</div>
 
 </div>
 
@@ -185,7 +175,7 @@ int isBST(const TreeNode *root)
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-(가) 바로 앞에 본 노드 하나만 기억한다. 중위 순회로 돌면서 지금 값이 앞의 값보다 크지 않으면 0이다. 이진 탐색 트리의 중위 순회는 늘 커지기만 하기 때문이다. (나) 아래 끝 검사를 `root->val < *min`으로 바꾼다(같아도 된다). 위 끝 검사는 그대로 `>=`다. 5(3, 5)는 강의의 정의로 0, 바꾼 정의로 1이다. 5(5, 7)은 같은 키가 왼쪽에 있어 두 정의 모두 0이다.
+(가) 바로 앞에 본 노드 하나만 기억한다. 중위 순회로 돌면서 지금 값이 앞의 값보다 크지 않으면 0이다. 이진 탐색 트리의 중위 순회는 늘 커지기만 하기 때문이다. (나) 아래 끝 검사를 `root->val < *min`으로 바꾼다(같아도 된다). 위 끝 검사는 그대로 `>=`다. 5(3, 5)는 원래 정의(왼쪽 < 자기 < 오른쪽)로 0, 바꾼 정의로 1이다. 5(5, 7)은 같은 키가 왼쪽에 있어 두 정의 모두 0이다.
 
 </details>
 
@@ -197,16 +187,16 @@ int isBST(const TreeNode *root)
 > 섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 지수 + (둘째로 맵지 않은 음식의 지수 × 2)
 
 
-모든 음식이 K 이상이 될 때까지 되풀이한다. 음식들의 지수가 담긴 배열 `scoville`과 K가 주어질 때, 섞어야 하는 최소 횟수를 돌려준다[^5].
+모든 음식이 K 이상이 될 때까지 되풀이한다. 음식들의 지수가 담긴 배열 `scoville`과 K가 주어질 때, 섞어야 하는 최소 횟수를 돌려준다.
 
-- 예: `[1, 2, 3, 9, 10, 12]`, K = 7 → 2[^6]
+- 예: `[1, 2, 3, 9, 10, 12]`, K = 7 → 2[^s4]
 
 사용 개념: [최대 힙과 최소 힙](/Hongs_Blog/studies/data-structures/max-heap/)의 최소 힙, 우선순위 큐([힙과 우선순위 큐](/Hongs_Blog/studies/algorithms/heap/))
 
 <details class="callout callout-hint" markdown="1">
 <summary class="callout-title" markdown="span">풀이 전략</summary>
 
-매번 필요한 것은 "지금 가장 작은 둘"이다. 섞은 값을 다시 넣으면 순서가 바뀌므로, 배열을 매번 정렬하면 한 번에 $$O(n \log n)$$씩 든다. "가장 작은 것 꺼내기"와 "하나 넣기"만 빠르면 되니 최소 힙이 맞다. 둘 다 $$O(\log n)$$이다. 실마리는 "가장 작은(큰) 것을 되풀이해 꺼내고, 중간에 새 값이 들어온다"다[^6][^7].
+매번 필요한 것은 "지금 가장 작은 둘"이다. 섞은 값을 다시 넣으면 순서가 바뀌므로, 배열을 매번 정렬하면 한 번에 $$O(n \log n)$$씩 든다. "가장 작은 것 꺼내기"와 "하나 넣기"만 빠르면 되니 최소 힙이 맞다. 둘 다 $$O(\log n)$$이다. 실마리는 "가장 작은(큰) 것을 되풀이해 꺼내고, 중간에 새 값이 들어온다"다.
 
 </details>
 
@@ -272,35 +262,22 @@ long long popHeap(heapType *h)
 }
 ```
 
+남은 음식 수는 처음 개수 `n`이 아니라 힙에 든 개수 `h->heap_size`로 본다. 섞을 때마다 음식이 하나씩 줄기 때문이다. `n >= 2`처럼 처음 개수로 검사하면, 만들 수 없는 입력(`[1, 2]`, K = 100)에서 힙에 하나만 남아도 계속 섞으려 한다. 빈 힙에서 꺼낼 때 −1을 돌려주는 구현이라면 그 값이 섞여 들어가 반복이 끝나지 않는다[^s3].
+
 K = 7로 따라가면: 1과 2를 꺼내 $$1 + 2 \times 2 = 5$$를 넣는다(3, 5, 9, 10, 12). 3과 5를 꺼내 $$3 + 5 \times 2 = 13$$을 넣는다(9, 10, 12, 13). 맨 위 9가 7 이상이라 끝. 2번이다. 섞을 때마다 음식이 하나 줄어 섞기는 많아야 $$n - 1$$번이고, 한 번에 힙 연산 세 번이니 전체는 $$O(n \log n)$$이다.
 
 </details>
 
 
-<details class="callout callout-warning" markdown="1">
-<summary class="callout-title" markdown="span">원본 오류 의심 (슬라이드 23)</summary>
-
-원문: `while (n > 0) { if (topHeap(heap) < k && n >= 2) { … } else if (topHeap(heap) >= k) { return cnt; } else { return -1; } }` / 문제점: `n`은 처음 음식 수이고 반복 안에서 줄지 않는다. 그래서 `n >= 2`는 "힙에 둘 이상 남았나"를 뜻하지 못한다. 답이 −1이어야 하는 입력에서 힙이 하나만 남아도 계속 섞으려 하고, 빈 힙에서 꺼낸 −1이 섞여 값이 점점 작아지며 끝나지 않는다. / 수정안: 남은 개수는 `h->heap_size`로 본다(위 코드). / 근거: `[1, 2]`에 K = 100, `[1, 1, 1]`에 K = 10을 주면 슬라이드 판은 2초 안에 끝나지 않았다. 고친 판은 −1을 돌려준다. 만들 수 있는 입력(K = 7, K = 15)에서는 슬라이드 판도 2와 4로 맞다.
-
-</details>
 
 
-<details class="callout callout-warning" markdown="1">
-<summary class="callout-title" markdown="span">원본 오류 의심 (슬라이드 25, 27)</summary>
+코드를 짤 때 챙길 점이 몇 가지 더 있다.
 
-원문: `printf(stderr, "Memory allocation failed\n");`, `printf(stderr, "Heap is empty\n");`, `printf(stderr, "Heap is full\n");` / 문제점: `printf`의 첫 인자는 형식 문자열이어야 하는데 파일 포인터 `stderr`를 넘겼다. 컴파일러가 형이 맞지 않는다고 경고하고, 실행되면 무슨 일이 생길지 정해져 있지 않다. 초안에는 `fprintf`였는데 수정본에서 바뀌었다. 슬라이드 26의 `popHeap`은 `fprintf`로 옳다. / 수정안: `fprintf(stderr, …)`. / 근거: 컴파일하면 `incompatible pointer types passing 'FILE *' … to parameter of type 'const char *'` 경고가 세 군데서 난다.
-
-</details>
-
-
-그 밖에 고친 곳과 어긋나는 곳이다.
-
-- **풀어 주지 않는 메모리.** 슬라이드의 `solution`은 `createHeap`으로 잡은 힙을 풀지 않고 돌아간다. 고친 판은 돌아가기 전에 `destroyHeap`을 부른다[^s1].
-- **힙의 크기.** 슬라이드는 힙을 `MAX_ELEMENT`(100) + 1칸으로 굳혀 두었다. 고친 판은 음식 수만큼 잡는다[^s1].
+- **메모리 풀기.** `createHeap`으로 잡은 힙은 돌아가기 전에 `destroyHeap`으로 풀어 준다. 빼먹으면 `solution`을 부를 때마다 메모리가 샌다[^s1].
+- **힙의 크기.** 힙을 `MAX_ELEMENT`(100) + 1칸처럼 정해진 크기로 굳혀 두지 않고, 음식 수만큼 잡는다. 그래야 음식이 100개를 넘어도 돌아간다[^s1].
 - **넘침.** 두 값이 모두 K보다 작아도 `a + b * 2`는 K의 세 배 가까이 될 수 있다. K가 7억을 넘으면 `int`(약 21억까지)에 안 들어가므로 `long long`으로 담았다. `[9억, 9억]`, K = 10억이면 섞은 값이 27억이다[^s1].
-- **설명과 풀이가 다른 방향.** 슬라이드 18은 힙의 연산을 "우선순위가 **가장 큰** 원소 보기·꺼내기"로 적었는데, 이 문제의 풀이는 가장 **작은** 것을 꺼내는 최소 힙이다[^7]. 틀린 것은 아니고, 문제에 맞춰 방향을 고른 것이다.
-- **표와 `main`의 K.** 슬라이드 20의 표는 K = 7(답 2)인데 슬라이드 24의 `main`은 `k = 15`를 넣는다. 그대로 돌리면 4가 찍힌다. 둘 다 맞는 값이고 입력이 다를 뿐이다[^6].
-- **초안 (다).** 초안의 `pushHeap`은 `item > 부모`일 때 올리는 최대 힙 방향이었고, 1번 칸부터 쓰면서 배열을 `MAX_ELEMENT`칸만 잡았다. 가장 작은 둘이 필요한 문제에 큰 값이 위로 가는 힙을 쓰면 꺼내는 값이 틀리고, 칸이 하나 모자라 마지막 원소가 배열 밖에 적힌다. 방향과 칸 수는 [최대 힙과 최소 힙](/Hongs_Blog/studies/data-structures/max-heap/)에서 다룬다.
+- **힙의 방향.** 우선순위 큐의 연산은 흔히 "우선순위가 **가장 큰** 원소 보기·꺼내기"로 적는다. 이 문제는 가장 **작은** 것을 꺼내야 하니 최소 힙을 쓴다. 문제에 맞춰 방향을 고르면 된다.
+- **틀리기 쉬운 힙.** `pushHeap`에서 `item > 부모`일 때 올리면 최대 힙이 된다. 또 1번 칸부터 쓰면서 배열을 `MAX_ELEMENT`칸만 잡으면 한 칸이 모자란다. 가장 작은 둘이 필요한 문제에 큰 값이 위로 가는 힙을 쓰면 꺼내는 값이 틀리고, 칸이 하나 모자라 마지막 원소가 배열 밖에 적힌다[^s3]. 방향과 칸 수는 [최대 힙과 최소 힙](/Hongs_Blog/studies/data-structures/max-heap/)에서 다룬다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). K = 7 → 2, K = 15 → 4, 만들 수 없는 두 입력 → −1, 경계(처음부터 모두 K 이상, 음식 하나), 27억이 나오는 큰 값, 넣고 꺼낼 때마다 "부모 ≤ 자식", 무작위 2,000개에서 "매번 배열을 훑어 가장 작은 둘을 찾는" 느린 풀이와 같은 답, malloc 횟수 = free 횟수 — [30_week9-inclass_p3.c](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p3/)</div>
@@ -319,12 +296,7 @@ K = 7로 따라가면: 1과 2를 꺼내 $$1 + 2 \times 2 = 5$$를 넣는다(3, 5
 </details>
 
 
-[^1]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_2024 (BST, Heap 수정)」, 슬라이드 7~27 (수업 문제 세 개와 풀이)
-[^2]: 같은 자료, 슬라이드 8, 14 (트리 노드 구조체)
-[^3]: 같은 자료, 슬라이드 7 (문제. LeetCode "Count Good Nodes in Binary Tree"), 슬라이드 9~10 (풀이와 main)
-[^4]: 같은 자료, 슬라이드 12~13 (이진 탐색 트리의 정의와 문제), 슬라이드 15~16 (풀이와 main)
-[^5]: 같은 자료, 슬라이드 19 (문제. 프로그래머스 "더 맵게")
-[^6]: 같은 자료, 슬라이드 20 (예와 "정렬은 O(n log n), 힙에 넣기는 O(log n)"), 슬라이드 24 (main의 k = 15)
-[^7]: 같은 자료, 슬라이드 18 (힙의 연산 목록), 슬라이드 21 (최소 힙으로 푸는 순서와 최대 힙·최소 힙 그림), 슬라이드 22~27 (풀이 코드)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 풀이 전략과 하위목표로 나눈 설명, 예를 따라간 과정, 복잡도, 변형 문제와 답, 메모리 풀기·힙 크기·`long long`으로 바꾼 것은 원본에 없다. 문제 원문의 예(p1의 예 2)는 슬라이드가 링크한 LeetCode 문제의 것이다. 고친 코드와 모든 수치는 문제 코드 세 개를 돌려 확인했다.
+[^s1]: 고친 코드와 모든 수치는 문제 코드 세 개를 돌려 확인했다.
+[^s3]: INT_MIN·INT_MAX를 끝으로 넘긴 판이 그 값이 든 한 노드짜리 나무에 0을 내는 것은 따로 짠 작은 C 코드로 확인했다.
+[^s4]: 둘 다 맞는 값이고 입력이 다를 뿐이다.
 {% endraw %}

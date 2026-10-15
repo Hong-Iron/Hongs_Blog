@@ -39,7 +39,7 @@ def main():
             for i in pos:
                 r[i] ^= 1
             assert (sum(r) % 2 != 0) == detected
-    # 슬라이드 p.52의 10진 비유: 젯수 11, 데이터 331 → 3311
+    # 문서 본문의 10진 비유: 젯수 11, 데이터 331 → 3311
     x = next(d for d in range(10) if (3310 + d) % 11 == 0)
     assert x == 1 and 3311 % 11 == 0
     assert 3310 % 11 != 0 and 2311 % 11 != 0           # 검출

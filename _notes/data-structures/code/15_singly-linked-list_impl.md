@@ -23,19 +23,16 @@ permalink: "/studies/data-structures/code/15_singly-linked-list_impl/"
 /* 단순 연결 리스트(체인): 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/15.단순 연결 리스트.md
- * 출처: 자료구조 5주차 슬라이드 p.4~18. 슬라이드 코드를 컴파일되고 메모리 오류가 없게 고쳤다.
- *       (p.9의 노드 선언에는 typedef struct가 빠졌고, p.15의 맨 앞 끼우기는 newNode->link에 NULL을 넣는다.
- *        문서의 warning 참고)
- *       슬라이드는 "맨 앞", "1번 노드 뒤", "2번 노드 뒤"처럼 정해진 자리의 코드만 싣는다.
- *       아무 자리 k에서 되는 insertAt, deleteAt과 nodeAt, freeList는 같은 줄들을 묶어 보탠 것이다.
+ * 문서는 "맨 앞", "1번 노드 뒤", "2번 노드 뒤"처럼 정해진 자리의 코드를 싣는다.
+ * 아무 자리 k에서 되는 insertAt, deleteAt과 nodeAt, freeList는 같은 줄들을 묶은 것이다.
  * 실행: cc -std=c11 -Wall -Wextra 15_singly-linked-list_impl.c -o chain && ./chain
- * 번호: 노드 자리 k는 슬라이드처럼 0부터 센다(delete(0)이 맨 앞 노드를 지운다).
+ * 번호: 노드 자리 k는 0부터 센다(delete(0)이 맨 앞 노드를 지운다).
  *
  * 확인하는 것
- *   1. 슬라이드 p.10: first에서 링크를 0 ~ 4번 따라가면 a ~ e, 다섯 번 따라가면 NULL.
- *   2. 슬라이드 p.11~14: delete(0) -> bcde, 1번 노드 뒤(c) 지우기 -> abde.
- *   3. 슬라이드 p.15~18: 맨 앞에 f -> fabcde, 2번 노드(c) 뒤에 f -> abcfde.
- *   4. 슬라이드 p.15의 코드를 그대로 쓰면 길이 5인 목록이 길이 1이 된다.
+ *   1. first에서 링크를 0 ~ 4번 따라가면 a ~ e, 다섯 번 따라가면 NULL.
+ *   2. delete(0) -> bcde, 1번 노드 뒤(c) 지우기 -> abde.
+ *   3. 맨 앞에 f -> fabcde, 2번 노드(c) 뒤에 f -> abcfde.
+ *   4. 맨 앞 끼우기에서 새 노드의 link에 NULL을 넣으면 길이 5인 목록이 길이 1이 된다.
  *   5. 끼우기의 두 줄을 바꿔 쓰면 새 노드가 자기 자신을 가리킨다(카드 C2).
  *   6. 카드 C1: abcde -> 2번 지우기 -> 맨 앞에 f -> 2번 노드 뒤에 g -> fabgde.
  *   7. k번 노드를 찾는 데 링크를 정확히 k번 따라간다.
@@ -55,7 +52,7 @@ static void check(int ok, const char *what)
 static long liveNodes = 0;    /* malloc 횟수 - free 횟수. 끝에서 0이어야 누수가 없다 */
 static long hops = 0;         /* 링크를 따라간 횟수 */
 
-/* 슬라이드 p.15의 MALLOC: 메모리를 얻고, 못 얻으면 끝낸다. 여기서는 노드 수도 센다 */
+/* MALLOC: 메모리를 얻고, 못 얻으면 끝낸다. 여기서는 노드 수도 센다 */
 #define MALLOC(p, s) \
     do { \
         if (!((p) = malloc(s))) { fprintf(stderr, "Insufficient memory\n"); exit(EXIT_FAILURE); } \
@@ -150,8 +147,8 @@ void freeList(listPointer *first)
 
 /* ---------- 틀린 판 두 개 (무엇이 깨지는지 보이려고 둔다) ---------- */
 
-/* 슬라이드 p.15~16 그대로: 새 노드의 link에 NULL을 넣는다 */
-static void insertFront_p15(listPointer *first, char data)
+/* 틀린 맨 앞 끼우기: 새 노드의 link에 NULL을 넣는다 */
+static void insertFront_nullLink(listPointer *first, char data)
 {
     listPointer newNode;
     MALLOC(newNode, sizeof(*newNode));
@@ -207,11 +204,11 @@ int main(void)
 {
     listPointer first, beforeNode;
 
-    /* 1. 슬라이드 p.10 */
+    /* 1. 링크를 따라가며 노드 찾기 */
     first = build("abcde");
     check(strcmp(text(first), "abcde") == 0 && length(first) == 5, "L = (a, b, c, d, e)");
-    check(first->data == 'a' && first->link->data == 'b' && first->link->link->data == 'c', "p.10 첫째, 둘째, 셋째 노드");
-    check(first->link->link->link->link->link == NULL, "p.10 링크를 다섯 번 따라가면 NULL");
+    check(first->data == 'a' && first->link->data == 'b' && first->link->link->data == 'c', "첫째, 둘째, 셋째 노드");
+    check(first->link->link->link->link->link == NULL, "링크를 다섯 번 따라가면 NULL");
     for (int k = 0; k < 5; k++) {
         hops = 0;
         listPointer p = nodeAt(first, k);
@@ -219,40 +216,40 @@ int main(void)
     }
     check(nodeAt(first, 5) == NULL && nodeAt(first, 99) == NULL, "없는 자리는 NULL");
 
-    /* 2. 슬라이드 p.11: delete(0) */
+    /* 2. delete(0) */
     deleteFront(&first);
-    check(strcmp(text(first), "bcde") == 0, "p.11 delete(0) -> bcde");
+    check(strcmp(text(first), "bcde") == 0, "delete(0) -> bcde");
     freeList(&first);
     check(first == NULL, "freeList 뒤 first는 NULL");
 
-    /* 2. 슬라이드 p.12~14: 1번 노드(b) 뒤의 c를 지운다 */
+    /* 2. 1번 노드(b) 뒤의 c를 지운다 */
     first = build("abcde");
     beforeNode = first->link;
-    check(beforeNode->data == 'b', "p.12 beforeNode는 b");
+    check(beforeNode->data == 'b', "지우기: beforeNode는 b");
     deleteAfter(beforeNode);
-    check(strcmp(text(first), "abde") == 0 && beforeNode->link->data == 'd', "p.14 -> abde, b가 d를 가리킨다");
+    check(strcmp(text(first), "abde") == 0 && beforeNode->link->data == 'd', "지우기 -> abde, b가 d를 가리킨다");
     freeList(&first);
 
-    /* 3. 슬라이드 p.15~16(고친 판): 맨 앞에 f */
+    /* 3. 맨 앞에 f */
     first = build("abcde");
     insertFront(&first, 'f');
-    check(strcmp(text(first), "fabcde") == 0 && length(first) == 6, "p.16 -> fabcde");
+    check(strcmp(text(first), "fabcde") == 0 && length(first) == 6, "맨 앞 끼우기 -> fabcde");
     freeList(&first);
 
-    /* 3. 슬라이드 p.17~18: 2번 노드(c) 뒤에 f */
+    /* 3. 2번 노드(c) 뒤에 f */
     first = build("abcde");
     beforeNode = first->link->link;
-    check(beforeNode->data == 'c', "p.18 beforeNode는 c");
+    check(beforeNode->data == 'c', "끼우기: beforeNode는 c");
     insertAfter(beforeNode, 'f');
     check(strcmp(text(first), "abcfde") == 0 && beforeNode->link->data == 'f'
-          && beforeNode->link->link->data == 'd', "p.18 -> abcfde, c -> f -> d");
+          && beforeNode->link->link->data == 'd', "끼우기 -> abcfde, c -> f -> d");
     freeList(&first);
 
-    /* 4. 슬라이드 p.15의 코드 그대로 */
+    /* 4. 틀린 맨 앞 끼우기 */
     first = build("abcde");
     listPointer old = first;                    /* 잃어버릴 목록을 따로 적어 둔다 */
-    insertFront_p15(&first, 'f');
-    check(length(first) == 1 && strcmp(text(first), "f") == 0, "p.15 그대로: 길이 5가 길이 1이 된다");
+    insertFront_nullLink(&first, 'f');
+    check(length(first) == 1 && strcmp(text(first), "f") == 0, "link에 NULL을 넣으면: 길이 5가 길이 1이 된다");
     check(length(old) == 5 && strcmp(text(old), "abcde") == 0, "a ~ e는 남아 있지만 first에서는 갈 수 없다");
     freeList(&first);
     freeList(&old);

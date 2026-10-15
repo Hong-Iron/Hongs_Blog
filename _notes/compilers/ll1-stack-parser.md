@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["LL(1) Parser", "LL(1) 파서", "표 구동 파서", "Table-driven Parser", "예측 파서의 구현", "Nonrecursive Predictive Parser", "파싱 스택"]
 description: "미리 만든 표를 보며 입력을 읽어 나가는 기계다. \"앞으로 맞춰야 할 것들\"을 접시 더미처럼 쌓아 두고 맨 위 것만 꺼내 본다. 꺼낸 것이 더 풀어야 할 이름이면 표에서 찾은 규칙의 조각들로 바꿔 쌓고, 낱말이면 입력의 다음 낱말과 견줘 같으면 한 칸 나아간다. 더미와 입력이 함께…"
@@ -36,7 +36,7 @@ permalink: "/studies/compilers/ll1-stack-parser/"
 
 [LL(1) 파싱 표](/Hongs_Blog/studies/compilers/ll1-parsing-table/)가 있으면 "가장 왼쪽 비단말 기호와 다음 입력"으로 규칙을 찾을 수 있다. 남은 일은 "지금 가장 왼쪽 비단말 기호가 무엇인가"를 프로그램이 기억하는 것이다. 문장 형식에서 이미 입력과 맞춘 앞부분은 다시 볼 일이 없다. 아직 맞추지 않은 뒷부분만 왼쪽 것이 위로 오게 [스택](/Hongs_Blog/studies/algorithms/stack/)에 쌓아 두면, 맨 위가 늘 다음에 다룰 기호다.
 
-문법 $$E \to TE'$$, $$\ E' \to +E \mid \epsilon$$, $$\ T \to FT'$$, $$\ T' \to *T \mid \epsilon$$, $$\ F \to (E) \mid id$$로 입력 $$id * id\ \$$$를 읽는다. 표는 다음과 같다[^1].
+문법 $$E \to TE'$$, $$\ E' \to +E \mid \epsilon$$, $$\ T \to FT'$$, $$\ T' \to *T \mid \epsilon$$, $$\ F \to (E) \mid id$$로 입력 $$id * id\ \$$$를 읽는다. 표는 다음과 같다.
 
 | | $$+$$ | $$*$$ | `(` | `)` | $$id$$ | $$\$$$ |
 |---|---|---|---|---|---|---|
@@ -46,7 +46,7 @@ permalink: "/studies/compilers/ll1-stack-parser/"
 | $$T'$$ | $$\epsilon$$ | $$*T$$ | | $$\epsilon$$ | | $$\epsilon$$ |
 | $$F$$ | | | $$(E)$$ | | $$id$$ | |
 
-스택은 맨 위를 왼쪽에 적는다. 처음에 끝 표시 $$\$$$와 시작 기호 $$E$$를 넣는다[^2].
+스택은 맨 위를 왼쪽에 적는다. 처음에 끝 표시 $$\$$$와 시작 기호 $$E$$를 넣는다.
 
 | 걸음 | 스택 (맨 위가 왼쪽) | 남은 입력 | 꺼낸 것 | 한 일 |
 |---|---|---|---|---|
@@ -66,7 +66,7 @@ permalink: "/studies/compilers/ll1-stack-parser/"
 열두 걸음 동안 남은 입력은 줄기만 했다. 되돌아간 적이 없다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 열두 줄이 슬라이드 p.33~45의 스택 그림과 같은 것, 적용한 규칙을 이으면 좌측 유도가 되는 것, 길이 6 이하의 모든 입력 19,531개에서 문법의 언어와 같은 답을 내는 것, 틀린 입력에서 멈추는 자리 — [21_ll1-stack-parser_impl.py](/Hongs_Blog/studies/compilers/code/21_ll1-stack-parser_impl/)</div>
+<div class="callout-title" markdown="span">검증: 위 열두 줄의 스택과 남은 입력, 적용한 규칙을 이으면 좌측 유도가 되는 것, 길이 6 이하의 모든 입력 19,531개에서 문법의 언어와 같은 답을 내는 것, 틀린 입력에서 멈추는 자리 — [21_ll1-stack-parser_impl.py](/Hongs_Blog/studies/compilers/code/21_ll1-stack-parser_impl/)</div>
 
 </div>
 
@@ -75,7 +75,7 @@ permalink: "/studies/compilers/ll1-stack-parser/"
 
 **입출력.** 입력은 LL(1) 파싱 표 $$M$$, 시작 기호 $$S$$, 끝에 $$\$$$를 붙인 토큰열이다. 출력은 받아들임 또는 오류다. 받아들일 때는 쓴 규칙의 차례가 곧 좌측 유도다.
 
-**동작**[^2].
+**동작**.
 
 1. 스택에 끝 표시 $$\$$$와 시작 기호를 차례로 넣는다. 시작 기호가 맨 위다.
 2. 스택 맨 위를 꺼낸다.
@@ -97,9 +97,9 @@ permalink: "/studies/compilers/ll1-stack-parser/"
         아니면 입력을 한 칸 나아간다
 ```
 
-규칙 오른쪽을 거꾸로 넣는 까닭은 스택이 나중에 넣은 것을 먼저 꺼내기 때문이다. $$Y_1$$을 마지막에 넣어야 맨 위에 오고, 그래야 가장 왼쪽 기호부터 다루게 된다. $$\epsilon$$ 규칙이면 넣을 것이 없으니 꺼내기만 한다[^s1].
+규칙 오른쪽을 거꾸로 넣는 까닭은 스택이 나중에 넣은 것을 먼저 꺼내기 때문이다. $$Y_1$$을 마지막에 넣어야 맨 위에 오고, 그래야 가장 왼쪽 기호부터 다루게 된다. $$\epsilon$$ 규칙이면 넣을 것이 없으니 꺼내기만 한다.
 
-**스택이 뜻하는 것.** 걸음마다 "이미 읽은 입력 + 스택의 내용(위에서 아래로, $$\$$$ 빼고)"이 좌측 유도의 문장 형식이다. 걸음 5를 보면 읽은 입력이 $$id$$, 스택이 $$T'E'$$이고 이어 붙인 $$id\,T'E'$$는 $$E \Rightarrow_{lm} TE' \Rightarrow_{lm} FT'E' \Rightarrow_{lm} id\,T'E'$$의 마지막 모양이다. 위 추적에서 쓴 규칙만 차례로 이으면 다음 좌측 유도가 된다[^s1].
+**스택이 뜻하는 것.** 걸음마다 "이미 읽은 입력 + 스택의 내용(위에서 아래로, $$\$$$ 빼고)"이 좌측 유도의 문장 형식이다. 걸음 5를 보면 읽은 입력이 $$id$$, 스택이 $$T'E'$$이고 이어 붙인 $$id\,T'E'$$는 $$E \Rightarrow_{lm} TE' \Rightarrow_{lm} FT'E' \Rightarrow_{lm} id\,T'E'$$의 마지막 모양이다. 위 추적에서 쓴 규칙만 차례로 이으면 다음 좌측 유도가 된다.
 
 $$E \Rightarrow TE' \Rightarrow FT'E' \Rightarrow id\,T'E' \Rightarrow id * TE' \Rightarrow id * FT'E' \Rightarrow id * id\,T'E' \Rightarrow id * id\,E' \Rightarrow id * id$$
 
@@ -125,17 +125,10 @@ LL(1) 문법에는 좌재귀가 없어서 입력을 읽지 않은 채 비단말 
 
 ## 활용
 
-- **예측 파싱 정리.** 되돌아가기가 필요 없는 재귀 하강 파싱이다. 쓸 수 있는 조건은 문법이 모호하지 않고, 좌재귀가 없고, 좌인수분해되어 있는 것이다. 하는 일은 둘이다. ① 문법에서 FIRST, FOLLOW로 LL(1) 파싱 표를 만든다. ② 입력을 표와 스택으로 읽는다[^3].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.46 "Summary: Predictive parsing" 아래 소제목 "Conditions for using recursive descent parsers" / 문제점: 이 쪽은 예측 파싱의 정리이고, 그 아래 세 조건의 마지막이 "A CFG must be left factored"다. 재귀 하강 파서의 조건은 p.17에서 "Left factoring is not needed"였다. 소제목만 재귀 하강으로 적혀 있다. / 수정안: "Conditions for using predictive parsers" / 근거: 같은 세 조건을 처음 적은 p.19의 소제목이 "Conditions for using predictive parsers"다.
-
-</div>
+- **예측 파싱 정리.** 되돌아가기가 필요 없는 재귀 하강 파싱이다. 쓸 수 있는 조건은 문법이 모호하지 않고, 좌재귀가 없고, 좌인수분해되어 있는 것이다. 하는 일은 둘이다. ① 문법에서 FIRST, FOLLOW로 LL(1) 파싱 표를 만든다. ② 입력을 표와 스택으로 읽는다.
 
 
-- **재귀 함수로도 짠다.** 비단말 기호마다 함수를 두고 다음 토큰으로 `if`/`switch`를 갈라 규칙을 고르면, 함수 호출 스택이 여기의 스택 노릇을 한다. 표와 스택을 직접 두는 쪽은 문법이 바뀌어도 표만 갈아 끼우면 된다[^s3].
+- **재귀 함수로도 짠다.** 비단말 기호마다 함수를 두고 다음 토큰으로 `if`/`switch`를 갈라 규칙을 고르면, 함수 호출 스택이 여기의 스택 노릇을 한다. 표와 스택을 직접 두는 쪽은 문법이 바뀌어도 표만 갈아 끼우면 된다.
 - **파스 트리 짓기.** 비단말 기호를 꺼내 규칙을 쓸 때마다 그 노드 아래에 자식을 단다. 뿌리에서 잎 쪽으로 자란다. 규칙에 [의미 동작](/Hongs_Blog/studies/compilers/abstract-syntax-tree/)을 붙여 두면 AST가 함께 지어진다.
 - **흔한 실수.** 규칙 오른쪽을 적힌 순서대로 넣어 맨 오른쪽 기호가 위로 온다. $$\epsilon$$ 규칙에서 스택에 $$\epsilon$$을 넣는다. 단말 기호를 꺼냈을 때 입력을 나아가지 않는다. 비단말 기호를 펼칠 때 입력을 나아간다(펼칠 때는 입력을 보기만 한다).
 
@@ -181,10 +174,5 @@ LL(1) 문법에는 좌재귀가 없어서 입력을 읽지 않은 채 비단말 
 </details>
 
 
-[^1]: 컴파일러 5회 강의 자료 「Lecture05 Syntax analysis part 2」, p.20, p.33 (파싱 표)
-[^2]: 같은 자료, p.33~45 (스택으로 $$id * id\ \$$$ 읽기, 1단계와 2단계)
-[^3]: 같은 자료, p.19, p.46 (예측 파싱의 조건과 하는 일)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 의사코드, 거꾸로 넣는 까닭, "읽은 입력 + 스택 = 문장 형식"이라는 설명과 이어 쓴 좌측 유도는 원본에 글로 없다. 슬라이드의 스택 그림을 옮겨 적은 것이고, 구현 코드에서 추적 표의 규칙으로 좌측 유도를 다시 만들어 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오류 예 넷, 걸음 수 한도 $$7n + 5$$, 카드 C1·C4는 원본에 없다. 구현 코드로 확인했다. 걸음 수 한도는 이 문법에서 길이 6 이하의 입력을 모두 돌려 본 실험값이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 재귀 함수로 짜는 방법과의 관계는 원본에 없다(Aho 외, *Compilers* 2판 4.4.1절, 4.4.4절).
+[^s2]: 구현 코드로 확인했다. 걸음 수 한도는 이 문법에서 길이 6 이하의 입력을 모두 돌려 본 실험값이다.
 {% endraw %}

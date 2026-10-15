@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Reference Equality", "참조 비교", "동일성", "Identity", "동등성", "Equality", "null", "널", "NullPointerException", "NPE", "널 포인터 예외"]
 description: "주소가 적힌 쪽지 두 장이 같은지 볼 때, 자바의 같다 기호는 쪽지에 적힌 주소만 견준다. 그래서 똑같이 생긴 집이라도 주소가 다르면 다르다고 답한다. 빠르고 뜻이 분명하지만, 내용이 같은지 알고 싶을 때 쓰면 틀린 답을 얻는다. 쪽지가 백지일 수도 있다. 아무 집도 가리키지 않는…"
@@ -45,7 +45,7 @@ System.out.println(refVar1 == refVar2);   // false
 System.out.println(refVar2 == refVar3);   // true
 ```
 
-`refVar1`과 `refVar2`는 내용이 똑같은데 `false`다. 슬라이드의 그림이 이 상황이다[^1].
+`refVar1`과 `refVar2`는 내용이 똑같은데 `false`다. 메모리로 그리면 이렇다.
 
 ```
   스택 영역                 힙 영역
@@ -69,7 +69,7 @@ System.out.println(refVar2 == refVar3);   // true
 
 ### ==와 !=
 
-참조 타입 변수 둘에 `==`를 쓰면 두 변수에 든 메모리 주소를 비교한다. 두 변수가 같은 객체를 가리키면 `true`다. `!=`는 그 반대로, 서로 다른 객체를 가리키면 `true`다[^1].
+참조 타입 변수 둘에 `==`를 쓰면 두 변수에 든 메모리 주소를 비교한다. 두 변수가 같은 객체를 가리키면 `true`다. `!=`는 그 반대로, 서로 다른 객체를 가리키면 `true`다.
 
 `==`가 하는 일은 기본 타입에서도 똑같다. 칸에 든 것을 비교한다. 기본 타입은 칸에 값이 있으니 값이 비교되고, 참조 타입은 칸에 주소가 있으니 주소가 비교된다[^s1].
 
@@ -87,7 +87,7 @@ System.out.println(refVar2 == refVar3);   // true
 
 ### null
 
-`null`은 참조 타입 변수에 주소가 없다는 것을 나타내는 값이다[^2]. 가리킬 객체가 아직 없거나 더는 없을 때 넣는다.
+`null`은 참조 타입 변수에 주소가 없다는 것을 나타내는 값이다. 가리킬 객체가 아직 없거나 더는 없을 때 넣는다.
 
 ```java
 String refVar1 = "자바";
@@ -101,13 +101,13 @@ String refVar2 = null;
   refVar2 [  null  ]
 ```
 
-`null`도 변수 칸에 들어 있는 값이다. 그래서 `null`인 변수 자체는 스택에 멀쩡히 있다[^2]. 없는 것은 그 칸이 가리킬 객체다. `null`인지는 `==`로 확인한다. `refVar2 == null`은 `true`다.
+`null`도 변수 칸에 들어 있는 값이다. 그래서 `null`인 변수 자체는 스택에 멀쩡히 있다. 없는 것은 그 칸이 가리킬 객체다. `null`인지는 `==`로 확인한다. `refVar2 == null`은 `true`다.
 
 기본 타입 변수에는 `null`을 넣을 수 없다. `int` 칸에는 주소가 아니라 값이 들어가기 때문이다[^s1].
 
 ### NullPointerException
 
-`null`인 변수로 객체의 데이터나 메서드를 쓰려 하면 `NullPointerException`이라는 예외가 난다[^2]. 프로그램이 그 줄에서 멈춘다.
+`null`인 변수로 객체의 데이터나 메서드를 쓰려 하면 `NullPointerException`이라는 예외가 난다. 프로그램이 그 줄에서 멈춘다.
 
 ```java
 String refVar = null;
@@ -124,7 +124,7 @@ arr[0] = 10;          // NullPointerException: Cannot store to int array because
 int n = arr.length;   // NullPointerException: Cannot read the array length because ... is null
 ```
 
-고치려면 변수에 실제 객체의 주소를 넣어 변수가 객체를 제대로 가리키게 한다[^2].
+고치려면 변수에 실제 객체의 주소를 넣어 변수가 객체를 제대로 가리키게 한다.
 
 ```mermaid
 flowchart TD
@@ -276,9 +276,7 @@ z[0] = 6;
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 4회 강의 자료 「Software Project 04. Reference Types」, p.6 (==와 != 연산, refVar1~3 그림)
-[^2]: 같은 자료, p.7 (null 값, NullPointerException, 스택과 힙 그림)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 첫 예시의 코드, `==`가 기본 타입과 참조 타입에서 같은 일을 한다는 설명, 예 다섯 개의 표, 설계 이유, 기본 타입에 `null`을 넣을 수 없다는 것은 원본에 없다. 값은 구현 코드로 확인했다. Java Language Specification §15.21.3(참조 비교), §4.1(null 타입)에 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예외 메시지 세 가지, 초기화하지 않은 지역 변수의 컴파일 오류, 다이어그램 1개는 원본에 없다. JDK 21에서 직접 실행하고 컴파일해 확인했다. 메시지의 `...` 자리에는 변수 이름이 들어가는데, 컴파일 방식에 따라 `<local6>` 같은 번호로 나오기도 한다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 스스로 설명해 보기, 예제 세 가지, 활용 항목, 오해 항목, 카드 C1~C4는 원본에 없다. 값은 구현 코드로 확인했다.
+[^s1]: 값은 구현 코드로 확인했다. Java Language Specification §15.21.3(참조 비교), §4.1(null 타입)에 있다.
+[^s2]: JDK 21에서 직접 실행하고 컴파일해 확인했다. 메시지의 `...` 자리에는 변수 이름이 들어가는데, 컴파일 방식에 따라 `<local6>` 같은 번호로 나오기도 한다.
+[^s3]: 값은 구현 코드로 확인했다.
 {% endraw %}

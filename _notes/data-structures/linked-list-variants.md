@@ -34,7 +34,7 @@ permalink: "/studies/data-structures/linked-list-variants/"
 
 ## 예시로 보기
 
-[단순 연결 리스트](/Hongs_Blog/studies/data-structures/singly-linked-list/)에는 번거로운 곳이 셋 있었다. 맨 앞에 끼우고 지울 때만 `first`를 바꾸는 코드가 따로 필요하다. 끝까지 가면 NULL이라 처음으로 돌아가지 못한다. 노드를 지우려면 그 앞 노드를 처음부터 찾아야 한다. 하나씩 풀면 아래 네 모양이 나온다[^1].
+[단순 연결 리스트](/Hongs_Blog/studies/data-structures/singly-linked-list/)에는 번거로운 곳이 셋 있었다. 맨 앞에 끼우고 지울 때만 `first`를 바꾸는 코드가 따로 필요하다. 끝까지 가면 NULL이라 처음으로 돌아가지 못한다. 노드를 지우려면 그 앞 노드를 처음부터 찾아야 한다. 하나씩 풀면 아래 네 모양이 나온다.
 
 ```
 1. 헤더 노드가 있는 체인
@@ -59,7 +59,7 @@ permalink: "/studies/data-structures/linked-list-variants/"
                   헤더 노드의 왼쪽이 e, e의 오른쪽이 헤더 노드
 ```
 
-2와 3만 합쳐, 헤더 노드 없이 a와 e를 양쪽으로 이은 이중 원형 리스트도 있다[^3]. 4는 세 가지 고침을 모두 한 것이다.
+2와 3만 합쳐, 헤더 노드 없이 a와 e를 양쪽으로 이은 이중 원형 리스트도 있다. 4는 세 가지 고침을 모두 한 것이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 빈 목록의 모양 둘(헤더 체인은 링크가 NULL, 이중 원형은 두 링크가 헤더 자신), 0번 자리에 끼우고 지워도 `headerNode`가 그대로인 것, 원형 리스트에서 어느 노드로 출발해도 다섯 노드를 한 번씩 만나는 것, 오른쪽으로 abcde·왼쪽으로 edcba, 카드 C1, 헤더 체인과 이중 원형에서 무작위 끼우기·지우기 3,000번씩이 배열 모형과 같고 모든 노드에서 `p->rlink->llink == p == p->llink->rlink`, malloc 횟수와 free 횟수가 같음 — [17_linked-list-variants_impl.c](/Hongs_Blog/studies/data-structures/code/17_linked-list-variants_impl/)</div>
@@ -71,7 +71,7 @@ permalink: "/studies/data-structures/linked-list-variants/"
 
 ### 헤더 노드
 
-헤더 노드(header node)는 목록 맨 앞에 세워 두는, 원소를 담지 않는 노드다. 빈 목록에도 헤더 노드 하나는 있고, 그 링크가 NULL이다[^1]. 0번 원소의 "앞 노드"가 늘 있으므로, 끼우기와 지우기가 자리에 상관없이 같은 코드가 된다.
+헤더 노드(header node)는 목록 맨 앞에 세워 두는, 원소를 담지 않는 노드다. 빈 목록에도 헤더 노드 하나는 있고, 그 링크가 NULL이다. 0번 원소의 "앞 노드"가 늘 있으므로, 끼우기와 지우기가 자리에 상관없이 같은 코드가 된다.
 
 ```c
 /* k번 자리에 끼운다. k가 0이어도 다른 자리와 같은 코드다 */
@@ -93,7 +93,7 @@ int insertAt(listPointer headerNode, int k, char data)
 
 ### 원형 리스트
 
-원형 리스트(circular list)는 마지막 노드의 링크가 NULL 대신 첫 노드를 가리킨다[^2]. 어느 노드에서 출발해도 링크만 따라 모든 노드를 만난다. 대신 "NULL이 나오면 끝"이라는 멈춤 조건을 쓸 수 없다. 출발한 노드로 돌아왔는지를 본다.
+원형 리스트(circular list)는 마지막 노드의 링크가 NULL 대신 첫 노드를 가리킨다. 어느 노드에서 출발해도 링크만 따라 모든 노드를 만난다. 대신 "NULL이 나오면 끝"이라는 멈춤 조건을 쓸 수 없다. 출발한 노드로 돌아왔는지를 본다.
 
 ```c
 /* start에서 출발해 한 바퀴 돌며 노드를 센다. NULL이 없으니 "출발한 곳에 돌아왔나"로 멈춘다 */
@@ -114,11 +114,11 @@ int countCircular(listPointer start)
 
 ### 이중 연결 리스트
 
-이중 연결 리스트(doubly linked list)는 노드마다 링크가 둘이다. 하나는 오른쪽(뒤) 노드를, 하나는 왼쪽(앞) 노드를 가리킨다. 첫 노드의 왼쪽 링크와 마지막 노드의 오른쪽 링크는 NULL이고, 양 끝을 `firstNode`와 `lastNode`가 가리킨다[^3]. 뒤에서 앞으로도 따라갈 수 있다.
+이중 연결 리스트(doubly linked list)는 노드마다 링크가 둘이다. 하나는 오른쪽(뒤) 노드를, 하나는 왼쪽(앞) 노드를 가리킨다. 첫 노드의 왼쪽 링크와 마지막 노드의 오른쪽 링크는 NULL이고, 양 끝을 `firstNode`와 `lastNode`가 가리킨다. 뒤에서 앞으로도 따라갈 수 있다.
 
 ### 헤더 노드가 있는 이중 원형 리스트
 
-이중 연결 리스트의 양 끝을 헤더 노드로 이어 고리로 만든다. 헤더 노드의 오른쪽이 첫 원소, 왼쪽이 마지막 원소다. 빈 목록은 헤더 노드의 두 링크가 모두 헤더 노드 자신을 가리킨다[^4].
+이중 연결 리스트의 양 끝을 헤더 노드로 이어 고리로 만든다. 헤더 노드의 오른쪽이 첫 원소, 왼쪽이 마지막 원소다. 빈 목록은 헤더 노드의 두 링크가 모두 헤더 노드 자신을 가리킨다.
 
 ```c
 typedef struct dnode *dPointer;
@@ -205,9 +205,5 @@ int ddelete(dPointer headerNode, dPointer deleted)
 </details>
 
 
-[^1]: 자료구조 5회 강의 자료 「DS_Week5_Lecture_2024」, p.19~20 (Chain With Header Node, Empty Chain With Header Node: 헤더 노드의 링크가 NULL)
-[^2]: 같은 자료, p.21 (Circular List: e의 링크가 firstNode가 가리키는 a로 돌아온다)
-[^3]: 같은 자료, p.22~23 (Doubly Linked List: firstNode, lastNode, 양 끝의 NULL. Doubly Linked Circular List: a와 e가 양방향으로 이어진다)
-[^4]: 같은 자료, p.24~25 (Doubly Linked Circular List With Header Node, 빈 목록은 두 링크가 헤더 노드 자신)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.19~25에는 그림과 제목만 있다. 네 그림을 한데 모은 ASCII 그림, 모든 코드(`llink`, `rlink`라는 이름 포함), 표현 불변식, `dinsert`의 줄 차례 설명, 얻는 것과 치르는 것의 표, 노드 크기, 알고리즘 과목 문서와 이은 말, 카드 C1~C3은 보탠 것이다. 구현 코드로 확인했다.
+[^s1]: 네 그림을 한데 모은 ASCII 그림, 모든 코드(`llink`, `rlink`라는 이름 포함), 표현 불변식, `dinsert`의 줄 차례 설명, 얻는 것과 치르는 것의 표, 노드 크기, 알고리즘 과목 문서와 이은 말, 카드 C1~C3은 보탠 것이다. 구현 코드로 확인했다.
 {% endraw %}

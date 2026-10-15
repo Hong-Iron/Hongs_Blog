@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Pulse Code Modulation", "펄스 부호 변조", "펄스 코드 변조", "PAM", "Pulse Amplitude Modulation", "표본화 정리", "Sampling Theorem", "나이퀴스트 표본화 정리", "샘플링", "양자화", "Quantization"]
 description: "목소리처럼 매끄럽게 변하는 값을 0과 1로 바꾸는 방법이다. 일정한 간격으로 값을 재고, 잰 값을 정해 둔 몇 단계 중 가장 가까운 것으로 반올림한 뒤, 그 단계 번호를 2진수로 적는다. 자주 재고 단계를 잘게 나눌수록 원래 소리에 가까워지지만, 보내야 할 비트도 그만큼 는다. 너…"
@@ -36,7 +36,7 @@ permalink: "/studies/computer-communication/pcm/"
 
 [디지털 전송](/Hongs_Blog/studies/computer-communication/digital-transmission/)은 0과 1만 다시 만들 수 있다. 그래서 목소리를 디지털로 보내려면 먼저 목소리를 숫자열로 바꿔야 한다.
 
-슬라이드 그림의 파형을 일정한 간격 $$T_s$$마다 잰다[^1].
+어떤 파형을 일정한 간격 $$T_s$$마다 잰다고 하자.
 
 | 단계 | 하는 일 | 결과 |
 |---|---|---|
@@ -44,7 +44,7 @@ permalink: "/studies/computer-communication/pcm/"
 | 2. 반올림 (양자화) | 0~7의 8단계 중 가장 가까운 정수로 | 3, 1, 6, 1, 3, 6, 4 |
 | 3. 2진수로 적기 | 단계 8개는 3비트로 적을 수 있다($$2^3 = 8$$) | 011 001 110 001 011 110 100 |
 
-마지막 줄을 이어 붙인 `011001110001011110100`이 보낼 비트열이다. 1단계에서 잰 높이를 막대(펄스)로 그린 것을 PAM 펄스, 3단계까지 거친 것을 PCM 펄스라 부른다[^1].
+마지막 줄을 이어 붙인 `011001110001011110100`이 보낼 비트열이다. 1단계에서 잰 높이를 막대(펄스)로 그린 것을 PAM 펄스, 3단계까지 거친 것을 PCM 펄스라 부른다.
 
 2단계에서 1.4가 1이 되면서 0.4만큼 틀어진다. 이 차이(양자화 오차)는 받는 쪽이 되돌릴 수 없다. 단계를 반올림하므로 오차는 한 단계 폭의 절반을 넘지 않는다[^s1].
 
@@ -53,14 +53,14 @@ permalink: "/studies/computer-communication/pcm/"
 주황 점과 파란 막대 끝 사이가 반올림 오차다. 점이 막대 끝에서 반 칸 넘게 벗어난 곳은 없다. 점과 점 사이에서 파형이 어떻게 움직였는지는 막대에 남지 않는다. 그 정보는 재는 순간에 이미 사라진다[^s4].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 표본 7개 → 3비트 21개, 4 kHz × 2 × 8비트 = 64 kbps, 카드 C2·C3 — [38_pcm_verify.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_verify/)</div>
+<div class="callout-title" markdown="span">검증: 표본 7개 → 3비트 21개, 4 kHz × 2 × 8비트 = 64 kbps, 카드 C2·C3 — [38_pcm_verify.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_verify/)</div>
 
 </div>
 
 
 ## 정의
 
-PCM은 아날로그 데이터를 디지털 데이터로 바꾼다. 재는 장치(PAM sampler)가 파형을 일정한 간격으로 재서 PAM 펄스를 만들고, 반올림 장치(Quantizer)가 각 펄스를 정해진 단계로 바꿔 PCM 펄스를 만든다[^1].
+PCM은 아날로그 데이터를 디지털 데이터로 바꾼다. 재는 장치(PAM sampler)가 파형을 일정한 간격으로 재서 PAM 펄스를 만들고, 반올림 장치(Quantizer)가 각 펄스를 정해진 단계로 바꿔 PCM 펄스를 만든다.
 
 ```mermaid
 flowchart LR
@@ -71,14 +71,14 @@ flowchart LR
   C --> B["단계 번호를 2진수로 적은 비트열"]
 ```
 
-장치 두 개를 지나며 파형이 높이 막대(PAM 펄스)로, 막대가 정해진 단계(PCM 펄스)로 바뀐다. 마지막 비트열이 보낼 데이터다[^s5].
+장치 두 개를 지나며 파형이 높이 막대(PAM 펄스)로, 막대가 정해진 단계(PCM 펄스)로 바뀐다. 마지막 비트열이 보낼 데이터다.
 
-손실을 줄이는 방법은 둘이다[^2].
+손실을 줄이는 방법은 둘이다.
 
 - 더 자주 잰다. 1초에 재는 횟수(표본화율)를 늘린다.
 - 단계를 잘게 나눈다. 표본 하나에 쓰는 비트 수를 늘린다. $$n$$비트면 $$2^n$$단계다.
 
-얼마나 자주 재야 하는지는 표본화 정리가 정한다. 소리에 든 가장 높은 주파수(1초에 떨리는 가장 많은 횟수)의 두 배보다 자주 재야 원래 파형을 되살릴 수 있다[^3][^s2].
+얼마나 자주 재야 하는지는 표본화 정리가 정한다. 소리에 든 가장 높은 주파수(1초에 떨리는 가장 많은 횟수)의 두 배보다 자주 재야 원래 파형을 되살릴 수 있다[^s2].
 
 기호로 쓰면, $$f_{\max}$$(신호에 든 가장 높은 주파수, Hz)와 $$f_s$$(1초에 재는 횟수)에 대해
 
@@ -90,12 +90,12 @@ $$f_s > 2 f_{\max}$$
 $$R = f_s \times n \ \text{(bps)}$$
 
 
-전화 음성에 대입하면, 음성의 가장 높은 주파수를 4 kHz로 잡아 1초에 8,000번 재고, 표본마다 8비트(256단계)를 쓴다[^3].
+전화 음성에 대입하면, 음성의 가장 높은 주파수를 4 kHz로 잡아 1초에 8,000번 재고, 표본마다 8비트(256단계)를 쓴다.
 
 $$8{,}000 \ \text{표본/초} \times 8 \ \text{비트/표본} = 64{,}000 \ \text{bps} = 64 \ \text{kbps}$$
 
 
-슬라이드는 "약 2배"라고 쓰고, 4 kHz 음성에 8 kHz라는 정확히 2배의 예를 든다. 실제 전화망은 음성을 미리 약 3.4 kHz 아래로 걸러 두므로, 8 kHz는 $$2f_{\max}$$보다 크다[^s2].
+표본화율을 "가장 높은 주파수의 약 2배"로 어림하기도 하고, 4 kHz 음성에 8 kHz라는 정확히 2배의 예를 든다. 실제 전화망은 음성을 미리 약 3.4 kHz 아래로 걸러 두므로, 8 kHz는 $$2f_{\max}$$보다 크다[^s2].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/38_pcm_fig2.svg" alt="그림" width="486" height="370" loading="lazy">
 
@@ -137,12 +137,8 @@ $$8{,}000 \ \text{표본/초} \times 8 \ \text{비트/표본} = 64{,}000 \ \text
 
 </details>
 
-[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 25 "PCM (Pulse Code Modulation)" (수업 슬라이드 캡처). 그림 FIGURE 3.11의 PCM output에 빨간 동그라미
-[^2]: 컴퓨터 통신 5회 필기 「5주차」, 33~37행
-[^3]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 26 "PCM을 이용한 음성 데이터의 D-data화". 필기 39~43행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 양자화 오차가 단계 폭의 절반 이하라는 것과 카드 C2·C3의 수치는 원본에 없다. 검증 코드로 계산했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 26은 "Sampling rate ≈ 2 × Highest signal frequency"다(pptx 원본의 Symbol 글꼴 문자 0xBB가 ≈, 0xB4가 ×). 필기 40행도 "≈ 2×"로 적는다. 표본화 정리의 정확한 조건은 $$f_s > 2f_{\max}$$다(Oppenheim & Willsky, *Signals and Systems*, 7.1절). 정확히 2배에서는 $$f_{\max}$$인 사인파를 매번 0인 지점에서 잴 수 있어 되살릴 수 없다. 전화 음성 대역 300~3,400 Hz는 ITU-T G.711(PCM 64 kbps)의 대역이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> T1의 24채널(1.544 Mbps = 24 × 64 kbps + 8 kbps 동기), CD의 44.1 kHz·16비트는 원본에 없다. 표준 값이다(ANSI T1.403, IEC 60908).
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. 그림 1의 곡선은 슬라이드의 표본 일곱 개를 지나도록 그린 매끄러운 곡선(3차 스플라인)이라, 표본 사이의 모양은 슬라이드의 원래 파형과 다를 수 있다. [38_pcm_plot.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_plot/)로 그렸고, 반올림 결과 3, 1, 6, 1, 3, 6, 4와 비트열 `011001110001011110100`, 반올림 오차가 0.5 이하인 것, 8 kHz로 잰 4 kHz 사인파의 값이 모두 0인 것을 같은 코드로 확인했다.
-[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 슬라이드 25 "PCM (Pulse Code Modulation)"의 그림(PAM sampler, Quantizer, PCM output)과 이 문서 '예시로 보기' 표의 세 단계를 바탕으로 그렸다.
+[^s1]: 검증 코드로 계산했다.
+[^s2]: 표본화 정리의 정확한 조건은 $$f_s > 2f_{\max}$$다(Oppenheim & Willsky, *Signals and Systems*, 7.1절). 정확히 2배에서는 $$f_{\max}$$인 사인파를 매번 0인 지점에서 잴 수 있어 되살릴 수 없다. 전화 음성 대역 300~3,400 Hz는 ITU-T G.711(PCM 64 kbps)의 대역이다.
+[^s3]: 표준 값이다(ANSI T1.403, IEC 60908).
+[^s4]: [38_pcm_plot.py](/Hongs_Blog/studies/computer-communication/code/38_pcm_plot/)로 그렸고, 반올림 결과 3, 1, 6, 1, 3, 6, 4와 비트열 `011001110001011110100`, 반올림 오차가 0.5 이하인 것, 8 kHz로 잰 4 kHz 사인파의 값이 모두 0인 것을 같은 코드로 확인했다.
 {% endraw %}

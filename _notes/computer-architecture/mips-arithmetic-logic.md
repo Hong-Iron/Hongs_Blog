@@ -123,7 +123,7 @@ ori $t0, $t0, 0x3c4d       # $t0 = 0x1A2B3C4D
 - 선수: [MIPS 레지스터와 메모리 피연산자](/Hongs_Blog/studies/computer-architecture/mips-operands/), 음수를 적는 법은 [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/)
 - x86과 견주기: x86은 계산할 때마다 결과가 0인지, 넘쳤는지를 플래그에 남긴다([산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/)). MIPS에는 플래그가 없다. 넘침은 예외로 알리고, 크기 비교는 `slt`가 결과를 보통 레지스터에 적는다.
 - 밀기의 두 종류: [논리 시프트와 산술 시프트 비교](/Hongs_Blog/studies/assembly-language/logical-vs-arithmetic-shift/). 늘리기의 두 종류: [제로 확장과 부호 확장](/Hongs_Blog/studies/assembly-language/zero-sign-extension/)
-- 컴파일러 과목의 [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)에는 `subi`, `mul`, `div`, `sgt` 같은 편의 명령이 있다. 위 표에는 없다. 곱셈과 나눗셈은 [곱셈 회로](/Hongs_Blog/studies/computer-architecture/multiplier-circuit/)와 [나눗셈 회로](/Hongs_Blog/studies/computer-architecture/divider-circuit/)에서 다룬다.
+- 컴파일러 과목의 [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)에는 `subi`, `mul`, `div`, `sgt` 같은 편의 명령이 있다. 위 표에는 없다. 곱셈과 나눗셈은 [곱셈 회로](/Hongs_Blog/studies/computer-architecture/multiplier-circuit/)와 [나눗셈 회로](/Hongs_Blog/studies/computer-architecture/divider-circuit/)에서 다룬다.
 
 ## 확인 문제
 
@@ -160,5 +160,5 @@ ori $t0, $t0, 0x3c4d       # $t0 = 0x1A2B3C4D
 [^4]: 같은 자료, 슬라이드 2 (상수를 레지스터에 넣으려면 `$zero`에 더한다: `addi $s0, $zero, 1000`)
 [^5]: University of Utah CS3810, Lecture 5 "Procedure Calls", https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-15-05.pdf, 슬라이드 13 (즉시값은 16비트, lui로 위쪽 16비트를 넣고 OR로 합쳐 32비트 상수를 만든다)
 [^6]: Green Sheet, 같은 자료 (주 (1) May cause overflow exception이 add·addi·sub에 붙고 addu·addiu·subu에는 없다. 주 (6) sltu는 피연산자를 부호 없는 수로 본다. sra는 `>>>`). Cornell CS3410 MIPS Reference Sheet, https://www.cs.cornell.edu/courses/cs3410/2018fa/resources/3410_MIPS.pdf (Add (with overflow), Add Unsig. (no overflow))
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 값을 넣은 표, 부호 확장과 제로 확장이 갈리는 까닭, 활용 절의 실수 예, 카드는 위 자료에 그대로 있지 않다. 값은 검증 코드의 흉내기로 구했다.
+[^s1]: 값을 넣은 표, 부호 확장과 제로 확장이 갈리는 까닭, 활용 절의 실수 예, 카드는 위 자료에 그대로 있지 않다. 값은 검증 코드의 흉내기로 구했다.
 {% endraw %}

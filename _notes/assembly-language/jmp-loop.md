@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/jmp-loop/"
 
 배열의 수 네 개를 더하려면 "더하기"를 네 번 쓰면 된다. 수가 천 개면 천 줄을 쓸 수는 없다. 같은 줄로 되돌아가는 명령이 필요하다.
 
-CPU는 다음에 읽을 명령의 주소를 `EIP`라는 칸([x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/))에 적어 둔다. 보통은 명령 하나를 읽을 때마다 그다음 주소로 넘어간다. `JMP`는 이 칸에 다른 주소를 써넣는다[^1].
+CPU는 다음에 읽을 명령의 주소를 `EIP`라는 칸([x86 레지스터](/Hongs_Blog/studies/assembly-language/x86-registers/))에 적어 둔다. 보통은 명령 하나를 읽을 때마다 그다음 주소로 넘어간다. `JMP`는 이 칸에 다른 주소를 써넣는다.
 
 ```asm
 top:
@@ -45,7 +45,7 @@ top:
     jmp top        ; EIP ← top의 주소. 조건 없이 되돌아간다
 ```
 
-`top:`처럼 이름 뒤에 쌍점을 붙인 것은 그 줄의 주소에 붙인 이름표(레이블)다. 위 코드는 빠져나갈 길이 없어 끝없이 돈다. 정해진 횟수만 돌려면 `LOOP`를 쓴다[^2].
+`top:`처럼 이름 뒤에 쌍점을 붙인 것은 그 줄의 주소에 붙인 이름표(레이블)다. 위 코드는 빠져나갈 길이 없어 끝없이 돈다. 정해진 횟수만 돌려면 `LOOP`를 쓴다.
 
 ```asm
     mov ax,0
@@ -67,7 +67,7 @@ L1: add ax,cx
 | `add ax,cx` | 000Fh | 1 | |
 | `loop L1` | 000Fh | 0 | 아래로 빠진다 |
 
-$$5 + 4 + 3 + 2 + 1 = 15$$, 16진수로 0Fh다[^3].
+$$5 + 4 + 3 + 2 + 1 = 15$$, 16진수로 0Fh다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 추적, Your turn 두 답(10, 4,294,967,296), 상대 오프셋 계산, 배열 합 0A00h, 문자열 복사 26바이트, 중첩 루프 2,000번, 카드 C1·C3 — [24_jmp-loop_verify.py](/Hongs_Blog/studies/assembly-language/code/24_jmp-loop_verify/) (파이썬 흉내로 확인. 실제 MASM으로 돌린 것이 아니다)</div>
@@ -77,21 +77,21 @@ $$5 + 4 + 3 + 2 + 1 = 15$$, 16진수로 0Fh다[^3].
 
 ## 정의
 
-**JMP.** `JMP 목적지`는 조건 없이 목적지 레이블로 넘어간다. 하는 일은 $$\text{EIP} \leftarrow \text{목적지}$$ 하나다(화살표는 "오른쪽 값을 왼쪽 칸에 넣는다"로 읽는다). 목적지는 보통 같은 프로시저 안의 레이블이다. 프로시저 밖으로 뛰려면 전역 레이블이어야 한다[^1]. 레이블이 어디까지 보이는지는 [레지스터 매개변수와 USES](/Hongs_Blog/studies/assembly-language/procedure-register-parameters/)에 있다.
+**JMP.** `JMP 목적지`는 조건 없이 목적지 레이블로 넘어간다. 하는 일은 $$\text{EIP} \leftarrow \text{목적지}$$ 하나다(화살표는 "오른쪽 값을 왼쪽 칸에 넣는다"로 읽는다). 목적지는 보통 같은 프로시저 안의 레이블이다. 프로시저 밖으로 뛰려면 전역 레이블이어야 한다. 레이블이 어디까지 보이는지는 [레지스터 매개변수와 USES](/Hongs_Blog/studies/assembly-language/procedure-register-parameters/)에 있다.
 
-**LOOP.** `LOOP 목적지`는 두 일을 이 순서로 한다[^2].
+**LOOP.** `LOOP 목적지`는 두 일을 이 순서로 한다.
 
 1. $$\text{ECX} \leftarrow \text{ECX} - 1$$
 2. $$\text{ECX} \ne 0$$이면 목적지로 넘어간다. 0이면 바로 아래 줄로 간다.
 
 먼저 줄이고 나서 0인지 본다. 이 순서가 아래 Your turn의 답을 정한다.
 
-**상대 오프셋.** 기계어 속의 `LOOP`에는 목적지 주소가 통째로 들어 있지 않다. 어셈블러가 "LOOP 바로 다음 명령의 주소에서 목적지까지 몇 바이트 떨어졌는가"를 계산해 그 거리만 넣는다. 이 거리를 상대 오프셋(relative offset)이라 부른다. CPU는 실행할 때 이 값을 EIP에 더한다[^2].
+**상대 오프셋.** 기계어 속의 `LOOP`에는 목적지 주소가 통째로 들어 있지 않다. 어셈블러가 "LOOP 바로 다음 명령의 주소에서 목적지까지 몇 바이트 떨어졌는가"를 계산해 그 거리만 넣는다. 이 거리를 상대 오프셋(relative offset)이라 부른다. CPU는 실행할 때 이 값을 EIP에 더한다.
 
 $$\text{상대 오프셋} = \text{목적지 주소} - \text{LOOP 다음 명령의 주소}$$
 
 
-위 예제를 어셈블한 목록이다[^3].
+위 예제를 어셈블한 목록이다.
 
 ```
 오프셋     기계어          소스
@@ -106,7 +106,7 @@ $$\text{상대 오프셋} = \text{목적지 주소} - \text{LOOP 다음 명령�
 
 ## 예제
 
-**Your turn 1.** AX의 마지막 값은?[^4]
+**Your turn 1.** AX의 마지막 값은?
 
 ```asm
     mov ax,6
@@ -125,7 +125,7 @@ L1:
 </details>
 
 
-**Your turn 2.** 이 루프는 몇 번 도는가?[^4]
+**Your turn 2.** 이 루프는 몇 번 도는가?
 
 ```asm
     mov ecx,0
@@ -142,7 +142,7 @@ X2:
 </details>
 
 
-**배열의 합.** 16비트 정수 배열을 처음부터 끝까지 더한다. 주소를 레지스터에 넣고 한 칸씩 옮겨 가는 방식은 [간접 피연산자](/Hongs_Blog/studies/assembly-language/indirect-addressing/)에서 본 것이다[^5].
+**배열의 합.** 16비트 정수 배열을 처음부터 끝까지 더한다. 주소를 레지스터에 넣고 한 칸씩 옮겨 가는 방식은 [간접 피연산자](/Hongs_Blog/studies/assembly-language/indirect-addressing/)에서 본 것이다.
 
 ```asm
 .data
@@ -159,7 +159,7 @@ L1:
 
 AX는 0100h → 0300h → 0600h → 0A00h로 바뀐다. 횟수와 건너뛸 크기를 4, 2라고 직접 쓰지 않고 [LENGTHOF와 TYPE](/Hongs_Blog/studies/assembly-language/type-lengthof-sizeof/)으로 쓴 덕에, 배열을 고쳐도 코드는 그대로다.
 
-**문자열 복사.** 인덱스로 같은 자리의 글자를 하나씩 옮긴다[^6].
+**문자열 복사.** 인덱스로 같은 자리의 글자를 하나씩 옮긴다.
 
 ```asm
 .data
@@ -177,7 +177,7 @@ L1:
 
 메모리에서 메모리로 한 번에 옮기는 `MOV`는 없어서 AL을 거친다([데이터 전송 명령](/Hongs_Blog/studies/assembly-language/data-transfer-instructions/)).
 
-**반복 안의 반복.** 안쪽 루프도 ECX를 쓴다. 그래서 안쪽으로 들어가기 전에 바깥 횟수를 다른 곳에 옮겨 두고, 나와서 되돌린다. 바깥 100번, 안쪽 20번이면 안쪽 몸통은 2,000번 돈다[^7].
+**반복 안의 반복.** 안쪽 루프도 ECX를 쓴다. 그래서 안쪽으로 들어가기 전에 바깥 횟수를 다른 곳에 옮겨 두고, 나와서 되돌린다. 바깥 100번, 안쪽 20번이면 안쪽 몸통은 2,000번 돈다.
 
 ```asm
 .data
@@ -194,7 +194,7 @@ L2: .
     loop L1
 ```
 
-치워 두지 않으면 어떻게 될까? 안쪽 루프가 끝날 때 ECX는 0이다. 바깥 `loop L1`이 이것을 1 줄여 FFFFFFFFh로 만들고 되돌아간다. 매번 같은 일이 벌어져 끝나지 않는다[^s1]. 변수 대신 스택에 치워 두는 방법(`push ecx` … `pop ecx`)은 [런타임 스택과 PUSH·POP](/Hongs_Blog/studies/assembly-language/runtime-stack/)에 있다[^8].
+치워 두지 않으면 어떻게 될까? 안쪽 루프가 끝날 때 ECX는 0이다. 바깥 `loop L1`이 이것을 1 줄여 FFFFFFFFh로 만들고 되돌아간다. 매번 같은 일이 벌어져 끝나지 않는다[^s1]. 변수 대신 스택에 치워 두는 방법(`push ecx` … `pop ecx`)은 [런타임 스택과 PUSH·POP](/Hongs_Blog/studies/assembly-language/runtime-stack/)에 있다.
 
 ## 활용
 
@@ -241,13 +241,5 @@ L2: .
 </details>
 
 
-[^1]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-3」, p.16 (JMP의 문법과 동작, 전역 레이블)
-[^2]: 같은 자료, p.17 (LOOP의 문법과 동작, 상대 오프셋)
-[^3]: 어셈블리어 6회 강의 자료 「wk06-chapt_04-3-1」, p.1 (5+4+3+2+1 예제의 오프셋·기계어 목록, 0000000E + FB)
-[^4]: 어셈블리어 5회 강의 자료 「wk05-chapt_04-3-3」, p.18 (Your turn, 답 10과 4,294,967,296)
-[^5]: 어셈블리어 6회 강의 자료 「wk06-chapt_04-3-1」, p.3 (정수 배열의 합)
-[^6]: 같은 자료, p.4 (문자열 복사)
-[^7]: 같은 자료, p.2 (중첩 루프, count 변수에 저장)
-[^8]: 어셈블리어 6회 강의 자료 「wk06-chapt_05-3-2」, p.11~12 (중첩 루프에서 push ecx, pop ecx)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 추적 표, Your turn 2의 풀이(FFFFFFFFh가 되는 과정), 바깥 횟수를 치워 두지 않을 때의 동작, 활용 항목, `for`·`do-while`과의 견줌, 카드 C1~C3은 원본에 없다. 값은 검증 코드의 파이썬 흉내로 확인했다. LOOP의 동작은 원본 p.17의 Logic 두 줄을 그대로 따랐다.
+[^s1]: 값은 검증 코드의 파이썬 흉내로 확인했다.
 {% endraw %}

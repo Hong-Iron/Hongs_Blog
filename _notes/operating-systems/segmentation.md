@@ -10,7 +10,7 @@ course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Segmentation", "세그먼트", "Segment", "세그먼트 표", "Segment Table", "세그먼트 번호"]
 description: "세그먼테이션은 프로그램을 코드, 데이터, 스택처럼 뜻이 있는 덩어리(세그먼트)로 나누고, 덩어리마다 길이를 다르게 둔다. 책을 낱장이 아니라 장(chapter) 단위로 나누는 것과 같다. 프로그래머가 보는 구조와 맞아서, 세그먼트마다 읽기 전용·실행 전용 같은 보호를 주고 통째로 …"
@@ -34,7 +34,7 @@ permalink: "/studies/operating-systems/segmentation/"
 
 ## 예시로 보기
 
-슬라이드의 세그먼트 표다[^1].
+세그먼트 세 개짜리 프로세스의 세그먼트 표다.
 
 | 세그먼트 번호 | 시작 주소 (base) | 길이 |
 |---|---|---|
@@ -54,7 +54,7 @@ permalink: "/studies/operating-systems/segmentation/"
 세그먼트는 번호 순서와 상관없이 메모리 아무 곳에나, 서로 떨어져 놓인다. 세그먼트 사이에 남은 틈은 크기가 제각각이다[^s2].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 표의 변환과 길이 초과 검사, 그림 7.12b의 8976 — [36_paging_impl.py](/Hongs_Blog/studies/operating-systems/code/36_paging_impl/)</div>
+<div class="callout-title" markdown="span">검증: 위 표의 변환과 길이 초과 검사, 16비트 주소 예의 8976 — [36_paging_impl.py](/Hongs_Blog/studies/operating-systems/code/36_paging_impl/)</div>
 
 </div>
 
@@ -64,7 +64,7 @@ permalink: "/studies/operating-systems/segmentation/"
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
 
-프로그램과 데이터를 여러 세그먼트로 나눈다. 세그먼트끼리 길이가 같을 필요는 없지만 최대 길이는 있다. 주소는 세그먼트 번호와 오프셋 두 부분이다[^2]. 운영체제는 프로세스마다 **세그먼트 표**를 두고, 세그먼트마다 시작 주소와 길이를 적는다[^3].
+프로그램과 데이터를 여러 세그먼트로 나눈다. 세그먼트끼리 길이가 같을 필요는 없지만 최대 길이는 있다. 주소는 세그먼트 번호와 오프셋 두 부분이다. 운영체제는 프로세스마다 **세그먼트 표**를 두고, 세그먼트마다 시작 주소와 길이를 적는다.
 
 </div>
 
@@ -80,7 +80,7 @@ permalink: "/studies/operating-systems/segmentation/"
 
 16비트 주소를 세그먼트 번호 4비트, 오프셋 12비트로 나눈 예(Stallings 그림 7.12b): 세그먼트 1, 오프셋 752, 세그먼트 1의 시작 주소가 8224이면 물리 주소는 8224 + 752 = 8976이다[^s1].
 
-세그먼트는 크기가 다르므로 메모리에 놓는 방식이 [동적 분할](/Hongs_Blog/studies/operating-systems/memory-partitioning/)과 비슷하다. 다른 점은 한 프로그램이 여러 세그먼트를 차지하고, 그 세그먼트들이 서로 붙어 있지 않아도 된다는 것이다[^2]. 세그먼트 하나가 커서 연속으로 두기 어려우면 그 세그먼트를 다시 페이징해서, 세그먼트마다 페이지 표를 둘 수도 있다[^4].
+세그먼트는 크기가 다르므로 메모리에 놓는 방식이 [동적 분할](/Hongs_Blog/studies/operating-systems/memory-partitioning/)과 비슷하다. 다른 점은 한 프로그램이 여러 세그먼트를 차지하고, 그 세그먼트들이 서로 붙어 있지 않아도 된다는 것이다. 세그먼트 하나가 커서 연속으로 두기 어려우면 그 세그먼트를 다시 페이징해서, 세그먼트마다 페이지 표를 둘 수도 있다.
 
 ### 페이징과 비교
 
@@ -104,11 +104,11 @@ permalink: "/studies/operating-systems/segmentation/"
 
 ## 과목별 관점
 
-**어셈블리어 (2-1학기).** x86의 실주소 모드도 주소를 "세그먼트 값 : 오프셋"으로 적지만 계산 방법이 이 문서와 다르다. 세그먼트 표를 찾지 않고, 16비트 세그먼트 값에 16을 곱해 16비트 오프셋을 더한다. `08F1:0100`은 `08F10h + 0100h = 09010h`다[^a1]. 길이 검사가 없어서 응용 프로그램이 메모리 어디든 손댈 수 있다[^a2]. 이 문서의 3단계(길이 초과 검사)가 주는 보호가 빠진 꼴이다. 자세한 것은 [실주소 모드의 세그먼트 주소](/Hongs_Blog/studies/assembly-language/real-mode-segment-address/)에 있다.
+**어셈블리어 (2-1학기).** x86의 실주소 모드도 주소를 "세그먼트 값 : 오프셋"으로 적지만 계산 방법이 이 문서와 다르다. 세그먼트 표를 찾지 않고, 16비트 세그먼트 값에 16을 곱해 16비트 오프셋을 더한다. `08F1:0100`은 `08F10h + 0100h = 09010h`다. 길이 검사가 없어서 응용 프로그램이 메모리 어디든 손댈 수 있다. 이 문서의 3단계(길이 초과 검사)가 주는 보호가 빠진 꼴이다. 자세한 것은 [실주소 모드의 세그먼트 주소](/Hongs_Blog/studies/assembly-language/real-mode-segment-address/)에 있다.
 
 ## 확인 문제
 
-<details markdown="1"><summary markdown="span"><b>C1</b> 슬라이드 세그먼트 표(1: base 12, 길이 12 / 2: base 0, 길이 10 / 3: base 26, 길이 4)에서 (세그먼트 2, 오프셋 9)와 (세그먼트 1, 오프셋 12)는 각각 어떻게 되는가?</summary>
+<details markdown="1"><summary markdown="span"><b>C1</b> 예시의 세그먼트 표(1: base 12, 길이 12 / 2: base 0, 길이 10 / 3: base 26, 길이 4)에서 (세그먼트 2, 오프셋 9)와 (세그먼트 1, 오프셋 12)는 각각 어떻게 되는가?</summary>
 
 
 **답:** (2, 9) → 0 + 9 = 9번지. 길이 10 안이다. (1, 12) → 오프셋 12가 길이 12 이상이라 잘못된 주소다(오프셋은 0~11만 쓸 수 있다).<br>
@@ -130,12 +130,6 @@ permalink: "/studies/operating-systems/segmentation/"
 
 </details>
 
-[^1]: 운영체제 7회 강의 자료 「chap7 (Stony Brook)」, p.35
-[^2]: 같은 자료, p.33
-[^3]: 같은 자료, p.34
-[^4]: 같은 자료, p.34
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 장은 교수 자료가 없어 Stony Brook 대학 CSE306의 공개 슬라이드(Stallings 교재 기반)를 원본으로 썼다. 표로 계산한 예, 변환 단계, 그림 7.12b 예, 페이징과의 비교표, 실행 파일·segmentation fault 연결, 확인 문제는 Stallings 6판 7.4절을 바탕으로 보탰다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "예시로 보기"의 세그먼트 표(p.35)에서 시작 주소와 길이로 계산한 메모리 배치를 그렸다. 칸 너비는 크기에 비례하지 않는다.
-[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.9~10 (Segmented Memory, Calculating Linear Addresses: 08F1:0100 → 09010)
-[^a2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-3」, p.8 (Real-Address mode: Application programs can access any area of memory)
+[^s1]: 표로 계산한 예, 변환 단계, 그림 7.12b 예, 페이징과의 비교표, 실행 파일·segmentation fault 연결, 확인 문제는 Stallings 6판 7.4절을 바탕으로 보탰다.
+[^s2]: 칸 너비는 크기에 비례하지 않는다.
 {% endraw %}

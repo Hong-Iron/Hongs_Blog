@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/40_content-based_verify/"
 """내용 기반 추천(TF-IDF, 사용자 프로필, 코사인 효용) 검증.
 
 문서: 40.내용 기반 추천 (예시, 정의, 카드)
-출처: 데이터 과학 11회 슬라이드 11-1 p.13~19
 TF_ij = f_ij / max_z f_zj,  IDF_i = log(N / n_i),  w_ij = TF_ij * IDF_i  (로그는 밑 2)
 사용자 프로필 = 읽은 글 벡터의 평균, 효용 u(c, s) = cos(사용자 프로필, 글 프로필)
 주장:

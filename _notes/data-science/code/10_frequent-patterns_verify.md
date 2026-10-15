@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/10_frequent-patterns_verify/"
 """빈발 패턴과 지지도 검증.
 
 문서: 10.빈발 패턴 (예시, 정의, 카드), 11.연관 규칙 (예시, 카드)
-출처: 데이터 과학 3회 슬라이드 3-1 p.7~11
 주장:
   1. 거래 5개(맥주·견과·기저귀 / 맥주·커피·기저귀 / 맥주·기저귀·달걀 / 견과·달걀·우유 / 견과·커피·기저귀·달걀·우유)에서
      지지 개수 맥주 3, 기저귀 4, 견과 3, {맥주, 기저귀} 3, {맥주, 달걀} 1, {견과, 달걀} 2.
@@ -45,15 +44,15 @@ def sup(db, X):
 def main():
     assert (sup(DB, ["Beer"]), sup(DB, ["Diaper"]), sup(DB, ["Nuts"])) == (3, 4, 3)
     assert (sup(DB, ["Beer", "Diaper"]), sup(DB, ["Beer", "Eggs"]), sup(DB, ["Nuts", "Eggs"])) == (3, 1, 2)
-    print("[OK] p.7 지지 개수")
+    print("[OK] 영수증 5장의 지지 개수")
     items = sorted({i for t in DB for i in t})
     freq = {k: [c for c in combinations(items, k) if sup(DB, c) / 5 >= 0.5] for k in (1, 2, 3)}
     assert sorted(x[0] for x in freq[1]) == ["Beer", "Diaper", "Eggs", "Nuts"]
     assert freq[2] == [("Beer", "Diaper")] and freq[3] == []
-    print("[OK] p.8: 빈발 1항목 4개, 2항목 {Beer, Diaper} 하나, 3항목 없음")
+    print("[OK] min_sup 50%: 빈발 1항목 4개, 2항목 {Beer, Diaper} 하나, 3항목 없음")
     s = sup(DB, ["Beer", "Diaper"]) / 5
     assert s == 0.6 and sup(DB, ["Beer", "Diaper"]) / sup(DB, ["Diaper"]) == 0.75 and sup(DB, ["Beer", "Diaper"]) / sup(DB, ["Beer"]) == 1
-    print("[OK] p.10: Diaper -> Beer (60%, 75%), Beer -> Diaper (60%, 100%)")
+    print("[OK] 규칙: Diaper -> Beer (60%, 75%), Beer -> Diaper (60%, 100%)")
 
     rnd = random.Random(5)
     for _ in range(200):
@@ -66,7 +65,7 @@ def main():
     print("[OK] 무작위 자료 200개: 빈발 집합의 부분집합은 모두 빈발 (아프리오리 성질)")
     n = 2 ** 100 - 1
     assert 1.26e30 < n < 1.27e30
-    print(f"[OK] p.11: 길이 100 빈발 집합의 부분집합 {n:.3e}개")
+    print(f"[OK] 길이 100 빈발 집합의 부분집합 {n:.3e}개")
 
     # 카드 C2 (10): 같은 DB에서 {Nuts, Milk}의 지지 개수와 상대 지지도
     assert sup(DB, ["Nuts", "Milk"]) == 2

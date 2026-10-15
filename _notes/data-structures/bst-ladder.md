@@ -10,11 +10,11 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 이진 탐색 트리의 탐색과 삽입, 이진 탐색 트리의 삭제의 네 경우."
 prev_url: "/studies/data-structures/week9-inclass/"
-prev_title: "9주차 수업 문제 풀이"
+prev_title: "트리와 힙 문제 풀이"
 next_url: "/studies/data-structures/selection-tree-ladder/"
 next_title: "승자 트리와 패자 트리 재경기 예제 사다리"
 math: false
@@ -25,13 +25,13 @@ permalink: "/studies/data-structures/bst-ladder/"
 {% raw %}
 사용 개념: [이진 탐색 트리의 탐색과 삽입](/Hongs_Blog/studies/data-structures/bst-search-insert/), [이진 탐색 트리의 삭제](/Hongs_Blog/studies/data-structures/bst-delete/)의 네 경우.
 
-"이 순서로 넣고 이 키를 지운 뒤의 나무를 그려라"는 문제는 같은 하위목표의 되풀이다. 넣기는 ① 내려가기(작으면 왼쪽, 크면 오른쪽) ② 빈자리에 매달기다. 지우기는 ① 찾기 ② 경우 가르기(자식이 0개, 1개, 2개) ③ 고치기 ④ 확인(중위 순회가 커지기만 하는가)이다. 자식이 둘이면 이 강의는 **왼쪽 부분 트리에서 가장 큰 키**를 올린다[^1].
+"이 순서로 넣고 이 키를 지운 뒤의 나무를 그려라"는 문제는 같은 하위목표의 되풀이다. 넣기는 ① 내려가기(작으면 왼쪽, 크면 오른쪽) ② 빈자리에 매달기다. 지우기는 ① 찾기 ② 경우 가르기(자식이 0개, 1개, 2개) ③ 고치기 ④ 확인(중위 순회가 커지기만 하는가)이다. 자식이 둘이면 이 문서 모음에서는 **왼쪽 부분 트리에서 가장 큰 키**를 올린다.
 
 나무는 `노드(왼쪽, 오른쪽)` 꼴로 적는다. `−`는 빈자리이고, 자식이 없는 노드는 괄호 없이 적는다. 답을 맞춰 볼 때는 전위 순회(자기 → 왼쪽 → 오른쪽)를 쓴다. 전위 순회와 "이진 탐색 트리다"라는 사실을 함께 알면 모양이 하나로 정해지기 때문이다[^s1].
 
 ## 문제 1 · 완전한 풀이
 
-빈 나무에 20, 10, 40, 6, 15, 30, 2, 8, 25, 18, 35, 7을 차례로 넣고, 10을 지운다[^2].
+빈 나무에 20, 10, 40, 6, 15, 30, 2, 8, 25, 18, 35, 7을 차례로 넣고, 10을 지운다.
 
 **넣기.**
 
@@ -138,7 +138,5 @@ flowchart TD
 </div>
 
 
-[^1]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_BST_2024」, p.11 (지우기의 네 경우), p.15 ("Replace with largest key in left subtree (or smallest in right subtree).")
-[^2]: 같은 자료, p.6, p.12 (나무의 그림), p.15~16 (10을 지우는 그림)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표 이름, 문제 2 ~ 4의 나무와 수치, 문제 1의 풀이 글은 원본에 없다. 문제 1의 나무와 10 지우기는 슬라이드의 그림이다. 모든 답은 문제 코드로 확인했다.
+[^s1]: 모든 답은 문제 코드로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-28"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 신경발달장애, 지적장애, 사회적 의사소통장애, 자폐스펙트럼장애, 자폐스펙트럼장애와 사회적 의사소통장애 비교, 주의력결핍 과잉행동장애, 특정학습장애, 상동증적 운동장애, 틱장애, 틱장애와 상동증적 운동장애 비교"
 prev_url: "/studies/abnormal-psychology/addiction-practice/"
@@ -112,5 +112,5 @@ permalink: "/studies/abnormal-psychology/neurodevelopmental-practice/"
 </details>
 
 
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 모든 사례와 풀이는 11.신경발달장애, 신경인지장애.pdf의 장애별 설명(p.3~58)을 적용한 가상 사례다.
+[^s1]: 모든 사례와 풀이는 가상 사례다.
 {% endraw %}

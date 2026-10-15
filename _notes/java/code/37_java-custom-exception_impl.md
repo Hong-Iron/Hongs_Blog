@@ -51,7 +51,7 @@ class CustomExceptionImpl {
         System.out.println("ok  " + what);
     }
 
-    // 슬라이드 p.22 AccountExample. 찾는 돈만 바꿔 가며 돌린다.
+    // 문서의 계좌 예제. 찾는 돈만 바꿔 가며 돌린다.
     static void example(long money) {
         Account account = new Account();
 
@@ -69,7 +69,7 @@ class CustomExceptionImpl {
     }
 
     public static void main(String[] args) throws Throwable {
-        same(capture(() -> example(5000)), "Deposit: 10000\nDeposit: 5000\n", "p.22 그대로(5000원 찾기): 예외 없음");
+        same(capture(() -> example(5000)), "Deposit: 10000\nDeposit: 5000\n", "문서 코드 그대로(5000원 찾기): 예외 없음");
         same(capture(() -> example(30000)),
                 "Deposit: 10000\nInsufficient balance: need more 20000 won.\nDeposit: 10000\n",
                 "30000원 찾기: 예외가 나고 잔액은 그대로");
@@ -101,7 +101,7 @@ class CustomExceptionImpl {
     }
 }
 
-// 슬라이드 p.20 InsufficientException (일반 예외)
+// 문서의 InsufficientException (일반 예외)
 class InsufficientException extends Exception {
     public InsufficientException() {}
     public InsufficientException(String message) {
@@ -116,7 +116,7 @@ class NegativeAmountException extends RuntimeException {
     }
 }
 
-// 슬라이드 p.21 Account
+// 문서의 Account
 class Account {
     private long balance;
 

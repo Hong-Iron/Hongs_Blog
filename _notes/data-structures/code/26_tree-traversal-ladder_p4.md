@@ -202,7 +202,7 @@ static treePointer buildShape(int n, long idx, const char *labels, int *pos)
 
 int main(void)
 {
-    /* 문제 1: 슬라이드 p.33의 트리 a(b(d(g, h), e(-, i)), c(f(-, j), -)) */
+    /* 문제 1: 문서의 트리 a(b(d(g, h), e(-, i)), c(f(-, j), -)) */
     treePointer t1 =
         N('a', N('b', N('d', N('g', NULL, NULL), N('h', NULL, NULL)), N('e', NULL, N('i', NULL, NULL))),
                N('c', N('f', NULL, N('j', NULL, NULL)), NULL));

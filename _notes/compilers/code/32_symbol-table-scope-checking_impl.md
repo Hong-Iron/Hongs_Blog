@@ -20,7 +20,7 @@ permalink: "/studies/compilers/code/32_symbol-table-scope-checking_impl/"
 [심벌 테이블과 스코프 검사](/Hongs_Blog/studies/compilers/symbol-table-scope-checking/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 구현과 검증: 심벌 테이블과 스코프 검사 (L09 p.19~55)
+# 구현과 검증: 심벌 테이블과 스코프 검사 (문서의 두 방법과 예)
 # 실행: python3 32_symbol-table-scope-checking_impl.py
 # AST 노드: ("decl", 이름, 타입), ("use", 이름), ("block", [노드...]),
 #           ("func", 이름, 타입, [(매개변수 이름, 타입)...], [몸통 노드...]), ("call", 이름),
@@ -28,7 +28,7 @@ permalink: "/studies/compilers/code/32_symbol-table-scope-checking_impl/"
 import random
 
 
-# ---------- 방법 1: 표 하나에 스코프 깊이를 적는다 (L09 p.19~29) ----------
+# ---------- 방법 1: 표 하나에 스코프 깊이를 적는다 ----------
 def flat_table(ast):
     """돌려주는 것: (표, 쓰임마다 찾은 줄). 표의 한 줄 = (이름, 타입, 깊이). 블록을 나가도 줄은 남는다."""
     table, found = [], []
@@ -56,7 +56,7 @@ def flat_table(ast):
     return table, found
 
 
-# ---------- 방법 2: 스코프마다 표를 하나씩 만들고 부모로 잇는다 (L09 p.32~50) ----------
+# ---------- 방법 2: 스코프마다 표를 하나씩 만들고 부모로 잇는다 ----------
 class Table:
     def __init__(self, parent=None):
         self.parent = parent
@@ -173,26 +173,26 @@ def random_ast(rng, depth):
 
 
 if __name__ == "__main__":
-    # (1) L09 p.19: int foo() { int a; int b; { int a; { int b; } } }
+    # (1) 문서의 첫 예: int foo() { int a; int b; { int a; { int b; } } }
     prog = [("func", "foo", "int", [], [
         ("decl", "a", "int"), ("decl", "b", "int"),
         ("block", [("decl", "a", "int"), ("block", [("decl", "b", "int")])])])]
     table, _ = flat_table(prog)
     assert table == [("foo", "int", 0), ("a", "int", 1), ("b", "int", 1), ("a", "int", 2), ("b", "int", 3)]
 
-    # (2) L09 p.27~29: 깊이 3에서 b, 선언 전의 b, c를 쓰면
+    # (2) 깊이 3에서 b, 선언 전의 b, c를 쓰면
     def inner(stmts):
         return [("func", "foo", "int", [], [
             ("decl", "a", "int"), ("decl", "b", "int"),
             ("block", [("decl", "a", "int"), ("block", stmts)])])]
     _, f = flat_table(inner([("decl", "b", "int"), ("use", "b")]))
-    assert f == [("b", ("b", "int", 3))]                        # p.27: 같은 깊이에 있다
+    assert f == [("b", ("b", "int", 3))]                        # 같은 깊이에 있다
     _, f = flat_table(inner([("use", "b"), ("decl", "b", "int")]))
-    assert f == [("b", ("b", "int", 1))]                        # p.28: 없으니 바깥에서 가장 가까운 것
+    assert f == [("b", ("b", "int", 1))]                        # 없으니 바깥에서 가장 가까운 것
     _, f = flat_table(inner([("decl", "b", "int"), ("use", "c")]))
-    assert f == [("c", None)]                                   # p.29: 어디에도 없다 -> 오류
+    assert f == [("c", None)]                                   # 어디에도 없다 -> 오류
 
-    # (3) L09 p.30: 형제 블록 { int c; } 를 붙이면 표가 헷갈린다
+    # (3) 형제 블록 { int c; } 를 붙이면 표가 헷갈린다
     prog30 = [("func", "foo", "int", [], [
         ("decl", "a", "int"), ("decl", "b", "int"),
         ("block", [("decl", "a", "int"), ("block", [("decl", "b", "int")])]),
@@ -203,13 +203,13 @@ if __name__ == "__main__":
     root, errors, uses = scope_check(prog30)
     assert errors == [] and uses == [("a", 1)]                  # 맞는 답: 한 칸 위(함수 몸통)의 a
 
-    # (4) L09 p.32, p.44: 표 다섯 개와 부모 연결
+    # (4) 표 다섯 개와 부모 연결
     assert shape(root) == ([("foo", "int")], [
         ([("a", "int"), ("b", "int")], [
             ([("a", "int")], [([("b", "int")], [])]),
             ([("c", "int")], [])])])
 
-    # (5) L09 p.46~50: 가장 안쪽 블록에서 printf(b); int b; printf(b); printf(c);
+    # (5) 가장 안쪽 블록에서 printf(b); int b; printf(b); printf(c);
     prog46 = [("func", "foo", "int", [], [
         ("decl", "a", "int"), ("decl", "b", "int"),
         ("block", [("decl", "a", "int"),
@@ -219,7 +219,7 @@ if __name__ == "__main__":
     assert uses == [("b", 2), ("b", 0), ("c", None)]            # 조상에서, 지금 표에서, 어디에도 없음
     assert errors == ["선언 안 됨: c"]
 
-    # (6) L09 p.5~7의 예: 규칙 1~3
+    # (6) 의미 분석 문서의 규칙 1~3 예
     ok1 = [("decl", "a", "int"), ("func", "foo", "void", [], [("use", "a")])]
     ok2 = [("func", "foo", "void", [("a", "int")], [("use", "a")])]
     ok3 = [("func", "foo", "void", [], [("decl", "a", "int"), ("use", "a")])]
@@ -233,7 +233,7 @@ if __name__ == "__main__":
     assert scope_check(bad3)[1] == ["중복 선언: foo"]                      # 규칙 3
     assert scope_check(bad3, two_pass=True)[1] == ["중복 선언: foo"]
 
-    # (7) L09 p.17, p.52~53: 선언보다 먼저 부르는 함수는 두 번 훑어야 통과한다
+    # (7) 선언보다 먼저 부르는 함수는 두 번 훑어야 통과한다
     cls = [("class", "test", [
         ("func", "bar", "void", [], [("call", "foo")]),
         ("func", "foo", "void", [], [])])]
@@ -244,7 +244,7 @@ if __name__ == "__main__":
     # 변수는 두 번 훑어도 선언 전에 못 쓴다
     assert scope_check(bad1, two_pass=True)[1] == ["선언 안 됨: a"]
 
-    # (7-2) L09 p.18, p.54: 물려받은 함수. 클래스의 표를 부모 클래스의 표에 이으면 찾는다
+    # (7-2) 물려받은 함수. 클래스의 표를 부모 클래스의 표에 이으면 찾는다
     inh = [("class", "Parent", [("func", "foo", "void", [], [])]),
            ("class", "Test", [("func", "bar", "void", [], [("call", "foo")])], "Parent")]
     assert scope_check(inh, two_pass=True, inherit=False)[1] == ["선언 안 됨: foo"]

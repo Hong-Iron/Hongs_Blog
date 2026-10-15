@@ -325,7 +325,7 @@ if __name__ == "__main__":
     # LEA = 주소(0FF4h), MOV = 그 자리의 값(55h)
     m = CPU(LEA_VS_MOV).run("main")
     assert m.r["esi"] == 0x0FF4 and m.r["edi"] == 0x55 and m.r["eax"] == 0x55
-    # p.9: 지역 변수가 [ebp-8]일 때 lea esi,[ebp-8]은 ESI = EBP - 8
+    # 지역 변수가 [ebp-8]일 때 lea esi,[ebp-8]은 ESI = EBP - 8
     assert m.r["esi"] == m.r["ebp"] - 8
     print("ALL CHECKS PASSED")
 ```

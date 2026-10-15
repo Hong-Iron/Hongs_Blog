@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Nested Query", "중첩 질의", "부질의", "서브쿼리", "Subquery", "바깥 질의", "Outer Query", "안쪽 질의", "Inner Query", "IN 연산자", "IN", "명시적 집합", "Explicit Set"]
 description: "어떤 질문은 다른 질문의 답을 먼저 알아야 답할 수 있다. \"Smith가 일하는 프로젝트 번호\"를 쪽지에 적어 두고, 프로젝트 표를 훑으며 번호가 쪽지에 있는 것만 고르는 식이다. 질의 안에 다른 질의를 통째로 넣으면 쪽지를 손으로 옮겨 적지 않아도 되고, 표가 바뀌어도 답이 늘 …"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/nested-query-in/"
 
 "Smith라는 직원이 일하고 있거나, Smith가 관리자인 부서가 맡은 프로젝트의 번호를 모두 구하라." 손으로 하면 두 번에 나눠 한다. 먼저 Smith가 일하는 프로젝트 번호를 찾아 쪽지에 적는다. 그다음 프로젝트 표를 훑으며 번호가 쪽지에 있는 것을 고른다. 이렇게 하면 질의를 두 번 쓰고, 첫 결과를 사람이 둘째 질의에 옮겨 적어야 한다. Smith가 내일 다른 프로젝트에도 들어가면 옮겨 적은 값은 틀린 값이 된다.
 
-SQL에서는 쪽지를 만드는 질의를 괄호에 넣어 조건 안에 그대로 적는다[^1].
+SQL에서는 쪽지를 만드는 질의를 괄호에 넣어 조건 안에 그대로 적는다.
 
 ```sql
 SELECT DISTINCT Pnumber
@@ -62,25 +62,25 @@ COMPANY 상태([관계형 데이터베이스 스키마와 상태](/Hongs_Blog/st
 Smith는 어느 부서의 관리자도 아니라서 첫째 쪽지가 비어 있다. 빈 쪽지에는 아무 번호도 없으니 첫째 조건은 늘 거짓이고, 둘째 조건이 참인 1번과 2번만 남는다. 같은 질문을 두 질의의 합집합으로 쓴 판은 [집합 연산 UNION·EXCEPT·INTERSECT](/Hongs_Blog/studies/database-design/sql-set-operations/)에 있다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 표, Q17의 4행, Q16의 0행과 별칭 실험(2명과 3명), 부양가족 둘 이상(Smith, Wong), 두 겹 예제, 카드 C2·C3. SQLite 3.50.4와 PostgreSQL 16에서 실행했고, 여러 행을 돌려주는 안쪽 질의 앞의 `=`만 두 제품의 동작이 다르다(PostgreSQL은 오류, SQLite는 첫 행만 쓴다) — [60_nested-query-in_verify.py](/Hongs_Blog/studies/database-design/code/60_nested-query-in_verify/), [60_nested-query-in_verify.sql](/Hongs_Blog/studies/database-design/code/60_nested-query-in_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: 위 표, `Pno IN (1, 2, 3)`의 4행, 이름과 성별이 같은 부양가족 질의의 0행과 별칭 실험(2명과 3명), 부양가족 둘 이상(Smith, Wong), 두 겹 예제, 카드 C2·C3. SQLite 3.50.4와 PostgreSQL 16에서 실행했고, 여러 행을 돌려주는 안쪽 질의 앞의 `=`만 두 제품의 동작이 다르다(PostgreSQL은 오류, SQLite는 첫 행만 쓴다) — [60_nested-query-in_verify.py](/Hongs_Blog/studies/database-design/code/60_nested-query-in_verify/), [60_nested-query-in_verify.sql](/Hongs_Blog/studies/database-design/code/60_nested-query-in_verify-sql/)</div>
 
 </div>
 
 
 ## 정의
 
-질의 하나(SELECT-FROM-WHERE 한 덩어리)가 통째로 다른 질의의 `WHERE` 절 안에 들어가 있으면 중첩 질의(nested query)라 부른다[^1]. 감싸는 쪽이 바깥 질의(outer query), 괄호 안에 든 쪽이 안쪽 질의(inner query)다.
+질의 하나(SELECT-FROM-WHERE 한 덩어리)가 통째로 다른 질의의 `WHERE` 절 안에 들어가 있으면 중첩 질의(nested query)라 부른다. 감싸는 쪽이 바깥 질의(outer query), 괄호 안에 든 쪽이 안쪽 질의(inner query)다.
 
 - 쓰임: 데이터베이스에 들어 있는 값을 먼저 꺼내 오고, 그 값을 `WHERE`의 비교에 쓴다.
 - 안쪽 질의의 결과는 표다. 행이 없을 수도, 여럿일 수도, 같은 행이 두 번 나올 수도 있다([다중집합인 표와 DISTINCT](/Hongs_Blog/studies/database-design/sql-multiset-distinct/)).
 - 안쪽 질의는 `WHERE` 말고 `FROM`, `SELECT` 같은 다른 절에도 넣을 수 있다.
-- 안쪽 질의 안에 또 질의를 넣어 여러 겹으로 쌓을 수 있다[^3].
+- 안쪽 질의 안에 또 질의를 넣어 여러 겹으로 쌓을 수 있다.
 
-**IN.** `v IN V`는 값 `v`를 값의 모음 `V`와 견준다. `v`가 `V`의 원소 가운데 하나와 같으면 참이다[^2].
+**IN.** `v IN V`는 값 `v`를 값의 모음 `V`와 견준다. `v`가 `V`의 원소 가운데 하나와 같으면 참이다.
 
 기호로 쓰면 $$v \in V$$이고, 풀어 쓰면 $$\exists x \in V\ (v = x)$$다. $$\in$$은 "~에 들어 있다", $$\exists x \in V$$는 "$$V$$ 안에 그런 $$x$$가 적어도 하나 있다"로 읽는다([술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/)). $$V$$가 비어 있으면 그런 $$x$$가 없으므로 거짓이다.
 
-`V` 자리에는 안쪽 질의 대신 값을 직접 늘어놓아도 된다. 이것을 명시적 집합(explicit set)이라 부른다[^4].
+`V` 자리에는 안쪽 질의 대신 값을 직접 늘어놓아도 된다. 이것을 명시적 집합(explicit set)이라 부른다.
 
 ```sql
 SELECT DISTINCT Essn
@@ -92,7 +92,7 @@ WHERE  Pno IN (1, 2, 3);
 
 ### 값 하나를 돌려주는 안쪽 질의
 
-안쪽 질의의 결과가 한 행 한 열, 곧 값 하나뿐이면 그 값을 `=`, `>`, `>=` 같은 비교에 바로 쓸 수 있다. 부양가족이 둘 이상인 직원을 찾는 질의가 그렇다[^5].
+안쪽 질의의 결과가 한 행 한 열, 곧 값 하나뿐이면 그 값을 `=`, `>`, `>=` 같은 비교에 바로 쓸 수 있다. 부양가족이 둘 이상인 직원을 찾는 질의가 그렇다.
 
 ```sql
 SELECT Lname, Fname
@@ -106,7 +106,7 @@ WHERE  ( SELECT COUNT(*)
 
 ### 이름이 겹칠 때
 
-바깥 질의의 표와 안쪽 질의의 표에 이름이 같은 열이 있으면 어느 표의 열인지 헷갈린다. 표 이름을 붙이지 않은 열은 가장 안쪽 질의의 표에서 먼저 찾는다[^s2]. 슬라이드는 이런 모호함을 피하도록 질의에 나오는 모든 표에 별칭을 붙이라고 권한다[^3].
+바깥 질의의 표와 안쪽 질의의 표에 이름이 같은 열이 있으면 어느 표의 열인지 헷갈린다. 표 이름을 붙이지 않은 열은 가장 안쪽 질의의 표에서 먼저 찾는다[^s2]. 이런 헷갈림을 피하려면 질의에 나오는 모든 표에 별칭을 붙인다.
 
 ```sql
 SELECT E.Fname, E.Lname
@@ -211,17 +211,10 @@ WHERE  Ssn IN ( SELECT Essn
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"안쪽 질의 앞에는 = 을 써도 IN을 써도 같다"</div>
 
-틀렸다. `=`는 값 하나와 값 하나를 견준다. 안쪽 질의가 한 행만 돌려줄 때는 `=`와 `IN`의 결과가 같아서 둘이 같은 말처럼 보인다. "Franklin Wong이 상사인 직원"을 찾는 `E.Super_ssn = ( SELECT … WHERE Fname = 'Franklin' AND Lname = 'Wong' )`은 안쪽이 한 행이라 잘 돈다(Smith, Narayan, English)[^6]. 안쪽이 두 행 이상을 돌려주면 달라진다. "상사의 상사가 888665555인 직원"을 `Super_ssn = ( SELECT Ssn FROM EMPLOYEE WHERE Super_ssn = '888665555' )`로 쓰면 안쪽 결과가 Wong과 Wallace 두 행이다. PostgreSQL 16은 "more than one row returned by a subquery used as an expression" 오류로 멈춘다. SQLite는 오류 없이 첫 행(Wong)만 써서 3명을 내놓는데, 맞는 답은 5명이다. `IN`으로 바꾸면 두 제품 모두 5명(Smith, Zelaya, Narayan, English, Jabbar)을 낸다. 확인하는 법: 안쪽 질의만 따로 돌려 행이 몇 개 나오는지 본다. 기본 키로 한 행을 짚거나 `MAX`, `COUNT`처럼 값 하나로 줄이는 계산이 아니면 `IN`을 쓴다.
+틀렸다. `=`는 값 하나와 값 하나를 견준다. 안쪽 질의가 한 행만 돌려줄 때는 `=`와 `IN`의 결과가 같아서 둘이 같은 말처럼 보인다. "Franklin Wong이 상사인 직원"을 찾는 `E.Super_ssn = ( SELECT … WHERE Fname = 'Franklin' AND Lname = 'Wong' )`은 안쪽이 한 행이라 잘 돈다(Smith, Narayan, English). 안쪽이 두 행 이상을 돌려주면 달라진다. "상사의 상사가 888665555인 직원"을 `Super_ssn = ( SELECT Ssn FROM EMPLOYEE WHERE Super_ssn = '888665555' )`로 쓰면 안쪽 결과가 Wong과 Wallace 두 행이다. PostgreSQL 16은 "more than one row returned by a subquery used as an expression" 오류로 멈춘다. SQLite는 오류 없이 첫 행(Wong)만 써서 3명을 내놓는데, 맞는 답은 5명이다. `IN`으로 바꾸면 두 제품 모두 5명(Smith, Zelaya, Narayan, English, Jabbar)을 낸다. 확인하는 법: 안쪽 질의만 따로 돌려 행이 몇 개 나오는지 본다. 기본 키로 한 행을 짚거나 `MAX`, `COUNT`처럼 값 하나로 줄이는 계산이 아니면 `IN`을 쓴다.
 
 </div>
 
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 12주차 풀이 Q3-2 `SELECT Fname, Minit, Lname FROM EMPLOYEE WHERE Super_ssn = ( SELECT Ssn FROM EMPLOYEE WHERE Super_ssn = '888665555');`[^7] / 문제점: `=` 뒤의 안쪽 질의가 2행(Wong, Wallace)을 돌려준다 / 수정안: `=`를 `IN`으로 바꾼다 / 근거: PostgreSQL 16은 오류, SQLite는 첫 행만 써서 3명, `IN`은 5명 — [60_nested-query-in_verify.sql](/Hongs_Blog/studies/database-design/code/60_nested-query-in_verify-sql/)
-
-</div>
 
 
 ## 확인 문제
@@ -262,14 +255,7 @@ WHERE  Ssn IN ( SELECT Essn
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.11 (Nested Query의 뜻, Query 4의 중첩 판, Outer query와 Inner query). 같은 그림이 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.3에 다시 나온다.
-[^2]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.12 (IN operator: 값 v를 값의 집합 또는 다중집합 V와 견준다)
-[^3]: 같은 자료, p.14 (Ambiguity in Nested Queries, Query 16, 모든 표에 별칭을 붙이라는 권고)
-[^4]: 같은 자료, p.19 (Explicit Sets, Query 17)
-[^5]: 같은 자료, p.30 (안쪽 질의에 집계 함수를 쓴 선택 조건)
-[^6]: 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.23 (연습 4-c의 풀이: 한 행을 돌려주는 안쪽 질의 앞의 `=`)
-[^7]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.7 (Q3-2의 풀이). 문제는 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.19
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 쪽지 비유와 Wong으로 바꾼 줄은 슬라이드에 없다. 슬라이드는 질의만 싣고 결과 표는 싣지 않았다. 표의 값은 검증 코드로 실행해 얻었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "이름만 쓴 열은 가장 안쪽 질의의 표에서 찾는다"는 규칙의 글과 `Sex = Sex` 실험은 슬라이드에 없다. 규칙은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Nested Queries, Tuples, and Set/Multiset Comparisons"에 있고, 표의 두 결과는 SQLite와 PostgreSQL 16에서 실행해 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 겹 예제, 스스로 설명해 보기, 카드 C2~C4의 질의와 답은 슬라이드에 없다. 검증 코드로 실행해 확인했다.
+[^s1]: 표의 값은 검증 코드로 실행해 얻었다.
+[^s2]: 규칙은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Nested Queries, Tuples, and Set/Multiset Comparisons"에 있고, 표의 두 결과는 SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s3]: 검증 코드로 실행해 확인했다.
 {% endraw %}

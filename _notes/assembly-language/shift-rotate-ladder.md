@@ -25,7 +25,7 @@ permalink: "/studies/assembly-language/shift-rotate-ladder/"
 {% raw %}
 사용 개념: [시프트 명령](/Hongs_Blog/studies/assembly-language/shift-instructions/), [회전 명령](/Hongs_Blog/studies/assembly-language/rotate-instructions/), [이중 시프트 SHLD·SHRD](/Hongs_Blog/studies/assembly-language/double-shift/).
 
-"이 명령들을 차례로 실행한 뒤의 값을 16진으로 쓰라"는 문제는 명령마다 같은 하위목표를 되풀이한다[^s1].
+"이 명령들을 차례로 실행한 뒤의 값을 16진으로 쓰라"는 문제는 명령마다 같은 하위목표를 되풀이한다.
 
 1. *펴기:* 지금 값을 2진수로 편다(16진 한 자리 = 4비트).
 2. *옮기기:* 방향대로 칸 수만큼 옮긴다. 4칸·8칸이면 16진 자리째 옮긴다.
@@ -175,7 +175,4 @@ and al,00001111b      ; 해의 비트를 지운다
 <div class="callout-title" markdown="span">검증: 해 128가지 × 달 12가지 조합 전부에서 (a)의 코드가 달을 꺼낸다 — [40_shift-rotate-ladder_p4.py](/Hongs_Blog/studies/assembly-language/code/40_shift-rotate-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드의 Your turn(wk10-3-1 p.10, wk10-3-2 p.4, p.7, p.14)과 같은 꼴로 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

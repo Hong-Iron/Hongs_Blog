@@ -34,18 +34,18 @@ permalink: "/studies/signals-and-systems/lti-eigenfunction/"
 
 ## 예시로 보기
 
-입력을 3초 늦추는 시스템 $$y(t) = x(t - 3)$$에 $$x(t) = e^{j2t}$$를 넣어 보자(예제 3.1)[^1].
+입력을 3초 늦추는 시스템 $$y(t) = x(t - 3)$$에 $$x(t) = e^{j2t}$$를 넣어 보자(예제 3.1).
 
 $$y(t) = e^{j2(t-3)} = e^{-j6}\,e^{j2t}$$
 
 
 출력은 입력 $$e^{j2t}$$에 복소수 $$e^{-j6}$$을 곱한 것이다. 모양은 같고, 위상만 6라디안 밀렸다. 이 곱하는 수 $$e^{-j6}$$을 고유값이라 부른다.
 
-이번엔 $$x(t) = \cos 4t + \cos 7t$$를 넣는다. 오일러 공식으로 $$x = \frac12e^{j4t} + \frac12e^{-j4t} + \frac12e^{j7t} + \frac12e^{-j7t}$$로 쪼개면, 조각마다 자기 고유값($$e^{-j12}$$, $$e^{j12}$$, $$e^{-j21}$$, $$e^{j21}$$)을 곱해 더한 것이 출력이고, 정리하면 $$\cos 4(t-3) + \cos 7(t-3)$$이다[^1].
+이번엔 $$x(t) = \cos 4t + \cos 7t$$를 넣는다. 오일러 공식으로 $$x = \frac12e^{j4t} + \frac12e^{-j4t} + \frac12e^{j7t} + \frac12e^{-j7t}$$로 쪼개면, 조각마다 자기 고유값($$e^{-j12}$$, $$e^{j12}$$, $$e^{-j21}$$, $$e^{j21}$$)을 곱해 더한 것이 출력이고, 정리하면 $$\cos 4(t-3) + \cos 7(t-3)$$이다.
 
 ## 정의
 
-어떤 시스템에 신호 $$\phi(t)$$를 넣었을 때 출력이 상수배 $$\lambda\phi(t)$$이면, $$\phi$$를 그 시스템의 고유함수, $$\lambda$$를 고유값이라 한다[^2].
+어떤 시스템에 신호 $$\phi(t)$$를 넣었을 때 출력이 상수배 $$\lambda\phi(t)$$이면, $$\phi$$를 그 시스템의 고유함수, $$\lambda$$를 고유값이라 한다.
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
@@ -54,12 +54,12 @@ $$y(t) = e^{j2(t-3)} = e^{-j6}\,e^{j2t}$$
 
 $$y(t) = H(s)\,e^{st}, \qquad H(s) = \int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau$$
 
-이다. 이산 시간에서는 $$x[n] = z^n$$이면 $$y[n] = H(z)z^n$$, $$H(z) = \sum_{k=-\infty}^{\infty}h[k]z^{-k}$$다[^3][^4]. 단, 오른쪽의 적분(합)이 수렴해야 한다.
+이다. 이산 시간에서는 $$x[n] = z^n$$이면 $$y[n] = H(z)z^n$$, $$H(z) = \sum_{k=-\infty}^{\infty}h[k]z^{-k}$$다. 단, 오른쪽의 적분(합)이 수렴해야 한다.
 
 </div>
 
 
-$$H(s)$$, $$H(z)$$를 시스템 함수라 한다. $$s$$와 $$z$$는 아무 복소수나 될 수 있지만, 푸리에 해석에서는 크기가 변하지 않는 순수한 진동만 쓴다[^5].
+$$H(s)$$, $$H(z)$$를 시스템 함수라 한다. $$s$$와 $$z$$는 아무 복소수나 될 수 있지만, 푸리에 해석에서는 크기가 변하지 않는 순수한 진동만 쓴다.
 
 | | 연속 시간 | 이산 시간 |
 |---|---|---|
@@ -72,14 +72,14 @@ $$H(s)$$, $$H(z)$$를 시스템 함수라 한다. $$s$$와 $$z$$는 아무 복�
 1. 컨벌루션: $$y(t) = \int h(\tau)x(t - \tau)d\tau$$ (교환법칙으로 $$h$$를 앞에 둔다)
 2. 입력을 넣는다: $$= \int h(\tau)e^{s(t-\tau)}d\tau$$
 3. 지수법칙: $$e^{s(t-\tau)} = e^{st}e^{-s\tau}$$
-4. $$e^{st}$$는 $$\tau$$와 무관하므로 적분 밖으로: $$= e^{st}\int h(\tau)e^{-s\tau}d\tau = H(s)e^{st}$$[^3]
+4. $$e^{st}$$는 $$\tau$$와 무관하므로 적분 밖으로: $$= e^{st}\int h(\tau)e^{-s\tau}d\tau = H(s)e^{st}$$
 
-이산 시간도 합으로 똑같이 한다: $$\sum h[k]z^{n-k} = z^n\sum h[k]z^{-k}$$[^4].
+이산 시간도 합으로 똑같이 한다: $$\sum h[k]z^{n-k} = z^n\sum h[k]z^{-k}$$.
 
 </details>
 
 
-**중첩과 함께 쓰기.** 입력이 $$x(t) = \sum_k a_ke^{s_kt}$$이면 선형성으로 출력은[^6]
+**중첩과 함께 쓰기.** 입력이 $$x(t) = \sum_k a_ke^{s_kt}$$이면 선형성으로 출력은
 
 $$y(t) = \sum_k a_kH(s_k)e^{s_kt}$$
 
@@ -136,8 +136,8 @@ $$y(t) = \sum_k a_kH(s_k)e^{s_kt}$$
 
 ## 활용
 
-- 주파수 응답 $$H(j\omega)$$ 하나로 오디오 장비, 필터, 통신 채널의 성질을 나타낸다. "저음은 그대로, 고음은 절반" 같은 설명이 곧 $$\vert H(j\omega)\vert $$다[^7].
-- 푸리에 이론이 중요한 이유: 신호를 주파수 성분으로 나누면 시스템 해석이 곱셈이 되고, 잡음처럼 높은 주파수를 골라 없애는 시스템을 설계할 수 있다[^7].
+- 주파수 응답 $$H(j\omega)$$ 하나로 오디오 장비, 필터, 통신 채널의 성질을 나타낸다. "저음은 그대로, 고음은 절반" 같은 설명이 곧 $$\vert H(j\omega)\vert $$다.
+- 푸리에 이론이 중요한 이유: 신호를 주파수 성분으로 나누면 시스템 해석이 곱셈이 되고, 잡음처럼 높은 주파수를 골라 없애는 시스템을 설계할 수 있다.
 - 흔한 실수: $$\cos\omega t$$도 고유함수라고 생각하는 것. $$\cos$$은 $$e^{j\omega t}$$와 $$e^{-j\omega t}$$의 합이라, 두 고유값이 다르면(위상이 달라지면) 모양은 같아도 단순한 상수배가 아니다.
 
 ## 연결
@@ -190,13 +190,6 @@ $$y(t) = \sum_k a_kH(s_k)e^{s_kt}$$
 </details>
 
 
-[^1]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.24 (예제 3.1)
-[^2]: 같은 자료, p.18, p.20
-[^3]: 같은 자료, p.21
-[^4]: 같은 자료, p.22
-[^5]: 같은 자료, p.24
-[^6]: 같은 자료, p.22~24
-[^7]: 같은 자료, p.19
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> $$h = e^{-t}u(t)$$ 예, 오해 항목, 스스로 설명해 보기의 1·3·4, 확인 문제 C3은 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [28_lti-eigenfunction_plot.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^\infty e^{-\tau}\cos 2(t - \tau)d\tau$$의 수치 적분이 $$\frac{1}{\sqrt5}\cos(2t - \tan^{-1}2)$$와 같음.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [28_lti-eigenfunction_plot.py](/Hongs_Blog/studies/signals-and-systems/code/28_lti-eigenfunction_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\int_0^\infty e^{-\tau}\cos 2(t - \tau)d\tau$$의 수치 적분이 $$\frac{1}{\sqrt5}\cos(2t - \tan^{-1}2)$$와 같음.
 {% endraw %}

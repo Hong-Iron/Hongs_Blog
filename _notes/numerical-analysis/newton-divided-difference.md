@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Newton Polynomial", "Newton Interpolation", "뉴턴 보간", "분할 차분", "Divided Difference", "분할 차분표", "Divided Difference Table", "중첩 곱셈", "Nested Multiplication"]
 description: "라그랑주 공식은 점을 하나 더하면 처음부터 다시 계산해야 한다. 뉴턴 다항식은 \"지금까지의 다항식에 항 하나를 덧붙이는\" 꼴이라 점이 늘어도 앞 계산을 그대로 쓴다. 덧붙이는 항의 계수는 분할 차분이라는 기울기의 기울기를 표로 쌓아 얻는다. 같은 점들이면 결과는 라그랑주와 같은 다…"
@@ -34,7 +34,7 @@ permalink: "/studies/numerical-analysis/newton-divided-difference/"
 
 ## 예시로 보기
 
-$$f(x) = x^3 - 4x$$를 $$x = 1, 2, 3, 4, 5, 6$$에서 안다. 표의 각 칸은 바로 왼쪽 열의 이웃 두 칸 차이를 $$x$$의 차이로 나눈 것이다[^1].
+$$f(x) = x^3 - 4x$$를 $$x = 1, 2, 3, 4, 5, 6$$에서 안다. 표의 각 칸은 바로 왼쪽 열의 이웃 두 칸 차이를 $$x$$의 차이로 나눈 것이다.
 
 | $$x_k$$ | $$f[x_k]$$ | 1계 | 2계 | 3계 | 4계 | 5계 |
 |---|---|---|---|---|---|---|
@@ -45,14 +45,14 @@ $$f(x) = x^3 - 4x$$를 $$x = 1, 2, 3, 4, 5, 6$$에서 안다. 표의 각 칸은 
 | 5 | 105 | 57 | 12 | 1 | **0** | |
 | 6 | 192 | 87 | 15 | 1 | 0 | **0** |
 
-굵은 대각선이 뉴턴 계수다. 앞 넷만 써서 $$P_3(x) = -3 + 3(x - 1) + 6(x - 1)(x - 2) + (x - 1)(x - 2)(x - 3)$$이다. $$f$$가 3차라 3계 차분이 모두 1로 같고, 4계부터 0이다. 그래서 $$P_3 = f$$다[^1][^s1].
+굵은 대각선이 뉴턴 계수다. 앞 넷만 써서 $$P_3(x) = -3 + 3(x - 1) + 6(x - 1)(x - 2) + (x - 1)(x - 2)(x - 3)$$이다. $$f$$가 3차라 3계 차분이 모두 1로 같고, 4계부터 0이다. 그래서 $$P_3 = f$$다[^s1].
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/numerical-analysis/22_newton-divided-difference_fig1.svg" alt="그림" width="501" height="342" loading="lazy">
 
 $$P_0$$은 첫 점만 지나는 수평선이다. 항을 하나 더할 때마다 지나는 점이 하나씩 늘고, 앞의 점들은 그대로 지난다. 점 4개를 쓴 $$P_3$$(점선)은 $$f$$와 완전히 겹친다[^s2].
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 분할 차분표 전체, $$P_3 = f$$, 앞 계수가 점을 더해도 그대로, 슬라이드 p.18의 값 2, 1.625, 1.5125, 1.50575, 1계 차분과 도함수, 카드 C2 — [22_newton-divided-difference_impl.py](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_impl/)</div>
+<div class="callout-title" markdown="span">검증: 분할 차분표 전체, $$P_3 = f$$, 앞 계수가 점을 더해도 그대로, 본문 예의 값 2, 1.625, 1.5125, 1.50575, 1계 차분과 도함수, 카드 C2 — [22_newton-divided-difference_impl.py](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_impl/)</div>
 
 </div>
 
@@ -61,24 +61,24 @@ $$P_0$$은 첫 점만 지나는 수평선이다. 항을 하나 더할 때마다 
 
 **입력:** 서로 다른 점 $$x_0, \dots, x_N$$과 값 $$f(x_k)$$. **출력:** 이 점들을 지나는 $$N$$차 이하 다항식.
 
-**뉴턴 다항식.** 중심 $$x_0, x_1, \dots$$을 쓰는 다음 꼴이다[^2].
+**뉴턴 다항식.** 중심 $$x_0, x_1, \dots$$을 쓰는 다음 꼴이다.
 
 $$P_N(x) = a_0 + a_1(x - x_0) + a_2(x - x_0)(x - x_1) + \cdots + a_N(x - x_0)\cdots(x - x_{N-1})$$
 
 
-차수를 하나 올릴 때는 항 하나만 더한다[^2][^3].
+차수를 하나 올릴 때는 항 하나만 더한다.
 
 $$P_N(x) = P_{N-1}(x) + a_N(x - x_0)(x - x_1)\cdots(x - x_{N-1})$$
 
 
-슬라이드의 예: 중심 $$1, 3, 4, 4.5$$, 계수 $$5, -2, 0.5, -0.1, 0.003$$이면 $$x = 2.5$$에서 $$P_1 = 2$$, $$P_2 = 1.625$$, $$P_3 = 1.5125$$, $$P_4 = 1.50575$$다[^4].
+예: 중심 $$1, 3, 4, 4.5$$, 계수 $$5, -2, 0.5, -0.1, 0.003$$이면 $$x = 2.5$$에서 $$P_1 = 2$$, $$P_2 = 1.625$$, $$P_3 = 1.5125$$, $$P_4 = 1.50575$$다.
 
-**분할 차분.** 계수 $$a_k$$를 구하는 재귀 공식이다[^5].
+**분할 차분.** 계수 $$a_k$$를 구하는 재귀 공식이다.
 
 $$f[x_k] = f(x_k), \qquad f[x_{k-j}, \dots, x_k] = \frac{f[x_{k-j+1}, \dots, x_k] - f[x_{k-j}, \dots, x_{k-1}]}{x_k - x_{k-j}}$$
 
 
-1계 분할 차분은 두 점을 잇는 직선의 기울기다. 2계는 1계 차분끼리의 차이, 곧 기울기의 기울기다[^6][^7]. 그리고 $$a_k = f[x_0, \dots, x_k]$$다[^8].
+1계 분할 차분은 두 점을 잇는 직선의 기울기다. 2계는 1계 차분끼리의 차이, 곧 기울기의 기울기다. 그리고 $$a_k = f[x_0, \dots, x_k]$$다.
 
 ```mermaid
 flowchart LR
@@ -96,9 +96,9 @@ flowchart LR
     D123 --> D0123
 ```
 
-칸마다 왼쪽 열의 이웃 두 칸에서 화살표를 받는다. 계수 $$a_k$$는 각 열의 맨 위 칸, 곧 $$x_0$$에서 시작하는 차분이다[^s3].
+칸마다 왼쪽 열의 이웃 두 칸에서 화살표를 받는다. 계수 $$a_k$$는 각 열의 맨 위 칸, 곧 $$x_0$$에서 시작하는 차분이다.
 
-평균값 정리로 $$f[x_0, x_1] = f'(c)$$인 $$c$$가 $$x_0$$과 $$x_1$$ 사이에 있다. 그래서 1계 차분은 가운데 점의 도함수 근삿값으로 쓴다: $$f'\left(\frac{x_0 + x_1}{2}\right) \approx f[x_0, x_1]$$[^9]. 같은 방식으로 $$k$$계 차분은 $$\frac{f^{(k)}(c)}{k!}$$와 같다. 2차식 $$3x^2 - x + 2$$이면 2계 차분이 정확히 $$\frac{6}{2} = 3$$이다[^s1].
+평균값 정리로 $$f[x_0, x_1] = f'(c)$$인 $$c$$가 $$x_0$$과 $$x_1$$ 사이에 있다. 그래서 1계 차분은 가운데 점의 도함수 근삿값으로 쓴다: $$f'\left(\frac{x_0 + x_1}{2}\right) \approx f[x_0, x_1]$$. 같은 방식으로 $$k$$계 차분은 $$\frac{f^{(k)}(c)}{k!}$$와 같다. 2차식 $$3x^2 - x + 2$$이면 2계 차분이 정확히 $$\frac{6}{2} = 3$$이다[^s1].
 
 **값 계산(중첩 곱셈).** $$P_N(x) = a_0 + (x - x_0)\big(a_1 + (x - x_1)(a_2 + \cdots)\big)$$로 안쪽부터 계산하면 곱셈이 $$N$$번이다[^s1].
 
@@ -148,16 +148,6 @@ flowchart LR
 </details>
 
 
-[^1]: 수치해석 12회 강의 자료 「na12_interpolation」, p.28
-[^2]: 같은 자료, p.16~17
-[^3]: 같은 자료, p.19~20
-[^4]: 같은 자료, p.18
-[^5]: 같은 자료, p.21
-[^6]: 같은 자료, p.22
-[^7]: 같은 자료, p.23~24
-[^8]: 같은 자료, p.25~27
-[^9]: 같은 자료, p.22
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 4·5계가 0인 이유, $$k$$계 차분과 $$f^{(k)}/k!$$, 2차식 예, 중첩 곱셈, 활용과 복잡도, 흔한 실수, 카드 C2~C4는 원본에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [22_newton-divided-difference_plot.py](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 뉴턴 계수 $$-3, 3, 6, 1, 0, 0$$과 $$P_3 = f$$.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 분할 차분 재귀식과 $$a_k = f[x_0, \dots, x_k]$$(원본 12.na12_interpolation.pdf p.21~27)로 그렸다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [22_newton-divided-difference_plot.py](/Hongs_Blog/studies/numerical-analysis/code/22_newton-divided-difference_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 뉴턴 계수 $$-3, 3, 6, 1, 0, 0$$과 $$P_3 = f$$.
 {% endraw %}

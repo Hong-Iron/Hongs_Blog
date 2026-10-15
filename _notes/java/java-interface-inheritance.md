@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Implementing Multiple Interfaces", "Interface Inheritance", "다중 인터페이스 구현", "인터페이스 다중 상속", "부모 인터페이스", "자식 인터페이스"]
 description: "한 사람이 운전면허와 요리사 자격증을 함께 가질 수 있듯, 클래스 하나가 메서드 목록 여러 개를 한꺼번에 맡을 수 있다. 목록끼리도 물려받을 수 있어서, 작은 목록 둘을 합친 큰 목록을 만들 수 있다. 대신 맡은 목록에 적힌 것은 물려받은 것까지 하나도 빠짐없이 만들어야 한다. 그…"
@@ -36,7 +36,7 @@ permalink: "/studies/java/java-interface-inheritance/"
 
 클래스는 부모를 하나만 둘 수 있다([상속](/Hongs_Blog/studies/java/java-inheritance/)). 그러면 스마트 TV처럼 "리모컨으로 켠다"와 "검색한다"를 둘 다 해야 하는 물건을 만들 때 곤란하다. 두 기능을 한 부모에 억지로 몰아넣으면, 검색 기능이 없는 조명까지 검색 메서드를 떠안는다.
 
-인터페이스는 여러 개를 한꺼번에 맡을 수 있다[^1].
+인터페이스는 여러 개를 한꺼번에 맡을 수 있다.
 
 ```java
 interface RemoteControl { void turnOn(); }
@@ -65,10 +65,10 @@ Search: java
 true
 ```
 
-객체는 하나다. `rc == sc`가 `true`인 것이 그 증거다. 같은 객체를 `rc`로 보면 켜는 버튼만 보이고, `sc`로 보면 검색 버튼만 보인다. `rc.search("java")`는 컴파일 오류다[^s1].
+객체는 하나다. `rc == sc`가 `true`인 것이 그 증거다. 같은 객체를 `rc`로 보면 켜는 버튼만 보이고, `sc`로 보면 검색 버튼만 보인다. `rc.search("java")`는 컴파일 오류다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 출력, 슬라이드의 `InterfaceA`·`B`·`C` 예제 출력, 디폴트 메서드 충돌을 푼 `Robot`의 출력, 카드 C3 — [27_java-interface-inheritance_impl.java](/Hongs_Blog/studies/java/code/27_java-interface-inheritance_impl/)</div>
+<div class="callout-title" markdown="span">검증: 위 출력, `InterfaceA`·`B`·`C` 예제 출력, 디폴트 메서드 충돌을 푼 `Robot`의 출력, 카드 C3 — [27_java-interface-inheritance_impl.java](/Hongs_Blog/studies/java/code/27_java-interface-inheritance_impl/)</div>
 
 </div>
 
@@ -77,7 +77,7 @@ true
 
 ### 다중 구현
 
-구현 클래스는 인터페이스를 여러 개 구현할 수 있다. `implements` 뒤에 쉼표로 이어 적는다. 구현 클래스는 각 인터페이스의 추상 메서드를 모두 다시 정의해야 한다[^1].
+구현 클래스는 인터페이스를 여러 개 구현할 수 있다. `implements` 뒤에 쉼표로 이어 적는다. 구현 클래스는 각 인터페이스의 추상 메서드를 모두 다시 정의해야 한다.
 
 ```java
 public class ImplementingClass implements InterfaceA, InterfaceB {
@@ -92,26 +92,19 @@ class Duck extends Bird implements Flyable, Swimmable { ... }
 
 ### 인터페이스 상속
 
-인터페이스도 다른 인터페이스를 물려받을 수 있다. 클래스와 달리 부모를 여러 개 둘 수 있다. `extends` 뒤에 물려받을 인터페이스를 쉼표로 이어 적는다[^2].
+인터페이스도 다른 인터페이스를 물려받을 수 있다. 클래스와 달리 부모를 여러 개 둘 수 있다. `extends` 뒤에 물려받을 인터페이스를 쉼표로 이어 적는다.
 
 ```java
 public interface ChildInterface extends ParentInterface1, ParentInterface2 { ... }
 ```
 
-- 자식 인터페이스의 구현 클래스는 자식 인터페이스의 메서드뿐 아니라 부모 인터페이스들의 추상 메서드까지 모두 다시 정의해야 한다[^3].
-- 구현 객체는 자식 인터페이스 변수에도, 부모 인터페이스 변수에도 넣을 수 있다[^3].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 12회 슬라이드 p.11의 코드 `ParentInterface var2 = new ImpClass();`, `ParentInterface var3 = new ImpClass();` / 문제점: 바로 앞 p.10에서 선언한 부모 인터페이스의 이름은 `ParentInterface1`, `ParentInterface2`다. `ParentInterface`라는 타입은 없다. / 수정안: `ParentInterface1 var2 = new ImpClass();`, `ParentInterface2 var3 = new ImpClass();` / 근거: p.10의 `public interface ChildInterface extends ParentInterface1, ParentInterface2 { ... }`
-
-</div>
+- 자식 인터페이스의 구현 클래스는 자식 인터페이스의 메서드뿐 아니라 부모 인터페이스들의 추상 메서드까지 모두 다시 정의해야 한다.
+- 구현 객체는 자식 인터페이스 변수에도, 부모 인터페이스 변수에도 넣을 수 있다.
 
 
 ### 변수 타입이 부를 수 있는 메서드를 정한다
 
-슬라이드의 예다[^4].
+인터페이스 셋으로 확인해 본다.
 
 ```java
 interface InterfaceA { void methodA(); }
@@ -151,7 +144,7 @@ classDiagram
     InterfaceC <|.. InterfaceCImpl : implements
 ```
 
-`InterfaceC`는 자기 메서드 하나에 물려받은 둘을 더해 세 메서드를 가진다. 그래서 `InterfaceCImpl`은 셋을 다 채운다[^s3].
+`InterfaceC`는 자기 메서드 하나에 물려받은 둘을 더해 세 메서드를 가진다. 그래서 `InterfaceCImpl`은 셋을 다 채운다.
 
 `InterfaceCImpl impl = new InterfaceCImpl();`로 만든 객체 하나를 세 가지 변수에 넣어 본다.
 
@@ -161,7 +154,7 @@ classDiagram
 | `InterfaceB ib = impl;` | 컴파일 오류 | 된다 | 컴파일 오류 |
 | `InterfaceC ic = impl;` | 된다 | 된다 | 된다 |
 
-`ia.methodB()`가 오류인 까닭은 객체에 `methodB`가 없어서가 아니다. 객체에는 있다. 컴파일러가 변수의 타입 `InterfaceA`에 적힌 목록만 보기 때문이다. 오류 메시지는 `cannot find symbol`이다[^s1].
+`ia.methodB()`가 오류인 까닭은 객체에 `methodB`가 없어서가 아니다. 객체에는 있다. 컴파일러가 변수의 타입 `InterfaceA`에 적힌 목록만 보기 때문이다. 오류 메시지는 `cannot find symbol`이다.
 
 ### 디폴트 메서드가 겹칠 때
 
@@ -218,7 +211,7 @@ InterfaceB ib = ic;        // (마)
 InterfaceC ic2 = ia;       // (바)
 ```
 **답:** (나), (라), (바).<br>
-**이유:** (나) `InterfaceA`에는 `methodB`가 없다. (라) `extra`는 `Impl`에만 있고 `InterfaceC`의 목록에 없다. (바) 부모 인터페이스 타입을 자식 인터페이스 변수에 그냥 넣을 수 없다. `InterfaceA`를 구현한 객체가 모두 `InterfaceC`를 구현한 것은 아니기 때문이다. (다)는 `InterfaceC`가 `methodA`를 물려받아서 되고, (마)는 자식 인터페이스를 부모 인터페이스 변수에 넣는 것이라 된다[^s1].
+**이유:** (나) `InterfaceA`에는 `methodB`가 없다. (라) `extra`는 `Impl`에만 있고 `InterfaceC`의 목록에 없다. (바) 부모 인터페이스 타입을 자식 인터페이스 변수에 그냥 넣을 수 없다. `InterfaceA`를 구현한 객체가 모두 `InterfaceC`를 구현한 것은 아니기 때문이다. (다)는 `InterfaceC`가 `methodA`를 물려받아서 되고, (마)는 자식 인터페이스를 부모 인터페이스 변수에 넣는 것이라 된다.
 
 </details>
 
@@ -248,16 +241,10 @@ methodA
 methodC
 true
 ```
-**이유:** `ia`와 `ic`는 같은 객체를 가리킨다. `instanceof`는 변수의 타입이 아니라 들어 있는 객체를 본다. 그 객체는 `InterfaceCImpl`이고 `InterfaceB`도 구현했으므로 `true`다. 흔한 오답은 "`ia`는 `InterfaceA` 타입이니 `false`"다[^s1].
+**이유:** `ia`와 `ic`는 같은 객체를 가리킨다. `instanceof`는 변수의 타입이 아니라 들어 있는 객체를 본다. 그 객체는 `InterfaceCImpl`이고 `InterfaceB`도 구현했으므로 `true`다. 흔한 오답은 "`ia`는 `InterfaceA` 타입이니 `false`"다.
 
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 12회 강의 자료 「Software Project 12. Interface (2)」, p.9 (인터페이스 여러 개 구현, `implements interfaceA, interfaceB`)
-[^2]: 같은 자료, p.10 (인터페이스 상속, 여러 부모 허용, `extends ParentInterface1, ParentInterface2`)
-[^3]: 같은 자료, p.11 (구현 객체는 자식·부모 인터페이스 변수 모두에 넣을 수 있다, 부모의 추상 메서드까지 다시 정의)
-[^4]: 같은 자료, p.12 (`InterfaceA`·`B`·`C`, `InterfaceCImpl`, `ia.methodB(); // error`, `ib.methodA(); // error`)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `SmartTelevision`·`Searchable` 예와 출력, 변수별 호출 표, `cannot find symbol` 메시지, 카드 C1·C3은 원본에 없다. 표는 슬라이드 p.12의 `main` 코드를 정리한 것이고, 구현 코드와 JDK 21 컴파일로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `extends`와 `implements`의 순서, 디폴트 메서드 충돌과 `인터페이스이름.super.메서드()`, 인터페이스에만 여러 부모를 허락한 까닭, 오류 메시지는 원본에 없다. JDK 21에서 직접 컴파일하고 실행해 확인했다(Java Language Specification §8.1.5, §8.4.8.4, §15.12.3).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 클래스 관계 그림은 원본에 없다. 슬라이드 p.12의 코드를 근거로 그렸다.
+[^s2]: JDK 21에서 직접 컴파일하고 실행해 확인했다(Java Language Specification §8.1.5, §8.4.8.4, §15.12.3).
 {% endraw %}

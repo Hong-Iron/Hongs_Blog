@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/convolution-integral/"
 
 ## 예시로 보기
 
-축전기에 전류를 흘린다고 하자. 지금 전압은 지금까지 들어온 전류를 모두 쌓은 것이다. 이 시스템의 임펄스 응답은 $$h(t) = u(t)$$(한 번 받은 전하가 계속 남는다)다. 입력 전류가 $$x(t) = e^{-at}u(t)$$ ($$a > 0$$)로 점점 약해지면 출력은 무엇일까(예제 2.6)[^1]?
+축전기에 전류를 흘린다고 하자. 지금 전압은 지금까지 들어온 전류를 모두 쌓은 것이다. 이 시스템의 임펄스 응답은 $$h(t) = u(t)$$(한 번 받은 전하가 계속 남는다)다. 입력 전류가 $$x(t) = e^{-at}u(t)$$ ($$a > 0$$)로 점점 약해지면 출력은 무엇일까(예제 2.6)?
 
 - $$t < 0$$: 아직 아무것도 안 들어왔으므로 $$y(t) = 0$$.
 - $$t > 0$$: 0부터 $$t$$까지 들어온 양을 모두 더한다. $$y(t) = \int_0^t e^{-a\tau}d\tau = \frac1a(1 - e^{-at})$$.
@@ -42,19 +42,19 @@ permalink: "/studies/signals-and-systems/convolution-integral/"
 
 ## 정의
 
-**1단계: 계단으로 근사하기.** 폭 $$\Delta$$, 높이 $$\frac1\Delta$$인 펄스 $$\delta_\Delta(t)$$로 신호를 자른다. 각 막대의 높이는 그 시각의 신호 값이다(그림 2.12)[^2].
+**1단계: 계단으로 근사하기.** 폭 $$\Delta$$, 높이 $$\frac1\Delta$$인 펄스 $$\delta_\Delta(t)$$로 신호를 자른다. 각 막대의 높이는 그 시각의 신호 값이다(그림 2.12).
 
 $$\hat x(t) = \sum_{k=-\infty}^{\infty}x(k\Delta)\,\delta_\Delta(t - k\Delta)\,\Delta$$
 
 
 $$\delta_\Delta$$의 높이가 $$\frac1\Delta$$이라 마지막에 $$\Delta$$를 곱해야 막대 높이가 $$x(k\Delta)$$가 된다.
 
-**2단계: 극한.** $$\Delta \to 0$$이면 $$\hat x(t) \to x(t)$$이고, 합은 [리만 합](/Hongs_Blog/studies/calculus/riemann-integral/)처럼 적분이 된다[^3].
+**2단계: 극한.** $$\Delta \to 0$$이면 $$\hat x(t) \to x(t)$$이고, 합은 [리만 합](/Hongs_Blog/studies/calculus/riemann-integral/)처럼 적분이 된다.
 
 $$x(t) = \int_{-\infty}^{\infty}x(\tau)\,\delta(t - \tau)\,d\tau$$
 
 
-**3단계: 시스템을 통과시키기.** 선형이면 막대마다 반응을 더하고, 시불변이면 $$\delta(t-\tau)$$의 반응은 $$h(t-\tau)$$다(그림 2.15~2.16)[^4].
+**3단계: 시스템을 통과시키기.** 선형이면 막대마다 반응을 더하고, 시불변이면 $$\delta(t-\tau)$$의 반응은 $$h(t-\tau)$$다(그림 2.15~2.16).
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title" markdown="span">컨벌루션 적분</div>
@@ -63,12 +63,12 @@ $$x(t) = \int_{-\infty}^{\infty}x(\tau)\,\delta(t - \tau)\,d\tau$$
 
 $$y(t) = \int_{-\infty}^{\infty}x(\tau)\,h(t - \tau)\,d\tau = x(t) * h(t)$$
 
-이다[^5]. $$\tau$$는 입력이 들어온 시각, $$t$$는 출력을 보는 시각이다.
+이다. $$\tau$$는 입력이 들어온 시각, $$t$$는 출력을 보는 시각이다.
 
 </div>
 
 
-**계산 방법**[^6]
+**계산 방법**
 
 1. $$h(\tau)$$를 세로축에 대해 뒤집고 $$t$$만큼 민다: $$h(t - \tau)$$.
 2. $$x(\tau)$$와 곱해 $$\tau = -\infty$$부터 $$\infty$$까지 적분한다(겹친 부분의 넓이).
@@ -102,7 +102,7 @@ $$x(\tau)$$는 $$\tau > 0$$에서만 0이 아니고, $$h(t - \tau) = u(t - \tau)
 
 ## 예제
 
-**예제 2.7** $$x(t) = 1$$ ($$0 < t < T$$), $$h(t) = t$$ ($$0 < t < 2T$$)[^7]
+**예제 2.7** $$x(t) = 1$$ ($$0 < t < T$$), $$h(t) = t$$ ($$0 < t < 2T$$)
 
 - $$t < 0$$이나 $$t > 3T$$: 겹치지 않아 0.
 - $$0 < t < T$$: $$\int_0^t (t - \tau)d\tau = \frac12 t^2$$.
@@ -114,13 +114,13 @@ $$x(\tau)$$는 $$\tau > 0$$에서만 0이 아니고, $$h(t - \tau) = u(t - \tau)
 
 $$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아래의 점 세 개가 위 세 장면의 넓이다. 점선 $$t = 1, 2, 3$$에서 겹치는 모양이 바뀌어 식도 바뀐다[^s2].
 
-**예제 2.8** $$x(t) = e^{2t}u(-t)$$, $$h(t) = u(t - 3)$$[^8]
+**예제 2.8** $$x(t) = e^{2t}u(-t)$$, $$h(t) = u(t - 3)$$
 
 - $$h(t - \tau) = u(t - 3 - \tau)$$는 $$\tau < t - 3$$에서 1이다.
 - $$t - 3 \le 0$$: $$\int_{-\infty}^{t-3}e^{2\tau}d\tau = \frac12e^{2(t-3)}$$.
 - $$t - 3 \ge 0$$: $$x$$가 $$\tau < 0$$에서만 0이 아니므로 $$\int_{-\infty}^{0}e^{2\tau}d\tau = \frac12$$.
 
-**사각 펄스 두 개** 높이 1, 폭 $$a$$와 $$b$$($$b > a$$)인 펄스를 컨벌루션하면 사다리꼴이 나온다[^9]. $$0 \le t < a$$에서 $$t$$, $$a \le t < b$$에서 $$a$$, $$b \le t < a + b$$에서 $$a + b - t$$, 나머지 0. 폭이 같으면($$a = b$$) 삼각형이 된다.
+**사각 펄스 두 개** 높이 1, 폭 $$a$$와 $$b$$($$b > a$$)인 펄스를 컨벌루션하면 사다리꼴이 나온다. $$0 \le t < a$$에서 $$t$$, $$a \le t < b$$에서 $$a$$, $$b \le t < a + b$$에서 $$a + b - t$$, 나머지 0. 폭이 같으면($$a = b$$) 삼각형이 된다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/signals-and-systems/19_convolution-integral_fig2.svg" alt="그림" width="506" height="276" loading="lazy">
 
@@ -157,7 +157,7 @@ $$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아�
 
 ## 과목별 관점
 
-**휴먼 인터페이스 미디어 (4-1학기).** 강의 6은 합성곱을 두 데이터의 "모양 맞추기" 도구의 하나로, 뒤집지 않고 옮기는 교차 상관과 나란히 소개한다[^h1]. 예제도 같은 뒤집고-밀기로 푼다: 폭 1 사각 펄스끼리는 꼭대기 $$(1, 1)$$의 삼각형, 높이 2·폭 2인 펄스와 폭 1 펄스는 0~1에서 오르고 1~2에서 2로 평평하고 3에서 0이 되는 사다리꼴이다[^h2]. 풀이는 [합성곱 연습](/Hongs_Blog/studies/human-interface-media/convolution-practice/), 두 연산의 차이는 [교차 상관과 합성곱 비교](/Hongs_Blog/studies/human-interface-media/correlation-vs-convolution/)에 있다.
+**휴먼 인터페이스 미디어 (4-1학기).** 강의 6은 합성곱을 두 데이터의 "모양 맞추기" 도구의 하나로, 뒤집지 않고 옮기는 교차 상관과 나란히 소개한다. 예제도 같은 뒤집고-밀기로 푼다: 폭 1 사각 펄스끼리는 꼭대기 $$(1, 1)$$의 삼각형, 높이 2·폭 2인 펄스와 폭 1 펄스는 0~1에서 오르고 1~2에서 2로 평평하고 3에서 0이 되는 사다리꼴이다. 풀이는 [합성곱 연습](/Hongs_Blog/studies/human-interface-media/convolution-practice/), 두 연산의 차이는 [교차 상관과 합성곱 비교](/Hongs_Blog/studies/human-interface-media/correlation-vs-convolution/)에 있다.
 
 ## 확인 문제
 
@@ -193,17 +193,6 @@ $$T = 1$$일 때다. 색칠한 넓이가 그 순간의 $$y(t)$$이고, 맨 아�
 </details>
 
 
-[^1]: 신호 및 시스템 5회 강의 자료 「Week05_CH02_1_handout」, p.40~41 (예제 2.6, 그림 2.17~2.18)
-[^2]: 같은 자료, p.28~29 (그림 2.12)
-[^3]: 같은 자료, p.30~32 (그림 2.13)
-[^4]: 같은 자료, p.35~37 (그림 2.15, 2.16)
-[^5]: 같은 자료, p.38
-[^6]: 같은 자료, p.39
-[^7]: 같은 자료, p.42~45 (예제 2.7, 그림 2.19~2.21)
-[^8]: 같은 자료, p.45~47 (예제 2.8, 그림 2.22)
-[^9]: 신호 및 시스템 7회 강의 자료 「Week07_CH03_1_handout」, p.3~4
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 축전기 비유, 구간 경계 연속성으로 실수를 잡는 방법, 폭이 같으면 삼각형이라는 점, 흐림·확률 활용, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 2장은 원본에 없다. [19_convolution-integral_plot.py](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.7($$T = 1$$)의 겹친 넓이를 수치 적분해 네 구간 답과 비교, 경계 $$t = 1, 2$$에서의 연속성, 사다리꼴 값.
-[^h1]: 휴먼 인터페이스 미디어 6회 강의 자료 「HIM_강의06_모양맞추기」, p.6, p.10~11 (분산·상관·합성곱, 합성곱 정의, 비교)
-[^h2]: 같은 자료, p.12~13 (1-D 합성곱 예, 예2)
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [19_convolution-integral_plot.py](/Hongs_Blog/studies/signals-and-systems/code/19_convolution-integral_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 예제 2.7($$T = 1$$)의 겹친 넓이를 수치 적분해 네 구간 답과 비교, 경계 $$t = 1, 2$$에서의 연속성, 사다리꼴 값.
 {% endraw %}

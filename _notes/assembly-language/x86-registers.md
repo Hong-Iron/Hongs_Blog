@@ -10,7 +10,7 @@ course_slug: "assembly-language"
 course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["x86 Registers", "범용 레지스터", "General-Purpose Registers", "EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP", "세그먼트 레지스터", "Segment Registers", "EIP", "명령어 포인터", "Instruction Pointer", "EFLAGS", "상태 플래그", "Status Flags", "누산기", "Accumulator"]
 description: "레지스터는 프로세서 안에 있는, 이름이 붙은 작은 저장 칸이다. 계산기를 두드릴 때 화면에 떠 있는 숫자처럼, 지금 계산 중인 값을 잠깐 들고 있는 자리다. 메모리까지 다녀올 필요가 없어서 가장 빠르다. 하지만 32비트 x86에서 마음대로 쓸 수 있는 칸은 여덟 개뿐이고, 그중 몇…"
@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/x86-registers/"
 
 `mov eax,5`와 `add eax,6`은 "EAX라는 칸에 5를 넣고, 거기에 6을 더한다"는 뜻이다. 어셈블리어의 거의 모든 줄에 이런 칸 이름이 나온다. 이름을 모르면 한 줄도 읽을 수 없다.
 
-칸 하나는 32비트다. 그런데 EAX는 같은 칸의 일부를 다른 이름으로 부를 수 있다[^1].
+칸 하나는 32비트다. 그런데 EAX는 같은 칸의 일부를 다른 이름으로 부를 수 있다.
 
 ```
  비트   31              16 15       8 7        0
@@ -59,7 +59,7 @@ AH와 AL의 H와 L은 high(위쪽)와 low(아래쪽)다. EAX의 E는 extended로
 
 ## 레지스터의 종류
 
-32비트 x86의 기본 실행 환경에는 다음 칸들이 있다[^2].
+32비트 x86의 기본 실행 환경에는 다음 칸들이 있다.
 
 | 무리 | 이름 | 크기 |
 |---|---|---|
@@ -81,9 +81,7 @@ AH와 AL의 H와 L은 high(위쪽)와 low(아래쪽)다. EAX의 E는 extended로
 | EBP | BP | 없음 | 없음 |
 | ESP | SP | 없음 | 없음 |
 
-위 네 줄은 슬라이드 p.9, 아래 네 줄은 p.10의 표다[^1].
-
-**정해진 쓰임.** 이름은 범용이지만 몇몇 칸은 특정 명령이 정해 놓고 쓴다[^3].
+**정해진 쓰임.** 이름은 범용이지만 몇몇 칸은 특정 명령이 정해 놓고 쓴다.
 
 | 레지스터 | 쓰임 | 풀이[^s2] |
 |---|---|---|
@@ -97,7 +95,7 @@ AH와 AL의 H와 L은 high(위쪽)와 low(아래쪽)다. EAX의 E는 extended로
 | EIP | 명령어 포인터 (instruction pointer) | 다음에 실행할 명령어의 주소를 담는다 |
 | EFLAGS | 상태·제어 플래그 | 비트 하나하나가 깃발(flag) 하나다 |
 
-**상태 플래그.** 계산이 끝날 때마다 프로세서가 EFLAGS의 몇몇 비트를 켜고 끈다. 슬라이드의 여섯 개다[^4].
+**상태 플래그.** 계산이 끝날 때마다 프로세서가 EFLAGS의 몇몇 비트를 켜고 끈다. 그런 비트 가운데 다음 여섯 개를 상태 플래그라 부른다.
 
 | 플래그 | 켜지는 때 |
 |---|---|
@@ -112,7 +110,7 @@ AH와 AL의 H와 L은 high(위쪽)와 low(아래쪽)다. EAX의 E는 extended로
 
 ## 예제
 
-디버거가 레지스터를 보여 준 화면이다[^5].
+디버거가 레지스터를 보여 준 화면이다.
 
 ```
 EAX=00030000  EBX=7FFDF000  ECX=00000101  EDX=FFFFFFFF
@@ -176,10 +174,10 @@ EIP=00401024  EFL=00000206  CF=0  SF=0  ZF=0  OF=0
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C3** 다음 가운데 실제로 있는 레지스터 이름을 모두 골라라: AL, SIL(ESI의 아래 8비트라는 뜻으로), BP, DH, EIP의 아래 16비트 IP, ES. 32비트 x86 슬라이드의 표를 기준으로 한다.</summary>
+<summary class="callout-title" markdown="span">**C3** 다음 가운데 실제로 있는 레지스터 이름을 모두 골라라: AL, SIL(ESI의 아래 8비트라는 뜻으로), BP, DH, EIP의 아래 16비트 IP, ES. 위 '작은 이름' 표(32비트 x86)를 기준으로 한다.</summary>
 
 **답:** AL, BP, DH, ES는 표에 있다. ESI에는 8비트 이름이 없다. EIP는 표에 32비트 이름만 나온다.<br>
-**이유:** 8비트 이름은 EAX·EBX·ECX·EDX 넷에만 있다. ESI·EDI·EBP·ESP는 16비트 이름(SI, DI, BP, SP)까지만 있다. IP라는 이름은 16비트 프로세서 시절의 명령어 포인터로, 슬라이드에서는 뒤의 `RET` 설명에 "EIP or IP"로 나온다[^6].
+**이유:** 8비트 이름은 EAX·EBX·ECX·EDX 넷에만 있다. ESI·EDI·EBP·ESP는 16비트 이름(SI, DI, BP, SP)까지만 있다. IP라는 이름은 16비트 프로세서 시절의 명령어 포인터다. 그래서 `RET` 명령의 설명에는 "스택에서 꺼낸 값을 EIP 또는 IP에 넣는다"처럼 둘이 함께 나온다.
 
 </details>
 
@@ -193,13 +191,7 @@ EIP=00401024  EFL=00000206  CF=0  SF=0  ZF=0  OF=0
 </details>
 
 
-[^1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.9 (Accessing Parts of Registers: AH·AL·AX·EAX 그림과 표), p.10 (Index and Base Registers 표)
-[^2]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.8 (General-Purpose Registers: Named storage locations inside the CPU, optimized for speed. 그림)
-[^3]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.11~12 (Some Specialized Register Uses)
-[^4]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-2」, p.13 (Status Flags)
-[^5]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-1」, p.16 (Example Output: Showing registers and flags in the debugger)
-[^6]: 어셈블리어 11회 강의 자료 「wk11-chapt_08-2-1」, p.1 (RET Instruction: Pops stack into the instruction pointer (EIP or IP))
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `12345678h`의 예, 비트 번호를 적은 그림, 이름 글자의 뜻은 슬라이드에 없다. 슬라이드 p.9의 그림(8 + 8비트, 16비트, 32비트)을 수로 옮겼다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 표의 "풀이" 칸, 짝수 플래그가 아래 8비트만 센다는 것, EFLAGS의 비트 번호(올림 0, 짝수 2, 영 6, 부호 7, 넘침 11), 예제의 3단계는 슬라이드에 없다. Intel 64 and IA-32 Architectures Software Developer's Manual, Vol. 1, 3.4.3절을 따랐다. 9번 비트는 인터럽트를 받을지 정하는 비트, 1번 비트는 늘 1인 비트다.
-[^k1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MIPS와의 비교는 어셈블리어 슬라이드에 없다. MIPS 쪽 내용(레지스터 32개와 번호, `jal`이 31번 레지스터에 주소를 넣는 것, Hi·Lo)은 MIPS Reference Data(Green Sheet, https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf)와 Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장을 따랐다. 레지스터 번호는 [14_mips-operands_verify.py](/Hongs_Blog/studies/computer-architecture/code/14_mips-operands_verify/)로 확인했다.
+[^s1]: 검증 코드로 확인했다.
+[^s2]: Intel 64 and IA-32 Architectures Software Developer's Manual, Vol. 1, 3.4.3절을 따랐다. 9번 비트는 인터럽트를 받을지 정하는 비트, 1번 비트는 늘 1인 비트다.
+[^k1]: MIPS 쪽 내용(레지스터 32개와 번호, `jal`이 31번 레지스터에 주소를 넣는 것, Hi·Lo)은 MIPS Reference Data(Green Sheet, https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf)와 Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장을 따랐다. 레지스터 번호는 [14_mips-operands_verify.py](/Hongs_Blog/studies/computer-architecture/code/14_mips-operands_verify/)로 확인했다.
 {% endraw %}

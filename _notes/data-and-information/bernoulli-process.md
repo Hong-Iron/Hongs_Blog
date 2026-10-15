@@ -10,7 +10,7 @@ course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Bernoulli Process", "베르누이 프로세스", "베르누이 시행", "Bernoulli Trial", "베르누이 확률변수", "Bernoulli Random Variable", "지시 확률변수", "Indicator Variable", "시간 칸", "Time Slot", "도착 과정", "Arrival Process", "이항 과정", "Binomial Process"]
 description: "1분마다 동전을 하나씩 던져 앞면이면 1, 뒷면이면 0을 적어 나간 끝없는 줄이다. 칸마다 1이 나올 가능성이 똑같고 칸끼리 서로 영향을 주지 않아서, 시간에 따라 벌어지는 일을 적는 방법 가운데 가장 다루기 쉽다. 처음 몇 칸 안에 1이 몇 개 들었는지는 경우의 수와 곱셈만으로 …"
@@ -34,9 +34,9 @@ permalink: "/studies/data-and-information/bernoulli-process/"
 
 ## 예시로 보기
 
-"1초마다 은행에 손님이 왔는가", "시간 칸마다 서버에 클릭이 들어왔는가", "이번 복권이 당첨인가"는 모두 칸마다 "일어났다, 안 일어났다" 둘 중 하나를 적는 일이다[^1]. 한 칸은 동전 한 번으로 적을 수 있다. 궁금한 것은 칸 하나가 아니라 줄 전체다. 한 시간 동안 손님이 몇 명 오는가 같은 것이다.
+"1초마다 은행에 손님이 왔는가", "시간 칸마다 서버에 클릭이 들어왔는가", "이번 복권이 당첨인가"는 모두 칸마다 "일어났다, 안 일어났다" 둘 중 하나를 적는 일이다. 한 칸은 동전 한 번으로 적을 수 있다. 궁금한 것은 칸 하나가 아니라 줄 전체다. 한 시간 동안 손님이 몇 명 오는가 같은 것이다.
 
-슬라이드의 줄은 13칸이다[^1].
+13칸짜리 줄을 하나 보자.
 
 | 칸 번호 $$i$$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -60,25 +60,25 @@ permalink: "/studies/data-and-information/bernoulli-process/"
 
 ## 정의
 
-**칸 하나: 베르누이 시행.** 결과가 성공 아니면 실패인 실험이다. 성공이면 1, 실패면 0을 내는 확률변수 $$X$$를 베르누이 확률변수라 하고 $$X \sim \mathrm{Bern}(p)$$로 쓴다("$$X$$가 성공 확률 $$p$$인 베르누이 분포를 따른다"). 슬라이드 p.8은 같은 것을 $$\mathrm{Ber}(p)$$로 쓴다[^2].
+**칸 하나: 베르누이 시행.** 결과가 성공 아니면 실패인 실험이다. 성공이면 1, 실패면 0을 내는 확률변수 $$X$$를 베르누이 확률변수라 하고 $$X \sim \mathrm{Bern}(p)$$로 쓴다("$$X$$가 성공 확률 $$p$$인 베르누이 분포를 따른다"). $$\mathrm{Ber}(p)$$로 쓰기도 한다.
 
 $$P(X = 1) = p, \qquad P(X = 0) = 1 - p, \qquad \mathbb{E}[X] = p, \qquad \operatorname{Var}(X) = p(1 - p)$$
 
 
-$$\mathbb{E}[X]$$는 평균(기댓값), $$\operatorname{Var}(X)$$는 분산이다. 1이 확률 $$p$$로 나오니 평균은 $$1 \times p + 0 \times (1 - p) = p$$다. 동전 던지기, 무작위로 고른 2진 숫자 하나, 디스크가 고장 났는가, 어떤 사람이 영화를 좋아하는가가 모두 이 꼴이다[^2].
+$$\mathbb{E}[X]$$는 평균(기댓값), $$\operatorname{Var}(X)$$는 분산이다. 1이 확률 $$p$$로 나오니 평균은 $$1 \times p + 0 \times (1 - p) = p$$다. 동전 던지기, 무작위로 고른 2진 숫자 하나, 디스크가 고장 났는가, 어떤 사람이 영화를 좋아하는가가 모두 이 꼴이다.
 
-**줄 전체: 베르누이 과정.** 서로 독립이고 성공 확률이 모두 같은 베르누이 시행을 끝없이 이어 붙인 줄 $$X_1, X_2, \dots$$다. 번호 $$1, 2, \dots$$를 시간 칸(time slot)이라 부른다[^1].
+**줄 전체: 베르누이 과정.** 서로 독립이고 성공 확률이 모두 같은 베르누이 시행을 끝없이 이어 붙인 줄 $$X_1, X_2, \dots$$다. 번호 $$1, 2, \dots$$를 시간 칸(time slot)이라 부른다.
 
 기호로 쓰면, $$0 < p < 1$$인 $$p$$ 하나가 있어 모든 $$i$$에서 $$X_i \sim \mathrm{Bern}(p)$$이고 $$X_1, X_2, \dots$$가 서로 독립이다.
 
-[확률 과정](/Hongs_Blog/studies/data-and-information/random-process/)의 네 가지로는 이산 시간, 이산 값이다. 가장 단순한 확률 과정에 들고, 무엇인가가 도착하는 때를 적는 과정(도착 과정)의 하나다[^1].
+[확률 과정](/Hongs_Blog/studies/data-and-information/random-process/)의 네 가지로는 이산 시간, 이산 값이다. 가장 단순한 확률 과정에 들고, 무엇인가가 도착하는 때를 적는 과정(도착 과정)의 하나다.
 
-**개수 세기: 이항분포.** 처음 $$n$$칸에 든 1의 개수 $$X = X_1 + \cdots + X_n$$은 이항분포를 따르고 $$X \sim \mathrm{Bin}(n, p)$$로 쓴다. $$n$$은 시행 횟수, $$p$$는 한 번의 성공 확률이다[^3]. 1이 정확히 $$k$$개일 확률은 "1이 들어갈 자리 $$k$$개를 고르는 방법의 수"에 "그런 줄 하나의 확률"을 곱한 것이다.
+**개수 세기: 이항분포.** 처음 $$n$$칸에 든 1의 개수 $$X = X_1 + \cdots + X_n$$은 이항분포를 따르고 $$X \sim \mathrm{Bin}(n, p)$$로 쓴다. $$n$$은 시행 횟수, $$p$$는 한 번의 성공 확률이다. 1이 정확히 $$k$$개일 확률은 "1이 들어갈 자리 $$k$$개를 고르는 방법의 수"에 "그런 줄 하나의 확률"을 곱한 것이다.
 
 $$P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}, \qquad \mathbb{E}[X] = np, \qquad \operatorname{Var}(X) = np(1 - p)$$
 
 
-$$k$$는 0부터 $$n$$까지의 정수다. 위 예시가 $$n = 13$$, $$k = 4$$, $$p = 0.3$$을 넣은 것이다. 식이 왜 이런 모양인지와 평균·분산을 구하는 과정은 [베르누이 시행과 이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)에 있고, 강의의 예제(동전 세 개, 해밍 부호, 광고 클릭)도 그 문서의 과목별 관점에 풀어 두었다.
+$$k$$는 0부터 $$n$$까지의 정수다. 위 예시가 $$n = 13$$, $$k = 4$$, $$p = 0.3$$을 넣은 것이다. 식이 왜 이런 모양인지와 평균·분산을 구하는 과정은 [베르누이 시행과 이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)에 있다. 동전 세 개, 해밍 부호, 광고 클릭 예제도 그 문서의 과목별 관점에 풀어 두었다.
 
 ### 보장하는 것과 보장하지 않는 것
 
@@ -91,13 +91,13 @@ $$k$$는 0부터 $$n$$까지의 정수다. 위 예시가 $$n = 13$$, $$k = 4$$, 
 
 ## 활용
 
-- **비트 오류.** 비트마다 독립으로 같은 확률로 깨진다고 보면, 보낸 비트 줄에서 "깨졌다 = 1"로 적은 줄이 베르누이 과정이다. 7비트 가운데 깨진 개수가 $$\mathrm{Bin}(7, p)$$라는 데서 [해밍 부호](/Hongs_Blog/studies/data-and-information/hamming-code/)가 메시지를 지켜 낼 확률이 나온다[^4].
+- **비트 오류.** 비트마다 독립으로 같은 확률로 깨진다고 보면, 보낸 비트 줄에서 "깨졌다 = 1"로 적은 줄이 베르누이 과정이다. 7비트 가운데 깨진 개수가 $$\mathrm{Bin}(7, p)$$라는 데서 [해밍 부호](/Hongs_Blog/studies/data-and-information/hamming-code/)가 메시지를 지켜 낼 확률이 나온다.
 - **흔한 실수.** 줄 하나의 확률 $$p^k(1 - p)^{n - k}$$와 개수의 확률 $$\binom{n}{k}p^k(1 - p)^{n - k}$$를 섞는 것. 앞은 "바로 이 순서", 뒤는 "순서는 상관없이 개수만"이다.
 
 ## 연결
 
 - 선수: [확률 과정](/Hongs_Blog/studies/data-and-information/random-process/), [독립](/Hongs_Blog/studies/probability-statistics/independence/), [분산과 표준편차](/Hongs_Blog/studies/probability-statistics/variance/)
-- 개수의 분포와 강의 예제: [베르누이 시행과 이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)
+- 개수의 분포와 예제: [베르누이 시행과 이항분포](/Hongs_Blog/studies/probability-statistics/binomial/)
 - 다음 1까지 기다리는 칸 수: [기하분포](/Hongs_Blog/studies/probability-statistics/geometric-distribution/)
 - 칸을 한없이 잘게 쪼갠 연속 시간판에서 개수의 분포: [포아송 분포](/Hongs_Blog/studies/probability-statistics/poisson/)
 
@@ -137,10 +137,6 @@ $$k$$는 0부터 $$n$$까지의 정수다. 위 예시가 $$n = 13$$, $$k = 4$$, 
 </details>
 
 
-[^1]: 자료와 정보 9회 강의 자료 「D&I_강의09-랜덤프로세스」, p.7 (분마다 동전 던지기, 복권·은행 손님·서버 클릭, 독립인 베르누이 시행의 줄, 시간 칸, 0과 1이 적힌 13칸 그림, 이산 시간·이산 값, 도착 과정). 슬라이드 제목은 "베르누이 프로세서"로 적혀 있다.
-[^2]: 같은 자료, p.6 (베르누이 시행, 지시 확률변수, 예 네 가지), p.8 (확률, 평균, 분산)
-[^3]: 같은 자료, p.9 ("Binomial Process", $$X \sim \mathrm{Bin}(n, p)$$ 읽는 법), p.10 (이항분포의 확률 식, 평균 $$np$$, 분산 $$np(1 - p)$$)
-[^4]: 같은 자료, p.12 (해밍 부호와 비트 오류 확률 0.1)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 13칸 줄에 $$p = 0.3$$을 넣은 계산과 카드 C2·C4는 원본에 없다. 원본 그림에는 0과 1만 있고 $$p$$ 값이 없어서 계산용으로 0.3을 골랐다. 값은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 겹치지 않는 구간의 독립과 다시 시작해도 같은 과정이라는 성질, 연달아 깨지는 비트의 예는 원본에 없다. Bertsekas, Tsitsiklis, *Introduction to Probability* 2판, 6.1절 "The Bernoulli Process"가 다룬다. 구간 독립은 7칸을 전수로 세어 확인했다.
+[^s1]: 값은 검증 코드로 확인했다.
+[^s2]: Bertsekas, Tsitsiklis, *Introduction to Probability* 2판, 6.1절 "The Bernoulli Process"가 다룬다. 구간 독립은 7칸을 전수로 세어 확인했다.
 {% endraw %}

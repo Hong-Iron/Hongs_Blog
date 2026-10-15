@@ -209,8 +209,8 @@ $$100 \times 100$$ 합성 이미지를 랭크 1, 5, 20으로 줄였다. 랭크 2
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 7.1절 "Image Processing by Linear Algebra"(저랭크 이미지), 7.2절 "Bases and Matrices in the SVD"(존재 증명, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$, 예 $$\begin{pmatrix}3 & 0\\ 4 & 5\end{pmatrix}$$), 7.3절 "Principal Component Analysis by the SVD", 7.4절 "The Geometry of the SVD".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 에카르트–영 정리는 C. Eckart, G. Young, "The approximation of one matrix by another of lower rank", *Psychometrika* 1 (1936)의 결과다. 24_svd_verify.py에서 무작위 랭크 $$k$$ 행렬과 비교해 실험으로 확인했다(증명이 아니다).
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 저장량 $$k(m + n + 1)$$은 $$\mathbf{u}_i$$, $$\mathbf{v}_i$$, $$\sigma_i$$의 개수를 센 것이다. 저랭크 행렬 분해로 평점을 예측하는 방법은 넷플릭스 상 대회(2006~2009) 이후 추천 시스템의 표준 기법이 되었다(Koren·Bell·Volinsky, "Matrix factorization techniques for recommender systems", *IEEE Computer* 2009).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [24_svd_plot.py](/Hongs_Blog/studies/linear-algebra/code/24_svd_plot/)로 그렸고, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 $$\sigma_1 = 3\sqrt5$$, $$\sigma_2 = \sqrt5$$, 랭크 $$k$$ 근사의 상대 오차가 버린 특잇값으로 정해지는 것(랭크 1, 5, 20에서 약 31%, 9%, 0.2%)을 같은 코드로 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 $$A = U\Sigma V^\top$$, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 `예시로 보기`의 "수직인 입력 축이 수직인 출력 축으로 $$\sigma_i$$배"를 옮겼다(Strang 5판 7.2절).
+[^s1]: 에카르트–영 정리는 C. Eckart, G. Young, "The approximation of one matrix by another of lower rank", *Psychometrika* 1 (1936)의 결과다. 24_svd_verify.py에서 무작위 랭크 $$k$$ 행렬과 비교해 실험으로 확인했다(증명이 아니다).
+[^s2]: 저장량 $$k(m + n + 1)$$은 $$\mathbf{u}_i$$, $$\mathbf{v}_i$$, $$\sigma_i$$의 개수를 센 것이다. 저랭크 행렬 분해로 평점을 예측하는 방법은 넷플릭스 상 대회(2006~2009) 이후 추천 시스템의 표준 기법이 되었다(Koren·Bell·Volinsky, "Matrix factorization techniques for recommender systems", *IEEE Computer* 2009).
+[^s3]: [24_svd_plot.py](/Hongs_Blog/studies/linear-algebra/code/24_svd_plot/)로 그렸고, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 $$\sigma_1 = 3\sqrt5$$, $$\sigma_2 = \sqrt5$$, 랭크 $$k$$ 근사의 상대 오차가 버린 특잇값으로 정해지는 것(랭크 1, 5, 20에서 약 31%, 9%, 0.2%)을 같은 코드로 확인했다.
+[^s4]: 이 문서 `정의`의 $$A = U\Sigma V^\top$$, $$A\mathbf{v}_i = \sigma_i\mathbf{u}_i$$와 `예시로 보기`의 "수직인 입력 축이 수직인 출력 축으로 $$\sigma_i$$배"를 옮겼다(Strang 5판 7.2절).
 {% endraw %}

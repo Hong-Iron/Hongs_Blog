@@ -97,5 +97,5 @@ MIPS의 설계 원칙으로 읽으면 RISC는 "자주 생기는 일을 빠르게
 [^3]: KFUPM ICS 233 (A. R. Naseer), Lecture 4 "MIPS Processor Instruction Set", https://faculty.kfupm.edu.sa/coe/arnaseer/ICS233_Lecture4%20Slides.pdf, 슬라이드 4~5 (RISC 설계: 명령 종류가 적다, 산술이 단순하다, 레지스터가 넉넉하다. MIPS는 적재-저장 구조라 load와 store만 메모리에 닿는다)
 [^4]: University of Utah CS3810 (R. Balasubramonian), Lecture 3 "MIPS Instruction Set", https://users.cs.utah.edu/~rajeev/cs3810/slides/3810-15-03.pdf, 슬라이드 10 (MIPS는 레지스터 32개, x86은 8개)
 [^5]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition). x86 명령을 안에서 마이크로 연산(micro-operation)으로 바꿔 처리한다는 설명이다. 책을 직접 보지 못해 장을 적지 않는다 [확인필요].
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> MIPS 세 줄과 그 기계어 값, 바이트 수 비교, 카드의 예, 표의 "재료를 적는 꼴"·"회로" 줄, 파이프라인과의 관계, 플래그를 쓰는 RISC가 있다는 말(ARM이 그렇다)은 위 자료에 그대로 있지 않다. MIPS 값은 검증 코드의 인코더로 구했다. 길이가 같으면 파이프라인을 짜기 쉽다는 설명은 Patterson & Hennessy, 같은 책, 4장 "The Processor"의 내용이다.
+[^s1]: MIPS 세 줄과 그 기계어 값, 바이트 수 비교, 카드의 예, 표의 "재료를 적는 꼴"·"회로" 줄, 파이프라인과의 관계, 플래그를 쓰는 RISC가 있다는 말(ARM이 그렇다)은 위 자료에 그대로 있지 않다. MIPS 값은 검증 코드의 인코더로 구했다. 길이가 같으면 파이프라인을 짜기 쉽다는 설명은 Patterson & Hennessy, 같은 책, 4장 "The Processor"의 내용이다.
 {% endraw %}

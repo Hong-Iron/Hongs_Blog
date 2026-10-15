@@ -23,9 +23,9 @@ permalink: "/studies/database-design/code/01_database-and-dbms_verify/"
 """데이터베이스와 DBMS 문서의 값 확인.
 
 문서: 01.데이터베이스와 DBMS
-출처: 데이터베이스 설계 2주차 슬라이드 2-1 p.3~5 (UNIVERSITY 예: 레코드 종류 p.4, 상태 p.5)
+출처: Elmasri & Navathe, Fundamentals of Database Systems 그림 1.2 (UNIVERSITY 데이터베이스)
 주장:
-  1. p.5의 UNIVERSITY 상태는 표 5개, 열 18개, 행 2 + 4 + 6 + 6 + 3 = 21개다.
+  1. 문서에 실은 UNIVERSITY 상태는 표 5개, 열 18개, 행 2 + 4 + 6 + 6 + 3 = 21개다.
   2. "Brown이 A를 받은 과목"은 STUDENT -> GRADE_REPORT -> SECTION 세 표를 이어야 나오고 답은
      MATH2410, CS1310, CS3380이다. Database(CS3380)의 선수 과목은 CS3320, MATH2410이다.
   3. DBMS가 돕는 네 가지 일을 SQLite로 해 본다.
@@ -33,7 +33,7 @@ permalink: "/studies/database-design/code/01_database-and-dbms_verify/"
      조작: 찾기, 고치기(Smith의 Class 1 -> 2), 넣기(새 분반). 공유: 두 접속이 같은 파일의 같은 내용을 본다.
   4. 카드 C3: Smith가 들은 과목은 MATH2410(B), CS1310(C)이다.
 실행: python3 01_database-and-dbms_verify.py
-SQLite(파이썬 표준 라이브러리 sqlite3)를 DBMS의 한 예로 썼다. 슬라이드는 특정 제품을 쓰지 않는다.
+SQLite(파이썬 표준 라이브러리 sqlite3)를 DBMS의 한 예로 썼다.
 """
 import os
 import sqlite3
@@ -47,7 +47,7 @@ CREATE TABLE GRADE_REPORT (Student_number INTEGER, Section_identifier INTEGER, G
 CREATE TABLE PREREQUISITE (Course_number TEXT, Prerequisite_number TEXT);
 """
 
-# 슬라이드 2-1 p.5의 상태 (Elmasri 그림 1.2)
+# 문서에 실은 UNIVERSITY 상태 (Elmasri 그림 1.2)
 ROWS = {
     "STUDENT": [("Smith", 17, 1, "CS"), ("Brown", 8, 2, "CS")],
     "COURSE": [("Intro to Computer Science", "CS1310", 4, "CS"), ("Data Structures", "CS3320", 4, "CS"),

@@ -50,11 +50,11 @@ class ThrowImpl {
         System.out.println("ok  " + what);
     }
 
-    // 슬라이드 p.16 ThrowingException
+    // 문서의 첫 예제: findClass가 예외를 부른 쪽으로 넘긴다
     static void findClass() throws ClassNotFoundException {
         Class.forName("java.lang.String2");
     }
-    static void slideMain() {
+    static void exampleMain() {
         try {
             findClass();
         } catch (ClassNotFoundException e) {
@@ -121,7 +121,7 @@ class ThrowImpl {
     }
 
     public static void main(String[] args) throws Throwable {
-        same(capture(ThrowImpl::slideMain), "Exception: java.lang.String2\n", "p.16 출력");
+        same(capture(ThrowImpl::exampleMain), "Exception: java.lang.String2\n", "첫 예제 출력");
         same(capture(ThrowImpl::a), "a1\nb1\nc1\ncaught boom\na3\n", "세 층 떠넘기기: b2, a2는 건너뛴다");
 
         check(divide(6, 3) == 2, "divide(6, 3) = 2");

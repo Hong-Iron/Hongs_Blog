@@ -25,7 +25,7 @@ permalink: "/studies/assembly-language/stack-frame-ladder/"
 {% raw %}
 사용 개념: [스택 프레임](/Hongs_Blog/studies/assembly-language/stack-frame/), [스택 매개변수](/Hongs_Blog/studies/assembly-language/stack-parameters/), [호출 규약](/Hongs_Blog/studies/assembly-language/calling-convention/), [지역 변수](/Hongs_Blog/studies/assembly-language/local-variables/).
 
-"이 호출의 스택 프레임을 그려라"는 문제는 늘 같은 하위목표로 풀린다. ESP가 4씩 내려가는 것을 한 줄도 건너뛰지 않고 적는 것이 전부다[^s1].
+"이 호출의 스택 프레임을 그려라"는 문제는 늘 같은 하위목표로 풀린다. ESP가 4씩 내려가는 것을 한 줄도 건너뛰지 않고 적는 것이 전부다.
 
 1. *인수:* `push`마다 ESP에서 4를 빼고 그 주소에 값을 적는다.
 2. *호출:* `call`이 ESP에서 4를 더 빼고 복귀 주소를 적는다.
@@ -239,7 +239,4 @@ Q ENDP
 <div class="callout-title" markdown="span">검증 — [44_stack-frame-ladder_p4.py](/Hongs_Blog/studies/assembly-language/code/44_stack-frame-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제, 시작 주소, 수치는 원본에 없다. 슬라이드의 스택 그림(wk10-3-3 p.12, wk11-2-1 p.7)과 코드(wk11-2-1 p.2, p.11)를 연습하도록 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

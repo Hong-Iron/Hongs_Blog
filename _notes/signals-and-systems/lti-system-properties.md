@@ -48,7 +48,7 @@ LTI 시스템은 임펄스 응답 $$h$$ 하나로 모든 것이 정해지므로,
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정리</div>
 
-임펄스 응답이 $$h[n]$$ ($$h(t)$$)인 LTI 시스템에 대해[^1][^2][^3][^4]
+임펄스 응답이 $$h[n]$$ ($$h(t)$$)인 LTI 시스템에 대해
 
 | 성질 | 이산 시간 조건 | 연속 시간 조건 |
 |---|---|---|
@@ -62,14 +62,14 @@ LTI 시스템은 임펄스 응답 $$h$$ 하나로 모든 것이 정해지므로,
 </div>
 
 
-**기억 없음.** $$y[n] = \cdots + x[n+1]h[-1] + x[n]h[0] + x[n-1]h[1] + \cdots$$이므로, $$x[n]$$만 쓰려면 $$h[0]$$ 말고는 모두 0이어야 한다[^1]. 그러면 $$y[n] = Kx[n]$$이고, $$K = 1$$이면 항등 시스템 $$x * \delta = x$$다.
+**기억 없음.** $$y[n] = \cdots + x[n+1]h[-1] + x[n]h[0] + x[n-1]h[1] + \cdots$$이므로, $$x[n]$$만 쓰려면 $$h[0]$$ 말고는 모두 0이어야 한다. 그러면 $$y[n] = Kx[n]$$이고, $$K = 1$$이면 항등 시스템 $$x * \delta = x$$다.
 
-**인과.** $$y[n] = \sum_k h[k]x[n-k]$$에서 $$k < 0$$인 항은 미래 입력 $$x[n - k]$$를 쓴다. 이 항들이 모두 0이려면 $$h[k] = 0$$ ($$k < 0$$)이어야 한다. 이때 $$y[n] = \sum_{k=0}^{\infty}h[k]x[n-k]$$, $$y(t) = \int_0^\infty h(\tau)x(t-\tau)d\tau$$로 쓸 수 있다[^3].
+**인과.** $$y[n] = \sum_k h[k]x[n-k]$$에서 $$k < 0$$인 항은 미래 입력 $$x[n - k]$$를 쓴다. 이 항들이 모두 0이려면 $$h[k] = 0$$ ($$k < 0$$)이어야 한다. 이때 $$y[n] = \sum_{k=0}^{\infty}h[k]x[n-k]$$, $$y(t) = \int_0^\infty h(\tau)x(t-\tau)d\tau$$로 쓸 수 있다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">안정 조건이 충분조건인 이유</summary>
 
-모든 $$n$$에서 $$\vert x[n]\vert  < B$$라 하자[^4].
+모든 $$n$$에서 $$\vert x[n]\vert  < B$$라 하자.
 1. $$\vert y[n]\vert  = \left\vert \sum_k h[k]x[n-k]\right\vert $$ (컨벌루션)
 2. $$\le \sum_k \vert h[k]\vert \vert x[n-k]\vert $$ (합의 크기는 크기의 합을 넘지 않는다)
 3. $$\le B\sum_k\vert h[k]\vert $$ (모든 $$\vert x\vert  < B$$)
@@ -108,20 +108,20 @@ LTI 시스템의 모든 성질은 $$h$$ 안에 들어 있다. 입력 전체를 �
 
 ## 예제
 
-**예제 2.11 순수 시간 이동** $$y(t) = x(t - t_0)$$[^5]
+**예제 2.11 순수 시간 이동** $$y(t) = x(t - t_0)$$
 
 - 임펄스 응답: $$\delta(t)$$를 넣으면 $$h(t) = \delta(t - t_0)$$.
 - 성질 ①: $$x(t) * \delta(t - t_0) = x(t - t_0)$$. 옮긴 임펄스와 컨벌루션하면 신호가 그만큼 옮겨진다. 표본화 성질 $$\int x(\tau)\delta(\tau - a)d\tau = x(a)$$와 $$\delta$$가 짝함수($$\delta(t) = \delta(-t)$$)라는 것에서 나온다.
 - 역시스템: 다시 앞당기면 된다. $$h_1(t) = \delta(t + t_0)$$이고 $$\delta(t - t_0) * \delta(t + t_0) = \delta(t)$$.
 - 기억: $$t_0 = 0$$이면 항등 시스템이라 기억 없음, $$t_0 \ne 0$$이면 기억 있음. 인과: $$t_0 \ge 0$$이면 인과(지연), $$t_0 < 0$$이면 비인과.
-- 안정: $$\int\vert \delta(\tau - t_0)\vert d\tau = 1$$이라 안정이다(예제 2.13)[^6].
+- 안정: $$\int\vert \delta(\tau - t_0)\vert d\tau = 1$$이라 안정이다(예제 2.13).
 
-**예제 2.12 누산기** $$h[n] = u[n]$$[^7]
+**예제 2.12 누산기** $$h[n] = u[n]$$
 
 - 출력: $$n - k < 0$$이면 $$u[n-k] = 0$$이므로 $$y[n] = \sum_{k=-\infty}^{n}x[k]$$. 지금까지 들어온 입력을 모두 더한다.
 - 역시스템: $$y[n] = x[n] - x[n-1]$$(첫 번째 차). 임펄스 응답 $$h_1 = \delta[n] - \delta[n-1]$$.
 - 확인: $$u * \delta[n] = u[n]$$, $$u * \delta[n-1] = u[n-1]$$이므로 $$h * h_1 = u[n] - u[n-1] = \delta[n]$$.
-- 안정: $$\sum\vert u[n]\vert  = \infty$$라 불안정. 연속 시간 적분기도 $$h(t) = u(t)$$, $$\int\vert u\vert  = \infty$$로 불안정이다(예제 2.13). 적분기의 역시스템은 미분기다[^6].
+- 안정: $$\sum\vert u[n]\vert  = \infty$$라 불안정. 연속 시간 적분기도 $$h(t) = u(t)$$, $$\int\vert u\vert  = \infty$$로 불안정이다(예제 2.13). 적분기의 역시스템은 미분기다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 누산기와 첫 번째 차의 컨벌루션이 $$\delta$$, $$\delta[n-k] * \delta[n+k] = \delta$$, 이동·기억 없는 시스템의 출력, 절대 합 2인 $$h$$의 출력 한계 $$B\sum\vert h\vert $$, 누산기의 발산 확인 — [21_lti-system-properties_verify.py](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_verify/)</div>
@@ -188,13 +188,6 @@ LTI 시스템의 모든 성질은 $$h$$ 안에 들어 있다. 입력 전체를 �
 </details>
 
 
-[^1]: 신호 및 시스템 6회 강의 자료 「Week06_CH02_2_handout」, p.8~9
-[^2]: 같은 자료, p.10 (그림 2.26)
-[^3]: 같은 자료, p.15~16
-[^4]: 같은 자료, p.17
-[^5]: 같은 자료, p.11~12 (예제 2.11)
-[^6]: 같은 자료, p.18 (예제 2.13)
-[^7]: 같은 자료, p.13~14 (예제 2.12)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 맨 앞 표, 안정 조건의 필요조건 증명 방법(Oppenheim·Willsky 2판 문제 2.49), 채널 보정 예, 오해 항목, 확인 문제 C2~C4는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [21_lti-system-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$u * u = n + 1$$, $$(\frac12)^n u * u = 2 - (\frac12)^n < 2$$.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [21_lti-system-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/21_lti-system-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$u * u = n + 1$$, $$(\frac12)^n u * u = 2 - (\frac12)^n < 2$$.
 {% endraw %}

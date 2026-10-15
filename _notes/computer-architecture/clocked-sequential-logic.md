@@ -193,5 +193,5 @@ $$x = 5$$를 한 사이클 넣었는데 $$R$$은 15가 된다. 다음 사이클�
 [^1]: Patterson & Hennessy, *Computer Organization and Design*, 부록 "The Basics of Logic Design"의 B.7절 "Clocks" (클록 주기, 에지 트리거 방식, 상태 소자 사이에 조합 회로가 낀 그림, 같은 상태 소자를 한 사이클에 읽고 쓸 수 있다는 것), B.11절 "Timing Methodologies" (주기 ≥ $$t_{\text{prop}} + t_{\text{combinational}} + t_{\text{setup}}$$, 경주의 뜻, 유지 시간은 지켜진다고 가정한다는 말, 클록 스큐를 더한 식, 클록과 상관없이 바뀌는 신호와 준안정 상태). 절 번호는 공개된 PDF 기준이고 판에 따라 부록 문자가 다를 수 있다. https://www.doc.ic.ac.uk/~wl/teachlocal/arch/HP05/HP_AppB.pdf
 [^2]: MIT 6.004 Computation Structures 강의 노트 "Sequential Logic" (클록 하나로 모든 레지스터를 맞추는 규칙, 고리마다 레지스터가 하나는 있어야 하고 클록은 레지스터에 바로 잇는다는 것, 유지 시간 조건 $$t_{CD,REG} + t_{CD,LOGIC} \ge t_{HOLD}$$, 상태를 레지스터 하나에 모은 유한 상태 기계), https://computationstructures.org/notes/sequential_logic/notes.html
 [^3]: UC Berkeley CS61C 강의 노트 "Timing a Synchronous System" (임계 경로 = clk-to-q 지연 + 조합 회로 지연 + 준비 시간, 가장 짧은 주기는 임계 경로의 지연, 유지 시간을 어기면 조합 회로에 지연을 더해 고친다는 것), https://notes.cs61c.org/content/sds-state/timing-synchronous-system
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 누산기 예, 다이어그램, 래치로 바꾼 예, 주기를 어긴 예와 모든 수치는 직접 만들었다. 흉내기와 계산으로 확인했다.
+[^s1]: 누산기 예, 다이어그램, 래치로 바꾼 예, 주기를 어긴 예와 모든 수치는 직접 만들었다. 흉내기와 계산으로 확인했다.
 {% endraw %}

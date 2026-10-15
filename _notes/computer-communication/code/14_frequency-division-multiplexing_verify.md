@@ -23,7 +23,7 @@ permalink: "/studies/computer-communication/code/14_frequency-division-multiplex
 """주파수 분할 다중화(FDM)의 채널 배치 계산 검증.
 
 문서: 14.주파수 분할 다중화 (예시, 예제, 활용)
-슬라이드 스펙트럼: 반송파 64, 68, 72 kHz, 채널 3개가 60~64, 64~68, 68~72 kHz를 차지한다.
+문서 예시의 스펙트럼: 반송파 64, 68, 72 kHz, 채널 3개가 60~64, 64~68, 68~72 kHz를 차지한다.
 """
 from fractions import Fraction as F
 

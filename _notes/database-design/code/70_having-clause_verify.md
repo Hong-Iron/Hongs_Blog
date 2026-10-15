@@ -23,20 +23,19 @@ permalink: "/studies/database-design/code/70_having-clause_verify/"
 """HAVING 검증 (SQLite).
 
 문서: 70.HAVING
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.33~34, 12주차 p.11
 주장:
-  1. Q26(p.34): 일하는 직원이 둘을 넘는 프로젝트는 ProductY, Computerization, Reorganization, Newbenefits(모두 3명).
-     ProductX와 ProductZ(2명씩)가 빠진다 (p.33의 빨간 테두리).
+  1. Q26: 일하는 직원이 둘을 넘는 프로젝트는 ProductY, Computerization, Reorganization, Newbenefits(모두 3명).
+     ProductX와 ProductZ(2명씩)가 빠진다.
   2. 묶음마다 구한 다른 값으로도 거른다: 시간 합이 40을 넘는 프로젝트는 1, 3, 10, 30.
   3. 집계 함수를 WHERE에 쓰면 오류다.
   4. HAVING에는 묶는 열도 쓸 수 있다. 묶지 않은 열은 SQLite만 받는다(PostgreSQL은 거부, .sql 파일).
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

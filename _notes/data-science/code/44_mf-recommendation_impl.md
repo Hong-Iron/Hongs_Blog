@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/44_mf-recommendation_impl/"
 """행렬 분해 추천(PureSVD, Biased MF) 구현과 실험.
 
 문서: 44.행렬 분해 추천 (예시, 정의, 카드)
-출처: 데이터 과학 12회 슬라이드 12-1 p.3~16
 PureSVD: 빈칸을 0으로 채운 R을 특잇값 분해하고 위 d개만 남겨 다시 곱한다(학습 없음, 닫힌 해).
          특잇값 분해는 RᵀR의 고유분해(야코비)로 구한다: RᵀR = V Σ² Vᵀ, U = R V Σ⁻¹.
 Biased MF: r̂_ui = μ + b_u + b_i + p_uᵀq_i, 관측된 칸에서 (r - r̂)² + λ(b_u² + b_i² + ||p||² + ||q||²)를 확률적 경사 하강으로 최소화.

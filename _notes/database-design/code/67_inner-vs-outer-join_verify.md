@@ -23,7 +23,6 @@ permalink: "/studies/database-design/code/67_inner-vs-outer-join_verify/"
 """내부 조인과 외부 조인 비교 검증 (SQLite).
 
 문서: 67.내부 조인과 외부 조인 비교
-출처: 데이터베이스 설계 11주차 슬라이드 11-2 p.24~26, 12주차 p.8~9
 주장 (카드의 답):
   C1 (a) 프로젝트와 일하는 직원을 내부 조인하면 16행. (b) 모든 직원과 상사 이름은 LEFT OUTER JOIN으로 8행, 내부 조인이면 7행.
   C2 (c) 부양가족이 없는 직원은 LEFT OUTER JOIN + IS NULL로 5명.
@@ -32,10 +31,10 @@ permalink: "/studies/database-design/code/67_inner-vs-outer-join_verify/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7, 슬라이드 6-2 p.20~21).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7).
 # 파일끼리 import하지 않으려고 통째로 넣었다.
 # - 서로 가리키는 외래 키(EMPLOYEE.Dno <-> DEPARTMENT.Mgr_ssn)는 커밋할 때 검사하도록 미뤘다.
-# - 슬라이드의 DDL(9 p.18)은 Hours가 NOT NULL이지만 상태에 (888665555, 20, NULL)이 있어 NOT NULL을 뺐다.
+# - 상태에 (888665555, 20, NULL)이 있어 Hours에는 NOT NULL을 걸지 않았다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

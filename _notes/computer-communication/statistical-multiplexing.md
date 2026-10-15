@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Statistical Multiplexing", "통계적 시분할 다중화", "statistical TDM", "비동기식 시분할 다중화", "asynchronous TDM", "통계적 이득", "오버헤드", "overhead"]
 description: "식당이 예약석을 따로 비워 두지 않고 온 손님 순서대로 빈자리에 앉히듯, 칸을 미리 나눠 주지 않고 보낼 데이터가 있는 사용자에게만 그때그때 링크를 내주는 방법이다. 쉬는 사람 몫이 비지 않으니 같은 링크로 훨씬 많은 사용자를 받는다. 대신 조각마다 누구 것인지 적은 이름표를 붙여…"
@@ -34,35 +34,25 @@ permalink: "/studies/computer-communication/statistical-multiplexing/"
 
 ## 예시로 보기
 
-슬라이드 그림에서 사용자 A~D 가운데 첫 주기에는 A와 B만, 둘째 주기에는 B와 C만 데이터가 있다[^1]. 같은 사례를 두 방식으로 실어 본다. `··`는 빈 칸, `a`는 주소 칸이다.
+사용자 A~D 가운데 첫 주기에는 A와 B만, 둘째 주기에는 B와 C만 데이터가 있다고 하자. 같은 사례를 두 방식으로 실어 본다. `··`는 빈 칸, `a`는 주소 칸이다.
 
 ```
 동기식 시분할 : | A1 | B1 | ·· | ·· | ·· | B2 | C2 | ·· |   ← 8칸 중 4칸이 빈 칸 (Wasted Bandwidth)
 통계적        : |a|A1|a|B1|a|B2|a|C2|   남는 대역 →        ← 빈 칸 없음, 대신 주소 칸
 ```
 
-동기식 시분할에서 칸 위치가 하던 일을 통계적 다중화에서는 주소 칸 `a`가 한다. 빈 칸이 사라진 자리는 다른 데이터에 쓸 수 있는 여유 대역이 된다(Extra Bandwidth Available)[^1]. 아래 정의에서는 주소 칸 하나의 크기를 $$b_{\text{addr}}$$비트, 데이터 조각 하나의 크기를 $$b_{\text{data}}$$비트라 쓴다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "통신 사이에 항상 GAP이 있다. DEMUX를 해야 하기 때문이다." (1주차 필기 72행)<br>
-문제점: 그림에서 데이터 조각 사이의 흰 칸은 빈 간격(gap)이 아니다. 범례(LEGEND)가 "Address"라고 밝힌 주소 칸이다[^1].<br>
-수정안: "조각마다 주소 칸이 붙는다. DEMUX가 주인을 알아야 하기 때문이다. 이것이 주소 오버헤드다."<br>
-근거: 슬라이드 범례에서 줄무늬 칸은 Data, 흰 칸은 Address다. 필기가 이 칸을 DEMUX와 연결한 것은 맞고, 이름만 다르다.
-
-</div>
+동기식 시분할에서 칸 위치가 하던 일을 통계적 다중화에서는 주소 칸 `a`가 한다. 조각 사이의 `a`는 빈 간격이 아니라 주인을 알려 주는 칸이고, 이것이 주소 오버헤드다. 빈 칸이 사라진 자리는 다른 데이터에 쓸 수 있는 여유 대역이 된다(Extra Bandwidth Available). 아래 정의에서는 주소 칸 하나의 크기를 $$b_{\text{addr}}$$비트, 데이터 조각 하나의 크기를 $$b_{\text{data}}$$비트라 쓴다.
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 그림을 코드로 재현해 동기식 8칸 중 빈 칸 4개, 통계적 A1 B1 \| B2 C2 확인 — [15_statistical-multiplexing_verify.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_verify/)</div>
+<div class="callout-title" markdown="span">검증: 위 예를 코드로 재현해 동기식 8칸 중 빈 칸 4개, 통계적 A1 B1 \| B2 C2 확인 — [15_statistical-multiplexing_verify.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_verify/)</div>
 
 </div>
 
 
 ## 정의
 
-통계적 다중화는 시분할 방법의 한 종류로, 고정 분할이 아니라 요구에 따라 동적으로 링크 시간을 나눈다. 비동기식 시분할 다중화라고도 한다[^1].
+통계적 다중화는 시분할 방법의 한 종류로, 고정 분할이 아니라 요구에 따라 동적으로 링크 시간을 나눈다. 비동기식 시분할 다중화라고도 한다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -149,14 +139,14 @@ $$\Pr[X > n_{\max}] = \sum_{k = n_{\max}+1}^{n} \binom{n}{k} p^k (1-p)^{n-k}$$
 
 **독립 가정을 빼면.** 35명이 모두 같은 순간에 함께 켜지고 꺼진다고 하자(모두 정각에 시작하는 온라인 시험). 그러면 11명 이상이 동시에 활동할 확률은 곧 "모두 활동할 확률"인 0.1이다. 독립일 때의 약 236배다. 몬테카를로로도 0.0998이 나온다. 통계적 이득은 사용자들이 서로 다른 때에 몰린다는 가정에서 나온다.
 
-**버스티하지 않으면.** 모든 입력이 늘 보낼 것이 있으면($$p = 1$$) 나눠 쓸 빈 시간이 없다. 통계적 다중화는 이득 없이 주소 오버헤드만 더한다. 슬라이드의 질문 "항상 좋은가? overhead"가 이것이다[^1].
+**버스티하지 않으면.** 모든 입력이 늘 보낼 것이 있으면($$p = 1$$) 나눠 쓸 빈 시간이 없다. 통계적 다중화는 이득 없이 주소 오버헤드만 더한다[^s5].
 
 ## 활용
 
-- 슬라이드의 두 질문에 답하면 다음과 같다[^1].
+- 통계적 다중화를 두고 흔히 묻는 두 질문의 답은 다음과 같다.
     - "Demux key/select?" → 칸 위치가 고정되지 않으므로 주소(address)가 필요하다.
     - "항상 좋은가?" → 아니다. 주소 오버헤드가 있고, 트래픽이 버스티하지 않거나 사용자들이 한꺼번에 몰리면 이득이 사라진다. 몰리면 지연과 손실도 생긴다[^s1].
-- 버스티한 컴퓨터 통신에서는 반드시 필요한 기법이다[^2].
+- 버스티한 컴퓨터 통신에서는 반드시 필요한 기법이다.
 - 인터넷의 [패킷 스위칭](/Hongs_Blog/studies/computer-communication/packet-switching/)이 곧 통계적 다중화다. 패킷 헤더의 목적지 주소가 주소 칸이다[^s1].
 
 ## 연결
@@ -171,14 +161,14 @@ $$\Pr[X > n_{\max}] = \sum_{k = n_{\max}+1}^{n} \binom{n}{k} p^k (1-p)^{n-k}$$
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"통계적 다중화는 시분할 다중화보다 항상 효율적이다"</div>
 
-틀렸다. 슬라이드 그림에서 통계적 다중화는 빈 칸이 없고 남는 대역까지 생겨서 늘 나아 보인다. 실제로 이득은 트래픽이 버스티하고 사용자들이 서로 다른 때에 몰릴 때만 생긴다. 모든 입력이 늘 꽉 차게 보내면 빈 칸이 원래 없으므로 이득은 0이고, 조각마다 붙는 주소만큼 손해다. 슬라이드도 "항상 좋은가? overhead"라고 묻는다[^1]. $$p = 1$$이면 동기식 시분할의 빈 칸이 0개라는 것으로 확인할 수 있다.
+틀렸다. 위 그림처럼 통계적 다중화는 빈 칸이 없고 남는 대역까지 생겨서 늘 나아 보인다. 실제로 이득은 트래픽이 버스티하고 사용자들이 서로 다른 때에 몰릴 때만 생긴다. 모든 입력이 늘 꽉 차게 보내면 빈 칸이 원래 없으므로 이득은 0이고, 조각마다 붙는 주소만큼 손해다. $$p = 1$$이면 동기식 시분할의 빈 칸이 0개라는 것으로 확인할 수 있다.
 
 </div>
 
 
 ## 확인 문제
 
-<details markdown="1"><summary markdown="span"><b>C1</b> 통계적 다중화를 동기식 시분할 다중화와 비교해 정의하고, 슬라이드의 두 질문 "Demux key/select?"와 "항상 좋은가?"에 답하라.</summary>
+<details markdown="1"><summary markdown="span"><b>C1</b> 통계적 다중화를 동기식 시분할 다중화와 비교해 정의하고, 두 질문 "Demux key/select?"(무엇으로 주인을 가르나)와 "항상 좋은가?"에 답하라.</summary>
 
 
 **답:** 시분할 방법의 일종인데, 칸을 고정 배정하지 않고 요구에 따라 동적으로 나눈다(비동기식). Demux key: 칸 위치로 주인을 알 수 없으니 주소가 필요하다. 항상 좋은가: 아니다. 주소 오버헤드가 있고, 트래픽이 버스티하지 않으면 이득이 없다.
@@ -224,10 +214,9 @@ $$\Pr[X > n_{\max}] = \sum_{k = n_{\max}+1}^{n} \binom{n}{k} p^k (1-p)^{n-k}$$
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "통계적 다중화 (Statistical Multiplexing)"
-[^2]: 컴퓨터 통신 1회 필기 「1주차」, 68~72행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 버퍼 넘침과 손실, 보장하지 않는 것, 패킷 헤더가 주소 칸이라는 대응은 원본에 없다. Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 통계적 다중화 설명과 같다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이항분포 모델과 35명 예제는 원본에 없다. 예제 수치는 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 패킷 스위칭과 회선 스위칭 비교 예제와 같다. 증명과 반례, 사용자 수별 값은 이 모델에서 나온다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 데이터 1,000비트·주소 40비트는 비율 식을 보이려고 고른 예시 값이다. $$1000/1040 = 0.9615$$.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [15_statistical-multiplexing_plot.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_plot/)로 그렸고, 35명에서 넘칠 확률 0.000424, 30·40·50명에서 0.000089, 0.00147, 0.00935를 같은 코드로 확인했다.
+[^s1]: Peterson & Davie, *Computer Networks: A Systems Approach*, 1.2절의 통계적 다중화 설명과 같다.
+[^s2]: 예제 수치는 Kurose & Ross, *Computer Networking: A Top-Down Approach*, 1.3절의 패킷 스위칭과 회선 스위칭 비교 예제와 같다. 증명과 반례, 사용자 수별 값은 이 모델에서 나온다.
+[^s3]: 데이터 1,000비트·주소 40비트는 비율 식을 보이려고 고른 예시 값이다. $$1000/1040 = 0.9615$$.
+[^s4]: [15_statistical-multiplexing_plot.py](/Hongs_Blog/studies/computer-communication/code/15_statistical-multiplexing_plot/)로 그렸고, 35명에서 넘칠 확률 0.000424, 30·40·50명에서 0.000089, 0.00147, 0.00935를 같은 코드로 확인했다.
+[^s5]: 이 단락과 '활용'의 두 질문이 그 답이다.
 {% endraw %}

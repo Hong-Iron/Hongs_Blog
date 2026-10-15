@@ -10,7 +10,7 @@ course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Cache Memory", "캐시", "지역성", "Principle of Locality", "LRU", "Least Recently Used", "교체 알고리즘", "쓰기 정책", "Write Policy"]
 description: "캐시는 프로세서와 주기억장치 사이에 둔 작고 빠른 메모리다. 주기억장치 내용 일부를 복사해 두었다가, 프로세서가 찾으면 먼저 여기서 꺼내 준다. 프로그램은 방금 쓴 곳과 그 근처를 곧 다시 쓰는 경향이 있어서, 작은 캐시로도 대부분의 요청을 빠르게 처리한다. 하지만 캐시가 가득 차…"
@@ -34,9 +34,9 @@ permalink: "/studies/operating-systems/cache-memory/"
 
 ## 예시로 보기
 
-프로세서는 명령어 사이클마다 최소 한 번은 메모리에 간다. 명령어를 가져오려면 반드시 가야 하고, 피연산자를 읽거나 결과를 쓰려고 더 가기도 한다[^1]. 그런데 프로세서는 주기억장치보다 훨씬 빨라졌고, 그 차이는 해마다 벌어졌다. 그래서 프로세서가 메모리를 기다리는 시간이 실행 속도를 막는다. 주기억장치 전부를 레지스터만큼 빠른 기술로 만들면 해결되지만 너무 비싸다[^1].
+프로세서는 명령어 사이클마다 최소 한 번은 메모리에 간다. 명령어를 가져오려면 반드시 가야 하고, 피연산자를 읽거나 결과를 쓰려고 더 가기도 한다. 그런데 프로세서는 주기억장치보다 훨씬 빨라졌고, 그 차이는 해마다 벌어졌다. 그래서 프로세서가 메모리를 기다리는 시간이 실행 속도를 막는다. 주기억장치 전부를 레지스터만큼 빠른 기술로 만들면 해결되지만 너무 비싸다.
 
-배열을 처음부터 끝까지 더하는 반복문을 보자[^s1].
+배열을 처음부터 끝까지 더하는 반복문을 보자.
 
 ```c
 for (i = 0; i < 1000; i++) sum += a[i];
@@ -46,13 +46,13 @@ for (i = 0; i < 1000; i++) sum += a[i];
 - 그러면 `a[1]`~`a[7]`은 주기억장치에 다시 가지 않고 캐시에서 바로 읽는다.
 - 반복문의 명령어들도 1000번 되풀이되므로 첫 회 뒤로는 계속 캐시에 있다.
 
-이렇게 방금 쓴 것을 곧 다시 쓰고, 쓴 곳 근처를 곧 쓰는 경향을 **지역성**(principle of locality)이라고 부른다[^2].
+이렇게 방금 쓴 것을 곧 다시 쓰고, 쓴 곳 근처를 곧 쓰는 경향을 **지역성**(principle of locality)이라고 부른다.
 
 ## 정확히 말하면
 
-**구조.** 주기억장치는 $$n$$비트 주소로 가리키는 $$2^n$$개의 워드로 이루어진다. 이것을 워드 $$K$$개짜리 블록으로 나누면 블록은 $$M = 2^n / K$$개다. 캐시는 워드 $$K$$개짜리 칸(슬롯, 라인)을 $$C$$개 가지며, $$C$$는 $$M$$보다 훨씬 작다($$C \ll M$$). 블록이 칸보다 많으므로 한 칸에 어떤 블록이 들어 있는지 표시하는 꼬리표(태그)를 칸마다 붙인다. 태그는 보통 주소의 앞쪽 비트 몇 개다[^3].
+**구조.** 주기억장치는 $$n$$비트 주소로 가리키는 $$2^n$$개의 워드로 이루어진다. 이것을 워드 $$K$$개짜리 블록으로 나누면 블록은 $$M = 2^n / K$$개다. 캐시는 워드 $$K$$개짜리 칸(슬롯, 라인)을 $$C$$개 가지며, $$C$$는 $$M$$보다 훨씬 작다($$C \ll M$$). 블록이 칸보다 많으므로 한 칸에 어떤 블록이 들어 있는지 표시하는 꼬리표(태그)를 칸마다 붙인다. 태그는 보통 주소의 앞쪽 비트 몇 개다.
 
-예를 들어 주소가 16비트이고 블록이 워드 4개면 블록은 $$2^{16}/4 = 16{,}384$$개다. 캐시 칸이 128개면 한 번에 블록 128개만 들어간다[^s1].
+예를 들어 주소가 16비트이고 블록이 워드 4개면 블록은 $$2^{16}/4 = 16{,}384$$개다. 캐시 칸이 128개면 한 번에 블록 128개만 들어간다.
 
 ```
  캐시 (칸 C개)                       주기억장치 (블록 M개, C ≪ M)
@@ -69,9 +69,9 @@ for (i = 0; i < 1000; i++) sum += a[i];
   태그 = 이 칸에 지금 주기억장치의 몇 번 블록이 들어 있는지
 ```
 
-캐시와 주기억장치는 같은 크기(워드 K개)의 덩어리로 주고받는다. 칸 수가 블록 수보다 훨씬 적어서, 칸마다 태그를 보고 어느 블록의 복사본인지 가린다[^s2].
+캐시와 주기억장치는 같은 크기(워드 K개)의 덩어리로 주고받는다. 칸 수가 블록 수보다 훨씬 적어서, 칸마다 태그를 보고 어느 블록의 복사본인지 가린다.
 
-**읽기.** 프로세서가 주소를 내면 캐시에 그 워드가 있는지 본다. 있으면(적중) 바로 준다. 없으면 그 워드가 든 블록 전체를 주기억장치에서 캐시로 가져온 뒤 준다[^4].
+**읽기.** 프로세서가 주소를 내면 캐시에 그 워드가 있는지 본다. 있으면(적중) 바로 준다. 없으면 그 워드가 든 블록 전체를 주기억장치에서 캐시로 가져온 뒤 준다.
 
 ```mermaid
 flowchart LR
@@ -80,7 +80,7 @@ flowchart LR
   Q -- 아니오 --> L[블록 전체를 캐시로 가져옴] --> G
 ```
 
-**설계할 때 정할 다섯 가지**[^5]
+**설계할 때 정할 다섯 가지**
 
 | 항목 | 정하는 것 | 맞바꾸는 것 |
 |---|---|---|
@@ -90,17 +90,10 @@ flowchart LR
 | 교체 알고리즘 | 칸이 다 찼을 때 무엇을 내보낼까 | 곧 다시 쓸 블록을 내보내면 손해 |
 | 쓰기 정책 | 고친 내용을 언제 주기억장치에 쓸까 | 아래 설명 |
 
-**교체 알고리즘.** 앞으로 가장 안 쓸 블록을 내보내는 것이 가장 좋지만, 미래를 알 수 없으니 불가능하다. 대신 **가장 오랫동안 쓰이지 않은** 블록을 내보낸다. 이것이 LRU(least recently used)다[^6].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "Effective strategy is to replace a block that has been used less than others — Least Recently Used (LRU)" (슬라이드 53) / 문제점: "다른 블록보다 덜 쓰인 블록"은 쓴 **횟수**가 적은 블록을 내보내는 LFU(least frequently used)의 설명이다. LRU는 마지막으로 쓴 **때**가 가장 오래된 블록을 내보낸다 / 수정안: "가장 오랫동안 쓰이지 않은 블록을 내보낸다" / 근거: 같은 슬라이드 노트는 "has been in the cache longest with no reference to it"으로 바르게 적었다[^6]. 칸 2개에 A, A, A, B, C를 차례로 쓰면 LRU는 A를, LFU는 B를 내보낸다 — [06_cache-memory_verify.py](/Hongs_Blog/studies/operating-systems/code/06_cache-memory_verify/)
-
-</div>
+**교체 알고리즘.** 앞으로 가장 안 쓸 블록을 내보내는 것이 가장 좋지만, 미래를 알 수 없으니 불가능하다. 대신 **가장 오랫동안 쓰이지 않은** 블록을 내보낸다. 이것이 LRU(least recently used)다.
 
 
-**쓰기 정책.** 캐시의 블록을 고치면 언젠가 주기억장치에도 써야 한다. 한쪽 끝은 블록을 고칠 때마다 쓰는 것이다. 다른 쪽 끝은 그 블록을 내보낼 때만 쓰는 것이다. 뒤쪽은 쓰기 횟수가 가장 적다. 대신 그동안 주기억장치에는 낡은 값이 남는다. 그러면 프로세서가 여럿이거나 입출력 장치가 주기억장치를 직접 읽을 때(DMA) 낡은 값을 읽을 수 있다[^7].
+**쓰기 정책.** 캐시의 블록을 고치면 언젠가 주기억장치에도 써야 한다. 한쪽 끝은 블록을 고칠 때마다 쓰는 것이다. 다른 쪽 끝은 그 블록을 내보낼 때만 쓰는 것이다. 뒤쪽은 쓰기 횟수가 가장 적다. 대신 그동안 주기억장치에는 낡은 값이 남는다. 그러면 프로세서가 여럿이거나 입출력 장치가 주기억장치를 직접 읽을 때(DMA) 낡은 값을 읽을 수 있다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: LRU와 LFU가 다른 블록을 내보내는 예, 지역성이 있는 반복 참조에서 칸 3개면 30번 중 27번 적중 — [06_cache-memory_verify.py](/Hongs_Blog/studies/operating-systems/code/06_cache-memory_verify/)</div>
@@ -110,8 +103,8 @@ flowchart LR
 
 ## 활용
 
-- 캐시는 운영체제에 보이지 않는다. 하드웨어가 알아서 한다. 그래도 운영체제의 메모리 관리 하드웨어와 맞물려 돌아간다[^1].
-- 캐시 크기, 블록 크기, 매핑, 교체, 쓰기 정책이라는 같은 고민이 [가상 메모리](/Hongs_Blog/studies/operating-systems/virtual-memory/)와 디스크 캐시 설계에서도 그대로 나온다[^4]. 8장의 페이지 교체가 그 예다.
+- 캐시는 운영체제에 보이지 않는다. 하드웨어가 알아서 한다. 그래도 운영체제의 메모리 관리 하드웨어와 맞물려 돌아간다.
+- 캐시 크기, 블록 크기, 매핑, 교체, 쓰기 정책이라는 같은 고민이 [가상 메모리](/Hongs_Blog/studies/operating-systems/virtual-memory/)와 디스크 캐시 설계에서도 그대로 나온다. [페이지 교체](/Hongs_Blog/studies/operating-systems/page-replacement/)가 그 예다.
 - 2-1학기 알고리즘에서 배열을 순서대로 도는 코드가 빠른 이유도 지역성이다.
 
 ## 연결
@@ -123,14 +116,14 @@ flowchart LR
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"LRU는 가장 적게 쓴 블록을 내보낸다"</div>
 
-틀렸다. 이름의 "least"와 슬라이드 문구가 "가장 적게"로 읽힌다. LRU의 기준은 횟수가 아니라 **마지막으로 쓴 시점**이다. 아무리 많이 썼어도 한동안 안 썼으면 내보내진다. 칸 2개에 A, A, A, B, C 순서로 쓰면 LRU는 세 번 쓴 A를 내보낸다. 횟수를 보는 규칙은 LFU라는 별개의 알고리즘이다.
+틀렸다. 이름의 "least"가 "가장 적게"로 읽히고, "다른 블록보다 덜 쓰인 블록"이라는 설명도 흔히 보인다. LRU의 기준은 횟수가 아니라 **마지막으로 쓴 시점**이다. 아무리 많이 썼어도 한동안 안 썼으면 내보내진다. 칸 2개에 A, A, A, B, C 순서로 쓰면 LRU는 세 번 쓴 A를 내보낸다. 횟수를 보는 규칙은 LFU라는 별개의 알고리즘이다.
 
 </div>
 
 
 ## 과목별 관점
 
-**어셈블리어 (2-1학기).** 캐시를 빠르고 비싼 정적 RAM으로 만든 메모리라고 소개하고 두 단계로 나눈다. 1단계 캐시(Level-1)는 프로세서 안에, 2단계 캐시(Level-2)는 프로세서 밖에 있다. 읽으려는 값이 이미 캐시에 있으면 캐시 적중(cache hit), 없으면 캐시 실패(cache miss)라 부른다[^a1]. 캐시에 없는 값은 느린 메모리까지 가서 읽어야 하고, 그 읽기에는 클록이 여러 박자 든다: [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/).
+**어셈블리어 (2-1학기).** 캐시를 빠르고 비싼 정적 RAM으로 만든 메모리라고 소개하고 두 단계로 나눈다. 1단계 캐시(Level-1)는 프로세서 안에, 2단계 캐시(Level-2)는 프로세서 밖에 있다. 읽으려는 값이 이미 캐시에 있으면 캐시 적중(cache hit), 없으면 캐시 실패(cache miss)라 부른다. 캐시에 없는 값은 느린 메모리까지 가서 읽어야 하고, 그 읽기에는 클록이 여러 박자 든다: [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/).
 
 **컴퓨터 구조 (2-1학기).** 이 문서가 "매핑 함수", "교체 알고리즘", "쓰기 정책"이라고 이름만 든 것을 하드웨어가 실제로 어떻게 하는지까지 내려간다. 프로세서가 낸 주소의 비트를 태그, 인덱스, 오프셋 세 토막으로 잘라서, 인덱스로 볼 줄을 고르고 태그로 맞는 블록인지 확인한다[^k1]. 위의 16비트 주소 예(블록이 워드 4개, 칸 128개)를 워드 주소로 자르면 오프셋 2비트, 인덱스 7비트, 태그 7비트다[^k2].
 
@@ -164,16 +157,6 @@ flowchart LR
 
 </details>
 
-[^1]: 운영체제 1회 강의 자료 「Chapter01-new」, 슬라이드 44와 발표자 노트
-[^2]: 같은 자료, 슬라이드 45
-[^3]: 같은 자료, 슬라이드 47 발표자 노트 (그림 1.17 설명)
-[^4]: 같은 자료, 슬라이드 46~49와 발표자 노트
-[^5]: 같은 자료, 슬라이드 50~52와 발표자 노트
-[^6]: 같은 자료, 슬라이드 53과 슬라이드 52의 발표자 노트
-[^7]: 같은 자료, 슬라이드 54와 슬라이드 53의 발표자 노트
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 배열 합 예시, 16비트 주소의 숫자 예, 알고리즘 과목과의 연결, 확인 문제 C2는 원본에 없다. 숫자는 원본의 $$M = 2^n/K$$에 대입한 것이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. "정확히 말하면"의 구조 설명(각주 3: 슬라이드 47, 그림 1.17)을 ASCII로 그렸다.
-[^a1]: 어셈블리어 3회 강의 자료 「wk03-chapt_02-3-1」, p.9 (Cache Memory: High-speed expensive static RAM both inside and outside the CPU, Level-1 cache, Level-2 cache, Cache hit, Cache miss)
 [^k1]: MIT 6.004 Computation Structures, Fall 2023, L13 "Caches", 슬라이드 8~9 (Direct-Mapped Caches), https://shd.mit.edu/2024/lectures/readings/6191-fall2023/L13.pdf. Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 5장 "Large and Fast: Exploiting Memory Hierarchy"
-[^k2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 직접 사상으로 가정하고 16 = 7 + 7 + 2로 나눈 값이다. 식은 [직접 사상 캐시](/Hongs_Blog/studies/computer-architecture/direct-mapped-cache/)의 것이고 [36_direct-mapped-cache_impl.py](/Hongs_Blog/studies/computer-architecture/code/36_direct-mapped-cache_impl/)로 확인했다.
+[^k2]: 직접 사상으로 가정하고 16 = 7 + 7 + 2로 나눈 값이다. 식은 [직접 사상 캐시](/Hongs_Blog/studies/computer-architecture/direct-mapped-cache/)의 것이고 [36_direct-mapped-cache_impl.py](/Hongs_Blog/studies/computer-architecture/code/36_direct-mapped-cache_impl/)로 확인했다.
 {% endraw %}

@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Cognitive Model of Panic", "클라크의 공황 인지모델", "Clark 1986", "파국적 오해석", "catastrophic misinterpretation", "3요인 인지이론", "tripartite cognitive model", "불안 민감성", "anxiety sensitivity", "공황적 자기효능감", "panic self-efficacy"]
 description: "공황발작은 두근거림이나 어지러움 같은 몸의 감각을 \"심장마비다\", \"미쳐 간다\"처럼 끔찍한 일의 징조로 잘못 해석할 때 생긴다는 설명이다. 그렇게 해석하면 더 불안해지고, 불안은 감각을 더 키우고, 커진 감각은 해석이 맞다는 증거처럼 느껴진다. 이 악순환이 몇 분 만에 발작을 만든…"
@@ -46,7 +46,7 @@ CL이 계단을 빠르게 올라온 뒤 벌어진 일이다[^s1].
 
 ## 정의
 
-### 클라크(Clark, 1986)의 인지모델[^1]
+### 클라크(Clark, 1986)의 인지모델
 
 ```mermaid
 graph LR
@@ -61,9 +61,9 @@ graph LR
 - 발작을 한 번 겪으면 신체감각에 더 예민해지고 계속 관찰한다.
 - 여러 회피 행동 때문에 부정적 신념이 강해진다. 피하면 "감각이 무해하다"는 것을 확인할 기회가 없다.
 
-### 3요인 인지이론(Sandin et al., 2015)[^1]
+### 3요인 인지이론(Sandin et al., 2015)
 
-클라크의 모형을 세 요인으로 나눈다. 필기는 두 모형 사이에 "세분화"라고 적어, 3요인 이론이 클라크 모형을 더 잘게 나눈 것임을 표시했다[^1].
+클라크의 모형을 세 요인으로 더 잘게 나눈(세분화한) 이론이다.
 
 | 요인 | 뜻 |
 |---|---|
@@ -81,7 +81,7 @@ graph LR
 ## 연결
 
 - 이 모형이 설명하는 장애: [공황장애](/Hongs_Blog/studies/abnormal-psychology/panic-disorder/)
-- 같은 구조를 쓰는 곳: 광장공포증의 "공포에 대한 공포 이론"([광장공포증](/Hongs_Blog/studies/abnormal-psychology/agoraphobia/)), 질병불안장애(7회, "공황장애의 인지모델과 유사한 모델")
+- 같은 구조를 쓰는 곳: 광장공포증의 "공포에 대한 공포 이론"([광장공포증](/Hongs_Blog/studies/abnormal-psychology/agoraphobia/)), [질병불안장애](/Hongs_Blog/studies/abnormal-psychology/illness-anxiety-disorder/)("공황장애의 인지모델과 유사한 모델")
 - 인지적 오류의 일반 틀: [우울증의 인지이론](/Hongs_Blog/studies/abnormal-psychology/beck-cognitive-theory/)
 
 ## 확인 문제
@@ -100,7 +100,6 @@ graph LR
 
 </details>
 
-[^1]: 이상 심리학 4회 강의 자료 「불안장애」, p.39 (클라크의 공황장애 인지모델과 3요인 인지이론, 두 그림). 두 모형을 잇는 "세분화" 화살표와 "불안 민감성", "공황적 자기-효능감"의 형광펜은 손글씨 필기다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> CL과 CM의 사례는 순환을 보이려고 만든 가상 사례다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 야간 공황발작이 인지모델의 한계로 거론된다는 것은 공황장애 이론 비교의 표준 논점이다.
+[^s1]: CL과 CM의 사례는 순환을 보이려고 만든 가상 사례다.
+[^s2]: 야간 공황발작이 인지모델의 한계로 거론된다는 것은 공황장애 이론 비교의 표준 논점이다.
 {% endraw %}

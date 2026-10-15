@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["WHERE vs HAVING", "WHERE 대 HAVING", "선택 조건과 그룹 조건"]
 description: "둘 다 조건을 걸어 거른다. 가르는 질문은 \"이 조건은 행 하나만 보면 참, 거짓이 정해지는가, 묶음 전체를 봐야 정해지는가\"다. 행 하나로 정해지면 WHERE, 묶음을 봐야 하면 HAVING이다. WHERE는 묶기 전에 쓰이므로, 무엇을 WHERE에 넣느냐에 따라 묶음마다 계산하…"
@@ -59,16 +59,21 @@ permalink: "/studies/database-design/where-vs-having/"
 
 선택을 가르는 줄은 다섯째다. 같은 "남자 직원"이라도 `WHERE Sex = 'M'`에 적는 순간, 그 뒤의 `COUNT(*)`도 `AVG(Salary)`도 남자 직원만으로 계산된다[^s1].
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
+"평균 급여가 30000을 넘는 부서마다 남자 직원의 수"를 구한다고 하자. 부서의 평균 급여로 거르는 질의의 `WHERE`에 `AND Sex = 'M'`만 더하면 틀린다.
 
-원문: 12주차 풀이 Q1-2. "평균 급여가 30000을 넘는 부서마다, 전 직원이 아니라 남자 직원의 수"를 묻는데, 풀이는 Q1-1의 `WHERE`에 `AND Sex = 'M'`만 더하고("Just adding one more condition") 결과로 Research 3, Administration 1, Headquarters 1을 그렸다[^1] / 문제점: 적힌 질의를 돌리면 2행(Research 3, Headquarters 1)이다. `WHERE`가 먼저 남자만 남기므로 `HAVING AVG(Salary) > 30000`의 평균이 남자만의 평균(Research 36000, Administration 25000, Headquarters 55000)이 되어 Administration이 빠진다 / 수정안: 부서를 고르는 조건을 안쪽 질의로 떼어 전 직원의 평균으로 계산한다. `WHERE Dno = Dnumber AND Sex = 'M' AND Dno IN ( SELECT Dno FROM EMPLOYEE GROUP BY Dno HAVING AVG(Salary) > 30000 )`. 이 질의의 결과가 그려진 3행이다 / 근거: SQLite와 PostgreSQL 16에서 실행 — [71_where-vs-having_verify.py](/Hongs_Blog/studies/database-design/code/71_where-vs-having_verify/), [71_where-vs-having_verify.sql](/Hongs_Blog/studies/database-design/code/71_where-vs-having_verify-sql/)
+```sql
+SELECT   Dname, COUNT(*)
+FROM     EMPLOYEE, DEPARTMENT
+WHERE    Dno = Dnumber AND Sex = 'M'
+GROUP BY Dno, Dname
+HAVING   AVG(Salary) > 30000;
+```
 
-</div>
+결과는 Research 3, Headquarters 1의 2행이다. `WHERE`가 먼저 남자만 남기므로 `HAVING`의 평균도 남자만의 평균이 된다. Research는 36000, Administration은 25000, Headquarters는 55000이다. Administration은 전 직원의 평균이 31000이라 골라야 하는데, 남자 Jabbar 한 명의 급여 25000으로 따져져서 빠진다. 맞는 답은 Research 3, Administration 1, Headquarters 1의 3행이다. 고치는 법은 아래 C3에서 다룬다.
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 카드 C1~C3의 결과, Q1-2의 2행과 3행, 남자만의 평균 — [71_where-vs-having_verify.py](/Hongs_Blog/studies/database-design/code/71_where-vs-having_verify/), [71_where-vs-having_verify.sql](/Hongs_Blog/studies/database-design/code/71_where-vs-having_verify-sql/). 풀이의 질의는 `GROUP BY Dno`에 `SELECT Dname`이라 PostgreSQL 16에서는 그대로 돌지 않는다. 묶는 속성에 `Dname`을 더해 돌렸다([GROUP BY](/Hongs_Blog/studies/database-design/group-by/)).</div>
+<div class="callout-title" markdown="span">검증: 카드 C1~C3의 결과, `AND Sex = 'M'`만 더한 질의의 2행과 고친 질의의 3행, 남자만의 평균 — [71_where-vs-having_verify.py](/Hongs_Blog/studies/database-design/code/71_where-vs-having_verify/), [71_where-vs-having_verify.sql](/Hongs_Blog/studies/database-design/code/71_where-vs-having_verify-sql/)</div>
 
 </div>
 
@@ -84,6 +89,5 @@ permalink: "/studies/database-design/where-vs-having/"
 </details>
 
 
-[^1]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.2 (Q1-2의 풀이와 결과 표), p.1 (Q1-1의 풀이). 문제는 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.15
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에는 두 절을 나란히 견준 표가 없다. 표는 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.33~34의 HAVING 설명과 12주차 풀이 p.1~2를 견주어 만들었다. 카드의 상황과 결과, 수정안의 질의(Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Grouping: The GROUP BY and HAVING Clauses"에 같은 꼴의 예가 있다)는 실행해 확인했다.
+[^s1]: 카드의 상황과 결과, 수정안의 질의(Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Grouping: The GROUP BY and HAVING Clauses"에 같은 꼴의 예가 있다)는 실행해 확인했다.
 {% endraw %}

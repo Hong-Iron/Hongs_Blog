@@ -22,19 +22,19 @@ permalink: "/studies/database-design/code/76_view-implementation_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 질의 수정과 뷰 실체화 검증. PostgreSQL 16에서 실행한다.
--- 문서: 76.질의 수정과 뷰 실체화 / 출처: 13주차 슬라이드 13-View p.8~13
+-- 문서: 76.질의 수정과 뷰 실체화
 -- 확인하는 것:
---   1. 질의 수정(p.10): 보통 뷰에 던진 질의의 실행 계획에는 뷰 이름이 없고 기본 테이블 셋만 나온다.
+--   1. 질의 수정: 보통 뷰에 던진 질의의 실행 계획에는 뷰 이름이 없고 기본 테이블 셋만 나온다.
 --      뷰 정의를 손으로 풀어 쓴 질의와 실행 계획이 글자까지 같다.
---   2. 뷰 실체화(p.11): CREATE MATERIALIZED VIEW로 만든 것은 행을 실제로 저장한다(보통 뷰는 저장 크기 0).
---   3. p.13: 기본 테이블을 고친 뒤 보통 뷰는 바로 새 답을, 실체화된 뷰는 옛 답을 낸다.
+--   2. 뷰 실체화: CREATE MATERIALIZED VIEW로 만든 것은 행을 실제로 저장한다(보통 뷰는 저장 크기 0).
+--   3. 갱신 시점: 기본 테이블을 고친 뒤 보통 뷰는 바로 새 답을, 실체화된 뷰는 옛 답을 낸다.
 --      REFRESH MATERIALIZED VIEW를 돌린 뒤에야 같아진다(PostgreSQL은 저절로 맞추지 않는다).
 SET client_min_messages TO warning;
 DROP SCHEMA IF EXISTS view_implementation CASCADE;
 CREATE SCHEMA view_implementation;
 SET search_path TO view_implementation;
 
--- COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.6). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
 -- EMPLOYEE와 DEPARTMENT는 서로 가리키므로 외래 키를 커밋 때 검사한다(DEFERRABLE INITIALLY DEFERRED).
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,

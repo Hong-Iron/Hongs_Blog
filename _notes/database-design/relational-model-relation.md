@@ -34,7 +34,7 @@ permalink: "/studies/database-design/relational-model-relation/"
 
 ## 예시로 보기
 
-학생 정보를 사람마다 다른 모양으로 적으면 찾을 수가 없다. 어떤 학생은 전화번호가 앞에, 어떤 학생은 뒤에 있으면 "학점이 3.5보다 높은 학생"을 고르는 프로그램을 짤 수 없다. 그래서 모든 학생을 같은 칸 일곱 개에 맞춰 적는다[^1].
+학생 정보를 사람마다 다른 모양으로 적으면 찾을 수가 없다. 어떤 학생은 전화번호가 앞에, 어떤 학생은 뒤에 있으면 "학점이 3.5보다 높은 학생"을 고르는 프로그램을 짤 수 없다. 그래서 모든 학생을 같은 칸 일곱 개에 맞춰 적는다.
 
 | Name | Ssn | Home_phone | Address | Office_phone | Age | Gpa |
 |---|---|---|---|---|---|---|
@@ -44,7 +44,7 @@ permalink: "/studies/database-design/relational-model-relation/"
 | Rohan Panchal | 489-22-1100 | (817)376-9821 | 265 Lark Lane | (817)749-6492 | 28 | 3.93 |
 | Barbara Benson | 533-69-1238 | (817)839-8461 | 7384 Fontana Lane | NULL | 19 | 3.25 |
 
-이 표의 부분마다 이름이 있다[^2].
+이 표의 부분마다 이름이 있다.
 
 | 평소에 쓰는 말 | 관계형 모델의 말 | 이 표에서 |
 |---|---|---|
@@ -53,7 +53,7 @@ permalink: "/studies/database-design/relational-model-relation/"
 | 칸 위의 이름 | 속성(attribute) | Name, Ssn, … 일곱 개 |
 | 한 칸에 올 수 있는 값의 모음 | 도메인(domain) | Gpa 칸이면 0과 4 사이의 실수 |
 
-한 줄은 실세계의 개체 하나나 관계 하나에 대한 사실이다. 칸 위의 이름은 그 칸의 값을 어떻게 읽을지 정한다. 19가 Age 칸에 있으니 나이이고, Gpa 칸에 있었다면 말이 안 되는 학점이다. 한 칸에 든 값은 모두 같은 자료형이다[^1].
+한 줄은 실세계의 개체 하나나 관계 하나에 대한 사실이다. 칸 위의 이름은 그 칸의 값을 어떻게 읽을지 정한다. 19가 Age 칸에 있으니 나이이고, Gpa 칸에 있었다면 말이 안 되는 학점이다. 한 칸에 든 값은 모두 같은 자료형이다.
 
 NULL은 "값이 없다"는 표시다. 그 뜻은 [릴레이션의 특성](/Hongs_Blog/studies/database-design/relation-characteristics/)에서 다룬다.
 
@@ -65,7 +65,7 @@ NULL은 "값이 없다"는 표시다. 그 뜻은 [릴레이션의 특성](/Hongs
 
 ## 정의
 
-**도메인.** 더 쪼갤 수 없는 값(원자값)의 집합이다. 도메인은 자료형을 적어서 정한다[^3].
+**도메인.** 더 쪼갤 수 없는 값(원자값)의 집합이다. 도메인은 자료형을 적어서 정한다.
 
 | 도메인 | 값 | 자료형으로 적으면 |
 |---|---|---|
@@ -73,28 +73,28 @@ NULL은 "값이 없다"는 표시다. 그 뜻은 [릴레이션의 특성](/Hongs
 | Employee_ages | 직원이 될 수 있는 나이 | 15와 80 사이의 정수 |
 | Grade_point_averages | 평점 | 0과 4 사이의 실수 |
 
-**릴레이션 스키마.** 릴레이션의 틀을 적은 것이다. 릴레이션 이름 $$R$$과 속성 목록 $$A_1, \dots, A_n$$으로 되어 있고 $$R(A_1, \dots, A_n)$$으로 쓴다. 속성의 수 $$n$$을 릴레이션의 차수(degree)라 한다[^4]. STUDENT(Name, Ssn, Home_phone, Address, Office_phone, Age, Gpa)의 차수는 7이다.
+**릴레이션 스키마.** 릴레이션의 틀을 적은 것이다. 릴레이션 이름 $$R$$과 속성 목록 $$A_1, \dots, A_n$$으로 되어 있고 $$R(A_1, \dots, A_n)$$으로 쓴다. 속성의 수 $$n$$을 릴레이션의 차수(degree)라 한다. STUDENT(Name, Ssn, Home_phone, Address, Office_phone, Age, Gpa)의 차수는 7이다.
 
-**속성.** 속성 $$A_i$$는 어떤 도메인이 이 스키마에서 맡은 역할의 이름이다. 그 도메인을 $$\text{dom}(A_i)$$(돔 에이 아이: 속성 $$A_i$$에 올 수 있는 값들)로 쓴다[^4]. Home_phone과 Office_phone은 도메인이 같고(전화번호) 맡은 역할이 다르다.
+**속성.** 속성 $$A_i$$는 어떤 도메인이 이 스키마에서 맡은 역할의 이름이다. 그 도메인을 $$\text{dom}(A_i)$$(돔 에이 아이: 속성 $$A_i$$에 올 수 있는 값들)로 쓴다. Home_phone과 Office_phone은 도메인이 같고(전화번호) 맡은 역할이 다르다.
 
-**튜플.** 값 $$n$$개를 순서대로 늘어놓은 것이다. $$t = \langle v_1, \dots, v_n \rangle$$으로 쓴다. 값 $$v_i$$는 $$\text{dom}(A_i)$$에 들어 있거나 특별한 값 NULL이다[^5].
+**튜플.** 값 $$n$$개를 순서대로 늘어놓은 것이다. $$t = \langle v_1, \dots, v_n \rangle$$으로 쓴다. 값 $$v_i$$는 $$\text{dom}(A_i)$$에 들어 있거나 특별한 값 NULL이다.
 
-**릴레이션 상태.** 어느 순간 릴레이션에 들어 있는 튜플의 집합이다. 릴레이션 인스턴스라고도 한다. $$r(R) = \{t_1, \dots, t_m\}$$으로 쓴다($$m$$은 튜플 수)[^5].
+**릴레이션 상태.** 어느 순간 릴레이션에 들어 있는 튜플의 집합이다. 릴레이션 인스턴스라고도 한다. $$r(R) = \{t_1, \dots, t_m\}$$으로 쓴다($$m$$은 튜플 수).
 
-상태는 도메인에서 값을 하나씩 뽑아 만들 수 있는 모든 조합 가운데 일부다. 식으로는 도메인들의 곱집합의 부분집합이다[^6].
+상태는 도메인에서 값을 하나씩 뽑아 만들 수 있는 모든 조합 가운데 일부다. 식으로는 도메인들의 곱집합의 부분집합이다.
 
 $$r(R) \subseteq \text{dom}(A_1) \times \text{dom}(A_2) \times \dots \times \text{dom}(A_n)$$
 
 
-곱집합은 만들 수 있는 튜플을 전부 모은 것이다. 지금의 상태에는 그 가운데 실세계에서 지금 참인 튜플만 들어 있다[^6]. 작은 예로 $$\text{dom}(A) = \{a, b\}$$, $$\text{dom}(B) = \{1, 2, 3\}$$이면 만들 수 있는 튜플은 $$2 \times 3 = 6$$개다. 상태는 이 6개에서 몇 개를 골라 담은 것이라 가능한 상태는 $$2^6 = 64$$가지다[^s1]. 곱집합 식은 NULL을 뺀 값만 센 것이다[^s1].
+곱집합은 만들 수 있는 튜플을 전부 모은 것이다. 지금의 상태에는 그 가운데 실세계에서 지금 참인 튜플만 들어 있다. 작은 예로 $$\text{dom}(A) = \{a, b\}$$, $$\text{dom}(B) = \{1, 2, 3\}$$이면 만들 수 있는 튜플은 $$2 \times 3 = 6$$개다. 상태는 이 6개에서 몇 개를 골라 담은 것이라 가능한 상태는 $$2^6 = 64$$가지다[^s1]. 곱집합 식은 NULL을 뺀 값만 센 것이다[^s1].
 
-실세계가 바뀌면 상태도 바뀐다. 학생이 전학을 오면 튜플이 하나 늘어난다. 스키마는 거의 바뀌지 않는다. 바뀐다면 새 속성을 더하는 정도다[^6]. 틀과 내용을 이렇게 가르는 생각은 [스키마와 인스턴스](/Hongs_Blog/studies/database-design/schema-and-instance/)와 같다.
+실세계가 바뀌면 상태도 바뀐다. 학생이 전학을 오면 튜플이 하나 늘어난다. 스키마는 거의 바뀌지 않는다. 바뀐다면 새 속성을 더하는 정도다. 틀과 내용을 이렇게 가르는 생각은 [스키마와 인스턴스](/Hongs_Blog/studies/database-design/schema-and-instance/)와 같다.
 
 ## 활용
 
-- **누가 만들었나.** IBM의 테드 코드(Ted Codd)가 1970년에 내놓았다. 데이터를 적는 방법을 단순하게 만들어 데이터 관리를 쉽게 했다[^7].
-- **장점 다섯 가지**[^8]. 납작한 표 하나로 되어 있어 이해하기 쉽다(단순함). 지켜야 할 규칙을 DBMS가 검사해서 데이터가 올바르고 서로 어긋나지 않는다(무결성과 정확성). SQL 같은 언어로 복잡한 조건을 걸어 데이터를 다룬다(다루기 쉬움). 스키마를 크게 고치지 않고 키울 수 있다(확장). 사용자 확인, 권한, 암호화 같은 기능이 있다(보안).
-- **SQL로 적으면.** 릴레이션 스키마 하나가 `CREATE TABLE` 문 하나다: [CREATE SCHEMA와 CREATE TABLE](/Hongs_Blog/studies/database-design/sql-create-table/). 도메인은 자료형과 조건으로 적는다: [SQL 자료형](/Hongs_Blog/studies/database-design/sql-data-types/), [속성 제약 NOT NULL·DEFAULT·CHECK](/Hongs_Blog/studies/database-design/sql-attribute-constraints/). PostgreSQL 16에서 `CREATE DOMAIN Employee_ages AS INT CHECK (VALUE BETWEEN 15 AND 80)`으로 도메인을 만들고 그 도메인의 칸에 14를 넣으면 거부된다. NULL은 들어간다. SQLite에는 `CREATE DOMAIN`이 없다[^s2].
+- **누가 만들었나.** IBM의 테드 코드(Ted Codd)가 1970년에 내놓았다. 데이터를 적는 방법을 단순하게 만들어 데이터 관리를 쉽게 했다.
+- **장점 다섯 가지**. 납작한 표 하나로 되어 있어 이해하기 쉽다(단순함). 지켜야 할 규칙을 DBMS가 검사해서 데이터가 올바르고 서로 어긋나지 않는다(무결성과 정확성). SQL 같은 언어로 복잡한 조건을 걸어 데이터를 다룬다(다루기 쉬움). 스키마를 크게 고치지 않고 키울 수 있다(확장). 사용자 확인, 권한, 암호화 같은 기능이 있다(보안).
+- **SQL로 적으면.** 릴레이션 스키마 하나가 `CREATE TABLE` 문 하나다: [CREATE SCHEMA와 CREATE TABLE](/Hongs_Blog/studies/database-design/sql-create-table/). 도메인은 자료형과 조건으로 적는다: [SQL 자료형](/Hongs_Blog/studies/database-design/sql-data-types/), [속성 제약 NOT NULL·DEFAULT·CHECK](/Hongs_Blog/studies/database-design/sql-attribute-constraints/). PostgreSQL 16에서 `CREATE DOMAIN Employee_ages AS INT CHECK (VALUE BETWEEN 15 AND 80)`으로 도메인을 만들고 그 도메인의 칸에 14를 넣으면 거부된다. NULL은 들어간다. SQLite에는 `CREATE DOMAIN`이 없다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: PostgreSQL 16에서 실행. 도메인 밖의 나이 14와 꼴이 다른 전화번호는 거부, NULL은 들어감, 키가 없는 표는 같은 행을 두 번 받음 — [32_relational-model-relation_verify.sql](/Hongs_Blog/studies/database-design/code/32_relational-model-relation_verify-sql/)</div>
@@ -137,14 +137,5 @@ $$r(R) \subseteq \text{dom}(A_1) \times \text{dom}(A_2) \times \dots \times \tex
 </details>
 
 
-[^1]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.6 (STUDENT 표, 행과 열 머리의 뜻). 같은 쪽이 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.4에 복습으로 다시 나온다
-[^2]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.4, p.6 (relations = tables, tuples = rows, attributes = column headers)
-[^3]: 같은 자료, p.8 (Domain D, 도메인의 예와 자료형)
-[^4]: 같은 자료, p.9 (Relation schema R, degree, attribute, dom)
-[^5]: 같은 자료, p.10 (Relation instance r(R), tuple, NULL)
-[^6]: 같은 자료, p.11 (곱집합의 부분집합, 상태는 바뀌고 스키마는 거의 안 바뀐다)
-[^7]: 같은 자료, p.4. 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.3
-[^8]: 데이터베이스 설계 6회 강의 자료 「6-2_relational-model」, p.5. 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.9 (Advantages of Relational Data Model)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 작은 도메인의 예(튜플 6개, 상태 64가지)와 카드 C3은 원본에 없다. 슬라이드 p.11의 "Representing the total number of possible combinations"를 수로 옮겼고 검증 코드로 셌다. 슬라이드 p.10은 값이 NULL일 수 있다고 적고 p.11의 식에는 NULL이 없다. 곱집합 식이 NULL을 뺀 값만 센 것이라는 풀이는 이 둘을 맞춘 것이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `CREATE DOMAIN` 예는 원본에 없다. 슬라이드 p.8의 "도메인은 자료형을 적어서 정한다"를 SQL로 옮긴 것이고 PostgreSQL 16에서 실행해 확인했다.
+[^s1]: 곱집합 식이 NULL을 뺀 값만 센 것이라는 풀이는 이 둘을 맞춘 것이다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "computer-architecture"
 course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Multiplexer", "Multiplexor", "Mux", "Decoder", "멀티플렉서", "먹스", "디코더", "해독기", "선택 신호", "Select Input", "원-핫", "One-hot"]
 description: "멀티플렉서는 여러 입력 가운데 하나를 골라 그대로 내보내는 회로다. 선로가 갈리는 곳에서 어느 선로의 기차를 보낼지 정하는 전환기와 같다. 디코더는 반대로, 번호를 받아 그 번호가 붙은 선 하나만 켠다. 번호를 누르면 그 층 버튼에만 불이 들어오는 엘리베이터와 같다. 둘 다 값을 …"
@@ -107,7 +107,7 @@ flowchart LR
 ## 연결
 
 - 선수: [논리 게이트와 조합 회로](/Hongs_Blog/studies/computer-architecture/combinational-logic/)
-- 어셈블리어 과목의 슬라이드에 나온 식 $$(Y \wedge S) \vee (X \wedge \neg S)$$가 2입력 멀티플렉서다: [불 대수와 논리 회로](/Hongs_Blog/studies/discrete-math/boolean-algebra/)의 과목별 관점
+- 논리식 $$(Y \wedge S) \vee (X \wedge \neg S)$$가 2입력 멀티플렉서다: [불 대수와 논리 회로](/Hongs_Blog/studies/discrete-math/boolean-algebra/)의 과목별 관점
 
 ## 확인 문제
 
@@ -141,5 +141,5 @@ flowchart LR
 [^1]: Patterson & Hennessy, *Computer Organization and Design*, 부록 "The Basics of Logic Design"의 B.3절 "Combinational Logic" (디코더: 입력 $$n$$비트에 출력 $$2^n$$개, 3비트 디코더의 진리표. 멀티플렉서: 선택 입력 $$\log_2 n$$개, 디코더와 AND 줄과 OR 하나로 만드는 법, 32비트 너비로 늘어놓기). 절 번호는 공개된 PDF 기준이고 판에 따라 부록 문자가 다를 수 있다. https://www.doc.ic.ac.uk/~wl/teachlocal/arch/HP05/HP_AppB.pdf
 [^2]: UC Berkeley CS61C 강의 노트 "Data Multiplexors" (1비트 2입력 멀티플렉서의 식, 4입력 멀티플렉서의 식과 2입력 셋으로 만드는 법), https://notes.cs61c.org/content/sds-blocks/
 [^3]: MIT 6.004 Computation Structures 강의 노트 "Combinational Logic" (디코더의 원-핫 출력, 멀티플렉서를 표 찾기로 써서 아무 함수나 만드는 법), https://computationstructures.org/notes/combinational_logic/notes.html
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 8비트 예와 다이어그램 1개는 직접 만들었다. 검증 코드로 확인했다.
+[^s1]: 8비트 예와 다이어그램 1개는 직접 만들었다. 검증 코드로 확인했다.
 {% endraw %}

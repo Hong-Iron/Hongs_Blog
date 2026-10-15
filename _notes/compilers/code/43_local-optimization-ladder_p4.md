@@ -157,7 +157,7 @@ def show(q):
 def available(qs, rewrite=True, naive=False):
     """기본 블록을 위에서 아래로 훑으며 사용 가능한 식 집합을 만든다.
     rewrite=True면 복사 전파와 공통 부분식 제거를 함께 한다.
-    naive=True면 슬라이드 규칙 그대로, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
+    naive=True면 "새 식은 늘 넣는다"를 글자 그대로 따라, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
     (새 코드, 각 문장 뒤의 집합 목록)을 돌려준다. 집합은 넣은 순서를 지키는 리스트다."""
     avail, out, sets = [], [], []
     for op, a1, a2, res in qs:

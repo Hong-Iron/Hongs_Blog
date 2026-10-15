@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Fixed-Point Iteration", "단순 고정점 반복", "Simple Fixed-Point Iteration", "고정점", "Fixed Point", "선형 수렴", "Linear Convergence", "연립 비선형 방정식", "System of Nonlinear Equations"]
 description: "f(x) = 0을 x = g(x) 꼴로 바꿔 놓고, 아무 값이나 g에 넣고 나온 값을 다시 넣기를 되풀이한다. 넣은 값과 나온 값이 같아지는 점(고정점)이 원래 식의 근이다. 식을 바꾸는 방법은 여러 가지인데, 근 근처에서 g의 기울기의 절댓값이 1보다 작으면 오차가 매번 그 비율…"
@@ -34,7 +34,7 @@ $$f(x) = 0$$을 $$x = g(x)$$ 꼴로 바꿔 놓고, 아무 값이나 $$g$$에 넣
 
 ## 예시로 보기
 
-$$f(x) = e^{-x} - x = 0$$은 $$x = e^{-x}$$로 바꿀 수 있다. $$x_0 = 0$$에서 되풀이한다[^1].
+$$f(x) = e^{-x} - x = 0$$은 $$x = e^{-x}$$로 바꿀 수 있다. $$x_0 = 0$$에서 되풀이한다.
 
 | $$i$$ | $$x_i$$ | $$\lvert\epsilon_a\rvert$$ (%) | $$\lvert\epsilon_t\rvert$$ (%) |
 |---|---|---|---|
@@ -59,12 +59,12 @@ $$f(x) = e^{-x} - x = 0$$은 $$x = e^{-x}$$로 바꿀 수 있다. $$x_0 = 0$$에
 
 ## 정의
 
-$$f(x) = 0$$을 $$x$$가 왼쪽에 오도록 $$x = g(x)$$로 바꾸고, 시작값 $$x_0$$에서 다음을 되풀이한다[^2].
+$$f(x) = 0$$을 $$x$$가 왼쪽에 오도록 $$x = g(x)$$로 바꾸고, 시작값 $$x_0$$에서 다음을 되풀이한다.
 
 $$x_{i+1} = g(x_i)$$
 
 
-바꾸는 방법은 여러 가지다. $$x^2 - x - 2 = 0$$($$x > 0$$, 근 2)은 $$g(x) = x^2 - 2$$, $$\sqrt{x + 2}$$, $$1 + \frac2x$$ 등으로 쓸 수 있다. $$\sin x = 0$$은 양변에 $$x$$를 더해 $$x = \sin x + x$$로 쓴다[^3]. 시작값과 바꾼 꼴에 따라 발산할 수도 있다[^2].
+바꾸는 방법은 여러 가지다. $$x^2 - x - 2 = 0$$($$x > 0$$, 근 2)은 $$g(x) = x^2 - 2$$, $$\sqrt{x + 2}$$, $$1 + \frac2x$$ 등으로 쓸 수 있다. $$\sin x = 0$$은 양변에 $$x$$를 더해 $$x = \sin x + x$$로 쓴다. 시작값과 바꾼 꼴에 따라 발산할 수도 있다.
 
 ```mermaid
 flowchart TD
@@ -83,7 +83,7 @@ flowchart TD
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">수렴 조건</div>
 
-근 근처에서 $$\vert g'(x)\vert  < 1$$이면 고정점 반복은 수렴한다. 이때 오차는 대략 앞 오차에 비례해(그 이하로) 줄어든다. 그래서 선형 수렴이라 한다[^4].
+근 근처에서 $$\vert g'(x)\vert  < 1$$이면 고정점 반복은 수렴한다. 이때 오차는 대략 앞 오차에 비례해(그 이하로) 줄어든다. 그래서 선형 수렴이라 한다.
 
 </div>
 
@@ -104,22 +104,17 @@ $$x^2 - x - 2 = 0$$의 세 꼴을 근 2에서 보면 $$g(x) = x^2 - 2$$는 $$g'(
 
 ### 연립 비선형 방정식
 
-$$u(x, y) = x^2 + xy - 10 = 0$$, $$v(x, y) = y + 3xy^2 - 57 = 0$$(참값 $$x = 2$$, $$y = 3$$)을 $$x = g_1(x, y)$$, $$y = g_2(x, y)$$로 바꾼다. 꼴이 여러 가지다[^5].
+$$u(x, y) = x^2 + xy - 10 = 0$$, $$v(x, y) = y + 3xy^2 - 57 = 0$$(참값 $$x = 2$$, $$y = 3$$)을 $$x = g_1(x, y)$$, $$y = g_2(x, y)$$로 바꾼다. 꼴이 여러 가지다.
 
-- 방법 i: $$x = \frac{10 - x^2}{y}$$, $$y = 57 - 3xy^2$$. $$(1.5, 3.5)$$에서 $$x_1 = 2.21429$$, $$y_1 = -24.375$$, $$x_2 = -0.2091$$, $$y_2 = 429.71$$로 발산한다[^6].
-- 방법 ii: $$x = \sqrt{10 - xy}$$, $$y = \sqrt{\frac{57 - y}{3x}}$$. $$x_1 = 2.17945$$, $$y_1 = 2.86051$$, $$x_2 = 1.94053$$, $$y_2 = 3.04955$$로 수렴한다[^7].
+- 방법 i: $$x = \frac{10 - x^2}{y}$$, $$y = 57 - 3xy^2$$. $$(1.5, 3.5)$$에서 $$x_1 = 2.21429$$, $$y_1 = -24.375$$, $$x_2 = -0.2091$$, $$y_2 = 429.71$$로 발산한다.
+- 방법 ii: $$x = \sqrt{10 - xy}$$, $$y = \sqrt{\frac{57 - y}{3x}}$$. $$x_1 = 2.17945$$, $$y_1 = 2.86051$$, $$x_2 = 1.94053$$, $$y_2 = 3.04955$$로 수렴한다.
 
-두 방법 모두 $$y$$를 고칠 때 방금 구한 새 $$x$$를 쓴다(가우스-자이델과 같은 방식). 수렴의 충분조건은 근 근처에서 다음과 같다[^7].
+두 방법 모두 $$y$$를 고칠 때 방금 구한 새 $$x$$를 쓴다(가우스-자이델과 같은 방식). 수렴의 충분조건은 근 근처에서 다음과 같다.
 
 $$\left\vert \frac{\partial g_1}{\partial x}\right\vert  + \left\vert \frac{\partial g_1}{\partial y}\right\vert  < 1, \qquad \left\vert \frac{\partial g_2}{\partial x}\right\vert  + \left\vert \frac{\partial g_2}{\partial y}\right\vert  < 1$$
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: "Converges if $$\vert \partial u/\partial x\vert  + \vert \partial u/\partial y\vert  < 1$$ and $$\vert \partial v/\partial x\vert  + \vert \partial v/\partial y\vert  < 1$$" (p.9) / 문제점: 같은 자료 p.7에서 $$u$$, $$v$$는 원래 방정식 $$x^2 + xy - 10$$, $$y + 3xy^2 - 57$$로 정의되었다. 이 함수들로 재면 근에서 $$\vert u_x\vert  + \vert u_y\vert  = 7 + 2 = 9$$라 조건을 만족할 수 없다. 조건은 반복 함수 $$g_1$$, $$g_2$$의 편미분에 대한 것이다 / 수정안: $$u$$, $$v$$ 자리에 $$g_1$$, $$g_2$$ / 근거: 1차원 조건 $$\vert g'(x)\vert  < 1$$을 두 변수로 넓힌 것이고, 30_fixed-point-iteration_impl.py에서 계산[^7]
-
-</div>
+1차원 조건 $$\vert g'(x)\vert  < 1$$을 두 변수로 넓힌 것이라, 편미분은 원래 함수 $$u$$, $$v$$가 아니라 반복 함수 $$g_1$$, $$g_2$$의 것이다. $$u = x^2 + xy - 10$$으로 재면 근 $$(2, 3)$$에서 $$\left\vert \frac{\partial u}{\partial x}\right\vert  + \left\vert \frac{\partial u}{\partial y}\right\vert  = 7 + 2 = 9$$라, 어떤 반복 함수를 고르든 이 조건은 맞을 수 없다.
 
 
 이 조건은 충분조건일 뿐이다. 방법 ii는 근에서 $$\vert \partial g_1/\partial x\vert  + \vert \partial g_1/\partial y\vert  = 0.75 + 0.5 = 1.25$$로 조건을 만족하지 않는데도 수렴했다[^s1].
@@ -169,14 +164,7 @@ $$\left\vert \frac{\partial g_1}{\partial x}\right\vert  + \left\vert \frac{\par
 </details>
 
 
-[^1]: 수치해석 17회 강의 자료 「na17_nonlinear2」, p.5
-[^2]: 같은 자료, p.3
-[^3]: 같은 자료, p.4
-[^4]: 같은 자료, p.6
-[^5]: 같은 자료, p.2, p.7
-[^6]: 같은 자료, p.8
-[^7]: 같은 자료, p.9
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오차 비율 0.567, 평균값 정리로 쓴 이유, 세 꼴의 기울기, 방법 ii의 편미분 합 1.25, 활용, 흔한 실수, 카드 C2~C4는 원본에 없다. 방법 i의 $$y_1$$은 정확히 −24.375이고 슬라이드는 −24.3으로 줄여 썼다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [30_fixed-point-iteration_plot.py](/Hongs_Blog/studies/numerical-analysis/code/30_fixed-point-iteration_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 $$x_2$$, $$x_4$$, $$x_{10}$$, 오차 비율 $$-0.567$$, $$x^2 - 2$$의 발산과 $$1 + \frac2x$$의 수렴.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 갱신식과 바꾸는 꼴(원본 17.na17_nonlinear2.pdf p.3~4), 예시 표의 $$\epsilon_a$$, '활용'의 흔한 실수로 그렸다. 멀어지는지 보는 갈래는 그 흔한 실수를 절차로 옮긴 것이다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [30_fixed-point-iteration_plot.py](/Hongs_Blog/studies/numerical-analysis/code/30_fixed-point-iteration_plot/)로 그렸고, 같은 코드로 다음 값을 확인했다: 표의 $$x_2$$, $$x_4$$, $$x_{10}$$, 오차 비율 $$-0.567$$, $$x^2 - 2$$의 발산과 $$1 + \frac2x$$의 수렴.
+[^s3]: 멀어지는지 보는 갈래는 그 흔한 실수를 절차로 옮긴 것이다.
 {% endraw %}

@@ -34,7 +34,7 @@ permalink: "/studies/database-design/group-by-query-ladder/"
 
 ## 문제 1 · 완전한 풀이
 
-부서마다 부서 번호, 그 부서의 직원 수, 평균 급여를 구하라[^1].
+부서마다 부서 번호, 그 부서의 직원 수, 평균 급여를 구하라.
 
 1. *묶는 열 정하기:* 한 줄이 부서 하나다. EMPLOYEE의 `Dno`로 묶는다.
 2. *묶기 전에 버릴 행 정하기:* 없다. 모든 직원을 센다.
@@ -153,6 +153,5 @@ HAVING   COUNT (*) >= 2;
 </div>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.31 (Grouping in SQL: Query 24와 결과 표. "The EMPLOYEE tuples are partitioned into groups")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 하위목표로 나눈 것과 문제 2~4는 원본에 없다. 문제 1의 질의와 결과는 슬라이드 p.31의 Q24다. 모든 답은 SQLite 3.50.4에서 실행해 확인했다.
+[^s1]: 모든 답은 SQLite 3.50.4에서 실행해 확인했다.
 {% endraw %}

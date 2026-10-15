@@ -140,5 +140,5 @@ $$(2x - 1)^5$$에서 $$x^3$$의 계수를 구한다.
 
 
 [^1]: OpenStax, *Precalculus 2e*, 11.6절 "Binomial Theorem". 조합적 증명과 방데르몽드 항등식은 Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [18_binomial-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/18_binomial-theorem_plot/)로 그렸고, 줄마다 합이 $$2^n$$인 것, $$n = 50$$에서 크기 20~30인 부분집합의 비율 0.881을 같은 코드로 확인했다.
+[^s1]: [18_binomial-theorem_plot.py](/Hongs_Blog/studies/discrete-math/code/18_binomial-theorem_plot/)로 그렸고, 줄마다 합이 $$2^n$$인 것, $$n = 50$$에서 크기 20~30인 부분집합의 비율 0.881을 같은 코드로 확인했다.
 {% endraw %}

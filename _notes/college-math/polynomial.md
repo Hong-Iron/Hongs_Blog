@@ -165,8 +165,8 @@ flowchart LR
 
 [^1]: OpenStax, *Precalculus 2e*, 3.2절 "Quadratic Functions", 3.3절 "Power Functions and Polynomial Functions", 3.5절 "Dividing Polynomials", 3.6절 "Zeros of Polynomial Functions"
 [^2]: OpenStax, *Precalculus 2e*, 3.6절 "Zeros of Polynomial Functions"(대수학의 기본정리와 일차 인수 분해 정리)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 호너 방법, 롤링 해시, 샤미르 비밀 분산, 리드-솔로몬 부호는 다항식이 컴퓨터공학에서 쓰이는 곳을 보이려고 넣었다. 롤링 해시는 라빈-카프 문자열 탐색에서 쓴다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 아벨-루피니 정리는 5차 이상 방정식의 **일반** 공식이 없다는 뜻이다. 특정한 5차 방정식은 근호로 풀리기도 한다. 증명은 갈루아 이론의 범위다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [04_polynomial_plot.py](/Hongs_Blog/studies/college-math/code/04_polynomial_plot/)로 그렸고, 그림에 쓴 값($$p(1) = p(2) = p(3) = 0$$, $$p(x) = (x - 1)(x - 2)(x - 3)$$, 판별식 16, 0, −8과 첫 식의 근 −1, 3)을 같은 코드로 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. `정의`의 정리 1~3과 그 증명, `예시로 보기`의 조립제법, `예제`의 보간 유일성 논증이 서로 무엇을 쓰는지를 근거로 그렸다(OpenStax, *Precalculus 2e*, 3.5~3.6절).
+[^s1]: 호너 방법, 롤링 해시, 샤미르 비밀 분산, 리드-솔로몬 부호는 다항식이 컴퓨터공학에서 쓰이는 곳을 보이려고 넣었다. 롤링 해시는 라빈-카프 문자열 탐색에서 쓴다.
+[^s2]: 아벨-루피니 정리는 5차 이상 방정식의 **일반** 공식이 없다는 뜻이다. 특정한 5차 방정식은 근호로 풀리기도 한다. 증명은 갈루아 이론의 범위다.
+[^s3]: [04_polynomial_plot.py](/Hongs_Blog/studies/college-math/code/04_polynomial_plot/)로 그렸고, 그림에 쓴 값($$p(1) = p(2) = p(3) = 0$$, $$p(x) = (x - 1)(x - 2)(x - 3)$$, 판별식 16, 0, −8과 첫 식의 근 −1, 3)을 같은 코드로 확인했다.
+[^s4]: `정의`의 정리 1~3과 그 증명, `예시로 보기`의 조립제법, `예제`의 보간 유일성 논증이 서로 무엇을 쓰는지를 근거로 그렸다(OpenStax, *Precalculus 2e*, 3.5~3.6절).
 {% endraw %}

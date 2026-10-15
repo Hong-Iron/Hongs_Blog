@@ -35,7 +35,7 @@ def main():
     root = 0.56714329040978387
     xs = fixed_point(lambda x: math.exp(-x), 0.0, 10)
     slide = [0, 1.000000, 0.367879, 0.692201, 0.500473, 0.606244, 0.545396, 0.579612, 0.560115, 0.571143, 0.564879]
-    assert all(abs(a - b) < 1e-6 for a, b in zip(xs, slide))               # 슬라이드 p.5
+    assert all(abs(a - b) < 1e-6 for a, b in zip(xs, slide))               # 문서의 예시 표
     ea = [abs((xs[i] - xs[i - 1]) / xs[i]) * 100 for i in range(1, 11)]
     et = [abs(root - v) / root * 100 for v in xs]
     assert [round(v, 1) for v in ea[:3]] == [100.0, 171.8, 46.9] and round(ea[-1], 2) == 1.11
@@ -55,10 +55,10 @@ def main():
     assert c[1] == 1.0 and round(c[2], 4) == 0.5403
     # 연립: x² + xy = 10, y + 3xy² = 57 (참값 (2, 3))
     x, y = 1.5, 3.5
-    x1 = (10 - x * x) / y; y1 = 57 - 3 * x1 * y * y                         # 슬라이드 p.8은 새 x1을 쓴다
-    assert round(x1, 5) == 2.21429 and abs(y1 + 24.375) < 1e-3              # 슬라이드는 −24.3으로 줄여 씀
+    x1 = (10 - x * x) / y; y1 = 57 - 3 * x1 * y * y                         # y를 고칠 때 새 x1을 쓴다
+    assert round(x1, 5) == 2.21429 and abs(y1 + 24.375) < 1e-3              # 정확히 −24.375
     x2 = (10 - x1 * x1) / y1; y2 = 57 - 3 * x2 * y1 * y1
-    assert abs(x2 + 0.2091) < 1e-4 and abs(y2 - 429.71) < 0.01                # 슬라이드 −0.20910, 429.709: 발산
+    assert abs(x2 + 0.2091) < 1e-4 and abs(y2 - 429.71) < 0.01                # −0.20910, 429.709: 발산
     # 방법 ii (새 x를 바로 쓴다)
     x, y = 1.5, 3.5; seq = []
     for _ in range(30):

@@ -99,7 +99,7 @@ ISA가 정하지 않는 것도 있다. 그 명령들을 회로로 어떻게 만�
 - MIPS가 정한 것 하나하나: [MIPS 레지스터와 메모리 피연산자](/Hongs_Blog/studies/computer-architecture/mips-operands/), [MIPS 산술·논리 명령](/Hongs_Blog/studies/computer-architecture/mips-arithmetic-logic/), [MIPS 명령어 형식](/Hongs_Blog/studies/computer-architecture/mips-instruction-formats/)
 - 다른 목록(x86)과 견주기: [RISC와 CISC 비교](/Hongs_Blog/studies/computer-architecture/risc-vs-cisc/), [어셈블리어와 기계어](/Hongs_Blog/studies/assembly-language/assembly-language/)
 - "읽어 오고 실행한다"의 되풀이: [명령어 사이클](/Hongs_Blog/studies/operating-systems/instruction-cycle/). 그 되풀이를 회로로 만든 것: [단일 사이클 데이터패스](/Hongs_Blog/studies/computer-architecture/single-cycle-datapath/)
-- 컴파일러 과목의 [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 MIPS를 단순하게 고친 표기를 쓴다. 이 과목은 실제 MIPS 표기를 쓴다.
+- 컴파일러 과목의 [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 MIPS를 단순하게 고친 표기를 쓴다. 이 과목은 실제 MIPS 표기를 쓴다.
 
 ## 확인 문제
 
@@ -135,5 +135,5 @@ ISA가 정하지 않는 것도 있다. 그 명령들을 회로로 어떻게 만�
 [^3]: 같은 슬라이드, 33 (Power of the Stored Program: 다시 배선할 필요 없이 새 프로그램을 메모리에 넣는다, 프로세서가 명령을 차례로 읽어 와 실행한다), 42 (프로그램 카운터). Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 2장 "Instructions: Language of the Computer"
 [^4]: 같은 슬라이드, 6·9·11·14·32 (설계 원칙 넷과 그 예). Patterson & Hennessy, 같은 책, 2장
 [^5]: 같은 슬라이드, 13 (MIPS는 32비트 데이터를 다루므로 32비트 구조라 부른다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 줄 프로그램과 주소·기계어 값, 메뉴판 비유, "정하는 것" 표의 네 갈래는 위 자료에 그대로 있지 않다. 표의 MIPS 칸은 MIPS Reference Data(Green Sheet)의 형식 그림과 위 슬라이드의 내용을 모은 것이고, 기계어 값은 검증 코드의 인코더로 구했다.
+[^s1]: 세 줄 프로그램과 주소·기계어 값, 메뉴판 비유, "정하는 것" 표의 네 갈래는 위 자료에 그대로 있지 않다.
 {% endraw %}

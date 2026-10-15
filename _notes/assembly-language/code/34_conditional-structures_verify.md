@@ -21,7 +21,7 @@ permalink: "/studies/assembly-language/code/34_conditional-structures_verify/"
 
 ```python
 """조건 구조를 점프로 옮기기 문서의 코드 확인 (파이썬 흉내, 실제 MASM 실행 아님).
-슬라이드의 어셈블리 코드를 흉내기로 돌린 결과를, 같은 뜻의 파이썬 if/while 결과와 견준다.
+문서의 어셈블리 코드를 흉내기로 돌린 결과를, 같은 뜻의 파이썬 if/while 결과와 견준다.
 실행: python3 34_conditional-structures_verify.py"""
 import itertools
 import re
@@ -30,7 +30,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(예: 00000020의 call 다음 줄은 00000025).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -498,17 +498,17 @@ def run(code, regs=None, data=None):
 
 
 def main():
-    # 1. if-else (wk09-2-1 p.10)
+    # 1. if-else
     code = "mov eax,op1\ncmp eax,op2\njne L1\nmov X,1\njmp L2\nL1:mov X,2\nL2:"
     for a, b in itertools.product(E32, E32):
         c, d = run(code, data=dict(op1=a, op2=b, X=0))
         assert d["X"] == (1 if a == b else 2)
-    # 2. Your turn (p.11): 부호 없는 if (ebx <= ecx) { eax = 5; edx = 6; }
+    # 2. 연습: 부호 없는 if (ebx <= ecx) { eax = 5; edx = 6; }
     code = "cmp ebx,ecx\nja next\nmov eax,5\nmov edx,6\nnext:"
     for b, cx in itertools.product(E32, E32):
         c, d = run(code, dict(ebx=b, ecx=cx, eax=99, edx=99))
         assert (c.r["eax"], c.r["edx"]) == ((5, 6) if b <= cx else (99, 99))
-    # 3. Your turn (p.12): 부호 있는 if (var1 <= var2) var3 = 10; else { var3 = 6; var4 = 7; }
+    # 3. 연습: 부호 있는 if (var1 <= var2) var3 = 10; else { var3 = 6; var4 = 7; }
     code = "mov eax,var1\ncmp eax,var2\njle L1\nmov var3,6\nmov var4,7\njmp L2\nL1:mov var3,10\nL2:"
     for a, b in itertools.product(E32, E32):
         c, d = run(code, data=dict(var1=a, var2=b, var3=0, var4=0))
@@ -518,7 +518,7 @@ def main():
     code2 = "mov eax,var1\ncmp eax,var2\njg L1\nmov var3,10\njmp L2\nL1:mov var3,6\nmov var4,7\nL2:"
     for a, b in itertools.product(E32, E32):
         assert run(code, data=dict(var1=a, var2=b, var3=0, var4=0))[1] == run(code2, data=dict(var1=a, var2=b, var3=0, var4=0))[1]
-    # 4. AND (p.14~15): 두 구현이 같고, 명령 수 7 -> 5
+    # 4. AND: 두 구현이 같고, 명령 수 7 -> 5
     long_and = "cmp al,bl\nja L1\njmp next\nL1:\ncmp bl,cl\nja L2\njmp next\nL2:\nmov X,1\nnext:"
     short_and = "cmp al,bl\njbe next\ncmp bl,cl\njbe next\nmov X,1\nnext:"
     n_long, n_short = len(machine(long_and).code), len(machine(short_and).code)
@@ -536,12 +536,12 @@ def main():
     c.trace = []
     c.run()
     assert [l for l, r, f in c.trace] == ["cmp al,bl", "jbe next"]
-    # 5. Your turn (p.16): if (ebx <= ecx && ecx > edx) { eax = 5; edx = 6; }
+    # 5. 연습: if (ebx <= ecx && ecx > edx) { eax = 5; edx = 6; }
     code = "cmp ebx,ecx\nja next\ncmp ecx,edx\njbe next\nmov eax,5\nmov edx,6\nnext:"
     for b, cx, dx in itertools.product(E32, E32, E32):
         c, d = run(code, dict(ebx=b, ecx=cx, edx=dx, eax=99))
         assert (c.r["eax"], c.r["edx"]) == ((5, 6) if (b <= cx and cx > dx) else (99, dx))
-    # 6. OR (p.18)
+    # 6. OR
     code = "cmp al,bl\nja L1\ncmp bl,cl\njbe next\nL1:mov X,1\nnext:"
     for a, b, cl in itertools.product(E8, E8, E8):
         c, d = run(code, dict(al=a, bl=b, cl=cl), dict(X=0))
@@ -553,7 +553,7 @@ def main():
     c.trace = []
     c.run()
     assert [l for l, r, f in c.trace] == ["cmp al,bl", "ja L1", "mov X,1"]
-    # 7. WHILE (p.19): while (eax < ebx) eax = eax + 1;
+    # 7. WHILE: while (eax < ebx) eax = eax + 1;
     code = "top:cmp eax,ebx\njae next\ninc eax\njmp top\nnext:"
     for a, b in [(0, 0), (0, 5), (3, 5), (5, 5), (6, 5), (0xFFFFFFFD, 0xFFFFFFFF), (0xFFFFFFFF, 0)]:
         c, d = run(code, dict(eax=a, ebx=b))
@@ -563,7 +563,7 @@ def main():
     c.trace = []
     c.run()
     assert len([1 for l, r, f in c.trace if l.startswith("cmp")]) == 3     # 조건 검사는 몸통 횟수 + 1
-    # 8. Your turn (p.20): while (ebx <= val1) { ebx = ebx + 5; val1 = val1 - 1; }
+    # 8. 연습: while (ebx <= val1) { ebx = ebx + 5; val1 = val1 - 1; }
     code = "top:cmp ebx,val1\nja next\nadd ebx,5\ndec val1\njmp top\nnext:"
     for b, v in [(0, 10), (3, 3), (4, 3), (1, 100), (7, 8)]:
         c, d = run(code, dict(ebx=b), dict(val1=v))

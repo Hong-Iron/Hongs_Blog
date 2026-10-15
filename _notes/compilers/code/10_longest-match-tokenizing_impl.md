@@ -20,13 +20,13 @@ permalink: "/studies/compilers/code/10_longest-match-tokenizing_impl/"
 [최장 일치와 토큰 인식](/Hongs_Blog/studies/compilers/longest-match-tokenizing/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 최장 일치와 토큰 인식 (슬라이드 L02 p.26~30의 의사코드, L03 p.37~43의 표 추적)
+# 최장 일치와 토큰 인식 (문서의 의사코드와 전이 표 추적)
 # 실행: python3 10_longest-match-tokenizing_impl.py   (표준 라이브러리만 쓴다)
 # 의사코드는 1부터 세지만(a_1 ... a_n) 이 코드는 0부터 센다. mIdx는 "잘라 낼 글자 수"로 같은 뜻이다.
 import random
 import re
 
-# 슬라이드 p.38의 전이 표. Merged = sIdentifier | lparen
+# 문서의 전이 표. Merged = sIdentifier | lparen
 TABLE = {
     ("T0", "letter"): "T1", ("T0", "("): "T4",
     ("T1", "letter"): "T2", ("T1", "digit"): "T3",
@@ -75,7 +75,7 @@ def tokenize(table, token_of, text, classify=kind):
 
 
 def tokenize_naive(specs, text):
-    """슬라이드 L02 p.27의 의사코드 그대로. specs는 우선순위 순서의 (토큰 이름, 정규 표현식)."""
+    """문서의 의사코드 그대로. specs는 우선순위 순서의 (토큰 이름, 정규 표현식)."""
     out, rest = [], text
     while rest:
         m_idx = 0
@@ -92,7 +92,7 @@ def tokenize_naive(specs, text):
 
 
 if __name__ == "__main__":
-    # (1) 슬라이드 p.38~43: COMPARE(A
+    # (1) 문서의 추적: COMPARE(A
     text = "COMPARE(A"
     n, tok, rows = scan_one(TABLE, TOKEN_OF, text, 0)
     assert (n, tok) == (7, "sIdentifier")
@@ -119,7 +119,7 @@ if __name__ == "__main__":
         except ValueError:
             b = "error"
         assert a == b, s
-    # 숫자로 시작하면 어느 토큰도 아니다 (의사코드에 오류 처리가 필요한 경우, L02 p.29)
+    # 숫자로 시작하면 어느 토큰도 아니다 (의사코드에 오류 처리가 필요한 경우)
     for f in (lambda: tokenize(TABLE, TOKEN_OF, "9a"), lambda: tokenize_naive(specs, "9a")):
         try:
             f()
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     assert tokenize(TABLE, TOKEN_OF, "x1(y") == [("sIdentifier", "x1"), ("lparen", "("), ("sIdentifier", "y")]
     assert scan_one(TABLE, TOKEN_OF, "x1(y", 0)[2] == [(1, "T0", "x", "T1"), (2, "T1", "1", "T3"), (3, "T3", "(", None)]
 
-    # (3) 우선순위(L02 p.28): 길이가 같으면 앞에 적힌 토큰, 길이가 다르면 긴 쪽
+    # (3) 우선순위: 길이가 같으면 앞에 적힌 토큰, 길이가 다르면 긴 쪽
     kw = [("Keyword", r"if|else|for"), ("Identifier", r"[A-Za-z_][A-Za-z0-9_]*"),
           ("Comparison", r"<=|>=|<|>"), ("Assign", r"="), ("Whitespace", r"[ \t\n]+")]
     assert tokenize_naive(kw, "if") == [("Keyword", "if")]

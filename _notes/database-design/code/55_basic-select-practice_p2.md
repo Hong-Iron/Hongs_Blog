@@ -21,15 +21,15 @@ permalink: "/studies/database-design/code/55_basic-select-practice_p2/"
 
 ```python
 # 55.기본 검색 연습 p2 (a, b, c) 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 55_basic-select-practice_p2.py)
-# 문제 (슬라이드 10-2 p.25 연습 4). 풀이는 10-11-SQL-Solutions p.21~23.
+# 문제:
 #   a. 5번 부서 직원 가운데 ProductX 프로젝트에서 주 10시간 넘게 일하는 직원의 이름
 #   b. 자기와 이름(first name)이 같은 부양가족이 있는 직원의 이름
 #   c. Franklin Wong이 직접 감독하는 직원의 이름
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
-# 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7). DDL은 46.CREATE SCHEMA와 CREATE TABLE의 문장을 따른다.
+# 그 문장과 다른 곳은 하나다. EMPLOYEE의 외래 키 두 개를 ALTER TABLE 대신 CREATE TABLE 안에 적었다(SQLite는
+# 아직 없는 표를 가리켜도 받는다). WORKS_ON.Hours에는 NOT NULL이 없다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
   Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -84,7 +84,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)
@@ -122,7 +122,7 @@ def error_of(c, sql, args=()):
         c.execute('RELEASE try_it')
 
 
-# a. 풀이 슬라이드 p.21에 적힌 그대로: WORKS_ON과 PROJECT를 잇는 조건(W.Pno = P.Pnumber)이 없다
+# a. 틀리기 쉬운 판: WORKS_ON과 PROJECT를 잇는 조건(W.Pno = P.Pnumber) 대신 E.Dno = P.Dnum을 적었다
 A_SLIDE = """SELECT E.Fname, E.Lname
              FROM EMPLOYEE AS E, PROJECT AS P, WORKS_ON AS W
              WHERE E.Dno = 5 AND E.Ssn = W.Essn AND P.Pname = 'ProductX'
@@ -145,8 +145,8 @@ if __name__ == "__main__":
     c = make()
 
     # --- a
-    assert sorted(rows(c, A_FIXED)) == [('John', 'Smith'), ('Joyce', 'English')]                      # 슬라이드가 표에 표시한 답
-    assert sorted(rows(c, A_SLIDE)) == [('John', 'Smith'), ('Joyce', 'English'), ('Joyce', 'English'), ('Ramesh', 'Narayan')]   # 적힌 그대로 돌린 답
+    assert sorted(rows(c, A_FIXED)) == [('John', 'Smith'), ('Joyce', 'English')]                      # 맞는 답
+    assert sorted(rows(c, A_SLIDE)) == [('John', 'Smith'), ('Joyce', 'English'), ('Joyce', 'English'), ('Ramesh', 'Narayan')]   # 틀리기 쉬운 판의 답
     # 왜 넷인가: ProductX와 무관하게 "5번 부서 직원이 10시간 넘게 일하는 WORKS_ON 행"을 센 것이다
     over10 = rows(c, "SELECT E.Lname, W.Pno, W.Hours FROM EMPLOYEE AS E, WORKS_ON AS W WHERE E.Dno = 5 AND E.Ssn = W.Essn AND W.Hours > 10")
     assert sorted(over10) == [('English', 1, 20), ('English', 2, 20), ('Narayan', 3, 40), ('Smith', 1, 32.5)]
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     # --- c
     want = [('John', 'Smith'), ('Joyce', 'English'), ('Ramesh', 'Narayan')]
     assert sorted(rows(c, C_JOIN)) == want
-    assert sorted(rows(c, C_NESTED)) == want                # 풀이 슬라이드 p.23의 중첩 질의 판
+    assert sorted(rows(c, C_NESTED)) == want                # 중첩 질의 판
     assert rows(c, "SELECT Ssn FROM EMPLOYEE WHERE Fname = 'Franklin' AND Lname = 'Wong'") == [('333445555',)]    # 안쪽 질의의 답은 한 행
     assert sorted(rows(c, "SELECT Fname, Lname FROM EMPLOYEE WHERE Super_ssn = '333445555'")) == want
 

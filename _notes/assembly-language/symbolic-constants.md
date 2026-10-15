@@ -36,7 +36,7 @@ permalink: "/studies/assembly-language/symbolic-constants/"
 
 배열에 값이 몇 개 들었는지 코드에 4라고 직접 써 두면, 배열에 값을 하나 더 넣는 날 그 4를 찾아 모두 고쳐야 한다. 하나라도 놓치면 프로그램은 조용히 틀린다. 어셈블러에게 세게 하면 이 걱정이 사라진다.
 
-어셈블러는 데이터를 놓아 가면서 "다음 바이트가 들어갈 자리"를 늘 기억한다. 그 자리를 `$`로 쓴다. 배열을 다 놓은 직후의 `$`에서 배열이 시작한 자리를 빼면 배열의 바이트 수다[^1].
+어셈블러는 데이터를 놓아 가면서 "다음 바이트가 들어갈 자리"를 늘 기억한다. 그 자리를 `$`로 쓴다. 배열을 다 놓은 직후의 `$`에서 배열이 시작한 자리를 빼면 배열의 바이트 수다.
 
 ```asm
 list BYTE 10,20,30,40
@@ -67,7 +67,7 @@ ListSize = ($ - list)
 | 쓰는 법 | `이름 = 식` | `이름 EQU <글>` 등 |
 | 붙일 수 있는 것 | 32비트 정수(식이나 상수) | 정수 식이나 글 |
 | 같은 이름을 다시 정하기 | 된다 | 안 된다 |
-| 근거 | [^2] | [^3] |
+| 근거 |  |  |
 
 ```asm
 COUNT = 500
@@ -83,9 +83,9 @@ pressKey EQU <"Press any key to continue...",0>
 prompt BYTE pressKey      ; prompt BYTE "Press any key to continue...",0과 같다
 ```
 
-수 대신 이름을 쓰는 것이 좋은 프로그래밍 습관이다[^2].
+수 대신 이름을 쓰는 것이 좋은 프로그래밍 습관이다.
 
-위치 카운터 `$`는 지금 놓고 있는 자리의 주소다. 배열 바로 다음 줄에서 배열의 시작 주소를 빼면 바이트 수가 나온다[^1]. 원소가 1바이트보다 크면 원소 하나의 크기로 나눠야 개수가 된다[^4].
+위치 카운터 `$`는 지금 놓고 있는 자리의 주소다. 배열 바로 다음 줄에서 배열의 시작 주소를 빼면 바이트 수가 나온다. 원소가 1바이트보다 크면 원소 하나의 크기로 나눠야 개수가 된다.
 
 $$\text{원소 개수} = \frac{\$ - \text{배열 이름}}{\text{원소 하나의 바이트 수}}$$
 
@@ -113,7 +113,7 @@ ListSize = ($ - list)             ; 6. list의 크기 4가 아니다
 ## 활용
 
 - 기호 상수는 어셈블할 때 값으로 바뀌어 사라진다. 실행 파일에 `COUNT`라는 칸은 없다[^s1]. 지시어가 어셈블러에게 하는 말이라는 점은 [지시어와 명령어 비교](/Hongs_Blog/studies/assembly-language/directive-vs-instruction/)와 같다.
-- 강의 목차에는 `TEXTEQU` 지시어도 있지만 설명하는 쪽은 없다[^5].
+- 강의 목차에는 `TEXTEQU` 지시어도 있지만 설명하는 쪽은 없다.
 - 같은 일을 하는 연산자가 뒤에 나온다. `LENGTHOF list`는 원소 개수, `SIZEOF list`는 바이트 수를 준다: [TYPE·LENGTHOF·SIZEOF 연산자](/Hongs_Blog/studies/assembly-language/type-lengthof-sizeof/).
 - 흔한 실수: 워드 배열에서 2로 나누는 것을 잊어 개수가 두 배로 나온다.
 
@@ -151,10 +151,5 @@ ListSize = ($ - list)             ; 6. list의 크기 4가 아니다
 </details>
 
 
-[^1]: 어셈블리어 4회 강의 자료 「wk04-chapt_03-4-3」, p.9 (Calculating the Size of a Byte Array: current location counter `$`)
-[^2]: 같은 자료, p.8 (Equal-Sign Directive: 32비트 정수, 다시 정할 수 있다, `COUNT = 500`)
-[^3]: 같은 자료, p.12 (EQU Directive: 정수 또는 글, 다시 정할 수 없다, `PI`, `pressKey`)
-[^4]: 같은 자료, p.10~11 (Calculating the Size of a Word Array, a Doubleword Array)
-[^5]: 같은 자료, p.7 (Symbolic Constants 목차)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오프셋 그림, 원소 개수 식, 사이에 변수가 낀 반례, 기호 상수가 메모리를 차지하지 않는다는 설명, 카드 C1~C3은 원본에 없다. 반례와 "메모리를 차지하지 않는다"는 Irvine, *Assembly Language for x86 Processors* 7판 3.5절의 내용이다. 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
+[^s1]: 반례와 "메모리를 차지하지 않는다"는 Irvine, *Assembly Language for x86 Processors* 7판 3.5절의 내용이다. 값은 파이썬 흉내로 확인했다. 실제 어셈블러로 돌린 결과가 아니다.
 {% endraw %}

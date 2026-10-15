@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Body-Focused Repetitive Behavior", "BFRB", "습관 반전 훈련", "Habit Reversal Training", "HRT", "경쟁반응 훈련", "competing response", "자각 훈련", "awareness training", "수용 증진 행동치료", "Acceptance-Enhanced Behavior Therapy", "AEBT", "손톱 물어뜯기"]
 description: "털 뽑기, 피부 뜯기, 손톱 물어뜯기, 볼·입술 씹기처럼 자기 몸을 대상으로 거의 무의식적으로 되풀이하는 행동들이다. 몸의 어떤 감각이 긴장을 만들고, 행동을 하면 긴장이 풀리는 고리로 굴러간다. 강박장애가 \"불안한 생각 → 그 생각을 지우는 행동\"이라면, 이것은 \"감각 → 긴장 …"
@@ -35,13 +35,13 @@ permalink: "/studies/abnormal-psychology/bfrb/"
 
 손톱 물어뜯기로 손끝이 늘 헐어 있는 DF의 습관 반전 훈련이다[^s1].
 
-1. **자각 훈련:** 언제 물어뜯는지 기록한다. 주로 영상을 볼 때, 손톱 끝이 까칠하게 느껴질 때다. 필기의 말로 "뭔가 간지럽거나, 불편하거나…" 하는 전조를 알아챈다[^1].
-2. **경쟁반응 훈련:** 전조가 오면 1분 동안 주먹을 가볍게 쥐고 있는다. 주먹을 쥐고서는 손톱을 물 수 없다. 필기의 말로 "습관 행동과 양립할 수 없는 행동"이다[^1].
+1. **자각 훈련:** 언제 물어뜯는지 기록한다. 주로 영상을 볼 때, 손톱 끝이 까칠하게 느껴질 때다. "뭔가 간지럽거나, 불편하거나…" 하는 전조를 알아챈다.
+2. **경쟁반응 훈련:** 전조가 오면 1분 동안 주먹을 가볍게 쥐고 있는다. 주먹을 쥐고서는 손톱을 물 수 없다. 이렇게 습관 행동과 함께 할 수 없는 행동을 늘린다.
 3. **수용:** 그래도 올라오는 충동과 간질거림은 없애려 애쓰지 않고 "지금 물고 싶은 충동이 있구나" 하고 바라본 채, 원래 하던 일을 이어 간다.
 
 ## 정의
 
-신체중심 반복행동(BFRB)은 자기 몸을 대상으로 무의식적·반복적으로 손상하거나 변화시키는 행동들이다[^2].
+신체중심 반복행동(BFRB)은 자기 몸을 대상으로 무의식적·반복적으로 손상하거나 변화시키는 행동들이다.
 
 - 습관적이지만 통제하기 어렵고, 기능 손상이나 심리적 고통을 일으킨다.
 - 머리 뽑기, 피부 뜯기, 손톱 물어뜯기, 볼·입술 씹기 등.
@@ -55,7 +55,7 @@ permalink: "/studies/abnormal-psychology/bfrb/"
 | 행동 뒤 | 안도(불안 감소) | 안도와 함께 쾌감·만족 |
 | 대표 치료 | 노출 및 반응방지법 | 습관 반전 훈련 |
 
-### 치료[^1]
+### 치료
 
 - **약물치료:** 항우울제(SSRI).
 - **습관 반전 훈련(HRT):** 틱, 손가락 빨기, 발모광 같은 습관 장애를 치료하는 행동 기법이다.
@@ -80,7 +80,7 @@ flowchart LR
 - 이 계열의 장애: [털뽑기장애](/Hongs_Blog/studies/abnormal-psychology/trichotillomania/), [피부뜯기장애](/Hongs_Blog/studies/abnormal-psychology/excoriation-disorder/)
 - 구별: [강박장애](/Hongs_Blog/studies/abnormal-psychology/ocd/)(생각-중화), [비자살적 자해](/Hongs_Blog/studies/abnormal-psychology/nssi/)(의도적인 손상으로 정서를 조절)
 - 수용의 원리: [제3세대 인지행동치료](/Hongs_Blog/studies/abnormal-psychology/third-wave-cbt/)
-- 습관 반전 훈련은 틱장애(11회)에도 쓴다.
+- 습관 반전 훈련은 [틱장애](/Hongs_Blog/studies/abnormal-psychology/tic-disorders/)에도 쓴다.
 
 ## 확인 문제
 
@@ -106,8 +106,6 @@ flowchart LR
 
 </details>
 
-[^1]: 이상 심리학 5회 강의 자료 「강박 관련 장애」, p.44. "뭔가 간지럽거나, 불편하거나…", "습관 행동과 양립할 수 없는 행동 증진"은 손글씨 필기다.
-[^2]: 이상 심리학 5회 강의 자료 「강박 관련 장애」, p.43
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DF의 훈련 과정은 습관 반전 훈련의 표준 절차를 사례에 적용한 가상 예다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 `정의`의 "감각 → 긴장 → 행동 → 해소" 기제와 `치료`의 습관 반전 훈련 두 요소를 근거로 그렸다. 슬라이드 p.43~44.
+[^s1]: DF의 훈련 과정은 습관 반전 훈련의 표준 절차를 사례에 적용한 가상 예다.
+[^s2]: 다이어그램은 이 문서 `정의`의 "감각 → 긴장 → 행동 → 해소" 기제와 `치료`의 습관 반전 훈련 두 요소를 근거로 그렸다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: B-트리 삭제의 네 경우. 이 수업의 방식(잎에서 지우고, 모자라면 위로 올라가며 고친다)으로 푼다."
 prev_url: "/studies/database-design/b-tree-insert-ladder/"
@@ -25,13 +25,13 @@ permalink: "/studies/database-design/b-tree-delete-ladder/"
 {% raw %}
 사용 개념: [B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/)의 네 경우. 이 수업의 방식(잎에서 지우고, 모자라면 위로 올라가며 고친다)으로 푼다.
 
-"이 트리에서 키를 지운 결과를 그려라"는 문제는 같은 하위목표의 되풀이다. ① 자리 찾기: 지울 키가 잎에 있는지 내부 노드에 있는지 본다. 내부 노드면 선행 키를 그 자리에 올리고 잎에서 선행 키를 지운다 ② 잎 확인: 키를 뺀 잎에 $$t - 1$$개 이상 남았으면 끝이다 ③ 빌리기: 모자라면 왼쪽 형제, 오른쪽 형제 순서로 키가 $$t$$개 이상인 형제를 찾아 빌린다. 형제의 키는 부모로 올라가고 부모의 키가 내려온다 ④ 합치기: 두 형제 모두 $$t - 1$$개뿐이면 부모의 키 하나를 내려 형제와 합친다(왼쪽 형제가 있으면 왼쪽과) ⑤ 부모 확인: 합쳤으면 부모로 올라가 ②부터 다시 본다. 뿌리의 키가 0개가 되면 합친 노드가 새 뿌리다[^s1].
+"이 트리에서 키를 지운 결과를 그려라"는 문제는 같은 하위목표의 되풀이다. ① 자리 찾기: 지울 키가 잎에 있는지 내부 노드에 있는지 본다. 내부 노드면 선행 키를 그 자리에 올리고 잎에서 선행 키를 지운다 ② 잎 확인: 키를 뺀 잎에 $$t - 1$$개 이상 남았으면 끝이다 ③ 빌리기: 모자라면 왼쪽 형제, 오른쪽 형제 순서로 키가 $$t$$개 이상인 형제를 찾아 빌린다. 형제의 키는 부모로 올라가고 부모의 키가 내려온다 ④ 합치기: 두 형제 모두 $$t - 1$$개뿐이면 부모의 키 하나를 내려 형제와 합친다(왼쪽 형제가 있으면 왼쪽과) ⑤ 부모 확인: 합쳤으면 부모로 올라가 ②부터 다시 본다. 뿌리의 키가 0개가 되면 합친 노드가 새 뿌리다.
 
 네 문제 모두 최소 차수 $$t = 2$$다. 뿌리가 아닌 노드는 키가 적어도 1개 있어야 하고, 형제가 키를 빌려주려면 2개 이상 가지고 있어야 한다.
 
 ## 문제 1 · 완전한 풀이
 
-아래 트리에서 32, 31, 30을 차례로 지운다[^1].
+아래 트리에서 32, 31, 30을 차례로 지운다.
 
 ```
                    [20 40]
@@ -75,8 +75,6 @@ permalink: "/studies/database-design/b-tree-delete-ladder/"
  +----+       +------+      +----+----+
 [5] [15]   [25 28] [35]   [45] [55] [65]
 ```
-
-슬라이드의 마지막 그림은 [33] 밑의 둘째 잎을 [45]로 그렸는데 [35]가 맞다([B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/)의 원본 오류 의심).
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증 — [17_b-tree-delete_impl.py](/Hongs_Blog/studies/database-design/code/17_b-tree-delete_impl/)</div>
@@ -208,8 +206,4 @@ permalink: "/studies/database-design/b-tree-delete-ladder/"
 <div class="callout-title" markdown="span">검증 — [17_b-tree-delete_impl.py](/Hongs_Blog/studies/database-design/code/17_b-tree-delete_impl/)</div>
 
 </div>
-
-
-[^1]: 데이터베이스 설계 4회 강의 자료 「4-1_B-tree-deletion」, p.14~17 (Case 1-1, 1-2a, 1-2b의 예: 32, 31, 30 삭제)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 하위목표 이름과 문제 2~4의 트리는 슬라이드에 없다. 슬라이드 p.13~20의 경우 설명을 연습하도록 만들었고, 모든 답은 구현 코드를 돌려 확인했다.
 {% endraw %}

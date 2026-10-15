@@ -52,7 +52,7 @@ def save(fig, k):
     plt.close(fig)
 
 
-N_CORE, N_CLAD = 1.50, 1.48                              # 문서의 원본 오류 의심 상자에 쓴 예
+N_CORE, N_CLAD = 1.50, 1.48                              # 문서 본문의 임계각 예
 THETA_C = math.degrees(math.asin(N_CLAD / N_CORE))       # 임계각 (경계의 수직선에서 잰 각) ≈ 80.6°
 MAX_TILT = 90.0 - THETA_C                                # 축에서 잰 기울기가 이보다 작아야 전반사 ≈ 9.4°
 LENGTH = 40.0                                            # 그림 속 광케이블 길이 (가로 비율은 보기 좋게)

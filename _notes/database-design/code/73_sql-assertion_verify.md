@@ -23,11 +23,10 @@ permalink: "/studies/database-design/code/73_sql-assertion_verify/"
 """주장(CREATE ASSERTION) 검증. SQLite로 점검 질의를 돌린다.
 
 문서: 73.주장 CREATE ASSERTION
-출처: 11주차 슬라이드 11_SQL-DDL-Complex p.5~8
 CREATE ASSERTION은 SQLite에 없다(구문 오류). 그래서 주장 안의 "위반하는 튜플을 고르는 질의"를
 그대로 돌려, 결과가 0행이면 주장이 지켜진 상태, 1행 이상이면 깨진 상태로 본다.
 주장:
-  1. 슬라이드의 COMPANY 상태에서 SALARY_CONSTRAINT의 점검 질의는 0행이다.
+  1. COMPANY 상태에서 SALARY_CONSTRAINT의 점검 질의는 0행이다.
   2. 기본 키·외래 키·NOT NULL을 하나도 어기지 않는 새 직원(5번 부서, 급여 45000)이 들어가면 1행이 된다.
   3. 같은 규칙이 직원 급여 인상, 부서장 급여 인하, 직원의 부서 이동, 부서장 교체로도 깨진다.
   4. CHECK 안에는 부질의를 못 쓴다(한 행만 보는 CHECK로는 이 규칙을 못 적는다).
@@ -36,7 +35,7 @@ CREATE ASSERTION은 SQLite에 없다(구문 오류). 그래서 주장 안의 "�
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -111,7 +110,7 @@ def fails(c, sql, part):
     raise AssertionError("오류가 나야 하는데 실행됐다: " + sql)
 
 
-# 슬라이드 p.7~8의 주장에서 NOT EXISTS 안에 든 질의. 부서장보다 많이 받는 직원을 고른다.
+# 문서의 주장에서 NOT EXISTS 안에 든 질의. 부서장보다 많이 받는 직원을 고른다.
 VIOLATORS = """
 SELECT E.Lname, E.Salary, M.Lname, M.Salary, D.Dname
 FROM EMPLOYEE E, EMPLOYEE M, DEPARTMENT D
@@ -123,7 +122,7 @@ HOLDS = "SELECT NOT EXISTS (" + VIOLATORS + ")"
 def main():
     c = make()
     assert q(c, VIOLATORS) == [] and q(c, HOLDS) == [(1,)]
-    print("[OK] p.6~8: 슬라이드 상태에서 점검 질의 0행, NOT EXISTS는 참")
+    print("[OK] COMPANY 상태에서 점검 질의 0행, NOT EXISTS는 참")
 
     # 2. 처음부터 있던 제약은 하나도 안 어기지만 규칙은 깨는 새 직원
     c.execute("INSERT INTO EMPLOYEE VALUES ('Kate','A','Lee','111223333','1980-03-03','1 Main, Houston, TX','F',"
@@ -131,7 +130,7 @@ def main():
     c.commit()                                    # 외래 키(커밋 때 검사)도 통과
     assert q(c, VIOLATORS) == [("Lee", 45000, "Wong", 40000, "Research")]
     assert q(c, HOLDS) == [(0,)]
-    print("[OK] p.6: 급여 45000인 5번 부서 새 직원은 들어가고, 점검 질의가 1행(Lee > Wong)이 된다")
+    print("[OK] 급여 45000인 5번 부서 새 직원은 들어가고, 점검 질의가 1행(Lee > Wong)이 된다")
 
     # 3. 규칙을 깨는 다른 길 네 가지 (매번 새 상태에서)
     cases = [

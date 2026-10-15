@@ -29,7 +29,7 @@ import re
 # x86 흉내기: 이 파일에서 쓰는 만큼만 흉내 낸다 (MASM 문법의 일부를 그대로 읽는다).
 # 레지스터 8·16·32비트, ZF/SF/CF/OF/PF, 리틀 엔디언 메모리, 스택, CALL/RET.
 # 코드 주소는 실제 기계어 길이가 아니다. 줄 앞에 8자리 16진수를 쓰면 그 주소를 쓰고,
-# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(슬라이드의 00000020 call → 00000025와 맞춘 값).
+# 안 쓰면 CALL은 5, 나머지는 2씩 늘린다(문서 예시의 00000020 call → 00000025와 맞춘 값).
 # ---------------------------------------------------------------------------
 REG32 = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
 REG16 = {"ax": "eax", "cx": "ecx", "dx": "edx", "bx": "ebx",
@@ -482,7 +482,7 @@ def machine(code, esp=0x1000, base=0):
     return c
 
 def main():
-    # 1. 슬라이드 그림 (wk06-3-2 p.5~8): 00001000에 6이 있고, A5·1·2를 넣은 뒤 하나 꺼낸다
+    # 1. 문서의 스택 그림: 00001000에 6이 있고, A5·1·2를 넣은 뒤 하나 꺼낸다
     c = machine("push 0A5h\npush 1\npush 2\npop eax")
     c.wr(0x1000, 4, 6)
     c.trace = []
@@ -498,16 +498,16 @@ def main():
     assert c.get("bx") == 0x1234 and c.r["esp"] == 0x1000
     c = machine("mov ax,1234h\npush ax").run()
     assert c.r["esp"] == 0xFFE
-    # 3. 넣은 순서의 거꾸로 꺼내야 제자리 (p.10)
+    # 3. 넣은 순서의 거꾸로 꺼내야 제자리
     c = machine("mov esi,1\nmov ecx,2\nmov ebx,3\npush esi\npush ecx\npush ebx\n"
                 "mov esi,0\nmov ecx,0\nmov ebx,0\npop ebx\npop ecx\npop esi").run()
     assert (c.r["esi"], c.r["ecx"], c.r["ebx"], c.r["esp"]) == (1, 2, 3, 0x1000)
     c = machine("mov eax,11h\nmov ebx,22h\npush eax\npush ebx\npop eax\npop ebx").run()
     assert (c.r["eax"], c.r["ebx"]) == (0x22, 0x11)             # 같은 순서로 꺼내면 서로 바뀐다
-    # 4. 중첩 루프 (p.12)
+    # 4. 중첩 루프
     c = machine("mov ecx,100\nL1:\npush ecx\nmov ecx,20\nL2: inc eax\nloop L2\npop ecx\ninc ebx\nloop L1").run()
     assert (c.r["eax"], c.r["ebx"], c.r["esp"]) == (2000, 100, 0x1000)
-    # 5. 문자열 뒤집기 (p.14~15)
+    # 5. 문자열 뒤집기
     c = machine("""mov ecx,nameSize
         mov esi,0
         L1: movzx eax,aName[esi]

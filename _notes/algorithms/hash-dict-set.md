@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Dictionary", "Set", "딕셔너리", "집합", "해시", "해시 테이블", "hash table", "dict", "set", "Counter", "defaultdict", "키", "값"]
 description: "전화번호부에서 이름만 알면 번호를 바로 찾듯, 딕셔너리는 이름표(키)로 값을 바로 찾는 표다. 몇십만 개가 들어 있어도 넣기, 찾기, 지우기가 거의 한 번에 끝난다. 집합은 값 없이 이름표만 모은 것이라 \"있나 없나\"에 바로 답한다. 대신 크기 순으로 늘어서 있지 않아서 \"가장 작…"
@@ -216,9 +216,9 @@ def most_frequent(words):
 
 ## 과목별 관점
 
-**자료구조 (1-2학기).** 위 '속에서 일어나는 일'의 "충돌이 나면 다른 빈칸을 찾거나 한 칸에 여러 개를 매달아 둔다"는 한 문장을, 자료구조 강의는 이름을 붙여 C로 하나씩 만든다[^d1].
+**자료구조 (1-2학기).** 위 '속에서 일어나는 일'의 "충돌이 나면 다른 빈칸을 찾거나 한 칸에 여러 개를 매달아 둔다"는 한 문장을, 자료구조에서는 이름을 붙여 C로 하나씩 만든다.
 
-| 이 문서의 말 | 강의의 용어 | 다루는 문서 |
+| 이 문서의 말 | 자료구조의 용어 | 다루는 문서 |
 |---|---|---|
 | 칸 | 버킷(bucket) | [해시 테이블의 홈 버킷과 충돌](/Hongs_Blog/studies/data-structures/hash-table-terms/) |
 | 키가 계산대로 가야 할 칸 | 홈 버킷(home bucket) | 같은 문서 |
@@ -273,6 +273,5 @@ for ch in "banana":
 [^2]: Python Wiki, "TimeComplexity"의 dict, set 항목. 평균과 최악 비용을 함께 싣는다.
 [^3]: Python 3.7 "What's New": 딕셔너리가 넣은 순서를 지키는 것이 언어 명세의 일부가 되었다. 표준 라이브러리 문서 "Mapping Types — dict"에도 순서 보장이 적혀 있다.
 [^4]: Python 3 표준 라이브러리 문서, `collections.Counter`, `collections.defaultdict`.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [04_hash-dict-set_plot.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_plot/)로 그렸고, 칸을 고르는 규칙은 [04_hash-dict-set_impl.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_impl/)의 TinyDict와 같다(칸에 매달기, 키 수가 칸 수를 넘으면 두 배). 무작위 정수 키 2,000개를 넣는 동안 칸 하나당 키 수가 늘 1 이하이고 처음 8개 뒤로는 0.5보다 크다는 것, 딕셔너리 찾기는 평균 2번 미만이고 리스트는 1,000.5번이라는 것을 같은 코드로 확인했다.
-[^d1]: 자료구조 15회 강의 자료 「DS_Week15_Lecture_2024」, p.4~9 (쌍과 세 연산, bucket, home bucket, synonyms, collision, overflow), p.20 (넘침을 다루는 두 갈래: linear probing, chain), p.22~24 (선형 탐사의 지우기)
+[^s1]: [04_hash-dict-set_plot.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_plot/)로 그렸고, 칸을 고르는 규칙은 [04_hash-dict-set_impl.py](/Hongs_Blog/studies/algorithms/code/04_hash-dict-set_impl/)의 TinyDict와 같다(칸에 매달기, 키 수가 칸 수를 넘으면 두 배). 무작위 정수 키 2,000개를 넣는 동안 칸 하나당 키 수가 늘 1 이하이고 처음 8개 뒤로는 0.5보다 크다는 것, 딕셔너리 찾기는 평균 2번 미만이고 리스트는 1,000.5번이라는 것을 같은 코드로 확인했다.
 {% endraw %}

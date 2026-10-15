@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Timing Analysis", "시간 흐름 그림", "시간-공간 그림", "time-space diagram", "타이밍 다이어그램", "timing diagram", "소요시간 계산", "전송 완료 시간", "파이프라이닝", "pipelining", "패킷 분할", "packet segmentation"]
 description: "가로축에 노드를, 세로축에 시간을 놓고 데이터가 언제 어디에 있는지 그려서 총 걸리는 시간을 구하는 방법이다. 기차 시간표를 그리듯 구간마다 싣는 시간, 달리는 시간, 역에서 머무는 시간을 쌓으면 답이 나온다. 회선 스위칭은 처음 설정에 시간을 쓰고 그 뒤로는 멈춤 없이 흐른다. …"
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/timing-analysis/"
 
 ## 예시로 보기
 
-슬라이드처럼 Host 1 — Node 1 — Node 2 — Host 2를 잇는다(링크 3개)[^1][^2]. 링크마다 패킷 하나를 싣는 데 2 ms, 신호가 건너는 데 1 ms가 걸린다. 노드는 패킷마다 처리에 0.5 ms를 쓴다. 패킷 3개를 보낸다.
+Host 1 — Node 1 — Node 2 — Host 2를 잇는다(링크 3개). 링크마다 패킷 하나를 싣는 데 2 ms, 신호가 건너는 데 1 ms가 걸린다. 노드는 패킷마다 처리에 0.5 ms를 쓴다. 패킷 3개를 보낸다.
 
 | 사건 | 패킷 1 | 패킷 2 | 패킷 3 |
 |---|---|---|---|
@@ -45,7 +45,7 @@ permalink: "/studies/computer-communication/timing-analysis/"
 | Node 2에 다 도착 → 처리 → 싣기 | 6.5 → 7 → 9 | 8.5 → 9 → 11 | 10.5 → 11 → 13 |
 | Host 2에 다 도착 (+ 전파 1) | **10** | **12** | **14** |
 
-패킷 1 하나만 보면 링크마다 "싣기 2 + 전파 1"이, 노드마다 처리 0.5가 쌓여 $$3 \times 3 + 2 \times 0.5 = 10$$ ms다. 노드가 패킷을 끝까지 받은 뒤에야 내보내므로(저장 후 전달) 싣는 시간이 링크마다 다시 들어간다[^2]. 뒤 패킷들은 앞 패킷이 비운 링크에 곧바로 실려 2 ms 간격으로 따라온다. Host 1이 패킷 2를 싣는 동안 Node 1은 패킷 1을 내보낸다. 슬라이드가 "Pipelining"이라 부르는 모습이다[^3].
+패킷 1 하나만 보면 링크마다 "싣기 2 + 전파 1"이, 노드마다 처리 0.5가 쌓여 $$3 \times 3 + 2 \times 0.5 = 10$$ ms다. 노드가 패킷을 끝까지 받은 뒤에야 내보내므로(저장 후 전달) 싣는 시간이 링크마다 다시 들어간다. 뒤 패킷들은 앞 패킷이 비운 링크에 곧바로 실려 2 ms 간격으로 따라온다. Host 1이 패킷 2를 싣는 동안 Node 1은 패킷 1을 내보낸다. 이 모습을 파이프라이닝(Pipelining)이라 부른다.
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/computer-communication/26_timing-analysis_fig1.svg" alt="그림" width="593" height="357" loading="lazy">
 
@@ -53,7 +53,7 @@ permalink: "/studies/computer-communication/timing-analysis/"
 
 기차 시간표로 읽으면 역이 노드, 기차 한 량이 패킷, 싣는 시간이 $$L/R$$, 달리는 시간이 $$d_{\text{prop}}$$, 역에 머무는 시간이 $$d_{\text{proc}}$$다. 다른 기차를 기다리는 시간(큐잉 지연)은 0으로 친다.
 
-회선 스위칭의 그림은 세 구간으로 나뉜다[^1].
+회선 스위칭의 그림은 세 구간으로 나뉜다.
 
 ```
 Host 1        Node 1        Node 2        Host 2
@@ -64,7 +64,7 @@ Host 1        Node 1        Node 2        Host 2
   │ 해제 ──────────────────────────────────────→ │   ─ circuit termination
 ```
 
-회선은 설정에 공을 들이고, 그 뒤 데이터는 노드에서 멈추지 않고 스트림으로 흐른다[^4].
+회선은 설정에 공을 들이고, 그 뒤 데이터는 노드에서 멈추지 않고 스트림으로 흐른다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 시간표, 정리 두 개, 카드 C2~C4 — 정수 틱 시뮬레이션과 대기열 점화식과 닫힌 식이 648가지 설정에서 같음 (실험으로 확인. 모든 경우에 맞는 이유는 아래 증명) — [26_timing-analysis_verify.py](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_verify/)</div>
@@ -90,7 +90,7 @@ $$T_{\text{circ}} = d_{\text{setup}} + \frac{M}{R} + H\,d_{\text{prop}}$$
 </div>
 
 
-슬라이드는 회선 스위칭의 전송 완료 시간을 $$\text{RTT} + M/R$$로 쓴다[^5]. 설정에 RTT 하나가 걸린다고 보고, 보내는 쪽이 마지막 비트를 내보낸 시각까지 센 값이다. 받는 쪽에 마지막 비트가 닿기까지는 한쪽 전파 지연 $$H\,d_{\text{prop}}$$가 더 걸린다[^s1] [확인필요].
+회선 스위칭의 전송 완료 시간을 $$\text{RTT} + M/R$$로 쓰기도 한다. 설정에 RTT 하나가 걸린다고 보고, 보내는 쪽이 마지막 비트를 내보낸 시각까지 센 값이다. 받는 쪽에 마지막 비트가 닿기까지는 한쪽 전파 지연 $$H\,d_{\text{prop}}$$가 더 걸린다[^s1] [확인필요].
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">패킷 스위칭의 소요시간</div>
@@ -162,7 +162,7 @@ $$T_{\text{pkt}} = (H + P - 1)\frac{L}{R} + H\,d_{\text{prop}} + (H - 1)\,d_{\te
 
 ## 예제
 
-대표 문제 두 개가 연습 문서에 있다. [소요시간 분석 예제 사다리](/Hongs_Blog/studies/computer-communication/timing-analysis-ladder/)는 하위목표 라벨을 단 네 문제이고, 과제 2는 같은 기법으로 회선과 패킷을 비교한다.
+대표 문제 두 개가 연습 문서에 있다. [소요시간 분석 예제 사다리](/Hongs_Blog/studies/computer-communication/timing-analysis-ladder/)는 하위목표 라벨을 단 네 문제이고, 는 같은 기법으로 회선과 패킷을 비교한다.
 
 - $$P = 1$$: $$H(L/R + d_{\text{prop}}) + (H-1)d_{\text{proc}}$$. 링크마다 싣기와 전파가, 노드마다 처리가 한 번씩 더해진다.
 - $$H = 1$$(스위치 없음): $$P \cdot L/R + d_{\text{prop}}$$. 처리할 중간 노드가 없다.
@@ -188,7 +188,7 @@ $$T_{\text{pkt}} = (H + P - 1)\frac{L}{R} + H\,d_{\text{prop}} + (H - 1)\,d_{\te
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"파일을 패킷으로 나눠도, 스위치는 파일 전체를 다 받은 뒤에 다음 링크로 보낸다"</div>
 
-틀렸다. "저장 후 전달"이라는 이름 때문에 무엇이든 전부 저장한 뒤 전달한다고 느끼기 쉽다. 실제로 저장하고 전달하는 단위는 **패킷 하나**다. 스위치는 패킷 1을 다 받자마자 내보내고, 그동안 패킷 2를 받는다[^3]. 확인하는 방법: 링크 2개, 8 Mbps, 전파 2 ms, 처리 0.1 ms에서 8,160비트 패킷 5,000개를 보낸다. 파일 단위로 계산하면 10,704 ms이지만, 패킷 단위로는 5,105.12 ms로 약 절반이다. 검증 코드의 시뮬레이션도 5,105.12 ms를 준다.
+틀렸다. "저장 후 전달"이라는 이름 때문에 무엇이든 전부 저장한 뒤 전달한다고 느끼기 쉽다. 실제로 저장하고 전달하는 단위는 **패킷 하나**다. 스위치는 패킷 1을 다 받자마자 내보내고, 그동안 패킷 2를 받는다. 확인하는 방법: 링크 2개, 8 Mbps, 전파 2 ms, 처리 0.1 ms에서 8,160비트 패킷 5,000개를 보낸다. 파일 단위로 계산하면 10,704 ms이지만, 패킷 단위로는 5,105.12 ms로 약 절반이다. 검증 코드의 시뮬레이션도 5,105.12 ms를 준다.
 
 </div>
 
@@ -232,11 +232,6 @@ $$T_{\text{pkt}} = (H + P - 1)\frac{L}{R} + H\,d_{\text{prop}} + (H - 1)\,d_{\te
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "Timing in Circuit Switching". 구간 표시가 없는 같은 그림은 수업 슬라이드 캡처
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "Timing of Packet Switching", "store&forward time of Packet 1 at Node1". 손글씨가 적은 같은 그림은 수업 슬라이드 캡처
-[^3]: 수업 슬라이드 캡처 — 슬라이드 "Packet Segmentation : Pipelining"
-[^4]: 컴퓨터 통신 3회 필기 「3주차」, 62~82행. "교수님은 그림으로 성능을 분석하기를 원하신다"(63행)
-[^5]: 수업 슬라이드 캡처 — 슬라이드 "성능 (Performance) (3)", "회선 스위칭: TransferTime = RTT + (1/Bandwidth) x TransferSize", "패킷 스위칭: 여러 요소에 영향. 과제로."
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 정리의 식과 증명, 가정의 반례는 원본에 없다. 원본은 시간 흐름 그림과 "패킷 스위칭은 과제로"까지만 준다. 회선 식의 해석(보내는 쪽 기준)은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.5절의 전송 시간 식과 같은 꼴이다. 받는 쪽 기준이면 한쪽 전파 지연을 더한다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [26_timing-analysis_plot.py](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_plot/)로 그렸고, 위 표의 도착 시각 10, 12, 14 ms, Node 1과 Node 2가 패킷 1을 싣기 시작하는 3.5 ms와 7 ms, 정리의 식 $$(H + P - 1)L/R + H\,d_{\text{prop}} + (H - 1)\,d_{\text{proc}} = 14$$ ms를 같은 코드로 확인했다.
+[^s1]: 회선 식의 해석(보내는 쪽 기준)은 Peterson & Davie, *Computer Networks: A Systems Approach*, 1.5절의 전송 시간 식과 같은 꼴이다. 받는 쪽 기준이면 한쪽 전파 지연을 더한다.
+[^s2]: [26_timing-analysis_plot.py](/Hongs_Blog/studies/computer-communication/code/26_timing-analysis_plot/)로 그렸고, 위 표의 도착 시각 10, 12, 14 ms, Node 1과 Node 2가 패킷 1을 싣기 시작하는 3.5 ms와 7 ms, 정리의 식 $$(H + P - 1)L/R + H\,d_{\text{prop}} + (H - 1)\,d_{\text{proc}} = 14$$ ms를 같은 코드로 확인했다.
 {% endraw %}

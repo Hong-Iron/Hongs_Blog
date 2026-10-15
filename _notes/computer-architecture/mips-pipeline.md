@@ -263,7 +263,7 @@ $$\text{파이프라인의 명령어 간격} = \frac{\text{파이프라인 없�
 [^3]: 같은 슬라이드, 2~4 (Pipeline Performance, Pipeline Speedup: 단계가 고르면 간격이 단계 수로 나뉜다, 고르지 않으면 덜 빨라진다, 명령어 하나의 시간은 줄지 않는다)
 [^4]: 같은 슬라이드, 6~7 (Hazards, Structure Hazards)
 [^5]: 같은 슬라이드, 5 (Pipelining and ISA Design)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "건너뛰면 WB에서 부딪친다"는 설명은 연 자료에 글로 없다. 단계 수가 다른 두 명령어가 같은 사이클에 WB에 닿는 경우를 직접 따져 적었다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 앞 절반에 쓰고 뒤 절반에 읽는다는 약속은 교재 4장의 것으로 기억하지만 연 자료에서 글로 확인하지 못했다[확인필요]. 흉내기는 이 약속대로 만들었다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부품 시간과 그것으로 계산한 수치(250 ps, 1,250 ps, 3.8배, 표의 값, 270 ps)는 [단일 사이클의 클록 주기](/Hongs_Blog/studies/computer-architecture/single-cycle-timing/)에서 직접 정한 값에서 나온 것이다. 교재의 수치가 아니다.
+[^s1]: "건너뛰면 WB에서 부딪친다"는 설명은 연 자료에 글로 없다. 단계 수가 다른 두 명령어가 같은 사이클에 WB에 닿는 경우를 직접 따져 적었다.
+[^s2]: 앞 절반에 쓰고 뒤 절반에 읽는다는 약속은 교재 4장의 것으로 기억하지만 연 자료에서 글로 확인하지 못했다[확인필요]. 흉내기는 이 약속대로 만들었다.
+[^s3]: 부품 시간과 그것으로 계산한 수치(250 ps, 1,250 ps, 3.8배, 표의 값, 270 ps)는 [단일 사이클의 클록 주기](/Hongs_Blog/studies/computer-architecture/single-cycle-timing/)에서 직접 정한 값에서 나온 것이다. 교재의 수치가 아니다.
 {% endraw %}

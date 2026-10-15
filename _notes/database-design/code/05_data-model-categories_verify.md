@@ -23,12 +23,12 @@ permalink: "/studies/database-design/code/05_data-model-categories_verify/"
 """데이터 모델의 종류 문서의 값 확인.
 
 문서: 05.데이터 모델의 종류
-출처: 데이터베이스 설계 2주차 슬라이드 2-2 p.3~5, 2-1 p.5, p.9
+출처: Elmasri & Navathe, Fundamentals of Database Systems 1장의 UNIVERSITY 예 (그림 1.2)
 주장: 같은 사실("학생이 과목을 듣는다")을 세 가지 데이터 모델의 말로 적어도 내용은 같다.
   1. 개념적 모델의 말: 개체 학생 2개, 개체 과목 4개, 둘을 잇는 관계 take_course 6개.
-  2. 표현적 모델의 말(표): p.5의 표에서 "누가 어느 과목을 들었나"를 뽑으면 위의 6쌍과 같다.
+  2. 표현적 모델의 말(표): UNIVERSITY의 표에서 "누가 어느 과목을 들었나"를 뽑으면 위의 6쌍과 같다.
      표 형태는 DBMS(SQLite)에 그대로 만들어 넣을 수 있다.
-  3. 물리적 모델의 말(레코드 형식): STUDENT 레코드를 p.9의 자리표(1, 31, 35, 36 / 30, 4, 1, 4)대로 39바이트에
+  3. 물리적 모델의 말(레코드 형식): STUDENT 레코드를 문서 02의 자리표(1, 31, 35, 36 / 30, 4, 1, 4)대로 39바이트에
      채워 넣고 다시 끊어 읽으면 표의 행과 같다.
   4. 접근 경로(색인)를 달아도 표에 묻는 질문의 답은 같다.
 실행: python3 05_data-model-categories_verify.py
@@ -60,7 +60,7 @@ TAKE_COURSE = {("Smith", "Discrete Mathematics"), ("Smith", "Intro to Computer S
                ("Brown", "Discrete Mathematics"), ("Brown", "Intro to Computer Science"),
                ("Brown", "Data Structures"), ("Brown", "Database")}
 
-# 3. 물리적 모델의 말: p.9의 저장 형식. 30바이트 + 4바이트 + 1바이트 + 4바이트
+# 3. 물리적 모델의 말: 문서 02의 저장 형식. 30바이트 + 4바이트 + 1바이트 + 4바이트
 RECORD_FORMAT = "30s4s1s4s"
 P9_TABLE = [("Name", 1, 30), ("Student_number", 31, 4), ("Class", 35, 1), ("Major", 36, 4)]
 

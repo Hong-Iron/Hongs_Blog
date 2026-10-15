@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["GROUP BY", "Grouping", "그룹화", "묶기", "그룹화 속성", "Grouping Attribute", "그룹", "Group"]
 description: "회사 전체의 평균 급여가 아니라 \"부서마다\" 평균 급여를 알고 싶으면, 직원 명단을 부서 번호가 같은 사람끼리 묶은 뒤 묶음마다 따로 평균을 내면 된다. 어느 열의 값이 같은 행끼리 묶을지 적어 주면 묶음 하나가 결과의 한 줄이 된다. 묶음이 한 줄로 줄어들기 때문에, 결과에 적을…"
@@ -34,7 +34,7 @@ permalink: "/studies/database-design/group-by/"
 
 ## 예시로 보기
 
-[집계 함수](/Hongs_Blog/studies/database-design/aggregate-functions/)만으로 부서마다 평균 급여를 구하려면 `WHERE Dno = 5`, `WHERE Dno = 4`, `WHERE Dno = 1`로 질의를 세 번 써야 한다. 부서가 100개면 100번이고, 부서가 새로 생기면 질의도 새로 써야 한다. `GROUP BY`는 이 일을 한 번에 한다[^1].
+[집계 함수](/Hongs_Blog/studies/database-design/aggregate-functions/)만으로 부서마다 평균 급여를 구하려면 `WHERE Dno = 5`, `WHERE Dno = 4`, `WHERE Dno = 1`로 질의를 세 번 써야 한다. 부서가 100개면 100번이고, 부서가 새로 생기면 질의도 새로 써야 한다. `GROUP BY`는 이 일을 한 번에 한다.
 
 ```sql
 SELECT   Dno, COUNT(*), AVG(Salary)
@@ -53,18 +53,18 @@ EMPLOYEE의 8행을 `Dno` 값이 같은 것끼리 나누면 세 묶음이 된다
 결과는 (5, 4, 33250), (4, 3, 31000), (1, 1, 55000) 3행이다. 8행이 3행으로 줄었다. 묶음 하나가 결과의 한 행이다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 표와 묶음의 구성원, Q25의 여섯 묶음(2, 3, 2, 3, 3, 3), 프로젝트 20의 `COUNT(*)` 3과 `COUNT(Hours)` 2, `Sex`로 묶은 2행과 (`Dno`, `Sex`)로 묶은 5행, NULL 묶음, 카드 C2. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다. 묶지 않은 열을 `SELECT`에 쓴 질의는 다르다(PostgreSQL은 오류, SQLite는 받는다) — [69_group-by_verify.py](/Hongs_Blog/studies/database-design/code/69_group-by_verify/), [69_group-by_verify.sql](/Hongs_Blog/studies/database-design/code/69_group-by_verify-sql/)</div>
+<div class="callout-title" markdown="span">검증: 위 표와 묶음의 구성원, 프로젝트마다 묶은 여섯 묶음(2, 3, 2, 3, 3, 3), 프로젝트 20의 `COUNT(*)` 3과 `COUNT(Hours)` 2, `Sex`로 묶은 2행과 (`Dno`, `Sex`)로 묶은 5행, NULL 묶음, 카드 C2. SQLite 3.50.4와 PostgreSQL 16에서 같은 값이 나온다. 묶지 않은 열을 `SELECT`에 쓴 질의는 다르다(PostgreSQL은 오류, SQLite는 받는다) — [69_group-by_verify.py](/Hongs_Blog/studies/database-design/code/69_group-by_verify/), [69_group-by_verify.sql](/Hongs_Blog/studies/database-design/code/69_group-by_verify-sql/)</div>
 
 </div>
 
 
 ## 정의
 
-묶기(grouping)는 표의 행을 서로 겹치지 않는 부분들로 나누는 일이다. 나뉜 부분 하나를 묶음(group)이라 한다. 묶는 기준이 되는 열을 묶는 속성(grouping attribute)이라 하고 `GROUP BY` 절에 적는다. 묶는 속성의 값이 같은 행끼리 한 묶음이 된다[^1]. 집계 함수는 묶음마다 따로 계산된다.
+묶기(grouping)는 표의 행을 서로 겹치지 않는 부분들로 나누는 일이다. 나뉜 부분 하나를 묶음(group)이라 한다. 묶는 기준이 되는 열을 묶는 속성(grouping attribute)이라 하고 `GROUP BY` 절에 적는다. 묶는 속성의 값이 같은 행끼리 한 묶음이 된다. 집계 함수는 묶음마다 따로 계산된다.
 
 기호로 쓰면, 표의 상태를 $$r$$, 묶는 속성을 $$A$$라 할 때 값 $$v$$의 묶음은 $$G_v = \{\,t \in r : t[A] = v\,\}$$다. $$t \in r$$은 "$$t$$가 표의 행 가운데 하나", $$t[A]$$는 "행 $$t$$의 $$A$$ 칸에 든 값"으로 읽는다. 결과에는 $$A$$에 실제로 나오는 값 $$v$$마다 행이 하나씩 있다. "$$A$$의 값이 같다"는 행들을 겹치지 않게 빠짐없이 나누는 관계다([동치관계와 분할](/Hongs_Blog/studies/discrete-math/equivalence-relations/)).
 
-질의가 돌아가는 차례는 넷이다[^s1].
+질의가 돌아가는 차례는 넷이다.
 
 1. *행 만들기:* `FROM`과 `WHERE`로 행을 만든다. 표가 여럿이면 여기서 잇는다.
 2. *나누기:* 묶는 속성의 값이 같은 행끼리 묶음으로 나눈다.
@@ -73,7 +73,7 @@ EMPLOYEE의 8행을 `Dno` 값이 같은 것끼리 나누면 세 묶음이 된다
 
 ### 이은 표를 묶기
 
-"프로젝트마다 번호, 이름, 그 프로젝트에서 일하는 직원의 수를 구하라."[^2]
+"프로젝트마다 번호, 이름, 그 프로젝트에서 일하는 직원의 수를 구하라."
 
 ```sql
 SELECT   Pnumber, Pname, COUNT(*)
@@ -101,15 +101,8 @@ GROUP BY Pnumber, Pname;
 
 `Dno`로 묶고 `SELECT Dno, Lname, COUNT(*)`라고 적으면 어떻게 될까. 5번 묶음에는 성이 넷(Smith, Wong, Narayan, English)이라 한 줄에 적을 성이 정해지지 않는다. PostgreSQL 16은 "column must appear in the GROUP BY clause or be used in an aggregate function" 오류로 거부한다. SQLite는 받아 주고 묶음마다 아무 한 사람의 성을 내놓는다(이 상태에서는 Borg, Zelaya, Smith).
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: 11주차 연습 3의 풀이 `SELECT Dname, COUNT(*) FROM EMPLOYEE AS E, DEPARTMENT AS D WHERE E.Dno = D.Dnumber GROUP BY E.Dno HAVING AVG(E.Salary) > 30000`[^3]. 12주차 풀이 Q1-1, Q1-2도 `GROUP BY Dno`에 `SELECT Dname`이고, Q2-1, Q2-2의 조인 풀이는 `GROUP BY S.Student_number, S.Name`에 `SELECT Name, Major`다[^4] / 문제점: `SELECT`에 적은 `Dname`(또는 `Major`)이 묶는 속성에 없다. PostgreSQL 16은 앞의 세 질의를 오류로 거부한다. SQLite는 모두 받는다 / 수정안: `GROUP BY E.Dno, D.Dname`처럼 `SELECT`에 적은 열을 묶는 속성에 더한다 / 근거: 두 제품에서 실행. 고친 판의 결과는 원래 뜻과 같다(Research 4, Administration 3, Headquarters 1) — [69_group-by_verify.sql](/Hongs_Blog/studies/database-design/code/69_group-by_verify-sql/)
-
-</div>
-
-
-PostgreSQL에는 예외가 하나 있다. 묶는 속성이 어떤 표의 기본 키이면 그 표의 다른 열을 `SELECT`에 적어도 받는다. 기본 키가 같으면 같은 행이라 나머지 열의 값도 하나로 정해지기 때문이다([슈퍼키·후보 키·기본 키](/Hongs_Blog/studies/database-design/relational-keys/)). `GROUP BY D.Dnumber`에 `SELECT Dname`은 돌고, `GROUP BY E.Dno`에 `SELECT Dname`은 돌지 않는다. `E.Dno`는 EMPLOYEE의 열이라 DEPARTMENT의 `Dname`을 정해 준다고 보지 않는다. 위 Q2-1의 조인 풀이가 PostgreSQL에서 도는 것도 `Student_number`를 STUDENT의 기본 키로 선언했을 때뿐이다[^s2].
+PostgreSQL에는 예외가 하나 있다. 묶는 속성이 어떤 표의 기본 키이면 그 표의 다른 열을 `SELECT`에 적어도 받는다. 기본 키가 같으면 같은 행이라 나머지 열의 값도 하나로 정해지기 때문이다([슈퍼키·후보 키·기본 키](/Hongs_Blog/studies/database-design/relational-keys/)). `GROUP BY D.Dnumber`에 `SELECT Dname`은 돌고, `GROUP BY E.Dno`에 `SELECT Dname`은 돌지 않는다. `E.Dno`는 EMPLOYEE의 열이라 DEPARTMENT의 `Dname`을 정해 준다고 보지 않는다. 학생 표 STUDENT를 성적 표와 이은 뒤 `GROUP BY S.Student_number, S.Name`으로 묶고 `SELECT Name, Major`를 적은 질의도 같다. 이 질의가 PostgreSQL에서 도는 것은 `Student_number`를 STUDENT의 기본 키로 선언했을 때뿐이다[^s2].
 
 ### 스스로 설명해 보기
 
@@ -235,11 +228,6 @@ EMPLOYEE의 `Dno`에 나오는 서로 다른 값이 5, 4, 1 셋이기 때문이�
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.31 (Grouping in SQL: 겹치지 않는 부분집합으로 나누기, grouping attribute, Query 24와 묶음 그림, 결과 표). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.11에 다시 나온다.
-[^2]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.32 (프로젝트마다 일하는 직원 수를 세는 질의, PROJECT와 WORKS_ON을 이은 16행의 그림)
-[^3]: 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.26 (연습 3의 풀이)
-[^4]: 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices-solution」, p.1~2 (Q1-1, Q1-2의 풀이), p.4, p.6 (Q2-1, Q2-2의 조인과 묶기 풀이)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 네 단계로 나눈 차례는 슬라이드에 없다. 슬라이드 p.31~32의 그림(표를 묶음으로 나눈 뒤 묶음마다 한 행)을 글로 옮겼다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `SELECT`에 적을 수 있는 것의 규칙과 두 제품의 동작, 기본 키일 때의 예외는 슬라이드에 없다. 규칙은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Grouping: The GROUP BY and HAVING Clauses"에 있다. 오류와 결과는 SQLite와 PostgreSQL 16에서 실행해 확인했다. 기본 키가 없는 표에서 Q2-1의 조인 풀이가 오류인 것은 [70_complex-retrieval-practice_p2.sql](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p2-sql/)에서 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 부서와 성별로 묶는 예제, 결과 행의 순서, NULL 묶음, 스스로 설명해 보기, 카드 C2~C4는 슬라이드에 없다. 값은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
+[^s2]: 규칙은 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.1절 "Grouping: The GROUP BY and HAVING Clauses"에 있다. 오류와 결과는 SQLite와 PostgreSQL 16에서 실행해 확인했다. 기본 키가 없는 표에서 Q2-1의 조인 풀이가 오류인 것은 [70_complex-retrieval-practice_p2.sql](/Hongs_Blog/studies/database-design/code/70_complex-retrieval-practice_p2-sql/)에서 확인했다.
+[^s3]: 값은 SQLite와 PostgreSQL 16에서 실행해 확인했다.
 {% endraw %}

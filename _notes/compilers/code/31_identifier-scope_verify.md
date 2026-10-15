@@ -56,16 +56,16 @@ def run(globals_, funcs, main, dynamic):
 
 
 if __name__ == "__main__":
-    # (1) L09 p.16: 전역 a = 2, 함수 안에서 a를 찍고, a = 3을 선언하고, 다시 찍는다 -> 2, 3
+    # (1) 문서의 첫 코드: 전역 a = 2, 함수 안에서 a를 찍고, a = 3을 선언하고, 다시 찍는다 -> 2, 3
     g = [("decl", "a", 2)]
     foo = [("print", "a"), ("decl", "a", 3), ("print", "a")]
     assert run(g, {"foo": foo}, [("call", "foo")], dynamic=False) == [2, 3]
 
-    # (2) L09 p.13: 안쪽 블록에서 같은 이름을 다시 선언하면 그 블록 안에서만 가린다
+    # (2) 안쪽 블록 예: 안쪽 블록에서 같은 이름을 다시 선언하면 그 블록 안에서만 가린다
     body = [("decl", "a", 2), ("block", [("print", "a"), ("decl", "a", 3), ("print", "a")]), ("print", "a")]
     assert run([], {"foo": body}, [("call", "foo")], dynamic=False) == [2, 3, 2]
 
-    # (3) L09 p.14의 예: foo() { int a = 3; } ... int a = 2; foo(); print(a);  두 방식 모두 2
+    # (3) foo가 자기 안에서만 a를 선언하는 예: foo() { int a = 3; } ... int a = 2; foo(); print(a);  두 방식 모두 2
     prog = [("decl", "a", 2), ("call", "foo"), ("print", "a")]
     f = {"foo": [("decl", "a", 3)]}
     assert run([], f, prog, dynamic=False) == [2]

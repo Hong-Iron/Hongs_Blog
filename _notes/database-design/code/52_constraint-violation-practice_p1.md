@@ -21,14 +21,14 @@ permalink: "/studies/database-design/code/52_constraint-violation-practice_p1/"
 
 ```python
 # 52.제약 위반 찾기 연습 p1 (a~k) 검증 (표준 라이브러리 sqlite3만 쓴다. 실행: python3 52_constraint-violation-practice_p1.py)
-# 문제: 슬라이드 9 p.30~31 = 10 p.7~8. 열한 연산을 상태(6-2 p.21)에 하나씩 따로 적용할 때 어기는 제약을 찾는다.
+# 문제: 열한 연산을 COMPANY 상태에 하나씩 따로 적용할 때 어기는 제약을 찾는다.
 # 연산마다 (1) SQLite가 받는지 막는지, (2) 어긴 제약을 하나씩 떼어 확인한 결과, (3) 막힌 연산을 통과시키는 방법을 확인한다.
 # 문서의 "두 제약을 함께 어긴다"는 한 번에 볼 수 없다(DBMS는 먼저 걸린 것 하나만 알려 준다). 그래서 한쪽만 고친 문장을 따로 돌린다.
 import sqlite3
 
-# COMPANY 스키마와 상태. 스키마는 슬라이드 6-2 p.20, 상태는 6-2 p.21, DDL은 9 p.17~18을 따른다.
-# 슬라이드와 다른 곳은 둘이다. (1) EMPLOYEE의 외래 키 두 개를 CREATE TABLE 안에 적었다(SQLite는 아직 없는
-# 표를 가리켜도 받는다). (2) WORKS_ON.Hours의 NOT NULL은 뺐다(상태에 Hours가 NULL인 행이 있다).
+# COMPANY 스키마와 상태 (Elmasri 그림 5.5~5.7). DDL은 46.CREATE SCHEMA와 CREATE TABLE의 문장을 따른다.
+# 그 문장과 다른 곳은 하나다. EMPLOYEE의 외래 키 두 개를 ALTER TABLE 대신 CREATE TABLE 안에 적었다(SQLite는
+# 아직 없는 표를 가리켜도 받는다). WORKS_ON.Hours에는 NOT NULL이 없다(상태에 Hours가 NULL인 행이 있다).
 COMPANY_DDL = """
 CREATE TABLE EMPLOYEE (
   Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -83,7 +83,7 @@ DEPENDENT = [('333445555', 'Alice', 'F', '1986-04-05', 'Daughter'), ('333445555'
 
 
 def load(c):
-    """여섯 표에 슬라이드의 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
+    """여섯 표에 COMPANY 상태를 넣는다. EMPLOYEE와 DEPARTMENT가 서로를 가리키므로 넣는 동안만 외래 키 검사를 미룬다."""
     c.execute('BEGIN')
     c.execute('PRAGMA defer_foreign_keys = ON')
     c.executemany('INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?)', EMPLOYEE)

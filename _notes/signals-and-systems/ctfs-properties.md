@@ -10,7 +10,7 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Properties of Continuous-Time Fourier Series", "푸리에 급수의 성질", "시간 이동 성질", "Time Shifting Property", "시간 반전 성질", "시간 척도 성질", "곱셈 성질", "Multiplication Property", "주기 컨벌루션", "Periodic Convolution", "미분 성질", "Differentiation Property", "켤레 대칭", "Conjugate Symmetry", "파스발 관계", "Parseval's Relation"]
 description: "신호를 옮기거나, 뒤집거나, 미분하거나, 곱하면 푸리에 계수가 정해진 규칙대로 바뀐다. 이 규칙표(표 3.1)를 알면 매번 적분하지 않고 이미 아는 신호의 계수에서 새 신호의 계수를 얻는다. 예를 들어 신호를 늦추면 계수의 크기는 그대로이고 위상만 돈다. 미분하면 높은 고조파일수록…"
@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/ctfs-properties/"
 
 ## 예시로 보기
 
-예제 3.6의 $$g(t)$$를 직접 적분하지 않고 구해 보자[^1]. $$g$$는 주기 4인 대칭 사각파 $$x(t)$$($$\vert t\vert  < 1$$에서 1)를 1만큼 늦추고 0.5를 뺀 것이다: $$g(t) = x(t-1) - 0.5$$.
+예제 3.6의 $$g(t)$$를 직접 적분하지 않고 구해 보자. $$g$$는 주기 4인 대칭 사각파 $$x(t)$$($$\vert t\vert  < 1$$에서 1)를 1만큼 늦추고 0.5를 뺀 것이다: $$g(t) = x(t-1) - 0.5$$.
 
 1. $$x$$의 계수는 이미 안다(예제 3.5): $$a_k = \frac{\sin(\pi k/2)}{k\pi}$$ ($$k \ne 0$$), $$a_0 = \frac12$$.
 2. 1만큼 늦추면 계수에 $$e^{-jk\omega_0 \cdot 1} = e^{-jk\pi/2}$$가 곱해진다(시간 이동).
@@ -45,7 +45,7 @@ permalink: "/studies/signals-and-systems/ctfs-properties/"
 
 ## 정의
 
-주기 $$T$$, 기본 주파수 $$\omega_0 = \frac{2\pi}{T}$$인 신호의 계수를 $$x(t) \overset{FS}{\longleftrightarrow} a_k$$, $$y(t) \overset{FS}{\longleftrightarrow} b_k$$로 쓴다[^2].
+주기 $$T$$, 기본 주파수 $$\omega_0 = \frac{2\pi}{T}$$인 신호의 계수를 $$x(t) \overset{FS}{\longleftrightarrow} a_k$$, $$y(t) \overset{FS}{\longleftrightarrow} b_k$$로 쓴다.
 
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">표 3.1 (주요 성질)</div>
@@ -70,27 +70,27 @@ permalink: "/studies/signals-and-systems/ctfs-properties/"
 </div>
 
 
-[^3]
+
 
 규칙마다 뜻을 말로 풀면 다음과 같다.
 
-- **시간 이동:** 신호를 늦춰도 각 고조파의 크기 $$\vert a_k\vert $$는 그대로다. 위상만 $$k\omega_0t_0$$씩 늦는다. 높은 고조파일수록 같은 시간 지연이 더 큰 위상이 된다[^4].
-- **시간 반전:** 뒤집으면 $$k$$와 $$-k$$가 자리를 바꾼다. 그래서 짝 신호는 $$a_{-k} = a_k$$, 홀 신호는 $$a_{-k} = -a_k$$다[^5].
-- **시간 척도:** 빨리 감으면 주기가 $$\frac T\alpha$$로 줄고 기본 주파수가 $$\alpha\omega_0$$로 커질 뿐, 계수 자체는 같다[^6].
-- **곱셈:** 시간에서 곱하면 계수끼리는 이산 컨벌루션이 된다. 반대로 시간에서 (주기) 컨벌루션하면 계수끼리 곱해진다[^7].
-- **미분·적분:** 미분하면 $$k$$번째 계수의 크기가 $$k\omega_0$$배, 위상은 $$+90°$$ 돈다. 적분하면 크기가 $$\frac{1}{k\omega_0}$$배, 위상은 $$-90°$$다[^8].
-- **파스발 관계:** 한 주기의 평균 전력은 모든 고조파 성분의 평균 전력 $$\vert a_k\vert ^2$$을 더한 것과 같다. $$a_ke^{jk\omega_0t}$$ 하나의 평균 전력이 $$\frac1T\int_T\vert a_k\vert ^2dt = \vert a_k\vert ^2$$이기 때문이다[^9].
+- **시간 이동:** 신호를 늦춰도 각 고조파의 크기 $$\vert a_k\vert $$는 그대로다. 위상만 $$k\omega_0t_0$$씩 늦는다. 높은 고조파일수록 같은 시간 지연이 더 큰 위상이 된다.
+- **시간 반전:** 뒤집으면 $$k$$와 $$-k$$가 자리를 바꾼다. 그래서 짝 신호는 $$a_{-k} = a_k$$, 홀 신호는 $$a_{-k} = -a_k$$다.
+- **시간 척도:** 빨리 감으면 주기가 $$\frac T\alpha$$로 줄고 기본 주파수가 $$\alpha\omega_0$$로 커질 뿐, 계수 자체는 같다.
+- **곱셈:** 시간에서 곱하면 계수끼리는 이산 컨벌루션이 된다. 반대로 시간에서 (주기) 컨벌루션하면 계수끼리 곱해진다.
+- **미분·적분:** 미분하면 $$k$$번째 계수의 크기가 $$k\omega_0$$배, 위상은 $$+90°$$ 돈다. 적분하면 크기가 $$\frac{1}{k\omega_0}$$배, 위상은 $$-90°$$다.
+- **파스발 관계:** 한 주기의 평균 전력은 모든 고조파 성분의 평균 전력 $$\vert a_k\vert ^2$$을 더한 것과 같다. $$a_ke^{jk\omega_0t}$$ 하나의 평균 전력이 $$\frac1T\int_T\vert a_k\vert ^2dt = \vert a_k\vert ^2$$이기 때문이다.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">시간 이동과 곱셈, 파스발의 증명</summary>
 
-**시간 이동.** $$b_k = \frac1T\int_Tx(t - t_0)e^{-jk\omega_0t}dt$$에서 $$\tau = t - t_0$$로 바꾸면 $$\tau$$도 길이 $$T$$인 구간을 돌므로 $$= e^{-jk\omega_0t_0}\frac1T\int_Tx(\tau)e^{-jk\omega_0\tau}d\tau = e^{-jk\omega_0t_0}a_k$$[^4].
+**시간 이동.** $$b_k = \frac1T\int_Tx(t - t_0)e^{-jk\omega_0t}dt$$에서 $$\tau = t - t_0$$로 바꾸면 $$\tau$$도 길이 $$T$$인 구간을 돌므로 $$= e^{-jk\omega_0t_0}\frac1T\int_Tx(\tau)e^{-jk\omega_0\tau}d\tau = e^{-jk\omega_0t_0}a_k$$.
 
-**곱셈.** $$c_k = \frac1T\int_T\left(\sum_ma_me^{jm\omega_0t}\right)\left(\sum_lb_le^{jl\omega_0t}\right)e^{-jk\omega_0t}dt = \sum_ma_m\sum_lb_l\frac1T\int_Te^{j(m+l-k)\omega_0t}dt$$. 직교성으로 $$l = k - m$$일 때만 1이고 나머지는 0이라 $$c_k = \sum_ma_mb_{k-m}$$[^7].
+**곱셈.** $$c_k = \frac1T\int_T\left(\sum_ma_me^{jm\omega_0t}\right)\left(\sum_lb_le^{jl\omega_0t}\right)e^{-jk\omega_0t}dt = \sum_ma_m\sum_lb_l\frac1T\int_Te^{j(m+l-k)\omega_0t}dt$$. 직교성으로 $$l = k - m$$일 때만 1이고 나머지는 0이라 $$c_k = \sum_ma_mb_{k-m}$$.
 
-**미분.** 부분적분 $$c_k = \frac1T[e^{-jk\omega_0t}x(t)]_0^T + jk\omega_0\frac1T\int_Tx(t)e^{-jk\omega_0t}dt$$. 첫 항은 $$x(T) = x(0)$$(주기 신호)이고 $$e^{-jk2\pi} = 1$$이라 0이다. 그래서 $$c_k = jk\omega_0a_k$$[^8].
+**미분.** 부분적분 $$c_k = \frac1T[e^{-jk\omega_0t}x(t)]_0^T + jk\omega_0\frac1T\int_Tx(t)e^{-jk\omega_0t}dt$$. 첫 항은 $$x(T) = x(0)$$(주기 신호)이고 $$e^{-jk2\pi} = 1$$이라 0이다. 그래서 $$c_k = jk\omega_0a_k$$.
 
-**파스발.** $$\frac1T\int_T\vert x\vert ^2dt = \frac1T\int_Tx\,x^*dt = \frac1T\int_Tx\sum_ka_k^*e^{-jk\omega_0t}dt = \sum_ka_k^*\left(\frac1T\int_Txe^{-jk\omega_0t}dt\right) = \sum_ka_k^*a_k = \sum\vert a_k\vert ^2$$[^9].
+**파스발.** $$\frac1T\int_T\vert x\vert ^2dt = \frac1T\int_Tx\,x^*dt = \frac1T\int_Tx\sum_ka_k^*e^{-jk\omega_0t}dt = \sum_ka_k^*\left(\frac1T\int_Txe^{-jk\omega_0t}dt\right) = \sum_ka_k^*a_k = \sum\vert a_k\vert ^2$$.
 
 </details>
 
@@ -123,7 +123,7 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 
 ## 예제
 
-**예제 3.7 삼각파**[^10]. 주기 4, $$\omega_0 = \frac\pi2$$, $$x(0) = 0$$, $$x(\pm2) = 1$$인 삼각파의 도함수가 예제 3.6의 $$g(t)$$다.
+**예제 3.7 삼각파**. 주기 4, $$\omega_0 = \frac\pi2$$, $$x(0) = 0$$, $$x(\pm2) = 1$$인 삼각파의 도함수가 예제 3.6의 $$g(t)$$다.
 
 - *미분 성질:* $$d_k = jk\frac\pi2e_k$$이므로 $$e_k = \frac{2d_k}{jk\pi} = \frac{2\sin(\pi k/2)}{j(k\pi)^2}e^{-jk\pi/2}$$ ($$k \ne 0$$).
 - *$$k = 0$$은 따로:* 미분 성질로는 $$e_0$$를 알 수 없다(0을 곱했기 때문). 한 주기의 평균을 직접 구한다: $$e_0 = \frac14\left[\int_0^2\frac t2dt + \int_2^4\left(2 - \frac t2\right)dt\right] = \frac14(1 + 1) = \frac12$$.
@@ -132,11 +132,11 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 
 오른쪽은 로그 눈금이다. 끊긴 사각파의 계수는 $$\frac1k$$로, 꺾이기만 하는 삼각파의 계수는 $$\frac{1}{k^2}$$로 줄어든다. 미분하면 계수에 $$k$$가 곱해진다는 성질을 거꾸로 본 것이다[^s2].
 
-**예제 3.8 임펄스 열**[^11]. $$x(t) = \sum_k\delta(t - kT)$$. 적분 경계에 임펄스가 걸리지 않게 $$-\frac T2 \sim \frac T2$$에서 적분하면 $$a_k = \frac1T\int\delta(t)e^{-jk\omega_0t}dt = \frac1T$$. 모든 계수가 같다. 그래서 임펄스는 모든 주파수를 똑같은 크기로 담고 있고, 시스템에 임펄스를 넣어 보면 모든 주파수의 반응을 한꺼번에 본다.
+**예제 3.8 임펄스 열**. $$x(t) = \sum_k\delta(t - kT)$$. 적분 경계에 임펄스가 걸리지 않게 $$-\frac T2 \sim \frac T2$$에서 적분하면 $$a_k = \frac1T\int\delta(t)e^{-jk\omega_0t}dt = \frac1T$$. 모든 계수가 같다. 그래서 임펄스는 모든 주파수를 똑같은 크기로 담고 있고, 시스템에 임펄스를 넣어 보면 모든 주파수의 반응을 한꺼번에 본다.
 
-사각파의 도함수는 임펄스 열 두 개의 차 $$q(t) = \delta(t + T_1) - \delta(t - T_1)$$(주기적)이다. 시간 이동으로 $$b_k = \frac1T(e^{jk\omega_0T_1} - e^{-jk\omega_0T_1}) = \frac{2j\sin(k\omega_0T_1)}{T}$$이고, 미분 성질 $$b_k = jk\omega_0c_k$$로 사각파 계수 $$c_k = \frac{\sin(k\omega_0T_1)}{k\pi}$$가 다시 나온다[^12].
+사각파의 도함수는 임펄스 열 두 개의 차 $$q(t) = \delta(t + T_1) - \delta(t - T_1)$$(주기적)이다. 시간 이동으로 $$b_k = \frac1T(e^{jk\omega_0T_1} - e^{-jk\omega_0T_1}) = \frac{2j\sin(k\omega_0T_1)}{T}$$이고, 미분 성질 $$b_k = jk\omega_0c_k$$로 사각파 계수 $$c_k = \frac{\sin(k\omega_0T_1)}{k\pi}$$가 다시 나온다.
 
-**예제 3.9 조건으로 신호 찾기**[^13]. 실수, 주기 4, $$\vert k\vert  > 1$$이면 $$a_k = 0$$, $$b_k = e^{-j\pi k/2}a_{-k}$$인 신호가 홀함수, $$\frac14\int_4\vert x\vert ^2dt = \frac12$$.
+**예제 3.9 조건으로 신호 찾기**. 실수, 주기 4, $$\vert k\vert  > 1$$이면 $$a_k = 0$$, $$b_k = e^{-j\pi k/2}a_{-k}$$인 신호가 홀함수, $$\frac14\int_4\vert x\vert ^2dt = \frac12$$.
 
 1. *남은 계수:* $$a_0, a_1, a_{-1}$$만 있고 실수라 $$a_{-1} = a_1^*$$. $$x = a_0 + 2\mathrm{Re}\{a_1e^{j\pi t/2}\}$$.
 2. *$$b_k$$의 신호:* 반전($$a_{-k}$$)과 1만큼 늦춤($$e^{-jk\omega_0}$$)이므로 $$x(-(t-1)) = x(-t+1)$$. 실수이고 홀이라 $$b_k$$는 순허수이고 홀: $$b_0 = 0$$, $$b_{-1} = -b_1$$.
@@ -152,7 +152,7 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 ## 활용
 
 - 계산 시간을 아낀다: 사각파, 삼각파, 임펄스 열 몇 개의 계수만 외워 두면 이동·미분·적분으로 많은 신호의 계수를 얻는다.
-- 미분 성질은 "미분하면 고주파가 커진다"는 뜻이다. 12주차의 영상 경계 검출(미분 필터)이 잡음에 약한 이유다 → [영상의 경계 검출과 평활화](/Hongs_Blog/studies/signals-and-systems/edge-detection-smoothing/)
+- 미분 성질은 "미분하면 고주파가 커진다"는 뜻이다. 영상 경계 검출(미분 필터)이 잡음에 약한 이유다 → [영상의 경계 검출과 평활화](/Hongs_Blog/studies/signals-and-systems/edge-detection-smoothing/)
 - 파스발 관계로 신호 전력이 어느 주파수에 몰려 있는지(전력 스펙트럼)를 본다.
 
 ## 연결
@@ -213,19 +213,6 @@ $$x$$가 주기 $$T$$라 $$x(T) = x(0)$$이고, $$e^{-jk\omega_0T} = e^{-jk2\pi}
 </details>
 
 
-[^1]: 신호 및 시스템 9회 강의 자료 「Week09_CH03_2_handout」, p.22~23 (예제 3.6, 그림 3.10)
-[^2]: 같은 자료, p.10~11
-[^3]: 같은 자료, p.10 (표 3.1)
-[^4]: 같은 자료, p.12
-[^5]: 같은 자료, p.13~14
-[^6]: 같은 자료, p.15, p.18
-[^7]: 같은 자료, p.15, p.18
-[^8]: 같은 자료, p.19, p.21
-[^9]: 같은 자료, p.20
-[^10]: 같은 자료, p.24 (예제 3.7, 그림 3.11)
-[^11]: 같은 자료, p.25 (예제 3.8, 그림 3.12)
-[^12]: 같은 자료, p.26~27
-[^13]: 같은 자료, p.28~31 (예제 3.9)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 오해 항목과 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [32_ctfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$jk\omega_0e_k = d_k$$(미분 성질), 삼각파 계수 $$e_1$$, $$e_3$$과 $$e_0 = \frac12$$를 분석식 수치 적분과 비교.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [32_ctfs-properties_plot.py](/Hongs_Blog/studies/signals-and-systems/code/32_ctfs-properties_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$jk\omega_0e_k = d_k$$(미분 성질), 삼각파 계수 $$e_1$$, $$e_3$$과 $$e_0 = \frac12$$를 분석식 수치 적분과 비교.
 {% endraw %}

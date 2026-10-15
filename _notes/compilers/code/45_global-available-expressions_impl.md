@@ -22,7 +22,7 @@ permalink: "/studies/compilers/code/45_global-available-expressions_impl/"
 ```python
 # 전역 사용 가능한 식 분석과 전역 복사 전파·공통 부분식 제거.
 # 실행: python3 45_global-available-expressions_impl.py  (표준 라이브러리만 쓴다)
-# 슬라이드 13회 p.20~35의 집합과 결과 코드를 그대로 다시 만든다.
+# 문서의 두 예(고리 없는 예, 고리 있는 예)의 집합과 결과 코드를 그대로 다시 만든다.
 # 식은 문장 문자열 그대로 다룬다: "a = 1", "b = a + c".
 import random
 
@@ -153,51 +153,51 @@ def run(blocks, succ, start, env, choices, IN=None, max_steps=15):
 
 
 if __name__ == "__main__":
-    # ---- 복습 표 (p.20): t0 = a * a 뒤에 t0 = a + b ----
+    # ---- 지역 분석 복습: t0 = a * a 뒤에 t0 = a + b ----
     pts = block_points(["t0 = a * a", "t0 = a + b"], set())
     assert pts == [set(), {"t0 = a * a"}, {"t0 = a + b"}]
 
-    # ---- 단순한 예 (p.21~27) ----
+    # ---- 단순한 예 (고리 없음) ----
     blocks = {"B1": ["a = 1", "b = a + b"], "B2": ["b = a + c"], "B3": ["c = a + b"], "B4": ["d = b + c"]}
     succ = {"B1": ["B2", "B3"], "B2": ["B4"], "B3": ["B4"]}
     pred = {"B2": ["B1"], "B3": ["B1"], "B4": ["B2", "B3"]}
     opt, IN, OUT = optimize(blocks, pred, {"B1": set()})
-    assert opt == {"B1": ["a = 1", "b = 1 + b"], "B2": ["b = 1 + c"], "B3": ["c = 1 + b"], "B4": ["d = b + c"]}  # p.27
-    # p.22: {} a = 1 {a = 1} b = 1 + b {a = 1}
+    assert opt == {"B1": ["a = 1", "b = 1 + b"], "B2": ["b = 1 + c"], "B3": ["c = 1 + b"], "B4": ["d = b + c"]}  # 결과 코드
+    # B1: {} a = 1 {a = 1} b = 1 + b {a = 1}
     assert block_points(opt["B1"], IN["B1"]) == [set(), {"a = 1"}, {"a = 1"}]
-    # p.24
+    # B2, B3의 끝 집합
     assert OUT["B2"] == {"a = 1", "b = 1 + c"} and OUT["B3"] == {"a = 1", "c = 1 + b"}
-    # p.25: 다음 블록의 시작 집합은 교집합
+    # B4: 다음 블록의 시작 집합은 교집합
     assert IN["B4"] == OUT["B2"] & OUT["B3"] == {"a = 1"}
-    # p.26
+    # B4의 끝 집합
     assert OUT["B4"] == {"a = 1", "d = b + c"}
     # 합집합으로 잘못 합치면: 왼쪽 길로 왔는데 c = 1 + b가 참이라고 믿게 된다
     wrong = OUT["B2"] | OUT["B3"]
     env = run(opt, succ, "B1", {"a": 0, "b": 5, "c": 7, "d": 0}, [0], max_steps=2)  # B1 -> B2까지
     assert "c = 1 + b" in wrong and env["c"] != 1 + env["b"]
 
-    # ---- 고리가 있는 예 (p.28~35) ----
+    # ---- 고리가 있는 예 ----
     blocks = {"B1": ["b = a + b"], "B2": ["b = a + c"], "B3": ["c = a + b"], "B4": ["a = b + c"]}
     succ = {"B1": ["B2", "B3"], "B2": ["B4"], "B3": ["B4"], "B4": ["B1"]}
     pred = {"B1": ["B4"], "B2": ["B1"], "B3": ["B1"], "B4": ["B2", "B3"]}
-    entry = {"B1": {"a = 1"}}          # 고리 앞 블록의 결과 (p.29)
+    entry = {"B1": {"a = 1"}}          # 고리 앞 블록의 결과
     trace = []
     IN, OUT, rounds = analyze(blocks, pred, entry, order=["B1", "B2", "B3", "B4"], trace=trace)
     assert rounds == 3
-    # p.30: 첫 바퀴
+    # 첫 바퀴
     assert trace[0] == {"B1": [{"a = 1"}, {"a = 1"}],
                         "B2": [{"a = 1"}, {"a = 1", "b = a + c"}],
                         "B3": [{"a = 1"}, {"a = 1", "c = a + b"}],
                         "B4": [{"a = 1"}, {"a = b + c"}]}
-    # p.31: 고리 첫 블록의 시작 집합 = {a = 1} ∩ {a = b + c} = {}
+    # 3단계: 고리 첫 블록의 시작 집합 = {a = 1} ∩ {a = b + c} = {}
     assert {"a = 1"} & trace[0]["B4"][-1] == set()
-    # p.32, p.34: 둘째 바퀴
+    # 둘째 바퀴
     assert trace[1] == {"B1": [set(), set()],
                         "B2": [set(), {"b = a + c"}],
                         "B3": [set(), {"c = a + b"}],
                         "B4": [set(), {"a = b + c"}]}
     assert trace[2] == trace[1]
-    # p.35: 고칠 것이 없다
+    # 결과: 고칠 것이 없다
     opt, _, _ = optimize(blocks, pred, entry, order=["B1", "B2", "B3", "B4"])
     assert opt == blocks
     # 첫 바퀴만 보고 a를 1로 바꾸면 틀린다: 고리를 한 바퀴 돌면 a는 1이 아니다

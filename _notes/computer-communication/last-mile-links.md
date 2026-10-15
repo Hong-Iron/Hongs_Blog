@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Last-Mile Links", "가입자 회선", "라스트 마일", "DSL", "xDSL", "Digital Subscriber Line", "Digital Subscriber Loop", "ADSL", "VDSL", "DSLAM", "DSL access multiplexer", "스플리터", "splitter", "케이블 모뎀", "cable modem", "로컬 루프", "local loop"]
 description: "가입자 선로는 집과 인터넷 회사 사이를 잇는 마지막 구간이다. 사용자가 직접 골라 쓰는 링크라서 중요하다. 예전에는 이미 깔린 전화선 하나에 음성은 낮은 주파수로, 데이터는 높은 주파수로 함께 실어 보냈다(DSL). 전화선은 길수록 잡음이 커서, 요즘은 집 앞이나 집 안까지 광케이…"
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/last-mile-links/"
 
 ## 예시로 보기
 
-슬라이드 그림에서 집 안의 전화기와 DSL 모뎀이 스플리터(신호를 나누고 합치는 장치)에서 만나 전화선 하나로 전화국까지 간다[^1]. 음성과 데이터는 이 전화국까지의 전용선 위에서 서로 다른 주파수로 실린다. 전화국의 DSLAM(여러 집의 DSL 선을 모아 받는 다중화 장치)이 둘을 갈라, 데이터는 인터넷 회사(ISP)로, 음성은 전화망으로 보낸다[^1].
+집 안의 전화기와 DSL 모뎀은 스플리터(신호를 나누고 합치는 장치)에서 만나 전화선 하나로 전화국까지 간다. 음성과 데이터는 이 전화국까지의 전용선 위에서 서로 다른 주파수로 실린다. 전화국의 DSLAM(여러 집의 DSL 선을 모아 받는 다중화 장치)이 둘을 갈라, 데이터는 인터넷 회사(ISP)로, 음성은 전화망으로 보낸다.
 
 ```
 집:  전화기 ─┐
@@ -42,33 +42,25 @@ permalink: "/studies/computer-communication/last-mile-links/"
     DSL 모뎀 ─┘                                                                    └─→ ISP → 인터넷
 ```
 
-다중화의 말로 읽으면 전화선 하나가 링크, 음성과 데이터가 입력 두 개, 주파수 대역이 DEMUX 키다. 그러니 [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/) 그대로다[^2]. 케이블 하나에 링크가 여럿 있을 수 있다는 예로 슬라이드가 ADSL을 드는 것도 이 때문이다[^3].
+다중화의 말로 읽으면 전화선 하나가 링크, 음성과 데이터가 입력 두 개, 주파수 대역이 DEMUX 키다. 그러니 [주파수 분할 다중화](/Hongs_Blog/studies/computer-communication/frequency-division-multiplexing/) 그대로다. 케이블 하나에 링크가 여럿 있을 수 있다는 예로 ADSL을 드는 것도 이 때문이다.
 
 ## 정의
 
-가입자 선로는 집(사용자)과 인터넷 공급자 사이를 마지막으로 연결하는 링크다. 사용자가 선택해서 쓰는 링크이므로 중요하다. 과거에는 모뎀을 통한 음성 전화 링크였다[^2].
+가입자 선로는 집(사용자)과 인터넷 공급자 사이를 마지막으로 연결하는 링크다. 사용자가 선택해서 쓰는 링크이므로 중요하다. 과거에는 모뎀을 통한 음성 전화 링크였다.
 
-| 방식 | 구조 | 속도 (슬라이드) |
+| 방식 | 구조 | 속도 |
 |---|---|---|
-| xDSL | 음성과 데이터를 FDM 방식으로 동시에[^2] | |
+| xDSL | 음성과 데이터를 FDM 방식으로 동시에 | |
 | ADSL | 전화국 ↔ 가입자 사이의 로컬 루프. 내려받기와 올려 보내기의 속도가 다르다 | 내려받기 1.544~8.448 Mbps, 올려 보내기 16~640 Kbps |
 | VDSL | 전화국 —(광케이블, STS-N)— 동네 광 네트워크 장치(Neighborhood optical network unit) —(구리선 1,000~4,500 ft)— 가입자 | 12.96~55.2 Mbps |
 | 케이블 모뎀 | 케이블 TV 선을 이웃과 함께 씀(대역 공유). 비대칭 | 6~100 M |
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: ADSL "1.554 – 8.448 Mbps" (슬라이드 "가입자 선로 (Last-Mile Links)")[^2]<br>
-문제점: ADSL 내려받기의 가장 느린 속도는 T1 회선 속도와 같은 1.544 Mbps다. 1.554는 숫자 하나가 바뀐 오기로 보인다.<br>
-수정안: 내려받기 1.544~8.448 Mbps.<br>
-근거: ADSL 내려받기 속도는 선로가 길수록 느려져, 약 18,000 ft(5.5 km)에서 1.544 Mbps, 약 9,000 ft(2.7 km)에서 8.448 Mbps다. 올려 보내기는 16~640 kbps다[^s2].
+ADSL의 내려받기 속도는 선로가 길수록 느려진다. 약 18,000 ft(5.5 km)에서 1.544 Mbps, 약 9,000 ft(2.7 km)에서 8.448 Mbps다. 가장 느린 1.544 Mbps는 T1 회선 속도와 같다[^s2].
 
-</div>
+ADSL이 비대칭인 이유는 사용자 대부분이 올려 보내기보다 내려받기를 훨씬 많이 하기 때문이다. 그래서 두 방향의 비율을 조정한다. VDSL은 구리선이 길면 잡음 때문에 느려지고 짧으면 빠르다는 점을 이용한다. 전화국에서 동네까지는 광케이블로 가고, 동네 장치에서 집까지의 짧은 구간만 기존 구리선을 쓴다.
 
-
-ADSL이 비대칭인 이유는 사용자 대부분이 올려 보내기보다 내려받기를 훨씬 많이 하기 때문이다. 그래서 두 방향의 비율을 조정한다[^4]. VDSL은 구리선이 길면 잡음 때문에 느려지고 짧으면 빠르다는 점을 이용한다. 전화국에서 동네까지는 광케이블로 가고, 동네 장치에서 집까지의 짧은 구간만 기존 구리선을 쓴다[^4].
-
-ISP 가입자 선로는 두 방향으로 발전하고 있다[^5].
+ISP 가입자 선로는 두 방향으로 발전하고 있다.
 1. 전화와 다중화하지 않고, 별도의 디지털 인터넷 링크를 추가로 제공한다.
 2. 광케이블을 쓴다. 거리가 멀어도 안정적인 속도를 얻고, 집 앞이나 집 안까지 광케이블을 끌어온다.
 
@@ -96,15 +88,9 @@ ISP 가입자 선로는 두 방향으로 발전하고 있다[^5].
 <details markdown="1"><summary markdown="span"><b>C3</b> DSL과 케이블 모뎀을 "선을 누구와 나눠 쓰는가"로 비교하라. 저녁에 동네 사람들이 한꺼번에 영상을 볼 때 속도가 더 흔들리기 쉬운 쪽은?</summary>
 
 
-**답:** DSL은 집마다 전화국까지 따로 깔린 선(전용선)을 쓴다. 케이블 모뎀은 동네의 케이블을 여러 집이 함께 쓴다(shared bandwidth). 한꺼번에 몰리면 나눠 쓰는 케이블 모뎀 쪽이 더 흔들리기 쉽다. 단, DSL도 전화국 너머의 망에서는 다른 사용자와 나눠 쓴다[^s1].
+**답:** DSL은 집마다 전화국까지 따로 깔린 선(전용선)을 쓴다. 케이블 모뎀은 동네의 케이블을 여러 집이 함께 쓴다(shared bandwidth). 한꺼번에 몰리면 나눠 쓰는 케이블 모뎀 쪽이 더 흔들리기 쉽다. 단, DSL도 전화국 너머의 망에서는 다른 사용자와 나눠 쓴다.
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "Digital subscriber line (DSL)". 원문의 빨간 글씨: existing, dedicated. 그림 없이 첫 줄만 있는 같은 슬라이드는 수업 슬라이드 캡처
-[^2]: 수업 슬라이드 캡처 — 슬라이드 "가입자 선로 (Last-Mile Links)". 원문의 빨간 글씨: "음성과 data를 FDM 방식으로 동시에". ADSL 내려받기 하한은 슬라이드에 1.554로 적혀 있다. T1 속도 1.544 Mbps와 한 자리가 다르다
-[^3]: 수업 슬라이드 캡처 — 슬라이드 "링크 (Link)", "하나의 케이블에 여러 링크: 예) ADSL"
-[^4]: 컴퓨터 통신 4회 필기 「4주차」, 36~45행
-[^5]: 수업 슬라이드 캡처 — 슬라이드 "ISP (인터넷망) 가입자 선로의 발전 추세". 필기 04.4주차.md 48~49행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 저녁 시간의 예와 "전화국 너머에서는 DSL도 나눠 쓴다"는 원본에 없다. 슬라이드의 dedicated(DSL)와 shared bandwidth(케이블 모뎀)의 대비에서 나오는 결론이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> ADSL의 거리별 내려받기 속도는 18,000 ft 1.544 Mbps, 16,000 ft 2.048 Mbps, 12,000 ft 6.312 Mbps, 9,000 ft 8.448 Mbps다(Saric, Perakovic & Brdar, "Asymmetric Digital Subscriber Line (ADSL)", *Promet – Traffic & Transportation*, 1997). 1.544 Mbps는 T1 회선 속도와 같다.
+[^s2]: ADSL의 거리별 내려받기 속도는 18,000 ft 1.544 Mbps, 16,000 ft 2.048 Mbps, 12,000 ft 6.312 Mbps, 9,000 ft 8.448 Mbps다(Saric, Perakovic & Brdar, "Asymmetric Digital Subscriber Line (ADSL)", *Promet – Traffic & Transportation*, 1997). 1.544 Mbps는 T1 회선 속도와 같다.
 {% endraw %}

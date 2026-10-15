@@ -10,7 +10,7 @@ course_slug: "operating-systems"
 course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-07"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 페이지 교체 알고리즘의 OPT·LRU·FIFO 규칙."
 prev_url: "/studies/operating-systems/paging-ladder/"
@@ -27,7 +27,7 @@ permalink: "/studies/operating-systems/page-replacement-ladder/"
 
 이 방법을 떠올리는 신호는 "프레임 k개", "페이지 참조열"이 주어지고 부재 수를 묻는 문제다. 풀이는 늘 같은 하위목표로 나뉜다. 프레임 채우기, 참조마다 적중인지 확인하기, 부재면 규칙대로 내보낼 페이지 고르기, 부재 세기다. 내보낼 페이지를 고를 때 OPT는 참조열의 **뒤**를, LRU는 **앞**을 본다. FIFO는 들어온 순서만 본다[^s1].
 
-문제는 모두 처음 프레임을 채우는 부재는 세지 않는다(슬라이드 방식).
+문제는 모두 처음 프레임을 채우는 부재는 세지 않는다(Stallings 교재의 셈법).
 
 ## 문제 1 · 완전한 풀이
 
@@ -101,5 +101,5 @@ permalink: "/studies/operating-systems/page-replacement-ladder/"
 </div>
 
 
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 참조열 7 0 1 2 0 3 0 4 2 3과 1 2 3 4 1 2 5 1 2 3 4 5는 Silberschatz, *Operating System Concepts* 9장의 예제 참조열을 줄이거나 그대로 쓴 것이다. 문제는 모두 원본 범위 밖의 변형이다.
+[^s1]: 참조열 7 0 1 2 0 3 0 4 2 3과 1 2 3 4 1 2 5 1 2 3 4 5는 Silberschatz, *Operating System Concepts* 9장의 예제 참조열을 줄이거나 그대로 쓴 것이다.
 {% endraw %}

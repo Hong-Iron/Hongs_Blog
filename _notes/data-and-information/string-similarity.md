@@ -10,7 +10,7 @@ course_slug: "data-and-information"
 course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["String Similarity", "토큰 기반 유사도", "Token-based Similarity", "문자 기반 유사도", "Character-based Similarity", "겹침 유사도", "Overlap Similarity", "자카드 유사도", "Jaccard Similarity", "다이스 유사도", "Dice Similarity", "토큰 코사인 유사도", "토큰", "Token"]
 description: "두 글이 얼마나 닮았는지를 수로 적는 방법이고, 크게 두 길이 있다. 하나는 글을 낱말 주머니로 보고 두 주머니에 같이 든 낱말이 얼마나 되는지 세는 것이고, 다른 하나는 글을 글자의 줄로 보고 한쪽을 다른 쪽으로 고치려면 글자를 몇 번 손대야 하는지 세는 것이다. 낱말 주머니 방…"
@@ -34,9 +34,9 @@ permalink: "/studies/data-and-information/string-similarity/"
 
 ## 예시로 보기
 
-주소록에 "중앙대학교 컴퓨터공학과"와 "중앙대 컴퓨터 공학과"가 따로 들어 있다. 사람은 같은 곳인 줄 알지만 컴퓨터가 글자를 하나하나 맞춰 보면 다르다. "같은가"가 아니라 "얼마나 닮았는가"를 물어야 한다. 슬라이드는 이것이 쓰이는 일로 데이터 정제, 맞춤법 검사, 데이터 통합, 같은 대상 찾기, 거의 같은 문서 찾기, 군집화를 든다[^1].
+주소록에 "한국대학교 컴퓨터공학과"와 "한국대 컴퓨터 공학과"가 따로 들어 있다. 사람은 같은 곳인 줄 알지만 컴퓨터가 글자를 하나하나 맞춰 보면 다르다. "같은가"가 아니라 "얼마나 닮았는가"를 물어야 한다. 이런 비교는 데이터 정제, 맞춤법 검사, 데이터 통합, 같은 대상 찾기, 거의 같은 문서 찾기, 군집화에 쓰인다.
 
-슬라이드의 두 글을 비교한다[^2].
+예로 두 글을 비교한다.
 
 - $$r$$ = "frontier computer science"
 - $$s$$ = "computer science"
@@ -53,14 +53,14 @@ permalink: "/studies/data-and-information/string-similarity/"
 | 다이스 | 두 크기의 평균 $$\frac{3 + 2}{2}$$ | $$\frac45 = 0.8$$ |
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 예의 네 값, 무작위 집합 3,000쌍에서 0~1 범위와 "같을 때만 1, 안 겹칠 때만 0", 자카드 ≤ 다이스 ≤ 코사인, 0/1 벡터의 코사인과 일치, 순서 바꿈과 오타의 예, 카드의 값 — [10_string-similarity_verify.py](/Hongs_Blog/studies/data-and-information/code/10_string-similarity_verify/)</div>
+<div class="callout-title" markdown="span">검증: 예시의 네 값, 무작위 집합 3,000쌍에서 0~1 범위와 "같을 때만 1, 안 겹칠 때만 0", 자카드 ≤ 다이스 ≤ 코사인, 0/1 벡터의 코사인과 일치, 순서 바꿈과 오타의 예, 카드의 값 — [10_string-similarity_verify.py](/Hongs_Blog/studies/data-and-information/code/10_string-similarity_verify/)</div>
 
 </div>
 
 
 ## 정의
 
-두 문자열이 얼마나 닮았는지를 수로 적는 함수를 세 갈래로 나눈다[^1].
+두 문자열이 얼마나 닮았는지를 수로 적는 함수를 세 갈래로 나눈다.
 
 ```mermaid
 flowchart TD
@@ -71,18 +71,18 @@ flowchart TD
     C --> C1["편집 거리"]
 ```
 
-슬라이드는 토큰 기반과 문자 기반의 식을 주고, 혼합은 이름만 든다[^s2].
+아래에서는 토큰 기반과 문자 기반을 차례로 본다.
 
 ### 토큰 기반
 
-토큰(token)은 글을 끊은 조각이다. 보통 낱말이다. 글 하나를 토큰의 [집합](/Hongs_Blog/studies/discrete-math/sets/)으로 보고, 두 집합에 함께 든 토큰으로 닮은 정도를 잰다[^3]. 두 문자열의 토큰 집합을 $$r$$, $$s$$라 하면 $$r \cap s$$는 둘에 함께 든 토큰, $$\vert r\vert $$은 $$r$$의 토큰 수다.
+토큰(token)은 글을 끊은 조각이다. 보통 낱말이다. 글 하나를 토큰의 [집합](/Hongs_Blog/studies/discrete-math/sets/)으로 보고, 두 집합에 함께 든 토큰으로 닮은 정도를 잰다. 두 문자열의 토큰 집합을 $$r$$, $$s$$라 하면 $$r \cap s$$는 둘에 함께 든 토큰, $$\vert r\vert $$은 $$r$$의 토큰 수다.
 
-**겹침 유사도.** 함께 든 토큰의 수다. 두 글의 크기를 보지 않아 0~1로 맞춰져 있지 않다[^3].
+**겹침 유사도.** 함께 든 토큰의 수다. 두 글의 크기를 보지 않아 0~1로 맞춰져 있지 않다.
 
 $$\mathrm{OLP}(r, s) = \vert r \cap s\vert $$
 
 
-**0~1로 맞춘 세 유사도**[^4].
+**0~1로 맞춘 세 유사도**.
 
 $$\mathrm{JAC}(r, s) = \frac{\vert r \cap s\vert }{\vert r \cup s\vert } = \frac{\vert r \cap s\vert }{\vert r\vert  + \vert s\vert  - \vert r \cap s\vert }$$
 
@@ -100,7 +100,7 @@ $$\mathrm{COS}(r, s) = \frac{\vert r \cap s\vert }{\sqrt{\vert r\vert  \cdot \ve
 
 ### 문자 기반
 
-글 하나를 글자의 줄로 보고, 두 줄에서 서로 다른 글자를 세어 닮은 정도를 잰다[^5]. 대표가 편집 거리다. 한 문자열을 다른 문자열로 바꾸는 데 드는 한 글자짜리 고치기(넣기, 지우기, 바꾸기)의 가장 적은 횟수다. 이 횟수가 정해 둔 기준값보다 작으면 두 문자열이 비슷하다고 한다[^5]. 계산법은 [편집 거리](/Hongs_Blog/studies/data-and-information/edit-distance/)에서 다룬다.
+글 하나를 글자의 줄로 보고, 두 줄에서 서로 다른 글자를 세어 닮은 정도를 잰다. 대표가 편집 거리다. 한 문자열을 다른 문자열로 바꾸는 데 드는 한 글자짜리 고치기(넣기, 지우기, 바꾸기)의 가장 적은 횟수다. 이 횟수가 정해 둔 기준값보다 작으면 두 문자열이 비슷하다고 한다. 계산법은 [편집 거리](/Hongs_Blog/studies/data-and-information/edit-distance/)에서 다룬다.
 
 ### 두 방식이 갈리는 곳
 
@@ -151,11 +151,5 @@ $$\mathrm{COS}(r, s) = \frac{\vert r \cap s\vert }{\sqrt{\vert r\vert  \cdot \ve
 </details>
 
 
-[^1]: 자료와 정보 4회 강의 자료 「D&I_강의04-2-유사도와거리」, p.7 (문자열 유사도: 쓰이는 곳 여섯 가지, 세 갈래의 유사도 함수)
-[^2]: 같은 자료, p.10 (Example: $$r$$, $$s$$와 OLP = 2, JAC = 2/3, COS = 2/√6, DICE = 4/5)
-[^3]: 같은 자료, p.8 (Token-based similarity, Overlap similarity, not normalized)
-[^4]: 같은 자료, p.9 (Similarity Metric – Token: Jaccard, Cosine, Dice)
-[^5]: 같은 자료, p.11 (Character-based Similarity, 편집 거리의 뜻과 기준값)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 주소록 예, 나누는 수로 본 네 유사도의 비교, 자카드 ≤ 다이스 ≤ 코사인, 0/1 벡터와의 관계, 순서 바꿈과 오타의 예, 활용 절, 카드는 슬라이드에 없다. 부등식은 $$2ab \le a^2 + b^2$$에서 나오는 "기하평균 ≤ 산술평균"과 $$\vert r \cup s\vert  \ge \frac{\vert r\vert  + \vert s\vert }{2}$$로 보일 수 있고, 무작위 3,000쌍에서도 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 슬라이드에 없다. p.7의 세 갈래와 p.8~11의 내용을 그렸다.
+[^s1]: 부등식은 $$2ab \le a^2 + b^2$$에서 나오는 "기하평균 ≤ 산술평균"과 $$\vert r \cup s\vert  \ge \frac{\vert r\vert  + \vert s\vert }{2}$$로 보일 수 있고, 무작위 3,000쌍에서도 확인했다.
 {% endraw %}

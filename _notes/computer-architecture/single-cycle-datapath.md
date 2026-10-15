@@ -210,7 +210,7 @@ $$\text{PC} \leftarrow \{(\text{PC}+4)\text{의 위 4비트},\; \text{주소 칸
 - 새 명령어를 넣을 수 있는지 묻는 문제는 이 그림에서 "필요한 값이 필요한 자리까지 가는 길이 있는가"를 따지면 풀린다. 길이 있으면 제어 신호만 정하고, 없으면 멀티플렉서의 입력을 늘린다.
 - 흔한 실수: `sw`에서 rt의 값이 ALU로 간다고 그리는 것. ALU의 둘째 입력은 상수이고, rt의 값은 데이터 메모리의 쓸 값으로 간다.
 - 흔한 실수: `beq`의 분기 목표를 ALU가 구한다고 쓰는 것. ALU는 비교(뺄셈)에 쓰이고, 목표 주소는 따로 둔 가산기가 구한다.
-- 컴파일러 과목의 [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 표기를 단순하게 바꾼 것이라 여기의 실제 MIPS 표기와 다르다.
+- 컴파일러 과목의 [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 표기를 단순하게 바꾼 것이라 여기의 실제 MIPS 표기와 다르다.
 
 ## 연결
 

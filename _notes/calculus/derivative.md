@@ -212,7 +212,7 @@ $$h$$가 크면 극한에서 먼 오차(절단 오차)가, 작으면 거의 같�
 
 
 [^1]: OpenStax, *Calculus Volume 1*, 3.1절 "Defining the Derivative", 3.2절 "The Derivative as a Function"(미분 가능성과 연속성)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 수치 미분의 최적 $$h$$가 기계 엡실론 $$\epsilon \approx 2.2 \times 10^{-16}$$의 제곱근(전진 차분), 세제곱근(중앙 차분) 정도라는 것은 수치 해석의 표준 결과다. 표의 값은 검증 코드로 계산했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [04_derivative_plot.py](/Hongs_Blog/studies/calculus/code/04_derivative_plot/)로 그렸고, 할선 기울기가 $$6 + h$$인 것과 오차표의 값(전진 차분 $$h = 10^{-1}, 10^{-4}, 10^{-8}, 10^{-15}$$, 중앙 차분 $$h = 10^{-1}, 10^{-4}, 10^{-5}$$)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서의 정리(미분 가능하면 연속, 역은 거짓), [연속](/Hongs_Blog/studies/calculus/continuity/)의 세 조건, [극한](/Hongs_Blog/studies/calculus/limits/)의 오해(극한값과 함숫값이 다른 함수)를 근거로 그렸다.
+[^s1]: 수치 미분의 최적 $$h$$가 기계 엡실론 $$\epsilon \approx 2.2 \times 10^{-16}$$의 제곱근(전진 차분), 세제곱근(중앙 차분) 정도라는 것은 수치 해석의 표준 결과다. 표의 값은 검증 코드로 계산했다.
+[^s2]: [04_derivative_plot.py](/Hongs_Blog/studies/calculus/code/04_derivative_plot/)로 그렸고, 할선 기울기가 $$6 + h$$인 것과 오차표의 값(전진 차분 $$h = 10^{-1}, 10^{-4}, 10^{-8}, 10^{-15}$$, 중앙 차분 $$h = 10^{-1}, 10^{-4}, 10^{-5}$$)을 같은 코드로 확인했다.
+[^s3]: 이 문서의 정리(미분 가능하면 연속, 역은 거짓), [연속](/Hongs_Blog/studies/calculus/continuity/)의 세 조건, [극한](/Hongs_Blog/studies/calculus/limits/)의 오해(극한값과 함숫값이 다른 함수)를 근거로 그렸다.
 {% endraw %}

@@ -75,7 +75,7 @@ class OperatorsImpl {
         }
         check(threw, "addExact는 넘치면 예외를 낸다");
 
-        // 4. 정확한 계산 (슬라이드 AccuracyExample1)
+        // 4. 정확한 계산 (문서의 사과 예제)
         int apple = 1;
         double pieceUnit = 0.1;
         int number = 7;

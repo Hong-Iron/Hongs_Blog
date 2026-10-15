@@ -57,7 +57,7 @@ permalink: "/studies/database-design/inner-vs-outer-join/"
 | 줄 수 세기 | `COUNT(*)`로 충분하다 | 짝 쪽 열을 `COUNT(열)`로 세어야 0이 나온다 |
 | 문제 글의 신호 | "~인 것의 …" | "모든 ~", "없으면 0", "…가 없는 ~" |
 
-직원과 상사를 `E.Super_ssn = S.Ssn`으로 이을 때의 행 수는 내부 7, LEFT 8, RIGHT 12, FULL 13이다[^1]. 선택을 가르는 줄은 첫 줄이고, 실수가 가장 잦은 줄은 넷째와 다섯째다.
+직원과 상사를 `E.Super_ssn = S.Ssn`으로 이을 때의 행 수는 내부 7, LEFT 8, RIGHT 12, FULL 13이다. 선택을 가르는 줄은 첫 줄이고, 실수가 가장 잦은 줄은 넷째와 다섯째다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 카드 C1~C3의 행 수와 직원과 상사 조인의 7, 8, 12, 13행 — [67_inner-vs-outer-join_verify.py](/Hongs_Blog/studies/database-design/code/67_inner-vs-outer-join_verify/). 같은 행 수를 PostgreSQL 16에서도 확인했다 — [66_outer-join_verify.sql](/Hongs_Blog/studies/database-design/code/66_outer-join_verify-sql/)</div>
@@ -76,6 +76,5 @@ permalink: "/studies/database-design/inner-vs-outer-join/"
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.24~26 (Inner Join vs Outer Join, 7행과 8행의 그림, 조인 종류의 벤 그림). 데이터베이스 설계 12회 강의 자료 「12_SQL-DML-Complex-practices」, p.8. RIGHT의 12행과 FULL의 13행은 슬라이드에 없고 실행해 얻었다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 카드의 상황과 결정적 차이 표의 둘째 줄부터 여섯째 줄은 슬라이드에 없다. 슬라이드는 짝 없는 행이 빠지는지 남는지만 견준다. 행 수는 검증 코드로 확인했다.
+[^s1]: 행 수는 검증 코드로 확인했다.
 {% endraw %}

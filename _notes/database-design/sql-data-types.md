@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["SQL Data Types", "Attribute Data Types", "자료형", "데이터 타입", "INT", "FLOAT", "DECIMAL", "CHAR", "VARCHAR", "BIT", "VARBIT", "BOOLEAN", "DATE", "TIME", "TIMESTAMP", "도메인", "CREATE DOMAIN"]
 description: "칸마다 어떤 꼴의 값을 받을지 정해 두는 것이 자료형이다. 신청서의 칸에 \"숫자만\", \"아홉 글자\", \"날짜\"라고 적어 두는 것과 같다. 꼴이 정해져 있으면 엉뚱한 값이 걸러지고, 크기를 견주거나 날짜끼리 빼는 계산도 제대로 된다. 다만 얼마나 엄격하게 막는지는 제품마다 달라서, …"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/sql-data-types/"
 
 값의 꼴을 정해 두지 않으면 월급 칸에 `'abc'`가 들어가도 아무도 모른다. 그런 칸은 더할 수도, 크기를 견줄 수도 없다. 그래서 표를 만들 때 열 이름 바로 뒤에 그 열이 받을 꼴을 적는다.
 
-직원 표 EMPLOYEE의 열 열 개에는 다음 자료형이 붙어 있다[^1].
+직원 표 EMPLOYEE의 열 열 개에는 다음 자료형이 붙어 있다.
 
 | 열 | 자료형 | 읽는 법 |
 |---|---|---|
@@ -52,7 +52,7 @@ permalink: "/studies/database-design/sql-data-types/"
 
 ## 정의
 
-슬라이드가 드는 기본 자료형은 다음과 같다[^2].
+SQL의 기본 자료형은 다음과 같다.
 
 | 갈래 | 자료형 | 뜻 |
 |---|---|---|
@@ -72,20 +72,6 @@ permalink: "/studies/database-design/sql-data-types/"
 
 `TIMESTAMP`의 예를 세어 보면 날짜 10자리, 빈칸 1자리, 시각 8자리, 점 1자리, 소수 6자리로 모두 26자리다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 10 p.13의 "BIT(n): fixed or varying length of bits" / 문제점: 바로 아랫줄이 `VARBIT(n)`을 "varying length of bits"라고 적는다. 둘을 가르는 것이 길이가 고정이냐 아니냐이므로 `BIT(n)`은 고정 길이여야 한다 / 수정안: "BIT(n): fixed length of bits" / 근거: PostgreSQL 16에서 `BIT(4)` 열은 세 자리나 다섯 자리 비트열을 오류로 막고, `VARBIT(4)` 열은 한 자리부터 네 자리까지 받는다 — [47_sql-data-types_verify.sql](/Hongs_Blog/studies/database-design/code/47_sql-data-types_verify-sql/)
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 10 p.14의 소제목 "Date Time" / 문제점: 그 아래 설명(열 자리, YEAR·MONTH·DAY, `YYYY-MM-DD`)은 자료형 `DATE` 하나의 것이다. 날짜와 시각을 함께 담는 자료형은 같은 쪽 아래의 `TIMESTAMP`다 / 수정안: 소제목을 "DATE"로 읽는다. 10-2 p.4도 "Date Time" 아래에 `DATE: YYYY-MM-DD`라고 적는다 / 근거: 같은 쪽의 "TIMESTAMP = DATE + TIME + …"라는 설명
-
-</div>
 
 
 ## 예제
@@ -153,8 +139,6 @@ SQLite는 자료형의 이름만 받아 두고 길이와 꼴을 검사하지 않
 </details>
 
 
-[^1]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.13 (CREATE TABLE EMPLOYEE의 자료형 열). 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.17
-[^2]: 데이터베이스 설계 10회 강의 자료 「10_SQL-DDL」, p.13~14 (Attribute Data Types in SQL). 데이터베이스 설계 10회 강의 자료 「10-2_SQL-DML」, p.4
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `DECIMAL(i, j)`의 $$i$$, $$j$$의 뜻(슬라이드는 "formatted numbers (e.g., DECIMAL(5,2))"만 적는다), 두 제품을 견준 표, `CHAR`와 `VARCHAR` 고르기, `FLOAT`와 `DECIMAL`, 날짜를 글자로 둘 때의 문제는 슬라이드에 없다. 모두 PostgreSQL 16과 SQLite 3.50에서 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 9 p.17은 "basic data types … and domains"라고 도메인을 이름만 든다. `CREATE DOMAIN` 문과 예는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.1.3절의 것이고, PostgreSQL 16에서 실행해 길이 제한이 걸리는 것을 확인했다.
+[^s1]: 모두 PostgreSQL 16과 SQLite 3.50에서 실행해 확인했다.
+[^s2]: `CREATE DOMAIN` 문과 예는 Elmasri & Navathe, *Fundamentals of Database Systems* 7판 6.1.3절의 것이고, PostgreSQL 16에서 실행해 길이 제한이 걸리는 것을 확인했다.
 {% endraw %}

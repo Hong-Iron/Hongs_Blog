@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: 타입 추론 규칙(식의 타입), 타입 검사 절차(문장의 WF 규칙과 도는 순서)."
 prev_url: "/studies/compilers/slr-parse-trace-practice/"
@@ -32,7 +32,7 @@ int[] arr;  int i;  int n;  bool flag;  double d;
 double f(int, bool);
 ```
 
-규칙은 강의의 것만 쓴다. 양쪽 타입이 다른 덧셈과 비교는 맞는 규칙이 없어 오류다(자동 변환 없음).
+규칙은 위 두 개념 문서에 적은 것만 쓴다. 양쪽 타입이 다른 덧셈과 비교는 맞는 규칙이 없어 오류다(자동 변환 없음).
 
 ## 문제 1 · 식의 타입 구하기
 
@@ -174,5 +174,5 @@ int abs(int x) {
 </div>
 
 
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 답은 원본에 없다. 슬라이드 p.17~18, p.21~22(식의 규칙), p.24~25(WF 규칙), p.27(도는 순서)의 규칙만 써서 만들었다. `-`의 규칙은 `+`와 같은 꼴로, if-else의 WF 규칙은 while 규칙과 같은 꼴로 두었다(개념 문서의 보충 참고). 답은 문제 코드로 확인했다.
+[^s1]: `-`의 규칙은 `+`와 같은 꼴로, if-else의 WF 규칙은 while 규칙과 같은 꼴로 두었다(개념 문서의 보충 참고). 답은 문제 코드로 확인했다.
 {% endraw %}

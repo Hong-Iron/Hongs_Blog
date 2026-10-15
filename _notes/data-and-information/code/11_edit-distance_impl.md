@@ -23,12 +23,11 @@ permalink: "/studies/data-and-information/code/11_edit-distance_impl/"
 """편집 거리 구현과 자체 테스트.
 
 문서: 11.편집 거리 (예시, 의사코드, 실행 추적, 정확성, 카드), 4.연습문제/11.편집 거리 예제 사다리
-출처: 자료와 정보 4회 슬라이드(강의04-2) p.6, p.11~18
 표의 칸 D[i][j] = 첫 문자열의 앞 i글자를 둘째 문자열의 앞 j글자로 바꾸는 가장 싼 비용 (i, j는 0부터).
-슬라이드의 S1(i)는 1부터 세므로 코드에서는 a[i - 1]이다.
+문서 점화식의 S1(i)는 1부터 세므로 코드에서는 a[i - 1]이다.
 주장:
   1. 점화식으로 채운 값은 편집 연산을 직접 다 해 보는 탐색(BFS)의 값과 같다 (짧은 문자열 전수 검사).
-  2. 슬라이드 예: intention -> execution은 모든 연산이 1이면 5, 바꾸기가 2면 8. 슬라이드의 표 100칸과 일치.
+  2. 문서 예: intention -> execution은 모든 연산이 1이면 5, 바꾸기가 2면 8. 문서의 실행 추적 표 100칸과 일치.
   3. 비용이 모두 1인 편집 거리는 거리의 네 조건을 지킨다 (무작위 검사).
   4. 길이 차 <= ED <= 긴 쪽 길이. 길이가 같으면 ED <= 해밍 거리.
   5. 정규화 편집 거리 NED = ED / max(|r|, |s|)는 0~1, 편집 유사도 EDS = 1 - NED.
@@ -126,7 +125,7 @@ if __name__ == "__main__":
         for b in words:
             assert ed(a, b) == ed_bfs(a, b, "ab"), (a, b)
 
-    # 2. 슬라이드 예
+    # 2. 문서 예
     A, B = "intention", "execution"
     assert ed(A, B) == 5 and ed(A, B, sub=2) == 8
     slide = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -140,14 +139,14 @@ if __name__ == "__main__":
              [8, 7, 8, 9, 10, 11, 10, 9, 8, 9],
              [9, 8, 9, 10, 11, 12, 11, 10, 9, 8]]
     assert ed_table(A, B, sub=2) == slide
-    # 슬라이드의 맞춤 INTE*NTION / *EXECUTION: 지우기 1, 바꾸기 3, 넣기 1
+    # 문서의 맞춤 INTE*NTION / *EXECUTION: 지우기 1, 바꾸기 3, 넣기 1
     align = [("지우기", "i", ""), ("바꾸기", "n", "e"), ("바꾸기", "t", "x"), ("같음", "e", "e"), ("넣기", "", "c"),
              ("바꾸기", "n", "u"), ("같음", "t", "t"), ("같음", "i", "i"), ("같음", "o", "o"), ("같음", "n", "n")]
     assert "".join(o[1] for o in align) == A and apply_ops(align) == B
     kinds = [o[0] for o in align]
     assert kinds.count("지우기") + kinds.count("넣기") == 2 and kinds.count("바꾸기") == 3
     assert 2 * 1 + 3 * 1 == 5 and 2 * 1 + 3 * 2 == 8
-    # p.13의 첫 걸음
+    # 길 찾기의 첫 걸음
     assert ed("intention", "ntention") == 1 and ed("intention", "eintention") == 1 and ed("intention", "entention") == 1
 
     # 3, 4, 5, 6. 무작위 검사

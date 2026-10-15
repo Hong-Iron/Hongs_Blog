@@ -23,7 +23,6 @@ permalink: "/studies/database-design/code/43_mapping-many-to-many-relationship_v
 """다대다·n항 관계 타입의 사상 검증.
 
 문서: 43.다대다·n항 관계 타입의 사상 (예시, 절차, 카드 C1~C3)
-출처: 데이터베이스 설계 7 슬라이드 p.26~28, 9 슬라이드 p.12~13, 6-2 p.21 (상태)
 실행: python3 43_mapping-many-to-many-relationship_verify.py   (표준 라이브러리 sqlite3만 쓴다)
 주장:
   1. WORKS_ON(Essn, Pno, Hours)은 16행이다. Essn은 8가지, Pno는 6가지라 혼자서는 겹치고, 짝은 16가지라 안 겹친다.
@@ -38,7 +37,7 @@ permalink: "/studies/database-design/code/43_mapping-many-to-many-relationship_v
 import sqlite3
 from itertools import combinations
 
-# ---- COMPANY 스키마와 상태 (6-2 p.20~21, DDL은 9 p.17~18). 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
+# ---- COMPANY 스키마와 상태. 이 파일 안에 그대로 둔다(다른 파일을 불러오지 않는다) ----
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -123,7 +122,7 @@ def main():
     c.execute("DELETE FROM WORKS_ON WHERE Essn = '123456789' AND Pno = 3")
     print("[OK] 같은 짝, 없는 직원, 없는 프로젝트는 거부")
 
-    # 5. SUPPLY (7 p.28의 스키마. 행은 지어낸 것)
+    # 5. SUPPLY (스키마는 문서의 것, 행은 지어낸 것)
     s = sqlite3.connect(":memory:")
     s.execute("PRAGMA foreign_keys=ON")
     s.executescript("""

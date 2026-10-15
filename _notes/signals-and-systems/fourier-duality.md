@@ -34,7 +34,7 @@ permalink: "/studies/signals-and-systems/fourier-duality/"
 
 ## 예시로 보기
 
-예제 4.4와 4.5를 나란히 놓는다(그림 4.17)[^1].
+예제 4.4와 4.5를 나란히 놓는다(그림 4.17).
 
 | 시간 | 주파수 |
 |---|---|
@@ -48,14 +48,14 @@ permalink: "/studies/signals-and-systems/fourier-duality/"
 <div class="callout callout-theorem" markdown="1">
 <div class="callout-title" markdown="span">쌍대성 정리</div>
 
-$$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \overset{\mathcal{F}}{\longleftrightarrow} 2\pi x(-\omega)$$이다[^2].
+$$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \overset{\mathcal{F}}{\longleftrightarrow} 2\pi x(-\omega)$$이다.
 
 </div>
 
 
 역변환식 $$2\pi x(t) = \int X(j\omega)e^{j\omega t}d\omega$$에서 $$t$$를 $$-t$$로 바꾼 뒤 $$t$$와 $$\omega$$의 이름을 맞바꾸면 $$2\pi x(-\omega) = \int X(t)e^{-j\omega t}dt$$, 곧 $$X(t)$$의 푸리에 변환이다[^s1].
 
-**성질 표에서의 쌍**[^3]
+**성질 표에서의 쌍**
 
 | 시간 쪽 성질 | 쌍대 성질 |
 |---|---|
@@ -65,7 +65,7 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 
 ## 예제
 
-**예제 4.13** $$g(t) = \frac{2}{1 + t^2}$$의 변환[^4]
+**예제 4.13** $$g(t) = \frac{2}{1 + t^2}$$의 변환
 
 1. 예제 4.2에서 $$e^{-\vert t\vert } \leftrightarrow \frac{2}{1 + \omega^2}$$.
 2. 역변환식: $$e^{-\vert t\vert } = \frac{1}{2\pi}\int\frac{2}{1+\omega^2}e^{j\omega t}d\omega$$.
@@ -76,7 +76,7 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 
 위 줄 쌍의 시간 쪽 모양과 주파수 쪽 모양을 맞바꾸면 아래 줄 쌍이 된다. 주파수 쪽 높이에는 $$2\pi$$가 곱해진다[^s2].
 
-**다른 예**[^2]
+**다른 예**
 
 - $$\delta(t) \leftrightarrow 1$$이면 $$1 \leftrightarrow 2\pi\delta(-\omega) = 2\pi\delta(\omega)$$.
 - $$e^{-at}u(t) \leftrightarrow \frac{1}{a + j\omega}$$이면 $$\frac{1}{a + jt} \leftrightarrow 2\pi e^{a\omega}u(-\omega)$$.
@@ -122,10 +122,6 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 </details>
 
 
-[^1]: 신호 및 시스템 14회 강의 자료 「Week14_CH04_2_handout」, p.25 (그림 4.17), 신호 및 시스템 14회 강의 자료 「Week14_CH04_1_handout」, p.17
-[^2]: 같은 자료(14.Week14_CH04_2_handout.pdf), p.28 (쌍대성 정리)
-[^3]: 같은 자료, p.26
-[^4]: 같은 자료, p.27 (예제 4.13)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 쌍대성 정리의 한 줄 유도와 확인 문제는 원본에 없다. 계산은 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [41_duality_plot.py](/Hongs_Blog/studies/signals-and-systems/code/41_duality_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\frac{2}{1 + t^2}$$의 변환과 $$e^{-\vert t\vert }$$의 변환을 수치 적분해 $$2\pi e^{-\vert \omega\vert }$$, $$\frac{2}{1 + \omega^2}$$와 비교.
+[^s1]: 계산은 검증 코드로 확인했다.
+[^s2]: [41_duality_plot.py](/Hongs_Blog/studies/signals-and-systems/code/41_duality_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\frac{2}{1 + t^2}$$의 변환과 $$e^{-\vert t\vert }$$의 변환을 수치 적분해 $$2\pi e^{-\vert \omega\vert }$$, $$\frac{2}{1 + \omega^2}$$와 비교.
 {% endraw %}

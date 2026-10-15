@@ -10,7 +10,7 @@ course_slug: "compilers"
 course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Handle", "핸들", "환원할 자리"]
 description: "쌓아 둔 조각 가운데 \"지금 묶어야 끝까지 갈 수 있는\" 바로 그 묶음을 핸들이라 부른다. 규칙의 오른쪽과 모양이 같다고 다 핸들은 아니다. 묶은 뒤에도 문장 전체로 이어지는 길이 남아 있어야 한다. 핸들만 골라 묶으면 묶을지 더 읽을지 헷갈릴 일이 없다. 핸들은 늘 읽은 부분의 …"
@@ -38,7 +38,7 @@ permalink: "/studies/compilers/parse-handle/"
 
 반대로 <code>F * F&#124;</code>의 끝에 있는 `F`는 묶어야 한다. `F * T`가 되고, 이어서 $$T \to F * T$$로 묶인다. 같은 `F`인데 하나는 묶고 하나는 안 묶는다. 묶어야 하는 쪽을 핸들이라 부른다.
 
-`id * id`를 파싱하는 동안의 핸들은 이렇다[^1].
+`id * id`를 파싱하는 동안의 핸들은 이렇다.
 
 | 상태 | 핸들 | 한 일 |
 |---|---|---|
@@ -56,11 +56,11 @@ permalink: "/studies/compilers/parse-handle/"
 
 ## 정의
 
-핸들은 규칙의 오른쪽 전체와 같은 부분 문자열 가운데, 환원에 실제로 쓰이는 것이다[^1].
+핸들은 규칙의 오른쪽 전체와 같은 부분 문자열 가운데, 환원에 실제로 쓰이는 것이다.
 
 시작 기호에서 오른쪽 끝 유도로 어떤 문자열까지 온 뒤, 마지막 한 걸음에서 논터미널 $$X$$를 규칙 $$X \to \beta$$로 펼쳤다고 하자. 그 걸음을 되돌리는 자리의 $$\beta$$가 핸들이다.
 
-기호로 쓰면 이렇다[^1]. $$S$$가 시작 기호이고
+기호로 쓰면 이렇다. $$S$$가 시작 기호이고
 
 $$S \Rightarrow_{rm}^{*} \alpha X \omega \Rightarrow_{rm} \alpha\beta\omega$$
 
@@ -71,9 +71,9 @@ $$S \Rightarrow_{rm}^{*} \alpha X \omega \Rightarrow_{rm} \alpha\beta\omega$$
 
 ### 핸들은 늘 왼쪽 부분의 끝자락이다
 
-이동-환원 파싱을 하는 동안 핸들은 막대 바로 왼쪽에서만 나타난다. 막대보다 왼쪽 깊숙한 곳을 뒤질 일이 없다[^2].
+이동-환원 파싱을 하는 동안 핸들은 막대 바로 왼쪽에서만 나타난다. 막대보다 왼쪽 깊숙한 곳을 뒤질 일이 없다.
 
-슬라이드의 예는 이것이다. $$S \Rightarrow_{rm}^{*} X\omega \Rightarrow_{rm} \alpha Y\omega \Rightarrow_{rm} \alpha\beta\omega$$이면, $$\alpha\beta \mid \omega$$에서 핸들은 끝자락 $$\beta$$다. $$Y$$로 환원해 $$\alpha Y \mid \omega$$가 되면 다음 핸들은 $$\alpha Y$$이고, 이것도 끝자락이다[^2].
+기호로 보면 이렇다. $$S \Rightarrow_{rm}^{*} X\omega \Rightarrow_{rm} \alpha Y\omega \Rightarrow_{rm} \alpha\beta\omega$$이면, $$\alpha\beta \mid \omega$$에서 핸들은 끝자락 $$\beta$$다. $$Y$$로 환원해 $$\alpha Y \mid \omega$$가 되면 다음 핸들은 $$\alpha Y$$이고, 이것도 끝자락이다.
 
 <details class="callout callout-note" markdown="1">
 <summary class="callout-title" markdown="span">왜 늘 끝자락인가</summary>
@@ -91,7 +91,7 @@ $$\alpha\beta \mid \omega$$에서 $$X \to \beta$$로 환원해 $$\alpha X \mid \
 </details>
 
 
-그래서 충돌을 푸는 규칙은 한 줄이다. 핸들이 있으면 환원하고, 없으면 이동한다. 남는 물음은 "지금 끝자락이 핸들인지 어떻게 아는가"다[^3]. 답은 [유효 접두사](/Hongs_Blog/studies/compilers/viable-prefix/)에서 시작한다.
+그래서 충돌을 푸는 규칙은 한 줄이다. 핸들이 있으면 환원하고, 없으면 이동한다. 남는 물음은 "지금 끝자락이 핸들인지 어떻게 아는가"다. 답은 [유효 접두사](/Hongs_Blog/studies/compilers/viable-prefix/)에서 시작한다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 위 핸들 표, 무작위 오른쪽 끝 유도 2,000개에서 "파서의 환원 순서 = 유도의 역순"과 "환원할 때 남은 토큰 수가 늘지 않음(핸들의 끝이 왼쪽으로 돌아가지 않음)", `T *`로 시작하는 문자열이 이 문법에서 나오지 않음 — [23_parse-handle_verify.py](/Hongs_Blog/studies/compilers/code/23_parse-handle_verify/)</div>
@@ -117,7 +117,7 @@ $$\alpha\beta \mid \omega$$에서 $$X \to \beta$$로 환원해 $$\alpha X \mid \
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C2** 강의의 문법에서 (가) <code>F&#124;* id</code>의 `F`, (나) <code>F * F&#124;</code>의 끝 `F`, (다) <code>F * T&#124;</code>의 끝 `T`. 셋 가운데 핸들인 것은?</summary>
+<summary class="callout-title" markdown="span">**C2** 문법 $$E \to T + E \mid T$$, $$T \to F * T \mid F$$, $$F \to (E) \mid id$$에서 (가) <code>F&#124;* id</code>의 `F`, (나) <code>F * F&#124;</code>의 끝 `F`, (다) <code>F * T&#124;</code>의 끝 `T`. 셋 가운데 핸들인 것은?</summary>
 
 **답:** (나)만 핸들이다. (가)는 $$T \to F$$와 모양이 같지만 환원하면 `T * id`가 되고 `T *`로 시작하는 문자열은 이 문법에서 나오지 않는다. (다)는 $$E \to T$$와 모양이 같지만 환원하면 `F * E`가 되어 막힌다. (다)의 핸들은 `F * T` 전체다.<br>
 **이유:** 흔한 오답은 "모양이 맞으니 셋 다 핸들"이다.
@@ -133,8 +133,5 @@ $$\alpha\beta \mid \omega$$에서 $$X \to \beta$$로 환원해 $$\alpha X \mid \
 </details>
 
 
-[^1]: 컴파일러 7회 강의 자료 「Lecture07 Syntax analysis part 4」, p.9 (핸들의 정의, `id * id`의 핸들 표)
-[^2]: 같은 자료, p.10 (핸들은 늘 왼쪽 부분의 끝자락이라는 말과 예)
-[^3]: 같은 자료, p.11 (핸들이 있으면 환원, 없으면 이동. 핸들이 있는지 어떻게 아는가라는 질문)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> <code>F&#124;* id</code>가 막히는 이유, 핸들의 두 조건을 나눠 쓴 것, "왜 늘 끝자락인가"의 단계별 이유, 모호한 문법에서 핸들이 둘 이상일 수 있다는 말, 카드 C2·C3은 원본에 없다. 슬라이드 p.10은 예만 든다. 무작위 유도 2,000개로 확인했다. 근거: Aho·Lam·Sethi·Ullman, *Compilers* 2판, 4.5.2 "Handle Pruning", 4.5.3.
+[^s1]: 무작위 유도 2,000개로 확인했다. 근거: Aho·Lam·Sethi·Ullman, *Compilers* 2판, 4.5.2 "Handle Pruning", 4.5.3.
 {% endraw %}

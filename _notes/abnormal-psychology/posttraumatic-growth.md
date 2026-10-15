@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-27"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Posttraumatic Growth", "PTG", "외상 후 적응", "회복탄력성", "resilience", "역경에 굴복", "손상을 동반한 버팀"]
 description: "큰 역경을 겪은 뒤, 예전 수준으로 돌아오는 것을 넘어 오히려 더 단단해지고 삶을 보는 눈이 깊어지는 변화다. 자신을 더 따뜻하게 받아들이고, 관계가 솔직해지고, 무엇이 중요한지 다시 정한다. 외상이 좋은 일이라는 뜻이 아니고, 고통과 성장은 함께 있을 수 있다. 모두가 성장하지는…"
@@ -33,7 +33,7 @@ permalink: "/studies/abnormal-psychology/posttraumatic-growth/"
 
 ## 예시로 보기
 
-슬라이드 p.26의 그림은 역경 뒤 기능 수준이 가는 네 갈래를 그린다(Jeon et al., 2015)[^1].
+같은 역경을 겪어도 그 뒤의 기능 수준은 네 갈래로 갈린다(Jeon et al., 2015).
 
 | 갈래 | 역경 뒤 기능 수준 |
 |---|---|
@@ -46,7 +46,7 @@ permalink: "/studies/abnormal-psychology/posttraumatic-growth/"
 
 ## 정의
 
-외상 후 성장은 외상을 통해 성장이 이루어지는 심리적 과정이고, 외상 이전의 수준으로 회복하는 것을 넘어선 긍정적 변화다[^1].
+외상 후 성장은 외상을 통해 성장이 이루어지는 심리적 과정이고, 외상 이전의 수준으로 회복하는 것을 넘어선 긍정적 변화다.
 
 | 영역 | 변화 |
 |---|---|
@@ -77,7 +77,6 @@ permalink: "/studies/abnormal-psychology/posttraumatic-growth/"
 
 </details>
 
-[^1]: 이상 심리학 6회 강의 자료 「외상 후 스트레스 장애 및 해리장애」, p.26 (외상 후 적응의 여러 유형 그림, Jeon et al., 2015)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DV의 사례는 가상 예다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 외상 후 성장과 PTSD 증상의 공존, 신념 재구성으로서의 성장은 Tedeschi와 Calhoun의 외상 후 성장 연구의 표준 설명이다.
+[^s1]: DV의 사례는 가상 예다.
+[^s2]: 외상 후 성장과 PTSD 증상의 공존, 신념 재구성으로서의 성장은 Tedeschi와 Calhoun의 외상 후 성장 연구의 표준 설명이다.
 {% endraw %}

@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["B-Tree-Insert", "B-TREE-INSERT", "B-Tree-Insert-Nonfull", "B-TREE-INSERT-NONFULL", "B-Tree-Create", "B-TREE-CREATE", "B-트리 만들기", "뿌리 쪼개기"]
 description: "꽉 찬 서랍에는 물건을 더 넣을 수 없으니, 넣으러 내려가는 길에 꽉 찬 서랍을 만나면 그 자리에서 둘로 나눠 놓고 지나간다는 생각이다. 새 값은 늘 맨 아래 칸에 들어가고, 내려가는 길을 미리 비워 두었으니 한 번 내려가기만 하면 되고 되돌아 올라올 일이 없다. 나무는 맨 위 칸…"
@@ -34,9 +34,9 @@ permalink: "/studies/database-design/b-tree-insert/"
 
 ## 예시로 보기
 
-이진 탐색 트리는 새 키가 갈 자리를 찾아 내려간 뒤 거기에 새 잎을 만들어 단다. B-트리에서 그렇게 하면 새 잎만 한 칸 더 깊어져 "모든 잎의 깊이가 같다"가 깨진다[^1]. 그래서 B-트리는 새 잎을 만들지 않고 이미 있는 잎에 키를 넣는다. 그 잎이 가득 차 있으면 넣기 전에 쪼갠다[^2].
+이진 탐색 트리는 새 키가 갈 자리를 찾아 내려간 뒤 거기에 새 잎을 만들어 단다. B-트리에서 그렇게 하면 새 잎만 한 칸 더 깊어져 "모든 잎의 깊이가 같다"가 깨진다. 그래서 B-트리는 새 잎을 만들지 않고 이미 있는 잎에 키를 넣는다. 그 잎이 가득 차 있으면 넣기 전에 쪼갠다.
 
-최소 차수 $$t = 3$$인 트리로 네 가지 경우를 본다. 노드 하나에 키가 5개까지 들어간다[^3].
+최소 차수 $$t = 3$$인 트리로 네 가지 경우를 본다. 노드 하나에 키가 5개까지 들어간다.
 
 ```
                 [G M P X]
@@ -64,7 +64,7 @@ permalink: "/studies/database-design/b-tree-insert/"
 [A B C D E] [J K L] [N O]   [Q R S] [U V] [Y Z]
 ```
 
-**F를 넣는다.** 뿌리 [P]와 그 아래 [G M]은 가득 차지 않았다. F가 갈 잎 [A B C D E]가 가득 찼으니 쪼갠다. 가운데 키 C가 [G M]으로 올라가 [C G M]이 되고 [A B]와 [D E]로 갈린다. F는 C보다 크니 오른쪽 조각에 들어가 [D E F]가 된다[^4].
+**F를 넣는다.** 뿌리 [P]와 그 아래 [G M]은 가득 차지 않았다. F가 갈 잎 [A B C D E]가 가득 찼으니 쪼갠다. 가운데 키 C가 [G M]으로 올라가 [C G M]이 되고 [A B]와 [D E]로 갈린다. F는 C보다 크니 오른쪽 조각에 들어가 [D E F]가 된다.
 
 ```
                          [P]
@@ -75,7 +75,7 @@ permalink: "/studies/database-design/b-tree-insert/"
 ```
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 위 네 번의 삽입 결과, 뿌리 쪼개기 그림($$t = 4$$), 아래 실행 추적 표, 연습 3의 답, 무작위 삽입 35,940번에서 B-트리 성질을 지키고 정렬된 목록과 같으며 높이는 뿌리를 쪼갤 때만 1 늘어남, 카드 C1·C5 — [15_b-tree-insert_impl.py](/Hongs_Blog/studies/database-design/code/15_b-tree-insert_impl/)</div>
+<div class="callout-title" markdown="span">검증: 위 네 번의 삽입 결과, 뿌리 쪼개기($$t = 4$$, [A D F H L N P]에서 H가 올라감), 아래 실행 추적 표, 키 21개를 넣는 연습(B-트리 연습 p5)의 답, 무작위 삽입 35,940번에서 B-트리 성질을 지키고 정렬된 목록과 같으며 높이는 뿌리를 쪼갤 때만 1 늘어남, 카드 C1·C5 — [15_b-tree-insert_impl.py](/Hongs_Blog/studies/database-design/code/15_b-tree-insert_impl/)</div>
 
 </div>
 
@@ -95,7 +95,7 @@ permalink: "/studies/database-design/b-tree-insert/"
 
 ### 빈 트리 만들기
 
-B-트리를 지으려면 먼저 빈 뿌리를 만들고 키를 하나씩 넣는다. 빈 뿌리는 디스크 페이지 하나를 받아 만든 키 없는 잎이다. 처음에는 뿌리가 곧 잎이다. $$O(1)$$이다[^5].
+B-트리를 지으려면 먼저 빈 뿌리를 만들고 키를 하나씩 넣는다. 빈 뿌리는 디스크 페이지 하나를 받아 만든 키 없는 잎이다. 처음에는 뿌리가 곧 잎이다. $$O(1)$$이다.
 
 ```
 B-TREE-CREATE(T)
@@ -122,7 +122,7 @@ B-TREE-INSERT(T, k)
 10  else B-TREE-INSERT-NONFULL(r, k)
 ```
 
-- **뿌리가 가득 찼으면(2~9행).** 키가 없는 새 노드 $$s$$를 뿌리로 삼고 옛 뿌리 $$r$$을 그 자식으로 단다. 그리고 $$r$$을 쪼갠다. 가운데 키가 $$s$$로 올라가 $$s$$는 키 1개와 자식 2개를 갖는다. 트리의 높이가 1 늘어난다[^6].
+- **뿌리가 가득 찼으면(2~9행).** 키가 없는 새 노드 $$s$$를 뿌리로 삼고 옛 뿌리 $$r$$을 그 자식으로 단다. 그리고 $$r$$을 쪼갠다. 가운데 키가 $$s$$로 올라가 $$s$$는 키 1개와 자식 2개를 갖는다. 트리의 높이가 1 늘어난다.
 - **뿌리가 가득 차지 않았으면(10행).** 그대로 뿌리에서 내려가기 시작한다.
 
 ### 가득 차지 않은 노드에서 내려가기
@@ -157,7 +157,7 @@ B-TREE-INSERT-NONFULL(x, k)
 | 15~16 | 쪼개면 가운데 키가 올라와 $$x.key_i$$가 되고 자식이 두 조각으로 갈린다. $$k$$가 그 키보다 크면 오른쪽 조각으로 가야 하니 $$i$$를 1 늘린다 |
 | 17 | 고른 자식으로 내려가 같은 일을 한다 |
 
-슬라이드는 15~16행 옆에 "이 줄은 무슨 일을 하는가"라는 물음만 적어 두었다[^7]. 위 예에서 Q를 넣을 때는 올라온 T보다 Q가 작아 $$i$$가 그대로였고, F를 넣을 때는 올라온 C보다 F가 커서 $$i$$가 1 늘었다[^s1].
+15~16행이 하는 일은 위 예에서 보인다. Q를 넣을 때는 올라온 T보다 Q가 작아 $$i$$가 그대로였고, F를 넣을 때는 올라온 C보다 F가 커서 $$i$$가 1 늘었다[^s1].
 
 ```mermaid
 flowchart TD
@@ -174,11 +174,11 @@ flowchart TD
     D --> L
 ```
 
-고리를 한 바퀴 돌 때마다 한 층 내려간다. 위층으로 되돌아가는 걸음은 없다[^s2].
+고리를 한 바퀴 돌 때마다 한 층 내려간다. 위층으로 되돌아가는 걸음은 없다.
 
 ### 실행 추적
 
-$$t = 2$$인 빈 트리에 F, S, Q, K, C, L, H를 차례로 넣는다. 노드 하나에 키가 3개까지 들어간다[^s3].
+$$t = 2$$인 빈 트리에 F, S, Q, K, C, L, H를 차례로 넣는다. 노드 하나에 키가 3개까지 들어간다.
 
 | 넣는 키 | 쪼개기 | 넣은 뒤의 트리 |
 |---|---|---|
@@ -194,7 +194,7 @@ L을 넣을 때 [C F K]가 [C]와 [K]로 갈리고, L은 올라온 F보다 크�
 
 ## 왜 맞는가
 
-지키는 약속은 하나다. **B-Tree-Insert-Nonfull이 불려 내려가는 노드는 늘 가득 차 있지 않다**[^8].
+지키는 약속은 하나다. **B-Tree-Insert-Nonfull이 불려 내려가는 노드는 늘 가득 차 있지 않다**.
 
 <details class="callout callout-proof" markdown="1">
 <summary class="callout-title" markdown="span">증명 펼치기</summary>
@@ -209,7 +209,7 @@ L을 넣을 때 [C F K]가 [C]와 [K]로 갈리고, L은 올라온 F보다 크�
 
 ### 뿌리를 쪼갤 때만 높아진다
 
-트리의 높이를 늘리는 길은 뿌리 쪼개기 하나뿐이다. 다른 쪼개기는 노드를 옆으로 하나 늘릴 뿐 깊이를 바꾸지 않는다. 뿌리를 쪼개면 새 뿌리가 맨 위에 얹히므로 모든 잎이 한꺼번에 한 칸씩 깊어진다. 이진 탐색 트리는 아래쪽에 잎이 달리며 자라고, B-트리는 맨 위에서 자란다[^9].
+트리의 높이를 늘리는 길은 뿌리 쪼개기 하나뿐이다. 다른 쪼개기는 노드를 옆으로 하나 늘릴 뿐 깊이를 바꾸지 않는다. 뿌리를 쪼개면 새 뿌리가 맨 위에 얹히므로 모든 잎이 한꺼번에 한 칸씩 깊어진다. 이진 탐색 트리는 아래쪽에 잎이 달리며 자라고, B-트리는 맨 위에서 자란다.
 
 ### 스스로 설명해 보기
 
@@ -256,14 +256,14 @@ L을 넣을 때 [C F K]가 [C]와 [K]로 갈리고, L은 올라온 F보다 크�
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">같은 생각을 쓰는 다른 상황은?</summary>
 
-교재(CLRS)의 B-트리 삭제가 같은 생각을 쓴다. 내려가는 길에 키가 모자랄 노드를 미리 채워 두고 한 번에 내려간다. 이 수업의 삭제는 반대로, 잎에서 지운 뒤 모자라면 위로 올라가며 고친다([B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/)).
+교재(CLRS)의 B-트리 삭제가 같은 생각을 쓴다. 내려가는 길에 키가 모자랄 노드를 미리 채워 두고 한 번에 내려간다. 이 문서 모음의 삭제는 반대로, 잎에서 지운 뒤 모자라면 위로 올라가며 고친다([B-트리 삭제](/Hongs_Blog/studies/database-design/b-tree-delete/)).
 
 </details>
 
 
 ### 걸리는 시간
 
-삽입의 시간은 검색과 같은 $$O(t \log_t n)$$이다[^10].
+삽입의 시간은 검색과 같은 $$O(t \log_t n)$$이다.
 
 - 뿌리에서 잎까지 내려가는 노드의 수는 $$O(h) = O(\log_t n)$$이다.
 - 노드 하나에서 자리를 찾는 데 $$O(t)$$, 쪼개기 한 번에 $$O(t)$$가 든다.
@@ -340,18 +340,6 @@ L을 넣을 때 [C F K]가 [C]와 [K]로 갈리고, L은 올라온 F보다 크�
 </details>
 
 
-[^1]: 데이터베이스 설계 3회 강의 자료 「3-2_B-tree-insertion」, p.18 (Inserting a new key into a BST vs a B-tree). 04.4-1_B-tree-deletion.pdf, p.5
-[^2]: 같은 자료, p.19 ("we insert the new key into an existing leaf node", "What if the leaf node is full?")
-[^3]: 같은 자료, p.28 (Minimum degree = 3, B와 Q 삽입). 04.4-1_B-tree-deletion.pdf, p.9
-[^4]: L과 F는 같은 자료 p.29의 연습 2다. 답은 데이터베이스 설계 4회 강의 자료 「4_B-tree-solutions」, p.2와 04.4-1_B-tree-deletion.pdf, p.10
-[^5]: 데이터베이스 설계 3회 강의 자료 「3-2_B-tree-insertion」, p.17 (B-Tree-Create), p.32 ($$O(1)$$)
-[^6]: 같은 자료, p.25 (B-Tree-Insert의 두 경우와 뿌리 쪼개기 그림). 04.4-1_B-tree-deletion.pdf, p.7
-[^7]: 같은 자료, p.27 (B-Tree-Insert-Nonfull의 두 경우, "What these lines do?"). 04.4-1_B-tree-deletion.pdf, p.8
-[^8]: 같은 자료, p.25 ("It uses B-Tree-Split-Child to guarantee that the recursion never descends to a full node")
-[^9]: 같은 자료, p.26 ("Splitting the root is the only way to increase the height", "B-trees grow in height at the top … instead of at the bottom")
-[^10]: 같은 자료, p.30 (Time Complexity of B-Tree-Insert)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 15~16행의 풀이는 슬라이드에 답이 없다. 쪼갠 뒤 $$x.key_i$$가 올라온 가운데 키라는 데서 나오고, Q와 F의 삽입을 구현 코드로 따라가 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 두 의사코드(03.3-2_B-tree-insertion.pdf p.25, 27)를 흐름으로 옮겼다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 실행 추적 표는 슬라이드에 없다. 연습 3(p.31)의 키 가운데 앞 일곱 개를 구현 코드로 넣은 결과다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 증명의 네 단계, 스스로 설명해 보기, 쪼개기 횟수의 한계($$h + 1$$번), 흔한 실수, 오해 항목, 카드 C1~C5는 슬라이드에 글로 없다. 슬라이드의 한 문장("가득 찬 노드로는 내려가지 않는다")을 초기화·유지·종료로 풀었다(Cormen 외, *Introduction to Algorithms* 3판, 18.2절). 쪼개기 횟수와 카드의 트리는 구현 코드로 확인했다.
+[^s1]: 쪼갠 뒤 $$x.key_i$$가 올라온 가운데 키라는 데서 나오고, Q와 F의 삽입을 구현 코드로 따라가 확인했다.
+[^s4]: 쪼개기 횟수와 카드의 트리는 구현 코드로 확인했다.
 {% endraw %}

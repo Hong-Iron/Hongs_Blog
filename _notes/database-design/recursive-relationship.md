@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Role Name", "Recursive Relationship", "순환 관계", "자기 참조 관계", "Self-referencing Relationship", "SUPERVISION", "상사와 부하"]
 description: "회사에서는 직원이 직원을 감독한다. 줄의 양쪽 끝이 둘 다 \"직원\"이라, \"김씨와 박씨가 감독으로 이어져 있다\"고만 적으면 누가 윗사람인지 알 수 없다. 그래서 줄의 끝마다 \"상사\", \"부하\" 같은 이름표를 단다. 직원과 부서처럼 서로 다른 대상을 이을 때는 이름표가 없어도 되지만…"
@@ -36,7 +36,7 @@ permalink: "/studies/database-design/recursive-relationship/"
 
 "$$e_1$$과 $$e_2$$가 감독 관계"라는 줄은 두 가지로 읽힌다. $$e_1$$이 $$e_2$$의 상사일 수도 있고 그 반대일 수도 있다. 급여 결재선을 뽑으려면 어느 쪽인지 알아야 한다.
 
-슬라이드의 SUPERVISION 그림은 EMPLOYEE 개체 집합 하나에서 선이 두 가닥씩 나와 인스턴스에 닿는다. 선마다 1이나 2가 적혀 있다. 1은 상사 구실, 2는 부하 구실이다[^2]. 그림을 표로 옮기면 이렇다.
+SUPERVISION을 그림으로 그리면 EMPLOYEE 개체 집합 하나에서 선이 두 가닥씩 나와 인스턴스에 닿는다. 선마다 1이나 2를 적는다. 1은 상사 구실, 2는 부하 구실이다. 그 그림을 표로 옮기면 이렇다.
 
 | 줄 | 상사(선 1) | 부하(선 2) |
 |---|---|---|
@@ -69,9 +69,9 @@ flowchart TD
 
 ## 정의
 
-**역할 이름(role name).** 관계 인스턴스 하나하나에서, 참여하는 개체가 맡는 구실을 나타내는 이름이다[^1]. WORKS_FOR에서 EMPLOYEE 쪽의 역할은 worker(일하는 사람), DEPARTMENT 쪽의 역할은 employer(고용하는 곳)다.
+**역할 이름(role name).** 관계 인스턴스 하나하나에서, 참여하는 개체가 맡는 구실을 나타내는 이름이다. WORKS_FOR에서 EMPLOYEE 쪽의 역할은 worker(일하는 사람), DEPARTMENT 쪽의 역할은 employer(고용하는 곳)다.
 
-**재귀 관계(recursive relationship).** 같은 개체 타입이 한 관계 타입에 두 번 이상 참여하는 관계다[^2]. 이때는 참여할 때마다 맡는 구실이 다르므로, 구실을 가르는 역할 이름을 반드시 적어야 한다[^2].
+**재귀 관계(recursive relationship).** 같은 개체 타입이 한 관계 타입에 두 번 이상 참여하는 관계다. 이때는 참여할 때마다 맡는 구실이 다르므로, 구실을 가르는 역할 이름을 반드시 적어야 한다.
 
 기호로 쓰면 SUPERVISION의 인스턴스는 직원 둘의 짝이고, 자리마다 역할이 정해져 있다.
 
@@ -80,23 +80,16 @@ $$r_i = (\text{상사}, \text{부하}), \qquad \text{상사} \in \text{EMPLOYEE}
 
 $$(e_5, e_1)$$과 $$(e_1, e_5)$$는 서로 다른 인스턴스다. 앞은 "$$e_5$$가 $$e_1$$의 상사", 뒤는 "$$e_1$$이 $$e_5$$의 상사"다. 인스턴스 하나가 개체 둘을 이으므로 차수는 2다[^s2].
 
-**COMPANY의 SUPERVISION.** ER 다이어그램에서는 EMPLOYEE 네모에서 선 두 가닥이 나와 마름모 SUPERVISION에 닿고, 선에 Supervisor와 Supervisee를 적는다[^4].
+**COMPANY의 SUPERVISION.** ER 다이어그램에서는 EMPLOYEE 네모에서 선 두 가닥이 나와 마름모 SUPERVISION에 닿고, 선에 Supervisor와 Supervisee를 적는다.
 
-- 비율은 1:N이다. 상사 구실 쪽이 1, 부하 구실 쪽이 N이다[^3]. 부하에게 상사는 많아야 한 명이고, 상사 한 명 아래에는 부하가 여럿일 수 있다.
-- 참여는 양쪽 다 부분이다. 상사가 없는 직원도 있고(맨 위 사람), 부하가 없는 직원도 있다[^4].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: SUPERVISION 쪽에 "PROJECT participation is total, DEPARTMENT participation is partial" (5주차 p.28) / 문제점: SUPERVISION에 참여하는 개체 타입은 EMPLOYEE뿐이다(같은 쪽 첫 줄). PROJECT와 DEPARTMENT는 끼지 않는다. 바로 앞 쪽(p.27 CONTROLS)의 문장이 그대로 남은 것으로 보인다. / 수정안: EMPLOYEE는 상사 역할로도 부하 역할로도 부분 참여다. / 근거: 5주차 p.34의 그림이 Supervisor 쪽 (0,N), Supervisee 쪽 (0,1)로 둘 다 아래 한계가 0이고, 4주차 4-2 p.5의 그림에서도 두 선이 모두 홑선이다.
-
-</div>
+- 비율은 1:N이다. 상사 구실 쪽이 1, 부하 구실 쪽이 N이다. 부하에게 상사는 많아야 한 명이고, 상사 한 명 아래에는 부하가 여럿일 수 있다.
+- 참여는 양쪽 다 부분이다. 상사가 없는 직원도 있고(맨 위 사람), 부하가 없는 직원도 있다.
 
 
 ## 활용
 
-- 역할 이름은 재귀 관계가 아니어도 적을 수 있다. COMPANY 그림은 모든 선에 역할 이름을 적었다(Employee, Department, Manager, Worker 등)[^4]. 개체 타입 이름만으로 구실이 드러날 때는 생략해도 된다[^s2].
-- COMPANY의 자료에서 세면 감독 관계는 7줄이다. 맨 위에 Borg, 그 아래 Wong과 Wallace, 그 아래 다섯 명이다. 위 그림과 같은 모양이다[^s1].
+- 역할 이름은 재귀 관계가 아니어도 적을 수 있다. COMPANY 그림은 모든 선에 역할 이름을 적었다(Employee, Department, Manager, Worker 등). 개체 타입 이름만으로 구실이 드러날 때는 생략해도 된다[^s2].
+- COMPANY의 데이터에서 세면 감독 관계는 7줄이다. 맨 위에 Borg, 그 아래 Wong과 Wallace, 그 아래 다섯 명이다. 위 그림과 같은 모양이다[^s1].
 - 표로 옮기면 EMPLOYEE 표 안에 "내 상사의 번호" 열(Super_ssn)이 생긴다. 표가 자기 자신을 가리킨다: [일대다 관계 타입의 사상](/Hongs_Blog/studies/database-design/mapping-one-to-many-relationship/)
 - 질의에서는 같은 표를 두 번 불러 한 번은 직원으로, 한 번은 상사로 쓴다. 역할 이름이 SQL에서는 별칭이 된다: [별칭과 자기 조인](/Hongs_Blog/studies/database-design/sql-alias-self-join/)
 
@@ -135,10 +128,6 @@ $$(e_5, e_1)$$과 $$(e_1, e_5)$$는 서로 다른 인스턴스다. 앞은 "$$e_5
 </details>
 
 
-[^1]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.21 (Relationship: Role Names, "Role: worker", "Role: Employer")
-[^2]: 데이터베이스 설계 4회 강의 자료 「4-2_ERmodel」, p.22 (Recursive Relationships, SUPERVISION 그림, "Line marked '1': the supervisor role", "Line marked '2': the supervisee role"). 5주차 p.10에 같은 쪽이 있다.
-[^3]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.28 (SUPERVISION: Cardinality ratio 1:N, 1-side supervisor role, N-side supervisee role)
-[^4]: 데이터베이스 설계 5회 강의 자료 「5_ERmodel」, p.34 (ER Diagram of COMPANY Database: 선마다 역할 이름과 (min, max))
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 나무 모양 그림은 원본에 없다. 슬라이드 4-2 p.22의 선을 (상사, 부하)로 읽어 그렸다. COMPANY 자료의 7줄은 6주차 6-2 p.21의 Super_ssn 열에서 세었다. 둘 다 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 재귀 관계의 차수가 2라는 것과, 타입 이름으로 구실이 드러나면 역할 이름을 생략해도 된다는 설명은 슬라이드에 없다. Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 설명이다. 카드 C1~C3도 원본에 없다.
+[^s1]: 둘 다 검증 코드로 확인했다.
+[^s2]: Elmasri & Navathe, *Fundamentals of Database Systems* 7판, 3장의 설명이다.
 {% endraw %}

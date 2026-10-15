@@ -9,7 +9,7 @@ course: "확률과 통계"
 course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Multivariate Normal Distribution", "다변량 정규분포", "다변수 정규분포", "공분산 행렬", "covariance matrix", "마할라노비스 거리", "Mahalanobis distance", "신뢰 타원", "confidence ellipse", "숄레스키 분해로 표본 만들기"]
 description: "변수가 여럿이면 각자의 흩어짐과 둘씩의 공분산을 한 행렬에 모은다. 다변량 정규분포는 평균 벡터와 이 공분산 행렬만으로 정해지는 여러 차원의 종 모양이다. 밀도가 같은 점들은 타원을 그리는데, 타원의 축 방향과 길이가 공분산 행렬의 고유벡터와 고윳값에서 나온다. 한 변수가 다른 변…"
@@ -94,11 +94,13 @@ $$f(\mathbf{x}) = \frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}}\exp\left(-\frac12(\mat
 
 ## 과목별 관점
 
-**자료와 정보 (2-1학기).** 센서 여러 개로 잰 자료처럼 속성이 여럿인 자료를 평균 벡터와 공분산 행렬 두 가지로 줄여 적는 모델로 쓴다. 강의의 대부분은 공분산 행렬의 수가 바뀌면 종 모양이 어떻게 달라지는지 보여 주는 그림이다[^i1].
+**자료와 정보 (2-1학기).** 센서 여러 개로 잰 자료처럼 속성이 여럿인 자료를 평균 벡터와 공분산 행렬 두 가지로 줄여 적는 모델로 쓴다. 공분산 행렬의 수가 바뀌면 종 모양이 어떻게 달라지는지를 주로 그림으로 본다.
 
-- **표기.** 자료를 $$N$$행 $$d$$열의 표 $$\mathbf X$$로 적는다. 한 줄이 관측 하나, 한 칸이 속성 하나이고, $$x_j^{(i)}$$는 $$i$$번째 관측의 $$j$$번째 속성이다[^i2]. 차원은 $$d$$(6회 슬라이드에서는 $$D$$), 밀도는 $$p(\mathbf x)$$로 쓴다. 이 문서의 $$n$$, $$f(\mathbf x)$$와 같다. 상관계수는 공분산을 두 표준편차의 곱으로 나눈 $$\rho_{ij} = \frac{\sigma_{ij}}{\sigma_i\sigma_j}$$로 적는다[^i3]. 2차원이면 $$\boldsymbol\mu = \begin{pmatrix}\mu_X\\ \mu_Y\end{pmatrix}$$, $$\Sigma = \begin{pmatrix}\sigma_X^2 & \rho\sigma_X\sigma_Y\\ \rho\sigma_X\sigma_Y & \sigma_Y^2\end{pmatrix}$$이다[^i4].
-- **키와 몸무게.** 6회의 예다. 키의 평균 $$\mu_x$$와 몸무게의 평균 $$\mu_y$$를 묶은 $$(\mu_x, \mu_y)$$가 2차원 자료의 대표값이다. 18~24세 남자의 키와 몸무게를 찍은 그림에는 상관계수 0.42가 적혀 있다. 점 구름이 오른쪽 위로 비스듬한 타원 모양이다[^i5].
-- **공분산 행렬에 따른 모양.** 그림 넉 장이 차례로 나온다[^i6].
+- **표기.** 자료를 $$N$$행 $$d$$열의 표 $$\mathbf X$$로 적는다. 한 줄이 관측 하나, 한 칸이 속성 하나이고, $$x_j^{(i)}$$는 $$i$$번째 관측의 $$j$$번째 속성이다. 차원은 $$d$$($$D$$로 쓰기도 한다), 밀도는 $$p(\mathbf x)$$로 쓴다. 이 문서의 $$n$$, $$f(\mathbf x)$$와 같다. 상관계수는 공분산을 두 표준편차의 곱으로 나눈 $$\rho_{ij} = \frac{\sigma_{ij}}{\sigma_i\sigma_j}$$로 적는다. 2차원이면 $$\boldsymbol\mu = \begin{pmatrix}\mu_X\\ \mu_Y\end{pmatrix}$$, $$\Sigma = \begin{pmatrix}\sigma_X^2 & \rho\sigma_X\sigma_Y\\ \rho\sigma_X\sigma_Y & \sigma_Y^2\end{pmatrix}$$이다.
+
+    공분산 행렬의 식에서는 곱하는 순서를 조심한다. $$\mathbf x$$를 세운 벡터(열벡터)로 두면 $$(\mathbf x - \boldsymbol\mu)(\mathbf x - \boldsymbol\mu)^\top$$이 $$d \times d$$ 행렬이다. 순서를 바꾼 $$(\mathbf x - \boldsymbol\mu)^\top(\mathbf x - \boldsymbol\mu)$$는 수 하나다. 그 평균은 속성마다의 분산을 모두 더한 값이라, 이 문서 예시의 $$\Sigma$$에서는 $$4 + 3 = 7$$이다. 자료 한 줄을 눕힌 벡터(행벡터)로 두면 순서가 거꾸로 된다. 밀도 식의 지수 안에 있는 $$\frac12$$도 빠뜨리기 쉽다. 빠뜨리면 넓이가 1이 아니다. $$d = 2$$, $$\Sigma = I$$에서는 넓이가 0.5가 된다[^is1].
+- **키와 몸무게.** 키의 평균 $$\mu_x$$와 몸무게의 평균 $$\mu_y$$를 묶은 $$(\mu_x, \mu_y)$$가 2차원 자료의 대표값이다. 18~24세 남자의 키와 몸무게를 찍어 보면 상관계수가 0.42이고, 점 구름이 오른쪽 위로 비스듬한 타원 모양이다.
+- **공분산 행렬에 따른 모양.** 공분산 행렬을 바꾸면 밀도가 같은 점을 이은 선이 이렇게 바뀐다.
 
     | 바꾼 것 | 밀도가 같은 점을 이은 선 |
     |---|---|
@@ -108,22 +110,8 @@ $$f(\mathbf{x}) = \frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}}\exp\left(-\frac12(\mat
     | 공분산이 0, 양수, 음수 | 원, 오른쪽 위로 기운 타원, 오른쪽 아래로 기운 타원 |
 
     수로 확인하면 봉우리 높이는 $$\Sigma = I$$에서 0.159, $$0.5\,I$$에서 0.318, $$2\,I$$에서 0.080이다. 공분산이 0.5면 타원의 긴 축이 짧은 축의 약 1.73배, 0.8이면 3배다[^is2].
-- **마할라노비스 거리.** 슬라이드는 $$(\mathbf x - \boldsymbol\mu_k)^\top\Sigma^{-1}(\mathbf x - \boldsymbol\mu_k)$$를 그대로 거리라고 부르고, 분산과 상관의 차이를 고르게 맞춰 준다고 적는다[^i7]. 이 문서에서 말한 대로 이 값은 거리의 제곱이다. 자세한 것은 [마할라노비스 거리](/Hongs_Blog/studies/data-and-information/mahalanobis-distance/)에 있다.
+- **마할라노비스 거리.** $$(\mathbf x - \boldsymbol\mu_k)^\top\Sigma^{-1}(\mathbf x - \boldsymbol\mu_k)$$를 그대로 거리라고 부르기도 한다. 속성마다 다른 분산과 속성끼리의 상관을 고르게 맞춰 잰 거리라는 뜻이다. 위 정의에서 말한 대로 엄밀히는 이 값이 거리의 제곱이다. 자세한 것은 [마할라노비스 거리](/Hongs_Blog/studies/data-and-information/mahalanobis-distance/)에 있다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 자료와 정보 7회 슬라이드 p.3의 밀도 $$p(\mathbf x) = \frac{1}{(2\pi)^{d/2}\vert \Sigma\vert ^{1/2}}\exp\left[-(\mathbf x - \boldsymbol\mu)^\top\Sigma^{-1}(\mathbf x - \boldsymbol\mu)\right]$$ / 문제점: 지수 안에 $$\frac12$$이 빠졌다. 이대로면 넓이가 1이 되지 않는다 / 수정안: $$\exp\left[-\frac12(\mathbf x - \boldsymbol\mu)^\top\Sigma^{-1}(\mathbf x - \boldsymbol\mu)\right]$$. 같은 과목 6회 슬라이드 p.9에는 $$\frac12$$이 들어 있다 / 근거: $$d = 2$$, $$\Sigma = I$$에서 수치 적분하면 $$\frac12$$이 있을 때 1.0, 없을 때 0.5다[^is1]
-
-</div>
-
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 같은 슬라이드 p.4의 $$\Sigma = \operatorname{Cov}(\mathbf x) = \mathbb{E}[(\mathbf x - \boldsymbol\mu)^\top(\mathbf x - \boldsymbol\mu)]$$ / 문제점: 같은 쪽에서 평균을 $$[\mu_1, \dots, \mu_d]^\top$$, 곧 세운 벡터로 적었다. 세운 벡터에서 $$(\mathbf x - \boldsymbol\mu)^\top(\mathbf x - \boldsymbol\mu)$$는 행렬이 아니라 수 하나(각 속성의 분산을 모두 더한 값)다 / 수정안: 순서를 바꾼 $$\mathbb{E}[(\mathbf x - \boldsymbol\mu)(\mathbf x - \boldsymbol\mu)^\top]$$. 자료 한 줄을 눕힌 벡터로 보면 슬라이드의 순서가 맞다 / 근거: 이 문서 예시의 $$\Sigma$$로 표본 20만 개를 뽑아 슬라이드의 식을 계산하면 약 7로, 대각선의 합 $$4 + 3$$과 같다[^is1]
-
-</div>
 
 
 ## 확인 문제
@@ -162,14 +150,7 @@ $$f(\mathbf{x}) = \frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}}\exp\left(-\frac12(\mat
 
 
 [^1]: Blitzstein, Hwang, *Introduction to Probability* 2판, 7.5절 "Multivariate Normal"(정의, 일차 변환, 결합 정규에서 무상관 = 독립, 각자 정규여도 결합이 정규가 아닌 예).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [19_multivariate-normal_plot.py](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_plot/)로 그렸고, 그림에 쓴 값(고윳값 $$\frac{7 \pm \sqrt{17}}{2}$$, 숄레스키 인수 $$L$$, 타원 안 비율 95%(±1.5%p))을 같은 코드로 확인했다.
-[^i1]: 자료와 정보 7회 강의 자료 「D&I_강의07-다변수_정규분포」, p.2~9 (다변수 데이터, 다변수 가우시안 분포, 파라미터, Bivariate Normal 그림)
-[^i2]: 자료와 정보 7회 강의 자료 「D&I_강의07-다변수_정규분포」, p.2 (다변수 데이터의 표)
-[^i3]: 자료와 정보 7회 강의 자료 「D&I_강의07-다변수_정규분포」, p.3~4 (다변수 가우시안 분포의 밀도, 평균·공분산·상관계수)
-[^i4]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.9 (1차원, 2차원, $$D$$차원 가우시안 분포)
-[^i5]: 자료와 정보 6회 강의 자료 「D&I_강의06-확률변수」, p.10 (대표값: 2차원 정규분포, 키와 몸무게 그림)
-[^i6]: 자료와 정보 7회 강의 자료 「D&I_강의07-다변수_정규분포」, p.6~9 (Bivariate Normal: 밀도 그림과 등고선 그림 넉 장)
-[^i7]: 자료와 정보 7회 강의 자료 「D&I_강의07-다변수_정규분포」, p.5 (Distance Metric: Mahalanobis distance)
-[^is1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 두 원본 오류 의심의 근거 계산은 원본에 없다. 2차원 밀도를 격자로 수치 적분한 값(1.0과 0.5)과 표본 20만 개로 계산한 $$\mathbb{E}[(\mathbf x - \boldsymbol\mu)^\top(\mathbf x - \boldsymbol\mu)] \approx 7$$을 파이썬으로 확인했다.
-[^is2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 봉우리 높이 0.159, 0.318, 0.080과 축 길이의 비 1.73, 3은 원본에 없는 수다. 슬라이드에는 그림만 있다. 밀도 식에 $$\mathbf x = \boldsymbol\mu$$를 넣은 값 $$\frac{1}{2\pi\sqrt{\det\Sigma}}$$와 고윳값 $$1 \pm \rho$$를 파이썬으로 계산해 확인했다. 카드 C4의 (다)는 슬라이드 p.9의 "공분산이 음수" 그림에 수를 붙인 것이다.
+[^s1]: [19_multivariate-normal_plot.py](/Hongs_Blog/studies/probability-statistics/code/19_multivariate-normal_plot/)로 그렸고, 그림에 쓴 값(고윳값 $$\frac{7 \pm \sqrt{17}}{2}$$, 숄레스키 인수 $$L$$, 타원 안 비율 95%(±1.5%p))을 같은 코드로 확인했다.
+[^is1]: 2차원 밀도를 격자로 수치 적분한 값(1.0과 0.5)과 표본 20만 개로 계산한 $$\mathbb{E}[(\mathbf x - \boldsymbol\mu)^\top(\mathbf x - \boldsymbol\mu)] \approx 7$$을 파이썬으로 확인했다.
+[^is2]: 밀도 식에 $$\mathbf x = \boldsymbol\mu$$를 넣은 값 $$\frac{1}{2\pi\sqrt{\det\Sigma}}$$와 고윳값 $$1 \pm \rho$$를 파이썬으로 계산해 확인했다.
 {% endraw %}

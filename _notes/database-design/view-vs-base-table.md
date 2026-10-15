@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["View vs Base Table", "뷰와 테이블의 차이", "가상 테이블과 기본 테이블"]
 description: "둘 다 SELECT … FROM 뒤에 이름을 쓰면 행이 나온다. 질의를 쓰는 사람 눈에는 똑같은 표다. 가르는 질문은 \"그 행이 저장돼 있는가, 물을 때마다 계산되는가\"다. 이 답이 자리를 차지하는지, 고칠 수 있는지, 지웠을 때 무엇이 없어지는지를 함께 정한다."
@@ -55,7 +55,7 @@ permalink: "/studies/database-design/view-vs-base-table/"
 | 갱신 | 제약만 지키면 된다 | 많은 경우 안 된다. 표 하나에 집계 없는 뷰만 조건부로 된다 |
 | 지웠을 때 | 행이 없어진다. 기대던 뷰가 깨진다 | 정의만 없어진다. 정의 테이블은 그대로다 |
 
-표는 슬라이드의 설명을 한자리에 모은 것이다[^1]. 선택을 가르는 줄은 "저장되는 것"과 "갱신"이다. 처음 저장할 곳이거나 마음대로 고쳐야 하면 기본 테이블이고, 이미 있는 데이터를 다른 모양으로 보여 주기만 하면 뷰다.
+선택을 가르는 줄은 "저장되는 것"과 "갱신"이다. 처음 저장할 곳이거나 마음대로 고쳐야 하면 기본 테이블이고, 이미 있는 데이터를 다른 모양으로 보여 주기만 하면 뷰다.
 
 두 제품에서 저장 여부를 직접 볼 수 있다. SQLite의 카탈로그에서 기본 테이블 WORKS_ON은 저장 자리 번호가 있고 뷰 WORKS_ON1은 0이다. PostgreSQL 16에서 보통 뷰가 차지한 크기는 0바이트다[^s1].
 
@@ -71,12 +71,10 @@ permalink: "/studies/database-design/view-vs-base-table/"
 <summary class="callout-title" markdown="span">**C3** 조인과 집계가 든 무거운 질의의 결과를 1초에도 여러 번 읽어야 한다. 원래 표는 가끔만 바뀐다. 기본 테이블에 복사해 두면 낡고, 뷰로 두면 읽을 때마다 다시 계산한다. 무엇을 쓰는가? 그것은 기본 테이블, 뷰와 각각 어디가 같고 다른가?</summary>
 
 **답:** 실체화된 뷰를 쓴다. 정의는 뷰처럼 질의로 적고, 결과는 기본 테이블처럼 실제로 저장한다. 저장하므로 자리를 차지하고 빨리 읽힌다. 대신 원래 표가 바뀌면 저장한 결과를 고쳐야 하고, 고치기 전에는 낡은 답을 낸다. 사용자가 그 행을 직접 고칠 수는 없다.<br>
-**이유:** PostgreSQL 16에서 `CREATE MATERIALIZED VIEW`로 만든 것은 저장 크기가 0보다 크고, 원래 표를 고친 뒤 `REFRESH MATERIALIZED VIEW`를 하기 전까지 옛 답을 냈다. 직접 `UPDATE`하면 "cannot change materialized view"로 거부되었다. 고치는 때를 정하는 세 방식은 [질의 수정과 뷰 실체화](/Hongs_Blog/studies/database-design/view-implementation/)에 있다[^2][^s1].
+**이유:** PostgreSQL 16에서 `CREATE MATERIALIZED VIEW`로 만든 것은 저장 크기가 0보다 크고, 원래 표를 고친 뒤 `REFRESH MATERIALIZED VIEW`를 하기 전까지 옛 답을 냈다. 직접 `UPDATE`하면 "cannot change materialized view"로 거부되었다. 고치는 때를 정하는 세 방식은 [질의 수정과 뷰 실체화](/Hongs_Blog/studies/database-design/view-implementation/)에 있다[^s1].
 
 </details>
 
 
-[^1]: 데이터베이스 설계 13회 강의 자료 「13-View」, p.3 (뷰는 끌어낸 가상 테이블, 기본 테이블은 튜플이 늘 저장돼 있다, 뷰는 갱신이 제한되고 검색은 제한이 없다), p.8 (늘 최신), p.14 (DROP VIEW는 정의 테이블에 영향이 없다), p.17~18 (뷰 갱신)
-[^2]: 같은 자료, p.11 (View Materialization: 임시 표를 실제로 만들어 둔다, 추가 저장 자리가 든다)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 카드의 상황, 뷰가 기대는 표를 지울 때의 제품별 동작, 저장 자리와 크기, 실체화된 뷰를 직접 고칠 수 없다는 것은 슬라이드에 없다. SQLite 3.50.4와 PostgreSQL 16에서 실행해 확인했다.
+[^s1]: SQLite 3.50.4와 PostgreSQL 16에서 실행해 확인했다.
 {% endraw %}

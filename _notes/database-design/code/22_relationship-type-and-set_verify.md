@@ -23,12 +23,12 @@ permalink: "/studies/database-design/code/22_relationship-type-and-set_verify/"
 """관계 타입과 관계 집합 검증.
 
 문서: 22.관계 타입과 관계 집합 (예시로 보기, 정의, 카드 C2·C3)
-출처: 데이터베이스 설계 4주차 슬라이드 4-2 p.18~20 (5주차 p.8~9에 같은 그림)
+출처: Elmasri & Navathe, Fundamentals of Database Systems 3장의 WORKS_FOR 예
 주장:
-  1. WORKS_FOR 그림(p.19)의 관계 인스턴스는 7개이고, 하나하나가 (직원, 부서) 짝이다.
-     r4 = (e4, d2)다(5주차 p.9에서 동그라미 친 인스턴스).
+  1. 문서의 WORKS_FOR 표의 관계 인스턴스는 7개이고, 하나하나가 (직원, 부서) 짝이다.
+     r4 = (e4, d2)다(문서에서 예로 든 인스턴스).
   2. 관계 집합은 개체 집합들의 곱집합의 부분집합이다: WORKS_FOR ⊆ EMPLOYEE × DEPARTMENT.
-     그림에 보이는 범위에서 가능한 짝은 7 × 3 = 21개, 그 가운데 7개가 들어 있다.
+     문서의 표에 보이는 범위에서 가능한 짝은 7 × 3 = 21개, 그 가운데 7개가 들어 있다.
   3. 차수는 인스턴스 하나가 잇는 개체의 수다. WORKS_FOR는 2(이항), SUPPLY는 3(삼항).
   4. 집합이므로 같은 짝은 한 번만 들어간다.
 """
@@ -36,7 +36,7 @@ from itertools import product
 
 EMPLOYEE = [f"e{i}" for i in range(1, 8)]
 DEPARTMENT = ["d1", "d2", "d3"]
-# 4-2 p.19 그림의 선을 읽은 것: r1..r7
+# 문서의 WORKS_FOR 표: r1..r7
 WORKS_FOR = {
     "r1": ("e1", "d1"), "r2": ("e2", "d2"), "r3": ("e3", "d1"), "r4": ("e4", "d2"),
     "r5": ("e5", "d3"), "r6": ("e6", "d1"), "r7": ("e7", "d3"),
@@ -49,7 +49,7 @@ SUPPLY = {("s1", "p1", "j1"), ("s1", "p2", "j1"), ("s2", "p1", "j2")}
 
 def main():
     assert len(WORKS_FOR) == 7 and WORKS_FOR["r4"] == ("e4", "d2")
-    print("[OK] p.19: 관계 인스턴스 7개, r4 = (e4, d2)")
+    print("[OK] WORKS_FOR: 관계 인스턴스 7개, r4 = (e4, d2)")
 
     pairs = set(WORKS_FOR.values())
     space = set(product(EMPLOYEE, DEPARTMENT))
@@ -60,7 +60,7 @@ def main():
     assert SUPPLY <= set(product(SUPPLIER, PART, PROJECT))
     print("[OK] 차수: WORKS_FOR 2, SUPPLY 3")
 
-    # d1에서 일하는 직원 (5주차 p.13에서 동그라미 친 d1)
+    # d1에서 일하는 직원
     assert sorted(e for e, d in pairs if d == "d1") == ["e1", "e3", "e6"]
     print("[OK] d1에서 일하는 직원: e1, e3, e6")
 

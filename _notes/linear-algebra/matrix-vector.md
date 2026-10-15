@@ -162,7 +162,7 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 
 ## 과목별 관점
 
-**자료구조 (1-2학기).** 위 `활용`의 "0이 아닌 성분만 저장한다"를 실제로 하는 방법을 배운다. 0이 아닌 칸마다 (행 번호, 열 번호, 값) 세 수를 한 묶음으로 적고, 이 묶음을 윗줄부터, 줄 안에서는 왼쪽부터 읽은 순서대로 1차원 배열에 늘어놓는다[^d1]. 500 × 500 행렬에 0이 아닌 칸이 1,994개면 2차원 배열은 500 × 500 × 4 = 1,000,000바이트를 쓰고, 묶음의 배열은 3 × 1,994 × 4 = 23,928바이트를 쓴다[^d2]. 칸 하나를 수 셋으로 적으므로 0이 아닌 칸이 전체의 3분의 1보다 적을 때만 이득이다[^ds1]. 대각선에만 값이 있는 행렬처럼 0이 아닌 칸의 자리가 정해져 있으면 자리 번호도 적지 않는다. 자리를 식으로 계산해 값만 1차원 배열에 담는다[^d3]. 자세한 것은 [희소 행렬의 3원소 표현](/Hongs_Blog/studies/data-structures/sparse-matrix-triples/)과 [특수 행렬을 1차원 배열에 담기](/Hongs_Blog/studies/data-structures/triangular-matrix-mapping/)에 있다.
+**자료구조 (1-2학기).** 위 `활용`의 "0이 아닌 성분만 저장한다"를 실제로 하는 방법을 배운다. 0이 아닌 칸마다 (행 번호, 열 번호, 값) 세 수를 한 묶음으로 적고, 이 묶음을 윗줄부터, 줄 안에서는 왼쪽부터 읽은 순서대로 1차원 배열에 늘어놓는다. 500 × 500 행렬에 0이 아닌 칸이 1,994개면 2차원 배열은 500 × 500 × 4 = 1,000,000바이트를 쓰고, 묶음의 배열은 3 × 1,994 × 4 = 23,928바이트를 쓴다. 칸 하나를 수 셋으로 적으므로 0이 아닌 칸이 전체의 3분의 1보다 적을 때만 이득이다[^ds1]. 대각선에만 값이 있는 행렬처럼 0이 아닌 칸의 자리가 정해져 있으면 자리 번호도 적지 않는다. 자리를 식으로 계산해 값만 1차원 배열에 담는다. 자세한 것은 [희소 행렬의 3원소 표현](/Hongs_Blog/studies/data-structures/sparse-matrix-triples/)과 [특수 행렬을 1차원 배열에 담기](/Hongs_Blog/studies/data-structures/triangular-matrix-mapping/)에 있다.
 
 ## 확인 문제
 
@@ -199,10 +199,7 @@ $$\mathbf{x} = (4, 5)$$개를 만들 때 재료 사용량을 두 방법으로 �
 
 
 [^1]: Strang, *Introduction to Linear Algebra* 5판, 1.3절 "Matrices"(열들의 결합으로 본 $$A\mathbf{x}$$), 2.1절 "Vectors and Linear Equations"(행 그림과 열 그림, 성분별 계산).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 동차 좌표로 평행이동을 행렬 곱으로 쓰는 방법은 컴퓨터 그래픽스 교재의 표준 내용이다. 04_matrix-vector_verify.py에서 $$3 \times 3$$ 행렬로 평행이동이 되는 것을 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [04_matrix-vector_plot.py](/Hongs_Blog/studies/linear-algebra/code/04_matrix-vector_plot/)로 그렸고, $$4(2, 1) + 5(1, 3) = (13, 19)$$와 두 직선의 교점 $$(4, 5)$$를 같은 코드로 확인했다.
-[^d1]: 자료구조 3회 강의 자료 「DS_Week3_Lecture_2024」, p.11~12 (0이 아닌 칸을 행 우선 순서로 훑어 (row, column, value) 묶음으로 적고 1차원 배열에 담는다)
-[^d2]: 같은 자료, p.15 (500 × 500, 0이 아닌 칸 1,994개: 2차원 배열 1,000,000바이트, 묶음의 배열 23,928바이트)
-[^d3]: 같은 자료, p.6~7 (대각·삼중대각처럼 구조가 정해진 희소 행렬은 식으로 자리를 찾는 1차원 배열에 담는다)
-[^ds1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "3분의 1"이라는 경계($$3t < mn$$)는 슬라이드에 없다. [11_sparse-matrix-triples_impl.c](/Hongs_Blog/studies/data-structures/code/11_sparse-matrix-triples_impl/)에서 500 × 500이면 $$t \le 83{,}333$$까지 이득인 것을 확인했다.
+[^s1]: 동차 좌표로 평행이동을 행렬 곱으로 쓰는 방법은 컴퓨터 그래픽스 교재의 표준 내용이다. 04_matrix-vector_verify.py에서 $$3 \times 3$$ 행렬로 평행이동이 되는 것을 확인했다.
+[^s2]: [04_matrix-vector_plot.py](/Hongs_Blog/studies/linear-algebra/code/04_matrix-vector_plot/)로 그렸고, $$4(2, 1) + 5(1, 3) = (13, 19)$$와 두 직선의 교점 $$(4, 5)$$를 같은 코드로 확인했다.
+[^ds1]: [11_sparse-matrix-triples_impl.c](/Hongs_Blog/studies/data-structures/code/11_sparse-matrix-triples_impl/)에서 500 × 500이면 $$t \le 83{,}333$$까지 이득인 것을 확인했다.
 {% endraw %}

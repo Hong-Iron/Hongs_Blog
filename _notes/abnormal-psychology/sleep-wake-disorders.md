@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Sleep-Wake Disorders", "수면장애", "sleep disorders", "수면-각성 장애"]
 description: "잠의 양이나 질, 잠드는 시간대가 흐트러져 낮 동안 괴롭고 생활에 지장이 생기는 장애들이다. 잠을 못 자는 쪽(불면), 너무 졸린 쪽(과다수면, 기면증), 잠자는 동안 숨이 막히는 쪽(호흡관련), 몸의 시계가 어긋난 쪽(일주기 리듬), 잠자는 동안 이상 행동을 하는 쪽(사건수면)으…"
@@ -46,7 +46,7 @@ permalink: "/studies/abnormal-psychology/sleep-wake-disorders/"
 
 ## 정의
 
-수면-각성장애의 공통 양상은 수면의 질, 시간대, 양에 대한 불만족과 낮 시간의 고통과 손상이다[^1].
+수면-각성장애의 공통 양상은 수면의 질, 시간대, 양에 대한 불만족과 낮 시간의 고통과 손상이다.
 
 | 유형 | 특징 |
 |---|---|
@@ -60,7 +60,7 @@ permalink: "/studies/abnormal-psychology/sleep-wake-disorders/"
 | 사건수면: REM 수면 행동장애 | REM 수면 중에 소리를 내거나 옆 사람을 다칠 수 있게 움직인다 |
 | 하지불안 증후군 | 다리에 불쾌한 감각을 느끼고 다리를 움직이고 싶은 충동을 반복해서 느낀다 |
 
-표의 "REM 수면 행동장애"를 슬라이드는 "REM수면 각성장애"로 적는다. 이름 문제는 [사건수면](/Hongs_Blog/studies/abnormal-psychology/parasomnias/)에 적었다[^s2].
+표의 "REM 수면 행동장애"는 DSM-5-TR의 이름이다. "REM 수면 각성장애"라고 부르면 바로 위의 NREM 수면 각성장애와 헷갈린다[^s2]. 두 장애를 가르는 법은 [사건수면](/Hongs_Blog/studies/abnormal-psychology/parasomnias/)에서 다룬다.
 
 ```mermaid
 flowchart TD
@@ -77,7 +77,7 @@ flowchart TD
     E --> E3["REM 수면 행동장애"]
 ```
 
-표의 아홉 행은 요약의 다섯 갈래와 하지불안 증후군으로 묶인다. 너무 졸린 쪽에 둘, 이상 행동 쪽에 셋이 들어간다[^s3].
+표의 아홉 행은 요약의 다섯 갈래와 하지불안 증후군으로 묶인다. 너무 졸린 쪽에 둘, 이상 행동 쪽에 셋이 들어간다.
 
 ## 연결
 
@@ -100,8 +100,6 @@ flowchart TD
 
 </details>
 
-[^1]: 이상 심리학 8회 강의 자료 「급식 및 섭식장애, 수면-각성장애」, p.55
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 여섯 호소는 유형을 가르려고 만든 가상 예다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> DSM-5-TR의 이름은 "REM 수면 행동장애(REM Sleep Behavior Disorder)"다. 슬라이드 p.55와 p.77은 "REM수면 각성장애"로 적는다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 요약의 다섯 갈래와 '정의'의 유형 표(p.55)를 묶어 그렸다.
+[^s1]: 여섯 호소는 유형을 가르려고 만든 가상 예다.
+[^s2]: DSM-5-TR의 이름은 "REM 수면 행동장애(REM Sleep Behavior Disorder)"다.
 {% endraw %}

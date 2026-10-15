@@ -20,10 +20,10 @@ permalink: "/studies/compilers/code/08_thompson-construction_impl/"
 [톰슨 구성법](/Hongs_Blog/studies/compilers/thompson-construction/) 문서의 구현 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-# 톰슨 구성법: 정규 표현식 -> NFA (슬라이드 L03 p.18~27의 다섯 규칙 그대로)
+# 톰슨 구성법: 정규 표현식 -> NFA (문서의 다섯 규칙 그대로)
 # 실행: python3 08_thompson-construction_impl.py   (표준 라이브러리만 쓴다)
 # 정규 표현식 표기: 글자 하나 = 기호, 'ε' = 빈 문자열, '|' 선택, 이어 쓰기 = 연결, '*' 반복, '+' 한 번 이상, 괄호.
-# 상태 번호는 만든 순서대로 0부터 붙인다(슬라이드 그림에는 상태 이름이 없다).
+# 상태 번호는 만든 순서대로 0부터 붙인다.
 import itertools
 import random
 import re
@@ -33,7 +33,7 @@ EPS = None  # ε-전이의 라벨
 
 # ---------- 1. 정규 표현식을 트리로 읽는다 ----------
 def parse(src):
-    """우선순위: * + > 연결 > |  (슬라이드 L02 p.20)"""
+    """우선순위: * + > 연결 > |"""
     pos = 0
 
     def peek():
@@ -98,20 +98,20 @@ class NFA:
 def build(tree, nfa, plus_as_star_without_skip=False):
     """부분식 하나의 (시작 상태, 끝 상태)를 돌려준다."""
     kind = tree[0]
-    if kind == "eps":                      # p.18: 시작 --ε--> 끝
+    if kind == "eps":                      # 시작 --ε--> 끝
         s, f = nfa.new(), nfa.new()
         nfa.add(s, EPS, f)
         return s, f
-    if kind == "sym":                      # p.18: 시작 --a--> 끝
+    if kind == "sym":                      # 시작 --a--> 끝
         s, f = nfa.new(), nfa.new()
         nfa.add(s, tree[1], f)
         return s, f
-    if kind == "cat":                      # p.19: r1의 끝 --ε--> r2의 시작
+    if kind == "cat":                      # r1의 끝 --ε--> r2의 시작
         s1, f1 = build(tree[1], nfa, plus_as_star_without_skip)
         s2, f2 = build(tree[2], nfa, plus_as_star_without_skip)
         nfa.add(f1, EPS, s2)
         return s1, f2
-    if kind == "alt":                      # p.20: 새 시작에서 두 갈래, 두 끝에서 새 끝으로
+    if kind == "alt":                      # 새 시작에서 두 갈래, 두 끝에서 새 끝으로
         s = nfa.new()
         s1, f1 = build(tree[1], nfa, plus_as_star_without_skip)
         s2, f2 = build(tree[2], nfa, plus_as_star_without_skip)
@@ -121,7 +121,7 @@ def build(tree, nfa, plus_as_star_without_skip=False):
         nfa.add(f1, EPS, f)
         nfa.add(f2, EPS, f)
         return s, f
-    if kind == "star":                     # p.21: 건너뛰는 길, 되돌아가는 길
+    if kind == "star":                     # 건너뛰는 길, 되돌아가는 길
         s = nfa.new()
         s1, f1 = build(tree[1], nfa, plus_as_star_without_skip)
         f = nfa.new()
@@ -131,7 +131,7 @@ def build(tree, nfa, plus_as_star_without_skip=False):
         nfa.add(f1, EPS, f)
         return s, f
     if kind == "plus":
-        if plus_as_star_without_skip:      # p.22의 물음: * 그림에서 건너뛰는 길만 뺀다
+        if plus_as_star_without_skip:      # r+ 물음: * 그림에서 건너뛰는 길만 뺀다
             s = nfa.new()
             s1, f1 = build(tree[1], nfa, plus_as_star_without_skip)
             f = nfa.new()
@@ -211,7 +211,7 @@ def random_regex(rng, depth):
 
 
 if __name__ == "__main__":
-    # (1) 슬라이드 p.23~27의 예 (a|b)*c: 상태 10개, ε-화살표 9개, 글자 화살표 3개
+    # (1) 문서의 예 (a|b)*c: 상태 10개, ε-화살표 9개, 글자 화살표 3개
     n = thompson("(a|b)*c")
     eps = [e for e in n.edges if e[1] is EPS]
     sym = [e for e in n.edges if e[1] is not EPS]
@@ -230,7 +230,7 @@ if __name__ == "__main__":
     c2 = closure(n, {b for (a, l, b) in n.edges if a in c1 and l == "c"})
     assert c1 == {1, 2, 4, 5, 6, 7, 8} and c2 == {9}
 
-    # (2) 슬라이드 p.30의 (a|b)a는 상태 8개(A~H), p.35의 letter(digit|letter)*는 10개(A~J)
+    # (2) (a|b)a는 상태 8개(A~H), letter(digit|letter)*는 10개(A~J)
     assert thompson("(a|b)a").n == 8
     ident = thompson("L(D|L)*")            # L = letter, D = digit
     assert ident.n == 10 and same_language(ident, "L(D|L)*", "LD", 7)
@@ -242,7 +242,7 @@ if __name__ == "__main__":
     assert thompson("a*|b").n == 8 and thompson("(ab)*").n == 6 and thompson("a|b|c").n == 10
     assert thompson("ab*").n == 6 and len(thompson("ab*").edges) == 7
 
-    # (4) p.22의 물음: r+ 는 * 그림에서 건너뛰는 화살표만 빼면 된다. r r* 와 같은 언어다.
+    # (4) r+ 물음: r+ 는 * 그림에서 건너뛰는 화살표만 빼면 된다. r r* 와 같은 언어다.
     for src in ["a+", "(a|b)+", "(ab)+", "(a*)+", "(a|ε)+b"]:
         via_cat = thompson(src)
         via_cut = thompson(src, plus_as_star_without_skip=True)

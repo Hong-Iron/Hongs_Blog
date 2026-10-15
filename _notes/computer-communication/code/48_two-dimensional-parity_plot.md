@@ -53,7 +53,7 @@ def save(fig, k):
     plt.close(fig)
 
 
-# 슬라이드 49의 데이터 6바이트(7비트씩), 슬라이드에 적힌 위에서 아래 순서 그대로
+# 문서 예시의 데이터 6바이트(7비트씩), 위에서 아래 순서
 ROWS = ["0101001", "1101001", "1011110", "0001110", "0110100", "1011111"]
 
 
@@ -126,7 +126,7 @@ def finish(ax, x0, x1, y0, y1):
 RIGHT = cx(NC - 1) + 1.35                                # 오른쪽 글자 시작
 BOTTOM = cy(NR - 1) - 0.25                               # 아래 글자 시작
 
-# 그림 1: 슬라이드의 표, 가로·세로 패리티와 모서리 비트, 1의 개수
+# 그림 1: 예시의 표, 가로·세로 패리티와 모서리 비트, 1의 개수
 fig, ax = plt.subplots(figsize=(6.6, 4.6))
 fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
 draw_grid(ax, M)
@@ -189,7 +189,7 @@ finish(ax, -4.6, 14.6, BOTTOM - 1.2, cy(0) + 1.9)
 save(fig, 3)
 
 if __name__ == "__main__":
-    # 슬라이드 49의 패리티 비트와 패리티 바이트
+    # 예시의 패리티 비트와 패리티 바이트
     assert [r[-1] for r in M[:-1]] == [1, 0, 1, 1, 1, 0]
     assert "".join(map(str, M[-1][:-1])) == "1111011" and M[-1][-1] == 0
     assert check(M) == ([], [])

@@ -20,11 +20,11 @@ permalink: "/studies/assembly-language/code/19_x86-status-flags_verify/"
 [산술 연산과 상태 플래그](/Hongs_Blog/studies/assembly-language/x86-status-flags/) 문서의 검증 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""「산술 연산과 상태 플래그」와 「올림 플래그와 넘침 플래그 비교」: 슬라이드 값과 Your turn, ADD·SUB 8비트 전수 검사(65,536쌍), 'OF = CF XOR MSB' 반증, INC·DEC·NEG, 카드
+"""「산술 연산과 상태 플래그」와 「올림 플래그와 넘침 플래그 비교」: 본문의 예와 추적 표, ADD·SUB 8비트 전수 검사(65,536쌍), 'OF = CF XOR MSB' 반증, INC·DEC·NEG, 카드
 
 실행: python3 19_x86-status-flags_verify.py  (표준 라이브러리만 쓴다)
 MASM으로 돌린 결과가 아니다. 아래의 작은 x86 흉내기(8·16·32비트 레지스터, ZF·SF·CF·OF,
-리틀 엔디언 메모리)로 슬라이드에 적힌 값과 문서의 값을 확인한다.
+리틀 엔디언 메모리)로 문서에 적힌 값을 확인한다.
 주소와 배열 번호는 0부터 센다.
 """
 # ---- x86 흉내기 (이 파일 안에서만 쓴다. 다른 파일을 import하지 않는다) ----
@@ -275,19 +275,19 @@ def true_of(a, b, n, sub):
 
 if __name__ == "__main__":
     c = CPU()
-    # 5-3-1 p.13 ZF
+    # ZF
     c.mov("cx", 1); c.sub("cx", 1); assert c.get("cx") == 0 and c.ZF == 1
     c.mov("ax", 0xFFFF); c.inc("ax"); assert c.get("ax") == 0 and c.ZF == 1
     c.inc("ax"); assert c.get("ax") == 1 and c.ZF == 0
-    # p.14 SF
+    # SF
     c.mov("cx", 0); c.sub("cx", 1); assert signed(c.get("cx"), 2) == -1 and c.SF == 1
     c.add("cx", 2); assert c.get("cx") == 1 and c.SF == 0
     c.mov("al", 0); c.sub("al", 1); assert c.get("al") == 0b11111111 and c.SF == 1
     c.add("al", 2); assert c.get("al") == 0b00000001 and c.SF == 0
-    # 5-3-2 p.3 CF
+    # CF
     c.mov("al", 0xFF); c.add("al", 1); assert c.CF == 1 and c.get("al") == 0x00
     c.mov("al", 0); c.sub("al", 1); assert c.CF == 1 and c.get("al") == 0xFF
-    # p.4 Your turn (OF 칸은 슬라이드에 없다. 흉내기 값을 문서 표에 실었다)
+    # 추적 표 (OF 칸은 흉내기 값을 문서 표에 실었다)
     c.mov("ax", 0x00FF)
     c.add("ax", 1); assert (c.get("ax"), c.SF, c.ZF, c.CF, c.OF) == (0x0100, 0, 0, 0, 0)
     c.sub("ax", 1); assert (c.get("ax"), c.SF, c.ZF, c.CF, c.OF) == (0x00FF, 0, 0, 0, 0)
@@ -296,13 +296,13 @@ if __name__ == "__main__":
     c.add("bh", 0x95); assert (c.get("bh"), c.SF, c.ZF, c.CF, c.OF) == (0x01, 0, 0, 1, 0)
     c.mov("al", 2)
     c.sub("al", 3); assert (c.get("al"), c.SF, c.ZF, c.CF, c.OF) == (0xFF, 1, 0, 1, 0)
-    # p.5 OF
+    # OF
     c.mov("al", 127); c.add("al", 1); assert c.OF == 1 and c.get("al") == 0x80 and signed(0x80, 1) == -128
     c.mov("al", 0x7F); c.add("al", 1); assert c.OF == 1 and c.get("al") == 0x80
-    # p.6 Rule of thumb
+    # 어림 규칙
     c.mov("al", 0x80); c.add("al", 0x92); assert c.OF == 1 and c.get("al") == 0x12
     c.mov("al", -2 & 0xFF); c.add("al", 127); assert c.OF == 0 and c.get("al") == 125
-    # MOV는 플래그를 그대로 둔다 (p.11)
+    # MOV는 플래그를 그대로 둔다
     c.mov("al", 0x7F); c.add("al", 1); f = c.flags(); c.mov("al", 0); assert c.flags() == f == (0, 1, 0, 1)
 
     # ---- 8비트 전수 검사: 65,536쌍 x (ADD, SUB) ----
@@ -319,9 +319,9 @@ if __name__ == "__main__":
             carry_in = ((a & 0x7F) + (b & 0x7F)) >> 7        # 6번 비트에서 7번 비트로 올라온 올림
             carry_out = (a + b) >> 8                         # 7번 비트 밖으로 나간 올림
             assert c.CF == carry_out
-            assert c.OF == carry_in ^ carry_out              # 7주차 p.4의 규칙
+            assert c.OF == carry_in ^ carry_out              # 회로의 규칙
             sa, sb, sr = a >> 7, b >> 7, r >> 7
-            assert c.OF == int(sa == sb and sr != sa)        # p.6의 어림 규칙
+            assert c.OF == int(sa == sb and sr != sa)        # 어림 규칙
             for k, v in (("r", r), ("a", a), ("b", b)):       # "OF = CF XOR MSB"를 세 가지로 읽어 본다
                 wrong[("add", k)] += int((c.CF ^ (v >> 7)) != c.OF)
             # SUB: a + (b의 비트 뒤집기) + 1 로 계산
@@ -332,7 +332,7 @@ if __name__ == "__main__":
             carry_in = ((a & 0x7F) + (nb & 0x7F) + 1) >> 7
             carry_out = (a + nb + 1) >> 8
             assert r == (a + nb + 1) & 0xFF
-            assert c.CF == 1 - carry_out                     # CF = 올림을 뒤집은 것 (p.2)
+            assert c.CF == 1 - carry_out                     # CF = 올림을 뒤집은 것
             assert c.OF == carry_in ^ carry_out
             assert c.OF == int((a >> 7) != (b >> 7) and (r >> 7) != (a >> 7))
             # "source를 NEG한 뒤 더한다"를 글자 그대로 하면 b = 0에서 CF가 틀린다

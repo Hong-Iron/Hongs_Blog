@@ -10,7 +10,7 @@ course_slug: "data-science"
 course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Matrix Factorization for Clustering", "행렬 분해", "Matrix Factorization", "MF", "비음수 행렬 분해", "Non-negative Matrix Factorization", "NMF", "잠재 성분", "Latent Component", "L1 정칙화", "L1 Regularization", "라쏘", "Lasso", "희소성", "부분 기반 표현", "Parts-based Representation"]
 description: "자료 표를 두 개의 작은 표의 곱으로 나눈다. 한 표는 \"각 자료가 몇 가지 숨은 재료를 얼마씩 섞었나\", 다른 표는 \"각 재료가 어떤 속성으로 이루어졌나\"다. 재료의 양을 음수가 될 수 없게(비음수) 하면 재료를 빼서 상쇄할 수 없어, 자료가 \"부분들의 합\"으로 읽히고 가장 많이…"
@@ -34,7 +34,7 @@ permalink: "/studies/data-science/nmf-clustering/"
 
 ## 예시로 보기
 
-거리로 군집을 나누는 방법은 고차원에서 불안정하다([차원의 저주](/Hongs_Blog/studies/data-science/curse-of-dimensionality/)). 그래서 원래 속성 대신 숨은 성분 몇 개로 자료를 나타낸다[^1].
+거리로 군집을 나누는 방법은 고차원에서 불안정하다([차원의 저주](/Hongs_Blog/studies/data-science/curse-of-dimensionality/)). 그래서 원래 속성 대신 숨은 성분 몇 개로 자료를 나타낸다.
 
 문서 6개에 단어 6개가 몇 번 나왔는지 센 표 $$X$$가 있다. 문서 1~3은 "공, 골, 경기"가 많고, 문서 4~6은 "맛, 불, 냄비"가 많다[^s1].
 
@@ -58,12 +58,12 @@ $$X = \begin{pmatrix} 5&3&4&0&1&0 \\ 4&4&3&0&0&1 \\ 3&5&4&1&0&0 \\ 0&1&0&4&5&3 \
 
 ## 정의
 
-**행렬 분해 군집화.** 자료 $$X \in \mathbb{R}^{n \times d}$$($$n$$개 자료, $$d$$개 속성)를 두 잠재 성분 행렬의 곱으로 나눈다[^1].
+**행렬 분해 군집화.** 자료 $$X \in \mathbb{R}^{n \times d}$$($$n$$개 자료, $$d$$개 속성)를 두 잠재 성분 행렬의 곱으로 나눈다.
 
 $$X \approx WH, \qquad W \in \mathbb{R}^{n \times k},\ H \in \mathbb{R}^{k \times d}$$
 
 
-자료 $$i$$는 성분들의 결합이다. $$\mathbf x_i \approx \sum_{j=1}^{k} W_{i,j}\mathbf H_j$$($$\mathbf H_j$$는 $$H$$의 $$j$$번째 행, 곧 성분 $$j$$). 각 자료는 적은 수의 잠재 성분, 곧 군집에서 만들어진다고 본다[^1].
+자료 $$i$$는 성분들의 결합이다. $$\mathbf x_i \approx \sum_{j=1}^{k} W_{i,j}\mathbf H_j$$($$\mathbf H_j$$는 $$H$$의 $$j$$번째 행, 곧 성분 $$j$$). 각 자료는 적은 수의 잠재 성분, 곧 군집에서 만들어진다고 본다.
 
 ```
         d개 속성                k개 성분         d개 속성
@@ -75,34 +75,27 @@ $$X \approx WH, \qquad W \in \mathbb{R}^{n \times k},\ H \in \mathbb{R}^{k \time
    자료 i = X의 i번째 행     W의 i번째 행    H의 j번째 행 = 성분 j
 ```
 
-$$k$$는 $$n$$과 $$d$$보다 훨씬 작다. 그래서 $$W$$와 $$H$$의 칸 수를 합해도 $$X$$의 칸 수보다 훨씬 적다. $$W$$의 가로 길이와 $$H$$의 세로 길이가 같은 $$k$$여야 곱할 수 있다[^s3].
+$$k$$는 $$n$$과 $$d$$보다 훨씬 작다. 그래서 $$W$$와 $$H$$의 칸 수를 합해도 $$X$$의 칸 수보다 훨씬 적다. $$W$$의 가로 길이와 $$H$$의 세로 길이가 같은 $$k$$여야 곱할 수 있다.
 
-**비음수 행렬 분해(NMF).** 실제 값과 예측값의 차이를 최소화하되 두 행렬에 음수를 허용하지 않는다[^2].
+**비음수 행렬 분해(NMF).** 실제 값과 예측값의 차이를 최소화하되 두 행렬에 음수를 허용하지 않는다.
 
 $$\min_{W, H \ge 0}\Vert X - WH\Vert ^2$$
 
 
-$$\Vert \cdot\Vert ^2$$은 모든 칸의 차이 제곱 합(프로베니우스 노름의 제곱)이다. 음수가 없으면 빼기가 없어 상쇄가 생기지 않고, 더하기만으로 자료를 만든다. 그래서 부분 기반 표현이 되고 군집으로 읽기 쉽다. $$W$$의 $$i$$번째 행 $$\mathbf w_i = (W_{i1}, \dots, W_{ik})$$가 자료 $$i$$의 군집 소속이다[^2].
+$$\Vert \cdot\Vert ^2$$은 모든 칸의 차이 제곱 합(프로베니우스 노름의 제곱)이다. 음수가 없으면 빼기가 없어 상쇄가 생기지 않고, 더하기만으로 자료를 만든다. 그래서 부분 기반 표현이 되고 군집으로 읽기 쉽다. $$W$$의 $$i$$번째 행 $$\mathbf w_i = (W_{i1}, \dots, W_{ik})$$가 자료 $$i$$의 군집 소속이다.
 
-**L1 정칙화.** $$W$$에 L1 벌점을 더한다[^3].
+**L1 정칙화.** $$W$$에 L1 벌점을 더한다.
 
 $$\min_{W, H \ge 0}\Vert X - WH\Vert ^2 + \lambda\Vert W\Vert _1, \qquad \Vert W\Vert _1 = \sum_{i,j}\vert W_{i,j}\vert $$
 
 
-$$\lambda$$는 벌점의 세기다. 많은 $$W_{i,j}$$가 비슷한 값이면(예: $$(0.22, 0.18, 0.25, 0.20, 0.15)$$) 어느 군집이 주된 것인지 정하기 어렵다. L1 벌점은 많은 칸을 0으로 밀어 낸다[^3].
+$$\lambda$$는 벌점의 세기다. 많은 $$W_{i,j}$$가 비슷한 값이면(예: $$(0.22, 0.18, 0.25, 0.20, 0.15)$$) 어느 군집이 주된 것인지 정하기 어렵다. L1 벌점은 많은 칸을 0으로 밀어 낸다.
 
-왜 L2가 아니라 L1인가? 2차원으로 보면 L1이 허용하는 영역 $$\vert w_1\vert  + \vert w_2\vert  \le c$$는 꼭짓점이 축 위에 있는 마름모다. 오차의 등고선이 이 마름모에 처음 닿는 곳은 꼭짓점일 때가 많고, 꼭짓점에서는 한 좌표가 0이다(예: $$(0.01, 0.99)$$). L2 영역 $$w_1^2 + w_2^2 \le c$$는 매끄러운 원이라 닿는 곳에서 두 좌표가 모두 0이 아니다(예: $$(0.25, 0.75)$$)[^3].
+왜 L2가 아니라 L1인가? 2차원으로 보면 L1이 허용하는 영역 $$\vert w_1\vert  + \vert w_2\vert  \le c$$는 꼭짓점이 축 위에 있는 마름모다. 오차의 등고선이 이 마름모에 처음 닿는 곳은 꼭짓점일 때가 많고, 꼭짓점에서는 한 좌표가 0이다(예: $$(0.01, 0.99)$$). L2 영역 $$w_1^2 + w_2^2 \le c$$는 매끄러운 원이라 닿는 곳에서 두 좌표가 모두 0이 아니다(예: $$(0.25, 0.75)$$).
 
 <img class="note-fig" src="/Hongs_Blog/assets/notes/data-science/35_nmf-clustering_fig1.svg" alt="그림" width="601" height="328" loading="lazy">
 
 오차가 가장 작은 곳(+)을 (0.6, 1.4)에 두고, 등고선을 키워 가며 허용 영역에 처음 닿는 곳(주황 점)을 찾았다. 마름모에서는 꼭짓점 (0, 1)에 닿아 $$w_1$$이 정확히 0이 된다. 원에서는 (0.26, 0.97)에 닿아 두 값이 모두 남는다[^s2].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 10-1 슬라이드 p.20 "L1 regularization: $$\Vert w\Vert ^2 = w_1 + w_2$$ → diamond shape" / 문제점: L1 노름은 제곱이 아니고 절댓값의 합이다. $$w_1 + w_2$$는 음수 좌표에서 마름모가 아니라 직선이 된다 / 수정안: "$$\Vert w\Vert _1 = \vert w_1\vert  + \vert w_2\vert $$" / 근거: 같은 슬라이드 오른쪽 위 식의 $$\lambda\Vert W\Vert _1$$과 마름모 그림
-
-</div>
 
 
 ### 푸는 법
@@ -112,12 +105,12 @@ $$W$$와 $$H$$를 번갈아 고치는 곱셈 갱신이 흔하다[^s1].
 $$H \leftarrow H \odot \frac{W^\top X}{W^\top W H}, \qquad W \leftarrow W \odot \frac{X H^\top}{W H H^\top + \lambda}$$
 
 
-$$\odot$$과 분수는 칸끼리의 곱과 나눗셈이다. 곱하고 나누기만 해서 음수가 생기지 않는다. 문제가 볼록하지 않아 처음 값에 따라 답이 달라진다[^4].
+$$\odot$$과 분수는 칸끼리의 곱과 나눗셈이다. 곱하고 나누기만 해서 음수가 생기지 않는다. 문제가 볼록하지 않아 처음 값에 따라 답이 달라진다.
 
 ## 연결
 
 - 선수: [차원의 저주](/Hongs_Blog/studies/data-science/curse-of-dimensionality/), [행렬 곱셈과 전치](/Hongs_Blog/studies/linear-algebra/matrix-multiplication/), [주성분 분석](/Hongs_Blog/studies/probability-statistics/pca/)(부호가 섞인 분해)
-- 음수 제약이 없는 분해: [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/). 추천 시스템의 행렬 분해(12회)도 같은 $$X \approx WH$$다.
+- 음수 제약이 없는 분해: [특잇값 분해](/Hongs_Blog/studies/linear-algebra/svd/). [행렬 분해 추천](/Hongs_Blog/studies/data-science/mf-recommendation/)도 같은 $$X \approx WH$$다.
 - L1과 L2 노름: [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/)의 $$h = 1, 2$$
 - 비교: [PCA와 NMF 비교](/Hongs_Blog/studies/data-science/contrast--pca-nmf/)
 
@@ -147,11 +140,6 @@ $$\odot$$과 분수는 칸끼리의 곱과 나눗셈이다. 곱하고 나누기�
 </details>
 
 
-[^1]: 데이터 과학 10회 강의 자료 「10-1_high-dim-clustering」, p.18
-[^2]: 같은 자료, p.19
-[^3]: 같은 자료, p.20
-[^4]: 같은 자료, p.21
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 문서 × 단어 예와 결과, 곱셈 갱신(Lee & Seung, NIPS 2000)과 L1 항을 분모에 더하는 방식은 원본에 없다. 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [35_nmf-clustering_plot.py](/Hongs_Blog/studies/data-science/code/35_nmf-clustering_plot/)로 그렸다. 오차는 $$(w_1 - 0.6)^2 + 3(w_2 - 1.4)^2$$로 정했고, 경계 위 2만 개 점에서 가장 작은 곳이 L1에서 (0, 1), L2에서 (0.26, 0.97)임을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 문서 `정의`의 행렬 크기 $$W \in \mathbb{R}^{n \times k}$$, $$H \in \mathbb{R}^{k \times d}$$(원본 10-1 p.18)를 근거로 그렸다.
+[^s1]: 구현 코드로 확인했다.
+[^s2]: [35_nmf-clustering_plot.py](/Hongs_Blog/studies/data-science/code/35_nmf-clustering_plot/)로 그렸다. 오차는 $$(w_1 - 0.6)^2 + 3(w_2 - 1.4)^2$$로 정했고, 경계 위 2만 개 점에서 가장 작은 곳이 L1에서 (0, 1), L2에서 (0.26, 0.97)임을 같은 코드로 확인했다.
 {% endraw %}

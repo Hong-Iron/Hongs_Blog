@@ -215,6 +215,6 @@ flowchart LR
 
 
 [^1]: Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 15장 "Cardinality Rules"(순열, 부분집합 세기, 포커 패, 조합적 증명). OpenStax, *Precalculus 2e*, 11.5절 "Counting Principles".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [15_permutations-combinations_plot.py](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_plot/)로 그렸고, $$\binom{40}{20} = 137{,}846{,}528{,}820$$과 어림 $$2^{40}/\sqrt{20\pi}$$의 차이가 1% 미만인 것, $$\binom{40}{3} = 9{,}880$$을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '예시로 보기'의 '같은 세 사람을 직책만 바꿔 앉힌 $$3! = 6$$가지'를 그렸다.
+[^s1]: [15_permutations-combinations_plot.py](/Hongs_Blog/studies/discrete-math/code/15_permutations-combinations_plot/)로 그렸고, $$\binom{40}{20} = 137{,}846{,}528{,}820$$과 어림 $$2^{40}/\sqrt{20\pi}$$의 차이가 1% 미만인 것, $$\binom{40}{3} = 9{,}880$$을 같은 코드로 확인했다.
+[^s2]: '예시로 보기'의 '같은 세 사람을 직책만 바꿔 앉힌 $$3! = 6$$가지'를 그렸다.
 {% endraw %}

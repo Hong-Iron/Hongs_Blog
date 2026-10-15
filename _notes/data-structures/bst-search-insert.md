@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Binary Search Tree", "BST", "이진 탐색 트리", "이진 검색 트리", "BST Search", "BST Insert", "modified search"]
 description: "갈림길마다 \"찾는 값이 여기 값보다 작으면 왼쪽, 크면 오른쪽\"으로만 내려가는 나무다. 찾기는 뿌리에서 한 길만 따라 내려가면 끝나고, 넣기는 그렇게 내려가다 길이 끊긴 빈자리에 새 값을 매다는 일이다. 그래서 두 일 모두 나무의 층 수만큼만 걸린다. 다만 값이 크기 순서대로 들어…"
@@ -34,9 +34,9 @@ permalink: "/studies/data-structures/bst-search-insert/"
 
 ## 예시로 보기
 
-정렬해 둔 배열에서는 가운데를 보고 반을 버리는 식으로 빨리 찾는다([이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)). 그런데 가운데에 값 하나를 끼우려면 뒤의 값을 모두 한 칸씩 밀어야 한다. 연결 리스트는 포인터만 바꿔 끼우지만, 찾을 때는 앞에서부터 하나씩 본다([배열과 연결 리스트 비교](/Hongs_Blog/studies/data-structures/array-vs-linked-list/)). "반씩 버리며 찾기"와 "포인터만 바꿔 끼우기"를 함께 얻으려고 만든 것이 이 나무다[^6][^s1].
+정렬해 둔 배열에서는 가운데를 보고 반을 버리는 식으로 빨리 찾는다([이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/)). 그런데 가운데에 값 하나를 끼우려면 뒤의 값을 모두 한 칸씩 밀어야 한다. 연결 리스트는 포인터만 바꿔 끼우지만, 찾을 때는 앞에서부터 하나씩 본다([배열과 연결 리스트 비교](/Hongs_Blog/studies/data-structures/array-vs-linked-list/)). "반씩 버리며 찾기"와 "포인터만 바꿔 끼우기"를 함께 얻으려고 만든 것이 이 나무다[^s1].
 
-빈 나무에 20, 10, 40, 6, 15, 30, 2, 8, 25를 차례로 넣으면 슬라이드의 그림이 된다[^1].
+빈 나무에 20, 10, 40, 6, 15, 30, 2, 8, 25를 차례로 넣으면 아래 나무가 된다.
 
 ```mermaid
 flowchart TD
@@ -50,7 +50,7 @@ flowchart TD
     n30 -->|"왼쪽"| n25(("25"))
 ```
 
-자식이 둘이면 왼쪽 자식을 왼쪽에 그렸다. 자식이 하나뿐인 40과 30에는 어느 쪽 자식인지 적었다[^s2].
+자식이 둘이면 왼쪽 자식을 왼쪽에 그렸다. 자식이 하나뿐인 40과 30에는 어느 쪽 자식인지 적었다.
 
 어느 노드를 잡아도, 그 왼쪽 아래에 달린 값은 모두 더 작고 오른쪽 아래에 달린 값은 모두 더 크다. 20의 왼쪽 아래(10, 6, 15, 2, 8)는 모두 20보다 작고, 오른쪽 아래(40, 30, 25)는 모두 20보다 크다. 그래서 값을 찾을 때 한쪽은 통째로 안 봐도 된다.
 
@@ -72,14 +72,14 @@ flowchart TD
 28을 찾다가 멈춘 자리(25의 오른쪽)가 바로 28을 넣을 자리다. 찾기가 실패한 곳과 넣을 곳이 같다는 것이 넣기 코드의 뼈대다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 슬라이드 트리의 모양과 위 두 표, 찾기·넣기가 들르는 노드 수가 높이 + 1 이하인 것, 무작위 연산 3,000묶음에서 중위 순회가 정렬된 집합 모형과 같은 것, malloc 횟수 = free 횟수를 확인했다 — [30_bst-search-insert_impl.c](/Hongs_Blog/studies/data-structures/code/30_bst-search-insert_impl/)</div>
+<div class="callout-title" markdown="span">검증: 컴파일해 실행(ASan·UBSan). 예시 나무의 모양과 위 두 표, 찾기·넣기가 들르는 노드 수가 높이 + 1 이하인 것, 무작위 연산 3,000묶음에서 중위 순회가 정렬된 집합 모형과 같은 것, malloc 횟수 = free 횟수를 확인했다 — [30_bst-search-insert_impl.c](/Hongs_Blog/studies/data-structures/code/30_bst-search-insert_impl/)</div>
 
 </div>
 
 
 ## 정의
 
-이진 탐색 트리는 다음 넷을 지키는 [이진 트리](/Hongs_Blog/studies/data-structures/binary-tree/)다[^1].
+이진 탐색 트리는 다음 넷을 지키는 [이진 트리](/Hongs_Blog/studies/data-structures/binary-tree/)다.
 
 1. 노드마다 (키, 값) 쌍을 하나 가진다.
 2. 키는 모두 다르다.
@@ -93,16 +93,16 @@ $$\forall y \in L(x):\ \text{key}(y) < \text{key}(x), \qquad \forall z \in R(x):
 
 $$\forall$$은 "모든"으로 읽는다. 조건이 바로 아래 자식 하나가 아니라 부분 트리 **전체**에 걸려 있다는 점이 중요하다(아래 오해).
 
-연산은 넷이다: 비었는지 묻기 `IsEmpty()`, 찾기 `Search(key)`, 넣기 `Insert(key, value)`, 지우기 `Delete(key)`[^6]. 이 넷을 가진 것을 사전이라 부르고, 무엇을 하는지만 정한 이런 목록이 [추상 자료형](/Hongs_Blog/studies/data-structures/abstract-data-type/)이다. 지우기는 [이진 탐색 트리의 삭제](/Hongs_Blog/studies/data-structures/bst-delete/)에서 다룬다.
+연산은 넷이다: 비었는지 묻기 `IsEmpty()`, 찾기 `Search(key)`, 넣기 `Insert(key, value)`, 지우기 `Delete(key)`. 이 넷을 가진 것을 사전이라 부르고, 무엇을 하는지만 정한 이런 목록이 [추상 자료형](/Hongs_Blog/studies/data-structures/abstract-data-type/)이다. 지우기는 [이진 탐색 트리의 삭제](/Hongs_Blog/studies/data-structures/bst-delete/)에서 다룬다.
 
 **같은 키를 어떻게 다루나.** 자료마다 정의가 다르다.
 
 | 자료 | 같은 키 | 오른쪽 부분 트리의 조건 | 이미 있는 키를 또 넣으면 |
 |---|---|---|---|
-| 이 강의(9주차 p.6) | 없다. 키는 모두 다르다 | 모두 더 **크다** | 아무 일도 하지 않는다 |
+| 이 문서 | 없다. 키는 모두 다르다 | 모두 더 **크다** | 아무 일도 하지 않는다 |
 | [트리 순회와 이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/) | 있어도 된다 | **크거나 같다** | 오른쪽으로 내려가 노드가 하나 더 생긴다 |
 
-이 문서와 코드는 강의 쪽 정의를 쓴다. 두 정의에서 달라지는 것은 중위 순회 결과다. 강의 쪽은 늘 커지기만 하고, 알고리즘 문서 쪽은 같은 값이 나란히 나올 수 있다.
+이 문서와 코드는 첫 줄의 정의를 쓴다. 두 정의에서 달라지는 것은 중위 순회 결과다. 이 문서 쪽은 늘 커지기만 하고, 알고리즘 문서 쪽은 같은 값이 나란히 나올 수 있다.
 
 ## 코드
 
@@ -116,7 +116,7 @@ typedef struct node {
 } node;
 ```
 
-**찾기: 재귀 판과 반복 판.** 둘은 같은 길을 내려간다[^2].
+**찾기: 재귀 판과 반복 판.** 둘은 같은 길을 내려간다.
 
 ```c
 treePointer search(treePointer t, int x)          /* 재귀 판 */
@@ -138,15 +138,8 @@ treePointer iterSearch(treePointer t, int x)      /* 반복 판 */
 }
 ```
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
 
-원문: 슬라이드 p.8의 반복 판은 머리가 `tree_pointer search(tree_pointer t, x: integer)`인데 본문은 `tree`, `key`, `data`, `left_child`를 쓴다. / 문제점: 매개변수 이름(`t`, `x`)과 본문 이름이 달라 컴파일되지 않는다. `x: integer`는 C 문법이 아니다. p.7의 재귀 판도 `x: integer`, `then`이 섞인 의사코드다. / 수정안: 위 코드처럼 이름을 `t`, `x`, `key`, `leftChild`, `rightChild`로 맞춘다. / 근거: p.8을 그대로 옮겨 컴파일하면 `use of undeclared identifier 'tree'` 오류가 난다.
-
-</div>
-
-
-**넣기.** 먼저 넣을 자리의 부모를 찾는다. `modifiedSearch`는 찾기와 똑같이 내려가되, 마지막으로 들른 노드를 기억해 돌려준다. 키가 이미 있거나 나무가 비었으면 `NULL`을 돌려준다[^3].
+**넣기.** 먼저 넣을 자리의 부모를 찾는다. `modifiedSearch`는 찾기와 똑같이 내려가되, 마지막으로 들른 노드를 기억해 돌려준다. 키가 이미 있거나 나무가 비었으면 `NULL`을 돌려준다.
 
 ```c
 treePointer modifiedSearch(treePointer t, int x)
@@ -177,22 +170,15 @@ int insertNode(treePointer *root, int x)       /* 넣었으면 1, 이미 있으�
 
 `root`가 포인터의 주소(`treePointer *`)인 까닭은 빈 나무에 첫 노드를 넣을 때 부른 쪽의 뿌리 변수 자체를 바꿔야 해서다([포인터 인자와 값 전달](/Hongs_Blog/studies/data-structures/pointer-parameters/)). 다 쓴 나무는 노드마다 `free`로 풀어 준다([동적 메모리 할당](/Hongs_Blog/studies/data-structures/dynamic-memory-allocation/)).
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.9 `void insert_node(tree_pointer *node, int num)` 안의 `ptr = (tree_pointer)malloc(sizeof(node));`, `if(IS_FULL)ptr)) {`, `exit(1)`. / 문제점: 여기서 `node`는 구조체 이름이 아니라 매개변수(포인터의 주소)다. 그래서 `sizeof(node)`는 포인터 크기 8바이트이고, 노드 구조체(키 하나와 포인터 둘, 24바이트)보다 작게 잡는다. 그 뒤 `ptr->left_child`에 쓰면 잡은 곳 밖을 건드린다. 괄호가 뒤집힌 `IS_FULL)ptr))`, 세미콜론 없는 `exit(1)`, 빠진 닫는 중괄호도 있다. `modified_search`의 본문은 슬라이드에 없다. / 수정안: `malloc(sizeof(*ptr))`로 노드 하나 크기를 잡고 문법을 바로잡는다. / 근거: 문법만 고치고 `sizeof(node)`를 둔 채 ASan으로 돌리면 `heap-buffer-overflow`(8바이트 영역에 쓰기)가 난다.
-
-</div>
-
 
 ## 넣기가 높이만큼만 걸리는 까닭
 
-슬라이드는 "넣기의 복잡도는 O(높이)다. (왜??)"라고 묻는다[^4]. 답은 넣기가 하는 일이 둘뿐이기 때문이다.
+넣기의 복잡도는 $$O(\text{높이})$$다. 넣기가 하는 일이 둘뿐이기 때문이다.
 
 1. **자리 찾기.** `modifiedSearch`는 뿌리에서 한 층에 노드 하나씩만 들르며 내려간다. 옆으로 가거나 되돌아가지 않는다. 그래서 들르는 노드는 많아야 "높이 + 1"개다.
 2. **매달기.** 새 노드를 만들어 부모의 포인터 한 칸에 적는다. 나무 크기와 상관없이 몇 줄이면 끝난다.
 
-여기서 높이는 뿌리에서 가장 먼 잎까지의 간선 수다. 강의는 층 수로 세어 1이 더 크다(노드 하나짜리 나무가 볼트 표기로는 0, 강의 표기로는 1). 위 그림의 나무는 높이 3이고, 찾기든 넣기든 노드를 4개까지만 본다.
+여기서 높이는 뿌리에서 가장 먼 잎까지의 간선 수다. 층 수로 세는 자료에서는 1이 더 크다(노드 하나짜리 나무가 이 문서 모음의 표기로는 0, 층 수로는 1). 위 그림의 나무는 높이 3이고, 찾기든 넣기든 노드를 4개까지만 본다.
 
 그러면 높이는 얼마나 되나. 노드가 $$n$$개일 때 높이 $$h$$는 넣는 순서에 따라 달라진다[^s1].
 
@@ -204,11 +190,11 @@ $$\lfloor\ \rfloor$$는 소수점 아래를 버린다는 표시이고, $$\lg$$�
 - 1, 2, …, 1,000을 이 순서로 넣으면 새 값이 늘 가장 커서 오른쪽으로만 내려간다. 높이가 999가 되고, 1,000을 찾으려면 노드 1,000개를 다 본다. 넣는 동안 들른 노드를 모두 더하면 $$0 + 1 + \dots + 999 = 499{,}500$$개다.
 - 1부터 1,023까지를 가운데 값(512)부터 넣으면 높이가 9다. 어떤 값이든 10개만 보면 찾는다.
 
-그래서 슬라이드는 찾기를 "O(높이) = O(n)"이라고 적는다[^4]. 높이가 가장 나쁠 때 $$n - 1$$이라는 뜻이다. $$O$$는 "많아야 그 정도로 자란다"는 표기다([점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/)).
+그래서 찾기를 $$O(\text{높이}) = O(n)$$이라고 적기도 한다. 높이가 가장 나쁠 때 $$n - 1$$이라는 뜻이다. $$O$$는 "많아야 그 정도로 자란다"는 표기다([점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/)).
 
 ## 활용
 
-- **사전 연산의 비용.** 슬라이드의 표다. $$n$$은 들어 있는 원소 수다[^5].
+- **사전 연산의 비용.** $$n$$은 들어 있는 원소 수다.
 
 | 자료구조 | 가장 나쁠 때 | 기대되는 값 |
 |---|---|---|
@@ -216,12 +202,12 @@ $$\lfloor\ \rfloor$$는 소수점 아래를 버린다는 표시이고, $$\lg$$�
 | 이진 탐색 트리 | $$O(n)$$ | $$O(\log n)$$ |
 | 균형 이진 탐색 트리 | $$O(\log n)$$ | $$O(\log n)$$ |
 
-이진 탐색 트리의 "기대되는 값"은 키가 뒤섞인 순서로 들어올 때의 평균이다[^s1]. 높이가 늘 $$\log n$$ 근처에 머물도록 넣을 때마다 모양을 고치는 나무가 균형 이진 탐색 트리인데, 이 강의에는 표의 이름으로만 나온다. 해시 테이블은 [해시 테이블의 홈 버킷과 충돌](/Hongs_Blog/studies/data-structures/hash-table-terms/)부터 다룬다.
+이진 탐색 트리의 "기대되는 값"은 키가 뒤섞인 순서로 들어올 때의 평균이다[^s1]. 높이가 늘 $$\log n$$ 근처에 머물도록 넣을 때마다 모양을 고치는 나무가 균형 이진 탐색 트리다. 이 문서 모음에서는 그 만드는 법을 다루지 않는다. 해시 테이블은 [해시 테이블의 홈 버킷과 충돌](/Hongs_Blog/studies/data-structures/hash-table-terms/)부터 다룬다.
 
-- **크기 순으로 모두 읽기.** 중위 순회(왼쪽 → 자기 → 오른쪽)를 하면 키가 작은 것부터 나온다. 노드마다 한 번씩 들르므로 $$O(n)$$이다. 슬라이드의 `Ascend()`가 이것이다[^4]. 해시 테이블은 이 일을 못 한다.
+- **크기 순으로 모두 읽기.** 중위 순회(왼쪽 → 자기 → 오른쪽)를 하면 키가 작은 것부터 나온다. 노드마다 한 번씩 들르므로 $$O(n)$$이다. `Ascend()` 연산이 이것이다. 해시 테이블은 이 일을 못 한다.
 - **쓰는 곳.** C++ 표준 라이브러리의 `std::map`과 `std::set`은 보통 균형 이진 탐색 트리로 만든다[^s1]. 키를 크기 순서로 훑거나 "어떤 값 이상인 가장 작은 키"를 물을 일이 있을 때 고른다.
-- **흔한 실수.** `malloc(sizeof(포인터))`로 노드보다 작게 잡는다(위 warning). 빈 나무일 때 뿌리를 바꾸지 않는다. 이미 정렬된 자료를 그대로 넣어 한 줄짜리 나무를 만든다.
-- 연습: [이진 탐색 트리 삽입·삭제 예제 사다리](/Hongs_Blog/studies/data-structures/bst-ladder/), [9주차 수업 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/)
+- **흔한 실수.** 노드를 잡을 때 `malloc(sizeof(포인터))`처럼 포인터 크기만큼만 잡는다. 포인터는 8바이트인데 노드는 키 하나와 포인터 둘로 24바이트라, `ptr->leftChild`에 쓰는 순간 잡은 곳 밖을 건드린다. 매개변수 이름이 `node`인 함수 안에서 `sizeof(node)`라고 쓰면 구조체가 아니라 그 매개변수(포인터)의 크기가 나와 이 실수가 생긴다. `malloc(sizeof(*ptr))`로 쓰면 이름과 상관없이 노드 하나 크기가 나온다[^s3]. 빈 나무일 때 뿌리를 바꾸지 않는다. 이미 정렬된 자료를 그대로 넣어 한 줄짜리 나무를 만든다.
+- 연습: [이진 탐색 트리 삽입·삭제 예제 사다리](/Hongs_Blog/studies/data-structures/bst-ladder/), [트리와 힙 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/)
 
 ## 연결
 
@@ -240,14 +226,7 @@ $$\lfloor\ \rfloor$$는 소수점 아래를 버린다는 표시이고, $$\lg$$�
 </div>
 
 
-수업 문제 풀이의 초안이 이 방식(자식 둘하고만 비교)이었고, 수정본에서 범위를 넘기는 방식으로 바뀌었다[^7]. 풀이 전체는 [9주차 수업 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/)에 있다.
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 수업 문제 슬라이드 15의 `return isBSTNode(root, -32768, 32767);` / 문제점: 범위의 양 끝을 16비트 정수의 끝 값으로 넘긴다. 키가 `int`라서 그 밖의 값도 들어온다. 10의 오른쪽 자식이 40000인 올바른 나무에 0(아니다)을 돌려준다. / 수정안: "끝이 없다"를 따로 나타낸다. 범위의 끝을 포인터로 넘기고 `NULL`이면 그쪽 끝이 없다고 본다. / 근거: 두 판을 같은 나무에 돌리면 슬라이드 판은 0, 고친 판은 1이 나온다 — [30_week9-inclass_p2.c](/Hongs_Blog/studies/data-structures/code/30_week9-inclass_p2/)
-
-</div>
+범위를 넘기며 확인할 때는 처음 범위를 잡는 법도 조심한다. 양 끝을 `-32768`과 `32767`처럼 정해 둔 수로 넘기면, 키가 `int`라서 그 밖의 값도 들어와 틀린다. 10의 오른쪽 자식이 40000인 올바른 나무를 "아니다"라고 판정한다. 처음에는 "끝이 없다"를 따로 나타내야 한다. 범위의 끝을 포인터로 넘기고 `NULL`이면 그쪽 끝이 없다고 보면 된다. 풀이 전체는 [트리와 힙 문제 풀이](/Hongs_Blog/studies/data-structures/week9-inclass/)에 있다.
 
 
 ## 확인 문제
@@ -280,21 +259,14 @@ $$\lfloor\ \rfloor$$는 소수점 아래를 버린다는 표시이고, $$\lg$$�
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C4** 이미 20이 든 나무에 20을 또 넣는다. 이 강의의 정의와 [트리 순회와 이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/)의 정의에서 각각 어떻게 되는가? 중위 순회 결과는 어떻게 다른가?</summary>
+<summary class="callout-title" markdown="span">**C4** 이미 20이 든 나무에 20을 또 넣는다. 이 문서의 정의와 [트리 순회와 이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/)의 정의에서 각각 어떻게 되는가? 중위 순회 결과는 어떻게 다른가?</summary>
 
-**답:** 강의의 정의는 키가 모두 달라야 하므로 넣지 않는다(`insertNode`가 0을 돌려준다). 알고리즘 문서의 정의는 오른쪽 부분 트리가 "크거나 같다"이므로 오른쪽으로 내려가 20이 하나 더 생긴다. 중위 순회는 앞쪽이 늘 커지기만 하고, 뒤쪽은 20이 두 번 나란히 나온다.<br>
-**이유:** 정의가 "더 크다"인지 "크거나 같다"인지에 따라 같은 키가 갈 방향이 정해진다. 시험 답안은 수업에서 쓴 정의를 따른다.
+**답:** 이 문서의 정의는 키가 모두 달라야 하므로 넣지 않는다(`insertNode`가 0을 돌려준다). 알고리즘 문서의 정의는 오른쪽 부분 트리가 "크거나 같다"이므로 오른쪽으로 내려가 20이 하나 더 생긴다. 중위 순회는 앞쪽이 늘 커지기만 하고, 뒤쪽은 20이 두 번 나란히 나온다.<br>
+**이유:** 정의가 "더 크다"인지 "크거나 같다"인지에 따라 같은 키가 갈 방향이 정해진다. 답을 쓸 때는 그 자료가 쓰는 정의를 따른다.
 
 </details>
 
 
-[^1]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_BST_2024」, p.6 (이진 탐색 트리의 정의 네 줄과 그림)
-[^2]: 같은 자료, p.7~8 (찾기의 재귀 판과 반복 판)
-[^3]: 같은 자료, p.9 (넣기 코드)
-[^4]: 같은 자료, p.10 (Ascend는 O(n), Search는 O(height) = O(n), Insert는 O(height) "(why??)")
-[^5]: 같은 자료, p.5 (사전 연산의 복잡도 표)
-[^6]: 같은 자료, p.3~4 (위키백과의 정의와 특징, 연산 목록)
-[^7]: 자료구조 9회 강의 자료 「DS_Week9_Lecture_2024 (BST, Heap 수정)」, 슬라이드 12~16 (이진 탐색 트리 판별 문제와 풀이)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 배열·연결 리스트와 견준 도입, 두 추적 표, `modifiedSearch`의 본문, "까닭"의 두 단계, 높이의 범위와 수치 실험(높이 999와 9, 합 499,500), "기대되는 값"의 뜻, `std::map` 한 줄, 해시 테이블은 크기 순으로 읽지 못한다는 한 줄, 오해 항목의 반례, 카드 넷은 원본에 없다. 슬라이드 p.9는 `modified_search`를 부르기만 하고 본문을 싣지 않아, "이미 있거나 비었으면 NULL, 아니면 마지막으로 들른 노드"라는 쓰임새에 맞춰 썼다. 수치와 반례는 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램은 슬라이드 p.6의 그림을 옮겨 그린 것이다.
+[^s1]: 수치와 반례는 구현 코드로 확인했다.
+[^s3]: 문법만 고치고 그 줄을 둔 채 ASan으로 돌리면 `heap-buffer-overflow`(8바이트 영역에 쓰기)가 난다.
 {% endraw %}

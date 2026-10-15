@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Quaternion", "사원수", "해밀턴 곱", "Hamilton Product", "단위 쿼터니언", "Unit Quaternion", "켤레 쿼터니언", "Quaternion Conjugate"]
 description: "복소수 하나(\\cos\\theta + i\\sin\\theta)를 곱하면 평면에서 회전하듯, 숫자 네 개짜리 쿼터니언 하나로 3차원 회전을 나타낸다. 회전 축과 각을 그대로 담아 짐벌 잠금이 없고, 두 자세 사이를 공 표면을 따라 매끄럽게 이어 갈 수 있다. 대신 오일러 각보다 숫자를 …"
@@ -46,24 +46,24 @@ $$z$$축을 중심으로 90° 돌리는 쿼터니언은 $$q = \cos45° + k\sin45
 
 ## 정의
 
-**쿼터니언**은 해밀턴이 복소수를 넓혀 만든 수로, 곱셈의 교환법칙이 통하지 않는다. 숫자 네 개 $$w + xi + yj + zk$$이고, $$i, j, k$$는 다음 규칙을 따르는 특별한 허수다[^1].
+**쿼터니언**은 해밀턴이 복소수를 넓혀 만든 수로, 곱셈의 교환법칙이 통하지 않는다. 숫자 네 개 $$w + xi + yj + zk$$이고, $$i, j, k$$는 다음 규칙을 따르는 특별한 허수다.
 
 $$i^2 = j^2 = k^2 = -1, \qquad ij = -ji = k, \quad jk = -kj = i, \quad ki = -ik = j$$
 
 
 $$ij = k$$인데 $$ji = -k$$라 곱하는 순서가 중요하다. 이 규칙으로 두 쿼터니언을 분배해 곱한다(해밀턴 곱).
 
-**회전.** 3차원의 어떤 회전이든 쿼터니언 $$(w, x, y, z)$$로 나타낼 수 있다[^2]. 단위 벡터 $$\mathbf n$$을 축으로 $$\theta$$만큼 도는 회전은 다음 쿼터니언이다. 길이가 1이라 단위 쿼터니언이라 부른다.
+**회전.** 3차원의 어떤 회전이든 쿼터니언 $$(w, x, y, z)$$로 나타낼 수 있다. 단위 벡터 $$\mathbf n$$을 축으로 $$\theta$$만큼 도는 회전은 다음 쿼터니언이다. 길이가 1이라 단위 쿼터니언이라 부른다.
 
 $$q = \left(\cos\frac\theta2,\ \sin\frac\theta2\,\mathbf n\right)$$
 
 
-축마다 쓰면 $$q_x = (\cos\frac\alpha2, \sin\frac\alpha2, 0, 0)$$, $$q_y = (\cos\frac\beta2, 0, \sin\frac\beta2, 0)$$, $$q_z = (\cos\frac\gamma2, 0, 0, \sin\frac\gamma2)$$다[^2]. 점 $$\mathbf v$$는 $$(0, \mathbf v)$$로 두고 $$q$$와 켤레 $$\bar q = (w, -x, -y, -z)$$로 감싸 돌린다[^s1].
+축마다 쓰면 $$q_x = (\cos\frac\alpha2, \sin\frac\alpha2, 0, 0)$$, $$q_y = (\cos\frac\beta2, 0, \sin\frac\beta2, 0)$$, $$q_z = (\cos\frac\gamma2, 0, 0, \sin\frac\gamma2)$$다. 점 $$\mathbf v$$는 $$(0, \mathbf v)$$로 두고 $$q$$와 켤레 $$\bar q = (w, -x, -y, -z)$$로 감싸 돌린다[^s1].
 
 $$\mathbf v' = q\,\mathbf v\,\bar q$$
 
 
-오일러 각은 기본 회전 쿼터니언을 곱한다: $$q = q_xq_yq_z$$는 $$X' = R_xR_yR_zX$$와 같다[^2]. 쿼터니언을 회전 행렬로 바꾸는 식은 다음과 같다[^3].
+오일러 각은 기본 회전 쿼터니언을 곱한다: $$q = q_xq_yq_z$$는 $$X' = R_xR_yR_zX$$와 같다. 쿼터니언을 회전 행렬로 바꾸는 식은 다음과 같다.
 
 $$R_q = \begin{pmatrix}1 - 2y^2 - 2z^2 & 2xy - 2wz & 2xz + 2wy\\ 2xy + 2wz & 1 - 2x^2 - 2z^2 & 2yz - 2wx\\ 2xz - 2wy & 2yz + 2wx & 1 - 2x^2 - 2y^2\end{pmatrix}$$
 
@@ -79,9 +79,9 @@ flowchart LR
     M -->|"행렬 곱"| V
 ```
 
-세 표현은 모두 같은 회전을 적는다. 화살표는 이 문서와 앞 두 문서가 주는 바꾸기 공식이고, 어느 길로 가도 같은 점 $$\mathbf v'$$에 닿는다[^s2].
+세 표현은 모두 같은 회전을 적는다. 화살표는 이 문서와 앞 두 문서가 주는 바꾸기 공식이고, 어느 길로 가도 같은 점 $$\mathbf v'$$에 닿는다.
 
-**보간.** 단위 쿼터니언은 4차원 단위 구 위의 점이다. 두 회전 사이를 보간하는 것은 구 위의 두 점 사이를 잇는 것이다. 한 경로가 정해지고, 오일러 각보다 예측 가능하고 안정적이다[^3]. 구 위를 일정한 빠르기로 잇는 방법은 [구면 선형 보간](/Hongs_Blog/studies/numerical-analysis/slerp/)이다.
+**보간.** 단위 쿼터니언은 4차원 단위 구 위의 점이다. 두 회전 사이를 보간하는 것은 구 위의 두 점 사이를 잇는 것이다. 한 경로가 정해지고, 오일러 각보다 예측 가능하고 안정적이다. 구 위를 일정한 빠르기로 잇는 방법은 [구면 선형 보간](/Hongs_Blog/studies/numerical-analysis/slerp/)이다.
 
 ### 스스로 설명해 보기
 
@@ -141,7 +141,7 @@ $$q\mathbf v\bar q = q_x\big(q_y(q_z\mathbf v\bar q_z)\bar q_y\big)\bar q_x$$이
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"쿼터니언 $$q$$와 회전은 일대일로 짝지어진다"</div>
 
-틀렸다. $$q$$와 $$-q$$는 같은 회전이다. 슬라이드의 "두 회전 사이의 유일한 경로"라는 말 때문에 쿼터니언도 하나뿐이라고 생각하기 쉽다. 실제로는 한 회전에 쿼터니언이 둘씩 있다. 그래서 두 쿼터니언을 보간할 때 내적이 음수이면 한쪽 부호를 뒤집어 짧은 쪽 길로 간다. 검증 코드에서 무작위 300개 모두 $$q$$와 $$-q$$가 같은 결과를 냈다.
+틀렸다. $$q$$와 $$-q$$는 같은 회전이다. 보간할 때 "두 회전 사이에 경로가 하나로 정해진다"는 말 때문에 쿼터니언도 하나뿐이라고 생각하기 쉽다. 실제로는 한 회전에 쿼터니언이 둘씩 있다. 그래서 두 쿼터니언을 보간할 때 내적이 음수이면 한쪽 부호를 뒤집어 짧은 쪽 길로 간다. 검증 코드에서 무작위 300개 모두 $$q$$와 $$-q$$가 같은 결과를 냈다.
 
 </div>
 
@@ -180,9 +180,5 @@ $$q\mathbf v\bar q = q_x\big(q_y(q_z\mathbf v\bar q_z)\bar q_y\big)\bar q_x$$이
 </details>
 
 
-[^1]: 수치해석 6회 강의 자료 「na06_rotation」, p.24~25
-[^2]: 같은 자료, p.26
-[^3]: 같은 자료, p.27
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 예시, 단위 벡터 축-각 공식과 $$q\mathbf v\bar q$$(슬라이드는 축별 쿼터니언과 행렬만 적는다), 스스로 설명해 보기, 게임 엔진·자세 제어, 정규화, 흔한 실수, 오해, 카드 C2~C4는 원본에 없다. 검증 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 '정의'의 축-각 쿼터니언, $$q = q_xq_yq_z$$, $$R_q$$ 공식(원본 06.na06_rotation.pdf p.26~27)과 [임의 축 회전](/Hongs_Blog/studies/numerical-analysis/axis-rotation/)의 로드리게스 공식, [오일러 각과 짐벌 잠금](/Hongs_Blog/studies/numerical-analysis/euler-angles/)의 행렬 곱으로 그렸다.
+[^s1]: 검증 코드로 확인했다.
 {% endraw %}

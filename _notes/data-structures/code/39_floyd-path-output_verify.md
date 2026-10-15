@@ -23,13 +23,12 @@ permalink: "/studies/data-structures/code/39_floyd-path-output_verify/"
 """플로이드 알고리즘의 경로 출력 검증.
 
 문서: 1-2학기/자료구조/3.개념집/39.플로이드 알고리즘의 경로 출력.md
-출처: 자료구조 12주차 슬라이드 p.61~70. 전수 비교는 에이전트 보충.
 실행: python3 39_floyd-path-output_verify.py
 정점 번호는 1부터다. C 구현(39_floyd-path-output_impl.c)과 같은 알고리즘을 다시 짜서 넓게 확인한다.
 
 확인하는 것
-  1. 슬라이드의 정점 8개 그래프: 비용 표, kay 표, 1에서 7로 가는 길 1 4 2 5 8 6 7(길이 14)과
-     슬라이드 p.66~69가 읽는 kay 값 일곱 개. 3에서 1로 가는 길 3 6 7 1(길이 12, 부른 횟수 5).
+  1. 문서 예시의 정점 8개 그래프: 비용 표, kay 표, 1에서 7로 가는 길 1 4 2 5 8 6 7(길이 14)과
+     문서의 되짚기 표가 읽는 kay 값 일곱 개. 3에서 1로 가는 길 3 6 7 1(길이 12, 부른 횟수 5).
   2. 무작위 방향 그래프 400개(정점 2~7, 비용 0 이상)와 음수 간선이 섞인 400개(음수 사이클 없음)의 모든 쌍에서
      - 되짚은 길의 간선이 모두 그래프에 있고, 비용의 합이 c(i, j)다.
      - c(i, j) = 같은 정점을 두 번 지나지 않는 모든 길의 최솟값(전수).
@@ -88,7 +87,7 @@ def floyd_with_kay(n, cost0):
 
 
 def output_path(kay, i, j, out, calls):
-    """슬라이드 p.70. 첫 정점 i는 적지 않는다."""
+    """문서의 outputPath. 첫 정점 i는 적지 않는다."""
     calls[0] += 1
     if i == j:
         return
@@ -156,7 +155,7 @@ def check_all_pairs(n, cost0, c, kay):
 
 
 def main():
-    # 1. 슬라이드 그래프
+    # 1. 문서 예시의 그래프
     cost0 = to_cost0(8, SLIDE)
     c, kay = floyd_with_kay(8, cost0)
     for i in range(1, 9):
@@ -176,7 +175,7 @@ def main():
     edges = sum(1 for i in range(1, 9) for j in range(1, 9) if i != j and cost0[i][j] < INF)
     assert edges == 16
     check_all_pairs(8, cost0, c, kay)
-    print("[OK] 슬라이드 그래프: 비용 표, kay 표, 길 1 4 2 5 8 6 7(길이 14, 부른 횟수 11), 64쌍 전수")
+    print("[OK] 예시 그래프: 비용 표, kay 표, 길 1 4 2 5 8 6 7(길이 14, 부른 횟수 11), 64쌍 전수")
 
     # 2. 무작위
     rng = random.Random(20261012)

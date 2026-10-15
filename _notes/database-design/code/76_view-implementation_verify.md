@@ -23,22 +23,21 @@ permalink: "/studies/database-design/code/76_view-implementation_verify/"
 """질의 수정과 뷰 실체화 검증 (SQLite). PostgreSQL의 실체화된 뷰는 76_view-implementation_verify.sql.
 
 문서: 76.질의 수정과 뷰 실체화
-출처: 13주차 슬라이드 13-View p.8~13
 주장:
-  1. 질의 수정(p.10): 뷰에 던진 질의와, 뷰 정의를 풀어 기본 테이블에 던진 질의는 답이 같다.
+  1. 질의 수정: 뷰에 던진 질의와, 뷰 정의를 풀어 기본 테이블에 던진 질의는 답이 같다.
      SQLite의 실행 계획도 두 질의가 글자까지 같다(뷰 이름이 계획에 안 나온다).
-  2. 뷰 실체화(p.11): 뷰의 답을 표로 떠 두면 저장 자리를 차지하고, 같은 질의에 같은 답을 낸다.
+  2. 뷰 실체화: 뷰의 답을 표로 떠 두면 저장 자리를 차지하고, 같은 질의에 같은 답을 낸다.
      떠 둔 뒤 기본 테이블이 바뀌면 그 표는 옛 답을 낸다. 다시 맞춰야 한다.
-  3. 점진적 갱신(p.12): 바뀐 행 하나에서 고칠 곳만 고친 결과가 처음부터 다시 계산한 결과와 같다.
+  3. 점진적 갱신: 바뀐 행 하나에서 고칠 곳만 고친 결과가 처음부터 다시 계산한 결과와 같다.
      무작위 삽입·삭제·수정 300번 동안 한 번도 어긋나지 않는다.
-  4. 세 갱신 시점(p.13): 같은 사건 열에서 즉시 갱신은 고치기 8번·낡은 답 0번, 지연 갱신은 3번·0번,
+  4. 세 갱신 시점: 같은 사건 열에서 즉시 갱신은 고치기 8번·낡은 답 0번, 지연 갱신은 3번·0번,
      주기 갱신(여섯 사건마다)은 2번·낡은 답 2번이다.
 실행: python3 76_view-implementation_verify.py
 """
 import random
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -187,7 +186,7 @@ def main():
     assert sorted(q(c, ON_VIEW)) == sorted(q(c, ON_BASE)) == [("John", "Smith"), ("Joyce", "English")]
     assert plan(c, ON_VIEW) == plan(c, ON_BASE)
     assert not any("WORKS_ON1" in line for line in plan(c, ON_VIEW))
-    print("[OK] p.10: 뷰 질의와 풀어 쓴 질의의 답이 같고, SQLite 실행 계획도 같다:", plan(c, ON_VIEW))
+    print("[OK] 질의 수정: 뷰 질의와 풀어 쓴 질의의 답이 같고, SQLite 실행 계획도 같다:", plan(c, ON_VIEW))
 
     fails(c, "CREATE MATERIALIZED VIEW WORKS_ON1_MV AS SELECT * FROM WORKS_ON1", "syntax error")   # SQLite에는 이 문장이 없다
 
@@ -197,20 +196,20 @@ def main():
     assert root["WORKS_ON1"] == 0 and root["WORKS_ON1_M"] > 0
     assert sorted(q(c, "SELECT Fname, Lname FROM WORKS_ON1_M WHERE Pname = 'ProductX'")) == sorted(q(c, ON_VIEW))
     assert plan(c, "SELECT Fname, Lname FROM WORKS_ON1_M WHERE Pname = 'ProductX'") == ["SCAN WORKS_ON1_M"]
-    print("[OK] p.11: 떠 둔 표는 저장 자리를 차지하고(16행), 같은 질의를 조인 없이 표 하나만 훑어 답한다")
+    print("[OK] 실체화: 떠 둔 표는 저장 자리를 차지하고(16행), 같은 질의를 조인 없이 표 하나만 훑어 답한다")
 
     c.execute("INSERT INTO WORKS_ON VALUES ('666884444', 1, 3.0)")          # Narayan이 ProductX에 3시간
     fresh = sorted(q(c, ON_VIEW))
     old = sorted(q(c, "SELECT Fname, Lname FROM WORKS_ON1_M WHERE Pname = 'ProductX'"))
     assert fresh == [("John", "Smith"), ("Joyce", "English"), ("Ramesh", "Narayan")] and len(old) == 2
-    print("[OK] p.11: 기본 테이블에 한 행을 넣으면 뷰는 3명, 떠 둔 표는 여전히 2명(낡은 답)")
+    print("[OK] 실체화: 기본 테이블에 한 행을 넣으면 뷰는 3명, 떠 둔 표는 여전히 2명(낡은 답)")
 
     # 3. 점진적 갱신: 새 WORKS_ON 행 하나에서 생기는 뷰 행만 더한다
     c.execute("INSERT INTO WORKS_ON1_M SELECT Fname, Lname, Pname, Hours FROM EMPLOYEE, PROJECT, WORKS_ON "
               "WHERE Ssn = Essn AND Pno = Pnumber AND Essn = '666884444' AND Pno = 1")
     assert sorted(q(c, "SELECT * FROM WORKS_ON1_M"), key=str) == sorted(q(c, "SELECT * FROM WORKS_ON1"), key=str)
     assert q(c, "SELECT COUNT(*) FROM WORKS_ON1_M") == [(17,)]
-    print("[OK] p.12: 바뀐 행에서 생기는 뷰 행 1개만 더해도 처음부터 다시 만든 것(17행)과 같다")
+    print("[OK] 점진적 갱신: 바뀐 행에서 생기는 뷰 행 1개만 더해도 처음부터 다시 만든 것(17행)과 같다")
 
     # 집계 뷰의 점진적 갱신 + 즉시 갱신(트리거)
     t = make()
@@ -235,7 +234,7 @@ def main():
             t.execute("UPDATE EMPLOYEE SET Salary = ? WHERE Ssn = ?",
                       (rnd.randrange(20, 60) * 1000, rnd.choice(extra + [e[3] for e in EMP])))
         assert same(), "점진적 갱신이 다시 계산한 값과 어긋났다"
-    print("[OK] p.12~13: 트리거로 바뀐 부서의 한 줄만 고친 표가 무작위 변경 300번 내내 뷰와 같다 (즉시 갱신)")
+    print("[OK] 점진적 갱신: 트리거로 바뀐 부서의 한 줄만 고친 표가 무작위 변경 300번 내내 뷰와 같다 (즉시 갱신)")
 
     # 부서의 마지막 직원이 나가면 그 줄이 사라져야 한다 (경계 사례)
     b = make()
@@ -250,7 +249,7 @@ def main():
     events, out = strategies()
     assert events.count("U") == 8 and events.count("Q") == 4
     assert out == {"immediate": (8, 0), "lazy": (3, 0), "periodic": (2, 2)}, out
-    print("[OK] p.13: 사건 열", events, "-> (고친 횟수, 낡은 답)", out)
+    print("[OK] 세 갱신 시점: 사건 열", events, "-> (고친 횟수, 낡은 답)", out)
     ev2, out2 = strategies("UQUUQQU", 4)
     assert out2 == {"immediate": (4, 0), "lazy": (2, 0), "periodic": (1, 1)}, out2
     print("[OK] 카드 C2: 사건 열", ev2, "(주기 4) ->", out2)

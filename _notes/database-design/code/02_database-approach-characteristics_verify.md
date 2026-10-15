@@ -23,26 +23,26 @@ permalink: "/studies/database-design/code/02_database-approach-characteristics_v
 """데이터베이스 방식의 네 가지 특징 문서의 값 확인.
 
 문서: 02.데이터베이스 방식의 네 가지 특징
-출처: 데이터베이스 설계 2주차 슬라이드 2-1 p.5, p.8~11
+출처: Elmasri & Navathe, Fundamentals of Database Systems 1장의 UNIVERSITY 예 (그림 1.2, 1.3)
 주장:
-  1. (자기 기술) 표 다섯 개를 정의하면 DBMS의 카탈로그에서 p.8의 RELATIONS(표 이름, 열 수)와
+  1. (자기 기술) 표 다섯 개를 정의하면 DBMS의 카탈로그에서 문서의 RELATIONS(표 이름, 열 수)와
      COLUMNS(열 이름, 자료형, 속한 표)를 그대로 꺼낼 수 있다.
-  2. (프로그램과 데이터의 분리) p.9 자리표의 시작 자리 1, 31, 35, 36은 길이 30, 4, 1, 4를 차례로 더한 값이고
+  2. (프로그램과 데이터의 분리) 문서 예시 자리표의 시작 자리 1, 31, 35, 36은 길이 30, 4, 1, 4를 차례로 더한 값이고
      레코드 하나는 39글자다. 자리 번호를 코드에 박아 둔 프로그램은 레코드 끝에 생일 8글자가 붙으면
      둘째 학생부터 틀리게 읽는다. 자리표를 보고 읽는 프로그램과 DBMS에 이름으로 묻는 프로그램은 그대로 맞다.
-  3. (여러 뷰) p.10의 TRANSCRIPT 6줄과 COURSE_PREREQUISITES 3줄은 p.5의 저장된 표에서 뽑아낸 것이다.
+  3. (여러 뷰) 문서의 TRANSCRIPT 6줄과 COURSE_PREREQUISITES 3줄은 UNIVERSITY의 저장된 표에서 뽑아낸 것이다.
      뷰는 행을 따로 저장하지 않아서 바탕 표에 행을 넣으면 뷰에도 바로 보인다.
   4. (공유) 두 창구가 남은 자리 1개를 각자 읽고 각자 예약하면 한 자리에 2명이 예약된다.
      DBMS의 트랜잭션으로 묶으면 둘째 창구는 막혔다가 0을 읽고 예약하지 못한다.
-  5. p.8 카탈로그의 Course_name Character(10)에는 p.5의 과목 이름 넷 중 셋이 들어가지 않는다.
+  5. 문서 카탈로그의 Course_name Character(10)에는 COURSE 표의 과목 이름 넷 중 셋이 들어가지 않는다.
 실행: python3 02_database-approach-characteristics_verify.py
-SQLite를 DBMS의 한 예로 썼다. 생일 값과 항공편 KE001은 확인용으로 만든 값이다(슬라이드에 없다).
+SQLite를 DBMS의 한 예로 썼다. 생일 값과 항공편 KE001은 확인용으로 만든 값이다.
 """
 import os
 import sqlite3
 import tempfile
 
-# p.8의 COLUMNS 표에 보이는 자료형은 그대로 적었다(Character (30) -> CHARACTER(30)).
+# 문서의 COLUMNS 표에 보이는 자료형은 그대로 적었다(Character (30) -> CHARACTER(30)).
 # 점선으로 생략된 열의 자료형은 확인용으로 정한 것이다.
 DDL = """
 CREATE TABLE STUDENT (Name CHARACTER(30), Student_number CHARACTER(4), Class INTEGER(1), Major Major_type);
@@ -84,7 +84,7 @@ def build_university(conn):
 
 
 # ---------- 2. 파일을 직접 읽는 프로그램 ----------
-V1 = [("Name", 30), ("Student_number", 4), ("Class", 1), ("Major", 4)]           # p.9의 자리표
+V1 = [("Name", 30), ("Student_number", 4), ("Class", 1), ("Major", 4)]           # 문서 예시의 자리표
 V2 = V1 + [("Date_of_birth", 8)]                                                  # 생일 칸을 덧붙인 뒤
 
 
@@ -169,7 +169,7 @@ if __name__ == "__main__":
     conn = sqlite3.connect(":memory:")
     build_university(conn)
 
-    # ---- 1. 자기 기술: 카탈로그에서 p.8의 두 표를 꺼낸다 ----
+    # ---- 1. 자기 기술: 카탈로그에서 문서의 두 표를 꺼낸다 ----
     relations = conn.execute(
         """SELECT m.name, (SELECT COUNT(*) FROM pragma_table_info(m.name))
            FROM sqlite_master m WHERE m.type = 'table' ORDER BY m.rowid""").fetchall()
@@ -179,7 +179,7 @@ if __name__ == "__main__":
            FROM sqlite_master m, pragma_table_info(m.name) p
            WHERE m.type = 'table' ORDER BY m.rowid, p.cid""").fetchall()
     assert len(columns) == 18
-    # p.8 COLUMNS 표에 보이는 일곱 줄
+    # 문서의 COLUMNS 표에 보이는 일곱 줄
     assert columns[:6] == [("Name", "CHARACTER(30)", "STUDENT"), ("Student_number", "CHARACTER(4)", "STUDENT"),
                            ("Class", "INTEGER(1)", "STUDENT"), ("Major", "Major_type", "STUDENT"),
                            ("Course_name", "CHARACTER(10)", "COURSE"), ("Course_number", "XXXXNNNN", "COURSE")]
@@ -198,7 +198,7 @@ if __name__ == "__main__":
     assert letters == {"CS1310": 2, "CS3320": 2, "MATH2410": 4, "CS3380": 2}   # 글자 넷 + 숫자 넷은 MATH2410뿐
 
     # ---- 2. 프로그램과 데이터의 분리 ----
-    assert layout(V1) == [("Name", 1, 30), ("Student_number", 31, 4), ("Class", 35, 1), ("Major", 36, 4)]   # p.9
+    assert layout(V1) == [("Name", 1, 30), ("Student_number", 31, 4), ("Class", 35, 1), ("Major", 36, 4)]   # 문서 예시의 자리표
     assert sum(n for _, n in V1) == 39 and sum(n for _, n in V2) == 47
     students = [("Smith", "17", "1", "CS"), ("Brown", "8", "2", "CS")]
     file_v1 = write_file(V1, students)

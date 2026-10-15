@@ -10,7 +10,7 @@ course_slug: "algorithms"
 course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["String Parsing", "Regular Expression", "파싱", "정규식", "정규 표현식", "regex", "re", "split", "토큰"]
 description: "글을 읽을 때 띄어쓰기와 문장부호로 단어를 나누듯, 파싱은 긴 문자열을 규칙에 따라 뜻 있는 조각으로 나누는 일이다. 나누는 기호가 정해져 있으면 그 기호로 자르고, 조각의 길이가 들쭉날쭉하면 글자를 하나씩 읽으며 모은다. 모양이 복잡하면 정규 표현식이라는 \"모양 설명서\"로 한 번…"
@@ -140,9 +140,9 @@ re.sub(r"\.{2,}", ".", "a...b..c")    # 'a.b.c'  점이 두 개 이상 이어지
 
 ## 과목별 관점
 
-**컴파일러 (3-2학기).** 컴파일러의 첫 단계인 어휘 분석기가 하는 일이 이 문서의 파싱이다. 프로그램 글자 줄을 뜻 있는 조각으로 끊는다: [토큰과 렉심](/Hongs_Blog/studies/compilers/token-lexeme/). 강의가 더하는 것은 셋이다.
+**컴파일러 (3-2학기).** 컴파일러의 첫 단계인 어휘 분석기가 하는 일이 이 문서의 파싱이다. 프로그램 글자 줄을 뜻 있는 조각으로 끊는다: [토큰과 렉심](/Hongs_Blog/studies/compilers/token-lexeme/). 컴파일러 쪽이 더하는 것은 셋이다.
 
-- **편한 기호는 기본 다섯 식으로 풀린다.** 강의의 정규 표현식에는 다섯 가지만 있다. 빈 문자열 $$\epsilon$$, 글자 하나, 둘 중 하나 <code>&#124;</code>, 이어 쓰기, 0번 이상 `*`다. 이 다섯으로 적을 수 있어야 정규 표현식이라 부른다[^c1]. 위 표의 기호는 모두 이 다섯으로 풀어 쓸 수 있다[^cs1].
+- **편한 기호는 기본 다섯 식으로 풀린다.** 컴파일러에서 쓰는 기본 정규 표현식은 다섯 가지뿐이다. 빈 문자열 $$\epsilon$$, 글자 하나, 둘 중 하나 <code>&#124;</code>, 이어 쓰기, 0번 이상 `*`다. 이 다섯으로 적을 수 있어야 정규 표현식이라 부른다. 위 표의 기호는 모두 이 다섯으로 풀어 쓸 수 있다[^cs1].
 
 | 위 표의 기호 | 기본 식으로 |
 |---|---|
@@ -155,7 +155,7 @@ re.sub(r"\.{2,}", ".", "a...b..c")    # 'a.b.c'  점이 두 개 이상 이어지
 
 그래서 정규 표현식을 처리하는 프로그램은 다섯 가지만 다룰 줄 알면 된다: [정규 표현식](/Hongs_Blog/studies/compilers/regular-expression/).
 - **상태 그림이 곧 기계다.** 위의 상태 전이도 같은 그림을 유한 오토마타라 부른다. 정규 표현식을 이런 그림으로 바꾸고, 그림을 표로 바꿔 글자 하나에 표 한 칸만 읽게 하는 정해진 방법이 있다: [유한 오토마타](/Hongs_Blog/studies/compilers/finite-automata/), [톰슨 구성법](/Hongs_Blog/studies/compilers/thompson-construction/), [부분집합 구성법](/Hongs_Blog/studies/compilers/subset-construction/).
-- **가장 긴 것을 고르는 규칙이 다르다.** 어휘 분석기는 입력의 앞부분 가운데 토큰이 되는 가장 긴 것을 자른다[^c2]. 이 규칙은 [최장 일치와 토큰 인식](/Hongs_Blog/studies/compilers/longest-match-tokenizing/)에 있다. 파이썬 `re`의 <code>&#124;</code>는 그렇지 않다. 왼쪽에 적힌 것부터 맞춰 보고, 맞으면 더 긴 것이 있어도 그것을 고른다. <code>re.findall(r"a&#124;ab", "ab")</code>는 `['ab']`가 아니라 `['a']`다[^cs1]. `\d+`가 숫자 덩어리를 끝까지 가져가는 것은 `+`가 되는 데까지 되풀이하기 때문이고, <code>&#124;</code>에는 그런 성질이 없다.
+- **가장 긴 것을 고르는 규칙이 다르다.** 어휘 분석기는 입력의 앞부분 가운데 토큰이 되는 가장 긴 것을 자른다. 이 규칙은 [최장 일치와 토큰 인식](/Hongs_Blog/studies/compilers/longest-match-tokenizing/)에 있다. 파이썬 `re`의 <code>&#124;</code>는 그렇지 않다. 왼쪽에 적힌 것부터 맞춰 보고, 맞으면 더 긴 것이 있어도 그것을 고른다. <code>re.findall(r"a&#124;ab", "ab")</code>는 `['ab']`가 아니라 `['a']`다[^cs1]. `\d+`가 숫자 덩어리를 끝까지 가져가는 것은 `+`가 되는 데까지 되풀이하기 때문이고, <code>&#124;</code>에는 그런 성질이 없다.
 
 ## 확인 문제
 
@@ -196,8 +196,6 @@ re.sub(r"\.{2,}", ".", "a...b..c")    # 'a.b.c'  점이 두 개 이상 이어지
 
 
 [^1]: Python 3 표준 라이브러리 문서, "re — Regular expression operations"(기호와 `findall`, `sub`, `fullmatch`), 그리고 "Regular Expression HOWTO"(r 문자열을 쓰는 까닭, "The Backslash Plague" 절).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 방법 3의 정규 표현식 `(\d+)([SDT])([*#]?)`과 그 뜻풀이 문장을 상태 전이도로 옮겼다. 정규 표현식과 이런 상태 전이도(유한 오토마타)가 같은 것을 나타낸다는 것은 표준 결과다(Sipser, Introduction to the Theory of Computation, 1.3).
-[^c1]: 컴파일러 2회 강의 자료 「Lecture02 Lexical analysis part 1」, p.18~19 (기본 정규 표현식 다섯 가지, 기본 식만으로 적을 수 있을 때만 정규 표현식, $$a^+ = aa^*$$)
-[^c2]: 컴파일러 2회 강의 자료 「Lecture02 Lexical analysis part 1」, p.27 (입력의 앞부분 가운데 $$L(Merged)$$에 드는 가장 긴 것을 자르는 의사코드)
-[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드가 푼 것은 `+` 하나다. 나머지 다섯 줄, `re`의 <code>&#124;</code>가 왼쪽부터 맞춰 본다는 설명, 카드 C4는 슬라이드에 없다. 풀어 쓴 식이 같은 문자열을 받는 것은 [05_regular-expression_verify.py](/Hongs_Blog/studies/compilers/code/05_regular-expression_verify/)로, <code>a&#124;ab</code>와 <code>&lt;&#124;&lt;=</code>의 결과는 [10_longest-match-tokenizing_impl.py](/Hongs_Blog/studies/compilers/code/10_longest-match-tokenizing_impl/)로 확인했다. `re`의 동작은 Python 3 표준 라이브러리 문서 "re"의 <code>&#124;</code> 설명에 있다.
+[^s1]: 방법 3의 정규 표현식 `(\d+)([SDT])([*#]?)`과 그 뜻풀이 문장을 상태 전이도로 옮겼다. 정규 표현식과 이런 상태 전이도(유한 오토마타)가 같은 것을 나타낸다는 것은 표준 결과다(Sipser, Introduction to the Theory of Computation, 1.3).
+[^cs1]: 풀어 쓴 식이 같은 문자열을 받는 것은 [05_regular-expression_verify.py](/Hongs_Blog/studies/compilers/code/05_regular-expression_verify/)로, <code>a&#124;ab</code>와 <code>&lt;&#124;&lt;=</code>의 결과는 [10_longest-match-tokenizing_impl.py](/Hongs_Blog/studies/compilers/code/10_longest-match-tokenizing_impl/)로 확인했다. `re`의 동작은 Python 3 표준 라이브러리 문서 "re"의 <code>&#124;</code> 설명에 있다.
 {% endraw %}

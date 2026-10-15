@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["JVM", "Java Virtual Machine", "자바 가상 머신", "Bytecode", "바이트코드", "JDK", "Java Development Kit", "JRE", "Java Runtime Environment", "javac", "컴파일러", "Compiler", "인터프리터", "Interpreter", "클래스 로더", "Class Loader", "패키지", "Package"]
 description: "자바 프로그램은 컴퓨터가 바로 읽는 말로 번역되지 않는다. 먼저 어느 컴퓨터의 말도 아닌 중간 말로 한 번 번역해 두고, 실행할 때 각 컴퓨터에 깔린 통역 프로그램이 그 중간 말을 자기 컴퓨터의 말로 옮겨 가며 돌린다. 그래서 한 번 번역한 파일을 윈도우에서도 맥에서도 그대로 쓸 …"
@@ -34,7 +34,7 @@ permalink: "/studies/java/jvm-bytecode/"
 
 C로 짠 프로그램을 윈도우에서 번역(컴파일)하면 윈도우용 실행 파일이 나온다. 이 파일은 맥에서 돌지 않는다. 맥에서 쓰려면 맥에서 다시 번역해야 한다. 운영체제가 셋이면 번역도 세 번이다.
 
-자바는 번역을 두 번으로 나눠 이 문제를 피한다[^1]. 아래 파일 하나로 따라가 본다[^2].
+자바는 번역을 두 번으로 나눠 이 문제를 피한다. 아래 파일 하나로 따라가 본다.
 
 ```java
 package ch01.introduction;
@@ -46,7 +46,7 @@ public class Hello {
 }
 ```
 
-사람이 쓴 이 글을 소스 파일(`Hello.java`)이라 부른다. 터미널에서 두 명령을 차례로 친다[^3].
+사람이 쓴 이 글을 소스 파일(`Hello.java`)이라 부른다. 터미널에서 두 명령을 차례로 친다.
 
 ```
 javac -d bin src/ch01/introduction/Hello.java
@@ -84,9 +84,9 @@ flowchart TD
     D --> F["맥의 기계어로 옮겨 실행"]
 ```
 
-바이트코드 파일은 하나다. 갈라지는 것은 JVM이다. 운영체제마다 그 운영체제용 JVM이 따로 있고, 각 JVM이 같은 바이트코드를 자기 운영체제가 알아듣는 기계어로 옮긴다[^1][^s2]. 자바의 구호 "한 번 쓰면 어디서나 돈다(Write once, run anywhere)"가 이 뜻이다[^4].
+바이트코드 파일은 하나다. 갈라지는 것은 JVM이다. 운영체제마다 그 운영체제용 JVM이 따로 있고, 각 JVM이 같은 바이트코드를 자기 운영체제가 알아듣는 기계어로 옮긴다[^s2]. 자바의 구호 "한 번 쓰면 어디서나 돈다(Write once, run anywhere)"가 이 뜻이다.
 
-**번역하는 두 가지 방식.** 프로그램을 기계어로 바꾸는 방식은 원래 둘이다[^5].
+**번역하는 두 가지 방식.** 프로그램을 기계어로 바꾸는 방식은 원래 둘이다.
 
 | 방식 | 하는 일 | 자바에서 |
 |---|---|---|
@@ -95,24 +95,17 @@ flowchart TD
 
 자바는 둘을 이어 붙였다. 앞 단계에서 오류를 미리 잡고, 뒤 단계에서 컴퓨터마다 다른 부분을 맞춘다.
 
-**JVM 안에서 일어나는 일.** `java` 명령을 치면 JVM은 네 단계를 거친다[^1].
+**JVM 안에서 일어나는 일.** `java` 명령을 치면 JVM은 네 단계를 거친다.
 
 1. 클래스 로더(Class Loader)가 `.class` 파일을 찾아 메모리에 올린다.
 2. 바이트코드 검증기(Bytecode Verifier)가 올린 바이트코드가 규칙에 맞는지 확인한다.
 3. 실행 시스템(Java Runtime System)이 바이트코드를 실행한다.
 4. 그 과정에서 운영체제(Native OS)에 일을 맡긴다. 화면에 글자를 찍는 것도 결국 운영체제가 한다.
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 슬라이드 p.10 오른쪽 그림의 제목 "Bytecode File (\*.java)" / 문제점: 같은 쪽 왼쪽 그림과 p.11~12는 바이트코드 파일을 `*.class`로 적는다. `javac`가 만드는 파일의 확장자는 `.class`다. / 수정안: "Bytecode File (\*.class)" / 근거: JDK 21에서 `javac -d bin src/ch01/introduction/Hello.java`를 실행하면 `bin/ch01/introduction/Hello.class`가 생긴다.
-
-</div>
-
 
 ## JDK, JRE, JVM
 
-셋은 큰 것이 작은 것을 품는다[^6].
+셋은 큰 것이 작은 것을 품는다.
 
 ```
 +------------------------------------------+
@@ -128,11 +121,11 @@ flowchart TD
 
 - JVM: 바이트코드를 실행한다.
 - JRE(Java Runtime Environment): JVM에 실행할 때 쓰는 기본 라이브러리를 더한 것이다. 남이 만든 프로그램을 돌리기만 할 때 필요하다[^s2].
-- JDK(Java Development Kit): JRE에 `javac` 같은 개발 도구를 더한 것이다. 프로그램을 만들려면 이것이 필요하다. 수업에서는 무료로 공개된 OpenJDK를 쓴다[^6].
+- JDK(Java Development Kit): JRE에 `javac` 같은 개발 도구를 더한 것이다. 프로그램을 만들려면 이것이 필요하다. 무료로 공개된 JDK로 OpenJDK가 있다.
 
 ## 패키지와 폴더
 
-패키지는 관련된 클래스를 한 이름 아래 모으는 상자다. 이름이 겹치는 것을 막고 코드를 정리하려고 쓴다[^7]. 패키지 이름의 점은 폴더의 칸막이와 같다.
+패키지는 관련된 클래스를 한 이름 아래 모으는 상자다. 이름이 겹치는 것을 막고 코드를 정리하려고 쓴다. 패키지 이름의 점은 폴더의 칸막이와 같다.
 
 | 무엇 | 예 |
 |---|---|
@@ -140,12 +133,12 @@ flowchart TD
 | 소스 폴더 | `src/ch01/introduction` |
 | 바이트코드 폴더 | `bin/ch01/introduction` |
 
-`javac -d bin`의 `-d`는 바이트코드를 둘 폴더다. `java -cp bin`의 `-cp`는 JVM이 `.class`를 찾기 시작할 폴더다[^3]. 실행할 때는 파일 경로가 아니라 패키지까지 붙인 클래스 이름을 준다. `java -cp bin Hello`라고만 치면 JVM은 `bin/Hello.class`를 찾다가 `Could not find or load main class Hello`라며 멈춘다[^s1]. 자세한 규칙은 [패키지](/Hongs_Blog/studies/java/java-package/)에서 다룬다.
+`javac -d bin`의 `-d`는 바이트코드를 둘 폴더다. `java -cp bin`의 `-cp`는 JVM이 `.class`를 찾기 시작할 폴더다. 실행할 때는 파일 경로가 아니라 패키지까지 붙인 클래스 이름을 준다. `java -cp bin Hello`라고만 치면 JVM은 `bin/Hello.class`를 찾다가 `Could not find or load main class Hello`라며 멈춘다[^s1]. 자세한 규칙은 [패키지](/Hongs_Blog/studies/java/java-package/)에서 다룬다.
 
 ## 활용
 
-- 자바는 1995년 선 마이크로시스템즈가 내놓았고, 2010년 오라클이 인수해 JDK를 배포한다. 안드로이드 앱, 데스크톱 프로그램, 웹사이트를 만드는 데 쓰인다[^4].
-- 슬라이드가 꼽는 자바의 특징은 넷이다. 어느 운영체제에서나 돈다. 객체 지향 프로그래밍에 맞춰져 있다. 안 쓰는 메모리를 알아서 치운다(가비지 컬렉션). 무료 공개 라이브러리가 많다[^8].
+- 자바는 1995년 선 마이크로시스템즈가 내놓았고, 2010년 오라클이 인수해 JDK를 배포한다. 안드로이드 앱, 데스크톱 프로그램, 웹사이트를 만드는 데 쓰인다.
+- 자바의 특징으로 흔히 넷을 꼽는다. 어느 운영체제에서나 돈다. 객체 지향 프로그래밍에 맞춰져 있다. 안 쓰는 메모리를 알아서 치운다(가비지 컬렉션). 무료 공개 라이브러리가 많다.
 - 흔한 실수: `java Hello.class`처럼 확장자를 붙여 실행한다. `java` 명령에는 클래스 이름을 준다.
 - 흔한 실수: 소스를 고친 뒤 `javac`를 다시 돌리지 않는다. JVM이 읽는 것은 `.class`라서 옛 프로그램이 그대로 돈다.
 
@@ -158,10 +151,10 @@ flowchart TD
 
 ## 과목별 관점
 
-**컴파일러 (3-2학기).** 이 강의는 자바처럼 컴파일과 인터프리트를 이어 붙인 방식을 하이브리드 컴파일러(hybrid compiler)라 부르고, 예로 Java와 파이썬을 든다[^c2]. 강의가 더하는 것은 둘이다.
+**컴파일러 (3-2학기).** 자바처럼 컴파일과 인터프리트를 이어 붙인 방식을 하이브리드 컴파일러(hybrid compiler)라 부른다. Java와 파이썬이 그 예다. 컴파일러 과목에서 보면 두 가지가 더 보인다.
 
-- **두 방식을 가르는 세 물음.** 무엇을 옮기나(원시 프로그램 전체 / 문장 하나), 언제 옮기나(프로그램이 돌기 전에 한 번 / 그 문장을 실행할 때마다), 무엇이 나오나(목적 프로그램 / 그 문장의 목적 코드)[^c1]. 위 표의 '하는 일' 칸을 셋으로 나눠 본 것이다.
-- **두 토막이 각각 맡은 것.** 강의 그림은 컴파일러 쪽 상자에 "높은 효율(짧은 실행 시간)을 위해", 인터프리터 쪽 상자에 "여러 기계에서 그대로 돌게(이식성) 하려고"라고 적는다[^c2]. `javac`가 바이트코드를 미리 만들어 두는 것은 오류를 미리 잡는 데 더해 실행을 빠르게 하려는 것이기도 하다. 글자를 낱말로 끊고 문법을 따지는 일을 실행할 때마다 되풀이하지 않아도 되기 때문이다[^cs1].
+- **두 방식을 가르는 세 물음.** 무엇을 옮기나(원시 프로그램 전체 / 문장 하나), 언제 옮기나(프로그램이 돌기 전에 한 번 / 그 문장을 실행할 때마다), 무엇이 나오나(목적 프로그램 / 그 문장의 목적 코드). 위 표의 '하는 일' 칸을 셋으로 나눠 본 것이다.
+- **두 토막이 각각 맡은 것.** 컴파일러 쪽 토막은 높은 효율(짧은 실행 시간)을 맡고, 인터프리터 쪽 토막은 여러 기계에서 그대로 도는 것(이식성)을 맡는다. `javac`가 바이트코드를 미리 만들어 두는 것은 오류를 미리 잡는 데 더해 실행을 빠르게 하려는 것이기도 하다. 글자를 낱말로 끊고 문법을 따지는 일을 실행할 때마다 되풀이하지 않아도 되기 때문이다[^cs1].
 
 두 방식의 장단점은 [컴파일과 인터프리트 비교](/Hongs_Blog/studies/compilers/compilation-vs-interpretation/)에, `javac` 같은 컴파일러 안에서 일어나는 여섯 단계는 [컴파일러의 구조](/Hongs_Blog/studies/compilers/compiler-structure/)에 있다.
 
@@ -212,17 +205,7 @@ flowchart TD
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 2회 강의 자료 「Software Project 02. Java Language Basics (1)」, p.8~12 (소스 → 바이트코드 → 운영체제별 JVM, JVM 안의 네 단계)
-[^2]: 같은 자료, p.13~14 (Hello.java)
-[^3]: 같은 자료, p.17 (javac -d, java -cp)
-[^4]: 같은 자료, p.3 (자바 소개)
-[^5]: 같은 자료, p.6~7 (컴파일러와 인터프리터 그림)
-[^6]: 같은 자료, p.5 (JDK, JRE, JVM 그림)
-[^7]: 같은 자료, p.15~16 (패키지와 폴더 구조)
-[^8]: 같은 자료, p.4 (자바의 특징)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 바이트코드 네 줄(`javap -c` 출력), `java -cp bin Hello`의 오류 메시지, 카드 C4는 원본에 없다. JDK 21에서 직접 실행해 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> JRE와 JDK의 차이 설명, 다이어그램 1개와 상자 그림 1개는 원본에 없다. 원본 p.5의 포함 관계 그림과 p.11~12의 흐름 그림을 근거로 그렸다. JVM이 바이트코드를 한 줄씩 옮기기만 하지 않고 자주 도는 부분을 통째로 기계어로 바꿔 두기도 한다는 것(JIT 컴파일)은 다루지 않았다.
-[^c1]: 컴파일러 1회 강의 자료 「Lecture01 Compilers overview」, p.5 (컴파일과 인터프리트의 비교 표: What to translate, When to translate, Translation result)
-[^c2]: 컴파일러 1회 강의 자료 「Lecture01 Compilers overview」, p.7 (Variation: Hybrid compilers. "For high efficiency (low execution time)", "For high portability". 예: Java, Python)
-[^cs1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 미리 옮겨 두면 왜 빨라지는지의 설명과 카드 C5는 컴파일러 강의 슬라이드에 없다. 문장을 되풀이할 때 옮기는 횟수의 차이는 [02_compilation-vs-interpretation_verify.py](/Hongs_Blog/studies/compilers/code/02_compilation-vs-interpretation_verify/)의 장난감 언어로 확인했다.
+[^s1]: JDK 21에서 직접 실행해 확인했다.
+[^s2]: JVM이 바이트코드를 한 줄씩 옮기기만 하지 않고 자주 도는 부분을 통째로 기계어로 바꿔 두기도 한다는 것(JIT 컴파일)은 다루지 않았다.
+[^cs1]: 문장을 되풀이할 때 옮기는 횟수의 차이는 [02_compilation-vs-interpretation_verify.py](/Hongs_Blog/studies/compilers/code/02_compilation-vs-interpretation_verify/)의 장난감 언어로 확인했다.
 {% endraw %}

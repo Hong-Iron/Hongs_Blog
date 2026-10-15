@@ -135,5 +135,5 @@ $$x = r\cos\theta,\quad y = r\sin\theta; \qquad r = \sqrt{x^2 + y^2},\quad \thet
 
 [^1]: OpenStax, *Precalculus 2e*, 8.3절 "Polar Coordinates", 8.4절 "Polar Coordinates: Graphs"
 [^2]: OpenStax, *Precalculus 2e*, 8.6절 "Parametric Equations", 8.7절 "Parametric Equations: Graphs"(포물선 운동 포함)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [17_polar-parametric_plot.py](/Hongs_Blog/studies/college-math/code/17_polar-parametric_plot/)로 그렸고, 그림에 쓴 값(나선의 $$\theta = \pi$$ 점이 $$(-\pi, 0)$$, 사거리 40.82 m, 비행 시간 2.886초)을 같은 코드로 확인했다.
+[^s1]: [17_polar-parametric_plot.py](/Hongs_Blog/studies/college-math/code/17_polar-parametric_plot/)로 그렸고, 그림에 쓴 값(나선의 $$\theta = \pi$$ 점이 $$(-\pi, 0)$$, 사거리 40.82 m, 비행 시간 2.886초)을 같은 코드로 확인했다.
 {% endraw %}

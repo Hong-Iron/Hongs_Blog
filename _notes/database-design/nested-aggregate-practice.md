@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: EXISTS와 NOT EXISTS, 집계 함수, FROM 절의 조인 (JOIN ON), GROUP BY, HAVING."
 prev_url: "/studies/database-design/complex-retrieval-practice/"
@@ -25,7 +25,7 @@ permalink: "/studies/database-design/nested-aggregate-practice/"
 {% raw %}
 사용 개념: [EXISTS와 NOT EXISTS](/Hongs_Blog/studies/database-design/sql-exists/), [집계 함수](/Hongs_Blog/studies/database-design/aggregate-functions/), [FROM 절의 조인 (JOIN ON)](/Hongs_Blog/studies/database-design/sql-join-on/), [GROUP BY](/Hongs_Blog/studies/database-design/group-by/), [HAVING](/Hongs_Blog/studies/database-design/having-clause/).
 
-11주차 슬라이드의 연습 1~3이다. 셋 다 COMPANY 데이터베이스에 묻는다. 전체 상태는 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)에 있고, 여기서 쓰는 열만 옮기면 이렇다.
+문제 셋 다 COMPANY 데이터베이스에 묻는다. 전체 상태는 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)에 있고, 여기서 쓰는 열만 옮기면 이렇다.
 
 EMPLOYEE (8행)
 
@@ -62,7 +62,7 @@ DEPENDENT는 부양가족 한 명이 한 행이다. 위 표는 같은 `Essn`의 
 
 ## 문제 p1 · 부양가족이 있는 관리자
 
-안쪽 질의 둘을 써서 다음을 SQL로 적어라. "부양가족이 적어도 한 명 있는 관리자의 이름을 구하라." 첫째 안쪽 질의는 그 직원에게 딸린 DEPENDENT의 행을 모두 고르고, 둘째 안쪽 질의는 그 직원이 관리하는 DEPARTMENT의 행을 모두 고른다[^1].
+안쪽 질의 둘을 써서 다음을 SQL로 적어라. "부양가족이 적어도 한 명 있는 관리자의 이름을 구하라." 첫째 안쪽 질의는 그 직원에게 딸린 DEPENDENT의 행을 모두 고르고, 둘째 안쪽 질의는 그 직원이 관리하는 DEPARTMENT의 행을 모두 고른다.
 
 풀이 전략: "~가 적어도 하나 있다"는 `EXISTS`다. 조건이 둘("부양가족이 있다", "관리자다")이고 둘 다 "딸린 행이 있는가"를 묻는다. 직원을 한 명 짚었다고 치고, 그 직원의 `Ssn`으로 다른 표를 찾아보는 안쪽 질의를 하나씩 쓴다.
 
@@ -94,7 +94,7 @@ WHERE  EXISTS ( SELECT *
 
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 풀이의 질의, `IN` 둘로 쓴 판, 조인으로 쓴 판이 모두 Wong과 Wallace를 낸다 — [70_nested-aggregate-practice_p1.py](/Hongs_Blog/studies/database-design/code/70_nested-aggregate-practice_p1/)</div>
+<div class="callout-title" markdown="span">검증: 답의 질의, `IN` 둘로 쓴 판, 조인으로 쓴 판이 모두 Wong과 Wallace를 낸다 — [70_nested-aggregate-practice_p1.py](/Hongs_Blog/studies/database-design/code/70_nested-aggregate-practice_p1/)</div>
 
 </div>
 
@@ -111,7 +111,7 @@ WHERE  EXISTS ( SELECT *
 
 ## 문제 p2 · 한 부서의 급여 요약
 
-집계 함수와 JOIN 절을 써서 다음을 SQL로 적어라. "Research 부서 모든 직원의 급여의 합, 가장 큰 급여, 가장 작은 급여, 평균 급여를 구하라."[^2]
+집계 함수와 JOIN 절을 써서 다음을 SQL로 적어라. "Research 부서 모든 직원의 급여의 합, 가장 큰 급여, 가장 작은 급여, 평균 급여를 구하라."
 
 풀이 전략: 부서 이름은 DEPARTMENT에, 급여는 EMPLOYEE에 있으니 두 표를 이어야 한다. 이은 뒤 Research인 행만 남기고, 남은 행 전체를 한 줄로 줄인다. 부서 하나만 묻기 때문에 묶을 필요는 없다.
 
@@ -144,7 +144,7 @@ WHERE  Dname = 'Research';
 
 ## 문제 p3 · 평균 급여가 높은 부서의 인원
 
-다음을 SQL로 적어라. "평균 급여가 30000을 넘는 부서마다 부서 이름과 그 부서에서 일하는 직원의 수를 구하라."[^3]
+다음을 SQL로 적어라. "평균 급여가 30000을 넘는 부서마다 부서 이름과 그 부서에서 일하는 직원의 수를 구하라."
 
 풀이 전략: "부서마다"가 묶는 속성을 알려 준다. "평균 급여가 30000을 넘는"은 직원 한 명을 봐서는 알 수 없고 부서 전체를 봐야 아는 조건이라 `HAVING`에 간다.
 
@@ -152,7 +152,7 @@ WHERE  Dname = 'Research';
 <summary class="callout-title" markdown="span">답</summary>
 
 1. *표 고르고 잇기:* 부서 이름이 필요하므로 EMPLOYEE와 DEPARTMENT를 `E.Dno = D.Dnumber`로 잇는다.
-2. *묶기:* 부서마다이므로 부서 번호로 묶는다. `SELECT`에 `Dname`을 적을 것이므로 `Dname`도 묶는 속성에 넣는다.
+2. *묶기:* 부서마다이므로 부서 번호로 묶는다. `SELECT`에 `Dname`을 적을 것이므로 `Dname`도 묶는 속성에 넣는다. `GROUP BY E.Dno`만 쓰면 PostgreSQL 16은 `column "d.dname" must appear in the GROUP BY clause or be used in an aggregate function` 오류로 거부한다. SQLite는 받아서 같은 답을 낸다.
 3. *묶음 조건:* `HAVING AVG(E.Salary) > 30000`.
 4. *보여 줄 것:* `Dname`과 `COUNT(*)`.
 
@@ -170,13 +170,6 @@ HAVING   AVG(E.Salary) > 30000;
 </details>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 풀이의 질의는 `GROUP BY E.Dno`다[^3] / 문제점: `SELECT`에 적은 `Dname`이 묶는 속성에 없다. PostgreSQL 16은 "column "d.dname" must appear in the GROUP BY clause or be used in an aggregate function" 오류로 거부한다. SQLite는 받아서 같은 답을 낸다 / 수정안: 위 답처럼 `GROUP BY E.Dno, D.Dname` / 근거: 두 제품에서 실행 — [70_nested-aggregate-practice_p3.sql](/Hongs_Blog/studies/database-design/code/70_nested-aggregate-practice_p3-sql/), [70_nested-aggregate-practice_p3.py](/Hongs_Blog/studies/database-design/code/70_nested-aggregate-practice_p3/)
-
-</div>
-
 
 변형: 문턱을 32000으로 올리면?
 
@@ -188,8 +181,5 @@ Administration의 평균 31000이 문턱에 못 미쳐 묶음이 통째로 빠�
 </details>
 
 
-[^1]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.17 (Exercise 1). 풀이는 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.24
-[^2]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.29 (Exercise 2). 풀이는 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.25
-[^3]: 데이터베이스 설계 11회 강의 자료 「11-2_SQL-DML-Complex」, p.36 (Exercise 3). 풀이는 데이터베이스 설계 11회 강의 자료 「10-11-SQL-Solutions」, p.26
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다섯 물음의 차례, 풀이 전략과 하위목표 이름, 돌려 본 결과, 변형 문제와 그 답은 슬라이드에 없다. 풀이 슬라이드에는 질의만 있고 결과 값은 없다(p.25에 이어 붙인 표의 그림만 있다). 값은 문제 코드로 실행해 확인했다.
+[^s1]: 값은 문제 코드로 실행해 확인했다.
 {% endraw %}

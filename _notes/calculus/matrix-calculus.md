@@ -133,6 +133,6 @@ flowchart LR
 
 [^1]: Petersen, Pedersen, *The Matrix Cookbook*, 2절 "Derivatives"(일차식·이차형식·노름의 미분, 배치 관례).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 4.5절(선형 최소제곱의 기울기), 6.2.2절(시그모이드 출력과 교차 엔트로피의 결합). 공식은 24_matrix-calculus_verify.py에서 수치 미분과 맞춰 확인했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [24_matrix-calculus_plot.py](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. $$(A + A^\top)\mathbf{x}$$가 무작위 점 50개에서 중앙 차분과 같은 것, 여섯 점에서 등고선의 접선과 수직인 것, $$2A\mathbf{x}$$는 수직이 아닌 것을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 규칙의 근거 3번($$\mathbf{r} = A\mathbf{x} - \mathbf{b}$$로 두고 연쇄 법칙)과 규칙표의 마지막 줄 $$J_{\mathbf{h}}^\top\nabla g$$를 근거로 그렸다.
+[^s1]: [24_matrix-calculus_plot.py](/Hongs_Blog/studies/calculus/code/24_matrix-calculus_plot/)로 그렸다. 화살표 길이는 같은 비율로 줄였다. $$(A + A^\top)\mathbf{x}$$가 무작위 점 50개에서 중앙 차분과 같은 것, 여섯 점에서 등고선의 접선과 수직인 것, $$2A\mathbf{x}$$는 수직이 아닌 것을 같은 코드로 확인했다.
+[^s2]: 규칙의 근거 3번($$\mathbf{r} = A\mathbf{x} - \mathbf{b}$$로 두고 연쇄 법칙)과 규칙표의 마지막 줄 $$J_{\mathbf{h}}^\top\nabla g$$를 근거로 그렸다.
 {% endraw %}

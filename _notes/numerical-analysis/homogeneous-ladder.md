@@ -23,7 +23,7 @@ permalink: "/studies/numerical-analysis/homogeneous-ladder/"
 {% raw %}
 사용 개념: [동차 좌표](/Hongs_Blog/studies/numerical-analysis/homogeneous-coordinates/)의 평행이동 행렬과 곱하는 순서.
 
-"여러 변환을 행렬 하나로"는 같은 하위목표의 되풀이다. ① 순서 정하기: 말로 일어나는 순서대로 변환을 적는다 ② 행렬 쓰기: 변환마다 $$3 \times 3$$ 행렬 ③ 곱하기: 먼저 일어나는 것을 가장 오른쪽에 두고 곱한다 ④ 확인: 점에 적용하거나 특별한 점(중심, 고정점)이 제대로 가는지 본다[^s1].
+"여러 변환을 행렬 하나로"는 같은 하위목표의 되풀이다. ① 순서 정하기: 말로 일어나는 순서대로 변환을 적는다 ② 행렬 쓰기: 변환마다 $$3 \times 3$$ 행렬 ③ 곱하기: 먼저 일어나는 것을 가장 오른쪽에 두고 곱한다 ④ 확인: 점에 적용하거나 특별한 점(중심, 고정점)이 제대로 가는지 본다.
 
 ## 문제 1 · 완전한 풀이
 
@@ -92,7 +92,4 @@ $$H = T(1, 2)R_{90} = \begin{pmatrix}0 & -1 & 1\\ 1 & 0 & 2\\ 0 & 0 & 1\end{pmat
 <div class="callout-title" markdown="span">검증 — [04_homogeneous-ladder_p4.py](/Hongs_Blog/studies/numerical-analysis/code/04_homogeneous-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드 4회 p.32(점 중심 회전)와 p.41~43(곱하는 순서, 역행렬)을 연습하도록 만들었고, 답은 문제 코드로 확인했다.
 {% endraw %}

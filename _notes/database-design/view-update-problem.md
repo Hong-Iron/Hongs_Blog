@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["View Update Problem", "View Update", "뷰 갱신", "갱신 가능한 뷰", "Updatable View", "WITH CHECK OPTION", "INSTEAD OF 트리거", "뷰 갱신의 모호성"]
 description: "뷰는 원래 표를 가공해 보여 주는 창이라서, 창에 대고 \"이 줄을 고쳐라\"고 하면 데이터베이스가 그 말을 원래 표를 고치는 말로 바꿔야 한다. 표 하나에서 행과 열만 골라 보여 주는 뷰는 바꿀 길이 하나뿐이라 고칠 수 있다. 여러 표를 이어 붙인 뷰는 바꿀 길이 여럿이고, 개수나 …"
@@ -34,9 +34,9 @@ permalink: "/studies/database-design/view-update-problem/"
 
 ## 예시로 보기
 
-[뷰](/Hongs_Blog/studies/database-design/sql-view/)의 행은 저장돼 있지 않다. 그러니 뷰의 행을 고치라는 문장은 그대로는 실행할 곳이 없다. 기본 테이블의 어느 행을 어떻게 고치면 뷰에 그 결과가 보이는지를 DBMS가 거꾸로 찾아야 한다[^1].
+[뷰](/Hongs_Blog/studies/database-design/sql-view/)의 행은 저장돼 있지 않다. 그러니 뷰의 행을 고치라는 문장은 그대로는 실행할 곳이 없다. 기본 테이블의 어느 행을 어떻게 고치면 뷰에 그 결과가 보이는지를 DBMS가 거꾸로 찾아야 한다.
 
-`WORKS_ON1`은 EMPLOYEE, PROJECT, WORKS_ON을 이은 뷰다. 여기에 "John Smith의 프로젝트를 ProductX에서 ProductY로 바꿔라"를 시킨다[^2].
+`WORKS_ON1`은 EMPLOYEE, PROJECT, WORKS_ON을 이은 뷰다. 여기에 "John Smith의 프로젝트를 ProductX에서 ProductY로 바꿔라"를 시킨다.
 
 ```sql
 UPDATE WORKS_ON1
@@ -53,7 +53,7 @@ WHERE  Lname = 'Smith' AND Fname = 'John'
 | WORKS_ON | (Essn 123456789, Pno 1, Hours 32.5) |
 | PROJECT | (Pname ProductX, Pnumber 1, …) |
 
-뷰에 보이는 'ProductX'라는 글자는 PROJECT에서 온다. 그런데 Smith가 어느 PROJECT 행과 만날지는 WORKS_ON의 Pno가 정한다. 그래서 길이 둘 생긴다[^3].
+뷰에 보이는 'ProductX'라는 글자는 PROJECT에서 온다. 그런데 Smith가 어느 PROJECT 행과 만날지는 WORKS_ON의 Pno가 정한다. 그래서 길이 둘 생긴다.
 
 ```sql
 -- (a) WORKS_ON에서 Smith의 프로젝트 번호를 ProductY의 번호로 바꾼다
@@ -67,7 +67,11 @@ UPDATE PROJECT SET Pname = 'ProductY'
 WHERE  Pname = 'ProductX';
 ```
 
-(a)는 "Smith가 다른 프로젝트로 옮겼다"이고, (b)는 "프로젝트의 이름이 바뀌었다"이다. 두 길을 제약을 뗀 복사본에서 실행해 뷰를 다시 보았다[^s1].
+(a)는 "Smith가 다른 프로젝트로 옮겼다"이고, (b)는 "프로젝트의 이름이 바뀌었다"이다.
+
+다만 지금 데이터에 두 문장을 그대로 실행하면 둘 다 거부된다. Smith는 이미 ProductY(2번)에서도 일한다. 그래서 (a)를 실행하면 WORKS_ON의 기본 키 (Essn, Pno)가 (123456789, 2)인 행이 둘이 된다. (b)도 막힌다. PROJECT의 Pname에는 UNIQUE가 걸려 있고, ProductY라는 이름이 이미 있다. 두 길은 "제약이 없다면 갈 수 있는 길"이다. 길이 여럿이라는 사정은 그대로다.
+
+제약을 뗀 복사본에서 두 길을 실행하면 뷰가 이렇게 바뀐다[^s1].
 
 | 실행한 뒤 | (a) WORKS_ON을 고침 | (b) PROJECT를 고침 |
 |---|---|---|
@@ -76,17 +80,7 @@ WHERE  Pname = 'ProductX';
 | PROJECT에 ProductX라는 이름 | 남아 있다 | 없어졌다 |
 | 뷰에서 바뀐 줄 수 | 1 | 2 |
 
-바라던 줄은 두 길 모두 바뀐다. 그런데 (b)는 시키지 않은 English의 줄까지 바꿨다. 사용자가 어느 쪽을 뜻했는지 DBMS는 알 길이 없다. 그래서 이런 갱신은 받지 않는다[^3].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 13주차 슬라이드 p.21 "The following two updates can be possible on the base relations", 그리고 (a)와 (b)의 UPDATE 문<br>
-문제점: 같은 덱 p.16, p.28에 실린 COMPANY 상태에 (a)와 (b)를 그대로 실행하면 둘 다 거부된다. Smith는 이미 ProductY(2번)에서도 일하고 있어서 (a)는 WORKS_ON의 기본 키 (Essn, Pno) = (123456789, 2)를 겹치게 만든다. PROJECT의 Pname에는 UNIQUE가 걸려 있고 ProductY가 이미 있어서 (b)도 걸린다.<br>
-수정안: "제약이 없다면 가능한 두 길"로 읽는다. 길이 여럿이라 DBMS가 고를 수 없다는 결론은 그대로다.<br>
-근거: PostgreSQL 16과 SQLite에서 두 문장 모두 유일성 제약 위반으로 거부된다 — [77_view-update-problem_verify.sql](/Hongs_Blog/studies/database-design/code/77_view-update-problem_verify-sql/), [77_view-update-problem_verify.py](/Hongs_Blog/studies/database-design/code/77_view-update-problem_verify/)
-
-</div>
+바라던 줄은 두 길 모두 바뀐다. 그런데 (b)는 시키지 않은 English의 줄까지 바꿨다. 사용자가 어느 쪽을 뜻했는지 DBMS는 알 길이 없다. 그래서 이런 갱신은 받지 않는다.
 
 
 <div class="callout callout-check" markdown="1">
@@ -97,20 +91,20 @@ WHERE  Pname = 'ProductX';
 
 ## 세 부류와 규칙
 
-뷰에 던지는 검색 질의는 언제나 된다. `INSERT`, `DELETE`, `UPDATE`는 많은 경우에 안 된다[^1]. 되고 안 되고는 뷰를 어떻게 만들었느냐로 갈린다.
+뷰에 던지는 검색 질의는 언제나 된다. `INSERT`, `DELETE`, `UPDATE`는 많은 경우에 안 된다. 되고 안 되고는 뷰를 어떻게 만들었느냐로 갈린다.
 
 | 뷰를 만든 방법 | 갱신 | 까닭 |
 |---|---|---|
-| 표 하나, 집계 함수 없음 | 조건이 맞으면 된다 | 뷰의 한 줄이 기본 테이블의 한 행이다. 옮길 길이 하나다[^4] |
-| 여러 표를 조인 | 보통 안 된다 | 기본 테이블 갱신으로 옮기는 길이 여럿이다[^5] |
-| 묶기와 집계 함수 | 안 된다 | 뷰의 값이 저장된 값이 아니라 계산한 값이다[^6] |
+| 표 하나, 집계 함수 없음 | 조건이 맞으면 된다 | 뷰의 한 줄이 기본 테이블의 한 행이다. 옮길 길이 하나다 |
+| 여러 표를 조인 | 보통 안 된다 | 기본 테이블 갱신으로 옮기는 길이 여럿이다 |
+| 묶기와 집계 함수 | 안 된다 | 뷰의 값이 저장된 값이 아니라 계산한 값이다 |
 
-슬라이드가 정리한 일반 규칙은 이렇다[^6].
+일반 규칙은 이렇다.
 
 > 뷰에 가한 갱신을 해낼 수 있는 기본 테이블 갱신이 **딱 하나**일 때만 그 뷰 갱신을 할 수 있다. 기본 테이블 갱신으로 옮기는 길이 둘 이상이면 보통 허락하지 않는다.
 
 
-관찰 셋으로 다시 적으면 다음과 같다[^7].
+관찰 셋으로 다시 적으면 다음과 같다.
 
 1. 정의 테이블이 하나인 뷰는, 뷰의 속성에 그 표의 **기본 키**와 **기본값이 없는 NOT NULL 속성**이 모두 들어 있으면 갱신할 수 있다.
 2. 여러 표를 조인으로 이어 만든 뷰는 보통 갱신할 수 없다.
@@ -124,7 +118,7 @@ flowchart TD
     G -->|"있다"| X2["계산한 값이라 옮길 수 없다. 거부"]
     G -->|"없다"| K{"기본 키와, 기본값 없는 NOT NULL 열이 뷰에 다 있는가?"}
     K -->|"다 있다"| OK["기본 테이블의 갱신으로 옮긴다"]
-    K -->|"빠진 것이 있다"| P["슬라이드의 기준으로는 갱신할 수 없다"]
+    K -->|"빠진 것이 있다"| P["관찰 1의 기준으로는 갱신할 수 없다"]
 ```
 
 ### 관찰 1의 조건은 왜 필요한가
@@ -141,17 +135,9 @@ SET    Total_sal = 100000
 WHERE  Dept_name = 'Research';
 ```
 
-`Total_sal`은 직원 급여의 합으로 정의한 값이다. 어느 기본 테이블에도 저장돼 있지 않다[^6]. Research의 합은 지금 133000이다. 100000으로 만들려면 직원들의 급여를 합쳐서 33000만큼 깎아야 하는데, 누구에게서 얼마를 깎을지는 정해져 있지 않다. 네 사람에게서 8250씩 깎아도 100000이고, Wong 한 사람에게서 33000을 깎아도 100000이다[^s1].
+`Total_sal`은 직원 급여의 합으로 정의한 값이다. 어느 기본 테이블에도 저장돼 있지 않다. Research의 합은 지금 133000이다. 100000으로 만들려면 직원들의 급여를 합쳐서 33000만큼 깎아야 하는데, 누구에게서 얼마를 깎을지는 정해져 있지 않다. 네 사람에게서 8250씩 깎아도 100000이고, Wong 한 사람에게서 33000을 깎아도 100000이다[^s1].
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 13주차 슬라이드 p.22 `UPDATE DEPT_INFO SET Total_sal = 100000 WHERE Dname = 'Research';`<br>
-문제점: p.6에서 `DEPT_INFO`의 열 이름을 `(Dept_name, No_of_emps, Total_sal)`로 붙였다. 이 뷰에는 `Dname`이라는 열이 없다.<br>
-수정안: `WHERE Dept_name = 'Research'`.<br>
-근거: PostgreSQL 16은 슬라이드 문장에 "column dname does not exist"를 낸다. 열 이름을 고치면 그제야 "cannot update view dept_info … Views containing GROUP BY are not automatically updatable"이 나온다 — [77_view-update-problem_verify.sql](/Hongs_Blog/studies/database-design/code/77_view-update-problem_verify-sql/)
-
-</div>
+조건에는 뷰의 열 이름 `Dept_name`을 쓴다. `DEPT_INFO`는 열 이름을 따로 붙여 만든 뷰라서 `Dname`이라는 열이 없다. 기본 테이블의 이름대로 `WHERE Dname = 'Research'`라고 쓰면, PostgreSQL 16은 갱신할 수 있는지 따지기도 전에 "column dname does not exist"를 낸다. 열 이름을 바로잡아야 "Views containing GROUP BY are not automatically updatable"로 거부된다.
 
 
 ### 스스로 설명해 보기
@@ -185,7 +171,7 @@ PROJECT의 1번 행 하나가 뷰의 여러 줄에 쓰인다. Smith의 줄과 En
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">4. 길이 둘이면 왜 DBMS가 하나를 골라 실행하지 않는가?</summary>
 
-두 길은 다른 줄에 미치는 영향이 다르다. 어느 쪽이 사용자의 뜻인지는 문장에 적혀 있지 않다. 잘못 고르면 시키지 않은 데이터가 바뀐다. 그래서 길이 둘 이상이면 보통 허락하지 않는다. — 슬라이드 p.22의 일반 규칙
+두 길은 다른 줄에 미치는 영향이 다르다. 어느 쪽이 사용자의 뜻인지는 문장에 적혀 있지 않다. 잘못 고르면 시키지 않은 데이터가 바뀐다. 그래서 길이 둘 이상이면 보통 허락하지 않는다. — 뷰 갱신의 일반 규칙
 
 </details>
 
@@ -219,7 +205,7 @@ PostgreSQL 16에서 네 뷰에 세 가지 갱신을 모두 해 보았다[^s1].
 
 - `DEPT5EMP`로 Smith의 급여를 31000으로 고치면 EMPLOYEE의 Smith 행이 31000이 된다. 뷰로 넣은 직원은 EMPLOYEE에 들어가고, 뷰로 지운 직원은 EMPLOYEE에서 없어진다.
 - `WORKS_ON1`의 오류 글은 "Views that do not select from a single table or view are not automatically updatable"이다. `DEPT_INFO`는 "Views containing GROUP BY are not automatically updatable"이다.
-- **슬라이드와 다른 곳.** `BASIC_EMP_DATA`에는 기본 키가 없으니 관찰 1대로면 갱신할 수 없는 뷰다. PostgreSQL 16은 이 뷰의 `UPDATE`와 `DELETE`를 받는다. 막히는 것은 `INSERT`뿐이다. 관찰 1은 "이 조건이면 된다"는 말이지 "이 조건이 아니면 어느 제품에서도 안 된다"는 말이 아니다.
+- **관찰 1과 다른 곳.** `BASIC_EMP_DATA`에는 기본 키가 없으니 관찰 1대로면 갱신할 수 없는 뷰다. PostgreSQL 16은 이 뷰의 `UPDATE`와 `DELETE`를 받는다. 막히는 것은 `INSERT`뿐이다. 관찰 1은 "이 조건이면 된다"는 말이지 "이 조건이 아니면 어느 제품에서도 안 된다"는 말이 아니다.
 - **SQLite는 전부 거부한다.** 표 하나짜리 `DEPT5EMP`의 `UPDATE`도 "cannot modify DEPT5EMP because it is a view"로 끝난다. 위 표의 "된다" 칸은 SQLite에서는 하나도 나오지 않는다.
 
 ### 뷰의 조건을 벗어나는 행
@@ -240,7 +226,7 @@ WITH CHECK OPTION;
 
 **보장하는 것.**
 
-- 어느 뷰에든 검색 질의는 던질 수 있다[^1].
+- 어느 뷰에든 검색 질의는 던질 수 있다.
 - 뷰 갱신이 받아들여졌다면 그 결과는 기본 테이블에 남는다. 같은 기본 테이블을 쓰는 다른 뷰에도 보인다.
 
 **보장하지 않는 것.**
@@ -252,7 +238,7 @@ WITH CHECK OPTION;
 ## 활용
 
 - **뷰로 갱신을 받고 싶으면** 표 하나에서 기본 키를 빼지 않고 만든다. 조건(`WHERE`)이 있으면 `WITH CHECK OPTION`을 붙인다.
-- **길을 직접 정해 주기.** 어느 갱신이 가장 그럴듯한지 DBMS가 고르게 하자는 연구와, 뷰를 정의할 때 사용자가 고르게 하자는 연구가 있었다. 슬라이드는 이런 선택지가 대부분의 상용 DBMS에 없다고 적는다[^8]. PostgreSQL 16과 SQLite에는 뷰에 `INSTEAD OF` [트리거](/Hongs_Blog/studies/database-design/sql-trigger/)를 달아 설계자가 길을 적어 주는 기능이 있다. `WORKS_ON1`에 "Pname을 고치면 길 (a)로 옮긴다"는 트리거를 달았더니, Narayan을 ProductZ에서 ProductX로 옮기는 뷰 `UPDATE`가 실행되어 WORKS_ON의 Pno가 3에서 1로 바뀌었다. PROJECT는 그대로였다[^s4].
+- **길을 직접 정해 주기.** 어느 갱신이 가장 그럴듯한지 DBMS가 고르게 하자는 연구와, 뷰를 정의할 때 사용자가 고르게 하자는 연구가 있었다. 대부분의 상용 DBMS는 이런 선택지를 주지 않는다. PostgreSQL 16과 SQLite에는 뷰에 `INSTEAD OF` [트리거](/Hongs_Blog/studies/database-design/sql-trigger/)를 달아 설계자가 길을 적어 주는 기능이 있다. `WORKS_ON1`에 "Pname을 고치면 길 (a)로 옮긴다"는 트리거를 달았더니, Narayan을 ProductZ에서 ProductX로 옮기는 뷰 `UPDATE`가 실행되어 WORKS_ON의 Pno가 3에서 1로 바뀌었다. PROJECT는 그대로였다[^s4].
 - **흔한 실수.** 뷰를 갱신할 수 있는지 데이터를 넣어 보고 판단하는 것이다. 판정은 뷰의 정의가 한다(아래 오해).
 
 ## 연결
@@ -267,7 +253,7 @@ WITH CHECK OPTION;
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"조건에 맞는 행이 하나도 없으면 고칠 것이 없으니, 그 문장은 그냥 실행되고 끝난다"</div>
 
-틀렸다. 기본 테이블에서는 `DELETE … WHERE`의 조건에 맞는 행이 없으면 0행을 지우고 조용히 끝난다. 그래서 뷰에서도 그럴 것 같다. 실제로는 뷰를 갱신할 수 있는지를 **뷰의 정의**가 정한다. 안에 든 데이터는 상관없다. `DEPT_SUMMARY`(부서별 인원 C, 급여 합, 평균)에 `DELETE FROM DEPT_SUMMARY WHERE C > 4`를 실행하면, 인원이 4를 넘는 부서가 하나도 없는데도 PostgreSQL 16은 "cannot delete from view"로 거부한다. 슬라이드의 답도 "조건에 맞는 튜플은 없지만 허락되지 않는다"이다[^9][^s5].
+틀렸다. 기본 테이블에서는 `DELETE … WHERE`의 조건에 맞는 행이 없으면 0행을 지우고 조용히 끝난다. 그래서 뷰에서도 그럴 것 같다. 실제로는 뷰를 갱신할 수 있는지를 **뷰의 정의**가 정한다. 안에 든 데이터는 상관없다. `DEPT_SUMMARY`(부서별 인원 C, 급여 합, 평균)에 `DELETE FROM DEPT_SUMMARY WHERE C > 4`를 실행하면, 인원이 4를 넘는 부서가 하나도 없는데도 PostgreSQL 16은 "cannot delete from view"로 거부한다[^s5].
 
 </div>
 
@@ -275,7 +261,7 @@ WITH CHECK OPTION;
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"표 하나로 만든 뷰는 언제나 고칠 수 있다"</div>
 
-틀렸다. 슬라이드의 `DEPT_SUMMARY`는 EMPLOYEE 하나로 만든 뷰다. 조인이 없다. 그래도 `GROUP BY`와 집계 함수가 있어서 `UPDATE`도 `DELETE`도 거부된다. 표가 하나라는 것은 조건의 절반이다. 집계가 없어야 하고, `INSERT`까지 하려면 기본 키와 NOT NULL 열이 뷰에 있어야 한다[^9][^s5].
+틀렸다. `DEPT_SUMMARY`는 EMPLOYEE 하나로 만든 뷰다. 조인이 없다. 그래도 `GROUP BY`와 집계 함수가 있어서 `UPDATE`도 `DELETE`도 거부된다. 표가 하나라는 것은 조건의 절반이다. 집계가 없어야 하고, `INSERT`까지 하려면 기본 키와 NOT NULL 열이 뷰에 있어야 한다[^s5].
 
 </div>
 
@@ -318,7 +304,7 @@ WITH CHECK OPTION;
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C5** 슬라이드 상태에서 `DEPT5EMP`는 4행이다. PostgreSQL 16에서 `UPDATE DEPT5EMP SET Dno = 4 WHERE Lname = 'English'`를 실행한 뒤 `SELECT COUNT(*) FROM DEPT5EMP`는 얼마인가? 같은 문장을 `WITH CHECK OPTION`을 붙인 `DEPT5EMP_CK`에 실행하면?</summary>
+<summary class="callout-title" markdown="span">**C5** 처음 데이터에서 `DEPT5EMP`는 4행이다. PostgreSQL 16에서 `UPDATE DEPT5EMP SET Dno = 4 WHERE Lname = 'English'`를 실행한 뒤 `SELECT COUNT(*) FROM DEPT5EMP`는 얼마인가? 같은 문장을 `WITH CHECK OPTION`을 붙인 `DEPT5EMP_CK`에 실행하면?</summary>
 
 **답:** 3이다. English의 행은 EMPLOYEE에서 4번 부서로 바뀌었고 `Dno = 5`가 아니게 되어 뷰에서 사라졌다. `DEPT5EMP_CK`에서는 "new row violates check option"으로 거부되고 4행 그대로다.<br>
 **이유:** 흔한 오답은 "뷰의 조건이 `Dno = 5`니까 `Dno`를 4로 고치는 문장은 원래 거부된다"이다. `WITH CHECK OPTION`을 붙여야 거부된다[^s3].
@@ -326,18 +312,9 @@ WITH CHECK OPTION;
 </details>
 
 
-[^1]: 데이터베이스 설계 13회 강의 자료 「13-View」, p.17 (View Update Problem: 검색 질의는 언제나 되지만 INSERT, DELETE, UPDATE는 많은 경우 안 된다)
-[^2]: 같은 자료, p.20 (WORKS_ON1에 대한 UPDATE 예)
-[^3]: 같은 자료, p.19 (조인 뷰의 갱신은 여러 길로 옮겨지고 DBMS가 어느 것이 뜻한 것인지 정할 수 없다), p.21 (두 길 (a), (b)와 그 설명)
-[^4]: 같은 자료, p.18 (표 하나에 집계 함수 없이 정의한 뷰의 갱신은 일정한 조건에서 기본 테이블 갱신으로 옮길 수 있다)
-[^5]: 같은 자료, p.19
-[^6]: 같은 자료, p.22 (Impossible Update: DEPT_INFO의 Total_sal, 일반 규칙. "NOT permitted")
-[^7]: 같은 자료, p.24 (Observations)
-[^8]: 같은 자료, p.23 (View Update: Discussion. 연구 주제, "these options are generally not available in most commercial DBMSs")
-[^9]: 같은 자료, p.38~39 (연습 2-d, 2-e의 답: "not allowed", "There is no tuple satisfying this query, but it is not allowed")
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 뷰의 한 줄을 이루는 세 행의 표, 두 길의 효과를 견준 표, 집계 값을 맞추는 두 가지 수정(8250씩, 33000), 네 뷰의 실행 결과 표는 슬라이드에 없다. PostgreSQL 16에서 실행해 확인했다. 두 길의 효과는 EMPLOYEE, PROJECT, WORKS_ON을 제약 없이 복사한 표에서 실행한 결과다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 관찰 1의 두 조건이 왜 필요한지와 `SALARIES` 뷰의 예는 슬라이드에 없다. PostgreSQL 16에서 세 행이 함께 바뀌는 것과 `BASIC_EMP_DATA`의 INSERT가 NOT NULL 위반으로 거부되는 것을 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 뷰의 조건을 벗어나는 행과 `WITH CHECK OPTION`은 슬라이드에 없다. Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.3절이 뷰를 갱신하려면 뷰 정의 끝에 이 절을 붙이라고 적는다. PostgreSQL 16에서 실행해 확인했다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `INSTEAD OF` 트리거는 슬라이드에 없다. PostgreSQL 16과 SQLite 3.50.4에서 실행해 확인했다. 다른 제품은 실행해 보지 않았다.
-[^s5]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> `DEPT_SUMMARY`에 대한 UPDATE와 DELETE(조건에 맞는 행이 0개인 경우 포함)가 거부되는 것은 PostgreSQL 16에서 실행해 확인했다 — [77_view-practice_p2.sql](/Hongs_Blog/studies/database-design/code/77_view-practice_p2-sql/)
+[^s1]: PostgreSQL 16에서 실행해 확인했다. 두 길의 효과는 EMPLOYEE, PROJECT, WORKS_ON을 제약 없이 복사한 표에서 실행한 결과다.
+[^s2]: PostgreSQL 16에서 세 행이 함께 바뀌는 것과 `BASIC_EMP_DATA`의 INSERT가 NOT NULL 위반으로 거부되는 것을 확인했다.
+[^s3]: Elmasri & Navathe, *Fundamentals of Database Systems* 7판 7.3절이 뷰를 갱신하려면 뷰 정의 끝에 이 절을 붙이라고 적는다. PostgreSQL 16에서 실행해 확인했다.
+[^s4]: PostgreSQL 16과 SQLite 3.50.4에서 실행해 확인했다. 다른 제품은 실행해 보지 않았다.
+[^s5]: `DEPT_SUMMARY`에 대한 UPDATE와 DELETE(조건에 맞는 행이 0개인 경우 포함)가 거부되는 것은 PostgreSQL 16에서 실행해 확인했다 — [77_view-practice_p2.sql](/Hongs_Blog/studies/database-design/code/77_view-practice_p2-sql/)
 {% endraw %}

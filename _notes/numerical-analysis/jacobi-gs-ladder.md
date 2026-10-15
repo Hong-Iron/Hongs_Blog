@@ -25,7 +25,7 @@ permalink: "/studies/numerical-analysis/jacobi-gs-ladder/"
 {% raw %}
 사용 개념: [야코비 방법과 가우스-자이델 방법](/Hongs_Blog/studies/numerical-analysis/jacobi-gauss-seidel/)의 갱신식, 대각 우세, 멈추는 기준.
 
-하위목표는 넷이다. ① 대각 우세 확인: 필요하면 행 순서를 바꾼다 ② 식마다 자기 변수로 풀기 ③ 한 회차 갱신: 야코비는 옛 값만, 가우스-자이델은 방금 고친 값을 바로 쓴다 ④ 멈춤 판정: 상대 변화 $$\left\vert \frac{x^{(k)} - x^{(k-1)}}{x^{(k)}}\right\vert $$을 허용 오차와 비교한다[^s1].
+하위목표는 넷이다. ① 대각 우세 확인: 필요하면 행 순서를 바꾼다 ② 식마다 자기 변수로 풀기 ③ 한 회차 갱신: 야코비는 옛 값만, 가우스-자이델은 방금 고친 값을 바로 쓴다 ④ 멈춤 판정: 상대 변화 $$\left\vert \frac{x^{(k)} - x^{(k-1)}}{x^{(k)}}\right\vert $$을 허용 오차와 비교한다.
 
 ## 문제 1 · 완전한 풀이
 
@@ -96,7 +96,4 @@ $$x + 5y = 11$$, $$4x + y = 6$$을 $$(0, 0)$$에서 야코비로 두 회차 돌�
 <div class="callout-title" markdown="span">검증 — [20_jacobi-gs-ladder_p4.py](/Hongs_Blog/studies/numerical-analysis/code/20_jacobi-gs-ladder_p4/)</div>
 
 </div>
-
-
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 문서의 문제와 수치는 원본에 없다. 슬라이드 11회 p.4~13의 갱신식, 수렴 조건, 이완을 연습하도록 만들었고, 답은 분수로 정확히 계산하는 문제 코드로 확인했다.
 {% endraw %}

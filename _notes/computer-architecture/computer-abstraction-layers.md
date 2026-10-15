@@ -85,7 +85,7 @@ flowchart TD
 - **이 과목의 지도.** 1단원은 빠르기를 재는 법과 맨 아래의 논리 회로, 2단원은 가운데 경계인 명령어 집합, 3단원은 그 약속을 지키는 프로세서, 4단원은 메모리를 다룬다.
 - **같은 프로그램, 새 프로세서.** 명령어 집합이 같으면 예전에 만든 기계어 프로그램이 새 프로세서에서 그대로 돈다. 반대로 명령어 집합이 다르면(MIPS와 x86) 같은 C 프로그램도 다시 컴파일해야 한다.
 - **흔한 실수.** 층을 가렸다고 아래층의 비용이 사라지지는 않는다. C에서 한 줄인 `a[i] = b[i] * c`가 기계어 여러 줄이 되고, 줄마다 걸리는 시간이 다르다. 빠르기를 따지려면 가려 둔 층을 세어야 한다: [CPU 시간 식](/Hongs_Blog/studies/computer-architecture/cpu-time-equation/).
-- 어셈블리어 과목은 같은 층 쌓기를 x86에서 다룬다: [가상 기계 계층](/Hongs_Blog/studies/assembly-language/virtual-machine-levels/). 컴파일러 과목의 [수업용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 레지스터 이름과 명령을 줄여 쓴 표기라 이 과목의 실제 MIPS 표기와 다르다.
+- 어셈블리어 과목은 같은 층 쌓기를 x86에서 다룬다: [가상 기계 계층](/Hongs_Blog/studies/assembly-language/virtual-machine-levels/). 컴파일러 과목의 [코드 생성용 MIPS 명령어](/Hongs_Blog/studies/compilers/mips-instructions/)는 레지스터 이름과 명령을 줄여 쓴 표기라 이 과목의 실제 MIPS 표기와 다르다.
 
 ## 연결
 
@@ -126,5 +126,5 @@ flowchart TD
 
 [^1]: Patterson & Hennessy, *Computer Organization and Design* (MIPS Edition), 1장 "Computer Abstractions and Technology" (프로그램 아래의 층, 고급 언어에서 기계어까지, 하드웨어·소프트웨어 인터페이스, 구조와 구현의 구별, 컴퓨터의 다섯 구성 요소). 책을 직접 열지 못해 장까지만 적는다.
 [^2]: 같은 책, 2장 "Instructions: Language of the Computer"와 책에 딸린 MIPS 참조표(Green Sheet). 연산 종류 0, 덧셈의 세부 연산 100000(16진수 20), 뺄셈 100010(16진수 22), 레지스터 번호 `$t0` = 8, `$s0` = 16. 여섯 칸의 규칙은 [MIPS 명령어 형식](/Hongs_Blog/studies/computer-architecture/mips-instruction-formats/)에서 다룬다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개와 `a = b + c` 예는 직접 만들었다. 층의 순서는 [^1]의 장을 따랐고, 32비트 값은 검증 코드로 확인했다.
+[^s1]: 다이어그램 1개와 `a = b + c` 예는 직접 만들었다. 층의 순서는 [^1]의 장을 따랐고, 32비트 값은 검증 코드로 확인했다.
 {% endraw %}

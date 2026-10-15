@@ -170,6 +170,6 @@ flowchart TD
 
 
 [^1]: Boyd, Vandenberghe, *Convex Optimization*, 2.1절(볼록 집합), 3.1절(볼록 함수의 정의, 1계·2계 조건, 옌센 부등식), 3.2절(볼록성을 보존하는 연산), 4.2.2절 "Local and global optima".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [27_convexity_plot.py](/Hongs_Blog/studies/calculus/code/27_convexity_plot/)로 그렸다. 경사 하강법의 학습률은 0.01로 잡았다. 현의 가운데 값 2와 $$f(1) = 1$$, 곱의 가운데 값 0.0625, 두 최솟점 $$x \approx 1.131$$(값 $$-1.070$$)과 $$x \approx -1.301$$(값 $$-3.514$$)에서 $$f' = 0$$, $$f'' > 0$$인 것을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 정의 절의 동치 조건(1계, 2계)과 정리(지역 최소 = 전역 최소, 순볼록이면 하나뿐)를 근거로 그렸다.
+[^s1]: [27_convexity_plot.py](/Hongs_Blog/studies/calculus/code/27_convexity_plot/)로 그렸다. 경사 하강법의 학습률은 0.01로 잡았다. 현의 가운데 값 2와 $$f(1) = 1$$, 곱의 가운데 값 0.0625, 두 최솟점 $$x \approx 1.131$$(값 $$-1.070$$)과 $$x \approx -1.301$$(값 $$-3.514$$)에서 $$f' = 0$$, $$f'' > 0$$인 것을 같은 코드로 확인했다.
+[^s2]: 정의 절의 동치 조건(1계, 2계)과 정리(지역 최소 = 전역 최소, 순볼록이면 하나뿐)를 근거로 그렸다.
 {% endraw %}

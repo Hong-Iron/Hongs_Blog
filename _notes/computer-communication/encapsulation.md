@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Encapsulation", "포장", "헤더", "header", "머리말", "바디", "body", "페이로드", "payload", "역캡슐화", "decapsulation"]
 description: "편지를 봉투에 넣고, 그 봉투를 다시 택배 상자에 넣는 것처럼, 층마다 위에서 받은 데이터를 통째로 내용물로 삼고 앞에 자기 머리말(헤더)을 붙여 아래층에 넘긴다. 받는 쪽은 거꾸로 한 겹씩 벗긴다. 각 층은 내용물의 속을 들여다보지 않아도 되어서 층끼리 독립적이다. 대신 층마다 …"
@@ -34,7 +34,7 @@ permalink: "/studies/computer-communication/encapsulation/"
 
 ## 예시로 보기
 
-슬라이드 그림에서 Host 1의 응용이 Data를 보낸다[^1].
+Host 1의 응용이 RRP와 HHP를 거쳐 Data를 보낸다고 하자.
 
 ```
 Host 1                                   Host 2
@@ -48,7 +48,7 @@ RRP는 응용의 Data를 내용물(바디)로 삼아 앞에 RRP 헤더를 붙인
 
 ## 정의
 
-동작을 일으킬 때는 이 동작이 무엇인지 밝히는 헤더가 필요하다. 층은 헤더를 붙여서 아래층에 보내고, 받은 아래층은 또 자기 헤더를 붙인다[^2].
+동작을 일으킬 때는 이 동작이 무엇인지 밝히는 헤더가 필요하다. 층은 헤더를 붙여서 아래층에 보내고, 받은 아래층은 또 자기 헤더를 붙인다.
 
 <div class="callout callout-definition" markdown="1">
 <div class="callout-title callout-title--default" markdown="span">정의</div>
@@ -63,7 +63,7 @@ RRP는 응용의 Data를 내용물(바디)로 삼아 앞에 RRP 헤더를 붙인
 </div>
 
 
-모든 프로토콜의 동작 원칙은 같다. 헤더를 붙여 내려보내고, 떼어 올려보낸다. 그러나 실제 동작까지 같지는 않다. 붙이는 헤더의 내용과 그 뜻이 달라서, 헤더를 읽고 하는 일이 다르다. 그래서 TCP와 UDP는 서로 다른 프로토콜이다[^3][^2].
+모든 프로토콜의 동작 원칙은 같다. 헤더를 붙여 내려보내고, 떼어 올려보낸다. 그러나 실제 동작까지 같지는 않다. 붙이는 헤더의 내용과 그 뜻이 달라서, 헤더를 읽고 하는 일이 다르다. 그래서 TCP와 UDP는 서로 다른 프로토콜이다.
 
 <div class="callout callout-check" markdown="1">
 <div class="callout-title" markdown="span">검증: 헤더 오버헤드 비율 (카드 C2의 60%와 약 3.9%) — [22_encapsulation_verify.py](/Hongs_Blog/studies/computer-communication/code/22_encapsulation_verify/)</div>
@@ -81,14 +81,14 @@ RRP는 응용의 Data를 내용물(바디)로 삼아 앞에 RRP 헤더를 붙인
 <div class="callout callout-misconception" markdown="1">
 <div class="callout-title" markdown="span">"모든 프로토콜의 동작 원칙이 같으니, 실제 동작도 같다"</div>
 
-틀렸다. 슬라이드도 이 질문을 던진다. 그림에서 RRP 자리에 AAA를 넣어도 헤더를 붙이고 떼는 모양은 똑같아서 그럴듯해 보인다. 실제로 프로토콜의 차이는 헤더에 무엇을 적고 그것을 어떻게 해석하느냐에 있다. 예를 들어 TCP 헤더에는 순서 번호와 확인 번호가 있어 잃어버린 데이터를 다시 보낸다. UDP 헤더에는 그런 칸이 없어서 다시 보내지 않는다[^s1]. 모양이 같다고 동작이 같은 것은 아니다.
+틀렸다. 위 그림에서 RRP 자리에 다른 프로토콜 AAA를 넣어도 헤더를 붙이고 떼는 모양은 똑같아서 그럴듯해 보인다. 실제로 프로토콜의 차이는 헤더에 무엇을 적고 그것을 어떻게 해석하느냐에 있다. 예를 들어 TCP 헤더에는 순서 번호와 확인 번호가 있어 잃어버린 데이터를 다시 보낸다. UDP 헤더에는 그런 칸이 없어서 다시 보내지 않는다[^s1]. 모양이 같다고 동작이 같은 것은 아니다.
 
 </div>
 
 
 ## 확인 문제
 
-<details markdown="1"><summary markdown="span"><b>C1</b> 슬라이드의 RRP·HHP 구조에서 (a) 망을 지나는 메시지 (b) Host 2의 HHP가 처리를 마치고 RRP에게 넘기는 것 (c) RRP가 응용에게 넘기는 것을 각각 쓰라.</summary>
+<details markdown="1"><summary markdown="span"><b>C1</b> 위 RRP·HHP 구조에서 (a) 망을 지나는 메시지 (b) Host 2의 HHP가 처리를 마치고 RRP에게 넘기는 것 (c) RRP가 응용에게 넘기는 것을 각각 쓰라.</summary>
 
 
 **답:** (a) <code>[HHP&#124;RRP&#124;Data]</code> (b) <code>[RRP&#124;Data]</code> (c) `[Data]`<br>
@@ -104,15 +104,12 @@ RRP는 응용의 Data를 내용물(바디)로 삼아 앞에 RRP 헤더를 붙인
 
 </details>
 
-<details markdown="1"><summary markdown="span"><b>C3</b> 필기의 "동작은 같다. 헤더는 다르다. 헤더가 달라서 동작이 다르다. 즉, 다른 프로토콜이다"를 모순 없이 풀어 쓰라.</summary>
+<details markdown="1"><summary markdown="span"><b>C3</b> 다음 말을 모순 없이 풀어 쓰라: "동작은 같다. 헤더는 다르다. 헤더가 달라서 동작이 다르다. 즉, 다른 프로토콜이다."</summary>
 
 
 **답:** 첫 "동작"은 동작 원칙(헤더를 붙여 내려보내고 떼어 올려보냄)이고, 모든 프로토콜에 공통이다. 뒤의 "동작"은 실제로 하는 일(재전송 여부, 순서 맞추기 등)이다. 실제로 하는 일은 헤더에 무엇을 적고 어떻게 해석하느냐로 정해진다. 그래서 헤더가 다르면 다른 프로토콜이다.
 
 </details>
 
-[^1]: 수업 슬라이드 캡처 — 슬라이드 "포장/캡슐화(Encapsulation) -- 헤더(header)/바디(body)"
-[^2]: 컴퓨터 통신 2회 필기 「2주차」, 67~77행
-[^3]: 수업 슬라이드 캡처 — 슬라이드 "모든 프로토콜의 동작 원칙이 같다! 실제 동작도 같다?". 오른쪽의 빨간 손글씨: TCP, UDP
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> TCP 헤더의 순서 번호·확인 번호와 UDP의 재전송 없음은 원본에 없다. TCP는 RFC 9293(2022), UDP는 RFC 768(1980)에 정의되어 있다.
+[^s1]: TCP는 RFC 9293(2022), UDP는 RFC 768(1980)에 정의되어 있다.
 {% endraw %}

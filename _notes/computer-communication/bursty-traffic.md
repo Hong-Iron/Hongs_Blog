@@ -10,7 +10,7 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-updated: "2026-10-06"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Bursty Traffic", "버스트", "burst", "BURSTY", "최대 대 평균 비", "peak-to-average ratio"]
 description: "웹 페이지를 열 때만 잠깐 데이터가 몰리고 글을 읽는 동안은 거의 오가지 않는 것처럼, 짧게 몰려 나왔다가 오래 쉬는 트래픽이다. 컴퓨터 통신 트래픽의 특징이다. 가장 많이 보낼 때가 평소보다 훨씬 크다. 그래서 가장 많이 보낼 때에 맞춰 용량을 미리 잡아 두면 대부분의 시간에 비…"
@@ -76,7 +76,7 @@ permalink: "/studies/computer-communication/bursty-traffic/"
 
 ## 활용
 
-- 컴퓨터 통신 트래픽이 버스티하다는 것이 1주차 논리의 출발점이다[^1]. 이 성질 때문에 [회선 스위칭](/Hongs_Blog/studies/computer-communication/circuit-switching/)에서 [패킷 스위칭](/Hongs_Blog/studies/computer-communication/packet-switching/)으로, [시분할 다중화](/Hongs_Blog/studies/computer-communication/time-division-multiplexing/)에서 [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)로 넘어간다[^2].
+- 컴퓨터 통신 트래픽이 버스티하다는 사실에서 스위칭과 다중화 방식의 선택이 출발한다. 이 성질 때문에 [회선 스위칭](/Hongs_Blog/studies/computer-communication/circuit-switching/)에서 [패킷 스위칭](/Hongs_Blog/studies/computer-communication/packet-switching/)으로, [시분할 다중화](/Hongs_Blog/studies/computer-communication/time-division-multiplexing/)에서 [통계적 다중화](/Hongs_Blog/studies/computer-communication/statistical-multiplexing/)로 넘어간다.
 - $$p$$가 작을수록 고정 할당의 사용률이 낮아지고, 통계적 다중화의 이득이 커진다.
 
 ## 연결
@@ -107,7 +107,5 @@ permalink: "/studies/computer-communication/bursty-traffic/"
 
 </details>
 
-[^1]: 컴퓨터 통신 1회 필기 「1주차」, 33~36행
-[^2]: 컴퓨터 통신 1회 필기 「1주차」, 55행, 69행
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원본은 "컴퓨터 통신 트래픽의 특징은 BURSTY하다"고만 쓰고 정의하지 않는다. 최대 대 평균 비, 활동/휴식 모델, 예와 수치(1초 활동·19초 휴식)는 설명용 가상 수치다.
+[^s1]: 최대 대 평균 비, 활동/휴식 모델, 예와 수치(1초 활동·19초 휴식)는 설명용 가상 수치다.
 {% endraw %}

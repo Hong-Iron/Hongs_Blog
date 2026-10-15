@@ -169,7 +169,7 @@ def main():
     L, U, _ = lu_exact([[2, 1], [6, 8]])
     assert L == [[1, 0], [3, 1]] and U == [[2, 1], [0, 5]]
     print("[OK] 주장 7·카드 C1")
-    # 수치해석(2-2) 과목별 관점: 둘리틀 공식, 슬라이드 예, 오차 줄이기, 열마다 풀어 역행렬
+    # 수치해석(2-2) 과목별 관점: 둘리틀 공식, 문서의 예, 오차 줄이기, 열마다 풀어 역행렬
     from fractions import Fraction as Fr
     def doolittle(M):
         n = len(M); L = [[Fr(int(i == j)) for j in range(n)] for i in range(n)]; U = [[Fr(0)] * n for _ in range(n)]

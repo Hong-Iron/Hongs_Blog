@@ -23,7 +23,7 @@ permalink: "/studies/data-structures/code/19_linked-list-practice_p1/"
 /* 연결 리스트 연습 문제 1: 체인 따라가기.
  *
  * 문서: 1-2학기/자료구조/4.연습문제/19.연결 리스트 연습.md
- * 출처: 자료구조 5주차 슬라이드 p.10. printList, length, indexOf는 슬라이드의 "링크를 따라간다"를 고리로 묶은 것이다.
+ * printList, length, indexOf는 "링크를 따라간다"를 반복문으로 묶은 것이다.
  * 실행: cc -std=c11 -Wall -Wextra 19_linked-list-practice_p1.c -o p1 && ./p1
  * 번호: 노드 번호는 0부터 센다.
  */

@@ -23,13 +23,10 @@ permalink: "/studies/data-structures/code/18_linked-stack_impl/"
 /* 연결 리스트로 만든 스택: 구현과 자체 테스트.
  *
  * 문서: 1-2학기/자료구조/3.개념집/18.연결 리스트로 만든 스택.md
- * 출처: 자료구조 5주차 슬라이드 p.27~31. 슬라이드 코드를 컴파일되게 고쳤다.
- *       (p.29의 typedef 이름이 StackeNode라 그 아래 줄의 StackNode를 못 알아본다. 문서의 warning 참고)
- *       init, is_empty, peek, destroy는 슬라이드에 본문이 없어 보탰다.
  * 실행: cc -std=c11 -Wall -Wextra 18_linked-stack_impl.c -o lstack && ./lstack
  *
  * 확인하는 것
- *   1. 슬라이드 p.28의 그림: 3, 7, 9를 차례로 넣으면 top -> 9 -> 7 -> 3 -> NULL.
+ *   1. 문서의 그림: 3, 7, 9를 차례로 넣으면 top -> 9 -> 7 -> 3 -> NULL.
  *   2. 문서의 추적 표와 카드 C1.
  *   3. 카드 C2: 맨 끝 노드를 맨 위로 삼으면, 노드가 n개일 때 그 앞 노드를 찾느라 링크를 n - 2번 따라간다.
  *   4. 무작위 연산 5,000번: 배열 스택(13번 문서의 두 배 늘리기 판을 옮겨 적은 것)과 꺼낸 값·맨 위·빔 판정이 같다.
@@ -175,14 +172,14 @@ int main(void)
     init(&s);
     check(is_empty(&s) && s.top == NULL, "처음: 비었다");
 
-    /* 1. 슬라이드 p.28 */
+    /* 1. 문서의 그림: 3, 7, 9를 쌓은 스택 */
     push(&s, 3); push(&s, 7); push(&s, 9);
-    check(same_text(chain(&s), "9 7 3"), "p.28 top -> 9 -> 7 -> 3");
+    check(same_text(chain(&s), "9 7 3"), "그림: top -> 9 -> 7 -> 3");
     check(s.top->item == 9 && s.top->link->item == 7 && s.top->link->link->item == 3
-          && s.top->link->link->link == NULL, "p.28 맨 아래 노드의 link는 NULL");
+          && s.top->link->link->link == NULL, "그림: 맨 아래 노드의 link는 NULL");
     check(peek(&s) == 9 && size(&s) == 3, "맨 위는 9");
 
-    /* 2. 문서의 추적 표 (p.28 뒤를 이어서) */
+    /* 2. 문서의 추적 표 (그림 뒤를 이어서) */
     printf("  push 3, 7, 9  체인: %s\n", chain(&s));
     element x = pop(&s);
     printf("  pop -> %d      체인: %s\n", x, chain(&s));

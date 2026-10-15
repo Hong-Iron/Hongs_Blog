@@ -34,7 +34,7 @@ def rows(c, sql, args=()):
 
 if __name__ == "__main__":
     c = sqlite3.connect(':memory:', isolation_level=None)
-    # 슬라이드 10 p.13~14의 자료형 이름을 모두 받는다. 없는 이름(WHATEVER)도 받는다.
+    # 문서에 나온 기본 자료형 이름을 모두 받는다. 없는 이름(WHATEVER)도 받는다.
     c.execute("""CREATE TABLE T (v VARCHAR(3), ch CHAR(9), n INT, f FLOAT, d DECIMAL(3,1), b BOOLEAN,
                                  bt BIT(4), vb VARBIT(4), dt DATE, tm TIME, ts TIMESTAMP, w WHATEVER)""")
     assert len(rows(c, 'PRAGMA table_info(T)')) == 12
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     c.execute("INSERT INTO T (b) VALUES (TRUE), (FALSE), (2)")         # TRUE, FALSE는 1, 0이고 2도 들어간다
     assert rows(c, "SELECT b FROM T WHERE b IS NOT NULL") == [(1,), (0,), (2,)]
 
-    # 슬라이드의 예: TIMESTAMP '2024-11-07 13:15:47.648302'는 10 + 1 + 8 + 1 + 6 = 26자리
+    # 문서의 예: TIMESTAMP '2024-11-07 13:15:47.648302'는 10 + 1 + 8 + 1 + 6 = 26자리
     stamp = '2024-11-07 13:15:47.648302'
     date, time = stamp.split(' ')
     assert len(date) == 10 and len(time.split('.')[0]) == 8 and len(time.split('.')[1]) == 6 and len(stamp) == 26

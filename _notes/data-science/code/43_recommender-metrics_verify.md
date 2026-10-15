@@ -23,7 +23,6 @@ permalink: "/studies/data-science/code/43_recommender-metrics_verify/"
 """추천 평가 지표 검증.
 
 문서: 43.추천 평가 지표 (예시, 정의, 카드)
-출처: 데이터 과학 11회 슬라이드 11-2 p.11~20
 주장:
   1. r = [5,4,3,2,1], r^ = [4,5,2,1,5]: MSE 4, MAE 1.6, RMSE 2.
   2. 추천 목록 [A,B,C,D,E], 관련 항목 {B,D,F,G}: P@5 = 0.4, R@5 = 0.5, F1@5 = 4/9, HR@5 = 1.
@@ -51,19 +50,19 @@ def ndcg(rec, rel, k):
 def main():
     r = [5, 4, 3, 2, 1]; p = [4, 5, 2, 1, 5]
     assert mse(r, p) == 4 and mae(r, p) == 1.6 and math.sqrt(mse(r, p)) == 2
-    print("[OK] p.11~12: MSE 4, MAE 1.6, RMSE 2")
+    print("[OK] 평점 오차: MSE 4, MAE 1.6, RMSE 2")
     rec = list("ABCDE"); rel = set("BDFG")
     P, R = prec(rec, rel, 5), recall(rec, rel, 5)
     assert (P, R, hr(rec, rel, 5)) == (0.4, 0.5, 1) and abs(2 * P * R / (P + R) - 4 / 9) < 1e-12
-    print("[OK] p.13~15: P@5 0.4, R@5 0.5, F1@5 4/9, HR@5 1")
+    print("[OK] 목록 지표: P@5 0.4, R@5 0.5, F1@5 4/9, HR@5 1")
     rel2 = set("BD")
     assert mr(rec, rel2) == 3 and rr(rec, rel2) == 0.5
     d, n = dcg(rec, rel2, 5), ndcg(rec, rel2, 5)
     assert round(d, 3) == 1.062 and round(1 + 1 / math.log2(3), 3) == 1.631 and round(n, 3) == 0.651
-    print(f"[OK] p.16~18: MR 3, RR 0.5, DCG {d:.3f}, nDCG {n:.3f}")
+    print(f"[OK] 순위 지표: MR 3, RR 0.5, DCG {d:.3f}, nDCG {n:.3f}")
     other = list("ABCEF")
     assert rr(rec, rel2) == rr(other, set("B")) and ndcg(rec, rel2, 5) != ndcg(other, set("B"), 5)
-    print(f"[OK] p.17: RR은 같고(0.5) nDCG는 다르다 ({ndcg(rec, rel2, 5):.3f} 대 {ndcg(other, set('B'), 5):.3f})")
+    print(f"[OK] RR과 nDCG: RR은 같고(0.5) nDCG는 다르다 ({ndcg(rec, rel2, 5):.3f} 대 {ndcg(other, set('B'), 5):.3f})")
     c = list("XYZW"); cr = {"Z"}
     assert (prec(c, cr, 4), recall(c, cr, 4), rr(c, cr)) == (0.25, 1.0, 1 / 3) and abs(ndcg(c, cr, 4) - 0.5) < 1e-12
     print("[OK] 카드 C2: P@4 0.25, R@4 1, RR 1/3, nDCG 0.5")

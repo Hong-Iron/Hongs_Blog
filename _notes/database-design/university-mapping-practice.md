@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 description: "사용 개념: ER-관계형 사상 절차의 일곱 단계, (min, max) 표기 읽기."
 prev_url: "/studies/database-design/er-mapping-ladder/"
@@ -25,11 +25,11 @@ permalink: "/studies/database-design/university-mapping-practice/"
 {% raw %}
 사용 개념: [ER-관계형 사상 절차](/Hongs_Blog/studies/database-design/er-to-relational-mapping/)의 일곱 단계, [(min, max) 표기](/Hongs_Blog/studies/database-design/min-max-notation/) 읽기.
 
-7주차 슬라이드의 연습이다. 여기의 UNIVERSITY는 2주차의 UNIVERSITY 표 다섯 개와는 다른 스키마다.
+여기의 UNIVERSITY는 [데이터베이스와 DBMS](/Hongs_Blog/studies/database-design/database-and-dbms/)에 나온 UNIVERSITY 표 다섯 개와는 다른 스키마다.
 
 ## p1 · UNIVERSITY ER 그림을 릴레이션으로 옮기기
 
-아래 UNIVERSITY ER 그림을 관계형 데이터베이스 스키마로 옮겨라. 힌트: 개체 릴레이션 6개와 관계 릴레이션 1개가 나온다[^1].
+아래 UNIVERSITY ER 그림을 관계형 데이터베이스 스키마로 옮겨라. 힌트: 개체 릴레이션 6개와 관계 릴레이션 1개가 나온다.
 
 ```mermaid
 flowchart TD
@@ -81,7 +81,7 @@ flowchart TD
 | SECTION | SecId(키), SecNo, Sem, Year, DaysTime, CRoom(Bldg, RoomNo) |
 | STUDENT | SId(키), DOB, SName(FName, MName, LName), Addr, Phone, Major |
 
-**풀이 전략.** 그림이 (min, max) 표기라서 관계의 종류부터 읽어야 한다. 관계 타입마다 양쪽의 max를 본다. 둘 다 1이면 1:1, 한쪽만 1이면 1:N, 둘 다 N이면 M:N이다. 1:N에서 외래 키를 받는 쪽은 max가 1인 개체 타입이다. 상대를 많아야 하나만 가지는 쪽이기 때문이다. 그다음은 절차의 순서대로 간다. 이 그림에는 약한 개체 타입, 다치 속성, n항 관계 타입이 없어서 네 단계만 남는다[^2].
+**풀이 전략.** 그림이 (min, max) 표기라서 관계의 종류부터 읽어야 한다. 관계 타입마다 양쪽의 max를 본다. 둘 다 1이면 1:1, 한쪽만 1이면 1:N, 둘 다 N이면 M:N이다. 1:N에서 외래 키를 받는 쪽은 max가 1인 개체 타입이다. 상대를 많아야 하나만 가지는 쪽이기 때문이다. 그다음은 절차의 순서대로 간다. 이 그림에는 약한 개체 타입, 다치 속성, n항 관계 타입이 없어서 네 단계만 남는다.
 
 **0단계 · 관계의 종류 읽기**
 
@@ -122,7 +122,7 @@ flowchart TD
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-개체 타입마다 릴레이션 하나를 만든다. 복합 속성 SName과 CRoom은 성분만 들어간다. 굵은 것이 기본 키다[^3].
+개체 타입마다 릴레이션 하나를 만든다. 복합 속성 SName과 CRoom은 성분만 들어간다. 굵은 것이 기본 키다.
 
 | 릴레이션 | 속성 |
 |---|---|
@@ -133,7 +133,7 @@ flowchart TD
 | SECTION | **SecId**, SecNo, Sem, Year, Bldg, RoomNo, DaysTime |
 | STUDENT | **SId**, DOB, FName, MName, LName, Addr, Phone, Major |
 
-풀이 슬라이드는 개체 타입 DEPT의 릴레이션 이름을 DEPARTMENT로 적었다. DEPT와 COURSE는 키 속성이 둘씩인데 DName과 CCode를 기본 키로 골랐다. 남은 DCode와 CoName은 값이 안 겹친다는 조건을 따로 걸어야 하는 보조 키다[^s2].
+개체 타입 DEPT의 릴레이션 이름은 DEPARTMENT로 적는다. DEPT와 COURSE는 키 속성이 둘씩인데 DName과 CCode를 기본 키로 골랐다. 남은 DCode와 CoName은 값이 안 겹친다는 조건을 따로 걸어야 하는 보조 키다[^s2].
 
 </details>
 
@@ -143,7 +143,7 @@ flowchart TD
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-전체 참여 쪽 릴레이션에 상대의 기본 키를 넣는다. 관계의 속성 CStartDate도 따라간다[^4].
+전체 참여 쪽 릴레이션에 상대의 기본 키를 넣는다. 관계의 속성 CStartDate도 따라간다.
 
 | 릴레이션 | 붙는 속성 | 외래 키 |
 |---|---|---|
@@ -160,7 +160,7 @@ INSTRUCTOR에 넣으면 학장도 학과장도 아닌 교수의 칸이 모두 NU
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-max가 1인 쪽 릴레이션에 상대의 기본 키를 넣는다[^5].
+max가 1인 쪽 릴레이션에 상대의 기본 키를 넣는다.
 
 | 관계 타입 | 릴레이션 | 붙는 속성 | 외래 키 |
 |---|---|---|---|
@@ -179,7 +179,7 @@ max가 1인 쪽 릴레이션에 상대의 기본 키를 넣는다[^5].
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-관계 릴레이션을 새로 만든다. 양쪽 기본 키를 외래 키로 넣고 둘을 묶어 기본 키로 삼는다. 관계의 속성 Grade도 넣는다[^6].
+관계 릴레이션을 새로 만든다. 양쪽 기본 키를 외래 키로 넣고 둘을 묶어 기본 키로 삼는다. 관계의 속성 Grade도 넣는다.
 
 | 릴레이션 | 속성 | 외래 키 |
 |---|---|---|
@@ -193,7 +193,7 @@ max가 1인 쪽 릴레이션에 상대의 기본 키를 넣는다[^5].
 <details class="callout callout-answer" markdown="1">
 <summary class="callout-title" markdown="span">답</summary>
 
-릴레이션 7개(개체 릴레이션 6개 + 관계 릴레이션 1개), 외래 키 10개다[^6].
+릴레이션 7개(개체 릴레이션 6개 + 관계 릴레이션 1개), 외래 키 10개다.
 
 | 릴레이션 | 속성 (굵은 것이 기본 키, 기울인 것이 외래 키) |
 |---|---|
@@ -210,16 +210,9 @@ max가 1인 쪽 릴레이션에 상대의 기본 키를 넣는다[^5].
 </details>
 
 
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: 풀이 슬라이드 p.4(2단계)는 DEPARTMENT에 붙는 외래 키를 ChairId로 적고, p.5~6(3·4단계)은 같은 자리를 Chaired로 적는다. / 문제점: 한 속성의 이름이 쪽마다 다르다. COLLEGE의 DeanId는 끝까지 그대로다. / 수정안: 같은 속성이다. 이 문서는 DeanId와 짝이 맞는 ChairId로 적었다. / 근거: 세 쪽 모두 그 속성에서 INSTRUCTOR의 Id로 화살표가 가고, 바로 옆에 CStartDate가 있다.
-
-</div>
-
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 강의의 단계를 코드로 옮긴 사상기에 이 ER을 넣어 0단계의 종류(1:1 2개, 1:N 6개, M:N 1개), 1~4단계의 중간 결과, 릴레이션 7개, 외래 키 10개가 가리키는 곳이 풀이 슬라이드와 같음. 만든 표가 SQLite에서 돌아가고 외래 키가 걸림. 변형 두 문제의 답 — [44_university-mapping-practice_p1.py](/Hongs_Blog/studies/database-design/code/44_university-mapping-practice_p1/)</div>
+<div class="callout-title" markdown="span">검증: 사상 절차의 단계를 코드로 옮긴 사상기에 이 ER을 넣어 0단계의 종류(1:1 2개, 1:N 6개, M:N 1개), 1~4단계의 중간 결과, 릴레이션 7개, 외래 키 10개가 가리키는 곳이 위 답과 같음. 만든 표가 SQLite에서 돌아가고 외래 키가 걸림. 변형 두 문제의 답 — [44_university-mapping-practice_p1.py](/Hongs_Blog/studies/database-design/code/44_university-mapping-practice_p1/)</div>
 
 </div>
 
@@ -252,13 +245,7 @@ STUDENT에서 Phone을 빼고 STUDENT_PHONE(**SId**, **Phone**)을 만든다. �
 </details>
 
 
-[^1]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.31 (Exercise: ER-to-Relational Mapping for UNIVERSITY DB, "Hint: 6 entity relations + 1 relationship relation")
-[^2]: 데이터베이스 설계 7회 강의 자료 「7-relational-model-solutions」, p.6 ("No weak entity types / No multivalued attributes / No n-ary relationship types")
-[^3]: 같은 자료, p.3 (Step 1: Mapping of regular entity types)
-[^4]: 같은 자료, p.4 (Steps 2: Mapping of binary 1:1 relationship types)
-[^5]: 같은 자료, p.5 (Steps 3: Mapping of binary 1:N relationship types)
-[^6]: 같은 자료, p.6 (Steps 4: Mapping of binary M:N relationship types)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Mermaid 그림 1개는 원본에 없다. 7 p.31의 Chen 표기 그림을 옮긴 것이고 개체 타입의 속성은 표로 뺐다. 밑줄(키)은 그림을 크게 뽑아 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 0단계의 표와 "max가 1인 쪽이 외래 키를 받는다"는 읽는 법, 보조 키에 대한 말은 풀이 슬라이드에 없다. 풀이는 단계마다의 그림만 보여 준다. 읽는 법대로 옮긴 결과가 풀이의 그림과 같음을 문제 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "옮긴 뒤에 볼 것"과 변형 두 문제는 원본에 없다. 문제 코드로 확인했다(NOT NULL이 되는 외래 키, 수강생 한 명인 분반, 두 변형의 릴레이션 수).
+[^s1]: 밑줄(키)은 그림을 크게 뽑아 확인했다.
+[^s2]: 풀이는 단계마다의 그림만 보여 준다. 읽는 법대로 옮긴 결과가 풀이의 그림과 같음을 문제 코드로 확인했다.
+[^s3]: 문제 코드로 확인했다(NOT NULL이 되는 외래 키, 수강생 한 명인 분반, 두 변형의 릴레이션 수).
 {% endraw %}

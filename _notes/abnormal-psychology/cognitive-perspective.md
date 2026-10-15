@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Cognitive Perspective", "인지적 모델", "인지행동적 입장", "cognitive-behavioral perspective", "인지행동치료", "CBT", "Cognitive Behavior Therapy", "인지적 왜곡", "cognitive distortion", "역기능적 신념", "dysfunctional belief", "비합리적 신념", "irrational belief", "ABC 모델", "엘리스", "Ellis", "벡", "Beck", "합리적 정서행동치료", "REBT"]
 description: "같은 일을 겪어도 그 일을 어떻게 해석하느냐가 감정과 행동을 정한다고 본다. 마음의 병은 자신과 세상을 비현실적으로 부정적으로 보는 생각 습관에서 생기므로, 그 생각을 찾아 현실에 맞게 바꾸면 낫는다. 생각이라는 눈에 보이지 않는 과정을 다루면서도 검증할 수 있는 치료를 만들었다는…"
@@ -41,17 +41,17 @@ permalink: "/studies/abnormal-psychology/cognitive-perspective/"
 | B: 생각·신념 (Belief) | "다들 바쁜가 보다" | "역시 나를 싫어하는 거야. 나는 늘 무시당해" |
 | C: 결과 (Consequence) | 별 감정 없이 다른 일을 한다 | 우울하고, 다음부터 말을 걸지 않는다 |
 
-사건 A는 같은데 결과 C가 다르다. 차이를 만든 것은 B다. 슬라이드의 기본 가정 "사람은 사건 때문이 아니라 사건에 대한 견해 때문에 고통받는다"가 이 표다[^1]. M의 B에는 "늘", "다들"처럼 증거보다 크게 일반화한 인지적 왜곡이 들어 있다.
+사건 A는 같은데 결과 C가 다르다. 차이를 만든 것은 B다. 인지적 입장의 기본 가정 "사람은 사건 때문이 아니라 사건에 대한 견해 때문에 고통받는다"를 이 표가 보여 준다. M의 B에는 "늘", "다들"처럼 증거보다 크게 일반화한 인지적 왜곡이 들어 있다.
 
 ## 정의
 
-### 기본 가정[^1]
+### 기본 가정
 
 - 사람은 세상을 심리적으로 구성하는 존재다.
 - 인지(cognition)가 감정과 행동을 결정한다.
 - 사람은 외부 사건이 아니라 그 사건에 대한 견해(view) 때문에 고통받는다[^s2].
 
-### 원인론과 치료[^2]
+### 원인론과 치료
 
 - **원인론:** 정신장애는 부적응적 인지의 산물이다.
     - 자신과 세상에 대한 부정적 사고
@@ -61,7 +61,7 @@ permalink: "/studies/abnormal-psychology/cognitive-perspective/"
 
 ### 인지행동적 입장
 
-행동주의적 입장과 인지적 입장을 합친 것이 인지행동적 입장이고, 그 치료가 **인지행동치료**(Cognitive Behavior Therapy, CBT)다[^3]. 슬라이드는 이 흐름의 인물로 파블로프, 스키너, 반두라, 엘리스(Ellis), 벡(Beck)을 든다[^3]. 앞의 셋은 [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/)의 학습 원리를, 뒤의 둘은 인지치료를 대표한다. 엘리스는 A-B-C 모델로 합리적 정서행동치료를, 벡은 우울의 인지치료를 만들었다[^s3].
+행동주의적 입장과 인지적 입장을 합친 것이 인지행동적 입장이고, 그 치료가 **인지행동치료**(Cognitive Behavior Therapy, CBT)다. 이 흐름을 대표하는 인물은 파블로프, 스키너, 반두라, 엘리스(Ellis), 벡(Beck)이다. 앞의 셋은 [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/)의 학습 원리를, 뒤의 둘은 인지치료를 대표한다. 엘리스는 A-B-C 모델로 합리적 정서행동치료를, 벡은 우울의 인지치료를 만들었다[^s3].
 
 행동주의가 "무엇을 겪었나(자극과 결과)"를 본다면, 인지적 입장은 그 사이에 "어떻게 받아들였나(해석)"를 끼워 넣는다. 같은 경험에도 사람마다 반응이 다른 이유, 곧 행동주의가 설명하지 못한 부분을 여기서 설명한다.
 
@@ -76,14 +76,14 @@ flowchart LR
   CG --> CBT
 ```
 
-다섯 사람이 두 줄기로 모이고, 두 줄기가 합쳐 인지행동치료가 된다[^s4].
+다섯 사람이 두 줄기로 모이고, 두 줄기가 합쳐 인지행동치료가 된다.
 
 ## 연결
 
 - 앞선 입장과 통합: [행동주의적 입장](/Hongs_Blog/studies/abnormal-psychology/behavioral-perspective/)
 - 역기능적 신념과 인지도식은 취약성의 일부다: [취약성-스트레스 모델](/Hongs_Blog/studies/abnormal-psychology/vulnerability-stress-model/)
 - 방어기제와 비교: 둘 다 현실을 비틀어 받아들이지만, 방어기제는 무의식적 동기에서, 인지적 왜곡은 학습된 사고 습관에서 나온다고 본다([방어기제](/Hongs_Blog/studies/abnormal-psychology/defense-mechanisms/)).
-- 3회에서 우울증의 인지이론(벡의 인지삼제)과 인지행동치료의 기법(ABC 기법, 하향화살표 기법)으로 이어진다.
+- 우울증에 적용하면 [우울증의 인지이론](/Hongs_Blog/studies/abnormal-psychology/beck-cognitive-theory/)(벡의 인지삼제)과 [인지행동치료](/Hongs_Blog/studies/abnormal-psychology/cbt/)의 기법(ABC 기법, 하향화살표 기법)으로 이어진다.
 
 ## 확인 문제
 
@@ -109,11 +109,7 @@ flowchart LR
 
 </details>
 
-[^1]: 이상 심리학 1회 강의 자료 「이상심리학」, p.50
-[^2]: 이상 심리학 1회 강의 자료 「이상심리학」, p.51
-[^3]: 이상 심리학 1회 강의 자료 「이상심리학」, p.52 (인지행동적 입장, 인물 사진)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 단체 채팅방 사례와 A-B-C 표는 기본 가정을 보이려고 만든 가상 사례다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 이 가정은 스토아 철학자 에픽테토스의 말("사람을 괴롭히는 것은 사물이 아니라 사물에 대한 견해다")에서 왔고, 엘리스와 벡이 인지치료의 출발점으로 인용했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 엘리스의 A-B-C 모델(사건-신념-결과)과 합리적 정서행동치료(REBT), 벡의 우울 인지치료는 인지치료의 역사에 대한 표준 설명이다. 3회 슬라이드가 "인지적 재구성: ABC 기법"을 다룬다.
-[^s4]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. '인지행동적 입장' 절(슬라이드 p.52의 인물 목록)을 그렸다.
+[^s1]: 단체 채팅방 사례와 A-B-C 표는 기본 가정을 보이려고 만든 가상 사례다.
+[^s2]: 이 가정은 스토아 철학자 에픽테토스의 말("사람을 괴롭히는 것은 사물이 아니라 사물에 대한 견해다")에서 왔고, 엘리스와 벡이 인지치료의 출발점으로 인용했다.
+[^s3]: 엘리스의 A-B-C 모델(사건-신념-결과)과 합리적 정서행동치료(REBT), 벡의 우울 인지치료는 인지치료의 역사에 대한 표준 설명이다.
 {% endraw %}

@@ -19,7 +19,7 @@ permalink: "/studies/human-interface-media/code/31_convolution-practice_p7/"
 [합성곱 연습](/Hongs_Blog/studies/human-interface-media/convolution-practice/) 문서의 문제 7 풀이 코드다. `if __name__ == "__main__":` 아래가 자체 테스트다.
 
 ```python
-"""합성곱 연습 p6·p7: 2차원 합성곱 (강의 6 p.21~22).
+"""합성곱 연습 p6·p7: 2차원 합성곱.
 
 p6: f = h = 단위 정사각형(0~1 × 0~1에서 1)이면 g(x, y) = tri(x) tri(y).
     네 구역 (1) xy (2) x(2 - y) (3) (2 - x)y (4) (2 - x)(2 - y). 꼭대기 g(1, 1) = 1.

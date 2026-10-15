@@ -57,7 +57,7 @@ permalink: "/studies/computer-communication/framing-compared/"
 
 ## 결정적 차이
 
-세 방법을 다섯 가지 기준으로 나란히 놓으면 다음과 같다[^1][^2][^s1].
+세 방법을 다섯 가지 기준으로 나란히 놓으면 다음과 같다[^s1].
 
 | | 보초 방법 (BISYNC) | 바이트 수 방법 (DDCMP) | 비트 채우기 (HDLC) |
 |---|---|---|---|
@@ -166,9 +166,7 @@ permalink: "/studies/computer-communication/framing-compared/"
 
 </details>
 
-[^1]: 컴퓨터 통신 4회 강의 자료 「2장-1」, 슬라이드 44
-[^2]: 같은 자료, 슬라이드 45
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 세 상황 문제, 오버헤드와 깨질 때의 행동 비교, "둘 다 아닐 때"는 원본에 없다. 44·45 구현 코드로 확인했다. 쓰지 않는 부호로 프레임을 표시하는 방법은 Peterson & Davie 2.3절(FDDI의 4B/5B 제어 부호)에 있다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 1장은 원본에 없다. [46_framing-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/46_framing-compared_plot/)로 그렸다. 본문 `41 42 43 44 45`, `46 47 48`, `49 4A 4B 4C`, `4D 4E`로 프레임 네 개를 만들어 이어 보내고, 받는 쪽 규칙대로 잘라 잃은 프레임 수(BISYNC 2, DDCMP Count 3이면 1, Count 21이면 3, HDLC 1)를 같은 코드로 확인했다. 깨지지 않으면 네 경우 모두 네 프레임을 정상으로 받는 것도 확인했다. CRC 두 바이트는 CRC-16/ARC로 본문만 넣어 계산했고, 계산을 짧게 하려고 DDCMP의 Header는 1바이트로, Count는 1바이트 값으로 줄였다. HDLC 받는 쪽이 깃발 하나를 앞 프레임의 끝이자 다음 프레임의 시작으로 보는 것은 HDLC의 일반적인 동작이다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> '결정적 차이' 표 아래의 다섯 소절(13비트 본문 예, 버퍼를 미리 잡는 예, 본문 `41 03 42`를 세 방법으로 보내는 예, `FF`·DLE 10개의 오버헤드 비교, 끝 표시가 깨지는 네 시나리오와 Count 8,197 예)은 원본에 없다. 표의 앞 세 줄은 슬라이드 44~45에서, 오버헤드와 깨질 때의 행동은 검증 코드에서 나왔다. 숫자는 [46_framing-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/46_framing-compared_plot/), [44_byte-framing_plot.py](/Hongs_Blog/studies/computer-communication/code/44_byte-framing_plot/), [45_bit-stuffing_plot.py](/Hongs_Blog/studies/computer-communication/code/45_bit-stuffing_plot/)로 확인했다.
+[^s1]: 44·45 구현 코드로 확인했다. 쓰지 않는 부호로 프레임을 표시하는 방법은 Peterson & Davie 2.3절(FDDI의 4B/5B 제어 부호)에 있다.
+[^s2]: [46_framing-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/46_framing-compared_plot/)로 그렸다. 본문 `41 42 43 44 45`, `46 47 48`, `49 4A 4B 4C`, `4D 4E`로 프레임 네 개를 만들어 이어 보내고, 받는 쪽 규칙대로 잘라 잃은 프레임 수(BISYNC 2, DDCMP Count 3이면 1, Count 21이면 3, HDLC 1)를 같은 코드로 확인했다. 깨지지 않으면 네 경우 모두 네 프레임을 정상으로 받는 것도 확인했다. CRC 두 바이트는 CRC-16/ARC로 본문만 넣어 계산했고, 계산을 짧게 하려고 DDCMP의 Header는 1바이트로, Count는 1바이트 값으로 줄였다. HDLC 받는 쪽이 깃발 하나를 앞 프레임의 끝이자 다음 프레임의 시작으로 보는 것은 HDLC의 일반적인 동작이다.
+[^s3]: 숫자는 [46_framing-compared_plot.py](/Hongs_Blog/studies/computer-communication/code/46_framing-compared_plot/), [44_byte-framing_plot.py](/Hongs_Blog/studies/computer-communication/code/44_byte-framing_plot/), [45_bit-stuffing_plot.py](/Hongs_Blog/studies/computer-communication/code/45_bit-stuffing_plot/)로 확인했다.
 {% endraw %}

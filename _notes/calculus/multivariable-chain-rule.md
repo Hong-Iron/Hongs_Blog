@@ -212,7 +212,7 @@ $$\mathbf{r}_2$$는 $$\Vert \mathbf{k}\Vert $$에 비해 작다는 것만 알려
 
 
 [^1]: OpenStax, *Calculus Volume 3*, 4.5절 "The Chain Rule"(여러 변수의 연쇄 법칙, 나무 그림으로 길 세기). Strang, *Introduction to Linear Algebra* 5판, 8.1절(선형 변환의 합성과 행렬 곱).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 야코비 행렬을 이용한 역기구학은 로봇공학 교재(예: Craig, *Introduction to Robotics*)의 표준 내용이다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [21_multivariable-chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_plot/)로 그렸다. 사각형은 $$dr = 0.4$$, $$d\theta = 0.3$$으로 잘 보이게 크게 잡았다. $$\det J = 2$$, 평행사변형 넓이 0.24, 실제 조각의 넓이 $$\int\!\!\int r\,dr\,d\theta = 0.24$$(신발끈 공식으로도)를 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 예시로 보기의 두 길을 그래프로 옮겼다.
+[^s1]: 야코비 행렬을 이용한 역기구학은 로봇공학 교재(예: Craig, *Introduction to Robotics*)의 표준 내용이다.
+[^s2]: [21_multivariable-chain-rule_plot.py](/Hongs_Blog/studies/calculus/code/21_multivariable-chain-rule_plot/)로 그렸다. 사각형은 $$dr = 0.4$$, $$d\theta = 0.3$$으로 잘 보이게 크게 잡았다. $$\det J = 2$$, 평행사변형 넓이 0.24, 실제 조각의 넓이 $$\int\!\!\int r\,dr\,d\theta = 0.24$$(신발끈 공식으로도)를 같은 코드로 확인했다.
+[^s3]: 예시로 보기의 두 길을 그래프로 옮겼다.
 {% endraw %}

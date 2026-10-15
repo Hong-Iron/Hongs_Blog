@@ -44,7 +44,7 @@ def dH(u):
 
 
 def bicubic(G, u, v, du=False, dv=False):
-    """G: 4×4 기하 행렬(슬라이드 p.10의 배치), 성분은 스칼라."""
+    """G: 4×4 기하 행렬(문서의 배치), 성분은 스칼라."""
     a = dH(u) if du else H(u); b = dH(v) if dv else H(v)
     return sum(a[i] * G[i][j] * b[j] for i in range(4) for j in range(4))
 
@@ -72,7 +72,7 @@ def main():
     P00, P10, P01, P11 = (0, 0, 0), (2, 0, 1), (0, 2, 1), (2, 2, 0)
     for u in (F(0), F(1, 4), F(1, 2), F(1)):
         for v in (F(0), F(1, 3), F(1)):
-            nested = lerp(lerp(P00, P01, v), lerp(P10, P11, v), u)          # 슬라이드 p.6의 두 단계
+            nested = lerp(lerp(P00, P01, v), lerp(P10, P11, v), u)          # 선형 보간 두 단계
             assert bilinear(P00, P10, P01, P11, u, v) == nested
     assert bilinear(P00, P10, P01, P11, F(1, 2), F(1, 2)) == (1, 1, F(1, 2))  # 카드 C2
     # 경계는 직선: v = 0이면 u에 대해 일차
@@ -91,7 +91,7 @@ def main():
     # 경계 곡선 u = 0은 에르미트 곡선: 점 P00, P01과 접선 Pv00, Pv01
     for v in (F(1, 5), F(1, 2)):
         assert bicubic(G, F(0), v) == sum(h * g for h, g in zip(H(v), G[0]))
-    # 베지어 곡면: 꼭짓점과 가장자리 (슬라이드 p.13~14)
+    # 베지어 곡면: 꼭짓점과 가장자리
     Pb = [[(i, j, random.randint(-3, 3)) for j in range(4)] for i in range(4)]
     assert bez_surf(Pb, F(0), F(0)) == Pb[0][0] and bez_surf(Pb, F(1), F(1)) == Pb[3][3]
     for v in (F(1, 3), F(3, 4)):

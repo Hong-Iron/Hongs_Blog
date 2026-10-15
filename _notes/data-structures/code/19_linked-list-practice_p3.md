@@ -23,8 +23,7 @@ permalink: "/studies/data-structures/code/19_linked-list-practice_p3/"
 /* 연결 리스트 연습 문제 3: 연결 스택으로 글자 순서 뒤집기.
  *
  * 문서: 1-2학기/자료구조/4.연습문제/19.연결 리스트 연습.md
- * 출처: 자료구조 5주차 슬라이드 p.29~31의 push, pop(3.개념집/18_linked-stack_impl.c에서 옮겨 적었다).
- *       글자를 뒤집는 쓰임은 슬라이드에 없는 문제다.
+ * push, pop은 3.개념집/18_linked-stack_impl.c에서 옮겨 적었다.
  * 실행: cc -std=c11 -Wall -Wextra 19_linked-list-practice_p3.c -o p3 && ./p3
  */
 #include <stdio.h>

@@ -9,7 +9,7 @@ course: "미분적분학"
 course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Gradient Descent", "경사 하강법", "경사하강법", "학습률", "learning rate", "스텝 크기", "step size", "하강 보조정리", "descent lemma", "L-매끄러움", "L-smooth", "모멘텀", "momentum", "헤비볼", "heavy ball", "확률적 경사 하강법", "SGD", "stochastic gradient descent"]
 description: "안개 낀 산에서 내려가는 사람처럼, 발밑의 경사만 보고 가장 가파르게 내려가는 쪽으로 한 걸음씩 옮긴다. 계산이 단순해서 변수가 수억 개인 신경망 학습에도 그대로 쓰인다. 성패는 걸음 크기(학습률)가 가른다. 너무 크면 골짜기를 건너뛰며 튀어 올라 발산하고, 너무 작으면 한없이 느…"
@@ -215,11 +215,11 @@ flowchart TD
 
 ## 과목별 관점
 
-**수치해석 (2-2학기).** 최댓값을 찾는 같은 방법을 최급상승법이라 부른다. 기울기 $$\nabla f$$는 가장 가파르게 오르는 방향이고 그 크기가 오르는 정도다. $$f(x, y) = xy^2$$이면 $$(2, 2)$$에서 $$\nabla f = (4, 8)$$, 크기 $$\sqrt{4^2 + 8^2} \approx 8.944$$다. 기울기는 대체로 등고선에 수직이다[^n1].
+**수치해석 (2-2학기).** 최댓값을 찾는 같은 방법을 최급상승법이라 부른다. 기울기 $$\nabla f$$는 가장 가파르게 오르는 방향이고 그 크기가 오르는 정도다. $$f(x, y) = xy^2$$이면 $$(2, 2)$$에서 $$\nabla f = (4, 8)$$, 크기 $$\sqrt{4^2 + 8^2} \approx 8.944$$다. 기울기는 대체로 등고선에 수직이다.
 
-슬라이드의 알고리즘은 학습률을 고정하지 않고 걸음마다 직선 탐색을 한다. $$\mathbf S_i = \nabla f(\mathbf x_i)$$로 두고, $$f(\mathbf x_i + h\mathbf S_i)$$를 가장 크게 하는 $$h$$를 1차원 최적화로 찾아 $$\mathbf x_{i+1} = \mathbf x_i + h\mathbf S_i$$로 간다. 이 방법은 선형으로 수렴한다[^n2].
+최급상승법은 학습률을 고정하지 않고 걸음마다 직선 탐색을 한다. $$\mathbf S_i = \nabla f(\mathbf x_i)$$로 두고, $$f(\mathbf x_i + h\mathbf S_i)$$를 가장 크게 하는 $$h$$를 1차원 최적화로 찾아 $$\mathbf x_{i+1} = \mathbf x_i + h\mathbf S_i$$로 간다. 이 방법은 선형으로 수렴한다.
 
-예: $$f(x, y) = 2xy + 2x - x^2 - 2y^2$$, 시작점 $$(-1, 1)$$. $$\nabla f = (6, -6)$$이라 $$g(h) = f(-1 + 6h, 1 - 6h) = -7 + 72h - 180h^2$$이다. $$g'(h) = 72 - 360h = 0$$에서 $$h = 0.2$$, 다음 점은 $$(0.2, -0.2)$$다[^n3]. 이 점은 기울기 방향 직선 위의 최대점이지 $$f$$의 최대점은 아니다. 다음 걸음은 $$\nabla f(0.2, -0.2) = (1.2, 1.2)$$ 방향으로 $$h = 1$$이라 $$(1.4, 1.0)$$이고, 참 최대점은 $$(2, 1)$$이다. 직선 탐색을 정확히 하면 이웃한 두 걸음의 방향이 서로 수직이라 지그재그로 다가간다[^sn1].
+예: $$f(x, y) = 2xy + 2x - x^2 - 2y^2$$, 시작점 $$(-1, 1)$$. $$\nabla f = (6, -6)$$이라 $$g(h) = f(-1 + 6h, 1 - 6h) = -7 + 72h - 180h^2$$이다. $$g'(h) = 72 - 360h = 0$$에서 $$h = 0.2$$, 다음 점은 $$(0.2, -0.2)$$다. 이 점은 기울기 방향 직선 위의 최대점이지 $$f$$의 최대점은 아니다. 다음 걸음은 $$\nabla f(0.2, -0.2) = (1.2, 1.2)$$ 방향으로 $$h = 1$$이라 $$(1.4, 1.0)$$이고, 참 최대점은 $$(2, 1)$$이다. 직선 탐색을 정확히 하면 이웃한 두 걸음의 방향이 서로 수직이라 지그재그로 다가간다[^sn1].
 
 ## 확인 문제
 
@@ -275,11 +275,8 @@ def step(w, X, y, lr):
 
 [^1]: Boyd, Vandenberghe, *Convex Optimization*, 9.1절(비제약 최소화, 강볼록성과 그 결과), 9.2절(하강 방법), 9.3절 "Gradient descent method"(수렴 분석).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 4.3절 "Gradient-Based Optimization", 8.3절(SGD와 모멘텀), 8.5절(Adam 등 적응적 학습률).
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 함수 $$\frac12(x^2 + 100y^2)$$, 시작점 $$(1, 1)$$에서 26_gradient-descent_verify.py로 센 값이다. 헤비볼의 계수는 폴랴크의 최적값 $$\eta = \frac{4}{(\sqrt L + \sqrt\mu)^2}$$, $$\beta = \left(\frac{\sqrt L - \sqrt\mu}{\sqrt L + \sqrt\mu}\right)^2$$을 썼다. 이론상 오차는 한 걸음마다 경사 하강법이 약 $$\frac{\kappa - 1}{\kappa + 1}$$배, 헤비볼이 약 $$\frac{\sqrt\kappa - 1}{\sqrt\kappa + 1}$$배로 준다.
-[^n1]: 수치해석 15회 강의 자료 「na15_multiop」, p.8~10
-[^n2]: 같은 자료, p.18~19
-[^n3]: 같은 자료, p.20~21
-[^sn1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드 p.21은 $$(0.2, -0.2)$$를 "최적점"이라 부르는데, 이것은 직선 위의 최적점이라는 뜻이다. 둘째 걸음, 참 최대점 $$(2, 1)$$, 수직인 이웃 방향, 카드 C5는 원본에 없다. 26_gradient-descent_verify.py로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 두 장은 원본에 없다. [26_gradient-descent_plot.py](/Hongs_Blog/studies/calculus/code/26_gradient-descent_plot/)로 그렸고, $$\eta = 0.09$$에서 $$x$$는 0.82배, $$y$$는 $$-0.8$$배씩 줄며 부호가 바뀌는 것, 오차를 $$10^{-6}$$배로 줄이는 걸음 수 1,341, 691, 93(문서의 약 1,340, 690, 90)을 같은 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 자주 하는 오해 두 개, 예제(조건수와 지그재그), 활용 절의 모멘텀과 흔한 실수(특성 표준화), [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/)의 시작점에 따라 답이 다른 예를 근거로 그렸다.
+[^s1]: 함수 $$\frac12(x^2 + 100y^2)$$, 시작점 $$(1, 1)$$에서 26_gradient-descent_verify.py로 센 값이다. 헤비볼의 계수는 폴랴크의 최적값 $$\eta = \frac{4}{(\sqrt L + \sqrt\mu)^2}$$, $$\beta = \left(\frac{\sqrt L - \sqrt\mu}{\sqrt L + \sqrt\mu}\right)^2$$을 썼다. 이론상 오차는 한 걸음마다 경사 하강법이 약 $$\frac{\kappa - 1}{\kappa + 1}$$배, 헤비볼이 약 $$\frac{\sqrt\kappa - 1}{\sqrt\kappa + 1}$$배로 준다.
+[^sn1]: 26_gradient-descent_verify.py로 확인했다.
+[^s2]: [26_gradient-descent_plot.py](/Hongs_Blog/studies/calculus/code/26_gradient-descent_plot/)로 그렸고, $$\eta = 0.09$$에서 $$x$$는 0.82배, $$y$$는 $$-0.8$$배씩 줄며 부호가 바뀌는 것, 오차를 $$10^{-6}$$배로 줄이는 걸음 수 1,341, 691, 93(문서의 약 1,340, 690, 90)을 같은 코드로 확인했다.
+[^s3]: 자주 하는 오해 두 개, 예제(조건수와 지그재그), 활용 절의 모멘텀과 흔한 실수(특성 표준화), [볼록 함수와 볼록 최적화](/Hongs_Blog/studies/calculus/convexity/)의 시작점에 따라 답이 다른 예를 근거로 그렸다.
 {% endraw %}

@@ -95,5 +95,5 @@ $$\lg n \ \ll\ \sqrt{n} \ \ll\ n \ \ll\ n \lg n \ \ll\ n^2 \ \ll\ n^3 \ \ll\ 2^n
 - 이 순서의 증명은 이산수학의 [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/)와 미분적분학의 [로피탈 정리](/Hongs_Blog/studies/calculus/lhopital-growth/)에서 한다.
 
 [^1]: Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms* 3판, 3.2절(밑이 1보다 큰 지수함수는 모든 다항식보다 빨리 자란다: $$n^b = o(a^n)$$). Lehman·Leighton·Meyer, *Mathematics for Computer Science*, 14.7절 "Asymptotic Notation".
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림은 원본에 없다. [09_power-vs-exponential_plot.py](/Hongs_Blog/studies/college-math/code/09_power-vs-exponential_plot/)로 그렸고, 그림에 쓴 값(로그-로그에서 $$x^3$$의 기울기 3, 반로그에서 $$2^x$$의 기울기 $$\log_{10} 2 \approx 0.30103$$)을 같은 코드로 확인했다.
+[^s1]: [09_power-vs-exponential_plot.py](/Hongs_Blog/studies/college-math/code/09_power-vs-exponential_plot/)로 그렸고, 그림에 쓴 값(로그-로그에서 $$x^3$$의 기울기 3, 반로그에서 $$2^x$$의 기울기 $$\log_{10} 2 \approx 0.30103$$)을 같은 코드로 확인했다.
 {% endraw %}

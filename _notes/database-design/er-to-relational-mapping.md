@@ -10,7 +10,7 @@ course_slug: "database-design"
 course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["ER-to-Relational Mapping", "ER 관계형 사상", "ER 사상 알고리즘", "ER 다이어그램을 릴레이션으로 옮기기", "논리 설계", "Relational Database Design", "Correspondence between ER and Relational Models"]
 description: "개체와 그 사이의 연결을 그린 설계도(ER 그림)는 사람이 읽는 것이고, 데이터베이스가 받는 것은 표다. 그림의 네모, 마름모, 동그라미를 정해진 순서로 하나씩 옮기면 표 묶음이 나온다. 네모는 표가 되고, 일대일·일대다 연결은 칸 하나가 되고, 다대다 연결과 값이 여럿인 속성은 …"
@@ -34,9 +34,9 @@ permalink: "/studies/database-design/er-to-relational-mapping/"
 
 ## 예시로 보기
 
-개념 설계가 끝나면 ER 그림 한 장이 남는다. 이 그림은 DBMS에 넣을 수 없다. 관계형 DBMS는 릴레이션만 받는다. 그림을 보고 릴레이션을 "적당히" 만들면 사람마다 다른 스키마가 나오고 빠뜨리는 것이 생긴다. 그래서 그림의 요소마다 옮기는 법을 정해 두고 순서대로 따라간다[^1].
+개념 설계가 끝나면 ER 그림 한 장이 남는다. 이 그림은 DBMS에 넣을 수 없다. 관계형 DBMS는 릴레이션만 받는다. 그림을 보고 릴레이션을 "적당히" 만들면 사람마다 다른 스키마가 나오고 빠뜨리는 것이 생긴다. 그래서 그림의 요소마다 옮기는 법을 정해 두고 순서대로 따라간다.
 
-COMPANY의 ER 그림이다[^1].
+COMPANY의 ER 그림이다.
 
 ```mermaid
 flowchart TD
@@ -80,14 +80,14 @@ flowchart TD
 이 그림을 옮기면 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)의 릴레이션 여섯 개가 나온다. 개체 타입이 넷, 관계 타입이 여섯인데 릴레이션은 여섯 개다. 어떻게 그렇게 되는지가 이 문서의 내용이다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 강의의 단계를 코드로 옮긴 사상기에 COMPANY ER을 넣어 릴레이션 6개·외래 키 8개가 슬라이드와 같음, 단계마다의 중간 결과가 7 p.13~27과 같음, 만든 표에 6-2 p.21의 45줄이 들어가고 외래 키 검사를 통과함, 전체 참여 쪽 외래 키의 NOT NULL이 9 p.17~18과 같음, (min, max)로 읽어도 같은 결과, 개수 식 — [44_er-to-relational-mapping_verify.py](/Hongs_Blog/studies/database-design/code/44_er-to-relational-mapping_verify/)</div>
+<div class="callout-title" markdown="span">검증: 아래 절차를 코드로 옮긴 사상기에 COMPANY ER을 넣으면 릴레이션 6개·외래 키 8개가 나옴, 단계마다의 중간 결과가 아래 단계 표와 같음, 만든 표에 COMPANY 상태의 45줄이 들어가고 외래 키 검사를 통과함, 전체 참여 쪽 외래 키의 NOT NULL이 COMPANY의 `CREATE TABLE`과 같음, (min, max)로 읽어도 같은 결과, 개수 식 — [44_er-to-relational-mapping_verify.py](/Hongs_Blog/studies/database-design/code/44_er-to-relational-mapping_verify/)</div>
 
 </div>
 
 
 ## 절차
 
-옮기는 순서는 개체 타입 → 다치 속성 → 관계 타입이다[^2].
+옮기는 순서는 개체 타입 → 다치 속성 → 관계 타입이다.
 
 | 단계 | ER 그림의 요소 | 옮기는 법 | 자세한 문서 |
 |---|---|---|---|
@@ -101,7 +101,7 @@ flowchart TD
 
 관계 타입에 달린 속성은 그 관계가 간 곳으로 따라간다. 4·5단계에서는 외래 키를 넣은 릴레이션으로, 6·7단계에서는 관계 릴레이션으로 간다.
 
-COMPANY를 단계마다 따라가면 이렇게 된다[^3].
+COMPANY를 단계마다 따라가면 이렇게 된다.
 
 | 단계 | 옮긴 것 | 이 단계에서 생기거나 바뀐 릴레이션 |
 |---|---|---|
@@ -113,7 +113,7 @@ COMPANY를 단계마다 따라가면 이렇게 된다[^3].
 | 6 | WORKS_ON | WORKS_ON(**Essn**, **Pno**, Hours) |
 | 7 | (n항 관계 타입이 없다) | — |
 
-굵은 것이 기본 키다. 5단계 뒤의 EMPLOYEE는 끝이 Dno, Super_ssn 순서이고, 6-2 슬라이드의 스키마 그림은 Super_ssn, Dno 순서다. 속성의 순서는 릴레이션의 뜻에 들지 않으므로 같은 릴레이션이다([릴레이션의 특성](/Hongs_Blog/studies/database-design/relation-characteristics/)). 완성 그림에서 PROJECT의 Plocation에 그어진 밑줄은 [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)의 원본 오류 의심에 적었다.
+굵은 것이 기본 키다. 5단계 뒤의 EMPLOYEE는 끝이 Dno, Super_ssn 순서이고, [관계형 데이터베이스 스키마와 상태](/Hongs_Blog/studies/database-design/relational-database-schema/)의 스키마는 Super_ssn, Dno 순서다. 속성의 순서는 릴레이션의 뜻에 들지 않으므로 같은 릴레이션이다([릴레이션의 특성](/Hongs_Blog/studies/database-design/relation-characteristics/)).
 
 ### 몇 개가 나오는지 세기
 
@@ -128,7 +128,7 @@ COMPANY는 릴레이션이 $$3 + 1 + 1 + 1 = 6$$개, 외래 키가 $$1 + 1 + 1 +
 
 ### ER 모델과 관계형 모델의 짝
 
-슬라이드의 요약표다[^4].
+두 모델의 요소를 짝지으면 이렇다.
 
 | ER 모델 | 관계형 모델 |
 |---|---|
@@ -155,7 +155,7 @@ COMPANY는 릴레이션이 $$3 + 1 + 1 + 1 = 6$$개, 외래 키가 $$1 + 1 + 1 +
 | 다대다의 전체 참여 (직원은 프로젝트 하나 이상에서 일한다) | 사라진다 |
 | 계산해서 얻는 속성 (Number_of_employees) | 칸으로 만들지 않는다 |
 
-9주차 슬라이드의 `CREATE TABLE`에서 NOT NULL이 붙은 외래 키는 Dno, Mgr_ssn, Dnum이고 Super_ssn에는 붙지 않았다. 앞의 셋은 전체 참여 쪽에 넣은 외래 키이고 Super_ssn은 부분 참여 쪽에 넣은 외래 키다[^s3].
+COMPANY의 `CREATE TABLE`([CREATE SCHEMA와 CREATE TABLE](/Hongs_Blog/studies/database-design/sql-create-table/))에서 NOT NULL이 붙은 외래 키는 Dno, Mgr_ssn, Dnum이고 Super_ssn에는 붙지 않았다. 앞의 셋은 전체 참여 쪽에 넣은 외래 키이고 Super_ssn은 부분 참여 쪽에 넣은 외래 키다[^s3].
 
 ### 스스로 설명해 보기
 
@@ -209,7 +209,7 @@ COMPANY는 릴레이션이 $$3 + 1 + 1 + 1 = 6$$개, 외래 키가 $$1 + 1 + 1 +
 
 ## 예제
 
-**UNIVERSITY의 관계 타입 하나씩.** (min, max) 표기로 그린 그림에서는 먼저 관계의 종류를 읽어야 한다[^5].
+**UNIVERSITY의 관계 타입 하나씩.** (min, max) 표기로 그린 그림에서는 먼저 관계의 종류를 읽어야 한다.
 
 1. *DEAN: COLLEGE (1, 1), INSTRUCTOR (0, 1).* 양쪽의 max가 1이라 1:1이다. min이 1인 COLLEGE가 전체 참여다. COLLEGE에 DeanId를 넣는다.
 2. *ADMINS: COLLEGE (0, N), DEPT (1, 1).* max가 1인 쪽은 DEPT다. 학과는 단과대학 하나에만 딸린다. DEPT 쪽 릴레이션에 외래 키를 넣는다.
@@ -290,19 +290,14 @@ COMPANY는 릴레이션이 $$3 + 1 + 1 + 1 = 6$$개, 외래 키가 $$1 + 1 + 1 +
 
 
 <details class="callout callout-question" markdown="1">
-<summary class="callout-title" markdown="span">**C6** 9주차 슬라이드의 `CREATE TABLE`에서 Dno, Mgr_ssn, Dnum에는 NOT NULL이 있고 Super_ssn에는 없다. ER 그림의 무엇에서 이 차이가 나오는가?</summary>
+<summary class="callout-title" markdown="span">**C6** COMPANY의 `CREATE TABLE`에서 Dno, Mgr_ssn, Dnum에는 NOT NULL이 있고 Super_ssn에는 없다. ER 그림의 무엇에서 이 차이가 나오는가?</summary>
 
 **답:** 외래 키를 넣은 쪽의 참여 제약이다. EMPLOYEE는 WORKS_FOR에, DEPARTMENT는 MANAGES에, PROJECT는 CONTROLS에 전체 참여한다. 그래서 그 외래 키는 비어 있을 수 없다. 부하 쪽 EMPLOYEE는 SUPERVISION에 부분 참여라서 Super_ssn은 NULL일 수 있다(Borg).
 
 </details>
 
 
-[^1]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.11, p.29 (COMPANY ER 그림과 옮긴 결과). 복습: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.14
-[^2]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.12 (Steps for ER-to-Relational Mapping). 복습: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.6
-[^3]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.13(일반 개체), p.14(약한 개체), p.15(다치 속성), p.17(MANAGES), p.22~24(1:N 셋), p.27(WORKS_ON)의 그림을 한 표로 모았다
-[^4]: 같은 자료, p.30 (Correspondence between ER and Relational Models). 복습: 데이터베이스 설계 9회 강의 자료 「9_introduction-to-basic-SQL」, p.15
-[^5]: 데이터베이스 설계 7회 강의 자료 「7_relational-model」, p.31 (UNIVERSITY ER). 답은 데이터베이스 설계 7회 강의 자료 「7-relational-model-solutions」, p.4~6
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> Mermaid 그림 1개는 원본에 없다. 7 p.11의 Chen 표기 그림을 옮긴 것이다. 겹줄을 굵은 선으로 바꿨고 개체 타입의 속성은 표로 뺐다. 1·N과 전체·부분 참여는 5 p.34의 (min, max) 그림과도 맞춰 보았다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 개수 식, WORKS_FOR를 관계 릴레이션으로 바꾼 예, 카드 C3은 원본에 없다. 식은 단계마다 생기는 것을 센 것이고 COMPANY(6, 8), UNIVERSITY(7, 10), SUPPLY 예(4, 3)에서 검증 코드로 확인했다.
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> "남는 것과 사라지는 것" 표, 스스로 설명해 보기, 오해, 카드 C4~C6은 원본에 없다. NOT NULL이 붙은 외래 키는 9 p.17~18의 `CREATE TABLE`에서 읽었고, 전체 참여와의 짝은 검증 코드로 맞춰 보았다. 사라지는 규칙은 SQLite에서 실제로 어기는 튜플을 넣어 확인했다([41_mapping-one-to-one-relationship_verify.py](/Hongs_Blog/studies/database-design/code/41_mapping-one-to-one-relationship_verify/), [44_university-mapping-practice_p1.py](/Hongs_Blog/studies/database-design/code/44_university-mapping-practice_p1/)).
+[^s1]: 겹줄을 굵은 선으로 바꿨고 개체 타입의 속성은 표로 뺐다.
+[^s2]: 식은 단계마다 생기는 것을 센 것이고 COMPANY(6, 8), UNIVERSITY(7, 10), SUPPLY 예(4, 3)에서 검증 코드로 확인했다.
+[^s3]: 사라지는 규칙은 SQLite에서 실제로 어기는 튜플을 넣어 확인했다([41_mapping-one-to-one-relationship_verify.py](/Hongs_Blog/studies/database-design/code/41_mapping-one-to-one-relationship_verify/), [44_university-mapping-practice_p1.py](/Hongs_Blog/studies/database-design/code/44_university-mapping-practice_p1/)).
 {% endraw %}

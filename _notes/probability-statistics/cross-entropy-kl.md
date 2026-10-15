@@ -121,7 +121,7 @@ $$\mathcal{L}(\theta) = -\frac1n\sum_{i=1}^{n}\ln q_\theta(y_i \mid \mathbf{x}_i
 
 ## 과목별 관점
 
-**데이터 과학 (3-2학기).** 두 확률분포가 얼마나 다른지 재는 척도로 소개한다. $$p(x)$$는 데이터의 "참" 분포, $$q(x)$$는 학습시키려는 모델이고, $$D_{KL}(p \Vert  q) = \sum_x p(x)\ln\frac{p(x)}{q(x)}$$는 $$q$$로 $$p$$를 흉내 낼 때 잃는 정보다. 0 이상이고 $$p = q$$일 때만 0이지만, $$D_{KL}(p\Vert q) \ne D_{KL}(q\Vert p)$$라 거리(distance)가 아니다[^d1]. 데이터 과학에서는 같은 "비슷함 재기" 단원에서 [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/), 코사인 유사도와 함께 다룬다. 거리는 대칭과 삼각부등식을 지켜야 하는데 KL 발산은 대칭부터 깨진다.
+**데이터 과학 (3-2학기).** 두 확률분포가 얼마나 다른지 재는 척도로 소개한다. $$p(x)$$는 데이터의 "참" 분포, $$q(x)$$는 학습시키려는 모델이고, $$D_{KL}(p \Vert  q) = \sum_x p(x)\ln\frac{p(x)}{q(x)}$$는 $$q$$로 $$p$$를 흉내 낼 때 잃는 정보다. 0 이상이고 $$p = q$$일 때만 0이지만, $$D_{KL}(p\Vert q) \ne D_{KL}(q\Vert p)$$라 거리(distance)가 아니다. 데이터 과학에서는 같은 "비슷함 재기" 단원에서 [민코프스키 거리](/Hongs_Blog/studies/data-science/minkowski-distance/), 코사인 유사도와 함께 다룬다. 거리는 대칭과 삼각부등식을 지켜야 하는데 KL 발산은 대칭부터 깨진다.
 
 ## 확인 문제
 
@@ -151,7 +151,6 @@ $$\mathcal{L}(\theta) = -\frac1n\sum_{i=1}^{n}\ln q_\theta(y_i \mid \mathbf{x}_i
 
 [^1]: Cover, Thomas, *Elements of Information Theory* 2판, 2장(상대 엔트로피의 정의, 정보 부등식 $$D(p\Vert q) \ge 0$$, 틀린 분포로 부호화할 때의 추가 길이).
 [^2]: Goodfellow, Bengio, Courville, *Deep Learning*, 3.13절(KL 발산과 교차 엔트로피), 5.5절(최대가능도와 교차 엔트로피의 관계).
-[^d1]: 데이터 과학 2회 강의 자료 「2-1_data-measure-preprocess」, p.27 (Measuring Similar Distributions)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 그림 한 장은 원본에 없다. [38_cross-entropy-kl_plot.py](/Hongs_Blog/studies/probability-statistics/code/38_cross-entropy-kl_plot/)로 그렸고, 그림에 쓴 값($$t = 0.5$$에서 0.531과 0.737, $$D(p \Vert  p) = 0$$, 예시의 KL 0.25)을 같은 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 다이어그램 1개는 원본에 없다. 이 문서 예시(2비트, 1.75비트, 0.25비트)와 정의의 관계식 $$D(p\Vert q) = H(p, q) - H(p)$$를 그렸다.
+[^s1]: [38_cross-entropy-kl_plot.py](/Hongs_Blog/studies/probability-statistics/code/38_cross-entropy-kl_plot/)로 그렸고, 그림에 쓴 값($$t = 0.5$$에서 0.531과 0.737, $$D(p \Vert  p) = 0$$, 예시의 KL 0.25)을 같은 코드로 확인했다.
+[^s2]: 이 문서 예시(2비트, 1.75비트, 0.25비트)와 정의의 관계식 $$D(p\Vert q) = H(p, q) - H(p)$$를 그렸다.
 {% endraw %}

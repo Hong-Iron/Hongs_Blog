@@ -10,7 +10,7 @@ course_slug: "java"
 course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-11"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Type Conversion", "Type Casting", "형 변환", "자동 타입 변환", "Implicit Casting", "Promotion", "Widening Conversion", "강제 타입 변환", "Explicit Casting", "Narrowing Conversion", "캐스팅", "문자열 결합", "String Concatenation", "parseInt", "valueOf"]
 description: "작은 컵의 물을 큰 컵에 옮기면 넘치지 않는다. 큰 컵의 물을 작은 컵에 옮기면 넘칠 수 있다. 자바도 같다. 작은 타입의 값을 큰 타입에 넣는 것은 알아서 해 주고, 큰 타입의 값을 작은 타입에 넣는 것은 \"잘려도 괜찮다\"고 직접 적어야만 해 준다. 직접 적었다고 값이 지켜지는 …"
@@ -34,7 +34,7 @@ permalink: "/studies/java/java-type-conversion/"
 
 ## 예시로 보기
 
-타입마다 칸 크기가 다르다. 그래서 한 타입의 값을 다른 타입 변수에 넣을 때마다 "들어가는가"를 따져야 한다. `int`는 32비트, `long`은 64비트다[^1].
+타입마다 칸 크기가 다르다. 그래서 한 타입의 값을 다른 타입 변수에 넣을 때마다 "들어가는가"를 따져야 한다. `int`는 32비트, `long`은 64비트다.
 
 ```java
 int i = 100;
@@ -48,14 +48,14 @@ int k = (int) big; // 괄호로 타입을 적으면 된다
 `big`에 든 값은 100이라 `int`에 충분히 들어간다. 그래도 `javac`는 막는다. `javac`는 변수에 든 값을 보지 않고 타입만 본다. `long`에는 `int`에 안 들어가는 값이 올 수 있으니, 그래도 좋다는 표시를 요구한다.
 
 <div class="callout callout-check" markdown="1">
-<div class="callout-title" markdown="span">검증: 슬라이드 두 예제의 출력, `(byte)300` = 44 등 잘린 값, `int` → `float`에서 잃는 값, `byte + byte`의 타입, `+` 예제 여덟 줄, 문자열 변환 표, 카드 C1·C3 — [03_java-type-conversion_impl.java](/Hongs_Blog/studies/java/code/03_java-type-conversion_impl/)</div>
+<div class="callout-title" markdown="span">검증: 자동 변환과 강제 변환 두 예제의 출력, `(byte)300` = 44 등 잘린 값, `int` → `float`에서 잃는 값, `byte + byte`의 타입, `+` 예제 여덟 줄, 문자열 변환 표, 카드 C1·C3 — [03_java-type-conversion_impl.java](/Hongs_Blog/studies/java/code/03_java-type-conversion_impl/)</div>
 
 </div>
 
 
 ## 자동 변환
 
-값이 들어가는 범위가 좁은 타입에서 넓은 타입으로 가는 변환은 자바가 알아서 한다(자동 타입 변환). 두 타입이 서로 바꿀 수 있는 사이이고, 작은 타입의 값을 큰 타입에 넣을 때 일어난다[^2].
+값이 들어가는 범위가 좁은 타입에서 넓은 타입으로 가는 변환은 자바가 알아서 한다(자동 타입 변환). 두 타입이 서로 바꿀 수 있는 사이이고, 작은 타입의 값을 큰 타입에 넣을 때 일어난다.
 
 ```
 byte -> short -> int -> long -> float -> double
@@ -74,13 +74,13 @@ System.out.println("Long value " + l);    // Long value 100
 System.out.println("Float value " + f);   // Float value 100.0
 ```
 
-출력은 슬라이드와 같다[^3]. `float`가 되자 `100`이 `100.0`으로 찍힌다. 소수점이 있는 타입이 되었기 때문이다.
+주석에 적은 것이 실제 출력이다. `float`가 되자 `100`이 `100.0`으로 찍힌다. 소수점이 있는 타입이 되었기 때문이다.
 
 어? `long`은 64비트이고 `float`는 32비트인데 왜 `long`에서 `float`가 자동일까? 화살표의 기준은 칸 크기가 아니라 담을 수 있는 수의 범위다. `float`는 자릿수를 줄이는 대신 아주 큰 수까지 적는다. 그래서 범위는 `float`가 넓다. 대신 큰 정수는 끝자리가 뭉개진다. `int` 16,777,217을 `float`에 넣었다가 다시 꺼내면 16,777,216이다[^s2]. 이유는 [부동소수점](/Hongs_Blog/studies/data-and-information/floating-point/)에 있다.
 
 ## 강제 변환
 
-넓은 타입의 값을 좁은 타입에 넣거나, 자동으로는 안 바뀌는 사이일 때는 바꿀 타입을 괄호 `( )`에 적어 값 앞에 붙인다(강제 타입 변환)[^4].
+넓은 타입의 값을 좁은 타입에 넣거나, 자동으로는 안 바뀌는 사이일 때는 바꿀 타입을 괄호 `( )`에 적어 값 앞에 붙인다(강제 타입 변환).
 
 ```
 byte <- short <- int <- long <- float <- double    (모두 괄호가 필요하다)
@@ -95,9 +95,9 @@ System.out.println("Long value " + l);     // Long value 100
 System.out.println("Int value " + i);      // Int value 100
 ```
 
-출력은 슬라이드와 같다[^5].
+주석에 적은 것이 실제 출력이다.
 
-`int`와 `char`는 크기만 보면 `char`(16비트)가 작다. 그래서 `int` 값을 `char`에 넣을 때도 괄호가 필요하다[^6].
+`int`와 `char`는 크기만 보면 `char`(16비트)가 작다. 그래서 `int` 값을 `char`에 넣을 때도 괄호가 필요하다.
 
 ```java
 char ch = 'c';
@@ -119,7 +119,7 @@ ch = (char) num;   // 된다. 88번 글자 'X'
 
 ## 계산하는 중에 일어나는 변환
 
-**작은 정수는 `int`가 되어 계산된다.** `byte`, `short`, `char` 변수는 계산에 들어가는 순간 `int`로 바뀐다. 그래서 `byte` 둘을 더한 결과는 `int`다[^7].
+**작은 정수는 `int`가 되어 계산된다.** `byte`, `short`, `char` 변수는 계산에 들어가는 순간 `int`로 바뀐다. 그래서 `byte` 둘을 더한 결과는 `int`다.
 
 ```java
 byte x = 10;
@@ -139,7 +139,7 @@ int result = x + y;    // 된다. 30
 (double) (10 / 4)   // 2.0  (2를 구한 뒤 바꾼다)
 ```
 
-**`+`는 두 가지 일을 한다.** 양쪽이 모두 수면 더한다. 한쪽이라도 문자열이면 다른 쪽을 문자열로 바꿔 이어 붙인다. `+`가 여럿이면 앞에서부터 차례로 한다[^8].
+**`+`는 두 가지 일을 한다.** 양쪽이 모두 수면 더한다. 한쪽이라도 문자열이면 다른 쪽을 문자열로 바꿔 이어 붙인다. `+`가 여럿이면 앞에서부터 차례로 한다.
 
 ```java
 int value = 3 + 7;            // 10
@@ -158,7 +158,7 @@ String str = "1" + (2 + 3);   // "15"
 
 ## 문자열과 기본 타입 사이
 
-문자열 `"10"`과 수 10은 다른 값이다. 괄호 변환 `(int) "10"`은 쓸 수 없고, 바꿔 주는 메서드를 부른다[^9].
+문자열 `"10"`과 수 10은 다른 값이다. 괄호 변환 `(int) "10"`은 쓸 수 없고, 바꿔 주는 메서드를 부른다.
 
 | 바꾸는 방향 | 쓰는 법 |
 |---|---|
@@ -225,15 +225,6 @@ String str = "1" + (2 + 3);   // "15"
 </details>
 
 
-[^1]: 소프트웨어 프로젝트 2회 강의 자료 「Software Project 02. Java Language Basics (1)」, p.23 (두 가지 변환, 타입별 비트 수)
-[^2]: 같은 자료, p.24 (자동 변환과 넓히는 방향 그림)
-[^3]: 같은 자료, p.25~26 (ImplicitConversion 예제와 출력)
-[^4]: 같은 자료, p.27 (강제 변환과 좁히는 방향 그림)
-[^5]: 같은 자료, p.30~31 (ExplicitConversion 예제와 출력)
-[^6]: 같은 자료, p.28~29 (int를 char에 넣는 예제, "Compile error!")
-[^7]: 같은 자료, p.32 (연산 중 int로 바뀜)
-[^8]: 같은 자료, p.33 (+의 두 가지 일)
-[^9]: 같은 자료, p.34 (문자열 변환 표)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 원본 p.24와 p.27의 화살표 그림에는 `char`가 없다. `char` → `int`가 자동이라는 것은 Java Language Specification §5.1.2에 있고, 구현 코드에서 `'A' + 1 == 66`으로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 첫 예시, `long` → `float`가 자동인 이유와 16,777,217의 예, 잘린 값의 표와 `(byte) 300` 따라가기, 큰 쪽으로 맞추는 규칙과 나눗셈 네 줄, `NumberFormatException`, 활용 항목, 카드 C1~C4는 원본에 없다. 값은 모두 구현 코드로, 컴파일 오류 메시지는 JDK 21에서 직접 컴파일해 확인했다. 규칙은 Java Language Specification §5.1.3(좁히는 변환), §5.6(연산 중 변환)에 있다.
+[^s1]: `char` → `int`가 자동이라는 것은 Java Language Specification §5.1.2에 있고, 구현 코드에서 `'A' + 1 == 66`으로 확인했다.
+[^s2]: 값은 모두 구현 코드로, 컴파일 오류 메시지는 JDK 21에서 직접 컴파일해 확인했다. 규칙은 Java Language Specification §5.1.3(좁히는 변환), §5.6(연산 중 변환)에 있다.
 {% endraw %}

@@ -24,10 +24,9 @@ permalink: "/studies/data-structures/code/46_external-sort-ladder_p4/"
 
 실행: python3 46_external-sort-ladder_p4.py
 문서: 4.연습문제/46.외부 정렬 시간 계산 예제 사다리
-출처: 자료구조 14주차 슬라이드 p.29~49
 답을 식으로 계산하고, 블록 읽기·쓰기를 흉내 낸 모의실험으로 다시 세어 맞춘다.
 모의실험은 3.개념집/45_external-merge-sort_verify.py의 것을 옮겨 적었다(파일끼리 불러오지 않는다).
-짝이 없는 런도 읽어서 다시 쓴다고 본다(슬라이드의 식).
+짝이 없는 런도 읽어서 다시 쓴다고 본다(3.개념집/45.외부 병합 정렬 본문의 식).
 """
 import random
 
@@ -117,7 +116,7 @@ def check(records, mem, blk, k, want_counts, rng):
 if __name__ == "__main__":
     rng = random.Random(4646)
 
-    # 문제 1: 슬라이드의 수
+    # 문제 1: 외부 병합 정렬 문서의 예와 같은 수
     r = check(10000, 500, 100, 2, [20, 10, 5, 3, 2, 1], rng)
     assert r == (100, 20, (200, 20), (200, 100), 5, (1200, 20, 500))
 

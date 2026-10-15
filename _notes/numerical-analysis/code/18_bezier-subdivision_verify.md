@@ -35,7 +35,7 @@ def mid(a, b):
 
 
 def split(P):
-    """슬라이드 p.22의 기하적 방법."""
+    """중점으로 나누는 기하적 방법."""
     p0, p1, p2, p3 = P
     m = mid(p1, p2)
     l1, r2 = mid(p0, p1), mid(p2, p3)
@@ -88,7 +88,7 @@ def main():
         # p'(1/2) = (3/4)(−p0 − p1 + p2 + p3), l'(1) = 3(l3 − l2) = p'(1/2)/2
         dp = tuple(F(3, 4) * (-a - b + c + d) for a, b, c, d in zip(*Q))
         assert tuple(3 * (x - y) for x, y in zip(Lq[3], Lq[2])) == tuple(x / 2 for x in dp)
-    # 다른 곡선을 베지어로 바꾸는 행렬 (슬라이드 p.25)
+    # 다른 곡선을 베지어로 바꾸는 행렬 M_B⁻¹M_I, M_B⁻¹M_S
     MB = [[1, 0, 0, 0], [-3, 3, 0, 0], [3, -6, 3, 0], [-1, 3, -3, 1]]
     us = [F(0), F(1, 3), F(2, 3), F(1)]
     MI = inv([[1, u, u * u, u ** 3] for u in us])

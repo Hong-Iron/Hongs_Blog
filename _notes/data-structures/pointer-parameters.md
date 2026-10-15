@@ -10,7 +10,7 @@ course_slug: "data-structures"
 course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
-updated: "2026-10-12"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Pointer Arguments", "Pointers and Function Arguments", "값 전달", "Call by Value", "Pass by Value", "주소 전달", "포인터 매개변수", "swap", "참조 변수", "Reference Variable", "참조 전달", "Call by Reference"]
 description: "함수를 부를 때 넘기는 값은 복사본으로 간다. 그래서 함수가 받은 값을 아무리 고쳐도 부른 쪽의 원본은 그대로다. 원본을 고치게 하려면 값 대신 원본이 있는 자리의 번호를 넘기고, 함수는 그 번호를 따라가서 고친다. 대신 부르는 쪽과 받는 쪽이 기호를 하나씩 더 써야 하고, 하나라…"
@@ -34,7 +34,7 @@ permalink: "/studies/data-structures/pointer-parameters/"
 
 ## 예시로 보기
 
-두 변수의 값을 맞바꾸는 일은 정렬에서 수없이 한다. 이것을 함수로 빼 두고 싶다. 처음 떠오르는 대로 쓰면 이렇다[^1].
+두 변수의 값을 맞바꾸는 일은 정렬에서 수없이 한다. 이것을 함수로 빼 두고 싶다. 처음 떠오르는 대로 쓰면 이렇다.
 
 ```c
 void swap_by_value(int x, int y)
@@ -57,7 +57,7 @@ main   a [ 3 ]    b [ 7 ]         main   a [ 3 ]    b [ 7 ]
        값을 베낀 다른 칸                  주소를 베껴 받았다. 따라가면 a와 b다
 ```
 
-부른 쪽의 변수를 고치려면 바꿀 값이 있는 칸의 주소를 넘긴다. `&a`가 `a`를 가리키는 포인터다[^1].
+부른 쪽의 변수를 고치려면 바꿀 값이 있는 칸의 주소를 넘긴다. `&a`가 `a`를 가리키는 포인터다.
 
 ```c
 void swap_by_pointer(int *px, int *py)
@@ -86,9 +86,9 @@ void swap_by_pointer(int *px, int *py)
 
 ## 규칙
 
-C에서 불린 함수가 부른 함수의 변수를 직접 고치는 길은 없다[^1]. 인자는 늘 값을 베껴서 넘긴다. 이것을 값 전달(call by value)이라 부른다[^s1].
+C에서 불린 함수가 부른 함수의 변수를 직접 고치는 길은 없다. 인자는 늘 값을 베껴서 넘긴다. 이것을 값 전달(call by value)이라 부른다[^s1].
 
-포인터를 넘길 때도 규칙은 같다. 주소라는 값을 베껴서 넘긴다. 다만 베낀 주소도 같은 칸을 가리키므로, 따라가서 쓰면 부른 쪽의 칸이 바뀐다. 포인터 인자 덕분에 함수가 자기를 부른 함수 안의 것을 읽고 고칠 수 있다[^1].
+포인터를 넘길 때도 규칙은 같다. 주소라는 값을 베껴서 넘긴다. 다만 베낀 주소도 같은 칸을 가리키므로, 따라가서 쓰면 부른 쪽의 칸이 바뀐다. 포인터 인자 덕분에 함수가 자기를 부른 함수 안의 것을 읽고 고칠 수 있다.
 
 쓰는 쪽과 받는 쪽이 짝을 맞춰야 한다.
 
@@ -118,7 +118,7 @@ void clear_right(int **pp)
 
 ### 참조 변수
 
-참조(reference)는 이미 있는 메모리 자리에 붙인 또 하나의 이름이다. 한 번 붙이면 늘 같은 대상을 가리킨다. 참조에 새 값을 넣으면 가리키는 대상의 값이 바뀐다. 함수에 인자를 넘길 때 흔히 쓴다[^2].
+참조(reference)는 이미 있는 메모리 자리에 붙인 또 하나의 이름이다. 한 번 붙이면 늘 같은 대상을 가리킨다. 참조에 새 값을 넣으면 가리키는 대상의 값이 바뀐다. 함수에 인자를 넘길 때 흔히 쓴다. 다만 참조는 C++에 있는 기능이고 C에는 없다. C에서 부른 쪽의 변수를 고치려면 위의 포인터 인자를 쓴다[^s3].
 
 ```cpp
 /* C++ 코드다. C 컴파일러는 받아들이지 않는다 */
@@ -131,13 +131,6 @@ void swap(int &x, int &y)
 ```
 
 부를 때는 `swap(a, b);`라고만 쓴다. `&`와 `*`를 쓰지 않아도 `x`와 `y`가 `a`와 `b`의 다른 이름이 되어 원본이 바뀐다[^s3].
-
-<div class="callout callout-warning" markdown="1">
-<div class="callout-title" markdown="span">원본 오류 의심</div>
-
-원문: p.35 "Reference Variable" 쪽이 "Review of C Pointers" 묶음 안에 있다. / 문제점: 참조 변수는 C++의 기능이고 C에는 없다. 이 강의의 코드는 C다. / 수정안: 이 쪽은 C++ 이야기로 읽는다. C에서는 위의 포인터 인자를 쓴다. / 근거: 위 `swap`을 `cc -std=c11`로 컴파일하면 `int &x`에서 문법 오류가 난다. C++ 컴파일러로는 통과하고 3과 7이 7과 3으로 바뀐다.
-
-</div>
 
 
 ## 활용
@@ -188,9 +181,7 @@ void swap(int &x, int &y)
 </details>
 
 
-[^1]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.29 (Pointers and Function Arguments: swap 두 판, `&a`는 a를 가리키는 포인터)
-[^2]: 자료구조 2회 강의 자료 「DS_Week2_2024」, p.35 (Reference Variable)
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 슬라이드에서는 두 함수의 이름이 모두 `swap`이다. 한 파일에 함께 둘 수 있게 `swap_by_value`와 `swap_by_pointer`로 바꿨다. 메모리 그림, 추적 표, "값 전달"이라는 이름, 짝 맞추기 표는 원본에 없다. Kernighan·Ritchie, *The C Programming Language* 2판, 5.2절이 같은 두 함수로 설명한다. 값은 구현 코드로 확인했다.
-[^s2]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 포인터를 바꾸는 함수 두 판, 이 기법이 필요한 신호, `divide`, 흔한 실수, 카드 C1~C3은 원본에 없다. 구현 코드로 확인했다. `&`를 빼먹은 호출이 컴파일 오류인 것과 지역 변수의 주소를 돌려주면 경고가 나는 것은 따로 컴파일해 봤다(Apple clang 21).
-[^s3]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 참조로 쓴 `swap` 코드는 원본에 없다. 슬라이드는 설명만 있다. C++ 컴파일러로 돌려 3과 7이 맞바뀌는 것을 확인했다.
+[^s1]: Kernighan·Ritchie, *The C Programming Language* 2판, 5.2절이 같은 두 함수로 설명한다. 값은 구현 코드로 확인했다.
+[^s2]: 구현 코드로 확인했다. `&`를 빼먹은 호출이 컴파일 오류인 것과 지역 변수의 주소를 돌려주면 경고가 나는 것은 따로 컴파일해 봤다(Apple clang 21).
+[^s3]: C++ 컴파일러로 돌려 3과 7이 맞바뀌는 것을 확인했다. 같은 코드를 `cc -std=c11`로 컴파일하면 `int &x`에서 문법 오류가 난다.
 {% endraw %}

@@ -22,22 +22,22 @@ permalink: "/studies/database-design/code/77_view-update-problem_verify-sql/"
 ```sql
 -- 실행: docker exec -i vault-pg psql -U postgres -v ON_ERROR_STOP=1 -q -f - < 이 파일
 -- 뷰 갱신 문제 검증. PostgreSQL 16에서 실행한다(SQLite는 모든 뷰가 읽기 전용이라 이 내용을 못 보인다).
--- 문서: 77.뷰 갱신 문제, 78.뷰와 기본 테이블 비교 / 출처: 13주차 슬라이드 13-View p.17~24
+-- 문서: 77.뷰 갱신 문제, 78.뷰와 기본 테이블 비교
 -- 확인하는 것:
---   1. p.18, 24: 표 하나에서 만든 집계 없는 뷰(DEPT5EMP)는 UPDATE·INSERT·DELETE를 받고, 그 결과가 기본 테이블에 남는다.
---   2. p.24: 기본 키와 NOT NULL 열이 빠진 뷰(BASIC_EMP_DATA)에는 INSERT가 안 된다. (PostgreSQL은 UPDATE·DELETE는 받는다.)
+--   1. 표 하나에서 만든 집계 없는 뷰(DEPT5EMP)는 UPDATE·INSERT·DELETE를 받고, 그 결과가 기본 테이블에 남는다.
+--   2. 기본 키와 NOT NULL 열이 빠진 뷰(BASIC_EMP_DATA)에는 INSERT가 안 된다. (PostgreSQL은 UPDATE·DELETE는 받는다.)
 --   3. 뷰 조건을 벗어나는 행: 그냥 뷰는 받아 주고 그 행은 뷰에서 사라진다. WITH CHECK OPTION을 붙이면 거부한다.
---   4. p.19~21: 조인으로 만든 뷰(WORKS_ON1)는 UPDATE·INSERT·DELETE를 모두 거부한다.
---   5. p.21: 길 (a)와 (b)를 기본 테이블에 직접 돌리면, 슬라이드의 COMPANY 상태에서는 둘 다 유일성 제약에 걸린다.
+--   4. 조인으로 만든 뷰(WORKS_ON1)는 UPDATE·INSERT·DELETE를 모두 거부한다.
+--   5. 길 (a)와 (b)를 기본 테이블에 직접 돌리면, COMPANY 상태에서는 둘 다 유일성 제약에 걸린다.
 --      제약을 뗀 복사본에서는 둘 다 뷰의 그 행을 ProductY로 바꾸지만, (b)는 English의 행까지 바꾼다.
---   6. p.22: 집계로 만든 뷰(DEPT_INFO)는 UPDATE를 거부한다. Total_sal을 100000으로 만드는 기본 테이블 수정은 여러 가지다.
---   7. p.23: INSTEAD OF 트리거로 길을 정해 주면 조인 뷰도 UPDATE를 받는다.
+--   6. 집계로 만든 뷰(DEPT_INFO)는 UPDATE를 거부한다. Total_sal을 100000으로 만드는 기본 테이블 수정은 여러 가지다.
+--   7. INSTEAD OF 트리거로 길을 정해 주면 조인 뷰도 UPDATE를 받는다.
 SET client_min_messages TO warning;
 DROP SCHEMA IF EXISTS view_update_problem CASCADE;
 CREATE SCHEMA view_update_problem;
 SET search_path TO view_update_problem;
 
--- COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
+-- COMPANY 스키마와 상태 (Elmasri 그림 5.6). WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다.
 -- EMPLOYEE와 DEPARTMENT는 서로 가리키므로 외래 키를 커밋 때 검사한다(DEFERRABLE INITIALLY DEFERRED).
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
   Bdate DATE, Address VARCHAR(30), Sex CHAR, Salary DECIMAL(10,2), Super_ssn CHAR(9), Dno INT NOT NULL,
@@ -158,7 +158,7 @@ BEGIN
   ASSERT (SELECT COUNT(*) FROM EMPLOYEE) = 8 AND (SELECT COUNT(*) FROM DEPT5EMP) = 4, '거부 뒤 상태는 그대로';
 END $$;
 
--- 4. 조인 뷰: p.20의 UPDATE와 INSERT, DELETE
+-- 4. 조인 뷰: 문서 예시의 UPDATE와 INSERT, DELETE
 DO $$
 DECLARE k int := 0;
 BEGIN
@@ -177,7 +177,7 @@ BEGIN
   ASSERT k = 3, '조인 뷰가 갱신을 받았다';
 END $$;
 
--- 5. p.21의 두 길을 기본 테이블에 직접 돌린다. Smith는 이미 ProductY에서도 일하고, Pname은 UNIQUE다.
+-- 5. 두 길 (a), (b)를 기본 테이블에 직접 돌린다. Smith는 이미 ProductY에서도 일하고, Pname은 UNIQUE다.
 DO $$
 DECLARE k int := 0;
 BEGIN
@@ -191,7 +191,7 @@ BEGIN
     UPDATE PROJECT SET Pname = 'ProductY' WHERE Pname = 'ProductX';
   EXCEPTION WHEN unique_violation THEN k := k + 1;      -- UNIQUE (Pname): ProductY가 이미 있다
   END;
-  ASSERT k = 2, '슬라이드 상태에서 (a)와 (b)는 둘 다 유일성 제약에 걸려야 한다';
+  ASSERT k = 2, '처음 상태에서 (a)와 (b)는 둘 다 유일성 제약에 걸려야 한다';
 END $$;
 
 -- 제약을 뗀 복사본 두 벌에서 두 길의 효과를 본다
@@ -225,7 +225,7 @@ END $$;
 DO $$
 DECLARE k int := 0;
 BEGIN
-  BEGIN   -- p.22에 적힌 그대로: 뷰의 열 이름은 Dept_name인데 Dname이라고 썼다
+  BEGIN   -- 틀리기 쉬운 판: 뷰의 열 이름은 Dept_name인데 Dname이라고 썼다
     EXECUTE 'UPDATE DEPT_INFO SET Total_sal = 100000 WHERE Dname = ''Research''';
   EXCEPTION WHEN undefined_column THEN k := k + 1;
   END;

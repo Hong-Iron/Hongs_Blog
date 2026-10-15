@@ -22,8 +22,8 @@ permalink: "/studies/compilers/code/42_available-expressions_impl/"
 ```python
 # 42_available-expressions_impl.py
 # 기본 블록 하나에서 사용 가능한 식 분석을 하고, 그 집합으로 공통 부분식 제거와 복사 전파를 한다.
-# 슬라이드 L12 p.23의 표와 p.28~32의 추적을 그대로 다시 만들고, 최적화 전후 코드가 같은 값을
-# 내는지 무작위 블록 3,000개로 견준다. 슬라이드 규칙을 글자 그대로 쓰면 x = x + 1 에서
+# 문서의 세 줄 표와 다섯 줄 추적을 그대로 다시 만들고, 최적화 전후 코드가 같은 값을
+# 내는지 무작위 블록 3,000개로 견준다. "새 식은 늘 집합에 넣는다"를 글자 그대로 쓰면 x = x + 1 에서
 # 틀린 코드가 나오는 것도 보인다. 표준 라이브러리만 쓴다.
 # 실행: python3 42_available-expressions_impl.py
 import random
@@ -157,7 +157,7 @@ def show(q):
 def available(qs, rewrite=True, naive=False):
     """기본 블록을 위에서 아래로 훑으며 사용 가능한 식 집합을 만든다.
     rewrite=True면 복사 전파와 공통 부분식 제거를 함께 한다.
-    naive=True면 슬라이드 규칙 그대로, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
+    naive=True면 "새 식은 늘 넣는다"를 글자 그대로 따라, 자기 자신을 읽는 대입(x = x + 1)도 집합에 넣는다.
     (새 코드, 각 문장 뒤의 집합 목록)을 돌려준다. 집합은 넣은 순서를 지키는 리스트다."""
     avail, out, sets = [], [], []
     for op, a1, a2, res in qs:
@@ -233,21 +233,21 @@ def random_env(rng):
 
 
 if __name__ == "__main__":
-    # p.22~23: 분석만(코드를 고치지 않는다)
+    # 세 줄 예: 분석만(코드를 고치지 않는다)
     _, sets = available(quads("t0 = a * a\nt1 = a * a\nt0 = a + t1"), rewrite=False)
     assert sets == [["t0 = a * a"], ["t0 = a * a", "t1 = a * a"], ["t1 = a * a", "t0 = a + t1"]]
 
-    # p.24~25: {t0 = a * a}에서 t1 = a * a  ->  t1 = t0
+    # 공통 부분식 제거: {t0 = a * a}에서 t1 = a * a  ->  t1 = t0
     out, _ = available(quads("t0 = a * a\nt1 = a * a"))
     assert show(out[1]) == "t1 = t0"
-    # p.26~27: {b = a}에서 t1 = a * b  ->  t1 = a * a
+    # 복사 전파: {b = a}에서 t1 = a * b  ->  t1 = a * a
     out, _ = available(quads("b = a\nt1 = a * b"))
     assert show(out[1]) == "t1 = a * a"
     # 상수 복사도 전파된다 (b = constant number)
     out, _ = available(quads("b = 5\nt1 = a * b"))
     assert show(out[1]) == "t1 = a * 5"
 
-    # p.28~32: 다섯 줄 추적
+    # 문서의 다섯 줄 추적
     P28 = quads("t0 = a * a\nt1 = a * a\nt2 = t0 + t1\nt0 = t0 + t0\nt3 = t0 + 1")
     out, sets = available(P28)
     assert [show(q) for q in out] == ["t0 = a * a", "t1 = t0", "t2 = t0 + t0", "t0 = t2", "t3 = t2 + 1"]
@@ -274,7 +274,7 @@ if __name__ == "__main__":
             assert run(qs, env)[1] == run(out, env)[1], [show(q) for q in qs]
     assert changed > 500
 
-    # 원본 오류 의심: "새 식은 늘 집합에 들어간다"를 글자 그대로 따르면 틀린다
+    # 틀리기 쉬운 규칙과 비교: "새 식은 늘 집합에 들어간다"를 글자 그대로 따르면 틀린다
     BAD = quads("x = x + 1\ny = x + 1")
     naive, nsets = available(BAD, naive=True)
     assert nsets[0] == ["x = x + 1"] and show(naive[1]) == "y = x"

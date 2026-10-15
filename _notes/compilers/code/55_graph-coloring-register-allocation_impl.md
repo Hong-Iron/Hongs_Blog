@@ -22,12 +22,12 @@ permalink: "/studies/compilers/code/55_graph-coloring-register-allocation_impl/"
 ```python
 # 그래프 색칠로 레지스터 나눠 주기 (노드를 하나씩 빼서 스택에 쌓았다가 거꾸로 칠하기).
 # 실행: python3 55_graph-coloring-register-allocation_impl.py  (표준 라이브러리만 쓴다)
-# 슬라이드 16회 p.9~28의 스택, 색, 레지스터로 바꾼 코드를 그대로 다시 만든다.
+# 문서의 추적(스택, 색, 레지스터로 바꾼 코드)을 그대로 다시 만든다.
 import random
 from itertools import combinations, product
 
 EDGES = {("a", "c"), ("a", "f"), ("b", "c"), ("b", "f"), ("c", "d"),
-         ("c", "e"), ("c", "f"), ("d", "e"), ("d", "f"), ("e", "f")}   # 16회 p.7의 간섭 그래프
+         ("c", "e"), ("c", "f"), ("d", "e"), ("d", "f"), ("e", "f")}   # 문서의 간섭 그래프
 
 
 def adjacency(nodes, edges):
@@ -94,10 +94,10 @@ def ev(stmt, env):
 if __name__ == "__main__":
     adj = adjacency("abcdef", EDGES)
 
-    # ---- K = 4 (p.13~24) ----
+    # ---- K = 4 ----
     stack, left = simplify(adj, 4)
     assert left == set()
-    assert stack == list("abcdef")           # p.18: [stack]: {f, e, d, c, b, a} (맨 위가 f)
+    assert stack == list("abcdef")           # 스택: 바닥 a, b, c, d, e, f 맨 위
     # 빼는 순간의 이웃 수는 모두 4보다 작다: a 2, b 2, c 3, d 2, e 1, f 0
     tmp = {v: set(n) for v, n in adj.items()}
     degs = []
@@ -109,22 +109,22 @@ if __name__ == "__main__":
     assert degs == [2, 2, 3, 2, 1, 0]
     color = select(adj, stack, 4)
     assert valid(adj, color, 4)
-    # 슬라이드의 두 색칠 (p.9, p.25)도 맞는 색칠이다. 색은 고르기 나름이라 여러 답이 있다
-    slide9 = dict(a=0, b=0, c=1, d=3, e=0, f=2)
-    slide25 = dict(a=0, b=0, c=1, d=2, e=0, f=3)
-    assert valid(adj, slide9, 4) and valid(adj, slide25, 4)
-    # p.12: a를 뺀 그래프가 4색으로 칠해지면 a도 칠할 수 있다. a의 이웃은 2개(c, f)다
+    # 문서의 색칠과 d, f의 색을 맞바꾼 색칠도 맞다. 색은 고르기 나름이라 여러 답이 있다
+    swapped = dict(a=0, b=0, c=1, d=3, e=0, f=2)
+    traced = dict(a=0, b=0, c=1, d=2, e=0, f=3)
+    assert valid(adj, swapped, 4) and valid(adj, traced, 4)
+    # 핵심 생각: a를 뺀 그래프가 4색으로 칠해지면 a도 칠할 수 있다. a의 이웃은 2개(c, f)다
     assert adj["a"] == {"c", "f"}
     rest = {v: n - {"a"} for v, n in adj.items() if v != "a"}
     assert colorable(rest, 4)
 
-    # p.26: 레지스터 이름으로 바꾼 코드가 원래 코드와 같은 값을 낸다 (두 길 모두)
+    # 레지스터 이름으로 바꾼 코드가 원래 코드와 같은 값을 낸다 (두 길 모두)
     B = {"B0": ["b = 3", "c = 1", "f = 0"], "B1": ["a = b + c", "d = -a", "e = d + f"],
          "B2": ["f = 2 * e"], "B3": ["c = d + e", "e = e - 1"], "B4": ["b = f + c"]}
     R = {"B0": ["r0 = 3", "r1 = 1", "r3 = 0"], "B1": ["r0 = r0 + r1", "r2 = -r0", "r0 = r2 + r3"],
          "B2": ["r3 = 2 * r0"], "B3": ["r1 = r2 + r0", "r0 = r0 - 1"], "B4": ["r0 = r3 + r1"]}
-    reg = {v: f"r{c}" for v, c in slide25.items()}
-    for b in B:                               # 슬라이드의 코드는 색대로 이름만 바꾼 것이다
+    reg = {v: f"r{c}" for v, c in traced.items()}
+    for b in B:                               # 바꾼 코드는 색대로 이름만 바꾼 것이다
         for s, r in zip(B[b], R[b]):
             toks = [("-" + reg[x[1:]]) if x.startswith("-") and x[1:] in reg else reg.get(x, x) for x in s.split()]
             assert " ".join(toks) == r, (s, r)
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         assert e1["b"] == e2[reg["b"]] == (-7 if "B2" in path else -8)
     assert len(set(reg.values())) == 4        # 변수 6개를 레지스터 4개로
 
-    # ---- K = 3 (p.27~28): a, b를 뺀 뒤 막힌다 ----
+    # ---- K = 3: a, b를 뺀 뒤 막힌다 ----
     stack3, left3 = simplify(adj, 3)
     assert stack3 == ["a", "b"] and left3 == set("cdef")
     sub = {v: adj[v] & left3 for v in left3}

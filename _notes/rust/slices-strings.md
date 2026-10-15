@@ -283,5 +283,5 @@ println!("{w}");
 [^7]: The Rust Programming Language, 15.2 Treating Smart Pointers Like Regular References, Using Deref Coercion in Functions and Methods — https://doc.rust-lang.org/book/ch15-02-deref.html
 [^8]: std 문서, Struct `std::vec::Vec`, Slicing — https://doc.rust-lang.org/std/vec/struct.Vec.html
 [^9]: Clippy Lints, `char_indices_as_byte_indices`(correctness, deny) — https://rust-lang.github.io/rust-clippy/stable/index.html. `ptr_arg`가 기본으로 경고하는 것과 두 린트의 메시지는 rustc 1.99.0의 `clippy-driver`로 확인했다.
-[^s1]: <span class="fn-tag" title="수업 자료에 없고 따로 보탠 내용">보충</span> 타입 크기, 슬라이스 주소, `String::from("hello world")`의 용량 11(이 기계에서 관찰한 값), E0599·E0308·E0505 메시지, `prefix_chars` 함수, `w[1..4].sort()` 결과는 1차 자료에 그대로 있지 않아 rustc 1.99.0으로 컴파일·실행해 확인한 것이다. `prefix_chars`는 7가지 글(한글·키릴·데바나가리 포함)과 n = 0~14 전부에서 panic 없이 n글자(또는 전체)를 돌려주는 것을 테스트로 확인했다.
+[^s1]: 타입 크기, 슬라이스 주소, `String::from("hello world")`의 용량 11(이 기계에서 관찰한 값), E0599·E0308·E0505 메시지, `prefix_chars` 함수, `w[1..4].sort()` 결과는 1차 자료에 그대로 있지 않아 rustc 1.99.0으로 컴파일·실행해 확인한 것이다. `prefix_chars`는 7가지 글(한글·키릴·데바나가리 포함)과 n = 0~14 전부에서 panic 없이 n글자(또는 전체)를 돌려주는 것을 테스트로 확인했다.
 {% endraw %}

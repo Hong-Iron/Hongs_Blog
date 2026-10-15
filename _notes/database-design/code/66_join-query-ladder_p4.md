@@ -23,7 +23,7 @@ permalink: "/studies/database-design/code/66_join-query-ladder_p4/"
 """조인 질의 쓰기 예제 사다리의 문제 1~4와 변형 확인. SQLite, COMPANY.
 
 문서: 66.조인 질의 쓰기 예제 사다리
-출처: 문제 1은 11주차 슬라이드 11-2_SQL-DML-Complex p.20의 JOIN ... ON 질의. 문제 2~4와 변형은 이 문서에서 만들었다.
+출처: 문제 1은 Research 부서 직원을 JOIN ... ON으로 찾는 질의다. 문제 2~4와 변형은 이 문서에서 만들었다.
 확인하는 것:
   문제 1. Research 부서 직원 4명(Smith, Wong, Narayan, English). WHERE에 조인 조건을 쓴 판과 답이 같다.
   문제 2. 프로젝트 6개와 맡은 부서의 부서장: Wong 3개, Wallace 2개, Borg 1개.
@@ -35,7 +35,7 @@ permalink: "/studies/database-design/code/66_join-query-ladder_p4/"
 """
 import sqlite3
 
-# COMPANY 스키마와 상태 (슬라이드 6-2 p.21 = 13 p.16, 28. Elmasri 그림 5.6)
+# COMPANY 스키마와 상태 (Elmasri 그림 5.6)
 # WORKS_ON.Hours는 상태에 NULL이 있어 NOT NULL을 뺐다. 서로 가리키는 외래 키는 커밋 때 검사한다.
 DDL = """
 CREATE TABLE EMPLOYEE (Fname VARCHAR(15) NOT NULL, Minit CHAR, Lname VARCHAR(15) NOT NULL, Ssn CHAR(9) NOT NULL,
@@ -118,7 +118,7 @@ def main():
     old = q(c, "SELECT Fname, Lname, Address FROM EMPLOYEE, DEPARTMENT WHERE Dname = 'Research' AND Dnumber = Dno")
     assert sorted(p1) == sorted(old) and sorted(r[1] for r in p1) == ["English", "Narayan", "Smith", "Wong"]
     assert ("John", "Smith", "731 Fondren, Houston, TX") in p1
-    print("[OK] 문제 1 (p.20): Research 직원 4명, WHERE 판과 같다")
+    print("[OK] 문제 1: Research 직원 4명, WHERE 판과 같다")
 
     # 문제 2
     p2 = q(c, "SELECT Pname, Lname FROM (PROJECT JOIN DEPARTMENT ON Dnum = Dnumber) JOIN EMPLOYEE ON Mgr_ssn = Ssn")
