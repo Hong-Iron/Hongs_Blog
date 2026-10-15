@@ -23,7 +23,8 @@ github_username: Hong-Iron
 #   Naver:  searchadvisor.naver.com → 웹마스터 도구 → 사이트 등록
 # Then submit https://hong-iron.github.io/Hongs_Blog/sitemap.xml in both.
 webmaster_verifications:
-  google:
+  # Keep it: Search Console drops the ownership check if the tag disappears.
+  google: aTR2-1CQEKx7kJ-V_vglgYuiXd0EinJVl3kEFfbYou4
 naver_site_verification:
 
 # Without this, Jekyll renders dates/permalinks using the build server's
