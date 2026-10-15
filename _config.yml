@@ -27,6 +27,11 @@ webmaster_verifications:
   google: aTR2-1CQEKx7kJ-V_vglgYuiXd0EinJVl3kEFfbYou4
 naver_site_verification:
 
+# Google Analytics 4 measurement ID (analytics.google.com → 관리 → 데이터 스트림).
+# head.html loads it only in production builds (GitHub Pages), so local previews
+# are not counted. The About page tells visitors it is there.
+google_analytics: G-6REGT0NBHC
+
 # Without this, Jekyll renders dates/permalinks using the build server's
 # local timezone (UTC on GitHub's runners), not the "+0900" offset already
 # in each post's front matter — a post timestamped 03:26 KST would get

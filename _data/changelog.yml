@@ -1,6 +1,10 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
 - date: 2026-10-15
+  title: 방문 통계
+  items:
+    - 어떤 글을 얼마나 읽는지 보려고 Google Analytics를 붙였어요. 쿠키를 쓰기 때문에 이 페이지 위쪽 정보 목록에 안내와 거부 방법을 적었어요.
+- date: 2026-10-15
   title: 노트 다듬기
   items:
     - 공부 노트의 문장을 다듬어 본문만 읽어도 설명이 이어지게 했어요. 따로 상자에 적어 두던 정정 내용은 상자를 없애고 본문에 넣었어요.
