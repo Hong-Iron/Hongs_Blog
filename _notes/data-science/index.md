@@ -30,7 +30,7 @@ permalink: "/studies/data-science/"
 - [집합](/Hongs_Blog/studies/discrete-math/sets/) (공학수학 이산수학), [조건부 확률](/Hongs_Blog/studies/probability-statistics/conditional-probability/) (공학수학 확률과 통계): 항목 집합과 신뢰도의 바탕
 
 
-## 2회 · 데이터, 측정, 전처리
+## 데이터, 측정, 전처리
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -56,7 +56,7 @@ permalink: "/studies/data-science/"
 
 떠올려 보기: 노트를 닫고 속성의 다섯 종류, 종류마다 쓰는 비유사도·상관 척도, 전처리의 세 단계(정제·통합·변환)를 한 장의 표로 써 본다.
 
-## 3회 · 빈발 패턴
+## 빈발 패턴
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -82,7 +82,7 @@ permalink: "/studies/data-science/"
 
 떠올려 보기: 노트를 닫고 같은 거래 9개(Apriori 예제 사다리 문제 3)로 Apriori의 $$C_k$$·$$L_k$$와 FP-tree를 각각 그린 뒤, 세 방법(Apriori, ECLAT, FP-Growth)의 DB 훑기·후보·메모리를 표로 비교해 본다.
 
-## 6회 · 앙상블
+## 앙상블
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -104,7 +104,7 @@ permalink: "/studies/data-science/"
 
 떠올려 보기: 노트를 닫고 오차의 세 부분(편향², 분산, 잡음), 앙상블 분산 공식, 배깅과 부스팅이 각각 무엇을 줄이는지와 그 이유를 한 장에 써 본다.
 
-## 7회 · 군집화 기초와 밀도 기반 군집화
+## 군집화 기초와 밀도 기반 군집화
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -131,7 +131,7 @@ permalink: "/studies/data-science/"
 
 떠올려 보기: 노트를 닫고 k-평균, k-메도이드, GMM, DBSCAN, CLIQUE를 '무엇을 비슷하다고 보는가', '$$k$$ 필요', '모양 가정', '잡음' 네 칸의 표로 쓰고, k-평균과 EM이 둘 다 '번갈아 고치기'라는 것을 한 문단으로 설명해 본다.
 
-## 10회 · 고차원 군집화와 그래프 군집화
+## 고차원 군집화와 그래프 군집화
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -153,7 +153,7 @@ permalink: "/studies/data-science/"
 
 떠올려 보기: 노트를 닫고 고차원 군집화의 세 갈래(차원 줄이기 PCA, 부분 분해 NMF, 부분공간 CLIQUE)와 그래프 군집화의 흐름(유사도 그래프 → 정규화 컷 → 라플라시안 고유벡터 → k-평균)을 한 장에 그려 본다.
 
-## 11회 · 추천 시스템 소개와 평가
+## 추천 시스템 소개와 평가
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -175,7 +175,7 @@ permalink: "/studies/data-science/"
 
 떠올려 보기: 노트를 닫고 내용 기반·사용자 기반·아이템 기반을 '근거, 쓰는 정보, 장점, 한계' 표로 쓰고, 평가 지표 세 갈래(평점, 목록, 순위)의 대표 식을 하나씩 써 본다.
 
-## 12회 · 행렬 분해 기반 추천과 희소성
+## 행렬 분해 기반 추천과 희소성
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -195,7 +195,7 @@ permalink: "/studies/data-science/"
 
 떠올려 보기: 노트를 닫고 PureSVD, 편향 MF, SVD++, WRMF, BPR을 '자료, 개인화, 학습, 손실, 목표' 다섯 칸의 표로 써 본다.
 
-## 13회 · PageRank
+## PageRank
 개념: PageRank는 공학수학의 [PageRank](/Hongs_Blog/studies/probability-statistics/pagerank/) 문서에 `과목별 관점`으로 합쳤다(무작위 서퍼, 거듭제곱법, 막다른 페이지, 거미줄 함정, 구글 행렬).
 
 ## 다른 과목과의 연결

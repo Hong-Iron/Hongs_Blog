@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-27"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["ODD vs CD", "반항장애 vs 품행장애"]
 description: "두 장애 모두 어른과 부딪치고 규칙을 따르지 않는다. 가르는 질문은 \"어른에게 화내고 따지고 거부하는 데 그치는가, 사람과 동물을 해치고 재산을 부수고 훔치며 중대한 규칙을 어기는가\"다. 적대적 반항장애는 권위자와의 관계에서 드러나는 분노와 반항이고, 품행장애는 다른 사람의 기본 …"
@@ -60,7 +60,7 @@ permalink: "/studies/abnormal-psychology/odd-vs-cd/"
 
 - **사소한 자극에 계획 없이 공격이 폭발할 뿐 반항이나 규범 위반의 패턴이 없을 때:** [간헐적 폭발장애](/Hongs_Blog/studies/abnormal-psychology/intermittent-explosive/).
 - **분노 폭발 사이에도 거의 매일 짜증과 화가 난 기분이 이어질 때:** [파괴적 기분조절곤란 장애](/Hongs_Blog/studies/abnormal-psychology/dmdd/). 기분이 중심이다.
-- **부주의와 과잉행동 때문에 지시를 못 따를 때:** ADHD(11회). 일부러 거부하는 것이 아니라 집중하지 못하는 것이다.
+- **부주의와 과잉행동 때문에 지시를 못 따를 때:** [ADHD](/Hongs_Blog/studies/abnormal-psychology/adhd/). 일부러 거부하는 것이 아니라 집중하지 못하는 것이다.
 - **발달 시기에 맞는 일시적 반항(두세 살의 떼쓰기, 사춘기의 반발):** 빈도와 강도가 또래 수준이고 기능 손상이 없으면 장애가 아니다.
 
 [^s1]: DSM-5부터는 두 장애를 함께 진단할 수 있다. DSM-IV에서는 품행장애의 기준을 채우면 적대적 반항장애를 진단하지 않았다.

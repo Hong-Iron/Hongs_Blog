@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Reactive Attachment Disorder", "RAD", "억제형 애착장애", "inhibited type", "애착 외상", "attachment trauma", "탈애착", "detachment", "적합도", "goodness of fit"]
 description: "아기 때 돌봄을 거의 받지 못해, 누구에게도 애착을 맺지 못하고 움츠러든 아이의 장애다. 넘어져 울어도 어른을 찾지 않고, 안아 줘도 반응하지 않는다. 기대했다가 번번이 실망하자 애착하려는 노력 자체를 포기한 모습이다. 심하게 방임된 아이 가운데서도 10% 이하에게만 나타나며, 한…"
@@ -103,7 +103,7 @@ flowchart LR
 
 - 애착의 개념: [애착](/Hongs_Blog/studies/abnormal-psychology/attachment/)(할로의 원숭이 실험은 접촉 위안의 결핍이 무엇을 낳는지 보여 준다)
 - 짝이 되는 장애: [탈억제성 사회적 유대감 장애](/Hongs_Blog/studies/abnormal-psychology/dsed/), [반응성 애착장애와 탈억제성 사회적 유대감 장애 비교](/Hongs_Blog/studies/abnormal-psychology/rad-vs-dsed/)
-- 구별: 자폐스펙트럼장애(11회)
+- 구별: [자폐스펙트럼장애](/Hongs_Blog/studies/abnormal-psychology/autism-spectrum-disorder/)
 
 ## 확인 문제
 

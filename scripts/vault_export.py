@@ -807,6 +807,29 @@ def tidy_oneliners(body):
     return "\n".join(out)
 
 
+# "## 3회 · 어휘 분석", "## 0·1회 · 과목 소개", "## 9주차 · 트리": the site shows
+# only the topic of a lecture or week (단원 and 장 numbers stay; they are units
+# of a book or of a course written without lectures)
+SESSION_RE = re.compile(r"^(\d+(?:\s?·\s?\d+)*\s?(?:회|주차))\s*·\s*")
+
+
+def drop_session_numbers(body):
+    """Roadmap headings lose their lecture/week number. A Mermaid subgraph
+    labelled with just that number ("1회") is relabelled with the topic."""
+    topics = {}
+    for m in re.finditer(r"^## (.+)$", body, re.M):
+        sm = SESSION_RE.match(m.group(1))
+        if sm:
+            topics[re.sub(r"\s", "", sm.group(1))] = m.group(1)[sm.end():].strip()
+    body = re.sub(r"^## (.+)$", lambda m: "## " + SESSION_RE.sub("", m.group(1)), body, flags=re.M)
+    # prose that points at a lecture ("이 회차의 내용은 …") now points at the section
+    body = re.sub(r"(이|다음) 회차", r"\1 묶음", body).replace("회차별로", "주제별로")
+    def relabel(m):
+        topic = topics.get(re.sub(r"\s", "", m.group(2)))
+        return f'{m.group(1)}"{topic.replace(chr(34), chr(39))}"]' if topic else m.group(0)
+    return re.sub(r'^(\s*subgraph\s+\w+\s*\[)"(\d+(?:\s?·\s?\d+)*\s?(?:회|주차))"\]', relabel, body, flags=re.M)
+
+
 def clean_body(body, is_roadmap):
     body = re.sub(r"<!--.*?-->\n?", "", body, flags=re.S)
     body = tidy_footnotes(body)
@@ -826,6 +849,7 @@ def clean_body(body, is_roadmap):
         body = re.sub(r"^## 시험 대비\n.*?(?=^## |^\[\^[^\]]+\]:|\Z)", "", body, flags=re.M | re.S)
         body = drop_status_column(body)
         body = tidy_oneliners(body)
+        body = drop_session_numbers(body)
     return title, body
 
 
@@ -881,7 +905,7 @@ def build_toc(course):
         for line in course["roadmap"].read_text(encoding="utf-8").split("\n"):
             m = re.match(r"^##\s+(.+?)\s*$", line)
             if m:
-                cur = {"title": re.sub(r"[*_`]", "", m.group(1)), "items": []}
+                cur = {"title": SESSION_RE.sub("", re.sub(r"[*_`]", "", m.group(1))), "items": []}
                 parts.append(cur)
                 continue
             if cur is None or not line.lstrip().startswith("|"):
@@ -1084,7 +1108,7 @@ def export(vault):
             _, body = split_front_matter(text)
             h1, body = clean_body(body, True)
             lines = convert_spans(convert_lines(body.split("\n")), linker, f"{course['folder']}/0.로드맵.md")
-            units = [re.sub(r"^[^·]*·\s*", "", h) for h in re.findall(r"^## (\d+\s*(?:회|단원|주차|장|부)[^\n]*)", body, re.M)]
+            units = [u.strip() for u in re.findall(r"^## \d+(?:\s?·\s?\d+)*\s*(?:회|단원|주차|장|부)\s*·\s*([^\n]+)", text, re.M)]
             course["units"] = units
             front = dict(
                 layout="course", title=course["name"], display_title=title_html(h1 or course["name"]),

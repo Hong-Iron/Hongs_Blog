@@ -25,7 +25,7 @@ permalink: "/studies/database-design/"
 > 질의와 결과 표는 SQLite(파이썬 `sqlite3`)로 실행해 확인했고, SQLite가 받지 않는 문장은 PostgreSQL 16으로 확인했다. 예제는 교재의 COMPANY 데이터베이스(표 6개, 45줄)를 쓴다.
 
 
-## 2주차 · 데이터베이스와 사용자, 데이터베이스 시스템의 개념과 구조
+## 데이터베이스와 사용자, 데이터베이스 시스템의 개념과 구조
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -53,7 +53,7 @@ permalink: "/studies/database-design/"
 카탈로그가 메타데이터를 따로 둔다는 이야기는 [데이터와 메타데이터](/Hongs_Blog/studies/data-and-information/data-metadata/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 외부·개념·내부 세 단계를 그린 뒤, 두 데이터 독립성이 어느 경계에 놓이는지와 경계마다 무엇이 바뀌고 무엇이 그대로인지 써 본다.
 
-## 3주차 · B-트리의 뜻과 높이, 검색과 삽입
+## B-트리의 뜻과 높이, 검색과 삽입
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -77,7 +77,7 @@ permalink: "/studies/database-design/"
 노드 안에서 이분 탐색을 하면 걸리는 시간은 [이분 탐색](/Hongs_Blog/studies/algorithms/binary-search/), 색인과 디스크 접근 비용은 [파일 조직](/Hongs_Blog/studies/operating-systems/file-organization/)과 [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 B-트리가 지켜야 하는 성질 세 가지를 쓰고, 빈 트리($$t = 2$$)에 F, S, Q, K를 넣은 모양을 그려 본다.
 
-## 4주차 · B-트리 삭제, ER 모델 1: 개체·속성·관계
+## B-트리 삭제, ER 모델 1: 개체·속성·관계
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -102,7 +102,7 @@ permalink: "/studies/database-design/"
 B-트리 삭제(17)는 CLRS와 다른 방식을 따른다. 내부 노드의 키는 늘 왼쪽 아래에서 가장 큰 키로 바꾼 뒤 잎에서 지운다.
 떠올려 보기: 노트를 닫고 B-트리 삭제의 네 경우(1-1, 1-2a, 1-2b, 2)를 "언제, 무엇을 한다"로 쓴다. 이어서 개체·속성·관계 타입이 각각 무엇인지, 타입과 집합이 어떻게 다른지 COMPANY 예로 써 본다.
 
-## 5주차 · ER 모델 2: 제약, 약한 개체, ER 다이어그램
+## ER 모델 2: 제약, 약한 개체, ER 다이어그램
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -126,7 +126,7 @@ B-트리 삭제(17)는 CLRS와 다른 방식을 따른다. 내부 노드의 키�
 
 떠올려 보기: COMPANY의 관계 타입 여섯 개를 적고, 각각의 비율·참여·관계의 속성을 표로 써 본다.
 
-## 6주차 · ER 다이어그램 설계 연습, 관계형 데이터 모델
+## ER 다이어그램 설계 연습, 관계형 데이터 모델
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -152,7 +152,7 @@ B-트리 삭제(17)는 CLRS와 다른 방식을 따른다. 내부 노드의 키�
 ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 연습과 함께 한 장에 모은 문서다. 릴레이션이 곱집합의 부분집합이라는 것은 [관계와 그 성질](/Hongs_Blog/studies/discrete-math/relations/), 키와 일대다 관계를 함수로 읽는 법은 [함수의 성질과 집합의 크기](/Hongs_Blog/studies/discrete-math/function-properties/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 PART_ORDER 요구사항만 보고 개체 타입, 속성, 관계 타입을 처음부터 다시 적어 본다. 이어서 세 제약(키, 개체 무결성, 참조 무결성)이 각각 무엇을 막는지와 네 가지 키의 차이를 써 본다.
 
-## 7주차 · ER 그림을 표로 옮기기
+## ER 그림을 표로 옮기기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -175,7 +175,7 @@ ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 �
 
 떠올려 보기: COMPANY ER 그림을 떠올려 일곱 단계로 옮기고, 릴레이션 여섯 개와 외래 키 여덟 개를 적어 본다.
 
-## 9주차 · SQL 맛보기
+## SQL 맛보기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -198,7 +198,7 @@ ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 �
 번호는 표를 만드는 문서(46~49)를 앞에 모으고 검색(50), 고치기(51~52), 참조 동작(53) 순서로 두었다. 그래서 이 절과 다음 절의 표에서 번호가 서로 섞여 있다.
 떠올려 보기: 노트를 닫고 SELECT 문의 세 절이 하는 일과, 삽입·삭제·수정이 각각 어길 수 있는 제약을 써 본다.
 
-## 10주차 · SQL로 표 만들기, 기본 검색
+## SQL로 표 만들기, 기본 검색
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -224,7 +224,7 @@ ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 �
 표가 중복을 허락하는 모음이라는 것과 UNION·EXCEPT·INTERSECT는 [집합](/Hongs_Blog/studies/discrete-math/sets/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 CREATE TABLE에 걸 수 있는 제약 여섯 가지(NOT NULL, DEFAULT, CHECK, PRIMARY KEY, UNIQUE, FOREIGN KEY)와 참조 동작 셋을 쓰고, SQL의 표가 집합과 다른 점을 한 문장으로 써 본다.
 
-## 11주차 · 표 정의 심화(주장·트리거·DROP·ALTER), 검색 심화(중첩 질의·조인·집계·묶기)
+## 표 정의 심화(주장·트리거·DROP·ALTER), 검색 심화(중첩 질의·조인·집계·묶기)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -259,7 +259,7 @@ ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 �
 주장과 트리거(73~74)는 NOT EXISTS(62)를 쓰므로 번호를 검색 심화(60~72) 뒤에 두었다. IN·ANY·ALL·EXISTS를 한정기호로 읽는 법은 [술어와 한정기호](/Hongs_Blog/studies/discrete-math/predicate-logic/), GROUP BY가 행을 겹치지 않게 나누는 것은 [동치관계와 분할](/Hongs_Blog/studies/discrete-math/equivalence-relations/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 중첩 질의, 조인, 집계 함수, GROUP BY와 HAVING, ORDER BY가 각각 무엇을 받아 무엇을 내놓는지와 여섯 절이 처리되는 차례를 써 본다. 이어서 주장과 트리거가 각각 무엇을 적는 문장인지, CASCADE와 RESTRICT가 표를 없앨 때 무엇을 함께 없애는지 써 본다.
 
-## 12주차 · 복잡한 검색 연습
+## 복잡한 검색 연습
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -274,7 +274,7 @@ ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 �
 새 개념 없이 중첩 질의, 조인, 집계, 묶기를 섞어 쓰는 연습이다. 풀이 문서 `복잡한 검색 연습`은 위의 표 정의·검색 심화 절에 있는 표 70번 줄의 연습 칸에 있다.
 떠올려 보기: 노트를 닫고, 연습 일곱 문제 가운데 언뜻 맞아 보이는 질의가 그대로는 틀리는 것 셋과 그 까닭을 써 본다.
 
-## 13주차 · 뷰
+## 뷰
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -295,7 +295,7 @@ ER 설계 절차(31)는 ER 모델 문서(18~30)에 흩어진 단계를 설계 �
 
 떠올려 보기: 노트를 닫고 뷰가 기본 테이블과 다른 점, 뷰를 구현하는 두 방법, 갱신할 수 있는 뷰의 조건을 쓰고 셋이 어떻게 이어지는지 적어 본다.
 
-## 14주차 · 고급 SQL 연습(JOIN, GROUP BY)
+## 고급 SQL 연습(JOIN, GROUP BY)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>

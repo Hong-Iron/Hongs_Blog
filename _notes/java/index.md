@@ -24,7 +24,7 @@ permalink: "/studies/java/"
 > 예제 코드는 JDK 21에서 실행해 확인했다.
 
 
-## 2회 · Java 기초 (1): 실행 과정, 변수, 타입 변환
+## Java 기초 (1): 실행 과정, 변수, 타입 변환
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -44,7 +44,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 `.java` 파일이 화면 출력이 되기까지의 단계, 기본 타입 여덟 개의 크기, 자동 변환과 강제 변환이 갈리는 기준을 써 본다.
 
-## 3회 · Java 기초 (2): 연산자와 제어문
+## Java 기초 (2): 연산자와 제어문
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -64,7 +64,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 수학과 다르게 나오는 계산 세 가지(넘침, 정수 나눗셈, 0.1 계산)와 `for`의 네 단계 실행 순서, `break`와 `continue`의 차이를 써 본다.
 
-## 4회 · 참조 타입
+## 참조 타입
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -85,7 +85,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 스택·힙·메서드 영역에 각각 무엇이 놓이는지 그림으로 그리고, `==`와 `equals`의 차이, `new String[3]` 직후 칸에 든 값을 써 본다.
 
-## 5회 · 객체 지향 프로그래밍
+## 객체 지향 프로그래밍
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -105,7 +105,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 세 원칙의 이름, 각각이 막아 주는 곤란함, 오버로딩과 오버라이딩이 정해지는 때를 써 본다.
 
-## 6회 · 클래스
+## 클래스
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -124,7 +124,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 클래스의 멤버 세 가지와 필드·지역 변수의 차이 세 줄, 기본 생성자가 사라지는 조건을 써 본다.
 
-## 7회 · 클래스 (2)
+## 클래스 (2)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -145,7 +145,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 접근 단계 넷을 넓은 순서로 쓰고, `static`·`final`·`static final`이 각각 무엇을 정하는지 한 줄씩 써 본다.
 
-## 8회 · 상속
+## 상속
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -165,7 +165,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: `extends`·`super()`·`super.method()`·`@Override`가 각각 하는 일과 오버라이딩의 두 가지 규칙을 써 본다.
 
-## 11회 · 인터페이스 (1)
+## 인터페이스 (1)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -185,7 +185,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 인터페이스에 넣을 수 있는 것, 컴파일러가 자동으로 붙이는 키워드, 구현 클래스가 지켜야 할 두 가지를 쓰고, 추상 클래스와 다른 점을 두 줄로 적어 본다.
 
-## 12회 · 인터페이스 (2)
+## 인터페이스 (2)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -206,7 +206,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 인터페이스의 메서드 다섯 종류가 서로 무엇을 부를 수 있는지 그리고, "호출 한 줄은 두 번 정해진다"를 `Driver`와 `Vehicle`로 설명해 본다.
 
-## 13회 · 중첩 선언과 익명 객체
+## 중첩 선언과 익명 객체
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -225,7 +225,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 중첩 클래스 세 종류를 "선언 자리, 만들 수 있는 때, 쓸 수 있는 바깥 멤버"로 표를 그리고, 익명 객체가 이름이 없어서 못 하는 일을 적어 본다.
 
-## 14회 · 라이브러리와 모듈
+## 라이브러리와 모듈
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -244,7 +244,7 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 module-info.java에 쓰는 낱말(requires, exports, transitive, opens)이 각각 무엇을 허락하는지와 서로의 관계를 써 본다.
 
-## 15회 · 예외 처리
+## 예외 처리
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -265,11 +265,11 @@ permalink: "/studies/java/"
 
 떠올려 보기: 노트를 닫고 Throwable 아래의 클래스 가지를 그리고, 어느 가지가 번역기 검사를 받는지와 try-catch-finally의 세 가지 실행 순서를 써 본다.
 
-## 16회 · java.base 모듈
+## java.base 모듈
 java.base, java.lang, API 문서, AWT·Swing은 [모듈](/Hongs_Blog/studies/java/java-module/) 문서의 "java.base와 API 문서"에서 다룬다.
 떠올려 보기: `requires` 없이 쓸 수 있는 모듈 하나와, `import` 없이 쓸 수 있는 패키지 하나를 대고 그 안의 클래스 네 개를 써 본다.
 
-## 17회 · 제네릭
+## 제네릭
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>

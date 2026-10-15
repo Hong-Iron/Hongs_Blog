@@ -20,7 +20,7 @@ permalink: "/studies/abnormal-psychology/"
 - [독립](/Hongs_Blog/studies/probability-statistics/independence/) (공학수학 확률과 통계) → 도박사의 오류 ↔ 독립
 - 심리학개론 수준의 용어(학습, 기억, 성격)를 알면 편하다. 모르는 용어는 앞쪽 문서(001~014)가 쉬운 말로 풀어 둔다.
 
-## 1회 · 이상심리학의 기본적 이해
+## 이상심리학의 기본적 이해
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -51,7 +51,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 이상행동의 네 기준과 각각의 약점을 쓴 뒤, 네 이론적 입장(정신분석·행동주의·인지·생물의학)의 원인론과 치료법을 한 표로 채워 본다.
 
-## 2회 · 조현병 스펙트럼 장애
+## 조현병 스펙트럼 장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -82,7 +82,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 다섯 핵심 증상과 음성 증상의 종류를 쓴 뒤, 단기 정신병적 장애·조현양상장애·조현병을 기간 축 위에 그리고, 조현병의 원인을 생물·심리·사회·통합으로 나눠 한 줄씩 채워 본다.
 
-## 3회 · 양극성장애와 우울장애
+## 양극성장애와 우울장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -118,7 +118,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 주요우울 삽화의 9개 증상과 조증 삽화의 7개 증상을 쓴 뒤, 우울장애 네 가지와 양극성장애 세 가지를 기간 기준과 함께 표로 정리하고, 우울의 원인을 생물·정신분석·행동·귀인·인지로 한 줄씩 채워 본다.
 
-## 4회 · 불안장애
+## 불안장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -148,7 +148,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 일곱 불안장애를 "무엇을, 왜 두려워하나"와 기간 기준으로 표에 채운 뒤, 2요인 이론·공황의 인지모델·클라크와 웰스 모형을 각각 화살표 그림으로 그려 본다.
 
-## 5회 · 강박 관련 장애
+## 강박 관련 장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -173,7 +173,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 강박 관련 장애 다섯 가지를 "무엇을 반복하나, 출발점은 무엇인가"로 표에 채운 뒤, 살코브스키스 모형을 그리고, 노출 및 반응방지법이 그 고리의 어디를 끊는지 표시해 본다.
 
-## 6회 · 외상 후 스트레스 장애와 해리장애
+## 외상 후 스트레스 장애와 해리장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -205,7 +205,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 외상과 스트레스 관련 장애를 "무슨 일을 겪은 뒤, 언제, 무엇이 핵심 증상인가"로 표에 채운 뒤, 해리장애 세 유형이 의식·기억·정체감 가운데 무엇을 잃는지 적어 본다.
 
-## 7회 · 신체증상 및 관련 장애, 배설장애
+## 신체증상 및 관련 장애, 배설장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -230,7 +230,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 신체증상 관련 네 장애와 꾀병을 "증상이 실제로 있는가, 일부러 만드는가, 외적 보상이 목적인가" 세 칸의 표로 채운 뒤, 소변 경보기를 고전적 조건형성의 네 요소로 적어 본다.
 
-## 8회 · 급식 및 섭식장애, 수면-각성장애
+## 급식 및 섭식장애, 수면-각성장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -265,7 +265,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 세 섭식장애를 "저체중 → 폭식 → 보상행동"의 결정 나무로 그린 뒤, 수면 단계 그림에 NREM 각성장애와 REM 수면 행동장애가 일어나는 때를 표시해 본다.
 
-## 9회 · 성 관련 장애
+## 성 관련 장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -303,7 +303,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 성기능부전 일곱 가지를 성반응주기 단계에 놓은 뒤, 성도착장애 여덟 유형을 "나이 기준, 동의 없는 타인에 대한 행동이 B에 들어가는가"로 표에 채워 본다.
 
-## 10회 · 파괴적, 충동조절 및 품행장애와 물질관련 및 중독장애
+## 파괴적, 충동조절 및 품행장애와 물질관련 및 중독장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -332,7 +332,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 파괴적·충동조절 장애 다섯 가지를 "누구를 향하는가, 계획·목적이 있는가" 두 칸으로 표에 채운 뒤, 알코올 사용장애 11개 기준을 떠올려 심각도 구간과 함께 적어 본다.
 
-## 11회 · 신경발달장애와 신경인지장애
+## 신경발달장애와 신경인지장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -368,7 +368,7 @@ permalink: "/studies/abnormal-psychology/"
 
 떠올려 보기: 노트를 닫고 신경발달장애 여섯 무리와 각 대표 장애를 쓴 뒤, 자폐스펙트럼장애의 두 핵심 영역(3+4 기준)과 ADHD의 두 증상 영역을 적고, 주요·경도 신경인지장애와 섬망을 "시간 경과, 의식, 독립성" 세 칸으로 채워 본다.
 
-## 12회 · 성격장애
+## 성격장애
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -405,11 +405,11 @@ permalink: "/studies/abnormal-psychology/"
 - [도박사의 오류 ↔ 독립](/Hongs_Blog/studies/abnormal-psychology/gamblers-fallacy--independence/) (공학수학 확률과 통계): "계속 잃었으니 이제 딸 차례"는 독립 시행에 기억이 있다고 믿는 오류다. 다음 판의 확률은 그대로다
 
 ## 흐름
-회차별로 묶었다. 점선 테두리는 아직 작성하지 않은 개념이다.
+주제별로 묶었다. 점선 테두리는 아직 작성하지 않은 개념이다.
 
 ```mermaid
 graph TD
-  subgraph L1["1회"]
+  subgraph L1["이상심리학의 기본적 이해"]
     n001["001 이상심리학"]
     n002["002 이상행동의 기준"]
     n003["003 통계적 일탈 기준 ↔ 정규분포"]
@@ -425,7 +425,7 @@ graph TD
     n013["013 취약성-스트레스 모델"]
     n014["014 생물심리사회적 모델"]
   end
-  subgraph L2["2회"]
+  subgraph L2["조현병 스펙트럼 장애"]
     n015["015 정신증과 조현병 스펙트럼"]
     n016["016 정신병적 증상"]
     n017["017 양성 증상과 음성 증상 비교"]
@@ -439,7 +439,7 @@ graph TD
     n025["025 망상장애"]
     n041["041 조현정동장애"]
   end
-  subgraph L3["3회"]
+  subgraph L3["양극성장애와 우울장애"]
     n026["026 기분장애"]
     n027["027 주요우울장애"]
     n028["028 지속성 우울장애"]
@@ -458,7 +458,7 @@ graph TD
     n042["042 자살"]
     n043["043 비자살적 자해"]
   end
-  subgraph L4["4회"]
+  subgraph L4["불안장애"]
     n044["044 불안과 공포"]
     n045["045 애착"]
     n046["046 분리불안장애"]
@@ -473,7 +473,7 @@ graph TD
     n055["055 특정공포증과 광장공포증 비교"]
     n056["056 범불안장애"]
   end
-  subgraph L5["5회"]
+  subgraph L5["강박 관련 장애"]
     n057["057 강박장애"]
     n058["058 강박장애의 인지모델"]
     n059["059 노출 및 반응방지법"]
@@ -483,7 +483,7 @@ graph TD
     n063["063 피부뜯기장애"]
     n064["064 신체중심 반복행동"]
   end
-  subgraph L6["6회"]
+  subgraph L6["외상 후 스트레스 장애와 해리장애"]
     n065["065 외상과 스트레스 관련 장애"]
     n066["066 외상 후 스트레스 장애"]
     n067["067 외상 후 스트레스 장애의 심리적 이론"]
@@ -500,7 +500,7 @@ graph TD
     n078["078 해리성 기억상실증"]
     n079["079 이인증·비현실감 장애"]
   end
-  subgraph L7["7회"]
+  subgraph L7["신체증상 및 관련 장애, 배설장애"]
     n080["080 신체증상 및 관련 장애"]
     n081["081 신체증상장애"]
     n082["082 기능성 신경학적 증상장애"]
@@ -510,7 +510,7 @@ graph TD
     n086["086 인위성장애와 꾀병 비교"]
     n087["087 배설장애"]
   end
-  subgraph L8["8회"]
+  subgraph L8["급식 및 섭식장애, 수면-각성장애"]
     n088["088 급식 및 섭식장애"]
     n089["089 신경성 식욕부진증"]
     n090["090 신경성 폭식증"]
@@ -530,7 +530,7 @@ graph TD
     n104["104 일주기 리듬 수면-각성장애"]
     n105["105 사건수면"]
   end
-  subgraph L9["9회"]
+  subgraph L9["성 관련 장애"]
     n106["106 성 관련 장애"]
     n107["107 성기능부전"]
     n108["108 남성 성욕감퇴장애"]
@@ -553,7 +553,7 @@ graph TD
     n125["125 성별 불쾌감"]
     n126["126 복장도착장애와 성별 불쾌감 비교"]
   end
-  subgraph L10["10회"]
+  subgraph L10["파괴적, 충동조절 및 품행장애와 물질관련 및 중독장애"]
     n127["127 파괴적, 충동조절 및 품행장애"]
     n128["128 적대적 반항장애"]
     n129["129 간헐적 폭발장애"]
@@ -567,7 +567,7 @@ graph TD
     n137["137 도박사의 오류 ↔ 독립"]
     n138["138 인터넷 게임 장애"]
   end
-  subgraph L11["11회"]
+  subgraph L11["신경발달장애와 신경인지장애"]
     n139["139 신경발달장애"]
     n140["140 지적장애"]
     n141["141 의사소통장애"]
@@ -588,7 +588,7 @@ graph TD
     n156["156 섬망과 치매 비교"]
     n157["157 알츠하이머병"]
   end
-  subgraph L12["12회"]
+  subgraph L12["성격장애"]
     n158["158 성격장애"]
     n159["159 편집성 성격장애"]
     n160["160 조현성 성격장애"]

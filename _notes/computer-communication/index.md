@@ -20,7 +20,7 @@ permalink: "/studies/computer-communication/"
 - 따로 필요한 선수 과목은 없다. 통계적 다중화의 계산에 확률통계의 이항분포를 쓴다.
 - 신호의 진폭·주파수·파장은 [사인파](/Hongs_Blog/studies/college-math/sinusoid/) (공학수학 대학수학)에서 다룬 양과 같다.
 
-## 1회 · 연결과 자원 공유
+## 연결과 자원 공유
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -53,7 +53,7 @@ permalink: "/studies/computer-communication/"
 
 떠올려 보기: 노트를 닫고 연결 방식, 스위칭 정책, 다중화 방식 세 가지와, 버스티 트래픽이 스위칭과 다중화에서 각각 어떤 선택을 이끌었는지 써 본다.
 
-## 2회 · 패킷 스위칭과 네트워크 구조
+## 패킷 스위칭과 네트워크 구조
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -77,8 +77,8 @@ permalink: "/studies/computer-communication/"
 
 떠올려 보기: 노트를 닫고 계층화, 프로토콜의 두 인터페이스, 프로토콜 그래프, 캡슐화가 서로 어떻게 이어지는지 한 장의 그림으로 그려 본다.
 
-## 3회 · 인터넷 구조와 성능
-전송 속도와 대역폭(05)은 1회 개념들의 선수라 앞 번호에 있다.
+## 인터넷 구조와 성능
+전송 속도와 대역폭(05)은 이 묶음에서 다루지만, 맨 앞 '연결과 자원 공유'의 개념들이 먼저 알아야 하는 것이라 앞 번호에 있다.
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -100,7 +100,7 @@ permalink: "/studies/computer-communication/"
 
 떠올려 보기: 노트를 닫고 소요시간의 네 항을 쓰고, 회선과 패킷의 시간 흐름 그림을 그린 뒤, 처리량과 대역폭-지연 곱이 소요시간과 어떻게 이어지는지 써 본다.
 
-## 4회 · 데이터 링크 네트워크: 링크의 실체
+## 데이터 링크 네트워크: 링크의 실체
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -125,7 +125,7 @@ permalink: "/studies/computer-communication/"
 
 떠올려 보기: 노트를 닫고 점대점 링크 위에서 할 일 세 가지와, 유선·가입자 선로·무선·이동통신·위성을 거리와 속도 기준으로 비교하는 표를 만들어 본다.
 
-## 5회 · 데이터 링크 네트워크: 인코딩
+## 데이터 링크 네트워크: 인코딩
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -149,7 +149,7 @@ permalink: "/studies/computer-communication/"
 
 떠올려 보기: 노트를 닫고 같은 비트열 하나를 NRZ, NRZI, 맨체스터, 4B/5B + NRZI로 그린 뒤, 각각 어떤 비트열에서 박자를 잃는지와 효율을 한 표로 정리해 본다.
 
-## 6회 · 데이터 링크 네트워크: 프레이밍과 오류 제어
+## 데이터 링크 네트워크: 프레이밍과 오류 제어
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -177,7 +177,7 @@ permalink: "/studies/computer-communication/"
 떠올려 보기: 노트를 닫고 프레이밍 세 방법을 "끝을 아는 방법, 겹침을 피하는 방법"으로, 오류 검출 세 방법을 "계산, 놓치는 오류, 쓰는 계층"으로 표를 그리고, ACK가 사라진 경우의 정지 대기 ARQ를 시간 그림으로 그려 본다.
 
 ## 아직 배우지 않은 자료
-- 정지 대기 분석, 슬라이딩 윈도우, 동시 논리 채널은 다음 회차에 정리한다.
+- 정지 대기 분석, 슬라이딩 윈도우, 동시 논리 채널은 다음 묶음에 정리한다.
 
 
 ## 다른 과목과의 연결

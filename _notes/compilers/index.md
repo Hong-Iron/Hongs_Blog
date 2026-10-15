@@ -25,7 +25,7 @@ permalink: "/studies/compilers/"
 - [문자열 파싱과 정규 표현식](/Hongs_Blog/studies/algorithms/string-parsing/) (알고리즘): 실전 정규식 기호. 문서의 `과목별 관점`에 기본 다섯 식으로 푸는 표가 있다
 
 
-## 1회 · 컴파일러 개요: 번역 방식과 여섯 단계
+## 컴파일러 개요: 번역 방식과 여섯 단계
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -44,7 +44,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 컴파일러의 여섯 단계와 `A = B + C`가 단계마다 어떻게 바뀌는지 써 본다.
 
-## 2회 · 어휘 분석 (1): 토큰과 정규 표현식
+## 어휘 분석 (1): 토큰과 정규 표현식
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -64,7 +64,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 기본 정규 표현식 다섯 가지와 각각이 가리키는 언어를 써 본다.
 
-## 3회 · 어휘 분석 (2): 유한 오토마타로 토큰 알아보기
+## 어휘 분석 (2): 유한 오토마타로 토큰 알아보기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -86,7 +86,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 정규 표현식에서 전이 표까지 가는 순서(정규 표현식 → NFA → DFA)와 각 걸음에서 쓰는 방법의 이름을 써 본다.
 
-## 4회 · 구문 분석 (1): 문맥 자유 문법과 AST
+## 구문 분석 (1): 문맥 자유 문법과 AST
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -109,7 +109,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 "좋은 문법의 세 조건"과 각각을 고치는 방법, 그리고 파스 트리에서 AST로 갈 때 지우는 세 가지를 써 본다.
 
-## 5회 · 구문 분석 (2): 하향식 파싱과 LL(1)
+## 구문 분석 (2): 하향식 파싱과 LL(1)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -131,7 +131,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 문법 <code>E → TE', E' → +E &#124; ε, T → FT', T' → *T &#124; ε, F → (E) &#124; id</code>의 FIRST, FOLLOW, 파싱 표를 차례로 만들고 `id * id`를 스택으로 읽어 본다.
 
-## 7회 · 구문 분석 (4): 상향식 파싱과 SLR
+## 구문 분석 (4): 상향식 파싱과 SLR
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -145,7 +145,7 @@ permalink: "/studies/compilers/"
 
 | 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
 |---|---|---|---|---|
-| 22 | [이동-환원 파싱](/Hongs_Blog/studies/compilers/shift-reduce-parsing/) | 토큰을 읽어 쌓다가 끝자락을 규칙의 왼쪽 기호로 묶어 올라가는 파싱[^s1] | [impl](/Hongs_Blog/studies/compilers/code/22_shift-reduce-parsing_impl/) | — |
+| 22 | [이동-환원 파싱](/Hongs_Blog/studies/compilers/shift-reduce-parsing/) | 토큰을 읽어 쌓다가 끝자락을 규칙의 왼쪽 기호로 묶어 올라가는 파싱 | [impl](/Hongs_Blog/studies/compilers/code/22_shift-reduce-parsing_impl/) | — |
 | 23 | [핸들](/Hongs_Blog/studies/compilers/parse-handle/) | 지금 묶어야 끝까지 갈 수 있는 바로 그 끝자락 | [verify](/Hongs_Blog/studies/compilers/code/23_parse-handle_verify/) | — |
 | 24 | [유효 접두사](/Hongs_Blog/studies/compilers/viable-prefix/) | 쌓아 둔 부분이 아직 가망 있는 모양인가 | [verify](/Hongs_Blog/studies/compilers/code/24_viable-prefix_verify/) | — |
 | 25 | [LR(0) 항목과 항목 오토마타](/Hongs_Blog/studies/compilers/lr0-item-automaton/) | 점 찍은 규칙을 상태로 삼아 유효 접두사를 알아보는 기계 | [impl](/Hongs_Blog/studies/compilers/code/25_lr0-item-automaton_impl/) | — |
@@ -153,7 +153,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 핸들, 유효 접두사, 항목, FOLLOW가 "묶을지 읽을지"를 정하는 데 각각 어떻게 쓰이는지 한 줄로 이어 써 본다.
 
-## 8회 · 구문 분석 (5): SLR 파싱 표와 스택
+## 구문 분석 (5): SLR 파싱 표와 스택
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -173,7 +173,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 문법에서 표까지 가는 네 칸(문법 → NFA → DFA → 표)과 스택 파서의 이동·환원 한 걸음씩을 써 본다.
 
-## 9회 · 의미 분석 (1): 스코프 검사
+## 의미 분석 (1): 스코프 검사
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -193,7 +193,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 의미 규칙 다섯 가지와, 스코프마다 표를 만들어 이름을 찾는 세 걸음을 써 본다.
 
-## 10회 · 의미 분석 (2): 타입 검사
+## 의미 분석 (2): 타입 검사
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -214,7 +214,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 타입·타입 시스템·타입 검사의 뜻, 덧셈·비교·변수 규칙의 가로선 꼴, 문장을 검사하는 세 단계 순서를 써 본다.
 
-## 11회 · 중간 코드 생성: 3주소 코드
+## 중간 코드 생성: 3주소 코드
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -234,7 +234,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 3주소 코드의 줄 종류, 쿼드러플의 네 칸, 이항 연산자 노드와 while 노드의 생성 규칙을 써 본다.
 
-## 12회 · 코드 최적화 (1): 지역 최적화
+## 코드 최적화 (1): 지역 최적화
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -255,7 +255,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 기본 블록의 두 조건, 지역 최적화 다섯 기법, 두 분석이 집합을 고치는 규칙과 훑는 방향을 써 본다.
 
-## 13회 · 코드 최적화 (2): 전역 최적화
+## 코드 최적화 (2): 전역 최적화
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -275,7 +275,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 두 분석의 방향, 갈림길에서 합치는 법, 고리에서 고치는 곳을 표로 써 본다.
 
-## 14회 · 코드 생성 (1): 런타임 환경
+## 코드 생성 (1): 런타임 환경
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -296,7 +296,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 활성 레코드의 다섯 칸과 메모리의 네 구역을 그림으로 그려 본다.
 
-## 15회 · 코드 생성 (2): MIPS 어셈블리 만들기
+## 코드 생성 (2): MIPS 어셈블리 만들기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -316,7 +316,7 @@ permalink: "/studies/compilers/"
 
 떠올려 보기: 노트를 닫고 `b = call foo, 1`을 부를 때 쌓는 다섯 걸음과 걷는 세 걸음을 명령으로 써 본다.
 
-## 16회 · 코드 생성 (3): 레지스터 할당
+## 코드 생성 (3): 레지스터 할당
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -509,6 +509,4 @@ graph TD
   C54 --> C56
   C44 --> C56
 ```
-
-[^s1]: 6회는 상향식 파싱을 처음 설명한 회차로 보인다.
 {% endraw %}

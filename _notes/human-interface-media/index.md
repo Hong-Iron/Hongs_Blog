@@ -23,7 +23,7 @@ permalink: "/studies/human-interface-media/"
   - [단위 임펄스와 단위 계단](/Hongs_Blog/studies/signals-and-systems/unit-impulse-step/), [컨벌루션 합](/Hongs_Blog/studies/signals-and-systems/convolution-sum/), [컨벌루션 적분](/Hongs_Blog/studies/signals-and-systems/convolution-integral/) (3-1학기 신호 및 시스템)
 - 뉴런의 연산 모형, 퍼셉트론, 삼색 이론, 조건등색에는 선형대수(행렬 곱, 역행렬, 영공간)를 쓴다.
 
-## 0·1회 · 과목 소개와 들어가기
+## 과목 소개와 들어가기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -40,7 +40,7 @@ permalink: "/studies/human-interface-media/"
 
 떠올려 보기: 노트를 닫고 휴먼 인터페이스 미디어의 그림을 그린 뒤, 이 과목이 다루는 두 갈래(사람 감각의 특성, 자극을 데이터로 바꾸기)와 다루지 않는 것을 써 본다.
 
-## 2회 · 사람의 지각
+## 사람의 지각
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -66,7 +66,7 @@ permalink: "/studies/human-interface-media/"
 
 떠올려 보기: 노트를 닫고 자극 → 수용기 → 뉴런 → 시냅스의 흐름, 세기를 싣는 방법, 수렴 세 회로의 반응 그래프를 그린 뒤, 이 셋이 연산 모형 $$a(A\mathbf{x} + \mathbf{b})$$의 어느 부분이 되는지 이어 본다.
 
-## 3회 · 사람의 시각
+## 사람의 시각
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -97,7 +97,7 @@ permalink: "/studies/human-interface-media/"
 
 떠올려 보기: 노트를 닫고 빛이 눈에 들어와 시각 피질에 닿기까지를 한 줄로 그린 뒤, 그 길 위에서 색(삼색 → 반대색), 밝기(측면 억제), 깊이(양안 시차)가 각각 어디서 처리되는지 표시해 본다.
 
-## 4회 · 파동의 표현
+## 파동의 표현
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -115,7 +115,7 @@ permalink: "/studies/human-interface-media/"
 
 떠올려 보기: 노트를 닫고 원 위를 도는 점과 그 그림자 사인파를 그린 뒤, $$A$$, $$T$$, $$\phi$$가 그림의 어디인지 표시하고 $$Ae^{i(2\pi t/T + \phi)}$$의 실수부·허수부를 적어 본다.
 
-## 5회 · 이미지의 표현
+## 이미지의 표현
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -135,7 +135,7 @@ permalink: "/studies/human-interface-media/"
 
 떠올려 보기: 노트를 닫고 이미지 → 픽셀 배열 → 양자화 → 데이터의 흐름을 그린 뒤, 각 단계에서 무엇을 잃는지(위치의 세밀함, 밝기의 세밀함)와 픽셀 $$N$$개의 최대 공간 주파수를 적어 본다.
 
-## 6회 · 모양 맞추기
+## 모양 맞추기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>

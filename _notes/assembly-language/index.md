@@ -25,7 +25,7 @@ permalink: "/studies/assembly-language/"
 > 이 지식베이스의 실행 결과는 MASM이 아니라 파이썬으로 레지스터·플래그·스택을 흉내 내 확인했다.
 
 
-## 1주차 · 어셈블리어 소개와 가상 기계
+## 어셈블리어 소개와 가상 기계
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -44,7 +44,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 사람의 말, C++, 어셈블리어, 기계어 네 가지가 서로 어떻게 바뀌는지 그려 본다.
 
-## 2주차 · 기계 단계, 수와 문자 표현, 불 연산
+## 기계 단계, 수와 문자 표현, 불 연산
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -59,7 +59,7 @@ permalink: "/studies/assembly-language/"
 개념: 진법·2의 보수·문자 부호·불 연산은 [진법과 자릿수](/Hongs_Blog/studies/college-math/positional-notation/), [정수의 2진 표현과 2의 보수](/Hongs_Blog/studies/data-and-information/twos-complement/), [부호와 부호화](/Hongs_Blog/studies/data-and-information/code-encoding/), [불 대수와 논리 회로](/Hongs_Blog/studies/discrete-math/boolean-algebra/) 문서의 `과목별 관점`에 합쳤다. 연습은 위 01번 줄의 16진 계산과 2의 보수 연습에 있다.
 떠올려 보기: 네 단계의 이름, 16진 덧셈의 올림 규칙, 2의 보수 만드는 두 단계를 적고 서로 어디서 만나는지 써 본다.
 
-## 3주차 · x86 프로세서 구조
+## x86 프로세서 구조
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -81,7 +81,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 레지스터의 종류, 세 가지 동작 모드, 입출력의 네 단계를 적고 "보호 모드에서는 무엇이 막히는가"로 이어 본다.
 
-## 4주차 · 어셈블리 문법, 데이터 정의, 데이터 전송
+## 어셈블리 문법, 데이터 정의, 데이터 전송
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -108,7 +108,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 "변수를 정의한다 → 메모리에 바이트로 놓인다 → 명령이 그 자리를 가져다 쓴다"의 세 단계를 `val1 DWORD 12345678h` 하나로 써 본다.
 
-## 5주차 · 덧셈·뺄셈과 플래그, 데이터 연산자, 간접 주소, JMP·LOOP
+## 덧셈·뺄셈과 플래그, 데이터 연산자, 간접 주소, JMP·LOOP
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -132,7 +132,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 네 플래그(ZF, SF, CF, OF)가 켜지는 조건을 쓰고, CF와 OF가 서로 다른 값이 되는 8비트 덧셈을 하나씩 만들어 본다.
 
-## 6주차 · 스택과 프로시저
+## 스택과 프로시저
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -152,7 +152,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 `PUSH`, `POP`, `CALL`, `RET`이 각각 ESP와 스택에 하는 일을 쓰고, 겹쳐 부른 프로시저 셋이 돌아오는 순서를 스택 그림으로 그려 본다.
 
-## 7주차 · Irvine32 라이브러리, 비트 논리·비교, 조건 점프
+## Irvine32 라이브러리, 비트 논리·비교, 조건 점프
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -174,7 +174,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 부호 없는 비교 점프 넷과 부호 있는 비교 점프 넷을 쓰고, 각각 어떤 플래그를 보는지와 `CMP`·`TEST`가 그 플래그를 어떻게 만드는지 이어 본다.
 
-## 9주차 · 조건부 반복, 조건 구조, 유한 상태 기계
+## 조건부 반복, 조건 구조, 유한 상태 기계
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -195,7 +195,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 부호 있는 정수를 알아보는 상태 그림을 그린 뒤, 상태 A를 어셈블리 코드로 옮겨 본다.
 
-## 10주차 · 시프트와 회전, 스택 프레임
+## 시프트와 회전, 스택 프레임
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -218,7 +218,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 시프트·회전 명령 여덟 개가 빈칸을 무엇으로 채우는지 표로 쓰고, `push 6`, `push 5`, `call AddTwo` 뒤의 스택을 주소와 함께 그려 본다.
 
-## 11주차 · 호출 규약, 지역 변수, 재귀
+## 호출 규약, 지역 변수, 재귀
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -240,7 +240,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 Factorial(3)이 가장 깊이 들어갔을 때의 스택 열두 칸을 그리고, 돌아오면서 EAX가 바뀌는 순서를 써 본다.
 
-## 12주차 · 디스크 구조와 FAT
+## 디스크 구조와 FAT
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -257,10 +257,10 @@ permalink: "/studies/assembly-language/"
 | 48 | [클러스터와 FAT](/Hongs_Blog/studies/assembly-language/fat-file-system/) | 파일은 클러스터 단위로 나뉘고 FAT에 적힌 "다음 번호"를 따라 이어진다 | [verify](/Hongs_Blog/studies/assembly-language/code/48_fat-file-system_verify/) | — |
 | 52 | [INT 21h 파일·디스크 함수](/Hongs_Blog/studies/assembly-language/int21h-file-disk-functions/) | 파일은 핸들로 다루고 실패는 올림 플래그로 알며, 섹터 직접 읽기는 실주소 모드에서만 된다 | [verify](/Hongs_Blog/studies/assembly-language/code/52_int21h-file-disk-functions_verify/) | — |
 
-52번은 이 회차에서 다루지만, 다음 회차의 INT 21h를 먼저 알아야 해서 번호가 뒤에 있다. 트랙·섹터·실린더는 운영체제의 [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) 문서의 `과목별 관점`에 합쳤다.
+52번은 이 묶음에서 다루지만, 다음 묶음의 INT 21h를 먼저 알아야 해서 번호가 뒤에 있다. 트랙·섹터·실린더는 운영체제의 [디스크 스케줄링](/Hongs_Blog/studies/operating-systems/disk-scheduling/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 섹터, 클러스터, 클러스터 사슬, FAT, 디렉터리가 파일 이름에서 섹터까지 어떻게 이어지는지 그려 본다.
 
-## 13주차 · 16비트 MS-DOS와 INT 21h
+## 16비트 MS-DOS와 INT 21h
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -280,7 +280,7 @@ permalink: "/studies/assembly-language/"
 
 떠올려 보기: 노트를 닫고 `int 21h`를 부르는 세 단계와, `int` 명령을 만난 프로세서가 처리 코드까지 가서 돌아오는 네 걸음을 써 본다.
 
-## 14주차 · BIOS 키보드·비디오, 인터럽트 핸들러
+## BIOS 키보드·비디오, 인터럽트 핸들러
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>

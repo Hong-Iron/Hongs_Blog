@@ -22,7 +22,7 @@ permalink: "/studies/signals-and-systems/"
 - [사인파](/Hongs_Blog/studies/college-math/sinusoid/), [미분방정식과 오일러 방법](/Hongs_Blog/studies/calculus/ode-euler/), [고윳값과 고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/) (특이함수와 푸리에 급수 도입에서 쓴다)
 - 교재: Oppenheim·Willsky, *Signals and Systems* 2판. 문서에 나오는 그림·예제 번호가 이 교재를 따른다.
 
-## 1주차 · 복습: 자연상수, 오일러 등식, 미분방정식
+## 복습: 자연상수, 오일러 등식, 미분방정식
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -40,7 +40,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 특성근의 세 경우(서로 다른 실근, 중근, 복소근)의 일반해를 써 본다.
 
-## 2주차 · 1장 신호의 종류, 에너지, 시간축 변환
+## 1장 신호의 종류, 에너지, 시간축 변환
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -61,7 +61,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 그림 1.13의 $$x(t)$$로 $$x(-t+1)$$과 $$x(\frac32 t + 1)$$을 그려 본다.
 
-## 3주차 · 1장 지수·정현파 신호, 임펄스와 계단
+## 1장 지수·정현파 신호, 임펄스와 계단
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -81,7 +81,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 표 1.1(연속·이산 복소 지수 비교)을 다시 써 본다.
 
-## 4주차 · 1장 시스템과 시스템의 성질
+## 1장 시스템과 시스템의 성질
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -103,7 +103,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 시스템 성질 여섯 개의 정의를 한 줄씩 쓰고, 각각을 깨는 예를 하나씩 든다.
 
-## 5주차 · 2장 LTI 시스템과 컨벌루션 (1)
+## 2장 LTI 시스템과 컨벌루션 (1)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -121,7 +121,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 예제 2.4의 다섯 구간을 그림과 함께 다시 나누어 본다.
 
-## 6주차 · 2장 LTI 시스템과 컨벌루션 (2)
+## 2장 LTI 시스템과 컨벌루션 (2)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -144,7 +144,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 $$\dot y + ay = bx$$와 $$y[n] - ay[n-1] = bx[n]$$의 계단 응답과 임펄스 응답을 나란히 유도해 본다.
 
-## 7주차 · 특이함수와 3장 도입
+## 특이함수와 3장 도입
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -164,7 +164,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 단위 임펄스를 '짧은 펄스의 극한'과 '컨벌루션 항등원' 두 방식으로 설명해 본다. 이어서 $$e^{st}$$가 LTI의 고유함수인 이유를 증명하고 푸리에 급수의 분석식을 유도해 본다.
 
-## 9주차 · 3장 푸리에 급수 (1)
+## 3장 푸리에 급수 (1)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -182,7 +182,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 표 3.1에서 시간 이동, 반전, 미분, 곱셈, 파스발을 계수 쪽 식으로 써 본다.
 
-## 10주차 · 3장 푸리에 급수 (2)
+## 3장 푸리에 급수 (2)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -201,7 +201,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 예제 3.12 이산 구형파의 계수를 등비수열 합으로 다시 유도해 본다.
 
-## 12주차 · 3장 푸리에 급수 (3)
+## 3장 푸리에 급수 (3)
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -219,7 +219,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 RC 저역·고역 통과와 1차 재귀 필터의 $$H$$를 유도하고 $$\vert H\vert $$를 대략 그려 본다.
 
-## 14주차 · 4장 연속 시간 푸리에 변환
+## 4장 연속 시간 푸리에 변환
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -239,7 +239,7 @@ permalink: "/studies/signals-and-systems/"
 
 떠올려 보기: 노트를 닫고 표 4.1의 시간 이동, 척도, 미분, 적분, 파스발과 기본 쌍(지수, 사각 펄스, sinc, 임펄스, 계단)을 써 본다.
 
-## 15주차 · 4장 푸리에 변환의 성질과 응용
+## 4장 푸리에 변환의 성질과 응용
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>

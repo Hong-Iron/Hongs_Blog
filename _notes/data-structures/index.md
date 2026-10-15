@@ -25,7 +25,7 @@ permalink: "/studies/data-structures/"
 > 구현 코드는 C로 쓰고 메모리 오류 검사(ASan, UBSan)를 켠 채 컴파일해 실행했고, 횟수 세기와 전수 비교는 파이썬으로 했다.
 
 
-## 2주차 · 자료구조의 뜻, 연산 횟수 세기, C 포인터와 동적 메모리
+## 자료구조의 뜻, 연산 횟수 세기, C 포인터와 동적 메모리
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -49,7 +49,7 @@ permalink: "/studies/data-structures/"
 삽입 정렬은 여기서 횟수를 세는 예로 쓰이고, 정렬 방법으로는 40번에서 다룬다. 시간표와 점근 표기는 [시간 복잡도로 방법 고르기](/Hongs_Blog/studies/algorithms/complexity-budget/), [점근 표기](/Hongs_Blog/studies/discrete-math/asymptotic-notation/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 변수 하나, 그것을 가리키는 포인터, 그 포인터를 가리키는 포인터를 칸과 화살표로 그린 뒤 `&`와 `*`가 각각 어느 쪽으로 가는지 적어 본다.
 
-## 3주차 · 배열 배치, 희소 행렬, 스택, 큐
+## 배열 배치, 희소 행렬, 스택, 큐
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -75,7 +75,7 @@ permalink: "/studies/data-structures/"
 희소 행렬이 행 우선 순서를 쓰므로 배열 배치(09·10)를 앞에 둔다. 스택과 큐의 쓰임은 [스택](/Hongs_Blog/studies/algorithms/stack/), [큐와 덱](/Hongs_Blog/studies/algorithms/queue-deque/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고, 스택은 정수 하나(top)로 되는데 큐는 왜 둘(front, rear)이 필요하고 한 칸까지 비워야 하는지 써 본다.
 
-## 5주차 · 연결 리스트
+## 연결 리스트
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -99,7 +99,7 @@ permalink: "/studies/data-structures/"
 20번은 선형 구조를 다 배운 자리라 여기에 둔다. 칸 번호로 만든 연결 리스트는 [연결 리스트](/Hongs_Blog/studies/algorithms/linked-list/) 문서에 있다.
 떠올려 보기: 노트를 닫고, 체인에서 한 번에 끝나는 일 세 가지와 그렇지 않은 일 하나를 쓰고, 그것이 스택과 큐의 모양을 어떻게 정하는지 써 본다.
 
-## 6주차 · 트리, 이진 트리, 순회, 우선순위 큐와 힙
+## 트리, 이진 트리, 순회, 우선순위 큐와 힙
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -126,7 +126,7 @@ permalink: "/studies/data-structures/"
 트리의 뜻과 높이는 [트리](/Hongs_Blog/studies/discrete-math/trees/), 전위·중위·후위 순회는 [트리 순회와 이진 탐색 트리](/Hongs_Blog/studies/algorithms/tree-traversal-bst/), 힙의 쓰임은 [힙과 우선순위 큐](/Hongs_Blog/studies/algorithms/heap/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 이진 트리를 담는 두 방법, 네 가지 순회, 힙의 넣기·꺼내기가 층수만큼만 걸리는 까닭을 그림과 함께 써 본다.
 
-## 9주차 · 이진 탐색 트리, 색인 이진 탐색 트리, 승자·패자 트리
+## 이진 탐색 트리, 색인 이진 탐색 트리, 승자·패자 트리
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -149,7 +149,7 @@ permalink: "/studies/data-structures/"
 
 떠올려 보기: 노트를 닫고 이진 탐색 트리의 찾기·넣기·지우기와 승자·패자 트리의 다시 겨루기가 각각 나무의 어느 길을 지나는지, 왜 모두 높이만큼만 걸리는지 써 본다.
 
-## 10주차 · 그래프의 뜻과 표현
+## 그래프의 뜻과 표현
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -167,7 +167,7 @@ permalink: "/studies/data-structures/"
 그래프의 뜻과 용어는 [그래프의 기초](/Hongs_Blog/studies/discrete-math/graph-basics/), 인접 행렬과 인접 리스트의 고르기는 [그래프 표현](/Hongs_Blog/studies/algorithms/graph-representation/) 문서에 있다. 이 과목에는 C로 만드는 방법만 번호를 받았다.
 떠올려 보기: 노트를 닫고 인접 행렬, 연결 인접 리스트, 배열 인접 리스트가 쓰는 자리와 "한 점의 이웃 모두 보기"에 드는 시간을 견줘 써 본다.
 
-## 11주차 · 너비 우선 탐색, 최소 비용 신장 트리
+## 너비 우선 탐색, 최소 비용 신장 트리
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -186,7 +186,7 @@ permalink: "/studies/data-structures/"
 탐색과 신장 트리는 [너비 우선 탐색(BFS)](/Hongs_Blog/studies/algorithms/bfs/), [깊이 우선 탐색(DFS)](/Hongs_Blog/studies/algorithms/dfs/), 크루스칼과 프림은 [최소 신장 트리](/Hongs_Blog/studies/algorithms/mst/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 고르기 전략 셋(크루스칼, 프림, 솔린)과 버리기 전략 둘이 각각 "어떤 간선 가운데 가장 싼(비싼) 것"을 보는지 써 본다.
 
-## 12주차 · 최단 경로
+## 최단 경로
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -206,7 +206,7 @@ permalink: "/studies/data-structures/"
 다익스트라와 플로이드의 점화식은 [다익스트라](/Hongs_Blog/studies/algorithms/dijkstra/), [플로이드–워셜](/Hongs_Blog/studies/algorithms/floyd-warshall/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 세 알고리즘이 각각 무엇에 제한을 걸고(확정한 점, 간선 수, 중간 점 번호) 길을 되짚으려고 무엇을 적어 두는지(p, p, kay) 써 본다.
 
-## 14주차 · 정렬과 외부 정렬
+## 정렬과 외부 정렬
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -231,7 +231,7 @@ permalink: "/studies/data-structures/"
 정렬을 고르는 기준은 [정렬과 정렬 기준](/Hongs_Blog/studies/algorithms/sorting/) 문서에 있다. 힙 정렬은 28번에 있다.
 떠올려 보기: 노트를 닫고 삽입·선택·퀵·병합 정렬이 각각 "어디서 일을 하는지"와 가장 나쁠 때의 빠르기를 표로 쓰고, 외부 정렬의 두 단계와 패스 수 식을 써 본다.
 
-## 15주차 · 해시 테이블
+## 해시 테이블
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>

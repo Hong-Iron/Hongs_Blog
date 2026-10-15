@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Disinhibited Social Engagement Disorder", "DSED", "탈억제형 애착장애", "disinhibited type", "가짜 위안", "pseudo-comfort", "무분별한 사회성"]
 description: "아기 때 돌봄을 거의 받지 못한 아이가, 처음 보는 어른에게도 스스럼없이 안기고 따라가는 장애다. 붙임성이 좋아 보이지만, 특정한 사람과의 깊은 애착이 없어 누구에게나 똑같이 다가가는 것이다. 외로움과 두려움을 달래려고 얻는 가짜 위안이라서 관계가 피상적이고, 결국 거부당하기 쉽다…"
@@ -87,7 +87,7 @@ flowchart TD
 
 - 짝이 되는 장애와 비교: [반응성 애착장애와 탈억제성 사회적 유대감 장애 비교](/Hongs_Blog/studies/abnormal-psychology/rad-vs-dsed/)
 - 애착의 개념: [애착](/Hongs_Blog/studies/abnormal-psychology/attachment/)
-- 충동성이 겹칠 수 있는 장애: ADHD(11회)
+- 충동성이 겹칠 수 있는 장애: [ADHD](/Hongs_Blog/studies/abnormal-psychology/adhd/)
 
 ## 확인 문제
 

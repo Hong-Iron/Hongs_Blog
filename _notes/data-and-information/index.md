@@ -24,7 +24,7 @@ permalink: "/studies/data-and-information/"
 - 군집화, 확률변수, 다변수 정규분포, 조건확률, 확률 분포 찾기는 새 문서 없이 데이터 과학과 공학수학 문서의 `과목별 관점`에 합쳤다. 번호 원칙으로는 먼저 배우는 이 과목이 번호를 가져야 하지만, 이미 정리된 문서의 번호를 바꾸지 않으려고 그대로 두었다.
 
 
-## 2회 · 데이터와 메타데이터
+## 데이터와 메타데이터
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -44,7 +44,7 @@ permalink: "/studies/data-and-information/"
 
 떠올려 보기: 노트를 닫고 데이터·메타데이터·정보·모델의 관계를 그림으로 그리고, 8비트 한 줄을 세 가지 방법으로 읽어 본다.
 
-## 3회 · 부호
+## 부호
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -65,7 +65,7 @@ permalink: "/studies/data-and-information/"
 
 떠올려 보기: 노트를 닫고 부호 거리 → 검출·정정 개수 → 패리티 검사 행렬 → 해밍 부호로 이어지는 줄기를 쓰고, 7칸 해밍 부호의 세 검사가 맡는 칸을 적어 본다.
 
-## 4회 · 유사도와 거리
+## 유사도와 거리
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -86,7 +86,7 @@ permalink: "/studies/data-and-information/"
 
 떠올려 보기: 노트를 닫고 숫자 벡터·이진 부호·문자열에 쓰는 거리와 유사도를 표로 적고, 거리의 네 조건을 쓴 뒤 `tea` → `eat`의 표를 채워 본다.
 
-## 5회 · 군집화
+## 군집화
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -97,10 +97,10 @@ permalink: "/studies/data-and-information/"
 </details>
 
 
-개념: 이 회차의 내용은 데이터 과학의 [군집 분석](/Hongs_Blog/studies/data-science/cluster-analysis/), [k-평균](/Hongs_Blog/studies/data-science/k-means/), [k-메도이드](/Hongs_Blog/studies/data-science/k-medoids/) 문서의 `과목별 관점`에 합쳤다.
+개념: 이 묶음의 내용은 데이터 과학의 [군집 분석](/Hongs_Blog/studies/data-science/cluster-analysis/), [k-평균](/Hongs_Blog/studies/data-science/k-means/), [k-메도이드](/Hongs_Blog/studies/data-science/k-medoids/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 k-평균의 두 단계와 PAM의 맞바꾸기를 적고, 두 방법이 갈리는 곳(대표, 쓸 수 있는 거리, 계산량)을 써 본다.
 
-## 6회 · 확률변수
+## 확률변수
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -111,10 +111,10 @@ permalink: "/studies/data-and-information/"
 </details>
 
 
-개념: 이 회차의 내용은 [확률변수와 분포](/Hongs_Blog/studies/probability-statistics/random-variables/), [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/)(공학수학 확률과 통계), [정규화](/Hongs_Blog/studies/data-science/normalization/)(데이터 과학) 문서의 `과목별 관점`에 합쳤다.
+개념: 이 묶음의 내용은 [확률변수와 분포](/Hongs_Blog/studies/probability-statistics/random-variables/), [정규분포](/Hongs_Blog/studies/probability-statistics/normal-distribution/)(공학수학 확률과 통계), [정규화](/Hongs_Blog/studies/data-science/normalization/)(데이터 과학) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 자료를 점으로 볼 때와 확률변수로 볼 때 각각 무엇을 계산하는지, 평균이 자료를 잘 대표하지 못하는 경우 두 가지를 써 본다.
 
-## 7회 · 다변수 정규분포
+## 다변수 정규분포
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -125,10 +125,10 @@ permalink: "/studies/data-and-information/"
 </details>
 
 
-개념: 이 회차의 내용은 [공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) 문서의 `과목별 관점`에 합쳤다. 밀도 식의 지수에 든 거리는 위의 마할라노비스 거리와 이어진다.
+개념: 이 묶음의 내용은 [공분산 행렬과 다변량 정규분포](/Hongs_Blog/studies/probability-statistics/multivariate-normal/) 문서의 `과목별 관점`에 합쳤다. 밀도 식의 지수에 든 거리는 위의 마할라노비스 거리와 이어진다.
 떠올려 보기: 평균 벡터와 공분산 행렬의 칸 하나하나가 종 모양의 무엇(자리, 폭, 기울기)을 정하는지 그림으로 그려 본다.
 
-## 8회 · 조건확률
+## 조건확률
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -139,10 +139,10 @@ permalink: "/studies/data-and-information/"
 </details>
 
 
-개념: 이 회차의 내용은 [조건부 확률](/Hongs_Blog/studies/probability-statistics/conditional-probability/), [결합분포와 조건부 기댓값](/Hongs_Blog/studies/probability-statistics/joint-distributions/) 문서의 `과목별 관점`에 합쳤다.
+개념: 이 묶음의 내용은 [조건부 확률](/Hongs_Blog/studies/probability-statistics/conditional-probability/), [결합분포와 조건부 기댓값](/Hongs_Blog/studies/probability-statistics/joint-distributions/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 합 규칙과 곱 규칙을 식으로 쓰고, 과일 상자 예의 네 칸짜리 표를 직접 채워 본다.
 
-## 9회 · 랜덤 프로세스
+## 랜덤 프로세스
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -161,7 +161,7 @@ permalink: "/studies/data-and-information/"
 
 떠올려 보기: 노트를 닫고 확률 과정의 네 가지(시간 × 값), 대표적인 세 과정과 각각의 약속, 베르누이 과정에서 이항분포가 나오는 까닭을 써 본다.
 
-## 10회 · 확률값 찾기
+## 확률값 찾기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -182,7 +182,7 @@ permalink: "/studies/data-and-information/"
 
 떠올려 보기: 노트를 닫고 식 $$\frac{k/n}{V}$$의 세 글자가 무엇인지, 히스토그램·파젠 창·k-이웃이 그 가운데 무엇을 미리 정하는지 써 본다.
 
-## 11회 · 확률 분포 찾기
+## 확률 분포 찾기
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -193,7 +193,7 @@ permalink: "/studies/data-and-information/"
 </details>
 
 
-개념: 이 회차의 내용(근사와 추정, 매개변수 추정, 최대 우도 추정의 일반 원리와 예)은 [최대가능도 추정](/Hongs_Blog/studies/probability-statistics/mle/) 문서의, MLE 바이어스는 [표본분포와 추정량](/Hongs_Blog/studies/probability-statistics/estimators/) 문서의 `과목별 관점`에 합쳤다.
+개념: 이 묶음의 내용(근사와 추정, 매개변수 추정, 최대 우도 추정의 일반 원리와 예)은 [최대가능도 추정](/Hongs_Blog/studies/probability-statistics/mle/) 문서의, MLE 바이어스는 [표본분포와 추정량](/Hongs_Blog/studies/probability-statistics/estimators/) 문서의 `과목별 관점`에 합쳤다.
 떠올려 보기: 노트를 닫고 우도를 곱으로 쓰는 까닭, 로그를 씌우는 까닭, 1차원 정규분포에서 나오는 두 추정식과 어느 쪽이 치우치는지를 써 본다.
 
 ## 다른 과목과의 연결

@@ -10,7 +10,7 @@ course_slug: "numerical-analysis"
 course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["Cubic Interpolation Curve", "3차 곡선", "Cubic Curve", "블렌딩 함수", "Blending Function", "보간 기하 행렬", "Interpolating Geometry Matrix", "음함수 표현", "Implicit Representation", "매개변수 곡선", "Parametric Curve"]
 description: "점 네 개를 주고 그 점들을 모두 지나는 매끄러운 곡선을 그리고 싶을 때 쓴다. x, y, z를 각각 u의 3차식으로 두고 u = 0, \\frac13, \\frac23, 1에서 네 점을 지나게 하면 계수가 하나로 정해진다. 곡선은 네 점에 \"블렌딩 함수\"라는 무게를 곱해 더한 것이다…"
@@ -87,7 +87,7 @@ $$b_i$$는 자기 점의 $$u$$에서 1이고 나머지 세 $$u$$에서 0이다. 
 
 - 선수: [직선과 평면의 방정식](/Hongs_Blog/studies/numerical-analysis/lines-planes/)(매개변수 표현), [역행렬](/Hongs_Blog/studies/linear-algebra/inverse-matrix/)($$M_I = A^{-1}$$)
 - 같은 틀 $$\mathbf u^\top M\mathbf p$$로 만드는 다른 곡선: [에르미트 곡선](/Hongs_Blog/studies/numerical-analysis/hermite-curve/), [베지어 곡선](/Hongs_Blog/studies/linear-algebra/abstract-vector-spaces/), [B-스플라인](/Hongs_Blog/studies/numerical-analysis/b-spline/)
-- 다항식 보간의 일반론은 12회에서 다룬다.
+- 다항식 보간의 일반론은 [다항식 보간](/Hongs_Blog/studies/numerical-analysis/polynomial-interpolation/)에서 다룬다.
 
 ## 확인 문제
 

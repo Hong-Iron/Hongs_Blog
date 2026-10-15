@@ -9,7 +9,7 @@ course: "이상 심리학"
 course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
-updated: "2026-09-27"
+updated: "2026-10-15"
 status: "verified"
 aliases: ["RAD vs DSED", "억제형 vs 탈억제형 애착장애", "두 애착장애 비교"]
 description: "두 장애는 같은 뿌리, 곧 극단적으로 불충분한 양육에서 나온 정반대의 가지다. 반응성 애착장애는 억제형으로, 누구에게도 다가가지 않는다. 탈억제성 사회적 유대감 장애는 탈억제형으로, 누구에게나 다가간다. 가르는 질문은 \"애착을 거두어 움츠러드는가, 가리지 않고 아무에게나 다가가는가\"다."
@@ -56,7 +56,7 @@ permalink: "/studies/abnormal-psychology/rad-vs-dsed/"
 ## 둘 다 아닐 때
 
 - **애착은 맺었지만 떨어지는 것을 두려워할 때:** [분리불안장애](/Hongs_Blog/studies/abnormal-psychology/separation-anxiety-disorder/). 특정 애착 대상이 있다는 점이 두 애착장애와 반대다.
-- **양육 결핍 없이 사회적 관계가 어려울 때:** 자폐스펙트럼장애(11회).
-- **양육 결핍 없이 충동적으로 다가갈 때:** ADHD(11회).
+- **양육 결핍 없이 사회적 관계가 어려울 때:** [자폐스펙트럼장애](/Hongs_Blog/studies/abnormal-psychology/autism-spectrum-disorder/).
+- **양육 결핍 없이 충동적으로 다가갈 때:** [ADHD](/Hongs_Blog/studies/abnormal-psychology/adhd/).
 - **안정적인 양육에서 자란 아이의 낯가림이나 사교성:** 정상 발달의 범위다. [애착](/Hongs_Blog/studies/abnormal-psychology/attachment/)의 유형(회피 애착, 불안 애착)은 그 자체로 장애가 아니다.
 {% endraw %}

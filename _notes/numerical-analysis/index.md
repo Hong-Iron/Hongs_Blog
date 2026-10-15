@@ -32,7 +32,7 @@ permalink: "/studies/numerical-analysis/"
 - [선형변환](/Hongs_Blog/studies/linear-algebra/linear-transformations/), [기저 변환](/Hongs_Blog/studies/linear-algebra/change-of-basis/) (공학수학 선형대수학): '기하 변환'과 '직교 행렬과 좌표계' 단원의 변환과 좌표계
 
 
-## 2회 · 벡터, 직선과 평면
+## 벡터, 직선과 평면
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -50,10 +50,10 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 직선의 매개변수 식, 평면의 법선 식, 점이 어느 쪽인지 판정하는 법, 직선과 평면의 교점 공식을 한 장에 써 본다.
 
-## 3회 · 행렬
-개념: 이 회차는 공학수학 선형대수학 문서에 `과목별 관점`으로 합쳤다(위 '먼저 알아야 할 것'). 고윳값 정의는 [고윳값과 고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/)에 있다.
+## 행렬
+개념: 이 묶음는 공학수학 선형대수학 문서에 `과목별 관점`으로 합쳤다(위 '먼저 알아야 할 것'). 고윳값 정의는 [고윳값과 고유벡터](/Hongs_Blog/studies/linear-algebra/eigenvalues/)에 있다.
 
-## 4회 · 기하 변환
+## 기하 변환
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -71,7 +71,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 강체·닮음·아핀·사영 변환을 '지키는 것'으로 포함 관계 그림을 그리고, 점 $$P$$ 중심 회전을 동차 좌표 행렬 곱으로 써 본다.
 
-## 5회 · 직교 행렬과 좌표계
+## 직교 행렬과 좌표계
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -89,7 +89,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 직교 행렬의 정의와 두 정리(정규직교 열, 길이·각 보존), 법선 변환식, 좌표계 변환 $$X' = R^{-1}T^{-1}X$$를 써 본다.
 
-## 6회 · 반사, 회전, 투영
+## 반사, 회전, 투영
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -112,7 +112,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 회전을 나타내는 세 방법(기본 회전의 곱, 축-각과 로드리게스, 쿼터니언)을 장단점과 함께 표로 쓰고, 원근 투영 행렬을 써 본다.
 
-## 7회 · 곡선
+## 곡선
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -133,7 +133,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 3차 보간·에르미트·베지어·B-스플라인을 '무엇으로 정하나, 점을 지나나, 이음점 연속성, 블렌딩 함수가 0 이상인가' 네 칸의 표로 쓰고, 네 기하 행렬 $$M_I, M_H, M_B, M_S$$가 같은 틀 $$\mathbf u^\top M\mathbf p$$에서 나온다는 것을 설명해 본다.
 
-## 8회 · 곡면
+## 곡면
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -151,7 +151,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 곡면 패치 네 종류의 식과 장단점, 베지어 곡선을 반으로 나누는 중점 계산 세 단계를 써 본다.
 
-## 9회 · 경계 볼륨과 PCA
+## 경계 볼륨과 PCA
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -167,10 +167,10 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 점 네 개로 평균, 공분산, 고유벡터, 상자의 폭을 구하는 순서를 처음부터 써 본다.
 
-## 10회 · 삼각 행렬과 LU 분해
-개념: 이 회차는 공학수학 [LU 분해](/Hongs_Blog/studies/linear-algebra/lu-decomposition/)의 `과목별 관점`으로 합쳤다(삼각 연립방정식, 둘리틀 방법, 오차 줄이기, 역행렬).
+## 삼각 행렬과 LU 분해
+개념: 이 묶음는 공학수학 [LU 분해](/Hongs_Blog/studies/linear-algebra/lu-decomposition/)의 `과목별 관점`으로 합쳤다(삼각 연립방정식, 둘리틀 방법, 오차 줄이기, 역행렬).
 
-## 11회 · 반복법
+## 반복법
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -187,7 +187,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 야코비와 가우스-자이델의 갱신식, 수렴 조건, 이완 계수의 세 범위를 쓰고, 예의 3×3 계를 한 회차씩 돌려 본다.
 
-## 12회 · 보간
+## 보간
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -207,7 +207,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 라그랑주와 뉴턴 꼴을 같은 세 점으로 각각 만들어 같은 다항식인지 확인하고, 선형 보간·정규화 선형 보간·구면 선형 보간의 차이를 그림으로 그려 본다.
 
-## 13회 · 최소제곱법
+## 최소제곱법
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -223,7 +223,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 오차 노름 세 가지, 최소제곱 직선의 정규방정식, 지수·로그·분수 모형의 선형화 표를 써 본다.
 
-## 14회 · 1차원 최적화
+## 1차원 최적화
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -241,7 +241,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 황금분할 탐색의 $$r^2 + r - 1 = 0$$이 어디서 나오는지 그림으로 설명하고, 피보나치 탐색의 회차 수를 허용 오차에서 정하는 법을 써 본다.
 
-## 15회 · 다차원 최적화
+## 다차원 최적화
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -257,7 +257,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 직접 탐색 세 가지와 기울기 방법(최급상승법), 2변수 헤세 판정 $$\lvert H\rvert$$를 한 장에 정리해 본다.
 
-## 16회 · 비선형 방정식 1
+## 비선형 방정식 1
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -275,7 +275,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 이분법·뉴턴·할선법의 갱신식, 멈추는 기준, 장점과 단점을 표로 쓴다.
 
-## 17회 · 비선형 방정식 2
+## 비선형 방정식 2
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -295,7 +295,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 고정점 반복의 수렴 조건을 평균값 정리로 설명하고, 다변수 뉴턴 방법의 한 걸음을 행렬로 써 본다.
 
-## 18회 · 미분방정식 1
+## 미분방정식 1
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
@@ -313,7 +313,7 @@ permalink: "/studies/numerical-analysis/"
 
 떠올려 보기: 노트를 닫고 2차 RK의 두 조건 $$w_1 + w_2 = 1$$, $$aw_2 = \frac12$$를 테일러 전개로 끌어내고, RK4의 네 기울기를 써 본다.
 
-## 19회 · 미분방정식 2
+## 미분방정식 2
 
 <details class="callout callout-question" markdown="1">
 <summary class="callout-title" markdown="span">읽기 전에</summary>
