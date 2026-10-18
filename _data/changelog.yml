@@ -1,5 +1,10 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
+- date: 2026-10-18
+  title: 프로젝트에 SMASH 대학교
+  items:
+    - 우리 학교 캠퍼스를 3D로 부수는 브라우저 게임 SMASH 대학교를 프로젝트에 더했어요. 전국 60개 캠퍼스가 있고, 일일 접속자 7,193명을 기록했어요.
+    - 지금 운영 중인 프로젝트 가운데 가장 최근 것이라 Projects 맨 위에 크게 보여요.
 - date: 2026-10-15
   title: 방문 통계
   items:
