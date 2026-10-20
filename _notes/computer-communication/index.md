@@ -7,9 +7,9 @@ course_slug: "computer-communication"
 course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
-concepts: 53
-practices: 4
-codes: 60
+concepts: 60
+practices: 6
+codes: 73
 description: "컴퓨터 통신 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true
@@ -176,8 +176,32 @@ permalink: "/studies/computer-communication/"
 
 떠올려 보기: 노트를 닫고 프레이밍 세 방법을 "끝을 아는 방법, 겹침을 피하는 방법"으로, 오류 검출 세 방법을 "계산, 놓치는 오류, 쓰는 계층"으로 표를 그리고, ACK가 사라진 경우의 정지 대기 ARQ를 시간 그림으로 그려 본다.
 
+## 데이터 링크 네트워크: 정지 대기 분석과 슬라이딩 윈도우
+
+<details class="callout callout-question" markdown="1">
+<summary class="callout-title" markdown="span">읽기 전에</summary>
+
+1. 1.5 Mbps 링크로 1 KB 프레임을 정지 대기로 보내면(왕복 45 ms), 선은 시간의 몇 %나 일할까? → [정지 대기 사용률](/Hongs_Blog/studies/computer-communication/stop-and-wait-utilization/)
+2. 여러 프레임을 띄워 두었는데 중간의 하나가 사라지면, 그 뒤에 잘 도착한 프레임도 다시 보내야 할까? → [Go-Back-N](/Hongs_Blog/studies/computer-communication/go-back-n/)
+3. 보내는 쪽과 받는 쪽이 각자 숫자 세 개만 기억한다면 무엇을 기억해야 할까? → [슬라이딩 윈도우 세부 알고리즘](/Hongs_Blog/studies/computer-communication/sliding-window-algorithm/)
+
+</details>
+
+
+| 번호 | 개념 | 한 줄 | 개념 코드 | 연습 |
+|---|---|---|---|---|
+| 54 | [정지 대기 사용률](/Hongs_Blog/studies/computer-communication/stop-and-wait-utilization/) | 일한 시간 ÷ 반복 구간 = $$t_\text{frame} / (t_\text{frame} + 2t_\text{prop})$$. ACK는 마지막 비트가 닿을 때 | [그림 코드](/Hongs_Blog/studies/computer-communication/code/54_stop-and-wait-utilization_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/54_stop-and-wait-utilization_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/computer-communication/54_stop-and-wait-utilization_fig2.svg) | — |
+| 55 | [슬라이딩 윈도우](/Hongs_Blog/studies/computer-communication/sliding-window/) | ACK 전에 창 크기만큼 연달아 보냄. 창(보낼 범위)과 버퍼(보관한 사본)는 다르다 | [그림 코드](/Hongs_Blog/studies/computer-communication/code/55_sliding-window_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/55_sliding-window_fig1.svg) | — |
+| 56 | [슬라이딩 윈도우 사용률](/Hongs_Blog/studies/computer-communication/sliding-window-utilization/) | $$\min(1, N t_\text{frame} / (t_\text{frame} + 2t_\text{prop}))$$, 쉬지 않으려면 $$N \ge 1 + 2t_\text{prop} / t_\text{frame}$$ | [그림 코드](/Hongs_Blog/studies/computer-communication/code/56_sliding-window-utilization_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/56_sliding-window-utilization_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/computer-communication/56_sliding-window-utilization_fig2.svg) | [링크 사용률 예제 사다리](/Hongs_Blog/studies/computer-communication/utilization-ladder/) · [문제 4 코드](/Hongs_Blog/studies/computer-communication/code/56_utilization-ladder_p4/) · [사다리 그림 코드](/Hongs_Blog/studies/computer-communication/code/56_utilization-ladder_plot/) · [사다리 그림1](/Hongs_Blog/assets/notes/computer-communication/56_utilization-ladder_fig1.svg) |
+| 57 | [Go-Back-N](/Hongs_Blog/studies/computer-communication/go-back-n/) | 오류 난 곳부터 다시. 누적 ACK n+1, 수신·송신 옵션 어느 조합이든 연동 | [구현](/Hongs_Blog/studies/computer-communication/code/57_go-back-n_impl/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/57_go-back-n_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/57_go-back-n_fig1.svg) | — |
+| 58 | [Selective Repeat](/Hongs_Blog/studies/computer-communication/selective-repeat/) | 오류 난 것만 다시. 수신 버퍼와 개별 ACK가 필수 | [구현](/Hongs_Blog/studies/computer-communication/code/58_selective-repeat_impl/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/58_selective-repeat_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/58_selective-repeat_fig1.svg) | — |
+| 59 | [Go-Back-N과 Selective Repeat 비교](/Hongs_Blog/studies/computer-communication/gbn-sr-compared/) | 가르는 질문: ACK가 "여기까지"를 말하나, "이것"을 말하나 | [그림 코드](/Hongs_Blog/studies/computer-communication/code/59_gbn-sr-compared_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/59_gbn-sr-compared_fig1.svg) | — |
+| 60 | [슬라이딩 윈도우 세부 알고리즘](/Hongs_Blog/studies/computer-communication/sliding-window-algorithm/) | 송신 SWS·LAR·LFS, 수신 RWS·NFE·LFA와 두 항등식, 사건마다 정해진 동작 | [구현](/Hongs_Blog/studies/computer-communication/code/60_sliding-window-algorithm_impl/) · [그림 코드](/Hongs_Blog/studies/computer-communication/code/60_sliding-window-algorithm_plot/) · [그림1](/Hongs_Blog/assets/notes/computer-communication/60_sliding-window-algorithm_fig1.svg) | [슬라이딩 윈도우 동작 점검 연습](/Hongs_Blog/studies/computer-communication/sliding-window-check/) · [연습 그림 코드](/Hongs_Blog/studies/computer-communication/code/60_sliding-window-check_plot/) · [연습 그림1](/Hongs_Blog/assets/notes/computer-communication/60_sliding-window-check_fig1.svg) · [연습 그림2](/Hongs_Blog/assets/notes/computer-communication/60_sliding-window-check_fig2.svg) · [연습 그림3](/Hongs_Blog/assets/notes/computer-communication/60_sliding-window-check_fig3.svg) |
+
+떠올려 보기: 노트를 닫고 정지 대기와 창 크기 N의 시간 진행 그림을 그려 두 사용률 식을 이끌어 낸 뒤, 같은 손실에서 Go-Back-N과 Selective Repeat이 무엇을 다시 보내는지, 송신·수신 쪽 변수 여섯 개와 항등식 두 개를 써 본다.
+
 ## 아직 배우지 않은 자료
-- 정지 대기 분석, 슬라이딩 윈도우, 동시 논리 채널은 다음 묶음에 정리한다.
+- 순서 번호 공간, 슬라이딩 윈도우 구현 코드, 프로토콜 계층의 실체, 동시 논리 채널은 다음 묶음에 정리한다.
 
 
 ## 다른 과목과의 연결
@@ -333,5 +357,26 @@ graph LR
   n48 --> n52
   n52 --> n53
   n50 --> n53
+  n54["54 정지 대기 사용률"]
+  n55["55 슬라이딩 윈도우"]
+  n56["56 슬라이딩 윈도우 사용률"]
+  n57["57 Go-Back-N"]
+  n58["58 Selective Repeat"]
+  n59["59 Go-Back-N과 Selective Repeat 비교"]
+  n60["60 슬라이딩 윈도우 세부 알고리즘"]
+  n53 --> n54
+  n25 --> n54
+  n54 --> n55
+  n53 --> n55
+  n55 --> n56
+  n54 --> n56
+  n55 --> n57
+  n53 --> n57
+  n55 --> n58
+  n57 --> n58
+  n57 --> n59
+  n58 --> n59
+  n57 --> n60
+  n55 --> n60
 ```
 {% endraw %}

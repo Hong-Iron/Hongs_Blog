@@ -68,3 +68,14 @@
     - {n: "51", t: "오류 검출 방식 비교", u: "/studies/computer-communication/error-detection-compared/", k: "concept"}
     - {n: "52", t: "오류 복구와 FEC", u: "/studies/computer-communication/error-recovery-fec/", k: "concept"}
     - {n: "53", t: "ARQ와 순서 번호", u: "/studies/computer-communication/arq-sequence-number/", k: "concept"}
+- title: "데이터 링크 네트워크: 정지 대기 분석과 슬라이딩 윈도우"
+  items:
+    - {n: "54", t: "정지 대기 사용률", u: "/studies/computer-communication/stop-and-wait-utilization/", k: "concept"}
+    - {n: "55", t: "슬라이딩 윈도우", u: "/studies/computer-communication/sliding-window/", k: "concept"}
+    - {n: "56", t: "슬라이딩 윈도우 사용률", u: "/studies/computer-communication/sliding-window-utilization/", k: "concept"}
+    - {n: "56", t: "링크 사용률 예제 사다리", u: "/studies/computer-communication/utilization-ladder/", k: "practice"}
+    - {n: "57", t: "Go-Back-N", u: "/studies/computer-communication/go-back-n/", k: "concept"}
+    - {n: "58", t: "Selective Repeat", u: "/studies/computer-communication/selective-repeat/", k: "concept"}
+    - {n: "59", t: "Go-Back-N과 Selective Repeat 비교", u: "/studies/computer-communication/gbn-sr-compared/", k: "concept"}
+    - {n: "60", t: "슬라이딩 윈도우 세부 알고리즘", u: "/studies/computer-communication/sliding-window-algorithm/", k: "concept"}
+    - {n: "60", t: "슬라이딩 윈도우 동작 점검 연습", u: "/studies/computer-communication/sliding-window-check/", k: "practice"}

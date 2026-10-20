@@ -16,6 +16,8 @@ aliases: ["ARQ", "Automatic Repeat Request", "자동 반복 요청", "정지 대
 description: "보내는 쪽은 데이터 덩어리(프레임)를 보내고, 받는 쪽은 망가지지 않은 프레임을 받으면 \"받았다\"는 짧은 답장(ACK)을 돌려준다. 정해 둔 시간(타임아웃) 안에 ACK가 오지 않으면 보내는 쪽이 같은 프레임을 다시 보낸다. ACK만 사라져도 다시 보내게 되어 같은 프레임이 두 번…"
 prev_url: "/studies/computer-communication/error-recovery-fec/"
 prev_title: "오류 복구와 FEC"
+next_url: "/studies/computer-communication/stop-and-wait-utilization/"
+next_title: "정지 대기 사용률"
 math: true
 mermaid: true
 code_count: 2
@@ -248,6 +250,7 @@ NAK가 있어도 타이머는 필요하다. 프레임이 통째로 사라지거�
 
 - 선수: [오류 복구와 FEC](/Hongs_Blog/studies/computer-communication/error-recovery-fec/)(재전송이라는 선택), [CRC](/Hongs_Blog/studies/computer-communication/crc/)(오류 검출)
 - 시간 분석: [소요시간](/Hongs_Blog/studies/computer-communication/latency/)(전송 시간과 전파 지연), [대역폭-지연 곱](/Hongs_Blog/studies/computer-communication/bandwidth-delay-product/)
+- 다음: [정지 대기 사용률](/Hongs_Blog/studies/computer-communication/stop-and-wait-utilization/)(정지 대기가 선을 얼마나 쓰나), [슬라이딩 윈도우](/Hongs_Blog/studies/computer-communication/sliding-window/)(여러 프레임을 띄워 두기)
 
 ## 확인 문제
 

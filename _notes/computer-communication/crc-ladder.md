@@ -15,6 +15,8 @@ status: "verified"
 description: "사용 개념: CRC의 XOR 나눗셈."
 prev_url: "/studies/computer-communication/line-coding-ladder/"
 prev_title: "인코딩 예제 사다리"
+next_url: "/studies/computer-communication/utilization-ladder/"
+next_title: "링크 사용률 예제 사다리"
 math: true
 mermaid: false
 code_count: 2
