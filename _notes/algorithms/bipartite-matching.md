@@ -21,6 +21,7 @@ next_title: "계산 기하 기초"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "34_bipartite-matching_verify.py", "u": "/studies/algorithms/code/34_bipartite-matching_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/bipartite-matching/"
 ---
 {% raw %}

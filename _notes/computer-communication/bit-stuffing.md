@@ -21,6 +21,7 @@ next_title: "프레이밍 방식 비교"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "45_bit-stuffing_impl.py", "u": "/studies/computer-communication/code/45_bit-stuffing_impl/", "r": "구현"}, {"t": "45_bit-stuffing_plot.py", "u": "/studies/computer-communication/code/45_bit-stuffing_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/bit-stuffing/"
 ---
 {% raw %}

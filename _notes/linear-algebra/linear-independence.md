@@ -20,6 +20,7 @@ next_title: "부분공간, 기저와 차원"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "09_linear-independence_plot.py", "u": "/studies/linear-algebra/code/09_linear-independence_plot/", "r": "그림 생성"}, {"t": "09_linear-independence_verify.py", "u": "/studies/linear-algebra/code/09_linear-independence_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/linear-independence/"
 ---
 {% raw %}

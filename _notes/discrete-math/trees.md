@@ -20,6 +20,7 @@ next_title: "이분 그래프와 그래프 색칠"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "35_trees_verify.py", "u": "/studies/discrete-math/code/35_trees_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/trees/"
 ---
 {% raw %}

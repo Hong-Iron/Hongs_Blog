@@ -21,6 +21,7 @@ next_title: "부스팅과 AdaBoost"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "21_bagging-random-forest_plot.py", "u": "/studies/data-science/code/21_bagging-random-forest_plot/", "r": "그림 생성"}, {"t": "21_bagging_impl.py", "u": "/studies/data-science/code/21_bagging_impl/", "r": "구현"}]
 permalink: "/studies/data-science/bagging-random-forest/"
 ---
 {% raw %}

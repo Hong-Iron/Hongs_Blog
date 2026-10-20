@@ -20,6 +20,7 @@ next_title: "모양의 비슷함 재기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "27_two-dimensional-functions_verify.py", "u": "/studies/human-interface-media/code/27_two-dimensional-functions_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/two-dimensional-functions/"
 ---
 {% raw %}

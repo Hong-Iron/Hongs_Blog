@@ -20,6 +20,7 @@ next_title: "확률변수와 분포"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "06_bayes-theorem_plot.py", "u": "/studies/probability-statistics/code/06_bayes-theorem_plot/", "r": "그림 생성"}, {"t": "06_bayes-theorem_verify.py", "u": "/studies/probability-statistics/code/06_bayes-theorem_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/bayes-theorem/"
 ---
 {% raw %}

@@ -18,6 +18,7 @@ prev_title: "엔트로피"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "38_cross-entropy-kl_plot.py", "u": "/studies/probability-statistics/code/38_cross-entropy-kl_plot/", "r": "그림 생성"}, {"t": "38_cross-entropy-kl_verify.py", "u": "/studies/probability-statistics/code/38_cross-entropy-kl_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/cross-entropy-kl/"
 ---
 {% raw %}

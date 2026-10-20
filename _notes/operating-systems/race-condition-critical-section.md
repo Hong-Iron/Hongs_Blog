@@ -21,6 +21,7 @@ next_title: "상호 배제의 하드웨어 지원"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "21_race-condition_verify.py", "u": "/studies/operating-systems/code/21_race-condition_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/race-condition-critical-section/"
 ---
 {% raw %}

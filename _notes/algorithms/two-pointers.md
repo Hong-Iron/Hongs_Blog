@@ -21,6 +21,7 @@ next_title: "누적 합과 차분 배열"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "18_two-pointers_plot.py", "u": "/studies/algorithms/code/18_two-pointers_plot/", "r": "그림 생성"}, {"t": "18_two-pointers_verify.py", "u": "/studies/algorithms/code/18_two-pointers_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/two-pointers/"
 ---
 {% raw %}

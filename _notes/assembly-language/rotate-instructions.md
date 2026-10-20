@@ -21,6 +21,7 @@ next_title: "이중 시프트 SHLD·SHRD"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "39_rotate-instructions_verify.py", "u": "/studies/assembly-language/code/39_rotate-instructions_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/rotate-instructions/"
 ---
 {% raw %}

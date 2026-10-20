@@ -20,6 +20,7 @@ next_title: "제약 위반 찾기 연습"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "44_university-mapping-practice_p1.py", "u": "/studies/database-design/code/44_university-mapping-practice_p1/", "r": "문제 1 풀이"}]
 permalink: "/studies/database-design/university-mapping-practice/"
 ---
 {% raw %}

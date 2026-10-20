@@ -20,6 +20,7 @@ next_title: "조인 질의 쓰기 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "62_nested-query-ladder_p4.py", "u": "/studies/database-design/code/62_nested-query-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/database-design/nested-query-ladder/"
 ---
 {% raw %}

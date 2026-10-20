@@ -21,6 +21,7 @@ next_title: "B-스플라인"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "15_curve-continuity_plot.py", "u": "/studies/numerical-analysis/code/15_curve-continuity_plot/", "r": "그림 생성"}, {"t": "15_curve-continuity_verify.py", "u": "/studies/numerical-analysis/code/15_curve-continuity_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/curve-continuity/"
 ---
 {% raw %}

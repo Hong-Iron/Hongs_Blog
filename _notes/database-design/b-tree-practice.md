@@ -20,6 +20,7 @@ next_title: "ER 다이어그램 설계 연습"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "17_b-tree-practice_p5.py", "u": "/studies/database-design/code/17_b-tree-practice_p5/", "r": "문제 5 풀이"}, {"t": "17_b-tree-practice_p6.py", "u": "/studies/database-design/code/17_b-tree-practice_p6/", "r": "문제 6 풀이"}]
 permalink: "/studies/database-design/b-tree-practice/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "그리디"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "21_parametric-search_plot.py", "u": "/studies/algorithms/code/21_parametric-search_plot/", "r": "그림 생성"}, {"t": "21_parametric-search_verify.py", "u": "/studies/algorithms/code/21_parametric-search_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/parametric-search/"
 ---
 {% raw %}

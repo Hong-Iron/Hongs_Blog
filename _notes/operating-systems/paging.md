@@ -21,6 +21,7 @@ next_title: "세그먼테이션"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "36_paging_impl.py", "u": "/studies/operating-systems/code/36_paging_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/paging/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "선형변환"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "11_four-subspaces_plot.py", "u": "/studies/linear-algebra/code/11_four-subspaces_plot/", "r": "그림 생성"}, {"t": "11_four-subspaces_verify.py", "u": "/studies/linear-algebra/code/11_four-subspaces_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/four-subspaces/"
 ---
 {% raw %}

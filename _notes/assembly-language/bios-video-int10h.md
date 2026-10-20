@@ -21,6 +21,7 @@ next_title: "하드웨어 인터럽트와 IRQ"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "54_bios-video-int10h_verify.py", "u": "/studies/assembly-language/code/54_bios-video-int10h_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/bios-video-int10h/"
 ---
 {% raw %}

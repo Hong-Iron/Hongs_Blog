@@ -21,6 +21,7 @@ next_title: "단일 사이클의 클록 주기"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "25_control-unit_verify.py", "u": "/studies/computer-architecture/code/25_control-unit_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/control-unit/"
 ---
 {% raw %}

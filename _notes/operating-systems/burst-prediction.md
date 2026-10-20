@@ -21,6 +21,7 @@ next_title: "공정 분배와 UNIX 스케줄링"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "45_burst-prediction_plot.py", "u": "/studies/operating-systems/code/45_burst-prediction_plot/", "r": "그림 생성"}, {"t": "45_burst-prediction_verify.py", "u": "/studies/operating-systems/code/45_burst-prediction_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/burst-prediction/"
 ---
 {% raw %}

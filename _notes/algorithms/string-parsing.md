@@ -21,6 +21,7 @@ next_title: "시간·날짜 계산"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "06_string-parsing_verify.py", "u": "/studies/algorithms/code/06_string-parsing_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/string-parsing/"
 ---
 {% raw %}

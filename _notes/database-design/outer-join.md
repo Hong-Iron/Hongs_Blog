@@ -21,6 +21,7 @@ next_title: "내부 조인과 외부 조인 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "66_outer-join_verify.py", "u": "/studies/database-design/code/66_outer-join_verify/", "r": "검증"}, {"t": "66_outer-join_verify.sql", "u": "/studies/database-design/code/66_outer-join_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/outer-join/"
 ---
 {% raw %}

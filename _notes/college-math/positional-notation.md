@@ -20,6 +20,7 @@ next_title: "각과 라디안"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "10_positional-notation_plot.py", "u": "/studies/college-math/code/10_positional-notation_plot/", "r": "그림 생성"}, {"t": "10_positional-notation_verify.py", "u": "/studies/college-math/code/10_positional-notation_verify/", "r": "검증"}]
 permalink: "/studies/college-math/positional-notation/"
 ---
 {% raw %}

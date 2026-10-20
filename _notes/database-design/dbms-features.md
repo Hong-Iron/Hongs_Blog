@@ -21,6 +21,7 @@ next_title: "데이터 모델의 종류"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "04_dbms-features_verify.py", "u": "/studies/database-design/code/04_dbms-features_verify/", "r": "검증"}]
 permalink: "/studies/database-design/dbms-features/"
 ---
 {% raw %}

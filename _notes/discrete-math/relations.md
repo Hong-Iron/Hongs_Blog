@@ -20,6 +20,7 @@ next_title: "동치관계와 분할"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "09_relations_verify.py", "u": "/studies/discrete-math/code/09_relations_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/relations/"
 ---
 {% raw %}

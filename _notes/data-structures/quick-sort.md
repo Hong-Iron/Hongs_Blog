@@ -21,6 +21,7 @@ next_title: "병합 정렬"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "42_quick-sort_impl.c", "u": "/studies/data-structures/code/42_quick-sort_impl/", "r": "구현"}, {"t": "42_quick-sort_verify.py", "u": "/studies/data-structures/code/42_quick-sort_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/quick-sort/"
 ---
 {% raw %}

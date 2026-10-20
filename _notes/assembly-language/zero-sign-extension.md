@@ -21,6 +21,7 @@ next_title: "덧셈·뺄셈 명령"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "17_zero-sign-extension_verify.py", "u": "/studies/assembly-language/code/17_zero-sign-extension_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/zero-sign-extension/"
 ---
 {% raw %}

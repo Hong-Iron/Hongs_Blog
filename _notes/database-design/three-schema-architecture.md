@@ -21,6 +21,7 @@ next_title: "데이터 독립성"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "07_three-schema-architecture_verify.py", "u": "/studies/database-design/code/07_three-schema-architecture_verify/", "r": "검증"}]
 permalink: "/studies/database-design/three-schema-architecture/"
 ---
 {% raw %}

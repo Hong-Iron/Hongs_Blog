@@ -21,6 +21,7 @@ next_title: "DBMS 구성 모듈"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_dbms-languages-interfaces_verify.py", "u": "/studies/database-design/code/09_dbms-languages-interfaces_verify/", "r": "검증"}]
 permalink: "/studies/database-design/dbms-languages-interfaces/"
 ---
 {% raw %}

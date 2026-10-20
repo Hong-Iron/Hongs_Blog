@@ -21,6 +21,7 @@ next_title: "뷰"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "74_sql-trigger_verify.py", "u": "/studies/database-design/code/74_sql-trigger_verify/", "r": "검증"}, {"t": "74_sql-trigger_verify.sql", "u": "/studies/database-design/code/74_sql-trigger_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-trigger/"
 ---
 {% raw %}

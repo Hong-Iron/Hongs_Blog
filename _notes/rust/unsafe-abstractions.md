@@ -21,6 +21,7 @@ next_title: "스레드와 Send·Sync"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "30_unsafe-abstractions_impl.rs", "u": "/studies/rust/code/30_unsafe-abstractions_impl/", "r": "구현"}, {"t": "30_unsafe-abstractions_verify.rs", "u": "/studies/rust/code/30_unsafe-abstractions_verify/", "r": "검증"}]
 permalink: "/studies/rust/unsafe-abstractions/"
 ---
 {% raw %}

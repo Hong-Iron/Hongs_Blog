@@ -20,6 +20,7 @@ next_title: "극좌표와 매개변수 곡선"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "16_triangle-laws_plot.py", "u": "/studies/college-math/code/16_triangle-laws_plot/", "r": "그림 생성"}, {"t": "16_triangle-laws_verify.py", "u": "/studies/college-math/code/16_triangle-laws_verify/", "r": "검증"}]
 permalink: "/studies/college-math/triangle-laws/"
 ---
 {% raw %}

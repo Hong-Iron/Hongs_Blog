@@ -21,6 +21,7 @@ next_title: "매개변수 탐색"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "20_binary-search_impl.py", "u": "/studies/algorithms/code/20_binary-search_impl/", "r": "구현"}, {"t": "20_binary-search_plot.py", "u": "/studies/algorithms/code/20_binary-search_plot/", "r": "그림 생성"}]
 permalink: "/studies/algorithms/binary-search/"
 ---
 {% raw %}

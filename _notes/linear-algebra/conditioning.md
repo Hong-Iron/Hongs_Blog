@@ -20,6 +20,7 @@ next_title: "이산 푸리에 변환과 FFT"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "26_conditioning_plot.py", "u": "/studies/linear-algebra/code/26_conditioning_plot/", "r": "그림 생성"}, {"t": "26_conditioning_verify.py", "u": "/studies/linear-algebra/code/26_conditioning_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/conditioning/"
 ---
 {% raw %}

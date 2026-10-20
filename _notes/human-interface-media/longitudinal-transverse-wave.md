@@ -20,6 +20,7 @@ next_title: "파동의 복소수 표현"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "23_longitudinal-transverse-wave_plot.py", "u": "/studies/human-interface-media/code/23_longitudinal-transverse-wave_plot/", "r": "그림 생성"}]
 permalink: "/studies/human-interface-media/longitudinal-transverse-wave/"
 ---
 {% raw %}

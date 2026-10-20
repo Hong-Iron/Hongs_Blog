@@ -21,6 +21,7 @@ next_title: "버스티 트래픽"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "06_circuit-switching_verify.py", "u": "/studies/computer-communication/code/06_circuit-switching_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/circuit-switching/"
 ---
 {% raw %}

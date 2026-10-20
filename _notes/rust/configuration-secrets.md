@@ -21,6 +21,7 @@ next_title: "axum으로 HTTP 서비스 만들기"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "44_configuration-secrets_verify.rs", "u": "/studies/rust/code/44_configuration-secrets_verify/", "r": "검증"}]
 permalink: "/studies/rust/configuration-secrets/"
 ---
 {% raw %}

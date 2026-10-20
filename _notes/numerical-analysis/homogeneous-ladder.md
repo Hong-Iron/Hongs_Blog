@@ -18,6 +18,7 @@ next_title: "임의 축 회전 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "04_homogeneous-ladder_p4.py", "u": "/studies/numerical-analysis/code/04_homogeneous-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/numerical-analysis/homogeneous-ladder/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "열거형과 패턴 매칭"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_structs-methods_verify.rs", "u": "/studies/rust/code/10_structs-methods_verify/", "r": "검증"}]
 permalink: "/studies/rust/structs-methods/"
 ---
 {% raw %}

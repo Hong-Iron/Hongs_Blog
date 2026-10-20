@@ -21,6 +21,7 @@ next_title: "관계 타입의 속성"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "25_participation-constraint_verify.py", "u": "/studies/database-design/code/25_participation-constraint_verify/", "r": "검증"}]
 permalink: "/studies/database-design/participation-constraint/"
 ---
 {% raw %}

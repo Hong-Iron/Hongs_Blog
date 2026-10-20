@@ -20,6 +20,7 @@ next_title: "LL(1) 파싱 표 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_first-follow-ladder_p4.py", "u": "/studies/compilers/code/19_first-follow-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/first-follow-ladder/"
 ---
 {% raw %}

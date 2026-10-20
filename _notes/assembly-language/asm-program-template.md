@@ -21,6 +21,7 @@ next_title: "어셈블·링크·실행 과정"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_asm-program-template_verify.py", "u": "/studies/assembly-language/code/10_asm-program-template_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/asm-program-template/"
 ---
 {% raw %}

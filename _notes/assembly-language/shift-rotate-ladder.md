@@ -20,6 +20,7 @@ next_title: "스택 프레임 그리기 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "40_shift-rotate-ladder_p4.py", "u": "/studies/assembly-language/code/40_shift-rotate-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/assembly-language/shift-rotate-ladder/"
 ---
 {% raw %}

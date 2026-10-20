@@ -21,6 +21,7 @@ next_title: "트리 DP"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_interval-dp_verify.py", "u": "/studies/algorithms/code/31_interval-dp_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/interval-dp/"
 ---
 {% raw %}

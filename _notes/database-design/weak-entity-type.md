@@ -21,6 +21,7 @@ next_title: "일반 개체 타입과 약한 개체 타입 비교"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "27_weak-entity-type_verify.py", "u": "/studies/database-design/code/27_weak-entity-type_verify/", "r": "검증"}]
 permalink: "/studies/database-design/weak-entity-type/"
 ---
 {% raw %}

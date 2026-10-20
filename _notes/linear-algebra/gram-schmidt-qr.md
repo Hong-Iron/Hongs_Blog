@@ -20,6 +20,7 @@ next_title: "고윳값과 고유벡터"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "18_gram-schmidt-qr_impl.py", "u": "/studies/linear-algebra/code/18_gram-schmidt-qr_impl/", "r": "구현"}, {"t": "18_gram-schmidt-qr_plot.py", "u": "/studies/linear-algebra/code/18_gram-schmidt-qr_plot/", "r": "그림 생성"}, {"t": "18_gram-schmidt-qr_verify.py", "u": "/studies/linear-algebra/code/18_gram-schmidt-qr_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/gram-schmidt-qr/"
 ---
 {% raw %}

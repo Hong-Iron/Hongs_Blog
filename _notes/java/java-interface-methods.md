@@ -21,6 +21,7 @@ next_title: "다중 구현과 인터페이스 상속"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "26_java-interface-methods_impl.java", "u": "/studies/java/code/26_java-interface-methods_impl/", "r": "구현"}]
 permalink: "/studies/java/java-interface-methods/"
 ---
 {% raw %}

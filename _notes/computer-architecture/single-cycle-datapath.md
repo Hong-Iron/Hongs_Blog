@@ -21,6 +21,7 @@ next_title: "제어 장치와 제어 신호"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "24_single-cycle-datapath_impl.py", "u": "/studies/computer-architecture/code/24_single-cycle-datapath_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/single-cycle-datapath/"
 ---
 {% raw %}

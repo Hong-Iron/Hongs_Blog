@@ -20,6 +20,7 @@ next_title: "테일러 급수"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "17_series-convergence_plot.py", "u": "/studies/calculus/code/17_series-convergence_plot/", "r": "그림 생성"}, {"t": "17_series-convergence_verify.py", "u": "/studies/calculus/code/17_series-convergence_verify/", "r": "검증"}]
 permalink: "/studies/calculus/series-convergence/"
 ---
 {% raw %}

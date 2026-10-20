@@ -21,6 +21,7 @@ next_title: "최소 신장 트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "27_floyd-warshall_verify.py", "u": "/studies/algorithms/code/27_floyd-warshall_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/floyd-warshall/"
 ---
 {% raw %}

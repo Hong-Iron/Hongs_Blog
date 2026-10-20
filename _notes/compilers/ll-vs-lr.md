@@ -21,6 +21,7 @@ next_title: "의미 분석"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "29_ll-vs-lr_verify.py", "u": "/studies/compilers/code/29_ll-vs-lr_verify/", "r": "검증"}]
 permalink: "/studies/compilers/ll-vs-lr/"
 ---
 {% raw %}

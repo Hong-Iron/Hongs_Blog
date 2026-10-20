@@ -21,6 +21,7 @@ next_title: "영상의 경계 검출과 평활화"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "36_frequency-filters_plot.py", "u": "/studies/signals-and-systems/code/36_frequency-filters_plot/", "r": "그림 생성"}, {"t": "36_frequency-filters_verify.py", "u": "/studies/signals-and-systems/code/36_frequency-filters_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/frequency-filters/"
 ---
 {% raw %}

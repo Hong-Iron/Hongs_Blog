@@ -21,6 +21,7 @@ next_title: "연결 리스트로 만든 큐"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "18_linked-stack_impl.c", "u": "/studies/data-structures/code/18_linked-stack_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/linked-stack/"
 ---
 {% raw %}

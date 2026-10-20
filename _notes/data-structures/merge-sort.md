@@ -21,6 +21,7 @@ next_title: "퀵 정렬과 병합 정렬 비교"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "43_merge-sort_impl.c", "u": "/studies/data-structures/code/43_merge-sort_impl/", "r": "구현"}, {"t": "43_merge-sort_verify.py", "u": "/studies/data-structures/code/43_merge-sort_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/merge-sort/"
 ---
 {% raw %}

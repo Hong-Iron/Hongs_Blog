@@ -20,6 +20,7 @@ next_title: "푸리에 변환과 합성곱"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "30_fourier-series_plot.py", "u": "/studies/calculus/code/30_fourier-series_plot/", "r": "그림 생성"}, {"t": "30_fourier-series_verify.py", "u": "/studies/calculus/code/30_fourier-series_verify/", "r": "검증"}]
 permalink: "/studies/calculus/fourier-series/"
 ---
 {% raw %}

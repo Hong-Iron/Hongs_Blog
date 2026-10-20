@@ -21,6 +21,7 @@ next_title: "데이터 정의"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "11_assemble-link-execute_verify.py", "u": "/studies/assembly-language/code/11_assemble-link-execute_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/assemble-link-execute/"
 ---
 {% raw %}

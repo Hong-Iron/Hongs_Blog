@@ -18,6 +18,7 @@ next_title: "산술식을 어셈블리로 옮기기 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "01_asm-hex-practice_p1.py", "u": "/studies/assembly-language/code/01_asm-hex-practice_p1/", "r": "문제 1 풀이"}]
 permalink: "/studies/assembly-language/asm-hex-practice/"
 ---
 {% raw %}

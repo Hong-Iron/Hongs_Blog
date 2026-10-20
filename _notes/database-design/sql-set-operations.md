@@ -21,6 +21,7 @@ next_title: "DROP 명령과 CASCADE·RESTRICT"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "57_sql-set-operations_verify.py", "u": "/studies/database-design/code/57_sql-set-operations_verify/", "r": "검증"}, {"t": "57_sql-set-operations_verify.sql", "u": "/studies/database-design/code/57_sql-set-operations_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-set-operations/"
 ---
 {% raw %}

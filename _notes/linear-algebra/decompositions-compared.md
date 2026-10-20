@@ -18,6 +18,7 @@ prev_title: "이산 푸리에 변환과 FFT"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "28_decompositions-compared_verify.py", "u": "/studies/linear-algebra/code/28_decompositions-compared_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/decompositions-compared/"
 ---
 {% raw %}

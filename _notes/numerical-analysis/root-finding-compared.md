@@ -21,6 +21,7 @@ next_title: "테일러 급수 방법"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "32_root-finding-compared_plot.py", "u": "/studies/numerical-analysis/code/32_root-finding-compared_plot/", "r": "그림 생성"}, {"t": "32_root-finding-compared_verify.py", "u": "/studies/numerical-analysis/code/32_root-finding-compared_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/root-finding-compared/"
 ---
 {% raw %}

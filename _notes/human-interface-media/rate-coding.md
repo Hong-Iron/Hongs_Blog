@@ -20,6 +20,7 @@ next_title: "흥분성과 억제성 시냅스"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "05_rate-coding_plot.py", "u": "/studies/human-interface-media/code/05_rate-coding_plot/", "r": "그림 생성"}, {"t": "05_rate-coding_verify.py", "u": "/studies/human-interface-media/code/05_rate-coding_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/rate-coding/"
 ---
 {% raw %}

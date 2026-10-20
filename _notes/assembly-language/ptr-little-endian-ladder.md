@@ -20,6 +20,7 @@ next_title: "LOOP로 배열 돌기 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "21_ptr-little-endian-ladder_p4.py", "u": "/studies/assembly-language/code/21_ptr-little-endian-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/assembly-language/ptr-little-endian-ladder/"
 ---
 {% raw %}

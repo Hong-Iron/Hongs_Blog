@@ -21,6 +21,7 @@ next_title: "힙과 우선순위 큐"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "11_queue-deque_impl.py", "u": "/studies/algorithms/code/11_queue-deque_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/queue-deque/"
 ---
 {% raw %}

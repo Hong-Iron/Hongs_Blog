@@ -21,6 +21,7 @@ next_title: "동적 계획법"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "29_tree-traversal-bst_impl.py", "u": "/studies/algorithms/code/29_tree-traversal-bst_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/tree-traversal-bst/"
 ---
 {% raw %}

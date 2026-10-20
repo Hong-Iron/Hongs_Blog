@@ -20,6 +20,7 @@ next_title: "캡스톤 1 도메인 타입과 에러"
 math: true
 mermaid: false
 code_count: 4
+code_files: [{"t": "22_traits-iterators-practice_p1.rs", "u": "/studies/rust/code/22_traits-iterators-practice_p1/", "r": "문제 1 풀이"}, {"t": "22_traits-iterators-practice_p2.rs", "u": "/studies/rust/code/22_traits-iterators-practice_p2/", "r": "문제 2 풀이"}, {"t": "22_traits-iterators-practice_p3.rs", "u": "/studies/rust/code/22_traits-iterators-practice_p3/", "r": "문제 3 풀이"}, {"t": "22_traits-iterators-practice_p4.rs", "u": "/studies/rust/code/22_traits-iterators-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/rust/traits-iterators-practice/"
 ---
 {% raw %}

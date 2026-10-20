@@ -18,6 +18,7 @@ prev_title: "교차 상관과 합성곱 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "31_two-dimensional-convolution_impl.py", "u": "/studies/human-interface-media/code/31_two-dimensional-convolution_impl/", "r": "구현"}, {"t": "31_two-dimensional-convolution_plot.py", "u": "/studies/human-interface-media/code/31_two-dimensional-convolution_plot/", "r": "그림 생성"}]
 permalink: "/studies/human-interface-media/two-dimensional-convolution/"
 ---
 {% raw %}

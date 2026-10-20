@@ -21,6 +21,7 @@ next_title: "성능 측정과 최적화"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "46_sqlx-database_impl.rs", "u": "/studies/rust/code/46_sqlx-database_impl/", "r": "구현"}, {"t": "46_sqlx-database_verify.rs", "u": "/studies/rust/code/46_sqlx-database_verify/", "r": "검증"}]
 permalink: "/studies/rust/sqlx-database/"
 ---
 {% raw %}

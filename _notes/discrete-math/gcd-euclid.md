@@ -20,6 +20,7 @@ next_title: "소수와 산술의 기본정리"
 math: true
 mermaid: false
 code_count: 3
+code_files: [{"t": "27_gcd-euclid_impl.py", "u": "/studies/discrete-math/code/27_gcd-euclid_impl/", "r": "구현"}, {"t": "27_gcd-euclid_plot.py", "u": "/studies/discrete-math/code/27_gcd-euclid_plot/", "r": "그림 생성"}, {"t": "27_gcd-euclid_verify.py", "u": "/studies/discrete-math/code/27_gcd-euclid_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/gcd-euclid/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "생성자"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "14_java-fields-methods_impl.java", "u": "/studies/java/code/14_java-fields-methods_impl/", "r": "구현"}]
 permalink: "/studies/java/java-fields-methods/"
 ---
 {% raw %}

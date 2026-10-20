@@ -21,6 +21,7 @@ next_title: "인터럽트 핸들러 바꿔 끼우기"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "55_hardware-interrupt-irq_verify.py", "u": "/studies/assembly-language/code/55_hardware-interrupt-irq_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/hardware-interrupt-irq/"
 ---
 {% raw %}

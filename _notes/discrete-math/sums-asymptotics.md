@@ -20,6 +20,7 @@ next_title: "점근 표기"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "23_sums-asymptotics_plot.py", "u": "/studies/discrete-math/code/23_sums-asymptotics_plot/", "r": "그림 생성"}, {"t": "23_sums-asymptotics_verify.py", "u": "/studies/discrete-math/code/23_sums-asymptotics_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/sums-asymptotics/"
 ---
 {% raw %}

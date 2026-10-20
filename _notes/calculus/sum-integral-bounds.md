@@ -20,6 +20,7 @@ next_title: "급수의 수렴"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "16_sum-integral-bounds_plot.py", "u": "/studies/calculus/code/16_sum-integral-bounds_plot/", "r": "그림 생성"}, {"t": "16_sum-integral-bounds_verify.py", "u": "/studies/calculus/code/16_sum-integral-bounds_verify/", "r": "검증"}]
 permalink: "/studies/calculus/sum-integral-bounds/"
 ---
 {% raw %}

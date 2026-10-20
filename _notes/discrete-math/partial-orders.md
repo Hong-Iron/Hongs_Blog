@@ -20,6 +20,7 @@ next_title: "수학적 귀납법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "11_partial-orders_verify.py", "u": "/studies/discrete-math/code/11_partial-orders_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/partial-orders/"
 ---
 {% raw %}

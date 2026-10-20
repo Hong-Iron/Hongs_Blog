@@ -19,6 +19,7 @@ next_title: "정수의 2진 표현과 2의 보수"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "01_data-metadata_verify.py", "u": "/studies/data-and-information/code/01_data-metadata_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/data-metadata/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "ALTER TABLE"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "58_sql-drop_verify.py", "u": "/studies/database-design/code/58_sql-drop_verify/", "r": "검증"}, {"t": "58_sql-drop_verify.sql", "u": "/studies/database-design/code/58_sql-drop_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-drop/"
 ---
 {% raw %}

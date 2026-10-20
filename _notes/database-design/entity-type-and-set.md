@@ -21,6 +21,7 @@ next_title: "속성의 종류"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_entity-type-and-set_verify.py", "u": "/studies/database-design/code/19_entity-type-and-set_verify/", "r": "검증"}]
 permalink: "/studies/database-design/entity-type-and-set/"
 ---
 {% raw %}

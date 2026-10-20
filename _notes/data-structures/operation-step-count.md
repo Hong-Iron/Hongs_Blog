@@ -21,6 +21,7 @@ next_title: "포인터"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "02_operation-step-count_verify.py", "u": "/studies/data-structures/code/02_operation-step-count_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/operation-step-count/"
 ---
 {% raw %}

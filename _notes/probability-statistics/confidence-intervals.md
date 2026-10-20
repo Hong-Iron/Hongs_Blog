@@ -20,6 +20,7 @@ next_title: "가설검정과 p값"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "31_confidence-intervals_plot.py", "u": "/studies/probability-statistics/code/31_confidence-intervals_plot/", "r": "그림 생성"}, {"t": "31_confidence-intervals_verify.py", "u": "/studies/probability-statistics/code/31_confidence-intervals_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/confidence-intervals/"
 ---
 {% raw %}

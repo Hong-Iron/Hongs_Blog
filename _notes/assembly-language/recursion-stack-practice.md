@@ -18,6 +18,7 @@ prev_title: "스택 프레임 그리기 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "47_recursion-stack-practice_p3.py", "u": "/studies/assembly-language/code/47_recursion-stack-practice_p3/", "r": "문제 3 풀이"}]
 permalink: "/studies/assembly-language/recursion-stack-practice/"
 ---
 {% raw %}

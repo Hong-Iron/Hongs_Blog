@@ -21,6 +21,7 @@ next_title: "슈퍼키·후보 키·기본 키"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "33_relation-characteristics_verify.py", "u": "/studies/database-design/code/33_relation-characteristics_verify/", "r": "검증"}]
 permalink: "/studies/database-design/relation-characteristics/"
 ---
 {% raw %}

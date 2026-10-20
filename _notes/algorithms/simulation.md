@@ -21,6 +21,7 @@ next_title: "비트 연산과 비트마스크"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "08_simulation_verify.py", "u": "/studies/algorithms/code/08_simulation_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/simulation/"
 ---
 {% raw %}

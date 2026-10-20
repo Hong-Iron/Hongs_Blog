@@ -21,6 +21,7 @@ next_title: "미분방정식으로 표현한 LTI 시스템"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "22_step-response_plot.py", "u": "/studies/signals-and-systems/code/22_step-response_plot/", "r": "그림 생성"}, {"t": "22_step-response_verify.py", "u": "/studies/signals-and-systems/code/22_step-response_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/step-response/"
 ---
 {% raw %}

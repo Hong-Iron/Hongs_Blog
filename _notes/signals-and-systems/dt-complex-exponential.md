@@ -21,6 +21,7 @@ next_title: "단위 임펄스와 단위 계단"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "09_dt-complex-exponential_plot.py", "u": "/studies/signals-and-systems/code/09_dt-complex-exponential_plot/", "r": "그림 생성"}, {"t": "09_dt-complex-exponential_verify.py", "u": "/studies/signals-and-systems/code/09_dt-complex-exponential_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/dt-complex-exponential/"
 ---
 {% raw %}

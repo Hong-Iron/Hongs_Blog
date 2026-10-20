@@ -20,6 +20,7 @@ next_title: "독립과 배반 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "04_independence_verify.py", "u": "/studies/probability-statistics/code/04_independence_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/independence/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "범주형 속성의 비유사도"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "02_chi-square-correlation_plot.py", "u": "/studies/data-science/code/02_chi-square-correlation_plot/", "r": "그림 생성"}, {"t": "02_chi-square-correlation_verify.py", "u": "/studies/data-science/code/02_chi-square-correlation_verify/", "r": "검증"}]
 permalink: "/studies/data-science/chi-square-correlation/"
 ---
 {% raw %}

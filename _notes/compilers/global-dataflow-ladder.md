@@ -20,6 +20,7 @@ next_title: "코드 생성 연습"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "45_global-dataflow-ladder_p4.py", "u": "/studies/compilers/code/45_global-dataflow-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/global-dataflow-ladder/"
 ---
 {% raw %}

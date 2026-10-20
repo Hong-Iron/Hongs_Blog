@@ -20,6 +20,7 @@ next_title: "선형 탐사 삽입·삭제 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "46_external-sort-ladder_p4.py", "u": "/studies/data-structures/code/46_external-sort-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/external-sort-ladder/"
 ---
 {% raw %}

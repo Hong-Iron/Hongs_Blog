@@ -21,6 +21,7 @@ next_title: "WHERE와 HAVING 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "70_having-clause_verify.py", "u": "/studies/database-design/code/70_having-clause_verify/", "r": "검증"}, {"t": "70_having-clause_verify.sql", "u": "/studies/database-design/code/70_having-clause_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/having-clause/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "MIPS 산술·논리 명령"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "14_mips-operands_verify.py", "u": "/studies/computer-architecture/code/14_mips-operands_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/mips-operands/"
 ---
 {% raw %}

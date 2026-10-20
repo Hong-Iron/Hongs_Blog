@@ -21,6 +21,7 @@ next_title: "포인터 인자와 값 전달"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_c-pointer_impl.c", "u": "/studies/data-structures/code/03_c-pointer_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/c-pointer/"
 ---
 {% raw %}

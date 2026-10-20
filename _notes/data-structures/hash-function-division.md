@@ -21,6 +21,7 @@ next_title: "선형 탐사"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "48_hash-function-division_impl.c", "u": "/studies/data-structures/code/48_hash-function-division_impl/", "r": "구현"}, {"t": "48_hash-function-division_verify.py", "u": "/studies/data-structures/code/48_hash-function-division_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/hash-function-division/"
 ---
 {% raw %}

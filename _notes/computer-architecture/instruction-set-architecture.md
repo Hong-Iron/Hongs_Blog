@@ -21,6 +21,7 @@ next_title: "RISC와 CISC 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "12_instruction-set-architecture_verify.py", "u": "/studies/computer-architecture/code/12_instruction-set-architecture_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/instruction-set-architecture/"
 ---
 {% raw %}

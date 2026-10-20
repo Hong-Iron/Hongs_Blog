@@ -21,6 +21,7 @@ next_title: "사격법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "35_ode-systems_impl.py", "u": "/studies/numerical-analysis/code/35_ode-systems_impl/", "r": "구현"}, {"t": "35_ode-systems_plot.py", "u": "/studies/numerical-analysis/code/35_ode-systems_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/ode-systems/"
 ---
 {% raw %}

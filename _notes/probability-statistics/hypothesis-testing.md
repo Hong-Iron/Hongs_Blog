@@ -20,6 +20,7 @@ next_title: "베이즈 추론과 MAP"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "32_hypothesis-testing_plot.py", "u": "/studies/probability-statistics/code/32_hypothesis-testing_plot/", "r": "그림 생성"}, {"t": "32_hypothesis-testing_verify.py", "u": "/studies/probability-statistics/code/32_hypothesis-testing_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/hypothesis-testing/"
 ---
 {% raw %}

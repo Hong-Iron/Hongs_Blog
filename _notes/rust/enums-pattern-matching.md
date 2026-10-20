@@ -21,6 +21,7 @@ next_title: "Option과 Result"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "11_enums-pattern-matching_verify.rs", "u": "/studies/rust/code/11_enums-pattern-matching_verify/", "r": "검증"}]
 permalink: "/studies/rust/enums-pattern-matching/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "RAID"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "53_disk-scheduling_impl.py", "u": "/studies/operating-systems/code/53_disk-scheduling_impl/", "r": "구현"}, {"t": "53_disk-scheduling_plot.py", "u": "/studies/operating-systems/code/53_disk-scheduling_plot/", "r": "그림 생성"}]
 permalink: "/studies/operating-systems/disk-scheduling/"
 ---
 {% raw %}

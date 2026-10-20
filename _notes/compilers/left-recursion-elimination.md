@@ -21,6 +21,7 @@ next_title: "좌인수분해"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "14_left-recursion-elimination_verify.py", "u": "/studies/compilers/code/14_left-recursion-elimination_verify/", "r": "검증"}]
 permalink: "/studies/compilers/left-recursion-elimination/"
 ---
 {% raw %}

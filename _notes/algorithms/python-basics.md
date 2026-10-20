@@ -19,6 +19,7 @@ next_title: "시간 복잡도로 방법 고르기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "01_python-basics_verify.py", "u": "/studies/algorithms/code/01_python-basics_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/python-basics/"
 ---
 {% raw %}

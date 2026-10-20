@@ -20,6 +20,7 @@ next_title: "유한 상태 기계 연습"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "34_conditional-structures-ladder_p4.py", "u": "/studies/assembly-language/code/34_conditional-structures-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/assembly-language/conditional-structures-ladder/"
 ---
 {% raw %}

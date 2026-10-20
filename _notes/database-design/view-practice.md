@@ -18,6 +18,7 @@ prev_title: "JOIN·GROUP BY 종합 연습"
 math: false
 mermaid: false
 code_count: 4
+code_files: [{"t": "77_view-practice_p1.py", "u": "/studies/database-design/code/77_view-practice_p1/", "r": "문제 1 풀이"}, {"t": "77_view-practice_p1.sql", "u": "/studies/database-design/code/77_view-practice_p1-sql/", "r": "문제 1 풀이"}, {"t": "77_view-practice_p2.py", "u": "/studies/database-design/code/77_view-practice_p2/", "r": "문제 2 풀이"}, {"t": "77_view-practice_p2.sql", "u": "/studies/database-design/code/77_view-practice_p2-sql/", "r": "문제 2 풀이"}]
 permalink: "/studies/database-design/view-practice/"
 ---
 {% raw %}

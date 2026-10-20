@@ -18,6 +18,7 @@ next_title: "논리적 동치와 정규형"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "01_propositional-logic_verify.py", "u": "/studies/discrete-math/code/01_propositional-logic_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/propositional-logic/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "이진 트리 순회 예제 사다리"
 math: false
 mermaid: false
 code_count: 4
+code_files: [{"t": "19_linked-list-practice_p1.c", "u": "/studies/data-structures/code/19_linked-list-practice_p1/", "r": "문제 1 풀이"}, {"t": "19_linked-list-practice_p2.c", "u": "/studies/data-structures/code/19_linked-list-practice_p2/", "r": "문제 2 풀이"}, {"t": "19_linked-list-practice_p3.c", "u": "/studies/data-structures/code/19_linked-list-practice_p3/", "r": "문제 3 풀이"}, {"t": "19_linked-list-practice_p4.c", "u": "/studies/data-structures/code/19_linked-list-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/linked-list-practice/"
 ---
 {% raw %}

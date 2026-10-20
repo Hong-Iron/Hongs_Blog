@@ -20,6 +20,7 @@ next_title: "미적분의 기본정리"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "11_riemann-integral_impl.py", "u": "/studies/calculus/code/11_riemann-integral_impl/", "r": "구현"}, {"t": "11_riemann-integral_plot.py", "u": "/studies/calculus/code/11_riemann-integral_plot/", "r": "그림 생성"}, {"t": "11_riemann-integral_verify.py", "u": "/studies/calculus/code/11_riemann-integral_verify/", "r": "검증"}]
 permalink: "/studies/calculus/riemann-integral/"
 ---
 {% raw %}

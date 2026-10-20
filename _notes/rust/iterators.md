@@ -21,6 +21,7 @@ next_title: "꼭 구현할 표준 트레이트"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "21_iterators_bench.rs", "u": "/studies/rust/code/21_iterators_bench/", "r": "실험"}, {"t": "21_iterators_verify.rs", "u": "/studies/rust/code/21_iterators_verify/", "r": "검증"}]
 permalink: "/studies/rust/iterators/"
 ---
 {% raw %}

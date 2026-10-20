@@ -20,6 +20,7 @@ next_title: "가우스 소거법"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "04_matrix-vector_plot.py", "u": "/studies/linear-algebra/code/04_matrix-vector_plot/", "r": "그림 생성"}, {"t": "04_matrix-vector_verify.py", "u": "/studies/linear-algebra/code/04_matrix-vector_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/matrix-vector/"
 ---
 {% raw %}

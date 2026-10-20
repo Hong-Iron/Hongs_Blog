@@ -21,6 +21,7 @@ next_title: "적재율로 해시 테이블 크기 정하기"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "51_probing-vs-chaining_verify.py", "u": "/studies/data-structures/code/51_probing-vs-chaining_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/probing-vs-chaining/"
 ---
 {% raw %}

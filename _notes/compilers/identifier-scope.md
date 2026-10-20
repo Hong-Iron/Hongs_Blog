@@ -21,6 +21,7 @@ next_title: "심벌 테이블과 스코프 검사"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "31_identifier-scope_verify.py", "u": "/studies/compilers/code/31_identifier-scope_verify/", "r": "검증"}]
 permalink: "/studies/compilers/identifier-scope/"
 ---
 {% raw %}

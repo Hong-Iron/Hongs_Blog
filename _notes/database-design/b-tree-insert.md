@@ -21,6 +21,7 @@ next_title: "B-트리와 이진 탐색 트리 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "15_b-tree-insert_impl.py", "u": "/studies/database-design/code/15_b-tree-insert_impl/", "r": "구현"}]
 permalink: "/studies/database-design/b-tree-insert/"
 ---
 {% raw %}

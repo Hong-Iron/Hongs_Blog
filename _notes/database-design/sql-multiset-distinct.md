@@ -21,6 +21,7 @@ next_title: "집합 연산 UNION·EXCEPT·INTERSECT"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "56_sql-multiset-distinct_verify.py", "u": "/studies/database-design/code/56_sql-multiset-distinct_verify/", "r": "검증"}]
 permalink: "/studies/database-design/sql-multiset-distinct/"
 ---
 {% raw %}

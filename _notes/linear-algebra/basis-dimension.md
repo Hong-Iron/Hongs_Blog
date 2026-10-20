@@ -20,6 +20,7 @@ next_title: "랭크와 네 부분공간"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "10_basis-dimension_plot.py", "u": "/studies/linear-algebra/code/10_basis-dimension_plot/", "r": "그림 생성"}, {"t": "10_basis-dimension_verify.py", "u": "/studies/linear-algebra/code/10_basis-dimension_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/basis-dimension/"
 ---
 {% raw %}

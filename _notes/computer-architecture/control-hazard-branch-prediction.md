@@ -21,6 +21,7 @@ next_title: "예외 처리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_control-hazard-branch-prediction_verify.py", "u": "/studies/computer-architecture/code/31_control-hazard-branch-prediction_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/control-hazard-branch-prediction/"
 ---
 {% raw %}

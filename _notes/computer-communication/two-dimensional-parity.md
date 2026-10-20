@@ -21,6 +21,7 @@ next_title: "인터넷 체크섬"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "48_two-dimensional-parity_impl.py", "u": "/studies/computer-communication/code/48_two-dimensional-parity_impl/", "r": "구현"}, {"t": "48_two-dimensional-parity_plot.py", "u": "/studies/computer-communication/code/48_two-dimensional-parity_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/two-dimensional-parity/"
 ---
 {% raw %}

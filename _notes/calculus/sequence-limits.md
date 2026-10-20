@@ -20,6 +20,7 @@ next_title: "도함수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "03_sequence-limits_plot.py", "u": "/studies/calculus/code/03_sequence-limits_plot/", "r": "그림 생성"}, {"t": "03_sequence-limits_verify.py", "u": "/studies/calculus/code/03_sequence-limits_verify/", "r": "검증"}]
 permalink: "/studies/calculus/sequence-limits/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "필드와 메서드"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_procedural-vs-oop_impl.java", "u": "/studies/java/code/13_procedural-vs-oop_impl/", "r": "구현"}]
 permalink: "/studies/java/procedural-vs-oop/"
 ---
 {% raw %}

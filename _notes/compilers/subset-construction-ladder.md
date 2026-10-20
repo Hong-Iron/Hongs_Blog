@@ -20,6 +20,7 @@ next_title: "문법 고치기 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_subset-construction-ladder_p4.py", "u": "/studies/compilers/code/09_subset-construction-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/subset-construction-ladder/"
 ---
 {% raw %}

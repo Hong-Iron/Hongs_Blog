@@ -21,6 +21,7 @@ next_title: "선형 부호와 패리티 검사 행렬"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_hamming-distance_verify.py", "u": "/studies/data-and-information/code/05_hamming-distance_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/hamming-distance/"
 ---
 {% raw %}

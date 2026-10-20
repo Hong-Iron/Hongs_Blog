@@ -21,6 +21,7 @@ next_title: "피연산자의 종류"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "14_symbolic-constants_verify.py", "u": "/studies/assembly-language/code/14_symbolic-constants_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/symbolic-constants/"
 ---
 {% raw %}

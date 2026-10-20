@@ -21,6 +21,7 @@ next_title: "ER 설계 절차"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "30_min-max-notation_verify.py", "u": "/studies/database-design/code/30_min-max-notation_verify/", "r": "검증"}]
 permalink: "/studies/database-design/min-max-notation/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "static 멤버"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_java-constructor_impl.java", "u": "/studies/java/code/15_java-constructor_impl/", "r": "구현"}]
 permalink: "/studies/java/java-constructor/"
 ---
 {% raw %}

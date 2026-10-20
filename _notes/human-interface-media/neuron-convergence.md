@@ -20,6 +20,7 @@ next_title: "중심-주변 길항"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "09_neuron-convergence_plot.py", "u": "/studies/human-interface-media/code/09_neuron-convergence_plot/", "r": "그림 생성"}, {"t": "09_neuron-convergence_verify.py", "u": "/studies/human-interface-media/code/09_neuron-convergence_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/neuron-convergence/"
 ---
 {% raw %}

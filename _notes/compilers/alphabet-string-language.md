@@ -21,6 +21,7 @@ next_title: "정규 표현식"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "04_alphabet-string-language_verify.py", "u": "/studies/compilers/code/04_alphabet-string-language_verify/", "r": "검증"}]
 permalink: "/studies/compilers/alphabet-string-language/"
 ---
 {% raw %}

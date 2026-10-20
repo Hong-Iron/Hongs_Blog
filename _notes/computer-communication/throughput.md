@@ -21,6 +21,7 @@ next_title: "대역폭-지연 곱"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "27_throughput_plot.py", "u": "/studies/computer-communication/code/27_throughput_plot/", "r": "그림 생성"}, {"t": "27_throughput_verify.py", "u": "/studies/computer-communication/code/27_throughput_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/throughput/"
 ---
 {% raw %}

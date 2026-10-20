@@ -20,6 +20,7 @@ next_title: "선형 점화식"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "20_pigeonhole_plot.py", "u": "/studies/discrete-math/code/20_pigeonhole_plot/", "r": "그림 생성"}, {"t": "20_pigeonhole_verify.py", "u": "/studies/discrete-math/code/20_pigeonhole_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/pigeonhole/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "쿼터니언"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_euler-angles_verify.py", "u": "/studies/numerical-analysis/code/09_euler-angles_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/euler-angles/"
 ---
 {% raw %}

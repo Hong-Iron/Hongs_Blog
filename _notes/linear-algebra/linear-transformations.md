@@ -20,6 +20,7 @@ next_title: "덧셈정리 ↔ 복소수 곱 ↔ 회전 행렬"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "12_linear-transformations_plot.py", "u": "/studies/linear-algebra/code/12_linear-transformations_plot/", "r": "그림 생성"}, {"t": "12_linear-transformations_verify.py", "u": "/studies/linear-algebra/code/12_linear-transformations_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/linear-transformations/"
 ---
 {% raw %}

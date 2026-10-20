@@ -21,6 +21,7 @@ next_title: "클로저"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_generics-vs-trait-objects_bench.rs", "u": "/studies/rust/code/19_generics-vs-trait-objects_bench/", "r": "실험"}]
 permalink: "/studies/rust/generics-vs-trait-objects/"
 ---
 {% raw %}

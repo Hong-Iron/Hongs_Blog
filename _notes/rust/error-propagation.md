@@ -21,6 +21,7 @@ next_title: "라이브러리 에러 설계"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "23_error-propagation_verify.rs", "u": "/studies/rust/code/23_error-propagation_verify/", "r": "검증"}]
 permalink: "/studies/rust/error-propagation/"
 ---
 {% raw %}

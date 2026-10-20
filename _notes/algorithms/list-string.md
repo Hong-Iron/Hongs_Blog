@@ -21,6 +21,7 @@ next_title: "딕셔너리와 집합"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_list-string_verify.py", "u": "/studies/algorithms/code/03_list-string_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/list-string/"
 ---
 {% raw %}

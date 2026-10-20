@@ -20,6 +20,7 @@ next_title: "지역 최적화 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "39_tac-translation-practice_p4.py", "u": "/studies/compilers/code/39_tac-translation-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/tac-translation-practice/"
 ---
 {% raw %}

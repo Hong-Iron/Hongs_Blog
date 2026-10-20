@@ -21,6 +21,7 @@ next_title: "절차 지향과 객체 지향 비교"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "12_oop-principles_impl.java", "u": "/studies/java/code/12_oop-principles_impl/", "r": "구현"}]
 permalink: "/studies/java/oop-principles/"
 ---
 {% raw %}

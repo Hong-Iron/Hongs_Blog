@@ -21,6 +21,7 @@ next_title: "tracing으로 관측하기"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "42_testing-strategy_verify.rs", "u": "/studies/rust/code/42_testing-strategy_verify/", "r": "검증"}]
 permalink: "/studies/rust/testing-strategy/"
 ---
 {% raw %}

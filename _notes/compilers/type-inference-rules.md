@@ -21,6 +21,7 @@ next_title: "타입 검사 절차"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "35_type-inference-rules_verify.py", "u": "/studies/compilers/code/35_type-inference-rules_verify/", "r": "검증"}]
 permalink: "/studies/compilers/type-inference-rules/"
 ---
 {% raw %}

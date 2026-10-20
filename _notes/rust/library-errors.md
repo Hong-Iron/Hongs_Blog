@@ -21,6 +21,7 @@ next_title: "애플리케이션 에러 처리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "24_library-errors_verify.rs", "u": "/studies/rust/code/24_library-errors_verify/", "r": "검증"}]
 permalink: "/studies/rust/library-errors/"
 ---
 {% raw %}

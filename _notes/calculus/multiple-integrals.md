@@ -20,6 +20,7 @@ next_title: "경사 하강법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "25_multiple-integrals_plot.py", "u": "/studies/calculus/code/25_multiple-integrals_plot/", "r": "그림 생성"}, {"t": "25_multiple-integrals_verify.py", "u": "/studies/calculus/code/25_multiple-integrals_verify/", "r": "검증"}]
 permalink: "/studies/calculus/multiple-integrals/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "해밍 거리와 부호 거리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "04_code-encoding_verify.py", "u": "/studies/data-and-information/code/04_code-encoding_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/code-encoding/"
 ---
 {% raw %}

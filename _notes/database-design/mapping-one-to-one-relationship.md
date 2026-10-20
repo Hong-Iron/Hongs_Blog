@@ -21,6 +21,7 @@ next_title: "일대다 관계 타입의 사상"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "41_mapping-one-to-one-relationship_verify.py", "u": "/studies/database-design/code/41_mapping-one-to-one-relationship_verify/", "r": "검증"}]
 permalink: "/studies/database-design/mapping-one-to-one-relationship/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "유도와 파스 트리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "11_context-free-grammar_verify.py", "u": "/studies/compilers/code/11_context-free-grammar_verify/", "r": "검증"}]
 permalink: "/studies/compilers/context-free-grammar/"
 ---
 {% raw %}

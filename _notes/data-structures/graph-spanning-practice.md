@@ -20,6 +20,7 @@ next_title: "최단 경로 표 채우기 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "37_graph-spanning-practice_p5.py", "u": "/studies/data-structures/code/37_graph-spanning-practice_p5/", "r": "문제 5 풀이"}]
 permalink: "/studies/data-structures/graph-spanning-practice/"
 ---
 {% raw %}

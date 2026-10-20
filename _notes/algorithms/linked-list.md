@@ -21,6 +21,7 @@ next_title: "트라이"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_linked-list_impl.py", "u": "/studies/algorithms/code/13_linked-list_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/linked-list/"
 ---
 {% raw %}

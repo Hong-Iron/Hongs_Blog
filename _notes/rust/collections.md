@@ -21,6 +21,7 @@ next_title: "타입으로 잘못된 상태 막기"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_collections_verify.rs", "u": "/studies/rust/code/13_collections_verify/", "r": "검증"}]
 permalink: "/studies/rust/collections/"
 ---
 {% raw %}

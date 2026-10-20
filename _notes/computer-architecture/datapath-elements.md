@@ -21,6 +21,7 @@ next_title: "단일 사이클 데이터패스"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "23_datapath-elements_verify.py", "u": "/studies/computer-architecture/code/23_datapath-elements_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/datapath-elements/"
 ---
 {% raw %}

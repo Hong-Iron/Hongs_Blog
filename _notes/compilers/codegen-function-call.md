@@ -21,6 +21,7 @@ next_title: "레지스터 간섭 그래프"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "53_codegen-function-call_impl.py", "u": "/studies/compilers/code/53_codegen-function-call_impl/", "r": "구현"}]
 permalink: "/studies/compilers/codegen-function-call/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "뉴턴 다항식과 분할 차분"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "21_polynomial-interpolation_plot.py", "u": "/studies/numerical-analysis/code/21_polynomial-interpolation_plot/", "r": "그림 생성"}, {"t": "21_polynomial-interpolation_verify.py", "u": "/studies/numerical-analysis/code/21_polynomial-interpolation_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/polynomial-interpolation/"
 ---
 {% raw %}

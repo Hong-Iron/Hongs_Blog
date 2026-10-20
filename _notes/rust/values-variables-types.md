@@ -21,6 +21,7 @@ next_title: "표현식과 제어 흐름"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_values-variables-types_verify.rs", "u": "/studies/rust/code/03_values-variables-types_verify/", "r": "검증"}]
 permalink: "/studies/rust/values-variables-types/"
 ---
 {% raw %}

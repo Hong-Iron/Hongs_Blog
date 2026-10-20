@@ -21,6 +21,7 @@ next_title: "추상 자료형"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "06_dynamic-memory-allocation_impl.c", "u": "/studies/data-structures/code/06_dynamic-memory-allocation_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/dynamic-memory-allocation/"
 ---
 {% raw %}

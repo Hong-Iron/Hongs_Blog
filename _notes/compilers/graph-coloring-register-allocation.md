@@ -21,6 +21,7 @@ next_title: "스필링"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "55_graph-coloring-register-allocation_impl.py", "u": "/studies/compilers/code/55_graph-coloring-register-allocation_impl/", "r": "구현"}]
 permalink: "/studies/compilers/graph-coloring-register-allocation/"
 ---
 {% raw %}

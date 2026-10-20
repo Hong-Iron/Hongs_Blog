@@ -20,6 +20,7 @@ next_title: "푸리에 역변환 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "30_fourier-coefficient-ladder_p4.py", "u": "/studies/signals-and-systems/code/30_fourier-coefficient-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/signals-and-systems/fourier-coefficient-ladder/"
 ---
 {% raw %}

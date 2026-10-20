@@ -21,6 +21,7 @@ next_title: "점·직선·평면 사이의 거리와 교점"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "11_projection_plot.py", "u": "/studies/numerical-analysis/code/11_projection_plot/", "r": "그림 생성"}, {"t": "11_projection_verify.py", "u": "/studies/numerical-analysis/code/11_projection_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/projection/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "배열로 만든 스택"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "12_sparse-matrix-transpose_impl.c", "u": "/studies/data-structures/code/12_sparse-matrix-transpose_impl/", "r": "구현"}, {"t": "12_sparse-matrix-transpose_verify.py", "u": "/studies/data-structures/code/12_sparse-matrix-transpose_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/sparse-matrix-transpose/"
 ---
 {% raw %}

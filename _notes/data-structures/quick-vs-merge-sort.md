@@ -21,6 +21,7 @@ next_title: "외부 병합 정렬"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "44_quick-vs-merge-sort_verify.py", "u": "/studies/data-structures/code/44_quick-vs-merge-sort_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/quick-vs-merge-sort/"
 ---
 {% raw %}

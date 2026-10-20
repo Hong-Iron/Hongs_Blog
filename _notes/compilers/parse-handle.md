@@ -21,6 +21,7 @@ next_title: "유효 접두사"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "23_parse-handle_verify.py", "u": "/studies/compilers/code/23_parse-handle_verify/", "r": "검증"}]
 permalink: "/studies/compilers/parse-handle/"
 ---
 {% raw %}

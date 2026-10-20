@@ -20,6 +20,7 @@ next_title: "분할 정복 점화식과 마스터 정리"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "24_asymptotic-notation_plot.py", "u": "/studies/discrete-math/code/24_asymptotic-notation_plot/", "r": "그림 생성"}, {"t": "24_asymptotic-notation_verify.py", "u": "/studies/discrete-math/code/24_asymptotic-notation_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/asymptotic-notation/"
 ---
 {% raw %}

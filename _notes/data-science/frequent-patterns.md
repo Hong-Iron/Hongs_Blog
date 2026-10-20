@@ -21,6 +21,7 @@ next_title: "연관 규칙"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "10_frequent-patterns_verify.py", "u": "/studies/data-science/code/10_frequent-patterns_verify/", "r": "검증"}]
 permalink: "/studies/data-science/frequent-patterns/"
 ---
 {% raw %}

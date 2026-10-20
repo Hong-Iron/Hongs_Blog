@@ -20,6 +20,7 @@ next_title: "이항·기하·포아송 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "12_poisson_plot.py", "u": "/studies/probability-statistics/code/12_poisson_plot/", "r": "그림 생성"}, {"t": "12_poisson_verify.py", "u": "/studies/probability-statistics/code/12_poisson_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/poisson/"
 ---
 {% raw %}

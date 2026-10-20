@@ -21,6 +21,7 @@ next_title: "교착상태"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "27_readers-writers_verify.py", "u": "/studies/operating-systems/code/27_readers-writers_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/readers-writers/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "포함-배제 원리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "18_binomial-theorem_plot.py", "u": "/studies/discrete-math/code/18_binomial-theorem_plot/", "r": "그림 생성"}, {"t": "18_binomial-theorem_verify.py", "u": "/studies/discrete-math/code/18_binomial-theorem_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/binomial-theorem/"
 ---
 {% raw %}

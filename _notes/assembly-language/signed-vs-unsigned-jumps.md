@@ -21,6 +21,7 @@ next_title: "조건부 반복 명령"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "32_signed-vs-unsigned-jumps_verify.py", "u": "/studies/assembly-language/code/32_signed-vs-unsigned-jumps_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/signed-vs-unsigned-jumps/"
 ---
 {% raw %}

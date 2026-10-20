@@ -21,6 +21,7 @@ next_title: "물음표 연산자와 에러 전파"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "22_standard-traits_verify.rs", "u": "/studies/rust/code/22_standard-traits_verify/", "r": "검증"}]
 permalink: "/studies/rust/standard-traits/"
 ---
 {% raw %}

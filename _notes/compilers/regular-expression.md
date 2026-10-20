@@ -21,6 +21,7 @@ next_title: "유한 오토마타"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_regular-expression_verify.py", "u": "/studies/compilers/code/05_regular-expression_verify/", "r": "검증"}]
 permalink: "/studies/compilers/regular-expression/"
 ---
 {% raw %}

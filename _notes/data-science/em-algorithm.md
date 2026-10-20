@@ -21,6 +21,7 @@ next_title: "DBSCAN"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "30_em-algorithm_plot.py", "u": "/studies/data-science/code/30_em-algorithm_plot/", "r": "그림 생성"}, {"t": "30_em-gmm_impl.py", "u": "/studies/data-science/code/30_em-gmm_impl/", "r": "구현"}]
 permalink: "/studies/data-science/em-algorithm/"
 ---
 {% raw %}

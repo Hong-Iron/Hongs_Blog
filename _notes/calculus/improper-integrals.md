@@ -20,6 +20,7 @@ next_title: "합 ↔ 적분"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "15_improper-integrals_plot.py", "u": "/studies/calculus/code/15_improper-integrals_plot/", "r": "그림 생성"}, {"t": "15_improper-integrals_verify.py", "u": "/studies/calculus/code/15_improper-integrals_verify/", "r": "검증"}]
 permalink: "/studies/calculus/improper-integrals/"
 ---
 {% raw %}

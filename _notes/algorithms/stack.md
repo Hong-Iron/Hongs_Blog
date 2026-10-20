@@ -21,6 +21,7 @@ next_title: "큐와 덱"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_stack_impl.py", "u": "/studies/algorithms/code/10_stack_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/stack/"
 ---
 {% raw %}

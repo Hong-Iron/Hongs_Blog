@@ -21,6 +21,7 @@ next_title: "파젠 창과 k-이웃 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "16_knn-density_plot.py", "u": "/studies/data-and-information/code/16_knn-density_plot/", "r": "그림 생성"}, {"t": "16_knn-density_verify.py", "u": "/studies/data-and-information/code/16_knn-density_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/knn-density/"
 ---
 {% raw %}

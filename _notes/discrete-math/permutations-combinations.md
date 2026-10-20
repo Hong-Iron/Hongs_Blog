@@ -20,6 +20,7 @@ next_title: "중복을 허용하는 셈"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "15_permutations-combinations_plot.py", "u": "/studies/discrete-math/code/15_permutations-combinations_plot/", "r": "그림 생성"}, {"t": "15_permutations-combinations_verify.py", "u": "/studies/discrete-math/code/15_permutations-combinations_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/permutations-combinations/"
 ---
 {% raw %}

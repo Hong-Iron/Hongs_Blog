@@ -21,6 +21,7 @@ next_title: "최대 힙과 최소 힙"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "26_tree-from-traversals_impl.c", "u": "/studies/data-structures/code/26_tree-from-traversals_impl/", "r": "구현"}, {"t": "26_tree-from-traversals_verify.py", "u": "/studies/data-structures/code/26_tree-from-traversals_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/tree-from-traversals/"
 ---
 {% raw %}

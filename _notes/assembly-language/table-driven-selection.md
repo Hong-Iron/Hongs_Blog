@@ -21,6 +21,7 @@ next_title: "유한 상태 기계"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "35_table-driven-selection_verify.py", "u": "/studies/assembly-language/code/35_table-driven-selection_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/table-driven-selection/"
 ---
 {% raw %}

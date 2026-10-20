@@ -21,6 +21,7 @@ next_title: "데이터베이스 설계 과정"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "17_b-tree-delete_impl.py", "u": "/studies/database-design/code/17_b-tree-delete_impl/", "r": "구현"}]
 permalink: "/studies/database-design/b-tree-delete/"
 ---
 {% raw %}

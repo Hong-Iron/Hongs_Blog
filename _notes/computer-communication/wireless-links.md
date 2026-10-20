@@ -21,6 +21,7 @@ next_title: "이동통신"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "34_wireless-links_plot.py", "u": "/studies/computer-communication/code/34_wireless-links_plot/", "r": "그림 생성"}, {"t": "34_wireless-links_verify.py", "u": "/studies/computer-communication/code/34_wireless-links_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/wireless-links/"
 ---
 {% raw %}

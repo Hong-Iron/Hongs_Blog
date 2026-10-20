@@ -21,6 +21,7 @@ next_title: "CPU 시간 식"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "02_cpu-performance_verify.py", "u": "/studies/computer-architecture/code/02_cpu-performance_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/cpu-performance/"
 ---
 {% raw %}

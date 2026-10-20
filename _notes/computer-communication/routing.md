@@ -21,6 +21,7 @@ next_title: "다중화"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "11_routing_verify.py", "u": "/studies/computer-communication/code/11_routing_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/routing/"
 ---
 {% raw %}

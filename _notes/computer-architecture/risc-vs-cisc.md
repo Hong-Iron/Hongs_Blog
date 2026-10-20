@@ -21,6 +21,7 @@ next_title: "MIPS 레지스터와 메모리 피연산자"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_risc-vs-cisc_verify.py", "u": "/studies/computer-architecture/code/13_risc-vs-cisc_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/risc-vs-cisc/"
 ---
 {% raw %}

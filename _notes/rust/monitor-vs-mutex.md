@@ -21,6 +21,7 @@ next_title: "원자적 연산과 메모리 순서"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "33_monitor-vs-mutex_impl.rs", "u": "/studies/rust/code/33_monitor-vs-mutex_impl/", "r": "구현"}]
 permalink: "/studies/rust/monitor-vs-mutex/"
 ---
 {% raw %}

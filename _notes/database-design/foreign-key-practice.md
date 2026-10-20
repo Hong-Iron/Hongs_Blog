@@ -20,6 +20,7 @@ next_title: "ER-관계형 사상 예제 사다리"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "37_foreign-key-practice_p1.py", "u": "/studies/database-design/code/37_foreign-key-practice_p1/", "r": "문제 1 풀이"}, {"t": "37_foreign-key-practice_p2.py", "u": "/studies/database-design/code/37_foreign-key-practice_p2/", "r": "문제 2 풀이"}]
 permalink: "/studies/database-design/foreign-key-practice/"
 ---
 {% raw %}

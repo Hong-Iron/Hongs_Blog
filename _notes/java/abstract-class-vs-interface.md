@@ -21,6 +21,7 @@ next_title: "디폴트·정적·private 메서드"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "25_abstract-class-vs-interface_impl.java", "u": "/studies/java/code/25_abstract-class-vs-interface_impl/", "r": "구현"}]
 permalink: "/studies/java/abstract-class-vs-interface/"
 ---
 {% raw %}

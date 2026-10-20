@@ -21,6 +21,7 @@ next_title: "참여 제약"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "24_cardinality-ratio_verify.py", "u": "/studies/database-design/code/24_cardinality-ratio_verify/", "r": "검증"}]
 permalink: "/studies/database-design/cardinality-ratio/"
 ---
 {% raw %}

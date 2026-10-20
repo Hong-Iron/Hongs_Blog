@@ -21,6 +21,7 @@ next_title: "클래스와 객체"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_java-array_impl.java", "u": "/studies/java/code/10_java-array_impl/", "r": "구현"}]
 permalink: "/studies/java/java-array/"
 ---
 {% raw %}

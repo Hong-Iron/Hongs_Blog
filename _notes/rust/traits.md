@@ -21,6 +21,7 @@ next_title: "Java 인터페이스 ↔ 트레이트"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_traits_verify.rs", "u": "/studies/rust/code/15_traits_verify/", "r": "검증"}]
 permalink: "/studies/rust/traits/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "배깅과 부스팅 비교"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "22_adaboost_impl.py", "u": "/studies/data-science/code/22_adaboost_impl/", "r": "구현"}, {"t": "22_boosting-adaboost_plot.py", "u": "/studies/data-science/code/22_boosting-adaboost_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/boosting-adaboost/"
 ---
 {% raw %}

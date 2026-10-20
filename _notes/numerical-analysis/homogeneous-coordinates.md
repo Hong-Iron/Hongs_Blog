@@ -21,6 +21,7 @@ next_title: "법선 벡터의 변환"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "04_homogeneous-coordinates_plot.py", "u": "/studies/numerical-analysis/code/04_homogeneous-coordinates_plot/", "r": "그림 생성"}, {"t": "04_homogeneous-coordinates_verify.py", "u": "/studies/numerical-analysis/code/04_homogeneous-coordinates_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/homogeneous-coordinates/"
 ---
 {% raw %}

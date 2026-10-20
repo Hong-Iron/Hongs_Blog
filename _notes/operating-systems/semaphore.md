@@ -21,6 +21,7 @@ next_title: "생산자-소비자 문제"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "23_semaphore_impl.py", "u": "/studies/operating-systems/code/23_semaphore_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/semaphore/"
 ---
 {% raw %}

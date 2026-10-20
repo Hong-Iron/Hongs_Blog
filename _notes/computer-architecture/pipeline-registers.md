@@ -21,6 +21,7 @@ next_title: "데이터 해저드와 전방 전달"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "28_pipeline-registers_verify.py", "u": "/studies/computer-architecture/code/28_pipeline-registers_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/pipeline-registers/"
 ---
 {% raw %}

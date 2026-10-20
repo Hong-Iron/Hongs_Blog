@@ -18,6 +18,7 @@ next_title: "확률의 공리와 계산"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "01_sample-space_verify.py", "u": "/studies/probability-statistics/code/01_sample-space_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/sample-space/"
 ---
 {% raw %}

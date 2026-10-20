@@ -20,6 +20,7 @@ next_title: "복잡한 검색 연습"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "70_group-by-query-ladder_p4.py", "u": "/studies/database-design/code/70_group-by-query-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/database-design/group-by-query-ladder/"
 ---
 {% raw %}

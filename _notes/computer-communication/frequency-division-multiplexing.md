@@ -21,6 +21,7 @@ next_title: "통계적 다중화"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "14_frequency-division-multiplexing_verify.py", "u": "/studies/computer-communication/code/14_frequency-division-multiplexing_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/frequency-division-multiplexing/"
 ---
 {% raw %}

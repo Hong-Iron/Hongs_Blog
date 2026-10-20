@@ -20,6 +20,7 @@ next_title: "배열 위치 공식 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_pointer-address-practice_p4.c", "u": "/studies/data-structures/code/05_pointer-address-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/pointer-address-practice/"
 ---
 {% raw %}

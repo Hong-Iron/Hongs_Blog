@@ -21,6 +21,7 @@ next_title: "앙상블 학습"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "19_classification-metrics_plot.py", "u": "/studies/data-science/code/19_classification-metrics_plot/", "r": "그림 생성"}, {"t": "19_classification-metrics_verify.py", "u": "/studies/data-science/code/19_classification-metrics_verify/", "r": "검증"}]
 permalink: "/studies/data-science/classification-metrics/"
 ---
 {% raw %}

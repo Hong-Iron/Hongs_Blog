@@ -20,6 +20,7 @@ next_title: "뷰 연습"
 math: false
 mermaid: false
 code_count: 3
+code_files: [{"t": "72_advanced-sql-practice_p3.py", "u": "/studies/database-design/code/72_advanced-sql-practice_p3/", "r": "문제 3 풀이"}, {"t": "72_advanced-sql-practice_p5.py", "u": "/studies/database-design/code/72_advanced-sql-practice_p5/", "r": "문제 5 풀이"}, {"t": "72_advanced-sql-practice_p5.sql", "u": "/studies/database-design/code/72_advanced-sql-practice_p5-sql/", "r": "문제 5 풀이"}]
 permalink: "/studies/database-design/advanced-sql-practice/"
 ---
 {% raw %}

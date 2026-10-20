@@ -21,6 +21,7 @@ next_title: "데이터베이스 사용자"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "02_database-approach-characteristics_verify.py", "u": "/studies/database-design/code/02_database-approach-characteristics_verify/", "r": "검증"}]
 permalink: "/studies/database-design/database-approach-characteristics/"
 ---
 {% raw %}

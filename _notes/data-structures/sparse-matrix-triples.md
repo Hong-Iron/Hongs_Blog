@@ -21,6 +21,7 @@ next_title: "희소 행렬의 전치"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "11_sparse-matrix-triples_impl.c", "u": "/studies/data-structures/code/11_sparse-matrix-triples_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/sparse-matrix-triples/"
 ---
 {% raw %}

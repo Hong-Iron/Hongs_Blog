@@ -20,6 +20,7 @@ next_title: "큰 수의 법칙"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "20_tail-bounds_plot.py", "u": "/studies/probability-statistics/code/20_tail-bounds_plot/", "r": "그림 생성"}, {"t": "20_tail-bounds_verify.py", "u": "/studies/probability-statistics/code/20_tail-bounds_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/tail-bounds/"
 ---
 {% raw %}

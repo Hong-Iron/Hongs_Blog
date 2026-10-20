@@ -21,6 +21,7 @@ next_title: "디스크 스케줄링"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "52_io-buffering_plot.py", "u": "/studies/operating-systems/code/52_io-buffering_plot/", "r": "그림 생성"}, {"t": "52_io-buffering_verify.py", "u": "/studies/operating-systems/code/52_io-buffering_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/io-buffering/"
 ---
 {% raw %}

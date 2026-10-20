@@ -20,6 +20,7 @@ next_title: "재귀 호출 스택 추적 연습"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "44_stack-frame-ladder_p4.py", "u": "/studies/assembly-language/code/44_stack-frame-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/assembly-language/stack-frame-ladder/"
 ---
 {% raw %}

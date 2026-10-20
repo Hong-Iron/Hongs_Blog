@@ -20,6 +20,7 @@ next_title: "공분산과 상관계수"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "17_joint-distributions_verify.py", "u": "/studies/probability-statistics/code/17_joint-distributions_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/joint-distributions/"
 ---
 {% raw %}

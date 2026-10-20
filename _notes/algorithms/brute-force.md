@@ -21,6 +21,7 @@ next_title: "재귀와 백트래킹"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "16_brute-force_verify.py", "u": "/studies/algorithms/code/16_brute-force_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/brute-force/"
 ---
 {% raw %}

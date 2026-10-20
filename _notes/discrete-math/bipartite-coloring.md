@@ -18,6 +18,7 @@ prev_title: "트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "36_bipartite-coloring_verify.py", "u": "/studies/discrete-math/code/36_bipartite-coloring_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/bipartite-coloring/"
 ---
 {% raw %}

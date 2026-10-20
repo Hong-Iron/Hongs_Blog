@@ -21,6 +21,7 @@ next_title: "레지스터 매개변수와 USES"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "26_call-ret_verify.py", "u": "/studies/assembly-language/code/26_call-ret_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/call-ret/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "표본화와 양자화"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "10_unit-impulse-step_plot.py", "u": "/studies/signals-and-systems/code/10_unit-impulse-step_plot/", "r": "그림 생성"}, {"t": "10_unit-impulse-step_verify.py", "u": "/studies/signals-and-systems/code/10_unit-impulse-step_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/unit-impulse-step/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "진법과 자릿수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "09_power-vs-exponential_plot.py", "u": "/studies/college-math/code/09_power-vs-exponential_plot/", "r": "그림 생성"}, {"t": "09_power-vs-exponential_verify.py", "u": "/studies/college-math/code/09_power-vs-exponential_verify/", "r": "검증"}]
 permalink: "/studies/college-math/power-vs-exponential/"
 ---
 {% raw %}

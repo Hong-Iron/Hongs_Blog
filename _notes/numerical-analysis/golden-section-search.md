@@ -21,6 +21,7 @@ next_title: "피보나치 탐색"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "25_golden-section_impl.py", "u": "/studies/numerical-analysis/code/25_golden-section_impl/", "r": "구현"}, {"t": "25_golden-section_plot.py", "u": "/studies/numerical-analysis/code/25_golden-section_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/golden-section-search/"
 ---
 {% raw %}

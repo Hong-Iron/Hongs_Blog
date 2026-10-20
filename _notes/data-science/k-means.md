@@ -21,6 +21,7 @@ next_title: "k-메도이드"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "25_k-means_impl.py", "u": "/studies/data-science/code/25_k-means_impl/", "r": "구현"}, {"t": "25_k-means_plot.py", "u": "/studies/data-science/code/25_k-means_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/k-means/"
 ---
 {% raw %}

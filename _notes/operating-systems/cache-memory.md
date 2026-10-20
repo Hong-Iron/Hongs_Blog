@@ -21,6 +21,7 @@ next_title: "입출력 기법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "06_cache-memory_verify.py", "u": "/studies/operating-systems/code/06_cache-memory_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/cache-memory/"
 ---
 {% raw %}

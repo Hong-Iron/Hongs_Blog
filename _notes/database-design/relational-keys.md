@@ -21,6 +21,7 @@ next_title: "관계형 데이터베이스 스키마와 상태"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "34_relational-keys_verify.py", "u": "/studies/database-design/code/34_relational-keys_verify/", "r": "검증"}]
 permalink: "/studies/database-design/relational-keys/"
 ---
 {% raw %}

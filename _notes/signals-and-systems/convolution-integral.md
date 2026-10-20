@@ -21,6 +21,7 @@ next_title: "컨벌루션의 성질"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "19_convolution-integral_plot.py", "u": "/studies/signals-and-systems/code/19_convolution-integral_plot/", "r": "그림 생성"}, {"t": "19_convolution-integral_verify.py", "u": "/studies/signals-and-systems/code/19_convolution-integral_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/convolution-integral/"
 ---
 {% raw %}

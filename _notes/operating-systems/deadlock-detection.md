@@ -21,6 +21,7 @@ next_title: "식사하는 철학자 문제"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_deadlock-detection_impl.py", "u": "/studies/operating-systems/code/31_deadlock-detection_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/deadlock-detection/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "백프레셔와 큐 제한"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "38_cancellation-timeouts-select_impl.rs", "u": "/studies/rust/code/38_cancellation-timeouts-select_impl/", "r": "구현"}]
 permalink: "/studies/rust/cancellation-timeouts-select/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "ER 모델 연습"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "31_er-diagram-design-practice_p2.py", "u": "/studies/database-design/code/31_er-diagram-design-practice_p2/", "r": "문제 2 풀이"}, {"t": "31_er-diagram-design-practice_p3.py", "u": "/studies/database-design/code/31_er-diagram-design-practice_p3/", "r": "문제 3 풀이"}]
 permalink: "/studies/database-design/er-diagram-design-practice/"
 ---
 {% raw %}

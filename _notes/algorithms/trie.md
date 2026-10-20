@@ -21,6 +21,7 @@ next_title: "유니온 파인드"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "14_trie_impl.py", "u": "/studies/algorithms/code/14_trie_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/trie/"
 ---
 {% raw %}

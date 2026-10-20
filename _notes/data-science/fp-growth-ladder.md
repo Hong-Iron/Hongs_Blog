@@ -20,6 +20,7 @@ next_title: "k-평균 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_fp-growth-ladder_p4.py", "u": "/studies/data-science/code/15_fp-growth-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-science/fp-growth-ladder/"
 ---
 {% raw %}

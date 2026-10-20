@@ -19,6 +19,7 @@ next_title: "직선과 평면의 방정식"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "01_cross-product_verify.py", "u": "/studies/numerical-analysis/code/01_cross-product_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/cross-product/"
 ---
 {% raw %}

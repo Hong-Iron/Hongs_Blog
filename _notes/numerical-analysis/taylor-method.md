@@ -21,6 +21,7 @@ next_title: "룽게-쿠타 방법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "33_taylor-method_impl.py", "u": "/studies/numerical-analysis/code/33_taylor-method_impl/", "r": "구현"}, {"t": "33_taylor-method_plot.py", "u": "/studies/numerical-analysis/code/33_taylor-method_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/taylor-method/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "야코비와 가우스-자이델 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "16_b-spline-ladder_p4.py", "u": "/studies/numerical-analysis/code/16_b-spline-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/numerical-analysis/b-spline-ladder/"
 ---
 {% raw %}

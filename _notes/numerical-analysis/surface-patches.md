@@ -21,6 +21,7 @@ next_title: "베지어 곡선의 세분화"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "17_surface-patches_plot.py", "u": "/studies/numerical-analysis/code/17_surface-patches_plot/", "r": "그림 생성"}, {"t": "17_surface-patches_verify.py", "u": "/studies/numerical-analysis/code/17_surface-patches_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/surface-patches/"
 ---
 {% raw %}

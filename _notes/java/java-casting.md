@@ -21,6 +21,7 @@ next_title: "다형성"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "28_java-casting_impl.java", "u": "/studies/java/code/28_java-casting_impl/", "r": "구현"}]
 permalink: "/studies/java/java-casting/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "순열·조합·중복조합 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "16_multiset-counting_verify.py", "u": "/studies/discrete-math/code/16_multiset-counting_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/multiset-counting/"
 ---
 {% raw %}

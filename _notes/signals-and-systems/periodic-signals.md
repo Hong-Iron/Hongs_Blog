@@ -21,6 +21,7 @@ next_title: "짝 신호와 홀 신호"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "06_periodic-signals_plot.py", "u": "/studies/signals-and-systems/code/06_periodic-signals_plot/", "r": "그림 생성"}]
 permalink: "/studies/signals-and-systems/periodic-signals/"
 ---
 {% raw %}

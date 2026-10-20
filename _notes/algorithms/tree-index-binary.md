@@ -19,6 +19,7 @@ prev_title: "위상 정렬 ↔ 동적 계획법의 계산 순서"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "42_tree-index-binary_verify.py", "u": "/studies/algorithms/code/42_tree-index-binary_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/tree-index-binary/"
 ---
 {% raw %}

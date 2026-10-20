@@ -21,6 +21,7 @@ next_title: "이분 탐색"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "19_prefix-sum_plot.py", "u": "/studies/algorithms/code/19_prefix-sum_plot/", "r": "그림 생성"}, {"t": "19_prefix-sum_verify.py", "u": "/studies/algorithms/code/19_prefix-sum_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/prefix-sum/"
 ---
 {% raw %}

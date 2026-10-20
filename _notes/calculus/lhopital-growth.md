@@ -20,6 +20,7 @@ next_title: "선형 근사와 뉴턴 방법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "09_lhopital-growth_plot.py", "u": "/studies/calculus/code/09_lhopital-growth_plot/", "r": "그림 생성"}, {"t": "09_lhopital-growth_verify.py", "u": "/studies/calculus/code/09_lhopital-growth_verify/", "r": "검증"}]
 permalink: "/studies/calculus/lhopital-growth/"
 ---
 {% raw %}

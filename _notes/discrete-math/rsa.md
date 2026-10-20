@@ -20,6 +20,7 @@ next_title: "그래프의 기초"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "31_rsa_impl.py", "u": "/studies/discrete-math/code/31_rsa_impl/", "r": "구현"}, {"t": "31_rsa_verify.py", "u": "/studies/discrete-math/code/31_rsa_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/rsa/"
 ---
 {% raw %}

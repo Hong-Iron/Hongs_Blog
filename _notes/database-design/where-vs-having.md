@@ -21,6 +21,7 @@ next_title: "ORDER BY와 질의의 절 순서"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "71_where-vs-having_verify.py", "u": "/studies/database-design/code/71_where-vs-having_verify/", "r": "검증"}, {"t": "71_where-vs-having_verify.sql", "u": "/studies/database-design/code/71_where-vs-having_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/where-vs-having/"
 ---
 {% raw %}

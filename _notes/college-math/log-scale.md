@@ -20,6 +20,7 @@ next_title: "거듭제곱함수와 지수함수 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "08_log-scale_plot.py", "u": "/studies/college-math/code/08_log-scale_plot/", "r": "그림 생성"}, {"t": "08_log-scale_verify.py", "u": "/studies/college-math/code/08_log-scale_verify/", "r": "검증"}]
 permalink: "/studies/college-math/log-scale/"
 ---
 {% raw %}

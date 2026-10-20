@@ -21,6 +21,7 @@ next_title: "tokio 런타임과 태스크"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "36_futures-async-await_impl.rs", "u": "/studies/rust/code/36_futures-async-await_impl/", "r": "구현"}, {"t": "36_futures-async-await_verify.rs", "u": "/studies/rust/code/36_futures-async-await_verify/", "r": "검증"}]
 permalink: "/studies/rust/futures-async-await/"
 ---
 {% raw %}

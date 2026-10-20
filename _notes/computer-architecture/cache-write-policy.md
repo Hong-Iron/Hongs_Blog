@@ -21,6 +21,7 @@ next_title: "캐시 교체 정책"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "39_cache-write-policy_verify.py", "u": "/studies/computer-architecture/code/39_cache-write-policy_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/cache-write-policy/"
 ---
 {% raw %}

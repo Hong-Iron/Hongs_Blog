@@ -21,6 +21,7 @@ next_title: "k-way 병합과 선택 트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "45_external-merge-sort_verify.py", "u": "/studies/data-structures/code/45_external-merge-sort_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/external-merge-sort/"
 ---
 {% raw %}

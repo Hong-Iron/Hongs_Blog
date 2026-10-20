@@ -21,6 +21,7 @@ next_title: "제네릭과 트레이트 경계"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "16_java-interface-vs-trait_verify.rs", "u": "/studies/rust/code/16_java-interface-vs-trait_verify/", "r": "검증"}]
 permalink: "/studies/rust/java-interface-vs-trait/"
 ---
 {% raw %}

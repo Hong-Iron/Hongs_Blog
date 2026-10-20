@@ -20,6 +20,7 @@ next_title: "연속 확률변수와 확률밀도"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "13_discrete-distributions-compared_verify.py", "u": "/studies/probability-statistics/code/13_discrete-distributions-compared_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/discrete-distributions-compared/"
 ---
 {% raw %}

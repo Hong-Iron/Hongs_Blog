@@ -21,6 +21,7 @@ next_title: "캐시와 TLB와 페이지 테이블의 상호작용"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "42_multilevel-cache_verify.py", "u": "/studies/computer-architecture/code/42_multilevel-cache_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/multilevel-cache/"
 ---
 {% raw %}

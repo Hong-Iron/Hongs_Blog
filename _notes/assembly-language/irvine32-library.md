@@ -21,6 +21,7 @@ next_title: "비트 논리 명령"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "28_irvine32-library_verify.py", "u": "/studies/assembly-language/code/28_irvine32-library_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/irvine32-library/"
 ---
 {% raw %}

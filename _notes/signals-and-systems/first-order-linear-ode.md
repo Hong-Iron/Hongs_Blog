@@ -19,6 +19,7 @@ next_title: "상수계수 2계 선형 미분방정식"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "01_first-order-linear-ode_plot.py", "u": "/studies/signals-and-systems/code/01_first-order-linear-ode_plot/", "r": "그림 생성"}, {"t": "01_first-order-linear-ode_verify.py", "u": "/studies/signals-and-systems/code/01_first-order-linear-ode_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/first-order-linear-ode/"
 ---
 {% raw %}

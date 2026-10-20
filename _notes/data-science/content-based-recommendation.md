@@ -21,6 +21,7 @@ next_title: "협업 필터링"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "40_content-based_verify.py", "u": "/studies/data-science/code/40_content-based_verify/", "r": "검증"}]
 permalink: "/studies/data-science/content-based-recommendation/"
 ---
 {% raw %}

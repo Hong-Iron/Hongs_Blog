@@ -21,6 +21,7 @@ next_title: "SLR 파서의 스택 동작"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "27_slr-parsing-table_impl.py", "u": "/studies/compilers/code/27_slr-parsing-table_impl/", "r": "구현"}]
 permalink: "/studies/compilers/slr-parsing-table/"
 ---
 {% raw %}

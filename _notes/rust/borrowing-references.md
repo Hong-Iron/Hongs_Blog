@@ -21,6 +21,7 @@ next_title: "수명"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "07_borrowing-references_verify.rs", "u": "/studies/rust/code/07_borrowing-references_verify/", "r": "검증"}]
 permalink: "/studies/rust/borrowing-references/"
 ---
 {% raw %}

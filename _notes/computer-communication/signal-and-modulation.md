@@ -21,6 +21,7 @@ next_title: "유선 링크"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_signal-and-modulation_verify.py", "u": "/studies/computer-communication/code/31_signal-and-modulation_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/signal-and-modulation/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "트리와 힙 문제 풀이"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "27_heap-tracing-ladder_p4.c", "u": "/studies/data-structures/code/27_heap-tracing-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/heap-tracing-ladder/"
 ---
 {% raw %}

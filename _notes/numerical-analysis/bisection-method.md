@@ -21,6 +21,7 @@ next_title: "할선법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "28_bisection_impl.py", "u": "/studies/numerical-analysis/code/28_bisection_impl/", "r": "구현"}, {"t": "28_bisection_plot.py", "u": "/studies/numerical-analysis/code/28_bisection_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/bisection-method/"
 ---
 {% raw %}

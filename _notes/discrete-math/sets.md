@@ -20,6 +20,7 @@ next_title: "함수의 성질과 집합의 크기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "06_sets_verify.py", "u": "/studies/discrete-math/code/06_sets_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/sets/"
 ---
 {% raw %}

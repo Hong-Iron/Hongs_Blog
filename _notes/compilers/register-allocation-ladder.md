@@ -18,6 +18,7 @@ prev_title: "코드 생성 연습"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "56_register-allocation-ladder_p2.py", "u": "/studies/compilers/code/56_register-allocation-ladder_p2/", "r": "문제 2 풀이"}, {"t": "56_register-allocation-ladder_p4.py", "u": "/studies/compilers/code/56_register-allocation-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/register-allocation-ladder/"
 ---
 {% raw %}

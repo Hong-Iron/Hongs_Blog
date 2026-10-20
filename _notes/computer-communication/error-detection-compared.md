@@ -21,6 +21,7 @@ next_title: "오류 복구와 FEC"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "51_error-detection-compared_plot.py", "u": "/studies/computer-communication/code/51_error-detection-compared_plot/", "r": "그림 생성"}, {"t": "51_error-detection-compared_verify.py", "u": "/studies/computer-communication/code/51_error-detection-compared_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/error-detection-compared/"
 ---
 {% raw %}

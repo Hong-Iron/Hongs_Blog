@@ -21,6 +21,7 @@ next_title: "관계 타입과 관계 집합"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "21_key-attribute_verify.py", "u": "/studies/database-design/code/21_key-attribute_verify/", "r": "검증"}]
 permalink: "/studies/database-design/key-attribute/"
 ---
 {% raw %}

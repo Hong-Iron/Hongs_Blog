@@ -21,6 +21,7 @@ next_title: "집합 연관 캐시"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "36_direct-mapped-cache_impl.py", "u": "/studies/computer-architecture/code/36_direct-mapped-cache_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/direct-mapped-cache/"
 ---
 {% raw %}

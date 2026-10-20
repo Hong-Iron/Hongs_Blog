@@ -21,6 +21,7 @@ next_title: "EXISTS와 NOT EXISTS"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "61_sql-any-all_verify.py", "u": "/studies/database-design/code/61_sql-any-all_verify/", "r": "검증"}, {"t": "61_sql-any-all_verify.sql", "u": "/studies/database-design/code/61_sql-any-all_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-any-all/"
 ---
 {% raw %}

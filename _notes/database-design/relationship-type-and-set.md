@@ -21,6 +21,7 @@ next_title: "역할 이름과 재귀 관계"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "22_relationship-type-and-set_verify.py", "u": "/studies/database-design/code/22_relationship-type-and-set_verify/", "r": "검증"}]
 permalink: "/studies/database-design/relationship-type-and-set/"
 ---
 {% raw %}

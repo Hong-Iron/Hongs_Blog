@@ -20,6 +20,7 @@ next_title: "캡스톤 4 관측성과 설정"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "46_capstone-3_p1.rs", "u": "/studies/rust/code/46_capstone-3_p1/", "r": "문제 1 풀이"}]
 permalink: "/studies/rust/capstone-3/"
 ---
 {% raw %}

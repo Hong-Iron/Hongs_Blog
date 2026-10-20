@@ -19,6 +19,7 @@ prev_title: "선형 탐사와 체이닝 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "52_load-factor-design_verify.py", "u": "/studies/data-structures/code/52_load-factor-design_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/load-factor-design/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "사용 가능한 식 분석"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "41_local-optimizations_verify.py", "u": "/studies/compilers/code/41_local-optimizations_verify/", "r": "검증"}]
 permalink: "/studies/compilers/local-optimizations/"
 ---
 {% raw %}

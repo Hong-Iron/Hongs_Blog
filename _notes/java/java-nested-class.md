@@ -21,6 +21,7 @@ next_title: "익명 객체"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "30_java-nested-class_impl.java", "u": "/studies/java/code/30_java-nested-class_impl/", "r": "구현"}]
 permalink: "/studies/java/java-nested-class/"
 ---
 {% raw %}

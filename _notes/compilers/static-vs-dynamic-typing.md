@@ -21,6 +21,7 @@ next_title: "타입 추론 규칙"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "34_static-vs-dynamic-typing_verify.py", "u": "/studies/compilers/code/34_static-vs-dynamic-typing_verify/", "r": "검증"}]
 permalink: "/studies/compilers/static-vs-dynamic-typing/"
 ---
 {% raw %}

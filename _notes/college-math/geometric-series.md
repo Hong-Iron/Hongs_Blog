@@ -18,6 +18,7 @@ prev_title: "수열과 합의 기호"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "21_geometric-series_plot.py", "u": "/studies/college-math/code/21_geometric-series_plot/", "r": "그림 생성"}, {"t": "21_geometric-series_verify.py", "u": "/studies/college-math/code/21_geometric-series_verify/", "r": "검증"}]
 permalink: "/studies/college-math/geometric-series/"
 ---
 {% raw %}

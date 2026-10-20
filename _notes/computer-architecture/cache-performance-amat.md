@@ -21,6 +21,7 @@ next_title: "다단계 캐시"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "41_cache-performance-amat_verify.py", "u": "/studies/computer-architecture/code/41_cache-performance-amat_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/cache-performance-amat/"
 ---
 {% raw %}

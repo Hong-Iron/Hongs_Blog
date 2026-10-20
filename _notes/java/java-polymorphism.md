@@ -21,6 +21,7 @@ next_title: "중첩 클래스"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "29_java-polymorphism_impl.java", "u": "/studies/java/code/29_java-polymorphism_impl/", "r": "구현"}]
 permalink: "/studies/java/java-polymorphism/"
 ---
 {% raw %}

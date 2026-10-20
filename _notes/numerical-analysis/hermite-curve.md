@@ -21,6 +21,7 @@ next_title: "곡선의 연속성"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "14_hermite-curve_plot.py", "u": "/studies/numerical-analysis/code/14_hermite-curve_plot/", "r": "그림 생성"}, {"t": "14_hermite-curve_verify.py", "u": "/studies/numerical-analysis/code/14_hermite-curve_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/hermite-curve/"
 ---
 {% raw %}

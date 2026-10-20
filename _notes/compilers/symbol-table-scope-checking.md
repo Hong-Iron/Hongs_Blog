@@ -21,6 +21,7 @@ next_title: "타입과 타입 시스템"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "32_symbol-table-scope-checking_impl.py", "u": "/studies/compilers/code/32_symbol-table-scope-checking_impl/", "r": "구현"}]
 permalink: "/studies/compilers/symbol-table-scope-checking/"
 ---
 {% raw %}

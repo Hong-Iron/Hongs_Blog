@@ -20,6 +20,7 @@ next_title: "데이터 모델링 연습"
 math: false
 mermaid: false
 code_count: 4
+code_files: [{"t": "09_borrow-errors-ladder_p1.rs", "u": "/studies/rust/code/09_borrow-errors-ladder_p1/", "r": "문제 1 풀이"}, {"t": "09_borrow-errors-ladder_p2.rs", "u": "/studies/rust/code/09_borrow-errors-ladder_p2/", "r": "문제 2 풀이"}, {"t": "09_borrow-errors-ladder_p3.rs", "u": "/studies/rust/code/09_borrow-errors-ladder_p3/", "r": "문제 3 풀이"}, {"t": "09_borrow-errors-ladder_p4.rs", "u": "/studies/rust/code/09_borrow-errors-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/rust/borrow-errors-ladder/"
 ---
 {% raw %}

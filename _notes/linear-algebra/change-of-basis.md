@@ -20,6 +20,7 @@ next_title: "행렬식"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "14_change-of-basis_plot.py", "u": "/studies/linear-algebra/code/14_change-of-basis_plot/", "r": "그림 생성"}, {"t": "14_change-of-basis_verify.py", "u": "/studies/linear-algebra/code/14_change-of-basis_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/change-of-basis/"
 ---
 {% raw %}

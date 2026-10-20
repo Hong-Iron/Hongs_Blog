@@ -21,6 +21,7 @@ next_title: "지역 변수"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "43_calling-convention_verify.py", "u": "/studies/assembly-language/code/43_calling-convention_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/calling-convention/"
 ---
 {% raw %}

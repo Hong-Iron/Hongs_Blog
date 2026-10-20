@@ -21,6 +21,7 @@ next_title: "UNIX 아이노드"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "60_file-allocation_impl.py", "u": "/studies/operating-systems/code/60_file-allocation_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/file-allocation/"
 ---
 {% raw %}

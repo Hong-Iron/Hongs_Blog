@@ -20,6 +20,7 @@ next_title: "포아송 분포"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "11_geometric-distribution_plot.py", "u": "/studies/probability-statistics/code/11_geometric-distribution_plot/", "r": "그림 생성"}, {"t": "11_geometric-distribution_verify.py", "u": "/studies/probability-statistics/code/11_geometric-distribution_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/geometric-distribution/"
 ---
 {% raw %}

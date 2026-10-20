@@ -21,6 +21,7 @@ next_title: "주장 CREATE ASSERTION"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "72_order-by-clause-order_verify.py", "u": "/studies/database-design/code/72_order-by-clause-order_verify/", "r": "검증"}, {"t": "72_order-by-clause-order_verify.sql", "u": "/studies/database-design/code/72_order-by-clause-order_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/order-by-clause-order/"
 ---
 {% raw %}

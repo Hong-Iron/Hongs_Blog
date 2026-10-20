@@ -21,6 +21,7 @@ next_title: "참조 비교와 null"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "07_java-reference-types_impl.java", "u": "/studies/java/code/07_java-reference-types_impl/", "r": "구현"}]
 permalink: "/studies/java/java-reference-types/"
 ---
 {% raw %}

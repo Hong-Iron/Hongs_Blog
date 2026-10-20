@@ -20,6 +20,7 @@ next_title: "모듈러 역원과 중국인의 나머지 정리"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "28_primes_impl.py", "u": "/studies/discrete-math/code/28_primes_impl/", "r": "구현"}, {"t": "28_primes_plot.py", "u": "/studies/discrete-math/code/28_primes_plot/", "r": "그림 생성"}, {"t": "28_primes_verify.py", "u": "/studies/discrete-math/code/28_primes_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/primes/"
 ---
 {% raw %}

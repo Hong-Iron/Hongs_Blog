@@ -21,6 +21,7 @@ next_title: "침입 탐지"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "65_password-salt_verify.py", "u": "/studies/operating-systems/code/65_password-salt_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/user-authentication/"
 ---
 {% raw %}

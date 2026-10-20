@@ -21,6 +21,7 @@ next_title: "수학적 귀납법 ↔ 루프 불변식"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "37_prefix-sum-triangular_verify.py", "u": "/studies/algorithms/code/37_prefix-sum-triangular_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/prefix-sum-triangular/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "생존 변수 분석"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "42_available-expressions_impl.py", "u": "/studies/compilers/code/42_available-expressions_impl/", "r": "구현"}]
 permalink: "/studies/compilers/available-expressions/"
 ---
 {% raw %}

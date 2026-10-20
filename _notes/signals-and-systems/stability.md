@@ -21,6 +21,7 @@ next_title: "시불변성"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "15_stability_plot.py", "u": "/studies/signals-and-systems/code/15_stability_plot/", "r": "그림 생성"}, {"t": "15_stability_verify.py", "u": "/studies/signals-and-systems/code/15_stability_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/stability/"
 ---
 {% raw %}

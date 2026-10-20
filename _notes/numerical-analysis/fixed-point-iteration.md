@@ -21,6 +21,7 @@ next_title: "다변수 뉴턴 방법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "30_fixed-point-iteration_impl.py", "u": "/studies/numerical-analysis/code/30_fixed-point-iteration_impl/", "r": "구현"}, {"t": "30_fixed-point-iteration_plot.py", "u": "/studies/numerical-analysis/code/30_fixed-point-iteration_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/fixed-point-iteration/"
 ---
 {% raw %}

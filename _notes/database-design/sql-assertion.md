@@ -21,6 +21,7 @@ next_title: "트리거와 ECA 규칙"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "73_sql-assertion_verify.py", "u": "/studies/database-design/code/73_sql-assertion_verify/", "r": "검증"}, {"t": "73_sql-assertion_verify.sql", "u": "/studies/database-design/code/73_sql-assertion_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-assertion/"
 ---
 {% raw %}

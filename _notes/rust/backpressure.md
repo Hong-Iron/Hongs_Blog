@@ -21,6 +21,7 @@ next_title: "안전한 종료"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "39_backpressure_impl.rs", "u": "/studies/rust/code/39_backpressure_impl/", "r": "구현"}]
 permalink: "/studies/rust/backpressure/"
 ---
 {% raw %}

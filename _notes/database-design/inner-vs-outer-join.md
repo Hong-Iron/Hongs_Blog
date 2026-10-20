@@ -21,6 +21,7 @@ next_title: "집계 함수"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "67_inner-vs-outer-join_verify.py", "u": "/studies/database-design/code/67_inner-vs-outer-join_verify/", "r": "검증"}]
 permalink: "/studies/database-design/inner-vs-outer-join/"
 ---
 {% raw %}

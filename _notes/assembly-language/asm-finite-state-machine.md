@@ -21,6 +21,7 @@ next_title: "시프트 명령"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "36_asm-finite-state-machine_verify.py", "u": "/studies/assembly-language/code/36_asm-finite-state-machine_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/asm-finite-state-machine/"
 ---
 {% raw %}

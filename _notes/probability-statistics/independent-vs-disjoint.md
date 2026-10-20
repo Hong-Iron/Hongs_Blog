@@ -20,6 +20,7 @@ next_title: "베이즈 정리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_independent-vs-disjoint_verify.py", "u": "/studies/probability-statistics/code/05_independent-vs-disjoint_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/independent-vs-disjoint/"
 ---
 {% raw %}

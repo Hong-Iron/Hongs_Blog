@@ -20,6 +20,7 @@ next_title: "스택 추적 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "24_array-loop-ladder_p4.py", "u": "/studies/assembly-language/code/24_array-loop-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/assembly-language/array-loop-ladder/"
 ---
 {% raw %}

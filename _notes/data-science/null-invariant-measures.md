@@ -21,6 +21,7 @@ next_title: "분류 평가 지표"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "18_null-invariant-measures_plot.py", "u": "/studies/data-science/code/18_null-invariant-measures_plot/", "r": "그림 생성"}, {"t": "18_null-invariant_verify.py", "u": "/studies/data-science/code/18_null-invariant_verify/", "r": "검증"}]
 permalink: "/studies/data-science/null-invariant-measures/"
 ---
 {% raw %}

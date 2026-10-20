@@ -21,6 +21,7 @@ next_title: "스키마와 인스턴스"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_data-model-categories_verify.py", "u": "/studies/database-design/code/05_data-model-categories_verify/", "r": "검증"}]
 permalink: "/studies/database-design/data-model-categories/"
 ---
 {% raw %}

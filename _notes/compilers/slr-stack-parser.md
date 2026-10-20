@@ -21,6 +21,7 @@ next_title: "LL 파싱과 LR 파싱 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "28_slr-stack-parser_impl.py", "u": "/studies/compilers/code/28_slr-stack-parser_impl/", "r": "구현"}]
 permalink: "/studies/compilers/slr-stack-parser/"
 ---
 {% raw %}

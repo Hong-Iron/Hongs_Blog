@@ -21,6 +21,7 @@ next_title: "트리 칸 번호 ↔ 2진법 자릿수"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "41_toposort-dp-order_verify.py", "u": "/studies/algorithms/code/41_toposort-dp-order_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/toposort-dp-order/"
 ---
 {% raw %}

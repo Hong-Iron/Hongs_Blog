@@ -21,6 +21,7 @@ next_title: "INVOKE·PROC·PROTO 지시어"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "45_offset-vs-lea_verify.py", "u": "/studies/assembly-language/code/45_offset-vs-lea_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/offset-vs-lea/"
 ---
 {% raw %}

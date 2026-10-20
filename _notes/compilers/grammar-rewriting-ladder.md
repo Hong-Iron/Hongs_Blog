@@ -20,6 +20,7 @@ next_title: "FIRST·FOLLOW 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_grammar-rewriting-ladder_p4.py", "u": "/studies/compilers/code/15_grammar-rewriting-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/grammar-rewriting-ladder/"
 ---
 {% raw %}

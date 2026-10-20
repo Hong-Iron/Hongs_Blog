@@ -21,6 +21,7 @@ next_title: "오일러 각과 짐벌 잠금"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "08_axis-rotation_verify.py", "u": "/studies/numerical-analysis/code/08_axis-rotation_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/axis-rotation/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "행렬 미분"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "23_hessian_plot.py", "u": "/studies/calculus/code/23_hessian_plot/", "r": "그림 생성"}, {"t": "23_hessian_verify.py", "u": "/studies/calculus/code/23_hessian_verify/", "r": "검증"}]
 permalink: "/studies/calculus/hessian/"
 ---
 {% raw %}

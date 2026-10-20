@@ -20,6 +20,7 @@ next_title: "2차원 합성곱"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "30_correlation-vs-convolution_verify.py", "u": "/studies/human-interface-media/code/30_correlation-vs-convolution_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/correlation-vs-convolution/"
 ---
 {% raw %}

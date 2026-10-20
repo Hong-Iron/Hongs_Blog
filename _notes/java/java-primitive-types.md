@@ -21,6 +21,7 @@ next_title: "타입 변환"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "02_java-primitive-types_impl.java", "u": "/studies/java/code/02_java-primitive-types_impl/", "r": "구현"}]
 permalink: "/studies/java/java-primitive-types/"
 ---
 {% raw %}

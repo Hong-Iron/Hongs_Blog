@@ -20,6 +20,7 @@ next_title: "오일러 경로와 해밀턴 경로"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "33_connectivity_impl.py", "u": "/studies/discrete-math/code/33_connectivity_impl/", "r": "구현"}, {"t": "33_connectivity_verify.py", "u": "/studies/discrete-math/code/33_connectivity_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/connectivity/"
 ---
 {% raw %}

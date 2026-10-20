@@ -19,6 +19,7 @@ prev_title: "단일 클래스 협업 필터링"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "46_zero-injection_verify.py", "u": "/studies/data-science/code/46_zero-injection_verify/", "r": "검증"}]
 permalink: "/studies/data-science/zero-injection/"
 ---
 {% raw %}

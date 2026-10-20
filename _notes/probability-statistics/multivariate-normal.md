@@ -20,6 +20,7 @@ next_title: "확률 부등식"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "19_multivariate-normal_plot.py", "u": "/studies/probability-statistics/code/19_multivariate-normal_plot/", "r": "그림 생성"}, {"t": "19_multivariate-normal_verify.py", "u": "/studies/probability-statistics/code/19_multivariate-normal_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/multivariate-normal/"
 ---
 {% raw %}

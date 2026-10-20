@@ -21,6 +21,7 @@ next_title: "최장 일치와 토큰 인식"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "09_subset-construction_impl.py", "u": "/studies/compilers/code/09_subset-construction_impl/", "r": "구현"}]
 permalink: "/studies/compilers/subset-construction/"
 ---
 {% raw %}

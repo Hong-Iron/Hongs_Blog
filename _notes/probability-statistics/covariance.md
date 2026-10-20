@@ -20,6 +20,7 @@ next_title: "공분산 행렬과 다변량 정규분포"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "18_covariance_plot.py", "u": "/studies/probability-statistics/code/18_covariance_plot/", "r": "그림 생성"}, {"t": "18_covariance_verify.py", "u": "/studies/probability-statistics/code/18_covariance_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/covariance/"
 ---
 {% raw %}

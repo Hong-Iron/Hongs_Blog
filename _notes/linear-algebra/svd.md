@@ -20,6 +20,7 @@ next_title: "추상 벡터공간과 베지어 곡선"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "24_svd_plot.py", "u": "/studies/linear-algebra/code/24_svd_plot/", "r": "그림 생성"}, {"t": "24_svd_verify.py", "u": "/studies/linear-algebra/code/24_svd_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/svd/"
 ---
 {% raw %}

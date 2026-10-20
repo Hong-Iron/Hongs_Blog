@@ -21,6 +21,7 @@ next_title: "디스크 캐시"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "54_raid_verify.py", "u": "/studies/operating-systems/code/54_raid_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/raid/"
 ---
 {% raw %}

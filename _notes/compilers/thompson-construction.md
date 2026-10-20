@@ -21,6 +21,7 @@ next_title: "부분집합 구성법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "08_thompson-construction_impl.py", "u": "/studies/compilers/code/08_thompson-construction_impl/", "r": "구현"}]
 permalink: "/studies/compilers/thompson-construction/"
 ---
 {% raw %}

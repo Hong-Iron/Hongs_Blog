@@ -21,6 +21,7 @@ next_title: "세그먼트 트리와 스위핑"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "32_tree-dp_verify.py", "u": "/studies/algorithms/code/32_tree-dp_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/tree-dp/"
 ---
 {% raw %}

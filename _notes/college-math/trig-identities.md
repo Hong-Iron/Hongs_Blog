@@ -20,6 +20,7 @@ next_title: "역삼각함수"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "14_trig-identities_plot.py", "u": "/studies/college-math/code/14_trig-identities_plot/", "r": "그림 생성"}, {"t": "14_trig-identities_verify.py", "u": "/studies/college-math/code/14_trig-identities_verify/", "r": "검증"}]
 permalink: "/studies/college-math/trig-identities/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "격자 회전 ↔ 선형변환"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "35_geometry-ccw_plot.py", "u": "/studies/algorithms/code/35_geometry-ccw_plot/", "r": "그림 생성"}, {"t": "35_geometry-ccw_verify.py", "u": "/studies/algorithms/code/35_geometry-ccw_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/geometry-ccw/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "시분할 다중화"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "12_multiplexing_verify.py", "u": "/studies/computer-communication/code/12_multiplexing_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/multiplexing/"
 ---
 {% raw %}

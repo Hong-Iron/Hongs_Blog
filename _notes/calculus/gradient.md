@@ -20,6 +20,7 @@ next_title: "다변수 연쇄 법칙과 야코비 행렬"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "20_gradient_plot.py", "u": "/studies/calculus/code/20_gradient_plot/", "r": "그림 생성"}, {"t": "20_gradient_verify.py", "u": "/studies/calculus/code/20_gradient_verify/", "r": "검증"}]
 permalink: "/studies/calculus/gradient/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "데이터패스의 구성 요소"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "22_floating-point-arithmetic_impl.py", "u": "/studies/computer-architecture/code/22_floating-point-arithmetic_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/floating-point-arithmetic/"
 ---
 {% raw %}

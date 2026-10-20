@@ -21,6 +21,7 @@ next_title: "이산 시간 푸리에 급수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "32_ctfs-properties_plot.py", "u": "/studies/signals-and-systems/code/32_ctfs-properties_plot/", "r": "그림 생성"}, {"t": "32_ctfs-properties_verify.py", "u": "/studies/signals-and-systems/code/32_ctfs-properties_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/ctfs-properties/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "순회 결과로 이진 트리 되살리기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "25_expression-tree_verify.py", "u": "/studies/data-structures/code/25_expression-tree_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/expression-tree/"
 ---
 {% raw %}

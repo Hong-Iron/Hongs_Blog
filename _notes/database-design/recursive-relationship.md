@@ -21,6 +21,7 @@ next_title: "카디널리티 비율"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "23_recursive-relationship_verify.py", "u": "/studies/database-design/code/23_recursive-relationship_verify/", "r": "검증"}]
 permalink: "/studies/database-design/recursive-relationship/"
 ---
 {% raw %}

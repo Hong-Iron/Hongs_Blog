@@ -21,6 +21,7 @@ next_title: "CLIQUE"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "31_dbscan_impl.py", "u": "/studies/data-science/code/31_dbscan_impl/", "r": "구현"}, {"t": "31_dbscan_plot.py", "u": "/studies/data-science/code/31_dbscan_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/dbscan/"
 ---
 {% raw %}

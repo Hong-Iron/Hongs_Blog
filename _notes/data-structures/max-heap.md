@@ -21,6 +21,7 @@ next_title: "우선순위 큐 정렬과 힙 정렬"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "27_max-heap_impl.c", "u": "/studies/data-structures/code/27_max-heap_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/max-heap/"
 ---
 {% raw %}

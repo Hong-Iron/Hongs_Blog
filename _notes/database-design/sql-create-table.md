@@ -21,6 +21,7 @@ next_title: "SQL 자료형"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "46_sql-create-table_verify.py", "u": "/studies/database-design/code/46_sql-create-table_verify/", "r": "검증"}, {"t": "46_sql-create-table_verify.sql", "u": "/studies/database-design/code/46_sql-create-table_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-create-table/"
 ---
 {% raw %}

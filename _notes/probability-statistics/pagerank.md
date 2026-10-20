@@ -20,6 +20,7 @@ next_title: "해싱과 무작위 알고리즘의 확률"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "25_pagerank_impl.py", "u": "/studies/probability-statistics/code/25_pagerank_impl/", "r": "구현"}, {"t": "25_pagerank_plot.py", "u": "/studies/probability-statistics/code/25_pagerank_plot/", "r": "그림 생성"}, {"t": "25_pagerank_verify.py", "u": "/studies/probability-statistics/code/25_pagerank_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/pagerank/"
 ---
 {% raw %}

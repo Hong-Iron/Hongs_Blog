@@ -20,6 +20,7 @@ next_title: "행렬 곱셈과 전치"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "05_gaussian-elimination_impl.py", "u": "/studies/linear-algebra/code/05_gaussian-elimination_impl/", "r": "구현"}, {"t": "05_gaussian-elimination_plot.py", "u": "/studies/linear-algebra/code/05_gaussian-elimination_plot/", "r": "그림 생성"}, {"t": "05_gaussian-elimination_verify.py", "u": "/studies/linear-algebra/code/05_gaussian-elimination_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/gaussian-elimination/"
 ---
 {% raw %}

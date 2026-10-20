@@ -21,6 +21,7 @@ next_title: "참조 동작 SET NULL·CASCADE·SET DEFAULT"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "52_update-constraint-violations_verify.py", "u": "/studies/database-design/code/52_update-constraint-violations_verify/", "r": "검증"}]
 permalink: "/studies/database-design/update-constraint-violations/"
 ---
 {% raw %}

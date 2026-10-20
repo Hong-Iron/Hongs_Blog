@@ -21,6 +21,7 @@ next_title: "연결 리스트로 만든 스택"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "17_linked-list-variants_impl.c", "u": "/studies/data-structures/code/17_linked-list-variants_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/linked-list-variants/"
 ---
 {% raw %}

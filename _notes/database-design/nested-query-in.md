@@ -21,6 +21,7 @@ next_title: "ANY와 ALL"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "60_nested-query-in_verify.py", "u": "/studies/database-design/code/60_nested-query-in_verify/", "r": "검증"}, {"t": "60_nested-query-in_verify.sql", "u": "/studies/database-design/code/60_nested-query-in_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/nested-query-in/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "기하 변환의 종류"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "02_lines-planes_verify.py", "u": "/studies/numerical-analysis/code/02_lines-planes_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/lines-planes/"
 ---
 {% raw %}

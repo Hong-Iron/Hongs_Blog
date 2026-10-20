@@ -21,6 +21,7 @@ next_title: "설정과 비밀값"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "43_tracing-observability_verify.rs", "u": "/studies/rust/code/43_tracing-observability_verify/", "r": "검증"}]
 permalink: "/studies/rust/tracing-observability/"
 ---
 {% raw %}

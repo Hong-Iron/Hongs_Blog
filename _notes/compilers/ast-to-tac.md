@@ -21,6 +21,7 @@ next_title: "기본 블록과 제어 흐름 그래프"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "39_ast-to-tac_impl.py", "u": "/studies/compilers/code/39_ast-to-tac_impl/", "r": "구현"}]
 permalink: "/studies/compilers/ast-to-tac/"
 ---
 {% raw %}

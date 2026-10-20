@@ -20,6 +20,7 @@ next_title: "술어와 한정기호"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "02_logical-equivalence_verify.py", "u": "/studies/discrete-math/code/02_logical-equivalence_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/logical-equivalence/"
 ---
 {% raw %}

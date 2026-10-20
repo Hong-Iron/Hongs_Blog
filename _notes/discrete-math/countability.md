@@ -20,6 +20,7 @@ next_title: "관계와 그 성질"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "08_countability_verify.py", "u": "/studies/discrete-math/code/08_countability_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/countability/"
 ---
 {% raw %}

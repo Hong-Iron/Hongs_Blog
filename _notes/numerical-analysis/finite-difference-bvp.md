@@ -19,6 +19,7 @@ prev_title: "사격법"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "37_finite-difference-bvp_impl.py", "u": "/studies/numerical-analysis/code/37_finite-difference-bvp_impl/", "r": "구현"}, {"t": "37_finite-difference-bvp_plot.py", "u": "/studies/numerical-analysis/code/37_finite-difference-bvp_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/finite-difference-bvp/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "페이지 표 구조"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "38_virtual-memory_verify.py", "u": "/studies/operating-systems/code/38_virtual-memory_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/virtual-memory/"
 ---
 {% raw %}

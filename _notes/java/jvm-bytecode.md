@@ -19,6 +19,7 @@ next_title: "변수와 기본 타입"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "01_jvm-bytecode_impl.java", "u": "/studies/java/code/01_jvm-bytecode_impl/", "r": "구현"}]
 permalink: "/studies/java/jvm-bytecode/"
 ---
 {% raw %}

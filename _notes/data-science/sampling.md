@@ -21,6 +21,7 @@ next_title: "빈발 패턴"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_sampling_verify.py", "u": "/studies/data-science/code/09_sampling_verify/", "r": "검증"}]
 permalink: "/studies/data-science/sampling/"
 ---
 {% raw %}

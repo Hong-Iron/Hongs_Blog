@@ -20,6 +20,7 @@ next_title: "로그함수와 로그 스케일"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "07_logarithm_verify.py", "u": "/studies/college-math/code/07_logarithm_verify/", "r": "검증"}]
 permalink: "/studies/college-math/logarithm/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "키의 종류 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "37_referential-integrity-foreign-key_verify.py", "u": "/studies/database-design/code/37_referential-integrity-foreign-key_verify/", "r": "검증"}, {"t": "37_referential-integrity-foreign-key_verify.sql", "u": "/studies/database-design/code/37_referential-integrity-foreign-key_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/referential-integrity-foreign-key/"
 ---
 {% raw %}

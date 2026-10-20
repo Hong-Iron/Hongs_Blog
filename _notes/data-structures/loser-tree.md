@@ -21,6 +21,7 @@ next_title: "연결 인접 리스트와 배열 인접 리스트"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "35_loser-tree_impl.c", "u": "/studies/data-structures/code/35_loser-tree_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/loser-tree/"
 ---
 {% raw %}

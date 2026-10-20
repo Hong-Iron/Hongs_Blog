@@ -125,6 +125,13 @@ DOC_TYPE_LABELS = {
 }
 CODE_ROLE_LABELS = {"impl": "구현", "verify": "검증", "bench": "실험", "plot": "그림 생성"}
 
+
+def code_role_label(role):
+    """What a code file is for, from the role part of its name (impl, p2, ...)."""
+    if re.fullmatch(r"p\d+", role):
+        return f"문제 {role[1:]} 풀이"
+    return CODE_ROLE_LABELS.get(role, "코드")
+
 CALLOUT_TITLES = {
     "summary": "요약", "definition": "정의", "theorem": "정리", "proof": "증명",
     "example": "예시", "question": "질문", "answer": "답", "hint": "힌트",
@@ -1072,6 +1079,9 @@ def export(vault):
                     next_url=next_doc and next_doc["url"], next_title=next_doc and next_doc["title"],
                     math="$" in body, mermaid="```mermaid" in body,
                     code_count=len(code_pages),
+                    # the note header's 코드 button lists these in the code panel (assets/js/code-panel.js)
+                    code_files=[{"t": c["path"].name, "u": c["url"], "r": code_role_label(c["role"])}
+                                for c in code_pages],
                     permalink=doc["url"],
                 )
                 write_page(NOTES_DIR / course["slug"] / f"{doc['id']}.md", front, lines)
@@ -1083,11 +1093,7 @@ def export(vault):
             longest = max((len(r) for r in re.findall(r"`+", src)), default=0)
             fence = "`" * max(3, longest + 1)
             parent = code.get("parent")
-            role = code["role"]
-            if re.fullmatch(r"p\d+", role):
-                role_label = f"문제 {role[1:]} 풀이"
-            else:
-                role_label = CODE_ROLE_LABELS.get(role, "코드")
+            role_label = code_role_label(code["role"])
             intro = []
             if parent:
                 intro.append(f"[{parent['title']}]({baseurl}{parent['url']}) 문서의 {role_label} 코드다."

@@ -21,6 +21,7 @@ next_title: "멀티코어와 병렬 처리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "43_cache-tlb-interaction_verify.py", "u": "/studies/computer-architecture/code/43_cache-tlb-interaction_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/cache-tlb-interaction/"
 ---
 {% raw %}

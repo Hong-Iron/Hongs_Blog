@@ -21,6 +21,7 @@ next_title: "처리량"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "26_timing-analysis_plot.py", "u": "/studies/computer-communication/code/26_timing-analysis_plot/", "r": "그림 생성"}, {"t": "26_timing-analysis_verify.py", "u": "/studies/computer-communication/code/26_timing-analysis_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/timing-analysis/"
 ---
 {% raw %}

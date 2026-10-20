@@ -21,6 +21,7 @@ next_title: "푸리에 변환의 성질"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "39_periodic-fourier-transform_plot.py", "u": "/studies/signals-and-systems/code/39_periodic-fourier-transform_plot/", "r": "그림 생성"}, {"t": "39_periodic-fourier-transform_verify.py", "u": "/studies/signals-and-systems/code/39_periodic-fourier-transform_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/periodic-fourier-transform/"
 ---
 {% raw %}

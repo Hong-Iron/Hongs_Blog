@@ -21,6 +21,7 @@ next_title: "활성 트리와 호출 스택"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "47_data-alignment_verify.py", "u": "/studies/compilers/code/47_data-alignment_verify/", "r": "검증"}]
 permalink: "/studies/compilers/data-alignment/"
 ---
 {% raw %}

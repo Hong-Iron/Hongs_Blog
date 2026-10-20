@@ -21,6 +21,7 @@ next_title: "WHERE 없는 질의와 카티션 곱"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "53_referential-triggered-actions_verify.py", "u": "/studies/database-design/code/53_referential-triggered-actions_verify/", "r": "검증"}, {"t": "53_referential-triggered-actions_verify.sql", "u": "/studies/database-design/code/53_referential-triggered-actions_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/referential-triggered-actions/"
 ---
 {% raw %}

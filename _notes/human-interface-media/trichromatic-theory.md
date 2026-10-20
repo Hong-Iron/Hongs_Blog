@@ -20,6 +20,7 @@ next_title: "조건등색"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "16_trichromatic-theory_plot.py", "u": "/studies/human-interface-media/code/16_trichromatic-theory_plot/", "r": "그림 생성"}, {"t": "16_trichromatic-theory_verify.py", "u": "/studies/human-interface-media/code/16_trichromatic-theory_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/trichromatic-theory/"
 ---
 {% raw %}

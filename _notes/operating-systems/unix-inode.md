@@ -21,6 +21,7 @@ next_title: "접근 제어"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "61_inode_verify.py", "u": "/studies/operating-systems/code/61_inode_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/unix-inode/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "예외 던지기"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "35_java-try-catch_impl.java", "u": "/studies/java/code/35_java-try-catch_impl/", "r": "구현"}]
 permalink: "/studies/java/java-try-catch/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "원형 큐 추적 예제 사다리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "13_stack-applications-practice_p1.c", "u": "/studies/data-structures/code/13_stack-applications-practice_p1/", "r": "문제 1 풀이"}, {"t": "13_stack-applications-practice_p2.c", "u": "/studies/data-structures/code/13_stack-applications-practice_p2/", "r": "문제 2 풀이"}]
 permalink: "/studies/data-structures/stack-applications-practice/"
 ---
 {% raw %}

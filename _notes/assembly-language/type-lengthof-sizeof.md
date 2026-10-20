@@ -21,6 +21,7 @@ next_title: "간접 피연산자와 인덱스 피연산자"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "22_type-lengthof-sizeof_verify.py", "u": "/studies/assembly-language/code/22_type-lengthof-sizeof_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/type-lengthof-sizeof/"
 ---
 {% raw %}

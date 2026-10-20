@@ -21,6 +21,7 @@ next_title: "배열과 포인터"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "04_pointer-parameters_impl.c", "u": "/studies/data-structures/code/04_pointer-parameters_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/pointer-parameters/"
 ---
 {% raw %}

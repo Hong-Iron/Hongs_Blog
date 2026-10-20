@@ -21,6 +21,7 @@ next_title: "단순 연결 리스트"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "14_circular-queue_impl.c", "u": "/studies/data-structures/code/14_circular-queue_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/circular-queue/"
 ---
 {% raw %}

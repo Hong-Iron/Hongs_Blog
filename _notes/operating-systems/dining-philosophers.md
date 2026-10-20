@@ -21,6 +21,7 @@ next_title: "메모리 관리의 요구 사항"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "32_dining-philosophers_verify.py", "u": "/studies/operating-systems/code/32_dining-philosophers_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/dining-philosophers/"
 ---
 {% raw %}

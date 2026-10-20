@@ -21,6 +21,7 @@ next_title: "멀티플렉서와 디코더"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "05_combinational-logic_verify.py", "u": "/studies/computer-architecture/code/05_combinational-logic_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/combinational-logic/"
 ---
 {% raw %}

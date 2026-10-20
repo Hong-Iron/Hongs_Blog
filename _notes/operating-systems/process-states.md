@@ -21,6 +21,7 @@ next_title: "프로세스 제어 블록"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "14_process-states_verify.py", "u": "/studies/operating-systems/code/14_process-states_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/process-states/"
 ---
 {% raw %}

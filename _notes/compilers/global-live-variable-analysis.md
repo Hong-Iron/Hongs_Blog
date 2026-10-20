@@ -21,6 +21,7 @@ next_title: "전역 사용 가능한 식 분석"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "44_global-live-variable-analysis_impl.py", "u": "/studies/compilers/code/44_global-live-variable-analysis_impl/", "r": "구현"}]
 permalink: "/studies/compilers/global-live-variable-analysis/"
 ---
 {% raw %}

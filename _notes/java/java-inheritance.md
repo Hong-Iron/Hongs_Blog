@@ -21,6 +21,7 @@ next_title: "부모 생성자 호출"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "20_java-inheritance_impl.java", "u": "/studies/java/code/20_java-inheritance_impl/", "r": "구현"}]
 permalink: "/studies/java/java-inheritance/"
 ---
 {% raw %}

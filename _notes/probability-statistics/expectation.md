@@ -20,6 +20,7 @@ next_title: "분산과 표준편차"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "08_expectation_verify.py", "u": "/studies/probability-statistics/code/08_expectation_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/expectation/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "시스템 성질 판별 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_dt-period-ladder_p4.py", "u": "/studies/signals-and-systems/code/09_dt-period-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/signals-and-systems/dt-period-ladder/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "사용자 정의 예외"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "36_java-throw_impl.java", "u": "/studies/java/code/36_java-throw_impl/", "r": "구현"}]
 permalink: "/studies/java/java-throw/"
 ---
 {% raw %}

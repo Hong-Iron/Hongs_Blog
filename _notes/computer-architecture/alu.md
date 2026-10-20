@@ -21,6 +21,7 @@ next_title: "래치와 플립플롭"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "08_alu_verify.py", "u": "/studies/computer-architecture/code/08_alu_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/alu/"
 ---
 {% raw %}

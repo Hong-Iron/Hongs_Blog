@@ -18,6 +18,7 @@ next_title: "연속과 사잇값 정리"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "01_limits_plot.py", "u": "/studies/calculus/code/01_limits_plot/", "r": "그림 생성"}, {"t": "01_limits_verify.py", "u": "/studies/calculus/code/01_limits_verify/", "r": "검증"}]
 permalink: "/studies/calculus/limits/"
 ---
 {% raw %}

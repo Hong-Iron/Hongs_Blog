@@ -21,6 +21,7 @@ next_title: "OFFSET과 LEA 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "44_local-variables_verify.py", "u": "/studies/assembly-language/code/44_local-variables_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/local-variables/"
 ---
 {% raw %}

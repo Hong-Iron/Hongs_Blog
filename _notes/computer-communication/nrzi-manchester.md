@@ -21,6 +21,7 @@ next_title: "4B/5B"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "41_nrzi-manchester_impl.py", "u": "/studies/computer-communication/code/41_nrzi-manchester_impl/", "r": "구현"}, {"t": "41_nrzi-manchester_plot.py", "u": "/studies/computer-communication/code/41_nrzi-manchester_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/nrzi-manchester/"
 ---
 {% raw %}

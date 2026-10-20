@@ -20,6 +20,7 @@ next_title: "이미지 함수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "11_wave-and-light_plot.py", "u": "/studies/human-interface-media/code/11_wave-and-light_plot/", "r": "그림 생성"}, {"t": "11_wave-and-light_verify.py", "u": "/studies/human-interface-media/code/11_wave-and-light_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/wave-and-light/"
 ---
 {% raw %}

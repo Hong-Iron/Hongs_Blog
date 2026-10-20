@@ -21,6 +21,7 @@ next_title: "단순 연산과 분기의 코드 생성"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "51_mips-instructions_impl.py", "u": "/studies/compilers/code/51_mips-instructions_impl/", "r": "구현"}]
 permalink: "/studies/compilers/mips-instructions/"
 ---
 {% raw %}

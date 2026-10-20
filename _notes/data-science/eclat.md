@@ -21,6 +21,7 @@ next_title: "FP-Growth"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "14_eclat_impl.py", "u": "/studies/data-science/code/14_eclat_impl/", "r": "구현"}]
 permalink: "/studies/data-science/eclat/"
 ---
 {% raw %}

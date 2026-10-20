@@ -21,6 +21,7 @@ next_title: "ER-관계형 사상 절차"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "43_mapping-many-to-many-relationship_verify.py", "u": "/studies/database-design/code/43_mapping-many-to-many-relationship_verify/", "r": "검증"}]
 permalink: "/studies/database-design/mapping-many-to-many-relationship/"
 ---
 {% raw %}

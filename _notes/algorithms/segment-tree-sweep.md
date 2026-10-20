@@ -21,6 +21,7 @@ next_title: "이분 매칭"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "33_segment-tree-sweep_verify.py", "u": "/studies/algorithms/code/33_segment-tree-sweep_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/segment-tree-sweep/"
 ---
 {% raw %}

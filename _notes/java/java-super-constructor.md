@@ -21,6 +21,7 @@ next_title: "메서드 오버라이딩"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "21_java-super-constructor_impl.java", "u": "/studies/java/code/21_java-super-constructor_impl/", "r": "구현"}]
 permalink: "/studies/java/java-super-constructor/"
 ---
 {% raw %}

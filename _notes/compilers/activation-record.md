@@ -21,6 +21,7 @@ next_title: "실행 시 메모리 배치"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "49_activation-record_verify.py", "u": "/studies/compilers/code/49_activation-record_verify/", "r": "검증"}]
 permalink: "/studies/compilers/activation-record/"
 ---
 {% raw %}

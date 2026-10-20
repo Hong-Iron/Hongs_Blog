@@ -21,6 +21,7 @@ next_title: "뷰 갱신 문제"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "76_view-implementation_verify.py", "u": "/studies/database-design/code/76_view-implementation_verify/", "r": "검증"}, {"t": "76_view-implementation_verify.sql", "u": "/studies/database-design/code/76_view-implementation_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/view-implementation/"
 ---
 {% raw %}

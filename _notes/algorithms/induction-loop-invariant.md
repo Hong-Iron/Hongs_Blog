@@ -21,6 +21,7 @@ next_title: "매개변수 탐색 ↔ 사잇값 정리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "38_induction-loop-invariant_verify.py", "u": "/studies/algorithms/code/38_induction-loop-invariant_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/induction-loop-invariant/"
 ---
 {% raw %}

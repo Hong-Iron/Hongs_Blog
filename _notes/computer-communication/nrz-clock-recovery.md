@@ -21,6 +21,7 @@ next_title: "NRZI와 맨체스터"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "40_nrz-clock-recovery_plot.py", "u": "/studies/computer-communication/code/40_nrz-clock-recovery_plot/", "r": "그림 생성"}, {"t": "40_nrz-clock-recovery_verify.py", "u": "/studies/computer-communication/code/40_nrz-clock-recovery_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/nrz-clock-recovery/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "String"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "08_java-reference-equality_impl.java", "u": "/studies/java/code/08_java-reference-equality_impl/", "r": "구현"}]
 permalink: "/studies/java/java-reference-equality/"
 ---
 {% raw %}

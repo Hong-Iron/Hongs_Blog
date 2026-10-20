@@ -21,6 +21,7 @@ next_title: "BIOS 키보드 입력 INT 16h"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "52_int21h-file-disk-functions_verify.py", "u": "/studies/assembly-language/code/52_int21h-file-disk-functions_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/int21h-file-disk-functions/"
 ---
 {% raw %}

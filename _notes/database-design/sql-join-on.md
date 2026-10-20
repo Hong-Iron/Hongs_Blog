@@ -21,6 +21,7 @@ next_title: "자연 조인 NATURAL JOIN"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "64_sql-join-on_verify.py", "u": "/studies/database-design/code/64_sql-join-on_verify/", "r": "검증"}]
 permalink: "/studies/database-design/sql-join-on/"
 ---
 {% raw %}

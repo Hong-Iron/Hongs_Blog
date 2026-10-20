@@ -21,6 +21,7 @@ next_title: "3차 보간 곡선"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "12_distance-intersection_verify.py", "u": "/studies/numerical-analysis/code/12_distance-intersection_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/distance-intersection/"
 ---
 {% raw %}

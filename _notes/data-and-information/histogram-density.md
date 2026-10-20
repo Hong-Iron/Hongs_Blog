@@ -21,6 +21,7 @@ next_title: "파젠 창"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "14_histogram-density_verify.py", "u": "/studies/data-and-information/code/14_histogram-density_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/histogram-density/"
 ---
 {% raw %}

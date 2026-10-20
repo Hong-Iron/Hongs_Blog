@@ -20,6 +20,7 @@ next_title: "양의 정부호 행렬과 이차형식"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "22_spectral-theorem_plot.py", "u": "/studies/linear-algebra/code/22_spectral-theorem_plot/", "r": "그림 생성"}, {"t": "22_spectral-theorem_verify.py", "u": "/studies/linear-algebra/code/22_spectral-theorem_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/spectral-theorem/"
 ---
 {% raw %}

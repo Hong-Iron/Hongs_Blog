@@ -21,6 +21,7 @@ next_title: "상속"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_java-access-modifier_impl.java", "u": "/studies/java/code/19_java-access-modifier_impl/", "r": "구현"}]
 permalink: "/studies/java/java-access-modifier/"
 ---
 {% raw %}

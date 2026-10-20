@@ -21,6 +21,7 @@ next_title: "우선순위 역전"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "49_real-time-scheduling_impl.py", "u": "/studies/operating-systems/code/49_real-time-scheduling_impl/", "r": "구현"}, {"t": "49_real-time-scheduling_plot.py", "u": "/studies/operating-systems/code/49_real-time-scheduling_plot/", "r": "그림 생성"}]
 permalink: "/studies/operating-systems/real-time-scheduling/"
 ---
 {% raw %}

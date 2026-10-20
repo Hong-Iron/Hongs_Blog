@@ -20,6 +20,7 @@ next_title: "다변수 함수와 편미분"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "18_taylor-series_impl.py", "u": "/studies/calculus/code/18_taylor-series_impl/", "r": "구현"}, {"t": "18_taylor-series_plot.py", "u": "/studies/calculus/code/18_taylor-series_plot/", "r": "그림 생성"}, {"t": "18_taylor-series_verify.py", "u": "/studies/calculus/code/18_taylor-series_verify/", "r": "검증"}]
 permalink: "/studies/calculus/taylor-series/"
 ---
 {% raw %}

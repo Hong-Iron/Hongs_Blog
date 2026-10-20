@@ -21,6 +21,7 @@ next_title: "알파벳·문자열·언어"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_token-lexeme_verify.py", "u": "/studies/compilers/code/03_token-lexeme_verify/", "r": "검증"}]
 permalink: "/studies/compilers/token-lexeme/"
 ---
 {% raw %}

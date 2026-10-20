@@ -21,6 +21,7 @@ next_title: "그래프 색칠 레지스터 할당"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "54_register-interference-graph_impl.py", "u": "/studies/compilers/code/54_register-interference-graph_impl/", "r": "구현"}]
 permalink: "/studies/compilers/register-interference-graph/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "연쇄 법칙"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "05_differentiation-rules_plot.py", "u": "/studies/calculus/code/05_differentiation-rules_plot/", "r": "그림 생성"}, {"t": "05_differentiation-rules_verify.py", "u": "/studies/calculus/code/05_differentiation-rules_verify/", "r": "검증"}]
 permalink: "/studies/calculus/differentiation-rules/"
 ---
 {% raw %}

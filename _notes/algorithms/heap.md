@@ -21,6 +21,7 @@ next_title: "연결 리스트"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "12_heap_impl.py", "u": "/studies/algorithms/code/12_heap_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/heap/"
 ---
 {% raw %}

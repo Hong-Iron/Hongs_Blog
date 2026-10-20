@@ -21,6 +21,7 @@ next_title: "k-평균과 k-메도이드 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "26_k-medoids_impl.py", "u": "/studies/data-science/code/26_k-medoids_impl/", "r": "구현"}, {"t": "26_k-medoids_plot.py", "u": "/studies/data-science/code/26_k-medoids_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/k-medoids/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "인터럽트"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "03_instruction-cycle_impl.py", "u": "/studies/operating-systems/code/03_instruction-cycle_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/instruction-cycle/"
 ---
 {% raw %}

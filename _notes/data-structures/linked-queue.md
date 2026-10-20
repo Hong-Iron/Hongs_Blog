@@ -21,6 +21,7 @@ next_title: "선형 자료구조"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_linked-queue_impl.c", "u": "/studies/data-structures/code/19_linked-queue_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/linked-queue/"
 ---
 {% raw %}

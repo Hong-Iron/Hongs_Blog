@@ -21,6 +21,7 @@ next_title: "행렬 분해 군집화"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "34_curse-of-dimensionality_plot.py", "u": "/studies/data-science/code/34_curse-of-dimensionality_plot/", "r": "그림 생성"}, {"t": "34_curse-of-dimensionality_verify.py", "u": "/studies/data-science/code/34_curse-of-dimensionality_verify/", "r": "검증"}]
 permalink: "/studies/data-science/curse-of-dimensionality/"
 ---
 {% raw %}

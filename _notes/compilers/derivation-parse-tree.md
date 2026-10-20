@@ -21,6 +21,7 @@ next_title: "모호한 문법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "12_derivation-parse-tree_verify.py", "u": "/studies/compilers/code/12_derivation-parse-tree_verify/", "r": "검증"}]
 permalink: "/studies/compilers/derivation-parse-tree/"
 ---
 {% raw %}

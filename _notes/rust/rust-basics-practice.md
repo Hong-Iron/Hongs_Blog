@@ -18,6 +18,7 @@ next_title: "빌림 오류 고치기 예제 사다리"
 math: true
 mermaid: false
 code_count: 4
+code_files: [{"t": "04_rust-basics-practice_p1.rs", "u": "/studies/rust/code/04_rust-basics-practice_p1/", "r": "문제 1 풀이"}, {"t": "04_rust-basics-practice_p2.rs", "u": "/studies/rust/code/04_rust-basics-practice_p2/", "r": "문제 2 풀이"}, {"t": "04_rust-basics-practice_p3.rs", "u": "/studies/rust/code/04_rust-basics-practice_p3/", "r": "문제 3 풀이"}, {"t": "04_rust-basics-practice_p4.rs", "u": "/studies/rust/code/04_rust-basics-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/rust/rust-basics-practice/"
 ---
 {% raw %}

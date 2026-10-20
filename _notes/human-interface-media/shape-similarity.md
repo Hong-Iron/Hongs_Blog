@@ -20,6 +20,7 @@ next_title: "교차 상관"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "28_shape-similarity_verify.py", "u": "/studies/human-interface-media/code/28_shape-similarity_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/shape-similarity/"
 ---
 {% raw %}

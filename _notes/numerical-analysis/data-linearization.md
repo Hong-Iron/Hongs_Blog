@@ -21,6 +21,7 @@ next_title: "황금분할 탐색"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "24_data-linearization_plot.py", "u": "/studies/numerical-analysis/code/24_data-linearization_plot/", "r": "그림 생성"}, {"t": "24_data-linearization_verify.py", "u": "/studies/numerical-analysis/code/24_data-linearization_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/data-linearization/"
 ---
 {% raw %}

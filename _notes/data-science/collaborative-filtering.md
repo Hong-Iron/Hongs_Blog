@@ -21,6 +21,7 @@ next_title: "추천 방법 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "41_collaborative-filtering_impl.py", "u": "/studies/data-science/code/41_collaborative-filtering_impl/", "r": "구현"}]
 permalink: "/studies/data-science/collaborative-filtering/"
 ---
 {% raw %}

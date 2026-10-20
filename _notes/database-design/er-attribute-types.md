@@ -21,6 +21,7 @@ next_title: "키 속성"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "20_er-attribute-types_verify.py", "u": "/studies/database-design/code/20_er-attribute-types_verify/", "r": "검증"}]
 permalink: "/studies/database-design/er-attribute-types/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "벨만–포드 알고리즘"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "37_sollin-algorithm_verify.py", "u": "/studies/data-structures/code/37_sollin-algorithm_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/sollin-algorithm/"
 ---
 {% raw %}

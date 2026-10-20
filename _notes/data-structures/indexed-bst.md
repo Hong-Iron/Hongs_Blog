@@ -21,6 +21,7 @@ next_title: "승자 트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "33_indexed-bst_impl.c", "u": "/studies/data-structures/code/33_indexed-bst_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/indexed-bst/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "거듭제곱과 지수법칙"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "04_polynomial_plot.py", "u": "/studies/college-math/code/04_polynomial_plot/", "r": "그림 생성"}, {"t": "04_polynomial_verify.py", "u": "/studies/college-math/code/04_polynomial_verify/", "r": "검증"}]
 permalink: "/studies/college-math/polynomial/"
 ---
 {% raw %}

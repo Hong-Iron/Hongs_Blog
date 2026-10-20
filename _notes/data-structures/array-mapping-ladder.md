@@ -20,6 +20,7 @@ next_title: "희소 행렬 전치 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_array-mapping-ladder_p4.c", "u": "/studies/data-structures/code/10_array-mapping-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/array-mapping-ladder/"
 ---
 {% raw %}

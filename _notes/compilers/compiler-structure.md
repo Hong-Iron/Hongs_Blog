@@ -19,6 +19,7 @@ next_title: "컴파일과 인터프리트 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "01_compiler-structure_verify.py", "u": "/studies/compilers/code/01_compiler-structure_verify/", "r": "검증"}]
 permalink: "/studies/compilers/compiler-structure/"
 ---
 {% raw %}

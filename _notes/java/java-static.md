@@ -21,6 +21,7 @@ next_title: "final과 상수"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "16_java-static_impl.java", "u": "/studies/java/code/16_java-static_impl/", "r": "구현"}]
 permalink: "/studies/java/java-static/"
 ---
 {% raw %}

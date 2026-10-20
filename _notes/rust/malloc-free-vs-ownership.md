@@ -21,6 +21,7 @@ next_title: "빌림과 참조"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "06_malloc-free-vs-ownership_verify.rs", "u": "/studies/rust/code/06_malloc-free-vs-ownership_verify/", "r": "검증"}]
 permalink: "/studies/rust/malloc-free-vs-ownership/"
 ---
 {% raw %}

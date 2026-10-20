@@ -21,6 +21,7 @@ next_title: "트레이트"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "14_type-driven-design_verify.rs", "u": "/studies/rust/code/14_type-driven-design_verify/", "r": "검증"}]
 permalink: "/studies/rust/type-driven-design/"
 ---
 {% raw %}

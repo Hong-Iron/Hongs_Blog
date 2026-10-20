@@ -20,6 +20,7 @@ next_title: "수열의 극한과 e"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "02_continuity_plot.py", "u": "/studies/calculus/code/02_continuity_plot/", "r": "그림 생성"}, {"t": "02_continuity_verify.py", "u": "/studies/calculus/code/02_continuity_verify/", "r": "검증"}]
 permalink: "/studies/calculus/continuity/"
 ---
 {% raw %}

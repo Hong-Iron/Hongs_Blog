@@ -21,6 +21,7 @@ next_title: "최대 힙과 이진 탐색 트리 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "30_bst-search-insert_impl.c", "u": "/studies/data-structures/code/30_bst-search-insert_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/bst-search-insert/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "부호 있는 비교 점프와 부호 없는 비교 점프"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "31_conditional-jumps_verify.py", "u": "/studies/assembly-language/code/31_conditional-jumps_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/conditional-jumps/"
 ---
 {% raw %}

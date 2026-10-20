@@ -21,6 +21,7 @@ next_title: "페이지 교체 알고리즘"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "40_tlb_plot.py", "u": "/studies/operating-systems/code/40_tlb_plot/", "r": "그림 생성"}, {"t": "40_tlb_verify.py", "u": "/studies/operating-systems/code/40_tlb_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/tlb/"
 ---
 {% raw %}

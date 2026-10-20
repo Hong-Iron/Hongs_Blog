@@ -21,6 +21,7 @@ next_title: "슬라이스와 String·&str"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "08_lifetimes_verify.rs", "u": "/studies/rust/code/08_lifetimes_verify/", "r": "검증"}]
 permalink: "/studies/rust/lifetimes/"
 ---
 {% raw %}

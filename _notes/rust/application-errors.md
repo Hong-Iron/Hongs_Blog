@@ -21,6 +21,7 @@ next_title: "panic을 쓸 때"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "25_application-errors_verify.rs", "u": "/studies/rust/code/25_application-errors_verify/", "r": "검증"}]
 permalink: "/studies/rust/application-errors/"
 ---
 {% raw %}

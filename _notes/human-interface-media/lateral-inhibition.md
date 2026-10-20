@@ -20,6 +20,7 @@ next_title: "반대색 과정"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "18_lateral-inhibition_plot.py", "u": "/studies/human-interface-media/code/18_lateral-inhibition_plot/", "r": "그림 생성"}, {"t": "18_lateral-inhibition_verify.py", "u": "/studies/human-interface-media/code/18_lateral-inhibition_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/lateral-inhibition/"
 ---
 {% raw %}

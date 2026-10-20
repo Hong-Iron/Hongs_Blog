@@ -21,6 +21,7 @@ next_title: "단위 계단 응답"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "21_lti-system-properties_plot.py", "u": "/studies/signals-and-systems/code/21_lti-system-properties_plot/", "r": "그림 생성"}, {"t": "21_lti-system-properties_verify.py", "u": "/studies/signals-and-systems/code/21_lti-system-properties_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/lti-system-properties/"
 ---
 {% raw %}

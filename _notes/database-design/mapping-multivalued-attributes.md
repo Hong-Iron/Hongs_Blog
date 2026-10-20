@@ -21,6 +21,7 @@ next_title: "일대일 관계 타입의 사상"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "40_mapping-multivalued-attributes_verify.py", "u": "/studies/database-design/code/40_mapping-multivalued-attributes_verify/", "r": "검증"}]
 permalink: "/studies/database-design/mapping-multivalued-attributes/"
 ---
 {% raw %}

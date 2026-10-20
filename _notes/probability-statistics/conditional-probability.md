@@ -20,6 +20,7 @@ next_title: "독립"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "03_conditional-probability_verify.py", "u": "/studies/probability-statistics/code/03_conditional-probability_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/conditional-probability/"
 ---
 {% raw %}

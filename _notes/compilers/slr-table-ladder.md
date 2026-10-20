@@ -20,6 +20,7 @@ next_title: "SLR 파서 추적 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "27_slr-table-ladder_p4.py", "u": "/studies/compilers/code/27_slr-table-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/slr-table-ladder/"
 ---
 {% raw %}

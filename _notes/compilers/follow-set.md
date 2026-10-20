@@ -21,6 +21,7 @@ next_title: "LL(1) 파싱 표"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_follow-set_impl.py", "u": "/studies/compilers/code/19_follow-set_impl/", "r": "구현"}]
 permalink: "/studies/compilers/follow-set/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "이항정리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "17_counting-formula-choice_verify.py", "u": "/studies/discrete-math/code/17_counting-formula-choice_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/counting-formula-choice/"
 ---
 {% raw %}

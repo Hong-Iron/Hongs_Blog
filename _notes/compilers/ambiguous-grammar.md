@@ -21,6 +21,7 @@ next_title: "좌재귀 없애기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "13_ambiguous-grammar_verify.py", "u": "/studies/compilers/code/13_ambiguous-grammar_verify/", "r": "검증"}]
 permalink: "/studies/compilers/ambiguous-grammar/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "부동소수점"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "02_twos-complement_verify.py", "u": "/studies/data-and-information/code/02_twos-complement_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/twos-complement/"
 ---
 {% raw %}

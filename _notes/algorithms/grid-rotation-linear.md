@@ -21,6 +21,7 @@ next_title: "누적 합 ↔ 아래삼각행렬"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "36_grid-rotation-linear_plot.py", "u": "/studies/algorithms/code/36_grid-rotation-linear_plot/", "r": "그림 생성"}, {"t": "36_grid-rotation-linear_verify.py", "u": "/studies/algorithms/code/36_grid-rotation-linear_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/grid-rotation-linear/"
 ---
 {% raw %}

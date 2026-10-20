@@ -21,6 +21,7 @@ next_title: "다치 속성의 사상"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "39_mapping-entity-types_verify.py", "u": "/studies/database-design/code/39_mapping-entity-types_verify/", "r": "검증"}]
 permalink: "/studies/database-design/mapping-entity-types/"
 ---
 {% raw %}

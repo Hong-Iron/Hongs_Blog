@@ -21,6 +21,7 @@ next_title: "CRC"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "49_internet-checksum_impl.py", "u": "/studies/computer-communication/code/49_internet-checksum_impl/", "r": "구현"}, {"t": "49_internet-checksum_plot.py", "u": "/studies/computer-communication/code/49_internet-checksum_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/internet-checksum/"
 ---
 {% raw %}

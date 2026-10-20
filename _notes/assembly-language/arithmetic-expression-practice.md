@@ -20,6 +20,7 @@ next_title: "플래그 추적 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "18_arithmetic-expression-practice_p3.py", "u": "/studies/assembly-language/code/18_arithmetic-expression-practice_p3/", "r": "문제 3 풀이"}]
 permalink: "/studies/assembly-language/arithmetic-expression-practice/"
 ---
 {% raw %}

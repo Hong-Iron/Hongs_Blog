@@ -21,6 +21,7 @@ next_title: "체이닝"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "49_linear-probing_impl.c", "u": "/studies/data-structures/code/49_linear-probing_impl/", "r": "구현"}, {"t": "49_linear-probing_verify.py", "u": "/studies/data-structures/code/49_linear-probing_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/linear-probing/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "진폭·주파수·위상 변조"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "38_pcm_plot.py", "u": "/studies/computer-communication/code/38_pcm_plot/", "r": "그림 생성"}, {"t": "38_pcm_verify.py", "u": "/studies/computer-communication/code/38_pcm_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/pcm/"
 ---
 {% raw %}

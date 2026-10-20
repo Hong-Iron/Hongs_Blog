@@ -21,6 +21,7 @@ next_title: "부호와 부호화"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_floating-point_verify.py", "u": "/studies/data-and-information/code/03_floating-point_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/floating-point/"
 ---
 {% raw %}

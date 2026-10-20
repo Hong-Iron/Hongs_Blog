@@ -21,6 +21,7 @@ next_title: "톰슨 구성법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "07_dfa-vs-nfa_verify.py", "u": "/studies/compilers/code/07_dfa-vs-nfa_verify/", "r": "검증"}]
 permalink: "/studies/compilers/dfa-vs-nfa/"
 ---
 {% raw %}

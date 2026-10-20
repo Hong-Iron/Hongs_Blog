@@ -21,6 +21,7 @@ next_title: "차분방정식으로 표현한 LTI 시스템"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "23_lccde-system_plot.py", "u": "/studies/signals-and-systems/code/23_lccde-system_plot/", "r": "그림 생성"}, {"t": "23_lccde-system_verify.py", "u": "/studies/signals-and-systems/code/23_lccde-system_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/lccde-system/"
 ---
 {% raw %}

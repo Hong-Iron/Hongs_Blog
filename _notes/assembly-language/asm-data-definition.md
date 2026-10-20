@@ -21,6 +21,7 @@ next_title: "리틀 엔디언"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "12_asm-data-definition_verify.py", "u": "/studies/assembly-language/code/12_asm-data-definition_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/asm-data-definition/"
 ---
 {% raw %}

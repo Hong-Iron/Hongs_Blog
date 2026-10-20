@@ -20,6 +20,7 @@ next_title: "특잇값 분해"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "23_positive-definite_plot.py", "u": "/studies/linear-algebra/code/23_positive-definite_plot/", "r": "그림 생성"}, {"t": "23_positive-definite_verify.py", "u": "/studies/linear-algebra/code/23_positive-definite_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/positive-definite/"
 ---
 {% raw %}

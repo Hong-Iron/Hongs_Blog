@@ -21,6 +21,7 @@ next_title: "MIPS 분기와 점프"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "16_mips-instruction-formats_impl.py", "u": "/studies/computer-architecture/code/16_mips-instruction-formats_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/mips-instruction-formats/"
 ---
 {% raw %}

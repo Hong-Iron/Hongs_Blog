@@ -21,6 +21,7 @@ next_title: "AST에서 3주소 코드 만들기"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "38_quadruples_verify.py", "u": "/studies/compilers/code/38_quadruples_verify/", "r": "검증"}]
 permalink: "/studies/compilers/quadruples/"
 ---
 {% raw %}

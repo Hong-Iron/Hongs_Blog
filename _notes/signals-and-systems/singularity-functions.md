@@ -21,6 +21,7 @@ next_title: "LTI 시스템의 고유함수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "27_singularity-functions_plot.py", "u": "/studies/signals-and-systems/code/27_singularity-functions_plot/", "r": "그림 생성"}, {"t": "27_singularity-functions_verify.py", "u": "/studies/signals-and-systems/code/27_singularity-functions_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/singularity-functions/"
 ---
 {% raw %}

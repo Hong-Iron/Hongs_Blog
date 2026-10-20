@@ -21,6 +21,7 @@ next_title: "try-catch-finally"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "34_java-exception_impl.java", "u": "/studies/java/code/34_java-exception_impl/", "r": "구현"}]
 permalink: "/studies/java/java-exception/"
 ---
 {% raw %}

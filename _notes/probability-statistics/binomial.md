@@ -20,6 +20,7 @@ next_title: "기하분포"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "10_binomial_plot.py", "u": "/studies/probability-statistics/code/10_binomial_plot/", "r": "그림 생성"}, {"t": "10_binomial_verify.py", "u": "/studies/probability-statistics/code/10_binomial_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/binomial/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "임펄스 응답으로 본 LTI 시스템의 성질"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "20_convolution-properties_plot.py", "u": "/studies/signals-and-systems/code/20_convolution-properties_plot/", "r": "그림 생성"}, {"t": "20_convolution-properties_verify.py", "u": "/studies/signals-and-systems/code/20_convolution-properties_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/convolution-properties/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "이진 탐색 트리 삽입·삭제 예제 사다리"
 math: true
 mermaid: false
 code_count: 3
+code_files: [{"t": "30_week9-inclass_p1.c", "u": "/studies/data-structures/code/30_week9-inclass_p1/", "r": "문제 1 풀이"}, {"t": "30_week9-inclass_p2.c", "u": "/studies/data-structures/code/30_week9-inclass_p2/", "r": "문제 2 풀이"}, {"t": "30_week9-inclass_p3.c", "u": "/studies/data-structures/code/30_week9-inclass_p3/", "r": "문제 3 풀이"}]
 permalink: "/studies/data-structures/week9-inclass/"
 ---
 {% raw %}

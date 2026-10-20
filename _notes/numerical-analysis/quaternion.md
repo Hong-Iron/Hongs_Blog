@@ -21,6 +21,7 @@ next_title: "평행 투영과 원근 투영"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "10_quaternion_verify.py", "u": "/studies/numerical-analysis/code/10_quaternion_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/quaternion/"
 ---
 {% raw %}

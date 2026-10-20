@@ -21,6 +21,7 @@ next_title: "시분할 다중화와 통계적 다중화 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "15_statistical-multiplexing_plot.py", "u": "/studies/computer-communication/code/15_statistical-multiplexing_plot/", "r": "그림 생성"}, {"t": "15_statistical-multiplexing_verify.py", "u": "/studies/computer-communication/code/15_statistical-multiplexing_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/statistical-multiplexing/"
 ---
 {% raw %}

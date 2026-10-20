@@ -21,6 +21,7 @@ next_title: "구간 DP"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "30_dynamic-programming_plot.py", "u": "/studies/algorithms/code/30_dynamic-programming_plot/", "r": "그림 생성"}, {"t": "30_dynamic-programming_verify.py", "u": "/studies/algorithms/code/30_dynamic-programming_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/dynamic-programming/"
 ---
 {% raw %}

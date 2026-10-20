@@ -20,6 +20,7 @@ next_title: "삼각함수 항등식"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "13_sinusoid_plot.py", "u": "/studies/college-math/code/13_sinusoid_plot/", "r": "그림 생성"}, {"t": "13_sinusoid_verify.py", "u": "/studies/college-math/code/13_sinusoid_verify/", "r": "검증"}]
 permalink: "/studies/college-math/sinusoid/"
 ---
 {% raw %}

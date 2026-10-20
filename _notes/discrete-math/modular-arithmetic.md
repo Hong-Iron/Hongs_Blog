@@ -20,6 +20,7 @@ next_title: "최대공약수와 유클리드 호제법"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "26_modular-arithmetic_verify.py", "u": "/studies/discrete-math/code/26_modular-arithmetic_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/modular-arithmetic/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "교차 엔트로피와 KL 발산"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "37_entropy_impl.py", "u": "/studies/probability-statistics/code/37_entropy_impl/", "r": "구현"}, {"t": "37_entropy_plot.py", "u": "/studies/probability-statistics/code/37_entropy_plot/", "r": "그림 생성"}, {"t": "37_entropy_verify.py", "u": "/studies/probability-statistics/code/37_entropy_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/entropy/"
 ---
 {% raw %}

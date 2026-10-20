@@ -21,6 +21,7 @@ next_title: "MIPS 프로시저 호출"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "17_mips-branch-jump_verify.py", "u": "/studies/computer-architecture/code/17_mips-branch-jump_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/mips-branch-jump/"
 ---
 {% raw %}

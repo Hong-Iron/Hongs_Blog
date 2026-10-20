@@ -21,6 +21,7 @@ next_title: "컨벌루션 합"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "17_linearity_verify.py", "u": "/studies/signals-and-systems/code/17_linearity_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/linearity/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "연속 시간 복소 지수 신호"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "07_even-odd-signals_verify.py", "u": "/studies/signals-and-systems/code/07_even-odd-signals_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/even-odd-signals/"
 ---
 {% raw %}

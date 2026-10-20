@@ -21,6 +21,7 @@ next_title: "논리 게이트와 조합 회로"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "04_amdahls-law_verify.py", "u": "/studies/computer-architecture/code/04_amdahls-law_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/amdahls-law/"
 ---
 {% raw %}

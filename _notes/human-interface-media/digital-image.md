@@ -20,6 +20,7 @@ next_title: "해상도와 공간 주파수"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "25_digital-image_verify.py", "u": "/studies/human-interface-media/code/25_digital-image_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/digital-image/"
 ---
 {% raw %}

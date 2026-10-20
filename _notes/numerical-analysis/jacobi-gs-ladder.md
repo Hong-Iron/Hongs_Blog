@@ -20,6 +20,7 @@ next_title: "룽게-쿠타 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "20_jacobi-gs-ladder_p4.py", "u": "/studies/numerical-analysis/code/20_jacobi-gs-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/numerical-analysis/jacobi-gs-ladder/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "동적 메모리 할당"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_array-pointer_impl.c", "u": "/studies/data-structures/code/05_array-pointer_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/array-pointer/"
 ---
 {% raw %}

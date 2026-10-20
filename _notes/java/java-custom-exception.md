@@ -21,6 +21,7 @@ next_title: "제네릭"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "37_java-custom-exception_impl.java", "u": "/studies/java/code/37_java-custom-exception_impl/", "r": "구현"}]
 permalink: "/studies/java/java-custom-exception/"
 ---
 {% raw %}

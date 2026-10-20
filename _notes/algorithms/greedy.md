@@ -21,6 +21,7 @@ next_title: "그래프 표현"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "22_greedy_plot.py", "u": "/studies/algorithms/code/22_greedy_plot/", "r": "그림 생성"}, {"t": "22_greedy_verify.py", "u": "/studies/algorithms/code/22_greedy_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/greedy/"
 ---
 {% raw %}

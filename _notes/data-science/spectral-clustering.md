@@ -21,6 +21,7 @@ next_title: "추천 시스템"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "38_spectral-clustering_impl.py", "u": "/studies/data-science/code/38_spectral-clustering_impl/", "r": "구현"}, {"t": "38_spectral-clustering_plot.py", "u": "/studies/data-science/code/38_spectral-clustering_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/spectral-clustering/"
 ---
 {% raw %}

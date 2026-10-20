@@ -21,6 +21,7 @@ next_title: "sqlx로 데이터베이스 쓰기"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "45_axum-http_impl.rs", "u": "/studies/rust/code/45_axum-http_impl/", "r": "구현"}]
 permalink: "/studies/rust/axum-http/"
 ---
 {% raw %}

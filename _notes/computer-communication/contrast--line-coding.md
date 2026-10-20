@@ -21,6 +21,7 @@ next_title: "바이트 중심 프레이밍"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "43_contrast--line-coding_plot.py", "u": "/studies/computer-communication/code/43_contrast--line-coding_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/contrast--line-coding/"
 ---
 {% raw %}

@@ -19,6 +19,7 @@ prev_title: "API 설계 원칙"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "50_build-deploy_verify.rs", "u": "/studies/rust/code/50_build-deploy_verify/", "r": "검증"}]
 permalink: "/studies/rust/build-deploy/"
 ---
 {% raw %}

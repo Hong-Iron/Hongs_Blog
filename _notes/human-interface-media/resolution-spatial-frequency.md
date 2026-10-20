@@ -20,6 +20,7 @@ next_title: "2차원 함수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "26_resolution-spatial-frequency_plot.py", "u": "/studies/human-interface-media/code/26_resolution-spatial-frequency_plot/", "r": "그림 생성"}, {"t": "26_resolution-spatial-frequency_verify.py", "u": "/studies/human-interface-media/code/26_resolution-spatial-frequency_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/resolution-spatial-frequency/"
 ---
 {% raw %}

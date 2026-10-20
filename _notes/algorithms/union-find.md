@@ -21,6 +21,7 @@ next_title: "완전탐색"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "15_union-find_impl.py", "u": "/studies/algorithms/code/15_union-find_impl/", "r": "구현"}, {"t": "15_union-find_plot.py", "u": "/studies/algorithms/code/15_union-find_plot/", "r": "그림 생성"}]
 permalink: "/studies/algorithms/union-find/"
 ---
 {% raw %}

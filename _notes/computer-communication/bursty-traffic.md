@@ -21,6 +21,7 @@ next_title: "패킷 스위칭"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "07_bursty-traffic_verify.py", "u": "/studies/computer-communication/code/07_bursty-traffic_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/bursty-traffic/"
 ---
 {% raw %}

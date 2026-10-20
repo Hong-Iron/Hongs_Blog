@@ -20,6 +20,7 @@ next_title: "베르누이 시행과 이항분포"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_variance_verify.py", "u": "/studies/probability-statistics/code/09_variance_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/variance/"
 ---
 {% raw %}

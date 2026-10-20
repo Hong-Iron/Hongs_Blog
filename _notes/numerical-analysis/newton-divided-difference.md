@@ -21,6 +21,7 @@ next_title: "구면 선형 보간"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "22_newton-divided-difference_impl.py", "u": "/studies/numerical-analysis/code/22_newton-divided-difference_impl/", "r": "구현"}, {"t": "22_newton-divided-difference_plot.py", "u": "/studies/numerical-analysis/code/22_newton-divided-difference_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/newton-divided-difference/"
 ---
 {% raw %}

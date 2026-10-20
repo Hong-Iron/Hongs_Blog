@@ -21,6 +21,7 @@ next_title: "외부 조인"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "65_natural-join_verify.py", "u": "/studies/database-design/code/65_natural-join_verify/", "r": "검증"}, {"t": "65_natural-join_verify.sql", "u": "/studies/database-design/code/65_natural-join_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/natural-join/"
 ---
 {% raw %}

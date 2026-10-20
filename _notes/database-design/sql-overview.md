@@ -21,6 +21,7 @@ next_title: "CREATE SCHEMA와 CREATE TABLE"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "45_sql-overview_verify.py", "u": "/studies/database-design/code/45_sql-overview_verify/", "r": "검증"}]
 permalink: "/studies/database-design/sql-overview/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "ECLAT"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "13_apriori_impl.py", "u": "/studies/data-science/code/13_apriori_impl/", "r": "구현"}]
 permalink: "/studies/data-science/apriori/"
 ---
 {% raw %}

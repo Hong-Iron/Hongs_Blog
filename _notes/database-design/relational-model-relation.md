@@ -21,6 +21,7 @@ next_title: "릴레이션의 특성"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "32_relational-model-relation_verify.py", "u": "/studies/database-design/code/32_relational-model-relation_verify/", "r": "검증"}, {"t": "32_relational-model-relation_verify.sql", "u": "/studies/database-design/code/32_relational-model-relation_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/relational-model-relation/"
 ---
 {% raw %}

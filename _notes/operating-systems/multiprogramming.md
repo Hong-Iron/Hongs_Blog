@@ -21,6 +21,7 @@ next_title: "시분할"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "11_multiprogramming_plot.py", "u": "/studies/operating-systems/code/11_multiprogramming_plot/", "r": "그림 생성"}, {"t": "11_multiprogramming_verify.py", "u": "/studies/operating-systems/code/11_multiprogramming_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/multiprogramming/"
 ---
 {% raw %}

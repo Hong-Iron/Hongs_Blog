@@ -20,6 +20,7 @@ next_title: "대칭행렬과 스펙트럼 정리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "21_recurrence-matrix-bridge_plot.py", "u": "/studies/linear-algebra/code/21_recurrence-matrix-bridge_plot/", "r": "그림 생성"}, {"t": "21_recurrence-matrix-bridge_verify.py", "u": "/studies/linear-algebra/code/21_recurrence-matrix-bridge_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/recurrence-matrix-bridge/"
 ---
 {% raw %}

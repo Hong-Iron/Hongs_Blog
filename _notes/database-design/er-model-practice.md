@@ -20,6 +20,7 @@ next_title: "외래 키 찾기 연습"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "31_er-model-practice_p3.py", "u": "/studies/database-design/code/31_er-model-practice_p3/", "r": "문제 3 풀이"}, {"t": "31_er-model-practice_p4.py", "u": "/studies/database-design/code/31_er-model-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/database-design/er-model-practice/"
 ---
 {% raw %}

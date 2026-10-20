@@ -21,6 +21,7 @@ next_title: "제한된 타입 파라미터와 와일드카드"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "38_java-generics_impl.java", "u": "/studies/java/code/38_java-generics_impl/", "r": "구현"}]
 permalink: "/studies/java/java-generics/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "편집 거리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "10_string-similarity_verify.py", "u": "/studies/data-and-information/code/10_string-similarity_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/string-similarity/"
 ---
 {% raw %}

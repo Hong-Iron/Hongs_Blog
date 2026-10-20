@@ -21,6 +21,7 @@ next_title: "데이터 통합"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_data-cleaning_verify.py", "u": "/studies/data-science/code/05_data-cleaning_verify/", "r": "검증"}]
 permalink: "/studies/data-science/data-cleaning/"
 ---
 {% raw %}

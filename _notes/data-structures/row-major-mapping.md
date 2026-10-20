@@ -21,6 +21,7 @@ next_title: "특수 행렬을 1차원 배열에 담기"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_row-major-mapping_impl.c", "u": "/studies/data-structures/code/09_row-major-mapping_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/row-major-mapping/"
 ---
 {% raw %}

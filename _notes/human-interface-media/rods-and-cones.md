@@ -20,6 +20,7 @@ next_title: "삼색 이론"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_rods-and-cones_verify.py", "u": "/studies/human-interface-media/code/15_rods-and-cones_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/rods-and-cones/"
 ---
 {% raw %}

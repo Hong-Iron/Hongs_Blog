@@ -21,6 +21,7 @@ next_title: "패자 트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "34_winner-tree_impl.c", "u": "/studies/data-structures/code/34_winner-tree_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/winner-tree/"
 ---
 {% raw %}

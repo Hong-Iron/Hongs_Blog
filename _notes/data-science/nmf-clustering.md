@@ -21,6 +21,7 @@ next_title: "PCA와 NMF 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "35_nmf-clustering_impl.py", "u": "/studies/data-science/code/35_nmf-clustering_impl/", "r": "구현"}, {"t": "35_nmf-clustering_plot.py", "u": "/studies/data-science/code/35_nmf-clustering_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/nmf-clustering/"
 ---
 {% raw %}

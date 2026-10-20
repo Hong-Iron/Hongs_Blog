@@ -20,6 +20,7 @@ next_title: "PageRank"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "24_walks-markov-bridge_verify.py", "u": "/studies/probability-statistics/code/24_walks-markov-bridge_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/walks-markov-bridge/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "헤세 행렬과 극값 판정"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "22_backprop-bridge_impl.py", "u": "/studies/calculus/code/22_backprop-bridge_impl/", "r": "구현"}, {"t": "22_backprop-bridge_verify.py", "u": "/studies/calculus/code/22_backprop-bridge_verify/", "r": "검증"}]
 permalink: "/studies/calculus/backprop-bridge/"
 ---
 {% raw %}

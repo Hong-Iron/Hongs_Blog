@@ -21,6 +21,7 @@ next_title: "구현과 시뮬레이션"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "07_time-conversion_verify.py", "u": "/studies/algorithms/code/07_time-conversion_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/time-conversion/"
 ---
 {% raw %}

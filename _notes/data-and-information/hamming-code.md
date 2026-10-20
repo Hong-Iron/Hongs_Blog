@@ -21,6 +21,7 @@ next_title: "거리와 유사도"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "07_hamming-code_impl.py", "u": "/studies/data-and-information/code/07_hamming-code_impl/", "r": "구현"}]
 permalink: "/studies/data-and-information/hamming-code/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "합의 계산과 어림"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "22_generating-functions_plot.py", "u": "/studies/discrete-math/code/22_generating-functions_plot/", "r": "그림 생성"}, {"t": "22_generating-functions_verify.py", "u": "/studies/discrete-math/code/22_generating-functions_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/generating-functions/"
 ---
 {% raw %}

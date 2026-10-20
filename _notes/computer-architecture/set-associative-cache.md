@@ -21,6 +21,7 @@ next_title: "직접 사상과 집합 연관 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "37_set-associative-cache_impl.py", "u": "/studies/computer-architecture/code/37_set-associative-cache_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/set-associative-cache/"
 ---
 {% raw %}

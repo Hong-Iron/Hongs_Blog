@@ -20,6 +20,7 @@ next_title: "정적분과 리만 합"
 math: true
 mermaid: false
 code_count: 3
+code_files: [{"t": "10_linear-approx-newton_impl.py", "u": "/studies/calculus/code/10_linear-approx-newton_impl/", "r": "구현"}, {"t": "10_linear-approx-newton_plot.py", "u": "/studies/calculus/code/10_linear-approx-newton_plot/", "r": "그림 생성"}, {"t": "10_linear-approx-newton_verify.py", "u": "/studies/calculus/code/10_linear-approx-newton_verify/", "r": "검증"}]
 permalink: "/studies/calculus/linear-approx-newton/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "Mutex와 RwLock"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_threads-send-sync_verify.rs", "u": "/studies/rust/code/31_threads-send-sync_verify/", "r": "검증"}]
 permalink: "/studies/rust/threads-send-sync/"
 ---
 {% raw %}

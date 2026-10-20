@@ -20,6 +20,7 @@ next_title: "사인파"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "12_trig-functions_plot.py", "u": "/studies/college-math/code/12_trig-functions_plot/", "r": "그림 생성"}, {"t": "12_trig-functions_verify.py", "u": "/studies/college-math/code/12_trig-functions_verify/", "r": "검증"}]
 permalink: "/studies/college-math/trig-functions/"
 ---
 {% raw %}

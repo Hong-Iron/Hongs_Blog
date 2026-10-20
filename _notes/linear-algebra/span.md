@@ -20,6 +20,7 @@ next_title: "행렬과 행렬-벡터 곱"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "03_span_plot.py", "u": "/studies/linear-algebra/code/03_span_plot/", "r": "그림 생성"}, {"t": "03_span_verify.py", "u": "/studies/linear-algebra/code/03_span_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/span/"
 ---
 {% raw %}

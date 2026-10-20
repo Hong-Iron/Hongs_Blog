@@ -21,6 +21,7 @@ next_title: "Box와 힙"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "26_panic-policy_verify.rs", "u": "/studies/rust/code/26_panic-policy_verify/", "r": "검증"}]
 permalink: "/studies/rust/panic-policy/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "문자열 파싱과 정규 표현식"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "05_sorting_impl.py", "u": "/studies/algorithms/code/05_sorting_impl/", "r": "구현"}, {"t": "05_sorting_plot.py", "u": "/studies/algorithms/code/05_sorting_plot/", "r": "그림 생성"}]
 permalink: "/studies/algorithms/sorting/"
 ---
 {% raw %}

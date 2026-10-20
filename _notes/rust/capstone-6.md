@@ -18,6 +18,7 @@ prev_title: "배포 준비 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "50_capstone-6_p1.rs", "u": "/studies/rust/code/50_capstone-6_p1/", "r": "문제 1 풀이"}]
 permalink: "/studies/rust/capstone-6/"
 ---
 {% raw %}

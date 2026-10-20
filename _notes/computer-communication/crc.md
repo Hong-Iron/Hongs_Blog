@@ -21,6 +21,7 @@ next_title: "오류 검출 방식 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "50_crc_impl.py", "u": "/studies/computer-communication/code/50_crc_impl/", "r": "구현"}, {"t": "50_crc_plot.py", "u": "/studies/computer-communication/code/50_crc_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/crc/"
 ---
 {% raw %}

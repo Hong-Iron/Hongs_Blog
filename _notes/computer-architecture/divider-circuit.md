@@ -21,6 +21,7 @@ next_title: "부동소수점 연산"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "21_divider-circuit_impl.py", "u": "/studies/computer-architecture/code/21_divider-circuit_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/divider-circuit/"
 ---
 {% raw %}

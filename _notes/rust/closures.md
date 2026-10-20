@@ -21,6 +21,7 @@ next_title: "반복자"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "20_closures_verify.rs", "u": "/studies/rust/code/20_closures_verify/", "r": "검증"}]
 permalink: "/studies/rust/closures/"
 ---
 {% raw %}

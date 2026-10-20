@@ -20,6 +20,7 @@ next_title: "기저 변환"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_rotation-bridge_verify.py", "u": "/studies/linear-algebra/code/13_rotation-bridge_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/rotation-bridge/"
 ---
 {% raw %}

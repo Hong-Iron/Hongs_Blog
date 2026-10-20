@@ -21,6 +21,7 @@ next_title: "파이프라인 레지스터와 제어"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "27_mips-pipeline_impl.py", "u": "/studies/computer-architecture/code/27_mips-pipeline_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/mips-pipeline/"
 ---
 {% raw %}

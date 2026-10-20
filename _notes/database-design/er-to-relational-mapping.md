@@ -21,6 +21,7 @@ next_title: "SQL 한눈에 보기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "44_er-to-relational-mapping_verify.py", "u": "/studies/database-design/code/44_er-to-relational-mapping_verify/", "r": "검증"}]
 permalink: "/studies/database-design/er-to-relational-mapping/"
 ---
 {% raw %}

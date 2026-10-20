@@ -21,6 +21,7 @@ next_title: "INT 21h 파일·디스크 함수"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "51_int21h-io-functions_verify.py", "u": "/studies/assembly-language/code/51_int21h-io-functions_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/int21h-io-functions/"
 ---
 {% raw %}

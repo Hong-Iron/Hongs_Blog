@@ -20,6 +20,7 @@ next_title: "기본 검색 연습"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "53_library-ddl-practice_p2.py", "u": "/studies/database-design/code/53_library-ddl-practice_p2/", "r": "문제 2 풀이"}, {"t": "53_library-ddl-practice_p2.sql", "u": "/studies/database-design/code/53_library-ddl-practice_p2-sql/", "r": "문제 2 풀이"}]
 permalink: "/studies/database-design/library-ddl-practice/"
 ---
 {% raw %}

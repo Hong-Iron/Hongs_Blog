@@ -21,6 +21,7 @@ next_title: "토큰과 렉심"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "02_compilation-vs-interpretation_verify.py", "u": "/studies/compilers/code/02_compilation-vs-interpretation_verify/", "r": "검증"}]
 permalink: "/studies/compilers/compilation-vs-interpretation/"
 ---
 {% raw %}

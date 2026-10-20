@@ -21,6 +21,7 @@ next_title: "인터페이스"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "22_java-overriding_impl.java", "u": "/studies/java/code/22_java-overriding_impl/", "r": "구현"}]
 permalink: "/studies/java/java-overriding/"
 ---
 {% raw %}

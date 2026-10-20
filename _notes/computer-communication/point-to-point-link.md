@@ -19,6 +19,7 @@ next_title: "다중 접근 링크"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "01_point-to-point-link_plot.py", "u": "/studies/computer-communication/code/01_point-to-point-link_plot/", "r": "그림 생성"}, {"t": "01_point-to-point-link_verify.py", "u": "/studies/computer-communication/code/01_point-to-point-link_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/point-to-point-link/"
 ---
 {% raw %}

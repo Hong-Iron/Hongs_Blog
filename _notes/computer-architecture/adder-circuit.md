@@ -21,6 +21,7 @@ next_title: "ALU"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "07_adder-circuit_verify.py", "u": "/studies/computer-architecture/code/07_adder-circuit_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/adder-circuit/"
 ---
 {% raw %}

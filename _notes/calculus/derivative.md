@@ -20,6 +20,7 @@ next_title: "미분 법칙"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "04_derivative_plot.py", "u": "/studies/calculus/code/04_derivative_plot/", "r": "그림 생성"}, {"t": "04_derivative_verify.py", "u": "/studies/calculus/code/04_derivative_verify/", "r": "검증"}]
 permalink: "/studies/calculus/derivative/"
 ---
 {% raw %}

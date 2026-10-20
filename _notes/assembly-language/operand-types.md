@@ -21,6 +21,7 @@ next_title: "데이터 전송 명령"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_operand-types_verify.py", "u": "/studies/assembly-language/code/15_operand-types_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/operand-types/"
 ---
 {% raw %}

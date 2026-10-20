@@ -21,6 +21,7 @@ next_title: "SLR 파싱 표"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "26_slr-parsing_impl.py", "u": "/studies/compilers/code/26_slr-parsing_impl/", "r": "구현"}]
 permalink: "/studies/compilers/slr-parsing/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "연립 상미분방정식"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "34_runge-kutta_impl.py", "u": "/studies/numerical-analysis/code/34_runge-kutta_impl/", "r": "구현"}, {"t": "34_runge-kutta_plot.py", "u": "/studies/numerical-analysis/code/34_runge-kutta_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/runge-kutta/"
 ---
 {% raw %}

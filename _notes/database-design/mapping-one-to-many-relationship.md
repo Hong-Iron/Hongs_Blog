@@ -21,6 +21,7 @@ next_title: "다대다·n항 관계 타입의 사상"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "42_mapping-one-to-many-relationship_verify.py", "u": "/studies/database-design/code/42_mapping-one-to-many-relationship_verify/", "r": "검증"}]
 permalink: "/studies/database-design/mapping-one-to-many-relationship/"
 ---
 {% raw %}

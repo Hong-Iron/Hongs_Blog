@@ -20,6 +20,7 @@ next_title: "눈의 구조"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "13_luminance-and-illuminance_plot.py", "u": "/studies/human-interface-media/code/13_luminance-and-illuminance_plot/", "r": "그림 생성"}, {"t": "13_luminance-and-illuminance_verify.py", "u": "/studies/human-interface-media/code/13_luminance-and-illuminance_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/luminance-and-illuminance/"
 ---
 {% raw %}

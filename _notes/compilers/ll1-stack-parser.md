@@ -21,6 +21,7 @@ next_title: "이동-환원 파싱"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "21_ll1-stack-parser_impl.py", "u": "/studies/compilers/code/21_ll1-stack-parser_impl/", "r": "구현"}]
 permalink: "/studies/compilers/ll1-stack-parser/"
 ---
 {% raw %}

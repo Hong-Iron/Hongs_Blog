@@ -20,6 +20,7 @@ next_title: "푸리에 계수 계산 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_convolution-ladder_p4.py", "u": "/studies/signals-and-systems/code/19_convolution-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/signals-and-systems/convolution-ladder/"
 ---
 {% raw %}

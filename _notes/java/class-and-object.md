@@ -21,6 +21,7 @@ next_title: "객체 지향의 세 원칙"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "11_class-and-object_impl.java", "u": "/studies/java/code/11_class-and-object_impl/", "r": "구현"}]
 permalink: "/studies/java/class-and-object/"
 ---
 {% raw %}

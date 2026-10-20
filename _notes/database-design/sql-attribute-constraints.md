@@ -21,6 +21,7 @@ next_title: "PRIMARY KEY·UNIQUE·FOREIGN KEY 절"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "48_sql-attribute-constraints_verify.py", "u": "/studies/database-design/code/48_sql-attribute-constraints_verify/", "r": "검증"}, {"t": "48_sql-attribute-constraints_verify.sql", "u": "/studies/database-design/code/48_sql-attribute-constraints_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-attribute-constraints/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "레벨 순서 순회"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "23_binary-tree-representation_impl.c", "u": "/studies/data-structures/code/23_binary-tree-representation_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/binary-tree-representation/"
 ---
 {% raw %}

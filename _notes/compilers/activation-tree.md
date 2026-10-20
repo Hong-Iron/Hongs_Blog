@@ -21,6 +21,7 @@ next_title: "활성 레코드"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "48_activation-tree_verify.py", "u": "/studies/compilers/code/48_activation-tree_verify/", "r": "검증"}]
 permalink: "/studies/compilers/activation-tree/"
 ---
 {% raw %}

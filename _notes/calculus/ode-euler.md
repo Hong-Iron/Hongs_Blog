@@ -20,6 +20,7 @@ next_title: "푸리에 급수"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "29_ode-euler_plot.py", "u": "/studies/calculus/code/29_ode-euler_plot/", "r": "그림 생성"}, {"t": "29_ode-euler_verify.py", "u": "/studies/calculus/code/29_ode-euler_verify/", "r": "검증"}]
 permalink: "/studies/calculus/ode-euler/"
 ---
 {% raw %}

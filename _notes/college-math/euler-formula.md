@@ -20,6 +20,7 @@ next_title: "수열과 합의 기호"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "19_euler-formula_plot.py", "u": "/studies/college-math/code/19_euler-formula_plot/", "r": "그림 생성"}, {"t": "19_euler-formula_verify.py", "u": "/studies/college-math/code/19_euler-formula_verify/", "r": "검증"}]
 permalink: "/studies/college-math/euler-formula/"
 ---
 {% raw %}

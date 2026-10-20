@@ -21,6 +21,7 @@ next_title: "속성 제약 NOT NULL·DEFAULT·CHECK"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "47_sql-data-types_verify.py", "u": "/studies/database-design/code/47_sql-data-types_verify/", "r": "검증"}, {"t": "47_sql-data-types_verify.sql", "u": "/studies/database-design/code/47_sql-data-types_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-data-types/"
 ---
 {% raw %}

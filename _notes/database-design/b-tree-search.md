@@ -21,6 +21,7 @@ next_title: "B-트리 노드 쪼개기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "13_b-tree-search_impl.py", "u": "/studies/database-design/code/13_b-tree-search_impl/", "r": "구현"}]
 permalink: "/studies/database-design/b-tree-search/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "동차 좌표"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "03_transformation-classes_plot.py", "u": "/studies/numerical-analysis/code/03_transformation-classes_plot/", "r": "그림 생성"}, {"t": "03_transformation-classes_verify.py", "u": "/studies/numerical-analysis/code/03_transformation-classes_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/transformation-classes/"
 ---
 {% raw %}

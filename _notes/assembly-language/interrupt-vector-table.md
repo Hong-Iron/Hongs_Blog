@@ -21,6 +21,7 @@ next_title: "INT 21h 입출력 함수"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "50_interrupt-vector-table_verify.py", "u": "/studies/assembly-language/code/50_interrupt-vector-table_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/interrupt-vector-table/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "TLB"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "39_page-table_verify.py", "u": "/studies/operating-systems/code/39_page-table_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/page-table-structure/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "코드 생성용 MIPS 명령어"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "50_runtime-memory-layout_verify.py", "u": "/studies/compilers/code/50_runtime-memory-layout_verify/", "r": "검증"}]
 permalink: "/studies/compilers/runtime-memory-layout/"
 ---
 {% raw %}

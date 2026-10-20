@@ -21,6 +21,7 @@ next_title: "색인 이진 탐색 트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "32_bst-delete_impl.c", "u": "/studies/data-structures/code/32_bst-delete_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/bst-delete/"
 ---
 {% raw %}

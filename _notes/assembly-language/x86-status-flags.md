@@ -21,6 +21,7 @@ next_title: "올림 플래그와 넘침 플래그 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "19_x86-status-flags_verify.py", "u": "/studies/assembly-language/code/19_x86-status-flags_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/x86-status-flags/"
 ---
 {% raw %}

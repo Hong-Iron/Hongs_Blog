@@ -21,6 +21,7 @@ next_title: "버디 시스템"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "34_partitioning_verify.py", "u": "/studies/operating-systems/code/34_partitioning_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/memory-partitioning/"
 ---
 {% raw %}

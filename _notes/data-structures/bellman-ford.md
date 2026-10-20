@@ -21,6 +21,7 @@ next_title: "플로이드 알고리즘의 경로 출력"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "38_bellman-ford_verify.py", "u": "/studies/data-structures/code/38_bellman-ford_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/bellman-ford/"
 ---
 {% raw %}

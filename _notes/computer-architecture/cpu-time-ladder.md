@@ -18,6 +18,7 @@ next_title: "명령어 인코딩 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_cpu-time-ladder_p4.py", "u": "/studies/computer-architecture/code/03_cpu-time-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/computer-architecture/cpu-time-ladder/"
 ---
 {% raw %}

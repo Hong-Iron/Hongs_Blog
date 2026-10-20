@@ -21,6 +21,7 @@ next_title: "갱신 연산과 제약 위반"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "51_sql-insert-delete-update_verify.py", "u": "/studies/database-design/code/51_sql-insert-delete-update_verify/", "r": "검증"}]
 permalink: "/studies/database-design/sql-insert-delete-update/"
 ---
 {% raw %}

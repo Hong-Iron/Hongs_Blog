@@ -21,6 +21,7 @@ next_title: "질의 수정과 뷰 실체화"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "75_sql-view_verify.py", "u": "/studies/database-design/code/75_sql-view_verify/", "r": "검증"}, {"t": "75_sql-view_verify.sql", "u": "/studies/database-design/code/75_sql-view_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-view/"
 ---
 {% raw %}

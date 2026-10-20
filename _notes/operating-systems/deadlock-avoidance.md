@@ -21,6 +21,7 @@ next_title: "교착상태 탐지와 복구"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "30_bankers-algorithm_impl.py", "u": "/studies/operating-systems/code/30_bankers-algorithm_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/deadlock-avoidance/"
 ---
 {% raw %}

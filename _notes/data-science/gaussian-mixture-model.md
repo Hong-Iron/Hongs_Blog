@@ -21,6 +21,7 @@ next_title: "EM 알고리즘"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "29_gaussian-mixture-model_plot.py", "u": "/studies/data-science/code/29_gaussian-mixture-model_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/gaussian-mixture-model/"
 ---
 {% raw %}

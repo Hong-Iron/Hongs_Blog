@@ -20,6 +20,7 @@ next_title: "삼각함수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "11_radian_plot.py", "u": "/studies/college-math/code/11_radian_plot/", "r": "그림 생성"}, {"t": "11_radian_verify.py", "u": "/studies/college-math/code/11_radian_verify/", "r": "검증"}]
 permalink: "/studies/college-math/radian/"
 ---
 {% raw %}

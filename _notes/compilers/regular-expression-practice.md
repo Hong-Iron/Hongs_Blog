@@ -18,6 +18,7 @@ next_title: "부분집합 구성법 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_regular-expression-practice_p6.py", "u": "/studies/compilers/code/05_regular-expression-practice_p6/", "r": "문제 6 풀이"}]
 permalink: "/studies/compilers/regular-expression-practice/"
 ---
 {% raw %}

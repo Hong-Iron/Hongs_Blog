@@ -19,6 +19,7 @@ next_title: "성능과 실행 시간"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "01_computer-abstraction-layers_verify.py", "u": "/studies/computer-architecture/code/01_computer-abstraction-layers_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/computer-abstraction-layers/"
 ---
 {% raw %}

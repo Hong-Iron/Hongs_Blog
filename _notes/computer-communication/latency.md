@@ -21,6 +21,7 @@ next_title: "소요시간 분석"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "25_latency_plot.py", "u": "/studies/computer-communication/code/25_latency_plot/", "r": "그림 생성"}, {"t": "25_latency_verify.py", "u": "/studies/computer-communication/code/25_latency_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/latency/"
 ---
 {% raw %}

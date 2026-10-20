@@ -21,6 +21,7 @@ next_title: "지시어와 명령어 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "08_asm-statement-elements_verify.py", "u": "/studies/assembly-language/code/08_asm-statement-elements_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/asm-statement-elements/"
 ---
 {% raw %}

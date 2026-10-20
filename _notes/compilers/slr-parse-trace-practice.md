@@ -20,6 +20,7 @@ next_title: "타입 검사 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "28_slr-parse-trace-practice_p4.py", "u": "/studies/compilers/code/28_slr-parse-trace-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/slr-parse-trace-practice/"
 ---
 {% raw %}

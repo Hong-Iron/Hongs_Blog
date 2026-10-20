@@ -20,6 +20,7 @@ next_title: "RSA 암호"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "30_fermat-euler_plot.py", "u": "/studies/discrete-math/code/30_fermat-euler_plot/", "r": "그림 생성"}, {"t": "30_fermat-euler_verify.py", "u": "/studies/discrete-math/code/30_fermat-euler_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/fermat-euler/"
 ---
 {% raw %}

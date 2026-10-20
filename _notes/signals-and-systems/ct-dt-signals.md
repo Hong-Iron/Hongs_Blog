@@ -21,6 +21,7 @@ next_title: "신호의 에너지와 전력"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_ct-dt-signals_plot.py", "u": "/studies/signals-and-systems/code/03_ct-dt-signals_plot/", "r": "그림 생성"}]
 permalink: "/studies/signals-and-systems/ct-dt-signals/"
 ---
 {% raw %}

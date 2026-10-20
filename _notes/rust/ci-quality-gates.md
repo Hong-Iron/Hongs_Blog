@@ -21,6 +21,7 @@ next_title: "API 설계 원칙"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "48_ci-quality-gates_verify.rs", "u": "/studies/rust/code/48_ci-quality-gates_verify/", "r": "검증"}]
 permalink: "/studies/rust/ci-quality-gates/"
 ---
 {% raw %}

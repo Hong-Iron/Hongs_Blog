@@ -21,6 +21,7 @@ next_title: "스택 프레임"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "40_double-shift_verify.py", "u": "/studies/assembly-language/code/40_double-shift_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/double-shift/"
 ---
 {% raw %}

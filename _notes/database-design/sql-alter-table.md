@@ -21,6 +21,7 @@ next_title: "중첩 질의와 IN"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "59_sql-alter-table_verify.py", "u": "/studies/database-design/code/59_sql-alter-table_verify/", "r": "검증"}, {"t": "59_sql-alter-table_verify.sql", "u": "/studies/database-design/code/59_sql-alter-table_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-alter-table/"
 ---
 {% raw %}

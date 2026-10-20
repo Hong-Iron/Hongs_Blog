@@ -20,6 +20,7 @@ next_title: "정신장애와 DSM"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "003_statistical-deviation--normal-distribution_plot.py", "u": "/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_plot/", "r": "그림 생성"}, {"t": "003_statistical-deviation--normal-distribution_verify.py", "u": "/studies/abnormal-psychology/code/003_statistical-deviation--normal-distribution_verify/", "r": "검증"}]
 permalink: "/studies/abnormal-psychology/statistical-deviation--normal-distribution/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "전역 분석 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "43_local-optimization-ladder_p4.py", "u": "/studies/compilers/code/43_local-optimization-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/local-optimization-ladder/"
 ---
 {% raw %}

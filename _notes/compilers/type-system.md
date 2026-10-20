@@ -21,6 +21,7 @@ next_title: "정적 타입과 동적 타입 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "33_type-system_verify.py", "u": "/studies/compilers/code/33_type-system_verify/", "r": "검증"}]
 permalink: "/studies/compilers/type-system/"
 ---
 {% raw %}

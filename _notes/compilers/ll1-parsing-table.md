@@ -21,6 +21,7 @@ next_title: "LL(1) 파서의 스택 동작"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "20_ll1-parsing-table_impl.py", "u": "/studies/compilers/code/20_ll1-parsing-table_impl/", "r": "구현"}]
 permalink: "/studies/compilers/ll1-parsing-table/"
 ---
 {% raw %}

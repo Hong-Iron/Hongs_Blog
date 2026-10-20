@@ -21,6 +21,7 @@ next_title: "문맥 자유 문법"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_longest-match-tokenizing_impl.py", "u": "/studies/compilers/code/10_longest-match-tokenizing_impl/", "r": "구현"}]
 permalink: "/studies/compilers/longest-match-tokenizing/"
 ---
 {% raw %}

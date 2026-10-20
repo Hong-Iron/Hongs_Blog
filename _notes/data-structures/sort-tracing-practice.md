@@ -20,6 +20,7 @@ next_title: "외부 정렬 시간 계산 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "43_sort-tracing-practice_p5.py", "u": "/studies/data-structures/code/43_sort-tracing-practice_p5/", "r": "문제 5 풀이"}]
 permalink: "/studies/data-structures/sort-tracing-practice/"
 ---
 {% raw %}

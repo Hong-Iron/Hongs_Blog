@@ -21,6 +21,7 @@ next_title: "재귀 프로시저"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "46_invoke-proc-proto_verify.py", "u": "/studies/assembly-language/code/46_invoke-proc-proto_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/invoke-proc-proto/"
 ---
 {% raw %}

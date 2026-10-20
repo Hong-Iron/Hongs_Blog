@@ -20,6 +20,7 @@ next_title: "최소제곱법"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "16_orthogonal-projection_plot.py", "u": "/studies/linear-algebra/code/16_orthogonal-projection_plot/", "r": "그림 생성"}, {"t": "16_orthogonal-projection_verify.py", "u": "/studies/linear-algebra/code/16_orthogonal-projection_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/orthogonal-projection/"
 ---
 {% raw %}

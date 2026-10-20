@@ -20,6 +20,7 @@ next_title: "LU·QR·고윳값·SVD 비교"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "27_dft_impl.py", "u": "/studies/linear-algebra/code/27_dft_impl/", "r": "구현"}, {"t": "27_dft_plot.py", "u": "/studies/linear-algebra/code/27_dft_plot/", "r": "그림 생성"}, {"t": "27_dft_verify.py", "u": "/studies/linear-algebra/code/27_dft_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/dft/"
 ---
 {% raw %}

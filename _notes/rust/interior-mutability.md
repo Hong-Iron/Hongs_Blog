@@ -21,6 +21,7 @@ next_title: "unsafe와 안전한 감싸기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "29_interior-mutability_verify.rs", "u": "/studies/rust/code/29_interior-mutability_verify/", "r": "검증"}]
 permalink: "/studies/rust/interior-mutability/"
 ---
 {% raw %}

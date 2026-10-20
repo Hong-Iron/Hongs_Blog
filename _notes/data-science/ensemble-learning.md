@@ -21,6 +21,7 @@ next_title: "배깅과 랜덤 포레스트"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "20_ensemble-learning_plot.py", "u": "/studies/data-science/code/20_ensemble-learning_plot/", "r": "그림 생성"}, {"t": "20_ensemble-learning_verify.py", "u": "/studies/data-science/code/20_ensemble-learning_verify/", "r": "검증"}]
 permalink: "/studies/data-science/ensemble-learning/"
 ---
 {% raw %}

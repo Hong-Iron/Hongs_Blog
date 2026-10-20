@@ -21,6 +21,7 @@ next_title: "솔린 알고리즘"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "36_linked-adjacency-list_impl.c", "u": "/studies/data-structures/code/36_linked-adjacency-list_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/linked-adjacency-list/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "CRC 예제 사다리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "43_line-coding-ladder_p4.py", "u": "/studies/computer-communication/code/43_line-coding-ladder_p4/", "r": "문제 4 풀이"}, {"t": "43_line-coding-ladder_plot.py", "u": "/studies/computer-communication/code/43_line-coding-ladder_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/line-coding-ladder/"
 ---
 {% raw %}

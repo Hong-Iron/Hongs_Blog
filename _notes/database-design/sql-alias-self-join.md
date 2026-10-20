@@ -21,6 +21,7 @@ next_title: "다중집합인 표와 DISTINCT"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "55_sql-alias-self-join_verify.py", "u": "/studies/database-design/code/55_sql-alias-self-join_verify/", "r": "검증"}]
 permalink: "/studies/database-design/sql-alias-self-join/"
 ---
 {% raw %}

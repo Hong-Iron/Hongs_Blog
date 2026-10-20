@@ -21,6 +21,7 @@ next_title: "사용 가능한 식과 생존 변수 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "45_global-available-expressions_impl.py", "u": "/studies/compilers/code/45_global-available-expressions_impl/", "r": "구현"}]
 permalink: "/studies/compilers/global-available-expressions/"
 ---
 {% raw %}

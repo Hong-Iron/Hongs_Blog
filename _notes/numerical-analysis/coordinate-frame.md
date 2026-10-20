@@ -21,6 +21,7 @@ next_title: "반사와 반전"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "06_coordinate-frame_verify.py", "u": "/studies/numerical-analysis/code/06_coordinate-frame_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/coordinate-frame/"
 ---
 {% raw %}

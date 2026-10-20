@@ -21,6 +21,7 @@ next_title: "투 포인터와 슬라이딩 윈도"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "17_recursion-backtracking_verify.py", "u": "/studies/algorithms/code/17_recursion-backtracking_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/recursion-backtracking/"
 ---
 {% raw %}

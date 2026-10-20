@@ -21,6 +21,7 @@ next_title: "해시 테이블의 홈 버킷과 충돌"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "46_k-way-merge_verify.py", "u": "/studies/data-structures/code/46_k-way-merge_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/k-way-merge/"
 ---
 {% raw %}

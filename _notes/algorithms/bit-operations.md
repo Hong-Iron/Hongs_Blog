@@ -21,6 +21,7 @@ next_title: "스택"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_bit-operations_verify.py", "u": "/studies/algorithms/code/09_bit-operations_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/bit-operations/"
 ---
 {% raw %}

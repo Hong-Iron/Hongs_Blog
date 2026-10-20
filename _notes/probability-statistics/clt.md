@@ -20,6 +20,7 @@ next_title: "마르코프 연쇄"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "22_clt_plot.py", "u": "/studies/probability-statistics/code/22_clt_plot/", "r": "그림 생성"}, {"t": "22_clt_verify.py", "u": "/studies/probability-statistics/code/22_clt_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/clt/"
 ---
 {% raw %}

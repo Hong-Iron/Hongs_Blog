@@ -20,6 +20,7 @@ next_title: "집합"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "05_boolean-algebra_verify.py", "u": "/studies/discrete-math/code/05_boolean-algebra_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/boolean-algebra/"
 ---
 {% raw %}

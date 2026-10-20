@@ -21,6 +21,7 @@ next_title: "약한 개체 타입"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "26_relationship-attributes_verify.py", "u": "/studies/database-design/code/26_relationship-attributes_verify/", "r": "검증"}]
 permalink: "/studies/database-design/relationship-attributes/"
 ---
 {% raw %}

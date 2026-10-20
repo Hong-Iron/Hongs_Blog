@@ -21,6 +21,7 @@ next_title: "희소 행렬의 3원소 표현"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_triangular-matrix-mapping_impl.c", "u": "/studies/data-structures/code/10_triangular-matrix-mapping_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/triangular-matrix-mapping/"
 ---
 {% raw %}

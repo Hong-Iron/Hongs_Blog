@@ -21,6 +21,7 @@ next_title: "너비 우선 탐색(BFS)"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "23_graph-representation_verify.py", "u": "/studies/algorithms/code/23_graph-representation_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/graph-representation/"
 ---
 {% raw %}

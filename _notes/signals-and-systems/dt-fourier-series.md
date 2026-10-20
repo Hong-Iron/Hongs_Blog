@@ -21,6 +21,7 @@ next_title: "이산 시간 푸리에 급수의 성질"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "33_dt-fourier-series_plot.py", "u": "/studies/signals-and-systems/code/33_dt-fourier-series_plot/", "r": "그림 생성"}, {"t": "33_dt-fourier-series_verify.py", "u": "/studies/signals-and-systems/code/33_dt-fourier-series_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/dt-fourier-series/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "NULL 값과 IS NULL"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "62_sql-exists_verify.py", "u": "/studies/database-design/code/62_sql-exists_verify/", "r": "검증"}, {"t": "62_sql-exists_verify.sql", "u": "/studies/database-design/code/62_sql-exists_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-exists/"
 ---
 {% raw %}

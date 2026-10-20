@@ -20,6 +20,7 @@ next_title: "직교성과 직교 사영"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "15_determinant_plot.py", "u": "/studies/linear-algebra/code/15_determinant_plot/", "r": "그림 생성"}, {"t": "15_determinant_verify.py", "u": "/studies/linear-algebra/code/15_determinant_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/determinant/"
 ---
 {% raw %}

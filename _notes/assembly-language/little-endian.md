@@ -21,6 +21,7 @@ next_title: "기호 상수와 위치 카운터"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_little-endian_verify.py", "u": "/studies/assembly-language/code/13_little-endian_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/little-endian/"
 ---
 {% raw %}

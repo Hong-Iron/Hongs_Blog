@@ -21,6 +21,7 @@ next_title: "비트 채우기"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "44_byte-framing_plot.py", "u": "/studies/computer-communication/code/44_byte-framing_plot/", "r": "그림 생성"}, {"t": "44_framing_impl.py", "u": "/studies/computer-communication/code/44_framing_impl/", "r": "구현"}]
 permalink: "/studies/computer-communication/byte-framing/"
 ---
 {% raw %}

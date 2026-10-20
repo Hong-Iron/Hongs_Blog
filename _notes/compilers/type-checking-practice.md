@@ -20,6 +20,7 @@ next_title: "3주소 코드 변환 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "36_type-checking-practice_p4.py", "u": "/studies/compilers/code/36_type-checking-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/compilers/type-checking-practice/"
 ---
 {% raw %}

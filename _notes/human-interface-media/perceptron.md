@@ -20,6 +20,7 @@ next_title: "뉴런의 수렴"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "08_perceptron_impl.py", "u": "/studies/human-interface-media/code/08_perceptron_impl/", "r": "구현"}, {"t": "08_perceptron_plot.py", "u": "/studies/human-interface-media/code/08_perceptron_plot/", "r": "그림 생성"}]
 permalink: "/studies/human-interface-media/perceptron/"
 ---
 {% raw %}

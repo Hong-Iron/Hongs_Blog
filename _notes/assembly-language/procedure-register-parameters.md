@@ -21,6 +21,7 @@ next_title: "Irvine32 라이브러리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "27_procedure-register-parameters_verify.py", "u": "/studies/assembly-language/code/27_procedure-register-parameters_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/procedure-register-parameters/"
 ---
 {% raw %}

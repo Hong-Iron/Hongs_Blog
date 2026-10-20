@@ -21,6 +21,7 @@ next_title: "뷰와 기본 테이블 비교"
 math: false
 mermaid: true
 code_count: 2
+code_files: [{"t": "77_view-update-problem_verify.py", "u": "/studies/database-design/code/77_view-update-problem_verify/", "r": "검증"}, {"t": "77_view-update-problem_verify.sql", "u": "/studies/database-design/code/77_view-update-problem_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/view-update-problem/"
 ---
 {% raw %}

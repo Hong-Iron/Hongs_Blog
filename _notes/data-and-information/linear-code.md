@@ -21,6 +21,7 @@ next_title: "해밍 부호"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "06_linear-code_verify.py", "u": "/studies/data-and-information/code/06_linear-code_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/linear-code/"
 ---
 {% raw %}

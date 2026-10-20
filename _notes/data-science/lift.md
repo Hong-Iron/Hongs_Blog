@@ -21,6 +21,7 @@ next_title: "널 불변 측정"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "17_lift_verify.py", "u": "/studies/data-science/code/17_lift_verify/", "r": "검증"}]
 permalink: "/studies/data-science/lift/"
 ---
 {% raw %}

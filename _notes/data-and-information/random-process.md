@@ -21,6 +21,7 @@ next_title: "베르누이 과정"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "12_random-process_verify.py", "u": "/studies/data-and-information/code/12_random-process_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/random-process/"
 ---
 {% raw %}

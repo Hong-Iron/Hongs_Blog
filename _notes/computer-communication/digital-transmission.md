@@ -21,6 +21,7 @@ next_title: "PCM"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "37_digital-transmission_plot.py", "u": "/studies/computer-communication/code/37_digital-transmission_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/digital-transmission/"
 ---
 {% raw %}

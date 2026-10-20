@@ -21,6 +21,7 @@ next_title: "참조 타입 변환과 instanceof"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "27_java-interface-inheritance_impl.java", "u": "/studies/java/code/27_java-interface-inheritance_impl/", "r": "구현"}]
 permalink: "/studies/java/java-interface-inheritance/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "데이터 링크 계층"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "28_bandwidth-delay-product_verify.py", "u": "/studies/computer-communication/code/28_bandwidth-delay-product_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/bandwidth-delay-product/"
 ---
 {% raw %}

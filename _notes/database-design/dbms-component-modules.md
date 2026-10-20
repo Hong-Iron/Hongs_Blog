@@ -21,6 +21,7 @@ next_title: "B-트리"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "10_dbms-component-modules_verify.py", "u": "/studies/database-design/code/10_dbms-component-modules_verify/", "r": "검증"}]
 permalink: "/studies/database-design/dbms-component-modules/"
 ---
 {% raw %}

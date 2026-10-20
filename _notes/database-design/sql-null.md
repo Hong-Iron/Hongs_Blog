@@ -21,6 +21,7 @@ next_title: "FROM 절의 조인 (JOIN ON)"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "63_sql-null_verify.py", "u": "/studies/database-design/code/63_sql-null_verify/", "r": "검증"}, {"t": "63_sql-null_verify.sql", "u": "/studies/database-design/code/63_sql-null_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-null/"
 ---
 {% raw %}

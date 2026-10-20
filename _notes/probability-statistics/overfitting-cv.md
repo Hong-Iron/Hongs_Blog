@@ -20,6 +20,7 @@ next_title: "주성분 분석"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "35_overfitting-cv_plot.py", "u": "/studies/probability-statistics/code/35_overfitting-cv_plot/", "r": "그림 생성"}, {"t": "35_overfitting-cv_verify.py", "u": "/studies/probability-statistics/code/35_overfitting-cv_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/overfitting-cv/"
 ---
 {% raw %}

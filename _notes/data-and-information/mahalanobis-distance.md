@@ -21,6 +21,7 @@ next_title: "문자열 유사도"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_mahalanobis-distance_verify.py", "u": "/studies/data-and-information/code/09_mahalanobis-distance_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/mahalanobis-distance/"
 ---
 {% raw %}

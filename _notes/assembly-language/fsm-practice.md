@@ -20,6 +20,7 @@ next_title: "시프트와 회전 예제 사다리"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "36_fsm-practice_p3.py", "u": "/studies/assembly-language/code/36_fsm-practice_p3/", "r": "문제 3 풀이"}]
 permalink: "/studies/assembly-language/fsm-practice/"
 ---
 {% raw %}

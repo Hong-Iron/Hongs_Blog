@@ -20,6 +20,7 @@ next_title: "대각화와 행렬 거듭제곱"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "19_eigenvalues_plot.py", "u": "/studies/linear-algebra/code/19_eigenvalues_plot/", "r": "그림 생성"}, {"t": "19_eigenvalues_verify.py", "u": "/studies/linear-algebra/code/19_eigenvalues_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/eigenvalues/"
 ---
 {% raw %}

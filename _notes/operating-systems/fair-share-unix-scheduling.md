@@ -21,6 +21,7 @@ next_title: "다중 프로세서 스케줄링"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "46_fair-share-unix-scheduling_plot.py", "u": "/studies/operating-systems/code/46_fair-share-unix-scheduling_plot/", "r": "그림 생성"}, {"t": "46_unix-fair-share_verify.py", "u": "/studies/operating-systems/code/46_unix-fair-share_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/fair-share-unix-scheduling/"
 ---
 {% raw %}

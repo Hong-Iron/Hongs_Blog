@@ -21,6 +21,7 @@ next_title: "시스템과 시스템 연결"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "11_sampling-quantization_plot.py", "u": "/studies/signals-and-systems/code/11_sampling-quantization_plot/", "r": "그림 생성"}, {"t": "11_sampling-quantization_verify.py", "u": "/studies/signals-and-systems/code/11_sampling-quantization_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/sampling-quantization/"
 ---
 {% raw %}

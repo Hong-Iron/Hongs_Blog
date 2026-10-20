@@ -21,6 +21,7 @@ next_title: "나눗셈 회로"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "20_multiplier-circuit_impl.py", "u": "/studies/computer-architecture/code/20_multiplier-circuit_impl/", "r": "구현"}]
 permalink: "/studies/computer-architecture/multiplier-circuit/"
 ---
 {% raw %}

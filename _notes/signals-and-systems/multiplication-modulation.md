@@ -21,6 +21,7 @@ next_title: "미분방정식 시스템의 주파수 응답"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "43_multiplication-modulation_plot.py", "u": "/studies/signals-and-systems/code/43_multiplication-modulation_plot/", "r": "그림 생성"}, {"t": "43_multiplication-modulation_verify.py", "u": "/studies/signals-and-systems/code/43_multiplication-modulation_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/multiplication-modulation/"
 ---
 {% raw %}

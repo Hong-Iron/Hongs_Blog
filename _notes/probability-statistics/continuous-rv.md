@@ -20,6 +20,7 @@ next_title: "균등분포와 지수분포"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "14_continuous-rv_plot.py", "u": "/studies/probability-statistics/code/14_continuous-rv_plot/", "r": "그림 생성"}, {"t": "14_continuous-rv_verify.py", "u": "/studies/probability-statistics/code/14_continuous-rv_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/continuous-rv/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "표본 추출"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "08_discretization_plot.py", "u": "/studies/data-science/code/08_discretization_plot/", "r": "그림 생성"}, {"t": "08_discretization_verify.py", "u": "/studies/data-science/code/08_discretization_verify/", "r": "검증"}]
 permalink: "/studies/data-science/discretization/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "독립 변수의 변환"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "04_signal-energy-power_plot.py", "u": "/studies/signals-and-systems/code/04_signal-energy-power_plot/", "r": "그림 생성"}, {"t": "04_signal-energy-power_verify.py", "u": "/studies/signals-and-systems/code/04_signal-energy-power_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/signal-energy-power/"
 ---
 {% raw %}

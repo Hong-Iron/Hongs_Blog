@@ -20,6 +20,7 @@ next_title: "추론 규칙과 증명 방법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "03_predicate-logic_verify.py", "u": "/studies/discrete-math/code/03_predicate-logic_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/predicate-logic/"
 ---
 {% raw %}

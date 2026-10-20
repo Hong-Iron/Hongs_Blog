@@ -21,6 +21,7 @@ next_title: "MIPS 주소 지정 방식"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "18_mips-procedure-call_verify.py", "u": "/studies/computer-architecture/code/18_mips-procedure-call_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/mips-procedure-call/"
 ---
 {% raw %}

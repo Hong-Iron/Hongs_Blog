@@ -20,6 +20,7 @@ next_title: "생성함수"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "21_linear-recurrences_plot.py", "u": "/studies/discrete-math/code/21_linear-recurrences_plot/", "r": "그림 생성"}, {"t": "21_linear-recurrences_verify.py", "u": "/studies/discrete-math/code/21_linear-recurrences_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/linear-recurrences/"
 ---
 {% raw %}

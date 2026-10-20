@@ -21,6 +21,7 @@ next_title: "플로이드–워셜"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "26_dijkstra_impl.py", "u": "/studies/algorithms/code/26_dijkstra_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/dijkstra/"
 ---
 {% raw %}

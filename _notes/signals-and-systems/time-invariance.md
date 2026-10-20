@@ -21,6 +21,7 @@ next_title: "선형성"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "16_time-invariance_plot.py", "u": "/studies/signals-and-systems/code/16_time-invariance_plot/", "r": "그림 생성"}, {"t": "16_time-invariance_verify.py", "u": "/studies/signals-and-systems/code/16_time-invariance_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/time-invariance/"
 ---
 {% raw %}

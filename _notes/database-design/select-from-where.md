@@ -21,6 +21,7 @@ next_title: "INSERT·DELETE·UPDATE"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "50_select-from-where_verify.py", "u": "/studies/database-design/code/50_select-from-where_verify/", "r": "검증"}]
 permalink: "/studies/database-design/select-from-where/"
 ---
 {% raw %}

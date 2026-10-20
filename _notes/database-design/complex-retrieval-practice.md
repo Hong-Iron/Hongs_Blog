@@ -20,6 +20,7 @@ next_title: "중첩 질의·집계 연습"
 math: true
 mermaid: false
 code_count: 6
+code_files: [{"t": "70_complex-retrieval-practice_p1.py", "u": "/studies/database-design/code/70_complex-retrieval-practice_p1/", "r": "문제 1 풀이"}, {"t": "70_complex-retrieval-practice_p1.sql", "u": "/studies/database-design/code/70_complex-retrieval-practice_p1-sql/", "r": "문제 1 풀이"}, {"t": "70_complex-retrieval-practice_p2.py", "u": "/studies/database-design/code/70_complex-retrieval-practice_p2/", "r": "문제 2 풀이"}, {"t": "70_complex-retrieval-practice_p2.sql", "u": "/studies/database-design/code/70_complex-retrieval-practice_p2-sql/", "r": "문제 2 풀이"}, {"t": "70_complex-retrieval-practice_p3.py", "u": "/studies/database-design/code/70_complex-retrieval-practice_p3/", "r": "문제 3 풀이"}, {"t": "70_complex-retrieval-practice_p3.sql", "u": "/studies/database-design/code/70_complex-retrieval-practice_p3-sql/", "r": "문제 3 풀이"}]
 permalink: "/studies/database-design/complex-retrieval-practice/"
 ---
 {% raw %}

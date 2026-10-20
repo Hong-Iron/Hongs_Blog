@@ -21,6 +21,7 @@ next_title: "회선 스위칭과 패킷 스위칭 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "08_packet-switching_verify.py", "u": "/studies/computer-communication/code/08_packet-switching_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/packet-switching/"
 ---
 {% raw %}

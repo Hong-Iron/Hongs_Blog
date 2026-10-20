@@ -20,6 +20,7 @@ next_title: "재귀적 정의와 구조적 귀납법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "12_induction_verify.py", "u": "/studies/discrete-math/code/12_induction_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/induction/"
 ---
 {% raw %}

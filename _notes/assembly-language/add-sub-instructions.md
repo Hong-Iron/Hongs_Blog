@@ -21,6 +21,7 @@ next_title: "산술 연산과 상태 플래그"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "18_add-sub-instructions_verify.py", "u": "/studies/assembly-language/code/18_add-sub-instructions_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/add-sub-instructions/"
 ---
 {% raw %}

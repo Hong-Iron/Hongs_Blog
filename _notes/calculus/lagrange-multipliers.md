@@ -20,6 +20,7 @@ next_title: "미분방정식과 오일러 방법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "28_lagrange-multipliers_plot.py", "u": "/studies/calculus/code/28_lagrange-multipliers_plot/", "r": "그림 생성"}, {"t": "28_lagrange-multipliers_verify.py", "u": "/studies/calculus/code/28_lagrange-multipliers_verify/", "r": "검증"}]
 permalink: "/studies/calculus/lagrange-multipliers/"
 ---
 {% raw %}

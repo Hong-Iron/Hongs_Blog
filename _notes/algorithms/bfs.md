@@ -21,6 +21,7 @@ next_title: "깊이 우선 탐색(DFS)"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "24_bfs_impl.py", "u": "/studies/algorithms/code/24_bfs_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/bfs/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "선형 탐사와 체이닝 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "50_hash-chaining_impl.c", "u": "/studies/data-structures/code/50_hash-chaining_impl/", "r": "구현"}, {"t": "50_hash-chaining_verify.py", "u": "/studies/data-structures/code/50_hash-chaining_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/hash-chaining/"
 ---
 {% raw %}

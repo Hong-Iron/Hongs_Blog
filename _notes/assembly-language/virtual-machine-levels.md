@@ -21,6 +21,7 @@ next_title: "파이프라인과 슈퍼스칼라"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "02_virtual-machine-levels_verify.py", "u": "/studies/assembly-language/code/02_virtual-machine-levels_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/virtual-machine-levels/"
 ---
 {% raw %}

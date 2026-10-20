@@ -21,6 +21,7 @@ next_title: "임의 축 회전"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "07_reflection_plot.py", "u": "/studies/numerical-analysis/code/07_reflection_plot/", "r": "그림 생성"}, {"t": "07_reflection_verify.py", "u": "/studies/numerical-analysis/code/07_reflection_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/reflection/"
 ---
 {% raw %}

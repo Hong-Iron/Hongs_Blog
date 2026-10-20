@@ -21,6 +21,7 @@ next_title: "Rc·Arc·Weak"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "27_box-heap_verify.rs", "u": "/studies/rust/code/27_box-heap_verify/", "r": "검증"}]
 permalink: "/studies/rust/box-heap/"
 ---
 {% raw %}

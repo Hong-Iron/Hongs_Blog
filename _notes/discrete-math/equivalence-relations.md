@@ -20,6 +20,7 @@ next_title: "부분순서와 위상 정렬"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "10_equivalence-relations_verify.py", "u": "/studies/discrete-math/code/10_equivalence-relations_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/equivalence-relations/"
 ---
 {% raw %}

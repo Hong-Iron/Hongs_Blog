@@ -21,6 +21,7 @@ next_title: "이진 탐색 트리의 탐색과 삽입"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "29_lpt-scheduling_verify.py", "u": "/studies/data-structures/code/29_lpt-scheduling_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/lpt-scheduling/"
 ---
 {% raw %}

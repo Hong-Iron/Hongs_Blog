@@ -20,6 +20,7 @@ next_title: "레지스터 할당 예제 사다리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "53_codegen-practice_p2.py", "u": "/studies/compilers/code/53_codegen-practice_p2/", "r": "문제 2 풀이"}, {"t": "53_codegen-practice_p3.py", "u": "/studies/compilers/code/53_codegen-practice_p3/", "r": "문제 3 풀이"}]
 permalink: "/studies/compilers/codegen-practice/"
 ---
 {% raw %}

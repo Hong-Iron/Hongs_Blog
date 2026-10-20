@@ -21,6 +21,7 @@ next_title: "OSI 참조 모델"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "22_encapsulation_verify.py", "u": "/studies/computer-communication/code/22_encapsulation_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/encapsulation/"
 ---
 {% raw %}

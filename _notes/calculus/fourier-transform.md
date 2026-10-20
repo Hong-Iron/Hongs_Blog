@@ -18,6 +18,7 @@ prev_title: "푸리에 급수"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "31_fourier-transform_plot.py", "u": "/studies/calculus/code/31_fourier-transform_plot/", "r": "그림 생성"}, {"t": "31_fourier-transform_verify.py", "u": "/studies/calculus/code/31_fourier-transform_verify/", "r": "검증"}]
 permalink: "/studies/calculus/fourier-transform/"
 ---
 {% raw %}

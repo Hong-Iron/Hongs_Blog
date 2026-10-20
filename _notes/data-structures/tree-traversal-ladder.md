@@ -20,6 +20,7 @@ next_title: "힙 삽입·삭제 추적 예제 사다리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "26_tree-traversal-ladder_p4.c", "u": "/studies/data-structures/code/26_tree-traversal-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/tree-traversal-ladder/"
 ---
 {% raw %}

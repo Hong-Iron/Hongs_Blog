@@ -20,6 +20,7 @@ next_title: "셈의 기본 법칙"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "13_recursive-definitions_verify.py", "u": "/studies/discrete-math/code/13_recursive-definitions_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/recursive-definitions/"
 ---
 {% raw %}

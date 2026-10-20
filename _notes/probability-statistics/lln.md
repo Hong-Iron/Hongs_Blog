@@ -20,6 +20,7 @@ next_title: "중심극한정리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "21_lln_plot.py", "u": "/studies/probability-statistics/code/21_lln_plot/", "r": "그림 생성"}, {"t": "21_lln_verify.py", "u": "/studies/probability-statistics/code/21_lln_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/lln/"
 ---
 {% raw %}

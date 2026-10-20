@@ -21,6 +21,7 @@ next_title: "이산 시간 복소 지수 신호"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "08_ct-complex-exponential_plot.py", "u": "/studies/signals-and-systems/code/08_ct-complex-exponential_plot/", "r": "그림 생성"}, {"t": "08_ct-complex-exponential_verify.py", "u": "/studies/signals-and-systems/code/08_ct-complex-exponential_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/ct-complex-exponential/"
 ---
 {% raw %}

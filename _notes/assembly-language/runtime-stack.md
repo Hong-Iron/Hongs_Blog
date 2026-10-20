@@ -21,6 +21,7 @@ next_title: "프로시저와 CALL·RET"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "25_runtime-stack_verify.py", "u": "/studies/assembly-language/code/25_runtime-stack_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/runtime-stack/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "지역 최적화 기법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "40_basic-block-cfg_impl.py", "u": "/studies/compilers/code/40_basic-block-cfg_impl/", "r": "구현"}]
 permalink: "/studies/compilers/basic-block-cfg/"
 ---
 {% raw %}

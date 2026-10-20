@@ -21,6 +21,7 @@ next_title: "소유권과 이동"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "04_expressions-control-flow_verify.rs", "u": "/studies/rust/code/04_expressions-control-flow_verify/", "r": "검증"}]
 permalink: "/studies/rust/expressions-control-flow/"
 ---
 {% raw %}

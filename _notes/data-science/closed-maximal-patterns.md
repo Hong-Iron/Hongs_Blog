@@ -21,6 +21,7 @@ next_title: "Apriori 알고리즘"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "12_closed-maximal_verify.py", "u": "/studies/data-science/code/12_closed-maximal_verify/", "r": "검증"}]
 permalink: "/studies/data-science/closed-maximal-patterns/"
 ---
 {% raw %}

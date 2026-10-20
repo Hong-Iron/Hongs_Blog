@@ -21,6 +21,7 @@ next_title: "연속 시간 푸리에 변환"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "37_edge-detection-smoothing_plot.py", "u": "/studies/signals-and-systems/code/37_edge-detection-smoothing_plot/", "r": "그림 생성"}, {"t": "37_edge-detection-smoothing_verify.py", "u": "/studies/signals-and-systems/code/37_edge-detection-smoothing_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/edge-detection-smoothing/"
 ---
 {% raw %}

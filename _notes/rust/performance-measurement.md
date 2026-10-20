@@ -21,6 +21,7 @@ next_title: "CI 품질 게이트"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "47_performance-measurement_bench.rs", "u": "/studies/rust/code/47_performance-measurement_bench/", "r": "실험"}]
 permalink: "/studies/rust/performance-measurement/"
 ---
 {% raw %}

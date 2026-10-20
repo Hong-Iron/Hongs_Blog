@@ -19,6 +19,7 @@ prev_title: "제네릭"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "39_java-bounded-wildcard_impl.java", "u": "/studies/java/code/39_java-bounded-wildcard_impl/", "r": "구현"}]
 permalink: "/studies/java/java-bounded-wildcard/"
 ---
 {% raw %}

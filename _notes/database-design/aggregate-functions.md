@@ -21,6 +21,7 @@ next_title: "GROUP BY"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "68_aggregate-functions_verify.py", "u": "/studies/database-design/code/68_aggregate-functions_verify/", "r": "검증"}, {"t": "68_aggregate-functions_verify.sql", "u": "/studies/database-design/code/68_aggregate-functions_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/aggregate-functions/"
 ---
 {% raw %}

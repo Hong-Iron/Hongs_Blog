@@ -20,6 +20,7 @@ next_title: "선형회귀"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "33_bayesian-inference_plot.py", "u": "/studies/probability-statistics/code/33_bayesian-inference_plot/", "r": "그림 생성"}, {"t": "33_bayesian-inference_verify.py", "u": "/studies/probability-statistics/code/33_bayesian-inference_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/bayesian-inference/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "근 찾기 방법 비교"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "31_multivariate-newton_impl.py", "u": "/studies/numerical-analysis/code/31_multivariate-newton_impl/", "r": "구현"}, {"t": "31_multivariate-newton_plot.py", "u": "/studies/numerical-analysis/code/31_multivariate-newton_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/multivariate-newton/"
 ---
 {% raw %}

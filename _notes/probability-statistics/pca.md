@@ -20,6 +20,7 @@ next_title: "엔트로피"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "36_pca_plot.py", "u": "/studies/probability-statistics/code/36_pca_plot/", "r": "그림 생성"}, {"t": "36_pca_verify.py", "u": "/studies/probability-statistics/code/36_pca_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/pca/"
 ---
 {% raw %}

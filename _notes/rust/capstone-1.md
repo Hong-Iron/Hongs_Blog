@@ -20,6 +20,7 @@ next_title: "에러와 메모리 연습"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "24_capstone-1_p1.rs", "u": "/studies/rust/code/24_capstone-1_p1/", "r": "문제 1 풀이"}]
 permalink: "/studies/rust/capstone-1/"
 ---
 {% raw %}

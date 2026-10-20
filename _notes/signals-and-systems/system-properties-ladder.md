@@ -20,6 +20,7 @@ next_title: "컨벌루션 계산 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "17_system-properties-ladder_p4.py", "u": "/studies/signals-and-systems/code/17_system-properties-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/signals-and-systems/system-properties-ladder/"
 ---
 {% raw %}

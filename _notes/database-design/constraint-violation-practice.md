@@ -20,6 +20,7 @@ next_title: "LIBRARY 스키마 DDL 연습"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "52_constraint-violation-practice_p1.py", "u": "/studies/database-design/code/52_constraint-violation-practice_p1/", "r": "문제 1 풀이"}, {"t": "52_constraint-violation-practice_p1.sql", "u": "/studies/database-design/code/52_constraint-violation-practice_p1-sql/", "r": "문제 1 풀이"}]
 permalink: "/studies/database-design/constraint-violation-practice/"
 ---
 {% raw %}

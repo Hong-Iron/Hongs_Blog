@@ -21,6 +21,7 @@ next_title: "상주 집합 관리와 적재 제어"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "41_page-replacement_impl.py", "u": "/studies/operating-systems/code/41_page-replacement_impl/", "r": "구현"}, {"t": "41_page-replacement_plot.py", "u": "/studies/operating-systems/code/41_page-replacement_plot/", "r": "그림 생성"}]
 permalink: "/studies/operating-systems/page-replacement/"
 ---
 {% raw %}

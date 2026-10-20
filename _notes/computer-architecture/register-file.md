@@ -21,6 +21,7 @@ next_title: "클록과 순차 회로"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "10_register-file_verify.py", "u": "/studies/computer-architecture/code/10_register-file_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/register-file/"
 ---
 {% raw %}

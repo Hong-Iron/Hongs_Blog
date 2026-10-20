@@ -21,6 +21,7 @@ next_title: "지역성의 원리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "34_superscalar-out-of-order_verify.py", "u": "/studies/computer-architecture/code/34_superscalar-out-of-order_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/superscalar-out-of-order/"
 ---
 {% raw %}

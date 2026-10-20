@@ -21,6 +21,7 @@ next_title: "선택 정렬"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "40_insertion-sort_impl.c", "u": "/studies/data-structures/code/40_insertion-sort_impl/", "r": "구현"}, {"t": "40_insertion-sort_verify.py", "u": "/studies/data-structures/code/40_insertion-sort_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/insertion-sort/"
 ---
 {% raw %}

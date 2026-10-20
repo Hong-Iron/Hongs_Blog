@@ -20,6 +20,7 @@ next_title: "신경성 폭식증"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "089_anorexia-nervosa_verify.py", "u": "/studies/abnormal-psychology/code/089_anorexia-nervosa_verify/", "r": "검증"}]
 permalink: "/studies/abnormal-psychology/anorexia-nervosa/"
 ---
 {% raw %}

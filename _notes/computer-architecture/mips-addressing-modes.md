@@ -21,6 +21,7 @@ next_title: "곱셈 회로"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_mips-addressing-modes_verify.py", "u": "/studies/computer-architecture/code/19_mips-addressing-modes_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/mips-addressing-modes/"
 ---
 {% raw %}

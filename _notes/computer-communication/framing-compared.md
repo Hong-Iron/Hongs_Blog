@@ -21,6 +21,7 @@ next_title: "오류 검출 코드"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "46_framing-compared_plot.py", "u": "/studies/computer-communication/code/46_framing-compared_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/framing-compared/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "릴레이션과 도메인·속성·튜플"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_er-design-steps_verify.py", "u": "/studies/database-design/code/31_er-design-steps_verify/", "r": "검증"}]
 permalink: "/studies/database-design/er-design-steps/"
 ---
 {% raw %}

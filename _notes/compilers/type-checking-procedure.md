@@ -21,6 +21,7 @@ next_title: "3주소 코드"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "36_type-checking-procedure_impl.py", "u": "/studies/compilers/code/36_type-checking-procedure_impl/", "r": "구현"}]
 permalink: "/studies/compilers/type-checking-procedure/"
 ---
 {% raw %}

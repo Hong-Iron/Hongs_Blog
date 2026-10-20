@@ -20,6 +20,7 @@ next_title: "B-스플라인 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "08_axis-rotation-ladder_p4.py", "u": "/studies/numerical-analysis/code/08_axis-rotation-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/numerical-analysis/axis-rotation-ladder/"
 ---
 {% raw %}

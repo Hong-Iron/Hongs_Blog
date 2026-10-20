@@ -20,6 +20,7 @@ next_title: "경로와 연결성"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "32_graph-basics_verify.py", "u": "/studies/discrete-math/code/32_graph-basics_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/graph-basics/"
 ---
 {% raw %}

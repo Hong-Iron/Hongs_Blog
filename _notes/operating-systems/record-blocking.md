@@ -21,6 +21,7 @@ next_title: "파일 할당"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "59_record-blocking_verify.py", "u": "/studies/operating-systems/code/59_record-blocking_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/record-blocking/"
 ---
 {% raw %}

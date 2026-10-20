@@ -58,6 +58,18 @@ geo_clear: 26rem
       {% if page.parent_url %}<div><dt>문서</dt><dd><a href="{{ page.parent_url | relative_url }}">{{ page.parent_title }}</a></dd></div>{% endif %}
       {% if page.updated %}<div><dt>갱신</dt><dd>{{ page.updated | date: "%Y-%m-%d" }}</dd></div>{% endif %}
     </dl>
+    {%- comment -%} This note's code files; code-panel.js shows the button and
+         lists them in the code panel. {%- endcomment -%}
+    {%- if page.code_files and page.kind != "code" %}
+    <div class="note-code" data-code-files hidden>
+      <button type="button" class="note-code__btn" aria-controls="code-panel"><span class="note-code__icon" aria-hidden="true">&lt;/&gt;</span>코드 {{ page.code_files.size }}개</button>
+      <ul>
+      {%- for f in page.code_files %}
+        <li><a href="{{ f.u | relative_url }}" data-role="{{ f.r }}">{{ f.t }}</a></li>
+      {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
   </header>
 
   <div class="article-body note-body container">
@@ -82,3 +94,4 @@ geo_clear: 26rem
 </div>
 <script src="{{ '/assets/js/note-toc.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/widgets.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/code-panel.js' | relative_url }}" defer></script>

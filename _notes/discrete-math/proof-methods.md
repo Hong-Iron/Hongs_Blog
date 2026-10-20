@@ -20,6 +20,7 @@ next_title: "불 대수와 논리 회로"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "04_proof-methods_verify.py", "u": "/studies/discrete-math/code/04_proof-methods_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/proof-methods/"
 ---
 {% raw %}

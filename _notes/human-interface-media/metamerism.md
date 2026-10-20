@@ -20,6 +20,7 @@ next_title: "측면 억제"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "17_metamerism_plot.py", "u": "/studies/human-interface-media/code/17_metamerism_plot/", "r": "그림 생성"}, {"t": "17_metamerism_verify.py", "u": "/studies/human-interface-media/code/17_metamerism_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/metamerism/"
 ---
 {% raw %}

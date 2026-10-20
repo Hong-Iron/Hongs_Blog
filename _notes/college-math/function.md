@@ -18,6 +18,7 @@ next_title: "함수의 변환과 합성"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "01_function_plot.py", "u": "/studies/college-math/code/01_function_plot/", "r": "그림 생성"}, {"t": "01_function_verify.py", "u": "/studies/college-math/code/01_function_verify/", "r": "검증"}]
 permalink: "/studies/college-math/function/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "매개변수 곡면 패치"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "16_b-spline_plot.py", "u": "/studies/numerical-analysis/code/16_b-spline_plot/", "r": "그림 생성"}, {"t": "16_b-spline_verify.py", "u": "/studies/numerical-analysis/code/16_b-spline_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/b-spline/"
 ---
 {% raw %}

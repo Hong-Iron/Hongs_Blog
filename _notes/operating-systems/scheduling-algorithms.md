@@ -21,6 +21,7 @@ next_title: "실행 시간 예측"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "44_scheduling-algorithms_plot.py", "u": "/studies/operating-systems/code/44_scheduling-algorithms_plot/", "r": "그림 생성"}, {"t": "44_scheduling_impl.py", "u": "/studies/operating-systems/code/44_scheduling_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/scheduling-algorithms/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "인접행렬 거듭제곱 ↔ 마르코프 전이"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "23_markov-chains_plot.py", "u": "/studies/probability-statistics/code/23_markov-chains_plot/", "r": "그림 생성"}, {"t": "23_markov-chains_verify.py", "u": "/studies/probability-statistics/code/23_markov-chains_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/markov-chains/"
 ---
 {% raw %}

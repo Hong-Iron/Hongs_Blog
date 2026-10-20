@@ -20,6 +20,7 @@ next_title: "지수함수"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_exponent-laws_verify.py", "u": "/studies/college-math/code/05_exponent-laws_verify/", "r": "검증"}]
 permalink: "/studies/college-math/exponent-laws/"
 ---
 {% raw %}

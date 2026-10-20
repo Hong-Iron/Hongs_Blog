@@ -21,6 +21,7 @@ next_title: "군집화 알고리즘 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "32_clique_impl.py", "u": "/studies/data-science/code/32_clique_impl/", "r": "구현"}, {"t": "32_clique_plot.py", "u": "/studies/data-science/code/32_clique_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/clique/"
 ---
 {% raw %}

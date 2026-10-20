@@ -20,6 +20,7 @@ next_title: "조건 구조를 점프로 옮기기 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "26_stack-tracing-ladder_p4.py", "u": "/studies/assembly-language/code/26_stack-tracing-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/assembly-language/stack-tracing-ladder/"
 ---
 {% raw %}

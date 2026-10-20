@@ -21,6 +21,7 @@ next_title: "컨벌루션 성질과 주파수 응답"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "41_duality_plot.py", "u": "/studies/signals-and-systems/code/41_duality_plot/", "r": "그림 생성"}, {"t": "41_duality_verify.py", "u": "/studies/signals-and-systems/code/41_duality_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/fourier-duality/"
 ---
 {% raw %}

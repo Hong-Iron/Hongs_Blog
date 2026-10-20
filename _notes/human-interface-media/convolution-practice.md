@@ -17,6 +17,7 @@ prev_title: "측면 억제 예제 사다리"
 math: true
 mermaid: false
 code_count: 4
+code_files: [{"t": "31_convolution-practice_p2.py", "u": "/studies/human-interface-media/code/31_convolution-practice_p2/", "r": "문제 2 풀이"}, {"t": "31_convolution-practice_p4.py", "u": "/studies/human-interface-media/code/31_convolution-practice_p4/", "r": "문제 4 풀이"}, {"t": "31_convolution-practice_p5.py", "u": "/studies/human-interface-media/code/31_convolution-practice_p5/", "r": "문제 5 풀이"}, {"t": "31_convolution-practice_p7.py", "u": "/studies/human-interface-media/code/31_convolution-practice_p7/", "r": "문제 7 풀이"}]
 permalink: "/studies/human-interface-media/convolution-practice/"
 ---
 {% raw %}

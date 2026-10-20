@@ -21,6 +21,7 @@ next_title: "TEST와 CMP"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "29_bitwise-instructions_verify.py", "u": "/studies/assembly-language/code/29_bitwise-instructions_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/bitwise-instructions/"
 ---
 {% raw %}

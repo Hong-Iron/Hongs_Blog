@@ -21,6 +21,7 @@ next_title: "퀵 정렬"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "41_selection-sort_impl.c", "u": "/studies/data-structures/code/41_selection-sort_impl/", "r": "구현"}, {"t": "41_selection-sort_verify.py", "u": "/studies/data-structures/code/41_selection-sort_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/selection-sort/"
 ---
 {% raw %}

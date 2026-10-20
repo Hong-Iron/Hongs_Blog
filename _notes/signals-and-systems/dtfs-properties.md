@@ -21,6 +21,7 @@ next_title: "푸리에 급수와 LTI 시스템"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "34_dtfs-properties_plot.py", "u": "/studies/signals-and-systems/code/34_dtfs-properties_plot/", "r": "그림 생성"}, {"t": "34_dtfs-properties_verify.py", "u": "/studies/signals-and-systems/code/34_dtfs-properties_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/dtfs-properties/"
 ---
 {% raw %}

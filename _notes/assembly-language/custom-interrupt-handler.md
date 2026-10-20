@@ -19,6 +19,7 @@ prev_title: "하드웨어 인터럽트와 IRQ"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "56_custom-interrupt-handler_verify.py", "u": "/studies/assembly-language/code/56_custom-interrupt-handler_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/custom-interrupt-handler/"
 ---
 {% raw %}

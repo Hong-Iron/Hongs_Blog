@@ -20,6 +20,7 @@ next_title: "가산 집합과 대각선 논법"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "07_function-properties_verify.py", "u": "/studies/discrete-math/code/07_function-properties_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/function-properties/"
 ---
 {% raw %}

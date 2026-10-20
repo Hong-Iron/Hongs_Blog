@@ -21,6 +21,7 @@ next_title: "주파수 분할 다중화"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_time-division-multiplexing_verify.py", "u": "/studies/computer-communication/code/13_time-division-multiplexing_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/time-division-multiplexing/"
 ---
 {% raw %}

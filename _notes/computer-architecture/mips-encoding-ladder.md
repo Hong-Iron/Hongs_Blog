@@ -20,6 +20,7 @@ next_title: "데이터패스 추적 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "16_mips-encoding-ladder_p4.py", "u": "/studies/computer-architecture/code/16_mips-encoding-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/computer-architecture/mips-encoding-ladder/"
 ---
 {% raw %}

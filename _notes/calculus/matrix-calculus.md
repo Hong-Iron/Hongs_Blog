@@ -20,6 +20,7 @@ next_title: "중적분과 변수변환"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "24_matrix-calculus_plot.py", "u": "/studies/calculus/code/24_matrix-calculus_plot/", "r": "그림 생성"}, {"t": "24_matrix-calculus_verify.py", "u": "/studies/calculus/code/24_matrix-calculus_verify/", "r": "검증"}]
 permalink: "/studies/calculus/matrix-calculus/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "자료 선형화"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "23_slerp_plot.py", "u": "/studies/numerical-analysis/code/23_slerp_plot/", "r": "그림 생성"}, {"t": "23_slerp_verify.py", "u": "/studies/numerical-analysis/code/23_slerp_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/slerp/"
 ---
 {% raw %}

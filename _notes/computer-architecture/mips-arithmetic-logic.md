@@ -21,6 +21,7 @@ next_title: "MIPS 명령어 형식"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_mips-arithmetic-logic_verify.py", "u": "/studies/computer-architecture/code/15_mips-arithmetic-logic_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/mips-arithmetic-logic/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "캡스톤 5 안전한 종료와 부하 조절"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "46_capstone-4_p1.rs", "u": "/studies/rust/code/46_capstone-4_p1/", "r": "문제 1 풀이"}]
 permalink: "/studies/rust/capstone-4/"
 ---
 {% raw %}

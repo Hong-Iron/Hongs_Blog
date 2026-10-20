@@ -20,6 +20,7 @@ next_title: "캡스톤 6 테스트·CI·배포"
 math: false
 mermaid: false
 code_count: 4
+code_files: [{"t": "50_release-readiness-practice_p1.rs", "u": "/studies/rust/code/50_release-readiness-practice_p1/", "r": "문제 1 풀이"}, {"t": "50_release-readiness-practice_p2.rs", "u": "/studies/rust/code/50_release-readiness-practice_p2/", "r": "문제 2 풀이"}, {"t": "50_release-readiness-practice_p3.rs", "u": "/studies/rust/code/50_release-readiness-practice_p3/", "r": "문제 3 풀이"}, {"t": "50_release-readiness-practice_p4.rs", "u": "/studies/rust/code/50_release-readiness-practice_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/rust/release-readiness-practice/"
 ---
 {% raw %}

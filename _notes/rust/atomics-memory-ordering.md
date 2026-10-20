@@ -21,6 +21,7 @@ next_title: "채널"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "34_atomics-memory-ordering_verify.rs", "u": "/studies/rust/code/34_atomics-memory-ordering_verify/", "r": "검증"}]
 permalink: "/studies/rust/atomics-memory-ordering/"
 ---
 {% raw %}

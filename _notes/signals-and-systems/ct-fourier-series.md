@@ -21,6 +21,7 @@ next_title: "푸리에 급수의 수렴"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "30_ct-fourier-series_plot.py", "u": "/studies/signals-and-systems/code/30_ct-fourier-series_plot/", "r": "그림 생성"}, {"t": "30_ct-fourier-series_verify.py", "u": "/studies/signals-and-systems/code/30_ct-fourier-series_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/ct-fourier-series/"
 ---
 {% raw %}

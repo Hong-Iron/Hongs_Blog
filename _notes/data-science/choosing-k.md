@@ -21,6 +21,7 @@ next_title: "가우스 혼합 모델"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "28_choosing-k_plot.py", "u": "/studies/data-science/code/28_choosing-k_plot/", "r": "그림 생성"}, {"t": "28_choosing-k_verify.py", "u": "/studies/data-science/code/28_choosing-k_verify/", "r": "검증"}]
 permalink: "/studies/data-science/choosing-k/"
 ---
 {% raw %}

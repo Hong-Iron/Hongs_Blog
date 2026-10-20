@@ -19,6 +19,7 @@ next_title: "cargo와 패키지 구조"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "01_why-rust_verify.rs", "u": "/studies/rust/code/01_why-rust_verify/", "r": "검증"}]
 permalink: "/studies/rust/why-rust/"
 ---
 {% raw %}

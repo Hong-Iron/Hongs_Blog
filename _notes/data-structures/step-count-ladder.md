@@ -18,6 +18,7 @@ next_title: "포인터와 주소 계산 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "02_step-count-ladder_p4.py", "u": "/studies/data-structures/code/02_step-count-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/step-count-ladder/"
 ---
 {% raw %}

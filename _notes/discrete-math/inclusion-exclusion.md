@@ -20,6 +20,7 @@ next_title: "비둘기집 원리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "19_inclusion-exclusion_plot.py", "u": "/studies/discrete-math/code/19_inclusion-exclusion_plot/", "r": "그림 생성"}, {"t": "19_inclusion-exclusion_verify.py", "u": "/studies/discrete-math/code/19_inclusion-exclusion_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/inclusion-exclusion/"
 ---
 {% raw %}

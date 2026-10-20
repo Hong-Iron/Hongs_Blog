@@ -21,6 +21,7 @@ next_title: "레지스터 파일과 메모리 소자"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "09_latch-flip-flop_verify.py", "u": "/studies/computer-architecture/code/09_latch-flip-flop_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/latch-flip-flop/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "순열과 조합"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "14_counting-rules_verify.py", "u": "/studies/discrete-math/code/14_counting-rules_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/counting-rules/"
 ---
 {% raw %}

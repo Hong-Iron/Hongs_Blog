@@ -21,6 +21,7 @@ next_title: "배열"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_java-string_impl.java", "u": "/studies/java/code/09_java-string_impl/", "r": "구현"}]
 permalink: "/studies/java/java-string/"
 ---
 {% raw %}

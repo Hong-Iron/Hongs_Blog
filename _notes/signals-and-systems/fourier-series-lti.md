@@ -21,6 +21,7 @@ next_title: "주파수 형성 필터와 주파수 선택 필터"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "35_fourier-series-lti_plot.py", "u": "/studies/signals-and-systems/code/35_fourier-series-lti_plot/", "r": "그림 생성"}, {"t": "35_fourier-series-lti_verify.py", "u": "/studies/signals-and-systems/code/35_fourier-series-lti_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/fourier-series-lti/"
 ---
 {% raw %}

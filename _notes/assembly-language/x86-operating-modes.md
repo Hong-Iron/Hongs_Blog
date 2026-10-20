@@ -21,6 +21,7 @@ next_title: "실주소 모드의 세그먼트 주소"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_x86-operating-modes_verify.py", "u": "/studies/assembly-language/code/05_x86-operating-modes_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/x86-operating-modes/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "과다수면장애"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "100_cbt-i_verify.py", "u": "/studies/abnormal-psychology/code/100_cbt-i_verify/", "r": "검증"}]
 permalink: "/studies/abnormal-psychology/cbt-i/"
 ---
 {% raw %}

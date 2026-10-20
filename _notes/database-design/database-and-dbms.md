@@ -19,6 +19,7 @@ next_title: "데이터베이스 방식의 네 가지 특징"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "01_database-and-dbms_verify.py", "u": "/studies/database-design/code/01_database-and-dbms_verify/", "r": "검증"}]
 permalink: "/studies/database-design/database-and-dbms/"
 ---
 {% raw %}

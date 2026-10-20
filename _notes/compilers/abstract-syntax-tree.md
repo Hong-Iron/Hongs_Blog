@@ -21,6 +21,7 @@ next_title: "재귀 하강 파싱"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "16_abstract-syntax-tree_impl.py", "u": "/studies/compilers/code/16_abstract-syntax-tree_impl/", "r": "구현"}]
 permalink: "/studies/compilers/abstract-syntax-tree/"
 ---
 {% raw %}

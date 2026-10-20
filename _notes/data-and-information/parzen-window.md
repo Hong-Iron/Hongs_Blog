@@ -21,6 +21,7 @@ next_title: "k-이웃 밀도 추정"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "15_parzen-window_plot.py", "u": "/studies/data-and-information/code/15_parzen-window_plot/", "r": "그림 생성"}, {"t": "15_parzen-window_verify.py", "u": "/studies/data-and-information/code/15_parzen-window_verify/", "r": "검증"}]
 permalink: "/studies/data-and-information/parzen-window/"
 ---
 {% raw %}

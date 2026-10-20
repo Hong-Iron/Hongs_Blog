@@ -20,6 +20,7 @@ next_title: "JOIN·GROUP BY 종합 연습"
 math: false
 mermaid: false
 code_count: 4
+code_files: [{"t": "70_nested-aggregate-practice_p1.py", "u": "/studies/database-design/code/70_nested-aggregate-practice_p1/", "r": "문제 1 풀이"}, {"t": "70_nested-aggregate-practice_p2.py", "u": "/studies/database-design/code/70_nested-aggregate-practice_p2/", "r": "문제 2 풀이"}, {"t": "70_nested-aggregate-practice_p3.py", "u": "/studies/database-design/code/70_nested-aggregate-practice_p3/", "r": "문제 3 풀이"}, {"t": "70_nested-aggregate-practice_p3.sql", "u": "/studies/database-design/code/70_nested-aggregate-practice_p3-sql/", "r": "문제 3 풀이"}]
 permalink: "/studies/database-design/nested-aggregate-practice/"
 ---
 {% raw %}

@@ -19,6 +19,7 @@ next_title: "가상 기계 계층"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "01_assembly-language_verify.py", "u": "/studies/assembly-language/code/01_assembly-language_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/assembly-language/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "삼색 이론과 반대색 과정 비교"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "19_opponent-process_plot.py", "u": "/studies/human-interface-media/code/19_opponent-process_plot/", "r": "그림 생성"}, {"t": "19_opponent-process_verify.py", "u": "/studies/human-interface-media/code/19_opponent-process_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/opponent-process/"
 ---
 {% raw %}

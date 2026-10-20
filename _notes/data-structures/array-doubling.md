@@ -21,6 +21,7 @@ next_title: "행 우선 배치와 열 우선 배치"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "08_array-doubling_impl.c", "u": "/studies/data-structures/code/08_array-doubling_impl/", "r": "구현"}, {"t": "08_array-doubling_verify.py", "u": "/studies/data-structures/code/08_array-doubling_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/array-doubling/"
 ---
 {% raw %}

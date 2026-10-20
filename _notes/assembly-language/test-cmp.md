@@ -21,6 +21,7 @@ next_title: "조건 점프"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "30_test-cmp_verify.py", "u": "/studies/assembly-language/code/30_test-cmp_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/test-cmp/"
 ---
 {% raw %}

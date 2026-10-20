@@ -21,6 +21,7 @@ next_title: "회선 스위칭"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "05_rate-and-bandwidth_plot.py", "u": "/studies/computer-communication/code/05_rate-and-bandwidth_plot/", "r": "그림 생성"}, {"t": "05_rate-and-bandwidth_verify.py", "u": "/studies/computer-communication/code/05_rate-and-bandwidth_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/rate-and-bandwidth/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "안정성"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "14_causality_plot.py", "u": "/studies/signals-and-systems/code/14_causality_plot/", "r": "그림 생성"}, {"t": "14_causality_verify.py", "u": "/studies/signals-and-systems/code/14_causality_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/causality/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "좌표계 변환"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "05_normal-transform_plot.py", "u": "/studies/numerical-analysis/code/05_normal-transform_plot/", "r": "그림 생성"}, {"t": "05_normal-transform_verify.py", "u": "/studies/numerical-analysis/code/05_normal-transform_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/normal-transform/"
 ---
 {% raw %}

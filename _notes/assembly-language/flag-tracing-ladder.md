@@ -20,6 +20,7 @@ next_title: "PTR과 리틀 엔디언 예제 사다리"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "19_flag-tracing-ladder_p4.py", "u": "/studies/assembly-language/code/19_flag-tracing-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/assembly-language/flag-tracing-ladder/"
 ---
 {% raw %}

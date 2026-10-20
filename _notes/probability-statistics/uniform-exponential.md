@@ -20,6 +20,7 @@ next_title: "정규분포"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "15_uniform-exponential_plot.py", "u": "/studies/probability-statistics/code/15_uniform-exponential_plot/", "r": "그림 생성"}, {"t": "15_uniform-exponential_verify.py", "u": "/studies/probability-statistics/code/15_uniform-exponential_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/uniform-exponential/"
 ---
 {% raw %}

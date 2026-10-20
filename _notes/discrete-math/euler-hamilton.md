@@ -20,6 +20,7 @@ next_title: "트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "34_euler-hamilton_verify.py", "u": "/studies/discrete-math/code/34_euler-hamilton_verify/", "r": "검증"}]
 permalink: "/studies/discrete-math/euler-hamilton/"
 ---
 {% raw %}

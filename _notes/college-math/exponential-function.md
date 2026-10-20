@@ -20,6 +20,7 @@ next_title: "로그"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "06_exponential-function_plot.py", "u": "/studies/college-math/code/06_exponential-function_plot/", "r": "그림 생성"}, {"t": "06_exponential-function_verify.py", "u": "/studies/college-math/code/06_exponential-function_verify/", "r": "검증"}]
 permalink: "/studies/college-math/exponential-function/"
 ---
 {% raw %}

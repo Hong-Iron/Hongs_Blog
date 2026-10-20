@@ -21,6 +21,7 @@ next_title: "다익스트라"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "25_dfs_impl.py", "u": "/studies/algorithms/code/25_dfs_impl/", "r": "구현"}]
 permalink: "/studies/algorithms/dfs/"
 ---
 {% raw %}

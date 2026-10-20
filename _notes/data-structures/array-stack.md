@@ -21,6 +21,7 @@ next_title: "원형 큐"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "13_array-stack_impl.c", "u": "/studies/data-structures/code/13_array-stack_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/array-stack/"
 ---
 {% raw %}

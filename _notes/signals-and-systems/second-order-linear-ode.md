@@ -21,6 +21,7 @@ next_title: "연속 시간 신호와 이산 시간 신호"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "02_second-order-linear-ode_plot.py", "u": "/studies/signals-and-systems/code/02_second-order-linear-ode_plot/", "r": "그림 생성"}, {"t": "02_second-order-linear-ode_verify.py", "u": "/studies/signals-and-systems/code/02_second-order-linear-ode_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/second-order-linear-ode/"
 ---
 {% raw %}

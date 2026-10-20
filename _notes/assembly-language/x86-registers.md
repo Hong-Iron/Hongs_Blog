@@ -21,6 +21,7 @@ next_title: "x86 동작 모드"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "04_x86-registers_verify.py", "u": "/studies/assembly-language/code/04_x86-registers_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/x86-registers/"
 ---
 {% raw %}

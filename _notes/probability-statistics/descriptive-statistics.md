@@ -20,6 +20,7 @@ next_title: "표본분포와 추정량"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "28_descriptive-statistics_plot.py", "u": "/studies/probability-statistics/code/28_descriptive-statistics_plot/", "r": "그림 생성"}, {"t": "28_descriptive-statistics_verify.py", "u": "/studies/probability-statistics/code/28_descriptive-statistics_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/descriptive-statistics/"
 ---
 {% raw %}

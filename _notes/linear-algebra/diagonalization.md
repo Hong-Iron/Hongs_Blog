@@ -20,6 +20,7 @@ next_title: "선형 점화식 ↔ 행렬 거듭제곱"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "20_diagonalization_plot.py", "u": "/studies/linear-algebra/code/20_diagonalization_plot/", "r": "그림 생성"}, {"t": "20_diagonalization_verify.py", "u": "/studies/linear-algebra/code/20_diagonalization_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/diagonalization/"
 ---
 {% raw %}

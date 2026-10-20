@@ -21,6 +21,7 @@ next_title: "모듈과 워크스페이스"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "40_graceful-shutdown_impl.rs", "u": "/studies/rust/code/40_graceful-shutdown_impl/", "r": "구현"}]
 permalink: "/studies/rust/graceful-shutdown/"
 ---
 {% raw %}

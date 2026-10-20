@@ -21,6 +21,7 @@ next_title: "클러스터와 FAT"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "47_recursive-procedure_impl.py", "u": "/studies/assembly-language/code/47_recursive-procedure_impl/", "r": "구현"}]
 permalink: "/studies/assembly-language/recursive-procedure/"
 ---
 {% raw %}

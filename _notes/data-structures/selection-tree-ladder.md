@@ -20,6 +20,7 @@ next_title: "그래프 탐색과 신장 트리 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "35_selection-tree-ladder_p4.c", "u": "/studies/data-structures/code/35_selection-tree-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/selection-tree-ladder/"
 ---
 {% raw %}

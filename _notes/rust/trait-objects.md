@@ -21,6 +21,7 @@ next_title: "제네릭과 트레이트 객체 비교"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "18_trait-objects_verify.rs", "u": "/studies/rust/code/18_trait-objects_verify/", "r": "검증"}]
 permalink: "/studies/rust/trait-objects/"
 ---
 {% raw %}

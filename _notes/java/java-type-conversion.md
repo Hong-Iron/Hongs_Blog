@@ -21,6 +21,7 @@ next_title: "연산자와 오버플로"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_java-type-conversion_impl.java", "u": "/studies/java/code/03_java-type-conversion_impl/", "r": "구현"}]
 permalink: "/studies/java/java-type-conversion/"
 ---
 {% raw %}

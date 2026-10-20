@@ -18,6 +18,7 @@ next_title: "이산 신호 주기 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "02_ode-ladder_p1.py", "u": "/studies/signals-and-systems/code/02_ode-ladder_p1/", "r": "문제 1 풀이"}]
 permalink: "/studies/signals-and-systems/ode-ladder/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "명령어 집합 구조"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "11_clocked-sequential-logic_verify.py", "u": "/studies/computer-architecture/code/11_clocked-sequential-logic_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/clocked-sequential-logic/"
 ---
 {% raw %}

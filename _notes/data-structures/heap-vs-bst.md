@@ -21,6 +21,7 @@ next_title: "이진 탐색 트리의 삭제"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_heap-vs-bst_verify.py", "u": "/studies/data-structures/code/31_heap-vs-bst_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/heap-vs-bst/"
 ---
 {% raw %}

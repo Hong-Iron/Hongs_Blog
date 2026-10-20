@@ -21,6 +21,7 @@ next_title: "개체 무결성 제약"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "35_relational-database-schema_verify.py", "u": "/studies/database-design/code/35_relational-database-schema_verify/", "r": "검증"}, {"t": "35_relational-database-schema_verify.sql", "u": "/studies/database-design/code/35_relational-database-schema_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/relational-database-schema/"
 ---
 {% raw %}

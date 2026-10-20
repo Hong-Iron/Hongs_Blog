@@ -21,6 +21,7 @@ next_title: "빈발 패턴 마이닝 방법 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "15_fp-growth_impl.py", "u": "/studies/data-science/code/15_fp-growth_impl/", "r": "구현"}]
 permalink: "/studies/data-science/fp-growth/"
 ---
 {% raw %}

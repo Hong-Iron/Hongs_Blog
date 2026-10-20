@@ -21,6 +21,7 @@ next_title: "0 주입"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "45_one-class-cf_impl.py", "u": "/studies/data-science/code/45_one-class-cf_impl/", "r": "구현"}]
 permalink: "/studies/data-science/one-class-cf/"
 ---
 {% raw %}

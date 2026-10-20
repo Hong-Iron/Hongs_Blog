@@ -21,6 +21,7 @@ next_title: "전역 생존 변수 분석"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "43_live-variable-analysis_impl.py", "u": "/studies/compilers/code/43_live-variable-analysis_impl/", "r": "구현"}]
 permalink: "/studies/compilers/live-variable-analysis/"
 ---
 {% raw %}

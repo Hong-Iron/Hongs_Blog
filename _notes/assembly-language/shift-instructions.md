@@ -21,6 +21,7 @@ next_title: "논리 시프트와 산술 시프트 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "37_shift-instructions_verify.py", "u": "/studies/assembly-language/code/37_shift-instructions_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/shift-instructions/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "디지털 전송"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "36_satellite-systems_verify.py", "u": "/studies/computer-communication/code/36_satellite-systems_verify/", "r": "검증"}]
 permalink: "/studies/computer-communication/satellite-systems/"
 ---
 {% raw %}

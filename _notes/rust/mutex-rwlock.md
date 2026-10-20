@@ -21,6 +21,7 @@ next_title: "모니터 ↔ Mutex"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "32_mutex-rwlock_verify.rs", "u": "/studies/rust/code/32_mutex-rwlock_verify/", "r": "검증"}]
 permalink: "/studies/rust/mutex-rwlock/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "포화 이진 트리와 완전 이진 트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "21_binary-tree_verify.py", "u": "/studies/data-structures/code/21_binary-tree_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/binary-tree/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "값·변수·타입"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "02_cargo-packages_verify.rs", "u": "/studies/rust/code/02_cargo-packages_verify/", "r": "검증"}]
 permalink: "/studies/rust/cargo-packages/"
 ---
 {% raw %}

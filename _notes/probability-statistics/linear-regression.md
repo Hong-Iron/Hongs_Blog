@@ -20,6 +20,7 @@ next_title: "과적합과 교차검증"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "34_linear-regression_plot.py", "u": "/studies/probability-statistics/code/34_linear-regression_plot/", "r": "그림 생성"}, {"t": "34_linear-regression_verify.py", "u": "/studies/probability-statistics/code/34_linear-regression_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/linear-regression/"
 ---
 {% raw %}

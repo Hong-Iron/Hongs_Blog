@@ -21,6 +21,7 @@ next_title: "컬렉션"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "12_option-result_verify.rs", "u": "/studies/rust/code/12_option-result_verify/", "r": "검증"}]
 permalink: "/studies/rust/option-result/"
 ---
 {% raw %}

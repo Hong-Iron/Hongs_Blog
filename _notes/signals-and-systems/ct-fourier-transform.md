@@ -21,6 +21,7 @@ next_title: "주기 신호의 푸리에 변환"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "38_ct-fourier-transform_plot.py", "u": "/studies/signals-and-systems/code/38_ct-fourier-transform_plot/", "r": "그림 생성"}, {"t": "38_ct-fourier-transform_verify.py", "u": "/studies/signals-and-systems/code/38_ct-fourier-transform_verify/", "r": "검증"}]
 permalink: "/studies/signals-and-systems/ct-fourier-transform/"
 ---
 {% raw %}

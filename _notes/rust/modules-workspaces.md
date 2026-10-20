@@ -21,6 +21,7 @@ next_title: "테스트 전략"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "41_modules-workspaces_verify.rs", "u": "/studies/rust/code/41_modules-workspaces_verify/", "r": "검증"}]
 permalink: "/studies/rust/modules-workspaces/"
 ---
 {% raw %}

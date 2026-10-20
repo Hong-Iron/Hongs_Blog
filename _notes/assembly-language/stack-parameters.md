@@ -21,6 +21,7 @@ next_title: "호출 규약"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "42_stack-parameters_verify.py", "u": "/studies/assembly-language/code/42_stack-parameters_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/stack-parameters/"
 ---
 {% raw %}

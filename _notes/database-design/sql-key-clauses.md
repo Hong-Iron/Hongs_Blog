@@ -21,6 +21,7 @@ next_title: "SELECT-FROM-WHERE"
 math: false
 mermaid: false
 code_count: 2
+code_files: [{"t": "49_sql-key-clauses_verify.py", "u": "/studies/database-design/code/49_sql-key-clauses_verify/", "r": "검증"}, {"t": "49_sql-key-clauses_verify.sql", "u": "/studies/database-design/code/49_sql-key-clauses_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/sql-key-clauses/"
 ---
 {% raw %}

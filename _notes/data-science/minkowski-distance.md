@@ -21,6 +21,7 @@ next_title: "데이터 정제"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "04_minkowski-distance_plot.py", "u": "/studies/data-science/code/04_minkowski-distance_plot/", "r": "그림 생성"}, {"t": "04_minkowski-distance_verify.py", "u": "/studies/data-science/code/04_minkowski-distance_verify/", "r": "검증"}]
 permalink: "/studies/data-science/minkowski-distance/"
 ---
 {% raw %}

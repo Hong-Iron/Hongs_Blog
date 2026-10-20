@@ -20,6 +20,7 @@ next_title: "LU 분해"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "07_inverse-matrix_plot.py", "u": "/studies/linear-algebra/code/07_inverse-matrix_plot/", "r": "그림 생성"}, {"t": "07_inverse-matrix_verify.py", "u": "/studies/linear-algebra/code/07_inverse-matrix_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/inverse-matrix/"
 ---
 {% raw %}

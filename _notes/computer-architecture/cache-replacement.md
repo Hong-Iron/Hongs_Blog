@@ -21,6 +21,7 @@ next_title: "캐시 성능과 평균 접근 시간"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "40_cache-replacement_verify.py", "u": "/studies/computer-architecture/code/40_cache-replacement_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/cache-replacement/"
 ---
 {% raw %}

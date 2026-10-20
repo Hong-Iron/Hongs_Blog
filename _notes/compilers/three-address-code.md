@@ -21,6 +21,7 @@ next_title: "쿼드러플"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "37_three-address-code_verify.py", "u": "/studies/compilers/code/37_three-address-code_verify/", "r": "검증"}]
 permalink: "/studies/compilers/three-address-code/"
 ---
 {% raw %}

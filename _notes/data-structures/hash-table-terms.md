@@ -21,6 +21,7 @@ next_title: "나눗셈 해시 함수"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "47_hash-table-terms_verify.py", "u": "/studies/data-structures/code/47_hash-table-terms_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/hash-table-terms/"
 ---
 {% raw %}

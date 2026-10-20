@@ -20,6 +20,7 @@ next_title: "선형독립"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "08_lu-decomposition_impl.py", "u": "/studies/linear-algebra/code/08_lu-decomposition_impl/", "r": "구현"}, {"t": "08_lu-decomposition_verify.py", "u": "/studies/linear-algebra/code/08_lu-decomposition_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/lu-decomposition/"
 ---
 {% raw %}

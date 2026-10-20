@@ -21,6 +21,7 @@ next_title: "LR(0) 항목과 항목 오토마타"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "24_viable-prefix_verify.py", "u": "/studies/compilers/code/24_viable-prefix_verify/", "r": "검증"}]
 permalink: "/studies/compilers/viable-prefix/"
 ---
 {% raw %}

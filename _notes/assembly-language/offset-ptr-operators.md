@@ -21,6 +21,7 @@ next_title: "TYPE·LENGTHOF·SIZEOF 연산자"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "21_offset-ptr-operators_verify.py", "u": "/studies/assembly-language/code/21_offset-ptr-operators_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/offset-ptr-operators/"
 ---
 {% raw %}

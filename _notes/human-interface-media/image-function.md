@@ -20,6 +20,7 @@ next_title: "휘도와 조도"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "12_image-function_plot.py", "u": "/studies/human-interface-media/code/12_image-function_plot/", "r": "그림 생성"}, {"t": "12_image-function_verify.py", "u": "/studies/human-interface-media/code/12_image-function_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/image-function/"
 ---
 {% raw %}

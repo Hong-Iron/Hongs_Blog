@@ -20,6 +20,7 @@ next_title: "기댓값과 선형성"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "07_random-variables_plot.py", "u": "/studies/probability-statistics/code/07_random-variables_plot/", "r": "그림 생성"}, {"t": "07_random-variables_verify.py", "u": "/studies/probability-statistics/code/07_random-variables_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/random-variables/"
 ---
 {% raw %}

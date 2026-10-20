@@ -20,6 +20,7 @@ next_title: "그래디언트와 방향도함수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "19_partial-derivatives_plot.py", "u": "/studies/calculus/code/19_partial-derivatives_plot/", "r": "그림 생성"}, {"t": "19_partial-derivatives_verify.py", "u": "/studies/calculus/code/19_partial-derivatives_verify/", "r": "검증"}]
 permalink: "/studies/calculus/partial-derivatives/"
 ---
 {% raw %}

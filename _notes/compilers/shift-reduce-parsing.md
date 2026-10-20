@@ -21,6 +21,7 @@ next_title: "핸들"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "22_shift-reduce-parsing_impl.py", "u": "/studies/compilers/code/22_shift-reduce-parsing_impl/", "r": "구현"}]
 permalink: "/studies/compilers/shift-reduce-parsing/"
 ---
 {% raw %}

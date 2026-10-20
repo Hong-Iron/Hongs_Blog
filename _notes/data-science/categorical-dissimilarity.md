@@ -21,6 +21,7 @@ next_title: "민코프스키 거리"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "03_categorical-dissimilarity_plot.py", "u": "/studies/data-science/code/03_categorical-dissimilarity_plot/", "r": "그림 생성"}, {"t": "03_categorical-dissimilarity_verify.py", "u": "/studies/data-science/code/03_categorical-dissimilarity_verify/", "r": "검증"}]
 permalink: "/studies/data-science/categorical-dissimilarity/"
 ---
 {% raw %}

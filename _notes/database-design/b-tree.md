@@ -21,6 +21,7 @@ next_title: "B-트리의 높이"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "11_b-tree_verify.py", "u": "/studies/database-design/code/11_b-tree_verify/", "r": "검증"}]
 permalink: "/studies/database-design/b-tree/"
 ---
 {% raw %}

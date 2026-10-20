@@ -21,6 +21,7 @@ next_title: "모니터"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "24_producer-consumer_verify.py", "u": "/studies/operating-systems/code/24_producer-consumer_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/producer-consumer/"
 ---
 {% raw %}

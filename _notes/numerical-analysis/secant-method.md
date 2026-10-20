@@ -21,6 +21,7 @@ next_title: "고정점 반복"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "29_secant-method_impl.py", "u": "/studies/numerical-analysis/code/29_secant-method_impl/", "r": "구현"}, {"t": "29_secant-method_plot.py", "u": "/studies/numerical-analysis/code/29_secant-method_plot/", "r": "그림 생성"}]
 permalink: "/studies/numerical-analysis/secant-method/"
 ---
 {% raw %}

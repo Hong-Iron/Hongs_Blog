@@ -21,6 +21,7 @@ next_title: "배열과 연결 리스트 비교"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_singly-linked-list_impl.c", "u": "/studies/data-structures/code/15_singly-linked-list_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/singly-linked-list/"
 ---
 {% raw %}

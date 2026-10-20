@@ -18,6 +18,7 @@ prev_title: "인코딩 예제 사다리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "50_crc-ladder_p4.py", "u": "/studies/computer-communication/code/50_crc-ladder_p4/", "r": "문제 4 풀이"}, {"t": "50_crc-ladder_plot.py", "u": "/studies/computer-communication/code/50_crc-ladder_plot/", "r": "그림 생성"}]
 permalink: "/studies/computer-communication/crc-ladder/"
 ---
 {% raw %}

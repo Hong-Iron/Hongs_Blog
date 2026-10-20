@@ -20,6 +20,7 @@ next_title: "결합분포와 조건부 기댓값"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "16_normal-distribution_plot.py", "u": "/studies/probability-statistics/code/16_normal-distribution_plot/", "r": "그림 생성"}, {"t": "16_normal-distribution_verify.py", "u": "/studies/probability-statistics/code/16_normal-distribution_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/normal-distribution/"
 ---
 {% raw %}

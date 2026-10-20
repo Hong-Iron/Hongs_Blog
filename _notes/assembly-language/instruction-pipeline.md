@@ -21,6 +21,7 @@ next_title: "x86 레지스터"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_instruction-pipeline_verify.py", "u": "/studies/assembly-language/code/03_instruction-pipeline_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/instruction-pipeline/"
 ---
 {% raw %}

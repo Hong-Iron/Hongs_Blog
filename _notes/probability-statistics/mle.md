@@ -20,6 +20,7 @@ next_title: "신뢰구간"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "30_mle_plot.py", "u": "/studies/probability-statistics/code/30_mle_plot/", "r": "그림 생성"}, {"t": "30_mle_verify.py", "u": "/studies/probability-statistics/code/30_mle_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/mle/"
 ---
 {% raw %}

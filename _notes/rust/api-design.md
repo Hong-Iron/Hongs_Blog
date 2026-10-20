@@ -21,6 +21,7 @@ next_title: "빌드와 배포"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "49_api-design_verify.rs", "u": "/studies/rust/code/49_api-design_verify/", "r": "검증"}]
 permalink: "/studies/rust/api-design/"
 ---
 {% raw %}

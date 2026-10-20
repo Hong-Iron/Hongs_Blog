@@ -21,6 +21,7 @@ next_title: "INT 명령과 인터럽트 벡터 표"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "49_msdos-memory-map_verify.py", "u": "/studies/assembly-language/code/49_msdos-memory-map_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/msdos-memory-map/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "추상 클래스와 인터페이스 비교"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "24_java-abstract-class_impl.java", "u": "/studies/java/code/24_java-abstract-class_impl/", "r": "구현"}]
 permalink: "/studies/java/java-abstract-class/"
 ---
 {% raw %}

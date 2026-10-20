@@ -21,6 +21,7 @@ next_title: "트레이트 객체"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "17_generics-trait-bounds_verify.rs", "u": "/studies/rust/code/17_generics-trait-bounds_verify/", "r": "검증"}]
 permalink: "/studies/rust/generics-trait-bounds/"
 ---
 {% raw %}

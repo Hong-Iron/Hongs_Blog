@@ -20,6 +20,7 @@ next_title: "퍼셉트론"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "07_neuron-computational-model_plot.py", "u": "/studies/human-interface-media/code/07_neuron-computational-model_plot/", "r": "그림 생성"}, {"t": "07_neuron-computational-model_verify.py", "u": "/studies/human-interface-media/code/07_neuron-computational-model_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/neuron-computational-model/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "교차 상관과 합성곱 비교"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "29_cross-correlation_impl.py", "u": "/studies/human-interface-media/code/29_cross-correlation_impl/", "r": "구현"}, {"t": "29_cross-correlation_plot.py", "u": "/studies/human-interface-media/code/29_cross-correlation_plot/", "r": "그림 생성"}]
 permalink: "/studies/human-interface-media/cross-correlation/"
 ---
 {% raw %}

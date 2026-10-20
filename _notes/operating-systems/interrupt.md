@@ -21,6 +21,7 @@ next_title: "메모리 계층"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "04_interrupt_verify.py", "u": "/studies/operating-systems/code/04_interrupt_verify/", "r": "검증"}]
 permalink: "/studies/operating-systems/interrupt/"
 ---
 {% raw %}

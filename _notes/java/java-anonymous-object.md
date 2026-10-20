@@ -21,6 +21,7 @@ next_title: "라이브러리와 JAR"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "31_java-anonymous-object_impl.java", "u": "/studies/java/code/31_java-anonymous-object_impl/", "r": "구현"}]
 permalink: "/studies/java/java-anonymous-object/"
 ---
 {% raw %}

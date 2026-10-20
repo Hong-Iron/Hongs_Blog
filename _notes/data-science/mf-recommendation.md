@@ -21,6 +21,7 @@ next_title: "단일 클래스 협업 필터링"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "44_mf-recommendation_impl.py", "u": "/studies/data-science/code/44_mf-recommendation_impl/", "r": "구현"}, {"t": "44_mf-recommendation_plot.py", "u": "/studies/data-science/code/44_mf-recommendation_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/mf-recommendation/"
 ---
 {% raw %}

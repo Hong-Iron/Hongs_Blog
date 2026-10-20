@@ -20,6 +20,7 @@ next_title: "중첩 질의 쓰기 예제 사다리"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "55_basic-select-practice_p1.py", "u": "/studies/database-design/code/55_basic-select-practice_p1/", "r": "문제 1 풀이"}, {"t": "55_basic-select-practice_p2.py", "u": "/studies/database-design/code/55_basic-select-practice_p2/", "r": "문제 2 풀이"}]
 permalink: "/studies/database-design/basic-select-practice/"
 ---
 {% raw %}

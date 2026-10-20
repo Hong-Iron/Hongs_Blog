@@ -21,6 +21,7 @@ next_title: "페이징"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "35_buddy-system_impl.py", "u": "/studies/operating-systems/code/35_buddy-system_impl/", "r": "구현"}]
 permalink: "/studies/operating-systems/buddy-system/"
 ---
 {% raw %}

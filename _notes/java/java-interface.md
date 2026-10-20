@@ -21,6 +21,7 @@ next_title: "추상 클래스"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "23_java-interface_impl.java", "u": "/studies/java/code/23_java-interface_impl/", "r": "구현"}]
 permalink: "/studies/java/java-interface/"
 ---
 {% raw %}

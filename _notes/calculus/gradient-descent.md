@@ -20,6 +20,7 @@ next_title: "볼록 함수와 볼록 최적화"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "26_gradient-descent_impl.py", "u": "/studies/calculus/code/26_gradient-descent_impl/", "r": "구현"}, {"t": "26_gradient-descent_plot.py", "u": "/studies/calculus/code/26_gradient-descent_plot/", "r": "그림 생성"}, {"t": "26_gradient-descent_verify.py", "u": "/studies/calculus/code/26_gradient-descent_verify/", "r": "검증"}]
 permalink: "/studies/calculus/gradient-descent/"
 ---
 {% raw %}

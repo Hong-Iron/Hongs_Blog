@@ -21,6 +21,7 @@ next_title: "DBMS 언어와 인터페이스"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "08_data-independence_verify.py", "u": "/studies/database-design/code/08_data-independence_verify/", "r": "검증"}]
 permalink: "/studies/database-design/data-independence/"
 ---
 {% raw %}

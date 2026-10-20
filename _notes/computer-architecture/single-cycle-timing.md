@@ -21,6 +21,7 @@ next_title: "5단계 파이프라인"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "26_single-cycle-timing_verify.py", "u": "/studies/computer-architecture/code/26_single-cycle-timing_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/single-cycle-timing/"
 ---
 {% raw %}

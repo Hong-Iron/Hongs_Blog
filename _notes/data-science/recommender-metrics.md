@@ -21,6 +21,7 @@ next_title: "행렬 분해 추천"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "43_recommender-metrics_verify.py", "u": "/studies/data-science/code/43_recommender-metrics_verify/", "r": "검증"}]
 permalink: "/studies/data-science/recommender-metrics/"
 ---
 {% raw %}

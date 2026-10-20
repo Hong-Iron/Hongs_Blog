@@ -21,6 +21,7 @@ next_title: "BIOS 비디오 INT 10h와 속성 바이트"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "53_bios-keyboard-int16h_verify.py", "u": "/studies/assembly-language/code/53_bios-keyboard-int16h_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/bios-keyboard-int16h/"
 ---
 {% raw %}

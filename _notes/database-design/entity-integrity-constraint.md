@@ -21,6 +21,7 @@ next_title: "참조 무결성 제약과 외래 키"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "36_entity-integrity-constraint_verify.py", "u": "/studies/database-design/code/36_entity-integrity-constraint_verify/", "r": "검증"}, {"t": "36_entity-integrity-constraint_verify.sql", "u": "/studies/database-design/code/36_entity-integrity-constraint_verify-sql/", "r": "검증"}]
 permalink: "/studies/database-design/entity-integrity-constraint/"
 ---
 {% raw %}

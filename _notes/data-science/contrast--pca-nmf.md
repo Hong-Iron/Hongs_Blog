@@ -21,6 +21,7 @@ next_title: "그래프 분할과 정규화 컷"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "36_contrast--pca-nmf_plot.py", "u": "/studies/data-science/code/36_contrast--pca-nmf_plot/", "r": "그림 생성"}]
 permalink: "/studies/data-science/contrast--pca-nmf/"
 ---
 {% raw %}

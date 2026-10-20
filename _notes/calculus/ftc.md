@@ -20,6 +20,7 @@ next_title: "치환적분"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "12_ftc_plot.py", "u": "/studies/calculus/code/12_ftc_plot/", "r": "그림 생성"}, {"t": "12_ftc_verify.py", "u": "/studies/calculus/code/12_ftc_verify/", "r": "검증"}]
 permalink: "/studies/calculus/ftc/"
 ---
 {% raw %}

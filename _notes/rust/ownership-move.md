@@ -21,6 +21,7 @@ next_title: "malloc·free ↔ 소유권과 Drop"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "05_ownership-move_verify.rs", "u": "/studies/rust/code/05_ownership-move_verify/", "r": "검증"}]
 permalink: "/studies/rust/ownership-move/"
 ---
 {% raw %}

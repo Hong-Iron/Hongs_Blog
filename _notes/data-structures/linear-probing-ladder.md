@@ -18,6 +18,7 @@ prev_title: "외부 정렬 시간 계산 예제 사다리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "49_linear-probing-ladder_p4.py", "u": "/studies/data-structures/code/49_linear-probing-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/linear-probing-ladder/"
 ---
 {% raw %}

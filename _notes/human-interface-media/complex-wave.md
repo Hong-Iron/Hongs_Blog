@@ -20,6 +20,7 @@ next_title: "디지털 이미지"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "24_complex-wave_plot.py", "u": "/studies/human-interface-media/code/24_complex-wave_plot/", "r": "그림 생성"}, {"t": "24_complex-wave_verify.py", "u": "/studies/human-interface-media/code/24_complex-wave_verify/", "r": "검증"}]
 permalink: "/studies/human-interface-media/complex-wave/"
 ---
 {% raw %}

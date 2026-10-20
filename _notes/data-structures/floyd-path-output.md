@@ -21,6 +21,7 @@ next_title: "삽입 정렬"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "39_floyd-path-output_impl.c", "u": "/studies/data-structures/code/39_floyd-path-output_impl/", "r": "구현"}, {"t": "39_floyd-path-output_verify.py", "u": "/studies/data-structures/code/39_floyd-path-output_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/floyd-path-output/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "최대가능도 추정"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "29_estimators_plot.py", "u": "/studies/probability-statistics/code/29_estimators_plot/", "r": "그림 생성"}, {"t": "29_estimators_verify.py", "u": "/studies/probability-statistics/code/29_estimators_verify/", "r": "검증"}]
 permalink: "/studies/probability-statistics/estimators/"
 ---
 {% raw %}

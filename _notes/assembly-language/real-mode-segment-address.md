@@ -21,6 +21,7 @@ next_title: "입출력 접근 수준"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "06_real-mode-segment-address_verify.py", "u": "/studies/assembly-language/code/06_real-mode-segment-address_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/real-mode-segment-address/"
 ---
 {% raw %}

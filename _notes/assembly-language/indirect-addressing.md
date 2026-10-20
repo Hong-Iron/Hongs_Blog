@@ -21,6 +21,7 @@ next_title: "JMP와 LOOP"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "23_indirect-addressing_verify.py", "u": "/studies/assembly-language/code/23_indirect-addressing_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/indirect-addressing/"
 ---
 {% raw %}

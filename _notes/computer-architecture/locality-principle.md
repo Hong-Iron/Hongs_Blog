@@ -21,6 +21,7 @@ next_title: "직접 사상 캐시"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "35_locality-principle_verify.py", "u": "/studies/computer-architecture/code/35_locality-principle_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/locality-principle/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "도함수의 활용과 최적화"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "06_chain-rule_plot.py", "u": "/studies/calculus/code/06_chain-rule_plot/", "r": "그림 생성"}, {"t": "06_chain-rule_verify.py", "u": "/studies/calculus/code/06_chain-rule_verify/", "r": "검증"}]
 permalink: "/studies/calculus/chain-rule/"
 ---
 {% raw %}

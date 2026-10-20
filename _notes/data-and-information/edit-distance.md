@@ -21,6 +21,7 @@ next_title: "확률 과정"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "11_edit-distance_impl.py", "u": "/studies/data-and-information/code/11_edit-distance_impl/", "r": "구현"}]
 permalink: "/studies/data-and-information/edit-distance/"
 ---
 {% raw %}

@@ -20,6 +20,7 @@ next_title: "트레이트와 반복자 연습"
 math: true
 mermaid: true
 code_count: 3
+code_files: [{"t": "14_data-modeling-practice_p1.rs", "u": "/studies/rust/code/14_data-modeling-practice_p1/", "r": "문제 1 풀이"}, {"t": "14_data-modeling-practice_p2.rs", "u": "/studies/rust/code/14_data-modeling-practice_p2/", "r": "문제 2 풀이"}, {"t": "14_data-modeling-practice_p3.rs", "u": "/studies/rust/code/14_data-modeling-practice_p3/", "r": "문제 3 풀이"}]
 permalink: "/studies/rust/data-modeling-practice/"
 ---
 {% raw %}

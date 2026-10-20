@@ -21,6 +21,7 @@ next_title: "Future와 async·await"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "35_channels_verify.rs", "u": "/studies/rust/code/35_channels_verify/", "r": "검증"}]
 permalink: "/studies/rust/channels/"
 ---
 {% raw %}

@@ -19,6 +19,7 @@ prev_title: "오류 복구와 FEC"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "53_arq-sequence-number_plot.py", "u": "/studies/computer-communication/code/53_arq-sequence-number_plot/", "r": "그림 생성"}, {"t": "53_arq_impl.py", "u": "/studies/computer-communication/code/53_arq_impl/", "r": "구현"}]
 permalink: "/studies/computer-communication/arq-sequence-number/"
 ---
 {% raw %}

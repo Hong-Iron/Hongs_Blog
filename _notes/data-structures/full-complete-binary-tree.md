@@ -21,6 +21,7 @@ next_title: "이진 트리의 배열 표현과 연결 표현"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "22_full-complete-binary-tree_verify.py", "u": "/studies/data-structures/code/22_full-complete-binary-tree_verify/", "r": "검증"}]
 permalink: "/studies/data-structures/full-complete-binary-tree/"
 ---
 {% raw %}

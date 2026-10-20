@@ -21,6 +21,7 @@ next_title: "연결 리스트의 변형"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "16_array-vs-linked-list_impl.c", "u": "/studies/data-structures/code/16_array-vs-linked-list_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/array-vs-linked-list/"
 ---
 {% raw %}

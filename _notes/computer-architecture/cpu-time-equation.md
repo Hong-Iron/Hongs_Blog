@@ -21,6 +21,7 @@ next_title: "암달의 법칙"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "03_cpu-time-equation_verify.py", "u": "/studies/computer-architecture/code/03_cpu-time-equation_verify/", "r": "검증"}]
 permalink: "/studies/computer-architecture/cpu-time-equation/"
 ---
 {% raw %}

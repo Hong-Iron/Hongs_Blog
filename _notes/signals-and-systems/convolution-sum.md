@@ -21,6 +21,7 @@ next_title: "컨벌루션 적분"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "18_convolution-sum_impl.py", "u": "/studies/signals-and-systems/code/18_convolution-sum_impl/", "r": "구현"}, {"t": "18_convolution-sum_plot.py", "u": "/studies/signals-and-systems/code/18_convolution-sum_plot/", "r": "그림 생성"}]
 permalink: "/studies/signals-and-systems/convolution-sum/"
 ---
 {% raw %}

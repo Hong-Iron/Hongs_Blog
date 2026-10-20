@@ -21,6 +21,7 @@ next_title: "수식 트리와 전위·중위·후위 표기"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "24_level-order-traversal_impl.c", "u": "/studies/data-structures/code/24_level-order-traversal_impl/", "r": "구현"}]
 permalink: "/studies/data-structures/level-order-traversal/"
 ---
 {% raw %}

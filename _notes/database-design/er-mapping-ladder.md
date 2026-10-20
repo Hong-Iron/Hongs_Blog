@@ -20,6 +20,7 @@ next_title: "UNIVERSITY 사상 연습"
 math: false
 mermaid: true
 code_count: 1
+code_files: [{"t": "44_er-mapping-ladder_p4.py", "u": "/studies/database-design/code/44_er-mapping-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/database-design/er-mapping-ladder/"
 ---
 {% raw %}

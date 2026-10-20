@@ -21,6 +21,7 @@ next_title: "내부 가변성"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "28_rc-arc-weak_verify.rs", "u": "/studies/rust/code/28_rc-arc-weak_verify/", "r": "검증"}]
 permalink: "/studies/rust/rc-arc-weak/"
 ---
 {% raw %}

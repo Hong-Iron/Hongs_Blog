@@ -21,6 +21,7 @@ next_title: "리스트와 문자열"
 math: true
 mermaid: false
 code_count: 3
+code_files: [{"t": "02_complexity-budget_bench.py", "u": "/studies/algorithms/code/02_complexity-budget_bench/", "r": "실험"}, {"t": "02_complexity-budget_plot.py", "u": "/studies/algorithms/code/02_complexity-budget_plot/", "r": "그림 생성"}, {"t": "02_complexity-budget_verify.py", "u": "/studies/algorithms/code/02_complexity-budget_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/complexity-budget/"
 ---
 {% raw %}

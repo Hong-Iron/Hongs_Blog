@@ -20,6 +20,7 @@ next_title: "스택 응용 연습"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "12_sparse-transpose-ladder_p4.c", "u": "/studies/data-structures/code/12_sparse-transpose-ladder_p4/", "r": "문제 4 풀이"}]
 permalink: "/studies/data-structures/sparse-transpose-ladder/"
 ---
 {% raw %}

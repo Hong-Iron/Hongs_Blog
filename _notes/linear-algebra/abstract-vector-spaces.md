@@ -20,6 +20,7 @@ next_title: "노름과 조건수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "25_abstract-vector-spaces_plot.py", "u": "/studies/linear-algebra/code/25_abstract-vector-spaces_plot/", "r": "그림 생성"}, {"t": "25_abstract-vector-spaces_verify.py", "u": "/studies/linear-algebra/code/25_abstract-vector-spaces_verify/", "r": "검증"}]
 permalink: "/studies/linear-algebra/abstract-vector-spaces/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "MS-DOS 메모리 배치"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "48_fat-file-system_verify.py", "u": "/studies/assembly-language/code/48_fat-file-system_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/fat-file-system/"
 ---
 {% raw %}

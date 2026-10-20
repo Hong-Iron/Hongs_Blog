@@ -21,6 +21,7 @@ next_title: "별칭과 자기 조인"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "54_missing-where-cross-product_verify.py", "u": "/studies/database-design/code/54_missing-where-cross-product_verify/", "r": "검증"}]
 permalink: "/studies/database-design/missing-where-cross-product/"
 ---
 {% raw %}

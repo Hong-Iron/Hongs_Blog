@@ -21,6 +21,7 @@ next_title: "3단계 스키마 구조"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "06_schema-and-instance_verify.py", "u": "/studies/database-design/code/06_schema-and-instance_verify/", "r": "검증"}]
 permalink: "/studies/database-design/schema-and-instance/"
 ---
 {% raw %}

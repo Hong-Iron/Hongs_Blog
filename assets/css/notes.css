@@ -824,3 +824,569 @@ body[data-bg="midnight"] .highlight {
     transition: none;
   }
 }
+
+/* -- Code panel (assets/js/code-panel.js) -------------------------------------
+   A code link opens its code here instead of leaving the page.
+   Wide screens: the page narrows by --code-panel-w and the panel sits beside
+   it. Narrow screens: a sheet over the page. */
+
+.note-code {
+  margin-top: 1.1rem;
+}
+
+.note-code[hidden],
+.note-code ul {
+  display: none;
+}
+
+.note-code__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--course, var(--accent)) 55%, transparent);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--course, var(--accent));
+  font: 600 0.85rem var(--font-sans);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.note-code__btn:hover,
+html.code-panel-open .note-code__btn {
+  background: color-mix(in srgb, var(--course, var(--accent)) 12%, transparent);
+}
+
+.note-code__icon {
+  font: 600 0.8em "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+/* the links that point at the code in view */
+.note-body a.is-code-open {
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--course, var(--accent)) 14%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--course, var(--accent)) 14%, transparent);
+}
+
+.code-panel {
+  --code-bg: var(--bg-alt);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 45; /* above the site header (40) */
+  display: flex;
+  flex-direction: column;
+  width: var(--code-panel-w, 40vw);
+  background: var(--bg);
+  border-left: 1px solid var(--rule);
+  box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.06);
+  color: var(--ink);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+
+.code-panel[hidden] {
+  display: none;
+}
+
+html.code-panel-open .code-panel {
+  transform: none;
+}
+
+.code-panel:focus {
+  outline: none;
+}
+
+html.code-panel-split body {
+  padding-right: var(--code-panel-w);
+}
+
+/* 홍철 would sit on the text column; he steps out while the panel is open */
+html.code-panel-split .robot {
+  right: calc(var(--code-panel-w) + 16px);
+  transition: opacity 0.2s ease;
+}
+
+html.code-panel-split .robot:not(.is-open) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* the text column is no longer in the middle of the window, so the
+   background keeps to the header band */
+html.code-panel-split .geo-canvas--masked {
+  --geo-clear: 200vw !important;
+}
+
+@media (min-width: 1100px) {
+  html.code-panel-split .note-shell.has-toc {
+    --note-pad-r: clamp(0px, calc(100vw - var(--code-panel-w) - var(--note-toc-w) - var(--note-w) - 2rem), var(--note-toc-w));
+  }
+}
+
+html.code-panel-dragging,
+html.code-panel-dragging * {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+
+/* the left edge: drag to resize */
+.code-panel__grip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  z-index: 2;
+  width: 10px;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.code-panel__grip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 4px;
+  height: 2.75rem;
+  margin-top: -1.375rem;
+  border-radius: 2px;
+  background: var(--rule);
+  transition: background 0.15s ease, height 0.15s ease;
+}
+
+.code-panel__grip:hover::after,
+.code-panel__grip:focus-visible::after,
+html.code-panel-dragging .code-panel__grip::after {
+  background: var(--course, var(--accent));
+}
+
+.code-panel__grip:focus {
+  outline: none;
+}
+
+/* tab strip */
+.code-panel__bar {
+  display: flex;
+  align-items: stretch;
+  flex: none;
+  min-height: 2.75rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--code-bg);
+}
+
+.code-panel__tabs {
+  position: relative; /* offsetParent for the tabs (code-panel.js revealTab) */
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.code-panel__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.code-tab {
+  display: flex;
+  align-items: center;
+  flex: none;
+  max-width: 15rem;
+  border-right: 1px solid var(--rule);
+  color: var(--ink-muted);
+}
+
+.code-tab.is-active {
+  position: relative;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.code-tab.is-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: var(--course, var(--accent));
+}
+
+.code-tab.is-active::after {
+  /* covers the strip's bottom rule under the tab in view */
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: var(--bg);
+}
+
+.code-tab__btn {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 0.35rem 0 0.85rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: 500 0.8rem/2.75rem "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.code-tab--list .code-tab__btn {
+  padding-right: 0.85rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.code-tab__icon {
+  margin-right: 0.35em;
+}
+
+.code-tab__x,
+.code-panel__close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  border: 0;
+  background: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.code-tab__x {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.35rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.code-panel__close {
+  width: 2.75rem;
+  border-left: 1px solid var(--rule);
+  font-size: 1.35rem;
+}
+
+.code-tab__x:hover,
+.code-panel__close:hover {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  color: var(--ink);
+}
+
+.code-tab__btn:focus-visible,
+.code-tab__x:focus-visible,
+.code-panel__close:focus-visible {
+  outline: 2px solid var(--course, var(--accent));
+  outline-offset: -2px;
+}
+
+/* one view per tab */
+.code-panel__views {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.code-panel__view {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  inset: 0;
+}
+
+.code-panel__view[hidden] {
+  display: none;
+}
+
+.code-panel__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1rem;
+  align-items: start;
+  flex: none;
+  padding: 0.95rem 1.1rem 0.85rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.code-panel__tag {
+  grid-column: 1;
+}
+
+.code-panel__name {
+  grid-column: 1;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font: 600 0.95rem/1.4 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.code-panel__parent {
+  grid-column: 1;
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.code-panel__parent a {
+  color: var(--course, var(--accent));
+}
+
+.code-panel__tools {
+  display: flex;
+  gap: 0.4rem;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: center;
+}
+
+.code-panel__tool {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 500 0.8rem var(--font-sans);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.code-panel__tool:hover {
+  border-color: var(--course, var(--accent));
+  color: var(--course, var(--accent));
+}
+
+.code-panel__tool.is-done {
+  border-color: var(--course, var(--accent));
+  background: color-mix(in srgb, var(--course, var(--accent)) 12%, var(--bg));
+  color: var(--course, var(--accent));
+}
+
+.code-panel__status {
+  margin: 1.25rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.code-panel__status a {
+  color: var(--course, var(--accent));
+}
+
+.code-panel__retry {
+  margin-left: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+/* the code: one scroller, the line numbers stay put when it moves sideways */
+.code-view {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--code-bg);
+}
+
+.code-view:focus {
+  outline: none;
+}
+
+.code-view:focus-visible {
+  outline: 2px solid var(--course, var(--accent));
+  outline-offset: -2px;
+}
+
+.code-view__inner {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.code-view__ln,
+.code-view__src pre {
+  margin: 0;
+  padding: 0.9rem 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.code-view__ln {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  flex: none;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+  border-right: 1px solid var(--rule);
+  background: var(--code-bg);
+  color: color-mix(in srgb, var(--ink-muted) 70%, transparent);
+  text-align: right;
+  user-select: none;
+}
+
+.code-view__src {
+  flex: 1 0 auto;
+  padding: 0 1.1rem 0 0.9rem;
+}
+
+.code-view__src div,
+.code-view__src code {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+}
+
+/* 목록: the note's own code files */
+.code-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1.1rem;
+}
+
+.code-list__title {
+  margin: 0 0 0.7rem;
+  font: 600 0.85rem var(--font-sans);
+  color: var(--ink-muted);
+}
+
+.code-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.code-list__items li + li {
+  margin-top: 0.45rem;
+}
+
+.code-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.code-list__item:hover,
+.code-list__item:focus-visible {
+  border-color: var(--course, var(--accent));
+  outline: none;
+}
+
+.code-list__item.is-open {
+  border-left: 3px solid var(--course, var(--accent));
+}
+
+.code-list__role {
+  font: 600 0.72rem var(--font-sans);
+  letter-spacing: 0.04em;
+  color: var(--course, var(--accent));
+}
+
+.code-list__name {
+  overflow-wrap: anywhere;
+  font: 500 0.88rem/1.4 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.code-panel-scrim {
+  display: none;
+}
+
+/* narrow screens: a sheet that comes up over the page */
+@media (max-width: 959.98px) {
+  .code-panel {
+    top: max(1.25rem, env(safe-area-inset-top));
+    left: 0;
+    z-index: 970; /* above the 목차 drawer (960) and the robot (950) */
+    width: auto;
+    border-top: 1px solid var(--rule);
+    border-left: 0;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -0.5rem 2rem rgba(0, 0, 0, 0.18);
+    transform: translateY(100%);
+    overflow: hidden;
+  }
+
+  .code-panel__grip {
+    display: none;
+  }
+
+  html.code-panel-sheet {
+    overflow: hidden;
+  }
+
+  .code-panel-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 965;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .code-panel-scrim[hidden] {
+    display: none;
+  }
+
+  html.code-panel-open .code-panel-scrim {
+    opacity: 1;
+  }
+
+  .code-panel__head {
+    padding: 0.8rem 0.9rem 0.75rem;
+  }
+
+  .code-view {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-panel,
+  .code-panel-scrim {
+    transition: none;
+  }
+}
+
+@media print {
+  .code-panel,
+  .code-panel-scrim,
+  .note-code {
+    display: none;
+  }
+
+  html.code-panel-split body {
+    padding-right: 0;
+  }
+}

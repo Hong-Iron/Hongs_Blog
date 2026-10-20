@@ -21,6 +21,7 @@ next_title: "야코비 방법과 가우스-자이델 방법"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "19_bounding-volume_plot.py", "u": "/studies/numerical-analysis/code/19_bounding-volume_plot/", "r": "그림 생성"}, {"t": "19_bounding-volume_verify.py", "u": "/studies/numerical-analysis/code/19_bounding-volume_verify/", "r": "검증"}]
 permalink: "/studies/numerical-analysis/bounding-volume/"
 ---
 {% raw %}

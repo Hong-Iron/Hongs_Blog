@@ -21,6 +21,7 @@ next_title: "제로 확장과 부호 확장"
 math: false
 mermaid: false
 code_count: 1
+code_files: [{"t": "16_data-transfer-instructions_verify.py", "u": "/studies/assembly-language/code/16_data-transfer-instructions_verify/", "r": "검증"}]
 permalink: "/studies/assembly-language/data-transfer-instructions/"
 ---
 {% raw %}

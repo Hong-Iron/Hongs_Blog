@@ -20,6 +20,7 @@ next_title: "복소수"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "17_polar-parametric_plot.py", "u": "/studies/college-math/code/17_polar-parametric_plot/", "r": "그림 생성"}, {"t": "17_polar-parametric_verify.py", "u": "/studies/college-math/code/17_polar-parametric_verify/", "r": "검증"}]
 permalink: "/studies/college-math/polar-parametric/"
 ---
 {% raw %}

@@ -21,6 +21,7 @@ next_title: "정렬과 정렬 기준"
 math: true
 mermaid: false
 code_count: 2
+code_files: [{"t": "04_hash-dict-set_impl.py", "u": "/studies/algorithms/code/04_hash-dict-set_impl/", "r": "구현"}, {"t": "04_hash-dict-set_plot.py", "u": "/studies/algorithms/code/04_hash-dict-set_plot/", "r": "그림 생성"}]
 permalink: "/studies/algorithms/hash-dict-set/"
 ---
 {% raw %}

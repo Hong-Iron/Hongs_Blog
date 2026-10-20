@@ -21,6 +21,7 @@ next_title: "SLR 파싱"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "25_lr0-item-automaton_impl.py", "u": "/studies/compilers/code/25_lr0-item-automaton_impl/", "r": "구현"}]
 permalink: "/studies/compilers/lr0-item-automaton/"
 ---
 {% raw %}

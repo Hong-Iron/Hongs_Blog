@@ -20,6 +20,7 @@ next_title: "로피탈 정리와 증가 속도"
 math: true
 mermaid: true
 code_count: 2
+code_files: [{"t": "08_mean-value-theorem_plot.py", "u": "/studies/calculus/code/08_mean-value-theorem_plot/", "r": "그림 생성"}, {"t": "08_mean-value-theorem_verify.py", "u": "/studies/calculus/code/08_mean-value-theorem_verify/", "r": "검증"}]
 permalink: "/studies/calculus/mean-value-theorem/"
 ---
 {% raw %}

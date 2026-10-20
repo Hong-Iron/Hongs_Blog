@@ -21,6 +21,7 @@ next_title: "DFA와 NFA 비교"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "06_finite-automata_impl.py", "u": "/studies/compilers/code/06_finite-automata_impl/", "r": "구현"}]
 permalink: "/studies/compilers/finite-automata/"
 ---
 {% raw %}

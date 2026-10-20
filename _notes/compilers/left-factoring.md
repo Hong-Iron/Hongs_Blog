@@ -21,6 +21,7 @@ next_title: "추상 구문 트리"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "15_left-factoring_verify.py", "u": "/studies/compilers/code/15_left-factoring_verify/", "r": "검증"}]
 permalink: "/studies/compilers/left-factoring/"
 ---
 {% raw %}

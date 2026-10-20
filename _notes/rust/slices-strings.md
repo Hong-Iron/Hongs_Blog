@@ -21,6 +21,7 @@ next_title: "구조체와 메서드"
 math: true
 mermaid: false
 code_count: 1
+code_files: [{"t": "09_slices-strings_verify.rs", "u": "/studies/rust/code/09_slices-strings_verify/", "r": "검증"}]
 permalink: "/studies/rust/slices-strings/"
 ---
 {% raw %}

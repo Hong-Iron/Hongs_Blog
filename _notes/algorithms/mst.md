@@ -21,6 +21,7 @@ next_title: "트리 순회와 이진 탐색 트리"
 math: true
 mermaid: true
 code_count: 1
+code_files: [{"t": "28_mst_verify.py", "u": "/studies/algorithms/code/28_mst_verify/", "r": "검증"}]
 permalink: "/studies/algorithms/mst/"
 ---
 {% raw %}
