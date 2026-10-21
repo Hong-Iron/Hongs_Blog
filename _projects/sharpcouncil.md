@@ -13,9 +13,9 @@ status: Prototype
 repo: https://github.com/Hong-Iron/sharpCouncil
 demo:
 summary: Write a few people into a note and give them an agenda. Local models argue it out in rounds, question each other, vote, and leave live meeting minutes in your vault.
-cover: /assets/img/uploads/sharpcouncil-cover.png
-image: /assets/img/uploads/sharpcouncil-cover.png
-cover_alt: "Diagram: four people from a note, each assigned a local model, move through opening statements, rebuttal rounds, a consensus check, a vote, and a final resolution."
+cover: /assets/img/uploads/sharpcouncil-cover.jpg
+image: /assets/img/uploads/sharpcouncil-cover.jpg
+cover_alt: "Obsidian during a live council session. The minutes note shows the rebuttal round, each turn under the speaker's name and model with a token count, while the progress panel on the right marks the rebuttal stage and streams the current speaker, the outsider."
 tags:
   - obsidian
   - local-llm
@@ -28,11 +28,18 @@ tags:
 person note  →  [setup window: models and parameters]  →  live minutes + progress panel
 ```
 
+The screenshot at the top is a real session: four people arguing over whether to stay up all night before a final. The minutes fill in on the left while the progress panel streams whoever is speaking. The model was gemma4 in Ollama, behind a small adapter that answers like LM Studio's server.
+
 ## How a session runs
 
 **1. Write the people.** The format is loose: a `## Name` heading and a few lines about who they are. Optional lines pin a model (`모델:`), a temperature (`온도:`), a context length, or thinking on/off for that person. An `## 안건` section holds the agenda.
 
 **2. Adjust in the setup window.** Models are assigned three ways: *diversity* gives each person a different model, *uniform* gives everyone the same one, and *manual* keeps your picks. Parameters can be set for everyone at once or per person. The window also estimates how many turns the debate will take and how many times a model will have to be swapped in.
+
+<figure>
+  <img src="{{ '/assets/img/uploads/sharpcouncil-setup.jpg' | relative_url }}" alt="The council setup window in Obsidian: the agenda at the top, shared temperature, top-p, length and thinking controls, model assignment set to uniform, the four people listed on the left with the optimist's card open on the right, and the procedure row with one rebuttal round, cross-examination, a vote and a final resolution." loading="lazy">
+  <figcaption>The setup window for that session: four people on one model, one rebuttal round, then a vote and the chair's resolution.</figcaption>
+</figure>
 
 **3. Watch it live.** The minutes open in a new tab and grow as each person speaks. A side panel shows the current stage, each person's status, the live stream, and the vote. A model's `<think>` reasoning is kept in a collapsible callout under its speech.
 

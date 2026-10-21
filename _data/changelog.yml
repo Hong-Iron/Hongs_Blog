@@ -1,5 +1,10 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
+- date: 2026-10-22
+  title: 프로젝트 표지를 실제 화면으로
+  items:
+    - G2B Masters, studyweb, sharpCouncil, cft의 표지를 그림 대신 프로그램을 실제로 돌려서 찍은 화면으로 바꿨어요. G2B Masters는 운영 중인 사이트에서 검색한 화면, studyweb은 Obsidian에서 가격을 물어본 화면, sharpCouncil은 심의회가 진행되는 화면, cft는 터미널에서 번역하는 화면이에요.
+    - sharpCouncil 페이지에는 심의회 준비 창 화면도 더했어요. NL-MINER와 DocSim은 원래부터 실제 화면이라 그대로 두었어요.
 - date: 2026-10-21
   title: 프로젝트 네 개 추가
   items:

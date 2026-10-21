@@ -13,10 +13,10 @@ status: Live
 repo:
 demo: https://electerior.co.kr
 summary: A public procurement platform that brings bids from 나라장터 (KONEPS) and 국방전자조달 (D2B) into one search, and uses AI to summarize the notices behind them.
-cover: /assets/img/uploads/g2b-masters-cover.png
-image: /assets/img/uploads/g2b-masters-cover.png
+cover: /assets/img/uploads/g2b-masters-cover.jpg
+image: /assets/img/uploads/g2b-masters-cover.jpg
 shot: /assets/img/uploads/g2b-masters-search.webp
-cover_alt: "Diagram: tenders from 나라장터 and 국방전자조달 flow into one database, are summarized by several AI models that are checked against each other, and come out as one search."
+cover_alt: "The live G2B Masters search screen: the keyword CCTV in the AND box, a one-month period, 2,449 notices broken down by stage, type and status, and the first results with their agencies, budgets and deadlines."
 tags:
   - procurement
   - data-pipeline
@@ -25,7 +25,7 @@ tags:
 
 Companies that sell goods, services, and construction to public agencies have to watch two separate systems: **나라장터** (KONEPS, the national e-procurement system) and **국방전자조달** (D2B, the defense e-procurement system). Opportunities slip through the gap between them. And the notices and pre-specifications behind each bid are long and come in every format, so just checking one takes a long time.
 
-G2B Masters puts both systems in one search, and AI pulls the key points out of each document. It is running at [electerior.co.kr](https://electerior.co.kr).
+G2B Masters puts both systems in one search, and AI pulls the key points out of each document. It is running at [electerior.co.kr](https://electerior.co.kr). The screenshot at the top is the live site: a search for CCTV across the last month, 2,449 notices.
 
 <figure>
   <img src="{{ '/assets/img/uploads/g2b-masters-search.webp' | relative_url }}" alt="The G2B Masters search screen: tabs for keyword, item, and agency search, three keyword rows (all of, any of, exclude), a date range, and a result list of 38,073 notices filtered by stage, type, and status." loading="lazy">

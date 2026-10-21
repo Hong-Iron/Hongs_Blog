@@ -14,9 +14,9 @@ status: Active
 repo: https://github.com/Hong-Iron/studyWeb
 demo:
 summary: Lets a local LLM search the live web, read pages, compare prices, and build RAG-ready chunks, with no per-search fees. Ships as a backend plus LM Studio and Obsidian plugins.
-cover: /assets/img/uploads/studyweb-cover.png
-image: /assets/img/uploads/studyweb-cover.png
-cover_alt: "Diagram: the LM Studio and Obsidian plugins call the studyweb backend over HTTP, and the backend searches, reads and ranks the web."
+cover: /assets/img/uploads/studyweb-cover.jpg
+image: /assets/img/uploads/studyweb-cover.jpg
+cover_alt: "Obsidian with the studyweb chat pane. Asked for the lowest price of a Logitech MX Master 3S, the model calls find_prices; the answer lists three danawa.com prices from 100,550원 with links, then the two sites it could not read, and the same answer is saved as a new note in the middle."
 tags:
   - rag
   - llm-tools
@@ -27,6 +27,8 @@ tags:
 A local model is only as current as its training data. Tavily and similar services fix that, but they charge per search and see every query. **studyweb** does the same job on your own machine: it searches, reads the pages, ranks them, and hands the model a source-grounded answer. Only the page fetches leave the machine.
 
 `POST /search` speaks Tavily's request and response shape, so an existing client can point at `localhost:8787` and drop its API key. The core install is two dependencies, `requests` and `lxml`.
+
+The screenshot at the top is a real run in the Obsidian pane. Asked for the lowest price of a mouse, the model called `find_prices`, studyweb read three prices off danawa.com, listed the two sites it could not read instead of hiding them, and **New note** saved the answer to the vault. The model was gemma4 in Ollama, behind a small adapter that answers like LM Studio's server.
 
 ## Three repos, one engine
 

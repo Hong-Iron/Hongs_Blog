@@ -12,9 +12,9 @@ status: MVP
 repo: https://github.com/Hong-Iron/Cheaper-Foreign-Tok/tree/feat/cft-mvp
 demo:
 summary: Non-English text costs several times the tokens of English. cft translates locally with LM Studio, keeps code byte-for-byte, and never blocks a prompt when the local model fails.
-cover: /assets/img/uploads/cft-cover.png
-image: /assets/img/uploads/cft-cover.png
-cover_alt: "Diagram: a Korean prompt with a code path is masked, translated by a local model, and sent to Claude Code in English; the English reply is translated back to Korean in a side pane."
+cover: /assets/img/uploads/cft-cover.jpg
+image: /assets/img/uploads/cft-cover.jpg
+cover_alt: "Two terminals. Top: cft doctor checks the local endpoint, then a Korean request about src/util.py comes out in English with the path untouched. Bottom: cft watch reports one new response and translates it into Korean, keeping the code block and names like first_user() as they were."
 tags:
   - claude-code
   - local-llm
@@ -32,6 +32,8 @@ So the move is: send English, and let the model answer in English. **cft** does 
 
    session.jsonl ──► cft watch (tmux pane) ──► 한국어 (local only, 0 paid tokens)
 ```
+
+The screenshot at the top is a real run in two terminals. Above, `cft doctor` checks the setup and a Korean request comes out in English with `src/util.py` untouched. Below, `cft watch` notices a new reply in the session file and translates it back, leaving the code block and names like `first_user()` alone. The reply is a sample written into a test session file, and the model was gemma4 in Ollama, behind a small adapter that answers like LM Studio's server.
 
 ## Two directions
 
