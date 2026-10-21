@@ -12,6 +12,7 @@ stack:
   - GitHub Pages / Actions
   - Supabase
 status: Live
+featured: true   # leads /projects/ (projects.html)
 repo: https://github.com/Hong-Iron/SMASH
 demo: https://hong-iron.github.io/SMASH/
 summary: A browser game that rebuilds 60 Korean university campuses in 3D from open map data so you can blow them up. Every texture and sound is generated in code. 7,193 visitors in a day.

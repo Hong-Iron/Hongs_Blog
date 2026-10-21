@@ -4,10 +4,12 @@ title: Projects
 permalink: /projects/
 geo: blueprint
 ---
-{%- comment -%} The project that is live (else the newest) leads the page with its
-     screenshot, role and stack; the rest follow as an even grid of cards. {%- endcomment -%}
+{%- comment -%} The project marked `featured: true` (else the newest live one, else the
+     newest) leads the page with its screenshot, role and stack; the rest follow as an
+     even grid of cards. {%- endcomment -%}
 {% assign all_projects = site.projects | sort: "date" | reverse %}
-{% assign featured = all_projects | where: "status", "Live" | first %}
+{% assign featured = all_projects | where: "featured", true | first %}
+{% unless featured %}{% assign featured = all_projects | where: "status", "Live" | first %}{% endunless %}
 {% unless featured %}{% assign featured = all_projects | first %}{% endunless %}
 <div class="page-intro container reveal" data-geo-band>
   <span class="eyebrow tag" style="--tag-color: var(--accent-rust)">프로젝트 · {{ site.projects.size }}개</span>

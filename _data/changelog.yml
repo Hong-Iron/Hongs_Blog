@@ -1,5 +1,11 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
+- date: 2026-10-21
+  title: 프로젝트 네 개 추가
+  items:
+    - 최근에 만든 프로젝트 네 개를 Projects에 더했어요. 내 컴퓨터의 AI가 질문으로 도와주는 코딩 테스트 연습 앱 KOTEacher, 교수님과 싸우는 도트 웹 게임 종강 파이터, 3D 뽀모도로 타이머 Visual Timer, 실제로 공부한 시간만 세는 맥 메뉴 막대 앱 Folio예요.
+    - 표지와 본문 그림은 모두 프로그램을 실제로 돌려서 찍은 화면이에요. Folio는 앱에 들어 있는 미리보기 모드로 찍어서 숫자가 예시예요.
+    - 프로젝트가 늘어서 Projects 맨 위 큰 칸은 SMASH 대학교로 고정했어요. 나머지는 최근 것부터 놓여요.
 - date: 2026-10-20
   title: 컴퓨터 통신에 슬라이딩 윈도우
   items:
