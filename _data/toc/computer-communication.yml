@@ -51,6 +51,7 @@
     - {n: "38", t: "PCM", u: "/studies/computer-communication/pcm/", k: "concept"}
     - {n: "39", t: "진폭·주파수·위상 변조", u: "/studies/computer-communication/digital-modulation/", k: "concept"}
     - {n: "40", t: "NRZ와 클럭 복구", u: "/studies/computer-communication/nrz-clock-recovery/", k: "concept"}
+    - {n: "40", t: "클럭 어긋남 계산 연습", u: "/studies/computer-communication/clock-drift-practice/", k: "practice"}
     - {n: "41", t: "NRZI와 맨체스터", u: "/studies/computer-communication/nrzi-manchester/", k: "concept"}
     - {n: "42", t: "4B/5B", u: "/studies/computer-communication/4b5b/", k: "concept"}
     - {n: "43", t: "인코딩 방식 비교", u: "/studies/computer-communication/contrast--line-coding/", k: "concept"}

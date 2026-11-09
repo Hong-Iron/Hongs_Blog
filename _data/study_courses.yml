@@ -173,8 +173,8 @@
       slug: "computer-communication"
       url: "/studies/computer-communication/"
       concepts: 60
-      practices: 6
-      codes: 73
+      practices: 7
+      codes: 74
       heavy: 10
       units: "연결과 자원 공유 · 패킷 스위칭과 네트워크 구조 · 인터넷 구조와 성능 · 데이터 링크 네트워크: 링크의 실체 …"
 - track: "사람과 심리"

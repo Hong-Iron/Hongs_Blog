@@ -112,9 +112,10 @@ EXCLUDE = {
     "4-1학기/컴퓨터 통신/4.연습문제/99.중간시험 예상 문제.md",  # built on the professor's sample exam
 }
 
-# Past-exam write-ups (기출 풀이, 기출 유형 연습 and their code) stay private:
-# they contain other students' reconstructions of exam questions.
-PRIVATE_NAME = re.compile(r"기출|_past-(?:mid|type)-")
+# Past-exam write-ups (기출 풀이, 기출 유형 연습, 지난 시험 복원 풀이 and their
+# code and figures) stay private: they contain other students' reconstructions
+# of exam questions.
+PRIVATE_NAME = re.compile(r"기출|지난 시험|_past-(?:mid|type)-|_past-exam_")
 
 CODE_EXTS = {".py": "python", ".c": "c", ".js": "javascript", ".java": "java", ".sql": "sql", ".rs": "rust"}
 
@@ -516,6 +517,15 @@ class Linker:
         hits = self.by_name.get(target.rsplit("/", 1)[-1], [])
         return hits[0] if len(hits) == 1 else None
 
+    def image_key(self, target):
+        """Vault path of a copied figure. Obsidian also embeds a figure by its
+        bare file name (![[40_x_fig1.svg]]); that works when only one figure has it."""
+        if target in self.images:
+            return target
+        name = target.rsplit("/", 1)[-1]
+        hits = [k for k in self.images if k.rsplit("/", 1)[-1] == name]
+        return hits[0] if len(hits) == 1 else None
+
     def replace(self, match, source):
         embed, inner = match.group(1), match.group(2)
         if not re.search(r"[^\W\d_]", inner):
@@ -526,13 +536,14 @@ class Linker:
         hit = self.resolve(target) if target else None
         if display is None:
             display = hit[1] if hit else re.sub(r"^\d+[._]", "", target.rsplit("/", 1)[-1])
-        if embed and target in self.images:
+        img = self.image_key(target) if target else None
+        if embed and img:
             alt = display if len(parts) > 1 else "그림"
-            size = self.sizes.get(target)
+            size = self.sizes.get(img)
             dims = f' width="{size[0]}" height="{size[1]}"' if size else ""
-            return f'<img class="note-fig" src="{self.images[target]}" alt="{alt}"{dims} loading="lazy">'
-        if target in self.images:
-            return f"[{display}]({self.images[target]})"
+            return f'<img class="note-fig" src="{self.images[img]}" alt="{alt}"{dims} loading="lazy">'
+        if img:
+            return f"[{display}]({self.images[img]})"
         if not hit and (target + ".md" in EXCLUDE or PRIVATE_NAME.search(target.rsplit("/", 1)[-1])):
             return "\x06"   # a private page: the link goes, with its " · " separator (convert_spans)
         if embed or not hit:
