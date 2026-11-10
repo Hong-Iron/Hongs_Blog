@@ -1,5 +1,13 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
+- date: 2026-11-11
+  title: 검색에 나오는 제목과 수정일 바로잡기
+  items:
+    - 노트의 탭 제목에 영어 이름과 과목 이름을 함께 적었어요. 이름이 같은 노트가 여러 과목에 있어도 검색 결과에서 어느 과목 것인지 알 수 있어요.
+    - 노트마다 마지막으로 고친 날짜를 검색 엔진에 알려 줘요. 전에는 모든 노트가 사이트를 올린 날짜로 나갔어요.
+    - Studies, Projects, Pensées, About 페이지에 페이지마다 다른 소개 문장을 넣었어요.
+    - 팡세 '생각할 겨를이 없는 편이 좋다'의 사진 아홉 장을 다시 저장해서 그 글의 그림 용량을 5.5MB에서 2.2MB로 줄였어요.
+    - 스크립트가 돌지 않는 브라우저에서도 홈 첫 화면의 글이 보여요.
 - date: 2026-11-09
   title: 프로젝트 둘 추가, SMASH 대학교 새로 고침
   items:
