@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["연산 모형", "뉴런 모델링", "인공 뉴런", "artificial neuron", "활성 함수", "activation function", "바이어스", "bias", "변환 행렬", "transform matrix", "선형-비선형 모형", "LN model"]
 description: "뉴런을 계산기로 보면, 여러 입력에 각각 무게를 곱해 더하고 그 결과를 정해진 범위 안으로 눌러 담는 장치다. 무게가 양수면 흥분, 음수면 억제다. 이 단순한 식 하나로 수렴·억제 같은 신경 회로를 계산할 수 있고, 인공 신경망의 기본 단위가 된다. 대신 시간에 따른 스파이크 하나…"

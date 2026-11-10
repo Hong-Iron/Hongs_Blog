@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Method Overriding", "오버라이딩", "재정의", "@Override", "super.method", "동적 다형성", "Dynamic Polymorphism", "메서드 시그니처", "Method Signature"]
 description: "집안에 내려오는 김치찌개 조리법을 물려받았는데, 내 입맛에 맞게 고쳐서 내 공책에 다시 적어 두는 것과 같다. 그 뒤로 내가 끓이는 찌개는 늘 고쳐 적은 쪽이다. 원래 조리법이 없어진 것은 아니어서 \"원래대로 끓인 다음 치즈를 얹는다\"처럼 불러다 쓸 수도 있다. 지켜야 할 것이 있…"

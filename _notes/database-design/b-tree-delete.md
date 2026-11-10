@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["B-Tree Delete", "B-Tree Deletion", "B-트리 키 삭제", "빌리기", "Borrow", "합치기", "Merge", "선행 키", "Predecessor", "후속 키", "Successor", "형제 노드", "Sibling"]
 description: "지우는 일을 늘 맨 아래 칸에서 하는 방식이다. 중간 칸의 값을 지워야 하면 바로 앞 순서의 값을 맨 아래에서 올려 그 자리를 메우고, 맨 아래에서 그 값을 뺀다. 값을 빼서 칸이 너무 비면 옆 칸에서 하나 빌리고, 옆 칸도 빠듯하면 위 칸의 값 하나를 내려 두 칸을 하나로 합친다…"

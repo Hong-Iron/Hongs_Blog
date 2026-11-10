@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Behavioral Perspective", "행동주의", "behaviorism", "학습이론", "learning theory", "고전적 조건형성", "classical conditioning", "파블로프", "Pavlov", "조작적 조건형성", "operant conditioning", "스키너", "Skinner", "강화", "reinforcement", "정적 강화", "부적 강화", "처벌", "punishment", "사회적 학습", "관찰학습", "모방학습", "모델링", "modeling", "반두라", "Bandura", "소거", "extinction", "체계적 둔감법", "systematic desensitization", "행동조성", "shaping", "행동치료", "행동수정"]
 description: "사람의 행동은 모두 배운 것이고, 이상행동도 마찬가지로 잘못 배운 것이라고 본다. 짝지어 겪은 경험, 행동 뒤에 따라온 결과, 남을 보고 따라 한 것이 행동을 만든다. 배운 것이니 같은 원리로 지우고 새로 가르치면 된다는 점이 강점이다. 대신 겉으로 보이는 행동만 다루므로 생각이나…"

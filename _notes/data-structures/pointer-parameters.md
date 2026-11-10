@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Pointer Arguments", "Pointers and Function Arguments", "값 전달", "Call by Value", "Pass by Value", "주소 전달", "포인터 매개변수", "swap", "참조 변수", "Reference Variable", "참조 전달", "Call by Reference"]
 description: "함수를 부를 때 넘기는 값은 복사본으로 간다. 그래서 함수가 받은 값을 아무리 고쳐도 부른 쪽의 원본은 그대로다. 원본을 고치게 하려면 값 대신 원본이 있는 자리의 번호를 넘기고, 함수는 그 번호를 따라가서 고친다. 대신 부르는 쪽과 받는 쪽이 기호를 하나씩 더 써야 하고, 하나라…"

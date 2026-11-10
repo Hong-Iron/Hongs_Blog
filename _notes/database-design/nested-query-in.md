@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Nested Query", "중첩 질의", "부질의", "서브쿼리", "Subquery", "바깥 질의", "Outer Query", "안쪽 질의", "Inner Query", "IN 연산자", "IN", "명시적 집합", "Explicit Set"]
 description: "어떤 질문은 다른 질문의 답을 먼저 알아야 답할 수 있다. \"Smith가 일하는 프로젝트 번호\"를 쪽지에 적어 두고, 프로젝트 표를 훑으며 번호가 쪽지에 있는 것만 고르는 식이다. 질의 안에 다른 질의를 통째로 넣으면 쪽지를 손으로 옮겨 적지 않아도 되고, 표가 바뀌어도 답이 늘 …"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Paraphilia vs Paraphilic Disorder", "변태성욕과 변태성욕장애 비교", "성적 관심과 장애"]
 description: "성도착장애의 유형마다 같은 조건이 붙는다. \"고통을 표명하지 않고, 기능 손상이 없고, 충동에 따라 행동하지 않으면 성적 관심은 있으나 장애로 진단하지 않는다.\" 가르는 질문은 \"특이한 성적 관심이 있을 뿐인가, 그 관심이 본인에게 고통이나 기능 손상을 주거나 동의하지 않은 사람에…"

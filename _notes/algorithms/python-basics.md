@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Python Basics", "파이썬 문법", "변수", "조건문", "반복문", "함수", "solution 함수", "몫", "나머지", "floor division"]
 description: "코드는 요리 순서표와 비슷하다. 재료에 이름을 붙이고, 상황에 따라 다른 순서로 가고, 같은 일을 여러 번 하고, 자주 하는 일은 묶어서 이름을 붙인다. 코딩테스트에서는 이 순서표를 함수 하나로 쓰고, 마지막에 답을 돌려주면 끝난다. 화면에 찍거나 입력을 읽을 필요는 없다. 파이썬…"

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["INT 16h", "Keyboard Input with INT 16h", "스캔 코드", "Scan Code", "자판 미리 입력 버퍼", "Typeahead Buffer", "키보드 플래그", "Keyboard Flags", "INT 9h", "PC-BIOS"]
 description: "키를 누르면 그 글자가 곧장 프로그램으로 가는 것이 아니다. 우체부가 편지를 우편함에 넣어 두면 집주인이 나중에 꺼내 가듯, 누른 키는 먼저 작은 대기 줄에 쌓이고 프로그램이 필요할 때 꺼내 간다. 대기 줄에는 글자뿐 아니라 \"자판의 몇 번째 단추였는지\"도 함께 적혀 있어서, 글자…"

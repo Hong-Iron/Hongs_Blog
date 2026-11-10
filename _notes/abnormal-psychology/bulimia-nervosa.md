@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Bulimia Nervosa", "BN", "폭식 삽화", "binge eating episode", "보상행동", "compensatory behavior", "제거 행동", "purging", "접근-회피 갈등", "approach-avoidance conflict", "전이대상", "transitional object"]
 description: "멈출 수 없이 많이 먹고, 살찔까 봐 토하거나 설사제를 먹거나 굶는 일을 되풀이하는 장애다. 체중은 대개 정상이어서 겉으로 잘 드러나지 않고, 부끄러워서 가족도 몇 년씩 모르는 경우가 많다. 폭식은 우울이나 스트레스를 잠깐 달래 주지만, 곧 죄책감과 체중 걱정이 보상행동을 부르고,…"

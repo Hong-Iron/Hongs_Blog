@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Directive vs Instruction", "지시어", "Directive", "어셈블러 지시어", "명령어", "Instruction", "실행 시간", "Runtime", "어셈블 시간"]
 description: "어셈블리어 프로그램의 줄은 모두 비슷하게 생겼지만 읽는 쪽이 둘이다. 어떤 줄은 번역하는 프로그램인 어셈블러가 읽고 따른다. 어떤 줄은 기계어로 바뀌어 나중에 프로세서가 실행한다. 가르는 질문은 \"이 줄을 누가, 언제 따르는가\"다. 요리책으로 치면 \"이 장은 2인분 기준이다\"는 책…"

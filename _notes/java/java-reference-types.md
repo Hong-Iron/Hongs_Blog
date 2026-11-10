@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Reference Type", "참조 타입", "참조 변수", "Reference Variable", "Runtime Data Area", "런타임 데이터 영역", "메모리 영역", "Method Area", "메서드 영역", "Heap", "힙 영역", "Stack", "스택 영역", "Frame", "프레임", "Garbage Collection", "가비지 컬렉션", "StackOverflowError"]
 description: "정수 같은 작은 값은 변수라는 칸에 그대로 들어간다. 배열이나 문자열처럼 큰 것은 따로 넓은 창고에 두고, 변수에는 그것이 있는 자리 번호만 적어 둔다. 집을 통째로 들고 다니지 않고 주소가 적힌 쪽지를 들고 다니는 것과 같다. 쪽지는 베끼기 쉬워서 큰 것을 싸게 주고받을 수 있다…"

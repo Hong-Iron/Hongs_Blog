@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["One-Class Collaborative Filtering", "OCCF", "암묵적 피드백", "Implicit Feedback", "WRMF", "Weighted Regularized Matrix Factorization", "가중 정칙화 행렬 분해", "BPR", "Bayesian Personalized Ranking", "쌍별 학습", "Pair-wise Training", "점별 학습", "Point-wise Training"]
 description: "별점은 사람들이 잘 남기지 않지만, 누르고 보고 산 기록은 넘치게 쌓인다. 이 기록은 \"했다(1)\"만 있고 \"싫다\"는 없다. 단일 클래스 협업 필터링은 이 1과 빈칸만으로 \"이 사람이 이것을 좋아할까\"를 예측한다. 핵심 어려움은 빈칸이 싫어서 안 한 것인지 몰라서 안 한 것인지 모…"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["분류의 장단점", "DSM 비판", "진단의 가치", "낙인", "stigma", "진단적 타당성", "diagnostic validity", "과잉 진단", "의료화", "medicalization", "중복 진단", "comorbidity"]
 description: "진단은 \"이 사람의 문제는 이런 종류다\"라고 전문가가 이름을 붙이는 일이다. 이름이 있으면 전문가끼리 말이 통하고, 연구가 쌓이고, 맞는 치료를 고르기 쉬워진다. 대신 그 사람만의 사정이 이름 뒤로 사라지고, 낙인이 찍히고, 병이 아닌 것까지 병으로 만들 위험이 있다. 결론은 분류…"

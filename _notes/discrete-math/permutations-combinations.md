@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Permutations", "Combinations", "순열", "조합", "이항계수", "binomial coefficient", "nCk", "nPk", "계승", "factorial", "파스칼 항등식", "Pascal's identity", "격자 경로", "lattice path"]
 description: "여러 개 중 몇 개를 뽑을 때, 뽑은 순서가 중요하면 순열이고 중요하지 않으면 조합이다. 순열은 자리마다 남은 것 중 하나를 고르는 곱이고, 조합은 그 순열을 \"같은 묶음을 늘어놓는 방법의 수\"로 나눈 것이다. 조합은 부분집합의 수, 길찾기의 경로 수, 확률 계산 어디에나 나온다.…"

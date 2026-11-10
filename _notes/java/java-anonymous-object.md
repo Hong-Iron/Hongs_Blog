@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Anonymous Object", "Anonymous Class", "익명 클래스", "익명 자식 객체", "Anonymous Child Object", "익명 구현 객체", "Anonymous Implementation Object"]
 description: "한 번 쓰고 말 클래스를, 이름도 짓지 않고 쓰는 그 자리에서 만들어 곧바로 객체 하나를 뽑는 방법이다. 일회용 메모지처럼 따로 파일을 만들고 이름을 붙이는 수고가 없다. 버튼을 눌렀을 때 할 일처럼 딱 한 곳에서만 쓰는 동작을 넘길 때 편하다. 대신 이름이 없어서 같은 것을 다른…"

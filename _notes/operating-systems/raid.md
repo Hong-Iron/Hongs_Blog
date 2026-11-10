@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["RAID", "Redundant Array of Independent Disks", "스트라이핑", "Striping", "미러링", "Mirroring", "패리티", "Parity", "RAID 0", "RAID 1", "RAID 2", "RAID 3", "RAID 4", "RAID 5", "RAID 6"]
 description: "RAID는 디스크 여러 개를 운영체제에게 디스크 하나처럼 보이게 묶는 방법이다. 데이터를 여러 디스크에 나눠 놓아 동시에 읽고 쓰면 빨라지고, 남는 공간에 복사본이나 검사용 값(패리티)을 두면 디스크 하나가 고장 나도 데이터를 되살릴 수 있다. 시험지를 여러 사람이 한 장씩 나눠 …"

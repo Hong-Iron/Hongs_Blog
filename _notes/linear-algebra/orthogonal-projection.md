@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Orthogonal Projection", "직교 사영", "정사영", "사영", "projection", "사영 행렬", "projection matrix", "직교 여공간", "orthogonal complement", "정규방정식", "normal equations", "오차 벡터", "error vector"]
 description: "점에서 평면까지 가장 가까운 곳은 평면에 수직으로 내린 발이다. 벡터를 어떤 부분공간에 직교 사영한다는 것은 이 \"수직으로 내린 발\"을 찾는 것이고, 남는 오차는 부분공간 전체와 수직이다. 이 수직 조건 하나에서 계산 공식(정규방정식)이 나오며, 풀 수 없는 방정식에 대한 최선의 …"

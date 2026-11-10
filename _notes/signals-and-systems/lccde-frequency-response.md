@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Frequency Response of LCCDE Systems", "유리함수", "Rational Function", "부분 분수 전개", "Partial Fraction Expansion", "역변환", "Inverse Fourier Transform"]
 description: "미분방정식으로 적힌 LTI 시스템은 양변을 푸리에 변환하면 미분이 j\\omega 곱셈으로 바뀌어 대수식이 된다. 그러면 주파수 응답은 j\\omega에 대한 다항식 두 개의 비(유리함수)로 바로 읽힌다. 출력을 구할 때는 Y = HX를 부분 분수로 쪼개 이미 아는 변환쌍(\\frac{…"

@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Classification Metrics", "혼동 행렬", "Confusion Matrix", "정확도", "Accuracy", "정밀도", "Precision", "재현율", "Recall", "민감도", "Sensitivity", "F1 점수", "F1 Score", "참 양성", "TP", "거짓 양성", "FP", "제1종 오류", "거짓 음성", "FN", "제2종 오류", "참 음성", "TN"]
 description: "병을 가려내는 검사가 얼마나 좋은지 하나의 숫자로 말하기는 어렵다. 전체 중 맞힌 비율(정확도)은 환자가 드물면 \"모두 건강하다\"고만 해도 높게 나온다. 그래서 \"양성이라 한 것 중 진짜 양성의 비율\"(정밀도)과 \"진짜 양성 중 찾아낸 비율\"(재현율)을 따로 보고, 둘을 함께 보려…"

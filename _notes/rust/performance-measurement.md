@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Performance", "Benchmark", "벤치마크", "Profiling", "프로파일링", "black_box", "Criterion", "Release Profile", "LTO", "codegen-units", "panic=abort", "with_capacity"]
 description: "느린 곳을 짐작으로 고치면 대개 엉뚱한 곳을 고친다. 그래서 먼저 재고, 가장 오래 걸리는 곳 하나만 고치고, 다시 잰다. Rust에서는 빌드 설정만 바꿔도 열 배가 빨라지기도 하고, 반대로 컴파일러가 잴 코드를 통째로 지워 0초가 찍히기도 한다. 재는 방법이 틀리면 숫자는 거짓말…"

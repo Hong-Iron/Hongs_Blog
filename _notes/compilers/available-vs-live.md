@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Available Expressions vs Live Variables", "전방 분석과 후방 분석", "Forward Analysis", "Backward Analysis", "데이터 흐름 분석", "Data-flow Analysis"]
 description: "둘 다 코드의 지점마다 집합 하나를 붙이고, 그 집합으로 코드를 고친다. 가르는 질문은 \"지나온 일을 묻는가, 앞으로 올 일을 묻는가\"다. 사용 가능한 식은 여기까지 오는 동안 무엇이 계산되어 아직 맞는지를 묻고, 생존 변수는 여기서부터 무엇이 읽힐지를 묻는다. 이 답이 훑는 방향…"

@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Role of an Operating System", "운영체제", "Operating System", "OS", "자원 관리자", "Resource Manager", "운영체제의 목표", "커널", "Kernel"]
 description: "운영체제는 응용 프로그램의 실행을 지휘하고, 응용 프로그램과 하드웨어 사이에서 통역하는 프로그램이다. 식당으로 치면 손님(사용자)과 주방 설비(하드웨어) 사이의 지배인이다. 손님은 메뉴만 고르면 되고, 화구를 누구에게 언제 줄지는 지배인이 정한다. 목표는 세 가지다. 쓰기 편하게,…"

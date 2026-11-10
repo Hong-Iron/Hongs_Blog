@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Control Flow Statement", "Control Statement", "조건문", "Conditional Statement", "반복문", "Loop", "if", "if-else", "switch", "case", "default", "for", "while", "do-while", "break", "continue", "fall-through"]
 description: "프로그램은 책처럼 위에서 아래로 한 줄씩 읽힌다. 제어문은 그 길에 놓는 갈림길과 되돌아가는 길이다. 조건에 따라 한 덩어리를 건너뛰거나 둘 중 하나를 고르고, 같은 덩어리를 여러 번 되풀이한다. 덕분에 같은 코드를 백 번 적지 않아도 된다. 대신 여러 갈래 중 하나를 고르는 문에…"

@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Lagrange Multipliers", "라그랑주 승수법", "라그랑주 승수", "Lagrange multiplier", "라그랑지안", "Lagrangian", "제약 최적화", "constrained optimization", "잠재 가격", "shadow price", "KKT 조건", "KKT conditions", "레일리 몫", "Rayleigh quotient", "최대 엔트로피", "maximum entropy"]
 description: "산에 난 등산로(제약) 위로만 걸으면서 가장 높은 곳을 찾는다고 하자. 그 지점에서는 등고선이 등산로에 딱 스치듯 닿는다. 더 가면 내려가고, 덜 가도 내려가기 때문이다. 이 \"스치는\" 조건을 두 그래디언트가 같은 방향이라는 식으로 쓰고, 미지수 하나(승수)를 더해 연립방정식으로 …"

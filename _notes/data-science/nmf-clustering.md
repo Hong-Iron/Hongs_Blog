@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Matrix Factorization for Clustering", "행렬 분해", "Matrix Factorization", "MF", "비음수 행렬 분해", "Non-negative Matrix Factorization", "NMF", "잠재 성분", "Latent Component", "L1 정칙화", "L1 Regularization", "라쏘", "Lasso", "희소성", "부분 기반 표현", "Parts-based Representation"]
 description: "자료 표를 두 개의 작은 표의 곱으로 나눈다. 한 표는 \"각 자료가 몇 가지 숨은 재료를 얼마씩 섞었나\", 다른 표는 \"각 재료가 어떤 속성으로 이루어졌나\"다. 재료의 양을 음수가 될 수 없게(비음수) 하면 재료를 빼서 상쇄할 수 없어, 자료가 \"부분들의 합\"으로 읽히고 가장 많이…"

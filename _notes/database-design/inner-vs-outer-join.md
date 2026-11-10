@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Inner Join vs Outer Join", "내부 조인 대 외부 조인", "INNER JOIN과 OUTER JOIN"]
 description: "둘 다 두 표의 행을 조건에 맞춰 짝짓는다. 가르는 질문은 하나다. \"짝이 없는 행도 결과에 나와야 하는가.\" 문제 글에서는 \"모든 ~\", \"없으면 0\", \"…가 없는 ~\" 같은 말이 그 신호다."

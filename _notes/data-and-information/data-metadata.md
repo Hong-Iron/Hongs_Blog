@@ -11,6 +11,7 @@ course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Data and Metadata", "데이터", "Data", "메타데이터", "메타 데이터", "Metadata", "정보", "Information", "모델", "Model"]
 description: "컴퓨터에 저장된 것은 0과 1의 줄일 뿐이고, 그 줄만 봐서는 몸무게인지 글자인지 알 수 없다. 암호문과 해독표처럼, 0과 1의 줄에 \"이건 킬로그램 단위의 몸무게다\"라는 설명이 붙어야 뜻을 가진 값이 된다. 그 값들이 어떤 모양으로 퍼져 있다고 볼지까지 정하면 \"평균은 얼마\"라는…"

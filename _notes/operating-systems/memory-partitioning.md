@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Memory Partitioning", "고정 분할", "Fixed Partitioning", "동적 분할", "Dynamic Partitioning", "내부 단편화", "Internal Fragmentation", "외부 단편화", "External Fragmentation", "압축", "Compaction", "최적 적합", "Best-fit", "최초 적합", "First-fit", "다음 적합", "Next-fit", "배치 알고리즘", "Placement Algorithm"]
 description: "메모리를 프로세스들에게 나눠 주는 가장 단순한 방법은 덩어리로 자르는 것이다. 미리 정해진 크기로 잘라 두면(고정 분할) 단순하지만, 작은 프로그램도 큰 칸 하나를 다 차지해 칸 안에 빈 공간이 생긴다(내부 단편화). 필요한 만큼 딱 잘라 주면(동적 분할) 칸 안 낭비는 없지만, …"

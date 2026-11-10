@@ -10,6 +10,7 @@ track_sub: "데이터"
 concepts: 78
 practices: 18
 codes: 134
+last_modified_at: "2026-10-15"
 description: "데이터베이스 설계 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

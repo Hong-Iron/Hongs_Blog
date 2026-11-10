@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Slices", "Slice", "슬라이스", "String", "str", "&str", "문자열 슬라이스", "String Slice", "&[T]", "&mut [T]", "UTF-8", "글자 경계", "Char Boundary", "chars", "bytes", "char_indices", "역참조 강제 변환", "Deref Coercion", "문자열 리터럴", "String Literal", "E0277", "E0308", "E0505", "E0599"]
 description: "책 한 권을 가진 것과, 그 책의 \"몇 쪽부터 몇 쪽까지\"를 가리키는 쪽지는 다르다. Rust에서 글을 가지고 늘리거나 줄이는 주인이 String이고, 그 글의 한 구간을 \"여기서부터 몇 바이트\"로 가리키기만 하는 쪽지가 &str이다(배열의 한 구간이면 &[T]). 쪽지는 글을 베…"

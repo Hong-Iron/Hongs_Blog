@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Specific Learning Disorder", "학습장애", "learning disability", "읽기 곤란", "난독증", "dyslexia", "쓰기 곤란", "산술 곤란", "난산증", "dyscalculia", "음운처리", "phonological processing"]
 description: "지능도 괜찮고 제대로 배울 기회도 있었는데, 읽기, 쓰기, 셈하기 가운데 특정한 학습 기술만 유독 익히기 어려운 장애다. 게으르거나 머리가 나빠서가 아니라, 글자와 소리를 연결하거나 수를 처리하는 뇌의 기초 과정에 결함이 있기 때문이다. 정규 교육이 시작된 뒤에야 드러난다. 환경은…"

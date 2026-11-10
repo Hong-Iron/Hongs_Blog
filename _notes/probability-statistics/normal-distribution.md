@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Normal Distribution", "정규분포", "가우스 분포", "Gaussian distribution", "표준정규분포", "standard normal", "표준화", "standardization", "z점수", "z-score", "68-95-99.7 규칙", "empirical rule", "Φ", "오차함수", "error function"]
 description: "가운데가 가장 높고 양쪽으로 대칭으로 빠르게 낮아지는 종 모양 분포다. 평균과 표준편차 두 수만으로 모양이 완전히 정해지고, 평균에서 표준편차 1배·2배·3배 안에 약 68%·95%·99.7%가 들어간다. 작은 독립 요인이 많이 더해진 양(측정 오차, 합과 평균)은 대개 이 모양에…"

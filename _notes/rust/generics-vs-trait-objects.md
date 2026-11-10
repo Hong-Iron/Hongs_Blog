@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Generics vs Trait Objects", "정적 디스패치와 동적 디스패치", "Static vs Dynamic Dispatch", "impl Trait vs dyn Trait", "열거형 디스패치", "Enum Dispatch"]
 description: "둘 다 \"이 트레이트를 구현한 아무 타입\"을 받는 방법이다. 가르는 질문은 \"어느 타입인지가 컴파일할 때 정해지는가, 실행 중에 정해지는가\"다. 제네릭은 컴파일러가 타입마다 함수 사본을 찍어 두고 부를 몸통을 미리 정한다. 트레이트 객체는 사본 하나만 두고, 부를 때마다 값 옆의 …"

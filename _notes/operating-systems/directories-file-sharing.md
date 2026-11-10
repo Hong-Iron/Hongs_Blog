@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Directory", "File Directory", "2단계 디렉터리", "Two-Level Directory", "트리 구조 디렉터리", "Tree-Structured Directory", "경로 이름", "Pathname", "작업 디렉터리", "Working Directory", "파일 공유", "File Sharing", "접근 권한", "Access Rights", "사용자 부류", "User Classes"]
 description: "디렉터리는 파일 이름과 파일 자체(위치, 주인, 권한 등)를 이어 주는 목록이다. 도서관 목록 카드처럼, 이름으로 찾으면 책이 어디 있고 누가 빌릴 수 있는지 알려 준다. 폴더 안에 폴더를 두는 트리 구조로 만들면 다른 폴더끼리는 같은 이름을 써도 되고, 파일을 무리 지어 정리할 …"

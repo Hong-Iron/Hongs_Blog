@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Limit of a Sequence", "수열의 극한", "수렴", "convergence", "발산", "divergence", "단조 수렴 정리", "monotone convergence theorem", "자연상수 e", "수렴 속도", "rate of convergence", "조화수", "harmonic number"]
 description: "수열이 뒤로 갈수록 어떤 값에 한없이 가까워지면 그 값에 수렴한다고 한다. \"커지기만 하는데 넘을 수 없는 벽이 있으면 반드시 어떤 값에 수렴한다\"는 사실로 (1 + 1/n)ⁿ이 한 값에 다가감을 알 수 있고, 그 값이 e다. 반복 알고리즘이 끝나는지, 오차가 얼마나 빨리 주는지를…"

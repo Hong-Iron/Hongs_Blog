@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["List", "String", "리스트", "문자열", "인덱스", "슬라이싱", "slicing", "리스트 컴프리헨션", "list comprehension", "2차원 리스트", "split", "join"]
 description: "리스트는 번호가 붙은 칸이 한 줄로 늘어선 사물함이다. 번호만 알면 바로 꺼낼 수 있고, 맨 끝에 넣고 빼는 것도 빠르다. 대신 맨 앞이나 가운데에 넣고 빼면 뒤의 칸을 모두 한 칸씩 밀어야 해서 느리다. 무엇이 들어 있는지 찾을 때도 처음부터 다 봐야 한다. 문자열은 글자로 된 …"

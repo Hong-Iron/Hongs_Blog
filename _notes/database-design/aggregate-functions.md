@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Aggregate Function", "집계 함수", "집단 함수", "COUNT", "SUM", "MAX", "MIN", "AVG", "COUNT DISTINCT"]
 description: "직원 여덟 명의 급여를 하나하나 보는 대신 \"모두 더하면 얼마, 가장 많이 받는 사람은 얼마, 평균은 얼마\"처럼 한 줄로 줄여 보고 싶을 때가 있다. 여러 행을 받아 값 하나로 줄여 주는 계산이 집계 함수다. 개수, 합, 가장 큰 값, 가장 작은 값, 평균 다섯 가지가 기본으로 있…"

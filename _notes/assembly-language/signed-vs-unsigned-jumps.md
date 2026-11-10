@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Signed vs Unsigned Jumps", "JA와 JG", "JB와 JL", "above below", "greater less", "부호 없는 비교", "부호 있는 비교"]
 description: "둘 다 CMP 뒤에 붙어 \"크면\", \"작으면\"으로 갈라 간다. 가르는 질문은 \"견주는 비트를 음수가 있는 수로 읽는가\"다. 레지스터에는 비트만 있고 부호가 있다는 표시는 없다. FFh를 255로 읽을지 −1로 읽을지는 점프 명령의 이름이 정한다. 255로 읽으면 1보다 크고, −1…"

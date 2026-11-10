@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Key Attribute", "키", "Key", "복합 키", "Composite Key", "유일성 제약", "Uniqueness Constraint", "식별자"]
 description: "학번은 학생마다 달라서, 학번 하나만 대면 누구인지 정해진다. 이렇게 값만 대면 대상 하나가 정해지는 항목을 따로 표시해 둔다. 항목 하나로 안 되면 둘을 묶어 쓸 수도 있고, 그런 항목이 둘 이상 있을 수도 있다. 다만 \"지금 들어 있는 자료에서 안 겹친다\"로는 부족하고, 앞으로…"

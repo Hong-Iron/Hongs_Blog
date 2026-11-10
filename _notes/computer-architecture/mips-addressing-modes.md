@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Addressing Modes", "주소 지정 방식", "Addressing Mode", "즉시 주소 지정", "Immediate Addressing", "레지스터 주소 지정", "Register Addressing", "베이스 주소 지정", "Base Addressing", "변위 주소 지정", "PC 상대 주소 지정", "PC-Relative Addressing", "의사 직접 주소 지정", "Pseudo-Direct Addressing", "분기 주소", "Branch Address", "점프 주소", "Jump Address"]
 description: "길을 알려 주는 방법은 여러 가지다. \"이 물건이다\" 하고 직접 건네기, \"세 번째 서랍에 있다\", \"저 건물에서 스무 걸음 뒤\", \"지금 선 자리에서 여섯 집 앞\", \"이 동네 몇 번지\". MIPS 명령이 재료나 갈 곳을 가리키는 방법도 이 다섯 가지다. 명령이 서른두 비트뿐이라…"

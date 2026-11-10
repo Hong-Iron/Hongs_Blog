@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Single-Cycle vs Pipelined", "단일 사이클 대 파이프라인", "다중 사이클", "Multicycle", "다중 사이클 구현", "Multicycle Implementation"]
 description: "둘 다 같은 명령어를 같은 부품으로 실행하고 같은 결과를 낸다. 가르는 질문은 \"한 사이클에 명령어 하나를 통째로 끝내는가, 한 단계만 끝내는가\"다. 그 답이 클록 주기, 명령어당 사이클 수, 회로가 얼마나 복잡한지를 함께 정한다."

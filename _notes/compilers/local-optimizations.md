@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Local Optimizations", "Code Optimization", "코드 최적화", "중간 코드 최적화기", "Intermediate Code Optimizer", "공통 부분식 제거", "Common Subexpression Elimination", "CSE", "복사 전파", "Copy Propagation", "죽은 코드 제거", "Dead Code Elimination", "산술 단순화", "Arithmetic Simplification", "상수 접기", "Constant Folding"]
 description: "초고를 퇴고할 때 같은 말을 두 번 한 곳은 한 번으로 줄이고, 읽는 사람이 쓰지 않을 문장은 지우고, 돌려 말한 곳은 짧은 말로 바꾼다. 뜻은 그대로 두고 글만 짧게 만드는 것이다. 컴파일러도 자기가 만든 코드를 이렇게 다듬어서, 결과는 똑같은데 더 빠르고 작은 코드로 만든다. …"

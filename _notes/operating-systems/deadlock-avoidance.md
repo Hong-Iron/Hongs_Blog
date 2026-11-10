@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Deadlock Avoidance", "은행원 알고리즘", "Banker's Algorithm", "안전 상태", "Safe State", "불안전 상태", "Unsafe State", "프로세스 시작 거부", "Process Initiation Denial", "자원 할당 거부", "Resource Allocation Denial", "최대 요구 행렬", "Claim Matrix"]
 description: "은행이 대출을 내줄 때 \"이 돈을 빌려줘도, 모든 고객이 최대 한도까지 빌려 가는 최악의 경우에 누군가부터 차례로 갚을 수 있는가\"를 따지는 것과 같다. 운영체제는 자원 요청이 올 때마다 들어준 뒤의 상태를 미리 계산해, 모두가 끝날 수 있는 순서가 하나라도 있으면(안전 상태) 들…"

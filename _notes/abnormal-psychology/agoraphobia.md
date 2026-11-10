@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Agoraphobia", "광장 공포", "공포에 대한 공포", "fear of fear", "phobophobia", "불안 민감성"]
 description: "이름과 달리 넓은 광장 자체가 무서운 것이 아니다. 버스, 쇼핑몰, 줄서기처럼 거기서 공황 같은 증상이 나면 빠져나오거나 도움받기 어려울 것 같은 장소들을 두려워해 피하는 장애다. 무서운 것은 장소가 아니라 그곳에서 겪게 될 공포와 창피함, 곧 \"공포에 대한 공포\"다. 심하면 집 …"

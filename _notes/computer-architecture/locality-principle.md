@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Principle of Locality", "Locality of Reference", "참조 지역성", "시간 지역성", "Temporal Locality", "공간 지역성", "Spatial Locality"]
 description: "프로그램은 메모리 전체를 고르게 쓰지 않는다. 방금 쓴 곳을 곧 다시 쓰고, 방금 쓴 곳의 바로 옆을 곧 쓴다. 이 버릇 덕분에 작은 빠른 메모리에 \"요즘 쓰는 것\"만 올려 두어도 대부분의 요청을 빠르게 처리한다. 하지만 이것은 프로그램의 버릇일 뿐 법칙이 아니어서, 메모리를 여기…"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["Autism Spectrum Disorder", "ASD", "자폐증", "autism", "아스퍼거 장애", "Asperger's disorder", "합동 주시", "공동 주의", "joint attention", "마음이론", "theory of mind", "여성 방어 효과", "female protective effect", "성장 조절 이상 가설", "growth dysregulation hypothesis", "응용행동분석", "Applied Behavior Analysis", "ABA", "기계적 기억", "rote memory", "파편적 기술", "splinter skills"]
 description: "사람과 마음을 주고받는 일이 어렵고(눈 맞춤, 표정, 대화의 주고받기), 특정한 것에 좁게 몰두하며 같은 행동과 순서를 고집하는 장애다. 두 살 이전부터 드러나는 경우가 많다. 말을 거의 못 하고 지적장애가 함께 있는 사람부터, 지능이 높고 특정 분야에 뛰어난 사람까지 모습이 넓게…"

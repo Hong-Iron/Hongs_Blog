@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Atomics", "Atomic Operations", "Memory Ordering", "Ordering", "Relaxed", "Acquire", "Release", "AcqRel", "SeqCst", "happens-before", "먼저 일어남", "compare_exchange", "fetch_add", "스핀락", "Spin Lock", "AtomicBool", "AtomicUsize"]
 description: "원자적 연산은 \"반쯤 된 상태\"를 아무도 볼 수 없는, 쪼갤 수 없는 읽기·쓰기다. 잠금 없이 숫자 하나를 여러 스레드가 함께 세는 데 쓰고, 잠금보다 가볍다. 어려운 부분은 변수가 둘 이상일 때다. 컴파일러와 CPU는 속도를 위해 읽기·쓰기 순서를 바꾸므로, \"데이터를 쓰고 나서…"

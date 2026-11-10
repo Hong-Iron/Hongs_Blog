@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Three Principles of OOP", "캡슐화", "Encapsulation", "상속", "Inheritance", "다형성", "Polymorphism", "메서드 오버로딩", "Method Overloading", "메서드 오버라이딩", "Method Overriding", "정적 다형성", "Static Polymorphism", "동적 다형성", "Dynamic Polymorphism"]
 description: "객체를 잘 쓰기 위한 약속이 셋 있다. 첫째, 자판기처럼 속은 감추고 버튼만 내놓는다. 밖에서 속을 함부로 건드려 망가뜨리지 못한다. 둘째, 자식이 부모의 것을 물려받듯 이미 만든 틀의 내용을 새 틀이 그대로 받아 쓴다. 같은 코드를 두 번 쓰지 않는다. 셋째, \"소리 내\"라는 같…"

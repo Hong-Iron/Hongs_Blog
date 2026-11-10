@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Ownership", "Move", "Move Semantics", "이동", "Copy", "Clone", "Drop", "drop 순서", "Drop Order", "부분 이동", "Partial Move", "E0382", "E0507", "E0509", "E0204"]
 description: "힙에 잡은 메모리마다 \"다 쓰면 치울 책임자\"를 정확히 한 명 둔다. 책임자 변수가 범위를 벗어나면 Rust가 그 자리에서 메모리를 돌려준다. 그래서 free를 잊거나 두 번 부르는 실수가 생기지 않는다. 대신 let b = a;처럼 값을 넘기면 책임도 함께 넘어가서, 그 뒤로 a…"

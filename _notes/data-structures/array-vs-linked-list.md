@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Array vs Linked List", "배열 대 연결 리스트", "순차 표현과 연결 표현", "Sequential vs Linked Representation"]
 description: "둘 다 원소를 한 줄로 세워 담는다. 가르는 질문은 \"다음 원소가 어디 있는지를 계산하는가, 적어 두는가\"다. 배열은 붙어 있는 칸에 차례로 두어서 k번 원소의 주소를 계산으로 얻는다. 연결 리스트는 아무 데나 두고 원소마다 다음 원소의 주소를 적어 둔다. 이 한 가지가 읽기, 끼…"

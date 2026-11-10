@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Perception", "감각과 지각", "감각", "Sensation", "사람의 정보 처리 수준", "지각 과정"]
 description: "감각이 카메라 센서가 빛을 받는 일이라면, 지각은 그 신호를 \"저기 나무가 있다\"처럼 쓸 수 있는 그림으로 조립하는 일이다. 지각은 들어온 신호를 그대로 기록하지 않는다. 골라내고, 정리하고, 해석한다. 그래서 빠르고 쓸모 있지만, 같은 자극을 다르게 보거나 없는 것을 보는 착시도…"

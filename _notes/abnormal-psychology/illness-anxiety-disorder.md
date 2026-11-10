@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Illness Anxiety Disorder", "IAD", "건강염려증", "Hypochondriasis", "진료 추구형", "care-seeking type", "진료 회피형", "care-avoidant type"]
 description: "몸에는 뚜렷한 증상이 없거나 아주 가벼운데, 심각한 병에 걸렸다는 생각에 사로잡혀 있는 장애다. 옛 이름은 건강염려증이다. 심장이 조금 빨리 뛰면 심장병을, 두통이 있으면 뇌종양을 떠올린다. 검사하고 확인해도 불안은 잠깐만 줄고, 걱정하는 병의 이름만 바뀌며 몇 년씩 이어진다."

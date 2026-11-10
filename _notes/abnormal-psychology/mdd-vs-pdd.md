@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["주요우울장애 vs 지속성 우울장애", "MDD vs PDD", "삽화성 우울 vs 만성 우울", "이중 우울증"]
 description: "주요우울장애는 삽화로 온다. 짧고(2주 이상) 강하게 여러 증상이 한꺼번에 몰려오는 우울이다. 지속성 우울장애는 만성으로 깔린다. 증상 수는 적어도(2가지 이상) 2년 넘게 이어진다. 두 장애는 함께 나타나는 증상 목록도 조금 다르다. 가르는 질문은 \"우울이 삽화로 오는가, 오래 …"

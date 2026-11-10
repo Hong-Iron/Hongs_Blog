@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["BFS", "Breadth-First Search", "너비 우선 탐색", "넓이 우선 탐색", "최단 거리", "여러 출발점 BFS", "상태 BFS"]
 description: "연못에 돌을 던지면 물결이 가까운 곳부터 둥글게 퍼진다. BFS도 출발점에서 한 걸음 거리인 곳을 모두 본 다음, 두 걸음 거리인 곳을 보는 식으로 퍼진다. 그래서 어떤 곳에 처음 닿는 순간의 걸음 수가 곧 최단 거리다. 단, 모든 한 걸음의 비용이 같을 때만 그렇다. 길마다 비용…"

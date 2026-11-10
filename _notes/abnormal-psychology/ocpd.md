@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["Obsessive-Compulsive Personality Disorder", "OCPD", "강박성", "항문기 성격", "anal character", "완벽주의"]
 description: "모든 일을 완벽하게, 정해진 규칙과 순서대로 통제해야 마음이 놓이는 사람이다. 세부에 매달리다 정작 일을 끝내지 못하고, 일에 몰두하느라 여가와 우정을 희생하며, 돈과 감정에 인색하고 고집이 세다. 본인은 이것이 옳은 방식이라고 여겨 괴로워하지 않는 경우가 많다. 이름이 비슷한 강…"

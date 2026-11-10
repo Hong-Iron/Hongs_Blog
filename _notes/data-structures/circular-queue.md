@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Circular Queue", "환형 큐", "Circular Array", "원형 배열", "Ring Buffer", "링 버퍼", "front", "rear", "AddQ", "DeleteQ", "IsFullQ", "IsEmptyQ", "QueueFull", "QueueEmpty", "MAX_QUEUE_SIZE", "배열로 만든 큐"]
 description: "배열로 줄을 만들면, 앞사람이 빠질 때마다 줄 전체를 한 칸씩 당기거나, 줄이 배열 오른쪽 끝으로 밀려가 앞쪽에 빈칸만 남는다. 배열의 끝과 처음을 이어 고리처럼 쓰면 끝 칸 다음이 0번 칸이라, 당기지 않고도 넣기와 빼기가 한 번에 끝난다. 대신 텅 빈 줄과 꽉 찬 줄이 똑같아 …"

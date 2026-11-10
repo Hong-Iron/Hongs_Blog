@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-11"
+last_modified_at: "2026-10-11"
 status: "verified"
 aliases: ["final", "Final Field", "final 필드", "상수", "Constant", "static final", "불변", "Immutable"]
 description: "볼펜으로 한 번 적으면 못 고치는 칸이라고 생각하면 된다. 학번처럼 처음 한 번만 정하고 끝까지 그대로여야 하는 값을 이런 칸에 둔다. 실수로 다른 값을 넣으려 하면 프로그램을 번역할 때 걸러진다. 다만 막는 것은 \"그 칸에 다른 것을 적기\"뿐이다. 칸에 적힌 것이 어떤 물건이 있…"

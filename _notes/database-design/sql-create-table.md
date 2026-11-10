@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["CREATE TABLE", "CREATE SCHEMA", "표 만들기", "테이블 생성", "스키마 생성", "권한 식별자", "Authorization Identifier", "기본 테이블", "Base Table", "순환 참조", "Circular Reference"]
 description: "표를 쓰려면 먼저 빈 표의 틀을 만들어야 한다. 장부의 첫 줄에 칸 이름을 적고 칸마다 \"숫자만\", \"빈칸 금지\" 같은 규칙을 걸어 두는 일과 같아서, 틀을 잘 만들어 두면 잘못된 값은 들어올 때 걸러진다. 다만 표끼리 서로를 가리킬 때는 만드는 순서가 꼬인다. 아직 없는 표를 가…"

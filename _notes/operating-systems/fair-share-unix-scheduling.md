@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Fair-Share Scheduling", "Traditional UNIX Scheduling", "공정 분배 스케줄링", "전통 UNIX 스케줄링", "nice", "기본 우선순위", "Base Priority", "우선순위 대역", "Priority Bands"]
 description: "전통 UNIX는 프로세서를 최근에 많이 쓴 프로세스의 우선순위를 낮추고, 시간이 지나면 그 기록을 반씩 잊어 다시 올려 준다. 그래서 대화형 프로그램은 빨리 응답받고, 계산만 하는 배경 작업도 굶지 않는다. 공정 분배는 여기에 \"사용자나 그룹 단위로도 공평하게\"를 더한다. 프로세스…"

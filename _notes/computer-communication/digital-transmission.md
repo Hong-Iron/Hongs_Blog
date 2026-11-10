@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Digital Transmission", "아날로그 전송", "Analog Transmission", "리피터", "Repeater", "재생 중계기", "Regenerative Repeater", "앰프", "Amplifier", "증폭기", "중계"]
 description: "신호는 멀리 갈수록 약해지고 잡음이 섞인다. 중간에서 신호를 그냥 크게 키우면(앰프) 잡음도 같이 커져서, 중계할 때마다 잡음이 쌓인다. 중간에서 신호를 읽어 0과 1을 알아낸 뒤 깨끗한 신호를 새로 만들어 보내면(리피터) 잡음이 쌓이지 않는다. 다만 이 방법은 신호에 담긴 것이 …"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Insomnia Disorder", "불면증", "insomnia", "수면 시작 불면증", "Sleep Onset Insomnia", "수면 유지 불면증", "Sleep Maintenance Insomnia", "수면 종료 불면증", "Sleep Terminal Insomnia", "과다각성", "hyperarousal", "3P 모델", "스필만 모델", "Spielman model", "취약성 요인", "predisposing factor", "촉발요인", "precipitating factor", "지속요인", "perpetuating factor"]
 description: "잘 수 있는 환경과 시간이 있는데도 잠들지 못하거나, 자주 깨거나, 새벽에 너무 일찍 깨서 낮 생활이 무너지는 장애다. 대개 스트레스로 며칠 못 자는 일시적 불면에서 시작한다. 그런데 \"오늘도 못 자면 어떡하지\" 하는 걱정과 누워서 뒤척이는 습관이 쌓이면, 스트레스가 사라진 뒤에도…"

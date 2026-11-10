@@ -10,7 +10,19 @@
   gtag('config', '{{ site.google_analytics }}');
 </script>
 {% endif %}
+{%- comment -%} A note's title carries its English name (the same display_title the
+     h1 shows) and its course, so two notes with one name in different courses
+     read apart in search results. A title holding MathJax falls back to the
+     plain one. og:title stays page.title (jekyll-seo-tag below). {%- endcomment %}
+{% if page.layout == "note" -%}
+  {%- assign note_name = page.display_title | default: page.title -%}
+  {%- if note_name contains "\(" -%}{%- assign note_name = page.title -%}{%- endif -%}
+<title>{{ note_name | escape_once }} · {{ page.course | escape_once }} · {{ site.title }}</title>
+{%- elsif page.layout == "course" -%}
+<title>{{ page.course | escape_once }} 로드맵 · {{ site.title }}</title>
+{%- else -%}
 <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
+{%- endif %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

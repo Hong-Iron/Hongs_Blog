@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["PCA vs NMF", "주성분 분석과 비음수 행렬 분해 비교"]
 description: "둘 다 고차원 자료를 성분 몇 개로 줄인다. 가르는 질문은 \"성분을 빼서 써도 되는가\"다. PCA는 분산을 가장 잘 남기는 방향을 찾고 양수·음수 가중치로 속성을 섞는다. NMF는 음수 없는 부분들의 더하기로만 자료를 나타내서 성분이 군집과 바로 맞닿는다."

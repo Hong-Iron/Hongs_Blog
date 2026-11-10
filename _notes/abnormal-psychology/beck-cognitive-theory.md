@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Beck's Cognitive Theory of Depression", "벡의 인지이론", "벡", "Beck", "인지삼제", "cognitive triad", "자동적 사고", "automatic thoughts", "인지적 오류", "cognitive errors", "인지 왜곡", "부정적 인지도식", "schema", "역기능적 신념", "흑백논리적 사고", "과잉 일반화", "정신적 여과", "의미확대 및 축소", "개인화", "잘못된 명명", "독심술", "예언자적 오류", "감정적 추리", "should statement"]
 description: "우울한 사람은 나 자신, 세상, 앞날을 모두 어둡게 보는 생각이 저절로 떠오른다. 그 생각은 어린 시절부터 굳어진 \"나는 사랑받지 못한다\" 같은 깊은 믿음(도식)이 힘든 일을 만나 깨어나고, 흑백논리나 지나친 일반화 같은 생각의 오류를 거쳐 만들어진다. 이 이론 덕분에 생각을 찾아…"

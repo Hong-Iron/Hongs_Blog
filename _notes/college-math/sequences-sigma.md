@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Sequences", "Summation Notation", "수열", "시그마", "sigma notation", "Σ", "등차수열", "arithmetic sequence", "등비수열", "geometric sequence", "등차급수", "망원합", "telescoping sum", "가우스 합"]
 description: "수열은 번호를 붙여 줄 세운 수이고, 시그마(Σ)는 그 수들을 \"여기부터 저기까지 더하라\"는 약속이다. 반복문이 한 바퀴 돌 때마다 드는 비용을 더하는 것이 곧 Σ 계산이라, 알고리즘 분석의 기본 언어가 된다. 같은 수를 더해 가면 등차수열, 같은 수를 곱해 가면 등비수열이다. 다…"

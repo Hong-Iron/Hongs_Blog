@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Chi-square Test", "카이제곱 검정", "χ² 검정", "독립성 검정", "분할표", "Contingency Table", "기대 빈도", "Expected Frequency", "관측 빈도", "Observed Frequency"]
 description: "성별과 좋아하는 책 장르처럼 이름표로 된 두 속성이 서로 관련 있는지 잰다. 두 속성이 아무 관련이 없다면 칸마다 몇 명이 나올지 미리 계산할 수 있다. 실제로 센 수가 그 예상에서 많이 벗어날수록 값이 커지고, 크면 \"관련이 있다\"고 판단한다. 다만 관련의 방향이나 원인은 알려 …"

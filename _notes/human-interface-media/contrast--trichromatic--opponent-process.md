@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["삼색 이론 vs 반대색 과정", "trichromatic vs opponent-process", "삼원색설과 반대색설"]
 description: "둘은 경쟁하는 이론이 아니라 색 신호가 거치는 앞뒤 두 단계다. 가르는 질문은 \"그 현상이 세 추상체 반응의 크기만으로 정해지는가, 아니면 짝끼리의 차이(+와 −)가 필요한가\"다."

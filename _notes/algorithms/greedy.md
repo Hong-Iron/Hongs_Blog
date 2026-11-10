@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Greedy", "Greedy Algorithm", "탐욕법", "탐욕 알고리즘", "욕심쟁이 방법", "교환 논증", "회의실 배정"]
 description: "갈림길마다 지금 가장 좋아 보이는 길을 고르고, 한 번 고른 것은 되돌리지 않는 방법이다. 정렬 한 번과 반복 한 번으로 끝나서 빠르고 코드도 짧다. 문제는 지금 좋아 보이는 선택이 나중에 손해가 되는 경우가 많다는 것이다. 그래서 \"이렇게 골라도 손해가 없다\"는 이유를 댈 수 있…"

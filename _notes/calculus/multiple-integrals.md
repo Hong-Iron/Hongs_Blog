@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Multiple Integral", "중적분", "이중적분", "double integral", "반복적분", "iterated integral", "푸비니 정리", "Fubini's theorem", "변수변환", "change of variables", "극좌표 적분", "polar integral", "가우스 적분", "Gaussian integral", "박스-뮬러 변환", "Box–Muller transform", "몬테카를로 적분", "Monte Carlo integration"]
 description: "땅 위에 쌓인 눈의 총량을 구하려면, 땅을 작은 칸으로 나눠 칸마다 \"넓이 × 눈 높이\"를 더하면 된다. 이것이 이중적분이고, 실제 계산은 한 방향씩 차례로 적분(반복적분)해서 한다. 원이나 부채꼴처럼 둥근 영역은 극좌표로 바꾸면 쉬워지는데, 좌표를 바꾸면 작은 칸의 넓이가 달라지…"

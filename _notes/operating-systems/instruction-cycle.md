@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Instruction Cycle", "인출-실행 사이클", "Fetch-Execute Cycle", "인출 단계", "실행 단계"]
 description: "프로세서는 요리책을 한 줄씩 읽고 그대로 하는 요리사와 같다. 다음 줄을 읽어 오고(인출), 읽은 대로 한다(실행). 이 두 걸음을 전원이 꺼지거나, 고칠 수 없는 오류가 나거나, \"멈춰라\" 명령어를 만날 때까지 되풀이한다. 단순해서 빠르지만, 요리사가 혼자 순서대로만 움직이기 때…"

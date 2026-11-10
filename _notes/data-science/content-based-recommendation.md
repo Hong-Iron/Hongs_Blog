@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Content-based Recommendation", "아이템 프로필", "Item Profile", "사용자 프로필", "User Profile", "TF-IDF", "단어 빈도", "Term Frequency", "역문서 빈도", "Inverse Document Frequency", "효용 함수", "Utility Function", "과잉 특화", "Overspecialization", "차가운 시작", "Cold Start"]
 description: "사용자가 좋아한 아이템과 내용이 비슷한 아이템을 추천한다. 아이템마다 \"어떤 단어·장르·배우가 얼마나 중요한가\"를 숫자 목록으로 만들고, 사용자가 본 아이템들의 목록을 합쳐 사용자의 취향 목록을 만든 뒤, 둘이 가장 비슷한 아이템을 고른다. 다른 사용자가 필요 없어 아직 아무도 안…"

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Stack Frame", "활성 레코드", "Activation Record", "프레임 포인터", "Frame Pointer", "베이스 포인터", "Base Pointer", "EBP", "프롤로그", "Prologue", "에필로그", "Epilogue"]
 description: "프로시저를 한 번 부를 때마다 스택에 그 호출만 쓰는 작업 책상을 하나 편다. 책상에는 넘겨받은 값, 일이 끝나면 돌아갈 곳, 잠시 치워 둔 남의 물건, 자기 메모지가 정해진 순서로 놓인다. 책상 한가운데에 말뚝을 하나 박아 두고 \"말뚝에서 위로 두 칸\", \"아래로 한 칸\"처럼 물…"

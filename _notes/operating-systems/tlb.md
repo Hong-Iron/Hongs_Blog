@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Translation Lookaside Buffer", "변환 색인 버퍼", "TLB 적중", "TLB Hit", "TLB 실패", "TLB Miss", "연관 사상", "Associative Mapping", "유효 접근 시간", "Effective Access Time"]
 description: "가상 메모리에서는 메모리를 한 번 쓰려 해도 먼저 페이지 표를 읽어야 해서 메모리 접근이 두 배가 된다. TLB는 최근에 쓴 페이지 표 항목 몇 개를 복사해 둔 작고 빠른 하드웨어 캐시다. 자주 가는 집 주소를 수첩에 적어 두고 매번 주소록 책을 펼치지 않는 것과 같다. 지역성 덕…"

@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Cargo", "Cargo.toml", "Cargo.lock", "매니페스트", "Manifest", "에디션", "Edition", "프로필", "Profile", "rust-toolchain.toml", "기능", "Feature", "크레이트", "Crate", "패키지", "Package"]
 description: "cargo는 Rust 프로젝트의 집사다. 새 프로젝트 뼈대를 만들고, 남이 만든 라이브러리를 받아 오고, 컴파일하고, 테스트하고, 문서를 만든다. 설정은 Cargo.toml 한 파일에 적고, 실제로 받은 라이브러리의 정확한 판 번호는 Cargo.lock에 자동으로 적힌다. 같은 코…"

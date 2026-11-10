@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cross-correlation", "교차 상관", "자기 상관", "autocorrelation", "패턴 찾기", "template matching", "틀 맞추기", "상관 그래프"]
 description: "찾고 싶은 작은 무늬(틀)를 투명 필름에 그려 큰 그림 위에서 한 칸씩 밀며, 자리마다 얼마나 잘 겹치는지 점수를 매기는 방법이다. 점수가 가장 높은 자리가 틀과 같은 무늬가 있는 곳이다. 동전 사진에서 동전을, 항공 사진에서 지붕을 찾는 데 그대로 쓴다. 다만 겹친 값을 곱해 더…"

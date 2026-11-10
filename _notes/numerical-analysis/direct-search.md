@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Direct Search Methods", "무작위 탐색", "Random Search", "단변수 탐색", "Univariate Search", "패턴 탐색", "Pattern Search", "다차원 최적화", "Multidimensional Optimization"]
 description: "변수가 여럿인 함수의 최댓값을 도함수 없이 함수 값만으로 찾는다. 무작위 탐색은 아무 점이나 많이 찍어 가장 좋은 것을 고르고, 단변수 탐색은 한 번에 한 변수만 움직여 1차원 최적화를 되풀이하며, 패턴 탐색은 지나온 길의 방향으로 크게 한 번 더 뛴다. 미분할 수 없는 함수에도 …"

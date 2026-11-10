@@ -9,6 +9,7 @@ track: "사람과 심리"
 concepts: 172
 practices: 17
 codes: 6
+last_modified_at: "2026-10-15"
 description: "이상 심리학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cognitive Perspective", "인지적 모델", "인지행동적 입장", "cognitive-behavioral perspective", "인지행동치료", "CBT", "Cognitive Behavior Therapy", "인지적 왜곡", "cognitive distortion", "역기능적 신념", "dysfunctional belief", "비합리적 신념", "irrational belief", "ABC 모델", "엘리스", "Ellis", "벡", "Beck", "합리적 정서행동치료", "REBT"]
 description: "같은 일을 겪어도 그 일을 어떻게 해석하느냐가 감정과 행동을 정한다고 본다. 마음의 병은 자신과 세상을 비현실적으로 부정적으로 보는 생각 습관에서 생기므로, 그 생각을 찾아 현실에 맞게 바꾸면 낫는다. 생각이라는 눈에 보이지 않는 과정을 다루면서도 검증할 수 있는 치료를 만들었다는…"

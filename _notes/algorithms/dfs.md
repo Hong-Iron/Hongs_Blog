@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["DFS", "Depth-First Search", "깊이 우선 탐색", "연결 성분", "사이클 판정", "세 가지 색"]
 description: "미로에서 한 길을 막힐 때까지 끝까지 가 보고, 막히면 마지막 갈림길로 돌아와 다른 길을 가는 방식이다. 출발점에서 닿을 수 있는 곳을 빠짐없이 한 번씩 돌아, 연결된 덩어리를 찾거나 사이클이 있는지 볼 때 쓴다. 코드가 재귀로 짧게 써진다. 대신 처음 닿은 길이 가장 짧은 길이라…"

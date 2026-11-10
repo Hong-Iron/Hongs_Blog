@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-20"
+last_modified_at: "2026-10-20"
 status: "verified"
 aliases: ["Sliding Window Algorithm", "Go-Back-N 세부 알고리즘", "SWS", "LAR", "LFS", "RWS", "NFE", "LFA", "Send Window Size", "Last Acknowledgment Received", "Last Frame Sent", "Receive Window Size", "Next Frame Expected", "Last Frame Acceptable", "사건 구동", "Event-driven"]
 description: "보내는 쪽은 숫자 세 개(한 번에 띄울 수 있는 개수, 마지막으로 받은 답장의 번호, 마지막으로 보낸 번호)만 기억하고, 받는 쪽도 세 개(받을 수 있는 개수, 다음에 기다리는 번호, 받아들일 수 있는 마지막 번호)만 기억한다. 일은 정해진 순서대로 흘러가지 않는다. 위층의 전송 …"

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["TEST 명령", "CMP 명령", "TEST Instruction", "CMP Instruction", "비교 명령", "Comparison Instructions", "비파괴 연산", "Nondestructive"]
 description: "두 물건의 무게를 견주려고 저울에 올려도 물건은 그대로다. 눈금만 움직인다. 이 두 명령은 계산을 하되 답은 버리고, 계산 결과가 어땠는지 알려 주는 표시등만 남긴다. 하나는 빼기를 해서 두 값의 크고 작음을 알려 주고, 다른 하나는 비트끼리 견줘서 고른 비트가 켜져 있는지 알려 …"

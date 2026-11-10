@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Tokio Runtime", "tokio", "런타임", "Runtime", "태스크", "Task", "tokio::spawn", "JoinHandle", "JoinSet", "spawn_blocking", "#[tokio::main]", "current_thread", "multi_thread", "작업 훔치기", "Work Stealing", "tokio::sync::Mutex"]
 description: "표준 라이브러리에는 퓨처를 돌려 줄 실행기가 없다. tokio가 그 실행기다. 운영체제 스레드 몇 개 위에서 수만 개의 가벼운 작업(태스크)을 번갈아 돌린다. 태스크는 .await에서만 스스로 차례를 넘기므로, 한 태스크가 기다리지 않고 스레드를 붙잡으면 같은 스레드의 다른 태스크…"

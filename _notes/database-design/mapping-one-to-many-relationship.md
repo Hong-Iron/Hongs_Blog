@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Mapping of Binary 1:N Relationship Types", "1:N 관계 타입의 사상", "1:N 관계 사상", "N쪽에 외래 키", "WORKS_FOR", "SUPERVISION", "CONTROLS", "Dno", "Super_ssn", "Dnum"]
 description: "직원은 한 부서에만 속하고 부서에는 직원이 여럿이다. 이런 연결은 \"여럿\" 쪽 표에 상대의 대표 값을 적는 칸 하나를 더한다. 직원 줄에는 부서 번호 하나만 적으면 되지만, 부서 줄에 직원을 적으려면 한 칸에 여러 값이 들어가야 해서 안 되기 때문이다. 연결되는 줄이 드물면 빈칸이…"

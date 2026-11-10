@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["RISC vs CISC", "RISC", "Reduced Instruction Set Computer", "CISC", "Complex Instruction Set Computer", "적재-저장 구조", "Load-Store Architecture", "고정 길이 명령", "가변 길이 명령"]
 description: "명령어 집합을 짜는 두 갈래다. 단순한 명령 몇 가지만 두고 모양을 똑같이 맞추는 쪽이 RISC(reduced instruction set computer)이고, 한 명령이 여러 일을 하게 하고 모양도 제각각 두는 쪽이 CISC(complex instruction set compu…"

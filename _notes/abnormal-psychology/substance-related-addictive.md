@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Substance-Related and Addictive Disorders", "물질관련장애", "비물질관련장애", "물질사용장애", "Substance Use Disorders", "물질 중독", "Substance Intoxication", "물질 금단", "Substance Withdrawal", "물질유도성장애", "Substance-Induced Disorders", "물질 유도성 정신장애", "Substance-Induced Mental Disorders", "중독", "addiction", "행위 중독"]
 description: "술, 담배, 약물처럼 몸에 들어가 뇌에 작용하는 물질, 그리고 도박처럼 물질 없이도 같은 방식으로 사람을 붙잡는 행동의 문제를 묶은 범주다. 물질에 대한 문제는 크게 두 가지다. 문제가 생기는데도 끊지 못하고 계속 쓰는 것(사용장애)과, 물질이 몸에 들어오거나 빠져나갈 때 생기는 …"

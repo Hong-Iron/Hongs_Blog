@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Subdivision of Bezier Curves", "세분화", "Subdivision", "곡선 렌더링", "Rendering Curves", "평평함 판정", "Flatness Test", "곡면 세분화", "Subdivision of Surfaces", "기저 변환 행렬"]
 description: "화면에 곡선을 그리려면 결국 짧은 선분 여러 개로 바꿔야 한다. 베지어 곡선은 중점을 몇 번 잡기만 하면 왼쪽 반과 오른쪽 반, 두 개의 베지어 곡선으로 정확히 나뉜다. 나눈 조각이 충분히 평평해질 때까지 되풀이하고, 평평한 조각은 선분으로 그린다. 굽은 곳만 잘게 나누므로 효율적…"

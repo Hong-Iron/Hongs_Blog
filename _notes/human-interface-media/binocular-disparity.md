@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Binocular Disparity", "양안 인식", "양안 시각", "입체시", "stereopsis", "호롭터", "horopter", "대응점", "시야", "field of view", "두눈과 시야"]
 description: "두 눈은 몇 센티미터 떨어진 두 대의 카메라다. 같은 장면을 조금 다른 각도에서 찍으므로 두 상이 어긋나고, 뇌는 이 어긋남(시차)의 크기로 거리를 가늠한다. 가까운 물체일수록 어긋남이 크고, 멀어지면 빠르게 작아져서 먼 거리에서는 다른 단서에 기대야 한다. 두 눈의 시야가 많이 …"

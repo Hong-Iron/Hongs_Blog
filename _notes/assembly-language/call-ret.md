@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Procedure", "프로시저", "CALL", "RET", "PROC", "ENDP", "복귀 주소", "Return Address", "중첩 호출", "Nested Procedure Call", "사전 조건", "Precondition", "서브루틴"]
 description: "책을 읽다가 각주를 보러 뒤쪽으로 넘어갈 때는 읽던 자리에 손가락을 끼워 둔다. 다 보고 나면 손가락 자리로 돌아온다. 프로그램도 이름 붙인 코드 덩어리로 넘어갈 때 \"돌아올 자리\"를 스택 맨 위에 적어 두고, 덩어리가 끝나면 스택 맨 위에 적힌 자리로 돌아온다. 그래서 같은 코드…"

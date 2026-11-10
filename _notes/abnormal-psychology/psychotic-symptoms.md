@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Psychotic Symptoms", "조현병의 핵심 증상", "망상", "delusion", "피해망상", "persecutory delusion", "과대망상", "grandiose delusion", "관계망상", "delusion of reference", "애정망상", "erotomanic delusion", "질투망상", "신체망상", "somatic delusion", "환각", "hallucination", "환청", "환시", "착각", "illusion", "현실검증", "reality testing", "혼란스러운 언어", "와해된 언어", "disorganized speech", "사고장애", "지리멸렬", "말비빔", "word salad", "반향언어", "echolalia", "우원증", "circumstantiality", "사고이탈", "tangentiality", "혼란스러운 행동", "긴장증", "catatonia", "음성 증상", "negative symptoms", "정서적 둔마", "affective flattening", "무언어증", "alogia", "무의욕증", "avolition", "무쾌감증", "anhedonia", "비사회성", "asociality"]
 description: "조현병의 증상은 다섯 가지다. 틀린 믿음을 증거에도 굽히지 않는 망상, 없는 것을 보고 듣는 환각, 앞뒤가 끊긴 말, 상황에 맞지 않거나 굳어 버린 행동, 그리고 감정·말·의욕이 사라지는 음성 증상이다. 앞의 넷은 보통 사람에게 없던 것이 더해진 증상이고, 마지막은 있던 것이 빠진…"

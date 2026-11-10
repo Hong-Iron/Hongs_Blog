@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Global Live Variable Analysis", "전역 생존 변수 분석", "Global Dead Code Elimination", "전역 죽은 코드 제거", "전역 최적화", "Global Optimization", "고정점 반복", "Fixed-point Iteration", "생존 변수", "Live Variable"]
 description: "이사 갈 때 \"새집에서 쓸 물건\"만 싸려면, 새집에서 무엇을 쓸지 먼저 알아야 한다. 코드 덩어리 하나만 봐서는 그 뒤에 무엇이 쓰일지 모르므로, 프로그램의 끝에서부터 거꾸로 올라오며 \"여기서부터 앞으로 쓰일 값\"의 목록을 덩어리마다 넘겨준다. 길이 둘로 갈라지는 곳에서는 두 길의…"

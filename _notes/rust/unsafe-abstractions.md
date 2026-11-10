@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Unsafe Rust", "unsafe", "Safe Abstraction", "안전한 추상", "SAFETY comment", "Raw Pointer", "원시 포인터", "Undefined Behavior", "정의되지 않은 동작", "unsafe_op_in_unsafe_fn", "unsafe extern", "unsafe(no_mangle)", "static_mut_refs", "Miri"]
 description: "unsafe는 \"여기는 컴파일러가 확인할 수 없으니 내가 확인했다\"고 서명하는 칸이다. 주소를 직접 따라가는 일처럼 컴파일러가 옳다고 증명하지 못하는 몇 가지 일을 할 수 있게 해 준다. 서명이 틀리면 프로그램이 무슨 일이든 할 수 있는 상태(정의되지 않은 동작)가 된다. 그래서 …"

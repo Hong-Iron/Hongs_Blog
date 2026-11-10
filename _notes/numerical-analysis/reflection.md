@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Reflection and Inversion", "반사", "Reflection", "대칭 이동", "반전", "Inversion", "점대칭", "거울 변환"]
 description: "반사는 거울에 비친 모습처럼 선(3차원에서는 면)을 기준으로 반대편 같은 거리로 점을 보내는 것이고, 반전은 한 점을 기준으로 정반대로 보내는 것이다. 축에 대한 반사는 좌표 하나의 부호만 바꾸면 되므로, 아무 선이나 면에 대한 반사는 \"그 선을 축으로 옮기기 → 축에 대해 반사 …"

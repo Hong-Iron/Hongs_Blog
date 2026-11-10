@@ -11,6 +11,7 @@ course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Edit Distance", "레벤슈타인 거리", "Levenshtein Distance", "변환 거리", "Transformation Distance", "최소 편집 거리", "Minimum Edit Distance", "정규화 편집 거리", "Normalized Edit Distance", "편집 유사도", "Edit Similarity", "되짚기", "Backtrace", "편집 가중치"]
 description: "한 낱말을 다른 낱말로 고치는 데 드는 가장 적은 수고를 두 낱말 사이의 거리로 삼는다. 원고를 교정하는 사람이 글자를 하나 끼워 넣고, 하나 지우고, 하나를 다른 글자로 바꾸는 세 가지 손질만 할 수 있다고 할 때 손질 횟수를 세는 것이다. 글자가 빠지거나 끼어들어 길이가 달라져…"

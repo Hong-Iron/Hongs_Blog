@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Thompson's Construction", "McNaughton-Yamada-Thompson Algorithm", "맥노튼-야마다-톰슨 알고리즘", "톰슨 알고리즘", "정규 표현식을 NFA로", "Regular Expression to NFA", "ε-NFA"]
 description: "조립 설명서대로 부품을 끼워 맞추듯, 글자 줄의 모양을 적은 식을 그 모양을 알아보는 기계로 바꾸는 방법이다. 식을 가장 작은 조각까지 쪼개 조각마다 정해진 작은 그림을 그리고, 식이 조립된 순서대로 그림을 공짜 화살표로 이어 붙인다. 생각할 것 없이 규칙만 따르면 되고 어떤 식이…"

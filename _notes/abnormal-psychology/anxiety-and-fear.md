@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-26"
+last_modified_at: "2026-09-26"
 status: "verified"
 aliases: ["Anxiety and Fear", "불안", "anxiety", "공포", "fear", "정상적 불안", "normal anxiety", "병적 불안", "pathological anxiety", "불안장애", "anxiety disorders"]
 description: "공포는 눈앞의 뚜렷한 위험에 대한 반응이고, 불안은 무엇인지 분명하지 않은 위험에 대한 반응이다. 둘 다 위험에 대비하게 해 주는 정상적인 경보 장치다. 경보가 실제 위험이 없는데 울리거나, 위험에 비해 지나치게 크거나, 위험이 사라진 뒤에도 꺼지지 않으면 병적이다. 병적인 불안과…"

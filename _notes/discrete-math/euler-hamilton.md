@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Euler Path", "오일러 경로", "오일러 회로", "Euler circuit", "오일러 트레일", "Hamiltonian Path", "해밀턴 경로", "해밀턴 사이클", "Hamiltonian cycle", "쾨니히스베르크 다리 문제", "Königsberg bridges", "히어홀처 알고리즘", "Hierholzer's algorithm", "디랙 정리", "Dirac's theorem", "외판원 문제", "TSP"]
 description: "모든 간선을 한 번씩 지나는 길(오일러)과 모든 정점을 한 번씩 지나는 길(해밀턴)은 말은 비슷하지만 난이도가 전혀 다르다. 오일러 쪽은 \"모든 정점의 차수가 짝수인가\"만 보면 판정되고 빠르게 찾을 수 있다. 해밀턴 쪽은 이런 간단한 판정법이 알려져 있지 않고, 사실상 경우를 다 …"

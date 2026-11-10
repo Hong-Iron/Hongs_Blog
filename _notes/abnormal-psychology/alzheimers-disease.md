@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Alzheimer's Disease", "알츠하이머", "알츠하이머성 치매", "아밀로이드반", "amyloid plaque", "신경섬유다발", "neurofibrillary tangle", "APOE4", "콜린에스테라제 억제제", "cholinesterase inhibitor", "ChEI", "NMDA 수용체 길항제", "기억 지갑", "memory wallet"]
 description: "치매의 절반 이상을 차지하는 가장 흔한 원인이다. 뇌에 비정상 단백질 찌꺼기가 쌓이고 신경세포가 죽어 가면서, 방금 한 일부터 잊기 시작해 길 찾기, 말, 옷 입기까지 수년에 걸쳐 차례로 무너진다. 증상이 나타나기 10년 이상 전부터 뇌의 변화가 시작된다. 아직 망가진 뇌를 되살리…"

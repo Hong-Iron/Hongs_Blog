@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Defense Mechanisms", "방어 기제", "억압", "repression", "부인", "denial", "투사", "projection", "고립", "isolation", "주지화", "intellectualization", "취소", "undoing", "반동형성", "reaction formation", "합리화", "rationalization", "대치", "전치", "displacement", "퇴행", "regression", "승화", "sublimation"]
 description: "마음속 갈등으로 불안해질 때, 자아가 본인도 모르게 쓰는 불안 줄이기 기술이다. 불편한 욕구를 잊거나, 남 탓으로 돌리거나, 그럴듯한 이유를 붙이는 식이다. 누구나 쓰고 잠깐은 도움이 되지만, 현실을 크게 비틀거나 한 가지만 고집하면 증상이 된다. 가장 건강한 방어는 욕구를 사회가…"

@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Properties of the Fourier Transform", "표 4.1", "시간 이동", "주파수 이동", "Frequency Shifting", "켤레 대칭", "Conjugate Symmetry", "시간 척도", "Time Scaling", "미분 성질", "적분 성질", "주파수 미분", "Differentiation in Frequency", "파스발 관계", "Parseval's Relation", "에너지 밀도 스펙트럼", "Energy-Density Spectrum"]
 description: "푸리에 급수에서 본 성질표(표 3.1)가 푸리에 변환에도 거의 그대로 있다(표 4.1). 늦추면 위상만 돌고, 빨리 감으면 스펙트럼이 넓어지고, 미분하면 j\\omega가 곱해지고, 실수 신호의 스펙트럼은 좌우 켤레 대칭이다. 이 표를 쓰면 적분을 직접 하지 않고 아는 변환 몇 개에…"

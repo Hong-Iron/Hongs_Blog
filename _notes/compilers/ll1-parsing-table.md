@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["LL(1) Parsing Table", "LL(1) 파싱 테이블", "예측 파싱", "Predictive Parsing", "예측 파서", "LL(k)", "LL(1) 문법", "Lookahead", "미리보기 기호"]
 description: "\"지금 풀어야 할 이름\"과 \"다음에 올 낱말 하나\"를 알면 어느 규칙을 쓸지 바로 찾아볼 수 있게 미리 만들어 둔 표다. 갈림길마다 \"이 표지가 보이면 이 길\"이라고 적어 둔 길 안내판과 같아서, 길을 잘못 들어 되돌아가는 일이 없다. 표의 빈칸은 문법에 어긋난 입력이라는 뜻이다.…"

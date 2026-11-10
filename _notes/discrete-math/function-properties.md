@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Injective", "Surjective", "Bijective", "단사", "일대일 함수", "injection", "전사", "위로의 함수", "surjection", "전단사", "일대일 대응", "bijection", "기수", "cardinality", "집합의 크기"]
 description: "함수를 두 질문으로 나눈다. 출력이 서로 겹치지 않는가(단사), 도착 쪽을 빠짐없이 덮는가(전사). 둘 다이면 전단사로, 두 집합의 원소를 하나씩 짝지을 수 있어 크기가 같다. 끝없이 큰 집합의 크기도 이 짝짓기로 비교한다. 해시 함수처럼 큰 집합에서 작은 집합으로 가는 함수는 단…"

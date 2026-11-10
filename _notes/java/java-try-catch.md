@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["try-catch-finally", "예외 처리", "Exception Handling", "try 블록", "catch 블록", "finally 블록", "다중 catch", "Multiple Catch Blocks", "getMessage", "printStackTrace"]
 description: "사고가 날 수 있는 줄들을 울타리 하나에 넣고, 사고가 나면 할 일과, 사고가 나든 안 나든 마지막에 꼭 할 일을 따로 적어 두는 방법이다. 사고가 나도 프로그램이 끝나지 않고 다음 줄로 넘어간다. 단, 울타리 안에서 사고가 난 줄 뒤의 줄들은 건너뛴다. 사고 종류별로 할 일을 여…"

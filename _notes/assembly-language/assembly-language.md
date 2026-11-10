@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Assembly Language", "어셈블리 언어", "기계어", "Machine Language", "어셈블러", "Assembler", "니모닉", "Mnemonic", "일대일 대응", "이식성", "Portability"]
 description: "컴퓨터의 두뇌인 프로세서가 알아듣는 말은 숫자뿐이다. 어셈블리어는 그 숫자 명령 하나하나에 사람이 읽을 수 있는 짧은 이름을 붙인 말이다. 요리사에게 \"3번 동작, 7번 재료\"라고 적는 대신 \"썰어라, 양파\"라고 적어 주는 것과 같아서, 한 줄이 프로세서의 동작 하나와 정확히 짝이…"

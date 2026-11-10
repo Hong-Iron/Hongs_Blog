@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-08"
+last_modified_at: "2026-10-08"
 status: "verified"
 aliases: ["Even Signal", "Odd Signal", "우함수", "기함수", "짝 부분", "Even Part", "홀 부분", "Odd Part", "짝·홀 분해", "Even-Odd Decomposition"]
 description: "시간축을 뒤집어도 그대로인 신호가 짝 신호(\\cos t처럼 세로축에 대해 좌우 대칭), 뒤집으면 부호만 바뀌는 신호가 홀 신호(\\sin t처럼 원점에 대해 대칭)다. 어떤 신호든 짝 부분과 홀 부분의 합으로 꼭 한 가지 방법으로 나눌 수 있다. 홀 신호는 t = 0에서 값이 반드시…"

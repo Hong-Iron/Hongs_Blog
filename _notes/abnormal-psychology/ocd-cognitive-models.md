@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cognitive Models of OCD", "침투적 사고", "intrusive thoughts", "살코브스키스", "Salkovskis", "자아-이질적", "ego-dystonic", "자아-동질적", "ego-syntonic", "중화", "neutralizing", "팽창된 책임감", "inflated responsibility", "사고-행위 융합", "thought-action fusion", "도덕성 융합", "발생가능성 융합", "라크만", "Rachman", "추론융합", "inferential confusion", "사고억제의 역설적 효과", "흰곰 실험", "white bear", "웨그너", "Wegner", "불완전감", "incompleteness", "Not Just Right Experience", "강박장애의 2차원 모델"]
 description: "\"칼을 보니 누굴 찌를 것 같다\" 같은 엉뚱한 생각(침투적 사고)은 누구에게나 스쳐 간다. 대부분은 \"별 이상한 생각이네\" 하고 흘려보낸다. 강박장애를 가진 사람은 그 생각에 \"이런 생각을 하다니 나는 위험한 사람이다, 막지 않으면 내 책임이다\"라는 무거운 의미를 붙인다. 그래서 …"

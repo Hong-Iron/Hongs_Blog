@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Panic Disorder", "공황발작", "panic attack", "예기불안", "anticipatory anxiety", "과잉호흡이론", "hyperventilation theory", "질식오경보 이론", "suffocation false alarm theory", "공황통제치료", "panic control treatment", "PCT", "내부감각수용 노출", "interoceptive exposure", "복식호흡"]
 description: "아무 예고 없이 갑자기 심장이 터질 듯 뛰고 숨이 막히며 \"이러다 죽겠다\" 싶은 공포(공황발작)가 몇 분 만에 치솟는 일이 되풀이되는 장애다. 발작 자체보다 그 뒤가 더 괴롭다. 또 올까 봐 늘 걱정하고, 발작이 날 만한 활동과 장소를 피하면서 생활이 줄어든다. 공황발작은 다른 장…"

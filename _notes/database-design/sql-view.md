@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["View", "SQL View", "뷰", "가상 테이블", "Virtual Table", "기본 테이블", "Base Table", "정의 테이블", "Defining Table", "CREATE VIEW", "DROP VIEW", "WORKS_ON1", "DEPT_INFO", "DEPT5EMP", "BASIC_EMP_DATA"]
 description: "자주 쓰는 질의에 이름을 붙여 두고 표처럼 쓰는 것이다. 창문과 같아서, 창문 자체에는 아무것도 들어 있지 않고 창밖 풍경이 바뀌면 창으로 보이는 것도 바로 바뀐다. 긴 질의를 매번 다시 쓰지 않아도 되고, 보여 주고 싶은 행과 열만 내보일 수 있다. 읽는 것은 진짜 표와 똑같이 …"

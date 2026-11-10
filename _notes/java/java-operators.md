@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Operator", "연산자", "부호 연산자", "증감 연산자", "Increment", "Decrement", "산술 연산자", "Arithmetic Operator", "오버플로", "Overflow", "언더플로", "Underflow", "NaN", "Infinity", "ArithmeticException", "비교 연산자", "Comparison Operator", "논리 연산자", "Logical Operator", "대입 연산자", "Assignment Operator", "삼항 연산자", "Ternary Operator", "연산자 우선순위", "Operator Precedence"]
 description: "자동차 주행 거리계가 999999에서 1킬로미터를 더 가면 000000으로 돌아간다. 자바의 정수도 칸이 정해져 있어서, 가장 큰 값에 1을 더하면 오류 없이 가장 작은 값으로 돌아간다. 더하기·비교·대입 같은 연산 기호는 수학과 거의 같게 읽히지만, 이렇게 수학과 어긋나는 곳이 …"

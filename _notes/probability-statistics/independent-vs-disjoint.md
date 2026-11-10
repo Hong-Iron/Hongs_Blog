@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["독립 vs 배반", "independent vs mutually exclusive", "배반과 독립의 차이"]
 description: "둘 다 \"서로 상관없다\"는 느낌이라 자주 섞어 쓰지만, 뜻은 거의 반대다. 가르는 질문은 이렇다. 두 사건이 함께 일어날 수 있는가(배반은 불가능), 한쪽 소식이 다른 쪽 확률을 바꾸는가(독립은 바꾸지 않음). 배반이면 확률을 더하고, 독립이면 곱한다."

@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["SQL Data Types", "Attribute Data Types", "자료형", "데이터 타입", "INT", "FLOAT", "DECIMAL", "CHAR", "VARCHAR", "BIT", "VARBIT", "BOOLEAN", "DATE", "TIME", "TIMESTAMP", "도메인", "CREATE DOMAIN"]
 description: "칸마다 어떤 꼴의 값을 받을지 정해 두는 것이 자료형이다. 신청서의 칸에 \"숫자만\", \"아홉 글자\", \"날짜\"라고 적어 두는 것과 같다. 꼴이 정해져 있으면 엉뚱한 값이 걸러지고, 크기를 견주거나 날짜끼리 빼는 계산도 제대로 된다. 다만 얼마나 엄격하게 막는지는 제품마다 달라서, …"

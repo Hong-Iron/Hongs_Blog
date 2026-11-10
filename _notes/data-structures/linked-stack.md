@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Linked Stack", "연결 스택", "연결된 스택", "StackNode", "LinkedStackType", "top", "push", "pop", "is_empty"]
 description: "하나를 쌓을 때마다 노드를 새로 만들어 줄의 맨 앞에 끼우고, 꺼낼 때는 맨 앞 노드를 떼어 낸다. 맨 앞에서만 넣고 빼니 둘 다 한 번에 끝나고, 칸 수를 미리 정하지 않아도 메모리가 남아 있는 한 계속 쌓인다. 대신 원소마다 다음 노드의 주소를 적을 칸이 하나씩 더 들고, 넣고…"

@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Matrix Factorization Recommendation", "MF 추천", "PureSVD", "Biased MF", "편향 행렬 분해", "SVD++", "잠재 요인", "Latent Factor", "사용자 편향", "User Bias", "아이템 편향", "Item Bias", "암묵적 피드백", "Implicit Feedback"]
 description: "사용자 × 아이템 평점표를 \"사용자의 숨은 취향 몇 가지\"와 \"아이템의 숨은 특징 몇 가지\"의 곱으로 나눈다. 사용자의 취향 목록과 아이템의 특징 목록을 곱해 맞춰 보면, 아직 보지 않은 아이템의 평점을 짐작할 수 있다. 여기에 \"이 사람은 원래 후하다\", \"이 영화는 원래 인기가…"

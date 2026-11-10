@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Framing Methods Compared", "보초 대 바이트 수 대 비트 채우기"]
 description: "프레임의 끝을 알리는 방법은 세 가지다. 끝에 정해 둔 글자를 두는 보초 방법, 앞에 길이를 적는 바이트 수 방법, 비트 모양 깃발을 쓰는 비트 채우기다. 셋의 차이는 \"데이터를 무엇으로 보느냐\"(글자인가, 임의의 비트인가)와 \"끝 표시가 깨졌을 때 무슨 일이 생기느냐\"다."

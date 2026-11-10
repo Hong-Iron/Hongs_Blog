@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Multiplier", "Multiplier Circuit", "시프트-덧셈 곱셈기", "Shift-and-Add Multiplier", "순차 곱셈기", "Sequential Multiplier", "피승수", "Multiplicand", "승수", "Multiplier", "mult", "multu", "mfhi", "mflo", "Hi", "Lo"]
 description: "초등학교에서 배운 세로 곱셈을 그대로 회로로 옮긴 것이다. 2진수에서는 곱하는 수의 자리마다 0 아니면 1뿐이라, 자리마다 할 일이 \"곱해지는 수를 더한다\" 아니면 \"안 더한다\" 둘 중 하나다. 한 자리를 볼 때마다 곱해지는 수를 왼쪽으로 한 칸 밀어 자릿값을 맞춘다. 덧셈 회로 …"

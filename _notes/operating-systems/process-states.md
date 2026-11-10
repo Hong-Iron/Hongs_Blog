@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Process States", "5상태 모델", "Five-State Process Model", "2상태 모델", "Two-State Process Model", "준비", "Ready", "실행", "Running", "대기", "Blocked", "일시 중단", "Suspend", "스와핑", "Swapping", "디스패처", "Dispatcher"]
 description: "메모리에 있는 프로세스는 늘 셋 중 하나다. 프로세서를 쓰는 중(실행), 프로세서만 주면 바로 할 수 있는데 차례를 기다리는 중(준비), 입출력 같은 일이 끝나기를 기다리는 중(대기). 병원 대기실로 치면 진료 중, 이름 불리기를 기다리는 중, 검사 결과를 기다리는 중이다. 이렇게…"

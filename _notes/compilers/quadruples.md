@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Quadruples", "Quadruple", "4-튜플", "사중쌍", "op arg1 arg2 result"]
 description: "서류 양식에 \"무엇을 / 누구와 / 누구로 / 결과는 어디에\" 네 칸이 인쇄되어 있고, 명령 하나마다 양식 한 장을 채우는 것과 같다. 한 번에 계산 하나씩만 하도록 풀어 쓴 코드의 한 줄을 이렇게 칸 네 개짜리 기록으로 담고, 기록들을 실행 순서대로 줄줄이 이어 둔다. 모든 줄이…"

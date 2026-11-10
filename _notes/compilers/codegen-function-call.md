@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Code Generation for Function Calls", "함수 호출 코드 생성", "호출 시퀀스", "Calling Sequence", "반환 시퀀스", "Return Sequence", "프롤로그", "Prologue", "에필로그", "Epilogue", "jr", "$ra"]
 description: "남의 작업실을 빌려 쓸 때는 들어가기 전에 내 짐을 표시해 두고, 쓸 재료를 올려놓고, 끝나면 모두 치워서 처음 모습으로 돌려놓아야 한다. 함수를 부르는 코드도 그렇다. 부르기 전에 스택에 돌려받을 값의 칸, 넘겨줄 값, 부른 쪽 자리의 위치, 돌아올 곳, 불린 함수가 쓸 칸을 차…"

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cluster", "File Allocation Table", "FAT", "파일 할당 표", "클러스터 사슬", "Cluster Chain", "FAT-12", "FAT-16", "FAT-32", "섹터", "Sector"]
 description: "디스크는 같은 크기의 상자가 줄지어 놓인 창고와 같다. 파일은 상자 여러 개에 나눠 담기고, 창고 입구의 장부 한 권에 \"이 상자 다음은 몇 번 상자\"가 적혀 있다. 그래서 상자가 여기저기 흩어져 있어도 장부만 따라가면 파일을 끝까지 읽는다. 대신 상자를 통째로만 쓸 수 있어서 마…"

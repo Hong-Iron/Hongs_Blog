@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Narcolepsy", "수면발작", "sleep attack", "탈력발작", "Cataplexy", "히포크레틴", "hypocretin", "오렉신", "orexin", "수면 잠복기 반복 검사", "MSLT", "수면마비", "가위눌림", "sleep paralysis", "입면시 환각", "hypnagogic hallucination", "탈면시 환각", "hypnopompic hallucination", "2역치 다중요인 모델", "HLA", "모다피닐", "Modafinil"]
 description: "참을 수 없는 졸음이 파도처럼 덮쳐 회의 중이나 운전 중에도 갑자기 잠들어 버리는 장애다. 크게 웃거나 흥분하면 갑자기 몸에 힘이 빠져 주저앉는 탈력발작이 특징이다. 잠든 몸이 움직이지 않도록 근육을 풀어 두는 REM 수면의 장치가 깨어 있을 때 끼어드는 것으로 이해할 수 있다. …"

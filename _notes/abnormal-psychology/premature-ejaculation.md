@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Premature Ejaculation", "PE", "조루", "이른 사정", "Early Ejaculation"]
 description: "삽입한 뒤 원하지 않는데도 대략 1분 안에 사정하는 일이 거의 매번, 반년 넘게 되풀이되어 괴로운 장애다. 사정을 조절하지 못한다는 느낌이 핵심이고, 다음에도 그럴 거라는 예상이 불안을 키운다. 걱정하는 사람은 많지만 \"1분\"이라는 엄격한 기준을 적용하면 해당하는 사람은 훨씬 적다."

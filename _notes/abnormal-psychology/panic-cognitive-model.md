@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cognitive Model of Panic", "클라크의 공황 인지모델", "Clark 1986", "파국적 오해석", "catastrophic misinterpretation", "3요인 인지이론", "tripartite cognitive model", "불안 민감성", "anxiety sensitivity", "공황적 자기효능감", "panic self-efficacy"]
 description: "공황발작은 두근거림이나 어지러움 같은 몸의 감각을 \"심장마비다\", \"미쳐 간다\"처럼 끔찍한 일의 징조로 잘못 해석할 때 생긴다는 설명이다. 그렇게 해석하면 더 불안해지고, 불안은 감각을 더 키우고, 커진 감각은 해석이 맞다는 증거처럼 느껴진다. 이 악순환이 몇 분 만에 발작을 만든…"

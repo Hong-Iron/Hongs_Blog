@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Fetishistic Disorder", "물품음란증", "페티시즘", "fetishism", "부분도착", "partialism"]
 description: "신발이나 속옷 같은 무생물, 또는 발처럼 성기가 아닌 특정 신체 부위에 지나치게 집착해 그것으로만 강렬한 성적 흥분을 느끼는 상태가 반년 넘게 이어지고, 그 때문에 괴롭거나 생활이 무너지는 장애다. 그 물건이 없으면 성관계가 어려워지기도 하고, 물건을 구하려고 훔치기도 한다. 괴로…"

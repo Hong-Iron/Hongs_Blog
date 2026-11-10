@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Panic Policy", "panic!", "unwrap", "expect", "catch_unwind", "panic = abort", "JoinError", "clippy unwrap_used"]
 description: "panic은 \"이 프로그램은 지금 고칠 수 없는 상태에 빠졌으니 멈춘다\"는 비상 정지 버튼이다. 버튼을 누르면 부른 쪽은 손쓸 기회를 잃는다. 그래서 일어날 수 있는 실패(잘못된 입력, 네트워크 끊김)에는 Result를 돌려주고, panic은 코드의 약속이 깨진 버그에만 쓴다. 그…"

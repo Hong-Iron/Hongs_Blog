@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Taylor Series", "테일러 급수", "테일러 다항식", "Taylor polynomial", "매클로린 급수", "Maclaurin series", "테일러 정리", "Taylor's theorem", "나머지 항", "remainder", "거듭제곱 급수", "power series", "수렴 반지름", "radius of convergence"]
 description: "한 점에서의 값, 기울기, 휘는 정도, … 를 차례로 맞춰 가며 함수를 다항식으로 흉내 내는 방법이다. 그 점 가까이에서는 몇 항만으로도 매우 정확하고, 오차가 얼마 이하인지 계산할 수 있어 계산기와 수학 라이브러리가 이 원리로 지수함수와 사인함수를 계산한다. 대신 그 점에서 멀어…"

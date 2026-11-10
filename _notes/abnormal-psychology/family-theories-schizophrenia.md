@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Family Theories of Schizophrenia", "조현병을 만드는 어머니", "schizophrenogenic mother", "프롬-라이히만", "Fromm-Reichmann", "편향적 부부관계", "분열적 부부관계", "이중구속이론", "double-bind theory", "베이트슨", "Bateson", "표현된 정서", "expressed emotion", "EE", "정서적 과잉개입", "emotional overinvolvement"]
 description: "\"집안 분위기가 조현병과 상관이 있을까?\"에 답하려던 이론 네 가지다. 차갑거나 지나치게 감싸는 엄마, 사이가 기울거나 갈라진 부모, 말과 행동이 어긋나는 부모, 환자를 탓하고 간섭하는 가족을 각각 원인으로 보았다. 앞의 이론들은 결국 부모 탓으로 몰고 가서 지금은 인정받지 못한다…"

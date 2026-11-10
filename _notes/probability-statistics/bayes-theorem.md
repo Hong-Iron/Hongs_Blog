@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Bayes' Theorem", "Bayes' rule", "베이즈 정리", "베이즈 규칙", "사전확률", "prior", "사후확률", "posterior", "가능도", "likelihood", "기저율", "base rate", "기저율 무시", "base rate fallacy", "오즈", "odds", "가능도비", "likelihood ratio", "나이브 베이즈", "naive Bayes"]
 description: "결과(검사 양성, 스팸 단어)를 보고 원인(병, 스팸)이 있을 확률을 거꾸로 계산하는 규칙이다. 원래 그 원인이 얼마나 흔한지(기저율)에, 이 증거가 그 원인에서 얼마나 더 잘 나오는지를 곱해 믿음을 갱신한다. 새 증거가 들어올 때마다 같은 계산을 되풀이하면 된다. 가장 흔한 실수…"

@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Stack", "스택", "LIFO", "후입선출", "push", "pop", "괄호 검사"]
 description: "접시를 쌓으면 맨 위에 놓은 접시를 가장 먼저 꺼낸다. 스택은 이렇게 마지막에 넣은 것을 먼저 꺼내는 자료구조다. 이 규칙을 후입선출(LIFO)이라 부른다. \"가장 최근 것과 짝 맞추기\"나 \"방금 한 일 되돌리기\"에 딱 맞고, 넣기와 꺼내기가 한 번에 끝난다. 대신 맨 위만 볼 수…"

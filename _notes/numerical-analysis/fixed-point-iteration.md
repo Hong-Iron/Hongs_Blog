@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Fixed-Point Iteration", "단순 고정점 반복", "Simple Fixed-Point Iteration", "고정점", "Fixed Point", "선형 수렴", "Linear Convergence", "연립 비선형 방정식", "System of Nonlinear Equations"]
 description: "f(x) = 0을 x = g(x) 꼴로 바꿔 놓고, 아무 값이나 g에 넣고 나온 값을 다시 넣기를 되풀이한다. 넣은 값과 나온 값이 같아지는 점(고정점)이 원래 식의 근이다. 식을 바꾸는 방법은 여러 가지인데, 근 근처에서 g의 기울기의 절댓값이 1보다 작으면 오차가 매번 그 비율…"

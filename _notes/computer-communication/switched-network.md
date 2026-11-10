@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Switched Network", "간접 연결", "indirect connectivity", "스위치", "switch", "스위치드 네트워크"]
 description: "택배는 서울에서 부산으로 직통 트럭을 보내지 않는다. 짐을 허브 터미널에 모았다가 갈 곳별로 나눠 보낸다. 컴퓨터도 서로 직접 선으로 잇지 않고, 중간의 중계 장치(스위치)를 거쳐 데이터를 보낼 수 있다. 이렇게 하면 컴퓨터가 많고 멀리 떨어져 있어도 선이 끝없이 늘지 않는다. 대…"

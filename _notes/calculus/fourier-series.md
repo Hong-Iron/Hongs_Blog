@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Series", "푸리에 급수", "푸리에 계수", "Fourier coefficient", "삼각급수", "trigonometric series", "직교 함수", "orthogonal functions", "파스발 항등식", "Parseval's identity", "깁스 현상", "Gibbs phenomenon", "디리클레 정리", "Dirichlet's theorem", "사각파", "square wave", "톱니파", "sawtooth wave", "바젤 문제", "Basel problem"]
 description: "반복되는 신호는 아무리 모양이 복잡해도, 기본 주파수와 그 정수배 주파수 사인파들을 알맞은 세기로 더해 만들 수 있다. 각 사인파의 세기는 신호가 그 사인파와 \"얼마나 닮았는가\"로 구하는데, 벡터를 서로 수직인 축들로 분해할 때 축마다 그림자 길이를 재는 것과 똑같은 계산이다. 신…"

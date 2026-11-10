@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Erectile Disorder", "ED", "발기부전", "Impotence"]
 description: "성행위의 거의 모든 경우에 발기가 되지 않거나, 유지되지 않거나, 충분히 단단하지 않은 상태가 반년 넘게 이어져 괴로운 장애다. 가끔 한 번 안 되는 것은 누구에게나 있는 일이다. 나이가 들수록 크게 늘어 50세 이후에 흔하다. 자신감과 남성다움이 무너지는 느낌, 다음 성행위에 대…"

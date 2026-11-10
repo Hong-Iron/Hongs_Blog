@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Biopsychosocial Model", "생물-심리-사회 모델", "BPS 모델", "통합적 입장", "integrative perspective", "엥겔", "Engel"]
 description: "마음의 병을 몸(생물), 마음(심리), 환경(사회) 세 겹의 원인이 겹친 결과로 보고, 겹마다 맞는 치료를 짝짓는 지도다. 한 입장만 고집하면 놓치는 원인을 빠짐없이 챙기게 해 준다는 점이 강점이다. 대신 \"모든 것이 관련 있다\"로 끝나기 쉬워서, 한 사람에게 어느 원인이 가장 중…"

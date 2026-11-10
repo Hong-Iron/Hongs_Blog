@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Trichromatic Theory", "삼원색설", "영-헬름홀츠 이론", "색채 인식", "단일 변수 원리", "principle of univariance", "색 맞추기", "color matching", "원색", "primary"]
 description: "색은 세 개의 음량계가 가리키는 눈금의 조합이다. 눈에는 짧은·중간·긴 파장에 각각 잘 반응하는 세 종류의 추상체가 있고, 뇌는 빛의 스펙트럼 전체가 아니라 세 반응의 크기만 받는다. 그래서 빨강·초록·파랑 세 빛만 섞어도 대부분의 색을 흉내 낼 수 있다. 대신 서로 다른 빛이 똑…"

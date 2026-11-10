@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Tables as Multisets", "Multiset", "Bag", "다중집합", "백", "중복 튜플", "Duplicate Tuples", "DISTINCT", "SELECT DISTINCT", "SELECT ALL", "중복 제거", "Duplicate Elimination", "Tables as Sets"]
 description: "SQL의 표와 질의 결과에는 똑같은 행이 여러 번 들어 있을 수 있다. 수학의 집합은 같은 것을 한 번만 치지만, SQL은 장바구니처럼 같은 물건이 세 개면 세 개로 둔다. 겹치는 행을 찾아 지우는 데는 품이 들고 개수나 평균을 낼 때는 겹친 채로 있어야 답이 맞기 때문이라서, 겹…"

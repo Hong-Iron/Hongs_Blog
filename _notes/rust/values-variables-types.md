@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Values Variables and Types", "let", "mut", "가림", "Shadowing", "const", "스칼라 타입", "Scalar Types", "정수 넘침", "Integer Overflow", "checked_add", "wrapping_add", "saturating_add", "overflowing_add", "as 변환", "Numeric Cast", "char", "usize"]
 description: "Rust의 변수는 기본으로 \"한 번 적으면 못 고치는 칸\"이다. 고칠 칸은 처음부터 고친다고 밝혀야 해서, 코드를 읽는 사람이 어디서 값이 바뀌는지 바로 안다. 숫자 타입은 크기가 정해져 있어 넘칠 수 있다. 개발용 빌드에서는 넘치는 순간 멈추지만, 배포용 빌드에서는 Java처럼 …"

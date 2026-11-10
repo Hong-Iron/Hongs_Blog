@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Derivation", "유도", "Leftmost Derivation", "좌측 유도", "Rightmost Derivation", "우측 유도", "Sentential Form", "문장 형식", "Sentence", "문장", "Parse Tree", "파스 트리", "구문 트리", "문법의 언어"]
 description: "문법의 규칙을 한 번에 하나씩 써서 시작 이름을 조금씩 바꿔 나가는 과정이 유도다. 이렇게 해서 주어진 토큰들을 그대로 만들어 낼 수 있으면 그 토큰들은 문법에 맞다. 어느 이름을 어떤 조각들로 바꿨는지를 위에서 아래로 가지 쳐 그리면 나무가 되고, 이 나무가 토큰들이 어떻게 묶이…"

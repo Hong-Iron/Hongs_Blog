@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Variance", "분산", "표준편차", "standard deviation", "SD", "산포", "dispersion", "웰퍼드 방법", "Welford's algorithm", "평균의 분산"]
 description: "값들이 평균에서 평균적으로 얼마나 멀리 흩어지는지를 재는 수다. 평균에서 벗어난 거리를 제곱해 평균 낸 것이 분산이고, 그 제곱근이 원래 단위로 돌아온 표준편차다. 평균 응답 시간이 같은 두 서버도 흔들림이 크게 다를 수 있어서, 평균만으로는 성능을 말할 수 없다. 서로 독립인 것…"

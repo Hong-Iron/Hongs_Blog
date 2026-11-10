@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["MIPS Assembly", "MIPS 어셈블리", "MIPS", "레지스터", "Register", "스택 포인터", "Stack Pointer", "$sp", "$ra", "lw", "sw", "li", "addi", "subi", "slt", "slti", "beq", "beqz", "bnez", "즉시값", "Immediate", "코드 생성기", "Code Generator"]
 description: "요리사는 창고에 있는 재료를 바로 썰지 못한다. 도마에 꺼내 놓고 썰고, 다 되면 다시 창고에 넣는다. 이 기계도 그렇다. 계산은 프로세서 안의 작은 칸 몇 개에서만 하고, 메모리와는 \"꺼내 오기\"와 \"넣어 두기\" 두 명령으로만 값을 주고받는다. 명령의 종류가 적고 모양이 단순해서…"

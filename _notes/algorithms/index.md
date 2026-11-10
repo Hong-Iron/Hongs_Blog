@@ -10,6 +10,7 @@ track_sub: "소프트웨어"
 concepts: 42
 practices: 99
 codes: 146
+last_modified_at: "2026-10-15"
 description: "알고리즘 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true

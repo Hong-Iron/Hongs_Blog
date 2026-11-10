@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Borrowing", "References", "참조", "빌림", "가변 참조", "Mutable Reference", "공유 참조", "Shared Reference", "NLL", "Non-Lexical Lifetimes", "다시 빌리기", "Reborrow", "두 단계 빌림", "Two-Phase Borrow", "빌림 검사기", "Borrow Checker", "E0499", "E0502", "E0506", "E0505", "E0596"]
 description: "값의 주인은 그대로 두고, 남이 잠깐 들여다보거나 고치게 해 주는 것이 참조다. 도서관 책처럼, 여러 명이 동시에 읽는 것은 괜찮지만 누가 고치는 동안에는 아무도 읽거나 고치지 못한다. 이 규칙 덕분에 \"읽는 중에 바뀌는\" 버그와 데이터 경쟁이 컴파일 단계에서 막힌다. 대신 컴파일…"

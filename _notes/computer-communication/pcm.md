@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Pulse Code Modulation", "펄스 부호 변조", "펄스 코드 변조", "PAM", "Pulse Amplitude Modulation", "표본화 정리", "Sampling Theorem", "나이퀴스트 표본화 정리", "샘플링", "양자화", "Quantization"]
 description: "목소리처럼 매끄럽게 변하는 값을 0과 1로 바꾸는 방법이다. 일정한 간격으로 값을 재고, 잰 값을 정해 둔 몇 단계 중 가장 가까운 것으로 반올림한 뒤, 그 단계 번호를 2진수로 적는다. 자주 재고 단계를 잘게 나눌수록 원래 소리에 가까워지지만, 보내야 할 비트도 그만큼 는다. 너…"

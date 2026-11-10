@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["ER Design Steps", "ER 스키마 다이어그램 설계", "Designing ER Schema Diagram", "개념 설계 다듬기", "Refining the Conceptual Design", "처음 개념 설계", "Initial Conceptual Design"]
 description: "요구사항을 적은 글을 그림으로 바꾸는 순서다. 먼저 글에서 저장할 대상과 대상마다 적을 항목을 빠짐없이 뽑되, 다른 대상을 가리키는 항목(직원의 \"소속 부서\")도 일단 항목으로 적어 둔다. 그다음 그런 항목을 골라내 대상 사이의 이어짐으로 바꾸고, 이어짐마다 몇 대 몇인지와 빠져도…"

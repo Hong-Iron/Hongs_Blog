@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Real-Time Systems", "실시간 운영체제", "RTOS", "경성 실시간", "Hard Real-Time", "연성 실시간", "Soft Real-Time", "주기 작업", "Periodic Task", "비주기 작업", "Aperiodic Task", "결정성", "Determinism", "응답성", "Responsiveness", "실패 연착륙", "Fail-Soft Operation"]
 description: "실시간 시스템은 답이 맞아도 늦으면 틀린 시스템이다. 자동차 에어백이 계산은 정확한데 충돌 1초 뒤에 터지면 쓸모가 없다. 그래서 평균적으로 빠른 것보다, 정해진 시간 안에 반드시 끝나는 것이 중요하다. 이를 위해 운영체제는 인터럽트에 빨리 반응하고, 급한 작업이 덜 급한 작업을 …"

@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Datapath Elements", "데이터패스", "Datapath", "데이터 경로", "프로그램 카운터", "Program Counter", "PC", "명령어 메모리", "Instruction Memory", "데이터 메모리", "Data Memory", "부호 확장기", "Sign Extension Unit", "상태 소자", "State Element", "조합 소자", "Combinational Element"]
 description: "프로세서 안에서 값이 지나다니는 길과 그 길에 놓인 부품을 통틀어 데이터패스라 부른다. 부엌에 비기면 재료가 냉장고에서 도마로, 도마에서 냄비로 옮겨 가는 동선이고, 냉장고·도마·냄비가 부품이다. 부품은 두 부류인데, 값을 기억하는 부품은 시계가 울릴 때만 내용이 바뀌고 계산만 하…"

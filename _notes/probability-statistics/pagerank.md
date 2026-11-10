@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["PageRank", "페이지랭크", "구글 행렬", "Google matrix", "감쇠 계수", "damping factor", "순간이동", "teleportation", "거듭제곱법", "power iteration", "댕글링 노드", "dangling node", "무작위 서퍼", "random surfer"]
 description: "웹 페이지의 중요도를, 링크를 무작위로 따라 끝없이 돌아다니는 사람이 각 페이지에 머무는 시간의 비율로 정한다. \"중요한 페이지가 많이 가리키는 페이지가 중요하다\"는 돌고 도는 정의가 마르코프 연쇄의 정상분포 하나로 깔끔하게 풀리고, 링크 표를 수십 번 곱하는 것만으로 계산된다. …"

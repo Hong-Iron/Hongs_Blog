@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Modular Inverse", "모듈러 역원", "모듈로 역원", "multiplicative inverse", "Chinese Remainder Theorem", "CRT", "중국인의 나머지 정리", "서로소", "coprime", "relatively prime"]
 description: "나머지 산술에서 \"나누기\"는 역원을 곱하는 것이다. 26으로 나눈 나머지만 보는 세계에서 7에 곱해 1이 되는 수(15)를 찾아 두면, 7로 나누는 대신 15를 곱하면 된다. 이런 역원은 두 수의 공약수가 1뿐(서로소)일 때만 있고, 확장 유클리드 호제법으로 바로 구한다. 또 서로…"

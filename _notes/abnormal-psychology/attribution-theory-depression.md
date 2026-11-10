@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Attributional Theory of Depression", "귀인이론", "attribution theory", "귀인", "attribution", "내부적-외부적", "internal-external", "안정적-불안정적", "stable-unstable", "전반적-특수적", "global-specific", "우울 유발적 귀인", "depressogenic attribution", "방어적 귀인", "절망감 이론", "hopelessness theory", "개정된 학습된 무기력 이론"]
 description: "사람은 나쁜 일을 겪으면 \"왜 이런 일이 생겼지?\"를 묻는다. 그 답을 \"내 탓이고, 앞으로도 늘 그럴 것이고, 모든 일이 다 그렇다\"로 내는 습관이 있는 사람은 나쁜 일 앞에서 절망하고 우울해진다. 같은 실패도 \"이번엔 운이 없었고, 이 과목만 그렇다\"고 설명하면 덜 무너진다. …"

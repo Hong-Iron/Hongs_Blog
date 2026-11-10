@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Thread", "경량 프로세스", "Lightweight Process", "다중 스레딩", "Multithreading", "스레드 상태", "Thread States"]
 description: "프로세스가 집이라면 스레드는 그 집에 사는 사람이다. 집(메모리, 열린 파일 같은 자원)은 함께 쓰고, 사람마다 자기 할 일과 지금 어디까지 했는지는 따로 있다. 그래서 한 프로그램 안에서 여러 일을 동시에 진행할 수 있고, 새 집을 짓는(프로세스를 만드는) 것보다 사람 하나 늘리…"

@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Properties of Convolution", "교환법칙", "Commutative Property", "분배법칙", "Distributive Property", "결합법칙", "Associative Property", "직렬 연결", "Cascade", "병렬 연결", "Parallel"]
 description: "컨벌루션은 보통의 곱셈처럼 순서를 바꿔도(교환), 덧셈에 나눠 걸어도(분배), 묶는 순서를 바꿔도(결합) 결과가 같다. 그래서 LTI 시스템을 줄줄이 이은 것은 임펄스 응답을 컨벌루션한 시스템 하나로, 나란히 이은 것은 임펄스 응답을 더한 시스템 하나로 바꿔 생각할 수 있다. 줄줄…"

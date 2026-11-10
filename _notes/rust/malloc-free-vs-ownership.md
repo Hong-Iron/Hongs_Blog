@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["malloc free vs ownership", "RAII", "해제 뒤 사용", "Use After Free", "이중 해제", "Double Free", "메모리 누수", "Memory Leak", "mem::forget", "Box::leak"]
 description: "C에서는 빌린 힙 자리를 언제 돌려줄지 사람이 기억한다. Rust에서는 힙 자리마다 주인 변수가 하나 있고, 주인이 범위를 벗어날 때 컴파일러가 끼워 넣은 코드가 돌려준다. 그래서 C의 네 실수 가운데 해제 뒤 사용, 이중 해제, 지역 변수 주소 돌려주기는 컴파일 오류가 된다. 누…"

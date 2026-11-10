@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Continuous-Time Fourier Series", "CTFS", "푸리에 급수", "Fourier Series", "푸리에 계수", "Fourier Coefficients", "스펙트럼 계수", "Spectral Coefficients", "합성식", "Synthesis Equation", "분석식", "Analysis Equation", "직류 성분", "DC Component", "기본파", "Fundamental", "포락선", "Envelope", "sinc 함수"]
 description: "주기 신호는 \"기본 진동과 그 2배, 3배, … 빠른 진동들\"을 알맞은 비율로 섞어 만들 수 있다. 화음이 기본음과 배음으로 이루어진 것과 같다. 섞는 비율(푸리에 계수)은 신호에 각 진동을 곱해 한 주기 동안 평균 내면 구해진다. 이 진동들은 서로 겹치지 않아서(직교), 하나의 …"

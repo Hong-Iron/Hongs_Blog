@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Polynomial Interpolation", "보간", "Interpolation", "외삽", "Extrapolation", "선형 보간", "Linear Interpolation", "2차 보간", "Quadratic Interpolation", "라그랑주 보간", "Lagrange Interpolation", "라그랑주 기저 함수", "Lagrange Basis Function"]
 description: "몇 개의 점에서만 값을 알 때, 그 점들을 모두 정확히 지나는 다항식을 만들어 사이의 값을 짐작한다. 점이 n + 1개면 n차 이하 다항식이 딱 하나 있고, 라그랑주 공식으로 바로 적을 수 있다. 점을 늘리면 보통 더 정확해진다. 다만 점들의 범위 밖을 짐작하는 외삽은 오차가 크게…"

@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Polymorphism", "필드 다형성", "Field Polymorphism", "매개변수 다형성", "Parameter Polymorphism", "동적 바인딩", "Dynamic Binding", "Dynamic Dispatch"]
 description: "벽의 콘센트는 모양만 맞으면 선풍기를 꽂든 충전기를 꽂든 전기를 준다. 코드에서도 똑같이 쓴 호출 한 줄이, 그 자리에 지금 어떤 객체가 꽂혀 있느냐에 따라 다른 일을 한다. 그래서 새 부품을 만들어 끼워도 쓰는 쪽 코드는 고치지 않는다. 다만 이것은 자리에 약속된 메서드를 부품이…"

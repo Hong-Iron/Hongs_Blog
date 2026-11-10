@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Convergence of the Fourier Series", "디리클레 조건", "Dirichlet Conditions", "깁스 현상", "Gibbs Phenomenon", "근사 오차 에너지", "Approximation Error Energy", "부분합", "Partial Sum", "유계 변동", "Bounded Variation"]
 description: "고조파를 무한히 더하면 정말 원래 신호가 될까? 실제로 쓰는 거의 모든 주기 신호에서는 그렇다. 한 주기의 에너지가 유한하면 오차의 에너지가 0으로 가고, 디리클레의 세 조건을 만족하면 끊기지 않은 점마다 원래 값으로 간다. 하지만 끊긴 점에서는 양쪽 값의 평균으로 가고, 그 근처…"

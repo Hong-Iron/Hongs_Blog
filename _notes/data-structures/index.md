@@ -10,6 +10,7 @@ track_sub: "소프트웨어"
 concepts: 52
 practices: 18
 codes: 85
+last_modified_at: "2026-10-15"
 description: "자료구조 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

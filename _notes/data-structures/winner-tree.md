@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Winner Tree", "Min Winner Tree", "최소 승자 트리", "Tournament Tree", "토너먼트 트리", "Selection Tree", "선택 트리"]
 description: "토너먼트 대진표를 나무로 그린 것이다. 맨 아래에 선수를 세우고, 둘씩 겨뤄 이긴 쪽을 위 칸에 적으며 올라가면 맨 위에 우승자가 남는다. 선수 한 명의 값이 바뀌어도 그 선수가 올라가는 길의 경기만 다시 치르면 되어서, \"가장 작은 것을 꺼내고 새 값을 넣기\"를 되풀이할 때 쓴다…"

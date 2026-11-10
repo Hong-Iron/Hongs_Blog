@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Graceful Shutdown", "그레이스풀 셧다운", "우아한 종료", "종료 신호", "SIGTERM", "SIGINT", "ctrl_c", "tokio::signal", "CancellationToken", "TaskTracker", "drain", "마무리", "마감 시간", "Shutdown Deadline", "with_graceful_shutdown", "shutdown_timeout"]
 description: "가게 문을 닫을 때는 입구에 \"영업 끝\" 팻말부터 걸어 새 손님을 막고, 이미 들어온 손님의 주문은 마저 내주고, 장부를 정리한 뒤 불을 끈다. 서버도 이 순서로 끝나야 처리하던 요청과 아직 내보내지 않은 기록을 잃지 않는다. 아무 준비 없이 끝내면 하던 일은 중간에 버려진다. 반…"

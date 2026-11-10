@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Narcissistic Personality Disorder", "NPD", "자기애성", "나르시시즘", "narcissism", "자기애적 손상", "narcissistic injury", "웅대성", "grandiosity", "일차적 자기애"]
 description: "겉은 단단한 성처럼 보이지만 속은 얇은 유리 같은 자존감이다. 자신이 특별하고 우월하다고 믿어 찬사와 특별대우를 당연히 요구하고, 남의 감정에는 공감하지 못한다. 그런데 작은 비판에도 깊이 상처받아 분노하거나 우울해진다. 사회적으로 성공한 사람에게 흔하지만, 자기 약점을 보지 않으…"

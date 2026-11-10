@@ -11,6 +11,7 @@ course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Random Process", "랜덤 프로세스", "Stochastic Process", "확률 과정", "이산 시간 확률 과정", "Discrete-time Random Process", "연속 시간 확률 과정", "Continuous-time Random Process", "표본 경로", "Sample Path", "포아송 과정", "Poisson Process"]
 description: "날마다 적는 확진자 수나 시시각각 바뀌는 코인 가격처럼, 운에 따라 정해지는 값을 시간 순서대로 줄 세운 것이다. 값 하나하나를 따로 보지 않고 줄 전체를 한 덩어리로 보기 때문에 \"오늘 값은 어제 값에 얼마나 끌려가는가\", \"오래 지켜보면 얼마나 자주 높은 값에 머무는가\"를 물을…"

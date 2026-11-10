@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Height of a B-Tree", "B-트리 높이", "최악 높이", "Worst-case Height", "높이의 상한", "최대 키 수", "정리 18.1"]
 description: "한 칸에서 길이 여러 갈래로 갈리면 나무는 금방 넓어지고, 그만큼 낮다. 값이 몇 개 들어 있는지만 알면 나무가 아무리 홀쭉해도 넘을 수 없는 높이가 정해지고, 갈래가 많을수록 그 높이는 낮아진다. 디스크를 읽는 횟수가 높이를 따라가므로 이 한계가 곧 \"아무리 나빠도 디스크를 몇 …"

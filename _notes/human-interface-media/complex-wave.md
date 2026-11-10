@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Complex Representation of Waves", "복소 지수 표현", "complex exponential", "오일러 공식", "Euler's formula", "페이저", "phasor", "주기의 정규화"]
 description: "사인파는 원 위를 일정하게 도는 점의 그림자다. 그림자 하나만 보면 높이만 남지만, 도는 점 자체를 적으면 높이와 함께 어느 방향으로 얼마나 돌았는지도 남는다. 평면 위의 점을 숫자 하나로 적는 방법이 복소수라서, 파동을 복소수로 쓰면 크기·빠르기·출발 각도가 한 식에 깔끔하게 들…"

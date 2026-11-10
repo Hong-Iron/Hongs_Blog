@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Instruction Set Architecture", "ISA", "명령어 집합", "Instruction Set", "저장 프로그램 개념", "Stored-Program Concept", "폰 노이만 구조", "마이크로아키텍처", "Microarchitecture", "설계 원칙"]
 description: "식당의 메뉴판과 같다. 손님은 메뉴판에 적힌 것만 주문하고, 주방이 그 음식을 어떻게 만드는지는 몰라도 된다. 프로그램과 프로세서 사이에도 이런 메뉴판이 있어서, 프로세서 안쪽을 새로 설계해도 메뉴판이 같으면 옛 프로그램이 그대로 돈다. 대신 메뉴판이 다른 프로세서에서는 같은 프로…"

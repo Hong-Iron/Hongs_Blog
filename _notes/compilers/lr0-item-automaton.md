@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["LR(0) Item", "LR(0) 항목", "항목", "Item", "항목 오토마타", "LR(0) Automaton", "유효 접두사를 알아보는 DFA", "덧붙인 문법", "Augmented Grammar", "closure", "goto"]
 description: "규칙 하나를 놓고 \"여기까지 봤다\"는 자리에 점을 찍은 것이 항목이다. 책갈피를 꽂은 규칙이라고 보면 된다. 책갈피 달린 규칙들을 상태로 삼아 기계를 만들면, 그 기계는 지금까지 쌓아 둔 부분이 아직 가망 있는 모양인지 알아본다. 문법만 있으면 정해진 순서대로 누구나 같은 기계를 …"

@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["DBSCAN", "Density-Based Spatial Clustering of Applications with Noise", "밀도 기반 군집화", "Density-based Clustering", "Eps", "MinPts", "핵심점", "Core Point", "경계점", "Border Point", "잡음점", "Noise Point", "직접 밀도 도달", "Directly Density-reachable", "밀도 도달", "Density-reachable", "밀도 연결", "Density-connected"]
 description: "점들이 빽빽하게 이어진 곳을 하나의 무리로 본다. 반지름 안에 이웃이 충분히 많은 점을 중심점으로 삼고, 중심점끼리 이웃을 타고 퍼져 나가며 닿는 점들을 한 무리로 묶는다. 어디에도 닿지 않는 외딴 점은 잡음으로 남긴다. 무리 수를 정할 필요가 없고 고리나 나선 같은 모양도 찾지만…"

@@ -29,6 +29,7 @@ kramdown's $$ math (rendered by MathJax), and soft line breaks are kept.
 """
 
 import argparse
+import datetime
 import json
 import re
 import shutil
@@ -907,6 +908,16 @@ def describe(body, linker):
     return text[:157] + "…" if len(text) > 160 else text
 
 
+def iso_day(value):
+    """`value` if it is a real YYYY-MM-DD day, else None. jekyll-sitemap and
+    jekyll-seo-tag parse last_modified_at, and a malformed date stops the build."""
+    try:
+        datetime.date.fromisoformat(value or "")
+    except (TypeError, ValueError):
+        return None
+    return value if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value) else None
+
+
 def title_html(title):
     # titles render outside Markdown; turn $…$ into MathJax's \(…\)
     return re.sub(r"\$([^$]+)\$", r"\\(\1\\)", title)
@@ -1083,7 +1094,11 @@ def export(vault):
                     kind=kind,
                     kind_label=("연습" if kind == "practice" else DOC_TYPE_LABELS.get(meta.get("type", ""), "개념")),
                     num=doc["num"], **base,
-                    updated=meta.get("updated"), status=meta.get("status"),
+                    updated=meta.get("updated"),
+                    # the day the vault note last changed: sitemap <lastmod> and JSON-LD
+                    # dateModified read this key, and would otherwise say the build time
+                    last_modified_at=iso_day(meta.get("updated")),
+                    status=meta.get("status"),
                     aliases=[a for a in (meta.get("aliases") or []) if isinstance(a, str)],
                     description=describe(body, linker),
                     prev_url=prev_doc and prev_doc["url"], prev_title=prev_doc and prev_doc["title"],
@@ -1133,6 +1148,9 @@ def export(vault):
                 concepts=sum(d["kind"] == "concept" for d in course["docs"]),
                 practices=sum(d["kind"] == "practice" for d in course["docs"]),
                 codes=len(course["code"]),
+                # a roadmap changes when one of its notes does: the newest note's day
+                last_modified_at=max((d for d in (iso_day(doc["meta"].get("updated")) for doc in course["docs"]) if d),
+                                     default=None),
                 description=f"{course['name']} 공부 노트: 개념 문서, 연습 문제, 코드",
                 math="$" in body, mermaid="```mermaid" in body,
                 permalink=course["url"]
@@ -1176,6 +1194,7 @@ layout: category-index
 title: Studies
 category: studies
 permalink: /studies/
+description: "수학, 컴퓨터 과학, 데이터, 심리 과목을 공부하며 정리한 노트입니다. 과목마다 개념 문서와 연습 문제가 있고, 코드가 딸린 문서도 있습니다."
 notes_assets: true
 nav_always: true
 geo: confetti

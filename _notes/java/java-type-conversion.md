@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Type Conversion", "Type Casting", "형 변환", "자동 타입 변환", "Implicit Casting", "Promotion", "Widening Conversion", "강제 타입 변환", "Explicit Casting", "Narrowing Conversion", "캐스팅", "문자열 결합", "String Concatenation", "parseInt", "valueOf"]
 description: "작은 컵의 물을 큰 컵에 옮기면 넘치지 않는다. 큰 컵의 물을 작은 컵에 옮기면 넘칠 수 있다. 자바도 같다. 작은 타입의 값을 큰 타입에 넣는 것은 알아서 해 주고, 큰 타입의 값을 작은 타입에 넣는 것은 \"잘려도 괜찮다\"고 직접 적어야만 해 준다. 직접 적었다고 값이 지켜지는 …"

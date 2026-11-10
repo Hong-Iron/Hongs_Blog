@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Frotteuristic Disorder", "마찰도착증", "frotteurism", "접촉도착증"]
 description: "동의하지 않은 사람의 몸에 자기 몸을 대거나 문지르는 것에서 강렬한 성적 흥분을 느끼는 일이 반년 넘게 되풀이되고, 그 때문에 괴롭거나 실제로 그렇게 하는 장애다. 혼잡한 지하철이나 버스처럼 몰래 접촉하기 쉬운 곳에서 흔히 일어난다. 대개 청소년기 후기나 성인기 초기에 처음 알아차린다."

@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Law of Large Numbers", "큰 수의 법칙", "대수의 법칙", "LLN", "약한 큰 수의 법칙", "weak law of large numbers", "강한 큰 수의 법칙", "strong law of large numbers", "표본평균", "sample mean"]
 description: "같은 실험을 서로 독립으로 많이 되풀이하면, 결과들의 평균이 기댓값에 점점 가까워진다. \"앞면이 나올 확률이 절반\"을 \"오래 던지면 절반쯤 앞면\"으로 읽어도 되는 근거이고, 무작위 표본의 평균으로 적분이나 확률을 어림하는 몬테카를로 방법의 근거다. 하지만 얼마나 빨리 가까워지는지는…"

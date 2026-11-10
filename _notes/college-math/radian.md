@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Radian", "rad", "호도법", "도", "degree", "호의 길이", "arc length", "부채꼴 넓이", "각속도", "angular velocity", "동경", "coterminal angle"]
 description: "라디안은 각을 \"호의 길이가 반지름의 몇 배인가\"로 재는 단위다. 도(°)는 한 바퀴를 360으로 나눈 사람이 정한 눈금이지만, 라디안은 원의 크기에서 저절로 나와서 호의 길이·넓이·미분 공식이 가장 간단해진다. 한 바퀴는 약 6.28라디안(2π)이다. 프로그래밍 언어의 삼각함수는…"

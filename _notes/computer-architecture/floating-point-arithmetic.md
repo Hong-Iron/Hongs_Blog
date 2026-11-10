@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Floating-Point Arithmetic", "부동소수점 덧셈", "Floating-Point Addition", "부동소수점 곱셈", "Floating-Point Multiplication", "지수 맞추기", "Alignment", "정규화", "Normalization", "반올림", "Rounding", "가까운 짝수로 반올림", "Round to Nearest Even", "보호 비트", "Guard Bit", "add.s", "mul.s", "lwc1", "swc1"]
 description: "\"몇 곱하기 10의 몇 제곱\" 꼴로 적은 두 수를 더하려면 먼저 제곱 부분을 같게 맞춰야 한다. 작은 쪽의 소수점을 옮겨 맞추고, 앞자리 숫자끼리 더하고, 답을 다시 약속한 꼴로 고치고, 칸에 안 들어가는 끝자리를 반올림한다. 컴퓨터도 2진수로 똑같이 한다. 이 순서 덕분에 크기가…"

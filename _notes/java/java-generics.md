@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Generics", "Generic", "제네릭 타입", "Generic Type", "제네릭 메서드", "Generic Method", "타입 파라미터", "Type Parameter", "타입 매개변수"]
 description: "무엇을 담을지 비워 둔 상자 설계도다. 설계도에는 \"여기에 들어갈 것의 종류\"를 빈칸으로 두고, 상자를 실제로 쓸 때 \"이 상자는 글자용\"처럼 빈칸을 채운다. 설계도 하나로 글자 상자도 숫자 상자도 만들 수 있고, 글자 상자에 숫자를 넣으려 하면 프로그램을 돌려 보기도 전에 번역 …"

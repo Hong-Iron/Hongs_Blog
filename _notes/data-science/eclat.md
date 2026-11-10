@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["ECLAT", "Equivalence Class Transformation", "수직 데이터 형식", "Vertical Data Format", "수평 데이터 형식", "Horizontal Data Format", "TID 목록", "TID-list", "거래 번호 목록"]
 description: "영수증마다 산 물건을 적는 대신, 물건마다 그 물건이 든 영수증 번호를 적어 둔다. 그러면 \"A와 B를 함께 산 영수증\"은 A의 번호 목록과 B의 번호 목록의 공통 부분이라, 데이터를 다시 훑지 않고 목록끼리 겹쳐 보기만 하면 지지도가 나온다. 데이터를 한 번만 읽으면 되지만, 물…"

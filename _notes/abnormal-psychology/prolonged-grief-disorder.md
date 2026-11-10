@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Prolonged Grief Disorder", "PGD", "지속성 애도장애", "복합 애도", "complicated grief", "사별", "bereavement", "비탄", "grief", "애도", "mourning", "애도치료", "grief therapy", "복합적 애도치료", "complicated grief treatment"]
 description: "가까운 사람을 잃은 슬픔은 누구에게나 오는 정상적인 반응이다. 그런데 1년이 넘도록(아동은 6개월) 고인을 거의 매일 사무치게 그리워하고 생각에 매달려, 삶을 다시 꾸리지 못하는 경우가 있다. 이것이 지속성 비탄 장애로, DSM-5-TR에서 처음 공식 진단이 되었다. 문화와 종교가…"

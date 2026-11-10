@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Matrix Multiplication", "행렬 곱셈", "행렬곱", "Transpose", "전치", "전치행렬", "대칭행렬", "symmetric matrix", "합성", "composition", "교환법칙", "결합법칙"]
 description: "두 행렬의 곱은 \"먼저 오른쪽 행렬로 바꾸고, 이어서 왼쪽 행렬로 바꾸는\" 두 변환을 하나로 합친 행렬이다. 그래서 여러 단계의 좌표 변환이나 신경망의 층들을 행렬 하나로 미리 합칠 수 있다. 합성이라 순서가 중요해서, 곱하는 순서를 바꾸면 보통 결과가 달라진다. 곱하는 순서를 괄…"

@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Traits", "Trait", "trait", "impl Trait", "기본 메서드", "Default Method", "연관 타입", "Associated Type", "고아 규칙", "Orphan Rule", "일관성", "Coherence", "블랭킷 구현", "Blanket Implementation", "슈퍼트레이트", "Supertrait", "뉴타입", "Newtype"]
 description: "여러 타입이 \"이런 일을 할 줄 안다\"고 함께 약속하는 기능 목록이다. 목록을 한 번 정해 두면, 함수는 구체적인 타입 대신 \"이 목록을 지키는 아무 타입\"을 받을 수 있다. 목록에 몸통까지 미리 써 둘 수 있고, 이미 남이 만든 타입에도 내 목록을 붙일 수 있다. 다만 남의 목록…"

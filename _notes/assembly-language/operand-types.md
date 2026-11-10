@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Operand Types", "피연산자", "Operand", "즉시값", "Immediate Operand", "레지스터 피연산자", "Register Operand", "메모리 피연산자", "Memory Operand", "직접 메모리 피연산자", "Direct Memory Operand", "직접 오프셋 피연산자", "Direct-Offset Operand", "유효 주소", "Effective Address", "피연산자 표기법", "Instruction Operand Notation"]
 description: "명령은 \"무엇을 하라\"와 \"무엇을 가지고\"로 이루어진다. \"무엇을 가지고\" 자리에 올 수 있는 것은 세 가지뿐이다. 코드에 직접 적은 수, CPU 안의 작은 저장 칸, 메모리의 한 자리다. 메모리의 자리는 변수 이름으로 가리키고, 이름에 수를 더하면 그 변수에서 몇 바이트 뒤의 자…"

@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-08"
+last_modified_at: "2026-10-08"
 status: "verified"
 aliases: ["Buffer Overflow", "Stack Buffer Overflow", "스택 버퍼 오버플로", "컴파일 시간 방어", "Compile-Time Defenses", "실행 시간 방어", "Run-Time Defenses", "스택 보호", "Stack Protection", "카나리", "Canary", "실행 불가 메모리", "NX", "주소 공간 무작위화", "ASLR", "Address Space Randomization", "가드 페이지", "Guard Pages"]
 description: "버퍼 오버플로는 프로그램이 정해진 크기의 칸(버퍼)에 그보다 긴 입력을 넣어 옆 칸까지 덮어쓰는 오류다. 스택에서는 함수가 끝나고 돌아갈 주소까지 덮을 수 있어, 공격자가 그 주소를 자기 코드로 바꿔 놓으면 프로그램을 빼앗는다. 막는 방법은 두 갈래다. 프로그램을 만들 때 애초에 …"

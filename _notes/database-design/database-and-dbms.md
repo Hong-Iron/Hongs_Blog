@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Database and DBMS", "데이터베이스", "Database", "DB", "데이터베이스 관리 시스템", "Database Management System", "DBMS", "데이터베이스 시스템", "Database System", "UNIVERSITY 데이터베이스"]
 description: "도서관에는 책장에 꽂힌 책들이 있고, 책을 들이고 찾아 주는 사서가 있다. 서로 이어진 기록을 한데 모아 둔 것이 데이터베이스이고, 그 기록을 대신 만들고 찾고 고쳐 주는 프로그램이 DBMS다. 사람과 프로그램이 기록 파일을 직접 열지 않고 DBMS에 부탁하므로 여럿이 같은 기록을…"

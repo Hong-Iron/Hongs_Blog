@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Rotation Bridge", "회전의 세 표현", "덧셈정리", "복소수 곱", "회전 행렬", "드무아브르 공식", "De Moivre's formula", "페이저", "phasor", "쿼터니언", "quaternion"]
 description: "삼각함수의 덧셈정리, 복소수의 곱셈, 회전 행렬의 곱은 서로 다른 과목에서 따로 배우지만, 모두 \"30°만큼 돌고 이어서 40°만큼 돌면 70°만큼 돈 것\"이라는 한 가지 사실을 다른 언어로 적은 것이다. 이 대응을 알면 덧셈정리를 외울 필요 없이 행렬 곱 한 번으로 다시 만들 수…"

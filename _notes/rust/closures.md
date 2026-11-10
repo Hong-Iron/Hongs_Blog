@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Closures", "Closure", "Fn", "FnMut", "FnOnce", "move 클로저", "Move Closure", "잡기", "Capture", "캡처", "함수 포인터", "Function Pointer", "범위 스레드", "thread::scope", "async 클로저", "Async Closure", "AsyncFn", "AsyncFnMut", "AsyncFnOnce"]
 description: "이름 없이 그 자리에서 만드는 작은 함수다. 보통 함수와 달리 만든 자리 둘레의 변수를 그대로 가져다 쓸 수 있어서, 정렬 기준이나 \"원소마다 할 일\"을 한 줄로 넘길 때 쓴다. 둘레 변수를 읽기만 하는지, 고치는지, 아예 가져가서 내보내는지에 따라 몇 번 부를 수 있는지가 정해지…"

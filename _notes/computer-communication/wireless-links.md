@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Wireless Links", "무선", "wireless", "다중 경로", "multipath", "다중 경로 문제", "multipath problem", "라이선스", "전파 규제", "고정 무선통신", "wireless fixed links", "무선 가입자망", "단거리 무선통신", "short range", "무선 LAN", "Wi-Fi", "IEEE 802.11", "블루투스", "Bluetooth", "지그비", "ZigBee", "IEEE 802.15.4", "적외선 통신", "WAN", "LAN", "PAN"]
 description: "무선 링크는 선 대신 공기를 쓴다. 선을 깔 필요가 없어서 들고 다니며 쓸 수 있고, 설치 없이 바로 쓸 수 있다. 대신 신호가 사방으로 퍼져서 가까운 링크끼리 간섭하고, 벽에 튕긴 신호가 여러 길로 조금씩 늦게 도착해 섞인다. 그래서 전파 사용을 허가제로 관리하고, 신호는 주로 …"

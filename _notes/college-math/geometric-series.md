@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Geometric Series", "등비수열의 합", "무한 등비급수", "infinite geometric series", "공비", "common ratio", "두 배 늘리기", "doubling"]
 description: "같은 비율로 곱해 가는 수들을 더한 합에는 간단한 공식이 있다. 비율이 1보다 크면 합이 마지막 항의 몇 배 정도라서 \"마지막 항이 거의 전부\"이고, 1보다 작으면 합이 첫 항의 몇 배로 묶여서 \"첫 항이 거의 전부\"다. 이것이 동적 배열의 두 배 늘리기가 싼 이유이고, 포화 이진…"

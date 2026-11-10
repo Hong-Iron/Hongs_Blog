@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Page Table Structure", "페이지 표 항목", "Page Table Entry", "PTE", "존재 비트", "Present Bit", "변경 비트", "Modify Bit", "다단계 페이지 표", "Hierarchical Page Table", "2단계 페이지 표", "역 페이지 표", "Inverted Page Table"]
 description: "가상 메모리의 페이지 표는 \"이 페이지가 지금 메모리에 있나, 있다면 어느 프레임인가, 올라온 뒤 바뀌었나\"를 페이지마다 적은 표다. 문제는 크기다. 32비트 주소에 4 KB 페이지면 프로세스마다 항목이 백만 개쯤 된다. 그래서 표를 여러 단계로 나눠 필요한 부분만 메모리에 두거나…"

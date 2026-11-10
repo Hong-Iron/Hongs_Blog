@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Selection Sort", "골라 놓기 정렬"]
 description: "키 순서로 줄을 세울 때, 줄에서 가장 큰 사람을 찾아 맨 뒤 자리와 바꾸고, 남은 사람들에게 같은 일을 되풀이하는 방법이다. 자리를 바꾸는 횟수가 아주 적어서 옮기기가 번거로운 자료에 알맞다. 대신 가장 큰 사람을 찾으려면 매번 남은 사람을 모두 봐야 해서, 줄이 이미 맞게 서 …"

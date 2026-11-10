@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Build and Deploy", "Release Build", "배포 빌드", "strip", "musl", "glibc", "Static Linking", "정적 링크", "crt-static", "Cross Compilation", "교차 컴파일", "Dockerfile", "Multi-stage Build", "다단계 빌드", "cargo-chef", "HEALTHCHECK", "Health Check", "Liveness Probe", "Readiness Probe", "env!", "option_env!", "cfg!", "build.rs", "--locked"]
 description: "배포는 다 만든 요리를 도시락에 담아 보내는 일이다. 주방(컴파일러, 소스, 빌드 캐시)은 두고 요리(실행 파일 하나)만 담으면 작고 가벼운데, 실행 파일 하나로 나오는 Rust는 이 일이 쉬운 편이다. 다만 그 파일도 운영체제의 C 라이브러리나 인증서 파일 같은 바깥의 것에 기댄…"

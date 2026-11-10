@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Symbol Table", "심벌 테이블", "기호표", "Scope Checking", "스코프 검사", "다중 패스 스코프 검사", "Multi-pass Scope Checking", "스코프별 심벌 테이블"]
 description: "컴파일러는 선언을 만날 때마다 이름과 종류를 장부에 적어 두고, 이름이 쓰이면 장부에서 찾아본다. 장부는 중괄호 구역마다 한 권씩 따로 만들고, 권마다 \"나를 감싼 구역의 장부\"를 가리키게 이어 둔다. 이름을 찾을 때는 지금 구역의 장부부터 보고 없으면 바깥 장부로 한 권씩 나간다…"

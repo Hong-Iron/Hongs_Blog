@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["View vs Base Table", "뷰와 테이블의 차이", "가상 테이블과 기본 테이블"]
 description: "둘 다 SELECT … FROM 뒤에 이름을 쓰면 행이 나온다. 질의를 쓰는 사람 눈에는 똑같은 표다. 가르는 질문은 \"그 행이 저장돼 있는가, 물을 때마다 계산되는가\"다. 이 답이 자리를 차지하는지, 고칠 수 있는지, 지웠을 때 무엇이 없어지는지를 함께 정한다."

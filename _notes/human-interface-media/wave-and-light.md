@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Wave", "파동", "진폭", "amplitude", "주파수", "frequency", "위상", "phase", "파장", "wavelength", "가시광", "visible light", "공간 주파수", "spatial frequency"]
 description: "빛과 소리는 모두 물결(파동)이다. 물결은 높이(진폭), 빠르기(주파수), 출발 시점(위상) 세 가지로 적는다. 같은 물결이지만 귀는 진폭을 소리 크기로, 주파수를 음높이로 읽고, 눈은 진폭을 밝기로, 주파수를 색으로 읽는다. 귀는 시간에 따른 1차원 변화를, 눈은 평면 위 2차원…"

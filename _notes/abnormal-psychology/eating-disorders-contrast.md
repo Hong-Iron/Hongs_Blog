@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["AN vs BN vs BED", "신경성 식욕부진증과 신경성 폭식증과 폭식장애 비교", "섭식장애 비교"]
 description: "세 장애는 세 질문으로 순서대로 갈린다. 먼저 \"체중이 뚜렷이 낮은가?\" 그렇다면 폭식이나 구토가 있어도 신경성 식욕부진증이다. 아니라면 \"폭식이 있는가?\" 그리고 \"폭식 뒤 토하기, 설사제, 굶기, 과도한 운동 같은 보상행동을 하는가?\" 보상행동이 있으면 신경성 폭식증, 없으면 …"

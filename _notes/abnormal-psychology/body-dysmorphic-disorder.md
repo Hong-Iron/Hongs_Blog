@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Body Dysmorphic Disorder", "BDD", "신체변형장애", "추형공포증", "dysmorphophobia", "근육이형증", "muscle dysmorphia", "미적 민감성", "지각 재훈련"]
 description: "남이 보기엔 거의 없거나 사소한 외모의 결함을 \"끔찍하게 기형\"이라 믿고 거기에 매달리는 장애다. 하루에도 몇 번씩 거울을 보고, 가리고, 꾸미고, 시술을 받지만 불만은 사라지지 않는다. 강박장애처럼 떨쳐지지 않는 생각과 반복 행동이 있지만, 그 대상이 외모 하나에 집중된다는 점이…"

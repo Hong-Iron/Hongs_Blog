@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["CPU Time Equation", "CPU Performance Equation", "성능 방정식", "Iron Law of Performance", "명령어 수", "Instruction Count", "CPI", "Cycles Per Instruction", "명령어당 사이클 수", "클록 주기", "Clock Cycle Time", "Clock Period", "클록 속도", "Clock Rate", "평균 CPI", "MIPS 값", "Million Instructions Per Second"]
 description: "프로그램이 프로세서를 쓴 시간은 세 수를 곱한 값이다. 실행한 명령이 몇 개인지, 명령 하나에 박자가 평균 몇 번 드는지, 박자 한 번이 몇 초인지다. 공장으로 치면 만든 물건 수, 물건 하나에 드는 공정 수, 공정 한 번에 걸리는 시간이다. 셋으로 쪼개 두면 어디를 고쳐야 빨라지…"

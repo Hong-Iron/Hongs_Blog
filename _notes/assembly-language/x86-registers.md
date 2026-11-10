@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["x86 Registers", "범용 레지스터", "General-Purpose Registers", "EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP", "세그먼트 레지스터", "Segment Registers", "EIP", "명령어 포인터", "Instruction Pointer", "EFLAGS", "상태 플래그", "Status Flags", "누산기", "Accumulator"]
 description: "레지스터는 프로세서 안에 있는, 이름이 붙은 작은 저장 칸이다. 계산기를 두드릴 때 화면에 떠 있는 숫자처럼, 지금 계산 중인 값을 잠깐 들고 있는 자리다. 메모리까지 다녀올 필요가 없어서 가장 빠르다. 하지만 32비트 x86에서 마음대로 쓸 수 있는 칸은 여덟 개뿐이고, 그중 몇…"

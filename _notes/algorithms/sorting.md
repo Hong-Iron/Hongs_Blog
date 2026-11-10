@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Sorting", "정렬", "sorted", "sort", "key", "lambda", "안정 정렬", "stable sort", "병합 정렬", "merge sort", "Timsort", "사전순"]
 description: "시험지를 점수 순으로 다시 쌓는 것처럼, 정렬은 정한 기준에 따라 줄을 다시 세운다. 파이썬에서는 \"무엇을 기준으로\"만 알려 주면 sorted가 빠르게 해 준다. 기준이 같은 것끼리는 원래 순서를 그대로 지키는데, 이 성질 덕분에 \"점수 높은 순, 같으면 이름 순\" 같은 여러 기준…"

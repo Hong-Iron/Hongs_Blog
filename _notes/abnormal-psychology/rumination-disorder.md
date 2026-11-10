@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Rumination Disorder", "반추장애", "되새김 장애", "역류", "regurgitation", "자기 위로", "self-soothing", "자기 자극", "self-stimulation"]
 description: "먹은 음식을 삼킨 뒤 다시 입으로 올려 되씹거나, 다시 삼키거나, 뱉는 일을 한 달 넘게 되풀이하는 장애다. 소가 되새김질하듯 음식을 게워 올리는데, 위장병 때문이 아니다. 아기에게는 스스로를 달래고 자극하는 방법이 되는 경우가 많아, 자극이 부족하거나 방임된 환경이 배경으로 꼽힌…"

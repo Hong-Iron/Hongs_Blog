@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-20"
+last_modified_at: "2026-10-20"
 status: "verified"
 aliases: ["Sliding Window", "Sliding Window Protocol", "SWP", "미확인 프레임", "Outstanding Frame", "창 크기", "Window Size", "누적 ACK", "Cumulative ACK", "파이프라이닝", "Pipelining"]
 description: "정지 대기는 답장(ACK)을 기다리는 동안 선을 놀린다. 슬라이딩 윈도우는 답장을 받기 전에도 정해 둔 개수까지 프레임을 연달아 보내, 그 빈 시간을 다른 프레임으로 채운다. 대신 선 위에 떠 있는 여러 프레임 중 어느 것이든 사라질 수 있으므로, 프레임마다 번호를 붙이고 사본과 …"

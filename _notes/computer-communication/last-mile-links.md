@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Last-Mile Links", "가입자 회선", "라스트 마일", "DSL", "xDSL", "Digital Subscriber Line", "Digital Subscriber Loop", "ADSL", "VDSL", "DSLAM", "DSL access multiplexer", "스플리터", "splitter", "케이블 모뎀", "cable modem", "로컬 루프", "local loop"]
 description: "가입자 선로는 집과 인터넷 회사 사이를 잇는 마지막 구간이다. 사용자가 직접 골라 쓰는 링크라서 중요하다. 예전에는 이미 깔린 전화선 하나에 음성은 낮은 주파수로, 데이터는 높은 주파수로 함께 실어 보냈다(DSL). 전화선은 길수록 잡음이 커서, 요즘은 집 앞이나 집 안까지 광케이…"

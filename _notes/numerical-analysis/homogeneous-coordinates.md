@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Homogeneous Coordinates", "동차 좌표계", "평행이동 행렬", "Translation Matrix", "합성 변환", "Composite Transformation", "점 중심 회전", "Rotation around a Point"]
 description: "회전과 확대는 행렬 곱인데 평행이동만 덧셈이라, 여러 변환을 이어 붙이면 곱과 덧셈이 뒤엉킨다. 점 (x, y) 끝에 1을 하나 붙여 (x, y, 1)로 쓰면 평행이동도 행렬 곱이 된다. 그러면 아무리 많은 변환도 행렬 하나로 미리 곱해 두고 모든 점에 한 번씩만 곱하면 된다. 다…"

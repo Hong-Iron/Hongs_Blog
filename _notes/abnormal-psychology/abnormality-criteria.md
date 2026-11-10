@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Criteria of Abnormality", "이상행동의 판별 기준", "주관적 불편감", "distress", "discomfort", "통계적 일탈", "statistical deviation", "규범적 일탈", "사회문화적 기준", "적응 기능의 저하", "dysfunction", "disability", "3D", "4D", "절단점", "cutoff"]
 description: "무엇이 이상인지 가르는 잣대는 넷이다. 본인이 괴로운가, 통계적으로 드문가, 사회의 규범에서 벗어나는가, 생활이 제대로 돌아가지 않는가. 넷 모두 그럴듯하지만, 어느 하나만 쓰면 반드시 틀리는 사례가 생긴다. 그래서 단 하나의 절대 기준 없이 여러 잣대를 함께 보고 판단한다."

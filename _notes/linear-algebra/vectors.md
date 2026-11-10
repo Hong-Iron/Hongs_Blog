@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Vector", "벡터", "스칼라", "scalar", "벡터 덧셈", "vector addition", "스칼라배", "scalar multiplication", "성분", "component", "영벡터", "zero vector", "위치 벡터", "변위"]
 description: "벡터는 \"어느 쪽으로 얼마나\"를 나타내는 화살표이자, 숫자 몇 개를 순서대로 늘어놓은 목록이다. 할 수 있는 연산은 두 가지뿐이다. 화살표를 이어 붙이는 덧셈과, 길이를 늘이거나 줄이는 수배(스칼라배)다. 게임 캐릭터의 속도, 데이터 한 행(키, 몸무게, 나이), 단어의 임베딩이 …"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["통계적 기준과 정규분포", "statistical deviation and normal distribution", "절단점과 꼬리 확률", "z점수 절단점"]
 description: "이상행동의 통계적 기준에서 \"평균에서 크게 벗어났다\"는 말은 정규분포의 꼬리에 놓였다는 말과 같다. 그래서 절단점을 고르는 순간, 몇 %를 이상으로 분류할지가 함께 정해진다."

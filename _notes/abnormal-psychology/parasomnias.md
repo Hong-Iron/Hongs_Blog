@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Parasomnias", "수면이상증", "NREM 수면 각성장애", "Non-REM Sleep Arousal Disorders", "수면보행증", "Sleepwalking", "몽유병", "야경증", "Sleep Terrors", "악몽장애", "Nightmare Disorder", "REM 수면 행동장애", "REM Sleep Behavior Disorder", "RBD", "REM수면 각성장애", "하지불안 증후군", "Restless Legs Syndrome", "심상시연치료", "Imagery Rehearsal Therapy", "IRT", "클로나제팜", "Clonazepam"]
 description: "잠자는 동안 벌어지는 이상한 행동과 경험을 모두 일컫는 말이다. 어느 수면 단계에서 일어나느냐가 모습을 가른다. 깊은 잠에서 반쯤 깨면 걸어 다니거나 비명을 지르고 아침에 기억하지 못한다(NREM 각성장애). 꿈꾸는 REM 수면에서 몸의 근육 이완이 풀리면 꿈속 행동을 실제로 한다…"

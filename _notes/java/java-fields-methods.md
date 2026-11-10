@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Field", "Method", "Class Members", "클래스 멤버", "라이브러리 클래스", "Library Class", "실행 클래스", "Executable Class", "지역 변수", "Local Variable", "메서드 오버로딩", "Method Overloading"]
 description: "클래스라는 틀 안에는 세 가지를 적는다. 객체가 계속 들고 있을 값을 담는 칸, 객체를 처음 만들 때 그 칸을 채우는 코드, 객체가 할 수 있는 동작이다. 값을 담는 칸은 객체가 살아 있는 동안 내내 남는다. 반면 동작 안에서 잠깐 만든 변수는 그 동작이 끝나면 사라진다. 이 둘을…"

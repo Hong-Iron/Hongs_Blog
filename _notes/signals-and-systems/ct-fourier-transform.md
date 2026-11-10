@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Continuous-Time Fourier Transform", "CTFT", "푸리에 변환", "Fourier Transform", "역푸리에 변환", "Inverse Fourier Transform", "푸리에 변환 쌍", "Fourier Transform Pair", "스펙트럼", "Spectrum", "sinc 함수", "Sinc Function", "비주기 신호", "Aperiodic Signal"]
 description: "푸리에 급수는 되풀이되는 신호만 나눌 수 있다. 한 번 나타났다 사라지는 신호는 \"주기가 무한히 긴 주기 신호\"로 본다. 주기를 늘리면 고조파 사이 간격이 좁아지다가 결국 모든 주파수가 이어진 연속 스펙트럼이 되고, 급수의 합은 적분이 된다. 그것이 푸리에 변환이다. 에너지가 유한…"

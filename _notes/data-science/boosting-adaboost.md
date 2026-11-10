@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Boosting", "부스팅", "AdaBoost", "Adaptive Boosting", "적응형 부스팅", "결정 그루터기", "Decision Stump", "가중 오류", "Weighted Error", "모델 가중치", "강한 학습기", "Strong Learner"]
 description: "약한 모델을 하나씩 차례로 만들되, 새 모델은 앞 모델들이 틀린 자료에 더 신경 쓰게 한다. 틀린 자료의 무게를 키우고 맞힌 자료의 무게를 줄여 다음 모델을 훈련하는 일을 되풀이하고, 마지막에 잘 맞힌 모델의 목소리를 더 크게 해서 모두의 의견을 합친다. 혼자서는 겨우 찍기보다 나…"

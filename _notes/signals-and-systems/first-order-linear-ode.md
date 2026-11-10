@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["First-Order Linear ODE", "미분방정식", "Differential Equation", "상미분방정식", "Ordinary Differential Equation", "ODE", "편미분방정식", "Partial Differential Equation", "계수", "Order", "차수", "Degree", "변수분리형", "Separable Equation", "적분인자", "Integrating Factor"]
 description: "미분방정식은 \"지금 값이 이렇다면 이만큼 변한다\"는 규칙으로 함수를 찾는 식이다. 전기 회로나 자동차처럼 시간에 따라 변하는 시스템은 대부분 이런 식으로 적힌다. 미분이 한 번만 들어 있고 y가 곱셈이나 제곱 없이 1차로만 나오면, 양변에 알맞은 지수함수를 곱해 한 번에 적분할 수…"

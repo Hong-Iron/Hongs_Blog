@@ -10,6 +10,7 @@ track_sub: "소프트웨어"
 concepts: 39
 practices: 0
 codes: 37
+last_modified_at: "2026-10-15"
 description: "자바 프로그래밍 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

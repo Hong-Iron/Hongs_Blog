@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Continuous-Time Signal", "Discrete-Time Signal", "신호", "Signal", "연속 신호", "이산 신호", "아날로그 신호", "Analog Signal", "디지털 신호", "Digital Signal", "결정론적 신호", "Deterministic Signal", "랜덤 신호", "Random Signal", "독립 변수", "Independent Variable", "C-T", "D-T"]
 description: "신호는 시간에 따라 변하는 값, 곧 정보를 실어 나르는 함수다. 마이크의 전압이나 자동차의 속도처럼 모든 순간에 값이 있으면 연속 시간 신호이고, 매일 종가처럼 정해진 순간에만 값이 있으면 이산 시간 신호다. 컴퓨터는 이산 시간 신호만 다룰 수 있어서, 연속 신호를 일정한 간격으로…"

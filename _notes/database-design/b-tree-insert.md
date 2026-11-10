@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["B-Tree-Insert", "B-TREE-INSERT", "B-Tree-Insert-Nonfull", "B-TREE-INSERT-NONFULL", "B-Tree-Create", "B-TREE-CREATE", "B-트리 만들기", "뿌리 쪼개기"]
 description: "꽉 찬 서랍에는 물건을 더 넣을 수 없으니, 넣으러 내려가는 길에 꽉 찬 서랍을 만나면 그 자리에서 둘로 나눠 놓고 지나간다는 생각이다. 새 값은 늘 맨 아래 칸에 들어가고, 내려가는 길을 미리 비워 두었으니 한 번 내려가기만 하면 되고 되돌아 올라올 일이 없다. 나무는 맨 위 칸…"

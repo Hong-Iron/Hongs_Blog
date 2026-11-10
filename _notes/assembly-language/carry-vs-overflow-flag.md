@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Carry Flag vs Overflow Flag", "CF vs OF", "CF와 OF 비교", "캐리와 오버플로 비교"]
 description: "둘 다 \"결과가 칸에 안 들어갔다\"를 알린다. 가르는 질문은 \"지금 이 비트들을 음수가 없는 수로 쓰고 있는가, 음수가 있는 수로 쓰고 있는가\"다. CPU는 이 답을 모르므로 덧셈과 뺄셈마다 두 플래그를 다 정해 둔다. 프로그래머가 자기 답에 맞는 쪽 하나만 읽는다."

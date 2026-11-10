@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Major Depressive Disorder", "MDD", "우울증", "주요우울 삽화", "major depressive episode", "MDE", "심리적 독감", "항우울제", "antidepressant", "SSRI", "SNRI", "TCA", "삼환계 항우울제", "대인관계치료", "IPT", "Interpersonal Psychotherapy", "정신운동성 초조", "정신운동성 지체"]
 description: "거의 매일, 두 주 넘게, 가라앉은 기분이나 무엇에도 흥미가 없는 상태가 이어지고, 잠·식욕·기력·생각·자기 평가까지 함께 무너지는 병이다. 가장 흔한 정신장애라서 \"마음의 감기(심리적 독감)\"라고도 하지만, 감기와 달리 한 번 겪으면 다시 오기 쉽고 자살 위험이 크다. 약과 심리…"

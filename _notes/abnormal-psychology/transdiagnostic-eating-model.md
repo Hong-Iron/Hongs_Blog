@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Transdiagnostic Model of Eating Disorders", "초진단적 모델", "transdiagnostic model", "페어번 모델", "Fairburn", "CBT-E", "Enhanced Cognitive Behavioral Therapy", "향상된 인지행동치료", "CBT-Ef", "CBT-Eb", "자기평가에 대한 역기능적 신념", "dysfunctional scheme for self-evaluation", "임상적 완벽주의", "clinical perfectionism", "정서 불내성", "mood intolerance"]
 description: "식욕부진증, 폭식증, 폭식장애를 서로 다른 병으로 보지 않고, 같은 엔진이 다른 모습으로 돌아가는 것으로 보는 모델이다. 그 엔진은 \"나의 가치는 체중과 체형, 그리고 그것을 통제하는 능력으로 정해진다\"는 믿음이다. 이 믿음이 엄격한 다이어트를 낳고, 다이어트가 폭식을, 폭식이 보…"

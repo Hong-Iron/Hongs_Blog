@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["PTSD vs C-PTSD", "복합 외상 후 스트레스 장애", "Complex PTSD", "C-PTSD", "복합 PTSD", "ICD-11"]
 description: "PTSD는 교통사고나 폭행처럼 한 번이거나 짧은 외상 뒤에 온다. 복합 PTSD(C-PTSD)는 아동기 학대, 가정폭력, 장기 감금처럼 오래 반복된 외상 뒤에 온다. 복합 PTSD는 PTSD의 증상에 더해 자기, 관계, 감정 조절까지 무너진다. 가르는 질문은 \"외상이 한 번이었나,…"

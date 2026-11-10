@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Modulation", "변조", "모듈레이션", "복조", "demodulation", "모뎀", "modem", "신호", "signal", "신호화", "인코딩", "encoding", "전자기 스펙트럼", "electromagnetic spectrum", "아날로그 신호", "analog signal", "디지털 신호", "digital signal"]
 description: "링크 위를 지나가는 것은 0과 1이 아니라 전기, 빛, 전파 같은 물리 신호다. 그래서 보내는 쪽은 데이터를 신호로 바꾸고(변조), 받는 쪽은 신호를 데이터로 되돌린다(복조). 이 둘을 하는 장치가 모뎀이다. 낮은 주파수는 장애물을 잘 지나가지만 빠른 전송에는 한계가 있어서, 통신…"

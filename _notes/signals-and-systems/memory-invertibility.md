@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Memory", "Memoryless System", "기억 없는 시스템", "기억 있는 시스템", "System with Memory", "항등 시스템", "Identity System", "누산기", "Accumulator", "지연기", "Delay", "가역성", "Invertibility", "역시스템", "Inverse System"]
 description: "지금의 출력이 지금의 입력만 보고 정해지면 기억 없는 시스템이다. 저항에 걸린 전압처럼, 과거에 무슨 일이 있었는지는 상관없다. 출력을 정하는 데 과거(또는 미래)의 입력이 필요하면 기억이 있는 시스템이다. 축전기는 그동안 들어온 전류를 쌓아 두므로 기억이 있다. 가역성은 출력만 …"

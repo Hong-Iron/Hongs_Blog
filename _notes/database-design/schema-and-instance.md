@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Schemas and Instances", "스키마", "Schema", "데이터베이스 스키마", "Database Schema", "스키마 다이어그램", "Schema Diagram", "스키마 진화", "Schema Evolution", "인스턴스", "Instance", "데이터베이스 상태", "Database State", "스냅샷", "Snapshot"]
 description: "빈 출석부 양식과 거기 적힌 이름들은 다른 것이다. 데이터베이스도 \"어떤 표에 어떤 칸이 있는가\"라는 틀과 \"지금 그 칸에 무엇이 적혀 있는가\"라는 내용을 갈라서 본다. 틀은 설계할 때 정해 두고 거의 안 바뀌지만, 내용은 한 줄 넣고 고치고 지울 때마다 바뀐다. 둘을 섞으면 \"표…"

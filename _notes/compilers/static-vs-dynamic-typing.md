@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Static vs Dynamic Typing", "Statically-typed Language", "Dynamically-typed Language", "정적 타입 언어", "동적 타입 언어", "정적 타이핑", "동적 타이핑"]
 description: "둘 다 타입이 맞는지 검사한다. 가르는 질문은 \"타입이 어디에 붙어 있고, 언제 검사하는가\"다. 정적 타입 언어는 타입이 변수에 붙고 프로그램을 돌리기 전에 검사한다. 동적 타입 언어는 타입이 값에 붙고 돌리는 도중에 검사한다."

@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Frequent Pattern", "빈발 패턴 마이닝", "Frequent Pattern Mining", "빈발 항목 집합", "Frequent Itemset", "항목 집합", "Itemset", "k-항목 집합", "k-itemset", "거래", "Transaction", "지지도", "Support", "상대 지지도", "Relative Support", "최소 지지도", "min_sup", "장바구니 분석", "Market Basket Analysis"]
 description: "마트 영수증 수천 장을 모아 보면 \"기저귀와 맥주를 같이 산 영수증이 많다\" 같은 사실이 보인다. 이렇게 자료에 자주 함께 나타나는 묶음이 빈발 패턴이다. 몇 장의 영수증에 나타났는지(지지도)가 정해 둔 기준 이상이면 빈발하다고 한다. 묶음이 자주 나타난다는 사실만 알려 줄 뿐 무…"

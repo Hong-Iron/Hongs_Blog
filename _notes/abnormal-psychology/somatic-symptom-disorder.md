@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Somatic Symptom Disorder", "SSD", "신체화", "somatization", "재신체화", "resomatization", "탈신체화", "desomatization", "감정표현 불능증", "감정표현불능증", "alexithymia", "일차적 이득", "primary gain", "이차적 이득", "secondary gain", "의사쇼핑", "doctor shopping", "증폭 지각", "symptom amplification", "주의편향", "attention bias", "화병", "Hwa-Byung"]
 description: "몸이 실제로 아프거나 불편한데, 그 증상에 대한 걱정과 거기에 쏟는 시간이 지나쳐 삶 전체가 증상을 중심으로 돌아가는 장애다. 문제는 증상 자체보다 증상을 대하는 생각과 행동이다. 환자는 진짜로 괴롭고, 일부러 꾸미는 것이 아니다. 다만 \"마음의 문제\"라는 설명을 잘 받아들이지 않…"

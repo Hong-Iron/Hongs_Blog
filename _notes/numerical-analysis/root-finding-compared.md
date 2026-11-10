@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Root-Finding Methods Compared", "구간법과 열린 방법", "Bracketing vs Open Methods"]
 description: "근을 찾는 네 방법은 \"안전함\"과 \"빠르기\"를 맞바꾼다. 이분법은 근을 사이에 둔 구간을 반씩 줄여 늘 성공하지만 느리다. 뉴턴 방법과 할선법은 직선으로 근을 짐작해 빠르지만 실패할 수 있고, 고정점 반복은 가장 단순하지만 식을 잘 바꿔야 수렴한다. 상황에 따라 무엇을 아는지(근이…"

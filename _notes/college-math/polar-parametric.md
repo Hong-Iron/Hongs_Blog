@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Polar Coordinates", "Parametric Equations", "극좌표", "매개변수 방정식", "매개변수 곡선", "parametric curve", "선형 보간", "linear interpolation", "lerp", "궤적", "trajectory"]
 description: "점을 (가로, 세로) 대신 \"원점에서 얼마나 멀리, 어느 방향으로\"로 적는 것이 극좌표이고, 곡선을 \"시각 t에 점이 어디 있는가\"로 적는 것이 매개변수 표현이다. 원·나선·회전처럼 중심을 도는 모양은 극좌표로, 움직임과 궤적은 매개변수로 적으면 식이 훨씬 단순해진다. 다만 극좌표…"

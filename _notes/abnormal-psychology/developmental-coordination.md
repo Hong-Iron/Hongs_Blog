@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["Developmental Coordination Disorder", "DCD", "운동 협응", "서투름", "clumsiness"]
 description: "또래에 비해 몸을 쓰는 일이 유난히 서툴고 느린 장애다. 단추 채우기, 가위질, 공 받기, 글씨 쓰기처럼 여러 동작을 맞춰야 하는 일에서 자주 실수하고 물건을 떨어뜨린다. 이 서투름이 일상생활과 학교 활동을 계속 방해할 때 진단한다. 발달 초기에 시작하고, 5~11세 아이의 5~8…"

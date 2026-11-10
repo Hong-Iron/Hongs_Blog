@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["ARQ", "Automatic Repeat Request", "자동 반복 요청", "정지 대기", "Stop-and-Wait", "ACK", "Acknowledgement", "응답", "타임아웃", "Timeout", "순서 번호", "Sequence Number", "NAK", "Negative Acknowledgement", "재전송", "Retransmission"]
 description: "보내는 쪽은 데이터 덩어리(프레임)를 보내고, 받는 쪽은 망가지지 않은 프레임을 받으면 \"받았다\"는 짧은 답장(ACK)을 돌려준다. 정해 둔 시간(타임아웃) 안에 ACK가 오지 않으면 보내는 쪽이 같은 프레임을 다시 보낸다. ACK만 사라져도 다시 보내게 되어 같은 프레임이 두 번…"

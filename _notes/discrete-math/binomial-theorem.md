@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Binomial Theorem", "이항정리", "이항계수", "binomial coefficient", "파스칼 삼각형", "Pascal's triangle", "조합적 증명", "combinatorial proof", "방데르몽드 항등식", "Vandermonde's identity"]
 description: "(x + y)를 n번 곱해 전개하면, 괄호 n개 중 x를 몇 개의 괄호에서 고르느냐에 따라 항이 정해진다. 그래서 각 항의 계수가 \"n개 중 k개를 고르는 수\"이고, 파스칼 삼각형의 한 줄이 곧 전개식의 계수다. 같은 것을 두 가지로 세어 등식을 얻는 조합적 증명의 대표 예이기도 …"

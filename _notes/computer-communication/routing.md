@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Routing", "경로 설정", "포워딩", "forwarding", "전달표", "forwarding table"]
 description: "내비게이션에 목적지를 넣으면 경로를 계산하듯, 주소로 상대가 정해진 뒤 그곳까지 어떤 길로 보낼지 정하는 일이다. 길이 여러 갈래인 간접 연결에서만 필요하다. 한 길이 끊겨도 다른 길로 돌아갈 수 있게 해 준다."

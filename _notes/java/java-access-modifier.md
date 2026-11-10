@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Access Modifier", "public", "protected", "default", "private", "접근 제어자", "Getter", "Setter", "게터", "세터", "무결성", "Integrity"]
 description: "건물의 문마다 누가 들어올 수 있는지가 다르다. 정문은 누구나, 사무실은 같은 회사 사람만, 금고는 주인만 연다. 클래스와 그 안의 값·동작에도 이런 문패를 붙여서, 중요한 것을 바깥 코드가 함부로 건드리지 못하게 한다. 값을 금고에 넣어 두고 창구를 통해서만 넣고 꺼내게 하면, …"

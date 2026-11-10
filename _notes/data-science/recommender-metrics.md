@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Recommender Evaluation Metrics", "MAE", "MSE", "RMSE", "Precision@K", "Recall@K", "HR@K", "Hit Ratio", "MR", "Mean Rank", "MRR", "Mean Reciprocal Rank", "nDCG", "Normalized Discounted Cumulative Gain", "DCG", "IDCG"]
 description: "추천이 좋은지 재는 눈금은 세 종류다. 평점을 얼마나 정확히 맞혔나(평균 오차), 추천 목록 안에 좋아할 것이 몇 개 들었나(정밀도·재현율), 좋아할 것이 목록 위쪽에 있나(순위 지표)다. 평점을 정확히 맞혀도 목록의 맨 위가 엉망이면 사용자는 만족하지 못하므로, 실제 추천에는 순…"

@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["LL(1) Parser", "LL(1) 파서", "표 구동 파서", "Table-driven Parser", "예측 파서의 구현", "Nonrecursive Predictive Parser", "파싱 스택"]
 description: "미리 만든 표를 보며 입력을 읽어 나가는 기계다. \"앞으로 맞춰야 할 것들\"을 접시 더미처럼 쌓아 두고 맨 위 것만 꺼내 본다. 꺼낸 것이 더 풀어야 할 이름이면 표에서 찾은 규칙의 조각들로 바꿔 쌓고, 낱말이면 입력의 다음 낱말과 견줘 같으면 한 칸 나아간다. 더미와 입력이 함께…"

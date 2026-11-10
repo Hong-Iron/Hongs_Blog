@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Role Name", "Recursive Relationship", "순환 관계", "자기 참조 관계", "Self-referencing Relationship", "SUPERVISION", "상사와 부하"]
 description: "회사에서는 직원이 직원을 감독한다. 줄의 양쪽 끝이 둘 다 \"직원\"이라, \"김씨와 박씨가 감독으로 이어져 있다\"고만 적으면 누가 윗사람인지 알 수 없다. 그래서 줄의 끝마다 \"상사\", \"부하\" 같은 이름표를 단다. 직원과 부서처럼 서로 다른 대상을 이을 때는 이름표가 없어도 되지만…"

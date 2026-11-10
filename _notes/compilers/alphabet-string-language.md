@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Alphabet String and Language", "알파벳", "Alphabet", "문자열", "String", "언어", "Language", "형식 언어", "Formal Language", "빈 문자열", "Empty String", "엡실론", "Epsilon", "접합", "연결", "Concatenation", "클레이니 닫힘", "Kleene Closure", "클레이니 스타", "양의 닫힘", "Positive Closure"]
 description: "쓸 수 있는 글자의 목록을 먼저 정하고, 그 글자를 줄 세운 것을 글자 줄이라 하고, 글자 줄 가운데 \"우리 편\"으로 치는 것만 모은 주머니를 언어라 부른다. \"식별자란 무엇인가\"를 \"이 주머니에 든 글자 줄\"이라고 말할 수 있게 되어, 토큰의 모양을 집합 계산으로 다룰 수 있다.…"

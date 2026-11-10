@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Dissociative Identity Disorder", "DID", "다중인격장애", "다중성격장애", "multiple personality disorder", "주 인격", "host personality", "대체 인격", "alternate personalities", "외상 모델", "trauma model", "4요인 모델", "four factor model", "신해리이론", "neo-dissociation theory", "집행적 자아", "executive ego"]
 description: "한 사람 안에 서로 다른 둘 이상의 인격이 번갈아 나타나고, 한 인격일 때의 일을 다른 인격은 기억하지 못하는 장애다. 예전에는 다중인격장애라고 불렀다. 어린 시절 견딜 수 없는 학대를 \"그건 내가 아니라 다른 아이에게 일어난 일\"로 떼어 내던 생존 방식이 굳어진 것으로 본다. 만…"

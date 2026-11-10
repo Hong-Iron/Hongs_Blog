@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["RAD vs DSED", "억제형 vs 탈억제형 애착장애", "두 애착장애 비교"]
 description: "두 장애는 같은 뿌리, 곧 극단적으로 불충분한 양육에서 나온 정반대의 가지다. 반응성 애착장애는 억제형으로, 누구에게도 다가가지 않는다. 탈억제성 사회적 유대감 장애는 탈억제형으로, 누구에게나 다가간다. 가르는 질문은 \"애착을 거두어 움츠러드는가, 가리지 않고 아무에게나 다가가는가\"다."

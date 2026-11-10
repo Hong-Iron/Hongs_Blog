@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Newton Polynomial", "Newton Interpolation", "뉴턴 보간", "분할 차분", "Divided Difference", "분할 차분표", "Divided Difference Table", "중첩 곱셈", "Nested Multiplication"]
 description: "라그랑주 공식은 점을 하나 더하면 처음부터 다시 계산해야 한다. 뉴턴 다항식은 \"지금까지의 다항식에 항 하나를 덧붙이는\" 꼴이라 점이 늘어도 앞 계산을 그대로 쓴다. 덧붙이는 항의 계수는 분할 차분이라는 기울기의 기울기를 표로 쌓아 얻는다. 같은 점들이면 결과는 라그랑주와 같은 다…"

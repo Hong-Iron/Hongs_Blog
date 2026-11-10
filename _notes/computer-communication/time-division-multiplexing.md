@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Time-Division Multiplexing", "TDM", "동기식 시분할 다중화", "synchronous TDM", "타임 슬롯", "time slot", "칸", "프레임", "frame"]
 description: "놀이기구를 정해진 순서대로 한 명씩 돌아가며 타듯, 링크를 쓰는 시간을 짧은 칸으로 잘라 사용자들이 순서대로 돌아가며 쓰게 하는 방법이다. 자기 차례에는 링크 전체를 쓰고, 받는 쪽은 차례만 보고 누구 것인지 안다. 대신 차례가 미리 정해져 있어서, 보낼 것이 없는 사용자의 칸은 …"

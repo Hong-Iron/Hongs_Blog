@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Sollin's Algorithm", "Sollin's Method", "솔린", "Borůvka's Algorithm", "보루프카 알고리즘", "최소 비용 신장 트리"]
 description: "마을마다 이웃 마을로 가는 가장 싼 길 하나씩을 한꺼번에 고르고, 그 길로 이어진 마을들을 한 덩어리로 묶는다. 다음에는 덩어리마다 다른 덩어리로 가는 가장 싼 길을 하나씩 골라, 덩어리가 하나 남을 때까지 되풀이한다. 그러면 모든 마을을 가장 싸게 잇는 길 모음이 되고, 한 바퀴…"

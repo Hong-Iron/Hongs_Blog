@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Series and LTI Systems", "주파수 응답", "Frequency Response", "H(jω)", "H(e^jω)", "시스템 함수", "System Function", "출력 계수", "Output Coefficients"]
 description: "주기 신호를 LTI 시스템에 넣으면, 출력도 같은 주기의 주기 신호이고 출력의 각 푸리에 계수는 입력 계수에 그 주파수의 주파수 응답 값을 곱한 것이다. 오디오 이퀄라이저가 저음은 그대로, 고음은 절반으로 줄이는 것과 같다. 그래서 출력을 구할 때 컨벌루션 적분 대신 \"주파수마다 …"

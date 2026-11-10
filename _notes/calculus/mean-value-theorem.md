@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Mean Value Theorem", "MVT", "평균값 정리", "롤의 정리", "Rolle's theorem", "립시츠 조건", "Lipschitz condition", "구간단속"]
 description: "10 km 구간을 5분에 지났다면 평균 시속이 120 km이고, 그렇다면 어느 한 순간 속도계는 정확히 120을 가리켰다. 매끄러운 함수에서는 평균 변화율과 똑같은 순간 변화율을 갖는 점이 반드시 있다는 정리다. \"도함수가 양수면 증가한다\", \"도함수가 0이면 상수다\" 같은 당연해…"

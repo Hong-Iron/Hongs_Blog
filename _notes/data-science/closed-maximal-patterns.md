@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Closed Pattern", "Closed Frequent Itemset", "닫힌 빈발 패턴", "Maximal Pattern", "Max Pattern", "Maximal Frequent Itemset", "최대 빈발 패턴", "패턴 압축"]
 description: "빈발 집합 하나가 있으면 그 부분집합이 모두 빈발이라, 빈발 패턴을 다 적으면 목록이 감당할 수 없이 길어진다. 닫힌 패턴은 \"더 큰 집합으로 늘려도 지지도가 줄지 않는\" 집합을 버리고 나머지만 남긴다. 이것만 있으면 모든 빈발 패턴과 그 지지도를 되살릴 수 있다(손실 없는 압축)…"

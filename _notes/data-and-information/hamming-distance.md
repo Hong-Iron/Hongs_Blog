@@ -11,6 +11,7 @@ course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-11"
+last_modified_at: "2026-10-11"
 status: "verified"
 aliases: ["Hamming Distance", "해밍 거리", "해밍 무게", "Hamming Weight", "해밍 공", "Hamming Ball", "부호 거리", "Code Distance", "최소 거리", "Minimum Distance", "상대 거리", "오류 정정 부호", "Error-correcting Code", "오류 검출", "오류 정정", "지워짐", "Erasure"]
 description: "길이가 같은 두 기호열이 몇 군데에서 다른지 센 수를 둘 사이의 거리로 삼는다. 쓸 낱말들을 서로 멀리 떨어뜨려 골라 두면, 전송 중에 몇 글자가 바뀌어도 다른 낱말로 둔갑하지 못한다. 가장 가까운 두 낱말 사이의 거리보다 하나 적은 개수까지는 틀린 것을 반드시 알아채고, 그 절반…"

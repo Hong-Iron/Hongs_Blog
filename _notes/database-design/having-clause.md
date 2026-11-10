@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["HAVING", "HAVING 절", "그룹 조건", "Group Condition", "묶음 조건"]
 description: "프로젝트마다 일하는 사람 수를 센 뒤 \"세 명 이상인 프로젝트만\" 보고 싶다면, 묶음을 다 만든 다음 묶음 단위로 한 번 더 걸러야 한다. 행을 하나씩 거르는 조건은 묶기 전에 쓰이므로 \"이 묶음에 몇 행이 있는가\" 같은 값을 볼 수 없다. 묶음마다 계산한 값으로 묶음을 통째로 남…"

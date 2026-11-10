@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["TYPE Operator", "LENGTHOF Operator", "SIZEOF Operator", "TYPE 연산자", "LENGTHOF 연산자", "SIZEOF 연산자", "원소 크기", "원소 개수", "여러 줄에 걸친 데이터 정의", "Spanning Multiple Lines"]
 description: "배열에 대해 알고 싶은 수는 셋이다. 칸 하나가 몇 바이트인가, 칸이 몇 개인가, 전체가 몇 바이트인가. 이 셋을 손으로 세어 코드에 적는 대신 어셈블러에게 물어보는 연산자다. 배열을 고쳐도 코드는 그대로 두면 된다. 다만 어셈블러는 이름이 붙은 정의 한 덩이만 세므로, 배열을 여…"

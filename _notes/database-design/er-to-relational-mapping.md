@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["ER-to-Relational Mapping", "ER 관계형 사상", "ER 사상 알고리즘", "ER 다이어그램을 릴레이션으로 옮기기", "논리 설계", "Relational Database Design", "Correspondence between ER and Relational Models"]
 description: "개체와 그 사이의 연결을 그린 설계도(ER 그림)는 사람이 읽는 것이고, 데이터베이스가 받는 것은 표다. 그림의 네모, 마름모, 동그라미를 정해진 순서로 하나씩 옮기면 표 묶음이 나온다. 네모는 표가 되고, 일대일·일대다 연결은 칸 하나가 되고, 다대다 연결과 값이 여럿인 속성은 …"

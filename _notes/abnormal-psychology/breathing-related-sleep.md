@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Breathing-Related Sleep Disorder", "폐쇄성 수면 무호흡 저호흡", "Obstructive Sleep Apnea Hypopnea", "폐색성 수면 무호흡증", "수면무호흡", "sleep apnea", "중추성 수면 무호흡증", "Central Sleep Apnea", "수면관련 환기저하", "Sleep-Related Hypoventilation", "양압기", "CPAP"]
 description: "잠자는 동안 숨이 막히거나 잠깐씩 멈춰서, 본인도 모르게 밤새 수십 번 깨는 장애다. 그 결과 오래 자도 개운하지 않고 낮에 졸리거나, 반대로 잠을 설친다. 가장 흔한 것은 목구멍의 기도가 좁아져 막히는 폐쇄성 수면 무호흡으로, 심하게 코를 골다 숨이 멎는 모습으로 드러난다. 체중…"

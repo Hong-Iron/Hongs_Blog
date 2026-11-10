@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Spectral Theorem", "스펙트럼 정리", "대칭행렬", "symmetric matrix", "직교 대각화", "orthogonal diagonalization", "스펙트럼 분해", "spectral decomposition", "주축 정리", "principal axis theorem", "그래프 라플라시안", "graph Laplacian"]
 description: "대각선을 기준으로 접으면 겹치는 행렬(대칭행렬)은 가장 다루기 좋은 행렬이다. 고윳값이 모두 실수이고, 서로 수직인 고유벡터들로 공간 전체를 덮을 수 있다. 그래서 대칭행렬이 하는 일은 늘 \"서로 수직인 몇 개의 축을 따라 늘이거나 줄이기\"다. 데이터의 공분산 행렬, 곡면의 휘어짐…"

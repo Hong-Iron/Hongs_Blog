@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["B-Tree-Split-Child", "B-TREE-SPLIT-CHILD", "노드 분할", "Node Split", "가운데 키", "Median Key"]
 description: "책장 한 칸이 꽉 차면 가운데 책 한 권을 위 칸으로 올리고, 남은 책을 반씩 두 칸에 나눠 꽂는 일이다. 꽉 찬 칸이 딱 절반짜리 둘로 갈리므로 두 칸 모두 \"너무 비면 안 된다\"는 규칙을 지키고, 나무의 높이도 그대로다. 다만 가운데 책이 올라갈 자리가 있어야 하므로 위 칸이 …"

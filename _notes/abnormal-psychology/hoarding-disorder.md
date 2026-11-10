@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Hoarding Disorder", "수집광", "강박적 수집", "compulsive collecting", "강박적 저장", "compulsive hoarding", "전이대상", "transitional object", "손실 회피"]
 description: "실제로 쓸모가 있든 없든 물건을 버리지 못하고 쌓아, 집이나 사무실이 물건으로 막혀 제 용도로 쓰지 못하게 되는 장애다. 버리는 것 자체가 큰 고통이고, 버릴지 말지 결정하지 못한다. 물건을 자기 몸의 일부나 추억처럼 여겨 사람보다 물건에 더 애착을 느끼기도 한다. 본인은 문제를 …"

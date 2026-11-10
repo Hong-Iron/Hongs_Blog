@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Classes of Transformations", "강체 변환", "Rigid-body Transformation", "등거리 변환", "Isometry", "닮음 변환", "Similarity Transformation", "전단", "Shear", "아핀 변환", "Affine Transformation", "사영 변환", "Projective Transformation", "불변량", "Invariant"]
 description: "도형을 옮기고 돌리고 늘이는 변환은 \"무엇을 그대로 두는가\"로 나뉜다. 길이까지 지키면 강체 변환, 모양(각)만 지키면 닮음 변환, 평행만 지키면 아핀 변환, 곧은 선만 지키면 사영 변환이다. 뒤로 갈수록 더 많은 변환이 들어가지만 지켜 주는 성질은 줄어든다. 그래서 어떤 계산을 …"

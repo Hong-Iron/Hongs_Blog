@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Propositional Logic", "명제", "proposition", "논리 연산자", "logical connective", "진리표", "truth table", "부정", "negation", "논리곱", "conjunction", "논리합", "disjunction", "조건문", "implication", "쌍조건문", "biconditional", "배타적 논리합", "XOR"]
 description: "명제는 참인지 거짓인지 딱 정해지는 문장이다. \"그리고·또는·아니다·이면\" 같은 연결어로 짧은 명제를 이어 복잡한 조건을 만들고, 그 참·거짓은 모든 경우를 표로 늘어놓아(진리표) 기계적으로 따진다. 프로그램의 if 조건이 곧 명제 논리다. 가장 헷갈리는 곳은 \"p이면 q\"로, p…"

@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Hashing By Division", "Division Method", "나눗셈 방법", "제산법", "해시 함수", "Hash Function", "균등 해시 함수", "Uniform Hash Function", "나누는 수", "Divisor", "stringToInt"]
 description: "키를 칸 번호로 바꾸는 가장 흔한 방법은, 키를 수로 바꾼 뒤 칸의 개수로 나눈 나머지를 쓰는 것이다. 계산이 빠르고 나머지는 늘 칸 번호 범위 안에 든다. 다만 실제 자료의 키는 짝수가 많다거나 5씩 건너뛴다거나 하는 버릇이 있어서, 칸의 개수가 2나 5 같은 작은 수로 나누어떨…"

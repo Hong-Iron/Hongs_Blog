@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-07"
+last_modified_at: "2026-10-07"
 status: "verified"
 aliases: ["Deadlock Prevention", "간접 예방", "직접 예방", "자원 순서 정하기", "Resource Ordering", "한꺼번에 요청하기"]
 description: "교착상태 예방은 네 조건 가운데 하나가 아예 생기지 못하도록 시스템을 처음부터 설계하는 것이다. 네거리에 \"모든 차는 시계 방향 순서로만 칸을 잡는다\"는 규칙을 두면 원이 생길 수 없는 것과 같다. 일단 설계해 두면 실행 중에 따질 것이 없다. 대신 자원을 필요 이상으로 오래 잡거…"

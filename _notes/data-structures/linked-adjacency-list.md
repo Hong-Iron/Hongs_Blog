@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Linked Adjacency Lists", "Array Adjacency Lists", "Adjacency List", "Adjacency Matrix", "인접 리스트", "인접 행렬", "연결 인접 리스트", "배열 인접 리스트", "비용 인접 행렬", "Cost Adjacency Matrix"]
 description: "점과 선으로 된 그림을 메모리에 적는 방법이다. 표 하나에 \"두 점이 이어졌나\"를 모든 쌍에 대해 0과 1로 적을 수도 있고, 점마다 이웃 번호만 줄줄이 적어 둘 수도 있다. 이웃 목록은 칸을 하나씩 화살표로 이어 만들거나, 길이가 정해진 한 줄짜리 칸 묶음으로 만든다. 표는 두 …"

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["AND 명령", "OR 명령", "XOR 명령", "NOT 명령", "Boolean Instructions", "비트 마스크", "Bit Mask", "비트 끄기", "비트 켜기", "비트 뒤집기", "XOR 암호", "대문자 변환"]
 description: "레지스터에 든 값은 스위치 여덟 개나 서른두 개가 한 줄로 늘어선 것이다. 이 명령들은 값을 수로 보지 않고 스위치 줄로 보아, 골라 낸 스위치만 끄거나 켜거나 뒤집고 나머지는 그대로 둔다. 어느 스위치를 건드릴지는 같은 길이의 다른 스위치 줄로 알려 준다. 덧셈·뺄셈 없이 글자의…"

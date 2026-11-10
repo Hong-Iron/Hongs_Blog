@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Quick Sort", "Quicksort", "퀵소트", "분할", "Partition", "피벗", "Pivot", "가운데 값 규칙", "Median-of-Three", "제자리 분할", "In-Place Partitioning"]
 description: "책장을 정리할 때 기준이 될 책 한 권을 고르고, 그보다 앞에 올 책은 왼쪽 더미로, 뒤에 올 책은 오른쪽 더미로 가른 다음, 두 더미를 같은 방법으로 다시 정리하는 방식이다. 더미가 번번이 반반쯤으로 갈리면 아주 빠르고, 책을 놓아 둘 덤 자리도 거의 필요 없다. 그러나 기준을 …"

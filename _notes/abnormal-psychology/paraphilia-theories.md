@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Theories of Paraphilia", "성도착의 원인", "러브맵", "lovemap", "머니", "Money", "통합 이론", "integrated theory", "마셜과 바버리", "Marshall & Barbaree", "라크먼의 실험", "Rachman", "혐오 조건형성", "aversive conditioning", "내적 연습", "mental rehearsal"]
 description: "왜 어떤 사람은 일반적이지 않은 대상이나 방식에 성적으로 끌리는가에 대한 다섯 가지 설명이다. 정신분석은 어린 시절의 성적 상처를 이겨 내려는 시도로, 행동주의는 우연히 짝지어진 조건형성으로, 사회심리적 입장은 대인관계 기술의 부족으로 본다. 머니의 러브맵은 마음속 성적 청사진이 …"

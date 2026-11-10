@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Live Variable Analysis", "Liveness Analysis", "Live Variable", "생존 변수", "살아 있는 변수", "활성 변수", "죽은 코드 제거", "Dead Code Elimination", "후방 분석", "Backward Analysis"]
 description: "이삿짐을 쌀 때 \"새집에서 쓸 물건\"만 챙기려면, 새집에서 할 일부터 거꾸로 떠올려 보면 된다. 코드에서도 맨 아랫줄부터 거꾸로 올라가며 \"여기서부터 뒤에서 값이 읽힐 변수\"의 목록을 들고 다닌다. 어떤 줄이 값을 넣는 변수가 그 목록에 없으면, 그 줄은 아무도 안 쓸 값을 만든 …"

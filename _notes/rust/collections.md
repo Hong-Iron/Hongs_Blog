@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Collections", "Vec", "벡터", "HashMap", "BTreeMap", "HashSet", "VecDeque", "용량", "Capacity", "with_capacity", "entry API", "SipHash", "HashDoS", "분할상환", "Amortized"]
 description: "값을 여러 개 담는 그릇이다. 줄 세워 담는 Vec, 이름표로 찾는 HashMap, 이름표를 가나다순으로 늘어놓는 BTreeMap, 양쪽 끝에서 넣고 빼는 VecDeque가 대표다. 대부분은 Vec과 HashMap으로 충분하다. 다만 HashMap은 꺼내는 순서가 정해져 있지 않아…"

@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Referential Triggered Actions", "참조 무결성 동작", "참조 트리거 동작", "ON DELETE", "ON UPDATE", "SET NULL", "CASCADE", "SET DEFAULT", "연쇄 삭제", "Cascading Delete", "RESTRICT", "NO ACTION"]
 description: "다른 행이 가리키고 있는 행을 지우거나 그 행의 번호를 고칠 때 어떻게 할지 미리 정해 두는 규칙이다. 팀장이 퇴사하면 팀원들의 \"담당 팀장\" 칸을 비워 둘지, 임시 팀장으로 채울지, 팀원 기록까지 함께 지울지 정해 두는 것과 같다. 아무것도 정하지 않으면 그런 삭제와 수정은 거부…"

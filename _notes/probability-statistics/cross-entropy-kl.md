@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Cross-Entropy", "교차 엔트로피", "KL 발산", "Kullback–Leibler divergence", "쿨백-라이블러 발산", "상대 엔트로피", "relative entropy", "기브스 부등식", "Gibbs' inequality", "교차 엔트로피 손실", "cross-entropy loss", "로그 손실", "log loss", "음의 로그 가능도", "negative log-likelihood"]
 description: "실제 분포를 따르는 기호를, 잘못 믿은 다른 분포에 맞춰 만든 부호로 보내면 평균 비트가 엔트로피보다 늘어난다. 그 평균 비트가 교차 엔트로피이고, 늘어난 만큼이 KL 발산이다. KL 발산은 \"믿은 분포가 실제와 얼마나 다른가\"를 재는 대표적인 수라서, 분류 모델은 예측 분포와 정…"

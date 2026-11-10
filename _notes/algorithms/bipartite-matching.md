@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Bipartite Matching", "최대 이분 매칭", "증가 경로", "Augmenting Path", "헝가리안 방법", "Hungarian Method"]
 description: "학생마다 가고 싶은 동아리가 몇 개 있고, 동아리마다 한 명만 받는다. 학생을 한 명씩 넣다가 원하는 자리가 이미 차 있으면, 그 자리 주인에게 \"다른 데로 옮겨 줄 수 있니?\"라고 묻는다. 주인이 또 다른 주인에게 묻는 식으로 연쇄로 비켜 주면 짝이 하나 는다. 먼저 온 사람에게…"

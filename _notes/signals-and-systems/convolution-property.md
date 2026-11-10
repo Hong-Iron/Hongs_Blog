@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Convolution Property", "컨벌루션 성질", "Y = HX", "주파수 응답", "Frequency Response", "이상적 저역 통과 필터", "Ideal Lowpass Filter", "부분 분수", "Partial Fraction", "역변환", "Inverse Transform"]
 description: "시간 영역에서 컨벌루션한 것은 주파수 영역에서 곱한 것과 같다: y = h x이면 Y = HX. 그래서 LTI 시스템의 출력을 구할 때 복잡한 컨벌루션 적분 대신 변환해서 곱하고 다시 역변환하면 된다. 임펄스 응답의 변환 H(j\\omega)가 곧 주파수 응답이고, 주파수마다 입력을…"

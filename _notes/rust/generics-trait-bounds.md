@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Generics", "Trait Bounds", "제네릭", "트레이트 경계", "타입 매개변수", "Type Parameter", "where 절", "Where Clause", "단형화", "Monomorphization", "정적 디스패치", "Static Dispatch", "const 제네릭", "Const Generics", "Sized", "?Sized"]
 description: "타입 자리를 빈칸으로 둔 함수 틀을 한 번만 써 두면, 컴파일러가 실제로 쓰인 타입마다 틀을 찍어 진짜 함수를 만든다. 그래서 실행 속도는 타입마다 손으로 따로 쓴 함수와 같다. 다만 빈칸에 \"크기를 비교할 줄 아는 타입만\"처럼 조건을 달아야 몸통에서 그 값으로 비교 같은 일을 할…"

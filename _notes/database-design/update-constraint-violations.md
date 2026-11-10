@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Update Operations and Constraint Violations", "Violating Integrity Constraints", "제약 위반", "무결성 제약 위반", "삽입 위반", "삭제 위반", "수정 위반", "Insert Violation", "Delete Violation", "Update Violation"]
 description: "행을 넣거나 지우거나 고칠 때, 표에 걸어 둔 규칙 가운데 무엇이 깨질 수 있는지 미리 짚어 보는 방법이다. 도서관에서 책을 새로 등록할 때, 폐기할 때, 등록 번호를 고칠 때 확인할 것이 서로 다른 것과 같다. 넣을 때는 모든 규칙을 봐야 하고, 지울 때는 \"이 행을 가리키는 다…"

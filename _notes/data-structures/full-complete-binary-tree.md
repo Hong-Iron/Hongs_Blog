@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Full Binary Tree", "Complete Binary Tree", "포화 이진 트리", "완전 이진 트리", "Perfect Binary Tree", "노드 번호 매기기", "Node Numbering"]
 description: "층마다 빈자리 없이 꽉 채운 이진 트리가 포화 이진 트리다. 위층부터, 같은 층에서는 왼쪽부터 차곡차곡 채우다가 멈춘 모양이 완전 이진 트리다. 이렇게 채운 트리는 칸에 1번부터 차례로 번호를 매기면 부모와 자식의 번호가 2로 나누기와 2를 곱하기로 바로 나와서, 주소를 따로 적지…"

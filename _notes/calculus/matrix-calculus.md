@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Matrix Calculus", "행렬 미분", "벡터 미분", "vector calculus identities", "그래디언트 공식", "이차형식의 미분", "로지스틱 회귀의 기울기", "기울기 검사", "gradient check"]
 description: "변수가 수백 개인 식을 성분마다 편미분하지 않고, 벡터와 행렬 채로 한 번에 미분하는 규칙 모음이다. 곱의 미분처럼 몇 가지 공식만 익히면 최소제곱의 정규방정식이나 로지스틱 회귀의 기울기가 한두 줄로 나온다. 기계학습 논문의 유도는 거의 이 언어로 쓰여 있다. 다만 결과의 모양(행…"

@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Rate Coding", "Representation of Strength", "자극 세기의 표현", "발화율", "firing rate", "불응기", "refractory period", "전부 아니면 전무", "all-or-none", "자발 발화"]
 description: "공연장의 박수와 같다. 더 열광할수록 박수 한 번의 소리가 커지는 게 아니라 박수가 더 빨라진다. 뉴런도 스파이크 하나의 크기는 늘 같고, 자극이 셀수록 스파이크를 더 자주 낸다. 다만 한 번 발화하면 잠깐 쉬어야 해서(불응기) 빨라지는 데 한계가 있고, 아주 센 자극끼리는 구별하…"

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["OFFSET Operator", "PTR Operator", "OFFSET 연산자", "PTR 연산자", "BYTE PTR", "WORD PTR", "DWORD PTR", "LABEL 지시어", "LABEL Directive", "오프셋", "Offset", "포인터", "Pointer"]
 description: "변수 이름을 쓰면 보통은 그 칸에 든 값을 뜻한다. 두 연산자는 이 기본을 바꾼다. 하나는 값 대신 그 칸이 어디 있는지, 곧 주소를 내놓는다. 다른 하나는 \"이 칸을 정의할 때와 다른 크기로 읽어라\"라고 시킨다. 덕분에 큰 값의 일부만 꺼내거나 작은 값 여러 개를 묶어 한 번에 …"

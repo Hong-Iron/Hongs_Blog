@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Voyeuristic Disorder", "관음증", "voyeurism"]
 description: "눈치채지 못한 사람이 옷을 벗거나 성행위하는 모습을 몰래 보는 것에서 강렬한 성적 흥분을 느끼는 일이 반년 넘게 되풀이되고, 그 때문에 괴롭거나 실제로 몰래 엿보는 장애다. 범죄가 되는 성적 행동 가운데 가장 흔하다. 사춘기의 성적 호기심과 구별하기 어려워서, 18세 이상에게만 진…"

@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Monitor", "조건 변수", "Condition Variable", "cwait", "csignal", "호어 모니터", "Hoare Monitor", "메사 모니터", "Mesa Monitor", "cnotify", "cbroadcast"]
 description: "모니터는 공유 데이터와 그 데이터를 다루는 함수들을 한 방에 넣고, 방에는 한 번에 한 프로세스만 들어가게 한 프로그래밍 언어 구조다. 세마포어처럼 semWait과 semSignal을 코드 곳곳에 흩어 놓지 않아도, 방에 들어가는 것만으로 상호 배제가 된다. 그래서 짝을 빠뜨리는 …"

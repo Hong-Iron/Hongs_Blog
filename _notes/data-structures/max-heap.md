@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Max Heap", "Min Heap", "최대 힙", "최소 힙", "Max Tree", "Min Tree", "최대 트리", "최소 트리", "Max Priority Queue", "Min Priority Queue", "우선순위 큐의 C 구현", "pushHeap", "popHeap", "heapType"]
 description: "최대 힙은 \"부모는 자식보다 작지 않다\"는 규칙 하나만 지키며, 위층부터 왼쪽부터 빈틈없이 채운 이진 트리다. 맨 위에는 늘 가장 큰 값이 있고, 값을 넣거나 맨 위 값을 꺼낸 뒤에는 맨 위와 맨 아래를 잇는 한 줄만 고치면 되어서 값이 백만 개여도 스무 번쯤 옮겨 적으면 끝난다.…"

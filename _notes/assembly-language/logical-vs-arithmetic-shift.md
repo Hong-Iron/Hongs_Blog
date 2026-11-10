@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Logical Shift vs Arithmetic Shift", "논리 시프트", "Logical Shift", "산술 시프트", "Arithmetic Shift", "SHR vs SAR"]
 description: "둘 다 비트를 한쪽으로 밀고 밀려난 비트를 CF에 넣는다. 가르는 질문은 하나다. \"오른쪽으로 밀 때 맨 위에 생긴 빈칸을 무엇으로 채우는가.\" 0으로 채우면 논리 시프트(SHR), 원래 맨 위 비트를 한 번 더 써서 채우면 산술 시프트(SAR)다. 그 답은 다시 \"이 비트들을 부…"

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["INVOKE", "PROC", "PROTO", "ADDR", "INVOKE Directive", "PROC Directive", "PROTO Directive", "프로시저 원형", "Procedure Prototype", "매개변수 목록", "Parameter List"]
 description: "스택으로 값을 넘기는 호출을 고급 언어의 함수 호출처럼 한 줄로 쓰게 해 주는 받아쓰기 도구다. 부르는 쪽은 프로시저 이름과 넘길 값만 적고, 불리는 쪽은 받을 값에 이름을 붙여 둔다. 값을 스택에 넣고, 기준점에서 몇 칸 떨어졌는지 세고, 끝나고 치우는 줄은 어셈블러가 대신 써 …"

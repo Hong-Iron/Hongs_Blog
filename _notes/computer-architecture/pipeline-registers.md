@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Pipeline Registers", "파이프라인 레지스터", "IF/ID", "ID/EX", "EX/MEM", "MEM/WB", "파이프라인 제어", "Pipelined Control", "단계 레지스터"]
 description: "이어달리기에서 주자는 바통을 다음 주자에게 넘기고 곧바로 다음 바통을 받으러 돌아간다. 파이프라인의 단계 사이에도 바통 구실을 하는 저장 칸이 있어서, 앞 단계가 만든 값과 \"이 명령어는 무엇을 해야 하는가\"라는 쪽지를 함께 실어 다음 단계로 넘긴다. 이 칸 덕분에 다섯 명령어가 …"

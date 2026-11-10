@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cubic Interpolation Curve", "3차 곡선", "Cubic Curve", "블렌딩 함수", "Blending Function", "보간 기하 행렬", "Interpolating Geometry Matrix", "음함수 표현", "Implicit Representation", "매개변수 곡선", "Parametric Curve"]
 description: "점 네 개를 주고 그 점들을 모두 지나는 매끄러운 곡선을 그리고 싶을 때 쓴다. x, y, z를 각각 u의 3차식으로 두고 u = 0, \\frac13, \\frac23, 1에서 네 점을 지나게 하면 계수가 하나로 정해진다. 곡선은 네 점에 \"블렌딩 함수\"라는 무게를 곱해 더한 것이다…"

@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["B-Spline", "균등 3차 B-스플라인", "Uniform Cubic B-Spline", "스플라인", "Spline", "스플라인 기하 행렬", "Spline Geometry Matrix", "국소 조절", "Local Control"]
 description: "조절점들을 늘어놓으면 곡선이 그 점들 근처를 부드럽게 지나가되, 점을 꼭 지나지는 않는다. 각 조각은 이웃한 조절점 네 개만 보고, 이웃 조각과 조절점 셋을 함께 써서 이음점에서 위치·속도·가속도가 모두 맞는다(C^2). 점 하나를 옮기면 근처 조각 네 개만 바뀌어 고치기 쉽다. …"

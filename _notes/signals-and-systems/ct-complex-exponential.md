@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Continuous-Time Complex Exponential Signal", "복소 지수 신호", "Complex Exponential", "실수 지수 신호", "Real Exponential", "정현파 신호", "Sinusoidal Signal", "각주파수", "Angular Frequency", "위상", "Phase", "페이저", "Phasor", "고조파", "Harmonic", "감쇠 정현파", "Damped Sinusoid"]
 description: "e^{j\\omega0 t}는 복소평면에서 반지름 1인 원 위를 일정한 속도로 도는 점이다. 그 그림자를 실수축에 비추면 \\cos\\omega0 t, 허수축에 비추면 \\sin\\omega0 t가 된다. 그래서 모든 정현파는 회전하는 화살표로 바꿔 쓸 수 있고, 삼각함수의 복잡한 덧셈정리…"

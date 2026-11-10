@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Second-Order Linear ODE with Constant Coefficients", "특성방정식", "Characteristic Equation", "제차", "Homogeneous", "비제차", "Non-homogeneous", "일반해", "General Solution", "특수해", "Particular Solution", "미정계수법", "Method of Undetermined Coefficients", "초기 조건", "Initial Condition"]
 description: "지수함수 e^{\\lambda x}는 미분해도 모양이 그대로이고 앞에 \\lambda만 붙는다. 그래서 ay'' + by' + cy = 0에 e^{\\lambda x}를 넣으면 미분방정식이 2차방정식 a\\lambda^2 + b\\lambda + c = 0으로 바뀌고, 그 두 근이 답의 모…"

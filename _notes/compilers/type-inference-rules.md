@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Rules of Inference for Types", "Type Inference Rules", "Typing Rules", "Typing Judgment", "타입 규칙", "타입 판단", "자유 변수", "Free Variable", "공리", "Axiom"]
 description: "\"양쪽이 다 정수면 더한 것도 정수다\"처럼, 작은 조각이 어떤 종류의 값인지(타입) 알면 그 조각들로 만든 식의 타입도 알 수 있다는 약속을 하나씩 적어 둔 것이다. 가로선을 긋고 위에 \"이것들을 알면\", 아래에 \"이것을 안다\"를 쓴다. 컴파일러는 이 약속을 식의 맨 안쪽부터 바깥…"

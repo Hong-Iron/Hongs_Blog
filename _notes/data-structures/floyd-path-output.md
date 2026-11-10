@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Floyd Path Output", "kay", "kay matrix", "outputPath", "플로이드 경로 복원", "모든 쌍 최단 경로 출력", "Path Reconstruction"]
 description: "모든 도시 쌍의 가장 짧은 거리표를 채우는 방법은 거리만 알려 주고, 어느 도시들을 거쳐 가는지는 알려 주지 않는다. 그래서 거리표의 칸을 더 작은 값으로 고칠 때마다 \"어느 도시를 거쳐서 줄었는지\"를 옆 표에 적어 둔다. 길을 알고 싶으면 그 표에 적힌 도시에서 길을 두 토막으로…"

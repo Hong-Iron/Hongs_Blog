@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Neurodevelopmental Disorders", "발달장애", "운동장애", "Motor Disorders"]
 description: "뇌가 자라는 과정이 늦어지거나 손상되어 어린 시절부터 나타나는 장애들이다. 전반적인 지적 능력, 말과 언어, 사회적 소통, 주의와 활동 조절, 학습, 운동 가운데 어디가 걸렸느냐에 따라 나뉜다. 결함은 한 영역에 좁게 머물기도 하고 전반에 걸치기도 한다. 한 아이가 여러 장애를 함…"

@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Gram-Schmidt", "그람-슈미트", "그람-슈미트 직교화", "Gram–Schmidt process", "QR Decomposition", "QR 분해", "정규직교 기저", "orthonormal basis", "직교 행렬", "orthogonal matrix", "수정 그람-슈미트", "modified Gram–Schmidt"]
 description: "기울어진 기저를 서로 수직이고 길이가 1인 기저(정규직교 기저)로 바로 세우는 절차다. 벡터를 하나씩 보면서, 이미 세운 방향들로의 그림자(사영)를 빼고 남은 부분을 길이 1로 맞춘다. 정규직교 기저에서는 좌표가 내적 한 번으로 나오고 역행렬이 필요 없어서, 최소제곱을 정규방정식보…"

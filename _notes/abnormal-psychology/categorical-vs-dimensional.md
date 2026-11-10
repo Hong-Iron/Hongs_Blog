@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["범주적 분류 vs 차원적 분류", "Categorical vs Dimensional Classification", "범주적 분류", "categorical classification", "차원적 분류", "dimensional classification", "혼합 모델", "hybrid model"]
 description: "범주적 분류는 \"우울증인가, 아닌가?\"를 묻고, 차원적 분류는 \"얼마나 심한가?\"를 묻는다. 예를 들어 MBTI를 16가지 유형 중 하나로 부르는 것이 범주적 분류, \"얼마나 내향적인가?\"를 점수로 재는 것이 차원적 분류다. 둘을 가르는 질문은 \"정상과 이상이 질적으로 다른가, 정…"

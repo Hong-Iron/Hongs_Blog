@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Time Invariance", "Time-Invariant System", "시불변 시스템", "시변 시스템", "Time-Varying System", "시간 불변"]
 description: "시불변 시스템은 오늘 실험하든 내일 실험하든 결과가 같다. 같은 입력을 2초 늦게 넣으면 출력도 모양 그대로 2초 늦게 나온다. 회로의 저항과 축전기 값이 시간에 따라 바뀌지 않으면 시불변이다. 식 안에 입력과 별도로 시간 t나 n이 직접 곱해져 있거나, 시간축을 늘이고 줄이는 연…"

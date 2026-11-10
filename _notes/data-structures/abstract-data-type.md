@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Abstract Data Type", "ADT", "추상 데이터 타입", "추상 자료형", "인터페이스와 구현", "사전", "Dictionary ADT", "객체와 연산"]
 description: "자판기는 버튼과 나오는 물건만 약속하고, 속에서 캔을 어떻게 쌓아 두는지는 밖에서 알 필요가 없다. 추상 자료형은 이처럼 자료에 무엇을 할 수 있는지만 정하고, 속에서 어떻게 하는지는 정하지 않은 것이다. 그래서 속을 배열에서 다른 구조로 바꿔도 쓰는 쪽 코드는 그대로다. 다만 할…"

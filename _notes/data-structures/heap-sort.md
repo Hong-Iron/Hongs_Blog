@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Heap Sort", "Heapsort", "힙 정렬", "우선순위 큐 정렬", "Priority Queue Sort", "힙 만들기", "Heap Initialization", "heapify", "siftDown"]
 description: "정렬할 값들을 \"가장 큰 것부터 꺼내 주는 통\"에 모두 넣었다가 하나씩 꺼내 뒤에서부터 채우면 정렬이 된다. 그 통을 힙으로 만들면 넣기와 꺼내기가 층수만큼만 걸려서, 값이 많아져도 걸리는 시간이 값 수의 제곱으로 불어나지 않는다. 힙 정렬은 여기서 한 걸음 더 나가, 통을 따로 …"

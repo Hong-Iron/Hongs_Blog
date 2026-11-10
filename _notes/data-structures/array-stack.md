@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Array Stack", "배열 스택", "top", "push", "pop", "IsEmpty", "IsFull", "StackFull", "StackEmpty", "MAX_STACK_SIZE", "스택 넘침", "Stack Overflow"]
 description: "포개 쌓은 컵 더미를 배열 한 줄에 옮겨 놓고, 맨 위 컵이 몇 번 칸에 있는지만 숫자 하나로 기억한다. 넣기와 꺼내기는 그 숫자를 1 올리거나 내리는 일이라 한 번에 끝난다. 다만 배열의 칸 수가 정해져 있어서, 가득 찼을 때 프로그램을 멈출지 더 큰 배열로 옮길지 미리 정해야 …"

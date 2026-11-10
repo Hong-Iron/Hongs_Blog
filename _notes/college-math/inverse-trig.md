@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Inverse Trigonometric Functions", "아크사인", "arcsin", "asin", "아크코사인", "arccos", "acos", "아크탄젠트", "arctan", "atan", "atan2", "주치", "principal value"]
 description: "역삼각함수는 삼각함수의 값을 보고 각을 되찾는 함수다. 사인은 한 바퀴 안에서도 같은 값을 두 번 내므로 그대로는 되돌릴 수 없고, 입력 범위를 반 바퀴로 잘라야 되돌릴 수 있다. 그래서 역삼각함수가 돌려주는 각은 가능한 답 가운데 하나뿐이다. 방향각을 구할 때는 어느 사분면인지 …"

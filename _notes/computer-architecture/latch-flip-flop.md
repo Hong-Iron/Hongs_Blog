@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Latch", "Flip-Flop", "SR 래치", "SR Latch", "D 래치", "D Latch", "투명 래치", "Transparent Latch", "D 플립플롭", "D Flip-Flop", "에지 트리거", "Edge-Triggered", "주종 플립플롭", "Master-Slave", "준비 시간", "Setup Time", "유지 시간", "Hold Time", "준안정 상태", "Metastability", "상태 소자", "State Element"]
 description: "비트 하나를 붙들고 있는 회로다. 작은 부품 두 개의 출력을 서로의 입력에 물려 놓으면, 한 번 들어온 값이 고리를 돌며 계속 남는다. 래치는 문이 열려 있는 동안 들어오는 값을 계속 따라가고, 문이 닫히면 마지막 값을 붙든다. 플립플롭은 박자가 오는 그 순간에 들어와 있던 값만 …"

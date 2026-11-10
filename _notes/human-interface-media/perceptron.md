@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Perceptron", "단층 퍼셉트론", "선형 분류기", "linear classifier", "퍼셉트론 학습 규칙", "XOR 문제", "다층 퍼셉트론", "MLP"]
 description: "여러 증거에 점수를 매겨 합한 뒤, 합이 기준을 넘으면 \"예\", 아니면 \"아니오\"라고 답하는 투표기다. 틀릴 때마다 점수 배분을 고쳐 스스로 배운다. 직선(평면) 하나로 두 무리를 가를 수 있는 문제라면 반드시 끝에 가서 다 맞히지만, XOR처럼 직선 하나로 못 가르는 문제는 아무…"

@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Throwing Exceptions", "throws", "throw", "예외 떠넘기기", "예외 전파", "Exception Propagation"]
 description: "사고를 그 자리에서 수습하지 않고 \"이 일을 시킨 쪽이 알아서 하라\"고 위로 넘기는 방법이다. 일을 맡은 쪽은 사고를 어떻게 수습할지 모를 때가 많고, 시킨 쪽이 더 잘 안다. 넘기려면 \"나는 이런 사고를 넘길 수 있다\"고 미리 밝혀 두어야 한다. 끝까지 아무도 받지 않으면 프로그…"

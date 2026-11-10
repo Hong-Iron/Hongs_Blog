@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Counting with Repetition", "중복조합", "combinations with repetition", "중복순열", "별과 막대", "stars and bars", "같은 것이 있는 순열", "permutations of a multiset", "다항계수", "multinomial coefficient", "부정방정식의 해"]
 description: "같은 종류를 여러 번 고를 수 있거나, 같은 글자가 여러 번 나오는 경우의 셈이다. 여러 종류에서 중복을 허용해 몇 개를 고르는 수는 \"별과 칸막이를 한 줄로 늘어놓는 수\"로 바꿔 센다. 같은 것이 섞인 줄 세우기는 전체 줄 세우기를 같은 것끼리 자리 바꾸는 수로 나눈다. 고르는 …"

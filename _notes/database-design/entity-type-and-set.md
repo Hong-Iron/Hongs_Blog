@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Entity Type", "Entity Set", "개체", "Entity", "속성", "Attribute", "엔티티 타입", "엔티티 집합", "Extension", "ER 모델", "Entity-Relationship Model"]
 description: "붕어빵 틀과 붕어빵의 차이다. \"직원이라면 이름, 나이, 급여를 적는다\"는 틀이 있고, 그 틀에 맞춰 지금 적혀 있는 직원 한 사람 한 사람의 모음이 있다. 틀은 한번 정하면 좀처럼 안 바뀌고, 모음은 직원이 들어오고 나갈 때마다 바뀐다. 둘을 같은 이름으로 부르기 때문에, 지금 …"

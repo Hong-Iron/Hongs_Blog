@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Operands", "MIPS 레지스터", "MIPS Registers", "$zero", "$t0", "$s0", "lw", "sw", "load word", "store word", "워드", "Word", "바이트 주소", "Byte Addressing", "워드 정렬", "Alignment", "빅 엔디언", "Big-Endian", "엔디언", "Endianness", "베이스 레지스터", "오프셋"]
 description: "목수는 창고에 쌓인 나무를 바로 자르지 않는다. 작업대에 올려놓고 자른 뒤 다시 창고에 넣는다. MIPS도 계산은 프로세서 안의 작은 칸 서른두 개에서만 하고, 메모리의 값은 꺼내 오는 명령과 넣어 두는 명령 둘로만 옮긴다. 칸이 가까이 있어 빠르지만 서른두 개뿐이라 변수가 많으면…"

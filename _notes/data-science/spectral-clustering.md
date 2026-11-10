@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Spectral Clustering", "스펙트럼 완화", "Spectral Relaxation", "그래프 라플라시안", "Graph Laplacian", "차수 행렬", "Degree Matrix", "피들러 벡터", "Fiedler Vector", "일반화 고유값 문제", "Generalized Eigenvalue Problem", "재귀 이분할", "Recursive Bi-partitioning"]
 description: "그래프를 가장 잘 자르는 방법을 모든 경우를 따져 찾기는 불가능하다. 그래서 \"각 점이 어느 쪽인가\"를 +1, −1 대신 아무 실수로 풀어 주면, 문제가 행렬의 고유벡터를 구하는 쉬운 문제로 바뀐다. 그래프의 연결을 담은 행렬(라플라시안)에서 둘째로 작은 고윳값의 고유벡터를 구해 …"

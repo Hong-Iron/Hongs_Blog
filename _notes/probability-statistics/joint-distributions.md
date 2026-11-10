@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Joint Distribution", "결합분포", "결합확률밀도", "joint density", "주변분포", "marginal distribution", "조건부 분포", "conditional distribution", "조건부 기댓값", "conditional expectation", "아담의 법칙", "Adam's law", "전체 기댓값의 법칙", "law of total expectation", "이브의 법칙", "Eve's law", "전체 분산의 법칙", "law of total variance"]
 description: "두 확률변수를 따로가 아니라 함께 보는 표가 결합분포다. 한쪽만 보고 싶으면 다른 쪽을 모두 더해 없애고(주변분포), 한쪽 값을 알 때 다른 쪽을 보려면 그 줄만 잘라 합이 1이 되게 다시 맞춘다(조건부 분포). 조건부 기댓값은 \"이것을 알 때 저것의 가장 좋은 예측\"이고, 그룹별…"

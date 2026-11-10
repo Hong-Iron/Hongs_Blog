@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Disk Scheduling", "탐색 시간", "Seek Time", "회전 지연", "Rotational Delay", "전송 시간", "Transfer Time", "접근 시간", "Access Time", "SSTF", "Shortest Service Time First", "SCAN", "엘리베이터 알고리즘", "Elevator Algorithm", "C-SCAN", "LOOK", "C-LOOK", "N-step-SCAN", "FSCAN"]
 description: "하드 디스크에서 데이터를 읽으려면 읽기 머리(헤드)를 원하는 트랙까지 팔로 옮겨야 하는데, 이 팔 움직임이 가장 느리다. 그래서 요청이 여러 개 쌓이면 어떤 순서로 처리하느냐에 따라 팔이 움직이는 거리가 크게 달라진다. 엘리베이터가 층 버튼이 눌린 순서가 아니라 한 방향으로 쭉 가…"

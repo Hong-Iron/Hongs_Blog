@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Trie", "Prefix Tree", "접두사 트리", "트라이 자료구조", "자동완성"]
 description: "두꺼운 사전 옆면의 ㄱ, ㄴ, ㄷ 색인 탭을 글자마다 계속 나눈 것과 같다. 단어를 첫 글자, 둘째 글자, … 순서로 갈래를 타며 저장해서, 앞부분이 같은 단어들은 같은 길을 함께 쓴다. 그래서 \"이 글자들로 시작하는 단어가 몇 개인가\"를 단어 수와 상관없이 글자 수만큼만 보고 답…"

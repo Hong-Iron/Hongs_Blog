@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-20"
+last_modified_at: "2026-10-20"
 status: "verified"
 aliases: ["Selective Repeat", "Selective-Repeat", "SR", "선택적 재전송", "개별 ACK", "Individual ACK", "선택적 ACK", "Selective ACK"]
 description: "연달아 보낸 프레임 중 오류가 난 프레임만 골라 다시 보낸다. 그러려면 받는 쪽은 순서가 어긋나게 먼저 온 프레임을 반드시 저장해 두고, 프레임마다 \"이 번호는 받았다\"는 답장을 따로 보내야 한다. 다시 보내는 양이 가장 적은 대신, 받는 쪽의 저장 공간과 답장 관리가 복잡하다."

@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Error Detection Methods Compared", "패리티 대 체크섬 대 CRC"]
 description: "패리티, 체크섬, CRC는 모두 데이터로 계산한 값을 덧붙여 오류를 찾는다. 셋을 가르는 것은 계산에 무엇을 쓰느냐(1의 개수 세기, 더하기, XOR 나누기)와, 그에 따라 어떤 오류를 놓치느냐다. 계산이 단순할수록 놓치는 오류가 많고, CRC는 계산이 복잡하지만 하드웨어로 하면 …"

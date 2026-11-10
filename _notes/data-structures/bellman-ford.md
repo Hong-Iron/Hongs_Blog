@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Bellman-Ford", "Bellman–Ford Algorithm", "벨만 포드", "벨만-포드", "음수 간선 최단 경로", "Single-Source Shortest Paths With General Weights"]
 description: "길마다 통행료가 붙는데 어떤 길은 돈을 돌려주기도 할 때, 출발점에서 모든 곳까지 가장 싸게 가는 값을 구한다. \"길을 한 구간만 써도 될 때\"의 답에서 시작해 써도 되는 구간 수를 하나씩 늘리며 표를 고쳐 가고, 구간을 장소 수보다 하나 적은 개수까지 허락하면 답이 나온다. 가까…"

@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Neuron Convergence", "수렴", "신경 수렴", "수렴 구조", "convergence"]
 description: "여러 수용기의 신호를 뉴런 하나로 모으는 배선이다. 깔때기로 빗물을 모으듯 약한 신호도 합쳐지면 발화 문턱을 넘기 쉬워진다. 대신 어느 수용기에서 온 신호인지 섞여 버려서 위치를 구별하는 힘(해상도)을 잃는다. 억제성 연결을 섞으면 단순한 합이 아니라 \"가운데만 자극받은 모양\"처럼…"

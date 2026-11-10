@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Confidence Interval", "신뢰구간", "구간추정", "interval estimation", "신뢰수준", "confidence level", "적중률", "coverage", "t분포", "Student's t distribution", "오차 한계", "margin of error"]
 description: "추정값 하나만 말하지 않고, \"참값은 아마 이 범위 안에 있다\"는 구간으로 불확실성을 함께 보고하는 방법이다. 표본이 많을수록 구간이 좁아지는데, 폭은 표본 수의 제곱근에 반비례한다. 95% 신뢰구간이란 같은 방법으로 구간을 여러 번 만들면 그중 95%가 참값을 담는다는 뜻이다. …"

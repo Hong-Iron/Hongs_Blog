@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Weak Entity Type", "약한 엔티티", "식별 관계", "Identifying Relationship", "소유 개체 타입", "Owner Entity Type", "식별 개체 타입", "Identifying Entity Type", "부분 키", "Partial Key", "DEPENDENT", "부양가족"]
 description: "아파트의 \"302호\"는 호수만으로는 어느 집인지 알 수 없고, 몇 동인지를 함께 대야 한다. 이렇게 자기 항목만으로는 서로 가려지지 않아서, 딸려 있는 주인을 함께 대야 가려지는 대상이 있다. 주인이 없으면 가려낼 길이 없으므로, 이런 대상은 반드시 주인 하나에 이어져 있어야 한다."

@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["MS-DOS Memory Map", "MS-DOS Memory Organization", "메모리 맵", "BIOS 데이터 영역", "BIOS Data Area", "VRAM", "640K", "Transient Program Area", "ROM BIOS"]
 description: "MS-DOS가 도는 옛 PC의 메모리는 1메가바이트짜리 건물 한 채다. 맨 아래층에는 \"무슨 일이 생기면 어디로 가라\"는 안내판이 있고, 그 위로 운영체제, 내 프로그램, 화면에 쓸 자리, 맨 꼭대기에 지울 수 없는 기본 프로그램이 층층이 놓인다. 층마다 주소가 정해져 있어서 어느…"

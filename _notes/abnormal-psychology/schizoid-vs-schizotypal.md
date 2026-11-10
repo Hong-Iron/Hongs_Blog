@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["Schizoid vs Schizotypal", "조현성 vs 조현형", "A군 성격장애 비교"]
 description: "이름이 한 글자 차이이고 둘 다 친구 없이 고립되어 있다. 가르는 질문은 \"관계에 관심이 없어서 혼자인가, 아니면 관계가 불안하고 생각과 지각이 기이한가\"다. 조현성은 \"없음\"(관심, 감정)의 장애이고, 조현형은 \"이상함\"(사고, 지각, 행동)의 장애다."

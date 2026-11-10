@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["ODD vs CD", "반항장애 vs 품행장애"]
 description: "두 장애 모두 어른과 부딪치고 규칙을 따르지 않는다. 가르는 질문은 \"어른에게 화내고 따지고 거부하는 데 그치는가, 사람과 동물을 해치고 재산을 부수고 훔치며 중대한 규칙을 어기는가\"다. 적대적 반항장애는 권위자와의 관계에서 드러나는 분노와 반항이고, 품행장애는 다른 사람의 기본 …"

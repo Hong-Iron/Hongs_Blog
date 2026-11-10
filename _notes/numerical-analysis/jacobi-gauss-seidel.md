@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Jacobi Method", "Gauss-Seidel Method", "반복법", "Iterative Method", "대각 우세", "Diagonal Dominance", "이완", "Relaxation", "SOR", "Successive Over-Relaxation", "과이완", "저이완"]
 description: "연립방정식을 한 번에 정확히 풀지 않고, 아무 값이나 넣어 놓고 \"식 하나씩 자기 변수에 대해 풀어서 고치기\"를 되풀이해 답에 다가간다. 야코비 방법은 지난 회차 값만 써서 모든 변수를 한꺼번에 고치고, 가우스-자이델 방법은 방금 고친 값을 바로 다음 식에 써서 더 빨리 다가간다.…"

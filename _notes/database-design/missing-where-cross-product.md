@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Missing WHERE Clause", "WHERE 절 생략", "카티션 곱", "카테시안 곱", "Cartesian Product", "Cross Product", "크로스 곱", "모든 조합"]
 description: "행을 고르는 조건을 적지 않으면 모든 행이 나오고, 표가 둘이면 한 표의 행 하나하나가 다른 표의 모든 행과 짝지어져 나온다. 학생 8명과 동아리 3개를 조건 없이 늘어놓으면 \"누가 어느 동아리인지\"가 아니라 있을 수 있는 24가지 짝이 전부 나오는 것과 같다. 오류가 나지 않아서…"

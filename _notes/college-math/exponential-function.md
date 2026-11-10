@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Exponential Function", "지수적 성장", "exponential growth", "지수적 감소", "exponential decay", "자연상수", "e", "오일러 수", "Euler's number", "자연지수함수", "exp", "연속 복리"]
 description: "종이를 반으로 접을 때마다 두께가 두 배가 되듯, 같은 간격마다 같은 비율로 곱해지는 양을 나타내는 함수다. 더하는 성장이 아니라 곱하는 성장이라, 처음에는 느려 보여도 결국 어떤 다항식보다 빨리 커진다. 비율이 1보다 크면 늘고 1보다 작으면 줄어든다. 곱하는 수는 양수이고 1이…"

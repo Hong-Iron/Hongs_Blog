@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Spherical Linear Interpolation", "Slerp", "선형 보간", "Lerp", "Linear Interpolation", "정규화 선형 보간", "Nlerp", "쌍선형 보간", "Bilinear Interpolation", "삼선형 보간", "Trilinear Interpolation"]
 description: "두 방향(단위 벡터나 회전 쿼터니언) 사이를 일정한 빠르기로 돌아가며 잇는 방법이다. 두 점을 직선으로 섞으면(선형 보간) 가운데가 짧아지고, 길이를 1로 되돌려도 처음과 끝에서 느리고 가운데서 빠르게 돈다. 구면 선형 보간은 사잇각을 시간에 정비례로 나눠 원호 위를 고른 빠르기로…"

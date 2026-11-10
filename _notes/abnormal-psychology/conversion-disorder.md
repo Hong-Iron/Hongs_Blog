@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Functional Neurological Symptom Disorder", "FND", "전환장애", "Conversion Disorder", "히스테리", "hysteria", "만족스러운 무관심", "la belle indifference", "안나 O", "Anna O", "장갑 마비", "glove anesthesia"]
 description: "다리가 마비되거나, 눈이 안 보이거나, 발작을 하는데 신경을 검사해 보면 그 증상을 설명할 손상이 없는 장애다. 옛 이름은 전환장애로, 억눌린 마음의 갈등이 몸의 증상으로 \"전환\"된다고 보았다. 환자가 일부러 꾸미는 것이 아니라는 점이 꾀병과 다르다. 증상이 심각한데도 환자가 이상…"

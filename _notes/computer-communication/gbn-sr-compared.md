@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-20"
+last_modified_at: "2026-10-20"
 status: "verified"
 aliases: ["Go-Back-N vs Selective Repeat", "GBN과 SR 비교", "오류 처리 정책 비교"]
 description: "둘 다 여러 프레임을 띄워 두고 각자 타이머로 지키는 슬라이딩 윈도우의 오류 처리 방법이다. 가르는 것은 받는 쪽의 답장이 무엇을 말하느냐다. \"여기까지 빠짐없이 받았다\"만 말하면 보내는 쪽은 그 뒤를 모두 다시 보내야 하고(Go-Back-N), \"이 번호를 받았다\"를 하나하나 말…"

@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Apriori vs ECLAT vs FP-Growth", "빈발 패턴 알고리즘 비교"]
 description: "세 방법은 같은 자료에서 같은 빈발 패턴을 찾는다. 다른 것은 지지도를 세는 방법과, 그 대가로 무엇을 많이 쓰느냐다. 고르는 질문은 둘이다. DB를 여러 번 훑을 여유가 있는가? 메모리에 무엇을 들고 있을 수 있는가?"

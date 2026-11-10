@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Center-surround Antagonism", "중심-주변", "길항 작용", "Antagonism", "수용장", "receptive field", "흥분성 중심", "억제성 주변"]
 description: "과녁 모양의 감지 구역을 가진 뉴런이다. 과녁 가운데에 자극이 오면 신나게 발화하고, 둘레에 오면 오히려 발화를 줄인다. 그래서 넓고 고른 자극에는 둔하고, 가운데와 둘레의 차이, 곧 경계나 작은 점에 민감하다. 가운데를 딱 채우는 크기의 자극에 가장 세게 반응한다."

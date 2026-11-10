@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["LPT", "Longest Processing Time first", "LPT Schedule", "Machine Scheduling", "기계 스케줄링", "최소 종료 시각 스케줄링", "Minimum Finish Time Scheduling", "휴리스틱", "Heuristic", "NP-hard"]
 description: "똑같은 기계 여러 대에 작업들을 나눠 맡겨 마지막 작업이 끝나는 시각을 앞당기려 할 때, 오래 걸리는 작업부터 골라 그때 가장 먼저 비는 기계에 맡기는 방법이다. 작업을 한 번 정렬하고 \"가장 먼저 비는 기계 찾기\"만 되풀이하면 되어 빠르다. 가장 좋은 일정을 늘 주지는 않지만, …"

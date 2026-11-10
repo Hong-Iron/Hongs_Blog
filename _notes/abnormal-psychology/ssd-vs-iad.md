@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["SSD vs IAD", "신체증상장애 vs 건강염려증"]
 description: "두 장애 모두 건강을 지나치게 걱정하고, 6개월 넘게 이어지며, 병원을 자주 찾는다. 가르는 질문은 \"괴로운 신체 증상이 실제로 있고 그것이 중심인가, 증상은 없거나 가벼운데 병에 걸렸다는 생각이 중심인가\"다. DSM-5가 예전의 건강염려증을 둘로 나누면서, 신체 증상이 뚜렷한 쪽…"

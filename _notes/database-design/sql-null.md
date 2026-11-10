@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["NULL", "널", "널 값", "IS NULL", "IS NOT NULL", "세 값 논리", "Three-valued Logic", "3값 논리", "UNKNOWN", "모름"]
 description: "표의 빈칸은 0이나 빈 글자가 아니라 \"값이 없다\"는 표시다. 아직 모르는 값일 수도 있고, 그 행에는 애초에 쓸 수 없는 값일 수도 있다. 무엇인지 모르는 값이라 다른 값과 같은지 다른지도 알 수 없어서, 빈칸끼리 견줘도 참이 되지 않는다. 그래서 빈칸인지 묻는 말이 따로 있고,…"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Persistent Depressive Disorder", "PDD", "기분저하증", "dysthymia", "만성 우울", "이중 우울증", "double depression"]
 description: "우울한 기분이 삽화처럼 왔다 가는 것이 아니라, 몇 년씩 바닥에 깔린 채 이어지는 장애다. 한 번의 폭우가 아니라 몇 년째 흐린 날씨와 같다. 하루하루의 증상은 주요우울장애보다 가벼울 수 있지만, 오래 가기 때문에 일·돈·관계가 더 크게 무너지고 치료도 더 어렵다. 기준은 성인 2…"

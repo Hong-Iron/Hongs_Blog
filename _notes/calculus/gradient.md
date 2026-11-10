@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Gradient", "그래디언트", "기울기 벡터", "경사", "nabla", "델", "Directional Derivative", "방향도함수", "미분 가능성", "differentiability", "가장 가파른 방향", "steepest ascent", "접평면", "tangent plane", "소벨 필터", "Sobel filter"]
 description: "편미분들을 한데 모은 화살표가 그래디언트다. 이 화살표는 산에서 가장 가파르게 오르는 방향을 가리키고, 그 길이가 그 방향의 기울기다. 다른 방향으로 갈 때의 기울기는 그 방향과 그래디언트의 내적으로 바로 계산되고, 그래디언트는 늘 등고선과 수직이다. 그래서 반대 방향으로 조금씩 …"

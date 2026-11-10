@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Lifetimes", "Lifetime", "수명 매개변수", "Lifetime Parameter", "수명 생략", "Lifetime Elision", "'static", "정적 수명", "impl Trait 캡처", "Precise Capturing", "use<..>", "E0106", "E0515", "E0597", "E0700"]
 description: "참조를 돌려주는 함수는 \"이 참조는 어느 입력에서 빌려 온 것이고, 그래서 그 입력이 살아 있는 동안만 쓸 수 있다\"고 시그니처에 적어야 한다. 그 꼬리표가 수명이다. 수명은 값을 더 오래 살게 하지 않는다. 부르는 쪽과 함수 안을 따로 검사할 수 있게 해 주는 약속일 뿐이다. 대…"

@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Linear Probing vs Chaining", "Open Addressing vs Chaining", "개방 주소법과 체이닝"]
 description: "둘 다 \"홈 버킷이 찼을 때 그 쌍을 어디에 두는가\"에 대한 답이다. 가르는 질문은 \"넘친 쌍을 표 안에 두는가, 표 밖에 매다는가\"다. 선형 탐사는 표 안의 다른 버킷에 두고, 체이닝은 버킷에 매단 목록에 둔다. 그 답이 표가 찼을 때의 빠르기, 지우기의 수고, 덤 공간을 함께 …"

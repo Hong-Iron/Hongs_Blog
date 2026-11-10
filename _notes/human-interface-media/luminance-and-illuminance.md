@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Luminance", "Illuminance", "휘도", "조도", "광도", "luminous intensity", "밝기", "brightness", "intensity", "대비", "contrast"]
 description: "조도는 무대에 쏟아지는 조명의 양이고, 휘도는 그 무대에서 관객 눈으로 되돌아오는 빛의 양이다. 같은 조명 아래서도 흰 종이와 검은 종이는 휘도가 다르다. 눈이 직접 받는 것은 휘도다. 그런데 조명이 바뀌어도 흰 종이는 계속 희게 보인다. 눈이 절대적인 밝기보다 주변과의 비(대비)…"

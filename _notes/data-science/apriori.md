@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Apriori", "아프리오리", "Apriori Algorithm", "아프리오리 성질", "Apriori Property", "후보 생성", "Candidate Generation", "결합 단계", "Join Step", "가지치기 단계", "Prune Step", "너비 우선 탐색", "수준별 탐색", "Level-wise Search"]
 description: "빈발 묶음을 작은 것부터 한 크기씩 키워 가며 찾는다. 핵심은 \"빈발 묶음의 일부는 반드시 빈발\"이라는 성질이다. 뒤집으면 일부라도 빈발이 아닌 묶음은 볼 필요가 없어서, 후보를 크게 줄인다. 대신 크기를 하나 키울 때마다 데이터 전체를 다시 훑어야 하고, 빈발 항목이 많으면 후보…"

@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cluster Analysis", "군집화", "Clustering", "군집", "Cluster", "비지도 학습", "Unsupervised Learning", "군집 내 유사도", "Intra-cluster Similarity", "군집 간 유사도", "Inter-cluster Similarity"]
 description: "정답 표시가 없는 자료를 비슷한 것끼리 몇 무리로 나누는 일이다. 좋은 무리는 안쪽끼리는 서로 닮고, 다른 무리와는 확실히 다르다. 고객을 취향별로 나누거나, 사진의 색을 몇 가지로 줄이는 데 쓴다. 다만 정답이 없어 \"잘 나눴다\"를 재는 기준부터 정해야 하고, 그 기준(거리, 확…"

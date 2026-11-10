@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Encapsulation", "포장", "헤더", "header", "머리말", "바디", "body", "페이로드", "payload", "역캡슐화", "decapsulation"]
 description: "편지를 봉투에 넣고, 그 봉투를 다시 택배 상자에 넣는 것처럼, 층마다 위에서 받은 데이터를 통째로 내용물로 삼고 앞에 자기 머리말(헤더)을 붙여 아래층에 넘긴다. 받는 쪽은 거꾸로 한 겹씩 벗긴다. 각 층은 내용물의 속을 들여다보지 않아도 되어서 층끼리 독립적이다. 대신 층마다 …"

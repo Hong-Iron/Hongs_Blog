@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Stability", "Stable System", "안정 시스템", "불안정 시스템", "Unstable System", "BIBO 안정", "Bounded-Input Bounded-Output", "유계 입력 유계 출력"]
 description: "안정 시스템은 작게 건드리면 작게 반응한다. 크기가 한계 안에 있는 입력을 넣으면 출력도 어떤 한계 안에 머문다(유계 입력 유계 출력, BIBO). 매달린 진자는 살짝 밀면 조금 흔들리다 돌아오니 안정적이고, 거꾸로 세운 진자는 살짝만 밀어도 넘어지니 불안정하다. 안정성은 \"어떤\"…"

@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Assertion", "CREATE ASSERTION", "주장", "단언", "일반 제약", "General Constraint", "SALARY_CONSTRAINT"]
 description: "표를 만들 때 걸어 두는 규칙은 행 하나나 표 하나만 본다. \"직원은 자기 부서의 부서장보다 급여를 많이 받을 수 없다\"처럼 여러 행과 여러 표를 함께 봐야 하는 규칙은 거기에 적을 자리가 없다. 주장은 이런 규칙을 \"규칙을 어기는 조합을 찾는 질의의 결과가 늘 비어 있어야 한다\"…"

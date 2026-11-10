@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Threads", "Send", "Sync", "thread::spawn", "thread::scope", "JoinHandle", "Scoped Threads", "데이터 경쟁", "Data Race", "Fearless Concurrency", "두려움 없는 동시성"]
 description: "여러 일꾼(스레드)이 한 작업실에서 동시에 일할 때, Rust는 각 물건에 \"다른 일꾼에게 넘겨도 되는가\", \"여럿이 함께 봐도 되는가\"라는 꼬리표를 붙여 두고 컴파일할 때 검사한다. 그래서 둘이 같은 칸을 잠금 없이 동시에 고치는 사고는 안전한 코드에서 아예 컴파일되지 않는다. …"

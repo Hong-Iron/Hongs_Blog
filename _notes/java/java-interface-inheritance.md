@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Implementing Multiple Interfaces", "Interface Inheritance", "다중 인터페이스 구현", "인터페이스 다중 상속", "부모 인터페이스", "자식 인터페이스"]
 description: "한 사람이 운전면허와 요리사 자격증을 함께 가질 수 있듯, 클래스 하나가 메서드 목록 여러 개를 한꺼번에 맡을 수 있다. 목록끼리도 물려받을 수 있어서, 작은 목록 둘을 합친 큰 목록을 만들 수 있다. 대신 맡은 목록에 적힌 것은 물려받은 것까지 하나도 빠짐없이 만들어야 한다. 그…"

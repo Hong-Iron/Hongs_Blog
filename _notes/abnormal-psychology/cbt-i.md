@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cognitive Behavioral Therapy for Insomnia", "CBT-I", "수면제한", "sleep restriction", "자극통제", "stimulus control", "수면 위생 교육", "sleep hygiene education", "이완훈련", "relaxation training", "수면일지", "sleep diary", "수면 효율", "sleep efficiency", "조건화된 각성", "conditioned arousal"]
 description: "침대와 잠 사이의 끊어진 연결을 다시 잇는 치료다. 오래 불면을 겪으면 침대가 \"뒤척이고 걱정하는 곳\"으로 학습되어, 눕기만 해도 정신이 또렷해진다. CBT-I는 침대에 있는 시간을 실제로 자는 시간만큼 줄이고, 침대에서는 잠만 자게 하고, 잠에 대한 걱정스러운 생각을 고친다. 처…"

@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["SLR Parsing Table", "SLR-parsing table", "ACTION 표", "GOTO 표", "ACTION table", "GOTO table", "파싱 표"]
 description: "파서가 걸음마다 할 고민을 미리 다 풀어서 표 한 장에 적어 둔 것이다. 줄은 \"지금 처지\", 칸은 \"다음에 보이는 것\"이고, 칸 안에는 읽고 넘어가라, 어느 규칙으로 묶어라, 받아들여라 가운데 하나가 적혀 있다. 파싱할 때는 생각 없이 표만 찾으면 되니 빠르고, 사람이 아니라 프…"

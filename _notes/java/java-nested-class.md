@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Nested Class", "Nested Declarations", "멤버 클래스", "Member Class", "인스턴스 멤버 클래스", "Instance Member Class", "내부 클래스", "Inner Class", "정적 멤버 클래스", "Static Member Class", "로컬 클래스", "Local Class", "바깥 클래스", "Outer Class", "중첩 인터페이스", "Nested Interface"]
 description: "어떤 클래스 안에서만 쓰는 작은 클래스를 그 클래스 안에 넣어 두는 것이다. 책상 서랍 속 필통처럼 주인과 붙어 다니고 밖에서는 잘 안 보여서 코드가 덜 어지럽다. 넣는 자리에 따라 만들 수 있는 때가 다르다. 주인 객체가 먼저 있어야 만들 수 있는 것, 주인 객체 없이도 만들 수…"

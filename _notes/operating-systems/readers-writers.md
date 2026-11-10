@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-07"
+last_modified_at: "2026-10-07"
 status: "verified"
 aliases: ["Readers-Writers Problem", "독자 우선", "Readers Have Priority", "저자 우선", "Writers Have Priority", "읽기-쓰기 잠금", "Read-Write Lock"]
 description: "도서관 열람실의 게시판을 생각하자. 읽기만 하는 사람은 여럿이 함께 봐도 괜찮다. 하지만 누가 게시물을 고치는 동안에는 아무도 읽거나 고치면 안 된다. 독자끼리는 함께, 저자는 혼자 들어가게 하면 단순한 상호 배제보다 훨씬 많은 사람이 동시에 일할 수 있다. 대신 독자를 너무 우대…"

@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["INSERT", "DELETE", "UPDATE", "INSERT INTO", "DELETE FROM", "삽입", "삭제", "수정", "갱신 명령", "Update Commands", "Basic Update Queries"]
 description: "표의 내용을 바꾸는 세 문장으로, 새 행을 넣고, 조건에 맞는 행을 지우고, 조건에 맞는 행의 값을 고친다. 장부에 한 줄을 새로 적고, 어떤 줄에 줄을 긋고, 어떤 줄의 숫자를 고쳐 적는 일과 같다. 지우기와 고치기는 조건에 맞는 모든 행에 한꺼번에 일어나서, 조건을 잘못 적으면…"

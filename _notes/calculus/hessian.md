@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Hessian", "헤세 행렬", "헤시안", "Hessian matrix", "2계 도함수 판정", "second derivative test", "임계점", "critical point", "안장점", "saddle point", "극소", "local minimum", "극대", "local maximum", "2차 근사", "quadratic approximation"]
 description: "기울기가 0인 곳(평지)은 산꼭대기일 수도, 골짜기 바닥일 수도, 말안장처럼 한쪽으로는 오르고 다른 쪽으로는 내리는 곳일 수도 있다. 2계 편미분을 모은 헤세 행렬이 어느 쪽인지 알려 준다. 모든 방향으로 위로 휘면(양의 정부호) 바닥, 모든 방향으로 아래로 휘면 꼭대기, 방향에 …"

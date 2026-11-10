@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Insertion Sort", "끼워 넣기 정렬", "비교 횟수", "Comparison Count"]
 description: "카드 놀이에서 손에 든 패를 정리할 때처럼, 앞쪽 패는 이미 차례대로 놓여 있다고 보고 새 패를 한 장씩 제자리에 끼워 넣는다. 코드가 짧고 덤 공간이 필요 없으며, 거의 정리된 자료라면 패마다 한두 번만 견주고 끝난다. 대신 거꾸로 놓인 자료에서는 새 패마다 앞의 패를 모두 밀어…"

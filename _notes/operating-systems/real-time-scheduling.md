@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Real-Time Scheduling", "마감 시간 스케줄링", "Deadline Scheduling", "가장 이른 마감 우선", "Earliest Deadline First", "EDF", "비율 단조 스케줄링", "Rate Monotonic Scheduling", "RMS", "정적 테이블 기반", "정적 우선순위 기반", "동적 계획 기반", "동적 최선 노력", "시작 마감", "Starting Deadline", "완료 마감", "Completion Deadline"]
 description: "실시간 작업은 빨리 끝나는 것이 아니라 마감 전에 끝나는 것이 목표다. 그래서 \"중요한 작업 먼저\"라는 고정된 우선순위보다 \"마감이 가장 가까운 작업 먼저\"가 더 많은 마감을 지킨다. 숙제 여러 개를 과목 중요도가 아니라 제출 기한 순으로 하는 것과 같다. 대신 마감 정보를 미리 …"

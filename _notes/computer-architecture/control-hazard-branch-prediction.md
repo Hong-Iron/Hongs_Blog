@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Control Hazard", "제어 해저드", "분기 해저드", "Branch Hazard", "분기 예측", "Branch Prediction", "플러시", "Flush", "정적 분기 예측", "Static Branch Prediction", "동적 분기 예측", "Dynamic Branch Prediction", "1비트 예측기", "2비트 예측기", "2-Bit Predictor", "분기 예측 버퍼", "Branch Prediction Buffer", "분기 이력표", "Branch History Table", "분기 목표 버퍼", "Branch Target Buffer", "예측 실패 손실", "Misprediction Penalty"]
 description: "갈림길에서 어느 쪽으로 갈지 아직 모르는데 차는 계속 들어온다. 멈춰서 기다리면 그때마다 시간을 잃으니, 한쪽으로 일단 보내 놓고 틀렸으면 그 차들을 되돌린다. 프로세서도 분기 명령의 결과가 나오기 전에 다음 명령어를 미리 가져와 흘리고, 잘못 가져왔으면 아무것도 고치기 전에 버린…"

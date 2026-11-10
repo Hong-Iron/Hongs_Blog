@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["INT Instruction", "Interrupt Vector Table", "IVT", "소프트웨어 인터럽트", "Software Interrupt", "인터럽트 핸들러", "Interrupt Handler", "인터럽트 서비스 루틴", "ISR", "IRET", "인터럽트 벡터"]
 description: "화면에 글자 찍기, 키보드 읽기 같은 일은 컴퓨터에 이미 만들어져 있는 코드가 하는데, 프로그램은 그 코드가 메모리 어디에 있는지 몰라도 된다. 단축 번호만 누르면 전화가 걸리는 것처럼, 번호를 말하면 프로세서가 메모리 맨 앞의 주소록에서 그 번호의 주소를 찾아 그리로 갔다가 일이…"

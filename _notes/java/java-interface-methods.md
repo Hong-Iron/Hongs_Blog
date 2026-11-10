@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Default Method", "Static Method", "Private Method", "Private Static Method", "디폴트 메서드", "인터페이스 정적 메서드", "인터페이스 private 메서드", "인터페이스의 메서드 종류"]
 description: "리모컨의 버튼 목록에 \"기본 동작이 이미 들어 있는 버튼\"을 넣을 수 있다. 기기가 따로 만들지 않아도 그 버튼은 돌아가고, 마음에 안 들면 기기가 자기 것으로 바꿔 끼운다. 건전지 갈기처럼 기기 없이 리모컨만으로 하는 일도 넣을 수 있고, 이런 버튼들이 속에서 함께 쓰는 부품은 …"

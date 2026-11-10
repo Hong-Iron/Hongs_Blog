@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Graph", "그래프", "정점", "vertex", "꼭짓점", "간선", "edge", "차수", "degree", "악수 정리", "handshake lemma", "인접행렬", "adjacency matrix", "인접 리스트", "adjacency list", "방향 그래프", "directed graph", "단순 그래프", "simple graph", "완전 그래프", "complete graph"]
 description: "지하철 노선도는 실제 거리와 모양을 버리고 \"어느 역이 어느 역과 이어져 있나\"만 남긴다. 그래프도 이렇게 대상은 점(정점)으로, 관계는 선(간선)으로만 그린 그림이다. 친구 관계, 웹 링크, 도로망, 회로, 의존성처럼 모양이 전혀 다른 문제를 같은 언어와 같은 알고리즘으로 다룬다…"

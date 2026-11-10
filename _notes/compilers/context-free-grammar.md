@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Context Free Grammar", "Context-Free Grammar", "CFG", "문맥 자유 언어", "Context-Free Language", "단말 기호", "Terminal", "비단말 기호", "Non-terminal", "시작 기호", "Start Symbol", "생성 규칙", "Production", "구문 분석기", "Syntax Analyzer", "Parser", "파서"]
 description: "프로그램의 문장이 올바른 모양인지 정하는 규칙 묶음이다. \"식은 식 더하기 식이다\"처럼 이름 하나를 더 작은 조각들로 바꿔 쓰는 규칙을 모아 두고, 그 규칙을 거듭 써서 만들 수 있는 것만 올바른 문장으로 친다. 규칙 안에서 자기 이름을 다시 쓸 수 있어서, 괄호 짝이나 겹겹이 든…"

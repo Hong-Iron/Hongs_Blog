@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Attribute Types", "데이터 객체", "Data Object", "속성", "Attribute", "특징", "Feature", "명목 속성", "Nominal", "범주형", "Categorical", "이진 속성", "Binary", "대칭 이진", "비대칭 이진", "순서 속성", "Ordinal", "수치 속성", "Numeric", "구간 척도", "Interval-scaled", "비율 척도", "Ratio-scaled"]
 description: "데이터의 한 줄(고객 한 명, 상품 하나)을 설명하는 칸 하나하나가 속성이다. 칸에 든 값으로 할 수 있는 계산은 속성의 종류마다 다르다. 이름표 같은 값은 같은지 다른지만 따질 수 있고, 순서가 있는 값은 크고 작음까지, 진짜 0이 있는 수만 \"두 배\"를 말할 수 있다. 종류를 …"

@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Linear Transformation", "선형변환", "일차변환", "linear map", "선형사상", "회전 행렬", "rotation matrix", "반사", "reflection", "사영", "projection", "전단", "shear", "늘이기", "scaling", "핵", "kernel", "상", "image"]
 description: "모눈종이를 돌리거나, 뒤집거나, 한쪽으로 기울이거나, 늘여도 모눈의 선들은 여전히 곧고, 평행하고, 같은 간격이다. 그리고 원점은 제자리에 있다. 이런 변환이 선형변환이고, 모두 행렬 하나로 쓸 수 있다. 그래서 이미지 회전, 3D 그래픽스의 좌표 변환, 데이터의 차원 축소가 모두…"

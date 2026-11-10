@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["2-D Convolution", "2차원 합성곱", "2차원 컨벌루션", "이동 창", "moving window", "커널", "kernel", "마스크", "필터", "평균 필터", "average filter", "가중 평균 필터", "미분 필터", "임펄스 합성곱"]
 description: "사진 위에 작은 숫자 판(커널)을 올려놓고, 겹친 칸끼리 곱해 더한 값을 판의 가운데 칸에 새로 적는다. 판을 한 칸씩 밀며 모든 픽셀에서 되풀이하면 새 사진이 나온다. 판의 숫자만 바꾸면 흐리게 하기, 윤곽 찾기, 옮기기를 모두 같은 방법으로 할 수 있다. 단, 엄밀한 합성곱은 …"

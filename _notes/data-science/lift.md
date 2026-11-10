@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Lift", "향상도", "흥미도 측정", "Interestingness Measure", "패턴 평가", "Pattern Evaluation", "상관 규칙", "Correlation Rule", "지지도-신뢰도 틀의 한계"]
 description: "\"A를 산 사람의 67%가 B도 산다\"는 말은 원래 B를 사는 사람이 75%라면 오히려 A가 B를 덜 사게 만든다는 뜻이다. 리프트는 A를 아는 것이 B의 확률을 몇 배로 끌어올리는지 잰다. 1보다 크면 함께 잘 나타나고, 1이면 서로 상관없고, 1보다 작으면 서로 피한다. 다만 …"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Attention-Deficit/Hyperactivity Disorder", "ADHD", "부주의", "inattention", "과잉행동", "hyperactivity", "충동성", "impulsivity", "복합형", "부주의 우세형", "과잉행동-충동성 우세형", "미세 두뇌기능 장애", "minimal brain dysfunction", "메틸페니데이트", "methylphenidate", "아토목세틴", "atomoxetine", "소리 내어 생각하기", "think aloud", "협동적 생활기술", "Collaborative Life Skills", "CLS"]
 description: "한 가지에 주의를 오래 붙잡아 두지 못하고(부주의), 가만히 있지 못하며 생각보다 행동이 먼저 나가는(과잉행동·충동성) 상태가 어릴 때부터 집과 학교처럼 여러 곳에서 나타나는 장애다. 게으르거나 버릇이 없어서가 아니라, 행동에 브레이크를 거는 뇌의 기능이 약한 것이다. 자라면서 뛰…"

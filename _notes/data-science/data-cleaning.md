@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Data Cleaning", "데이터 클리닝", "데이터 전처리", "Data Preprocessing", "데이터 품질", "Data Quality", "결측값", "Missing Value", "결측치", "잡음", "Noise", "비닝", "Binning", "구간화 평활", "Smoothing by Bin Means", "이상치", "Outlier"]
 description: "현실의 데이터는 빈칸이 있고, 잘못 잰 값이 섞이고, 서로 맞지 않는 값이 들어 있다. 분석 전에 빈칸을 채우고, 튀는 값을 다듬고, 맞지 않는 값을 바로잡는 일이 데이터 정제다. 쓰레기를 넣으면 쓰레기가 나오므로 결과의 질은 데이터의 질을 넘지 못한다. 다만 채우거나 다듬은 값은…"

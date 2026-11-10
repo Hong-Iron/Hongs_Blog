@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Least Squares", "최소제곱법", "최소자승법", "선형 회귀", "linear regression", "회귀 직선", "regression line", "곡선 맞추기", "curve fitting", "잔차", "residual", "오차 제곱합", "sum of squared errors", "정규방정식", "normal equations"]
 description: "측정값이 조금씩 흔들리면 모든 점을 정확히 지나는 직선은 없다. 최소제곱법은 각 점에서 직선까지의 세로 차이(잔차)를 제곱해 더한 값이 가장 작은 직선을 고른다. 식이 미지수보다 많아 풀 수 없는 연립방정식 대신, 우변을 풀 수 있는 곳(열공간)으로 사영한 방정식을 푸는 것과 같다…"

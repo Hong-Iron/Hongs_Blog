@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Structured Sparse Matrix", "구조적 희소 행렬", "대각 행렬", "Diagonal Matrix", "삼중대각 행렬", "Tridiagonal Matrix", "아래삼각 행렬", "하삼각 행렬", "Lower Triangular Matrix", "매핑 함수", "Mapping Function", "삼각 행렬 저장"]
 description: "0이 어디에 있는지가 모양으로 미리 정해진 표는 0을 저장할 필요가 없다. 0이 아닐 수 있는 칸만 한 줄로 이어 담고, 몇째 줄 몇째 칸이 그 줄의 어디에 있는지는 식 하나로 계산한다. 메모리가 줄고, 찾는 데 드는 시간은 계산 한 번 그대로다. 다만 식은 모양마다 따로 구해야 …"

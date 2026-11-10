@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Internetwork", "인터네트워킹", "internetworking", "네트워크들의 네트워크", "network of networks", "라우터", "router", "게이트웨이", "gateway"]
 description: "따로 만들어진 네트워크 여러 개를 다시 이어서 만든 더 큰 네트워크, 즉 \"네트워크들의 네트워크\"다. 학과 네트워크들을 잇고, 그것을 다시 통신사 네트워크에 잇는 식이다. 이미 있는 네트워크를 그대로 두고 규모를 얼마든지 키울 수 있다. 대신 네트워크마다 기술이 다를 수 있어서, …"

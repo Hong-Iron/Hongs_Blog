@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Ensemble Learning", "앙상블", "Ensemble", "약한 모델", "Weak Learner", "기본 모델", "Base Model", "투표", "Voting", "평균", "Averaging", "편향-분산 분해", "Bias-Variance Decomposition", "분산 감소"]
 description: "모델 하나를 고르는 대신 여러 모델의 예측을 평균 내거나 투표시킨다. 한 모델이 훈련 자료에 휘둘려 엉뚱하게 튀어도, 다른 모델들과 섞이면 튄 부분이 서로 상쇄되어 예측이 안정된다. 그래서 정확도가 오르고 과적합이 줄어든다. 단, 모델들이 서로 똑같이 틀리면 아무리 많이 모아도 소…"

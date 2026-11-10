@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Exponents", "Laws of Exponents", "지수법칙", "거듭제곱", "power", "밑", "base", "지수", "exponent", "유리수 지수", "거듭제곱근", "과학적 표기법", "scientific notation", "크기 어림", "order of magnitude"]
 description: "거듭제곱은 같은 수를 몇 번 곱했는지 적는 방법이다. 곱셈의 횟수를 세는 것이라서, 곱하면 횟수끼리 더해지고 거듭제곱을 다시 거듭제곱하면 횟수끼리 곱해진다. 0번, 음수 번, 분수 번 곱하기는 이 규칙이 계속 맞도록 뜻을 정한 것이다. 단, 음수를 분수 번 곱하면 규칙이 깨지므로 …"

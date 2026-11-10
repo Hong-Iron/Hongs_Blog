@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-11"
+last_modified_at: "2026-10-11"
 status: "verified"
 aliases: ["Library", "JAR", "Java Archive", "jar 파일", "클래스패스", "ClassPath", "classpath", "Build Path", "빌드 패스"]
 description: "남이 이미 만들어 둔 부품 상자를 내 프로그램에 끼워 쓰는 방법이다. 자바에서는 번역이 끝난 파일들을 압축 파일 하나로 묶어 건네고, 받는 쪽은 그 파일이 어디 있는지만 알려 주면 된다. 같은 상자를 여러 프로그램이 함께 쓸 수 있어 편하다. 단, 번역할 때와 실행할 때 두 번 모…"

@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Image Function", "이미지", "image", "단색 이미지", "컬러 이미지", "RGB", "윤곽선", "edge", "기울기", "gradient"]
 description: "흑백 사진은 종이 위 위치마다 밝기 숫자가 하나씩 적힌 지도다. 컬러 사진은 빨강·초록·파랑 세 장의 지도를 겹친 것이다. 이렇게 보면 사진은 위치를 넣으면 밝기를 돌려주는 함수가 되고, 윤곽선은 그 함수가 급하게 변하는 곳이다. 단, 세 장의 지도를 숫자로 더해 한 장으로 합치면…"

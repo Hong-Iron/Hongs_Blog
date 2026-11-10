@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Arithmetic and Logical Instructions", "add", "sub", "addi", "addu", "and", "or", "nor", "andi", "ori", "sll", "srl", "sra", "slt", "slti", "sltu", "lui", "즉시값", "Immediate", "부호 확장", "Sign Extension", "제로 확장", "Zero Extension", "set on less than"]
 description: "계산하는 명령은 모두 같은 꼴이다. 재료 둘을 받아 결과 하나를 칸에 적는다. 더하기, 빼기, 비트끼리 견주기, 비트를 옆으로 밀기, 어느 쪽이 작은지 묻기가 있고, 재료 하나를 칸 대신 명령에 직접 적은 작은 수로 바꾼 꼴도 있다. 꼴이 하나라 외우기 쉽고 회로도 단순하다. 대신…"

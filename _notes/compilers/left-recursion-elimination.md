@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Left Recursion", "좌재귀", "왼쪽 재귀", "Left Recursion Elimination", "좌재귀 제거", "Right Recursion", "우재귀", "간접 좌재귀", "Indirect Left Recursion"]
 description: "규칙의 맨 앞에서 자기 자신을 다시 부르는 문법은, 왼쪽부터 차례로 풀어 가며 읽는 프로그램을 제자리에서 끝없이 맴돌게 만든다. 입력을 한 글자도 읽지 않은 채 같은 규칙만 되풀이해 펼치기 때문이다. 자기 자신을 부르는 자리를 규칙의 맨 뒤로 옮기도록 문법을 바꿔 쓰면 고쳐진다. …"

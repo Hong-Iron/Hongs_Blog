@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["B-Tree-Search", "B-TREE-SEARCH", "B-트리 탐색", "여러 갈래 분기", "Multi-way Branching"]
 description: "두꺼운 사전의 옆면에 붙은 색인 딱지를 보고 펼칠 곳을 고르듯, 한 칸에 적힌 기준 값들과 견주어 어느 사잇길로 내려갈지 정하고 아래 칸에서 같은 일을 되풀이한다. 한 칸 내려갈 때마다 디스크를 한 번 읽으므로, 디스크를 읽는 횟수는 나무의 높이를 넘지 않는다. 칸 안의 값을 앞에…"

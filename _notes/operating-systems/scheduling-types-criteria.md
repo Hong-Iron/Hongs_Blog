@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Types of Processor Scheduling", "Scheduling Criteria", "장기 스케줄링", "Long-Term Scheduling", "중기 스케줄링", "Medium-Term Scheduling", "단기 스케줄링", "Short-Term Scheduling", "반환 시간", "Turnaround Time", "응답 시간", "Response Time", "처리량", "Throughput", "우선순위", "Priority", "에이징", "Aging"]
 description: "프로세서 스케줄링은 시간이 흐르는 동안 어느 프로세스에게 프로세서를 줄지 정하는 일이다. 결정의 주기에 따라 세 층이 있다. 새 작업을 시스템에 들일지(장기), 디스크로 내보낸 프로세스를 메모리로 다시 들일지(중기), 지금 준비된 프로세스 중 누구를 다음에 실행할지(단기)다. 좋은…"

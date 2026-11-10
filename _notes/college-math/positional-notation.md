@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Positional Notation", "진법", "radix", "기수법", "2진법", "binary", "8진법", "octal", "16진법", "hexadecimal", "자릿수", "비트 수", "bit length", "진법 변환"]
 description: "우리가 쓰는 수는 자리마다 10의 거듭제곱을 곱해 더한 것이고, 10 대신 2를 쓰면 컴퓨터의 2진법이 된다. 자리 하나를 늘릴 때마다 적을 수 있는 수가 밑의 배수로 늘어나므로, 어떤 수를 적는 데 드는 자릿수는 로그로 정해진다. 16진법은 2진수 네 자리를 한 글자로 줄여 쓴 …"

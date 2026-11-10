@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Trauma- and Stressor-Related Disorders", "외상", "trauma", "외상 및 스트레스 사건 관련 장애", "인간 외적 외상", "impersonal trauma", "대인관계적 외상", "interpersonal trauma", "애착 외상", "attachment trauma", "일회적 외상", "반복적 외상"]
 description: "외상은 바깥에서 닥친 충격적인 사건이 마음에 남긴 상처다. 이 범주의 장애들은 다른 정신장애와 달리 \"무슨 일이 있었는지\", 곧 원인 사건을 진단기준에 적는다. 같은 사건을 겪어도 누구는 곧 회복하고 누구는 장애로 이어지는데, 사건의 종류(자연재해, 폭력, 양육자에게 받은 상처)와…"

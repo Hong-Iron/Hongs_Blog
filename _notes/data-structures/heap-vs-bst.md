@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Max Heap vs Binary Search Tree", "Heap vs BST", "힙과 이진 탐색 트리"]
 description: "둘 다 \"값의 크기에 따라 자리를 정한 이진 트리\"라서 그림만 보면 헷갈린다. 가르는 질문은 \"크기를 어느 방향으로 맞춰 두었나\"다. 최대 힙은 위아래로만 맞춘다(부모가 자식보다 크거나 같다). 이진 탐색 트리는 좌우로 맞춘다(왼쪽은 작고 오른쪽은 크다). 이 차이 하나가 무엇을 …"

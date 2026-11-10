@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Relational Database Schema", "관계형 데이터베이스 스키마", "Database State", "데이터베이스 상태", "무결성 제약", "Integrity Constraints", "올바른 상태", "Valid State", "COMPANY 스키마", "COMPANY 데이터베이스"]
 description: "데이터베이스 하나는 표 여러 개와, 그 표들이 지켜야 할 규칙으로 되어 있다. 표의 틀과 규칙을 적은 것이 설계도이고, 어느 순간 표에 들어 있는 줄 전부가 그때의 모습이다. 규칙을 하나라도 어긴 모습은 올바르지 않은 것으로 친다. 이 문서 모음은 표 여섯 개, 줄 마흔다섯 개짜리…"

@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["DBMS Languages and Interfaces", "DBMS 언어", "데이터 정의어", "Data Definition Language", "DDL", "저장 정의어", "Storage Definition Language", "SDL", "뷰 정의어", "View Definition Language", "VDL", "데이터 조작어", "Data Manipulation Language", "DML", "절차적 DML", "Procedural DML", "비절차적 DML", "Non-procedural DML", "선언적 언어", "Declarative Language", "DBMS 인터페이스", "메뉴 기반 인터페이스", "서식 기반 인터페이스", "그래픽 사용자 인터페이스", "GUI", "자연어 인터페이스"]
 description: "데이터베이스를 관리하는 프로그램(DBMS)에 일을 시키는 말은 무엇을 시키느냐에 따라 갈린다. 표의 틀을 정하는 말, 디스크에 어떻게 둘지 정하는 말, 사용자마다 보여 줄 모습을 정하는 말이 있고, 틀이 선 뒤에 자료를 넣고 찾고 고치고 지우는 말이 따로 있다. 자료를 다루는 말은…"

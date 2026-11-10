@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Hypersomnolence Disorder", "과다수면", "hypersomnia", "과도한 주간 졸림", "excessive daytime sleepiness", "단면가", "short sleeper", "장면가", "long sleeper", "CBT-H", "수면 관성", "sleep inertia"]
 description: "밤에 일곱 시간 넘게 푹 잤는데도 낮 내내 졸려서, 하루에 몇 번씩 잠에 빠지거나 아홉 시간 넘게 자야 하는 장애다. 원래 잠이 많은 사람(장면가)은 충분히 자면 낮에 멀쩡하지만, 과다수면장애는 밤에 얼마나 잤는지와 상관없이 졸리다. 게으름으로 오해받기 쉽다. 치료는 졸림을 없애기…"

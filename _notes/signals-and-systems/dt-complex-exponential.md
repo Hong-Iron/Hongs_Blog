@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Discrete-Time Complex Exponential Signal", "이산 시간 정현파", "Discrete-Time Sinusoid", "이산 시간 주기성", "Periodicity of Discrete-Time Complex Exponentials", "기본 주파수", "Fundamental Frequency", "고조파 집합", "Harmonically Related Exponentials"]
 description: "이산 시간 복소 지수 e^{j\\omega0 n}은 원 위를 도는 점을 정수 시각에만 찍은 것이다. 한 번에 \\omega0만큼씩 건너뛰는데, \\omega0와 \\omega0 + 2\\pi는 한 바퀴 더 돌았을 뿐 같은 자리에 찍히므로 구별되지 않는다. 그래서 주파수는 -\\pi부터 \\pi…"

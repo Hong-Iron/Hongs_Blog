@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Eigenfunctions and Eigenvectors", "고유함수와 고유벡터", "고윳값 분해와 푸리에 해석", "Eigendecomposition and Fourier Analysis"]
 description: "행렬을 곱해도 방향이 그대로인 벡터가 고유벡터이고, LTI 시스템을 지나도 모양이 그대로인 신호가 고유함수다. 둘 다 \"입력을 이런 특별한 것들의 합으로 나누면, 복잡한 연산이 성분별 곱셈이 된다\"는 같은 생각이다. 그래서 푸리에 이론을 선형대수의 고윳값 분해 A = C\\Lambd…"

@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Subset Construction", "Powerset Construction", "멱집합 구성법", "NFA를 DFA로", "NFA to DFA", "엡실론 닫힘", "ε-closure", "epsilon closure", "결정화", "Determinization"]
 description: "갈림길이 많은 미로에서 분신 여럿을 따로따로 쫓는 대신, \"지금 분신들이 서 있는 칸의 모음\"을 쪽지 한 장에 적어 들고 다닌다고 하자. 글자를 하나 읽을 때마다 쪽지를 새 모음으로 고쳐 쓰면, 쪽지는 늘 한 장이다. 나올 수 있는 쪽지를 미리 다 찾아 쪽지마다 칸 하나로 삼으면 …"

@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Quaternion", "사원수", "해밀턴 곱", "Hamilton Product", "단위 쿼터니언", "Unit Quaternion", "켤레 쿼터니언", "Quaternion Conjugate"]
 description: "복소수 하나(\\cos\\theta + i\\sin\\theta)를 곱하면 평면에서 회전하듯, 숫자 네 개짜리 쿼터니언 하나로 3차원 회전을 나타낸다. 회전 축과 각을 그대로 담아 짐벌 잠금이 없고, 두 자세 사이를 공 표면을 따라 매끄럽게 이어 갈 수 있다. 대신 오일러 각보다 숫자를 …"

@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["DBMS Features", "DBMS의 기능", "DBMS의 장점", "중복 통제", "Controlling Redundancy", "중복", "Redundancy", "통제된 중복", "Controlled Redundancy", "불일치", "Inconsistency", "접근 제한", "Restricting Unauthorized Access", "무결성 제약", "Integrity Constraint", "백업과 복구", "Backup and Recovery", "DBMS를 쓰지 않을 때", "When Not to Use a DBMS"]
 description: "데이터베이스를 관리하는 프로그램(DBMS)은 장부를 맡아 주는 관리인과 같다. 같은 내용을 여러 군데 적다가 어긋나는 일을 막고, 볼 자격이 없는 사람을 막고, 사람마다 맞는 창구를 내주고, 규칙에 어긋나는 값을 돌려보내고, 사고가 나면 되돌려 준다. 이런 일을 프로그램마다 따로 …"

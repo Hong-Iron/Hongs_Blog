@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Continuity of Curves", "매개변수 연속성", "Parametric Continuity", "기하 연속성", "Geometric Continuity", "C0", "C1", "C2", "G1", "이음점", "Join Point"]
 description: "곡선 조각 두 개를 이을 때 \"얼마나 매끄럽게 이어졌나\"를 단계로 나눈다. 끊기지만 않으면 C^0, 이음점에서 속도(1계 도함수)까지 같으면 C^1, 가속도(2계 도함수)까지 같으면 C^2다. 방향만 같고 빠르기는 달라도 되는 G^1은 눈으로 보기에는 매끄럽다. 단계가 높을수록 매…"

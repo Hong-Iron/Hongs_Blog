@@ -11,6 +11,7 @@ course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["k-Nearest Neighbor Density Estimation", "kn-이웃 찾기", "k-이웃 찾기", "kn-nearest neighbor", "k-NN 밀도 추정", "k-최근접 이웃", "k-Nearest Neighbors", "최근접 이웃 규칙", "Nearest Neighbor Rule"]
 description: "알고 싶은 값에서 시작해, 가까운 자료가 정해 둔 개수만큼 잡힐 때까지 구간을 넓혀 가는 방법이다. 조금만 넓혀도 개수가 차면 그 근처에 자료가 빽빽하다는 뜻이고, 멀리까지 넓혀야 하면 드물다는 뜻이다. 구간의 크기가 자료가 몰린 정도에 저절로 맞춰지므로 텅 빈 구간이 생기지 않는…"

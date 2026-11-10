@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Gradient Descent", "경사 하강법", "경사하강법", "학습률", "learning rate", "스텝 크기", "step size", "하강 보조정리", "descent lemma", "L-매끄러움", "L-smooth", "모멘텀", "momentum", "헤비볼", "heavy ball", "확률적 경사 하강법", "SGD", "stochastic gradient descent"]
 description: "안개 낀 산에서 내려가는 사람처럼, 발밑의 경사만 보고 가장 가파르게 내려가는 쪽으로 한 걸음씩 옮긴다. 계산이 단순해서 변수가 수억 개인 신경망 학습에도 그대로 쓰인다. 성패는 걸음 크기(학습률)가 가른다. 너무 크면 골짜기를 건너뛰며 튀어 올라 발산하고, 너무 작으면 한없이 느…"

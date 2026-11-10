@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Iterators", "Iterator", "이터레이터", "next", "IntoIterator", "iter", "iter_mut", "into_iter", "어댑터", "Iterator Adapter", "소비 메서드", "Consuming Adapter", "collect", "FromIterator", "터보피시", "Turbofish", "게으른 계산", "Lazy Evaluation", "비용 없는 고수준 기능", "Zero-Cost Abstraction"]
 description: "목록의 원소를 하나씩 꺼내 주는 장치다. \"다음 것 줘\"라는 요청 하나만 만들어 두면, 거르기·바꾸기·짝짓기 같은 수십 가지 일을 줄줄이 이어 붙여 쓸 수 있다. 이어 붙이기만 해서는 아무 일도 일어나지 않고, 마지막에 결과를 모으거나 더할 때 비로소 원소가 하나씩 끝까지 흘러간다…"

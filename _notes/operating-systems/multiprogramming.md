@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Multiprogramming", "멀티프로그래밍", "다중 작업", "Multitasking", "단일 프로그래밍", "Uniprogramming", "다중 프로그래밍 배치 시스템", "Multiprogrammed Batch System", "프로세서 사용률", "CPU Utilization"]
 description: "다중 프로그래밍은 프로그램 여러 개를 메모리에 함께 올려 두고, 하나가 입출력을 기다리면 그사이 다른 하나를 실행하는 방식이다. 빨래가 돌아가는 동안 설거지를 하는 것과 같다. 입출력은 프로세서보다 훨씬 느려서, 프로그램 하나만 올리면 프로세서는 대부분의 시간을 기다리며 보낸다. …"

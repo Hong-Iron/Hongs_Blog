@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Social Anxiety Disorder", "사회공포증", "social phobia", "대인공포증", "가해 염려형 사회불안", "안전행동", "safety behavior", "자기초점적 주의", "self-focused attention", "클라크와 웰스", "Clark and Wells", "라피와 하임버그", "Rapee and Heimberg", "사후 반추", "post-event rumination", "긍정적 평가에 대한 두려움", "인지행동적 집단치료"]
 description: "남이 나를 지켜보거나 평가할 수 있는 자리에서, 창피당하거나 나쁘게 평가받을까 봐 심하게 두려워하고 그런 자리를 피하는 장애다. 발표, 낯선 사람과의 대화, 남 앞에서 밥 먹기가 모두 고통이 된다. 불안해서 쓰는 \"안전행동\"과 자기 모습에만 쏠리는 주의가 오히려 불안을 키우고 굳힌…"

@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Branch and Jump", "beq", "bne", "j", "조건 분기", "Conditional Branch", "무조건 점프", "Unconditional Jump", "라벨", "Label", "blt", "bge", "의사 명령", "Pseudoinstruction", "if 옮기기", "while 옮기기"]
 description: "명령은 적힌 순서대로 한 줄씩 실행된다. 이 순서를 바꾸는 명령이 셋 있다. 두 칸의 값이 같으면 다른 줄로 가는 것, 다르면 가는 것, 묻지 않고 가는 것이다. 이 셋만으로 갈림과 되풀이를 모두 만든다. 다만 \"같다\"와 \"다르다\"만 물을 수 있어서, \"작다\"를 물으려면 먼저 작은…"

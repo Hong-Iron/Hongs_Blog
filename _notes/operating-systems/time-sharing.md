@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Time Sharing", "시분할 시스템", "Time-Sharing System", "시간 할당", "Time Slicing", "CTSS", "Compatible Time-Sharing System"]
 description: "시분할은 프로세서 시간을 잘게 썰어 여러 사용자에게 번갈아 나눠 주는 방식이다. 한 선생님이 여러 학생의 질문을 몇 초씩 돌아가며 받아 주면, 학생마다 선생님을 혼자 쓰는 것처럼 느끼는 것과 같다. 배치 방식과 달리 사용자가 터미널 앞에서 명령을 치고 바로 답을 받는다. 대신 자주…"

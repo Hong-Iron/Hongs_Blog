@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Multiplexer", "Multiplexor", "Mux", "Decoder", "멀티플렉서", "먹스", "디코더", "해독기", "선택 신호", "Select Input", "원-핫", "One-hot"]
 description: "멀티플렉서는 여러 입력 가운데 하나를 골라 그대로 내보내는 회로다. 선로가 갈리는 곳에서 어느 선로의 기차를 보낼지 정하는 전환기와 같다. 디코더는 반대로, 번호를 받아 그 번호가 붙은 선 하나만 켠다. 번호를 누르면 그 층 버튼에만 불이 들어오는 엘리베이터와 같다. 둘 다 값을 …"

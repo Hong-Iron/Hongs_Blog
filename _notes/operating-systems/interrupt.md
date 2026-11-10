@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Interrupt", "인터럽트 처리기", "Interrupt Handler", "인터럽트 서비스 루틴", "ISR", "중첩 인터럽트", "Nested Interrupt"]
 description: "인터럽트는 \"다 됐어요\" 하고 어깨를 두드리는 신호다. 요리사가 오븐 앞에 서서 빵이 다 구워지기를 지켜보는 대신, 다른 요리를 하다가 타이머가 울리면 그때 오븐으로 간다. 덕분에 느린 장치를 기다리는 동안 프로세서가 놀지 않는다. 대신 언제 끊길지 모르므로, 끊긴 프로그램의 상태…"

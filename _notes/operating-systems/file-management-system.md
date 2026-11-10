@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Files", "File Management System", "필드", "Field", "레코드", "Record", "파일", "File", "데이터베이스", "Database", "접근 방법", "Access Method", "논리적 입출력", "기본 입출력 감독자", "Basic I/O Supervisor", "기본 파일 시스템", "Basic File System"]
 description: "파일은 컴퓨터가 꺼져도 남고, 여러 프로세스가 함께 쓸 수 있고, 안에 구조가 있는 이름 붙은 데이터 묶음이다. 파일 관리 시스템은 디스크의 블록과 섹터 같은 세부를 감추고 \"보고서.txt를 열어 읽는다\"처럼 이름과 단순한 명령으로 쓰게 해 준다. 덕분에 프로그래머는 파일 관리 소…"

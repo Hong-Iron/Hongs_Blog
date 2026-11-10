@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Configuration", "Config", "설정", "Secrets", "비밀값", "Secret", "Twelve-Factor App", "12-Factor", "환경 변수", "Environment Variable", "std::env::var", "Fail Fast", "빨리 실패하기", "secrecy", "SecretBox", "SecretString", "ExposeSecret", "REDACTED", "set_var"]
 description: "서버 주소, DB 주소, API 토큰처럼 배포할 때마다 바뀌는 값은 코드에 적지 않고 바깥(환경 변수)에서 받는다. 프로그램은 뜨자마자 이 값들을 한 번에 읽어 검사하고, 틀린 것이 있으면 일을 시작하기 전에 틀린 것을 모두 알려 주고 멈춘다. 비밀번호와 토큰은 출력하면 가려진 글…"

@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Properties of LTI Systems", "LTI 시스템의 기억", "LTI 시스템의 가역성", "LTI 시스템의 인과성", "LTI 시스템의 안정성", "절대 합 가능", "Absolutely Summable", "절대 적분 가능", "Absolutely Integrable", "역시스템", "Inverse System"]
 description: "LTI 시스템은 임펄스 응답 h 하나로 모든 것이 정해지므로, 1장에서 입력과 출력을 다 시험해야 했던 성질들을 h의 모양만 보고 판정할 수 있다. 0 밖에서 0이면 기억이 없고, 음의 시각에서 0이면 인과적이고, 크기를 모두 더한 값이 유한하면 안정이다. 역시스템은 컨벌루션해서 …"

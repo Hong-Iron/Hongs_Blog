@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Dijkstra", "Dijkstra's Algorithm", "데이크스트라", "다익스트라 알고리즘", "최단 경로", "가중치 최단 경로", "늦은 삭제"]
 description: "길마다 걸리는 시간이 다를 때, 출발점에서 가장 가까운 곳부터 하나씩 \"여기까지는 이 시간이 최소\"라고 확정해 나간다. 확정한 곳에서 이어진 길로 다른 곳까지의 시간을 줄여 두고, 아직 확정하지 않은 곳 중 가장 가까운 곳을 또 확정한다. 가장 가까운 곳은 힙으로 빨리 찾는다. 단…"

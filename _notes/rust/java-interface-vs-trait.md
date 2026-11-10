@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Java Interface vs Rust Trait", "인터페이스와 트레이트", "implements와 impl", "트레이트 업캐스팅", "Trait Upcasting"]
 description: "둘 다 \"이 버튼들을 빠짐없이 만들어 두겠다\"는 약속이다. 쓰는 쪽은 버튼 이름만 알고, 실제 동작은 약속을 지킨 타입이 정한다. 다른 점은 셋이다. 트레이트는 남이 만든 타입에도 나중에 붙일 수 있고, 함께 물려줄 필드가 아예 없으며, 기본으로는 실행 중이 아니라 컴파일할 때 어…"

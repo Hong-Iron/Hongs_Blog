@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Hermite Curve", "에르미트 보간", "Hermite Interpolation", "에르미트 기하 행렬", "Hermite Geometry Matrix", "접선 벡터", "Tangent Vector"]
 description: "점 네 개 대신 \"양 끝점 두 개와, 각 끝점에서 어느 방향으로 얼마나 빠르게 떠나는지(접선) 두 개\"로 3차 곡선을 정한다. 다음 조각이 같은 끝점에서 같은 접선으로 출발하게 하면 이음점이 꺾이지 않고 매끄럽게 이어진다. 대신 사용자가 접선 벡터를 직접 정해야 하는데, 점만 가지…"

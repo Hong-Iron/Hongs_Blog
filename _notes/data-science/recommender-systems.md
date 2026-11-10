@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Recommender System", "추천 시스템", "정보 과부하", "Information Overload", "내용 정보", "Content Information", "협업 정보", "Collaborative Information", "다양성", "Diversity", "공정성", "Fairness", "설명 가능성", "Explainability"]
 description: "쇼핑몰, OTT, 뉴스, SNS에는 고를 것이 너무 많다. 추천 시스템은 한 사람이 그동안 산 것·본 것을 보고 그 사람이 좋아할 만한 것 몇 개만 골라 보여 준다. 실마리는 두 가지다. 물건 자체의 내용(장르, 배우, 단어)과, 다른 사람들의 취향(나와 비슷한 사람이 좋아한 것)…"

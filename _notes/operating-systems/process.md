@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Process", "작업", "Job", "태스크", "Task", "실행 문맥", "Execution Context", "프로세스 상태", "Process State", "프로세스 목록", "Process List", "프로세스 전환", "Process Switch"]
 description: "프로세스는 실행 중인 프로그램이다. 프로그램이 요리책이라면 프로세스는 그 요리책으로 지금 요리하는 중인 상태다. 몇 쪽까지 했는지, 어떤 재료를 썰어 두었는지까지 포함한다. 운영체제는 이 \"어디까지 했나\" 기록(실행 문맥)을 따로 챙겨 두기 때문에, 여러 프로그램을 번갈아 돌려도 …"

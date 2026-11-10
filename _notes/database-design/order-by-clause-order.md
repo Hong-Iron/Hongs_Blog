@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["ORDER BY", "정렬", "ASC", "DESC", "오름차순", "내림차순", "절 순서", "Clause Order", "SELECT 문의 여섯 절", "논리적 처리 순서"]
 description: "질의의 결과는 줄 순서가 정해져 있지 않아서, 같은 질의도 제품이나 때에 따라 줄이 다른 순서로 나올 수 있다. 줄을 세우려면 \"무엇을 기준으로, 작은 것부터인지 큰 것부터인지\"를 질의 맨 끝에 따로 적는다. 기준을 여러 개 적으면 앞 기준이 같은 줄끼리만 다음 기준으로 다시 세운…"

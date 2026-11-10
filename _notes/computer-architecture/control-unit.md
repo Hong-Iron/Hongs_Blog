@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Control Unit", "제어 유닛", "제어 신호", "Control Signals", "주 제어", "Main Control", "ALU 제어", "ALU Control", "RegDst", "ALUSrc", "MemtoReg", "RegWrite", "MemRead", "MemWrite", "Branch", "ALUOp", "PCSrc", "돈 케어", "Don't Care"]
 description: "프로세서 안에서 값이 지나다니는 길이 선로라면, 제어 장치는 선로 전환기를 조작하는 신호소다. 열차(값)는 스스로 길을 고르지 못해서, 신호소가 명령어의 앞머리 몇 비트를 보고 갈림길마다 어느 쪽으로 보낼지, 어느 역에 짐을 내릴지를 정해 준다. 명령어 종류마다 스위치 묶음을 표 …"

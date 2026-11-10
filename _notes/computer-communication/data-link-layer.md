@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Data Link Layer", "데이터 링크", "링크 계층", "link layer", "데이터 링크 네트워크", "프레이밍", "framing", "비트 교환", "오류 검출", "error detection"]
 description: "데이터 링크 계층은 선 하나로 이어진 두 노드가 비트 묶음(프레임)을 주고받게 해 주는 층이다. 가장 단순한 네트워크인 점대점 연결에서 할 일이 여기서 모두 나온다. 비트를 신호로 바꿔 보내고, 비트를 묶음으로 끊어 경계를 알리고, 깨진 묶음을 찾아 복구해야 한다. 선 하나만 책임…"

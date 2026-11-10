@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["L'Hôpital's Rule", "로피탈 정리", "부정형", "indeterminate form", "증가 속도", "rate of growth", "함수의 증가 속도 비교", "expm1"]
 description: "분자와 분모가 함께 0으로 가거나 함께 한없이 커지는 극한은 모양만 보고는 값을 알 수 없다. 로피탈 정리는 이때 분자와 분모를 각각 미분한 비의 극한을 보면 된다고 알려 준다. 이것으로 \"로그는 어떤 거듭제곱보다도 느리고, 지수는 어떤 거듭제곱보다도 빠르다\"는 알고리즘 분석의 기…"

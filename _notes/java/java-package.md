@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Package", "Java Package", "package 선언", "import", "Import Statement", "전체 이름", "Fully Qualified Name"]
 description: "같은 반에 민수가 둘이면 \"김민수\", \"이민수\"처럼 성을 붙여 부른다. 클래스에도 성을 붙여서, 서로 다른 회사가 똑같은 이름으로 만든 클래스를 한 프로그램에서 함께 쓸 수 있다. 성은 폴더 구조와 짝이 맞아야 해서, 번역해 나온 파일을 다른 폴더로 옮기면 그 클래스를 찾지 못한다…"

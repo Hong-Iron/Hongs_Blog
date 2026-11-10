@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Deadlock", "교착상태의 네 조건", "Conditions for Deadlock", "상호 배제", "점유와 대기", "Hold and Wait", "비선점", "No Preemption", "순환 대기", "Circular Wait", "자원 할당 그래프", "Resource Allocation Graph", "재사용 자원", "소모성 자원", "타조 정책"]
 description: "신호등 없는 네거리에 네 방향 차가 동시에 들어와, 각자 앞 칸을 차지한 채 옆 차가 비켜 주기를 기다리면 아무도 움직이지 못한다. 프로세스들이 서로 상대가 쥔 자원을 기다리며 영원히 멈추는 것이 교착상태다. 네 가지 조건이 모두 맞을 때만 생기므로, 하나만 깨면 막을 수 있다. …"

@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Channel", "Channels", "mpsc", "std::sync::mpsc", "Sender", "SyncSender", "Receiver", "sync_channel", "메시지 전달", "Message Passing", "fan-in", "fan-out", "랑데부", "Rendezvous", "crossbeam-channel"]
 description: "채널은 스레드 사이에 놓인 우체통이다. 보내는 쪽이 값을 넣으면 그 값의 주인도 함께 넘어가서, 두 스레드가 같은 값을 동시에 만질 일이 처음부터 없다. 보내는 쪽은 여럿일 수 있지만 꺼내는 쪽은 하나뿐이고, 꺼내는 쪽은 보내는 쪽이 하나라도 남아 있으면 \"아직 더 올 수 있다\"고…"

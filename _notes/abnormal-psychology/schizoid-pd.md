@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["Schizoid Personality Disorder", "조현성", "분열성 성격장애"]
 description: "사람 사이의 온기에 원래 관심이 없는 사람이다. 혼자 하는 일을 고르고, 칭찬에도 비난에도 담담하며, 감정이 메말라 보인다. 사람이 두려워서 피하는 것이 아니라 필요를 느끼지 않는 것이라 본인은 크게 괴롭지 않을 수 있다. 대신 관계와 즐거움의 폭이 좁아 사회 적응이 어렵다."

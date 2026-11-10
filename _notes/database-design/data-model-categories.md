@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Categories of Data Models", "데이터 모델", "Data Model", "데이터 추상화", "Data Abstraction", "개념적 데이터 모델", "Conceptual Data Model", "고수준 데이터 모델", "High-level Data Model", "표현적 데이터 모델", "Representational Data Model", "구현 데이터 모델", "Implementation Data Model", "물리적 데이터 모델", "Physical Data Model", "저수준 데이터 모델", "Low-level Data Model", "접근 경로", "Access Path"]
 description: "\"학생이 과목을 듣는다\"는 같은 사실도 누구에게 보여 주느냐에 따라 다르게 적는다. 누구나 알아듣게 \"무엇이 있고 서로 어떻게 이어지나\"로 적는 방식, 표처럼 사용자도 이해하고 컴퓨터에도 바로 올릴 수 있게 적는 방식, 디스크에 어떤 모양과 순서로 놓이는지까지 적는 방식이 있다. …"

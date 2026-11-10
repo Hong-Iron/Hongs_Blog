@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Longitudinal Wave", "Transverse Wave", "종파", "횡파", "편광", "Polarization", "진동면", "파속", "wave speed"]
 description: "물결이 나아가는 방향과 물결이 흔들리는 방향이 같으면 종파, 서로 수직이면 횡파다. 소리는 공기가 앞뒤로 밀렸다 당겨지는 종파라서, 한 지점에서 시간에 따른 값 하나만 알면 된다. 빛은 횡파라서 나아가는 방향에 수직인 평면 안에서 어느 쪽으로든 흔들릴 수 있다. 그래서 빛을 적으려…"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Gender Dysphoria", "성정체감 장애", "Gender Identity Disorder", "성전환", "transition", "트랜스젠더", "transgender", "성역할 비순응", "gender nonconformity", "성발달장애", "Disorders of Sex Development", "관찰하며 기다리기", "watchful waiting", "탈전환자", "detransitioner"]
 description: "태어날 때 할당된 성별과 스스로 경험하고 표현하는 성별이 뚜렷하게 어긋나, 그 때문에 반년 넘게 괴롭거나 생활이 어려운 상태다. 진단의 초점은 정체성 자체가 아니라 불일치가 낳는 고통에 있다. 그래서 예전 이름 \"성정체감 장애\"를 바꿨다. 경험하는 성별이 꼭 반대 성별일 필요는 없…"

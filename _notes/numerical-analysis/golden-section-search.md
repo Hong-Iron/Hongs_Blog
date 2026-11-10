@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Golden Ratio Search", "Golden Section Search", "황금비 탐색", "구간 탐색", "Bracketing Search", "단봉 함수", "Unimodal Function", "황금비", "Golden Ratio"]
 description: "골짜기가 하나뿐인 함수에서 가장 낮은 곳을, 도함수 없이 함수 값 비교만으로 찾는다. 구간 안에 두 점을 찍어 더 높은 쪽 바깥을 잘라 내고, 남은 구간에서 되풀이한다. 두 점을 황금비 자리에 두면 남은 점 하나를 다음 회차에 그대로 다시 쓸 수 있어, 한 회차에 함수 계산이 한 …"

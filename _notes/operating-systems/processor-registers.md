@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Processor Registers", "레지스터", "프로그램 카운터", "명령어 레지스터", "PSW", "조건 코드", "Program Counter", "Instruction Register", "Program Status Word", "Condition Codes", "Flags"]
 description: "레지스터는 프로세서 안에 있는 아주 작고 아주 빠른 저장 칸이다. 일꾼이 손에 쥐고 있는 메모지와 같아서, 책상(주기억장치)까지 손을 뻗지 않고 바로 쓸 수 있다. 두 무리로 나뉜다. 하나는 프로그램이 직접 쓰는 칸이고, 다른 하나는 프로세서와 운영체제가 실행을 지휘하려고 쓰는 칸…"

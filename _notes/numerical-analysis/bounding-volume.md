@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Bounding Volume", "경계 상자", "Bounding Box", "축 정렬 경계 상자", "AABB", "Axis-Aligned Bounding Box", "방향 경계 상자", "OBB", "Oriented Bounding Box", "주성분 분석", "PCA"]
 description: "복잡한 물체 두 개가 부딪히는지 매번 정확히 계산하면 너무 느리다. 그래서 물체를 감싸는 단순한 상자(경계 볼륨)를 먼저 비교하고, 상자가 겹칠 때만 정밀하게 계산한다. 좌표축에 나란한 상자는 만들기 쉽지만, 비스듬히 긴 물체에서는 빈 공간이 많아 쓸데없이 자주 겹친다. 점들이 가…"

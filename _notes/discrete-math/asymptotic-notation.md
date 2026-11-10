@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Asymptotic Notation", "Big-O", "빅오", "대문자 O", "Big-Omega", "빅오메가", "Big-Theta", "빅세타", "little-o", "소문자 o", "little-omega", "시간 복잡도", "time complexity", "증가 차수", "order of growth"]
 description: "알고리즘의 비용을 \"입력이 커질 때 얼마나 빨리 커지는가\"로만 비교하려고, 상수배와 작은 항을 버린 표기다. O는 \"많아야 이 정도로\", Ω는 \"적어도 이 정도로\", Θ는 \"딱 이 정도로\" 자란다는 뜻이다. 그래서 컴퓨터가 몇 배 빠른지와 상관없이 알고리즘끼리 비교할 수 있다. 다…"

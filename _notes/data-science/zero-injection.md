@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Zero-Injection", "제로 인젝션", "관심 없는 아이템", "Uninteresting Item", "사용 전 선호", "Pre-use Preference", "사용 후 선호", "Post-use Preference", "희소성 문제", "Data Sparsity"]
 description: "평점표는 95% 넘게 비어 있다. 그런데 빈칸 중에는 \"관심이 없어서 아예 안 본\" 아이템이 많다. 0 주입은 먼저 사용자마다 각 아이템을 써 보기 전에 얼마나 끌렸을지(사용 전 선호)를 추정하고, 가장 끌리지 않았을 빈칸에만 0을 넣는다. 그러면 표가 빽빽해져 어떤 추천 방법이든…"

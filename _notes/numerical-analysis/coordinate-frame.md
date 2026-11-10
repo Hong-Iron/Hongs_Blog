@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Transformation of Coordinate System", "좌표계 바꾸기", "Change of Frame", "뷰 변환", "View Transformation", "로컬 좌표", "Local Coordinates", "월드 좌표", "World Coordinates"]
 description: "같은 점도 누가 어디서 보느냐에 따라 좌표가 다르다. 카메라가 오른쪽으로 걸어가면, 카메라가 보는 세상은 왼쪽으로 움직인다. 좌표계를 옮기거나 돌리는 것은 점을 거꾸로 옮기거나 돌리는 것과 같다. 그래서 새 좌표계에서의 좌표는 원점을 빼고, 새 축 방향으로 얼마나 가는지 재서 얻는…"

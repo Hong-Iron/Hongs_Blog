@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Body-Focused Repetitive Behavior", "BFRB", "습관 반전 훈련", "Habit Reversal Training", "HRT", "경쟁반응 훈련", "competing response", "자각 훈련", "awareness training", "수용 증진 행동치료", "Acceptance-Enhanced Behavior Therapy", "AEBT", "손톱 물어뜯기"]
 description: "털 뽑기, 피부 뜯기, 손톱 물어뜯기, 볼·입술 씹기처럼 자기 몸을 대상으로 거의 무의식적으로 되풀이하는 행동들이다. 몸의 어떤 감각이 긴장을 만들고, 행동을 하면 긴장이 풀리는 고리로 굴러간다. 강박장애가 \"불안한 생각 → 그 생각을 지우는 행동\"이라면, 이것은 \"감각 → 긴장 …"

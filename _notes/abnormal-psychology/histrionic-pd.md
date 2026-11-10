@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["Histrionic Personality Disorder", "연극성", "히스테리성 성격장애", "피암시성"]
 description: "늘 무대 위에 선 배우처럼 사는 사람이다. 관심의 중심에 있어야 편하고, 감정을 크게 과장해 표현하지만 그 감정은 금방 바뀌고 얕다. 외모와 유혹적인 태도로 주목을 끌고, 막 만난 사람과도 아주 친한 사이라고 느낀다. 다른 성격장애보다 치료실을 자주 찾지만, 치료자를 기쁘게 하려고…"

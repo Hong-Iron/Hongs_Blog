@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Intrusion Detection", "침입 탐지 시스템", "IDS", "Intrusion Detection System", "호스트 기반 IDS", "Host-Based IDS", "네트워크 기반 IDS", "Network-Based IDS", "이상 탐지", "Anomaly Detection", "시그니처 탐지", "Signature Detection", "임계값 탐지", "Threshold Detection", "프로필 기반 탐지", "감사 기록", "Audit Record"]
 description: "침입 탐지는 문을 잠그는 것(인증, 접근 제어)이 뚫렸을 때를 대비해, 시스템에서 일어나는 일을 지켜보다가 침입으로 보이면 경보를 울리는 일이다. 건물의 방범 카메라처럼, 평소와 다른 행동을 알아채거나(이상 탐지) 알려진 범죄 수법과 같은 행동을 찾아낸다(시그니처 탐지). 일찍 찾…"

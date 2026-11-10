@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Disruptive", "Impulse-Control", "and Conduct Disorders", "파괴적 충동조절 및 품행장애", "충동조절장애", "impulse control disorders"]
 description: "화가 나거나 하고 싶은 충동이 들 때 브레이크가 잘 듣지 않아, 남의 권리를 침해하거나 사회의 규칙을 어기는 장애들이다. 어른에게 반항하는 아이, 사소한 일에 폭발하는 사람, 남을 해치고 규칙을 어기는 청소년, 불을 지르거나 훔치고 싶은 충동을 참지 못하는 사람이 여기에 든다. 공…"

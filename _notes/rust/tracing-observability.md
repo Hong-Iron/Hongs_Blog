@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["tracing", "Tracing", "Observability", "관측", "Span", "스팬", "Event", "이벤트", "#[instrument]", "instrument", "Subscriber", "구독자", "EnvFilter", "RUST_LOG", "JSON 로그", "Structured Logging", "구조화 로그", "Request ID", "요청 ID", "OpenTelemetry", "tracing-opentelemetry", "FmtSpan"]
 description: "로그를 한 줄씩 따로 남기는 대신, \"이 요청을 처리하는 동안\"이라는 구간을 열고 그 안에서 찍은 줄마다 구간의 이름표를 저절로 붙인다. 그래서 요청 여러 개가 한 스레드에서 번갈아 돌아도, 줄마다 어느 요청 것인지 가려낼 수 있다. 대신 무엇을 이름표로 남길지는 사람이 정한다. …"

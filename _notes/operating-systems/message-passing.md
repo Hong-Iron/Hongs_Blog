@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Message Passing", "send", "receive", "랑데부", "Rendezvous", "블로킹", "Blocking", "논블로킹", "Nonblocking", "직접 주소 지정", "Direct Addressing", "간접 주소 지정", "Indirect Addressing", "메일박스", "Mailbox", "포트", "Port"]
 description: "메시지 전달은 프로세스들이 메모리를 함께 쓰지 않고, 편지를 주고받듯 send와 receive로 데이터를 넘기는 방법이다. 데이터를 넘기는 일(통신)과 순서를 맞추는 일(동기화)을 한 번에 한다. 메모리를 공유하지 않으므로 다른 컴퓨터 사이에서도 그대로 쓸 수 있다. 대신 데이터를…"

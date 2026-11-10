@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Logic Gates", "Combinational Logic", "Combinational Circuit", "조합 논리", "곱의 합", "Sum of Products", "SOP", "최소항", "전파 지연", "Propagation Delay", "오염 지연", "Contamination Delay", "임계 경로", "Critical Path"]
 description: "0과 1을 받아 0이나 1을 내놓는 작은 부품 몇 가지를 이으면, 표로 적을 수 있는 계산은 무엇이든 회로로 만들 수 있다. 자판기가 누른 버튼만 보고 음료를 내놓듯, 이런 회로의 출력은 지금 들어온 입력만으로 정해진다. 표에서 회로를 만드는 방법은 기계적이라 쉽지만, 그대로 만들…"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Factitious Disorder", "위병장애", "허위성장애", "스스로에게 부여한 인위성장애", "Factitious Disorder Imposed on Self", "타인에게 부여한 인위성장애", "Factitious Disorder Imposed on Another", "뮌하우젠 증후군", "Munchausen syndrome", "대리인에 의한 뮌하우젠 증후군", "Munchausen syndrome by proxy", "환자 역할", "sick role"]
 description: "병을 일부러 꾸미거나 만들어 내는데, 돈이나 휴가 같은 눈에 보이는 이득은 없는 장애다. 얻으려는 것은 \"환자가 되는 것\" 자체, 곧 보살핌과 관심을 받는 자리다. 이 점이 이득을 노리고 꾸미는 꾀병과 다르다. 자기 몸에 하기도 하고, 자기 아이처럼 돌보는 사람의 몸에 하기도 한다."

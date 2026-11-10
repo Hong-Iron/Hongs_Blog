@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["String Parsing", "Regular Expression", "파싱", "정규식", "정규 표현식", "regex", "re", "split", "토큰"]
 description: "글을 읽을 때 띄어쓰기와 문장부호로 단어를 나누듯, 파싱은 긴 문자열을 규칙에 따라 뜻 있는 조각으로 나누는 일이다. 나누는 기호가 정해져 있으면 그 기호로 자르고, 조각의 길이가 들쭉날쭉하면 글자를 하나씩 읽으며 모은다. 모양이 복잡하면 정규 표현식이라는 \"모양 설명서\"로 한 번…"

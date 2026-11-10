@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Recursion", "Backtracking", "재귀", "재귀 함수", "백트래킹", "기저 사례", "base case", "가지치기", "pruning", "호출 스택", "recursion limit"]
 description: "러시아 인형(마트료시카)을 열면 같은 모양의 더 작은 인형이 나오듯, 재귀는 문제 안에서 더 작은 같은 문제를 풀어 답을 만든다. 함수가 자기 자신을 부르고, 가장 작은 경우에서 멈춘다. 백트래킹은 재귀로 선택을 하나씩 쌓아 가다가, 막히면 마지막 선택을 되돌리고 다른 길로 가는 …"

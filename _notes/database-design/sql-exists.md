@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["EXISTS", "NOT EXISTS", "EXISTS 함수", "존재 검사", "상관 중첩 질의", "Correlated Nested Query", "상관 부질의", "Correlated Subquery", "UNIQUE 함수"]
 description: "직원마다 \"이 사람의 부양가족이 한 명이라도 있는가\"만 알고 싶을 때가 있다. 누구인지, 몇 명인지는 필요 없고 있다, 없다만 본다. 직원을 한 명씩 짚으면서 그 사람에게 딸린 행을 찾아보고, 하나라도 나오면 뽑는 것이 EXISTS이고 하나도 안 나와야 뽑는 것이 NOT EXIST…"

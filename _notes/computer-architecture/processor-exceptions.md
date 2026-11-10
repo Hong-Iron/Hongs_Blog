@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Exceptions", "예외", "Exception", "인터럽트", "Interrupt", "EPC", "Exception Program Counter", "Cause 레지스터", "Cause Register", "예외 처리기", "Exception Handler", "산술 넘침", "Arithmetic Overflow", "정의되지 않은 명령어", "Undefined Instruction", "정밀한 예외", "Precise Exception"]
 description: "명령어를 실행하다가 계속할 수 없는 일이 생기면, 프로세서는 하던 일을 멈추고 미리 정해 둔 주소로 건너가 운영체제에 맡긴다. 계산대 직원이 처리할 수 없는 일이 생기면 그 손님에서 멈추고 어디까지 했는지 적어 둔 뒤 매니저를 부르는 것과 같다. 이때 문제를 일으킨 명령어가 어디 …"

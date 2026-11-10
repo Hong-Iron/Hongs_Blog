@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Bipolar Disorder", "조울병", "manic-depressive illness", "제1형 양극성장애", "bipolar I disorder", "제2형 양극성장애", "bipolar II disorder", "조증 삽화", "manic episode", "경조증 삽화", "hypomanic episode", "사고비약", "flight of ideas", "기분안정제", "mood stabilizer", "리튬", "lithium", "항경련제", "대인관계 및 사회적 리듬 치료", "IPSRT", "사회적 리듬 차트"]
 description: "기분이 비정상적으로 들뜨는 시기(조증·경조증)와 가라앉는 시기(우울)가 번갈아 오는 병으로, 흔히 조울병이라 부른다. 들뜬 시기에는 잠을 안 자도 기운이 넘치고 말과 계획이 쏟아지다가, 무리한 소비나 투자로 생활을 무너뜨리기도 한다. 재발이 매우 잦아서 약이 우선이자 필수이고, 규…"

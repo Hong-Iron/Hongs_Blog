@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Runtime Memory Layout", "Memory Layout", "메모리 배치", "메모리 레이아웃", "코드 영역", "Code Segment", "정적 할당", "Static Allocation", "전역 데이터 영역", "스택 영역", "힙 영역", "Heap", "동적 할당", "Dynamic Allocation", "malloc", "free"]
 description: "공책 한 권을 두 과목이 같이 쓸 때, 한 과목은 앞장부터 쓰고 다른 과목은 뒷장부터 거꾸로 쓰면 어느 쪽이 얼마나 쓸지 미리 정하지 않아도 가운데 빈 장을 끝까지 나눠 쓴다. 프로그램이 받은 메모리도 이렇게 쓴다. 맨 아래에는 명령들과, 프로그램 내내 자리가 바뀌지 않는 값을 둔…"

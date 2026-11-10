@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Edge Detection", "Image Smoothing", "경계 검출", "에지 검출", "평활화", "Smoothing", "영상 기울기", "Image Gradient", "유한 차분", "Finite Difference", "평균 필터", "Mean Filter", "상자 필터", "Box Filter", "가우시안 필터", "Gaussian Filter", "컨벌루션의 미분 정리", "Derivative Theorem of Convolution", "PSNR", "Peak Signal-to-Noise Ratio", "신호 대 잡음비", "SNR"]
 description: "사진에서 물체의 테두리(경계)는 밝기가 갑자기 바뀌는 곳이다. 그래서 밝기를 위치로 미분하면 경계에서 값이 크게 튀어 경계를 찾을 수 있다. 문제는 미분이 높은 주파수를 키우는 필터라 잡음까지 키운다는 것이다. 그래서 먼저 주변 화소와 평균 내어 잡음을 줄이고(평활화, 저역 통과)…"

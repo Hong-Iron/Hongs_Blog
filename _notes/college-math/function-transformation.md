@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Transformation of Functions", "평행이동", "대칭이동", "확대", "축소", "합성함수", "Composition of Functions", "composite function"]
 description: "그래프를 통째로 옮기고, 늘이고, 뒤집는 조작과, 한 함수의 출력을 다른 함수의 입력으로 넣는 합성이다. 출력 쪽을 바꾸면 그래프가 바꾼 대로 움직이지만, 입력 쪽을 바꾸면 거꾸로 움직이는 것처럼 보인다. 합성은 양말과 신발처럼 순서를 바꾸면 결과가 달라진다."

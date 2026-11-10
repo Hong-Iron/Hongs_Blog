@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["User-Level Thread", "Kernel-Level Thread", "ULT", "KLT", "사용자 수준 스레드", "커널 수준 스레드", "커널 지원 스레드", "결합 방식", "Combined Approach", "경량 프로세스", "LWP"]
 description: "스레드를 누가 관리하느냐에 따라 두 방식이 있다. 사용자 수준 스레드는 프로그램 안의 라이브러리가 관리하고, 커널은 스레드가 있는 줄도 모른다. 반장이 조원들 순서를 알아서 정하고 선생님은 조 단위로만 보는 셈이다. 커널을 거치지 않으니 스레드를 바꾸는 일이 빠르다. 하지만 한 스…"

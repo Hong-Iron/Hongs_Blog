@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Poisson Distribution", "포아송 분포", "푸아송 분포", "포아송 근사", "Poisson approximation", "소수의 법칙", "law of rare events", "도착률", "arrival rate", "과대산포", "overdispersion"]
 description: "넓은 시간이나 공간에 드문드문 흩어져 일어나는 일이, 정해진 구간에 몇 번 일어나는지의 분포다. 1초 동안 서버에 오는 요청 수, 한 페이지의 오타 수가 예다. 평균 하나로 모양이 정해지고, 평균과 분산이 같다. 시도는 아주 많고 각각의 확률은 아주 작은 이항분포의 극한이라 계산이…"

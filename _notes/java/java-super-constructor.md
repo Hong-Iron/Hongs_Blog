@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Parent Constructor Invocation", "super()", "super", "부모 생성자", "생성자 연쇄", "Constructor Chaining"]
 description: "2층을 올리려면 1층이 먼저 서 있어야 한다. 자식 객체를 만들 때도 부모에게서 물려받은 부분이 먼저 채워지고, 그다음에 자식이 보탠 부분이 채워진다. 이 순서는 따로 적지 않아도 저절로 지켜진다. 자식의 처음 값 채우는 코드 맨 앞에 \"부모 것부터 채워라\"라는 한 줄이 보이지 않…"

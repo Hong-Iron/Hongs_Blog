@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Positive Definite Matrix", "양의 정부호", "양정치", "positive definite", "양의 준정부호", "positive semidefinite", "PSD", "이차형식", "quadratic form", "에너지", "실베스터 판정", "Sylvester's criterion", "숄레스키 분해", "Cholesky decomposition"]
 description: "대칭행렬로 만든 이차식(이차형식)이 원점을 뺀 모든 곳에서 양수이면 그 행렬은 양의 정부호다. 그래프로 그리면 어느 방향으로 가도 올라가는 그릇 모양이라, 바닥(최솟점)이 딱 하나 있다. 최적화의 \"극소 판정\", 공분산 행렬, 최소제곱에 나오는 행렬이 모두 이 성질을 가진다. 판정…"

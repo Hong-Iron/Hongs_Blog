@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Genito-Pelvic Pain/Penetration Disorder", "GPPPD", "성기-골반 통증/삽입장애", "성교통", "dyspareunia", "질경련", "vaginismus"]
 description: "삽입할 때 아프거나, 아플까 봐 몹시 두렵거나, 삽입하려 하면 골반 근육이 저절로 조여서 삽입이 어려운 상태가 반년 넘게 이어지는 장애다. 통증, 통증에 대한 두려움, 근육의 긴장이 서로를 키우는 공포 반응과 비슷하다. 성적 관심이 있어도 상황을 피하고, 부인과 검진까지 피하기도 …"

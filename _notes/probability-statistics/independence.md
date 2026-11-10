@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Independence", "독립", "독립 사건", "independent events", "상호 독립", "mutual independence", "쌍마다 독립", "pairwise independence", "공통 원인 고장", "common-cause failure"]
 description: "한 사건이 일어났다는 소식이 다른 사건의 확률을 조금도 바꾸지 않으면 두 사건은 독립이다. 그러면 둘이 함께 일어날 확률은 각 확률의 곱이 되어 계산이 아주 쉬워진다. 서버 여러 대, 패킷 여러 개의 확률 모델은 거의 다 이 가정 위에 서 있다. 하지만 같은 전원, 같은 소프트웨어…"

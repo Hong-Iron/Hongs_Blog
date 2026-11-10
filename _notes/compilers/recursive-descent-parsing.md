@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Recursive Descent Parsing", "Recursive Descent", "재귀 하강 파서", "재귀적 하강 파싱", "Top-down Parsing", "하향식 파싱", "LL 파싱", "Backtracking Parser"]
 description: "문법의 시작 이름에서 출발해, 규칙을 적힌 순서대로 하나씩 시험하며 입력과 맞춰 보는 가장 단순한 읽기 방법이다. 미로에서 갈림길마다 첫 길부터 들어가 보고 막히면 갈림길로 돌아와 다음 길로 가는 것과 같다. 이해하기 쉽고 손으로 짜기도 쉽다. 대신 막힐 때마다 이미 읽은 곳을 다…"

@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Types of Attributes", "복합 속성", "Composite Attribute", "단순 속성", "Simple Attribute", "Atomic Attribute", "단일값 속성", "Single-valued Attribute", "다치 속성", "Multivalued Attribute", "저장 속성", "Stored Attribute", "유도 속성", "Derived Attribute"]
 description: "주소는 도로명, 도시, 우편번호로 쪼갤 수 있고, 전화번호는 한 사람이 여러 개 가질 수 있고, 나이는 생일만 알면 계산된다. 대상에 적는 항목은 이렇게 \"더 쪼갤 수 있는가\", \"값이 여럿일 수 있는가\", \"저장하는가 계산하는가\"의 세 물음으로 가른다. 어느 쪽인지에 따라 나중에…"

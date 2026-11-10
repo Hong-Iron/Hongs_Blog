@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Mapping of Binary M:N Relationship Types", "Mapping of N-ary Relationship Types", "M:N 관계 타입의 사상", "다대다 관계 사상", "n항 관계 타입의 사상", "삼항 관계 사상", "관계 릴레이션", "Relationship Relation", "WORKS_ON", "SUPPLY"]
 description: "직원 한 명이 여러 프로젝트에서 일하고, 프로젝트 하나에 직원이 여럿 붙는다. 이런 연결은 어느 쪽 표에 칸을 더해도 한 칸에 여러 값이 필요해서 적을 수 없다. 그래서 \"직원, 프로젝트\" 짝 하나를 한 줄로 적는 표를 따로 만들고, 두 값을 묶은 것을 대표 값으로 삼고, 일한 시…"

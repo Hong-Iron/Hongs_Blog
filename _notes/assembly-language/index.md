@@ -10,6 +10,7 @@ track_sub: "컴퓨터 시스템"
 concepts: 56
 practices: 11
 codes: 63
+last_modified_at: "2026-10-15"
 description: "어셈블리어 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Obsessive-Compulsive Disorder", "OCD", "강박증", "강박사고", "obsession", "강박행동", "compulsion", "외현적 강박행동", "내현적 강박행동", "순수한 강박사고형", "청결행동", "확인행동", "반복행동", "정리정돈행동", "수집행동", "지연행동", "기저핵", "basal ganglia", "강박 및 관련 장애"]
 description: "원치 않는 생각이나 장면(강박사고)이 머릿속에 자꾸 끼어들어 불안해지고, 그 불안을 잠재우려고 씻기·확인하기·숫자 세기 같은 행동(강박행동)을 되풀이하는 장애다. 행동을 하면 잠깐 편해지지만, 그 안도감이 행동을 굳혀 다음에 더 많이 하게 된다. 본인도 대개 지나치다는 것을 알지만…"

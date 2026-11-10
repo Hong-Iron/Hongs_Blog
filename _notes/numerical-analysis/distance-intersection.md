@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Distance and Intersection", "점과 직선의 거리", "Point-Line Distance", "두 직선 사이의 거리", "Line-Line Distance", "점과 평면의 거리", "Point-Plane Distance", "평면의 교선", "Plane-Plane Intersection", "꼬인 위치", "Skew Lines"]
 description: "3차원 공간에서 \"얼마나 떨어져 있나\"와 \"어디서 만나나\"를 재는 공식 모음이다. 점과 직선의 거리는 직선 방향 그림자를 빼고 남은 수직 부분의 길이이고, 두 직선의 거리는 두 직선 위 점 사이 거리를 가장 작게 만드는 위치에서 잰다. 평면과의 계산은 법선과의 내적 하나로 거리와 …"

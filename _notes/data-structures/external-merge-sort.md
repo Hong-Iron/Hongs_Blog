@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["External Merge Sort", "External Sorting", "외부 정렬", "런", "Run", "런 만들기", "Run Generation", "런 합치기", "Run Merging", "병합 패스", "Merge Pass", "내부 정렬", "Internal Sort"]
 description: "창고에 책이 만 권 있는데 작업 책상에는 한 번에 오백 권만 올릴 수 있을 때 쓰는 정리법이다. 책상에 올릴 수 있는 만큼씩 가져와 정리해서 묶음으로 창고에 돌려놓고, 그 묶음들을 둘씩 합치기를 한 묶음이 남을 때까지 되풀이한다. 창고를 오가는 걸음이 책상 위에서 손을 놀리는 일보…"

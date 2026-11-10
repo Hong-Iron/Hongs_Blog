@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Statistical Multiplexing", "통계적 시분할 다중화", "statistical TDM", "비동기식 시분할 다중화", "asynchronous TDM", "통계적 이득", "오버헤드", "overhead"]
 description: "식당이 예약석을 따로 비워 두지 않고 온 손님 순서대로 빈자리에 앉히듯, 칸을 미리 나눠 주지 않고 보낼 데이터가 있는 사용자에게만 그때그때 링크를 내주는 방법이다. 쉬는 사람 몫이 비지 않으니 같은 링크로 훨씬 많은 사용자를 받는다. 대신 조각마다 누구 것인지 적은 이름표를 붙여…"

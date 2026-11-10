@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Fibonacci Search", "피보나치 수", "Fibonacci Numbers", "구별 상수", "Distinguishability Constant"]
 description: "황금분할 탐색처럼 단봉 함수의 최솟값 구간을 두 점 비교로 좁히되, 남기는 비율을 회차마다 피보나치 수의 비로 바꾼다. 원하는 정확도에서 회차 수를 미리 정하고, 그 회차 안에 정확히 끝나도록 비율을 맞춘다. 마지막 회차에서는 두 점이 겹치므로 아주 작은 값만큼 벌려 놓는다. 같은…"

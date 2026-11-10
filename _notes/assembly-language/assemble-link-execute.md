@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Assemble-Link-Execute Cycle", "어셈블 링크 실행 사이클", "원본 파일", "Source File", "목적 파일", "Object File", "리스팅 파일", "Listing File", "링커", "Linker", "링크 라이브러리", "Link Library", "실행 파일", "Executable File", "맵 파일", "Map File", "로더", "OS Loader"]
 description: "글자로 쓴 어셈블리어 파일은 그대로는 돌지 않는다. 원고가 책이 되려면 조판하고, 다른 원고와 묶어 제본하고, 독자의 손에 가야 하듯이, 프로그램도 기계어로 바꾸고, 남이 만들어 둔 코드와 합치고, 메모리에 올리는 세 걸음을 거친다. 걸음을 나눠 둔 덕에 남의 코드를 다시 번역하지…"

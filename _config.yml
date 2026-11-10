@@ -7,6 +7,7 @@ description: >-
   프로젝트, 지식 DB, 나의 팡세를 한곳에 모읍니다.
 author: "Hong-Iron"
 lang: ko
+locale: ko_KR   # og:locale (jekyll-seo-tag); English pages set locale: en_US
 email: "hongcheolmin004@gmail.com"
 
 # GitHub Pages project-site URL. Repo is "Hongs_Blog" (not "<user>.github.io"),
@@ -161,6 +162,7 @@ defaults:
     values:
       layout: project
       lang: en   # project write-ups are in English
+      locale: en_US
   - scope:
       path: ""
       type: notes

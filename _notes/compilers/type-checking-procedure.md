@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Type Checking Procedure", "Implementation of Type Checking", "Well-formedness Rules", "WF 규칙", "의미에 맞게 짜인 문장", "Semantically Well-formed Statement", "타입 검사기", "Type Checker"]
 description: "조립 설명서를 검수할 때 작은 부품부터 확인하고, 그 부품들로 만든 덩어리를 확인하고, 마지막에 전체를 확인하는 것과 같다. 컴파일러는 프로그램을 나무 모양으로 펼쳐 놓고 잎에서 뿌리로 올라가며 식에는 \"정수\", \"참·거짓\" 같은 값의 종류(타입)를, 문장에는 \"의미에 맞게 짜였다…"

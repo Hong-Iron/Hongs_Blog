@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Discretization", "데이터 이산화", "구간화", "같은 폭 칸 나누기", "Equal-width Binning", "같은 개수 칸 나누기", "Equal-frequency Binning", "개념 계층", "Concept Hierarchy"]
 description: "나이 23, 37, 61 같은 숫자를 \"20대\", \"30대\" 또는 \"청년\", \"장년\" 같은 구간 이름으로 바꾸는 일이다. 값의 가짓수가 줄어 패턴을 찾기 쉽고 결과를 사람이 읽기 쉬워진다. 구간끼리는 다시 묶어 \"싸다/보통/비싸다\" 같은 더 큰 구간으로 올라갈 수 있다. 대신 같은…"

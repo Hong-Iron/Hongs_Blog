@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["NATURAL JOIN", "Natural Join", "자연 조인", "내추럴 조인", "조인 속성 이름 바꾸기"]
 description: "두 표에 이름이 같은 열이 있으면 \"그 열끼리 값이 같은 행을 잇는다\"는 말을 생략할 수 있다. 맞출 조건을 적지 않아도 이름이 같은 열을 모두 찾아 맞춰 주고, 결과에는 그 열이 한 번만 나온다. 편하지만 이름에만 기대므로, 뜻이 같은 열의 이름이 다르면 먼저 이름을 맞춰 줘야 …"

@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Subproblem Graph", "부분 문제 그래프", "상태 그래프", "DP 계산 순서", "표 채우는 순서", "DAG 위의 DP", "DP on DAG", "선형 확장과 DP"]
 description: "표를 채워 답을 구하는 방법(동적 계획법)에서 칸들은 \"이 칸을 구하려면 저 칸이 먼저 있어야 한다\"는 관계로 이어진다. 이 관계를 화살표로 그리면, 표를 채우는 올바른 순서는 화살표가 모두 앞에서 뒤로 가게 칸을 한 줄로 세운 것(위상 정렬)과 같다. 그래서 어떤 순서가 맞는지는…"

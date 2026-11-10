@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Integration by Parts", "부분적분", "부분 적분법", "표 방법", "tabular method", "LIATE", "감마 함수", "Gamma function"]
 description: "곱의 미분 법칙을 거꾸로 쓰는 기법이다. 두 함수의 곱을 적분할 때, 한쪽은 미분하고 다른 쪽은 적분해 더 쉬운 적분으로 바꾼다. 다항식 × 지수함수, 다항식 × 삼각함수, 로그처럼 치환이 통하지 않는 곱에 쓴다. 어느 쪽을 미분할지 잘못 고르면 식이 오히려 복잡해지므로, 미분할수…"

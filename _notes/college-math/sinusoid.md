@@ -10,6 +10,7 @@ course_slug: "college-math"
 course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Sinusoid", "Sine Wave", "정현파", "진폭", "amplitude", "주파수", "frequency", "주기", "period", "위상", "phase", "각주파수", "angular frequency", "에일리어싱", "aliasing", "표본화", "sampling"]
 description: "사인파는 \"얼마나 크게, 1초에 몇 번, 언제부터\" 흔들리는지 세 수로 정해지는 가장 순수한 진동이다. 소리의 크기와 음정, 전파의 반송파, 교류 전기가 모두 이 모양이다. 같은 빠르기의 사인파끼리 더하면 여전히 같은 빠르기의 사인파가 되어 다루기 쉽다. 다만 실제 소리와 신호는 …"

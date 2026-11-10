@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["View Update Problem", "View Update", "뷰 갱신", "갱신 가능한 뷰", "Updatable View", "WITH CHECK OPTION", "INSTEAD OF 트리거", "뷰 갱신의 모호성"]
 description: "뷰는 원래 표를 가공해 보여 주는 창이라서, 창에 대고 \"이 줄을 고쳐라\"고 하면 데이터베이스가 그 말을 원래 표를 고치는 말로 바꿔야 한다. 표 하나에서 행과 열만 골라 보여 주는 뷰는 바꿀 길이 하나뿐이라 고칠 수 있다. 여러 표를 이어 붙인 뷰는 바꿀 길이 여럿이고, 개수나 …"

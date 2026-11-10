@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Sex-Related Disorders", "성과 관련된 장애", "생물학적 성", "sex", "사회적 성", "gender", "젠더"]
 description: "성(性)은 두 가지를 뜻한다. 몸의 특징으로 나누는 생물학적 성(sex)과, 사회와 문화가 만든 역할·정체성·표현으로서의 사회적 성(gender)이다. 성 관련 장애는 세 무리로 나뉜다. 성적으로 반응하고 즐거움을 느끼는 능력의 문제(성기능부전), 성적 흥분의 대상이나 방식이 남을…"

@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Available Expression Analysis", "Available Expressions", "사용 가능한 식", "가용 식", "가용 식 분석", "전방 분석", "Forward Analysis"]
 description: "계산을 하면서 옆에 \"지금 믿어도 되는 등식\" 메모를 들고 다니는 것이다. 한 줄을 지날 때마다 그 줄이 값을 바꾼 변수가 들어간 메모는 지우고, 그 줄이 새로 만든 등식을 적는다. 다음 줄에서 메모에 이미 있는 계산을 또 하려 하면 메모의 결과를 가져다 쓰게 고친다. 위에서 아래…"

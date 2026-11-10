@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Metamerism", "메타머리즘", "메타머", "metamer", "조건등색쌍", "점묘법", "pointillism", "가법 혼색"]
 description: "재료가 다른 두 요리가 혀에는 같은 맛으로 느껴지는 것과 같다. 스펙트럼이 전혀 다른 두 빛도 세 추상체에 같은 반응을 만들면 똑같은 색으로 보인다. 덕분에 모니터는 빛 세 가지로 수많은 색을 흉내 낸다. 반대로, 가게 조명에서 같아 보이던 두 옷감이 햇빛 아래서 달라 보이는 문제…"

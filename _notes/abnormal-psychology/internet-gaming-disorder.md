@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Internet Gaming Disorder", "IGD", "게임 중독", "게임 장애", "gaming disorder", "I-PACE 모델", "Interaction of Person-Affect-Cognition-Execution", "CBT-IA", "인터넷 중독", "Internet Addiction"]
 description: "온라인 게임에 몰두해 스스로 조절하지 못하고, 그 때문에 학업, 일, 관계가 무너지는 상태다. 게임을 못 하게 하면 짜증과 불안이 오고(금단), 점점 더 오래 해야 만족하는(내성) 등 도박장애와 구조가 닮았다. 다만 DSM-5-TR에서는 아직 정식 진단이 아니라 \"추가 연구가 필요…"

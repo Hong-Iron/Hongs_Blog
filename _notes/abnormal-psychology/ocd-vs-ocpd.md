@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["OCD vs OCPD", "강박장애 vs 강박성 성격장애"]
 description: "이름에 \"강박\"이 똑같이 들어가고 함께 나타나는 경우도 있지만, 다른 장애다. 가르는 질문은 \"원치 않는 생각이 침입해 불안을 없애려고 반복 행동을 하는가, 아니면 완벽과 통제를 추구하는 방식이 성격 전반에 자연스럽게 배어 있는가\"다. 강박장애에는 강박사고와 강박행동이 있고, 강박…"

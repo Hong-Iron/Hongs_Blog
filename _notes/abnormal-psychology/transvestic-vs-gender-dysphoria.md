@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
+last_modified_at: "2026-09-27"
 status: "verified"
 aliases: ["Transvestic Disorder vs Gender Dysphoria", "복장도착 vs 성별 불쾌감", "옷 바꿔 입기의 두 의미"]
 description: "두 경우 모두 다른 성별의 옷을 입을 수 있어 겉으로는 비슷해 보인다. 가르는 질문은 \"옷을 바꿔 입는 것이 성적 흥분의 수단인가, 경험하는 성별로 살고 싶은 정체성의 표현인가\"다. 복장도착장애는 성도착장애의 하나이고, 성별 불쾌감은 할당된 성별과 경험하는 성별의 불일치로 인한 고…"

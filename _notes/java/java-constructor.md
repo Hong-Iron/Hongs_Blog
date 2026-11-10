@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Constructor", "기본 생성자", "Default Constructor", "생성자 오버로딩", "Constructor Overloading", "this", "new 연산자"]
 description: "새 공책을 사면 첫 장에 이름부터 적는다. 객체를 새로 만들 때 이렇게 처음 값을 채워 넣는 코드가 따로 있다. 이 코드 덕분에 이름이 비어 있는 학생 같은 덜 만들어진 객체가 돌아다니지 않는다. 이 코드를 하나도 쓰지 않으면 아무 일도 하지 않는 빈 것이 저절로 하나 붙는다. 단…"

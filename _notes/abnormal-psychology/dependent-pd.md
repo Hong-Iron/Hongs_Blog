@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Dependent Personality Disorder", "DPD", "의존성", "구강기 성격", "oral character", "자율", "autonomy"]
 description: "혼자서는 설 수 없다고 믿어 늘 기댈 사람을 찾는 사람이다. 점심 메뉴부터 진로까지 남이 정해 주길 바라고, 사랑을 잃을까 봐 싫다는 말을 못 하며, 관계가 끝나면 곧바로 다른 보호자를 찾는다. 치료에서도 치료자에게 의존하므로, 기대게 하되 점점 스스로 서게 해야 한다. 목표는 누…"

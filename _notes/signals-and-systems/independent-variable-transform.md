@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Transformations of the Independent Variable", "시간 이동", "Time Shift", "시간 반전", "Time Reversal", "시간 척도 변환", "Time Scaling", "지연", "Delay", "아핀 변환", "Affine Transformation"]
 description: "신호의 값은 그대로 두고 시간축만 밀고(이동), 뒤집고(반전), 늘이거나 줄이는(척도) 조작이다. 녹음 파일을 늦게 틀기, 거꾸로 틀기, 빨리 감기와 같다. 괄호 안에서 일어나는 일이라 방향이 직관과 반대로 보이는 것이 함정이다. x(t - 2)는 왼쪽이 아니라 오른쪽으로 2만큼 …"

@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Register File", "레지스터", "Register", "읽기 포트", "Read Port", "쓰기 포트", "Write Port", "RegWrite", "쓰기 허용 신호", "Write Enable", "SRAM", "DRAM", "정적 램", "동적 램", "리프레시", "Refresh"]
 description: "프로세서가 계산에 쓰는 값들을 담아 두는 작은 서랍장이다. 서랍마다 번호가 있고, 번호를 대면 그 서랍의 값이 바로 나온다. 한 번에 서랍 둘을 들여다보고 하나에 새 값을 넣을 수 있어서, 두 값을 꺼내 계산하고 결과를 넣는 일이 한 박자에 된다. 꺼내는 것은 언제든 되지만 넣는 …"

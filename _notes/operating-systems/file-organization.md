@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["File Organization", "더미 파일", "Pile", "순차 파일", "Sequential File", "색인 순차 파일", "Indexed Sequential File", "색인 파일", "Indexed File", "직접 파일", "해시 파일", "Direct File", "Hashed File", "키 필드", "Key Field", "오버플로 파일", "Overflow File"]
 description: "파일 조직은 파일 안 레코드를 어떤 순서와 구조로 놓을지다. 들어온 순서대로 쌓기만 하면 넣기는 쉽지만 찾을 때 처음부터 끝까지 뒤져야 하고, 키 순서로 정렬해 두면 차례로 읽기는 좋지만 하나를 찾거나 끼워 넣기는 어렵다. 색인이나 해시를 더하면 찾기가 빨라지는 대신 공간과 갱신 …"

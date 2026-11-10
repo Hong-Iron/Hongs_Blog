@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Conditional Loop Instructions", "LOOPZ", "LOOPE", "LOOPNZ", "LOOPNE", "조건부 루프", "보초값", "Sentinel", "배열 훑기"]
 description: "서랍 여덟 칸을 차례로 열며 열쇠를 찾을 때는 두 가지로 멈춘다. 열쇠가 나오면 멈추고, 여덟 칸을 다 열어도 멈춘다. 이 명령들은 남은 횟수와 방금 견준 결과를 한꺼번에 보고, 둘 다 \"계속\"일 때만 되돌아간다. 배열에서 조건에 맞는 첫 원소를 찾는 일이 한 줄로 끝난다. 다만 …"

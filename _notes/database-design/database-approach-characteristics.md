@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Characteristics of the Database Approach", "데이터베이스의 특징", "자기 기술", "Self-describing Nature", "메타데이터", "Meta-data", "카탈로그", "DBMS Catalog", "프로그램-데이터 독립성", "Program-data Independence", "데이터 추상화", "Data Abstraction", "여러 뷰", "Multiple Views", "뷰", "View", "다중 사용자 트랜잭션 처리", "Multiuser Transaction Processing", "동시성 제어", "Concurrency Control"]
 description: "예전에는 프로그램마다 자기 파일을 따로 들고, 그 파일이 어떻게 생겼는지를 프로그램 코드 안에 적어 두었다. 데이터베이스 방식은 자료 곁에 \"이 자료는 이렇게 생겼다\"는 설명서를 함께 넣어 두고, 프로그램이 그 설명서를 거쳐 자료를 찾게 한다. 그래서 저장 모양이 바뀌어도 프로그램…"

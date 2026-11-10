@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
+last_modified_at: "2026-09-28"
 status: "verified"
 aliases: ["Language Disorder", "수용 언어", "receptive language", "표현 언어", "expressive language"]
 description: "또래에 비해 아는 단어가 적고, 문장을 짜맞추기 어렵고, 대화를 이어 가지 못해 언어를 이해하고 표현하는 데 지속적으로 곤란을 겪는 장애다. 말을 알아듣는 쪽(수용 언어)이 약할수록 예후가 나쁘다. 네 살 전에는 정상적인 발달 차이와 구별하기 어렵지만, 네 살 넘어 진단되면 성인기…"

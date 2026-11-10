@@ -10,6 +10,7 @@ track_sub: "데이터"
 concepts: 46
 practices: 3
 codes: 58
+last_modified_at: "2026-10-15"
 description: "데이터 과학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

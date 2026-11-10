@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Schizoaffective Disorder", "분열정동장애", "우울형", "depressive type", "양극형", "bipolar type", "정신병적 양상을 동반한 기분장애"]
 description: "조현병의 증상(망상, 환각 등)과 주요우울 또는 조증 삽화가 한동안 함께 나타나는 장애다. 조현병과 양극성장애의 중간쯤에 있고, 조현병 스펙트럼에서 조현병과 함께 가장 무겁다. 기분 삽화가 없는 동안에도 망상이나 환각이 2주 이상 남아 있다는 점이 \"정신병적 양상을 동반한 기분장애…"

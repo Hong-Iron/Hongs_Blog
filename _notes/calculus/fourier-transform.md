@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Transform", "푸리에 변환", "역푸리에 변환", "inverse Fourier transform", "스펙트럼", "spectrum", "합성곱", "convolution", "합성곱 정리", "convolution theorem", "변조", "modulation", "sinc 함수", "불확정성 원리", "uncertainty principle", "저역 통과 필터", "low-pass filter"]
 description: "되풀이되지 않는 신호도 모든 주파수의 사인파로 나눌 수 있고, 주파수마다의 세기를 모은 것이 스펙트럼이다. 프리즘이 빛을 색깔별로 펼치는 것과 같다. 가장 큰 장점은, 두 신호를 겹쳐 미끄러뜨리며 곱해 더하는 번거로운 연산(합성곱)이 주파수 쪽에서는 그냥 곱셈이 된다는 것이다. 그…"

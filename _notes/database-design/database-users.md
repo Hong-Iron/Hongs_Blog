@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Database Users", "Actors on the Scene", "무대 위의 배우", "Workers behind the Scene", "무대 뒤의 일꾼", "데이터베이스 관리자", "Database Administrator", "DBA", "데이터베이스 설계자", "Database Designer", "시스템 분석가", "System Analyst", "응용 프로그래머", "Application Programmer", "최종 사용자", "End User", "캐주얼 사용자", "Casual End User", "초보 사용자", "Naive End User", "Parametric User", "전문 사용자", "Sophisticated End User", "독립형 사용자", "Standalone User", "도구 개발자", "Tool Developer"]
 description: "혼자 쓰는 가계부라면 만드는 사람과 쓰는 사람이 같다. 대학이나 은행의 큰 데이터베이스에는 여러 부류의 사람이 붙는다. 연극에 빗대면, 무대에 올라 날마다 그 데이터베이스를 쓰는 사람들(관리하는 사람, 구조를 짜는 사람, 프로그램을 만드는 사람, 그 프로그램으로 일하는 사람)과 무…"

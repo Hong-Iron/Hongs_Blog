@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Excoriation Disorder", "Skin-Picking Disorder", "피부벗기기장애", "강박적 피부 뜯기", "자기진정", "자극하기"]
 description: "피부를 반복해서 뜯거나 벗겨 상처가 나는데도 멈추지 못하는 장애다. 얼굴의 뾰루지, 입술 껍질, 손톱 주변을 뜯다가 다른 부위로 옮겨 간다. 스트레스가 높을 때는 마음을 가라앉히고, 지루할 때는 자극을 주는 두 가지 쓸모가 있어 습관으로 굳는다. 스스로도 괴로워하며 상처를 숨기고,…"

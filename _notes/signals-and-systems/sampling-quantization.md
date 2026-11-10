@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Sampling", "Quantization", "샘플링", "표본 간격", "Sampling Interval", "양자화 단계", "Quantization Level", "화소", "Pixel", "격자", "Grid", "A/D 변환", "Analog-to-Digital Conversion"]
 description: "연속 신호를 컴퓨터에 넣으려면 두 번 끊는다. 시간을 일정한 간격으로 끊어 그 순간의 값만 남기는 것이 표본화, 남긴 값을 정해진 몇 단계 중 가장 가까운 것으로 반올림하는 것이 양자화다. 표본을 촘촘히, 단계를 잘게 할수록 원래 신호에 가까워지지만 저장할 데이터가 늘어난다. 양자…"

@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Addressing", "주소", "address", "ID", "유니캐스트", "unicast", "브로드캐스트", "broadcast", "멀티캐스트", "multicast"]
 description: "학교 방송에서 \"2학년 3반 김OO\", \"전교생 여러분\", \"방송부원들은\"으로 부르는 대상을 가리듯, 네트워크에서 통신할 상대를 이름표로 가리키는 일이다. 이름표가 있어야 여러 상대 중 누구에게 보낼지 정하고, 그다음에 가는 길을 찾을 수 있다. 받을 대상이 하나냐, 전부냐, 일부…"

@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["DFA vs NFA", "DFA", "Deterministic Finite Automata", "결정적 유한 오토마타", "NFA", "Non-deterministic Finite Automata", "비결정적 유한 오토마타", "결정성", "비결정성"]
 description: "둘 다 유한 오토마타이고, 알아볼 수 있는 언어도 똑같이 정규 언어다. 가르는 질문은 \"한 상태에서 글자 하나를 읽었을 때 갈 곳이 하나로 정해지는가\"다. 정해지면 DFA(결정적 유한 오토마타), 여러 곳이 될 수 있거나 글자 없이도 옮길 수 있으면 NFA(비결정적 유한 오토마타)…"

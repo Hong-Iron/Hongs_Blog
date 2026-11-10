@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["DBMS Component Modules", "DBMS 구성 요소", "저장 데이터 관리자", "Stored Data Manager", "DDL 컴파일러", "DDL Compiler", "질의 컴파일러", "Query Compiler", "질의 최적화기", "Query Optimizer", "전처리기", "Precompiler", "DML 컴파일러", "DML Compiler", "호스트 언어", "Host Language", "실행 시간 데이터베이스 처리기", "Runtime Database Processor", "시스템 카탈로그", "System Catalog", "데이터 사전", "Data Dictionary", "미리 컴파일한 트랜잭션", "Canned Transaction", "동시성 제어 서브시스템", "백업·복구 서브시스템"]
 description: "데이터베이스를 관리하는 프로그램(DBMS)은 한 덩어리가 아니라 일을 나눠 맡은 부품들의 모음이다. 구청 민원실에 빗대면, 사람마다 다른 창구로 서류를 내고, 서류는 번역과 정리를 거쳐 한 명의 처리 담당에게 모이고, 처리 담당은 창고지기를 거쳐서만 서류철을 꺼낸다. 누가 어느 창…"

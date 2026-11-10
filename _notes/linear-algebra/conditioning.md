@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Norm", "노름", "벡터 노름", "vector norm", "행렬 노름", "matrix norm", "연산자 노름", "operator norm", "Condition Number", "조건수", "불량 조건", "ill-conditioned", "기계 엡실론", "machine epsilon", "힐베르트 행렬", "Hilbert matrix", "수치 안정성", "numerical stability"]
 description: "조건수는 \"입력의 작은 오차가 답에서 몇 배로 커질 수 있는가\"를 재는 수다. 측정값이나 컴퓨터의 반올림 오차는 피할 수 없으므로, 조건수가 백만인 문제는 답에서 유효숫자 여섯 자리 정도를 잃는다고 각오해야 한다(조건수의 자릿수만큼). 조건수는 문제(행렬) 자체의 성질이라, 좋은 …"

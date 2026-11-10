@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Linear Approximation", "Newton's Method", "선형 근사", "접선 근사", "tangent line approximation", "미분", "differential", "뉴턴 방법", "뉴턴-랩슨", "Newton-Raphson", "이차 수렴", "quadratic convergence", "바빌로니아 방법"]
 description: "매끄러운 곡선은 한 점 근처를 확대하면 직선(접선)처럼 보인다. 그래서 복잡한 함수값을 접선으로 어림하고(선형 근사), 방정식의 근은 \"접선이 0이 되는 곳\"으로 거듭 옮겨 가며 찾는다(뉴턴 방법). 뉴턴 방법은 근 근처에서 한 번 반복할 때마다 맞는 자릿수가 거의 두 배로 는다.…"

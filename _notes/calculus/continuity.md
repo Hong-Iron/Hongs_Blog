@@ -10,6 +10,7 @@ course_slug: "calculus"
 course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Continuity", "Intermediate Value Theorem", "연속", "연속함수", "continuous function", "불연속", "discontinuity", "사잇값 정리", "IVT", "최대·최소 정리", "extreme value theorem", "이분법", "bisection method"]
 description: "연속은 그래프를 펜을 떼지 않고 그릴 수 있다는 뜻으로, 그 점의 극한값과 함숫값이 같다는 것이다. 연속함수가 구간의 양 끝에서 부호가 다르면 그 사이 어딘가에서 반드시 0을 지난다(사잇값 정리). 이것이 \"반씩 줄여 가며 근을 찾는\" 이분법의 근거다. 단, 구간 안에 끊긴 곳이 …"

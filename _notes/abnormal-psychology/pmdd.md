@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Premenstrual Dysphoric Disorder", "PMDD", "월경 전 불쾌감 장애", "월경전 불쾌장애", "월경전증후군", "PMS", "premenstrual syndrome"]
 description: "월경 주기의 호르몬 변화와 맞물려, 월경 직전 한 주쯤 기분이 크게 흔들리고 예민해지며 우울하거나 불안해지는 장애다. 월경이 시작되면 며칠 안에 좋아지고, 월경이 끝난 뒤에는 거의 사라진다. 흔한 월경전증후군보다 정서 증상이 심해 일과 관계가 실제로 흔들린다는 점이 다르다. 주기와…"

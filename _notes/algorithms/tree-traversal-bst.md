@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Tree Traversal", "Binary Search Tree", "BST", "전위 순회", "중위 순회", "후위 순회", "preorder", "inorder", "postorder", "이진 탐색 트리", "포화 이진 트리"]
 description: "가계도 같은 나무의 모든 칸을 한 번씩 빠짐없이 도는 순서가 순회다. 뿌리를 먼저 보면 전위, 왼쪽을 다 본 뒤 보면 중위, 양쪽을 다 본 뒤 보면 후위다. 이진 탐색 트리는 \"왼쪽은 작고 오른쪽은 크다\"는 규칙으로 값을 넣어 두는 나무라, 찾기와 넣기가 나무의 높이만큼만 걸리고 …"

@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["SLR Parsing", "Simple LR", "SLR(1)", "LR(0) 파싱", "LR(0) Parsing", "SLR 문법", "우선순위 선언", "Precedence Declaration"]
 description: "쌓아 둔 부분을 기계에 읽혀 지금 처지를 알아낸 뒤, 묶을 수 있는 규칙이 보여도 바로 묶지 않고 다음 토큰을 한 번 훔쳐본다. 그 토큰이 \"묶어서 생길 기호 바로 뒤에 올 수 있는 것\"일 때만 묶는다. 이 한 번의 확인으로 묶을지 더 읽을지 겹치던 자리가 대부분 풀린다. 그래도 …"

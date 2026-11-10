@@ -11,6 +11,7 @@ course_url: "/studies/data-and-information/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Histogram Density Estimation", "히스토그램", "Histogram", "도수 분포표", "Frequency Table", "확률 밀도 추정", "Density Estimation", "비모수 밀도 추정", "Nonparametric Density Estimation", "인스턴트 확률", "칸 폭", "Bin Width"]
 description: "가진 것이 자료뿐일 때, 어떤 값이 얼마나 흔한지 알아내는 가장 손쉬운 방법이다. 값의 범위를 같은 폭의 칸으로 자르고 칸마다 자료가 몇 개 들었는지 세어, 많이 든 칸의 값일수록 흔하다고 본다. 자료가 어떤 모양으로 퍼져 있을 거라는 가정이 필요 없다. 그런데 칸을 넓게 잡으면 …"

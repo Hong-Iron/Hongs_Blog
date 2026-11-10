@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cyclic Redundancy Check", "순회 중복 검사", "순환 중복 검사", "CRC-32", "CRC-16", "젯수", "Generator Polynomial", "생성 다항식", "XOR 나눗셈", "다항식 나눗셈", "Polynomial Division"]
 description: "보내는 쪽과 받는 쪽이 비트 모양 하나(젯수)를 미리 정해 둔다. 보내는 쪽은 메시지 뒤에 몇 비트를 붙여 전체가 젯수로 나누어떨어지게 만들고, 받는 쪽은 받은 비트 전체를 같은 젯수로 나눠 나머지가 0인지 본다. 이 \"나누기\"는 보통의 나눗셈이 아니라, 자리마다 두 비트가 같으면…"

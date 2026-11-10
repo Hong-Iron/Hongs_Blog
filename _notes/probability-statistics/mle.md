@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Maximum Likelihood Estimation", "최대가능도 추정", "최대우도 추정", "MLE", "가능도 함수", "likelihood function", "로그 가능도", "log-likelihood", "음의 로그 가능도", "negative log-likelihood", "점수 함수", "score function", "피셔 정보량", "Fisher information", "불변성", "invariance"]
 description: "여러 후보 설명 중에서 지금 본 데이터가 나올 가능성을 가장 크게 만드는 것을 고르는 방법이다. 동전을 10번 던져 앞면이 7번이면, 앞면 확률 0.7이 이 결과를 가장 그럴듯하게 만든다. 확률을 곱한 식에 로그를 씌워 합으로 바꾸고 미분해 0으로 놓는 기계적인 절차라, 거의 모든…"

@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Multilevel Cache", "Multi-level Cache", "2단계 캐시", "L1 캐시", "L2 캐시", "L3 캐시", "지역 실패율", "Local Miss Rate", "전역 실패율", "Global Miss Rate", "캐시 계층", "Cache Hierarchy"]
 description: "캐시 하나로는 \"찾기가 빠를 것\"과 \"웬만하면 다 들어 있을 것\"을 함께 얻기 어렵다. 그래서 작고 빠른 캐시를 프로세서 바로 옆에 두고, 그 뒤에 크고 조금 느린 캐시를 하나 더 둔다. 책상 위에 몇 권, 손 닿는 책꽂이에 수십 권을 두는 것과 같다. 앞의 캐시가 놓친 것을 뒤의…"

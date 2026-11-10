@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Taylor Series Method", "테일러 방법", "상미분방정식", "Ordinary Differential Equation", "국소 절단 오차", "Local Truncation Error", "전역 오차", "Global Error"]
 description: "오일러 방법은 한 걸음을 기울기 하나로만 가서 부정확하다. 테일러 급수 방법은 그 걸음을 기울기뿐 아니라 기울기가 바뀌는 정도(2계, 3계 도함수)까지 넣은 테일러 급수로 간다. 넣는 항을 하나 늘릴 때마다 걸음 크기를 반으로 줄였을 때 오차가 줄어드는 비율이 두 배씩 커진다. 대…"

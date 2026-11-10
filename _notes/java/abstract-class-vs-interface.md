@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-11"
+last_modified_at: "2026-10-11"
 status: "verified"
 aliases: ["Abstract Class vs Interface", "extends vs implements"]
 description: "둘 다 new로 객체를 만들 수 없고, 몸통 없는 메서드를 두어 다른 클래스가 채우게 한다. 가르는 질문은 둘이다. \"객체마다 다른 값을 담는 필드를 물려줘야 하는가\"와 \"한 클래스가 이것을 여러 개 가져야 하는가\"다."

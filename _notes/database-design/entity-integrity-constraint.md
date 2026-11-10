@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Entity Integrity Constraint", "개체 무결성", "엔티티 무결성", "기본 키 NULL 금지"]
 description: "표에서 대표로 정한 값(학번 같은 것)은 줄을 가려내는 이름표다. 이 값이 비어 있으면 그 줄을 가리킬 방법이 없고, 비어 있는 줄이 둘이면 서로 가려낼 수도 없다. 그래서 대표로 정한 값은 어느 줄에서도 비워 둘 수 없다. 대표가 아닌 칸은 비워도 된다."

@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Matrix", "행렬", "Matrix-Vector Product", "행렬-벡터 곱", "열 관점", "column picture", "행 관점", "row picture", "연립일차방정식", "system of linear equations", "선형 함수", "linear map", "단위행렬", "identity matrix", "표준 기저", "standard basis"]
 description: "행렬은 숫자를 직사각형으로 늘어놓은 표이자, 벡터를 받아 벡터를 내놓는 기계다. 행렬에 벡터를 곱하면 행렬의 열들을 벡터의 성분만큼씩 섞은 것이 나온다. 같은 계산을 각 행과의 내적으로 볼 수도 있다. 이 한 가지 연산으로 연립방정식, 신경망의 한 층, 그래픽스의 좌표 변환을 모두…"

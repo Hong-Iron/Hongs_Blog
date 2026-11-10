@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Variable", "변수", "Primitive Type", "기본 타입", "원시 타입", "byte", "short", "char", "int", "long", "float", "double", "boolean", "리터럴", "Literal", "변수의 범위", "Scope", "println", "printf", "Scanner"]
 description: "변수는 값 하나를 넣어 두는 이름표 붙은 칸이다. 칸을 만들 때 크기와 넣을 수 있는 값의 종류를 함께 정하는데, 이것이 타입이다. 작은 칸은 메모리를 덜 쓰지만 큰 수가 안 들어간다. 자바는 값을 넣지 않은 칸을 읽으려 하면 실행하기도 전에 막고, 칸은 그것을 만든 중괄호 안에서…"

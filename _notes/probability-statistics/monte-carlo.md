@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Monte Carlo Method", "몬테카를로 방법", "몬테카를로 시뮬레이션", "Monte Carlo simulation", "몬테카를로 적분", "Monte Carlo integration", "중요도 샘플링", "importance sampling", "드문 사건", "rare event"]
 description: "정확히 계산하기 어려운 값을, 무작위로 뽑은 표본으로 실험해 평균을 내서 어림하는 방법이다. 정사각형에 모래를 뿌려 원 안에 떨어진 비율로 원의 넓이를 재는 식이다. 오차는 표본 수의 제곱근에 반비례하고 차원 수와 상관없어서, 변수가 수십 개인 적분이나 복잡한 시스템의 확률처럼 다…"

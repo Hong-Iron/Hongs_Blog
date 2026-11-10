@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Prefix Sums as Matrices", "합 행렬", "sum matrix", "차분 행렬", "difference matrix", "누적 합의 행렬 표현", "2차원 차분과 바깥곱"]
 description: "배열의 누적 합은 대각선과 그 아래가 모두 1인 삼각 모양 행렬을 곱한 결과이고, 차분은 그 행렬의 역행렬을 곱한 결과다. 이렇게 보면 2차원 차분의 네 모서리 부호, 가로·세로 누적 순서를 바꿔도 되는 이유, 누적이 한 번 훑기로 끝나는 이유가 행렬의 기본 규칙 몇 개로 풀린다.…"

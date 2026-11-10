@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-11"
+last_modified_at: "2026-10-11"
 status: "verified"
 aliases: ["Exception", "Error", "오류", "에러", "일반 예외", "Checked Exception", "실행 예외", "Runtime Exception", "Unchecked Exception", "Throwable", "RuntimeException", "NullPointerException", "ClassNotFoundException"]
 description: "프로그램이 돌다가 만나는 사고는 두 가지다. 하나는 기계의 기억 공간이 바닥나는 것처럼 프로그램이 손쓸 수 없는 사고이고, 다른 하나는 잘못 쓰거나 잘못 짜서 생기는, 미리 대비해 두면 수습하고 계속 갈 수 있는 사고다. 수습할 수 있는 사고는 다시 둘로 나뉜다. 대비하는 코드가 …"

@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["정형 vs 비정형 항정신병 약물", "Typical vs Atypical Antipsychotics", "항정신병 약물", "antipsychotics", "1세대 항정신병약물", "2세대 항정신병약물", "정형", "비정형", "추체외로증상", "EPS", "extrapyramidal symptoms", "지연성 운동장애", "tardive dyskinesia", "고프로락틴혈증", "대사증후군", "haloperidol", "clozapine", "risperidone"]
 description: "1세대(정형, 전형적) 약물은 도파민 D2 수용체를 강하게 막는다. 2세대(비정형, 비전형적) 약물은 D2와 함께 세로토닌 5-HT2A 수용체도 막는다. 이 차이가 효과(음성 증상)와 부작용(운동 증상 대 대사 문제)의 차이로 이어진다. 가르는 질문은 \"도파민만 막는가, 세로토닌도…"

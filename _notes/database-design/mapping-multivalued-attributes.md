@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Mapping of Multivalued Attributes", "다치 속성을 릴레이션으로 옮기기", "DEPT_LOCATIONS"]
 description: "부서 하나가 여러 곳에 있으면 그 위치를 표의 한 칸에 다 적을 수 없다. 그래서 \"부서 번호, 위치\" 두 칸짜리 표를 따로 만들고 위치마다 한 줄씩 적는다. 부서 번호는 원래 표의 부서를 가리키고, 두 칸을 묶어야 줄이 서로 겹치지 않는다. 그 대신 부서와 위치를 함께 보려면 표…"

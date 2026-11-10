@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Prime Numbers", "소수", "소인수분해", "prime factorization", "Fundamental Theorem of Arithmetic", "산술의 기본정리", "유클리드 보조정리", "Euclid's lemma", "에라토스테네스의 체", "Sieve of Eratosthenes", "소수 정리", "prime number theorem"]
 description: "소수는 1과 자기 자신으로만 나누어지는, 더 쪼갤 수 없는 수다. 1보다 큰 모든 정수는 소수의 곱으로 쓸 수 있고, 순서를 무시하면 그 방법은 딱 하나다. 레고 블록처럼 수의 설계도가 유일하다는 이 사실이 정수론 계산의 바탕이다. 하지만 곱하기는 쉬워도 곱을 거꾸로 쪼개는 소인수…"

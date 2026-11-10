@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Binary Search", "이진 탐색", "이분 탐색", "bisect", "bisect_left", "bisect_right", "lower bound", "upper bound", "루프 불변식"]
 description: "두꺼운 사전에서 단어를 찾을 때 가운데를 펼쳐 앞쪽인지 뒤쪽인지 보고, 절반을 통째로 버리는 것과 같다. 한 번 볼 때마다 찾을 곳이 절반으로 줄어서 100만 개 중에서도 20번이면 찾는다. 대신 정렬된 곳에서만 쓸 수 있다. 그리고 끝을 넣을지 뺄지, 같을 때 어느 쪽으로 갈지를…"

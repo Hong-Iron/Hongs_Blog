@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Local Variables", "스택 지역 변수", "ENTER", "LEAVE", "LOCAL 지시어", "LOCAL Directive", "LEA", "Load Effective Address"]
 description: "프로시저가 도는 동안만 쓰고 버리는 메모지다. 프로시저에 들어오면서 스택 꼭대기를 필요한 만큼 아래로 내려 빈칸을 만들고, 나가면서 꼭대기를 제자리로 올려 한꺼번에 돌려준다. 호출마다 자기 칸을 새로 받으므로 다른 프로시저의 같은 이름 변수와 부딪히지 않고, 자기를 다시 불러도 값…"

@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["K-means vs GMM vs DBSCAN vs CLIQUE", "군집화 방법 비교"]
 description: "네 방법은 \"무엇을 비슷하다고 보는가\"가 다르다. k-평균은 중심까지의 거리, GMM은 종 모양 분포에서 나왔을 확률, DBSCAN은 점들이 빽빽하게 이어졌는지, CLIQUE는 격자 칸에 점이 많이 들었는지를 본다. 고르는 질문은 셋이다. 무리 수를 아는가? 무리 모양을 가정할 수…"

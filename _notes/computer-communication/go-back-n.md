@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-20"
+last_modified_at: "2026-10-20"
 status: "verified"
 aliases: ["Go-Back-N", "GBN", "고백엔", "누적 ACK", "Cumulative ACK", "중복 ACK", "Duplicate ACK", "순서가 어긋난 프레임", "Out-of-order Frame"]
 description: "연달아 보낸 프레임 중 하나가 사라지면, 사라진 그 프레임으로 되돌아가 거기서부터 다시 출발한다. 그래서 그 뒤에 보낸 프레임도 다시 보낸다. 받는 쪽은 \"여기까지 빠짐없이 받았고, 다음은 몇 번\"이라는 답장 하나만 보내면 되어 단순하다. 대신 이미 잘 도착한 프레임까지 다시 보내…"

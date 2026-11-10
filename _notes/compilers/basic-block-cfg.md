@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Basic Block", "Control Flow Graph", "CFG", "기본 블록", "제어 흐름 그래프", "흐름 그래프", "Flow Graph", "지역 최적화", "Local Optimization", "전역 최적화", "Global Optimization", "리더", "Leader"]
 description: "고속도로에서 나들목과 나들목 사이 구간은 한번 들어서면 끝까지 달릴 수밖에 없다. 컴파일러가 만든 코드에서도 중간에 끼어들거나 빠져나갈 수 없이 처음부터 끝까지 한 줄씩 차례로 실행되는 구간을 한 덩어리로 묶고, 덩어리에서 덩어리로 갈 수 있는 길을 화살표로 이으면 프로그램의 지도…"

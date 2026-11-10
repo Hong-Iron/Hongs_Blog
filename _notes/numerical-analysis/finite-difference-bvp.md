@@ -11,6 +11,7 @@ course_url: "/studies/numerical-analysis/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Finite-Difference Method", "유한 차분", "Finite Difference", "중심 차분", "Centered Difference", "삼중대각 행렬", "Tridiagonal Matrix", "토마스 알고리즘", "Thomas Algorithm"]
 description: "경계값 문제를 사격법처럼 쏘아 맞히지 않고, 막대를 같은 간격의 점으로 나눠 각 점의 값을 미지수로 둔다. 미분을 이웃 점 값의 차이로 바꾸면 각 점에서 일차방정식 하나가 생기고, 양 끝 값은 알므로 오른쪽으로 옮긴다. 결과는 대각선 근처 세 줄에만 수가 있는 연립 일차방정식이라 …"

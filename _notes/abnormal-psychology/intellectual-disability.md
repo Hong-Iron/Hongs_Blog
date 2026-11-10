@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Intellectual Disability", "지적발달장애", "Intellectual Developmental Disorder", "정신지체", "mental retardation", "적응 기능", "adaptive functioning", "전반적 발달지연", "Global Developmental Delay"]
 description: "발달기부터 생각하고 배우는 능력(지적 기능)이 또래보다 전반적으로 낮고, 그 때문에 혼자 생활하는 능력(적응 기능)도 부족한 장애다. 두 가지가 모두 있어야 한다. 지능지수가 낮다는 것만으로는 부족하고, 실제로 의사소통, 학업, 대인관계, 일상 기술에 어려움이 있어야 한다. 평생 …"

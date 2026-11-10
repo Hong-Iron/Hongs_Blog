@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Header Node", "헤더 노드", "머리 노드", "Circular List", "원형 리스트", "원형 연결 리스트", "Doubly Linked List", "이중 연결 리스트", "Doubly Linked Circular List", "이중 원형 연결 리스트", "headerNode", "firstNode", "lastNode", "llink", "rlink"]
 description: "한 줄로 이은 목록을 세 군데서 조금씩 고친 것이다. 맨 앞에 값 없는 노드를 하나 세우면 \"맨 앞에 끼우기\"가 다른 자리와 똑같은 일이 되고, 마지막 노드를 첫 노드에 이으면 어느 노드에서 출발해도 한 바퀴를 돈다. 노드마다 앞쪽을 가리키는 주소를 하나 더 적으면 뒤로도 갈 수 …"

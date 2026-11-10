@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Performance", "Execution Time", "응답 시간", "Response Time", "처리량", "Throughput", "상대 성능", "Relative Performance", "경과 시간", "Elapsed Time", "CPU 시간", "CPU Time", "사용자 CPU 시간", "시스템 CPU 시간"]
 description: "컴퓨터가 빠르다는 말에는 두 가지 뜻이 있다. 일 하나가 빨리 끝난다는 뜻과, 정해진 시간에 일을 많이 끝낸다는 뜻이다. 택배로 치면 내 상자 하나가 도착하는 데 걸리는 시간과 하루에 배달하는 상자 수다. 이 과목은 앞의 것을 기준으로 삼고, 걸린 시간이 짧을수록 성능이 높다고 정…"

@@ -10,6 +10,7 @@ course_slug: "discrete-math"
 course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Mathematical Induction", "수학적 귀납법", "기저 단계", "base case", "귀납 단계", "inductive step", "귀납 가정", "induction hypothesis", "강한 귀납법", "strong induction", "정렬 원리", "well-ordering principle", "루프 불변식", "loop invariant"]
 description: "줄지어 선 도미노를 떠올린다. 첫 도미노가 넘어지고, 어떤 도미노든 넘어지면 바로 다음 것도 넘어진다는 것만 보이면 모든 도미노가 넘어진다. 이 두 단계로 \"모든 자연수에서 맞는다\"를 끝없는 확인 없이 증명한다. 앞의 모든 경우를 가정해도 되는 강한 귀납법은 재귀 알고리즘의 정확성…"

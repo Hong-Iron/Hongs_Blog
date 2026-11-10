@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Writing a Custom Interrupt Handler", "사용자 인터럽트 핸들러", "인터럽트 벡터 바꾸기", "Get Interrupt Vector", "Set Interrupt Vector", "함수 35h", "함수 25h", "Chaining", "TSR", "Terminate and Stay Resident", "상주 프로그램", "No_Reset", "Ctrl-Break Handler"]
 description: "주소록의 한 줄을 내 주소로 고쳐 두면, 그 번호로 걸려 오는 전화를 내가 먼저 받는다. 나는 내용을 훑어보고 필요한 것만 손본 뒤 원래 주인에게 그대로 넘긴다. 이렇게 하면 운영체제의 코드를 고치지 않고도 키 조합 하나를 막거나 동작을 바꿀 수 있다. 다만 고치기 전에 원래 주소…"

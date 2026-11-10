@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Bitwise Operator", "비트 연산자", "비트 논리 연산자", "Bitwise Logical Operator", "비트 AND", "비트 OR", "비트 XOR", "비트 NOT", "시프트 연산자", "비트 이동 연산자", "Shift Operator", "산술 시프트", "Arithmetic Shift", "논리 시프트", "Logical Shift", "비트 마스크", "Bit Mask"]
 description: "컴퓨터 속의 정수는 켜짐과 꺼짐을 나타내는 스위치가 한 줄로 늘어선 것이다. 비트 연산은 수를 크기로 보지 않고 이 스위치 줄로 보아, 같은 자리의 스위치끼리 짝지어 계산하거나 줄 전체를 옆으로 민다. 스위치 하나하나를 따로 켜고 끄고 확인할 수 있고, 2를 곱하거나 나누는 일을 …"

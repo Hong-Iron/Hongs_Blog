@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Protocol Graph", "프로토콜 스택", "protocol stack", "의존 관계", "dependency", "역다중화 키", "RRP", "MSP", "HHP"]
 description: "여러 프로토콜을 \"누가 누구를 딛고 서 있나\"로 이어 그린 그림이다. 여러 응용이 아래의 프로토콜 하나를 함께 쓰므로, 아래 프로토콜은 받은 데이터를 위의 누구에게 올려 줄지 알아야 한다. 그래서 머리말에 역다중화 키(demux key)를 넣는다. 함께 쓰는 덕분에 부품을 다시 쓸…"

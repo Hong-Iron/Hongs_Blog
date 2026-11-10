@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Array Doubling", "배열 더블링", "동적 배열", "Dynamic Array", "용량", "Capacity", "분할상환 분석", "Amortized Analysis", "재할당", "StackFull", "REALLOC"]
 description: "방이 꽉 차면 두 배 넓은 방으로 이사하는 방식이다. 이사는 짐이 많을수록 오래 걸리지만, 방이 커질수록 다음 이사까지 넣을 수 있는 짐도 많아져서 이사가 점점 드물어진다. 그래서 처음부터 끝까지의 수고를 합쳐 짐의 수로 나누면, 짐 하나에 드는 수고는 짐이 아무리 많아져도 일정하…"

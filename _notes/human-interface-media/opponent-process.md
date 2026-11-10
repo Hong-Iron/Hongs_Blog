@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Opponent-process Theory", "반대색설", "대립 과정", "보색", "반대색 세포", "opponent cell", "잔상", "afterimage", "동시 대비", "simultaneous contrast"]
 description: "색 신호를 뇌로 보내기 전에 한 번 더 번역하는 단계다. 추상체 뒤의 세포들은 \"빨강 대 초록\", \"파랑 대 노랑\", \"흰색 대 검정\"처럼 짝을 지어, 한쪽 색이면 발화를 늘리고 반대쪽 색이면 줄인다. 그래서 \"붉은 초록\"은 한 번에 느낄 수 없고, 빨강을 오래 보면 초록 잔상이 …"

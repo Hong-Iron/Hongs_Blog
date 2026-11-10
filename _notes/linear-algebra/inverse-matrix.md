@@ -10,6 +10,7 @@ course_slug: "linear-algebra"
 course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Inverse Matrix", "역행렬", "가역", "invertible", "비특이", "nonsingular", "특이 행렬", "singular matrix", "가우스-조르당", "Gauss–Jordan", "기본 행렬", "elementary matrix", "가역 행렬 정리", "invertible matrix theorem"]
 description: "역행렬은 행렬이 한 변환을 되돌리는 행렬이다. 암호화한 좌표를 복원하거나, 결과에서 원인을 거꾸로 구할 때 쓴다. 되돌릴 수 있으려면 변환이 정보를 잃지 않아야 한다. 서로 다른 두 입력이 같은 출력으로 뭉개지면(예: 평면을 한 직선으로 누르면) 어느 쪽으로 되돌릴지 정할 수 없다…"

@@ -1,5 +1,5 @@
 ---
-title: "Adam's Lamnent"
+title: "Adam's Lament"
 subtitle:
 date: 2026-07-13 03:01:00 +0900
 categories: [pensees]

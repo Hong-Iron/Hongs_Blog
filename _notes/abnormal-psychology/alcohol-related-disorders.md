@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Alcohol-Related Disorders", "알코올 사용 장애", "Alcohol Use Disorder", "AUD", "알코올 의존", "알코올 남용", "알코올 중독", "Alcohol Intoxication", "알코올 금단", "Alcohol Withdrawal", "내성", "tolerance", "금단", "withdrawal", "옐리네크", "Jellinek", "음주기대 이론", "alcohol expectancy theory", "자가 투약", "self-medication", "코르사코프 증후군", "Korsakoff syndrome", "태아알코올증후군", "익명의 알코올 중독자 모임", "Alcoholics Anonymous", "AA", "동기강화면담", "motivational interviewing", "디설피람", "disulfiram", "안타부스", "Antabuse"]
 description: "술 때문에 일, 가정, 건강에 문제가 생기는 것을 알면서도 조절하지 못하고 계속 마시는 상태가 알코올 사용장애다. 같은 효과를 얻으려고 점점 더 마시고(내성), 끊으면 손이 떨리고 잠을 못 이룬다(금단). 가장 흔한 정신장애 가운데 하나이지만, 본인은 문제를 잘 인정하지 않아 의지…"

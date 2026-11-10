@@ -10,6 +10,7 @@ course_slug: "probability-statistics"
 course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Continuous Random Variable", "연속 확률변수", "확률밀도함수", "PDF", "probability density function", "확률밀도", "density", "밀도의 변수변환", "change of variables for densities"]
 description: "대기 시간이나 측정값처럼 값이 끊김 없이 이어지면, 딱 한 값이 나올 확률은 0이고 구간에 들어갈 확률만 의미가 있다. 그 확률을 곡선 아래 넓이로 주는 함수가 확률밀도다. 확률을 모래로 비유하면, 밀도는 각 지점에 쌓인 모래의 높이이고 구간의 확률은 그 구간 위 모래의 양이다. …"

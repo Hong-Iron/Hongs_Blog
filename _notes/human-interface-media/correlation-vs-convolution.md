@@ -10,6 +10,7 @@ course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Cross-correlation vs Convolution", "교차 상관과 합성곱", "상관과 컨벌루션 차이"]
 description: "둘 다 한 함수를 옮겨 가며 다른 함수와 겹친 값을 곱해 더한다. 차이는 옮기기 전에 뒤집느냐 하나뿐이다. 합성곱은 뒤집고 옮기고, 교차 상관은 그대로 옮긴다. 이 한 가지 차이 때문에 합성곱은 \"이 장치에 넣으면 무엇이 나오나\"에, 교차 상관은 \"이 무늬가 어디 있나\"에 쓰인다."

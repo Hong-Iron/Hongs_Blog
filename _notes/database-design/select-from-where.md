@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["SELECT", "SELECT-FROM-WHERE Block", "기본 검색 질의", "Basic Retrieval Query", "투영 속성", "Projection Attributes", "선택 조건", "Selection Condition", "조인 조건", "Join Condition", "SELECT *", "Asterisk"]
 description: "표에서 원하는 것을 꺼내 달라고 하는 문장이고, 어느 표에서, 어떤 행을, 그 행의 어느 칸을 꺼낼지 세 칸을 채운다. 도서관 사서에게 \"소설 서가에서, 2020년 뒤에 나온 책의, 제목과 지은이만 알려 주세요\"라고 말하는 것과 같다. 표가 둘 이상이면 행들을 어떻게 짝지을지도 조…"

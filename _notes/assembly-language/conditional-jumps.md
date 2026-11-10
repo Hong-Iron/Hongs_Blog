@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Conditional Jump", "Jcond", "Jcc", "조건 분기", "JZ", "JNZ", "JE", "JNE", "JC", "JNC", "JO", "JNO", "JS", "JNS", "JP", "JNP", "JA", "JAE", "JB", "JBE", "JG", "JGE", "JL", "JLE", "JCXZ", "JECXZ"]
 description: "갈림길에 선 사람이 신호등을 보고 초록이면 옆길로, 아니면 가던 길로 간다. 이 명령들은 바로 앞 계산이 남긴 표시등을 보고, 조건이 맞으면 다른 줄로 넘어가고 아니면 바로 아래 줄로 간다. 이것으로 \"같으면\", \"크면\", \"0이면\" 같은 갈림을 만든다. 명령 자신은 아무것도 견주…"

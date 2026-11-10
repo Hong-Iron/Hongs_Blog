@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Unit Impulse", "Unit Step", "단위 샘플", "Unit Sample", "디랙 델타", "Dirac Delta", "크로네커 델타", "Kronecker Delta", "누적 합", "Running Sum", "표본화 성질", "Sampling Property", "체 거르기 성질", "Sifting Property", "단위 계단 함수", "Unit Step Function"]
 description: "단위 계단은 스위치를 켜는 순간이다. 0이던 값이 t = 0에 1로 올라가 그대로 머문다. 단위 임펄스는 그 스위치를 켜는 \"순간의 충격\" 하나다. 폭은 0이고 넓이는 1인 아주 뾰족한 바늘이라, 계단을 미분하면 임펄스가 나오고 임펄스를 쌓아 올리면(누적하면) 계단이 된다. 신호에…"

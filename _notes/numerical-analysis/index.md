@@ -10,6 +10,7 @@ track_sub: "신호와 수치 계산"
 concepts: 37
 practices: 5
 codes: 72
+last_modified_at: "2026-10-15"
 description: "수치해석 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

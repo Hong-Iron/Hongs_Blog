@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Set Operations", "UNION", "EXCEPT", "INTERSECT", "UNION ALL", "EXCEPT ALL", "INTERSECT ALL", "합집합", "차집합", "교집합", "합병 가능", "Type Compatible", "Union Compatible", "다중집합 연산", "Multiset Operations"]
 description: "두 질의의 결과를 하나로 합치거나, 양쪽에 다 있는 것만 남기거나, 한쪽에서 다른 쪽에 있는 것을 빼는 연산이다. 두 반의 명단을 한 장으로 합치고, 두 반에 다 있는 이름을 뽑고, 한 반에만 있는 이름을 뽑는 일과 같다. 이 연산들은 겹치는 행을 한 번만 남기므로, 겹친 횟수까지…"

@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Register Interference Graph", "RIG", "레지스터 간섭 그래프", "간섭 그래프", "Interference Graph", "레지스터 할당", "Register Allocation", "간섭", "Interference"]
 description: "회의실이 몇 개뿐인 회사에서, 회의 시간이 겹치는 두 팀은 같은 방을 쓸 수 없고 겹치지 않는 두 팀은 같은 방을 번갈아 써도 된다. 변수와 프로세서 안의 빠른 저장 칸 사이도 같다. 값이 앞으로 쓰일 기간이 겹치는 두 변수는 같은 칸에 둘 수 없고, 한 번도 겹치지 않는 두 변수…"

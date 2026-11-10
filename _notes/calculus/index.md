@@ -9,6 +9,7 @@ track: "수학"
 concepts: 31
 practices: 4
 codes: 66
+last_modified_at: "2026-10-15"
 description: "미분적분학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true

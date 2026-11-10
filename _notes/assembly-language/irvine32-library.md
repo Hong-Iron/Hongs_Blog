@@ -11,6 +11,7 @@ course_url: "/studies/assembly-language/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Irvine32", "Irvine32 Library", "Irvine32.inc", "INCLUDE 지시어", "WriteString", "WriteHex", "WriteDec", "WriteInt", "WriteBin", "ReadString", "DumpRegs", "DumpMem", "Crlf", "Clrscr", "RandomRange", "SetTextColor", "링크 라이브러리", "Link Library"]
 description: "화면에 숫자 하나를 찍는 일도 맨손으로 하려면 수를 글자로 바꾸고 운영체제에 부탁하는 코드를 길게 써야 한다. 교재 저자가 이런 일을 미리 만들어 둔 도구 상자가 있어서, 약속된 레지스터에 값을 넣고 도구 이름을 부르기만 하면 된다. 덕분에 입출력에 매이지 않고 배우려는 명령에 집…"

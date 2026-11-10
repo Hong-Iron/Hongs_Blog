@@ -11,6 +11,7 @@ course_url: "/studies/computer-communication/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Node", "노드의 실체", "하드웨어 구성요소", "단말", "terminal", "호스트", "host", "네트워크 어댑터", "network adaptor", "NIC", "Network Interface Card", "병목", "bottleneck"]
 description: "노드는 링크 끝에 붙은 장치다. 단말(호스트)이든 스위치(라우터)든 속은 보통의 컴퓨터로, CPU와 메모리와 선을 이어 주는 네트워크 어댑터로 이루어진다. 메모리가 유한해서 패킷을 쌓아 둘 버퍼도 유한하다. 프로세서는 빠르고 메모리는 느려서, 요즘은 링크보다 노드가, 노드 안에서는…"

@@ -11,6 +11,7 @@ course_url: "/studies/java/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Promotion", "Casting", "Type Casting", "자동 타입 변환", "강제 타입 변환", "업캐스팅", "Upcasting", "다운캐스팅", "Downcasting", "instanceof", "ClassCastException"]
 description: "버스 한 대를 \"탈것\"이라고만 적힌 이름표로 부르면, 탈것이라면 누구나 하는 일만 시킬 수 있다. 좁은 이름표에서 넓은 이름표로 바꾸는 것은 늘 안전해서 아무것도 안 써도 된다. 반대로 \"탈것\" 이름표를 \"버스\"로 바꾸려면 바꾸겠다고 직접 써야 하고, 알고 보니 택시였다면 프로그램…"

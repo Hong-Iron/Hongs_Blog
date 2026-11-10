@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["AST to TAC", "TAC Construction Rules", "3주소 코드 생성", "중간 코드 생성", "Intermediate Code Generation", "코드 생성 규칙"]
 description: "회사에서 부장이 과장에게, 과장이 대리에게 일을 내려보내고, 맨 아래에서 끝난 결과가 \"어느 서랍에 넣어 뒀습니다\"라는 말과 함께 거꾸로 올라오는 것과 같다. 나무 모양으로 펼친 프로그램의 칸마다 \"내 아래 칸들에게 먼저 시키고, 그 결과가 담긴 이름을 받아 내 계산 한 줄을 적는…"

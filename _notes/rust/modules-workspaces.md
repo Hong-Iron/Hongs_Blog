@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["Modules and Workspaces", "Module", "모듈", "Crate", "크레이트", "Package", "패키지", "Workspace", "워크스페이스", "Visibility", "가시성", "pub(crate)", "Re-export", "pub use", "Feature Flag", "기능 플래그"]
 description: "코드를 방으로 나누고, 방마다 \"밖에 보여 줄 문\"을 정하는 일이다. 방 하나가 모듈이고, 문을 여는 표시가 pub이다. 표시가 없으면 같은 방과 그 안쪽 방에서만 쓸 수 있다. 덕분에 안쪽 구현을 바꿔도 바깥 코드가 깨지지 않는다. 대신 무엇을 열지 정하는 것은 사람 몫이다. 한…"

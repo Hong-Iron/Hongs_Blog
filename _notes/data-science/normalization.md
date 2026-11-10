@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Normalization", "데이터 정규화", "데이터 변환", "Data Transformation", "최소-최대 정규화", "Min-max Normalization", "z-점수 정규화", "Z-score Normalization", "표준화", "Standardization", "스케일링", "Feature Scaling"]
 description: "키를 cm로 적느냐 m로 적느냐에 따라 거리 계산 결과가 뒤집힌다. 정규화는 속성마다 값을 같은 크기의 범위로 옮겨서 단위의 영향을 없앤다. 가장 작은 값을 0, 가장 큰 값을 1로 맞추는 방법은 간단하지만, 튀는 값 하나가 나머지를 한쪽 구석에 몰아넣는다. 평균을 0, 표준편차를…"

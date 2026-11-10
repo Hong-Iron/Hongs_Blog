@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["CLIQUE", "CLustering In QUEst", "격자 기반 군집화", "Grid-based Clustering", "부분공간 군집화", "Subspace Clustering", "밀집 단위", "Dense Unit", "차원의 저주", "Curse of Dimensionality"]
 description: "차원이 많은 자료에서는 점끼리 거리가 다 비슷해지고, 쓸모없는 차원이 무리를 가린다. CLIQUE는 각 축을 같은 폭의 칸으로 잘라 바둑판을 만들고, 점이 많이 든 칸(밀집 칸)을 찾아 이웃한 밀집 칸끼리 묶는다. 이때 모든 차원을 한꺼번에 보지 않고, 무리가 보이는 일부 차원(부…"

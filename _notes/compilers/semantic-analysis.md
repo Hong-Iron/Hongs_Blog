@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Semantic Analysis", "Semantic Analyzer", "의미 분석기", "의미 규칙", "Semantic Grammar", "스코프 검사", "Scope Checking", "타입 검사", "Type Checking"]
 description: "\"내 딸은 소년이다\"는 낱말의 차례가 문법에 맞지만 뜻이 맞지 않는다. 프로그램에도 이런 문장이 있다. 모양은 멀쩡한데 선언한 적 없는 이름을 쓰거나, 숫자 자리에 글자를 넣는 코드다. 의미 분석은 구문 분석을 통과한 코드에서 이런 잘못을 찾는다. 모양만 보는 문법 규칙으로는 못 …"

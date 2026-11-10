@@ -11,6 +11,7 @@ course_url: "/studies/compilers/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Finite Automata", "Finite Automaton", "FA", "유한 상태 오토마타", "유한 상태 기계", "Finite State Machine", "전이 그래프", "Transition Graph", "전이 표", "Transition Table", "상태 전이 함수", "시작 상태", "Start State", "받아들이는 상태", "Accepting State", "Final State", "엡실론 전이", "ε-move", "인식기", "Recognizer"]
 description: "말판 놀이를 떠올리면 된다. 칸 몇 개와 \"이 칸에서 이 글자가 나오면 저 칸으로\"라는 화살표가 있고, 말 하나를 시작 칸에 놓은 뒤 입력 글자를 한 개씩 읽으며 화살표를 따라 옮긴다. 글자를 다 읽었을 때 말이 표시해 둔 칸에 서 있으면 그 글자 줄을 받아들인다. 글자마다 한 걸…"

@@ -11,6 +11,7 @@ course_url: "/studies/operating-systems/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Evolution of Operating Systems", "직렬 처리", "Serial Processing", "단순 배치 시스템", "Simple Batch System", "모니터", "Monitor", "상주 모니터", "Resident Monitor", "작업 제어 언어", "Job Control Language", "JCL"]
 description: "운영체제는 \"비싼 프로세서를 어떻게 하면 놀리지 않을까\"라는 고민을 풀면서 네 단계로 자랐다. 사람이 직접 기계를 다루던 직렬 처리, 작업을 묶어 프로그램(모니터)이 차례로 돌리는 단순 배치, 여러 작업을 메모리에 올려 번갈아 돌리는 다중 프로그래밍 배치, 여러 사람이 터미널로 동…"

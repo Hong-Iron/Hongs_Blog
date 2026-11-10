@@ -11,6 +11,7 @@ course_url: "/studies/rust/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
+last_modified_at: "2026-10-14"
 status: "verified"
 aliases: ["sqlx", "SQLx", "SqlitePool", "Connection Pool", "연결 풀", "Bind Parameter", "바인드 매개변수", "FromRow", "Transaction", "트랜잭션", "Migration", "마이그레이션", "SQL Injection", "SQL 주입", "SqlSafeStr", "AssertSqlSafe"]
 description: "sqlx는 Rust 프로그램이 SQL 문장을 그대로 써서 데이터베이스와 주고받게 해 주는 라이브러리다. 연결 몇 개를 미리 열어 두고 돌려 쓰며, 사용자 입력은 문장에 이어 붙이지 않고 따로 실어 보낸다. 그래서 입력에 따옴표나 SQL 조각이 섞여도 문장이 바뀌지 않는다. 대신 S…"

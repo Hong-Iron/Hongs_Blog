@@ -11,6 +11,7 @@ course_url: "/studies/database-design/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Relation", "Relational Data Model", "관계형 데이터 모델", "관계형 모델", "릴레이션", "튜플", "Tuple", "속성", "Attribute", "도메인", "Domain", "릴레이션 스키마", "Relation Schema", "릴레이션 상태", "Relation State", "Relation Instance", "차수", "Degree", "dom"]
 description: "관계형 모델은 모든 데이터를 표에 담는다. 표의 한 줄은 학생 한 명 같은 사실 하나이고, 칸 위에 적은 이름이 그 칸의 뜻을 정한다. 틀이 단순해서 누구나 읽을 수 있고 조건을 걸어 찾기도 쉽다. 다만 여기서 말하는 표는 줄의 모음이라, 화면에서 보던 표와 달리 같은 줄이 두 번…"

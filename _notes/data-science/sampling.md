@@ -11,6 +11,7 @@ course_url: "/studies/data-science/"
 track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Sampling", "데이터 샘플링", "데이터 축소", "Data Reduction", "비복원 추출", "Sampling without Replacement", "복원 추출", "Sampling with Replacement", "층화 추출", "Stratified Sampling", "층", "Stratum"]
 description: "데이터가 너무 커서 다 분석할 수 없을 때, 전체를 잘 대표하는 일부만 뽑아 쓰는 방법이다. 뽑은 것을 다시 넣지 않고 뽑을 수도, 다시 넣고 뽑을 수도 있고, 무리를 나눠 무리마다 뽑을 수도 있다. 작은 표본으로 빠르게 분석할 수 있지만, 뽑는 방법이 나쁘면 드문 무리를 통째로 …"

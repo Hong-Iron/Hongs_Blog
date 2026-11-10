@@ -11,6 +11,7 @@ course_url: "/studies/algorithms/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Grid Rotation and Linear Maps", "격자 회전", "2차원 리스트 회전", "반사 두 번은 회전", "정사각형의 대칭", "아핀 변환", "affine map", "동차 좌표", "반대각선 뒤집기"]
 description: "격자를 위아래로 뒤집는 것과 행과 열을 맞바꾸는 것(전치)은 둘 다 거울에 비추는 반사이고, 이 둘을 이으면 90도 회전이 된다. 그래서 칸이 어디로 가는지 외우지 않고 행렬 곱으로 만들 수 있고, 두 동작의 순서를 바꾸면 왜 정확히 반대로 도는지도 안다. 다만 칸 번호를 격자 가…"

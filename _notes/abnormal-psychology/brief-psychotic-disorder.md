@@ -10,6 +10,7 @@ course_slug: "abnormal-psychology"
 course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
+last_modified_at: "2026-10-06"
 status: "verified"
 aliases: ["Brief Psychotic Disorder", "단기 정신증적 장애", "단기 반응성 정신병", "brief reactive psychosis"]
 description: "조현병의 증상 가운데 하나 이상이 하루에서 한 달 사이에 짧게 나타났다가, 원래 모습으로 완전히 돌아오는 경우다. 대개 격렬한 감정의 동요와 혼란이 함께 오고, 심한 스트레스 뒤에 잘 생긴다. 짧지만 그동안은 생활이 크게 무너질 수 있다. 다만 다시 오거나 조현병으로 넘어가는 일은…"

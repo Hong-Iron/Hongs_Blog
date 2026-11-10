@@ -9,6 +9,7 @@ track: "사람과 심리"
 concepts: 31
 practices: 4
 codes: 44
+last_modified_at: "2026-10-15"
 description: "휴먼 인터페이스 미디어 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

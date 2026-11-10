@@ -11,6 +11,7 @@ course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
+last_modified_at: "2026-10-09"
 status: "verified"
 aliases: ["Unit Step Response", "계단 응답", "Step Response", "s[n]", "s(t)"]
 description: "스위치를 켜는 입력(단위 계단)을 넣었을 때의 출력이 계단 응답이다. 실험실에서는 바늘 같은 임펄스를 만들기 어렵지만 스위치를 켜는 것은 쉬워서, 계단 응답을 재고 거기서 임펄스 응답을 얻는다. 계단이 임펄스를 쌓은 것이므로 계단 응답도 임펄스 응답을 쌓은 것이고, 반대로 계단 응…"

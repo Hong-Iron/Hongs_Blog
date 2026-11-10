@@ -11,6 +11,7 @@ course_url: "/studies/computer-architecture/"
 track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
+last_modified_at: "2026-10-12"
 status: "verified"
 aliases: ["Clock", "Sequential Logic", "Sequential Circuit", "순차 논리", "동기 회로", "Synchronous System", "에지 트리거 클로킹", "Edge-Triggered Clocking", "클록 주기", "Clock Period", "클록 어긋남", "Clock Skew", "임계 경로", "Critical Path", "경주", "Race", "유한 상태 기계", "Finite State Machine"]
 description: "값을 기억하는 부품과 계산하는 회로를 번갈아 잇고, 모든 기억 부품이 같은 박자에 맞춰 한꺼번에 값을 바꾸게 한 회로다. 박자와 박자 사이에는 계산 회로만 움직이고, 박자가 오는 순간 그 결과가 다음 칸에 찍힌다. 이어달리기에서 정해진 신호에만 바통을 넘기는 것과 같다. 덕분에 자…"

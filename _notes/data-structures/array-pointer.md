@@ -11,6 +11,7 @@ course_url: "/studies/data-structures/"
 track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
+last_modified_at: "2026-10-15"
 status: "verified"
 aliases: ["Arrays and Pointers", "배열", "Array", "1차원 배열", "포인터 산술", "Pointer Arithmetic", "주소 계산", "임의 접근", "Random Access", "문자 배열", "문자 포인터", "Character Pointer", "문자열 상수", "strcpy", "strcmp", "널 문자"]
 description: "배열은 같은 크기의 칸이 빈틈없이 줄지어 선 것이다. 그래서 첫 칸의 주소와 칸 하나의 크기만 알면 몇 번째 칸이든 곱셈과 덧셈 한 번으로 주소가 나오고, 어느 칸이든 곧바로 읽는다. C에서는 배열의 이름이 첫 칸의 주소처럼 쓰여서 배열과 포인터를 거의 같은 식으로 다룬다. 다만 …"
