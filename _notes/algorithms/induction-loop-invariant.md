@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Induction and Loop Invariants", "귀납법과 루프 불변식", "초기화·유지·끝난다·종료", "부분 정확성", "partial correctness", "끝남 증명", "termination argument"]
 description: "반복문이 맞다는 증명은 도미노처럼 넘어가는 수학적 귀납법을 \"몇 바퀴 돌았나\"에 쓴 것이다. 처음에 참이라는 것이 첫 도미노이고, 한 바퀴 돌아도 참으로 남는다는 것이 다음 도미노를 넘어뜨리는 규칙이다. 그래서 이 둘만 보이면 몇 바퀴 뒤든 참이다. 다만 바퀴 수에 대한 귀납은 반…"

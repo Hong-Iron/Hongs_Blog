@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Transvestic Disorder", "복장도착증", "의상도착증", "transvestism", "옷 바꿔 입기", "cross-dressing", "물품음란증 동반", "with fetishism", "자가여성애 동반", "with autogynephilia", "자가여성애", "autogynephilia"]
 description: "이성의 옷을 입는 것에서 반복적으로 강렬한 성적 흥분을 느끼고, 그 때문에 반년 넘게 괴롭거나 생활이 흔들리는 장애다. 이성의 옷을 입는 사람이 모두 해당하는 것은 아니다. 핵심은 옷 바꿔 입기가 성적 흥분의 수단이라는 점이다. 거의 전부 이성애자 남성이고, 옷을 버렸다가 다시 사…"

@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Convergence of Series", "급수", "series", "부분합", "partial sum", "발산 판정", "divergence test", "적분 판정", "integral test", "비교 판정", "comparison test", "비 판정", "ratio test", "교대급수", "alternating series", "절대수렴", "absolute convergence", "조건수렴", "conditional convergence", "p-급수", "바젤 문제"]
 description: "무한히 많은 수를 더해도 결과가 유한한 값에 머무는지를 따진다. 앞에서부터 더한 합이 어떤 값에 다가가면 수렴이다. 항이 0으로 가는 것은 필요하지만 충분하지 않다. 1, 2분의 1, 3분의 1, …을 차례로 더한 합은 항이 0으로 가도 끝없이 커진다. 그래서 등비급수, 적분, 이…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Bisection Method", "구간 반분법", "구간법", "Bracketing Method", "증분 탐색", "Incremental Search", "근 찾기", "Root Finding", "상대 오차", "Relative Approximate Error"]
 description: "함수 값의 부호가 다른 두 점 사이에는 연속 함수라면 반드시 근이 있다. 이분법은 가운데 점의 부호를 보고 근이 있는 반쪽만 남기기를 되풀이한다. 구간이 매번 정확히 절반이 되므로 반드시 수렴하고, 몇 번 만에 원하는 정확도가 되는지 미리 안다. 대신 느리고, 함수가 끊어진 곳에서…"

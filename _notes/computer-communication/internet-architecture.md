@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Internet Architecture", "TCP/IP 구조", "TCP/IP model", "모래시계", "hourglass", "IP", "Internet Protocol", "TCP", "UDP", "IETF"]
 description: "인터넷 구조는 실제로 인터넷을 운영하며 다듬어진 계층 구조다. 모래시계처럼 가운데가 IP 하나로 좁고, 위로는 여러 응용이, 아래로는 여러 종류의 네트워크가 넓게 퍼진다. 가운데가 하나뿐이라 어떤 응용이든 어떤 네트워크 위에서든 돌 수 있다. 대신 OSI처럼 층을 엄격하게 지키지는…"

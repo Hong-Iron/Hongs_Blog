@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Bernoulli Process", "베르누이 프로세스", "베르누이 시행", "Bernoulli Trial", "베르누이 확률변수", "Bernoulli Random Variable", "지시 확률변수", "Indicator Variable", "시간 칸", "Time Slot", "도착 과정", "Arrival Process", "이항 과정", "Binomial Process"]
 description: "1분마다 동전을 하나씩 던져 앞면이면 1, 뒷면이면 0을 적어 나간 끝없는 줄이다. 칸마다 1이 나올 가능성이 똑같고 칸끼리 서로 영향을 주지 않아서, 시간에 따라 벌어지는 일을 적는 방법 가운데 가장 다루기 쉽다. 처음 몇 칸 안에 1이 몇 개 들었는지는 경우의 수와 곱셈만으로 …"

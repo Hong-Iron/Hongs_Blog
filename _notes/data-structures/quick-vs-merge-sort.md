@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Quick Sort vs Merge Sort", "퀵 정렬 대 병합 정렬"]
 description: "둘 다 \"나누고, 조각을 따로 정렬하고, 이어 붙인다\". 가르는 질문은 \"무엇을 기준으로 나누는가\"다. 퀵 정렬은 값(피벗)으로 나누고 병합 정렬은 자리(가운데)로 나눈다. 그 답이 일이 몰리는 곳, 가장 나쁠 때의 빠르기, 덤 공간을 함께 정한다."

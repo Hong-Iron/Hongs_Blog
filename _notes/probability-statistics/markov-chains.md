@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Markov Chain", "마르코프 연쇄", "마르코프 체인", "마르코프 성질", "Markov property", "전이행렬", "transition matrix", "확률행렬", "stochastic matrix", "정상분포", "stationary distribution", "기약", "irreducible", "비주기", "aperiodic", "귀환 시간", "return time"]
 description: "다음 상태가 지금 상태에만 달려 있고, 여기까지 어떤 길로 왔는지는 상관없는 무작위 과정이다. 상태끼리 옮겨 갈 확률을 표(전이행렬)로 모으면, 여러 단계 뒤의 분포는 그 행렬을 거듭 곱해 구한다. 오래 돌리면 출발점과 상관없이 일정한 비율(정상분포)로 가라앉는 경우가 많아, 웹 …"

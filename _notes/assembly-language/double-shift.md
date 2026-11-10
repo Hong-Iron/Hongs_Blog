@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Double Shift", "SHLD", "SHRD", "Shift Left Double", "Shift Right Double", "이중 정밀도 시프트", "Double-Precision Shift"]
 description: "두 줄로 선 사람들 가운데 앞줄만 옆으로 밀고, 생긴 빈자리를 뒷줄 사람이 건너와 채우는 밀기다. 뒷줄은 사람을 빌려줄 뿐 자기 자리는 그대로다. 보통 시프트가 빈자리를 0으로 채워 정보를 잃는 것과 달리, 이웃한 값에서 비트를 끌어오므로 레지스터 둘에 나눠 담은 긴 수를 끊김 없…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Single-Cycle Datapath", "단일 사이클 구현", "Single-Cycle Implementation", "단일 사이클 프로세서", "분기 목표 주소", "Branch Target Address"]
 description: "시계가 한 번 울리는 동안 명령어 하나를 처음부터 끝까지 끝내는 프로세서다. 물이 수도꼭지에서 나와 여러 갈래 관을 한 번에 훑고 지나가듯, 주소가 명령어를 꺼내고, 명령어가 레지스터를 읽고, 그 값이 계산기를 지나 메모리를 거쳐 다시 레지스터로 돌아온다. 구조가 단순해서 이해하기…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Hardware Support for Mutual Exclusion", "인터럽트 금지", "Interrupt Disabling", "비교 후 교환", "Compare and Swap", "CAS", "교환 명령어", "Exchange Instruction", "XCHG", "바쁜 대기", "Busy Waiting", "스핀락", "Spinlock"]
 description: "임계 구역을 지키는 가장 밑바닥 방법은 하드웨어에 기대는 것이다. 하나는 임계 구역 동안 인터럽트를 꺼서 아무도 끼어들지 못하게 하는 것이고, 다른 하나는 \"확인하고 바꾸기\"를 끊기지 않는 명령어 하나로 해 주는 특수 명령어다. 단순하고 프로세스 수에 상관없이 쓸 수 있다. 하지만…"

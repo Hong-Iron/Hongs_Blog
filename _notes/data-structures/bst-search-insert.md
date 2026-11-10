@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Binary Search Tree", "BST", "이진 탐색 트리", "이진 검색 트리", "BST Search", "BST Insert", "modified search"]
 description: "갈림길마다 \"찾는 값이 여기 값보다 작으면 왼쪽, 크면 오른쪽\"으로만 내려가는 나무다. 찾기는 뿌리에서 한 길만 따라 내려가면 끝나고, 넣기는 그렇게 내려가다 길이 끊긴 빈자리에 새 값을 매다는 일이다. 그래서 두 일 모두 나무의 층 수만큼만 걸린다. 다만 값이 크기 순서대로 들어…"

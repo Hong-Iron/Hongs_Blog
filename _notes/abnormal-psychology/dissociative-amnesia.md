@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Dissociative Amnesia", "심인성 기억상실증", "Psychogenic Amnesia", "국소적 기억상실", "localized amnesia", "전반적 기억상실", "generalized amnesia", "해리성 둔주", "Dissociative Fugue", "배신 외상", "betrayal trauma"]
 description: "뇌를 다친 것도 아닌데, 충격적인 일을 겪은 뒤 그 일이나 자기 삶의 중요한 부분이 통째로 기억나지 않는 장애다. 마음이 감당할 수 없는 기억을 의식에서 차단해 자신을 보호하는 것이다. 해리장애 가운데 가장 흔하다. 기억은 지워진 것이 아니라 막혀 있을 뿐이어서, 치료는 단서를 주…"

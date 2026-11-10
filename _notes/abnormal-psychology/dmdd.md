@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Disruptive Mood Dysregulation Disorder", "DMDD", "파괴적 기분조절부전장애", "분노 발작", "temper tantrum", "소아 양극성장애 논란"]
 description: "아이가 늘 짜증스럽고, 사소한 일에도 나이에 맞지 않게 심하게 폭발하는 일이 1년 넘게 되풀이되는 장애다. 좌절을 견디는 힘이 약해 작은 스트레스에도 무너진다. 들뜨고 가라앉는 기분이 오가는 것이 아니라 짜증이 늘 깔려 있다는 점에서 양극성장애와 다르고, 그래서 우울장애 무리에 들…"

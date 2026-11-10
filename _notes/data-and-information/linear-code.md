@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Linear Code", "선형 부호", "선형 블록 부호", "Linear Block Code", "생성 행렬", "Generator Matrix", "패리티 검사 행렬", "Parity Check Matrix", "패리티 비트", "Parity Bit", "패리티 검사", "짝수 패리티", "홀수 패리티", "신드롬", "Syndrome", "체계형", "Systematic Form"]
 description: "쓸 낱말을 일일이 표로 적어 두는 대신, 낱말 몇 개만 정해 두고 그것들을 더해서 나머지를 만드는 부호다. 영수증 끝에 합계를 적어 두면 품목 하나가 틀렸을 때 합이 안 맞아 들통나는 것처럼, 내용 뒤에 \"몇몇 칸을 더한 값\"을 덧붙여 보낸다. 만드는 쪽도 받는 쪽도 정해진 덧셈 …"

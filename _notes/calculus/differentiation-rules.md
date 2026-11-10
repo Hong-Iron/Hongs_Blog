@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Differentiation Rules", "거듭제곱 법칙", "power rule", "곱의 미분법", "product rule", "몫의 미분법", "quotient rule", "선형성", "linearity", "지수함수의 도함수", "로그함수의 도함수", "삼각함수의 도함수"]
 description: "모든 함수를 극한의 정의로 미분할 필요는 없다. 거듭제곱·지수·로그·삼각함수 몇 가지의 도함수와, 합·곱·몫을 미분하는 규칙만 있으면 대부분의 식을 기계적으로 미분한다. 이 규칙들이 컴퓨터가 식을 자동으로 미분하는 방법의 기본 부품이다. 다만 곱의 미분은 각 도함수의 곱이 아니다."

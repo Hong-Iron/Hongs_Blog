@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Levels of Input-Output", "입출력 수준", "I/O Access Levels", "Programming Levels", "BIOS", "Basic Input-Output System", "API", "Application Programming Interface", "장치 드라이버", "직접 하드웨어 접근"]
 description: "프로그램이 화면에 글자를 찍거나 키보드를 읽을 때는 누군가에게 부탁한다. 손님이 식당 종업원에게 주문하면 종업원이 주방에 전하고 주방이 불을 쓰는 것처럼, 부탁은 여러 단계를 거쳐 하드웨어에 닿는다. 위 단계에 부탁할수록 쓰기 쉽고 어느 컴퓨터에서나 통한다. 아래 단계로 내려갈수록…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Data Linearization", "선형화", "Linearization", "거듭제곱 맞춤", "Power Fit", "지수 맞춤", "Exponential Fit", "비선형 최소제곱", "Nonlinear Least Squares", "오차 노름", "RMS Error"]
 description: "자료가 직선이 아니라 지수 곡선이나 거듭제곱 곡선을 따를 때, 축을 바꿔(예: y 대신 \\ln y) 직선으로 펴 놓고 최소제곱 직선을 구하는 방법이다. 직선 맞추기는 연립방정식 하나로 끝나므로 빠르고 쉽다. 다만 펴진 축에서 오차를 줄인 것이라, 원래 축에서의 오차 제곱합이 가장 …"

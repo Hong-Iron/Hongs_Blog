@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Outer Join", "OUTER JOIN", "LEFT OUTER JOIN", "RIGHT OUTER JOIN", "FULL OUTER JOIN", "LEFT JOIN", "RIGHT JOIN", "왼쪽 외부 조인", "오른쪽 외부 조인", "완전 외부 조인", "내부 조인", "Inner Join", "안티 조인"]
 description: "직원 옆에 상사 이름을 붙인 명단을 만들면, 상사가 없는 사장은 짝이 없어서 명단에서 통째로 빠진다. 짝이 없는 사람도 명단에 남기고 짝 자리는 빈칸으로 두는 것이 외부 조인이다. 어느 쪽 표의 행을 다 남길지에 따라 왼쪽, 오른쪽, 양쪽 세 가지가 있다. 빈칸으로 채운 행도 한 …"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Avoidant/Restrictive Food Intake Disorder", "ARFID", "회피적/제한적 음식섭취 장애", "편식", "picky eating", "감각통합치료", "sensory integration therapy"]
 description: "음식의 냄새나 식감이 너무 싫거나, 먹다가 체한 기억 때문에 먹는 것이 두려워서, 먹기를 피하거나 몇 가지만 먹다가 몸이 상하는 장애다. 단순한 편식과 달리 체중이 줄고, 영양이 모자라고, 생활이 흔들린다. 살찌는 것이 두려워서 안 먹는 것이 아니라는 점이 신경성 식욕부진증과 다르…"

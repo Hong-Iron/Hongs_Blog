@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["패킷 스위칭 vs 통계적 다중화", "packet switching vs statistical multiplexing"]
 description: "둘은 거의 늘 함께 나온다. 흔히 한데 묶어 설명한다. 그래서 같은 것으로 착각하기 쉽다. 가르는 질문은 \"무엇에 대한 답인가\"다. 통계적 다중화는 링크 하나를 어떻게 나눠 쓰는지에 대한 답이다. 패킷 스위칭은 노드가 데이터를 목적지 쪽으로 어떻게 넘기는지에 대한 답이다."

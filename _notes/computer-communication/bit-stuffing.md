@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Bit Stuffing", "비트 삽입", "Bit-Oriented Protocol", "비트 중심 프로토콜", "HDLC", "High-Level Data Link Control", "SDLC", "깃발", "Flag", "01111110"]
 description: "데이터를 8비트 글자(바이트)가 아니라 임의의 비트 줄로 보고, 프레임의 처음과 끝에 정해 둔 비트 모양 01111110(깃발)을 붙인다. 본문에 같은 모양이 나오지 않도록, 보내는 쪽은 1이 다섯 개 이어지면 무조건 0을 하나 끼워 넣고, 받는 쪽은 그 0을 지운다. 그러면 데이…"

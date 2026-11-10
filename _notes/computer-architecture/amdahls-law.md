@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Amdahl's Law", "암달", "속도 향상", "Speedup", "자주 생기는 경우를 빠르게", "Make the Common Case Fast"]
 description: "일의 한 부분만 빨라지면, 전체가 빨라지는 정도는 그 부분이 원래 차지하던 시간만큼으로 묶인다. 집에서 학교까지 버스 30분에 걷기 10분이 걸린다면, 버스가 아무리 빨라져도 40분이 10분 밑으로 내려가지 않는다. 그래서 가장 오래 걸리는 부분부터 고쳐야 하고, 조금만 걸리는 부…"

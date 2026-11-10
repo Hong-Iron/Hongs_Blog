@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Cyclothymic Disorder", "순환감정장애", "순환성 기분장애", "cyclothymia"]
 description: "조금 들뜬 시기와 조금 가라앉은 시기가 2년 넘게 번갈아 이어지지만, 어느 쪽도 경조증이나 주요우울 삽화의 기준에는 못 미치는 장애다. 파도가 높지는 않은데 잔잔한 날이 거의 없는 바다와 같다. 한 번 한 번은 가벼워서 \"기분파 성격\"으로 넘기기 쉽지만, 만성이고 나중에 제1형이나…"

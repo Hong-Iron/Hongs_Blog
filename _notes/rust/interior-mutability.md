@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Interior Mutability", "Cell", "Cell<T>", "RefCell", "RefCell<T>", "BorrowError", "BorrowMutError", "OnceCell", "LazyLock", "LazyCell", "OnceLock", "UnsafeCell", "Rc<RefCell<T>>"]
 description: "보통 Rust에서 값을 고치려면 그 값을 혼자 빌려야 한다. 내부 가변성은 여럿이 함께 보고 있는 값도 안쪽을 고칠 수 있게 해 주는 상자다. 규칙이 사라지는 것은 아니다. \"읽는 사람 여럿, 또는 고치는 사람 하나\"라는 규칙을 컴파일할 때 대신 실행 중에 검사한다. 그래서 규칙을…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["ASD vs SCD", "자폐와 사회적 의사소통장애 비교"]
 description: "두 장애 모두 사회적 상황에서 말과 몸짓을 주고받는 데 어려움이 있다. 가르는 질문은 \"그 위에 제한적이고 반복적인 행동, 흥미, 활동이 있는가\"다. 있으면 자폐스펙트럼장애, 없으면 사회적 의사소통장애다."

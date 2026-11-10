@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Why Rust", "Rust", "메모리 안전", "Memory Safety", "데이터 경쟁", "Data Race", "비용 없는 고수준 기능", "Zero-Cost Abstraction", "가비지 컬렉터", "Garbage Collector"]
 description: "C는 빠르지만, 다 쓴 메모리를 또 쓰거나 배열 끝을 넘어 읽어도 아무도 막지 않는다. Java와 파이썬은 이런 실수를 막는 대신, 실행 중에 메모리를 치우는 청소부를 따로 돌린다. Rust는 청소부 없이 컴파일러가 코드를 미리 검사해서 이런 실수를 거의 다 막는다. 대가는 배우기…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Psychological Theories of PTSD", "스트레스 반응 이론", "stress response theory", "호로위츠", "Horowitz", "박살난 가정 이론", "theory of shattered assumptions", "야노프-불먼", "Janoff-Bulman", "정서적 처리 이론", "emotional processing theory", "공포 기억구조", "fear structure", "이중 표상 이론", "dual representation theory", "브루인", "Brewin", "VAM", "SAM", "언어적으로 접근 가능한 기억", "상황적으로 접근 가능한 기억", "PTSD의 통합적 인지모델", "엘러스와 클라크", "Ehlers and Clark"]
 description: "다섯 이론은 결국 같은 이야기를 다른 각도에서 한다. 외상은 \"세상은 대체로 안전하고, 나는 괜찮은 사람\"이라는 기존의 믿음에 들어맞지 않는 정보라, 마음이 그것을 소화하지 못한 채 남긴다. 소화되지 못한 기억은 말로 떠올리기는 어려운데 작은 단서에는 생생하게 튀어나오고, 사람은 …"

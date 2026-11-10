@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["System", "연속 시간 시스템", "Continuous-Time System", "이산 시간 시스템", "Discrete-Time System", "직렬 연결", "Cascade Interconnection", "병렬 연결", "Parallel Interconnection", "피드백 연결", "Feedback Interconnection", "혼합 시스템", "Hybrid System"]
 description: "시스템은 입력 신호를 받아 출력 신호로 바꾸는 상자다. 녹음기(소리 → 전기), 회로(전원 전압 → 축전기 전압), 자동차(엔진 힘 → 속도)가 모두 시스템이다. 복잡한 시스템은 작은 상자들을 줄줄이(직렬), 나란히(병렬), 되먹임(피드백)으로 이어 만든다. 상자 안을 몰라도 입력…"

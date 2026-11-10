@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Heap Indexing and Binary Representation", "칸 번호와 2진 표현", "1부터 센 칸 번호", "1-based index", "부모 i // 2", "가장 가까운 공통 조상", "lowest common ancestor", "LCA", "가장 긴 공통 앞부분", "longest common prefix", "bit_length"]
 description: "힙과 세그먼트 트리는 뿌리를 1번으로 두고 층마다 왼쪽부터 번호를 매겨 나무를 배열에 담는다. 이 번호를 2진수로 쓰면, 맨 앞 1 뒤의 자리들이 뿌리에서 그 칸까지 내려가는 길이다(0은 왼쪽, 1은 오른쪽). 그래서 자식은 끝에 자리를 하나 붙인 수, 부모는 끝자리를 뗀 수, 깊…"

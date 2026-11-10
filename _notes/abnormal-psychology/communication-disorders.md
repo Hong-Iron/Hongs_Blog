@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Communication Disorders", "언어", "language", "말하기", "speech", "의사소통", "communication"]
 description: "말과 언어로 주고받는 일에 어려움이 있는 장애들이다. 어디서 막히느냐로 네 가지가 갈린다. 단어와 문장을 만들고 이해하는 것(언어장애), 소리를 또렷이 내는 것(말소리장애), 말을 매끄럽게 이어 가는 것(말더듬), 상황에 맞게 말을 쓰는 것(사회적 의사소통장애)이다. 청력이나 입의…"

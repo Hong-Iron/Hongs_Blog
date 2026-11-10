@@ -11,6 +11,7 @@ concepts: 17
 practices: 2
 codes: 18
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 description: "자료와 정보 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

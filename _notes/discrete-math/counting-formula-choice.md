@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["순열 vs 조합", "셈 공식 고르기", "twelvefold way", "경우의 수 공식 선택"]
 description: "n종류에서 k개를 뽑는 문제는 공식이 넷이라 헷갈린다. 가르는 질문은 두 개다. 뽑은 순서가 결과를 바꾸는가, 같은 것을 다시 뽑을 수 있는가. 두 질문에 답하면 공식이 하나로 정해진다. 공식을 고르기 전에 가장 작은 경우를 손으로 세어 보면 틀린 공식을 걸러낸다."

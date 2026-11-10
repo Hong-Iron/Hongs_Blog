@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Graph Partitioning", "그래프 군집화", "Graph Clustering", "유사도 그래프", "Similarity Graph", "가우스 커널", "Gaussian Kernel", "ε-이웃 그래프", "ε-neighborhood Graph", "k-최근접 이웃 그래프", "k-NN Graph", "컷", "Cut", "정규화 컷", "Normalized Cut", "NCut", "부피", "Volume"]
 description: "친구 관계, 도로망, 웹 링크처럼 자료가 \"누가 누구와 이어졌나\"로 주어지면 점의 좌표가 없어 k-평균을 쓸 수 없다. 이때 군집화는 그래프를 몇 조각으로 자르는 일이 된다. 조각 안은 촘촘히 이어지고 조각 사이를 잇는 선은 적게 자르고 싶다. 그런데 잘리는 선만 줄이려 하면 외딴…"

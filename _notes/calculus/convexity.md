@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Convex Function", "볼록 함수", "볼록성", "convexity", "볼록 집합", "convex set", "볼록 최적화", "convex optimization", "순볼록", "strictly convex", "강볼록", "strongly convex", "오목 함수", "concave function", "옌센 부등식", "Jensen's inequality"]
 description: "그래프가 그릇 모양인 함수다. 그래프 위의 두 점을 줄로 이으면 그 줄이 늘 그래프보다 위(또는 같은 높이)에 있다. 이런 함수에는 움푹한 곳이 하나뿐이라, 어디서 내려가기 시작하든 가장 낮은 바닥에 닿는다. 그래서 볼록인지 확인하는 것이 곧 \"경사 하강법 결과를 믿어도 되는가\"에…"

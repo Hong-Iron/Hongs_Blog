@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Future", "Futures", "async", "await", "async fn", "async 블록", "Async Block", "poll", "Poll", "Waker", "Context", "Pin", "Unpin", "실행기", "Executor", "block_on", "상태 기계", "State Machine"]
 description: "식당 진동벨과 같다. 주문하면 음식 대신 벨을 받고, 벨이 울리면 그때 가서 음식을 받는다. 기다리는 동안 손이 비니 스레드 하나로 수천 개의 기다림을 돌볼 수 있다. 대신 벨은 누군가 계속 들여다봐 줘야 울리고(실행기가 필요하다), 기다리는 동안 다른 일을 하지 않고 붙잡고 있는…"

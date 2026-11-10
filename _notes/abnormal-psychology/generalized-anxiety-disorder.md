@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Generalized Anxiety Disorder", "GAD", "걱정", "worry", "부동불안", "free-floating anxiety", "다중공포증", "multiple phobia", "파국화", "catastrophizing", "인지적 회피", "cognitive avoidance", "사고-사건 융합", "thought-event fusion", "상위걱정", "meta-worry", "걱정의 유용성에 대한 믿음", "불확실성에 대한 인내력 부족", "벤조다이아제핀", "benzodiazepine", "GABA", "걱정사고 기록지", "걱정하는 시간"]
 description: "가족, 돈, 건강, 일, 앞날처럼 여러 가지를 두고 걱정이 끊이지 않는 장애다. 걱정이 실제 일의 크기보다 지나치고, 스스로 멈추려 해도 멈춰지지 않으며, 몸이 늘 긴장하고 피곤하다. 역설적이게도 걱정은 불쾌한 감정과 몸의 각성을 잠시 피하게 해 주는 수단이 되어, 그 덕분에 오히…"

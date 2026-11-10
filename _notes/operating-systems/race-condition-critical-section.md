@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Race Condition", "Critical Section", "경쟁 조건", "임계 구역", "상호 배제", "Mutual Exclusion", "기아", "Starvation", "병행성", "Concurrency", "원자적 연산", "Atomic Operation"]
 description: "두 사람이 같은 공책의 같은 칸을 동시에 고치면, 누가 마지막에 썼느냐에 따라 결과가 달라진다. 프로세스나 스레드가 공유 데이터를 함께 읽고 쓸 때도 똑같은 일이 생기고, 이것을 경쟁 조건이라고 부른다. 해결책은 공유 데이터를 만지는 코드 구간(임계 구역)에 한 번에 하나만 들어가…"

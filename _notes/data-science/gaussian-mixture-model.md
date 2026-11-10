@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Gaussian Mixture Model", "GMM", "가우시안 혼합 모델", "혼합 계수", "Mixing Coefficient", "부드러운 배정", "Soft Assignment", "확률적 군집화", "Probabilistic Clustering", "생성 모델", "Generative Model", "책임도", "Responsibility"]
 description: "자료가 종 모양 분포 여러 개를 섞어서 생겼다고 보는 군집화다. 점 하나를 만들 때 먼저 어느 종을 쓸지 주사위로 고르고, 그 종에서 점을 뽑는다고 생각한다. 그러면 점마다 \"무리 1에서 왔을 확률 0.7, 무리 2에서 0.3\"처럼 부드럽게 나눌 수 있고, 종마다 퍼짐과 기울기가 …"

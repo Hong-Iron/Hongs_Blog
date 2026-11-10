@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Central Limit Theorem", "중심극한정리", "CLT", "정규 근사", "normal approximation", "연속성 보정", "continuity correction", "표준오차", "standard error"]
 description: "서로 독립인 값을 많이 더하거나 평균 내면, 원래 값들이 어떤 모양의 분포를 따르든 합의 분포는 종 모양(정규분포)에 가까워진다. 주사위 하나는 납작한 모양이지만 100개의 합은 거의 완벽한 종이다. 그래서 평균의 오차를 정규분포로 계산할 수 있고, 오차 막대·신뢰구간·A/B 테스…"

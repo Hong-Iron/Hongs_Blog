@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Library Error Design", "thiserror", "non_exhaustive", "C-GOOD-ERR", "Error enum"]
 description: "남이 가져다 쓰는 코드(라이브러리)의 에러는 부른 사람이 \"무엇이 잘못됐는지\"를 갈라 처리할 수 있어야 한다. 그래서 실패하는 방식마다 이름을 하나씩 붙인 열거형을 공개하고, 원인 에러는 사슬로 이어 둔다. thiserror를 쓰면 이 일을 짧게 적을 수 있다. 다만 공개한 에러는…"

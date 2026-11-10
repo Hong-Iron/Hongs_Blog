@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Linked Queue", "연결 큐", "연결된 큐", "QueueNode", "LinkedQueueType", "front", "rear", "count", "enqueue", "dequeue"]
 description: "한 줄로 이은 노드의 맨 앞과 맨 뒤를 각각 가리키는 주소 둘을 들고 있는다. 새로 온 원소는 맨 뒤 노드 뒤에 달고, 나가는 원소는 맨 앞에서 뗀다. 양 끝을 바로 아니까 둘 다 한 번에 끝나고, 배열로 만든 큐처럼 칸 수를 정하거나 한 칸을 비워 둘 필요가 없다. 대신 빈 줄에…"

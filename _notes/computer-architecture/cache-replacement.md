@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Cache Replacement Policy", "블록 교체", "LRU", "Least Recently Used", "무작위 교체", "Random Replacement", "FIFO", "희생 블록", "Victim"]
 description: "새 덩어리를 넣어야 하는데 그 묶음의 자리가 다 찼을 때, 누구를 내보낼지 정하는 규칙이다. 가장 좋은 답은 앞으로 가장 늦게 쓰일 것을 내보내는 것이지만 앞날은 알 수 없다. 그래서 가장 오래 안 쓴 것을 내보내거나 아무거나 골라 내보낸다. 오래 안 쓴 것을 내보내는 쪽이 보통 …"

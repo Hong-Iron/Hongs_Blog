@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Excitatory & Inhibitory", "흥분", "억제", "흥분성", "억제성", "탈분극", "depolarization", "과분극", "hyperpolarization", "문턱", "threshold"]
 description: "시냅스는 다음 뉴런에 \"발화해라\" 또는 \"참아라\" 두 종류의 쪽지를 보낸다. 흥분성 신호는 막전위를 발화 문턱 쪽으로 올리고, 억제성 신호는 문턱에서 멀어지게 내린다. 뉴런은 두 신호를 합친 결과로 발화 빈도를 정한다. 억제가 있어서 신경계는 신호를 더하기만 하지 않고 빼기도 한다…"

@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Change of Basis", "기저 변환", "좌표 변환", "coordinate change", "닮음", "similar matrices", "닮은 행렬", "similarity transformation", "대각합", "trace"]
 description: "같은 점도 어떤 눈금(기저)으로 재느냐에 따라 좌표가 다르고, 같은 변환도 기저에 따라 행렬이 달라진다. 변환이 유난히 단순하게 작용하는 방향들(그대로 두는 방향, 뒤집는 방향, 늘이는 방향)을 기저로 고르면 복잡해 보이던 행렬이 대각행렬처럼 단순해진다. 새 기저의 행렬은 \"새 좌…"

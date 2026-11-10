@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Sample Space", "표본공간", "사건", "event", "근원사건", "outcome", "결과", "여사건", "complement", "배반 사건", "disjoint events", "분할", "partition", "드모르간 법칙", "De Morgan's laws"]
 description: "실험에서 나올 수 있는 결과를 빠짐없이 모은 목록이 표본공간이고, 그중 관심 있는 결과들의 묶음이 사건이다. 사건을 집합으로 보면 \"또는\", \"그리고\", \"아니다\"가 각각 합집합, 교집합, 여집합이 되어 말로 된 확률 문제를 기계적으로 옮길 수 있다. 다만 결과를 어떤 단위로 적느…"

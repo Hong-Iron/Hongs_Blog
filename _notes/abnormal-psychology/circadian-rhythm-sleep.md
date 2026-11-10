@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Circadian Rhythm Sleep-Wake Disorder", "일주기 리듬 수면장애", "Circadian Rhythm Sleep Disorder", "지연 수면 위상형", "delayed sleep phase type", "올빼미형", "앞당겨진 수면 위상형", "이른 수면 위상형", "advanced sleep phase type", "종달새형", "불규칙 수면-각성형", "irregular sleep-wake type", "비24시간 수면-각성형", "non-24-hour sleep-wake type", "교대근무형", "shift work type", "시차", "jet lag", "광치료", "light therapy", "멜라토닌", "melatonin"]
 description: "잠의 양과 질은 괜찮은데, 몸속 시계가 사회의 시간표와 어긋나 원하는 시간에 잠들고 깨지 못하는 장애다. 새벽 4시에야 졸리는 올빼미형이 대표적이다. 사회 시간표에 억지로 맞추면 밤에는 잠이 안 오고(불면), 낮에는 졸리다(과다 졸음). 시계 자체를 옮겨야 하므로 일반 수면제는 별…"

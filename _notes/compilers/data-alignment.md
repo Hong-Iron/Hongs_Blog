@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Data Alignment", "데이터 정렬", "메모리 정렬", "Padding", "패딩", "N-byte Alignment", "런타임 환경", "Runtime Environment", "객체 표현", "Object Representation", "C 방식 배열", "Java 방식 배열", "다차원 배열 표현"]
 description: "주차장에서 큰 차는 칸 선에 맞춰 세워야 하고, 선에 맞추다 보면 앞차와의 사이에 빈 자리가 남는다. 변수도 메모리에 아무 번지에나 두지 않고, 종류마다 정해진 눈금의 배수 번지에서 시작하게 둔다. 눈금에 맞추느라 사이사이에 안 쓰는 칸이 생긴다. 어느 변수가 어느 번지에 놓일지는…"

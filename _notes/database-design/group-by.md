@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["GROUP BY", "Grouping", "그룹화", "묶기", "그룹화 속성", "Grouping Attribute", "그룹", "Group"]
 description: "회사 전체의 평균 급여가 아니라 \"부서마다\" 평균 급여를 알고 싶으면, 직원 명단을 부서 번호가 같은 사람끼리 묶은 뒤 묶음마다 따로 평균을 내면 된다. 어느 열의 값이 같은 행끼리 묶을지 적어 주면 묶음 하나가 결과의 한 줄이 된다. 묶음이 한 줄로 줄어들기 때문에, 결과에 적을…"

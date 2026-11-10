@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Interval DP", "구간 동적 계획법", "행렬 곱셈 순서", "Matrix Chain Multiplication", "괄호 치기"]
 description: "줄지어 선 것들을 두 덩어리씩 합쳐 하나로 만들 때, \"마지막에 어디서 나뉘었나\"를 모두 따져 가장 좋은 방법을 찾는다. 긴 구간의 답을 그 안의 더 짧은 두 구간의 답으로 만들기 때문에, 짧은 구간부터 표를 채운다. 괄호 치는 순서, 행렬 곱셈 순서, 문자열을 나누는 방법 같은 …"

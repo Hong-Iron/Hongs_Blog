@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Global Available Expression Analysis", "전역 사용 가능한 식 분석", "Global Copy Propagation", "전역 복사 전파", "Global Common Subexpression Elimination", "전역 공통 부분식 제거", "Global Constant Propagation", "전역 상수 전파", "Code Motion", "코드 이동"]
 description: "여러 길로 올 수 있는 교차로에서 \"여기 오는 사람은 누구나 우산을 들고 있다\"고 말하려면, 어느 길로 왔든 우산을 들고 있어야 한다. 코드에서도 \"이 자리에서 a는 1이다\" 같은 사실을 프로그램의 처음부터 앞으로 넘겨 가다가, 길이 합쳐지는 곳에서는 모든 길에 공통으로 있는 사실…"

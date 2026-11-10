@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["LL vs LR", "Top-down vs Bottom-up Parsing", "하향식 파싱과 상향식 파싱", "LL(1)과 SLR 비교"]
 description: "둘 다 토큰열을 왼쪽에서 오른쪽으로 한 번 읽으며 파스 트리를 만든다. 가르는 질문은 \"어느 규칙을 쓸지를 언제 정하는가\"다. LL은 규칙의 오른쪽을 보기 전에 다음 토큰 하나로 정한다. LR은 규칙의 오른쪽을 다 본 뒤에 정한다. 이 차이가 트리를 쌓는 방향, 받아 주는 문법의 …"

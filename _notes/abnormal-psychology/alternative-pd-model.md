@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Alternative DSM-5 Model for Personality Disorders", "AMPD", "대안모델", "혼용 모델", "hybrid model", "성격 기능 수준", "Level of Personality Functioning", "병리적 성격 특질", "pathological personality traits", "특질 영역", "trait domain", "특질 양상", "trait facet", "PD-TS", "부정적 정서성", "애착상실", "적대성", "탈억제", "정신병적 경향성"]
 description: "기존 진단이 \"열 개의 상자 중 어디에 들어가나\"를 묻는다면, 대안 모델은 \"성격이 얼마나 제 기능을 하나\"와 \"어떤 특질이 얼마나 강한가\"를 눈금으로 잰다. 성격장애를 자기와 대인관계라는 성격 기능이 상당히 손상되고, 병리적인 성격 특질이 함께 있는 상태로 정의한다. 상자와 눈금…"

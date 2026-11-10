@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Reference Equality", "참조 비교", "동일성", "Identity", "동등성", "Equality", "null", "널", "NullPointerException", "NPE", "널 포인터 예외"]
 description: "주소가 적힌 쪽지 두 장이 같은지 볼 때, 자바의 같다 기호는 쪽지에 적힌 주소만 견준다. 그래서 똑같이 생긴 집이라도 주소가 다르면 다르다고 답한다. 빠르고 뜻이 분명하지만, 내용이 같은지 알고 싶을 때 쓰면 틀린 답을 얻는다. 쪽지가 백지일 수도 있다. 아무 집도 가리키지 않는…"

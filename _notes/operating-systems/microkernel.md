@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-07"
 last_modified_at: "2026-10-07"
+date: "2026-10-07"
 status: "verified"
 aliases: ["Microkernel", "모놀리식 커널", "Monolithic Kernel", "계층형 커널", "Layered Kernel", "적재 가능 모듈", "Loadable Modules", "프로세스 간 통신", "IPC", "Interprocess Communication", "클라이언트-서버 모델"]
 description: "마이크로커널은 커널에 꼭 필요한 기능만 남기고, 파일 시스템이나 장치 드라이버 같은 나머지 서비스는 사용자 모드의 보통 프로세스(서버)로 빼낸 구조다. 본사에는 최소 인원만 두고 나머지 부서를 외부 협력사로 돌린 회사와 같다. 한 서버가 고장 나도 커널은 버티고, 서비스를 바꾸거나…"

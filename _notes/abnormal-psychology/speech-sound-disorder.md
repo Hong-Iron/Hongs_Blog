@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Speech Sound Disorder", "조음장애", "articulation disorder", "음운장애", "phonological disorder", "음소", "phoneme"]
 description: "말하고 싶은 것은 알고 문장도 만들 수 있는데, 소리를 또렷이 내지 못해 알아듣기 어려운 장애다. \"사과\"를 \"타과\"라고 하는 식이다. 세 살이면 대부분 알아들을 수 있게 말해야 하므로, 그 나이를 넘어서도 발음이 또래보다 많이 뒤처지면 의심한다. 입이나 귀의 신체적 문제 때문이면…"

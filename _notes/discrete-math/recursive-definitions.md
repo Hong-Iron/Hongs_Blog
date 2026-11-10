@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Recursive Definition", "Structural Induction", "재귀적 정의", "귀납적 정의", "구조적 귀납법", "재귀 자료형", "recursive data type", "균형 괄호", "balanced parentheses", "정 이진 트리", "full binary tree", "카탈랑 수", "Catalan number"]
 description: "끝없이 많은 대상을 \"기본 재료 몇 개\"와 \"이미 만든 것으로 새것을 만드는 규칙\"으로 정의하는 방법이다. 리스트, 트리, 수식, 프로그래밍 언어의 문법이 모두 이렇게 정의되고, 재귀 함수가 이 정의를 그대로 따라간다. 이렇게 정의한 대상의 성질은 같은 모양으로 증명한다. 기본 재…"

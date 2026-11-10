@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Avoidant Personality Disorder", "AvPD", "회피성", "수치심", "shame"]
 description: "사람과 가까워지고 싶지만, 거절당하고 창피당할까 봐 먼저 문을 닫는 사람이다. 자신은 무능하고 매력 없다고 믿어서, 상대가 좋아한다는 확신이 없으면 다가가지 않는다. 피할수록 \"역시 나는 안 된다\"는 믿음이 굳는다. 관계를 원한다는 점에서 조현성 성격장애와 다르고, 핵심 감정은 수…"

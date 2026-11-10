@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Frequency-Shaping Filter", "Frequency-Selective Filter", "필터", "Filter", "필터링", "Filtering", "저역 통과 필터", "Lowpass Filter", "고역 통과 필터", "Highpass Filter", "대역 통과 필터", "Bandpass Filter", "차단 주파수", "Cutoff Frequency", "통과 대역", "Passband", "정지 대역", "Stopband", "이상적 필터", "Ideal Filter", "RC 필터", "이동 평균 필터", "Moving Average Filter", "데시벨", "dB", "이퀄라이저", "Equalizer"]
 description: "필터는 신호의 주파수 성분마다 크기를 다르게 바꾸는 LTI 시스템이다. 오디오의 저음·고음 조절처럼 스펙트럼의 모양을 다듬는 것이 주파수 형성 필터, 라디오가 원하는 채널만 남기듯 어떤 주파수대는 통과시키고 나머지는 없애는 것이 주파수 선택 필터다. 이상적인 필터는 경계에서 칼같이…"

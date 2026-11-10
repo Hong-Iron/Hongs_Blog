@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Block Diagram", "블록 선도", "가산기", "Adder", "계수 곱셈기", "Coefficient Multiplier", "단위 지연기", "Unit Delay", "적분기", "Integrator", "미분기", "Differentiator"]
 description: "차분방정식이나 미분방정식을 더하기, 상수 곱하기, 한 칸 늦추기(또는 적분) 세 가지 부품을 선으로 이은 그림으로 바꾼 것이다. 식을 그림으로 보면 출력이 다시 입력 쪽으로 돌아가는 되먹임(피드백) 고리가 눈에 보이고, 그대로 디지털 회로나 프로그램으로 만들 수 있다. 연속 시간에…"

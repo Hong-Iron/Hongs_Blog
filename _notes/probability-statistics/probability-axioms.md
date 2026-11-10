@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Probability Axioms", "확률의 공리", "콜모고로프 공리", "Kolmogorov axioms", "확률 측도", "probability measure", "고전적 확률", "naive definition of probability", "여사건 법칙", "complement rule", "합집합 한계", "union bound", "생일 문제", "birthday problem"]
 description: "확률은 사건마다 0에서 1 사이의 수를 붙이는 규칙이다. 지켜야 할 약속은 셋뿐이다. 음수는 없고, 전체의 확률은 1이며, 겹치지 않는 사건들의 확률은 더한다. 결과가 모두 똑같이 그럴듯하면 \"원하는 경우의 수 ÷ 전체 경우의 수\"로 세면 되어 계산이 쉬워진다. 하지만 그 조건이 …"

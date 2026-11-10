@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Minkowski Distance", "Lp 거리", "Lp Norm", "유클리드 거리", "Euclidean Distance", "맨해튼 거리", "Manhattan Distance", "시가지 거리", "City Block Distance", "최대 거리", "Supremum Distance", "체비셰프 거리", "거리 공리", "삼각부등식"]
 description: "숫자로 된 두 점이 얼마나 떨어져 있는지 재는 방법을 하나로 묶은 공식이다. 지도에서 곧장 날아가는 거리(유클리드)와 바둑판 같은 도로를 따라 걷는 거리(맨해튼)가 모두 이 공식의 특별한 경우다. 공식 속 지수 하나만 바꾸면 어느 쪽인지 정해진다. 다만 지수가 1보다 작으면 \"돌아…"

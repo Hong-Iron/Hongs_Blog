@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["NRZ", "Non-Return to Zero", "클럭 복구", "Clock Recovery", "클락 복구", "비트 동기", "Bit Synchronization", "기저선 변동", "Baseline Wander", "인코딩", "Encoding", "디코딩", "Decoding"]
 description: "받는 쪽은 자기 시계의 박자(클럭)에 맞춰 비트 한 칸마다 신호가 높은지 낮은지를 읽는다. 가장 단순한 방법(NRZ)은 1이면 높게, 0이면 낮게 그대로 보낸다. 그런데 같은 값이 길게 이어지면 신호가 평평해서, 받는 쪽은 칸이 몇 개 지나갔는지 자기 시계로만 세야 한다. 두 시계…"

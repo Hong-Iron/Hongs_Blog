@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Abstract Syntax Tree", "AST", "추상 구문 트리", "추상 구문 나무", "구문 트리", "Syntax Tree", "Semantic Action", "의미 동작", "의미 규칙"]
 description: "문법대로 그린 나무에서 뒤 단계에 쓸모없는 가지를 쳐 내고 뼈대만 남긴 나무다. 괄호처럼 묶음을 알려 주려고 있던 기호는 나무 모양에 이미 드러나 있으니 지우고, 거쳐 가기만 하는 마디도 지운다. 남는 것은 \"무슨 연산을 무엇과 무엇에 하는가\"뿐이다. 훨씬 작고 다루기 쉬워서 컴파…"

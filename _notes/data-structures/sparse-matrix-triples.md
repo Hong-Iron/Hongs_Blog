@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Sparse Matrix", "희소 행렬", "희소 배열", "Sparse Array", "Triple", "3원소", "삼원소 표현", "term", "Sparsity", "희소도", "Structured Sparse Matrix", "Unstructured Sparse Matrix", "행 우선 목록"]
 description: "표의 칸이 거의 다 0이면, 0을 하나하나 적지 않고 0이 아닌 칸만 \"몇째 줄, 몇째 칸, 값\" 세 가지로 적어 둔다. 공항 1,000곳 사이의 직항 편을 적은 표처럼 대부분이 빈 표에서는 메모리가 수십 분의 일로 준다. 대신 \"3행 4열의 값\"을 한 번에 꺼낼 수 없어 목록에서…"

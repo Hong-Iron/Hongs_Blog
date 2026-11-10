@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Regular vs Weak Entity Type", "강한 개체 타입", "Strong Entity Type", "일반 개체 타입", "Regular Entity Type"]
 description: "둘 다 ER 다이어그램의 네모이고 속성을 갖는다. 가르는 질문은 하나다. \"자기 속성만으로 개체 하나를 가려낼 수 있는가.\" 가려낼 수 있으면 일반 개체 타입(regular entity type)이고, 주인 개체를 함께 대야 하면 약한 개체 타입이다. \"다른 개체가 있어야만 존재할…"

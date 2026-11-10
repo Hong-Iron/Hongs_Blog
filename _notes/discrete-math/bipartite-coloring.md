@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Bipartite Graph", "이분 그래프", "두 부분 그래프", "Graph Coloring", "그래프 색칠", "정점 색칠", "vertex coloring", "채색수", "chromatic number", "탐욕 색칠", "greedy coloring", "4색 정리", "four color theorem", "레지스터 할당", "register allocation"]
 description: "이웃한 정점끼리는 다른 색이 되도록 정점에 색을 칠하는 문제다. 시험 시간표(같은 학생이 듣는 과목은 다른 시간), 레지스터 할당(동시에 살아 있는 변수는 다른 레지스터)이 모두 이 모양이다. 두 색으로 충분한지는 \"홀수 길이 사이클이 있는가\"만 보면 되고 빠르게 판정된다. 그런데…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Parallel Projection", "Perspective Projection", "투영", "Projection", "직교 투영", "Orthographic Projection", "원근 단축", "Perspective Foreshortening", "소실점", "Vanishing Point"]
 description: "3차원 장면을 2차원 화면에 옮기는 방법은 두 가지다. 평행 투영은 모든 점을 같은 방향으로 곧장 화면에 떨어뜨려, 멀든 가깝든 크기가 그대로이고 평행선이 평행하게 남는다. 원근 투영은 눈 한 점을 향해 모이는 선으로 옮겨, 먼 것이 작게 보이고 평행선이 한 점으로 모인다. 원근이…"

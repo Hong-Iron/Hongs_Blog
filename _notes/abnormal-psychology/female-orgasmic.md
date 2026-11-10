@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Female Orgasmic Disorder", "여성 절정감장애", "여성극치감장애"]
 description: "성행위의 거의 모든 경우에 극치감이 매우 늦거나, 없거나, 아주 약해진 상태가 반년 넘게 이어져 괴로운 장애다. 극치감을 느끼는 방식과 시기는 여성마다 매우 다양해서, 삽입 중이 아닌 다른 자극으로 극치감을 느끼는 것은 장애가 아니다. 성적 자극이 부족해서 생긴 경우도 진단하지 않…"

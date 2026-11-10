@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["MS-DOS File I/O Services", "함수 716Ch", "함수 7305h", "파일 핸들", "File Handle", "DISKIO", "절대 디스크 읽기", "Absolute Disk Read", "Create Subdirectory", "Remove Subdirectory"]
 description: "파일을 다룰 때도 MS-DOS의 같은 창구에 번호를 대고 부탁한다. 파일을 열면 도서관의 대출 번호표 같은 번호를 하나 받고, 그 뒤로 읽기·쓰기·닫기는 파일 이름 대신 그 번호로 한다. 일이 잘못되면 깃발 하나가 서므로, 부른 직후에 그 깃발부터 봐야 한다. 디스크의 조각을 파일…"

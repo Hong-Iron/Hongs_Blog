@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Partial Order", "Topological Sort", "부분순서", "poset", "부분순서 집합", "전순서", "total order", "하세 도표", "Hasse diagram", "극소 원소", "minimal element", "선형 확장", "linear extension", "위상 정렬", "칸 알고리즘", "Kahn's algorithm", "DAG", "방향 비순환 그래프"]
 description: "부분순서는 \"무엇이 먼저 와야 하는가\"를 나타내되, 모든 쌍을 비교하지는 않는 순서다. 과목의 선수관계, 작업의 의존성, 버전의 포함 관계가 그렇다. 의존 관계에 사이클이 없으면 늘 한 줄로 세울 수 있고(위상 정렬), 그 줄은 보통 여러 가지다. 사이클이 있으면 어떤 순서로도 세…"

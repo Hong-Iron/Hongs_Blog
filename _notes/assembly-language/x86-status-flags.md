@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Status Flags", "상태 플래그", "Flags Affected by Arithmetic", "제로 플래그", "Zero Flag", "ZF", "부호 플래그", "Sign Flag", "SF", "올림 플래그", "캐리 플래그", "Carry Flag", "CF", "넘침 플래그", "오버플로 플래그", "Overflow Flag", "OF", "패리티 플래그", "Parity Flag", "보조 올림 플래그", "Auxiliary Carry Flag", "ALU"]
 description: "계산기는 답만 보여 주지만 CPU는 계산할 때마다 답에 대한 쪽지 몇 장을 함께 남긴다. 답이 0인가, 맨 윗자리 비트가 1인가, 칸이 모자라 넘쳤는가. 넘쳤는지는 같은 비트를 음수가 없는 수로 볼 때와 음수가 있는 수로 볼 때 답이 달라서 쪽지가 두 장이다. CPU는 프로그래머가…"

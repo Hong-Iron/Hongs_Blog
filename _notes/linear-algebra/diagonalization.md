@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Diagonalization", "대각화", "고유분해", "eigendecomposition", "행렬 거듭제곱", "matrix power", "대각화 가능", "diagonalizable", "결함 행렬", "defective matrix", "조르당 블록", "Jordan block", "정상 상태", "steady state", "선형 동역학계", "linear dynamical system"]
 description: "고유벡터들을 새 좌표축(기저)으로 삼으면, 복잡해 보이던 변환이 \"축마다 따로 늘이기\"로 바뀐다. 그러면 행렬을 100번 곱하는 일도 고윳값을 100제곱하는 일로 줄고, 시스템의 장기 행동(무엇이 남고, 무엇이 사라지고, 무엇이 폭발하는지)이 한눈에 보인다. 다만 고유벡터가 차원 …"

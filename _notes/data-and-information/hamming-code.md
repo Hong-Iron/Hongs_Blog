@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Hamming Code", "해밍 코드", "Hamming(7", "4)", "해밍 (7", "4", "3) 부호", "패리티 비트", "신드롬", "Syndrome", "단일 오류 정정", "Single Error Correction", "완전 부호", "Perfect Code"]
 description: "검사 칸 몇 개를 덧붙여, 받은 쪽이 바뀐 한 칸을 스스로 찾아 고치게 하는 부호다. 스무고개에서 \"1, 3, 5, 7번 중에 있나?\" 같은 예·아니오 질문 몇 개로 숨긴 번호를 맞히는 것과 같다. 검사마다 맡은 칸들이 정해져 있어서, 어느 검사가 깨졌는지를 모으면 바뀐 칸의 번호…"

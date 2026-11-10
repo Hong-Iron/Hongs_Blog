@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-20"
 last_modified_at: "2026-10-20"
+date: "2026-10-20"
 status: "verified"
 aliases: ["Sliding Window Utilization", "Sliding Window Protocol의 성능", "창 크기와 사용률", "필요한 창 크기"]
 description: "한 번에 확인을 기다릴 수 있는 프레임이 N개면, 정지 대기가 하나를 싣고 놀던 구간에 N개를 실을 수 있다. 그래서 사용률은 정지 대기의 N배가 되지만, 100%를 넘을 수는 없다. 첫 답장이 돌아올 때까지 보낼 몫이 바닥나지 않으면 송신 쪽은 한 번도 쉬지 않는다. 그 몫을 정…"

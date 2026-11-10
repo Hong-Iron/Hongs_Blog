@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
 last_modified_at: "2026-09-27"
+date: "2026-09-27"
 status: "verified"
 aliases: ["Feeding and Eating Disorders", "급식장애", "Feeding Disorder", "섭식장애", "Eating Disorder", "식이장애"]
 description: "먹는 행동이 무너져 몸과 마음의 건강을 해치는 장애들이다. 이름의 두 말이 두 무리를 가리킨다. \"급식\"은 음식을 먹인다는 뜻으로 주로 어린아이에게 먹이는 과정의 문제이고, \"섭식\"은 스스로 먹는다는 뜻으로 주로 청소년과 성인의 문제다. 다만 이 나이 구분은 흔히 그렇다는 것이지,…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Separation Anxiety Disorder", "분리불안", "separation anxiety", "등교 거부", "school refusal", "행동억제 기질", "behavioral inhibition"]
 description: "엄마 같은 애착 대상과 떨어지는 것을 나이에 맞지 않게 지나치게 두려워하는 장애다. 떨어지면 애착 대상이나 자기에게 나쁜 일이 생길까 봐 걱정하고, 학교나 밖에 나가기를 거부하며, 혼자 자지 못한다. 불안장애 가운데 아동기와 가장 밀접하지만 성인에게도 생긴다. 걸음마 아기의 낯가림…"

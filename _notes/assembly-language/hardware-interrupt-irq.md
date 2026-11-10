@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Hardware Interrupt", "IRQ", "Interrupt Request Level", "인터럽트 요청 수준", "8259", "Programmable Interrupt Controller", "PIC", "STI", "CLI", "인터럽트 플래그", "Interrupt Flag"]
 description: "키보드, 타이머, 디스크 같은 장치는 할 말이 생기면 프로세서를 부른다. 여러 장치가 한꺼번에 부르면 누구 말부터 들을지 정해야 하므로, 응급실 접수대처럼 중간에 선 칩 하나가 급한 순서대로 한 명씩 들여보낸다. 덜 급한 장치는 더 급한 장치의 일을 끊지 못하고 기다린다. 프로세서…"

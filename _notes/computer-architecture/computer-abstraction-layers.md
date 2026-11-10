@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Computer Architecture", "Abstraction Layers", "Levels of Abstraction", "추상화", "Abstraction", "하드웨어·소프트웨어 인터페이스", "Hardware/Software Interface", "컴퓨터의 다섯 구성 요소", "구조와 구현", "Architecture vs Implementation"]
 description: "컴퓨터는 여러 층을 쌓아 만든다. 위층은 아래층이 무엇을 해 주는지만 알면 되고, 어떻게 해 주는지는 몰라도 된다. 식당 손님이 주방을 몰라도 메뉴판만 보고 주문하는 것과 같다. 층 가운데 가장 중요한 경계는 프로세서가 알아듣는 명령의 목록이다. 이 목록만 그대로 두면 프로그램을 …"

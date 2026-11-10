@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Single-Cycle Clock Period", "클록 주기", "Clock Cycle Time", "임계 경로", "Critical Path", "가장 긴 경로", "Longest Path", "사이클 시간"]
 description: "여럿이 함께 걷는 산행에서 걸음은 가장 느린 사람에게 맞춘다. 한 사이클에 명령어 하나를 끝내는 프로세서도 시계 한 번의 길이를 가장 오래 걸리는 명령어에 맞춰야 한다. 그래야 어떤 명령어든 시계가 울리기 전에 계산이 끝난다. 그 대가로 금방 끝나는 명령어도 똑같이 긴 시간을 쓰고…"

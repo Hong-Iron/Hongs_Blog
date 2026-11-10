@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Neuron", "뉴런", "신경 세포", "수용기", "receptor", "활동 전위", "action potential", "휴지 전위", "resting potential", "시냅스", "synapse", "신경 전달 물질", "Transfer of Signal"]
 description: "신경계는 전선망과 비슷하다. 감각 수용기가 빛·압력 같은 자극을 전기 신호로 바꾸고, 뉴런이 그 신호를 긴 줄기(축삭)를 따라 보낸 뒤, 접점(시냅스)에서 화학 물질로 다음 뉴런에 넘긴다. 전선과 달리 신호가 가는 도중 약해지지 않고 같은 크기로 다시 만들어지며 퍼진다. 대신 전선…"

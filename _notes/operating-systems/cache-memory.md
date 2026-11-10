@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Cache Memory", "캐시", "지역성", "Principle of Locality", "LRU", "Least Recently Used", "교체 알고리즘", "쓰기 정책", "Write Policy"]
 description: "캐시는 프로세서와 주기억장치 사이에 둔 작고 빠른 메모리다. 주기억장치 내용 일부를 복사해 두었다가, 프로세서가 찾으면 먼저 여기서 꺼내 준다. 프로그램은 방금 쓴 곳과 그 근처를 곧 다시 쓰는 경향이 있어서, 작은 캐시로도 대부분의 요청을 빠르게 처리한다. 하지만 캐시가 가득 차…"

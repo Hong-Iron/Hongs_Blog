@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["User Authentication", "식별", "Identification", "확인", "Verification", "인증 요소", "Authentication Factors", "비밀번호", "Password", "해시된 비밀번호", "Hashed Password", "솔트", "Salt", "사전 공격", "Dictionary Attack", "토큰", "Token", "메모리 카드", "Memory Card", "스마트 카드", "Smart Card", "생체 인증", "Biometrics"]
 description: "사용자 인증은 \"당신이 정말 그 사람인가\"를 확인하는 일이고, 대부분의 접근 제어와 책임 추적의 바탕이다. 확인하는 근거는 아는 것(비밀번호), 가진 것(카드), 몸 자체(지문)다. 운영체제는 비밀번호를 그대로 저장하지 않고 소금(솔트)을 친 해시로 저장해서, 파일을 도둑맞아도 비…"

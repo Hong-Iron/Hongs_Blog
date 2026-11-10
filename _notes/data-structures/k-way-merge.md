@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["k-way Merge", "k-way Merging", "다중 병합", "고차 병합", "Higher-Order Merge", "병합 차수", "Merge Order", "선택 트리", "Selection Tree"]
 description: "키 순서로 선 여러 줄을 한 줄로 합칠 때, 두 줄씩 합치기를 여러 번 하는 대신 모든 줄의 맨 앞 사람을 한꺼번에 견주어 가장 작은 사람부터 뽑아내는 방식이다. 한 번에 많은 줄을 합칠수록 자료 전체를 훑는 횟수가 준다. 다만 맨 앞 사람들 가운데 가장 작은 사람을 고르는 일이 …"

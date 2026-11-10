@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Data Integration", "개체 식별 문제", "Entity Identification", "스키마 통합", "Schema Integration", "객체 매칭", "Object Matching", "메타데이터", "Metadata", "중복", "Redundancy", "상관 분석", "Correlation Analysis"]
 description: "여러 곳에서 모은 데이터를 하나로 합치는 일이다. 같은 고객이 한 곳에서는 \"Customerid\", 다른 곳에서는 \"Customernumber\"로 적혀 있으면 둘이 같은 칸임을 알아봐야 하고, 합친 뒤 다른 칸에서 계산해 낼 수 있는 칸(중복)은 골라내야 한다. 잘 합치면 이후 분…"

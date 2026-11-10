@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Linear Recurrence", "Recurrence Relation", "점화식", "선형 점화식", "특성방정식", "characteristic equation", "비네 공식", "Binet's formula", "피보나치 수", "Fibonacci numbers", "하노이의 탑", "Tower of Hanoi", "동차", "homogeneous"]
 description: "점화식은 \"다음 항을 앞의 항들로 만드는 규칙\"이다. 피보나치처럼 앞 항들에 상수를 곱해 더하는 선형 점화식은, 거듭제곱 꼴 해를 넣어 얻는 방정식(특성방정식)의 근으로 닫힌 꼴을 찾는다. 재귀 알고리즘의 비용과 동적 계획법의 경우의 수가 점화식으로 나오므로, 닫힌 꼴을 알면 얼마…"

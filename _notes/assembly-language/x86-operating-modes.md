@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Modes of Operation", "동작 모드", "실주소 모드", "Real-Address Mode", "Real Mode", "보호 모드", "Protected Mode", "가상 8086 모드", "Virtual-8086 Mode", "주소 지정 가능 메모리", "Addressable Memory"]
 description: "같은 x86 프로세서가 서로 다른 규칙으로 일할 수 있다. 한 규칙에서는 프로그램 하나가 집 전체를 혼자 쓰는 것처럼 메모리 어디든 손댈 수 있다. 다른 규칙에서는 프로그램마다 방을 하나씩 받고 남의 방에는 못 들어간다. 앞의 것은 단순하지만 메모리가 작고 프로그램 하나가 잘못하면…"

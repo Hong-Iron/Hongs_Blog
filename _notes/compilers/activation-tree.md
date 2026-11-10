@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Activation Tree", "활성 트리", "활성화 트리", "Activation", "활성", "함수 활성", "Call Stack", "호출 스택", "제어 스택", "Control Stack"]
 description: "전화를 받다가 다른 전화가 오면 먼저 통화를 잠깐 세워 두고, 나중 전화가 끝나야 먼저 통화로 돌아간다. 함수도 그렇다. 부른 함수는 불린 함수가 끝날 때까지 멈춰 서 있고, 늦게 시작한 쪽이 먼저 끝난다. 누가 누구를 불렀는지를 그리면 나무 모양이 되고, 지금 멈춰 서 있는 함수…"

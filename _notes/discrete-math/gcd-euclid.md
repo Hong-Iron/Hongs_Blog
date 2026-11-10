@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["GCD", "Greatest Common Divisor", "최대공약수", "Euclidean Algorithm", "유클리드 호제법", "유클리드 알고리즘", "Extended Euclidean Algorithm", "확장 유클리드 호제법", "베주 항등식", "Bézout's identity", "일차 부정방정식", "linear Diophantine equation", "라메의 정리", "Lamé's theorem"]
 description: "두 수의 최대공약수는 \"큰 수를 작은 수로 나눈 나머지\"로 바꿔도 변하지 않는다. 그래서 나머지로 계속 바꿔 나가다 0이 되기 직전의 수가 답이다. 소인수분해 없이 몇십 자리 수도 순식간에 계산하고, 과정을 거꾸로 따라가면 \"최대공약수 = 두 수의 정수 배의 합\"을 만드는 계수까지…"

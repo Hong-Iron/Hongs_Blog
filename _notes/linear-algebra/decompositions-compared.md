@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["행렬 분해 비교", "matrix decompositions compared", "분해 고르기", "LU vs QR", "고윳값 분해 vs SVD"]
 description: "네 분해는 모두 \"행렬을 쉬운 조각의 곱으로 쪼갠다\"는 점이 같아서, 무엇을 써야 할지 헷갈린다. 가르는 질문은 하나다. 무엇을 하려는가. 방정식을 풀려면 LU, 가장 가까운 근사를 구하려면 QR, 같은 변환을 되풀이하려면 고윳값, 행렬의 구조를 크기 순으로 보거나 압축하려면 SV…"

@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Fundamental Theorem of Calculus", "FTC", "미적분학의 기본정리", "원시함수", "antiderivative", "부정적분", "indefinite integral", "누적 함수", "accumulation function", "적분의 평균값 정리", "누적합", "prefix sum"]
 description: "물탱크의 물 양이 늘어나는 속도는 지금 수도꼭지에서 들어오는 양 그 자체다. 거꾸로, 한 시간 동안 들어온 물의 총량은 물 양의 처음과 끝 차이다. 이 두 문장이 미적분의 기본정리이고, \"잘게 나눠 더한 극한\"이던 적분을 \"미분하면 그 함수가 되는 함수(원시함수)의 양 끝 값 차이…"

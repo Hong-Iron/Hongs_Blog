@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Load-Use Hazard", "적재-사용 해저드", "로드-유즈 해저드", "Load-Use Data Hazard", "스톨", "Stall", "파이프라인 지연", "거품", "Bubble", "버블", "해저드 검출 유닛", "Hazard Detection Unit", "nop"]
 description: "메모리에서 값을 읽어 오는 명령어 바로 뒤에서 그 값을 쓰려 하면, 지름길로 당겨 써도 한 박자가 모자란다. 창고에서 물건이 아직 나오지도 않았는데 조립대가 먼저 손을 내미는 꼴이다. 이때는 뒤 명령어를 한 사이클 세워 두고, 그 빈자리에 아무 일도 하지 않는 칸을 흘려보낸다. 결…"

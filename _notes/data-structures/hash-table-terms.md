@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Hash Table", "Hash Map", "해시 테이블", "해시 맵", "버킷", "Bucket", "홈 버킷", "Home Bucket", "동의어", "Synonym", "충돌", "Collision", "넘침", "오버플로", "Overflow", "이상적인 해싱", "Ideal Hashing"]
 description: "우편물을 이름표의 번호로 계산한 칸에 바로 꽂아 두는 우편함과 같다. 찾을 때도 같은 계산으로 그 칸만 열어 보면 되므로, 우편물이 아무리 많아도 한 번에 찾는다. 문제는 서로 다른 우편물이 같은 칸으로 계산될 때다. 칸에 한 통만 들어간다면 나중에 온 것은 갈 곳이 없으니, 그때…"

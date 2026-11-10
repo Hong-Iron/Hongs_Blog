@@ -10,6 +10,7 @@ concepts: 28
 practices: 3
 codes: 57
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 description: "선형대수학 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true

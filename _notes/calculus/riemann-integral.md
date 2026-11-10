@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Definite Integral", "정적분", "Riemann Sum", "리만 합", "리만 적분", "Riemann integral", "적분 가능", "integrable", "상합", "하합", "Darboux sum", "수치 적분", "numerical integration", "사다리꼴 규칙", "trapezoidal rule", "심프슨 규칙", "Simpson's rule"]
 description: "속도계 기록만으로 이동 거리를 구하려면, 짧은 시간마다 \"그때 속도 × 시간\"을 더하면 된다. 시간을 잘게 나눌수록 이 합은 참값에 다가가고, 그 극한이 정적분이다. 거리, 넓이, 누적 사용량처럼 \"변하는 양을 쌓은 것\"을 모두 이 방법으로 정의한다. 다만 값이 아래로 내려가면 음…"

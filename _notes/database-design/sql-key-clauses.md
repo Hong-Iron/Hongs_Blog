@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["PRIMARY KEY", "UNIQUE", "FOREIGN KEY", "REFERENCES", "CONSTRAINT", "기본 키 절", "유일성 제약", "외래 키 절", "이름 붙인 제약", "Named Constraint", "Key Integrity Constraint", "Referential Integrity Constraint"]
 description: "표를 만들 때 \"이 칸의 값은 행마다 달라야 한다\"와 \"이 칸의 값은 저 표에 있는 값이어야 한다\"를 적어 두는 세 문구다. 학번은 학생마다 달라야 하고, 수강 신청서에 적힌 학번은 학적부에 있는 학번이어야 하는 것과 같다. 적어 두면 겹치는 값과 없는 것을 가리키는 값이 들어올 …"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Activation Record", "활성 레코드", "활성화 레코드", "Stack Frame", "스택 프레임", "Control Link", "제어 링크", "Return Address", "반환 주소", "복귀 주소", "Saved Machine Status", "저장된 기계 상태"]
 description: "식당 주방에 주문이 들어올 때마다 쪽지를 한 장씩 꽂아 둔다. 쪽지에는 무엇을 만들지, 어느 자리로 내갈지, 만드는 동안의 메모가 적혀 있고, 음식이 나가면 쪽지를 뺀다. 함수도 부를 때마다 이런 쪽지 한 장을 스택에 올린다. 받은 값, 돌려줄 값을 적을 칸, 끝나면 돌아갈 자리,…"

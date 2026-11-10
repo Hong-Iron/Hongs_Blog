@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Linear Constant-Coefficient Differential Equation", "LCCDE", "선형 상수계수 미분방정식", "초기 휴지 조건", "Initial Rest", "자연 응답", "Natural Response", "강제 응답", "Forced Response", "입력 0 응답", "영상태 응답", "보조 조건", "Auxiliary Condition"]
 description: "회로나 자동차처럼 물리 법칙으로 만든 시스템은 입력과 출력의 관계가 상수계수 미분방정식으로 적힌다. 그런데 미분방정식만으로는 답이 하나로 정해지지 않는다. 그래서 \"입력이 들어오기 전에는 시스템이 완전히 조용했다\"(초기 휴지 조건)를 덧붙인다. 그러면 시스템이 인과적인 LTI가 되…"

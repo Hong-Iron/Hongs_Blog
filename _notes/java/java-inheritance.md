@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-11"
 last_modified_at: "2026-10-11"
+date: "2026-10-11"
 status: "verified"
 aliases: ["Inheritance", "Class Inheritance", "extends", "부모 클래스", "Parent Class", "Superclass", "자식 클래스", "Child Class", "Subclass", "다중 상속", "Multiple Inheritance"]
 description: "새 요리책을 쓸 때 기본 반죽 만드는 법을 책마다 다시 적지 않고 \"기본 반죽은 1권을 본다\"라고 한 줄만 적는 것과 같다. 이미 만든 틀의 내용을 새 틀이 통째로 받아 쓰고, 다른 점만 보탠다. 같은 코드를 두 번 쓰지 않고, 물려준 쪽을 한 번 고치면 물려받은 쪽 전부에 한꺼번…"

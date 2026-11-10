@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Paths and Connectivity", "보행", "walk", "트레일", "trail", "경로", "path", "사이클", "cycle", "연결 그래프", "connected graph", "연결 성분", "connected component", "도달 가능성", "reachability", "너비 우선 탐색", "BFS", "breadth-first search", "깊이 우선 탐색", "DFS", "depth-first search", "강연결 성분", "strongly connected component"]
 description: "그래프에서 간선을 따라 한 정점에서 다른 정점으로 갈 수 있는지, 가장 적게 몇 번 건너면 되는지를 묻는다. 서로 오갈 수 있는 정점끼리 묶으면 그래프가 섬(연결 성분)들로 깔끔하게 나뉜다. 너비 우선 탐색(BFS)은 가까운 곳부터 넓혀 가며 최단 거리를, 깊이 우선 탐색(DFS)…"

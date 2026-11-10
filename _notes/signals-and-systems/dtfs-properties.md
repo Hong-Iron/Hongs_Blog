@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Properties of Discrete-Time Fourier Series", "표 3.2", "첫 번째 차 성질", "First Difference Property", "누적 합 성질", "Running Sum Property", "이산 주기 컨벌루션", "Discrete Periodic Convolution", "이산 파스발 관계"]
 description: "이산 시간 푸리에 급수의 성질은 연속 시간 표 3.1과 거의 같다. 옮기면 위상이 돌고, 뒤집으면 k와 -k가 바뀌고, 곱하면 계수끼리 컨벌루션하고, 주기 컨벌루션하면 계수끼리 곱한다. 다른 점은 이산 시간에 맞게 바뀐 몇 가지다. 미분 대신 첫 번째 차(x[n] - x[n-1])…"

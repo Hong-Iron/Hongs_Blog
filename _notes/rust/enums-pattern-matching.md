@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Enums and Pattern Matching", "enum", "열거형", "match", "패턴", "Pattern", "매치 가드", "Match Guard", "if let", "let else", "let-else", "let 체인", "Let Chains", "matches!", "non_exhaustive", "태그 있는 공용체", "Tagged Union", "합 타입", "Sum Type"]
 description: "열거형은 \"이것 아니면 저것\" 중 하나인 값이다. 택배 상자에 \"깨지기 쉬움\", \"냉장\" 같은 딱지가 붙어 있고 딱지마다 안에 든 물건이 다른 것과 같다. match로 딱지를 보고 갈래를 나누는데, 컴파일러가 빠뜨린 딱지가 없는지 검사해 준다. 단, 로 \"나머지 전부\"를 받아 버리…"

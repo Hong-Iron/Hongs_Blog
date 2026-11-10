@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Layering", "계층", "layer", "추상화", "abstraction", "논리적 통신", "logical communication", "물리적 통신", "physical communication", "계층 구조"]
 description: "복잡한 통신 문제를 한 번에 풀지 않고, 아래층이 해 주는 일을 믿고 그 위에서 조금 더 쉬운 문제만 푸는 식으로 층을 쌓는 방법이다. 사장은 \"이 서류를 부산 지사에 보내\"라고만 하고, 비서는 택배사에, 택배사는 트럭 기사에게 맡기는 것과 같다. 각 층은 자기 일만 알면 되고, …"

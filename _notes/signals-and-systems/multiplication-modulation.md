@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Multiplication Property", "곱셈 성질", "Product Property", "진폭 변조", "Amplitude Modulation", "AM", "변조", "Modulation", "복조", "Demodulation", "반송파", "Carrier", "반송 주파수", "Carrier Frequency", "가변 중심 주파수 대역 통과 필터"]
 description: "컨벌루션 성질의 쌍대로, 시간 영역에서 두 신호를 곱하면 주파수 영역에서는 두 스펙트럼을 컨벌루션한 것(\\frac{1}{2\\pi}배)이 된다. 특히 신호에 정현파 \\cos\\omega0t를 곱하면 스펙트럼이 통째로 \\pm\\omega0로 옮겨진다. 라디오는 이렇게 목소리를 높은 주파수…"

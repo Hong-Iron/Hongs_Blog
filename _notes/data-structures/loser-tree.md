@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Loser Tree", "Min Loser Tree", "최소 패자 트리", "Tree of Losers", "Selection Tree", "선택 트리"]
 description: "토너먼트 대진표를 나무로 그리되, 경기 칸에 이긴 쪽이 아니라 진 쪽을 적어 두고 우승자는 맨 위에 따로 적는다. 우승자의 값이 바뀌어 다시 겨룰 때, 올라가는 길의 칸마다 \"지난번 상대\"가 바로 적혀 있어서 옆 가지를 찾아볼 필요가 없다. 다만 이 방법은 바뀐 선수가 지난번 우승…"

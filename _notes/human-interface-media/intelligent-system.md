@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Intelligent System", "인공지능", "AI", "사람처럼", "이성적인"]
 description: "어떤 기계를 \"똑똑하다\"고 부를지는 채점 기준에 따라 달라진다. 기준은 두 질문으로 나뉜다. 사람처럼 하느냐 올바르게(이성적으로) 하느냐, 그리고 속의 생각을 보느냐 겉의 행동을 보느냐. 기준을 먼저 정하지 않으면 \"이 기계에 지능이 있는가\"라는 논쟁은 끝나지 않는다."

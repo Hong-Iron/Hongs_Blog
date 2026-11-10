@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Pointer", "C 포인터", "주소 연산자", "Address-of Operator", "역참조", "Dereference", "간접 참조", "이중 포인터", "포인터의 포인터", "Pointer to Pointer", "포인터 형 변환", "Pointer Cast", "NULL 포인터"]
 description: "메모리는 번호가 붙은 사물함이 길게 늘어선 것이고, 변수는 그 가운데 한 칸이다. 포인터는 값 대신 다른 칸의 번호를 넣어 두는 칸이다. 번호만 알면 멀리 있는 칸을 읽고 고칠 수 있어서, 큰 덩어리를 통째로 옮기지 않고 번호만 주고받으면 된다. 다만 번호가 틀리면 엉뚱한 칸을 읽…"

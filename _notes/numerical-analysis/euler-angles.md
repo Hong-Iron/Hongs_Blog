@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Euler Angles", "오일러 각", "짐벌 잠금", "짐벌 락", "Gimbal Lock", "ZXZ", "ZXY", "요 피치 롤", "Yaw Pitch Roll"]
 description: "비행기의 자세를 \"왼쪽으로 몇 도, 위로 몇 도, 옆으로 몇 도 기울었다\"처럼 각도 세 개로 적는 방법이다. 어떤 3차원 회전이든 축 회전 세 번의 곱으로 만들 수 있어서 사람이 읽고 입력하기 쉽다. 그러나 가운데 회전이 90°가 되면 나머지 두 회전이 같은 축을 돌게 되어 자유도…"

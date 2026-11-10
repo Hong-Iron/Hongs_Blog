@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Pyromania", "방화광", "방화벽", "방화 행동", "fire-setting"]
 description: "불 자체에 매혹되어, 불을 지르기 전의 긴장을 풀고 불을 볼 때의 기쁨을 얻으려고 일부러 여러 번 불을 지르는 장애다. 보험금, 복수, 범죄 은폐, 정치적 주장 같은 다른 목적이 있는 방화는 여기에 들지 않는다. 망상이나 판단력 저하로 설명되는 경우도 제외한다. 방화 행동 자체는 …"

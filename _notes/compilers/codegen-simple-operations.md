@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Code Generation for Simple Operations", "코드 생성", "Code Generation", "Code Generation for Conditional Jumps", "조건 분기의 코드 생성", "적재-연산-저장", "Load-Compute-Store"]
 description: "서랍에 든 서류로 일하려면 꺼내서 책상에 놓고, 고치고, 다시 서랍에 넣는다. 컴파일러가 계산 한 줄을 기계 명령으로 옮길 때도 이 세 걸음을 그대로 찍어 낸다. 변수의 값을 메모리에서 꺼내고, 계산하고, 결과를 메모리에 넣는다. 조건에 따라 건너뛰는 줄은 조건 값을 꺼내서 0인지…"

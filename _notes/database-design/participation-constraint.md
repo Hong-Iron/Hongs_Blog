@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Participation Constraint", "전체 참여", "Total Participation", "부분 참여", "Partial Participation", "존재 종속", "Existence Dependency", "필수 참여", "선택 참여", "최소 카디널리티"]
 description: "\"모든 학생은 반드시 어느 반에 속해야 한다\"와 \"학생이 꼭 반장일 필요는 없다\"의 차이다. 앞의 규칙은 한 명도 빠지면 안 되고, 뒤의 규칙은 빠져도 된다. 빠지면 안 되는 규칙을 걸면 상대 없이는 저장조차 못 해서, 직원을 넣으려면 그 직원이 속할 부서가 먼저 있어야 한다. 이…"

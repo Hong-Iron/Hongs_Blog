@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Content-based vs Collaborative Filtering", "내용 기반 대 협업 필터링", "하이브리드 추천", "Hybrid Recommendation", "내용을 통한 협업", "Collaboration via Content"]
 description: "세 방법 모두 \"사용자가 좋아할 것\"을 고르지만 근거가 다르다. 내용 기반은 아이템의 속성을, 사용자 기반 협업 필터링은 비슷한 사람을, 아이템 기반 협업 필터링은 함께 소비된 아이템을 근거로 삼는다. 가르는 질문은 \"새로 들어온 것이 사용자인가 아이템인가, 평점이 충분한가\"다."

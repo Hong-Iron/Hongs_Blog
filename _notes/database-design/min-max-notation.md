@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Min-Max Notation", "(min", "max) Notation", "최소 최대 표기", "구조 제약", "Structural Constraint", "최소 카디널리티", "Minimum Cardinality", "최대 카디널리티", "Maximum Cardinality"]
 description: "놀이기구 앞의 \"한 번에 2명 이상 4명까지\" 팻말처럼, 이어질 수 있는 횟수의 아래 한계와 위 한계를 숫자 두 개로 적는 방법이다. 어떤 대상 하나가 그 관계에 적어도 몇 번, 많아야 몇 번 끼는지를 그 대상 바로 옆에 적는다. \"하나 대 여럿\"으로만 적는 방식보다 자세해서 \"2…"

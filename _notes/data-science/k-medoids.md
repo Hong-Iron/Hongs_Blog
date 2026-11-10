@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["K-medoids", "k-medoids", "메도이드", "Medoid", "PAM", "Partitioning Around Medoids"]
 description: "k-평균과 같은 방식으로 무리를 나누지만, 무리의 대표를 평균 위치가 아니라 무리 안의 실제 자료점 하나로 고른다. 다른 점들까지의 거리 합이 가장 작은 점, 즉 무리 한가운데 있는 실제 점이 대표가 된다. 대표가 실제 고객이나 실제 문서라 해석하기 쉽고, 튀는 점 하나에 끌려가지…"

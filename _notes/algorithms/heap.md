@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Heap", "Priority Queue", "Binary Heap", "힙", "우선순위 큐", "최소 힙", "최대 힙", "heapq", "heappush", "heappop", "heapify"]
 description: "응급실은 온 순서가 아니라 가장 급한 환자부터 부른다. 이렇게 \"가장 작은(급한) 것부터 꺼내는 줄\"이 우선순위 큐이고, 힙은 그것을 빠르게 만드는 방법이다. 넣기와 가장 작은 것 꺼내기가 모두 빠르다. 원소가 100만 개여도 스무 번이 안 되게 자리를 바꾸면 끝난다. 대신 가장 …"

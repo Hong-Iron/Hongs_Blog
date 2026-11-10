@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Burst Time Prediction", "지수 평균", "Exponential Averaging", "지수 평활", "Exponential Smoothing", "단순 평균", "Simple Average", "버스트", "Burst"]
 description: "SPN, SRT, HRRN은 각 프로세스가 프로세서를 얼마나 쓸지 알아야 한다. 미리 알 수 없으니, 같은 프로세스가 지난번들에 프로세서를 쓴 시간(버스트)으로 다음 버스트를 짐작한다. 일기 예보가 최근 날씨에 더 무게를 두듯, 최근 값에 더 큰 무게를 주는 지수 평균이 흔히 쓰인…"

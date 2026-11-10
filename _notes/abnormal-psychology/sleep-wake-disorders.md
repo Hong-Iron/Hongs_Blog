@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Sleep-Wake Disorders", "수면장애", "sleep disorders", "수면-각성 장애"]
 description: "잠의 양이나 질, 잠드는 시간대가 흐트러져 낮 동안 괴롭고 생활에 지장이 생기는 장애들이다. 잠을 못 자는 쪽(불면), 너무 졸린 쪽(과다수면, 기면증), 잠자는 동안 숨이 막히는 쪽(호흡관련), 몸의 시계가 어긋난 쪽(일주기 리듬), 잠자는 동안 이상 행동을 하는 쪽(사건수면)으…"

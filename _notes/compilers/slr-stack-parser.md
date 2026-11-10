@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["SLR Parser with Stack", "LR 파서 구동기", "LR Driver", "상태 스택", "State Stack", "스택 기반 SLR 파서"]
 description: "미로를 걸으며 지나온 갈림길마다 번호표를 차례로 쌓아 두는 방식이다. 묶을 때는 묶는 기호 수만큼 번호표를 걷어 내고, 드러난 갈림길에서 새 길로 한 걸음 간다. 처음부터 다시 걸을 필요가 없어서 입력 길이에 비례하는 시간에 끝난다. 맨 위 번호표와 다음 토큰만 보고 표 한 칸을 …"

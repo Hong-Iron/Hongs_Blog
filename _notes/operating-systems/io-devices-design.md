@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["I/O Devices", "I/O Design", "입출력 장치의 분류", "입출력 기능의 발전", "Evolution of the I/O Function", "입출력 프로세서", "I/O Processor", "입출력 채널", "I/O Channel", "논리적 입출력", "Logical I/O", "장치 입출력", "Device I/O", "장치 특수 파일", "Special File"]
 description: "입출력은 운영체제에서 가장 다루기 어려운 부분이다. 키보드는 1초에 몇 글자를 보내고 디스크는 1초에 수억 바이트를 보내는 등 장치마다 속도, 다루는 법, 오류의 모양이 제각각이다. 운영체제는 층을 나눠 장치의 세부를 아래층에 숨기고, 위층에는 열기·읽기·쓰기 같은 똑같은 인터페이…"

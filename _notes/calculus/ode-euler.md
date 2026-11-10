@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Differential Equation", "미분방정식", "상미분방정식", "ODE", "ordinary differential equation", "초깃값 문제", "initial value problem", "오일러 방법", "Euler's method", "오일러법", "수치 적분", "numerical integration", "안정성", "stability", "반암시적 오일러", "semi-implicit Euler", "심플렉틱 오일러", "symplectic Euler", "룽게-쿠타", "Runge–Kutta", "RK4"]
 description: "미분방정식은 \"지금 상태가 이렇다면 이만큼 변한다\"는 규칙이다. 오일러 방법은 지금의 변화율을 믿고 아주 짧은 시간만큼 나아가기를 반복해서 미래를 계산한다. 게임이 매 프레임 물체의 위치를 갱신하는 것과 같은 방식이라 단순하고 어디든 쓸 수 있다. 대신 걸음마다 오차가 쌓여 걸음 …"

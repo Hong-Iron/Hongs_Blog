@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Boolean Algebra", "Logic Gates", "불 대수", "불 함수", "Boolean function", "논리 게이트", "AND 게이트", "OR 게이트", "NOT 게이트", "NAND", "NOR", "XOR 게이트", "반가산기", "half adder", "전가산기", "full adder", "기능적 완전성", "functional completeness", "비트마스크", "bitmask"]
 description: "참·거짓을 1·0으로 쓰면 논리식이 덧셈·곱셈 같은 계산이 되고, 그 식은 그대로 전자 회로(논리 게이트)로 만들 수 있다. 식을 간단히 하면 게이트 수가 줄어 회로가 작고 빨라진다. 놀랍게도 NAND 게이트 한 종류만으로 모든 회로를 만들 수 있다. 다만 불 대수에서는 1 + 1…"

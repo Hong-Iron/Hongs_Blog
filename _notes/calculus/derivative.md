@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Derivative", "미분", "미분계수", "도함수", "순간 변화율", "instantaneous rate of change", "접선의 기울기", "slope of tangent", "평균 변화율", "average rate of change", "미분 가능", "differentiable", "수치 미분", "numerical differentiation", "유한 차분", "finite difference"]
 description: "도함수는 \"지금 이 순간 얼마나 빨리 변하는가\"를 재는 함수다. 짧은 구간의 평균 변화율에서 구간을 한없이 줄인 극한이고, 그래프에서는 그 점의 접선의 기울기다. 기울기를 알면 함수를 가장 빨리 줄이는 방향을 알 수 있어서, 머신러닝의 학습이 모두 도함수 위에 선다. 다만 뾰족하거…"

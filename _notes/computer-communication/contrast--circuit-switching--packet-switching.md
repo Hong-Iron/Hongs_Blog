@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["회선 스위칭 vs 패킷 스위칭", "circuit vs packet switching"]
 description: "둘은 스위칭 네트워크에서 데이터를 넘기는 두 방식이다. 가르는 질문은 \"자원을 미리 잡아 두는가\"다. 어느 쪽이 나은지는 사용자의 입장과 네트워크의 입장에 따라 다르다."

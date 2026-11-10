@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["INT 21h", "MS-DOS Function Calls", "MS-DOS 함수 호출", "MS-DOS Services", "함수 4Ch", "Terminate Process", "표준 입력", "표준 출력", "Irvine16", "ReadString"]
 description: "MS-DOS에 일을 시키는 창구는 하나뿐이다. 은행 창구에 번호표와 서류를 내밀듯, 정해진 자리에 \"몇 번 일\"인지와 필요한 값을 넣어 두고 창구를 부른다. 글자 찍기, 글자 읽기, 날짜 읽기, 프로그램 끝내기가 모두 같은 방식이라 번호만 알면 된다. 대신 번호마다 어느 자리에 무…"

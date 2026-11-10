@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Cellular Networks", "셀룰러", "셀룰러 네트워크", "셀", "cell", "기지국", "base station", "핸드오프", "handoff", "hand-off", "주파수 재사용", "frequency reuse", "공간 분할 다중화", "space-division multiplexing", "AMPS", "PCS", "GSM", "CDMA", "W-CDMA", "4G", "5G", "마이크로셀", "microcell"]
 description: "이동통신은 넓은 지역을 작은 구역(셀)으로 나누고, 구역마다 기지국을 두어 휴대 단말기와 잇는 방식이다. 서로 떨어진 셀은 같은 주파수를 다시 써서, 한정된 전파로 많은 사람을 받는다. 대신 사용자가 셀 경계를 넘을 때 끊기지 않게 담당 기지국을 바꿔 주어야 한다(핸드오프). 세대…"

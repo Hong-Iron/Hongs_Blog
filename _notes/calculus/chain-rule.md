@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Chain Rule", "연쇄 법칙", "합성함수의 미분", "역함수의 미분", "derivative of inverse function", "음함수 미분", "implicit differentiation", "로그 미분법", "logarithmic differentiation", "시그모이드", "sigmoid", "소프트플러스", "softplus", "역전파", "backpropagation"]
 description: "함수 안에 함수가 든 합성함수는 안쪽과 바깥쪽의 변화율을 곱해서 미분한다. 맞물린 톱니바퀴에서 전체 회전 비가 각 톱니 쌍의 비를 곱한 것과 같다. 신경망의 학습(역전파)과 자동미분은 이 규칙을 수백만 번 적용하는 일이다. 다만 바깥 함수의 도함수는 안쪽 함수의 값에서 계산해야 한다."

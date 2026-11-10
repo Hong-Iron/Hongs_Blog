@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Addition and Subtraction", "INC", "DEC", "ADD", "SUB", "NEG", "INC 명령", "DEC 명령", "ADD 명령", "SUB 명령", "NEG 명령", "산술식 구현", "Implementing Arithmetic Expressions"]
 description: "1 올리기, 1 내리기, 더하기, 빼기, 부호 바꾸기의 다섯 명령이다. 계산기의 버튼처럼 한 번에 한 가지만 하고, 결과는 늘 받는 쪽에 덮어쓴다. 그래서 긴 식은 한 줄에 못 쓰고 작은 계산 여러 줄로 쪼개야 한다. 계산은 명령에 적은 칸의 크기 안에서만 일어나므로, 칸이 넘쳐도…"

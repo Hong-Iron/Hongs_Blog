@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Stereotypic Movement Disorder", "상동증", "stereotypy", "상동행동", "단순 상동증적 운동", "복합 상동증적 운동"]
 description: "손 흔들기, 몸 앞뒤로 흔들기, 머리 흔들기, 자기 몸 때리기처럼 목적 없어 보이는 같은 동작을 멈추지 못하는 듯 되풀이하는 장애다. 세 살 이전에 시작하고, 대개 자라면서 줄어든다. 사람마다 자기만의 고정된 동작 패턴이 있다. 그 동작이 생활을 방해하거나 자해로 이어질 때 장애로…"

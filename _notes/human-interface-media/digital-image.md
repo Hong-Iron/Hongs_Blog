@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Digital Image", "디지털 이미지", "픽셀", "pixel", "화소", "양자화", "quantization", "부호화", "encoding", "비트 깊이", "bit depth", "트루컬러", "TrueColor", "컬러 코드", "color code"]
 description: "사진을 모눈종이에 대고 칸마다 평균 밝기를 정수 하나로 적은 표가 디지털 이미지다. 칸 하나를 픽셀이라 부른다. 칸을 잘게 나눌수록, 그리고 밝기를 더 많은 단계로 적을수록 원래 사진에 가까워진다. 대신 데이터가 금방 커진다. 풀HD 동영상을 그대로 보내면 초당 약 3기가비트라 실…"

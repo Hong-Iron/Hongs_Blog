@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Instruction Formats", "R형식", "R-type", "I형식", "I-type", "J형식", "J-type", "opcode", "연산 코드", "funct", "shamt", "rs", "rt", "rd", "기계어", "Machine Code", "명령어 인코딩", "Instruction Encoding", "필드"]
 description: "택배 송장에는 받는 사람, 주소, 전화번호를 적는 칸이 정해져 있어서 기계가 정해진 자리만 읽으면 된다. MIPS 명령도 서른두 비트짜리 송장이다. 맨 앞 여섯 비트에 무슨 명령인지를 적고, 그 뒤 칸에 어느 저장 칸을 쓰는지와 상수를 적는다. 칸을 나누는 방법은 세 가지뿐이라 회…"

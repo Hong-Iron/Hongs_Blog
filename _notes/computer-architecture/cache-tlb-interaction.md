@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Cache TLB Interaction", "TLB와 캐시", "주소 변환과 캐시", "Virtually Indexed Physically Tagged", "VIPT", "물리 주소 캐시", "메모리 접근 경로"]
 description: "프로그램이 내는 주소는 진짜 메모리 주소가 아니라서, 메모리를 한 번 쓰려면 먼저 주소를 바꾸고 그다음에 데이터를 찾아야 한다. 주소 바꾸기에도 빠른 수첩이 있고 데이터 찾기에도 빠른 사본 창고가 있어서, 둘 다 맞으면 한두 박자에 끝난다. 하나라도 틀리면 느린 메모리에, 최악에는…"

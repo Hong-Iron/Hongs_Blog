@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Posttraumatic Stress Disorder", "PTSD", "외상후 스트레스 장애", "침투 증상", "intrusion", "플래시백", "flashback", "회피", "avoidance", "과각성", "hyperarousal", "과도한 경계", "hypervigilance", "대리 외상", "vicarious trauma", "2차 외상 스트레스", "secondary traumatic stress", "스트레스 접종 훈련", "stress inoculation training", "심리적 사후보고", "psychological debriefing", "지속적 노출법", "prolonged exposure", "PE", "인지처리치료", "cognitive processing therapy", "CPT", "안구운동 둔감화 및 재처리", "EMDR"]
 description: "죽음, 심한 부상, 성폭력 같은 끔찍한 일을 겪거나 목격한 뒤, 그 일이 끝났는데도 마음은 계속 그 순간에 붙잡혀 있는 장애다. 기억과 악몽이 원치 않게 되살아나고, 떠올리게 하는 것을 피하고, 자신과 세상을 어둡게 보며, 늘 긴장해 작은 소리에도 놀란다. 이런 증상이 한 달 넘게…"

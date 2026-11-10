@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Sparse Matrix Transpose", "Fast Transpose", "빠른 전치", "전치", "Transpose", "rowSize", "rowStart", "열별 개수", "시작 위치"]
 description: "표의 줄과 칸을 맞바꾼 표를, 0이 아닌 칸만 적은 목록에서 바로 만든다. 줄 번호와 칸 번호를 서로 바꿔 적기만 하면 목록의 순서가 뒤죽박죽이 된다. 그래서 먼저 새 표의 줄마다 몇 개가 들어갈지 세고, 그 수로 줄마다 목록의 어디서 시작할지 정한 다음, 원래 목록을 앞에서부터 …"

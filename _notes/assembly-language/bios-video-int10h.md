@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["INT 10h", "VIDEO Programming with INT 10h", "속성 바이트", "Attribute Byte", "비디오 접근 수준", "Three Levels of Video Access", "Clrscr", "비디오 메모리 직접 쓰기", "Memory-Mapped Video"]
 description: "글자 화면의 한 칸에는 글자만 있는 것이 아니라 \"무슨 색 바탕에 무슨 색 글씨\"라는 꼬리표가 붙어 있다. 꼬리표는 스위치 여덟 개짜리 판인데, 절반은 바탕색, 절반은 글자색을 정하고, 스위치 하나하나가 빨강·초록·파랑 빛과 밝기를 켜고 끈다. 그래서 색을 섞는 일이 비트를 켜는 …"

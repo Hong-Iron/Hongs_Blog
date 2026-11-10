@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Anorexia Nervosa", "AN", "거식증", "제한형", "restricting type", "폭식/제거형", "binge-eating/purging type", "체질량지수", "BMI", "Body Mass Index", "체중공포증", "Weight Phobia", "체형평정척도", "Body Type Scale", "러셀 징후", "Russell's sign", "설정점", "set point"]
 description: "이미 뚜렷하게 말랐는데도 살찌는 것이 너무 두려워 먹기를 줄이고, 거울 속 자신은 여전히 뚱뚱해 보이는 장애다. 날씬함이 곧 자기 가치가 되어, 먹지 않는 것이 스스로를 통제하는 증거처럼 느껴진다. 본인은 문제라고 여기지 않아 빠르게 나빠지기 쉽다. 굶주림의 합병증과 자살 때문에 …"

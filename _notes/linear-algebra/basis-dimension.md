@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Subspace", "부분공간", "Basis", "기저", "Dimension", "차원", "좌표", "coordinates", "표준 기저", "standard basis"]
 description: "원점을 지나는 직선이나 평면처럼, 안에서 더하고 늘여도 밖으로 나가지 않는 \"평평한 공간\"이 부분공간이다. 그 공간의 모든 점을 빠짐없이, 그리고 겹침 없이 만들어 내는 최소한의 벡터 모음이 기저이고, 기저에 든 벡터의 개수가 차원이다. 기저를 정하면 공간의 모든 점에 좌표(계수)…"

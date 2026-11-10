@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Amplitude Modulation", "Frequency Modulation", "Phase Modulation", "AM", "FM", "PM", "ASK", "FSK", "PSK", "진폭 변조", "주파수 변조", "위상 변조", "반송파", "Carrier", "심볼", "Symbol", "QAM", "Quadrature Amplitude Modulation"]
 description: "0과 1을 전파에 실으려면, 일정하게 출렁이는 바탕 물결(반송파)을 하나 정해 두고 그 물결의 한 가지 성질을 비트에 따라 바꾼다. 물결의 높이를 바꾸면 진폭 변조, 출렁이는 빠르기를 바꾸면 주파수 변조, 출렁임의 시작 시점을 밀면 위상 변조다. 물결 모양을 여러 가지로 늘리면 한…"

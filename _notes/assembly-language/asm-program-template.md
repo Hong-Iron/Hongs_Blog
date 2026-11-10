@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Program Template", "프로그램 템플릿", "AddTwo", "AddSub", ".386", ".model", ".stack", ".data", ".code", "PROC", "ENDP", "END", "ExitProcess", "코딩 규칙", "Coding Standards"]
 description: "어셈블리어 프로그램은 매번 똑같은 뼈대 위에 쓴다. 이력서 양식처럼 칸이 미리 나뉘어 있어서, 변수는 변수 칸에, 실행할 코드는 코드 칸에 채워 넣으면 된다. 뼈대를 한 번 익히면 새 프로그램마다 바뀌는 곳은 두 칸뿐이다. 다만 뼈대의 줄들은 순서와 짝이 맞아야 하고, 끝내는 줄을…"

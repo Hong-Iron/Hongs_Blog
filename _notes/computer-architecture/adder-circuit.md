@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Adder", "덧셈기", "반가산기", "Half Adder", "전가산기", "Full Adder", "리플 캐리 가산기", "Ripple-Carry Adder", "올림", "Carry", "올림 예측 가산기", "캐리 예측 가산기", "Carry-Lookahead Adder", "생성과 전파", "Generate and Propagate", "넘침", "오버플로", "Overflow", "가감산기", "Adder/Subtractor"]
 description: "2진수 두 개를 더하는 회로다. 손으로 세로셈을 하듯 한 자리를 더하는 작은 회로를 만들고, 자리 수만큼 줄지어 세워 아랫자리에서 생긴 올림을 윗자리로 넘긴다. 같은 회로에 선 몇 가닥만 보태면 뺄셈도 한다. 만들기는 쉽지만 맨 윗자리는 아래 모든 자리의 올림이 다 넘어올 때까지 …"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Somatic Symptom and Related Disorders", "신체 증상 관련 장애", "신체형 장애", "심신 상호작용", "Mind-Body Interaction", "일원론", "monism", "이원론", "dualism", "심리신체질환", "Psychosomatic Diseases", "건강심리학", "Health Psychology", "꾀병", "Malingering"]
 description: "마음이 몸의 말로 드러나는 장애들이다. 배가 아프거나 다리가 마비되는 등 몸의 증상이 주인공이지만, 의학적 손상이 없거나 손상에 비해 걱정과 고통이 지나치다. 환자는 진짜로 아프다고 느끼므로 \"꾀병\"으로 보면 틀린다. 반대로 증상을 일부러 꾸미는 경우도 이 범주 안팎에 있다. 그래…"

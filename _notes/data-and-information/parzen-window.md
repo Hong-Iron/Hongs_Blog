@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Parzen Window", "파젠 윈도우", "Parzen-window Density Estimation", "창 함수", "윈도우 함수", "Window Function", "커널 밀도 추정", "Kernel Density Estimation", "KDE", "창 폭", "Window Width", "Bandwidth"]
 description: "알고 싶은 값을 한가운데 두고 정해 둔 크기의 창을 대어, 그 창 안에 든 자료가 몇 개인지 세는 방법이다. 창이 물어보는 값을 따라 움직이니 미리 잘라 둔 칸의 경계에 걸릴 일이 없다. 대신 창의 크기는 사람이 정해야 한다. 너무 크면 봉우리와 골짜기가 뭉개져 어디나 비슷해 보이…"

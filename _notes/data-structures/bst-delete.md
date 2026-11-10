@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["BST Delete", "BST Deletion", "Binary Search Tree Deletion", "이진 탐색 트리 삭제", "중위 선행자", "Inorder Predecessor"]
 description: "나무에서 값 하나를 빼되, \"왼쪽은 작고 오른쪽은 크다\"는 규칙이 그대로 맞게 한다. 끝에 달린 값은 그냥 떼고, 아래에 하나만 달려 있으면 그것을 빈자리에 올려 붙인다. 아래에 둘이 달려 있으면 자리는 그대로 두고, 왼쪽 아래에서 가장 큰 값을 그 자리에 옮겨 적은 뒤 그 값이 …"

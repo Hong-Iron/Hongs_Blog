@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["JVM", "Java Virtual Machine", "자바 가상 머신", "Bytecode", "바이트코드", "JDK", "Java Development Kit", "JRE", "Java Runtime Environment", "javac", "컴파일러", "Compiler", "인터프리터", "Interpreter", "클래스 로더", "Class Loader", "패키지", "Package"]
 description: "자바 프로그램은 컴퓨터가 바로 읽는 말로 번역되지 않는다. 먼저 어느 컴퓨터의 말도 아닌 중간 말로 한 번 번역해 두고, 실행할 때 각 컴퓨터에 깔린 통역 프로그램이 그 중간 말을 자기 컴퓨터의 말로 옮겨 가며 돌린다. 그래서 한 번 번역한 파일을 윈도우에서도 맥에서도 그대로 쓸 …"

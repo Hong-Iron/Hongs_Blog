@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Indexed Binary Search Tree", "Indexed BST", "leftSize", "Rank", "순위", "색인 이진 트리", "Indexed Binary Tree", "Order Statistic Tree"]
 description: "왼쪽에는 작은 값, 오른쪽에는 큰 값이 오게 엮은 나무의 갈림길마다 \"내 왼쪽 아래에 값이 몇 개 달렸나\"를 적어 둔다. 그 수만 보면 \"작은 것부터 세어 몇 번째 값\"이 왼쪽에 있는지 오른쪽에 있는지 바로 알아서, 하나씩 세지 않고 층 수만큼만 내려가면 된다. 같은 방법으로 순서…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["History of Abnormal Psychology", "귀신론", "demonology", "체액설", "humoral theory", "히포크라테스", "Hippocrates", "피넬", "Pinel", "튜크", "Tuke", "딕스", "Dix", "분트", "Wundt", "크레펠린", "Kraepelin", "비네", "Binet", "인지혁명"]
 description: "정신장애를 보는 눈은 귀신 탓, 몸 탓, 다시 귀신 탓을 거쳐 사람답게 돌보자는 흐름으로 바뀌었다. 현대에 와서는 마음과 학습, 실험과 검사, 뇌를 함께 연구한다. 원인을 무엇으로 보느냐가 치료 방법을 정했기 때문에, 시대마다 환자가 받은 대우가 크게 달랐다."

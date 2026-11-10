@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Multiprocessor Scheduling", "병렬성의 입도", "Granularity", "정적 배정", "Static Assignment", "동적 배정", "Dynamic Assignment", "주종 구조", "Master/Slave", "대등 구조", "Peer", "부하 공유", "Load Sharing", "갱 스케줄링", "Gang Scheduling", "전용 프로세서 배정", "Dedicated Processor Assignment", "동적 스케줄링", "Dynamic Scheduling"]
 description: "프로세서가 여럿이면 \"다음에 누구를 실행할까\"에 \"어느 프로세서에서\"가 더해진다. 식당 주방장이 여럿일 때, 주문을 한 줄로 받아 손 빈 사람이 가져가게 할지, 같은 테이블 요리는 한꺼번에 여러 사람이 맡게 할지를 정하는 것과 같다. 스레드끼리 자주 주고받는 프로그램은 그 스레드들…"

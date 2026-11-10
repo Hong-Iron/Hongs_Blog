@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Application Error Handling", "anyhow", "anyhow::Context", "bail", "ensure", "Error chain formatting"]
 description: "실행 파일(서버, 명령줄 도구)에서 에러는 대부분 \"무엇을 하다가 왜 실패했는지 사람에게 알리고 멈추거나 넘어가는\" 것으로 끝난다. 그래서 종류를 가르는 enum보다, 어떤 에러든 받아서 설명을 한 겹씩 덧붙이는 상자 하나가 편하다. anyhow가 그 상자다. 대신 시그니처만 보고…"

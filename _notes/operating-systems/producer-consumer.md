@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Producer-Consumer Problem", "유한 버퍼 문제", "Bounded-Buffer Problem", "원형 버퍼", "Circular Buffer"]
 description: "빵집 진열대를 떠올리면 된다. 제빵사(생산자)는 빵을 구워 진열대(버퍼)에 놓고, 손님(소비자)은 하나씩 가져간다. 진열대가 꽉 차면 제빵사는 기다리고, 비어 있으면 손님이 기다린다. 두 사람이 동시에 같은 칸을 만지면 안 된다. 세마포어 셋으로 깔끔하게 풀리지만, semWait …"

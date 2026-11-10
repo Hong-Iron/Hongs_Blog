@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Parzen Window vs k-Nearest Neighbor", "파젠 창 대 k-이웃", "비모수 밀도 추정 비교"]
 description: "둘 다 물어보는 값을 가운데 둔 구역을 잡고 \"든 비율 ÷ 구역 크기\", 곧 \\frac{k/n}{V}로 밀도를 어림한다(n은 표본 수, k는 구역에 든 표본 수, V는 구역의 크기). 가르는 질문은 \"V와 k 가운데 무엇을 미리 정해 두는가\"다. 파젠 창은 크기를 정해 두고 개수를…"

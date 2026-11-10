@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["CI", "Continuous Integration", "지속적 통합", "Quality Gate", "GitHub Actions", "cargo fmt", "clippy", "cargo-nextest", "cargo-deny", "cargo-audit", "cargo-semver-checks", "MSRV", "rust-version", "rust-toolchain.toml"]
 description: "공항 보안 검색대처럼, 코드가 main에 들어가기 전에 반드시 지나야 하는 검사 줄을 세운다. 서식, 린트, 테스트, 지원하는 최소 Rust 버전, 의존성의 보안·라이선스, 공개 API 호환성을 사람 대신 기계가 매번 똑같이 본다. 사람이 \"깜빡\"할 일이 없어지는 대신, 검사가 느…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Segmentation", "세그먼트", "Segment", "세그먼트 표", "Segment Table", "세그먼트 번호"]
 description: "세그먼테이션은 프로그램을 코드, 데이터, 스택처럼 뜻이 있는 덩어리(세그먼트)로 나누고, 덩어리마다 길이를 다르게 둔다. 책을 낱장이 아니라 장(chapter) 단위로 나누는 것과 같다. 프로그래머가 보는 구조와 맞아서, 세그먼트마다 읽기 전용·실행 전용 같은 보호를 주고 통째로 …"

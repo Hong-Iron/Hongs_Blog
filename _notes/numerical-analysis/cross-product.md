@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Cross Product", "벡터곱", "Vector Product", "오른손 법칙", "Right-hand Rule"]
 description: "3차원 벡터 두 개를 넣으면 둘 모두에 수직인 새 벡터 하나가 나오는 곱셈이다. 오른손 네 손가락을 첫 벡터에서 둘째 벡터 쪽으로 감으면 엄지가 그 방향이고, 길이는 두 벡터가 만드는 평행사변형의 넓이다. 평면의 수직 방향(법선)이나 삼각형 넓이를 한 번에 구할 수 있다. 다만 3…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Direct-Mapped Cache", "직접 매핑 캐시", "태그", "Tag", "인덱스", "Index", "블록 오프셋", "Block Offset", "유효 비트", "Valid Bit", "캐시 적중", "Cache Hit", "캐시 실패", "Cache Miss", "캐시 블록", "캐시 라인", "Cache Line"]
 description: "메모리의 덩어리마다 캐시 안에서 들어갈 자리를 딱 한 곳으로 정해 두는 방식이다. 사물함이 8칸뿐인 학교에서 학번 끝자리로 칸을 정해 주는 것과 같다. 어느 칸을 볼지 주소만 보면 바로 알아서 찾기가 빠르고 회로가 단순하다. 대신 같은 칸을 써야 하는 두 덩어리를 번갈아 쓰면, 다…"

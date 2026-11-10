@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Page Replacement Algorithms", "교체 정책", "Replacement Policy", "최적 교체", "OPT", "Optimal", "LRU", "FIFO", "클록", "Clock", "사용 비트", "Use Bit", "프레임 잠금", "Frame Locking", "페이지 버퍼링", "Page Buffering", "벨레이디의 이상 현상", "Belady's Anomaly"]
 description: "메모리 프레임이 다 찼는데 새 페이지를 들여와야 하면, 지금 있는 페이지 하나를 내보내야 한다. 가장 좋은 선택은 앞으로 가장 늦게 쓰일 페이지지만 미래는 알 수 없다. 그래서 최근 기록으로 미래를 짐작한다. 가장 오래 안 쓴 페이지(LRU), 가장 먼저 들어온 페이지(FIFO),…"

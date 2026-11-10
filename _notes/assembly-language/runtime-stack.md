@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Runtime Stack", "런타임 스택", "실행 스택", "PUSH", "POP", "스택 포인터", "Stack Pointer", "ESP", "SS", "PUSHFD", "POPFD", "PUSHAD", "POPAD", "PUSHA", "POPA", "LIFO"]
 description: "식당에 쌓아 둔 접시는 맨 위에만 올리고 맨 위에서만 집는다. 프로그램도 실행하는 동안 메모리 한 구역을 이렇게 쓴다. 잠깐 치워 둘 값을 맨 위에 올리고, 필요할 때 맨 위부터 도로 가져온다. 올린 순서의 거꾸로만 꺼낼 수 있어서, 여러 값을 치워 뒀다면 반드시 거꾸로 꺼내야 제…"

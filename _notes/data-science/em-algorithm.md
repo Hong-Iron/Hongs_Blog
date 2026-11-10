@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["EM", "Expectation-Maximization", "기댓값 최대화", "E 단계", "E-step", "M 단계", "M-step", "로그가능도", "Log-likelihood"]
 description: "가우스 혼합 모델의 매개변수를 자료에서 찾는 방법이다. \"각 점이 어느 무리에서 왔는지\"를 알면 무리마다 평균과 퍼짐을 바로 계산할 수 있고, 반대로 평균과 퍼짐을 알면 각 점이 어느 무리에서 왔을 확률을 계산할 수 있다. 둘 다 모르니 아무렇게나 시작해 두 계산을 번갈아 되풀이한…"

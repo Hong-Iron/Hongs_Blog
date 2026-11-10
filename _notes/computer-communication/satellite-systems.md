@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Satellite System", "위성", "satellite", "정지궤도", "GEO", "중궤도", "MEO", "저궤도", "LEO", "VSAT", "GPS", "이리듐", "Iridium", "스타링크", "Starlink"]
 description: "위성통신은 하늘에 띄운 중계기로 먼 곳을 잇는다. 높이 띄울수록 위성 하나가 넓은 지역을 덮지만, 신호가 오가는 거리가 길어 늦고, 지상에서 올려 보내는 신호도 세야 한다. 그래서 방송처럼 한 방향이면 높은 정지궤도를 쓰고, 휴대 기기와 주고받으려면 낮은 저궤도 위성을 여러 대 띄운다."

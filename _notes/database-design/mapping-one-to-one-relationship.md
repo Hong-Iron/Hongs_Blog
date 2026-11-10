@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Mapping of Binary 1:1 Relationship Types", "1:1 관계 타입의 사상", "1:1 관계 사상", "외래 키 방법", "Foreign Key Approach", "합친 릴레이션 방법", "Merged Relation Approach", "교차 참조 방법", "Cross-reference Approach", "관계 릴레이션", "Relationship Relation", "Lookup Table", "MANAGES"]
 description: "부서마다 관리자가 한 명이고, 한 사람은 많아야 한 부서만 관리한다. 이런 일대일 연결은 한쪽 표에 상대의 대표 값을 적는 칸 하나를 더하면 적을 수 있다. 어느 쪽에 더하느냐가 문제인데, 빠짐없이 연결되는 쪽에 더해야 빈칸이 안 생긴다. 두 표를 하나로 합치는 길(양쪽이 모두 빠…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Convolution Sum", "컨볼루션 합", "합성곱", "이산 시간 LTI 시스템", "Discrete-Time LTI System", "단위 임펄스 응답", "Unit Impulse Response", "임펄스 응답", "Impulse Response", "중첩 합", "Superposition Sum", "LTI"]
 description: "선형이고 시불변인 시스템(LTI)은 \"입력 한 방울에 어떻게 반응하는가\" 하나만 알면 모든 입력의 출력을 계산할 수 있다. 입력을 시각마다의 바늘(임펄스) 여러 개로 쪼개면, 각 바늘의 반응은 그 한 방울 반응을 그 시각으로 옮기고 바늘 높이만큼 키운 것이다. 이 반응들을 모두 더…"

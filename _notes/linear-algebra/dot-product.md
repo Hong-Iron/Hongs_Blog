@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Dot Product", "내적", "점곱", "inner product", "Norm", "노름", "길이", "length", "단위벡터", "unit vector", "직교", "orthogonal", "수직", "코사인 유사도", "cosine similarity", "코시-슈바르츠 부등식", "Cauchy–Schwarz inequality", "삼각부등식", "triangle inequality"]
 description: "두 벡터의 성분끼리 곱해 더한 수가 내적이다. 이 수는 \"두 화살표가 얼마나 같은 쪽을 향하는가\"를 재며, 같은 방향이면 크고, 수직이면 0, 반대면 음수다. 자기 자신과의 내적은 길이의 제곱이라, 길이·각도·수직을 모두 이것 하나로 계산한다. 추천 시스템의 유사도, 뉴런의 가중합…"

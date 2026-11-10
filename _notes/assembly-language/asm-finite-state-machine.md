@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Finite-State Machine", "FSM", "상태 전이도", "State-Transition Diagram", "시작 상태", "Start State", "종료 상태", "Terminal State", "받아들이는 상태", "Accepting State", "IsDigit"]
 description: "글자를 하나씩 받으면서 \"지금 어디까지 왔는지\"만 기억하는 검사기다. 보드게임 말판처럼 칸이 몇 개 있고, 들어온 글자에 따라 화살표를 따라 다음 칸으로 옮긴다. 글자가 끝났을 때 말이 \"통과\" 칸에 서 있으면 올바른 입력이다. 그림 한 장이 곧 프로그램이라 고치기 쉽고 어셈블리로…"

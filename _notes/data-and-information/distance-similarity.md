@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Distance and Similarity", "거리", "Distance", "유사도", "Similarity", "거리 함수", "거리 척도", "Metric", "거리의 조건", "삼각부등식", "Triangle Inequality", "대소 비교", "코사인 거리", "Cosine Distance"]
 description: "두 대상이 얼마나 다른지를 수 하나로 적은 것이 거리이고, 얼마나 닮았는지를 적은 것이 유사도다. 지도 위 두 도시 사이의 길이처럼 거리는 작을수록 가깝고, 유사도는 그 눈금을 뒤집어 클수록 닮았다. 다만 아무 수나 거리라 부를 수는 없고, 자기 자신과만 0이고, 재는 방향을 바꿔…"

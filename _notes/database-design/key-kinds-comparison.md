@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Superkey vs Candidate Key vs Primary Key vs Foreign Key", "슈퍼키와 후보 키와 기본 키와 외래 키", "키 비교"]
 description: "이름에 '키'가 붙은 말이 넷이다. 슈퍼키, 후보 키, 기본 키는 자기 릴레이션의 튜플을 가려내는 값이다. 외래 키는 남의 릴레이션의 튜플을 가리키는 값이다. 가르는 질문은 둘이다. \"값이 겹쳐도 되는가?\" 그리고 \"NULL이어도 되는가?\""

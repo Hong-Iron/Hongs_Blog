@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Attribute Constraints", "NOT NULL", "DEFAULT", "CHECK", "속성 제약", "기본값", "Attribute Defaults", "NOT NULL 제약", "CHECK 절"]
 description: "칸 하나에 거는 규칙 세 가지다. \"이 칸은 비워 둘 수 없다\", \"안 적으면 이 값으로 채운다\", \"이 범위의 값만 받는다\"로, 신청서의 필수 칸, 미리 체크된 기본 선택, 나이 칸의 1~120 제한과 같다. 규칙을 표에 걸어 두면 어느 프로그램이 값을 넣든 똑같이 걸러진다. 다…"

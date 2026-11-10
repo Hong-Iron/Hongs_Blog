@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Scheduling Algorithms", "선입선출", "FCFS", "First-Come-First-Served", "라운드 로빈", "Round Robin", "RR", "최단 프로세스 우선", "SPN", "Shortest Process Next", "SJF", "최단 잔여 시간", "SRT", "Shortest Remaining Time", "최고 응답률 우선", "HRRN", "Highest Response Ratio Next", "피드백", "Feedback", "다단계 피드백 큐", "선점", "Preemptive", "비선점", "Nonpreemptive", "정규화 반환 시간", "Normalized Turnaround Time", "가상 라운드 로빈"]
 description: "단기 스케줄러가 다음 프로세스를 고르는 규칙은 두 가지로 갈린다. 무엇을 보고 고르나(먼저 온 순서, 짧은 작업, 기다린 시간), 그리고 실행 중인 프로세스를 중간에 끊을 수 있나(선점)다. 은행 창구에서 번호표 순서대로만 받으면 공평하지만 짧은 용무의 손님이 오래 기다리고, 짧은…"

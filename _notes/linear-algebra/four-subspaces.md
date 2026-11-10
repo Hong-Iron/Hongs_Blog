@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Rank", "랭크", "계수", "Four Fundamental Subspaces", "네 부분공간", "열공간", "column space", "영공간", "null space", "kernel", "핵", "행공간", "row space", "왼쪽 영공간", "left null space", "차원 정리", "rank-nullity theorem", "특수해", "special solution"]
 description: "행렬이 할 수 있는 일과 할 수 없는 일을 네 개의 부분공간이 나눠 담는다. 도달할 수 있는 출력(열공간), 0으로 뭉개지는 입력(영공간), 그리고 전치 쪽의 두 공간이다. 이 공간들의 크기는 모두 랭크(피벗의 개수) 하나로 정해지고, \"살아남는 차원 + 뭉개지는 차원 = 입력 차…"

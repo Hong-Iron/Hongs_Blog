@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Linear Data Structure", "선형 구조", "선형 리스트", "Linear List", "Non-linear Data Structure", "비선형 자료구조", "비선형 구조"]
 description: "원소들이 한 줄로 서서, 맨 앞과 맨 뒤를 빼면 누구나 바로 앞 원소 하나와 바로 뒤 원소 하나만 갖는 자료구조를 묶어 부르는 말이다. 배열, 스택, 큐, 연결 리스트가 여기에 든다. 한 줄이라 처음부터 끝까지 한 번에 훑을 수 있고 만들기도 쉽다. 반면 윗사람 하나에 아랫사람이 …"

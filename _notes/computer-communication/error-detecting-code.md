@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Error Detecting Code", "EDC", "오류 검출", "Error Detection", "패리티", "Parity", "검출율", "Detection Rate", "미검출 오류", "Undetected Error"]
 description: "전송 중에 비트가 뒤집혔는지 받는 쪽이 알려면, 보내는 쪽이 데이터로 계산한 짧은 값을 함께 보내야 한다. 받는 쪽은 받은 데이터로 같은 계산을 다시 해 보고, 따라온 값과 다르면 오류라고 본다. 이 덧붙인 값이 오류 검출 코드이고, 짧고 빨리 계산되면서 오류를 많이 잡아야 한다.…"

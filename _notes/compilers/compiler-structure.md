@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Structure of Compilers", "Compiler", "컴파일러", "언어 처리기", "Language Processor", "분석부", "Analysis Part", "합성부", "Synthesis Part", "프런트엔드", "백엔드", "어휘 분석기", "Lexical Analyzer", "Scanner", "구문 분석기", "Syntax Analyzer", "Parser", "의미 분석기", "Semantic Analyzer", "중간 코드 생성기", "Intermediate Code Generator", "코드 최적화기", "Code Optimizer", "코드 생성기", "Code Generator", "전처리기", "Preprocessor", "링커", "Linker"]
 description: "컴파일러는 사람이 쓴 프로그램을 컴퓨터가 돌릴 수 있는 프로그램으로 옮기는 번역기다. 긴 글을 한 사람이 통째로 번역하지 않고 여섯 사람이 차례로 넘겨받듯, 글자를 낱말로 끊고, 문장 구조를 세우고, 뜻이 맞는지 검사하고, 중간 글로 옮기고, 다듬고, 마지막 기계의 말로 쓴다. 단…"

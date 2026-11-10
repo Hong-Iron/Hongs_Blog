@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Psychoanalytic Perspective", "정신분석", "psychoanalysis", "프로이트", "Freud", "심리결정론", "psychic determinism", "무의식", "unconscious", "지형학적 모델", "topographic model", "성격의 삼원구조", "tripartite theory", "원초아", "id", "자아", "ego", "초자아", "superego", "현실 불안", "신경증적 불안", "도덕적 불안", "심리성적 발달", "psychosexual development", "고착", "fixation", "자유연상", "전이", "저항", "대상관계이론", "자아심리학", "자기심리학"]
 description: "마음을 욕구를 밀어붙이는 쪽, 양심으로 누르는 쪽, 현실에 맞춰 둘을 조정하는 쪽의 줄다리기로 본다. 줄다리기는 대부분 스스로 알아차리지 못하는 곳(무의식)에서 벌어지고, 조정자가 약하거나 서툰 방법을 쓰면 증상이 생긴다. 이상행동을 심리적 원인으로 설명한 최초의 체계적 이론이지만…"

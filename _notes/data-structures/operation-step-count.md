@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Operation Count", "Step Count", "연산 횟수", "단계 수", "비교 횟수", "Comparison Count", "s/e", "steps per execution", "인스턴스 특성", "Instance Characteristic", "최악의 경우", "Worst Case", "최선의 경우", "Best Case", "공간 복잡도", "Space Complexity"]
 description: "프로그램이 얼마나 오래 걸리는지를 시계로 재면 컴퓨터마다 답이 다르다. 그래서 시계 대신 \"일을 몇 번 하는가\"를 입력 크기가 들어간 식으로 센다. 가장 자주 하는 일 한 가지만 골라 세면 쉽지만 나머지 줄에 쓴 시간이 빠지고, 모든 줄을 다 세면 빠짐이 없지만 손이 많이 간다. …"

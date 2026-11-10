@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Non-Suicidal Self-Injury", "NSSI", "자해", "self-harm", "자해의 기능"]
 description: "죽으려는 뜻 없이 자기 몸에 일부러 상처를 내는 행동이다. 대개 견디기 힘든 감정을 가라앉히거나, 도움을 청하거나, 자신을 벌하는 식의 \"쓸모\"가 있어서 되풀이된다. 죽을 뜻이 없다고 해서 가볍지 않다. 고통에 무뎌지게 만들어 자살 위험을 높이는 강력한 위험인자다. 그래서 행동을 …"

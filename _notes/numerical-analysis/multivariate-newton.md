@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Multi-dimensional Newton-Raphson Method", "다변수 뉴턴-랩슨", "Newton's Method for Systems", "연립 비선형 방정식", "야코비 행렬", "Jacobian"]
 description: "미지수가 여럿인 비선형 연립방정식을 뉴턴 방법으로 푼다. 지금 점에서 각 방정식을 평면(1차 근사)으로 바꾸면 연립 일차방정식이 되고, 그것을 풀어 다음 점으로 간다. 근 근처에서는 오차가 매번 대략 제곱으로 줄어 아주 빠르다. 대신 매 반복 편미분 네 개(변수가 n개면 n^2개)…"

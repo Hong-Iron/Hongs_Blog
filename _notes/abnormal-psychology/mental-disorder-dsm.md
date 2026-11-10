@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Mental Disorder", "정신질환", "DSM", "DSM-5", "DSM-5-TR", "Diagnostic and Statistical Manual of Mental Disorders", "정신장애 진단 및 통계 편람", "ICD", "International Classification of Diseases", "국제질병분류", "증후군", "syndrome", "미국정신의학회", "American Psychiatric Association"]
 description: "이상행동이 증상 하나라면, 정신장애는 여러 증상이 한 덩어리로 함께 나타나는 묶음이다. 어떤 묶음을 어떤 장애라 부를지는 미국정신의학회가 만든 진단 편람(DSM)이 정하고, 세계 어디서나 이 목록을 공통 언어로 쓴다. 다만 목록은 판이 바뀔 때마다 달라지므로, 목록에 없다고 해서 …"

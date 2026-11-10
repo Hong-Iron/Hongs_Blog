@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Discrete-Time Fourier Series", "DTFS", "이산 푸리에 급수", "이산 시간 푸리에 계수", "Discrete-Time Fourier Coefficients", "유한 급수", "Finite Series"]
 description: "주기 N인 수열도 고조파 e^{jk(2\\pi/N)n}의 합으로 나눌 수 있다. 연속 시간과 다른 점은, 이산 시간에서는 서로 다른 고조파가 딱 N개뿐이라 급수가 무한합이 아니라 N개 항의 유한합이라는 것이다. 그래서 수렴 걱정이 없고, N개의 값을 N개의 계수로 정확히 바꿨다가 정…"

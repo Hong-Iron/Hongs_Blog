@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Cancellation", "취소", "Timeout", "타임아웃", "tokio::time::timeout", "select!", "tokio::select", "biased", "취소 안전성", "Cancel Safety", "Cancellation Safety", "CancellationToken", "abort"]
 description: "async Rust에서 일을 멈추는 방법은 하나뿐이다. 그 일을 하던 퓨처를 버린다. 버리면 퓨처는 멈춰 있던 .await 자리에서 다시는 깨어나지 않고, 들고 있던 값은 정리된다. 시간 제한(timeout)과 \"먼저 끝나는 쪽만 고르기\"(select!)도 모두 이 방법으로 나머지…"

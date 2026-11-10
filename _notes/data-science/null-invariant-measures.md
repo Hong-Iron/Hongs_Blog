@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Null-Invariant Measure", "널 불변성", "Null Invariance", "널 거래", "Null Transaction", "쿨친스키", "Kulczynski", "Kulc", "불균형 비율", "Imbalance Ratio", "IR"]
 description: "마트 영수증 대부분에는 우유도 커피도 없다. 이렇게 두 물건 모두 없는 영수증(널 거래)이 많아지면 리프트와 카이제곱은 크게 부풀어, 거의 관련 없는 우유와 커피가 강하게 붙어 다니는 것처럼 보인다. 널 불변 측정은 두 물건 중 하나라도 있는 영수증만 보고 계산해서, 널 거래가 몇…"

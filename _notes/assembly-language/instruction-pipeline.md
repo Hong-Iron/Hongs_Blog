@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Multi-Stage Pipeline", "다단계 파이프라인", "파이프라이닝", "Pipelining", "Pipelined Execution", "슈퍼스칼라", "Superscalar", "낭비되는 사이클", "Wasted Cycles"]
 description: "빨래방에서 한 사람의 빨래가 세탁, 건조, 개기를 모두 끝낼 때까지 다음 사람이 기다리면 기계 대부분이 놀게 된다. 세탁기가 비는 대로 다음 사람이 빨래를 넣으면 같은 시간에 훨씬 많은 빨래가 끝난다. 프로세서도 명령어 하나를 여러 걸음으로 나눠, 앞 명령어가 다음 걸음으로 넘어가…"

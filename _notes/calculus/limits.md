@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Limit", "극한", "극한값", "입실론-델타", "epsilon-delta", "한쪽 극한", "one-sided limit", "좌극한", "우극한", "극한 법칙", "limit laws", "조임 정리", "squeeze theorem"]
 description: "극한은 입력이 어떤 값에 한없이 다가갈 때 출력이 다가가는 값이다. 그 점에서의 함숫값과는 상관이 없어서, 0 나누기 0처럼 계산이 안 되는 곳에서도 \"다가가는 값\"은 말할 수 있다. 미분과 적분이 모두 극한으로 정의된다. 다만 왼쪽과 오른쪽에서 다가가는 값이 다르거나, 출력이 한…"

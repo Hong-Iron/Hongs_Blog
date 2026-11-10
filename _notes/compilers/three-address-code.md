@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Three Address Code", "TAC", "Three-address Code", "3-주소 코드", "중간 코드", "Intermediate Code", "중간 표현", "Intermediate Representation", "IR", "임시 변수", "Temporary Variable", "중간 코드 생성기", "Intermediate Code Generator"]
 description: "긴 계산을 암산하지 않고 \"먼저 이것을 곱해 메모지 1번에 적고, 그 값에 이것을 더해 2번에 적고…\" 하는 식으로 한 번에 계산 하나씩만 하도록 풀어 쓴 코드다. 한 줄에는 이름이나 숫자가 많아야 세 개만 나온다. 조건문과 반복문은 \"이 줄로 건너뛰어라\"로 풀어 쓴다. 이렇게 풀…"

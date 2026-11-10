@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Selective Mutism", "선택적 무언증", "자기모델링", "self-modeling"]
 description: "말을 할 수 있는데도 학교나 친척 앞처럼 말하는 것이 기대되는 상황에서 입을 열지 못하는 장애다. 집에서는 수다스러운 아이가 교실에서는 한마디도 하지 않는다. 고집이나 버릇없음이 아니라 사회적 상황에서의 극심한 불안이 원인이고, 대부분 사회불안을 함께 가진다. 나이가 든다고 저절로…"

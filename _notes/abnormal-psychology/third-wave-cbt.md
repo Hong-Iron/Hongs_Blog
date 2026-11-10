@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Third-wave CBT", "제3의 물결", "마음챙김", "mindfulness", "위빠사나", "vipassana", "카밧진", "Kabat-Zinn", "수용전념치료", "ACT", "Acceptance and Commitment Therapy", "경험 회피", "experiential avoidance", "마음챙김 기반 인지치료", "MBCT"]
 description: "괴로운 생각을 고치려고 싸우기보다, 생각을 한 발 떨어져 바라보고 그대로 두는 법을 익히는 치료들이다. 한마디로 \"생각은 생각일 뿐\"이다. 생각을 바꾸는 데 힘을 쓰는 대신, 받아들이고 자기에게 중요한 방향으로 행동하는 데 힘을 쓴다. 생각과 다투다 지친 사람에게 새 길을 주지만,…"

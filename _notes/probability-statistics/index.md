@@ -10,6 +10,7 @@ concepts: 38
 practices: 5
 codes: 69
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 description: "확률과 통계 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true

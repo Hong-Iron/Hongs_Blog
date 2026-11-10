@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Point-to-Point Link", "점대점 연결", "point-to-point", "완전 연결", "full mesh", "직접 링크", "direct link", "링크의 실체", "전송 모드", "transmission mode", "simplex", "단방향", "반이중", "half-duplex", "전이중", "full-duplex"]
 description: "두 기기를 전용선 하나로 바로 잇는 연결이다. 두 사람만 쓰는 직통 전화와 같다. 단순하고 서로 간섭이 없다. 대신 모든 기기를 이렇게 이으면 기기가 늘어날 때 선이 감당할 수 없이 늘어난다."

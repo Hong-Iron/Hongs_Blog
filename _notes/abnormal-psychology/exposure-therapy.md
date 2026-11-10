@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Exposure Therapy", "노출치료", "노출법", "체계적 둔감법", "systematic desensitization", "울페", "Wolpe", "상호억제", "reciprocal inhibition", "불안 위계", "fear hierarchy", "주관적 불편감 척도", "SUDS", "실제적 노출", "in vivo exposure", "상상적 노출", "imaginal exposure", "점진적 노출", "graded exposure", "홍수법", "flooding", "내부감각수용 노출", "interoceptive exposure", "안전행동", "safety behavior", "습관화", "habituation"]
 description: "두려워 피하던 대상을 일부러, 반복해서 마주하게 하는 치료다. 차가운 바닷물에 발부터 조금씩 담그면 결국 몸이 물에 익숙해지는 것과 같다. 마주한 채 버티면 \"아무 일도 일어나지 않는다\"는 것을 몸으로 배워, 피할수록 굳어지던 공포의 고리가 끊긴다. 공포증에 가장 효과적인 치료지만…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["B-Tree vs Binary Search Tree", "B-Tree vs BST", "두 갈래 분기와 여러 갈래 분기"]
 description: "둘 다 \"작은 키는 왼쪽, 큰 키는 오른쪽\"이라는 규칙으로 키를 찾아 내려가는 탐색 트리다. 가르는 질문은 \"노드 하나를 읽는 값이 비싼가\"다. 노드를 읽을 때마다 디스크를 한 번 읽어야 하면, 노드 하나에 키를 많이 담아 트리를 낮추는 쪽이 이긴다."

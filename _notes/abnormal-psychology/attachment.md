@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Attachment", "애착 이론", "attachment theory", "볼비", "Bowlby", "할로", "Harlow", "접촉 위안", "contact comfort", "에인스워스", "Ainsworth", "낯선 상황 절차", "strange situation procedure", "안정 애착", "secure attachment", "회피 애착", "avoidant attachment", "불안 애착", "anxious attachment", "저항 애착", "불안정 애착", "insecure attachment", "안전기지", "secure base"]
 description: "아기와 주 양육자 사이에 생기는 오래가는 정서적 끈이다. 겁날 때 달려갈 수 있는 품(안전한 피난처)이자, 마음 놓고 세상을 탐색하러 나갔다 돌아올 수 있는 기지(안전기지)다. 양육자가 일관되고 민감하게 반응하면 안정 애착이, 무관심하거나 오락가락하면 불안정 애착이 생긴다. 어린 …"

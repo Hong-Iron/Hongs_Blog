@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Database Design Process", "요구 수집과 분석", "Requirements Collection and Analysis", "기능 분석", "Functional Analysis", "개념 설계", "Conceptual Design", "논리 설계", "Logical Design", "데이터 모델 사상", "Data Model Mapping", "물리 설계", "Physical Design", "작은 세계", "Miniworld"]
 description: "집을 지을 때는 먼저 식구들에게 어떤 방이 필요한지 묻고, 종이에 평면도를 그리고, 그 뒤에야 자재와 시공 방법을 정한다. 데이터베이스도 쓸 사람에게 무엇을 저장할지 묻고, 그 내용을 그림으로 정리하고, 그림을 표로 옮기고, 마지막에 디스크에 어떻게 둘지 정한다. 이 순서를 지키면…"

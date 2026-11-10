@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["TDM vs 통계적 다중화", "synchronous TDM vs statistical TDM", "동기식 vs 비동기식 시분할"]
 description: "둘 다 시간을 나눠 링크를 쓴다. 통계적 다중화를 \"시분할 방법의 일종\"이라 부르기도 한다. 그래서 헷갈린다. 가르는 기준은 \"칸을 미리 정해 두는가\"다."

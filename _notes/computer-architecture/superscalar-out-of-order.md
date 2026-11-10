@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Superscalar and Out-of-Order Execution", "슈퍼스칼라", "Superscalar", "다중 내보내기", "Multiple Issue", "정적 다중 내보내기", "Static Multiple Issue", "동적 다중 내보내기", "Dynamic Multiple Issue", "비순차 실행", "Out-of-Order Execution", "동적 스케줄링", "Dynamic Scheduling", "추측 실행", "Speculation", "레지스터 이름 바꾸기", "Register Renaming", "IPC", "명령어 수준 병렬성", "Instruction-Level Parallelism", "ILP"]
 description: "계산대를 두 줄로 늘리면 같은 시간에 손님을 두 배로 받을 수 있다. 거기에 더해, 앞 손님이 지갑을 찾느라 멈춰 있으면 준비된 뒤 손님부터 먼저 계산해 준다. 프로세서도 한 사이클에 명령어를 여러 개 시작하고 재료가 준비된 명령어부터 먼저 실행해서, 서로 기대지 않는 명령어가 많…"

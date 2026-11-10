@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["거듭제곱 vs 지수", "power vs exponential", "다항 시간 vs 지수 시간", "polynomial vs exponential time"]
 description: "x^2과 2^x는 둘 다 \"제곱\"처럼 보이지만 변수가 있는 자리가 다르다. 가르는 질문은 \"변수가 밑에 있는가, 지수에 있는가\"다. 밑에 있으면 거듭제곱함수, 지수에 있으면 지수함수다. 결국에는 밑이 1보다 큰 지수함수가 어떤 거듭제곱함수보다도 커지지만, 언제 역전하는지는 계수에 …"

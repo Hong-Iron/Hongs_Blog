@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Transforming Normal Vectors", "법선 변환", "Normal Transformation", "역전치 행렬", "Inverse Transpose", "평면의 변환", "Transforming Planes"]
 description: "면을 변환할 때 그 면에 수직인 화살표(법선)까지 같은 행렬로 바꾸면, 화살표가 더는 면에 수직이 아닐 수 있다. 면을 한쪽으로만 늘이면 면은 눕는데 화살표는 반대로 서기 때문이다. 법선은 변환 행렬의 역행렬을 전치한 (M^{-1})^\\top로 바꿔야 수직이 유지된다. 회전처럼 길…"

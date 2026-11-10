@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Learned Helplessness Theory", "학습된 무기력", "learned helplessness", "셀리그먼", "Seligman", "셔틀 박스", "shuttle box", "통제 불가능성", "uncontrollability"]
 description: "무엇을 해도 나쁜 일을 피할 수 없는 경험을 되풀이하면, \"내 행동은 결과를 바꾸지 못한다\"는 것을 배워 버린다는 이론이다. 그렇게 배운 무력감이 의욕·생각·감정을 무너뜨려 우울이 된다. 동물 실험에서 출발해 우울의 행동적 모습을 잘 설명한다. 하지만 사람이 왜 그 실패를 자기 탓…"

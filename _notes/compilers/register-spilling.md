@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Spilling", "Register Spilling", "스필링", "스필", "Spill", "레지스터 스필", "스필 후보", "Spill Candidate", "load", "store"]
 description: "책상이 좁아 책을 다 펴 놓을 수 없으면, 한 권은 책장에 꽂아 두고 볼 때만 잠깐 꺼냈다가 바로 도로 꽂는다. 빠른 저장 칸이 모자랄 때 컴파일러도 변수 하나를 메모리에 살게 하고, 읽을 때만 잠깐 꺼내고 쓴 직후에 바로 넣는다. 그러면 그 변수가 칸을 차지하는 시간이 아주 짧아…"

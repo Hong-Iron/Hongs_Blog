@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
 last_modified_at: "2026-09-27"
+date: "2026-09-27"
 status: "verified"
 aliases: ["Oppositional Defiant Disorder", "ODD", "반항장애", "부모 관리 훈련", "Parent Management Training", "PMT"]
 description: "부모나 선생님 같은 어른에게 걸핏하면 화내고, 따지고, 시키는 일을 일부러 거부하며, 앙심을 품는 행동이 반년 넘게 이어지는 장애다. 대개 여덟 살 이전에 시작한다. 남을 때리거나 물건을 부수는 데까지는 가지 않는다는 점에서 품행장애보다 가볍지만, 일부는 품행장애로 이어진다. 반항…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Two's Complement", "2의 보수", "부호 없는 정수", "Unsigned Integer", "부호 있는 정수", "Signed Integer", "오버플로", "Overflow", "표현 범위"]
 description: "칸 수가 정해진 0과 1의 줄로는 정해진 개수의 수만 적을 수 있고, 그 개수를 0부터 위로만 쓸지 반을 잘라 음수에 줄지는 정하기 나름이다. 컴퓨터는 맨 앞 칸 하나만 음수 무게를 갖게 하는 방식으로 음수를 적는다. 자동차 주행 기록계가 999에서 한 칸 더 가면 000으로 도는…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Token and Lexeme", "토큰", "Token", "렉심", "Lexeme", "어휘항목", "패턴", "Pattern", "토큰 이름", "Token Name", "토큰 값", "Token Value", "어휘 분석", "Lexical Analysis", "어휘 분석기", "Lexical Analyzer", "스캐너", "Scanner", "예약어", "Keyword", "식별자", "Identifier"]
 description: "영어 문장을 읽을 때 먼저 낱말로 끊고, 낱말마다 \"명사\", \"동사\" 같은 꼬리표를 붙인다. 컴파일러의 첫 단계도 똑같이 프로그램 글자 줄을 뜻 있는 조각으로 끊고, 조각마다 종류를 적은 꼬리표를 붙인다. 뒤 단계는 글자가 아니라 꼬리표만 보고 문법을 따지므로 일이 훨씬 쉬워진다.…"

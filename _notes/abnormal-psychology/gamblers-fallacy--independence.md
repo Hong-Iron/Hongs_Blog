@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["도박사의 오류와 독립", "gambler's fallacy and independence", "몬테카를로 오류", "Monte Carlo fallacy", "동전에는 기억이 없다", "하우스 엣지", "house edge", "마틴게일", "martingale"]
 description: "도박장애의 인지 왜곡인 도박사의 오류는 \"서로 독립적으로 일어나는 확률적 사건의 착각\"이다. 확률과 통계의 말로 옮기면, 독립 시행에서 조건부 확률이 바뀐다고 믿는 오류다. 이 대응을 알면 \"이제 딸 차례\"라는 믿음을 계산으로 반박할 수 있다."

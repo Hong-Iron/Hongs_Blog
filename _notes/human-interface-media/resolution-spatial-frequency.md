@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Resolution", "해상도", "dpi", "dots per inch", "공간 주파수", "Spatial Frequency", "최대 공간 주파수", "저주파", "고주파", "윤곽선", "질감", "texture"]
 description: "사진의 한 줄을 따라가며 밝기가 얼마나 자주 오르내리는지를 공간 주파수라 한다. 흐릿한 큰 모양은 천천히 바뀌고(낮은 주파수), 촘촘한 무늬와 결은 빠르게 바뀐다(높은 주파수). 해상도는 일정한 길이 안에 담을 수 있는 가장 빠른 변화로, 픽셀 N개로는 밝고 어두운 줄을 최대 N/…"

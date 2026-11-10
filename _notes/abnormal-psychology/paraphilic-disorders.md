@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Paraphilic Disorders", "변태성욕장애", "성도착증", "변태성욕", "paraphilia", "성도착", "변태", "perversion", "성적 왜곡", "sexual deviation", "외설언어증", "coprolalia", "위험성-욕구-반응성 원칙", "Risk-Need-Responsivity", "RNR 원칙", "화학적 거세"]
 description: "성적으로 흥분하는 대상이나 방식이 일반적이지 않은 상태가 성도착(변태성욕)이고, 그것이 본인을 괴롭히거나 생활을 무너뜨리거나 동의하지 않은 사람을 해칠 때 성도착장애가 된다. 특이한 성적 관심을 가졌다는 것만으로는 장애가 아니라는 점이 핵심이다. 대부분 남성이고, 행동이 범죄가 되…"

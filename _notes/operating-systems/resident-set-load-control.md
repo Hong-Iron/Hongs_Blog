@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Resident Set Management", "Load Control", "반입 정책", "Fetch Policy", "요구 페이징", "Demand Paging", "선행 페이징", "Prepaging", "배치 정책", "Placement Policy", "고정 할당", "Fixed Allocation", "가변 할당", "Variable Allocation", "지역 교체", "Local Replacement", "전역 교체", "Global Replacement", "정리 정책", "Cleaning Policy", "다중 프로그래밍 수준", "Multiprogramming Level", "프로세스 일시 중단 정책"]
 description: "가상 메모리를 운영하는 운영체제는 교체 말고도 여러 결정을 한다. 페이지를 언제 가져올지, 프로세스마다 프레임을 몇 개 줄지, 내보낼 페이지를 그 프로세스 안에서만 고를지 전체에서 고를지, 바뀐 페이지를 언제 디스크에 쓸지, 메모리에 프로세스를 몇 개 올릴지다. 목표는 하나, 페이…"

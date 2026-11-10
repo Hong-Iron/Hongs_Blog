@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Logarithm", "log", "로그 법칙", "logarithm rules", "밑변환 공식", "change of base", "진수", "상용로그", "common logarithm", "자연로그", "natural logarithm", "ln", "이진로그", "binary logarithm", "lg"]
 description: "로그는 \"몇 번 곱해야 이 수가 되나\"에 답하는 수다. 1000을 만들려면 10을 세 번 곱해야 하니 답은 3이다. 로그를 쓰면 곱셈이 덧셈으로, 거듭제곱이 곱셈으로 바뀌어 아주 크거나 작은 수를 다루기 쉬워진다. 다만 곱하는 수는 양수이고 1이 아니어야 하며, 0이나 음수의 로그…"

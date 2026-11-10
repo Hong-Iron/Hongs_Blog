@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Euler's Formula", "Polar Form of Complex Numbers", "오일러 공식", "극형식", "편각", "argument", "arg", "드무아브르 공식", "De Moivre's theorem", "1의 거듭제곱근", "roots of unity", "오일러 항등식", "Euler's identity"]
 description: "복소수를 (원점까지의 거리, 방향각)으로 적으면, 곱셈이 \"거리끼리 곱하고 각끼리 더하기\"가 된다. 즉 복소수를 곱하는 것은 평면에서 늘리고 돌리는 것이다. 오일러 공식은 이 회전을 지수함수 모양으로 적어, 삼각함수의 덧셈정리를 지수법칙 하나로 대신하게 한다. 다만 허수 지수는 \"…"

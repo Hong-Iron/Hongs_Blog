@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Regular Expression", "정규식", "regex", "정규 언어", "Regular Language", "기본 정규 표현식", "Basic Regular Expression", "클레이니 스타", "Kleene Star", "정규 표현식의 대수 법칙", "형식 언어의 포함 관계", "촘스키 위계", "Chomsky Hierarchy"]
 description: "레고는 몇 가지 기본 블록과 \"옆에 붙인다\", \"둘 중 하나를 고른다\", \"원하는 만큼 되풀이한다\"는 조립법만으로 온갖 모양을 만든다. 정규 표현식도 글자 한 개짜리 블록과 이 세 조립법만으로 \"어떤 모양의 글자 줄인가\"를 한 줄로 적는다. 단순해서 기계가 다루기 쉬운데도 이름, …"

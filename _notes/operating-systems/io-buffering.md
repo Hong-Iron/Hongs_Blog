@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["I/O Buffering", "단일 버퍼", "Single Buffer", "이중 버퍼", "Double Buffer", "순환 버퍼", "Circular Buffer", "블록 지향", "Block-Oriented", "스트림 지향", "Stream-Oriented", "미리 읽기", "Read Ahead", "버퍼 캐시", "Buffer Cache"]
 description: "버퍼링은 장치와 프로세스 사이에 운영체제의 메모리 칸(버퍼)을 두고, 입력은 필요하기 전에 미리 받아 두고 출력은 요청 뒤에 천천히 내보내는 방법이다. 식당 주방의 배식대처럼, 요리사와 손님이 서로의 속도에 묶이지 않게 해 준다. 버퍼가 둘이면 한쪽을 채우는 동안 다른 쪽을 비울 …"

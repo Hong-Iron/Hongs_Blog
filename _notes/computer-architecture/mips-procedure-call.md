@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["MIPS Procedure Call", "jal", "jr", "jump and link", "$ra", "복귀 주소", "Return Address", "호출 규약", "Calling Convention", "호출자 저장", "Caller-Saved", "피호출자 저장", "Callee-Saved", "스택 프레임", "Stack Frame", "말단 프로시저", "Leaf Procedure", "재귀"]
 description: "일하다가 다른 방에 심부름을 갈 때, 돌아올 자리를 손바닥에 적고 간다. 심부름이 끝나면 손바닥을 보고 돌아온다. MIPS도 함수를 부를 때 돌아올 주소를 정해진 칸 하나에 적고 건너뛴다. 메모리에 쓰지 않아서 빠르다. 하지만 손바닥은 하나뿐이다. 심부름 간 곳에서 또 심부름을 가…"

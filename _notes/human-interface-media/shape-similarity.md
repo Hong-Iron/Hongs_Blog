@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Shape Similarity", "유사도", "similarity", "평균 제곱 차이", "mean squared difference", "MSE", "정규화 교차 상관", "normalized cross-correlation", "NCC", "상관계수", "correlation coefficient"]
 description: "아이들은 \"같은 그림 찾기\"를 눈으로 금방 하지만, 컴퓨터는 두 데이터가 얼마나 비슷한지를 숫자 하나로 받아야 한다. 가장 먼저 떠오르는 방법은 칸마다 차이를 제곱해 평균 내는 것인데, 이 값은 한쪽이 전체적으로 더 밝거나 크기만 해도 커진다. 모양만 비교하려면 두 데이터에서 각자…"

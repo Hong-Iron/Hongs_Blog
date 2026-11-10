@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Elimination Disorders", "유뇨증", "Enuresis", "유분증", "Encopresis", "소변 경보기", "벨-패드 방법", "bell-and-pad", "마른 침대 훈련", "dry bed training"]
 description: "대소변을 가릴 나이가 지났는데도 옷이나 이불, 적절하지 않은 곳에 반복해서 소변(유뇨증)이나 대변(유분증)을 보는 장애다. 대부분 자라면서 저절로 좋아진다. 그래도 아이가 자신감을 잃고, 친구를 피하고, 가족과 부딪치기 쉬워서 일찍 돕는 것이 좋다. 꾸중과 처벌은 오히려 나빠지게 한다."

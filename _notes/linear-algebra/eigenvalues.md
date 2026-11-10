@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Eigenvalue", "고윳값", "고유값", "Eigenvector", "고유벡터", "특성방정식", "characteristic equation", "특성다항식", "characteristic polynomial", "고유공간", "eigenspace", "거듭제곱법", "power iteration", "마르코프 행렬", "Markov matrix", "페이지랭크", "PageRank"]
 description: "행렬을 곱하면 대부분의 벡터는 방향이 바뀐다. 그런데 어떤 특별한 방향의 벡터는 방향은 그대로 두고 길이만 몇 배가 된다. 이 방향이 고유벡터, 그 배율이 고윳값이다. 변환을 여러 번 되풀이할 때 무엇이 남고 무엇이 사라지는지, 시스템이 안정한지 폭발하는지가 모두 고윳값으로 정해진…"

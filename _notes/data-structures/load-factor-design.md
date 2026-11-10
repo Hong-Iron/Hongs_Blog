@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Hash Table Design", "Loading Density", "Load Factor", "적재율", "적재 밀도", "재해싱", "Rehashing", "동적 크기 조정", "Dynamic Resizing"]
 description: "주차장이 찰수록 빈자리를 찾아 도는 시간이 길어지는 것처럼, 해시 테이블도 찰수록 느려진다. 그래서 \"한 번 찾는 데 몇 번까지 봐도 되는가\"를 먼저 정하고, 그 조건을 지키려면 표를 얼마나 비워 두어야 하는지 거꾸로 계산해 칸 수를 정한다. 들어올 자료의 수를 미리 알면 처음부터…"

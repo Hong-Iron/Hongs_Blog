@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Dynamic Memory Allocation", "동적 할당", "정적 할당", "Static Allocation", "malloc", "calloc", "realloc", "free", "힙", "Heap", "메모리 누수", "Memory Leak", "Memory Leakage", "size_t", "해제 뒤 사용", "Use After Free", "이중 해제", "Double Free"]
 description: "자리를 미리 정해 두지 않고, 필요할 때 필요한 만큼 빌리고 다 쓰면 돌려주는 방식이다. 몇 칸이 필요한지 프로그램을 돌려 봐야 아는 경우에 쓴다. 빌린 자리는 함수가 끝나도 저절로 돌아가지 않으므로 직접 돌려줘야 한다. 돌려주지 않으면 쓸 수 없는 자리가 쌓이고, 돌려준 자리를 …"

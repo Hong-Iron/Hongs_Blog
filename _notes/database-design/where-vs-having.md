@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["WHERE vs HAVING", "WHERE 대 HAVING", "선택 조건과 그룹 조건"]
 description: "둘 다 조건을 걸어 거른다. 가르는 질문은 \"이 조건은 행 하나만 보면 참, 거짓이 정해지는가, 묶음 전체를 봐야 정해지는가\"다. 행 하나로 정해지면 WHERE, 묶음을 봐야 하면 HAVING이다. WHERE는 묶기 전에 쓰이므로, 무엇을 WHERE에 넣느냐에 따라 묶음마다 계산하…"

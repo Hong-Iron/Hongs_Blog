@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Virtual Memory", "가상 주소", "Virtual Address", "실제 주소", "Real Address", "메모리 관리 장치", "MMU", "상주 집합", "Resident Set", "페이지 부재", "Page Fault", "스래싱", "Thrashing", "페이지 크기", "Page Size", "페이징과 세그먼테이션 결합"]
 description: "가상 메모리는 프로세스의 일부만 주기억장치에 올려 두고 나머지는 디스크에 둔 채 실행하는 방법이다. 두꺼운 요리책 전체를 조리대에 펼치지 않고 지금 만드는 요리의 몇 쪽만 펼쳐 두는 것과 같다. 그래서 주기억장치보다 큰 프로그램을 돌릴 수 있고, 더 많은 프로세스를 함께 올릴 수 …"

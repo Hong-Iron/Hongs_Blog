@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Memory Management Requirements", "재배치", "Relocation", "보호", "Protection", "공유", "Sharing", "논리적 구성", "Logical Organization", "물리적 구성", "Physical Organization", "오버레이", "Overlay", "논리 주소", "Logical Address", "상대 주소", "Relative Address", "물리 주소", "Physical Address", "기준 레지스터", "Base Register", "경계 레지스터", "Bounds Register"]
 description: "메모리 관리는 주기억장치를 여러 프로세스에게 나눠 주는 일이다. 될 수 있는 대로 많은 프로세스를 넣으면서도 성능을 지켜야 한다. 그러려면 다섯 가지를 해내야 한다. 프로그램이 어디에 실려도 돌게 하기(재배치), 남의 메모리를 못 건드리게 하기(보호), 필요하면 함께 쓰게 하기(공…"

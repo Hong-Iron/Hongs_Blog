@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Dopamine Hypothesis", "조현병의 도파민 가설", "도파민", "dopamine", "세로토닌-도파민 가설", "serotonin-dopamine hypothesis", "도파민 효능제", "dopamine agonist", "암페타민 정신병", "D2 수용체"]
 description: "뇌에서 신호를 전하는 화학물질 가운데 도파민이 지나치게 활발하면 망상과 환각 같은 양성 증상이 생긴다는 생각이다. 도파민을 막는 약이 증상을 줄이고 도파민을 늘리는 약물이 비슷한 증상을 일으킨다는 두 관찰이 받쳐 준다. 하지만 음성 증상은 설명하지 못하고, 약의 효과에서 원인을 거…"

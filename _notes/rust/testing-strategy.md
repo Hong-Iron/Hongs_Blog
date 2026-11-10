@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Testing Strategy", "Unit Test", "단위 테스트", "Integration Test", "통합 테스트", "Doc Test", "doc 테스트", "should_panic", "Property-based Testing", "성질 테스트", "proptest", "Shrinking", "축소", "cargo-nextest", "tokio::test", "Snapshot Test", "Golden Test", "골든 테스트"]
 description: "테스트는 그물을 여러 겹 치는 일이다. 작은 함수 하나를 보는 촘촘한 그물(단위 테스트), 바깥 사용자처럼 공개된 문만 두드리는 그물(통합 테스트), 문서의 예제가 아직 맞는지 보는 그물(doc 테스트), 입력을 수백 개 지어내 규칙이 깨지는지 보는 그물(성질 테스트)이 있다. 겹…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Parametric Surface Patches", "매개변수 곡면", "Parametric Surface", "쌍선형 곡면", "Bilinear Surface", "쌍3차 패치", "Bicubic Patch", "꼬임 벡터", "Twist Vector", "베지어 곡면", "Bezier Surface", "스플라인 곡면", "Spline Surface", "폴리곤 메시", "Polygonal Mesh"]
 description: "곡선에서 u 하나로 점을 만들었듯, 곡면은 u와 v 두 개로 점을 만든다. 천 조각(패치)을 이어 붙이듯 큰 곡면을 작은 패치로 나눠 만든다. 패치를 만드는 방법은 곡선 방법을 두 방향으로 넓힌 것이다. 네 꼭짓점만 섞는 쌍선형, 에르미트를 두 방향으로 쓰는 쌍3차, 베지어 곡면,…"

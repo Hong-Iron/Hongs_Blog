@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Binary Tree Construction", "Tree Reconstruction", "트리 복원", "트리 재구성", "중위와 전위로 트리 만들기", "중위와 후위로 트리 만들기", "Inorder and Preorder", "Inorder and Postorder"]
 description: "순회 결과는 트리의 칸들을 한 줄로 늘어놓은 것이라, 한 줄만 보고는 원래 모양을 알 수 없다. 두 줄이 있어도 아무 두 줄이나 되는 것이 아니라, \"왼쪽을 다 본 뒤 뿌리, 그다음 오른쪽\" 순서로 적은 줄이 꼭 끼어 있어야 한다. 그 줄에서 뿌리의 자리를 찾으면 왼쪽 식구와 오른…"

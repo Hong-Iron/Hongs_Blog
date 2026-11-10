@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Disinhibited Social Engagement Disorder", "DSED", "탈억제형 애착장애", "disinhibited type", "가짜 위안", "pseudo-comfort", "무분별한 사회성"]
 description: "아기 때 돌봄을 거의 받지 못한 아이가, 처음 보는 어른에게도 스스럼없이 안기고 따라가는 장애다. 붙임성이 좋아 보이지만, 특정한 사람과의 깊은 애착이 없어 누구에게나 똑같이 다가가는 것이다. 외로움과 두려움을 달래려고 얻는 가짜 위안이라서 관계가 피상적이고, 결국 거부당하기 쉽다…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["양성 증상 vs 음성 증상", "Positive vs Negative Symptoms", "양성 증상", "positive symptoms", "음성 증상", "negative symptoms", "제1형 조현병", "제2형 조현병", "급성 조현병", "만성 조현병"]
 description: "양성 증상은 보통 사람에게 없는 것이 더해진 증상이고, 음성 증상은 보통 사람에게 있는 것이 빠진 증상이다. 여기서 \"양성\"과 \"음성\"은 좋고 나쁨이 아니라 더하기(+)와 빼기(−)다. 가르는 질문은 \"정상에 없던 것이 생겼나, 정상에 있던 것이 사라졌나\"다."

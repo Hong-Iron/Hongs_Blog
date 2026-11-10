@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Runge-Kutta Method", "RK 방법", "RK2", "RK4", "4차 룽게-쿠타", "호인 방법", "Heun's Method", "중점 방법", "Midpoint Method", "랄스턴 방법", "Ralston's Method"]
 description: "테일러 급수 방법은 정확하지만 f를 여러 번 미분해야 한다. 룽게-쿠타 방법은 미분하지 않고, 한 걸음 안의 몇 군데에서 기울기 f를 재어 무게를 붙여 평균 낸다. 무게와 재는 위치를 테일러 급수와 같은 결과가 나오도록 고르면, 미분 없이 같은 정확도를 얻는다. 가장 많이 쓰는 4…"

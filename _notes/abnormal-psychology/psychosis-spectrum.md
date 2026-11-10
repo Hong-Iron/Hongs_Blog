@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Psychosis", "정신증", "정신병", "신경증", "neurosis", "병식", "insight", "현실 판단력", "reality testing", "조현병 스펙트럼", "Schizophrenia Spectrum and Other Psychotic Disorders", "조발성 치매", "dementia praecox", "크레펠린", "블로일러", "Bleuler", "정신분열증", "약화된 정신병 증후군", "Attenuated Psychosis Syndrome"]
 description: "정신증은 현실과 접촉이 끊겨, 무엇이 실제이고 무엇이 머릿속 일인지 가리는 힘을 잃은 상태다. 같은 정신증이라도 얼마나 심하고 얼마나 오래가는지가 사람마다 달라서, 가벼운 조현형 성격장애부터 가장 무거운 조현병까지 한 줄 위에 늘어놓는다. 이 줄이 조현병 스펙트럼이다. 다만 줄 위…"

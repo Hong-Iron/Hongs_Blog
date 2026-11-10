@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["2-D Function", "2차원 함수", "분리 가능 함수", "separable function", "사각 함수", "rectangular function", "rect", "원판 함수", "disk function", "델타 시트", "delta sheet", "2차원 델타 함수", "2-D delta function", "blade", "grill", "grid", "comb", "극좌표", "polar coordinates"]
 description: "영상 처리에서 자주 쓰는 평면 위의 기본 모양들이다. 네모난 판, 둥근 판, 칼날처럼 얇은 선, 바늘 하나, 바늘을 일정 간격으로 꽂은 바늘 판이 있다. 네모난 판처럼 \"가로 모양 × 세로 모양\"으로 쪼개지는 함수(분리 가능)는 1차원 계산 두 번으로 처리할 수 있어 빠르다. 하지…"

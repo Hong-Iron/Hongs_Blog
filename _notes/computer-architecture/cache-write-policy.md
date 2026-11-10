@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Cache Write Policy", "즉시 쓰기", "Write-Through", "나중 쓰기", "Write-Back", "더티 비트", "Dirty Bit", "쓰기 버퍼", "Write Buffer", "Write-Allocate", "No-Write-Allocate", "쓰기 실패", "Write Miss"]
 description: "프로그램이 값을 고치면 캐시에 있는 사본과 메모리에 있는 원본이 달라진다. 이 둘을 언제 맞출지 정하는 규칙이다. 고칠 때마다 원본도 바로 고치면 단순하고 원본이 늘 최신이지만, 느린 메모리에 매번 다녀와야 한다. 사본만 고쳐 두었다가 그 사본을 내보낼 때 한 번에 원본을 고치면 …"

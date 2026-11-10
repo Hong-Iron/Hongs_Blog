@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["K-means", "k-means", "K-평균", "로이드 알고리즘", "Lloyd's Algorithm", "중심 기반 군집화", "Centroid-based Clustering", "군집 중심", "Centroid", "배정 단계", "Assignment Step", "갱신 단계", "Refitting Step", "하드 배정", "Hard Assignment"]
 description: "무리 수 k를 정하고 중심 k개를 아무렇게나 놓은 뒤, 두 일을 번갈아 한다. 모든 점을 가장 가까운 중심의 무리에 넣고, 각 무리의 평균 위치로 중심을 옮긴다. 중심이 더 움직이지 않을 때까지 되풀이하면 점들이 자기 중심에 가깝게 모인다. 빠르고 간단하지만 처음 위치에 따라 다른…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Linear Probing", "Linear Open Addressing", "선형 조사", "선형 조사법", "개방 주소법", "Open Addressing", "뭉치", "군집", "Cluster", "적재율", "Loading Density", "Load Factor", "넘침 처리", "Overflow Handling"]
 description: "영화관에서 내 표의 자리에 누가 앉아 있으면 바로 옆자리로, 거기도 차 있으면 그 옆으로 가서 처음 나오는 빈자리에 앉는 방식이다. 찾을 때도 표의 자리부터 옆으로 가며 보다가 빈자리가 나오면 \"없다\"고 안다. 표 하나만으로 끝나서 덤 공간이 들지 않는다. 하지만 자리가 찰수록 사…"

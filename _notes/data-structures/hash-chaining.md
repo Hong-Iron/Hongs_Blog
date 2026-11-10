@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Chaining", "Separate Chaining", "체인법", "분리 연결법", "정렬된 체인", "Sorted Chain", "동의어 목록", "Linear List Of Synonyms"]
 description: "우편함 칸이 차 있을 때 다른 칸을 찾아가는 대신, 칸마다 고리를 달아 그 칸으로 온 우편물을 모두 한 줄로 엮어 두는 방식이다. 다른 칸의 우편물과 섞이지 않아서 우편함이 가득 차도 갑자기 느려지지 않고, 칸 수보다 많은 우편물도 담을 수 있다. 꺼낼 때도 줄에서 그 하나만 떼면…"

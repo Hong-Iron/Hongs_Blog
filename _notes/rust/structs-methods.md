@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Structs and Methods", "struct", "impl", "메서드", "Method", "연관 함수", "Associated Function", "튜플 구조체", "Tuple Struct", "유닛 구조체", "Unit-Like Struct", "구조체 갱신 문법", "Struct Update Syntax", "Functional Update Syntax", "필드 이름 줄여 쓰기", "Field Init Shorthand", "derive"]
 description: "관련된 값 몇 개를 한 묶음으로 묶고 이름을 붙인 것이 구조체다. Java의 클래스처럼 함수를 붙일 수 있지만, 상속은 없고 데이터와 함수를 따로 적는다. 함수마다 묶음을 읽기만 할지, 고칠지, 아예 가져가 버릴지를 첫 인자에 적어야 한다. 이 선택을 잘못하면 컴파일러가 막는다."

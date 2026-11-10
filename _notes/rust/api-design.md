@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["API Design", "Rust API Guidelines", "API 지침", "C-CASE", "C-CONV", "C-GETTER", "C-COMMON-TRAITS", "C-GOOD-ERR", "C-BUILDER", "Builder Pattern", "빌더 패턴", "must_use", "Sealed Trait", "봉인 트레이트", "C-SEALED", "SemVer", "유의적 버전", "Breaking Change", "깨지는 변경", "deprecated"]
 description: "라이브러리가 밖에 내놓은 함수와 타입(공개 API)은 벽에 단 콘센트와 같아서, 남들이 플러그를 꽂기 시작하면 구멍 모양을 바꿀 수 없다. Rust 팀이 정리한 설계 점검표(Rust API Guidelines)를 따르면 이름과 생김새가 표준 라이브러리와 닮아서, 쓰는 사람이 문서를…"

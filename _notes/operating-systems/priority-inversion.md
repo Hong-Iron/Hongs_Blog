@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-08"
 last_modified_at: "2026-10-08"
+date: "2026-10-08"
 status: "verified"
 aliases: ["Priority Inversion", "무한 우선순위 역전", "Unbounded Priority Inversion", "우선순위 상속", "Priority Inheritance", "우선순위 상한", "Priority Ceiling"]
 description: "우선순위 역전은 우선순위가 높은 작업이 낮은 작업을 기다리게 되는 상황이다. 급한 손님이 화장실 앞에서 기다리는데, 안에 있는 사람이 느긋한 사람이라서가 아니라 중간에 끼어든 다른 일들 때문에 나오지 못하는 것과 같다. 공유 자원의 잠금을 낮은 작업이 쥐고 있으면 생긴다. 잠금을 …"

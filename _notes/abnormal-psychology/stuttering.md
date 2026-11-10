@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Childhood-Onset Fluency Disorder", "말더듬", "Stuttering", "유창성장애", "비유창성", "disfluency"]
 description: "말더듬이다. 첫소리를 되풀이하거나(\"ㄱ-ㄱ-가방\"), 길게 끌거나, 말이 막혀 나오지 않아 말의 흐름이 끊긴다. 신기하게도 소리 내어 읽거나 노래할 때, 동물에게 말할 때는 잘 나타나지 않고, 잘 말해야 한다는 부담이 클수록 심해진다. 그래서 또 더듬을까 봐 두려워하고 말할 상황을…"

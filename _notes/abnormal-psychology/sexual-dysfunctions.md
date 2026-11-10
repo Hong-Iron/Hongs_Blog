@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Sexual Dysfunctions", "성기능 장애", "성반응주기", "sexual response cycle", "성욕구 단계", "desire stage", "흥분 단계", "excitement stage", "고조기", "plateau", "절정 단계", "orgasm stage", "해소 단계", "resolution stage", "평생형", "lifelong type", "후천형", "acquired type", "관찰자적 역할", "spectatoring", "감각 초점 훈련", "sensate focus", "마스터스와 존슨", "Masters & Johnson", "PDE5 억제제"]
 description: "성적인 반응은 욕구가 생기고, 흥분하고, 절정에 이르고, 가라앉는 네 단계로 흘러간다. 성기능부전은 앞의 세 단계 가운데 하나 이상에서 반응이나 즐거움을 느끼는 능력이 오래(대개 6개월 넘게) 뚜렷하게 손상되어 괴로운 상태다. 몸의 병이 원인일 때도 많지만, 잘해야 한다는 두려움과…"

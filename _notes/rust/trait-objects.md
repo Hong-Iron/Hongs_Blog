@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Trait Objects", "Trait Object", "dyn Trait", "dyn", "vtable", "가상 메서드 표", "Virtual Method Table", "동적 디스패치", "Dynamic Dispatch", "넓은 포인터", "Wide Pointer", "Fat Pointer", "dyn 호환성", "Dyn Compatibility", "객체 안전성", "Object Safety", "Box<dyn Error>"]
 description: "값을 가리키는 주소 옆에, 그 값의 타입이 메서드 몸통을 어디에 두었는지 적은 표의 주소를 붙여 들고 다니는 방식이다. 그래서 원과 사각형처럼 서로 다른 타입을 한 목록에 담아 두고, 실행 중에 표를 보고 맞는 몸통을 부른다. 대신 부를 때마다 표를 한 번 더 거치고, 컴파일러가 …"

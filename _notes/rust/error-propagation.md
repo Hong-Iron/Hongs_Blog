@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Error Propagation", "Question Mark Operator", "? operator", "Try Operator", "Box<dyn Error>", "Error source chain"]
 description: "함수 안에서 실패한 일을 그 자리에서 처리하지 않고 부른 쪽에 그대로 넘기는 일을 에러 전파라고 한다. Rust에서는 실패할 수 있는 값 뒤에 ? 한 글자를 붙이면 된다. 성공이면 안의 값을 꺼내 계속 가고, 실패면 함수를 바로 끝내며 에러를 돌려준다. 이때 에러 타입을 함수가 약…"

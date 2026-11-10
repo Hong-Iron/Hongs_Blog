@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["SQL", "Structured Query Language", "SEQUEL", "Structured English Query Language", "구조적 질의어", "선언적 언어", "Declarative Language", "데이터 정의어", "DDL", "Data Definition Language", "데이터 조작어", "DML", "Data Manipulation Language"]
 description: "SQL은 표로 된 데이터베이스에 일을 시키는 언어다. 식당에서 주문하듯 \"무엇을 달라\"만 말하면 되고, 어떻게 찾을지는 데이터베이스가 정한다. 명령은 표 자체를 만들고 고치고 없애는 묶음과, 표 안의 행을 찾고 넣고 지우고 고치는 묶음으로 나뉜다. 다만 찾는 방법만 맡기는 것이라서…"

@@ -11,6 +11,7 @@ concepts: 60
 practices: 7
 codes: 74
 last_modified_at: "2026-10-21"
+date: "2026-10-21"
 description: "컴퓨터 통신 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

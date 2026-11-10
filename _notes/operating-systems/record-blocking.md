@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Record Blocking", "고정 블로킹", "Fixed Blocking", "가변 길이 걸침 블로킹", "Variable-Length Spanned Blocking", "가변 길이 비걸침 블로킹", "Variable-Length Unspanned Blocking", "블로킹 인수", "Blocking Factor"]
 description: "응용은 레코드 단위로 읽고 쓰지만 디스크는 블록 단위로만 주고받는다. 그래서 레코드 여러 개를 블록 하나에 어떻게 담을지 정해야 한다. 이삿짐을 상자에 담을 때 같은 크기 물건만 넣으면 계산이 쉽지만 빈틈이 생기고, 크기가 제각각인 물건을 상자 경계를 넘겨 가며 꽉 채우면 빈틈은 …"

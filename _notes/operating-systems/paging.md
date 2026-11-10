@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Paging", "페이지", "Page", "프레임", "Frame", "페이지 표", "Page Table", "빈 프레임 목록", "Free Frame List", "페이지 번호", "오프셋", "Offset"]
 description: "페이징은 메모리와 프로세스를 모두 같은 크기의 작은 조각으로 잘라, 프로세스의 조각을 메모리의 빈 조각 아무 곳에나 넣는 방법이다. 책을 낱장으로 뜯어 빈 서랍 아무 데나 넣고, 몇 쪽이 몇 번 서랍에 있는지 적은 목차를 들고 다니는 것과 같다. 연속된 덩어리가 필요 없으니 외부 …"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Protocol", "통신 규약", "프로토콜 개체", "protocol object", "프로토콜 계층", "서비스 인터페이스", "service interface", "동료 인터페이스", "peer-to-peer interface", "동료", "peer"]
 description: "프로토콜은 통신하는 양쪽이 미리 맞춰 둔 약속이다. 두 사람이 같은 언어와 같은 순서로 말해야 대화가 되듯, 보내는 쪽과 받는 쪽이 같은 프로토콜을 써야 한다. 계층 구조에서 프로토콜 하나는 한 층을 맡은 부품이다. 그래서 같은 컴퓨터의 위층에 해 주는 일과, 상대 컴퓨터의 같은 …"

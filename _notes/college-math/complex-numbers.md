@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Complex Numbers", "허수", "imaginary number", "허수 단위", "i", "실수부", "real part", "허수부", "imaginary part", "켤레복소수", "complex conjugate", "절댓값", "modulus", "복소평면", "complex plane"]
 description: "제곱해서 −1이 되는 수를 하나 새로 들여와 만든 수의 체계다. 실수가 한 줄로 늘어선 수직선이라면, 복소수는 평면 위의 점이다. 이 확장 덕분에 모든 다항식이 근을 갖게 되고, 회전과 진동을 곱셈 하나로 다룰 수 있게 된다. 대신 복소수 사이에는 \"어느 쪽이 더 큰가\"라는 순서가…"

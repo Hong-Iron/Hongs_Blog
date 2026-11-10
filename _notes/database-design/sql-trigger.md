@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Trigger", "CREATE TRIGGER", "트리거", "ECA 규칙", "ECA Rule", "Event-Condition-Action", "사건", "Event", "조건", "Condition", "동작", "Action", "BEFORE", "AFTER", "FOR EACH ROW", "WHEN 절", "SALARY_VIOLATION"]
 description: "현관의 센서등은 누가 지나가면 어두운지 보고, 어두울 때만 불을 켠다. 트리거는 표에 행을 넣거나 고치는 일이 일어나면 정해 둔 조건을 보고, 조건이 맞을 때 정해 둔 일을 데이터베이스가 스스로 하도록 걸어 두는 규칙이다. 어느 프로그램이 표를 건드리든 빠짐없이 움직여서 사람이 지…"

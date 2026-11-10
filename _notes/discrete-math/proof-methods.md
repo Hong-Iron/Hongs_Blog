@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Proof Methods", "Rules of Inference", "추론 규칙", "전건 긍정", "modus ponens", "후건 부정", "modus tollens", "직접 증명", "direct proof", "대우 증명", "proof by contrapositive", "귀류법", "proof by contradiction", "경우 나누기", "proof by cases", "반례", "counterexample", "존재 증명", "후건 긍정의 오류", "affirming the consequent"]
 description: "증명은 이미 참이라고 인정된 것에서 출발해, 한 걸음마다 정당한 규칙만 써서 결론까지 가는 글이다. 직접 증명, 대우 증명, 귀류법, 경우 나누기, 반례 들기 다섯 가지면 대부분의 명제를 다룬다. 어떤 방법을 쓸지는 결론의 모양이 알려 준다. 다만 예를 아무리 많이 확인해도 \"모든…"

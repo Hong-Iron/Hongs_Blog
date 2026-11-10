@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Conditional Structures", "조건 구조", "IF 문 번역", "Block-Structured IF", "복합 조건식", "Compound Expression", "단락 평가", "Short-Circuit Evaluation", "WHILE 루프 번역", "폴스루", "Fall Through"]
 description: "고급 언어의 \"만약 ~이면 이 묶음을 해라\"에는 묶음을 감싸는 괄호가 있다. 기계에게는 괄호가 없고 \"저 줄로 가라\"만 있다. 그래서 \"~이면 해라\"를 \"~이 아니면 이 묶음을 건너뛰어라\"로 뒤집어 쓴다. 이 한 가지 요령으로 갈림, 여러 조건의 묶음, 되풀이를 모두 옮길 수 있다…"

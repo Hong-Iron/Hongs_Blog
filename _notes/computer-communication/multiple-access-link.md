@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Multiple Access Link", "다중 접근", "multiple access", "공유 매체", "버스형 네트워크"]
 description: "여러 기기가 선 하나를 함께 붙잡고 쓰는 연결이다. 한 강의실에서 한 사람이 말하면 모두가 듣는 것과 같다. 선은 하나면 된다. 대신 두 기기가 동시에 보내면 신호가 섞여 둘 다 못 쓰게 된다(동시성 문제)."

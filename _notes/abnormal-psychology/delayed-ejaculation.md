@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Delayed Ejaculation", "지루", "남성 극치감장애", "Male Orgasmic Disorder", "질 내 사정 잠복 시간", "Intravaginal Ejaculatory Latency Time", "IELT"]
 description: "늦추고 싶지 않은데도 파트너와의 성행위에서 거의 매번 사정이 매우 늦거나 아예 되지 않아 반년 넘게 괴로운 장애다. 조기사정과 반대 방향의 절정 단계 문제다. \"얼마나 늦어야 지연인가\"에 대한 정확한 경계는 없다. 혼자서는 문제가 없는데 파트너와 있을 때만 생기는 경우가 많아, 자…"

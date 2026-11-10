@@ -1098,6 +1098,8 @@ def export(vault):
                     # the day the vault note last changed: sitemap <lastmod> and JSON-LD
                     # dateModified read this key, and would otherwise say the build time
                     last_modified_at=iso_day(meta.get("updated")),
+                    # datePublished reads `date`; without it Jekyll gives the build time, which is later than dateModified
+                    date=iso_day(meta.get("updated")),
                     status=meta.get("status"),
                     aliases=[a for a in (meta.get("aliases") or []) if isinstance(a, str)],
                     description=describe(body, linker),
@@ -1151,6 +1153,7 @@ def export(vault):
                 # a roadmap changes when one of its notes does: the newest note's day
                 last_modified_at=max((d for d in (iso_day(doc["meta"].get("updated")) for doc in course["docs"]) if d),
                                      default=None),
+                date=max((d for d in (iso_day(doc["meta"].get("updated")) for doc in course["docs"]) if d), default=None),
                 description=f"{course['name']} 공부 노트: 개념 문서, 연습 문제, 코드",
                 math="$" in body, mermaid="```mermaid" in body,
                 permalink=course["url"]

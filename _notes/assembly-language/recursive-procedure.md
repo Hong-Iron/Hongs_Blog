@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Recursive Procedure", "Recursion", "재귀", "재귀 호출", "Recursive Call", "CalcSum", "Factorial", "팩토리얼", "바닥 조건", "Base Case", "스택 넘침", "Stack Overflow"]
 description: "자기 자신을 다시 부르는 프로시저다. 러시아 인형을 열면 조금 작은 인형이 나오고, 그것을 또 열다가 더 열 수 없는 가장 작은 인형에서 멈춘 뒤, 연 순서의 거꾸로 하나씩 닫아 나오는 것과 같다. 부를 때마다 스택에 그 호출만의 칸이 새로 쌓여서, 같은 코드를 돌려 쓰면서도 호출…"

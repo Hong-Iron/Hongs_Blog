@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Bagging", "Bootstrap Aggregating", "부트스트랩 집계", "부트스트랩", "Bootstrap", "랜덤 포레스트", "Random Forest", "속성 뽑기", "Feature Subsampling", "다수결 투표", "Majority Voting", "OOB", "Out-of-Bag"]
 description: "같은 훈련 자료에서 복원 추출로 조금씩 다른 자료 여러 벌을 만들고, 벌마다 모델을 따로 훈련해 예측을 투표나 평균으로 모은다. 자료가 조금씩 달라 모델들도 조금씩 달라지고, 그 차이가 평균으로 상쇄되어 흔들림(분산)이 준다. 랜덤 포레스트는 결정 트리로 배깅을 하면서 나무마다 쓸…"

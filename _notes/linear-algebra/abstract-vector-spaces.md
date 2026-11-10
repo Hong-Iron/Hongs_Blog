@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Abstract Vector Space", "추상 벡터공간", "벡터공간의 공리", "vector space axioms", "함수 공간", "function space", "다항식 공간", "polynomial space", "베른슈타인 다항식", "Bernstein polynomial", "베지어 곡선", "Bézier curve", "드 카스텔조 알고리즘", "de Casteljau's algorithm"]
 description: "더하고 수를 곱하는 규칙만 맞으면 다항식, 함수, 행렬도 \"벡터\"로 다룰 수 있다. 그러면 기저·차원·선형변환 같은 도구를 화살표가 아닌 대상에도 그대로 쓴다. 미분은 다항식 공간의 선형변환이고, 글꼴과 벡터 그래픽의 곡선(베지어 곡선)은 조절점을 특별한 다항식 기저(베른슈타인 기…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Choosing the Number of Clusters", "엘보 방법", "Elbow Method", "실루엣 점수", "Silhouette Score", "실루엣 계수", "Silhouette Coefficient", "응집도", "Cohesion", "분리도", "Separation"]
 description: "k-평균은 무리 수를 미리 알려 줘야 한다. 무리를 늘리면 점들이 중심에 가까워져 오차가 늘 줄기 때문에, 오차만 보고 고르면 \"모든 점이 자기 혼자 무리\"가 정답이 된다. 엘보 방법은 무리를 하나 늘려도 오차가 별로 줄지 않기 시작하는 꺾이는 곳을 고르고, 실루엣 점수는 점마다 …"

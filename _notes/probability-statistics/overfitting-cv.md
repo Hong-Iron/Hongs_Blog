@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Overfitting", "과적합", "과대적합", "과소적합", "underfitting", "교차검증", "cross-validation", "k겹 교차검증", "k-fold cross-validation", "훈련 오차", "training error", "시험 오차", "test error", "일반화 오차", "generalization error", "검증 집합", "validation set", "시험 집합", "test set", "편향-분산 절충", "bias-variance tradeoff"]
 description: "모델이 훈련 데이터의 우연한 잡음까지 외우면 훈련 데이터에서는 거의 완벽해 보이지만 새 데이터에서는 크게 틀린다. 시험 범위의 문제와 답을 통째로 외운 학생이 처음 보는 문제에서 무너지는 것과 같다. 데이터를 나눠 일부로 학습하고 나머지로 평가하면(교차검증) 새 데이터에서의 성능을…"

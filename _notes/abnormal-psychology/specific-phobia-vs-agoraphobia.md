@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["특정공포증 vs 광장공포증", "상황형 특정공포증 vs 광장공포증", "Specific Phobia vs Agoraphobia"]
 description: "엘리베이터, 비행기, 터널 같은 상황형 특정공포증과 광장공포증은 겉으로 같아 보인다. 둘 다 특정한 장소를 피한다. 두 장애는 두 가지에서 갈린다. 특정공포증에는 \"거기서 증상이 나면 어쩌나\" 하는 이유가 없다. 또 광장공포증은 두려운 상황이 2가지 이상이고, 특정공포증은 한 가지…"

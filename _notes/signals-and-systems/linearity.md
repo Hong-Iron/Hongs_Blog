@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Linearity", "Linear System", "선형 시스템", "비선형 시스템", "Nonlinear System", "중첩", "Superposition", "덧셈성", "Additivity", "동차성", "Homogeneity", "Scaling", "증분 선형 시스템", "Incrementally Linear System", "입력 0 응답", "Zero-Input Response", "영상태 응답", "Zero-State Response"]
 description: "선형 시스템은 \"따로 넣고 더한 것\"과 \"더해서 넣은 것\"이 같은 시스템이다. 입력을 두 배로 하면 출력도 정확히 두 배가 되고, 두 입력을 섞어 넣으면 각자의 출력을 섞은 것이 나온다(중첩). 그래서 복잡한 입력을 쉬운 조각으로 나눠 따로 계산한 뒤 더하면 된다. 이 성질은 아주…"

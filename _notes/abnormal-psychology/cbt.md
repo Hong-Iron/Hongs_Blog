@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Cognitive Behavioral Therapy", "CBT", "인지치료", "cognitive therapy", "인지적 재구성", "cognitive restructuring", "ABC 기법", "소크라테스식 대화법", "Socratic questioning", "역기능적 사고일지", "thought record", "행동실험", "behavioral experiment", "하향화살표 기법", "downward arrow", "중간믿음", "핵심믿음", "core belief", "행동활성화", "behavioral activation", "자기생활 관찰표", "activity monitoring"]
 description: "생각, 감정, 행동이 서로 물고 도는 고리를 찾아, 고리의 한 곳을 바꿔 전체를 바꾸는 치료다. 저절로 떠오르는 생각을 적고 증거로 따져 현실적인 생각으로 고치고, 무기력할 때는 생각보다 행동을 먼저 움직인다. 효과가 여러 장애에서 검증되어 가장 널리 쓰이는 심리치료다. 다만 생각…"

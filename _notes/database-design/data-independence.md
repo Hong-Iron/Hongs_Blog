@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Data Independence", "논리적 데이터 독립성", "Logical Data Independence", "물리적 데이터 독립성", "Physical Data Independence", "프로그램-데이터 독립성", "Program-data Independence"]
 description: "건물의 배관을 새로 깔아도 방 안의 수도꼭지는 그대로 쓰는 것과 같다. 데이터베이스를 세 층으로 갈라 두면 아래층의 설명을 바꿔도 위층의 설명과 그 위에서 도는 프로그램을 안 고쳐도 된다. 표를 늘리거나 칸을 더하는 변화를 견디는 것과, 찾는 길을 새로 내는 것처럼 저장 방법만 바…"

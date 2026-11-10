@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Calling Convention", "C 호출 규약", "cdecl", "STDCALL", "stdcall", "RET n", "스택 정리", "Stack Cleanup", "호출자 정리", "피호출자 정리"]
 description: "프로시저를 부르는 쪽과 불리는 쪽이 미리 맞춰 두는 약속이다. 식당에서 다 먹은 그릇을 손님이 치우는지 직원이 치우는지 정해 두는 것과 같다. 스택에 쌓아 넘긴 값을 부른 쪽이 치우는 방식과 불린 쪽이 돌아가면서 치우는 방식이 있고, 어느 쪽이든 한쪽이 정확히 한 번 치우면 된다.…"

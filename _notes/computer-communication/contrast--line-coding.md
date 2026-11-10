@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["NRZ vs NRZI vs Manchester vs 4B/5B", "선 부호화 비교", "Line Coding Comparison"]
 description: "네 방식은 모두 0과 1을 높고 낮은 신호로 바꾼다. 서로 다른 것은 \"어떤 비트열에서 신호가 평평해지는가\"와 \"그 대가로 효율을 얼마나 내주는가\"다. 고르는 질문은 둘이다. 보낼 데이터에 같은 값이 길게 이어지는가? 선이 신호를 얼마나 빨리 바꿀 수 있는가?"

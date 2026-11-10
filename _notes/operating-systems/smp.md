@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Symmetric Multiprocessing", "SMP", "다중 처리", "Multiprocessing", "플린의 분류", "Flynn's Taxonomy", "SISD", "SIMD", "MISD", "MIMD", "클러스터", "Cluster", "프로세서 친화성", "Processor Affinity"]
 description: "SMP는 똑같은 일꾼(프로세서) 여러 명이 한 작업장(주기억장치와 입출력 장치)을 함께 쓰는 구조다. 누구나 어떤 일이든 할 수 있어서 \"대칭\"이라고 부른다. 일을 나눌 수 있으면 빨라지고, 한 명이 쓰러져도 나머지가 계속 일한다. 대신 운영체제는 두 일꾼이 같은 일을 집거나, 같…"

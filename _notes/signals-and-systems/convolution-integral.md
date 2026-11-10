@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Convolution Integral", "컨볼루션 적분", "중첩 적분", "Superposition Integral", "연속 시간 LTI 시스템", "Continuous-Time LTI System", "계단 근사", "Staircase Approximation"]
 description: "컨벌루션 합의 연속 시간판이다. 매끄러운 입력을 아주 가는 막대(펄스)들로 잘라 계단 모양으로 근사하고, 막대마다의 반응을 더한 뒤, 막대 폭을 0으로 줄이면 합이 적분이 된다. 그래서 연속 시간 LTI 시스템도 임펄스 응답 h(t) 하나로 모든 출력이 정해진다. 계산은 \"h를 뒤…"

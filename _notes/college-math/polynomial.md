@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Polynomial", "다항함수", "차수", "degree", "근", "root", "zero", "나머지 정리", "Remainder Theorem", "인수정리", "Factor Theorem", "근의 공식", "Quadratic Formula", "판별식", "discriminant", "조립제법", "synthetic division", "호너 방법", "Horner's method", "다항식 보간"]
 description: "다항식은 변수를 몇 번 곱한 항들에 수를 곱해 더한, 가장 단순한 함수다. 값이 0이 되는 곳(근)과 인수는 짝을 이룬다. 어떤 수가 근이면 식이 그 수에 대한 일차식으로 나누어떨어진다. 그래서 근은 차수보다 많을 수 없고, 점 몇 개만 알면 다항식이 하나로 정해진다. 다만 교과서…"

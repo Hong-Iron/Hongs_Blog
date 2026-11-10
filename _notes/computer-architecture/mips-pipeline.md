@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["MIPS Pipeline", "5-Stage Pipeline", "파이프라이닝", "Pipelining", "IF", "ID", "EX", "MEM", "WB", "Instruction Fetch", "Instruction Decode", "Execute", "Memory Access", "Write Back", "처리량", "Throughput", "해저드", "Hazard", "구조 해저드", "Structural Hazard"]
 description: "명령어 하나를 다섯 걸음으로 나누고, 앞 명령어가 둘째 걸음으로 넘어가면 곧바로 다음 명령어를 첫 걸음에 넣는다. 김밥집에서 한 사람이 김밥 한 줄을 다 말고 나서 다음 줄을 시작하는 대신, 밥 펴기·속 넣기·말기·썰기·담기를 다섯 사람이 나란히 하는 것과 같다. 한 줄이 완성되는…"

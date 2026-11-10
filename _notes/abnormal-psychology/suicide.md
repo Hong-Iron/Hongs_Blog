@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Suicide", "자살 위험요인", "자살 억제요인", "보호요인", "절망감", "hopelessness", "자살의 대인관계 이론", "interpersonal theory of suicide", "조이너", "Joiner", "좌절된 소속감", "thwarted belongingness", "짐이 된다는 지각", "perceived burdensomeness", "자살 능력", "acquired capability", "위기개입", "crisis intervention", "자살예방", "타나토스", "Thanatos"]
 description: "자살은 대부분 정신장애, 특히 우울과 함께 오고, 그 한가운데에는 \"이 고통은 나아지지 않는다\"는 절망감이 있다. 나쁜 일이 방아쇠가 되지만, 누구나 그 방아쇠에 무너지지는 않는다. 위험요인과 억제요인의 균형, 그리고 \"나는 혼자다\", \"나는 짐이다\"라는 생각과 죽음에 대한 두려움…"

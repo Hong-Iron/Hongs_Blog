@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Shift-Reduce Parsing", "Bottom-up Parsing", "상향식 파싱", "이동", "Shift", "환원", "Reduce", "Reduction", "이동-환원 충돌", "Shift-Reduce Conflict", "환원-환원 충돌", "Reduce-Reduce Conflict"]
 description: "퍼즐 조각을 왼쪽부터 하나씩 집어 책상에 늘어놓다가, 방금 놓은 몇 조각이 한 덩어리가 되면 바로 묶어 이름표 하나로 바꾸는 방식이다. 입력을 다 읽고 책상에 \"문장 전체\"라는 이름표 하나만 남으면 문법에 맞는 입력이다. 규칙을 미리 찍지 않고 조각을 본 뒤에 묶으니, 위에서 내려…"

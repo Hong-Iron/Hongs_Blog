@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Attributes of Relationship Types", "관계 속성", "Relationship Attribute", "속성 옮기기", "Attribute Migration", "Hours", "Start_date"]
 description: "\"김씨가 A 프로젝트에 주 10시간 일한다\"에서 10시간은 김씨의 것도 A 프로젝트의 것도 아니고, 김씨와 A라는 짝에 붙은 값이다. 이런 값은 사람이나 프로젝트가 아니라 둘을 잇는 줄에 적는다. 한쪽이 상대를 하나만 가질 수 있는 관계라면 그 값을 그쪽 대상으로 옮겨 적어도 뜻이…"

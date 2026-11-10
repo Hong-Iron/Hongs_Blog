@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Mapping of Regular Entity Types", "Mapping of Weak Entity Types", "일반 개체 타입의 사상", "약한 개체 타입의 사상", "개체 릴레이션", "Entity Relation", "개체를 릴레이션으로 옮기기"]
 description: "ER 그림의 네모 하나는 표 하나가 된다. 네모에 달린 동그라미가 표의 칸이 되고, 밑줄 친 동그라미가 줄을 가려내는 대표 값이 된다. 여러 부분으로 된 동그라미는 가장 작은 부분만 칸이 되고, 값이 여럿인 동그라미는 여기서는 넣지 않는다. 혼자서는 줄을 가려낼 수 없는 겹네모는 …"

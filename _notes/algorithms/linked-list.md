@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Linked List", "Doubly Linked List", "이중 연결 리스트", "연결 목록", "prev", "next"]
 description: "손을 잡고 한 줄로 선 사람들처럼, 각 칸이 바로 앞과 바로 뒤 칸만 기억하는 줄이다. 가운데 한 명이 빠지면 양옆 사람이 서로 손을 잡으면 끝이라, 위치만 알면 지우기와 끼워 넣기가 한 번에 된다. 대신 \"앞에서 k번째\"를 찾으려면 맨 앞부터 k번 따라가야 한다. 파이썬 리스트는…"

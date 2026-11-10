@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Table-Driven Selection", "표 기반 선택", "테이블 기반 선택", "조회표", "Lookup Table", "다중 선택", "Multiway Selection", "프로시저 오프셋 표", "NEAR PTR", "간접 호출", "Indirect Call"]
 description: "병원 안내 데스크는 \"내과는 몇 호, 외과는 몇 호\"를 일일이 외워 답하지 않고 층별 안내표를 훑어 찾는다. 프로그램도 \"A면 이 일, B면 저 일\" 하는 갈림이 수십 개로 늘면, 조건마다 코드를 쓰는 대신 \"값과 그때 할 일이 있는 곳\"을 짝지은 표를 만들어 두고 그 표를 훑는다…"

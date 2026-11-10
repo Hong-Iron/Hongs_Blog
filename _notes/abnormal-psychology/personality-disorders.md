@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Personality Disorders", "PD", "성격장애 군집", "A군", "B군", "C군", "Cluster A", "Cluster B", "Cluster C", "심리도식치료", "Schema Therapy"]
 description: "누구나 세상을 보고 사람을 대하는 자기만의 습관이 있다. 성격장애는 그 습관이 한쪽으로 크게 치우친 채 굳어서, 어떤 상황에서든 같은 방식으로만 반응하는 상태다. 이 틀은 청소년기나 초기 성인기부터 오래 이어지고, 본인이나 주변이 크게 괴로워하거나 생활이 무너질 때만 장애로 본다.…"

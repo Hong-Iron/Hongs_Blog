@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Direct-Mapped vs Set-Associative", "캐시 사상 방식 비교", "캐시 배치 정책", "Cache Placement Policy"]
 description: "둘 다 주소의 가운데 비트로 \"볼 곳\"을 정하고 태그로 확인한다. 가르는 질문은 \"볼 곳에 자리가 하나인가 여럿인가\"다. 그 답이 서로 쫓아내는 실패의 수, 한 번 찾는 데 걸리는 시간, 회로의 양을 함께 정한다."

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Minimum Spanning Tree", "MST", "최소 스패닝 트리", "크루스칼", "Kruskal", "프림", "Prim", "자르기 성질"]
 description: "섬들을 다리로 모두 잇되, 다리 값의 합을 가장 적게 하고 싶다. 가장 싼 다리부터 보며, 이미 이어진 두 섬 사이의 다리면 건너뛰고 아니면 놓는다(크루스칼). 결과는 고리 없이 모든 섬을 잇는 나무가 되고, 섬이 n개면 다리는 n − 1개다. 단, 모든 섬이 이어질 수 있는 그래…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Adjustment Disorder", "적응 장애", "심리사회적 스트레스", "psychosocial stressor", "좌절 인내력", "심리적 탄력성", "resilience"]
 description: "이혼, 실직, 전학처럼 분명히 짚을 수 있는 생활의 변화 뒤에, 그 일의 무게에 비해 지나치게 우울하거나 불안하거나 말썽을 부리는 상태다. 스트레스 뒤 3개월 안에 시작하고, 스트레스가 끝나면 6개월 안에 사라지는 것이 보통이다. 우울장애나 불안장애와 증상이 비슷해 보이지만 그 장…"

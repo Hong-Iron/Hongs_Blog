@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Predicate Logic", "Quantifiers", "술어", "predicate", "전칭 한정기호", "universal quantifier", "존재 한정기호", "existential quantifier", "∀", "∃", "정의역", "domain of discourse", "중첩 한정기호", "nested quantifiers", "1차 논리", "first-order logic"]
 description: "\"x는 짝수다\"처럼 변수가 들어가 값에 따라 참·거짓이 바뀌는 문장을 술어라 하고, \"모든 x에 대해\"(∀)와 \"어떤 x가 있어\"(∃)로 변수를 묶어 명제로 만든다. 알고리즘의 명세, 데이터베이스 질의, 수학의 정의가 모두 이 말로 쓰인다. 부정할 때는 \"모든\"과 \"어떤\"이 서로 …"

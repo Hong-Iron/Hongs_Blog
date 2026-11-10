@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Union-Find", "Disjoint Set Union", "DSU", "서로소 집합", "분리 집합", "경로 압축", "union by size"]
 description: "반 친구들을 무리로 나눌 때 무리마다 대표 한 명을 정하고, 각자는 \"내 위의 사람\"만 기억한다. 위로 따라가 대표가 같으면 같은 무리다. 두 무리를 합칠 때는 한쪽 대표를 다른 쪽 대표 밑에 넣기만 하면 된다. 작은 무리를 큰 무리 밑에 넣고, 대표를 찾을 때 지나온 사람들을 대…"

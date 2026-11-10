@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Social (Pragmatic) Communication Disorder", "사회적(실용적) 의사소통장애", "실용적 의사소통장애", "화용언어", "pragmatics"]
 description: "단어와 문법은 제대로 아는데, 말을 상황에 맞게 쓰는 것이 서툰 장애다. 선생님께 친구처럼 말하고, 대화에서 차례를 지키지 못하며, \"참 잘~했다\"의 비꼬는 뜻을 알아듣지 못한다. 언어의 사회적 사용(화용)이 문제다. 자폐스펙트럼장애와 비슷해 보이지만, 제한적이고 반복적인 행동이나…"

@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Generating Function", "생성함수", "형식적 멱급수", "formal power series", "합성곱", "convolution", "보통 생성함수", "ordinary generating function"]
 description: "수열 a₀, a₁, a₂, …을 다항식(멱급수) a₀ + a₁x + a₂x² + …의 계수로 싣는 방법이다. 그러면 수열의 셈 규칙과 점화식이 다항식의 곱셈·나눗셈이 되어, 대수 계산으로 답을 얻는다. 주사위 합의 경우의 수, 동전으로 금액 만들기가 다항식을 곱해 계수를 읽는 일로…"

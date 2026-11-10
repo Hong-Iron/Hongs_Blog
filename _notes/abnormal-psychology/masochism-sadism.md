@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Sexual Masochism Disorder", "성적피학장애", "성적 피학장애", "Sexual Sadism Disorder", "성적가학장애", "성적 가학장애", "피학증", "masochism", "가학증", "sadism", "질식기호증", "asphyxiophilia", "BDSM"]
 description: "굴욕이나 고통을 당하는 것(피학), 또는 남에게 신체적·심리적 고통을 주는 것(가학)에서 강렬한 성적 흥분을 느끼는 일이 반년 넘게 되풀이되는 두 장애다. 합의한 성인끼리의 놀이로 괴로움이나 생활의 문제가 없으면 관심일 뿐 장애가 아니다. 가학이 동의하지 않은 사람을 향하면 장애가…"

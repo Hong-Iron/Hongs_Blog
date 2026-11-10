@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Signal Energy", "Signal Power", "에너지 신호", "Energy Signal", "전력 신호", "Power Signal", "평균 전력", "Average Power", "순시 전력", "Instantaneous Power", "실효값", "RMS", "Root Mean Square"]
 description: "신호가 얼마나 \"센지\"를 하나의 숫자로 재는 방법이다. 저항에 걸린 전압이 쓰는 에너지를 본떠, 신호 크기의 제곱을 시간에 걸쳐 모두 더한 것을 에너지, 그것을 시간으로 나눈 평균을 전력이라 한다. 잠깐 나타났다 사라지는 신호는 에너지가 유한하고(에너지 신호), 영원히 계속되는 주…"

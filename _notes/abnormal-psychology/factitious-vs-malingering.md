@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
 last_modified_at: "2026-09-27"
+date: "2026-09-27"
 status: "verified"
 aliases: ["Factitious Disorder vs Malingering", "인위성장애 vs 꾀병", "의도성과 동기"]
 description: "둘 다 증상을 일부러 만들거나 꾸민다. 가르는 질문은 \"무엇을 얻으려고 꾸미는가\"다. 인위성장애는 환자가 되는 것 자체, 곧 돌봄과 관심을 원하고 외적 보상이 없다. 꾀병은 돈, 징집 회피, 형벌 회피 같은 외적 보상이 목적이다. 그래서 인위성장애는 정신장애이고, 꾀병은 정신장애가…"

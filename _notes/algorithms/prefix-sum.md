@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Prefix Sum", "Difference Array", "누적 합", "구간 합", "부분 합", "차분 배열", "imos", "accumulate", "2차원 누적 합"]
 description: "통장에 매일 잔고를 적어 두면 \"3일부터 7일까지 들어온 돈\"은 두 날의 잔고를 빼기만 하면 나온다. 이처럼 앞에서부터 더한 합을 한 번 만들어 두면, 어떤 구간의 합도 뺄셈 한 번으로 구한다. 거꾸로 \"이 구간에 모두 x를 더하라\"는 일이 많으면, 구간의 양 끝에만 표시해 두었다…"

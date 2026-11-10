@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Row-Major Mapping", "Row-Major Order", "행 우선 순서", "Column-Major Mapping", "Column-Major Order", "열 우선 순서", "2차원 배열", "2D Array", "배열의 배열", "Array of Arrays", "Iliffe Vector", "공간 오버헤드", "Space Overhead"]
 description: "표를 메모리에 놓는 방법은 크게 둘이다. 줄마다 따로 덩어리를 잡고 줄들의 주소를 모아 두는 방법과, 모든 줄을 한 덩어리로 이어 붙이는 방법이다. 이어 붙이면 몇째 줄 몇째 칸이 어디 있는지 곱셈과 덧셈 한 번으로 나오고 덤으로 드는 자리도 작지만, 표 전체가 들어갈 만큼 긴 빈…"

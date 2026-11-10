@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Lines and Planes", "매개변수 방정식", "Parametric Equation", "매개변수", "Parametric Variable", "선분", "Line Segment", "법선 벡터", "Normal Vector", "평면의 방정식", "Plane Equation"]
 description: "직선은 \"한 점에서 출발해 한 방향으로 u만큼 가기\"로, 평면은 \"한 점을 지나고 한 방향(법선)에 수직인 점들\"로 적는다. 이렇게 벡터로 적으면 2차원과 3차원에서 같은 식을 쓰고, 선분은 u를 0과 1 사이로 묶기만 하면 된다. 식에 점을 넣어 나온 값의 부호로 그 점이 어느 …"

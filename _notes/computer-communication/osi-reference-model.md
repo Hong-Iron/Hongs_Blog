@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["OSI Reference Model", "OSI 7계층", "OSI 7 layers", "Open Systems Interconnection", "참조 모델", "reference model", "표준 구조", "standard architecture", "물리 계층", "physical layer", "네트워크 계층", "network layer", "트랜스포트 계층", "transport layer", "세션 계층", "session layer", "프레젠테이션 계층", "presentation layer", "응용 계층", "application layer", "ISO", "ITU"]
 description: "OSI 참조 모델은 통신에 필요한 일을 7개 층으로 나눠 \"이 일은 몇 층 담당\"이라고 부를 수 있게 한 공용 지도다. 국제 표준 기구가 만든 개방형 표준이라, 어느 회사 장비든 이 틀로 설명할 수 있다. 중간 노드는 아래 3층만 가지고, 위 4층은 양 끝 호스트끼리만 주고받는다.…"

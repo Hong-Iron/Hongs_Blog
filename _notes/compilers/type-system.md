@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Type", "Data Type", "Type System", "Type Checking", "타입", "자료형", "타입 시스템", "타입 검사", "타입 오류", "Type Error"]
 description: "상자에 \"깨지는 물건\", \"냉장 보관\" 같은 꼬리표를 붙여 두면 택배 기사가 내용물을 열어 보지 않고도 어떻게 다룰지 안다. 프로그램의 값에 붙이는 이런 꼬리표가 타입이고, 어떤 식에 어떤 꼬리표가 붙는지 정해 둔 규칙 묶음이 타입 시스템이다. 컴파일러는 이 규칙으로 \"참·거짓 자…"

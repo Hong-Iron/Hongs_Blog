@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Biomedical Perspective", "생물학적 입장", "의학적 모델", "medical model", "신경전달물질", "neurotransmitter", "유전적 요인", "뇌의 구조적 이상", "신경생화학", "약물치료", "pharmacotherapy", "전기충격치료", "ECT", "electroconvulsive therapy", "뇌수술", "정신외과"]
 description: "마음은 뇌가 만들므로 마음의 병은 곧 뇌의 병이라고 본다. 타고난 유전자, 뇌 구조의 손상, 뇌 속 화학물질의 이상이 원인이고, 약이나 물리적 치료로 뇌를 되돌리면 낫는다. 약물치료로 많은 환자를 도왔다는 것이 강점이다. 하지만 약이 듣는다고 원인이 뇌라는 증거가 되지는 않고, 삶…"

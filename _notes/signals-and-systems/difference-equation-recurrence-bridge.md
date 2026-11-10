@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Difference Equations and Linear Recurrences", "차분방정식과 점화식", "특성방정식의 공통 구조"]
 description: "신호 및 시스템의 차분방정식과 이산수학의 선형 점화식은 같은 식을 다른 이름으로 부른 것이다. 둘 다 \"다음 값을 앞의 값들에 상수를 곱해 더해 만든다\"이고, 둘 다 거듭제곱 r^n을 넣어 특성방정식을 풀어서 닫힌 꼴을 얻는다. 차이는 관점이다. 점화식은 수열 하나를 계산하고, 차…"

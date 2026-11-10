@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Floyd-Warshall", "Floyd–Warshall", "플로이드 워셜", "플로이드", "모든 쌍 최단 경로", "All-Pairs Shortest Paths"]
 description: "모든 도시 쌍 사이의 최단 거리표를 한 번에 채운다. 처음에는 바로 이어진 길만 적고, \"1번 도시를 거쳐도 되면?\", \"1·2번까지 거쳐도 되면?\"처럼 거쳐 갈 도시를 하나씩 늘리며 표를 고친다. 코드는 반복문 세 겹으로 아주 짧지만, 도시 수의 세제곱만큼 걸려 도시가 수백 개일…"

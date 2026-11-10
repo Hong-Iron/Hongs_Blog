@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Logarithmic Function", "Log Scale", "로그 눈금", "로그-로그 그래프", "log-log plot", "반로그 그래프", "semi-log plot", "데시벨", "decibel", "dB", "거듭제곱 법칙", "power law"]
 description: "로그함수의 그래프는 끝없이 올라가지만 아주 느리게 올라간다. 로그 눈금은 같은 간격이 같은 \"배율\"을 뜻하는 자라서, 1, 10, 100, 1000이 같은 간격에 놓인다. 그래서 수천 배 차이 나는 값을 한 그림에 담고, 측정값이 입력의 몇 제곱으로 느는지를 기울기로 읽는다. 단,…"

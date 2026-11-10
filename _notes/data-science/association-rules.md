@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Association Rule", "연관 규칙 마이닝", "Association Rule Mining", "신뢰도", "Confidence", "강한 규칙", "Strong Rule", "최소 신뢰도", "min_conf", "지지도-신뢰도 틀", "Support-Confidence Framework"]
 description: "\"기저귀를 사는 사람은 맥주도 산다\"처럼 한 묶음이 다른 묶음을 부르는 관계를 규칙 꼴로 적은 것이다. 규칙의 힘은 두 수로 잰다. 둘을 함께 산 거래가 전체에서 얼마나 되는지(지지도)와, 앞쪽을 산 거래 중 뒤쪽도 산 비율(신뢰도)이다. 둘 다 기준을 넘으면 강한 규칙이라 부른다…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Graph Representation", "Adjacency List", "Adjacency Matrix", "Edge List", "인접 리스트", "인접 행렬", "간선 목록", "격자 그래프", "상태 그래프"]
 description: "지하철 노선도를 코드로 옮기는 방법이다. 역마다 \"바로 갈 수 있는 역 목록\"을 적어 두는 인접 리스트가 기본이다. 역이 몇백 개 이하이고 \"두 역이 바로 이어졌나\"를 자주 물으면 표(인접 행렬)를 쓴다. 격자 지도는 따로 옮기지 않고 칸 자체를 역으로 본다. 번호가 1부터인지, …"

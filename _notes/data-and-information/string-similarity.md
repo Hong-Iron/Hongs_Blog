@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["String Similarity", "토큰 기반 유사도", "Token-based Similarity", "문자 기반 유사도", "Character-based Similarity", "겹침 유사도", "Overlap Similarity", "자카드 유사도", "Jaccard Similarity", "다이스 유사도", "Dice Similarity", "토큰 코사인 유사도", "토큰", "Token"]
 description: "두 글이 얼마나 닮았는지를 수로 적는 방법이고, 크게 두 길이 있다. 하나는 글을 낱말 주머니로 보고 두 주머니에 같이 든 낱말이 얼마나 되는지 세는 것이고, 다른 하나는 글을 글자의 줄로 보고 한쪽을 다른 쪽으로 고치려면 글자를 몇 번 손대야 하는지 세는 것이다. 낱말 주머니 방…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Throughput", "처리속도", "실효 처리량", "effective throughput", "전송 완료 시간", "transfer time", "TransferTime"]
 description: "처리량은 실제로 1초에 몇 비트를 받아 냈는지다. 고속도로의 제한속도가 대역폭이라면, 처리량은 출발 전 준비 시간과 톨게이트 대기까지 합쳐 실제로 낸 평균 속도다. 그래서 대역폭이 아무리 커도 작은 메시지는 소요시간에 묶여 처리량이 낮다. 메시지가 클수록 처리량이 대역폭에 가까워진다."

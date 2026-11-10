@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Bounded Type Parameter", "제한된 타입 파라미터", "상한", "Upper Bound", "와일드카드", "Wildcard", "Wildcard Type Parameter", "? extends", "? super", "하한", "Lower Bound"]
 description: "빈칸에 아무 종류나 들어오게 두면, 그 빈칸으로 받은 것에 \"숫자로 바꿔라\" 같은 일을 시킬 수 없다. 숫자가 아닌 것이 들어올 수도 있기 때문이다. 그래서 \"숫자 집안만 들어올 수 있다\"고 빈칸에 조건을 건다. 조건을 건 만큼 그 집안이 할 줄 아는 일을 마음 놓고 시킬 수 있다…"

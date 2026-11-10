@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Master Theorem", "마스터 정리", "마스터 방법", "master method", "분할 정복 점화식", "divide-and-conquer recurrence", "재귀 트리", "recursion tree", "임계 지수", "critical exponent"]
 description: "문제를 같은 크기의 조각 여러 개로 나눠 풀고 합치는 알고리즘의 비용을, 층마다 드는 일의 합으로 본다. 아래층으로 갈수록 일이 줄면 맨 위(나누고 합치는 일)가, 늘면 맨 아래(조각의 개수)가 전체를 정하고, 같으면 층 수만큼 곱해진다. 이 세 갈래를 공식으로 만든 것이 마스터 …"

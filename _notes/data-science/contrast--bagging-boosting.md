@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Bagging vs Boosting", "배깅 대 부스팅"]
 description: "둘 다 여러 모델을 합친다. 가르는 질문은 \"모델들이 서로를 보면서 만들어지는가\"다. 배깅은 서로 모른 채 따로 만들어 흔들림(분산)을 상쇄하고, 부스팅은 앞 모델의 실수를 보고 차례로 만들어 체계적인 실수(편향)를 고친다."

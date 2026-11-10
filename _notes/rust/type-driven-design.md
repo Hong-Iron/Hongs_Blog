@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Type-Driven Design", "Making Illegal States Unrepresentable", "뉴타입", "Newtype", "Newtype Pattern", "검사하는 생성자", "Smart Constructor", "Parse Don't Validate", "타입 상태", "Typestate", "Typestate Pattern", "PhantomData", "NonZero", "NonZeroU32"]
 description: "공항 보안 검색대를 한 번 통과한 승객에게는 탑승구마다 짐을 다시 뒤지지 않는다. 검사는 입구에서 한 번 하고, 통과했다는 표시(타입)를 붙여 안으로 들인다. 함수는 표시가 붙은 값만 받으므로 \"검사를 깜빡한 값\"이 들어올 길이 없다. 대가는 타입이 늘어나는 것이다. 모든 문자열을…"

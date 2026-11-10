@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["이항 vs 기하 vs 포아송", "이산분포 고르기", "choosing a discrete distribution"]
 description: "셋 다 \"독립인 시도에서 성공을 센다\"는 이야기에서 나와 헷갈린다. 가르는 질문은 무엇을 세는가다. 정해진 횟수 안의 성공 수면 이항, 첫 성공까지 걸린 시도 수면 기하, 정해진 시간·공간 안에서 드물게 일어나는 사건 수(시도 횟수를 따로 정할 수 없음)면 포아송이다."

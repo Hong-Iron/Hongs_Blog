@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Sums and Approximations", "합의 계산", "거듭제곱의 합", "조화수", "harmonic number", "교란법", "perturbation method", "스털링 근사", "Stirling's approximation", "계승의 크기", "정렬의 하한"]
 description: "반복문 비용을 더한 합을 닫힌 꼴로 구하거나, 닫힌 꼴이 없으면 위아래에서 끼워 크기를 어림한다. 거듭제곱의 합은 차수가 하나 높은 다항식, 등비급수는 가장 큰 항의 상수배, 조화수는 로그만큼 자란다. 알고리즘 분석은 정확한 값보다 이런 \"크기의 모양\"을 원한다. 다만 끼울 때는 …"

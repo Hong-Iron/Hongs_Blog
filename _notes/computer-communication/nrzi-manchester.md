@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["NRZI", "Non-Return to Zero Inverted", "Manchester", "Manchester Encoding", "맨체스터 코드", "멘체스터", "중간 전이", "Mid-transition", "In-band Signaling", "인밴드 시그널링"]
 description: "1은 높게, 0은 낮게 보내는 NRZ는 같은 값이 이어지면 신호가 평평해져 받는 쪽이 박자를 잃는다. NRZI는 1이 올 때마다 신호를 뒤집어서, 1이 아무리 이어져도 신호가 계속 바뀐다. 다만 0이 이어지면 여전히 평평하다. 맨체스터는 모든 비트의 한가운데서 반드시 신호를 바꿔 …"

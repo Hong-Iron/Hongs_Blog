@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Packet Switching", "패킷 교환", "저장 후 전달", "store-and-forward", "패킷", "packet", "혼잡", "congestion", "버퍼링", "buffering", "FIFO", "버퍼 오버플로우", "buffer overflow"]
 description: "편지마다 주소를 적어 우체국에 맡기면 우체국들이 받아서 분류한 뒤 다음 우체국으로 넘기는 것처럼, 데이터를 작은 묶음으로 나눠 길을 미리 잡지 않고 보내는 방식이다. 보낼 것이 있을 때만 링크를 쓰므로 쉬는 사용자 몫의 낭비가 없다. 대신 묶음이 한꺼번에 몰리면 줄을 서서 기다리거…"

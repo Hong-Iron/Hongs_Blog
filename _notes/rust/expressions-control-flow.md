@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Expressions and Control Flow", "표현식", "Expression", "문장", "Statement", "if", "match", "loop", "while", "for", "break", "레이블", "Loop Label", "레이블 블록", "Labeled Block", "범위", "Range", "유닛 타입", "Unit Type"]
 description: "Rust에서는 if, match, 중괄호 블록, loop가 모두 계산기처럼 값 하나를 내놓는다. 그래서 C·Java의 삼항 연산자나 \"일단 변수를 만들고 갈래마다 대입\" 같은 요령이 필요 없다. 대신 줄 끝 세미콜론 하나가 값을 \"없음\"으로 바꾸고, 모든 갈래가 같은 타입을 내야 …"

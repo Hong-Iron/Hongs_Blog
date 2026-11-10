@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Expectation", "기댓값", "기대값", "expected value", "평균", "mean", "기댓값의 선형성", "linearity of expectation", "LOTUS", "무의식적 통계학자의 법칙", "law of the unconscious statistician", "근본 다리", "fundamental bridge", "모자 돌려받기 문제", "상트페테르부르크 역설", "St. Petersburg paradox"]
 description: "기댓값은 같은 실험을 끝없이 되풀이했을 때 나오는 값들의 평균이고, 값마다 확률을 곱해 더해서 구한다. 가장 강력한 성질은 선형성이다. 합의 기댓값은 기댓값의 합이고, 변수들이 서로 얽혀 있어도 그대로 맞는다. 그래서 복잡한 \"개수\"를 하나하나의 \"있다/없다\"로 쪼개면 각자의 확률…"

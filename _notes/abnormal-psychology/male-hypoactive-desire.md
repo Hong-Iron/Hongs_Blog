@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
 last_modified_at: "2026-09-27"
+date: "2026-09-27"
 status: "verified"
 aliases: ["Male Hypoactive Sexual Desire Disorder", "남성성욕감퇴장애", "욕구의 불일치", "desire discrepancy", "무성애", "asexuality"]
 description: "성에 대한 생각이나 환상, 성관계를 원하는 마음이 반년 넘게 거의 없고, 그 때문에 본인이 괴롭거나 관계가 흔들리는 상태다. 성욕은 나이, 문화, 관계에 따라 원래 다르므로 그 맥락을 고려해 판단한다. 파트너보다 성욕이 낮다는 것만으로는 장애가 아니다. 우울증이나 다른 병으로 설명…"

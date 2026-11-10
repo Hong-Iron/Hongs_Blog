@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Level Order Traversal", "Level-Order", "레벨 순회", "층별 순회", "너비 우선 순회", "이진 트리 순회", "Binary Tree Traversal", "방문", "visit"]
 description: "이진 트리의 칸을 위층부터 한 층씩, 같은 층에서는 왼쪽부터 차례로 들르는 방법이다. 지금 들른 칸의 자식들을 줄 맨 뒤에 세워 두고, 다음에는 줄 맨 앞의 칸을 들르기만 하면 이 순서가 나온다. 함수가 자기를 다시 부르지 않고 고리 하나로 끝난다. 대신 줄 서 있는 칸을 담아 둘…"

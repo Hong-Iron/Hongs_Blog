@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Bayesian Inference", "베이즈 추론", "베이지안 추론", "사전분포", "prior distribution", "사후분포", "posterior distribution", "MAP", "최대 사후 추정", "maximum a posteriori", "켤레 사전분포", "conjugate prior", "베타분포", "Beta distribution", "신용구간", "credible interval", "라플라스 평활", "Laplace smoothing"]
 description: "모르는 모수를 하나의 정해진 값이 아니라 \"얼마나 그럴듯한가\"의 분포로 보고, 데이터를 볼 때마다 베이즈 정리로 그 분포를 갱신한다. 원래 믿음(사전분포)에 데이터의 가능도를 곱하면 새 믿음(사후분포)이 된다. 사후분포의 봉우리(MAP)는 가능도에 벌점 항을 더해 최대화한 것이라,…"

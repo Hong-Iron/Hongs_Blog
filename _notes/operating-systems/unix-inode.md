@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-08"
 last_modified_at: "2026-10-08"
+date: "2026-10-08"
 status: "verified"
 aliases: ["Inode", "Index Node", "아이노드", "i-node", "i-number", "직접 포인터", "Direct Pointer", "간접 포인터", "Indirect Pointer", "단일 간접", "이중 간접", "삼중 간접", "UNIX 파일 종류", "하드 링크", "심볼릭 링크", "UNIX 파일 권한", "rwx"]
 description: "아이노드는 UNIX에서 파일 하나의 모든 관리 정보(종류, 주인, 권한, 시각, 크기, 데이터 블록 위치)를 담은 카드다. 파일 이름은 아이노드에 없고, 디렉터리가 \"이름 → 아이노드 번호\"를 따로 적는다. 블록 위치는 앞쪽 몇 블록만 직접 적고, 나머지는 \"블록 번호 목록이 든 …"

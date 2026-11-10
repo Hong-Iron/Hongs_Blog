@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-07"
 last_modified_at: "2026-10-07"
+date: "2026-10-07"
 status: "verified"
 aliases: ["Semaphore", "계수 세마포어", "Counting Semaphore", "일반 세마포어", "General Semaphore", "이진 세마포어", "Binary Semaphore", "뮤텍스", "Mutex", "semWait", "semSignal", "P", "V", "강한 세마포어", "약한 세마포어"]
 description: "세마포어는 \"남은 자리 수\"를 적은 계수기와 대기 줄을 묶은 것이다. 주차장 입구의 전광판처럼, 들어갈 때 수를 하나 줄이고 나올 때 하나 늘린다. 자리가 없으면 들어오려던 프로세스는 문 앞에서 계속 확인하지 않고 잠들어 줄을 선다. 그래서 바쁜 대기가 없다. 대신 줄이기와 늘리기…"

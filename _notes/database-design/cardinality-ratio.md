@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Cardinality Ratio", "대응 수", "사상 수", "일대일", "일대다", "다대다", "1:1", "1:N", "M:N", "N:1", "One-to-One", "One-to-Many", "Many-to-Many", "구조 제약", "Structural Constraint"]
 description: "한 대상이 동시에 몇 곳에 이어질 수 있는지를 정하는 규칙이다. 반 배정은 학생 한 명이 한 반에만 들어가고, 수강 신청은 학생도 과목을 여럿 듣고 과목에도 학생이 여럿이다. 이 차이에 따라 나중에 표를 만드는 방법이 통째로 달라진다. 이 규칙은 \"많아야 몇\"만 정하고 \"적어도 하…"

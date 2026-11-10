@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["ALTER TABLE", "ALTER", "ADD COLUMN", "DROP COLUMN", "DROP CONSTRAINT", "ADD CONSTRAINT", "표 변경", "테이블 변경", "열 추가", "열 삭제", "제약 삭제", "Altering Schema Elements"]
 description: "이미 만든 표의 틀을 고치는 명령으로, 칸을 새로 더하고, 안 쓰는 칸을 없애고, 걸어 둔 규칙을 떼거나 붙인다. 쓰고 있는 장부에 칸 하나를 덧그리는 것과 같아서, 표를 새로 만들고 행을 옮겨 적지 않아도 된다. 새로 더한 칸은 이미 있던 행에서는 비어 있다. 없애려는 칸에 다른…"

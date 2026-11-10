@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Antisocial Personality Disorder", "ASPD", "반사회성", "사이코패스", "psychopath", "소시오패스", "sociopath", "비사회성 성격장애", "dyssocial personality disorder"]
 description: "법과 규칙, 남의 권리를 자기 이익을 위한 장애물로만 여기는 사람이다. 거짓말과 사기, 폭력을 되풀이하면서도 죄책감이 없고, 불안도 덜 느낀다. 어릴 때의 품행장애가 어른이 된 뒤 성격으로 굳은 것이라, 15세 이전에 품행장애가 있었고 지금 18세 이상이어야 진단한다. 약이 없고 …"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Process Creation", "Process Termination", "Process Switching", "프로세스 생성", "프로세스 종료", "프로세스 전환", "문맥 교환", "Context Switch", "모드 전환", "Mode Switch", "트랩", "Trap", "시스템 호출", "Supervisor Call"]
 description: "운영체제는 프로세스를 만들 때 번호를 주고, 메모리를 주고, 신상 카드(PCB)를 채워 준비 줄에 세운다. 실행 중인 프로세스를 바꿀 때는 지금 프로세스의 레지스터 값을 카드에 적고, 다음 프로세스의 카드에서 값을 꺼내 되살린다. 운영체제 코드로 잠깐 넘어가는 것(모드 전환)과 실…"

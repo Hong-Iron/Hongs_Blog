@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Collaborative Filtering", "CF", "사용자 기반 협업 필터링", "User-based CF", "아이템 기반 협업 필터링", "Item-based CF", "이웃", "Neighbors", "평점 행렬", "Rating Matrix", "희소성", "Sparsity"]
 description: "아이템의 내용은 보지 않고, 여러 사용자가 남긴 평점만으로 추천한다. \"나와 취향이 비슷한 사람들이 좋아한 것\"을 고르거나(사용자 기반), \"내가 좋아한 것과 비슷하게 평가된 것\"을 고른다(아이템 기반). 내용을 뽑을 필요가 없고 뜻밖의 좋은 추천도 나온다. 하지만 평점 행렬은 대…"

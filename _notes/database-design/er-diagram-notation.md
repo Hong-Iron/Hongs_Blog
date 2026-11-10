@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["ER Diagram Notation", "ER 다이어그램", "Entity-Relationship Diagram", "ERD", "Chen 표기법", "Chen Notation", "ER 스키마 다이어그램", "ER Schema Diagram"]
 description: "지하철 노선도처럼, 약속된 기호 몇 개로 데이터베이스의 틀을 한 장에 그린 그림이다. 네모는 저장할 대상, 마름모는 대상 사이의 이어짐, 타원은 대상에 적을 항목이고, 겹으로 그린 것과 밑줄에는 저마다 특별한 뜻이 있다. 그림에는 틀만 그리고 실제 자료는 그리지 않는다. 책과 도구…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Scope", "유효 범위", "식별자의 스코프", "정적 스코프", "Static Scope", "Lexical Scope", "동적 스코프", "Dynamic Scope", "가장 가까운 안쪽 스코프 규칙", "Most-Closely Nested Scope Rule"]
 description: "학교에 \"민수\"가 여럿 있어도 교실 안에서 \"민수야\" 하면 그 반 민수가 돌아본다. 프로그램의 이름도 그렇다. 이름마다 통하는 구역이 있고, 같은 이름이 여러 구역에 있으면 쓰는 자리에서 가장 가까이 감싼 구역의 것이 뽑힌다. 덕분에 서로 다른 함수가 같은 이름을 마음 놓고 쓴다.…"

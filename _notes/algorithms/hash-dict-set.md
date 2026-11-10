@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Dictionary", "Set", "딕셔너리", "집합", "해시", "해시 테이블", "hash table", "dict", "set", "Counter", "defaultdict", "키", "값"]
 description: "전화번호부에서 이름만 알면 번호를 바로 찾듯, 딕셔너리는 이름표(키)로 값을 바로 찾는 표다. 몇십만 개가 들어 있어도 넣기, 찾기, 지우기가 거의 한 번에 끝난다. 집합은 값 없이 이름표만 모은 것이라 \"있나 없나\"에 바로 답한다. 대신 크기 순으로 늘어서 있지 않아서 \"가장 작…"

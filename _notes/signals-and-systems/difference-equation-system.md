@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Linear Constant-Coefficient Difference Equation", "선형 상수계수 차분방정식", "차분방정식", "Difference Equation", "재귀 방정식", "Recursive Equation", "비재귀 방정식", "Nonrecursive Equation", "FIR", "Finite Impulse Response", "IIR", "Infinite Impulse Response"]
 description: "이산 시간 시스템은 \"지금 출력 = 지금과 과거 입력의 가중합 − 과거 출력의 가중합\"이라는 규칙(차분방정식)으로 적는다. 은행 잔액, 이동 평균, 디지털 필터가 모두 이 꼴이다. 과거 출력을 쓰지 않으면 임펄스 응답이 몇 칸 뒤 끝나고(FIR), 과거 출력을 다시 쓰면 메아리가 …"

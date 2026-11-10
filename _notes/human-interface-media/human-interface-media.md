@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Human Interface Media", "HIM", "인터페이스", "interface", "인터페이스 미디어", "사람의 정보 처리"]
 description: "사람과 컴퓨터 사이의 통역사다. 사람은 빛·소리 같은 자극을 감각으로 받고 근육의 움직임으로 표현하지만, 컴퓨터는 수치와 코드만 다룬다. 그래서 자극을 데이터로, 데이터를 다시 자극으로 바꾸는 매체가 가운데에 있어야 한다. 이 과목은 그중 시각과 청각을 다루며, 사람 감각의 한계가…"

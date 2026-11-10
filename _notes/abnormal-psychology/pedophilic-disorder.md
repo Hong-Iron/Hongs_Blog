@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Pedophilic Disorder", "소아기호증", "소아성애", "pedophilia", "음경 혈량측정법", "penile plethysmography", "시각반응시간", "viewing time"]
 description: "사춘기 이전의 아동에게서 반복적이고 강렬한 성적 흥분을 느끼는 상태가 반년 넘게 이어지고, 그 때문에 괴롭거나 실제 행동으로 옮긴 장애다. 또래에 대한 청소년의 성적 관심을 장애로 만들지 않도록, 16세 이상이면서 대상 아동보다 5세 이상 많아야 진단한다. 본인이 부인하는 경우가 …"

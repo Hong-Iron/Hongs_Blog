@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Walks and Markov Chains", "보행 수와 전이 확률", "무작위 보행", "random walk on a graph", "그래프 위의 무작위 보행", "인접행렬 거듭제곱"]
 description: "표를 펼치기 전에 두 사례의 공통 구조와 대응 관계를 먼저 적어 본다. 특히 \"행렬 곱의 한 성분을 계산할 때 더하는 항 하나하나가 무엇을 뜻하는가\"를 두 쪽에서 각각 말해 본다."

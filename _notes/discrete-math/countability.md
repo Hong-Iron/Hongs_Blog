@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Countable Set", "Diagonal Argument", "가산 집합", "셀 수 있는 집합", "countably infinite", "비가산 집합", "uncountable", "칸토어의 대각선 논법", "Cantor's diagonal argument", "칸토어 정리", "계산 불가능성", "uncomputable", "정지 문제", "halting problem"]
 description: "원소에 1번, 2번, 3번… 번호를 빠짐없이 붙일 수 있으면 셀 수 있는(가산) 집합이다. 정수와 분수는 자연수보다 훨씬 많아 보이지만 번호를 붙일 수 있어 크기가 같다. 반면 실수나 끝없는 0·1의 나열은 어떤 번호 매기기로도 빠뜨리는 것이 반드시 생긴다(대각선 논법). 이 논법…"

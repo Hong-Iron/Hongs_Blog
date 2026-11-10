@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Static Member", "정적 멤버", "정적 필드", "Static Field", "정적 메서드", "Static Method", "정적 블록", "Static Block", "인스턴스 멤버", "Instance Member", "메서드 영역", "Method Area"]
 description: "교실 앞 칠판과 학생마다 가진 공책을 떠올리면 된다. 공책은 학생 수만큼 있고 내용이 저마다 다르다. 칠판은 교실에 하나뿐이라 누가 고쳐 쓰든 모두가 같은 내용을 본다. 클래스에도 객체마다 따로 있는 값과, 클래스에 하나만 있어 모든 객체가 같이 보는 값이 있다. 하나만 있는 쪽은…"

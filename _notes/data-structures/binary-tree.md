@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Binary Tree", "이진 나무", "왼쪽 부분 트리", "left subtree", "오른쪽 부분 트리", "right subtree", "층", "level", "트리의 높이", "height", "편향 트리", "skewed tree"]
 description: "이진 트리는 한 칸 아래에 칸을 둘까지만 다는 가계도다. 두 자리는 \"왼쪽\"과 \"오른쪽\"으로 정해져 있어서, 자식이 하나뿐이어도 어느 쪽에 달렸는지를 따진다. 자식 자리가 둘로 정해져 있으니 컴퓨터에 담기 쉽고, 찾기와 넣기에 드는 시간은 맨 위에서 맨 아래까지 몇 층인지로 정해진…"

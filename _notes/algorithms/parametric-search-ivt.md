@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Parametric Search and the Intermediate Value Theorem", "이산 사잇값 정리", "discrete intermediate value theorem", "이분법의 루프 불변식", "사잇값 정리의 이분법 증명"]
 description: "매개변수 탐색과 방정식의 근을 찾는 이분법은 둘 다 양 끝에서 대답이 다른 구간을 쥐고, 가운데를 물어 대답이 바뀌는 쪽 절반만 남긴다. 그래서 대답이 여러 번 바뀌어도 바뀌는 자리 하나는 늘 찾는다. 하지만 그 자리가 가장 작은 답이라는 보장은 대답이 한 번만 바뀔 때만 있다. …"

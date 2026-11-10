@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Rc", "Rc<T>", "Arc", "Arc<T>", "Weak", "Weak<T>", "Reference Counting", "참조 세기", "strong_count", "weak_count", "Reference Cycle", "순환 참조", "Shared Ownership"]
 description: "Rc는 값 하나를 여러 곳이 함께 가지게 하고, 지금 몇 곳이 쥐고 있는지 세다가 0이 되는 순간 치운다. 누가 마지막까지 쓸지 미리 알 수 없을 때 쓴다. 대신 함께 가진 값은 읽기만 할 수 있고, 둘이 서로를 쥐면 개수가 영영 0이 되지 않아 메모리가 샌다. 서로 가리켜야 하는…"

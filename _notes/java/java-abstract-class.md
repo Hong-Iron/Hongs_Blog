@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Abstract Class", "abstract", "실체 클래스", "Concrete Class", "추상 메서드", "Abstract Method"]
 description: "\"동물\"은 개와 고양이를 묶어 부르는 말일 뿐, 그냥 동물 한 마리는 세상에 없다. 이처럼 자식들이 함께 쓰는 것만 모아 두고, 그 자체로는 객체를 만들지 못하게 막아 둔 부모 클래스다. 자식마다 달라야 하는 동작은 이름만 적어 두고 내용은 자식이 채우게 강제할 수 있다. 자식이 …"

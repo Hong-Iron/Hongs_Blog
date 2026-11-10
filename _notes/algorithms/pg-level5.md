@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "draft"
 aliases: ["Programmers Level 5"]
 description: "Level 5에서 고른 문제 10개다. 카카오 기출 5개 전부에, 기출이 아닌 문제 가운데 많이 푼 5개를 더했다. 정답률이 높은 문제부터 놓았고, SQL 문제는 넣지 않았다. 풀이가 있는 문제는 제목을 누르면 풀이 문서로 간다. 풀이 문서는 쉬운 단계부터 하나씩 펼쳐 보게 되어 있다."

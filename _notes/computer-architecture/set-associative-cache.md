@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Set-Associative Cache", "N-way Set-Associative", "집합 연관 사상", "완전 연관 캐시", "Fully Associative Cache", "연관도", "Associativity", "집합", "Set", "웨이", "Way"]
 description: "메모리의 덩어리마다 들어갈 수 있는 자리를 한 곳이 아니라 몇 곳 묶음으로 정해 주는 방식이다. 사물함을 두 칸씩 짝지어 놓고, 학번 끝자리로 짝을 정한 뒤 그 짝의 두 칸 중 아무 데나 쓰게 하는 것과 같다. 같은 묶음을 쓰는 덩어리 둘이 서로를 쫓아내지 않고 함께 머문다. 대신…"

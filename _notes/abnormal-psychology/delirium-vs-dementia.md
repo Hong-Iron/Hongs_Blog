@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Delirium vs Dementia"]
 description: "둘 다 기억이 흐려지고 엉뚱한 말을 하지만, 섬망은 갑자기 와서 의식이 흐리고 대개 돌아온다. 치매는 서서히 와서 의식은 맑은 채 계속 나빠진다. 가르는 질문은 \"언제부터, 얼마나 빨리 시작했고, 지금 정신이 또렷한가\"다."

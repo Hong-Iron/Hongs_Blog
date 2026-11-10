@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Data Structure", "자료구조", "자료 구조", "레코드", "Record", "공용체", "Union", "연결 구조", "Linked Data Structure", "주소 계산", "주소 저장"]
 description: "책을 책장에 꽂는 방법이 여럿이듯, 값을 컴퓨터 메모리에 놓는 방법도 여럿이다. 번호 순으로 빈틈없이 꽂으면 37번 책을 곧장 뽑지만, 가운데에 새 책을 끼우려면 뒤의 책을 모두 밀어야 한다. 책마다 \"다음 책은 저기 있다\"는 쪽지를 끼워 두면 아무 데나 꽂아도 되고 끼우기도 쉽지…"

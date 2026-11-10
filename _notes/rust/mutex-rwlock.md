@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Mutex", "RwLock", "MutexGuard", "뮤텍스", "읽기-쓰기 잠금", "Reader-Writer Lock", "독", "Poisoning", "PoisonError", "잠금 순서", "Lock Ordering"]
 description: "공용 금고에 물건을 넣고 열쇠를 하나만 두면, 열쇠를 쥔 사람만 물건을 만질 수 있다. Rust의 Mutex는 물건을 아예 금고 안에 넣어 두어서, 열쇠 없이 물건에 손댈 방법이 처음부터 없다. 열쇠는 쓰고 나면 저절로 돌아간다. 대신 열쇠 두 개를 서로 다른 순서로 쥐는 사람들이…"

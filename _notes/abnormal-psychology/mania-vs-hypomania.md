@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["조증 vs 경조증", "Manic vs Hypomanic Episode", "제1형 vs 제2형 양극성장애", "bipolar I vs bipolar II"]
 description: "두 삽화는 증상 목록이 같다. 들뜨거나 과민한 기분에 에너지가 늘고, 일곱 증상 가운데 3가지 이상이 나타난다. 다른 것은 기간과 심각도다. 두 삽화의 차이는 꼭 구별해 둔다. 가르는 질문은 \"기능이 뚜렷하게 무너지거나, 입원이 필요하거나, 정신병적 양상이 있는가\"다. 하나라도 있…"

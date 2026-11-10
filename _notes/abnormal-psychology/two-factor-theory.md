@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Mowrer's Two-Factor Theory", "2요인 학습이론", "two-factor theory", "회피 학습의 2요인 과정 이론", "모러", "Mowrer", "준비성", "preparedness", "대리학습", "vicarious learning", "정보전이", "information transmission"]
 description: "공포증은 두 단계로 만들어진다는 이론이다. 먼저 어떤 대상이 무서운 일과 짝지어져 공포가 생기고(고전적 조건형성), 그다음 그 대상을 피할 때마다 안도감이 들어 피하는 행동이 굳어진다(조작적 조건형성). 두 번째 단계 때문에 공포가 사라질 기회가 없다. 그래서 치료는 피하지 않고 …"

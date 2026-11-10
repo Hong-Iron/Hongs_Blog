@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Binary Tree Representation", "Array Representation", "Linked Representation", "배열 표현", "연결 표현", "treePointer", "leftChild", "rightChild", "트리 노드 구조체"]
 description: "이진 트리를 메모리에 담는 길은 둘이다. 하나는 칸마다 번호를 정해 배열에 줄지어 넣는 것이고, 다른 하나는 칸마다 두 자식이 어디 있는지 주소를 적어 두는 것이다. 배열 쪽은 부모와 자식을 번호 계산으로 바로 찾지만, 한쪽으로 길게 늘어선 트리에서는 배열의 대부분이 빈칸이 된다.…"

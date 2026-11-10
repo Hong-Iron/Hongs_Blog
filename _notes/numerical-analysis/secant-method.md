@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Secant Method", "시컨트 방법", "할선", "Secant Line", "열린 방법", "Open Method", "수렴 차수", "Order of Convergence"]
 description: "뉴턴 방법은 접선의 기울기, 곧 도함수가 필요하다. 할선법은 도함수 대신 최근 두 점을 잇는 직선(할선)의 기울기를 써서, 그 직선이 x축과 만나는 곳으로 간다. 도함수를 계산할 필요가 없고 뉴턴 방법에 가깝게 빠르다. 시작점이 두 개 필요하지만 이분법처럼 근을 사이에 둘 필요는 …"

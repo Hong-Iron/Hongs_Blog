@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Multiplexing", "멀티플렉싱", "MUX", "DEMUX", "역다중화기", "DEMUX 키", "demux key", "자원 공유", "resource sharing", "다채널 분할", "Multi-Channel Splitting", "역다중화", "inverse multiplexing"]
 description: "여러 사람의 통신이 선 하나를 나눠 쓰게 하는 방법이다. 이삿짐 여러 집 것을 트럭 한 대에 섞어 싣는 것과 같다. 선을 계속 새로 깔지 않고 있는 자원을 아껴 쓸 수 있다. 대신 받는 쪽에서 다시 나누려면 각 조각이 누구 것인지 알아낼 단서가 반드시 있어야 한다."

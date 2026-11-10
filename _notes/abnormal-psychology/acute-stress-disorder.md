@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Acute Stress Disorder", "ASD", "급성 스트레스 반응", "해리 증상", "dissociative symptoms"]
 description: "외상 사건 직후 PTSD와 거의 같은 증상이 3일에서 한 달 사이에 나타나는 장애다. 멍하고 현실감이 없고 기억이 끊기는 해리 증상이 두드러진다. 해리는 너무 강한 충격에서 잠시 자신을 지키는 방패 역할을 한다. 한 달이 지나도 증상이 이어지면 약 절반이 PTSD로 넘어가므로, 이…"

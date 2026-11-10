@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Backpressure", "백프레셔", "배압", "Bounded Channel", "Unbounded Channel", "크기 제한 채널", "Load Shedding", "부하 버리기", "Semaphore", "tokio::sync::Semaphore", "try_send", "ConcurrencyLimit", "GlobalConcurrencyLimitLayer", "load_shed"]
 description: "주방이 요리하는 속도보다 주문이 빨리 들어오면 주문표가 쌓인다. 주문표 꽂이에 칸 수를 정해 두지 않으면 줄이 끝없이 길어져 결국 메모리가 바닥나고, 그 전에 이미 모든 손님이 한참 늦게 받는다. 칸 수를 정해 두면 꽂이가 찼을 때 주문받는 쪽이 기다리거나 새 주문을 거절하게 되어…"

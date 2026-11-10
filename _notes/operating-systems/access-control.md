@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Access Control", "접근 행렬", "Access Matrix", "접근 제어 목록", "Access Control List", "ACL", "권한 목록", "Capability List", "임의적 접근 제어", "Discretionary Access Control", "DAC", "강제적 접근 제어", "Mandatory Access Control", "MAC", "역할 기반 접근 제어", "Role-Based Access Control", "RBAC", "최소 권한 원칙", "Principle of Least Privilege"]
 description: "접근 제어는 누가(주체), 무엇에(객체), 어떤 일을(읽기, 쓰기, 실행) 할 수 있는지를 정하고 지키게 하는 것이다. 건물 출입 카드처럼, 로그인으로 누구인지 확인된 사용자에게 운영체제가 규칙표에 따라 문을 열어 주거나 막는다. 규칙을 파일 주인이 마음대로 주느냐, 시스템이 등급…"

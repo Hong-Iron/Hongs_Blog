@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Abnormal Psychology", "異常心理學", "유병률", "prevalence", "발병률", "incidence", "위험요인", "risk factor", "역학", "epidemiology", "임상심리학", "정신의학"]
 description: "사람이 겪는 괴로움 가운데 보통과 다른 행동과 마음의 병을 과학의 방법으로 연구하는 심리학 분야다. 이상한 행동을 찾아 기술하고, 왜 생기는지 밝히고, 어떻게 고치고 막을지 연구한다. 다만 정상과 이상 사이에 뚜렷한 선이 없어서, 무엇을 연구 대상으로 삼을지부터가 이 분야의 첫 문제다."

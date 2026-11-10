@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Frequency-Division Multiplexing", "FDM", "주파수분할 다중화", "보호 대역", "guard band", "반송파", "subcarrier"]
 description: "라디오 방송국들이 서로 다른 주파수로 동시에 방송하듯, 링크가 실어 나를 수 있는 주파수 범위를 여러 좁은 구간으로 나눠 사용자마다 한 구간을 계속 쓰게 하는 방법이다. 모두가 동시에, 쉬지 않고 보낼 수 있다. 대신 이웃 구간끼리 새지 않도록 사이를 띄워야 해서 그만큼 낭비되고,…"

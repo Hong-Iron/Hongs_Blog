@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Social Anxiety Disorder vs Avoidant Personality Disorder", "사회불안 vs 회피성"]
 description: "두 장애는 신념 체계가 비슷하고 함께 진단되는 경우도 많다. 가르는 질문은 \"두려움이 발표나 낯선 사람과의 대화 같은 특정 사회적 상황에 묶여 있는가, 아니면 '나는 부족한 사람'이라는 자기상이 관계 전체에 배어 있는가\"다. 사회불안장애는 수행과 평가 상황의 불안이 중심이고, 회피…"

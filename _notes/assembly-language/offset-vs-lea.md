@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["OFFSET vs LEA", "LEA", "Load Effective Address", "유효 주소", "Effective Address", "ADDR"]
 description: "둘 다 \"이 변수가 메모리의 어디에 있는가\"를 레지스터에 넣을 때 쓴다. 가르는 질문은 \"그 주소를 프로그램을 돌리기 전에 알 수 있는가\"다. 알 수 있으면 OFFSET, 돌려 봐야 알면 LEA다."

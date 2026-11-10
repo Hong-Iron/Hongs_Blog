@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Process Control Block", "PCB", "프로세스 이미지", "Process Image", "프로세스 표", "Process Table", "운영체제 제어 구조", "OS Control Structures", "메모리 표", "입출력 표", "파일 표"]
 description: "프로세스 제어 블록은 운영체제가 프로세스마다 하나씩 들고 있는 신상 카드다. 이름표(번호), 멈춘 순간의 레지스터 값, 지금 상태와 우선순위, 가진 자원이 적혀 있다. 운영체제는 이 카드만 보고 프로세스를 줄 세우고, 멈추고, 다시 시작한다. 카드가 망가지면 그 프로세스를 관리할 …"

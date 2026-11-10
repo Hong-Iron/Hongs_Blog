@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["단기 정신병적 장애 vs 조현양상장애 vs 조현병", "정신병의 기간 기준", "1일 1개월 6개월"]
 description: "단기 정신병적 장애, 조현양상장애, 조현병은 증상이 거의 같고 기간이 다르다. 세 장애는 기간이라는 한 줄 위에 이어져 있다. 가르는 질문은 \"증상이 얼마나 오래 갔나\"다. 경계는 1일, 1개월, 6개월이다."

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Buddy System", "버디 할당", "Buddy Allocation", "짝 블록", "Buddy"]
 description: "버디 시스템은 메모리를 반, 반의 반, … 으로 쪼개 2의 거듭제곱 크기 블록만 나눠 주는 방법이다. 초콜릿 판을 반으로 쪼개고 또 반으로 쪼개 필요한 크기에 가장 가까운 조각을 주고, 돌려받으면 옆 조각(짝)과 다시 붙이는 식이다. 고정 분할과 동적 분할의 중간이라, 쪼개고 합치…"

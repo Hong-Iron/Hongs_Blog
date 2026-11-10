@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Module", "Java Module", "모듈 기술자", "Module Descriptor", "module-info.java", "requires", "exports", "패키지 은닉", "Package Encapsulation", "전이 의존", "Transitive Dependency", "requires transitive", "집합 모듈", "Aggregate Module", "리플렉션", "Reflection", "opens", "java.base", "API 문서", "API Document", "JFC", "AWT", "Swing"]
 description: "부품 상자에 안내문 한 장을 붙인 것이다. 안내문에는 \"이 칸은 손님이 써도 된다\"와 \"이 상자를 쓰려면 저 상자도 있어야 한다\"가 적혀 있다. 안내문에 적지 않은 칸은 밖에서 아예 보이지 않으므로, 만든 사람이 안쪽을 마음대로 고쳐도 쓰는 사람의 코드는 깨지지 않는다. 대신 필요…"

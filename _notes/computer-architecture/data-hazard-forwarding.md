@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Data Hazard", "데이터 해저드", "데이터 위험", "Forwarding", "전방 전달", "포워딩", "Bypassing", "바이패싱", "전방 전달 유닛", "Forwarding Unit", "ForwardA", "ForwardB", "EX 해저드", "MEM 해저드", "이중 데이터 해저드", "Double Data Hazard"]
 description: "앞 명령어가 계산한 값을 바로 뒤 명령어가 쓰려는데, 그 값이 아직 레지스터에 적히지 않은 상황이다. 옆자리 동료가 계산을 막 끝냈는데 장부에 옮겨 적는 것은 이틀 뒤라면, 장부를 기다리지 말고 동료 책상에서 바로 받아 오면 된다. 프로세서도 계산이 끝난 값을 레지스터를 거치지 않…"

@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Equivalence Relation", "Partition", "동치관계", "동치류", "equivalence class", "분할", "몫집합", "quotient set", "유니온-파인드", "union-find", "서로소 집합", "disjoint set"]
 description: "반사·대칭·추이를 모두 갖춘 관계는 \"같은 무리로 본다\"는 뜻의 동치관계다. 동치관계가 있으면 집합이 서로 겹치지 않는 무리로 깔끔하게 나뉘고, 거꾸로 집합을 무리로 나누면 동치관계가 생긴다. 나머지가 같은 정수, 서로 연결된 네트워크 노드, 같은 동작을 하는 상태들이 모두 이 구…"

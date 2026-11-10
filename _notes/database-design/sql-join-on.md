@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["JOIN ON", "Joined Table", "조인된 테이블", "조인 테이블", "JOIN 절", "INNER JOIN", "조인 조건", "Join Condition"]
 description: "두 표를 이을 때 \"어느 열끼리 맞출지\"와 \"어떤 행만 남길지\"를 한 조건문에 섞어 쓰면, 질의가 길어질수록 무엇이 무엇인지 읽기 어렵다. 표를 잇는 말을 표 이름을 적는 자리로 옮기면 \"이 두 표를 이 열로 이어 붙인 큰 표 하나\"가 먼저 보이고, 행을 고르는 조건만 따로 남는다…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Framing", "프레이밍", "Byte-Oriented Protocol", "바이트 중심 프로토콜", "보초 방법", "Sentinel Approach", "BISYNC", "바이트 채우기", "Byte Stuffing", "확장 문자", "Escape Character", "DLE", "바이트 수 방법", "Byte Counting", "DDCMP", "PDU", "Protocol Data Unit"]
 description: "링크로는 비트가 끝없이 흘러오니, 보내는 쪽이 한 덩어리(프레임)의 처음과 끝에 표시를 달아 받는 쪽이 덩어리를 잘라 낼 수 있게 한다. 바이트 중심 방법은 데이터를 8비트 글자(바이트)의 줄로 보고, 정해 둔 글자(보초)로 끝을 표시하거나 맨 앞에 길이를 적는다. 보초 방법은 본…"

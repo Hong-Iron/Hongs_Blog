@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-28"
 last_modified_at: "2026-09-28"
+date: "2026-09-28"
 status: "verified"
 aliases: ["Tic vs Stereotypy", "틱 vs 상동증"]
 description: "두 장애 모두 목적 없어 보이는 동작이 되풀이되고, 주의를 돌리면 줄어든다. 가르는 질문은 \"동작 직전에 불편한 충동이 있고 모습이 계속 바뀌는가, 아니면 아주 어릴 때부터 늘 같은 모양의 율동적인 동작인가\"다. 틱은 본인이 원치 않고 괴로운(자아 비친화적) 경우가 많고, 상동증적…"

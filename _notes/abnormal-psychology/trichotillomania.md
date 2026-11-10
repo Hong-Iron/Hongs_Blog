@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Trichotillomania", "Hair-Pulling Disorder", "발모광", "모발뽑기장애"]
 description: "머리카락, 눈썹, 속눈썹 같은 자기 몸의 털을 반복해서 뽑아 눈에 띄게 빠지는데도 멈추지 못하는 장애다. 뽑기 직전에 긴장이 오르고, 뽑고 나면 시원함이나 안도감이 온다. 그 안도감이 행동을 굳혀 스트레스를 푸는 습관이 된다. 강박장애처럼 반복하지만, 불안한 생각을 없애려는 것이 …"

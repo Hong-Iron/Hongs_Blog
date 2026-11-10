@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Floating Point", "IEEE 754", "고정소수점", "Fixed Point", "단정도", "Single Precision", "배정도", "Double Precision", "float", "double", "지수", "Exponent", "가수", "Significand", "정밀도", "Precision", "표현 범위"]
 description: "소수점이 있는 수를 정해진 칸 수에 담는 방법이다. 과학 시간에 큰 수를 \"1.23 곱하기 10의 몇 제곱\"으로 적듯이, 앞자리 숫자 몇 개와 소수점을 몇 칸 옮길지를 따로 적는다. 덕분에 아주 작은 수부터 아주 큰 수까지 같은 칸 수로 적는다. 대신 적을 수 있는 수가 띄엄띄엄 …"

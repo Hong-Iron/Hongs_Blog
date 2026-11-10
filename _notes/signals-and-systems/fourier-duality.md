@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Duality", "쌍대성", "쌍대성 정리", "Duality Theorem", "사각 펄스와 sinc"]
 description: "푸리에 변환식과 역변환식은 부호와 2\\pi만 빼면 모양이 같다. 그래서 시간과 주파수의 역할을 바꾼 쌍이 늘 함께 있다. 사각 펄스의 변환이 sinc이면, sinc의 변환은 사각 펄스다. 한쪽 쌍만 알면 다른 쪽 쌍을 공짜로 얻는다. 다만 바꿀 때 2\\pi와 \\omega의 부호(-…"

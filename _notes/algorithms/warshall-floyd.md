@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Transitive Closure and Floyd–Warshall", "와셜 알고리즘과 플로이드–워셜", "Warshall's algorithm", "이행적 폐포", "반사 추이 폐포", "reflexive transitive closure", "반환", "semiring", "가장 믿을 만한 경로", "most reliable path"]
 description: "이산수학에서 추이 폐포를 구하는 와셜 알고리즘과 플로이드–워셜은, 거쳐도 되는 점을 하나씩 늘리며 표를 고치는 같은 세 겹 반복이다. 와셜은 \"또는·그리고\"로 갈 수 있는지를, 플로이드–워셜은 \"작은 쪽 고르기·더하기\"로 가장 싼 비용을 적는다. 그래서 자기 자신으로 가는 칸(대각…"

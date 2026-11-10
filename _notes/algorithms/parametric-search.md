@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Parametric Search", "Binary Search on Answer", "결정 문제", "답 이분 탐색", "이분 탐색으로 답 찾기"]
 description: "\"가장 길게 자르면 몇 cm?\"처럼 가장 좋은 값을 바로 구하기 어려우면, \"7cm로 자르면 되나?\"라는 예·아니오 질문으로 바꿔 묻는다. 길이를 늘리면 대답이 \"된다, 된다, …, 안 된다, 안 된다\"처럼 딱 한 번만 바뀌니, 바뀌는 경계를 이분 탐색으로 찾는다. 답이 1부터 1…"

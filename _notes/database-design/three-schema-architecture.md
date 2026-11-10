@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Three-Schema Architecture", "3단계 스키마 아키텍처", "3-스키마 구조", "ANSI/SPARC 구조", "내부 단계", "Internal Level", "내부 스키마", "Internal Schema", "개념 단계", "Conceptual Level", "개념 스키마", "Conceptual Schema", "외부 단계", "External Level", "뷰 단계", "View Level", "외부 스키마", "External Schema", "사용자 뷰", "User View", "사상", "Mapping", "외부/개념 사상", "개념/내부 사상"]
 description: "식당에서 손님은 차림표만 보고 주문하고, 주방은 조리법대로 만들고, 재료는 창고에 있다. 데이터베이스도 사용자 무리마다 보는 모습, 전체를 한 벌로 적은 모습, 디스크에 실제로 놓인 모습의 세 층으로 가르고, 요청이 층을 건널 때마다 관리 프로그램(DBMS)이 옮겨 적어 준다. 이…"

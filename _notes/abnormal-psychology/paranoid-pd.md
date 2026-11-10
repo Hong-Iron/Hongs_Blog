@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Paranoid Personality Disorder", "편집성", "편집증적 성격"]
 description: "늘 색안경을 끼고 사람을 보는 것과 같다. 남의 친절에서도 속셈을 찾고, 작은 실수도 자신을 깎아내리려는 의도로 읽으며, 한번 받은 상처는 잊지 않고 되갚는다. 이 경계심은 스스로를 지키려는 것이지만, 결국 모든 관계를 갈등과 불화로 만든다. 확신이 흔들리지 않는 망상 수준에는 이…"

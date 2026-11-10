@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Alias", "Tuple Variable", "튜플 변수", "별칭", "별명", "AS", "이름 한정", "Qualified Attribute Name", "모호한 속성 이름", "Ambiguous Attribute Name", "자기 조인", "셀프 조인", "Self Join", "Renaming Attributes"]
 description: "질의 안에서 표에 짧은 별명을 붙이는 방법이다. 같은 이름의 칸이 두 표에 있을 때 어느 표의 칸인지 밝히는 데 쓰고, 한 표를 두 번 쓸 때는 꼭 있어야 한다. 직원 명단 한 장으로 \"직원과 그 상사\"를 찾으려면, 명단을 두 장 복사해 한 장은 직원용, 한 장은 상사용으로 놓고 …"

@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Fermat's Little Theorem", "페르마 소정리", "페르마의 작은 정리", "Euler's Theorem", "오일러 정리", "오일러 피 함수", "Euler's totient function", "φ(n)", "빠른 거듭제곱", "fast exponentiation", "square-and-multiply", "제곱 곱셈", "카마이클 수", "Carmichael number", "페르마 판정법", "Fermat primality test"]
 description: "나머지의 세계에서 같은 수를 계속 곱하면 결국 1로 돌아와 같은 순서가 되풀이된다. 소수로 나눈 나머지에서는 \"그 소수보다 하나 적은 횟수\"만큼 곱하면 반드시 1이 되고(페르마), 일반적인 수로 나눈 나머지에서는 \"그 수와 서로소인 수의 개수\"만큼 곱하면 1이 된다(오일러). 그래…"

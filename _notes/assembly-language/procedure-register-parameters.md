@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Procedure Parameters", "프로시저 매개변수", "레지스터 매개변수", "Register Parameters", "USES", "USES 연산자", "레지스터 보존", "지역 레이블", "Local Label", "전역 레이블", "Global Label"]
 description: "심부름을 시킬 때 \"식탁 위의 그 봉투를 부쳐 줘\"라고 하면 그 봉투만 부칠 수 있다. \"내가 건네는 봉투를 부쳐 줘\"라고 하면 어떤 봉투든 된다. 프로시저도 다룰 자료의 이름을 코드에 박아 두지 않고, 부르는 쪽이 약속한 레지스터에 자료의 위치와 개수를 담아 건네면 어떤 자료에나…"

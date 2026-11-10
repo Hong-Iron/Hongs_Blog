@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Eye", "눈", "각막", "cornea", "동공", "pupil", "홍채", "iris", "수정체", "lens", "망막", "retina", "중심와", "fovea", "맹점", "blind spot", "시신경", "optic nerve"]
 description: "눈은 카메라와 닮았다. 각막과 수정체가 렌즈, 홍채가 조리개, 망막이 이미지 센서다. 하지만 센서인 망막은 고르지 않다. 가운데(중심와)만 선명하고, 시신경이 빠져나가는 자리(맹점)에는 센서가 아예 없다. 또 망막은 빛을 받자마자 신호를 가공까지 한다는 점에서 단순한 센서와 다르다."

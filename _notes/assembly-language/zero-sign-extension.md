@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Zero Extension", "Sign Extension", "제로 확장", "부호 확장", "MOVZX", "MOVSX", "MOVZX 명령", "MOVSX 명령", "부호 비트", "Sign Bit"]
 description: "작은 칸의 값을 큰 칸으로 옮기면 큰 칸의 윗부분이 남는다. 그 빈자리를 무엇으로 채우느냐가 문제다. 음수가 없는 수라면 0으로 채우면 값이 그대로다. 음수일 수도 있는 수라면 맨 윗자리 비트를 복사해 채워야 값이 그대로다. 같은 비트라도 어느 쪽으로 채우느냐에 따라 전혀 다른 수…"

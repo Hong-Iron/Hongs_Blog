@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Geometric Distribution", "기하분포", "무기억성", "memorylessness", "memoryless property", "도박사의 오류", "gambler's fallacy", "쿠폰 수집 문제", "coupon collector problem", "재전송", "retransmission"]
 description: "성공할 때까지 몇 번 시도해야 하는지의 분포다. 평균 횟수는 성공 확률의 역수라, 주사위로 6이 나올 때까지는 평균 6번이 걸린다. 가장 특이한 성질은 무기억성이다. 이미 여러 번 실패했어도 앞으로 더 기다릴 횟수의 분포는 처음과 똑같아서, \"이제 나올 때가 됐다\"는 느낌은 틀렸다…"

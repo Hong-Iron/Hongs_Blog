@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-20"
 last_modified_at: "2026-10-20"
+date: "2026-10-20"
 status: "verified"
 aliases: ["Stop-and-Wait Utilization", "링크 사용률", "링크 효율", "Link Utilization", "세부 시간 진행", "최대 성능 분석", "반복 구간"]
 description: "정지 대기는 데이터 덩어리(프레임) 하나를 보내고, 받는 쪽의 \"받았다\"는 답장(ACK)이 올 때까지 아무것도 보내지 않고 기다리는 방식이다. 그래서 선이 실제로 일하는 시간의 비율(사용률)은 \"프레임을 선에 싣는 시간 ÷ (싣는 시간 + 신호가 갔다 오는 시간)\"이다. 프레임이 …"

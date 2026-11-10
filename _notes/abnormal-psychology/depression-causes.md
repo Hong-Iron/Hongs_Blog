@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Causes of Depression", "우울증의 원인", "부정적 생활사건", "negative life events", "사회적 지지", "social support", "보호요인", "protective factors", "모노아민 가설", "monoamine hypothesis", "카테콜아민", "catecholamine", "HPA 축", "hypothalamic-pituitary-adrenal axis", "코르티솔", "cortisol", "생체리듬", "biorhythm", "계절성 우울증", "seasonal affective disorder", "멜라토닌", "광치료", "light therapy", "분노의 내향화", "anger turned inward", "긍정적 강화의 상실", "르윈손", "Lewinsohn"]
 description: "우울은 한 가지 원인으로 생기지 않는다. 힘든 일(생활사건)은 중요한 방아쇠지만 그것만으로는 우울의 20%도 설명하지 못한다. 그 밑에 뇌의 화학물질과 스트레스 호르몬 체계, 생체시계의 이상, 상실에 대한 무의식적 반응, 보상이 줄어든 생활, 비관적인 설명 습관과 생각의 틀이 겹쳐…"

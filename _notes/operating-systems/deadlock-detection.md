@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Deadlock Detection", "Deadlock Recovery", "교착상태 탐지", "교착상태 복구", "요청 행렬", "Request Matrix", "체크포인트", "Checkpoint"]
 description: "탐지는 예방과 정반대다. 요청이 오면 줄 수 있는 한 다 주고, 대신 주기적으로 교착상태가 생겼는지 찾아본다. 소방서가 불을 아예 못 나게 하는 대신 순찰을 돌다 불이 나면 끄는 것과 같다. 프로세스가 시작을 기다리는 일이 없고 자원을 넉넉히 쓴다. 하지만 교착상태가 생기면 프로세…"

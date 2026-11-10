@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["axum", "Axum", "Router", "라우터", "Handler", "핸들러", "Extractor", "추출기", "Path", "Query", "Json", "State", "IntoResponse", "Rejection", "거부", "tower", "Layer", "레이어", "Middleware", "미들웨어", "TraceLayer", "TimeoutLayer", "oneshot", "axum::serve", "with_graceful_shutdown", "axum 0.8"]
 description: "axum은 \"이 주소로 이런 요청이 오면 이 함수를 부른다\"는 표를 만들고, 요청에서 함수가 필요한 조각(주소 속 번호, JSON 본문, 모든 요청이 함께 쓰는 상태)을 꺼내 함수 인자로 넣어 주는 라이브러리다. 꺼내기에 실패하면 함수를 부르지 않고 알맞은 오류 응답을 대신 보낸다…"

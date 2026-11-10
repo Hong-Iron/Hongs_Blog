@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Arithmetic Logic Unit", "산술 논리 장치", "산술 논리 연산 장치", "1비트 ALU", "ALU 제어선", "Ainvert", "Binvert", "Bnegate", "set on less than", "slt", "Zero 출력"]
 description: "프로세서 안에서 계산을 맡는 회로다. 덧셈, 뺄셈, 비트끼리의 논리 연산을 한 덩어리에 넣어 두고, 바깥에서 주는 신호 몇 가닥으로 그 가운데 하나를 고른다. 버튼으로 기능을 고르는 계산기와 같다. 속은 한 자리짜리 회로를 자리 수만큼 줄지어 세운 것이다. 연산마다 회로를 따로 두…"

@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Improper Integral", "이상적분", "특이적분", "p-적분", "p-integral", "비교 판정", "comparison test", "가우스 적분", "Gaussian integral", "감마 함수"]
 description: "끝이 없는 구간이나, 값이 한없이 커지는 점이 있는 구간에서의 적분이다. 끝을 유한한 곳에서 잘라 적분한 뒤, 자르는 곳을 한없이 밀어 극한을 본다. 무한히 긴 꼬리도 충분히 빨리 얇아지면 넓이가 유한하다. 하지만 거리에 반비례하는 곡선처럼 느리게 얇아지면 넓이가 무한대가 되고, …"

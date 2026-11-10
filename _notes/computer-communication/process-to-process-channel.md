@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Process-to-Process Channel", "프로세스 간 통신", "통신 서비스", "communication service", "네트워크 투명성", "network transparency", "통신 장애", "장애 극복", "채널", "channel"]
 description: "네트워크가 컴퓨터끼리 선을 이어 주는 것만으로는 부족하다. 실제로 대화하는 것은 컴퓨터 안의 응용 프로그램이라서, 두 프로그램 사이에 전용 통로(채널)가 있는 것처럼 보이게 해 줘야 한다. 목표는 멀리 있는 상대와 주고받아도 같은 컴퓨터 안에서 주고받는 것처럼 느끼게 하는 것이다.…"

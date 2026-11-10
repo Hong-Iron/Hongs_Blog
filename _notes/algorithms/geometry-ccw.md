@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Computational Geometry", "CCW", "외적", "Cross Product", "선분 교차", "점 위치 판정"]
 description: "길을 걷다 다음 갈림길에서 왼쪽으로 꺾는지 오른쪽으로 꺾는지는 곱셈 두 번과 뺄셈 한 번으로 알 수 있다. 각도나 기울기를 계산하지 않고 정수로만 계산하니 오차가 없고, 세로선에서 0으로 나누는 일도 없다. 이 \"왼쪽인가 오른쪽인가\" 하나로 선분이 엇갈리는지, 점이 삼각형 안에 있…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Data Transfer Instructions", "MOV", "MOV 명령", "MOV Instruction", "XCHG", "XCHG 명령", "XCHG Instruction", "목적지 피연산자", "Destination Operand", "원본 피연산자", "Source Operand", "크기 불일치", "Size Mismatch"]
 description: "값을 한 곳에서 다른 곳으로 옮겨 적는 명령과, 두 곳의 값을 맞바꾸는 명령이다. 옮겨 적어도 원래 자리의 값은 그대로 남으므로 \"이동\"보다 \"복사\"에 가깝다. 계산은 거의 다 레지스터에서 하므로 프로그램의 절반은 값을 나르는 이 명령이다. 다만 양쪽의 크기가 같아야 하고, 메모리…"

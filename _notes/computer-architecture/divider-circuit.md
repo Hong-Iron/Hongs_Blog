@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Divider", "Divider Circuit", "복원 나눗셈", "Restoring Division", "순차 나눗셈기", "피제수", "Dividend", "제수", "Divisor", "몫", "Quotient", "나머지", "Remainder", "div", "divu"]
 description: "초등학교의 세로 나눗셈을 회로로 옮긴 것이다. 나누는 수를 큰 자리에 맞춰 놓고 \"들어가나?\" 물어본 뒤, 들어가면 빼고 몫에 1을 적고, 안 들어가면 몫에 0을 적는다. 그리고 나누는 수를 한 자리 낮춰 다시 묻는다. 회로는 들어가는지 미리 알 수 없어서 일단 빼 보고, 음수가 …"

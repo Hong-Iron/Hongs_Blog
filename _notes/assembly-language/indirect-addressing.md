@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Indirect Addressing", "간접 주소 지정", "Indirect Operand", "간접 피연산자", "Indexed Operand", "인덱스 피연산자", "Index Scaling", "인덱스 스케일링", "역참조", "Dereference", "포인터 변수", "Pointer Variable"]
 description: "주소를 코드에 못 박아 두지 않고 레지스터에 넣어 둔 뒤 \"이 레지스터가 가리키는 곳의 값\"을 읽고 쓴다. 손가락으로 책의 한 줄을 짚고, 손가락을 한 줄씩 내려 가며 읽는 것과 같다. 레지스터 값만 바꾸면 같은 명령이 배열의 다음 칸을 다루므로 배열을 훑는 기본 수단이 된다. 다…"

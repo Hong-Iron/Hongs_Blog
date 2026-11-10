@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["B-Tree", "B-tree", "B 트리", "비트리", "최소 차수", "Minimum Degree", "가득 찬 노드", "Full Node", "균형 탐색 트리", "Balanced Search Tree", "Disk-Read", "Disk-Write", "B+-트리", "B*-트리"]
 description: "도서관 서가 끝의 안내판처럼, 한 칸에 기준 값을 여러 개 적어 두고 그 사이사이로 길을 가르는 나무 모양 찾아보기다. 디스크는 한 번 읽는 데 오래 걸리지만 한 번에 많이 읽을 수 있다. 그래서 칸 하나에 값을 많이 담아 두면 디스크를 두세 번만 읽고도 수억 개 가운데 하나를 찾…"

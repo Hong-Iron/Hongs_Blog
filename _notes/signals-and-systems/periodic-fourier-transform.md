@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Fourier Transform for Periodic Signals", "주기 신호의 스펙트럼", "임펄스 열", "Impulse Train", "선 스펙트럼", "Line Spectrum"]
 description: "주기 신호는 에너지가 무한대라 보통의 적분으로는 변환이 나오지 않는다. 대신 임펄스를 쓰면 된다. 주기 신호는 고조파 주파수에만 성분이 있으므로, 그 변환은 고조파 자리에 세운 임펄스들의 줄이다. k번째 임펄스의 넓이는 푸리에 급수 계수의 2\\pi배다. 그래서 주기 신호와 비주기 …"

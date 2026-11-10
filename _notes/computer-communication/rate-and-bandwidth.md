@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Transmission Rate", "Bandwidth", "전송률", "데이터 전송률", "bit rate", "bps", "대역폭", "전송 지연", "전송 시간", "transmission delay", "전파 지연", "전파지연시간", "propagation delay", "비트 폭", "bit width"]
 description: "링크의 전송 속도(대역폭)는 1초에 선에 밀어 넣을 수 있는 데이터 양의 최댓값이다. 기차에 비유하면 객차를 선로에 올리는 빠르기가 전송 속도이고, 다 올린 기차가 다음 역까지 달리는 시간은 따로 있다. 속도를 올리면 올리는 시간만 줄고 달리는 시간은 그대로다. \"대역폭\"이라는 말…"

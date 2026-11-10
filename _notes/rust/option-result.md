@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Option", "Result", "Some", "None", "Ok", "Err", "null", "널", "결합 메서드", "Combinator", "map", "and_then", "ok_or", "unwrap_or_else", "unwrap", "expect", "빈 자리 최적화", "Null Pointer Optimization", "Niche Optimization"]
 description: "Rust에는 \"아무것도 없음\"을 뜻하는 null이 없다. 값이 없을 수도 있으면 \"있음 또는 없음\" 상자(Option)에, 실패할 수도 있으면 \"성공 또는 실패 사유\" 상자(Result)에 담아 돌려준다. 상자를 열어 보지 않고는 안의 값을 못 쓰므로, 없는 값을 있는 줄 알고 쓰…"

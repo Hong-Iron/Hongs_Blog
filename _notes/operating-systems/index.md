@@ -11,6 +11,7 @@ concepts: 68
 practices: 8
 codes: 40
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 description: "운영체제 공부 노트: 개념 문서, 연습 문제, 코드"
 math: false
 mermaid: true

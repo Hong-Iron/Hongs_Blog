@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Little Endian", "Little Endian Order", "리틀 엔디언 순서", "바이트 순서", "Byte Order", "빅 엔디언", "Big Endian", "최하위 바이트", "Least Significant Byte"]
 description: "여러 바이트짜리 수를 메모리에 적을 때 인텔 CPU는 가장 아랫자리 바이트를 가장 낮은 주소에 둔다. 1234를 칸마다 한 덩이씩 \"34, 12\" 순서로 적는 셈이다. 레지스터로 통째로 읽으면 CPU가 알아서 원래 순서로 돌려놓으므로 평소에는 신경 쓸 일이 없다. 하지만 메모리를 …"

@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Applications of Derivatives", "Optimization", "증가와 감소", "increasing and decreasing", "극값", "local extremum", "극대", "극소", "임계점", "critical point", "페르마 정리", "Fermat's theorem", "이계도함수 판정법", "second derivative test", "오목과 볼록", "concavity", "변곡점", "inflection point", "최댓값과 최솟값", "최적화"]
 description: "도함수의 부호가 함수가 오르는지 내리는지 알려 주고, 도함수가 0이 되는 곳이 봉우리나 골짜기의 후보다. 이계도함수는 곡선이 그릇 모양인지 뒤집힌 그릇 모양인지 알려 준다. 이 둘로 \"비용은 가장 작게, 이익은 가장 크게\" 하는 값을 찾는다. 다만 도함수가 0인 곳이 늘 최대·최소…"

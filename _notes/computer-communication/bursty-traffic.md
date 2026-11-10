@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Bursty Traffic", "버스트", "burst", "BURSTY", "최대 대 평균 비", "peak-to-average ratio"]
 description: "웹 페이지를 열 때만 잠깐 데이터가 몰리고 글을 읽는 동안은 거의 오가지 않는 것처럼, 짧게 몰려 나왔다가 오래 쉬는 트래픽이다. 컴퓨터 통신 트래픽의 특징이다. 가장 많이 보낼 때가 평소보다 훨씬 크다. 그래서 가장 많이 보낼 때에 맞춰 용량을 미리 잡아 두면 대부분의 시간에 비…"

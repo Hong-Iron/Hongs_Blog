@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Binomial Distribution", "이항분포", "베르누이 시행", "Bernoulli trial", "베르누이 분포", "Bernoulli distribution", "초기하분포", "hypergeometric distribution", "패킷 손실", "packet loss"]
 description: "성공과 실패 둘 중 하나만 나오는 시도를 같은 성공 확률로 서로 영향 없이 여러 번 할 때, 성공한 횟수의 분포다. 동전 앞면 수, 손실된 패킷 수, 동시에 접속한 사용자 수가 모두 이 모양이다. \"몇 번째 시도가 성공인가\"의 경우의 수에 각 경우의 확률을 곱해 구하고, 평균은 시…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
 last_modified_at: "2026-09-27"
+date: "2026-09-27"
 status: "verified"
 aliases: ["Dissociation", "해리장애", "Dissociative Disorders", "해리 방어", "인격의 통합 기능"]
 description: "책에 푹 빠져 누가 불러도 모르는 순간처럼, 나 자신이나 시간, 주변에 대한 의식의 흐름이 잠시 끊기는 현상이다. 그 자체는 누구나 겪는 정상 경험이고, 감당하기 힘든 충격에서 마음을 지켜 주기도 한다. 문제는 끊김이 너무 길거나 잦아져 기억, 의식, 정체감이 하나로 묶이지 못할 …"

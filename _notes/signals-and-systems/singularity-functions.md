@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Singularity Functions", "이상화된 짧은 펄스", "Idealized Short Pulse", "단위 램프", "Unit Ramp", "컨벌루션으로 정의한 임펄스", "Defining the Unit Impulse through Convolution"]
 description: "특이함수는 값이 갑자기 뛰거나(불연속) 기울기가 갑자기 바뀌는 함수로, 단위 계단·단위 임펄스·단위 램프가 대표다. 그중 단위 임펄스는 \"충분히 짧고 넓이가 1인 펄스\"를 이상화한 것이다. 실제 시스템은 아주 짧은 시간의 모양 차이를 구별하지 못해서, 짧은 펄스가 사각형이든 삼각형…"

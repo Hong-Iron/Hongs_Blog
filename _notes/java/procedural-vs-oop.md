@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Procedural Programming vs Object-Oriented Programming", "절차 지향 프로그래밍", "Procedural Programming"]
 description: "둘 다 \"학생들의 시험 점수 평균을 낸다\"는 같은 일을 할 수 있다. 가르는 질문은 \"자료와 그 자료를 다루는 코드를 한곳에 묶어 두는가\"다. 절차 지향은 할 일을 위에서 아래로 순서대로 적고 자료는 따로 둔다. 객체 지향은 자료와 그 자료를 다루는 메서드를 객체 하나에 묶는다."

@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Chain Rule and Backpropagation", "역전파", "backpropagation", "오차 역전파", "자동미분", "automatic differentiation", "역방향 모드", "reverse mode", "순방향 모드", "forward mode", "계산 그래프", "computational graph"]
 description: "신경망을 학습시키는 역전파는 새로운 수학이 아니라, 다변수 연쇄 법칙을 계산 그래프 위에서 출력 쪽부터 거꾸로 적용하는 방법이다. 연쇄 법칙의 \"길을 따라 곱하고, 여러 길은 더한다\"가 역전파의 \"간선을 따라 기울기를 곱해 내려보내고, 한 노드에 모이면 더한다\"와 같다. 출력이 손…"

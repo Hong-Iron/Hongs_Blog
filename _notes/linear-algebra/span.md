@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Linear Combination", "선형결합", "일차결합", "Span", "생성", "생성하는 공간", "spanned subspace"]
 description: "벡터 몇 개를 각각 늘이거나 줄여서 더한 것이 선형결합이고, 그렇게 만들 수 있는 모든 벡터의 모임이 생성(span)이다. 물감 세 가지를 비율만 바꿔 섞어 만들 수 있는 모든 색을 떠올리면 된다. \"이 목표에 닿을 수 있는가\"가 곧 \"연립방정식에 해가 있는가\"라서 선형대수의 거의…"

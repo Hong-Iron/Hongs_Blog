@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Disk Cache", "LRU", "LFU", "Least Frequently Used", "빈도 기반 교체", "Frequency-Based Replacement", "페이지 캐시", "Page Cache"]
 description: "디스크 캐시는 디스크 섹터 일부를 주기억장치에 복사해 둔 버퍼다. 자주 펴는 책 몇 권을 책상 위에 두는 것처럼, 같은 섹터를 다시 찾으면 디스크까지 가지 않고 메모리에서 바로 준다. 지역성 덕분에 한 번 가져온 블록은 곧 또 쓰일 가능성이 크다. 문제는 캐시가 찼을 때 무엇을 내…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Ambiguous Grammar", "Ambiguity", "모호성", "문법의 모호함", "Dangling Else", "매달린 else", "Disambiguating Rule", "모호함 해소 규칙", "연산자 우선순위", "Operator Precedence"]
 description: "문장 하나를 두 가지 나무로 그릴 수 있는 문법이다. \"2 곱하기 3 더하기 4\"를 곱셈부터 묶으면 10이고 덧셈부터 묶으면 14인데, 문법이 둘 다 허락하면 컴파일러는 어느 쪽으로 계산할지 정할 수 없다. 받아들이는 문장의 범위는 그대로 둔 채, \"곱셈을 먼저 묶는다\" 같은 약속…"

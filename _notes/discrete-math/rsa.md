@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["RSA", "RSA 암호", "RSA cryptosystem", "공개키 암호", "public-key cryptography", "비대칭 암호", "asymmetric cryptography", "공개키", "public key", "개인키", "private key", "전자서명", "digital signature", "밀러–라빈", "Miller–Rabin"]
 description: "누구나 채울 수 있지만 열쇠를 가진 사람만 열 수 있는 자물쇠를 수학으로 만든 것이다. 두 큰 소수를 곱해 공개하고, 그 곱을 쪼개야만 알 수 있는 열쇠는 혼자 갖는다. 곱하기는 쉽고 소인수분해는 어렵다는 비대칭 덕분에, 미리 비밀을 나누지 않은 사람끼리도 암호문을 주고받고 전자서…"

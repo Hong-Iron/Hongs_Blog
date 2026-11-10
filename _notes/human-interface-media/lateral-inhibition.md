@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Lateral Inhibition", "측억제", "헤르만 격자", "Hermann Grid", "마하 띠", "Mach Band", "마하 밴드", "경계 강조", "edge enhancement"]
 description: "옆 사람이 크게 부를수록 내 목소리를 줄이는 합창단과 같다. 망막의 각 세포는 이웃 세포가 받은 빛에 비례해 자기 신호를 줄인다. 고른 영역에서는 모두가 비슷하게 줄어 차이가 그대로지만, 밝은 곳과 어두운 곳의 경계에서는 차이가 부풀려진다. 그래서 윤곽이 또렷해지는 대신, 헤르만 …"

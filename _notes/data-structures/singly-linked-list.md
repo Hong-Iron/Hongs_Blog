@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Singly Linked List", "Linked List", "연결 리스트", "체인", "Chain", "노드", "Node", "링크", "link", "listNode", "listPointer", "first", "beforeNode", "연결 표현", "Linked Representation"]
 description: "보물찾기 쪽지처럼, 원소마다 \"다음 원소가 어디 있는지\"를 함께 적어 둔 줄이다. 원소들이 메모리 여기저기에 흩어져 있어도 쪽지만 따라가면 순서대로 만난다. 가운데에 끼우거나 빼는 일은 쪽지 한두 장만 고치면 끝난다. 대신 몇 번째 원소를 보려면 처음부터 그만큼 따라가야 하고, 쪽…"

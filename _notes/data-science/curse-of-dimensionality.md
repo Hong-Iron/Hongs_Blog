@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Curse of Dimensionality", "고차원 자료", "High-dimensional Data", "거리 집중", "Distance Concentration", "희소성", "Sparsity"]
 description: "속성(차원)이 많아지면 공간이 너무 넓어져 자료가 듬성듬성 흩어진다. 그러면 가장 가까운 이웃조차 멀리 있고, 모든 점 쌍의 거리가 거의 같아져 \"가깝다, 멀다\"를 가리는 일이 무의미해진다. 거리에 기대는 k-평균, GMM, DBSCAN은 고차원에서 제대로 일하지 못한다. 그래서 …"

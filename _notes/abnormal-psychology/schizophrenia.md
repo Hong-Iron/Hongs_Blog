@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Schizophrenia", "정신분열증", "조현병의 진단기준", "전구기", "prodromal phase", "활성기", "active phase", "관해", "remission", "뇌실 확장", "신경발달장애로서의 조현병", "사회적 유발설", "sociogenic hypothesis", "사회적 선택설", "social selection hypothesis", "자아 경계", "ego boundary", "인지재활", "cognitive remediation", "토큰 경제", "token economy", "사회기술훈련", "social skill training", "SST", "심리교육", "psychoeducation", "낮병원", "day hospital", "전기충격치료"]
 description: "망상, 환각, 뒤죽박죽인 말과 행동, 감정과 의욕의 상실이 한동안 계속되면서 일상생활이 크게 무너지는 병이다. 대개 10대 후반에서 30대 중반에 시작하고, 좋아졌다 나빠지기를 되풀이하며 오래 가는 경우가 많다. 한 가지 원인이 아니라 타고난 취약성과 환경 스트레스가 겹쳐 생긴다고…"

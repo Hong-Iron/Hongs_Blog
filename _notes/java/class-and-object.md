@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Class and Object", "Class", "Object", "Instance", "인스턴스", "객체 모델링", "Object Modeling", "객체 지향 프로그래밍", "Object-Oriented Programming", "OOP"]
 description: "클래스는 쿠키 틀이고, 객체는 그 틀로 찍어 낸 쿠키다. 틀 하나로 쿠키를 몇 개든 찍을 수 있고, 찍힌 쿠키는 저마다 따로 논다. 하나를 베어 먹어도 다른 쿠키는 멀쩡하다. 틀만 있어서는 먹을 것이 없듯이, 클래스만 써 놓고 객체를 찍어 내지 않으면 프로그램에서 쓸 것이 없다. …"

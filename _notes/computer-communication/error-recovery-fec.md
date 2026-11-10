@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Error Recovery", "오류 복구", "Forward Error Correction", "FEC", "순방향 오류 수정", "오류 수정 코드", "Error Correcting Code", "ECC", "역방향 수정", "Backward Error Correction", "프레이밍 오류", "Framing Error", "프레임 분실", "Frame Loss"]
 description: "오류를 찾은 뒤 망가진 데이터 덩어리(프레임)를 되살리는 방법은 둘이다. 받는 쪽이 덧붙은 정보로 스스로 고치는 방법(순방향 오류 수정, FEC)과, 보낸 쪽에 다시 보내 달라고 하는 방법(재전송, ARQ)이다. FEC는 기다리지 않아 실시간 통신에 맞지만, 오류를 찾기만 할 때보…"

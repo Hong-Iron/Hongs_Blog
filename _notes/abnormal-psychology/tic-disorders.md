@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Tic Disorders", "틱", "tic", "투렛장애", "Tourette's Disorder", "지속성 틱장애", "Persistent Tic Disorder", "일시성 틱장애", "Provisional Tic Disorder", "운동틱", "motor tic", "음성틱", "vocal tic", "단순틱", "복합틱", "전조 감각", "premonitory urge", "포괄적 행동 개입", "CBIT"]
 description: "눈 깜빡임, 어깨 들썩임, 킁킁거림, 헛기침처럼 갑작스럽고 빠른 동작이나 소리가 리듬 없이 되풀이되는 장애다. 틱 직전에 간질간질하거나 답답한 느낌(전조 감각)이 오고 틱을 하면 풀리므로, 완전히 저절로 일어나는 것만은 아니다. 대개 4~6세에 시작해 10~12세에 가장 심하고 점…"

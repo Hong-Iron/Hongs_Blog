@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Posttraumatic Growth", "PTG", "외상 후 적응", "회복탄력성", "resilience", "역경에 굴복", "손상을 동반한 버팀"]
 description: "큰 역경을 겪은 뒤, 예전 수준으로 돌아오는 것을 넘어 오히려 더 단단해지고 삶을 보는 눈이 깊어지는 변화다. 자신을 더 따뜻하게 받아들이고, 관계가 솔직해지고, 무엇이 중요한지 다시 정한다. 외상이 좋은 일이라는 뜻이 아니고, 고통과 성장은 함께 있을 수 있다. 모두가 성장하지는…"

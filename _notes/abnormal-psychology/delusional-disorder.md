@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Delusional Disorder", "편집증", "paranoia", "색정형", "erotomanic type", "과대형", "grandiose type", "질투형", "jealous type", "피해형", "persecutory type", "신체형", "somatic type", "잘못된 삼단논법", "폰 도마루스 원리", "Von Domarus principle", "외부 귀인"]
 description: "한 가지 이상의 망상이 한 달 넘게 이어지지만, 망상과 관련된 일 말고는 생활이 멀쩡한 경우다. 이웃이 자기를 해치려 한다고 믿으면서도 직장에는 잘 다니는 식이다. 조현병보다 기능은 좋지만, 본인은 병이라 여기지 않아 치료자를 믿지 않고 약도 거부하기 쉽다. 그래서 망상에 정면으로…"

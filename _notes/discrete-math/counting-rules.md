@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Counting Rules", "합의 법칙", "sum rule", "곱의 법칙", "product rule", "일반화된 곱의 법칙", "generalized product rule", "전단사 법칙", "bijection rule", "나눗셈 법칙", "division rule", "여사건으로 세기", "complement counting", "경우의 수"]
 description: "경우의 수는 세 가지 도구로 거의 다 센다. 겹치지 않는 경우들은 더하고(합의 법칙), 차례로 고르는 선택은 곱하고(곱의 법칙), 세기 어려운 것은 세기 쉬운 것과 하나씩 짝지어 센다(전단사 법칙). 같은 것을 여러 번 세었다면 그 횟수로 나눈다(나눗셈 법칙). 합의 법칙은 경우들…"

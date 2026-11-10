@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Inclusion-Exclusion Principle", "포함-배제", "포함배제", "교란순열", "derangement", "모자 문제", "hat-check problem", "전사 함수의 수", "surjections"]
 description: "겹치는 모음들의 합집합 크기를 셀 때, 각 크기를 그냥 더하면 겹친 부분이 여러 번 세어진다. 둘이 겹친 부분을 빼고, 셋이 겹친 부분은 다시 더하는 식으로 번갈아 고쳐 정확한 수를 얻는다. 여러 조건을 \"모두 피하는\" 경우의 수를 셀 때 특히 강하다. 다만 모음이 많아지면 더하고…"

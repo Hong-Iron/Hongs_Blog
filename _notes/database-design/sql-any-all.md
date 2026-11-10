@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["ANY", "ALL", "SOME", "= ANY", "> ALL", "한정 비교", "Quantified Comparison", "비교 연산자", "Comparison Operator"]
 description: "쪽지에 적힌 값들과 \"같은 것이 있나\"만 묻는 것이 아니라 \"더 큰가, 더 작은가\"를 묻고 싶을 때가 있다. 그때는 \"쪽지의 값 가운데 어느 하나보다만 크면 된다\"인지 \"쪽지의 값 모두보다 커야 한다\"인지를 함께 말해야 한다. 앞의 것이 ANY, 뒤의 것이 ALL이다. 쪽지가 비어…"

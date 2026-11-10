@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["User-Defined Exception", "Custom Exception", "커스텀 예외", "InsufficientException"]
 description: "자바가 미리 만들어 둔 사고 종류에는 \"잔액이 모자란다\" 같은 내 프로그램만의 사고가 없다. 그럴 때 사고 종류를 직접 하나 만든다. 이름만 봐도 무슨 사고인지 알 수 있고, 받는 쪽에서 그 사고만 골라 처리할 수 있다. 만들 때 어느 부모 밑에 둘지를 골라야 한다. 그 선택에 따…"

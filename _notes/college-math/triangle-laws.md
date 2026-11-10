@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Law of Sines", "Law of Cosines", "사인 법칙", "코사인 법칙", "삼각형의 넓이", "삼각측량", "triangulation", "두 점 사이의 거리", "distance formula", "모호한 경우", "ambiguous case"]
 description: "직각이 아닌 삼각형에서도 변과 각 사이의 관계를 알려 주는 두 공식이다. 코사인 법칙은 피타고라스 정리에 \"직각에서 벗어난 만큼\" 보정하는 항을 붙인 것이라, 세 변을 알면 각을, 두 변과 끼인각을 알면 나머지 변을 구한다. 사인 법칙은 각과 마주 보는 변의 비가 모두 같다는 것이…"

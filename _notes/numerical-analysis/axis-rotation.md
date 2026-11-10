@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Rotation around an Arbitrary Axis", "3차원 회전", "3D Rotation", "축 회전", "로드리게스 회전 공식", "Rodrigues' Rotation Formula", "기본 회전", "Elemental Rotation"]
 description: "3차원에서는 x, y, z축을 중심으로 도는 회전은 쉽지만, 비스듬한 축을 중심으로 돌리는 것은 바로 쓰기 어렵다. 한 방법은 축을 x축으로 눕히고, x축으로 돌리고, 다시 세우는 다섯 단계다. 다른 방법은 점을 \"축 방향 부분\"과 \"축에 수직인 부분\"으로 나눠, 수직인 부분만 원…"

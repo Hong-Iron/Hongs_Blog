@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Inverse Function", "일대일 함수", "one-to-one", "injective", "수평선 판정", "horizontal line test"]
 description: "역함수는 암호를 푸는 열쇠처럼 출력에서 입력을 되찾는 함수다. 서로 다른 두 입력이 같은 출력을 내면 원래 어느 쪽이었는지 알 수 없으므로, 그런 함수에는 역함수가 없다. 그럴 때는 입력 범위를 잘라서 역함수를 만든다. 이 자르기가 제곱근, 로그, 아크사인에서 계속 나온다."

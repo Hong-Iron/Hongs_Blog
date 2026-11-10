@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Computer Security", "CIA Triad", "기밀성", "Confidentiality", "무결성", "Integrity", "가용성", "Availability", "진정성", "Authenticity", "책임 추적성", "Accountability", "위협 결과", "Threat Consequences", "무단 공개", "Unauthorized Disclosure", "기만", "Deception", "방해", "Disruption", "강탈", "Usurpation", "자산", "Assets", "침입자", "Intruders", "위장자", "Masquerader", "부정 사용자", "Misfeasor", "은밀한 사용자", "Clandestine User"]
 description: "컴퓨터 보안은 세 가지를 지키는 일이다. 허락받은 사람만 보고(기밀성), 허락 없이 바뀌지 않고(무결성), 필요할 때 쓸 수 있어야(가용성) 한다. 은행 금고로 치면 아무나 들여다보지 못하고, 몰래 돈이 바뀌지 않고, 영업시간엔 문이 열려 있어야 하는 것이다. 공격은 이 셋 중 무…"

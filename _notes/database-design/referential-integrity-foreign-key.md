@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Referential Integrity Constraint", "참조 무결성", "Foreign Key", "외래 키", "외래키", "FK", "참조하는 릴레이션", "Referencing Relation", "참조되는 릴레이션", "Referenced Relation"]
 description: "직원 표에 \"5번 부서 소속\"이라고 적었다면 부서 표에 5번 부서가 정말 있어야 한다. 한 표의 줄이 다른 표의 줄을 가리킬 때, 가리킨 곳에 그 줄이 있어야 한다는 규칙이다. 가리키는 칸에는 상대 표의 대표 값과 같은 종류의 값이 들어가고, 그 값은 상대 표에 실제로 있는 값이거…"

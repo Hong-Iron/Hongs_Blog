@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["DROP", "DROP TABLE", "DROP SCHEMA", "CASCADE", "RESTRICT", "스키마 진화", "Schema Evolution", "스키마 변경", "Schema Modification", "표 삭제", "테이블 삭제", "Drop Behavior"]
 description: "표나 표 묶음을 통째로 없애는 명령이다. 행을 지우면 빈 표가 남아 다시 채울 수 있지만, 표를 없애면 틀까지 사라져 그 이름으로는 아무것도 할 수 없다. 서류철에서 종이를 다 빼는 것과 서류철 자체를 버리는 것의 차이다. 없애려는 것에 다른 것이 기대고 있을 때는, 기댄 것까지 …"

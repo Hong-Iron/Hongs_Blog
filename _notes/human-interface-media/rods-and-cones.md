@@ -11,6 +11,7 @@ course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Rods", "Cones", "간상세포", "추상세포", "간상체", "추상체", "시세포", "photoreceptor", "야간 시각", "색 시각", "L 추상체", "M 추상체", "S 추상체", "시세포의 분포"]
 description: "망막의 시세포는 두 팀이다. 간상체는 어두운 곳에서 일하는 고감도 흑백 카메라, 추상체는 밝은 곳에서 일하는 컬러 카메라다. 간상체가 훨씬 많고 약한 빛에 민감하지만 색을 구별하지 못한다. 추상체는 색을 보지만 빛이 충분해야 일한다. 추상체는 시선의 중심(중심와)에 몰려 있고 간상…"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Gambling Disorder", "병적 도박", "pathological gambling", "도박중독", "손실 추구", "chasing losses", "통제력의 착각", "illusion of control", "도박사의 오류", "gambler's fallacy", "미신적 사고", "익명의 도박중독자 모임", "Gamblers Anonymous", "GA", "보상에 대한 과잉민감성"]
 description: "물질 없이도 술이나 약물처럼 사람을 붙잡는 대표적인 행위 중독이다. 처음 딴 기억에 끌려 판돈을 키우고, 잃으면 되찾으려고 더 걸고(손실 추구), 그 사실을 숨기려고 거짓말하고, 돈을 빌린다. \"이번엔 딸 차례\"라는 착각 같은 인지 왜곡이 도박을 붙잡는다. 대부분 가족이나 법원에 …"

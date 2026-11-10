@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Gaussian Elimination", "가우스 소거법", "소거법", "elimination", "행 연산", "elementary row operation", "기본 행 연산", "피벗", "pivot", "부분 피벗팅", "partial pivoting", "후진 대입", "back substitution", "행 사다리꼴", "row echelon form", "기약 행 사다리꼴", "RREF", "첨가행렬", "augmented matrix", "자유변수", "free variable"]
 description: "중학교 때 배운 가감법 그대로다. 한 식의 몇 배를 다른 식에서 빼서 x를 없애고, 그다음 y를 없앤다. 그러면 맨 아래 식에는 미지수가 하나만 남아 바로 풀리고, 위로 올라가며 하나씩 대입하면 답이 다 나온다. 식이 수천 개여도 똑같이 기계적으로 할 수 있어서 컴퓨터가 연립방정식…"

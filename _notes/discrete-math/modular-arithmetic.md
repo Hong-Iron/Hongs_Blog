@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Modular Arithmetic", "모듈러 산술", "합동", "congruence", "나머지 연산", "modulo", "mod", "나눗셈 정리", "division theorem", "약수", "divisor", "배수", "시계 산술", "clock arithmetic"]
 description: "시계는 12시 다음에 다시 1시로 돌아온다. 이처럼 어떤 수로 나눈 나머지만 보고 계산하는 것이 모듈러 산술이다. 더하기·빼기·곱하기는 중간에 몇 번이든 나머지를 취해도 결과가 같아서, 큰 수의 계산을 작은 수로 끝낼 수 있다. 하지만 나눗셈(양변을 같은 수로 나누기)은 늘 되지는…"

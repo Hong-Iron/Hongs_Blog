@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Internet Checksum", "체크섬", "Checksum", "1의 보수 합", "One's Complement Sum", "자리올림 되돌리기", "End-around Carry"]
 description: "메시지를 16비트 숫자들로 잘라 모두 더하고, 그 합의 비트를 모두 뒤집은 값(체크섬)을 붙여 보낸다. 받는 쪽이 받은 숫자와 체크섬을 함께 더하면, 오류가 없을 때 모든 비트가 1인 값이 나온다. 덧셈만 하므로 소프트웨어로도 빠르지만, 더하는 순서가 바뀌거나 한 숫자가 늘고 다른…"

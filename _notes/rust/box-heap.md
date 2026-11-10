@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Box", "Box<T>", "Heap", "힙", "Stack", "스택", "Recursive Type", "재귀 타입", "E0072", "Box<dyn Trait>", "Box<[T]>", "Box<str>", "Fat Pointer", "넓은 포인터", "Null Pointer Optimization"]
 description: "Box는 값을 프로그램이 따로 빌려 쓰는 넓은 메모리(힙)에 맡겨 두고, 손에는 그 자리를 적은 쪽지(주소 하나)만 들고 다니는 방법이다. 쪽지는 늘 같은 크기라서, 자기 안에 자기를 품는 타입이나 종류가 섞인 값도 담을 수 있고, 큰 값을 넘길 때도 쪽지만 건네면 된다. 대신 맡…"

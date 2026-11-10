@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Tail Bounds", "확률 부등식", "꼬리 확률", "tail probability", "마르코프 부등식", "Markov's inequality", "체비쇼프 부등식", "Chebyshev's inequality", "체르노프 한계", "Chernoff bound", "집중 부등식", "concentration inequality"]
 description: "분포를 정확히 몰라도 평균이나 분산만 알면 \"평균에서 크게 벗어날 확률\"이 얼마 이하인지 보장할 수 있다. 평균만 쓰는 마르코프, 분산까지 쓰는 체비쇼프, 독립인 것들의 합에 쓰는 체르노프 순으로 가정이 늘고 한계가 급격히 좁아진다. 무작위 알고리즘이 \"높은 확률로\" 잘 동작한다는…"

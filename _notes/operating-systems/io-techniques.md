@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["I/O Communication Techniques", "프로그램 입출력", "Programmed I/O", "인터럽트 구동 입출력", "Interrupt-Driven I/O", "직접 메모리 접근", "DMA", "Direct Memory Access"]
 description: "프로세서가 입출력 장치와 데이터를 주고받는 방법은 세 가지다. 택배를 기다리는 일에 비유하면, 현관에 서서 계속 내다보기(프로그램 입출력), 초인종이 울리면 나가 한 상자씩 받기(인터럽트 구동 입출력), 관리인에게 \"다 받아서 방에 넣어 주세요\"라고 맡기고 끝나면 연락받기(DMA)…"

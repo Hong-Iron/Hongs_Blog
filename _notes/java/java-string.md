@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["String", "문자열", "문자열 리터럴", "String Literal", "문자열 풀", "String Pool", "String Constant Pool", "equals", "불변", "Immutable", "charAt", "length", "replace", "substring", "indexOf", "split", "intern"]
 description: "글자를 줄줄이 이은 것을 문자열이라 한다. 자바는 코드에 똑같은 글귀를 여러 번 적어도 그것을 한 번만 만들어 두고 같이 쓴다. 메모리를 아끼는 장치다. 그런데 이 때문에 두 문자열이 같은지 주소로 견주면 어떤 때는 맞고 어떤 때는 틀린다. 직접 새로 만든 문자열이나 실행 중에 생…"

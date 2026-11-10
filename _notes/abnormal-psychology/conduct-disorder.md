@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Conduct Disorder", "CD", "제한된 친사회적 정서", "with limited prosocial emotions", "냉담-무정서 특성", "callous-unemotional traits", "아동기 발병형", "childhood-onset type", "청소년기 발병형", "adolescent-onset type", "적대적 귀인 편향", "hostile attribution bias", "품행장애의 발달경로모델", "Capaldi & Patterson"]
 description: "남을 괴롭히고, 동물을 학대하고, 물건을 부수고, 훔치고, 가출하는 등 다른 사람의 기본 권리를 침해하고 나이에 맞는 규칙을 반복해서 어기는 아동·청소년의 장애다. 어른에게 반항하는 데 그치는 적대적 반항장애보다 훨씬 심각하다. 어릴 때의 ADHD에서 시작해 품행장애를 거쳐 성인의…"

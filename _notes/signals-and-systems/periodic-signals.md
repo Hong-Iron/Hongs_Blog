@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Periodic Signal", "주기", "Period", "기본 주기", "Fundamental Period", "비주기 신호", "Aperiodic Signal"]
 description: "일정한 시간마다 똑같은 모양이 끝없이 되풀이되는 신호다. 시계 초침처럼, 한 바퀴 시간만큼 밀어도 그림이 그대로다. 되풀이 간격 중 가장 짧은 것을 기본 주기라 한다. 한 구간만 반복처럼 보여서는 안 되고, 모든 시간에서 맞아야 한다. 그래서 한쪽은 \\cos, 다른 쪽은 \\sin으…"

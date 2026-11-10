@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Rotate Instructions", "ROL", "ROR", "RCL", "RCR", "Rotate Left", "Rotate Right", "Rotate Carry Left", "Rotate Carry Right", "비트 회전", "순환 시프트"]
 description: "회전초밥집의 벨트처럼, 한쪽 끝에서 밀려난 비트가 사라지지 않고 반대쪽 끝으로 다시 들어오는 밀기다. 그래서 몇 번을 돌려도 잃는 비트가 없고, 칸 수만큼 돌리면 처음 값으로 돌아온다. 벨트에 보관 칸 하나를 끼워 한 칸 더 긴 고리로 돌리는 종류도 있는데, 이쪽은 여러 레지스터에…"

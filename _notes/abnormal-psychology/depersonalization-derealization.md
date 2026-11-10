@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Depersonalization/Derealization Disorder", "DPDR", "이인성 장애", "이인증", "depersonalization", "비현실감", "derealization", "낯섦", "estrangement", "자동장치", "automaton", "파국적 귀인"]
 description: "내가 나 같지 않고 밖에서 나를 구경하는 느낌(이인증), 또는 세상이 꿈이나 영화 세트처럼 가짜 같은 느낌(비현실감)이 되풀이되는 장애다. 그래도 \"그렇게 느껴질 뿐 실제로는 아니다\"라는 것을 안다. 현실검증력이 살아 있다는 점이 망상과 가르는 핵심이다. 불쾌하고 겁나는 경험이라,…"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Code", "Encoding", "부호", "코드", "부호화", "인코딩", "복호화", "Decoding", "디코딩", "코덱", "Codec", "문자 부호", "ASCII", "유니코드", "Unicode", "UTF-8", "UTF-16", "부호어", "Codeword", "블록 부호", "Block Code", "부호 비율", "Code Rate", "부호 이론", "Coding Theory"]
 description: "어떤 대상을 가리키려고 정해 둔 기호가 부호다. 모스 부호에서 점 하나와 선 하나가 글자 A를 뜻하는 것과 같다. 대상을 기호로 바꾸는 일과 기호를 대상으로 되돌리는 일이 짝을 이루고, 한 기호가 두 대상을 가리키지 않아야 되돌릴 수 있다. 기호를 길게 쓰면 틀린 곳을 찾아낼 여유…"

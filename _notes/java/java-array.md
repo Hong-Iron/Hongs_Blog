@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Array", "배열", "인덱스", "Index", "배열 길이", "length", "다차원 배열", "Multidimensional Array", "2차원 배열", "배열 복사", "System.arraycopy", "Arrays.copyOf", "얕은 복사", "Shallow Copy", "향상된 for", "Enhanced for", "for-each", "ArrayIndexOutOfBoundsException", "String[] args"]
 description: "배열은 같은 종류의 값을 번호 붙은 칸에 줄지어 넣어 둔 것이다. 아파트 한 동의 우편함처럼, 이름 하나와 번호만 있으면 어느 칸이든 바로 열 수 있다. 값이 백 개든 만 개든 변수 하나와 반복문으로 다룰 수 있다. 대신 칸 수는 만들 때 정해져 나중에 늘릴 수 없고, 번호는 0부…"

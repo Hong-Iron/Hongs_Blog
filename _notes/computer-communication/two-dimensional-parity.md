@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Two-Dimensional Parity", "2D Parity", "가로 패리티", "세로 패리티", "VRC", "Vertical Redundancy Check", "LRC", "Longitudinal Redundancy Check", "패리티 바이트", "Parity Byte"]
 description: "데이터를 바이트마다 한 줄씩 쌓아 표로 만든 뒤, 줄마다 끝에, 칸마다 아래에 1의 개수를 짝수로 맞추는 비트(패리티 비트)를 하나씩 붙인다. 비트 하나가 뒤집히면 그 비트가 있는 줄과 칸의 검사가 함께 틀리므로, 두 검사가 만나는 곳에서 어느 비트인지 알아내 고칠 수도 있다. 2…"

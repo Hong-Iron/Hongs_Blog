@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Intermittent Explosive Disorder", "IED", "분노조절장애", "분노 폭발", "분노조절 프로그램", "anger management"]
 description: "쉽게 말해 분노조절장애다. 평소에는 괜찮다가 사소한 일에 갑자기 폭발해 욕하고 물건을 부수거나 사람을 때리는데, 그 강도가 상황에 비해 지나치다. 계획한 공격도, 돈이나 힘을 얻으려는 공격도 아니다. 폭발 전에 긴장이 차오르고 폭발하면 잠깐 후련하지만, 뒤이어 직장, 가정, 법의 …"

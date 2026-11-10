@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Systems of ODEs", "연립 미분방정식", "고계 상미분방정식", "Higher-Order ODE", "초깃값 문제", "Initial-Value Problem", "1계 연립으로 바꾸기"]
 description: "실제 문제는 미지 함수가 여럿이고 서로의 변화에 영향을 준다(예: 포식자와 먹이의 수). 이런 연립 방정식도 미지 함수들을 한 목록(벡터)으로 묶으면, 오일러나 룽게-쿠타 공식을 목록의 각 칸에 똑같이 적용해 푼다. y'' = \\dots 같은 2계 이상의 방정식도 y'을 새 미지 …"

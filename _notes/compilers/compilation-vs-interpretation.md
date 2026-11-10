@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Compilation vs Interpretation", "컴파일", "Compilation", "인터프리트", "Interpretation", "인터프리터", "Interpreter", "하이브리드 컴파일러", "Hybrid Compiler", "바이트코드", "Bytecode"]
 description: "둘 다 사람이 쓴 프로그램을 컴퓨터가 돌릴 수 있게 옮기고, 틀린 곳을 찾아 알려 준다. 가르는 질문은 \"언제, 얼마만큼 옮기는가\"다. 책 한 권을 미리 통째로 번역해 두는 것과, 통역사가 옆에서 한 문장씩 옮겨 주는 것의 차이다. 그 답이 실행 속도, 다른 컴퓨터로 옮기기 쉬운 …"

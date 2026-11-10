@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Expression Tree", "수식 트리", "식 트리", "Prefix", "Infix", "Postfix", "전위 표기", "중위 표기", "후위 표기", "폴란드 표기", "역폴란드 표기", "연산자 우선순위", "Precedence", "결합 방향", "Associativity"]
 description: "계산식을 트리로 그리면, 더하기나 곱하기 같은 기호는 가지가 갈라지는 칸에 놓이고 숫자나 변수는 맨 끝 칸에 놓인다. 어느 계산을 먼저 하는지가 트리의 모양에 그대로 담겨서 괄호가 필요 없다. 이 트리를 세 가지 순서로 읽으면 같은 식을 적는 세 가지 방법이 나온다. 다만 우리가 …"

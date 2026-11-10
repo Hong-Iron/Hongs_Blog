@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-14"
 last_modified_at: "2026-10-14"
+date: "2026-10-14"
 status: "verified"
 aliases: ["Monitor vs Mutex", "Condvar", "조건 변수", "Condition Variable", "유한 버퍼", "Bounded Buffer", "wait_while", "notify_one", "notify_all"]
 description: "운영체제 수업의 모니터는 공유 데이터와 그것을 다루는 함수를 한 방에 넣고, 방에는 한 번에 한 프로세스만 들어가게 한 언어 구조다. Rust에는 모니터라는 문법이 없다. 대신 데이터를 Mutex 안에 넣고 조건 변수 Condvar를 곁에 두면 거의 같은 것이 된다. 깨어난 뒤 조…"

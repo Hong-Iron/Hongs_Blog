@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Shift Instructions", "SHL", "SHR", "SAL", "SAR", "Shift Left", "Shift Right", "자리 이동", "비트 시프트", "빠른 곱셈", "Fast Multiplication"]
 description: "0과 1이 줄지어 앉은 칸에서 모두를 한쪽으로 한 칸씩 옮겨 앉히는 명령이다. 끝에서 밀려난 하나는 따로 마련된 보관 칸 하나에 잠깐 남고, 반대쪽에 생긴 빈자리는 정해진 값으로 채운다. 십진수 끝에 0을 붙이면 열 배가 되듯, 2진수를 왼쪽으로 한 칸 밀면 두 배, 오른쪽으로 한…"

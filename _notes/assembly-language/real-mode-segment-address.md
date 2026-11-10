@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Segmented Memory", "세그먼트 메모리", "세그먼트 오프셋 주소", "Segment-Offset Address", "선형 주소", "Linear Address", "절대 주소", "Absolute Address", "Calculating Linear Addresses"]
 description: "실주소 모드에서는 메모리의 한 자리를 숫자 두 개로 가리킨다. \"몇 동\"과 \"그 동의 몇 호\"로 집을 찾는 것과 같다. 앞의 숫자가 구역이 시작하는 곳을, 뒤의 숫자가 그 안에서 얼마나 들어갔는지를 말한다. 작은 숫자 둘로 큰 메모리를 다 가리킬 수 있어 좋다. 대신 구역 하나가 …"

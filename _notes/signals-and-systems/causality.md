@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Causality", "Causal System", "인과 시스템", "비인과 시스템", "Noncausal System", "이동 평균", "Moving Average"]
 description: "인과 시스템은 미래를 내다보지 않는다. 어느 순간의 출력이 그때까지(지금과 과거)의 입력만으로 정해진다. 자동차는 운전자가 나중에 밟을 페달을 미리 알 수 없으니 인과적이다. 실시간으로 돌아가는 물리 시스템은 모두 인과적이어야 한다. 하지만 녹음을 다 끝낸 뒤 편집하거나, 시간이 …"

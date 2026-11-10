@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["View Implementation", "뷰 구현", "질의 수정", "Query Modification", "뷰 실체화", "View Materialization", "실체화된 뷰", "Materialized View", "점진적 갱신", "Incremental Update", "즉시 갱신", "Immediate Update", "지연 갱신", "Lazy Update", "주기 갱신", "Periodic Update"]
 description: "뷰에 질문이 들어왔을 때 답을 만드는 길은 둘이다. 주문을 받을 때마다 새로 조리하는 식당처럼 물을 때마다 원래 표로 가서 계산하거나, 반찬을 미리 만들어 두는 식당처럼 계산한 결과를 한동안 보관했다가 꺼내 준다. 앞의 길은 늘 새 답을 주지만 복잡한 뷰를 자주 물으면 같은 계산을…"

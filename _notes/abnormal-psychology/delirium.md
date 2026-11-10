@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Delirium", "의식 혼미", "지남력장애", "disorientation"]
 description: "수술이나 감염, 약물 때문에 몇 시간에서 며칠 사이에 정신이 흐려지고 주의를 모으지 못하며 여기가 어디인지 헷갈리는 상태다. 하루에도 멀쩡했다 흐려졌다를 오간다. 원인이 풀리면 대개 원래 상태로 돌아온다는 점이 치매와 가장 다르다. 그래서 빨리 알아채 원인을 찾는 것이 치료의 핵심이다."

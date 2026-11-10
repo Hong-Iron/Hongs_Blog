@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-11"
 last_modified_at: "2026-10-11"
+date: "2026-10-11"
 status: "verified"
 aliases: ["Interface", "Java Interface", "구현 클래스", "Implementing Class", "implements", "구현 객체", "상수 필드", "Constant Field", "추상 메서드", "Abstract Method", "인터페이스 변수"]
 description: "리모컨에 달린 버튼 목록 같은 것이다. 쓰는 사람은 버튼 이름만 알면 되고, 버튼을 눌렀을 때 실제로 무슨 일이 일어나는지는 그 리모컨에 연결된 기기가 정한다. 그래서 기기를 TV에서 조명으로 바꿔도 쓰는 쪽 코드는 한 글자도 고치지 않는다. 대신 기기는 목록에 적힌 버튼을 하나도…"

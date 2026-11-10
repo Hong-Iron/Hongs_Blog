@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Exposure and Response Prevention", "ERP", "반응방지", "response prevention", "사고중지", "thought stopping", "역설적 의도", "paradoxical intention", "자기주장 훈련", "self-assertion training", "파이 기법", "pie-chart technique", "이중기준 기법", "double standard technique", "법정 절차", "courtroom procedure"]
 description: "두려운 자극에 일부러 다가가되, 늘 하던 강박행동은 하지 못하게 하는 치료다. 더러운 문고리를 만지고 손을 씻지 않고 버틴다. 처음에는 불안이 치솟지만, 씻지 않아도 불안이 저절로 가라앉고 두려워하던 일(병에 걸림)도 일어나지 않는다는 것을 몸으로 배운다. 강박장애 환자의 60~8…"

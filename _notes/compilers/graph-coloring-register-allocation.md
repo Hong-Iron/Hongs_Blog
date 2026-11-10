@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Graph Coloring Register Allocation", "그래프 색칠 레지스터 할당", "그래프 컬러링", "Graph Coloring", "K-colorable", "K-색칠 가능", "레지스터 할당", "Register Allocation", "색칠 휴리스틱", "Coloring Heuristic"]
 description: "사이가 나쁜 사람끼리 같은 방에 넣지 않으면서 방 몇 개에 손님을 나누려 한다. 꺼리는 상대가 방 수보다 적은 사람은 걱정할 것이 없다. 남들을 어떻게 넣든 그 사람이 들어갈 방이 하나는 남는다. 그래서 그런 사람부터 차례로 빼놓고 남은 사람들만 생각한 뒤, 빼놓은 순서의 거꾸로 …"

@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Relationship Type", "Relationship Set", "관계 인스턴스", "Relationship Instance", "관계의 차수", "Degree of a Relationship Type", "이항 관계", "Binary Relationship", "삼항 관계", "Ternary Relationship"]
 description: "\"직원 김씨는 영업부에서 일한다\"는 한 줄은 직원 한 명과 부서 하나를 잇는다. 대상에 틀과 모음이 있었듯이, 이런 줄에도 \"직원과 부서는 '일한다'로 이어진다\"는 틀과, 그런 줄들의 모음이 있다. 줄 하나가 대상 둘을 이을 수도 있고 셋을 한꺼번에 이을 수도 있다. 여기서 말하는…"

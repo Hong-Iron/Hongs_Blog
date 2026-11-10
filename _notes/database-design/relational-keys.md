@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Superkey", "슈퍼키", "수퍼키", "Candidate Key", "후보 키", "후보키", "Primary Key", "기본 키", "기본키", "주 키", "Key Constraint", "키 제약", "유일성", "Uniqueness", "최소성", "Minimality"]
 description: "학생 다섯 명을 헷갈리지 않고 부르려면 사람마다 다른 값이 있어야 한다. 표에서 줄마다 값이 다른 칸, 또는 칸 묶음을 키라고 한다. 칸을 여럿 묶으면 값이 겹치기 어렵지만 쓸데없는 칸이 섞이므로, \"겹치지 않는다\"와 \"더 뺄 칸이 없다\"를 둘 다 지키는 묶음을 고르고 그중 하나를…"

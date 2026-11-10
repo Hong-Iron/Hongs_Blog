@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Multicore", "다중 코어", "병렬 프로세서", "Parallel Processor", "멀티프로세서", "Multiprocessor", "플린 분류", "Flynn's Taxonomy", "SISD", "SIMD", "MISD", "MIMD", "공유 메모리 멀티프로세서", "Shared Memory Multiprocessor", "SMP", "캐시 일관성", "Cache Coherence", "거짓 공유", "False Sharing"]
 description: "프로세서 하나를 더 빠르게 만들기 어려워지자, 칩 하나에 프로세서를 여러 개 넣고 일을 나눠 시키게 되었다. 계산대를 하나 더 빠르게 만드는 대신 계산대를 여러 개 여는 것과 같다. 나눌 수 있는 일은 프로세서 수만큼 빨라진다. 하지만 나눌 수 없는 부분은 그대로 남아서, 그 부분…"

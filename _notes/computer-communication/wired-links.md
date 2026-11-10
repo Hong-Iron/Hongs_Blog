@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Wired Links", "유선 링크의 종류", "트위스티드 페어", "twisted pair", "UTP", "Cat 5", "동축 케이블", "coax", "coaxial cable", "광케이블", "optical fiber", "멀티모드", "multimode", "싱글모드", "single-mode", "굴절률", "index of refraction", "코어", "core", "클래딩", "cladding", "전반사", "전용선", "leased line", "T1", "T3", "STS", "SONET", "ISDN"]
 description: "선을 직접 깔 때는 거리와 속도를 보고 구리선이나 광케이블을 고른다. 꼬인 구리선은 싸고 흔하지만 100 m 정도가 한계이고, 광케이블은 빛을 유리 속에 가두어 수십 km를 빠르게 간다. 광케이블도 가운데 심이 굵은 멀티모드는 빛이 여러 길로 퍼져서 짧은 거리용이고, 심이 가는 싱…"

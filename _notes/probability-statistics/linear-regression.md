@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Linear Regression", "선형회귀", "단순 선형회귀", "simple linear regression", "다중 선형회귀", "multiple linear regression", "최소제곱 추정", "ordinary least squares", "OLS", "잔차", "residual", "결정계수", "coefficient of determination", "R²", "회귀계수", "regression coefficient"]
 description: "결과를 입력들의 가중합에 잡음이 더해진 것으로 보는 모델이다. 잡음이 종 모양(정규분포)이라고 가정하면, 가장 그럴듯한 가중치를 찾는 것이 곧 오차 제곱합을 최소로 하는 것이라 행렬 계산 한 번으로 답이 나온다. 가중치는 \"다른 입력을 그대로 둘 때 이 입력이 하나 늘면 결과가 얼…"

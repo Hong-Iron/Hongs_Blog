@@ -11,6 +11,7 @@ course_url: "/studies/college-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Trigonometric Functions", "사인", "sine", "sin", "코사인", "cosine", "cos", "탄젠트", "tangent", "tan", "단위원", "unit circle", "기준각", "reference angle", "피타고라스 항등식"]
 description: "반지름이 1인 원 위를 도는 점을 떠올린다. 점의 가로 위치가 코사인, 세로 위치가 사인이다. 각이 한 바퀴 돌 때마다 값이 되풀이되므로 모든 주기 현상의 기본 재료가 된다. 삼각형에서 배우는 \"빗변 분의 높이\"는 90°보다 작은 각에서만 통하지만, 원 위의 점으로 정하면 어떤 각…"

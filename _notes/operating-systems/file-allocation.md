@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["File Allocation", "연속 할당", "Contiguous Allocation", "연결 할당", "Chained Allocation", "색인 할당", "Indexed Allocation", "파일 할당 표", "File Allocation Table", "FAT", "선할당", "Preallocation", "동적 할당", "빈 공간 관리", "Free Space Management", "비트 표", "Bit Table", "비트맵", "볼륨", "Volume"]
 description: "운영체제는 파일을 디스크의 어느 블록들에 놓을지, 그리고 아직 비어 있는 블록이 어디인지를 관리한다. 블록을 붙여서 한 줄로 주면(연속) 읽기는 빠르지만 빈틈이 쪼개져 큰 파일을 못 넣게 되고, 흩어진 블록을 사슬로 이으면(연결) 빈틈 문제는 없지만 중간 블록을 찾으려면 앞에서부터…"

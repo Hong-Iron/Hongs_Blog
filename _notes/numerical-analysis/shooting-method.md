@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Shooting Method", "슈팅 방법", "경계값 문제", "Boundary-Value Problem", "BVP"]
 description: "막대 양 끝의 온도처럼 조건이 시작점과 끝점에 나눠 주어진 미분방정식(경계값 문제)을 푼다. 시작점에서 모르는 기울기를 하나 짐작해 끝까지 계산해 보고, 끝점에 얼마나 빗나갔는지 보고 기울기를 고친다. 대포를 쏘아 보고 조준을 고치는 것과 같다. 방정식이 일차(선형)이면 두 번 쏘…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Stack Parameters", "스택 인수", "값으로 전달", "Pass by Value", "참조로 전달", "Pass by Reference", "ArrayFill", "인수", "Argument"]
 description: "프로시저에 넘길 값을 레지스터에 담는 대신 스택에 차례로 쌓아 놓고 부르는 방법이다. 값 자체를 쌓을 수도 있고, 값이 있는 곳의 주소를 쌓을 수도 있다. 값을 쌓으면 프로시저는 사본만 만지므로 원래 변수가 안전하고, 주소를 쌓으면 프로시저가 원래 변수나 큰 배열을 직접 읽고 고칠…"

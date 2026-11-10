@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Partial Derivative", "편미분", "편도함수", "다변수 함수", "multivariable function", "등고선", "level curve", "등위곡선", "클레로 정리", "Clairaut's theorem", "혼합 편미분", "mixed partial derivative", "유한 차분", "finite difference"]
 description: "산의 높이는 동서 위치와 남북 위치 두 값에 따라 정해진다. 이런 여러 입력의 함수에서 \"다른 방향은 그대로 두고 동쪽으로만 한 걸음 가면 얼마나 오르나\"를 재는 것이 편미분이다. 입력마다 하나씩 편미분이 있어, 한 변수 미분의 도구를 그대로 쓴다. 이미지의 밝기 변화, 손실 함수…"

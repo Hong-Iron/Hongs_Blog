@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
 last_modified_at: "2026-09-27"
+date: "2026-09-27"
 status: "verified"
 aliases: ["Binge Eating Disorder", "BED", "비보상성 폭식", "binge eating without compensatory behaviors", "섭식 절제", "dietary restraint", "정서적 섭식", "emotional eating", "이중경로 모델", "dual pathway model", "대인관계 심리치료", "Interpersonal Psychotherapy", "IPT"]
 description: "멈출 수 없이 많이 먹는 폭식을 되풀이하지만, 신경성 폭식증과 달리 토하거나 굶는 보상행동은 하지 않는 장애다. 그래서 체중이 늘고, 먹고 나면 자신이 싫어진다. 엄격한 다이어트와 우울·스트레스가 폭식을 부르는 두 길이다. 보상행동이 없다고 가볍게 볼 문제가 아니다."

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Schizotypal Personality Disorder", "조현형", "분열형 성격장애", "마술적 사고", "magical thinking", "관계사고"]
 description: "조현병의 증상이 아주 옅게, 성격처럼 굳어 있는 상태다. 우연한 일을 자신과 관련된 신호로 읽고, 텔레파시나 육감을 믿으며, 말과 옷차림이 독특하다. 사람과 가까워지는 것이 불안해 친구가 거의 없다. 현실 판단은 대체로 유지되어 망상과 환각 수준에는 이르지 않는다는 점이 조현병과 …"

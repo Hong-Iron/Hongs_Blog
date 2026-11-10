@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-09-27"
 last_modified_at: "2026-09-27"
+date: "2026-09-27"
 status: "verified"
 aliases: ["Pica", "이식", "비음식 섭취", "nonfood", "차별강화", "differential reinforcement"]
 description: "흙, 종이, 머리카락, 분필처럼 영양이 없고 먹으면 안 되는 것을 한 달 넘게 계속 먹는 장애다. 아기는 원래 무엇이든 입에 넣으므로, 두 살은 넘어야 진단한다. 장이 막히거나 감염, 납중독 같은 신체 문제로 이어질 수 있다. 철분이나 아연 같은 영양 결핍, 발달 지연, 방임이 흔…"

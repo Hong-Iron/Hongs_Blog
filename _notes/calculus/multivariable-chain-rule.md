@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Multivariable Chain Rule", "다변수 연쇄 법칙", "Jacobian", "야코비 행렬", "야코비안", "Jacobian matrix", "야코비 행렬식", "Jacobian determinant", "전미분", "total derivative", "합성 함수의 미분"]
 description: "여러 입력, 여러 출력의 함수도 아주 가까이서 보면 선형 변환이고, 그 변환의 행렬이 야코비 행렬이다. 함수를 이어 붙이면 가까이서 본 선형 변환도 이어 붙여지므로, 합성 함수의 미분은 야코비 행렬의 곱이다. 한 변수 연쇄 법칙을 \"영향이 흐르는 모든 길을 따라 곱하고 더한다\"로 …"

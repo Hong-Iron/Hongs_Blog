@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["K-means vs K-medoids"]
 description: "둘 다 k를 정하고 \"가장 가까운 대표에 넣기 → 대표 고치기\"를 되풀이한다. 가르는 질문은 \"대표가 실제 자료점이어야 하는가\"다. 그 답이 이상치에 대한 견고함, 쓸 수 있는 거리, 계산량을 함께 정한다."

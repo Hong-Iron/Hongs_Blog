@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Dining Philosophers Problem", "식사하는 철학자"]
 description: "둥근 식탁에 철학자 다섯 명이 앉아 있고, 사람 사이마다 포크가 하나씩, 모두 다섯 개 있다. 스파게티를 먹으려면 양옆 포크 두 개가 다 필요하다. 모두가 동시에 왼쪽 포크를 집으면 아무도 오른쪽 포크를 못 집어 다 같이 굶는다. 공유 자원을 여럿이 나눠 쓸 때 교착상태와 기아를 …"

@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Schizophreniform Disorder", "정신분열형 장애", "잠정적 진단", "provisional"]
 description: "증상은 조현병과 똑같지만 1개월에서 6개월 사이에 끝나는 경우다. 아직 6개월이 안 된 채 증상이 계속되면 일단 이 이름을 붙였다가, 6개월을 넘기면 조현병으로 바꾼다. 조현병보다 갑자기 시작하고 병 전의 생활이 좋았으며 빨리 완전히 회복하는 경우가 많다. 그래도 셋 중 둘은 결국…"

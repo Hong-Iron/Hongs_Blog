@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Properties of Continuous-Time Fourier Series", "푸리에 급수의 성질", "시간 이동 성질", "Time Shifting Property", "시간 반전 성질", "시간 척도 성질", "곱셈 성질", "Multiplication Property", "주기 컨벌루션", "Periodic Convolution", "미분 성질", "Differentiation Property", "켤레 대칭", "Conjugate Symmetry", "파스발 관계", "Parseval's Relation"]
 description: "신호를 옮기거나, 뒤집거나, 미분하거나, 곱하면 푸리에 계수가 정해진 규칙대로 바뀐다. 이 규칙표(표 3.1)를 알면 매번 적분하지 않고 이미 아는 신호의 계수에서 새 신호의 계수를 얻는다. 예를 들어 신호를 늦추면 계수의 크기는 그대로이고 위상만 돈다. 미분하면 높은 고조파일수록…"

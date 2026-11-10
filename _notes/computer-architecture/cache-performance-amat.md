@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Average Memory Access Time", "AMAT", "평균 메모리 접근 시간", "실패율", "Miss Rate", "적중률", "Hit Rate", "적중 시간", "Hit Time", "실패 손실", "Miss Penalty", "3C", "강제 실패", "Compulsory Miss", "용량 실패", "Capacity Miss", "충돌 실패", "Conflict Miss"]
 description: "메모리를 한 번 쓰는 데 평균 얼마나 걸리는지를 숫자 하나로 잰다. 캐시에서 바로 찾을 때 걸리는 시간에, 못 찾는 비율과 못 찾았을 때 더 드는 시간을 곱해 더한다. 캐시 설계 둘을 견줄 때 이 숫자 하나로 견줄 수 있어 편하다. 다만 못 찾았을 때 드는 시간이 워낙 커서, 못 …"

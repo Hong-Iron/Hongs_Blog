@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Neurocognitive Disorders", "NCD", "치매", "dementia", "주요 신경인지장애", "Major Neurocognitive Disorder", "경도 신경인지장애", "Mild Neurocognitive Disorder", "경도인지장애", "MCI", "인지 영역"]
 description: "멀쩡하던 기억력, 언어, 판단력이 뇌의 병 때문에 나중에 떨어져 일상생활을 제대로 못 하게 되는 장애다. 예전의 \"치매\"를 넓힌 이름으로, 나이 든 사람에게만 생기는 것이 아님을 담았다. 혼자 힘으로 생활할 수 있느냐로 주요와 경도를 가르고, 며칠 사이에 의식이 흐려졌다가 돌아오는…"

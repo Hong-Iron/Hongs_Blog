@@ -11,6 +11,7 @@ course_url: "/studies/discrete-math/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Logical Equivalence", "논리적 동치", "드모르간 법칙", "De Morgan's laws", "대우", "contrapositive", "역", "converse", "이", "inverse", "분배법칙", "흡수법칙", "정규형", "normal form", "논리합 표준형", "DNF", "논리곱 표준형", "CNF", "충족 가능성", "SAT"]
 description: "모양은 달라도 모든 경우에 참·거짓이 같은 두 식은 사실상 같은 조건이다. 드모르간 법칙, \"이면\"을 \"아니거나\"로 바꾸기, 대우 같은 규칙으로 조건문을 단순하게 바꾸거나 부정을 정확히 쓸 수 있다. 모든 식은 \"그리고들의 또는\"이나 \"또는들의 그리고\"라는 표준 모양으로 바꿀 수 …"

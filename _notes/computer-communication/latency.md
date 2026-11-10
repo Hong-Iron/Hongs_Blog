@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Latency", "Delay", "지연시간", "지연", "왕복지연시간", "RTT", "round-trip time", "큐잉 지연", "대기 지연", "queuing delay", "처리 지연", "processing delay", "스위칭 시간", "지터", "jitter", "광속", "speed of light"]
 description: "소요시간은 메시지가 A에서 B까지 가는 데 걸리는 시간이다. 택배로 치면 트럭에 짐을 싣는 시간, 길을 달리는 시간, 물류센터에서 차례를 기다리는 시간을 모두 더한 값이다. 전송률을 올리면 싣는 시간만 줄고, 달리는 시간은 거리와 빛의 속도가 정한다. 기다리는 시간은 그때그때의 교…"

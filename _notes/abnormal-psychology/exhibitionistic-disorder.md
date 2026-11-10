@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-06"
 last_modified_at: "2026-10-06"
+date: "2026-10-06"
 status: "verified"
 aliases: ["Exhibitionistic Disorder", "노출증", "exhibitionism"]
 description: "눈치채지 못한 낯선 사람에게 성기를 노출하는 것에서 강렬한 성적 흥분을 느끼는 일이 반년 넘게 되풀이되고, 그 때문에 괴롭거나 실제로 노출하는 장애다. 노출하고 싶은 관심이 있어도 괴롭지 않고 행동하지 않으면 장애로 진단하지 않는다. 관음장애와 달리 진단에 최소 나이 기준이 없다."

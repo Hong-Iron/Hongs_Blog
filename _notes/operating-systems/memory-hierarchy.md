@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Memory Hierarchy", "기억장치 계층", "2차 기억장치", "Secondary Memory", "Auxiliary Memory"]
 description: "빠른 메모리는 비싸고, 싸고 큰 메모리는 느리다. 그래서 한 종류로 다 만들지 않고, 작고 빠른 것부터 크고 느린 것까지 층층이 쌓는다. 자주 쓰는 것은 위층에, 가끔 쓰는 것은 아래층에 둔다. 이 방식은 아래층으로 갈수록 프로세서가 덜 찾아갈 때만 효과가 있다."

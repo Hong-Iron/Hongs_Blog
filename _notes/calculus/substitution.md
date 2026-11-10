@@ -11,6 +11,7 @@ course_url: "/studies/calculus/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Integration by Substitution", "치환적분", "u-치환", "u-substitution", "변수 바꾸기", "change of variables"]
 description: "연쇄 법칙을 거꾸로 쓰는 기법이다. 적분할 식 안에 \"안쪽 함수\"와 \"그 안쪽 함수의 도함수\"가 함께 보이면, 안쪽 함수를 새 변수 하나로 묶어 식을 단순하게 만든다. 모양만 맞으면 복잡한 식이 기본 공식 하나로 줄어든다. 다만 도함수가 곱해져 있지 않으면(상수배 차이는 괜찮다) …"

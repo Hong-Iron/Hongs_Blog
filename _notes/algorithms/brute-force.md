@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Brute Force", "Complete Search", "완전탐색", "브루트포스", "전수 조사", "itertools", "순열", "조합", "product", "permutations", "combinations"]
 description: "비밀번호를 잊은 세 자리 자물쇠를 000부터 999까지 모두 돌려 보는 것과 같다. 가능한 경우를 빠짐없이 만들어 하나씩 확인하므로, 생각할 것이 가장 적고 틀릴 일도 적다. 그래서 경우의 수가 작으면 가장 먼저 고른다. 대신 경우의 수는 조금만 커져도 폭발하므로, 짜기 전에 몇 …"

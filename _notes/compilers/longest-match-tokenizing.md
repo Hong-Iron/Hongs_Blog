@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Longest Match", "Maximal Munch", "최장 일치 원칙", "최대 뭉크", "토큰 인식", "Token Recognition", "토큰 인식기", "Token Recognizer", "어휘 분석기 구현", "토큰 우선순위", "Token Priority"]
 description: "띄어쓰기 없는 글을 낱말로 끊을 때 \"아는 낱말 가운데 가장 긴 것\"부터 떼어 내는 방법이다. 앞에서부터 한 글자씩 읽어 가다가 더는 어떤 낱말도 될 수 없게 되면, 낱말이 되었던 마지막 자리까지를 한 조각으로 자르고 그 뒤에서 다시 시작한다. 이렇게 하면 =가 와 =로 쪼개지지 …"

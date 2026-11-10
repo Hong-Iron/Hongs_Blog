@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "데이터"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Characteristics of Relations", "튜플의 순서", "Ordering of Tuples", "속성의 순서", "원자값", "Atomic Value", "NULL", "널", "평면 관계형 모델", "Flat Relational Model"]
 description: "관계형 모델의 표는 줄의 모음이라, 줄을 어떤 순서로 적어도 같은 표다. 칸도 이름과 값의 짝만 맞으면 순서를 바꿔도 된다. 한 칸에는 더 쪼갤 수 없는 값 하나만 들어가므로, 여러 값을 넣고 싶으면 표를 하나 더 만들어야 한다. 값을 모르거나 그 줄에는 맞지 않는 칸에는 '값 없…"

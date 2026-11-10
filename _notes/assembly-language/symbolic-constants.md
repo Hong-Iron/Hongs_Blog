@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-12"
 last_modified_at: "2026-10-12"
+date: "2026-10-12"
 status: "verified"
 aliases: ["Symbolic Constant", "기호 상수", "등호 지시어", "Equal-Sign Directive", "EQU", "EQU 지시어", "TEXTEQU", "위치 카운터", "현재 위치 카운터", "Current Location Counter", "배열 크기 계산"]
 description: "코드 여기저기에 500이라는 수를 직접 쓰는 대신 COUNT라는 이름을 지어 두고 이름을 쓴다. 어셈블러는 기계어로 옮기기 전에 이름을 그 값으로 바꿔 넣으므로, 이름은 메모리를 한 칸도 차지하지 않는다. 값이 바뀌면 한 줄만 고치면 되고, 배열의 크기처럼 손으로 세기 귀찮은 값은…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "소프트웨어"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Standard Traits", "Common Traits", "C-COMMON-TRAITS", "derive", "Debug", "Clone", "Copy", "PartialEq", "Eq", "PartialOrd", "Ord", "Hash", "Default", "Display", "ToString", "From", "Into", "TryFrom", "TryInto", "AsRef", "Send", "Sync", "자동 트레이트", "Auto Trait", "논리 오류", "Logic Error"]
 description: "내가 만든 타입을 남이 편하게 쓰도록 미리 붙여 두는 기본 능력 묶음이다. 디버그용 출력, 복제, 같음과 크기 비교, 해시(값을 짧은 수로 줄인 지문), 기본값, 사람에게 보여 줄 출력, 타입 바꾸기가 그렇다. 대부분은 derive 한 줄이면 컴파일러가 만들어 주고, 내 타입을 가…"

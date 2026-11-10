@@ -11,6 +11,7 @@ course_url: "/studies/probability-statistics/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Descriptive Statistics", "기술통계", "요약 통계", "summary statistics", "표본평균", "sample mean", "중앙값", "median", "분위수", "quantile", "백분위수", "percentile", "p99", "사분위 범위", "IQR", "interquartile range", "히스토그램", "histogram", "경험적 분포함수", "empirical CDF", "견고성", "robustness"]
 description: "수천 개의 측정값을 몇 개의 수와 그림으로 요약하는 방법이다. 가운데(평균, 중앙값), 흩어진 정도(표준편차, 사분위 범위), 모양(히스토그램, 분위수)을 본다. 평균은 극단값 하나에 크게 끌려가지만 중앙값과 분위수는 버틴다. 응답 시간처럼 가끔 아주 큰 값이 나오는 자료는 평균보…"

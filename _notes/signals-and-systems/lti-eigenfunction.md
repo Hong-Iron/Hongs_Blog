@@ -12,6 +12,7 @@ track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Eigenfunctions of LTI Systems", "고유함수", "Eigenfunction", "고유값", "Eigenvalue", "시스템 함수", "System Function", "H(s)", "H(z)", "복소 지수 응답", "Response to Complex Exponentials"]
 description: "복소 지수 e^{st}는 어떤 LTI 시스템을 지나도 모양이 그대로이고 크기와 위상만 바뀐다. 거울에 비친 얼굴이 밝기만 달라지고 얼굴 모양은 그대로인 것과 같다. 그래서 입력을 복소 지수들의 합으로 쪼개 두면, 각 조각에 시스템이 정하는 수 H(s)를 곱하기만 하면 출력이 나온다…"

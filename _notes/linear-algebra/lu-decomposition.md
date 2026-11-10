@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["LU Decomposition", "LU 분해", "LU factorization", "PA = LU", "아래삼각행렬", "lower triangular", "위삼각행렬", "upper triangular", "전진 대입", "forward substitution", "순열 행렬", "permutation matrix"]
 description: "가우스 소거를 할 때 \"몇 배를 뺐는지\"(곱수)를 버리지 않고 아래쪽 삼각 모양의 행렬에 적어 두면, 원래 행렬이 그 행렬과 소거 결과(위쪽 삼각 모양)의 곱으로 쪼개진다. 한 번 쪼개 두면 방정식의 우변이 바뀔 때마다 비싼 소거를 다시 하지 않고, 삼각행렬 두 개로 빠르게 푼다.…"

@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Basic Elements of Assembly Language", "정수 상수", "Integer Constant", "진법 꼬리표", "Radix", "정수 식", "Integer Expression", "문자 상수", "문자열 상수", "예약어", "Reserved Word", "식별자", "Identifier", "레이블", "Label", "니모닉", "Mnemonic", "피연산자", "Operand", "즉시값", "Immediate Value", "주석", "Comment"]
 description: "어셈블리어 한 줄은 많아야 네 칸으로 된 짧은 문장이다. 이 줄에 붙이는 이름표, 무슨 동작인지 적은 낱말, 그 동작에 쓸 재료, 사람만 읽는 메모다. 가운데의 동작 낱말만 꼭 있어야 하고 나머지는 있을 때만 쓴다. 모양이 단순해서 읽기 쉽지만, 숫자 하나를 적을 때도 몇 진법인지…"

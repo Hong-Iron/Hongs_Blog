@@ -11,6 +11,7 @@ course_url: "/studies/abnormal-psychology/"
 track: "사람과 심리"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Mood Disorders", "정동장애", "affective disorder", "느낌", "feeling", "감정", "정서", "emotion", "정동", "affect", "기분", "mood", "우울장애", "depressive disorders", "양극성 및 관련 장애", "bipolar and related disorders", "단극성", "unipolar"]
 description: "기분이 오랫동안 한쪽으로 치우쳐 괴롭거나 생활이 무너지는 장애다. 날씨로 치면, 잠깐의 소나기(감정)가 아니라 몇 주씩 이어지는 장마나 가뭄(기분)이 문제다. 기분이 아래로만 내려가면 우울장애, 위(조증)와 아래(우울)를 오가면 양극성장애다. 두 무리는 치료가 크게 다르므로, 지금…"

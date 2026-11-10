@@ -11,6 +11,7 @@ course_url: "/studies/linear-algebra/"
 track: "수학"
 updated: "2026-10-09"
 last_modified_at: "2026-10-09"
+date: "2026-10-09"
 status: "verified"
 aliases: ["Singular Value Decomposition", "SVD", "특잇값 분해", "특이값 분해", "특잇값", "singular value", "저랭크 근사", "low-rank approximation", "에카르트-영 정리", "Eckart–Young theorem", "유사역행렬", "pseudoinverse", "주성분 분석", "PCA"]
 description: "어떤 행렬이든(정사각이 아니어도, 대칭이 아니어도) \"돌리기 → 축마다 늘이기 → 돌리기\" 세 단계로 쪼갤 수 있다. 늘이는 배율이 특잇값이고, 큰 것부터 줄 세우면 행렬의 \"중요한 방향\"이 순서대로 드러난다. 큰 특잇값 몇 개만 남기면 그 크기에서 가장 정확한 근사가 되어, 이미…"

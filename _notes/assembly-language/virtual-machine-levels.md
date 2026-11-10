@@ -12,6 +12,7 @@ track: "컴퓨터 과학"
 track_sub: "컴퓨터 시스템"
 updated: "2026-10-15"
 last_modified_at: "2026-10-15"
+date: "2026-10-15"
 status: "verified"
 aliases: ["Virtual Machine Concept", "가상 기계", "Virtual Machine", "기계 단계", "Machine Levels", "해석", "Interpretation", "번역", "Translation", "명령어 집합 구조", "Instruction Set Architecture", "ISA", "디지털 논리", "Digital Logic"]
 description: "컴퓨터는 여러 층으로 쌓은 건물과 같다. 맨 아래층에는 전기 신호로 움직이는 회로가 있고, 한 층 올라갈 때마다 사람이 쓰기 편한 말이 하나씩 생긴다. 위층의 말로 쓴 프로그램은 바로 아래층의 말로 바뀌어야 움직인다. 덕분에 각 층에서는 바로 아래층만 알면 일할 수 있다. 다만 맨…"
