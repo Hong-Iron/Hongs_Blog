@@ -771,6 +771,7 @@ main {
 
 .article-cover img {
   margin: 0 auto;
+  height: auto; /* the width/height attributes only reserve the space */
 }
 
 .article-body {

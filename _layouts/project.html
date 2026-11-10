@@ -24,7 +24,11 @@ geo_clear: 24rem
 
   {% if page.cover %}
     <figure class="article-cover container">
-      <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title }}">
+      {%- comment -%} width/height keep the cover's place while it loads (layout.css
+           sets height: auto). Covers are 1800×1350; one with another shape says
+           so with cover_width / cover_height in its front matter. The gallery
+           below needs none: .card__media already holds a 4:3 box. {%- endcomment %}
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title }}" width="{{ page.cover_width | default: 1800 }}" height="{{ page.cover_height | default: 1350 }}">
     </figure>
   {% endif %}
 

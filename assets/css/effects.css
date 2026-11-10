@@ -28,19 +28,30 @@ body[data-bg="midnight"] .grain-overlay {
 
 /* -- scroll reveal ---------------------------------------------------------- */
 
-body[data-fx-reveal="true"] .reveal {
+/* Hidden only when scripts run: head.html puts .js on <html> before the first
+   paint, and assets/js/effects.js adds .is-visible as each element scrolls in.
+   Without scripts the elements simply show. */
+.js body[data-fx-reveal="true"] .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-body[data-fx-reveal="true"] .reveal.is-visible {
+.js body[data-fx-reveal="true"] .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body[data-fx-reveal="true"] .reveal {
+  .js body[data-fx-reveal="true"] .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media print {
+  .js body[data-fx-reveal="true"] .reveal {
     opacity: 1;
     transform: none;
     transition: none;
