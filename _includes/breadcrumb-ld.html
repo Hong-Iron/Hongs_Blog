@@ -1,0 +1,14 @@
+{%- comment -%} BreadcrumbList structured data for the Studies pages: 홈 → Studies → course
+     (→ note when leaf=true). The same path as the .note-crumbs nav in
+     _layouts/note.html, with absolute addresses. {%- endcomment -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"홈","item":{{ '/' | absolute_url | jsonify }}},
+{"@type":"ListItem","position":2,"name":"Studies","item":{{ '/studies/' | absolute_url | jsonify }}},
+{"@type":"ListItem","position":3,"name":{{ page.course | jsonify }},"item":{{ page.course_url | absolute_url | jsonify }}}
+{%- if include.leaf -%}
+,
+{"@type":"ListItem","position":4,"name":{{ page.title | jsonify }},"item":{{ page.url | absolute_url | jsonify }}}
+{%- endif %}
+]}
+</script>

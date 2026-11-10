@@ -2,7 +2,7 @@
 {%- for track in site.data.study_courses -%}{%- for c in track.courses -%}
   {%- assign course_total = course_total | plus: 1 -%}{%- assign note_total = note_total | plus: c.concepts | plus: c.practices -%}
 {%- endfor -%}{%- endfor -%}
-<nav class="doors" aria-label="둘러보기">
+<nav class="doors" aria-label="둘러보기" lang="ko">
   <a class="door door--projects" href="{{ '/projects/' | relative_url }}">
     {% include glyph.html shape="projects" class="door__glyph" %}
     <span class="door__label">Projects</span>

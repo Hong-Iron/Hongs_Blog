@@ -17,6 +17,13 @@ baseurl: "/Hongs_Blog"
 
 github_username: Hong-Iron
 
+# jekyll-seo-tag: the name and profile links in the home and About pages'
+# structured data (sameAs). List only profiles that are really this person's.
+social:
+  name: Hong-Iron
+  links:
+    - https://github.com/Hong-Iron
+
 # Search engines. Paste the code each console gives for the "HTML tag"
 # verification method (only the content="…" value).
 #   Google: search.google.com/search-console → URL-prefix property

@@ -2,6 +2,8 @@
 layout: default
 title: About
 permalink: /about/
+lang: en   # the page is written in English; the update log below is marked ko
+locale: en_US
 description: "HongCheolMin is a backend developer and a software student at Chung-Ang University. This page lists his work, education, activities and contact details."
 geo: confetti
 geo_clear: none
@@ -53,7 +55,7 @@ geo_clear: none
 
   {% include doors.html %}
 
-  <section class="changelog" aria-labelledby="changelog-title">
+  <section class="changelog" aria-labelledby="changelog-title" lang="ko">
     <h2 id="changelog-title" class="changelog__title">업데이트 로그</h2>
     <ol class="changelog__list">
       {%- for entry in site.data.changelog %}

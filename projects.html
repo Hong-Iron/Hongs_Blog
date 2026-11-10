@@ -28,7 +28,7 @@ geo: blueprint
       <div class="project-feature__body">
         <span class="tag" style="--tag-color: var(--accent-rust)">{{ featured.status | default: "Project" }}</span>
         <h2 class="project-feature__title"><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h2>
-        <p class="project-feature__desc">{{ featured.summary }}</p>
+        <p class="project-feature__desc" lang="en">{{ featured.summary }}</p>
         <dl class="project-feature__meta">
           {% if featured.role %}<div><dt>Role</dt><dd>{{ featured.role }}</dd></div>{% endif %}
           {% if featured.stack %}<div><dt>Stack</dt><dd>{{ featured.stack | join: " · " }}</dd></div>{% endif %}

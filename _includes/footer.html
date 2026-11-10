@@ -1,4 +1,6 @@
-<footer class="site-footer">
+{%- comment -%} The footer is Korean on every page, English ones included (base.css keeps
+     Korean line breaks between words by :lang(ko)). {%- endcomment -%}
+<footer class="site-footer" lang="ko">
   <div class="container site-footer__inner">
     <span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}. Jekyll로 만들고 GitHub Pages에 올렸습니다.</span>
     <span>

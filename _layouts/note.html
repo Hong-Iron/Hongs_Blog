@@ -92,6 +92,8 @@ geo_clear: 26rem
   </nav>
 {% endif %}
 </div>
+{%- comment -%} code pages are noindex (head.html), so they carry no breadcrumb data {%- endcomment %}
+{% unless page.kind == "code" %}{% include breadcrumb-ld.html leaf=true %}{% endunless %}
 <script src="{{ '/assets/js/note-toc.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/widgets.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/code-panel.js' | relative_url }}" defer></script>
