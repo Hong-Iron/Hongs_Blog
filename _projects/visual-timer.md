@@ -11,7 +11,7 @@ stack:
   - GitHub Pages
 status: Live
 repo: https://github.com/Hong-Iron/VISUAL-TIMER
-demo: https://hong-iron.github.io/VISUAL-TIMER/
+demo: https://smash-univ.app/VISUAL-TIMER/
 summary: A pomodoro timer you can poke. The wedge shows the time left at a glance, finished sessions drop tomatoes on the desk, and your record stays in your browser with no account.
 cover: /assets/img/uploads/visual-timer-cover.jpg
 image: /assets/img/uploads/visual-timer-cover.jpg
@@ -24,7 +24,7 @@ tags:
 
 A disc timer shows the time left as a colored wedge that shrinks toward zero, so you can tell how long is left without reading a number. **Visual Timer** brings that timer into the browser in 3D. Type any time as hours, minutes and seconds (up to 99:59:59) or drag the dial, and the dial's range switches itself: 60 seconds, 60 minutes, or 2 to 120 hours. Pomodoro presets give 25 minutes of focus and 5- or 15-minute breaks.
 
-It is live at [hong-iron.github.io/VISUAL-TIMER](https://hong-iron.github.io/VISUAL-TIMER/). There is nothing to install and no account.
+It is live at [smash-univ.app/VISUAL-TIMER](https://smash-univ.app/VISUAL-TIMER/). There is nothing to install and no account.
 
 <figure>
   <img src="{{ '/assets/img/uploads/visual-timer-done.jpg' | relative_url }}" alt="The same timer just after a focus session ended: confetti lies scattered on the desk, a tomato sits in front of the timer, and the panel has switched to SHORT BREAK 05:00 with one tomato counted." loading="lazy">

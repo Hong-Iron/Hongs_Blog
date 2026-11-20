@@ -12,7 +12,7 @@ no CI configuration required.
 1. Push this repo to `main` on GitHub (see "Publishing" below).
 2. On GitHub: **Settings → Pages → Build and deployment → Source** → "Deploy
    from a branch" → Branch: `main`, folder `/ (root)` → Save.
-3. The site will be live at `https://hong-iron.github.io/Hongs_Blog/`
+3. The site will be live at `https://smash-univ.app/Hongs_Blog/`
    within a couple of minutes. `_config.yml` already has `baseurl` set to
    match this repo name — if you ever rename the repo, update `baseurl`
    to match.

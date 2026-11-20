@@ -97,7 +97,7 @@ def site_card():
 <div class="left">
   <div class="brand">{LOGO.format(s=112)}<b>Hong-Iron</b></div>
   <div class="tagline">프로젝트<i>·</i>지식 DB<i>·</i>나의 팡세</div>
-  <div class="url">hong-iron.github.io/Hongs_Blog</div>
+  <div class="url">smash-univ.app/Hongs_Blog</div>
 </div>
 </body></html>"""
 

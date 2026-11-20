@@ -12,7 +12,7 @@ stack:
   - GitHub Pages
 status: Live
 repo: https://github.com/Hong-Iron/JONGGANG-FIGHTER
-demo: https://hong-iron.github.io/JONGGANG-FIGHTER/
+demo: https://smash-univ.app/JONGGANG-FIGHTER/
 summary: A pixel-art browser game about the last week of the semester. Mash to submit assignments, parry the professor's lines, then build your own professor and send them to friends as a link. 12 colleges compete on a streak leaderboard.
 cover: /assets/img/uploads/jonggang-fighter-cover.png
 image: /assets/img/uploads/jonggang-fighter-cover.png
@@ -26,7 +26,7 @@ tags:
 
 종강 is the day the semester ends. In **종강 파이터** (Jonggang Fighter) an engineering student in a department jacket faces the professor across the lecture hall, armed with a clicky mechanical keyboard. Mash the screen to submit assignments and wear the professor down. When the professor fires a line like "졸지 마!" (no dozing!), a red **[반박!]** (objection!) mark pops up somewhere on screen. Hit it in time to parry.
 
-It runs in the browser on phones and PCs at [hong-iron.github.io/JONGGANG-FIGHTER](https://hong-iron.github.io/JONGGANG-FIGHTER/). The screens at the top are from a real run: the title menu, a hit that costs the student 10 sleep, and a parry prompt.
+It runs in the browser on phones and PCs at [smash-univ.app/JONGGANG-FIGHTER](https://smash-univ.app/JONGGANG-FIGHTER/). The screens at the top are from a real run: the title menu, a hit that costs the student 10 sleep, and a parry prompt.
 
 <figure>
   <img src="{{ '/assets/img/uploads/jonggang-fighter-professors.png' | relative_url }}" alt="Two pixel-art screens. Left: the professor list with eight professors from different colleges, each with edit and delete buttons. Right: the builder for the first professor, 공대 김OO, with fields for the name and three catchphrases, and pickers for college, difficulty, lab leader, gender and age." loading="lazy" style="image-rendering: pixelated;">

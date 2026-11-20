@@ -12,7 +12,10 @@ email: "hongcheolmin004@gmail.com"
 
 # GitHub Pages project-site URL. Repo is "Hongs_Blog" (not "<user>.github.io"),
 # so the site is served under a /Hongs_Blog path — baseurl must match.
-url: "https://hong-iron.github.io"
+# Since 2026-11-20 the account's user site (Hong-Iron/hong-iron.github.io) carries the
+# domain smash-univ.app, so this project site lives at smash-univ.app/Hongs_Blog/ and the
+# old hong-iron.github.io/Hongs_Blog/ addresses redirect there (301).
+url: "https://smash-univ.app"
 baseurl: "/Hongs_Blog"
 
 github_username: Hong-Iron
@@ -26,10 +29,11 @@ social:
 
 # Search engines. Paste the code each console gives for the "HTML tag"
 # verification method (only the content="…" value).
-#   Google: search.google.com/search-console → URL-prefix property
-#           https://hong-iron.github.io/Hongs_Blog/
+#   Google: search.google.com/search-console → the domain property sc-domain:smash-univ.app
+#           covers the blog. The tag below verified the old URL-prefix property
+#           https://hong-iron.github.io/Hongs_Blog/ (moved to smash-univ.app on 2026-11-20)
 #   Naver:  searchadvisor.naver.com → 웹마스터 도구 → 사이트 등록
-# Then submit https://hong-iron.github.io/Hongs_Blog/sitemap.xml in both.
+# Then submit https://smash-univ.app/Hongs_Blog/sitemap.xml in both.
 webmaster_verifications:
   # Keep it: Search Console drops the ownership check if the tag disappears.
   google: aTR2-1CQEKx7kJ-V_vglgYuiXd0EinJVl3kEFfbYou4

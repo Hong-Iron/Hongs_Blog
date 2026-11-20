@@ -12,7 +12,7 @@ stack:
   - GitHub Pages / Actions
 status: Live
 repo: https://github.com/Hong-Iron/BIBLE-TIMELINE
-demo: https://hong-iron.github.io/BIBLE-TIMELINE/
+demo: https://smash-univ.app/BIBLE-TIMELINE/
 summary: A timeline from 2200 BC to today with 152 events, 158 people, the 66 books and 48 church-history controversies. Every artifact says how directly it bears on the event and what it does not prove.
 cover: /assets/img/uploads/bible-timeline-cover.jpg
 image: /assets/img/uploads/bible-timeline-cover.jpg
@@ -26,7 +26,7 @@ tags:
 
 **바이블 타임라인** ("Bible Timeline") puts the events of the Bible on one timeline you slide sideways, from Abraham leaving Haran (around 2091 BC) to the church today. Each event comes with its verse, its place on the map, and photos of real artifacts, each set at the year it was made. It covers 60 biblical events and 92 events from church history, including the church in Korea, plus 158 people with a profile each.
 
-It is live at [hong-iron.github.io/BIBLE-TIMELINE](https://hong-iron.github.io/BIBLE-TIMELINE/). The screenshot at the top is the timeline around 701 BC, when Sennacherib's army marched on Jerusalem.
+It is live at [smash-univ.app/BIBLE-TIMELINE](https://smash-univ.app/BIBLE-TIMELINE/). The screenshot at the top is the timeline around 701 BC, when Sennacherib's army marched on Jerusalem.
 
 <figure>
   <img src="{{ '/assets/img/uploads/bible-timeline-room.jpg' | relative_url }}" alt="The exhibit room for 701 BC, Sennacherib besieges Jerusalem. On the left is a photo of the Taylor Prism with two more artifacts as thumbnails, and a label card: made in 691 BC, ten years after the event, held at the British Museum, found near Nineveh in 1830, tagged 직접 언급 (direct mention), with what it says and a caution that it never claims Jerusalem fell. On the right are the verse from 2 Kings 18:13, the people involved, and a small map of the route." loading="lazy">

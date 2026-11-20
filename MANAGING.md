@@ -5,7 +5,7 @@ setup / architecture, see `README.md`.
 
 ## The mental model
 
-Everything on the live site — https://hong-iron.github.io/Hongs_Blog/ — comes
+Everything on the live site — https://smash-univ.app/Hongs_Blog/ — comes
 from Markdown and YAML files in this repo. There's no database and no admin
 panel to log into. **Pushing a commit to `master` *is* the publish step** —
 GitHub rebuilds the site automatically within about a minute of every push.
@@ -156,7 +156,7 @@ python3 scripts/blog.py category list     # see what exists
 
 ## Study notes (exported from the Obsidian vault)
 
-Everything under https://hong-iron.github.io/Hongs_Blog/studies/ is generated
+Everything under https://smash-univ.app/Hongs_Blog/studies/ is generated
 from the study vault — don't edit those files by hand, edit the vault and
 re-export:
 
@@ -303,7 +303,7 @@ error unless you look. After pushing:
    something's red.
 2. Or: repo → **Settings → Pages** — shows the current build status and the
    live URL.
-3. Or just load https://hong-iron.github.io/Hongs_Blog/ and check the page
+3. Or just load https://smash-univ.app/Hongs_Blog/ and check the page
    actually changed (hard-refresh if it looks stale).
 
 ---
