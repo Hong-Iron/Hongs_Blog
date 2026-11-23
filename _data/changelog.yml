@@ -1,5 +1,10 @@
 # Update log shown at the bottom of /about/ (about.html). Newest first.
 # Each entry: date, title, items (one line each).
+- date: 2026-11-23
+  title: 프로젝트 Pebble Planet 추가
+  items:
+    - 개발 중인 서바이벌·크래프팅 게임 Pebble Planet을 Projects에 더했어요. 팀이 만드는 행성 생성기 B-PCG가 판의 움직임과 비, 강으로 만든 반지름 10 km 행성 위에서 모으고, 만들고, 파고, 짓고, 버티는 게임이에요.
+    - 그림은 모두 지금 판을 실제로 돌려서 찍은 화면이에요. 바이옴마다 다른 동물과 식물, 그 땅의 사암으로 지은 집, 물 위로 이어 지은 집, 심어서 키운 망고나무를 볼 수 있어요.
 - date: 2026-11-11
   title: 검색에 나오는 제목과 수정일 바로잡기
   items:
