@@ -17,6 +17,8 @@ aliases: ["2-D Convolution", "2차원 합성곱", "2차원 컨벌루션", "이�
 description: "사진 위에 작은 숫자 판(커널)을 올려놓고, 겹친 칸끼리 곱해 더한 값을 판의 가운데 칸에 새로 적는다. 판을 한 칸씩 밀며 모든 픽셀에서 되풀이하면 새 사진이 나온다. 판의 숫자만 바꾸면 흐리게 하기, 윤곽 찾기, 옮기기를 모두 같은 방법으로 할 수 있다. 단, 엄밀한 합성곱은 …"
 prev_url: "/studies/human-interface-media/correlation-vs-convolution/"
 prev_title: "교차 상관과 합성곱 비교"
+next_url: "/studies/human-interface-media/additive-subtractive-mixing/"
+next_title: "가법 혼색과 감법 혼색"
 math: true
 mermaid: false
 code_count: 2

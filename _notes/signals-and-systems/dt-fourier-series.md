@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Discrete-Time Fourier Series", "DTFS", "이산 푸리에 급수", "이산 시간 푸리에 계수", "Discrete-Time Fourier Coefficients", "유한 급수", "Finite Series"]
 description: "주기 N인 수열도 고조파 e^{jk(2\\pi/N)n}의 합으로 나눌 수 있다. 연속 시간과 다른 점은, 이산 시간에서는 서로 다른 고조파가 딱 N개뿐이라 급수가 무한합이 아니라 N개 항의 유한합이라는 것이다. 그래서 수렴 걱정이 없고, N개의 값을 N개의 계수로 정확히 바꿨다가 정…"
@@ -165,6 +165,10 @@ $$N = 10$$, $$2N_1 + 1 = 5$$인 구형파와 그 계수다. 계수도 10칸마�
 
 </div>
 
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 이 과목은 이산 시간 푸리에 급수를 이산 시간 푸리에 변환으로 가는 디딤돌로 쓴다. 합성식, 분석식, 계수의 주기성 $$a_k = a_{k+N}$$은 이 문서와 같다. $$\phi_k = \phi_{k+rN}$$이라 "$$k$$는 $$0 \sim N-1$$ 사이 값만 존재한다"고 범위를 0부터 $$N-1$$로 정해 $$x[n] = a_0\phi_0[n] + a_1\phi_1[n] + \cdots + a_{N-1}\phi_{N-1}[n]$$으로 적는다. 예도 이 문서의 예제 3.10($$N = 5$$), 3.11, 3.12($$N = 10, 20, 40$$)와 같다. 다음 단계에서는 되풀이되지 않는 수열을 주기 $$N$$으로 늘인 뒤 $$N \to \infty$$로 보내 [이산 시간 푸리에 변환](/Hongs_Blog/studies/human-interface-media/dt-fourier-transform/)을 얻고, 되풀이되는 수열은 계수 자리의 임펄스로 나타낸다([이산 주기 신호의 푸리에 변환](/Hongs_Blog/studies/human-interface-media/dt-periodic-fourier-transform/)). 네 가지 푸리에 표현 가운데 디지털 컴퓨터가 정확히 계산할 수 있는 것이 이 급수(곧 DFT)라는 점은 [푸리에 표현 네 가지 비교](/Hongs_Blog/studies/human-interface-media/four-fourier-representations/)에 정리했다.
 
 ## 확인 문제
 

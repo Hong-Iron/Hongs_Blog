@@ -183,10 +183,10 @@
       sub: ""
       slug: "human-interface-media"
       url: "/studies/human-interface-media/"
-      concepts: 31
-      practices: 4
-      codes: 44
-      heavy: 4
+      concepts: 65
+      practices: 8
+      codes: 133
+      heavy: 14
       units: "과목 소개와 들어가기 · 사람의 지각 · 사람의 시각 · 파동의 표현 …"
     - name: "이상 심리학"
       sub: ""

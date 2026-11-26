@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Duality", "쌍대성", "쌍대성 정리", "Duality Theorem", "사각 펄스와 sinc"]
 description: "푸리에 변환식과 역변환식은 부호와 2\\pi만 빼면 모양이 같다. 그래서 시간과 주파수의 역할을 바꾼 쌍이 늘 함께 있다. 사각 펄스의 변환이 sinc이면, sinc의 변환은 사각 펄스다. 한쪽 쌍만 알면 다른 쪽 쌍을 공짜로 얻는다. 다만 바꿀 때 2\\pi와 \\omega의 부호(-…"
@@ -98,6 +98,10 @@ $$x(t) \overset{\mathcal{F}}{\longleftrightarrow} X(j\omega)$$이면 $$X(t) \ove
 ## 연결
 
 - 선수: [푸리에 변환의 성질](/Hongs_Blog/studies/signals-and-systems/fourier-transform-properties/)
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 이 과목은 쌍대성을 이 문서의 그림 4.17과 같은 그림(사각 펄스와 sinc가 시간과 주파수에서 자리를 바꾸는 그림) 한 장으로 소개한다. 그리고 곧바로 쌍대성을 한 번 쓴다. "$$x(t)$$가 실수면 $$X(-j\omega) = X^*(j\omega)$$"를 보인 다음, "$$X(j\omega)$$가 실수라면 쌍대성으로 어떻게 되나?"를 묻는다. 시간 함수 $$g(t) = X(jt)$$는 실수이므로 그 변환 $$2\pi x(-\omega)$$가 켤레 대칭이고, 여기서 $$x(t) = x^*(-t)$$가 나온다. 이 풀이는 [실수 신호와 실수 스펙트럼](/Hongs_Blog/studies/human-interface-media/real-signal-real-spectrum/)의 증명에 있다.
 
 ## 확인 문제
 

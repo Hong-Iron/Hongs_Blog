@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Properties of the Fourier Transform", "표 4.1", "시간 이동", "주파수 이동", "Frequency Shifting", "켤레 대칭", "Conjugate Symmetry", "시간 척도", "Time Scaling", "미분 성질", "적분 성질", "주파수 미분", "Differentiation in Frequency", "파스발 관계", "Parseval's Relation", "에너지 밀도 스펙트럼", "Energy-Density Spectrum"]
 description: "푸리에 급수에서 본 성질표(표 3.1)가 푸리에 변환에도 거의 그대로 있다(표 4.1). 늦추면 위상만 돌고, 빨리 감으면 스펙트럼이 넓어지고, 미분하면 j\\omega가 곱해지고, 실수 신호의 스펙트럼은 좌우 켤레 대칭이다. 이 표를 쓰면 적분을 직접 하지 않고 아는 변환 몇 개에…"
@@ -157,6 +157,10 @@ $$X$$가 실수·짝이라 $$x$$도 실수·짝이다. 짝함수의 도함수는
 
 </div>
 
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 이 과목은 성질 가운데 켤레 대칭 하나를 골라 소리와 묶는다. 이 문서와 같은 유도로 실수 신호에서 $$X(-j\omega) = X^*(j\omega)$$를 보이고, 반대 방향($$X(j\omega)$$가 실수면 $$x(-t) = x^*(t)$$)도 보인 뒤, 신호와 스펙트럼이 모두 실수이려면 둘 다 짝함수여야 한다는 결론을 낸다. 동기는 소리 파동이 실수이고, 청각이 위상을 처리하지 못하므로 스펙트럼도 실수로 다룬다는 것이다. 이 동기는 한쪽 귀로 듣는 지속음에 대한 근사이고, 실제 소리 파형은 대부분 짝함수가 아니다. 실수·짝인 것은 크기 스펙트럼 $$\lvert X(j\omega)\rvert$$다. 단계별 증명, 예, 청각의 예외는 [실수 신호와 실수 스펙트럼](/Hongs_Blog/studies/human-interface-media/real-signal-real-spectrum/)에 있다.
 
 ## 확인 문제
 

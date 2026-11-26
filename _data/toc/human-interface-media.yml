@@ -46,3 +46,55 @@
     - {n: "30", t: "교차 상관과 합성곱 비교", u: "/studies/human-interface-media/correlation-vs-convolution/", k: "concept"}
     - {n: "31", t: "2차원 합성곱", u: "/studies/human-interface-media/two-dimensional-convolution/", k: "concept"}
     - {n: "31", t: "합성곱 연습", u: "/studies/human-interface-media/convolution-practice/", k: "practice"}
+- title: "색 공간"
+  items:
+    - {n: "32", t: "가법 혼색과 감법 혼색", u: "/studies/human-interface-media/additive-subtractive-mixing/", k: "concept"}
+    - {n: "33", t: "비시감 효율 곡선", u: "/studies/human-interface-media/luminous-efficiency/", k: "concept"}
+    - {n: "34", t: "색 공간", u: "/studies/human-interface-media/color-space/", k: "concept"}
+    - {n: "35", t: "HSL과 HSV", u: "/studies/human-interface-media/hsl-hsv/", k: "concept"}
+    - {n: "36", t: "CIE RGB 등색 함수", u: "/studies/human-interface-media/cie-rgb/", k: "concept"}
+    - {n: "37", t: "CIE XYZ", u: "/studies/human-interface-media/cie-xyz/", k: "concept"}
+    - {n: "38", t: "색도도", u: "/studies/human-interface-media/chromaticity-diagram/", k: "concept"}
+    - {n: "38", t: "색도도 혼합 예제 사다리", u: "/studies/human-interface-media/chromaticity-mixing-ladder/", k: "practice"}
+    - {n: "39", t: "맥애덤 타원", u: "/studies/human-interface-media/macadam-ellipses/", k: "concept"}
+    - {n: "40", t: "CIE Lab", u: "/studies/human-interface-media/cie-lab/", k: "concept"}
+    - {n: "41", t: "YUV와 YCbCr", u: "/studies/human-interface-media/yuv-ycbcr/", k: "concept"}
+    - {n: "42", t: "CIE XYZ와 CIE Lab 비교", u: "/studies/human-interface-media/xyz-vs-lab/", k: "concept"}
+- title: "사람의 청각"
+  items:
+    - {n: "43", t: "소리", u: "/studies/human-interface-media/sound/", k: "concept"}
+    - {n: "44", t: "데시벨", u: "/studies/human-interface-media/decibel/", k: "concept"}
+    - {n: "44", t: "데시벨 예제 사다리", u: "/studies/human-interface-media/decibel-ladder/", k: "practice"}
+    - {n: "45", t: "고조파와 복합음", u: "/studies/human-interface-media/harmonics-complex-tone/", k: "concept"}
+    - {n: "46", t: "소리의 크기와 높이", u: "/studies/human-interface-media/loudness-pitch/", k: "concept"}
+    - {n: "47", t: "가청 대역", u: "/studies/human-interface-media/range-of-hearing/", k: "concept"}
+    - {n: "48", t: "음색", u: "/studies/human-interface-media/timbre/", k: "concept"}
+    - {n: "49", t: "귀의 구조", u: "/studies/human-interface-media/ear-anatomy/", k: "concept"}
+    - {n: "50", t: "달팽이관과 장소설", u: "/studies/human-interface-media/cochlea-place-theory/", k: "concept"}
+- title: "소리의 지각"
+  items:
+    - {n: "51", t: "등청감 곡선", u: "/studies/human-interface-media/equal-loudness-contours/", k: "concept"}
+    - {n: "52", t: "주파수 가림", u: "/studies/human-interface-media/frequency-masking/", k: "concept"}
+    - {n: "53", t: "임계 대역과 바크 스케일", u: "/studies/human-interface-media/critical-band-bark/", k: "concept"}
+    - {n: "54", t: "시간 가림", u: "/studies/human-interface-media/temporal-masking/", k: "concept"}
+    - {n: "55", t: "심리음향 모델", u: "/studies/human-interface-media/psychoacoustic-model/", k: "concept"}
+- title: "푸리에 급수"
+  items:
+    - {n: "56", t: "스펙트럼과 스펙트로그램", u: "/studies/human-interface-media/spectrum-spectrogram/", k: "concept"}
+- title: "푸리에 변환"
+  items:
+    - {n: "57", t: "실수 신호와 실수 스펙트럼", u: "/studies/human-interface-media/real-signal-real-spectrum/", k: "concept"}
+- title: "이산 푸리에 변환"
+  items:
+    - {n: "58", t: "이산 시간 푸리에 변환", u: "/studies/human-interface-media/dt-fourier-transform/", k: "concept"}
+    - {n: "59", t: "이산 주기 신호의 푸리에 변환", u: "/studies/human-interface-media/dt-periodic-fourier-transform/", k: "concept"}
+    - {n: "60", t: "푸리에 표현 네 가지 비교", u: "/studies/human-interface-media/four-fourier-representations/", k: "concept"}
+- title: "디지털 오디오"
+  items:
+    - {n: "61", t: "표본화 정리", u: "/studies/human-interface-media/sampling-theorem/", k: "concept"}
+    - {n: "62", t: "에일리어싱", u: "/studies/human-interface-media/aliasing/", k: "concept"}
+    - {n: "62", t: "표본화와 에일리어싱 예제 사다리", u: "/studies/human-interface-media/sampling-aliasing-ladder/", k: "practice"}
+    - {n: "63", t: "양자화 잡음과 SQNR", u: "/studies/human-interface-media/quantization-noise-sqnr/", k: "concept"}
+    - {n: "64", t: "비균일 양자화", u: "/studies/human-interface-media/nonuniform-quantization/", k: "concept"}
+    - {n: "65", t: "MPEG 오디오 부호화", u: "/studies/human-interface-media/mpeg-audio/", k: "concept"}
+    - {n: "65", t: "디지털 오디오 계산 연습", u: "/studies/human-interface-media/digital-audio-practice/", k: "practice"}

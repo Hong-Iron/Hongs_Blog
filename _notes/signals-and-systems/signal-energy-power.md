@@ -120,7 +120,7 @@ $$P_\infty \triangleq \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert 
 
 ## 과목별 관점
 
-**휴먼 인터페이스 미디어 (4-1학기).** 강의 4는 같은 두 식, 구간 $$t_1 \le t \le t_2$$의 에너지 $$\int_{t_1}^{t_2}\vert x(t)\vert ^2dt$$와 평균 전력 $$P_\infty = \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert ^2dt$$를 "파동의 에너지"로 소개한다. 파동을 복소수 $$Ae^{i(2\pi t/T + \phi)}$$로 쓰면 $$\vert x(t)\vert ^2 = A^2$$이라 전력이 $$A^2$$이고, 실수 사인 $$A\sin(\cdot)$$은 그 절반 $$A^2/2$$다: [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/).
+**휴먼 인터페이스 미디어 (4-1학기).** 파동의 표현을 다루는 부분은 같은 두 식, 구간 $$t_1 \le t \le t_2$$의 에너지 $$\int_{t_1}^{t_2}\vert x(t)\vert ^2dt$$와 평균 전력 $$P_\infty = \lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{T}\vert x(t)\vert ^2dt$$를 "파동의 에너지"로 소개한다. 파동을 복소수 $$Ae^{i(2\pi t/T + \phi)}$$로 쓰면 $$\vert x(t)\vert ^2 = A^2$$이라 전력이 $$A^2$$이고, 실수 사인 $$A\sin(\cdot)$$은 그 절반 $$A^2/2$$다: [파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/).
 
 ## 확인 문제
 

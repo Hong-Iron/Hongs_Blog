@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Continuous-Time Signal", "Discrete-Time Signal", "신호", "Signal", "연속 신호", "이산 신호", "아날로그 신호", "Analog Signal", "디지털 신호", "Digital Signal", "결정론적 신호", "Deterministic Signal", "랜덤 신호", "Random Signal", "독립 변수", "Independent Variable", "C-T", "D-T"]
 description: "신호는 시간에 따라 변하는 값, 곧 정보를 실어 나르는 함수다. 마이크의 전압이나 자동차의 속도처럼 모든 순간에 값이 있으면 연속 시간 신호이고, 매일 종가처럼 정해진 순간에만 값이 있으면 이산 시간 신호다. 컴퓨터는 이산 시간 신호만 다룰 수 있어서, 연속 신호를 일정한 간격으로…"
@@ -91,6 +91,10 @@ permalink: "/studies/signals-and-systems/ct-dt-signals/"
 
 - 선수: [함수](/Hongs_Blog/studies/college-math/function/)
 - 다음: [신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/), [독립 변수의 변환](/Hongs_Blog/studies/signals-and-systems/independent-variable-transform/)
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 신호를 사람의 지각과 나란히 놓고 시작한다. 사람은 자극을 감각기관으로 받아 뇌에서 알아보고, 컴퓨터는 변환기(마이크, 카메라)로 받아 프로세서에서 알아본다. 이 일을 디지털로 하려면 시간을 띄엄띄엄 끊는 표본화와 값을 몇 단계로 끊는 양자화가 필요하다. 신호는 정보를 표현하는 물리적 수단이고, 소리·사진·영상에 담긴 정보는 어떤 형식으로 드러나는 패턴이라고 본다. 신호가 파동이면 그 패턴은 어떤 주파수 성분이 얼마나 들었는가로 읽는다. 괄호 약속은 이 문서와 같아서 연속 신호는 $$x(t)$$, 이산 신호는 $$x[n]$$이다. 표본 간격은 이 문서의 $$T_s$$ 대신 $$t_0$$(디지털 오디오 쪽에서는 $$T$$)로 적어 $$x[n] = x(nt_0)$$로 쓴다. "이산 신호를 연속 신호로 되돌릴 수 있는가"라는 물음에는 [표본화 정리](/Hongs_Blog/studies/human-interface-media/sampling-theorem/)가 답한다. 신호의 최고 주파수보다 두 배 넘게 자주 재면 되돌릴 수 있다.
 
 ## 확인 문제
 

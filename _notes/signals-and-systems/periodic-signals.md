@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Periodic Signal", "주기", "Period", "기본 주기", "Fundamental Period", "비주기 신호", "Aperiodic Signal"]
 description: "일정한 시간마다 똑같은 모양이 끝없이 되풀이되는 신호다. 시계 초침처럼, 한 바퀴 시간만큼 밀어도 그림이 그대로다. 되풀이 간격 중 가장 짧은 것을 기본 주기라 한다. 한 구간만 반복처럼 보여서는 안 되고, 모든 시간에서 맞아야 한다. 그래서 한쪽은 \\cos, 다른 쪽은 \\sin으…"
@@ -82,6 +82,10 @@ $$x(t)$$를 $$2\pi$$만큼 왼쪽으로 민 점선은 색칠한 $$-2\pi \le t < 
 - 선수: [독립 변수의 변환](/Hongs_Blog/studies/signals-and-systems/independent-variable-transform/) (주기는 시간 이동에 대해 변하지 않는 성질이다)
 - 다음: [연속 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/ct-complex-exponential/)
 
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 같은 정의를 쓴다. $$x(t) = x(t + T)$$이면 주기 $$T$$인 주기 신호이고, 그런 $$T$$ 가운데 가장 작은 양수가 기본 주기 $$T_0$$이다. 이산 신호도 $$x[n] = x[n + N]$$과 기본 주기 $$N_0$$으로 같다. 이 과목에서 주기 신호가 중요한 곳은 소리다. 악기 소리 같은 주기 신호는 기본 주파수와 그 정수배 성분(고조파)의 합으로 나뉜다([고조파와 복합음](/Hongs_Blog/studies/human-interface-media/harmonics-complex-tone/)). 연속 주기 신호를 재서 만든 이산 신호의 기본 주기는 표본화율에 따라 달라진다. 1 kHz 톤을 1초에 8000번 재면 8표본마다 되풀이된다. 1초에 44,100번 재면 $$1000/44100 = 10/441$$이라서, 441표본(그동안 원래 신호는 10주기)이 지나야 처음으로 되풀이된다[^h2]. 원래 주기 안에 표본이 정수 개 들어가지 않으면 표본의 주기가 길어지고, 원래 주기와 표본 간격의 비가 무리수면 아예 되풀이되지 않는다. 디지털 오디오의 표본화는 [표본화 정리](/Hongs_Blog/studies/human-interface-media/sampling-theorem/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -101,4 +105,5 @@ $$x(t)$$를 $$2\pi$$만큼 왼쪽으로 민 점선은 색칠한 $$-2\pi \le t < 
 
 
 [^s2]: [06_periodic-signals_plot.py](/Hongs_Blog/studies/signals-and-systems/code/06_periodic-signals_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$t = -\frac\pi2$$에서 $$x(t) = 0$$, $$x(t + 2\pi) = -1$$로 다르고, $$t = 1$$과 $$t = -7$$에서는 같음.
+[^h2]: 1 kHz 톤의 표본 주기는 [이산 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/dt-complex-exponential/)의 조건 $$\omega_0/2\pi = m/N$$으로 계산했고, [61_sampling-theorem_verify.py](/Hongs_Blog/studies/human-interface-media/code/61_sampling-theorem_verify/)로 8과 441이 가장 짧은 주기임을 확인했다.
 {% endraw %}

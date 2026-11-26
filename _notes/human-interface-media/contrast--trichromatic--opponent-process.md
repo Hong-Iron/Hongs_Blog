@@ -62,7 +62,7 @@ permalink: "/studies/human-interface-media/contrast--trichromatic--opponent-proc
 | 설명하는 현상 | 색 맞추기, 조건등색, 색각 이상의 원색 수 | 잔상, 동시 대비, 떠올릴 수 없는 색 조합 |
 | 공학의 좌표계 | RGB, CIE XYZ | CIE Lab ($$a^*$$, $$b^*$$), YCbCr |
 
-이 표의 첫 줄과 넷째 줄을 한 줄로 줄이면 이렇다. 빛 → 수용기(삼색, 색 맞추기) → 반대색 세포(잔상, 동시 대비) → 뇌. 공학의 좌표계 줄은 색 공간(color space)과 이어진다[^s1].
+이 표의 첫 줄과 넷째 줄을 한 줄로 줄이면 이렇다. 빛 → 수용기(삼색, 색 맞추기) → 반대색 세포(잔상, 동시 대비) → 뇌. 공학의 좌표계 줄은 색 공간(color space)과 이어진다[^s1]. 각 좌표계는 [CIE XYZ](/Hongs_Blog/studies/human-interface-media/cie-xyz/), [CIE Lab](/Hongs_Blog/studies/human-interface-media/cie-lab/), [YUV와 YCbCr](/Hongs_Blog/studies/human-interface-media/yuv-ycbcr/)에 있다.
 
 ## 둘 다 아닐 때
 

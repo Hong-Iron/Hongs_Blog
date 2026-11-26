@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-15"
-last_modified_at: "2026-10-15"
-date: "2026-10-15"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Continuous-Time Fourier Series", "CTFS", "푸리에 급수", "Fourier Series", "푸리에 계수", "Fourier Coefficients", "스펙트럼 계수", "Spectral Coefficients", "합성식", "Synthesis Equation", "분석식", "Analysis Equation", "직류 성분", "DC Component", "기본파", "Fundamental", "포락선", "Envelope", "sinc 함수"]
 description: "주기 신호는 \"기본 진동과 그 2배, 3배, … 빠른 진동들\"을 알맞은 비율로 섞어 만들 수 있다. 화음이 기본음과 배음으로 이루어진 것과 같다. 섞는 비율(푸리에 계수)은 신호에 각 진동을 곱해 한 주기 동안 평균 내면 구해진다. 이 진동들은 서로 겹치지 않아서(직교), 하나의 …"
@@ -186,6 +186,10 @@ $$T_1 = 1$$일 때다. 세 줄의 막대는 모두 같은 점선 곡선 위에 �
 
 </div>
 
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 이 과목은 사람의 청각을 컴퓨터로 흉내 내는 문제에서 푸리에 급수를 꺼낸다. 귀 속 달팽이관이 압력 파동을 주파수별로 나누듯, 컴퓨터도 소리를 스펙트럼으로 바꿔야 하기 때문이다. 출발점은 파동의 복소수 표현 $$x(t) = Ae^{i(2\pi t/T + \phi)}$$이고, 허수 단위를 $$i$$로 쓰다가 급수 식부터는 이 문서처럼 $$j$$로 쓴다([파동의 복소수 표현](/Hongs_Blog/studies/human-interface-media/complex-wave/)). 고조파를 먼저 $$k = 1, \dots, N$$의 합 $$\sum_k A_ke^{i2\pi kf_0t}$$로 쌓은 뒤 $$k$$를 모든 정수로 넓혀 합성식에 이르고, $$a_k$$를 $$\omega_k$$ 주파수 성분의 가중치, 곧 스펙트럼 계수로 읽는다([고조파와 복합음](/Hongs_Blog/studies/human-interface-media/harmonics-complex-tone/)). 예는 이 문서의 예제 3.2~3.5와 같고, $$\sin\omega_0t$$ 다음에 $$\cos\omega_0t$$의 계수를 묻는다(답은 $$a_{\pm1} = \frac12$$). 사각파는 $$T = 4T_1$$에서 $$\sin\frac{\pi k}{2}$$가 짝수 $$k$$에서 0, 홀수 $$k$$에서 $$\pm1$$이 된다는 점을 짚는다. 이 과목의 요약은 $$a_k$$가 $$k$$배 주파수 성분의 에너지 크기를 나타낸다고 쓴다. 정확히는 $$a_k$$가 그 성분의 복소 진폭이고, 그 성분의 평균 전력이 $$\lvert a_k\rvert^2$$다([연속 시간 푸리에 급수의 성질](/Hongs_Blog/studies/signals-and-systems/ctfs-properties/)의 파스발 관계). 네 가지 푸리에 표현 가운데 이 급수의 자리는 [푸리에 표현 네 가지 비교](/Hongs_Blog/studies/human-interface-media/four-fourier-representations/)에 정리했다.
 
 ## 확인 문제
 

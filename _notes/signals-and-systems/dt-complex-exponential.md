@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-15"
-last_modified_at: "2026-10-15"
-date: "2026-10-15"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Discrete-Time Complex Exponential Signal", "이산 시간 정현파", "Discrete-Time Sinusoid", "이산 시간 주기성", "Periodicity of Discrete-Time Complex Exponentials", "기본 주파수", "Fundamental Frequency", "고조파 집합", "Harmonically Related Exponentials"]
 description: "이산 시간 복소 지수 e^{j\\omega0 n}은 원 위를 도는 점을 정수 시각에만 찍은 것이다. 한 번에 \\omega0만큼씩 건너뛰는데, \\omega0와 \\omega0 + 2\\pi는 한 바퀴 더 돌았을 뿐 같은 자리에 찍히므로 구별되지 않는다. 그래서 주파수는 -\\pi부터 \\pi…"
@@ -181,6 +181,10 @@ $$\omega_0$$를 $$\pi/8$$에서 $$\pi$$까지 키우면 진동이 빨라지고, 
 </div>
 
 
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 주기 조건 $$\omega_0/2\pi = m/N$$의 유도와 $$\cos(\pi n/8)$$부터 $$\cos(2\pi n)$$까지의 예는 이 문서와 같다. 주기 신호가 되는 조건은 $$\omega_0$$가 $$2\pi$$의 유리수배인 것, 곧 $$\omega_0/2\pi$$가 유리수인 것이다. $$\omega_0$$가 $$\pi$$까지는 진동이 빨라지다가 그 뒤로 느려지는 성질은 "유한 대역(limited frequency)"이라는 이름으로 다룬다. 이산 신호가 나타낼 수 있는 떨림의 빠르기에 위 끝이 있다는 뜻이다. 이 과목은 그 위 끝을 소리의 실제 주파수로 옮겨 쓴다. 간격 $$t_0$$로 잰 신호에서는 $$\omega = 2\pi f t_0$$이므로, 가장 빠른 $$\omega = \pi$$는 실제 주파수 $$1/(2t_0)$$, 곧 1초에 재는 횟수의 절반이다. 1초에 8000번 재는 전화라면 4000 Hz다. 그보다 높은 소리는 $$\omega$$가 $$\pi$$를 넘어 다시 느린 신호로 보이고, 이 둔갑이 [에일리어싱](/Hongs_Blog/studies/human-interface-media/aliasing/)이다. 예를 들어 1초에 16,000번 재면 15 kHz($$\omega = 15\pi/8$$)와 1 kHz($$\omega = \pi/8$$)가 같은 표본을 낸다[^h3]. 표본만으로 원래 소리를 되살릴 조건은 [표본화 정리](/Hongs_Blog/studies/human-interface-media/sampling-theorem/)에 있다.
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -218,4 +222,5 @@ $$\omega_0$$를 $$\pi/8$$에서 $$\pi$$까지 키우면 진동이 빨라지고, 
 
 [^s1]: 값은 검증 코드로 확인했다.
 [^s2]: [09_dt-complex-exponential_plot.py](/Hongs_Blog/studies/signals-and-systems/code/09_dt-complex-exponential_plot/)로 그렸고, 같은 코드로 다음을 확인했다: $$\cos(15\pi n/8) = \cos(\pi n/8)$$, $$\cos 7\pi n = (-1)^n$$, 네 신호의 기본 주기 16, 4, 2, 16.
+[^h3]: 1초에 16,000번 재는 환산 예와 전화의 4000 Hz는 설명용으로 보탠 값이고, [62_aliasing_verify.py](/Hongs_Blog/studies/human-interface-media/code/62_aliasing_verify/)와 [61_sampling-theorem_verify.py](/Hongs_Blog/studies/human-interface-media/code/61_sampling-theorem_verify/)로 확인했다.
 {% endraw %}

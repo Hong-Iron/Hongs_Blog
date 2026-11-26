@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-15"
-last_modified_at: "2026-10-15"
-date: "2026-10-15"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Sampling", "Quantization", "샘플링", "표본 간격", "Sampling Interval", "양자화 단계", "Quantization Level", "화소", "Pixel", "격자", "Grid", "A/D 변환", "Analog-to-Digital Conversion"]
 description: "연속 신호를 컴퓨터에 넣으려면 두 번 끊는다. 시간을 일정한 간격으로 끊어 그 순간의 값만 남기는 것이 표본화, 남긴 값을 정해진 몇 단계 중 가장 가까운 것으로 반올림하는 것이 양자화다. 표본을 촘촘히, 단계를 잘게 할수록 원래 신호에 가까워지지만 저장할 데이터가 늘어난다. 양자…"
@@ -101,6 +101,10 @@ flowchart LR
 - 선수: [연속 시간 신호와 이산 시간 신호](/Hongs_Blog/studies/signals-and-systems/ct-dt-signals/), [단위 임펄스와 단위 계단](/Hongs_Blog/studies/signals-and-systems/unit-impulse-step/)
 - 관련: [이산 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/dt-complex-exponential/) (표본화한 정현파의 주기)
 
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 디지털 오디오의 첫 두 단계로 같은 내용을 다룬다. 표본화는 신호에 간격 $$T$$의 임펄스열 $$p(t) = \sum_n \delta(t - nT)$$를 곱해 $$x_p(t) = \sum_n x(nT)\delta(t - nT)$$를 만드는 일로 쓰고, 그 근거로 $$x(t)\delta(t - t_0) = x(t_0)\delta(t - t_0)$$를 든다. 이 문서가 뒤로 미룬 정확한 조건인 표본화 정리도 함께 다룬다. 표본화 각주파수 $$\omega_s = 2\pi/T$$가 신호의 최고 각주파수 $$\omega_M$$의 두 배보다 크면($$\omega_s > 2\omega_M$$), 크기 $$T$$배이고 차단 주파수가 $$\omega_M < \omega_c < \omega_s - \omega_M$$인 저역 통과 필터로 원래 신호를 되살린다([표본화 정리](/Hongs_Blog/studies/human-interface-media/sampling-theorem/)). 하이파이 오디오(최고 약 20 kHz, 44.1 kHz)와 전화(약 3.4 kHz, 8 kHz)의 표본화율을 비교하고[^h3], 조건을 어겼을 때 빠른 성분이 느린 성분으로 둔갑하는 모습을 시간과 주파수 두 그림으로 본다([에일리어싱](/Hongs_Blog/studies/human-interface-media/aliasing/)). 양자화는 표본을 몇 단계로 반올림하고 단계 번호를 비트로 적는 PCM의 다음 단계로 이어진다: [양자화 잡음과 SQNR](/Hongs_Blog/studies/human-interface-media/quantization-noise-sqnr/).
+
 ## 확인 문제
 
 <details class="callout callout-question" markdown="1">
@@ -121,4 +125,5 @@ flowchart LR
 
 [^s1]: 계산은 검증 코드로 확인했다.
 [^s2]: [11_sampling-quantization_plot.py](/Hongs_Blog/studies/signals-and-systems/code/11_sampling-quantization_plot/)로 그렸고, 같은 코드로 다음을 확인했다: 10개마다 되풀이, 3비트 양자화의 8단계와 최대 오차 0.125, 2Hz와 0.5Hz 코사인이 초당 2.5번 뽑은 표본에서 같음. 3비트와 2.5Hz 표본화는 설명을 위해 고른 값이다.
+[^h3]: 값은 표준값(가청 대역 위 끝, CD 규격 IEC 60908, 전화 규격 ITU-T G.711)으로 채웠다.
 {% endraw %}

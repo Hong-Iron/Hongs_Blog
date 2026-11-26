@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Continuous-Time Fourier Transform", "CTFT", "푸리에 변환", "Fourier Transform", "역푸리에 변환", "Inverse Fourier Transform", "푸리에 변환 쌍", "Fourier Transform Pair", "스펙트럼", "Spectrum", "sinc 함수", "Sinc Function", "비주기 신호", "Aperiodic Signal"]
 description: "푸리에 급수는 되풀이되는 신호만 나눌 수 있다. 한 번 나타났다 사라지는 신호는 \"주기가 무한히 긴 주기 신호\"로 본다. 주기를 늘리면 고조파 사이 간격이 좁아지다가 결국 모든 주파수가 이어진 연속 스펙트럼이 되고, 급수의 합은 적분이 된다. 그것이 푸리에 변환이다. 에너지가 유한…"
@@ -158,6 +158,10 @@ $$W$$를 1, 2, 4로 키우면 왼쪽 사각형은 넓어지고, 오른쪽 $$x(t)
 
 </div>
 
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 이 과목은 한 번만 나는 소리의 스펙트럼을 구하려고 푸리에 변환을 들여온다. 유도는 이 문서와 같다. 펄스 폭 $$T_1$$을 두고 주기를 $$4T_1 \to 8T_1 \to 16T_1$$로 늘린 사각파에서 출발해, 비주기 신호를 주기 $$T$$인 신호로 늘이고 $$T \to \infty$$로 보낸다. 예도 같다. $$e^{-at}u(t)$$, $$e^{-a\vert t\vert }$$, 임펄스와 사각 펄스(예제 4.1~4.4)에 이어, 예제 4.5에 "저역 통과 필터"라는 이름을 붙인다. 주파수에서 $$\vert \omega\vert  < W$$만 통과시키는 이상적인 저역 통과 필터의 모양을 시간으로 되돌리면 sinc가 나온다는 뜻이고, $$W$$를 바꿔 가며 그린 그림도 그림 4.11과 같다. 이 과목은 $$X(j\omega)$$를 $$x(t)$$에 포함된 파동 에너지의 주파수 분포라고 설명한다. 정확히는 에너지 밀도가 $$\frac{\lvert X(j\omega)\rvert^2}{2\pi}$$다([푸리에 변환의 성질](/Hongs_Blog/studies/signals-and-systems/fourier-transform-properties/)의 파스발 관계). 소리가 실수라서 생기는 스펙트럼의 대칭은 [실수 신호와 실수 스펙트럼](/Hongs_Blog/studies/human-interface-media/real-signal-real-spectrum/)이 다룬다.
 
 ## 확인 문제
 

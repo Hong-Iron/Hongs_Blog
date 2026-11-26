@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Convergence of the Fourier Series", "디리클레 조건", "Dirichlet Conditions", "깁스 현상", "Gibbs Phenomenon", "근사 오차 에너지", "Approximation Error Energy", "부분합", "Partial Sum", "유계 변동", "Bounded Variation"]
 description: "고조파를 무한히 더하면 정말 원래 신호가 될까? 실제로 쓰는 거의 모든 주기 신호에서는 그렇다. 한 주기의 에너지가 유한하면 오차의 에너지가 0으로 가고, 디리클레의 세 조건을 만족하면 끊기지 않은 점마다 원래 값으로 간다. 하지만 끊긴 점에서는 양쪽 값의 평균으로 가고, 그 근처…"
@@ -112,6 +112,10 @@ $$E_N = \int_T\vert e_N(t)\vert ^2dt = \int_T\left\vert x(t) - \sum_{k=-N}^{N}a_
 
 - 선수: [연속 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/ct-fourier-series/), [신호의 에너지와 전력](/Hongs_Blog/studies/signals-and-systems/signal-energy-power/)
 - 수학 쪽: [급수의 수렴](/Hongs_Blog/studies/calculus/series-convergence/), [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/) (디리클레 정리, 깁스 현상)
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 이 과목은 수렴 조건을 따로 다루지 않고 "모든 주기 함수는 푸리에 급수로 표현할 수 있다"고 쓴다. 정확히는 이 문서의 에너지 조건이나 디리클레 조건을 만족하는 주기 함수여야 한다. 유한 푸리에 급수 $$x_N(t) = \sum_{k=-N}^{N}a_ke^{jk\omega_0t}$$와 근사 오차 $$e_N(t) = x(t) - x_N(t)$$는 이 문서와 같은 사각파 그림($$N = 1, 3, 7, 19, 79$$)으로 보이고, "$$N \to \infty$$이면 $$e_N \to 0$$"이라 적는다. 사각파에서 이 말은 오차 에너지 $$E_N$$이 0으로 간다는 뜻으로 읽어야 한다. 끊긴 점 근처에서는 깁스 현상 때문에 $$\lvert e_N(t)\rvert$$의 최댓값이 $$N$$을 늘려도 0으로 가지 않는다. 고조파를 몇 개만 더해 소리를 만드는 쪽의 의미는 [고조파와 복합음](/Hongs_Blog/studies/human-interface-media/harmonics-complex-tone/)에 있다.
 
 ## 확인 문제
 

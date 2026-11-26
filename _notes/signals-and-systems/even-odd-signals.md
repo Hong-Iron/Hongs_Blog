@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-08"
-last_modified_at: "2026-10-08"
-date: "2026-10-08"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Even Signal", "Odd Signal", "우함수", "기함수", "짝 부분", "Even Part", "홀 부분", "Odd Part", "짝·홀 분해", "Even-Odd Decomposition"]
 description: "시간축을 뒤집어도 그대로인 신호가 짝 신호(\\cos t처럼 세로축에 대해 좌우 대칭), 뒤집으면 부호만 바뀌는 신호가 홀 신호(\\sin t처럼 원점에 대해 대칭)다. 어떤 신호든 짝 부분과 홀 부분의 합으로 꼭 한 가지 방법으로 나눌 수 있다. 홀 신호는 t = 0에서 값이 반드시…"
@@ -88,6 +88,10 @@ $$\mathcal{E}v\{x(t)\} = \tfrac12\bigl[x(t) + x(-t)\bigr], \qquad \mathcal{O}d\{
 
 - 선수: [독립 변수의 변환](/Hongs_Blog/studies/signals-and-systems/independent-variable-transform/) (시간 반전)
 - 수학 쪽: [푸리에 급수](/Hongs_Blog/studies/calculus/fourier-series/)
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 짝 신호를 우함수(even), 홀 신호를 기함수(odd)라 부른다. 정의와 기호는 같다. 우함수는 $$x(-t) = x(t)$$, $$x[-n] = x[n]$$이고 기함수는 $$x(-t) = -x(t)$$, $$x[-n] = -x[n]$$이다. 짝 부분과 홀 부분도 $$\mathcal{E}v\{x(t)\} = \frac12[x(t) + x(-t)]$$, $$\mathcal{O}d\{x(t)\} = \frac12[x(t) - x(-t)]$$로 쓴다. 이 과목에서 우함수가 쓰이는 곳은 실수 스펙트럼이다. 소리 파동은 실수이고, 그 스펙트럼까지 실수(허수부가 없는 값)로 다루려면 파동이 실수 우함수여야 한다. 실수 신호의 스펙트럼은 $$X(-j\omega) = X^*(j\omega)$$를 만족하고, 여기에 스펙트럼이 실수라는 조건을 더하면 신호가 $$x(-t) = x(t)$$가 되기 때문이다([실수 신호와 실수 스펙트럼](/Hongs_Blog/studies/human-interface-media/real-signal-real-spectrum/)).
 
 ## 확인 문제
 

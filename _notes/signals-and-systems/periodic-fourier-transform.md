@@ -10,9 +10,9 @@ course_slug: "signals-and-systems"
 course_url: "/studies/signals-and-systems/"
 track: "데이터와 계산"
 track_sub: "신호와 수치 계산"
-updated: "2026-10-09"
-last_modified_at: "2026-10-09"
-date: "2026-10-09"
+updated: "2026-11-26"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 status: "verified"
 aliases: ["Fourier Transform for Periodic Signals", "주기 신호의 스펙트럼", "임펄스 열", "Impulse Train", "선 스펙트럼", "Line Spectrum"]
 description: "주기 신호는 에너지가 무한대라 보통의 적분으로는 변환이 나오지 않는다. 대신 임펄스를 쓰면 된다. 주기 신호는 고조파 주파수에만 성분이 있으므로, 그 변환은 고조파 자리에 세운 임펄스들의 줄이다. k번째 임펄스의 넓이는 푸리에 급수 계수의 2\\pi배다. 그래서 주기 신호와 비주기 …"
@@ -104,6 +104,10 @@ $$X(j\omega) = \frac{2\pi}{T}\sum_{k=-\infty}^{\infty}\delta\left(\omega - \frac
 ## 연결
 
 - 선수: [연속 시간 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/ct-fourier-transform/), [연속 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/ct-fourier-series/)
+
+## 과목별 관점
+
+**휴먼 인터페이스 미디어 (4-1학기).** 이 과목은 주기 함수의 푸리에 계수를 한 주기의 푸리에 변환으로 읽는 관계 $$a_k = \frac1TX(j\omega)\big\vert _{\omega = k\omega_0}$$를 따로 강조한다. 여기서 $$X$$는 주기 신호에서 한 주기만 잘라 낸 신호의 변환이고, 자르는 구간은 $$s \le t \le s + T$$ 어디든 된다. 주기 신호의 계수는 한 주기의 스펙트럼을 $$\omega_0$$의 정수배 자리에서만 찍은 띄엄띄엄한 값이라는 뜻이다. 이 과목은 이를 "$$a_k$$는 $$X(j\omega)$$와 임펄스 함수 $$\delta(\omega - k\omega_0)$$의 곱"이라고 줄여 쓴다. 이 말은 주기 신호의 스펙트럼 전체가 $$\sum_k\frac{2\pi}{T}X(jk\omega_0)\delta(\omega - k\omega_0) = \sum_k2\pi a_k\delta(\omega - k\omega_0)$$라는 뜻으로 읽는다. $$a_k$$ 자체는 숫자 하나다. 예로 든 $$\cos\omega_0t$$, $$\sin\omega_0t$$, 임펄스 열은 이 문서의 예제 4.7, 4.8과 같다. 이산 시간판은 [이산 주기 신호의 푸리에 변환](/Hongs_Blog/studies/human-interface-media/dt-periodic-fourier-transform/)이다.
 
 ## 확인 문제
 

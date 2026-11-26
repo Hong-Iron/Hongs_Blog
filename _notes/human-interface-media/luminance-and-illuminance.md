@@ -101,6 +101,7 @@ flowchart LR
 
 - 선수: [파동과 빛](/Hongs_Blog/studies/human-interface-media/wave-and-light/) (진폭과 세기)
 - 대비를 강조하는 시각계의 배선: [측면 억제](/Hongs_Blog/studies/human-interface-media/lateral-inhibition/)
+- 광도·조도·휘도의 단위(cd, lx, cd/m²)는 파장마다 눈의 감도로 무게를 매긴 양이다: [비시감 효율 곡선](/Hongs_Blog/studies/human-interface-media/luminous-efficiency/)
 
 ## 자주 하는 오해
 

@@ -10,8 +10,8 @@ track_sub: "신호와 수치 계산"
 concepts: 44
 practices: 6
 codes: 80
-last_modified_at: "2026-10-15"
-date: "2026-10-15"
+last_modified_at: "2026-11-26"
+date: "2026-11-26"
 description: "신호 및 시스템 공부 노트: 개념 문서, 연습 문제, 코드"
 math: true
 mermaid: true

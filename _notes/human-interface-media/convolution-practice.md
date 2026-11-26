@@ -16,6 +16,8 @@ status: "verified"
 description: "사용 개념: 1차원은 컨벌루션 적분 (f g)(t) = \\int f(\\tau)g(t - \\tau)\\,d\\tau와 컨벌루션 합, 2차원은 2차원 합성곱."
 prev_url: "/studies/human-interface-media/lateral-inhibition-ladder/"
 prev_title: "측면 억제 예제 사다리"
+next_url: "/studies/human-interface-media/chromaticity-mixing-ladder/"
+next_title: "색도도 혼합 예제 사다리"
 math: true
 mermaid: false
 code_count: 4
