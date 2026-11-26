@@ -6,9 +6,9 @@ course: "휴먼 인터페이스 미디어"
 course_slug: "human-interface-media"
 course_url: "/studies/human-interface-media/"
 track: "사람과 심리"
-concepts: 65
+concepts: 66
 practices: 8
-codes: 133
+codes: 135
 last_modified_at: "2026-11-26"
 date: "2026-11-26"
 description: "휴먼 인터페이스 미디어 공부 노트: 개념 문서, 연습 문제, 코드"
@@ -323,6 +323,7 @@ permalink: "/studies/human-interface-media/"
 | 58 | [이산 시간 푸리에 변환](/Hongs_Blog/studies/human-interface-media/dt-fourier-transform/) | 수열의 스펙트럼 $$\sum x[n]e^{-j\omega n}$$, 주기 $$2\pi$$인 연속 함수 | [검증](/Hongs_Blog/studies/human-interface-media/code/58_dt-fourier-transform_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/58_dt-fourier-transform_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/58_dt-fourier-transform_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/58_dt-fourier-transform_fig2.svg) | — |
 | 59 | [이산 주기 신호의 푸리에 변환](/Hongs_Blog/studies/human-interface-media/dt-periodic-fourier-transform/) | 주기 수열은 $$2\pi k/N$$마다 넓이 $$2\pi a_k$$ 임펄스, $$2\pi$$마다 되풀이 | [검증](/Hongs_Blog/studies/human-interface-media/code/59_dt-periodic-fourier-transform_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/59_dt-periodic-fourier-transform_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/59_dt-periodic-fourier-transform_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/59_dt-periodic-fourier-transform_fig2.svg) | — |
 | 60 | [푸리에 표현 네 가지 비교](/Hongs_Blog/studies/human-interface-media/four-fourier-representations/) | 시간이 띄엄띄엄하면 스펙트럼이 되풀이, 시간이 되풀이되면 스펙트럼이 띄엄띄엄 | [검증](/Hongs_Blog/studies/human-interface-media/code/60_four-fourier-representations_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/60_four-fourier-representations_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/60_four-fourier-representations_fig1.svg) | — |
+| 66 | [이산 시간 푸리에 변환과 이산 푸리에 변환 비교](/Hongs_Blog/studies/human-interface-media/dtft-vs-dft/) | DTFT는 곡선 전체, DFT는 그 위의 점 $$N$$개. 점 사이·순환 합성곱·해상도에서 갈린다 | [검증](/Hongs_Blog/studies/human-interface-media/code/66_dtft-vs-dft_verify/) · [그림 코드](/Hongs_Blog/studies/human-interface-media/code/66_dtft-vs-dft_plot/) · [그림1](/Hongs_Blog/assets/notes/human-interface-media/66_dtft-vs-dft_fig1.svg) · [그림2](/Hongs_Blog/assets/notes/human-interface-media/66_dtft-vs-dft_fig2.svg) | — |
 
 제목의 "이산 푸리에 변환"은 이산 시간 푸리에 변환(DTFT)을 말한다. 컴퓨터가 계산하는 길이 $$N$$짜리 DFT는 [이산 푸리에 변환과 FFT](/Hongs_Blog/studies/linear-algebra/dft/)다.
 
@@ -428,6 +429,7 @@ graph TD
   n63["63 양자화 잡음과 SQNR"]
   n64["64 비균일 양자화"]
   n65["65 MPEG 오디오 부호화"]
+  n66["66 이산 시간 푸리에 변환과 이산 푸리에 변환 비교"]
   n01 --> n02
   n01 --> n03
   n02 --> n04
@@ -544,5 +546,7 @@ graph TD
   n61 --> n65
   n63 --> n65
   n64 --> n65
+  n58 --> n66
+  n60 --> n66
 ```
 {% endraw %}

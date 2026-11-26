@@ -17,6 +17,8 @@ aliases: ["MPEG Audio", "MPEG Audio Coding", "MPEG 오디오", "MP3", "MPEG-1 Au
 description: "이삿짐을 쌀 때 어차피 아무도 못 볼 물건은 빼고, 눈에 띄는 물건만 꼼꼼히 싸는 것과 같다. MPEG 오디오는 소리를 여러 주파수 대역으로 쪼갠 뒤, 큰 소리에 가려 들리지 않는 성분은 버리고, 들리는 성분에도 잡음이 안 들릴 만큼만 비트를 준다. 그래서 CD 소리 데이터를 10…"
 prev_url: "/studies/human-interface-media/nonuniform-quantization/"
 prev_title: "비균일 양자화"
+next_url: "/studies/human-interface-media/dtft-vs-dft/"
+next_title: "이산 시간 푸리에 변환과 이산 푸리에 변환 비교"
 math: true
 mermaid: true
 code_count: 2

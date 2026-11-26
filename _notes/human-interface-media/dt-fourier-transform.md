@@ -186,7 +186,7 @@ $$n$$은 정수 시각, $$\omega$$는 실수 주파수(라디안/샘플), $$\int
 
 - 선수: [이산 시간 푸리에 급수](/Hongs_Blog/studies/signals-and-systems/dt-fourier-series/) (유도의 출발점), [연속 시간 푸리에 변환](/Hongs_Blog/studies/signals-and-systems/ct-fourier-transform/) (같은 유도의 연속판), [이산 시간 복소 지수 신호](/Hongs_Blog/studies/signals-and-systems/dt-complex-exponential/) ($$\omega$$와 $$\omega + 2\pi$$가 같은 수열인 이유)
 - 다음: [이산 주기 신호의 푸리에 변환](/Hongs_Blog/studies/human-interface-media/dt-periodic-fourier-transform/), [푸리에 표현 네 가지 비교](/Hongs_Blog/studies/human-interface-media/four-fourier-representations/)
-- 헷갈리는 개념: [이산 푸리에 변환과 FFT](/Hongs_Blog/studies/linear-algebra/dft/)
+- 헷갈리는 개념: [이산 푸리에 변환과 FFT](/Hongs_Blog/studies/linear-algebra/dft/). 둘을 상황별로 가르는 연습은 [이산 시간 푸리에 변환과 이산 푸리에 변환 비교](/Hongs_Blog/studies/human-interface-media/dtft-vs-dft/)에 있다.
 - 대칭: [실수 신호와 실수 스펙트럼](/Hongs_Blog/studies/human-interface-media/real-signal-real-spectrum/) (예 2의 실수·짝 스펙트럼)
 
 ## 자주 하는 오해

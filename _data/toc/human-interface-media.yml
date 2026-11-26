@@ -89,6 +89,7 @@
     - {n: "58", t: "이산 시간 푸리에 변환", u: "/studies/human-interface-media/dt-fourier-transform/", k: "concept"}
     - {n: "59", t: "이산 주기 신호의 푸리에 변환", u: "/studies/human-interface-media/dt-periodic-fourier-transform/", k: "concept"}
     - {n: "60", t: "푸리에 표현 네 가지 비교", u: "/studies/human-interface-media/four-fourier-representations/", k: "concept"}
+    - {n: "66", t: "이산 시간 푸리에 변환과 이산 푸리에 변환 비교", u: "/studies/human-interface-media/dtft-vs-dft/", k: "concept"}
 - title: "디지털 오디오"
   items:
     - {n: "61", t: "표본화 정리", u: "/studies/human-interface-media/sampling-theorem/", k: "concept"}
